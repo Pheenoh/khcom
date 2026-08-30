@@ -122,11 +122,13 @@ u16 func_0808401C(u16 cardId) {
 
     i = 0;
     count = 0;
+
     for (; i < gCardCount; i++) {
         if ((gCardCollection[i] & CARD_ID_MASK) == cardId) {
             count++;
         }
     }
+    
     return count;
 }
 
