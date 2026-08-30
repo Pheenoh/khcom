@@ -1,0 +1,2 @@
+mapfile-parser>=2.13.0,<3.0.0
+decomp-settings>=0.0.9

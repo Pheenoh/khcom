@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [us, jp, eu]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y binutils-arm-none-eabi
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # ROMs are not committed. Host them privately and set the repository
+      # secret BASEROM_URL to a base URL such that
+      # "$BASEROM_URL/<code>.gba" resolves (codes: B8CE, B8CJ, B8CP).
+      - name: Fetch base ROM
+        env:
+          BASEROM_URL: ${{ secrets.BASEROM_URL }}
+        run: |
+          if [ -z "$BASEROM_URL" ]; then
+            echo "::error::BASEROM_URL secret is not set; cannot fetch base ROM."
+            exit 1
+          fi
+          case "${{ matrix.version }}" in
+            us) CODE=B8CE ;;
+            jp) CODE=B8CJ ;;
+            eu) CODE=B8CP ;;
+          esac
+          mkdir -p roms
+          curl -fsSL -o "roms/$CODE.gba" "$BASEROM_URL/$CODE.gba"
+
+      - name: Build and verify
+        run: make VERSION=${{ matrix.version }}
+
+      - name: Generate progress report
+        run: python3 -m mapfile_parser objdiff_report report.json --version ${{ matrix.version }}
+
+      - name: Upload progress report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.version }}_report
+          path: report.json

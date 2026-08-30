@@ -1,0 +1,61 @@
+name: Kingdom Hearts - Chain of Memories
+repo: https://github.com/pheenoh/com
+platform: gba
+build_system: make
+versions:
+  - name: us
+    fullname: USA (B8CE)
+    sha1: 10729bd884f8fdca7a310b6d606c52e46657aa48
+    paths:
+      target: "roms/B8CE.gba"
+      build_dir: "build/us"
+      map: "build/us/com_us.map"
+      compiled_target: "build/us/com_us.gba"
+      elf: "build/us/com_us.elf"
+      asm: "asm/us"
+      nonmatchings: "asm/us/nonmatchings"
+  - name: jp
+    fullname: Japan (B8CJ)
+    sha1: 59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa
+    paths:
+      target: "roms/B8CJ.gba"
+      build_dir: "build/jp"
+      map: "build/jp/com_jp.map"
+      compiled_target: "build/jp/com_jp.gba"
+      elf: "build/jp/com_jp.elf"
+      asm: "asm/jp"
+      nonmatchings: "asm/jp/nonmatchings"
+  - name: eu
+    fullname: Europe (B8CP)
+    sha1: 8db73586cdb11b3795907edebf43228dbcd3e6b2
+    paths:
+      target: "roms/B8CP.gba"
+      build_dir: "build/eu"
+      map: "build/eu/com_eu.map"
+      compiled_target: "build/eu/com_eu.gba"
+      elf: "build/eu/com_eu.elf"
+      asm: "asm/eu"
+      nonmatchings: "asm/eu/nonmatchings"
+
+tools:
+  mapfile_parser:
+    progress_report:
+      check_asm_paths: True
+      # Objects live at build/<ver>/asm/foo.o -> asm file lookup starts at part 3
+      path_index: 3
+      report_data: True
+      prefixes_to_trim:
+        - build/us/
+        - build/jp/
+        - build/eu/
+        - build/
+
+      categories:
+        - id: code
+          name: Code
+          paths:
+            - src/
+        - id: asm
+          name: Assembly
+          paths:
+            - asm/

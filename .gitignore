@@ -1,0 +1,16 @@
+# ROMs are never committed
+roms/
+*.gba
+
+# Build output
+build/
+report.json
+
+# Python
+.venv/
+__pycache__/
+
+# Editor
+.vscode/
+.idea/
+*.swp
