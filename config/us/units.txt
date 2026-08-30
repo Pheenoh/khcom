@@ -2,7 +2,11 @@
 header.s
 crt0.s
 main.c
-unk_0800216c.c
+engine.c
+sio.c
+pallet.c
+util.c
+save.c
 mode_battle.c
 mode_chkbtl.c
 mode_debug.c
@@ -13,6 +17,7 @@ mode_dummy.c
 mode_debflag.c
 mode_vsbattle.c
 unk_0800eebc.c
+task.c
 evt.c
 acgtrans.c
 btl.c
