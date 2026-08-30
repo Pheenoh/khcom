@@ -57,7 +57,7 @@ _080A3290:
 	ldr r2, _080A32D8 @ =0x000008DE
 	adds r0, r7, r2
 	strh r1, [r0, #0x00]
-	bl func_08085FA4
+	bl GetActiveDeckIndex
 	strb r0, [r7, #0x00]
 	pop {r3}
 	mov r8, r3

@@ -32,7 +32,7 @@ func_080E8F50: @ 080E8F50
 _080E8F82:
 	mov r0, sp
 	ldrh r0, [r0, #0x14]
-	bl func_0808401C
+	bl CountCardsById
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x62

@@ -11,7 +11,7 @@ func_080857D4: @ 080857D4
 	lsls r0, r0, #0x18
 	lsrs r5, r0, #0x18
 	movs r4, #0x00
-	bl func_08085740
+	bl GetActiveDeck
 	adds r3, r0, #0x0
 	movs r2, #0x00
 	ldr r0, _08085834 @ =0x0000FFFF

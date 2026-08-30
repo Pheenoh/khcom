@@ -7,7 +7,7 @@
 func_080856DC: @ 080856DC
 	push {r4, r5, r6, r7, lr}
 	movs r4, #0x00
-	bl func_08085740
+	bl GetActiveDeck
 	ldr r7, _08085728 @ =0x0000FFFF
 	ldr r5, _0808572C @ =0x0203A080
 	movs r6, #0x80

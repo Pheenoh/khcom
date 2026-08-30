@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08059DDC
+	.global MakeSaveHeaderData
 	.thumb
 	.thumb_func
-	.type func_08059DDC, %function
-func_08059DDC: @ 08059DDC
+	.type MakeSaveHeaderData, %function
+MakeSaveHeaderData: @ 08059DDC
 	push {r4, r5, r6, r7, lr}
 	mov r7, r10
 	mov r6, r9

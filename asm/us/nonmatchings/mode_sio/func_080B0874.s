@@ -8,7 +8,7 @@ func_080B0874: @ 080B0874
 	push {r4, r5, r6, r7, lr}
 	mov r7, r8
 	push {r7}
-	bl func_08085FA4
+	bl GetActiveDeckIndex
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	ldr r6, _080B099C @ =0x02039B58

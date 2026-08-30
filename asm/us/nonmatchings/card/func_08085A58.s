@@ -11,7 +11,7 @@ func_08085A58: @ 08085A58
 	push {r6, r7}
 	adds r5, r0, #0x0
 	adds r4, r1, #0x0
-	bl func_08085740
+	bl GetActiveDeck
 	adds r6, r0, #0x0
 	cmp r5, #0x00
 	beq _08085A74

@@ -12,7 +12,7 @@ func_080AB1F8: @ 080AB1F8
 	lsrs r4, r4, #0x18
 	lsls r6, r6, #0x10
 	lsrs r6, r6, #0x10
-	bl func_08085FA4
+	bl GetActiveDeckIndex
 	adds r5, r0, #0x0
 	lsls r5, r5, #0x18
 	lsrs r5, r5, #0x18

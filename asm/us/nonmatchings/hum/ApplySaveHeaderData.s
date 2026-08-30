@@ -1,13 +1,13 @@
 .syntax unified
 	.align 2, 0
-	.global func_0805A104
+	.global ApplySaveHeaderData
 	.thumb
 	.thumb_func
-	.type func_0805A104, %function
-func_0805A104: @ 0805A104
+	.type ApplySaveHeaderData, %function
+ApplySaveHeaderData: @ 0805A104
 	push {r4, r5, r6, lr}
 	adds r4, r0, #0x0
-	bl func_08008BBC
+	bl SaveRepairHeader
 	adds r3, r0, #0x0
 	cmp r3, #0x02
 	bne _0805A150
@@ -46,7 +46,7 @@ _0805A13C:
 	str r1, [r0, #0x08]
 _0805A150:
 	movs r0, #0x00
-	bl func_08009150
+	bl SaveRepairFileLarge
 	cmp r0, #0x02
 	bne _0805A188
 	ldr r2, _0805A184 @ =0x02039BB0
@@ -89,7 +89,7 @@ _0805A188:
 	str r1, [r0, #0x00]
 _0805A1A6:
 	movs r0, #0x01
-	bl func_08009150
+	bl SaveRepairFileLarge
 	cmp r0, #0x02
 	bne _0805A1E0
 	ldr r2, _0805A1D8 @ =0x02039BB0
@@ -132,7 +132,7 @@ _0805A1E0:
 	str r1, [r0, #0x00]
 _0805A1FE:
 	movs r0, #0x00
-	bl func_080094EC
+	bl SaveRepairFileSmall
 	cmp r0, #0x02
 	bne _0805A238
 	ldr r2, _0805A230 @ =0x02039BB0
@@ -175,7 +175,7 @@ _0805A238:
 	str r1, [r0, #0x00]
 _0805A256:
 	movs r0, #0x01
-	bl func_080094EC
+	bl SaveRepairFileSmall
 	cmp r0, #0x02
 	bne _0805A290
 	ldr r2, _0805A288 @ =0x02039BB0

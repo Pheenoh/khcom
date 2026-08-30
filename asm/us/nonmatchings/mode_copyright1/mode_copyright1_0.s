@@ -20,58 +20,58 @@ _080D7028:
 	ldr r4, _080D7100 @ =0x02034ED8
 	movs r0, #0x00
 	strb r0, [r4, #0x00]
-	bl func_08008BBC
+	bl SaveRepairHeader
 	cmp r0, #0x01
 	bne _080D705A
 	strb r0, [r4, #0x00]
-	bl func_08008B40
-	bl func_08008DCC
+	bl SaveClearHeader
+	bl SaveClearSystem
 	movs r0, #0x00
-	bl func_08009088
+	bl SaveClearFileLarge
 	movs r0, #0x01
-	bl func_08009088
+	bl SaveClearFileLarge
 	movs r0, #0x00
-	bl func_08009418
+	bl SaveClearFileSmall
 	movs r0, #0x01
-	bl func_08009418
+	bl SaveClearFileSmall
 _080D705A:
 	movs r0, #0x00
-	bl func_08009150
+	bl SaveRepairFileLarge
 	cmp r0, #0x01
 	bne _080D706C
 	strb r0, [r4, #0x00]
 	movs r0, #0x00
-	bl func_08009088
+	bl SaveClearFileLarge
 _080D706C:
 	movs r0, #0x01
-	bl func_08009150
+	bl SaveRepairFileLarge
 	cmp r0, #0x01
 	bne _080D707E
 	strb r0, [r4, #0x00]
 	movs r0, #0x01
-	bl func_08009088
+	bl SaveClearFileLarge
 _080D707E:
 	movs r0, #0x00
-	bl func_080094EC
+	bl SaveRepairFileSmall
 	cmp r0, #0x01
 	bne _080D7090
 	strb r0, [r4, #0x00]
 	movs r0, #0x00
-	bl func_08009418
+	bl SaveClearFileSmall
 _080D7090:
 	movs r0, #0x01
-	bl func_080094EC
+	bl SaveRepairFileSmall
 	cmp r0, #0x01
 	bne _080D70A2
 	strb r0, [r4, #0x00]
 	movs r0, #0x01
-	bl func_08009418
+	bl SaveClearFileSmall
 _080D70A2:
-	bl func_08008E58
+	bl SaveRepairSystem
 	cmp r0, #0x01
 	bne _080D70B0
 	strb r0, [r4, #0x00]
-	bl func_08008DCC
+	bl SaveClearSystem
 _080D70B0:
 	movs r0, #0x00
 	bl func_0811FE70

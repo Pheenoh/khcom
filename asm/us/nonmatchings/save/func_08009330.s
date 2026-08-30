@@ -21,7 +21,7 @@ func_08009330: @ 08009330
 	bl func_08000918
 	adds r5, r0, #0x0
 	adds r1, r6, #0x0
-	bl func_080089E0
+	bl ZeroFill
 	lsls r0, r7, #0x10
 	asrs r0, r0, #0x10
 	ldr r1, _0800938C @ =0x00001E28
@@ -36,7 +36,7 @@ func_08009330: @ 08009330
 	adds r1, r5, #0x0
 	adds r2, r5, #0x0
 	adds r3, r6, #0x0
-	bl func_08008AD8
+	bl SaveVerifyBlock
 	lsls r4, r4, #0x10
 	asrs r4, r4, #0x10
 	cmp r4, #0x01
@@ -61,12 +61,12 @@ _0800939E:
 	ldr r0, [r0, #0x00]
 	adds r1, r5, #0x0
 	movs r2, #0x18
-	bl func_08008A24
+	bl CopyBytes
 	movs r0, #0x00
 	strh r0, [r5, #0x18]
 	adds r0, r5, #0x0
 	adds r1, r6, #0x0
-	bl func_08008A8C
+	bl SaveChecksum
 	adds r0, #0x01
 	b _080093D8
 	.byte 0x00, 0x00
@@ -76,12 +76,12 @@ _080093C0:
 	ldr r0, [r0, #0x00]
 	adds r1, r5, #0x0
 	movs r2, #0x18
-	bl func_08008A24
+	bl CopyBytes
 	movs r0, #0x00
 	strh r0, [r5, #0x18]
 	adds r0, r5, #0x0
 	adds r1, r6, #0x0
-	bl func_08008A8C
+	bl SaveChecksum
 _080093D8:
 	strh r0, [r5, #0x18]
 _080093DA:
