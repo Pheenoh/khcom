@@ -25,7 +25,9 @@
 
 typedef struct SaveHeader {
     u8 signature[SAVE_SIGNATURE_SIZE];
-    u8 unk_18[0x28];
+    u16 checksum;
+    u16 unk_1A;
+    u8 unk_1C[0x24];
 } SaveHeader;
 
 void* func_08000918(u32 size);
@@ -38,6 +40,14 @@ u16 func_08008A8C(u16* data, s16 len);
 int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size);
 void func_08008B40(void);
 int func_08008B84(s16 slot);
+
+void func_08059DDC(u8* dst, s16 slot);
+void func_0805A104(u8* p);
+
+int func_08008C58(void);
+void func_08008CA8(s16 slot);
+void func_08008DCC(void);
+int func_08008E18(s16 slot);
 
 u32 WriteAndVerifySramFast(const u8* src, u8* dest, u32 size);
 
