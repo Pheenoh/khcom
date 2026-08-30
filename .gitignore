@@ -21,3 +21,4 @@ __pycache__/
 .vscode/
 .idea/
 *.swp
+compile_commands.json

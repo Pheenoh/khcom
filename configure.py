@@ -211,5 +211,23 @@ objdiff_config = {
 }
 Path("objdiff.json").write_text(json.dumps(objdiff_config, indent=2) + "\n")
 
+root = Path.cwd()
+cc_args = [
+    "clang", "-nostdinc", "-fno-builtin", "--target=arm-none-eabi",
+    "-mthumb", "-std=gnu89", "-Iinclude", "-Itools/agbcc/include",
+    f"-Iasm/{version}/nonmatchings", f"-DVERSION_{version.upper()}",
+]
+compile_commands = [
+    {
+        "directory": str(root),
+        "file": str(root / src),
+        "output": str(root / obj),
+        "arguments": cc_args + [str(src)],
+    }
+    for src, obj, _flags in units
+    if src is not None and src.suffix == ".c"
+]
+Path("compile_commands.json").write_text(json.dumps(compile_commands, indent=2) + "\n")
+
 mode = " (non-matching)" if args.non_matching else ""
 print(f"configured for {version} ({code}){mode}; run: ninja")
