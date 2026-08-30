@@ -76,13 +76,23 @@ typedef struct SaveSmallSlice {
     u8 unk_10E[2];
 } SaveSmallSlice;
 
+typedef struct SaveSliceE6C {
+    u16 unk_00;
+    u16 unk_02;
+} SaveSliceE6C;
+
+typedef struct SaveSliceEB4 {
+    u16 unk_00[32];
+    u16 unk_40[2];
+} SaveSliceEB4;
+
 typedef struct SaveFileLarge {
     SaveCommon common;
     SaveSharedSlice unk_098;
     SaveLargeSlice unk_2EC;
-    u8 unk_E6C[0x004];
+    SaveSliceE6C unk_E6C;
     u8 unk_E70[0x044];
-    u8 unk_EB4[0x044];
+    SaveSliceEB4 unk_EB4;
 } SaveFileLarge;
 
 typedef struct SaveFileSmall {
