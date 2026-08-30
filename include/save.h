@@ -62,13 +62,16 @@ typedef struct SaveDeck {
     u8 unk_00[0xE0];
 } SaveDeck;
 
+#define SAVE_CARDS 999
+#define SAVE_DECKS 3
+
 typedef struct SaveLargeSlice {
     u8 unk_000;
     u8 unk_001[0x10E];
     u8 unk_10F;
-    u16 unk_110[999];
-    u16 unk_8DE;
-    SaveDeck unk_8E0[3];
+    u16 cards[SAVE_CARDS];
+    u16 cardCount;
+    SaveDeck decks[SAVE_DECKS];
 } SaveLargeSlice;
 
 typedef struct SaveSmallSlice {

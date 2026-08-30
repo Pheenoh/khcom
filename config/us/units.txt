@@ -41,7 +41,7 @@ mode_movie.c
 mode_test.c
 unk_0806180c.c
 mode_eventselect.c
-unk_080782ac.c
+card.c
 mode_sio.c
 wlogo.c
 bos2.c
