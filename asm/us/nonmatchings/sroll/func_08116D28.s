@@ -1,0 +1,95 @@
+.syntax unified
+	.align 2, 0
+	.global func_08116D28
+	.thumb
+	.thumb_func
+	.type func_08116D28, %function
+func_08116D28: @ 08116D28
+	push {r4, lr}
+	ldr r1, _08116D7C @ =0x040000B0
+	ldrh r2, [r1, #0x0A]
+	ldr r0, _08116D80 @ =0x0000C5FF
+	ands r0, r2
+	strh r0, [r1, #0x0A]
+	ldrh r2, [r1, #0x0A]
+	ldr r0, _08116D84 @ =0x00007FFF
+	ands r0, r2
+	strh r0, [r1, #0x0A]
+	ldrh r0, [r1, #0x0A]
+	ldr r1, _08116D88 @ =0x02036028
+	ldrb r0, [r1, #0x00]
+	adds r2, r1, #0x0
+	cmp r0, #0x00
+	beq _08116DC6
+	ldrb r0, [r2, #0x01]
+	cmp r0, #0x00
+	beq _08116D94
+	ldr r0, [r2, #0x0C]
+	movs r1, #0x01
+	eors r0, r1
+	str r0, [r2, #0x0C]
+	lsls r0, r0, #0x02
+	adds r1, r2, #0x0
+	adds r1, #0x10
+	adds r0, r0, r1
+	ldr r3, [r0, #0x00]
+	str r3, [r2, #0x18]
+	ldr r1, [r2, #0x1C]
+	movs r0, #0x80
+	lsls r0, r0, #0x11
+	ands r0, r1
+	cmp r0, #0x00
+	bne _08116D90
+	movs r0, #0x80
+	lsls r0, r0, #0x13
+	ands r1, r0
+	cmp r1, #0x00
+	beq _08116D8C
+	adds r0, r3, #0x4
+	b _08116D8E
+_08116D7C: .4byte 0x040000B0
+_08116D80: .4byte 0x0000C5FF
+_08116D84: .4byte 0x00007FFF
+_08116D88: .4byte 0x02036028
+_08116D8C:
+	adds r0, r3, #0x2
+_08116D8E:
+	str r0, [r2, #0x18]
+_08116D90:
+	movs r0, #0x00
+	strb r0, [r2, #0x01]
+_08116D94:
+	ldr r0, [r2, #0x0C]
+	lsls r0, r0, #0x02
+	adds r1, r2, #0x0
+	adds r1, #0x10
+	adds r0, r0, r1
+	ldr r0, [r0, #0x00]
+	cmp r0, #0x00
+	beq _08116DBC
+	ldr r4, [r2, #0x08]
+	cmp r4, #0x00
+	beq _08116DBC
+	ldr r3, [r2, #0x1C]
+	cmp r3, #0x00
+	beq _08116DBC
+	ldr r0, _08116DCC @ =0x040000B0
+	ldr r1, [r2, #0x18]
+	str r1, [r0, #0x00]
+	str r4, [r0, #0x04]
+	str r3, [r0, #0x08]
+	ldr r0, [r0, #0x08]
+_08116DBC:
+	ldr r1, [r2, #0x04]
+	cmp r1, #0x00
+	beq _08116DC6
+	bl _0811D5B4
+_08116DC6:
+	pop {r4}
+	pop {r0}
+	bx r0
+_08116DCC: .4byte 0x040000B0
+	.byte 0x04, 0x49, 0x8A, 0x68, 0xC8, 0x68, 0x80, 0x00, 0x10, 0x31, 0x40, 0x18, 0x00, 0x68, 0x00, 0x68
+	.byte 0x10, 0x80, 0x70, 0x47, 0x28, 0x60, 0x03, 0x02, 0x04, 0x49, 0x8A, 0x68, 0xC8, 0x68, 0x80, 0x00
+	.byte 0x10, 0x31, 0x40, 0x18, 0x00, 0x68, 0x00, 0x88, 0x10, 0x80, 0x70, 0x47, 0x28, 0x60, 0x03, 0x02
+.syntax divided

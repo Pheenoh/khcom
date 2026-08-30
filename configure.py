@@ -55,19 +55,27 @@ ldscript = f"{build_dir}/ldscript.ld"
 if not Path(baserom).exists():
     print(f"warning: base ROM {baserom} not found; the build will fail without it")
 
-# Units are linked in the order listed in config/<version>/units.txt
+# Units are linked in the order listed in config/<version>/units.txt.
+# <name>.c lives in src/ (shared across versions, agbcc-compiled);
+# <name>.s lives in asm/<version>/.
 units_file = Path(f"config/{version}/units.txt")
-asm_srcs = [
-    Path(f"asm/{version}") / line.strip()
-    for line in units_file.read_text().splitlines()
-    if line.strip() and not line.startswith("#")
-]
-for src in asm_srcs:
+units = []  # (src path, obj path)
+for line in units_file.read_text().splitlines():
+    line = line.strip()
+    if not line or line.startswith("#"):
+        continue
+    if line.endswith(".c"):
+        src = Path("src") / line
+        obj = f"{build_dir}/src/{src.stem}.o"
+    else:
+        src = Path(f"asm/{version}") / line
+        obj = f"{build_dir}/asm/{src.stem}.o"
     if not src.exists():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
+    units.append((src, obj))
 
 # Generate the linker script
-objs_in_order = [f"{build_dir}/asm/{src.stem}.o" for src in asm_srcs]
+objs_in_order = [obj for _, obj in units]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\nSECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
@@ -83,13 +91,25 @@ with out.open("w") as f:
     n.variable("as", f"{prefix}as")
     n.variable("ld", f"{prefix}ld")
     n.variable("objcopy", f"{prefix}objcopy")
-    n.variable("asflags", "-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I include")
+    n.variable("cpp", f"{prefix}cpp")
+    n.variable("agbcc", "tools/agbcc/bin/agbcc")
+    n.variable(
+        "asflags",
+        f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I include -I asm/{version}/nonmatchings",
+    )
+    n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include -DVERSION_{version.upper()}")
+    n.variable("cflags", "-mthumb-interwork -O2")
     n.newline()
 
     n.rule(
         "as",
         command="$as $asflags -o $out $in",
         description="AS $out",
+    )
+    n.rule(
+        "cc",
+        command="$cpp $cppflags -o $out.i $in && $agbcc $cflags -o $out.s $out.i && $as $asflags -o $out $out.s",
+        description="CC $out",
     )
     n.rule(
         "ld",
@@ -109,9 +129,9 @@ with out.open("w") as f:
     n.newline()
 
     objs = []
-    for src in asm_srcs:
-        obj = f"{build_dir}/asm/{src.stem}.o"
-        n.build(obj, "as", str(src), implicit=[baserom])
+    for src, obj in units:
+        rule = "cc" if src.suffix == ".c" else "as"
+        n.build(obj, rule, str(src), implicit=[baserom])
         objs.append(obj)
     n.newline()
 

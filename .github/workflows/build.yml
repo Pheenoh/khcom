@@ -24,6 +24,11 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
+      - name: Install agbcc
+        run: |
+          git clone --depth 1 https://github.com/pret/agbcc /tmp/agbcc
+          cd /tmp/agbcc && ./build.sh && ./install.sh "$GITHUB_WORKSPACE"
+
       # ROMs are not committed. Host them privately and set the repository
       # secret BASEROM_URL to a base URL such that
       # "$BASEROM_URL/<code>.gba" resolves (codes: B8CE, B8CJ, B8CP).

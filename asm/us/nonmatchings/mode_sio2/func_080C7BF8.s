@@ -1,0 +1,79 @@
+.syntax unified
+	.align 2, 0
+	.global func_080C7BF8
+	.thumb
+	.thumb_func
+	.type func_080C7BF8, %function
+func_080C7BF8: @ 080C7BF8
+	push {r4, r5, r6, r7, lr}
+	mov r7, r9
+	mov r6, r8
+	push {r6, r7}
+	add sp, #-0x018
+	ldr r4, [sp, #0x034]
+	lsls r0, r0, #0x18
+	lsrs r0, r0, #0x18
+	lsls r1, r1, #0x18
+	lsrs r1, r1, #0x18
+	mov r8, r1
+	str r2, [sp, #0x004]
+	str r3, [sp, #0x008]
+	str r4, [sp, #0x00C]
+	mov r1, sp
+	strh r0, [r1, #0x14]
+	movs r6, #0x00
+	movs r5, #0x00
+	movs r0, #0x00
+	cmp r6, r8
+	bge _080C7C6E
+	ldr r1, _080C7C54 @ =0x02034D50
+	mov r9, r1
+_080C7C26:
+	adds r7, r0, #0x1
+	cmp r5, #0x0B
+	bgt _080C7C68
+	lsls r0, r5, #0x02
+	mov r1, r9
+	adds r4, r0, r1
+_080C7C32:
+	ldr r0, [r4, #0x00]
+	bl func_08000F48
+	lsls r0, r0, #0x18
+	cmp r0, #0x00
+	bne _080C7C60
+	ldr r0, _080C7C58 @ =0x02034D18
+	ldr r1, _080C7C5C @ =0x09EF4C58
+	mov r2, sp
+	bl func_08000E14
+	str r0, [r4, #0x00]
+	adds r0, r6, #0x1
+	lsls r0, r0, #0x10
+	lsrs r6, r0, #0x10
+	b _080C7C68
+	.byte 0x00, 0x00
+_080C7C54: .4byte 0x02034D50
+_080C7C58: .4byte 0x02034D18
+_080C7C5C: .4byte 0x09EF4C58
+_080C7C60:
+	adds r4, #0x04
+	adds r5, #0x01
+	cmp r5, #0x0B
+	ble _080C7C32
+_080C7C68:
+	adds r0, r7, #0x0
+	cmp r0, r8
+	blt _080C7C26
+_080C7C6E:
+	adds r0, r6, #0x0
+	add sp, #0x018
+	pop {r3, r4}
+	mov r8, r3
+	mov r9, r4
+	pop {r4, r5, r6, r7}
+	pop {r1}
+	bx r1
+	.byte 0x00, 0x00, 0x70, 0xB5, 0x00, 0x26, 0x09, 0x4D, 0x0B, 0x24, 0x28, 0x68, 0x39, 0xF7, 0x5D, 0xF9
+	.byte 0x00, 0x06, 0x00, 0x28, 0x02, 0xD0, 0x70, 0x1C, 0x00, 0x04, 0x06, 0x0C, 0x04, 0x35, 0x01, 0x3C
+	.byte 0x00, 0x2C, 0xF2, 0xDA, 0x30, 0x1C, 0x70, 0xBC, 0x02, 0xBC, 0x08, 0x47, 0x00, 0x00, 0x50, 0x4D
+	.byte 0x03, 0x02
+.syntax divided

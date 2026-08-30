@@ -2,6 +2,9 @@
 roms/
 *.gba
 
+# Installed toolchain
+tools/agbcc/
+
 # Build output
 build/
 build.ninja

@@ -1,0 +1,75 @@
+.syntax unified
+	.align 2, 0
+	.global func_0800963C
+	.thumb
+	.thumb_func
+	.type func_0800963C, %function
+func_0800963C: @ 0800963C
+	push {r4, r5, r6, r7, lr}
+	adds r4, r0, #0x0
+	lsls r4, r4, #0x10
+	lsrs r4, r4, #0x10
+	movs r5, #0x83
+	lsls r5, r5, #0x03
+	adds r0, r5, #0x0
+	bl func_08000918
+	adds r6, r0, #0x0
+	adds r1, r5, #0x0
+	bl func_080089E0
+	adds r0, r6, #0x0
+	adds r0, #0x1C
+	bl func_0805A048
+	ldr r0, _080096CC @ =0x09EDB7E8
+	ldr r0, [r0, #0x00]
+	adds r1, r6, #0x0
+	movs r2, #0x18
+	bl func_08008A24
+	movs r0, #0x00
+	strh r0, [r6, #0x18]
+	adds r0, r6, #0x0
+	adds r1, r5, #0x0
+	bl func_08008A8C
+	strh r0, [r6, #0x18]
+	movs r2, #0x00
+	lsls r4, r4, #0x10
+	asrs r1, r4, #0x10
+	adds r7, r4, #0x0
+	lsls r0, r1, #0x05
+	adds r0, r0, r1
+	lsls r0, r0, #0x02
+	subs r0, r0, r1
+	lsls r5, r0, #0x04
+_0800968A:
+	lsls r4, r2, #0x10
+	asrs r4, r4, #0x10
+	lsls r1, r4, #0x05
+	adds r1, r1, r4
+	lsls r1, r1, #0x02
+	subs r1, r1, r4
+	lsls r1, r1, #0x03
+	ldr r0, _080096D0 @ =0x0E001EC0
+	adds r1, r1, r0
+	adds r1, r5, r1
+	adds r0, r6, #0x0
+	movs r2, #0x83
+	lsls r2, r2, #0x03
+	bl func_0811817C
+	adds r4, #0x01
+	lsls r4, r4, #0x10
+	lsrs r2, r4, #0x10
+	asrs r4, r4, #0x10
+	cmp r4, #0x01
+	ble _0800968A
+	adds r0, r6, #0x0
+	bl func_080009C4
+	movs r1, #0x80
+	lsls r1, r1, #0x0A
+	adds r0, r7, r1
+	asrs r0, r0, #0x10
+	bl func_08008CA8
+	pop {r4, r5, r6, r7}
+	pop {r0}
+	bx r0
+_080096CC: .4byte 0x09EDB7E8
+_080096D0: .4byte 0x0E001EC0
+.syntax divided

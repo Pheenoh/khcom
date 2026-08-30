@@ -1,0 +1,54 @@
+.syntax unified
+	.align 2, 0
+	.global func_0805E848
+	.thumb
+	.thumb_func
+	.type func_0805E848, %function
+func_0805E848: @ 0805E848
+	push {r4, lr}
+	adds r2, r0, #0x0
+	lsls r1, r1, #0x10
+	lsrs r1, r1, #0x10
+	movs r3, #0x00
+	movs r4, #0x00
+	cmp r3, r1
+	bge _0805E872
+_0805E858:
+	ldrh r0, [r2, #0x00]
+	adds r0, r0, r3
+	lsls r0, r0, #0x10
+	lsrs r3, r0, #0x10
+	adds r2, #0x02
+	lsls r0, r4, #0x10
+	movs r4, #0x80
+	lsls r4, r4, #0x09
+	adds r0, r0, r4
+	lsrs r4, r0, #0x10
+	asrs r0, r0, #0x10
+	cmp r0, r1
+	blt _0805E858
+_0805E872:
+	lsls r0, r3, #0x10
+	asrs r1, r0, #0x10
+	lsrs r0, r0, #0x1F
+	adds r1, r1, r0
+	asrs r1, r1, #0x01
+	cmp r1, #0x78
+	ble _0805E882
+	movs r3, #0xF0
+_0805E882:
+	lsls r0, r3, #0x10
+	asrs r1, r0, #0x10
+	lsrs r0, r0, #0x1F
+	adds r1, r1, r0
+	asrs r1, r1, #0x01
+	movs r0, #0x78
+	subs r0, r0, r1
+	lsls r0, r0, #0x10
+	asrs r0, r0, #0x10
+	pop {r4}
+	pop {r1}
+	bx r1
+	.byte 0x00, 0x00, 0x00, 0x22, 0x01, 0x88, 0x00, 0x29, 0x04, 0xD0, 0x20, 0x29, 0x00, 0xD0, 0x01, 0x32
+	.byte 0x02, 0x30, 0xF7, 0xE7, 0x10, 0x04, 0x00, 0x0C, 0x70, 0x47
+.syntax divided

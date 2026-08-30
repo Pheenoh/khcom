@@ -1,0 +1,14 @@
+.syntax unified
+	.align 2, 0
+	.global func_080A42C8
+	.thumb
+	.thumb_func
+	.type func_080A42C8, %function
+func_080A42C8: @ 080A42C8
+	ldr r0, _080A42D0 @ =0x0203A9D4
+	ldrb r0, [r0, #0x00]
+	bx lr
+	.byte 0x00, 0x00
+_080A42D0: .4byte 0x0203A9D4
+	.byte 0x01, 0x48, 0x00, 0x78, 0x70, 0x47, 0x00, 0x00, 0xD8, 0xA9, 0x03, 0x02
+.syntax divided

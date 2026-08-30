@@ -1,0 +1,65 @@
+.syntax unified
+	.align 2, 0
+	.global func_080E2E9C
+	.thumb
+	.thumb_func
+	.type func_080E2E9C, %function
+func_080E2E9C: @ 080E2E9C
+	push {lr}
+	lsls r2, r2, #0x10
+	asrs r2, r2, #0x10
+	lsls r0, r0, #0x10
+	asrs r0, r0, #0x10
+	subs r0, r2, r0
+	lsls r1, r1, #0x10
+	asrs r1, r1, #0x10
+	subs r1, r1, r2
+	cmp r0, r1
+	bge _080E2EDE
+	bl func_080065A4
+	lsls r0, r0, #0x10
+	lsrs r0, r0, #0x10
+	movs r1, #0x03
+	bl func_0811D7CC
+	lsls r0, r0, #0x10
+	cmp r0, #0x00
+	beq _080E2ECA
+	movs r1, #0x05
+	b _080E2F0E
+_080E2ECA:
+	bl func_080065A4
+	lsls r0, r0, #0x10
+	lsrs r0, r0, #0x10
+	movs r1, #0x05
+	bl func_0811D7CC
+	lsls r0, r0, #0x10
+	movs r1, #0x03
+	b _080E2F08
+_080E2EDE:
+	bl func_080065A4
+	lsls r0, r0, #0x10
+	lsrs r0, r0, #0x10
+	movs r1, #0x03
+	bl func_0811D7CC
+	lsls r0, r0, #0x10
+	cmp r0, #0x00
+	beq _080E2EF6
+	movs r1, #0x03
+	b _080E2F0E
+_080E2EF6:
+	bl func_080065A4
+	lsls r0, r0, #0x10
+	lsrs r0, r0, #0x10
+	movs r1, #0x05
+	bl func_0811D7CC
+	lsls r0, r0, #0x10
+	movs r1, #0x05
+_080E2F08:
+	cmp r0, #0x00
+	beq _080E2F0E
+	movs r1, #0x01
+_080E2F0E:
+	adds r0, r1, #0x0
+	pop {r1}
+	bx r1
+.syntax divided

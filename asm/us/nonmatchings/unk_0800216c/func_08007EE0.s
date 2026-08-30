@@ -1,0 +1,42 @@
+.syntax unified
+	.align 2, 0
+	.global func_08007EE0
+	.thumb
+	.thumb_func
+	.type func_08007EE0, %function
+func_08007EE0: @ 08007EE0
+	push {r4, r5, lr}
+	movs r2, #0x00
+	ldr r5, _08007F18 @ =0x000001FF
+	ldr r4, _08007F1C @ =0x0300756C
+	movs r3, #0x00
+_08007EEA:
+	ldr r0, [r4, #0x00]
+	lsls r1, r2, #0x01
+	adds r0, r0, r1
+	strh r3, [r0, #0x00]
+	adds r2, #0x01
+	cmp r2, r5
+	ble _08007EEA
+	movs r2, #0x00
+	ldr r5, _08007F1C @ =0x0300756C
+	movs r4, #0x80
+	lsls r4, r4, #0x03
+	movs r3, #0x00
+_08007F02:
+	ldr r0, [r5, #0x00]
+	lsls r1, r2, #0x01
+	adds r0, r0, r4
+	adds r0, r0, r1
+	strh r3, [r0, #0x00]
+	adds r2, #0x01
+	cmp r2, #0x1F
+	ble _08007F02
+	pop {r4, r5}
+	pop {r0}
+	bx r0
+_08007F18: .4byte 0x000001FF
+_08007F1C: .4byte 0x0300756C
+	.byte 0x00, 0x04, 0x09, 0x06, 0x09, 0x0E, 0x04, 0x4A, 0x12, 0x68, 0xC0, 0x0B, 0x80, 0x23, 0xDB, 0x00
+	.byte 0xD2, 0x18, 0x12, 0x18, 0x11, 0x80, 0x70, 0x47, 0x6C, 0x75, 0x00, 0x03
+.syntax divided

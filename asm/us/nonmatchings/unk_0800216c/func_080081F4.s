@@ -1,0 +1,16 @@
+.syntax unified
+	.align 2, 0
+	.global func_080081F4
+	.thumb
+	.thumb_func
+	.type func_080081F4, %function
+func_080081F4: @ 080081F4
+	ldr r1, _08008200 @ =0x02039B70
+	lsls r0, r0, #0x02
+	adds r0, r0, r1
+	movs r1, #0x01
+	strb r1, [r0, #0x02]
+	bx lr
+_08008200: .4byte 0x02039B70
+	.byte 0x02, 0x49, 0x80, 0x00, 0x40, 0x18, 0x00, 0x21, 0x81, 0x70, 0x70, 0x47, 0x70, 0x9B, 0x03, 0x02
+.syntax divided
