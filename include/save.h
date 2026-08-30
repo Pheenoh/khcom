@@ -23,11 +23,27 @@
 #define ReadSramFast (*(void (**)(const u8* src, u8* dest, u32 size))0x0203C7BC)
 #define gSaveSignature (*(u8**)0x09EDB7E8)
 
+#define SAVE_FILES 4
+
+typedef struct SaveFileSummary {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+    u32 unk_04;
+} SaveFileSummary;
+
+typedef struct SaveHeaderData {
+    u16 flags;
+    u16 unk_02;
+    SaveFileSummary files[SAVE_FILES];
+} SaveHeaderData;
+
 typedef struct SaveHeader {
     u8 signature[SAVE_SIGNATURE_SIZE];
     u16 checksum;
     u16 unk_1A;
-    u8 unk_1C[0x24];
+    SaveHeaderData data;
 } SaveHeader;
 
 void* func_08000918(u32 size);
@@ -41,8 +57,8 @@ int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size);
 void func_08008B40(void);
 int func_08008B84(s16 slot);
 
-void func_08059DDC(u8* dst, s16 slot);
-void func_0805A104(u8* p);
+void func_08059DDC(SaveHeaderData* data, s16 file);
+void func_0805A104(SaveHeaderData* data);
 
 int func_08008C58(void);
 void func_08008CA8(s16 slot);

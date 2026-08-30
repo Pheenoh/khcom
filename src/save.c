@@ -1,7 +1,6 @@
 #include "macros.h"
 #include "save.h"
 
-
 void func_080089E0(void* dst, s16 size) {
     u16 zero;
     u16* p;
@@ -41,6 +40,7 @@ u8 func_08008A54(u8* a, u8* b, s16 len) {
 }
 
 INCLUDE_ASM("save/func_08008A8C.s");
+
 int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size) {
     int ret;
 
@@ -53,6 +53,7 @@ int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size) {
     }
     return ret;
 }
+
 INCLUDE_ASM("save/func_08008B34.s");
 
 void func_08008B40(void) {
@@ -66,6 +67,7 @@ void func_08008B40(void) {
     }
     func_080009C4(buf);
 }
+
 int func_08008B84(s16 slot) {
     u8* buf;
     int ret;
@@ -76,7 +78,9 @@ int func_08008B84(s16 slot) {
     func_080009C4(buf);
     return ret;
 }
+
 INCLUDE_ASM("save/func_08008BBC.s");
+
 int func_08008C58(void) {
     u8* buf;
     int ret;
@@ -87,20 +91,21 @@ int func_08008C58(void) {
     for (i = 0; i < SAVE_SLOTS; i++) {
         ret = func_08008AD8(SRAM_HEADER + i * SAVE_HEADER_SIZE, buf, buf, SAVE_HEADER_SIZE);
         if (ret == SAVE_OK) {
-            func_0805A104(buf + 0x1C);
+            func_0805A104(&((SaveHeader*)buf)->data);
             break;
         }
     }
     func_080009C4(buf);
     return ret;
 }
+
 void func_08008CA8(s16 slot) {
     SaveHeader* hdr;
     s16 i;
 
     hdr = func_08000918(SAVE_HEADER_SIZE);
     func_080089E0(hdr, SAVE_HEADER_SIZE);
-    func_08059DDC(hdr->unk_1C, (s16)(u16)slot);
+    func_08059DDC(&hdr->data, (s16)(u16)slot);
     func_08008A24(gSaveSignature, (u8*)hdr, SAVE_SIGNATURE_SIZE);
     hdr->checksum = 0;
     hdr->checksum = func_08008A8C((u16*)hdr, SAVE_HEADER_SIZE);
@@ -109,7 +114,9 @@ void func_08008CA8(s16 slot) {
     }
     func_080009C4(hdr);
 }
+
 INCLUDE_ASM("save/func_08008D1C.s");
+
 void func_08008DCC(void) {
     u8* buf;
     s16 i;
@@ -121,6 +128,7 @@ void func_08008DCC(void) {
     }
     func_080009C4(buf);
 }
+
 int func_08008E18(s16 slot) {
     u8* buf;
     int ret;
@@ -131,8 +139,10 @@ int func_08008E18(s16 slot) {
     func_080009C4(buf);
     return ret;
 }
+
 INCLUDE_ASM("save/func_08008E58.s");
 INCLUDE_ASM("save/func_08009088.s");
+
 int func_080090F4(s16 file, s16 slot) {
     u8* buf;
     int ret;
@@ -144,10 +154,12 @@ int func_080090F4(s16 file, s16 slot) {
     func_080009C4(buf);
     return ret;
 }
+
 INCLUDE_ASM("save/func_08009150.s");
 INCLUDE_ASM("save/func_08009298.s");
 INCLUDE_ASM("save/func_08009330.s");
 INCLUDE_ASM("save/func_08009418.s");
+
 int func_08009488(s16 file, s16 slot) {
     u8* buf;
     int ret;
@@ -159,6 +171,7 @@ int func_08009488(s16 file, s16 slot) {
     func_080009C4(buf);
     return ret;
 }
+
 INCLUDE_ASM("save/func_080094EC.s");
 INCLUDE_ASM("save/func_0800963C.s");
 INCLUDE_ASM("save/func_080096D4.s");
