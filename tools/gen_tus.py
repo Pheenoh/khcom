@@ -21,6 +21,7 @@ START_RE = re.compile(
     r"\t(thumb_func_start|arm_func_start|non_word_aligned_thumb_func_start) (\S+)"
 )
 LABEL_RE = re.compile(r"^(_[0-9A-Fa-f]{8}):")
+GLOBAL_RE = re.compile(r"^\t\.global (\S+)$")
 
 EXPAND = {
     "thumb_func_start": "\t.align 2, 0\n\t.global {0}\n\t.thumb\n\t.thumb_func\n\t.type {0}, %function\n",
@@ -76,6 +77,7 @@ def split_module(path: Path, out_dir: Path):
         else:
             current.append(line)
     flush()
+    chunks = split_globals(chunks)
 
     out_dir.mkdir(parents=True, exist_ok=True)
     names = []
@@ -83,6 +85,27 @@ def split_module(path: Path, out_dir: Path):
         (out_dir / f"{name}.s").write_text(HEADER + "".join(content) + FOOTER)
         names.append(name)
     return names
+
+
+def split_globals(chunks):
+    """Give every exported symbol its own file, so progress reporting can tell
+    which symbols are still assembly."""
+    out = []
+    for name, content in chunks:
+        start = 0
+        for i, line in enumerate(content):
+            m = GLOBAL_RE.match(line)
+            if not m or i == 0:
+                continue
+            sym = m.group(1)
+            if sym == name or f"{sym}:\n" not in content[i:]:
+                continue
+            if not any(l.strip() for l in content[start:i]):
+                continue
+            out.append((name, content[start:i]))
+            name, start = sym, i
+        out.append((name, content[start:]))
+    return out
 
 
 def main():
