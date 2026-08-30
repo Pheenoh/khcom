@@ -8,10 +8,9 @@ import sys
 from pathlib import Path
 
 
-def convert_numbers(data):
-    for key, value in data.items():
-        if isinstance(value, str) and value.isdigit():
-            data[key] = int(value)
+def to_int(data, key):
+    v = data.get(key, 0)
+    return int(v) if isinstance(v, str) and v.isdigit() else v
 
 
 def main():
@@ -23,9 +22,36 @@ def main():
         sys.exit(f"Report file {args.report} does not exist")
     report = json.loads(args.report.read_text())
 
-    convert_numbers(report["measures"])
-    for category in report.get("categories", []):
-        convert_numbers(category["measures"])
+    prefixes = {"Code": "src/", "Data": "asm/", "Libraries": "tools/"}
+
+    def files(prefix):
+        done = total = 0
+        for u in report.get("units", []):
+            if prefix and not u["name"].startswith(prefix):
+                continue
+            total += 1
+            tc = to_int(u["measures"], "total_code")
+            if tc and to_int(u["measures"], "matched_code") == tc:
+                done += 1
+        return done, total
+
+    rows = []
+    for c in report.get("categories", []):
+        m = c["measures"]
+        done, total = files(prefixes.get(c["name"]))
+        rows.append((
+            c["name"],
+            m.get("matched_code_percent", 0.0),
+            to_int(m, "matched_code"), to_int(m, "total_code"),
+            m.get("matched_functions", 0), m.get("total_functions", 0),
+            done, total,
+        ))
+    m = report["measures"]
+    done, total = files(None)
+    total_row = ("All", m.get("matched_code_percent", 0.0),
+                 to_int(m, "matched_code"), to_int(m, "total_code"),
+                 m.get("matched_functions", 0), m.get("total_functions", 0),
+                 done, total)
 
     summary_path = os.getenv("GITHUB_STEP_SUMMARY")
     summary = open(summary_path, "a", encoding="utf-8") if summary_path else None
@@ -37,42 +63,16 @@ def main():
         if summary:
             summary.write(s + "\n")
 
-    def unit_counts(prefixes):
-        total = complete = 0
-        for u in report.get("units", []):
-            if prefixes is not None and not any(u["name"].startswith(x) for x in prefixes):
-                continue
-            um = dict(u["measures"])
-            convert_numbers(um)
-            total += 1
-            if um.get("total_code", 0) and um.get("matched_code", 0) == um["total_code"]:
-                complete += 1
-        return complete, total
-
-    def print_category(name, m, prefixes=None):
-        total_code = m.get("total_code", 0)
-        matched_code = m.get("matched_code", 0)
-        complete_units, total_units = unit_counts(prefixes)
-        emit(
-            f"  {name}: {m.get('matched_code_percent', 0):.4f}% matched"
-            f" ({complete_units} / {total_units} files complete)"
-        )
-        emit(
-            f"    Code: {matched_code} / {total_code} bytes"
-            f" ({m.get('matched_functions', 0)} / {m.get('total_functions', 0)} functions)"
-        )
-        if m.get("total_data", 0):
-            emit(
-                f"    Data: {m.get('matched_data', 0)} / {m['total_data']} bytes"
-                f" ({m.get('matched_data_percent', 0):.4f}%)"
-            )
+    def line(row):
+        name, pct, mc, tc, mf, tf, fd, ft = row
+        return (f"  {name:<10} {pct:8.4f}%  {mc:>9,} / {tc:<11,} bytes"
+                f"  {mf:>5,} / {tf:<6,} funcs  {fd:>3} / {ft:<3} files")
 
     emit("Progress:")
-    print_category("All", report["measures"])
-    prefixes = {"Code": ["src/"], "Assembly": ["asm/"], "tools": ["tools/"]}
-    for category in report.get("categories", []):
-        print_category(category["name"], category["measures"],
-                       prefixes.get(category["name"]))
+    for row in rows:
+        emit(line(row))
+    emit("  " + "-" * 86)
+    emit(line(total_row))
 
     if summary:
         summary.write("```\n")

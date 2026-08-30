@@ -55,7 +55,11 @@ tools:
           name: Code
           paths:
             - src/
-        - id: asm
-          name: Assembly
+        - id: data
+          name: Data
           paths:
             - asm/
+        - id: libraries
+          name: Libraries
+          paths:
+            - tools/

@@ -176,6 +176,7 @@ INCLUDE_ASM("unk_0800216c/func_08008884.s");
 INCLUDE_ASM("unk_0800216c/func_0800889C.s");
 INCLUDE_ASM("unk_0800216c/func_080088B4.s");
 INCLUDE_ASM("unk_0800216c/func_08008974.s");
+
 void func_080089E0(void* dst, s16 size) {
     u16 zero;
     u16* p;
@@ -184,6 +185,7 @@ void func_080089E0(void* dst, s16 size) {
     if (size & 1) {
         ((u8*)dst)[size - 1] = 0;
     }
+
     p = &zero;
     *p = 0;
     dma = (vu32*)0x40000D4;
@@ -192,7 +194,9 @@ void func_080089E0(void* dst, s16 size) {
     dma[2] = 0x81000000 | (size / 2);
     dma[2];
 }
+
 INCLUDE_ASM("unk_0800216c/func_08008A24.s");
+
 u8 func_08008A54(u8* a, u8* b, s16 len) {
     s16 i;
 
@@ -201,6 +205,7 @@ u8 func_08008A54(u8* a, u8* b, s16 len) {
             return 0;
         }
     }
+
     return 1;
 }
 INCLUDE_ASM("unk_0800216c/func_08008A8C.s");
