@@ -58,24 +58,29 @@ if not Path(baserom).exists():
 # Units are linked in the order listed in config/<version>/units.txt.
 # <name>.c lives in src/ (shared across versions, agbcc-compiled);
 # <name>.s lives in asm/<version>/.
+# A unit line may carry extra cflags after the name, e.g. for SDK libraries
+# built at a different optimization level:  agb_sram.c -O1
 units_file = Path(f"config/{version}/units.txt")
-units = []  # (src path, obj path)
+units = []  # (src path, obj path, cflags override or None)
 for line in units_file.read_text().splitlines():
     line = line.strip()
     if not line or line.startswith("#"):
         continue
-    if line.endswith(".c"):
-        src = Path("src") / line
+    parts = line.split(None, 1)
+    name = parts[0]
+    flags = parts[1] if len(parts) > 1 else None
+    if name.endswith(".c"):
+        src = Path("src") / name
         obj = f"{build_dir}/src/{src.stem}.o"
     else:
-        src = Path(f"asm/{version}") / line
+        src = Path(f"asm/{version}") / name
         obj = f"{build_dir}/asm/{src.stem}.o"
     if not src.exists():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
-    units.append((src, obj))
+    units.append((src, obj, flags))
 
 # Generate the linker script
-objs_in_order = [obj for _, obj in units]
+objs_in_order = [obj for _, obj, _flags in units]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\nSECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
@@ -129,9 +134,10 @@ with out.open("w") as f:
     n.newline()
 
     objs = []
-    for src, obj in units:
+    for src, obj, flags in units:
         rule = "cc" if src.suffix == ".c" else "as"
-        n.build(obj, rule, str(src), implicit=[baserom])
+        variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
+        n.build(obj, rule, str(src), implicit=[baserom], variables=variables)
         objs.append(obj)
     n.newline()
 
