@@ -1,5 +1,5 @@
 #include "macros.h"
-#include "types.h"
+#include "save.h"
 
 
 void func_080089E0(void* dst, s16 size) {
@@ -41,9 +41,41 @@ u8 func_08008A54(u8* a, u8* b, s16 len) {
 }
 
 INCLUDE_ASM("save/func_08008A8C.s");
-INCLUDE_ASM("save/func_08008AD8.s");
-INCLUDE_ASM("save/func_08008B40.s");
-INCLUDE_ASM("save/func_08008B84.s");
+int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size) {
+    int ret;
+
+    func_080089E0(buf, size);
+    ReadSramFast(sram, buf, size);
+    if (func_08008A54(hdr, gSaveSignature, SAVE_SIGNATURE_SIZE)) {
+        ret = (func_08008A8C((u16*)buf, size) == 0) ? SAVE_OK : SAVE_BAD_CHECKSUM;
+    } else {
+        ret = SAVE_BAD_SIGNATURE;
+    }
+    return ret;
+}
+INCLUDE_ASM("save/func_08008B34.s");
+
+void func_08008B40(void) {
+    u8* buf;
+    s16 i;
+
+    buf = func_08000918(SAVE_HEADER_SIZE);
+    for (i = 0; i < SAVE_SLOTS; i++) {
+        func_080089E0(buf, SAVE_HEADER_SIZE);
+        WriteAndVerifySramFast(buf, SRAM_HEADER + i * SAVE_HEADER_SIZE, SAVE_HEADER_SIZE);
+    }
+    func_080009C4(buf);
+}
+int func_08008B84(s16 slot) {
+    u8* buf;
+    int ret;
+
+    buf = func_08000918(SAVE_HEADER_SIZE);
+    ret = func_08008AD8(SRAM_HEADER + (s16)(u16)slot * SAVE_HEADER_SIZE, buf, buf,
+                        SAVE_HEADER_SIZE);
+    func_080009C4(buf);
+    return ret;
+}
 INCLUDE_ASM("save/func_08008BBC.s");
 INCLUDE_ASM("save/func_08008C58.s");
 INCLUDE_ASM("save/func_08008CA8.s");
