@@ -18,7 +18,8 @@ report.json
 __pycache__/
 
 # Editor
-.vscode/
+.vscode/*
+!.vscode/c_cpp_properties.json
 .idea/
 *.swp
 compile_commands.json

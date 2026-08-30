@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "name": "com",
+      "compileCommands": "${workspaceFolder}/compile_commands.json",
+      "includePath": [
+        "${workspaceFolder}/include",
+        "${workspaceFolder}/tools/agbcc/include"
+      ],
+      "defines": ["VERSION_US"],
+      "cStandard": "gnu89",
+      "intelliSenseMode": "linux-clang-arm"
+    }
+  ],
+  "version": 4
+}
