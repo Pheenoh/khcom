@@ -133,12 +133,32 @@ int func_08008E18(s16 slot) {
 }
 INCLUDE_ASM("save/func_08008E58.s");
 INCLUDE_ASM("save/func_08009088.s");
-INCLUDE_ASM("save/func_080090F4.s");
+int func_080090F4(s16 file, s16 slot) {
+    u8* buf;
+    int ret;
+
+    buf = func_08000918(SAVE_FILE_LARGE_SIZE);
+    ret = func_08008AD8(SRAM_FILE_LARGE + (s16)(u16)file * (SAVE_FILE_LARGE_SIZE * 2)
+                            + (s16)(u16)slot * SAVE_FILE_LARGE_SIZE,
+                        buf, buf, SAVE_FILE_LARGE_SIZE);
+    func_080009C4(buf);
+    return ret;
+}
 INCLUDE_ASM("save/func_08009150.s");
 INCLUDE_ASM("save/func_08009298.s");
 INCLUDE_ASM("save/func_08009330.s");
 INCLUDE_ASM("save/func_08009418.s");
-INCLUDE_ASM("save/func_08009488.s");
+int func_08009488(s16 file, s16 slot) {
+    u8* buf;
+    int ret;
+
+    buf = func_08000918(SAVE_FILE_SMALL_SIZE);
+    ret = func_08008AD8(SRAM_FILE_SMALL + (s16)(u16)file * (SAVE_FILE_SMALL_SIZE * 2)
+                            + (s16)(u16)slot * SAVE_FILE_SMALL_SIZE,
+                        buf, buf, SAVE_FILE_SMALL_SIZE);
+    func_080009C4(buf);
+    return ret;
+}
 INCLUDE_ASM("save/func_080094EC.s");
 INCLUDE_ASM("save/func_0800963C.s");
 INCLUDE_ASM("save/func_080096D4.s");
