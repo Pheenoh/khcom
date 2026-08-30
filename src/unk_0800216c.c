@@ -208,6 +208,7 @@ u8 func_08008A54(u8* a, u8* b, s16 len) {
 
     return 1;
 }
+
 INCLUDE_ASM("unk_0800216c/func_08008A8C.s");
 INCLUDE_ASM("unk_0800216c/func_08008AD8.s");
 INCLUDE_ASM("unk_0800216c/func_08008B40.s");

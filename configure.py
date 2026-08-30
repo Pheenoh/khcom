@@ -29,6 +29,11 @@ parser.add_argument(
     help="version to build (default: %(default)s)",
 )
 parser.add_argument(
+    "--non-matching",
+    action="store_true",
+    help="build with NON_MATCHING defined; does not verify against the base ROM",
+)
+parser.add_argument(
     "--binutils-prefix",
     default="arm-none-eabi-",
     help="binutils tool prefix (default: %(default)s)",
@@ -40,7 +45,7 @@ code, sha1 = VERSIONS[version]
 prefix = args.binutils_prefix
 
 baserom = f"roms/{code}.gba"
-build_dir = f"build/{version}"
+build_dir = f"build/{version}-nonmatching" if args.non_matching else f"build/{version}"
 name = f"com_{version}"
 elf = f"{build_dir}/{name}.elf"
 rom = f"{build_dir}/{name}.gba"
@@ -108,7 +113,10 @@ with out.open("w") as f:
         "asflags",
         f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I include -I asm/{version}/nonmatchings",
     )
-    n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include -DVERSION_{version.upper()}")
+    defines = f"-DVERSION_{version.upper()}"
+    if args.non_matching:
+        defines += " -DNON_MATCHING"
+    n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include {defines}")
     n.variable("cflags", "-mthumb-interwork -O2")
     n.variable("pyreport", report_python)
     n.newline()
@@ -179,15 +187,18 @@ with out.open("w") as f:
         },
     )
     n.build(rom, "rom", elf)
-    n.build(f"{build_dir}/ok", "check", rom)
+    if not args.non_matching:
+        n.build(f"{build_dir}/ok", "check", rom)
     n.newline()
 
-    report = f"{build_dir}/report.json"
-    n.build(report, "report", implicit=[f"{build_dir}/ok", "decomp.yaml"])
-    n.build("progress", "progress", report, implicit=["tools/progress.py"])
-    n.newline()
-
-    n.build("all", "phony", f"{build_dir}/ok")
+    if args.non_matching:
+        n.build("all", "phony", rom)
+    else:
+        report = f"{build_dir}/report.json"
+        n.build(report, "report", implicit=[f"{build_dir}/ok", "decomp.yaml"])
+        n.build("progress", "progress", report, implicit=["tools/progress.py"])
+        n.newline()
+        n.build("all", "phony", f"{build_dir}/ok")
     n.default("all")
 
 objdiff_config = {
@@ -200,4 +211,5 @@ objdiff_config = {
 }
 Path("objdiff.json").write_text(json.dumps(objdiff_config, indent=2) + "\n")
 
-print(f"configured for {version} ({code}); run: ninja")
+mode = " (non-matching)" if args.non_matching else ""
+print(f"configured for {version} ({code}){mode}; run: ninja")
