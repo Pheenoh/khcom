@@ -50,12 +50,30 @@ name = f"com_{version}"
 elf = f"{build_dir}/{name}.elf"
 rom = f"{build_dir}/{name}.gba"
 mapfile = f"{build_dir}/{name}.map"
-ldscript = f"linker/{version}.ld"
+ldscript = f"{build_dir}/ldscript.ld"
 
 if not Path(baserom).exists():
     print(f"warning: base ROM {baserom} not found; the build will fail without it")
 
-asm_srcs = sorted(Path(f"asm/{version}").glob("*.s"))
+# Units are linked in the order listed in config/<version>/units.txt
+units_file = Path(f"config/{version}/units.txt")
+asm_srcs = [
+    Path(f"asm/{version}") / line.strip()
+    for line in units_file.read_text().splitlines()
+    if line.strip() and not line.startswith("#")
+]
+for src in asm_srcs:
+    if not src.exists():
+        sys.exit(f"error: unit {src} listed in {units_file} does not exist")
+
+# Generate the linker script
+objs_in_order = [f"{build_dir}/asm/{src.stem}.o" for src in asm_srcs]
+Path(build_dir).mkdir(parents=True, exist_ok=True)
+with open(ldscript, "w") as f:
+    f.write("ENTRY(_start);\n\nSECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
+    for obj in objs_in_order:
+        f.write(f"        {obj}(.text);\n")
+    f.write("    }\n\n    /DISCARD/ : { *(*); }\n}\n")
 
 out = Path("build.ninja")
 with out.open("w") as f:
