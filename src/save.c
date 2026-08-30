@@ -77,10 +77,60 @@ int func_08008B84(s16 slot) {
     return ret;
 }
 INCLUDE_ASM("save/func_08008BBC.s");
-INCLUDE_ASM("save/func_08008C58.s");
-INCLUDE_ASM("save/func_08008CA8.s");
-INCLUDE_ASM("save/func_08008DCC.s");
-INCLUDE_ASM("save/func_08008E18.s");
+int func_08008C58(void) {
+    u8* buf;
+    int ret;
+    s16 i;
+
+    ret = 0;
+    buf = func_08000918(SAVE_HEADER_SIZE);
+    for (i = 0; i < SAVE_SLOTS; i++) {
+        ret = func_08008AD8(SRAM_HEADER + i * SAVE_HEADER_SIZE, buf, buf, SAVE_HEADER_SIZE);
+        if (ret == SAVE_OK) {
+            func_0805A104(buf + 0x1C);
+            break;
+        }
+    }
+    func_080009C4(buf);
+    return ret;
+}
+void func_08008CA8(s16 slot) {
+    SaveHeader* hdr;
+    s16 i;
+
+    hdr = func_08000918(SAVE_HEADER_SIZE);
+    func_080089E0(hdr, SAVE_HEADER_SIZE);
+    func_08059DDC(hdr->unk_1C, (s16)(u16)slot);
+    func_08008A24(gSaveSignature, (u8*)hdr, SAVE_SIGNATURE_SIZE);
+    hdr->checksum = 0;
+    hdr->checksum = func_08008A8C((u16*)hdr, SAVE_HEADER_SIZE);
+    for (i = 0; i < SAVE_SLOTS; i++) {
+        WriteAndVerifySramFast((u8*)hdr, SRAM_HEADER + i * SAVE_HEADER_SIZE, SAVE_HEADER_SIZE);
+    }
+    func_080009C4(hdr);
+}
+INCLUDE_ASM("save/func_08008D1C.s");
+void func_08008DCC(void) {
+    u8* buf;
+    s16 i;
+
+    buf = func_08000918(SAVE_SYSTEM_SIZE);
+    for (i = 0; i < SAVE_SLOTS; i++) {
+        func_080089E0(buf, SAVE_SYSTEM_SIZE);
+        WriteAndVerifySramFast(buf, SRAM_SYSTEM + i * SAVE_SYSTEM_SIZE, SAVE_SYSTEM_SIZE);
+    }
+    func_080009C4(buf);
+}
+int func_08008E18(s16 slot) {
+    u8* buf;
+    int ret;
+
+    buf = func_08000918(SAVE_SYSTEM_SIZE);
+    ret = func_08008AD8(SRAM_SYSTEM + (s16)(u16)slot * SAVE_SYSTEM_SIZE, buf, buf,
+                        SAVE_SYSTEM_SIZE);
+    func_080009C4(buf);
+    return ret;
+}
 INCLUDE_ASM("save/func_08008E58.s");
 INCLUDE_ASM("save/func_08009088.s");
 INCLUDE_ASM("save/func_080090F4.s");
