@@ -147,10 +147,12 @@ void func_08008DCC(void) {
     s16 i;
 
     buf = func_08000918(SAVE_SYSTEM_SIZE);
+
     for (i = 0; i < SAVE_SLOTS; i++) {
         func_080089E0(buf, SAVE_SYSTEM_SIZE);
         WriteAndVerifySramFast(buf, SRAM_SYSTEM + i * SAVE_SYSTEM_SIZE, SAVE_SYSTEM_SIZE);
     }
+
     func_080009C4(buf);
 }
 
@@ -165,8 +167,64 @@ int func_08008E18(s16 slot) {
     return ret;
 }
 
-INCLUDE_ASM("save/func_08008E58.s");
-INCLUDE_ASM("save/func_08009088.s");
+int func_08008E58(void) {
+    int results[2];
+    int good;
+    int bad;
+    s16 i;
+    int ret;
+    u8* buf;
+
+    good = -1;
+    bad = -1;
+
+    for (i = 0; i < SAVE_SLOTS; i++) {
+        ret = results[i] = func_08008E18(i);
+
+        if (ret == SAVE_OK) {
+            if (good < 0) {
+                good = i;
+            }
+        } else {
+            bad = i;
+        }
+    }
+
+    if (good >= 0 && bad >= 0) {
+        buf = func_08000918(SAVE_SYSTEM_SIZE);
+        func_08008AD8(SRAM_SYSTEM + good * SAVE_SYSTEM_SIZE, buf, buf, SAVE_SYSTEM_SIZE);
+
+        for (i = 0; i < SAVE_SLOTS; i++) {
+            if (results[i] != SAVE_OK) {
+                WriteAndVerifySramFast(buf, SRAM_SYSTEM + i * SAVE_SYSTEM_SIZE,
+                                       SAVE_SYSTEM_SIZE);
+            }
+        }
+
+        func_080009C4(buf);
+        ret = SAVE_OK;
+    }
+    
+    return ret;
+}
+
+INCLUDE_ASM("save/func_08008F00.s");
+void func_08009088(u16 file) {
+    u8* buf;
+    u8* dst;
+    s16 i;
+    s32 off;
+
+    buf = func_08000918(SAVE_FILE_LARGE_SIZE);
+    i = 0;
+    off = (s16)file * (SAVE_FILE_LARGE_SIZE * 2);
+    for (; i < SAVE_SLOTS; i++) {
+        func_080089E0(buf, SAVE_FILE_LARGE_SIZE);
+        dst = SRAM_FILE_LARGE + i * SAVE_FILE_LARGE_SIZE;
+        WriteAndVerifySramFast(buf, dst + off, SAVE_FILE_LARGE_SIZE);
+    }
+    func_080009C4(buf);
+}
 
 int func_080090F4(s16 file, s16 slot) {
     u8* buf;
@@ -183,7 +241,22 @@ int func_080090F4(s16 file, s16 slot) {
 INCLUDE_ASM("save/func_08009150.s");
 INCLUDE_ASM("save/func_08009298.s");
 INCLUDE_ASM("save/func_08009330.s");
-INCLUDE_ASM("save/func_08009418.s");
+void func_08009418(u16 file) {
+    u8* buf;
+    u8* dst;
+    s16 i;
+    s32 off;
+
+    buf = func_08000918(SAVE_FILE_SMALL_SIZE);
+    i = 0;
+    off = (s16)file * (SAVE_FILE_SMALL_SIZE * 2);
+    for (; i < SAVE_SLOTS; i++) {
+        func_080089E0(buf, SAVE_FILE_SMALL_SIZE);
+        dst = SRAM_FILE_SMALL + i * SAVE_FILE_SMALL_SIZE;
+        WriteAndVerifySramFast(buf, dst + off, SAVE_FILE_SMALL_SIZE);
+    }
+    func_080009C4(buf);
+}
 
 int func_08009488(s16 file, s16 slot) {
     u8* buf;
