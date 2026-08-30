@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "card.h"
 
 INCLUDE_ASM("card/func_080782AC.s");
 INCLUDE_ASM("card/func_08078330.s");
@@ -46,13 +47,35 @@ INCLUDE_ASM("card/func_0807D0F4.s");
 INCLUDE_ASM("card/func_0807D380.s");
 INCLUDE_ASM("card/func_0807D4B8.s");
 INCLUDE_ASM("card/func_0807E018.s");
-INCLUDE_ASM("card/func_0807E1F4.s");
-INCLUDE_ASM("card/func_0807E200.s");
-INCLUDE_ASM("card/func_0807E20C.s");
-INCLUDE_ASM("card/func_0807E218.s");
-INCLUDE_ASM("card/func_0807E224.s");
-INCLUDE_ASM("card/func_0807E23C.s");
-INCLUDE_ASM("card/func_0807E248.s");
+void func_0807E1F4(void) {
+    gUnk_02034AA4 = 1;
+}
+void func_0807E200(void) {
+    gUnk_02034AA4 = 2;
+}
+void func_0807E20C(void) {
+    gUnk_02034AA4 = 3;
+}
+void func_0807E218(void) {
+    gUnk_02034AA4 = 4;
+}
+void func_0807E224(void) {
+    gUnk_02034AA4 = 5;
+}
+
+void func_0807E230(void) {
+    gUnk_02034AA4 = 8;
+}
+void func_0807E23C(void) {
+    gUnk_02034AA4 = 6;
+}
+void func_0807E248(void) {
+    gUnk_02034AA4 = 7;
+}
+
+void func_0807E254(void) {
+    gUnk_02034AA4 = 9;
+}
 INCLUDE_ASM("card/func_0807E260.s");
 INCLUDE_ASM("card/func_0807E29C.s");
 INCLUDE_ASM("card/func_0807E2BC.s");
@@ -99,7 +122,9 @@ INCLUDE_ASM("card/func_08085160.s");
 INCLUDE_ASM("card/func_08085290.s");
 INCLUDE_ASM("card/func_08085374.s");
 INCLUDE_ASM("card/func_080856DC.s");
-INCLUDE_ASM("card/func_08085740.s");
+u8* func_08085740(void) {
+    return gDecks + gActiveDeck * 0xE0;
+}
 INCLUDE_ASM("card/func_08085758.s");
 INCLUDE_ASM("card/func_08085770.s");
 INCLUDE_ASM("card/func_08085788.s");
@@ -116,7 +141,9 @@ INCLUDE_ASM("card/func_08085BAC.s");
 INCLUDE_ASM("card/func_08085C3C.s");
 INCLUDE_ASM("card/func_08085CB0.s");
 INCLUDE_ASM("card/_08085D04.s");
-INCLUDE_ASM("card/func_08085FA4.s");
+u8 func_08085FA4(void) {
+    return gActiveDeck;
+}
 INCLUDE_ASM("card/func_08085FB0.s");
 INCLUDE_ASM("card/func_08087B98.s");
 INCLUDE_ASM("card/func_0808B3DC.s");
