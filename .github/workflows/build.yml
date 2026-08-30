@@ -19,7 +19,7 @@ jobs:
       - name: Install toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y binutils-arm-none-eabi
+          sudo apt-get install -y binutils-arm-none-eabi ninja-build
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
@@ -44,7 +44,9 @@ jobs:
           curl -fsSL -o "roms/$CODE.gba" "$BASEROM_URL/$CODE.gba"
 
       - name: Build and verify
-        run: make VERSION=${{ matrix.version }}
+        run: |
+          python3 configure.py --version ${{ matrix.version }}
+          ninja
 
       - name: Generate progress report
         run: python3 -m mapfile_parser objdiff_report report.json --version ${{ matrix.version }}

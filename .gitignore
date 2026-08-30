@@ -4,6 +4,10 @@ roms/
 
 # Build output
 build/
+build.ninja
+.ninja_deps
+.ninja_log
+objdiff.json
 report.json
 
 # Python
