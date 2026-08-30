@@ -195,7 +195,13 @@ void func_080089E0(void* dst, s16 size) {
     dma[2];
 }
 
-INCLUDE_ASM("unk_0800216c/func_08008A24.s");
+void func_08008A24(u8* src, u8* dst, s16 len) {
+    s16 i;
+
+    for (i = 0; i < len; i++) {
+        dst[i] = src[i];
+    }
+}
 
 u8 func_08008A54(u8* a, u8* b, s16 len) {
     s16 i;
