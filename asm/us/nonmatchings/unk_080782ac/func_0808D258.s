@@ -26,13 +26,13 @@ func_0808D258: @ 0808D258
 	lsls r1, r1, #0x02
 	mov r8, r1
 	adds r0, r4, #0x0
-	bl _0811D754
+	bl __udivsi3
 	strb r0, [r5, #0x00]
 	mov r5, sp
 	movs r6, #0x64
 	adds r0, r4, #0x0
 	movs r1, #0x64
-	bl _0811D754
+	bl __udivsi3
 	mov r1, sp
 	ldrb r2, [r1, #0x00]
 	lsls r1, r2, #0x02
@@ -43,7 +43,7 @@ func_0808D258: @ 0808D258
 	mov r5, sp
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	mov r1, sp
 	ldrb r1, [r1, #0x00]
 	muls r1, r6
@@ -81,12 +81,12 @@ func_0808D258: @ 0808D258
 	movs r1, #0x00
 	ldsh r0, [r5, r1]
 	mov r1, r8
-	bl func_0811D5EC
+	bl __divsi3
 	strb r0, [r4, #0x00]
 	movs r1, #0x00
 	ldsh r0, [r5, r1]
 	movs r1, #0x64
-	bl func_0811D5EC
+	bl __divsi3
 	ldrb r2, [r4, #0x00]
 	lsls r1, r2, #0x02
 	adds r1, r1, r2
@@ -96,7 +96,7 @@ func_0808D258: @ 0808D258
 	movs r1, #0x00
 	ldsh r0, [r5, r1]
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	ldrb r1, [r4, #0x00]
 	muls r1, r6
 	subs r0, r0, r1

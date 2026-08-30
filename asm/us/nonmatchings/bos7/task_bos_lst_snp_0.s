@@ -20,7 +20,7 @@ task_bos_lst_snp_0: @ 08112420
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _081124A8 @ =0x00000181
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x80
@@ -32,7 +32,7 @@ task_bos_lst_snp_0: @ 08112420
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _081124AC @ =0x00000201
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x80

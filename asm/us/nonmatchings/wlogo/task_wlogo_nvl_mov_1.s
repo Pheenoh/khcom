@@ -95,7 +95,7 @@ _080B579A:
 _080B57E6:
 	ldrh r0, [r5, #0x1E]
 	movs r1, #0x05
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	bne _080B5816

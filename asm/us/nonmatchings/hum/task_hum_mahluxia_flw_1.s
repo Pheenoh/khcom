@@ -48,7 +48,7 @@ _08057BBE:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0xB5
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0xCC
@@ -60,7 +60,7 @@ _08057BBE:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08057C0C @ =0x00000101
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x80
@@ -73,7 +73,7 @@ _08057C10:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08057C30 @ =0x00000101
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x80

@@ -27,14 +27,14 @@ func_0805FC04: @ 0805FC04
 	movs r1, #0x64
 	mov r9, r1
 	adds r0, r4, #0x0
-	bl _0811D754
+	bl __udivsi3
 	movs r1, #0x00
 	mov r10, r1
 	strb r0, [r5, #0x01]
 	mov r5, sp
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	mov r1, sp
 	ldrb r2, [r1, #0x01]
 	lsls r1, r2, #0x02

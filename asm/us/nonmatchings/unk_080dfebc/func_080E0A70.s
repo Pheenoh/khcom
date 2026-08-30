@@ -32,7 +32,7 @@ _080E0A8C:
 	lsrs r0, r0, #0x10
 	ldrb r7, [r4, #0x03]
 	adds r1, r7, #0x0
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x18
 	movs r1, #0xE0
 	lsls r1, r1, #0x13

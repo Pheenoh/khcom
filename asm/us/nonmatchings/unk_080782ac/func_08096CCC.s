@@ -11,7 +11,7 @@ _08096CCE:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0A
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
 	ldr r0, _08096D08 @ =0x090359FC
@@ -21,7 +21,7 @@ _08096CCE:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
-	bl func_0811D7CC
+	bl __umodsi3
 	ldrh r1, [r4, #0x00]
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10

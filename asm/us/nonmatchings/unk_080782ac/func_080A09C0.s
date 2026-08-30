@@ -16,7 +16,7 @@ func_080A09C0: @ 080A09C0
 	movs r1, #0xFA
 	lsls r1, r1, #0x02
 	adds r0, r6, #0x0
-	bl _0811D754
+	bl __udivsi3
 	adds r5, r0, #0x0
 	lsls r5, r5, #0x10
 	lsrs r5, r5, #0x10
@@ -24,7 +24,7 @@ func_080A09C0: @ 080A09C0
 	mov r9, r0
 	adds r0, r6, #0x0
 	movs r1, #0x64
-	bl _0811D754
+	bl __udivsi3
 	adds r4, r0, #0x0
 	lsls r0, r5, #0x02
 	adds r0, r0, r5
@@ -34,7 +34,7 @@ func_080A09C0: @ 080A09C0
 	lsrs r4, r4, #0x10
 	adds r0, r6, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	lsls r1, r4, #0x02
 	adds r1, r1, r4
 	lsls r1, r1, #0x01

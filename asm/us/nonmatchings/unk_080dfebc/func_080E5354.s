@@ -19,14 +19,14 @@ func_080E5354: @ 080E5354
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x06
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
 	bl func_080065A4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x08
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r7, r0, #0x10
 	movs r1, #0x00
@@ -125,7 +125,7 @@ _080E543C:
 	lsrs r5, r0, #0x10
 	adds r0, r5, #0x0
 	mov r1, r10
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
 _080E544E:
@@ -139,7 +139,7 @@ _080E5456:
 	lsrs r7, r0, #0x10
 	adds r0, r7, #0x0
 	movs r1, #0x08
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r7, r0, #0x10
 	ldr r1, [sp, #0x008]

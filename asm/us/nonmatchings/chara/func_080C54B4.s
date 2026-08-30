@@ -123,7 +123,7 @@ _080C559E:
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _080C55C4
-	bl _0811D5B0
+	bl _call_via_r0
 _080C55C4:
 	ldr r0, _080C55D8 @ =0x02039B60
 	ldrb r0, [r0, #0x00]

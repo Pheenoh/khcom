@@ -51,7 +51,7 @@ _080E5EF2:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x80
 	strb r0, [r4, #0x0E]
 	b _080E5F48
@@ -69,7 +69,7 @@ _080E5F20:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x83
 	strb r0, [r4, #0x0E]
 	b _080E5F48

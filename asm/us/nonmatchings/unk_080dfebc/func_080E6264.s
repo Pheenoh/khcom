@@ -57,7 +57,7 @@ _080E62A4:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E6308 @ =0x00002710
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	ldr r1, _080E630C @ =0x1F3F0000
 	cmp r0, r1
@@ -97,7 +97,7 @@ _080E632C:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	beq _080E634C

@@ -47,7 +47,7 @@ _08030DD8:
 	adds r3, #0x0C
 	adds r0, r7, #0x0
 	adds r1, r5, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 _08030E00:
 	ldr r0, [r7, #0x08]
 	ldr r1, [r7, #0x20]
@@ -106,7 +106,7 @@ _08030E42:
 	lsrs r0, r0, #0x10
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	negs r4, r4
 	str r4, [r7, #0x20]
@@ -592,7 +592,7 @@ _080311C8:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x06
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x05
 	adds r1, r7, #0x0
 	adds r1, #0x2A

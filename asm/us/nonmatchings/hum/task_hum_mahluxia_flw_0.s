@@ -29,7 +29,7 @@ task_hum_mahluxia_flw_0: @ 08057AF0
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08057B78 @ =0x000002CD
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08057B7C @ =0xFFFFFE9A
@@ -39,7 +39,7 @@ task_hum_mahluxia_flw_0: @ 08057AF0
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08057B80 @ =0x0000021B
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x66

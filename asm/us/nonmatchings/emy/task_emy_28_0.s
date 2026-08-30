@@ -14,7 +14,7 @@ task_emy_28_0: @ 0803AEE8
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803AF20 @ =0x00001001
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803AF24 @ =0xFFFFD000

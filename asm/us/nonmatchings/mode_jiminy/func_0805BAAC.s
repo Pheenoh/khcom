@@ -12,19 +12,19 @@ func_0805BAAC: @ 0805BAAC
 	asrs r4, r4, #0x10
 	adds r0, r4, #0x0
 	movs r1, #0x64
-	bl func_0811D5EC
+	bl __divsi3
 	strb r0, [r5, #0x00]
 	adds r0, r4, #0x0
 	movs r1, #0x64
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	asrs r0, r0, #0x10
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	strb r0, [r5, #0x01]
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl func_0811D684
+	bl __modsi3
 	strb r0, [r5, #0x02]
 	pop {r4, r5}
 	pop {r0}

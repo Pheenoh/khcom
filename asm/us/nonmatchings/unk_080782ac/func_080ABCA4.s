@@ -15,7 +15,7 @@ func_080ABCA4: @ 080ABCA4
 	add r0, sp, #0x008
 	movs r1, #0x00
 	movs r2, #0x18
-	bl _0811F090
+	bl memset
 	add r5, sp, #0x028
 	movs r0, #0x00
 	strb r0, [r5, #0x00]
@@ -23,7 +23,7 @@ func_080ABCA4: @ 080ABCA4
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x06
-	bl _0811F090
+	bl memset
 	movs r7, #0x00
 	ldr r0, _080ABD70 @ =0x02039DD4
 	ldr r0, [r0, #0x00]

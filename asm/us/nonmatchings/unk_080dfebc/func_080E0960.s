@@ -20,7 +20,7 @@ func_080E0960: @ 080E0960
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrb r1, [r4, #0x03]
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x18
 	movs r1, #0xE0
 	lsls r1, r1, #0x13

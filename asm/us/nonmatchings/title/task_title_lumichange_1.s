@@ -13,7 +13,7 @@ task_title_lumichange_1: @ 080D6ED4
 	ldr r1, _080D6F08 @ =0x096FDCE8
 	mov r0, sp
 	movs r2, #0x06
-	bl _0811F030
+	bl memcpy
 	bl func_08001390
 	movs r1, #0xC0
 	lsls r1, r1, #0x02

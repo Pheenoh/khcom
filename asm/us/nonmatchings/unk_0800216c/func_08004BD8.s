@@ -16,14 +16,14 @@ func_08004BD8: @ 08004BD8
 	lsrs r0, r0, #0x18
 	ldrb r1, [r6, #0x08]
 	mov r8, r1
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r0, #0x0
 	lsls r4, r4, #0x18
 	lsrs r4, r4, #0x18
 	lsrs r5, r5, #0x18
 	ldrb r1, [r6, #0x09]
 	adds r0, r5, #0x0
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	mov r1, r8

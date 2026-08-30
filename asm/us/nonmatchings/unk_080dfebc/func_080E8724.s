@@ -22,7 +22,7 @@ func_080E8724: @ 080E8724
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	b _080E8754

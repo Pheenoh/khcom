@@ -14,7 +14,7 @@ func_080AAF20: @ 080AAF20
 	subs r1, #0x04
 	movs r0, #0xA8
 	lsls r0, r0, #0x07
-	bl func_0811D5EC
+	bl __divsi3
 	movs r3, #0xD4
 	lsls r3, r3, #0x03
 	adds r2, r4, r3

@@ -11,7 +11,7 @@ func_080E84DC: @ 080E84DC
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E8518 @ =0x00002710
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	ldr r0, _080E851C @ =0x000005DB

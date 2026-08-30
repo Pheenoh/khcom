@@ -197,7 +197,7 @@ _0810B268:
 	adds r1, #0x82
 	movs r2, #0x00
 	ldsh r1, [r1, r2]
-	bl func_0811D5EC
+	bl __divsi3
 	movs r3, #0xBA
 	lsls r3, r3, #0x02
 	adds r1, r5, r3

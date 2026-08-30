@@ -9,7 +9,7 @@ func_080EA1F4: @ 080EA1F4
 	bl func_080EA1E8
 	ldr r0, _080EA208 @ =0x02034FD4
 	ldr r0, [r0, #0x00]
-	bl _0811D5B0
+	bl _call_via_r0
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

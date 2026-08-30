@@ -21,7 +21,7 @@ task_bos_dsd_rock_0: @ 080C4420
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0E
 	adds r0, #0x04
@@ -42,7 +42,7 @@ task_bos_dsd_rock_0: @ 080C4420
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080C44A8 @ =0x00000301
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r2, #0xE0
@@ -52,7 +52,7 @@ task_bos_dsd_rock_0: @ 080C4420
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x3A
 	lsls r0, r0, #0x18
 	lsrs r4, r0, #0x18
@@ -73,7 +73,7 @@ _080C44B4:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080C44F0 @ =0x00000201
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x80
@@ -83,7 +83,7 @@ _080C44B4:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x3A
 	negs r0, r0
 	lsls r0, r0, #0x18
@@ -105,7 +105,7 @@ _080C44F8:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080C4540 @ =0x00000301
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0xE0
@@ -115,7 +115,7 @@ _080C44F8:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x3A
 	negs r0, r0
 	lsls r0, r0, #0x18
@@ -137,7 +137,7 @@ _080C4548:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080C45CC @ =0x00000201
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x80
@@ -147,7 +147,7 @@ _080C4548:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x3A
 	lsls r0, r0, #0x18
 	lsrs r4, r0, #0x18
@@ -169,7 +169,7 @@ _080C4582:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x65
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x08
 	str r0, [r6, #0x0C]

@@ -61,7 +61,7 @@ _08044650:
 	adds r2, #0x0C
 	mov r3, r8
 	adds r3, #0x10
-	bl _0811D5C0
+	bl _call_via_r4
 	mov r1, r8
 	ldr r0, [r1, #0x0C]
 	ldr r1, [r1, #0x10]

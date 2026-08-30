@@ -146,7 +146,7 @@ _0800B0D4:
 	movs r0, #0x00
 	ldsb r0, [r4, r0]
 	movs r1, #0x09
-	bl func_0811D5EC
+	bl __divsi3
 	strb r0, [r4, #0x01]
 	bl func_0800139C
 	movs r1, #0x20
@@ -331,7 +331,7 @@ _0800B270:
 	movs r0, #0x00
 	ldsb r0, [r4, r0]
 	movs r1, #0x09
-	bl func_0811D684
+	bl __modsi3
 	adds r1, r0, #0x0
 	lsls r1, r1, #0x18
 	asrs r1, r1, #0x14

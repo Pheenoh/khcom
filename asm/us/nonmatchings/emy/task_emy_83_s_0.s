@@ -33,7 +33,7 @@ task_emy_83_s_0: @ 0803EB20
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EB78 @ =0x000004CE
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EB7C @ =0x00000133
@@ -50,7 +50,7 @@ _0803EB80:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EBBC @ =0x000004CE
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EBC0 @ =0x00000133
@@ -61,7 +61,7 @@ _0803EB96:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EBC4 @ =0x00000201
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EBC8 @ =0xFFFFFF00

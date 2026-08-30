@@ -23,7 +23,7 @@ func_080ABA80: @ 080ABA80
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x06
-	bl _0811F090
+	bl memset
 	movs r7, #0x00
 	ldr r0, _080ABB4C @ =0x02039DD4
 	ldr r0, [r0, #0x00]

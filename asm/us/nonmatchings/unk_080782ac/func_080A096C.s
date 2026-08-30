@@ -16,13 +16,13 @@ func_080A096C: @ 080A096C
 	mov r8, r0
 	adds r0, r5, #0x0
 	movs r1, #0x64
-	bl _0811D754
+	bl __udivsi3
 	adds r4, r0, #0x0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	lsls r1, r4, #0x02
 	adds r1, r1, r4
 	lsls r1, r1, #0x01

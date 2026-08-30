@@ -39,11 +39,11 @@ _08104B82:
 	asrs r4, r4, #0x10
 	adds r0, r4, #0x0
 	movs r1, #0x05
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r5, #0x00]
 	adds r0, r4, #0x0
 	movs r1, #0x05
-	bl func_0811D684
+	bl __modsi3
 	strh r0, [r6, #0x00]
 	b _08104BAE
 _08104B9C: .4byte 0x02035E0C

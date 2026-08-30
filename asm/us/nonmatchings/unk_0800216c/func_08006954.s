@@ -110,13 +110,13 @@ _08006A1C:
 	ldrh r6, [r1, #0x00]
 	adds r0, r5, #0x0
 	adds r1, r6, #0x0
-	bl _0811D754
+	bl __udivsi3
 	adds r4, r0, #0x0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	adds r0, r5, #0x0
 	adds r1, r6, #0x0
-	bl func_0811D7CC
+	bl __umodsi3
 	ldr r1, _08006AB8 @ =0x0203404C
 	mov r8, r1
 	ldrh r2, [r1, #0x00]

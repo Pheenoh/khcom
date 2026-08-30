@@ -60,7 +60,7 @@ _08003E66:
 	asrs r0, r0, #0x08
 	lsls r0, r0, #0x08
 	mov r1, r9
-	bl func_0811D5EC
+	bl __divsi3
 	lsls r5, r4, #0x01
 	adds r4, r5, r4
 	adds r0, r0, r4
@@ -73,7 +73,7 @@ _08003E66:
 	subs r0, r0, r6
 	lsls r0, r0, #0x08
 	mov r1, r9
-	bl func_0811D5EC
+	bl __divsi3
 	add r5, r10
 	mov r1, r9
 	muls r1, r5

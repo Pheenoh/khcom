@@ -52,7 +52,7 @@ _080271A0:
 	ldr r0, _080271F0 @ =0x03007480
 	ldr r0, [r0, #0x00]
 	movs r1, #0x78
-	bl func_0811D7CC
+	bl __umodsi3
 	cmp r0, #0x3B
 	bhi _080271B0
 	b _080273A6

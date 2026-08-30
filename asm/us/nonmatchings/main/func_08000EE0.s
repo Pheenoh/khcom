@@ -14,7 +14,7 @@ _08000EE8:
 	cmp r1, #0x00
 	beq _08000EF6
 	ldr r0, [r4, #0x04]
-	bl _0811D5B4
+	bl _call_via_r1
 _08000EF6:
 	adds r0, r4, #0x0
 	adds r0, #0x0C

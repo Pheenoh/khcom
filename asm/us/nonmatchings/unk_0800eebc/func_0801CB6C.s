@@ -24,7 +24,7 @@ _0801CB7C:
 	movs r0, #0x80
 	lsls r0, r0, #0x0E
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	muls r0, r5
 	asrs r0, r0, #0x10
 	b _0801CC48
@@ -32,7 +32,7 @@ _0801CB9A:
 	movs r0, #0x80
 	lsls r0, r0, #0x0E
 	adds r1, r5, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r1, r0, #0x0
 	muls r1, r4
 	asrs r1, r1, #0x10
@@ -47,7 +47,7 @@ _0801CBB0:
 	movs r0, #0x80
 	lsls r0, r0, #0x0E
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r1, r0, #0x0
 	muls r1, r5
 	asrs r1, r1, #0x10
@@ -58,7 +58,7 @@ _0801CBCE:
 	movs r0, #0x80
 	lsls r0, r0, #0x0E
 	adds r1, r5, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	muls r0, r4
 	asrs r0, r0, #0x10
 	adds r0, #0x3F
@@ -74,7 +74,7 @@ _0801CBE0:
 	movs r0, #0x80
 	lsls r0, r0, #0x0E
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	muls r0, r5
 	asrs r0, r0, #0x10
 	subs r0, #0x80
@@ -83,7 +83,7 @@ _0801CC00:
 	movs r0, #0x80
 	lsls r0, r0, #0x0E
 	adds r1, r5, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r1, r0, #0x0
 	muls r1, r4
 	asrs r1, r1, #0x10
@@ -102,7 +102,7 @@ _0801CC1A:
 	movs r0, #0x80
 	lsls r0, r0, #0x0E
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	muls r0, r5
 	asrs r0, r0, #0x10
 	mvns r0, r0
@@ -111,7 +111,7 @@ _0801CC38:
 	movs r0, #0x80
 	lsls r0, r0, #0x0E
 	adds r1, r5, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	muls r0, r4
 	asrs r0, r0, #0x10
 	subs r0, #0x41

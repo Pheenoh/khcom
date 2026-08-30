@@ -14,7 +14,7 @@ func_080D44A0: @ 080D44A0
 	ldr r1, _080D44D0 @ =0x096FDC50
 	mov r0, sp
 	movs r2, #0x20
-	bl _0811F030
+	bl memcpy
 	lsls r5, r5, #0x01
 	subs r4, #0x01
 	lsls r4, r4, #0x03

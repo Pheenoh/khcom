@@ -17,7 +17,7 @@ func_080DF5F4: @ 080DF5F4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, r0, r4
@@ -30,7 +30,7 @@ _080DF624:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x15
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x01
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18

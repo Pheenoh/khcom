@@ -12,7 +12,7 @@ func_080A0944: @ 080A0944
 	lsrs r4, r4, #0x10
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	lsls r1, r0, #0x02

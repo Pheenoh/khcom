@@ -20,22 +20,22 @@ _08115328:
 	movs r1, #0xE1
 	lsls r1, r1, #0x04
 	adds r0, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r5, r0, #0x0
 	lsls r5, r5, #0x10
 	lsrs r5, r5, #0x10
 	adds r0, r4, #0x0
 	movs r1, #0x3C
-	bl func_0811D5EC
+	bl __divsi3
 	movs r1, #0x3C
-	bl func_0811D684
+	bl __modsi3
 	mov r8, r0
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	mov r8, r0
 	adds r0, r4, #0x0
 	movs r1, #0x3C
-	bl func_0811D684
+	bl __modsi3
 	mov r9, r0
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
@@ -44,11 +44,11 @@ _08115328:
 	ldr r6, _08115480 @ =0x09EFBAE8
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0A
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0E
 	adds r0, r0, r6
@@ -64,7 +64,7 @@ _08115328:
 	bl func_080023E0
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0E
 	adds r0, r0, r6
@@ -90,7 +90,7 @@ _08115328:
 	bl func_080023E0
 	mov r0, r8
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0E
 	adds r0, r0, r6
@@ -106,7 +106,7 @@ _08115328:
 	bl func_080023E0
 	mov r0, r8
 	movs r1, #0x0A
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0E
 	adds r0, r0, r6
@@ -132,7 +132,7 @@ _08115328:
 	bl func_080023E0
 	mov r0, r9
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0E
 	adds r0, r0, r6
@@ -148,7 +148,7 @@ _08115328:
 	bl func_080023E0
 	mov r0, r9
 	movs r1, #0x0A
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0E
 	adds r0, r0, r6

@@ -21,7 +21,7 @@ func_080A9E40: @ 080A9E40
 	mov r5, sp
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	strb r0, [r5, #0x00]
 	mov r2, sp
 	lsls r0, r0, #0x10

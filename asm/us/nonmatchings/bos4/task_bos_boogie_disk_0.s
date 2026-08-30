@@ -66,7 +66,7 @@ _080DACCA:
 	ldsh r6, [r4, r1]
 	adds r0, r6, #0x0
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	movs r2, #0x2C
 	ldsh r1, [r4, r2]
 	lsls r0, r0, #0x10
@@ -91,7 +91,7 @@ _080DAD0C:
 	ldsh r4, [r4, r1]
 	lsls r0, r6, #0x01
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	cmp r4, r0
 	bge _080DAD2E
 	movs r2, #0xAA

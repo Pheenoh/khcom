@@ -17,12 +17,12 @@ func_0805F5A4: @ 0805F5A4
 	ldr r0, [r5, #0x00]
 	lsls r0, r0, #0x08
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r5, #0x00]
 	ldr r0, [r6, #0x00]
 	lsls r0, r0, #0x08
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r6, #0x00]
 _0805F5D0:
 	adds r0, r4, #0x0

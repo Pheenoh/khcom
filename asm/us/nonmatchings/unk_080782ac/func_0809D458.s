@@ -27,12 +27,12 @@ func_0809D458: @ 0809D458
 _0809D47E:
 	adds r0, r7, #0x0
 	ldr r1, _0809D658 @ =0x00989680
-	bl func_0811D5EC
+	bl __divsi3
 	mov r8, r0
 	str r0, [sp, #0x000]
 	ldr r1, _0809D65C @ =0x000F4240
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	mov r10, r0
 	mov r1, r8
 	lsls r0, r1, #0x02
@@ -44,7 +44,7 @@ _0809D47E:
 	str r2, [sp, #0x004]
 	adds r0, r7, #0x0
 	ldr r1, _0809D660 @ =0x000186A0
-	bl func_0811D5EC
+	bl __divsi3
 	mov r9, r0
 	movs r3, #0x64
 	mov r0, r8
@@ -60,7 +60,7 @@ _0809D47E:
 	str r4, [sp, #0x008]
 	adds r0, r7, #0x0
 	ldr r1, _0809D664 @ =0x00002710
-	bl func_0811D5EC
+	bl __divsi3
 	adds r6, r0, #0x0
 	mov r1, r8
 	lsls r0, r1, #0x05
@@ -82,7 +82,7 @@ _0809D47E:
 	movs r1, #0xFA
 	lsls r1, r1, #0x02
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r4, r0, #0x0
 	ldr r3, _0809D664 @ =0x00002710
 	mov r0, r8
@@ -106,7 +106,7 @@ _0809D47E:
 	str r4, [sp, #0x010]
 	adds r0, r7, #0x0
 	movs r1, #0x64
-	bl func_0811D5EC
+	bl __divsi3
 	adds r5, r0, #0x0
 	ldr r1, _0809D660 @ =0x000186A0
 	mov r0, r8
@@ -134,7 +134,7 @@ _0809D47E:
 	str r5, [sp, #0x014]
 	adds r0, r7, #0x0
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	ldr r2, [sp, #0x038]
 	lsls r1, r2, #0x06
 	subs r1, r1, r2
@@ -263,12 +263,12 @@ _0809D664: .4byte 0x00002710
 _0809D668:
 	ldr r1, _0809D85C @ =0xFF676980
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	mov r10, r0
 	str r0, [sp, #0x000]
 	ldr r1, _0809D860 @ =0xFFF0BDC0
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	mov r9, r0
 	mov r1, r10
 	lsls r0, r1, #0x02
@@ -280,7 +280,7 @@ _0809D668:
 	str r2, [sp, #0x004]
 	ldr r1, _0809D864 @ =0xFFFE7960
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	mov r8, r0
 	movs r3, #0x64
 	mov r0, r10
@@ -296,7 +296,7 @@ _0809D668:
 	str r4, [sp, #0x008]
 	ldr r1, _0809D868 @ =0xFFFFD8F0
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r6, r0, #0x0
 	mov r1, r10
 	lsls r0, r1, #0x05
@@ -317,7 +317,7 @@ _0809D668:
 	str r6, [sp, #0x00C]
 	ldr r1, _0809D86C @ =0xFFFFFC18
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r4, r0, #0x0
 	ldr r3, _0809D870 @ =0x00002710
 	mov r0, r10
@@ -342,7 +342,7 @@ _0809D668:
 	movs r1, #0x64
 	negs r1, r1
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r5, r0, #0x0
 	ldr r1, _0809D874 @ =0x000186A0
 	mov r0, r10
@@ -370,7 +370,7 @@ _0809D668:
 	str r5, [sp, #0x014]
 	subs r1, #0x6E
 	adds r0, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	ldr r2, [sp, #0x040]
 	lsls r1, r2, #0x06
 	subs r1, r1, r2

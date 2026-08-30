@@ -30,13 +30,13 @@ task_btl_prize_0: @ 08030B84
 	adds r3, r4, #0x0
 	adds r3, #0x0C
 	adds r0, r4, #0x0
-	bl _0811D5C4
+	bl _call_via_r5
 _08030BBA:
 	bl func_080065A4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08030C24 @ =0x00000381
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r2, #0xC0
@@ -152,7 +152,7 @@ _08030D56:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x4E
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x33
@@ -167,7 +167,7 @@ _08030D84:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x4E
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x33

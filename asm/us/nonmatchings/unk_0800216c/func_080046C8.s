@@ -42,7 +42,7 @@ func_080046C8: @ 080046C8
 	adds r4, r7, #0x0
 _0800470E:
 	ldm r5!, {r0}
-	bl _0811D5B0
+	bl _call_via_r0
 	subs r4, #0x01
 	cmp r4, #0x00
 	bne _0800470E

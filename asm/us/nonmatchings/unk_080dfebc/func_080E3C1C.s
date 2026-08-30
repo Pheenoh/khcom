@@ -33,7 +33,7 @@ func_080E3C1C: @ 080E3C1C
 	lsls r4, r2, #0x10
 	asrs r4, r4, #0x10
 	subs r1, r4, r5
-	bl func_0811D684
+	bl __modsi3
 	adds r6, r5, r0
 	movs r7, #0x00
 	subs r4, r4, r5

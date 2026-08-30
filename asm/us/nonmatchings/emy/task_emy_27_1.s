@@ -154,7 +154,7 @@ _0803AD94:
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
 	movs r1, #0x06
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	bne _0803ADDC

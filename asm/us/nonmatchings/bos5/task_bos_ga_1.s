@@ -21,7 +21,7 @@ task_bos_ga_1: @ 080FB718
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x07
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x01
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
@@ -89,7 +89,7 @@ _080FB82E:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	bne _080FB864

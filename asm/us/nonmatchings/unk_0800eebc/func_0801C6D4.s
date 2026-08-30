@@ -20,7 +20,7 @@ func_0801C6D4: @ 0801C6D4
 _0801C6EC: .4byte 0x02039B84
 _0801C6F0:
 	adds r0, r5, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 _0801C6FA:

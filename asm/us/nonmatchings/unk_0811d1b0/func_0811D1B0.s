@@ -18,7 +18,7 @@ func_0811D1B0: @ 0811D1B0
 	cmp r4, #0x00
 	blt _0811D1D4
 	adds r0, r4, #0x0
-	bl _0811E0A8
+	bl __floatsisf
 	b _0811D1E6
 _0811D1D0: .4byte 0x0203C7F0
 _0811D1D4:
@@ -26,16 +26,16 @@ _0811D1D4:
 	ands r0, r4
 	lsrs r1, r4, #0x01
 	orrs r0, r1
-	bl _0811E0A8
+	bl __floatsisf
 	adds r1, r0, #0x0
-	bl _0811DB3C
+	bl __addsf3
 _0811D1E6:
 	adds r1, r0, #0x0
 	ldr r0, _0811D20C @ =0x4B800570
-	bl _0811DD00
+	bl __divsf3
 	ldr r1, _0811D210 @ =0x3F000000
-	bl _0811DB3C
-	bl _0811E108
+	bl __addsf3
+	bl __fixsfsi
 	movs r1, #0x80
 	lsls r1, r1, #0x09
 	subs r1, r1, r0
@@ -43,7 +43,7 @@ _0811D1E6:
 	cmp r4, #0x00
 	blt _0811D214
 	adds r0, r4, #0x0
-	bl _0811E0A8
+	bl __floatsisf
 	b _0811D228
 _0811D20C: .4byte 0x4B800570
 _0811D210: .4byte 0x3F000000
@@ -52,18 +52,18 @@ _0811D214:
 	ands r0, r4
 	lsrs r1, r4, #0x01
 	orrs r0, r1
-	bl _0811E0A8
+	bl __floatsisf
 	adds r2, r0, #0x0
 	adds r1, r2, #0x0
-	bl _0811DB3C
+	bl __addsf3
 _0811D228:
 	adds r2, r0, #0x0
 	ldr r1, _0811D2D4 @ =0x426EE873
 	adds r0, r2, #0x0
-	bl _0811DD00
+	bl __divsf3
 	ldr r1, _0811D2D8 @ =0x3F000000
-	bl _0811DB3C
-	bl _0811E108
+	bl __addsf3
+	bl __fixsfsi
 	str r0, [r5, #0x30]
 	ldr r2, _0811D2DC @ =0x0203C7F0
 	ldr r1, [r2, #0x30]
@@ -91,14 +91,14 @@ _0811D262:
 	ands r0, r1
 	ldr r1, [r5, #0x4C]
 	str r3, [sp, #0x000]
-	bl _0811D5B4
+	bl _call_via_r1
 	ldr r3, [sp, #0x000]
 	lsls r4, r3, #0x02
 	str r0, [r6, #0x00]
 	ldr r2, [r5, #0x34]
 	movs r1, #0x00
 	str r3, [sp, #0x000]
-	bl _0811F090
+	bl memset
 	adds r0, r5, #0x0
 	adds r0, #0x08
 	adds r0, r4, r0

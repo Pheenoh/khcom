@@ -16,7 +16,7 @@ func_080E92F8: @ 080E92F8
 	adds r1, r4, #0x4
 	movs r2, #0x87
 	lsls r2, r2, #0x02
-	bl _0811F030
+	bl memcpy
 	movs r0, #0x88
 	lsls r0, r0, #0x02
 	adds r4, r4, r0

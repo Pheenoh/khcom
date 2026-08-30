@@ -29,7 +29,7 @@ task_emy_83_s_1: @ 0803EBCC
 	movs r1, #0x22
 	ldsh r0, [r4, r1]
 	movs r1, #0x03
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	asrs r0, r0, #0x10
 	ldrh r1, [r4, #0x20]

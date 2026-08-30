@@ -13,7 +13,7 @@ func_0804FD7C: @ 0804FD7C
 	ldr r0, _0804FE18 @ =0x03007480
 	ldr r0, [r0, #0x00]
 	movs r1, #0x05
-	bl func_0811D7CC
+	bl __umodsi3
 	cmp r0, #0x00
 	bne _0804FE0E
 	ldr r0, [r4, #0x04]
@@ -32,7 +32,7 @@ func_0804FD7C: @ 0804FD7C
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x41
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x08
 	ldr r1, _0804FE1C @ =0xFFFFE000
@@ -44,7 +44,7 @@ func_0804FD7C: @ 0804FD7C
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x21
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x08
 	ldr r2, _0804FE20 @ =0xFFFFF000
@@ -56,7 +56,7 @@ func_0804FD7C: @ 0804FD7C
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x29
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x08
 	ldr r1, _0804FE20 @ =0xFFFFF000

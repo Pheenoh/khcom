@@ -27,11 +27,11 @@ func_08101588: @ 08101588
 _081015AE:
 	mov r0, r8
 	movs r1, #0x0A
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r4, r0, #0x0
 	mov r0, r8
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	mov r8, r0
 	adds r0, r4, #0x0
 	muls r0, r5

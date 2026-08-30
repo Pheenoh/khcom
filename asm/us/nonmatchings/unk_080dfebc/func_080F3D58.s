@@ -18,7 +18,7 @@ func_080F3D58: @ 080F3D58
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080F3D94 @ =0x00002710
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	ldr r0, _080F3D98 @ =0x0000176F
@@ -45,7 +45,7 @@ _080F3DA8:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080F3DCC @ =0x00002710
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	ldr r0, _080F3DD0 @ =0x00000BB7

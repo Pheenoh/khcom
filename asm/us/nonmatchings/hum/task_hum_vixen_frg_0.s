@@ -69,7 +69,7 @@ _08055E74:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08055F30 @ =0x00000401
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08055F34 @ =0xFFFFFB00
@@ -84,7 +84,7 @@ _08055E74:
 	lsrs r0, r0, #0x10
 	movs r1, #0xE0
 	lsls r1, r1, #0x02
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	lsls r1, r4, #0x01

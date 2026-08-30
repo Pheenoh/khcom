@@ -46,7 +46,7 @@ _080A3290:
 	adds r1, r6, r2
 	adds r0, r5, #0x0
 	movs r2, #0xE0
-	bl _0811F030
+	bl memcpy
 	adds r5, #0xE0
 	adds r6, #0xE0
 	subs r4, #0x01

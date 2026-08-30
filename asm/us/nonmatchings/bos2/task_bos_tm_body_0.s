@@ -257,7 +257,7 @@ _080B97F8:
 	movs r2, #0x88
 	lsls r2, r2, #0x01
 	adds r1, r4, #0x0
-	bl _0811F030
+	bl memcpy
 _080B9886:
 	pop {r4, r5, r6}
 	pop {r0}

@@ -38,7 +38,7 @@ func_08019270: @ 08019270
 	ldr r1, _080192DC @ =0x02039BB0
 	adds r1, #0xF8
 	movs r2, #0x88
-	bl _0811F030
+	bl memcpy
 	ldr r0, [r4, #0x00]
 	adds r0, #0x80
 	bl func_08000BA4

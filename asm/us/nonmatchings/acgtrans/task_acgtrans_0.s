@@ -16,7 +16,7 @@ task_acgtrans_0: @ 0801D130
 	strh r0, [r4, #0x08]
 	ldrh r0, [r4, #0x08]
 	ldrh r1, [r5, #0x0A]
-	bl _0811D754
+	bl __udivsi3
 	strh r0, [r4, #0x0A]
 	lsls r0, r0, #0x10
 	cmp r0, #0x00

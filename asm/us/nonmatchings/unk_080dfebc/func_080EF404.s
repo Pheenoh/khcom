@@ -18,11 +18,11 @@ func_080EF404: @ 080EF404
 	beq _080EF42E
 	adds r0, r7, #0x0
 	movs r1, #0x05
-	bl func_0811D5EC
+	bl __divsi3
 	adds r7, r0, #0x0
 	adds r0, r6, #0x0
 	movs r1, #0x05
-	bl func_0811D5EC
+	bl __divsi3
 	adds r6, r0, #0x0
 _080EF42E:
 	ldr r2, _080EF474 @ =0x08121400

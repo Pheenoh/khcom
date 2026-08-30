@@ -11,6 +11,9 @@ import ninja_syntax
 
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 
+ARCHIVE_BSS = {"us": 0x020387B8}
+BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
+
 DEFAULT_VERSION = "us"
 VERSIONS = {
     "us": ("B8CE", "10729bd884f8fdca7a310b6d606c52e46657aa48"),
@@ -49,6 +52,7 @@ if not Path(baserom).exists():
 
 units_file = Path(f"config/{version}/units.txt")
 units = []
+archives = []
 for line in units_file.read_text().splitlines():
     line = line.strip()
     if not line or line.startswith("#"):
@@ -56,6 +60,13 @@ for line in units_file.read_text().splitlines():
     parts = line.split(None, 1)
     name = parts[0]
     flags = parts[1] if len(parts) > 1 else None
+    if name.startswith("@"):
+        arch, member = name[1:].split(":")
+        path = f"tools/agbcc/lib/{arch}"
+        if path not in archives:
+            archives.append(path)
+        units.append((None, f"{path}:{member}", None))
+        continue
     if name.endswith(".c"):
         src = Path("src") / name
         obj = f"{build_dir}/src/{src.stem}.o"
@@ -67,12 +78,19 @@ for line in units_file.read_text().splitlines():
     units.append((src, obj, flags))
 
 objs_in_order = [obj for _, obj, _flags in units]
+bss_members = [obj for src, obj, _f in units if src is None and BSS_MEMBERS.get(obj.split(":")[-1])]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\nSECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
     for obj in objs_in_order:
         f.write(f"        {obj}(.text);\n")
-    f.write("    }\n\n    /DISCARD/ : { *(*); }\n}\n")
+    f.write("    }\n")
+    if bss_members:
+        f.write(f"\n    .bss {ARCHIVE_BSS[version]:#x} (NOLOAD) :\n    {{\n")
+        for obj in bss_members:
+            f.write(f"        {obj}(.bss);\n")
+        f.write("    }\n")
+    f.write("\n    /DISCARD/ : { *(*); }\n}\n")
 
 out = Path("build.ninja")
 with out.open("w") as f:
@@ -104,12 +122,12 @@ with out.open("w") as f:
     )
     n.rule(
         "ld",
-        command="$ld -T $ldscript -Map $map -o $out $in",
+        command="$ld -T $ldscript -Map $map -o $out $in $archives",
         description="LD $out",
     )
     n.rule(
         "rom",
-        command="$objcopy -O binary $in $out",
+        command="$objcopy -O binary --only-section=.text $in $out",
         description="ROM $out",
     )
     n.rule(
@@ -122,6 +140,8 @@ with out.open("w") as f:
     headers = sorted(str(p) for p in Path("include").glob("*.h"))
     objs = []
     for src, obj, flags in units:
+        if src is None:
+            continue
         rule = "cc" if src.suffix == ".c" else "as"
         variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
         deps = [baserom]
@@ -137,8 +157,12 @@ with out.open("w") as f:
         elf,
         "ld",
         objs,
-        implicit=[ldscript],
-        variables={"ldscript": ldscript, "map": mapfile},
+        implicit=[ldscript] + archives,
+        variables={
+            "ldscript": ldscript,
+            "map": mapfile,
+            "archives": " ".join(archives),
+        },
     )
     n.build(rom, "rom", elf)
     n.build(f"{build_dir}/ok", "check", rom)

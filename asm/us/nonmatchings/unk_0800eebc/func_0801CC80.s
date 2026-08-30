@@ -9,7 +9,7 @@ func_0801CC80: @ 0801CC80
 	ldr r0, _0801CCA8 @ =0x03007480
 	ldr r0, [r0, #0x00]
 	movs r1, #0x3C
-	bl func_0811D7CC
+	bl __umodsi3
 	cmp r0, #0x00
 	bne _0801CCA4
 	ldr r0, _0801CCAC @ =0x02039BB0

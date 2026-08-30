@@ -24,7 +24,7 @@ func_080E2F98: @ 080E2F98
 	asrs r5, r1, #0x10
 	subs r0, r5, r0
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	adds r1, r0, #0x0
 	cmp r4, r1
 	bge _080E2FCC
@@ -49,7 +49,7 @@ _080E2FDA:
 	asrs r5, r1, #0x10
 	subs r0, r5, r0
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	adds r1, r0, #0x0
 	cmp r4, r1
 	bge _080E2FFA

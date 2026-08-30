@@ -26,14 +26,14 @@ func_080E524C: @ 080E524C
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrh r1, [r1, #0x00]
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
 	bl func_080065A4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	mov r1, r9
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r6, r0, #0x10
 	movs r0, #0x00
@@ -88,7 +88,7 @@ _080E52F0:
 	ldrh r4, [r0, #0x00]
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
 	adds r7, #0x01
@@ -100,7 +100,7 @@ _080E530C:
 	lsrs r6, r0, #0x10
 	adds r0, r6, #0x0
 	mov r1, r9
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r6, r0, #0x10
 	movs r0, #0x01

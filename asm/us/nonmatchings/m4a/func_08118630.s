@@ -10,11 +10,11 @@ func_08118630: @ 08118630
 	mov r7, sp
 	str r0, [r7, #0x00]
 	ldr r0, [r7, #0x00]
-	bl _0811E0A8
+	bl __floatsisf
 	adds r1, r0, #0x0
 	adds r0, r1, #0x0
 	ldr r1, _08118650 @ =0x389A000B
-	bl _0811DB9C
+	bl __mulsf3
 	adds r1, r0, #0x0
 	adds r0, r1, #0x0
 	b _08118654

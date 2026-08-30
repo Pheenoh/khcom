@@ -19,14 +19,14 @@ func_08118ADC: @ 08118ADC
 	ldr r1, [r7, #0x0C]
 	ldr r2, [r0, #0x00]
 	adds r0, r1, #0x0
-	bl _0811D5B8
+	bl _call_via_r2
 	ldr r1, [r7, #0x00]
 	str r0, [r1, #0x08]
 	ldr r1, [r7, #0x00]
 	ldr r0, [r1, #0x08]
 	ldr r1, _08118B20 @ =0x0811CE44
 	ldr r2, [r7, #0x0C]
-	bl _0811F030
+	bl memcpy
 	ldr r0, [r7, #0x08]
 	cmp r0, #0x01
 	beq _08118B48

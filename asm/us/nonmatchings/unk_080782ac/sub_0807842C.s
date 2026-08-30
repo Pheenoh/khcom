@@ -25,14 +25,14 @@ _0807844A:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r6, #0x0
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x18
 	lsrs r5, r0, #0x18
 	bl func_080065A4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r6, #0x0
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x18
 	lsrs r4, r0, #0x18
 	cmp r5, r4

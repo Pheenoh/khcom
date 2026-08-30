@@ -23,7 +23,7 @@ func_0801B818: @ 0801B818
 	lsrs r2, r1, #0x10
 	mov r9, r2
 	asrs r1, r1, #0x10
-	bl func_0811D5EC
+	bl __divsi3
 	strh r4, [r5, #0x12]
 	movs r4, #0x00
 	lsls r0, r0, #0x10
@@ -65,7 +65,7 @@ _0801B888:
 	mov r2, r9
 	lsls r1, r2, #0x10
 	asrs r1, r1, #0x10
-	bl func_0811D684
+	bl __modsi3
 	strh r0, [r6, #0x00]
 	movs r0, #0x00
 _0801B89A:

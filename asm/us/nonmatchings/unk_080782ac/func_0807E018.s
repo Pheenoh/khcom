@@ -26,7 +26,7 @@ func_0807E018: @ 0807E018
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0A
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r1, r4, #0x0
 	adds r1, #0xA5
 	b _0807E14E

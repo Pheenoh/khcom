@@ -20,7 +20,7 @@ func_080E83DC: @ 080E83DC
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E8418 @ =0x00002710
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	ldr r0, _080E841C @ =0x000009C3
@@ -61,7 +61,7 @@ _080E844A:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E846C @ =0x00002710
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	ldr r0, _080E8470 @ =0x000007CF

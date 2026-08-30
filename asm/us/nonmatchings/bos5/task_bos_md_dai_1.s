@@ -172,7 +172,7 @@ _080FD5E4:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x03
 	movs r6, #0x00
 	lsls r0, r0, #0x10

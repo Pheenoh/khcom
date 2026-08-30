@@ -20,7 +20,7 @@ func_080E2E9C: @ 080E2E9C
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	beq _080E2ECA
@@ -31,7 +31,7 @@ _080E2ECA:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	movs r1, #0x03
 	b _080E2F08
@@ -40,7 +40,7 @@ _080E2EDE:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	beq _080E2EF6
@@ -51,7 +51,7 @@ _080E2EF6:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	movs r1, #0x05
 _080E2F08:

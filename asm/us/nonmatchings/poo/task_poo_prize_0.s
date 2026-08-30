@@ -22,7 +22,7 @@ task_poo_prize_0: @ 080D1C40
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080D1CD4 @ =0x00000301
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x80
@@ -35,7 +35,7 @@ task_poo_prize_0: @ 080D1C40
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x9B
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x99

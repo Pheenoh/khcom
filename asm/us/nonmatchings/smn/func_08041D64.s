@@ -47,7 +47,7 @@ func_08041D64: @ 08041D64
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x21
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, r0, r4
 	strb r0, [r5, #0x00]
 	ldr r0, [r6, #0x00]

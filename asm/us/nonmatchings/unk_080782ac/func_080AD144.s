@@ -20,7 +20,7 @@ func_080AD144: @ 080AD144
 	add r0, sp, #0x004
 	movs r1, #0x00
 	movs r2, #0x0C
-	bl _0811F090
+	bl memset
 	movs r0, #0x00
 	mov r9, r0
 	movs r2, #0x00

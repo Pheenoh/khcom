@@ -67,7 +67,7 @@ _080C5BC6:
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _080C5C18
-	bl _0811D5B0
+	bl _call_via_r0
 	b _080C5C18
 _080C5BD8: .4byte 0x0203BEAC
 _080C5BDC:
@@ -97,7 +97,7 @@ _080C5C08:
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _080C5C18
-	bl _0811D5B0
+	bl _call_via_r0
 _080C5C18:
 	movs r0, #0x00
 _080C5C1A:

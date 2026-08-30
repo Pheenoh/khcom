@@ -42,7 +42,7 @@ task_bos_boogie_dice_0: @ 080D9B90
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, #0x61
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x4C
@@ -51,7 +51,7 @@ task_bos_boogie_dice_0: @ 080D9B90
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x78
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x44
 	movs r2, #0xAC
 	lsls r2, r2, #0x01

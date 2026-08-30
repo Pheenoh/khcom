@@ -43,7 +43,7 @@ _080609F0:
 	ldrh r4, [r0, #0x10]
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	muls r0, r5

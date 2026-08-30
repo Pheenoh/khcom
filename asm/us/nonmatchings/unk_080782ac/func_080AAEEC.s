@@ -11,14 +11,14 @@ func_080AAEEC: @ 080AAEEC
 	asrs r4, r4, #0x10
 	adds r0, r4, #0x0
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	adds r6, r0, #0x0
 	ldr r0, _080AAF1C @ =0x000006EE
 	adds r5, r5, r0
 	strh r6, [r5, #0x00]
 	adds r0, r4, #0x0
 	movs r1, #0x03
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	beq _080AAF16

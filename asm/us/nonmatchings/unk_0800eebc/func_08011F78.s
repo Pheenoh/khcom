@@ -186,20 +186,20 @@ _080120CE:
 	beq _08012108
 	adds r0, r6, #0x0
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r6, r0, #0x0
 	adds r0, r7, #0x0
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r7, r0, #0x0
 	mov r0, r8
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	mov r8, r0
 	adds r0, r6, #0x0
 	adds r1, r7, #0x0
 	mov r2, r8
-	bl _0811D5C4
+	bl _call_via_r5
 _08012108:
 	movs r0, #0x01
 	b _0801215E
@@ -239,7 +239,7 @@ _08012110:
 	ldr r0, [r4, #0x04]
 	ldr r1, [r4, #0x08]
 	ldr r2, [r4, #0x0C]
-	bl _0811D5BC
+	bl _call_via_r3
 _08012158:
 	adds r0, r5, #0x0
 	b _0801215E

@@ -11,7 +11,7 @@ func_080C7F94: @ 080C7F94
 	ldr r1, _080C7FD8 @ =0x096FC01C
 	mov r0, sp
 	movs r2, #0x40
-	bl _0811F030
+	bl memcpy
 	adds r0, r4, #0x0
 	adds r0, #0x38
 	ldrb r1, [r0, #0x00]

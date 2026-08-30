@@ -19,7 +19,7 @@ func_08008AD8: @ 08008AD8
 	adds r0, r4, #0x0
 	adds r1, r7, #0x0
 	adds r2, r6, #0x0
-	bl _0811D5BC
+	bl _call_via_r3
 	ldr r0, _08008B24 @ =0x09EDB7E8
 	ldr r1, [r0, #0x00]
 	adds r0, r5, #0x0

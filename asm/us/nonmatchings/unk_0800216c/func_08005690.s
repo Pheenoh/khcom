@@ -27,12 +27,12 @@ func_08005690: @ 08005690
 	movs r5, #0x80
 	lsls r5, r5, #0x09
 	adds r0, r5, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r6, #0x0C]
 	mov r6, sp
 	adds r0, r5, #0x0
 	mov r1, r8
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r6, #0x0E]
 	mov r0, sp
 	negs r4, r4

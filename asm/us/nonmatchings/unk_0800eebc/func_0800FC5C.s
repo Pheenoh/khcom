@@ -13,7 +13,7 @@ func_0800FC5C: @ 0800FC5C
 	adds r4, r4, r0
 	movs r0, #0x01
 	movs r1, #0x00
-	bl _0811D57C
+	bl __ashldi3
 	ldr r2, [r4, #0x00]
 	ldr r3, [r4, #0x04]
 	ands r2, r0

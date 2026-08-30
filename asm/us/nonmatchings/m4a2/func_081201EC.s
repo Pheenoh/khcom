@@ -8,7 +8,7 @@ func_081201EC: @ 081201EC
 	push {lr}
 	ldr r1, _081201FC @ =0x0203D888
 	ldr r1, [r1, #0x00]
-	bl _0811D5B4
+	bl _call_via_r1
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

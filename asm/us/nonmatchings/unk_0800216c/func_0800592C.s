@@ -15,7 +15,7 @@ func_0800592C: @ 0800592C
 	bl func_08005920
 	adds r1, r0, #0x0
 	adds r0, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	ldr r1, [r5, #0x00]
 	adds r1, r1, r0
 	str r1, [r5, #0x00]

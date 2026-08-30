@@ -12,7 +12,7 @@ func_080E8E74: @ 080E8E74
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E8E9C @ =0x00002710
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r2, r0, #0x10
 	ldr r1, _080E8EA0 @ =0x09EF8388

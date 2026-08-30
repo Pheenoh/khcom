@@ -10,7 +10,7 @@ func_080792AC: @ 080792AC
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x2F
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	ldr r1, _080792CC @ =0x09EE48F4
 	lsrs r0, r0, #0x0F

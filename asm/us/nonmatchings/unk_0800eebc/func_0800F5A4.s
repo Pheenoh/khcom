@@ -52,7 +52,7 @@ _0800F5F6:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	beq _0800F60C
@@ -83,7 +83,7 @@ _0800F63C:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0
-	bl func_0811D684
+	bl __modsi3
 	cmp r0, #0x00
 	bne _0800F65C
 	mov r1, r10
@@ -111,7 +111,7 @@ _0800F678:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x14
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	beq _0800F68E
@@ -202,7 +202,7 @@ _0800F710:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x3C
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	bne _0800F754
@@ -221,7 +221,7 @@ _0800F754:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x06
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	bne _0800F7C4

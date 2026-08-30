@@ -68,21 +68,21 @@ _08002CFC:
 	lsls r6, r6, #0x08
 	adds r0, r6, #0x0
 	adds r1, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x00]
 	lsls r0, r5, #0x08
 	mov r1, r9
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x02]
 	negs r5, r5
 	lsls r5, r5, #0x08
 	adds r0, r5, #0x0
 	adds r1, r7, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x04]
 	adds r0, r6, #0x0
 	mov r1, r9
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x06]
 	mov r2, r8
 	ldrh r0, [r2, #0x00]

@@ -17,7 +17,7 @@ func_08008214: @ 08008214
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x01
 	movs r1, #0xE4
-	bl func_0811D684
+	bl __modsi3
 	strh r0, [r5, #0x00]
 	ldr r0, _08008270 @ =0x02039B70
 	lsls r4, r4, #0x02

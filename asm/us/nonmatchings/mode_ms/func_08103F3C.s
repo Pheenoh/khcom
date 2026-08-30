@@ -10,7 +10,7 @@ func_08103F3C: @ 08103F3C
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r2, r0, #0x10
 	movs r3, #0x00
@@ -40,7 +40,7 @@ _08103F7C:
 	lsls r0, r3, #0x10
 	asrs r0, r0, #0x10
 	movs r1, #0x0A
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	pop {r4}

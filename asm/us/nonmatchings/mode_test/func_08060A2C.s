@@ -18,7 +18,7 @@ func_08060A2C: @ 08060A2C
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05
-	bl _0811D754
+	bl __udivsi3
 	lsls r0, r0, #0x11
 	b _08060A6A
 _08060A50:
@@ -28,7 +28,7 @@ _08060A50:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05
-	bl _0811D754
+	bl __udivsi3
 	lsls r0, r0, #0x11
 	movs r1, #0xA0
 	lsls r1, r1, #0x0C

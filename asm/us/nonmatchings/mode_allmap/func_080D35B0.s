@@ -15,7 +15,7 @@ func_080D35B0: @ 080D35B0
 	ldr r1, _080D3630 @ =0x096FDB70
 	mov r0, sp
 	movs r2, #0x40
-	bl _0811F030
+	bl memcpy
 	add r2, sp, #0x040
 	adds r1, r2, #0x0
 	ldr r0, _080D3634 @ =0x096FDBB0

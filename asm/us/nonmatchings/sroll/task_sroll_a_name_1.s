@@ -23,7 +23,7 @@ task_sroll_a_name_1: @ 08114874
 	movs r2, #0x04
 	ldsh r0, [r1, r2]
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x00]
 	b _081148CC
 _081148A0: .4byte 0x03007564

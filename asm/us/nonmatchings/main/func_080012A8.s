@@ -16,13 +16,13 @@ func_080012A8: @ 080012A8
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _080012C2
-	bl _0811D5B0
+	bl _call_via_r0
 _080012C2:
 	ldr r0, _080012DC @ =0x030074A4
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _080012CE
-	bl _0811D5B0
+	bl _call_via_r0
 _080012CE:
 	pop {r0}
 	bx r0

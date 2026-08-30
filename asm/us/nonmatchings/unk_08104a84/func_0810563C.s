@@ -311,7 +311,7 @@ _08105898:
 	adds r1, r1, r0
 	mov r0, sp
 	movs r2, #0x34
-	bl _0811F030
+	bl memcpy
 	subs r4, #0x01
 	lsls r4, r4, #0x10
 	lsrs r6, r4, #0x10
@@ -334,7 +334,7 @@ _081058BC:
 	adds r0, #0x34
 	adds r1, r2, #0x0
 	movs r2, #0x34
-	bl _0811F030
+	bl memcpy
 	subs r0, r4, #0x1
 	lsls r0, r0, #0x10
 	lsrs r6, r0, #0x10
@@ -351,7 +351,7 @@ _081058E8:
 	adds r0, #0x34
 	mov r1, sp
 	movs r2, #0x34
-	bl _0811F030
+	bl memcpy
 	ldr r1, [sp, #0x044]
 	movs r2, #0x80
 	lsls r2, r2, #0x09

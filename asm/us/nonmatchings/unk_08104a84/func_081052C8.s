@@ -23,7 +23,7 @@ func_081052C8: @ 081052C8
 	asrs r4, r4, #0x10
 	adds r0, r4, #0x0
 	movs r1, #0x03
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	asrs r0, r0, #0x10
 	lsls r5, r0, #0x02
@@ -32,7 +32,7 @@ func_081052C8: @ 081052C8
 	lsrs r5, r5, #0x18
 	adds r0, r4, #0x0
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	adds r3, r0, #0x0
 	lsls r3, r3, #0x19
 	lsrs r3, r3, #0x18

@@ -37,7 +37,7 @@ _080067B2:
 	ldrh r1, [r1, #0x00]
 	movs r0, #0x80
 	lsls r0, r0, #0x08
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x00]
 	ldr r0, _0800682C @ =0x02034066
 	movs r2, #0x01

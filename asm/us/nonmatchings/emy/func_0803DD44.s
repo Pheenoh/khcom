@@ -57,7 +57,7 @@ _0803DD8C:
 	lsrs r0, r0, #0x10
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	adds r5, r5, r4
 	lsls r5, r5, #0x08

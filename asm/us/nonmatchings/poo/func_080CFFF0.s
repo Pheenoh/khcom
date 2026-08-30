@@ -16,7 +16,7 @@ func_080CFFF0: @ 080CFFF0
 	lsls r1, r1, #0x01
 	subs r0, r0, r1
 	movs r1, #0x05
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r4, #0x00]
 	lsls r0, r0, #0x01
 	movs r1, #0xA0

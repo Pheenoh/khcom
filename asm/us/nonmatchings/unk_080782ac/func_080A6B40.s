@@ -16,7 +16,7 @@ func_080A6B40: @ 080A6B40
 	mov r6, sp
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	strb r0, [r6, #0x00]
 	mov r2, sp
 	lsls r0, r0, #0x18

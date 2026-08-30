@@ -22,12 +22,12 @@ func_0808D594: @ 0808D594
 	mov r8, r0
 	adds r0, r4, #0x0
 	movs r1, #0x64
-	bl _0811D754
+	bl __udivsi3
 	strb r0, [r6, #0x00]
 	mov r6, sp
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	mov r1, sp
 	ldrb r2, [r1, #0x00]
 	lsls r1, r2, #0x02
@@ -52,11 +52,11 @@ func_0808D594: @ 0808D594
 	add r4, sp, #0x004
 	adds r0, r5, #0x0
 	movs r1, #0x64
-	bl _0811D754
+	bl __udivsi3
 	strb r0, [r4, #0x00]
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	ldrb r2, [r4, #0x00]
 	lsls r1, r2, #0x02
 	adds r1, r1, r2

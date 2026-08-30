@@ -18,7 +18,7 @@ func_080E3FD4: @ 080E3FD4
 	mov r9, r1
 	ldrh r1, [r1, #0x00]
 	subs r1, #0x07
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r0, #0x0
 	adds r4, #0x04
 	lsls r4, r4, #0x10
@@ -32,7 +32,7 @@ func_080E3FD4: @ 080E3FD4
 	asrs r4, r4, #0x10
 	subs r1, r1, r4
 	subs r1, #0x03
-	bl func_0811D684
+	bl __modsi3
 	adds r0, #0x02
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
@@ -71,7 +71,7 @@ func_080E3FD4: @ 080E3FD4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x31
@@ -97,7 +97,7 @@ func_080E3FD4: @ 080E3FD4
 	ldrb r1, [r1, #0x04]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	add r0, sp, #0x008
 	ldrh r1, [r0, #0x00]
@@ -145,7 +145,7 @@ func_080E3FD4: @ 080E3FD4
 	ldrb r1, [r3, #0x04]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	ldrh r2, [r7, #0x00]
 	adds r2, #0x01
@@ -200,7 +200,7 @@ _080E4158:
 	ldrb r1, [r1, #0x04]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	ldrh r2, [r7, #0x00]
 	adds r2, #0x01
@@ -248,7 +248,7 @@ _080E4158:
 	ldrb r1, [r3, #0x04]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	add r0, sp, #0x008
 	ldrh r1, [r0, #0x00]

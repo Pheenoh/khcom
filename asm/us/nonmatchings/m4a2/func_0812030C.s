@@ -24,19 +24,19 @@ func_0812030C: @ 0812030C
 	movs r0, #0xC6
 	lsls r0, r0, #0x03
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	strb r0, [r5, #0x0B]
 	ldr r0, _0812036C @ =0x00091D1B
 	muls r0, r4
 	ldr r1, _08120370 @ =0x00001388
 	adds r0, r0, r1
 	ldr r1, _08120374 @ =0x00002710
-	bl func_0811D5EC
+	bl __divsi3
 	adds r1, r0, #0x0
 	str r1, [r5, #0x14]
 	movs r0, #0x80
 	lsls r0, r0, #0x11
-	bl func_0811D5EC
+	bl __divsi3
 	adds r0, #0x01
 	asrs r0, r0, #0x01
 	str r0, [r5, #0x18]

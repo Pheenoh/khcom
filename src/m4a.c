@@ -1,0 +1,22 @@
+#include "macros.h"
+
+INCLUDE_ASM("m4a/func_081181BC.s");
+INCLUDE_ASM("m4a/func_081181EC.s");
+INCLUDE_ASM("m4a/func_08118344.s");
+INCLUDE_ASM("m4a/func_08118538.s");
+INCLUDE_ASM("m4a/func_08118578.s");
+INCLUDE_ASM("m4a/func_081185CC.s");
+INCLUDE_ASM("m4a/func_08118630.s");
+INCLUDE_ASM("m4a/func_08118ADC.s");
+INCLUDE_ASM("m4a/func_08118C34.s");
+INCLUDE_ASM("m4a/func_08118EEC.s");
+INCLUDE_ASM("m4a/func_08118F7C.s");
+INCLUDE_ASM("m4a/func_0811904C.s");
+INCLUDE_ASM("m4a/func_08119224.s");
+INCLUDE_ASM("m4a/func_081192B0.s");
+INCLUDE_ASM("m4a/func_081192E8.s");
+INCLUDE_ASM("m4a/func_08119480.s");
+INCLUDE_ASM("m4a/func_0811950C.s");
+INCLUDE_ASM("m4a/func_08119654.s");
+INCLUDE_ASM("m4a/func_08119670.s");
+INCLUDE_ASM("m4a/func_0811968C.s");

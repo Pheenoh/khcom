@@ -13,7 +13,7 @@ func_08000DE8: @ 08000DE8
 	cmp r1, #0x00
 	beq _08000DFC
 	ldr r0, [r4, #0x04]
-	bl _0811D5B4
+	bl _call_via_r1
 _08000DFC:
 	ldr r0, [r4, #0x04]
 	bl func_080009C4

@@ -27,7 +27,7 @@ _080C51E0:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05
-	bl func_0811D7CC
+	bl __umodsi3
 	strb r0, [r4, #0x00]
 	adds r6, #0x01
 _080C51F8:

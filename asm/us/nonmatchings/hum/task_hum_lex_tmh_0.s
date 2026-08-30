@@ -61,7 +61,7 @@ _08056F42:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x41
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x08
 	ldr r1, _08056FD4 @ =0xFFFFE000
@@ -77,7 +77,7 @@ _08056F42:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x21
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x08
 	ldr r1, _08056FD8 @ =0xFFFFF000

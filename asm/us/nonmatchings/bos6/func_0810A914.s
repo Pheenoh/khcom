@@ -55,7 +55,7 @@ _0810A96A:
 	ldrh r1, [r4, #0x00]
 	lsls r1, r1, #0x10
 	asrs r1, r1, #0x14
-	bl func_0811D684
+	bl __modsi3
 	cmp r0, #0x00
 	bne _0810A9C0
 	ldr r0, _0810A9C8 @ =0x02039B84

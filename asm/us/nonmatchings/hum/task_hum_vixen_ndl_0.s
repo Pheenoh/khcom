@@ -35,7 +35,7 @@ task_hum_vixen_ndl_0: @ 080554A4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0B
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x08
 	ldr r1, _0805552C @ =0xFFFFFB00

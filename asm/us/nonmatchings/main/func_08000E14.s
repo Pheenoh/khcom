@@ -39,7 +39,7 @@ _08000E3E:
 	beq _08000E5C
 	ldr r0, [r4, #0x04]
 	adds r1, r7, #0x0
-	bl _0811D5B8
+	bl _call_via_r2
 _08000E5C:
 	adds r0, r4, #0x0
 _08000E5E:

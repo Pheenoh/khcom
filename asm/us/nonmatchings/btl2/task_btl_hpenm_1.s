@@ -230,7 +230,7 @@ _08030024:
 	movs r1, #0x8C
 	lsls r1, r1, #0x02
 _0803002A:
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r4, #0x10]
 _08030030:
 	movs r0, #0x01

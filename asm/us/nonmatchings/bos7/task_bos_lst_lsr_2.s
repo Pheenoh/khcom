@@ -71,7 +71,7 @@ _0811188C:
 	movs r1, #0x14
 	ldsh r6, [r7, r1]
 	adds r1, r6, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	ldrh r4, [r4, #0x00]
 	adds r4, r4, r0
 	lsls r4, r4, #0x10
@@ -85,7 +85,7 @@ _0811188C:
 	subs r0, r0, r1
 	muls r0, r5
 	adds r1, r6, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	mov r5, r8
 	ldrh r1, [r5, #0x00]
 	adds r1, r1, r0

@@ -90,7 +90,7 @@ _08115EBA:
 	ldr r3, [r7, #0x00]
 	ldr r4, [r0, #0x00]
 	adds r0, r6, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 	ldr r0, [r7, #0x14]
 	str r0, [r5, #0x00]
 	ldr r0, [r6, #0x04]

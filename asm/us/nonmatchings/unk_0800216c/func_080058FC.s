@@ -16,7 +16,7 @@ func_080058FC: @ 080058FC
 	movs r2, #0x01
 _0800590E:
 	adds r1, r2, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r0, r4, r0
 	str r0, [r5, #0x00]
 	pop {r4, r5}

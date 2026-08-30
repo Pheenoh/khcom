@@ -86,7 +86,7 @@ _080420A6:
 	adds r4, r7, r2
 	movs r2, #0x00
 	ldsh r0, [r4, r2]
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x02
 	add r0, sp
 	ldr r2, [r0, #0x00]

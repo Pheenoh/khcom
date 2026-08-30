@@ -13,7 +13,7 @@ func_080428E8: @ 080428E8
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
 	movs r1, #0x03
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	bne _08042910

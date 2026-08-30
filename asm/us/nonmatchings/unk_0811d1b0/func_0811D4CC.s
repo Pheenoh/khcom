@@ -17,7 +17,7 @@ func_0811D4CC: @ 0811D4CC
 _0811D4E0:
 	ldm r6!, {r0}
 	ldr r1, [r5, #0x54]
-	bl _0811D5B4
+	bl _call_via_r1
 	adds r4, #0x01
 	ldr r0, [r5, #0x40]
 	cmp r4, r0

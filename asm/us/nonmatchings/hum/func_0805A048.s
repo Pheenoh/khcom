@@ -18,7 +18,7 @@ func_0805A048: @ 0805A048
 	adds r1, #0xF8
 	adds r0, r5, #0x4
 	movs r2, #0x88
-	bl _0811F030
+	bl memcpy
 	movs r1, #0xC0
 	lsls r1, r1, #0x01
 	adds r0, r4, r1

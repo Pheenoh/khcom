@@ -71,5 +71,22 @@ bos7.c
 sroll.c
 lib.c
 agb_sram.c -O1
-lib2.c
+m4a.c
+unk_0811d1b0.c
+@libgcc.a:_ashldi3.o
+@libgcc.a:_call_via_rX.o
+@libgcc.a:_divsi3.o
+@libgcc.a:_dvmd_tls.o
+@libgcc.a:_modsi3.o
+@libgcc.a:_udivsi3.o
+@libgcc.a:_umodsi3.o
+@libgcc.a:fp-bit.o
+@libgcc.a:_muldi3.o
+@libgcc.a:dp-bit.o
+@libgcc.a:_lshrdi3.o
+@libgcc.a:_negdi2.o
+@libc.a:memcpy.o
+@libc.a:memset.o
+@libc.a:strcmp.o
+m4a2.c
 data.s

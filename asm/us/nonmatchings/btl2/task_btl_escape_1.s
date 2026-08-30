@@ -66,7 +66,7 @@ _080309F4:
 	lsls r0, r6, #0x08
 	ldr r4, [r5, #0x18]
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r5, #0x14]
 	cmp r6, r4
 	blt _08030A4C

@@ -41,7 +41,7 @@ _0800FB58:
 	movs r0, #0x01
 	movs r1, #0x00
 	adds r2, r5, #0x0
-	bl _0811D57C
+	bl __ashldi3
 	ldr r2, [r4, #0x00]
 	ldr r3, [r4, #0x04]
 	orrs r2, r0
@@ -61,7 +61,7 @@ _0800FB90:
 	movs r0, #0x01
 	movs r1, #0x00
 	adds r2, r5, #0x0
-	bl _0811D57C
+	bl __ashldi3
 	ldr r2, [r4, #0x00]
 	ldr r3, [r4, #0x04]
 	orrs r2, r0

@@ -19,7 +19,7 @@ func_080CC488: @ 080CC488
 	bhi _080CC4B6
 	adds r0, r2, #0x0
 	movs r1, #0x14
-	bl _0811D754
+	bl __udivsi3
 	movs r1, #0x01
 	ands r0, r1
 	cmp r0, #0x00

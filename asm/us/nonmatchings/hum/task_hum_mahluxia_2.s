@@ -31,7 +31,7 @@ task_hum_mahluxia_2: @ 08050D14
 	movs r6, #0x00
 	ldsh r0, [r0, r6]
 	movs r1, #0x0C
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	asrs r0, r0, #0x10
 	cmp r0, #0x0B

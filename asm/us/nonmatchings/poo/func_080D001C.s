@@ -17,7 +17,7 @@ func_080D001C: @ 080D001C
 	lsls r1, r1, #0x04
 	adds r0, r0, r1
 	movs r1, #0x05
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r4, #0x00]
 	lsrs r1, r0, #0x1F
 	adds r0, r0, r1

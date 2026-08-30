@@ -19,7 +19,7 @@ func_080C2734: @ 080C2734
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x1E
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	bne _080C2768
@@ -115,7 +115,7 @@ _080C27F2:
 	lsls r0, r0, #0x09
 _080C280E:
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r4, #0x00]
 	b _080C2822
 _080C2818:

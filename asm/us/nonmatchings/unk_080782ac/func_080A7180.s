@@ -17,7 +17,7 @@ func_080A7180: @ 080A7180
 	mov r4, sp
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	strb r0, [r4, #0x00]
 	mov r2, sp
 	mov r0, sp

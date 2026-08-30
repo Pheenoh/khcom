@@ -64,7 +64,7 @@ _080CCC64:
 	beq _080CCC7A
 	lsls r1, r2, #0x08
 	adds r0, r5, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	cmp r0, #0x00
 	bne _080CCC7A
 	movs r0, #0x01
@@ -80,7 +80,7 @@ _080CCC7A:
 	adds r1, r1, r0
 	lsls r1, r1, #0x08
 	adds r0, r5, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 _080CCC92:
 	pop {r4, r5, r6, r7}
 	pop {r1}

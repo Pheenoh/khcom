@@ -52,15 +52,15 @@ _080D72D0:
 _080D72DA:
 	mov r0, r10
 	adds r1, r4, #0x0
-	bl func_0811D684
+	bl __modsi3
 	adds r5, r0, #0x0
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	adds r4, r0, #0x0
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r7, #0x00]
 	adds r7, #0x02
 	subs r6, #0x01

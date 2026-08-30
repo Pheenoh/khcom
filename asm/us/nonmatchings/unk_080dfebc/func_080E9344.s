@@ -9,7 +9,7 @@ func_080E9344: @ 080E9344
 	bl func_080E9338
 	ldr r0, _080E9358 @ =0x02034F88
 	ldr r0, [r0, #0x00]
-	bl _0811D5B0
+	bl _call_via_r0
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

@@ -27,7 +27,7 @@ func_0801BCF8: @ 0801BCF8
 	adds r1, #0xEE
 	ldrb r1, [r1, #0x00]
 	muls r1, r2
-	bl func_0811D684
+	bl __modsi3
 	cmp r0, #0x00
 	bne _0801BDC6
 	add r2, sp, #0x004

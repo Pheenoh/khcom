@@ -12,7 +12,7 @@ func_08118C34: @ 08118C34
 	ldr r0, _08118D84 @ =0x0203C7D0
 	ldr r1, [r0, #0x00]
 	movs r0, #0x90
-	bl _0811D5B4
+	bl _call_via_r1
 	str r0, [r7, #0x14]
 	ldr r0, [r7, #0x14]
 	ldr r1, [r7, #0x00]
@@ -99,7 +99,7 @@ func_08118C34: @ 08118C34
 	ldr r1, [r7, #0x14]
 	ldr r0, _08118D88 @ =0x3F800000
 	ldr r1, [r1, #0x34]
-	bl _0811DD00
+	bl __divsf3
 	str r0, [r4, #0x70]
 	ldr r0, [r7, #0x04]
 	ldr r1, [r0, #0x00]
@@ -178,7 +178,7 @@ _08118D8C:
 	ldr r1, [r7, #0x14]
 	ldr r2, [r0, #0x08]
 	adds r0, r1, #0x0
-	bl _0811D5B8
+	bl _call_via_r2
 	movs r0, #0x00
 	b _08118EE4
 _08118D9C: .4byte 0x0203C7D0
@@ -210,7 +210,7 @@ _08118DA0:
 	lsls r1, r2, #0x01
 	ldr r2, [r0, #0x04]
 	adds r0, r1, #0x0
-	bl _0811D5B8
+	bl _call_via_r2
 	ldr r1, [r7, #0x14]
 	str r0, [r1, #0x20]
 	ldr r0, _08118EB0 @ =0x0203C7D0
@@ -223,7 +223,7 @@ _08118DA0:
 	lsls r1, r2, #0x01
 	ldr r2, [r0, #0x04]
 	adds r0, r1, #0x0
-	bl _0811D5B8
+	bl _call_via_r2
 	ldr r1, [r7, #0x14]
 	str r0, [r1, #0x24]
 	ldr r0, [r7, #0x14]
@@ -291,7 +291,7 @@ _08118DA0:
 	lsls r1, r1, #0x06
 	ldr r2, [r0, #0x04]
 	adds r0, r1, #0x0
-	bl _0811D5B8
+	bl _call_via_r2
 	ldr r1, [r7, #0x14]
 	str r0, [r1, #0x28]
 	ldr r0, [r7, #0x14]
@@ -323,7 +323,7 @@ _08118EB4:
 _08118EBA:
 	ldr r2, [r0, #0x00]
 	adds r0, r1, #0x0
-	bl _0811D5B8
+	bl _call_via_r2
 	ldr r1, [r7, #0x14]
 	str r0, [r1, #0x5C]
 	ldr r0, [r7, #0x14]

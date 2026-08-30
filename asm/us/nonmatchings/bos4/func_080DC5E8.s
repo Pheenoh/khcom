@@ -16,7 +16,7 @@ func_080DC5E8: @ 080DC5E8
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	lsls r0, r0, #0x10
 	asrs r1, r0, #0x10
 	lsls r0, r1, #0x01

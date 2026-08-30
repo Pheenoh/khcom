@@ -32,7 +32,7 @@ task_pc_acddmg_1: @ 08049DDC
 	movs r1, #0x02
 	ldsh r0, [r4, r1]
 	movs r1, #0x3C
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	bne _08049E2A

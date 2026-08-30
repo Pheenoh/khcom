@@ -100,7 +100,7 @@ _08040DFC:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x02
 	add r0, sp
 	ldr r3, [r0, #0x00]

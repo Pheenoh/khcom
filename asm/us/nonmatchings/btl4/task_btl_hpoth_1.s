@@ -196,7 +196,7 @@ _0805D6F0:
 	movs r1, #0x8C
 	lsls r1, r1, #0x01
 _0805D6FA:
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r5, #0x00]
 _0805D700:
 	mov r2, r8

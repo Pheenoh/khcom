@@ -10,11 +10,11 @@ func_080EE6AC: @ 080EE6AC
 	adds r5, r0, #0x0
 	movs r1, #0xE1
 	lsls r1, r1, #0x04
-	bl _0811D754
+	bl __udivsi3
 	adds r4, r0, #0x0
 	mov r6, sp
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	strh r0, [r6, #0x00]
 	mov r2, sp
 	mov r0, sp
@@ -32,11 +32,11 @@ func_080EE6AC: @ 080EE6AC
 	subs r5, r5, r0
 	adds r0, r5, #0x0
 	movs r1, #0x3C
-	bl _0811D754
+	bl __udivsi3
 	adds r4, r0, #0x0
 	mov r6, sp
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	strh r0, [r6, #0x04]
 	mov r2, sp
 	mov r0, sp
@@ -53,7 +53,7 @@ func_080EE6AC: @ 080EE6AC
 	mov r4, sp
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	strh r0, [r4, #0x08]
 	mov r2, sp
 	mov r0, sp

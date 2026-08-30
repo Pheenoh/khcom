@@ -43,7 +43,7 @@ func_080155BC: @ 080155BC
 	lsls r6, r6, #0x01
 	str r6, [r4, #0x1C]
 	movs r1, #0x28
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r4, #0x20]
 	ldr r1, _08015684 @ =0x0000017F
 	cmp r0, r1

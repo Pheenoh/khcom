@@ -88,7 +88,7 @@ _080187AC:
 	lsls r0, r0, #0x08
 	movs r1, #0x96
 	lsls r1, r1, #0x07
-	bl func_0811D5EC
+	bl __divsi3
 	negs r0, r0
 	b _08018808
 	.byte 0x00, 0x00
@@ -112,7 +112,7 @@ _080187FC:
 	lsls r0, r0, #0x08
 	movs r1, #0x96
 	lsls r1, r1, #0x07
-	bl func_0811D5EC
+	bl __divsi3
 _08018808:
 	str r0, [r4, #0x1C]
 _0801880A:

@@ -37,7 +37,7 @@ _080F7E3A:
 	beq _080F7E5C
 	lsls r2, r2, #0x08
 	adds r0, r2, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	bl func_080F7DD8
 	movs r1, #0x40
 	subs r1, r1, r0
@@ -54,7 +54,7 @@ _080F7E60:
 	lsls r1, r1, #0x08
 	adds r0, r1, #0x0
 	adds r1, r2, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	bl func_080F7DD8
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10

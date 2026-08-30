@@ -77,7 +77,7 @@ _08041E66:
 	ldsh r1, [r1, r2]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	lsls r4, r4, #0x08
 	mov r3, r8
@@ -95,7 +95,7 @@ _08041E66:
 	ldsh r1, [r1, r2]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	lsls r4, r4, #0x08
 	mov r3, r8

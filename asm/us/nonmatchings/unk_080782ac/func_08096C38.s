@@ -33,7 +33,7 @@ _08096C62:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r1, r0, #0x0
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
@@ -44,7 +44,7 @@ _08096C62:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r5, #0x0
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0E
 	adds r0, r0, r7

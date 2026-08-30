@@ -29,7 +29,7 @@ func_080E3CD4: @ 080E3CD4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	subs r1, r6, r4
-	bl func_0811D684
+	bl __modsi3
 	adds r5, r4, r0
 	movs r7, #0x00
 	cmp r7, r8

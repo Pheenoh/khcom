@@ -60,7 +60,7 @@ _08048AEA:
 	adds r2, #0x0C
 	ldr r4, [r3, #0x00]
 	add r3, sp, #0x00C
-	bl _0811D5C0
+	bl _call_via_r4
 	ldr r2, [sp, #0x00C]
 	ldr r0, [r6, #0x10]
 	cmp r2, r0

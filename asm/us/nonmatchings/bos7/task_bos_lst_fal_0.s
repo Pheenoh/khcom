@@ -27,7 +27,7 @@ task_bos_lst_fal_0: @ 08111C04
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08111C8C @ =0x00000181
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x80
@@ -39,7 +39,7 @@ task_bos_lst_fal_0: @ 08111C04
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0xC1
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x40
@@ -48,7 +48,7 @@ task_bos_lst_fal_0: @ 08111C04
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x81
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x80

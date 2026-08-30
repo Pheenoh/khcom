@@ -10,7 +10,7 @@ task_poo_prize_1: @ 080D1D70
 	ldr r1, [r4, #0x7C]
 	cmp r1, #0x00
 	beq _080D1D88
-	bl _0811D5B4
+	bl _call_via_r1
 	ldr r0, [r4, #0x7C]
 	cmp r0, #0x00
 	beq _080D1D88

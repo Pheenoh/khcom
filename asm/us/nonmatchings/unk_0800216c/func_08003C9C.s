@@ -20,7 +20,7 @@ _08003CB0:
 	adds r4, r0, #0x0
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r0, r0, r4
 	lsrs r1, r0, #0x1F
 	adds r0, r0, r1

@@ -80,7 +80,7 @@ _080DD332:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrh r1, [r6, #0x14]
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r1, r0, #0x0
 	adds r1, #0x01
 	lsls r1, r1, #0x10

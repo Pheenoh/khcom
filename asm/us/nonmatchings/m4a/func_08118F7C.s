@@ -43,7 +43,7 @@ _08118FA8:
 	adds r1, r2, #0x0
 	adds r2, r3, #0x0
 	adds r3, r4, #0x0
-	bl _0811D5C4
+	bl _call_via_r5
 	b _08119028
 _08118FCA:
 	ldr r0, [r7, #0x08]
@@ -59,7 +59,7 @@ _08118FCA:
 	adds r0, r1, #0x0
 	adds r1, r2, #0x0
 	adds r2, r3, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 	b _08119028
 _08118FEA:
 	ldr r0, [r7, #0x08]
@@ -75,7 +75,7 @@ _08118FEA:
 	adds r0, r1, #0x0
 	adds r1, r2, #0x0
 	adds r2, r3, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 	ldr r0, [r7, #0x08]
 	adds r1, r0, #0x0
 	adds r0, #0x80
@@ -89,7 +89,7 @@ _08118FEA:
 	adds r0, r1, #0x0
 	adds r1, r2, #0x0
 	adds r2, r3, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 	b _08119028
 _08119028:
 	ldr r0, [r7, #0x08]

@@ -13,7 +13,7 @@ task_poo_cabbage_1: @ 080D11B0
 	ldr r1, _080D11E4 @ =0x096FD850
 	mov r0, sp
 	movs r2, #0x1E
-	bl _0811F030
+	bl memcpy
 	adds r1, r5, #0x0
 	adds r1, #0xCE
 	ldrh r0, [r1, #0x00]

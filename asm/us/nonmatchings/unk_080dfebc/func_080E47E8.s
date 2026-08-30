@@ -49,7 +49,7 @@ _080E482E:
 	ldrb r1, [r3, #0x04]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	lsls r5, r6, #0x18
 	lsrs r5, r5, #0x18
@@ -92,7 +92,7 @@ _080E488C:
 	ldrb r1, [r1, #0x04]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	lsls r5, r6, #0x18
 	lsrs r5, r5, #0x18

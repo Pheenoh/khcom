@@ -61,7 +61,7 @@ _080F0162:
 	ldr r4, [r5, #0x08]
 	subs r0, r2, r4
 	movs r1, #0x50
-	bl func_0811D5EC
+	bl __divsi3
 	adds r4, r4, r0
 	str r4, [r5, #0x08]
 	b _080F0196

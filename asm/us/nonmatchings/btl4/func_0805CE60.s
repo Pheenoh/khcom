@@ -13,7 +13,7 @@ func_0805CE60: @ 0805CE60
 	ldr r5, _0805CF18 @ =0x00002710
 	adds r0, r6, #0x0
 	adds r1, r5, #0x0
-	bl _0811D754
+	bl __udivsi3
 	movs r1, #0x00
 	bl _0805CDC8
 	adds r4, r0, #0x0
@@ -21,7 +21,7 @@ func_0805CE60: @ 0805CE60
 	str r4, [r0, #0x24]
 	adds r0, r6, #0x0
 	adds r1, r5, #0x0
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r6, r0, #0x0
 	negs r0, r4
 	orrs r0, r4
@@ -30,7 +30,7 @@ func_0805CE60: @ 0805CE60
 	lsls r5, r5, #0x02
 	adds r0, r6, #0x0
 	adds r1, r5, #0x0
-	bl _0811D754
+	bl __udivsi3
 	adds r1, r7, #0x0
 	bl _0805CDC8
 	adds r4, r0, #0x0
@@ -38,7 +38,7 @@ func_0805CE60: @ 0805CE60
 	str r4, [r1, #0x28]
 	adds r0, r6, #0x0
 	adds r1, r5, #0x0
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r6, r0, #0x0
 	cmp r4, #0x00
 	beq _0805CEB8
@@ -46,7 +46,7 @@ func_0805CE60: @ 0805CE60
 _0805CEB8:
 	adds r0, r6, #0x0
 	movs r1, #0x64
-	bl _0811D754
+	bl __udivsi3
 	adds r1, r7, #0x0
 	bl _0805CDC8
 	adds r4, r0, #0x0
@@ -54,7 +54,7 @@ _0805CEB8:
 	str r4, [r0, #0x2C]
 	adds r0, r6, #0x0
 	movs r1, #0x64
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r6, r0, #0x0
 	cmp r4, #0x00
 	beq _0805CEDC
@@ -62,7 +62,7 @@ _0805CEB8:
 _0805CEDC:
 	adds r0, r6, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	adds r1, r7, #0x0
 	bl _0805CDC8
 	adds r4, r0, #0x0
@@ -70,7 +70,7 @@ _0805CEDC:
 	str r4, [r1, #0x30]
 	adds r0, r6, #0x0
 	movs r1, #0x0A
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r6, r0, #0x0
 	ldr r1, _0805CF1C @ =0x09EE157C
 	adds r0, r6, #0x4

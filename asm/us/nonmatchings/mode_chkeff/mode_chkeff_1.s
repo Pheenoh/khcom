@@ -141,7 +141,7 @@ _0800BD46:
 	strh r0, [r4, #0x24]
 	ldrh r0, [r4, #0x24]
 	movs r1, #0x11
-	bl func_0811D7CC
+	bl __umodsi3
 	strh r0, [r4, #0x24]
 _0800BD68:
 	bl func_0800139C
@@ -157,7 +157,7 @@ _0800BD68:
 	strh r0, [r4, #0x26]
 	ldrh r0, [r4, #0x26]
 	movs r1, #0x11
-	bl func_0811D7CC
+	bl __umodsi3
 	strh r0, [r4, #0x26]
 _0800BD8A:
 	ldr r2, _0800BDE0 @ =0x020348B8

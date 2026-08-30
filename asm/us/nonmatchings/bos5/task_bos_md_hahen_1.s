@@ -34,7 +34,7 @@ _080FD8F4:
 	str r0, [r4, #0x08]
 	lsls r0, r1, #0x03
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	negs r0, r0
 	str r0, [r4, #0x14]
 	ldrh r0, [r4, #0x24]

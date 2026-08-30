@@ -13,7 +13,7 @@ func_08110A38: @ 08110A38
 	beq _08110A56
 	lsls r0, r1, #0x08
 	adds r1, r2, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r3, r0, #0x0
 	ldr r4, _08110A5C @ =0x09A4FD5C
 	ldr r0, [r4, #0x00]

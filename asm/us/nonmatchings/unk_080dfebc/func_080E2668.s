@@ -45,7 +45,7 @@ _080E2690:
 	lsls r0, r1, #0x10
 	lsrs r0, r0, #0x10
 	lsrs r1, r6, #0x12
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r4, r4, r0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
@@ -164,7 +164,7 @@ _080E278E:
 	lsrs r0, r0, #0x10
 	ldr r2, [sp, #0x004]
 	lsrs r1, r2, #0x02
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r4, r4, r0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
@@ -297,7 +297,7 @@ _080E289A:
 	lsrs r0, r0, #0x10
 	ldr r2, [sp, #0x004]
 	lsrs r1, r2, #0x02
-	bl func_0811D7CC
+	bl __umodsi3
 	subs r4, r4, r0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
@@ -430,7 +430,7 @@ _080E29A8:
 	lsrs r0, r0, #0x10
 	ldr r2, [sp, #0x004]
 	lsrs r1, r2, #0x02
-	bl func_0811D7CC
+	bl __umodsi3
 	subs r4, r4, r0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10

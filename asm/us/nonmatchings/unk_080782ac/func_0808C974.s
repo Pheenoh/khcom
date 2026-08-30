@@ -14,7 +14,7 @@ func_0808C974: @ 0808C974
 	subs r1, #0x04
 	movs r0, #0xA8
 	lsls r0, r0, #0x07
-	bl func_0811D5EC
+	bl __divsi3
 	ldr r3, _0808C9C0 @ =0x00000854
 	adds r2, r4, r3
 	ldr r1, _0808C9C4 @ =0x000008AC

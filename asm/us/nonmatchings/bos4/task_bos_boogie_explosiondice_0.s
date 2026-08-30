@@ -24,7 +24,7 @@ task_bos_boogie_explosiondice_0: @ 080DA508
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, #0x61
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r0, #0x4C

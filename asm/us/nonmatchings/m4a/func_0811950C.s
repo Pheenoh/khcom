@@ -102,7 +102,7 @@ _081195AC:
 	cmp r6, #0x00
 	blt _081195D8
 	adds r0, r6, #0x0
-	bl _0811E0A8
+	bl __floatsisf
 	adds r5, r0, #0x0
 	b _081195F4
 _081195D8:
@@ -112,16 +112,16 @@ _081195D8:
 	lsrs r0, r6, #0x01
 	orrs r1, r0
 	adds r0, r1, #0x0
-	bl _0811E0A8
+	bl __floatsisf
 	adds r5, r0, #0x0
 	adds r0, r5, #0x0
 	adds r1, r5, #0x0
-	bl _0811DB3C
+	bl __addsf3
 	adds r5, r0, #0x0
 _081195F4:
 	ldr r0, [r4, #0x70]
 	adds r1, r5, #0x0
-	bl _0811DB9C
+	bl __mulsf3
 	str r0, [r7, #0x0C]
 	ldr r0, [r7, #0x10]
 	ldr r1, [r0, #0x74]
@@ -132,10 +132,10 @@ _081195F4:
 	str r1, [r0, #0x74]
 	ldr r0, [r7, #0x0C]
 	ldr r1, _0811962C @ =0x3C23D70A
-	bl _0811DB3C
+	bl __addsf3
 	adds r1, r0, #0x0
 	ldr r0, [r7, #0x08]
-	bl _0811DFD0
+	bl __gesf2
 	cmp r0, #0x00
 	blt _08119630
 	ldr r0, [r7, #0x10]
@@ -153,7 +153,7 @@ _08119636:
 	movs r4, #0x00
 	ldr r0, [r7, #0x08]
 	ldr r1, [r7, #0x0C]
-	bl _0811DFD0
+	bl __gesf2
 	cmp r0, #0x00
 	blt _08119646
 	movs r4, #0x01

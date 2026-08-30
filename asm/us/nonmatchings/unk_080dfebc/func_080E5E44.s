@@ -19,7 +19,7 @@ func_080E5E44: @ 080E5E44
 	ldrb r4, [r4, #0x03]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	lsls r4, r4, #0x18
 	lsrs r4, r4, #0x18

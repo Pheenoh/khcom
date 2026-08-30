@@ -90,9 +90,9 @@ _080DB26E:
 	str r0, [r2, #0x00]
 	movs r1, #0x04
 	ldsh r0, [r4, r1]
-	bl _0811E0A8
+	bl __floatsisf
 	ldr r1, _080DB2CC @ =0x4347FFFF
-	bl _0811DF88
+	bl __gtsf2
 	cmp r0, #0x00
 	ble _080DB2D0
 	movs r0, #0x02

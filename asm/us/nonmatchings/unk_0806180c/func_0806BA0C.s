@@ -28,7 +28,7 @@ _0806BA28:
 	asrs r5, r5, #0x10
 	mov r0, r8
 	adds r1, r5, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	subs r0, r0, r7
 	strb r0, [r6, #0x00]
 	lsls r1, r7, #0x10
@@ -40,7 +40,7 @@ _0806BA28:
 	lsrs r7, r0, #0x10
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
 	adds r4, #0x01

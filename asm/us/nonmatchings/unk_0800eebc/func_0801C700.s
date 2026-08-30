@@ -41,7 +41,7 @@ _0801C73A:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x06
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	mov r8, r0
@@ -63,7 +63,7 @@ _0801C73A:
 	ldsh r1, [r1, r2]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	lsls r4, r4, #0x08
 	str r4, [r5, #0x00]
@@ -84,7 +84,7 @@ _0801C77E:
 	ldsh r1, [r1, r2]
 	subs r1, r1, r4
 	adds r1, #0x01
-	bl func_0811D684
+	bl __modsi3
 	adds r4, r4, r0
 	lsls r4, r4, #0x08
 	str r4, [r6, #0x00]

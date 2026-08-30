@@ -21,14 +21,14 @@ task_sroll_a_name_2: @ 081148D4
 	ldsh r5, [r6, r2]
 	muls r0, r5
 	movs r1, #0x1E
-	bl func_0811D5EC
+	bl __divsi3
 	adds r7, r4, r0
 	ldr r0, [r6, #0x14]
 	ldr r4, [r6, #0x0C]
 	subs r0, r0, r4
 	muls r0, r5
 	movs r1, #0x1E
-	bl func_0811D5EC
+	bl __divsi3
 	adds r4, r4, r0
 	b _08114910
 _0811490C:

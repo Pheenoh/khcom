@@ -62,7 +62,7 @@ _08119308:
 	adds r0, r1, #0x0
 	adds r1, r2, #0x0
 	adds r2, r3, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 	ldr r1, [r7, #0x18]
 	ldr r0, [r1, #0x28]
 	ldr r1, [r7, #0x04]
@@ -115,7 +115,7 @@ _0811939E:
 	adds r0, r1, #0x0
 	adds r1, r2, #0x0
 	adds r2, r3, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 	ldr r0, [r7, #0x18]
 	ldr r1, [r7, #0x18]
 	ldr r2, [r1, #0x64]
@@ -172,7 +172,7 @@ _0811941E:
 	adds r0, r1, #0x0
 	adds r1, r2, #0x0
 	adds r2, r3, #0x0
-	bl _0811D5C0
+	bl _call_via_r4
 	ldr r1, [r7, #0x18]
 	ldr r0, [r1, #0x28]
 	ldr r1, [r7, #0x2C]

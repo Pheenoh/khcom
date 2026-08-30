@@ -22,12 +22,12 @@ func_080EABB8: @ 080EABB8
 	mov r8, r0
 	adds r0, r4, #0x0
 	movs r1, #0x64
-	bl _0811D754
+	bl __udivsi3
 	strh r0, [r6, #0x00]
 	mov r6, sp
 	adds r0, r4, #0x0
 	movs r1, #0x0A
-	bl _0811D754
+	bl __udivsi3
 	mov r1, sp
 	ldrh r2, [r1, #0x00]
 	lsls r1, r2, #0x02

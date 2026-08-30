@@ -32,7 +32,7 @@ func_08083B20: @ 08083B20
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x09
-	bl func_0811D7CC
+	bl __umodsi3
 	adds r0, #0x01
 	strb r0, [r4, #0x00]
 _08083B60:

@@ -43,7 +43,7 @@ _0800FDA4:
 _0800FDAE:
 	movs r0, #0x01
 	movs r1, #0x00
-	bl _0811D57C
+	bl __ashldi3
 	mvns r0, r0
 	mvns r1, r1
 	ldr r2, [r4, #0x00]

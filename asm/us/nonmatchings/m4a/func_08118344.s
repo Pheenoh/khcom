@@ -227,7 +227,7 @@ _08118514:
 	beq _0811852C
 	ldr r0, [r7, #0x04]
 	ldr r1, [r7, #0x00]
-	bl _0811D5B4
+	bl _call_via_r1
 	cmp r0, #0x00
 	beq _0811852C
 	b _0811852E

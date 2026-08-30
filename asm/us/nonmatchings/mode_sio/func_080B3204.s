@@ -33,19 +33,19 @@ _080B3228:
 	mov r4, sp
 	adds r0, r5, #0x0
 	movs r1, #0x64
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x00]
 	adds r0, r5, #0x0
 	movs r1, #0x64
-	bl func_0811D684
+	bl __modsi3
 	adds r5, r0, #0x0
 	mov r4, sp
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x02]
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl func_0811D684
+	bl __modsi3
 	adds r5, r0, #0x0
 	mov r0, sp
 	strh r5, [r0, #0x04]
@@ -101,19 +101,19 @@ _080B32BC:
 	mov r4, sp
 	adds r0, r5, #0x0
 	movs r1, #0x64
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x00]
 	adds r0, r5, #0x0
 	movs r1, #0x64
-	bl func_0811D684
+	bl __modsi3
 	adds r5, r0, #0x0
 	mov r4, sp
 	movs r1, #0x0A
-	bl func_0811D5EC
+	bl __divsi3
 	strh r0, [r4, #0x02]
 	adds r0, r5, #0x0
 	movs r1, #0x0A
-	bl func_0811D684
+	bl __modsi3
 	adds r5, r0, #0x0
 	mov r0, sp
 	strh r5, [r0, #0x04]

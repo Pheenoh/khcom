@@ -22,7 +22,7 @@ func_08000FB4: @ 08000FB4
 	cmp r1, #0x00
 	beq _08000FE6
 	adds r0, r6, #0x0
-	bl _0811D5B4
+	bl _call_via_r1
 _08000FE6:
 	ldr r1, _08001008 @ =0x0300748C
 	ldr r0, [r5, #0x00]

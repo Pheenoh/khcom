@@ -50,7 +50,7 @@ _080A331E:
 	lsls r2, r2, #0x04
 	adds r1, r1, r2
 	movs r2, #0xE0
-	bl _0811F030
+	bl memcpy
 	adds r0, r4, #0x1
 	lsls r0, r0, #0x10
 	lsrs r4, r0, #0x10

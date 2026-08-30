@@ -87,7 +87,7 @@ _080C6252:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0
-	bl func_0811D7CC
+	bl __umodsi3
 	strh r0, [r5, #0x1E]
 	b _080C62A6
 _080C6280: .4byte 0x0203AAC0

@@ -11,7 +11,7 @@ func_080E7D64: @ 080E7D64
 	lsrs r1, r1, #0x16
 	adds r1, r1, r2
 	ldr r1, [r1, #0x00]
-	bl _0811D5B4
+	bl _call_via_r1
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	pop {r1}

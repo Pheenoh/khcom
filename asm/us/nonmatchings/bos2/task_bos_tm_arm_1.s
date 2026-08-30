@@ -61,7 +61,7 @@ _080BC8CE:
 	ldr r0, _080BC938 @ =0x03007480
 	ldr r0, [r0, #0x00]
 	movs r1, #0x05
-	bl func_0811D7CC
+	bl __umodsi3
 	cmp r0, #0x00
 	bne _080BC924
 	ldr r0, [r5, #0x04]

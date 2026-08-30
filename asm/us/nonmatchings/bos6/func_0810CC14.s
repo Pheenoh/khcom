@@ -21,7 +21,7 @@ _0810CC2C:
 	lsls r0, r0, #0x08
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
-	bl func_0811D5EC
+	bl __divsi3
 	bl func_08003C9C
 	cmp r0, r6
 	bge _0810CC40

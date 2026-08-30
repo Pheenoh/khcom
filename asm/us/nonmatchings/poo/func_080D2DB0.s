@@ -8,7 +8,7 @@ func_080D2DB0: @ 080D2DB0
 	push {lr}
 	ldr r1, _080D2DC0 @ =0x0203C470
 	movs r2, #0x44
-	bl _0811F030
+	bl memcpy
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

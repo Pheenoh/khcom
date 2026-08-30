@@ -18,7 +18,7 @@ func_080DD69C: @ 080DD69C
 	ldr r0, [r0, #0x24]
 	bl func_08000F84
 	ldr r1, _080DD6D4 @ =0x096FE2F4
-	bl _0811F0E4
+	bl strcmp
 	cmp r0, #0x00
 	bne _080DD6D8
 	ldr r0, [r5, #0x00]

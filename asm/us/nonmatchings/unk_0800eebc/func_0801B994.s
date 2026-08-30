@@ -112,14 +112,14 @@ _0801BACC:
 _0801BAD4:
 	movs r0, #0x64
 	adds r1, r4, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	adds r4, r0, #0x0
 	bl func_080065A4
 	movs r6, #0x00
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0
-	bl func_0811D684
+	bl __modsi3
 	cmp r0, #0x00
 	bne _0801BAF4
 	movs r6, #0x01

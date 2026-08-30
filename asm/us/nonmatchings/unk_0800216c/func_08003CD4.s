@@ -49,7 +49,7 @@ _08003D10:
 	subs r0, r0, r2
 	lsls r0, r0, #0x08
 	str r3, [sp, #0x010]
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r4, #0x04]
 	adds r4, #0x04
 	adds r7, #0x01
@@ -98,7 +98,7 @@ _08003D82:
 	ldr r0, [r2, #0x00]
 	lsls r0, r0, #0x08
 	ldr r1, [r4, #0x00]
-	bl func_0811D5EC
+	bl __divsi3
 	ldr r2, [r4, #0x08]
 	ldr r1, [r4, #0x04]
 	subs r2, r2, r1
@@ -162,7 +162,7 @@ _08003DF8:
 	subs r0, r0, r1
 	lsls r0, r0, #0x08
 	ldr r1, [r6, #0x00]
-	bl func_0811D5EC
+	bl __divsi3
 	str r0, [r4, #0x00]
 	subs r4, #0x04
 	subs r6, #0x04

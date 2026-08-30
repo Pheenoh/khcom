@@ -77,7 +77,7 @@ _081086D4:
 	asrs r0, r0, #0x10
 	adds r0, #0x02
 	movs r1, #0x03
-	bl func_0811D5EC
+	bl __divsi3
 	subs r0, #0x04
 	ldr r3, _08108738 @ =0x02035E9C
 	movs r2, #0x00
@@ -89,7 +89,7 @@ _081086D4:
 	movs r0, #0x54
 	muls r0, r1
 	adds r1, r2, #0x0
-	bl func_0811D5EC
+	bl __divsi3
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	b _0810873E

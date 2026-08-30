@@ -24,7 +24,7 @@ func_080E0B98: @ 080E0B98
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrb r1, [r4, #0x03]
-	bl func_0811D684
+	bl __modsi3
 	lsls r0, r0, #0x18
 	lsrs r2, r0, #0x18
 _080E0BC8:

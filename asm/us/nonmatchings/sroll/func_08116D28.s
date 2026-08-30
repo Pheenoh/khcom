@@ -83,7 +83,7 @@ _08116DBC:
 	ldr r1, [r2, #0x04]
 	cmp r1, #0x00
 	beq _08116DC6
-	bl _0811D5B4
+	bl _call_via_r1
 _08116DC6:
 	pop {r4}
 	pop {r0}

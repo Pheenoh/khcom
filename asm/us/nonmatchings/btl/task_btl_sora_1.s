@@ -414,7 +414,7 @@ _0801ED38:
 	adds r0, r7, r1
 	ldrh r0, [r0, #0x00]
 	movs r1, #0x78
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
 	beq _0801ED4E
@@ -463,7 +463,7 @@ _0801ED92:
 	adds r0, r7, r3
 	ldrh r0, [r0, #0x00]
 	movs r1, #0x14
-	bl func_0811D7CC
+	bl __umodsi3
 	lsls r0, r0, #0x10
 	mov r4, r8
 	adds r4, #0x40

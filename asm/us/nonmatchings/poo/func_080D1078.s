@@ -11,7 +11,7 @@ func_080D1078: @ 080D1078
 	ldr r1, _080D10D4 @ =0x096FD778
 	mov r0, sp
 	movs r2, #0xD8
-	bl _0811F030
+	bl memcpy
 	bl func_080D1710
 	lsls r0, r0, #0x10
 	lsrs r4, r0, #0x10
