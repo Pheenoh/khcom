@@ -48,6 +48,8 @@ int func_08008C58(void);
 void func_08008CA8(s16 slot);
 void func_08008DCC(void);
 int func_08008E18(s16 slot);
+int func_080090F4(s16 file, s16 slot);
+int func_08009488(s16 file, s16 slot);
 
 u32 WriteAndVerifySramFast(const u8* src, u8* dest, u32 size);
 
