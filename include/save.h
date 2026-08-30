@@ -2,6 +2,7 @@
 #define GUARD_SAVE_H
 
 #include "types.h"
+#include "card.h"
 
 #define SRAM_HEADER ((u8*)0x0E000010)
 #define SRAM_SYSTEM ((u8*)0x0E000090)
@@ -58,10 +59,6 @@ typedef struct SaveSharedSlice {
     u32 unk_220[13];
 } SaveSharedSlice;
 
-typedef struct SaveDeck {
-    u8 unk_00[0xE0];
-} SaveDeck;
-
 #define SAVE_CARDS 999
 #define SAVE_DECKS 3
 
@@ -71,7 +68,7 @@ typedef struct SaveLargeSlice {
     u8 unk_10F;
     u16 cards[SAVE_CARDS];
     u16 cardCount;
-    SaveDeck decks[SAVE_DECKS];
+    Deck decks[SAVE_DECKS];
 } SaveLargeSlice;
 
 typedef struct SaveSmallSlice {
