@@ -83,6 +83,7 @@ void func_0807E248(void) {
 void func_0807E254(void) {
     gUnk_02034AA4 = 9;
 }
+
 INCLUDE_ASM("card/func_0807E260.s");
 INCLUDE_ASM("card/func_0807E29C.s");
 INCLUDE_ASM("card/func_0807E2BC.s");
@@ -114,6 +115,7 @@ INCLUDE_ASM("card/func_08083DD4.s");
 INCLUDE_ASM("card/func_08083E54.s");
 INCLUDE_ASM("card/sub_08083EFC.s");
 INCLUDE_ASM("card/func_08083FE0.s");
+
 u16 func_0808401C(u16 cardId) {
     u16 i;
     u16 count;
@@ -127,6 +129,7 @@ u16 func_0808401C(u16 cardId) {
     }
     return count;
 }
+
 INCLUDE_ASM("card/func_08084068.s");
 INCLUDE_ASM("card/func_080840E4.s");
 INCLUDE_ASM("card/func_08084124.s");
