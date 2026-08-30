@@ -36,9 +36,9 @@ void func_0807E23C(void);
 void func_0807E248(void);
 void func_0807E254(void);
 
-Deck* func_08085740(void);
-u16 func_0808401C(u16 cardId);
+Deck* GetActiveDeck(void);
+u16 CountCardsById(u16 cardId);
 u8 func_08085B84(u16 index);
-u8 func_08085FA4(void);
+u8 GetActiveDeckIndex(void);
 
 #endif /* GUARD_CARD_H */

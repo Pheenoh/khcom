@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08008BBC
+	.global SaveRepairHeader
 	.thumb
 	.thumb_func
-	.type func_08008BBC, %function
-func_08008BBC: @ 08008BBC
+	.type SaveRepairHeader, %function
+SaveRepairHeader: @ 08008BBC
 	push {r4, r5, r6, r7, lr}
 	add sp, #-0x008
 	movs r6, #0x01
@@ -15,7 +15,7 @@ _08008BC8:
 	lsls r4, r4, #0x10
 	asrs r5, r4, #0x10
 	adds r0, r5, #0x0
-	bl func_08008B84
+	bl SaveCheckHeaderSlot
 	lsls r1, r5, #0x02
 	add r1, sp
 	str r0, [r1, #0x00]
@@ -49,7 +49,7 @@ _08008BE8:
 	adds r1, r5, #0x0
 	adds r2, r5, #0x0
 	movs r3, #0x40
-	bl func_08008AD8
+	bl SaveVerifyBlock
 	movs r4, #0x00
 _08008C18:
 	lsls r0, r4, #0x10

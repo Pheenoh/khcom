@@ -7,7 +7,7 @@
 func_080AAC40: @ 080AAC40
 	push {r4, lr}
 	adds r4, r0, #0x0
-	bl func_08085FA4
+	bl GetActiveDeckIndex
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	bl func_08085770

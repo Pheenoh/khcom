@@ -10,7 +10,7 @@ func_080858B8: @ 080858B8
 	push {r7}
 	adds r4, r0, #0x0
 	movs r5, #0x00
-	bl func_08085740
+	bl GetActiveDeck
 	adds r6, r0, #0x0
 	cmp r4, #0x00
 	beq _080858D2

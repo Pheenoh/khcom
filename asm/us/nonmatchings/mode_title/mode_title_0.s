@@ -11,7 +11,7 @@ mode_title_0: @ 080D5B70
 	movs r0, #0x00
 	strb r0, [r1, #0x00]
 	bl func_0801CB44
-	bl func_08008C58
+	bl SaveLoadHeader
 	bl func_08093BB4
 	bl func_08093C04
 	ldr r1, _080D5BD4 @ =0x02034EC2

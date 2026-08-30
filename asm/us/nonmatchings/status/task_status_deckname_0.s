@@ -11,7 +11,7 @@ task_status_deckname_0: @ 080D7DC8
 	movs r1, #0x0A
 	bl func_08065ACC
 	str r5, [r4, #0x58]
-	bl func_08085FA4
+	bl GetActiveDeckIndex
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	bl func_080857BC

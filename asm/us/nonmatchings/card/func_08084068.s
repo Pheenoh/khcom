@@ -10,7 +10,7 @@ func_08084068: @ 08084068
 	lsrs r5, r0, #0x10
 	movs r4, #0x00
 	adds r0, r5, #0x0
-	bl func_0808401C
+	bl CountCardsById
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x62

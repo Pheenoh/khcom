@@ -116,7 +116,7 @@ INCLUDE_ASM("card/func_08083E54.s");
 INCLUDE_ASM("card/sub_08083EFC.s");
 INCLUDE_ASM("card/func_08083FE0.s");
 
-u16 func_0808401C(u16 cardId) {
+u16 CountCardsById(u16 cardId) {
     u16 i;
     u16 count;
 
@@ -147,7 +147,7 @@ INCLUDE_ASM("card/func_08085290.s");
 INCLUDE_ASM("card/func_08085374.s");
 INCLUDE_ASM("card/func_080856DC.s");
 
-Deck* func_08085740(void) {
+Deck* GetActiveDeck(void) {
     return &gDecks[gActiveDeck];
 }
 
@@ -168,7 +168,7 @@ INCLUDE_ASM("card/func_08085C3C.s");
 INCLUDE_ASM("card/func_08085CB0.s");
 INCLUDE_ASM("card/_08085D04.s");
 
-u8 func_08085FA4(void) {
+u8 GetActiveDeckIndex(void) {
     return gActiveDeck;
 }
 

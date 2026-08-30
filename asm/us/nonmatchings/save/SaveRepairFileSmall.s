@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_080094EC
+	.global SaveRepairFileSmall
 	.thumb
 	.thumb_func
-	.type func_080094EC, %function
-func_080094EC: @ 080094EC
+	.type SaveRepairFileSmall, %function
+SaveRepairFileSmall: @ 080094EC
 	push {r4, r5, r6, r7, lr}
 	mov r7, r9
 	mov r6, r8
@@ -23,7 +23,7 @@ _08009504:
 	mov r1, r8
 	asrs r0, r1, #0x10
 	adds r1, r5, #0x0
-	bl func_08009488
+	bl SaveCheckFileSmallSlot
 	lsls r1, r5, #0x02
 	add r1, sp
 	str r0, [r1, #0x00]
@@ -71,7 +71,7 @@ _08009528:
 	adds r1, r7, #0x0
 	adds r2, r7, #0x0
 	adds r3, r5, #0x0
-	bl func_08008AD8
+	bl SaveVerifyBlock
 	movs r1, #0x00
 	adds r5, r4, #0x0
 _08009576:

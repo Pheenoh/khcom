@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08009150
+	.global SaveRepairFileLarge
 	.thumb
 	.thumb_func
-	.type func_08009150, %function
-func_08009150: @ 08009150
+	.type SaveRepairFileLarge, %function
+SaveRepairFileLarge: @ 08009150
 	push {r4, r5, r6, r7, lr}
 	mov r7, r9
 	mov r6, r8
@@ -23,7 +23,7 @@ _08009168:
 	mov r1, r8
 	asrs r0, r1, #0x10
 	adds r1, r5, #0x0
-	bl func_080090F4
+	bl SaveCheckFileLargeSlot
 	lsls r1, r5, #0x02
 	add r1, sp
 	str r0, [r1, #0x00]
@@ -65,7 +65,7 @@ _0800918C:
 	adds r1, r6, #0x0
 	adds r2, r6, #0x0
 	adds r3, r4, #0x0
-	bl func_08008AD8
+	bl SaveVerifyBlock
 	movs r1, #0x00
 	adds r7, r4, #0x0
 _080091CE:

@@ -1,13 +1,13 @@
 .syntax unified
 	.align 2, 0
-	.global func_08059F68
+	.global MakeSaveFileSmall
 	.thumb
 	.thumb_func
-	.type func_08059F68, %function
-func_08059F68: @ 08059F68
+	.type MakeSaveFileSmall, %function
+MakeSaveFileSmall: @ 0805A048
 	push {r4, r5, r6, lr}
 	adds r5, r0, #0x0
-	ldr r4, _0805A00C @ =0x02039BB0
+	ldr r4, _0805A0D0 @ =0x02039BB0
 	ldr r0, [r4, #0x08]
 	str r0, [r5, #0x00]
 	ldrh r0, [r4, #0x32]
@@ -45,24 +45,14 @@ func_08059F68: @ 08059F68
 	movs r1, #0xBB
 	lsls r1, r1, #0x02
 	adds r0, r5, r1
-	bl func_080A324C
-	ldr r2, _0805A010 @ =0x00000E6C
-	adds r0, r5, r2
-	bl func_080C700C
-	movs r1, #0xE7
-	lsls r1, r1, #0x04
-	adds r0, r5, r1
-	bl func_080DDEB0
-	ldr r2, _0805A014 @ =0x00000EB4
-	adds r0, r5, r2
-	bl func_0810962C
+	bl func_080A3370
 	ldr r0, [r4, #0x08]
 	movs r1, #0x10
 	ands r0, r1
 	cmp r0, #0x00
-	beq _0805A018
+	beq _0805A0D4
 	ldrb r1, [r4, #0x0E]
-	movs r2, #0xE2
+	movs r2, #0xEA
 	lsls r2, r2, #0x01
 	adds r0, r4, r2
 	strb r1, [r0, #0x00]
@@ -77,16 +67,13 @@ func_08059F68: @ 08059F68
 	adds r2, #0x01
 	adds r1, r4, r2
 	strb r0, [r1, #0x00]
-	movs r0, #0xE4
+	movs r0, #0xEC
 	lsls r0, r0, #0x01
-	b _0805A03C
-	.byte 0x00, 0x00
-_0805A00C: .4byte 0x02039BB0
-_0805A010: .4byte 0x00000E6C
-_0805A014: .4byte 0x00000EB4
-_0805A018:
+	b _0805A0F8
+_0805A0D0: .4byte 0x02039BB0
+_0805A0D4:
 	ldrb r1, [r4, #0x0E]
-	movs r2, #0xDE
+	movs r2, #0xE6
 	lsls r2, r2, #0x01
 	adds r0, r4, r2
 	strb r1, [r0, #0x00]
@@ -101,9 +88,9 @@ _0805A018:
 	adds r2, #0x01
 	adds r1, r4, r2
 	strb r0, [r1, #0x00]
-	movs r0, #0xE0
+	movs r0, #0xE8
 	lsls r0, r0, #0x01
-_0805A03C:
+_0805A0F8:
 	adds r1, r4, r0
 	ldr r0, [r6, #0x00]
 	str r0, [r1, #0x00]

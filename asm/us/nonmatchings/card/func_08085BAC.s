@@ -11,7 +11,7 @@ func_08085BAC: @ 08085BAC
 	push {r6, r7}
 	movs r7, #0x00
 	movs r6, #0x00
-	bl func_08085740
+	bl GetActiveDeck
 	mov r8, r0
 	ldr r0, _08085C24 @ =0x0000FFFF
 	mov r9, r0
