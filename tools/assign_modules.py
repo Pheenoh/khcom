@@ -27,7 +27,7 @@ def token(name):
     parts = name.split("_")
     if parts[0] == "task":
         return parts[1]
-    return f"{parts[0]}_{parts[1]}"  # mode_battle_0 -> mode_battle
+    return f"{parts[0]}_{parts[1]}"
 
 
 def main():
@@ -40,7 +40,7 @@ def main():
                         help="module for functions after the last named run")
     args = parser.parse_args()
 
-    funcs = []  # (addr, kind, name|None)
+    funcs = []
     for line in open(args.config):
         line = line.split("#")[0].strip()
         if not line:
@@ -52,7 +52,6 @@ def main():
         funcs.append((int(addr, 16), kind or "thumb_func", name))
     funcs.sort()
 
-    # module per function
     assigned = []
     seen_counts = {}
     current = args.first_module
@@ -74,7 +73,6 @@ def main():
                 last_named_token = None
         assigned.append((addr, kind, name, current))
 
-    # everything after the final named run becomes the trailing lib module
     last_named_i = max(i for i, f in enumerate(assigned) if f[2])
     for i in range(last_named_i + 1, len(assigned)):
         addr, kind, name, cur = assigned[i]
@@ -87,8 +85,6 @@ def main():
         for addr, kind, name, module in assigned:
             if module not in modules:
                 modules.append(module)
-            # unnamed functions get a generic version-local name; addresses
-            # shift between versions, so these are renamed as identified
             parts = [kind, f"0x{addr:08X}", module,
                      name or f"func_{addr:08X}"]
             f.write(" ".join(parts) + "\n")

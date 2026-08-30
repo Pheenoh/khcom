@@ -1,7 +1,3 @@
-/* Nintendo AGB SRAM library, SRAM_F_V103 (version string resides in data.s).
-   Built at -O1, unlike game code. RAM locations are fixed until data/bss
-   splitting lands. */
-
 #include "types.h"
 
 #define REG_WAITCNT (*(vu16*)0x4000204)

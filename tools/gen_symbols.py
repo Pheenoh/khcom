@@ -20,7 +20,6 @@ import struct
 import sys
 
 ROM_BASE = 0x08000000
-# functions must land in the code region (see docs/rom_map.md)
 CODE_END = ROM_BASE + 0x122000
 
 
@@ -32,8 +31,7 @@ def main():
 
     data = open(args.rom, "rb").read()
 
-    # collect name strings
-    names = {}  # rom addr of string -> (name, nfuncs)
+    names = {}
     for m in re.finditer(rb"(?<=\x00)((task|mode)_[a-z0-9_]+)\x00", data):
         nfuncs = 4 if m.group(2) == b"task" else 3
         names[ROM_BASE + m.start(1)] = (m.group(1).decode(), nfuncs)
@@ -48,8 +46,6 @@ def main():
             continue
         name, nfuncs = names[w]
         fns = words[i + 1 : i + 1 + nfuncs]
-        # require every slot valid and at least one real pointer to
-        # reject accidental references from code/data
         if len(fns) == nfuncs and all(map(valid_fn, fns)) and any(fns):
             for k, fn in enumerate(fns):
                 if fn:

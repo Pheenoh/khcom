@@ -1,16 +1,7 @@
 #!/usr/bin/env python3
 
-###
-# Generates build files for the project.
-#
-# Usage:
-#   python3 configure.py
-#   ninja
-#
-# Append --help to see available options.
-###
-
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -20,10 +11,8 @@ import ninja_syntax
 
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 
-# Game versions
 DEFAULT_VERSION = "us"
 VERSIONS = {
-    # version: (game code, sha1)
     "us": ("B8CE", "10729bd884f8fdca7a310b6d606c52e46657aa48"),
     "jp": ("B8CJ", "59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa"),
     "eu": ("B8CP", "8db73586cdb11b3795907edebf43228dbcd3e6b2"),
@@ -58,13 +47,8 @@ ldscript = f"{build_dir}/ldscript.ld"
 if not Path(baserom).exists():
     print(f"warning: base ROM {baserom} not found; the build will fail without it")
 
-# Units are linked in the order listed in config/<version>/units.txt.
-# <name>.c lives in src/ (shared across versions, agbcc-compiled);
-# <name>.s lives in asm/<version>/.
-# A unit line may carry extra cflags after the name, e.g. for SDK libraries
-# built at a different optimization level:  agb_sram.c -O1
 units_file = Path(f"config/{version}/units.txt")
-units = []  # (src path, obj path, cflags override or None)
+units = []
 for line in units_file.read_text().splitlines():
     line = line.strip()
     if not line or line.startswith("#"):
@@ -82,7 +66,6 @@ for line in units_file.read_text().splitlines():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
     units.append((src, obj, flags))
 
-# Generate the linker script
 objs_in_order = [obj for _, obj, _flags in units]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
@@ -143,8 +126,6 @@ with out.open("w") as f:
         variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
         deps = [baserom]
         if rule == "cc":
-            # asm pulled in via INCLUDE_ASM() is only seen by the assembler,
-            # so declare it here or edits to it won't trigger a rebuild
             deps += headers
             for m in INCLUDE_ASM_RE.finditer(src.read_text()):
                 deps.append(f"asm/{version}/nonmatchings/{m.group(1)}")
@@ -165,9 +146,6 @@ with out.open("w") as f:
 
     n.build("all", "phony", f"{build_dir}/ok")
     n.default("all")
-
-# objdiff config
-import json
 
 objdiff_config = {
     "min_version": "2.0.0",

@@ -35,7 +35,6 @@ FOOTER = ".syntax divided\n"
 def split_module(path: Path, out_dir: Path):
     """Split one module into per-function files. Returns ordered file names."""
     lines = path.read_text().splitlines(keepends=True)
-    # skip the embedded macro block
     for i, line in enumerate(lines):
         if line.startswith("@ End embedded Luvdis macros"):
             body = lines[i + 1:]
@@ -43,7 +42,7 @@ def split_module(path: Path, out_dir: Path):
     else:
         raise SystemExit(f"{path}: no luvdis macro block")
 
-    chunks = []  # (name, [lines])
+    chunks = []
     current_name = None
     current = []
     data_count = 0
@@ -55,7 +54,6 @@ def split_module(path: Path, out_dir: Path):
             current = []
             return
         if current_name is None:
-            # data chunk: name after its first label if present
             m = next((LABEL_RE.match(l) for l in content if LABEL_RE.match(l)), None)
             if m:
                 name = m.group(1)
