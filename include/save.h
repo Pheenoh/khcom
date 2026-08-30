@@ -101,6 +101,20 @@ typedef struct SaveFileSmall {
     SaveSmallSlice unk_2EC;
 } SaveFileSmall;
 
+typedef struct SaveBlockLarge {
+    u8 signature[SAVE_SIGNATURE_SIZE];
+    u16 checksum;
+    u16 unk_1A;
+    SaveFileLarge data;
+} SaveBlockLarge;
+
+typedef struct SaveBlockSmall {
+    u8 signature[SAVE_SIGNATURE_SIZE];
+    u16 checksum;
+    u16 unk_1A;
+    SaveFileSmall data;
+} SaveBlockSmall;
+
 typedef struct SaveHeader {
     u8 signature[SAVE_SIGNATURE_SIZE];
     u16 checksum;
@@ -114,12 +128,14 @@ void func_080009C4(void* p);
 void func_080089E0(void* dst, s16 size);
 void func_08008A24(u8* src, u8* dst, s16 len);
 u8 func_08008A54(u8* a, u8* b, s16 len);
-u16 func_08008A8C(u16* data, s16 len);
+u16 func_08008A8C(u16* data, int size);
 int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size);
 void func_08008B40(void);
 int func_08008B84(s16 slot);
 
 void func_08059DDC(SaveHeaderData* data, s16 file);
+void func_08059F68(SaveFileLarge* data);
+void func_0805A048(SaveFileSmall* data);
 void func_0805A104(SaveHeaderData* data);
 
 int func_08008C58(void);
@@ -129,6 +145,7 @@ int func_08008E18(s16 slot);
 int func_080090F4(s16 file, s16 slot);
 int func_08009488(s16 file, s16 slot);
 
+void SetSramFastFunc(void);
 u32 WriteAndVerifySramFast(const u8* src, u8* dest, u32 size);
 
 #endif /* GUARD_SAVE_H */

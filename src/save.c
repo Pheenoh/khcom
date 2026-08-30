@@ -39,7 +39,22 @@ u8 func_08008A54(u8* a, u8* b, s16 len) {
     return 1;
 }
 
-INCLUDE_ASM("save/func_08008A8C.s");
+u16 func_08008A8C(u16* data, int size) {
+    u32 sum;
+    s16 len;
+
+    len = size;
+    sum = 0;
+    while (len > 1) {
+        sum += *data++;
+        len -= 2;
+    }
+    if (len > 0) {
+        sum += *(u8*)data;
+    }
+    sum = (sum & 0xFFFF) + (sum >> 16);
+    return ~(sum + (sum >> 16));
+}
 
 int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size) {
     int ret;
@@ -56,7 +71,9 @@ int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size) {
     return ret;
 }
 
-INCLUDE_ASM("save/func_08008B34.s");
+void func_08008B34(void) {
+    SetSramFastFunc();
+}
 
 void func_08008B40(void) {
     u8* buf;
