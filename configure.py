@@ -47,6 +47,8 @@ rom = f"{build_dir}/{name}.gba"
 mapfile = f"{build_dir}/{name}.map"
 ldscript = f"{build_dir}/ldscript.ld"
 
+report_python = ".venv/bin/python3" if Path(".venv/bin/python3").exists() else "python3"
+
 if not Path(baserom).exists():
     print(f"warning: base ROM {baserom} not found; the build will fail without it")
 
@@ -108,6 +110,7 @@ with out.open("w") as f:
     )
     n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include -DVERSION_{version.upper()}")
     n.variable("cflags", "-mthumb-interwork -O2")
+    n.variable("pyreport", report_python)
     n.newline()
 
     n.rule(
@@ -129,6 +132,17 @@ with out.open("w") as f:
         "rom",
         command="$objcopy -O binary --only-section=.text $in $out",
         description="ROM $out",
+    )
+    n.rule(
+        "report",
+        command=f"$pyreport -m mapfile_parser objdiff_report $out --version {version} --quiet",
+        description="REPORT $out",
+    )
+    n.rule(
+        "progress",
+        command="python3 tools/progress.py $in",
+        description="PROGRESS",
+        pool="console",
     )
     n.rule(
         "check",
@@ -166,6 +180,11 @@ with out.open("w") as f:
     )
     n.build(rom, "rom", elf)
     n.build(f"{build_dir}/ok", "check", rom)
+    n.newline()
+
+    report = f"{build_dir}/report.json"
+    n.build(report, "report", implicit=[f"{build_dir}/ok", "decomp.yaml"])
+    n.build("progress", "progress", report, implicit=["tools/progress.py"])
     n.newline()
 
     n.build("all", "phony", f"{build_dir}/ok")
