@@ -39,6 +39,32 @@ typedef struct SaveHeaderData {
     SaveFileSummary files[SAVE_FILES];
 } SaveHeaderData;
 
+typedef struct SaveCommon {
+    u32 flags;
+    u8 unk_04[0x88];
+    u16 unk_8C;
+    u16 unk_8E;
+    u8 unk_90;
+    u8 unk_91;
+    u8 unk_92[2];
+    u32 unk_94;
+} SaveCommon;
+
+typedef struct SaveFileLarge {
+    SaveCommon common;
+    u8 unk_098[0x254];
+    u8 unk_2EC[0xB80];
+    u8 unk_E6C[0x004];
+    u8 unk_E70[0x044];
+    u8 unk_EB4[0x044];
+} SaveFileLarge;
+
+typedef struct SaveFileSmall {
+    SaveCommon common;
+    u8 unk_098[0x254];
+    u8 unk_2EC[0x110];
+} SaveFileSmall;
+
 typedef struct SaveHeader {
     u8 signature[SAVE_SIGNATURE_SIZE];
     u16 checksum;
