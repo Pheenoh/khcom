@@ -48,7 +48,7 @@ _080092E4:
 	adds r1, r7, r1
 	adds r0, r6, #0x0
 	adds r2, r5, #0x0
-	bl func_0811817C
+	bl WriteAndVerifySramFast
 	adds r4, #0x01
 	lsls r4, r4, #0x10
 	lsrs r2, r4, #0x10

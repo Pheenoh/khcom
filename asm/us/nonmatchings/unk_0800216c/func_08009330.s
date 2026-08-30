@@ -98,7 +98,7 @@ _080093DA:
 	adds r0, r0, r3
 	adds r1, r1, r0
 	adds r0, r5, #0x0
-	bl func_0811817C
+	bl WriteAndVerifySramFast
 	adds r0, r5, #0x0
 	bl func_080009C4
 	pop {r3}

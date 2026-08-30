@@ -11,11 +11,14 @@
 ###
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent / "tools"))
 import ninja_syntax
+
+INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 
 # Game versions
 DEFAULT_VERSION = "us"
@@ -133,11 +136,19 @@ with out.open("w") as f:
     )
     n.newline()
 
+    headers = sorted(str(p) for p in Path("include").glob("*.h"))
     objs = []
     for src, obj, flags in units:
         rule = "cc" if src.suffix == ".c" else "as"
         variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
-        n.build(obj, rule, str(src), implicit=[baserom], variables=variables)
+        deps = [baserom]
+        if rule == "cc":
+            # asm pulled in via INCLUDE_ASM() is only seen by the assembler,
+            # so declare it here or edits to it won't trigger a rebuild
+            deps += headers
+            for m in INCLUDE_ASM_RE.finditer(src.read_text()):
+                deps.append(f"asm/{version}/nonmatchings/{m.group(1)}")
+        n.build(obj, rule, str(src), implicit=deps, variables=variables)
         objs.append(obj)
     n.newline()
 

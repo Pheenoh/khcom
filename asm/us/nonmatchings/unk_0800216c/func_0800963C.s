@@ -53,7 +53,7 @@ _0800968A:
 	adds r0, r6, #0x0
 	movs r2, #0x83
 	lsls r2, r2, #0x03
-	bl func_0811817C
+	bl WriteAndVerifySramFast
 	adds r4, #0x01
 	lsls r4, r4, #0x10
 	lsrs r2, r4, #0x10

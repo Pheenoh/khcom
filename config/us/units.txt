@@ -70,4 +70,6 @@ unk_0810fe94.c
 bos7.c
 sroll.c
 lib.s
+agb_sram.c -O1
+lib2.s
 data.s

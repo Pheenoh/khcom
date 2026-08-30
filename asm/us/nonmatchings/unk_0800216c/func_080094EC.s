@@ -93,7 +93,7 @@ _08009576:
 	adds r0, r7, #0x0
 	movs r2, #0x83
 	lsls r2, r2, #0x03
-	bl func_0811817C
+	bl WriteAndVerifySramFast
 _0800959E:
 	adds r0, r4, #0x1
 	lsls r0, r0, #0x10

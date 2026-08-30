@@ -68,7 +68,7 @@ _08008EBA:
 	adds r1, r1, r0
 	adds r0, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_0811817C
+	bl WriteAndVerifySramFast
 _08008ED8:
 	adds r0, r4, #0x1
 	lsls r0, r0, #0x10

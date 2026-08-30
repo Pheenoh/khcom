@@ -24,7 +24,7 @@ _08008DDC:
 	adds r1, r1, r0
 	adds r0, r5, #0x0
 	adds r2, r7, #0x0
-	bl func_0811817C
+	bl WriteAndVerifySramFast
 	adds r4, #0x01
 	lsls r4, r4, #0x10
 	lsrs r6, r4, #0x10
