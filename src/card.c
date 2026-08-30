@@ -114,7 +114,19 @@ INCLUDE_ASM("card/func_08083DD4.s");
 INCLUDE_ASM("card/func_08083E54.s");
 INCLUDE_ASM("card/sub_08083EFC.s");
 INCLUDE_ASM("card/func_08083FE0.s");
-INCLUDE_ASM("card/func_0808401C.s");
+u16 func_0808401C(u16 cardId) {
+    u16 i;
+    u16 count;
+
+    i = 0;
+    count = 0;
+    for (; i < gCardCount; i++) {
+        if ((gCardCollection[i] & CARD_ID_MASK) == cardId) {
+            count++;
+        }
+    }
+    return count;
+}
 INCLUDE_ASM("card/func_08084068.s");
 INCLUDE_ASM("card/func_080840E4.s");
 INCLUDE_ASM("card/func_08084124.s");
@@ -130,8 +142,8 @@ INCLUDE_ASM("card/func_08085290.s");
 INCLUDE_ASM("card/func_08085374.s");
 INCLUDE_ASM("card/func_080856DC.s");
 
-u8* func_08085740(void) {
-    return gDecks + gActiveDeck * 0xE0;
+Deck* func_08085740(void) {
+    return &gDecks[gActiveDeck];
 }
 
 INCLUDE_ASM("card/func_08085758.s");

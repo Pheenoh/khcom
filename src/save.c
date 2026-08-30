@@ -46,11 +46,13 @@ int func_08008AD8(u8* sram, u8* hdr, u8* buf, s16 size) {
 
     func_080089E0(buf, size);
     ReadSramFast(sram, buf, size);
+    
     if (func_08008A54(hdr, gSaveSignature, SAVE_SIGNATURE_SIZE)) {
         ret = (func_08008A8C((u16*)buf, size) == 0) ? SAVE_OK : SAVE_BAD_CHECKSUM;
     } else {
         ret = SAVE_BAD_SIGNATURE;
     }
+
     return ret;
 }
 
@@ -61,10 +63,12 @@ void func_08008B40(void) {
     s16 i;
 
     buf = func_08000918(SAVE_HEADER_SIZE);
+
     for (i = 0; i < SAVE_SLOTS; i++) {
         func_080089E0(buf, SAVE_HEADER_SIZE);
         WriteAndVerifySramFast(buf, SRAM_HEADER + i * SAVE_HEADER_SIZE, SAVE_HEADER_SIZE);
     }
+
     func_080009C4(buf);
 }
 
@@ -88,6 +92,7 @@ int func_08008C58(void) {
 
     ret = 0;
     buf = func_08000918(SAVE_HEADER_SIZE);
+
     for (i = 0; i < SAVE_SLOTS; i++) {
         ret = func_08008AD8(SRAM_HEADER + i * SAVE_HEADER_SIZE, buf, buf, SAVE_HEADER_SIZE);
         if (ret == SAVE_OK) {
@@ -95,6 +100,7 @@ int func_08008C58(void) {
             break;
         }
     }
+
     func_080009C4(buf);
     return ret;
 }
@@ -109,9 +115,11 @@ void func_08008CA8(s16 slot) {
     func_08008A24(gSaveSignature, (u8*)hdr, SAVE_SIGNATURE_SIZE);
     hdr->checksum = 0;
     hdr->checksum = func_08008A8C((u16*)hdr, SAVE_HEADER_SIZE);
+
     for (i = 0; i < SAVE_SLOTS; i++) {
         WriteAndVerifySramFast((u8*)hdr, SRAM_HEADER + i * SAVE_HEADER_SIZE, SAVE_HEADER_SIZE);
     }
+
     func_080009C4(hdr);
 }
 
