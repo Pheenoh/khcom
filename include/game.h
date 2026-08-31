@@ -121,7 +121,8 @@ typedef struct UnkStruct_02039B84 {
     u8 unk_0B3;
     u8 unk_0B4;
     u8 unk_0B5[0x17];
-    u32 unk_0CC;
+    u16 unk_0CC;
+    u16 unk_0CE;
     u32 unk_0D0;
     u32 unk_0D4;
     u16 unk_0D8;
@@ -173,6 +174,10 @@ void func_0801B7D8(void* a);
 extern u8 gUnk_09EF2AA4[];
 
 extern u8 gUnk_08B22BA8[];
+extern u8 gUnk_08B22EE4[];
+extern u8 gUnk_08B22EFE[];
+extern u16 gUnk_0203C3BC;
+extern u16 gUnk_0203C3C0;
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_08F69BA4[];
 
