@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "bos4.h"
 
 INCLUDE_ASM("bos4/task_bos_boogie_dice_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_dice_1.s");
@@ -9,7 +10,15 @@ INCLUDE_ASM("bos4/task_bos_boogie_explosiondice_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_explosiondice_1.s");
 INCLUDE_ASM("bos4/task_bos_boogie_explosiondice_2.s");
 INCLUDE_ASM("bos4/task_bos_boogie_explosiondice_3.s");
-INCLUDE_ASM("bos4/func_080DA73C.s");
+
+u8 func_080DA73C(void) {
+    if (*(s32*)((u8*)gUnk_02039B84->unk_07C + 8) <= 0x23EFF) {
+        return 1;
+    }
+
+    return 0;
+}
+
 INCLUDE_ASM("bos4/task_bos_boogie_saku_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_saku_1.s");
 INCLUDE_ASM("bos4/func_080DA954.s");
@@ -19,8 +28,13 @@ INCLUDE_ASM("bos4/task_bos_boogie_map_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_map_1.s");
 INCLUDE_ASM("bos4/task_bos_boogie_mapanime_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_mapanime_1.s");
-INCLUDE_ASM("bos4/task_bos_boogie_mapanime_2.s");
-INCLUDE_ASM("bos4/task_bos_boogie_mapanime_3.s");
+
+void task_bos_boogie_mapanime_2(void) {
+}
+
+void task_bos_boogie_mapanime_3(void) {
+}
+
 INCLUDE_ASM("bos4/func_080DABFC.s");
 INCLUDE_ASM("bos4/task_bos_boogie_disk_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_disk_1.s");
@@ -36,8 +50,16 @@ INCLUDE_ASM("bos4/func_080DB438.s");
 INCLUDE_ASM("bos4/func_080DB468.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knifereader_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knifereader_1.s");
-INCLUDE_ASM("bos4/task_bos_boogie_knifereader_2.s");
-INCLUDE_ASM("bos4/task_bos_boogie_knifereader_3.s");
+
+void task_bos_boogie_knifereader_2(u8* work) {
+    func_08000EE0(work + 8);
+}
+
+void task_bos_boogie_knifereader_3(u8* work) {
+    func_0801B7D8(work + 28);
+    func_08000F0C(work + 8);
+}
+
 INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_1.s");
 INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_2.s");
@@ -46,8 +68,19 @@ INCLUDE_ASM("bos4/func_080DB978.s");
 INCLUDE_ASM("bos4/func_080DBA14.s");
 INCLUDE_ASM("bos4/func_080DBC00.s");
 INCLUDE_ASM("bos4/func_080DBC68.s");
-INCLUDE_ASM("bos4/func_080DC510.s");
-INCLUDE_ASM("bos4/func_080DC528.s");
+
+u8 func_080DC510(void) {
+    return *(u64*)((u8*)gUnk_02034F0C + 0x58) & 4;
+}
+
+u8 func_080DC528(void) {
+    if (*(u16*)((u8*)gUnk_02034F0C + 0x142) == 0) {
+        return 0;
+    }
+
+    return 1;
+}
+
 INCLUDE_ASM("bos4/func_080DC544.s");
 INCLUDE_ASM("bos4/func_080DC578.s");
 INCLUDE_ASM("bos4/func_080DC5B0.s");
@@ -55,9 +88,16 @@ INCLUDE_ASM("bos4/func_080DC5E8.s");
 INCLUDE_ASM("bos4/func_080DC628.s");
 INCLUDE_ASM("bos4/task_bos_ursula_map_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_map_1.s");
-INCLUDE_ASM("bos4/task_bos_ursula_map_3.s");
+
+void task_bos_ursula_map_3(void) {
+}
+
 INCLUDE_ASM("bos4/task_bos_ursula_border_0.s");
-INCLUDE_ASM("bos4/task_bos_ursula_border_1.s");
+
+s32 task_bos_ursula_border_1(void) {
+    return 1;
+}
+
 INCLUDE_ASM("bos4/task_bos_ursula_border_2.s");
 INCLUDE_ASM("bos4/task_bos_ursula_border_3.s");
 INCLUDE_ASM("bos4/func_080DC9DC.s");
@@ -74,16 +114,30 @@ INCLUDE_ASM("bos4/task_bos_ursula_backtako_2.s");
 INCLUDE_ASM("bos4/task_bos_ursula_backtako_3.s");
 INCLUDE_ASM("bos4/task_bos_ursula_mapanime_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_mapanime_1.s");
-INCLUDE_ASM("bos4/task_bos_ursula_mapanime_2.s");
-INCLUDE_ASM("bos4/task_bos_ursula_mapanime_3.s");
+
+void task_bos_ursula_mapanime_2(u8* work) {
+    func_08000EE0(work + 16);
+}
+
+void task_bos_ursula_mapanime_3(u8* work) {
+    func_08000F0C(work + 16);
+}
+
 INCLUDE_ASM("bos4/func_080DD69C.s");
 INCLUDE_ASM("bos4/func_080DD7C4.s");
 INCLUDE_ASM("bos4/func_080DD854.s");
 INCLUDE_ASM("bos4/func_080DD8A8.s");
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_1.s");
-INCLUDE_ASM("bos4/task_bos_ursula_bubble_2.s");
-INCLUDE_ASM("bos4/task_bos_ursula_bubble_3.s");
+
+void task_bos_ursula_bubble_2(u8* work) {
+    func_08000EE0(work + 4);
+}
+
+void task_bos_ursula_bubble_3(u8* work) {
+    func_08000F0C(work + 4);
+}
+
 INCLUDE_ASM("bos4/func_080DD9B0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_1.s");
@@ -92,24 +146,56 @@ INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_3.s");
 INCLUDE_ASM("bos4/func_080DDD30.s");
 INCLUDE_ASM("bos4/task_bos_ursula_thunder_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_thunder_1.s");
-INCLUDE_ASM("bos4/task_bos_ursula_thunder_2.s");
-INCLUDE_ASM("bos4/task_bos_ursula_thunder_3.s");
-INCLUDE_ASM("bos4/func_080DDDDC.s");
+
+void task_bos_ursula_thunder_2(void) {
+}
+
+void task_bos_ursula_thunder_3(void) {
+}
+
+void func_080DDDDC(u8* p, void* q) {
+    *(u16*)(p + 0) = 0;
+    *(u16*)(p + 2) = 0;
+    *(u8*)(p + 4) = 1;
+    *(void**)(p + 8) = q;
+}
+
 INCLUDE_ASM("bos4/func_080DDDEC.s");
 INCLUDE_ASM("bos4/func_080DDE74.s");
-INCLUDE_ASM("bos4/func_080DDEA0.s");
-INCLUDE_ASM("bos4/func_080DDEA4.s");
-INCLUDE_ASM("bos4/func_080DDEB0.s");
-INCLUDE_ASM("bos4/func_080DDEBC.s");
+
+u16 func_080DDEA0(u16* p) {
+    return p[1];
+}
+
+void func_080DDEA4(s32 a) {
+    func_080D2C78(a);
+}
+
+void func_080DDEB0(s32 a) {
+    func_080D2DB0(a);
+}
+
+void func_080DDEBC(s32 a) {
+    func_080D2DC4(a);
+}
+
 INCLUDE_ASM("bos4/func_080DDEC8.s");
 INCLUDE_ASM("bos4/func_080DEBAC.s");
 INCLUDE_ASM("bos4/func_080DEBD8.s");
 INCLUDE_ASM("bos4/func_080DEC00.s");
+INCLUDE_ASM("bos4/func_080DEC44.s");
 INCLUDE_ASM("bos4/func_080DED64.s");
 INCLUDE_ASM("bos4/func_080DED98.s");
 INCLUDE_ASM("bos4/func_080DEDD8.s");
-INCLUDE_ASM("bos4/func_080DEE18.s");
-INCLUDE_ASM("bos4/func_080DEE28.s");
+
+u8* func_080DEE18(u8 index) {
+    return gUnk_0203C5AC + index * 0x10;
+}
+
+u8 func_080DEE28(u8 a, u8 b) {
+    return func_080DED98(a)[b];
+}
+
 INCLUDE_ASM("bos4/func_080DEE44.s");
 INCLUDE_ASM("bos4/func_080DF380.s");
 INCLUDE_ASM("bos4/func_080DF51C.s");
@@ -118,10 +204,24 @@ INCLUDE_ASM("bos4/func_080DF570.s");
 INCLUDE_ASM("bos4/func_080DF5F4.s");
 INCLUDE_ASM("bos4/func_080DF640.s");
 INCLUDE_ASM("bos4/func_080DF6D0.s");
-INCLUDE_ASM("bos4/func_080DF730.s");
+
+void func_080DF730(u8 a, u8 b) {
+    gUnk_0203C590[6] = a;
+    gUnk_0203C590[7] = func_080DEBAC(b);
+    func_080DEC44();
+}
+
 INCLUDE_ASM("bos4/func_080DF750.s");
-INCLUDE_ASM("bos4/func_080DF804.s");
-INCLUDE_ASM("bos4/func_080DF814.s");
+
+u32 func_080DF804(u8 index) {
+    return gUnk_09EF69FC[index];
+}
+
+void func_080DF814(void) {
+    func_080DF730(0xFE, 1);
+    func_080E04EC();
+}
+
 INCLUDE_ASM("bos4/func_080DF828.s");
 INCLUDE_ASM("bos4/func_080DF8C0.s");
 INCLUDE_ASM("bos4/func_080DF964.s");
@@ -132,7 +232,11 @@ INCLUDE_ASM("bos4/func_080DFA3C.s");
 INCLUDE_ASM("bos4/func_080DFAA8.s");
 INCLUDE_ASM("bos4/func_080DFAF4.s");
 INCLUDE_ASM("bos4/func_080DFB2C.s");
-INCLUDE_ASM("bos4/func_080DFB7C.s");
+
+s32 func_080DFB7C(u8 a) {
+    return func_080E5590(a);
+}
+
 INCLUDE_ASM("bos4/func_080DFB8C.s");
 INCLUDE_ASM("bos4/func_080DFBDC.s");
 INCLUDE_ASM("bos4/func_080DFC24.s");
