@@ -6,7 +6,7 @@ INCLUDE_ASM("bos6/func_0810A850.s");
 INCLUDE_ASM("bos6/func_0810A914.s");
 INCLUDE_ASM("bos6/task_bos_pc_1.s");
 
-void task_bos_pc_2(void* work) {
+void task_bos_pc_2(PcWork* work) {
     func_0810A018(work);
     func_0810A498(work);
 }
