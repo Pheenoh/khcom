@@ -34,6 +34,15 @@ extern u8 gBgPaletteBank[];
 extern u16 gUnk_03007500;
 
 extern u8* gUnk_030074C8;
+extern u8* gUnk_03007568;
+extern u16 gUnk_03007544;
+extern u16 gUnk_030074FC;
+extern u16 gUnk_03007538;
+extern u16 gUnk_03007558;
+extern u16 gUnk_03007520;
+extern u16 gUnk_03007534;
+extern u16 gUnk_0300755C;
+extern u16 gUnk_030074E4;
 
 u8 func_08002060(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
 u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
@@ -62,5 +71,7 @@ void* AnimGetGfx(AnimState* a);
 u8 AnimIsFinished(AnimState* a);
 u16 func_08005B34(AnimState* a);
 void LoadPalette(void* src, void* dst, s32 size);
+void SetBgScroll(s32 bg, s32 x, s32 y);
+u8 func_08006314(void);
 
 #endif /* GUARD_ENGINE_H */
