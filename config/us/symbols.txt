@@ -603,3 +603,5 @@ SoundMainRAM  = 0x0811F1D4
 DummyFunc     = 0x081213C1
 gBgControl = 0x09ECEB30
 gBgPaletteBank = 0x030074D0
+gDma3Requests = 0x03007574
+gUnk_0300786C = 0x0300786C

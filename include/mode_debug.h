@@ -88,7 +88,7 @@ void func_080055EC(s32 a, s32 b);
 void func_08005610(s32 a, s32 b);
 void func_08005778(u16 r, u16 g, u16 b);
 void func_08005974(void* a, u16 b, s32 c, void* d, void* e);
-void AnimStart(AnimState* a, u16 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_08006120(s32 a, s32 b);
 s16 func_08007E50(void);
 void func_08007E5C(s16 a);

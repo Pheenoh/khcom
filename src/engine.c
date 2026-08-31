@@ -173,7 +173,26 @@ void AnimInit(AnimState* a, s32 b, s32 c) {
 }
 
 INCLUDE_ASM("engine/func_08005974.s");
-INCLUDE_ASM("engine/AnimStart.s");
+void AnimStart(AnimState* a, u16 animId, u16 flags) {
+    AnimHeader* h = a->unk_00[animId];
+
+    a->unk_0C = h->unk_04;
+    if (a->unk_0C == 0) {
+        a->unk_14 = 0;
+        return;
+    }
+    a->unk_14 = (AnimFrame*)&h->unk_06;
+    if ((flags & 4) == 0) {
+        a->unk_0A = 0;
+        if (flags & 2) {
+            a->unk_0E = GetRandom() % a->unk_0C;
+        } else {
+            a->unk_0E = 0;
+        }
+    }
+    a->unk_08 = flags;
+    a->unk_10 = animId;
+}
 INCLUDE_ASM("engine/AnimChange.s");
 INCLUDE_ASM("engine/AnimUpdate.s");
 INCLUDE_ASM("engine/func_08005AC4.s");
