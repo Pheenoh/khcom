@@ -7,7 +7,7 @@
 set -e
 FT=/tmp/mt; mkdir -p $FT
 C=$1; SYM=$2; START=$3; END=$4
-arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp $C -o $FT/x.i
+arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp -I /tmp/claude-1000/-home-pheenoh-git-c-com/a1bfa4de-60d5-4f26-80f7-ed193de463ed/scratchpad/bos2 $C -o $FT/x.i
 tools/agbcc/bin/agbcc -mthumb-interwork -O2 -fprologue-bugfix ${AGBCC_EXTRA:-} -o $FT/x.s $FT/x.i
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o $FT/x.o $FT/x.s
 grep -oE '^[A-Za-z_][A-Za-z0-9_]*' config/us/symbols.txt 2>/dev/null | sort -u > $FT/datasyms.txt || : > $FT/datasyms.txt
