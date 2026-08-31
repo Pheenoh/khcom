@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "mode_copyright1.h"
 
+#ifdef VERSION_US
 void mode_copyright1_0(s32 arg) {
     if (arg == 0) {
         gUnk_02034ED4 = 1;
@@ -63,7 +64,11 @@ void mode_copyright1_0(s32 arg) {
     func_08006120(1, 0x43);
     gUnk_02034ED6 = 60;
 }
+#else
+INCLUDE_ASM("mode_copyright1/mode_copyright1_0.s");
+#endif
 
+#ifdef VERSION_US
 void mode_copyright1_1(void) {
     if (gUnk_02034ED8 != 0) {
         func_080010CC(&gUnk_09EF6AF0, 0);
@@ -79,6 +84,9 @@ void mode_copyright1_1(void) {
         }
     }
 }
+#else
+INCLUDE_ASM("mode_copyright1/mode_copyright1_1.s");
+#endif
 
 void mode_copyright1_2(void) {
 }

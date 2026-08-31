@@ -21,8 +21,8 @@
 #define SAVE_BAD_CHECKSUM 1
 #define SAVE_OK 2
 
-#define ReadSramFast (*(void (**)(const u8* src, u8* dest, u32 size))0x0203C7BC)
-#define gSaveSignature (*(u8**)0x09EDB7E8)
+extern void (*ReadSramFast)(const u8* src, u8* dest, u32 size);
+extern u8* gSaveSignature;
 
 #define SAVE_FILES 4
 

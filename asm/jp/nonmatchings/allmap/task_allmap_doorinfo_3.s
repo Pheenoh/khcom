@@ -1,0 +1,9 @@
+.syntax unified
+	.align 2, 0
+	.global task_allmap_doorinfo_3
+	.thumb
+	.thumb_func
+	.type task_allmap_doorinfo_3, %function
+task_allmap_doorinfo_3:
+	.incbin "roms/B8CJ.gba", 0xd4b60, 0x10c
+.syntax divided

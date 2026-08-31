@@ -1,5 +1,3 @@
-@ GBA cartridge header (JP / B8CJ)
-
 	.arm
 	.section .text
 	.global _start

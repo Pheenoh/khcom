@@ -501,6 +501,7 @@ void task_tutorial_3(TutorialWork* work) {
     SeedRandom(gFrameCounter);
 }
 
+#ifdef VERSION_US
 s16 func_0805E848(u16* widths, u16 count) {
     s16 i;
     s16 total;
@@ -515,7 +516,11 @@ s16 func_0805E848(u16* widths, u16 count) {
     }
     return 120 - total / 2;
 }
+#else
+INCLUDE_ASM("tutorial/func_0805E848.s");
+#endif
 
+#ifdef VERSION_US
 u16 func_0805E89C(u16* str) {
     s32 n;
     u16 c;
@@ -532,3 +537,6 @@ u16 func_0805E89C(u16* str) {
         str++;
     }
 }
+#else
+INCLUDE_ASM("tutorial/func_0805E89C.s");
+#endif

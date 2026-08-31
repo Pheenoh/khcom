@@ -62,4 +62,4 @@ tools:
         - id: vendored
           name: Vendored
           paths:
-            - tools/
+            - lib/
