@@ -77,12 +77,16 @@ for line in units_file.read_text().splitlines():
     parts = line.split(None, 1)
     name = parts[0]
     flags = parts[1] if len(parts) > 1 else None
+    section = ".text"
+    if name.endswith(")") and "(" in name:
+        name, _, spec = name.partition("(")
+        section = spec[:-1]
     if name.startswith("@"):
         arch, member = name[1:].split(":")
         path = f"tools/agbcc/lib/{arch}"
         if path not in archives:
             archives.append(path)
-        units.append((None, f"{path}:{member}", None))
+        units.append((None, f"{path}:{member}", None, section))
         continue
     if name.endswith(".c"):
         src = Path("src") / name
@@ -92,10 +96,10 @@ for line in units_file.read_text().splitlines():
         obj = f"{build_dir}/asm/{src.stem}.o"
     if not src.exists():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
-    units.append((src, obj, flags))
+    units.append((src, obj, flags, section))
 
-objs_in_order = [obj for _, obj, _flags in units]
-bss_members = [obj for src, obj, _f in units if src is None and BSS_MEMBERS.get(obj.split(":")[-1])]
+objs_in_order = [(obj, section) for _, obj, _flags, section in units]
+bss_members = [obj for src, obj, _f, _s in units if src is None and BSS_MEMBERS.get(obj.split(":")[-1])]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\n")
@@ -104,8 +108,8 @@ with open(ldscript, "w") as f:
     if symbols:
         f.write("\n")
     f.write("SECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
-    for obj in objs_in_order:
-        f.write(f"        {obj}(.text);\n")
+    for obj, section in objs_in_order:
+        f.write(f"        {obj}({section});\n")
     f.write("    }\n")
     if bss_members:
         f.write(f"\n    .bss {ARCHIVE_BSS[version]:#x} (NOLOAD) :\n    {{\n")
@@ -176,7 +180,7 @@ with out.open("w") as f:
 
     headers = sorted(str(p) for p in Path("include").glob("*.h"))
     objs = []
-    for src, obj, flags in units:
+    for src, obj, flags, _section in units:
         if src is None:
             continue
         rule = "cc" if src.suffix == ".c" else "as"
@@ -239,7 +243,7 @@ compile_commands = [
         "output": str(root / obj),
         "arguments": cc_args + [str(src)],
     }
-    for src, obj, _flags in units
+    for src, obj, _flags, _section in units
     if src is not None and src.suffix == ".c"
 ]
 Path("compile_commands.json").write_text(json.dumps(compile_commands, indent=2) + "\n")
