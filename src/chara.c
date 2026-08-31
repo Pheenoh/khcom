@@ -36,7 +36,6 @@ u8 task_chara_mask_fade_1(MaskFadeWork* work) {
     return 1;
 }
 
-
 void task_chara_mask_fade_2(void) {
 }
 
@@ -177,6 +176,7 @@ u8 func_080C54B4(void) {
 }
 
 INCLUDE_ASM("chara/func_080C55DC.s");
+
 u8 func_080C56BC(void) {
     u32* p;
 
@@ -207,7 +207,6 @@ u8 func_080C56BC(void) {
     }
     return gUnk_02039B60;
 }
-
 
 void func_080C57A4(void) {
     func_08083D68();
@@ -314,7 +313,6 @@ u8 func_080C5978(void) {
     }
     return 0;
 }
-
 
 void func_080C5A30(void) {
     gUnk_0203BEB8 = 1;
@@ -454,7 +452,6 @@ s32 func_080C5C7C(void) {
     return 0;
 }
 
-
 void func_080C5D00(void) {
     func_080C5D10();
     func_080C5D24();
@@ -503,6 +500,7 @@ s32 func_080C5D80(void) {
 }
 
 INCLUDE_ASM("chara/func_080C5DC0.s");
+
 s32 func_080C5E58(void) {
     if (gUnk_02039828 == 0) {
         gUnk_02039B68[0] = 0xACD;
@@ -519,10 +517,15 @@ s32 func_080C5E58(void) {
 }
 
 INCLUDE_ASM("chara/func_080C5ECC.s");
+
 INCLUDE_ASM("chara/func_080C5F94.s");
+
 INCLUDE_ASM("chara/func_080C6008.s");
+
 INCLUDE_ASM("chara/func_080C60D8.s");
+
 INCLUDE_ASM("chara/func_080C61D4.s");
+
 void func_080C62F0(void (*a)(void)) {
     gUnk_0203C3A4 = 0;
     gUnk_0203C380 = 0;
@@ -648,6 +651,7 @@ void func_080C6990(u16 a, u8 b) {
 }
 
 INCLUDE_ASM("chara/func_080C69B4.s");
+
 void func_080C6E7C(u8* src, u8* dst, u16 size, s16 count) {
     s32 i;
     s32 n;
