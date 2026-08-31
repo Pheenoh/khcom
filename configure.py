@@ -11,7 +11,7 @@ import ninja_syntax
 
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 
-ARCHIVE_BSS = {"us": 0x020387B8}
+ARCHIVE_BSS = {"us": 0x020387B8, "jp": 0x02038728}
 BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 
 DEFAULT_VERSION = "us"
@@ -84,9 +84,9 @@ for line in units_file.read_text().splitlines():
     if name.startswith("@"):
         arch, member = name[1:].split(":")
         path = f"tools/agbcc/lib/{arch}"
-        if path not in archives:
-            archives.append(path)
-        units.append((None, f"{path}:{member}", None, section))
+        obj = f"{build_dir}/lib/{arch}/{member}"
+        archives.append((path, member, obj))
+        units.append((None, obj, None, section))
         continue
     if name.endswith(".c"):
         src = Path("src") / name
@@ -99,7 +99,7 @@ for line in units_file.read_text().splitlines():
     units.append((src, obj, flags, section))
 
 objs_in_order = [(obj, section) for _, obj, _flags, section in units]
-bss_members = [obj for src, obj, _f, _s in units if src is None and BSS_MEMBERS.get(obj.split(":")[-1])]
+bss_members = [obj for src, obj, _f, _s in units if src is None and BSS_MEMBERS.get(obj.rsplit("/", 1)[-1])]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
     f.write("ENTRY(_start);\n\n")
@@ -125,6 +125,7 @@ with out.open("w") as f:
     n.variable("ninja_required_version", "1.3")
     n.variable("as", f"{prefix}as")
     n.variable("ld", f"{prefix}ld")
+    n.variable("ar", f"{prefix}ar")
     n.variable("objcopy", f"{prefix}objcopy")
     n.variable("cpp", f"{prefix}cpp")
     n.variable("agbcc", "tools/agbcc/bin/agbcc")
@@ -152,8 +153,13 @@ with out.open("w") as f:
     )
     n.rule(
         "ld",
-        command="$ld -T $ldscript -Map $map -o $out $in $archives",
+        command="$ld -T $ldscript -Map $map -o $out $in",
         description="LD $out",
+    )
+    n.rule(
+        "arx",
+        command="$ar p $archive $member > $out",
+        description="AR $out",
     )
     n.rule(
         "rom",
@@ -180,6 +186,10 @@ with out.open("w") as f:
 
     headers = sorted(str(p) for p in Path("include").glob("*.h"))
     objs = []
+    for path, member, obj in archives:
+        n.build(obj, "arx", implicit=[path],
+                variables={"archive": path, "member": member})
+        objs.append(obj)
     for src, obj, flags, _section in units:
         if src is None:
             continue
@@ -189,7 +199,9 @@ with out.open("w") as f:
         if rule == "cc":
             deps += headers
             for m in INCLUDE_ASM_RE.finditer(src.read_text()):
-                deps.append(f"asm/{version}/nonmatchings/{m.group(1)}")
+                dep = f"asm/{version}/nonmatchings/{m.group(1)}"
+                if Path(dep).exists():
+                    deps.append(dep)
         n.build(obj, rule, str(src), implicit=deps, variables=variables)
         objs.append(obj)
     n.newline()
@@ -198,12 +210,8 @@ with out.open("w") as f:
         elf,
         "ld",
         objs,
-        implicit=[ldscript] + archives,
-        variables={
-            "ldscript": ldscript,
-            "map": mapfile,
-            "archives": " ".join(archives),
-        },
+        implicit=[ldscript],
+        variables={"ldscript": ldscript, "map": mapfile},
     )
     n.build(rom, "rom", elf)
     if not args.non_matching:

@@ -23,6 +23,7 @@ void mode_movie_0(s32 a) {
 INCLUDE_ASM("mode_movie/func_0805E93C.s");
 INCLUDE_ASM("mode_movie/func_0805EA90.s");
 
+#ifdef VERSION_US
 void mode_movie_1(void) {
     void* p;
 
@@ -144,6 +145,9 @@ void mode_movie_1(void) {
     }
     }
 }
+#else
+INCLUDE_ASM("mode_movie/mode_movie_1.s");
+#endif
 
 void mode_movie_2(void) {
     gUnk_03007484 = 0;

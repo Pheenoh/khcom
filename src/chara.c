@@ -347,6 +347,7 @@ void func_080C5A30(void) {
     gUnk_0203BEB8 = 1;
 }
 
+#ifdef VERSION_US
 void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c) {
     gUnk_0203C3B0 = (c & 0xF) | 0xC1F0;
     gUnk_0203C3A0 = 0;
@@ -358,6 +359,9 @@ void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c) {
     gUnk_02039B68[0] = 0xDDDD;
     gUnk_02039B68[1] = 0xDDDD;
 }
+#else
+INCLUDE_ASM("chara/func_080C5A3C.s");
+#endif
 
 #ifdef NON_MATCHING
 s32 func_080C5AA4(void) {

@@ -194,6 +194,7 @@ void mode_mapinspect_1(void) {
     func_08108650();
 }
 
+#ifdef VERSION_US
 void mode_mapinspect_2(void) {
     s32 i;
     s32 j;
@@ -250,3 +251,6 @@ void mode_mapinspect_2(void) {
 
     EwramFree(gUnk_02035E28);
 }
+#else
+INCLUDE_ASM("mode_mapinspect/mode_mapinspect_2.s");
+#endif

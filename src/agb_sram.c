@@ -2,11 +2,11 @@
 
 #define REG_WAITCNT (*(vu16*)0x4000204)
 
-#define verifySramFast_Work ((u16*)0x02038698)
-#define readSramFast_Work ((u16*)0x02038738)
+extern u16 verifySramFast_Work[];
+extern u16 readSramFast_Work[];
 
-#define ReadSramFast (*(void (**)(const u8* src, u8* dest, u32 size))0x0203C7BC)
-#define VerifySramFast (*(u32 (**)(const u8* src, u8* dest, u32 size))0x0203C7C0)
+extern void (*ReadSramFast)(const u8* src, u8* dest, u32 size);
+extern u32 (*VerifySramFast)(const u8* src, u8* dest, u32 size);
 
 void ReadSramFast_Core(const u8* src, u8* dest, u32 size) {
     REG_WAITCNT = (REG_WAITCNT & ~3) | 3;

@@ -1,0 +1,9 @@
+.syntax unified
+	.align 2, 0
+	.global task_status_deckname_2
+	.thumb
+	.thumb_func
+	.type task_status_deckname_2, %function
+task_status_deckname_2:
+	.incbin "roms/B8CJ.gba", 0xd7e28, 0x2c
+.syntax divided
