@@ -20,6 +20,7 @@ INCLUDE_ASM("sio/func_08006D08.s");
 INCLUDE_ASM("sio/func_08006E60.s");
 INCLUDE_ASM("sio/func_08006E74.s");
 INCLUDE_ASM("sio/func_08006ED4.s");
+INCLUDE_ASM("sio/func_0800702C.s");
 INCLUDE_ASM("sio/func_0800712C.s");
 INCLUDE_ASM("sio/func_08007210.s");
 INCLUDE_ASM("sio/func_08007874.s");

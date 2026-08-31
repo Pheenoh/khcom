@@ -12,4 +12,6 @@ INCLUDE_ASM("util/func_0800886C.s");
 INCLUDE_ASM("util/func_08008884.s");
 INCLUDE_ASM("util/func_0800889C.s");
 INCLUDE_ASM("util/func_080088B4.s");
+INCLUDE_ASM("util/func_08008944.s");
+INCLUDE_ASM("util/func_0800895C.s");
 INCLUDE_ASM("util/func_08008974.s");

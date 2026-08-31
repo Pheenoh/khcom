@@ -173,7 +173,9 @@ void func_080838FC(void) {
 
 INCLUDE_ASM("card/func_08083900.s");
 INCLUDE_ASM("card/func_08083B20.s");
+INCLUDE_ASM("card/func_08083C94.s");
 INCLUDE_ASM("card/func_08083D68.s");
+INCLUDE_ASM("card/func_08083D7C.s");
 INCLUDE_ASM("card/func_08083DD4.s");
 INCLUDE_ASM("card/func_08083E54.s");
 INCLUDE_ASM("card/sub_08083EFC.s");
