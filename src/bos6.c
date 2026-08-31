@@ -30,7 +30,12 @@ void func_0810B4A8(u8* p) {
 }
 
 INCLUDE_ASM("bos6/func_0810B4B4.s");
-INCLUDE_ASM("bos6/func_0810B4F4.s");
+
+void func_0810B4F4(u8* p) {
+    if (p[0] != 0) {
+        func_08005BE8(gUnk_09D69374 + *(s16*)(p + 2) * 32, gUnk_05000080, 32);
+    }
+}
 
 void func_0810B51C(u8* p) {
     *p = 0;
@@ -39,13 +44,47 @@ void func_0810B51C(u8* p) {
 INCLUDE_ASM("bos6/task_bos_pc_fld_0.s");
 INCLUDE_ASM("bos6/task_bos_pc_fld_1.s");
 INCLUDE_ASM("bos6/task_bos_pc_fld_2.s");
-INCLUDE_ASM("bos6/task_bos_pc_fld_3.s");
+
+void task_bos_pc_fld_3(PcFldWork* work) {
+    func_0810B51C((u8*)work);
+    func_08012304(&work->unk_010);
+
+    if (work->unk_008 != 0) {
+        func_080028C0((void*)work->unk_008);
+    }
+
+    if (work->unk_00C != 0) {
+        func_08002C10((void*)work->unk_00C);
+    }
+}
+
+s32 func_0810B7D8(s32 x) {
+    return x * x;
+}
+
+s32 func_0810B7E0(s32 x) {
+    return x * x;
+}
+
 INCLUDE_ASM("bos6/func_0810B7E8.s");
 INCLUDE_ASM("bos6/func_0810BCD4.s");
 INCLUDE_ASM("bos6/task_bos_pc_flt_0.s");
 INCLUDE_ASM("bos6/task_bos_pc_flt_1.s");
 INCLUDE_ASM("bos6/task_bos_pc_flt_2.s");
-INCLUDE_ASM("bos6/task_bos_pc_flt_3.s");
+
+void task_bos_pc_flt_3(PcFltWork* work) {
+    func_08012304(&work->unk_040);
+    func_080028C0((void*)work->unk_034);
+    func_08002C10((void*)work->unk_038);
+}
+
+s32 func_0810BF14(s32 x) {
+    return x * x;
+}
+
+s32 func_0810BF1C(s32 x) {
+    return x * x;
+}
 
 void func_0810BF24(u8** p, u8 v) {
     p[1][24] = v;
@@ -54,7 +93,19 @@ void func_0810BF24(u8** p, u8 v) {
 INCLUDE_ASM("bos6/task_bos_pc_acd_0.s");
 INCLUDE_ASM("bos6/task_bos_pc_acd_1.s");
 INCLUDE_ASM("bos6/task_bos_pc_acd_2.s");
-INCLUDE_ASM("bos6/task_bos_pc_acd_3.s");
+
+void task_bos_pc_acd_3(PcAcdWork* work) {
+    func_080028C0((void*)work->unk_004);
+    func_08002C10((void*)work->unk_008);
+}
+
+s32 func_0810C2B4(s32 x) {
+    return x * x;
+}
+
+s32 func_0810C2BC(s32 x) {
+    return x * x;
+}
 
 void func_0810C2C4(u8** p) {
     p[1][1] = 1;
