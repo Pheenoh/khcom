@@ -6,7 +6,7 @@
 	.type mode_eventselect_1, %function
 mode_eventselect_1: @ 0807511C
 	push {r4, r5, lr}
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -24,7 +24,7 @@ _0807513C:
 _0807513E:
 	strb r0, [r1, #0x00]
 _08075140:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -88,7 +88,7 @@ _080751A4:
 	adds r3, r4, #0x0
 	bl func_0805FCB0
 _080751CA:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -98,7 +98,7 @@ _080751CA:
 	adds r0, #0x01
 	strh r0, [r1, #0x00]
 _080751DE:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -205,7 +205,7 @@ _080752AC:
 	movs r2, #0x02
 	bl func_0805FCB0
 _080752CC:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
@@ -243,7 +243,7 @@ _08075310:
 	ldrh r0, [r0, #0x00]
 	bl func_0806180C
 _08075322:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00

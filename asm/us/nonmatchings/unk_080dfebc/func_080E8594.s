@@ -24,7 +24,7 @@ _080E8598:
 	ldr r0, [r0, #0x00]
 	adds r0, #0x78
 	ldr r1, _080E8614 @ =0x09EF6C54
-	bl func_08000E14
+	bl TaskCreate
 _080E85BE:
 	adds r4, #0x01
 	cmp r4, #0x0B
@@ -49,7 +49,7 @@ _080E85D0:
 	ldr r0, [r0, #0x00]
 	adds r0, #0x78
 	ldr r1, [r3, #0x24]
-	bl func_08000E14
+	bl TaskCreate
 _080E85EE:
 	adds r5, #0x18
 	adds r4, #0x01
@@ -63,7 +63,7 @@ _080E85FA:
 	adds r0, #0x78
 	ldr r1, _080E8620 @ =0x09EF6C84
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	pop {r4, r5}
 	pop {r0}
 	bx r0

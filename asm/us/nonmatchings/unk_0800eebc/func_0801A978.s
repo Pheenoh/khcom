@@ -187,7 +187,7 @@ _0801AAE8:
 	ldr r0, [r3, #0x00]
 	cmp r0, #0x37
 	beq _0801AB12
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	movs r1, #0xE0
 	lsls r1, r1, #0x0B

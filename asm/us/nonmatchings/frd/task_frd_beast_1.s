@@ -61,7 +61,7 @@ _08049A68:
 	cmp r0, #0x00
 	bne _08049A7C
 	movs r0, #0xBD
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08049A7C:
 	movs r1, #0x9D
 	lsls r1, r1, #0x01
@@ -84,7 +84,7 @@ _08049A7C:
 	str r1, [r0, #0x00]
 	movs r0, #0x9C
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08049AAC:
 	ldr r6, [r4, #0x0C]
 	ldr r0, [r4, #0x10]
@@ -164,7 +164,7 @@ _08049B3E:
 	movs r1, #0x98
 	lsls r1, r1, #0x01
 	adds r0, r5, r1
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _08049B80
@@ -213,7 +213,7 @@ _08049B88:
 	cmp r0, #0x02
 	beq _08049BBA
 	movs r0, #0xBD
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08049BBA:
 	ldr r0, [r4, #0x34]
 	ldr r1, [r4, #0x38]
@@ -278,7 +278,7 @@ _08049C14:
 	cmp r0, #0x00
 	beq _08049C40
 	ldr r0, _08049C74 @ =0x0000026F
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08049C40:
 	adds r0, r5, #0x0
 	bl func_080497E8
@@ -293,9 +293,9 @@ _08049C52:
 	movs r1, #0x98
 	lsls r1, r1, #0x01
 	adds r0, r5, r1
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r5, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _08049C64:
 	add sp, #0x00C

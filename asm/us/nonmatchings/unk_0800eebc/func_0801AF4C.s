@@ -40,7 +40,7 @@ func_0801AF4C: @ 0801AF4C
 	adds r0, r0, r2
 	ldr r0, [r0, #0x00]
 	movs r1, #0x0C
-	bl func_08120008
+	bl m4aMPlayFadeOut
 	movs r0, #0x02
 	movs r1, #0x14
 	bl func_08006120

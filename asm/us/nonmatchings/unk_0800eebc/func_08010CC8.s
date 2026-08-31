@@ -74,7 +74,7 @@ _08010D50:
 	ldr r4, _08010DD4 @ =0x02039B84
 	ldr r0, [r4, #0x00]
 	adds r0, #0x40
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r6, [r4, #0x00]
 	ldr r4, [r6, #0x68]
 	ldr r5, [r6, #0x6C]
@@ -381,17 +381,17 @@ _08010FB2:
 	adds r0, #0x2C
 	ldr r1, _08011014 @ =0x09EDE488
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r5, #0x00]
 	adds r0, #0x40
 	ldr r1, _08011018 @ =0x09EDAEA0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r5, #0x00]
 	adds r0, #0x40
 	ldr r1, _0801101C @ =0x09EDE4A0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r3, [r5, #0x00]
 	ldr r0, [r3, #0x68]
 	ldr r1, [r3, #0x6C]
@@ -406,12 +406,12 @@ _08010FB2:
 	adds r0, #0x40
 	ldr r1, _08011020 @ =0x09EE4954
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r5, #0x00]
 	adds r0, #0x40
 	ldr r1, _08011024 @ =0x09EE49B4
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	b _08011042
 _08011010: .4byte 0x02039B84
 _08011014: .4byte 0x09EDE488
@@ -424,13 +424,13 @@ _08011028:
 	adds r0, #0x40
 	ldr r1, _08011058 @ =0x09EE49B4
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r2, _0801105C @ =0x02039B84
 	ldr r0, [r2, #0x00]
 	adds r0, #0x40
 	ldr r1, _08011060 @ =0x09EE4954
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 _08011042:
 	bl func_08076360
 	bl func_080838E8
@@ -537,7 +537,7 @@ _0801111C:
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _08011158
-	bl func_0811FFA4
+	bl m4aMPlayAllStop
 	mov r1, r10
 	movs r2, #0x2C
 	ldsh r0, [r1, r2]

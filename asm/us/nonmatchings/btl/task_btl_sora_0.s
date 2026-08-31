@@ -296,13 +296,13 @@ _0801E2B6:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	adds r0, r7, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
 	bl func_0801DDE4
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x08]
 	movs r2, #0x00
 	str r2, [r7, #0x38]
@@ -427,15 +427,15 @@ _0801E4AA:
 	adds r4, #0x24
 	adds r0, r4, #0x0
 	movs r1, #0x07
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _0801E4DC @ =0x09EDAE88
 	adds r0, r4, #0x0
 	adds r2, r6, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, _0801E4E0 @ =0x09EDB3F8
 	adds r0, r4, #0x0
 	adds r2, r6, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

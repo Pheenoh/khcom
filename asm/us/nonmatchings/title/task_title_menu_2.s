@@ -8,7 +8,7 @@ task_title_menu_2: @ 080D6DB0
 	push {r4, lr}
 	adds r4, r0, #0x0
 	adds r0, #0x2C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x20]
 	ldr r1, _080D6DF4 @ =0x09EF6620
 	ldr r2, [r4, #0x44]
@@ -70,7 +70,7 @@ _080D6E2C:
 _080D6E32:
 	adds r0, r4, #0x0
 	adds r0, #0x48
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r4}
 	pop {r0}
 	bx r0

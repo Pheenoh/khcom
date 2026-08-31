@@ -26,7 +26,7 @@ task_poo_map_1: @ 080CA210
 	bl func_08005244
 	adds r6, #0x04
 	adds r0, r6, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4, r5, r6}
 	pop {r1}

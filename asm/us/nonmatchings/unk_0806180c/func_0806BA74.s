@@ -13,7 +13,7 @@ func_0806BA74: @ 0806BA74
 	ldr r4, _0806BAB0 @ =0x02034A88
 	movs r0, #0xC0
 	lsls r0, r0, #0x04
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	adds r5, r4, #0x0
 	movs r4, #0x00
@@ -53,7 +53,7 @@ _0806BACC:
 	ldr r0, _0806BAE4 @ =0x09614738
 _0806BACE:
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r5, #0x00]
 	adds r1, r4, r1
 	str r0, [r1, #0x0C]

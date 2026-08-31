@@ -77,7 +77,7 @@ _08078A74:
 	adds r0, r6, #0x0
 	add r2, sp, #0x004
 _08078A7A:
-	bl func_08000E14
+	bl TaskCreate
 	ldr r3, [r0, #0x04]
 	adds r1, r3, #0x0
 	adds r1, #0x80
@@ -127,7 +127,7 @@ _08078A7A:
 	adds r4, r2, #0x0
 _08078ADC:
 	movs r0, #0x91
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _08078B5E
 _08078AE4: .4byte 0x09EE496C
 _08078AE8: .4byte 0x09033FA8
@@ -158,7 +158,7 @@ _08078AF8:
 	ldr r1, _08078BA0 @ =0x09EE4984
 	adds r0, r6, #0x0
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 	ldr r3, [r0, #0x04]
 	adds r1, r3, #0x0
 	adds r1, #0x80

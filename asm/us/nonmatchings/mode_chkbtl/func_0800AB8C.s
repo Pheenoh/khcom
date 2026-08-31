@@ -32,7 +32,7 @@ func_0800AB8C: @ 0800AB8C
 	adds r0, #0x2C
 	ldr r1, [r1, #0x0C]
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _0800ABC6:
 	add sp, #0x00C
 	pop {r0}

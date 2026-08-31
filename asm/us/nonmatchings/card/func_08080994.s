@@ -79,7 +79,7 @@ _08080A24:
 	adds r0, r5, #0x0
 	mov r2, sp
 _08080A2A:
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r0, #0x04]
 	mov r12, r0
 	mov r0, r12
@@ -167,7 +167,7 @@ _08080AB4:
 	ldr r1, _08080B34 @ =0x09EE49E4
 	adds r0, r5, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	ldr r3, [r0, #0x04]
 	adds r0, r3, #0x0
 	adds r0, #0x80

@@ -50,7 +50,7 @@ _080BC8CE:
 	movs r1, #0x8F
 	lsls r1, r1, #0x02
 	adds r0, r5, r1
-	bl func_08005A64
+	bl AnimUpdate
 	movs r2, #0xEE
 	lsls r2, r2, #0x01
 	adds r1, r5, r2
@@ -76,7 +76,7 @@ _080BC8CE:
 	lsls r1, r1, #0x05
 	ldr r2, _080BC93C @ =0x096FB304
 	adds r1, r1, r2
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	ldrb r0, [r4, #0x00]
 	adds r0, #0x01
 	movs r1, #0x07
@@ -86,7 +86,7 @@ _080BC924:
 	movs r2, #0xDA
 	lsls r2, r2, #0x01
 	adds r0, r5, r2
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4, r5}
 	pop {r1}

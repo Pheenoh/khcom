@@ -29,7 +29,7 @@ func_0810A4CC: @ 0810A4CC
 	adds r0, #0x2C
 	ldr r1, _0810A518 @ =0x09EF9E24
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	lsls r4, r4, #0x02
 	movs r2, #0xB5
 	lsls r2, r2, #0x02

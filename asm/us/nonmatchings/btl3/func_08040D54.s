@@ -96,7 +96,7 @@ _08040DFC:
 	asrs r4, r0, #0x10
 	cmp r4, #0x00
 	beq _08040E1C
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0

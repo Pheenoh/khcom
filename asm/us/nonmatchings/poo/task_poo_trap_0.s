@@ -16,11 +16,11 @@ task_poo_trap_0: @ 080CBB8C
 	ldr r0, _080CBBD0 @ =0x0972BD8C
 	movs r1, #0x80
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080CBBD4 @ =0x09849AB8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r0, _080CBBD8 @ =0x0972BD78
 	str r0, [r4, #0x08]

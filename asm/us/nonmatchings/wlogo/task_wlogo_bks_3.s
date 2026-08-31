@@ -11,11 +11,11 @@ task_wlogo_bks_3: @ 080B7C58
 	bl func_08008280
 	adds r0, r4, #0x0
 	adds r0, #0x3C
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x0C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x10]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

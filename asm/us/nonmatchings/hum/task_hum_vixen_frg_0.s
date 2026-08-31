@@ -25,7 +25,7 @@ task_hum_vixen_frg_0: @ 08055E2C
 	str r4, [r4, #0x30]
 	ldr r0, _08055F20 @ =0x08F6DCA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x34]
 	movs r1, #0x00
 	movs r0, #0x00
@@ -65,7 +65,7 @@ _08055E74:
 	adds r0, r0, r1
 	ldr r0, [r0, #0x00]
 	str r0, [r5, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08055F30 @ =0x00000401
@@ -75,11 +75,11 @@ _08055E74:
 	ldr r1, _08055F34 @ =0xFFFFFB00
 	adds r0, r0, r1
 	str r0, [r5, #0x10]
-	bl func_080065A4
+	bl GetRandom
 	adds r4, r0, #0x0
 	lsls r4, r4, #0x18
 	lsrs r4, r4, #0x18
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0xE0
@@ -110,7 +110,7 @@ _08055E74:
 	ble _08055E74
 	movs r0, #0xA8
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

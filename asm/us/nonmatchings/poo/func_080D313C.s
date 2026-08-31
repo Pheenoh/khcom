@@ -7,7 +7,7 @@
 func_080D313C: @ 080D313C
 	push {r4, lr}
 	movs r0, #0x02
-	bl func_08005130
+	bl GetBgCharBase
 	adds r3, r0, #0x0
 	adds r3, #0x20
 	ldr r2, _080D3164 @ =0x02039BB0
@@ -39,9 +39,9 @@ _080D3178:
 	lsls r2, r2, #0x01
 	adds r0, r4, #0x0
 	adds r1, r3, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0x02
-	bl func_0800514C
+	bl GetBgScreenBase
 	movs r1, #0x90
 	lsls r1, r1, #0x03
 	adds r3, r0, r1
@@ -49,9 +49,9 @@ _080D3178:
 	adds r0, r4, #0x0
 	adds r1, r3, #0x0
 	movs r2, #0x0A
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0x02
-	bl func_0800514C
+	bl GetBgScreenBase
 	movs r1, #0x98
 	lsls r1, r1, #0x03
 	adds r3, r0, r1
@@ -59,7 +59,7 @@ _080D3178:
 	adds r0, r4, #0x0
 	adds r1, r3, #0x0
 	movs r2, #0x0A
-	bl func_080043B4
+	bl RequestDma3Copy
 	pop {r4}
 	pop {r0}
 	bx r0

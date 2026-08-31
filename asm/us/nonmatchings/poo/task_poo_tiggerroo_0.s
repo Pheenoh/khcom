@@ -34,7 +34,7 @@ task_poo_tiggerroo_0: @ 080CED58
 	ldr r1, _080CEDEC @ =0x09EF5FA0
 	adds r0, r5, #0x0
 	adds r2, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	movs r0, #0x04
 	strh r0, [r6, #0x26]
 	adds r0, r6, #0x0
@@ -43,13 +43,13 @@ task_poo_tiggerroo_0: @ 080CED58
 	adds r0, r6, #0x0
 	bl func_080CE8B4
 	adds r0, r5, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r6, #0x08]
 	adds r4, r6, #0x0
 	adds r4, #0x94
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r0, r6, #0x0
 	adds r0, #0x28
 	str r0, [sp, #0x000]
@@ -58,7 +58,7 @@ task_poo_tiggerroo_0: @ 080CED58
 	ldr r1, _080CEDF0 @ =0x09EF4940
 	adds r0, r4, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r6, #0x0
 	adds r0, #0x38
 	ldr r1, [r6, #0x28]

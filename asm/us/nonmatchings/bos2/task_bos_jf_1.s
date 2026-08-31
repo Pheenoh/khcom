@@ -21,7 +21,7 @@ task_bos_jf_1: @ 080BD1D4
 	movs r2, #0x95
 	lsls r2, r2, #0x02
 	adds r0, r6, r2
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	b _080BD45E
 _080BD1FC:
@@ -197,7 +197,7 @@ _080BD3E4:
 	movs r1, #0x95
 	lsls r1, r1, #0x02
 	adds r0, r6, r1
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, _080BD444 @ =0x02039B84
 	ldr r3, [r0, #0x00]
 	adds r1, r3, #0x0

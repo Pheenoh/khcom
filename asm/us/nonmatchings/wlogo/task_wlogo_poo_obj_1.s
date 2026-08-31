@@ -25,7 +25,7 @@ task_wlogo_poo_obj_1: @ 080B6CC0
 	str r1, [r4, #0x30]
 	adds r0, r4, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x08]
 	movs r0, #0x40
 	adds r0, r0, r4

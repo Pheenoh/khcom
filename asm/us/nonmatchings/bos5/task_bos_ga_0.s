@@ -44,7 +44,7 @@ _080FB622:
 	adds r0, #0x40
 	ldr r1, _080FB704 @ =0x09EDB338
 	ldr r2, _080FB708 @ =0x0999202C
-	bl func_08000E14
+	bl TaskCreate
 	ldr r2, [r5, #0x00]
 	adds r1, r2, #0x0
 	adds r1, #0xCC
@@ -82,14 +82,14 @@ _080FB680:
 	bl func_0801C2DC
 	ldr r0, _080FB70C @ =0x09A3C89C
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	movs r1, #0xA3
 	lsls r1, r1, #0x04
 	adds r4, r6, r1
 	str r0, [r4, #0x00]
 	ldr r0, _080FB710 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _080FB714 @ =0x00000A34
 	adds r5, r6, r1
 	str r0, [r5, #0x00]
@@ -107,7 +107,7 @@ _080FB680:
 	lsrs r0, r0, #0x18
 	movs r1, #0x01
 	bl func_0801C298
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03

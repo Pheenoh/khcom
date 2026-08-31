@@ -81,7 +81,7 @@ _0804CCF0:
 _0804CD5C: .4byte 0x02039B84
 _0804CD60: .4byte 0x08121400
 _0804CD64:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0804CDA4 @ =0x00000301
@@ -112,7 +112,7 @@ _0804CD64:
 	b _0804CDAC
 _0804CDA4: .4byte 0x00000301
 _0804CDA8:
-	bl func_080065A4
+	bl GetRandom
 _0804CDAC:
 	strb r0, [r4, #0x00]
 	ldrh r0, [r5, #0x00]
@@ -146,7 +146,7 @@ _0804CDD6:
 	adds r0, #0x08
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0804CDEA:
 	movs r2, #0x3C
 	ldsh r0, [r6, r2]
@@ -189,7 +189,7 @@ _0804CDEA:
 	cmp r1, #0x00
 	ble _0804CEBE
 	str r7, [r6, #0x28]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0804CE7C @ =0x00000301
@@ -246,7 +246,7 @@ _0804CE9A:
 	beq _0804CEBE
 	movs r0, #0x99
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0804CEBE:
 	movs r7, #0x3C
 	ldsh r0, [r6, r7]
@@ -274,7 +274,7 @@ _0804CEDE:
 	bl func_0801A8A4
 	cmp r0, #0x00
 	beq _0804CF0C
-	bl func_080065A4
+	bl GetRandom
 	adds r5, r6, #0x0
 	adds r5, #0x34
 	ldrb r4, [r5, #0x00]
@@ -288,7 +288,7 @@ _0804CEDE:
 _0804CF0C:
 	adds r0, r6, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 _0804CF16:
 	add sp, #0x00C

@@ -41,7 +41,7 @@ func_08041D64: @ 08041D64
 	ldr r0, [r7, #0x40]
 	adds r0, r0, r1
 	str r0, [r3, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	ldrb r4, [r5, #0x00]
 	adds r4, #0x20
 	lsls r0, r0, #0x10

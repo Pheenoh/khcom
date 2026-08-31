@@ -16,15 +16,15 @@ task_bos_tm_arm_0: @ 080BB64C
 	ldr r0, _080BB8DC @ =0x09652E84
 	movs r1, #0xEC
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x00]
 	ldr r0, _080BB8E0 @ =0x096FB2A4
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x04]
 	ldr r0, _080BB8E4 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x08]
 	movs r1, #0xD8
 	lsls r1, r1, #0x01
@@ -169,11 +169,11 @@ _080BB78E:
 	mov r1, r10
 	mov r2, r9
 	str r3, [sp, #0x00C]
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r6, r7, r5
 	ldr r3, [sp, #0x00C]
 	lsls r1, r3, #0x01
@@ -181,7 +181,7 @@ _080BB78E:
 	strh r1, [r6, #0x36]
 	adds r0, r4, #0x0
 	str r3, [sp, #0x00C]
-	bl func_08005AFC
+	bl AnimGetGfx
 	ldr r2, [sp, #0x004]
 	adds r1, r2, r5
 	str r0, [r1, #0x00]
@@ -190,18 +190,18 @@ _080BB78E:
 	adds r0, r4, #0x0
 	mov r1, r10
 	mov r2, r9
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r1, #0x83
 	lsls r1, r1, #0x01
 	adds r0, r6, r1
 	mov r2, r8
 	strh r2, [r0, #0x00]
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	movs r6, #0x88
 	lsls r6, r6, #0x01
 	adds r1, r7, r6
@@ -221,7 +221,7 @@ _080BB78E:
 	movs r0, #0xA0
 	lsls r0, r0, #0x01
 	ldr r1, _080BB8FC @ =0x09657C04
-	bl func_080028F8
+	bl AllocObjTiles
 	movs r1, #0x8E
 	lsls r1, r1, #0x02
 	adds r6, r7, r1
@@ -242,11 +242,11 @@ _080BB78E:
 	ldr r1, _080BB900 @ =0x09EF3A18
 	ldr r2, _080BB904 @ =0x09EF39F8
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r2, #0xEC
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -258,7 +258,7 @@ _080BB78E:
 	ldr r0, [r6, #0x00]
 	str r0, [r1, #0x00]
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	movs r2, #0xEE
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -276,7 +276,7 @@ _080BB78E:
 	adds r4, r7, r6
 	adds r0, r4, #0x0
 	movs r1, #0x02
-	bl func_08000E64
+	bl TaskPoolInit
 	movs r0, #0xE4
 	lsls r0, r0, #0x01
 	adds r1, r7, r0

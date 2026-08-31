@@ -168,7 +168,7 @@ _0800CA6C:
 	cmp r0, #0x00
 	beq _0800CB2E
 	ldr r0, [sp, #0x014]
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldrh r0, [r5, #0x00]
 	mov r6, r9
 	orrs r0, r6
@@ -201,7 +201,7 @@ _0800CAD4:
 	cmp r0, #0x00
 	beq _0800CB2E
 	ldr r0, [sp, #0x014]
-	bl func_0811FE70
+	bl m4aSongNumStart
 	movs r6, #0x01
 	str r6, [sp, #0x020]
 	ldrh r0, [r5, #0x00]

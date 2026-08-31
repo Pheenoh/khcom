@@ -24,7 +24,7 @@ task_sroll_b_logo_1: @ 08114C98
 _08114CB8:
 	adds r0, r2, #0x0
 	adds r0, #0x18
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r4, #0x0
 	pop {r4}
 	pop {r1}

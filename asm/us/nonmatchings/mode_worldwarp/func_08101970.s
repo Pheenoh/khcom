@@ -35,7 +35,7 @@ func_08101970: @ 08101970
 	lsls r1, r1, #0x03
 	str r1, [sp, #0x00C]
 	movs r1, #0x00
-	bl func_080023E0
+	bl DrawSprite
 	ldr r3, _08101A1C @ =0x02035898
 	ldr r1, [r3, #0x00]
 	lsls r1, r1, #0x08
@@ -50,7 +50,7 @@ func_08101970: @ 08101970
 	ldr r0, _08101A24 @ =0x000007D1
 	str r0, [sp, #0x00C]
 	movs r0, #0x80
-	bl func_080023E0
+	bl DrawSprite
 	ldr r3, _08101A1C @ =0x02035898
 	ldr r1, [r3, #0x04]
 	lsls r1, r1, #0x08
@@ -64,7 +64,7 @@ func_08101970: @ 08101970
 	subs r4, #0x2F
 	str r4, [sp, #0x00C]
 	movs r0, #0x80
-	bl func_080023E0
+	bl DrawSprite
 _081019EE:
 	movs r5, #0x80
 	lsls r5, r5, #0x04
@@ -104,7 +104,7 @@ _08101A40:
 	orrs r5, r0
 _08101A44:
 	ldr r0, _08101BE8 @ =0x02035860
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	ldr r3, _08101BEC @ =0x09993118
 	mov r8, r3
@@ -130,9 +130,9 @@ _08101A44:
 	str r5, [sp, #0x008]
 	ldr r4, _08101C00 @ =0x00000834
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, _08101C04 @ =0x020357D8
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	ldr r7, _08101C08 @ =0x02035888
 	ldr r0, [r7, #0x00]
@@ -158,9 +158,9 @@ _08101A44:
 	movs r4, #0xFA
 	lsls r4, r4, #0x03
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, _08101C14 @ =0x020357F8
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	ldr r7, _08101C08 @ =0x02035888
 	ldr r0, [r7, #0x00]
@@ -198,7 +198,7 @@ _08101A44:
 	lsls r7, r7, #0x03
 	str r7, [sp, #0x00C]
 	ldr r1, [sp, #0x010]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, _08101C08 @ =0x02035888
 	ldr r0, [r1, #0x00]
 	asrs r0, r0, #0x08
@@ -227,13 +227,13 @@ _08101A44:
 	str r0, [sp, #0x00C]
 	adds r0, r5, #0x0
 	ldr r1, [sp, #0x010]
-	bl func_080023E0
+	bl DrawSprite
 	movs r6, #0x00
 	movs r7, #0x00
 _08101B50:
 	ldr r0, _08101C30 @ =0x02035828
 	adds r0, r7, r0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	ldr r0, _08101BEC @ =0x09993118
 	lsls r3, r6, #0x05
@@ -263,7 +263,7 @@ _08101B50:
 	str r4, [sp, #0x008]
 	subs r4, #0x30
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r7, #0x18
 	adds r6, #0x01
 	cmp r6, #0x01
@@ -276,21 +276,21 @@ _08101B50:
 	bl func_08102F30
 _08101BAC:
 	ldr r0, _08101C40 @ =0x020358A8
-	bl func_08000EE0
+	bl TaskPoolDraw
 	mov r0, r8
 	ldr r1, [r0, #0x00]
 	lsls r1, r1, #0x08
 	lsrs r1, r1, #0x10
 	movs r0, #0x00
 	movs r2, #0x00
-	bl func_080054EC
+	bl SetBgScroll
 	ldr r0, _08101C44 @ =0x02035880
 	ldr r1, [r0, #0x00]
 	lsls r1, r1, #0x08
 	lsrs r1, r1, #0x10
 	movs r0, #0x01
 	movs r2, #0x00
-	bl func_080054EC
+	bl SetBgScroll
 	add sp, #0x014
 	pop {r3, r4, r5}
 	mov r8, r3

@@ -45,7 +45,7 @@ _08052504:
 	cmp r0, #0x00
 	beq _08052544
 	ldr r0, _08052540 @ =0x000002A3
-	bl func_0811FE70
+	bl m4aSongNumStart
 	strh r6, [r5, #0x2E]
 	str r7, [r5, #0x3C]
 	ldr r0, [r5, #0x20]
@@ -86,7 +86,7 @@ _08052564:
 	adds r0, #0x08
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _08052578:
 	ldr r0, [r4, #0x00]
 	ldr r2, [r0, #0x7C]
@@ -123,7 +123,7 @@ _080525B0:
 _080525B2:
 	adds r0, r5, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	ldr r0, _080525D8 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	ldr r1, [r0, #0x7C]

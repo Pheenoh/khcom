@@ -34,8 +34,8 @@ task_bos_jf_lamp_1: @ 080BDCA0
 	strh r0, [r6, #0x22]
 	movs r0, #0x89
 	lsls r0, r0, #0x01
-	bl func_0811FE70
-	bl func_080065A4
+	bl m4aSongNumStart
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x79
@@ -168,7 +168,7 @@ _080BE0AA:
 	adds r1, r1, r2
 	movs r2, #0x80
 	lsls r2, r2, #0x02
-	bl func_080043B4
+	bl RequestDma3Copy
 _080BE0C6:
 	ldrh r0, [r6, #0x1E]
 	adds r0, #0x01
@@ -191,7 +191,7 @@ _080BE0C6:
 	bl func_08012324
 	adds r0, r6, #0x0
 	adds r0, #0x44
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r3, r4}
 	mov r8, r3

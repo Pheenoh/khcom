@@ -47,7 +47,7 @@ _08015024:
 	str r5, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, [r6, #0x00]
 	movs r1, #0x80
 	str r1, [r0, #0x1C]

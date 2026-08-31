@@ -51,7 +51,7 @@ _08055710:
 	adds r1, #0x08
 	movs r0, #0x0A
 	str r0, [r1, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -135,7 +135,7 @@ _080557A8:
 	str r0, [r5, #0x00]
 	movs r0, #0x00
 	strh r0, [r6, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080557F8 @ =0x00000259
@@ -161,12 +161,12 @@ _080557FC:
 	adds r0, r7, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	ldrh r0, [r4, #0x00]
 	adds r0, #0x01
 	strh r0, [r4, #0x00]
 _0805581C:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x96
@@ -192,13 +192,13 @@ _0805583C:
 	adds r0, r7, #0x0
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	ldrh r0, [r4, #0x00]
 	adds r0, #0x01
 	strh r0, [r4, #0x00]
 _0805585C:
 	adds r0, r7, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _08055870
@@ -252,7 +252,7 @@ _080558A4:
 	bl func_08012324
 _080558CA:
 	adds r0, r7, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 _080558D0:
 	movs r0, #0x01
 	pop {r4, r5, r6, r7}

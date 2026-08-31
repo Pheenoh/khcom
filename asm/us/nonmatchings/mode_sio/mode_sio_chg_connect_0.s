@@ -9,7 +9,7 @@ mode_sio_chg_connect_0: @ 080B1A24
 	ldr r4, _080B1AF4 @ =0x02034B48
 	movs r0, #0xB7
 	lsls r0, r0, #0x02
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	movs r0, #0x00
 	movs r1, #0x10
@@ -19,12 +19,12 @@ mode_sio_chg_connect_0: @ 080B1A24
 	movs r1, #0x00
 	movs r2, #0x07
 	movs r3, #0x0F
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x01
 	movs r2, #0x1F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	bl func_08004FC8
 	movs r0, #0x01
@@ -33,30 +33,30 @@ mode_sio_chg_connect_0: @ 080B1A24
 	movs r2, #0xA0
 	lsls r2, r2, #0x01
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080B1AFC @ =0x096F6464
 	movs r5, #0x80
 	lsls r5, r5, #0x04
 	movs r0, #0x00
 	adds r2, r5, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r1, _080B1B00 @ =0x09611AB8
 	movs r0, #0x00
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B1B04 @ =0x096ACA44
 	movs r2, #0xBC
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080B1B08 @ =0x096FBA04
 	movs r0, #0x01
 	movs r2, #0x40
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B1B0C @ =0x096F5C64
 	movs r0, #0x01
 	adds r2, r5, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, [r4, #0x00]
 	movs r2, #0x00
 	movs r1, #0x00
@@ -77,7 +77,7 @@ mode_sio_chg_connect_0: @ 080B1A24
 	strb r0, [r1, #0x05]
 	ldr r0, _080B1B14 @ =0x096FBAA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r4, #0x00]
 	movs r2, #0xB6
 	lsls r2, r2, #0x02

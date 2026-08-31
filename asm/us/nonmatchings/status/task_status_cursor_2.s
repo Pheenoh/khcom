@@ -39,7 +39,7 @@ _080D8000:
 	str r6, [sp, #0x004]
 	str r6, [sp, #0x008]
 	str r6, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r5, #0x0
 	adds r0, #0x4C
 	movs r1, #0x00
@@ -59,7 +59,7 @@ _080D8000:
 	str r6, [sp, #0x008]
 	movs r0, #0x01
 	str r0, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080D804C:
 	add sp, #0x010
 	pop {r4, r5, r6}

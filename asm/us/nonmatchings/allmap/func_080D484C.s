@@ -77,7 +77,7 @@ _080D4894:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	adds r2, r4, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	ldr r3, [sp, #0x020]
 	movs r4, #0x00
 	ldsh r0, [r3, r4]
@@ -122,7 +122,7 @@ _080D4894:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r10
 	ldr r1, [r0, #0x00]
 	asrs r1, r1, #0x08
@@ -159,7 +159,7 @@ _080D4894:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080D4984:
 	ldr r5, [sp, #0x020]
 	adds r5, #0x04
@@ -195,7 +195,7 @@ _080D4996:
 	str r4, [sp, #0x008]
 	movs r4, #0x14
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080D49CA:
 	add sp, #0x024
 	pop {r3, r4, r5}

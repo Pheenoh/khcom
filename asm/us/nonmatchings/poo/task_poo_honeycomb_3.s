@@ -11,9 +11,9 @@ task_poo_honeycomb_3: @ 080CFC90
 	cmp r0, #0x00
 	beq _080CFCA6
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080CFCA6:
 	adds r0, r4, #0x0
 	adds r0, #0x9C

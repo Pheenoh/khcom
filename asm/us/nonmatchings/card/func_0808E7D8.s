@@ -37,13 +37,13 @@ _0808E7F8:
 	cmp r0, #0x00
 	beq _0808E840
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x08]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x0C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x10]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldrh r0, [r5, #0x00]
 	ldr r2, _0808E884 @ =0x0000FFFE
 	adds r1, r2, #0x0

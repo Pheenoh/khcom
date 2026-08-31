@@ -25,7 +25,7 @@ _08005994:
 	str r5, [r4, #0x04]
 	str r3, [r4, #0x00]
 	adds r0, r4, #0x0
-	bl func_080059A4
+	bl AnimStart
 _0800599E:
 	pop {r4, r5}
 	pop {r0}

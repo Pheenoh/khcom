@@ -98,7 +98,7 @@ _080C5580: .4byte 0x0000FFFE
 _080C5584: .4byte 0x020397F0
 _080C5588: .4byte 0x09EF15B8
 _080C558C:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00

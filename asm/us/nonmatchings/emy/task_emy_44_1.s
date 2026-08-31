@@ -127,10 +127,10 @@ _0803D604:
 	beq _0803D62C
 _0803D626:
 	ldr r0, _0803D640 @ =0x00000243
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803D62C:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803D6F2
@@ -212,7 +212,7 @@ _0803D6B8:
 	bl func_08012E44
 _0803D6E0:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803D6F2

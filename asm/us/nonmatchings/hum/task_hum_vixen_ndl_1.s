@@ -21,7 +21,7 @@ task_hum_vixen_ndl_1: @ 08055540
 	adds r4, r5, #0x0
 	adds r4, #0x08
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _08055574
@@ -83,7 +83,7 @@ _080555BA:
 	strb r0, [r1, #0x00]
 _080555DA:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 _080555E2:
 	add sp, #0x00C

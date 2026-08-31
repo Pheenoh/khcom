@@ -18,7 +18,7 @@ _080D89E4:
 	movs r0, #0x00
 	bl func_08004FC8
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080D89F0:
 	pop {r4}
 	pop {r0}

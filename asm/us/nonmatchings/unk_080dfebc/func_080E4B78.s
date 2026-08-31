@@ -230,25 +230,25 @@ _080E4D0C:
 	b _080E4BAC
 _080E4D1E:
 	movs r0, #0x03
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r1, r0, #0x0
 	movs r5, #0x80
 	lsls r5, r5, #0x04
 	ldr r0, [sp, #0x004]
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0x02
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r1, r0, #0x0
 	ldr r0, [sp, #0x008]
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0x01
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r1, r0, #0x0
 	ldr r0, [sp, #0x00C]
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	add sp, #0x028
 	pop {r3, r4, r5}
 	mov r8, r3

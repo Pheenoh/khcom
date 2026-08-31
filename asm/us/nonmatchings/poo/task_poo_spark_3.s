@@ -8,9 +8,9 @@ task_poo_spark_3: @ 080D09FC
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x28]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x2C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

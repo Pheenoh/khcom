@@ -11,13 +11,13 @@ task_poo_eeyoretail_3: @ 080CFA4C
 	cmp r0, #0x00
 	beq _080CFA62
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080CFA62:
 	adds r0, r4, #0x0
 	adds r0, #0x24
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

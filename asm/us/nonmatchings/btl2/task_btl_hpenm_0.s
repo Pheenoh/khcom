@@ -11,19 +11,19 @@ task_btl_hpenm_0: @ 0802FE44
 	lsls r0, r0, #0x01
 	ldr r5, _0802FE8C @ =0x08B24DAA
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	movs r0, #0x80
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x04]
 	movs r0, #0x20
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x0C]
 	ldr r0, _0802FE90 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x08]
 	movs r1, #0x00
 	strb r1, [r4, #0x14]

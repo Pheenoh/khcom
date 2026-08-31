@@ -43,7 +43,7 @@ task_poo_zzz_2: @ 080D1F20
 	bgt _080D1F90
 	adds r0, r5, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	str r2, [r5, #0x08]
 	ldr r3, [r5, #0x00]
@@ -58,7 +58,7 @@ task_poo_zzz_2: @ 080D1F20
 	str r0, [sp, #0x00C]
 	adds r0, r6, #0x0
 	adds r1, r4, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080D1F90:
 	add sp, #0x010
 	pop {r4, r5, r6}

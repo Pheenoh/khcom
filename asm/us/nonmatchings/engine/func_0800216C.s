@@ -135,7 +135,7 @@ _08002240:
 	adds r1, r1, r2
 	lsls r2, r4, #0x15
 	lsrs r2, r2, #0x10
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r4, r7, r4
 	lsls r4, r4, #0x10
 	lsrs r7, r4, #0x10

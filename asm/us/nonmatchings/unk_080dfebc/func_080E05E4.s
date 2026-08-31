@@ -28,7 +28,7 @@ _080E0608:
 	adds r0, #0x78
 	ldr r1, _080E0628 @ =0x09EF6B00
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	pop {r4}
 	pop {r0}
 	bx r0

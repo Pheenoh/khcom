@@ -28,7 +28,7 @@ task_btl_raid_2: @ 0804096C
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _080409C8 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	ldr r1, [r0, #0x24]
@@ -64,7 +64,7 @@ _080409DC:
 	adds r1, r2, #0x0
 _080409E0:
 	movs r3, #0x01
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r5, r0, #0x0
 _080409E8:
 	add r0, sp, #0x010
@@ -93,14 +93,14 @@ _080409E8:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r6, #0x24]
 	ldr r3, [r6, #0x28]
 	movs r5, #0x00
 	str r5, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -115,7 +115,7 @@ _080409E8:
 	str r7, [sp, #0x008]
 	ldr r4, _08040A64 @ =0x0000FFFE
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _08040A50:
 	add sp, #0x014
 	pop {r3}

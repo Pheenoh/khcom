@@ -10,12 +10,12 @@ func_08082F24: @ 08082F24
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x00
 	beq _08082F32
-	bl func_080028C0
+	bl ReleaseObjTiles
 _08082F32:
 	ldr r0, [r4, #0x14]
 	cmp r0, #0x00
 	beq _08082F3C
-	bl func_08002C10
+	bl ReleaseObjPalette
 _08082F3C:
 	movs r0, #0x00
 	str r0, [r4, #0x00]

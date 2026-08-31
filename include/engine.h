@@ -20,15 +20,15 @@ typedef struct AnimState {
 } AnimState;
 
 void func_08002BCC(void* a);
-void func_08002C10(u8* p);
+void ReleaseObjPalette(u8* p);
 void func_08004FC8(s32 a);
-void* func_0800514C(s32 a);
-void func_0800510C(s32 bg, void* src, u16 size);
-void func_080043B4(void* src, void* dst, u16 size);
+void* GetBgScreenBase(s32 a);
+void LoadBgMap(s32 bg, void* src, u16 size);
+void RequestDma3Copy(void* src, void* dst, u16 size);
 void func_080058FC(s32* value, s32 target, u16 steps);
-void func_08005968(AnimState* a, s32 b, s32 c);
-void* func_08005A64(AnimState* a);
-void* func_08005AFC(AnimState* a);
-u8 func_08005B1C(AnimState* a);
+void AnimInit(AnimState* a, s32 b, s32 c);
+void* AnimUpdate(AnimState* a);
+void* AnimGetGfx(AnimState* a);
+u8 AnimIsFinished(AnimState* a);
 
 #endif /* GUARD_ENGINE_H */

@@ -14,22 +14,22 @@ task_wlogo_tt_0: @ 080B6DFC
 	movs r0, #0x00
 	mov r1, r8
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B6FBC @ =0x09648EA4
 	movs r2, #0x93
 	lsls r2, r2, #0x05
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080B6FC0 @ =0x096BE464
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r6, _080B6FC4 @ =0x096FB084
 	ldr r1, _080B6FC8 @ =0x050001E0
 	adds r0, r6, #0x0
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	movs r1, #0x00
 	movs r0, #0x00
 	strh r0, [r7, #0x02]
@@ -58,29 +58,29 @@ task_wlogo_tt_0: @ 080B6DFC
 	ldr r5, _080B6FCC @ =0x09624F72
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x08]
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x0C]
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x10]
 	movs r0, #0xF0
 	lsls r0, r0, #0x02
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x14]
 	ldr r0, _080B6FD0 @ =0x0962848A
 	movs r1, #0xF8
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x18]
 	mov r0, r8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x1C]
 	ldrh r0, [r0, #0x06]
 	ldrb r1, [r7, #0x07]
@@ -88,7 +88,7 @@ task_wlogo_tt_0: @ 080B6DFC
 	ldr r3, _080B6FD4 @ =0xFFFFFE20
 	adds r6, r6, r3
 	adds r1, r1, r6
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	adds r4, r7, #0x0
 	adds r4, #0x40
 	ldr r5, _080B6FD8 @ =0x09EF37DC
@@ -96,73 +96,73 @@ task_wlogo_tt_0: @ 080B6DFC
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x20]
 	adds r4, #0x18
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x24]
 	adds r4, #0x18
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x04
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x28]
 	adds r4, #0x18
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x04
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x2C]
 	adds r4, #0x18
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x30]
 	adds r4, #0x18
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x34]
 	ldr r0, _080B6FE0 @ =0x09EF37F4
 	ldr r0, [r0, #0x00]
@@ -181,7 +181,7 @@ _080B6F84:
 	lsls r1, r1, #0x01
 	adds r0, r7, r1
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	bl func_080B75E8
 	ldr r1, _080B6FE8 @ =0x0203AB38
 	ldr r0, _080B6FEC @ =0xFFFFFD67

@@ -42,14 +42,14 @@ _080EFB54:
 	adds r4, #0xDC
 	ldr r0, [r1, #0x20]
 	str r0, [r4, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x01
 	ands r0, r1
 	cmp r0, #0x00
 	beq _080EFBA4
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x41
@@ -65,7 +65,7 @@ _080EFB54:
 	.byte 0x00, 0x00
 _080EFBA0: .4byte 0x02039BA0
 _080EFBA4:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x41
@@ -79,7 +79,7 @@ _080EFBA4:
 	adds r1, r1, r0
 _080EFBC0:
 	str r1, [r6, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x79
@@ -91,7 +91,7 @@ _080EFBC0:
 	ldr r1, [r5, #0x00]
 	adds r1, r1, r0
 	str r1, [r5, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x31

@@ -13,7 +13,7 @@ func_080E853C: @ 080E853C
 	ldr r4, _080E8584 @ =0x0203C7B8
 	movs r0, #0xC0
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	ldr r0, _080E8588 @ =0x02034F78
 	strb r5, [r0, #0x00]

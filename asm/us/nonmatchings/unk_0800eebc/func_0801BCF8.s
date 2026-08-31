@@ -16,7 +16,7 @@ func_0801BCF8: @ 0801BCF8
 	orrs r0, r1
 	cmp r0, #0x00
 	bne _0801BDC6
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0

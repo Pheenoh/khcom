@@ -61,7 +61,7 @@ _080DB090:
 	ldr r0, _080DB0D4 @ =0x0203C56C
 	strb r1, [r0, #0x00]
 	ldr r0, _080DB0D8 @ =0x00000226
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080DB0C0:
 	add sp, #0x00C
 	pop {r4}

@@ -44,7 +44,7 @@ _080C7C32:
 	ldr r0, _080C7C58 @ =0x02034D18
 	ldr r1, _080C7C5C @ =0x09EF4C58
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r4, #0x00]
 	adds r0, r6, #0x1
 	lsls r0, r0, #0x10

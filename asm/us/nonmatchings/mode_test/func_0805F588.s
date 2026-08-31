@@ -13,7 +13,7 @@ func_0805F588: @ 0805F588
 	muls r2, r1
 	adds r1, r2, #0x0
 	adds r0, r0, r1
-	bl func_08118008
+	bl Sqrt
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	pop {r1}

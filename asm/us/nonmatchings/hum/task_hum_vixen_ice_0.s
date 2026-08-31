@@ -10,12 +10,12 @@ task_hum_vixen_ice_0: @ 08055674
 	adds r5, r1, #0x0
 	ldr r0, _080556CC @ =0x08F6DCA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x08]
 	ldr r0, _080556D0 @ =0x08EE4264
 	movs r1, #0x80
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x04]
 	str r5, [r4, #0x24]
 	movs r0, #0x03
@@ -25,11 +25,11 @@ task_hum_vixen_ice_0: @ 08055674
 	ldr r1, _080556D4 @ =0x09EE26CC
 	ldr r2, _080556D8 @ =0x09EE26B4
 	adds r0, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r4, #0x28
 	adds r0, r4, #0x0
 	movs r1, #0x0C

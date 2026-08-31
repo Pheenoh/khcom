@@ -54,14 +54,14 @@ _080D8BBE:
 	ldr r0, [r5, #0x14]
 	movs r1, #0x80
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	lsls r4, r6, #0x02
 	ldr r2, [sp, #0x020]
 	adds r1, r4, r2
 	str r0, [r1, #0x00]
 	ldr r0, [r5, #0x18]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	mov r3, r10
 	adds r1, r4, r3
 	str r0, [r1, #0x00]

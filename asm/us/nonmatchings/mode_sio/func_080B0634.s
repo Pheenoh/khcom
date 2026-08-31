@@ -15,7 +15,7 @@ func_080B0634: @ 080B0634
 	ldr r0, _080B06B8 @ =0x096B2724
 	ldr r1, _080B06BC @ =0x06000020
 	movs r2, #0xC0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r5, _080B06C0 @ =0x02034B40
 	ldr r0, [r5, #0x00]
 	ldr r4, _080B06C4 @ =0x00000217
@@ -42,7 +42,7 @@ _080B0670:
 	ldr r0, _080B06CC @ =0x096B2B24
 	ldr r1, _080B06D0 @ =0x06000300
 	movs r2, #0xC0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r5, _080B06C0 @ =0x02034B40
 	ldr r0, [r5, #0x00]
 	movs r4, #0x86

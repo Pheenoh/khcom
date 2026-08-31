@@ -8,9 +8,9 @@ task_btl_prize_3: @ 080313BC
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x10]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x14]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _080313E0 @ =0x02039B84
 	ldr r1, [r0, #0x00]
 	adds r1, #0xB0

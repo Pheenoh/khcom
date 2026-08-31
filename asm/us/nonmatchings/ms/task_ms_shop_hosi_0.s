@@ -38,7 +38,7 @@ task_ms_shop_hosi_0: @ 0810951C
 	str r0, [r4, #0x0C]
 	movs r0, #0x00
 	strh r0, [r4, #0x10]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x07
@@ -51,7 +51,7 @@ task_ms_shop_hosi_0: @ 0810951C
 	ldr r0, _0810958C @ =0x099A6962
 	movs r1, #0xF0
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x1C]
 	pop {r4, r5}
 	pop {r0}

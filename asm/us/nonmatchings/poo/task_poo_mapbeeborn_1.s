@@ -37,7 +37,7 @@ task_poo_mapbeeborn_1: @ 080D2518
 	ldr r1, _080D2564 @ =0x09EF4D20
 	adds r2, r4, #0x0
 	adds r2, #0x10
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r5, #0x00]
 	b _080D2570
 	.byte 0x00, 0x00

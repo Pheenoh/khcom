@@ -11,7 +11,7 @@ task_title_obj_2: @ 080D66FC
 	add sp, #-0x010
 	adds r6, r0, #0x0
 	adds r0, #0x48
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r6, #0x20]
 	movs r0, #0x00
 	mov r8, r0
@@ -42,7 +42,7 @@ _080D6716:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r5, #0x18
 	adds r7, #0x18
 	movs r0, #0x01

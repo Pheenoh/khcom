@@ -202,7 +202,7 @@ _0808F1FC:
 	adds r0, r5, r1
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	b _0808F24C
 _0808F228: .4byte 0x000007C2
 _0808F22C: .4byte 0x09035898
@@ -218,7 +218,7 @@ _0808F234:
 	adds r0, r5, r1
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 _0808F24C:
 	movs r0, #0x00
 	b _0808F252

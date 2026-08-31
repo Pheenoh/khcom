@@ -8,9 +8,9 @@ task_poo_shadowscale_3: @ 080CC160
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x08]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x0C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

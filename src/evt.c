@@ -6,14 +6,14 @@ void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param) {
 
     res = param->unk_00;
     work->unk_00 = param->unk_04;
-    work->unk_04 = func_080028F8(res->unk_00 * 32, 0);
-    work->unk_08 = func_08002A14(res->unk_08, 32);
-    func_08005968(&work->unk_0C, 0, 0);
+    work->unk_04 = AllocObjTiles(res->unk_00 * 32, 0);
+    work->unk_08 = LoadObjPalette(res->unk_08, 32);
+    AnimInit(&work->unk_0C, 0, 0);
     work->unk_00->unk_18 = &work->unk_0C;
     work->unk_00->unk_1C = work->unk_08[3];
     func_0801CE70(work);
-    func_08000E64(&work->unk_24, 1);
-    func_08000E14(&work->unk_24, gUnk_09EDADE0, work->unk_00);
+    TaskPoolInit(&work->unk_24, 1);
+    TaskCreate(&work->unk_24, gUnk_09EDADE0, work->unk_00);
 }
 
 s32 task_evt_obj_1(EvtObjWork* work) {
@@ -21,8 +21,8 @@ s32 task_evt_obj_1(EvtObjWork* work) {
         func_0801CE70(work);
     }
 
-    func_08005A64(&work->unk_0C);
-    func_08000EA4(&work->unk_24);
+    AnimUpdate(&work->unk_0C);
+    TaskPoolUpdate(&work->unk_24);
 
     return 1;
 }
@@ -41,25 +41,25 @@ void task_evt_obj_2(EvtObjWork* work) {
 
     x = (obj->unk_04 >> 8) - (gUnk_02039DC8->unk_58 >> 8);
     y = (obj->unk_08 >> 8) + (obj->unk_0C >> 8) - (gUnk_02039DC8->unk_5C >> 8);
-    gfx = func_08005AFC(&work->unk_0C);
-    func_080023E0(x, y, gfx, work->unk_04, work->unk_08,
-        func_08002CB4(obj->unk_28, obj->unk_20, obj->unk_24, 1), obj->unk_16,
+    gfx = AnimGetGfx(&work->unk_0C);
+    DrawSprite(x, y, gfx, work->unk_04, work->unk_08,
+        AllocObjAffine(obj->unk_28, obj->unk_20, obj->unk_24, 1), obj->unk_16,
         (u16)(-0x1002 - (obj->unk_08 >> 8) * 4));
-    func_08000EE0(&work->unk_24);
+    TaskPoolDraw(&work->unk_24);
 }
 
 void task_evt_obj_3(EvtObjWork* work) {
-    func_080028C0(work->unk_04);
-    func_08002C10(work->unk_08);
-    func_08000F0C(&work->unk_24);
+    ReleaseObjTiles(work->unk_04);
+    ReleaseObjPalette(work->unk_08);
+    TaskPoolDestroy(&work->unk_24);
 }
 
 void task_evt_shadow_0(EvtShadowWork* work, EvtObj* obj) {
     work->unk_04 = obj;
-    work->unk_08 = func_080026A4(gUnk_08B22BBC, 0x100);
-    work->unk_10 = func_080026A4(gUnk_08B22CE4, 0x200);
-    work->unk_0C = func_080026A4(gUnk_08B22EFE, 0x140);
-    work->unk_00 = func_08002A14(gUnk_08F69BE4, 32);
+    work->unk_08 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    work->unk_10 = LoadObjTiles(gUnk_08B22CE4, 0x200);
+    work->unk_0C = LoadObjTiles(gUnk_08B22EFE, 0x140);
+    work->unk_00 = LoadObjPalette(gUnk_08F69BE4, 32);
 }
 
 s32 task_evt_shadow_1(void) {
@@ -101,19 +101,19 @@ void task_evt_shadow_2(EvtShadowWork* work) {
             size = 0x19;
         }
 
-        sprite = func_08002CB4(0, size, size, 0);
+        sprite = AllocObjAffine(0, size, size, 0);
     }
 
     x = (obj->unk_04 >> 8) - (gUnk_02039DC8->unk_58 >> 8);
     y = (obj->unk_08 >> 8) + (obj->unk_10 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
-    func_080023E0(x, y, gfx, vram, work->unk_00, sprite, obj->unk_16, 0xFFF0);
+    DrawSprite(x, y, gfx, vram, work->unk_00, sprite, obj->unk_16, 0xFFF0);
 }
 
 void task_evt_shadow_3(EvtShadowWork* work) {
-    func_080028C0(work->unk_08);
-    func_080028C0(work->unk_0C);
-    func_080028C0(work->unk_10);
-    func_08002C10(work->unk_00);
+    ReleaseObjTiles(work->unk_08);
+    ReleaseObjTiles(work->unk_0C);
+    ReleaseObjTiles(work->unk_10);
+    ReleaseObjPalette(work->unk_00);
 }
 
 ALIGN_ZERO(2);

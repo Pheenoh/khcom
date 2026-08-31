@@ -26,7 +26,7 @@ _0801D54E:
 	beq _0801D57A
 	adds r0, r4, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x20]
 	ldr r3, [r5, #0x00]
 	ldr r0, [r3, #0x78]

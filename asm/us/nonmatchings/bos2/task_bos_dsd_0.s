@@ -27,7 +27,7 @@ _080C1B80:
 	adds r6, r4, r1
 	adds r0, r6, #0x0
 	movs r1, #0x04
-	bl func_08000E64
+	bl TaskPoolInit
 	ldrh r1, [r5, #0x00]
 	movs r0, #0x10
 	ands r0, r1
@@ -36,7 +36,7 @@ _080C1B80:
 	ldr r1, _080C1BA4 @ =0x09EF2E78
 	adds r0, r6, #0x0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	b _080C1BB6
 _080C1BA4: .4byte 0x09EF2E78
 _080C1BA8:
@@ -45,7 +45,7 @@ _080C1BA8:
 	adds r0, #0x40
 	ldr r1, _080C1BE4 @ =0x09EF2E78
 	adds r2, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 _080C1BB6:
 	movs r2, #0xE4
 	lsls r2, r2, #0x02
@@ -188,7 +188,7 @@ _080C1BF4:
 	add r0, r10
 	ldr r1, _080C1CF8 @ =0x09EF2E50
 	mov r2, r10
-	bl func_08000E14
+	bl TaskCreate
 	b _080C1E6E
 	.byte 0x00, 0x00
 _080C1CE0: .4byte 0x0000034E
@@ -360,7 +360,7 @@ _080C1CFC:
 	add r0, r10
 	ldr r1, _080C1EB0 @ =0x09EF2E50
 	mov r2, r10
-	bl func_08000E14
+	bl TaskCreate
 	ldr r2, [r4, #0x00]
 	adds r1, r2, #0x0
 	adds r1, #0xCC

@@ -71,9 +71,9 @@ typedef struct LstCtrWork {
     u8 unk_064[0x124];
 } LstCtrWork;
 
-void func_080028C0(void* a);
-void func_08002C10(void* a);
-void func_080059A4(void* a, s32 b, s32 c);
+void ReleaseObjTiles(void* a);
+void ReleaseObjPalette(void* a);
+void AnimStart(void* a, s32 b, s32 c);
 
 void task_bos_lst_fld_2(void);
 void task_bos_lst_edg_3(LstEdgWork* work);

@@ -22,7 +22,7 @@ func_0807E018: @ 0807E018
 	adds r1, #0xA7
 	movs r0, #0x01
 	strb r0, [r1, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0A

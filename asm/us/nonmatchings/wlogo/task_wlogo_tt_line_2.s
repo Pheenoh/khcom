@@ -7,7 +7,7 @@
 task_wlogo_tt_line_2: @ 080B7820
 	push {lr}
 	adds r0, #0x08
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r0}
 	bx r0
 .syntax divided

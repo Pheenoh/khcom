@@ -24,7 +24,7 @@ task_bos_lst_ctr_2: @ 081122F0
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	movs r7, #0x00
 	ldr r0, [r5, #0x18]
 	ldr r1, [r5, #0x24]
@@ -103,7 +103,7 @@ _08112394:
 _081123AC:
 	movs r3, #0x01
 _081123AE:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r7, r0, #0x0
 	b _081123C6
 _081123B6:
@@ -118,7 +118,7 @@ _081123B6:
 _081123C6:
 	adds r0, r5, #0x0
 	adds r0, #0x44
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	add r0, sp, #0x010
 	movs r3, #0x00
@@ -132,7 +132,7 @@ _081123C6:
 	str r6, [sp, #0x008]
 	mov r4, r8
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _081123EC:
 	add sp, #0x014
 	pop {r3}

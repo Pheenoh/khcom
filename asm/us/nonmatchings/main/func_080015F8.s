@@ -41,23 +41,23 @@ _08001632:
 	bics r0, r5
 	strh r0, [r1, #0x00]
 _08001640:
-	bl func_08001390
+	bl GetKeysPressed
 	adds r1, r4, #0x0
 	ands r1, r0
 	cmp r1, #0x00
 	beq _08001658
-	bl func_08001384
+	bl GetKeysHeld
 	adds r1, r5, #0x0
 	ands r1, r0
 	cmp r1, #0x00
 	bne _08001670
 _08001658:
-	bl func_08001390
+	bl GetKeysPressed
 	adds r1, r5, #0x0
 	ands r1, r0
 	cmp r1, #0x00
 	beq _08001680
-	bl func_08001384
+	bl GetKeysHeld
 	adds r1, r4, #0x0
 	ands r1, r0
 	cmp r1, #0x00

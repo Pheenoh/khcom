@@ -6,7 +6,7 @@
 	.type func_08103F3C, %function
 func_08103F3C: @ 08103F3C
 	push {r4, lr}
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64

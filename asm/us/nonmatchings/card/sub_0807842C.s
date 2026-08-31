@@ -21,14 +21,14 @@ sub_0807842C:
 	add r1, sp, #0x00C
 	mov r8, r1
 _0807844A:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r6, #0x0
 	bl __modsi3
 	lsls r0, r0, #0x18
 	lsrs r5, r0, #0x18
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r6, #0x0

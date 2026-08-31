@@ -12,7 +12,7 @@ task_romcri_eff2_0: @ 0803FBDC
 	movs r1, #0x00
 	movs r2, #0x17
 	movs r3, #0x0C
-	bl func_08005074
+	bl SetupBg
 	movs r1, #0x00
 	movs r0, #0x00
 	strh r0, [r5, #0x00]
@@ -25,11 +25,11 @@ task_romcri_eff2_0: @ 0803FBDC
 	ldr r1, _0803FC4C @ =0x08F6DA04
 	movs r0, #0x01
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	bl func_08007E7C
 	movs r0, #0x01
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x10
 	movs r2, #0x10
@@ -38,7 +38,7 @@ task_romcri_eff2_0: @ 0803FBDC
 	movs r2, #0xA2
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r0, _0803FC54 @ =0x02039BB0
 	ldr r0, [r0, #0x08]
 	movs r1, #0x08
@@ -66,7 +66,7 @@ _0803FC62:
 	ldr r1, _0803FC70 @ =0x0000FF9C
 	movs r0, #0x01
 	movs r2, #0x04
-	bl func_080054EC
+	bl SetBgScroll
 	b _0803FCFA
 	.byte 0x00, 0x00
 _0803FC70: .4byte 0x0000FF9C
@@ -74,7 +74,7 @@ _0803FC74:
 	ldr r1, _0803FC80 @ =0x0000FFB7
 	movs r0, #0x01
 	movs r2, #0x05
-	bl func_080054EC
+	bl SetBgScroll
 	b _0803FCFA
 _0803FC80: .4byte 0x0000FFB7
 _0803FC84:
@@ -124,7 +124,7 @@ _0803FCDC:
 	ldr r2, _0803FCEC @ =0x0000FFE4
 _0803FCE0:
 	movs r0, #0x01
-	bl func_080054EC
+	bl SetBgScroll
 	b _0803FCFA
 _0803FCE8: .4byte 0x0000FF9B
 _0803FCEC: .4byte 0x0000FFE4
@@ -132,7 +132,7 @@ _0803FCF0:
 	ldr r1, _0803FD00 @ =0x0000FFB5
 	ldr r2, _0803FD04 @ =0x0000FFE3
 	movs r0, #0x01
-	bl func_080054EC
+	bl SetBgScroll
 _0803FCFA:
 	pop {r4, r5}
 	pop {r0}

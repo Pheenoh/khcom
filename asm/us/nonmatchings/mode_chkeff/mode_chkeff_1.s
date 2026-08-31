@@ -7,7 +7,7 @@
 mode_chkeff_1: @ 0800BC50
 	push {r4, r5, r6, lr}
 	add sp, #-0x004
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00
@@ -19,7 +19,7 @@ mode_chkeff_1: @ 0800BC50
 	.byte 0x00, 0x00
 _0800BC6C: .4byte 0x09ECEB64
 _0800BC70:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x08
 	ands r1, r0
 	cmp r1, #0x00
@@ -37,7 +37,7 @@ _0800BC8C:
 	ldr r4, _0800BD10 @ =0x020348B8
 	ldr r0, [r4, #0x00]
 	ldrh r5, [r0, #0x14]
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -47,7 +47,7 @@ _0800BC8C:
 	subs r0, #0x01
 	strh r0, [r1, #0x14]
 _0800BCA6:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -92,7 +92,7 @@ _0800BCD4:
 	movs r2, #0x50
 	bl func_08006778
 _0800BCFC:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -104,7 +104,7 @@ _0800BCFC:
 _0800BD10: .4byte 0x020348B8
 _0800BD14: .4byte 0x09ED9A1C
 _0800BD18:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -115,7 +115,7 @@ _0800BD18:
 _0800BD2A:
 	str r0, [r1, #0x20]
 _0800BD2C:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x04
 	ands r1, r0
 	cmp r1, #0x00
@@ -128,7 +128,7 @@ _0800BD2C:
 	movs r0, #0x00
 	strb r0, [r1, #0x1C]
 _0800BD46:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -144,7 +144,7 @@ _0800BD46:
 	bl __umodsi3
 	strh r0, [r4, #0x24]
 _0800BD68:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	lsls r1, r1, #0x01
 	ands r1, r0
@@ -180,7 +180,7 @@ _0800BDA6:
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0800BDC6
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
@@ -315,9 +315,9 @@ _0800BDF4:
 	movs r2, #0x00
 	bl func_0809D458
 	ldr r0, [r5, #0x00]
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [r5, #0x00]
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r1, [r5, #0x00]
 	ldrb r0, [r1, #0x1C]
 	ldr r2, [r1, #0x20]
@@ -331,7 +331,7 @@ _0800BDF4:
 	ldrb r0, [r0, #0x16]
 	cmp r0, #0x00
 	beq _0800BF1E
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
@@ -344,7 +344,7 @@ _0800BF22:
 	ldrh r1, [r0, #0x18]
 	ldrh r2, [r0, #0x1A]
 	movs r0, #0x01
-	bl func_080054EC
+	bl SetBgScroll
 	ldr r0, _0800BF70 @ =0x03007480
 	ldr r0, [r0, #0x00]
 	movs r1, #0x03

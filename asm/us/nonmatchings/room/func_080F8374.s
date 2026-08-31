@@ -22,13 +22,13 @@ func_080F8374: @ 080F8374
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r4, #0x0
 	bl func_0801B7D8
 	movs r1, #0xB6
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldrh r1, [r5, #0x00]
 	movs r0, #0x10
 	orrs r0, r1

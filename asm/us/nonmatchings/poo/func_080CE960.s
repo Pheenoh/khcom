@@ -35,14 +35,14 @@ func_080CE960: @ 080CE960
 	cmp r4, #0x00
 	beq _080CE9B0
 	ldr r0, _080CE9AC @ =0x000003C1
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080CE9B6
 _080CE9A4: .4byte 0x0203C40C
 _080CE9A8: .4byte 0x0203C3F8
 _080CE9AC: .4byte 0x000003C1
 _080CE9B0:
 	ldr r0, _080CE9C0 @ =0x000003B9
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080CE9B6:
 	add sp, #0x008
 	pop {r4}

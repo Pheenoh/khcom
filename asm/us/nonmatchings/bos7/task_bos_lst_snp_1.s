@@ -28,7 +28,7 @@ task_bos_lst_snp_1: @ 081124C4
 	str r1, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	movs r1, #0x00
 	ldsh r0, [r4, r1]
 	cmp r0, #0xC0
@@ -37,7 +37,7 @@ task_bos_lst_snp_1: @ 081124C4
 _08112500:
 	adds r0, r5, #0x0
 	adds r0, #0x20
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r6, #0x0
 	add sp, #0x008
 	pop {r4, r5, r6}

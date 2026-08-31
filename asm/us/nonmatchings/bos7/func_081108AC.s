@@ -50,7 +50,7 @@ _081108EA:
 	adds r0, #0x40
 	ldr r1, _08110914 @ =0x09EF9F0C
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	movs r3, #0x01
 _08110906:
 	adds r0, r3, #0x0

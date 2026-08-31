@@ -13,7 +13,7 @@ task_wlogo_tt_line_0: @ 080B7750
 	strb r2, [r0, #0x04]
 	adds r0, #0x08
 	movs r1, #0x21
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r0}
 	bx r0
 .syntax divided

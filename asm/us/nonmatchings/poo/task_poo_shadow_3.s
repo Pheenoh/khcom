@@ -6,7 +6,7 @@
 	.type task_poo_shadow_3, %function
 task_poo_shadow_3: @ 080CBF60
 	push {lr}
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

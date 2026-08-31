@@ -99,7 +99,7 @@ _08019238:
 	ldr r1, _0801924C @ =0x09EDAEE8
 _08019240:
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	b _0801925E
 _08019248: .4byte 0x02039B84
 _0801924C: .4byte 0x09EDAEE8
@@ -109,7 +109,7 @@ _08019250:
 	adds r0, #0x2C
 	ldr r1, _0801926C @ =0x09EDAEE8
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _0801925E:
 	add sp, #0x020
 	pop {r4}

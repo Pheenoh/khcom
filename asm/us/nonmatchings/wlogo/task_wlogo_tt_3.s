@@ -11,17 +11,17 @@ task_wlogo_tt_3: @ 080B75B0
 	movs r1, #0x8A
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x08]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x0C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x10]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x14]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x1C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

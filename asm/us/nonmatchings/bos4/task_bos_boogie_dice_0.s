@@ -35,7 +35,7 @@ task_bos_boogie_dice_0: @ 080D9B90
 	adds r1, r7, r0
 	ldr r0, _080D9CF0 @ =0xFFFFFB34
 	str r0, [r1, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	movs r1, #0xAA
 	lsls r1, r1, #0x01
 	adds r4, r7, r1
@@ -47,7 +47,7 @@ task_bos_boogie_dice_0: @ 080D9B90
 	lsrs r0, r0, #0x10
 	adds r0, #0x4C
 	str r0, [r4, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x78
@@ -113,27 +113,27 @@ task_bos_boogie_dice_0: @ 080D9B90
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080D9D0C @ =0x09796EAA
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x08]
 	ldr r0, _080D9D10 @ =0x0984AF98
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x0C]
 	ldr r0, _080D9D14 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x10]
 	adds r4, r7, #0x0
 	adds r4, #0x14
 	ldr r1, _080D9D18 @ =0x09EF6798
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
-	bl func_080065A4
+	bl AnimStart
+	bl GetRandom
 	lsls r0, r0, #0x10
 	movs r1, #0xC0
 	lsls r1, r1, #0x0A
@@ -144,11 +144,11 @@ task_bos_boogie_dice_0: @ 080D9B90
 	adds r4, #0x18
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080D9D1C @ =0x09EDB350
 	adds r0, r4, #0x0
 	adds r2, r6, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	mov r2, r9
 	ldrb r0, [r2, #0x00]
 	cmp r0, #0x00

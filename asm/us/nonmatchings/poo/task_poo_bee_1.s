@@ -241,7 +241,7 @@ _080D0C8E:
 	bl func_080C9FA8
 _080D0CC6:
 	ldr r0, [sp, #0x00C]
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r6, #0x08]
 _080D0CCE:
 	movs r0, #0x01

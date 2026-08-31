@@ -72,7 +72,7 @@ _080DB7DC:
 	ldr r3, _080DB810 @ =0x00000199
 	bl func_08015228
 	ldr r0, _080DB814 @ =0x00000256
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldrh r0, [r4, #0x04]
 	adds r0, #0x01
 	b _080DB8B4
@@ -163,7 +163,7 @@ _080DB8B4:
 _080DB8B6:
 	adds r0, r4, #0x0
 	adds r0, #0x14
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r5, #0x0
 	adds r0, #0x40
 	ldr r1, [r5, #0x04]

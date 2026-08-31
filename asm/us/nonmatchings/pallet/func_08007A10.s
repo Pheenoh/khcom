@@ -102,7 +102,7 @@ _08007AB8:
 	subs r2, #0x02
 	lsls r2, r2, #0x10
 	lsrs r2, r2, #0x10
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r4, #0x00
 	b _08007AEC
 	.byte 0x00, 0x00
@@ -114,7 +114,7 @@ _08007ADC:
 	adds r0, r0, r4
 	mov r1, r9
 	ldr r2, [sp, #0x004]
-	bl func_080043B4
+	bl RequestDma3Copy
 _08007AEC:
 	ldr r0, _08007B04 @ =0x0300756C
 	ldr r0, [r0, #0x00]

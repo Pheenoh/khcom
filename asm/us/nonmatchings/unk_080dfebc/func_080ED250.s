@@ -11,23 +11,23 @@ func_080ED250: @ 080ED250
 	movs r2, #0xA0
 	lsls r2, r2, #0x01
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080ED2FC @ =0x09985F44
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _080ED300 @ =0x09611AB8
 	ldr r1, _080ED304 @ =0x050001E0
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	movs r0, #0x0F
 	movs r1, #0x01
 	bl func_080062F4
 	movs r0, #0x00
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080054EC
+	bl SetBgScroll
 	movs r0, #0x01
 	bl _08066468
 	movs r2, #0xBE

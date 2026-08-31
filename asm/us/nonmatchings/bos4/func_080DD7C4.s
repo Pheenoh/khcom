@@ -28,7 +28,7 @@ _080DD7E8:
 	adds r0, r4, #0x0
 	adds r1, r6, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r5, #0x18]
 	mov r1, sp
 	movs r0, #0x20
@@ -46,7 +46,7 @@ _080DD812:
 	adds r0, r4, #0x0
 	adds r1, r6, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r5, #0x1C]
 	mov r1, sp
 	movs r0, #0x40
@@ -64,7 +64,7 @@ _080DD838:
 	adds r0, r4, #0x0
 	adds r1, r6, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r5, #0x20]
 	movs r0, #0x03
 	add sp, #0x004

@@ -12,7 +12,7 @@ task_bos_ursula_mapanime_0: @ 080DD4C4
 	adds r0, r4, #0x0
 	adds r0, #0x10
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	movs r0, #0x00
 	str r0, [r4, #0x24]
 	movs r0, #0x04

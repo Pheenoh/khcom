@@ -54,7 +54,7 @@ func_080051C4: @ 080051C4
 	adds r2, r7, #0x0
 	ands r2, r0
 	adds r0, r4, #0x0
-	bl func_080054EC
+	bl SetBgScroll
 	mov r0, r8
 	strb r0, [r5, #0x00]
 _08005230:

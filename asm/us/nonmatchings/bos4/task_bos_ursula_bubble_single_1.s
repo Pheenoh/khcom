@@ -175,7 +175,7 @@ _080DDBD2:
 	adds r0, #0x0C
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r6, #0x0
 	adds r0, #0x24
 	movs r1, #0x01
@@ -200,7 +200,7 @@ _080DDC04:
 	cmp r0, #0x01
 	bne _080DDC48
 	ldr r0, _080DDC44 @ =0x00000281
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080DDC32:
 	movs r0, #0x00
 	b _080DDC78
@@ -217,13 +217,13 @@ _080DDC48:
 	cmp r0, #0x01
 	bne _080DDC62
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080DDC32
 _080DDC62:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r5, #0x0
 	adds r0, #0x40
 	ldr r1, [r5, #0x04]

@@ -10,24 +10,24 @@ func_0808DB04: @ 0808DB04
 	ldr r0, [r4, #0x28]
 	cmp r0, #0x00
 	beq _0808DB16
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r0, #0x00
 	str r0, [r4, #0x28]
 _0808DB16:
 	ldr r0, [r4, #0x1C]
 	cmp r0, #0x00
 	beq _0808DB4A
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x30]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x20]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x34]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x24]
 	cmp r0, #0x00
 	beq _0808DB40
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r0, #0x00
 	str r0, [r4, #0x24]
 _0808DB40:

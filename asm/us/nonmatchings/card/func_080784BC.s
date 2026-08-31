@@ -28,7 +28,7 @@ _080784E0:
 	lsls r4, r5, #0x01
 	adds r4, r4, r5
 	lsls r0, r4, #0x02
-	bl func_08000918
+	bl EwramAlloc
 	adds r1, r0, #0x0
 	str r1, [r6, #0x44]
 	str r7, [sp, #0x000]
@@ -36,7 +36,7 @@ _080784E0:
 	lsls r2, r2, #0x13
 	orrs r2, r4
 	mov r0, sp
-	bl func_08117FE8
+	bl CpuSet
 	movs r2, #0x00
 	mov r4, r8
 	adds r4, #0x01
@@ -103,14 +103,14 @@ _0807856E:
 	b _0807859C
 _0807857A:
 	movs r0, #0x0C
-	bl func_08000918
+	bl EwramAlloc
 	adds r1, r0, #0x0
 	str r1, [r6, #0x50]
 	movs r0, #0x00
 	str r0, [sp, #0x004]
 	add r0, sp, #0x004
 	ldr r2, _080785AC @ =0x05000003
-	bl func_08117FE8
+	bl CpuSet
 	ldr r1, [r6, #0x50]
 	ldr r0, _080785B0 @ =0x000030FF
 	str r0, [r1, #0x00]

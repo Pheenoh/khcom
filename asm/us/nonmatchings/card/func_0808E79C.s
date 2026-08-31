@@ -16,13 +16,13 @@ func_0808E79C: @ 0808E79C
 	b _0808E7C6
 _0808E7B0:
 	movs r0, #0x69
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r1, _0808E7CC @ =0x000007DC
 	adds r0, r4, r1
 	ldr r1, _0808E7D0 @ =0x09EE7FC0
 	ldr r3, _0808E7D4 @ =0x000008C9
 	adds r2, r4, r3
-	bl func_08000E14
+	bl TaskCreate
 	movs r0, #0x00
 _0808E7C6:
 	pop {r4}

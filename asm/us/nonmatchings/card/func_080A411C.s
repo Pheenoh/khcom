@@ -42,14 +42,14 @@ _080A4164:
 _080A4166:
 	adds r0, r3, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	b _080A417E
 _080A4170: .4byte 0x09EE8E30
 _080A4174:
 	ldr r1, _080A4184 @ =0x09EE8E18
 	adds r0, r3, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _080A417E:
 	add sp, #0x008
 	pop {r0}

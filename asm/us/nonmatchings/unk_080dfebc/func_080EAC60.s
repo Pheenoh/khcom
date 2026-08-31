@@ -88,14 +88,14 @@ _080EAD04:
 	ldr r0, _080EAD38 @ =0x09966064
 	adds r4, r4, r0
 	movs r0, #0x01
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	adds r1, r1, r6
 	lsls r0, r7, #0x05
 	adds r1, r1, r0
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r5, #0x02
 	adds r7, #0x01
 	cmp r7, #0x05

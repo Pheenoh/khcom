@@ -213,9 +213,9 @@ _080D536E:
 	movs r0, #0x01
 	bl func_08005244
 	ldr r0, [r7, #0x00]
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [r7, #0x00]
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0

@@ -25,18 +25,18 @@ _080D208A:
 	str r0, [r5, #0x44]
 	movs r0, #0x40
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	adds r4, r5, #0x0
 	adds r4, #0x08
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	bl func_080D2034
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x04]
 	pop {r4, r5}
 	pop {r0}

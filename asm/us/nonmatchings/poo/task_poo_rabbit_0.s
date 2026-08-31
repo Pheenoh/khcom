@@ -38,14 +38,14 @@ _080CE342:
 	bls _080CE32C
 	adds r0, r6, #0x0
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	adds r4, r5, #0x0
 	adds r4, #0x0C
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	adds r1, r5, #0x0
 	adds r1, #0xA8
 	movs r0, #0x07
@@ -61,12 +61,12 @@ _080CE342:
 	adds r0, #0x88
 	strh r1, [r0, #0x00]
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x08]
 	adds r4, #0x2C
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r1, r5, #0x0
 	adds r1, #0x28
 	movs r2, #0x80

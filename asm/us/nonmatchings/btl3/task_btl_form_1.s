@@ -152,7 +152,7 @@ _0803FF68:
 	orrs r0, r1
 	cmp r0, #0x00
 	beq _0803FFAC
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05
@@ -165,7 +165,7 @@ _0803FF68:
 	orrs r0, r1
 	b _0803FFCE
 _0803FFAC:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05

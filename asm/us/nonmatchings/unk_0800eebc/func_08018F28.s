@@ -22,7 +22,7 @@ func_08018F28: @ 08018F28
 	str r5, [r0, #0x14]
 	str r6, [r0, #0x18]
 	ldr r0, _08018F88 @ =0x000002C1
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r4, sp
 	adds r4, #0x06
 	ldr r0, [r7, #0x00]
@@ -32,8 +32,8 @@ func_08018F28: @ 08018F28
 	str r0, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r4, #0x0
-	bl func_0801909C
-	bl func_080065A4
+	bl WorldToScreen
+	bl GetRandom
 	ldr r2, [r7, #0x00]
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10

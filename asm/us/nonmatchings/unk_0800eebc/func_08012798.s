@@ -12,7 +12,7 @@ func_08012798: @ 08012798
 	lsrs r6, r1, #0x10
 	ldr r4, _080127D0 @ =0x02034928
 	movs r0, #0x50
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	movs r4, #0x0A
 _080127AE:

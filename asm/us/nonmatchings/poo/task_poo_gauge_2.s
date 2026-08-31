@@ -19,7 +19,7 @@ task_poo_gauge_2: @ 080CC5B0
 	str r1, [sp, #0x00C]
 	movs r0, #0xDC
 	movs r1, #0x18
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r0}
 	bx r0

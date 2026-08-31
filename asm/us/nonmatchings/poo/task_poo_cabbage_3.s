@@ -11,9 +11,9 @@ task_poo_cabbage_3: @ 080D15F0
 	cmp r0, #0x00
 	beq _080D1606
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080D1606:
 	adds r0, r4, #0x0
 	adds r0, #0xD0
@@ -26,7 +26,7 @@ _080D1606:
 _080D1618:
 	adds r0, r4, #0x0
 	adds r0, #0xA8
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

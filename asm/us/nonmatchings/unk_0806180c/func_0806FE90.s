@@ -7,7 +7,7 @@
 func_0806FE90: @ 0806FE90
 	push {r4, r5, lr}
 	adds r5, r0, #0x0
-	bl func_08001384
+	bl GetKeysHeld
 	lsls r0, r0, #0x10
 	movs r1, #0xF0
 	lsls r1, r1, #0x10

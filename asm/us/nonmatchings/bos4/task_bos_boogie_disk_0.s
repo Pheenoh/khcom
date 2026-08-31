@@ -131,38 +131,38 @@ _080DAD2E:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080DADDC @ =0x0979A426
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x08]
 	ldr r0, _080DADE0 @ =0x0984AFB8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x0C]
 	ldr r0, _080DADE4 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x10]
 	adds r4, r7, #0x0
 	adds r4, #0x14
 	ldr r1, _080DADE8 @ =0x09EF6844
 	adds r0, r4, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r4, #0x18
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080DADEC @ =0x09EDB350
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r5, #0x0
 	bl func_0801BCD4
 	ldr r0, _080DADF0 @ =0x00000253
-	bl func_0811FE70
+	bl m4aSongNumStart
 	add sp, #0x004
 	pop {r3, r4}
 	mov r8, r3

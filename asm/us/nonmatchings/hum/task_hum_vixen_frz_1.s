@@ -89,7 +89,7 @@ _08055D90:
 _08055D98:
 	adds r0, r6, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 _08055DA2:
 	add sp, #0x048

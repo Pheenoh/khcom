@@ -9,7 +9,7 @@ func_080C6894: @ 080C6894
 	adds r4, r0, #0x0
 	ldr r5, _080C6974 @ =0x02034CD8
 	ldr r0, _080C6978 @ =0x00001094
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	ldr r3, _080C697C @ =0x00001090
 	adds r1, r0, r3
@@ -114,7 +114,7 @@ _080C693A:
 _080C6966:
 	adds r0, r7, #0x0
 	movs r1, #0x04
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0

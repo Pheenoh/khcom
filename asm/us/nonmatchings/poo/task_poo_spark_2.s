@@ -27,7 +27,7 @@ task_poo_spark_2: @ 080D0994
 	lsrs r4, r4, #0x10
 	adds r0, r6, #0x0
 	adds r0, #0x10
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	lsls r5, r5, #0x10
 	asrs r5, r5, #0x10
@@ -45,7 +45,7 @@ task_poo_spark_2: @ 080D0994
 	str r0, [sp, #0x00C]
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r4, r5, r6}
 	pop {r0}

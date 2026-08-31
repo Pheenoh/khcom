@@ -34,7 +34,7 @@ func_08017260: @ 08017260
 	adds r1, r4, #0x0
 	adds r2, r7, #0x0
 	adds r3, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _080172EC @ =0x09EDA5A0
 	add r1, sp, #0x004
 	movs r2, #0x00

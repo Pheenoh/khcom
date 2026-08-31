@@ -62,7 +62,7 @@ _080B0722:
 	movs r0, #0x08
 	strb r0, [r1, #0x02]
 	movs r0, #0x67
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080B0748:
 	pop {r4, r5, r6, r7}
 	pop {r0}

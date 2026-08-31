@@ -10,9 +10,9 @@ task_emy_83_b_3: @ 0803EB04
 	adds r0, #0x34
 	bl func_08012304
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

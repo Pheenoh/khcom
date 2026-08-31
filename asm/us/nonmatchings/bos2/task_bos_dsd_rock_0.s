@@ -8,7 +8,7 @@ task_bos_dsd_rock_0: @ 080C4420
 	push {r4, r5, r6, lr}
 	adds r6, r0, #0x0
 	str r1, [r6, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x01
@@ -16,7 +16,7 @@ task_bos_dsd_rock_0: @ 080C4420
 	adds r5, r6, #0x0
 	adds r5, #0x20
 	strb r0, [r5, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	ldr r4, _080C44A4 @ =0x09EF3BF8
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
@@ -38,7 +38,7 @@ task_bos_dsd_rock_0: @ 080C4420
 	ldrb r0, [r5, #0x00]
 	cmp r0, #0x00
 	beq _080C44B4
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080C44A8 @ =0x00000301
@@ -48,7 +48,7 @@ task_bos_dsd_rock_0: @ 080C4420
 	movs r2, #0xE0
 	lsls r2, r2, #0x03
 	adds r5, r0, r2
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
@@ -69,7 +69,7 @@ _080C44A8: .4byte 0x00000301
 _080C44AC: .4byte 0x02039B84
 _080C44B0: .4byte 0xFFFF7800
 _080C44B4:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080C44F0 @ =0x00000201
@@ -79,7 +79,7 @@ _080C44B4:
 	movs r1, #0x80
 	lsls r1, r1, #0x03
 	adds r5, r0, r1
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
@@ -101,7 +101,7 @@ _080C44F8:
 	ldrb r0, [r5, #0x00]
 	cmp r0, #0x00
 	beq _080C4548
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080C4540 @ =0x00000301
@@ -111,7 +111,7 @@ _080C44F8:
 	movs r1, #0xE0
 	lsls r1, r1, #0x03
 	adds r5, r0, r1
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
@@ -133,7 +133,7 @@ _080C44F8:
 _080C4540: .4byte 0x00000301
 _080C4544: .4byte 0x02039B84
 _080C4548:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080C45CC @ =0x00000201
@@ -143,7 +143,7 @@ _080C4548:
 	movs r1, #0x80
 	lsls r1, r1, #0x03
 	adds r5, r0, r1
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
@@ -165,7 +165,7 @@ _080C4582:
 	subs r0, #0x8C
 	lsls r0, r0, #0x08
 	str r0, [r6, #0x08]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x65

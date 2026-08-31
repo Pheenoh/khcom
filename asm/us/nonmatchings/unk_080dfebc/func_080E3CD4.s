@@ -25,7 +25,7 @@ func_080E3CD4: @ 080E3CD4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	mov r8, r0
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	subs r1, r6, r4

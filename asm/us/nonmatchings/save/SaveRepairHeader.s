@@ -41,7 +41,7 @@ _08008BE8:
 	cmp r7, #0x00
 	blt _08008C48
 	movs r0, #0x40
-	bl func_08000918
+	bl EwramAlloc
 	adds r5, r0, #0x0
 	lsls r0, r6, #0x06
 	ldr r1, _08008C54 @ =0x0E000010
@@ -73,7 +73,7 @@ _08008C34:
 	cmp r0, #0x01
 	ble _08008C18
 	adds r0, r5, #0x0
-	bl func_080009C4
+	bl EwramFree
 	movs r1, #0x02
 _08008C48:
 	adds r0, r1, #0x0

@@ -32,7 +32,7 @@ func_080F80FC: @ 080F80FC
 	adds r0, r7, r2
 	movs r4, #0x00
 	str r4, [r0, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	movs r3, #0xAC
 	lsls r3, r3, #0x01
 	adds r1, r7, r3
@@ -84,7 +84,7 @@ func_080F80FC: @ 080F80FC
 	mov r0, r9
 	cmp r0, #0x01
 	beq _080F81CA
-	bl func_080065A4
+	bl GetRandom
 	movs r1, #0x92
 	lsls r1, r1, #0x01
 	adds r2, r7, r1
@@ -95,7 +95,7 @@ func_080F80FC: @ 080F80FC
 	ldr r0, [r2, #0x00]
 	subs r0, r0, r1
 	str r0, [r2, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	movs r2, #0x94
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -192,11 +192,11 @@ _080F8274:
 	adds r4, r7, r0
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080F8358 @ =0x09EDAE88
 	adds r0, r4, #0x0
 	adds r2, r7, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r6, _080F835C @ =0x09991F54
 	mov r1, r9
 	adds r4, r5, r1
@@ -216,7 +216,7 @@ _080F8274:
 	adds r1, #0x14
 	adds r1, r4, r1
 	ldr r1, [r1, #0x00]
-	bl func_080028F8
+	bl AllocObjTiles
 	movs r2, #0xCC
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -229,13 +229,13 @@ _080F8274:
 	ldr r1, [r4, #0x00]
 	adds r0, r5, #0x0
 	mov r2, r8
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	movs r2, #0xCE
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -250,7 +250,7 @@ _080F8274:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080F8364 @ =0x099999AC
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r1, _080F8368 @ =0x00000A28
 	add r1, r10
 	str r0, [r1, #0x00]
@@ -260,13 +260,13 @@ _080F8274:
 	ldr r1, _080F836C @ =0x09EF9738
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	ldr r1, _080F8370 @ =0x00000A2C
 	add r1, r10
 	str r0, [r1, #0x00]

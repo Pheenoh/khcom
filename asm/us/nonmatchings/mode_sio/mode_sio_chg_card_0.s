@@ -9,17 +9,17 @@ mode_sio_chg_card_0: @ 080B1CD0
 	adds r5, r0, #0x0
 	ldr r6, _080B1DBC @ =0x02034B4C
 	ldr r0, _080B1DC0 @ =0x00000BF8
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r6, #0x00]
 	bl func_08004DB0
 	movs r0, #0x00
 	movs r1, #0x00
 	movs r2, #0x07
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x00
 	movs r1, #0x01
 	bl func_08005654
@@ -30,10 +30,10 @@ mode_sio_chg_card_0: @ 080B1CD0
 	movs r1, #0x00
 	movs r2, #0x0F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x01
 	bl func_08005654
@@ -44,10 +44,10 @@ mode_sio_chg_card_0: @ 080B1CD0
 	movs r1, #0x00
 	movs r2, #0x18
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x01
 	bl func_08005654
@@ -56,12 +56,12 @@ mode_sio_chg_card_0: @ 080B1CD0
 	bl func_080055EC
 	ldr r4, _080B1DC4 @ =0x096B2BE4
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	movs r2, #0x80
 	lsls r2, r2, #0x06
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0x00
 	bl func_0800501C
 	movs r0, #0x01

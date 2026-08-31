@@ -11,11 +11,11 @@ task_btl_pop_cb_0: @ 0805CC80
 	movs r0, #0x80
 	lsls r0, r0, #0x02
 	ldr r1, _0805CCB0 @ =0x08B1FD66
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _0805CCB4 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	movs r1, #0x12
 	ldsh r0, [r5, r1]

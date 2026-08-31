@@ -11,9 +11,9 @@ task_poo_vegetable_3: @ 080CFE10
 	cmp r0, #0x00
 	beq _080CFE2E
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x38
 	bl func_08012304

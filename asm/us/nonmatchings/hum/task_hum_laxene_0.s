@@ -39,7 +39,7 @@ task_hum_laxene_0: @ 08050F7C
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	movs r1, #0x0C
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4}
 	pop {r0}
 	bx r0

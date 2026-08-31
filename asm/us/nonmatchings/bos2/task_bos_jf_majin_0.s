@@ -69,19 +69,19 @@ task_bos_jf_majin_0: @ 080BE508
 	ldr r0, _080BE67C @ =0x096CAC64
 	movs r2, #0x80
 	lsls r2, r2, #0x04
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, _080BE680 @ =0x0203B500
 	mov r8, r0
 	str r4, [r0, #0x00]
 	ldr r1, _080BE684 @ =0x096FB584
 	movs r0, #0x01
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080BE688 @ =0x09665C04
 	movs r2, #0x9C
 	lsls r2, r2, #0x06
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	mov r0, r8
 	ldr r1, [r0, #0x00]
 	movs r0, #0x01
@@ -91,15 +91,15 @@ task_bos_jf_majin_0: @ 080BE508
 	ldr r0, _080BE68C @ =0x09682AA4
 	movs r1, #0xA0
 	lsls r1, r1, #0x06
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x04]
 	ldr r0, _080BE690 @ =0x096FB5A4
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x08]
 	ldr r0, _080BE694 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x0C]
 	adds r1, r7, #0x0
 	adds r1, #0x2C
@@ -119,13 +119,13 @@ task_bos_jf_majin_0: @ 080BE508
 	ldr r1, _080BE69C @ =0x09EF3B40
 	ldr r2, _080BE6A0 @ =0x09EF3A48
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x10]
 	ldr r0, _080BE6A4 @ =0x02039B84
 	ldr r3, [r0, #0x00]
@@ -154,11 +154,11 @@ task_bos_jf_majin_0: @ 080BE508
 	adds r4, #0x58
 	adds r0, r4, #0x0
 	movs r1, #0x02
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080BE6A8 @ =0x09EF2A74
 	ldr r2, [r7, #0x00]
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

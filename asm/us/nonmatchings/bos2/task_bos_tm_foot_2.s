@@ -81,7 +81,7 @@ _080BB010:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r6, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r3, #0x00
 	ldsh r0, [r0, r3]
@@ -109,7 +109,7 @@ _080BB010:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r8
 	ldr r2, [r0, #0x04]
 	ldr r3, [r0, #0x08]
@@ -117,7 +117,7 @@ _080BB010:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r6, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -146,7 +146,7 @@ _080BB010:
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
 	mov r3, r12
-	bl func_080023E0
+	bl DrawSprite
 	mov r4, r9
 	ldr r2, [r4, #0x04]
 	ldr r3, [r4, #0x08]
@@ -154,7 +154,7 @@ _080BB010:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r6, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -183,7 +183,7 @@ _080BB010:
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
 	mov r3, r12
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [sp, #0x014]
 	ldr r2, [r4, #0x04]
 	ldr r3, [r4, #0x08]
@@ -191,7 +191,7 @@ _080BB010:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r6, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -215,7 +215,7 @@ _080BB010:
 	lsls r5, r5, #0x10
 	lsrs r5, r5, #0x10
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x01C
 	pop {r3, r4, r5}
 	mov r8, r3

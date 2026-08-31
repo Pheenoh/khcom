@@ -29,16 +29,16 @@ void task_tutorial_3(TutorialWork* work);
 s16 func_0805E848(u16* widths, u16 count);
 u16 func_0805E89C(u16* str);
 
-void func_08005074(s32 a, s32 b, s32 c, s32 d);
-void func_080054EC(s32 a, s32 b, s32 c);
-void* func_080028F8(s32 a, void* b);
-void func_08005968(void* a, void* b, void* c);
-void func_080059A4(void* a, s32 b, s32 c);
-void func_08006578(s32 a);
-void* func_08005A64(void* a);
+void SetupBg(s32 a, s32 b, s32 c, s32 d);
+void SetBgScroll(s32 a, s32 b, s32 c);
+void* AllocObjTiles(s32 a, void* b);
+void AnimInit(void* a, void* b, void* c);
+void AnimStart(void* a, s32 b, s32 c);
+void SeedRandom(s32 a);
+void* AnimUpdate(void* a);
 
-extern u32 gUnk_03007480;
-extern s16 gUnk_08121400[];
+extern u32 gFrameCounter;
+extern s16 gSineTable[];
 extern u16 gUnk_0300750C;
 extern u8 gUnk_08B263D2[];
 extern u8 gUnk_09EE15F0[];

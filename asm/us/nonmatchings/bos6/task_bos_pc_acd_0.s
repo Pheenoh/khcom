@@ -13,11 +13,11 @@ task_bos_pc_acd_0: @ 0810BF2C
 	movs r0, #0xC0
 	lsls r0, r0, #0x02
 	ldr r1, _0810BF7C @ =0x09C489E4
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x04]
 	ldr r0, _0810BF80 @ =0x09D693D4
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x08]
 	movs r0, #0x01
 	negs r0, r0
@@ -30,7 +30,7 @@ task_bos_pc_acd_0: @ 0810BF2C
 	ldr r1, _0810BF84 @ =0x09EFABA4
 	ldr r2, _0810BF88 @ =0x09EFAB68
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldr r0, [r5, #0x1C]
 	ldrb r0, [r0, #0x05]
 	cmp r0, #0x01
@@ -39,7 +39,7 @@ task_bos_pc_acd_0: @ 0810BF2C
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	b _0810BF98
 _0810BF7C: .4byte 0x09C489E4
 _0810BF80: .4byte 0x09D693D4
@@ -50,7 +50,7 @@ _0810BF8C:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0810BF98:
 	pop {r4, r5, r6}
 	pop {r0}

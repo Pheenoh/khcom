@@ -78,7 +78,7 @@ _080D2274:
 	str r0, [sp, #0x00C]
 	adds r0, r7, #0x0
 	adds r1, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	movs r0, #0x01
 _080D22A4:
 	add sp, #0x010

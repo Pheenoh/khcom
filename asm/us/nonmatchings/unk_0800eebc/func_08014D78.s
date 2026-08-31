@@ -65,7 +65,7 @@ _08014DE0:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08014E2C @ =0x09EDA978
 	add r1, sp, #0x004
 	movs r2, #0x00
@@ -74,7 +74,7 @@ _08014DE0:
 	ldsh r2, [r4, r3]
 	bl func_08006778
 	ldr r0, _08014E30 @ =0x00000232
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r1, [r6, #0x00]
 	mov r0, r10
 	strh r0, [r1, #0x26]

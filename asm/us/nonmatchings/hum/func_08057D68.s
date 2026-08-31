@@ -11,7 +11,7 @@ func_08057D68: @ 08057D68
 	ldr r5, _08057DD4 @ =0x02039B84
 	ldr r0, [r5, #0x00]
 	ldr r6, [r0, #0x7C]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x1E
@@ -55,7 +55,7 @@ func_08057D68: @ 08057D68
 	b _08057E1E
 _08057DD4: .4byte 0x02039B84
 _08057DD8:
-	bl func_080065A4
+	bl GetRandom
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00

@@ -25,7 +25,7 @@ _08065B96:
 	ldr r0, [r5, #0x00]
 	cmp r0, #0x00
 	beq _08065BA8
-	bl func_080028C0
+	bl ReleaseObjTiles
 	str r4, [r5, #0x00]
 _08065BA8:
 	strb r4, [r5, #0x05]
@@ -169,7 +169,7 @@ _08065CA2:
 	ldr r0, [r5, #0x00]
 	cmp r0, #0x00
 	beq _08065CB0
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r0, #0x00
 	str r0, [r5, #0x00]
 _08065CB0:
@@ -195,7 +195,7 @@ _08065CC6:
 	ldr r1, _08065D08 @ =0x090CBFB2
 	adds r0, r0, r1
 	movs r1, #0x80
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	strb r7, [r5, #0x04]
 _08065CE2:

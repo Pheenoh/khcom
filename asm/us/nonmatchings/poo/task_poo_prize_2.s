@@ -52,7 +52,7 @@ task_poo_prize_2: @ 080D1D90
 	movs r0, #0x00
 	adds r1, r2, #0x0
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r6, r0, #0x0
 	b _080D1E02
 _080D1DF8: .4byte 0x0203C40C
@@ -84,7 +84,7 @@ _080D1E02:
 	lsrs r0, r0, #0x10
 	str r0, [sp, #0x00C]
 	mov r0, r9
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r5, #0x0
 	adds r0, #0x97
 	ldrb r0, [r0, #0x00]
@@ -110,7 +110,7 @@ _080D1E02:
 	ldr r0, _080D1E84 @ =0x0000FFF0
 	str r0, [sp, #0x00C]
 	mov r0, r9
-	bl func_080023E0
+	bl DrawSprite
 _080D1E6C:
 	add sp, #0x010
 	pop {r3, r4}

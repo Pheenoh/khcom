@@ -99,7 +99,7 @@ _08072B10:
 	lsls r4, r4, #0x02
 _08072B14:
 	adds r0, r4, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	lsls r1, r5, #0x10
 	asrs r1, r1, #0x10
 	lsls r2, r6, #0x10
@@ -110,7 +110,7 @@ _08072B14:
 _08072B2A:
 	ldr r4, _08072B48 @ =0x00000391
 	adds r0, r4, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	lsls r1, r5, #0x10
 	asrs r1, r1, #0x10
 	lsls r2, r6, #0x10

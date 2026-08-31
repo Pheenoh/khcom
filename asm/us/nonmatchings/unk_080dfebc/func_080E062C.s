@@ -147,7 +147,7 @@ _080E073A:
 	adds r0, #0x8C
 	ldr r1, _080E0760 @ =0x09EDAF78
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	b _080E0772
 	.byte 0x00, 0x00
 _080E0758: .4byte 0x02039BA0
@@ -159,7 +159,7 @@ _080E0764:
 	adds r0, #0x8C
 	ldr r1, _080E077C @ =0x09EDAF60
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 _080E0772:
 	pop {r4, r5, r6}
 	pop {r0}

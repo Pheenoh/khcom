@@ -58,13 +58,13 @@ _0808CAE0:
 	cmp r7, #0x00
 	beq _0808CB40
 	movs r0, #0x79
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _0808CB40
 _0808CAEC:
 	cmp r6, #0x00
 	beq _0808CAF6
 	movs r0, #0x79
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0808CAF6:
 	ldrh r0, [r4, #0x24]
 	adds r0, #0x01

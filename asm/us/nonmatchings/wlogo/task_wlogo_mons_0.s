@@ -11,25 +11,25 @@ task_wlogo_mons_0: @ 080B4818
 	movs r0, #0x00
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B48A4 @ =0x096324C4
 	movs r2, #0xC8
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080B48A8 @ =0x096B6C64
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _080B48AC @ =0x0961AA92
 	movs r1, #0xA0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	movs r1, #0x00
 	movs r2, #0x00
@@ -53,13 +53,13 @@ task_wlogo_mons_0: @ 080B4818
 	ldr r1, _080B48B0 @ =0x09EF3544
 	ldr r2, _080B48B4 @ =0x09EF351C
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x0C]
 	pop {r4, r5}
 	pop {r0}

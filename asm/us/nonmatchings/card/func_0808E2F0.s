@@ -23,7 +23,7 @@ _0808E308:
 	lsls r0, r5, #0x05
 	adds r0, r0, r1
 	ldr r0, [r0, #0x1C]
-	bl func_080009C4
+	bl EwramFree
 	adds r0, r5, #0x1
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
@@ -36,7 +36,7 @@ _0808E31E:
 	ldr r0, _0808E33C @ =0x000004D4
 	adds r4, r4, r0
 	ldr r0, [r4, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	movs r0, #0x00
 	str r0, [r4, #0x00]
 _0808E336:

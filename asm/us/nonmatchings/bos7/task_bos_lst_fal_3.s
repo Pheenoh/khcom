@@ -10,12 +10,12 @@ task_bos_lst_fal_3: @ 08111F14
 	ldr r0, [r4, #0x20]
 	cmp r0, #0x00
 	beq _08111F22
-	bl func_080028C0
+	bl ReleaseObjTiles
 _08111F22:
 	ldr r0, [r4, #0x24]
 	cmp r0, #0x00
 	beq _08111F2C
-	bl func_08002C10
+	bl ReleaseObjPalette
 _08111F2C:
 	ldr r1, [r4, #0x1C]
 	ldrh r0, [r1, #0x00]

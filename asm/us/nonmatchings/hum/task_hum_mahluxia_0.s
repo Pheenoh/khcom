@@ -150,7 +150,7 @@ task_hum_mahluxia_0: @ 0804FC28
 	lsls r2, r2, #0x02
 	adds r0, r5, r2
 	movs r1, #0x16
-	bl func_08000E64
+	bl TaskPoolInit
 	movs r3, #0xC2
 	lsls r3, r3, #0x01
 	adds r1, r5, r3

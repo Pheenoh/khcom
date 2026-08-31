@@ -67,14 +67,14 @@ _0804026C:
 	ldr r0, _08040314 @ =0x096FAC64
 _0804028A:
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	adds r4, r5, #0x0
 	adds r4, #0x0C
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r3, _08040318 @ =0x09EDF154
 	ldr r0, _0804031C @ =0x09EDF124
 	str r0, [sp, #0x000]
@@ -155,14 +155,14 @@ _08040428:
 	ldr r0, _0804044C @ =0x08B22CE4
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x60]
 	ldr r0, _08040450 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x64]
 	ldr r0, _08040454 @ =0x00000237
-	bl func_0811FE70
+	bl m4aSongNumStart
 	add sp, #0x010
 	pop {r4, r5, r6, r7}
 	pop {r0}

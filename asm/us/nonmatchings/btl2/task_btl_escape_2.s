@@ -40,7 +40,7 @@ task_btl_escape_2: @ 08030A64
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -55,7 +55,7 @@ task_btl_escape_2: @ 08030A64
 	str r4, [sp, #0x008]
 	movs r4, #0x02
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	b _08030B16
 _08030AD0: .4byte 0x02039B84
 _08030AD4: .4byte 0xFFFFFD00
@@ -73,7 +73,7 @@ _08030ADC:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -87,7 +87,7 @@ _08030ADC:
 	str r7, [sp, #0x008]
 	movs r4, #0x02
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _08030B16:
 	ldr r1, [r6, #0x14]
 	cmp r1, #0x00
@@ -106,7 +106,7 @@ _08030B34:
 	movs r0, #0x00
 	movs r3, #0x00
 _08030B38:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r7, r0, #0x0
 	add r0, sp, #0x010
 	movs r4, #0x00
@@ -122,7 +122,7 @@ _08030B38:
 	str r4, [sp, #0x008]
 	movs r4, #0x01
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _08030B5E:
 	add sp, #0x014
 	pop {r3}

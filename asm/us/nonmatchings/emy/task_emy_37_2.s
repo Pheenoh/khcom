@@ -39,7 +39,7 @@ _0803CC8E:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	movs r3, #0xC0
 	lsls r3, r3, #0x01
 	adds r0, r6, r3
@@ -153,7 +153,7 @@ _0803CD8E:
 _0803CD90:
 	movs r3, #0x01
 _0803CD92:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r5, r0, #0x0
 _0803CD98:
 	adds r0, r7, #0x0
@@ -206,7 +206,7 @@ _0803CDD4:
 	ldr r4, _0803CE04 @ =0x0000FFFF
 _0803CDFA:
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	b _0803CE36
 	.byte 0x00, 0x00
 _0803CE04: .4byte 0x0000FFFF
@@ -232,11 +232,11 @@ _0803CE08:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _0803CE36:
 	adds r0, r6, #0x0
 	adds r0, #0x28
-	bl func_08000EE0
+	bl TaskPoolDraw
 _0803CE3E:
 	add sp, #0x014
 	pop {r3}

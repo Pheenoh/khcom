@@ -29,7 +29,7 @@ _080CEF2A:
 	adds r4, r5, #0x0
 	adds r4, #0x0C
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	adds r6, r4, #0x0
 	adds r4, #0x30
@@ -40,7 +40,7 @@ _080CEF40:
 	adds r0, r6, #0x0
 	movs r1, #0x05
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x01
 	str r0, [r7, #0x00]
 	adds r1, r5, #0x0
@@ -96,7 +96,7 @@ _080CEF74:
 	adds r0, r6, #0x0
 	movs r1, #0x06
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x02
 	str r0, [r7, #0x00]
 	adds r1, r5, #0x0
@@ -161,7 +161,7 @@ _080CF038:
 	str r0, [r1, #0x00]
 _080CF03A:
 	adds r0, r6, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x08]
 	ldr r1, [r5, #0x28]
 	ldr r2, [r5, #0x2C]
@@ -170,7 +170,7 @@ _080CF03A:
 	bl func_08012324
 	adds r0, r5, #0x0
 	adds r0, #0x98
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4, r5, r6, r7}
 	pop {r1}

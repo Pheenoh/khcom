@@ -10,7 +10,7 @@ task_emy_26_0: @ 0803A9F0
 	adds r2, r1, #0x0
 	ldr r1, _0803AA24 @ =0x0813DE14
 	bl func_0800C778
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803AA28 @ =0x00001001

@@ -81,7 +81,7 @@ _08044ECC:
 	strb r1, [r0, #0x00]
 	ldr r0, _08044F8C @ =0x096183F8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	movs r1, #0xAC
 	lsls r1, r1, #0x01
@@ -92,7 +92,7 @@ _08044ECC:
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08044F90 @ =0x0813EB4C
 	ldr r1, [r6, #0x00]
 	str r1, [sp, #0x000]
@@ -126,11 +126,11 @@ _08044ECC:
 	adds r4, #0x20
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _08044F94 @ =0x09EDAE88
 	adds r0, r4, #0x0
 	adds r2, r7, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x004
 	pop {r4, r5, r6, r7}
 	pop {r0}

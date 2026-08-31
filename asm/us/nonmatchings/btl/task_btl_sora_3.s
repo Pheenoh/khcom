@@ -10,7 +10,7 @@ task_btl_sora_3: @ 080273B8
 	adds r5, r4, #0x0
 	adds r5, #0x40
 	ldr r0, _080273F4 @ =0x0000024E
-	bl func_0811FF3C
+	bl m4aSongNumStop
 	ldr r0, _080273F8 @ =0x02039B84
 	ldr r3, [r0, #0x00]
 	ldr r0, [r3, #0x68]
@@ -49,7 +49,7 @@ _08027406:
 	bl func_0801DEF4
 	adds r0, r4, #0x0
 	adds r0, #0x24
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4, r5}
 	pop {r0}
 	bx r0

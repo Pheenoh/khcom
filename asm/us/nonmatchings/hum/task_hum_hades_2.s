@@ -86,12 +86,12 @@ _0804F768:
 	ldr r2, [r0, #0x00]
 	movs r0, #0x00
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	mov r9, r0
 	movs r4, #0xF0
 	lsls r4, r4, #0x01
 	adds r0, r7, r4
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r5, r0, #0x0
 	ldr r2, [r6, #0x04]
 	ldr r3, [r6, #0x08]
@@ -99,7 +99,7 @@ _0804F768:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r10
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -128,11 +128,11 @@ _0804F768:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	adds r2, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	movs r1, #0xFC
 	lsls r1, r1, #0x01
 	adds r0, r7, r1
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r5, r0, #0x0
 	ldr r2, [r6, #0x10]
 	ldr r3, [r6, #0x14]
@@ -140,7 +140,7 @@ _0804F768:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r10
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -170,11 +170,11 @@ _0804F768:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	adds r2, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	movs r1, #0x84
 	lsls r1, r1, #0x02
 	adds r0, r7, r1
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r5, r0, #0x0
 	ldr r2, [r6, #0x1C]
 	ldr r3, [r6, #0x20]
@@ -182,7 +182,7 @@ _0804F768:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r10
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -212,7 +212,7 @@ _0804F768:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	adds r2, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	adds r6, #0x28
 	ldr r0, [sp, #0x018]
 	subs r0, #0x01

@@ -160,7 +160,7 @@ _081023DC:
 	ldr r0, _08102408 @ =0x02035860
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x00
 	str r0, [r4, #0x00]
 	b _08102434
@@ -182,7 +182,7 @@ _0810240C:
 	ldr r0, _08102470 @ =0x02035860
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0xBC
 	lsls r0, r0, #0x08
 	str r0, [r4, #0x00]
@@ -270,7 +270,7 @@ _081024D4:
 	strb r0, [r5, #0x00]
 _081024EA:
 	ldr r0, _081024FC @ =0x020358A8
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	bl func_08101970
 	add sp, #0x004
 	pop {r4, r5}

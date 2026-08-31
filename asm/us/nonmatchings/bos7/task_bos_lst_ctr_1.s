@@ -79,7 +79,7 @@ _08112048: .4byte 0x0811204C
 _081122DC:
 	adds r0, r7, #0x0
 	adds r0, #0x44
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 	add sp, #0x014
 	pop {r4, r5, r6, r7}

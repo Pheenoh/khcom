@@ -9,10 +9,10 @@ mode_battle_1: @ 0800A4BC
 	ldr r4, _0800A4FC @ =0x02039B84
 	ldr r0, [r4, #0x00]
 	adds r0, #0x54
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [r4, #0x00]
 	adds r0, #0x54
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r1, [r4, #0x00]
 	adds r0, r1, #0x0
 	adds r0, #0x74
@@ -22,10 +22,10 @@ mode_battle_1: @ 0800A4BC
 	ble _0800A500
 	adds r0, r1, #0x0
 	adds r0, #0x40
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r0, [r4, #0x00]
 	adds r0, #0x2C
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r1, [r4, #0x00]
 	adds r1, #0x74
 	ldrh r0, [r1, #0x00]
@@ -51,7 +51,7 @@ _0800A500:
 	bgt _0800A528
 	adds r0, r1, #0x0
 	adds r0, #0x2C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	b _0800A52C
 _0800A528:
 	subs r0, r3, #0x1
@@ -73,7 +73,7 @@ _0800A546:
 	bl func_080125A4
 	ldr r0, [r4, #0x00]
 	adds r0, #0x40
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r5, [r4, #0x00]
 	ldr r3, [r5, #0x68]
 	ldr r4, [r5, #0x6C]
@@ -107,7 +107,7 @@ _0800A578:
 	bne _0800A596
 	adds r0, r3, #0x0
 	adds r0, #0x2C
-	bl func_08000EE0
+	bl TaskPoolDraw
 _0800A596:
 	pop {r4, r5}
 	pop {r0}

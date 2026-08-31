@@ -13,11 +13,11 @@ task_btl_escape_0: @ 08030940
 	ldr r0, _08030984 @ =0x08B1EB1C
 	movs r1, #0x90
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _08030988 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r1, _0803098C @ =0x09EE11A4
 	ldr r0, [r1, #0x00]

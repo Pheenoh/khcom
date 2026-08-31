@@ -8,9 +8,9 @@ func_080D53A8: @ 080D53A8
 	push {r4, lr}
 	ldr r4, _080D53C0 @ =0x0203C4B4
 	ldr r0, [r4, #0x00]
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r4}
 	pop {r0}
 	bx r0

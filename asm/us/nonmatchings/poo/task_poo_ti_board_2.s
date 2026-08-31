@@ -37,7 +37,7 @@ task_poo_ti_board_2: @ 080CF7C0
 	ldr r0, [r4, #0x04]
 	cmp r0, #0x00
 	beq _080CF864
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r4, #0x04]
 	adds r0, r4, #0x0
@@ -52,7 +52,7 @@ _080CF81C:
 	bne _080CF83A
 	ldr r0, _080CF86C @ =0x09849D58
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	adds r0, r4, #0x0
 	adds r0, #0x1C
@@ -80,7 +80,7 @@ _080CF83A:
 	str r0, [sp, #0x00C]
 	adds r0, r7, #0x0
 	adds r1, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080CF864:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

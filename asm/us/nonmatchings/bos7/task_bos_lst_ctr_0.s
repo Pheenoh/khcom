@@ -34,21 +34,21 @@ task_bos_lst_ctr_0: @ 08111F98
 	ldr r0, _08112000 @ =0x09C5C704
 	movs r1, #0xA0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x5C]
 	ldr r0, _08112004 @ =0x09D69594
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x60]
 	adds r4, #0x44
 	ldr r1, _08112008 @ =0x09EFAF50
 	ldr r2, _0811200C @ =0x09EFAF24
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x03
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	pop {r4}
 	pop {r0}
 	bx r0

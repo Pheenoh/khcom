@@ -45,7 +45,7 @@ func_0804F9C8: @ 0804F9C8
 	b _0804FA62
 _0804FA1C: .4byte 0x02039B84
 _0804FA20:
-	bl func_080065A4
+	bl GetRandom
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00

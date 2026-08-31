@@ -56,7 +56,7 @@ task_hum_hook_moon_2: @ 0804C950
 	str r5, [sp, #0x008]
 	ldr r4, _0804CA88 @ =0x0000FFFF
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r10
 	subs r0, #0x90
 	lsls r0, r0, #0x10
@@ -72,7 +72,7 @@ task_hum_hook_moon_2: @ 0804C950
 	str r4, [sp, #0x00C]
 	mov r1, r9
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r10
 	subs r0, #0x58
 	lsls r0, r0, #0x10
@@ -85,7 +85,7 @@ task_hum_hook_moon_2: @ 0804C950
 	str r4, [sp, #0x00C]
 	mov r1, r9
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r10
 	subs r0, #0x20
 	lsls r0, r0, #0x10
@@ -98,7 +98,7 @@ task_hum_hook_moon_2: @ 0804C950
 	str r4, [sp, #0x00C]
 	mov r1, r9
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r10
 	adds r0, #0x18
 	lsls r0, r0, #0x10
@@ -111,7 +111,7 @@ task_hum_hook_moon_2: @ 0804C950
 	str r4, [sp, #0x00C]
 	mov r1, r9
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r10
 	adds r0, #0x50
 	lsls r0, r0, #0x10
@@ -124,7 +124,7 @@ task_hum_hook_moon_2: @ 0804C950
 	str r4, [sp, #0x00C]
 	mov r1, r9
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	bl func_08006390
 	lsls r0, r0, #0x10
 	lsrs r4, r0, #0x10

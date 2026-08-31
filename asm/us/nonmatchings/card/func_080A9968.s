@@ -24,7 +24,7 @@ _080A997A:
 _080A998A:
 	ldr r1, _080A999C @ =0x00000614
 	adds r0, r5, r1
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	pop {r4, r5}
 	pop {r0}
 	bx r0

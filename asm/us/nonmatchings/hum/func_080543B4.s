@@ -23,7 +23,7 @@ _080543C6:
 	ldr r1, _080543F0 @ =0x09EDB6E0
 	adds r2, r5, #0x0
 	str r3, [sp, #0x000]
-	bl func_08000E14
+	bl TaskCreate
 	adds r4, #0x0C
 	adds r5, #0x0C
 	subs r6, #0x01

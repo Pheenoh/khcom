@@ -12,7 +12,7 @@ task_status_meswindow_0: @ 080D8938
 	str r0, [r4, #0x18]
 	adds r0, r4, #0x0
 	movs r1, #0x02
-	bl func_08000E64
+	bl TaskPoolInit
 	movs r0, #0x00
 	str r0, [r4, #0x14]
 	adds r4, #0x20

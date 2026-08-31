@@ -38,7 +38,7 @@ _08119308:
 	adds r4, r2, #0x0
 	lsls r3, r4, #0x10
 	lsrs r2, r3, #0x10
-	bl func_08117FE4
+	bl CpuFastSet
 	ldr r0, [r7, #0x18]
 	ldr r1, [r0, #0x5C]
 	ldr r0, [r1, #0x00]
@@ -75,7 +75,7 @@ _0811936E:
 	asrs r2, r2, #0x02
 	lsls r3, r2, #0x0B
 	lsrs r2, r3, #0x0B
-	bl func_08117FE4
+	bl CpuFastSet
 	ldr r0, [r7, #0x28]
 	cmp r0, #0x00
 	beq _0811939C
@@ -93,7 +93,7 @@ _08119392:
 	asrs r2, r2, #0x02
 	lsls r3, r2, #0x0B
 	lsrs r2, r3, #0x0B
-	bl func_08117FE4
+	bl CpuFastSet
 _0811939C:
 	b _08119476
 _0811939E:
@@ -141,7 +141,7 @@ _081193F0:
 	asrs r2, r2, #0x02
 	lsls r3, r2, #0x0B
 	lsrs r2, r3, #0x0B
-	bl func_08117FE4
+	bl CpuFastSet
 	ldr r0, [r7, #0x28]
 	cmp r0, #0x00
 	beq _0811941E
@@ -159,7 +159,7 @@ _08119414:
 	asrs r2, r2, #0x02
 	lsls r3, r2, #0x0B
 	lsrs r2, r3, #0x0B
-	bl func_08117FE4
+	bl CpuFastSet
 _0811941E:
 	ldr r0, [r7, #0x18]
 	adds r1, r0, #0x0
@@ -185,7 +185,7 @@ _08119448:
 	asrs r2, r2, #0x02
 	lsls r3, r2, #0x0B
 	lsrs r2, r3, #0x0B
-	bl func_08117FE4
+	bl CpuFastSet
 	ldr r0, [r7, #0x38]
 	cmp r0, #0x00
 	beq _08119476
@@ -203,7 +203,7 @@ _0811946C:
 	asrs r2, r2, #0x02
 	lsls r3, r2, #0x0B
 	lsrs r2, r3, #0x0B
-	bl func_08117FE4
+	bl CpuFastSet
 _08119476:
 	add sp, #0x01C
 	pop {r4, r7}

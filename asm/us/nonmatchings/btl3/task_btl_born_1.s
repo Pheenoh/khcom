@@ -25,7 +25,7 @@ task_btl_born_1: @ 08040080
 	cmp r0, #0x00
 	bne _080400B2
 	adds r0, r5, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080400B2:
 	ldrh r0, [r4, #0x12]
 	bl func_08003A98
@@ -91,7 +91,7 @@ _0804012E:
 	adds r0, #0x2C
 	ldr r1, [r4, #0x0C]
 	adds r2, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	movs r0, #0x00
 	b _0804014A
 _08040140: .4byte 0xFFFFF800

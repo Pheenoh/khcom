@@ -18,7 +18,7 @@ task_bos_boogie_knifereader_0: @ 080DB510
 	adds r0, r4, #0x0
 	adds r0, #0x08
 	movs r1, #0x05
-	bl func_08000E64
+	bl TaskPoolInit
 	movs r2, #0x00
 	movs r1, #0x04
 	movs r3, #0x9E

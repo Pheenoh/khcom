@@ -10,11 +10,11 @@ task_status_bar_0: @ 080D7910
 	ldr r0, _080D7960 @ =0x097A18EC
 	movs r1, #0xB8
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D7964 @ =0x0984B1B8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	movs r2, #0x00
 	movs r1, #0x00

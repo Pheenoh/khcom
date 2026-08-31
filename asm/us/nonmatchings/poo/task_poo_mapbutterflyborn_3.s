@@ -17,7 +17,7 @@ task_poo_mapbutterflyborn_3: @ 080D28AC
 _080D28C0:
 	adds r0, r4, #0x0
 	adds r0, #0x80
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

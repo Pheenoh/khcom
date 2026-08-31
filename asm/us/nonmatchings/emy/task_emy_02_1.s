@@ -15,7 +15,7 @@ task_emy_02_1: @ 08037538
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _08037578
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	movs r0, #0x01

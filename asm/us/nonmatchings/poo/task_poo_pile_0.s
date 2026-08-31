@@ -19,7 +19,7 @@ task_poo_pile_0: @ 080CD214
 	adds r0, #0x0C
 	ldr r1, _080CD248 @ =0x09EF5C8C
 	ldr r2, _080CD24C @ =0x09EF5C6C
-	bl func_08005968
+	bl AnimInit
 	ldr r1, [r4, #0x10]
 	cmp r1, #0x08
 	bne _080CD250
@@ -41,9 +41,9 @@ _080CD256:
 	ldrh r1, [r0, #0x00]
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x08]
 	adds r0, r5, #0x0
 	adds r0, #0x34
@@ -57,7 +57,7 @@ _080CD256:
 	strb r4, [r0, #0x00]
 	subs r0, #0x18
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r0, r5, #0x0
 	adds r0, #0xC8
 	str r4, [r0, #0x00]

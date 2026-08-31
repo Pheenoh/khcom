@@ -19,7 +19,7 @@ func_080A1554: @ 080A1554
 	str r0, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x004
 	movs r1, #0x00
 	ldsh r0, [r0, r1]

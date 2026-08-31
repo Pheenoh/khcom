@@ -568,7 +568,7 @@ _081104EC:
 	ldrh r1, [r5, #0x20]
 	ldrh r2, [r5, #0x22]
 	movs r0, #0x00
-	bl func_080054EC
+	bl SetBgScroll
 	ldr r0, [r5, #0x08]
 	cmp r0, #0x1F
 	beq _081104FE
@@ -603,7 +603,7 @@ _08110532:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _08110558 @ =0x04000010
 	ldr r2, [r5, #0x18]
 	movs r1, #0x01
@@ -623,7 +623,7 @@ _08110560:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _08110578 @ =0x04000010
 	ldr r4, _0811057C @ =0x00000744
 	adds r1, r5, r4
@@ -643,7 +643,7 @@ _08110580:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	b _081105AC
 _0811059C: .4byte 0x09D4C274
 _081105A0:
@@ -651,7 +651,7 @@ _081105A0:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 _081105AC:
 	ldr r0, _081105C8 @ =0x04000012
 	ldr r2, [r5, #0x18]
@@ -674,7 +674,7 @@ _081105D0:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _081105F0 @ =0x04000012
 	adds r1, r5, #0x0
 	adds r1, #0xC4
@@ -690,7 +690,7 @@ _081105F8:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 _08110604:
 	ldr r0, [r5, #0x08]
 	cmp r0, #0x3F
@@ -708,7 +708,7 @@ _08110604:
 	ldr r1, _08110644 @ =0x050000A0
 	adds r0, r4, #0x0
 	movs r2, #0xA0
-	bl func_08005BE8
+	bl LoadPalette
 	ldr r0, [r5, #0x08]
 	adds r0, #0x01
 	str r0, [r5, #0x08]

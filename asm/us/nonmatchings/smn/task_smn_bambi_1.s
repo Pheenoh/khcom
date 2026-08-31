@@ -77,7 +77,7 @@ _0804214C:
 	ldr r2, [r4, #0x0C]
 	bl func_080140E0
 	ldr r0, _080421A4 @ =0x00000235
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08042174:
 	movs r1, #0xAA
 	lsls r1, r1, #0x01
@@ -135,7 +135,7 @@ _080421C2:
 	ldr r2, [r4, #0x0C]
 	bl func_080140E0
 	ldr r0, _0804220C @ =0x00000239
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080421EA:
 	movs r1, #0xAA
 	lsls r1, r1, #0x01
@@ -175,14 +175,14 @@ _0804221E:
 	adds r0, #0x08
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r2, #0xAE
 	lsls r2, r2, #0x01
 	adds r1, r5, r2
 	ldr r0, _08042340 @ =0xFFFFFB80
 	str r0, [r1, #0x00]
 	ldr r0, _08042344 @ =0x00000236
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r5, #0x0
 	bl func_08042018
 	movs r2, #0xB4
@@ -223,13 +223,13 @@ _0804225E:
 	adds r0, #0x08
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	mov r1, r8
 	str r1, [r7, #0x00]
 	ldr r0, _08042344 @ =0x00000236
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, _0804234C @ =0x0000028D
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r5, #0x0
 	bl func_08042018
 	movs r2, #0xB4
@@ -252,14 +252,14 @@ _080422CC:
 	adds r0, #0x08
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r2, #0xAE
 	lsls r2, r2, #0x01
 	adds r1, r5, r2
 	ldr r0, _08042340 @ =0xFFFFFB80
 	str r0, [r1, #0x00]
 	ldr r0, _08042344 @ =0x00000236
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r5, #0x0
 	bl func_08042018
 	movs r2, #0xB4
@@ -367,7 +367,7 @@ _080423AE:
 	mov r0, r9
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
 	bl func_08041D64
 	movs r2, #0xA5
@@ -422,7 +422,7 @@ _08042412:
 	ldr r1, _080424C4 @ =0xFFFFFD00
 	str r1, [r0, #0x00]
 	ldr r0, _080424C8 @ =0x00000236
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0804243C:
 	movs r2, #0xA5
 	lsls r2, r2, #0x01
@@ -457,7 +457,7 @@ _0804246E:
 	movs r3, #0x00
 	bl func_0801A8A4
 	mov r0, r9
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080424F0
@@ -503,7 +503,7 @@ _080424D0:
 	adds r0, #0x2C
 	ldr r1, _080424EC @ =0x09EDAF18
 	add r2, sp, #0x00C
-	bl func_08000E14
+	bl TaskCreate
 	b _080424FC
 _080424E8: .4byte 0x02039B84
 _080424EC: .4byte 0x09EDAF18
@@ -537,11 +537,11 @@ _08042512:
 	beq _08042526
 	adds r0, r5, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 _08042526:
 	adds r0, r5, #0x0
 	adds r0, #0x20
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _08042530:
 	add sp, #0x02C

@@ -36,7 +36,7 @@ task_poo_freeballoon_2: @ 080CC3D8
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	adds r2, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080CC41A:
 	ldr r6, [r5, #0x08]
 	cmp r6, #0x00
@@ -67,7 +67,7 @@ _080CC41A:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	adds r2, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080CC458:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

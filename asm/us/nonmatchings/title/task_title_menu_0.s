@@ -50,12 +50,12 @@ _080D67E8:
 	ldr r0, _080D68D8 @ =0x09773E1A
 	movs r1, #0xB0
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x00]
 	ldr r4, _080D68DC @ =0x0984A7F8
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	ldrh r0, [r0, #0x06]
 	adds r0, #0x10
@@ -67,33 +67,33 @@ _080D67E8:
 	ldr r0, _080D68E0 @ =0x09771DC0
 	movs r1, #0xA0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x08]
 	ldr r0, _080D68E4 @ =0x097720F2
 	movs r1, #0xB2
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x0C]
 	ldr r0, _080D68E8 @ =0x09772CC6
 	movs r1, #0xE0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x10]
 	ldr r4, _080D68EC @ =0x0984A778
 	adds r4, r7, r4
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x14]
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x18]
 	ldr r5, _080D68F0 @ =0x0984A7B8
 	adds r5, r7, r5
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x1C]
 	ldr r0, [r6, #0x14]
 	ldrh r0, [r0, #0x06]
@@ -116,13 +116,13 @@ _080D67E8:
 	ldr r1, _080D68F4 @ =0x09EF661C
 	ldr r2, _080D68F8 @ =0x09EF6608
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r6, #0x20]
 	ldr r1, _080D68FC @ =0x09EF6620
 	ldr r2, [r6, #0x44]
@@ -143,11 +143,11 @@ _080D67E8:
 	adds r4, #0x48
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080D6904 @ =0x09EF4EA8
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0

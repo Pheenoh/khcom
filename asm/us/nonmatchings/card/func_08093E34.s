@@ -38,7 +38,7 @@ _08093E68:
 	ldr r0, _08093EA4 @ =0x09507F38
 	adds r4, r4, r0
 	movs r0, #0x01
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	mov r2, r8
 	subs r0, r6, r2
@@ -49,7 +49,7 @@ _08093E68:
 	adds r1, r1, r0
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0xB4
 	lsls r0, r0, #0x02
 	add r0, r9
@@ -62,7 +62,7 @@ _08093EA0: .4byte 0x0203A8C0
 _08093EA4: .4byte 0x09507F38
 _08093EA8:
 	movs r0, #0x01
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	mov r2, r8
 	subs r0, r6, r2
@@ -73,7 +73,7 @@ _08093EA8:
 	adds r1, r1, r0
 	ldr r0, _08093EFC @ =0x09507F58
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0xB4
 	lsls r0, r0, #0x02
 	add r0, r9

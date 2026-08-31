@@ -7,7 +7,7 @@
 task_hum_vixen_frz_3: @ 08055E20
 	push {lr}
 	ldr r0, [r0, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r0}
 	bx r0
 .syntax divided

@@ -55,13 +55,13 @@ _080DDE38:
 	ldr r4, [r6, #0x08]
 	adds r4, r4, r0
 	ldr r0, [r6, #0x14]
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	ldrh r0, [r6, #0x0C]
 	adds r1, r1, r0
 	ldrh r2, [r6, #0x0E]
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	strb r7, [r5, #0x04]
 	b _080DDE6C
 _080DDE62:

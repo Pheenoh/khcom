@@ -8,11 +8,11 @@ task_poo_roo_footmark_3: @ 080CF25C
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
 	cmp r0, #0x00
 	beq _080CF278
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x1C
 	bl func_080CCBD4

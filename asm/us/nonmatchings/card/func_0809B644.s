@@ -40,7 +40,7 @@ func_0809B644: @ 0809B644
 	lsls r0, r3, #0x10
 	asrs r0, r0, #0x08
 	str r0, [sp, #0x008]
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, _0809B6C8 @ =0x09036210
 	lsls r4, r5, #0x02
 	adds r4, r4, r1
@@ -56,7 +56,7 @@ func_0809B644: @ 0809B644
 	ldr r1, _0809B6CC @ =0x09EE778C
 	adds r0, r6, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, [r7, #0x00]
 	adds r1, #0xD6
 	ldrb r0, [r1, #0x00]

@@ -17,18 +17,18 @@ task_wlogo_hwt_obj_0: @ 080B4CD8
 	ldr r0, _080B4DB8 @ =0x0961B072
 	movs r1, #0xF2
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x00]
 	ldr r0, _080B4DBC @ =0x096FAD64
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x04]
 	adds r4, r7, #0x0
 	adds r4, #0x0C
 	ldr r1, _080B4DC0 @ =0x09EF356C
 	ldr r2, _080B4DC4 @ =0x09EF3548
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldr r5, _080B4DC8 @ =0x096194D0
 	mov r1, r8
 	ldrb r0, [r1, #0x00]
@@ -37,9 +37,9 @@ task_wlogo_hwt_obj_0: @ 080B4CD8
 	ldrb r1, [r0, #0x0C]
 	adds r0, r4, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x08]
 	mov r1, r8
 	ldrb r0, [r1, #0x00]

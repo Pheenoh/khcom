@@ -22,7 +22,7 @@ task_bos_dsd_1: @ 080C1EB4
 	movs r2, #0xDF
 	lsls r2, r2, #0x02
 	adds r0, r4, r2
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	b _080C20CA
 _080C1EDE:
@@ -127,7 +127,7 @@ _080C201A:
 	adds r0, r4, r1
 	ldr r1, _080C2068 @ =0x09EF2E90
 	adds r2, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 _080C2042:
 	movs r2, #0xCD
 	lsls r2, r2, #0x02
@@ -168,7 +168,7 @@ _080C208C:
 	movs r1, #0xDF
 	lsls r1, r1, #0x02
 	adds r0, r4, r1
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, _080C20C4 @ =0x02039B84
 	ldr r2, [r0, #0x00]
 	adds r1, r2, #0x0

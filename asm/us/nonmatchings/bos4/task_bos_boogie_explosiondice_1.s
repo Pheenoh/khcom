@@ -51,7 +51,7 @@ _080DA644:
 _080DA652:
 	adds r0, r5, #0x0
 	adds r0, #0x14
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r4, #0x0
 	adds r0, #0x40
 	ldr r1, [r4, #0x04]
@@ -60,7 +60,7 @@ _080DA652:
 	bl func_08012324
 	adds r0, r5, #0x0
 	adds r0, #0x2C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 _080DA670:
 	movs r0, #0x01
 _080DA672:

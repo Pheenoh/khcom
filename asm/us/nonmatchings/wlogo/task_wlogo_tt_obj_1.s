@@ -15,12 +15,12 @@ task_wlogo_tt_obj_1: @ 080B76D4
 	adds r5, r4, #0x0
 	adds r5, #0x0C
 	adds r0, r5, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080B76FE
 	adds r0, r5, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x08]
 	movs r0, #0x01
 	b _080B7700

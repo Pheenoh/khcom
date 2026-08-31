@@ -20,24 +20,24 @@ task_poo_mapbee_0: @ 080D2334
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080D23A0 @ =0x097606E8
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x00]
 	ldr r0, _080D23A4 @ =0x09849E38
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x04]
 	adds r4, r7, #0x0
 	adds r4, #0x0C
 	ldr r1, _080D23A8 @ =0x09EF6200
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x08]
 	adds r1, r7, #0x0
 	adds r1, #0x34
@@ -46,7 +46,7 @@ task_poo_mapbee_0: @ 080D2334
 	strh r6, [r7, #0x36]
 	movs r0, #0xC1
 	lsls r0, r0, #0x01
-	bl func_0811FE70
+	bl m4aSongNumStart
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0

@@ -51,7 +51,7 @@ _08066DF6:
 	str r1, [sp, #0x00C]
 	asrs r1, r7, #0x10
 	mov r3, r10
-	bl func_080023E0
+	bl DrawSprite
 	adds r5, #0x02
 	adds r1, r4, #0x1
 	lsls r1, r1, #0x18

@@ -39,7 +39,7 @@ _080CDE1A:
 	adds r0, #0x0C
 	movs r1, #0x05
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0xB4
 	strh r0, [r5, #0x00]
 _080CDE46:
@@ -79,7 +79,7 @@ _080CDE46:
 	str r1, [r0, #0x00]
 	subs r0, #0x98
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 _080CDE9E:
 	movs r0, #0x01
 	pop {r4, r5}

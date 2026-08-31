@@ -39,7 +39,7 @@ func_080E5FB4: @ 080E5FB4
 	adds r0, #0xE4
 	ldr r1, _080E6018 @ =0x09EF6EC4
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, _080E601C @ =0x02039BB0
 	ldr r0, [r0, #0x08]
 	movs r1, #0x08
@@ -47,7 +47,7 @@ func_080E5FB4: @ 080E5FB4
 	cmp r0, #0x00
 	beq _080E6020
 	movs r0, #0xE4
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080E6026
 	.byte 0x00, 0x00
 _080E6014: .4byte 0x0203C7AC
@@ -55,7 +55,7 @@ _080E6018: .4byte 0x09EF6EC4
 _080E601C: .4byte 0x02039BB0
 _080E6020:
 	movs r0, #0x75
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080E6026:
 	movs r0, #0x01
 	b _080E602C

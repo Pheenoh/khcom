@@ -17,7 +17,7 @@ task_poo_cabbageborn_1: @ 080D16A4
 	ldr r1, _080D16E0 @ =0x09EF4C10
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	movs r0, #0x28
 	strh r0, [r4, #0x16]
 _080D16C6:
@@ -29,7 +29,7 @@ _080D16CC:
 	strh r0, [r4, #0x16]
 _080D16D0:
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4}
 	pop {r1}

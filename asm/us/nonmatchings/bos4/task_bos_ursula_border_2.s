@@ -26,7 +26,7 @@ task_bos_ursula_border_2: @ 080DC914
 	add r0, sp, #0x010
 	mov r1, r8
 	adds r3, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r1, sp, #0x014
 	mov r10, r1
 	mov r7, sp
@@ -37,7 +37,7 @@ task_bos_ursula_border_2: @ 080DC914
 	mov r0, r10
 	adds r1, r7, #0x0
 	adds r3, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -58,7 +58,7 @@ task_bos_ursula_border_2: @ 080DC914
 	movs r5, #0xFB
 	lsls r5, r5, #0x08
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	mov r1, r10
 	movs r2, #0x00
 	ldsh r0, [r1, r2]
@@ -73,7 +73,7 @@ task_bos_ursula_border_2: @ 080DC914
 	mov r4, r8
 	str r4, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x018
 	pop {r3, r4, r5}
 	mov r8, r3

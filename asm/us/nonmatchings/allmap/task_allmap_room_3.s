@@ -8,16 +8,16 @@ task_allmap_room_3: @ 080D39F4
 	push {r4, r5, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r4, #0x0C
 	movs r5, #0x03
 _080D3A08:
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x00
 	beq _080D3A12
-	bl func_080028C0
+	bl ReleaseObjTiles
 _080D3A12:
 	adds r4, #0x04
 	subs r5, #0x01

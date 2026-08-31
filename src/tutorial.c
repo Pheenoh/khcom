@@ -3,8 +3,8 @@
 
 void task_tutorial_0(TutorialWork* work, s32 arg1) {
     gUnk_0300750C = 0;
-    func_08005074(0, 2, 28, 14);
-    func_080054EC(0, 0, 0);
+    SetupBg(0, 2, 28, 14);
+    SetBgScroll(0, 0, 0);
     work->unk_000 = 0;
     work->unk_00C = 0;
     work->unk_004 = 0;
@@ -18,11 +18,11 @@ void task_tutorial_0(TutorialWork* work, s32 arg1) {
     gUnk_02039B84->unk_068 |= 0x8000000000ULL;
     gUnk_02039B84->unk_068 |= 0x4000000000000ULL;
     gUnk_02039B84->unk_068 |= 0x10000000000ULL;
-    work->unk_018 = func_080028F8(0x100, gUnk_08B263D2);
-    work->unk_01C = func_08002A14(gUnk_08F69BA4, 32);
-    func_08005968(work->unk_020, gUnk_09EE15F0, gUnk_09EE15C0);
-    func_080059A4(work->unk_020, 0, 1);
-    func_08006578(2);
+    work->unk_018 = AllocObjTiles(0x100, gUnk_08B263D2);
+    work->unk_01C = LoadObjPalette(gUnk_08F69BA4, 32);
+    AnimInit(work->unk_020, gUnk_09EE15F0, gUnk_09EE15C0);
+    AnimStart(work->unk_020, 0, 1);
+    SeedRandom(2);
 }
 
 s32 task_tutorial_1(TutorialWork* work) {
@@ -272,7 +272,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             gUnk_02039B84->unk_068 &= ~0x4000000000ULL;
         }
         if (work->unk_010 <= 0) {
-            if (func_08001390() & 0x300) {
+            if (GetKeysPressed() & 0x300) {
                 work->unk_010 = 10;
                 work->unk_00E++;
             }
@@ -302,7 +302,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_00E = 0;
             gUnk_02039B84->unk_068 &= ~0x10000000000ULL;
         }
-        if (func_08001390() & 4) {
+        if (GetKeysPressed() & 4) {
             work->unk_00E++;
         }
         if (work->unk_00E <= 1) {
@@ -481,24 +481,24 @@ void task_tutorial_2(TutorialWork* work) {
     s32 s;
 
     if (work->unk_000 & 4) {
-        spr = func_08005A64(work->unk_020);
+        spr = AnimUpdate(work->unk_020);
         if (work->unk_030 == 0) {
             x = work->unk_012;
-            s = gUnk_08121400[(gUnk_03007480 << 3) & 0xFF];
+            s = gSineTable[(gFrameCounter << 3) & 0xFF];
             y = (s >> 7) + work->unk_014;
         } else {
-            s = gUnk_08121400[(gUnk_03007480 << 3) & 0xFF];
+            s = gSineTable[(gFrameCounter << 3) & 0xFF];
             x = (s >> 7) + work->unk_012;
             y = work->unk_014;
         }
-        func_080023E0(x, y, spr, work->unk_018, work->unk_01C, 0, 0x10, 0);
+        DrawSprite(x, y, spr, work->unk_018, work->unk_01C, 0, 0x10, 0);
     }
 }
 
 void task_tutorial_3(TutorialWork* work) {
-    func_080028C0(work->unk_018);
-    func_08002C10(work->unk_01C);
-    func_08006578(gUnk_03007480);
+    ReleaseObjTiles(work->unk_018);
+    ReleaseObjPalette(work->unk_01C);
+    SeedRandom(gFrameCounter);
 }
 
 s16 func_0805E848(u16* widths, u16 count) {

@@ -42,7 +42,7 @@ _0810C33E:
 	lsls r0, r0, #0x0C
 	adds r0, r1, r0
 	str r0, [sp, #0x004]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x15
@@ -55,7 +55,7 @@ _0810C33E:
 	ldr r1, [sp, #0x008]
 	subs r1, r1, r0
 	str r1, [sp, #0x008]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x11
@@ -76,7 +76,7 @@ _0810C3B8: .4byte 0xFFFFEC00
 _0810C3BC: .4byte 0xFFFFF800
 _0810C3C0: .4byte 0x02039B84
 _0810C3C4:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x11
@@ -88,7 +88,7 @@ _0810C3C4:
 	ldr r1, [sp, #0x004]
 	adds r1, r1, r0
 	str r1, [sp, #0x004]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x11
@@ -114,7 +114,7 @@ _0810C3C4:
 	.byte 0x00, 0x00
 _0810C414: .4byte 0xFFFFF800
 _0810C418:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x21
@@ -126,7 +126,7 @@ _0810C418:
 	ldr r1, [sp, #0x004]
 	adds r1, r1, r0
 	str r1, [sp, #0x004]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x15
@@ -139,7 +139,7 @@ _0810C418:
 	ldr r1, [sp, #0x008]
 	subs r1, r1, r0
 	str r1, [sp, #0x008]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x41
@@ -157,7 +157,7 @@ _0810C418:
 _0810C474:
 	ldr r1, _0810C490 @ =0x09EF9F0C
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	movs r1, #0x01
 _0810C47E:
 	adds r0, r1, #0x0

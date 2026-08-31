@@ -27,7 +27,7 @@ func_0801C104: @ 0801C104
 	lsls r1, r1, #0x01
 	adds r0, r3, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	b _0801C17E
 	.byte 0x00, 0x00
 _0801C138: .4byte 0x02039B84
@@ -37,13 +37,13 @@ _0801C140:
 	lsls r1, r1, #0x01
 	adds r0, r3, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x00]
 	movs r1, #0x8A
 	lsls r1, r1, #0x01
 	adds r0, r0, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x00]
 	ldr r1, [r0, #0x6C]
 	ldr r0, [r0, #0x68]
@@ -60,7 +60,7 @@ _0801C140:
 	lsls r1, r1, #0x01
 	adds r0, r0, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 _0801C17E:
 	ldr r0, _0801C198 @ =0x02039B84
 	ldr r3, [r0, #0x00]

@@ -12,11 +12,11 @@ task_title_obj_3: @ 080D6764
 	movs r6, #0x02
 _080D676E:
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r5, #0x4
 	adds r0, r0, r7
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r4, #0x18
 	adds r7, #0x18
 	subs r6, #0x01

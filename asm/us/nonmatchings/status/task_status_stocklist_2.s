@@ -59,7 +59,7 @@ _080D81D0:
 	str r0, [sp, #0x00C]
 	movs r0, #0x00
 	mov r3, r12
-	bl func_080023E0
+	bl DrawSprite
 _080D8238:
 	asrs r1, r5, #0x10
 	movs r2, #0x92
@@ -83,7 +83,7 @@ _080D8238:
 	str r0, [sp, #0x00C]
 	movs r0, #0x01
 	movs r2, #0x00
-	bl func_080023E0
+	bl DrawSprite
 _080D8268:
 	movs r3, #0xC0
 	lsls r3, r3, #0x0C

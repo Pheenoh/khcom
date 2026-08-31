@@ -12,7 +12,7 @@ task_emy_08_0: @ 08038298
 	bl func_0800C778
 	ldr r0, _080382D0 @ =0x08F698C4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	movs r2, #0xC2
 	lsls r2, r2, #0x01
 	adds r1, r4, r2

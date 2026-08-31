@@ -17,32 +17,32 @@ func_081073F0: @ 081073F0
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _0810740E
-	bl func_08002C10
+	bl ReleaseObjPalette
 _0810740E:
 	ldr r1, _0810751C @ =0x02035F40
 	mov r10, r1
 	ldr r0, [r1, #0x00]
 	cmp r0, #0x00
 	beq _0810741C
-	bl func_080028C0
+	bl ReleaseObjTiles
 _0810741C:
 	ldr r1, _08107520 @ =0x02035F48
 	ldr r0, [r1, #0x00]
 	cmp r0, #0x00
 	beq _08107428
-	bl func_08002C10
+	bl ReleaseObjPalette
 _08107428:
 	ldr r1, _08107524 @ =0x02035F4C
 	ldr r0, [r1, #0x00]
 	cmp r0, #0x00
 	beq _08107434
-	bl func_080028C0
+	bl ReleaseObjTiles
 _08107434:
 	ldr r1, _08107528 @ =0x02035E74
 	ldr r0, [r1, #0x00]
 	cmp r0, #0x00
 	beq _08107440
-	bl func_08002C10
+	bl ReleaseObjPalette
 _08107440:
 	ldrh r0, [r7, #0x00]
 	cmp r0, #0x1A
@@ -74,12 +74,12 @@ _0810745A:
 	ldr r0, [r0, #0x00]
 	adds r5, r4, r6
 	ldrh r1, [r5, #0x1A]
-	bl func_08002A14
+	bl LoadObjPalette
 	mov r1, r9
 	str r0, [r1, #0x00]
 	ldr r0, [r5, #0x00]
 	ldrh r1, [r5, #0x18]
-	bl func_080026A4
+	bl LoadObjTiles
 	mov r1, r10
 	str r0, [r1, #0x00]
 	ldr r1, _08107538 @ =0x02035F44
@@ -98,12 +98,12 @@ _0810745A:
 	ldr r0, [r0, #0x00]
 	adds r5, r4, r6
 	ldrh r1, [r5, #0x16]
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08107520 @ =0x02035F48
 	str r0, [r1, #0x00]
 	ldr r0, [r5, #0x00]
 	ldrh r1, [r5, #0x14]
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08107524 @ =0x02035F4C
 	str r0, [r1, #0x00]
 	ldr r1, _08107540 @ =0x02035F50
@@ -125,7 +125,7 @@ _081074DA:
 	ldr r1, _08107548 @ =0x09A3D2FC
 	adds r0, r0, r1
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08107528 @ =0x02035E74
 	str r0, [r1, #0x00]
 	ldr r4, _0810754C @ =0x02035F98

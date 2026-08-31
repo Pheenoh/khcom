@@ -97,7 +97,7 @@ _080052C4:
 	lsls r2, r2, #0x10
 	lsrs r2, r2, #0x10
 	adds r0, r6, #0x0
-	bl func_080054EC
+	bl SetBgScroll
 	cmp r7, #0x00
 	bne _08005308
 	cmp r5, #0x00

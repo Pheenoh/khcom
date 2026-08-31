@@ -49,7 +49,7 @@ _0803923A:
 	beq _0803925E
 	movs r0, #0x99
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803925E:
 	adds r0, r4, #0x0
 	adds r0, #0x20
@@ -79,7 +79,7 @@ _08039278:
 _0803928E:
 	adds r0, r4, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 _08039298:
 	add sp, #0x00C

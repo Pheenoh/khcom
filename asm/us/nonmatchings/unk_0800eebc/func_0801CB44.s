@@ -8,7 +8,7 @@ func_0801CB44: @ 0801CB44
 	push {lr}
 	ldr r0, _0801CB64 @ =0x03007480
 	ldr r0, [r0, #0x00]
-	bl func_08006578
+	bl SeedRandom
 	bl func_0801CA88
 	bl func_0801CB00
 	bl func_0800ABD8

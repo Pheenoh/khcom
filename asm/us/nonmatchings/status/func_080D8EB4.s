@@ -31,7 +31,7 @@ func_080D8EB4: @ 080D8EB4
 	str r1, [sp, #0x000]
 	ldr r1, _080D8F00 @ =0x09EF4FF8
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x008
 	pop {r4, r5, r6}
 	pop {r1}

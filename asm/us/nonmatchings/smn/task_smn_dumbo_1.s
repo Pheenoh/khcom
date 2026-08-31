@@ -95,7 +95,7 @@ _080440E6:
 	beq _080440FA
 	adds r0, r5, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 _080440FA:
 	adds r0, r7, #0x4
 	adds r1, r7, #0x0
@@ -113,7 +113,7 @@ _080440FA:
 _08044116:
 	adds r0, r5, #0x0
 	adds r0, #0x20
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _08044120:
 	add sp, #0x008

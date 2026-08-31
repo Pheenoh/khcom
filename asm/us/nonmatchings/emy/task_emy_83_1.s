@@ -20,7 +20,7 @@ task_emy_83_1: @ 0803E5B8
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803E616
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r2, r0, #0x10
 	movs r0, #0x01
@@ -112,7 +112,7 @@ _0803E8A8:
 	movs r1, #0xC4
 	lsls r1, r1, #0x01
 	adds r0, r6, r1
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	mov r2, r8
 	ldr r4, [r2, #0x04]
 	ldr r5, [r2, #0x08]

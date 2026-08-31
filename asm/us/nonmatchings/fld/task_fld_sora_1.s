@@ -75,7 +75,7 @@ _08033CA8:
 	bl func_08000F8C
 	adds r0, r7, #0x0
 	adds r0, #0x24
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r1, r7, #0x0
 	adds r1, #0x94
 	movs r0, #0x0F
@@ -138,7 +138,7 @@ _08033D2C:
 	ands r0, r4
 	cmp r0, #0x00
 	bne _08033DA0
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0xF0
 	ands r1, r0
 	cmp r1, #0x00
@@ -171,14 +171,14 @@ _08033D84:
 	adds r0, #0xAC
 	ldr r0, [r0, #0x00]
 	ldrh r0, [r0, #0x00]
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _08033DB8
 _08033D92:
 	adds r0, r7, #0x0
 	adds r0, #0xAC
 	ldr r0, [r0, #0x00]
 	ldrh r0, [r0, #0x02]
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _08033DB8
 _08033DA0:
 	adds r0, r7, #0x0
@@ -219,7 +219,7 @@ _08033DB8:
 	ldr r0, [r6, #0x04]
 	adds r0, r0, r1
 	str r0, [r6, #0x04]
-	bl func_08001390
+	bl GetKeysPressed
 	movs r5, #0x02
 	adds r1, r5, #0x0
 	ands r1, r0
@@ -248,13 +248,13 @@ _08033DB8:
 	adds r0, #0xAC
 	ldr r0, [r0, #0x00]
 	ldrh r0, [r0, #0x04]
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _08033E7E
 _08033E30: .4byte 0x08121400
 _08033E34: .4byte 0x02039BA0
 _08033E38: .4byte 0x080324DD
 _08033E3C:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
@@ -277,7 +277,7 @@ _08033E68: .4byte 0x0803366D
 _08033E6C:
 	adds r0, r7, #0x0
 	adds r0, #0x08
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _08033E7E
@@ -702,12 +702,12 @@ _080341A4:
 	bl func_080E0298
 	adds r0, r7, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r7, #0x20]
 _080341C8:
 	adds r0, r7, #0x0
 	adds r0, #0x24
-	bl func_08000EA4
+	bl TaskPoolUpdate
 _080341D0:
 	movs r0, #0x01
 	add sp, #0x064

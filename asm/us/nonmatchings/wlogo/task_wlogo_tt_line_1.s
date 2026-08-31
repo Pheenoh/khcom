@@ -59,7 +59,7 @@ _080B777E:
 	ldr r1, _080B77F0 @ =0x09EF1B50
 	adds r0, r4, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	ldrh r0, [r5, #0x02]
 	adds r0, #0x01
 	strh r0, [r5, #0x02]
@@ -93,7 +93,7 @@ _080B780A:
 	adds r4, #0x08
 _080B7810:
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _080B7818:
 	add sp, #0x010

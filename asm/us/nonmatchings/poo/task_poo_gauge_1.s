@@ -46,7 +46,7 @@ _080CC56A:
 	ldr r0, [r4, #0x04]
 	ldrh r0, [r0, #0x06]
 	adds r1, r5, #0x0
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	str r5, [r4, #0x0C]
 _080CC586:
 	ldrb r0, [r4, #0x10]
@@ -60,7 +60,7 @@ _080CC58C:
 	ldr r0, [r4, #0x04]
 	ldrh r0, [r0, #0x06]
 	adds r1, r5, #0x0
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	str r5, [r4, #0x0C]
 _080CC5A0:
 	movs r0, #0x01

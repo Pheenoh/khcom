@@ -55,13 +55,13 @@ typedef struct EvtShadowWork {
     void* unk_10;
 } EvtShadowWork;
 
-void* func_080028F8(u16 a, s32 b);
-void func_08005968(void* a, s32 b, s32 c);
-void* func_08005A64(void* a);
-void* func_08005AFC(void* a);
-void func_08000E14(void* a, void* b, void* c);
-void func_08000E64(void* a, s32 b);
-void func_08000EA4(void* a);
+void* AllocObjTiles(u16 a, s32 b);
+void AnimInit(void* a, s32 b, s32 c);
+void* AnimUpdate(void* a);
+void* AnimGetGfx(void* a);
+void TaskCreate(void* a, void* b, void* c);
+void TaskPoolInit(void* a, s32 b);
+void TaskPoolUpdate(void* a);
 void func_0801CE70(EvtObjWork* work);
 
 extern u8 gUnk_08B22CBC[];

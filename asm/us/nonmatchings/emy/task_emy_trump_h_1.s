@@ -84,7 +84,7 @@ _0803EDC4:
 	movs r3, #0x00
 	bl func_08019068
 	ldr r0, _0803EE24 @ =0x0000023B
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803EDF2:
 	movs r0, #0xBE
 	lsls r0, r0, #0x01

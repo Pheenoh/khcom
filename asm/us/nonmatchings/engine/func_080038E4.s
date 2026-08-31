@@ -54,7 +54,7 @@ _0800391A:
 	adds r1, r1, r2
 	lsls r2, r4, #0x15
 	lsrs r2, r2, #0x10
-	bl func_080043B4
+	bl RequestDma3Copy
 	add r4, r8
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10

@@ -45,7 +45,7 @@ _0801D6A2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r4, #0x00
 	ldsh r0, [r0, r4]
@@ -61,7 +61,7 @@ _0801D6A2:
 	ldr r4, _0801DA78 @ =0x00000101
 	str r4, [sp, #0x00C]
 	ldr r2, _0801DA7C @ =0x08B1E974
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r6, #0x00]
 	adds r1, r4, #0x0
 	adds r1, #0xB8
@@ -86,7 +86,7 @@ _0801D6A2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r4, #0x00
 	ldsh r0, [r0, r4]
@@ -101,7 +101,7 @@ _0801D6A2:
 	ldr r4, _0801DA78 @ =0x00000101
 	str r4, [sp, #0x00C]
 	ldr r2, _0801DA80 @ =0x08B1E97E
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r6, #0x00]
 	adds r1, r4, #0x0
 	adds r1, #0xB8
@@ -126,7 +126,7 @@ _0801D6A2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r4, #0x00
 	ldsh r0, [r0, r4]
@@ -141,7 +141,7 @@ _0801D6A2:
 	ldr r4, _0801DA78 @ =0x00000101
 	str r4, [sp, #0x00C]
 	ldr r2, _0801DA84 @ =0x08B1E992
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r6, #0x00]
 	adds r1, r4, #0x0
 	adds r1, #0xB8
@@ -166,7 +166,7 @@ _0801D6A2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r4, #0x00
 	ldsh r0, [r0, r4]
@@ -181,7 +181,7 @@ _0801D6A2:
 	ldr r4, _0801DA78 @ =0x00000101
 	str r4, [sp, #0x00C]
 	ldr r2, _0801DA88 @ =0x08B1E988
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r6, #0x00]
 	adds r0, r1, #0x0
 	adds r0, #0xB8
@@ -193,7 +193,7 @@ _0801D6A2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -207,7 +207,7 @@ _0801D6A2:
 	str r5, [sp, #0x008]
 	str r4, [sp, #0x00C]
 	ldr r2, _0801DA8C @ =0x08B1E9A6
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r6, #0x00]
 	adds r0, r1, #0x0
 	adds r0, #0xB8
@@ -227,7 +227,7 @@ _0801D6A2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -244,7 +244,7 @@ _0801D6A2:
 	ldr r2, _0801DA78 @ =0x00000101
 	str r2, [sp, #0x00C]
 	mov r2, r10
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r6, #0x00]
 	adds r0, r1, #0x0
 	adds r0, #0xB8
@@ -264,7 +264,7 @@ _0801D6A2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -280,7 +280,7 @@ _0801D6A2:
 	ldr r4, _0801DA78 @ =0x00000101
 	str r4, [sp, #0x00C]
 	mov r2, r10
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r6, #0x00]
 	adds r0, r4, #0x0
 	adds r0, #0xA4
@@ -318,7 +318,7 @@ _0801D8F4:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r9
-	bl func_0801909C
+	bl WorldToScreen
 	mov r2, r10
 	movs r3, #0x00
 	ldsh r0, [r2, r3]
@@ -334,7 +334,7 @@ _0801D8F4:
 	ldr r2, _0801DA78 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DA7C @ =0x08B1E974
-	bl func_080023E0
+	bl DrawSprite
 	ldrh r0, [r6, #0x00]
 	lsls r0, r0, #0x08
 	ldr r2, [r5, #0x04]
@@ -347,7 +347,7 @@ _0801D8F4:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r9
-	bl func_0801909C
+	bl WorldToScreen
 	mov r3, r10
 	movs r1, #0x00
 	ldsh r0, [r3, r1]
@@ -363,7 +363,7 @@ _0801D8F4:
 	ldr r2, _0801DA78 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DA80 @ =0x08B1E97E
-	bl func_080023E0
+	bl DrawSprite
 	ldrh r0, [r6, #0x00]
 	lsls r0, r0, #0x08
 	ldr r2, [r5, #0x04]
@@ -376,7 +376,7 @@ _0801D8F4:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r9
-	bl func_0801909C
+	bl WorldToScreen
 	mov r3, r10
 	movs r1, #0x00
 	ldsh r0, [r3, r1]
@@ -392,7 +392,7 @@ _0801D8F4:
 	ldr r2, _0801DA78 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DA84 @ =0x08B1E992
-	bl func_080023E0
+	bl DrawSprite
 	ldrh r0, [r6, #0x00]
 	lsls r0, r0, #0x08
 	ldr r2, [r5, #0x04]
@@ -405,7 +405,7 @@ _0801D8F4:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r9
-	bl func_0801909C
+	bl WorldToScreen
 	mov r3, r10
 	movs r4, #0x00
 	ldsh r0, [r3, r4]
@@ -421,14 +421,14 @@ _0801D8F4:
 	ldr r2, _0801DA78 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DA88 @ =0x08B1E988
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r5, #0x04]
 	ldr r3, [r5, #0x08]
 	ldr r0, [r5, #0x0C]
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r9
-	bl func_0801909C
+	bl WorldToScreen
 	mov r3, r10
 	movs r4, #0x00
 	ldsh r0, [r3, r4]
@@ -444,7 +444,7 @@ _0801D8F4:
 	ldr r2, _0801DA78 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DA8C @ =0x08B1E9A6
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r5, #0x04]
 	ldr r3, [r5, #0x08]
 	adds r0, r5, #0x0
@@ -456,7 +456,7 @@ _0801D8F4:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r9
-	bl func_0801909C
+	bl WorldToScreen
 	mov r3, r10
 	movs r4, #0x00
 	ldsh r0, [r3, r4]
@@ -472,7 +472,7 @@ _0801D8F4:
 	ldr r2, _0801DA78 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DA90 @ =0x08B1E99C
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r5, #0x0
 	adds r0, #0xB8
 	bl func_08000CD4
@@ -509,7 +509,7 @@ _0801DA94:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -524,7 +524,7 @@ _0801DA94:
 	ldr r2, _0801DC10 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DC14 @ =0x08B1E974
-	bl func_080023E0
+	bl DrawSprite
 	mov r3, r9
 	ldrh r0, [r3, #0x00]
 	lsls r0, r0, #0x08
@@ -538,7 +538,7 @@ _0801DA94:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -553,7 +553,7 @@ _0801DA94:
 	ldr r2, _0801DC10 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DC18 @ =0x08B1E97E
-	bl func_080023E0
+	bl DrawSprite
 	mov r3, r9
 	ldrh r0, [r3, #0x00]
 	lsls r0, r0, #0x08
@@ -567,7 +567,7 @@ _0801DA94:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -582,7 +582,7 @@ _0801DA94:
 	ldr r2, _0801DC10 @ =0x00000101
 	str r2, [sp, #0x00C]
 	ldr r2, _0801DC1C @ =0x08B1E992
-	bl func_080023E0
+	bl DrawSprite
 	mov r3, r9
 	ldrh r0, [r3, #0x00]
 	lsls r0, r0, #0x08
@@ -596,7 +596,7 @@ _0801DA94:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r4, #0x00
 	ldsh r0, [r0, r4]
@@ -611,14 +611,14 @@ _0801DA94:
 	ldr r4, _0801DC10 @ =0x00000101
 	str r4, [sp, #0x00C]
 	ldr r2, _0801DC20 @ =0x08B1E988
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r5, #0x04]
 	ldr r3, [r5, #0x08]
 	ldr r0, [r5, #0x0C]
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -632,7 +632,7 @@ _0801DA94:
 	str r6, [sp, #0x008]
 	str r4, [sp, #0x00C]
 	ldr r2, _0801DC24 @ =0x08B1E9A6
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r5, #0x04]
 	ldr r3, [r5, #0x08]
 	adds r0, r5, #0x0
@@ -644,7 +644,7 @@ _0801DA94:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r4, #0x00
 	ldsh r0, [r0, r4]
@@ -659,7 +659,7 @@ _0801DA94:
 	ldr r4, _0801DC10 @ =0x00000101
 	str r4, [sp, #0x00C]
 	mov r2, r10
-	bl func_080023E0
+	bl DrawSprite
 _0801DBFE:
 	add sp, #0x014
 	pop {r3, r4, r5}

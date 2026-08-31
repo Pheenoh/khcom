@@ -78,7 +78,7 @@ _0800EF40:
 	movs r0, #0x00
 	movs r3, #0x01
 _0800EF44:
-	bl func_08002CB4
+	bl AllocObjAffine
 _0800EF48:
 	mov r8, r0
 	ldrh r1, [r5, #0x34]
@@ -137,7 +137,7 @@ _0800EFA8:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r3, #0x00
 	ldsh r0, [r0, r3]
@@ -151,7 +151,7 @@ _0800EFA8:
 	str r4, [sp, #0x004]
 	str r7, [sp, #0x008]
 	str r6, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _0800EFD8:
 	add sp, #0x014
 	pop {r3}

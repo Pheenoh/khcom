@@ -7,7 +7,7 @@
 func_08096CCC: @ 08096CCC
 	push {r4, r5, lr}
 _08096CCE:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0A
@@ -17,7 +17,7 @@ _08096CCE:
 	ldr r0, _08096D08 @ =0x090359FC
 	lsls r4, r5, #0x01
 	adds r4, r4, r0
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64

@@ -18,7 +18,7 @@ func_080C5AA4: @ 080C5AA4
 	asrs r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080C5B24
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
@@ -31,7 +31,7 @@ _080C5AD4: .4byte 0x0203C3A0
 _080C5AD8: .4byte 0x02039B68
 _080C5ADC: .4byte 0x0000FEFE
 _080C5AE0:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00

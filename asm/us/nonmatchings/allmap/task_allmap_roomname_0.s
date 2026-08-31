@@ -25,7 +25,7 @@ task_allmap_roomname_0: @ 080D3E14
 	ldr r0, _080D3E78 @ =0x0984A1F8
 	adds r0, r4, r0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	adds r1, r5, #0x0
 	adds r1, #0xC8
 	str r0, [r1, #0x00]
@@ -34,7 +34,7 @@ task_allmap_roomname_0: @ 080D3E14
 	ldr r1, _080D3E80 @ =0x05000160
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	ldrb r1, [r6, #0x00]
 	adds r0, r5, #0x0
 	bl func_08065B08

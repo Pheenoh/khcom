@@ -113,7 +113,7 @@ _0809D336:
 	strb r5, [r0, #0x00]
 	ldr r1, _0809D3EC @ =0x02034AD9
 	ldrb r0, [r1, #0x00]
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r1, r0, #0x0
 	mov r2, r8
 	ldrb r0, [r2, #0x00]

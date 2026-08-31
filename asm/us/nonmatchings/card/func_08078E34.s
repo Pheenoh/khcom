@@ -18,7 +18,7 @@ func_08078E34: @ 08078E34
 	lsrs r2, r2, #0x18
 	mov r10, r2
 	movs r0, #0x79
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r7, _08078E88 @ =0x02034A98
 	ldr r1, [r7, #0x00]
 	ldr r0, [r1, #0x78]
@@ -138,7 +138,7 @@ _08078F40:
 	adds r0, r5, #0x0
 	mov r2, sp
 _08078F46:
-	bl func_08000E14
+	bl TaskCreate
 	ldr r3, [r0, #0x04]
 	adds r1, r3, #0x0
 	adds r1, #0x80

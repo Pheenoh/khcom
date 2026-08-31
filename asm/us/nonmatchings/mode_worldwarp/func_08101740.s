@@ -16,7 +16,7 @@ func_08101740: @ 08101740
 	ldrh r1, [r0, #0x0E]
 	adds r0, r3, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

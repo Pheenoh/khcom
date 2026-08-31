@@ -10,13 +10,13 @@ task_hum_hook_moon_0: @ 0804C8FC
 	ldr r0, _0804C93C @ =0x08B5A872
 	movs r1, #0xC0
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	movs r0, #0x00
 	bl func_08007E68
 	ldr r0, _0804C940 @ =0x08F6DC64
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	bl func_08007E7C
 	ldr r0, [r4, #0x04]

@@ -29,9 +29,9 @@ _080AAC68:
 	ldr r1, _080AAC88 @ =0x09EE7FA8
 	adds r3, #0xE5
 	adds r2, r4, r3
-	bl func_08000E14
+	bl TaskCreate
 	movs r0, #0x69
-	bl func_0811FE70
+	bl m4aSongNumStart
 	movs r0, #0x00
 _080AAC80:
 	pop {r4}

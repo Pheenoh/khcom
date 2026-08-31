@@ -61,7 +61,7 @@ _080CE762:
 	adds r0, #0x0C
 	adds r1, r2, #0x0
 	adds r2, r5, #0x0
-	bl func_080059A4
+	bl AnimStart
 _080CE776:
 	pop {r4, r5}
 	pop {r0}

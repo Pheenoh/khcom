@@ -22,7 +22,7 @@ task_bos_lst_bit_0: @ 08110B40
 	ldr r0, [r5, #0x04]
 	strh r0, [r6, #0x10]
 	strh r4, [r6, #0x12]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x1F
@@ -68,19 +68,19 @@ task_bos_lst_bit_0: @ 08110B40
 	ldr r0, _08110C7C @ =0x09CD0334
 	movs r1, #0x90
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	adds r1, r6, #0x0
 	adds r1, #0x94
 	str r0, [r1, #0x00]
 	ldr r0, _08110C80 @ =0x09D69594
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	adds r1, r6, #0x0
 	adds r1, #0x98
 	str r0, [r1, #0x00]
 	ldr r0, _08110C84 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	adds r1, r6, #0x0
 	adds r1, #0x9C
 	str r0, [r1, #0x00]
@@ -89,7 +89,7 @@ task_bos_lst_bit_0: @ 08110B40
 	ldr r1, _08110C88 @ =0x09EFBF18
 	ldr r2, _08110C8C @ =0x09EFBEC4
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldr r1, _08110C90 @ =0x09EF9EA4
 	movs r2, #0x00
 	ldsh r0, [r6, r2]
@@ -98,7 +98,7 @@ task_bos_lst_bit_0: @ 08110B40
 	ldrh r1, [r0, #0x00]
 	adds r0, r4, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r6, #0x0
 	adds r0, #0xA0
 	ldr r1, _08110C94 @ =0x09A4FD4C
@@ -112,7 +112,7 @@ task_bos_lst_bit_0: @ 08110B40
 	adds r5, r6, r0
 	adds r0, r5, #0x0
 	movs r1, #0x04
-	bl func_08000E64
+	bl TaskPoolInit
 	movs r1, #0x0E
 	ldsh r0, [r6, r1]
 	str r0, [sp, #0x004]
@@ -124,7 +124,7 @@ task_bos_lst_bit_0: @ 08110B40
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 	movs r2, #0xE2
 	lsls r2, r2, #0x01
 	adds r1, r6, r2
@@ -132,7 +132,7 @@ task_bos_lst_bit_0: @ 08110B40
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 	movs r2, #0xE4
 	lsls r2, r2, #0x01
 	adds r1, r6, r2
@@ -140,7 +140,7 @@ task_bos_lst_bit_0: @ 08110B40
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 	movs r2, #0xE6
 	lsls r2, r2, #0x01
 	adds r1, r6, r2

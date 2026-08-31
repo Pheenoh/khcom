@@ -108,7 +108,7 @@ _080A989A:
 	adds r0, r6, r1
 	ldr r1, _080A9930 @ =0x09EE4B28
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	adds r4, #0x01
 	lsls r4, r4, #0x18
 	lsrs r3, r4, #0x18

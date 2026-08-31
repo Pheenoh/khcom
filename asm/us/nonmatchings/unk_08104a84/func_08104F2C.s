@@ -10,7 +10,7 @@ func_08104F2C: @ 08104F2C
 	bl func_08101518
 	adds r4, r0, #0x0
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	adds r2, #0x20
 	ldr r1, _08104F70 @ =0x09A1DB9C
@@ -40,7 +40,7 @@ _08104F78:
 	movs r4, #0x00
 _08104F7A:
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	movs r0, #0xC0
 	lsls r0, r0, #0x01

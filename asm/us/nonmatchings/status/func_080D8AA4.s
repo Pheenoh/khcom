@@ -15,7 +15,7 @@ func_080D8AA4: @ 080D8AA4
 	str r3, [sp, #0x000]
 	ldr r1, _080D8AC4 @ =0x09EF4FC8
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x008
 	pop {r1}
 	bx r1

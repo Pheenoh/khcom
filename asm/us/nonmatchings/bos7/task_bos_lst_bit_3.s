@@ -12,19 +12,19 @@ task_bos_lst_bit_3: @ 08111534
 	adds r0, r4, #0x0
 	adds r0, #0x94
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r4, #0x0
 	adds r0, #0x98
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x9C
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r1, #0xD8
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

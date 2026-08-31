@@ -52,7 +52,7 @@ _0812049E:
 	adds r1, r2, r0
 	ldr r2, _081204DC @ =0x05000318
 	mov r0, sp
-	bl func_08117FE8
+	bl CpuSet
 _081204BE:
 	add sp, #0x004
 	pop {r0}

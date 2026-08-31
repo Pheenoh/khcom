@@ -12,15 +12,15 @@ task_allmap_bar_0: @ 080D3F60
 	ldr r0, _080D3FC0 @ =0x0976D8A6
 	movs r1, #0xB0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D3FC4 @ =0x0976DBDA
 	movs r1, #0xC0
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x04]
 	ldr r0, _080D3FC8 @ =0x0984A1D8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x08]
 	movs r2, #0x00
 	movs r1, #0x00

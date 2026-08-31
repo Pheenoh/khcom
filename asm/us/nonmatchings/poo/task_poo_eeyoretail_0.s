@@ -26,7 +26,7 @@ task_poo_eeyoretail_0: @ 080CF898
 	adds r4, #0x24
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r1, r5, #0x0
 	adds r1, #0x0C
 	adds r0, r4, #0x0

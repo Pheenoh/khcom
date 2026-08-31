@@ -8,9 +8,9 @@ task_sroll_a_name_3: @ 08114990
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x18]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x1C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

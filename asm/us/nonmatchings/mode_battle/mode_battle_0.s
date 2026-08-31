@@ -13,7 +13,7 @@ mode_battle_0: @ 080099D0
 	ldr r4, _08009A20 @ =0x02039B84
 	movs r0, #0xE8
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	ldr r1, _08009A24 @ =0x02039B9C
 	movs r0, #0x00
@@ -98,7 +98,7 @@ _08009B68: .4byte 0x08009B6C
 	.byte 0x69, 0xF9, 0x02, 0xE0
 _08009BA0:
 	movs r0, #0x03
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, _08009BC4 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	movs r1, #0xE2
@@ -129,26 +129,26 @@ _08009C40:
 	movs r1, #0x00
 	movs r2, #0x18
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x00
 	movs r2, #0x1A
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x02
 	movs r2, #0x1C
 	movs r3, #0x0A
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	b _08009DEE
 _08009C7E:
 	movs r0, #0x08
@@ -160,7 +160,7 @@ _08009C7E:
 	cmp r0, #0x00
 	beq _08009CFA
 	movs r0, #0x04
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r1, [r6, #0x00]
 	movs r5, #0xE2
 	lsls r5, r5, #0x01
@@ -179,24 +179,24 @@ _08009C7E:
 	movs r1, #0x00
 	movs r2, #0x0C
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	ldr r0, [r6, #0x00]
 	adds r0, r0, r5
 	ldrh r0, [r0, #0x00]
 	movs r1, #0x02
 	movs r2, #0x1C
 	movs r3, #0x0A
-	bl func_08005074
+	bl SetupBg
 	ldr r0, [r6, #0x00]
 	adds r0, r0, r4
 	ldrh r0, [r0, #0x00]
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r0, [r6, #0x00]
 	adds r0, r0, r5
 	ldrh r0, [r0, #0x00]
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r0, [r6, #0x00]
 	adds r0, r0, r4
 	ldrh r0, [r0, #0x00]
@@ -247,24 +247,24 @@ _08009D34: .4byte 0x08009D38
 	.byte 0x63, 0xF8, 0x06, 0xE0, 0x1D, 0x20, 0x16, 0xF1, 0x5F, 0xF8, 0x02, 0xE0
 _08009DB4:
 	movs r0, #0x0E
-	bl func_0811FE70
+	bl m4aSongNumStart
 	bl func_08004F08
 	movs r0, #0x03
 	movs r1, #0x00
 	movs r2, #0x0C
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x02
 	movs r2, #0x1C
 	movs r3, #0x0A
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x03
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x03
 	movs r1, #0x01
 	bl func_08005654
@@ -313,18 +313,18 @@ _08009EC8:
 	movs r1, #0x00
 	movs r2, #0x0C
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x02
 	movs r2, #0x1C
 	movs r3, #0x0A
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x03
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x03
 	movs r1, #0x01
 	bl func_08005654
@@ -336,15 +336,15 @@ _08009F04:
 	ldr r0, [r4, #0x00]
 	adds r0, #0x2C
 	movs r1, #0x28
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r4, #0x00]
 	adds r0, #0x40
 	movs r1, #0x20
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r4, #0x00]
 	adds r0, #0x54
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r4, #0x00]
 	movs r1, #0xE2
 	lsls r1, r1, #0x01
@@ -363,7 +363,7 @@ _08009F04:
 	adds r0, #0x2C
 	ldr r1, _08009F5C @ =0x09EDAE58
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	b _08009F6C
 	.byte 0x00, 0x00
 _08009F54: .4byte 0x02039B84
@@ -374,7 +374,7 @@ _08009F60:
 	adds r0, #0x2C
 	ldr r1, _08009FA8 @ =0x09EDAE40
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 _08009F6C:
 	ldr r7, _08009FAC @ =0x02039B84
 	ldr r6, [r7, #0x00]
@@ -454,7 +454,7 @@ _0800A158:
 	adds r0, #0x2C
 	ldr r1, _0800A194 @ =0x09EF2744
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, [r4, #0x00]
 	movs r0, #0x94
 	lsls r0, r0, #0x01
@@ -493,12 +493,12 @@ _0800A19C:
 	adds r0, #0x2C
 	ldr r1, _0800A1E0 @ =0x09EDB7D0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r7, #0x00]
 	adds r0, #0x40
 	ldr r1, _0800A1E4 @ =0x09EDE4B8
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	b _0800A200
 	.byte 0x00, 0x00
 _0800A1E0: .4byte 0x09EDB7D0
@@ -508,12 +508,12 @@ _0800A1E8:
 	adds r0, #0x2C
 	ldr r1, _0800A208 @ =0x09EDB7B8
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r7, #0x00]
 	adds r0, #0x40
 	ldr r1, _0800A20C @ =0x09EDE4B8
 	movs r2, #0x01
-	bl func_08000E14
+	bl TaskCreate
 _0800A200:
 	ldr r1, _0800A210 @ =0x02039BB0
 	movs r0, #0x0B
@@ -583,7 +583,7 @@ _0800A3A4:
 	adds r0, #0x2C
 	ldr r1, _0800A3D8 @ =0x09EDB7A0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	movs r1, #0xD8
 	lsls r1, r1, #0x01
 	movs r2, #0xB0
@@ -598,7 +598,7 @@ _0800A3C4:
 	adds r0, #0x40
 	ldr r1, _0800A3DC @ =0x09EDAE70
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	b _0800A45E
 _0800A3D4: .4byte 0x02039B84
 _0800A3D8: .4byte 0x09EDB7A0
@@ -622,7 +622,7 @@ _0800A3E0:
 	lsls r2, r4, #0x02
 	adds r2, r2, r3
 	ldr r2, [r2, #0x00]
-	bl func_08000E14
+	bl TaskCreate
 	b _0800A424
 _0800A40C: .4byte 0x09EDB3B0
 _0800A410: .4byte 0x09EDA2A0
@@ -640,7 +640,7 @@ _0800A424:
 	adds r0, #0x40
 	ldr r1, _0800A4A4 @ =0x09EDAE70
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	mov r0, r8
 	cmp r0, #0x79
 	bne _0800A45E
@@ -661,7 +661,7 @@ _0800A424:
 	adds r0, #0x2C
 	ldr r1, _0800A4B4 @ =0x09EDE440
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 _0800A45E:
 	ldr r0, _0800A4A0 @ =0x02039B84
 	ldr r3, [r0, #0x00]
@@ -677,7 +677,7 @@ _0800A45E:
 	adds r0, #0x54
 	ldr r1, _0800A4B8 @ =0x09EDAED0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 _0800A47E:
 	movs r0, #0x00
 	movs r1, #0x3C

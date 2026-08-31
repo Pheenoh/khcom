@@ -87,7 +87,7 @@ _08045522:
 	cmp r0, #0x00
 	beq _0804553E
 	ldr r0, _0804554C @ =0x000001F9
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0804553E:
 	add sp, #0x00C
 	pop {r3, r4}

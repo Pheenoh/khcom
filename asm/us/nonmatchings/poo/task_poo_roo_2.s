@@ -52,7 +52,7 @@ _080CF09C:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r6, #0x0
 	adds r0, #0xB4
 	ldr r0, [r0, #0x00]
@@ -60,7 +60,7 @@ _080CF09C:
 	beq _080CF0D6
 	adds r0, r6, #0x0
 	adds r0, #0x98
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080CF0D6:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

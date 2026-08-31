@@ -50,7 +50,7 @@ _0800918C:
 	blt _08009202
 	ldr r4, _08009214 @ =0x00000F14
 	adds r0, r4, #0x0
-	bl func_08000918
+	bl EwramAlloc
 	adds r6, r0, #0x0
 	mov r0, r9
 	asrs r1, r0, #0x10
@@ -92,7 +92,7 @@ _080091EE:
 	cmp r0, #0x01
 	ble _080091CE
 	adds r0, r6, #0x0
-	bl func_080009C4
+	bl EwramFree
 	movs r2, #0x02
 _08009202:
 	adds r0, r2, #0x0

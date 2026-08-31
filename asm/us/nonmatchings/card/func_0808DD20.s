@@ -12,7 +12,7 @@ func_0808DD20: @ 0808DD20
 	lsls r1, r1, #0x10
 	lsrs r6, r1, #0x10
 	movs r0, #0x03
-	bl func_08005130
+	bl GetBgCharBase
 	adds r7, r0, #0x0
 	cmp r5, #0x00
 	beq _0808DD8C
@@ -42,7 +42,7 @@ func_0808DD20: @ 0808DD20
 	adds r4, r7, r4
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	ldrb r0, [r0, #0x01]
 	adds r0, #0x03
@@ -51,7 +51,7 @@ func_0808DD20: @ 0808DD20
 	adds r4, #0x20
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _0808DDBC
 _0808DD88: .4byte 0x0940FA98
 _0808DD8C:
@@ -64,18 +64,18 @@ _0808DD8C:
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r4, #0x20
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, _0808DDC8 @ =0x09614406
 	lsls r1, r6, #0x01
 	ldr r2, _0808DDCC @ =0x0500016C
 	adds r1, r1, r2
 	movs r2, #0x02
-	bl func_08005BE8
+	bl LoadPalette
 _0808DDBC:
 	add sp, #0x004
 	pop {r4, r5, r6, r7}

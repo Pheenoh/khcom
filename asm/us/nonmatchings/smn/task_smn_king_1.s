@@ -107,11 +107,11 @@ _080452B4:
 	beq _080452C8
 	adds r0, r5, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 _080452C8:
 	adds r0, r5, #0x0
 	adds r0, #0x20
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _080452D2:
 	add sp, #0x00C

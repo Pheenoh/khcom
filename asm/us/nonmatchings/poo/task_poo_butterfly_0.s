@@ -23,7 +23,7 @@ task_poo_butterfly_0: @ 080D20B8
 	str r0, [r6, #0x00]
 	ldr r0, _080D2180 @ =0x09849C38
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	adds r1, r7, #0x0
 	adds r1, #0xD0
 	str r0, [r1, #0x00]

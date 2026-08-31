@@ -386,7 +386,7 @@ _0808118C:
 	movs r1, #0x01
 	strb r1, [r0, #0x00]
 	ldr r0, _080811B0 @ =0x00000213
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080811FA
 _080811A8: .4byte 0x02039DD4
 _080811AC: .4byte 0x02039B84
@@ -400,7 +400,7 @@ _080811B4:
 	adds r0, r7, #0x0
 	bl func_08080268
 	movs r0, #0xCC
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r2, r10
 	ldr r6, [r2, #0x00]
 	ldr r0, [r6, #0x68]

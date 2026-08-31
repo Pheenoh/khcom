@@ -62,7 +62,7 @@ _0808D79E:
 	ldrh r2, [r2, #0x08]
 	lsls r2, r2, #0x15
 	lsrs r2, r2, #0x10
-	bl func_08005BE8
+	bl LoadPalette
 	b _0808D7DA
 _0808D7B4: .4byte 0x09614498
 _0808D7B8: .4byte 0x000004C4
@@ -79,7 +79,7 @@ _0808D7C0:
 	ldrh r2, [r2, #0x08]
 	lsls r2, r2, #0x15
 	lsrs r2, r2, #0x10
-	bl func_08005BE8
+	bl LoadPalette
 _0808D7DA:
 	pop {r4, r5}
 	pop {r0}

@@ -61,7 +61,7 @@ _080D3C38: .4byte 0x09EF64B4
 _080D3C3C:
 	adds r0, r4, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x08]
 	ldrh r0, [r4, #0x30]
 	lsls r1, r0, #0x01

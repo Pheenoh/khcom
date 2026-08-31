@@ -14,8 +14,8 @@ INCLUDE_ASM("bos7/task_bos_lst_edg_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_edg_2.s");
 
 void task_bos_lst_edg_3(LstEdgWork* work) {
-    func_080028C0((void*)work->unk_044);
-    func_08002C10((void*)work->unk_048);
+    ReleaseObjTiles((void*)work->unk_044);
+    ReleaseObjPalette((void*)work->unk_048);
 }
 
 s32 func_0811089C(s32 x) {
@@ -110,7 +110,7 @@ void func_08111660(LstWork* work) {
     s = work->unk_04;
     s->unk_00 = 0;
     *(u16*)((u8*)s + 16) = 0;
-    func_080059A4((u8*)s + 68, 4, 0);
+    AnimStart((u8*)s + 68, 4, 0);
 }
 
 INCLUDE_ASM("bos7/func_08111678.s");
@@ -131,8 +131,8 @@ INCLUDE_ASM("bos7/task_bos_lst_ctr_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_ctr_2.s");
 
 void task_bos_lst_ctr_3(LstCtrWork* work) {
-    func_080028C0((void*)work->unk_05C);
-    func_08002C10((void*)work->unk_060);
+    ReleaseObjTiles((void*)work->unk_05C);
+    ReleaseObjPalette((void*)work->unk_060);
 }
 
 s32 func_08112410(s32 x) {

@@ -17,11 +17,11 @@ task_fld_sora_0: @ 08032070
 	movs r0, #0xA0
 	lsls r0, r0, #0x03
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _08032110 @ =0x08F683A4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	movs r1, #0x00
 	movs r2, #0x00
@@ -119,13 +119,13 @@ _08032152:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
 	bl func_08031F98
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x20]
 	ldr r0, _08032184 @ =0x02039BB0
 	ldrb r0, [r0, #0x0C]
@@ -156,13 +156,13 @@ _08032214:
 	adds r4, #0x24
 	adds r0, r4, #0x0
 	movs r1, #0x02
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _08032260 @ =0x09EDAF90
 	ldr r0, _08032264 @ =0x02039BA0
 	ldr r2, [r0, #0x00]
 	adds r2, #0x18
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	adds r4, #0x14
 	adds r0, r4, #0x0
 	movs r1, #0x01

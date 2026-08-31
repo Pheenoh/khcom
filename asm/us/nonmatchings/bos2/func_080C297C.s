@@ -36,7 +36,7 @@ func_080C297C: @ 080C297C
 	adds r2, r5, #0x0
 	bl func_08018B04
 	ldr r0, _080C29E8 @ =0x000002D1
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, [r6, #0x34]
 	ldr r1, [r6, #0x38]
 	ldr r2, _080C29EC @ =0x01000000

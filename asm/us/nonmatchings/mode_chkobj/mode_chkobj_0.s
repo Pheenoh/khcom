@@ -9,14 +9,14 @@ mode_chkobj_0: @ 0800B354
 	bl func_08004DB0
 	ldr r5, _0800B3FC @ =0x0203489C
 	movs r0, #0x48
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r5, #0x00]
 	ldr r1, _0800B400 @ =0x09EE9190
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r5, #0x00]
 	movs r6, #0x00
 	movs r4, #0x00
@@ -26,12 +26,12 @@ mode_chkobj_0: @ 0800B354
 	movs r0, #0x80
 	lsls r0, r0, #0x06
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r1, [r5, #0x00]
 	str r0, [r1, #0x1C]
 	ldr r0, _0800B404 @ =0x08F683A4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r5, #0x00]
 	str r0, [r1, #0x20]
 	ldr r0, _0800B408 @ =0x088B629C
@@ -55,7 +55,7 @@ mode_chkobj_0: @ 0800B354
 	movs r1, #0x00
 	movs r2, #0x0F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	bl func_08004FC8
 	movs r1, #0xA8

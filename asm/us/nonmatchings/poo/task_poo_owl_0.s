@@ -30,7 +30,7 @@ task_poo_owl_0: @ 080CE024
 	adds r0, #0x0C
 	ldr r1, _080CE0A0 @ =0x09EF5E24
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r7, #0x0
 	adds r0, #0x48
 	strb r5, [r0, #0x00]
@@ -45,11 +45,11 @@ task_poo_owl_0: @ 080CE024
 	adds r5, #0x34
 	adds r0, r5, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080CE0B0 @ =0x09EF49B8
 	adds r0, r5, #0x0
 	adds r2, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0

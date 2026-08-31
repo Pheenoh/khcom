@@ -29,13 +29,13 @@ _080EE604:
 _080EE60C:
 	adds r4, r0, r1
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	movs r2, #0xA0
 	lsls r2, r2, #0x01
 	adds r1, r1, r2
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	pop {r4}
 	pop {r0}
 	bx r0

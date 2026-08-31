@@ -18,10 +18,10 @@ task_bos_lst_fal_2: @ 08111E9C
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r0, r4, #0x0
 	adds r0, #0x28
-	bl func_08005AFC
+	bl AnimGetGfx
 	mov r8, r0
 	ldr r0, [r4, #0x08]
 	bl func_0801AF1C
@@ -51,7 +51,7 @@ task_bos_lst_fal_2: @ 08111E9C
 	str r0, [sp, #0x00C]
 	adds r0, r6, #0x0
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x014
 	pop {r3}
 	mov r8, r3

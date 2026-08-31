@@ -34,14 +34,14 @@ _08101618:
 _0810161A:
 	ldr r4, _08101648 @ =0x0203585C
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _0810164C @ =0x09A3D77C
 	cmp r5, #0x00
 	bne _0810162A
 	ldr r0, _08101650 @ =0x09617D58
 _0810162A:
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x00]
 	pop {r4, r5}
 	pop {r0}

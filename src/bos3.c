@@ -3,9 +3,9 @@
 
 void task_bos_jf_shadow_0(JfShadowWork* work, UnkStruct_02039B84* obj) {
     work->unk_0C = obj;
-    work->unk_00 = func_080026A4(gUnk_08B22EFE, 0x140);
+    work->unk_00 = LoadObjTiles(gUnk_08B22EFE, 0x140);
     work->unk_08 = gUnk_08B22EE4;
-    work->unk_04 = func_08002A14(gUnk_08F69BA4, 32);
+    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 32);
 }
 
 s32 task_bos_jf_shadow_1(void) {
@@ -48,16 +48,16 @@ void task_bos_jf_shadow_2(JfShadowWork* work) {
             flip = 1;
         }
 
-        sprite = func_08002CB4(0, size, size, flip);
+        sprite = AllocObjAffine(0, size, size, flip);
     }
 
-    func_0801909C(&x, &y, obj->unk_004, obj->unk_008, obj->unk_010);
-    func_080023E0(x, y, work->unk_08, work->unk_00, work->unk_04, sprite, frame, obj->unk_0CC);
+    WorldToScreen(&x, &y, obj->unk_004, obj->unk_008, obj->unk_010);
+    DrawSprite(x, y, work->unk_08, work->unk_00, work->unk_04, sprite, frame, obj->unk_0CC);
 }
 
 void task_bos_jf_shadow_3(JfShadowWork* work) {
-    func_080028C0(work->unk_00);
-    func_08002C10(work->unk_04);
+    ReleaseObjTiles(work->unk_00);
+    ReleaseObjPalette(work->unk_04);
 }
 
 void func_080C6FF8(void) {

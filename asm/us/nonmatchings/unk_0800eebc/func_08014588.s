@@ -52,7 +52,7 @@ func_08014588: @ 08014588
 	adds r1, r4, #0x0
 	adds r2, r5, #0x0
 	mov r3, r8
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08014648 @ =0x09EDAA38
 	add r1, sp, #0x004
 	movs r3, #0x00

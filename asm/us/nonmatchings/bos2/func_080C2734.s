@@ -15,7 +15,7 @@ func_080C2734: @ 080C2734
 	ldsh r0, [r0, r2]
 	cmp r0, #0x00
 	ble _080C2822
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x1E
@@ -27,7 +27,7 @@ func_080C2734: @ 080C2734
 	adds r0, #0x58
 	ldr r1, _080C27D8 @ =0x09EF2EA8
 	ldr r2, [r4, #0x00]
-	bl func_08000E14
+	bl TaskCreate
 _080C2768:
 	ldr r2, [r4, #0x00]
 	movs r6, #0xD6

@@ -10,12 +10,12 @@ func_0807D4B8: @ 0807D4B8
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x00
 	beq _0807D4C6
-	bl func_080028C0
+	bl ReleaseObjTiles
 _0807D4C6:
 	ldr r0, [r4, #0x14]
 	cmp r0, #0x00
 	beq _0807D4D0
-	bl func_08002C10
+	bl ReleaseObjPalette
 _0807D4D0:
 	movs r0, #0x00
 	str r0, [r4, #0x00]

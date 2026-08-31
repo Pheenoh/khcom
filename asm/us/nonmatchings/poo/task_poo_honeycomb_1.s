@@ -81,7 +81,7 @@ _080CFB54:
 	movs r0, #0x02
 	str r0, [r6, #0x00]
 	ldr r0, _080CFB9C @ =0x00000173
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080CFB90:
 	movs r0, #0x01
 	pop {r4, r5, r6}

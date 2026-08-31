@@ -41,7 +41,7 @@ task_poo_piglet_2: @ 080CDBB4
 	ldr r0, [r5, #0x04]
 	cmp r0, #0x00
 	beq _080CDCCE
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r5, #0x0
 	adds r0, #0x38
 	bl func_08012304
@@ -59,7 +59,7 @@ _080CDC24:
 	adds r4, r5, #0x0
 	adds r4, #0x94
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [r5, #0x04]
 	adds r6, r5, #0x0
 	adds r6, #0x38
@@ -68,7 +68,7 @@ _080CDC24:
 	bne _080CDC7C
 	ldr r0, _080CDC60 @ =0x09849C18
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	movs r0, #0x00
 	bl func_080D2D50
@@ -132,9 +132,9 @@ _080CDC98:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r7, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080CDCCE:
 	add sp, #0x010
 	pop {r3, r4}

@@ -22,7 +22,7 @@ func_080428E8: @ 080428E8
 	ldr r1, _08042918 @ =0x09EDB458
 	adds r2, r4, #0x0
 	adds r2, #0x38
-	bl func_08000E14
+	bl TaskCreate
 _08042910:
 	pop {r4}
 	pop {r0}

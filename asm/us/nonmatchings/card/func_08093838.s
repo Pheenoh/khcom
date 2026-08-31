@@ -33,7 +33,7 @@ _08093856:
 	subs r1, r1, r0
 	adds r0, r1, #0x0
 	muls r0, r1
-	bl func_08118008
+	bl Sqrt
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r6, r0

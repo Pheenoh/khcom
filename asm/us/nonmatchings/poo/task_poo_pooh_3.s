@@ -43,15 +43,15 @@ _080C9CFE:
 	ldrh r1, [r1, #0x00]
 	bl func_080D2CC4
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x4C
 	bl func_08012304
 	adds r0, r4, #0x0
 	adds r0, #0xB0
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

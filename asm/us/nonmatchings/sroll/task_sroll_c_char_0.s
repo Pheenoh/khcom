@@ -12,11 +12,11 @@ task_sroll_c_char_0: @ 08115180
 	ldr r0, _081151C4 @ =0x09C8D47A
 	movs r1, #0x9A
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x18]
 	ldr r0, _081151C8 @ =0x09D6CF54
 	movs r1, #0xE0
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x1C]
 	movs r5, #0x00
 	adds r4, #0x20
@@ -24,12 +24,12 @@ _081151A2:
 	adds r0, r4, #0x0
 	ldr r1, _081151CC @ =0x09EFB9B8
 	ldr r2, _081151D0 @ =0x09EFB840
-	bl func_08005968
+	bl AnimInit
 	lsls r1, r5, #0x10
 	lsrs r1, r1, #0x10
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r4, #0x18
 	adds r5, #0x01
 	cmp r5, #0x04
@@ -44,11 +44,11 @@ _081151D4:
 	ldr r0, _08115214 @ =0x09C8F1FA
 	movs r1, #0x92
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x18]
 	ldr r0, _08115218 @ =0x09D6D034
 	movs r1, #0xE0
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x1C]
 	movs r5, #0x00
 	adds r4, #0x20
@@ -56,12 +56,12 @@ _081151EE:
 	adds r0, r4, #0x0
 	ldr r1, _0811521C @ =0x09EFBAD4
 	ldr r2, _08115220 @ =0x09EFB9CC
-	bl func_08005968
+	bl AnimInit
 	lsls r1, r5, #0x10
 	lsrs r1, r1, #0x10
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r4, #0x18
 	adds r5, #0x01
 	cmp r5, #0x04

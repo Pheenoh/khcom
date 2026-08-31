@@ -24,7 +24,7 @@ task_emy_83_0: @ 0803E580
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	movs r1, #0x04
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4}
 	pop {r0}
 	bx r0

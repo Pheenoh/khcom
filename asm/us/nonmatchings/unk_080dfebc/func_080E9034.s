@@ -26,7 +26,7 @@ _080E9054:
 	adds r0, #0xA0
 	ldr r1, _080E9074 @ =0x09EF6E4C
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	subs r4, #0x01
 	cmp r4, #0x00
 	bne _080E9054

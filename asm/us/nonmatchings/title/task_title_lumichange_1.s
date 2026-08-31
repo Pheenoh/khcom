@@ -14,7 +14,7 @@ task_title_lumichange_1: @ 080D6ED4
 	mov r0, sp
 	movs r2, #0x06
 	bl memcpy
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -47,7 +47,7 @@ _080D6F16:
 	bge _080D6F12
 	ldrh r4, [r2, #0x00]
 	movs r0, #0x67
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080D6F52
 _080D6F30:
 	movs r3, #0x02
@@ -67,9 +67,9 @@ _080D6F3A:
 	ble _080D6F36
 	ldrh r4, [r2, #0x00]
 	movs r0, #0x67
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080D6F52:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
 	ands r1, r0

@@ -8,9 +8,9 @@ task_btl_premire_3: @ 08031AC4
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x10]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x14]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _08031AE8 @ =0x02039B84
 	ldr r1, [r0, #0x00]
 	adds r1, #0xB0

@@ -41,7 +41,7 @@ func_080148E0: @ 080148E0
 	adds r1, r4, #0x0
 	adds r2, r7, #0x0
 	mov r3, r8
-	bl func_0801909C
+	bl WorldToScreen
 	cmp r5, #0x01
 	beq _08014960
 	cmp r5, #0x01
@@ -57,7 +57,7 @@ func_080148E0: @ 080148E0
 	bl func_08006778
 	movs r0, #0x97
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _08014996
 	.byte 0x00, 0x00
 _08014958: .4byte 0x02034928
@@ -71,7 +71,7 @@ _08014960:
 	ldsh r2, [r4, r3]
 	bl func_08006778
 	ldr r0, _0801497C @ =0x0000025D
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _08014996
 _08014978: .4byte 0x09EDA8B8
 _0801497C: .4byte 0x0000025D
@@ -84,7 +84,7 @@ _08014980:
 	ldsh r2, [r4, r3]
 	bl func_08006778
 	ldr r0, _080149B0 @ =0x0000025E
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08014996:
 	ldr r0, _080149B4 @ =0x02034928
 	ldr r1, [r0, #0x00]

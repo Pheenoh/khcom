@@ -57,7 +57,7 @@ _080D6486:
 	movs r1, #0x80
 	lsls r1, r1, #0x01
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r5, r0, #0x0
 	mov r1, r8
 	ldr r0, [r1, #0x08]
@@ -104,7 +104,7 @@ _080D64C6:
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
 	mov r3, r8
-	bl func_080023E0
+	bl DrawSprite
 _080D64FA:
 	movs r4, #0x0C
 	add r10, r4

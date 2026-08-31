@@ -17,7 +17,7 @@ task_room_name_2: @ 080F7D44
 	ldr r2, [r6, #0x1C]
 	movs r0, #0x00
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r5, r0, #0x0
 	ldr r0, [r6, #0x14]
 	lsls r0, r0, #0x08
@@ -34,7 +34,7 @@ task_room_name_2: @ 080F7D44
 	str r4, [sp, #0x008]
 	movs r4, #0x3C
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r6, #0x0C]
 	lsls r0, r0, #0x08
 	asrs r0, r0, #0x10

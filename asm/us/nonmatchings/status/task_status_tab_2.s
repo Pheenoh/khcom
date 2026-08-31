@@ -21,7 +21,7 @@ task_status_tab_2: @ 080D7C48
 	str r0, [sp, #0x00C]
 	movs r0, #0x00
 	movs r1, #0x10
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r4, #0x14]
 	ldr r3, [r4, #0x04]
 	ldr r0, [r4, #0x0C]
@@ -32,7 +32,7 @@ task_status_tab_2: @ 080D7C48
 	str r0, [sp, #0x00C]
 	movs r0, #0x00
 	movs r1, #0x10
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r4, r5, r6}
 	pop {r0}

@@ -23,7 +23,7 @@ task_bos_md_dai_2: @ 080FD698
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r9
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, [r7, #0x04]
 	bl func_0801AF1C
 	lsls r0, r0, #0x10
@@ -60,7 +60,7 @@ task_bos_md_dai_2: @ 080FD698
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -81,7 +81,7 @@ task_bos_md_dai_2: @ 080FD698
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x08
@@ -106,7 +106,7 @@ task_bos_md_dai_2: @ 080FD698
 	lsrs r5, r5, #0x10
 	str r5, [sp, #0x00C]
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 _080FD76E:
 	ldr r2, [r7, #0x00]
 	ldr r3, [r7, #0x04]
@@ -114,7 +114,7 @@ _080FD76E:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r9
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, [r7, #0x04]
 	bl func_0801AF1C
 	lsls r0, r0, #0x10
@@ -153,7 +153,7 @@ _080FD76E:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080FD7D0:
 	add sp, #0x014
 	pop {r3, r4, r5}

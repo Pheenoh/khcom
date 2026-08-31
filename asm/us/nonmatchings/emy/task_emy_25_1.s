@@ -15,7 +15,7 @@ task_emy_25_1: @ 0803A6EC
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803A72C
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	movs r0, #0x01
@@ -61,7 +61,7 @@ _0803A740:
 	bl func_08019068
 	adds r0, r7, #0x0
 	adds r0, #0x10
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803A762
@@ -132,7 +132,7 @@ _0803A854:
 	bl func_08019068
 	adds r0, r7, #0x0
 	adds r0, #0x10
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803A880
@@ -240,7 +240,7 @@ _0803A9A2:
 	beq _0803A9C2
 _0803A9BC:
 	ldr r0, _0803A9D4 @ =0x00000211
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803A9C2:
 	adds r0, r7, #0x0
 	bl _0800CDF0

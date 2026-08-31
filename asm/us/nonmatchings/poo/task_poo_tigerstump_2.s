@@ -44,9 +44,9 @@ _080CD628:
 	cmp r0, #0x00
 	beq _080CD6AE
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r4, #0x04]
 	adds r0, r4, #0x0
@@ -63,11 +63,11 @@ _080CD654:
 	ldr r0, _080CD6B8 @ =0x097561E8
 	movs r1, #0x80
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080CD6BC @ =0x09849D38
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	adds r0, r4, #0x0
 	adds r0, #0x34
@@ -98,7 +98,7 @@ _080CD67E:
 	str r0, [sp, #0x00C]
 	adds r0, r6, #0x0
 	adds r1, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080CD6AE:
 	add sp, #0x010
 	pop {r4, r5, r6}

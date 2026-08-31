@@ -20,7 +20,7 @@ _080D785C:
 	adds r0, r0, r2
 	strh r0, [r1, #0x00]
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4}
 	pop {r1}

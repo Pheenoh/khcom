@@ -47,7 +47,7 @@ _080D8B04:
 	str r0, [sp, #0x00C]
 	adds r0, r4, #0x0
 	movs r1, #0x2D
-	bl func_080023E0
+	bl DrawSprite
 	adds r4, #0x14
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10

@@ -73,14 +73,14 @@ _080E65E4:
 	adds r0, r4, #0x0
 	adds r0, #0xBC
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r4, #0x0
 	adds r0, #0xC0
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0xE4
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0

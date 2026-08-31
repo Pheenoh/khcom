@@ -12,7 +12,7 @@ func_080D8374: @ 080D8374
 	lsls r4, r4, #0x03
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r2, #0x00
 	adds r6, r5, #0x0
 	movs r3, #0x04

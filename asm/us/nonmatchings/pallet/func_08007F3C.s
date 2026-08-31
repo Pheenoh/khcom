@@ -138,7 +138,7 @@ _08008026:
 	adds r0, #0x02
 	ldr r2, _08008058 @ =0x000003FE
 	ldr r1, [sp, #0x010]
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r3, _08008054 @ =0x0300756C
 	ldr r0, [r3, #0x00]
 	add sp, #0x01C

@@ -16,7 +16,7 @@ task_bos_boogie_saku_1: @ 080DA7C0
 	adds r4, r5, #0x0
 	adds r4, #0x08
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	adds r7, r4, #0x0
 	movs r1, #0x28
@@ -85,7 +85,7 @@ _080DA83C:
 	ldr r1, _080DA8B8 @ =0x09EF5040
 	ldr r2, [r5, #0x24]
 	mov r0, r8
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r5, #0x3C]
 _080DA874:
 	ldr r0, _080DA8BC @ =0x0203C560
@@ -118,7 +118,7 @@ _080DA87C:
 	adds r1, r6, #0x0
 	adds r0, r7, #0x0
 	movs r2, #0x00
-	bl func_08005A00
+	bl AnimChange
 	b _080DA8D6
 _080DA8B8: .4byte 0x09EF5040
 _080DA8BC: .4byte 0x0203C560
@@ -131,11 +131,11 @@ _080DA8C0:
 	adds r0, r7, #0x0
 	movs r1, #0x03
 	movs r2, #0x00
-	bl func_08005A00
+	bl AnimChange
 	strb r6, [r4, #0x00]
 _080DA8D6:
 	adds r0, r7, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	lsrs r4, r0, #0x18
 	ldr r0, _080DA94C @ =0x0203C560
@@ -157,17 +157,17 @@ _080DA8D6:
 	bne _080DA90C
 _080DA906:
 	adds r0, r7, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 _080DA90C:
 	cmp r4, #0x00
 	bne _080DA93A
 	adds r0, r7, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080DA93A
 	ldr r0, _080DA950 @ =0x00000255
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r7, #0x0
 	bl func_08005B30
 	lsls r0, r0, #0x10
@@ -177,10 +177,10 @@ _080DA90C:
 	adds r0, r7, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005A00
+	bl AnimChange
 _080DA93A:
 	mov r0, r8
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r3}
 	mov r8, r3

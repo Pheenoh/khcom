@@ -5,7 +5,7 @@ void mode_debflag_0(s32 arg) {
     s32 i;
 
     func_08004DB0();
-    func_08005074(0, 0, 0x0F, 0);
+    SetupBg(0, 0, 0x0F, 0);
     func_08004FC8(0);
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gUnk_08128304, 0x20, 0x0F);
@@ -39,11 +39,11 @@ void mode_debflag_1(void) {
 
     prev = gUnk_020348C0;
 
-    if (func_0800139C() & 0x40) {
+    if (GetKeysRepeat() & 0x40) {
         gUnk_020348C0--;
     }
 
-    if (func_0800139C() & 0x80) {
+    if (GetKeysRepeat() & 0x80) {
         gUnk_020348C0++;
     }
 
@@ -58,7 +58,7 @@ void mode_debflag_1(void) {
         func_0805FCB0(0, gUnk_020348C0 * 9, 2, gUnk_08130E34);
     }
 
-    if (func_08001390() & 0x30) {
+    if (GetKeysPressed() & 0x30) {
         entry = &gUnk_020348C4[gUnk_020348C0];
         gUnk_03006C10 ^= entry->mask;
 
@@ -69,7 +69,7 @@ void mode_debflag_1(void) {
         }
     }
 
-    if (func_08001390() & 0x0F) {
+    if (GetKeysPressed() & 0x0F) {
         if (gUnk_02039B94 != 0) {
             func_080E04EC();
         } else {

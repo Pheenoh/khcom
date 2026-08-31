@@ -174,11 +174,11 @@ _08042DBC:
 	beq _08042DE2
 	adds r0, r7, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 _08042DE2:
 	adds r0, r7, #0x0
 	adds r0, #0x20
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0xB8
 	lsls r0, r0, #0x01
 	adds r1, r7, r0

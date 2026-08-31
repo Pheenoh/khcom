@@ -28,7 +28,7 @@ func_080986FC: @ 080986FC
 	ldr r4, _08098750 @ =0x06010000
 	adds r1, r1, r4
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, [r5, #0x00]
 	movs r1, #0xA0
 	lsls r1, r1, #0x03
@@ -37,7 +37,7 @@ func_080986FC: @ 080986FC
 	lsls r1, r1, #0x05
 	adds r1, r1, r4
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _08098768
 _08098748: .4byte 0x09EF1198
 _0809874C: .4byte 0x0950C478

@@ -23,7 +23,7 @@ mode_sio_btl_cardget_0: @ 080B1498
 _080B14B8:
 	ldr r4, _080B14D4 @ =0x02034B44
 	movs r0, #0x44
-	bl func_08000918
+	bl EwramAlloc
 	adds r1, r0, #0x0
 	str r1, [r4, #0x00]
 	cmp r5, #0x00
@@ -42,26 +42,26 @@ _080B14DC:
 	movs r1, #0x00
 	movs r2, #0x10
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x00
 	movs r2, #0x18
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r4, _080B152C @ =0x096AD744
 	movs r0, #0x01
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	movs r2, #0x80
 	lsls r2, r2, #0x06
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, _080B1530 @ =0x02034B44
 	ldr r1, [r0, #0x00]
 	movs r0, #0x00

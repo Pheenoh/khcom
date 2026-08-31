@@ -53,7 +53,7 @@ _08116084:
 	ldr r1, [sp, #0x00C]
 	adds r0, r5, #0x0
 	ldr r2, _081160A8 @ =0x01000008
-	bl func_08117FE4
+	bl CpuFastSet
 _08116096:
 	ldrh r0, [r6, #0x26]
 	cmp r0, #0x01

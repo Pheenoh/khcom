@@ -19,7 +19,7 @@ task_poo_cabbage_0: @ 080D10E0
 	adds r1, #0xC4
 	ldr r0, _080D11A4 @ =0x000004CC
 	str r0, [r1, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0F
@@ -38,7 +38,7 @@ task_poo_cabbage_0: @ 080D10E0
 	ldr r1, _080D11A8 @ =0x09EF6060
 	ldr r2, _080D11AC @ =0x09EF602C
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r1, r7, #0x0
 	adds r1, #0xA4
 	movs r0, #0x00
@@ -48,9 +48,9 @@ task_poo_cabbage_0: @ 080D10E0
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x08]
 	adds r4, #0x38
 	adds r0, r4, #0x0
@@ -70,7 +70,7 @@ task_poo_cabbage_0: @ 080D10E0
 	adds r4, #0x64
 	adds r0, r4, #0x0
 	movs r1, #0x02
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r1, r7, #0x0
 	adds r1, #0x24
 	adds r0, r4, #0x0

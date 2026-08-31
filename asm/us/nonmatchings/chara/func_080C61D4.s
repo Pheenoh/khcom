@@ -81,8 +81,8 @@ _080C6252:
 	ldr r0, [r0, #0x00]
 	ldr r4, _080C629C @ =0x0000FFFF
 	ands r0, r4
-	bl func_08006578
-	bl func_080065A4
+	bl SeedRandom
+	bl GetRandom
 	ldr r5, _080C6280 @ =0x0203AAC0
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10

@@ -8,9 +8,9 @@ task_hum_vixen_ice_3: @ 08055970
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x04]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r4, #0x28
 	adds r0, r4, #0x0
 	bl func_08012304

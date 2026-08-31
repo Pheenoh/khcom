@@ -28,7 +28,7 @@ func_08083B20: @ 08083B20
 	cmp r1, #0x00
 	bne _08083B60
 	ldr r4, _08083B6C @ =0x02039DD8
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x09

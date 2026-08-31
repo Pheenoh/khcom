@@ -64,7 +64,7 @@ _08066524:
 	mov r0, r10
 	str r0, [sp, #0x00C]
 	adds r0, r4, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	movs r0, #0x05
 	ldsb r0, [r5, r0]
 	adds r4, r4, r0

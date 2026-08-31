@@ -41,15 +41,15 @@ _080E00B2:
 	movs r0, #0x03
 	adds r1, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080054EC
+	bl SetBgScroll
 	movs r0, #0x02
 	adds r1, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080054EC
+	bl SetBgScroll
 	movs r0, #0x01
 	adds r1, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080054EC
+	bl SetBgScroll
 	pop {r4, r5}
 	pop {r0}
 	bx r0

@@ -26,7 +26,7 @@ func_080D9B28: @ 080D9B28
 	bhi _080D9B62
 	ldr r0, [r4, #0x00]
 	adds r0, #0x14
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080D9B62

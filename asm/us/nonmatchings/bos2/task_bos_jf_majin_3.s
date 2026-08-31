@@ -8,14 +8,14 @@ task_bos_jf_majin_3: @ 080BE8EC
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x04]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x0C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r4, #0x6C
 	adds r0, r4, #0x0
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

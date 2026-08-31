@@ -12,7 +12,7 @@ func_08102F30: @ 08102F30
 	push {r5, r6, r7}
 	add sp, #-0x01C
 	ldr r0, _08102F8C @ =0x02035A58
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [sp, #0x014]
 	movs r0, #0x00
 	str r0, [sp, #0x010]
@@ -41,12 +41,12 @@ _08102F4C:
 	adds r1, r4, #0x0
 	adds r2, r4, #0x0
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	mov r10, r0
 	ldr r0, [sp, #0x018]
 	adds r0, #0x18
 	adds r0, r5, r0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r6, r0, #0x0
 	b _08102FC6
 _08102F8C: .4byte 0x02035A58
@@ -71,7 +71,7 @@ _08102F94:
 	movs r0, #0x00
 	adds r1, r4, #0x0
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	mov r10, r0
 	ldr r1, _081030DC @ =0x020358DC
 	adds r0, r5, r1
@@ -117,7 +117,7 @@ _08102FCC:
 	movs r2, #0x50
 	str r2, [sp, #0x00C]
 	adds r2, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	adds r6, r4, r5
 	adds r0, r6, #0x0
 	adds r0, #0x47
@@ -148,7 +148,7 @@ _08103026:
 	str r5, [sp, #0x008]
 	movs r4, #0x58
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r6, #0x0
 	adds r0, #0x46
 	ldrb r5, [r0, #0x00]
@@ -190,7 +190,7 @@ _08103026:
 	str r5, [sp, #0x008]
 	movs r4, #0x48
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r7, #0x00]
 	lsls r0, r0, #0x08
 	asrs r0, r0, #0x10
@@ -209,7 +209,7 @@ _08103026:
 	movs r2, #0x40
 	str r2, [sp, #0x00C]
 	ldr r2, [sp, #0x014]
-	bl func_080023E0
+	bl DrawSprite
 	b _0810314E
 	.byte 0x00, 0x00
 _081030D8: .4byte 0x08121400
@@ -259,7 +259,7 @@ _08103104:
 	str r5, [sp, #0x008]
 	movs r4, #0x48
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _0810314E:
 	ldr r5, _08103260 @ =0x020358C8
 	mov r8, r5
@@ -327,7 +327,7 @@ _0810314E:
 	adds r0, r5, #0x0
 	bl func_0805F1C0
 	ldr r0, _08103290 @ =0x02035AE8
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	ldr r0, [r6, #0x00]
 	lsls r0, r0, #0x08
@@ -344,7 +344,7 @@ _0810314E:
 	str r6, [sp, #0x004]
 	str r6, [sp, #0x008]
 	str r6, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _08103202:
 	adds r0, r7, #0x1
 	lsls r0, r0, #0x10
@@ -366,7 +366,7 @@ _08103216:
 	lsls r0, r0, #0x02
 	ldr r1, _08103298 @ =0x02035A70
 	adds r0, r0, r1
-	bl func_08000EE0
+	bl TaskPoolDraw
 	adds r4, #0x01
 	lsls r4, r4, #0x10
 	lsrs r5, r4, #0x10

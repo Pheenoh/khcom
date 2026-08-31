@@ -71,7 +71,7 @@ _080D122A:
 	adds r2, r5, #0x0
 	adds r2, #0x24
 	adds r0, r6, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r4, #0x00]
 	movs r0, #0x03
 	strh r0, [r7, #0x00]
@@ -79,9 +79,9 @@ _080D122A:
 	adds r0, #0x0C
 	movs r1, #0x03
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0xDE
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r1, r5, #0x0
 	adds r1, #0xCA
 	movs r0, #0x1E
@@ -265,7 +265,7 @@ _080D1390:
 	strh r1, [r0, #0x00]
 	subs r0, #0x98
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	b _080D1492
 _080D13CA:
 	movs r0, #0x04
@@ -288,7 +288,7 @@ _080D13F2:
 	adds r6, r5, #0x0
 	adds r6, #0x0C
 	adds r0, r6, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080D1492
@@ -301,7 +301,7 @@ _080D13F2:
 	adds r0, r6, #0x0
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	bl func_080D171C
 	adds r0, r5, #0x0
 	adds r0, #0xD2

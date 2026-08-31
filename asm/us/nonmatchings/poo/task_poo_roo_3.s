@@ -8,15 +8,15 @@ task_poo_roo_3: @ 080CF0EC
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x3C
 	bl func_08012304
 	adds r4, #0x98
 	adds r0, r4, #0x0
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

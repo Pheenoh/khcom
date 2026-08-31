@@ -33,7 +33,7 @@ task_emy_16_1: @ 08038C10
 	.byte 0x00, 0x00
 _08038C48: .4byte 0x09EDB0B0
 _08038C4C:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	movs r0, #0x01
@@ -134,7 +134,7 @@ _08038D06:
 	adds r0, r7, r1
 	ldr r1, _08038D54 @ =0x09EDB0C8
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 	movs r2, #0xC2
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -232,14 +232,14 @@ _08038DD6:
 	adds r0, r7, r1
 	ldr r1, _08038E20 @ =0x09EDB0B0
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 	movs r2, #0xC4
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
 	str r0, [r1, #0x00]
 _08038DEC:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _08038DFE
@@ -249,7 +249,7 @@ _08038DFE:
 	movs r1, #0xC6
 	lsls r1, r1, #0x01
 	adds r0, r7, r1
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r6, #0x0
 	bl _0800CDF0
 	lsls r0, r0, #0x18

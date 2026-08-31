@@ -49,24 +49,24 @@ task_allmap_cursor_0: @ 080D3B1C
 	str r0, [r4, #0x38]
 	ldr r0, _080D3BB8 @ =0x0976D7C0
 	movs r1, #0xC0
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D3BBC @ =0x0984A1D8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	adds r5, r4, #0x0
 	adds r5, #0x0C
 	ldr r1, _080D3BC0 @ =0x09EF64C4
 	ldr r2, _080D3BC4 @ =0x09EF64B4
 	adds r0, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r4, #0x08]
 	adds r4, #0x44
 	strh r6, [r4, #0x00]

@@ -10,7 +10,7 @@ func_080D5B04: @ 080D5B04
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	movs r0, #0x00
 	movs r1, #0x05
 	movs r2, #0x10
@@ -18,7 +18,7 @@ func_080D5B04: @ 080D5B04
 	movs r0, #0x01
 	bl func_08004FC8
 	movs r0, #0x06
-	bl func_0811FE70
+	bl m4aSongNumStart
 	pop {r0}
 	bx r0
 _080D5B2C: .4byte 0x0983F398

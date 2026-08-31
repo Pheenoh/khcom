@@ -68,7 +68,7 @@ _080BC9A4:
 	mov r1, r10
 	mov r2, r10
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r6, r0, #0x0
 	ldr r1, [r7, #0x0C]
 	ldr r2, [r1, #0x00]
@@ -81,7 +81,7 @@ _080BC9A4:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -105,14 +105,14 @@ _080BC9A4:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r5, #0x10
 	adds r4, r7, r5
 	ldrb r0, [r4, #0x08]
 	mov r1, r10
 	mov r2, r10
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r6, r0, #0x0
 	ldr r1, [r7, #0x0C]
 	ldr r2, [r1, #0x0C]
@@ -125,7 +125,7 @@ _080BC9A4:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -149,7 +149,7 @@ _080BC9A4:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [sp, #0x014]
 	adds r0, #0x01
 	str r0, [sp, #0x014]
@@ -178,7 +178,7 @@ _080BCA8C:
 	mov r1, r10
 	mov r2, r8
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r6, r0, #0x0
 	ldr r1, [r7, #0x0C]
 	ldr r2, [r1, #0x00]
@@ -191,7 +191,7 @@ _080BCA8C:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	ldr r1, [sp, #0x018]
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -216,13 +216,13 @@ _080BCA8C:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [sp, #0x01C]
 	ldrb r0, [r4, #0x08]
 	mov r1, r10
 	mov r2, r8
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r6, r0, #0x0
 	ldr r1, [r7, #0x0C]
 	ldr r2, [r1, #0x0C]
@@ -235,7 +235,7 @@ _080BCA8C:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	ldr r1, [sp, #0x018]
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -258,11 +258,11 @@ _080BCA8C:
 	lsls r5, r5, #0x10
 	lsrs r5, r5, #0x10
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	movs r1, #0xDA
 	lsls r1, r1, #0x01
 	adds r0, r7, r1
-	bl func_08000EE0
+	bl TaskPoolDraw
 	add sp, #0x020
 	pop {r3, r4, r5}
 	mov r8, r3

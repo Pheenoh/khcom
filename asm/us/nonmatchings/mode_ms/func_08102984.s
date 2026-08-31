@@ -48,7 +48,7 @@ _081029C2:
 	cmp r0, #0x00
 	blt _08102A44
 	movs r0, #0x02
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	add r2, r9
 	ldr r3, _08102A84 @ =0x02035B1A
@@ -111,7 +111,7 @@ _08102A44:
 	movs r2, #0xA0
 	lsls r2, r2, #0x03
 	movs r0, #0x02
-	bl func_0800510C
+	bl LoadBgMap
 	add sp, #0x018
 	pop {r3, r4, r5}
 	mov r8, r3

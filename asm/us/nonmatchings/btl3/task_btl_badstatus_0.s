@@ -13,15 +13,15 @@ task_btl_badstatus_0: @ 08040A84
 	str r1, [r4, #0x24]
 	movs r0, #0x80
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _08040AD8 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r0, _08040ADC @ =0x09611AB8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x08]
 	ldr r0, [r4, #0x04]
 	str r0, [r4, #0x2C]
@@ -30,7 +30,7 @@ task_btl_badstatus_0: @ 08040A84
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08040AE0 @ =0x0813E8F4
 	ldr r1, [r4, #0x00]
 	str r1, [sp, #0x000]

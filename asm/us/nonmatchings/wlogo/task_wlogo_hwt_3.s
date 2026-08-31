@@ -7,7 +7,7 @@
 task_wlogo_hwt_3: @ 080B4CC8
 	push {lr}
 	ldr r0, _080B4CD4 @ =0x02034C38
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r0}
 	bx r0
 _080B4CD4: .4byte 0x02034C38

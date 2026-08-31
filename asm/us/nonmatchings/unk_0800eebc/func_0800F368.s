@@ -15,7 +15,7 @@ func_0800F368: @ 0800F368
 	movs r2, #0x00
 	movs r3, #0x00
 	bl func_0801C700
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0

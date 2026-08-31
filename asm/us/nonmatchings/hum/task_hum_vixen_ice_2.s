@@ -14,7 +14,7 @@ task_hum_vixen_ice_2: @ 080558D8
 	beq _08055962
 	adds r0, r5, #0x0
 	adds r0, #0x0C
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r7, r0, #0x0
 	mov r4, sp
 	adds r4, #0x12
@@ -25,7 +25,7 @@ task_hum_vixen_ice_2: @ 080558D8
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r1, r5, #0x0
 	adds r1, #0x8C
 	ldr r0, _08055930 @ =0x02039B84
@@ -54,7 +54,7 @@ _08055934:
 	adds r1, r2, #0x0
 	movs r3, #0x00
 _0805593A:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r4, r0, #0x0
 	add r0, sp, #0x010
 	movs r1, #0x00
@@ -71,7 +71,7 @@ _0805593A:
 	ldr r2, _0805596C @ =0x0000FFFF
 	str r2, [sp, #0x00C]
 	adds r2, r7, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _08055962:
 	add sp, #0x014
 	pop {r4, r5, r6, r7}

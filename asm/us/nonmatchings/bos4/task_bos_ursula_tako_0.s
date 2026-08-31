@@ -77,29 +77,29 @@ _080DCB20:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080DCBC0 @ =0x0979E344
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r6, #0x00]
 	ldr r0, _080DCBC4 @ =0x0984B0F8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	ldr r0, _080DCBC8 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x08]
 	adds r4, r6, #0x0
 	adds r4, #0x0C
 	ldr r1, _080DCBCC @ =0x09EF68A0
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrh r1, [r6, #0x24]
 	adds r1, #0x04
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	adds r0, r4, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r2, #0x9C
 	lsls r2, r2, #0x01
 	adds r1, r6, r2

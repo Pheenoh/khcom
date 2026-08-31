@@ -11,14 +11,14 @@ func_08004314: @ 08004314
 	bl func_08000AE4
 	ldr r4, _08004344 @ =0x03007574
 	ldr r0, _08004348 @ =0x000010B0
-	bl func_08000928
+	bl IwramAlloc
 	adds r1, r0, #0x0
 	str r1, [r4, #0x00]
 	movs r0, #0x00
 	str r0, [sp, #0x000]
 	ldr r2, _0800434C @ =0x0500042C
 	mov r0, sp
-	bl func_08117FE8
+	bl CpuSet
 	add sp, #0x004
 	pop {r4}
 	pop {r0}

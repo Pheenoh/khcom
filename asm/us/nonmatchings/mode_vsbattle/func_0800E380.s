@@ -28,12 +28,12 @@ _0800E396:
 	adds r0, r5, #0x0
 	bl func_0801B7D8
 	ldr r0, [r4, #0x04]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x2C
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

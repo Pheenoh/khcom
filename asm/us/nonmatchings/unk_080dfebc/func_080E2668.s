@@ -34,7 +34,7 @@ _080E2690:
 	ldr r1, [sp, #0x000]
 	cmp r1, #0x00
 	bne _080E2786
-	bl func_080065A4
+	bl GetRandom
 	adds r1, r0, #0x0
 	ldr r2, [sp, #0x004]
 	lsls r0, r2, #0x02
@@ -152,7 +152,7 @@ _080E2786:
 	beq _080E278E
 	b _080E2892
 _080E278E:
-	bl func_080065A4
+	bl GetRandom
 	adds r1, r0, #0x0
 	ldr r2, [sp, #0x004]
 	lsls r0, r2, #0x02
@@ -285,7 +285,7 @@ _080E2892:
 	beq _080E289A
 	b _080E29A0
 _080E289A:
-	bl func_080065A4
+	bl GetRandom
 	adds r1, r0, #0x0
 	ldr r2, [sp, #0x004]
 	lsls r0, r2, #0x01
@@ -418,7 +418,7 @@ _080E29A0:
 	beq _080E29A8
 	b _080E2AF6
 _080E29A8:
-	bl func_080065A4
+	bl GetRandom
 	adds r1, r0, #0x0
 	ldr r2, [sp, #0x004]
 	lsls r0, r2, #0x01

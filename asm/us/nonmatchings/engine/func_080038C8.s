@@ -9,7 +9,7 @@ func_080038C8: @ 080038C8
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	adds r1, r0, #0x0
 	cmp r1, #0x00
 	beq _080038DE

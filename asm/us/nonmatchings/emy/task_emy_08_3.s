@@ -12,7 +12,7 @@ task_emy_08_3: @ 08038810
 	lsls r0, r0, #0x01
 	adds r4, r4, r0
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

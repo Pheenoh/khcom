@@ -24,7 +24,7 @@ func_080F7E84: @ 080F7E84
 	cmp r1, r0
 	ble _080F7EAE
 	ldr r0, _080F7EDC @ =0x0000026A
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080F7EAE:
 	movs r0, #0x00
 	str r0, [r4, #0x0C]

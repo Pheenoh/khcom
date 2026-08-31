@@ -38,7 +38,7 @@ _080E07B2:
 	ldr r4, _080E081C @ =0x02039BA0
 	ldr r0, [r4, #0x00]
 	adds r0, #0x78
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [r6, #0x00]
 	adds r0, #0x20
 	strb r5, [r0, #0x00]
@@ -57,7 +57,7 @@ _080E07B2:
 	bne _080E07EC
 	adds r0, r4, #0x0
 	adds r0, #0x8C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 _080E07EC:
 	ldr r4, _080E081C @ =0x02039BA0
 	ldr r2, [r4, #0x00]
@@ -68,14 +68,14 @@ _080E07EC:
 	bne _080E0802
 	adds r0, r2, #0x0
 	adds r0, #0xB4
-	bl func_08000EA4
+	bl TaskPoolUpdate
 _080E0802:
 	ldr r0, [r4, #0x00]
 	adds r0, #0xA0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [r4, #0x00]
 	adds r0, #0xC8
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

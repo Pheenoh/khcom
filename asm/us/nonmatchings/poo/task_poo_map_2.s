@@ -7,7 +7,7 @@
 task_poo_map_2: @ 080CA258
 	push {lr}
 	adds r0, #0x04
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r0}
 	bx r0
 .syntax divided

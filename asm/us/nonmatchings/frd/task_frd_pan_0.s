@@ -14,7 +14,7 @@ task_frd_pan_0: @ 08048794
 	adds r7, r6, #0x0
 	adds r7, #0x20
 	movs r0, #0xB9
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r0, r8
 	ldrb r1, [r0, #0x02]
 	cmp r1, #0x00
@@ -170,7 +170,7 @@ _080488C6:
 	str r0, [r7, #0x0C]
 	ldr r0, _08048950 @ =0x09617DD8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x1C]
 	movs r1, #0x98
 	lsls r1, r1, #0x01
@@ -178,7 +178,7 @@ _080488C6:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08048954 @ =0x0813ECFC
 	ldr r1, [r6, #0x18]
 	str r1, [sp, #0x000]
@@ -188,11 +188,11 @@ _080488C6:
 	bl func_08019068
 	adds r0, r6, #0x0
 	movs r1, #0x0F
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _08048958 @ =0x09EDAE88
 	adds r0, r6, #0x0
 	adds r2, r7, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r2, _0804895C @ =0x0000014D
 	adds r0, r6, r2
 	ldrb r0, [r0, #0x00]

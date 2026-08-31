@@ -81,11 +81,11 @@ _080C2912:
 	strh r0, [r1, #0x00]
 	adds r0, r4, #0x0
 	adds r0, #0x1C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x14]
 	adds r0, r4, #0x0
 	adds r0, #0x34
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x18]
 	pop {r4, r5, r6, r7}
 	pop {r0}

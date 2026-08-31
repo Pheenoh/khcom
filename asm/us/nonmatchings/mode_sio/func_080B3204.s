@@ -56,7 +56,7 @@ _080B3228:
 	adds r0, r0, r4
 	ldr r1, _080B333C @ =0x060001A0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	movs r1, #0x02
 	ldsh r0, [r0, r1]
@@ -64,7 +64,7 @@ _080B3228:
 	adds r0, r0, r4
 	ldr r1, _080B3340 @ =0x060001C0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	movs r1, #0x04
 	ldsh r0, [r0, r1]
@@ -72,7 +72,7 @@ _080B3228:
 	adds r0, r0, r4
 	ldr r1, _080B3344 @ =0x060001E0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r4, #0x00
 	ldr r0, _080B3334 @ =0x0203AB20
 	movs r7, #0x80
@@ -124,7 +124,7 @@ _080B32BC:
 	adds r0, r0, r4
 	ldr r1, _080B3348 @ =0x06000200
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	movs r1, #0x02
 	ldsh r0, [r0, r1]
@@ -132,7 +132,7 @@ _080B32BC:
 	adds r0, r0, r4
 	ldr r1, _080B334C @ =0x06000220
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	movs r1, #0x04
 	ldsh r0, [r0, r1]
@@ -140,7 +140,7 @@ _080B32BC:
 	adds r0, r0, r4
 	ldr r1, _080B3350 @ =0x06000240
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	add sp, #0x008
 	pop {r4, r5, r6, r7}
 	pop {r0}

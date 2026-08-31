@@ -49,22 +49,22 @@ _080FCA7A:
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _080FCA86
-	bl func_080028C0
+	bl ReleaseObjTiles
 _080FCA86:
 	adds r4, #0x14
 	subs r6, #0x01
 	cmp r6, #0x00
 	bge _080FCA7A
 	ldr r0, [r7, #0x20]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r7, #0x24]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	mov r0, r8
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	mov r0, r9
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	mov r0, r10
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r3, r4, r5}
 	mov r8, r3
 	mov r9, r4

@@ -7,7 +7,7 @@
 task_poo_map_3: @ 080CA264
 	push {lr}
 	adds r0, #0x04
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r0}
 	bx r0
 .syntax divided

@@ -16,7 +16,7 @@ func_081052C8: @ 081052C8
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	movs r0, #0x00
-	bl func_0800514C
+	bl GetBgScreenBase
 	mov r8, r0
 	ldr r6, _08105330 @ =0x09A3B75C
 	lsls r4, r4, #0x10

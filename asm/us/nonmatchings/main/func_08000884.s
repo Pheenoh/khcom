@@ -13,7 +13,7 @@ func_08000884: @ 08000884
 	ldr r2, _080008A4 @ =0x030074B8
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_08000800
+	bl HeapInit
 	pop {r4, r5}
 	pop {r0}
 	bx r0

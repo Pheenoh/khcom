@@ -62,7 +62,7 @@ _080AA402:
 	ldrh r2, [r2, #0x08]
 	lsls r2, r2, #0x15
 	lsrs r2, r2, #0x10
-	bl func_08005BE8
+	bl LoadPalette
 	b _080AA43E
 _080AA418: .4byte 0x09614498
 _080AA41C: .4byte 0x000004BC
@@ -79,7 +79,7 @@ _080AA424:
 	ldrh r2, [r2, #0x08]
 	lsls r2, r2, #0x15
 	lsrs r2, r2, #0x10
-	bl func_08005BE8
+	bl LoadPalette
 _080AA43E:
 	pop {r4, r5}
 	pop {r0}

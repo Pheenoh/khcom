@@ -21,14 +21,14 @@ task_poo_wagonwheel_1: @ 080D0770
 	adds r0, #0x0C
 	movs r1, #0x03
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 _080D0796:
 	ldrh r0, [r4, #0x36]
 	cmp r0, #0x03
 	bne _080D07CE
 	adds r0, r4, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x08]
 	ldr r1, [r4, #0x38]
 	ldr r0, _080D07E4 @ =0x000004FF

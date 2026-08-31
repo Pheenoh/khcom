@@ -66,7 +66,7 @@ _080D7FA2:
 	movs r5, #0x01
 _080D7FBE:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	stm r6!, {r0}
 	adds r4, #0x18
 	subs r5, #0x01

@@ -89,26 +89,26 @@ task_bos_md_fire_0: @ 080FD154
 	bl func_0801C2DC
 	ldr r0, _080FD274 @ =0x09A3C99C
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x0C]
 	ldr r0, _080FD278 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x10]
 	ldr r0, _080FD27C @ =0x099E367C
 	movs r1, #0x80
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x14]
 	subs r4, #0x60
 	ldr r1, _080FD280 @ =0x09EF9BC0
 	ldr r2, _080FD284 @ =0x09EF9BB0
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	mov r0, r9
 	str r0, [sp, #0x004]
 	add r1, sp, #0x004
@@ -157,7 +157,7 @@ _080FD29A:
 	ldr r0, [r5, #0x00]
 	ldr r1, _080FD2C4 @ =0x09EF8EDC
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 	lsls r0, r4, #0x10
 	movs r3, #0x80
 	lsls r3, r3, #0x09

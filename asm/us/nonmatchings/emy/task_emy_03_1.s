@@ -19,7 +19,7 @@ task_emy_03_1: @ 0803776C
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080377B4
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	movs r0, #0x01
@@ -83,7 +83,7 @@ _080377FC:
 	mov r0, r8
 	bl func_080141FC
 	ldr r0, _0803783C @ =0x00000246
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803780C:
 	movs r0, #0xAB
 	str r0, [sp, #0x000]
@@ -170,7 +170,7 @@ _080378B2:
 	str r0, [r1, #0x00]
 	adds r0, r7, #0x0
 	adds r0, #0x10
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080378E0

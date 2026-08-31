@@ -11,22 +11,22 @@ task_bos_pc_flt_0: @ 0810BD1C
 	ldr r0, _0810BDBC @ =0x09CB8F54
 	movs r1, #0xDC
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x34]
 	ldr r0, _0810BDC0 @ =0x09D693D4
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x38]
 	adds r5, r4, #0x0
 	adds r5, #0x9C
 	ldr r1, _0810BDC4 @ =0x09EFBBEC
 	ldr r2, _0810BDC8 @ =0x09EFBBBC
 	adds r0, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
 	adds r0, #0x40
 	movs r1, #0x07

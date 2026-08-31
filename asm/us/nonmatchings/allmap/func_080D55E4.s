@@ -16,7 +16,7 @@ func_080D55E4: @ 080D55E4
 	ldr r0, [r0, #0x04]
 	mov r8, r0
 	ldr r4, [r0, #0x30]
-	bl func_0800139C
+	bl GetKeysRepeat
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x20
@@ -98,7 +98,7 @@ _080D566A:
 	cmp r6, #0x00
 	beq _080D56A0
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 	bl func_080D54FC
 _080D56A0:
 	ldr r0, [r7, #0x00]
@@ -137,7 +137,7 @@ _080D56E6:
 	ldr r1, _080D570C @ =0x09EF4DF0
 	adds r2, r4, #0x0
 	adds r2, #0x08
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, [r7, #0x00]
 	adds r1, #0x98
 	str r0, [r1, #0x00]
@@ -179,7 +179,7 @@ _080D573C:
 	ldr r0, [r4, #0x00]
 	ldr r1, _080D5768 @ =0x09EF4E38
 	mov r2, r8
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, [r4, #0x00]
 	adds r1, #0x9C
 	str r0, [r1, #0x00]

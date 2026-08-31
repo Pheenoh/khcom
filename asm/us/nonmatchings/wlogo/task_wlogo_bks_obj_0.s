@@ -65,11 +65,11 @@ task_wlogo_bks_obj_0: @ 080B7C98
 	ldr r0, _080B7D58 @ =0x09628DC0
 	movs r1, #0x80
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080B7D5C @ =0x096FB0A4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r2, _080B7D60 @ =0x09EF380C
 	ldr r1, _080B7D64 @ =0x09EF1C70

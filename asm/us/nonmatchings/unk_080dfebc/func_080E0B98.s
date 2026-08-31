@@ -20,7 +20,7 @@ func_080E0B98: @ 080E0B98
 	adds r4, r1, r0
 	cmp r2, #0xFF
 	bne _080E0BC8
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrb r1, [r4, #0x03]

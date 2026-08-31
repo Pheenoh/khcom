@@ -27,7 +27,7 @@ task_emy_83_s_2: @ 0803EC58
 	ldr r0, [r6, #0x10]
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -56,14 +56,14 @@ task_emy_83_s_2: @ 0803EC58
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r6, #0x08]
 	ldr r3, [r6, #0x0C]
 	mov r0, r9
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r10
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -80,7 +80,7 @@ task_emy_83_s_2: @ 0803EC58
 	str r7, [sp, #0x008]
 	ldr r4, _0803ED18 @ =0x0000FFFE
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x014
 	pop {r3, r4, r5}
 	mov r8, r3

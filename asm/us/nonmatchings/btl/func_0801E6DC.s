@@ -80,7 +80,7 @@ _0801E768:
 	asrs r4, r0, #0x10
 	cmp r4, #0x00
 	beq _0801E788
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0

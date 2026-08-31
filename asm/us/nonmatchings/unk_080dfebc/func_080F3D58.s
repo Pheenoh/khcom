@@ -14,7 +14,7 @@ func_080F3D58: @ 080F3D58
 	ands r0, r1
 	cmp r0, #0x00
 	beq _080F3DA8
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080F3D94 @ =0x00002710
@@ -41,7 +41,7 @@ _080F3D9C:
 	b _080F3DDA
 _080F3DA4: .4byte 0x0000270F
 _080F3DA8:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080F3DCC @ =0x00002710

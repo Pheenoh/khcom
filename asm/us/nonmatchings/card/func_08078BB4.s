@@ -212,7 +212,7 @@ _08078D42:
 	bne _08078D42
 _08078D52:
 	adds r0, r6, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r6, #0x0
 	movs r1, #0x00
 	bl func_0807682C

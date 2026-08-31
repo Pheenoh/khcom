@@ -33,10 +33,10 @@ _080C84BC:
 	cmp r0, r4
 	beq _080C84D6
 	adds r0, r1, #0x0
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 _080C84D6:
 	pop {r4, r5}

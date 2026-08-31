@@ -110,7 +110,7 @@ _080CC738:
 	ldr r1, _080CC7C0 @ =0x09EF4BC8
 	adds r0, r4, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r5, #0x0
 	adds r0, #0x90
 	movs r1, #0x00
@@ -135,10 +135,10 @@ _080CC738:
 	adds r2, r5, #0x0
 	adds r2, #0x24
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r7, #0x00]
 	ldr r0, _080CC7CC @ =0x00000147
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080CC7AA:
 	movs r0, #0x01
 _080CC7AC:

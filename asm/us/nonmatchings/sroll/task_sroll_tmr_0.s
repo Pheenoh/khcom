@@ -13,11 +13,11 @@ task_sroll_tmr_0: @ 081152A4
 	ldr r0, _081152CC @ =0x09C904B4
 	movs r1, #0xB0
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x08]
 	ldr r0, _081152D0 @ =0x09D6D114
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x0C]
 	pop {r4}
 	pop {r0}

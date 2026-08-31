@@ -8,9 +8,9 @@ mode_chkeff_2: @ 0800BF74
 	push {r4, lr}
 	ldr r4, _0800BF8C @ =0x020348B8
 	ldr r0, [r4, #0x00]
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r4}
 	pop {r0}
 	bx r0

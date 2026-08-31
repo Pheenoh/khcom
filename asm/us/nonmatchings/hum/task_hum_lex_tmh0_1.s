@@ -33,7 +33,7 @@ task_hum_lex_tmh0_1: @ 08057314
 	ble _0805735C
 	adds r0, r4, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 	b _0805735E
 	.byte 0x00, 0x00

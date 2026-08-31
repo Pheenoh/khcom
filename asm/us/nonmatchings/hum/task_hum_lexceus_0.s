@@ -42,7 +42,7 @@ task_hum_lexceus_0: @ 080560F8
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	movs r1, #0x03
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4}
 	pop {r0}
 	bx r0

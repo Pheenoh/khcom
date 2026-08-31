@@ -89,7 +89,7 @@ _0810C0C6:
 	str r1, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	b _0810C1D8
 _0810C0E8: .4byte 0x02039B84
 _0810C0EC: .4byte 0xFDFFFFFF
@@ -183,7 +183,7 @@ _0810C162:
 	str r1, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	b _0810C1D8
 _0810C1AC: .4byte 0x02000000
 _0810C1B0: .4byte 0x00000000
@@ -203,7 +203,7 @@ _0810C1B8:
 	str r1, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 _0810C1D8:
 	adds r6, r4, #0x0
 	ldr r0, [r7, #0x10]
@@ -234,7 +234,7 @@ _0810C1D8:
 	str r0, [sp, #0x00C]
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	b _0810C288
 	.byte 0x00, 0x00
 _0810C21C: .4byte 0xFFFFEFFC
@@ -250,9 +250,9 @@ _0810C220:
 	str r1, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r0, r5, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r6, r0, #0x0
 	mov r2, r9
 	ldr r0, [r2, #0x00]
@@ -286,7 +286,7 @@ _0810C220:
 	str r0, [sp, #0x00C]
 	adds r0, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _0810C288:
 	add sp, #0x014
 	pop {r3, r4, r5}

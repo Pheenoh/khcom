@@ -10,7 +10,7 @@ task_status_deckname_3: @ 080D7E34
 	movs r1, #0x0A
 	bl func_08065AE0
 	ldr r0, [r4, #0x50]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

@@ -38,7 +38,7 @@ _0805EE24:
 	lsls r1, r1, #0x13
 	ldr r2, _0805EE50 @ =0x05006000
 	mov r0, sp
-	bl func_08117FE8
+	bl CpuSet
 _0805EE40:
 	ldrh r0, [r5, #0x00]
 	adds r0, #0x01
@@ -72,11 +72,11 @@ _0805EE54:
 	ldr r0, _0805EED0 @ =0x08F69C04
 	ldr r1, _0805EED4 @ =0x05000200
 	movs r2, #0x10
-	bl func_08117FE8
+	bl CpuSet
 	ldr r0, _0805EED8 @ =0x09614718
 	ldr r1, _0805EEDC @ =0x05000220
 	movs r2, #0x10
-	bl func_08117FE8
+	bl CpuSet
 	ldr r0, _0805EEE0 @ =0x08000929
 	ldr r1, _0805EEE4 @ =0x08000919
 	ldr r2, _0805EEE8 @ =0x080009D5
@@ -99,10 +99,10 @@ _0805EED0: .4byte 0x08F69C04
 _0805EED4: .4byte 0x05000200
 _0805EED8: .4byte 0x09614718
 _0805EEDC: .4byte 0x05000220
-_0805EEE0: .4byte func_08000928
-_0805EEE4: .4byte func_08000918
-_0805EEE8: .4byte func_080009D4
-_0805EEEC: .4byte func_080009C4
+_0805EEE0: .4byte IwramAlloc
+_0805EEE4: .4byte EwramAlloc
+_0805EEE8: .4byte IwramFree
+_0805EEEC: .4byte EwramFree
 _0805EEF0: .4byte 0x0203493C
 _0805EEF4: .4byte 0x0805EEF8
 	.byte 0x0C, 0xEF, 0x05, 0x08, 0x14, 0xEF, 0x05, 0x08, 0x1C, 0xEF, 0x05, 0x08, 0x38, 0xEF, 0x05, 0x08
@@ -166,7 +166,7 @@ _0805EFAA:
 	ldr r1, _0805F030 @ =0x03007484
 	movs r0, #0x00
 	str r0, [r1, #0x00]
-	bl func_0811FDEC
+	bl m4aSoundInit
 	bl func_081204E0
 	b _0805F0C0
 	.byte 0x00, 0x00
@@ -185,7 +185,7 @@ _0805F034:
 	movs r1, #0xC0
 	lsls r1, r1, #0x13
 	ldr r2, _0805F058 @ =0x05006000
-	bl func_08117FE8
+	bl CpuSet
 	ldr r0, _0805F05C @ =0x02034958
 	ldrh r1, [r0, #0x00]
 	movs r0, #0x04

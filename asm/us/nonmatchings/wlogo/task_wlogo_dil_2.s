@@ -25,7 +25,7 @@ task_wlogo_dil_2: @ 080B5F48
 	lsls r4, r4, #0x03
 	str r4, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080B5F74:
 	add sp, #0x010
 	pop {r4, r5}

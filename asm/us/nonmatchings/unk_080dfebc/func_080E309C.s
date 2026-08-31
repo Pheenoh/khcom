@@ -37,7 +37,7 @@ func_080E309C: @ 080E309C
 	ldr r0, [r0, #0x04]
 	str r0, [sp, #0x024]
 	movs r0, #0x60
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [sp, #0x01C]
 	ldr r3, [sp, #0x00C]
 	mov r10, r3
@@ -419,7 +419,7 @@ _080E33AE:
 	orrs r0, r1
 	strh r0, [r7, #0x00]
 	ldr r0, [sp, #0x01C]
-	bl func_080009C4
+	bl EwramFree
 	add sp, #0x03C
 	pop {r3, r4, r5}
 	mov r8, r3

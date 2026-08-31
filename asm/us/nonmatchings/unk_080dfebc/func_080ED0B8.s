@@ -61,7 +61,7 @@ _080ED114:
 	ldr r2, _080ED148 @ =0x06010000
 	adds r1, r1, r2
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r4, #0x02
 	adds r5, #0x01
 	cmp r5, #0x02

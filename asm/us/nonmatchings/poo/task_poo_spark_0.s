@@ -14,21 +14,21 @@ task_poo_spark_0: @ 080D0920
 	movs r0, #0x80
 	lsls r0, r0, #0x02
 	ldr r1, _080D0960 @ =0x098A4B68
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x28]
 	ldr r0, _080D0964 @ =0x08F69BE4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x2C]
 	adds r4, #0x10
 	ldr r1, _080D0968 @ =0x09EF8CC0
 	ldr r2, _080D096C @ =0x09EF8CA0
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	pop {r4, r5}
 	pop {r0}
 	bx r0

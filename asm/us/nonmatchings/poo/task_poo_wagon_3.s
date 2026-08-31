@@ -11,13 +11,13 @@ task_poo_wagon_3: @ 080D0694
 	cmp r0, #0x00
 	beq _080D06B6
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x0C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x14]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080D06B6:
 	pop {r4}
 	pop {r0}

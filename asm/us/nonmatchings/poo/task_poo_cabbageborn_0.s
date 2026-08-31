@@ -8,7 +8,7 @@ task_poo_cabbageborn_0: @ 080D1628
 	push {r4, lr}
 	adds r4, r0, #0x0
 	movs r1, #0x20
-	bl func_08000E64
+	bl TaskPoolInit
 	movs r1, #0x00
 	strh r1, [r4, #0x14]
 	strh r1, [r4, #0x16]

@@ -12,7 +12,7 @@ task_wlogo_bks_obj_2: @ 080B7E10
 	ldr r2, [r5, #0x40]
 	movs r0, #0x00
 	movs r3, #0x01
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r6, r0, #0x0
 	ldr r0, [r5, #0x2C]
 	lsls r0, r0, #0x08
@@ -30,7 +30,7 @@ task_wlogo_bks_obj_2: @ 080B7E10
 	adds r5, #0x48
 	ldrh r4, [r5, #0x00]
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r4, r5, r6}
 	pop {r0}

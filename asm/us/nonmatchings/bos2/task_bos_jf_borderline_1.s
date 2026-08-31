@@ -26,23 +26,23 @@ task_bos_jf_borderline_1: @ 080C1558
 	str r0, [r2, #0x00]
 	adds r0, r5, #0x0
 	adds r0, #0x1C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x0C]
 	adds r0, r5, #0x0
 	adds r0, #0x34
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x10]
 	adds r0, r5, #0x0
 	adds r0, #0x4C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x14]
 	adds r0, r5, #0x0
 	adds r0, #0x64
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x18]
 	adds r0, r5, #0x0
 	adds r0, #0x80
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x7C]
 	movs r0, #0x01
 	pop {r4, r5}

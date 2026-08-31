@@ -7,7 +7,7 @@
 task_ms_shop_hosi_3: @ 08109614
 	push {lr}
 	ldr r0, [r0, #0x1C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	pop {r0}
 	bx r0
 .syntax divided

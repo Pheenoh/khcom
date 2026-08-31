@@ -110,7 +110,7 @@ _080B57E6:
 	ldr r0, _080B5870 @ =0x02034C68
 	ldr r1, _080B5874 @ =0x09EF18BC
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 	ldrb r1, [r4, #0x00]
 	movs r0, #0x01
 	subs r0, r0, r1
@@ -119,7 +119,7 @@ _080B5816:
 	adds r4, r5, #0x0
 	adds r4, #0x30
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x2C]
 	ldrh r0, [r5, #0x1E]
 	cmp r0, #0x28
@@ -176,9 +176,9 @@ _080B5880:
 _080B5892:
 	ldr r4, _080B58AC @ =0x02034C68
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 	movs r0, #0x01
 _080B58A2:
 	add sp, #0x010

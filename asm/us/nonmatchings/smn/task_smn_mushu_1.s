@@ -117,7 +117,7 @@ _08043932:
 	ldr r2, [r6, #0x0C]
 	bl func_080140E0
 	ldr r0, _0804398C @ =0x00000235
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0804395A:
 	movs r1, #0xA6
 	lsls r1, r1, #0x01
@@ -162,7 +162,7 @@ _08043990:
 	ldr r2, [r6, #0x0C]
 	bl func_080140E0
 	ldr r0, _080439D8 @ =0x00000239
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080439B8:
 	movs r3, #0xA6
 	lsls r3, r3, #0x01
@@ -200,7 +200,7 @@ _080439EA:
 	movs r3, #0x00
 	bl func_08019068
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _08043A0C
@@ -316,7 +316,7 @@ _08043AD8:
 _08043ADA:
 	bl func_08019A30
 	ldr r0, _08043B1C @ =0x0000024D
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, [r6, #0x34]
 	ldr r1, [r6, #0x38]
 	movs r2, #0x04
@@ -419,11 +419,11 @@ _08043BA4:
 	beq _08043BB8
 	adds r0, r7, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 _08043BB8:
 	adds r0, r7, #0x0
 	adds r0, #0x20
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _08043BC2:
 	add sp, #0x020

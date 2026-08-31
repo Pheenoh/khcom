@@ -67,7 +67,7 @@ _080049A8:
 	ldr r1, [r5, #0x04]
 	ldrh r2, [r5, #0x08]
 	lsrs r2, r2, #0x01
-	bl func_08117FE8
+	bl CpuSet
 	ldr r0, _08004A2C @ =0x03007574
 	ldr r1, [r0, #0x00]
 	ldr r0, _08004A34 @ =0x000010AC
@@ -273,7 +273,7 @@ _08004B2E:
 	lsls r0, r0, #0x11
 	orrs r2, r0
 	mov r0, sp
-	bl func_08117FE8
+	bl CpuSet
 	ldr r0, _08004B7C @ =0x03007574
 	ldr r1, [r0, #0x00]
 	ldr r0, _08004B88 @ =0x000010AC

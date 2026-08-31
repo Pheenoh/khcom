@@ -27,7 +27,7 @@ task_allmap_bar_2: @ 080D418C
 	lsls r1, r1, #0x02
 	str r1, [sp, #0x00C]
 	movs r1, #0x00
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r6, #0x10]
 	lsls r1, r1, #0x08
 	asrs r1, r1, #0x10
@@ -40,7 +40,7 @@ task_allmap_bar_2: @ 080D418C
 	ldr r0, _080D4204 @ =0x000003E9
 	str r0, [sp, #0x00C]
 	movs r0, #0x80
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r6, #0x18]
 	lsls r1, r1, #0x08
 	asrs r1, r1, #0x10
@@ -53,7 +53,7 @@ task_allmap_bar_2: @ 080D418C
 	ldr r0, _080D420C @ =0x000003EA
 	str r0, [sp, #0x00C]
 	movs r0, #0x80
-	bl func_080023E0
+	bl DrawSprite
 _080D41F4:
 	add sp, #0x010
 	pop {r4, r5, r6}

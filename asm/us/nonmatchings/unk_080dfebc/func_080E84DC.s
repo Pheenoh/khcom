@@ -7,7 +7,7 @@
 func_080E84DC: @ 080E84DC
 	push {r4, lr}
 	adds r4, r0, #0x0
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E8518 @ =0x00002710

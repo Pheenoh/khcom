@@ -20,7 +20,7 @@ task_chara_mask_fade_0: @ 080C51C4
 	movs r6, #0x00
 	b _080C51F8
 _080C51E0:
-	bl func_080065A4
+	bl GetRandom
 	adds r4, r5, #0x0
 	adds r4, #0x4C
 	adds r4, r4, r6

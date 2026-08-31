@@ -16,7 +16,7 @@ task_hum_axcel_ptc_2: @ 080542BC
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, [r5, #0x28]
 	bl func_0801AF1C
 	lsls r0, r0, #0x10
@@ -43,7 +43,7 @@ task_hum_axcel_ptc_2: @ 080542BC
 	lsrs r0, r0, #0x10
 	str r0, [sp, #0x00C]
 	adds r0, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x014
 	pop {r4, r5, r6}
 	pop {r0}

@@ -12,7 +12,7 @@ func_080E5E44: @ 080E5E44
 	lsls r4, r4, #0x03
 	ldr r0, _080E5E80 @ =0x0984D134
 	adds r4, r4, r0
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrb r1, [r4, #0x04]

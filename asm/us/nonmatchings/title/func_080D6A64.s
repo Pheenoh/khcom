@@ -63,7 +63,7 @@ _080D6AAC:
 	lsrs r1, r7, #0x10
 	str r1, [sp, #0x00C]
 	adds r1, r4, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	adds r4, #0x18
 	lsls r4, r4, #0x10
 	lsrs r1, r4, #0x10
@@ -135,7 +135,7 @@ _080D6B3A:
 	str r1, [sp, #0x00C]
 	mov r7, r8
 	asrs r1, r7, #0x10
-	bl func_080023E0
+	bl DrawSprite
 	adds r5, #0x01
 	cmp r5, #0x02
 	ble _080D6B3A

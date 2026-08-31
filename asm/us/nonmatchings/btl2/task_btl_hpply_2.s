@@ -21,7 +21,7 @@ task_btl_hpply_2: @ 0802FC24
 	str r0, [sp, #0x00C]
 	movs r0, #0x04
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r4, #0x68]
 	cmp r0, #0x01
 	beq _0802FC6A
@@ -50,7 +50,7 @@ _0802FC6A:
 	movs r0, #0x04
 	str r0, [sp, #0x00C]
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r4, #0x28]
 	ldr r3, [r4, #0x18]
 	ldr r0, [r4, #0x08]
@@ -62,7 +62,7 @@ _0802FC6A:
 	movs r0, #0x04
 _0802FC92:
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 	b _0802FCCE
 	.byte 0x00, 0x00
 _0802FC9C: .4byte 0x08B23F08
@@ -76,7 +76,7 @@ _0802FCA0:
 	movs r0, #0x04
 	str r0, [sp, #0x00C]
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r4, #0x28]
 	ldr r3, [r4, #0x18]
 	ldr r0, [r4, #0x08]
@@ -87,7 +87,7 @@ _0802FCA0:
 	str r0, [sp, #0x00C]
 	movs r0, #0x04
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 _0802FCCE:
 	ldr r0, [r4, #0x68]
 	cmp r0, #0x01
@@ -155,7 +155,7 @@ _0802FDB4:
 	movs r0, #0x00
 	movs r3, #0x00
 _0802FDB8:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r1, r0, #0x0
 	ldr r0, [r4, #0x68]
 	cmp r0, #0x01
@@ -172,7 +172,7 @@ _0802FDB8:
 	str r0, [sp, #0x00C]
 	movs r0, #0x1F
 	movs r1, #0x09
-	bl func_080023E0
+	bl DrawSprite
 	b _0802FE04
 	.byte 0x00, 0x00
 _0802FDE4: .4byte 0x08B23EFE
@@ -189,7 +189,7 @@ _0802FDE8:
 	str r0, [sp, #0x00C]
 	movs r0, #0x1F
 	movs r1, #0x06
-	bl func_080023E0
+	bl DrawSprite
 _0802FE04:
 	add sp, #0x010
 	pop {r4, r5, r6}

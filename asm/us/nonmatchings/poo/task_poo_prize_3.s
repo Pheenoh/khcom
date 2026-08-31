@@ -8,9 +8,9 @@ task_poo_prize_3: @ 080D1E88
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x6C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x70]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r4, #0x10
 	adds r0, r4, #0x0
 	bl func_08012304

@@ -115,7 +115,7 @@ _0808EAD0:
 	adds r0, r7, r1
 	ldr r1, _0808EB00 @ =0x09EE4B28
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	b _0808EB32
 _0808EAF0: .4byte 0x0203A080
 _0808EAF4: .4byte 0x00000FFF
@@ -144,7 +144,7 @@ _0808EB04:
 	adds r0, r7, r1
 	ldr r1, _0808EB5C @ =0x09EE4B28
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _0808EB32:
 	movs r2, #0x80
 	lsls r2, r2, #0x11
@@ -227,7 +227,7 @@ _0808EB6A:
 	adds r0, r7, r1
 	ldr r1, _0808EC20 @ =0x09EE4B28
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	adds r4, #0x01
 	lsls r4, r4, #0x18
 	lsrs r4, r4, #0x18

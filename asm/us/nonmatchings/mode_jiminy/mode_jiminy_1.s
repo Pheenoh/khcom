@@ -153,7 +153,7 @@ _0805B5DC:
 	ldr r0, [r4, #0x00]
 	ldr r2, _0805B658 @ =0x00000C7C
 	adds r0, r0, r2
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	ldr r0, [r4, #0x00]
 	ldr r3, [r0, #0x18]
@@ -165,7 +165,7 @@ _0805B5DC:
 	str r0, [sp, #0x00C]
 	movs r0, #0x23
 	movs r1, #0x76
-	bl func_080023E0
+	bl DrawSprite
 	b _0805B662
 _0805B644: .4byte 0x02034934
 _0805B648: .4byte 0x08121400
@@ -273,7 +273,7 @@ _0805B6FC:
 	str r6, [sp, #0x00C]
 	movs r0, #0xD9
 	ldr r2, _0805B72C @ =0x08C6A6A4
-	bl func_080023E0
+	bl DrawSprite
 	b _0805B760
 _0805B72C: .4byte 0x08C6A6A4
 _0805B730:
@@ -299,7 +299,7 @@ _0805B730:
 	str r6, [sp, #0x00C]
 	movs r0, #0xD9
 	ldr r2, _0805B7C8 @ =0x08C6A69A
-	bl func_080023E0
+	bl DrawSprite
 _0805B760:
 	movs r2, #0xC0
 	lsls r2, r2, #0x01
@@ -350,7 +350,7 @@ _0805B78C:
 	str r1, [sp, #0x004]
 	str r1, [sp, #0x008]
 	str r1, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	b _0805B7FA
 	.byte 0x00, 0x00
 _0805B7C8: .4byte 0x08C6A69A
@@ -371,7 +371,7 @@ _0805B7E0:
 	str r4, [sp, #0x008]
 	str r4, [sp, #0x00C]
 	movs r1, #0x00
-	bl func_080023E0
+	bl DrawSprite
 _0805B7FA:
 	ldr r2, _0805B938 @ =0x08C6A878
 	ldr r5, _0805B93C @ =0x02034934
@@ -385,7 +385,7 @@ _0805B7FA:
 	str r4, [sp, #0x00C]
 	movs r0, #0x58
 	movs r1, #0x98
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r5, #0x00]
 	ldr r1, [r0, #0x50]
 	lsls r1, r1, #0x08
@@ -399,7 +399,7 @@ _0805B7FA:
 	movs r6, #0x01
 	str r6, [sp, #0x00C]
 	movs r0, #0x80
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r5, #0x00]
 	ldr r1, [r0, #0x54]
 	lsls r1, r1, #0x08
@@ -412,7 +412,7 @@ _0805B7FA:
 	str r4, [sp, #0x008]
 	str r6, [sp, #0x00C]
 	movs r0, #0x80
-	bl func_080023E0
+	bl DrawSprite
 _0805B850:
 	ldr r7, _0805B93C @ =0x02034934
 	ldr r4, [r7, #0x00]
@@ -452,7 +452,7 @@ _0805B85C:
 	str r4, [sp, #0x004]
 	str r4, [sp, #0x008]
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _0805B89E:
 	ldr r4, [r7, #0x00]
 	adds r0, r4, r6
@@ -485,7 +485,7 @@ _0805B89E:
 	str r4, [sp, #0x004]
 	str r4, [sp, #0x008]
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _0805B8E0:
 	bl func_08006314
 	lsls r0, r0, #0x18
@@ -508,7 +508,7 @@ _0805B8E0:
 	bgt _0805B968
 	ldr r2, _0805B964 @ =0x00000C94
 	adds r0, r4, r2
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	ldr r4, [r7, #0x00]
 	ldr r0, [r4, #0x58]
@@ -523,7 +523,7 @@ _0805B8E0:
 	str r5, [sp, #0x004]
 	str r5, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	b _0805B99E
 	.byte 0x00, 0x00
 _0805B934: .4byte 0x08C69C04
@@ -553,7 +553,7 @@ _0805B968:
 	str r5, [sp, #0x004]
 	str r5, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r7, #0x00]
 	movs r3, #0xCC
 	lsls r3, r3, #0x04

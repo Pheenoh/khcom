@@ -67,9 +67,9 @@ _080D25D4:
 _080D25F6:
 	adds r4, #0x80
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080D2604:
 	add sp, #0x008
 	pop {r4, r5}

@@ -35,7 +35,7 @@ _08111E32:
 	subs r0, #0x19
 	b _08111E50
 _08111E3C:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x41
@@ -54,7 +54,7 @@ _08111E52:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x004
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x10
@@ -76,7 +76,7 @@ _08111E86:
 _08111E88:
 	adds r0, r4, #0x0
 	adds r0, #0x28
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r6, #0x0
 	add sp, #0x008
 	pop {r4, r5, r6}

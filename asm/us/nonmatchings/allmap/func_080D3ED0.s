@@ -7,26 +7,26 @@
 func_080D3ED0: @ 080D3ED0
 	push {r4, r5, lr}
 	movs r0, #0x02
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r5, r0, #0x0
 	adds r1, r5, #0x0
 	adds r1, #0x1C
 	ldr r4, _080D3F0C @ =0x08125E24
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r1, r5, #0x0
 	adds r1, #0x5C
 	adds r4, #0x40
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r1, r5, #0x0
 	adds r1, #0x9C
 	adds r4, #0x40
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	pop {r4, r5}
 	pop {r0}
 	bx r0

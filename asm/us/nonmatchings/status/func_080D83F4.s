@@ -11,7 +11,7 @@ func_080D83F4: @ 080D83F4
 	ldr r1, _080D846C @ =0x000004AC
 	adds r0, r0, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r2, #0x07
 	movs r5, #0x92
 	lsls r5, r5, #0x03

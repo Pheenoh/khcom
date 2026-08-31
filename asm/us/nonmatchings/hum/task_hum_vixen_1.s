@@ -122,7 +122,7 @@ _08054598:
 _080545A4:
 	movs r0, #0xA2
 	lsls r0, r0, #0x02
-	bl func_0811FF3C
+	bl m4aSongNumStop
 	b _080545D0
 _080545AE:
 	mov r0, r8
@@ -183,7 +183,7 @@ _08054610:
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080546DA
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -233,7 +233,7 @@ _08054674:
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080546DA
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03

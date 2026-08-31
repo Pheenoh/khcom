@@ -74,12 +74,12 @@ _0800E1E6:
 	lsls r0, r0, #0x15
 	lsrs r0, r0, #0x10
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r6, #0x04]
 	mov r1, r9
 	ldr r0, [r1, #0x04]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x08]
 	movs r2, #0xBC
 	lsls r2, r2, #0x01
@@ -129,20 +129,20 @@ _0800E1E6:
 	adds r0, #0x14
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	adds r4, r6, #0x0
 	adds r4, #0x2C
 	adds r0, r4, #0x0
 	movs r1, #0x03
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _0800E300 @ =0x09EDAE88
 	adds r0, r4, #0x0
 	mov r2, r8
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, _0800E304 @ =0x09EDB3F8
 	adds r0, r4, #0x0
 	mov r2, r8
-	bl func_08000E14
+	bl TaskCreate
 	movs r0, #0xB8
 	lsls r0, r0, #0x01
 	adds r1, r6, r0

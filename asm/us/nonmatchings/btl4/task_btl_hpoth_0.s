@@ -9,13 +9,13 @@ task_btl_hpoth_0: @ 0805D2E4
 	adds r7, r0, #0x0
 	ldr r0, _0805D370 @ =0x096FAC64
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x0C]
 	movs r5, #0xA0
 	lsls r5, r5, #0x02
 	ldr r1, _0805D374 @ =0x08B20D6E
 	adds r0, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x10]
 	ldr r0, _0805D378 @ =0x08B20D20
 	str r0, [r7, #0x20]
@@ -24,24 +24,24 @@ task_btl_hpoth_0: @ 0805D2E4
 	ldr r1, _0805D37C @ =0x09EE12B0
 	ldr r2, _0805D380 @ =0x09EE12A4
 	adds r0, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _0805D384 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x08]
 	ldr r4, _0805D388 @ =0x08B24016
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x14]
 	movs r0, #0x90
 	lsls r0, r0, #0x01
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x18]
 	movs r0, #0x80
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x1C]
 	ldr r0, _0805D38C @ =0x08B23CBA
 	str r0, [r7, #0x24]
@@ -49,11 +49,11 @@ task_btl_hpoth_0: @ 0805D2E4
 	adds r0, #0x2C
 	ldr r1, _0805D390 @ =0x09EE1498
 	ldr r2, _0805D394 @ =0x09EE1420
-	bl func_08005968
+	bl AnimInit
 	adds r0, r6, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r2, _0805D398 @ =0x02039B9C
 	ldr r0, [r2, #0x00]
 	ldr r0, [r0, #0x7C]
@@ -230,7 +230,7 @@ _0805D4EA:
 	adds r0, #0x2C
 	movs r1, #0x0B
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x00
 	b _0805D56A
 _0805D4FA:
@@ -238,7 +238,7 @@ _0805D4FA:
 	adds r0, #0x2C
 	movs r1, #0x0B
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r1, #0x00
 	ldsh r0, [r4, r1]
 	cmp r0, #0x06

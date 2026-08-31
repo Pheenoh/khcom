@@ -85,7 +85,7 @@ _080B5562:
 	ldr r0, _080B5574 @ =0x02034C50
 	ldr r1, _080B5578 @ =0x09EF18A4
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	b _080B55C2
 _080B5574: .4byte 0x02034C50
 _080B5578: .4byte 0x09EF18A4
@@ -156,12 +156,12 @@ _080B55F4:
 	ldr r0, _080B5614 @ =0x09638C84
 	adds r4, r4, r0
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	movs r2, #0xD0
 	lsls r2, r2, #0x02
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _080B5662
 	.byte 0x00, 0x00
 _080B5614: .4byte 0x09638C84
@@ -196,21 +196,21 @@ _080B5646:
 	ldr r0, _080B5680 @ =0x09638C84
 	adds r4, r4, r0
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	movs r2, #0xD0
 	lsls r2, r2, #0x02
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 _080B5662:
 	ldrh r0, [r5, #0x08]
 	adds r0, #0x01
 	strh r0, [r5, #0x08]
 	ldr r4, _080B5684 @ =0x02034C50
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 	movs r0, #0x01
 _080B5678:
 	pop {r4, r5}

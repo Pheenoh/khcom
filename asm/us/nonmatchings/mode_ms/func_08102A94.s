@@ -6,10 +6,10 @@
 	.type func_08102A94, %function
 func_08102A94: @ 08102A94
 	push {r4, lr}
-	bl func_08001390
+	bl GetKeysPressed
 	movs r4, #0x0F
 	ands r4, r0
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0xFC
 	lsls r1, r1, #0x02
 	ands r1, r0

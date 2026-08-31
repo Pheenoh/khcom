@@ -11,9 +11,9 @@ task_poo_pile_3: @ 080CD510
 	cmp r0, #0x00
 	beq _080CD526
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080CD526:
 	adds r0, r4, #0x0
 	adds r0, #0xCC
@@ -29,7 +29,7 @@ _080CD526:
 _080CD540:
 	adds r0, r4, #0x0
 	adds r0, #0xB4
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

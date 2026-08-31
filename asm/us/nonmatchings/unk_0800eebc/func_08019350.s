@@ -55,12 +55,12 @@ _08019394:
 	ands r0, r1
 	cmp r0, #0x00
 	bne _080193D0
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080193D0
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -102,7 +102,7 @@ _08019410: .4byte 0x02039B84
 _08019414:
 	bl func_08076324
 _08019418:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x04
 	ands r1, r0
 	cmp r1, #0x00
@@ -126,13 +126,13 @@ _08019428:
 	.byte 0x00, 0x00
 _08019448: .4byte 0x02039B84
 _0801944C:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	lsls r1, r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00
 	beq _08019480
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	lsls r1, r1, #0x01
 	ands r1, r0
@@ -156,13 +156,13 @@ _08019480:
 	movs r1, #0x00
 	strb r1, [r0, #0x00]
 _0801948A:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	lsls r1, r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080194C0
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -264,7 +264,7 @@ _08019560: .4byte 0x02039B84
 _08019564:
 	bl func_0807633C
 _08019568:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00

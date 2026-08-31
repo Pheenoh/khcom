@@ -14,7 +14,7 @@ func_0808CBB4: @ 0808CBB4
 	cmp r5, #0x00
 	bne _0808CBF4
 	movs r0, #0x03
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	ldr r5, _0808CBF0 @ =0x0940F918
 	lsls r4, r6, #0x06
@@ -25,12 +25,12 @@ func_0808CBB4: @ 0808CBB4
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r4, #0x20
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _0808CC4A
 _0808CBF0: .4byte 0x0940F918
 _0808CBF4:
@@ -48,7 +48,7 @@ _0808CBF4:
 	subs r1, r5, r1
 	strb r1, [r2, #0x01]
 	movs r0, #0x03
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	mov r0, sp
 	ldrb r0, [r0, #0x00]
@@ -63,7 +63,7 @@ _0808CBF4:
 	adds r4, r1, r4
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	ldrb r0, [r0, #0x01]
 	adds r0, #0x01
@@ -72,7 +72,7 @@ _0808CBF4:
 	adds r4, #0x20
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 _0808CC4A:
 	add sp, #0x004
 	pop {r4, r5, r6}

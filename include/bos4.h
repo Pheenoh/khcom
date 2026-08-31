@@ -150,9 +150,9 @@ void task_bos_boogie_knife_3(BoogieKnifeWork* work);
 void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work);
 void func_0801B7D8(void* a);
 void func_08012304(void* a);
-void func_080028C0(void* a);
-void func_08002C10(void* a);
-void func_08000F0C(void* a);
+void ReleaseObjTiles(void* a);
+void ReleaseObjPalette(void* a);
+void TaskPoolDestroy(void* a);
 
 void task_bos_boogie_knifereader_2(BoogieKnifereaderWork* work);
 void task_bos_boogie_knifereader_3(BoogieKnifereaderWork* work);

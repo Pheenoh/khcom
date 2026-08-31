@@ -10,7 +10,7 @@ func_0801DEF4: @ 0801DEF4
 	ldr r0, [r4, #0x04]
 	cmp r0, #0x00
 	beq _0801DF02
-	bl func_08002C10
+	bl ReleaseObjPalette
 _0801DF02:
 	movs r0, #0x00
 	str r0, [r4, #0x00]

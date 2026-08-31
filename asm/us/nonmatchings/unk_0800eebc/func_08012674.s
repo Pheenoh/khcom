@@ -19,7 +19,7 @@ func_08012674: @ 08012674
 	ldr r0, _0801269C @ =0x02034928
 	ldr r0, [r0, #0x00]
 	ldr r0, [r0, #0x00]
-	bl func_080055C8
+	bl SetBgPriority
 	b _080126AC
 	.byte 0x00, 0x00
 _08012698: .4byte 0x02039B84
@@ -29,7 +29,7 @@ _080126A0:
 	ldr r0, [r0, #0x00]
 	ldr r0, [r0, #0x00]
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 _080126AC:
 	ldr r4, _080126E0 @ =0x02034928
 	ldr r0, [r4, #0x00]

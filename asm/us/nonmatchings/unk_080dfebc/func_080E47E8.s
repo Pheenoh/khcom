@@ -41,7 +41,7 @@ _080E4814:
 	beq _080E488C
 	b _080E48EA
 _080E482E:
-	bl func_080065A4
+	bl GetRandom
 	ldr r3, _080E4888 @ =0x0203C7B0
 	ldrb r4, [r3, #0x03]
 	lsls r0, r0, #0x10
@@ -84,7 +84,7 @@ _080E482E:
 	.byte 0x00, 0x00
 _080E4888: .4byte 0x0203C7B0
 _080E488C:
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, _080E48FC @ =0x0203C7B0
 	ldrb r4, [r1, #0x03]
 	lsls r0, r0, #0x10

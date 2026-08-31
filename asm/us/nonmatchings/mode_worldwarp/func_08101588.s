@@ -39,7 +39,7 @@ _081015AE:
 	adds r4, r7, #0x1
 	adds r1, r6, #0x0
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	subs r6, r6, r5
 	adds r7, r4, #0x0
 	cmp r7, r9

@@ -80,20 +80,20 @@ _080AA4C2:
 	ldr r0, [r0, #0x00]
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x10]
 	ldr r0, [r7, #0x04]
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x14]
 	ldr r0, [r7, #0x08]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x24]
 	ldr r0, _080AA5D8 @ =0x09611AB8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x20]
 	ldr r3, _080AA5DC @ =0x000004D4
 	adds r2, r5, r3
@@ -153,7 +153,7 @@ _080AA56A:
 	ldr r2, _080AA5EC @ =0x09614318
 	adds r0, r0, r2
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	movs r4, #0x00
 	lsls r6, r6, #0x05
 _080AA588:
@@ -202,7 +202,7 @@ _080AA5F6:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x02
-	bl func_0800510C
+	bl LoadBgMap
 	movs r0, #0x00
 	bl func_080AA6D4
 	b _080AA626

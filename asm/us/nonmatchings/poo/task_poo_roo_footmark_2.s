@@ -37,7 +37,7 @@ task_poo_roo_footmark_2: @ 080CF198
 	ldr r0, [r4, #0x04]
 	cmp r0, #0x00
 	beq _080CF24C
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x1C
 	bl func_080CCBD4
@@ -52,7 +52,7 @@ _080CF1F4:
 	bne _080CF22A
 	ldr r0, _080CF254 @ =0x09849D18
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	adds r5, r4, #0x0
 	adds r5, #0x1C
@@ -86,7 +86,7 @@ _080CF22A:
 	str r4, [sp, #0x008]
 	ldr r4, _080CF258 @ =0x0000FFF1
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080CF24C:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

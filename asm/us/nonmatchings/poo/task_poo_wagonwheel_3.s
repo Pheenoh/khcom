@@ -24,9 +24,9 @@ _080D0908:
 	cmp r0, #0x00
 	beq _080D091A
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080D091A:
 	pop {r4}
 	pop {r0}

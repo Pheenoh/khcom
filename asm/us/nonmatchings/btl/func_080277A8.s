@@ -28,7 +28,7 @@ _080277CE:
 	ldr r0, _080277E0 @ =0x096FAC64
 _080277D0:
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x08]
 	pop {r4}
 	pop {r0}

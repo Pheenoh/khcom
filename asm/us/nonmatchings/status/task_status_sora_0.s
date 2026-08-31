@@ -16,11 +16,11 @@ task_status_sora_0: @ 080D7CB0
 	movs r0, #0x80
 	lsls r0, r0, #0x04
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080D7CF4 @ =0x09618118
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r0, [r5, #0x00]
 	ldr r1, _080D7CF8 @ =0x0891ED26
@@ -30,7 +30,7 @@ task_status_sora_0: @ 080D7CB0
 	ldr r1, _080D7CFC @ =0x09EDF38C
 	ldr r2, _080D7D00 @ =0x09EDF374
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	b _080D7D30
 	.byte 0x00, 0x00
 _080D7CF0: .4byte 0x02039BB0
@@ -42,11 +42,11 @@ _080D7D04:
 	movs r0, #0xA0
 	lsls r0, r0, #0x03
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080D7D48 @ =0x08F683A4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r0, [r5, #0x00]
 	ldr r1, _080D7D4C @ =0x088E33C2
@@ -56,14 +56,14 @@ _080D7D04:
 	ldr r1, _080D7D50 @ =0x09EDEE14
 	ldr r2, _080D7D54 @ =0x09EDEE08
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 _080D7D30:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x08]
 	pop {r4, r5}
 	pop {r0}

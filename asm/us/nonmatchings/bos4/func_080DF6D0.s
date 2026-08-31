@@ -15,7 +15,7 @@ func_080DF6D0: @ 080DF6D0
 	orrs r0, r1
 	strh r0, [r4, #0x00]
 	ldr r0, [r4, #0x04]
-	bl func_08006578
+	bl SeedRandom
 	ldr r2, _080DF720 @ =0x0203C7AC
 	ldr r1, [r2, #0x00]
 	ldrb r0, [r4, #0x08]

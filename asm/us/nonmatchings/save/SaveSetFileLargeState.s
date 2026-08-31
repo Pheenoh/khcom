@@ -18,7 +18,7 @@ SaveSetFileLargeState: @ 08009330
 	lsrs r4, r4, #0x10
 	ldr r6, _08009388 @ =0x00000F14
 	adds r0, r6, #0x0
-	bl func_08000918
+	bl EwramAlloc
 	adds r5, r0, #0x0
 	adds r1, r6, #0x0
 	bl ZeroFill
@@ -100,7 +100,7 @@ _080093DA:
 	adds r0, r5, #0x0
 	bl WriteAndVerifySramFast
 	adds r0, r5, #0x0
-	bl func_080009C4
+	bl EwramFree
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

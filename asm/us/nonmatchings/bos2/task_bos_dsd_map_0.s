@@ -10,12 +10,12 @@ task_bos_dsd_map_0: @ 080C3DE4
 	movs r2, #0x80
 	lsls r2, r2, #0x08
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080C3E58 @ =0x096FB744
 	movs r2, #0x90
 	lsls r2, r2, #0x01
 	movs r0, #0x00
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080C3E5C @ =0x09EF2E68
 	movs r0, #0x00
 	movs r2, #0x02

@@ -17,7 +17,7 @@ task_bos_boogie_explosiondice_0: @ 080DA508
 	subs r2, #0x0C
 	adds r1, r6, r2
 	str r0, [r1, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	movs r1, #0xAA
 	lsls r1, r1, #0x01
 	adds r4, r6, r1
@@ -29,7 +29,7 @@ task_bos_boogie_explosiondice_0: @ 080DA508
 	lsrs r0, r0, #0x10
 	adds r0, #0x4C
 	str r0, [r4, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x7F
@@ -62,35 +62,35 @@ task_bos_boogie_explosiondice_0: @ 080DA508
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080DA5E4 @ =0x0979666A
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r6, #0x08]
 	ldr r0, _080DA5E8 @ =0x0984AF98
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x0C]
 	ldr r0, _080DA5EC @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x10]
 	adds r4, r6, #0x0
 	adds r4, #0x14
 	ldr r1, _080DA5F0 @ =0x09EF6784
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r4, #0x18
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080DA5F4 @ =0x09EDB350
 	adds r2, r6, #0x0
 	adds r2, #0x40
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

@@ -18,7 +18,7 @@ _080D46A4:
 	cmp r4, #0x1F
 	ble _080D46A4
 	movs r0, #0x28
-	bl func_08000918
+	bl EwramAlloc
 	adds r1, r6, #0x0
 	adds r1, #0xF4
 	str r0, [r1, #0x00]

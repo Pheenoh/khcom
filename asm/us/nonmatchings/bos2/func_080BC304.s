@@ -120,7 +120,7 @@ _080BC84A:
 	adds r6, #0xA8
 _080BC868:
 	adds r0, r5, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x00]
 	adds r4, #0x34
 	adds r5, #0x34

@@ -44,25 +44,25 @@ task_bos_ursula_bubble_single_0: @ 080DD9E8
 	ldr r0, _080DDA90 @ =0x097A0DE4
 	movs r1, #0xA8
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x00]
 	ldr r0, _080DDA94 @ =0x0984B0F8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	ldr r0, _080DDA98 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x08]
 	subs r4, #0x18
 	ldr r1, _080DDA9C @ =0x09EF68D8
 	ldr r2, _080DDAA0 @ =0x09EF68C0
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r1, #0x9C
 	lsls r1, r1, #0x01
 	adds r0, r6, r1

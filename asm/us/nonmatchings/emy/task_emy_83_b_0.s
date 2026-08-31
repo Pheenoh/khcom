@@ -15,22 +15,22 @@ task_emy_83_b_0: @ 0803E920
 	str r0, [r4, #0x2C]
 	ldr r0, _0803E984 @ =0x08F69B84
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r1, _0803E988 @ =0x08B1B854
 	movs r0, #0x80
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	adds r5, r4, #0x0
 	adds r5, #0x08
 	ldr r1, _0803E98C @ =0x09EE10A4
 	ldr r2, _0803E990 @ =0x09EE1090
 	adds r0, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, [r6, #0x00]
 	str r0, [r4, #0x20]
 	ldr r0, [r6, #0x04]

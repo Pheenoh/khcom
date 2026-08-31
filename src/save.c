@@ -82,24 +82,24 @@ void SaveClearHeader(void) {
     u8* buf;
     s16 i;
 
-    buf = func_08000918(SAVE_HEADER_SIZE);
+    buf = EwramAlloc(SAVE_HEADER_SIZE);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
         ZeroFill(buf, SAVE_HEADER_SIZE);
         WriteAndVerifySramFast(buf, SRAM_HEADER + i * SAVE_HEADER_SIZE, SAVE_HEADER_SIZE);
     }
 
-    func_080009C4(buf);
+    EwramFree(buf);
 }
 
 int SaveCheckHeaderSlot(s16 slot) {
     u8* buf;
     int ret;
 
-    buf = func_08000918(SAVE_HEADER_SIZE);
+    buf = EwramAlloc(SAVE_HEADER_SIZE);
     ret = SaveVerifyBlock(SRAM_HEADER + (s16)(u16)slot * SAVE_HEADER_SIZE, buf, buf,
                         SAVE_HEADER_SIZE);
-    func_080009C4(buf);
+    EwramFree(buf);
     return ret;
 }
 
@@ -128,7 +128,7 @@ int SaveRepairHeader(void) {
     }
 
     if (good >= 0 && bad >= 0) {
-        buf = func_08000918(SAVE_HEADER_SIZE);
+        buf = EwramAlloc(SAVE_HEADER_SIZE);
         SaveVerifyBlock(SRAM_HEADER + good * SAVE_HEADER_SIZE, buf, buf, SAVE_HEADER_SIZE);
 
         for (i = 0; i < SAVE_SLOTS; i++) {
@@ -137,7 +137,7 @@ int SaveRepairHeader(void) {
             }
         }
 
-        func_080009C4(buf);
+        EwramFree(buf);
         ret = SAVE_OK;
     }
 
@@ -153,7 +153,7 @@ int SaveLoadHeader(void) {
     s16 i;
 
     ret = 0;
-    buf = func_08000918(SAVE_HEADER_SIZE);
+    buf = EwramAlloc(SAVE_HEADER_SIZE);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
         ret = SaveVerifyBlock(SRAM_HEADER + i * SAVE_HEADER_SIZE, buf, buf, SAVE_HEADER_SIZE);
@@ -164,7 +164,7 @@ int SaveLoadHeader(void) {
         }
     }
 
-    func_080009C4(buf);
+    EwramFree(buf);
     return ret;
 }
 
@@ -172,7 +172,7 @@ void SaveWriteHeader(s16 slot) {
     SaveHeader* hdr;
     s16 i;
 
-    hdr = func_08000918(SAVE_HEADER_SIZE);
+    hdr = EwramAlloc(SAVE_HEADER_SIZE);
     ZeroFill(hdr, SAVE_HEADER_SIZE);
     MakeSaveHeaderData(&hdr->data, (s16)(u16)slot);
     CopyBytes(gSaveSignature, (u8*)hdr, SAVE_SIGNATURE_SIZE);
@@ -183,13 +183,13 @@ void SaveWriteHeader(s16 slot) {
         WriteAndVerifySramFast((u8*)hdr, SRAM_HEADER + i * SAVE_HEADER_SIZE, SAVE_HEADER_SIZE);
     }
 
-    func_080009C4(hdr);
+    EwramFree(hdr);
 }
 
 void SaveSetHeaderState(u16 slot, u16 state) {
     SaveHeader* hdr;
 
-    hdr = func_08000918(SAVE_HEADER_SIZE);
+    hdr = EwramAlloc(SAVE_HEADER_SIZE);
     ZeroFill(hdr, SAVE_HEADER_SIZE);
     SaveVerifyBlock(SRAM_HEADER + (s16)slot * SAVE_HEADER_SIZE, (u8*)hdr, (u8*)hdr,
                     SAVE_HEADER_SIZE);
@@ -212,31 +212,31 @@ void SaveSetHeaderState(u16 slot, u16 state) {
 
     WriteAndVerifySramFast((u8*)hdr, SRAM_HEADER + (s16)slot * SAVE_HEADER_SIZE,
                            SAVE_HEADER_SIZE);
-    func_080009C4(hdr);
+    EwramFree(hdr);
 }
 
 void SaveClearSystem(void) {
     u8* buf;
     s16 i;
 
-    buf = func_08000918(SAVE_SYSTEM_SIZE);
+    buf = EwramAlloc(SAVE_SYSTEM_SIZE);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
         ZeroFill(buf, SAVE_SYSTEM_SIZE);
         WriteAndVerifySramFast(buf, SRAM_SYSTEM + i * SAVE_SYSTEM_SIZE, SAVE_SYSTEM_SIZE);
     }
 
-    func_080009C4(buf);
+    EwramFree(buf);
 }
 
 int SaveCheckSystemSlot(s16 slot) {
     u8* buf;
     int ret;
 
-    buf = func_08000918(SAVE_SYSTEM_SIZE);
+    buf = EwramAlloc(SAVE_SYSTEM_SIZE);
     ret = SaveVerifyBlock(SRAM_SYSTEM + (s16)(u16)slot * SAVE_SYSTEM_SIZE, buf, buf,
                         SAVE_SYSTEM_SIZE);
-    func_080009C4(buf);
+    EwramFree(buf);
     return ret;
 }
 
@@ -264,7 +264,7 @@ int SaveRepairSystem(void) {
     }
 
     if (good >= 0 && bad >= 0) {
-        buf = func_08000918(SAVE_SYSTEM_SIZE);
+        buf = EwramAlloc(SAVE_SYSTEM_SIZE);
         SaveVerifyBlock(SRAM_SYSTEM + good * SAVE_SYSTEM_SIZE, buf, buf, SAVE_SYSTEM_SIZE);
 
         for (i = 0; i < SAVE_SLOTS; i++) {
@@ -274,7 +274,7 @@ int SaveRepairSystem(void) {
             }
         }
 
-        func_080009C4(buf);
+        EwramFree(buf);
         ret = SAVE_OK;
     }
     
@@ -288,7 +288,7 @@ int SaveLoadSystem(void) {
     s16 slot;
 
     ret = 0;
-    buf = func_08000918(SAVE_SYSTEM_SIZE);
+    buf = EwramAlloc(SAVE_SYSTEM_SIZE);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
         slot = i;
@@ -300,7 +300,7 @@ int SaveLoadSystem(void) {
         }
     }
 
-    func_080009C4(buf);
+    EwramFree(buf);
     return ret;
 }
 
@@ -308,7 +308,7 @@ void SaveWriteSystem(void) {
     SaveBlockLarge* blk;
     s16 i;
 
-    blk = func_08000918(SAVE_SYSTEM_SIZE);
+    blk = EwramAlloc(SAVE_SYSTEM_SIZE);
     ZeroFill(blk, SAVE_SYSTEM_SIZE);
     MakeSaveSystem(&blk->data);
     CopyBytes(gSaveSignature, (u8*)blk, SAVE_SIGNATURE_SIZE);
@@ -319,13 +319,13 @@ void SaveWriteSystem(void) {
         WriteAndVerifySramFast((u8*)blk, SRAM_SYSTEM + i * SAVE_SYSTEM_SIZE, SAVE_SYSTEM_SIZE);
     }
 
-    func_080009C4(blk);
+    EwramFree(blk);
 }
 
 void SaveSetSystemState(u16 slot, u16 state) {
     SaveBlockLarge* blk;
 
-    blk = func_08000918(SAVE_SYSTEM_SIZE);
+    blk = EwramAlloc(SAVE_SYSTEM_SIZE);
     ZeroFill(blk, SAVE_SYSTEM_SIZE);
     SaveVerifyBlock(SRAM_SYSTEM + (s16)slot * SAVE_SYSTEM_SIZE, (u8*)blk, (u8*)blk,
                     SAVE_SYSTEM_SIZE);
@@ -348,7 +348,7 @@ void SaveSetSystemState(u16 slot, u16 state) {
 
     WriteAndVerifySramFast((u8*)blk, SRAM_SYSTEM + (s16)slot * SAVE_SYSTEM_SIZE,
                            SAVE_SYSTEM_SIZE);
-    func_080009C4(blk);
+    EwramFree(blk);
 }
 
 void SaveClearFileLarge(u16 file) {
@@ -357,7 +357,7 @@ void SaveClearFileLarge(u16 file) {
     s16 i;
     s32 off;
 
-    buf = func_08000918(SAVE_FILE_LARGE_SIZE);
+    buf = EwramAlloc(SAVE_FILE_LARGE_SIZE);
     i = 0;
     off = (s16)file * (SAVE_FILE_LARGE_SIZE * 2);
 
@@ -367,18 +367,18 @@ void SaveClearFileLarge(u16 file) {
         WriteAndVerifySramFast(buf, dst + off, SAVE_FILE_LARGE_SIZE);
     }
 
-    func_080009C4(buf);
+    EwramFree(buf);
 }
 
 int SaveCheckFileLargeSlot(s16 file, s16 slot) {
     u8* buf;
     int ret;
 
-    buf = func_08000918(SAVE_FILE_LARGE_SIZE);
+    buf = EwramAlloc(SAVE_FILE_LARGE_SIZE);
     ret = SaveVerifyBlock(SRAM_FILE_LARGE + (s16)(u16)file * (SAVE_FILE_LARGE_SIZE * 2)
                             + (s16)(u16)slot * SAVE_FILE_LARGE_SIZE,
                         buf, buf, SAVE_FILE_LARGE_SIZE);
-    func_080009C4(buf);
+    EwramFree(buf);
     return ret;
 }
 
@@ -409,7 +409,7 @@ int SaveRepairFileLarge(u16 file) {
     }
 
     if (good >= 0 && bad >= 0) {
-        buf = func_08000918(SAVE_FILE_LARGE_SIZE);
+        buf = EwramAlloc(SAVE_FILE_LARGE_SIZE);
         off = (s16)file * (SAVE_FILE_LARGE_SIZE * 2);
         dst = SRAM_FILE_LARGE + good * SAVE_FILE_LARGE_SIZE;
         SaveVerifyBlock(off + dst, buf, buf, SAVE_FILE_LARGE_SIZE);
@@ -421,7 +421,7 @@ int SaveRepairFileLarge(u16 file) {
             }
         }
 
-        func_080009C4(buf);
+        EwramFree(buf);
         ret = SAVE_OK;
     }
 
@@ -439,7 +439,7 @@ int SaveLoadFileLarge(u16 file) {
     s32 off;
 
     ret = 0;
-    buf = func_08000918(SAVE_FILE_LARGE_SIZE);
+    buf = EwramAlloc(SAVE_FILE_LARGE_SIZE);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
         dst = SRAM_FILE_LARGE + i * SAVE_FILE_LARGE_SIZE;
@@ -452,7 +452,7 @@ int SaveLoadFileLarge(u16 file) {
         }
     }
 
-    func_080009C4(buf);
+    EwramFree(buf);
     return ret;
 }
 
@@ -462,7 +462,7 @@ void SaveWriteFileLarge(u16 file) {
     u8* dst;
     s16 i;
 
-    blk = func_08000918(SAVE_FILE_LARGE_SIZE);
+    blk = EwramAlloc(SAVE_FILE_LARGE_SIZE);
     ZeroFill(blk, SAVE_FILE_LARGE_SIZE);
     MakeSaveFileLarge(&blk->data);
     CopyBytes(gSaveSignature, (u8*)blk, SAVE_SIGNATURE_SIZE);
@@ -475,7 +475,7 @@ void SaveWriteFileLarge(u16 file) {
                                SAVE_FILE_LARGE_SIZE);
     }
 
-    func_080009C4(blk);
+    EwramFree(blk);
     SaveWriteHeader((s16)file);
 }
 #else
@@ -486,7 +486,7 @@ INCLUDE_ASM("save/SaveWriteFileLarge.s");
 void SaveSetFileLargeState(u16 file, u16 slot, u16 state) {
     SaveBlockLarge* blk;
 
-    blk = func_08000918(SAVE_FILE_LARGE_SIZE);
+    blk = EwramAlloc(SAVE_FILE_LARGE_SIZE);
     ZeroFill(blk, SAVE_FILE_LARGE_SIZE);
     SaveVerifyBlock(SRAM_FILE_LARGE + (s16)file * (SAVE_FILE_LARGE_SIZE * 2)
                         + (s16)slot * SAVE_FILE_LARGE_SIZE,
@@ -511,7 +511,7 @@ void SaveSetFileLargeState(u16 file, u16 slot, u16 state) {
     WriteAndVerifySramFast((u8*)blk, SRAM_FILE_LARGE + (s16)file * (SAVE_FILE_LARGE_SIZE * 2)
                                + (s16)slot * SAVE_FILE_LARGE_SIZE,
                            SAVE_FILE_LARGE_SIZE);
-    func_080009C4(blk);
+    EwramFree(blk);
 }
 #else
 INCLUDE_ASM("save/SaveSetFileLargeState.s");
@@ -523,7 +523,7 @@ void SaveClearFileSmall(u16 file) {
     s16 i;
     s32 off;
 
-    buf = func_08000918(SAVE_FILE_SMALL_SIZE);
+    buf = EwramAlloc(SAVE_FILE_SMALL_SIZE);
     i = 0;
     off = (s16)file * (SAVE_FILE_SMALL_SIZE * 2);
 
@@ -533,18 +533,18 @@ void SaveClearFileSmall(u16 file) {
         WriteAndVerifySramFast(buf, dst + off, SAVE_FILE_SMALL_SIZE);
     }
     
-    func_080009C4(buf);
+    EwramFree(buf);
 }
 
 int SaveCheckFileSmallSlot(s16 file, s16 slot) {
     u8* buf;
     int ret;
 
-    buf = func_08000918(SAVE_FILE_SMALL_SIZE);
+    buf = EwramAlloc(SAVE_FILE_SMALL_SIZE);
     ret = SaveVerifyBlock(SRAM_FILE_SMALL + (s16)(u16)file * (SAVE_FILE_SMALL_SIZE * 2)
                             + (s16)(u16)slot * SAVE_FILE_SMALL_SIZE,
                         buf, buf, SAVE_FILE_SMALL_SIZE);
-    func_080009C4(buf);
+    EwramFree(buf);
     return ret;
 }
 
@@ -575,7 +575,7 @@ int SaveRepairFileSmall(u16 file) {
     }
 
     if (good >= 0 && bad >= 0) {
-        buf = func_08000918(SAVE_FILE_SMALL_SIZE);
+        buf = EwramAlloc(SAVE_FILE_SMALL_SIZE);
         off = (s16)file * (SAVE_FILE_SMALL_SIZE * 2);
         dst = SRAM_FILE_SMALL + good * SAVE_FILE_SMALL_SIZE;
         SaveVerifyBlock(off + dst, buf, buf, SAVE_FILE_SMALL_SIZE);
@@ -587,7 +587,7 @@ int SaveRepairFileSmall(u16 file) {
             }
         }
 
-        func_080009C4(buf);
+        EwramFree(buf);
         ret = SAVE_OK;
     }
 
@@ -604,7 +604,7 @@ int SaveLoadFileSmall(u16 file) {
     int ret;
     s16 i;
 
-    buf = func_08000918(SAVE_FILE_SMALL_SIZE);
+    buf = EwramAlloc(SAVE_FILE_SMALL_SIZE);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
         dst = SRAM_FILE_SMALL + i * SAVE_FILE_SMALL_SIZE;
@@ -617,7 +617,7 @@ int SaveLoadFileSmall(u16 file) {
         }
     }
 
-    func_080009C4(buf);
+    EwramFree(buf);
     return ret;
 }
 #else
@@ -630,7 +630,7 @@ void SaveWriteFileSmall(u16 file) {
     u8* dst;
     s16 i;
 
-    blk = func_08000918(SAVE_FILE_SMALL_SIZE);
+    blk = EwramAlloc(SAVE_FILE_SMALL_SIZE);
     ZeroFill(blk, SAVE_FILE_SMALL_SIZE);
     MakeSaveFileSmall(&blk->data);
     CopyBytes(gSaveSignature, (u8*)blk, SAVE_SIGNATURE_SIZE);
@@ -643,7 +643,7 @@ void SaveWriteFileSmall(u16 file) {
                                SAVE_FILE_SMALL_SIZE);
     }
 
-    func_080009C4(blk);
+    EwramFree(blk);
     SaveWriteHeader((s16)file + 2);
 }
 #else
@@ -653,7 +653,7 @@ INCLUDE_ASM("save/SaveWriteFileSmall.s");
 void SaveSetFileSmallState(u16 file, u16 slot, u16 state) {
     SaveBlockSmall* blk;
 
-    blk = func_08000918(SAVE_FILE_SMALL_SIZE);
+    blk = EwramAlloc(SAVE_FILE_SMALL_SIZE);
     ZeroFill(blk, SAVE_FILE_SMALL_SIZE);
     SaveVerifyBlock(SRAM_FILE_SMALL + (s16)file * (SAVE_FILE_SMALL_SIZE * 2)
                         + (s16)slot * SAVE_FILE_SMALL_SIZE,
@@ -678,7 +678,7 @@ void SaveSetFileSmallState(u16 file, u16 slot, u16 state) {
     WriteAndVerifySramFast((u8*)blk, SRAM_FILE_SMALL + (s16)file * (SAVE_FILE_SMALL_SIZE * 2)
                                + (s16)slot * SAVE_FILE_SMALL_SIZE,
                            SAVE_FILE_SMALL_SIZE);
-    func_080009C4(blk);
+    EwramFree(blk);
 }
 
 INCLUDE_ASM("save/func_080097CC.s");

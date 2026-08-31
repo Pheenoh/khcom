@@ -37,7 +37,7 @@ task_poo_mapbutterflyborn_1: @ 080D27B8
 	ldr r1, _080D2804 @ =0x09EF4D50
 	adds r2, r4, #0x0
 	adds r2, #0x10
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r5, #0x00]
 	b _080D2810
 	.byte 0x00, 0x00

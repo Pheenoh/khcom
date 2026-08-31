@@ -32,7 +32,7 @@ task_btl_prize_0: @ 08030B84
 	adds r0, r4, #0x0
 	bl _call_via_r5
 _08030BBA:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08030C24 @ =0x00000381
@@ -44,17 +44,17 @@ _08030BBA:
 	adds r0, r0, r2
 	negs r0, r0
 	str r0, [r4, #0x20]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x18
 	lsrs r5, r0, #0x18
 	ldr r0, _08030C28 @ =0x08B209E0
 	movs r1, #0xD0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x10]
 	ldr r0, _08030C2C @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x14]
 	strh r7, [r4, #0x28]
 	ldr r0, _08030C30 @ =0x08B208E8
@@ -148,7 +148,7 @@ _08030D56:
 	bgt _08030D9A
 	cmp r2, #0x00
 	bge _08030D84
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x4E
@@ -163,7 +163,7 @@ _08030D78: .4byte 0x08B20942
 _08030D7C: .4byte 0x02039B84
 _08030D80: .4byte 0x08121400
 _08030D84:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x4E

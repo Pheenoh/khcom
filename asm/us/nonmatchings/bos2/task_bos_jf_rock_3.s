@@ -8,23 +8,23 @@ task_bos_jf_rock_3: @ 080C1338
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x04]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r1, #0xB2
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r1, #0xB4
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r1, #0xC0
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

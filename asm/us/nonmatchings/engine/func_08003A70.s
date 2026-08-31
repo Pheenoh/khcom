@@ -19,7 +19,7 @@ func_08003A70: @ 08003A70
 	lsls r2, r2, #0x15
 	lsrs r2, r2, #0x10
 	adds r0, r3, #0x0
-	bl func_08005BE8
+	bl LoadPalette
 _08003A90:
 	pop {r0}
 	bx r0

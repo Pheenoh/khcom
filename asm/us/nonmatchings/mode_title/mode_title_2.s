@@ -7,7 +7,7 @@
 mode_title_2: @ 080D622C
 	push {lr}
 	ldr r0, _080D6264 @ =0x02034EA0
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r3, _080D6268 @ =0x04000208
 	movs r0, #0x00
 	strh r0, [r3, #0x00]
@@ -26,7 +26,7 @@ mode_title_2: @ 080D622C
 	bl func_08006C68
 	ldr r0, _080D627C @ =0x02034EC4
 	ldr r0, [r0, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

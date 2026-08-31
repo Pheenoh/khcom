@@ -10,26 +10,26 @@ task_wlogo_atl_0: @ 080B525C
 	ldr r1, _080B52CC @ =0x096FAD84
 	movs r0, #0x00
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B52D0 @ =0x09633D64
 	movs r2, #0x90
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080B52D4 @ =0x096B8464
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r5, _080B52D8 @ =0x09634664
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	adds r1, #0x20
 	movs r2, #0xD8
 	lsls r2, r2, #0x02
 	adds r0, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0x00
 	movs r1, #0x00
 	strh r1, [r4, #0x02]

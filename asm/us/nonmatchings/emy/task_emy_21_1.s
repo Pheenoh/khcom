@@ -66,7 +66,7 @@ _08039CA4:
 	bne _08039CC6
 	movs r0, #0x8B
 	lsls r0, r0, #0x02
-	bl func_0811FF3C
+	bl m4aSongNumStop
 _08039CC6:
 	movs r3, #0xA6
 	lsls r3, r3, #0x01

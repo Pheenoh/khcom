@@ -30,7 +30,7 @@ func_08076110: @ 08076110
 	lsls r0, r0, #0x02
 	adds r0, r0, r1
 	ldr r0, [r0, #0x00]
-	bl func_08120068
+	bl m4aMPlayImmInit
 	lsls r3, r6, #0x10
 	lsrs r0, r3, #0x10
 	cmp r0, #0xF0

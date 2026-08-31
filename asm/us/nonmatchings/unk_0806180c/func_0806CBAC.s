@@ -176,7 +176,7 @@ _0806CCC6:
 	adds r0, r0, r1
 	adds r1, r6, #0x0
 	movs r2, #0x40
-	bl func_08117FE8
+	bl CpuSet
 	adds r6, #0x80
 	ldr r1, _0806CD08 @ =0x02034A90
 	ldrb r0, [r1, #0x00]

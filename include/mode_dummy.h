@@ -37,7 +37,7 @@ typedef struct DummyEntry {
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern u16 gUnk_020348BC;
-extern u32 gUnk_03007480;
+extern u32 gFrameCounter;
 extern DummyEntry gUnk_08130A4C[];
 extern const char gUnk_08130BC8[];
 extern u8 gUnk_08128304[];
@@ -49,16 +49,16 @@ extern Mode gUnk_09EF8F9C;
 extern Mode gUnk_09EF4EC0;
 
 void func_08001248(void (*fn)(void));
-u16 func_08001390(void);
+u16 GetKeysPressed(void);
 void func_080010CC(Mode* mode, s32 arg);
 void func_080010E0(Mode* mode, s32 arg);
 void func_08004DB0(void);
 void func_08004FC8(s32 a);
-void func_08005074(s32 a, s32 b, s32 c, s32 d);
-void func_080050B8(s32 a, void* b, u16 c);
-void func_080050DC(s32 a, void* b, u16 c);
-void func_0800510C(s32 a, void* b, u16 c);
-void func_080054EC(s32 a, u16 b, u16 c);
+void SetupBg(s32 a, s32 b, s32 c, s32 d);
+void LoadBgTiles(s32 a, void* b, u16 c);
+void LoadBgPalette(s32 a, void* b, u16 c);
+void LoadBgMap(s32 a, void* b, u16 c);
+void SetBgScroll(s32 a, u16 b, u16 c);
 void func_08006120(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);

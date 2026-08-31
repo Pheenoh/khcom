@@ -18,7 +18,7 @@ task_bos_pc_0: @ 0810A580
 	adds r0, #0x40
 	ldr r1, _0810A724 @ =0x09EF9E0C
 	ldr r2, _0810A728 @ =0x09A3DF0C
-	bl func_08000E14
+	bl TaskCreate
 	movs r2, #0xB4
 	lsls r2, r2, #0x02
 	adds r1, r7, r2
@@ -145,30 +145,30 @@ task_bos_pc_0: @ 0810A580
 	movs r2, #0x80
 	lsls r2, r2, #0x05
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _0810A74C @ =0x09CB84B4
 	movs r1, #0xAA
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x40]
 	movs r5, #0x80
 	lsls r5, r5, #0x03
 	ldr r6, _0810A750 @ =0x09C448D2
 	adds r0, r5, #0x0
 	adds r1, r6, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x44]
 	adds r0, r5, #0x0
 	adds r1, r6, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x48]
 	ldr r0, _0810A754 @ =0x09D693D4
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x4C]
 	ldr r0, _0810A758 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x50]
 	movs r0, #0x00
 	movs r1, #0x01

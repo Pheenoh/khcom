@@ -26,7 +26,7 @@ task_btl_exp_2: @ 0805D0E8
 	str r4, [sp, #0x00C]
 	movs r0, #0x00
 	movs r1, #0x28
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r5, #0x48]
 	movs r4, #0x20
 	cmp r0, #0x02
@@ -65,7 +65,7 @@ _0805D130:
 	mov r3, r9
 	asrs r1, r3, #0x10
 	mov r3, r12
-	bl func_080023E0
+	bl DrawSprite
 	adds r4, #0x08
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10

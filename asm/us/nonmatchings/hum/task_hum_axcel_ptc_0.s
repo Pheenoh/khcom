@@ -16,18 +16,18 @@ task_hum_axcel_ptc_0: @ 08054208
 	ldr r0, _0805425C @ =0x08BF73C6
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _08054260 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	adds r4, #0x0C
 	ldr r1, _08054264 @ =0x09EE1FC0
 	ldr r2, _08054268 @ =0x09EE1F90
 	adds r0, r4, #0x0
-	bl func_08005968
-	bl func_080065A4
+	bl AnimInit
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -59,13 +59,13 @@ _08054278:
 	movs r1, #0x01
 _0805427C:
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	b _0805428E
 _08054284:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0805428E:
 	pop {r4}
 	pop {r0}

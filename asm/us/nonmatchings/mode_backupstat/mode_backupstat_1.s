@@ -8,7 +8,7 @@ mode_backupstat_1: @ 08109958
 	push {r4, r5, lr}
 	ldr r4, _08109970 @ =0x02035FE8
 	ldrb r5, [r4, #0x00]
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -18,7 +18,7 @@ mode_backupstat_1: @ 08109958
 	b _08109984
 _08109970: .4byte 0x02035FE8
 _08109974:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -78,7 +78,7 @@ _081099BE:
 	movs r2, #0x02
 	bl func_0805FCB0
 _081099EA:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x20
 	ands r1, r0
 	lsls r1, r1, #0x10
@@ -112,7 +112,7 @@ _08109A2C: .4byte 0x02035FE8
 _08109A30: .4byte 0x09993874
 _08109A34: .4byte 0x02035FF0
 _08109A38:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -138,7 +138,7 @@ _08109A38:
 _08109A68:
 	bl func_081097F4
 _08109A6C:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x0F
 	ands r1, r0
 	cmp r1, #0x00

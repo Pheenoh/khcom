@@ -57,26 +57,26 @@ _080DD332:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080DD39C @ =0x0979E344
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r6, #0x00]
 	ldr r0, _080DD3A0 @ =0x0984B0F8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	adds r4, r6, #0x0
 	adds r4, #0x08
 	ldr r1, _080DD3A4 @ =0x09EF68A0
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrh r1, [r6, #0x20]
 	adds r1, #0x04
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	adds r0, r4, #0x0
 	movs r2, #0x01
-	bl func_080059A4
-	bl func_080065A4
+	bl AnimStart
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrh r1, [r6, #0x14]

@@ -77,7 +77,7 @@ _08057070:
 	blt _0805708C
 	ldr r0, _08057088 @ =0x000002B2
 _08057078:
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r6, #0x0
 	adds r0, #0x4A
 	strh r7, [r0, #0x00]
@@ -182,13 +182,13 @@ _08057104:
 	cmp r0, #0x00
 	beq _08057146
 	ldr r0, _0805717C @ =0x000002B3
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08057146:
 	ldr r0, [r6, #0x28]
 	cmp r0, #0x00
 	blt _0805715E
 	ldr r0, _08057180 @ =0x000002B2
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, [r6, #0x3C]
 	negs r0, r0
 	asrs r0, r0, #0x01
@@ -204,7 +204,7 @@ _08057160:
 _08057166:
 	adds r0, r6, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 _08057170:
 	add sp, #0x00C

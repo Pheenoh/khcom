@@ -10,12 +10,12 @@ mode_debug_2: @ 0800B2E4
 	ldr r4, _0800B308 @ =0x02034898
 	ldr r0, [r4, #0x00]
 	ldr r0, [r0, #0x04]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x00]
 	ldr r0, [r0, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r4}
 	pop {r0}
 	bx r0

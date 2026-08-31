@@ -26,7 +26,7 @@ task_wlogo_poo_obj_2: @ 080B6DAC
 	str r4, [sp, #0x004]
 	str r4, [sp, #0x008]
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080B6DDA:
 	add sp, #0x010
 	pop {r4}

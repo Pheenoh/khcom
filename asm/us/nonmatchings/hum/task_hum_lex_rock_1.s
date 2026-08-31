@@ -113,7 +113,7 @@ _0805789C:
 	adds r4, #0x34
 _080578B0:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r4, #0x18
 	adds r7, #0x01
 	ldrh r2, [r5, #0x00]

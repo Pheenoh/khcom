@@ -47,9 +47,9 @@ _080CD3F2:
 	cmp r0, #0x00
 	beq _080CD408
 	ldr r0, [r5, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r5, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r5, #0x04]
 _080CD408:
@@ -70,16 +70,16 @@ _080CD426:
 	adds r4, r5, #0x0
 	adds r4, #0xB4
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 	b _080CD4FC
 _080CD438: .4byte 0x0203C40C
 _080CD43C: .4byte 0x0203C3F8
 _080CD440:
 	adds r0, r5, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x08]
 	ldr r0, [r5, #0x04]
 	cmp r0, #0x00
@@ -87,11 +87,11 @@ _080CD440:
 	ldr r0, _080CD4BC @ =0x09742CC2
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080CD4C0 @ =0x09849BF8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 _080CD466:
 	adds r2, r5, #0x0
@@ -155,13 +155,13 @@ _080CD4CA:
 	lsls r4, r4, #0x04
 	str r4, [sp, #0x008]
 	str r7, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r4, r5, #0x0
 	adds r4, #0xB4
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080CD4FC:
 	add sp, #0x010
 	pop {r3, r4}

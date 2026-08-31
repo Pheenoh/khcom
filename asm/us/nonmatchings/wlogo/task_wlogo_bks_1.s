@@ -69,7 +69,7 @@ _080B7924: .4byte 0x080B7928
 _080B7C0A:
 	adds r0, r6, #0x0
 	adds r0, #0x3C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4, r5, r6}
 	pop {r1}

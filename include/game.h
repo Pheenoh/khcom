@@ -147,24 +147,24 @@ typedef struct UnkStruct_02039B84 {
 
 extern UnkStruct_02039B84* gUnk_02039B84;
 
-void* func_080026A4(void* a, s32 b);
-void func_080028C0(void* a);
-void* func_08002A14(void* a, s32 b);
-void func_08002C10(void* a);
-s32 func_08002CB4(s32 a, s32 b, s32 c, s32 d);
-void func_080023E0(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void func_080050B8(s32 a, void* b, u16 c);
-void func_080050DC(s32 a, void* b, u16 c);
+void* LoadObjTiles(void* a, s32 b);
+void ReleaseObjTiles(void* a);
+void* LoadObjPalette(void* a, s32 b);
+void ReleaseObjPalette(void* a);
+s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
+void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
+void LoadBgTiles(s32 a, void* b, u16 c);
+void LoadBgPalette(s32 a, void* b, u16 c);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08005244(s32 a, u16 b, u16 c);
-void func_0801909C(s16* a, s16* b, s32 c, s32 d, s32 e);
+void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 u16 func_0801AF1C(s32 a);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
 
-void func_08000EE0(void* a);
-void func_08000F0C(void* a);
+void TaskPoolDraw(void* a);
+void TaskPoolDestroy(void* a);
 void func_0800501C(s32 a);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);

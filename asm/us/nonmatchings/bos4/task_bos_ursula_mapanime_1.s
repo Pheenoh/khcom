@@ -174,11 +174,11 @@ _080DD630:
 	ldr r1, _080DD680 @ =0x09EF5250
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r5, #0x24]
 _080DD664:
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	add sp, #0x00C
 	pop {r4, r5}

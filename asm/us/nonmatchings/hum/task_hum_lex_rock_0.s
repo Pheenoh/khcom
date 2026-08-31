@@ -52,14 +52,14 @@ _08057442:
 	ldr r0, _080574A4 @ =0x08B22CE4
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	movs r3, #0xAE
 	lsls r3, r3, #0x02
 	adds r1, r5, r3
 	str r0, [r1, #0x00]
 	ldr r0, _080574A8 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	movs r2, #0xAF
 	lsls r2, r2, #0x02
 	adds r1, r5, r2

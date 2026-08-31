@@ -11,9 +11,9 @@ task_poo_bee_3: @ 080D0E20
 	cmp r0, #0x00
 	beq _080D0E36
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080D0E36:
 	pop {r4}
 	pop {r0}

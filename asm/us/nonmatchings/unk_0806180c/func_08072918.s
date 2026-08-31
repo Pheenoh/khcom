@@ -89,7 +89,7 @@ _080729AE:
 	movs r4, #0xE2
 	lsls r4, r4, #0x02
 	adds r0, r4, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	lsls r6, r6, #0x10
 	asrs r1, r6, #0x10
 	lsls r5, r5, #0x10
@@ -100,7 +100,7 @@ _080729AE:
 _080729CC:
 	ldr r4, _080729F8 @ =0x00000389
 	adds r0, r4, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	lsls r6, r6, #0x10
 	asrs r1, r6, #0x10
 	lsls r5, r5, #0x10
@@ -113,7 +113,7 @@ _080729E2:
 	movs r4, #0xE2
 	lsls r4, r4, #0x02
 	adds r0, r4, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	asrs r1, r6, #0x10
 	asrs r2, r5, #0x10
 	b _08072A3A
@@ -122,7 +122,7 @@ _080729F8: .4byte 0x00000389
 _080729FC:
 	ldr r4, _08072A0C @ =0x00000389
 	adds r0, r4, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	asrs r1, r6, #0x10
 	asrs r2, r5, #0x10
 	b _08072A3A
@@ -147,7 +147,7 @@ _08072A28:
 	lsls r4, r4, #0x02
 _08072A2C:
 	adds r0, r4, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	lsls r1, r6, #0x10
 	asrs r1, r1, #0x10
 	lsls r2, r5, #0x10
@@ -159,7 +159,7 @@ _08072A3A:
 _08072A42:
 	ldr r4, _08072A60 @ =0x00000389
 	adds r0, r4, #0x0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	lsls r1, r6, #0x10
 	asrs r1, r1, #0x10
 	lsls r2, r5, #0x10

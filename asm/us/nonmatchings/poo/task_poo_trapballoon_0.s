@@ -28,30 +28,30 @@ task_poo_trapballoon_0: @ 080CC5F0
 	ldr r1, _080CC67C @ =0x09EF5AE0
 	adds r0, r4, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x08]
 	adds r4, #0xA4
 	adds r0, r4, #0x0
 	movs r1, #0x03
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080CC680 @ =0x09EF4928
 	adds r2, r7, #0x0
 	adds r2, #0x24
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	adds r1, r7, #0x0
 	adds r1, #0xC4
 	str r0, [r1, #0x00]
 	adds r0, r7, #0x0
 	adds r0, #0xC8
 	str r5, [r0, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	adds r1, r7, #0x0
 	adds r1, #0xCE
 	strh r0, [r1, #0x00]

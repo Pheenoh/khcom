@@ -9,23 +9,23 @@ func_080E0878: @ 080E0878
 	ldr r4, _080E08B4 @ =0x02039BA0
 	ldr r0, [r4, #0x00]
 	adds r0, #0x78
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x00]
 	adds r0, #0x8C
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x00]
 	adds r0, #0xA0
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x00]
 	adds r0, #0xC8
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x00]
 	adds r0, #0xB4
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, _080E08B8 @ =0x0203C7AC
 	ldr r0, [r0, #0x00]
 	adds r0, #0x30
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

@@ -68,7 +68,7 @@ _08084EAE:
 	beq _08084ED0
 	adds r0, r2, #0x0
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x1C]
 	mov r0, r9
 	adds r0, #0x01

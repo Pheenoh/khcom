@@ -13,7 +13,7 @@ func_0801CA88: @ 0801CA88
 	ldr r2, _0801CAF4 @ =0x05000084
 	mov r0, sp
 	adds r1, r4, #0x0
-	bl func_08117FE8
+	bl CpuSet
 	ldr r0, _0801CAF8 @ =0x03006C10
 	ldr r0, [r0, #0x00]
 	movs r1, #0x80

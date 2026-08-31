@@ -10,18 +10,18 @@ task_poo_sora_3: @ 080CBA08
 	ldr r0, _080CBA44 @ =0x0203C420
 	bl func_080D2D0C
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x38
 	bl func_08012304
 	adds r0, r4, #0x0
 	adds r0, #0x24
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, _080CBA48 @ =0x02039BA0
 	ldr r0, [r0, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	adds r0, r4, #0x0
 	adds r0, #0xB0
 	bl func_080CCBD4

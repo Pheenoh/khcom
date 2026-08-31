@@ -17,7 +17,7 @@ func_0804FAD4: @ 0804FAD4
 	mov r10, r0
 	adds r0, r6, #0x0
 	adds r0, #0x10
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [sp, #0x014]
 	adds r4, r5, #0x0
 	adds r4, #0x40
@@ -91,7 +91,7 @@ _0804FB7A:
 	movs r0, #0x00
 	movs r3, #0x01
 _0804FB7E:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r7, r0, #0x0
 _0804FB84:
 	ldr r0, _0804FBD8 @ =0x0000FFF0
@@ -104,7 +104,7 @@ _0804FB84:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	mov r1, r10
 	ldr r0, [r1, #0x04]
 	ldr r1, [r6, #0x28]
@@ -124,7 +124,7 @@ _0804FB84:
 	mov r2, r9
 	str r2, [sp, #0x00C]
 	ldr r2, [sp, #0x014]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x018
 	pop {r3, r4, r5}
 	mov r8, r3

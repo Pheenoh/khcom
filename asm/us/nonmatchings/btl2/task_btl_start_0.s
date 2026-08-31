@@ -42,12 +42,12 @@ task_btl_start_0: @ 08031AEC
 	mov r1, r8
 	strh r0, [r1, #0x00]
 	movs r0, #0x8F
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, [r6, #0x00]
 	adds r0, r0, r5
 	ldrh r0, [r0, #0x00]
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6}
