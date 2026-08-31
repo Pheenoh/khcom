@@ -8,6 +8,36 @@ typedef struct AnimFrame {
     u16 unk_02;
 } AnimFrame;
 
+typedef struct ObjTiles {
+    void* unk_00;
+    u16 unk_04;
+    u16 unk_06;
+    u16 unk_08;
+    u16 unk_0A;
+    u8 unk_0C[0x10];
+    u8 unk_1C[0x04];
+    u32 unk_20;
+    u8 unk_24;
+    u8 unk_25[0x03];
+    u32 unk_28;
+    struct ObjTiles* unk_2C;
+} ObjTiles;
+
+typedef struct PaletteSlot {
+    void* unk_00;
+    void* unk_04;
+    u8 unk_08[0x20];
+    u8 unk_28;
+    u8 unk_29;
+    u8 unk_2A[0x02];
+} PaletteSlot;
+
+typedef struct Dma3Request {
+    void* src;
+    void* dst;
+    u16 size;
+} Dma3Request;
+
 typedef struct AnimHeader {
     u32 unk_00;
     u16 unk_04;
@@ -34,6 +64,9 @@ extern u8 gBgPaletteBank[];
 extern u16 gUnk_03007500;
 
 extern u8* gUnk_030074C8;
+extern Dma3Request* gDma3Requests;
+extern u16 gUnk_0300786C;
+extern u32 gRandomState[4];
 extern u8* gUnk_03007568;
 extern u16 gUnk_03007544;
 extern u16 gUnk_030074FC;
