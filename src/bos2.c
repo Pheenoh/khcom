@@ -22,9 +22,33 @@ INCLUDE_ASM("bos2/func_080BA2B0.s");
 INCLUDE_ASM("bos2/task_bos_tm_foot_0.s");
 INCLUDE_ASM("bos2/task_bos_tm_foot_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_foot_2.s");
-INCLUDE_ASM("bos2/task_bos_tm_foot_3.s");
+
+void task_bos_tm_foot_3(TmFootWork* work) {
+    if ((*(u16*)((u8*)*(void**)((u8*)work + 0x47C) + 40) & 8) == 0) {
+        func_080BA0F8((u8*)work + 0x24C);
+        func_080BA0F8((u8*)work + 0x364);
+    }
+
+    func_080028C0((void*)work->unk_008);
+    func_08002C10((void*)work->unk_014);
+    func_08002C10((void*)work->unk_018);
+}
+
 INCLUDE_ASM("bos2/func_080BB1B8.s");
-INCLUDE_ASM("bos2/task_bos_tm_clb_0.s");
+
+void task_bos_tm_clb_0(TmClbWork* work, void* arg) {
+    void* p;
+
+    work->unk_004 = (u32)func_080026A4(gUnk_09652E84, 0x1D80);
+    work->unk_008 = (u32)func_08002A14(gUnk_096FB2A4, 0x60);
+    work->unk_000 = (u32)arg;
+    p = ((void**)arg)[2];
+    work->unk_00C = *(u16*)((u8*)p + 12);
+    work->unk_010 = *(u32*)p;
+    work->unk_014 = *(u32*)((u8*)p + 4);
+    work->unk_018 = *(u32*)((u8*)p + 8);
+}
+
 INCLUDE_ASM("bos2/task_bos_tm_clb_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_clb_2.s");
 
@@ -64,7 +88,15 @@ INCLUDE_ASM("bos2/task_bos_tm_arm_0.s");
 INCLUDE_ASM("bos2/func_080BC304.s");
 INCLUDE_ASM("bos2/task_bos_tm_arm_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_arm_2.s");
-INCLUDE_ASM("bos2/task_bos_tm_arm_3.s");
+
+void task_bos_tm_arm_3(TmArmWork* work) {
+    func_080028C0((void*)work->unk_000);
+    func_080028C0((void*)work->unk_238);
+    func_08002C10((void*)work->unk_004);
+    func_08002C10((void*)work->unk_008);
+    func_08000F0C(&work->unk_1B4);
+}
+
 INCLUDE_ASM("bos2/task_bos_tm_tbl_0.s");
 INCLUDE_ASM("bos2/task_bos_tm_tbl_1.s");
 
@@ -105,7 +137,12 @@ INCLUDE_ASM("bos2/task_bos_jf_rock_3.s");
 INCLUDE_ASM("bos2/task_bos_jf_borderline_0.s");
 INCLUDE_ASM("bos2/task_bos_jf_borderline_1.s");
 INCLUDE_ASM("bos2/task_bos_jf_borderline_2.s");
-INCLUDE_ASM("bos2/task_bos_jf_borderline_3.s");
+
+void task_bos_jf_borderline_3(JfBorderlineWork* work) {
+    func_080028C0((void*)work->unk_004);
+    func_08002C10((void*)work->unk_008);
+}
+
 INCLUDE_ASM("bos2/func_080C1A48.s");
 INCLUDE_ASM("bos2/task_bos_dsd_0.s");
 INCLUDE_ASM("bos2/task_bos_dsd_1.s");
@@ -201,6 +238,5 @@ INCLUDE_ASM("bos2/task_bos_dsd_energy2_2.s");
 
 void task_bos_dsd_energy2_3(void) {
 }
-
 
 ALIGN_ZERO(2);
