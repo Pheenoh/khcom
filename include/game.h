@@ -164,6 +164,14 @@ void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
 
+void func_08000EE0(void* a);
+void func_08000F0C(void* a);
+void func_0800501C(s32 a);
+void func_08012304(void* a);
+void func_0801B7D8(void* a);
+
+extern u8 gUnk_09EF2AA4[];
+
 extern u8 gUnk_08B22BA8[];
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_08F69BA4[];
