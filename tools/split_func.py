@@ -39,6 +39,16 @@ def parse_bytes(line):
     return bytes(int(x, 16) for x in BYTE_RE.match(line).group(1).split(","))
 
 
+def patch_tu(tu_name, chunk, names):
+    tu = Path("src") / f"{tu_name}.c"
+    text = tu.read_text()
+    anchor = f'INCLUDE_ASM("{tu_name}/{chunk}.s");\n'
+    if anchor not in text:
+        sys.exit(f"error: {anchor.strip()} not found in {tu}")
+    added = "".join(f'INCLUDE_ASM("{tu_name}/{n}.s");\n' for n in names)
+    tu.write_text(text.replace(anchor, anchor + added, 1))
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("tu")
@@ -56,6 +66,30 @@ def main():
     start = next((int(m.group(2), 16) for m in map(LABEL_RE.match, lines) if m), None)
     if start is None:
         sys.exit(f"error: no address label in {path}")
+
+    labels = {}
+    for i, line in enumerate(lines):
+        m = re.match(r"^_([0-9A-Fa-f]{8}):\s*$", line)
+        if m:
+            labels[int(m.group(1), 16)] = i
+
+    if all(addr in labels for addr, _ in splits):
+        cuts = [labels[addr] for addr, _ in splits]
+        end = len(lines)
+        while end > 0 and lines[end - 1].startswith(".syntax divided"):
+            end -= 1
+        bounds = cuts + [end]
+        head = "".join(lines[:cuts[0]]).rstrip("\n") + "\n"
+        path.write_text(head + ".syntax divided\n")
+        for i, (addr, name) in enumerate(splits):
+            body = "".join(lines[bounds[i] + 1:bounds[i + 1]])
+            (asm_dir / f"{name}.s").write_text(
+                HEADER.format(name=name, addr=addr) + body + ".syntax divided\n"
+            )
+        patch_tu(args.tu, args.chunk, [n for _, n in splits])
+        for _, name in splits:
+            print(f"wrote {asm_dir / (name + '.s')}")
+        return
 
     tail = len(lines)
     while tail > 0 and not BYTE_RE.match(lines[tail - 1]):
@@ -83,13 +117,7 @@ def main():
             HEADER.format(name=name, addr=addr) + emit_bytes(chunk) + ".syntax divided\n"
         )
 
-    tu = Path("src") / f"{args.tu}.c"
-    text = tu.read_text()
-    anchor = f'INCLUDE_ASM("{args.tu}/{args.chunk}.s");\n'
-    if anchor not in text:
-        sys.exit(f"error: {anchor.strip()} not found in {tu}")
-    added = "".join(f'INCLUDE_ASM("{args.tu}/{n}.s");\n' for _, n in splits)
-    tu.write_text(text.replace(anchor, anchor + added, 1))
+    patch_tu(args.tu, args.chunk, [n for _, n in splits])
 
     for _, name in splits:
         print(f"wrote {asm_dir / (name + '.s')}")
