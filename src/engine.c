@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "engine.h"
 #include "types.h"
 
 INCLUDE_ASM("engine/func_0800216C.s");
@@ -15,7 +16,13 @@ INCLUDE_ASM("engine/func_08002A10.s");
 INCLUDE_ASM("engine/func_08002A14.s");
 INCLUDE_ASM("engine/func_08002BAC.s");
 INCLUDE_ASM("engine/func_08002BCC.s");
-INCLUDE_ASM("engine/func_08002C10.s");
+
+void func_08002C10(u8* p) {
+    if (p != 0 && *(u8**)(p + 36) == p) {
+        func_08002BCC(p);
+    }
+}
+
 INCLUDE_ASM("engine/func_08002C28.s");
 INCLUDE_ASM("engine/func_08002CB4.s");
 INCLUDE_ASM("engine/func_08002F50.s");
@@ -57,7 +64,12 @@ INCLUDE_ASM("engine/func_0800501C.s");
 INCLUDE_ASM("engine/func_08005074.s");
 INCLUDE_ASM("engine/func_080050B8.s");
 INCLUDE_ASM("engine/func_080050DC.s");
-INCLUDE_ASM("engine/func_0800510C.s");
+
+void func_0800510C(s32 a, void* b, u16 c) {
+    func_08004FC8(a);
+    func_080043B4(b, func_0800514C(a), c);
+}
+
 INCLUDE_ASM("engine/func_08005130.s");
 INCLUDE_ASM("engine/func_0800514C.s");
 INCLUDE_ASM("engine/func_0800516C.s");
@@ -78,17 +90,56 @@ INCLUDE_ASM("engine/func_080057A0.s");
 INCLUDE_ASM("engine/func_08005810.s");
 INCLUDE_ASM("engine/func_08005824.s");
 INCLUDE_ASM("engine/func_0800589C.s");
-INCLUDE_ASM("engine/func_080058FC.s");
+
+void func_080058FC(AnimState* a, s32 target, u16 steps) {
+    s32 cur;
+    s32 delta;
+
+    cur = a->unk_00;
+    delta = target - cur;
+
+    if (steps == 0) {
+        steps = 1;
+    }
+
+    a->unk_00 = cur + delta / steps;
+}
+
 INCLUDE_ASM("engine/func_08005920.s");
 INCLUDE_ASM("engine/func_0800592C.s");
-INCLUDE_ASM("engine/func_08005968.s");
+
+void func_08005968(AnimState* a, s32 b, s32 c) {
+    a->unk_04 = (u32*)c;
+    a->unk_00 = b;
+    a->unk_14 = 0;
+}
+
 INCLUDE_ASM("engine/func_08005974.s");
 INCLUDE_ASM("engine/func_080059A4.s");
 INCLUDE_ASM("engine/func_08005A00.s");
 INCLUDE_ASM("engine/func_08005A64.s");
 INCLUDE_ASM("engine/func_08005AC4.s");
-INCLUDE_ASM("engine/func_08005AFC.s");
-INCLUDE_ASM("engine/func_08005B1C.s");
+
+void* func_08005AFC(AnimState* a) {
+    void* result;
+
+    if (a->unk_14 != 0) {
+        result = (void*)a->unk_04[a->unk_14[a->unk_0E].unk_00];
+    } else {
+        result = 0;
+    }
+
+    return result;
+}
+
+u8 func_08005B1C(AnimState* a) {
+    if (a->unk_08 & 0x1000) {
+        return 1;
+    }
+
+    return 0;
+}
+
 INCLUDE_ASM("engine/func_08005B30.s");
 INCLUDE_ASM("engine/func_08005B34.s");
 INCLUDE_ASM("engine/func_08005B38.s");
