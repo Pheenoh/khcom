@@ -94,6 +94,6 @@ unk_0811d1b0.c
 @libc.a:memset.o
 @libc.a:strcmp.o
 m4a2.c -O2
-data.s
+data.s(.rodata)
 m4a_tables.c(.rodata)
-data2.s
+data2.s(.rodata)
