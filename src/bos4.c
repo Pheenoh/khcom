@@ -51,13 +51,13 @@ INCLUDE_ASM("bos4/func_080DB468.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knifereader_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knifereader_1.s");
 
-void task_bos_boogie_knifereader_2(u8* work) {
-    func_08000EE0(work + 8);
+void task_bos_boogie_knifereader_2(BoogieKnifereaderWork* work) {
+    func_08000EE0(&work->unk_008);
 }
 
-void task_bos_boogie_knifereader_3(u8* work) {
-    func_0801B7D8(work + 28);
-    func_08000F0C(work + 8);
+void task_bos_boogie_knifereader_3(BoogieKnifereaderWork* work) {
+    func_0801B7D8(&work->unk_01C);
+    func_08000F0C(&work->unk_008);
 }
 
 INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_0.s");
@@ -115,12 +115,12 @@ INCLUDE_ASM("bos4/task_bos_ursula_backtako_3.s");
 INCLUDE_ASM("bos4/task_bos_ursula_mapanime_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_mapanime_1.s");
 
-void task_bos_ursula_mapanime_2(u8* work) {
-    func_08000EE0(work + 16);
+void task_bos_ursula_mapanime_2(UrsulaMapanimeWork* work) {
+    func_08000EE0(&work->unk_010);
 }
 
-void task_bos_ursula_mapanime_3(u8* work) {
-    func_08000F0C(work + 16);
+void task_bos_ursula_mapanime_3(UrsulaMapanimeWork* work) {
+    func_08000F0C(&work->unk_010);
 }
 
 INCLUDE_ASM("bos4/func_080DD69C.s");
@@ -130,12 +130,12 @@ INCLUDE_ASM("bos4/func_080DD8A8.s");
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_1.s");
 
-void task_bos_ursula_bubble_2(u8* work) {
-    func_08000EE0(work + 4);
+void task_bos_ursula_bubble_2(UrsulaBubbleWork* work) {
+    func_08000EE0(&work->unk_004);
 }
 
-void task_bos_ursula_bubble_3(u8* work) {
-    func_08000F0C(work + 4);
+void task_bos_ursula_bubble_3(UrsulaBubbleWork* work) {
+    func_08000F0C(&work->unk_004);
 }
 
 INCLUDE_ASM("bos4/func_080DD9B0.s");

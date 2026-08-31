@@ -4,36 +4,36 @@
 INCLUDE_ASM("bos5/task_bos_ga_0.s");
 INCLUDE_ASM("bos5/task_bos_ga_1.s");
 
-void task_bos_ga_2(u8* work) {
-    u8* p;
+void task_bos_ga_2(GaWork* work) {
+    GaEntryWork* p;
     u32 i;
 
     i = 0;
-    p = work + 32;
+    p = work->entries;
 
     do {
         func_080F83E0(work, p);
-        p += 0x1A8;
+        p++;
         i++;
     } while (i <= 5);
 }
 
-void task_bos_ga_3(u8* work) {
-    u8* p;
+void task_bos_ga_3(GaWork* work) {
+    GaEntryWork* p;
     u32 i;
 
     i = 0;
-    p = work + 32;
+    p = work->entries;
 
     do {
         func_080F8374(p);
-        p += 0x1A8;
+        p++;
         i++;
     } while (i <= 5);
 
-    func_080028C0(*(void**)(work + 0xA28));
-    func_08002C10(*(void**)(work + 0xA30));
-    func_08002C10(*(void**)(work + 0xA34));
+    func_080028C0((void*)work->unk_A28);
+    func_08002C10((void*)work->unk_A30);
+    func_08002C10((void*)work->unk_A34);
 }
 
 INCLUDE_ASM("bos5/func_080FB8DC.s");
@@ -60,22 +60,22 @@ INCLUDE_ASM("bos5/task_bos_md_fire_0.s");
 INCLUDE_ASM("bos5/task_bos_md_fire_1.s");
 INCLUDE_ASM("bos5/task_bos_md_fire_2.s");
 
-void task_bos_md_fire_3(u8* work) {
-    func_08012304(work + 0x78);
-    func_0801B7D8(work + 0x38);
-    func_08002C10(*(void**)(work + 12));
-    func_08002C10(*(void**)(work + 16));
-    func_080028C0(*(void**)(work + 20));
+void task_bos_md_fire_3(MdFireWork* work) {
+    func_08012304(&work->unk_078);
+    func_0801B7D8(&work->unk_038);
+    func_08002C10((void*)work->unk_00C);
+    func_08002C10((void*)work->unk_010);
+    func_080028C0((void*)work->unk_014);
 }
 
 INCLUDE_ASM("bos5/task_bos_md_dai_0.s");
 INCLUDE_ASM("bos5/task_bos_md_dai_1.s");
 INCLUDE_ASM("bos5/task_bos_md_dai_2.s");
 
-void task_bos_md_dai_3(void** work) {
-    func_08012304((u8*)work + 28);
-    func_08002C10(work[5]);
-    func_080028C0(work[6]);
+void task_bos_md_dai_3(MdDaiWork* work) {
+    func_08012304(&work->unk_01C);
+    func_08002C10((void*)work->unk_014);
+    func_080028C0((void*)work->unk_018);
     gUnk_02039B84->unk_068 &= 0xFFFFFFFFFFEFFFFF;
 }
 
@@ -83,9 +83,9 @@ INCLUDE_ASM("bos5/task_bos_md_hahen_0.s");
 INCLUDE_ASM("bos5/task_bos_md_hahen_1.s");
 INCLUDE_ASM("bos5/task_bos_md_hahen_2.s");
 
-void task_bos_md_hahen_3(void** work) {
-    func_08002C10(work[6]);
-    func_080028C0(work[7]);
+void task_bos_md_hahen_3(MdHahenWork* work) {
+    func_08002C10((void*)work->unk_018);
+    func_080028C0((void*)work->unk_01C);
 }
 
 INCLUDE_ASM("bos5/func_080FD9B8.s");
