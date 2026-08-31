@@ -65,9 +65,9 @@ INCLUDE_ASM("engine/func_08005074.s");
 INCLUDE_ASM("engine/func_080050B8.s");
 INCLUDE_ASM("engine/func_080050DC.s");
 
-void func_0800510C(s32 a, void* b, u16 c) {
-    func_08004FC8(a);
-    func_080043B4(b, func_0800514C(a), c);
+void func_0800510C(s32 bg, void* src, u16 size) {
+    func_08004FC8(bg);
+    func_080043B4(src, func_0800514C(bg), size);
 }
 
 INCLUDE_ASM("engine/func_08005130.s");
@@ -91,18 +91,18 @@ INCLUDE_ASM("engine/func_08005810.s");
 INCLUDE_ASM("engine/func_08005824.s");
 INCLUDE_ASM("engine/func_0800589C.s");
 
-void func_080058FC(AnimState* a, s32 target, u16 steps) {
+void func_080058FC(s32* value, s32 target, u16 steps) {
     s32 cur;
     s32 delta;
 
-    cur = a->unk_00;
+    cur = *value;
     delta = target - cur;
 
     if (steps == 0) {
         steps = 1;
     }
 
-    a->unk_00 = cur + delta / steps;
+    *value = cur + delta / steps;
 }
 
 INCLUDE_ASM("engine/func_08005920.s");
