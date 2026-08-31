@@ -17,11 +17,11 @@ func_080AB1F8: @ 080AB1F8
 	lsls r5, r5, #0x18
 	lsrs r5, r5, #0x18
 	adds r0, r4, #0x0
-	bl func_08085B50
+	bl SetActiveDeckIndex
 	adds r0, r6, #0x0
 	bl func_08085290
 	adds r0, r5, #0x0
-	bl func_08085B50
+	bl SetActiveDeckIndex
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

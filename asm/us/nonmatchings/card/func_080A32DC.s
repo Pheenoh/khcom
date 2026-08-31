@@ -62,7 +62,7 @@ _080A331E:
 	ldrh r0, [r0, #0x00]
 	strh r0, [r1, #0x00]
 	ldrb r0, [r5, #0x00]
-	bl func_08085B50
+	bl SetActiveDeckIndex
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0
