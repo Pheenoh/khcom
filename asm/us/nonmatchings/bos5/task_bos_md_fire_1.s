@@ -7,9 +7,9 @@
 task_bos_md_fire_1: @ 080FD2C8
 	push {r4, r5, lr}
 	adds r4, r0, #0x0
-	bl _080FCC14
+	bl func_080FCC14
 	adds r0, r4, #0x0
-	bl _080FCCB4
+	bl func_080FCCB4
 	lsls r0, r0, #0x18
 	lsrs r5, r0, #0x18
 	ldrh r1, [r4, #0x06]

@@ -12,12 +12,12 @@ typedef struct GaEntry {
 } GaEntry;
 
 typedef struct MdHahenWork {
-    u32 unk_000;
-    u32 unk_004;
-    u32 unk_008;
-    u32 unk_00C;
-    u32 unk_010;
-    u32 unk_014;
+    s32 unk_000;
+    s32 unk_004;
+    s32 unk_008;
+    s32 unk_00C;
+    s32 unk_010;
+    s32 unk_014;
     u32 unk_018;
     u32 unk_01C;
     u32 unk_020;
@@ -106,11 +106,45 @@ typedef struct GaWork {
     u8 unk_A52[0x2];
 } GaWork;
 
+typedef struct MdModel {
+    u16 unk_00;
+    s16 unk_02;
+    u32 unk_04;
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    u8 unk_14[0x04];
+} MdModel;
+
+typedef struct MdSlot {
+    u8 unk_00[0x0C];
+    void* unk_0C;
+    void* unk_10;
+    void* unk_14;
+} MdSlot;
+
+extern MdModel gUnk_09992F70[];
+extern MdSlot gUnk_02034FF8[];
+extern u8 gUnk_09A3CDDC[];
+extern u8 gUnk_099EDE7C[];
+extern u8 gUnk_099A8914[];
+
+u8 func_080D2DD8(void);
+
+void func_080FCC14(MdFireWork* work);
+u8 func_080FCCB4(MdFireWork* work);
+void func_08012324(void* a);
 void func_080F83E0(void* a, void* b);
 void func_080F8374(void* a);
 
 extern u8 gUnk_09992114[];
 extern GaEntry gUnk_09992108[];
+
+s32 task_bos_md_hahen_1(MdHahenWork* work);
+void task_bos_md_hahen_2(MdHahenWork* work);
+void func_080FD9B8(u16 model, u16 slot);
+void func_080FDA28(u16 model, u16 slot);
+extern u32 gUnk_03007480;
 
 void task_bos_ga_2(GaWork* work);
 void task_bos_ga_3(GaWork* work);
