@@ -59,7 +59,7 @@ void* LoadObjPalette(void* a, s32 b);
 void func_08002A10(void* a, void* b);
 u16 func_08003598(void* a);
 void func_08004DB0(void);
-void SetupBg(s32 a, s32 b, s32 c, s32 d);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_08005778(u16 r, u16 g, u16 b);
 s32 abs(s32 n);
 void func_08005974(void* a, u16 b, s32 c, void* d, void* e);

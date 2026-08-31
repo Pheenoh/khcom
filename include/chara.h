@@ -223,7 +223,7 @@ void func_080C6990(u16 a, u8 b);
 void func_080C6E7C(u8* src, u8* dst, u16 size, s16 count);
 void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 
-void RequestDma3Copy(void* src, void* dst, u16 size);
+u8 RequestDma3Copy(void* src, void* dst, u16 size);
 s32 func_0805F588(s32 a, s32 b);
 s32 func_0805F5A4(s32* a, s32* b);
 void m4aSongNumStart(u16 id);

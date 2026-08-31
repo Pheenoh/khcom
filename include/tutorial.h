@@ -29,7 +29,7 @@ void task_tutorial_3(TutorialWork* work);
 s16 func_0805E848(u16* widths, u16 count);
 u16 func_0805E89C(u16* str);
 
-void SetupBg(s32 a, s32 b, s32 c, s32 d);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgScroll(s32 a, s32 b, s32 c);
 void* AllocObjTiles(s32 a, void* b);
 void AnimInit(void* a, void* b, void* c);

@@ -67,7 +67,7 @@ u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void func_08004DB0(void);
 void func_08004FC8(s32 a);
-void SetupBg(s32 a, s32 b, s32 c, s32 d);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_08006120(s32 a, s32 b);
 void SeedRandom(u32 a);
 void func_0805FA60(s32 a, const char* b, s32 c, s32 d);

@@ -128,10 +128,10 @@ void func_08108650(void);
 void func_08001F98(void);
 void func_08006120(s32 a, s32 b);
 void func_08004DB0(void);
-void SetupBg(s32 a, s32 b, s32 c, s32 d);
-void SetBgPriority(s32 a, s32 b);
-void LoadBgTiles(s32 a, void* b, u16 c);
-void LoadBgPalette(s32 a, void* b, u16 c);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
+void SetBgPriority(s32 bg, u16 priority);
+void LoadBgTiles(s32 bg, void* src, u16 size);
+void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_08107B84(void);
 UnkStruct_0810718C* func_0810718C(void);
 void func_081078F0(s16 a);
@@ -148,6 +148,6 @@ u8 func_08065B6C(void* a, void* b);
 void func_08107280(void);
 void func_081073F0(void);
 void func_08004FC8(s32 a);
-void func_0800501C(s32 a);
+void func_0800501C(s32 bg);
 
 #endif /* GUARD_MODE_MAPINSPECT_H */

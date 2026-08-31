@@ -28,12 +28,12 @@ typedef struct Mode {
 void func_080010CC(Mode* mode, s32 b);
 u16 GetKeysRepeat(void);
 void func_08004E64(void);
-void SetupBg(s32 a, s32 b, s32 c, s32 d);
-void LoadBgTiles(s32 a, void* b, u16 c);
-void LoadBgPalette(s32 a, void* b, u16 c);
-void LoadBgMap(s32 a, void* b, u16 c);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
+void LoadBgTiles(s32 bg, void* src, u16 size);
+void LoadBgPalette(s32 bg, void* src, u16 size);
+void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgScroll(s32 a, u16 b, u16 c);
-void SetBgPriority(s32 a, s32 b);
+void SetBgPriority(s32 bg, u16 priority);
 void func_080057A0(s32 a, s32 b, s32 c);
 void func_08005810(u16 a, u16 b);
 void func_080062F4(s32 a, s32 b);
