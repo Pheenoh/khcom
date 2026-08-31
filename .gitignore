@@ -23,3 +23,9 @@ __pycache__/
 .idea/
 *.swp
 compile_commands.json
+
+# Permuter
+tools/decomp-permuter/
+permuter/
+debug_source.c
+debug_compiled_object.o
