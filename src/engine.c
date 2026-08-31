@@ -142,7 +142,28 @@ INCLUDE_ASM("engine/func_080051C4.s");
 INCLUDE_ASM("engine/func_08005244.s");
 INCLUDE_ASM("engine/func_08005490.s");
 INCLUDE_ASM("engine/func_080054C8.s");
-INCLUDE_ASM("engine/SetBgScroll.s");
+void SetBgScroll(s32 bg, s32 x, s32 y) {
+    x &= 0x1FF;
+    y &= 0x1FF;
+    switch ((u32)bg) {
+    case 0:
+        gUnk_03007544 = x;
+        gUnk_030074FC = y;
+        break;
+    case 1:
+        gUnk_03007538 = x;
+        gUnk_03007558 = y;
+        break;
+    case 2:
+        gUnk_03007520 = x;
+        gUnk_03007534 = y;
+        break;
+    case 3:
+        gUnk_0300755C = x;
+        gUnk_030074E4 = y;
+        break;
+    }
+}
 INCLUDE_ASM("engine/func_08005550.s");
 INCLUDE_ASM("engine/func_0800558C.s");
 void SetBgPriority(s32 bg, u16 priority) {
@@ -246,7 +267,12 @@ INCLUDE_ASM("engine/func_080061E8.s");
 INCLUDE_ASM("engine/func_08006238.s");
 INCLUDE_ASM("engine/func_08006290.s");
 INCLUDE_ASM("engine/func_080062F4.s");
-INCLUDE_ASM("engine/func_08006314.s");
+u8 func_08006314(void) {
+    if (*(u16*)(gUnk_03007568 + 0x594) & 1) {
+        return 1;
+    }
+    return 0;
+}
 INCLUDE_ASM("engine/_08006338.s");
 INCLUDE_ASM("engine/func_08006390.s");
 INCLUDE_ASM("engine/func_080063A8.s");
