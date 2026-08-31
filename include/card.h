@@ -15,6 +15,7 @@ typedef struct CardDef {
 #define gCardDefs ((CardDef*)0x08F70AB0)
 #define gCardCollection ((u16*)0x0203A080)
 #define gCardCount (*(u16*)0x0203A858)
+
 typedef struct Deck {
     u16 cards[DECK_SIZE];
     u8 unk_C6[0x16];

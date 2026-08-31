@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08009330
+	.global SaveSetFileLargeState
 	.thumb
 	.thumb_func
-	.type func_08009330, %function
-func_08009330: @ 08009330
+	.type SaveSetFileLargeState, %function
+SaveSetFileLargeState: @ 08009330
 	push {r4, r5, r6, r7, lr}
 	mov r7, r8
 	push {r7}
