@@ -8,6 +8,7 @@ INCLUDE_ASM("title/task_title_obj_0.s");
 INCLUDE_ASM("title/task_title_obj_1.s");
 INCLUDE_ASM("title/task_title_obj_2.s");
 INCLUDE_ASM("title/task_title_obj_3.s");
+INCLUDE_ASM("title/func_080D6790.s");
 INCLUDE_ASM("title/task_title_menu_0.s");
 INCLUDE_ASM("title/func_080D6908.s");
 INCLUDE_ASM("title/func_080D6944.s");
