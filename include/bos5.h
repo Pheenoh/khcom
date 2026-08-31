@@ -131,9 +131,60 @@ extern u8 gUnk_099A8914[];
 
 u8 func_080D2DD8(void);
 
+typedef struct MdWork {
+    u32 unk_000;
+    u32 unk_004;
+    u32 unk_008;
+    u8 unk_00C[0x8];
+    u16 unk_014;
+    u16 unk_016;
+    u16 unk_018;
+    u16 unk_01A;
+    u8 unk_01C;
+    u8 unk_01D[0x3];
+    u32 unk_020;
+    u32 unk_024;
+    u32 unk_028;
+    u32 unk_02C;
+    u8 unk_030[0x10];
+    u32 unk_040;
+    u8 unk_044[0x24];
+    u32 unk_068;
+    u8 unk_06C[0x30];
+    u32 unk_09C;
+    u32 unk_0A0;
+    u8 unk_0A4[0x4];
+    u32 unk_0A8;
+    u8 unk_0AC[0xD0];
+    u32 unk_17C;
+    u8 unk_180[0x10];
+    u32 unk_190;
+    u8 unk_194[0x20];
+    u16 unk_1B4;
+    u8 unk_1B6[0x2];
+} MdWork;
+
+void func_0800501C(s32 a);
+void func_08012304(void* a);
+void func_0801B7D8(void* a);
+void func_080028C0(void* a);
+void func_08002C10(void* a);
+void func_08000F0C(void* a);
+
+s32 func_080065A4(void);
+void func_080058FC(void* a, s32 b, u16 c);
+void* func_08005A64(void* a);
+
+extern s16 gUnk_08121400[];
+extern u8 gUnk_09A3C9BC[];
+extern u8 gUnk_09999ED0[];
+extern u32 gUnk_09EF9740[];
+
 void func_080FCC14(MdFireWork* work);
 u8 func_080FCCB4(MdFireWork* work);
-void func_08012324(void* a);
+void func_08012324();
+void func_080122AC(void* a, s32 b, s32 c, s32 d);
+void func_08012614(void* a, s32 b);
 void func_080F83E0(void* a, void* b);
 void func_080F8374(void* a);
 
@@ -142,6 +193,8 @@ extern GaEntry gUnk_09992108[];
 
 s32 task_bos_md_hahen_1(MdHahenWork* work);
 void task_bos_md_hahen_2(MdHahenWork* work);
+void task_bos_md_dai_0(MdDaiWork* work, s32* src);
+void task_bos_md_hahen_0(MdHahenWork* work, s32* src);
 void func_080FD9B8(u16 model, u16 slot);
 void func_080FDA28(u16 model, u16 slot);
 s16 func_080FDA98(u16 model, u16 slot);

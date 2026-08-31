@@ -70,7 +70,27 @@ void task_bos_md_fire_3(MdFireWork* work) {
     func_080028C0((void*)work->unk_014);
 }
 
-INCLUDE_ASM("bos5/task_bos_md_dai_0.s");
+void task_bos_md_dai_0(MdDaiWork* work, s32* src) {
+    u8* p;
+
+    gUnk_02039B84->unk_068 |= 0x100000;
+    work->unk_078 = src[1];
+    work->unk_080 = src[0];
+    work->unk_07C = 0;
+    work->unk_07E = 0;
+    work->unk_000 = 0x8000;
+    work->unk_004 = 0x14F00;
+    work->unk_008 = 0;
+    work->unk_010 = 20;
+    work->unk_00C = 0xFFFF6000;
+    p = (u8*)work + 0x1C;
+    func_080122AC(p, 7, 24, 24);
+    func_08012324(p, work->unk_000, work->unk_004, work->unk_008);
+    func_08012614(p, 1);
+    work->unk_014 = (u32)func_08002A14(gUnk_09A3C9BC, 32);
+    work->unk_018 = (u32)func_080026A4(gUnk_09999ED0, 0x480);
+}
+
 INCLUDE_ASM("bos5/task_bos_md_dai_1.s");
 INCLUDE_ASM("bos5/task_bos_md_dai_2.s");
 
@@ -81,7 +101,27 @@ void task_bos_md_dai_3(MdDaiWork* work) {
     gUnk_02039B84->unk_068 &= 0xFFFFFFFFFFEFFFFF;
 }
 
+#ifdef NON_MATCHING
+void task_bos_md_hahen_0(MdHahenWork* work, s32* src) {
+    u8 angle;
+    s32 speed;
+
+    work->unk_000 = src[0];
+    work->unk_004 = src[1];
+    work->unk_008 = src[2];
+    angle = func_080065A4();
+    speed = (func_080065A4() & 0x1FF) + 0x100;
+    work->unk_00C = -gUnk_08121400[angle + 0x40] * speed >> 8;
+    work->unk_010 = gUnk_08121400[angle] * speed >> 8;
+    work->unk_014 = -((func_080065A4() & 0x1FF) + 0x100);
+    work->unk_024 = 3;
+    work->unk_018 = (u32)func_08002A14(gUnk_09A3C9BC, 32);
+    work->unk_01C = (u32)func_080026A4(gUnk_09999ED0, 0x480);
+    work->unk_020 = gUnk_09EF9740[(u16)func_080065A4() & 1];
+}
+#else
 INCLUDE_ASM("bos5/task_bos_md_hahen_0.s");
+#endif
 
 s32 task_bos_md_hahen_1(MdHahenWork* work) {
     s32 result;
