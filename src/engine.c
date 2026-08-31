@@ -10,9 +10,33 @@ INCLUDE_ASM("engine/LoadObjTiles.s");
 INCLUDE_ASM("engine/func_0800284C.s");
 INCLUDE_ASM("engine/func_08002880.s");
 INCLUDE_ASM("engine/func_080028A0.s");
-INCLUDE_ASM("engine/ReleaseObjTiles.s");
+void ReleaseObjTiles(void* a) {
+    u8* p = a;
+    u8* q;
+
+    if (p == 0) {
+        return;
+    }
+    q = *(u8**)(p + 0x2C);
+    if (q != p) {
+        return;
+    }
+    switch (*(u32*)(q + 0x28)) {
+    case 0:
+        func_0800284C(q);
+        break;
+    case 1:
+        func_08002880(q);
+        break;
+    case 2:
+        func_080028A0(q);
+        break;
+    }
+}
 INCLUDE_ASM("engine/AllocObjTiles.s");
-INCLUDE_ASM("engine/func_08002A10.s");
+void func_08002A10(void* a, void* b) {
+    *(void**)a = b;
+}
 INCLUDE_ASM("engine/LoadObjPalette.s");
 INCLUDE_ASM("engine/LoadObjPaletteBank.s");
 INCLUDE_ASM("engine/func_08002BCC.s");
@@ -60,17 +84,46 @@ INCLUDE_ASM("engine/func_08004DB0.s");
 INCLUDE_ASM("engine/func_08004E64.s");
 INCLUDE_ASM("engine/func_08004F08.s");
 INCLUDE_ASM("engine/func_08004FC8.s");
-INCLUDE_ASM("engine/func_0800501C.s");
-INCLUDE_ASM("engine/SetupBg.s");
-INCLUDE_ASM("engine/LoadBgTiles.s");
-INCLUDE_ASM("engine/LoadBgPalette.s");
+void func_0800501C(s32 bg) {
+    switch ((u32)bg) {
+    case 0:
+        gUnk_03007500 &= 0xFEFF;
+        break;
+    case 1:
+        gUnk_03007500 &= 0xFDFF;
+        break;
+    case 2:
+        gUnk_03007500 &= 0xFBFF;
+        break;
+    case 3:
+        gUnk_03007500 &= 0xF7FF;
+        break;
+    }
+}
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette) {
+    vu16* p = gBgControl[bg];
+
+    *p = (*p & 0xFFF3) | (charBase << 2);
+    *p = (*p & 0xE0FF) | (screenBase << 8);
+    gBgPaletteBank[bg] = palette;
+}
+void LoadBgTiles(s32 bg, void* src, u16 size) {
+    func_08004FC8(bg);
+    RequestDma3Copy(src, GetBgCharBase(bg), size);
+}
+void LoadBgPalette(s32 bg, void* src, u16 size) {
+    func_08004FC8(bg);
+    LoadPalette(src, (void*)((gBgPaletteBank[bg] << 5) + 0x05000000), size);
+}
 
 void LoadBgMap(s32 bg, void* src, u16 size) {
     func_08004FC8(bg);
     RequestDma3Copy(src, GetBgScreenBase(bg), size);
 }
 
-INCLUDE_ASM("engine/GetBgCharBase.s");
+void* GetBgCharBase(s32 bg) {
+    return (void*)(((*gBgControl[bg] & 0x0C) << 12) + 0x06000000);
+}
 INCLUDE_ASM("engine/GetBgScreenBase.s");
 INCLUDE_ASM("engine/func_0800516C.s");
 INCLUDE_ASM("engine/func_080051C4.s");
@@ -80,7 +133,12 @@ INCLUDE_ASM("engine/func_080054C8.s");
 INCLUDE_ASM("engine/SetBgScroll.s");
 INCLUDE_ASM("engine/func_08005550.s");
 INCLUDE_ASM("engine/func_0800558C.s");
-INCLUDE_ASM("engine/SetBgPriority.s");
+void SetBgPriority(s32 bg, u16 priority) {
+    vu16* p = gBgControl[bg];
+
+    *p &= 0xFFFC;
+    *p |= priority;
+}
 INCLUDE_ASM("engine/func_080055EC.s");
 INCLUDE_ASM("engine/func_08005610.s");
 INCLUDE_ASM("engine/func_08005654.s");
@@ -141,7 +199,9 @@ u8 AnimIsFinished(AnimState* a) {
 }
 
 INCLUDE_ASM("engine/func_08005B30.s");
-INCLUDE_ASM("engine/func_08005B34.s");
+u16 func_08005B34(AnimState* a) {
+    return a->unk_0E;
+}
 INCLUDE_ASM("engine/func_08005B38.s");
 INCLUDE_ASM("engine/func_08005B44.s");
 INCLUDE_ASM("engine/func_08005B64.s");
