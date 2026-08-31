@@ -5,9 +5,9 @@
 # base ROM. Callees are resolved to their real addresses (as Thumb symbols,
 # read out of build/<ver>/com_<ver>.map) so bl encodings compare exactly.
 set -e
-FT=/tmp/mt; mkdir -p $FT
+FT=${MATCH_TMP:-/tmp/mt}; mkdir -p $FT
 C=$1; SYM=$2; START=$3; END=$4
-arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp -I /tmp/claude-1000/-home-pheenoh-git-c-com/a1bfa4de-60d5-4f26-80f7-ed193de463ed/scratchpad/bos2 -I /tmp/claude-1000/-home-pheenoh-git-c-com/a1bfa4de-60d5-4f26-80f7-ed193de463ed/scratchpad/bos3 -I /tmp/claude-1000/-home-pheenoh-git-c-com/a1bfa4de-60d5-4f26-80f7-ed193de463ed/scratchpad/bos4 -I /tmp/claude-1000/-home-pheenoh-git-c-com/a1bfa4de-60d5-4f26-80f7-ed193de463ed/scratchpad/bos5 -I /tmp/claude-1000/-home-pheenoh-git-c-com/a1bfa4de-60d5-4f26-80f7-ed193de463ed/scratchpad/bos6 -I /tmp/claude-1000/-home-pheenoh-git-c-com/a1bfa4de-60d5-4f26-80f7-ed193de463ed/scratchpad/bos7 $C -o $FT/x.i
+arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp ${EXTRA_INC:-} $C -o $FT/x.i
 tools/agbcc/bin/agbcc -mthumb-interwork -O2 -fprologue-bugfix ${AGBCC_EXTRA:-} -o $FT/x.s $FT/x.i
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o $FT/x.o $FT/x.s
 grep -oE '^[A-Za-z_][A-Za-z0-9_]*' config/us/symbols.txt 2>/dev/null | sort -u > $FT/datasyms.txt || : > $FT/datasyms.txt
@@ -30,7 +30,8 @@ python3 - "$START" "$END" <<'PY'
 import sys
 s=int(sys.argv[1],16)-0x08000000; e=int(sys.argv[2],16)-0x08000000
 rom=open('roms/B8CE.gba','rb').read()[s:e]
-new=open('/tmp/mt/x.bin','rb').read()
+import os
+new=open(os.environ.get('MATCH_TMP','/tmp/mt')+'/x.bin','rb').read()
 while len(new)>len(rom) and new[-2:] in (b'\xc0\x46', b'\x00\x00'):
     new=new[:-2]
 if new==rom: print("EXACT MATCH")
