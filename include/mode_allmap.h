@@ -106,7 +106,7 @@ void func_08006C40(void (*fn)(void));
 void func_08006C68(void);
 void func_0801CC80(void);
 void CpuSet(void* src, void* dst, u32 c);
-void func_08120EF8(void* a, u16 b, u16 c);
+void m4aMPlayVolumeControl(void* a, u16 b, u16 c);
 void func_080D2F20(void);
 void func_080D2F64(void);
 void func_080D3008(void);

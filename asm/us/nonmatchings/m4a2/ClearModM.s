@@ -4,13 +4,25 @@
 	.thumb
 	.thumb_func
 	.type ClearModM, %function
-ClearModM: @ 08120200
+ClearModM: @ 0812103C
 	push {lr}
-	ldr r1, _08120210 @ =0x0203D88C
-	ldr r1, [r1, #0x00]
-	bl _call_via_r1
+	adds r2, r0, #0x0
+	movs r1, #0x00
+	movs r0, #0x00
+	strb r0, [r2, #0x1A]
+	strb r0, [r2, #0x16]
+	ldrb r0, [r2, #0x18]
+	cmp r0, #0x00
+	bne _08121054
+	ldrb r0, [r2, #0x00]
+	movs r1, #0x0C
+	b _08121058
+_08121054:
+	ldrb r0, [r2, #0x00]
+	movs r1, #0x03
+_08121058:
+	orrs r0, r1
+	strb r0, [r2, #0x00]
 	pop {r0}
 	bx r0
-	.byte 0x00, 0x00
-_08120210: .4byte 0x0203D88C
 .syntax divided

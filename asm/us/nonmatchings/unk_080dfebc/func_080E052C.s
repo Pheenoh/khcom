@@ -17,7 +17,7 @@ func_080E052C: @ 080E052C
 	movs r2, #0x80
 	lsls r2, r2, #0x01
 	movs r1, #0xFF
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 _080E0548:
 	bl func_080E04EC
 	pop {r0}

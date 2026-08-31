@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08120558
+	.global m4aSoundVSync
 	.thumb
 	.thumb_func
-	.type func_08120558, %function
-func_08120558: @ 08120558
+	.type m4aSoundVSync, %function
+m4aSoundVSync: @ 08120558
 	push {lr}
 	ldr r0, _081205BC @ =0x03007FF0
 	ldr r2, [r0, #0x00]
