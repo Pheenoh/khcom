@@ -53,6 +53,7 @@ INCLUDE_ASM("bos5/func_080FC3FC.s");
 INCLUDE_ASM("bos5/task_bos_md_0.s");
 INCLUDE_ASM("bos5/task_bos_md_1.s");
 INCLUDE_ASM("bos5/task_bos_md_2.s");
+
 #ifdef NON_MATCHING
 void task_bos_md_3(MdWork* work) {
     u8* a;
@@ -105,6 +106,7 @@ INCLUDE_ASM("bos5/task_bos_md_map_1.s");
 INCLUDE_ASM("bos5/func_080FCC14.s");
 INCLUDE_ASM("bos5/func_080FCCB4.s");
 INCLUDE_ASM("bos5/task_bos_md_fire_0.s");
+
 #ifdef NON_MATCHING
 u8 task_bos_md_fire_1(MdFireWork* work) {
     u8 result;
