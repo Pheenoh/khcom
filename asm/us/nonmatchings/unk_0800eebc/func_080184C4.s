@@ -34,7 +34,7 @@ func_080184C4: @ 080184C4
 	str r0, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08018534 @ =0x09EDACA8
 	add r1, sp, #0x004
 	movs r2, #0x00

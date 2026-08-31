@@ -103,7 +103,7 @@ _0803A53C: .4byte 0x0803A540
 	.byte 0x40, 0x00, 0x31, 0x18, 0x05, 0x48, 0x08, 0x60
 _0803A5E8:
 	mov r0, r8
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803A6A6
@@ -176,10 +176,10 @@ _0803A670:
 	beq _0803A694
 _0803A68E:
 	ldr r0, _0803A6BC @ =0x0000022E
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803A694:
 	mov r0, r8
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803A6A6

@@ -152,7 +152,7 @@ _08052960:
 	str r1, [r0, #0x00]
 	str r1, [r2, #0x00]
 	ldr r0, _080529D8 @ =0x0000028E
-	bl func_0811FF3C
+	bl m4aSongNumStop
 _080529A6:
 	ldr r0, _080529DC @ =0x02039B84
 	ldr r0, [r0, #0x00]
@@ -192,7 +192,7 @@ _080529E4:
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _08052A22
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x01

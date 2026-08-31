@@ -16,13 +16,13 @@ mode_battle_2: @ 0800A5A4
 	ldr r4, _0800A600 @ =0x02039B84
 	ldr r0, [r4, #0x00]
 	adds r0, #0x54
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x00]
 	adds r0, #0x40
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	ldr r0, [r4, #0x00]
 	adds r0, #0x2C
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	bl func_0801C104
 	ldr r0, [r4, #0x00]
 	ldr r1, [r0, #0x6C]
@@ -36,10 +36,10 @@ mode_battle_2: @ 0800A5A4
 	beq _0800A5F0
 	ldr r0, _0800A604 @ =0x02039B9C
 	ldr r0, [r0, #0x00]
-	bl func_080009C4
+	bl EwramFree
 _0800A5F0:
 	ldr r0, [r4, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r4}
 	pop {r0}
 	bx r0

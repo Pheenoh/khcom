@@ -16,7 +16,7 @@ func_08000DE8: @ 08000DE8
 	bl _call_via_r1
 _08000DFC:
 	ldr r0, [r4, #0x04]
-	bl func_080009C4
+	bl EwramFree
 	adds r0, r4, #0x0
 	adds r0, #0x0C
 	adds r1, r5, #0x0

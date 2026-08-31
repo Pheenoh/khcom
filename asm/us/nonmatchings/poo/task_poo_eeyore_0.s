@@ -48,23 +48,23 @@ _080CDD5E:
 	ldr r1, _080CDDC8 @ =0x09EF5DA8
 	ldr r2, _080CDDCC @ =0x09EF5D68
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrh r1, [r6, #0x00]
 	adds r0, r4, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x08]
 	adds r4, #0x84
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080CDDD0 @ =0x09EF4928
 	adds r2, r5, #0x0
 	adds r2, #0x24
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	subs r4, #0x5C
 	adds r0, r4, #0x0
 	movs r1, #0x0A

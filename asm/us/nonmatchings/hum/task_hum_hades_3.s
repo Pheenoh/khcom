@@ -11,22 +11,22 @@ task_hum_hades_3: @ 0804F8B0
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r1, #0xEC
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r1, #0xEE
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r1, #0x8A
 	lsls r1, r1, #0x02
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	bl func_0800E380
 	pop {r4}

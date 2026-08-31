@@ -11,15 +11,15 @@ task_monsgage_0: @ 0805C9B4
 	lsls r0, r0, #0x02
 	ldr r5, _0805C9F8 @ =0x08B255B4
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	movs r0, #0x80
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x04]
 	ldr r0, _0805C9FC @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x08]
 	movs r1, #0x00
 	str r1, [r4, #0x10]

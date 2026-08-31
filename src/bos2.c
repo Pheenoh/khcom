@@ -29,9 +29,9 @@ void task_bos_tm_foot_3(TmFootWork* work) {
         func_080BA0F8((u8*)work + 0x364);
     }
 
-    func_080028C0((void*)work->unk_008);
-    func_08002C10((void*)work->unk_014);
-    func_08002C10((void*)work->unk_018);
+    ReleaseObjTiles((void*)work->unk_008);
+    ReleaseObjPalette((void*)work->unk_014);
+    ReleaseObjPalette((void*)work->unk_018);
 }
 
 INCLUDE_ASM("bos2/func_080BB1B8.s");
@@ -39,8 +39,8 @@ INCLUDE_ASM("bos2/func_080BB1B8.s");
 void task_bos_tm_clb_0(TmClbWork* work, void* arg) {
     void* p;
 
-    work->unk_004 = (u32)func_080026A4(gUnk_09652E84, 0x1D80);
-    work->unk_008 = (u32)func_08002A14(gUnk_096FB2A4, 0x60);
+    work->unk_004 = (u32)LoadObjTiles(gUnk_09652E84, 0x1D80);
+    work->unk_008 = (u32)LoadObjPalette(gUnk_096FB2A4, 0x60);
     work->unk_000 = (u32)arg;
     p = ((void**)arg)[2];
     work->unk_00C = *(u16*)((u8*)p + 12);
@@ -53,8 +53,8 @@ INCLUDE_ASM("bos2/task_bos_tm_clb_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_clb_2.s");
 
 void task_bos_tm_clb_3(TmClbWork* work) {
-    func_080028C0((void*)work->unk_004);
-    func_08002C10((void*)work->unk_008);
+    ReleaseObjTiles((void*)work->unk_004);
+    ReleaseObjPalette((void*)work->unk_008);
 }
 
 void func_080BB428(u8* dst, u8* src) {
@@ -90,11 +90,11 @@ INCLUDE_ASM("bos2/task_bos_tm_arm_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_arm_2.s");
 
 void task_bos_tm_arm_3(TmArmWork* work) {
-    func_080028C0((void*)work->unk_000);
-    func_080028C0((void*)work->unk_238);
-    func_08002C10((void*)work->unk_004);
-    func_08002C10((void*)work->unk_008);
-    func_08000F0C(&work->unk_1B4);
+    ReleaseObjTiles((void*)work->unk_000);
+    ReleaseObjTiles((void*)work->unk_238);
+    ReleaseObjPalette((void*)work->unk_004);
+    ReleaseObjPalette((void*)work->unk_008);
+    TaskPoolDestroy(&work->unk_1B4);
 }
 
 INCLUDE_ASM("bos2/task_bos_tm_tbl_0.s");
@@ -109,7 +109,7 @@ INCLUDE_ASM("bos2/task_bos_jf_0.s");
 INCLUDE_ASM("bos2/task_bos_jf_1.s");
 
 void task_bos_jf_2(JfWork* work) {
-    func_08000EE0(&work->unk_254);
+    TaskPoolDraw(&work->unk_254);
 }
 
 INCLUDE_ASM("bos2/task_bos_jf_3.s");
@@ -139,8 +139,8 @@ INCLUDE_ASM("bos2/task_bos_jf_borderline_1.s");
 INCLUDE_ASM("bos2/task_bos_jf_borderline_2.s");
 
 void task_bos_jf_borderline_3(JfBorderlineWork* work) {
-    func_080028C0((void*)work->unk_004);
-    func_08002C10((void*)work->unk_008);
+    ReleaseObjTiles((void*)work->unk_004);
+    ReleaseObjPalette((void*)work->unk_008);
 }
 
 INCLUDE_ASM("bos2/func_080C1A48.s");
@@ -148,7 +148,7 @@ INCLUDE_ASM("bos2/task_bos_dsd_0.s");
 INCLUDE_ASM("bos2/task_bos_dsd_1.s");
 
 void task_bos_dsd_2(DsdWork* work) {
-    func_08000EE0(&work->unk_37C);
+    TaskPoolDraw(&work->unk_37C);
 }
 
 void task_bos_dsd_3(DsdWork* work) {
@@ -157,7 +157,7 @@ void task_bos_dsd_3(DsdWork* work) {
 
     a = &work->unk_110;
     b = &work->unk_220;
-    func_08000F0C(&work->unk_37C);
+    TaskPoolDestroy(&work->unk_37C);
     func_08012304(&work->unk_260);
     func_0801B7D8(work);
     func_0801B7D8(a);

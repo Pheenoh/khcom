@@ -61,7 +61,7 @@ _080D4A24:
 	str r4, [sp, #0x008]
 	movs r4, #0x14
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r4, r5, r6, r7}
 	pop {r0}

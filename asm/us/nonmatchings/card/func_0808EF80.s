@@ -157,7 +157,7 @@ _0808F06C:
 	adds r0, r4, r5
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	b _0808F0B4
 _0808F098: .4byte 0x000007C2
 _0808F09C:
@@ -171,7 +171,7 @@ _0808F09C:
 	adds r0, r4, r2
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 _0808F0B4:
 	movs r0, #0x00
 	b _0808F0BA

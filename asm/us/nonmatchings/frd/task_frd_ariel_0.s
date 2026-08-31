@@ -14,7 +14,7 @@ task_frd_ariel_0: @ 08046E50
 	adds r7, r6, #0x0
 	adds r7, #0x20
 	movs r0, #0xBB
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r0, r8
 	ldrb r1, [r0, #0x02]
 	cmp r1, #0x00
@@ -134,7 +134,7 @@ _08046F3E:
 	str r0, [r7, #0x0C]
 	ldr r0, _08046FB4 @ =0x09617DF8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x1C]
 	movs r1, #0x98
 	lsls r1, r1, #0x01
@@ -142,7 +142,7 @@ _08046F3E:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08046FB8 @ =0x0813EC5C
 	ldr r1, [r6, #0x18]
 	str r1, [sp, #0x000]
@@ -152,11 +152,11 @@ _08046F3E:
 	bl func_08019068
 	adds r0, r6, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _08046FBC @ =0x09EDAE88
 	adds r0, r6, #0x0
 	adds r2, r7, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	mov r0, r8
 	ldrh r2, [r0, #0x00]
 	cmp r2, #0x01

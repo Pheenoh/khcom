@@ -17,15 +17,15 @@ task_status_0: @ 080D7574
 	strh r5, [r4, #0x1C]
 	adds r0, r4, #0x0
 	movs r1, #0x09
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080D7604 @ =0x09EF4FE0
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, _080D7608 @ =0x09EF4F38
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, _080D760C @ =0x02039BB0
 	ldr r0, [r0, #0x08]
 	movs r1, #0x08
@@ -36,26 +36,26 @@ task_status_0: @ 080D7574
 	adds r2, r4, #0x0
 	adds r2, #0x14
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, _080D7614 @ =0x09EF4F50
 	adds r0, r4, #0x0
 	adds r2, r6, #0x0
-	bl func_08000E14
+	bl TaskCreate
 _080D75C6:
 	ldr r1, _080D7618 @ =0x09EF4F80
 	adds r2, r4, #0x0
 	adds r2, #0x14
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, _080D761C @ =0x09EF4F98
 	adds r2, r4, #0x0
 	adds r2, #0x1C
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, _080D7620 @ =0x09EF4FB0
 	adds r0, r4, #0x0
 	adds r2, r6, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	bl func_080D82D4
 	lsls r0, r0, #0x10
 	cmp r0, #0x00
@@ -82,7 +82,7 @@ _080D7626:
 	adds r2, r4, #0x0
 	adds r2, #0x1A
 	adds r0, r4, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, _080D7648 @ =0x02034F02
 	ldrh r0, [r4, #0x1C]
 	ldrh r4, [r4, #0x1A]

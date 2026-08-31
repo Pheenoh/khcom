@@ -24,11 +24,11 @@ task_poo_honey_0: @ 080CCD00
 	ldr r1, _080CCDD4 @ =0x09EF5B1C
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x03
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r7, #0x0
 	adds r0, #0x74
 	ldr r1, [r7, #0x24]
@@ -87,7 +87,7 @@ task_poo_honey_0: @ 080CCD00
 	adds r4, #0xF4
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r1, r7, #0x0
 	adds r1, #0x24
 	adds r0, r4, #0x0

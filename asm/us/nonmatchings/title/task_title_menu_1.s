@@ -29,7 +29,7 @@ _080D6A48:
 _080D6A54:
 	adds r0, r4, #0x0
 	adds r0, #0x48
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4}
 	pop {r1}

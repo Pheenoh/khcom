@@ -24,7 +24,7 @@ func_080CD550: @ 080CD550
 	ldr r1, [r1, #0x00]
 	str r1, [r2, #0x10]
 	ldr r1, _080CD588 @ =0x09EF4A00
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x02C
 	pop {r4, r5, r6, r7}
 	pop {r0}

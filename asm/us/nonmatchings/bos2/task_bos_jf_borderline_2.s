@@ -23,7 +23,7 @@ task_bos_jf_borderline_2: @ 080C15BC
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r0, r7, #0x0
 	adds r0, #0xB5
 	ldrb r6, [r0, #0x00]
@@ -57,7 +57,7 @@ _080C15F8:
 	ldr r4, _080C1768 @ =0x0000FFF0
 	mov r10, r4
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x10
@@ -76,7 +76,7 @@ _080C15F8:
 	str r5, [sp, #0x008]
 	mov r4, r10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -93,7 +93,7 @@ _080C15F8:
 	str r5, [sp, #0x008]
 	mov r4, r10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x10
@@ -112,7 +112,7 @@ _080C15F8:
 	str r5, [sp, #0x008]
 	mov r4, r10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x10
@@ -131,7 +131,7 @@ _080C15F8:
 	str r5, [sp, #0x008]
 	mov r4, r10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x08
@@ -150,7 +150,7 @@ _080C15F8:
 	str r5, [sp, #0x008]
 	mov r4, r10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x08
@@ -170,7 +170,7 @@ _080C15F8:
 	ldr r4, _080C176C @ =0x0000FF60
 	mov r8, r4
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x08
@@ -189,7 +189,7 @@ _080C15F8:
 	str r5, [sp, #0x008]
 	mov r4, r8
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x08
@@ -208,7 +208,7 @@ _080C15F8:
 	str r5, [sp, #0x008]
 	mov r4, r10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	b _080C19EA
 	.byte 0x00, 0x00
 _080C1768: .4byte 0x0000FFF0
@@ -236,7 +236,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x28
@@ -256,7 +256,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x18
@@ -276,7 +276,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x08
@@ -296,7 +296,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x08
@@ -316,7 +316,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x18
@@ -336,7 +336,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x28
@@ -356,7 +356,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x28
@@ -376,7 +376,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x20
@@ -396,7 +396,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x20
@@ -417,7 +417,7 @@ _080C1770:
 	ldr r4, _080C1A2C @ =0x0000FF60
 	mov r8, r4
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	subs r0, #0x10
@@ -437,7 +437,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	mov r4, r8
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -455,7 +455,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	mov r4, r8
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x10
@@ -475,7 +475,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	mov r4, r8
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x20
@@ -495,7 +495,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	mov r4, r8
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add r0, sp, #0x010
 	ldrh r0, [r0, #0x00]
 	adds r0, #0x20
@@ -515,7 +515,7 @@ _080C1770:
 	str r5, [sp, #0x008]
 	ldr r4, _080C1A28 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080C19EA:
 	add r0, sp, #0x010
 	movs r1, #0x00
@@ -537,7 +537,7 @@ _080C19EA:
 	movs r4, #0xFF
 	lsls r4, r4, #0x08
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x014
 	pop {r3, r4, r5}
 	mov r8, r3

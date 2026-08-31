@@ -40,7 +40,7 @@ _081106FC: .4byte 0x08110700
 _081107FE:
 	adds r0, r5, #0x0
 	adds r0, #0x2C
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 	add sp, #0x00C
 	pop {r4, r5}

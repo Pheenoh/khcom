@@ -37,7 +37,7 @@ _081148A4:
 _081148B0:
 	adds r0, r1, #0x0
 	adds r0, #0x20
-	bl func_08005A64
+	bl AnimUpdate
 	b _081148CC
 	.byte 0x00, 0x00
 _081148BC: .4byte 0x03007554
@@ -45,7 +45,7 @@ _081148C0: .4byte 0x03007564
 _081148C4:
 	adds r0, r1, #0x0
 	adds r0, #0x20
-	bl func_08005A64
+	bl AnimUpdate
 _081148CC:
 	movs r0, #0x01
 	pop {r4}

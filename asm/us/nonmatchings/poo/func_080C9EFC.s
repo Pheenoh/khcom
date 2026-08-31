@@ -52,7 +52,7 @@ _080C9F40:
 	ldr r0, [sp, #0x000]
 	adds r1, r2, #0x0
 	mov r2, r8
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r4, #0x1
 	lsls r0, r0, #0x10
 	lsrs r4, r0, #0x10
@@ -67,7 +67,7 @@ _080C9F78:
 	ldr r0, [sp, #0x000]
 	adds r1, r2, #0x0
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 _080C9F82:
 	ldr r0, [sp, #0x004]
 	adds r0, #0x0C

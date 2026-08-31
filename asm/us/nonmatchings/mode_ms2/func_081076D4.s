@@ -23,7 +23,7 @@ func_081076D4: @ 081076D4
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x0C
-	bl func_08005BE8
+	bl LoadPalette
 _08107700:
 	ldr r0, _08107750 @ =0x02035E2C
 	movs r2, #0x00
@@ -33,7 +33,7 @@ _08107700:
 	movs r6, #0x00
 _0810770C:
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	lsls r4, r6, #0x10
 	asrs r4, r4, #0x10
@@ -51,7 +51,7 @@ _0810770C:
 	adds r1, r1, r0
 	ldr r0, _0810775C @ =0x09A3D2C8
 	movs r2, #0x02
-	bl func_08005BE8
+	bl LoadPalette
 	adds r4, #0x01
 	lsls r4, r4, #0x10
 	lsrs r6, r4, #0x10
@@ -67,7 +67,7 @@ _08107758: .4byte 0x0500000C
 _0810775C: .4byte 0x09A3D2C8
 _08107760:
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	adds r2, #0x40
 	ldr r1, _08107784 @ =0x09A067FC
@@ -79,7 +79,7 @@ _08107760:
 	ldr r0, _08107788 @ =0x09A3D248
 	ldr r1, _0810778C @ =0x0500000C
 	movs r2, #0x02
-	bl func_08005BE8
+	bl LoadPalette
 	b _081077E0
 _08107784: .4byte 0x09A067FC
 _08107788: .4byte 0x09A3D248
@@ -98,7 +98,7 @@ _08107790:
 	movs r2, #0xA0
 	lsls r2, r2, #0x03
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 _081077B0:
 	movs r6, #0x00
 	adds r7, r4, #0x6
@@ -131,7 +131,7 @@ _081077E0:
 	cmp r0, #0x09
 	ble _081078DC
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	adds r2, #0x40
 	ldr r1, _08107814 @ =0x09A067DC
@@ -143,7 +143,7 @@ _081077E0:
 	ldr r0, _08107818 @ =0x09A3D2C8
 	ldr r1, _0810781C @ =0x0500000C
 	movs r2, #0x02
-	bl func_08005BE8
+	bl LoadPalette
 	b _081078DC
 _0810780C: .4byte 0x09A3551C
 _08107810: .4byte 0x02035E2E
@@ -161,7 +161,7 @@ _08107820:
 	movs r2, #0xA0
 	lsls r2, r2, #0x03
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 _0810783A:
 	movs r6, #0x00
 	adds r7, r4, #0x6
@@ -183,7 +183,7 @@ _0810783E:
 	cmp r0, #0x00
 	ble _081078A0
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	lsls r0, r4, #0x06
 	adds r0, #0x40
@@ -199,7 +199,7 @@ _0810783E:
 	adds r1, r1, r2
 	ldr r0, _0810789C @ =0x09A3D248
 	movs r2, #0x02
-	bl func_08005BE8
+	bl LoadPalette
 	b _081078CE
 _0810788C: .4byte 0x09A3501C
 _08107890: .4byte 0x02035E2E
@@ -208,7 +208,7 @@ _08107898: .4byte 0x0500000C
 _0810789C: .4byte 0x09A3D248
 _081078A0:
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	asrs r4, r6, #0x10
 	lsls r0, r4, #0x06
@@ -226,7 +226,7 @@ _081078A0:
 	ldr r0, _081078EC @ =0x09A3D2C8
 	adds r1, r4, #0x0
 	movs r2, #0x02
-	bl func_08005BE8
+	bl LoadPalette
 _081078CE:
 	movs r1, #0x80
 	lsls r1, r1, #0x09

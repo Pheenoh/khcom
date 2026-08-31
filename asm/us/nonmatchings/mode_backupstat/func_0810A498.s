@@ -18,7 +18,7 @@ func_0810A498: @ 0810A498
 	adds r0, r0, r1
 	ldr r1, _0810A4C0 @ =0x05000080
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 _0810A4B6:
 	pop {r0}
 	bx r0

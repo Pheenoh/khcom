@@ -15,7 +15,7 @@ func_0809E7A4: @ 0809E7A4
 	cmp r0, #0x97
 	bne _0809E850
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r6, r0, #0x0
 	ldr r4, _0809E83C @ =0x093FEEB8
 	movs r2, #0x92
@@ -25,14 +25,14 @@ func_0809E7A4: @ 0809E7A4
 	lsls r5, r5, #0x01
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r1, #0x80
 	lsls r1, r1, #0x03
 	adds r0, r4, r1
 	ldr r2, _0809E840 @ =0x000025A0
 	adds r1, r6, r2
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r1, #0x80
 	lsls r1, r1, #0x04
 	adds r0, r4, r1
@@ -40,12 +40,12 @@ func_0809E7A4: @ 0809E7A4
 	lsls r2, r2, #0x06
 	adds r1, r6, r2
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r0, r4, r5
 	ldr r2, _0809E844 @ =0x000027E0
 	adds r1, r6, r2
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r1, #0xA4
 	lsls r1, r1, #0x03
 	adds r0, r4, r1
@@ -53,7 +53,7 @@ func_0809E7A4: @ 0809E7A4
 	lsls r2, r2, #0x06
 	adds r1, r6, r2
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0x92
 	lsls r0, r0, #0x04
 	adds r4, r4, r0
@@ -61,14 +61,14 @@ func_0809E7A4: @ 0809E7A4
 	adds r1, r6, r2
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, _0809E84C @ =0x093FD438
 	movs r2, #0xB0
 	lsls r2, r2, #0x06
 	adds r1, r6, r2
 	movs r2, #0xA8
 	lsls r2, r2, #0x04
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _0809E8CE
 	.byte 0x00, 0x00
 _0809E838: .4byte 0x02039B84
@@ -79,7 +79,7 @@ _0809E848: .4byte 0x00002A20
 _0809E84C: .4byte 0x093FD438
 _0809E850:
 	movs r0, #0x01
-	bl func_08005130
+	bl GetBgCharBase
 	adds r6, r0, #0x0
 	ldr r4, _0809E8D4 @ =0x093FEEB8
 	movs r0, #0x92
@@ -89,14 +89,14 @@ _0809E850:
 	lsls r5, r5, #0x01
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r1, #0x80
 	lsls r1, r1, #0x03
 	adds r0, r4, r1
 	ldr r2, _0809E8D8 @ =0x000025A0
 	adds r1, r6, r2
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r1, #0x80
 	lsls r1, r1, #0x04
 	adds r0, r4, r1
@@ -104,12 +104,12 @@ _0809E850:
 	lsls r2, r2, #0x06
 	adds r1, r6, r2
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r0, r4, r5
 	ldr r2, _0809E8DC @ =0x000027E0
 	adds r1, r6, r2
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r1, #0xA4
 	lsls r1, r1, #0x03
 	adds r0, r4, r1
@@ -117,7 +117,7 @@ _0809E850:
 	lsls r2, r2, #0x06
 	adds r1, r6, r2
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r0, #0x92
 	lsls r0, r0, #0x04
 	adds r4, r4, r0
@@ -125,14 +125,14 @@ _0809E850:
 	adds r1, r6, r2
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, _0809E8E4 @ =0x093FD438
 	movs r2, #0xB0
 	lsls r2, r2, #0x06
 	adds r1, r6, r2
 	movs r2, #0xA8
 	lsls r2, r2, #0x04
-	bl func_080043B4
+	bl RequestDma3Copy
 _0809E8CE:
 	pop {r4, r5, r6}
 	pop {r0}

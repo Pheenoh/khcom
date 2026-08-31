@@ -8,7 +8,7 @@ func_080277E4: @ 080277E4
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r4, #0x00]
 	str r0, [r4, #0x08]

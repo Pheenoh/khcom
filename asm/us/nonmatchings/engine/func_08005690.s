@@ -41,7 +41,7 @@ func_08005690: @ 08005690
 	add r4, sp, #0x014
 	adds r1, r4, #0x0
 	movs r2, #0x01
-	bl func_08117FE0
+	bl BgAffineSet
 	cmp r7, #0x02
 	beq _080056EA
 	cmp r7, #0x03

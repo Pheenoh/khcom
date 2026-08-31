@@ -48,7 +48,7 @@ _080EAD9C:
 	ldr r0, [r1, #0x3C]
 	ldrh r0, [r0, #0x06]
 	ldr r1, _080EADF0 @ =0x09991C04
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	b _080EAE18
 _080EADE4: .4byte 0x02034FDC
 _080EADE8: .4byte 0x0000033D
@@ -58,7 +58,7 @@ _080EADF4:
 	ldr r0, [r1, #0x3C]
 	ldrh r0, [r0, #0x06]
 	ldr r1, _080EAE00 @ =0x09991C44
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	b _080EAE18
 _080EAE00: .4byte 0x09991C44
 _080EAE04:
@@ -88,7 +88,7 @@ _080EAE18:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 	b _080EAE58
 	.byte 0x00, 0x00
 _080EAE40: .4byte 0x02034FDC
@@ -99,12 +99,12 @@ _080EAE4C:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 _080EAE58:
 	ldr r2, _080EAE68 @ =0x0000FFF7
 	movs r0, #0x01
 	movs r1, #0x00
-	bl func_080054EC
+	bl SetBgScroll
 	b _080EAEA2
 _080EAE64: .4byte 0x0998D744
 _080EAE68: .4byte 0x0000FFF7
@@ -118,7 +118,7 @@ _080EAE6C:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 	b _080EAE98
 _080EAE84: .4byte 0x0000033D
 _080EAE88: .4byte 0x0998EF44
@@ -127,12 +127,12 @@ _080EAE8C:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 _080EAE98:
 	ldr r2, _080EAEAC @ =0x0000FFFA
 	movs r0, #0x01
 	movs r1, #0x00
-	bl func_080054EC
+	bl SetBgScroll
 _080EAEA2:
 	pop {r4, r5, r6, r7}
 	pop {r0}

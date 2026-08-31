@@ -130,7 +130,7 @@ _0806E63E:
 	ldr r2, _0806E678 @ =0x05000200
 	adds r1, r1, r2
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	b _0806E6AA
 _0806E66C: .4byte 0x02039DC8
 _0806E670: .4byte 0x000001B5
@@ -158,7 +158,7 @@ _0806E67C:
 	ldr r2, _0806E6E4 @ =0x05000200
 	adds r1, r1, r2
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 _0806E6AA:
 	movs r1, #0xD0
 	lsls r1, r1, #0x01

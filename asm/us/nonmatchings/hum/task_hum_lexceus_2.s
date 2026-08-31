@@ -39,7 +39,7 @@ _08056EB6:
 	movs r1, #0xEC
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r4, r5}
 	pop {r0}
 	bx r0

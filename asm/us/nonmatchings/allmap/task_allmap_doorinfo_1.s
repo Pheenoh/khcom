@@ -7,7 +7,7 @@
 task_allmap_doorinfo_1: @ 080D4794
 	push {r4, r5, lr}
 	adds r4, r0, #0x0
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00
@@ -21,7 +21,7 @@ task_allmap_doorinfo_1: @ 080D4794
 	movs r0, #0x01
 	strb r0, [r1, #0x00]
 	movs r0, #0x68
-	bl func_0811FE70
+	bl m4aSongNumStart
 	movs r1, #0x80
 	lsls r1, r1, #0x01
 	adds r2, r4, r1

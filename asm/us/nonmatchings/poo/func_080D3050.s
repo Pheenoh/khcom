@@ -50,7 +50,7 @@ _080D3096:
 	adds r0, r0, r1
 	ldr r1, _080D30C4 @ =0x05000040
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 _080D30AC:
 	add sp, #0x024
 	pop {r4}

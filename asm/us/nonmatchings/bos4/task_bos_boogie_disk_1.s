@@ -108,7 +108,7 @@ _080DAEBE:
 	ldr r0, _080DAEF0 @ =0x0203C56C
 	strb r1, [r0, #0x00]
 	ldr r0, _080DAEF4 @ =0x0000022F
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080DAF62
 _080DAEE8: .4byte 0x00005FFF
 _080DAEEC: .4byte 0x00000105
@@ -173,7 +173,7 @@ _080DAF5E:
 _080DAF62:
 	adds r0, r6, #0x0
 	adds r0, #0x14
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r5, #0x0
 	adds r0, #0x40
 	ldr r1, [r5, #0x04]
@@ -182,7 +182,7 @@ _080DAF62:
 	bl func_08012324
 	adds r0, r6, #0x0
 	adds r0, #0x2C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _080DAF82:
 	add sp, #0x00C

@@ -45,7 +45,7 @@ _0805D258:
 	str r0, [r1, #0x78]
 	adds r0, r4, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x20]
 	movs r0, #0x01
 	pop {r4, r5}

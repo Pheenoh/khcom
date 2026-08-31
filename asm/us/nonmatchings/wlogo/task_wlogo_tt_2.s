@@ -27,7 +27,7 @@ task_wlogo_tt_2: @ 080B7444
 	str r0, [sp, #0x00C]
 	movs r0, #0x48
 	movs r1, #0x40
-	bl func_080023E0
+	bl DrawSprite
 _080B7474:
 	ldr r1, _080B75A4 @ =0x00000105
 	adds r0, r4, r1
@@ -47,7 +47,7 @@ _080B7474:
 	str r0, [sp, #0x00C]
 	movs r0, #0x60
 	movs r1, #0x50
-	bl func_080023E0
+	bl DrawSprite
 _080B749C:
 	movs r5, #0x80
 	lsls r5, r5, #0x01
@@ -64,7 +64,7 @@ _080B749C:
 	movs r0, #0x00
 	adds r2, r5, #0x0
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r1, r0, #0x0
 	ldr r2, [r4, #0x20]
 	ldr r3, [r4, #0x0C]
@@ -77,7 +77,7 @@ _080B749C:
 	str r0, [sp, #0x00C]
 	movs r0, #0x4E
 	movs r1, #0x48
-	bl func_080023E0
+	bl DrawSprite
 _080B74DA:
 	movs r1, #0x81
 	lsls r1, r1, #0x01
@@ -98,7 +98,7 @@ _080B74DA:
 	str r0, [sp, #0x00C]
 	movs r0, #0x41
 	movs r1, #0x41
-	bl func_080023E0
+	bl DrawSprite
 _080B7504:
 	ldr r1, _080B75A8 @ =0x00000101
 	adds r0, r4, r1
@@ -113,7 +113,7 @@ _080B7504:
 	movs r0, #0x00
 	adds r2, r5, #0x0
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r1, r0, #0x0
 	ldr r2, [r4, #0x24]
 	ldr r3, [r4, #0x10]
@@ -126,7 +126,7 @@ _080B7504:
 	str r0, [sp, #0x00C]
 	movs r0, #0x6C
 	movs r1, #0x5E
-	bl func_080023E0
+	bl DrawSprite
 _080B753E:
 	ldr r1, _080B75AC @ =0x00000103
 	adds r0, r4, r1
@@ -146,7 +146,7 @@ _080B753E:
 	str r0, [sp, #0x00C]
 	movs r0, #0x60
 	movs r1, #0x57
-	bl func_080023E0
+	bl DrawSprite
 _080B7566:
 	movs r1, #0x83
 	lsls r1, r1, #0x01
@@ -167,12 +167,12 @@ _080B7566:
 	str r0, [sp, #0x00C]
 	movs r0, #0x40
 	movs r1, #0x40
-	bl func_080023E0
+	bl DrawSprite
 _080B7590:
 	movs r1, #0x8A
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
-	bl func_08000EE0
+	bl TaskPoolDraw
 	add sp, #0x010
 	pop {r4, r5}
 	pop {r0}

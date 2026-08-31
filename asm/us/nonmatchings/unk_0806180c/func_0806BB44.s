@@ -251,7 +251,7 @@ _0806BCE6:
 	ldr r0, [r0, #0x08]
 	cmp r0, #0x00
 	beq _0806BD26
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldrb r0, [r6, #0x00]
 	ldr r2, [r5, #0x00]
 	lsls r1, r0, #0x01
@@ -279,7 +279,7 @@ _0806BD26:
 	ldr r1, _0806BDB4 @ =0x090CBFB2
 	adds r0, r0, r1
 	movs r1, #0x80
-	bl func_080026A4
+	bl LoadObjTiles
 	ldrb r2, [r6, #0x00]
 	ldr r1, _0806BDA8 @ =0x02034A88
 	ldr r3, [r1, #0x00]

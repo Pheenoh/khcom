@@ -11,7 +11,7 @@ task_allmap_roomname_3: @ 080D3EB8
 	bl func_08065AE0
 	adds r4, #0xC8
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

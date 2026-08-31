@@ -21,11 +21,11 @@ _0800E328:
 	lsls r0, r0, #0x15
 	lsrs r0, r0, #0x10
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x04]
 	ldr r0, [r6, #0x00]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x08]
 	str r0, [r4, #0x0C]
 	ldr r0, [r5, #0x44]
@@ -40,7 +40,7 @@ _0800E328:
 	adds r0, #0x10
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

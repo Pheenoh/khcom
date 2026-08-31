@@ -43,9 +43,9 @@ _080B4B54: .4byte 0x080B4B58
 _080B4CA8:
 	ldr r4, _080B4CC0 @ =0x02034C38
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 	movs r0, #0x01
 	pop {r4, r5, r6}
 	pop {r1}

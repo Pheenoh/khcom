@@ -61,7 +61,7 @@ _080C1260:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r3, #0x00
 	ldsh r0, [r0, r3]
@@ -75,7 +75,7 @@ _080C1260:
 	str r4, [sp, #0x004]
 	str r6, [sp, #0x008]
 	str r7, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080C1292:
 	movs r3, #0xBE
 	lsls r3, r3, #0x01
@@ -113,7 +113,7 @@ _080C12B8:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -136,7 +136,7 @@ _080C12B8:
 	str r6, [sp, #0x008]
 	ldr r4, _080C1334 @ =0x0000FFF2
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080C130C:
 	movs r1, #0xCA
 	lsls r1, r1, #0x01
@@ -147,7 +147,7 @@ _080C130C:
 	movs r2, #0xC0
 	lsls r2, r2, #0x01
 	adds r0, r5, r2
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080C1322:
 	add sp, #0x014
 	pop {r3}

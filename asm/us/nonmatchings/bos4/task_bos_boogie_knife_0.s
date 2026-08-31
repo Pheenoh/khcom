@@ -108,26 +108,26 @@ _080DB18A:
 	ldr r0, _080DB1FC @ =0x0979C44E
 	movs r1, #0xC4
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x08]
 	ldr r0, _080DB200 @ =0x0984AFD8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x0C]
 	ldr r0, _080DB204 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x10]
 	adds r4, r5, #0x0
 	adds r4, #0x14
 	ldr r1, _080DB208 @ =0x09EF684C
 	ldr r2, _080DB20C @ =0x09EF6848
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	pop {r3, r4}
 	mov r8, r3
 	mov r9, r4

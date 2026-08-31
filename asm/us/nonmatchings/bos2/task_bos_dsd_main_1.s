@@ -58,7 +58,7 @@ _080C24D2:
 	bl func_08012324
 	adds r0, r4, #0x0
 	adds r0, #0x58
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, _080C2510 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	movs r1, #0xE5

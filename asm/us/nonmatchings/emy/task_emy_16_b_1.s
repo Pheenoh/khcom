@@ -99,7 +99,7 @@ _08038F9A:
 	adds r0, r6, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 _08038FBC:
 	adds r0, r5, #0x0
 	adds r0, #0x6C
@@ -149,7 +149,7 @@ _0803900C:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, _0803902C @ =0xFFFFFC34
 	str r0, [r5, #0x30]
 	adds r6, r4, #0x0
@@ -232,7 +232,7 @@ _080390A0:
 	adds r0, r4, #0x0
 	bl func_08012324
 	adds r0, r6, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 _080390B4:
 	add sp, #0x008

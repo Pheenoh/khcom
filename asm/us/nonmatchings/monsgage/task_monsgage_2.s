@@ -27,7 +27,7 @@ task_monsgage_2: @ 0805CBE0
 	str r0, [sp, #0x00C]
 	movs r0, #0xAC
 	movs r1, #0x0C
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r4, #0x0
 	adds r0, #0x24
 	ldrb r0, [r0, #0x00]
@@ -49,7 +49,7 @@ _0805CC34:
 	movs r0, #0x00
 	movs r3, #0x00
 _0805CC38:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r1, r0, #0x0
 	ldr r2, [r4, #0x18]
 	ldr r3, [r4, #0x04]
@@ -63,7 +63,7 @@ _0805CC38:
 	str r0, [sp, #0x00C]
 	movs r0, #0xAE
 	movs r1, #0x10
-	bl func_080023E0
+	bl DrawSprite
 _0805CC5A:
 	add sp, #0x010
 	pop {r4}

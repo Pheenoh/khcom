@@ -11,7 +11,7 @@ func_080E3FD4: @ 080E3FD4
 	mov r5, r8
 	push {r5, r6, r7}
 	add sp, #-0x010
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E414C @ =0x02034F28
@@ -23,7 +23,7 @@ func_080E3FD4: @ 080E3FD4
 	adds r4, #0x04
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	mov r2, r9
@@ -67,7 +67,7 @@ func_080E3FD4: @ 080E3FD4
 	mov r10, r0
 	str r0, [sp, #0x000]
 	bl func_080E309C
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
@@ -88,7 +88,7 @@ func_080E3FD4: @ 080E3FD4
 	adds r2, r5, #0x0
 	adds r3, r6, #0x0
 	bl func_080E3C1C
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, _080E4154 @ =0x0203C7B0
 	mov r8, r1
 	ldrb r4, [r1, #0x03]
@@ -137,7 +137,7 @@ func_080E3FD4: @ 080E3FD4
 	adds r2, r5, #0x0
 	adds r3, r6, #0x0
 	bl func_080E3CD4
-	bl func_080065A4
+	bl GetRandom
 	mov r3, r8
 	ldrb r4, [r3, #0x03]
 	lsls r0, r0, #0x10
@@ -191,7 +191,7 @@ _080E4158:
 	adds r2, r5, #0x0
 	adds r3, r6, #0x0
 	bl func_080E3CD4
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, _080E4240 @ =0x0203C7B0
 	mov r8, r1
 	ldrb r4, [r1, #0x03]
@@ -240,7 +240,7 @@ _080E4158:
 	adds r2, r5, #0x0
 	adds r3, r6, #0x0
 	bl func_080E3C1C
-	bl func_080065A4
+	bl GetRandom
 	mov r3, r8
 	ldrb r4, [r3, #0x03]
 	lsls r0, r0, #0x10

@@ -50,14 +50,14 @@ _08101698:
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _081016AC
-	bl func_08002C10
+	bl ReleaseObjPalette
 _081016AC:
 	ldr r0, _08101738 @ =0x02035818
 	adds r4, r4, r0
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x00
 	beq _081016BA
-	bl func_080028C0
+	bl ReleaseObjTiles
 _081016BA:
 	lsls r5, r7, #0x05
 	movs r0, #0x5C
@@ -70,7 +70,7 @@ _081016BA:
 	mov r1, r9
 	adds r6, r5, r1
 	ldrh r1, [r6, #0x24]
-	bl func_08002A14
+	bl LoadObjPalette
 	mov r1, r8
 	str r0, [r1, #0x00]
 	mov r0, r9
@@ -78,7 +78,7 @@ _081016BA:
 	adds r0, r5, r0
 	ldr r0, [r0, #0x00]
 	ldrh r1, [r6, #0x2C]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	lsls r4, r7, #0x01
 	adds r4, r4, r7
@@ -92,11 +92,11 @@ _081016BA:
 	add r5, r10
 	ldr r2, [r5, #0x00]
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrh r1, [r6, #0x38]
 	adds r0, r4, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r7, #0x1
 	lsls r0, r0, #0x10
 	lsrs r3, r0, #0x10

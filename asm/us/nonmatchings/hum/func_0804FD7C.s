@@ -28,7 +28,7 @@ func_0804FD7C: @ 0804FD7C
 	ldr r0, [r4, #0x0C]
 	subs r0, r0, r1
 	str r0, [sp, #0x008]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x41
@@ -40,7 +40,7 @@ func_0804FD7C: @ 0804FD7C
 	ldr r1, [sp, #0x000]
 	adds r1, r1, r0
 	str r1, [sp, #0x000]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x21
@@ -52,7 +52,7 @@ func_0804FD7C: @ 0804FD7C
 	ldr r1, [sp, #0x004]
 	adds r1, r1, r0
 	str r1, [sp, #0x004]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x29
@@ -69,7 +69,7 @@ func_0804FD7C: @ 0804FD7C
 	adds r0, r5, r2
 	ldr r1, _0804FE24 @ =0x09EDB788
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _0804FE0E:
 	add sp, #0x020
 	pop {r4, r5}

@@ -45,19 +45,19 @@ void mode_copyright1_0(s32 arg) {
         SaveClearSystem();
     }
 
-    func_0811FE70(0);
+    m4aSongNumStart(0);
     func_08004DB0();
-    func_08005074(0, 0, 0x1F, 0);
-    func_080055C8(0, 3);
+    SetupBg(0, 0, 0x1F, 0);
+    SetBgPriority(0, 3);
 
     if (gUnk_02034ED4 != 0) {
-        func_080050B8(0, gUnk_09801DD8, 0x4FC0);
-        func_080050DC(0, gUnk_0984B298, 0x1C0);
-        func_0800510C(0, gUnk_09849098, 0x800);
+        LoadBgTiles(0, gUnk_09801DD8, 0x4FC0);
+        LoadBgPalette(0, gUnk_0984B298, 0x1C0);
+        LoadBgMap(0, gUnk_09849098, 0x800);
     } else {
-        func_080050B8(0, gUnk_097DB5F8, 0x4FC0);
-        func_080050DC(0, gUnk_0984AA38, 0x200);
-        func_0800510C(0, gUnk_09841798, 0x800);
+        LoadBgTiles(0, gUnk_097DB5F8, 0x4FC0);
+        LoadBgPalette(0, gUnk_0984AA38, 0x200);
+        LoadBgMap(0, gUnk_09841798, 0x800);
     }
 
     func_08006120(1, 0x43);

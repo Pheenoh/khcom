@@ -16,7 +16,7 @@ func_080D6944: @ 080D6944
 	beq _080D6958
 	movs r6, #0x02
 _080D6958:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x40
 	ands r1, r0
 	lsls r1, r1, #0x10
@@ -24,7 +24,7 @@ _080D6958:
 	cmp r5, #0x00
 	beq _080D6984
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	strh r0, [r4, #0x00]
@@ -36,13 +36,13 @@ _080D6958:
 	.byte 0x00, 0x00
 _080D6980: .4byte 0x02039BB0
 _080D6984:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080D69A6
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldrh r0, [r4, #0x00]
 	adds r0, #0x01
 	strh r0, [r4, #0x00]

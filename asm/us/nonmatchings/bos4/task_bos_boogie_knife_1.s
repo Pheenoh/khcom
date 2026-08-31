@@ -120,7 +120,7 @@ _080DB2F0: .4byte 0xFFFF4000
 _080DB2F4:
 	adds r0, r4, #0x0
 	adds r0, #0x14
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r5, #0x0
 	adds r0, #0x40
 	ldr r1, [r5, #0x04]

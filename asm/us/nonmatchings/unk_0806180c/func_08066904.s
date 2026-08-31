@@ -8,7 +8,7 @@ func_08066904: @ 08066904
 	push {lr}
 	ldr r0, _08066914 @ =0x08F69BE4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	pop {r1}
 	bx r1
 	.byte 0x00, 0x00

@@ -36,7 +36,7 @@ _080578FC:
 	bne _0805799C
 	adds r0, r6, #0x0
 	adds r0, #0x34
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [sp, #0x014]
 	movs r4, #0xB0
 	lsls r4, r4, #0x01
@@ -78,7 +78,7 @@ _0805793C:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -100,7 +100,7 @@ _0805793C:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	ldr r2, [sp, #0x014]
-	bl func_080023E0
+	bl DrawSprite
 	b _08057A82
 	.byte 0x00, 0x00
 _08057998: .4byte 0xFFFFEFFA
@@ -123,7 +123,7 @@ _0805799C:
 	mov r9, r3
 _080579BC:
 	mov r0, r9
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [sp, #0x014]
 	movs r4, #0xB0
 	lsls r4, r4, #0x01
@@ -148,7 +148,7 @@ _080579E2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -176,14 +176,14 @@ _080579E2:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	ldr r2, [sp, #0x014]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r5, #0x00]
 	ldr r3, [r5, #0x04]
 	movs r0, #0x00
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -204,7 +204,7 @@ _080579E2:
 	ldr r2, _08057A98 @ =0x0000FFFE
 	str r2, [sp, #0x00C]
 	ldr r2, _08057A9C @ =0x08B22CBC
-	bl func_080023E0
+	bl DrawSprite
 	adds r5, #0x1C
 	movs r3, #0x18
 	add r9, r3

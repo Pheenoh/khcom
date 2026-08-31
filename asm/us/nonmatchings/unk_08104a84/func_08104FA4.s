@@ -8,7 +8,7 @@ func_08104FA4: @ 08104FA4
 	push {r4, r5, lr}
 	add sp, #-0x004
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	adds r2, #0xC0
 	ldr r0, _08104FEC @ =0x02035C38
@@ -21,7 +21,7 @@ func_08104FA4: @ 08104FA4
 	movs r3, #0x20
 	bl func_08101588
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	movs r0, #0x90
 	lsls r0, r0, #0x01

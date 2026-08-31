@@ -160,7 +160,7 @@ _08050DCA:
 	movs r1, #0xE4
 	lsls r1, r1, #0x02
 	adds r0, r4, r1
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

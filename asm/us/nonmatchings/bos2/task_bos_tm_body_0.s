@@ -11,15 +11,15 @@ task_bos_tm_body_0: @ 080B9660
 	ldr r0, _080B97CC @ =0x09652E84
 	movs r1, #0xEC
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x04]
 	ldr r0, _080B97D0 @ =0x096FB2A4
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x08]
 	ldr r0, _080B97D4 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x0C]
 	movs r0, #0x92
 	lsls r0, r0, #0x01

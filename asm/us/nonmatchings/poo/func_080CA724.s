@@ -7,12 +7,12 @@
 func_080CA724: @ 080CA724
 	push {r4, r5, lr}
 	adds r4, r0, #0x0
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080CA744
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -20,12 +20,12 @@ func_080CA724: @ 080CA724
 	movs r0, #0xAD
 	b _080CA8CC
 _080CA744:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080CA760
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -33,12 +33,12 @@ _080CA744:
 	movs r0, #0xD3
 	b _080CA8CC
 _080CA760:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080CA77C
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -46,12 +46,12 @@ _080CA760:
 	movs r0, #0x2D
 	b _080CA8CC
 _080CA77C:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080CA798
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -59,7 +59,7 @@ _080CA77C:
 	movs r0, #0x53
 	b _080CA8CC
 _080CA798:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -73,7 +73,7 @@ _080CA798:
 	movs r0, #0xAD
 	b _080CA8CC
 _080CA7B6:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -87,7 +87,7 @@ _080CA7B6:
 	movs r0, #0x53
 	b _080CA8CC
 _080CA7D4:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -101,7 +101,7 @@ _080CA7D4:
 	movs r0, #0xD3
 	b _080CA8CC
 _080CA7F2:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -115,7 +115,7 @@ _080CA7F2:
 	movs r0, #0x2D
 	b _080CA8CC
 _080CA810:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -129,7 +129,7 @@ _080CA810:
 	movs r0, #0xD3
 	b _080CA8CC
 _080CA82E:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -143,7 +143,7 @@ _080CA82E:
 	movs r0, #0xAD
 	b _080CA8CC
 _080CA84C:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -157,7 +157,7 @@ _080CA84C:
 	movs r0, #0x2D
 	b _080CA8CC
 _080CA86A:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -171,7 +171,7 @@ _080CA86A:
 	movs r0, #0x53
 	b _080CA8CC
 _080CA888:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r2, #0x80
 	adds r1, r2, #0x0
 	ands r1, r0
@@ -182,7 +182,7 @@ _080CA888:
 	strb r2, [r4, #0x14]
 	b _080CA8CE
 _080CA89E:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -190,7 +190,7 @@ _080CA89E:
 	strb r5, [r4, #0x14]
 	b _080CA8CE
 _080CA8AE:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -198,7 +198,7 @@ _080CA8AE:
 	movs r0, #0xC0
 	b _080CA8CC
 _080CA8BE:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00

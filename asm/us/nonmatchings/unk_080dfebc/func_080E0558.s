@@ -28,26 +28,26 @@ func_080E0558: @ 080E0558
 	strh r4, [r0, #0x00]
 	adds r0, #0x04
 	movs r1, #0x32
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r5, #0x00]
 	adds r0, #0x8C
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r5, #0x00]
 	adds r0, #0x58
 	bl func_08000BA4
 	ldr r0, [r5, #0x00]
 	adds r0, #0xA0
 	movs r1, #0x19
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r5, #0x00]
 	adds r0, #0xC8
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r5, #0x00]
 	adds r0, #0xB4
 	movs r1, #0x08
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080E05E0 @ =0x0203C7AC
 	ldr r0, [r1, #0x00]
 	str r4, [r0, #0x00]
@@ -59,7 +59,7 @@ func_080E0558: @ 080E0558
 	ldr r0, [r1, #0x00]
 	adds r0, #0x30
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

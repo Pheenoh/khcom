@@ -12,26 +12,26 @@ task_bos_ursula_map_0: @ 080DC640
 	movs r1, #0x00
 	movs r2, #0x1A
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x00
 	movs r2, #0x18
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x03
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x00
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r1, [r4, #0x00]
 	ldrh r2, [r4, #0x04]
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, [r4, #0x08]
 	ldrh r2, [r4, #0x0C]
 	movs r0, #0x01
-	bl func_080050DC
+	bl LoadBgPalette
 	adds r4, #0x10
 	movs r0, #0x01
 	adds r1, r4, #0x0

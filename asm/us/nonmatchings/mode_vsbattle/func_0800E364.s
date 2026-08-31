@@ -10,9 +10,9 @@ func_0800E364: @ 0800E364
 	cmp r4, #0x00
 	beq _0800E378
 	ldr r0, [r4, #0x04]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _0800E378:
 	pop {r4}
 	pop {r0}

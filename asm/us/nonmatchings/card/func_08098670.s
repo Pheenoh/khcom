@@ -29,7 +29,7 @@ func_08098670: @ 08098670
 	movs r3, #0x0A
 	str r3, [sp, #0x00C]
 	adds r3, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080986A4:
 	ldr r6, [r4, #0x04]
 	cmp r6, #0x00
@@ -49,7 +49,7 @@ _080986A4:
 	movs r3, #0x09
 	str r3, [sp, #0x00C]
 	adds r3, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080986CC:
 	ldr r5, [r4, #0x08]
 	cmp r5, #0x00
@@ -69,7 +69,7 @@ _080986CC:
 	movs r3, #0x08
 	str r3, [sp, #0x00C]
 	adds r3, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080986F4:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

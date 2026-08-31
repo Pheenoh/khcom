@@ -41,7 +41,7 @@ _080C99A0:
 	adds r6, r5, #0x0
 	adds r6, #0x0C
 	adds r0, r6, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x08]
 	ldr r4, [r4, #0x00]
 	cmp r4, #0x03
@@ -61,13 +61,13 @@ _080C99D4:
 	cmp r0, #0x09
 	bne _080C9A02
 	ldr r0, _080C99F8 @ =0x0000039E
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080C9A02
 _080C99F4: .4byte 0x02034DAC
 _080C99F8: .4byte 0x0000039E
 _080C99FC:
 	ldr r0, _080C9A20 @ =0x0000039F
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080C9A02:
 	adds r0, r5, #0x0
 	adds r0, #0x4C
@@ -77,7 +77,7 @@ _080C9A02:
 	bl func_08012324
 	adds r0, r5, #0x0
 	adds r0, #0xB0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4, r5, r6}
 	pop {r1}

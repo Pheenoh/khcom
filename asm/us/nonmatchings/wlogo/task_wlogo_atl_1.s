@@ -165,13 +165,13 @@ _080B540C:
 	ldr r0, _080B5430 @ =0x09634664
 	adds r4, r4, r0
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	adds r1, #0x20
 	movs r2, #0xD8
 	lsls r2, r2, #0x02
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 _080B5428:
 	movs r0, #0x01
 _080B542A:

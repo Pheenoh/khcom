@@ -45,7 +45,7 @@ _080E8F96:
 	adds r0, #0xC8
 	ldr r1, _080E8FB4 @ =0x09EF6E64
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	movs r0, #0x01
 _080E8FA6:
 	add sp, #0x018

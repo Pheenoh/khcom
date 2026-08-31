@@ -73,7 +73,7 @@ _0801BFE0:
 	ldr r0, [r0, #0x00]
 	adds r0, #0x2C
 	ldr r1, _0801C014 @ =0x09EDB3C8
-	bl func_08000E14
+	bl TaskCreate
 	b _0801C05A
 _0801C008: .4byte 0x09EDAFA8
 _0801C00C: .4byte 0x09EDA4EC
@@ -110,7 +110,7 @@ _0801C04C:
 	adds r0, #0x2C
 	ldr r1, [sp, #0x000]
 	add r2, sp, #0x004
-	bl func_08000E14
+	bl TaskCreate
 _0801C05A:
 	movs r0, #0x01
 _0801C05C:

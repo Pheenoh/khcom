@@ -8,7 +8,7 @@ func_080E8E74: @ 080E8E74
 	push {r4, r5, r6, lr}
 	lsls r0, r0, #0x18
 	lsrs r6, r0, #0x18
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E8E9C @ =0x00002710

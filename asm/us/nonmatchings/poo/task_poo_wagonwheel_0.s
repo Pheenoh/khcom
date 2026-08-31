@@ -59,11 +59,11 @@ _080D0724:
 	ldr r1, _080D0768 @ =0x09EF60AC
 	ldr r2, _080D076C @ =0x09EF6078
 	adds r0, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrh r1, [r7, #0x36]
 	adds r0, r5, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	str r4, [r7, #0x38]
 	adds r0, r7, #0x0
 	adds r0, #0x40

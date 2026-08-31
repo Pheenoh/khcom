@@ -14,7 +14,7 @@ task_frd_aladdin_0: @ 08049168
 	adds r7, r6, #0x0
 	adds r7, #0x20
 	movs r0, #0xBC
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r0, r8
 	ldrb r1, [r0, #0x02]
 	cmp r1, #0x00
@@ -151,7 +151,7 @@ _08049282:
 	str r0, [r7, #0x10]
 	ldr r0, _080492F0 @ =0x09617D98
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x1C]
 	movs r2, #0x98
 	lsls r2, r2, #0x01
@@ -159,7 +159,7 @@ _08049282:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _080492F4 @ =0x0813ED4C
 	ldr r1, [r6, #0x18]
 	str r1, [sp, #0x000]
@@ -169,11 +169,11 @@ _08049282:
 	bl func_08019068
 	adds r0, r6, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080492F8 @ =0x09EDAE88
 	adds r0, r6, #0x0
 	adds r2, r7, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, _080492FC @ =0x0000014D
 	adds r0, r6, r1
 	ldrb r0, [r0, #0x00]

@@ -30,9 +30,9 @@ func_08014AAC: @ 08014AAC
 	adds r1, r4, #0x0
 	adds r2, r7, #0x0
 	adds r3, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08014B24 @ =0x0000020E
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, _08014B28 @ =0x09EDAA50
 	add r1, sp, #0x004
 	movs r2, #0x00

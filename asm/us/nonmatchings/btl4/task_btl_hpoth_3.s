@@ -8,17 +8,17 @@ task_btl_hpoth_3: @ 0805DA34
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x10]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x14]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x18]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x1C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x0C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

@@ -8,9 +8,9 @@ task_poo_trap_3: @ 080CBCC8
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x8C
 	ldrb r0, [r0, #0x00]

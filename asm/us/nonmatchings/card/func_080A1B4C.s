@@ -33,7 +33,7 @@ func_080A1B4C: @ 080A1B4C
 	ldr r1, _080A1BA8 @ =0x09EE7950
 	adds r0, r3, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	ldr r2, [r6, #0x00]
 	ldr r0, [r2, #0x68]
 	ldr r1, [r2, #0x6C]

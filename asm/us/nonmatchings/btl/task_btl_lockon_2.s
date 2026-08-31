@@ -33,7 +33,7 @@ task_btl_lockon_2: @ 0801D594
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -48,7 +48,7 @@ task_btl_lockon_2: @ 0801D594
 	movs r4, #0x10
 	str r4, [sp, #0x008]
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _0801D5F0:
 	add sp, #0x014
 	pop {r4, r5, r6, r7}

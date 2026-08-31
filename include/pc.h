@@ -36,7 +36,7 @@ void func_08049EE4(PcCharaWork* work, s32 a, s32 b);
 void func_08049F24(PcCharaWork* work, s32 a, s32 b);
 s32 func_08049F50(PcCharaWork* work);
 
-s32 func_080065A4(void);
+s32 GetRandom(void);
 void func_0800F368(void* work, u16 a);
 u8 func_0800F504(void* work, u16 a, u16 b, u16 c);
 void func_0801C700(void* obj, s32* a, s32* b, s32* c);

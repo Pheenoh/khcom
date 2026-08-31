@@ -37,7 +37,7 @@ task_btl_premire_0: @ 080313E4
 	adds r0, r5, #0x0
 	bl _call_via_r4
 _08031424:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080314F0 @ =0x00000381
@@ -49,30 +49,30 @@ _08031424:
 	adds r0, r0, r1
 	negs r0, r0
 	str r0, [r5, #0x20]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x18
 	lsrs r7, r0, #0x18
 	ldr r0, _080314F4 @ =0x08B209E0
 	movs r1, #0xD0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x10]
 	ldr r0, _080314F8 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x14]
 	adds r4, r5, #0x0
 	adds r4, #0x48
 	ldr r1, _080314FC @ =0x09EE1278
 	ldr r2, _08031500 @ =0x09EE1244
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x0A
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x18]
 	mov r4, r8
 	strh r4, [r5, #0x28]

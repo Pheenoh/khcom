@@ -8,11 +8,11 @@ task_wlogo_agr_3: @ 080B63E8
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _080B6404 @ =0x02034C80
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

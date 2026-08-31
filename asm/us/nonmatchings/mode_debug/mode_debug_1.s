@@ -10,7 +10,7 @@ mode_debug_1: @ 0800AD90
 	bl func_08007E50
 	lsls r0, r0, #0x10
 	lsrs r4, r0, #0x10
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -52,7 +52,7 @@ _0800ADD4:
 	.byte 0x00, 0x00
 _0800ADF0: .4byte 0x09ECEB64
 _0800ADF4:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -63,9 +63,9 @@ _0800ADF4:
 	subs r0, #0x01
 	strb r0, [r1, #0x00]
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0800AE10:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -76,7 +76,7 @@ _0800AE10:
 	adds r0, #0x01
 	strb r0, [r1, #0x00]
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0800AE2C:
 	ldr r0, _0800AE48 @ =0x02034898
 	ldr r0, [r0, #0x00]
@@ -148,7 +148,7 @@ _0800B0D4:
 	movs r1, #0x09
 	bl __divsi3
 	strb r0, [r4, #0x01]
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x20
 	ands r1, r0
 	lsls r1, r1, #0x10
@@ -170,7 +170,7 @@ _0800B0D4:
 	.byte 0x00, 0x00
 _0800B110: .4byte 0x02034898
 _0800B114:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -310,7 +310,7 @@ _0800B1F0:
 	movs r2, #0x02
 	bl func_0805FCB0
 _0800B25C:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x04
 	ands r1, r0
 	cmp r1, #0x00
@@ -325,7 +325,7 @@ _0800B270:
 	ldr r4, _0800B2E0 @ =0x02034898
 	ldr r0, [r4, #0x00]
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	adds r5, r0, #0x0
 	ldr r4, [r4, #0x00]
 	movs r0, #0x00
@@ -345,7 +345,7 @@ _0800B270:
 	str r0, [sp, #0x00C]
 	movs r0, #0x09
 	adds r2, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _0800B2B0:
 	add sp, #0x010
 	pop {r4, r5, r6}

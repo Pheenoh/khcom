@@ -72,7 +72,7 @@ _0807E3EC:
 _0807E3F0:
 	adds r0, r5, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r0, #0x04]
 	str r0, [r4, #0x00]
 	mov r1, r8
@@ -113,7 +113,7 @@ _0807E424:
 	ldr r1, _0807E47C @ =0x09EE49E4
 	adds r0, r5, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	ldr r3, [r0, #0x04]
 	adds r2, r3, #0x0
 	adds r2, #0x98

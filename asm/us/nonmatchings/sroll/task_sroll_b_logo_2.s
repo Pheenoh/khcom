@@ -18,7 +18,7 @@ task_sroll_b_logo_2: @ 08114CC8
 	lsrs r4, r4, #0x10
 	adds r0, r5, #0x0
 	adds r0, #0x18
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	ldr r0, [r5, #0x00]
 	lsls r0, r0, #0x08
@@ -35,7 +35,7 @@ task_sroll_b_logo_2: @ 08114CC8
 	lsls r1, r1, #0x04
 	str r1, [sp, #0x00C]
 	adds r1, r4, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r4, r5}
 	pop {r0}

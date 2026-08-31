@@ -28,11 +28,11 @@ _08102DD8:
 	movs r1, #0x00
 	bl func_080062F4
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r7, #0x4
 	adds r0, r5, r0
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r4, r7, #0x0
 	adds r4, #0x0C
 	adds r4, r5, r4
@@ -44,10 +44,10 @@ _08102DD8:
 	movs r1, #0x00
 	bl func_080062F4
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	add r5, r8
 	ldr r0, [r5, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r6, #0x01
 	lsls r6, r6, #0x10
 	lsrs r0, r6, #0x10
@@ -63,10 +63,10 @@ _08102DD8:
 	movs r1, #0x00
 	bl func_080062F4
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _08102F08 @ =0x02035ADC
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r4, _08102F0C @ =0x02035A40
 	ldr r0, [r4, #0x00]
 	ldrh r0, [r0, #0x06]
@@ -76,19 +76,19 @@ _08102DD8:
 	movs r1, #0x00
 	bl func_080062F4
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r4, _08102F10 @ =0x02035A44
 	ldr r0, [r4, #0x00]
 	movs r1, #0x24
 	bl func_08065AE0
 	ldr r0, [r4, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	ldr r4, _08102F14 @ =0x02035A4C
 	ldr r0, [r4, #0x00]
 	movs r1, #0x5A
 	bl func_08065AE0
 	ldr r0, [r4, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	ldr r4, _08102F18 @ =0x02035A30
 	ldr r0, [r4, #0x00]
 	ldrh r0, [r0, #0x06]
@@ -98,10 +98,10 @@ _08102DD8:
 	movs r1, #0x00
 	bl func_080062F4
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _08102F1C @ =0x02035A34
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r4, _08102F20 @ =0x02035A38
 	ldr r0, [r4, #0x00]
 	ldrh r0, [r0, #0x06]
@@ -111,13 +111,13 @@ _08102DD8:
 	movs r1, #0x00
 	bl func_080062F4
 	ldr r0, [r4, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _08102F24 @ =0x02035A3C
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, _08102F28 @ =0x02035A54
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r0, #0x00
 _08102ED6:
 	lsls r4, r0, #0x10
@@ -127,7 +127,7 @@ _08102ED6:
 	lsls r0, r0, #0x02
 	ldr r1, _08102F2C @ =0x02035A70
 	adds r0, r0, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	adds r4, #0x01
 	lsls r4, r4, #0x10
 	lsrs r0, r4, #0x10

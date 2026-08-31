@@ -19,7 +19,7 @@ func_080D5A4C: @ 080D5A4C
 	movs r0, #0x01
 	adds r1, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080050DC
+	bl LoadBgPalette
 	movs r0, #0x00
 	adds r1, r4, #0x0
 	adds r2, r5, #0x0
@@ -32,7 +32,7 @@ _080D5A80:
 	movs r0, #0x01
 	adds r1, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_080050DC
+	bl LoadBgPalette
 	movs r0, #0x00
 	adds r1, r4, #0x0
 	adds r2, r5, #0x0
@@ -53,7 +53,7 @@ _080D5A96:
 	ldr r0, _080D5AF4 @ =0x02034EA0
 	ldr r1, _080D5AF8 @ =0x09EF4E60
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r4, #0x00]
 _080D5AC2:
 	ldr r4, _080D5AFC @ =0x02034EBC
@@ -65,7 +65,7 @@ _080D5AC2:
 	ldr r0, _080D5AF4 @ =0x02034EA0
 	ldr r1, _080D5B00 @ =0x09EF4E78
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r4, #0x00]
 _080D5ADC:
 	movs r0, #0x02

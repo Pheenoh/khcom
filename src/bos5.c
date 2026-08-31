@@ -31,9 +31,9 @@ void task_bos_ga_3(GaWork* work) {
         i++;
     } while (i <= 5);
 
-    func_080028C0((void*)work->unk_A28);
-    func_08002C10((void*)work->unk_A30);
-    func_08002C10((void*)work->unk_A34);
+    ReleaseObjTiles((void*)work->unk_A28);
+    ReleaseObjPalette((void*)work->unk_A30);
+    ReleaseObjPalette((void*)work->unk_A34);
 }
 
 INCLUDE_ASM("bos5/func_080FB8DC.s");
@@ -43,7 +43,7 @@ void func_080FB8E8(s32 unused, u16 index) {
 }
 
 void func_080FB908(s32 unused, u16 index) {
-    func_080050B8(1, gUnk_09992108[index].unk_04, gUnk_09992108[index].unk_08);
+    LoadBgTiles(1, gUnk_09992108[index].unk_04, gUnk_09992108[index].unk_08);
 }
 
 INCLUDE_ASM("bos5/func_080FB930.s");
@@ -86,17 +86,17 @@ void task_bos_md_3(MdWork* work) {
 
     do {
         if (*(void**)(p + off) != 0) {
-            func_080028C0(*(void**)(p + off));
+            ReleaseObjTiles(*(void**)(p + off));
         }
 
         off += 20;
     } while (--i >= 0);
 
-    func_08002C10((void*)work->unk_020);
-    func_08002C10((void*)work->unk_024);
-    func_08000F0C(q);
-    func_08000F0C(r);
-    func_08000F0C(t);
+    ReleaseObjPalette((void*)work->unk_020);
+    ReleaseObjPalette((void*)work->unk_024);
+    TaskPoolDestroy(q);
+    TaskPoolDestroy(r);
+    TaskPoolDestroy(t);
 }
 #else
 INCLUDE_ASM("bos5/task_bos_md_3.s");
@@ -135,13 +135,13 @@ void task_bos_md_fire_2(MdFireWork* work) {
     s32 sprite;
     u16 frame;
 
-    if ((s16)work->unk_006 > 0 && (gUnk_03007480 & 1)) {
+    if ((s16)work->unk_006 > 0 && (gFrameCounter & 1)) {
         gfx = (void*)work->unk_010;
     } else {
         gfx = (void*)work->unk_00C;
     }
 
-    func_0801909C(&x, &y, work->unk_148, work->unk_14C, work->unk_150);
+    WorldToScreen(&x, &y, work->unk_148, work->unk_14C, work->unk_150);
     frame = func_0801AF1C(work->unk_14C);
 
     if (work->unk_000 == 0) {
@@ -153,10 +153,10 @@ void task_bos_md_fire_2(MdFireWork* work) {
         goto draw;
     }
 
-    sprite = func_08002CB4(0, work->unk_030, work->unk_030, 0);
+    sprite = AllocObjAffine(0, work->unk_030, work->unk_030, 0);
 
 draw:
-    func_080023E0(x, y, func_08005A64(&work->unk_018), (void*)work->unk_014, gfx,
+    DrawSprite(x, y, AnimUpdate(&work->unk_018), (void*)work->unk_014, gfx,
                   sprite, frame, (u16)(-4100 - (work->unk_14C >> 8) * 4));
 }
 #else
@@ -166,9 +166,9 @@ INCLUDE_ASM("bos5/task_bos_md_fire_2.s");
 void task_bos_md_fire_3(MdFireWork* work) {
     func_08012304(&work->unk_078);
     func_0801B7D8(&work->unk_038);
-    func_08002C10((void*)work->unk_00C);
-    func_08002C10((void*)work->unk_010);
-    func_080028C0((void*)work->unk_014);
+    ReleaseObjPalette((void*)work->unk_00C);
+    ReleaseObjPalette((void*)work->unk_010);
+    ReleaseObjTiles((void*)work->unk_014);
 }
 
 void task_bos_md_dai_0(MdDaiWork* work, s32* src) {
@@ -188,8 +188,8 @@ void task_bos_md_dai_0(MdDaiWork* work, s32* src) {
     func_080122AC(p, 7, 24, 24);
     func_08012324(p, work->unk_000, work->unk_004, work->unk_008);
     func_08012614(p, 1);
-    work->unk_014 = (u32)func_08002A14(gUnk_09A3C9BC, 32);
-    work->unk_018 = (u32)func_080026A4(gUnk_09999ED0, 0x480);
+    work->unk_014 = (u32)LoadObjPalette(gUnk_09A3C9BC, 32);
+    work->unk_018 = (u32)LoadObjTiles(gUnk_09999ED0, 0x480);
 }
 
 INCLUDE_ASM("bos5/task_bos_md_dai_1.s");
@@ -197,8 +197,8 @@ INCLUDE_ASM("bos5/task_bos_md_dai_2.s");
 
 void task_bos_md_dai_3(MdDaiWork* work) {
     func_08012304(&work->unk_01C);
-    func_08002C10((void*)work->unk_014);
-    func_080028C0((void*)work->unk_018);
+    ReleaseObjPalette((void*)work->unk_014);
+    ReleaseObjTiles((void*)work->unk_018);
     gUnk_02039B84->unk_068 &= 0xFFFFFFFFFFEFFFFF;
 }
 
@@ -210,15 +210,15 @@ void task_bos_md_hahen_0(MdHahenWork* work, s32* src) {
     work->unk_000 = src[0];
     work->unk_004 = src[1];
     work->unk_008 = src[2];
-    angle = func_080065A4();
-    speed = (func_080065A4() & 0x1FF) + 0x100;
-    work->unk_00C = -gUnk_08121400[angle + 0x40] * speed >> 8;
-    work->unk_010 = gUnk_08121400[angle] * speed >> 8;
-    work->unk_014 = -((func_080065A4() & 0x1FF) + 0x100);
+    angle = GetRandom();
+    speed = (GetRandom() & 0x1FF) + 0x100;
+    work->unk_00C = -gSineTable[angle + 0x40] * speed >> 8;
+    work->unk_010 = gSineTable[angle] * speed >> 8;
+    work->unk_014 = -((GetRandom() & 0x1FF) + 0x100);
     work->unk_024 = 3;
-    work->unk_018 = (u32)func_08002A14(gUnk_09A3C9BC, 32);
-    work->unk_01C = (u32)func_080026A4(gUnk_09999ED0, 0x480);
-    work->unk_020 = gUnk_09EF9740[(u16)func_080065A4() & 1];
+    work->unk_018 = (u32)LoadObjPalette(gUnk_09A3C9BC, 32);
+    work->unk_01C = (u32)LoadObjTiles(gUnk_09999ED0, 0x480);
+    work->unk_020 = gUnk_09EF9740[(u16)GetRandom() & 1];
 }
 #else
 INCLUDE_ASM("bos5/task_bos_md_hahen_0.s");
@@ -257,21 +257,21 @@ void task_bos_md_hahen_2(MdHahenWork* work) {
     u16 frame;
     s32 flag;
 
-    flag = gUnk_03007480 & 1;
+    flag = gFrameCounter & 1;
 
     if (flag != 0) {
         return;
     }
 
-    func_0801909C(&x, &y, work->unk_000, work->unk_004, work->unk_008);
+    WorldToScreen(&x, &y, work->unk_000, work->unk_004, work->unk_008);
     frame = func_0801AF1C(work->unk_004);
-    func_080023E0(x, y, (void*)work->unk_020, (void*)work->unk_01C, (void*)work->unk_018,
+    DrawSprite(x, y, (void*)work->unk_020, (void*)work->unk_01C, (void*)work->unk_018,
                   flag, frame, (u16)(-4100 - (work->unk_004 >> 8) * 4));
 }
 
 void task_bos_md_hahen_3(MdHahenWork* work) {
-    func_08002C10((void*)work->unk_018);
-    func_080028C0((void*)work->unk_01C);
+    ReleaseObjPalette((void*)work->unk_018);
+    ReleaseObjTiles((void*)work->unk_01C);
 }
 
 void func_080FD9B8(u16 model, u16 slot) {
@@ -286,7 +286,7 @@ void func_080FD9B8(u16 model, u16 slot) {
         size = 0x20;
     }
 
-    gUnk_02034FF8[(s16)slot].unk_0C = func_08002A14(src, size);
+    gUnk_02034FF8[(s16)slot].unk_0C = LoadObjPalette(src, size);
 }
 
 void func_080FDA28(u16 model, u16 slot) {
@@ -298,7 +298,7 @@ void func_080FDA28(u16 model, u16 slot) {
         src = gUnk_09992F70[(s16)model].unk_0C;
     }
 
-    gUnk_02034FF8[(s16)slot].unk_10 = func_080026A4(src, 0x1000);
+    gUnk_02034FF8[(s16)slot].unk_10 = LoadObjTiles(src, 0x1000);
 }
 
 s16 func_080FDA98(u16 model, u16 slot) {

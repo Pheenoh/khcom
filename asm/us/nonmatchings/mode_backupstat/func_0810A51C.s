@@ -40,7 +40,7 @@ _0810A558:
 	lsls r3, r3, #0x02
 	adds r2, r4, r3
 _0810A566:
-	bl func_08000E14
+	bl TaskCreate
 	movs r2, #0xB9
 	lsls r2, r2, #0x02
 	adds r1, r4, r2

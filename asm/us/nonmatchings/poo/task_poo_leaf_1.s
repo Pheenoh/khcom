@@ -29,7 +29,7 @@ task_poo_leaf_1: @ 080CF2FC
 	adds r0, #0x0C
 	bl func_08005B64
 	movs r0, #0xE0
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r5, r4, #0x0
 	adds r5, #0x94
 	ldrh r0, [r5, #0x00]

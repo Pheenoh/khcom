@@ -63,7 +63,7 @@ _08041E40:
 	ldr r0, [r0, #0x00]
 _08041E66:
 	str r0, [r6, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	ldr r5, _08041EF8 @ =0x02039B84
 	ldr r1, [r5, #0x00]
 	adds r2, r1, #0x0
@@ -82,7 +82,7 @@ _08041E66:
 	lsls r4, r4, #0x08
 	mov r3, r8
 	str r4, [r3, #0x04]
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, [r5, #0x00]
 	adds r2, r1, #0x0
 	adds r2, #0xDE
@@ -149,7 +149,7 @@ _08041F0E:
 	strb r0, [r2, #0x00]
 	ldr r0, _08041FC0 @ =0x09617FF8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	movs r1, #0xAE
 	lsls r1, r1, #0x01
@@ -160,7 +160,7 @@ _08041F0E:
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08041FC4 @ =0x0813E9E8
 	ldr r1, [r6, #0x00]
 	str r1, [sp, #0x000]
@@ -205,16 +205,16 @@ _08041F0E:
 	adds r0, r6, r1
 	strh r4, [r0, #0x00]
 	movs r0, #0xAB
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r4, r6, #0x0
 	adds r4, #0x20
 	adds r0, r4, #0x0
 	movs r1, #0x02
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _08041FC8 @ =0x09EDAE88
 	adds r0, r4, #0x0
 	mov r2, r8
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x004
 	pop {r3, r4}
 	mov r8, r3

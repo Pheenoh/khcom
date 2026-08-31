@@ -25,7 +25,7 @@ _080C4656:
 	movs r1, #0x59
 	movs r2, #0x59
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r7, r0, #0x0
 	ldr r1, _080C46B8 @ =0x0000FFF5
 	mov r8, r1
@@ -40,7 +40,7 @@ _080C466C:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r2, #0x00
 	ldsh r0, [r0, r2]
@@ -60,7 +60,7 @@ _080C466C:
 	str r6, [sp, #0x008]
 	mov r4, r8
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x014
 	pop {r3}
 	mov r8, r3

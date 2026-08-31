@@ -89,20 +89,20 @@ _080D8112:
 	bl func_080D8474
 	ldr r0, _080D8174 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	movs r2, #0x96
 	lsls r2, r2, #0x03
 	adds r1, r6, r2
 	str r0, [r1, #0x00]
 	ldr r0, _080D8178 @ =0x097A2E16
 	movs r1, #0xC0
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r2, _080D817C @ =0x000004B4
 	adds r1, r6, r2
 	str r0, [r1, #0x00]
 	ldr r0, _080D8180 @ =0x0984B278
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	movs r2, #0x97
 	lsls r2, r2, #0x03
 	adds r1, r6, r2

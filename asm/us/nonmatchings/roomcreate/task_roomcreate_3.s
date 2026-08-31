@@ -14,7 +14,7 @@ task_roomcreate_3: @ 0803F6E0
 	bl func_08120EF8
 	adds r4, #0x2C
 	adds r0, r4, #0x0
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

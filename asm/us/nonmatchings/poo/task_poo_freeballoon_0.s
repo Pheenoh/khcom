@@ -45,24 +45,24 @@ task_poo_freeballoon_0: @ 080CC194
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080CC268 @ =0x09732272
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r6, #0x00]
 	ldr r0, _080CC26C @ =0x09849B38
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	adds r4, r6, #0x0
 	adds r4, #0x0C
 	ldr r1, _080CC270 @ =0x09EF5AB4
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r6, #0x08]
 	ldr r5, _080CC274 @ =0x09EF5AB8
 	adds r0, r5, #0x0
@@ -71,23 +71,23 @@ task_poo_freeballoon_0: @ 080CC194
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080CC278 @ =0x0973291E
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r6, #0x48]
 	ldr r0, _080CC27C @ =0x09849B58
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x4C]
 	adds r4, #0x48
 	ldr r1, _080CC280 @ =0x09EF5ACC
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r6, #0x50]
 	adds r1, r6, #0x0
 	adds r1, #0x90

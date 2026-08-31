@@ -29,7 +29,7 @@ task_poo_sora_1: @ 080CB68C
 _080CB6B8:
 	adds r0, r6, #0x0
 	bl func_080CA9DC
-	bl func_08001384
+	bl GetKeysHeld
 	movs r4, #0xF0
 	ands r4, r0
 	cmp r4, #0x00
@@ -64,14 +64,14 @@ _080CB700:
 	adds r0, #0xA8
 	ldr r0, [r0, #0x00]
 	ldrh r0, [r0, #0x00]
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080CB732
 _080CB70E:
 	adds r0, r5, #0x0
 	adds r0, #0xA8
 	ldr r0, [r0, #0x00]
 	ldrh r0, [r0, #0x02]
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080CB732
 _080CB71C:
 	adds r0, r5, #0x0
@@ -111,7 +111,7 @@ _080CB732:
 	ldr r0, [r6, #0x04]
 	adds r0, r0, r1
 	str r0, [r6, #0x04]
-	bl func_08001390
+	bl GetKeysPressed
 	movs r2, #0x02
 	adds r1, r2, #0x0
 	ands r1, r0
@@ -133,12 +133,12 @@ _080CB732:
 	adds r0, #0xA8
 	ldr r0, [r0, #0x00]
 	ldrh r0, [r0, #0x04]
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080CB7E6
 _080CB79C: .4byte 0x08121400
 _080CB7A0: .4byte 0x080CAD09
 _080CB7A4:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r7, #0x01
 	ands r7, r0
 	cmp r7, #0x00
@@ -172,7 +172,7 @@ _080CB7E6:
 	b _080CB83C
 _080CB7EC: .4byte 0x080CB1BD
 _080CB7F0:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x80
 	lsls r1, r1, #0x01
 	ands r1, r0
@@ -200,7 +200,7 @@ _080CB828:
 	adds r4, r5, #0x0
 	adds r4, #0x08
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080CB83C
@@ -276,11 +276,11 @@ _080CB8B0:
 	adds r1, r1, r2
 	bl func_080C9FA8
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x20]
 	adds r0, r5, #0x0
 	adds r0, #0x24
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	add sp, #0x004
 	pop {r3, r4, r5}

@@ -7,7 +7,7 @@
 mode_chkobj_1: @ 0800B418
 	push {r4, r5, r6, r7, lr}
 	add sp, #-0x010
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00
@@ -19,7 +19,7 @@ mode_chkobj_1: @ 0800B418
 	.byte 0x00, 0x00
 _0800B434: .4byte 0x09ECEB64
 _0800B438:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x08
 	ands r1, r0
 	cmp r1, #0x00
@@ -39,11 +39,11 @@ _0800B458:
 	ldr r4, _0800B548 @ =0x0203489C
 	ldr r0, [r4, #0x00]
 	adds r0, #0x24
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0800B482
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
@@ -53,16 +53,16 @@ _0800B458:
 	adds r0, #0x24
 	ldrh r1, [r1, #0x16]
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0800B482:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x30
 	ands r1, r0
 	cmp r1, #0x00
 	bne _0800B490
 	b _0800B5E8
 _0800B490:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -73,7 +73,7 @@ _0800B490:
 	subs r0, #0x01
 	strh r0, [r1, #0x16]
 _0800B4A6:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -218,7 +218,7 @@ _0800B5BC:
 	adds r0, #0x24
 	ldrh r1, [r3, #0x16]
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0800B5C8:
 	ldr r2, _0800B630 @ =0x0812E744
 	ldr r0, _0800B634 @ =0x0203489C
@@ -236,14 +236,14 @@ _0800B5C8:
 	movs r2, #0x02
 	bl func_0805FCB0
 _0800B5E8:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x04
 	ands r1, r0
 	lsls r1, r1, #0x10
 	lsrs r4, r1, #0x10
 	cmp r4, #0x00
 	beq _0800B638
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -256,7 +256,7 @@ _0800B5E8:
 	subs r0, #0x01
 	strh r0, [r1, #0x00]
 _0800B612:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	lsls r1, r1, #0x01
 	ands r1, r0
@@ -273,7 +273,7 @@ _0800B612:
 _0800B630: .4byte 0x0812E744
 _0800B634: .4byte 0x0203489C
 _0800B638:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -290,7 +290,7 @@ _0800B638:
 	ldr r0, [r5, #0x00]
 	adds r0, #0x44
 	strh r4, [r0, #0x00]
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -301,7 +301,7 @@ _0800B638:
 	subs r0, #0x01
 	strh r0, [r1, #0x18]
 _0800B672:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	lsls r1, r1, #0x01
 	ands r1, r0
@@ -410,7 +410,7 @@ _0800B73C:
 	adds r0, r5, #0x0
 	adds r1, r3, #0x0
 	bl func_08005778
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -425,7 +425,7 @@ _0800B760: .4byte 0x0203489C
 _0800B764: .4byte 0x0812E744
 _0800B768: .4byte 0x08121400
 _0800B76C:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -439,15 +439,15 @@ _0800B780:
 _0800B782:
 	ldr r4, _0800B7D4 @ =0x0203489C
 	ldr r0, [r4, #0x00]
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [r4, #0x00]
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r0, [r4, #0x00]
 	adds r0, #0x40
 	ldrb r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _0800B7A6
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
@@ -455,12 +455,12 @@ _0800B782:
 _0800B7A6:
 	ldr r0, [r4, #0x00]
 	adds r0, #0x24
-	bl func_08005A64
+	bl AnimUpdate
 _0800B7AE:
 	ldr r4, _0800B7D4 @ =0x0203489C
 	ldr r0, [r4, #0x00]
 	adds r0, #0x24
-	bl func_08005AFC
+	bl AnimGetGfx
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x3C]
 	adds r1, #0x40
@@ -663,7 +663,7 @@ _0800B944:
 	str r0, [sp, #0x008]
 	str r0, [sp, #0x00C]
 	movs r0, #0x78
-	bl func_080023E0
+	bl DrawSprite
 	movs r0, #0x01
 	bl func_080605A4
 	bl func_08060598

@@ -135,7 +135,7 @@ _080DCCC8: .4byte 0x080DCCCC
 	.byte 0x1B, 0x48, 0x42, 0xF0, 0x0F, 0xFF
 _080DD052:
 	adds r0, r7, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	mov r0, r8
 	adds r0, #0x04
 	mov r1, r8

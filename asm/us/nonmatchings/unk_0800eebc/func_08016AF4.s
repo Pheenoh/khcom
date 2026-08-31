@@ -37,7 +37,7 @@ func_08016AF4: @ 08016AF4
 	adds r1, r4, #0x0
 	adds r2, r7, #0x0
 	mov r3, r8
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08016B60 @ =0x09EDAB58
 	add r1, sp, #0x004
 	movs r2, #0x00
@@ -70,7 +70,7 @@ _08016B72:
 	lsls r0, r0, #0x01
 	str r0, [r1, #0x20]
 	ldr r0, _08016BC0 @ =0x0000027E
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r1, [r4, #0x00]
 	ldr r0, _08016BC4 @ =0x08016A65
 	str r0, [r1, #0x04]

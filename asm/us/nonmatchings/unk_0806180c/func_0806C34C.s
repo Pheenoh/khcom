@@ -17,21 +17,21 @@ _0806C352:
 	ldr r0, [r1, #0x08]
 	cmp r0, #0x00
 	beq _0806C366
-	bl func_080028C0
+	bl ReleaseObjTiles
 _0806C366:
 	ldr r0, [r6, #0x00]
 	adds r0, r4, r0
 	ldr r0, [r0, #0x0C]
 	cmp r0, #0x00
 	beq _0806C374
-	bl func_08002C10
+	bl ReleaseObjPalette
 _0806C374:
 	ldr r0, [r6, #0x00]
 	adds r0, r4, r0
 	ldr r0, [r0, #0x10]
 	cmp r0, #0x00
 	beq _0806C382
-	bl func_08002C10
+	bl ReleaseObjPalette
 _0806C382:
 	adds r0, r5, #0x1
 	lsls r0, r0, #0x18
@@ -40,7 +40,7 @@ _0806C382:
 	bge _0806C352
 	ldr r0, _0806C39C @ =0x02034A88
 	ldr r0, [r0, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

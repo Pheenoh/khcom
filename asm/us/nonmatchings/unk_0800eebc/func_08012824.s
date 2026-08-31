@@ -67,7 +67,7 @@ _0801286C:
 	beq _080128BC
 	ldr r0, [r2, #0x00]
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	b _080128E0
 	.byte 0x00, 0x00
 _080128AC: .4byte 0x02039B84
@@ -81,7 +81,7 @@ _080128BC:
 	beq _080128D8
 	ldr r0, [r2, #0x00]
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r0, [r6, #0x00]
 	adds r0, #0xD8
 	movs r1, #0xFF

@@ -63,7 +63,7 @@ _08076856:
 	ldr r1, _080768B0 @ =0x09EE499C
 	adds r0, r7, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	b _080768BE
 	.byte 0x00, 0x00
 _080768A8: .4byte 0x0000FFFF
@@ -73,7 +73,7 @@ _080768B4:
 	ldr r1, _08076958 @ =0x09EE496C
 	adds r0, r7, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _080768BE:
 	movs r0, #0x01
 	strb r0, [r5, #0x06]
@@ -149,7 +149,7 @@ _08076900:
 	ldr r1, _08076960 @ =0x09EE499C
 	adds r0, r7, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	b _0807696E
 	.byte 0x00, 0x00
 _08076958: .4byte 0x09EE496C
@@ -159,7 +159,7 @@ _08076964:
 	ldr r1, _08076A00 @ =0x09EE496C
 	adds r0, r7, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _0807696E:
 	movs r0, #0x01
 	strb r0, [r5, #0x06]
@@ -232,7 +232,7 @@ _080769A4:
 	ldr r1, _08076A08 @ =0x09EE499C
 	adds r0, r7, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	b _08076A16
 _08076A00: .4byte 0x09EE496C
 _08076A04: .4byte 0x0000FFFE
@@ -241,7 +241,7 @@ _08076A0C:
 	ldr r1, _08076A40 @ =0x09EE496C
 	adds r0, r7, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _08076A16:
 	movs r0, #0x01
 	strb r0, [r5, #0x06]
@@ -296,7 +296,7 @@ _08076A52:
 	ldr r1, _08076ABC @ =0x09EE4984
 	adds r0, r7, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r4, #0x0
 	bl func_08000C8C
 	adds r3, r0, #0x0

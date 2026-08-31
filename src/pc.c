@@ -75,13 +75,13 @@ s32 func_08049F50(PcCharaWork* work) {
     UnkStruct_02039B84* obj;
 
     obj = (UnkStruct_02039B84*)gUnk_02039B84->unk_07C;
-    if ((u16)func_080065A4() % 60 == 0) {
+    if ((u16)GetRandom() % 60 == 0) {
         func_0801C700(work->unk_040, &x, &y, 0);
         func_0800F368(work, 1);
         if (func_0800F504(work, 0x100, 0x100, 0x100)) {
             if (gUnk_02039B84->unk_068 & 0x8000) {
                 func_08049E70(work, -0x63, 0x280);
-            } else if (func_080065A4() & 1) {
+            } else if (GetRandom() & 1) {
                 if (obj->unk_034 & 4) {
                     func_08049EE4(work, x + 0x2800, y);
                 } else {

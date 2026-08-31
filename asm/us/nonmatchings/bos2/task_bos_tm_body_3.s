@@ -19,11 +19,11 @@ task_bos_tm_body_3: @ 080B9F90
 	bl func_080B83B8
 _080B9FAA:
 	ldr r0, [r4, #0x04]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x0C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

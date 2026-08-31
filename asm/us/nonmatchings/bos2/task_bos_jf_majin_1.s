@@ -46,7 +46,7 @@ _080BE76A:
 	bl func_08012324
 	adds r0, r4, #0x0
 	adds r0, #0x6C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r2, [r4, #0x00]
 	movs r1, #0x93
 	lsls r1, r1, #0x02

@@ -24,7 +24,7 @@ _08103CEC:
 	cmp r0, #0x00
 	blt _08103D32
 	movs r0, #0x00
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r3, r0, #0x0
 	ldr r6, _08103D50 @ =0x09A3ABDC
 	movs r0, #0x00

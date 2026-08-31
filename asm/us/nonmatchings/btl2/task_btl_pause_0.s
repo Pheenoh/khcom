@@ -10,11 +10,11 @@ task_btl_pause_0: @ 080301F8
 	ldr r0, _0803023C @ =0x08B1E7F4
 	movs r1, #0xC0
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _08030240 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r1, _08030244 @ =0x09EE115C
 	ldr r0, [r1, #0x00]

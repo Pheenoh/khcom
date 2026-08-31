@@ -22,7 +22,7 @@ _080D4AC8:
 	adds r0, r5, #0x0
 	adds r0, #0xF0
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldrb r0, [r5, #0x04]
 	bl func_080DF51C
 	lsls r0, r0, #0x18
@@ -68,11 +68,11 @@ _080D4B1A:
 	b _080D4B8C
 _080D4B2C:
 	ldr r0, [r5, #0x18]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r5, #0x0
 	adds r0, #0xEC
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r6, #0x00
 	movs r0, #0xF4
 	adds r0, r0, r5
@@ -90,22 +90,22 @@ _080D4B48:
 	adds r0, #0x1C
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r5, #0x0
 	adds r0, #0x28
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r5, #0x0
 	adds r0, #0x20
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r5, #0x0
 	adds r0, #0x2C
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080D4B84:
 	adds r7, #0x04
 	adds r6, #0x01
@@ -126,7 +126,7 @@ _080D4B8E:
 	bl func_080062F4
 	mov r1, r8
 	ldr r0, [r1, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

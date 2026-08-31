@@ -42,7 +42,7 @@ _080C5240:
 	adds r1, r6, #0x0
 	adds r1, #0x0C
 	movs r2, #0x08
-	bl func_08117FE4
+	bl CpuFastSet
 	movs r5, #0x00
 	mov r12, r4
 	adds r0, r7, #0x1
@@ -77,7 +77,7 @@ _080C525C:
 	add r1, r12
 	mov r0, r9
 	movs r2, #0x08
-	bl func_08117FE4
+	bl CpuFastSet
 	mov r7, r8
 	ldrh r0, [r6, #0x04]
 	cmp r7, r0

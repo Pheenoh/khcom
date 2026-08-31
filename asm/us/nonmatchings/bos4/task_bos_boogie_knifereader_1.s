@@ -109,7 +109,7 @@ _080DB642:
 	beq _080DB676
 	movs r0, #0x95
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080DB676
 _080DB670:
 	adds r6, #0x01
@@ -117,7 +117,7 @@ _080DB670:
 	ble _080DB642
 _080DB676:
 	adds r0, r7, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _080DB67E:
 	pop {r4, r5, r6, r7}

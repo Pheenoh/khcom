@@ -15,7 +15,7 @@ _08065AEC:
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x00
 	beq _08065AF8
-	bl func_080028C0
+	bl ReleaseObjTiles
 	str r6, [r4, #0x00]
 _08065AF8:
 	strb r6, [r4, #0x05]

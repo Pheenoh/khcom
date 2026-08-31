@@ -46,7 +46,7 @@ _080B3002:
 	add r0, r9
 	adds r0, r0, r6
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	mov r2, r8
 	ldr r0, [r2, #0x00]
 	movs r4, #0x94
@@ -54,12 +54,12 @@ _080B3002:
 	adds r0, r0, r4
 	adds r0, r0, r6
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r5, _080B30CC @ =0x08F70AB0
 	ldr r0, [r5, #0x14]
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	mov r3, r8
 	ldr r1, [r3, #0x00]
 	add r1, r9
@@ -67,7 +67,7 @@ _080B3002:
 	str r0, [r1, #0x00]
 	ldr r0, [r5, #0x18]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	mov r1, r8
 	ldr r2, [r1, #0x00]
 	adds r4, r2, r4
@@ -130,7 +130,7 @@ _080B30D8:
 	add r0, r9
 	adds r0, r0, r6
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	mov r2, r8
 	ldr r0, [r2, #0x00]
 	movs r5, #0x94
@@ -138,7 +138,7 @@ _080B30D8:
 	adds r0, r0, r5
 	adds r0, r0, r6
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r7, _080B3194 @ =0x08F70AB0
 	movs r0, #0x34
 	ldr r3, [sp, #0x000]
@@ -150,7 +150,7 @@ _080B30D8:
 	ldr r0, [r0, #0x00]
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	mov r2, r8
 	ldr r1, [r2, #0x00]
 	add r1, r9
@@ -161,7 +161,7 @@ _080B30D8:
 	adds r0, r4, r0
 	ldr r0, [r0, #0x00]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	mov r3, r8
 	ldr r2, [r3, #0x00]
 	adds r5, r2, r5

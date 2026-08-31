@@ -12,12 +12,12 @@ mode_test_0: @ 0805F0E4
 	ldr r0, _0805F110 @ =0x08B24DAA
 	movs r1, #0xF8
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _0805F114 @ =0x02034A08
 	str r0, [r1, #0x00]
 	ldr r0, _0805F118 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _0805F11C @ =0x02034A0C
 	str r0, [r1, #0x00]
 	pop {r0}

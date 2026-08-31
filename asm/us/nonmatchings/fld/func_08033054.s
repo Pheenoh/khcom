@@ -12,12 +12,12 @@ func_08033054: @ 08033054
 	ldr r0, [r0, #0x00]
 	adds r5, r0, #0x0
 	adds r5, #0x18
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00
 	bne _0803309E
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -25,7 +25,7 @@ func_08033054: @ 08033054
 	ldrb r0, [r5, #0x14]
 	cmp r0, #0xD3
 	bne _0803308C
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -34,7 +34,7 @@ _0803308C:
 	ldrb r0, [r5, #0x14]
 	cmp r0, #0x2D
 	bne _080330D4
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -65,7 +65,7 @@ _0803309E:
 _080330CC: .4byte 0x02039BA0
 _080330D0: .4byte 0x080324DD
 _080330D4:
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -73,7 +73,7 @@ _080330D4:
 	ldrb r0, [r5, #0x14]
 	cmp r0, #0xD3
 	bne _080330F2
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -82,7 +82,7 @@ _080330F2:
 	ldrb r0, [r5, #0x14]
 	cmp r0, #0x2D
 	bne _08033148
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -108,7 +108,7 @@ _08033104:
 	orrs r0, r1
 	strh r0, [r2, #0x00]
 	movs r0, #0x8E
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, _08033144 @ =0x02039BA0
 	ldr r0, [r0, #0x00]
 	str r4, [r0, #0x68]

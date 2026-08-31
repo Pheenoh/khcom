@@ -73,7 +73,7 @@ _08048A48:
 	ldr r1, _08048A64 @ =0x09EDB458
 	adds r0, r4, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _08048A56:
 	add sp, #0x110
 	pop {r4}

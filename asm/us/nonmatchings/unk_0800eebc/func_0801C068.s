@@ -15,7 +15,7 @@ func_0801C068: @ 0801C068
 	movs r0, #0x84
 	lsls r0, r0, #0x04
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r1, _0801C088 @ =0x02039B84
 	b _0801C0D2
 _0801C084: .4byte 0x02039BB0
@@ -25,7 +25,7 @@ _0801C08C:
 	lsls r5, r5, #0x04
 	adds r0, r5, #0x0
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r4, _0801C0F4 @ =0x02039B84
 	ldr r1, [r4, #0x00]
 	movs r3, #0x88
@@ -35,7 +35,7 @@ _0801C08C:
 	movs r0, #0xA0
 	lsls r0, r0, #0x04
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r2, [r4, #0x00]
 	movs r3, #0x8A
 	lsls r3, r3, #0x01
@@ -51,7 +51,7 @@ _0801C08C:
 	cmp r0, #0x00
 	beq _0801C0DC
 	adds r0, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r1, _0801C0F8 @ =0x02039B9C
 _0801C0D2:
 	ldr r1, [r1, #0x00]

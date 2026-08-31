@@ -11,11 +11,11 @@ task_bos_lst_fld_0: @ 0810FF7C
 	ldr r1, [r4, #0x00]
 	ldrh r2, [r4, #0x04]
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, [r4, #0x08]
 	ldrh r2, [r4, #0x0C]
 	movs r0, #0x00
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r0, _08110030 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	movs r1, #0x80

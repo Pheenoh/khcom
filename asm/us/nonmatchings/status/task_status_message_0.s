@@ -26,7 +26,7 @@ task_status_message_0: @ 080D8A04
 	strb r0, [r1, #0x00]
 	ldr r0, _080D8A44 @ =0x0984B1B8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	movs r1, #0xC9
 	lsls r1, r1, #0x02
 	adds r4, r4, r1

@@ -49,7 +49,7 @@ task_bos_dsd_energy2_0: @ 080C4DB0
 	bl func_08014588
 	movs r0, #0xB0
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, [r6, #0x00]
 	ldr r1, _080C4E34 @ =0x0000035A
 	adds r0, r0, r1

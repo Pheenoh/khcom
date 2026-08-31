@@ -42,7 +42,7 @@ task_allmap_room_0: @ 080D37EC
 	ldr r0, _080D3844 @ =0x0976B340
 	movs r1, #0x90
 	lsls r1, r1, #0x06
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	str r4, [r5, #0x08]
 	b _080D3868
@@ -56,7 +56,7 @@ _080D3848:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080D3888 @ =0x0976B340
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	ldrh r0, [r6, #0x00]
 	lsls r0, r0, #0x02
@@ -89,7 +89,7 @@ _080D3894:
 	adds r0, r0, r1
 _080D389E:
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	pop {r4, r5, r6}
 	pop {r0}

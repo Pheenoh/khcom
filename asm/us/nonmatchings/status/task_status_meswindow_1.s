@@ -52,7 +52,7 @@ _080D899E:
 	bl func_0800FD68
 _080D89C0:
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 _080D89C6:
 	movs r0, #0x01
 	add sp, #0x004

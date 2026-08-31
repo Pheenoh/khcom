@@ -29,7 +29,7 @@ _08096C5C:
 _08096C62:
 	ldr r7, [r4, #0x00]
 	ldrh r5, [r4, #0x04]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
@@ -40,7 +40,7 @@ _08096C62:
 	ldrh r4, [r4, #0x06]
 	cmp r1, r4
 	bhi _08096CA6
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r5, #0x0

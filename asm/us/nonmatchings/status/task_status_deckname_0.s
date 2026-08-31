@@ -22,7 +22,7 @@ task_status_deckname_0: @ 080D7DC8
 	strb r0, [r1, #0x00]
 	ldr r0, _080D7E00 @ =0x0984B1D8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x50]
 	pop {r4, r5}
 	pop {r0}

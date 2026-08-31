@@ -14,22 +14,22 @@ func_080B2CD0: @ 080B2CD0
 	ldr r5, _080B2F8C @ =0x02034B4C
 	ldr r0, [r5, #0x00]
 	adds r0, #0x20
-	bl func_08005A64
+	bl AnimUpdate
 	adds r1, r0, #0x0
 	ldr r0, [r5, #0x00]
 	str r1, [r0, #0x18]
 	adds r0, #0x38
-	bl func_08005A64
+	bl AnimUpdate
 	adds r1, r0, #0x0
 	ldr r0, [r5, #0x00]
 	str r1, [r0, #0x1C]
 	adds r0, #0x5C
-	bl func_08005A64
+	bl AnimUpdate
 	adds r1, r0, #0x0
 	ldr r0, [r5, #0x00]
 	str r1, [r0, #0x58]
 	adds r0, #0x8C
-	bl func_08005A64
+	bl AnimUpdate
 	ldr r1, [r5, #0x00]
 	adds r2, r1, #0x0
 	adds r2, #0x88
@@ -46,7 +46,7 @@ func_080B2CD0: @ 080B2CD0
 	str r4, [sp, #0x00C]
 	movs r0, #0x48
 	movs r1, #0x48
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r5, #0x00]
 	ldr r2, [r0, #0x1C]
 	ldr r3, [r0, #0x0C]
@@ -59,7 +59,7 @@ func_080B2CD0: @ 080B2CD0
 	str r4, [sp, #0x00C]
 	movs r0, #0xA8
 	movs r1, #0x48
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r5, #0x00]
 	adds r0, r4, #0x0
 	adds r0, #0x74
@@ -84,7 +84,7 @@ func_080B2CD0: @ 080B2CD0
 	str r6, [sp, #0x008]
 	ldr r4, _080B2F98 @ =0x0000FFC0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r5, #0x00]
 	adds r0, r4, #0x0
 	adds r0, #0x7A
@@ -111,7 +111,7 @@ func_080B2CD0: @ 080B2CD0
 	str r6, [sp, #0x008]
 	ldr r4, _080B2F9C @ =0x0000FFA0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080B2DB6:
 	movs r6, #0x00
 	mov r9, r5
@@ -143,7 +143,7 @@ _080B2DBA:
 	adds r2, r2, r5
 	ldr r2, [r2, #0x00]
 	movs r3, #0x01
-	bl func_08002CB4
+	bl AllocObjAffine
 	mov r10, r0
 	mov r7, r9
 	ldr r4, [r7, #0x00]
@@ -187,7 +187,7 @@ _080B2DBA:
 	str r4, [sp, #0x008]
 	ldr r4, _080B2FA0 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, _080B2FA4 @ =0x08F70AB0
 	ldr r1, _080B2FA8 @ =0x0203AB20
 	lsls r0, r6, #0x01
@@ -238,7 +238,7 @@ _080B2DBA:
 	str r5, [sp, #0x008]
 	ldr r4, _080B2FAC @ =0x0000FFE0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080B2EB6:
 	adds r6, #0x01
 	cmp r6, #0x09
@@ -276,7 +276,7 @@ _080B2EBE:
 	str r0, [sp, #0x00C]
 	movs r0, #0x78
 	movs r1, #0x83
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r6, #0x00]
 	ldr r5, _080B2FB0 @ =0x00000BDC
 	adds r0, r4, r5

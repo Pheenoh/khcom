@@ -26,7 +26,7 @@ func_0809B6D0: @ 0809B6D0
 	str r1, [sp, #0x00C]
 	ldr r1, _0809B70C @ =0x09EE77A4
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x010
 	pop {r4, r5}
 	pop {r0}

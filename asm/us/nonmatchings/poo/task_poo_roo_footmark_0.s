@@ -16,7 +16,7 @@ task_poo_roo_footmark_0: @ 080CF144
 	ldr r0, _080CF17C @ =0x09755A34
 	movs r1, #0xA0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	str r4, [r5, #0x04]
 	movs r0, #0x05

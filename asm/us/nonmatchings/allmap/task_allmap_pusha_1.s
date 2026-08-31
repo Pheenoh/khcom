@@ -11,19 +11,19 @@ task_allmap_pusha_1: @ 080D4C28
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080D4C58
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080D4C58
 	movs r0, #0x66
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r4, #0x0
 	adds r0, #0x14
 	ldr r1, _080D4C80 @ =0x09EF4E20
 	ldr r2, [r4, #0x0C]
 	adds r2, #0x30
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r4, #0x28]
 _080D4C58:
 	ldr r2, _080D4C84 @ =0x08121400
@@ -39,7 +39,7 @@ _080D4C58:
 	strh r1, [r4, #0x10]
 	adds r0, r4, #0x0
 	adds r0, #0x14
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4}
 	pop {r1}

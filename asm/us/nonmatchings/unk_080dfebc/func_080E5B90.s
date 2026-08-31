@@ -28,7 +28,7 @@ _080E5BB8:
 	adds r0, r4, #0x0
 	bl func_080E590C
 _080E5BBE:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	movs r1, #0xC0
 	lsls r1, r1, #0x0A

@@ -10,23 +10,23 @@ task_hum_lex_tmh0_0: @ 08057294
 	adds r6, r1, #0x0
 	ldr r0, _080572DC @ =0x09618478
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	movs r0, #0x80
 	lsls r0, r0, #0x03
 	ldr r1, _080572E0 @ =0x08C3151E
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	adds r4, r5, #0x0
 	adds r4, #0x08
 	ldr r1, _080572E4 @ =0x09EE2288
 	ldr r2, _080572E8 @ =0x09EE2250
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x12
 	ldsh r1, [r6, r0]
 	cmp r1, #0x00
@@ -58,7 +58,7 @@ _080572F2:
 	strh r0, [r5, #0x34]
 	movs r0, #0xAD
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

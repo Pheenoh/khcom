@@ -26,34 +26,34 @@ mode_ms_top_0: @ 08101C48
 	movs r1, #0x00
 	movs r2, #0x1C
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x00
 	movs r2, #0x1D
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x00
 	movs r2, #0x1E
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x03
 	movs r1, #0x03
 	movs r2, #0x1F
 	movs r3, #0x0E
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	movs r1, #0x03
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x03
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	movs r4, #0x01
 	adds r0, r5, #0x0
 	ands r0, r4
@@ -166,16 +166,16 @@ _08101DA8:
 	ldr r1, _08101E40 @ =0x09A3D79C
 	movs r0, #0x00
 	movs r2, #0x60
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _08101E44 @ =0x09A10A3C
 	movs r2, #0xCD
 	lsls r2, r2, #0x05
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	bl func_08101518
 	adds r4, r0, #0x0
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	adds r2, #0x20
 	ldr r1, _08101E48 @ =0x09A123DC
@@ -189,11 +189,11 @@ _08101DA8:
 	lsls r4, r4, #0x03
 	movs r0, #0x00
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r1, _08101E50 @ =0x09A373DC
 	movs r0, #0x01
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _08101E54 @ =0x020358A4
 	ldrb r0, [r0, #0x00]
 	cmp r0, #0x00
@@ -201,7 +201,7 @@ _08101DA8:
 	ldr r1, _08101E58 @ =0x09A378DC
 	movs r0, #0x02
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	b _08101E66
 _08101E1C: .4byte 0x02035880
 _08101E20: .4byte 0xFFFF9F00
@@ -223,7 +223,7 @@ _08101E5C:
 	ldr r1, _08101F6C @ =0x09A37DDC
 	movs r0, #0x02
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 _08101E66:
 	ldr r0, _08101F70 @ =0x09A3D7FC
 	movs r2, #0x00
@@ -237,81 +237,81 @@ _08101E70:
 	cmp r1, #0x00
 	bge _08101E70
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08101F7C @ =0x020357CC
 	str r0, [r1, #0x00]
 	ldr r0, _08101F80 @ =0x099A2B62
 	movs r1, #0x80
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08101F84 @ =0x020357C8
 	str r0, [r1, #0x00]
 	ldr r0, _08101F88 @ =0x09A3D85C
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08101F8C @ =0x020357D4
 	str r0, [r1, #0x00]
 	ldr r0, _08101F90 @ =0x099A36F8
 	movs r1, #0xA0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08101F94 @ =0x020357D0
 	str r0, [r1, #0x00]
 	ldr r0, _08101F98 @ =0x020357D8
 	ldr r1, _08101F9C @ =0x09EF99D0
 	ldr r2, _08101FA0 @ =0x09EF99A8
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08101FA4 @ =0x08F683A4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08101FA8 @ =0x020357F4
 	str r0, [r1, #0x00]
 	ldr r0, _08101FAC @ =0x088C56C6
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08101FB0 @ =0x020357F0
 	str r0, [r1, #0x00]
 	ldr r4, _08101FB4 @ =0x020357F8
 	ldr r1, _08101FB8 @ =0x09EDEA6C
 	ldr r2, _08101FBC @ =0x09EDEA68
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, _08101FC0 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08101FC4 @ =0x02035814
 	str r0, [r1, #0x00]
 	ldr r0, _08101FC8 @ =0x08B22BBC
 	movs r1, #0x80
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08101FCC @ =0x02035810
 	str r0, [r1, #0x00]
 	ldr r0, _08101FD0 @ =0x09617D58
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08101FD4 @ =0x0203585C
 	str r0, [r1, #0x00]
 	ldr r0, _08101FD8 @ =0x092028EC
 	movs r1, #0xC0
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08101FDC @ =0x02035858
 	str r0, [r1, #0x00]
 	ldr r4, _08101FE0 @ =0x02035860
 	ldr r1, _08101FE4 @ =0x09EEEAC8
 	ldr r2, _08101FE8 @ =0x09EEEA98
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, _08101FEC @ =0x020357C0
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -320,7 +320,7 @@ _08101E70:
 	bl func_081015E8
 	ldr r0, _08101FF0 @ =0x020358A8
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	movs r0, #0x00
 	bl func_08004FC8
 	movs r0, #0x01

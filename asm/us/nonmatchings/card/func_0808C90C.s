@@ -26,7 +26,7 @@ _0808C930:
 	movs r1, #0xF9
 	lsls r1, r1, #0x03
 	adds r0, r5, r1
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	pop {r4, r5}
 	pop {r0}
 	bx r0

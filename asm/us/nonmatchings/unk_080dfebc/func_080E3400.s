@@ -37,7 +37,7 @@ func_080E3400: @ 080E3400
 	ldr r0, [r0, #0x04]
 	str r0, [sp, #0x020]
 	movs r0, #0x60
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [sp, #0x018]
 	ldr r3, [sp, #0x008]
 	str r3, [sp, #0x014]
@@ -420,7 +420,7 @@ _080E3718:
 	orrs r0, r1
 	strh r0, [r7, #0x00]
 	ldr r0, [sp, #0x018]
-	bl func_080009C4
+	bl EwramFree
 	add sp, #0x030
 	pop {r3, r4, r5}
 	mov r8, r3

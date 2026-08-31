@@ -97,7 +97,7 @@ _08106F18:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 _08106F22:
 	ldr r1, _08106F40 @ =0x02035CBC
 	ldrh r0, [r1, #0x00]
@@ -135,7 +135,7 @@ _08106F62:
 	ldrh r1, [r4, #0x00]
 	adds r0, r5, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 _08106F74:
 	movs r1, #0x01
 	negs r1, r1

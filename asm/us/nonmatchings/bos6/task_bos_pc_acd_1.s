@@ -24,7 +24,7 @@ task_bos_pc_acd_1: @ 0810BFA0
 	adds r6, r5, #0x0
 	adds r6, #0x20
 	adds r0, r6, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	ldr r0, _0810C038 @ =0x02039B84
 	ldr r1, [r0, #0x00]
 	ldr r0, [r1, #0x7C]
@@ -55,7 +55,7 @@ _0810C000:
 	cmp r0, #0x00
 	blt _0810C014
 	adds r0, r6, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x01
@@ -72,7 +72,7 @@ _0810C01E:
 	adds r1, r4, #0x0
 	adds r0, r6, #0x0
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0810C02E:
 	movs r0, #0x01
 	pop {r4, r5, r6}

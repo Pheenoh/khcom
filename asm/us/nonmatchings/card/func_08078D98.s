@@ -13,7 +13,7 @@ func_08078D98: @ 08078D98
 	lsls r2, r2, #0x18
 	lsrs r6, r2, #0x18
 	movs r0, #0x79
-	bl func_0811FE70
+	bl m4aSongNumStart
 	lsls r5, r5, #0x04
 	adds r5, #0x54
 	adds r4, r4, r5

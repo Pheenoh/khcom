@@ -17,18 +17,18 @@ task_sroll_b_char_0: @ 081149F4
 	lsls r0, r0, #0x15
 	lsrs r0, r0, #0x10
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x0C]
 	ldr r0, [r5, #0x08]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x10]
 	adds r5, r4, #0x0
 	adds r5, #0x14
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r1, [r4, #0x08]
 	str r5, [r1, #0x18]
 	ldr r0, [r4, #0x10]
@@ -39,7 +39,7 @@ task_sroll_b_char_0: @ 081149F4
 	adds r4, #0x2C
 	adds r0, r4, #0x0
 	movs r1, #0x04
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4, r5}
 	pop {r0}
 	bx r0

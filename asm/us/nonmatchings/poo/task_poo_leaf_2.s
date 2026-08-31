@@ -41,9 +41,9 @@ task_poo_leaf_2: @ 080CF374
 	cmp r0, #0x00
 	beq _080CF474
 	ldr r0, [r5, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r5, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	str r4, [r5, #0x04]
 	adds r0, r5, #0x0
 	adds r0, #0x34
@@ -63,11 +63,11 @@ _080CF3E4:
 	adds r0, #0x92
 	ldrh r0, [r0, #0x00]
 	ldr r1, _080CF454 @ =0x0975C3E2
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080CF458 @ =0x09849DF8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	adds r0, r5, #0x0
 	adds r0, #0x34
@@ -84,10 +84,10 @@ _080CF410:
 	adds r4, r5, #0x0
 	adds r4, #0x0C
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x08]
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	lsrs r1, r0, #0x18
 	cmp r1, #0x00
@@ -104,7 +104,7 @@ _080CF410:
 	str r0, [sp, #0x00C]
 	mov r0, r8
 	adds r1, r7, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	b _080CF474
 	.byte 0x00, 0x00
 _080CF454: .4byte 0x0975C3E2

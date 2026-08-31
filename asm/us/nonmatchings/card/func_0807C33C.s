@@ -28,7 +28,7 @@ func_0807C33C: @ 0807C33C
 	ldr r0, [r0, #0x00]
 	movs r1, #0xA0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x04]
 	b _0807C394
 	.byte 0x00, 0x00
@@ -39,11 +39,11 @@ _0807C378:
 	ldr r4, [r1, #0x08]
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x14]
 	str r6, [r5, #0x04]
 _0807C394:

@@ -72,12 +72,12 @@ _080EE730:
 	ldr r0, _080EE75C @ =0x09966064
 	adds r4, r4, r0
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	adds r1, r1, r7
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r7, #0x20
 	adds r5, #0x02
 	subs r6, #0x01

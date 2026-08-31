@@ -59,7 +59,7 @@ _08103FD8:
 _08103FF4:
 	lsls r0, r4, #0x10
 	asrs r0, r0, #0x0E
-	bl func_08000918
+	bl EwramAlloc
 	mov r10, r0
 	movs r1, #0x00
 	mov r2, r8
@@ -136,7 +136,7 @@ _08104082:
 	lsls r1, r1, #0x10
 	str r1, [sp, #0x008]
 _08104088:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, [sp, #0x004]
@@ -222,7 +222,7 @@ _0810411A:
 	ldrb r0, [r0, #0x00]
 	cmp r0, #0x01
 	bhi _08104154
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64
@@ -274,7 +274,7 @@ _0810418C:
 	b _08104088
 _0810419C:
 	mov r0, r10
-	bl func_080009C4
+	bl EwramFree
 	add sp, #0x010
 	pop {r3, r4, r5}
 	mov r8, r3

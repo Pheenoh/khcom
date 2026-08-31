@@ -54,7 +54,7 @@ _080DA33A:
 _080DA348:
 	movs r0, #0x00
 	movs r3, #0x00
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r5, r0, #0x0
 	mov r4, sp
 	adds r4, #0x12
@@ -64,10 +64,10 @@ _080DA348:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r0, r6, #0x0
 	adds r0, #0x14
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	add r0, sp, #0x010
 	movs r1, #0x00
@@ -96,10 +96,10 @@ _080DA348:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r6, #0x0
 	adds r0, #0x2C
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080DA3B2:
 	add sp, #0x014
 	pop {r3, r4}

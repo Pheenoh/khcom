@@ -47,7 +47,7 @@ task_emy_83_s_1: @ 0803EBCC
 	cmp r0, #0x00
 	beq _0803EC28
 	ldr r0, _0803EC48 @ =0x00000241
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803EC28:
 	ldr r1, [r4, #0x10]
 	ldr r0, [r4, #0x14]

@@ -37,7 +37,7 @@ _0811906A:
 	adds r4, r2, #0x0
 	lsls r3, r4, #0x10
 	lsrs r2, r3, #0x10
-	bl func_08117FE4
+	bl CpuFastSet
 	ldr r1, [r7, #0x08]
 	adds r0, r1, #0x0
 	bl func_08118F7C
@@ -56,7 +56,7 @@ _0811906A:
 	lsrs r3, r2, #0x01
 	lsls r4, r3, #0x0B
 	lsrs r2, r4, #0x0B
-	bl func_08117FE4
+	bl CpuFastSet
 _081190B8:
 	ldr r0, [r7, #0x08]
 	ldr r1, [r0, #0x78]

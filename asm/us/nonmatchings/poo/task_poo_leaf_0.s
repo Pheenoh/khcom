@@ -31,13 +31,13 @@ task_poo_leaf_0: @ 080CF280
 	ldr r1, _080CF2F8 @ =0x09EF612C
 	adds r0, r4, #0x0
 	adds r2, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x08]
 	adds r0, r7, #0x0
 	adds r0, #0x34

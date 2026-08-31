@@ -9,7 +9,7 @@ task_poo_owl_2: @ 080CE1D8
 	add sp, #-0x010
 	adds r4, r0, #0x0
 	adds r0, #0x34
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r2, [r4, #0x24]
 	asrs r2, r2, #0x08
 	ldr r0, _080CE238 @ =0x0203C40C
@@ -43,9 +43,9 @@ task_poo_owl_2: @ 080CE1D8
 	cmp r0, #0x00
 	beq _080CE28C
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r4, #0x04]
 	b _080CE28C
@@ -59,11 +59,11 @@ _080CE240:
 	adds r0, #0x4C
 	ldrh r0, [r0, #0x00]
 	ldr r1, _080CE294 @ =0x097471E2
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080CE298 @ =0x09849C78
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 _080CE25E:
 	ldr r2, [r4, #0x08]
@@ -87,7 +87,7 @@ _080CE25E:
 	str r0, [sp, #0x00C]
 	adds r0, r7, #0x0
 	adds r1, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080CE28C:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

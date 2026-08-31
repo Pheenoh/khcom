@@ -13,11 +13,11 @@ task_poo_shadow_0: @ 080CBF1C
 	str r0, [sp, #0x008]
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080CBF44 @ =0x09EF4958
 	adds r0, r4, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x00C
 	pop {r4}
 	pop {r0}

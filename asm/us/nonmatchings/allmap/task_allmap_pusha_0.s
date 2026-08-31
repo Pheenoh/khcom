@@ -29,11 +29,11 @@ task_allmap_pusha_0: @ 080D4BB8
 	strh r0, [r4, #0x2E]
 	ldr r0, _080D4C1C @ =0x0976DCB0
 	movs r1, #0x80
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D4C20 @ =0x0984A1D8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r0, _080D4C24 @ =0x0976DC9C
 	str r0, [r4, #0x08]
@@ -41,7 +41,7 @@ task_allmap_pusha_0: @ 080D4BB8
 	adds r0, r4, #0x0
 	adds r0, #0x14
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	str r5, [r4, #0x28]
 	pop {r4, r5}
 	pop {r0}

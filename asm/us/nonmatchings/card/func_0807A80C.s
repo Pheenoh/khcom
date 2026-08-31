@@ -433,7 +433,7 @@ _0807AB42:
 	adds r0, #0xE1
 	strb r1, [r0, #0x00]
 	ldr r0, _0807AB64 @ =0x00000213
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _0807ABB2
 _0807AB5C: .4byte 0x02039DD4
 _0807AB60: .4byte 0x02039B84
@@ -447,7 +447,7 @@ _0807AB68:
 	adds r0, r7, #0x0
 	bl func_08079218
 	movs r0, #0xCC
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r2, r10
 	ldr r5, [r2, #0x00]
 	ldr r0, [r5, #0x68]

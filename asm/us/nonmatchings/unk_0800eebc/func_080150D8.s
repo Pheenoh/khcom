@@ -42,7 +42,7 @@ func_080150D8: @ 080150D8
 	adds r1, r4, #0x0
 	adds r2, r7, #0x0
 	mov r3, r8
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _0801518C @ =0x09EDA9C0
 	add r1, sp, #0x004
 	movs r2, #0x00
@@ -54,7 +54,7 @@ func_080150D8: @ 080150D8
 	ldr r0, _08015190 @ =0x0801508D
 	str r0, [r1, #0x04]
 	ldr r0, _08015194 @ =0x00000262
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r0, r9
 	cmp r0, #0x00
 	bne _08015158

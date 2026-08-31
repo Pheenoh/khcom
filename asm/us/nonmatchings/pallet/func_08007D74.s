@@ -21,7 +21,7 @@ func_08007D74: @ 08007D74
 	ldr r1, [r5, #0x00]
 	adds r1, r1, r7
 	lsrs r2, r2, #0x11
-	bl func_08117FE8
+	bl CpuSet
 	cmp r6, #0x00
 	bne _08007DB4
 	ldr r0, [r5, #0x00]
@@ -31,7 +31,7 @@ func_08007D74: @ 08007D74
 	subs r2, #0x02
 	lsls r2, r2, #0x10
 	lsrs r2, r2, #0x10
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _08007DC0
 _08007DB0: .4byte 0x0300756C
 _08007DB4:
@@ -39,7 +39,7 @@ _08007DB4:
 	adds r0, r0, r7
 	adds r1, r4, #0x0
 	mov r2, r8
-	bl func_080043B4
+	bl RequestDma3Copy
 _08007DC0:
 	ldr r0, _08007DD4 @ =0x0300756C
 	lsls r1, r6, #0x01

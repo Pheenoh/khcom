@@ -13,7 +13,7 @@ mode_mapinspect_0: @ 08108CE8
 	ldr r4, _08108DB4 @ =0x02035E28
 	movs r0, #0xBD
 	lsls r0, r0, #0x02
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	bl func_08001F98
 	movs r0, #0x00
@@ -24,34 +24,34 @@ mode_mapinspect_0: @ 08108CE8
 	movs r1, #0x00
 	movs r2, #0x1C
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x00
 	movs r2, #0x1D
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x02
 	movs r2, #0x1E
 	movs r3, #0x0F
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x03
 	movs r1, #0x00
 	movs r2, #0x1F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	movs r1, #0x03
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x03
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	bl func_08107B84
 	ldr r0, _08108DB8 @ =0x02035FCA
 	movs r2, #0x00
@@ -198,32 +198,32 @@ _08108E34:
 	movs r2, #0xB0
 	lsls r2, r2, #0x01
 	ldr r1, _08108F40 @ =0x09A3D0DC
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _08108F44 @ =0x09A03CFC
 	movs r2, #0xA6
 	lsls r2, r2, #0x06
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _08108F48 @ =0x09611AB8
 	movs r0, #0x02
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _08108F4C @ =0x099597E4
 	movs r2, #0xA0
 	lsls r2, r2, #0x01
 	movs r0, #0x02
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _08108F50 @ =0x09985F44
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x02
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r1, _08108F54 @ =0x09A3439C
 	movs r4, #0xA0
 	lsls r4, r4, #0x03
 	movs r0, #0x00
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	bl func_0810718C
 	ldrh r0, [r0, #0x04]
 	cmp r0, #0x03
@@ -231,7 +231,7 @@ _08108E34:
 	ldr r1, _08108F58 @ =0x09A3551C
 	movs r0, #0x01
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	b _08108F66
 	.byte 0x00, 0x00
 _08108EF4: .4byte 0x02035FDC
@@ -264,7 +264,7 @@ _08108F5C:
 	ldr r1, _08109120 @ =0x09A3501C
 	movs r0, #0x01
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 _08108F66:
 	ldr r0, _08109124 @ =0x02035E2E
 	movs r3, #0x00
@@ -276,85 +276,85 @@ _08108F66:
 	ldr r5, _08109128 @ =0x09A3D2DC
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _0810912C @ =0x02035E4C
 	str r0, [r1, #0x00]
 	ldr r0, _08109130 @ =0x0999DAEC
 	movs r1, #0xAC
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08109134 @ =0x02035E50
 	str r0, [r1, #0x00]
 	ldr r4, _08109138 @ =0x02035E58
 	ldr r1, _0810913C @ =0x09EF981C
 	ldr r2, _08109140 @ =0x09EF97EC
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, _08109144 @ =0x0999E69E
 	movs r1, #0xD6
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08109148 @ =0x02035E78
 	str r0, [r1, #0x00]
 	ldr r4, _0810914C @ =0x02035E80
 	ldr r1, _08109150 @ =0x09EF9858
 	ldr r2, _08109154 @ =0x09EF9830
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08109158 @ =0x02035E70
 	str r0, [r1, #0x00]
 	ldr r0, _0810915C @ =0x0908B1B4
 	movs r1, #0x9A
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08109160 @ =0x02035F54
 	str r0, [r1, #0x00]
 	ldr r4, _08109164 @ =0x02035F58
 	ldr r1, _08109168 @ =0x09EEA164
 	ldr r2, _0810916C @ =0x09EEA148
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, _08109170 @ =0x0908C3CE
 	movs r1, #0x98
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08109174 @ =0x02035F70
 	str r0, [r1, #0x00]
 	ldr r4, _08109178 @ =0x02035F78
 	ldr r1, _0810917C @ =0x09EEA198
 	ldr r2, _08109180 @ =0x09EEA180
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r4, _08109184 @ =0x02035F94
 	movs r0, #0x90
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	movs r1, #0x24
 	bl func_08065ACC
 	ldr r4, _08109188 @ =0x02035F9C
 	movs r0, #0xB4
 	lsls r0, r0, #0x02
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	movs r1, #0x5A
 	bl func_08065ACC
@@ -366,7 +366,7 @@ _08108F66:
 	ldr r5, _08109194 @ =0x02035FA4
 	ldrh r0, [r4, #0x00]
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	ldrh r1, [r4, #0x00]
 	bl func_08065ACC
@@ -383,7 +383,7 @@ _08108F66:
 	ldr r5, _081091A4 @ =0x02035FAC
 	ldrh r0, [r4, #0x00]
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	ldrh r1, [r4, #0x00]
 	bl func_08065ACC
@@ -400,7 +400,7 @@ _08108F66:
 	ldr r5, _081091B4 @ =0x02035FB4
 	ldrh r0, [r4, #0x00]
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	ldrh r1, [r4, #0x00]
 	bl func_08065ACC
@@ -416,7 +416,7 @@ _08108F66:
 	strh r0, [r4, #0x00]
 	ldrh r0, [r4, #0x00]
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	ldr r5, _081091C4 @ =0x02035FBC
 	str r0, [r5, #0x00]
 	ldrh r1, [r4, #0x00]

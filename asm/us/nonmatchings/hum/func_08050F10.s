@@ -53,7 +53,7 @@ _08050F54:
 	add r0, r12
 	ldr r1, _08050F78 @ =0x09EDB668
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x020
 	pop {r4, r5}
 	pop {r0}

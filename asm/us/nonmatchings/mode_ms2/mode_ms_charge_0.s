@@ -12,7 +12,7 @@ mode_ms_charge_0: @ 081068E0
 	push {r5, r6, r7}
 	ldr r4, _08106994 @ =0x02035C10
 	ldr r0, _08106998 @ =0x00003A18
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	bl func_08001F98
 	movs r0, #0x00
@@ -23,34 +23,34 @@ mode_ms_charge_0: @ 081068E0
 	movs r1, #0x00
 	movs r2, #0x1C
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x00
 	movs r2, #0x1D
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x00
 	movs r2, #0x1E
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x03
 	movs r1, #0x00
 	movs r2, #0x1F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	movs r1, #0x03
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x03
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r0, _0810699C @ =0x02035C14
 	movs r4, #0x00
 	strh r4, [r0, #0x00]
@@ -188,17 +188,17 @@ _08106A02:
 	movs r2, #0xD0
 	lsls r2, r2, #0x01
 	ldr r1, _08106AF0 @ =0x09A3DBDC
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _08106AF4 @ =0x09A1913C
 	ldr r2, _08106AF8 @ =0x00004A60
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _08106AFC @ =0x09A3B25C
 	movs r4, #0xA0
 	lsls r4, r4, #0x03
 	movs r0, #0x00
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	bl func_08104B2C
 	ldrh r0, [r0, #0x04]
 	cmp r0, #0x03
@@ -206,7 +206,7 @@ _08106A02:
 	ldr r1, _08106B00 @ =0x09A3BD5C
 	movs r0, #0x01
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 	b _08106B0E
 _08106AA8: .4byte 0x02035E18
 _08106AAC: .4byte 0x02035E1C
@@ -235,7 +235,7 @@ _08106B04:
 	ldr r1, _08106D4C @ =0x09A3B85C
 	movs r0, #0x01
 	adds r2, r4, #0x0
-	bl func_0800510C
+	bl LoadBgMap
 _08106B0E:
 	ldr r0, _08106D50 @ =0x02035C18
 	movs r1, #0x00
@@ -245,60 +245,60 @@ _08106B0E:
 	movs r2, #0xA0
 	lsls r2, r2, #0x03
 	movs r0, #0x02
-	bl func_0800510C
+	bl LoadBgMap
 	bl func_08104F2C
 	bl func_08104FA4
 	bl func_08104FF8
 	bl func_08105090
 	ldr r0, _08106D58 @ =0x09611AB8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08106D5C @ =0x02035D90
 	str r0, [r1, #0x00]
 	ldr r0, _08106D60 @ =0x0908B1B4
 	movs r1, #0x9A
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08106D64 @ =0x02035D9C
 	str r0, [r1, #0x00]
 	ldr r4, _08106D68 @ =0x02035DA0
 	ldr r1, _08106D6C @ =0x09EEA164
 	ldr r2, _08106D70 @ =0x09EEA148
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, _08106D74 @ =0x0908C3CE
 	movs r1, #0x98
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08106D78 @ =0x02035DB8
 	str r0, [r1, #0x00]
 	ldr r4, _08106D7C @ =0x02035DC0
 	ldr r1, _08106D80 @ =0x09EEA198
 	ldr r2, _08106D84 @ =0x09EEA180
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, _08106D88 @ =0x099A7C78
 	movs r1, #0x20
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08106D8C @ =0x02035C40
 	str r0, [r1, #0x00]
 	ldr r0, _08106D90 @ =0x09A3DE7C
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08106D94 @ =0x02035C44
 	str r0, [r1, #0x00]
 	ldr r0, _08106D98 @ =0x099A6C82
 	movs r1, #0xFE
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08106D9C @ =0x02035C48
 	str r0, [r1, #0x00]
 	ldr r4, _08106DA0 @ =0x02035C50
@@ -307,31 +307,31 @@ _08106B0E:
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r4, _08106DAC @ =0x02035C68
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r2, _08106DB0 @ =0x09617D58
 	mov r8, r2
 	mov r0, r8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08106DB4 @ =0x02035C80
 	str r0, [r1, #0x00]
 	ldr r0, _08106DB8 @ =0x099A2194
 	movs r1, #0x94
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08106DBC @ =0x02035C84
 	str r0, [r1, #0x00]
 	ldr r4, _08106DC0 @ =0x02035C88
@@ -340,46 +340,46 @@ _08106B0E:
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x03
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r4, _08106DCC @ =0x02035CA0
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	mov r0, r8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, _08106DD0 @ =0x02035CC0
 	str r0, [r1, #0x00]
 	ldr r0, _08106DD4 @ =0x092028EC
 	movs r1, #0xC0
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, _08106DD8 @ =0x02035CC4
 	str r0, [r1, #0x00]
 	ldr r0, _08106DDC @ =0x02035CC8
 	ldr r1, _08106DE0 @ =0x09EEEAC8
 	ldr r2, _08106DE4 @ =0x09EEEA98
-	bl func_08005968
+	bl AnimInit
 	ldr r4, _08106DE8 @ =0x02035DDC
 	movs r0, #0x90
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	movs r1, #0x24
 	bl func_08065ACC
 	ldr r4, _08106DEC @ =0x02035DE4
 	movs r0, #0xB4
 	lsls r0, r0, #0x02
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	movs r1, #0x5A
 	bl func_08065ACC
@@ -391,7 +391,7 @@ _08106B0E:
 	ldr r5, _08106DF8 @ =0x02035DEC
 	ldrh r0, [r4, #0x00]
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	ldrh r1, [r4, #0x00]
 	bl func_08065ACC
@@ -408,7 +408,7 @@ _08106B0E:
 	ldr r5, _08106E08 @ =0x02035DF4
 	ldrh r0, [r4, #0x00]
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	ldrh r1, [r4, #0x00]
 	bl func_08065ACC
@@ -425,7 +425,7 @@ _08106B0E:
 	ldr r5, _08106E18 @ =0x02035DFC
 	ldrh r0, [r4, #0x00]
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	ldrh r1, [r4, #0x00]
 	bl func_08065ACC
@@ -442,7 +442,7 @@ _08106B0E:
 	ldr r5, _08106E28 @ =0x02035E04
 	ldrh r0, [r4, #0x00]
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	ldrh r1, [r4, #0x00]
 	bl func_08065ACC

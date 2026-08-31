@@ -53,7 +53,7 @@ _080E62A4:
 	ands r0, r1
 	cmp r0, #0x00
 	bne _080E637C
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E6308 @ =0x00002710
@@ -93,7 +93,7 @@ _080E6320:
 	.byte 0x00, 0x00
 _080E6328: .4byte 0x09EF83F8
 _080E632C:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -129,7 +129,7 @@ _080E6350:
 	adds r0, #0xB4
 	ldr r1, [r4, #0x10]
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _080E637C:
 	add sp, #0x020
 	pop {r4, r5, r6, r7}

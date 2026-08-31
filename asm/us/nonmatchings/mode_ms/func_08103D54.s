@@ -19,7 +19,7 @@ func_08103D54: @ 08103D54
 	adds r2, r2, r3
 	ldrh r2, [r2, #0x10]
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 	pop {r0}
 	bx r0
 _08103D78: .4byte 0x099931E4

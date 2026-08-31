@@ -99,7 +99,7 @@ _08030E42:
 	ands r0, r1
 	strh r0, [r7, #0x2C]
 	str r2, [r7, #0x08]
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, [r7, #0x24]
 	asrs r4, r1, #0x01
 	lsls r0, r0, #0x10
@@ -515,7 +515,7 @@ _08031154:
 	beq _08031210
 _0803115A:
 	movs r0, #0x6B
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, _08031198 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	ldr r1, [r0, #0x6C]
@@ -588,7 +588,7 @@ _080311C8:
 	movs r1, #0x01
 	orrs r0, r1
 	strh r0, [r7, #0x2C]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x06

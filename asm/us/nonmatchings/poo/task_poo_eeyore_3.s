@@ -11,9 +11,9 @@ task_poo_eeyore_3: @ 080CDFEC
 	cmp r0, #0x00
 	beq _080CE002
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080CE002:
 	adds r0, r4, #0x0
 	adds r0, #0xAC
@@ -26,7 +26,7 @@ _080CE002:
 _080CE014:
 	adds r0, r4, #0x0
 	adds r0, #0x90
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

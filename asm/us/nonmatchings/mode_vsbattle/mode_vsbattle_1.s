@@ -23,7 +23,7 @@ mode_vsbattle_1: @ 0800C5F8
 	bgt _0800C628
 	adds r0, r2, #0x0
 	adds r0, #0x2C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	b _0800C62C
 _0800C624: .4byte 0x02039B84
 _0800C628:
@@ -35,7 +35,7 @@ _0800C62C:
 	ldr r4, _0800C670 @ =0x02039B84
 	ldr r0, [r4, #0x00]
 	adds r0, #0x40
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r5, [r4, #0x00]
 	ldr r3, [r5, #0x68]
 	ldr r4, [r5, #0x6C]
@@ -57,7 +57,7 @@ _0800C660:
 	ldr r0, _0800C670 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	adds r0, #0x2C
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r4, r5}
 	pop {r0}
 	bx r0

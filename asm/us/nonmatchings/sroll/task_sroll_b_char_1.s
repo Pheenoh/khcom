@@ -42,11 +42,11 @@ _08114A82:
 _08114A92:
 	adds r0, r5, #0x0
 	adds r0, #0x14
-	bl func_08005A64
+	bl AnimUpdate
 	adds r4, r5, #0x0
 	adds r4, #0x2C
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [r5, #0x00]
 	subs r0, #0x01
 	cmp r0, #0x04

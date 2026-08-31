@@ -35,7 +35,7 @@ _08080304:
 	adds r0, #0x9C
 	ldr r1, _08080330 @ =0x09EE78BC
 	adds r2, #0x48
-	bl func_08000E14
+	bl TaskCreate
 _08080316:
 	ldr r0, [r6, #0x00]
 	adds r0, #0xA5
@@ -239,7 +239,7 @@ _08080482:
 	strb r1, [r5, #0x00]
 _080804A0:
 	ldr r0, _0808050C @ =0x00000213
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r2, _08080510 @ =0x02039B84
 	mov r8, r2
 	ldr r6, [r2, #0x00]
@@ -321,7 +321,7 @@ _08080524:
 	str r0, [r5, #0x68]
 	str r1, [r5, #0x6C]
 	movs r0, #0xCC
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, [r7, #0x00]
 	adds r0, #0xA4
 	strb r6, [r0, #0x00]

@@ -109,7 +109,7 @@ _08093D0A:
 	adds r0, r6, r1
 	ldr r1, _08093D24 @ =0x050001C0
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

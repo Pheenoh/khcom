@@ -124,7 +124,7 @@ INCLUDE_ASM("unk_0800eebc/func_08018B04.s");
 INCLUDE_ASM("unk_0800eebc/func_08018F28.s");
 INCLUDE_ASM("unk_0800eebc/func_08019050.s");
 INCLUDE_ASM("unk_0800eebc/func_08019068.s");
-INCLUDE_ASM("unk_0800eebc/func_0801909C.s");
+INCLUDE_ASM("unk_0800eebc/WorldToScreen.s");
 INCLUDE_ASM("unk_0800eebc/func_08019190.s");
 INCLUDE_ASM("unk_0800eebc/func_08019270.s");
 INCLUDE_ASM("unk_0800eebc/func_08019350.s");

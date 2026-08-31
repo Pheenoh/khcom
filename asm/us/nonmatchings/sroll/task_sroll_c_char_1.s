@@ -11,7 +11,7 @@ task_sroll_c_char_1: @ 08115224
 	movs r5, #0x04
 _0811522C:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r4, #0x18
 	subs r5, #0x01
 	cmp r5, #0x00

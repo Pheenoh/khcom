@@ -42,9 +42,9 @@ task_poo_eeyoretail_2: @ 080CF96C
 	cmp r0, #0x00
 	beq _080CFA3E
 	ldr r0, [r5, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r5, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r5, #0x04]
 	b _080CFA3E
@@ -56,11 +56,11 @@ _080CF9D0:
 	bne _080CF9EA
 	ldrh r0, [r5, #0x1C]
 	ldr r1, _080CF9FC @ =0x097448BA
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080CFA00 @ =0x09849C58
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 _080CF9EA:
 	bl func_080CFA70
@@ -92,14 +92,14 @@ _080CFA0E:
 	str r4, [sp, #0x004]
 	str r7, [sp, #0x008]
 	str r6, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	bl func_080C9D84
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080CFA3E
 	adds r0, r5, #0x0
 	adds r0, #0x24
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080CFA3E:
 	add sp, #0x010
 	pop {r3}

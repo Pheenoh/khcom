@@ -27,12 +27,12 @@ func_08004F08: @ 08004F08
 	movs r1, #0x00
 	movs r2, #0x0F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x03
 	movs r1, #0x02
 	movs r2, #0x1F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r5, #0x80
 	lsls r5, r5, #0x01
 	movs r4, #0x00

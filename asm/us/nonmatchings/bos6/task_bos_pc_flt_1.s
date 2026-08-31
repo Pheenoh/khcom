@@ -11,7 +11,7 @@ task_bos_pc_flt_1: @ 0810BDCC
 	adds r4, r5, #0x0
 	adds r4, #0x9C
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r4, #0x0
 	bl func_08005B38
 	lsls r0, r0, #0x10

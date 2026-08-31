@@ -88,7 +88,7 @@ _0810A09E:
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	b _0810A0D0
 	.byte 0x00, 0x00
 _0810A0C0: .4byte 0x09D69274
@@ -97,7 +97,7 @@ _0810A0C4:
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 _0810A0D0:
 	mov r1, r8
 	ldrh r0, [r1, #0x0A]
@@ -119,7 +119,7 @@ _0810A0D6:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r1, _0810A1C4 @ =0x09EF9C34
 	ldr r2, [sp, #0x014]
 	movs r3, #0x20
@@ -216,7 +216,7 @@ _0810A13A:
 	str r4, [sp, #0x004]
 	str r6, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	b _0810A29E
 	.byte 0x00, 0x00
 _0810A1C0: .4byte 0x08F69BC4
@@ -388,7 +388,7 @@ _0810A2C4:
 	str r0, [sp, #0x00C]
 	adds r0, r2, #0x0
 	adds r2, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _0810A31C:
 	movs r0, #0x96
 	lsls r0, r0, #0x01
@@ -452,7 +452,7 @@ _0810A374:
 	ldr r0, [r4, #0x28]
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
-	bl func_0801909C
+	bl WorldToScreen
 	movs r2, #0x32
 	ldsh r1, [r4, r2]
 	movs r3, #0x36
@@ -468,7 +468,7 @@ _0810A374:
 	ldr r1, [r0, #0x00]
 	ldrh r2, [r0, #0x04]
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r3, [sp, #0x014]
 	movs r0, #0x1E
 	ldsh r2, [r3, r0]
@@ -480,7 +480,7 @@ _0810A374:
 	adds r2, r2, r4
 	ldrh r2, [r2, #0x0C]
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 	mov r1, r8
 	ldrh r0, [r1, #0x32]
 	strh r0, [r1, #0x36]
@@ -498,7 +498,7 @@ _0810A3E8:
 	lsls r2, r2, #0x10
 	lsrs r2, r2, #0x10
 	movs r0, #0x01
-	bl func_080054EC
+	bl SetBgScroll
 _0810A406:
 	add sp, #0x028
 	pop {r3, r4, r5}

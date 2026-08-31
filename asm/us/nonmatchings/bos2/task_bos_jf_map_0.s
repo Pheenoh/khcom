@@ -14,7 +14,7 @@ task_bos_jf_map_0: @ 080BD8E0
 	ldr r1, _080BD984 @ =0x0203ACE0
 	movs r2, #0x80
 	lsls r2, r2, #0x04
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r1, _080BD988 @ =0x0203ACD8
 	adds r0, r4, #0x0
 	adds r0, #0x10
@@ -23,11 +23,11 @@ task_bos_jf_map_0: @ 080BD8E0
 	ldr r1, [r4, #0x00]
 	ldrh r2, [r4, #0x04]
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, [r4, #0x08]
 	ldrh r2, [r4, #0x0C]
 	movs r0, #0x00
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r6, _080BD98C @ =0x02039B84
 	ldr r0, [r6, #0x00]
 	movs r1, #0x80

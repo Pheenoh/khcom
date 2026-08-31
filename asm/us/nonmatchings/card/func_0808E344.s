@@ -10,9 +10,9 @@ func_0808E344: @ 0808E344
 	ldr r0, [r4, #0x08]
 	cmp r0, #0x00
 	beq _0808E35E
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x0C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r4, #0x08]
 	str r0, [r4, #0x0C]

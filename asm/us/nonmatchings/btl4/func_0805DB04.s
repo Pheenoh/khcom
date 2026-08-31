@@ -17,7 +17,7 @@ func_0805DB04: @ 0805DB04
 	adds r0, #0x20
 	adds r1, r3, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	pop {r4, r5}
 	pop {r0}
 	bx r0

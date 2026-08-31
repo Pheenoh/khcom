@@ -10,7 +10,7 @@ func_0808DE28: @ 0808DE28
 	lsls r0, r0, #0x18
 	lsrs r5, r0, #0x18
 	movs r0, #0x03
-	bl func_08005130
+	bl GetBgCharBase
 	adds r6, r0, #0x0
 	cmp r5, #0x00
 	beq _0808DE8C
@@ -37,7 +37,7 @@ func_0808DE28: @ 0808DE28
 	lsls r2, r2, #0x04
 	adds r1, r6, r2
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	ldrb r0, [r0, #0x01]
 	adds r0, #0x03
@@ -47,7 +47,7 @@ func_0808DE28: @ 0808DE28
 	lsls r2, r2, #0x04
 	adds r1, r6, r2
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _0808DEAA
 _0808DE88: .4byte 0x0940FA98
 _0808DE8C:
@@ -57,13 +57,13 @@ _0808DE8C:
 	adds r1, r6, r0
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r2, #0xD0
 	lsls r2, r2, #0x04
 	adds r1, r6, r2
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 _0808DEAA:
 	add sp, #0x004
 	pop {r4, r5, r6}

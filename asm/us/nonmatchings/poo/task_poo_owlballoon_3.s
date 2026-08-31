@@ -11,16 +11,16 @@ task_poo_owlballoon_3: @ 080CCB4C
 	cmp r0, #0x00
 	beq _080CCB6A
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x34
 	bl func_08012304
 _080CCB6A:
 	adds r0, r4, #0x0
 	adds r0, #0xB0
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	adds r0, r4, #0x0
 	adds r0, #0x90
 	bl func_080CCBD4

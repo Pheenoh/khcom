@@ -12,7 +12,7 @@ task_hum_laxene_2: @ 080523D0
 	lsls r0, r0, #0x01
 	adds r4, r4, r0
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r4}
 	pop {r0}
 	bx r0

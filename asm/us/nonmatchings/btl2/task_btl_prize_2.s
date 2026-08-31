@@ -27,14 +27,14 @@ task_btl_prize_2: @ 080312F0
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r7, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _080313B0 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	ldr r2, [r0, #0x24]
 	movs r0, #0x00
 	adds r1, r2, #0x0
 	movs r3, #0x01
-	bl func_08002CB4
+	bl AllocObjAffine
 	mov r8, r0
 	add r0, sp, #0x010
 	movs r1, #0x00
@@ -60,7 +60,7 @@ task_btl_prize_2: @ 080312F0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldrh r1, [r6, #0x2C]
 	movs r0, #0x02
 	ands r0, r1
@@ -72,7 +72,7 @@ task_btl_prize_2: @ 080312F0
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r7, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -88,7 +88,7 @@ task_btl_prize_2: @ 080312F0
 	str r5, [sp, #0x008]
 	ldr r4, _080313B8 @ =0x0000FFFF
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080313A2:
 	add sp, #0x014
 	pop {r3, r4}

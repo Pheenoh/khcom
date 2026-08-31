@@ -32,7 +32,7 @@ _080FC8C6:
 	lsls r1, r1, #0x13
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	mov r2, r8
 	str r4, [r2, #0x28]
 _080FC8EE:
@@ -52,7 +52,7 @@ _080FC8FC:
 	lsls r1, r1, #0x13
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	mov r0, r8
 	str r4, [r0, #0x28]
 _080FC916:
@@ -124,7 +124,7 @@ _080FC978:
 	mov r1, sp
 	adds r1, #0x12
 	adds r3, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r0, r5, #0x0
 	bl func_0801AF1C
 	lsls r0, r0, #0x10
@@ -158,7 +158,7 @@ _080FC978:
 	lsrs r0, r0, #0x10
 	str r0, [sp, #0x00C]
 	adds r0, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	adds r7, #0x14
 	movs r0, #0x14
 	add r9, r0
@@ -169,11 +169,11 @@ _080FC978:
 	cmp r2, #0x00
 	bge _080FC978
 	ldr r0, [sp, #0x020]
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r0, [sp, #0x018]
-	bl func_08000EE0
+	bl TaskPoolDraw
 	ldr r0, [sp, #0x01C]
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080FCA0C:
 	add sp, #0x024
 	pop {r3, r4, r5}

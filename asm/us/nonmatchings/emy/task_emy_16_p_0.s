@@ -24,22 +24,22 @@ _080391A8:
 _080391AE:
 	ldr r0, _080391F0 @ =0x08F699C4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r1, _080391F4 @ =0x08A20BCE
 	movs r0, #0x80
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	adds r4, r5, #0x0
 	adds r4, #0x08
 	ldr r1, _080391F8 @ =0x09EE04B4
 	ldr r2, _080391FC @ =0x09EE04AC
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, [r6, #0x00]
 	str r0, [r5, #0x20]
 	ldr r0, [r6, #0x04]

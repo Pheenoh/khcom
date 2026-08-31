@@ -18,24 +18,24 @@ task_poo_shadowscale_0: @ 080CC07C
 	ldr r0, _080CC0CC @ =0x08B22BBC
 	movs r1, #0x80
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x08]
 	ldr r0, _080CC0D0 @ =0x08F69BE4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x0C]
 	adds r5, r4, #0x0
 	adds r5, #0x14
 	ldr r1, _080CC0D4 @ =0x09EE1384
 	ldr r2, _080CC0D8 @ =0x09EE1380
 	adds r0, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x30]
 	pop {r4, r5}
 	pop {r0}

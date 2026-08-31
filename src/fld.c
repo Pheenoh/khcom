@@ -50,16 +50,16 @@ void task_fld_sora_2(FldWork* work) {
 
     x = (act->unk_00.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (act->unk_00.unk_04 >> 8) + (act->unk_00.unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    func_080023E0(x, y, work->unk_20, work->unk_00, work->unk_04, 0, pri, depth);
-    func_08000EE0(work->unk_24);
+    DrawSprite(x, y, work->unk_20, work->unk_00, work->unk_04, 0, pri, depth);
+    TaskPoolDraw(work->unk_24);
 }
 
 void task_fld_sora_3(FldWork* work) {
     FldActor* act;
 
     act = &gUnk_02039BA0->unk_18;
-    func_080028C0(work->unk_00);
-    func_08002C10(work->unk_04);
+    ReleaseObjTiles(work->unk_00);
+    ReleaseObjPalette(work->unk_04);
     func_08012304(work->unk_38);
 
     if (gUnk_02039BB0.unk_00 != 0) {
@@ -75,41 +75,41 @@ void task_fld_sora_3(FldWork* work) {
         gUnk_02039BB0.unk_24 = act->unk_14;
     }
 
-    func_08000F0C(work->unk_24);
+    TaskPoolDestroy(work->unk_24);
 }
 
 void func_08034368(FldActor* act) {
-    if ((func_08001384() & 0x20) && (func_08001384() & 0x80)) {
+    if ((GetKeysHeld() & 0x20) && (GetKeysHeld() & 0x80)) {
         act->unk_14 = 0xAD;
-    } else if ((func_08001384() & 0x40) && (func_08001384() & 0x20)) {
+    } else if ((GetKeysHeld() & 0x40) && (GetKeysHeld() & 0x20)) {
         act->unk_14 = 0xD3;
-    } else if ((func_08001384() & 0x40) && (func_08001384() & 0x10)) {
+    } else if ((GetKeysHeld() & 0x40) && (GetKeysHeld() & 0x10)) {
         act->unk_14 = 0x2D;
-    } else if ((func_08001384() & 0x10) && (func_08001384() & 0x80)) {
+    } else if ((GetKeysHeld() & 0x10) && (GetKeysHeld() & 0x80)) {
         act->unk_14 = 0x53;
-    } else if ((func_08001384() & 0x80) && func_08001534(0x20) <= 4) {
+    } else if ((GetKeysHeld() & 0x80) && func_08001534(0x20) <= 4) {
         act->unk_14 = 0xAD;
-    } else if ((func_08001384() & 0x80) && func_08001534(0x10) <= 4) {
+    } else if ((GetKeysHeld() & 0x80) && func_08001534(0x10) <= 4) {
         act->unk_14 = 0x53;
-    } else if ((func_08001384() & 0x40) && func_08001534(0x20) <= 4) {
+    } else if ((GetKeysHeld() & 0x40) && func_08001534(0x20) <= 4) {
         act->unk_14 = 0xD3;
-    } else if ((func_08001384() & 0x40) && func_08001534(0x10) <= 4) {
+    } else if ((GetKeysHeld() & 0x40) && func_08001534(0x10) <= 4) {
         act->unk_14 = 0x2D;
-    } else if ((func_08001384() & 0x20) && func_08001534(0x40) <= 4) {
+    } else if ((GetKeysHeld() & 0x20) && func_08001534(0x40) <= 4) {
         act->unk_14 = 0xD3;
-    } else if ((func_08001384() & 0x20) && func_08001534(0x80) <= 4) {
+    } else if ((GetKeysHeld() & 0x20) && func_08001534(0x80) <= 4) {
         act->unk_14 = 0xAD;
-    } else if ((func_08001384() & 0x10) && func_08001534(0x40) <= 4) {
+    } else if ((GetKeysHeld() & 0x10) && func_08001534(0x40) <= 4) {
         act->unk_14 = 0x2D;
-    } else if ((func_08001384() & 0x10) && func_08001534(0x80) <= 4) {
+    } else if ((GetKeysHeld() & 0x10) && func_08001534(0x80) <= 4) {
         act->unk_14 = 0x53;
-    } else if (func_08001384() & 0x80) {
+    } else if (GetKeysHeld() & 0x80) {
         act->unk_14 = 0x80;
-    } else if (func_08001384() & 0x40) {
+    } else if (GetKeysHeld() & 0x40) {
         act->unk_14 = 0;
-    } else if (func_08001384() & 0x20) {
+    } else if (GetKeysHeld() & 0x20) {
         act->unk_14 = 0xC0;
-    } else if (func_08001384() & 0x10) {
+    } else if (GetKeysHeld() & 0x10) {
         act->unk_14 = 0x40;
     }
 }
@@ -206,8 +206,8 @@ u8 func_08034668(FldActor* act) {
     FldPos v;
 
     v = act->unk_00;
-    v.unk_00 += gUnk_08121400[act->unk_14] * 8;
-    v.unk_04 -= gUnk_08121400[act->unk_14 + 64] * 8;
+    v.unk_00 += gSineTable[act->unk_14] * 8;
+    v.unk_04 -= gSineTable[act->unk_14 + 64] * 8;
 
     if (func_080DFCDC(&v) != 0) {
         return 1;
@@ -359,16 +359,16 @@ void task_fld_riku_2(FldWork* work) {
 
     x = (act->unk_00.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (act->unk_00.unk_04 >> 8) + (act->unk_00.unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    func_080023E0(x, y, work->unk_20, work->unk_00, work->unk_04, 0, pri, depth);
-    func_08000EE0(work->unk_24);
+    DrawSprite(x, y, work->unk_20, work->unk_00, work->unk_04, 0, pri, depth);
+    TaskPoolDraw(work->unk_24);
 }
 
 void task_fld_riku_3(FldWork* work) {
     FldActor* act;
 
     act = &gUnk_02039BA0->unk_18;
-    func_080028C0(work->unk_00);
-    func_08002C10(work->unk_04);
+    ReleaseObjTiles(work->unk_00);
+    ReleaseObjPalette(work->unk_04);
     func_08012304(work->unk_38);
 
     if (gUnk_02039BB0.unk_00 != 0) {
@@ -384,17 +384,17 @@ void task_fld_riku_3(FldWork* work) {
         gUnk_02039BB0.unk_24 = act->unk_14;
     }
 
-    func_08000F0C(work->unk_24);
+    TaskPoolDestroy(work->unk_24);
 }
 
 void task_fld_shadow_0(FldShadowWork* work, FldActor* obj) {
     work->unk_10 = obj;
     work->unk_00 = obj->unk_00.unk_00;
     work->unk_04 = obj->unk_00.unk_04;
-    work->unk_08 = func_080026A4(gUnk_08B22BBC, 0x100);
-    work->unk_0C = func_08002A14(gUnk_08F69BE4, 32);
-    func_08005968(work->unk_14, gUnk_09EE1384, gUnk_09EE1380);
-    func_080059A4(work->unk_14, 0, 1);
+    work->unk_08 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    work->unk_0C = LoadObjPalette(gUnk_08F69BE4, 32);
+    AnimInit(work->unk_14, gUnk_09EE1384, gUnk_09EE1380);
+    AnimStart(work->unk_14, 0, 1);
 }
 
 s32 task_fld_shadow_1(FldShadowWork* work) {
@@ -418,7 +418,7 @@ void task_fld_shadow_2(FldShadowWork* work) {
         return;
     }
 
-    spr = func_08005A64(work->unk_14);
+    spr = AnimUpdate(work->unk_14);
     z = obj->unk_3C;
 
     if (obj->unk_00.unk_08 >= z) {
@@ -430,17 +430,17 @@ void task_fld_shadow_2(FldShadowWork* work) {
             size = 0x19;
         }
 
-        sprite = func_08002CB4(0, size, size, 0);
+        sprite = AllocObjAffine(0, size, size, 0);
     }
 
     x = (work->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (work->unk_04 >> 8) + (z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    func_080023E0(x, y, spr, work->unk_08, work->unk_0C, sprite, 0x800, obj->unk_3A);
+    DrawSprite(x, y, spr, work->unk_08, work->unk_0C, sprite, 0x800, obj->unk_3A);
 }
 
 void task_fld_shadow_3(FldShadowWork* work) {
-    func_080028C0(work->unk_08);
-    func_08002C10(work->unk_0C);
+    ReleaseObjTiles(work->unk_08);
+    ReleaseObjPalette(work->unk_0C);
 }
 
 ALIGN_ZERO(2);

@@ -61,7 +61,7 @@ _08115328:
 	str r4, [sp, #0x00C]
 	movs r0, #0x08
 	movs r1, #0x08
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r5, #0x0
 	movs r1, #0x0A
 	bl __umodsi3
@@ -77,7 +77,7 @@ _08115328:
 	str r4, [sp, #0x00C]
 	movs r0, #0x10
 	movs r1, #0x08
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r6, #0x28]
 	ldr r3, [r7, #0x08]
 	ldr r0, [r7, #0x0C]
@@ -87,7 +87,7 @@ _08115328:
 	str r4, [sp, #0x00C]
 	movs r0, #0x18
 	movs r1, #0x08
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r8
 	movs r1, #0x0A
 	bl __udivsi3
@@ -103,7 +103,7 @@ _08115328:
 	str r4, [sp, #0x00C]
 	movs r0, #0x20
 	movs r1, #0x08
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r8
 	movs r1, #0x0A
 	bl __umodsi3
@@ -119,7 +119,7 @@ _08115328:
 	str r4, [sp, #0x00C]
 	movs r0, #0x28
 	movs r1, #0x08
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r6, #0x28]
 	ldr r3, [r7, #0x08]
 	ldr r0, [r7, #0x0C]
@@ -129,7 +129,7 @@ _08115328:
 	str r4, [sp, #0x00C]
 	movs r0, #0x30
 	movs r1, #0x08
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r9
 	movs r1, #0x0A
 	bl __udivsi3
@@ -145,7 +145,7 @@ _08115328:
 	str r4, [sp, #0x00C]
 	movs r0, #0x38
 	movs r1, #0x08
-	bl func_080023E0
+	bl DrawSprite
 	mov r0, r9
 	movs r1, #0x0A
 	bl __umodsi3
@@ -161,7 +161,7 @@ _08115328:
 	str r4, [sp, #0x00C]
 	movs r0, #0x40
 	movs r1, #0x08
-	bl func_080023E0
+	bl DrawSprite
 _08115472:
 	add sp, #0x010
 	pop {r3, r4}

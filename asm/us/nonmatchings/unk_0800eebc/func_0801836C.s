@@ -88,7 +88,7 @@ _080183E2:
 	bl func_08005810
 	movs r0, #0xAB
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r4, sp
 	adds r4, #0x06
 	ldr r0, [r7, #0x00]
@@ -98,7 +98,7 @@ _080183E2:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08018480 @ =0x09EDACD8
 	add r1, sp, #0x004
 	movs r2, #0x00

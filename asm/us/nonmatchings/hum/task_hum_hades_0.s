@@ -49,7 +49,7 @@ task_hum_hades_0: @ 0804E468
 	ldr r4, _0804E57C @ =0x08BAFB62
 	movs r0, #0x80
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	movs r2, #0xEA
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -57,7 +57,7 @@ task_hum_hades_0: @ 0804E468
 	movs r0, #0xA0
 	lsls r0, r0, #0x02
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	movs r2, #0xEC
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -65,14 +65,14 @@ task_hum_hades_0: @ 0804E468
 	movs r0, #0xE8
 	lsls r0, r0, #0x02
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	movs r2, #0xEE
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
 	str r0, [r1, #0x00]
 	ldr r0, _0804E580 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	movs r2, #0x8A
 	lsls r2, r2, #0x02
 	adds r1, r7, r2
@@ -85,33 +85,33 @@ task_hum_hades_0: @ 0804E468
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r2, #0xFC
 	lsls r2, r2, #0x01
 	adds r4, r7, r2
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x84
 	lsls r0, r0, #0x02
 	adds r4, r7, r0
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r2, #0xC2
 	lsls r2, r2, #0x01
 	adds r1, r7, r2

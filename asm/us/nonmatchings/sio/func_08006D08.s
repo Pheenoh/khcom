@@ -62,7 +62,7 @@ func_08006D08: @ 08006D08
 	ldr r1, _08006E0C @ =0x02039830
 	ldr r2, _08006E10 @ =0x050000C9
 	mov r0, sp
-	bl func_08117FE8
+	bl CpuSet
 	ldr r0, _08006E14 @ =0x02034070
 	strb r4, [r0, #0x00]
 	ldr r0, _08006E18 @ =0x02034071

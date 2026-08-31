@@ -38,10 +38,10 @@ _080DD17A:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r0, r6, #0x0
 	adds r0, #0x0C
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	add r0, sp, #0x010
 	movs r3, #0x00
@@ -58,7 +58,7 @@ _080DD17A:
 	movs r4, #0xFC
 	lsls r4, r4, #0x08
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080DD1BA:
 	add sp, #0x014
 	pop {r4, r5, r6, r7}

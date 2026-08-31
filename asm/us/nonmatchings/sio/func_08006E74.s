@@ -31,7 +31,7 @@ func_08006E74: @ 08006E74
 	ldr r1, _08006ECC @ =0x02039830
 	ldr r2, _08006ED0 @ =0x050000C9
 	mov r0, sp
-	bl func_08117FE8
+	bl CpuSet
 	add sp, #0x004
 	pop {r4, r5}
 	pop {r0}

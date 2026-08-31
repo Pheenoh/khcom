@@ -147,7 +147,7 @@ _0808D374:
 _0808D378:
 	movs r0, #0x02
 _0808D37A:
-	bl func_08005130
+	bl GetBgCharBase
 	mov r9, r0
 _0808D380:
 	mov r0, sp
@@ -159,7 +159,7 @@ _0808D380:
 	mov r1, r9
 	adds r1, #0xA0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	ldrb r0, [r0, #0x01]
 	adds r0, #0x01
@@ -168,7 +168,7 @@ _0808D380:
 	mov r1, r9
 	adds r1, #0xC0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	ldrb r0, [r0, #0x02]
 	adds r0, #0x01
@@ -177,7 +177,7 @@ _0808D380:
 	mov r1, r9
 	adds r1, #0xE0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	ldrb r0, [r0, #0x03]
 	adds r0, #0x01
@@ -187,7 +187,7 @@ _0808D380:
 	lsls r1, r1, #0x01
 	add r1, r9
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldrb r0, [r5, #0x00]
 	adds r0, #0x01
 	lsls r0, r0, #0x05
@@ -196,7 +196,7 @@ _0808D380:
 	lsls r1, r1, #0x01
 	add r1, r9
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldrb r0, [r5, #0x01]
 	adds r0, #0x01
 	lsls r0, r0, #0x05
@@ -205,7 +205,7 @@ _0808D380:
 	lsls r1, r1, #0x01
 	add r1, r9
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldrb r0, [r5, #0x02]
 	adds r0, #0x01
 	lsls r0, r0, #0x05
@@ -214,7 +214,7 @@ _0808D380:
 	lsls r1, r1, #0x01
 	add r1, r9
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldrb r0, [r5, #0x03]
 	adds r0, #0x01
 	lsls r0, r0, #0x05
@@ -223,7 +223,7 @@ _0808D380:
 	lsls r1, r1, #0x01
 	add r1, r9
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	add sp, #0x008
 	pop {r3, r4, r5}
 	mov r8, r3

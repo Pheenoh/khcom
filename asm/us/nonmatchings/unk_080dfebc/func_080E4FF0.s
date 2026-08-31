@@ -31,7 +31,7 @@ func_080E4FF0: @ 080E4FF0
 	mov r2, r10
 	bl func_080E4EB0
 	movs r0, #0x03
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r1, r0, #0x0
 	lsls r5, r5, #0x18
 	lsrs r5, r5, #0x18
@@ -44,7 +44,7 @@ func_080E4FF0: @ 080E4FF0
 	adds r3, r4, #0x0
 	bl func_080045AC
 	movs r0, #0x02
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r1, r0, #0x0
 	str r6, [sp, #0x000]
 	mov r0, r9
@@ -52,7 +52,7 @@ func_080E4FF0: @ 080E4FF0
 	adds r3, r4, #0x0
 	bl func_080045AC
 	movs r0, #0x01
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r1, r0, #0x0
 	str r6, [sp, #0x000]
 	mov r0, r10

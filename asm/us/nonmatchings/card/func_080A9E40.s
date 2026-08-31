@@ -57,7 +57,7 @@ _080A9E9C:
 _080A9EA0:
 	movs r0, #0x02
 _080A9EA2:
-	bl func_08005130
+	bl GetBgCharBase
 	adds r7, r0, #0x0
 _080A9EA8:
 	mov r0, sp
@@ -69,7 +69,7 @@ _080A9EA8:
 	adds r1, r7, #0x0
 	adds r1, #0x20
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	ldrb r0, [r0, #0x01]
 	adds r0, #0x01
@@ -78,7 +78,7 @@ _080A9EA8:
 	adds r1, r7, #0x0
 	adds r1, #0x40
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldrb r0, [r5, #0x00]
 	adds r0, #0x01
 	lsls r0, r0, #0x05
@@ -86,7 +86,7 @@ _080A9EA8:
 	adds r1, r7, #0x0
 	adds r1, #0x60
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldrb r0, [r5, #0x01]
 	adds r0, #0x01
 	lsls r0, r0, #0x05
@@ -94,7 +94,7 @@ _080A9EA8:
 	adds r1, r7, #0x0
 	adds r1, #0x80
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	add sp, #0x008
 	pop {r3}
 	mov r8, r3

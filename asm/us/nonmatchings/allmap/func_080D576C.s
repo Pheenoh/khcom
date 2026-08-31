@@ -78,7 +78,7 @@ _080D57E0:
 	ldr r0, [r6, #0x00]
 	ldr r1, _080D58A8 @ =0x09EF4DC0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, [r6, #0x00]
 	adds r1, #0x14
 	add r1, r9

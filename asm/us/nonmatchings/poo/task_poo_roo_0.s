@@ -17,18 +17,18 @@ task_poo_roo_0: @ 080CEDF4
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080CEE6C @ =0x09753154
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080CEE70 @ =0x09849CF8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	adds r6, r5, #0x0
 	adds r6, #0x0C
 	ldr r1, _080CEE74 @ =0x09EF5FA0
 	adds r0, r6, #0x0
 	adds r2, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	movs r0, #0x05
 	bl func_080D2D50
 	lsls r0, r0, #0x18
@@ -44,7 +44,7 @@ task_poo_roo_0: @ 080CEDF4
 	adds r0, r6, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
 	adds r0, #0x24
 	strb r4, [r0, #0x00]
@@ -73,7 +73,7 @@ _080CEE80:
 	adds r0, r6, #0x0
 	movs r1, #0x04
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
 	adds r0, #0x24
 	strb r4, [r0, #0x00]
@@ -84,17 +84,17 @@ _080CEE80:
 _080CEEA6:
 	adds r0, r5, #0x0
 	adds r0, #0x0C
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x08]
 	adds r4, r5, #0x0
 	adds r4, #0x98
 	adds r0, r4, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080CEF00 @ =0x09EF4928
 	adds r0, r4, #0x0
 	adds r2, r6, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	subs r4, #0x5C
 	adds r0, r4, #0x0
 	movs r1, #0x0A

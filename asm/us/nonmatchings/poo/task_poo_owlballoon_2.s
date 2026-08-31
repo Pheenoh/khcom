@@ -9,7 +9,7 @@ task_poo_owlballoon_2: @ 080CCA58
 	add sp, #-0x010
 	adds r4, r0, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x08]
 	ldr r1, [r4, #0x24]
 	ldr r0, _080CCAC8 @ =0xFFFFF800
@@ -46,9 +46,9 @@ task_poo_owlballoon_2: @ 080CCA58
 	cmp r0, #0x00
 	beq _080CCB38
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r4, #0x04]
 	adds r0, r4, #0x0
@@ -67,11 +67,11 @@ _080CCAD4:
 	adds r0, #0xC8
 	ldrh r0, [r0, #0x00]
 	ldr r1, _080CCB40 @ =0x0974B4D8
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080CCB44 @ =0x09849C98
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	adds r0, r4, #0x0
 	adds r0, #0x34
@@ -99,12 +99,12 @@ _080CCB00:
 	str r0, [sp, #0x00C]
 	adds r0, r7, #0x0
 	adds r1, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	adds r4, #0xB0
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080CCB38:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

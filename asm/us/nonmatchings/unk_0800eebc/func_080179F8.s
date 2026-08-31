@@ -58,7 +58,7 @@ _08017A56:
 	adds r1, r4, #0x0
 	mov r2, r8
 	mov r3, r9
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08017AB0 @ =0x09EDAC18
 	add r1, sp, #0x004
 	movs r2, #0x00

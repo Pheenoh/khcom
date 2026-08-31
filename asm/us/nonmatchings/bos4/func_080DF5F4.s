@@ -13,7 +13,7 @@ func_080DF5F4: @ 080DF5F4
 	cmp r0, #0x00
 	beq _080DF624
 	ldr r4, _080DF620 @ =0x09EF69EE
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0D
@@ -26,7 +26,7 @@ func_080DF5F4: @ 080DF5F4
 _080DF61C: .4byte 0x02039BB0
 _080DF620: .4byte 0x09EF69EE
 _080DF624:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x15

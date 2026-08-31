@@ -42,25 +42,25 @@ task_bos_boogie_kaihuku_0: @ 080DB6A8
 	str r1, [r4, #0x78]
 	ldr r0, _080DB744 @ =0x09799FB0
 	adds r1, r2, #0x0
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x08]
 	ldr r0, _080DB748 @ =0x0984AFB8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x0C]
 	ldr r0, _080DB74C @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x10]
 	adds r4, #0x14
 	ldr r1, _080DB750 @ =0x09EF6820
 	ldr r2, _080DB754 @ =0x09EF681C
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
 	bl func_0801BCD4
 	add sp, #0x004

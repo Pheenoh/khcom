@@ -69,13 +69,13 @@ _080D044E:
 	b _080D0674
 _080D0494:
 	ldr r0, [r7, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r7, #0x0C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r7, #0x14]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r7, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r7, #0x04]
 	b _080D0674
@@ -90,20 +90,20 @@ _080D04BC:
 	lsls r0, r0, #0x03
 	ldr r4, _080D0534 @ =0x09758C94
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x00]
 	movs r0, #0x98
 	lsls r0, r0, #0x03
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x0C]
 	movs r0, #0xA0
 	adds r1, r4, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x14]
 	ldr r0, _080D0538 @ =0x09849DD8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x04]
 _080D04F0:
 	bl func_080CBB7C
@@ -232,7 +232,7 @@ _080D05D6:
 	str r0, [sp, #0x00C]
 	mov r0, r8
 	adds r1, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r7, #0x10]
 	ldr r3, [r7, #0x0C]
 	ldr r0, [r7, #0x04]
@@ -244,7 +244,7 @@ _080D05D6:
 	str r0, [sp, #0x00C]
 	mov r0, r8
 	adds r1, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r7, #0x20]
 	ldr r2, _080D068C @ =0xFFFFF200
 	adds r0, r0, r2
@@ -286,7 +286,7 @@ _080D0658:
 	lsls r4, r4, #0x04
 	str r4, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080D0674:
 	add sp, #0x018
 	pop {r3, r4, r5}

@@ -9,7 +9,7 @@ task_bos_ursula_bubble_0: @ 080DD8FC
 	adds r4, r0, #0x0
 	adds r0, r4, #0x4
 	movs r1, #0x0A
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r5, r4, #0x0
 	adds r5, #0x40
 	movs r0, #0x00
@@ -43,7 +43,7 @@ _080DD938:
 _080DD948:
 	movs r0, #0xA0
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	pop {r4, r5}
 	pop {r0}
 	bx r0

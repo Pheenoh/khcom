@@ -62,7 +62,7 @@ _080A6F14:
 	ldrh r2, [r2, #0x08]
 	lsls r2, r2, #0x15
 	lsrs r2, r2, #0x10
-	bl func_08005BE8
+	bl LoadPalette
 	b _080A6F50
 	.byte 0x00, 0x00
 _080A6F2C: .4byte 0x09614498
@@ -80,7 +80,7 @@ _080A6F34:
 	ldrh r2, [r2, #0x08]
 	lsls r2, r2, #0x15
 	lsrs r2, r2, #0x10
-	bl func_08005BE8
+	bl LoadPalette
 _080A6F50:
 	pop {r4, r5}
 	pop {r0}

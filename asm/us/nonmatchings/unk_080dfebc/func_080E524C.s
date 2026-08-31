@@ -21,7 +21,7 @@ func_080E524C: @ 080E524C
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	mov r9, r0
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, _080E52E8 @ =0x02034F28
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
@@ -29,7 +29,7 @@ func_080E524C: @ 080E524C
 	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	mov r1, r9

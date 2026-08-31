@@ -10,24 +10,24 @@ func_080AA634: @ 080AA634
 	ldr r0, [r4, #0x1C]
 	cmp r0, #0x00
 	beq _080AA646
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r0, #0x00
 	str r0, [r4, #0x1C]
 _080AA646:
 	ldr r0, [r4, #0x10]
 	cmp r0, #0x00
 	beq _080AA67A
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x20]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x14]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x24]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x18]
 	cmp r0, #0x00
 	beq _080AA670
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r0, #0x00
 	str r0, [r4, #0x18]
 _080AA670:

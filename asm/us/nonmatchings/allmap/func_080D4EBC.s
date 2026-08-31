@@ -9,7 +9,7 @@ func_080D4EBC: @ 080D4EBC
 	add sp, #-0x004
 	ldr r4, _080D50E4 @ =0x0203C4B4
 	movs r0, #0xC4
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	adds r0, #0xC0
 	movs r1, #0xFF
@@ -25,7 +25,7 @@ func_080D4EBC: @ 080D4EBC
 	ldrb r1, [r1, #0x06]
 	strb r1, [r2, #0x00]
 	movs r1, #0x23
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r4, #0x00]
 	adds r1, r0, #0x0
 	adds r1, #0x9C
@@ -270,7 +270,7 @@ _080D5086:
 	str r1, [sp, #0x000]
 	ldr r1, _080D5108 @ =0x09EF4DD8
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, [r5, #0x00]
 	adds r1, #0x94
 	str r0, [r1, #0x00]

@@ -11,33 +11,33 @@ task_wlogo_col_0: @ 080B59C8
 	movs r0, #0x00
 	adds r1, r5, #0x0
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B5A7C @ =0x0963CC84
 	movs r2, #0x83
 	lsls r2, r2, #0x05
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080B5A80 @ =0x096B9464
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r4, _080B5A84 @ =0x096424E4
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	movs r2, #0xC4
 	lsls r2, r2, #0x03
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, _080B5A88 @ =0x0961C7F4
 	movs r1, #0x8A
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x00]
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	ldr r2, _080B5A8C @ =0x0961C792
 	ldrh r0, [r2, #0x00]
@@ -70,13 +70,13 @@ task_wlogo_col_0: @ 080B59C8
 	ldr r1, _080B5A90 @ =0x09EF3610
 	ldr r2, _080B5A94 @ =0x09EF35B8
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r6, #0x0C]
 	pop {r4, r5, r6}
 	pop {r0}

@@ -78,7 +78,7 @@ _0801E8E0: .4byte 0x0000024E
 _0801E8E4:
 	ldr r0, _0801E8F4 @ =0x0000029A
 _0801E8E6:
-	bl func_0811FF3C
+	bl m4aSongNumStop
 	adds r0, r7, #0x0
 	movs r1, #0x52
 	bl func_0801E4E4
@@ -607,11 +607,11 @@ _0801EEB0:
 	bl func_080088B4
 	b _0801EECE
 _0801EEC0:
-	bl func_08001384
+	bl GetKeysHeld
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	str r0, [sp, #0x05C]
-	bl func_08001390
+	bl GetKeysPressed
 _0801EECE:
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10

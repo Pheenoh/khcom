@@ -17,7 +17,7 @@ task_smn_mushu_2: @ 08043BD4
 	mov r8, r0
 	adds r0, r7, #0x0
 	adds r0, #0x08
-	bl func_08005AFC
+	bl AnimGetGfx
 	mov r10, r0
 	mov r1, r8
 	ldr r0, [r1, #0x08]
@@ -89,7 +89,7 @@ _08043C58:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	movs r0, #0x80
 	lsls r0, r0, #0x01
 	cmp r6, r0
@@ -107,7 +107,7 @@ _08043C98:
 	adds r2, r5, #0x0
 	movs r3, #0x01
 _08043CA0:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r5, r0, #0x0
 	add r0, sp, #0x010
 	movs r1, #0x00
@@ -131,10 +131,10 @@ _08043CA0:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	mov r2, r10
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r7, #0x0
 	adds r0, #0x20
-	bl func_08000EE0
+	bl TaskPoolDraw
 	add sp, #0x014
 	pop {r3, r4, r5}
 	mov r8, r3

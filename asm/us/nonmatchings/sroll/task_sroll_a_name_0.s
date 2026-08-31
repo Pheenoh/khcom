@@ -38,7 +38,7 @@ _08114790:
 	ldr r0, _081147A8 @ =0x09C638BE
 	movs r1, #0x8C
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x18]
 	adds r4, r5, #0x0
 	adds r4, #0x20
@@ -58,7 +58,7 @@ _081147B4:
 	adds r2, #0x04
 	adds r1, r1, r2
 	ldrh r1, [r1, #0x00]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x18]
 	adds r4, r5, #0x0
 	adds r4, #0x20
@@ -66,11 +66,11 @@ _081147B4:
 	ldr r2, _081147EC @ =0x09EFB208
 _081147D2:
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrh r1, [r6, #0x02]
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	b _08114850
 _081147E4: .4byte 0x09A54218
 _081147E8: .4byte 0x09EFB244
@@ -84,7 +84,7 @@ _081147F0:
 	adds r2, #0x04
 	adds r1, r1, r2
 	ldrh r1, [r1, #0x00]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x18]
 	ldrh r0, [r6, #0x02]
 	cmp r0, #0x01
@@ -94,7 +94,7 @@ _081147F0:
 	ldr r1, _08114820 @ =0x09EFB5EC
 	ldr r2, _08114824 @ =0x09EFB5B0
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	b _08114836
 _0811481C: .4byte 0x09A54218
 _08114820: .4byte 0x09EFB5EC
@@ -105,12 +105,12 @@ _08114828:
 	ldr r1, _08114860 @ =0x09EFB244
 	ldr r2, _08114864 @ =0x09EFB208
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 _08114836:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	ldr r1, _08114868 @ =0x03007554
 	movs r2, #0xA0
 	lsls r2, r2, #0x01
@@ -122,7 +122,7 @@ _08114836:
 _08114850:
 	ldr r0, _08114870 @ =0x09D6CD74
 	movs r1, #0x40
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x1C]
 	pop {r4, r5, r6}
 	pop {r0}

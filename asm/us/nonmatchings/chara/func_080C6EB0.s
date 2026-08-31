@@ -20,7 +20,7 @@ _080C6EC6:
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	lsrs r2, r7, #0x10
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r5, #0x40
 	adds r4, #0x40
 	subs r6, #0x01

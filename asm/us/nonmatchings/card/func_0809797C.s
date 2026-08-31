@@ -8,7 +8,7 @@ func_0809797C: @ 0809797C
 	push {lr}
 	adds r2, r1, #0x0
 	ldr r1, _0809798C @ =0x09EE7650
-	bl func_08000E14
+	bl TaskCreate
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

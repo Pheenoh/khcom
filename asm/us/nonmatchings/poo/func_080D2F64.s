@@ -14,11 +14,11 @@ func_080D2F64: @ 080D2F64
 	movs r4, #0x80
 	lsls r4, r4, #0x07
 	adds r0, r4, #0x0
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r6, #0x00]
 	ldr r5, _080D2FF8 @ =0x0203C504
 	adds r0, r4, #0x0
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	movs r2, #0x00
 	ldr r4, _080D2FFC @ =0x00001FFF

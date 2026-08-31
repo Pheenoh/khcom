@@ -95,7 +95,7 @@ _08040ED0:
 	strb r0, [r2, #0x00]
 	ldr r0, _08040F78 @ =0x08F6DC24
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	movs r2, #0xAE
 	lsls r2, r2, #0x01
@@ -106,7 +106,7 @@ _08040ED0:
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08040F7C @ =0x0813E958
 	ldr r1, [r6, #0x00]
 	str r1, [sp, #0x000]
@@ -155,11 +155,11 @@ _08040ED0:
 	adds r4, #0x20
 	adds r0, r4, #0x0
 	movs r1, #0x02
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _08040F80 @ =0x09EDAE88
 	adds r0, r4, #0x0
 	adds r2, r7, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x004
 	pop {r4, r5, r6, r7}
 	pop {r0}

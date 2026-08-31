@@ -63,14 +63,14 @@ task_hum_axcel_0: @ 080527B8
 	ldr r0, _0805287C @ =0x08B22BBC
 	movs r1, #0x80
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	movs r2, #0x86
 	lsls r2, r2, #0x02
 	adds r1, r5, r2
 	str r0, [r1, #0x00]
 	ldr r0, _08052880 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	movs r2, #0x87
 	lsls r2, r2, #0x02
 	adds r1, r5, r2
@@ -79,7 +79,7 @@ task_hum_axcel_0: @ 080527B8
 	lsls r1, r1, #0x02
 	adds r0, r5, r1
 	movs r1, #0x10
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4, r5}
 	pop {r0}
 	bx r0

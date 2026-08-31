@@ -9,7 +9,7 @@ task_sroll_b_crtn_1: @ 081150A8
 	adds r4, r0, #0x0
 	movs r5, #0x01
 	adds r0, #0x18
-	bl func_08005A64
+	bl AnimUpdate
 	ldr r0, [r4, #0x00]
 	adds r0, #0x01
 	str r0, [r4, #0x00]

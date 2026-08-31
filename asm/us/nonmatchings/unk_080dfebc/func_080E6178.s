@@ -49,7 +49,7 @@ _080E61B0:
 	adds r0, #0xB4
 	ldr r1, [r2, #0x10]
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r4, #0x0
 	adds r0, #0x1C
 	bl func_08000CD4

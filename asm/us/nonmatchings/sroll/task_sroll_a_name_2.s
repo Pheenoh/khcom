@@ -60,10 +60,10 @@ _08114910:
 	ldr r2, _0811498C @ =0x05000220
 	adds r1, r1, r2
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 _08114948:
 	adds r0, r5, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	lsls r0, r7, #0x08
 	asrs r0, r0, #0x10
@@ -84,7 +84,7 @@ _08114948:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r3}
 	mov r8, r3

@@ -26,7 +26,7 @@ func_08087B98: @ 08087B98
 	ldr r1, [r2, #0x00]
 	adds r0, r0, r1
 	ldr r0, [r0, #0x1C]
-	bl func_080009C4
+	bl EwramFree
 	ldrh r0, [r4, #0x00]
 	mov r2, r8
 	ldr r1, [r2, #0x00]
@@ -136,7 +136,7 @@ _08087C94:
 	movs r3, #0xF9
 	lsls r3, r3, #0x03
 	adds r0, r6, r3
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r6, #0x0
 	bl func_0808D828
 	ldr r4, _08087CD0 @ =0x00000898

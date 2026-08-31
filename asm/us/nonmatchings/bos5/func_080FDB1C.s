@@ -96,7 +96,7 @@ _080FDBCA:
 	mov r0, r8
 	ldr r4, [r0, #0x00]
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	movs r2, #0x80
 	lsls r2, r2, #0x03
@@ -104,7 +104,7 @@ _080FDBCA:
 	movs r2, #0xD8
 	lsls r2, r2, #0x03
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	add sp, #0x004
 	pop {r3}
 	mov r8, r3

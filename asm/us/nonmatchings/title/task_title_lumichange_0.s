@@ -17,7 +17,7 @@ task_title_lumichange_0: @ 080D6E80
 	ldr r0, _080D6EA8 @ =0x0977548C
 	movs r1, #0x84
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D6EAC @ =0x0984A7D8
 	b _080D6EBE
@@ -29,12 +29,12 @@ _080D6EB0:
 	ldr r0, _080D6ECC @ =0x09773426
 	movs r1, #0x94
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D6ED0 @ =0x0984A7B8
 _080D6EBE:
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	pop {r4}
 	pop {r0}

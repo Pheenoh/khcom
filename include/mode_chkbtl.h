@@ -43,14 +43,14 @@ typedef struct ChkBtlSetup {
 } ChkBtlSetup;
 
 void func_080010CC(void* mode, s32 arg);
-u16 func_08001384(void);
-u16 func_08001390(void);
-u16 func_0800139C(void);
+u16 GetKeysHeld(void);
+u16 GetKeysPressed(void);
+u16 GetKeysRepeat(void);
 void func_08004DB0(void);
 void func_08004FC8(s32 a);
-void func_08005074(s32 a, s32 b, s32 c, s32 d);
+void SetupBg(s32 a, s32 b, s32 c, s32 d);
 void func_08006120(s32 a, s32 b);
-void func_08006578(u32 a);
+void SeedRandom(u32 a);
 void func_0805FA60(s32 a, const char* b, s32 c, s32 d);
 void func_0805FA8C(s32 a, s32 b, s32 c);
 void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
@@ -67,7 +67,7 @@ void mode_chkbtl_2(void);
 
 extern ChkBtlSetup gUnk_02039BB0;
 extern u32 gUnk_03006C10;
-extern u32 gUnk_03007480;
+extern u32 gFrameCounter;
 extern ChkBtlEntry gUnk_08126630[];
 extern ChkBtlWorld gUnk_08128234[];
 extern ChkBtlWork* gUnk_09ECEB50;

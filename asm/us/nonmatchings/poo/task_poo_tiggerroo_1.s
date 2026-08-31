@@ -114,11 +114,11 @@ _080CEB38:
 _080CEB4A:
 	adds r0, r5, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x08]
 	adds r0, r5, #0x0
 	adds r0, #0x94
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	pop {r4, r5, r6}
 	pop {r1}

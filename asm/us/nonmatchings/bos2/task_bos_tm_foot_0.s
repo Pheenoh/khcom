@@ -15,26 +15,26 @@ task_bos_tm_foot_0: @ 080BA928
 	ldr r0, _080BAA90 @ =0x09652E84
 	movs r1, #0xEC
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x08]
 	movs r4, #0x88
 	lsls r4, r4, #0x03
 	ldr r5, _080BAA94 @ =0x09654C04
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x0C]
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r7, #0x10]
 	ldr r0, _080BAA98 @ =0x096FB2A4
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x14]
 	ldr r0, _080BAA9C @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x18]
 	movs r0, #0x96
 	lsls r0, r0, #0x01

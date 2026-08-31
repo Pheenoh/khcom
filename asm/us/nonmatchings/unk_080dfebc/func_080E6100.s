@@ -39,7 +39,7 @@ _080E6130:
 	.byte 0x00, 0x00
 _080E6140: .4byte 0x0203C590
 _080E6144:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x01

@@ -10,12 +10,12 @@ func_080B1974: @ 080B1974
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x02
-	bl func_0800510C
+	bl LoadBgMap
 	movs r5, #0xC8
 	lsls r5, r5, #0x04
 	ldr r1, _080B19F8 @ =0x091CF5D4
 	adds r0, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r4, _080B19FC @ =0x02034B44
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x08]
@@ -24,7 +24,7 @@ func_080B1974: @ 080B1974
 	str r0, [r1, #0x18]
 	ldr r1, _080B1A04 @ =0x088B6560
 	adds r0, r5, #0x0
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x0C]
 	ldr r0, _080B1A08 @ =0x09EDE8CC
@@ -33,12 +33,12 @@ func_080B1974: @ 080B1974
 	ldr r0, _080B1A0C @ =0x0962D196
 	movs r1, #0xC0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x28]
 	ldr r0, _080B1A10 @ =0x096FBE04
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x30]
 	ldr r0, _080B1A14 @ =0x09EF38E4
@@ -47,12 +47,12 @@ func_080B1974: @ 080B1974
 	ldr r0, _080B1A18 @ =0x0962CAFC
 	movs r1, #0xD0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x2C]
 	ldr r0, _080B1A1C @ =0x096FBDE4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x34]
 	ldr r0, _080B1A20 @ =0x09EF38DC

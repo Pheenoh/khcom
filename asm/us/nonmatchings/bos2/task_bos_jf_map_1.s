@@ -32,7 +32,7 @@ _080BD9CE:
 	adds r0, r0, r1
 	ldr r1, _080BDAA0 @ =0x05000020
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 _080BD9E0:
 	bl func_0802F208
 	ldr r0, _080BDAA4 @ =0x02039B84

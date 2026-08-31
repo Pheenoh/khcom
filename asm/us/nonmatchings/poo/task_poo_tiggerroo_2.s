@@ -46,7 +46,7 @@ task_poo_tiggerroo_2: @ 080CEB64
 	bne _080CEBB6
 	b _080CED18
 _080CEBB6:
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r5, #0x04]
 	adds r0, r5, #0x0
@@ -64,7 +64,7 @@ _080CEBD2:
 	bne _080CEBDA
 	b _080CED18
 _080CEBDA:
-	bl func_080028C0
+	bl ReleaseObjTiles
 	str r4, [r5, #0x00]
 	b _080CED18
 	.byte 0x00, 0x00
@@ -83,7 +83,7 @@ _080CEBEC:
 	beq _080CEC1C
 	ldr r0, _080CEC18 @ =0x09849BD8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	adds r0, r4, #0x0
 	movs r1, #0x04
@@ -95,13 +95,13 @@ _080CEC18: .4byte 0x09849BD8
 _080CEC1C:
 	ldr r0, _080CEC88 @ =0x09849CF8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	adds r0, r5, #0x0
 	adds r0, #0xD2
 	ldrh r0, [r0, #0x00]
 	ldr r1, _080CEC8C @ =0x09753154
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	adds r0, r4, #0x0
 	movs r1, #0x04
@@ -213,10 +213,10 @@ _080CECF0:
 	str r4, [sp, #0x004]
 	str r7, [sp, #0x008]
 	str r6, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r5, #0x0
 	adds r0, #0x94
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080CED18:
 	add sp, #0x010
 	pop {r3, r4}

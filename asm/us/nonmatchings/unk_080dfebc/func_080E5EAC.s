@@ -46,7 +46,7 @@ _080E5EF2:
 	ands r0, r1
 	cmp r0, #0x00
 	beq _080E5F20
-	bl func_080065A4
+	bl GetRandom
 	ldr r4, [r7, #0x00]
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
@@ -64,7 +64,7 @@ _080E5F20:
 	ands r0, r1
 	cmp r0, #0x00
 	beq _080E5F40
-	bl func_080065A4
+	bl GetRandom
 	ldr r4, [r7, #0x00]
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10

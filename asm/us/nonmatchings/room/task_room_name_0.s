@@ -11,11 +11,11 @@ task_room_name_0: @ 080F7BF8
 	ldr r0, _080F7C7C @ =0x0993AF64
 	movs r1, #0x80
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080F7C80 @ =0x099910C4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r0, _080F7C84 @ =0x09EF8DA4
 	ldr r0, [r0, #0x00]

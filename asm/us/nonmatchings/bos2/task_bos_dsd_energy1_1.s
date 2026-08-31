@@ -48,7 +48,7 @@ _080C4B26:
 	movs r0, #0x00
 	bl func_08014790
 	ldr r0, _080C4B50 @ =0x000002A1
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080C4B82
 	.byte 0x00, 0x00
 _080C4B50: .4byte 0x000002A1

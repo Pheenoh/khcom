@@ -8,22 +8,22 @@ mode_worldwarp_2: @ 08101474
 	push {r4, r5, r6, lr}
 	ldr r0, _081014EC @ =0x02035514
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _081014F0 @ =0x02035510
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, _081014F4 @ =0x0203551C
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _081014F8 @ =0x02035518
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, _081014FC @ =0x02035554
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, _08101500 @ =0x02035550
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r5, #0x00
 	ldr r6, _08101504 @ =0x020355A8
 _081014AA:
@@ -31,14 +31,14 @@ _081014AA:
 	ldr r0, [r6, #0x00]
 	cmp r0, #0x00
 	beq _081014B6
-	bl func_08002C10
+	bl ReleaseObjPalette
 _081014B6:
 	ldr r0, _08101508 @ =0x02035570
 	adds r0, r4, r0
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _081014C4
-	bl func_080028C0
+	bl ReleaseObjTiles
 _081014C4:
 	adds r6, #0x04
 	adds r5, #0x01
@@ -52,7 +52,7 @@ _081014C4:
 	bl func_08065AE0
 	ldr r0, _08101514 @ =0x0203550C
 	ldr r0, [r0, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

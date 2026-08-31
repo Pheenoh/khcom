@@ -20,12 +20,12 @@ task_poo_gauge_0: @ 080CC4CC
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080CC520 @ =0x097356F4
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	ldr r5, _080CC524 @ =0x09849B98
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	str r5, [r4, #0x0C]
 	ldrh r0, [r4, #0x12]

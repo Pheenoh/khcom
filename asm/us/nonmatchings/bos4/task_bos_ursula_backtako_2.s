@@ -24,11 +24,11 @@ task_bos_ursula_backtako_2: @ 080DD408
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	movs r0, #0x08
 	adds r0, r0, r7
 	mov r8, r0
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	add r0, sp, #0x010
 	movs r1, #0x00
@@ -46,16 +46,16 @@ task_bos_ursula_backtako_2: @ 080DD408
 	lsls r4, r4, #0x08
 	mov r9, r4
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r7, #0x38]
 	ldr r3, [r7, #0x3C]
 	ldr r0, [r7, #0x40]
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	mov r0, r8
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	add r0, sp, #0x010
 	movs r1, #0x00
@@ -70,7 +70,7 @@ task_bos_ursula_backtako_2: @ 080DD408
 	str r4, [sp, #0x008]
 	mov r4, r9
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080DD49A:
 	add sp, #0x014
 	pop {r3, r4}

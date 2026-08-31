@@ -7,7 +7,7 @@
 mode_test_1: @ 0805F120
 	push {lr}
 	add sp, #-0x010
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -18,7 +18,7 @@ mode_test_1: @ 0805F120
 	b _0805F14E
 _0805F138: .4byte 0x02034A10
 _0805F13C:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -58,7 +58,7 @@ _0805F166:
 	str r0, [sp, #0x00C]
 	movs r0, #0x78
 	movs r1, #0x50
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r0}
 	bx r0

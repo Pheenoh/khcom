@@ -13,7 +13,7 @@ func_08019270: @ 08019270
 	ldr r1, [r4, #0x00]
 	ldr r2, _080192D4 @ =0x05000074
 	mov r0, sp
-	bl func_08117FE8
+	bl CpuSet
 	ldr r2, [r4, #0x00]
 	adds r0, r2, #0x0
 	adds r0, #0xA0

@@ -61,24 +61,24 @@ _08030858:
 	ldr r0, _080308A4 @ =0x08B1F2D6
 	movs r1, #0xC0
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	adds r4, r5, #0x0
 	adds r4, #0x0C
 	ldr r1, _080308A8 @ =0x09EE11E0
 	ldr r2, _080308AC @ =0x09EE11DC
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x08]
 	ldr r0, _080308B0 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r0, [r6, #0x00]
 	str r0, [r5, #0x24]

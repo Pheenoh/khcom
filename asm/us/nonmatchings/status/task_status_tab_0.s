@@ -15,11 +15,11 @@ task_status_tab_0: @ 080D7BA8
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080D7C10 @ =0x097A24A6
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D7C14 @ =0x0984B218
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x08]
 	ldr r0, [r4, #0x18]
 	ldr r0, [r0, #0x00]
@@ -34,11 +34,11 @@ task_status_tab_0: @ 080D7BA8
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080D7C1C @ =0x097A28DA
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x04]
 	ldr r0, _080D7C20 @ =0x0984B238
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x0C]
 	ldr r0, [r4, #0x18]
 	ldr r0, [r0, #0x00]

@@ -21,7 +21,7 @@ func_080D1990: @ 080D1990
 	strh r4, [r1, #0x18]
 	ldr r1, _080D19C0 @ =0x09EF4C40
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x01C
 	pop {r4}
 	pop {r0}

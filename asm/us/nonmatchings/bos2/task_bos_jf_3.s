@@ -25,7 +25,7 @@ _080BD498:
 	movs r1, #0x95
 	lsls r1, r1, #0x02
 	adds r0, r4, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

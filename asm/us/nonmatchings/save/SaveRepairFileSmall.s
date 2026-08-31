@@ -51,7 +51,7 @@ _08009528:
 	movs r5, #0x83
 	lsls r5, r5, #0x03
 	adds r0, r5, #0x0
-	bl func_08000918
+	bl EwramAlloc
 	adds r7, r0, #0x0
 	mov r1, r9
 	asrs r0, r1, #0x10
@@ -102,7 +102,7 @@ _0800959E:
 	cmp r0, #0x01
 	ble _08009576
 	adds r0, r7, #0x0
-	bl func_080009C4
+	bl EwramFree
 	movs r2, #0x02
 _080095B2:
 	adds r0, r2, #0x0

@@ -7,7 +7,7 @@
 task_roomcreate_2: @ 0803F6D4
 	push {lr}
 	adds r0, #0x2C
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r0}
 	bx r0
 .syntax divided

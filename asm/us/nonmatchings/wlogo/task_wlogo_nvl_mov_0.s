@@ -37,11 +37,11 @@ task_wlogo_nvl_mov_0: @ 080B569C
 	ldr r0, _080B5728 @ =0x0961C062
 	movs r1, #0xC0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x24]
 	ldr r0, _080B572C @ =0x096FADA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x28]
 	adds r5, r6, #0x0
 	adds r5, #0x48
@@ -52,17 +52,17 @@ task_wlogo_nvl_mov_0: @ 080B569C
 	ldr r1, _080B5730 @ =0x09EF35A4
 	ldr r2, _080B5734 @ =0x09EF3574
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrb r1, [r5, #0x00]
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r6, #0x2C]
 	ldr r0, _080B5738 @ =0x02034C68
 	movs r1, #0x0A
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

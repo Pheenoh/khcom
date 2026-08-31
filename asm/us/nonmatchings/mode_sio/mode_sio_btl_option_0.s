@@ -11,17 +11,17 @@ mode_sio_btl_option_0: @ 080AEF38
 	mov r8, r0
 	ldr r5, _080AF08C @ =0x02034B40
 	ldr r0, _080AF090 @ =0x0000041C
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r5, #0x00]
 	bl func_08004E64
 	movs r0, #0x00
 	movs r1, #0x00
 	movs r2, #0x07
 	movs r3, #0x0A
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x00
 	movs r1, #0x01
 	bl func_08005654
@@ -32,10 +32,10 @@ mode_sio_btl_option_0: @ 080AEF38
 	movs r1, #0x00
 	movs r2, #0x0F
 	movs r3, #0x0A
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x01
 	bl func_08005654
@@ -46,10 +46,10 @@ mode_sio_btl_option_0: @ 080AEF38
 	movs r1, #0x02
 	movs r2, #0x18
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x01
 	bl func_08005654
@@ -59,12 +59,12 @@ mode_sio_btl_option_0: @ 080AEF38
 	bl func_080055EC
 	ldr r4, _080AF094 @ =0x096AD744
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	movs r2, #0x80
 	lsls r2, r2, #0x06
 	adds r0, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, [r5, #0x00]
 	adds r0, #0x54
 	movs r1, #0x14
@@ -100,14 +100,14 @@ mode_sio_btl_option_0: @ 080AEF38
 	ldr r4, _080AF09C @ =0x096FBCC4
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r5, #0x00]
 	adds r1, #0xF4
 	str r0, [r1, #0x00]
 	adds r0, r4, #0x0
 	adds r0, #0x40
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r5, #0x00]
 	movs r3, #0xA6
 	lsls r3, r3, #0x01
@@ -116,7 +116,7 @@ mode_sio_btl_option_0: @ 080AEF38
 	adds r4, #0x20
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r2, [r5, #0x00]
 	movs r3, #0xD2
 	lsls r3, r3, #0x01

@@ -10,11 +10,11 @@ task_emy_83_s_0: @ 0803EB20
 	adds r5, r1, #0x0
 	ldr r0, _0803EB70 @ =0x08F69B84
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r0, _0803EB74 @ =0x08B1D846
 	movs r1, #0x40
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, [r5, #0x00]
 	str r0, [r4, #0x08]
@@ -29,7 +29,7 @@ task_emy_83_s_0: @ 0803EB20
 	ldsh r0, [r5, r1]
 	cmp r0, #0x00
 	beq _0803EB80
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EB78 @ =0x000004CE
@@ -46,7 +46,7 @@ _0803EB74: .4byte 0x08B1D846
 _0803EB78: .4byte 0x000004CE
 _0803EB7C: .4byte 0x00000133
 _0803EB80:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EBBC @ =0x000004CE
@@ -57,7 +57,7 @@ _0803EB80:
 	adds r0, r0, r1
 _0803EB96:
 	str r0, [r4, #0x18]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _0803EBC4 @ =0x00000201

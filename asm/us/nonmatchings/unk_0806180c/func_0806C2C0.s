@@ -42,7 +42,7 @@ _0806C2CE:
 	str r4, [sp, #0x008]
 	str r4, [sp, #0x00C]
 	adds r3, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	b _0806C336
 	.byte 0x00, 0x00
 _0806C310: .4byte 0x02034A88
@@ -61,7 +61,7 @@ _0806C318:
 	str r3, [sp, #0x008]
 	str r3, [sp, #0x00C]
 	adds r3, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _0806C336:
 	adds r0, r6, #0x1
 	lsls r0, r0, #0x18

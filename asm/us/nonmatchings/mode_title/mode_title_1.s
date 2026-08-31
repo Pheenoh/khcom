@@ -103,22 +103,22 @@ _080D61CA:
 	cmp r0, #0x06
 	beq _080D61E2
 	ldr r0, _080D6228 @ =0x02034EA0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 _080D61E2:
 	ldr r0, _080D6228 @ =0x02034EA0
-	bl func_08000EE0
+	bl TaskPoolDraw
 	bl func_080C73D8
 	ldr r4, _080D6224 @ =0x02034E98
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x04
 	bhi _080D621A
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x09
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080D621A
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x03
 	bhi _080D6212

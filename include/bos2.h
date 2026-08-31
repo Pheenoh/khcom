@@ -244,11 +244,11 @@ void task_bos_jf_borderline_3(JfBorderlineWork* work);
 void task_bos_tm_arm_3(TmArmWork* work);
 void task_bos_tm_foot_3(TmFootWork* work);
 void task_bos_tm_clb_0(TmClbWork* work, void* arg);
-void* func_080026A4(void* a, s32 b);
-void* func_08002A14(void* a, s32 b);
-void func_080028C0(void* a);
-void func_08002C10(void* a);
-void func_08000F0C(void* a);
+void* LoadObjTiles(void* a, s32 b);
+void* LoadObjPalette(void* a, s32 b);
+void ReleaseObjTiles(void* a);
+void ReleaseObjPalette(void* a);
+void TaskPoolDestroy(void* a);
 void func_0801B7D8(void* a);
 
 void task_bos_dsd_rock_3(void);

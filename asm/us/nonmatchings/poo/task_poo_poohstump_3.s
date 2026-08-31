@@ -11,9 +11,9 @@ task_poo_poohstump_3: @ 080CD830
 	cmp r0, #0x00
 	beq _080CD84E
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x34
 	bl func_08012304

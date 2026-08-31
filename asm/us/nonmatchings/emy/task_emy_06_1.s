@@ -162,10 +162,10 @@ _08037BD8:
 	cmp r0, #0x00
 	beq _08037C26
 	ldr r0, _08037C48 @ =0x00000249
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08037C26:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _08037D18
@@ -269,10 +269,10 @@ _08037CE4:
 	cmp r0, #0x00
 	beq _08037D0C
 	ldr r0, _08037D28 @ =0x00000211
-	bl func_0811FE70
+	bl m4aSongNumStart
 _08037D0C:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _08037D2C

@@ -14,11 +14,11 @@ task_wlogo_poo_obj_0: @ 080B6C00
 	ldr r0, _080B6CA8 @ =0x096249F4
 	movs r1, #0xE0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080B6CAC @ =0x096FAE64
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	movs r0, #0x82
 	lsls r0, r0, #0x08
@@ -73,13 +73,13 @@ task_wlogo_poo_obj_0: @ 080B6C00
 	ldr r1, _080B6CB8 @ =0x09EF376C
 	ldr r2, _080B6CBC @ =0x09EF3734
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrb r1, [r6, #0x00]
 	adds r0, r4, #0x0
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x08]
 	pop {r4, r5, r6}
 	pop {r0}

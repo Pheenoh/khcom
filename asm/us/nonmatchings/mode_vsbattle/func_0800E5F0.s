@@ -323,7 +323,7 @@ _0800EE60:
 	beq _0800EE82
 	adds r0, r7, #0x0
 	adds r0, #0x14
-	bl func_08005A64
+	bl AnimUpdate
 	movs r2, #0xC0
 	lsls r2, r2, #0x01
 	adds r1, r7, r2
@@ -348,7 +348,7 @@ _0800EE82:
 _0800EE9A:
 	adds r0, r7, #0x0
 	adds r0, #0x2C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r6, #0x0
 	adds r0, #0x40
 	ldr r1, [r6, #0x04]

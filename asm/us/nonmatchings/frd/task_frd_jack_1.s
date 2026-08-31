@@ -141,7 +141,7 @@ _080479A4:
 	movs r1, #0x98
 	lsls r1, r1, #0x01
 	adds r0, r6, r1
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080479B6
@@ -152,9 +152,9 @@ _080479B6:
 	adds r0, r6, r2
 	movs r1, #0x09
 	str r1, [r0, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	movs r0, #0xC1
-	bl func_0811FE70
+	bl m4aSongNumStart
 	movs r0, #0x00
 	strh r0, [r4, #0x00]
 	bl _08048570
@@ -637,9 +637,9 @@ _08048570:
 	movs r4, #0x98
 	lsls r4, r4, #0x01
 	adds r0, r6, r4
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r6, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _08048582:
 	add sp, #0x024

@@ -69,7 +69,7 @@ _080F844A:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r6, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r1, sp, #0x010
 	movs r2, #0xAF
 	lsls r2, r2, #0x01
@@ -115,7 +115,7 @@ _080F844A:
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
 	mov r3, r12
-	bl func_080023E0
+	bl DrawSprite
 	movs r4, #0xD0
 	lsls r4, r4, #0x01
 	adds r0, r5, r4
@@ -163,12 +163,12 @@ _080F844A:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080F8524:
 	movs r1, #0xB6
 	lsls r1, r1, #0x01
 	adds r0, r5, r1
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080F852E:
 	add sp, #0x024
 	pop {r3, r4, r5}

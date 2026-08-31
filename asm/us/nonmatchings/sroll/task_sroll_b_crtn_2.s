@@ -9,7 +9,7 @@ task_sroll_b_crtn_2: @ 08115124
 	add sp, #-0x010
 	adds r4, r0, #0x0
 	adds r0, #0x18
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	ldr r0, [r4, #0x08]
 	lsls r0, r0, #0x08
@@ -28,7 +28,7 @@ task_sroll_b_crtn_2: @ 08115124
 	movs r4, #0xFE
 	lsls r4, r4, #0x04
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r4}
 	pop {r0}

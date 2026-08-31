@@ -105,7 +105,7 @@ _080D393C:
 	str r5, [sp, #0x00C]
 	adds r0, r6, #0x0
 	adds r1, r4, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080D3982:
 	movs r6, #0x00
 	lsls r0, r5, #0x10
@@ -121,7 +121,7 @@ _080D3992:
 	cmp r0, #0x00
 	beq _080D39D2
 	adds r0, r7, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	str r2, [r5, #0x00]
 	mov r0, r8
@@ -145,7 +145,7 @@ _080D3992:
 	asrs r0, r4, #0x10
 	ldr r4, [sp, #0x014]
 	asrs r1, r4, #0x10
-	bl func_080023E0
+	bl DrawSprite
 _080D39D2:
 	adds r5, #0x04
 	adds r7, #0x18

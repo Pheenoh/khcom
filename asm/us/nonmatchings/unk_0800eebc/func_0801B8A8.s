@@ -34,7 +34,7 @@ _0801B8D8:
 	adds r0, #0x2C
 	ldr r1, _0801B914 @ =0x09EDAF18
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	lsls r0, r4, #0x10
 	movs r1, #0x80
 	lsls r1, r1, #0x09

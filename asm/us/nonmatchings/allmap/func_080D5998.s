@@ -12,7 +12,7 @@ func_080D5998: @ 080D5998
 	lsls r1, r1, #0x13
 	movs r2, #0x80
 	lsls r2, r2, #0x03
-	bl func_08005BE8
+	bl LoadPalette
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

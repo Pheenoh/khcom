@@ -13,19 +13,19 @@ func_0809CAC8: @ 0809CAC8
 	cmp r0, #0x00
 	beq _0809CB04
 	ldr r0, [r4, #0x0C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x28]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x08]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x24]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x10]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x20]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x1C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r0, #0x00
 	strb r0, [r5, #0x00]
 _0809CB04:

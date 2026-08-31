@@ -15,11 +15,11 @@ task_bos_md_hahen_0: @ 080FD824
 	str r0, [r6, #0x04]
 	ldr r0, [r1, #0x08]
 	str r0, [r6, #0x08]
-	bl func_080065A4
+	bl GetRandom
 	adds r4, r0, #0x0
 	lsls r4, r4, #0x18
 	lsrs r4, r4, #0x18
-	bl func_080065A4
+	bl GetRandom
 	ldr r5, _080FD8C0 @ =0x000001FF
 	adds r1, r5, #0x0
 	ands r1, r0
@@ -45,7 +45,7 @@ task_bos_md_hahen_0: @ 080FD824
 	muls r0, r1
 	asrs r0, r0, #0x08
 	str r0, [r6, #0x10]
-	bl func_080065A4
+	bl GetRandom
 	ands r5, r0
 	add r5, r8
 	negs r5, r5
@@ -54,14 +54,14 @@ task_bos_md_hahen_0: @ 080FD824
 	strh r0, [r6, #0x24]
 	ldr r0, _080FD8C8 @ =0x09A3C9BC
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x18]
 	ldr r0, _080FD8CC @ =0x09999ED0
 	movs r1, #0x90
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x1C]
-	bl func_080065A4
+	bl GetRandom
 	ldr r2, _080FD8D0 @ =0x09EF9740
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10

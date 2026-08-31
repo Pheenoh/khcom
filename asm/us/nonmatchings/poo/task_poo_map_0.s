@@ -53,7 +53,7 @@ task_poo_map_0: @ 080CA0CC
 	adds r4, r6, #0x4
 	adds r0, r4, #0x0
 	movs r1, #0xB2
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	bl func_080C9EFC
@@ -67,19 +67,19 @@ task_poo_map_0: @ 080CA0CC
 	ldr r1, _080CA200 @ =0x09EF49E8
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, [r5, #0x00]
 	ldrh r2, [r5, #0x04]
 	movs r0, #0x03
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, [r5, #0x10]
 	ldrh r2, [r5, #0x14]
 	movs r0, #0x02
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, [r5, #0x08]
 	ldrh r2, [r5, #0x0C]
 	movs r0, #0x03
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080CA204 @ =0x09EF4208
 	ldrb r2, [r6, #0x00]
 	ldrb r3, [r6, #0x01]

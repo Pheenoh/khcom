@@ -75,7 +75,7 @@ _080300E8:
 	str r0, [sp, #0x00C]
 	movs r0, #0xEC
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, _08030138 @ =0x08B24D6E
 	ldr r3, [r6, #0x0C]
 	ldr r0, [r6, #0x08]
@@ -86,7 +86,7 @@ _080300E8:
 	str r0, [sp, #0x00C]
 	movs r0, #0xEC
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 	movs r2, #0x1C
 	ldsh r0, [r6, r2]
 	cmp r0, #0x06
@@ -128,7 +128,7 @@ _080301A4:
 	movs r0, #0x00
 	movs r3, #0x00
 _080301A8:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r1, r0, #0x0
 	ldr r3, [r6, #0x04]
 	ldr r0, [r6, #0x08]
@@ -142,7 +142,7 @@ _080301A8:
 	movs r0, #0xD9
 	movs r1, #0x06
 	adds r2, r7, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080301CA:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

@@ -136,7 +136,7 @@ _08093E10:
 	adds r0, r6, r1
 	ldr r1, _08093E30 @ =0x05000180
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0

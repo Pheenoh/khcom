@@ -51,7 +51,7 @@ _080FC740:
 	ldr r1, _080FC8A4 @ =0x09EF8EF4
 	adds r0, r2, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _080FC772:
 	adds r0, r7, #0x0
 	bl func_080FBA4C
@@ -188,11 +188,11 @@ _080FC7B0:
 	cmp r4, #0x00
 	ble _080FC7B0
 	ldr r0, [sp, #0x024]
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [sp, #0x010]
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [sp, #0x014]
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldr r0, [sp, #0x008]
 	add sp, #0x02C
 	pop {r3, r4, r5}

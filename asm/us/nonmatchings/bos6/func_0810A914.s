@@ -77,7 +77,7 @@ _0810A96A:
 	adds r4, #0x60
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x17
 	lsls r4, r4, #0x10

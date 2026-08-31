@@ -27,7 +27,7 @@ func_080A6B40: @ 080A6B40
 	subs r4, r4, r1
 	strb r4, [r2, #0x01]
 	movs r0, #0x03
-	bl func_08005130
+	bl GetBgCharBase
 	adds r4, r0, #0x0
 	mov r0, sp
 	ldrb r0, [r0, #0x00]
@@ -42,7 +42,7 @@ func_080A6B40: @ 080A6B40
 	adds r4, r4, r5
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	mov r0, sp
 	ldrb r0, [r0, #0x01]
 	adds r0, #0x01
@@ -51,7 +51,7 @@ func_080A6B40: @ 080A6B40
 	adds r4, #0x20
 	adds r1, r4, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	add sp, #0x004
 	pop {r4, r5, r6}
 	pop {r0}

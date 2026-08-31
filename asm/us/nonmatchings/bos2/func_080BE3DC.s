@@ -22,7 +22,7 @@ func_080BE3DC: @ 080BE3DC
 	ldr r1, _080BE40C @ =0x0203B510
 	movs r2, #0x80
 	lsls r2, r2, #0x04
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _080BE46A
 _080BE404: .4byte 0xFFFF8000
 _080BE408: .4byte 0x09EF280C
@@ -65,7 +65,7 @@ _080BE444:
 	lsls r2, r2, #0x16
 	lsrs r2, r2, #0x10
 	adds r1, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r4, r4, r5
 	lsls r1, r6, #0x16
 	lsrs r1, r1, #0x10

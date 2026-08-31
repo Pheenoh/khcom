@@ -26,7 +26,7 @@ func_0801536C: @ 0801536C
 	movs r0, #0x00
 	bl func_08006B34
 	ldr r0, _080153C0 @ =0x0000027B
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r1, [r4, #0x00]
 	ldr r0, _080153C4 @ =0x080152DD
 	str r0, [r1, #0x04]

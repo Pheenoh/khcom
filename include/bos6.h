@@ -120,9 +120,9 @@ typedef struct PcFldWork {
 } PcFldWork;
 
 void func_08012304(void* a);
-void func_080028C0(void* a);
-void func_08002C10(void* a);
-void func_08005BE8(void* src, void* dst, s32 size);
+void ReleaseObjTiles(void* a);
+void ReleaseObjPalette(void* a);
+void LoadPalette(void* src, void* dst, s32 size);
 
 extern u8 gUnk_09D69374[];
 extern u8 gUnk_05000080[];

@@ -8,9 +8,9 @@ task_title_menu_3: @ 080D6E40
 	push {r4, r5, r6, lr}
 	adds r5, r0, #0x0
 	ldr r0, [r5, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r5, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r6, #0x00
 _080D6E52:
 	lsls r4, r6, #0x02
@@ -18,18 +18,18 @@ _080D6E52:
 	adds r0, #0x08
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r5, #0x0
 	adds r0, #0x14
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r6, #0x01
 	cmp r6, #0x02
 	ble _080D6E52
 	adds r0, r5, #0x0
 	adds r0, #0x48
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

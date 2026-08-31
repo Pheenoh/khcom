@@ -24,10 +24,10 @@ func_0800B30C: @ 0800B30C
 	bl func_08002A10
 	ldr r0, [r5, #0x00]
 	ldr r0, [r0, #0x20]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x10]
 	ldrh r1, [r4, #0x1C]
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r5, #0x00]
 	str r0, [r1, #0x20]
 	add sp, #0x004

@@ -122,7 +122,7 @@ _080CC32C:
 	beq _080CC398
 	adds r0, r7, #0x0
 	adds r0, #0x54
-	bl func_08005A64
+	bl AnimUpdate
 _080CC398:
 	str r0, [r7, #0x50]
 	movs r1, #0x00
@@ -136,7 +136,7 @@ _080CC398:
 	beq _080CC3B6
 	adds r0, r7, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 _080CC3B6:
 	str r0, [r7, #0x08]
 	ldr r0, [r7, #0x08]

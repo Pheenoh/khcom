@@ -11,25 +11,25 @@ task_wlogo_dil_0: @ 080B5D8C
 	movs r0, #0x00
 	adds r1, r5, #0x0
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B5DF4 @ =0x096444E4
 	movs r2, #0xBD
 	lsls r2, r2, #0x05
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080B5DF8 @ =0x096BB464
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _080B5DFC @ =0x0961FA28
 	movs r1, #0xE2
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r0, _080B5E00 @ =0x09EF36D0
 	ldr r0, [r0, #0x00]

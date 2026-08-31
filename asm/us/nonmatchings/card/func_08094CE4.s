@@ -22,24 +22,24 @@ func_08094CE4: @ 08094CE4
 	ldr r5, [r6, #0x1C]
 	ldr r0, [r4, #0x00]
 	ldrh r1, [r4, #0x18]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x08]
 	ldr r0, [r4, #0x04]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x0C]
 	ldr r0, [r5, #0x00]
 	ldrh r1, [r5, #0x14]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x10]
 	ldr r0, [r5, #0x04]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x14]
 	ldr r0, _08094D64 @ =0x0905EAE8
 	movs r1, #0xF0
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x00]
 	ldr r0, [r6, #0x0C]
 	ldrh r0, [r0, #0x06]
@@ -71,15 +71,15 @@ _08094D68:
 	cmp r0, #0x00
 	beq _08094D9C
 	ldr r0, [r6, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r6, #0x08]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r6, #0x0C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r6, #0x10]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r6, #0x14]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldrh r1, [r4, #0x00]
 	ldr r0, _08094DA4 @ =0x0000FFFE
 	ands r0, r1

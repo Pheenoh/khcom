@@ -47,10 +47,10 @@ _08044E38:
 	str r1, [r3, #0x6C]
 _08044E48:
 	ldr r0, [r7, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r7, #0x0
 	adds r0, #0x20
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0

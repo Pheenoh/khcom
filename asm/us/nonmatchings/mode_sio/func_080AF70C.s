@@ -14,19 +14,19 @@ func_080AF70C: @ 080AF70C
 	ldr r7, _080AFA64 @ =0x02034B40
 	ldr r0, [r7, #0x00]
 	adds r0, #0x20
-	bl func_08005A64
+	bl AnimUpdate
 	adds r1, r0, #0x0
 	ldr r0, [r7, #0x00]
 	str r1, [r0, #0x18]
 	adds r0, #0x38
-	bl func_08005A64
+	bl AnimUpdate
 	adds r1, r0, #0x0
 	ldr r0, [r7, #0x00]
 	str r1, [r0, #0x1C]
 	movs r1, #0xE2
 	lsls r1, r1, #0x01
 	adds r0, r0, r1
-	bl func_08005A64
+	bl AnimUpdate
 	ldr r4, [r7, #0x00]
 	movs r2, #0xE0
 	lsls r2, r2, #0x01
@@ -44,7 +44,7 @@ func_080AF70C: @ 080AF70C
 	str r4, [sp, #0x00C]
 	movs r0, #0x3C
 	movs r1, #0x58
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r7, #0x00]
 	ldr r2, [r0, #0x1C]
 	ldr r3, [r0, #0x0C]
@@ -56,7 +56,7 @@ func_080AF70C: @ 080AF70C
 	str r4, [sp, #0x00C]
 	movs r0, #0xB4
 	movs r1, #0x58
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, _080AFA6C @ =0x09EF1318
 	ldr r4, [r7, #0x00]
 	ldr r2, _080AFA70 @ =0x00000417
@@ -149,7 +149,7 @@ func_080AF70C: @ 080AF70C
 	mov r8, r1
 	str r1, [sp, #0x00C]
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r7, #0x00]
 	adds r6, r4, r6
 	ldrh r0, [r6, #0x00]
@@ -172,7 +172,7 @@ func_080AF70C: @ 080AF70C
 	mov r5, r8
 	str r5, [sp, #0x00C]
 	movs r1, #0x02
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r7, #0x00]
 	movs r2, #0xDA
 	lsls r2, r2, #0x01
@@ -203,7 +203,7 @@ func_080AF70C: @ 080AF70C
 	str r0, [sp, #0x00C]
 	movs r0, #0x48
 	movs r1, #0x26
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r7, #0x00]
 	movs r2, #0xF0
 	lsls r2, r2, #0x01
@@ -249,7 +249,7 @@ func_080AF70C: @ 080AF70C
 	lsls r0, r0, #0x01
 	str r0, [sp, #0x00C]
 	movs r0, #0x40
-	bl func_080023E0
+	bl DrawSprite
 _080AF910:
 	ldr r6, _080AFA64 @ =0x02034B40
 	ldr r1, [r6, #0x00]
@@ -282,7 +282,7 @@ _080AF910:
 	str r0, [sp, #0x00C]
 	movs r0, #0x78
 	movs r1, #0x83
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r6, #0x00]
 	ldr r5, _080AFA74 @ =0x00000412
 	adds r0, r4, r5
@@ -328,7 +328,7 @@ _080AF980:
 	str r4, [sp, #0x00C]
 	movs r0, #0x20
 	movs r1, #0x18
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r6, #0x00]
 	adds r7, #0x04
 	adds r0, r1, r7
@@ -346,7 +346,7 @@ _080AF980:
 	str r4, [sp, #0x00C]
 	movs r0, #0x84
 	movs r1, #0x18
-	bl func_080023E0
+	bl DrawSprite
 	ldr r4, [r6, #0x00]
 	movs r1, #0xFC
 	lsls r1, r1, #0x01
@@ -400,7 +400,7 @@ _080AF980:
 	movs r4, #0xF0
 	lsls r4, r4, #0x08
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080AFA44:
 	ldr r0, [r6, #0x00]
 	movs r2, #0xFD

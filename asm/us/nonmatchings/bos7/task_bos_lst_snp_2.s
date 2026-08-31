@@ -20,14 +20,14 @@ task_bos_lst_snp_2: @ 08112514
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	ldrb r0, [r4, #0x00]
 	movs r1, #0x01
 	bl func_08002C28
 	adds r6, r0, #0x0
 	adds r0, r4, #0x0
 	adds r0, #0x20
-	bl func_08005AFC
+	bl AnimGetGfx
 	mov r9, r0
 	ldr r0, [r4, #0x08]
 	bl func_0801AF1C
@@ -57,7 +57,7 @@ task_bos_lst_snp_2: @ 08112514
 	str r0, [sp, #0x00C]
 	adds r0, r5, #0x0
 	mov r2, r9
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x014
 	pop {r3, r4}
 	mov r8, r3

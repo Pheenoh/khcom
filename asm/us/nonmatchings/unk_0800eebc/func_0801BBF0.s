@@ -74,7 +74,7 @@ func_0801BBF0: @ 0801BBF0
 	adds r0, #0x2C
 	ldr r1, _0801BCA4 @ =0x09EDAF30
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _0801BC86:
 	add sp, #0x020
 	pop {r3}

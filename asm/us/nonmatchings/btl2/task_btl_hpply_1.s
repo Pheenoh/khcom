@@ -64,7 +64,7 @@ _0802F9C2:
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	ldrh r0, [r6, #0x00]
 	subs r0, #0x01
 	strh r0, [r6, #0x00]
@@ -78,7 +78,7 @@ _0802F9E0:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	b _0802FA04
 _0802F9F6:
 	adds r4, r5, #0x0
@@ -86,7 +86,7 @@ _0802F9F6:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 _0802FA04:
 	adds r6, r4, #0x0
 	ldrb r0, [r5, #0x04]
@@ -207,7 +207,7 @@ _0802FAC8:
 	movs r0, #0x01
 	strb r0, [r1, #0x00]
 	movs r0, #0x92
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0802FAE2:
 	ldr r0, [r5, #0x68]
 	cmp r0, #0x00
@@ -236,7 +236,7 @@ _0802FB52:
 	adds r0, r4, #0x0
 	movs r1, #0x0C
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	b _0802FC00
 _0802FB62:
 	cmp r4, #0x00
@@ -264,7 +264,7 @@ _0802FBCE:
 	adds r0, r4, #0x0
 	movs r1, #0x0B
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	b _0802FBEC
 _0802FBDE:
 	adds r4, r5, #0x0
@@ -272,7 +272,7 @@ _0802FBDE:
 	adds r0, r4, #0x0
 	movs r1, #0x0B
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 _0802FBEC:
 	adds r1, r5, #0x0
 	adds r1, #0x5D
@@ -282,13 +282,13 @@ _0802FBEC:
 	movs r0, #0x00
 	strb r0, [r1, #0x00]
 	movs r0, #0x92
-	bl func_0811FF3C
+	bl m4aSongNumStop
 _0802FC00:
 	adds r0, r6, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x20]
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x24]
 	ldrh r0, [r7, #0x2C]
 	mov r1, r9

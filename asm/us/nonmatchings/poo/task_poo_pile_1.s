@@ -49,7 +49,7 @@ _080CD2D6:
 	adds r2, r2, r6
 	mov r9, r2
 	mov r0, r9
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080CD396
@@ -83,7 +83,7 @@ _080CD336:
 	ldr r1, _080CD380 @ =0x09EF4BC8
 	adds r0, r5, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r4, #0x00]
 	ldrh r0, [r7, #0x00]
 	bl func_080CD1DC
@@ -91,10 +91,10 @@ _080CD336:
 	ldrh r1, [r7, #0x00]
 	mov r0, r9
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0xA3
 	lsls r0, r0, #0x01
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldrh r0, [r7, #0x00]
 	cmp r0, #0x07
 	bne _080CD384

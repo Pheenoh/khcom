@@ -33,7 +33,7 @@ task_bos_pc_flt_2: @ 0810BE30
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _0810BEA0 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	adds r0, #0xF0
@@ -74,7 +74,7 @@ _0810BEBE:
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
 	mov r0, r8
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	add r0, sp, #0x010
 	movs r1, #0x00
@@ -88,7 +88,7 @@ _0810BEBE:
 	str r4, [sp, #0x004]
 	str r7, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _0810BEE6:
 	add sp, #0x014
 	pop {r3}

@@ -7,9 +7,9 @@
 func_08066918: @ 08066918
 	push {r4, lr}
 	adds r4, r1, #0x0
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r4, #0x0
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

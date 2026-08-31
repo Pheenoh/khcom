@@ -37,7 +37,7 @@ _0811168A:
 	adds r0, #0x40
 	ldr r1, _081116CC @ =0x09EF9F0C
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	movs r1, #0x01
 _081116BC:
 	adds r0, r1, #0x0

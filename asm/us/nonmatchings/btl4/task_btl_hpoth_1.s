@@ -67,7 +67,7 @@ _0805D5FA:
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	ldrh r0, [r6, #0x00]
 	subs r0, #0x01
 	strh r0, [r6, #0x00]
@@ -81,7 +81,7 @@ _0805D618:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	b _0805D63C
 _0805D62E:
 	adds r4, r5, #0x0
@@ -89,7 +89,7 @@ _0805D62E:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 _0805D63C:
 	adds r6, r4, #0x0
 	ldrb r0, [r5, #0x04]
@@ -262,7 +262,7 @@ _0805D7FE:
 	movs r1, #0x0B
 _0805D806:
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	b _0805D81C
 _0805D80E:
 	adds r4, r5, #0x0
@@ -270,13 +270,13 @@ _0805D80E:
 	adds r0, r4, #0x0
 	movs r1, #0x0B
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 _0805D81C:
 	adds r0, r6, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x20]
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x24]
 	ldrh r0, [r7, #0x2C]
 	mov r1, r9

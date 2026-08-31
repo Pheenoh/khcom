@@ -368,13 +368,13 @@ _080118AC:
 	bne _080118BC
 _080118B0:
 	ldr r0, _080118B8 @ =0x00000213
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080118C4
 _080118B8: .4byte 0x00000213
 _080118BC:
 	movs r0, #0x88
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080118C4:
 	mov r1, r8
 	adds r1, #0xE2

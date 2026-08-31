@@ -23,7 +23,7 @@ _080D8484:
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _080D84A8
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r6, #0x00]
 	movs r1, #0x92
 	lsls r1, r1, #0x03

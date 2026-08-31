@@ -29,7 +29,7 @@ func_080D6D2C: @ 080D6D2C
 	movs r1, #0x64
 	str r1, [sp, #0x00C]
 	movs r1, #0x38
-	bl func_080023E0
+	bl DrawSprite
 	movs r6, #0x00
 	movs r7, #0xE0
 	lsls r7, r7, #0x0E
@@ -59,7 +59,7 @@ _080D6D66:
 	lsrs r1, r1, #0x10
 	str r1, [sp, #0x00C]
 	asrs r1, r7, #0x10
-	bl func_080023E0
+	bl DrawSprite
 	adds r6, #0x01
 	cmp r6, #0x02
 	ble _080D6D66

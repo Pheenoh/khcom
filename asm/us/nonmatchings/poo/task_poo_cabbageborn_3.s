@@ -6,7 +6,7 @@
 	.type task_poo_cabbageborn_3, %function
 task_poo_cabbageborn_3: @ 080D16F0
 	push {lr}
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

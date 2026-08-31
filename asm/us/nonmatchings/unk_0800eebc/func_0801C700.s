@@ -37,7 +37,7 @@ _0801C72E:
 	ldr r0, [r0, #0x00]
 	str r0, [r7, #0x00]
 _0801C73A:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x06
@@ -49,7 +49,7 @@ _0801C73A:
 	bne _0801C7EE
 	cmp r5, #0x00
 	beq _0801C77E
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, _0801C7B4 @ =0x02039B84
 	ldr r1, [r1, #0x00]
 	adds r2, r1, #0x0
@@ -70,7 +70,7 @@ _0801C73A:
 _0801C77E:
 	cmp r6, #0x00
 	beq _0801C7AA
-	bl func_080065A4
+	bl GetRandom
 	ldr r1, _0801C7B4 @ =0x02039B84
 	ldr r1, [r1, #0x00]
 	adds r2, r1, #0x0

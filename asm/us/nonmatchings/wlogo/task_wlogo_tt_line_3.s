@@ -7,7 +7,7 @@
 task_wlogo_tt_line_3: @ 080B782C
 	push {lr}
 	adds r0, #0x08
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r0}
 	bx r0
 .syntax divided

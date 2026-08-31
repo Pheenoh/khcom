@@ -35,7 +35,7 @@ task_poo_owlballoon_1: @ 080CC9F4
 	movs r1, #0x00
 	bl func_080CCB84
 	ldr r0, _080CCA4C @ =0x00000181
-	bl func_0811FE70
+	bl m4aSongNumStart
 	movs r0, #0x00
 	b _080CCA52
 	.byte 0x00, 0x00

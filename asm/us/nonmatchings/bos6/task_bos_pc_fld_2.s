@@ -45,7 +45,7 @@ task_bos_pc_fld_2: @ 0810B6FC
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
 	adds r3, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r0, r5, #0x0
 	bl func_0801AF1C
 	lsls r0, r0, #0x10
@@ -71,7 +71,7 @@ task_bos_pc_fld_2: @ 0810B6FC
 	lsrs r0, r0, #0x10
 	str r0, [sp, #0x00C]
 	adds r0, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _0810B78A:
 	add sp, #0x014
 	pop {r3}

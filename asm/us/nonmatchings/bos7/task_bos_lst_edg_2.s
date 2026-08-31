@@ -19,7 +19,7 @@ task_bos_lst_edg_2: @ 08110810
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	mov r1, r8
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, [r4, #0x0C]
 	bl func_0801AF1C
 	adds r6, r0, #0x0
@@ -35,7 +35,7 @@ task_bos_lst_edg_2: @ 08110810
 	lsrs r5, r5, #0x10
 	adds r0, r4, #0x0
 	adds r0, #0x2C
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	add r0, sp, #0x010
 	movs r3, #0x00
@@ -50,7 +50,7 @@ task_bos_lst_edg_2: @ 08110810
 	str r4, [sp, #0x004]
 	str r6, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x014
 	pop {r3}
 	mov r8, r3

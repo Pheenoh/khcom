@@ -41,7 +41,7 @@ task_poo_mapbutterflyborn_0: @ 080D275C
 	strb r4, [r0, #0x00]
 	subs r0, #0x19
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r0, r5, #0x0
 	adds r0, #0x94
 	str r4, [r0, #0x00]

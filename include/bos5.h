@@ -167,15 +167,15 @@ typedef struct MdWork {
 void func_0800501C(s32 a);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);
-void func_080028C0(void* a);
-void func_08002C10(void* a);
-void func_08000F0C(void* a);
+void ReleaseObjTiles(void* a);
+void ReleaseObjPalette(void* a);
+void TaskPoolDestroy(void* a);
 
-s32 func_080065A4(void);
+s32 GetRandom(void);
 void func_080058FC(void* a, s32 b, u16 c);
-void* func_08005A64(void* a);
+void* AnimUpdate(void* a);
 
-extern s16 gUnk_08121400[];
+extern s16 gSineTable[];
 extern u8 gUnk_09A3C9BC[];
 extern u8 gUnk_09999ED0[];
 extern u32 gUnk_09EF9740[];
@@ -201,7 +201,7 @@ void task_bos_md_3(MdWork* work);
 void func_080FD9B8(u16 model, u16 slot);
 void func_080FDA28(u16 model, u16 slot);
 s16 func_080FDA98(u16 model, u16 slot);
-extern u32 gUnk_03007480;
+extern u32 gFrameCounter;
 
 void task_bos_ga_2(GaWork* work);
 void task_bos_ga_3(GaWork* work);

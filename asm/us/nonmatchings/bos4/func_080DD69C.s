@@ -43,7 +43,7 @@ _080DD6E4:
 	adds r0, #0x10
 	ldr r1, _080DD700 @ =0x09EF5280
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x24]
 	b _080DD746
@@ -78,7 +78,7 @@ _080DD730:
 	movs r1, #0x00
 	strb r1, [r0, #0x00]
 	ldr r0, _080DD750 @ =0x00000111
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080DD746:
 	pop {r4, r5}
 	pop {r0}

@@ -10,9 +10,9 @@ task_btl_pause_3: @ 080305E8
 	movs r0, #0x00
 	bl func_080063C4
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

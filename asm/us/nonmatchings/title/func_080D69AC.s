@@ -10,13 +10,13 @@ func_080D69AC: @ 080D69AC
 	lsls r1, r1, #0x10
 	lsrs r5, r1, #0x10
 	adds r6, r5, #0x0
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080D69E4
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 	movs r1, #0x00
 	ldsh r0, [r4, r1]
 	bl func_080D6908
@@ -30,13 +30,13 @@ func_080D69AC: @ 080D69AC
 	b _080D6A10
 _080D69E0: .4byte 0xFFFF0000
 _080D69E4:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
 	beq _080D6A1C
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 	movs r1, #0x00
 	ldsh r0, [r4, r1]
 	bl func_080D6908

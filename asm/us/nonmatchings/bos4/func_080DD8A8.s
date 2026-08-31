@@ -25,7 +25,7 @@ _080DD8C8:
 	adds r0, r6, #0x4
 	ldr r1, _080DD8F8 @ =0x09EF5268
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	lsls r2, r5, #0x02
 	adds r1, r6, #0x0
 	adds r1, #0x18

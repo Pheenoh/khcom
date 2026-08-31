@@ -43,7 +43,7 @@ _08111A9E:
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	b _08111B44
 _08111ACA:
 	mov r4, r12
@@ -104,10 +104,10 @@ _08111B30:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 _08111B44:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r5, #0x0
 	pop {r4, r5, r6}
 	pop {r1}

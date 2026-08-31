@@ -14,7 +14,7 @@ task_smn_cloud_2: @ 08041BBC
 	adds r6, r5, #0x0
 	adds r6, #0x38
 	adds r0, #0x08
-	bl func_08005AFC
+	bl AnimGetGfx
 	mov r8, r0
 	ldr r0, [r6, #0x08]
 	bl func_0801AF1C
@@ -28,7 +28,7 @@ task_smn_cloud_2: @ 08041BBC
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	movs r1, #0xA8
 	lsls r1, r1, #0x01
 	adds r0, r5, r1
@@ -134,7 +134,7 @@ _08041CB6:
 	movs r0, #0x00
 	movs r3, #0x01
 _08041CBA:
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r4, r0, #0x0
 _08041CC0:
 	add r0, sp, #0x010
@@ -158,7 +158,7 @@ _08041CC0:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r6, #0x08]
 	asrs r0, r0, #0x08
 	lsls r0, r0, #0x02
@@ -170,7 +170,7 @@ _08041CC0:
 	strh r4, [r1, #0x00]
 	adds r0, r5, #0x0
 	adds r0, #0x20
-	bl func_08000EE0
+	bl TaskPoolDraw
 	add sp, #0x014
 	pop {r3, r4}
 	mov r8, r3

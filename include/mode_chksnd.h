@@ -25,12 +25,12 @@ extern const char gUnk_081309B0[];
 extern const char gUnk_081309D0[];
 
 void func_080010CC(Mode* mode, s32 b);
-u16 func_0800139C(void);
+u16 GetKeysRepeat(void);
 void func_08004DB0(void);
 void func_0809D2B0(u8 x, u8 y, u8 c, const char* s);
 void func_0809D458(u16 x, u16 y, u16 c, s32 v);
-void func_0811FE70(u16 id);
-void func_0811FFA4(void);
+void m4aSongNumStart(u16 id);
+void m4aMPlayAllStop(void);
 
 void mode_chksnd_0(void);
 void mode_chksnd_1(void);

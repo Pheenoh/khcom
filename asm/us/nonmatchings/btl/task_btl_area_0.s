@@ -11,11 +11,11 @@ task_btl_area_0: @ 0801D614
 	strb r5, [r4, #0x08]
 	ldr r0, _0801D63C @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x00]
 	ldr r0, _0801D640 @ =0x08B1EA00
 	movs r1, #0xE0
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x04]
 	strh r5, [r4, #0x0A]
 	movs r0, #0x01

@@ -15,14 +15,14 @@ func_080E5354: @ 080E5354
 	str r1, [sp, #0x004]
 	movs r0, #0x06
 	mov r10, r0
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x06
 	bl __umodsi3
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x08

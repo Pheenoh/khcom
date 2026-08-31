@@ -20,7 +20,7 @@ task_wlogo_agr_flash1_2: @ 080B664C
 	str r0, [sp, #0x008]
 	str r0, [sp, #0x00C]
 	adds r0, r4, #0x0
-	bl func_080023E0
+	bl DrawSprite
 	add sp, #0x010
 	pop {r4}
 	pop {r0}

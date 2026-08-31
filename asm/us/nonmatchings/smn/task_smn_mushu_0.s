@@ -101,14 +101,14 @@ _080437C8:
 	strb r0, [r2, #0x00]
 	ldr r0, _08043840 @ =0x09618038
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	adds r4, r6, #0x0
 	adds r4, #0x08
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08043844 @ =0x0813EA7C
 	ldr r1, [r6, #0x00]
 	str r1, [sp, #0x000]
@@ -161,11 +161,11 @@ _08043854:
 	ldr r0, [r0, #0x7C]
 	str r0, [r1, #0x00]
 	movs r0, #0xAB
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r6, #0x0
 	adds r0, #0x20
 	movs r1, #0x03
-	bl func_08000E64
+	bl TaskPoolInit
 	add sp, #0x004
 	pop {r4, r5, r6, r7}
 	pop {r0}

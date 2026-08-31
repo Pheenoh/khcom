@@ -66,13 +66,13 @@ _080D0A58:
 	adds r0, r4, #0x0
 	mov r1, r9
 	mov r2, r10
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r5, #0x08]
 	movs r1, #0x00
 	str r1, [r5, #0x04]

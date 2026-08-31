@@ -16,7 +16,7 @@ func_0800E5CC: @ 0800E5CC
 	bne _0800E5E8
 	adds r0, r4, #0x0
 	adds r0, #0x10
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x38]
 _0800E5E8:
 	pop {r4}

@@ -26,7 +26,7 @@ task_sroll_b_char_2: @ 08114B84
 	lsrs r4, r4, #0x10
 	adds r0, r6, #0x0
 	adds r0, #0x14
-	bl func_08005AFC
+	bl AnimGetGfx
 	mov r8, r0
 	adds r0, r7, #0x0
 	adds r0, #0x28
@@ -34,7 +34,7 @@ task_sroll_b_char_2: @ 08114B84
 	ldr r1, [r7, #0x20]
 	ldr r2, [r7, #0x24]
 	movs r3, #0x01
-	bl func_08002CB4
+	bl AllocObjAffine
 	lsls r5, r5, #0x10
 	asrs r5, r5, #0x10
 	lsls r4, r4, #0x10
@@ -51,10 +51,10 @@ task_sroll_b_char_2: @ 08114B84
 	adds r0, r5, #0x0
 	adds r1, r4, #0x0
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r6, #0x0
 	adds r0, #0x2C
-	bl func_08000EE0
+	bl TaskPoolDraw
 _08114BF0:
 	add sp, #0x010
 	pop {r3}

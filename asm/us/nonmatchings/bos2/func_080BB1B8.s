@@ -15,7 +15,7 @@ func_080BB1B8: @ 080BB1B8
 	str r2, [r3, #0x0C]
 	ldr r1, _080BB1D4 @ =0x09EF26FC
 	adds r2, r3, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	pop {r0}
 	bx r0
 _080BB1D4: .4byte 0x09EF26FC

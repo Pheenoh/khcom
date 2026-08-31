@@ -29,7 +29,7 @@ task_hum_vixen_0: @ 08054440
 	lsls r1, r1, #0x01
 	adds r0, r5, r1
 	movs r1, #0x0F
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r0, r5, #0x0
 	bl func_080543B4
 	movs r2, #0xC2
@@ -46,7 +46,7 @@ task_hum_vixen_0: @ 08054440
 	movs r0, #0x84
 	lsls r0, r0, #0x04
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r1, _080544C4 @ =0x02039B84
 	ldr r1, [r1, #0x00]
 	movs r2, #0x8A

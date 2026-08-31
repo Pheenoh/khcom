@@ -26,14 +26,14 @@ task_roomcreate_0: @ 0803F254
 	strh r0, [r6, #0x26]
 	str r0, [r6, #0x40]
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	adds r0, r6, #0x0
 	adds r0, #0x2C
 	movs r1, #0x03
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r3, [r4, #0x00]
 	ldr r0, [r3, #0x18]
 	str r0, [r6, #0x00]

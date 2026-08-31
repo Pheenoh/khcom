@@ -10,23 +10,23 @@ task_hum_lex_tmh_0: @ 08056EE4
 	adds r5, r1, #0x0
 	ldr r0, _08056F2C @ =0x09618478
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	movs r0, #0x80
 	lsls r0, r0, #0x03
 	ldr r1, _08056F30 @ =0x08C3724C
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r6, #0x00]
 	adds r4, r6, #0x0
 	adds r4, #0x08
 	ldr r1, _08056F34 @ =0x09EE22B0
 	ldr r2, _08056F38 @ =0x09EE2298
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x12
 	ldsh r1, [r5, r0]
 	cmp r1, #0x00
@@ -52,7 +52,7 @@ _08056F42:
 	str r0, [r6, #0x24]
 	ldr r0, [r5, #0x08]
 	str r0, [r6, #0x28]
-	bl func_080065A4
+	bl GetRandom
 	ldr r5, _08056FD0 @ =0x02039B84
 	ldr r4, [r5, #0x00]
 	movs r1, #0x98
@@ -69,7 +69,7 @@ _08056F42:
 	ldr r1, [r4, #0x00]
 	adds r1, r1, r0
 	str r1, [r6, #0x34]
-	bl func_080065A4
+	bl GetRandom
 	ldr r4, [r5, #0x00]
 	movs r1, #0x9A
 	lsls r1, r1, #0x01
@@ -99,14 +99,14 @@ _08056F42:
 	ldr r0, _08056FE0 @ =0x08B22BBC
 	movs r1, #0x80
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x40]
 	ldr r0, _08056FE4 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x44]
 	ldr r0, _08056FE8 @ =0x000002B1
-	bl func_0811FE70
+	bl m4aSongNumStart
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

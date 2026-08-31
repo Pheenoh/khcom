@@ -8,19 +8,19 @@ task_btl_hpply_3: @ 0802FE10
 	push {r4, lr}
 	adds r4, r0, #0x0
 	movs r0, #0x92
-	bl func_0811FF3C
+	bl m4aSongNumStop
 	ldr r0, [r4, #0x10]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x14]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x18]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x1C]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x08]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x0C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4}
 	pop {r0}
 	bx r0

@@ -17,7 +17,7 @@ task_emy_81_1: @ 0803D7A4
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803D7E8
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	movs r0, #0x01

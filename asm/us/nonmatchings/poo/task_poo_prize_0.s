@@ -16,7 +16,7 @@ task_poo_prize_0: @ 080D1C40
 	str r0, [r6, #0x08]
 	movs r0, #0x00
 	str r0, [r6, #0x0C]
-	bl func_080065A4
+	bl GetRandom
 	adds r4, r6, #0x0
 	adds r4, #0x84
 	lsls r0, r0, #0x10
@@ -30,7 +30,7 @@ task_poo_prize_0: @ 080D1C40
 	adds r0, r0, r1
 	negs r0, r0
 	str r0, [r4, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	adds r4, #0x04
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
@@ -40,18 +40,18 @@ task_poo_prize_0: @ 080D1C40
 	lsrs r0, r0, #0x10
 	adds r0, #0x99
 	str r0, [r4, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	adds r1, r6, #0x0
 	adds r1, #0x8C
 	strb r0, [r1, #0x00]
 	ldr r0, _080D1CD8 @ =0x098A5CF4
 	movs r1, #0xB0
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x6C]
 	ldr r0, _080D1CDC @ =0x08F69BE4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x70]
 	ldrh r1, [r5, #0x14]
 	adds r0, r6, #0x0

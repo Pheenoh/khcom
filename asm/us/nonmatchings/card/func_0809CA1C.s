@@ -16,36 +16,36 @@ func_0809CA1C: @ 0809CA1C
 	ldr r0, [r0, #0x0C]
 	movs r1, #0xA0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x0C]
 	ldr r0, _0809CAB8 @ =0x09611AB8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x28]
 	ldr r0, [r4, #0x00]
 	ldr r0, [r0, #0x04]
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x08]
 	ldr r0, [r4, #0x00]
 	ldr r0, [r0, #0x08]
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x24]
 	ldr r0, _0809CABC @ =0x0905EAE8
 	movs r1, #0xF0
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x10]
 	ldr r0, _0809CAC0 @ =0x0905ED36
 	movs r1, #0xA0
 	lsls r1, r1, #0x01
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x1C]
 	ldr r0, _0809CAC4 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x20]
 	ldrh r0, [r0, #0x06]
 	adds r0, #0x10

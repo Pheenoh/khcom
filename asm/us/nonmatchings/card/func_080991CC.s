@@ -19,7 +19,7 @@ func_080991CC: @ 080991CC
 	mov r1, sp
 	strb r5, [r1, #0x0D]
 	ldr r1, _080991F4 @ =0x09EE76F0
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x010
 	pop {r4, r5}
 	pop {r0}

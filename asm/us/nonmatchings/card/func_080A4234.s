@@ -46,7 +46,7 @@ _080A4278:
 	ldr r1, _080A4298 @ =0x09EE8E30
 	adds r0, r5, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	b _080A42A6
 _080A4294: .4byte 0x09EE8008
 _080A4298: .4byte 0x09EE8E30
@@ -54,7 +54,7 @@ _080A429C:
 	ldr r1, _080A42B0 @ =0x09EE8E18
 	adds r0, r5, #0x0
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 _080A42A6:
 	add sp, #0x008
 	pop {r4, r5}

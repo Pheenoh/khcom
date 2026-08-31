@@ -10,7 +10,7 @@ task_hum_vixen_ndl_0: @ 080554A4
 	adds r5, r1, #0x0
 	ldr r0, _08055520 @ =0x08F6DCA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	ldr r0, [r5, #0x18]
 	str r0, [r6, #0x00]
@@ -19,11 +19,11 @@ task_hum_vixen_ndl_0: @ 080554A4
 	ldr r1, _08055524 @ =0x09EE26B0
 	ldr r2, _08055528 @ =0x09EE2690
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	ldrh r1, [r5, #0x12]
 	adds r0, r6, #0x0
 	adds r0, #0x2C
@@ -31,7 +31,7 @@ task_hum_vixen_ndl_0: @ 080554A4
 	strb r1, [r0, #0x00]
 	ldr r0, [r5, #0x00]
 	str r0, [r6, #0x20]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0B
@@ -49,8 +49,8 @@ task_hum_vixen_ndl_0: @ 080554A4
 	adds r0, #0x2D
 	strb r4, [r0, #0x00]
 	ldr r0, _08055530 @ =0x00000286
-	bl func_0811FE70
-	bl func_080065A4
+	bl m4aSongNumStart
+	bl GetRandom
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00

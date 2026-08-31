@@ -16,7 +16,7 @@ func_080E2E24: @ 080E2E24
 	subs r1, r1, r2
 	cmp r0, r1
 	bge _080E2E66
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -27,7 +27,7 @@ func_080E2E24: @ 080E2E24
 	movs r1, #0x04
 	b _080E2E96
 _080E2E52:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05
@@ -36,7 +36,7 @@ _080E2E52:
 	movs r1, #0x06
 	b _080E2E90
 _080E2E66:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -47,7 +47,7 @@ _080E2E66:
 	movs r1, #0x06
 	b _080E2E96
 _080E2E7E:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05

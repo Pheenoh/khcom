@@ -15,7 +15,7 @@ func_080D5978: @ 080D5978
 	ldr r1, [r1, #0x00]
 	adds r1, r1, r0
 	adds r0, r3, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	pop {r0}
 	bx r0
 _080D5994: .4byte 0x02034EC4

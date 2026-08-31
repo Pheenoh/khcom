@@ -16,7 +16,7 @@ func_080E83DC: @ 080E83DC
 	ands r0, r1
 	cmp r0, #0x00
 	beq _080E844A
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E8418 @ =0x00002710
@@ -57,7 +57,7 @@ _080E8444:
 	movs r0, #0x01
 	b _080E84B2
 _080E844A:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080E846C @ =0x00002710

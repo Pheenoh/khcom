@@ -37,13 +37,13 @@ _080AAAC0:
 	ldr r2, _080AAB00 @ =0x09EEB068
 _080AAAD0:
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	ldr r2, _080AAB04 @ =0x000004EC
 	adds r1, r5, r2
 	str r0, [r1, #0x00]

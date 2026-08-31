@@ -8,50 +8,50 @@ mode_chkeff_0: @ 0800BB2C
 	push {r4, lr}
 	ldr r4, _0800BC34 @ =0x020348B8
 	movs r0, #0x28
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	bl func_08004E64
 	movs r0, #0x00
 	movs r1, #0x00
 	movs r2, #0x07
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x01
 	movs r2, #0x0C
 	movs r3, #0x08
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x02
 	movs r2, #0x1C
 	movs r3, #0x0A
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x02
 	movs r1, #0x10
 	movs r2, #0x10
 	bl func_080057A0
 	movs r0, #0x02
 	movs r1, #0x00
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x00
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r1, _0800BC38 @ =0x08C6B0C4
 	ldr r2, _0800BC3C @ =0x00007C20
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _0800BC40 @ =0x08F683C4
 	movs r0, #0x01
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _0800BC44 @ =0x08EEE384
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 	movs r0, #0x08
 	movs r1, #0x01
 	bl func_080062F4
@@ -83,11 +83,11 @@ mode_chkeff_0: @ 0800BB2C
 	bl func_080065FC
 	ldr r0, [r4, #0x00]
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [r4, #0x00]
 	ldr r1, _0800BC48 @ =0x09EE9190
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	ldr r0, [r4, #0x00]
 	movs r2, #0x00
 	movs r1, #0x00

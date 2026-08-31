@@ -175,7 +175,7 @@ _080BCE4E:
 	lsls r2, r2, #0x10
 	lsrs r2, r2, #0x10
 	movs r0, #0x01
-	bl func_080054EC
+	bl SetBgScroll
 	movs r0, #0x01
 	pop {r4, r5}
 	pop {r1}

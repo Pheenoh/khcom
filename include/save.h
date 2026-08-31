@@ -122,8 +122,8 @@ typedef struct SaveHeader {
     SaveHeaderData data;
 } SaveHeader;
 
-void* func_08000918(u32 size);
-void func_080009C4(void* p);
+void* EwramAlloc(u32 size);
+void EwramFree(void* p);
 
 void ZeroFill(void* dst, s16 size);
 void CopyBytes(u8* src, u8* dst, s16 len);

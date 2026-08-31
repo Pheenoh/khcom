@@ -17,7 +17,7 @@ func_080D1078: @ 080D1078
 	lsrs r4, r0, #0x10
 	cmp r4, #0x0D
 	bls _080D10A6
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03

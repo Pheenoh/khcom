@@ -87,14 +87,14 @@ _080B3A98:
 	ldr r1, _080B3B50 @ =0x06000020
 	adds r0, r4, #0x0
 	movs r2, #0xC0
-	bl func_080043B4
+	bl RequestDma3Copy
 	movs r3, #0x80
 	lsls r3, r3, #0x03
 	adds r4, r4, r3
 	ldr r1, _080B3B54 @ =0x060000E0
 	adds r0, r4, #0x0
 	movs r2, #0xC0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, _080B3B58 @ =0x0203AB34
 	strb r5, [r0, #0x00]
 	strb r5, [r0, #0x01]

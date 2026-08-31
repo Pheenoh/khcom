@@ -52,7 +52,7 @@ func_0800685C: @ 0800685C
 	add r4, sp, #0x014
 	adds r1, r4, #0x0
 	movs r2, #0x01
-	bl func_08117FE0
+	bl BgAffineSet
 	cmp r7, #0x02
 	beq _080068D0
 	cmp r7, #0x03

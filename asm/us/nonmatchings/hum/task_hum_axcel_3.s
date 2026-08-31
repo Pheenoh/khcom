@@ -8,21 +8,21 @@ task_hum_axcel_3: @ 080541CC
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, _08054204 @ =0x0000028E
-	bl func_0811FF3C
+	bl m4aSongNumStop
 	movs r1, #0x88
 	lsls r1, r1, #0x02
 	adds r0, r4, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	movs r1, #0x86
 	lsls r1, r1, #0x02
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r1, #0x87
 	lsls r1, r1, #0x02
 	adds r0, r4, r1
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	bl func_0800E380
 	pop {r4}

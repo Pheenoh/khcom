@@ -26,7 +26,7 @@ task_status_scrollcursor_2: @ 080D88E8
 	movs r0, #0x06
 	str r0, [sp, #0x00C]
 	movs r0, #0x54
-	bl func_080023E0
+	bl DrawSprite
 _080D8918:
 	add sp, #0x010
 	pop {r4}

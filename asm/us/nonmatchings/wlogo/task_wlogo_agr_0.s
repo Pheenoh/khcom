@@ -13,25 +13,25 @@ task_wlogo_agr_0: @ 080B5F94
 	movs r0, #0x00
 	adds r1, r5, #0x0
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B600C @ =0x096B9C64
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r1, _080B6010 @ =0x09642CE4
 	movs r2, #0xC0
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r0, _080B6014 @ =0x0961DC0E
 	movs r1, #0xEF
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r0, _080B6018 @ =0x09EF3614
 	ldr r0, [r0, #0x2C]
@@ -51,7 +51,7 @@ task_wlogo_agr_0: @ 080B5F94
 	bl func_080057A0
 	ldr r0, _080B601C @ =0x02034C80
 	movs r1, #0x32
-	bl func_08000E64
+	bl TaskPoolInit
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

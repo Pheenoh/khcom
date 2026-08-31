@@ -15,24 +15,24 @@ task_poo_mapbutterfly_0: @ 080D2630
 	str r0, [r4, #0x2C]
 	ldr r1, _080D2680 @ =0x09760986
 	movs r0, #0x40
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D2684 @ =0x09849E58
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	adds r5, r4, #0x0
 	adds r5, #0x0C
 	ldr r1, _080D2688 @ =0x09EF6298
 	ldr r2, _080D268C @ =0x09EF6208
 	adds r0, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r5, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r4, #0x08]
 	adds r4, #0x34
 	movs r0, #0x01

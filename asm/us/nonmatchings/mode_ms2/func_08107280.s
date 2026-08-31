@@ -55,7 +55,7 @@ _081072CA:
 	str r1, [sp, #0x00C]
 	cmp r0, #0x00
 	beq _081072E8
-	bl func_08002C10
+	bl ReleaseObjPalette
 _081072E8:
 	ldr r0, _08107384 @ =0x02035ED0
 	mov r3, r8
@@ -63,7 +63,7 @@ _081072E8:
 	ldr r0, [r7, #0x00]
 	cmp r0, #0x00
 	beq _081072F8
-	bl func_080028C0
+	bl ReleaseObjTiles
 _081072F8:
 	lsls r0, r4, #0x10
 	asrs r1, r0, #0x10
@@ -91,7 +91,7 @@ _081072F8:
 	ldr r0, [r0, #0x00]
 	movs r1, #0x20
 	str r3, [sp, #0x014]
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x00]
 	ldr r0, [sp, #0x004]
 	adds r0, #0x0C
@@ -100,7 +100,7 @@ _081072F8:
 	ldr r2, [sp, #0x004]
 	adds r1, r4, r2
 	ldrh r1, [r1, #0x1C]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x00]
 	ldr r1, _0810738C @ =0x02035F00
 	add r1, r8

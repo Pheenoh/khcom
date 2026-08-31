@@ -40,7 +40,7 @@ func_08012F74: @ 08012F74
 	adds r1, r4, #0x0
 	adds r2, r7, #0x0
 	mov r3, r8
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08013018 @ =0x09EDA570
 	add r1, sp, #0x004
 	movs r2, #0x00
@@ -49,7 +49,7 @@ func_08012F74: @ 08012F74
 	ldsh r2, [r4, r3]
 	bl func_08006778
 	ldr r0, _0801301C @ =0x0000023D
-	bl func_0811FE70
+	bl m4aSongNumStart
 	movs r0, #0x08
 	bl func_08006B34
 	ldr r5, [r5, #0x00]

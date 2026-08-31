@@ -132,7 +132,7 @@ _08111210:
 	str r0, [sp, #0x000]
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08111270 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	ldr r1, [r0, #0x6C]
@@ -155,7 +155,7 @@ _08111210:
 	str r0, [sp, #0x000]
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldrh r0, [r6, #0x16]
 	adds r0, #0x02
 	strh r0, [r6, #0x16]
@@ -212,7 +212,7 @@ _081112CA:
 	str r0, [sp, #0x000]
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	b _081112F8
 _081112D6:
 	ldrh r0, [r6, #0x16]
@@ -230,7 +230,7 @@ _081112D6:
 	str r0, [sp, #0x000]
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 _081112F8:
 	ldr r0, _08111350 @ =0x02039B84
 	ldr r0, [r0, #0x00]
@@ -388,11 +388,11 @@ _0811140C:
 	adds r0, r0, r1
 	str r0, [r2, #0x0C]
 	adds r0, r7, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	movs r3, #0xD8
 	lsls r3, r3, #0x01
 	adds r0, r6, r3
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	ldrh r0, [r6, #0x14]
 	adds r0, #0x01
 	strh r0, [r6, #0x14]

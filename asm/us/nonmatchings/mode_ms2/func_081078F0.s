@@ -11,7 +11,7 @@ func_081078F0: @ 081078F0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	movs r0, #0x00
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r1, r0, #0x0
 	ldr r0, _08107930 @ =0x09A34D9C
 	ldr r2, _08107934 @ =0x09EF9618

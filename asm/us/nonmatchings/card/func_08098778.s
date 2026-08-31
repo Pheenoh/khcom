@@ -10,32 +10,32 @@ func_08098778: @ 08098778
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x00
 	beq _08098786
-	bl func_080028C0
+	bl ReleaseObjTiles
 _08098786:
 	ldr r0, [r4, #0x04]
 	cmp r0, #0x00
 	beq _08098790
-	bl func_080028C0
+	bl ReleaseObjTiles
 _08098790:
 	ldr r0, [r4, #0x08]
 	cmp r0, #0x00
 	beq _0809879A
-	bl func_080028C0
+	bl ReleaseObjTiles
 _0809879A:
 	ldr r0, [r4, #0x0C]
 	cmp r0, #0x00
 	beq _080987A4
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080987A4:
 	ldr r0, [r4, #0x10]
 	cmp r0, #0x00
 	beq _080987AE
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080987AE:
 	ldr r0, [r4, #0x14]
 	cmp r0, #0x00
 	beq _080987B8
-	bl func_08002C10
+	bl ReleaseObjPalette
 _080987B8:
 	pop {r4}
 	pop {r0}

@@ -8,7 +8,7 @@ task_bos_ursula_bubble_1: @ 080DD958
 	push {r4, r5, r6, lr}
 	adds r5, r0, #0x0
 	adds r0, r5, #0x4
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r4, #0x00
 	adds r6, r5, #0x0
 	adds r6, #0x40

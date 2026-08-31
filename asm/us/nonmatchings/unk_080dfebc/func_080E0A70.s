@@ -27,7 +27,7 @@ _080E0A8C:
 	lsls r4, r6, #0x02
 	ldr r0, _080E0AFC @ =0x0984D32C
 	adds r4, r4, r0
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrb r7, [r4, #0x03]

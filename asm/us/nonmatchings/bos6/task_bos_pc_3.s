@@ -18,17 +18,17 @@ task_bos_pc_3: @ 0810B2FC
 	adds r0, r4, r1
 	bl func_08012304
 	ldr r0, [r4, #0x40]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x44]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x48]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x4C]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x50]
 	cmp r0, #0x00
 	beq _0810B33C
-	bl func_08002C10
+	bl ReleaseObjPalette
 _0810B33C:
 	adds r0, r4, #0x0
 	bl func_0810A4C4

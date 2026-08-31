@@ -22,7 +22,7 @@ func_080DDD30: @ 080DDD30
 	adds r0, r5, #0x0
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
 	adds r0, #0x24
 	movs r1, #0x01

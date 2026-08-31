@@ -51,7 +51,7 @@ _0803E9DA:
 	adds r0, r5, #0x0
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0803E9F0:
 	adds r0, r5, #0x0
 	bl func_08005B34
@@ -75,7 +75,7 @@ _0803E9F0:
 	cmp r0, #0x00
 	beq _0803EA24
 	ldr r0, _0803EA38 @ =0x00000242
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803EA24:
 	ldrh r1, [r4, #0x30]
 	movs r2, #0x30
@@ -101,10 +101,10 @@ _0803EA40:
 	adds r0, r5, #0x0
 	movs r1, #0x02
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0803EA56:
 	adds r0, r5, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803EA66
@@ -124,7 +124,7 @@ _0803EA6C:
 	ldr r3, [r4, #0x28]
 	bl func_08012324
 	adds r0, r5, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 _0803EA82:
 	add sp, #0x00C

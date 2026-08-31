@@ -27,7 +27,7 @@ _0810500C:
 	cmp r6, #0x00
 	beq _0810504C
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	adds r0, r4, r5
 	lsls r0, r0, #0x05
@@ -46,7 +46,7 @@ _08105044: .4byte 0x02035C30
 _08105048: .4byte 0x09A1DE3C
 _0810504C:
 	movs r0, #0x00
-	bl func_08005130
+	bl GetBgCharBase
 	adds r2, r0, #0x0
 	adds r0, r4, r5
 	lsls r0, r0, #0x05

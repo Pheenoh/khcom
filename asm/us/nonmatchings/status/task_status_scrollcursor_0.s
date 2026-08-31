@@ -15,11 +15,11 @@ task_status_scrollcursor_0: @ 080D8890
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080D88CC @ =0x097A2394
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080D88D0 @ =0x0984B1F8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldr r0, [r5, #0x10]
 	str r0, [r4, #0x08]

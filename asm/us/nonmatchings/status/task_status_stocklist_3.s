@@ -15,7 +15,7 @@ _080D8294:
 	ldr r0, [r4, #0x00]
 	cmp r0, #0x00
 	beq _080D829E
-	bl func_080028C0
+	bl ReleaseObjTiles
 _080D829E:
 	adds r4, #0x04
 	subs r5, #0x01
@@ -25,16 +25,16 @@ _080D829E:
 	lsls r1, r1, #0x03
 	adds r0, r6, r1
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r1, _080D82D0 @ =0x000004B4
 	adds r0, r6, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r1, #0x97
 	lsls r1, r1, #0x03
 	adds r0, r6, r1
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

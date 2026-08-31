@@ -75,13 +75,13 @@ _080067FC:
 	ldr r0, [r4, #0x00]
 	ldr r1, [r5, #0x08]
 	ldrh r2, [r5, #0x0C]
-	bl func_080050DC
+	bl LoadBgPalette
 	bl func_08007E7C
 	ldr r0, [r4, #0x00]
 	ldr r1, [r5, #0x04]
 	ldr r2, _08006858 @ =0x02034056
 	ldrh r2, [r2, #0x00]
-	bl func_0800510C
+	bl LoadBgMap
 	pop {r4, r5}
 	pop {r0}
 	bx r0

@@ -41,7 +41,7 @@ _0803DD78:
 	subs r2, #0x28
 	b _0803DDC4
 _0803DD8C:
-	bl func_080065A4
+	bl GetRandom
 	movs r2, #0x85
 	lsls r2, r2, #0x01
 	adds r1, r4, r2

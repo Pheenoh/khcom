@@ -8,7 +8,7 @@ func_080DB468: @ 080DB468
 	push {r4, r5, r6, lr}
 	add sp, #-0x004
 	adds r6, r0, #0x0
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	movs r1, #0xF0
 	lsls r1, r1, #0x0C
@@ -28,7 +28,7 @@ _080DB490:
 	adds r0, r5, #0x0
 	ldr r1, _080DB4C0 @ =0x09EF50B8
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	lsls r2, r4, #0x02
 	movs r3, #0x96
 	lsls r3, r3, #0x01
@@ -61,7 +61,7 @@ _080DB4D6:
 	adds r0, r5, #0x0
 	ldr r1, _080DB508 @ =0x09EF50B8
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	lsls r2, r4, #0x02
 	movs r3, #0x96
 	lsls r3, r3, #0x01

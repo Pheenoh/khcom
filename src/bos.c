@@ -2,8 +2,8 @@
 #include "bos.h"
 
 void task_bos_map_0(s32 unused, BosMapConfig* cfg) {
-    func_080050B8(0, cfg->unk_00, cfg->unk_04);
-    func_080050DC(0, cfg->unk_08, cfg->unk_0C);
+    LoadBgTiles(0, cfg->unk_00, cfg->unk_04);
+    LoadBgPalette(0, cfg->unk_08, cfg->unk_0C);
     func_0800516C(0, cfg->unk_10, 2, 2);
 
     gUnk_02039B84->unk_024 = 0x100;
@@ -65,8 +65,8 @@ s32 task_bos_map_1(void) {
 
 void task_bos_shadow_0(BosShadowWork* work, UnkStruct_02039B84* obj) {
     work->unk_08 = obj;
-    work->unk_00 = func_080026A4(gUnk_08B22BBC, 0x100);
-    work->unk_04 = func_08002A14(gUnk_08F69BA4, 32);
+    work->unk_00 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 32);
 }
 
 s32 task_bos_shadow_1(void) {
@@ -98,14 +98,14 @@ void task_bos_shadow_2(BosShadowWork* work) {
         flip = 1;
     }
 
-    sprite = func_08002CB4(0, size, size, flip);
-    func_0801909C(&x, &y, obj->unk_004, obj->unk_008, obj->unk_010);
-    func_080023E0(x, y, gfx, work->unk_00, work->unk_04, sprite, frame, 0xFFF0);
+    sprite = AllocObjAffine(0, size, size, flip);
+    WorldToScreen(&x, &y, obj->unk_004, obj->unk_008, obj->unk_010);
+    DrawSprite(x, y, gfx, work->unk_00, work->unk_04, sprite, frame, 0xFFF0);
 }
 
 void task_bos_shadow_3(BosShadowWork* work) {
-    func_080028C0(work->unk_00);
-    func_08002C10(work->unk_04);
+    ReleaseObjTiles(work->unk_00);
+    ReleaseObjPalette(work->unk_04);
 }
 
 ALIGN_ZERO(2);

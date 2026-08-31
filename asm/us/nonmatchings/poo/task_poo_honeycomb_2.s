@@ -46,9 +46,9 @@ task_poo_honeycomb_2: @ 080CFBA0
 	ldr r0, [r4, #0x04]
 	cmp r0, #0x00
 	beq _080CFC02
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	movs r0, #0x00
 	str r0, [r4, #0x04]
 _080CFC02:
@@ -72,11 +72,11 @@ _080CFC24:
 	bne _080CFC3E
 	ldr r0, _080CFC84 @ =0x09849D78
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldrh r0, [r4, #0x34]
 	ldr r1, _080CFC88 @ =0x09756810
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x00]
 _080CFC3E:
 	adds r5, r4, #0x0
@@ -105,7 +105,7 @@ _080CFC5A:
 	str r0, [sp, #0x00C]
 	mov r0, r8
 	adds r1, r7, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080CFC76:
 	add sp, #0x010
 	pop {r3}

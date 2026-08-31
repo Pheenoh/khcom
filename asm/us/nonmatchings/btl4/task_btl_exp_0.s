@@ -9,11 +9,11 @@ task_btl_exp_0: @ 0805CF24
 	adds r4, r0, #0x0
 	ldr r0, _0805CF90 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x00]
 	ldr r1, _0805CF94 @ =0x08B25EF0
 	movs r0, #0xA0
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x04]
 	movs r0, #0x00
 	str r0, [r4, #0x20]
@@ -21,7 +21,7 @@ task_btl_exp_0: @ 0805CF24
 _0805CF42:
 	movs r0, #0x20
 	ldr r1, _0805CF94 @ =0x08B25EF0
-	bl func_080028F8
+	bl AllocObjTiles
 	lsls r2, r5, #0x02
 	adds r1, r4, #0x0
 	adds r1, #0x08

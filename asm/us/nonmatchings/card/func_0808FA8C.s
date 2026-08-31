@@ -16,7 +16,7 @@ func_0808FA8C: @ 0808FA8C
 	add r0, r8
 	ldrh r0, [r0, #0x00]
 	lsls r0, r0, #0x05
-	bl func_08000918
+	bl EwramAlloc
 	ldr r1, _0808FE00 @ =0x000004D4
 	add r1, r8
 	str r0, [r1, #0x00]
@@ -56,7 +56,7 @@ _0808FAC0:
 	adds r0, r5, r0
 	ldrh r0, [r0, #0x18]
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	ldr r2, [sp, #0x000]
 	ldr r1, [r2, #0x00]
 	adds r1, r4, r1
@@ -141,7 +141,7 @@ _0808FB64:
 	adds r0, r5, r0
 	ldrh r0, [r0, #0x18]
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	ldr r7, [sp, #0x004]
 	ldr r1, [r7, #0x00]
 	adds r1, r4, r1
@@ -227,7 +227,7 @@ _0808FC0A:
 	adds r0, r5, r0
 	ldrh r0, [r0, #0x18]
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	ldr r7, [sp, #0x008]
 	ldr r1, [r7, #0x00]
 	adds r1, r4, r1
@@ -313,7 +313,7 @@ _0808FCB0:
 	adds r0, r5, r0
 	ldrh r0, [r0, #0x18]
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	ldr r7, [sp, #0x00C]
 	ldr r1, [r7, #0x00]
 	adds r1, r4, r1
@@ -401,7 +401,7 @@ _0808FD56:
 	adds r0, r5, r0
 	ldrh r0, [r0, #0x18]
 	lsls r0, r0, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	ldr r2, [sp, #0x010]
 	ldr r1, [r2, #0x00]
 	adds r1, r4, r1

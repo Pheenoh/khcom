@@ -47,16 +47,16 @@ s32 func_080C5D80(void);
 void func_080C6878(void);
 void func_080C6EB0(u8* src, u8* dst, s16 size, s16 count);
 
-void func_080043B4(void* src, void* dst, u16 size);
-void func_080009C4(void* p);
-void func_08000F0C(void* a);
-u16 func_08001390(void);
-u16 func_080065A4(void);
+void RequestDma3Copy(void* src, void* dst, u16 size);
+void EwramFree(void* p);
+void TaskPoolDestroy(void* a);
+u16 GetKeysPressed(void);
+u16 GetRandom(void);
 void func_080078A4(void);
 void func_08006E60(void);
 void func_08083D68(void);
 void func_08083DD4(void);
-void func_08117FE4(void* dst, void* src, s32 n);
+void CpuFastSet(void* dst, void* src, s32 n);
 
 extern u8 gUnk_09EF082F[];
 extern u16 gUnk_020397E0[4][2];

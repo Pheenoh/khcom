@@ -32,12 +32,12 @@ func_080C2828: @ 080C2828
 	adds r0, #0x1C
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r5, #0x0
 	adds r0, #0x34
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, _080C2884 @ =0xFFFF9C00
 	str r0, [r6, #0x0C]
 	ldr r0, _080C2888 @ =0xFFFF7400

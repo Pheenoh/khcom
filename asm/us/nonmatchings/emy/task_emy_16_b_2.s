@@ -11,7 +11,7 @@ task_emy_16_b_2: @ 080390BC
 	add sp, #-0x014
 	adds r5, r0, #0x0
 	adds r0, #0x08
-	bl func_08005AFC
+	bl AnimGetGfx
 	mov r8, r0
 	adds r0, r5, #0x0
 	adds r0, #0x9C
@@ -30,7 +30,7 @@ task_emy_16_b_2: @ 080390BC
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08039118 @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	ldr r2, [r0, #0x24]
@@ -63,7 +63,7 @@ _0803912C:
 	adds r1, r2, #0x0
 _08039130:
 	movs r3, #0x01
-	bl func_08002CB4
+	bl AllocObjAffine
 	adds r4, r0, #0x0
 _08039138:
 	add r0, sp, #0x010
@@ -86,7 +86,7 @@ _08039138:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	mov r2, r8
-	bl func_080023E0
+	bl DrawSprite
 _08039164:
 	add sp, #0x014
 	pop {r3}

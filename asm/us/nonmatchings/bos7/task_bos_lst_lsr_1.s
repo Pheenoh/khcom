@@ -59,7 +59,7 @@ _08111764:
 	adds r0, r4, #0x0
 	movs r1, #0x06
 	movs r2, #0x01
-	bl func_08005A00
+	bl AnimChange
 	b _0811185E
 _08111794:
 	movs r1, #0x10
@@ -72,7 +72,7 @@ _08111794:
 	adds r0, r4, #0x0
 	movs r1, #0x04
 	movs r2, #0x00
-	bl func_08005A00
+	bl AnimChange
 	b _0811185E
 _081117AE:
 	ldr r0, _081117F0 @ =0x0000010D
@@ -168,7 +168,7 @@ _08111854:
 	adds r4, #0x44
 _0811185E:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 	add sp, #0x00C
 	pop {r4, r5, r6}

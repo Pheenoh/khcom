@@ -24,11 +24,11 @@ task_wlogo_bks_2: @ 080B7C1C
 	str r0, [sp, #0x00C]
 	movs r0, #0x40
 	movs r1, #0x40
-	bl func_080023E0
+	bl DrawSprite
 _080B7C46:
 	adds r0, r4, #0x0
 	adds r0, #0x3C
-	bl func_08000EE0
+	bl TaskPoolDraw
 	add sp, #0x010
 	pop {r4}
 	pop {r0}

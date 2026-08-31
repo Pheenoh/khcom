@@ -11,7 +11,7 @@ task_hum_vixen_frz_0: @ 08055990
 	adds r6, r1, #0x0
 	ldr r0, _080559D4 @ =0x08F6DCA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r0, _080559D8 @ =0x02039B84
 	ldr r2, [r0, #0x00]
@@ -53,7 +53,7 @@ _080559E8:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _08055A24 @ =0x0813F91C
 	ldr r1, [r5, #0x00]
 	str r1, [sp, #0x000]
@@ -84,7 +84,7 @@ _08055A2C:
 _08055A30:
 	movs r0, #0xFF
 	lsls r0, r0, #0x01
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, [r6, #0x00]
 	str r0, [r5, #0x20]
 	ldr r0, [r6, #0x04]

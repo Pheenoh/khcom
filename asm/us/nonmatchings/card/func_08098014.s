@@ -16,7 +16,7 @@ func_08098014: @ 08098014
 	ldr r2, _0809808C @ =0x0500000D
 	mov r0, sp
 	adds r1, r7, #0x0
-	bl func_08117FE8
+	bl CpuSet
 	mov r1, r8
 	ldrb r0, [r1, #0x00]
 	cmp r0, #0xFF
@@ -36,22 +36,22 @@ func_08098014: @ 08098014
 	adds r5, r5, r0
 	ldr r0, [r4, #0x00]
 	ldrh r1, [r4, #0x18]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x00]
 	ldr r0, [r4, #0x04]
 	ldrh r1, [r4, #0x1A]
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x0C]
 	ldr r0, [r4, #0x08]
 	ldr r0, [r0, #0x00]
 	str r0, [r7, #0x18]
 	ldr r0, [r5, #0x00]
 	ldrh r1, [r5, #0x14]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x04]
 	ldr r0, [r5, #0x04]
 	ldrh r1, [r5, #0x16]
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x10]
 	ldr r0, [r5, #0x08]
 	ldr r0, [r0, #0x00]
@@ -87,11 +87,11 @@ _080980B2:
 	adds r4, r4, r0
 	ldr r0, [r4, #0x0C]
 	ldrh r1, [r4, #0x18]
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x04]
 	ldr r0, [r4, #0x04]
 	ldrh r1, [r4, #0x16]
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x10]
 	ldr r0, [r4, #0x10]
 	ldr r0, [r0, #0x00]
@@ -182,7 +182,7 @@ _08098140:
 	ldr r4, _08098194 @ =0x06010000
 	adds r1, r1, r4
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r1, [r7, #0x08]
 	ldr r0, [r1, #0x00]
 	movs r2, #0xA0
@@ -221,7 +221,7 @@ _08098198:
 	adds r1, r1, r5
 	adds r0, r2, #0x0
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r6, [r7, #0x08]
 	mov r2, r8
 	ldrb r4, [r2, #0x03]
@@ -242,7 +242,7 @@ _08098198:
 	lsls r1, r1, #0x05
 	adds r1, r1, r5
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r1, [r7, #0x08]
 	ldr r0, [r1, #0x00]
 	movs r2, #0xA0
@@ -277,7 +277,7 @@ _08098218:
 	ldr r4, _0809826C @ =0x06010000
 	adds r1, r1, r4
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r1, [r7, #0x08]
 	ldr r0, [r1, #0x00]
 	movs r2, #0xB0
@@ -316,7 +316,7 @@ _08098270:
 	adds r1, r1, r5
 	adds r0, r2, #0x0
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r6, [r7, #0x08]
 	mov r2, r8
 	ldrb r4, [r2, #0x03]
@@ -337,7 +337,7 @@ _08098270:
 	lsls r1, r1, #0x05
 	adds r1, r1, r5
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r1, [r7, #0x08]
 	ldr r0, [r1, #0x00]
 	movs r2, #0xB0
@@ -372,7 +372,7 @@ _080982F0:
 	ldr r4, _08098344 @ =0x06010000
 	adds r1, r1, r4
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r1, [r7, #0x08]
 	ldr r0, [r1, #0x00]
 	movs r2, #0xC0
@@ -411,7 +411,7 @@ _08098348:
 	adds r1, r1, r5
 	adds r0, r2, #0x0
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r6, [r7, #0x08]
 	mov r2, r8
 	ldrb r4, [r2, #0x03]
@@ -432,7 +432,7 @@ _08098348:
 	lsls r1, r1, #0x05
 	adds r1, r1, r5
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r1, [r7, #0x08]
 	ldr r0, [r1, #0x00]
 	movs r2, #0xC0
@@ -444,7 +444,7 @@ _080983BA:
 	adds r1, r1, r5
 _080983C2:
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _0809848C
 	.byte 0x00, 0x00
 _080983CC: .4byte 0x09EF1198
@@ -474,7 +474,7 @@ _080983D8:
 	ldr r2, _08098418 @ =0x06010000
 	adds r1, r1, r2
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _08098484
 _08098410: .4byte 0x09EF1198
 _08098414: .4byte 0x0950C478
@@ -504,7 +504,7 @@ _0809841C:
 	adds r1, r1, r6
 	adds r0, r2, #0x0
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r5, [r7, #0x08]
 	mov r2, r8
 	ldrb r4, [r2, #0x03]
@@ -525,7 +525,7 @@ _0809841C:
 	lsls r1, r1, #0x05
 	adds r1, r1, r6
 	movs r2, #0x80
-	bl func_080043B4
+	bl RequestDma3Copy
 _08098484:
 	mov r1, r8
 	ldrb r0, [r1, #0x03]
@@ -539,7 +539,7 @@ _0809848C:
 	ldr r5, _080984DC @ =0x09618D38
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x14]
 	ldr r0, [r7, #0x04]
 	cmp r0, #0x00
@@ -548,11 +548,11 @@ _0809848C:
 	ldr r0, [r4, #0x10]
 	movs r1, #0xC0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x04]
 	adds r0, r5, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x10]
 	ldr r0, [r4, #0x04]
 	str r0, [r7, #0x1C]

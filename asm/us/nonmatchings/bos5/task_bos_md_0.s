@@ -17,7 +17,7 @@ task_bos_md_0: @ 080FC444
 	adds r0, #0x40
 	ldr r1, _080FC5B8 @ =0x09EF8EC4
 	ldr r2, _080FC5BC @ =0x099920E8
-	bl func_08000E14
+	bl TaskCreate
 	ldr r3, [r4, #0x00]
 	ldr r0, [r3, #0x68]
 	ldr r1, [r3, #0x6C]
@@ -115,7 +115,7 @@ _080FC4D6:
 	ldr r0, _080FC5C4 @ =0x099D42FC
 	movs r1, #0x95
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	movs r3, #0xC8
 	lsls r3, r3, #0x01
 	adds r1, r7, r3
@@ -235,14 +235,14 @@ _080FC5E8:
 	lsls r1, r1, #0x13
 	adds r0, r4, #0x0
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 	movs r0, #0x00
 	movs r1, #0x01
 	bl func_0801C298
 	str r4, [r7, #0x28]
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x20]
 	ldrb r0, [r0, #0x06]
 	adds r0, #0x10
@@ -252,7 +252,7 @@ _080FC5E8:
 	bl func_0801C298
 	ldr r0, _080FC6CC @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x24]
 	ldrb r0, [r0, #0x06]
 	adds r0, #0x10
@@ -262,13 +262,13 @@ _080FC5E8:
 	bl func_0801C298
 	mov r0, r10
 	movs r1, #0x06
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [sp, #0x004]
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, [sp, #0x008]
 	movs r1, #0x08
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, _080FC6D0 @ =0x02039B84
 	ldr r2, [r0, #0x00]
 	ldr r1, [r2, #0x00]

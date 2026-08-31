@@ -14,7 +14,7 @@ task_frd_goofy_0: @ 08046638
 	adds r7, r6, #0x0
 	adds r7, #0x20
 	movs r0, #0xAE
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r0, r8
 	ldrb r1, [r0, #0x02]
 	cmp r1, #0x00
@@ -151,7 +151,7 @@ _08046752:
 	str r0, [r7, #0x10]
 	ldr r0, _080467B0 @ =0x08F68384
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x1C]
 	movs r2, #0x98
 	lsls r2, r2, #0x01
@@ -159,7 +159,7 @@ _08046752:
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	ldr r0, _080467B4 @ =0x0813EBFC
 	ldr r1, [r6, #0x18]
 	str r1, [sp, #0x000]
@@ -169,11 +169,11 @@ _08046752:
 	bl func_08019068
 	adds r0, r6, #0x0
 	movs r1, #0x01
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r1, _080467B8 @ =0x09EDAE88
 	adds r0, r6, #0x0
 	adds r2, r7, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x004
 	pop {r3}
 	mov r8, r3

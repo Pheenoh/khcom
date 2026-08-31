@@ -40,9 +40,9 @@ task_poo_wagonwheel_2: @ 080D07F0
 	cmp r0, #0x00
 	beq _080D08D8
 	ldr r0, [r5, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r5, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	movs r0, #0x00
 	str r0, [r5, #0x04]
 	ldrh r0, [r5, #0x36]
@@ -63,11 +63,11 @@ _080D0864:
 	bne _080D087E
 	ldrh r0, [r5, #0x34]
 	ldr r1, _080D0898 @ =0x09758C94
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080D089C @ =0x09849DD8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 _080D087E:
 	movs r0, #0x06
@@ -110,7 +110,7 @@ _080D08B4:
 	ldr r4, _080D08E0 @ =0x02034E28
 	ldrh r4, [r4, #0x00]
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080D08D8:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

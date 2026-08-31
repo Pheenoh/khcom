@@ -39,7 +39,7 @@ _080E5E18:
 	str r0, [r1, #0x70]
 _080E5E30:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r1, r5, #0x0
 	adds r1, #0xC4
 	str r0, [r1, #0x00]

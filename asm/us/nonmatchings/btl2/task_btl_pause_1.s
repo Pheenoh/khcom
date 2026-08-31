@@ -7,7 +7,7 @@
 task_btl_pause_1: @ 08030254
 	push {r4, r5, r6, lr}
 	adds r5, r0, #0x0
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x08
 	ands r1, r0
 	cmp r1, #0x00

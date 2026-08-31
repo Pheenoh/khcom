@@ -11,9 +11,9 @@ task_poo_trapballoon_3: @ 080CC92C
 	cmp r0, #0x00
 	beq _080CC952
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x34
 	bl func_08012304
@@ -23,7 +23,7 @@ task_poo_trapballoon_3: @ 080CC92C
 _080CC952:
 	adds r0, r4, #0x0
 	adds r0, #0xB0
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

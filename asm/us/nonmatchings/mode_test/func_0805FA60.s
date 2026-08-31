@@ -18,7 +18,7 @@ func_0805FA60: @ 0805FA60
 	adds r1, r1, r0
 	adds r0, r2, #0x0
 	movs r2, #0x20
-	bl func_08005BE8
+	bl LoadPalette
 _0805FA7E:
 	ldr r0, _0805FA88 @ =0x02034A18
 	strb r4, [r0, #0x00]

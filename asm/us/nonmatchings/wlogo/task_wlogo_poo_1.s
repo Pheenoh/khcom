@@ -55,19 +55,19 @@ _080B6B00:
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	movs r2, #0x00
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	movs r2, #0x01
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	movs r2, #0x02
-	bl func_08000E14
+	bl TaskCreate
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	movs r2, #0x03
-	bl func_08000E14
+	bl TaskCreate
 	ldrb r0, [r6, #0x00]
 	adds r0, #0x01
 	strb r0, [r6, #0x00]
@@ -134,9 +134,9 @@ _080B6BC0:
 _080B6BD0:
 	ldr r4, _080B6BE8 @ =0x02034C98
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 	movs r0, #0x01
 _080B6BE0:
 	pop {r4, r5, r6}

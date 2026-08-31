@@ -88,7 +88,7 @@ _0810C534:
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r7, #0x0
-	bl func_08005A00
+	bl AnimChange
 	b _0810C564
 	.byte 0x00, 0x00
 _0810C548: .4byte 0x09C51CBC
@@ -100,7 +100,7 @@ _0810C554:
 	adds r0, r4, #0x0
 	adds r1, r5, #0x0
 	adds r2, r7, #0x0
-	bl func_080059A4
+	bl AnimStart
 _0810C564:
 	mov r1, r8
 	strh r1, [r6, #0x1E]

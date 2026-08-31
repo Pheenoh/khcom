@@ -45,7 +45,7 @@ _080E56CC:
 	adds r0, #0x78
 	ldr r1, _080E5744 @ =0x09EF6DBC
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	adds r4, #0x0C
 	adds r5, #0x18
 	ldrb r0, [r4, #0x00]
@@ -105,7 +105,7 @@ _080E575A:
 	adds r0, #0x78
 	ldr r1, [r2, #0x24]
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	adds r5, #0x18
 	bl func_080DF750
 	lsls r0, r0, #0x18
@@ -157,7 +157,7 @@ _080E57C6:
 	adds r0, #0x78
 	ldr r1, [r2, #0x24]
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 _080E57EE:
 	add sp, #0x010
 	pop {r4, r5, r6, r7}

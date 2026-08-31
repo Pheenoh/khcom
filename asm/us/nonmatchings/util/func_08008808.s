@@ -10,11 +10,11 @@ func_08008808: @ 08008808
 	bl func_08000AE4
 	ldr r5, _08008840 @ =0x0203407C
 	movs r0, #0x1C
-	bl func_08000928
+	bl IwramAlloc
 	str r0, [r5, #0x00]
 	ldr r4, _08008844 @ =0x02034080
 	movs r0, #0x1C
-	bl func_08000928
+	bl IwramAlloc
 	str r0, [r4, #0x00]
 	ldr r0, [r5, #0x00]
 	bl func_08008348

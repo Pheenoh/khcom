@@ -24,7 +24,7 @@ _080E5530: .4byte 0x0984D1F4
 _080E5534:
 	ldr r5, _080E555C @ =0x0203C7B0
 	ldr r4, _080E5560 @ =0x0984D1F4
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x0F

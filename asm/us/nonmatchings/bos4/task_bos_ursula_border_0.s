@@ -10,11 +10,11 @@ task_bos_ursula_border_0: @ 080DC8D8
 	ldr r0, _080DC908 @ =0x0979D0B6
 	movs r1, #0x80
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	ldr r0, _080DC90C @ =0x0984B0D8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x04]
 	ldrb r0, [r0, #0x06]
 	adds r0, #0x10

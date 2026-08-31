@@ -19,22 +19,22 @@ task_sroll_b_logo_0: @ 08114C24
 	ldr r0, _08114C88 @ =0x09C5CC7C
 	movs r1, #0xBC
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r6, #0x10]
 	ldr r0, _08114C8C @ =0x09D6BE34
 	movs r1, #0x40
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x14]
 	adds r5, r6, #0x0
 	adds r5, #0x18
 	ldr r1, _08114C90 @ =0x09EFAF6C
 	ldr r2, _08114C94 @ =0x09EFAF60
 	adds r0, r5, #0x0
-	bl func_08005968
+	bl AnimInit
 	ldrh r1, [r4, #0x10]
 	adds r0, r5, #0x0
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r4, #0x00
 _08114C6A:
 	ldr r0, [r6, #0x14]

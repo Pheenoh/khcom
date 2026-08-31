@@ -26,11 +26,11 @@ task_poo_sora_0: @ 080CABFC
 	movs r0, #0xA0
 	lsls r0, r0, #0x04
 	movs r1, #0x00
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r6, #0x00]
 	ldr r0, _080CACF8 @ =0x08F683A4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r6, #0x04]
 	movs r1, #0x00
 	movs r4, #0x00
@@ -65,13 +65,13 @@ task_poo_sora_0: @ 080CABFC
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_08005968
+	bl AnimInit
 	adds r0, r6, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
 	bl func_080CAA50
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r6, #0x20]
 	adds r1, r6, #0x0
 	adds r1, #0xA8
@@ -80,15 +80,15 @@ task_poo_sora_0: @ 080CABFC
 	adds r6, #0x24
 	adds r0, r6, #0x0
 	movs r1, #0x02
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r4, _080CAD00 @ =0x02039BA0
 	movs r0, #0xE8
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	ldr r1, _080CAD04 @ =0x09EDAF90
 	adds r0, r6, #0x0
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	mov r0, r9
 	movs r1, #0x01
 	adds r2, r5, #0x0

@@ -12,11 +12,11 @@ task_title_logo_3: @ 080D651C
 	movs r6, #0x05
 _080D6526:
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r5, #0x4
 	adds r0, r0, r7
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r4, #0x0C
 	adds r7, #0x0C
 	subs r6, #0x01

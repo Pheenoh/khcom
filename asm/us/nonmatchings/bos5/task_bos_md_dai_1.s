@@ -59,7 +59,7 @@ _080FD506:
 	str r0, [r5, #0x0C]
 	movs r0, #0xAA
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r5, #0x0
 	adds r0, #0x7C
 	mov r1, r9
@@ -94,7 +94,7 @@ _080FD552:
 	str r0, [r5, #0x0C]
 	movs r0, #0xAA
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r5, #0x0
 	adds r0, #0x7C
 	movs r1, #0x02
@@ -129,7 +129,7 @@ _080FD590:
 	bl func_08012658
 	movs r0, #0xAA
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	adds r0, r5, #0x0
 	adds r0, #0x7C
 	movs r3, #0x03
@@ -168,7 +168,7 @@ _080FD5E4:
 	lsls r0, r0, #0x09
 	negs r0, r0
 	str r0, [sp, #0x008]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -190,7 +190,7 @@ _080FD636:
 	ldr r0, [r0, #0x00]
 	ldr r1, _080FD674 @ =0x09EF8F0C
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	lsls r0, r6, #0x10
 	movs r1, #0x80
 	lsls r1, r1, #0x09

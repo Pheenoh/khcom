@@ -14,7 +14,7 @@ task_sroll_c_char_2: @ 08115244
 	movs r6, #0x04
 _08115252:
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	adds r2, r0, #0x0
 	ldr r3, [r5, #0x18]
 	ldr r0, [r5, #0x1C]
@@ -27,7 +27,7 @@ _08115252:
 	str r0, [sp, #0x00C]
 	movs r0, #0x78
 	movs r1, #0x50
-	bl func_080023E0
+	bl DrawSprite
 	adds r4, #0x18
 	subs r6, #0x01
 	cmp r6, #0x00

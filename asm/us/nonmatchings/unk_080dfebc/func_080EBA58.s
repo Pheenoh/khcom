@@ -35,7 +35,7 @@ func_080EBA58: @ 080EBA58
 	ldr r0, [r0, #0x38]
 	ldrh r0, [r0, #0x06]
 	ldr r1, _080EBAA8 @ =0x09991C04
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	b _080EBAD6
 _080EBAA0: .4byte 0x02039D6C
 _080EBAA4: .4byte 0x02034FE0
@@ -45,7 +45,7 @@ _080EBAAC:
 	ldr r0, [r0, #0x38]
 	ldrh r0, [r0, #0x06]
 	ldr r1, _080EBABC @ =0x09991C44
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	b _080EBAD6
 	.byte 0x00, 0x00
 _080EBABC: .4byte 0x09991C44

@@ -10,12 +10,12 @@ task_wlogo_nvl_obj_1: @ 080B5958
 	adds r4, r5, #0x0
 	adds r4, #0x0C
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080B5978
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x08]
 	movs r0, #0x01
 	b _080B597A

@@ -76,7 +76,7 @@ _080069E8:
 	ldrh r1, [r4, #0x00]
 	ldr r5, _08006AA4 @ =0x02034052
 	ldrh r2, [r5, #0x00]
-	bl func_080054EC
+	bl SetBgScroll
 	ldrh r0, [r4, #0x00]
 	adds r0, #0xFF
 	lsls r0, r0, #0x10
@@ -142,13 +142,13 @@ _08006A1C:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	ldr r0, [r7, #0x00]
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	adds r0, r6, #0x0
 	adds r2, r4, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	ldr r0, [r7, #0x00]
-	bl func_08005130
+	bl GetBgCharBase
 	adds r0, r0, r4
 	lsrs r1, r5, #0x10
 	bl func_0800443C
@@ -165,12 +165,12 @@ _08006AB8: .4byte 0x0203404C
 _08006ABC: .4byte 0x02034040
 _08006AC0:
 	ldr r0, [r7, #0x00]
-	bl func_08005130
+	bl GetBgCharBase
 	adds r1, r0, #0x0
 	mov r3, r8
 	ldrh r2, [r3, #0x00]
 	adds r0, r6, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 	b _08006ADC
 _08006AD4:
 	ldr r0, _08006B14 @ =0x02034048

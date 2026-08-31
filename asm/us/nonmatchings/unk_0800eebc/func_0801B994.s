@@ -114,7 +114,7 @@ _0801BAD4:
 	adds r1, r4, #0x0
 	bl __divsi3
 	adds r4, r0, #0x0
-	bl func_080065A4
+	bl GetRandom
 	movs r6, #0x00
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10

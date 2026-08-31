@@ -156,7 +156,7 @@ _08062EAC:
 _08062ED8:
 	ldr r0, _08062F14 @ =0x08F69BE4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r2, _08062F04 @ =0x02034A90
 	ldrb r4, [r2, #0x00]
 	ldr r1, _08062F08 @ =0x02034A80

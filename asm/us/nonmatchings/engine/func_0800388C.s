@@ -27,7 +27,7 @@ func_0800388C: @ 0800388C
 	adds r1, r1, r0
 	adds r0, r2, #0x0
 	adds r2, r5, #0x0
-	bl func_080043B4
+	bl RequestDma3Copy
 _080038BC:
 	pop {r4, r5}
 	pop {r0}

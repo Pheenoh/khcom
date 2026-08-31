@@ -15,7 +15,7 @@ task_allmap_pusha_2: @ 080D4C88
 	beq _080D4CA4
 	adds r0, r4, #0x0
 	adds r0, #0x14
-	bl func_08000EE0
+	bl TaskPoolDraw
 	b _080D4CE8
 _080D4CA4:
 	ldr r2, [r4, #0x0C]
@@ -50,7 +50,7 @@ _080D4CA4:
 	str r5, [sp, #0x008]
 	movs r4, #0x30
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080D4CE8:
 	add sp, #0x010
 	pop {r4, r5}

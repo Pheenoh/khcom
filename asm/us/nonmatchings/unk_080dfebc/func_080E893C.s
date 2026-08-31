@@ -17,7 +17,7 @@ func_080E893C: @ 080E893C
 	lsrs r6, r0, #0x10
 	lsls r1, r1, #0x10
 	lsrs r4, r1, #0x10
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x64

@@ -29,13 +29,13 @@ task_btl_badstatus_2: @ 08040BC8
 	beq _08040C04
 	adds r0, r6, #0x0
 	adds r0, #0x0C
-	bl func_08005AFC
+	bl AnimGetGfx
 	b _08040C0C
 _08040C00: .4byte 0x02039B84
 _08040C04:
 	adds r0, r6, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 _08040C0C:
 	adds r7, r0, #0x0
 	mov r4, sp
@@ -52,7 +52,7 @@ _08040C0C:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -75,7 +75,7 @@ _08040C0C:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	adds r2, r7, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _08040C5E:
 	add sp, #0x014
 	pop {r3}

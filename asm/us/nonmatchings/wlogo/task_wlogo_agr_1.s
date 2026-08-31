@@ -79,9 +79,9 @@ _080B6040: .4byte 0x080B6044
 _080B6392:
 	ldr r4, _080B63B0 @ =0x02034C80
 	adds r0, r4, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	adds r0, r4, #0x0
-	bl func_08000EE0
+	bl TaskPoolDraw
 	movs r0, #0x01
 	add sp, #0x024
 	pop {r3, r4}

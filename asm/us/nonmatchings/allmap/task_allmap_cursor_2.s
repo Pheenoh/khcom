@@ -46,7 +46,7 @@ _080D3CEC:
 	str r4, [sp, #0x008]
 	movs r4, #0x31
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080D3D16:
 	add sp, #0x010
 	pop {r4}

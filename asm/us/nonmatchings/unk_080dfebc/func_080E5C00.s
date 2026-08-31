@@ -94,7 +94,7 @@ _080E5C90:
 	adds r0, #0xB4
 	ldr r1, [r7, #0x10]
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 _080E5CC0:
 	pop {r4, r5, r6, r7}
 	pop {r0}

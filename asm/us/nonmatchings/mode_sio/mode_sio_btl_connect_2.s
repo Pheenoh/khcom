@@ -12,13 +12,13 @@ mode_sio_btl_connect_2: @ 080AEE24
 	lsls r1, r1, #0x02
 	adds r0, r0, r1
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	ldr r0, [r4, #0x00]
 	adds r0, #0x08
 	movs r1, #0x5A
 	bl func_08065AE0
 	ldr r0, [r4, #0x00]
-	bl func_080009C4
+	bl EwramFree
 	pop {r4}
 	pop {r0}
 	bx r0

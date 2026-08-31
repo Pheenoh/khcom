@@ -156,7 +156,7 @@ _0803B5EC:
 	strh r0, [r5, #0x00]
 	movs r0, #0x90
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803B62C:
 	movs r1, #0xC2
 	lsls r1, r1, #0x01
@@ -221,7 +221,7 @@ _0803B74E:
 	beq _0803B76C
 _0803B766:
 	ldr r0, _0803B784 @ =0x00000212
-	bl func_0811FE70
+	bl m4aSongNumStart
 _0803B76C:
 	mov r0, r8
 	bl _0800CDF0

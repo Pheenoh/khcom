@@ -6,7 +6,7 @@
 	.type mode_chkbtl_1, %function
 mode_chkbtl_1: @ 0800A774
 	push {r4, r5, r6, lr}
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x40
 	ands r1, r0
 	cmp r1, #0x00
@@ -17,7 +17,7 @@ mode_chkbtl_1: @ 0800A774
 	subs r0, #0x01
 	strb r0, [r1, #0x00]
 _0800A78C:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -28,7 +28,7 @@ _0800A78C:
 	adds r0, #0x01
 	strb r0, [r1, #0x00]
 _0800A7A2:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0xC0
 	ands r1, r0
 	cmp r1, #0x00
@@ -111,7 +111,7 @@ _0800A984:
 	movs r0, #0x0C
 	movs r2, #0x02
 	bl func_0805FCB0
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x30
 	ands r1, r0
 	cmp r1, #0x00
@@ -207,7 +207,7 @@ _0800AA66:
 	movs r2, #0x02
 	bl func_0805FC04
 _0800AA72:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r5, #0x04
 	adds r1, r5, #0x0
 	ands r1, r0
@@ -220,14 +220,14 @@ _0800AA72:
 	.byte 0x00, 0x00
 _0800AA8C: .4byte 0x09EE2704
 _0800AA90:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x09
 	ands r1, r0
 	cmp r1, #0x00
 	beq _0800AB54
 	ldr r0, _0800AAF0 @ =0x03007480
 	ldr r0, [r0, #0x00]
-	bl func_08006578
+	bl SeedRandom
 	ldr r4, _0800AAF4 @ =0x02039BB0
 	ldr r1, _0800AAF8 @ =0x08128234
 	ldr r0, _0800AAFC @ =0x09ECEB50
@@ -255,7 +255,7 @@ _0800AA90:
 	adds r0, r0, r3
 	ldrb r0, [r0, #0x00]
 	strb r0, [r4, #0x0C]
-	bl func_08001384
+	bl GetKeysHeld
 	movs r1, #0x80
 	lsls r1, r1, #0x02
 	ands r1, r0
@@ -308,7 +308,7 @@ _0800AB48: .4byte 0x09ECEB50
 _0800AB4C: .4byte 0x09ECEB40
 _0800AB50: .4byte 0x08126630
 _0800AB54:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00

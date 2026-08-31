@@ -19,14 +19,14 @@ task_hum_vixen_3: @ 08055464
 	lsls r1, r1, #0x01
 	adds r0, r0, r1
 	ldr r0, [r0, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 _08055484:
 	adds r0, r4, #0x0
 	bl func_0800E380
 	movs r1, #0xD2
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

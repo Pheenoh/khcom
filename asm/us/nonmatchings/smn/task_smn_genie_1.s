@@ -198,11 +198,11 @@ _08044C88:
 	beq _08044CAE
 	adds r0, r6, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 _08044CAE:
 	adds r0, r6, #0x0
 	adds r0, #0x20
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _08044CB8:
 	add sp, #0x014

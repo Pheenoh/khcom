@@ -43,7 +43,7 @@ func_0801CD98: @ 0801CD98
 	ldr r1, _0801CDFC @ =0x09EDADC8
 	mov r0, r8
 	mov r2, sp
-	bl func_08000E14
+	bl TaskCreate
 	add sp, #0x008
 	pop {r3}
 	mov r8, r3

@@ -159,7 +159,7 @@ _0804D268:
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0804D2A6
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x01

@@ -35,7 +35,7 @@ _080C84F2:
 	ldr r1, _080C855C @ =0x09EF4910
 	adds r2, r4, #0x0
 	adds r2, #0x28
-	bl func_08000E14
+	bl TaskCreate
 	str r0, [r6, #0x00]
 _080C8522:
 	cmp r5, #0x1E
@@ -62,7 +62,7 @@ _080C8542:
 	cmp r0, #0x01
 	bhi _080C8568
 	ldr r0, _080C8564 @ =0x00000149
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080C859C
 	.byte 0x00, 0x00
 _080C8554: .4byte 0x02034DAC
@@ -75,7 +75,7 @@ _080C8568:
 	bne _080C8576
 	movs r0, #0xA4
 	lsls r0, r0, #0x01
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080C859C
 _080C8576:
 	cmp r5, #0x27

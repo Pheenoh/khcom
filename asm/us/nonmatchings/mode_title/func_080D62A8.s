@@ -10,7 +10,7 @@ func_080D62A8: @ 080D62A8
 	ldr r0, _080D62E0 @ =0x0976E9F4
 	movs r1, #0x90
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	ldr r0, _080D62E4 @ =0x09EF659C
 	ldr r0, [r0, #0x00]
@@ -24,7 +24,7 @@ func_080D62A8: @ 080D62A8
 	beq _080D62FC
 	ldr r0, _080D62EC @ =0x09776076
 	ldr r1, _080D62F0 @ =0x000043C0
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x0C]
 	ldr r0, _080D62F4 @ =0x09EF669C
 	ldr r0, [r0, #0x00]
@@ -41,7 +41,7 @@ _080D62F8: .4byte 0x0984AA18
 _080D62FC:
 	ldr r0, _080D63AC @ =0x0976EC54
 	movs r1, #0xE0
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x0C]
 	ldr r0, _080D63B0 @ =0x09EF65A4
 	ldr r0, [r0, #0x00]
@@ -49,19 +49,19 @@ _080D62FC:
 	ldr r0, _080D63B4 @ =0x0984A6D8
 _080D630E:
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x10]
 	ldr r0, _080D63B8 @ =0x0976ED5A
 	movs r1, #0xE0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x18]
 	ldr r0, _080D63BC @ =0x09EF65AC
 	ldr r0, [r0, #0x00]
 	str r0, [r5, #0x20]
 	ldr r0, _080D63C0 @ =0x0976F0F6
 	movs r1, #0xC0
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x24]
 	ldr r0, _080D63C4 @ =0x09EF65B4
 	ldr r0, [r0, #0x00]
@@ -69,7 +69,7 @@ _080D630E:
 	ldr r0, _080D63C8 @ =0x0976F1F0
 	movs r1, #0xAC
 	lsls r1, r1, #0x04
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x30]
 	ldr r0, _080D63CC @ =0x09EF65BC
 	ldr r0, [r0, #0x00]
@@ -77,31 +77,31 @@ _080D630E:
 	ldr r0, _080D63D0 @ =0x0976FD96
 	movs r1, #0x8A
 	lsls r1, r1, #0x05
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x3C]
 	ldr r0, _080D63D4 @ =0x09EF65C4
 	ldr r0, [r0, #0x00]
 	str r0, [r5, #0x44]
 	ldr r0, _080D63D8 @ =0x0984A6B8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r4, _080D63DC @ =0x0984A6F8
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x1C]
 	adds r0, r4, #0x0
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x28]
 	ldr r0, _080D63E0 @ =0x0984A718
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x34]
 	ldr r0, _080D63E4 @ =0x0984A738
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x40]
 	movs r2, #0x00
 	str r2, [r5, #0x4C]

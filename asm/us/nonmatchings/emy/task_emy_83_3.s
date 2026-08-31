@@ -10,7 +10,7 @@ task_emy_83_3: @ 0803E904
 	movs r1, #0xC4
 	lsls r1, r1, #0x01
 	adds r0, r4, r1
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	adds r0, r4, #0x0
 	bl func_0800E0D0
 	pop {r4}

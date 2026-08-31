@@ -70,7 +70,7 @@ _080D4342:
 	str r0, [r1, #0x00]
 	ldr r0, _080D43E4 @ =0x09618D38
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	adds r6, r7, #0x0
 	adds r6, #0x28
 	adds r6, r6, r5
@@ -83,14 +83,14 @@ _080D4342:
 	ldr r0, _080D43E8 @ =0x0905E3BA
 	movs r1, #0xC0
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	adds r1, r7, #0x0
 	adds r1, #0x20
 	adds r1, r1, r5
 	str r0, [r1, #0x00]
 	ldr r0, _080D43E4 @ =0x09618D38
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	adds r4, r7, #0x0
 	adds r4, #0x2C
 	adds r4, r4, r5
@@ -161,11 +161,11 @@ _080D4410:
 	beq _080D447A
 	ldr r0, _080D448C @ =0x0976DD62
 	movs r1, #0x80
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x18]
 	ldr r0, _080D4490 @ =0x0984A1D8
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	adds r1, r7, #0x0
 	adds r1, #0xEC
 	str r0, [r1, #0x00]
@@ -178,7 +178,7 @@ _080D4410:
 	ldr r0, _080D4494 @ =0x0976B340
 	movs r1, #0x90
 	lsls r1, r1, #0x06
-	bl func_080026A4
+	bl LoadObjTiles
 	adds r1, r7, #0x0
 	adds r1, #0xF0
 	str r0, [r1, #0x00]

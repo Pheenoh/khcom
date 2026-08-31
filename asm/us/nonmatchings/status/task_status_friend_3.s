@@ -15,12 +15,12 @@ task_status_friend_3: @ 080D8B54
 _080D8B62:
 	lsls r4, r5, #0x02
 	ldm r7!, {r0}
-	bl func_080028C0
+	bl ReleaseObjTiles
 	adds r0, r6, #0x0
 	adds r0, #0x0C
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r5, #0x01
 	ldrh r0, [r6, #0x24]
 	cmp r5, r0

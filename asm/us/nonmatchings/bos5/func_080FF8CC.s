@@ -35,7 +35,7 @@ func_080FF8CC: @ 080FF8CC
 	ldr r1, _080FFB90 @ =0x00000BB8
 	str r1, [sp, #0x00C]
 	movs r1, #0x00
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, _080FFB94 @ =0x020354C8
 	mov r10, r0
 	ldr r1, [r0, #0x00]
@@ -52,7 +52,7 @@ func_080FF8CC: @ 080FF8CC
 	mov r9, r0
 	str r0, [sp, #0x00C]
 	movs r0, #0x70
-	bl func_080023E0
+	bl DrawSprite
 	mov r2, r10
 	ldr r1, [r2, #0x04]
 	lsls r1, r1, #0x08
@@ -67,7 +67,7 @@ func_080FF8CC: @ 080FF8CC
 	mov r4, r9
 	str r4, [sp, #0x00C]
 	movs r0, #0x70
-	bl func_080023E0
+	bl DrawSprite
 _080FF950:
 	movs r0, #0x80
 	lsls r0, r0, #0x03
@@ -87,7 +87,7 @@ _080FF968:
 	cmp r0, #0x02
 	bne _080FFA32
 	ldr r0, _080FFBA8 @ =0x02035130
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	ldr r6, _080FFBAC @ =0x09EF8FAC
 	ldr r5, _080FFBB0 @ =0x020350F8
@@ -123,7 +123,7 @@ _080FF968:
 	str r4, [sp, #0x008]
 	ldr r4, _080FFBBC @ =0x000007DD
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, _080FFBC0 @ =0x020354D8
 	mov r8, r0
 	movs r2, #0x00
@@ -155,7 +155,7 @@ _080FF968:
 	adds r0, r4, #0x0
 	bl func_0805F1C0
 	ldr r0, _080FFBCC @ =0x02035150
-	bl func_08005A64
+	bl AnimUpdate
 	adds r2, r0, #0x0
 	mov r1, r8
 	ldr r0, [r1, #0x00]
@@ -176,7 +176,7 @@ _080FF968:
 	movs r4, #0xFA
 	lsls r4, r4, #0x03
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080FFA32:
 	movs r5, #0x00
 	movs r7, #0x00
@@ -222,7 +222,7 @@ _080FFA36:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	adds r2, r6, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080FFA8C:
 	adds r7, #0x14
 	adds r5, #0x01
@@ -250,7 +250,7 @@ _080FFA8C:
 	str r0, [sp, #0x00C]
 	movs r0, #0x70
 	movs r1, #0x20
-	bl func_080023E0
+	bl DrawSprite
 _080FFAC4:
 	ldr r1, _080FFBE8 @ =0x020352B8
 	ldrb r0, [r1, #0x00]
@@ -313,7 +313,7 @@ _080FFB0A:
 	str r4, [sp, #0x008]
 	str r7, [sp, #0x00C]
 	movs r0, #0x2F
-	bl func_080023E0
+	bl DrawSprite
 	mov r1, r9
 	ldrb r0, [r1, #0x00]
 	adds r0, #0x40
@@ -333,7 +333,7 @@ _080FFB0A:
 	str r4, [sp, #0x008]
 	str r4, [sp, #0x00C]
 	movs r0, #0x2F
-	bl func_080023E0
+	bl DrawSprite
 _080FFB6C:
 	add sp, #0x010
 	pop {r3, r4, r5}

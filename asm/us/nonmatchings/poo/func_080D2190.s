@@ -50,7 +50,7 @@ _080D21E0:
 _080D21E2:
 	adds r0, r4, #0x0
 	adds r0, #0x08
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x04]
 	pop {r4, r5}
 	pop {r0}

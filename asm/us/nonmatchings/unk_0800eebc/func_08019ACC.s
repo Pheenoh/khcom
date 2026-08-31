@@ -61,7 +61,7 @@ _08019B34: .4byte 0x02039BB0
 _08019B38: .4byte 0x02039B84
 _08019B3C:
 	ldr r5, _08019B60 @ =0x0000FFFF
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	movs r1, #0xC0
 	lsls r1, r1, #0x0A
@@ -94,7 +94,7 @@ _08019BE0:
 	negs r1, r1
 	cmp r0, r1
 	bne _08019C28
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x01

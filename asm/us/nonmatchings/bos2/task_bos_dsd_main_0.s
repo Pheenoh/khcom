@@ -18,10 +18,10 @@ task_bos_dsd_main_0: @ 080C217C
 	str r5, [r7, #0x00]
 	movs r0, #0x01
 	movs r1, #0x01
-	bl func_080055C8
+	bl SetBgPriority
 	movs r0, #0x00
 	movs r1, #0x03
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r1, [r7, #0x00]
 	movs r0, #0xCD
 	lsls r0, r0, #0x02
@@ -63,49 +63,49 @@ task_bos_dsd_main_0: @ 080C217C
 	mov r8, r2
 	adds r0, r6, #0x0
 	mov r1, r8
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x0C]
 	adds r4, r7, #0x0
 	adds r4, #0x1C
 	ldr r1, _080C2364 @ =0x09EF3C34
 	ldr r2, _080C2368 @ =0x09EF3C20
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x14]
 	adds r0, r6, #0x0
 	mov r1, r8
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r7, #0x10]
 	adds r4, #0x18
 	ldr r1, _080C236C @ =0x09EF3C4C
 	ldr r2, _080C2370 @ =0x09EF3C38
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005AFC
+	bl AnimGetGfx
 	str r0, [r7, #0x18]
 	ldr r0, _080C2374 @ =0x096FB8C4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x4C]
 	ldr r0, _080C2378 @ =0x08F69BC4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r7, #0x50]
 	movs r0, #0x80
 	lsls r0, r0, #0x04
 	ldr r1, _080C237C @ =0x096A2F04
-	bl func_080028F8
+	bl AllocObjTiles
 	ldr r1, [r7, #0x00]
 	movs r2, #0xD8
 	lsls r2, r2, #0x02
@@ -113,7 +113,7 @@ task_bos_dsd_main_0: @ 080C217C
 	str r0, [r1, #0x00]
 	ldr r0, _080C2380 @ =0x096FB8E4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r7, #0x00]
 	movs r2, #0xD9
 	lsls r2, r2, #0x02
@@ -122,7 +122,7 @@ task_bos_dsd_main_0: @ 080C217C
 	ldr r0, _080C2384 @ =0x096869A4
 	movs r1, #0xE8
 	lsls r1, r1, #0x03
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, [r7, #0x00]
 	movs r2, #0xDA
 	lsls r2, r2, #0x02
@@ -130,7 +130,7 @@ task_bos_dsd_main_0: @ 080C217C
 	str r0, [r1, #0x00]
 	ldr r0, _080C2388 @ =0x096FB864
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r7, #0x00]
 	movs r2, #0xDB
 	lsls r2, r2, #0x02
@@ -138,7 +138,7 @@ task_bos_dsd_main_0: @ 080C217C
 	str r0, [r1, #0x00]
 	ldr r0, _080C238C @ =0x096FB884
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r7, #0x00]
 	movs r2, #0xDC
 	lsls r2, r2, #0x02
@@ -147,7 +147,7 @@ task_bos_dsd_main_0: @ 080C217C
 	ldr r0, _080C2390 @ =0x08B22CE4
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, [r7, #0x00]
 	movs r2, #0xDD
 	lsls r2, r2, #0x02
@@ -155,7 +155,7 @@ task_bos_dsd_main_0: @ 080C217C
 	str r0, [r1, #0x00]
 	ldr r0, _080C2394 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	ldr r1, [r7, #0x00]
 	movs r2, #0xDE
 	lsls r2, r2, #0x02
@@ -207,7 +207,7 @@ task_bos_dsd_main_0: @ 080C217C
 	adds r0, r7, #0x0
 	adds r0, #0x58
 	movs r1, #0x0A
-	bl func_08000E64
+	bl TaskPoolInit
 	adds r0, r7, #0x0
 	bl func_080C2828
 	pop {r3, r4, r5}

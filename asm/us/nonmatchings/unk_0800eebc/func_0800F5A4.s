@@ -48,7 +48,7 @@ _0800F5E2:
 	ble _0800F5F6
 	b _0800F838
 _0800F5F6:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0
@@ -79,7 +79,7 @@ _0800F60C:
 	bgt _0800F63C
 	movs r4, #0x01
 _0800F63C:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0
@@ -107,7 +107,7 @@ _0800F668:
 	bgt _0800F678
 	b _0800F838
 _0800F678:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x14
@@ -124,7 +124,7 @@ _0800F690:
 	lsrs r4, r0, #0x18
 	cmp r4, #0x03
 	bne _0800F710
-	bl func_080065A4
+	bl GetRandom
 	adds r1, r4, #0x0
 	ands r1, r0
 	cmp r1, #0x00
@@ -198,7 +198,7 @@ _0800F710:
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x00
 	bne _0800F754
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x3C
@@ -217,7 +217,7 @@ _0800F750: .4byte 0x02039B84
 _0800F754:
 	cmp r6, #0x02
 	bls _0800F76E
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x06
@@ -227,7 +227,7 @@ _0800F754:
 	bne _0800F7C4
 	b _0800F786
 _0800F76E:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x01

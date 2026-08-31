@@ -17,7 +17,7 @@ task_emy_38_1: @ 0803CE70
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803CEB4
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r1, r0, #0x10
 	movs r0, #0x01
@@ -120,12 +120,12 @@ _0803CF20:
 	bl func_08011F78
 	movs r0, #0x84
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	bl func_0802F1E8
 _0803CF64:
 	adds r0, r6, #0x0
 	adds r0, #0x10
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803CF80

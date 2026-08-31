@@ -10,23 +10,23 @@ task_hum_laxene_knf_0: @ 08052414
 	adds r6, r1, #0x0
 	ldr r0, _0805245C @ =0x09618458
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	ldr r0, _08052460 @ =0x08BD99F4
 	movs r1, #0xB0
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x00]
 	adds r4, r5, #0x0
 	adds r4, #0x08
 	ldr r1, _08052464 @ =0x09EE1DB4
 	ldr r2, _08052468 @ =0x09EE1DA4
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x12
 	ldsh r1, [r6, r0]
 	cmp r1, #0x00
@@ -68,7 +68,7 @@ _08052472:
 	str r0, [r5, #0x34]
 	ldr r0, [r1, #0x0C]
 	str r0, [r5, #0x38]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _080524CC @ =0x00000381
@@ -81,7 +81,7 @@ _08052472:
 	str r0, [r5, #0x40]
 	movs r0, #0xA9
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0

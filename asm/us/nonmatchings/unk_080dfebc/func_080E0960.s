@@ -16,7 +16,7 @@ func_080E0960: @ 080E0960
 	lsls r4, r7, #0x02
 	ldr r0, _080E09B0 @ =0x0984D314
 	adds r4, r4, r0
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldrb r1, [r4, #0x03]

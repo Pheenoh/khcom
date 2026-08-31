@@ -44,7 +44,7 @@ _08057BBE:
 	str r1, [r4, #0x28]
 	cmp r1, #0x00
 	bge _08057C26
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0xB5
@@ -56,7 +56,7 @@ _08057BBE:
 	ldr r0, [r4, #0x2C]
 	cmp r0, #0x00
 	ble _08057C10
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08057C0C @ =0x00000101
@@ -69,7 +69,7 @@ _08057BBE:
 	.byte 0x00, 0x00
 _08057C0C: .4byte 0x00000101
 _08057C10:
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r1, _08057C30 @ =0x00000101
@@ -89,7 +89,7 @@ _08057C30: .4byte 0x00000101
 _08057C34:
 	adds r0, r4, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	movs r0, #0x01
 _08057C3E:
 	pop {r4}

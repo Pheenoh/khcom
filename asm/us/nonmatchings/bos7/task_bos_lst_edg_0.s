@@ -24,21 +24,21 @@ task_bos_lst_edg_0: @ 0811067C
 	str r0, [r4, #0x1C]
 	ldr r1, _081106D0 @ =0x09C5C4E2
 	movs r0, #0x80
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r4, #0x44]
 	ldr r0, _081106D4 @ =0x09D69594
 	movs r1, #0x60
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r4, #0x48]
 	adds r4, #0x2C
 	ldr r1, _081106D8 @ =0x09EFAF1C
 	ldr r2, _081106DC @ =0x09EFAEF8
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	pop {r4}
 	pop {r0}
 	bx r0

@@ -18,7 +18,7 @@ task_emy_31_1: @ 0803BFB4
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803C01E
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -119,7 +119,7 @@ _0803C062:
 _0803C082:
 	adds r0, r6, #0x0
 	adds r0, #0x10
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803C092
@@ -140,7 +140,7 @@ _0803C098:
 	adds r0, #0x10
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, [r5, #0x08]
 	mov r12, r0
 	ldr r0, [r5, #0x34]
@@ -220,10 +220,10 @@ _0803C13A:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0803C156:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803C17C
@@ -288,7 +288,7 @@ _0803C1B4:
 _0803C1D4:
 	adds r0, r6, #0x0
 	adds r0, #0x10
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _0803C1E4
@@ -314,7 +314,7 @@ _0803C1F4:
 	adds r0, #0x10
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, [r5, #0x08]
 	mov r12, r0
 	ldr r0, [r5, #0x34]
@@ -400,10 +400,10 @@ _0803C2A0:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0803C2BC:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803C2E2
@@ -481,7 +481,7 @@ _0803C31C:
 _0803C354:
 	adds r0, r6, #0x0
 	adds r0, #0x10
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803C374
@@ -511,7 +511,7 @@ _0803C37C:
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	movs r1, #0xAB
 	lsls r1, r1, #0x01
 	adds r0, r6, r1
@@ -519,7 +519,7 @@ _0803C37C:
 	strh r2, [r0, #0x00]
 _0803C3A2:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803C46C
@@ -636,10 +636,10 @@ _0803C47A:
 	adds r0, r4, #0x0
 	movs r1, #0x02
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 _0803C496:
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0803C4B0

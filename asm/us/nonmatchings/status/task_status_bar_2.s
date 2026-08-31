@@ -23,7 +23,7 @@ task_status_bar_2: @ 080D7AFC
 	movs r1, #0x1D
 	str r1, [sp, #0x00C]
 	movs r1, #0x00
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, _080D7B70 @ =0x0203C550
 	ldr r0, [r0, #0x00]
 	cmp r0, #0x02
@@ -40,7 +40,7 @@ task_status_bar_2: @ 080D7AFC
 	movs r0, #0x1E
 	str r0, [sp, #0x00C]
 	movs r0, #0x80
-	bl func_080023E0
+	bl DrawSprite
 	ldr r1, [r4, #0x14]
 	lsls r1, r1, #0x08
 	asrs r1, r1, #0x10
@@ -53,7 +53,7 @@ task_status_bar_2: @ 080D7AFC
 	movs r0, #0x1F
 	str r0, [sp, #0x00C]
 	movs r0, #0x80
-	bl func_080023E0
+	bl DrawSprite
 _080D7B64:
 	add sp, #0x010
 	pop {r4, r5, r6}

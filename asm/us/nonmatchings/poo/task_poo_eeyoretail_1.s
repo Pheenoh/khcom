@@ -43,7 +43,7 @@ task_poo_eeyoretail_1: @ 080CF900
 _080CF950:
 	adds r0, r4, #0x0
 	adds r0, #0x24
-	bl func_08000EA4
+	bl TaskPoolUpdate
 _080CF958:
 	movs r0, #0x01
 	pop {r4, r5}

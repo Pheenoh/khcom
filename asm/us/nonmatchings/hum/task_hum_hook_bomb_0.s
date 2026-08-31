@@ -24,23 +24,23 @@ _0804CB58:
 _0804CB5E:
 	ldr r0, _0804CBF4 @ =0x08F6DC44
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x04]
 	movs r0, #0xA0
 	lsls r0, r0, #0x02
 	ldr r1, _0804CBF8 @ =0x08B59E52
-	bl func_080028F8
+	bl AllocObjTiles
 	str r0, [r5, #0x00]
 	adds r4, r5, #0x0
 	adds r4, #0x08
 	ldr r1, _0804CBFC @ =0x09EE17AC
 	ldr r2, _0804CC00 @ =0x09EE1798
 	adds r0, r4, #0x0
-	bl func_08005968
+	bl AnimInit
 	adds r0, r4, #0x0
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r0, [r6, #0x00]
 	str r0, [r5, #0x20]
 	ldr r0, [r6, #0x04]
@@ -56,7 +56,7 @@ _0804CB5E:
 	adds r0, r5, #0x0
 	adds r0, #0x4A
 	strh r7, [r0, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	ldr r4, _0804CC04 @ =0x00000201
@@ -68,7 +68,7 @@ _0804CB5E:
 	lsls r1, r1, #0x01
 	adds r0, r0, r1
 	str r0, [r5, #0x50]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	adds r1, r4, #0x0
@@ -114,7 +114,7 @@ _0804CC0E:
 	adds r1, r5, #0x0
 	adds r1, #0x34
 	strb r0, [r1, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x03
@@ -150,12 +150,12 @@ _0804CC4C:
 	b _0804CCA0
 _0804CC78: .4byte 0x02039B84
 _0804CC7C:
-	bl func_080065A4
+	bl GetRandom
 	adds r1, r5, #0x0
 	adds r1, #0x34
 	movs r4, #0x00
 	strb r0, [r1, #0x00]
-	bl func_080065A4
+	bl GetRandom
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x05
@@ -169,11 +169,11 @@ _0804CCA0:
 	ldr r0, _0804CCC4 @ =0x08B22CE4
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r5, #0x40]
 	ldr r0, _0804CCC8 @ =0x08F69BA4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	str r0, [r5, #0x44]
 	adds r1, r5, #0x0
 	adds r1, #0x48

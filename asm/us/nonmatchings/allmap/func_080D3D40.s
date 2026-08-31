@@ -30,7 +30,7 @@ _080D3D66:
 	lsls r4, r6, #0x10
 	lsrs r4, r4, #0x10
 	movs r0, #0x02
-	bl func_0800514C
+	bl GetBgScreenBase
 	adds r7, r0, #0x0
 	adds r1, r7, #0x0
 	adds r1, #0x1C
@@ -40,19 +40,19 @@ _080D3D66:
 	subs r5, r5, r4
 	adds r0, r5, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r1, r7, #0x0
 	adds r1, #0x5C
 	adds r5, #0x40
 	adds r0, r5, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	adds r1, r7, #0x0
 	adds r1, #0x9C
 	adds r5, #0x40
 	adds r0, r5, #0x0
 	movs r2, #0x20
-	bl func_080043B4
+	bl RequestDma3Copy
 	lsls r6, r6, #0x03
 	mov r0, r8
 	subs r6, r0, r6

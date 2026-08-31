@@ -19,11 +19,11 @@ func_080605A4: @ 080605A4
 	movs r1, #0x00
 	str r1, [sp, #0x020]
 	ldr r0, [sp, #0x000]
-	bl func_08005130
+	bl GetBgCharBase
 	ldr r1, _08060674 @ =0x02034A14
 	str r0, [r1, #0x00]
 	ldr r0, [sp, #0x000]
-	bl func_0800514C
+	bl GetBgScreenBase
 	str r0, [sp, #0x004]
 	movs r2, #0x00
 	str r2, [sp, #0x00C]
@@ -62,7 +62,7 @@ _080605DE:
 	str r2, [sp, #0x01C]
 	ldr r6, _08060674 @ =0x02034A14
 	ldr r0, [sp, #0x000]
-	bl func_08005130
+	bl GetBgCharBase
 	ldr r2, [sp, #0x014]
 	lsls r1, r2, #0x05
 	adds r1, #0x01

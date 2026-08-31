@@ -11,9 +11,9 @@ task_poo_honey_3: @ 080CD108
 	cmp r0, #0x00
 	beq _080CD12E
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x74
 	bl func_08012304
@@ -23,7 +23,7 @@ task_poo_honey_3: @ 080CD108
 _080CD12E:
 	adds r0, r4, #0x0
 	adds r0, #0xF4
-	bl func_08000F0C
+	bl TaskPoolDestroy
 	pop {r4}
 	pop {r0}
 	bx r0

@@ -14,7 +14,7 @@ mode_chkbtl_0: @ 0800A608
 	movs r1, #0x00
 	movs r2, #0x0F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	bl func_08004FC8
 	movs r1, #0xA8

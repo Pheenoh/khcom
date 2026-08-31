@@ -29,7 +29,7 @@ func_0803B468: @ 0803B468
 	adds r0, r4, #0x0
 	adds r0, #0x10
 	movs r2, #0x00
-	bl func_08005A00
+	bl AnimChange
 	adds r0, r4, #0x0
 	adds r0, #0x40
 	lsls r2, r6, #0x10

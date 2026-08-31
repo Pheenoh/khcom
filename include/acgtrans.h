@@ -23,10 +23,10 @@ typedef struct AcgTransConfig {
 
 extern u8 gUnk_09EDADF8[];
 
-void* func_08000E14(void* a, void* desc, void* args);
-s32 func_080043B4(u32 src, u32 dst, u32 size);
+void* TaskCreate(void* a, void* desc, void* args);
+s32 RequestDma3Copy(u32 src, u32 dst, u32 size);
 void func_0800501C(s32 a);
-u32 func_08005130(s32 bg);
+u32 GetBgCharBase(s32 bg);
 
 void task_acgtrans_0(AcgTransWork* work, AcgTransConfig* cfg);
 s32 task_acgtrans_1(AcgTransWork* work);

@@ -3,11 +3,11 @@
 
 void mode_copyright2_0(s32 arg) {
     func_08004DB0();
-    func_08005074(0, 0, 0x1F, 0);
-    func_080055C8(0, 3);
-    func_080050B8(0, gUnk_097E05B8, 0x4FC0);
-    func_080050DC(0, gUnk_0984AC38, 0x200);
-    func_0800510C(0, gUnk_09841F98, 0x800);
+    SetupBg(0, 0, 0x1F, 0);
+    SetBgPriority(0, 3);
+    LoadBgTiles(0, gUnk_097E05B8, 0x4FC0);
+    LoadBgPalette(0, gUnk_0984AC38, 0x200);
+    LoadBgMap(0, gUnk_09841F98, 0x800);
 
     if (arg == 0) {
         func_08006120(0, 0x43);
@@ -60,7 +60,7 @@ u8* func_080D728C(u8* dst, s32 value, u16 digits) {
     }
 
     for (i = 0; i < digits; i++) {
-        func_080043B4(&gUnk_09801C98[buf[i] * 32], dst, 32);
+        RequestDma3Copy(&gUnk_09801C98[buf[i] * 32], dst, 32);
         dst += 32;
     }
 
@@ -70,7 +70,7 @@ u8* func_080D728C(u8* dst, s32 value, u16 digits) {
 void func_080D733C(void) {
     u8* p;
 
-    p = func_08005130(2) + 0x40;
+    p = GetBgCharBase(2) + 0x40;
     p = func_080D728C(p, gUnk_02039BB0.unk_108, 2);
     p = func_080D728C(p, gUnk_02039BB0.unk_032, 3);
     p = func_080D728C(p, gUnk_02039BB0.unk_0F8, 3);

@@ -25,7 +25,7 @@ func_08028468: @ 08028468
 	str r1, [r0, #0x00]
 	ldr r0, [r3, #0x08]
 	ldrh r0, [r0, #0x06]
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	ldr r6, [r6, #0x00]
 	ldr r2, [r6, #0x68]
 	ldr r3, [r6, #0x6C]

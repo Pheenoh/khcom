@@ -25,7 +25,7 @@ task_btl_pause_2: @ 08030594
 	str r5, [sp, #0x004]
 	str r5, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	ldr r0, [r6, #0x1C]
 	lsls r0, r0, #0x08
 	asrs r0, r0, #0x10
@@ -39,7 +39,7 @@ task_btl_pause_2: @ 08030594
 	str r5, [sp, #0x004]
 	str r5, [sp, #0x008]
 	str r5, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080305DE:
 	add sp, #0x010
 	pop {r4, r5, r6}

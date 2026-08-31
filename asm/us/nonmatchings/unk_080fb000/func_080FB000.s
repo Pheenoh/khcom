@@ -322,7 +322,7 @@ _080FB584:
 	movs r2, #0xC0
 	lsls r2, r2, #0x01
 	adds r0, r5, r2
-	bl func_08005A64
+	bl AnimUpdate
 	movs r3, #0xCE
 	lsls r3, r3, #0x01
 	adds r1, r5, r3
@@ -336,7 +336,7 @@ _080FB584:
 	movs r1, #0xA1
 	lsls r1, r1, #0x04
 	adds r0, r4, r1
-	bl func_08005A64
+	bl AnimUpdate
 	ldr r2, _080FB604 @ =0x00000A2C
 	adds r1, r4, r2
 	str r0, [r1, #0x00]
@@ -369,7 +369,7 @@ _080FB5CC:
 	movs r6, #0xB6
 	lsls r6, r6, #0x01
 	adds r0, r5, r6
-	bl func_08000EA4
+	bl TaskPoolUpdate
 _080FB5EE:
 	add sp, #0x004
 	pop {r3, r4, r5}

@@ -25,9 +25,9 @@ INCLUDE_ASM("bos4/func_080DA954.s");
 INCLUDE_ASM("bos4/task_bos_boogie_saku_2.s");
 
 void task_bos_boogie_saku_3(BoogieSakuWork* work) {
-    func_080028C0((void*)work->unk_000);
-    func_08002C10((void*)work->unk_004);
-    func_08000F0C(&work->unk_028);
+    ReleaseObjTiles((void*)work->unk_000);
+    ReleaseObjPalette((void*)work->unk_004);
+    TaskPoolDestroy(&work->unk_028);
 }
 
 INCLUDE_ASM("bos4/task_bos_boogie_map_0.s");
@@ -53,9 +53,9 @@ INCLUDE_ASM("bos4/task_bos_boogie_knife_2.s");
 
 void task_bos_boogie_knife_3(BoogieKnifeWork* work) {
     func_08012304(&work->unk_06C);
-    func_080028C0((void*)work->unk_008);
-    func_08002C10((void*)work->unk_00C);
-    func_08002C10((void*)work->unk_010);
+    ReleaseObjTiles((void*)work->unk_008);
+    ReleaseObjPalette((void*)work->unk_00C);
+    ReleaseObjPalette((void*)work->unk_010);
 }
 
 u8 func_080DB428(u8* p) {
@@ -72,12 +72,12 @@ INCLUDE_ASM("bos4/task_bos_boogie_knifereader_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knifereader_1.s");
 
 void task_bos_boogie_knifereader_2(BoogieKnifereaderWork* work) {
-    func_08000EE0(&work->unk_008);
+    TaskPoolDraw(&work->unk_008);
 }
 
 void task_bos_boogie_knifereader_3(BoogieKnifereaderWork* work) {
     func_0801B7D8(&work->unk_01C);
-    func_08000F0C(&work->unk_008);
+    TaskPoolDestroy(&work->unk_008);
 }
 
 INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_0.s");
@@ -86,9 +86,9 @@ INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_2.s");
 
 void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work) {
     func_0801B7D8(&work->unk_040);
-    func_080028C0((void*)work->unk_008);
-    func_08002C10((void*)work->unk_00C);
-    func_08002C10((void*)work->unk_010);
+    ReleaseObjTiles((void*)work->unk_008);
+    ReleaseObjPalette((void*)work->unk_00C);
+    ReleaseObjPalette((void*)work->unk_010);
 }
 
 INCLUDE_ASM("bos4/func_080DB978.s");
@@ -136,8 +136,8 @@ s32 task_bos_ursula_border_1(void) {
 INCLUDE_ASM("bos4/task_bos_ursula_border_2.s");
 
 void task_bos_ursula_border_3(UrsulaBorderWork* work) {
-    func_080028C0((void*)work->unk_000);
-    func_08002C10((void*)work->unk_004);
+    ReleaseObjTiles((void*)work->unk_000);
+    ReleaseObjPalette((void*)work->unk_004);
 }
 
 INCLUDE_ASM("bos4/func_080DC9DC.s");
@@ -161,19 +161,19 @@ INCLUDE_ASM("bos4/task_bos_ursula_backtako_1.s");
 INCLUDE_ASM("bos4/task_bos_ursula_backtako_2.s");
 
 void task_bos_ursula_backtako_3(UrsulaBacktakoWork* work) {
-    func_080028C0((void*)work->unk_000);
-    func_08002C10((void*)work->unk_004);
+    ReleaseObjTiles((void*)work->unk_000);
+    ReleaseObjPalette((void*)work->unk_004);
 }
 
 INCLUDE_ASM("bos4/task_bos_ursula_mapanime_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_mapanime_1.s");
 
 void task_bos_ursula_mapanime_2(UrsulaMapanimeWork* work) {
-    func_08000EE0(&work->unk_010);
+    TaskPoolDraw(&work->unk_010);
 }
 
 void task_bos_ursula_mapanime_3(UrsulaMapanimeWork* work) {
-    func_08000F0C(&work->unk_010);
+    TaskPoolDestroy(&work->unk_010);
 }
 
 INCLUDE_ASM("bos4/func_080DD69C.s");
@@ -184,11 +184,11 @@ INCLUDE_ASM("bos4/task_bos_ursula_bubble_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_1.s");
 
 void task_bos_ursula_bubble_2(UrsulaBubbleWork* work) {
-    func_08000EE0(&work->unk_004);
+    TaskPoolDraw(&work->unk_004);
 }
 
 void task_bos_ursula_bubble_3(UrsulaBubbleWork* work) {
-    func_08000F0C(&work->unk_004);
+    TaskPoolDestroy(&work->unk_004);
 }
 
 INCLUDE_ASM("bos4/func_080DD9B0.s");

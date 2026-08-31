@@ -131,10 +131,10 @@ _080CB9AC:
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r5, #0x0
 	adds r0, #0x24
-	bl func_08000EE0
+	bl TaskPoolDraw
 	add sp, #0x010
 	pop {r3}
 	mov r8, r3

@@ -38,7 +38,7 @@ func_08013308: @ 08013308
 	adds r1, r4, #0x0
 	adds r2, r6, #0x0
 	adds r3, r7, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _08013398 @ =0x09EDA6D8
 	add r1, sp, #0x004
 	movs r2, #0x00
@@ -67,7 +67,7 @@ func_08013308: @ 08013308
 	cmp r0, #0x00
 	beq _080133A4
 	ldr r0, _080133A0 @ =0x0000023E
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080133AC
 	.byte 0x00, 0x00
 _08013394: .4byte 0x02034928
@@ -77,7 +77,7 @@ _080133A0: .4byte 0x0000023E
 _080133A4:
 	movs r0, #0xFE
 	lsls r0, r0, #0x01
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080133AC:
 	movs r0, #0x08
 	bl func_08006B34

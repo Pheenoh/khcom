@@ -7,7 +7,7 @@
 func_080D764C: @ 080D764C
 	push {r4, r5, r6, lr}
 	adds r5, r0, #0x0
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x40
 	ands r1, r0
 	lsls r1, r1, #0x10
@@ -50,14 +50,14 @@ _080D7698:
 	movs r4, #0x00
 	strh r0, [r5, #0x1A]
 	movs r0, #0x79
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r0, _080D76B0 @ =0x02034F00
 	strb r4, [r0, #0x00]
 	b _080D783E
 _080D76AC: .4byte 0x02039BB0
 _080D76B0: .4byte 0x02034F00
 _080D76B4:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x80
 	ands r1, r0
 	cmp r1, #0x00
@@ -87,7 +87,7 @@ _080D76E2:
 	b _080D77D6
 _080D76F0:
 	movs r0, #0x69
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080D783E
 _080D76F8:
 	movs r3, #0x1C
@@ -105,7 +105,7 @@ _080D770A:
 	bl func_080D8374
 	b _080D77D6
 _080D7716:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x20
 	ands r1, r0
 	cmp r1, #0x00
@@ -135,7 +135,7 @@ _080D7736:
 	.byte 0x00, 0x00
 _080D7750: .4byte 0x02039BB0
 _080D7754:
-	bl func_0800139C
+	bl GetKeysRepeat
 	movs r1, #0x10
 	ands r1, r0
 	cmp r1, #0x00
@@ -177,10 +177,10 @@ _080D77A2:
 	strh r0, [r5, #0x1C]
 	bl func_080D8474
 	movs r0, #0x65
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080D783E
 _080D77B2:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x04
 	ands r1, r0
 	cmp r1, #0x00
@@ -198,10 +198,10 @@ _080D77B2:
 	bl func_080D8474
 _080D77D6:
 	movs r0, #0x79
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080D783E
 _080D77DE:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x01
 	ands r1, r0
 	cmp r1, #0x00
@@ -221,7 +221,7 @@ _080D77DE:
 	movs r0, #0x01
 	strb r0, [r1, #0x00]
 	movs r0, #0x66
-	bl func_0811FE70
+	bl m4aSongNumStart
 	b _080D783E
 _080D7810: .4byte 0x02034F00
 _080D7814:
@@ -230,7 +230,7 @@ _080D7814:
 	cmp r0, #0x00
 	beq _080D783E
 _080D781C:
-	bl func_08001390
+	bl GetKeysPressed
 	movs r1, #0x02
 	ands r1, r0
 	cmp r1, #0x00
@@ -244,7 +244,7 @@ _080D7832:
 	movs r0, #0x00
 	strb r0, [r1, #0x00]
 	movs r0, #0x68
-	bl func_0811FE70
+	bl m4aSongNumStart
 _080D783E:
 	pop {r4, r5, r6}
 	pop {r0}

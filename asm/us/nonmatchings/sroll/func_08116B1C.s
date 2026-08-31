@@ -22,7 +22,7 @@ func_08116B1C: @ 08116B1C
 	muls r2, r3
 	lsls r2, r2, #0x11
 	lsrs r2, r2, #0x10
-	bl func_080043B4
+	bl RequestDma3Copy
 _08116B42:
 	ldrh r1, [r4, #0x00]
 	ldr r0, _08116B50 @ =0x0000FFFE

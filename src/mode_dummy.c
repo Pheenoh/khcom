@@ -6,14 +6,14 @@ void mode_dummy_0(u32 arg) {
 
     func_08006120(0, 0x10);
     func_08004DB0();
-    func_08005074(0, 0, 0x0F, 0);
+    SetupBg(0, 0, 0x0F, 0);
     func_08004FC8(0);
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gUnk_08128304, 0x20, 0x0F);
-    func_08005074(1, 1, 0x0C, 8);
-    func_080050B8(1, gUnk_08C6B0C4, 0x7C20);
-    func_080050DC(1, gUnk_08F683C4, 0x20);
-    func_0800510C(1, gUnk_08EEE384, 0x800);
+    SetupBg(1, 1, 0x0C, 8);
+    LoadBgTiles(1, gUnk_08C6B0C4, 0x7C20);
+    LoadBgPalette(1, gUnk_08F683C4, 0x20);
+    LoadBgMap(1, gUnk_08EEE384, 0x800);
     func_08004FC8(1);
     gUnk_020348BC = arg;
 
@@ -73,7 +73,7 @@ void func_0800C064(void) {
     } else {
         func_080605A4(0);
         func_08060598();
-        func_080054EC(1, (gUnk_03007480 << 14) >> 16, 0);
+        SetBgScroll(1, (gFrameCounter << 14) >> 16, 0);
         func_0801CC80();
     }
 }
@@ -82,14 +82,14 @@ INCLUDE_ASM("mode_dummy/func_0800C064.s");
 #endif
 
 void mode_dummy_1(void) {
-    if (!func_08006314() && (func_08001390() & 9)) {
+    if (!func_08006314() && (GetKeysPressed() & 9)) {
         func_08006184(0, 0x10);
         func_08001248(func_0800C064);
     }
 
     func_080605A4(0);
     func_08060598();
-    func_080054EC(1, (gUnk_03007480 << 14) >> 16, 0);
+    SetBgScroll(1, (gFrameCounter << 14) >> 16, 0);
     func_0801CC80();
 }
 

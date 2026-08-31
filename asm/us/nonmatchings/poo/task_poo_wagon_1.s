@@ -117,7 +117,7 @@ _080D0386:
 	movs r0, #0x06
 	bl func_080D2D3C
 	movs r0, #0x90
-	bl func_0811FE70
+	bl m4aSongNumStart
 	strh r5, [r4, #0x3E]
 	b _080D0410
 _080D03F0: .4byte 0xFFFFFF00

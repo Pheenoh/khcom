@@ -45,7 +45,7 @@ _0808CA0C:
 	bne _0808C9F4
 _0808CA1A:
 	movs r0, #0x79
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r1, _0808CA64 @ =0x000008AC
 	adds r0, r5, r1
 	ldrh r1, [r0, #0x00]

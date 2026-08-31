@@ -20,17 +20,17 @@ mode_title_0: @ 080D5B70
 	ldr r4, _080D5BD8 @ =0x02034EC4
 	movs r0, #0x80
 	lsls r0, r0, #0x03
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	bl func_08004E64
 	movs r0, #0x00
 	movs r1, #0x00
 	movs r2, #0x1D
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x00
 	movs r1, #0x03
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r0, _080D5BDC @ =0x02039BB0
 	ldr r0, [r0, #0x08]
 	movs r1, #0x80
@@ -42,7 +42,7 @@ mode_title_0: @ 080D5B70
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	b _080D5BF0
 _080D5BD0: .4byte 0x02034ECA
 _080D5BD4: .4byte 0x02034EC2
@@ -54,7 +54,7 @@ _080D5BE4:
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 _080D5BF0:
 	movs r0, #0x00
 	bl func_0800501C
@@ -62,10 +62,10 @@ _080D5BF0:
 	movs r1, #0x00
 	movs r2, #0x1E
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x03
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r0, _080D5C34 @ =0x02039BB0
 	ldr r0, [r0, #0x08]
 	movs r1, #0x80
@@ -76,12 +76,12 @@ _080D5BF0:
 	ldr r1, _080D5C38 @ =0x097D3658
 	ldr r2, _080D5C3C @ =0x00007FA0
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080D5C40 @ =0x09840F98
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 	b _080D5C5A
 _080D5C30: .4byte 0x0983E398
 _080D5C34: .4byte 0x02039BB0
@@ -92,12 +92,12 @@ _080D5C44:
 	ldr r1, _080D5D08 @ =0x097C77B8
 	ldr r2, _080D5D0C @ =0x00007FA0
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080D5D10 @ =0x0983EB98
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 _080D5C5A:
 	movs r0, #0x01
 	bl func_0800501C
@@ -110,28 +110,28 @@ _080D5C5A:
 	movs r1, #0x02
 	movs r2, #0x1F
 	movs r3, #0x0B
-	bl func_08005074
+	bl SetupBg
 	movs r1, #0x80
 	lsls r1, r1, #0x07
 	movs r0, #0x02
 	bl func_080055EC
 	movs r0, #0x02
 	movs r1, #0x02
-	bl func_080055C8
+	bl SetBgPriority
 	ldr r1, _080D5D14 @ =0x097CF758
 	movs r2, #0xFC
 	lsls r2, r2, #0x06
 	movs r0, #0x02
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080D5D18 @ =0x0984A618
 	movs r0, #0x02
 	movs r2, #0xA0
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080D5D1C @ =0x0983FB98
 	movs r2, #0x80
 	lsls r2, r2, #0x03
 	movs r0, #0x02
-	bl func_0800510C
+	bl LoadBgMap
 	ldr r0, _080D5D20 @ =0x0203C548
 	movs r2, #0xF0
 	lsls r2, r2, #0x07
@@ -153,7 +153,7 @@ _080D5C5A:
 	bl func_08005690
 	ldr r0, _080D5D2C @ =0x02034EA0
 	movs r1, #0x04
-	bl func_08000E64
+	bl TaskPoolInit
 	ldr r0, _080D5D30 @ =0x02034EB8
 	movs r4, #0x00
 	str r4, [r0, #0x00]
@@ -165,7 +165,7 @@ _080D5C5A:
 	ldr r0, _080D5D38 @ =0x02034E98
 	str r4, [r0, #0x00]
 	movs r0, #0x00
-	bl func_0811FE70
+	bl m4aSongNumStart
 	ldr r1, _080D5D3C @ =0x02034EC0
 	movs r0, #0x1E
 	strh r0, [r1, #0x00]

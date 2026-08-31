@@ -24,7 +24,7 @@ task_wlogo_agr_2: @ 080B63B4
 	str r4, [sp, #0x008]
 	movs r4, #0x03
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _080B63DE:
 	add sp, #0x010
 	pop {r4}

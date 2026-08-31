@@ -18,10 +18,10 @@ func_0805FA8C: @ 0805FA8C
 	str r0, [sp, #0x008]
 	lsls r4, r4, #0x10
 	lsls r5, r5, #0x10
-	bl func_08005130
+	bl GetBgCharBase
 	mov r9, r0
 	ldr r0, [sp, #0x008]
-	bl func_0800514C
+	bl GetBgScreenBase
 	mov r10, r0
 	movs r6, #0x00
 	str r6, [sp, #0x000]
@@ -33,7 +33,7 @@ func_0805FA8C: @ 0805FA8C
 	mov r0, sp
 	mov r1, r9
 	adds r2, r4, #0x0
-	bl func_08117FE8
+	bl CpuSet
 	str r6, [sp, #0x004]
 	add r0, sp, #0x004
 	lsrs r5, r5, #0x12
@@ -41,11 +41,11 @@ func_0805FA8C: @ 0805FA8C
 	orrs r5, r1
 	mov r1, r10
 	adds r2, r5, #0x0
-	bl func_08117FE8
+	bl CpuSet
 	ldr r4, _0805FB68 @ =0x02034A1C
 	movs r0, #0xA5
 	lsls r0, r0, #0x04
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	ldr r0, _0805FB6C @ =0x02034A20
 	strb r6, [r0, #0x00]

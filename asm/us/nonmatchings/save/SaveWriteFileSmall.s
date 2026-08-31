@@ -12,7 +12,7 @@ SaveWriteFileSmall: @ 0800963C
 	movs r5, #0x83
 	lsls r5, r5, #0x03
 	adds r0, r5, #0x0
-	bl func_08000918
+	bl EwramAlloc
 	adds r6, r0, #0x0
 	adds r1, r5, #0x0
 	bl ZeroFill
@@ -61,7 +61,7 @@ _0800968A:
 	cmp r4, #0x01
 	ble _0800968A
 	adds r0, r6, #0x0
-	bl func_080009C4
+	bl EwramFree
 	movs r1, #0x80
 	lsls r1, r1, #0x0A
 	adds r0, r7, r1

@@ -4,27 +4,27 @@
 
 INCLUDE_ASM("engine/func_0800216C.s");
 INCLUDE_ASM("engine/func_080022D4.s");
-INCLUDE_ASM("engine/func_080023E0.s");
+INCLUDE_ASM("engine/DrawSprite.s");
 INCLUDE_ASM("engine/func_08002488.s");
-INCLUDE_ASM("engine/func_080026A4.s");
+INCLUDE_ASM("engine/LoadObjTiles.s");
 INCLUDE_ASM("engine/func_0800284C.s");
 INCLUDE_ASM("engine/func_08002880.s");
 INCLUDE_ASM("engine/func_080028A0.s");
-INCLUDE_ASM("engine/func_080028C0.s");
-INCLUDE_ASM("engine/func_080028F8.s");
+INCLUDE_ASM("engine/ReleaseObjTiles.s");
+INCLUDE_ASM("engine/AllocObjTiles.s");
 INCLUDE_ASM("engine/func_08002A10.s");
-INCLUDE_ASM("engine/func_08002A14.s");
-INCLUDE_ASM("engine/func_08002BAC.s");
+INCLUDE_ASM("engine/LoadObjPalette.s");
+INCLUDE_ASM("engine/LoadObjPaletteBank.s");
 INCLUDE_ASM("engine/func_08002BCC.s");
 
-void func_08002C10(u8* p) {
+void ReleaseObjPalette(u8* p) {
     if (p != 0 && *(u8**)(p + 36) == p) {
         func_08002BCC(p);
     }
 }
 
 INCLUDE_ASM("engine/func_08002C28.s");
-INCLUDE_ASM("engine/func_08002CB4.s");
+INCLUDE_ASM("engine/AllocObjAffine.s");
 INCLUDE_ASM("engine/func_08002F50.s");
 INCLUDE_ASM("engine/func_080034D8.s");
 INCLUDE_ASM("engine/func_080034EC.s");
@@ -46,7 +46,7 @@ INCLUDE_ASM("engine/func_08004034.s");
 INCLUDE_ASM("engine/func_0800415C.s");
 INCLUDE_ASM("engine/func_08004314.s");
 INCLUDE_ASM("engine/func_08004364.s");
-INCLUDE_ASM("engine/func_080043B4.s");
+INCLUDE_ASM("engine/RequestDma3Copy.s");
 INCLUDE_ASM("engine/func_0800443C.s");
 INCLUDE_ASM("engine/func_0800448C.s");
 INCLUDE_ASM("engine/func_080045AC.s");
@@ -61,26 +61,26 @@ INCLUDE_ASM("engine/func_08004E64.s");
 INCLUDE_ASM("engine/func_08004F08.s");
 INCLUDE_ASM("engine/func_08004FC8.s");
 INCLUDE_ASM("engine/func_0800501C.s");
-INCLUDE_ASM("engine/func_08005074.s");
-INCLUDE_ASM("engine/func_080050B8.s");
-INCLUDE_ASM("engine/func_080050DC.s");
+INCLUDE_ASM("engine/SetupBg.s");
+INCLUDE_ASM("engine/LoadBgTiles.s");
+INCLUDE_ASM("engine/LoadBgPalette.s");
 
-void func_0800510C(s32 bg, void* src, u16 size) {
+void LoadBgMap(s32 bg, void* src, u16 size) {
     func_08004FC8(bg);
-    func_080043B4(src, func_0800514C(bg), size);
+    RequestDma3Copy(src, GetBgScreenBase(bg), size);
 }
 
-INCLUDE_ASM("engine/func_08005130.s");
-INCLUDE_ASM("engine/func_0800514C.s");
+INCLUDE_ASM("engine/GetBgCharBase.s");
+INCLUDE_ASM("engine/GetBgScreenBase.s");
 INCLUDE_ASM("engine/func_0800516C.s");
 INCLUDE_ASM("engine/func_080051C4.s");
 INCLUDE_ASM("engine/func_08005244.s");
 INCLUDE_ASM("engine/func_08005490.s");
 INCLUDE_ASM("engine/func_080054C8.s");
-INCLUDE_ASM("engine/func_080054EC.s");
+INCLUDE_ASM("engine/SetBgScroll.s");
 INCLUDE_ASM("engine/func_08005550.s");
 INCLUDE_ASM("engine/func_0800558C.s");
-INCLUDE_ASM("engine/func_080055C8.s");
+INCLUDE_ASM("engine/SetBgPriority.s");
 INCLUDE_ASM("engine/func_080055EC.s");
 INCLUDE_ASM("engine/func_08005610.s");
 INCLUDE_ASM("engine/func_08005654.s");
@@ -108,19 +108,19 @@ void func_080058FC(s32* value, s32 target, u16 steps) {
 INCLUDE_ASM("engine/func_08005920.s");
 INCLUDE_ASM("engine/func_0800592C.s");
 
-void func_08005968(AnimState* a, s32 b, s32 c) {
+void AnimInit(AnimState* a, s32 b, s32 c) {
     a->unk_04 = (u32*)c;
     a->unk_00 = b;
     a->unk_14 = 0;
 }
 
 INCLUDE_ASM("engine/func_08005974.s");
-INCLUDE_ASM("engine/func_080059A4.s");
-INCLUDE_ASM("engine/func_08005A00.s");
-INCLUDE_ASM("engine/func_08005A64.s");
+INCLUDE_ASM("engine/AnimStart.s");
+INCLUDE_ASM("engine/AnimChange.s");
+INCLUDE_ASM("engine/AnimUpdate.s");
 INCLUDE_ASM("engine/func_08005AC4.s");
 
-void* func_08005AFC(AnimState* a) {
+void* AnimGetGfx(AnimState* a) {
     void* result;
 
     if (a->unk_14 != 0) {
@@ -132,7 +132,7 @@ void* func_08005AFC(AnimState* a) {
     return result;
 }
 
-u8 func_08005B1C(AnimState* a) {
+u8 AnimIsFinished(AnimState* a) {
     if (a->unk_08 & 0x1000) {
         return 1;
     }
@@ -147,7 +147,7 @@ INCLUDE_ASM("engine/func_08005B44.s");
 INCLUDE_ASM("engine/func_08005B64.s");
 INCLUDE_ASM("engine/func_08005B78.s");
 INCLUDE_ASM("engine/func_08005BC4.s");
-INCLUDE_ASM("engine/func_08005BE8.s");
+INCLUDE_ASM("engine/LoadPalette.s");
 INCLUDE_ASM("engine/func_08005C60.s");
 INCLUDE_ASM("engine/func_08006120.s");
 INCLUDE_ASM("engine/func_08006184.s");
@@ -162,10 +162,10 @@ INCLUDE_ASM("engine/func_080063A8.s");
 INCLUDE_ASM("engine/func_080063C4.s");
 INCLUDE_ASM("engine/func_08006404.s");
 INCLUDE_ASM("engine/func_08006494.s");
-INCLUDE_ASM("engine/func_08006548.s");
-INCLUDE_ASM("engine/func_08006554.s");
-INCLUDE_ASM("engine/func_08006578.s");
-INCLUDE_ASM("engine/func_080065A4.s");
+INCLUDE_ASM("engine/SeedRand.s");
+INCLUDE_ASM("engine/Rand.s");
+INCLUDE_ASM("engine/SeedRandom.s");
+INCLUDE_ASM("engine/GetRandom.s");
 INCLUDE_ASM("engine/func_080065FC.s");
 INCLUDE_ASM("engine/func_080066F4.s");
 INCLUDE_ASM("engine/func_0800675C.s");

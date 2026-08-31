@@ -9,9 +9,9 @@ task_poo_spark_1: @ 080D0970
 	adds r4, r0, #0x0
 	adds r4, #0x10
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080D098C

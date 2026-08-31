@@ -185,12 +185,12 @@ _080DA2B4:
 	adds r4, r6, #0x0
 	adds r4, #0x14
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	ldr r0, [r6, #0x00]
 	cmp r0, #0x01
 	bne _080DA2CA
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 _080DA2CA:
 	adds r0, r7, #0x0
 	adds r0, #0x40
@@ -200,7 +200,7 @@ _080DA2CA:
 	bl func_08012324
 	adds r0, r6, #0x0
 	adds r0, #0x2C
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 	add sp, #0x004
 	pop {r4, r5, r6, r7}

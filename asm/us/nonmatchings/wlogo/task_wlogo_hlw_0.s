@@ -10,17 +10,17 @@ task_wlogo_hlw_0: @ 080B5C64
 	ldr r1, _080B5CA4 @ =0x096FAE04
 	movs r0, #0x00
 	movs r2, #0x20
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _080B5CA8 @ =0x096438E4
 	movs r2, #0xC0
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _080B5CAC @ =0x096BAC64
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x00
-	bl func_0800510C
+	bl LoadBgMap
 	movs r1, #0x00
 	movs r0, #0x00
 	strh r0, [r4, #0x02]

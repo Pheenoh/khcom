@@ -64,7 +64,7 @@ _080D270C:
 	str r0, [sp, #0x00C]
 	adds r0, r6, #0x0
 	adds r1, r5, #0x0
-	bl func_080023E0
+	bl DrawSprite
 _080D2736:
 	add sp, #0x010
 	pop {r4, r5, r6}

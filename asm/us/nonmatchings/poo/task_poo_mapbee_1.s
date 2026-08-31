@@ -24,14 +24,14 @@ _080D23C8:
 	adds r4, r5, #0x0
 	adds r4, #0x0C
 	adds r0, r4, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080D23F2
 	adds r0, r4, #0x0
 	movs r1, #0x01
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	movs r0, #0x01
 	strh r0, [r5, #0x36]
 	b _080D23F2
@@ -44,7 +44,7 @@ _080D23EE:
 	adds r4, #0x0C
 _080D23F2:
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r5, #0x08]
 	movs r0, #0x01
 _080D23FC:

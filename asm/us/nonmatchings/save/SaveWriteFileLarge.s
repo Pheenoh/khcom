@@ -13,7 +13,7 @@ SaveWriteFileLarge: @ 08009298
 	lsrs r4, r4, #0x10
 	ldr r5, _08009320 @ =0x00000F14
 	adds r0, r5, #0x0
-	bl func_08000918
+	bl EwramAlloc
 	adds r6, r0, #0x0
 	adds r1, r5, #0x0
 	bl ZeroFill
@@ -56,7 +56,7 @@ _080092E4:
 	cmp r4, #0x01
 	ble _080092E4
 	adds r0, r6, #0x0
-	bl func_080009C4
+	bl EwramFree
 	mov r1, r8
 	asrs r0, r1, #0x10
 	bl SaveWriteHeader

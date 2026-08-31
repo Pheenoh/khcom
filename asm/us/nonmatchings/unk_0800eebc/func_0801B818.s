@@ -37,7 +37,7 @@ _0801B84E:
 	adds r0, #0x2C
 	ldr r1, _0801B874 @ =0x09EDAF18
 	adds r2, r5, #0x0
-	bl func_08000E14
+	bl TaskCreate
 	mov r1, r8
 	ldrh r0, [r1, #0x00]
 	adds r0, #0x01

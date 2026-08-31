@@ -68,9 +68,9 @@ _080CCE4A:
 	lsrs r1, r1, #0x10
 	adds r0, r4, #0x0
 	movs r2, #0x00
-	bl func_080059A4
+	bl AnimStart
 	adds r0, r4, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 _080CCE64:
 	ldr r0, [r5, #0x00]
 	adds r0, #0x01
@@ -80,9 +80,9 @@ _080CCE6C:
 	adds r5, r4, #0x0
 	adds r5, #0x08
 	adds r0, r5, #0x0
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r5, #0x0
-	bl func_08005B1C
+	bl AnimIsFinished
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080CCE86

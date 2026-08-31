@@ -137,9 +137,9 @@ _08046CCE:
 	movs r3, #0x98
 	lsls r3, r3, #0x01
 	adds r0, r7, r3
-	bl func_08005A64
+	bl AnimUpdate
 	adds r0, r7, #0x0
-	bl func_08000EA4
+	bl TaskPoolUpdate
 	movs r0, #0x01
 _08046CE0:
 	add sp, #0x00C

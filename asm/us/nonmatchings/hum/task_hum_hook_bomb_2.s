@@ -17,7 +17,7 @@ task_hum_hook_bomb_2: @ 0804CF24
 	beq _0804CFD8
 	adds r0, r7, #0x0
 	adds r0, #0x08
-	bl func_08005AFC
+	bl AnimGetGfx
 	mov r9, r0
 	ldr r0, [r7, #0x24]
 	bl func_0801AF1C
@@ -39,7 +39,7 @@ _0804CF5A:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r6, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -67,14 +67,14 @@ _0804CF5A:
 	lsrs r2, r2, #0x10
 	str r2, [sp, #0x00C]
 	mov r2, r9
-	bl func_080023E0
+	bl DrawSprite
 	ldr r2, [r7, #0x20]
 	ldr r3, [r7, #0x24]
 	mov r0, r8
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r6, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	add r0, sp, #0x010
 	movs r1, #0x00
 	ldsh r0, [r0, r1]
@@ -89,7 +89,7 @@ _0804CF5A:
 	str r5, [sp, #0x008]
 	ldr r4, _0804CFF0 @ =0x0000FFF0
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 _0804CFD8:
 	add sp, #0x014
 	pop {r3, r4}

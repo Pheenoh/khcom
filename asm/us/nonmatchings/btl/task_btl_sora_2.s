@@ -169,7 +169,7 @@ _08027286:
 	movs r0, #0x00
 	movs r3, #0x01
 _0802728A:
-	bl func_08002CB4
+	bl AllocObjAffine
 	mov r8, r0
 _08027290:
 	movs r1, #0xAD
@@ -233,7 +233,7 @@ _080272F0:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x010
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	adds r0, r6, #0x0
 	bl func_0801CA00
 	lsls r0, r0, #0x18
@@ -251,7 +251,7 @@ _080272F0:
 	ldr r0, [r5, #0x04]
 	ldrh r0, [r0, #0x06]
 	ldr r1, _08027338 @ =0x08F69BC4
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	b _0802737E
 _08027330: .4byte 0xFFFFEFFC
 _08027334: .4byte 0x0000EFFF
@@ -277,7 +277,7 @@ _0802733C:
 	ldr r0, [r5, #0x04]
 	ldrh r0, [r0, #0x06]
 	ldr r1, _08027370 @ =0x08F683A4
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 	b _0802737E
 	.byte 0x00, 0x00
 _0802736C: .4byte 0x0000FEFF
@@ -286,7 +286,7 @@ _08027374:
 	ldr r0, [r5, #0x04]
 	ldrh r0, [r0, #0x06]
 	ldr r1, _080273B4 @ =0x096FAC64
-	bl func_08002BAC
+	bl LoadObjPaletteBank
 _0802737E:
 	add r0, sp, #0x010
 	movs r2, #0x00
@@ -302,10 +302,10 @@ _0802737E:
 	str r7, [sp, #0x008]
 	mov r4, r9
 	str r4, [sp, #0x00C]
-	bl func_080023E0
+	bl DrawSprite
 	adds r0, r5, #0x0
 	adds r0, #0x24
-	bl func_08000EE0
+	bl TaskPoolDraw
 _080273A6:
 	add sp, #0x014
 	pop {r3, r4}

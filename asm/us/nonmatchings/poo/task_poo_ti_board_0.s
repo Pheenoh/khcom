@@ -16,7 +16,7 @@ task_poo_ti_board_0: @ 080CF754
 	ldr r0, _080CF78C @ =0x097565FC
 	movs r1, #0x80
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	str r0, [r4, #0x00]
 	str r5, [r4, #0x04]
 	ldr r0, _080CF790 @ =0x097565E8

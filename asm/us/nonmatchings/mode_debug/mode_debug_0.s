@@ -6,10 +6,10 @@
 	.type mode_debug_0, %function
 mode_debug_0: @ 0800AC34
 	push {r4, lr}
-	bl func_0811FFA4
+	bl m4aMPlayAllStop
 	ldr r4, _0800AD1C @ =0x02034898
 	movs r0, #0x24
-	bl func_08000918
+	bl EwramAlloc
 	str r0, [r4, #0x00]
 	movs r0, #0x01
 	movs r1, #0x10
@@ -20,12 +20,12 @@ mode_debug_0: @ 0800AC34
 	movs r1, #0x00
 	movs r2, #0x0F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x02
 	movs r2, #0x1F
 	movs r3, #0x00
-	bl func_08005074
+	bl SetupBg
 	movs r0, #0x01
 	movs r1, #0x80
 	bl func_08005610
@@ -35,17 +35,17 @@ mode_debug_0: @ 0800AC34
 	ldr r1, _0800AD20 @ =0x08C72CE4
 	ldr r2, _0800AD24 @ =0x00005B40
 	movs r0, #0x01
-	bl func_080050B8
+	bl LoadBgTiles
 	ldr r1, _0800AD28 @ =0x08F683E4
 	movs r2, #0x80
 	lsls r2, r2, #0x02
 	movs r0, #0x01
-	bl func_080050DC
+	bl LoadBgPalette
 	ldr r1, _0800AD2C @ =0x08EEEB84
 	movs r2, #0x80
 	lsls r2, r2, #0x04
 	movs r0, #0x01
-	bl func_0800510C
+	bl LoadBgMap
 	movs r0, #0x01
 	bl func_08004FC8
 	movs r0, #0x1F
@@ -68,24 +68,24 @@ mode_debug_0: @ 0800AC34
 	ldr r0, _0800AD34 @ =0x08950902
 	movs r1, #0xB8
 	lsls r1, r1, #0x02
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, [r4, #0x00]
 	str r0, [r1, #0x04]
 	ldr r0, _0800AD38 @ =0x08F685E4
 	movs r1, #0x20
-	bl func_08002A14
+	bl LoadObjPalette
 	adds r1, r0, #0x0
 	ldr r0, [r4, #0x00]
 	str r1, [r0, #0x08]
 	adds r0, #0x0C
 	ldr r1, _0800AD3C @ =0x09EDF774
 	ldr r2, _0800AD40 @ =0x09EDF764
-	bl func_08005968
+	bl AnimInit
 	ldr r0, [r4, #0x00]
 	adds r0, #0x0C
 	movs r1, #0x00
 	movs r2, #0x01
-	bl func_080059A4
+	bl AnimStart
 	ldr r3, _0800AD44 @ =0x081283CC
 	movs r0, #0x00
 	movs r1, #0x00

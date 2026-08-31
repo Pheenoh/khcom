@@ -40,7 +40,7 @@ _0801377E:
 	str r0, [sp, #0x000]
 	add r0, sp, #0x004
 	adds r1, r4, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _080137C0 @ =0x09EDA648
 	add r1, sp, #0x004
 	movs r2, #0x00

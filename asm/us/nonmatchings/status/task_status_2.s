@@ -6,7 +6,7 @@
 	.type task_status_2, %function
 task_status_2: @ 080D7878
 	push {lr}
-	bl func_08000EE0
+	bl TaskPoolDraw
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

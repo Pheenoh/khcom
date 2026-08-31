@@ -8,11 +8,11 @@ task_poo_ti_board_3: @ 080CF874
 	push {r4, lr}
 	adds r4, r0, #0x0
 	ldr r0, [r4, #0x00]
-	bl func_080028C0
+	bl ReleaseObjTiles
 	ldr r0, [r4, #0x04]
 	cmp r0, #0x00
 	beq _080CF890
-	bl func_08002C10
+	bl ReleaseObjPalette
 	adds r0, r4, #0x0
 	adds r0, #0x1C
 	bl func_08012304

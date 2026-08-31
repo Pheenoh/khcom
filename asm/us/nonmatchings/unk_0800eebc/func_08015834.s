@@ -41,7 +41,7 @@ func_08015834: @ 08015834
 	adds r1, r4, #0x0
 	adds r2, r7, #0x0
 	adds r3, r5, #0x0
-	bl func_0801909C
+	bl WorldToScreen
 	ldr r0, _080158DC @ =0x09EDA768
 	add r1, sp, #0x004
 	movs r2, #0x00
@@ -51,7 +51,7 @@ func_08015834: @ 08015834
 	bl func_08006778
 	movs r0, #0x80
 	lsls r0, r0, #0x02
-	bl func_0811FE70
+	bl m4aSongNumStart
 	mov r0, r8
 	ldr r1, [r0, #0x00]
 	ldr r0, [sp, #0x030]

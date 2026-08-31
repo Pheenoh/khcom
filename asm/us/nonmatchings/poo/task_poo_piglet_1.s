@@ -94,7 +94,7 @@ _080CD9E4: .4byte 0x080CD9E8
 _080CDB94:
 	adds r0, r4, #0x0
 	adds r0, #0x0C
-	bl func_08005A64
+	bl AnimUpdate
 	str r0, [r4, #0x08]
 _080CDB9E:
 	movs r0, #0x01

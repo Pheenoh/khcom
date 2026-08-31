@@ -160,7 +160,7 @@ _080D460A:
 	ldr r0, _080D4650 @ =0x0976B340
 	movs r1, #0x90
 	lsls r1, r1, #0x06
-	bl func_080026A4
+	bl LoadObjTiles
 	ldr r1, [sp, #0x000]
 	str r0, [r1, #0x00]
 	ldrb r0, [r6, #0x04]

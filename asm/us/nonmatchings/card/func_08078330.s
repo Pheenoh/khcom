@@ -14,7 +14,7 @@ func_08078330: @ 08078330
 	lsls r0, r0, #0x10
 	lsrs r4, r0, #0x10
 	lsls r0, r4, #0x01
-	bl func_08000918
+	bl EwramAlloc
 	adds r6, r0, #0x0
 	mov r1, sp
 	movs r0, #0x00
@@ -24,7 +24,7 @@ func_08078330: @ 08078330
 	orrs r2, r4
 	mov r0, sp
 	adds r1, r6, #0x0
-	bl func_08117FE8
+	bl CpuSet
 	adds r0, r5, #0x0
 	adds r1, r6, #0x0
 	bl func_08085A58
@@ -67,7 +67,7 @@ _08078390:
 	strb r1, [r0, #0x09]
 _080783AC:
 	adds r0, r6, #0x0
-	bl func_080009C4
+	bl EwramFree
 	add sp, #0x004
 	pop {r4, r5, r6, r7}
 	pop {r0}
