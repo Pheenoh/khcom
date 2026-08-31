@@ -12,7 +12,20 @@ INCLUDE_ASM("bos7/task_bos_lst_fld_3.s");
 INCLUDE_ASM("bos7/task_bos_lst_edg_0.s");
 INCLUDE_ASM("bos7/task_bos_lst_edg_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_edg_2.s");
-INCLUDE_ASM("bos7/task_bos_lst_edg_3.s");
+
+void task_bos_lst_edg_3(LstEdgWork* work) {
+    func_080028C0((void*)work->unk_044);
+    func_08002C10((void*)work->unk_048);
+}
+
+s32 func_0811089C(s32 x) {
+    return x * x;
+}
+
+s32 func_081108A4(s32 x) {
+    return x * x;
+}
+
 INCLUDE_ASM("bos7/func_081108AC.s");
 
 u8 func_08110918(LstWork* work) {
@@ -29,7 +42,20 @@ u8 func_08110918(LstWork* work) {
     return result;
 }
 
-INCLUDE_ASM("bos7/func_08110938.s");
+u8 func_08110938(LstWork* work) {
+    LstState* s;
+    u8 result;
+
+    s = work->unk_04;
+    result = func_08110918(work);
+
+    if (result == 1 && (s16)s->unk_12 <= 0) {
+        result = 0;
+    }
+
+    return result;
+}
+
 INCLUDE_ASM("bos7/func_0811095C.s");
 
 void func_08110984(LstWork* work) {
@@ -103,7 +129,20 @@ INCLUDE_ASM("bos7/task_bos_lst_fal_3.s");
 INCLUDE_ASM("bos7/task_bos_lst_ctr_0.s");
 INCLUDE_ASM("bos7/task_bos_lst_ctr_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_ctr_2.s");
-INCLUDE_ASM("bos7/task_bos_lst_ctr_3.s");
+
+void task_bos_lst_ctr_3(LstCtrWork* work) {
+    func_080028C0((void*)work->unk_05C);
+    func_08002C10((void*)work->unk_060);
+}
+
+s32 func_08112410(s32 x) {
+    return x * x;
+}
+
+s32 func_08112418(s32 x) {
+    return x * x;
+}
+
 INCLUDE_ASM("bos7/task_bos_lst_snp_0.s");
 INCLUDE_ASM("bos7/task_bos_lst_snp_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_snp_2.s");
