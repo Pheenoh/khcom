@@ -41,7 +41,7 @@ void mode_movie_1(void) {
         gUnk_02034938++;
         break;
     case 2:
-        func_08120460();
+        m4aSoundVSyncOff();
         gUnk_03007484 = func_0805EA90;
         func_08000884(func_08000250(), func_08000258());
         func_08000860(func_08000240(), func_08000248());
@@ -107,7 +107,7 @@ void mode_movie_1(void) {
         func_08004034();
         gUnk_03007484 = 0;
         m4aSoundInit();
-        func_081204E0();
+        m4aSoundVSyncOn();
         gUnk_02034938++;
         break;
     case 3: {

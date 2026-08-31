@@ -19,6 +19,24 @@
 #define SOUND_MODE_DA_BIT       0x00B00000
 #define SOUND_MODE_DA_BIT_SHIFT 20
 
+#define SOUND_CHANNEL_SF_START       0x80
+#define SOUND_CHANNEL_SF_STOP        0x40
+#define SOUND_CHANNEL_SF_IEC         0x04
+#define SOUND_CHANNEL_SF_ENV         0x03
+#define SOUND_CHANNEL_SF_ENV_ATTACK  0x03
+#define SOUND_CHANNEL_SF_ENV_DECAY   0x02
+#define SOUND_CHANNEL_SF_ENV_SUSTAIN 0x01
+#define SOUND_CHANNEL_SF_ENV_RELEASE 0x00
+#define SOUND_CHANNEL_SF_ON (SOUND_CHANNEL_SF_START | SOUND_CHANNEL_SF_STOP | SOUND_CHANNEL_SF_IEC | SOUND_CHANNEL_SF_ENV)
+
+#define CGB_CHANNEL_MO_PIT 0x02
+#define CGB_CHANNEL_MO_VOL 0x01
+
+#define CGB_NRx2_ENV_DIR_DEC 0x00
+#define CGB_NRx2_ENV_DIR_INC 0x08
+
+#define TONEDATA_TYPE_FIX 0x08
+
 #define MPT_FLG_VOLSET 0x01
 #define MPT_FLG_VOLCHG 0x03
 #define MPT_FLG_PITSET 0x04
@@ -40,6 +58,73 @@
 
 #define NUM_MUSIC_PLAYERS ((u16)gNumMusicPlayers)
 #define MAX_LINES ((u32)gMaxLines)
+
+#define REG_VCOUNT      (*(vu8*)0x04000006)
+#define REG_NR12        (*(vu8*)0x04000063)
+#define REG_NR14        (*(vu8*)0x04000065)
+#define REG_NR22        (*(vu8*)0x04000069)
+#define REG_NR24        (*(vu8*)0x0400006D)
+#define REG_NR30        (*(vu8*)0x04000070)
+#define REG_NR42        (*(vu8*)0x04000079)
+#define REG_NR44        (*(vu8*)0x0400007D)
+#define REG_NR50        (*(vu8*)0x04000080)
+#define REG_ADDR_NR10   0x04000060
+#define REG_ADDR_NR11   0x04000062
+#define REG_ADDR_NR12   0x04000063
+#define REG_ADDR_NR13   0x04000064
+#define REG_ADDR_NR14   0x04000065
+#define REG_ADDR_NR21   0x04000068
+#define REG_ADDR_NR22   0x04000069
+#define REG_ADDR_NR23   0x0400006C
+#define REG_ADDR_NR24   0x0400006D
+#define REG_ADDR_NR30   0x04000070
+#define REG_ADDR_NR31   0x04000072
+#define REG_ADDR_NR32   0x04000073
+#define REG_ADDR_NR33   0x04000074
+#define REG_ADDR_NR34   0x04000075
+#define REG_ADDR_NR41   0x04000078
+#define REG_ADDR_NR42   0x04000079
+#define REG_ADDR_NR43   0x0400007C
+#define REG_ADDR_NR44   0x0400007D
+#define REG_NR51        (*(vu8*)0x04000081)
+#define REG_WAVE_RAM0   (*(vu32*)0x04000090)
+#define REG_WAVE_RAM1   (*(vu32*)0x04000094)
+#define REG_WAVE_RAM2   (*(vu32*)0x04000098)
+#define REG_WAVE_RAM3   (*(vu32*)0x0400009C)
+#define REG_SOUNDCNT_L  (*(vu16*)0x04000080)
+#define REG_SOUNDCNT_H  (*(vu16*)0x04000082)
+#define REG_SOUNDCNT_X  (*(vu16*)0x04000084)
+#define REG_SOUNDBIAS_H (*(vu8*)0x04000089)
+#define REG_FIFO_A      (*(vu32*)0x040000A0)
+#define REG_FIFO_B      (*(vu32*)0x040000A4)
+#define REG_DMA1SAD     (*(vu32*)0x040000BC)
+#define REG_DMA1DAD     (*(vu32*)0x040000C0)
+#define REG_DMA1CNT     (*(vu32*)0x040000C4)
+#define REG_DMA1CNT_H   (*(vu16*)0x040000C6)
+#define REG_DMA2SAD     (*(vu32*)0x040000C8)
+#define REG_DMA2DAD     (*(vu32*)0x040000CC)
+#define REG_DMA2CNT     (*(vu32*)0x040000D0)
+#define REG_DMA2CNT_H   (*(vu16*)0x040000D2)
+#define REG_TM0CNT_L    (*(vu16*)0x04000100)
+#define REG_TM0CNT_H    (*(vu16*)0x04000102)
+
+#define DMA_DEST_FIXED    0x0040
+#define DMA_REPEAT        0x0200
+#define DMA_32BIT         0x0400
+#define DMA_START_SPECIAL 0x3000
+#define DMA_ENABLE        0x8000
+
+#define TIMER_ENABLE 0x0080
+
+#define CPU_SET_SRC_FIXED 0x01000000
+#define CPU_SET_32BIT     0x04000000
+
+#define CpuCopy32(src, dest, size) CpuSet(src, dest, ((size) / 4) | CPU_SET_32BIT)
+#define CpuFill32(value, dest, size)                                              \
+{                                                                                 \
+    vu32 tmp = (vu32)(value);                                                     \
+    CpuSet((void*)&tmp, dest, CPU_SET_32BIT | CPU_SET_SRC_FIXED | ((size) / 4));  \
+}
 
 typedef struct WaveData {
     u16 type;
@@ -149,6 +234,7 @@ typedef void (*CgbOscOffFunc)(u8);
 typedef u32 (*MidiKeyToCgbFreqFunc)(u8, u8, u8);
 typedef void (*ExtVolPitFunc)(void);
 typedef void (*MPlayMainFunc)(struct MusicPlayerInfo*);
+typedef void (*XcmdFunc)(struct MusicPlayerInfo*, struct MusicPlayerTrack*);
 
 typedef struct SoundInfo {
     u32 ident;
@@ -270,12 +356,17 @@ typedef struct Song {
 extern const MusicPlayer gMPlayTable[];
 extern const Song gSongTable[];
 extern MPlayFunc gMPlayJumpTable[];
+extern const XcmdFunc gXcmdTable[];
 extern CgbChannel gCgbChans[];
 extern SoundInfo gSoundInfo;
 extern u8 gMPlayMemAccArea[];
 extern const u16 gPcmSamplesPerVBlankTable[];
+extern const u8 gCgbScaleTable[];
+extern const s16 gCgbFreqTable[];
+extern const u8 gNoiseTable[];
+extern const u8 gCgb3Vol[];
 extern char SoundMainRAM[];
-extern char SoundMainRAM_Buffer[];
+extern char SoundMainRAM_Buffer[0x400];
 extern char gNumMusicPlayers[];
 extern char gMaxLines[];
 extern SoundInfo* gSoundInfoPtr;

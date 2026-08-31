@@ -38,7 +38,7 @@ extern u8 gUnk_09EFA9C4[];
 
 void func_08004034(void);
 void CpuSet(void* src, void* dst, u32 ctrl);
-void func_08120460(void);
+void m4aSoundVSyncOff(void);
 s32 func_08000250(void);
 s32 func_08000258(void);
 void func_08000884(s32 a, s32 b);
@@ -63,7 +63,7 @@ void func_08001F98(void);
 void func_08005BC4(void);
 void func_08006404(void);
 void m4aSoundInit(void);
-void func_081204E0(void);
+void m4aSoundVSyncOn(void);
 void _08117FF0(s32 a);
 void func_0806180C(s32 a);
 void func_080010CC(void* a, s32 b);

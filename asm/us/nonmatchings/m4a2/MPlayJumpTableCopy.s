@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_0811F5E8
+	.global MPlayJumpTableCopy
 	.thumb
 	.thumb_func
-	.type func_0811F5E8, %function
-func_0811F5E8: @ 0811F5E8
+	.type MPlayJumpTableCopy, %function
+MPlayJumpTableCopy: @ 0811F5E8
 	mov r12, lr
 	movs r1, #0x24
 	ldr r2, _0811F618 @ =0x09D6D348

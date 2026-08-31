@@ -40,7 +40,7 @@ void mode_allmap_0(s32 a) {
     REG_IME = 1;
     func_08006120(0, 16);
     if (gUnk_02034E81 != 0) {
-        func_08120EF8(gUnk_0203DB10, 0xFF, 0x80);
+        m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x80);
     }
     gUnk_0203C534 = 30;
     gUnk_0203C508 = 30;
@@ -107,7 +107,7 @@ void mode_allmap_2(void) {
     REG_IME = 1;
     func_08006C68();
     if (gUnk_02034E81 != 0) {
-        func_08120EF8(gUnk_0203DB10, 0xFF, 0x100);
+        m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x100);
     }
     EwramFree(gUnk_0203C530);
     EwramFree(gUnk_0203C504);

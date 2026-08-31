@@ -11,7 +11,7 @@ task_roomcreate_3: @ 0803F6E0
 	movs r2, #0x80
 	lsls r2, r2, #0x01
 	movs r1, #0xFF
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	adds r4, #0x2C
 	adds r0, r4, #0x0
 	bl TaskPoolDestroy

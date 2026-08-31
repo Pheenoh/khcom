@@ -64,95 +64,95 @@ _080302A0:
 	ldr r0, _080303B0 @ =0x0203DB10
 	movs r1, #0xFF
 	movs r2, #0x80
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303B4 @ =0x0203DC90
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303B8 @ =0x0203DCD0
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303BC @ =0x0203DEE0
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303C0 @ =0x0203DE50
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303C4 @ =0x0203DA10
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303C8 @ =0x0203DAD0
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303CC @ =0x0203DC50
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303D0 @ =0x0203DEA0
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303D4 @ =0x0203DA90
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303D8 @ =0x0203DD10
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303DC @ =0x0203DF20
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303E0 @ =0x0203DDD0
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303E4 @ =0x0203DA50
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303E8 @ =0x0203DE10
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303EC @ =0x0203DC10
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303F0 @ =0x0203D990
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303F4 @ =0x0203DB50
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303F8 @ =0x0203DBD0
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _080303FC @ =0x0203DD90
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030400 @ =0x0203D9D0
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030404 @ =0x0203DB90
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030408 @ =0x0203DD50
 	movs r1, #0xFF
 	movs r2, #0x00
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	b _08030530
 _080303A8: .4byte 0x02039B84
 _080303AC: .4byte 0xFFFFC000
@@ -209,95 +209,95 @@ _08030438:
 	lsls r4, r4, #0x01
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _0803053C @ =0x0203DC90
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030540 @ =0x0203DCD0
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030544 @ =0x0203DEE0
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030548 @ =0x0203DE50
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _0803054C @ =0x0203DA10
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030550 @ =0x0203DAD0
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030554 @ =0x0203DC50
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030558 @ =0x0203DEA0
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _0803055C @ =0x0203DA90
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030560 @ =0x0203DD10
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030564 @ =0x0203DF20
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030568 @ =0x0203DDD0
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _0803056C @ =0x0203DA50
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030570 @ =0x0203DE10
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030574 @ =0x0203DC10
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030578 @ =0x0203D990
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _0803057C @ =0x0203DB50
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030580 @ =0x0203DBD0
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030584 @ =0x0203DD90
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030588 @ =0x0203D9D0
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _0803058C @ =0x0203DB90
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	ldr r0, _08030590 @ =0x0203DD50
 	movs r1, #0xFF
 	adds r2, r4, #0x0
-	bl func_08120EF8
+	bl m4aMPlayVolumeControl
 	strb r6, [r5, #0x10]
 	movs r0, #0x00
 	bl func_080063C4
