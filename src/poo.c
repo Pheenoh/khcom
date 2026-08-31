@@ -291,6 +291,7 @@ INCLUDE_ASM("poo/func_080D2DD8.s");
 INCLUDE_ASM("poo/func_080D2E28.s");
 INCLUDE_ASM("poo/func_080D2E70.s");
 INCLUDE_ASM("poo/func_080D2EB8.s");
+INCLUDE_ASM("poo/func_080D2F20.s");
 INCLUDE_ASM("poo/func_080D2F64.s");
 INCLUDE_ASM("poo/func_080D3008.s");
 INCLUDE_ASM("poo/func_080D3034.s");

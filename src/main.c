@@ -189,6 +189,7 @@ s32 func_08000F90(void) {
 INCLUDE_ASM("main/func_08000F94.s");
 INCLUDE_ASM("main/func_08000FB4.s");
 INCLUDE_ASM("main/func_080010CC.s");
+INCLUDE_ASM("main/func_080010E0.s");
 INCLUDE_ASM("main/func_08001248.s");
 INCLUDE_ASM("main/func_08001254.s");
 INCLUDE_ASM("main/func_080012A8.s");
