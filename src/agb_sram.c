@@ -38,20 +38,24 @@ void SetSramFastFunc(void) {
     src = (u16*)((u32)src & ~1);
     dest = readSramFast_Work;
     size = ((u32)WriteSramFast - (u32)ReadSramFast_Core) / 2;
+
     while (size != 0) {
         *dest++ = *src++;
         size--;
     }
+
     ReadSramFast = (void*)((u32)readSramFast_Work + 1);
 
     src = (u16*)VerifySramFast_Core;
     src = (u16*)((u32)src & ~1);
     dest = verifySramFast_Work;
     size = ((u32)SetSramFastFunc - (u32)VerifySramFast_Core) / 2;
+
     while (size != 0) {
         *dest++ = *src++;
         size--;
     }
+
     VerifySramFast = (void*)((u32)verifySramFast_Work + 1);
 
     REG_WAITCNT = (REG_WAITCNT & ~3) | 3;
@@ -64,6 +68,7 @@ u32 WriteAndVerifySramFast(const u8* src, u8* dest, u32 size) {
     for (i = 0; i < 3; i++) {
         WriteSramFast(src, dest, size);
         errorAddr = VerifySramFast(src, dest, size);
+        
         if (errorAddr == 0)
             break;
     }
