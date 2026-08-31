@@ -96,7 +96,7 @@ void LoadBgMap(s32 bg, void* src, u16 size);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void SetBgPriority(s32 bg, u16 priority);
 void AnimInit(AnimState* a, void* b, void* c);
-void AnimStart(AnimState* a, u16 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimGetGfx(AnimState* a);
 void LoadPalette(void* src, void* dst, s32 size);
 void func_08006120(s32 a, u16 b);

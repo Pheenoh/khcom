@@ -8,16 +8,26 @@ typedef struct AnimFrame {
     u16 unk_02;
 } AnimFrame;
 
+typedef struct AnimHeader {
+    u32 unk_00;
+    u16 unk_04;
+    u16 unk_06;
+} AnimHeader;
+
 typedef struct AnimState {
-    s32 unk_00;
+    AnimHeader** unk_00;
     u32* unk_04;
     u16 unk_08;
     u16 unk_0A;
     u16 unk_0C;
     u16 unk_0E;
-    u8 unk_10[0x04];
+    u16 unk_10;
+    u16 unk_12;
     AnimFrame* unk_14;
 } AnimState;
+
+void AnimStart(AnimState* a, u16 animId, u16 flags);
+u16 GetRandom(void);
 
 extern vu16* const gBgControl[];
 extern u8 gBgPaletteBank[];
