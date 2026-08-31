@@ -11,7 +11,7 @@ func_08085374: @ 08085374
 	lsls r1, r1, #0x18
 	lsrs r5, r1, #0x18
 	adds r0, r5, #0x0
-	bl func_08085758
+	bl GetDeck
 	adds r3, r0, #0x0
 	movs r1, #0x00
 	ldrh r0, [r3, #0x00]

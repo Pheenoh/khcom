@@ -1,0 +1,80 @@
+#ifndef GUARD_GAME_H
+#define GUARD_GAME_H
+
+#include "types.h"
+
+typedef struct UnkStruct_02039DD4 {
+    u32 unk_000;
+    u32 unk_004;
+    u32 unk_008;
+    u8 unk_00C[0x38];
+    u32 unk_044;
+    u32 unk_048;
+    u32 unk_04C;
+    u32 unk_050;
+    u32 unk_054;
+    u32 unk_058;
+    u32 unk_05C;
+    u32 unk_060;
+    u32 unk_064;
+    u32 unk_068;
+    u32 unk_06C;
+    u8 unk_070[0x08];
+    u32 unk_078;
+    u8 unk_07C[0x24];
+    u8 unk_0A0;
+    u8 unk_0A1[0x0F];
+    u16 unk_0B0;
+    u8 unk_0B2[0x06];
+    u32 unk_0B8;
+    u8 unk_0BC[0x06];
+    u16 unk_0C2;
+    u16 unk_0C4;
+    u16 unk_0C6;
+    u16 unk_0C8;
+    u16 unk_0CA;
+    u16 unk_0CC;
+    u16 unk_0CE;
+    u8 unk_0D0;
+    u8 unk_0D1;
+    u8 unk_0D2;
+    u8 unk_0D3;
+    u8 unk_0D4;
+    u8 unk_0D5;
+    u8 unk_0D6;
+    u8 unk_0D7;
+    u8 unk_0D8;
+    u8 unk_0D9;
+    u8 unk_0DA[0x02];
+    u8 unk_0DC;
+    u8 unk_0DD;
+    u8 unk_0DE;
+    u8 unk_0DF;
+    u8 unk_0E0;
+    u8 unk_0E1;
+    u8 unk_0E2;
+    u8 unk_0E3;
+    u8 unk_0E4;
+    u8 unk_0E5;
+    u8 unk_0E6;
+    u8 unk_0E7;
+    u8 unk_0E8;
+    u8 unk_0E9;
+    u8 unk_0EA;
+    u8 unk_0EB[0x02];
+    u8 unk_0ED;
+    u8 unk_0EE;
+    u8 unk_0EF;
+    u8 unk_0F0;
+    u8 unk_0F1[0x03];
+    u32 unk_0F4;
+    u8 unk_0F8[0x04];
+    u8 unk_0FC;
+    u8 unk_0FD;
+    u8 unk_0FE;
+    u8 unk_0FF[0x0D];
+} UnkStruct_02039DD4;
+
+extern UnkStruct_02039DD4* gUnk_02039DD4;
+
+#endif /* GUARD_GAME_H */

@@ -19,7 +19,7 @@ func_0808C3DC: @ 0808C3DC
 	lsls r1, r1, #0x04
 	adds r0, r6, r1
 	ldrb r0, [r0, #0x00]
-	bl func_08085758
+	bl GetDeck
 	str r0, [sp, #0x010]
 	movs r4, #0x00
 	mov r8, r4
