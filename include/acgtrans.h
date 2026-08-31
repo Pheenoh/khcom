@@ -24,9 +24,9 @@ typedef struct AcgTransConfig {
 extern u8 gUnk_09EDADF8[];
 
 void* TaskCreate(void* a, void* desc, void* args);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
+s32 RequestDma3Copy(u32 src, u32 dst, u32 size);
 void func_0800501C(s32 bg);
-void* GetBgCharBase(s32 bg);
+u32 GetBgCharBase(s32 bg);
 
 void task_acgtrans_0(AcgTransWork* work, AcgTransConfig* cfg);
 s32 task_acgtrans_1(AcgTransWork* work);
