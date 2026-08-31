@@ -1,21 +1,74 @@
 #include "macros.h"
+#include "bos7.h"
 
 INCLUDE_ASM("bos7/task_bos_lst_fld_0.s");
 INCLUDE_ASM("bos7/func_08110058.s");
 INCLUDE_ASM("bos7/task_bos_lst_fld_1.s");
-INCLUDE_ASM("bos7/task_bos_lst_fld_2.s");
+
+void task_bos_lst_fld_2(void) {
+}
+
 INCLUDE_ASM("bos7/task_bos_lst_fld_3.s");
 INCLUDE_ASM("bos7/task_bos_lst_edg_0.s");
 INCLUDE_ASM("bos7/task_bos_lst_edg_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_edg_2.s");
 INCLUDE_ASM("bos7/task_bos_lst_edg_3.s");
 INCLUDE_ASM("bos7/func_081108AC.s");
-INCLUDE_ASM("bos7/func_08110918.s");
+
+u8 func_08110918(LstWork* work) {
+    LstState* s;
+    u8 result;
+
+    s = work->unk_04;
+    result = 1;
+
+    if (s->unk_CC <= 0 || s->unk_02 == 6) {
+        result = 0;
+    }
+
+    return result;
+}
+
 INCLUDE_ASM("bos7/func_08110938.s");
 INCLUDE_ASM("bos7/func_0811095C.s");
-INCLUDE_ASM("bos7/func_08110984.s");
-INCLUDE_ASM("bos7/func_08110994.s");
-INCLUDE_ASM("bos7/func_081109A8.s");
+
+void func_08110984(LstWork* work) {
+    LstState* s;
+    u16 zero;
+
+    s = work->unk_04;
+    zero = 0;
+    s->unk_02 = 1;
+    s->unk_04 = zero;
+    s->unk_06 = zero;
+    s->unk_08 = zero;
+}
+
+void func_08110994(LstWork* work, u16 a) {
+    LstState* s;
+    u16 zero;
+
+    s = work->unk_04;
+    zero = 0;
+    s->unk_02 = 2;
+    s->unk_04 = zero;
+    s->unk_06 = zero;
+    s->unk_08 = zero;
+    s->unk_12 = a;
+}
+
+void func_081109A8(LstWork* work) {
+    LstState* s;
+    u16 zero;
+
+    s = work->unk_04;
+    zero = 0;
+    s->unk_02 = 5;
+    s->unk_04 = zero;
+    s->unk_06 = zero;
+    s->unk_08 = zero;
+}
+
 INCLUDE_ASM("bos7/func_081109B8.s");
 INCLUDE_ASM("bos7/func_08110A38.s");
 INCLUDE_ASM("bos7/func_08110A98.s");
@@ -24,7 +77,16 @@ INCLUDE_ASM("bos7/task_bos_lst_bit_0.s");
 INCLUDE_ASM("bos7/task_bos_lst_bit_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_bit_2.s");
 INCLUDE_ASM("bos7/task_bos_lst_bit_3.s");
-INCLUDE_ASM("bos7/func_08111660.s");
+
+void func_08111660(LstWork* work) {
+    LstState* s;
+
+    s = work->unk_04;
+    s->unk_00 = 0;
+    *(u16*)((u8*)s + 16) = 0;
+    func_080059A4((u8*)s + 68, 4, 0);
+}
+
 INCLUDE_ASM("bos7/func_08111678.s");
 INCLUDE_ASM("bos7/task_bos_lst_lsr_0.s");
 INCLUDE_ASM("bos7/task_bos_lst_lsr_1.s");
