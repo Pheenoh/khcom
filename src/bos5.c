@@ -160,7 +160,14 @@ void func_080FDA28(u16 model, u16 slot) {
     gUnk_02034FF8[(s16)slot].unk_10 = func_080026A4(src, 0x1000);
 }
 
-INCLUDE_ASM("bos5/func_080FDA98.s");
+s16 func_080FDA98(u16 model, u16 slot) {
+    if (gUnk_09992F70[(s16)model].unk_02 == 13 && func_080D2DD8()) {
+        gUnk_02034FF8[(s16)slot].unk_14 = gUnk_099A8914;
+    } else {
+        gUnk_02034FF8[(s16)slot].unk_14 = gUnk_09992F70[(s16)model].unk_10;
+    }
+}
+
 INCLUDE_ASM("bos5/func_080FDB1C.s");
 INCLUDE_ASM("bos5/func_080FE89C.s");
 INCLUDE_ASM("bos5/func_080FF10C.s");

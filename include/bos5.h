@@ -144,6 +144,7 @@ s32 task_bos_md_hahen_1(MdHahenWork* work);
 void task_bos_md_hahen_2(MdHahenWork* work);
 void func_080FD9B8(u16 model, u16 slot);
 void func_080FDA28(u16 model, u16 slot);
+s16 func_080FDA98(u16 model, u16 slot);
 extern u32 gUnk_03007480;
 
 void task_bos_ga_2(GaWork* work);
