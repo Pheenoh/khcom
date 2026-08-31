@@ -23,7 +23,13 @@ INCLUDE_ASM("bos4/task_bos_boogie_saku_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_saku_1.s");
 INCLUDE_ASM("bos4/func_080DA954.s");
 INCLUDE_ASM("bos4/task_bos_boogie_saku_2.s");
-INCLUDE_ASM("bos4/task_bos_boogie_saku_3.s");
+
+void task_bos_boogie_saku_3(BoogieSakuWork* work) {
+    func_080028C0((void*)work->unk_000);
+    func_08002C10((void*)work->unk_004);
+    func_08000F0C(&work->unk_028);
+}
+
 INCLUDE_ASM("bos4/task_bos_boogie_map_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_map_1.s");
 INCLUDE_ASM("bos4/task_bos_boogie_mapanime_0.s");
@@ -44,8 +50,22 @@ INCLUDE_ASM("bos4/func_080DB04C.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knife_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knife_1.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knife_2.s");
-INCLUDE_ASM("bos4/task_bos_boogie_knife_3.s");
-INCLUDE_ASM("bos4/func_080DB428.s");
+
+void task_bos_boogie_knife_3(BoogieKnifeWork* work) {
+    func_08012304(&work->unk_06C);
+    func_080028C0((void*)work->unk_008);
+    func_08002C10((void*)work->unk_00C);
+    func_08002C10((void*)work->unk_010);
+}
+
+u8 func_080DB428(u8* p) {
+    if (*(s32*)(p + 0x38) >= 0) {
+        return 1;
+    }
+
+    return 0;
+}
+
 INCLUDE_ASM("bos4/func_080DB438.s");
 INCLUDE_ASM("bos4/func_080DB468.s");
 INCLUDE_ASM("bos4/task_bos_boogie_knifereader_0.s");
@@ -63,7 +83,14 @@ void task_bos_boogie_knifereader_3(BoogieKnifereaderWork* work) {
 INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_0.s");
 INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_1.s");
 INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_2.s");
-INCLUDE_ASM("bos4/task_bos_boogie_kaihuku_3.s");
+
+void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work) {
+    func_0801B7D8(&work->unk_040);
+    func_080028C0((void*)work->unk_008);
+    func_08002C10((void*)work->unk_00C);
+    func_08002C10((void*)work->unk_010);
+}
+
 INCLUDE_ASM("bos4/func_080DB978.s");
 INCLUDE_ASM("bos4/func_080DBA14.s");
 INCLUDE_ASM("bos4/func_080DBC00.s");
@@ -85,7 +112,15 @@ INCLUDE_ASM("bos4/func_080DC544.s");
 INCLUDE_ASM("bos4/func_080DC578.s");
 INCLUDE_ASM("bos4/func_080DC5B0.s");
 INCLUDE_ASM("bos4/func_080DC5E8.s");
-INCLUDE_ASM("bos4/func_080DC628.s");
+
+u8 func_080DC628(void) {
+    if (**(u32**)&gUnk_02034F0C == 4) {
+        return 1;
+    }
+
+    return 0;
+}
+
 INCLUDE_ASM("bos4/task_bos_ursula_map_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_map_1.s");
 
@@ -99,9 +134,22 @@ s32 task_bos_ursula_border_1(void) {
 }
 
 INCLUDE_ASM("bos4/task_bos_ursula_border_2.s");
-INCLUDE_ASM("bos4/task_bos_ursula_border_3.s");
+
+void task_bos_ursula_border_3(UrsulaBorderWork* work) {
+    func_080028C0((void*)work->unk_000);
+    func_08002C10((void*)work->unk_004);
+}
+
 INCLUDE_ASM("bos4/func_080DC9DC.s");
-INCLUDE_ASM("bos4/func_080DCA78.s");
+
+u8 func_080DCA78(u8 a) {
+    if (a == func_080DC510()) {
+        return 12;
+    }
+
+    return 6;
+}
+
 INCLUDE_ASM("bos4/task_bos_ursula_tako_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_tako_1.s");
 INCLUDE_ASM("bos4/task_bos_ursula_tako_2.s");
@@ -111,7 +159,12 @@ INCLUDE_ASM("bos4/func_080DD248.s");
 INCLUDE_ASM("bos4/task_bos_ursula_backtako_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_backtako_1.s");
 INCLUDE_ASM("bos4/task_bos_ursula_backtako_2.s");
-INCLUDE_ASM("bos4/task_bos_ursula_backtako_3.s");
+
+void task_bos_ursula_backtako_3(UrsulaBacktakoWork* work) {
+    func_080028C0((void*)work->unk_000);
+    func_08002C10((void*)work->unk_004);
+}
+
 INCLUDE_ASM("bos4/task_bos_ursula_mapanime_0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_mapanime_1.s");
 
