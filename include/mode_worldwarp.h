@@ -23,9 +23,41 @@ typedef struct AnimState {
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
     u32 unk_008;
-    u8 unk_00C[0x168];
+    u8 unk_00C[0x02];
+    s8 unk_00E;
+    u8 unk_00F[0x165];
     u32 unk_174;
+    u8 unk_178[0x0E];
+    u8 unk_186[13][4];
 } UnkStruct_02039BB0;
+
+typedef struct WarpIcon {
+    u8 unk_00[0x08];
+    s16 unk_08;
+    s16 unk_0A;
+    s16 unk_0C;
+    s16 unk_0E;
+    s16 unk_10;
+    u8 unk_12[0x02];
+} WarpIcon;
+
+typedef struct WarpObjSet {
+    void* unk_00;
+    u16 unk_04;
+    u8 unk_06[0x02];
+    void* unk_08;
+    u16 unk_0C;
+    u8 unk_0E[0x02];
+    void* unk_10;
+    u8 unk_14[0x04];
+} WarpObjSet;
+
+typedef struct WarpRect {
+    s16 unk_00;
+    s16 unk_02;
+    s16 unk_04;
+    s16 unk_06;
+} WarpRect;
 
 typedef struct WarpGfx {
     u16 unk_00;
@@ -36,8 +68,8 @@ typedef struct WarpGfx {
     void* unk_0C;
     u16 unk_10;
     u8 unk_12[0x02];
-    s32 unk_14;
-    s32 unk_18;
+    void* unk_14;
+    void* unk_18;
     u16 unk_1C;
     u8 unk_1E[0x02];
 } WarpGfx;
@@ -116,11 +148,44 @@ extern u8 gUnk_099A2AD4[];
 extern u8 gUnk_099A2AF0[];
 extern u8 gUnk_099A2B24[];
 extern u8 gUnk_08B22BA8[];
+extern s16 gUnk_020354E8;
+extern s16 gUnk_020354EA;
+extern s16 gUnk_020354F0[];
+extern s32 gUnk_020357B4;
+extern s32 gUnk_020357B8;
+extern void* gUnk_020355E0[];
+extern u8 gUnk_020356D8;
+extern u8 gUnk_020357A0;
+extern AnimState gUnk_02035520;
+extern AnimState gUnk_02035538;
+extern AnimState gUnk_02035558;
+extern WarpIcon gUnk_09EF9384[];
+extern WarpObjSet gUnk_09EF9488[];
+extern WarpRect gUnk_099930E8[];
+extern u8 gUnk_09A3D37C[];
+extern u8 gUnk_09A06A7C[];
+extern u8 gUnk_09A35A1C[];
+extern u8 gUnk_09A3641C[];
+extern u8 gUnk_09A3691C[];
+extern u8 gUnk_09A0E33C[];
+extern u8 gUnk_09A0D63C[];
+extern u8 gUnk_09A0FD3C[];
+extern u8 gUnk_09A0F03C[];
+extern u8 gUnk_09A3D57C[];
+extern u8 gUnk_0999F488[];
+extern u8 gUnk_09A3D59C[];
+extern u8 gUnk_0999FA20[];
+extern u8 gUnk_09A3D5BC[];
+extern u8 gUnk_099A012C[];
+extern u8 gUnk_09EF9898[];
+extern u8 gUnk_09EF9870[];
+extern u8 gUnk_09EF98B0[];
+extern u8 gUnk_09EF98A0[];
 extern u8 gUnk_02035618[];
 extern u8 gUnk_020356E0[];
 
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void AnimInit(AnimState* a, s32 b, s32 c);
+void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 b, s32 c);
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
@@ -144,6 +209,23 @@ void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void* AnimUpdate(AnimState* a);
 void SetBgScroll(s32 a, u16 b, u16 c);
 void func_08102F30(void);
+void SetupBg(s32 a, s32 b, s32 c, s32 d);
+void SetBgPriority(s32 a, s32 b);
+void LoadBgPalette(s32 a, void* b, s32 c);
+void LoadBgTiles(s32 a, void* b, u16 c);
+void* GetBgCharBase(s32 a);
+void func_08001F98(void);
+void func_08004DB0(void);
+void func_08004FC8(s32 a);
+void func_0800501C(s32 a);
+void func_08006120(s32 a, s32 b);
+void func_08065ACC(void* a, s32 b);
+u8 func_080DF750(void);
+void func_0810057C(s32 a, s32 b, void* c, s32 d, s32 e, void* f, s32 g, s32 h);
+void func_081004EC(s32 a, s32 b, s32 c, void* d, s32 e, s32 f);
+u8 func_08100608(s16 a);
+u8 func_0810063C(s16 a);
+void func_08100670(s32 a, void* b, void* c);
 u16 GetKeysPressed(void);
 
 void mode_worldwarp_0(void);
@@ -158,5 +240,7 @@ void func_081015E8(void);
 void func_08101654(void);
 void func_08101740(s16 a);
 void func_08101768(void);
+void func_081017A0(void);
+void func_08101970(void);
 
 #endif /* GUARD_MODE_WORLDWARP_H */
