@@ -316,4 +316,6 @@ INCLUDE_ASM("bos5/func_080FF19C.s");
 INCLUDE_ASM("bos5/func_080FF228.s");
 INCLUDE_ASM("bos5/func_080FF2B8.s");
 INCLUDE_ASM("bos5/func_080FF310.s");
+INCLUDE_ASM("bos5/func_080FF330.s");
+INCLUDE_ASM("bos5/func_080FF794.s");
 INCLUDE_ASM("bos5/func_080FF8CC.s");

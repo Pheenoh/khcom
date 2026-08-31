@@ -280,6 +280,8 @@ INCLUDE_ASM("bos4/func_080DF8C0.s");
 INCLUDE_ASM("bos4/func_080DF964.s");
 INCLUDE_ASM("bos4/func_080DF990.s");
 INCLUDE_ASM("bos4/func_080DF9A8.s");
+INCLUDE_ASM("bos4/func_080DF9C4.s");
+INCLUDE_ASM("bos4/func_080DF9E0.s");
 INCLUDE_ASM("bos4/func_080DFA18.s");
 INCLUDE_ASM("bos4/func_080DFA3C.s");
 INCLUDE_ASM("bos4/func_080DFAA8.s");

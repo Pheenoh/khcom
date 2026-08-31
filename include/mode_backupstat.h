@@ -80,6 +80,16 @@ typedef struct PcWork {
     PcOam unk_2FC[24];
 } PcWork;
 
+typedef struct PcSpawnArg {
+    u8 unk_00;
+    u8 unk_01;
+    u16 unk_02;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    void* unk_10;
+} PcSpawnArg;
+
 typedef struct UnkStruct_02039B84 {
     s32 unk_000;
     s32 unk_004;
@@ -88,7 +98,7 @@ typedef struct UnkStruct_02039B84 {
     u8 unk_010[0x1C];
     TaskPool unk_02C;
     u8 unk_040[0x3C];
-    void* unk_07C;
+    PcSpawnArg* unk_07C;
     u8 unk_080[0x58];
     u16 unk_0D8;
     u8 unk_0DA[0xF6];
@@ -102,16 +112,6 @@ typedef struct UnkStruct_02039DC8 {
     u16 unk_68;
     u16 unk_6A;
 } UnkStruct_02039DC8;
-
-typedef struct PcSpawnArg {
-    u8 unk_00;
-    u8 unk_01;
-    u16 unk_02;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    void* unk_10;
-} PcSpawnArg;
 
 typedef struct Mode {
     const char* name;
@@ -130,7 +130,6 @@ extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern PcAnimStep gUnk_09A4C278[];
 extern PcGfxSet gUnk_09A4AC84[];
 extern PcSpriteDef* gUnk_09EFBB18[];
-extern PcSpriteCmd* gUnk_09EF9C34_cmds[];
 extern u8 gUnk_09D69274[];
 extern u8 gUnk_08F69BC4[];
 extern Mode gUnk_09ECEB64;
@@ -153,7 +152,9 @@ extern u16 gUnk_09A4C9EC[];
 extern s16 gUnk_09A4C9F2[];
 extern PcAnimStep gUnk_09A4AF34[];
 extern u8 gUnk_09A3DF34[];
-extern void* gUnk_09EF9C34[];
+extern PcSpriteCmd* gUnk_09EF9C34[];
+extern void* gUnk_09EFAB18[];
+extern u8 gUnk_05000000[];
 extern PcAnimStep* gUnk_09EF9DB4[];
 
 u16 func_0801AF1C(s32 a);
@@ -184,6 +185,7 @@ void SaveSetSystemState(s16 slot, s16 state);
 void SaveSetFileLargeState(s16 file, s16 slot, s16 state);
 void SaveSetFileSmallState(s16 file, s16 slot, s16 state);
 
+s32 func_08109EA8(s32 a);
 void mode_backupstat_0(void);
 void mode_backupstat_1(void);
 void mode_backupstat_2(void);

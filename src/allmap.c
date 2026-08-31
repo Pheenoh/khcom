@@ -52,5 +52,7 @@ INCLUDE_ASM("allmap/func_080D58AC.s");
 INCLUDE_ASM("allmap/func_080D5944.s");
 INCLUDE_ASM("allmap/func_080D5978.s");
 INCLUDE_ASM("allmap/func_080D5998.s");
+INCLUDE_ASM("allmap/func_080D59B4.s");
 INCLUDE_ASM("allmap/func_080D5A4C.s");
 INCLUDE_ASM("allmap/func_080D5B04.s");
+INCLUDE_ASM("allmap/func_080D5B30.s");

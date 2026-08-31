@@ -1,0 +1,127 @@
+#ifndef GUARD_MODE_TITLE_H
+#define GUARD_MODE_TITLE_H
+
+#include "types.h"
+#include "main.h"
+
+#define REG_DISPSTAT (*(vu16*)0x04000004)
+#define REG_IE (*(vu16*)0x04000200)
+#define REG_IME (*(vu16*)0x04000208)
+
+typedef struct UnkStruct_02039BB0 {
+    u8 unk_000[0x08];
+    u32 unk_008;
+} UnkStruct_02039BB0;
+
+typedef struct TitleLogoWork {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    void* unk_14;
+    void* unk_18;
+    void* unk_1C;
+    void* unk_20;
+    void* unk_24;
+    void* unk_28;
+    void* unk_2C;
+    void* unk_30;
+    void* unk_34;
+    void* unk_38;
+    void* unk_3C;
+    void* unk_40;
+    void* unk_44;
+    s32 unk_48;
+    s32 unk_4C;
+    u16 unk_50;
+    u16 unk_52;
+} TitleLogoWork;
+
+extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern u32 gUnk_02034E98;
+extern TaskPool gUnk_02034EA0;
+extern Task* gUnk_02034EB4;
+extern Task* gUnk_02034EB8;
+extern Task* gUnk_02034EBC;
+extern u16 gUnk_02034EC0;
+extern s16 gUnk_02034EC2;
+extern u16 gUnk_02034EC8;
+extern u8* gUnk_02034EC4;
+extern u8 gUnk_02034ECA;
+extern u8 gUnk_02034ECC;
+extern u16 gUnk_03007554;
+extern u16 gUnk_03007564;
+extern s32 gUnk_0203C544;
+extern s32 gUnk_0203C548;
+extern s32 gUnk_0203C54C;
+extern u8 gUnk_09840798[];
+extern u8 gUnk_0983E398[];
+extern u8 gUnk_097D3658[];
+extern u8 gUnk_09840F98[];
+extern u8 gUnk_097C77B8[];
+extern u8 gUnk_0983EB98[];
+extern u8 gUnk_097CF758[];
+extern u8 gUnk_0984A618[];
+extern u8 gUnk_0983FB98[];
+extern u8 gUnk_0976E9F4[];
+extern u8 gUnk_09776076[];
+extern u8 gUnk_0976EC54[];
+extern u8 gUnk_0976ED5A[];
+extern u8 gUnk_0976F0F6[];
+extern u8 gUnk_0976F1F0[];
+extern u8 gUnk_0976FD96[];
+extern u8 gUnk_0984AA18[];
+extern u8 gUnk_0984A6D8[];
+extern u8 gUnk_0984A6B8[];
+extern u8 gUnk_0984A6F8[];
+extern u8 gUnk_0984A718[];
+extern u8 gUnk_0984A738[];
+extern TaskDesc gUnk_09EF4E60;
+extern TaskDesc gUnk_09EF4E78;
+extern TaskDesc gUnk_09EF4E90;
+extern void* gUnk_09EF659C;
+extern void* gUnk_09EF669C;
+extern void* gUnk_09EF65A4;
+extern void* gUnk_09EF65AC;
+extern void* gUnk_09EF65B4;
+extern void* gUnk_09EF65BC;
+extern void* gUnk_09EF65C4;
+
+void func_0801CB44(void);
+s32 SaveLoadHeader(void);
+void func_08093BB4(void);
+void func_08093C04(void);
+void func_08004E64(void);
+void SetupBg(s32 a, s32 b, s32 c, s32 d);
+void SetBgPriority(s32 a, s32 b);
+void LoadBgTiles(s32 a, void* b, u16 c);
+void LoadBgPalette(s32 a, void* b, u16 c);
+void LoadBgMap(s32 a, void* b, u16 c);
+void func_0800501C(s32 a);
+void func_080C736C(void);
+void func_080C73A4(s32 a, s32 b, s32 c);
+void func_080055EC(s32 a, s32 b);
+void func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
+void func_08006120(s32 a, s32 b);
+void m4aSongNumStart(u16 id);
+void func_08006C68(void);
+u8 func_08006314(void);
+void func_080C73D8(void);
+void func_080D5A4C(s32 a);
+void func_080D5B04(void);
+void* LoadObjTiles(void* a, s32 b);
+void* LoadObjPalette(void* a, s32 b);
+void func_080058FC(s32* value, s32 target, u16 steps);
+void func_08004FC8(s32 a);
+void func_080C75A4(s32 a, u16 b);
+void func_08006184(s32 a, u16 b);
+void func_08000DE8(TaskPool* pool, Task* t);
+u8 func_080D6790(void);
+void func_080D5B30(void);
+void func_080D59B4(void);
+s32 SaveRepairSystem(void);
+s32 SaveRepairFileLarge(u16 file);
+s32 SaveRepairFileSmall(u16 file);
+
+#endif /* GUARD_MODE_TITLE_H */
