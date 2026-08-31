@@ -53,14 +53,113 @@ INCLUDE_ASM("bos5/func_080FC3FC.s");
 INCLUDE_ASM("bos5/task_bos_md_0.s");
 INCLUDE_ASM("bos5/task_bos_md_1.s");
 INCLUDE_ASM("bos5/task_bos_md_2.s");
+#ifdef NON_MATCHING
+void task_bos_md_3(MdWork* work) {
+    u8* a;
+    u8* b;
+    u8* p;
+    u8* q;
+    u8* r;
+    u8* t;
+    s32 i;
+    s32 off;
+
+    func_0800501C(1);
+    a = (u8*)work + 0xA8;
+    b = (u8*)work + 0x68;
+    i = 0;
+
+    do {
+        func_08012304(a);
+        func_0801B7D8(b);
+        a += 0x110;
+        b += 0x110;
+    } while (--i >= 0);
+
+    q = (u8*)work + 0x2C;
+    r = (u8*)work + 0x40;
+    t = (u8*)work + 0x54;
+    off = 0;
+    p = (u8*)work + 0x17C;
+    i = 1;
+
+    do {
+        if (*(void**)(p + off) != 0) {
+            func_080028C0(*(void**)(p + off));
+        }
+
+        off += 20;
+    } while (--i >= 0);
+
+    func_08002C10((void*)work->unk_020);
+    func_08002C10((void*)work->unk_024);
+    func_08000F0C(q);
+    func_08000F0C(r);
+    func_08000F0C(t);
+}
+#else
 INCLUDE_ASM("bos5/task_bos_md_3.s");
+#endif
 INCLUDE_ASM("bos5/task_bos_md_map_0.s");
 INCLUDE_ASM("bos5/task_bos_md_map_1.s");
 INCLUDE_ASM("bos5/func_080FCC14.s");
 INCLUDE_ASM("bos5/func_080FCCB4.s");
 INCLUDE_ASM("bos5/task_bos_md_fire_0.s");
+#ifdef NON_MATCHING
+u8 task_bos_md_fire_1(MdFireWork* work) {
+    u8 result;
+
+    func_080FCC14(work);
+    result = func_080FCCB4(work);
+
+    if ((s16)work->unk_006 > 0) {
+        work->unk_006--;
+    }
+
+    work->unk_03C = work->unk_148;
+    work->unk_040 = work->unk_14C;
+    work->unk_044 = work->unk_150;
+    func_08012324(&work->unk_078);
+    return result;
+}
+#else
 INCLUDE_ASM("bos5/task_bos_md_fire_1.s");
+#endif
+#ifdef NON_MATCHING
+void task_bos_md_fire_2(MdFireWork* work) {
+    s16 x;
+    s16 y;
+    void* gfx;
+    s32 sprite;
+    u16 frame;
+
+    if ((s16)work->unk_006 > 0 && (gUnk_03007480 & 1)) {
+        gfx = (void*)work->unk_010;
+    } else {
+        gfx = (void*)work->unk_00C;
+    }
+
+    func_0801909C(&x, &y, work->unk_148, work->unk_14C, work->unk_150);
+    frame = func_0801AF1C(work->unk_14C);
+
+    if (work->unk_000 == 0) {
+        func_080058FC(&work->unk_030, 0x100, work->unk_034);
+    } else if (work->unk_000 == 4) {
+        func_080058FC(&work->unk_030, 25, work->unk_034);
+    } else {
+        sprite = 0;
+        goto draw;
+    }
+
+    sprite = func_08002CB4(0, work->unk_030, work->unk_030, 0);
+
+draw:
+    func_080023E0(x, y, func_08005A64(&work->unk_018), (void*)work->unk_014, gfx,
+                  sprite, frame, (u16)(-4100 - (work->unk_14C >> 8) * 4));
+}
+#else
 INCLUDE_ASM("bos5/task_bos_md_fire_2.s");
+#endif
 
 void task_bos_md_fire_3(MdFireWork* work) {
     func_08012304(&work->unk_078);
