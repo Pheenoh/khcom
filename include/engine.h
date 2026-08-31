@@ -58,6 +58,9 @@ typedef struct AnimState {
 
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 u16 GetRandom(void);
+void SeedRand(u32 seed);
+u32 Rand(void);
+void SeedRandom(u32 seed);
 
 extern vu16* const gBgControl[];
 extern u8 gBgPaletteBank[];
@@ -66,6 +69,7 @@ extern u16 gUnk_03007500;
 extern u8* gUnk_030074C8;
 extern Dma3Request* gDma3Requests;
 extern u16 gUnk_0300786C;
+extern u32 gRandSeed;
 extern u32 gRandomState[4];
 extern u8* gUnk_03007568;
 extern u16 gUnk_03007544;
@@ -76,6 +80,19 @@ extern u16 gUnk_03007520;
 extern u16 gUnk_03007534;
 extern u16 gUnk_0300755C;
 extern u16 gUnk_030074E4;
+extern u16 gUnk_03007564;
+extern u32 gUnk_0203401C;
+extern u32 gUnk_02034020;
+extern u16 gUnk_02034024;
+extern u8 gUnk_02034026;
+extern u32 gUnk_02034040;
+extern s32 gUnk_02034048;
+extern u8 gUnk_02034054;
+extern u32 gUnk_0203405C;
+extern u32 gUnk_02034060;
+extern u8 gUnk_02034064;
+extern u16 gUnk_02034066;
+extern u16 gUnk_02034068;
 
 u8 func_08002060(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
 u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
@@ -106,5 +123,21 @@ u16 func_08005B34(AnimState* a);
 void LoadPalette(void* src, void* dst, s32 size);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 u8 func_08006314(void);
+void LoadObjPaletteBank(u16 bank, void* src);
+void func_080034D8(u8 a);
+void func_08005810(u16 a, u16 b);
+u16 func_08005920(u16 a);
+u16 func_08005B30(AnimState* a);
+u16 func_08005B38(AnimState* a);
+void func_08005B64(AnimState* a);
+void func_08005BC4(void);
+void func_08005C60(u16 a);
+u16 func_08006390(void);
+void func_080063A8(void);
+void func_08006404(void);
+void func_0800675C(u8 a, s32 b, s32 c);
+void func_08006B34(u16 a);
+void func_08006B40(u16 a);
+void func_08006B4C(void);
 
 #endif /* GUARD_ENGINE_H */
