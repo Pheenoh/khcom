@@ -2,9 +2,10 @@
 #define GUARD_MODE_CHKEFF_H
 
 #include "types.h"
+#include "main.h"
 
 typedef struct ChkEffWork {
-    u8 unk_00[0x14];
+    TaskPool pool;
     s16 unk_14;
     u8 unk_16;
     u8 unk_17;
@@ -17,16 +18,14 @@ typedef struct ChkEffWork {
     u16 unk_26;
 } ChkEffWork;
 
-void* EwramAlloc(u32 size);
-void EwramFree(void* p);
-void func_080010CC(void* a, s32 b);
-void TaskCreate(void* pool, void* desc, void* arg);
-void TaskPoolInit(void* pool, s32 count);
-void TaskPoolUpdate(void* pool);
-void TaskPoolDraw(void* pool);
-void TaskPoolDestroy(void* pool);
-u16 GetKeysHeld(void);
-u16 GetKeysPressed(void);
+typedef struct Mode {
+    const char* name;
+    void (*unk_04)(void);
+    void (*unk_08)(void);
+    void (*unk_0C)(void);
+} Mode;
+
+void func_080010CC(Mode* mode, s32 b);
 u16 GetKeysRepeat(void);
 void func_08004E64(void);
 void SetupBg(s32 a, s32 b, s32 c, s32 d);
@@ -56,9 +55,9 @@ extern u32 gFrameCounter;
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08EEE384[];
 extern u8 gUnk_08F683C4[];
-extern u8 gUnk_09ECEB64[];
+extern Mode gUnk_09ECEB64;
 extern void* gUnk_09ED9A1C[];
-extern u8 gUnk_09EE9190[];
+extern TaskDesc gUnk_09EE9190;
 extern const char gUnk_081309E0[];
 extern const char gUnk_081309E8[];
 extern const char gUnk_081309F0[];

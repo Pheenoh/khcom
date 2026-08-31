@@ -28,7 +28,6 @@ void mode_dummy_0(u32 arg) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_0800C064(void) {
     DummyEntry* entry;
 
@@ -77,9 +76,6 @@ void func_0800C064(void) {
         func_0801CC80();
     }
 }
-#else
-INCLUDE_ASM("mode_dummy/func_0800C064.s");
-#endif
 
 void mode_dummy_1(void) {
     if (!func_08006314() && (GetKeysPressed() & 9)) {
