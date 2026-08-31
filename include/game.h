@@ -173,6 +173,11 @@ void func_0801B7D8(void* a);
 
 extern u8 gUnk_09EF2AA4[];
 
+extern u8 gUnk_0203C5AC[];
+extern u8 gUnk_0203C590[];
+extern u32 gUnk_09EF69FC[];
+extern void* gUnk_02034F0C;
+
 extern u8 gUnk_08B22BA8[];
 extern u8 gUnk_08B22EE4[];
 extern u8 gUnk_08B22EFE[];
