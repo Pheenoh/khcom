@@ -431,7 +431,6 @@ int SaveRepairFileLarge(u16 file) {
 INCLUDE_ASM("save/SaveRepairFileLarge.s");
 #endif
 
-#ifdef NON_MATCHING
 int SaveLoadFileLarge(u16 file) {
     u8* buf;
     u8* dst;
@@ -441,10 +440,10 @@ int SaveLoadFileLarge(u16 file) {
 
     ret = 0;
     buf = func_08000918(SAVE_FILE_LARGE_SIZE);
-    off = (s16)file * (SAVE_FILE_LARGE_SIZE * 2);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
         dst = SRAM_FILE_LARGE + i * SAVE_FILE_LARGE_SIZE;
+        off = (s16)file * (SAVE_FILE_LARGE_SIZE * 2);
         ret = SaveVerifyBlock(off + dst, buf, buf, SAVE_FILE_LARGE_SIZE);
 
         if (ret == SAVE_OK) {
@@ -456,9 +455,6 @@ int SaveLoadFileLarge(u16 file) {
     func_080009C4(buf);
     return ret;
 }
-#else
-INCLUDE_ASM("save/SaveLoadFileLarge.s");
-#endif
 
 #ifdef NON_MATCHING
 void SaveWriteFileLarge(u16 file) {
