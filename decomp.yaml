@@ -55,11 +55,11 @@ tools:
           name: Code
           paths:
             - src/
-        - id: data
-          name: Data
+        - id: asm
+          name: Asm
           paths:
             - asm/
-        - id: libraries
-          name: Libraries
+        - id: vendored
+          name: Vendored
           paths:
             - tools/

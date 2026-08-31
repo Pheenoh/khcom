@@ -95,3 +95,5 @@ unk_0811d1b0.c
 @libc.a:strcmp.o
 m4a2.c -O2
 data.s
+m4a_tables.c(.rodata)
+data2.s

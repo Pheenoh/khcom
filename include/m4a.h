@@ -365,6 +365,7 @@ extern const u8 gCgbScaleTable[];
 extern const s16 gCgbFreqTable[];
 extern const u8 gNoiseTable[];
 extern const u8 gCgb3Vol[];
+extern const u8 gClockTable[];
 extern char SoundMainRAM[];
 extern char SoundMainRAM_Buffer[0x400];
 extern char gNumMusicPlayers[];

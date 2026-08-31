@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Print a human-readable summary of an objdiff progress report."""
+"""Print a human-readable summary of an objdiff progress report.
+
+Code, Asm and Vendored are path buckets, not sections: src/, asm/ and the
+linked archive members. Data is the real one, summed from every unit's data
+sections, and stays near zero until globals are defined in C rather than
+declared extern at an address from config/<ver>/symbols.txt.
+"""
 
 import argparse
 import json
@@ -22,7 +28,7 @@ def main():
         sys.exit(f"Report file {args.report} does not exist")
     report = json.loads(args.report.read_text())
 
-    prefixes = {"Code": "src/", "Data": "asm/", "Libraries": "tools/"}
+    prefixes = {"Code": "src/", "Asm": "asm/", "Vendored": "tools/"}
 
     def files(prefix):
         done = total = 0
@@ -35,23 +41,25 @@ def main():
                 done += 1
         return done, total
 
+    def pct(matched, total):
+        return 100.0 * matched / total if total else 0.0
+
     rows = []
     for c in report.get("categories", []):
         m = c["measures"]
         done, total = files(prefixes.get(c["name"]))
-        rows.append((
-            c["name"],
-            m.get("matched_code_percent", 0.0),
-            to_int(m, "matched_code"), to_int(m, "total_code"),
-            m.get("matched_functions", 0), m.get("total_functions", 0),
-            done, total,
-        ))
+        mc, tc = to_int(m, "matched_code"), to_int(m, "total_code")
+        rows.append((c["name"], pct(mc, tc), mc, tc,
+                     m.get("matched_functions", 0), m.get("total_functions", 0),
+                     done, total))
     m = report["measures"]
     done, total = files(None)
-    total_row = ("All", m.get("matched_code_percent", 0.0),
-                 to_int(m, "matched_code"), to_int(m, "total_code"),
+    mc, tc = to_int(m, "matched_code"), to_int(m, "total_code")
+    total_row = ("All", pct(mc, tc), mc, tc,
                  m.get("matched_functions", 0), m.get("total_functions", 0),
                  done, total)
+    md, td = to_int(m, "matched_data"), to_int(m, "total_data")
+    data_row = (md, td, pct(md, td))
 
     summary_path = os.getenv("GITHUB_STEP_SUMMARY")
     summary = open(summary_path, "a", encoding="utf-8") if summary_path else None
@@ -73,6 +81,8 @@ def main():
         emit(line(row))
     emit("  " + "-" * 86)
     emit(line(total_row))
+    md, td, dpct = data_row
+    emit(f"  {'Data':<10} {dpct:8.4f}%  {md:>9,} / {td:<11,} bytes")
 
     if summary:
         summary.write("```\n")

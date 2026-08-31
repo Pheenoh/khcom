@@ -5,4 +5,4 @@
 	.section .text
 	.global data_08121330
 data_08121330:
-	.incbin "roms/B8CE.gba", 0x121330, 0x1EDECD0
+	.incbin "roms/B8CE.gba", 0x121330, 0x1C4C18C
