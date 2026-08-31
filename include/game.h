@@ -17,8 +17,7 @@ typedef struct UnkStruct_02039DD4 {
     u32 unk_05C;
     u32 unk_060;
     u32 unk_064;
-    u32 unk_068;
-    u32 unk_06C;
+    u64 unk_068;
     u8 unk_070[0x08];
     u32 unk_078;
     u8 unk_07C[0x24];
@@ -101,8 +100,7 @@ typedef struct UnkStruct_02039B84 {
     u32 unk_058;
     u32 unk_05C;
     u8 unk_060[0x08];
-    u32 unk_068;
-    u32 unk_06C;
+    u64 unk_068;
     u8 unk_070;
     u8 unk_071;
     u16 unk_072;
