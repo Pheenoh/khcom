@@ -4,7 +4,19 @@
 
 INCLUDE_ASM("engine/func_0800216C.s");
 INCLUDE_ASM("engine/func_080022D4.s");
-INCLUDE_ASM("engine/DrawSprite.s");
+u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
+    if (*(u16*)(gUnk_030074C8 + 0x28A8) <= 127 && obj != 0) {
+        switch (*(u32*)((u8*)obj + 0x28)) {
+        case 0:
+            return func_08002060((s16)x, (s16)y, c, obj, e, f, g, h);
+        case 1:
+            return func_0800216C((s16)x, (s16)y, c, obj, e, f, g, h);
+        case 2:
+            return func_080022D4((s16)x, (s16)y, obj, e, f, g, h);
+        }
+    }
+    return 0;
+}
 INCLUDE_ASM("engine/func_08002488.s");
 INCLUDE_ASM("engine/LoadObjTiles.s");
 INCLUDE_ASM("engine/func_0800284C.s");
