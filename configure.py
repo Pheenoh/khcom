@@ -57,6 +57,16 @@ report_python = ".venv/bin/python3" if Path(".venv/bin/python3").exists() else "
 if not Path(baserom).exists():
     print(f"warning: base ROM {baserom} not found; the build will fail without it")
 
+symbols_file = Path(f"config/{version}/symbols.txt")
+symbols = []
+if symbols_file.exists():
+    for line in symbols_file.read_text().splitlines():
+        line = line.split("#")[0].strip()
+        if not line:
+            continue
+        name, addr = (x.strip() for x in line.split("="))
+        symbols.append((name, int(addr, 16)))
+
 units_file = Path(f"config/{version}/units.txt")
 units = []
 archives = []
@@ -88,7 +98,12 @@ objs_in_order = [obj for _, obj, _flags in units]
 bss_members = [obj for src, obj, _f in units if src is None and BSS_MEMBERS.get(obj.split(":")[-1])]
 Path(build_dir).mkdir(parents=True, exist_ok=True)
 with open(ldscript, "w") as f:
-    f.write("ENTRY(_start);\n\nSECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
+    f.write("ENTRY(_start);\n\n")
+    for name, addr in symbols:
+        f.write(f"{name} = {addr:#010x};\n")
+    if symbols:
+        f.write("\n")
+    f.write("SECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
     for obj in objs_in_order:
         f.write(f"        {obj}(.text);\n")
     f.write("    }\n")
@@ -117,7 +132,7 @@ with out.open("w") as f:
     if args.non_matching:
         defines += " -DNON_MATCHING"
     n.variable("cppflags", f"-nostdinc -undef -I include -I tools/agbcc/include {defines}")
-    n.variable("cflags", "-mthumb-interwork -O2")
+    n.variable("cflags", "-mthumb-interwork -O2 -fprologue-bugfix")
     n.variable("pyreport", report_python)
     n.newline()
 

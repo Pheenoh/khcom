@@ -14,12 +14,14 @@ MAP="$REPO/build/us/com_us.map"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
-"$REPO/tools/agbcc/bin/agbcc" -mthumb-interwork -O2 -o "$TMP/x.s" "$IN"
+"$REPO/tools/agbcc/bin/agbcc" -mthumb-interwork -O2 -fprologue-bugfix -o "$TMP/x.s" "$IN"
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o "$TMP/x.o" "$TMP/x.s"
 
 : > "$TMP/stub.s"
 : > "$TMP/place.ld"
-arm-none-eabi-nm -u "$TMP/x.o" | awk '{print $2}' | while IFS= read -r s; do
+grep -oE '^[A-Za-z_][A-Za-z0-9_]*' "$REPO/config/us/symbols.txt" 2>/dev/null | sort -u > "$TMP/datasyms.txt" || : > "$TMP/datasyms.txt"
+awk -F= '/=/{gsub(/ /,"",$1); gsub(/ /,"",$2); printf "%s = %s;\n", $1, $2}' "$REPO/config/us/symbols.txt" > "$TMP/defs.ld" 2>/dev/null || : > "$TMP/defs.ld"
+arm-none-eabi-nm -u "$TMP/x.o" | awk '{print $2}' | grep -vxF -f "$TMP/datasyms.txt" | while IFS= read -r s; do
     [ -z "$s" ] && continue
     a=$(grep -E "^ +0x0[0-9a-f]{7} +$s\$" "$MAP" | head -1 | awk '{print $1}')
     [ -z "$a" ] && { echo "MISSING SYMBOL $s" >&2; exit 2; }
@@ -29,6 +31,7 @@ done
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o "$TMP/stub.o" "$TMP/stub.s"
 
 {
+    cat "$TMP/defs.ld"
     echo "SECTIONS {"
     echo "  .text $ADDR : SUBALIGN(4) { $TMP/x.o(.text) }"
     cat "$TMP/place.ld"

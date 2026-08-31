@@ -8,9 +8,11 @@ set -e
 FT=/tmp/mt; mkdir -p $FT
 C=$1; SYM=$2; START=$3; END=$4
 arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp $C -o $FT/x.i
-tools/agbcc/bin/agbcc -mthumb-interwork -O2 -o $FT/x.s $FT/x.i
+tools/agbcc/bin/agbcc -mthumb-interwork -O2 -fprologue-bugfix ${AGBCC_EXTRA:-} -o $FT/x.s $FT/x.i
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o $FT/x.o $FT/x.s
-arm-none-eabi-nm -u $FT/x.o | awk '{print $2}' > $FT/undef.txt
+grep -oE '^[A-Za-z_][A-Za-z0-9_]*' config/us/symbols.txt 2>/dev/null | sort -u > $FT/datasyms.txt || : > $FT/datasyms.txt
+awk -F= '/=/{gsub(/ /,"",$1); gsub(/ /,"",$2); printf "%s = %s;\n", $1, $2}' config/us/symbols.txt > $FT/defs.ld 2>/dev/null || : > $FT/defs.ld
+arm-none-eabi-nm -u $FT/x.o | awk '{print $2}' | grep -vxF -f $FT/datasyms.txt > $FT/undef.txt || : > $FT/undef.txt
 : > $FT/stub.s
 : > $FT/place.ld
 while read s; do
@@ -21,7 +23,7 @@ while read s; do
   printf '  .st_%s %s : { *(.st_%s) }\n' "$s" "$a" "$s" >> $FT/place.ld
 done < $FT/undef.txt
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o $FT/stub.o $FT/stub.s
-{ echo "SECTIONS {"; echo "  .text $START : SUBALIGN(4) { $FT/x.o(.text) }"; cat $FT/place.ld; echo "  /DISCARD/ : { *(*) }"; echo "}"; } > $FT/l.ld
+{ cat $FT/defs.ld; echo "SECTIONS {"; echo "  .text $START : SUBALIGN(4) { $FT/x.o(.text) }"; cat $FT/place.ld; echo "  /DISCARD/ : { *(*) }"; echo "}"; } > $FT/l.ld
 arm-none-eabi-ld -T $FT/l.ld -o $FT/x.elf $FT/x.o $FT/stub.o
 arm-none-eabi-objcopy -O binary --only-section=.text $FT/x.elf $FT/x.bin
 python3 - "$START" "$END" <<'PY'
