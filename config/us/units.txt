@@ -93,5 +93,5 @@ unk_0811d1b0.c
 @libc.a:memcpy.o
 @libc.a:memset.o
 @libc.a:strcmp.o
-m4a2.c
+m4a2.c -O2
 data.s

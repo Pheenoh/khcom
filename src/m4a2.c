@@ -13,7 +13,6 @@ INCLUDE_ASM("m4a2/ply_lfos.s");
 INCLUDE_ASM("m4a2/ply_mod.s");
 INCLUDE_ASM("m4a2/func_0811FD40.s");
 
-#ifdef NON_MATCHING
 void MPlayContinue(MusicPlayerInfo* mplayInfo) {
     if (mplayInfo->ident == ID_NUMBER) {
         mplayInfo->ident++;
@@ -21,11 +20,7 @@ void MPlayContinue(MusicPlayerInfo* mplayInfo) {
         mplayInfo->ident = ID_NUMBER;
     }
 }
-#else
-INCLUDE_ASM("m4a2/MPlayContinue.s");
-#endif
 
-#ifdef NON_MATCHING
 void MPlayFadeOut(MusicPlayerInfo* mplayInfo, u16 speed) {
     if (mplayInfo->ident == ID_NUMBER) {
         mplayInfo->ident++;
@@ -35,9 +30,6 @@ void MPlayFadeOut(MusicPlayerInfo* mplayInfo, u16 speed) {
         mplayInfo->ident = ID_NUMBER;
     }
 }
-#else
-INCLUDE_ASM("m4a2/MPlayFadeOut.s");
-#endif
 
 void m4aSoundInit(void) {
     s32 i;
@@ -144,7 +136,6 @@ void m4aMPlayFadeOut(MusicPlayerInfo* mplayInfo, u16 speed) {
     MPlayFadeOut(mplayInfo, speed);
 }
 
-#ifdef NON_MATCHING
 void m4aMPlayFadeOutTemporarily(MusicPlayerInfo* mplayInfo, u16 speed) {
     if (mplayInfo->ident == ID_NUMBER) {
         mplayInfo->ident++;
@@ -154,11 +145,7 @@ void m4aMPlayFadeOutTemporarily(MusicPlayerInfo* mplayInfo, u16 speed) {
         mplayInfo->ident = ID_NUMBER;
     }
 }
-#else
-INCLUDE_ASM("m4a2/m4aMPlayFadeOutTemporarily.s");
-#endif
 
-#ifdef NON_MATCHING
 void m4aMPlayFadeIn(MusicPlayerInfo* mplayInfo, u16 speed) {
     if (mplayInfo->ident == ID_NUMBER) {
         mplayInfo->ident++;
@@ -169,9 +156,6 @@ void m4aMPlayFadeIn(MusicPlayerInfo* mplayInfo, u16 speed) {
         mplayInfo->ident = ID_NUMBER;
     }
 }
-#else
-INCLUDE_ASM("m4a2/m4aMPlayFadeIn.s");
-#endif
 
 void m4aMPlayImmInit(MusicPlayerInfo* mplayInfo) {
     s32 trackCount;
@@ -457,7 +441,6 @@ void m4aSoundVSyncOn(void) {
     REG_TM0CNT_H = TIMER_ENABLE;
 }
 
-#ifdef NON_MATCHING
 void m4aSoundVSync(void) {
     SoundInfo* soundInfo = gSoundInfoPtr;
 
@@ -482,9 +465,6 @@ void m4aSoundVSync(void) {
     REG_DMA1CNT_H = DMA_ENABLE | DMA_START_SPECIAL | DMA_32BIT | DMA_REPEAT;
     REG_DMA2CNT_H = DMA_ENABLE | DMA_START_SPECIAL | DMA_32BIT | DMA_REPEAT;
 }
-#else
-INCLUDE_ASM("m4a2/m4aSoundVSync.s");
-#endif
 
 void MPlayOpen(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* tracks, u8 trackCount) {
     SoundInfo* soundInfo;
@@ -743,7 +723,6 @@ u32 MidiKeyToCgbFreq(u8 chanNum, u8 key, u8 fineAdjust) {
     }
 }
 
-#ifdef NON_MATCHING
 void CgbOscOff(u8 chanNum) {
     switch (chanNum) {
     case 1:
@@ -762,9 +741,6 @@ void CgbOscOff(u8 chanNum) {
         REG_NR44 = 0x80;
     }
 }
-#else
-INCLUDE_ASM("m4a2/CgbOscOff.s");
-#endif
 
 static inline int CgbPan(CgbChannel* chan) {
     u32 rightVolume = chan->rightVolume;
@@ -803,7 +779,6 @@ void CgbModVol(CgbChannel* chan) {
 
 INCLUDE_ASM("m4a2/CgbSound.s");
 
-#ifdef NON_MATCHING
 void m4aMPlayTempoControl(MusicPlayerInfo* mplayInfo, u16 tempo) {
     if (mplayInfo->ident == ID_NUMBER) {
         mplayInfo->ident++;
@@ -812,9 +787,6 @@ void m4aMPlayTempoControl(MusicPlayerInfo* mplayInfo, u16 tempo) {
         mplayInfo->ident = ID_NUMBER;
     }
 }
-#else
-INCLUDE_ASM("m4a2/m4aMPlayTempoControl.s");
-#endif
 
 void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume) {
     s32 i;
@@ -907,7 +879,6 @@ void m4aMPlayPanpotControl(MusicPlayerInfo* mplayInfo, u16 trackBits, s8 pan) {
     mplayInfo->ident = ID_NUMBER;
 }
 
-#ifdef NON_MATCHING
 void ClearModM(MusicPlayerTrack* track) {
     track->lfoSpeedC = 0;
     track->modM = 0;
@@ -917,9 +888,6 @@ void ClearModM(MusicPlayerTrack* track) {
     else
         track->flags |= MPT_FLG_VOLCHG;
 }
-#else
-INCLUDE_ASM("m4a2/ClearModM.s");
-#endif
 
 void m4aMPlayModDepthSet(MusicPlayerInfo* mplayInfo, u16 trackBits, u8 modDepth) {
     s32 i;
