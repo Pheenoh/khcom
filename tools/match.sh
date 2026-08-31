@@ -9,7 +9,7 @@ FT=${MATCH_TMP:-/tmp/mt}; mkdir -p $FT
 C=$1; SYM=$2; START=$3; END=$4
 arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp ${EXTRA_INC:-} $C -o $FT/x.i
 tools/agbcc/bin/agbcc -mthumb-interwork -O2 -fprologue-bugfix ${AGBCC_EXTRA:-} -o $FT/x.s $FT/x.i
-arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o $FT/x.o $FT/x.s
+arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -I include -I asm/us/nonmatchings -o $FT/x.o $FT/x.s
 grep -oE '^[A-Za-z_][A-Za-z0-9_]*' config/us/symbols.txt 2>/dev/null | sort -u > $FT/datasyms.txt || : > $FT/datasyms.txt
 awk -F= '/=/{gsub(/ /,"",$1); gsub(/ /,"",$2); printf "%s = %s;\n", $1, $2}' config/us/symbols.txt > $FT/defs.ld 2>/dev/null || : > $FT/defs.ld
 arm-none-eabi-nm -u $FT/x.o | awk '{print $2}' | grep -vxF -f $FT/datasyms.txt > $FT/undef.txt || : > $FT/undef.txt
@@ -34,6 +34,8 @@ import os
 new=open(os.environ.get('MATCH_TMP','/tmp/mt')+'/x.bin','rb').read()
 while len(new)>len(rom) and new[-2:] in (b'\xc0\x46', b'\x00\x00'):
     new=new[:-2]
+if len(new)==len(rom) and new[:-2]==rom[:-2] and new[-2:]==b'\xc0\x46' and rom[-2:]==b'\x00\x00':
+    new=rom
 if new==rom: print("EXACT MATCH")
 else:
     print(f"diff (rom {len(rom)}B, new {len(new)}B)")

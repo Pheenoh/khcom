@@ -33,6 +33,11 @@ extern vu16* const gBgControl[];
 extern u8 gBgPaletteBank[];
 extern u16 gUnk_03007500;
 
+extern u8* gUnk_030074C8;
+
+u8 func_08002060(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
+u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
+u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h);
 void func_0800284C(u8* p);
 void func_08002880(u8* p);
 void func_080028A0(u8* p);
