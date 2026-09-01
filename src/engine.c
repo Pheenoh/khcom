@@ -113,7 +113,30 @@ void* IwramAlloc(u32 size);
 void IwramFree(void* p);
 
 INCLUDE_ASM("engine/func_0800216C.s");
+#ifdef NON_MATCHING
+u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
+    u8* p;
+
+    if (e != 0 && ((ObjTiles*)obj)->unk_00 != 0) {
+        p = gUnk_030074C8;
+        *(u16*)(p + 0x1AB8 + *(u16*)(p + 0x28A8) * 24) = x;
+        *(u16*)(p + 0x1ABA + *(u16*)(p + 0x28A8) * 24) = y;
+        *(void**)(p + 0x1AA8 + *(u16*)(p + 0x28A8) * 24) = obj;
+        *(void**)(p + 0x1AAC + *(u16*)(p + 0x28A8) * 24) = e;
+        *(s32*)(p + 0x1AB0 + *(u16*)(p + 0x28A8) * 24) = f;
+        *(u16*)(p + 0x1ABE + *(u16*)(p + 0x28A8) * 24) = g;
+        *(u16*)(p + 0x1ABC + *(u16*)(p + 0x28A8) * 24) = h;
+        *(u32*)(p + 0x1AB4 + *(u16*)(p + 0x28A8) * 24) = ((ObjTiles*)obj)->unk_20;
+        *(u32*)(p + 0x26A8 + *(u16*)(p + 0x28A8) * 4) =
+            (u32)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AA8);
+        *(u16*)(p + 0x28A8) += 1;
+        return 1;
+    }
+    return 0;
+}
+#else
 INCLUDE_ASM("engine/func_080022D4.s");
+#endif
 
 u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     if (*(u16*)(gUnk_030074C8 + 0x28A8) <= 127 && obj != 0) {
@@ -671,7 +694,41 @@ s32 func_08003C9C(s32 a) {
 }
 
 INCLUDE_ASM("engine/func_08003CD4.s");
-INCLUDE_ASM("engine/func_08003E2C.s");
+s32 func_08003E2C(s16* n, s32 v, s32* a, s32* c, s32* b) {
+    s32 lo;
+    s32 hi;
+    s32 mid;
+    s32 dx;
+    s32 t;
+    s32 y0;
+    s32 y1;
+    s32 r;
+    s32 cnt;
+
+    cnt = *n;
+    lo = 0;
+    hi = cnt - 1;
+    while (lo < hi) {
+        mid = (lo + hi) / 2;
+        if (a[mid] < v) {
+            lo = mid + 1;
+        } else {
+            hi = mid;
+        }
+    }
+    if (lo > 0) {
+        lo--;
+    }
+    dx = a[lo + 1] - a[lo];
+    t = v - a[lo];
+    y1 = b[lo + 1];
+    y0 = b[lo];
+    r = (((t * (y1 - y0)) >> 8) << 8) / dx;
+    r = (t * (r + y0 * 3)) >> 8;
+    r += ((c[lo + 1] - c[lo]) << 8) / dx - ((dx * (y0 * 2 + y1)) >> 8);
+    return ((t * r) >> 8) + c[lo];
+}
+INCLUDE_ASM("engine/func_08003ED4.s");
 void func_08004034(void) {
     gDispCnt = 0x40;
     gUnk_03007528 = 0;
