@@ -46,7 +46,7 @@ task_poo_pooh_0: @ 080C85C4
 	adds r1, #0x03
 	strb r0, [r1, #0x00]
 	adds r0, r7, #0x0
-	bl _080C7CC8
+	bl func_080C7CC8
 	str r5, [r7, #0x3C]
 	adds r0, r7, #0x0
 	adds r0, #0x24
@@ -94,7 +94,7 @@ task_poo_pooh_0: @ 080C85C4
 	strb r1, [r0, #0x00]
 	ldr r1, [r6, #0x00]
 	adds r0, r7, #0x0
-	bl _080C7FEC
+	bl func_080C7FEC
 	mov r0, r8
 	bl AnimGetGfx
 	str r0, [r7, #0x08]
