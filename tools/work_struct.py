@@ -58,7 +58,7 @@ def disassemble(rom_path):
 def read_tasks(rom_path):
     data = Path(rom_path).read_bytes()
     names = {}
-    for m in re.finditer(rb"(?<=\x00)(task_[a-z0-9_]+)\x00", data):
+    for m in re.finditer(rb"(?<=[\x00\xff])(task_[a-z0-9_]+)\x00", data):
         names[ROM_BASE + m.start(1)] = m.group(1).decode()
     words = struct.unpack("<%dI" % (len(data) // 4), data)
 

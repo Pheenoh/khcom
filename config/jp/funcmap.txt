@@ -625,7 +625,8 @@ func_0802F1E8	0x0802f1e8	32	0x0802f1e8	global
 func_0802F208	0x0802f208	96	0x0802f208	global
 func_0802F268	0x0802f268	12	0x0802f268	body
 func_0802F274	0x0802f274	16	0x0802f274	body
-func_0802F284	0x0802f284	616	0x0802f284	global
+func_0802F284	0x0802f284	100	0x0802f284	global
+task_btl_map_1	0x0802f2e8	516	0x0802f2e8	global
 task_btl_shadow_0	0x0802f4ec	140	0x0802f4ec	named
 task_btl_shadow_1	0x0802f578	4	0x0802f578	named
 task_btl_shadow_2	0x0802f57c	212	0x0802f57c	named
@@ -1113,7 +1114,8 @@ task_monsgage_3	0x0805cc64	28	0x0805cc1c	named
 task_btl_pop_cb_0	0x0805cc80	204	0x0805cc38	named
 task_btl_pop_cb_1	0x0805cd4c	32	0x0805cd04	named
 task_btl_pop_cb_2	0x0805cd6c	68	0x0805cd24	named
-task_btl_pop_cb_3	0x0805cdb0	176	0x0805cd68	named
+task_btl_pop_cb_3	0x0805cdb0	24	0x0805cd68	named
+func_0805CDC8	0x0805cdc8	152	0x0805cd80	global
 func_0805CE60	0x0805ce60	196	0x0805ce18	global
 task_btl_exp_0	0x0805cf24	120	0x0805cedc	named
 task_btl_exp_1	0x0805cf9c	332	0x0805cf54	named
@@ -1460,7 +1462,8 @@ func_080A32DC	0x080a32dc	148	0x080a3484	global
 func_080A3370	0x080a3370	3452	-	-
 func_080A40EC	0x080a40ec	48	0x080a4208	global
 func_080A411C	0x080a411c	108	0x080a4238	global
-func_080A4188	0x080a4188	172	0x080a42a4	global
+func_080A4188	0x080a4188	104	0x080a42a4	global
+func_080A41F0	0x080a41f0	68	0x080a430c	global
 func_080A4234	0x080a4234	148	0x080a4350	global
 func_080A42C8	0x080a42c8	12	0x080a43e4	body
 func_080A42D4	0x080a42d4	12	0x080a43f0	body
@@ -2893,8 +2896,13 @@ func_0810D3A8	0x0810d3a8	56	0x0810d424	body
 func_0810D3E0	0x0810d3e0	152	0x0810d45c	global
 func_0810D478	0x0810d478	56	0x0810d4f4	body
 func_0810D4B0	0x0810d4b0	10724	0x0810d52c	global
-func_0810FE94	0x0810fe94	72	0x0810ff10	global
-func_0810FEDC	0x0810fedc	160	0x0810ff58	global
+func_0810FE94	0x0810fe94	40	0x0810ff10	body
+func_0810FEBC	0x0810febc	32	0x0810ff38	global
+func_0810FEDC	0x0810fedc	104	0x0810ff58	body
+func_0810FF44	0x0810ff44	12	0x0810ffc0	body
+func_0810FF50	0x0810ff50	20	0x0810ffcc	body
+func_0810FF64	0x0810ff64	8	0x0810ffe0	body
+func_0810FF6C	0x0810ff6c	16	0x0810ffe8	body
 task_bos_lst_fld_0	0x0810ff7c	220	0x0810fff8	named
 func_08110058	0x08110058	104	0x081100d4	global
 task_bos_lst_fld_1	0x081100c0	1416	0x0811013c	named

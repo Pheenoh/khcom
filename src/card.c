@@ -379,6 +379,7 @@ INCLUDE_ASM("card/func_080A3370.s");
 INCLUDE_ASM("card/func_080A40EC.s");
 INCLUDE_ASM("card/func_080A411C.s");
 INCLUDE_ASM("card/func_080A4188.s");
+INCLUDE_ASM("card/func_080A41F0.s");
 INCLUDE_ASM("card/func_080A4234.s");
 
 u8 func_080A42C8(void) {
