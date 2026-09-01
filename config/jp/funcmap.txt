@@ -536,9 +536,11 @@ func_0801CC80	0x0801cc80	52	0x0801cc80	global
 func_0801CCB4	0x0801ccb4	108	0x0801ccb4	global
 func_0801CD20	0x0801cd20	84	0x0801cd20	global
 func_0801CD74	0x0801cd74	24	0x0801cd74	global
-func_0801CD8C	0x0801cd8c	12	0x0801cd8c	body
+func_0801CD8C	0x0801cd8c	8	0x0801cd8c	body
+func_0801CD94	0x0801cd94	4	0x0801cd94	body
 func_0801CD98	0x0801cd98	104	0x0801cd98	global
-func_0801CE00	0x0801ce00	112	0x0801ce00	global
+func_0801CE00	0x0801ce00	4	0x0801ce00	body
+func_0801CE04	0x0801ce04	108	0x0801ce04	global
 func_0801CE70	0x0801ce70	60	0x0801ce70	global
 task_evt_obj_0	0x0801ceac	96	0x0801ceac	named
 task_evt_obj_1	0x0801cf0c	48	0x0801cf0c	named
