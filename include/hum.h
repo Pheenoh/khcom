@@ -3,6 +3,12 @@
 
 #include "types.h"
 
+typedef struct ObjPalette {
+    void* unk_00;
+    u16 unk_04;
+    u16 unk_06;
+} ObjPalette;
+
 typedef struct AnimState {
     void** unk_00;
     u32* unk_04;
@@ -137,7 +143,8 @@ typedef struct VixenNdlArgs {
     s32 unk_08;
     u8 unk_0C[0x06];
     s16 unk_12;
-    u8 unk_14[0x04];
+    u16 unk_14;
+    u16 unk_16;
     void* unk_18;
     u8 unk_1C[0x04];
 } VixenNdlArgs;
@@ -170,14 +177,18 @@ typedef struct VixenFrzWork {
 } VixenFrzWork;
 
 typedef struct VixenIceWork {
-    s32 unk_00;
+    u32 unk_00;
     void* unk_04;
     void* unk_08;
     AnimState unk_0C;
     VixenSub* unk_24;
-    u8 unk_28[0x64];
+    u8 unk_28[0x5C];
+    s16 unk_84;
+    u16 unk_86;
+    u16 unk_88;
+    u8 unk_8A[0x02];
     s32 unk_8C;
-    u8 unk_90[0x04];
+    s32 unk_90;
 } VixenIceWork;
 
 typedef struct LexTmh0Work {
@@ -210,9 +221,21 @@ typedef struct LexTmhWork {
     s32 unk_3C;
     void* unk_40;
     void* unk_44;
-    u16 unk_48;
-    u16 unk_4A;
+    u8 unk_48;
+    u8 unk_49;
+    s16 unk_4A;
 } LexTmhWork;
+
+typedef struct RikuSpawn {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u16 unk_0C;
+    u16 unk_0E;
+    AnimState unk_10;
+    u32 unk_28;
+    s32 unk_2C;
+} RikuSpawn;
 
 typedef struct MahluxiaFlwWork {
     s32 unk_00;
@@ -229,10 +252,18 @@ typedef struct MahluxiaFlwWork {
 
 typedef struct MahluxiaWork {
     HumWork base;
-    u8 unk_188[0x3C];
+    HumSub unk_188;
     s32 unk_1C4;
     u16 unk_1C8;
-    u8 unk_1CA[0x1DA];
+    u16 unk_1CA;
+    u8 unk_1CC[0x04];
+    u16 unk_1D0;
+    u8 unk_1D2[0x06];
+    s16 unk_1D8;
+    u8 unk_1DA[0x02];
+    RikuSpawn unk_1DC[9];
+    u8 unk_38C[0x04];
+    TaskPool unk_390;
 } MahluxiaWork;
 
 typedef struct LaxeneKnfWork {
@@ -294,15 +325,35 @@ typedef struct LexceusWork {
     u8 unk_200[0x04];
 } LexceusWork;
 
+typedef struct HadesSub {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    s32 unk_14;
+    s32 unk_18;
+    s32 unk_1C;
+    s32 unk_20;
+    s32 unk_24;
+} HadesSub;
+
 typedef struct HadesWork {
     HumWork base;
-    u8 unk_188[0x4C];
+    HumSub unk_188;
+    s32 unk_1C4;
+    u16 unk_1C8;
+    u16 unk_1CA;
+    u8 unk_1CC[0x08];
     void* unk_1D4;
     void* unk_1D8;
     void* unk_1DC;
-    u8 unk_1E0[0x48];
+    AnimState unk_1E0;
+    AnimState unk_1F8;
+    AnimState unk_210;
     void* unk_228;
-    u8 unk_22C[0x54];
+    HadesSub unk_22C[2];
+    s32 unk_27C;
 } HadesWork;
 
 typedef struct LeonWork {
@@ -324,12 +375,21 @@ typedef struct AnsemWork {
     u8 unk_1CE[0x0E];
 } AnsemWork;
 
+typedef struct VixenFrgDef {
+    s16 unk_00;
+    s16 unk_02;
+    u16 unk_04;
+    u16 unk_06;
+} VixenFrgDef;
+
 typedef struct VixenFrgSub {
     void* unk_00;
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    u8 unk_10[0x0C];
+    s32 unk_10;
+    s32 unk_14;
+    s32 unk_18;
     u16 unk_1C;
     u16 unk_1E;
 } VixenFrgSub;
@@ -338,7 +398,7 @@ typedef struct VixenFrgWork {
     u8 unk_00[0x30];
     void* unk_30;
     void* unk_34;
-    u16 unk_38;
+    s16 unk_38;
     u16 unk_3A;
     VixenFrgSub unk_3C[15];
     u8 unk_21C;
@@ -347,41 +407,67 @@ typedef struct VixenFrgWork {
 
 typedef struct RikuWork {
     HumWork base;
-    u8 unk_188[0x3C];
+    HumSub unk_188;
     s32 unk_1C4;
     u16 unk_1C8;
-    u8 unk_1CA[0x1BA];
+    u16 unk_1CA;
+    s16 unk_1CC;
+    u16 unk_1CE;
+    RikuSpawn unk_1D0[9];
+    u8 unk_380[0x04];
 } RikuWork;
-
-typedef struct RikuSpawn {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-    AnimState unk_10;
-    u32 unk_28;
-    s32 unk_2C;
-} RikuSpawn;
 
 typedef struct HookBombWork {
     void* unk_00;
     void* unk_04;
-    u8 unk_08[0x38];
+    AnimState unk_08;
+    s32 unk_20;
+    s32 unk_24;
+    s32 unk_28;
+    u8 unk_2C;
+    u8 unk_2D[0x03];
+    s32 unk_30;
+    u8 unk_34;
+    u8 unk_35[0x03];
+    s32 unk_38;
+    u16 unk_3C;
+    u16 unk_3E;
     void* unk_40;
     void* unk_44;
-    u8 unk_48[0x0C];
+    u8 unk_48;
+    u8 unk_49;
+    u16 unk_4A;
+    u16 unk_4C;
+    u16 unk_4E;
+    s32 unk_50;
 } HookBombWork;
+
+typedef struct LexRockSub {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x10];
+} LexRockSub;
 
 typedef struct LexRockWork {
     void* unk_00[12];
     void* unk_30;
-    u8 unk_34[0x130];
+    AnimState unk_34[12];
+    s32 unk_154;
+    s32 unk_158;
+    s32 unk_15C;
+    u8 unk_160;
+    u8 unk_161;
+    u16 unk_162;
     u16 unk_164;
-    u8 unk_166[0x152];
+    u16 unk_166;
+    u8 unk_168[0x04];
+    LexRockSub unk_16C[11];
+    u8 unk_2A0[0x18];
     void* unk_2B8;
     void* unk_2BC;
-    u8 unk_2C0[0x04];
+    u8 unk_2C0;
+    u8 unk_2C1[0x03];
 } LexRockWork;
 
 typedef struct Collider {
@@ -394,7 +480,9 @@ typedef struct Collider {
 } Collider;
 
 typedef struct BtlWork {
-    u8 unk_000[0x18];
+    s32 unk_000;
+    s32 unk_004;
+    u8 unk_008[0x10];
     u8 unk_018;
     u8 unk_019[0x0B];
     s32 unk_024;
@@ -407,20 +495,170 @@ typedef struct BtlWork {
     s16 unk_0DC;
     s16 unk_0DE;
     s16 unk_0E0;
-    u8 unk_0E2[0x32];
+    u8 unk_0E2[0x0D];
+    u8 unk_0EF;
+    u8 unk_0F0[0x1C];
+    s32 unk_10C;
+    u8 unk_110[0x04];
     void* unk_114;
-    u8 unk_118[0x18];
+    u8 unk_118[0x14];
+    s32 unk_12C;
     s32 unk_130;
     s32 unk_134;
 } BtlWork;
 
+typedef struct JiminyEntry {
+    void* unk_00;
+    void* unk_04;
+    u16 unk_08;
+    u16 unk_0A;
+    u16* unk_0C;
+    u16* unk_10;
+    void* unk_14;
+} JiminyEntry;
+
+typedef struct JiminyCell {
+    s32 unk_00;
+    s32 unk_04;
+} JiminyCell;
+
+typedef struct JiminyLine {
+    JiminyCell unk_000[48];
+} JiminyLine;
+
+typedef struct JiminyPair {
+    u16 unk_00;
+    u16 unk_02;
+} JiminyPair;
+
+typedef struct JiminyWork {
+    s32 unk_000;
+    void* unk_004;
+    void* unk_008;
+    void* unk_00C;
+    void* unk_010;
+    void* unk_014;
+    void* unk_018;
+    void* unk_01C;
+    void* unk_020;
+    void* unk_024;
+    void* unk_028;
+    void* unk_02C;
+    void* unk_030;
+    void* unk_034;
+    void* unk_038;
+    void* unk_03C;
+    void* unk_040;
+    void* unk_044;
+    s16 unk_048;
+    s16 unk_04A;
+    s32 unk_04C;
+    s32 unk_050;
+    s32 unk_054;
+    s32 unk_058;
+    s32 unk_05C;
+    JiminyLine unk_060[8];
+    u8 unk_C60[8];
+    u8 unk_C68[8];
+    u8 unk_C70;
+    u8 unk_C71;
+    s16 unk_C72;
+    s16 unk_C74;
+    s16 unk_C76;
+    s16 unk_C78;
+    u8 unk_C7A[0x02];
+    AnimState unk_C7C;
+    AnimState unk_C94;
+    u16 unk_CAC;
+    s16 unk_CAE;
+    s16 unk_CB0;
+    s16 unk_CB2;
+    u16** unk_CB4;
+    u16* unk_CB8;
+    u16* unk_CBC;
+    s16 unk_CC0;
+    s16 unk_CC2;
+    s16 unk_CC4;
+    s16 unk_CC6;
+    s16 unk_CC8;
+    u8 unk_CCA[0x02];
+    void* unk_CCC;
+    u16 unk_CD0;
+    s16 unk_CD2;
+    s16 unk_CD4;
+    u16 unk_CD6;
+    JiminyPair unk_CD8[21];
+    s32 unk_D2C;
+    u8 unk_D30[0x04];
+    void* unk_D34;
+    s32 unk_D38;
+    u16 unk_D3C;
+    u16 unk_D3E;
+} JiminyWork;
+
+typedef struct SaveFileSummary {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+    u32 unk_04;
+} SaveFileSummary;
+
 typedef struct BtlSetup {
     u8 unk_000[0x08];
     u32 unk_008;
-    u8 unk_00C[0x100];
+    u8 unk_00C;
+    u8 unk_00D;
+    u8 unk_00E;
+    u8 unk_00F;
+    u8 unk_010[0x22];
+    u16 unk_032;
+    u8 unk_034[0xC4];
+    u8 unk_0F8[0x10];
+    u8 unk_108;
+    u8 unk_109[0x03];
     u64 unk_10C;
     u64 unk_114;
+    u8 unk_11C[0x64];
+    u16 unk_180;
+    u8 unk_182[0x3A];
+    SaveFileSummary unk_1BC[4];
+    u32 unk_1DC;
 } BtlSetup;
+
+#define SAVE_OK 2
+
+typedef struct SaveHeaderData {
+    u16 flags;
+    u16 unk_02;
+    SaveFileSummary files[4];
+} SaveHeaderData;
+
+typedef struct SaveCommon {
+    u32 flags;
+    u8 unk_04[0x88];
+    u16 unk_8C;
+    u16 unk_8E;
+    u8 unk_90;
+    u8 unk_91;
+    u8 unk_92[0x02];
+    u32 unk_94;
+} SaveCommon;
+
+typedef struct SaveFileLarge {
+    SaveCommon common;
+    u8 unk_098[0x254];
+    u8 unk_2EC[0xB80];
+    u8 unk_E6C[0x04];
+    u8 unk_E70[0x44];
+    u8 unk_EB4[0x44];
+} SaveFileLarge;
+
+typedef struct SaveFileSmall {
+    SaveCommon common;
+    u8 unk_098[0x254];
+    u8 unk_2EC[0x110];
+} SaveFileSmall;
 
 typedef struct AxcelWork {
     HumWork base;
@@ -514,6 +752,35 @@ extern u8 gUnk_09EDB698[];
 extern u8 gUnk_09EDB6E0[];
 extern u8 gUnk_09EE1F90[];
 extern u8 gUnk_09EE1FC0[];
+extern u8 gUnk_0813F450[];
+extern u8 gUnk_0813F448[];
+extern u8 gUnk_0813F368[];
+extern u8 gUnk_0813F35C[];
+extern u8 gUnk_08C1E78C[];
+extern VixenFrgDef gUnk_0813FA00[];
+extern void* gUnk_09EE218C[];
+extern u8 gUnk_0813F324[];
+extern u8 gUnk_0813F31C[];
+extern u8 gUnk_08BAFB62[];
+extern u8 gUnk_09EE1B78[];
+extern u8 gUnk_09EE1B38[];
+extern u8 gUnk_08F6DC44[];
+extern u8 gUnk_08B59E52[];
+extern u8 gUnk_09EE17AC[];
+extern u8 gUnk_09EE1798[];
+extern u8 gUnk_08B5A854[];
+extern u8 gUnk_08B5A85E[];
+extern u8 gUnk_08B22CE4[];
+extern u8 gUnk_08B22CBC[];
+extern u8 gUnk_0813FD24[];
+extern u8 gUnk_0813FD40[];
+extern u8 gUnk_0813FBBC[];
+extern u8 gUnk_09EDB788[];
+extern JiminyWork* gUnk_02034934;
+extern void* gUnk_09EDE3FC[];
+extern JiminyEntry gUnk_08155554[];
+extern u8 gUnk_02039CB8;
+extern u32 gUnk_02039D8C;
 
 void func_0800E168(HumWork* work, void* def);
 void func_0800E380(HumWork* work);
@@ -548,7 +815,19 @@ void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012614(void* a, s32 b);
 void func_080058FC(s32* p, s32 target, u16 steps);
 u8 func_080035CC(s16 a, s16 b, s32 c, s32 d, s32 e, s32 f);
-void func_0801C700(void* a, s32* b, s32 c, s32 d);
+void func_0801C700(void* a, s32* b, s32* c, s32* d);
+void func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
+void func_0800380C(void* work, u16 a, void* b, s32 c);
+void func_08013994(s32 a, s32 b, s32 c);
+u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
+void func_080062F4(u16 a, s32 b);
+void func_08012650(void* a, u16 b);
+void func_08012324(void* a, s32 x, s32 y, s32 z);
+u16 func_08006390(void);
+u16 _08006338(void);
+void func_08005778(u16 r, u16 g, u16 b);
+void func_08057E90(RikuWork* work, RikuSpawn* p);
+void func_08057E2C(RikuWork* work, RikuSpawn* dst);
 void func_0800F368(void* p, u16 n);
 u8 func_0800F504(void* p, u16 a, u16 b, u16 c);
 void LoadObjPaletteBank(u16 bank, void* src);
@@ -564,5 +843,37 @@ s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void m4aSongNumStart(u16 n);
 void m4aSongNumStop(u16 n);
 s32 __modsi3(s32 a, s32 b);
+void* memcpy(void* dst, const void* src, unsigned long n);
+void func_080E92B8(void* p);
+void func_080A324C(void* p);
+void func_080A3370(void* p);
+void func_080C700C(void* p);
+void func_080DDEB0(void* p);
+void func_0810962C(void* p);
+void func_080E92F8(void* p);
+void func_080A32DC(void* p);
+void func_080C7024(void* p);
+void func_080DDEBC(void* p);
+void func_08109638(void* p);
+void func_08065AE0(void* p, s32 n);
+void func_0805F1C0(s32* p, s32 v);
+u16 func_0805A55C(u16* p);
+void func_0805A638(s32 a, u16** b);
+void func_0805A484(void);
+void func_0805A4D8(s16 a, s16 b, s16 c);
+void func_0805A7D0(void);
+void func_0805A514(s16 a, s16 b, s16 c);
+u8 func_08006314(void);
+void AnimChange(AnimState* a, u16 animId, u16 flags);
+u16 GetKeysRepeat(void);
+u16 GetKeysPressed(void);
+void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h);
+u8 func_08065B6C(void* src, JiminyLine* line);
+u8 func_0800FF70(u16 a);
+u8 func_0800FF00(u16 a);
+s32 func_0805A574(s32 idx);
+s32 SaveRepairHeader(void);
+s32 SaveRepairFileLarge(u16 file);
+s32 SaveRepairFileSmall(u16 file);
 
 #endif /* GUARD_HUM_H */
