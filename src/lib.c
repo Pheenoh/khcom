@@ -7,3 +7,4 @@ INCLUDE_ASM("lib/CpuFastSet.s");
 INCLUDE_ASM("lib/CpuSet.s");
 INCLUDE_ASM("lib/_08117FF0.s");
 INCLUDE_ASM("lib/Sqrt.s");
+INCLUDE_ASM("lib/VBlankIntrWait.s");
