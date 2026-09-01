@@ -267,7 +267,31 @@ u16 func_08003598(u16* p) {
 }
 
 INCLUDE_ASM("engine/func_080035CC.s");
-INCLUDE_ASM("engine/func_0800380C.s");
+
+void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size) {
+    if (slot + (size >> 5) <= 0x400) {
+        t->unk_28 = 0;
+        t->unk_08 = size >> 5;
+        t->unk_00 = src;
+        t->unk_04 = 0;
+        t->unk_20 = 0;
+        t->unk_24 = 0;
+        t->unk_06 = slot;
+        RequestDma3Copy(src, (void*)((t->unk_06 << 5) + 0x06010000), size);
+    }
+}
+
+void func_08003858(ObjTiles* t, u16 slot, u16 size, void* src) {
+    if (slot + (size >> 5) <= 0x400) {
+        t->unk_28 = 1;
+        t->unk_08 = size >> 5;
+        t->unk_00 = src;
+        t->unk_04 = 0;
+        t->unk_20 = 0;
+        t->unk_24 = 1;
+        t->unk_06 = slot;
+    }
+}
 
 void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size) {
     if (slot + (size >> 5) <= 0x10) {
@@ -337,7 +361,16 @@ void func_08004350(void) {
     IwramFree(gDma3Requests);
 }
 
-INCLUDE_ASM("engine/func_08004364.s");
+void func_08004364(void) {
+    volatile Dma3Queue* q = (volatile Dma3Queue*)gDma3Requests;
+
+    q->unk_10A0 = 0;
+    q->unk_10A2 = 0;
+    q->unk_10A4 = 0;
+    q->unk_10A6 = 0;
+    q->count = 0;
+    q->unk_10AC = 0;
+}
 
 #ifdef NON_MATCHING
 u8 RequestDma3Copy(void* src, void* dst, u16 size) {
@@ -392,7 +425,13 @@ void func_08004BC4(void) {
     IwramFree(gUnk_030074D4);
 }
 
-INCLUDE_ASM("engine/func_08004BD8.s");
+void* func_08004BD8(u8* a, u16 x, u16 y) {
+    u8 col = (x >> 8) % a[8];
+    u8 row = (y >> 8) % a[9];
+
+    return ((void**)*(u32*)(a + 4))[a[8] * row + col];
+}
+
 INCLUDE_ASM("engine/func_08004C20.s");
 
 void func_08004D74(void) {
@@ -875,7 +914,23 @@ void func_08005C60(u16 a) {
 INCLUDE_ASM("engine/func_08005C78.s");
 INCLUDE_ASM("engine/func_08006120.s");
 INCLUDE_ASM("engine/func_08006184.s");
+#ifdef NON_MATCHING
+void func_080061E8(s32 a, u16 b) {
+    u8* base = gUnk_03007568;
+
+    if (*(u16*)(base + 0x594) & 2) {
+        if (*(u16*)(base + 0x594) & 1) {
+            return;
+        }
+    }
+    *(u16*)(base + 0x594) = 1;
+    *(u16*)(base + 0x58C) = b;
+    *(u32*)(base + 0x584) = 0;
+    *(u32*)(base + 0x590) = a;
+}
+#else
 INCLUDE_ASM("engine/func_080061E8.s");
+#endif
 INCLUDE_ASM("engine/func_08006238.s");
 INCLUDE_ASM("engine/func_08006290.s");
 
