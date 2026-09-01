@@ -11,6 +11,7 @@ void* func_08000D0C(void* pool);
 void* func_08007E00(void* src, void* dst, u16 size);
 void func_08000C54(void* node, void* pool);
 void CpuSet(void* src, void* dst, u32 ctrl);
+ObjTiles* AllocObjTiles(u16 size, void* owner);
 
 INCLUDE_ASM("engine/func_0800216C.s");
 INCLUDE_ASM("engine/func_080022D4.s");
@@ -217,16 +218,40 @@ void func_080034D8(u8 a) {
     gUnk_030074C8[0x2BAF] = a;
 }
 
-INCLUDE_ASM("engine/func_080034EC.s");
+void func_080034EC(u8 a, u8 b) {
+    a &= 0xF;
+    b &= 0xF;
+    gUnk_03007528 = (gUnk_03007528 & 0xFF) | (a << 8) | (b << 12);
+}
+
+void func_08003510(u8 a) {
+    gUnk_030074C8[0x2BAE] = a;
+}
+
 INCLUDE_ASM("engine/func_08003524.s");
 INCLUDE_ASM("engine/func_08003598.s");
 INCLUDE_ASM("engine/func_080035CC.s");
 INCLUDE_ASM("engine/func_0800380C.s");
 INCLUDE_ASM("engine/func_0800388C.s");
-INCLUDE_ASM("engine/func_080038C8.s");
+
+ObjTiles* func_080038C8(u16 a) {
+    ObjTiles* t = AllocObjTiles(a, 0);
+
+    if (t != 0) {
+        t->unk_28 = 2;
+    }
+    return t;
+}
+
 INCLUDE_ASM("engine/func_080038E4.s");
 INCLUDE_ASM("engine/func_08003970.s");
-INCLUDE_ASM("engine/func_08003A70.s");
+
+void func_08003A70(ObjTiles* t, void* src) {
+    if (t->unk_20 == 2) {
+        LoadPalette(src, (void*)((t->unk_06 << 5) + 0x05000200), (u16)(t->unk_08 << 5));
+    }
+}
+
 INCLUDE_ASM("engine/func_08003A98.s");
 INCLUDE_ASM("engine/func_08003B24.s");
 INCLUDE_ASM("engine/func_08003C9C.s");
@@ -335,7 +360,12 @@ INCLUDE_ASM("engine/func_0800516C.s");
 INCLUDE_ASM("engine/func_080051C4.s");
 INCLUDE_ASM("engine/func_08005244.s");
 INCLUDE_ASM("engine/func_08005490.s");
-INCLUDE_ASM("engine/func_080054C8.s");
+
+void func_080054C8(u8 a, u8 b) {
+    a &= 0xF;
+    b &= 0xF;
+    gUnk_03007528 = (gUnk_03007528 & 0xFF00) | a | (b << 4);
+}
 
 void SetBgScroll(s32 bg, s32 x, s32 y) {
     x &= 0x1FF;
@@ -370,11 +400,24 @@ void SetBgPriority(s32 bg, u16 priority) {
     *p |= priority;
 }
 
-INCLUDE_ASM("engine/func_080055EC.s");
+void func_080055EC(s32 bg, u16 v) {
+    vu16* p = gBgControl[bg];
+
+    *p &= 0x3FFF;
+    *p |= v;
+}
+
 INCLUDE_ASM("engine/func_08005610.s");
 INCLUDE_ASM("engine/func_08005654.s");
 INCLUDE_ASM("engine/func_08005690.s");
-INCLUDE_ASM("engine/func_08005778.s");
+
+void func_08005778(u8 r, u8 g, u8 b) {
+    g &= 0x1F;
+    b &= 0x1F;
+    gUnk_030074CC = (b << 10) | (g << 5) | (r & 0x1F);
+    gUnk_030074D8 = gUnk_030074CC;
+}
+
 INCLUDE_ASM("engine/func_080057A0.s");
 
 void func_08005810(u16 a, u16 b) {
@@ -398,7 +441,7 @@ void func_080058FC(s32* value, s32 target, u16 steps) {
     *value = cur + delta / steps;
 }
 
-u16 func_08005920(u16 a) {
+s32 func_08005920(u16 a) {
     a >>= 1;
     if (a == 0) {
         a = 1;
@@ -406,7 +449,15 @@ u16 func_08005920(u16 a) {
     return a;
 }
 
-INCLUDE_ASM("engine/func_0800592C.s");
+void func_0800592C(s32* p, s32 target, u16 steps) {
+    s32 d = target - *p;
+
+    *p += d / func_08005920(steps);
+}
+
+s32 func_08005954(s32 a, s32 b, s32 t) {
+    return (a * (0x100 - t) >> 8) + (b * t >> 8);
+}
 
 void AnimInit(AnimState* a, s32 b, s32 c) {
     a->unk_04 = (u32*)c;
@@ -503,7 +554,13 @@ u16 func_08005B38(AnimState* a) {
     return a->unk_14[a->unk_0E].unk_00;
 }
 
-INCLUDE_ASM("engine/func_08005B44.s");
+void func_08005B44(AnimState* a, u16 frame) {
+    if (frame < a->unk_0C) {
+        a->unk_0E = frame;
+        a->unk_0A = 0;
+        a->unk_08 &= 0xEFFF;
+    }
+}
 
 void func_08005B64(AnimState* a) {
     a->unk_0E = 0;
