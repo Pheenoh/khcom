@@ -2,6 +2,7 @@
 #define GUARD_MODE_BATTLE_H
 
 #include "types.h"
+#include "gba/syscall.h"
 #include "main.h"
 
 typedef struct BattleWork {
@@ -83,7 +84,6 @@ void SetBgOverflow(s32 bg, u8 on);
 void SetBgSize(s32 a, s32 b);
 void func_08006120(s32 a, s32 b);
 void func_0800AB8C(void);
-void CpuSet(void* src, void* dst, u32 ctrl);
 void m4aSongNumStart(u16 id);
 void func_0801227C(void);
 void func_080125A4(void);

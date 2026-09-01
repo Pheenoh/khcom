@@ -16,6 +16,7 @@ typedef struct Task {
     u8 unk_1C[0x04];
     u8 (*unk_20)(void* work, struct Task* task);
 } Task;
+
 Task* func_08000C8C(ListNode* node);
 Task* func_08000CD4(ListNode* node);
 Task* func_08000D0C(void);
@@ -31,10 +32,5 @@ void TaskPoolDestroy(TaskPool* a);
 void func_08000F30(TaskPool* a);
 void func_08000F8C(u8* p, u32 v);
 s32 func_08000F90(void);
-
-extern Heap gEwramHeap;
-extern Heap gIwramHeap;
-extern u16 gKeysHeld;
-extern u16 gKeysPressed;
 
 #endif /* GUARD_MAIN_H */

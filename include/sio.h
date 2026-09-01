@@ -2,6 +2,8 @@
 #define GUARD_SIO_H
 
 #include "types.h"
+#include "gba/syscall.h"
+#include "intr.h"
 
 #define REG_DISPCNT (*(vu16*)0x04000000)
 #define REG_DISPSTAT (*(vu16*)0x04000004)
@@ -22,7 +24,6 @@
 #define REG_IF (*(vu16*)0x04000202)
 #define REG_IME (*(vu16*)0x04000208)
 
-typedef void (*IntrFunc)(void);
 
 typedef struct {
     u8 unk_00;
@@ -93,23 +94,12 @@ extern IntrFunc gVBlankCallback;
 extern IntrFunc* gIntrTableHBlank;
 
 
-void CpuSet(void* src, void* dst, u32 ctrl);
 
 u8 func_08006B74(void);
 void func_08006B80(u16* a, u16* b);
 s32 func_08006BA0(u8* p);
 u8* func_08006BA8(void);
 u16 func_08006BB4(void);
-void SetVBlankCallback(IntrFunc fn);
-void ResetVBlankCallback(void);
-void SetVCountCallback(IntrFunc fn);
-void ResetVCountCallback(void);
-void SetHBlankCallback(IntrFunc fn);
-void ResetHBlankCallback(void);
-void SetSerialCallback(IntrFunc fn);
-void ResetSerialCallback(void);
-void SetTimer3Callback(IntrFunc fn);
-void ResetTimer3Callback(void);
 void func_08006D08(void);
 void func_08006E60(void);
 void func_08006E70(void);

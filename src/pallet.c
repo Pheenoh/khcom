@@ -1,13 +1,10 @@
 #include "pallet.h"
+#include "intr.h"
+#include "gba/syscall.h"
 #include "malloc.h"
 #include "types.h"
 
-void CpuSet(void* src, void* dst, u32 ctrl);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void SetHBlankCallback(s32 a);
-void ResetHBlankCallback(void);
-void EnableHBlankIntr(void);
-void DisableHBlankIntr(void);
 
 u16* func_080078FC(u16* src, u16* dst, u16 size, u16 amount) {
     s32 base = ((s32)dst - 0x05000000) >> 1;

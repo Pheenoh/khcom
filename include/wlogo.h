@@ -2,6 +2,7 @@
 #define GUARD_WLOGO_H
 
 #include "types.h"
+#include "intr.h"
 #include "main.h"
 #include "anim.h"
 
@@ -651,10 +652,6 @@ void func_080081E4(s32 a, u8 b, u8 c);
 void func_080081F4(s32 a);
 void func_08008214(s32 a);
 void func_08008280(s32 a);
-void SetHBlankCallback(void (*a)(void));
-void ResetHBlankCallback(void);
-void EnableHBlankIntr(void);
-void DisableHBlankIntr(void);
 void func_0801B7D8(void* a);
 void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);

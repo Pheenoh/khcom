@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "gba/syscall.h"
 #include "malloc.h"
 #include "card.h"
 #include "game.h"
@@ -39,7 +40,6 @@ void func_080AB968(void);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 u32 GetBgCharBase(s32 bg);
 void* memcpy(void* dst, const void* src, unsigned long n);
-void CpuSet(void* src, void* dst, u32 ctrl);
 u16 func_080858B8(s32 index);
 void func_08085A58(s32 index, u16* dst);
 u8 func_080A42C8(void);

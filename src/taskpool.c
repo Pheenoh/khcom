@@ -1,4 +1,6 @@
 #include "macros.h"
+#include "intr.h"
+#include "gba/syscall.h"
 #include "key.h"
 #include "malloc.h"
 #include "main.h"
@@ -15,11 +17,8 @@ extern u32 gUnk_02039820;
 extern u16 gUnk_03006C00;
 
 void InitSystem(void);
-void EnableVBlankIntr(void);
 void func_080C55DC(void);
 void func_08001100(void);
-void ApplyIntrCallbacks(void);
-void VBlankIntrWait(void);
 
 
 INCLUDE_ASM("taskpool/TaskDestroy.s");

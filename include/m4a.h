@@ -2,6 +2,7 @@
 #define GUARD_M4A_H
 
 #include "types.h"
+#include "gba/syscall.h"
 
 #define ID_NUMBER 0x68736D53
 
@@ -372,7 +373,6 @@ extern char gNumMusicPlayers[];
 extern char gMaxLines[];
 extern SoundInfo* gSoundInfoPtr;
 
-void CpuSet(void* src, void* dst, u32 ctrl);
 
 void SoundMain(void);
 void MPlayMain(MusicPlayerInfo* mplayInfo);
