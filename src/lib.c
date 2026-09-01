@@ -59,11 +59,3 @@ s32 func_08117F9C(void) {
     }
     return (gUnk_0203862C >> (gUnk_02038630 - 8)) & 0xFF;
 }
-
-INCLUDE_ASM("lib/BgAffineSet.s");
-INCLUDE_ASM("lib/CpuFastSet.s");
-INCLUDE_ASM("lib/CpuSet.s");
-INCLUDE_ASM("lib/RegisterRamReset.s");
-INCLUDE_ASM("lib/SoftReset.s");
-INCLUDE_ASM("lib/Sqrt.s");
-INCLUDE_ASM("lib/VBlankIntrWait.s");
