@@ -2037,6 +2037,10 @@ void task_wlogo_bks_obj_3(WlogoBksObjWork* work) {
 }
 
 INCLUDE_ASM("wlogo/func_080B7E68.s");
+INCLUDE_ASM("wlogo/task_bos_tm_0.s");
+INCLUDE_ASM("wlogo/task_bos_tm_1.s");
+INCLUDE_ASM("wlogo/task_bos_tm_2.s");
+INCLUDE_ASM("wlogo/task_bos_tm_3.s");
 
 void func_080B8334(WlogoTtEff* p, s16 a, s16 b, s16 c) {
     p->unk_004 = a << 8;

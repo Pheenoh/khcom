@@ -3906,6 +3906,10 @@ s32 func_080AE1E8(UnkStruct_02034AAC** p, u8 b) {
 }
 
 INCLUDE_ASM("card/func_080AE274.s");
+INCLUDE_ASM("card/task_print_0.s");
+INCLUDE_ASM("card/task_print_1.s");
+INCLUDE_ASM("card/task_print_2.s");
+INCLUDE_ASM("card/task_print_3.s");
 
 void func_080AEB94(void) {
     gUnk_0203A9E8 = 0;

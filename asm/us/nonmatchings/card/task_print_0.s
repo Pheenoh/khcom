@@ -1,0 +1,9 @@
+.syntax unified
+	.align 2, 0
+	.global task_print_0
+	.thumb
+	.thumb_func
+	.type task_print_0, %function
+task_print_0: @ 080AE56C
+	.byte 0x00, 0xB5, 0x00, 0x20, 0xEE, 0xF7, 0x44, 0xFE, 0x01, 0xBC, 0x00, 0x47
+.syntax divided

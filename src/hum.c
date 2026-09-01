@@ -41,6 +41,10 @@ void func_0804B4BC(CloudWork* work, s32 a, s32 b) {
 }
 
 INCLUDE_ASM("hum/func_0804B4F4.s");
+INCLUDE_ASM("hum/task_hum_hook_0.s");
+INCLUDE_ASM("hum/task_hum_hook_1.s");
+INCLUDE_ASM("hum/task_hum_hook_2.s");
+INCLUDE_ASM("hum/task_hum_hook_3.s");
 
 void task_hum_hook_moon_0(HookMoonWork* work) {
     work->unk_00 = LoadObjTiles(gUnk_08B5A872, 0xC00);
