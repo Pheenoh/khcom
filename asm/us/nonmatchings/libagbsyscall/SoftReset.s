@@ -1,6 +1,21 @@
 .syntax unified
+	.include "gba_constants.inc"
+	.align 2, 0
 	.global SoftReset
+	.thumb
+	.thumb_func
+	.type SoftReset, %function
 SoftReset:
-	.byte 0x03, 0x4B, 0x00, 0x22, 0x1A, 0x70, 0x03, 0x49, 0x8D, 0x46, 0x01, 0xDF, 0x00, 0xDF, 0x00, 0x00
-	.byte 0x08, 0x02, 0x00, 0x04, 0x00, 0x7F, 0x00, 0x03
+	ldr r3, sSoftResetRegIme
+	movs r2, #0
+	strb r2, [r3, #0]
+	ldr r1, sSoftResetStack
+	mov sp, r1
+	swi #1
+	swi #0
+	.align 2, 0
+sSoftResetRegIme:
+	.word REG_BASE + OFFSET_REG_IME
+sSoftResetStack:
+	.word IWRAM_END - 0x100
 .syntax divided
