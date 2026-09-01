@@ -5,5 +5,5 @@
 	.thumb_func
 	.type Sqrt, %function
 Sqrt:
-	.incbin "roms/B8CJ.gba", 0x118084, 0xc
+	.incbin "roms/B8CJ.gba", 0x118084, 0x4
 .syntax divided

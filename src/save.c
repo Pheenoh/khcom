@@ -1,6 +1,18 @@
 #include "macros.h"
 #include "save.h"
 
+extern u16 gUnk_02034088;
+extern u16 gUnk_0203408A;
+extern u8 gUnk_02034090[];
+extern u16 gUnk_03006C78;
+extern u8 gUnk_08121724[];
+extern u8 gUnk_08121924[];
+extern u8 gUnk_08125924[];
+
+void VBlankIntrWait(void);
+void func_080098D4(void);
+void func_080099A8(void);
+
 void ZeroFill(void* dst, s16 size) {
     u16 zero;
     u16* p;
@@ -681,6 +693,117 @@ void SaveSetFileSmallState(u16 file, u16 slot, u16 state) {
     EwramFree(blk);
 }
 
-INCLUDE_ASM("save/func_080097CC.s");
-INCLUDE_ASM("save/func_080098D4.s");
-INCLUDE_ASM("save/func_080099A8.s");
+void func_080097CC(void) {
+    vu16* ime;
+    vu16* ie;
+    vu16* dispstat;
+    vu16* dispcnt;
+    vu16* p;
+    vu32* dma;
+
+    ime = (vu16*)0x04000208;
+    *ime = 0;
+    ie = (vu16*)0x04000200;
+    *ie |= 1;
+    dispstat = (vu16*)0x04000004;
+    *dispstat |= 8;
+    *ime = 1;
+    p = (vu16*)0x04000008;
+    do {
+        *p = 0x88;
+    } while (0);
+    p += 0x24;
+    *p = 0x3FBF;
+    p += 2;
+    *p = 0x10;
+    dispcnt = (vu16*)0x04000000;
+    *dispcnt = 0x1100;
+    VBlankIntrWait();
+    dma = (vu32*)0x040000D4;
+    dma[0] = (u32)gUnk_08121924;
+    dma[1] = 0x06008000;
+    dma[2] = 0x80002000;
+    dma[2];
+    dma[0] = (u32)gUnk_08121724;
+    dma[1] = 0x05000000;
+    dma[2] = 0x80000100;
+    dma[2];
+    dma[0] = (u32)gUnk_08125924;
+    dma[1] = (u32)gUnk_02034090;
+    dma[2] = 0x80000280;
+    dma[2];
+    dma[0] = (u32)gUnk_02034090;
+    dma[1] = 0x06000000;
+    dma[2] = 0x80000400;
+    dma[2];
+    func_080098D4();
+    *ime = 0;
+    *ie &= 0xFFFE;
+    *dispstat &= 0xFFF7;
+    *ime = 1;
+    *dispcnt = 0;
+}
+
+void func_080098D4(void) {
+    vu16* bldy;
+    vu16* bldy2;
+    vu32* dma;
+    s32 i;
+    u32 j;
+    s32 prev;
+    s32 cur;
+    s32 ok;
+
+    i = 0;
+    ok = 0;
+    cur = 0;
+    prev = 0;
+    j = 0;
+    bldy = (vu16*)0x04000054;
+    do {
+        VBlankIntrWait();
+        *bldy = 16 - j;
+        j++;
+    } while (j <= 16);
+
+    if (i <= 19) {
+        dma = (vu32*)0x040000D4;
+        do {
+            func_080099A8();
+            if ((((gUnk_0203408A ^ gUnk_02034088) & gUnk_02034088) & 0xF0) == 0xF0) {
+                prev = cur;
+                cur = i;
+            }
+            if (prev != 0 && cur - prev <= 3) {
+                ok = 1;
+            }
+            i++;
+            VBlankIntrWait();
+            dma[0] = (u32)gUnk_02034090;
+            dma[1] = 0x06000000;
+            dma[2] = 0x84000200;
+            dma[2];
+        } while (i <= 19);
+    }
+
+    j = 0;
+    bldy2 = (vu16*)0x04000054;
+    do {
+        VBlankIntrWait();
+        *bldy2 = j;
+        j++;
+    } while (j <= 16);
+
+    if (ok) {
+        gUnk_03006C78 |= 4;
+    } else {
+        gUnk_03006C78 &= 0xFFFB;
+    }
+}
+
+void func_080099A8(void) {
+    u16 keys = 0x3FF ^ *(vu16*)0x04000130;
+
+    gUnk_0203408A = gUnk_02034088;
+    gUnk_02034088 = keys;
+}
