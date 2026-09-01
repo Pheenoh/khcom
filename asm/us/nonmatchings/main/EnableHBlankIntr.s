@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_080002D4
+	.global EnableHBlankIntr
 	.thumb
 	.thumb_func
-	.type func_080002D4, %function
-func_080002D4: @ 080002D4
+	.type EnableHBlankIntr, %function
+EnableHBlankIntr: @ 080002D4
 	ldr r3, _080002F4 @ =0x04000208
 	movs r0, #0x00
 	strh r0, [r3, #0x00]

@@ -1,9 +1,9 @@
 .syntax unified
 	.align 2, 0
-	.global func_08000300
+	.global DisableHBlankIntr
 	.thumb
 	.thumb_func
-	.type func_08000300, %function
-func_08000300:
+	.type DisableHBlankIntr, %function
+DisableHBlankIntr:
 	.incbin "roms/B8CJ.gba", 0x300, 0x34
 .syntax divided

@@ -37,7 +37,7 @@ void mode_allmap_0(s32 a) {
     REG_IE |= 4;
     REG_DISPSTAT &= 0xFF;
     REG_DISPSTAT |= 0x5020;
-    func_08006C40(func_080D2F20);
+    SetVCountCallback(func_080D2F20);
     REG_IME = 1;
     func_08006120(0, 16);
     if (gUnk_02034E81 != 0) {
@@ -109,7 +109,7 @@ void mode_allmap_2(void) {
     REG_IE &= 0xFFFB;
     REG_DISPSTAT &= 0xFFDF;
     REG_IME = 1;
-    func_08006C68();
+    ResetVCountCallback();
     if (gUnk_02034E81 != 0) {
         m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x100);
     }

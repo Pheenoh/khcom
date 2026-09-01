@@ -2,7 +2,7 @@
 #include "tutorial.h"
 
 void task_tutorial_0(TutorialWork* work, s32 arg1) {
-    gUnk_0300750C = 0;
+    gBg0Cnt = 0;
     SetupBg(0, 2, 28, 14);
     SetBgScroll(0, 0, 0);
     work->unk_000 = 0;

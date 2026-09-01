@@ -1,9 +1,9 @@
 .syntax unified
 	.align 2, 0
-	.global func_080005AC
+	.global SerialIntrDummy
 	.thumb
 	.thumb_func
-	.type func_080005AC, %function
-func_080005AC:
+	.type SerialIntrDummy, %function
+SerialIntrDummy:
 	.incbin "roms/B8CJ.gba", 0x5ac, 0x4
 .syntax divided

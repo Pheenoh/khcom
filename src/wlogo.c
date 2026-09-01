@@ -1714,8 +1714,8 @@ void task_wlogo_tt_3(WlogoTtWork* work) {
 }
 
 void func_080B75E8(void) {
-    func_08006C84(func_080B75FC);
-    func_080002D4();
+    SetHBlankCallback(func_080B75FC);
+    EnableHBlankIntr();
 }
 
 void func_080B75FC(void) {
@@ -1732,8 +1732,8 @@ void func_080B75FC(void) {
 }
 
 void func_080B7664(void) {
-    func_08006CAC();
-    func_08000300();
+    ResetHBlankCallback();
+    DisableHBlankIntr();
 }
 
 void task_wlogo_tt_obj_0(WlogoTtObjWork* work, WlogoTtObjArg* arg) {

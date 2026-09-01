@@ -3,13 +3,13 @@
 
 void CpuSet(void* src, void* dst, u32 ctrl);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void func_08000AE4(void* name);
+void SetIwramHeapName(void* name);
 void* IwramAlloc(u32 size);
 void IwramFree(void* p);
-void func_08006C84(s32 a);
-void func_08006CAC(void);
-void func_080002D4(void);
-void func_08000300(void);
+void SetHBlankCallback(s32 a);
+void ResetHBlankCallback(void);
+void EnableHBlankIntr(void);
+void DisableHBlankIntr(void);
 
 u16* func_080078FC(u16* src, u16* dst, u16 size, u16 amount) {
     s32 base = ((s32)dst - 0x05000000) >> 1;
@@ -205,7 +205,7 @@ void func_08007E7C(void) {
 void func_08007E90(void) {
     s32 zero;
 
-    func_08000AE4(gUnk_08121714);
+    SetIwramHeapName(gUnk_08121714);
     gUnk_0300756C = IwramAlloc(0x440);
     zero = 0;
     CpuSet(&zero, gUnk_0300756C, 0x05000110);
@@ -323,8 +323,8 @@ void func_080081B8(s32 a) {
         gUnk_02039B70[i].unk_01 = 1;
         gUnk_02039B70[i].unk_02 = 0;
     }
-    func_08006C84(a);
-    func_080002D4();
+    SetHBlankCallback(a);
+    EnableHBlankIntr();
 }
 
 void func_080081E4(s32 a, u8 b, u8 c) {
@@ -352,8 +352,8 @@ void func_08008214(s32 a) {
 
 void func_08008280(s32 a) {
     gUnk_02039B70[a].unk_02 = 0;
-    func_08006CAC();
-    func_08000300();
+    ResetHBlankCallback();
+    DisableHBlankIntr();
 }
 
 void func_0800829C(void) {
@@ -377,6 +377,6 @@ void func_08008318(void) {
     for (i = 0; i < 4; i++) {
         gUnk_02039B70[i].unk_02 = 0;
     }
-    func_08006CAC();
-    func_08000300();
+    ResetHBlankCallback();
+    DisableHBlankIntr();
 }

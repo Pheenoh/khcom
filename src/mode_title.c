@@ -235,7 +235,7 @@ void mode_title_2(void) {
     REG_IE &= 0xFFFB;
     REG_DISPSTAT &= 0xFFDF;
     REG_IME = 1;
-    func_08006C68();
+    ResetVCountCallback();
     EwramFree(gUnk_02034EC4);
 }
 
