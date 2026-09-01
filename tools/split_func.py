@@ -65,6 +65,10 @@ def main():
 
     start = next((int(m.group(2), 16) for m in map(LABEL_RE.match, lines) if m), None)
     if start is None:
+        m = re.search(r"^(?:func_|_)([0-9A-Fa-f]{8}):", "".join(lines), re.M)
+        if m:
+            start = int(m.group(1), 16)
+    if start is None:
         sys.exit(f"error: no address label in {path}")
 
     labels = {}
