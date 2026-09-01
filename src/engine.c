@@ -15,6 +15,71 @@ extern u16 gUnk_0300750C;
 extern u16 gUnk_03007508;
 extern u16 gUnk_030074DC;
 extern u16 gUnk_0300753C;
+extern u16 gUnk_0300750C;
+extern u16 gUnk_03007508;
+extern u16 gUnk_030074DC;
+extern u16 gUnk_0300753C;
+extern u16 gUnk_0203404C;
+extern u16 gUnk_0203404E;
+extern u16 gUnk_02034056;
+extern u16 gUnk_0203406A;
+extern u16 gUnk_02034044;
+extern u16 gUnk_02034046;
+extern u8 gUnk_02034054;
+extern u8 gUnk_02034058;
+extern u32 gUnk_0203405C;
+extern u32 gUnk_02034060;
+extern u8 gUnk_02034064;
+void func_080066F4(s16 x, s16 y);
+void func_08007E68(s32 a);
+void func_08007E7C(void);
+
+s32 func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
+extern u16 gUnk_03006C78;
+void CpuSet(void* src, void* dst, u32 ctrl);
+ObjTiles* AllocObjTiles(u16 size, void* owner);
+u16 func_08001DB0(u16 a, u16 b);
+s32 func_08005824(s32 a, s32 b);
+s32 func_0800585C(s32 a, s32 b);
+void func_08005C60(u16 a);
+void func_08000AE4(void* name);
+void* IwramAlloc(u32 size);
+void IwramFree(void* p);
+
+extern u16 gUnk_0300751C;
+extern u16 gUnk_03007530;
+extern u16 gUnk_030074F0;
+extern u16 gUnk_03007518;
+extern u16 gUnk_030074EC;
+extern u16 gUnk_03007550;
+extern u16 gUnk_03007548;
+extern u16 gUnk_03007510;
+extern u16 gUnk_030074F8;
+extern u16 gUnk_03007514;
+extern u16 gUnk_0300754C;
+extern u32 gUnk_0300752C;
+extern u32 gUnk_030074F4;
+extern u16 gUnk_030074E8;
+extern u16 gUnk_030074E0;
+extern u16 gUnk_03007504;
+extern u16 gUnk_03007540;
+extern u32 gUnk_03007524;
+extern u32 gUnk_03007560;
+extern u16 gUnk_0203404C;
+extern u16 gUnk_0203404E;
+extern u16 gUnk_02034056;
+extern u16 gUnk_0203406A;
+extern u16 gUnk_02034044;
+extern u16 gUnk_02034046;
+extern u8 gUnk_02034054;
+extern u8 gUnk_02034058;
+extern u32 gUnk_0203405C;
+extern u32 gUnk_02034060;
+extern u8 gUnk_02034064;
+void func_080066F4(s16 x, s16 y);
+void func_08007E68(s32 a);
+void func_08007E7C(void);
+
 s32 func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 extern u16 gUnk_03006C78;
 void CpuSet(void* src, void* dst, u32 ctrl);
@@ -457,7 +522,42 @@ u8 func_08003A98(u16 n) {
     }
     return 0;
 }
-INCLUDE_ASM("engine/func_08003B24.s");
+u8 func_08003B24(u16 n) {
+    ObjTiles* cur;
+    ObjTiles* next;
+    u16 pos;
+    s16 end;
+
+    cur = func_08000C8C(gUnk_030074C8 + 0x1A94);
+    if (cur == 0) {
+        return 1;
+    }
+    pos = *(u16*)(gUnk_030074C8 + 0x1AA4);
+    if (n <= (s16)(cur->unk_06 - pos)) {
+        return 1;
+    }
+    for (;;) {
+        if (cur == 0) {
+            break;
+        }
+        next = func_08000CD4(cur->unk_0C);
+        pos = cur->unk_06 + cur->unk_08;
+        if ((s16)pos + n > *(u16*)(gUnk_030074C8 + 0x1AA6)) {
+            break;
+        }
+        if (next != 0) {
+            end = next->unk_06 - pos;
+        } else {
+            end = *(u16*)(gUnk_030074C8 + 0x1AA6) - pos;
+        }
+        if (n <= end) {
+            return 1;
+        }
+        cur = next;
+    }
+    return 0;
+}
+INCLUDE_ASM("engine/func_08003BB0.s");
 
 s32 func_08003C9C(s32 a) {
     s32 x;
@@ -479,7 +579,43 @@ s32 func_08003C9C(s32 a) {
 
 INCLUDE_ASM("engine/func_08003CD4.s");
 INCLUDE_ASM("engine/func_08003E2C.s");
-INCLUDE_ASM("engine/func_08004034.s");
+void func_08004034(void) {
+    gDispCnt = 0x40;
+    gUnk_03007528 = 0;
+    gBldCnt = 0;
+    gBldAlpha = 0;
+    gUnk_0300751C = 0;
+    gUnk_03007530 = 0;
+    gUnk_030074F0 = 0;
+    gUnk_03007518 = 0;
+    gUnk_030074EC = 0;
+    gUnk_03007550 = 0;
+    gUnk_03007548 = 0;
+    gUnk_0300750C = 0;
+    gUnk_03007508 = 0;
+    gUnk_030074DC = 0;
+    gUnk_0300753C = 0;
+    gUnk_03007544 = 0;
+    gUnk_030074FC = 0;
+    gUnk_03007538 = 0;
+    gUnk_03007558 = 0;
+    gUnk_03007520 = 0;
+    gUnk_03007534 = 0;
+    gUnk_0300755C = 0;
+    gUnk_030074E4 = 0;
+    gUnk_03007510 = 0x100;
+    gUnk_030074F8 = 0;
+    gUnk_03007514 = 0;
+    gUnk_0300754C = 0x100;
+    gUnk_0300752C = 0;
+    gUnk_030074F4 = 0;
+    gUnk_030074E8 = 0x100;
+    gUnk_030074E0 = 0;
+    gUnk_03007504 = 0;
+    gUnk_03007540 = 0x100;
+    gUnk_03007524 = 0;
+    gUnk_03007560 = 0;
+}
 INCLUDE_ASM("engine/func_0800415C.s");
 
 void func_08004314(void) {
@@ -1401,7 +1537,31 @@ void func_0800675C(u8 a, s32 b, s32 c) {
     gUnk_02034060 = c;
 }
 
-INCLUDE_ASM("engine/func_08006778.s");
+void func_08006778(u8* a, s32 x, s32 y) {
+    gUnk_02034040 = a;
+    func_080066F4((s16)x, (s16)y);
+    if (gUnk_02034058 != 0) {
+        gUnk_0203404C = *(u16*)(a + 0x0E) << 6;
+    } else {
+        gUnk_0203404C = *(u16*)(a + 0x0E) << 5;
+    }
+    gUnk_0203404E = 0x8000 / gUnk_0203404C;
+    gUnk_02034066 = -1;
+    gUnk_02034068 = -1;
+    gUnk_02034044 = 0;
+    gUnk_02034046 = 0;
+    gUnk_02034054 = 0;
+    gUnk_0203406A = *(u16*)(a + 0x16);
+    if (gUnk_02034058 != 0) {
+        gUnk_0203405C = 0x100;
+        gUnk_02034060 = 0x100;
+        gUnk_02034064 = 0;
+    }
+    func_08007E68(0);
+    LoadBgPalette(gUnk_02034048, *(void**)(a + 0x08), *(u16*)(a + 0x0C));
+    func_08007E7C();
+    LoadBgMap(gUnk_02034048, *(void**)(a + 0x04), gUnk_02034056);
+}
 INCLUDE_ASM("engine/func_0800685C.s");
 INCLUDE_ASM("engine/func_08006954.s");
 

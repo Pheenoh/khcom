@@ -130,8 +130,8 @@ extern u8 gUnk_02034054;
 extern u32 gUnk_0203405C;
 extern u32 gUnk_02034060;
 extern u8 gUnk_02034064;
-extern u16 gUnk_02034066;
-extern u16 gUnk_02034068;
+extern s16 gUnk_02034066;
+extern s16 gUnk_02034068;
 
 u8 func_08002060(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
 u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h);
