@@ -464,4 +464,6 @@ u16 func_08085770(u8 index);
 u16 func_08085B38(u8 index);
 u8* func_080857BC(u8 index);
 
+void func_08066588(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
+
 #endif /* GUARD_CARD_H */
