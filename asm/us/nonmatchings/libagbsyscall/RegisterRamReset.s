@@ -4,6 +4,7 @@
 	.thumb
 	.thumb_func
 	.type RegisterRamReset, %function
-RegisterRamReset: @ 08117FEC
-	.byte 0x01, 0xDF, 0x70, 0x47
+RegisterRamReset:
+	swi #1
+	bx lr
 .syntax divided
