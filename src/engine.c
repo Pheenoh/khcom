@@ -11,6 +11,10 @@ void* func_08000D0C(void* pool);
 void* func_08007E00(void* src, void* dst, u16 size);
 void func_08000C54(void* node, void* pool);
 extern s16 gSineTable[];
+extern u16 gUnk_0300750C;
+extern u16 gUnk_03007508;
+extern u16 gUnk_030074DC;
+s32 func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 extern u16 gUnk_03006C78;
 void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
@@ -380,7 +384,35 @@ ObjTiles* func_080038C8(u16 a) {
     return t;
 }
 
-INCLUDE_ASM("engine/func_080038E4.s");
+u8 func_080038E4(ObjTiles* a, u16* b, void* c) {
+    u16 count;
+    s32 j;
+    u16 acc;
+    u16 n;
+
+    if (b != 0 && c != 0 && a->unk_28 == 2) {
+        if (a->unk_20 != (u32)b || a->unk_00 != c) {
+            a->unk_00 = c;
+            a->unk_20 = (u32)b;
+            count = *b;
+            b++;
+            acc = 0;
+            if (count != 0) {
+                j = count;
+                do {
+                    n = func_08001DB0(b[0], b[1]);
+                    RequestDma3Copy((u8*)a->unk_00 + ((b[2] & 0x3FF) << 5),
+                                    (void*)(((a->unk_06 + acc) << 5) + 0x06010000), n * 32);
+                    acc = acc + n;
+                    b += 3;
+                    j--;
+                } while (j != 0);
+            }
+            return 1;
+        }
+    }
+    return 0;
+}
 INCLUDE_ASM("engine/func_08003970.s");
 
 void func_08003A70(ObjTiles* t, void* src) {
@@ -551,7 +583,27 @@ void func_08004D74(void) {
 }
 
 INCLUDE_ASM("engine/func_08004DB0.s");
+#ifdef NON_MATCHING
+void func_08004E64(void) {
+    s32 i;
+
+    gDispCnt = (gDispCnt & 0xFFF8) | 1;
+    gUnk_0300750C = 0;
+    gUnk_03007508 = 1;
+    gUnk_030074DC = 0x82;
+    SetupBg(0, 0, 7, 0);
+    SetupBg(1, 1, 15, 0);
+    SetupBg(2, 2, 23, 0);
+    SetBgScroll(0, 0, 0);
+    SetBgScroll(1, 0, 0);
+    func_08005690(2, 0, 0x100, 0x100, 0, 0);
+    for (i = 0; i <= 3; i++) {
+        gUnk_030074D4[i].unk_04 = 0;
+    }
+}
+#else
 INCLUDE_ASM("engine/func_08004E64.s");
+#endif
 INCLUDE_ASM("engine/func_08004F08.s");
 
 void EnableBg(s32 bg) {
