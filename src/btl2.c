@@ -1265,16 +1265,19 @@ u8 func_08031EC4(FldActor* act) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 s32 func_08031F1C(FldWork* work) {
-    FldActor* act = &gUnk_02039BA0->unk_18;
+    FldActor* act;
     s32 v;
 
+    act = &gUnk_02039BA0->unk_18;
+
     if (work->unk_66 & 1) {
-        v = work->unk_78;
-        if (act->unk_00.unk_0C < v) {
+        if (act->unk_00.unk_0C < work->unk_78) {
             v = act->unk_00.unk_0C;
+        } else {
+            v = work->unk_78;
         }
+
         work->unk_BC = 1;
     } else {
         work->unk_BC = 0;
@@ -1283,9 +1286,6 @@ s32 func_08031F1C(FldWork* work) {
 
     return v;
 }
-#else
-INCLUDE_ASM("btl2/func_08031F1C.s");
-#endif
 
 void func_08031F60(FldActor* act) {
     u8 old = act->unk_14;
