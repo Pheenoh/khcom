@@ -5,6 +5,13 @@
 #include "main.h"
 #include "m4a.h"
 
+typedef struct Mode {
+    const char* name;
+    void (*unk_04)(s32 arg);
+    void (*unk_08)(void);
+    void (*unk_0C)(void);
+} Mode;
+
 typedef struct AnimFrame {
     u16 unk_00;
     u16 unk_02;
@@ -183,6 +190,14 @@ typedef struct AllmapPushaWork {
 } AllmapPushaWork;
 
 void* AllocObjTiles(s32 a, void* b);
+void SaveClearSystem(void);
+int SaveLoadSystem(void);
+void func_080010CC(Mode* mode, s32 arg);
+void func_0801CCB4(void);
+void func_0801CD20(void);
+void func_080AEB94(void);
+void func_080E04EC(void);
+u8 func_080987C0(u8 a);
 void* AnimGetGfx(AnimState* a);
 void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
@@ -255,6 +270,12 @@ void m4aSongNumStart(u16 id);
 void* memcpy(void* dst, const void* src, unsigned long n);
 
 extern s16 gSineTable[];
+extern s16 gUnk_02034EC2;
+extern u8 gUnk_02034ECA;
+extern Mode gUnk_09EF12F8;
+extern Mode gUnk_09EF4E50;
+extern Mode gUnk_09EF6AD0;
+extern Mode gUnk_09EF6AE0;
 extern s32 gUnk_02034E84;
 extern s32 gUnk_02034E88;
 extern s32 gUnk_02034E8C;
