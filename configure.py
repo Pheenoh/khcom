@@ -93,6 +93,8 @@ for line in units_file.read_text().splitlines():
         obj = f"{build_dir}/src/{src.stem}.o"
     else:
         src = Path(f"asm/{version}") / name
+        if not src.exists():
+            src = Path("asm") / name
         obj = f"{build_dir}/asm/{src.stem}.o"
     if not src.exists():
         sys.exit(f"error: unit {src} listed in {units_file} does not exist")
@@ -185,6 +187,7 @@ with out.open("w") as f:
     n.newline()
 
     headers = sorted(str(p) for p in Path("include").glob("*.h"))
+    asm_includes = sorted(str(p) for p in Path("include").glob("*.inc"))
     objs = []
     for path, member, obj in archives:
         n.build(obj, "arx", implicit=[path],
@@ -196,6 +199,8 @@ with out.open("w") as f:
         rule = "cc" if src.suffix == ".c" else "as"
         variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
         deps = [baserom]
+        if rule == "as":
+            deps += asm_includes
         if rule == "cc":
             deps += headers
             for m in INCLUDE_ASM_RE.finditer(src.read_text()):
