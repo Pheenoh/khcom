@@ -128,3 +128,4 @@ INCLUDE_ASM("hum/func_0805A698.s");
 INCLUDE_ASM("hum/func_0805A7D0.s");
 INCLUDE_ASM("hum/func_0805A8D0.s");
 INCLUDE_ASM("hum/func_0805A95C.s");
+INCLUDE_ASM("hum/func_0805AA9C.s");

@@ -97,7 +97,6 @@ extern u16 gDispCnt;
 
 extern u8* gUnk_030074C8;
 extern Dma3Request* gDma3Requests;
-extern u16 gUnk_0300786C;
 extern u32 gRandSeed;
 extern u32 gRandomState[4];
 extern u8* gUnk_03007568;
