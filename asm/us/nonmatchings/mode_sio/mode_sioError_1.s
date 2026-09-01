@@ -1,0 +1,9 @@
+.syntax unified
+	.align 2, 0
+	.global mode_sioError_1
+	.thumb
+	.thumb_func
+	.type mode_sioError_1, %function
+mode_sioError_1: @ 080B3F18
+	.byte 0x00, 0xB5, 0x00, 0xF0, 0x03, 0xF8, 0x01, 0xBC, 0x00, 0x47, 0x00, 0x00
+.syntax divided

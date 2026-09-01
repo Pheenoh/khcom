@@ -1,6 +1,8 @@
 #include "macros.h"
+#include "unk_080dfebc.h"
 
 INCLUDE_ASM("unk_080dfebc/func_080DFEBC.s");
+
 INCLUDE_ASM("unk_080dfebc/func_080DFF1C.s");
 INCLUDE_ASM("unk_080dfebc/func_080DFF30.s");
 INCLUDE_ASM("unk_080dfebc/func_080DFF4C.s");
