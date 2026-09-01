@@ -2104,7 +2104,22 @@ void ApplySaveFileLarge(SaveFileLarge* save) {
     gUnk_02039BB0.unk_008 &= ~8;
 }
 
-INCLUDE_ASM("hum/ApplySaveFileSmall.s");
+void ApplySaveFileSmall(SaveFileSmall* save) {
+    u32 t;
+
+    t = gUnk_02039BB0.unk_008 & 0xA20;
+    save->common.flags &= 0xFFFFF5DF;
+    gUnk_02039BB0.unk_008 = save->common.flags | t;
+    gUnk_02039BB0.unk_032 = save->common.unk_8E;
+    memcpy(gUnk_02039BB0.unk_0F8, save->common.unk_04, 0x88);
+    gUnk_02039BB0.unk_180 = save->common.unk_8C;
+    gUnk_02039BB0.unk_00E = save->common.unk_90;
+    gUnk_02039BB0.unk_00C = save->common.unk_91;
+    gUnk_02039BB0.unk_1DC = save->common.unk_94;
+    func_080E92F8(save->unk_098);
+    func_080A3398(save->unk_2EC);
+    gUnk_02039BB0.unk_008 |= 8;
+}
 
 void func_0805A484(void) {
     s32 i;

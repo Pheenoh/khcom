@@ -852,6 +852,7 @@ void func_080DDEB0(void* p);
 void func_0810962C(void* p);
 void func_080E92F8(void* p);
 void func_080A32DC(void* p);
+void func_080A3398(void* p);
 void func_080C7024(void* p);
 void func_080DDEBC(void* p);
 void func_08109638(void* p);

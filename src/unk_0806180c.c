@@ -121,6 +121,7 @@ INCLUDE_ASM("unk_0806180c/func_08065B6C.s");
 INCLUDE_ASM("unk_0806180c/func_08065B7C.s");
 INCLUDE_ASM("unk_0806180c/_08066468.s");
 INCLUDE_ASM("unk_0806180c/func_080664D8.s");
+INCLUDE_ASM("unk_0806180c/func_08066588.s");
 
 void* func_080668F0(void) {
     return LoadObjTiles(gUnk_090D4180, 0x5A0);
