@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "gba/syscall.h"
 #include "malloc.h"
 #include "engine.h"
 #include "types.h"
@@ -58,7 +59,6 @@ void func_08007E68(s32 a);
 void func_08007E7C(void);
 
 extern u16 gUnk_03006C78;
-void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
 s32 func_08005824(s32 a, s32 b);
@@ -100,7 +100,6 @@ void func_08007E68(s32 a);
 void func_08007E7C(void);
 
 extern u16 gUnk_03006C78;
-void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
 s32 func_08005824(s32 a, s32 b);

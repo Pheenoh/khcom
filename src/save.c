@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "gba/syscall.h"
 #include "save.h"
 
 extern u16 gUnk_02034088;
@@ -9,7 +10,6 @@ extern u8 gUnk_08121724[];
 extern u8 gUnk_08121924[];
 extern u8 gUnk_08125924[];
 
-void VBlankIntrWait(void);
 void func_080098D4(void);
 void func_080099A8(void);
 

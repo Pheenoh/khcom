@@ -2,6 +2,8 @@
 #define GUARD_MODE_ALLMAP_H
 
 #include "types.h"
+#include "intr.h"
+#include "gba/syscall.h"
 #include "main.h"
 #include "anim.h"
 
@@ -86,10 +88,7 @@ void LoadPalette(void* src, void* dst, s32 size);
 void func_08006120(s32 a, u16 b);
 void func_080062F4(s32 a, s32 b);
 u8 func_08006314(void);
-void SetVCountCallback(void (*fn)(void));
-void ResetVCountCallback(void);
 void UpdatePlayTime(void);
-void CpuSet(void* src, void* dst, u32 c);
 void m4aMPlayVolumeControl(void* a, u16 b, u16 c);
 void func_080D2F20(void);
 void func_080D2F64(void);

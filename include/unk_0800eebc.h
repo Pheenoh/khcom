@@ -2,6 +2,7 @@
 #define GUARD_UNK_0800EEBC_H
 
 #include "types.h"
+#include "gba/syscall.h"
 #include "malloc.h"
 #include "taskpool.h"
 typedef struct Collider {
@@ -368,7 +369,6 @@ void func_08000BA4(ListNode* pool);
 void func_08000D20(ListNode* node, void* pool, void* owner);
 void func_08000D28(ListNode* node, void* pool);
 void SetBgBlend(s32 a, s32 b, s32 c);
-void CpuSet(void* src, void* dst, u32 ctrl);
 void func_080062F4(u16 a, s32 b);
 void func_080065FC(s32 a, s32 b, s32 c);
 void SetBlendAlpha(u16 a, u16 b);

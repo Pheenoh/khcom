@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "gba/syscall.h"
 #include "types.h"
 
 #define REG_VCNT (*(vu16*)0x04000006)
@@ -61,7 +62,6 @@ typedef struct MoviePlayer {
 extern MoviePlayer* gUnk_0203C7C4;
 extern MovieHeap gUnk_0203C7D0;
 
-void CpuFastSet(void* src, void* dst, s32 n);
 
 void func_0811D1B0(u32 rate, u32 channels);
 void func_0811D348(void);

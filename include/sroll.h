@@ -2,6 +2,7 @@
 #define GUARD_SROLL_H
 
 #include "engine.h"
+#include "gba/syscall.h"
 #include "main.h"
 #include "types.h"
 
@@ -258,7 +259,6 @@ void func_08116268(SrollWork* w, u16 a, u16 b, u16 c, u16 d);
 void func_0811627C(SrollWork* w, u8 flush);
 void func_08116698(SrollWork* w, s32 a);
 void func_081167F8(SrollWork* w, u8* s);
-void CpuSet(void* src, void* dst, u32 ctrl);
 void sub_0811683C(SrollWork* w);
 void func_08116AD8(SrollWork* w, u8 flush);
 void func_08116B1C(SrollWork* w);

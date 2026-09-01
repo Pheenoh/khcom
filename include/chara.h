@@ -2,6 +2,7 @@
 #define GUARD_CHARA_H
 
 #include "types.h"
+#include "gba/syscall.h"
 #include "key.h"
 #include "malloc.h"
 #include "game.h"
@@ -236,7 +237,6 @@ void func_080078A4(void);
 void func_08006E60(void);
 void func_08083D68(void);
 void func_08083DD4(void);
-void CpuFastSet(void* dst, void* src, s32 n);
 
 extern s16 gSineTable[];
 extern UnkStruct_02039BB0 gUnk_02039BB0;

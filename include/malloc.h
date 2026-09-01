@@ -37,4 +37,8 @@ void IwramFree(void* p);
 void SetEwramHeapName(void* name);
 void SetIwramHeapName(void* name);
 
+extern Heap gEwramHeap;
+
+extern Heap gIwramHeap;
+
 #endif

@@ -2,6 +2,7 @@
 #define GUARD_MODE_MOVIE_H
 
 #include "types.h"
+#include "gba/syscall.h"
 #include "malloc.h"
 #include "sprite.h"
 #include "main.h"
@@ -39,7 +40,6 @@ extern u8 gUnk_09ECEB64[];
 extern u8 gUnk_09EFA9C4[];
 
 void InitDisplayRegs(void);
-void CpuSet(void* src, void* dst, u32 ctrl);
 void m4aSoundVSyncOff(void);
 s32 func_08000250(void);
 s32 func_08000258(void);
@@ -61,7 +61,6 @@ void func_08005BC4(void);
 void func_08006404(void);
 void m4aSoundInit(void);
 void m4aSoundVSyncOn(void);
-void SoftReset(s32 a);
 void func_0806180C(s32 a);
 void func_080010CC(void* a, s32 b);
 void func_0805EA90(void);

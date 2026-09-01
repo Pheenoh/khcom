@@ -2,6 +2,7 @@
 #define GUARD_MODE_TITLE_H
 
 #include "types.h"
+#include "intr.h"
 #include "main.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
@@ -105,7 +106,6 @@ void SetBgSize(s32 a, s32 b);
 void func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08006120(s32 a, s32 b);
 void m4aSongNumStart(u16 id);
-void ResetVCountCallback(void);
 u8 func_08006314(void);
 void func_080C73D8(void);
 void func_080D5A4C(s32 a);
