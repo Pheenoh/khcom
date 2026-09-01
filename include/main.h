@@ -3,6 +3,24 @@
 
 #include "types.h"
 
+typedef struct HeapBlock {
+    s32 size;
+    struct HeapBlock* prevFree;
+    struct HeapBlock* nextFree;
+    struct HeapBlock* prev;
+    struct HeapBlock* next;
+    u32 unk_14;
+    void* name;
+    struct HeapBlock* self;
+} HeapBlock;
+
+typedef struct Heap {
+    HeapBlock* start;
+    HeapBlock* end;
+    u8 unk_08;
+    void* name;
+} Heap;
+
 typedef struct ListNode {
     void* unk_00;
     u8 unk_04[0x04];
@@ -35,8 +53,8 @@ typedef struct TaskPool {
     void* unk_10;
 } TaskPool;
 
-void* HeapAlloc(u32 size, void* heap);
-void HeapFree(void* p, void* heap);
+void* HeapAlloc(u32 size, Heap* heap);
+void HeapFree(void* p, Heap* heap);
 void* EwramAlloc(u32 size);
 void EwramFree(void* p);
 Task* func_08000C8C(ListNode* node);
@@ -57,7 +75,8 @@ s32 func_08000F90(void);
 u16 GetKeysHeld(void);
 u16 GetKeysPressed(void);
 
-extern u8 gEwramHeap[];
+extern Heap gEwramHeap;
+extern Heap gIwramHeap;
 extern u16 gKeysHeld;
 extern u16 gKeysPressed;
 
