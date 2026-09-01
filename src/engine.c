@@ -104,7 +104,14 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
 INCLUDE_ASM("engine/LoadObjTiles.s");
 #endif
 
-INCLUDE_ASM("engine/func_0800284C.s");
+void func_0800284C(u8* p) {
+    if ((s16)*(u16*)(p + 4) > 0) {
+        *(u16*)(p + 4) -= 1;
+    } else {
+        *(void**)(p + 0x2C) = 0;
+        func_08000C54(p + 0x0C, gUnk_030074C8 + 0x1800);
+    }
+}
 
 void func_08002880(u8* p) {
     *(void**)(p + 0x2C) = 0;
@@ -438,8 +445,49 @@ void SetBgScroll(s32 bg, s32 x, s32 y) {
     }
 }
 
-INCLUDE_ASM("engine/func_08005550.s");
-INCLUDE_ASM("engine/func_0800558C.s");
+u8 func_08005550(u32 a) {
+    u16 v;
+
+    switch (a) {
+    case 0:
+        v = gUnk_03007544;
+        break;
+    case 1:
+        v = gUnk_03007538;
+        break;
+    case 2:
+        v = gUnk_03007520;
+        break;
+    case 3:
+        v = gUnk_0300755C;
+        break;
+    default:
+        return 0;
+    }
+    return v;
+}
+
+u8 func_0800558C(u32 a) {
+    u16 v;
+
+    switch (a) {
+    case 0:
+        v = gUnk_030074FC;
+        break;
+    case 1:
+        v = gUnk_03007558;
+        break;
+    case 2:
+        v = gUnk_03007534;
+        break;
+    case 3:
+        v = gUnk_030074E4;
+        break;
+    default:
+        return 0;
+    }
+    return v;
+}
 
 void SetBgPriority(s32 bg, u16 priority) {
     vu16* p = gBgControl[bg];
@@ -456,7 +504,15 @@ void func_080055EC(s32 bg, u16 v) {
 }
 
 INCLUDE_ASM("engine/func_08005610.s");
-INCLUDE_ASM("engine/func_08005654.s");
+
+void func_08005654(s32 bg, u8 on) {
+    if (on) {
+        *gBgControl[bg] |= 0x2000;
+    } else {
+        *gBgControl[bg] &= 0xDFFF;
+    }
+}
+
 INCLUDE_ASM("engine/func_08005690.s");
 
 void func_08005778(u8 r, u8 g, u8 b) {
@@ -681,15 +737,16 @@ INCLUDE_ASM("engine/func_080061E8.s");
 INCLUDE_ASM("engine/func_08006238.s");
 INCLUDE_ASM("engine/func_08006290.s");
 
-#ifdef NON_MATCHING
-void func_080062F4(u16 index, u8 value) {
-    if (index < 32) {
-        *(gUnk_03007568 + index * 44 + 0x28) = value;
+void func_080062F4(u16 slot, u8 value) {
+    PaletteSlot* p;
+
+    if (slot > 0x1F) {
+        return;
     }
+    p = (PaletteSlot*)gUnk_03007568;
+    p += slot;
+    p->unk_28 = value;
 }
-#else
-INCLUDE_ASM("engine/func_080062F4.s");
-#endif
 
 u8 func_08006314(void) {
     if (*(u16*)(gUnk_03007568 + 0x594) & 1) {
