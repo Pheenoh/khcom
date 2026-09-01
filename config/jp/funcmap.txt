@@ -1961,7 +1961,8 @@ func_080CCB80	0x080ccb80	4	0x080ccc34	body
 func_080CCB84	0x080ccb84	8	0x080ccc38	body
 func_080CCB8C	0x080ccb8c	4	0x080ccc40	body
 func_080CCB90	0x080ccb90	68	0x080ccc44	global
-func_080CCBD4	0x080ccbd4	36	0x080ccc88	global
+func_080CCBD4	0x080ccbd4	20	0x080ccc88	body
+func_080CCBE8	0x080ccbe8	16	0x080ccc9c	body
 func_080CCBF8	0x080ccbf8	160	0x080cccac	global
 func_080CCC98	0x080ccc98	104	0x080ccd4c	global
 task_poo_honey_0	0x080ccd00	224	0x080ccdb4	named
@@ -2148,7 +2149,9 @@ func_080D2DB0	0x080d2db0	20	0x080d2e64	body
 func_080D2DC4	0x080d2dc4	20	0x080d2e78	body
 func_080D2DD8	0x080d2dd8	80	0x080d2e8c	global
 func_080D2E28	0x080d2e28	72	0x080d2edc	global
-func_080D2E70	0x080d2e70	72	0x080d2f24	global
+func_080D2E70	0x080d2e70	20	0x080d2f24	body
+func_080D2E84	0x080d2e84	20	0x080d2f38	body
+func_080D2E98	0x080d2e98	32	0x080d2f4c	global
 func_080D2EB8	0x080d2eb8	104	0x080d2f6c	global
 func_080D2F20	0x080d2f20	68	0x080d2fd4	global
 func_080D2F64	0x080d2f64	164	0x080d3018	global
