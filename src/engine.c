@@ -11,6 +11,7 @@ void* func_08000D0C(void* pool);
 void* func_08007E00(void* src, void* dst, u16 size);
 void func_08000C54(void* node, void* pool);
 extern s16 gSineTable[];
+extern u16 gUnk_03006C78;
 void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
@@ -316,7 +317,23 @@ u16 func_08003598(u16* p) {
     return (u16)(total << 5);
 }
 
-INCLUDE_ASM("engine/func_080035CC.s");
+u8 func_080035CC(s16 x, u16 y, u16 a, u16 b, u16 c, s16 d) {
+    if (x + d < 0) {
+        return 1;
+    }
+    if (x - (s16)c > 0xF0) {
+        return 1;
+    }
+    if ((s16)y + (s16)b < 0) {
+        return 1;
+    }
+    if ((s16)y - (s16)a > 0xA0) {
+        return 1;
+    }
+    return 0;
+}
+
+INCLUDE_ASM("engine/func_08003620.s");
 
 void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size) {
     if (slot + (size >> 5) <= 0x400) {
@@ -456,25 +473,22 @@ void func_08004364(void) {
     q->unk_10AC = 0;
 }
 
-#ifdef NON_MATCHING
 u8 RequestDma3Copy(void* src, void* dst, u16 size) {
-    Dma3Request* q;
-    vu16* count;
+    Dma3Queue* q;
     vu32* dma;
 
     if (size == 0) {
         return 0;
     }
-    q = gDma3Requests;
-    count = (vu16*)((u8*)q + 0x10A0);
-    if (*count > 255) {
+    q = (Dma3Queue*)gDma3Requests;
+    if (q->unk_10A0 > 255) {
         return 0;
     }
-    if ((gUnk_0300786C & 8) == 0) {
-        q[*count].src = src;
-        q[*count].dst = dst;
-        q[*count].size = size;
-        *count = *count + 1;
+    if ((gUnk_03006C78 & 8) == 0) {
+        q->requests[q->unk_10A0].src = src;
+        q->requests[q->unk_10A0].dst = dst;
+        q->requests[q->unk_10A0].size = size;
+        q->unk_10A0 = q->unk_10A0 + 1;
     } else {
         dma = (vu32*)0x040000D4;
         dma[0] = (u32)src;
@@ -484,9 +498,6 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("engine/RequestDma3Copy.s");
-#endif
 
 u8 func_0800443C(void* a, u16 b) {
     Dma3Queue* q = (Dma3Queue*)gDma3Requests;
