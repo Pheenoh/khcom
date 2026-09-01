@@ -13,6 +13,11 @@ INCLUDE_ASM("main/func_08000250.s");
 INCLUDE_ASM("main/func_08000258.s");
 INCLUDE_ASM("main/func_080002D4.s");
 INCLUDE_ASM("main/func_08000300.s");
+INCLUDE_ASM("main/func_080004DC.s");
+INCLUDE_ASM("main/func_080005A4.s");
+INCLUDE_ASM("main/func_080005A8.s");
+INCLUDE_ASM("main/func_080005AC.s");
+INCLUDE_ASM("main/func_08000660.s");
 
 void func_080007A8(HeapBlock* b) {
     b->prevFree->nextFree = b->nextFree;
@@ -23,6 +28,7 @@ u8 func_080007B8(void* p, Heap* heap) {
     if (p != 0 && (u32)p > (u32)heap->start && (u32)p < (u32)heap->end) {
         return 1;
     }
+    
     return 0;
 }
 
@@ -98,11 +104,14 @@ void* HeapAlloc(u32 size, Heap* heap) {
     if (size == 0) {
         return 0;
     }
+
     size = (size + 63) & ~31;
     b = func_080007D4(size, heap);
+
     if (b == 0) {
         return 0;
     }
+
     if (b->size < (s32)(size + 64)) {
         size = b->size;
         func_080007A8(b);
@@ -116,16 +125,20 @@ void* HeapAlloc(u32 size, Heap* heap) {
         prev->next = b;
         b->next->prev = b;
     }
+
     b->size = -size;
     b->prevFree = 0;
     b->nextFree = 0;
+
     if (heap->unk_08 != 0) {
         b->unk_14 = 1;
     } else {
         b->unk_14 = 0;
     }
+
     b->name = heap->name;
     b->self = b;
+
     return b + 1;
 }
 
@@ -146,19 +159,26 @@ void HeapFree(void* p, Heap* heap) {
     if (p == 0) {
         return;
     }
+
     b = (HeapBlock*)p - 1;
+
     if (b->self != b) {
         return;
     }
+
     if (!func_080007B8(p, heap)) {
         return;
     }
+
     size = -b->size;
+
     if (size < 0) {
         return;
     }
+
     b->size = size;
     n = b->prev;
+
     if (n->size > 0) {
         func_080007A8(n);
         n->size += size;
@@ -168,7 +188,9 @@ void HeapFree(void* p, Heap* heap) {
         b->next = 0;
         b = n;
     }
+
     n = b->next;
+
     if (n->size > 0) {
         func_080007A8(n);
         b->size += n->size;
@@ -177,6 +199,7 @@ void HeapFree(void* p, Heap* heap) {
         n->prev = 0;
         n->next = 0;
     }
+
     head = heap->start;
     b->prevFree = head;
     b->nextFree = head->nextFree;
@@ -198,10 +221,12 @@ s32 func_080009E4(void* p, Heap* heap) {
 
     if (func_080007B8(p, heap)) {
         size = -((HeapBlock*)p - 1)->size;
+
         if (size > 0) {
             return size;
         }
     }
+
     return 0;
 }
 
