@@ -79,6 +79,7 @@ unk_0810fe94.c
 bos7.c
 sroll.c
 lib.c
+libagbsyscall.c
 agb_sram.c -O1
 m4a.c -O0
 snd_stream.c
