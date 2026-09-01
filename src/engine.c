@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "malloc.h"
 #include "engine.h"
 #include "types.h"
 
@@ -63,9 +64,6 @@ u16 func_08001DB0(u16 a, u16 b);
 s32 func_08005824(s32 a, s32 b);
 s32 func_0800585C(s32 a, s32 b);
 void func_08005C60(u16 a);
-void SetIwramHeapName(void* name);
-void* IwramAlloc(u32 size);
-void IwramFree(void* p);
 
 extern u16 gBldY;
 extern u16 gWin0H;
@@ -108,9 +106,6 @@ u16 func_08001DB0(u16 a, u16 b);
 s32 func_08005824(s32 a, s32 b);
 s32 func_0800585C(s32 a, s32 b);
 void func_08005C60(u16 a);
-void SetIwramHeapName(void* name);
-void* IwramAlloc(u32 size);
-void IwramFree(void* p);
 
 INCLUDE_ASM("engine/func_0800216C.s");
 #ifdef NON_MATCHING

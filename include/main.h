@@ -2,25 +2,10 @@
 #define GUARD_MAIN_H
 
 #include "types.h"
+#include "key.h"
+#include "malloc.h"
 #include "taskpool.h"
 
-typedef struct HeapBlock {
-    s32 size;
-    struct HeapBlock* prevFree;
-    struct HeapBlock* nextFree;
-    struct HeapBlock* prev;
-    struct HeapBlock* next;
-    u32 unk_14;
-    void* name;
-    struct HeapBlock* self;
-} HeapBlock;
-
-typedef struct Heap {
-    HeapBlock* start;
-    HeapBlock* end;
-    u8 unk_08;
-    void* name;
-} Heap;
 struct Task;
 
 typedef struct Task {
@@ -31,10 +16,6 @@ typedef struct Task {
     u8 unk_1C[0x04];
     u8 (*unk_20)(void* work, struct Task* task);
 } Task;
-void* HeapAlloc(u32 size, Heap* heap);
-void HeapFree(void* p, Heap* heap);
-void* EwramAlloc(u32 size);
-void EwramFree(void* p);
 Task* func_08000C8C(ListNode* node);
 Task* func_08000CD4(ListNode* node);
 Task* func_08000D0C(void);
@@ -50,8 +31,6 @@ void TaskPoolDestroy(TaskPool* a);
 void func_08000F30(TaskPool* a);
 void func_08000F8C(u8* p, u32 v);
 s32 func_08000F90(void);
-u16 GetKeysHeld(void);
-u16 GetKeysPressed(void);
 
 extern Heap gEwramHeap;
 extern Heap gIwramHeap;

@@ -2,6 +2,8 @@
 #define GUARD_MODE_MOVIE_H
 
 #include "types.h"
+#include "malloc.h"
+#include "sprite.h"
 #include "main.h"
 
 extern vu16 gUnk_02034938;
@@ -41,18 +43,13 @@ void CpuSet(void* src, void* dst, u32 ctrl);
 void m4aSoundVSyncOff(void);
 s32 func_08000250(void);
 s32 func_08000258(void);
-void IwramHeapInit(s32 a, s32 b);
 s32 func_08000240(void);
 s32 func_08000248(void);
-void EwramHeapInit(s32 a, s32 b);
-void SetEwramHeapName(void* a);
-void SetIwramHeapName(void* a);
 void func_081181BC(void* a, void* b, void* c, void* d);
 s32 func_081181EC(void* a);
 void func_08118344(void* a, s32 b);
 void func_08118538(void);
 void func_08004314(void);
-void SpriteInit(void);
 void func_08004B8C(void);
 void func_08005B78(void);
 void func_08007E90(void);
@@ -67,8 +64,6 @@ void m4aSoundVSyncOn(void);
 void SoftReset(s32 a);
 void func_0806180C(s32 a);
 void func_080010CC(void* a, s32 b);
-void* IwramAlloc(u32 size);
-void IwramFree(void* p);
 void func_0805EA90(void);
 void func_0805E93C(void);
 

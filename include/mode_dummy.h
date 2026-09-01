@@ -2,6 +2,7 @@
 #define GUARD_MODE_DUMMY_H
 
 #include "types.h"
+#include "key.h"
 #include "mode.h"
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
@@ -42,7 +43,6 @@ extern Mode gUnk_09EF8F9C;
 extern Mode gUnk_09EF4EC0;
 
 void func_08001248(void (*fn)(void));
-u16 GetKeysPressed(void);
 void func_080010CC(Mode* mode, s32 arg);
 void func_080010E0(Mode* mode, s32 arg);
 void func_08004DB0(void);

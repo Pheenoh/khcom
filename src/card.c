@@ -1,9 +1,9 @@
 #include "macros.h"
+#include "malloc.h"
 #include "card.h"
 #include "game.h"
 
 void* TaskCreate(void* a, void* desc, void* args);
-void EwramFree(void* p);
 void func_08085290(u16 a);
 void func_080938F8(u16 a);
 u16 func_080857D4(u8 slot);
@@ -16,7 +16,6 @@ void func_080AB228(void);
 void func_080AB22C(u8 a);
 void func_080AB334(u8 a);
 void func_080AB4AC(u8 a);
-void* EwramAlloc(s32 size);
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
 void func_08084458(u16 a);
