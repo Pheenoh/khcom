@@ -1098,6 +1098,7 @@ u16 func_080CE880(PooAnimWork* w) {
 INCLUDE_ASM("poo/func_080CE8B4.s");
 
 INCLUDE_ASM("poo/func_080CE960.s");
+INCLUDE_ASM("poo/task_poo_tigger_0.s");
 
 INCLUDE_ASM("poo/task_poo_tiggerroo_1.s");
 
@@ -1707,6 +1708,10 @@ void func_080D171C(void) {
 }
 
 INCLUDE_ASM("poo/func_080D172C.s");
+INCLUDE_ASM("poo/task_poo_mapobjhit_0.s");
+INCLUDE_ASM("poo/task_poo_mapobjhit_1.s");
+INCLUDE_ASM("poo/task_poo_mapobjhit_2.s");
+INCLUDE_ASM("poo/task_poo_mapobjhit_3.s");
 
 INCLUDE_ASM("poo/func_080D1990.s");
 

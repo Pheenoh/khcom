@@ -93,8 +93,12 @@ void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work) {
 
 INCLUDE_ASM("bos4/func_080DB978.s");
 INCLUDE_ASM("bos4/func_080DBA14.s");
+INCLUDE_ASM("bos4/task_bos_ursula_0.s");
 INCLUDE_ASM("bos4/func_080DBC00.s");
 INCLUDE_ASM("bos4/func_080DBC68.s");
+INCLUDE_ASM("bos4/task_bos_ursula_1.s");
+INCLUDE_ASM("bos4/task_bos_ursula_2.s");
+INCLUDE_ASM("bos4/task_bos_ursula_3.s");
 
 u8 func_080DC510(void) {
     return *(u64*)((u8*)gUnk_02034F0C + 0x58) & 4;
