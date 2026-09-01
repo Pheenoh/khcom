@@ -10,5 +10,5 @@ func_08006E60: @ 08006E60
 	bl func_08006E74
 	pop {r0}
 	bx r0
-	.byte 0x00, 0x00, 0x70, 0x47, 0x00, 0x00
+	.byte 0x00, 0x00
 .syntax divided
