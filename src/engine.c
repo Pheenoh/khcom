@@ -10,6 +10,7 @@ void* func_08000CD4(void* node);
 void* func_08000D0C(void* pool);
 void* func_08007E00(void* src, void* dst, u16 size);
 void func_08000C54(void* node, void* pool);
+extern s16 gSineTable[];
 void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
@@ -39,12 +40,12 @@ u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
 
 INCLUDE_ASM("engine/func_08002488.s");
 
-#ifdef NON_MATCHING
 ObjTiles* LoadObjTiles(void* src, u16 size) {
     ObjTiles* node;
     ObjTiles* cur;
     ObjTiles* next;
-    u16 end;
+    s32 avail;
+    s16 end;
 
     if (size == 0) {
         return 0;
@@ -54,7 +55,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     }
     cur = func_08000C8C(gUnk_030074C8 + 0x1800);
     while (cur != 0) {
-        if (cur->unk_00 == src && cur->unk_24 != 0) {
+        if (cur->unk_00 == src && cur->unk_24 == 0) {
             cur->unk_04++;
             return cur;
         }
@@ -79,23 +80,27 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
         return node;
     }
     node->unk_06 = *(u16*)(gUnk_030074C8 + 0x1810);
-    if (node->unk_08 <= (s16)(cur->unk_06 - *(u16*)(gUnk_030074C8 + 0x1810))) {
+    avail = cur->unk_06 - *(u16*)(gUnk_030074C8 + 0x1810);
+    if (node->unk_08 <= (s16)avail) {
         RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
         func_08000C24(node->unk_0C, gUnk_030074C8 + 0x1800, cur->unk_0C);
         return node;
     }
-    while (cur != 0) {
+    for (;;) {
+        if (cur == 0) {
+            break;
+        }
         next = func_08000CD4(cur->unk_0C);
-        node->unk_06 = cur->unk_08 + cur->unk_06;
-        end = *(u16*)(gUnk_030074C8 + 0x1812);
-        if (node->unk_06 + node->unk_08 > end) {
-            return 0;
+        node->unk_06 = cur->unk_06 + cur->unk_08;
+        if (node->unk_06 + node->unk_08 > *(u16*)(gUnk_030074C8 + 0x1812)) {
+            break;
         }
         if (next != 0) {
-            end = next->unk_06;
+            end = next->unk_06 - node->unk_06;
+        } else {
+            end = *(u16*)(gUnk_030074C8 + 0x1812) - node->unk_06;
         }
-        end -= node->unk_06;
-        if (node->unk_08 <= (s16)end) {
+        if (node->unk_08 <= end) {
             RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
             func_08000BF4(node->unk_0C, gUnk_030074C8 + 0x1800, cur->unk_0C);
             return node;
@@ -104,9 +109,6 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     }
     return 0;
 }
-#else
-INCLUDE_ASM("engine/LoadObjTiles.s");
-#endif
 
 void func_0800284C(u8* p) {
     if ((s16)*(u16*)(p + 4) > 0) {
@@ -151,12 +153,12 @@ void ReleaseObjTiles(void* a) {
     }
 }
 
-#ifdef NON_MATCHING
 ObjTiles* AllocObjTiles(u16 size, void* owner) {
     ObjTiles* node;
     ObjTiles* cur;
     ObjTiles* next;
-    u16 end;
+    s32 avail;
+    s16 end;
 
     if (size == 0) {
         return 0;
@@ -179,22 +181,26 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
         return node;
     }
     node->unk_06 = *(u16*)(gUnk_030074C8 + 0x1810);
-    if (node->unk_08 <= (s16)(cur->unk_06 - *(u16*)(gUnk_030074C8 + 0x1810))) {
+    avail = cur->unk_06 - *(u16*)(gUnk_030074C8 + 0x1810);
+    if (node->unk_08 <= (s16)avail) {
         func_08000C24(node->unk_0C, gUnk_030074C8 + 0x1800, cur->unk_0C);
         return node;
     }
-    while (cur != 0) {
+    for (;;) {
+        if (cur == 0) {
+            break;
+        }
         next = func_08000CD4(cur->unk_0C);
-        node->unk_06 = cur->unk_08 + cur->unk_06;
-        end = *(u16*)(gUnk_030074C8 + 0x1812);
-        if (node->unk_06 + node->unk_08 > end) {
-            return 0;
+        node->unk_06 = cur->unk_06 + cur->unk_08;
+        if (node->unk_06 + node->unk_08 > *(u16*)(gUnk_030074C8 + 0x1812)) {
+            break;
         }
         if (next != 0) {
-            end = next->unk_06;
+            end = next->unk_06 - node->unk_06;
+        } else {
+            end = *(u16*)(gUnk_030074C8 + 0x1812) - node->unk_06;
         }
-        end -= node->unk_06;
-        if (node->unk_08 <= (s16)end) {
+        if (node->unk_08 <= end) {
             func_08000BF4(node->unk_0C, gUnk_030074C8 + 0x1800, cur->unk_0C);
             return node;
         }
@@ -202,9 +208,6 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
     }
     return 0;
 }
-#else
-INCLUDE_ASM("engine/AllocObjTiles.s");
-#endif
 
 void func_08002A10(void* a, void* b) {
     *(void**)a = b;
@@ -234,7 +237,31 @@ void ReleaseObjPalette(u8* p) {
     }
 }
 
-INCLUDE_ASM("engine/func_08002C28.s");
+u8* func_08002C28(u8 a, u8 b) {
+    u8* base;
+    u8* e;
+    s32 sin;
+    s32 cos;
+
+    if (*(u16*)(gUnk_030074C8 + 0x2BAC) <= 0x1F && a != 0) {
+        base = gUnk_030074C8;
+        sin = gSineTable[a];
+        cos = gSineTable[a + 0x40];
+        e = base + 0x28AC + *(u16*)(base + 0x2BAC) * 24;
+        *(u16*)(e + 0x00) = cos;
+        *(u16*)(e + 0x02) = sin;
+        *(u16*)(e + 0x04) = -sin;
+        *(u16*)(e + 0x06) = cos;
+        *(u16*)(e + 0x08) = *(u16*)(base + 0x2BAC);
+        *(u8*)(e + 0x0A) = b;
+        *(u32*)(e + 0x0C) = 0x100;
+        *(u32*)(e + 0x10) = 0x100;
+        *(u8*)(e + 0x14) = a;
+        *(u16*)(gUnk_030074C8 + 0x2BAC) += 1;
+        return e;
+    }
+    return 0;
+}
 INCLUDE_ASM("engine/AllocObjAffine.s");
 INCLUDE_ASM("engine/func_08002F50.s");
 
@@ -252,7 +279,30 @@ void func_08003510(u8 a) {
     gUnk_030074C8[0x2BAE] = a;
 }
 
-INCLUDE_ASM("engine/func_08003524.s");
+u16 func_08003524(u16** a, u16 n) {
+    u16* p;
+    u16 count;
+    u16 sum;
+    u16 max;
+    u16 i;
+    u16 j;
+
+    max = 0;
+    for (i = 0; i < n; i++) {
+        p = a[i];
+        count = p[0];
+        p++;
+        sum = 0;
+        for (j = 0; j < count; j++) {
+            sum += func_08001DB0(p[0], p[1]);
+            p += 3;
+        }
+        if (max < sum) {
+            max = sum;
+        }
+    }
+    return max * 32;
+}
 
 u16 func_08003598(u16* p) {
     u16 count = *p++;
@@ -322,7 +372,41 @@ void func_08003A70(ObjTiles* t, void* src) {
     }
 }
 
-INCLUDE_ASM("engine/func_08003A98.s");
+u8 func_08003A98(u16 n) {
+    ObjTiles* cur;
+    ObjTiles* next;
+    u16 pos;
+    s16 end;
+
+    cur = func_08000C8C(gUnk_030074C8 + 0x1800);
+    if (cur == 0) {
+        return 1;
+    }
+    pos = *(u16*)(gUnk_030074C8 + 0x1810);
+    if (n <= (s16)(cur->unk_06 - pos)) {
+        return 1;
+    }
+    for (;;) {
+        if (cur == 0) {
+            break;
+        }
+        next = func_08000CD4(cur->unk_0C);
+        pos = cur->unk_06 + cur->unk_08;
+        if ((s16)pos + n > *(u16*)(gUnk_030074C8 + 0x1812)) {
+            break;
+        }
+        if (next != 0) {
+            end = next->unk_06 - pos;
+        } else {
+            end = *(u16*)(gUnk_030074C8 + 0x1812) - pos;
+        }
+        if (n <= end) {
+            return 1;
+        }
+        cur = next;
+    }
+    return 0;
+}
 INCLUDE_ASM("engine/func_08003B24.s");
 
 s32 func_08003C9C(s32 a) {
@@ -542,7 +626,18 @@ void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
 #else
 INCLUDE_ASM("engine/func_0800516C.s");
 #endif
-INCLUDE_ASM("engine/func_080051C4.s");
+void func_080051C4(s32 bg, u16 x, u16 y) {
+    BgEntry* e = &gUnk_030074D4[bg];
+
+    if (e->unk_04 == 0) {
+        return;
+    }
+    e->unk_0A = x;
+    e->unk_0C = y;
+    func_08004C20(x, y, e, (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000), 0, 0, 0x1F, 0x15);
+    SetBgScroll(bg, x & 7, y & 7);
+    e->unk_00 = 0;
+}
 INCLUDE_ASM("engine/func_08005244.s");
 
 void SetBgMosaic(s32 bg, u8 on) {
@@ -803,7 +898,30 @@ void AnimStart(AnimState* a, u16 animId, u16 flags) {
     a->unk_10 = animId;
 }
 
-INCLUDE_ASM("engine/AnimChange.s");
+void AnimChange(AnimState* a, u16 id, u16 flags) {
+    AnimHeader* h;
+
+    if (a->unk_10 == id) {
+        return;
+    }
+    h = a->unk_00[id];
+    a->unk_0C = h->unk_04;
+    if (a->unk_0C == 0) {
+        a->unk_14 = 0;
+        return;
+    }
+    a->unk_14 = (AnimFrame*)&h->unk_06;
+    if ((flags & 4) == 0) {
+        a->unk_0A = 0;
+        if (flags & 2) {
+            a->unk_0E = GetRandom() % a->unk_0C;
+        } else {
+            a->unk_0E = 0;
+        }
+    }
+    a->unk_08 = flags;
+    a->unk_10 = id;
+}
 
 #ifdef NON_MATCHING
 void* AnimUpdate(AnimState* a) {
@@ -957,43 +1075,55 @@ void func_08005C60(u16 a) {
 }
 
 INCLUDE_ASM("engine/func_08005C78.s");
-#ifdef NON_MATCHING
 void func_08006120(s32 a, u16 b) {
     u8* base = gUnk_03007568;
+    u32 z;
 
     if (*(u16*)(base + 0x594) & 2) {
         if (*(u16*)(base + 0x594) & 1) {
             return;
         }
     }
+    z = 0;
     *(u16*)(base + 0x594) = 1;
     *(u16*)(base + 0x58C) = b;
     *(u32*)(base + 0x580) = 0x1F00;
-    *(u32*)(base + 0x584) = 0;
-    *(u32*)(base + 0x588) = 0;
+    *(u32*)(base + 0x584) = z;
+    *(u32*)(base + 0x588) = z;
     *(u32*)(base + 0x590) = a;
 }
-#else
-INCLUDE_ASM("engine/func_08006120.s");
-#endif
-INCLUDE_ASM("engine/func_08006184.s");
-#ifdef NON_MATCHING
-void func_080061E8(s32 a, u16 b) {
+void func_08006184(s32 a, u16 b) {
     u8* base = gUnk_03007568;
+    u32 z;
 
     if (*(u16*)(base + 0x594) & 2) {
         if (*(u16*)(base + 0x594) & 1) {
             return;
         }
     }
+    z = 0;
     *(u16*)(base + 0x594) = 1;
     *(u16*)(base + 0x58C) = b;
-    *(u32*)(base + 0x584) = 0;
+    *(u32*)(base + 0x580) = z;
+    *(u32*)(base + 0x584) = 0x1F00;
+    *(u32*)(base + 0x588) = z;
     *(u32*)(base + 0x590) = a;
 }
-#else
-INCLUDE_ASM("engine/func_080061E8.s");
-#endif
+void func_080061E8(s32 a, u16 b) {
+    u8* base = gUnk_03007568;
+    u32 z;
+
+    if (*(u16*)(base + 0x594) & 2) {
+        if (*(u16*)(base + 0x594) & 1) {
+            return;
+        }
+    }
+    z = 0;
+    *(u16*)(base + 0x594) = 1;
+    *(u16*)(base + 0x58C) = b;
+    *(u32*)(base + 0x584) = z;
+    *(u32*)(base + 0x590) = a;
+}
 
 void func_08006238(s32 a, u16 b, u16 c) {
     u8* base = gUnk_03007568;
@@ -1009,7 +1139,23 @@ void func_08006238(s32 a, u16 b, u16 c) {
     *(u32*)(base + 0x590) = a;
 }
 
-INCLUDE_ASM("engine/func_08006290.s");
+void func_08006290(s32 a, u16 b, u16 c) {
+    u8* base = gUnk_03007568;
+    u32 z;
+
+    if (*(u16*)(base + 0x594) & 2) {
+        if (*(u16*)(base + 0x594) & 1) {
+            return;
+        }
+    }
+    z = 0;
+    *(u16*)(base + 0x594) = 1;
+    *(u16*)(base + 0x58C) = c;
+    *(u32*)(base + 0x580) = b << 8;
+    *(u32*)(base + 0x588) = z;
+    *(u32*)(base + 0x584) = z;
+    *(u32*)(base + 0x590) = a;
+}
 
 void func_080062F4(u16 slot, u8 value) {
     PaletteSlot* p;
@@ -1105,32 +1251,30 @@ void SeedRandom(u32 seed) {
     gRandomState[3] = Rand();
 }
 
-#ifdef NON_MATCHING
 u16 GetRandom(void) {
-    s32 a = gRandomState[1] * 2;
-    u32 m = 0x80000000;
+    u32 x;
 
-    if ((s32)gRandomState[0] < 0) {
-        a++;
+    x = gRandomState[1];
+    x <<= 1;
+    if (gRandomState[0] & 0x80000000) {
+        x++;
     }
-    a *= 2;
+    x <<= 1;
     if (gRandomState[0] & 0x40000000) {
-        a++;
+        x++;
     }
-    gRandomState[3] *= 2;
-    if (gRandomState[2] & m) {
+    gRandomState[3] <<= 1;
+    if (gRandomState[2] & 0x80000000) {
         gRandomState[3]++;
     }
-    a ^= gRandomState[3];
+    x ^= gRandomState[3];
     gRandomState[3] = gRandomState[2];
     gRandomState[2] = gRandomState[1];
     gRandomState[1] = gRandomState[0];
-    gRandomState[0] = a;
-    return a & 0x7FFF;
+    gRandomState[0] = x;
+    x &= 0x7FFF;
+    return x;
 }
-#else
-INCLUDE_ASM("engine/GetRandom.s");
-#endif
 
 INCLUDE_ASM("engine/func_080065FC.s");
 void func_080066F4(s16 x, s16 y) {

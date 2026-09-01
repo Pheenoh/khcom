@@ -342,7 +342,7 @@ _0801B768:
 	bl func_080122AC
 _0801B776:
 	adds r0, r6, #0x0
-	bl _0801B024
+	bl func_0801B024
 	ldrh r1, [r7, #0x0E]
 	movs r0, #0x04
 	ands r0, r1

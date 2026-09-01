@@ -1,0 +1,418 @@
+#ifndef GUARD_SMN_H
+#define GUARD_SMN_H
+
+#include "types.h"
+
+typedef struct AnimState {
+    void** unk_00;
+    u32* unk_04;
+    u16 unk_08;
+    u16 unk_0A;
+    u16 unk_0C;
+    u16 unk_0E;
+    u16 unk_10;
+    u16 unk_12;
+    void* unk_14;
+} AnimState;
+
+typedef struct ListNode {
+    void* unk_00;
+    u8 unk_04[0x04];
+    struct ListNode* unk_08;
+    u16 unk_0C;
+} ListNode;
+
+typedef struct TaskPool {
+    ListNode head;
+    void* unk_10;
+} TaskPool;
+
+typedef struct SmnArgs {
+    u16 unk_00;
+    u8 unk_02;
+    u8 unk_03;
+} SmnArgs;
+
+typedef struct SmnObj {
+    s32 unk_000;
+    s32 unk_004;
+    s32 unk_008;
+    s32 unk_00C;
+    s32 unk_010;
+    s32 unk_014;
+    s32 unk_018;
+    s32 unk_01C;
+    s32 unk_020;
+    s32 unk_024;
+    s32 unk_028;
+    s16 unk_02C;
+    s16 unk_02E;
+    u32 unk_030;
+    u64 unk_034;
+    u8 unk_03C[0x2C];
+    u64 unk_068;
+    u8 unk_070;
+    u8 unk_071[0x0B];
+    struct SmnObj* unk_07C;
+    u8 unk_080[0x1C];
+    u8 unk_09C[0x17];
+    u8 unk_0B3;
+    u8 unk_0B4[0x04];
+    u8 unk_0B8[0x14];
+    u16 unk_0CC;
+    u16 unk_0CE;
+    u32 unk_0D0;
+    u32 unk_0D4;
+    u16 unk_0D8;
+    s16 unk_0DA;
+    s16 unk_0DC;
+    s16 unk_0DE;
+    s16 unk_0E0;
+    u8 unk_0E2[0x02];
+    u8* unk_0E4;
+    u8 unk_0E8[0x24];
+    s32 unk_10C;
+    void* unk_110;
+    void* unk_114;
+    u8 unk_118[0xB0];
+} SmnObj;
+
+typedef struct SmnBody {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    u8 unk_14[0x20];
+    u64 unk_34;
+    u8 unk_3C[0x90];
+    u16 unk_CC;
+    u8 unk_CE[0x42];
+} SmnBody;
+
+typedef struct SmnCloudWork {
+    void* unk_000;
+    void* unk_004;
+    AnimState unk_008;
+    TaskPool unk_020;
+    s32 unk_034;
+    SmnBody unk_038;
+    s16 unk_148;
+    s16 unk_14A;
+    s32 unk_14C;
+    s32 unk_150;
+    s32 unk_154;
+    u8 unk_158;
+    u8 unk_159[0x03];
+    s32 unk_15C;
+    u16 unk_160;
+    u8 unk_162;
+    u8 unk_163;
+    u8 unk_164;
+    u8 unk_165[0x03];
+    s32 unk_168;
+    u16 unk_16C;
+    u8 unk_16E[0x02];
+    s32 unk_170;
+    s32 unk_174;
+    u8 unk_178[0x04];
+    u16 unk_17C;
+    u8 unk_17E[0x02];
+} SmnCloudWork;
+
+typedef struct SmnBambiWork {
+    void* unk_000;
+    void* unk_004;
+    AnimState unk_008;
+    TaskPool unk_020;
+    u32 unk_034;
+    SmnBody unk_038;
+    s16 unk_148;
+    s16 unk_14A;
+    s16 unk_14C;
+    u8 unk_14E[0x02];
+    s32 unk_150;
+    s32 unk_154;
+    u8 unk_158;
+    u8 unk_159[0x03];
+    s32 unk_15C;
+    u16 unk_160;
+    u8 unk_162;
+    u8 unk_163;
+    u8 unk_164;
+    u8 unk_165[0x03];
+    struct SmnObj* unk_168;
+    s16 unk_16C;
+    u8 unk_16E[0x02];
+    s32 unk_170;
+    s32 unk_174;
+} SmnBambiWork;
+
+typedef struct SmnTinkWork {
+    void* unk_000;
+    void* unk_004;
+    AnimState unk_008;
+    TaskPool unk_020;
+    u32 unk_034;
+    SmnBody unk_038;
+    s16 unk_148;
+    s16 unk_14A;
+    s32 unk_14C;
+    u16 unk_150;
+    u8 unk_152;
+    u8 unk_153;
+    u8 unk_154;
+    u8 unk_155[0x0B];
+    s32 unk_160;
+    u8 unk_164[0x04];
+    s32 unk_168;
+    u16 unk_16C;
+    s16 unk_16E;
+    s16 unk_170;
+    u8 unk_172[0x02];
+    s32 unk_174;
+    s32 unk_178;
+    struct SmnObj* unk_17C;
+} SmnTinkWork;
+
+typedef struct SmnTinkeffWork {
+    void* unk_00;
+    void* unk_04;
+    AnimState unk_08;
+    s32 unk_20;
+    s32 unk_24;
+    s32 unk_28;
+    s32 unk_2C;
+} SmnTinkeffWork;
+
+typedef struct SmnSimbaWork {
+    void* unk_000;
+    void* unk_004;
+    AnimState unk_008;
+    TaskPool unk_020;
+    u32 unk_034;
+    SmnBody unk_038;
+    s16 unk_148;
+    s16 unk_14A;
+    s16 unk_14C;
+    u8 unk_14E[0x02];
+    s32 unk_150;
+    u8 unk_154;
+    u8 unk_155;
+    u8 unk_156;
+    u8 unk_157;
+} SmnSimbaWork;
+
+typedef struct SmnMushuWork {
+    void* unk_000;
+    void* unk_004;
+    AnimState unk_008;
+    TaskPool unk_020;
+    u32 unk_034;
+    SmnBody unk_038;
+    s16 unk_148;
+    s16 unk_14A;
+    s32 unk_14C;
+    u16 unk_150;
+    u8 unk_152;
+    u8 unk_153;
+    u8 unk_154;
+    u8 unk_155[0x03];
+    struct SmnObj* unk_158;
+} SmnMushuWork;
+
+typedef struct SmnDumboWork {
+    void* unk_000;
+    void* unk_004;
+    AnimState unk_008;
+    TaskPool unk_020;
+    u32 unk_034;
+    SmnBody unk_038;
+    s16 unk_148;
+    s16 unk_14A;
+    s16 unk_14C;
+    u8 unk_14E[0x02];
+    s32 unk_150;
+    u8 unk_154;
+    u8 unk_155;
+    u8 unk_156;
+    u8 unk_157;
+} SmnDumboWork;
+
+typedef struct SmnGenieWork {
+    void* unk_000;
+    void* unk_004;
+    AnimState unk_008;
+    TaskPool unk_020;
+    s32 unk_034;
+    SmnBody unk_038;
+    u16 unk_148;
+    s16 unk_14A;
+    s32 unk_14C;
+    u8 unk_150;
+    u8 unk_151;
+    u8 unk_152;
+    u8 unk_153;
+    struct SmnObj* unk_154;
+    s16 unk_158;
+    u16 unk_15A;
+    s32 unk_15C;
+    s32 unk_160;
+    s32 unk_164;
+} SmnGenieWork;
+
+typedef struct SmnPrizeArgs {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x06];
+    s16 unk_12;
+    s16 unk_14;
+    u8 unk_16[0x0A];
+} SmnPrizeArgs;
+
+typedef struct SmnFrdWork {
+    u8 unk_000[0x20];
+    SmnBody unk_020;
+    u8 unk_130[0x24];
+    s32 unk_154;
+} SmnFrdWork;
+
+typedef struct SmnKingWork {
+    void* unk_000;
+    void* unk_004;
+    AnimState unk_008;
+    TaskPool unk_020;
+    s32 unk_034;
+    SmnBody unk_038;
+    s16 unk_148;
+    s16 unk_14A;
+    u16 unk_14C;
+    u8 unk_14E[0x06];
+    s32 unk_154;
+    u32 unk_158;
+    u8 unk_15C;
+    u8 unk_15D;
+    u8 unk_15E;
+    u8 unk_15F[0x09];
+} SmnKingWork;
+
+extern SmnObj* gUnk_02039B84;
+extern SmnObj* gUnk_02039B9C;
+
+void ReleaseObjPalette(void* a);
+void TaskPoolDestroy(TaskPool* a);
+u16 GetRandom(void);
+void m4aSongNumStart(u16 n);
+void m4aSongNumStop(u16 n);
+
+void ReleaseObjTiles(void* a);
+void* AnimGetGfx(AnimState* a);
+u16 func_0801AF1C(s32 a);
+void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
+s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
+void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
+void TaskPoolDraw(TaskPool* a);
+void func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
+s32 abs(s32 a);
+void func_08014780(s32 a, s32 b, s32 c);
+void func_080140E0(s32 a, s32 b, s32 c);
+void func_08019050(s32 a, s32 b, s32 c, s32 d);
+void func_08019A30(void);
+u16 func_08005B38(AnimState* a);
+void func_08006B80(u16* a, u16* b);
+void func_0801475C(s32 a, s32 b, s32 c);
+void func_0801416C(s32 a, s32 b, s32 c);
+void func_0800592C(s32* a, s32 b, u16 c);
+u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
+void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
+void func_0802F1E8(void);
+void func_08006290(s32 a, s32 b, s32 c);
+void func_08014FDC(s32 a, s32 b, s32 c);
+void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
+u8 func_080128EC(void);
+void func_080058FC(s32* value, s32 target, u16 steps);
+void func_0802F284(s32 a, s32 b, s32 c);
+void TaskPoolUpdate(TaskPool* a);
+void func_080147C8(s32 a, s32 b);
+s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
+struct SmnObj* func_08000C8C(void* a);
+struct SmnObj* func_08000CD4(void* a);
+void* LoadObjPalette(void* src, s32 size);
+void AnimInit(AnimState* a, void* b, void* c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
+void* AnimUpdate(AnimState* a);
+u8 AnimIsFinished(AnimState* a);
+void* LoadObjTiles(void* src, s32 size);
+void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
+void TaskPoolInit(TaskPool* a, s32 count);
+void TaskCreate(TaskPool* pool, void* desc, void* arg);
+
+extern u8 gUnk_09EDAE88[];
+extern u8 gUnk_09EDAF18[];
+extern u8 gUnk_09EDB458[];
+extern u8 gUnk_096183F8[];
+extern u8 gUnk_0813EB4C[];
+extern u8 gUnk_08F6DC24[];
+extern s16 gSineTable[];
+extern u8 gUnk_088A5D7A[];
+extern u8 gUnk_08F69BA4[];
+extern u8 gUnk_09617FF8[];
+extern u8 gUnk_09EDE7B4[];
+extern u8 gUnk_09EDE7E4[];
+extern u8 gUnk_09617F98[];
+extern u8 gUnk_09618018[];
+extern u8 gUnk_09618098[];
+extern u8 gUnk_09618298[];
+extern u8 gUnk_09618038[];
+extern u8 gUnk_0813E958[];
+extern u8 gUnk_0813E9E8[];
+extern u8 gUnk_0813EA08[];
+extern u8 gUnk_0813EA5C[];
+extern u8 gUnk_0813EB1C[];
+extern u8 gUnk_0813EA7C[];
+extern u8 gUnk_0813EADC[];
+void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args);
+void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args);
+void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args);
+void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args);
+void task_smn_tinkeff_0(SmnTinkeffWork* work, SmnBody* args);
+u8 task_smn_tinkeff_1(SmnTinkeffWork* work);
+void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args);
+void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args);
+void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args);
+void task_smn_king_0(SmnKingWork* work, SmnArgs* args);
+void func_08041D64(SmnBambiWork* work);
+void func_08044518(SmnGenieWork* work);
+u8 func_0804544C(SmnFrdWork* work);
+void func_08045494(SmnBody* body, u8 a, s16 b, s16 c);
+u8 func_08041FCC(SmnBambiWork* work);
+SmnObj* func_08042018(SmnBambiWork* work);
+SmnObj* func_08044450(SmnGenieWork* work);
+void func_080428E8(SmnTinkWork* work);
+u8 func_08044F98(SmnKingWork* work);
+u8 task_smn_bambi_1(SmnBambiWork* work);
+u8 task_smn_tink_1(SmnTinkWork* work);
+u8 task_smn_simba_1(SmnSimbaWork* work);
+u8 task_smn_mushu_1(SmnMushuWork* work);
+u8 task_smn_dumbo_1(SmnDumboWork* work);
+void task_smn_cloud_2(SmnCloudWork* work);
+void task_smn_bambi_2(SmnBambiWork* work);
+void task_smn_tink_2(SmnTinkWork* work);
+void task_smn_tinkeff_2(SmnTinkeffWork* work);
+void task_smn_simba_2(SmnSimbaWork* work);
+void task_smn_mushu_2(SmnMushuWork* work);
+void task_smn_dumbo_2(SmnDumboWork* work);
+void task_smn_genie_2(SmnGenieWork* work);
+void task_smn_king_2(SmnKingWork* work);
+void task_smn_cloud_3(SmnCloudWork* work);
+void task_smn_bambi_3(SmnBambiWork* work);
+void task_smn_tink_3(SmnTinkWork* work);
+void task_smn_tinkeff_3(SmnTinkeffWork* work);
+void task_smn_simba_3(SmnSimbaWork* work);
+void task_smn_mushu_3(SmnMushuWork* work);
+void task_smn_dumbo_3(SmnDumboWork* work);
+void task_smn_genie_3(SmnGenieWork* work);
+void task_smn_king_3(SmnKingWork* work);
+
+#endif /* GUARD_SMN_H */
