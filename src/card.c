@@ -322,6 +322,7 @@ INCLUDE_ASM("card/func_08093838.s");
 INCLUDE_ASM("card/func_080938F8.s");
 INCLUDE_ASM("card/func_08093B08.s");
 INCLUDE_ASM("card/func_08093B38.s");
+INCLUDE_ASM("card/func_08093B78.s");
 INCLUDE_ASM("card/func_08093B8C.s");
 INCLUDE_ASM("card/func_08093BB4.s");
 

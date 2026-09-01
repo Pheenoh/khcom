@@ -12,6 +12,8 @@ INCLUDE_ASM("unk_080dfebc/func_080E0298.s");
 INCLUDE_ASM("unk_080dfebc/func_080E02C0.s");
 INCLUDE_ASM("unk_080dfebc/func_080E02E0.s");
 INCLUDE_ASM("unk_080dfebc/func_080E03C0.s");
+INCLUDE_ASM("unk_080dfebc/func_080E0418.s");
+INCLUDE_ASM("unk_080dfebc/func_080E042C.s");
 INCLUDE_ASM("unk_080dfebc/func_080E04EC.s");
 INCLUDE_ASM("unk_080dfebc/func_080E052C.s");
 INCLUDE_ASM("unk_080dfebc/func_080E0558.s");
