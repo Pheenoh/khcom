@@ -5,5 +5,5 @@
 	.thumb_func
 	.type task_hum_laxene_knf_3, %function
 task_hum_laxene_knf_3:
-	.incbin "roms/B8CJ.gba", 0x52690, 0xac
+	.incbin "roms/B8CJ.gba", 0x52690, 0x18
 .syntax divided

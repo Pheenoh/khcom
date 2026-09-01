@@ -5,5 +5,5 @@
 	.thumb_func
 	.type task_hum_ansem_3, %function
 task_hum_ansem_3:
-	.incbin "roms/B8CJ.gba", 0x4e3b0, 0xb8
+	.incbin "roms/B8CJ.gba", 0x4e3b0, 0xc
 .syntax divided
