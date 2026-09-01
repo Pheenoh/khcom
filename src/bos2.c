@@ -113,6 +113,7 @@ void task_bos_jf_2(JfWork* work) {
 }
 
 INCLUDE_ASM("bos2/task_bos_jf_3.s");
+INCLUDE_ASM("bos2/func_080BD4A8.s");
 INCLUDE_ASM("bos2/func_080BD7F8.s");
 INCLUDE_ASM("bos2/task_bos_jf_map_0.s");
 INCLUDE_ASM("bos2/task_bos_jf_map_1.s");
