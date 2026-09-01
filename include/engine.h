@@ -155,6 +155,8 @@ void func_080063C4(u8 on);
 u8 func_08005550(u32 a);
 u8 func_0800558C(u32 a);
 void func_08005654(s32 bg, u8 on);
+void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size);
+s32 func_08003C9C(s32 a);
 void func_080034EC(u8 a, u8 b);
 void func_08003510(u8 a);
 ObjTiles* func_080038C8(u16 a);
