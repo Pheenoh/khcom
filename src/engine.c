@@ -957,7 +957,25 @@ void func_08005C60(u16 a) {
 }
 
 INCLUDE_ASM("engine/func_08005C78.s");
+#ifdef NON_MATCHING
+void func_08006120(s32 a, u16 b) {
+    u8* base = gUnk_03007568;
+
+    if (*(u16*)(base + 0x594) & 2) {
+        if (*(u16*)(base + 0x594) & 1) {
+            return;
+        }
+    }
+    *(u16*)(base + 0x594) = 1;
+    *(u16*)(base + 0x58C) = b;
+    *(u32*)(base + 0x580) = 0x1F00;
+    *(u32*)(base + 0x584) = 0;
+    *(u32*)(base + 0x588) = 0;
+    *(u32*)(base + 0x590) = a;
+}
+#else
 INCLUDE_ASM("engine/func_08006120.s");
+#endif
 INCLUDE_ASM("engine/func_08006184.s");
 #ifdef NON_MATCHING
 void func_080061E8(s32 a, u16 b) {
