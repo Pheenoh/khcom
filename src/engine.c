@@ -15,11 +15,32 @@ extern u16 gUnk_0300750C;
 extern u16 gUnk_03007508;
 extern u16 gUnk_030074DC;
 extern u16 gUnk_0300753C;
+
+typedef struct BgAffineSrcData {
+    s32 texX;
+    s32 texY;
+    s16 scrX;
+    s16 scrY;
+    s16 sx;
+    s16 sy;
+    u16 alpha;
+} BgAffineSrcData;
+
+typedef struct BgAffineDstData {
+    s16 pa;
+    s16 pb;
+    s16 pc;
+    s16 pd;
+    s32 dx;
+    s32 dy;
+} BgAffineDstData;
+
+void BgAffineSet(BgAffineSrcData* src, BgAffineDstData* dst, s32 count);
+
 extern u8* gUnk_03007574;
 extern u16 gUnk_0300750C;
 extern u16 gUnk_03007508;
 extern u16 gUnk_030074DC;
-extern u16 gUnk_0300753C;
 extern u16 gUnk_0203404C;
 extern u16 gUnk_0203404E;
 extern u16 gUnk_02034056;
@@ -35,7 +56,6 @@ void func_080066F4(s16 x, s16 y);
 void func_08007E68(s32 a);
 void func_08007E7C(void);
 
-s32 func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 extern u16 gUnk_03006C78;
 void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
@@ -81,7 +101,6 @@ void func_080066F4(s16 x, s16 y);
 void func_08007E68(s32 a);
 void func_08007E7C(void);
 
-s32 func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 extern u16 gUnk_03006C78;
 void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
@@ -1055,7 +1074,37 @@ void SetBgOverflow(s32 bg, u8 on) {
     }
 }
 
-INCLUDE_ASM("engine/func_08005690.s");
+void func_08005690(s32 bg, u8 rot, s32 sx, s32 sy, s32 dx, s32 dy) {
+    BgAffineSrcData src;
+    BgAffineDstData dst;
+
+    src.texX = 0;
+    src.texY = 0;
+    src.scrX = 0x78;
+    src.scrY = 0x50;
+    src.sx = 0x10000 / sx;
+    src.sy = 0x10000 / sy;
+    src.alpha = -rot << 8;
+    BgAffineSet(&src, &dst, 1);
+    switch (bg) {
+    case 2:
+        gUnk_03007510 = dst.pa;
+        gUnk_030074F8 = dst.pb;
+        gUnk_03007514 = dst.pc;
+        gUnk_0300754C = dst.pd;
+        gUnk_0300752C = dst.dx + dx;
+        gUnk_030074F4 = dst.dy + dy;
+        break;
+    case 3:
+        gUnk_030074E8 = dst.pa;
+        gUnk_030074E0 = dst.pb;
+        gUnk_03007504 = dst.pc;
+        gUnk_03007540 = dst.pd;
+        gUnk_03007524 = dst.dx + dx;
+        gUnk_03007560 = dst.dy + dy;
+        break;
+    }
+}
 
 void func_08005778(u8 r, u8 g, u8 b) {
     g &= 0x1F;
