@@ -12,6 +12,7 @@ void* func_08007E00(void* src, void* dst, u16 size);
 void func_08000C54(void* node, void* pool);
 void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
+u16 func_08001DB0(u16 a, u16 b);
 void func_08000AE4(void* name);
 void* IwramAlloc(u32 size);
 void IwramFree(void* p);
@@ -239,7 +240,19 @@ void func_08003510(u8 a) {
 }
 
 INCLUDE_ASM("engine/func_08003524.s");
-INCLUDE_ASM("engine/func_08003598.s");
+
+u16 func_08003598(u16* p) {
+    u16 count = *p++;
+    u16 total = 0;
+    u16 i;
+
+    for (i = 0; i < count; i++) {
+        total += func_08001DB0(p[0], p[1]);
+        p += 3;
+    }
+    return (u16)(total << 5);
+}
+
 INCLUDE_ASM("engine/func_080035CC.s");
 INCLUDE_ASM("engine/func_0800380C.s");
 INCLUDE_ASM("engine/func_0800388C.s");
@@ -503,7 +516,19 @@ void func_080055EC(s32 bg, u16 v) {
     *p |= v;
 }
 
-INCLUDE_ASM("engine/func_08005610.s");
+void func_08005610(s32 bg, u16 v) {
+    if (v == 0x80) {
+        vu16* p = gBgControl[bg];
+
+        *p &= 0xFFFF;
+        *p |= 0x80;
+    } else {
+        vu16* p = gBgControl[bg];
+
+        *p &= 0xFF7F;
+        *p |= 0;
+    }
+}
 
 void func_08005654(s32 bg, u8 on) {
     if (on) {
@@ -528,7 +553,24 @@ void func_08005810(u16 a, u16 b) {
     gUnk_03007564 = (a << 8) | b;
 }
 
+#ifdef NON_MATCHING
+s16 func_08005824(s32 a, s32 b) {
+    s32 x = a & 0xFF;
+    s32 y = b & 0xFF;
+    s32 d = x - y;
+
+    if (d <= -0x80) {
+        return d + 0x100;
+    }
+    if (d > 0x7F) {
+        return (x - 0x100) - y;
+    }
+    return d;
+}
+#else
 INCLUDE_ASM("engine/func_08005824.s");
+#endif
+INCLUDE_ASM("engine/func_0800585C.s");
 INCLUDE_ASM("engine/func_0800589C.s");
 
 void func_080058FC(s32* value, s32 target, u16 steps) {
