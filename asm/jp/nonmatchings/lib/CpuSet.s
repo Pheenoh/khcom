@@ -5,5 +5,5 @@
 	.thumb_func
 	.type CpuSet, %function
 CpuSet:
-	.incbin "roms/B8CJ.gba", 0x118064, 0x8
+	.incbin "roms/B8CJ.gba", 0x118064, 0x4
 .syntax divided

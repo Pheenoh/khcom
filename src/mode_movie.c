@@ -117,7 +117,7 @@ void mode_movie_1(void) {
         fill = 0;
         CpuSet(&fill, (void*)0x06000000, 0x05006000);
         if (gUnk_02034958 & 4) {
-            _08117FF0(0xFF);
+            SoftReset(0xFF);
         } else {
             switch (gUnk_0203493C) {
             case 1:

@@ -64,7 +64,7 @@ void func_08005BC4(void);
 void func_08006404(void);
 void m4aSoundInit(void);
 void m4aSoundVSyncOn(void);
-void _08117FF0(s32 a);
+void SoftReset(s32 a);
 void func_0806180C(s32 a);
 void func_080010CC(void* a, s32 b);
 void* IwramAlloc(u32 size);
