@@ -2195,7 +2195,9 @@ func_080D62A8	0x080d62a8	324	0x080d635c	global
 task_title_logo_0	0x080d63ec	12	0x080d64a0	named
 task_title_logo_1	0x080d63f8	64	0x080d64ac	named
 task_title_logo_2	0x080d6438	228	0x080d64ec	named
-task_title_logo_3	0x080d651c	100	0x080d65b0	named
+task_title_logo_3	0x080d651c	44	0x080d65b0	named
+func_080D6548	0x080d6548	44	0x080d65dc	global
+func_080D6574	0x080d6574	12	0x080d6608	body
 task_title_obj_0	0x080d6580	284	0x080d6614	named
 task_title_obj_1	0x080d669c	96	0x080d6730	named
 task_title_obj_2	0x080d66fc	104	0x080d6790	named
