@@ -47,11 +47,11 @@ typedef struct Dma3Pending {
 typedef struct Dma3Queue {
     Dma3Request requests[352];
     Dma3Pending pending[4];
-    u16 unk_10A0;
-    u16 unk_10A2;
-    u16 unk_10A4;
-    u16 unk_10A6;
-    u16 count;
+    vu16 unk_10A0;
+    vu16 unk_10A2;
+    vu16 unk_10A4;
+    vu16 unk_10A6;
+    vu16 count;
     u16 unk_10AA;
     u32 unk_10AC;
 } Dma3Queue;

@@ -362,7 +362,7 @@ void func_08004350(void) {
 }
 
 void func_08004364(void) {
-    volatile Dma3Queue* q = (volatile Dma3Queue*)gDma3Requests;
+    Dma3Queue* q = (Dma3Queue*)gDma3Requests;
 
     q->unk_10A0 = 0;
     q->unk_10A2 = 0;
@@ -404,7 +404,18 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
 INCLUDE_ASM("engine/RequestDma3Copy.s");
 #endif
 
-INCLUDE_ASM("engine/func_0800443C.s");
+u8 func_0800443C(void* a, u16 b) {
+    Dma3Queue* q = (Dma3Queue*)gDma3Requests;
+
+    if (q->count > 3) {
+        return 0;
+    }
+    q->pending[q->count].unk_00 = a;
+    q->pending[q->count].unk_04 = b;
+    q->count = q->count + 1;
+
+    return 1;
+}
 INCLUDE_ASM("engine/func_0800448C.s");
 INCLUDE_ASM("engine/func_080045AC.s");
 INCLUDE_ASM("engine/func_080046C8.s");
@@ -643,7 +654,24 @@ void func_08005778(u8 r, u8 g, u8 b) {
     gUnk_030074D8 = gUnk_030074CC;
 }
 
-INCLUDE_ASM("engine/func_080057A0.s");
+void func_080057A0(s32 a, u16 b, u16 c) {
+    switch ((u32)a) {
+    case 0:
+        gUnk_03007554 = 0x1E01;
+        break;
+    case 1:
+        gUnk_03007554 = 0x1D02;
+        break;
+    case 2:
+        gUnk_03007554 = 0x1B04;
+        break;
+    default:
+        gUnk_03007554 = 0x1708;
+        break;
+    }
+    gUnk_03007554 |= 0x40;
+    gUnk_03007564 = (b << 8) | c;
+}
 
 void func_08005810(u16 a, u16 b) {
     gUnk_03007564 = (a << 8) | b;
@@ -931,7 +959,21 @@ void func_080061E8(s32 a, u16 b) {
 #else
 INCLUDE_ASM("engine/func_080061E8.s");
 #endif
-INCLUDE_ASM("engine/func_08006238.s");
+
+void func_08006238(s32 a, u16 b, u16 c) {
+    u8* base = gUnk_03007568;
+
+    if (*(u16*)(base + 0x594) & 2) {
+        if (*(u16*)(base + 0x594) & 1) {
+            return;
+        }
+    }
+    *(u16*)(base + 0x594) = 1;
+    *(u16*)(base + 0x58C) = c;
+    *(u32*)(base + 0x584) = b << 8;
+    *(u32*)(base + 0x590) = a;
+}
+
 INCLUDE_ASM("engine/func_08006290.s");
 
 void func_080062F4(u16 slot, u8 value) {
