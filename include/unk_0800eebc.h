@@ -2,6 +2,7 @@
 #define GUARD_UNK_0800EEBC_H
 
 #include "types.h"
+#include "malloc.h"
 #include "taskpool.h"
 typedef struct Collider {
     s32 unk_00;
@@ -306,7 +307,6 @@ extern const UnkStruct_08133E5C gUnk_08133E5C[];
 extern const MusicPlayer gMPlayTable[];
 extern const Song gSongTable[];
 
-void EwramFree(void* p);
 void SeedRandom(u32 seed);
 void func_0800ABD8(void);
 void func_08000D90(ListNode* node, void* pool);
@@ -369,7 +369,6 @@ void func_08000D20(ListNode* node, void* pool, void* owner);
 void func_08000D28(ListNode* node, void* pool);
 void SetBgBlend(s32 a, s32 b, s32 c);
 void CpuSet(void* src, void* dst, u32 ctrl);
-void* EwramAlloc(u32 size);
 void func_080062F4(u16 a, s32 b);
 void func_080065FC(s32 a, s32 b, s32 c);
 void SetBlendAlpha(u16 a, u16 b);

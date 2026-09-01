@@ -1,11 +1,9 @@
 #include "util.h"
+#include "malloc.h"
 #include "m4a.h"
 
 extern u8 gUnk_0812171C[];
 
-void SetIwramHeapName(void* name);
-void* IwramAlloc(u32 size);
-void IwramFree(void* p);
 
 u16 func_0800833C(KeyState* k) {
     return k->held;

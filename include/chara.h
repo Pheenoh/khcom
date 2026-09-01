@@ -2,6 +2,8 @@
 #define GUARD_CHARA_H
 
 #include "types.h"
+#include "key.h"
+#include "malloc.h"
 #include "game.h"
 #include "mode.h"
 
@@ -227,11 +229,7 @@ void func_0800895C(u16 a);
 u16* func_08083C94(void);
 u16* func_08083D7C(void);
 void func_080010CC(Mode* mode, s32 arg);
-void* EwramAlloc(u32 size);
-void EwramFree(void* p);
 void TaskPoolInit(void* a, s32 count);
-u16 GetKeysHeld(void);
-u16 GetKeysPressed(void);
 u16 GetRandom(void);
 void SeedRandom(u32 seed);
 void func_080078A4(void);

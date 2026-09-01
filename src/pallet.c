@@ -1,11 +1,9 @@
 #include "pallet.h"
+#include "malloc.h"
 #include "types.h"
 
 void CpuSet(void* src, void* dst, u32 ctrl);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void SetIwramHeapName(void* name);
-void* IwramAlloc(u32 size);
-void IwramFree(void* p);
 void SetHBlankCallback(s32 a);
 void ResetHBlankCallback(void);
 void EnableHBlankIntr(void);

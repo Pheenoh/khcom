@@ -2,6 +2,7 @@
 #define GUARD_UNK_080DFEBC_H
 
 #include "types.h"
+#include "malloc.h"
 #include "fld_types.h"
 
 typedef struct UnkStruct_080DFB8C {
@@ -367,7 +368,6 @@ extern void* gUnk_09EF6E64;
 extern void* gUnk_09EF6EC4;
 
 void* memcpy(void* dst, const void* src, unsigned long n);
-void EwramFree(void* p);
 void func_08000DE8(void* a, void* b);
 u16 GetRandom(void);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);

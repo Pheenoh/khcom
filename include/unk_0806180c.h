@@ -2,6 +2,7 @@
 #define GUARD_UNK_0806180C_H
 
 #include "types.h"
+#include "malloc.h"
 
 typedef struct TextSlot {
     void* unk_00;
@@ -141,7 +142,6 @@ void* func_08066904(void);
 void func_08066918(void* a, void* b);
 void func_08002488(s16 x, s16 y, void* a, void* b, void* c, u16 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void* EwramAlloc(u32 size);
 void* _08066468(s32 a);
 void func_080062F4(u16 a, s32 b);
 void m4aSongNumStart(u16 id);
@@ -150,7 +150,6 @@ u8 func_0809D280(u8* s);
 u16 func_0806692C(u8* s, u16* out);
 u16 func_08066AF8(s32 v, u16* out);
 void func_0801CD74(void* a, u16 b);
-void EwramFree(void* a);
 void func_08065940(void);
 void func_080658B8(u8 n);
 void func_0806C34C(void);

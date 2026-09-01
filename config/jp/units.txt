@@ -2,6 +2,10 @@
 header.s
 crt0.s
 main.c
+malloc.c
+taskpool.c
+key.c
+sprite.c
 engine.c
 sio.c
 pallet.c

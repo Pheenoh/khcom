@@ -2,6 +2,7 @@
 #define GUARD_SAVE_H
 
 #include "types.h"
+#include "malloc.h"
 #include "card.h"
 
 #define SRAM_HEADER ((u8*)0x0E000010)
@@ -122,8 +123,6 @@ typedef struct SaveHeader {
     SaveHeaderData data;
 } SaveHeader;
 
-void* EwramAlloc(u32 size);
-void EwramFree(void* p);
 
 void ZeroFill(void* dst, s16 size);
 void CopyBytes(u8* src, u8* dst, s16 len);

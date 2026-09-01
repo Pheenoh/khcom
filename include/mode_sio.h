@@ -2,6 +2,8 @@
 #define GUARD_MODE_SIO_H
 
 #include "types.h"
+#include "key.h"
+#include "malloc.h"
 #include "anim.h"
 #include "mode.h"
 #include "taskpool.h"
@@ -509,7 +511,6 @@ extern void* gUnk_09EF3904[];
 extern void* gUnk_09EF390C[];
 extern void* gUnk_09EF3920[];
 
-void* EwramAlloc(u32 size);
 void* AllocObjTiles(s32 size, void* src);
 void* LoadObjTiles(void* src, s32 size);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
@@ -541,7 +542,6 @@ void func_080078FC(void* src, void* dst, u16 size, u16 amount);
 void func_08007E00(void* src, void* dst, u16 size);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void func_0805F1C0(s32* p, s32 v);
-void EwramFree(void* p);
 void func_080010CC(Mode* mode, s32 arg);
 void func_080010E0(Mode* mode, s32 arg);
 void func_080C57A4(void);
@@ -573,7 +573,6 @@ s32 func_080C60D8(void);
 void func_080C61D4(void);
 void m4aSongNumStart(u16 id);
 void m4aMPlayAllStop(void);
-u16 GetKeysPressed(void);
 u8 GetActiveDeckIndex(void);
 void func_080C57B4(void);
 s32 func_080C5E58(void);

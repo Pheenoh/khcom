@@ -2,6 +2,7 @@
 #define GUARD_BTL2_H
 
 #include "types.h"
+#include "key.h"
 #include "anim.h"
 #include "fld_types.h"
 typedef struct FldActor {
@@ -273,8 +274,6 @@ void m4aSongNumStart(u16 n);
 void m4aMPlayVolumeControl(void* mplay, u16 trackBits, u16 volume);
 void func_080063C4(u8 a);
 void func_080058FC(s32* value, s32 target, u16 steps);
-u16 GetKeysPressed(void);
-u16 GetKeysHeld(void);
 u8 func_08001534(s32 a);
 void m4aSongNumStop(u16 n);
 void AnimChange(AnimState* a, u16 animId, u16 flags);

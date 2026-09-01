@@ -2,6 +2,7 @@
 #define GUARD_MODE_DEBFLAG_H
 
 #include "types.h"
+#include "key.h"
 #include "mode.h"
 typedef struct DebugFlag {
     const char* name;
@@ -23,7 +24,6 @@ extern const char gUnk_08130E48[];
 extern Mode gUnk_09ECEB64;
 
 void func_080010CC(Mode* mode, s32 arg);
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void func_08004DB0(void);
 void EnableBg(s32 a);

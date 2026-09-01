@@ -2,6 +2,7 @@
 #define GUARD_HUM_H
 
 #include "types.h"
+#include "key.h"
 #include "anim.h"
 #include "taskpool.h"
 #include "obj.h"
@@ -838,7 +839,6 @@ void func_0805A514(s16 a, s16 b, s16 c);
 u8 func_08006314(void);
 void AnimChange(AnimState* a, u16 animId, u16 flags);
 u16 GetKeysRepeat(void);
-u16 GetKeysPressed(void);
 void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h);
 u8 func_08065B6C(void* src, JiminyLine* line);
 u8 func_0800FF70(u16 a);

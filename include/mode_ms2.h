@@ -2,6 +2,8 @@
 #define GUARD_MODE_MS2_H
 
 #include "types.h"
+#include "key.h"
+#include "malloc.h"
 #include "anim.h"
 #include "mode.h"
 typedef struct UnkStruct_0810718C {
@@ -214,7 +216,6 @@ s16 func_081075D8(void);
 void func_081075FC(void);
 void func_0810764C(void);
 u16 func_08107D24(void);
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void func_081085E8(void);
 void m4aSongNumStart(u16 n);
@@ -259,7 +260,6 @@ void func_08107A74(UnkStruct_0810718C* p);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 void* GetBgScreenBase(s32 bg);
 void mode_ms_charge_0(void);
-void* EwramAlloc(u32 size);
 void func_08001F98(void);
 void func_08006120(s32 a, s32 b);
 void func_08004DB0(void);
@@ -293,7 +293,6 @@ extern s16 gUnk_02035E0C;
 extern s16 gUnk_02035E0E;
 void EnableBg(s32 a);
 void func_08065AE0(void* a, s32 b);
-void EwramFree(void* p);
 void LoadPalette(void* src, void* dst, s32 size);
 void* func_08093C18(s32 a);
 u8 func_08065B6C(void* a, void* b);
