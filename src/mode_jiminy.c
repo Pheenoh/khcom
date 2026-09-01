@@ -96,7 +96,7 @@ void mode_jiminy_0(void) {
 INCLUDE_ASM("mode_jiminy/mode_jiminy_0.s");
 #endif
 
-#ifdef NON_MATCHING
+#ifndef VERSION_JP
 void mode_jiminy_1(void) {
     s32 i;
     u16 c;

@@ -756,6 +756,7 @@ void func_080E7FCC(void) {
 }
 
 INCLUDE_ASM("unk_080dfebc/func_080E8058.s");
+INCLUDE_ASM("unk_080dfebc/func_080E80E0.s");
 INCLUDE_ASM("unk_080dfebc/func_080E826C.s");
 INCLUDE_ASM("unk_080dfebc/func_080E8374.s");
 INCLUDE_ASM("unk_080dfebc/func_080E83DC.s");
@@ -1133,6 +1134,7 @@ s32 func_080EF3A0(UnkStruct_080E590C* p) {
 INCLUDE_ASM("unk_080dfebc/func_080EF404.s");
 INCLUDE_ASM("unk_080dfebc/func_080EF478.s");
 INCLUDE_ASM("unk_080dfebc/func_080EF4BC.s");
+INCLUDE_ASM("unk_080dfebc/func_080EF84C.s");
 INCLUDE_ASM("unk_080dfebc/func_080EFA7C.s");
 INCLUDE_ASM("unk_080dfebc/func_080EFB24.s");
 INCLUDE_ASM("unk_080dfebc/func_080F0108.s");
