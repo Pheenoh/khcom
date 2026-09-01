@@ -32,9 +32,9 @@ INCLUDE_ASM("main/func_080002D4.s");
 INCLUDE_ASM("main/func_08000300.s");
 INCLUDE_ASM("main/func_08000334.s");
 #ifdef NON_MATCHING
-void func_0800044C(void) {
+void AgbMain(void) {
     s32 bit;
-    s32 set;
+
     gFrameCounter = 0;
     gUnk_03006C68 = 0;
     gUnk_03006C78 = 0;
@@ -63,7 +63,7 @@ void func_0800044C(void) {
     }
 }
 #else
-INCLUDE_ASM("main/func_0800044C.s");
+INCLUDE_ASM("main/AgbMain.s");
 #endif
 INCLUDE_ASM("main/func_080004DC.s");
 INCLUDE_ASM("main/func_080005A4.s");
