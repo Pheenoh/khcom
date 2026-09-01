@@ -15,6 +15,7 @@ extern u16 gUnk_0300750C;
 extern u16 gUnk_03007508;
 extern u16 gUnk_030074DC;
 extern u16 gUnk_0300753C;
+extern u8* gUnk_03007574;
 extern u16 gUnk_0300750C;
 extern u16 gUnk_03007508;
 extern u16 gUnk_030074DC;
@@ -616,7 +617,44 @@ void func_08004034(void) {
     gUnk_03007524 = 0;
     gUnk_03007560 = 0;
 }
-INCLUDE_ASM("engine/func_0800415C.s");
+void func_0800415C(void) {
+    *(vu16*)0x0400004c = gUnk_03007528;
+    *(vu16*)0x04000050 = gBldCnt;
+    *(vu16*)0x04000052 = gBldAlpha;
+    *(vu16*)0x04000054 = gUnk_0300751C;
+    *(vu16*)0x04000040 = gUnk_03007530;
+    *(vu16*)0x04000042 = gUnk_030074F0;
+    *(vu16*)0x04000044 = gUnk_03007518;
+    *(vu16*)0x04000046 = gUnk_030074EC;
+    *(vu16*)0x04000048 = gUnk_03007550;
+    *(vu16*)0x0400004a = gUnk_03007548;
+    *(vu16*)0x04000008 = gUnk_0300750C;
+    *(vu16*)0x0400000a = gUnk_03007508;
+    *(vu16*)0x0400000c = gUnk_030074DC;
+    *(vu16*)0x0400000e = gUnk_0300753C;
+    *(vu16*)0x04000010 = gUnk_03007544;
+    *(vu16*)0x04000012 = gUnk_030074FC;
+    *(vu16*)0x04000014 = gUnk_03007538;
+    *(vu16*)0x04000016 = gUnk_03007558;
+    *(vu16*)0x04000018 = gUnk_03007520;
+    *(vu16*)0x0400001a = gUnk_03007534;
+    *(vu16*)0x0400001c = gUnk_0300755C;
+    *(vu16*)0x0400001e = gUnk_030074E4;
+    *(vu16*)0x04000020 = gUnk_03007510;
+    *(vu16*)0x04000022 = gUnk_030074F8;
+    *(vu16*)0x04000024 = gUnk_03007514;
+    *(vu16*)0x04000026 = gUnk_0300754C;
+    *(vu32*)0x04000028 = gUnk_0300752C;
+    *(vu32*)0x0400002c = gUnk_030074F4;
+    *(vu16*)0x04000030 = gUnk_030074E8;
+    *(vu16*)0x04000032 = gUnk_030074E0;
+    *(vu16*)0x04000034 = gUnk_03007504;
+    *(vu16*)0x04000036 = gUnk_03007540;
+    *(vu32*)0x04000038 = gUnk_03007524;
+    *(vu32*)0x0400003c = gUnk_03007560;
+    *(vu16*)0x04000000 = gDispCnt;
+    *(vu16*)0x05000000 = gUnk_030074D8;
+}
 
 void func_08004314(void) {
     u32 zero;
@@ -681,7 +719,23 @@ u8 func_0800443C(void* a, u16 b) {
     return 1;
 }
 INCLUDE_ASM("engine/func_0800448C.s");
+#ifdef NON_MATCHING
+u8 func_080045AC(void* a, void* b, u8 c, u8 d, u8 e) {
+    if (*(u16*)(gUnk_03007574 + 0x10A4) > 7) {
+        return 0;
+    }
+    *(void**)(gUnk_03007574 + 0x1000 + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = a;
+    *(void**)(gUnk_03007574 + 0x1004 + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = b;
+    *(u8*)(gUnk_03007574 + 0x1008 + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = c & 0x1F;
+    *(u8*)(gUnk_03007574 + 0x1009 + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = d & 0x1F;
+    *(u8*)(gUnk_03007574 + 0x100A + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = e;
+    *(u16*)(gUnk_03007574 + 0x10A4) += 1;
+    return 1;
+}
+#else
 INCLUDE_ASM("engine/func_080045AC.s");
+#endif
+INCLUDE_ASM("engine/func_08004678.s");
 INCLUDE_ASM("engine/func_080046C8.s");
 INCLUDE_ASM("engine/func_08004938.s");
 
