@@ -5,5 +5,5 @@
 	.thumb_func
 	.type task_bos_jf_3, %function
 task_bos_jf_3:
-	.incbin "roms/B8CJ.gba", 0xbd528, 0x384
+	.incbin "roms/B8CJ.gba", 0xbd528, 0x34
 .syntax divided
