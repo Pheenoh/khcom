@@ -422,7 +422,7 @@ INCLUDE_ASM("engine/func_080046C8.s");
 INCLUDE_ASM("engine/func_08004938.s");
 
 void func_08004B8C(void) {
-    void** p;
+    BgEntry** p;
     u32 zero;
 
     func_08000AE4(gUnk_08121688);
@@ -436,11 +436,11 @@ void func_08004BC4(void) {
     IwramFree(gUnk_030074D4);
 }
 
-void* func_08004BD8(u8* a, u16 x, u16 y) {
-    u8 col = (x >> 8) % a[8];
-    u8 row = (y >> 8) % a[9];
+void* func_08004BD8(BgEntry* e, u16 x, u16 y) {
+    u8 col = (x >> 8) % e->unk_08;
+    u8 row = (y >> 8) % e->unk_09;
 
-    return ((void**)*(u32*)(a + 4))[a[8] * row + col];
+    return ((void**)e->unk_04)[e->unk_08 * row + col];
 }
 
 INCLUDE_ASM("engine/func_08004C20.s");
@@ -524,7 +524,24 @@ void* GetBgScreenBase(s32 bg) {
     return (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000);
 }
 
+#ifdef NON_MATCHING
+void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
+    if (gUnk_03007500 & 7) {
+        if (bg == 2 || bg == 3) {
+            return;
+        }
+    }
+    func_08004FC8(bg);
+    gUnk_030074D4[bg].unk_04 = src;
+    gUnk_030074D4[bg].unk_08 = w;
+    gUnk_030074D4[bg].unk_09 = h;
+    gUnk_030074D4[bg].unk_0A = 0;
+    gUnk_030074D4[bg].unk_0C = 0;
+    gUnk_030074D4[bg].unk_00 = 1;
+}
+#else
 INCLUDE_ASM("engine/func_0800516C.s");
+#endif
 INCLUDE_ASM("engine/func_080051C4.s");
 INCLUDE_ASM("engine/func_08005244.s");
 
@@ -1098,7 +1115,15 @@ INCLUDE_ASM("engine/GetRandom.s");
 #endif
 
 INCLUDE_ASM("engine/func_080065FC.s");
-INCLUDE_ASM("engine/func_080066F4.s");
+void func_080066F4(s16 x, s16 y) {
+    if (gUnk_02034058 != 0) {
+        gUnk_02034050 = -x;
+        gUnk_02034052 = -y;
+    } else {
+        gUnk_02034050 = (*(u16*)(gUnk_02034040 + 0x10) << 2) - x;
+        gUnk_02034052 = (*(u16*)(gUnk_02034040 + 0x12) << 2) - y;
+    }
+}
 
 void func_0800675C(u8 a, s32 b, s32 c) {
     gUnk_02034064 = a;
