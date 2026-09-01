@@ -4,30 +4,8 @@
 #include "types.h"
 #include "main.h"
 #include "m4a.h"
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimState {
-    s32 unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u8 unk_10[0x04];
-    AnimFrame* unk_14;
-} AnimState;
-
+#include "anim.h"
+#include "mode.h"
 typedef struct AllmapRoomWork {
     void* unk_000;
     void* unk_004;
@@ -204,8 +182,6 @@ void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimUpdate(AnimState* a);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void* GetBgScreenBase(s32 bg);
-u16 GetKeysHeld(void);
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);
@@ -266,7 +242,6 @@ void func_080D5978(u16 a, void* b, u16 c);
 u8* func_080DED98(u8 a);
 u8* func_080DEE18(u8 a);
 u8 func_080DF51C(u8 a);
-void m4aSongNumStart(u16 id);
 void* memcpy(void* dst, const void* src, unsigned long n);
 
 extern s16 gSineTable[];

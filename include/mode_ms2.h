@@ -2,37 +2,8 @@
 #define GUARD_MODE_MS2_H
 
 #include "types.h"
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimHeader {
-    u32 unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} AnimHeader;
-
-typedef struct AnimState {
-    AnimHeader** unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    AnimFrame* unk_14;
-} AnimState;
-
+#include "anim.h"
+#include "mode.h"
 typedef struct UnkStruct_0810718C {
     u16 unk_00;
     u16 unk_02;

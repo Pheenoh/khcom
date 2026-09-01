@@ -3,30 +3,8 @@
 
 #include "types.h"
 #include "main.h"
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimState {
-    s32 unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u8 unk_10[0x04];
-    AnimFrame* unk_14;
-} AnimState;
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
+#include "anim.h"
+#include "mode.h"
 typedef struct ObjDef {
     void* unk_00;
     void* unk_04;
@@ -68,7 +46,6 @@ typedef struct DebugWork {
 
 void func_080010CC(Mode* mode, s32 arg);
 void func_080010E0(Mode* mode, s32 arg);
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);

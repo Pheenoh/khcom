@@ -164,12 +164,6 @@ typedef struct MdWork {
     u8 unk_1B6[0x2];
 } MdWork;
 
-void DisableBg(s32 bg);
-void func_08012304(void* a);
-void func_0801B7D8(void* a);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
-void TaskPoolDestroy(void* a);
 
 s32 GetRandom(void);
 void func_080058FC(void* a, s32 b, u16 c);

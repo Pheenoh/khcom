@@ -59,6 +59,5 @@ void func_0809B644(void* a, s32 b, s32 c, s32 d, s32 e);
 void func_08076324(void);
 u8 func_080763D0(void);
 u8 func_0807B3E0(void);
-s32 task_tutorial_1(TutorialWork* work);
 
 #endif /* GUARD_TUTORIAL_H */

@@ -258,8 +258,8 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
     }
     if (a & 0xF0) {
         func_0801DE1C(work, 0, 1);
-        if (work->unk_00C.unk_0A == 0) {
-            switch (work->unk_00C.unk_0E) {
+        if (work->unk_00C.timer == 0) {
+            switch (work->unk_00C.frame) {
             case 3:
                 m4aSongNumStart(work->unk_184[0]);
                 break;
@@ -674,8 +674,8 @@ void func_08027A64(BtlRikuWork* work, u16 a) {
     }
     if (a & 0xF0) {
         func_080276D4(work, 13, 1);
-        if (work->unk_010.unk_0A == 0) {
-            switch (work->unk_010.unk_0E) {
+        if (work->unk_010.timer == 0) {
+            switch (work->unk_010.frame) {
             case 3:
                 m4aSongNumStart(work->unk_188[0]);
                 break;

@@ -3,16 +3,7 @@
 
 #include "types.h"
 #include "main.h"
-
-typedef struct PaletteSlot {
-    void* unk_00;
-    void* unk_04;
-    u8 unk_08[0x20];
-    u8 unk_28;
-    u8 unk_29;
-    u8 unk_2A[0x02];
-} PaletteSlot;
-
+#include "obj.h"
 typedef struct PooAim {
     u8 unk_00[0x2E];
     u16 unk_2E;
@@ -998,7 +989,6 @@ void task_poo_freeballoon_3(PooFreeBalloonWork* w);
 void task_poo_leaf_3(PooLeafWork* w);
 void task_poo_mapanime_0(PooMapAnimeWork* w);
 void task_poo_mapbeeborn_3(PooMapBornWork* w);
-void task_poo_mapbutterflyborn_0(PooMapBornWork* w, PooPos* p);
 void task_poo_owl_3(PooOwlWork* w);
 void task_poo_poohstump_3(PooStumpWork* w);
 void task_poo_roo_footmark_3(PooFootmarkWork* w);
@@ -1039,7 +1029,6 @@ void func_080CC178(void* pool, void* a, s32 b);
 s32 func_080CD1DC(u32 a);
 s32 func_080CD1F8(u32 a);
 void func_080C89B4(void* a, void* b, s32 c);
-void func_08000BA4(TaskPool* a);
 void func_08000D90(ListNode* node, void* pool);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
@@ -1065,7 +1054,6 @@ void task_poo_shadow_3(TaskPool* w);
 u8 func_080C9D48(void);
 u8 func_080C9D5C(void);
 u8 func_080C9D70(void);
-u8 func_080C9D84(void);
 u8 func_080C9D98(void);
 u8 func_080C9DAC(void);
 u8 func_080C9E28(void);

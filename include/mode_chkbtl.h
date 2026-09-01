@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "main.h"
+#include "mode.h"
 
 typedef struct ChkBtlWork {
     s8 unk_00;
@@ -53,17 +54,7 @@ typedef struct ChkBtlSetup {
     u8 unk_FC[0x80];
     u16 unk_17C;
 } ChkBtlSetup;
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(void);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
 void func_080010CC(Mode* mode, s32 arg);
-u16 GetKeysHeld(void);
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void func_08004DB0(void);
 void EnableBg(s32 a);

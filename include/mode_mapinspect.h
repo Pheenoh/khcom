@@ -3,23 +3,7 @@
 
 #include "types.h"
 #include "main.h"
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimState {
-    s32 unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u8 unk_10[0x04];
-    AnimFrame* unk_14;
-} AnimState;
-
+#include "anim.h"
 typedef struct UnkStruct_0810718C {
     u8 unk_00[0x04];
     u16 unk_04;

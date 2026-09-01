@@ -172,9 +172,9 @@ void mode_chkobj_1(void) {
         func_0809D2B0(0, 15, 0, gUnk_0812E8C8);
         func_0809D458(6, 15, 0, gUnk_0203489C->unk_16);
         func_0809D2B0(0, 16, 0, gUnk_0812E8D0);
-        func_0809D458(6, 16, 0, gUnk_0203489C->unk_24.unk_0E);
+        func_0809D458(6, 16, 0, gUnk_0203489C->unk_24.frame);
         func_0809D2B0(0, 17, 0, gUnk_0812E8D4);
-        func_0809D458(6, 17, 0, gUnk_0203489C->unk_24.unk_0A);
+        func_0809D458(6, 17, 0, gUnk_0203489C->unk_24.timer);
         v = func_08003598(gUnk_0203489C->unk_3C) >> 5;
         func_0809D2B0(0, 18, 0, gUnk_0812E8DC);
         func_0809D458(6, 18, 0, v);

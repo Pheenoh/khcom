@@ -2,14 +2,7 @@
 #define GUARD_MODE_COPYRIGHT2_H
 
 #include "types.h"
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
+#include "mode.h"
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
     u32 unk_008;

@@ -2,19 +2,7 @@
 #define GUARD_EMY_H
 
 #include "types.h"
-
-typedef struct EmyListNode {
-    void* unk_00;
-    u8 unk_04[0x04];
-    struct EmyListNode* unk_08;
-    u16 unk_0C;
-} EmyListNode;
-
-typedef struct TaskPool {
-    EmyListNode head;
-    void* unk_10;
-} TaskPool;
-
+#include "taskpool.h"
 typedef struct UnkStruct_02039B84 {
     s32 unk_000;
     s32 unk_004;

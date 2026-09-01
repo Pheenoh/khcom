@@ -2,6 +2,7 @@
 #define GUARD_UNK_080DFEBC_H
 
 #include "types.h"
+#include "fld_types.h"
 
 typedef struct UnkStruct_080DFB8C {
     u16 unk_00;
@@ -254,12 +255,6 @@ typedef struct UnkStruct_080F023C {
     s32 unk_F8;
     s32 unk_FC;
 } UnkStruct_080F023C;
-
-typedef struct FldRes {
-    u8 unk_00[0x06];
-    u16 unk_06;
-} FldRes;
-
 typedef struct UnkStruct_080ECFE8 {
     u8 unk_000[0x20];
     FldRes* unk_020;

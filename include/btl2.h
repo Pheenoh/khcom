@@ -2,37 +2,8 @@
 #define GUARD_BTL2_H
 
 #include "types.h"
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimHeader {
-    u32 unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} AnimHeader;
-
-typedef struct AnimState {
-    AnimHeader** unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    AnimFrame* unk_14;
-} AnimState;
-
-typedef struct FldPos {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-} FldPos;
-
+#include "anim.h"
+#include "fld_types.h"
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
@@ -42,15 +13,6 @@ typedef struct FldActor {
     s32 unk_3C;
     u8 unk_40[0x10];
 } FldActor;
-
-typedef struct FldAnimDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} FldAnimDef;
-
 typedef struct UnkStruct_02039BA0 {
     s32 unk_00;
     s32 unk_04;

@@ -125,11 +125,6 @@ extern void* gUnk_09EE8F48[];
 
 void* memcpy(void* dst, const void* src, unsigned long n);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void LoadPalette(void* src, void* dst, s32 size);
-void* GetBgCharBase(s32 bg);
-void* GetBgScreenBase(s32 bg);
-void DisableBg(s32 bg);
 void func_08006184(s32 a, u16 b);
 void* LoadObjPalette(void* a, s32 b);
 void* LoadObjTiles(void* a, s32 b);

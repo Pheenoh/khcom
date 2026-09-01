@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "main.h"
+#include "mode.h"
 
 typedef struct PcAnimStep {
     u16 unk_00;
@@ -112,14 +113,6 @@ typedef struct UnkStruct_02039DC8 {
     u16 unk_68;
     u16 unk_6A;
 } UnkStruct_02039DC8;
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(void);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
 typedef struct BackupStatEntry {
     const char* name;
     s32 unk_04;
