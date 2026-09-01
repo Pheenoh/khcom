@@ -4,6 +4,22 @@
 extern u8 gUnk_081213DC[];
 extern u8 gUnk_081213E8[];
 
+extern u32 gFrameCounter;
+extern u32 gUnk_03006C68;
+extern u16 gUnk_03006C78;
+extern u32 gUnk_03006C10;
+extern u32 gUnk_02039828;
+extern u32 gUnk_02039820;
+extern u16 gUnk_03006C00;
+
+void func_08000334(void);
+void func_08000260(void);
+void func_08001938(void);
+void func_080C55DC(void);
+void func_08001100(void);
+void func_08000628(void);
+void VBlankIntrWait(void);
+
 void func_08000AD8(void* name);
 void func_08000AE4(void* name);
 
@@ -11,12 +27,49 @@ INCLUDE_ASM("main/func_08000240.s");
 INCLUDE_ASM("main/func_08000248.s");
 INCLUDE_ASM("main/func_08000250.s");
 INCLUDE_ASM("main/func_08000258.s");
+INCLUDE_ASM("main/func_08000260.s");
 INCLUDE_ASM("main/func_080002D4.s");
 INCLUDE_ASM("main/func_08000300.s");
+INCLUDE_ASM("main/func_08000334.s");
+#ifdef NON_MATCHING
+void func_0800044C(void) {
+    s32 bit;
+    s32 set;
+    gFrameCounter = 0;
+    gUnk_03006C68 = 0;
+    gUnk_03006C78 = 0;
+    gUnk_03006C10 = 0;
+    gUnk_02039828 = 0;
+    gUnk_02039820 = 0;
+    func_08000334();
+    func_08000260();
+    bit = 4;
+    for (;;) {
+        func_08001938();
+        if (gUnk_03006C78 & 1) {
+            func_080C55DC();
+            if (gUnk_02039820 & 0x100) {
+                goto next;
+            }
+        }
+        if ((gUnk_03006C00 & bit) == 0) {
+            func_08001100();
+            gUnk_03006C00 |= 4;
+        }
+    next:
+        func_08000628();
+        VBlankIntrWait();
+        gFrameCounter++;
+    }
+}
+#else
+INCLUDE_ASM("main/func_0800044C.s");
+#endif
 INCLUDE_ASM("main/func_080004DC.s");
 INCLUDE_ASM("main/func_080005A4.s");
 INCLUDE_ASM("main/func_080005A8.s");
 INCLUDE_ASM("main/func_080005AC.s");
+INCLUDE_ASM("main/func_08000628.s");
 INCLUDE_ASM("main/func_08000660.s");
 INCLUDE_ASM("main/func_08000714.s");
 
@@ -406,6 +459,7 @@ INCLUDE_ASM("main/func_08000F94.s");
 INCLUDE_ASM("main/func_08000FB4.s");
 INCLUDE_ASM("main/func_080010CC.s");
 INCLUDE_ASM("main/func_080010E0.s");
+INCLUDE_ASM("main/func_08001100.s");
 INCLUDE_ASM("main/func_08001248.s");
 INCLUDE_ASM("main/func_08001254.s");
 INCLUDE_ASM("main/func_080012A8.s");
@@ -422,6 +476,7 @@ INCLUDE_ASM("main/GetKeysRepeat.s");
 INCLUDE_ASM("main/func_08001470.s");
 INCLUDE_ASM("main/func_08001534.s");
 INCLUDE_ASM("main/func_080015F8.s");
+INCLUDE_ASM("main/func_08001938.s");
 INCLUDE_ASM("main/func_08001D60.s");
 INCLUDE_ASM("main/func_08001DB0.s");
 INCLUDE_ASM("main/func_08001E64.s");
