@@ -77,7 +77,7 @@ sroll.c
 lib.c
 agb_sram.c -O1
 m4a.c
-unk_0811d1b0.c
+snd_stream.c
 @libgcc.a:_ashldi3.o
 @libgcc.a:_call_via_rX.o
 @libgcc.a:_divsi3.o
