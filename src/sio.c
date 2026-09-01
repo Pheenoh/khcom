@@ -34,56 +34,56 @@ u16 func_08006BB4(void) {
     return 0;
 }
 
-void func_08006BFC(IntrFunc fn) {
-    gUnk_03006C70 = fn;
+void SetVBlankCallback(IntrFunc fn) {
+    gVBlankCallback = fn;
     if (!func_08006BB4()) {
-        *gUnk_03006C5C = fn;
+        *gIntrTableVBlank = fn;
     }
 }
 
-void func_08006C24(void) {
-    *gUnk_03006C5C = func_080004DC;
-    gUnk_03006C70 = func_080004DC;
+void ResetVBlankCallback(void) {
+    *gIntrTableVBlank = VBlankIntr;
+    gVBlankCallback = VBlankIntr;
 }
 
-void func_08006C40(IntrFunc fn) {
-    gUnk_03006C6C = fn;
+void SetVCountCallback(IntrFunc fn) {
+    gVCountCallback = fn;
     if (!func_08006BB4()) {
-        *gUnk_03006C58 = fn;
+        *gIntrTableVCount = fn;
     }
 }
 
-void func_08006C68(void) {
-    *gUnk_03006C58 = func_080005A8;
-    gUnk_03006C6C = func_080005A8;
+void ResetVCountCallback(void) {
+    *gIntrTableVCount = VCountIntrDummy;
+    gVCountCallback = VCountIntrDummy;
 }
 
-void func_08006C84(IntrFunc fn) {
-    gUnk_03006C64 = fn;
+void SetHBlankCallback(IntrFunc fn) {
+    gHBlankCallback = fn;
     if (!func_08006BB4()) {
-        *gUnk_03006C74 = fn;
+        *gIntrTableHBlank = fn;
     }
 }
 
-void func_08006CAC(void) {
-    *gUnk_03006C74 = func_080005A4;
-    gUnk_03006C64 = func_080005A4;
+void ResetHBlankCallback(void) {
+    *gIntrTableHBlank = HBlankIntrDummy;
+    gHBlankCallback = HBlankIntrDummy;
 }
 
-void func_08006CC8(IntrFunc fn) {
-    *gUnk_03006C14 = fn;
+void SetSerialCallback(IntrFunc fn) {
+    *gIntrTableSerial = fn;
 }
 
-void func_08006CD4(void) {
-    *gUnk_03006C14 = func_080005AC;
+void ResetSerialCallback(void) {
+    *gIntrTableSerial = SerialIntrDummy;
 }
 
-void func_08006CE8(IntrFunc fn) {
-    *gUnk_03006C60 = fn;
+void SetTimer3Callback(IntrFunc fn) {
+    *gIntrTableTimer3 = fn;
 }
 
-void func_08006CF4(void) {
-    *gUnk_03006C60 = func_080005AC;
+void ResetTimer3Callback(void) {
+    *gIntrTableTimer3 = SerialIntrDummy;
 }
 
 void func_08006D08(void) {
@@ -100,9 +100,9 @@ void func_08006D08(void) {
     REG_SIOCNT = 0x2000;
     REG_SIOCNT |= 0x4003;
     *p = REG_IME;
-    func_08006BFC(func_08000660);
-    func_08006CC8(func_080073B4);
-    func_08006CE8(func_080073A4);
+    SetVBlankCallback(VBlankIntrSio);
+    SetSerialCallback(func_080073B4);
+    SetTimer3Callback(func_080073A4);
     REG_IME = 0;
     REG_IE |= 0x80;
     REG_IME = *p;
@@ -590,9 +590,9 @@ void func_08007874(void) {
 void func_080078A4(void) {
     func_08007874();
     REG_IME = 0;
-    func_08006C24();
-    func_08006CD4();
-    func_08006CF4();
+    ResetVBlankCallback();
+    ResetSerialCallback();
+    ResetTimer3Callback();
     REG_IE = 0x2001;
     REG_DISPSTAT = 8;
     REG_IME = 1;

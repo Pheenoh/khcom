@@ -39,7 +39,7 @@ void* AnimUpdate(void* a);
 
 extern u32 gFrameCounter;
 extern s16 gSineTable[];
-extern u16 gUnk_0300750C;
+extern u16 gBg0Cnt;
 extern u8 gUnk_08B263D2[];
 extern u8 gUnk_09EE15F0[];
 extern u8 gUnk_09EE15C0[];

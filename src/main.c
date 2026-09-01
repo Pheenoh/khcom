@@ -12,26 +12,26 @@ extern u32 gUnk_02039828;
 extern u32 gUnk_02039820;
 extern u16 gUnk_03006C00;
 
-void func_08000334(void);
-void func_08000260(void);
-void func_08001938(void);
+void InitSystem(void);
+void EnableVBlankIntr(void);
+void UpdateKeyState(void);
 void func_080C55DC(void);
 void func_08001100(void);
-void func_08000628(void);
+void ApplyIntrCallbacks(void);
 void VBlankIntrWait(void);
 
-void func_08000AD8(void* name);
-void func_08000AE4(void* name);
+void SetEwramHeapName(void* name);
+void SetIwramHeapName(void* name);
 
 INCLUDE_ASM("main/func_08000240.s");
 INCLUDE_ASM("main/func_08000248.s");
 INCLUDE_ASM("main/func_08000250.s");
 INCLUDE_ASM("main/func_08000258.s");
-INCLUDE_ASM("main/func_08000260.s");
+INCLUDE_ASM("main/EnableVBlankIntr.s");
 INCLUDE_ASM("main/DisableVBlankIntr.s");
-INCLUDE_ASM("main/func_080002D4.s");
-INCLUDE_ASM("main/func_08000300.s");
-INCLUDE_ASM("main/func_08000334.s");
+INCLUDE_ASM("main/EnableHBlankIntr.s");
+INCLUDE_ASM("main/DisableHBlankIntr.s");
+INCLUDE_ASM("main/InitSystem.s");
 #ifdef NON_MATCHING
 void AgbMain(void) {
     s32 bit;
@@ -42,11 +42,11 @@ void AgbMain(void) {
     gUnk_03006C10 = 0;
     gUnk_02039828 = 0;
     gUnk_02039820 = 0;
-    func_08000334();
-    func_08000260();
+    InitSystem();
+    EnableVBlankIntr();
     bit = 4;
     for (;;) {
-        func_08001938();
+        UpdateKeyState();
         if (gUnk_03006C78 & 1) {
             func_080C55DC();
             if (gUnk_02039820 & 0x100) {
@@ -58,7 +58,7 @@ void AgbMain(void) {
             gUnk_03006C00 |= 4;
         }
     next:
-        func_08000628();
+        ApplyIntrCallbacks();
         VBlankIntrWait();
         gFrameCounter++;
     }
@@ -66,21 +66,21 @@ void AgbMain(void) {
 #else
 INCLUDE_ASM("main/AgbMain.s");
 #endif
-INCLUDE_ASM("main/func_080004DC.s");
-INCLUDE_ASM("main/func_080005A4.s");
-INCLUDE_ASM("main/func_080005A8.s");
-INCLUDE_ASM("main/func_080005AC.s");
+INCLUDE_ASM("main/VBlankIntr.s");
+INCLUDE_ASM("main/HBlankIntrDummy.s");
+INCLUDE_ASM("main/VCountIntrDummy.s");
+INCLUDE_ASM("main/SerialIntrDummy.s");
 INCLUDE_ASM("main/InitIntrTable.s");
-INCLUDE_ASM("main/func_08000628.s");
-INCLUDE_ASM("main/func_08000660.s");
+INCLUDE_ASM("main/ApplyIntrCallbacks.s");
+INCLUDE_ASM("main/VBlankIntrSio.s");
 INCLUDE_ASM("main/func_08000714.s");
 
-void func_080007A8(HeapBlock* b) {
+void HeapUnlinkFreeBlock(HeapBlock* b) {
     b->prevFree->nextFree = b->nextFree;
     b->nextFree->prevFree = b->prevFree;
 }
 
-u8 func_080007B8(void* p, Heap* heap) {
+u8 HeapContains(void* p, Heap* heap) {
     if (p != 0 && (u32)p > (u32)heap->start && (u32)p < (u32)heap->end) {
         return 1;
     }
@@ -88,7 +88,7 @@ u8 func_080007B8(void* p, Heap* heap) {
     return 0;
 }
 
-HeapBlock* func_080007D4(s32 size, Heap* heap) {
+HeapBlock* HeapFindFreeBlock(s32 size, Heap* heap) {
     HeapBlock* b;
 
     b = heap->start->nextFree;
@@ -142,13 +142,13 @@ void HeapInit(void* addr, u32 size, Heap* heap) {
 INCLUDE_ASM("main/HeapInit.s");
 #endif
 
-void func_08000860(void* addr, u32 size) {
-    func_08000AD8(gUnk_081213DC);
+void EwramHeapInit(void* addr, u32 size) {
+    SetEwramHeapName(gUnk_081213DC);
     HeapInit(addr, size, &gEwramHeap);
 }
 
-void func_08000884(void* addr, u32 size) {
-    func_08000AE4(gUnk_081213E8);
+void IwramHeapInit(void* addr, u32 size) {
+    SetIwramHeapName(gUnk_081213E8);
     HeapInit(addr, size, &gIwramHeap);
 }
 
@@ -162,7 +162,7 @@ void* HeapAlloc(u32 size, Heap* heap) {
     }
 
     size = (size + 63) & ~31;
-    b = func_080007D4(size, heap);
+    b = HeapFindFreeBlock(size, heap);
 
     if (b == 0) {
         return 0;
@@ -170,7 +170,7 @@ void* HeapAlloc(u32 size, Heap* heap) {
 
     if (b->size < (s32)(size + 64)) {
         size = b->size;
-        func_080007A8(b);
+        HeapUnlinkFreeBlock(b);
     } else {
         prev = b;
         rem = prev->size - size;
@@ -222,7 +222,7 @@ void HeapFree(void* p, Heap* heap) {
         return;
     }
 
-    if (!func_080007B8(p, heap)) {
+    if (!HeapContains(p, heap)) {
         return;
     }
 
@@ -236,7 +236,7 @@ void HeapFree(void* p, Heap* heap) {
     n = b->prev;
 
     if (n->size > 0) {
-        func_080007A8(n);
+        HeapUnlinkFreeBlock(n);
         n->size += size;
         n->next = b->next;
         b->next->prev = n;
@@ -248,7 +248,7 @@ void HeapFree(void* p, Heap* heap) {
     n = b->next;
 
     if (n->size > 0) {
-        func_080007A8(n);
+        HeapUnlinkFreeBlock(n);
         b->size += n->size;
         b->next = n->next;
         n->next->prev = b;
@@ -272,10 +272,10 @@ void IwramFree(void* p) {
     HeapFree(p, &gIwramHeap);
 }
 
-s32 func_080009E4(void* p, Heap* heap) {
+s32 HeapGetBlockSize(void* p, Heap* heap) {
     s32 size;
 
-    if (func_080007B8(p, heap)) {
+    if (HeapContains(p, heap)) {
         size = -((HeapBlock*)p - 1)->size;
 
         if (size > 0) {
@@ -288,7 +288,7 @@ s32 func_080009E4(void* p, Heap* heap) {
 
 INCLUDE_ASM("main/func_08000A08.s");
 INCLUDE_ASM("main/func_08000A18.s");
-INCLUDE_ASM("main/func_08000A28.s");
+INCLUDE_ASM("main/HeapGetFreeTotal.s");
 INCLUDE_ASM("main/func_08000A40.s");
 INCLUDE_ASM("main/func_08000A50.s");
 INCLUDE_ASM("main/func_08000A60.s");
@@ -299,8 +299,8 @@ INCLUDE_ASM("main/func_08000A9C.s");
 INCLUDE_ASM("main/func_08000AA8.s");
 INCLUDE_ASM("main/func_08000AB8.s");
 INCLUDE_ASM("main/func_08000AC8.s");
-INCLUDE_ASM("main/func_08000AD8.s");
-INCLUDE_ASM("main/func_08000AE4.s");
+INCLUDE_ASM("main/SetEwramHeapName.s");
+INCLUDE_ASM("main/SetIwramHeapName.s");
 INCLUDE_ASM("main/func_08000B08.s");
 INCLUDE_ASM("main/func_08000B24.s");
 INCLUDE_ASM("main/func_08000B48.s");
@@ -478,8 +478,8 @@ INCLUDE_ASM("main/GetKeysRepeat.s");
 INCLUDE_ASM("main/func_08001470.s");
 INCLUDE_ASM("main/func_08001534.s");
 INCLUDE_ASM("main/func_080015F8.s");
-INCLUDE_ASM("main/func_08001938.s");
-INCLUDE_ASM("main/func_08001D60.s");
+INCLUDE_ASM("main/UpdateKeyState.s");
+INCLUDE_ASM("main/SpriteInit.s");
 INCLUDE_ASM("main/SpriteFree.s");
 INCLUDE_ASM("main/func_08001DB0.s");
 INCLUDE_ASM("main/func_08001E64.s");

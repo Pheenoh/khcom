@@ -700,7 +700,7 @@ void func_08116E98(void) {
     gUnk_02036048 = 1;
     func_08116F64(func_08116F28());
     func_081170C0(func_08116F20());
-    func_08006BFC(func_08000714);
+    SetVBlankCallback(func_08000714);
     func_08117154();
 }
 
@@ -720,7 +720,7 @@ void func_08116EF0(void) {
 }
 
 void func_08116F08(void) {
-    func_08006C24();
+    ResetVBlankCallback();
     func_08117170();
     m4aSoundInit();
     m4aSoundVSyncOn();

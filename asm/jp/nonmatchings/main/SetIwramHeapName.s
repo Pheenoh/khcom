@@ -1,9 +1,9 @@
 .syntax unified
 	.align 2, 0
-	.global func_08000AE4
+	.global SetIwramHeapName
 	.thumb
 	.thumb_func
-	.type func_08000AE4, %function
-func_08000AE4:
+	.type SetIwramHeapName, %function
+SetIwramHeapName:
 	.incbin "roms/B8CJ.gba", 0xae4, 0x24
 .syntax divided

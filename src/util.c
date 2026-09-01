@@ -3,7 +3,7 @@
 
 extern u8 gUnk_0812171C[];
 
-void func_08000AE4(void* name);
+void SetIwramHeapName(void* name);
 void* IwramAlloc(u32 size);
 void IwramFree(void* p);
 
@@ -284,7 +284,7 @@ void func_08008558(KeyState* k, u16 keys) {
 }
 
 void func_08008808(void) {
-    func_08000AE4(gUnk_0812171C);
+    SetIwramHeapName(gUnk_0812171C);
     gUnk_0203407C = IwramAlloc(sizeof(KeyState));
     gUnk_02034080 = IwramAlloc(sizeof(KeyState));
     func_08008348(gUnk_0203407C);

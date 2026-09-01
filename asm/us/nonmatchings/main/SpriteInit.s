@@ -1,14 +1,14 @@
 .syntax unified
 	.align 2, 0
-	.global func_08001D60
+	.global SpriteInit
 	.thumb
 	.thumb_func
-	.type func_08001D60, %function
-func_08001D60: @ 08001D60
+	.type SpriteInit, %function
+SpriteInit: @ 08001D60
 	push {r4, lr}
 	add sp, #-0x004
 	ldr r0, _08001D8C @ =0x081213F8
-	bl func_08000AE4
+	bl SetIwramHeapName
 	ldr r4, _08001D90 @ =0x030074C8
 	ldr r0, _08001D94 @ =0x00002BB0
 	bl IwramAlloc

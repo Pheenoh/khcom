@@ -31,7 +31,7 @@ void mode_movie_1(void) {
     case 0: {
         s32 fill;
 
-        func_08004034();
+        InitDisplayRegs();
         gDispCnt &= 0xE0FF;
         fill = 0;
         CpuSet(&fill, (void*)0x06000000, 0x05006000);
@@ -44,10 +44,10 @@ void mode_movie_1(void) {
     case 2:
         m4aSoundVSyncOff();
         gUnk_03007484 = func_0805EA90;
-        func_08000884(func_08000250(), func_08000258());
-        func_08000860(func_08000240(), func_08000248());
-        func_08000AD8(gUnk_0886AD10);
-        func_08000AE4(gUnk_0886AD10);
+        IwramHeapInit(func_08000250(), func_08000258());
+        EwramHeapInit(func_08000240(), func_08000248());
+        SetEwramHeapName(gUnk_0886AD10);
+        SetIwramHeapName(gUnk_0886AD10);
         CpuSet(gUnk_08F69C04, (void*)0x05000200, 16);
         CpuSet(gUnk_09614718, (void*)0x05000220, 16);
         func_081181BC(IwramAlloc, EwramAlloc, IwramFree, EwramFree);
@@ -92,10 +92,10 @@ void mode_movie_1(void) {
         }
 
         func_08118538();
-        func_08000884(func_08000250(), func_08000258());
-        func_08000860(func_08000240(), func_08000248());
+        IwramHeapInit(func_08000250(), func_08000258());
+        EwramHeapInit(func_08000240(), func_08000248());
         func_08004314();
-        func_08001D60();
+        SpriteInit();
         func_08004B8C();
         func_08005B78();
         func_08007E90();
@@ -105,7 +105,7 @@ void mode_movie_1(void) {
         func_08001F98();
         func_08005BC4();
         func_08006404();
-        func_08004034();
+        InitDisplayRegs();
         gUnk_03007484 = 0;
         m4aSoundInit();
         m4aSoundVSyncOn();

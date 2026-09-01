@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08000AE4
+	.global SetIwramHeapName
 	.thumb
 	.thumb_func
-	.type func_08000AE4, %function
-func_08000AE4: @ 08000AE4
+	.type SetIwramHeapName, %function
+SetIwramHeapName: @ 08000AE4
 	ldr r1, _08000AEC @ =0x030074B8
 	str r0, [r1, #0x0C]
 	bx lr

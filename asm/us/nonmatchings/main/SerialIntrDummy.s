@@ -1,9 +1,9 @@
 .syntax unified
 	.align 2, 0
-	.global func_080005A8
+	.global SerialIntrDummy
 	.thumb
 	.thumb_func
-	.type func_080005A8, %function
-func_080005A8: @ 080005A8
+	.type SerialIntrDummy, %function
+SerialIntrDummy: @ 080005AC
 	.byte 0x70, 0x47, 0x00, 0x00
 .syntax divided

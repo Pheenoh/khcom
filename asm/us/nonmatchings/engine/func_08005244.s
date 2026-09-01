@@ -73,12 +73,12 @@ _080052B2:
 _080052C0: .4byte 0x030074D4
 _080052C4:
 	adds r0, r6, #0x0
-	bl func_08005550
+	bl GetBgScrollX
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	str r0, [sp, #0x014]
 	adds r0, r6, #0x0
-	bl func_0800558C
+	bl GetBgScrollY
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	str r0, [sp, #0x018]
@@ -123,12 +123,12 @@ _08005308:
 	lsrs r1, r1, #0x03
 	str r1, [sp, #0x020]
 	adds r0, r6, #0x0
-	bl func_08005550
+	bl GetBgScrollX
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x1B
 	str r0, [sp, #0x024]
 	adds r0, r6, #0x0
-	bl func_0800558C
+	bl GetBgScrollY
 	lsls r0, r0, #0x18
 	lsrs r2, r0, #0x1B
 	adds r3, r2, #0x0

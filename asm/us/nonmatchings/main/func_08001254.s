@@ -38,7 +38,7 @@ _08001294:
 	bl func_080046C8
 _08001298:
 	bl func_08002F50
-	bl func_0800415C
+	bl CommitDisplayRegs
 _080012A0:
 	pop {r4}
 	pop {r0}

@@ -83,14 +83,14 @@ extern SioWork gUnk_02039830;
 extern u8 gUnk_02039B50;
 extern u8 gUnk_02039B60;
 
-extern IntrFunc* gUnk_03006C14;
-extern IntrFunc* gUnk_03006C58;
-extern IntrFunc* gUnk_03006C5C;
-extern IntrFunc* gUnk_03006C60;
-extern IntrFunc gUnk_03006C64;
-extern IntrFunc gUnk_03006C6C;
-extern IntrFunc gUnk_03006C70;
-extern IntrFunc* gUnk_03006C74;
+extern IntrFunc* gIntrTableSerial;
+extern IntrFunc* gIntrTableVCount;
+extern IntrFunc* gIntrTableVBlank;
+extern IntrFunc* gIntrTableTimer3;
+extern IntrFunc gHBlankCallback;
+extern IntrFunc gVCountCallback;
+extern IntrFunc gVBlankCallback;
+extern IntrFunc* gIntrTableHBlank;
 
 
 void CpuSet(void* src, void* dst, u32 ctrl);
@@ -100,16 +100,16 @@ void func_08006B80(u16* a, u16* b);
 s32 func_08006BA0(u8* p);
 u8* func_08006BA8(void);
 u16 func_08006BB4(void);
-void func_08006BFC(IntrFunc fn);
-void func_08006C24(void);
-void func_08006C40(IntrFunc fn);
-void func_08006C68(void);
-void func_08006C84(IntrFunc fn);
-void func_08006CAC(void);
-void func_08006CC8(IntrFunc fn);
-void func_08006CD4(void);
-void func_08006CE8(IntrFunc fn);
-void func_08006CF4(void);
+void SetVBlankCallback(IntrFunc fn);
+void ResetVBlankCallback(void);
+void SetVCountCallback(IntrFunc fn);
+void ResetVCountCallback(void);
+void SetHBlankCallback(IntrFunc fn);
+void ResetHBlankCallback(void);
+void SetSerialCallback(IntrFunc fn);
+void ResetSerialCallback(void);
+void SetTimer3Callback(IntrFunc fn);
+void ResetTimer3Callback(void);
 void func_08006D08(void);
 void func_08006E60(void);
 void func_08006E70(void);
@@ -135,10 +135,10 @@ void func_08007874(void);
 void func_080078A4(void);
 u8 func_080078E8(void);
 
-void func_080004DC(void);
-void func_080005A4(void);
-void func_080005A8(void);
-void func_080005AC(void);
-void func_08000660(void);
+void VBlankIntr(void);
+void HBlankIntrDummy(void);
+void VCountIntrDummy(void);
+void SerialIntrDummy(void);
+void VBlankIntrSio(void);
 
 #endif /* GUARD_SIO_H */
