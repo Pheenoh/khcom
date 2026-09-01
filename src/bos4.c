@@ -187,9 +187,13 @@ void task_bos_ursula_bubble_2(UrsulaBubbleWork* work) {
     TaskPoolDraw(&work->unk_004);
 }
 
+#ifndef VERSION_EU
 void task_bos_ursula_bubble_3(UrsulaBubbleWork* work) {
     TaskPoolDestroy(&work->unk_004);
 }
+#else
+INCLUDE_ASM("bos4/task_bos_ursula_bubble_3.s");
+#endif
 
 INCLUDE_ASM("bos4/func_080DD9B0.s");
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_0.s");
@@ -266,9 +270,13 @@ void func_080DF730(u8 a, u8 b) {
 
 INCLUDE_ASM("bos4/func_080DF750.s");
 
+#ifndef VERSION_EU
 u32 func_080DF804(u8 index) {
     return gUnk_09EF69FC[index];
 }
+#else
+INCLUDE_ASM("bos4/func_080DF804.s");
+#endif
 
 void func_080DF814(void) {
     func_080DF730(0xFE, 1);

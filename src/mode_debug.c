@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "mode_debug.h"
 
+#ifndef VERSION_EU
 void mode_debug_0(void) {
     m4aMPlayAllStop();
     gUnk_02034898 = EwramAlloc(sizeof(DebugWork));
@@ -36,7 +37,11 @@ void mode_debug_0(void) {
     gUnk_02034898->unk_00 = 0;
     gUnk_02034898->unk_01 = -1;
 }
+#else
+INCLUDE_ASM("mode_debug/mode_debug_0.s");
+#endif
 
+#ifndef VERSION_EU
 void mode_debug_1(void) {
     s16 v;
     s8 old;
@@ -251,6 +256,9 @@ void mode_debug_1(void) {
     DrawSprite(9, gUnk_02034898->unk_00 % 9 * 16 + 13, gfx, gUnk_02034898->unk_04,
                gUnk_02034898->unk_08, 0, 0, 0);
 }
+#else
+INCLUDE_ASM("mode_debug/mode_debug_1.s");
+#endif
 
 void mode_debug_2(void) {
     func_080609A0();

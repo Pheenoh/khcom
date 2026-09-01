@@ -8,6 +8,7 @@ void mode_chksnd_0(void) {
     TaskCreate(&gUnk_020348A0, &gUnk_09EE9190, 0);
 }
 
+#ifndef VERSION_EU
 void mode_chksnd_1(void) {
     u16 keys;
 
@@ -44,6 +45,9 @@ void mode_chksnd_1(void) {
         TaskPoolDraw(&gUnk_020348A0);
     }
 }
+#else
+INCLUDE_ASM("mode_chksnd/mode_chksnd_1.s");
+#endif
 
 void mode_chksnd_2(void) {
     m4aMPlayAllStop();

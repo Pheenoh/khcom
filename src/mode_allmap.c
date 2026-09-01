@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "mode_allmap.h"
 
+#ifndef VERSION_EU
 void mode_allmap_0(s32 a) {
     gUnk_02034E81 = 0;
     if (a == 1) {
@@ -47,6 +48,9 @@ void mode_allmap_0(s32 a) {
     gUnk_02034E38 = 0;
     gUnk_02034E3A = 0;
 }
+#else
+INCLUDE_ASM("mode_allmap/mode_allmap_0.s");
+#endif
 
 void func_080D3370(void) {
     func_080062F4(10, 1);

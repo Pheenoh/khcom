@@ -194,7 +194,7 @@ void mode_mapinspect_1(void) {
     func_08108650();
 }
 
-#ifdef VERSION_US
+#ifndef VERSION_JP
 void mode_mapinspect_2(void) {
     s32 i;
     s32 j;

@@ -48,6 +48,15 @@ DATA = """.syntax unified
 .syntax divided
 """
 
+EMPTY = """.syntax unified
+\t.global {name}
+\t.thumb
+\t.thumb_func
+\t.type {name}, %function
+{name}:
+.syntax divided
+"""
+
 
 def mask(b):
     out = bytearray(b)
@@ -62,6 +71,50 @@ def mask(b):
     return bytes(out)
 
 
+VERSION_IF_RE = re.compile(r"#\s*(ifdef|ifndef|if|else|elif|endif)\b(.*)")
+
+
+def active_includes(path, ver):
+    """INCLUDE_ASM lines this version actually compiles.
+
+    A function that only diverges in one version is guarded against that
+    version alone, so the same line is C for one build and asm for another.
+    Only VERSION_* conditions are interpreted; anything else stays active.
+    """
+    tag = f"VERSION_{ver.upper()}"
+    stack = []
+    out = []
+    for line in Path(path).read_text().splitlines():
+        m = VERSION_IF_RE.match(line.strip())
+        if m:
+            kind, rest = m.group(1), m.group(2)
+            if kind in ("ifdef", "ifndef", "if", "elif"):
+                versioned = "VERSION_" in rest
+                if not versioned:
+                    frame = (False, True)
+                elif kind == "ifndef":
+                    frame = (True, tag not in rest)
+                else:
+                    frame = (True, tag in rest)
+                if kind == "elif" and stack:
+                    stack[-1] = frame
+                else:
+                    stack.append(frame)
+            elif kind == "else":
+                if stack:
+                    versioned, state = stack[-1]
+                    stack[-1] = (versioned, not state if versioned else True)
+            elif kind == "endif":
+                if stack:
+                    stack.pop()
+            continue
+        if all(state for _versioned, state in stack):
+            m = INCLUDE_ASM_RE.search(line)
+            if m:
+                out.append((m.group(1), m.group(2)))
+    return out
+
+
 def load_funcmap(path):
     rows = []
     for line in Path(path).read_text().splitlines():
@@ -70,29 +123,49 @@ def load_funcmap(path):
     return rows
 
 
-def complete(rows, code_end):
+def complete(rows, code_end, flexible):
     n = len(rows)
     i = 0
     while i < n:
-        if rows[i][3] is not None:
+        if rows[i][3] is not None or rows[i][4] == "absent":
             i += 1
             continue
         j = i
-        while j < n and rows[j][3] is None:
+        while j < n and rows[j][3] is None and rows[j][4] != "absent":
             j += 1
-        prev = rows[i - 1]
-        start = prev[3] + prev[2]
-        stop = rows[j][3] if j < n else code_end
+        prev = next((rows[k] for k in range(i - 1, -1, -1)
+                     if rows[k][3] is not None), None)
+        nxt = next((rows[k] for k in range(j, n) if rows[k][3] is not None), None)
+        if prev is None:
+            i = j
+            continue
+        begin = prev[3] + prev[2]
+        stop = nxt[3] if nxt is not None else code_end
         want = sum(rows[k][2] for k in range(i, j))
-        span = stop - start
+        span = max(0, stop - begin)
         for k in range(i, j):
-            rows[k][3] = start
+            rows[k][3] = begin
             share = rows[k][2] if want == 0 else round(span * rows[k][2] / want / 4) * 4
-            start = min(start + max(0, share), stop)
+            begin = min(begin + max(0, share), stop)
         i = j
-    addrs = [r[3] for r in rows] + [code_end]
-    for i, r in enumerate(rows):
-        r.append(max(0, addrs[i + 1] - r[3]))
+
+    present = sorted((r for r in rows if r[3] is not None and r[4] != "absent"),
+                     key=lambda r: r[3])
+    size, start = {}, {}
+    pos = present[0][3] if present else 0
+    for k, r in enumerate(present):
+        nxt = present[k + 1][3] if k + 1 < len(present) else code_end
+        if r[0] in flexible:
+            start[id(r)] = pos
+            size[id(r)] = max(0, nxt - pos)
+            pos = nxt
+        else:
+            start[id(r)] = r[3]
+            size[id(r)] = r[2]
+            pos = r[3] + r[2]
+    for r in rows:
+        r[3] = start.get(id(r), r[3] if r[3] is not None else 0)
+        r.append(size.get(id(r), 0))
     return rows
 
 
@@ -152,15 +225,33 @@ def main():
     ot = Path(f"roms/{code}.gba").read_bytes()
     rows = load_funcmap(f"config/{ver}/funcmap.txt")
 
+    owner = {}
+    cur = None
+    for line in Path("build/us/com_us.map").read_text().splitlines():
+        m = re.match(r"^ \.text +0x08[0-9a-f]{6} +0x[0-9a-f]+ (\S+)$", line)
+        if m:
+            cur = m.group(1)
+            continue
+        if cur is None or "=" in line:
+            continue
+        m = re.match(r"^ +0x08[0-9a-f]{6} +(\S+)$", line)
+        if m:
+            owner.setdefault(m.group(1), cur)
+
+    flexible = set()
+    for f in sorted(Path("src").glob("*.c")):
+        for tu, name in active_includes(f, ver):
+            flexible.add(name)
+
     provisional = [r for r in rows if r[3] is not None]
     guess_end = provisional[-1][3] + (CODE_HI - provisional[-1][1])
-    rows = complete(rows, guess_end)
+    rows = complete(rows, guess_end, flexible)
     tr = translator(symbol_map(rows, us, ot))
 
     code_end, how_end = tr(CODE_HI)
     if code_end != guess_end:
-        rows = [r[:5] for r in rows]
-        rows = complete(rows, code_end)
+        rows = load_funcmap(f"config/{ver}/funcmap.txt")
+        rows = complete(rows, code_end, flexible)
         tr = translator(symbol_map(rows, us, ot))
     print(f"{ver}: code region {rows[0][3]:#x} .. {code_end:#x} ({how_end})")
 
@@ -182,24 +273,27 @@ def main():
 
     byname = {r[0]: r for r in rows}
     asm_root = Path(f"asm/{ver}/nonmatchings")
-    wrote = missing = 0
+    wrote = missing = absent = 0
     for src in sorted(Path("src").glob("*.c")):
-        for m in INCLUDE_ASM_RE.finditer(src.read_text()):
-            tu, name = m.group(1), m.group(2)
+        for tu, name in active_includes(src, ver):
             r = byname.get(name)
-            if r is None or r[5] == 0:
+            if r is None:
                 missing += 1
                 print(f"  missing layout for {tu}/{name}")
                 continue
+            if r[5] == 0:
+                absent += 1
             usasm = Path(f"asm/us/nonmatchings/{tu}/{name}.s")
             tmpl = DATA if usasm.exists() and ".thumb_func" not in usasm.read_text() else THUMB
+            if r[5] == 0:
+                tmpl = EMPTY
             d = asm_root / tu
             d.mkdir(parents=True, exist_ok=True)
             (d / f"{name}.s").write_text(
                 tmpl.format(name=name, code=code, off=r[3] - ROM_BASE, size=r[5],
-                            align="\t.align 2, 0\n" if r[3] % 4 == 0 else ""))
+                            align="\t.align 2, 0\n" if r[3] % 4 == 0 and r[5] else ""))
             wrote += 1
-    print(f"  chunks: {wrote} written, {missing} missing")
+    print(f"  chunks: {wrote} written ({absent} empty), {missing} missing")
 
     first = rows[0][3]
     Path(f"asm/{ver}").mkdir(parents=True, exist_ok=True)
@@ -210,13 +304,33 @@ def main():
         f'\t.arm\n\t.section .text\n\t.global EntryPoint\nEntryPoint:\n'
         f'\t.incbin "roms/{code}.gba", 0xC0, {first - ROM_BASE - 0xC0:#x}\n')
 
-    units, data_idx = [], 0
-    data_bounds = []
+    def unit_key(name):
+        if name.startswith("@"):
+            arch, member = name[1:].split(":")
+            obj = f"build/us/lib/{arch}/{member}"
+        elif name.endswith(".c"):
+            obj = f"build/us/src/{name[:-2]}.o"
+        else:
+            return None
+        named = sorted(r[3] for r in rows
+                       if owner.get(r[0]) == obj and r[5] and r[4] == "named")
+        addrs = named or sorted(r[3] for r in rows
+                                if owner.get(r[0]) == obj and r[5])
+        return addrs[len(addrs) // 2] if addrs else None
+
+    head, body, tail = [], [], []
     for line in Path("config/us/units.txt").read_text().splitlines():
-        s = line.strip()
-        if s.startswith("data.s(") or s.startswith("data2.s("):
-            data_idx += 1
-        units.append(line)
+        t = line.strip()
+        if not t or t.startswith("#") or t.endswith(".s") or "(" in t.split()[0]:
+            (tail if t.endswith(")") else head).append(line)
+            continue
+        name = t.split()[0]
+        body.append((unit_key(name), line))
+    ordered = [l for k, l in sorted(body, key=lambda kl: (kl[0] is None, kl[0]))]
+    moved = [l for (k, l), l2 in zip(body, ordered) if l != l2]
+    if moved:
+        print(f"  units reordered: {len(moved)}")
+    units = head + ordered + tail
 
     tbl_start, _ = tr(0x09D6D4BC)
     tbl_end, _ = tr(0x09D6D5ED)
@@ -230,6 +344,7 @@ def main():
           f"data2.s {data_bounds[1][0]:#x}..{data_bounds[1][1]:#x}")
 
     Path(f"config/{ver}/units.txt").write_text("\n".join(units) + "\n")
+    print(f"  units.txt: {len(units)} entries")
     for nm, how in uncertain:
         print(f"    {how:9s} {nm}")
 

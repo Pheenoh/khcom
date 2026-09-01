@@ -68,7 +68,7 @@ void mode_copyright1_0(s32 arg) {
 INCLUDE_ASM("mode_copyright1/mode_copyright1_0.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_JP
 void mode_copyright1_1(void) {
     if (gUnk_02034ED8 != 0) {
         func_080010CC(&gUnk_09EF6AF0, 0);

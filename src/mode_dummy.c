@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "mode_dummy.h"
 
+#ifndef VERSION_EU
 void mode_dummy_0(u32 arg) {
     DummyEntry* entry;
 
@@ -27,6 +28,9 @@ void mode_dummy_0(u32 arg) {
         func_0805FCB0(0x10, 0x18, 2, entry->desc);
     }
 }
+#else
+INCLUDE_ASM("mode_dummy/mode_dummy_0.s");
+#endif
 
 void func_0800C064(void) {
     DummyEntry* entry;

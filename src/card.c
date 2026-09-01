@@ -437,8 +437,12 @@ INCLUDE_ASM("card/func_080AAEEC.s");
 INCLUDE_ASM("card/func_080AAF20.s");
 INCLUDE_ASM("card/func_080AB1F8.s");
 
+#ifndef VERSION_EU
 void func_080AB228(void) {
 }
+#else
+INCLUDE_ASM("card/func_080AB228.s");
+#endif
 
 INCLUDE_ASM("card/func_080AB22C.s");
 INCLUDE_ASM("card/func_080AB334.s");
