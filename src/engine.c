@@ -129,7 +129,31 @@ u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     return 0;
 }
 
+#ifdef NON_MATCHING
+void func_08002488(u16 a, u16 b, void* c, void* d, void* e, u16 f) {
+    u8* p;
+    u32 z;
+
+    p = gUnk_030074C8;
+    if (*(u16*)(p + 0x28A8) > 0x7F) {
+        return;
+    }
+    z = 0;
+    *(u16*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AB8) = a;
+    *(u16*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1ABA) = b;
+    *(void**)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AA8) = d;
+    *(void**)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AAC) = e;
+    *(u32*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AB0) = z;
+    *(u16*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1ABE) = f;
+    *(u16*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1ABC) = z;
+    *(void**)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AB4) = c;
+    *(u32*)(p + *(u16*)(p + 0x28A8) * 4 + 0x26A8) = (u32)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AA8);
+    *(u16*)(p + 0x28A8) += 1;
+    *(u16*)(p + 0x28AA) += 1;
+}
+#else
 INCLUDE_ASM("engine/func_08002488.s");
+#endif
 
 ObjTiles* LoadObjTiles(void* src, u16 size) {
     ObjTiles* node;
@@ -499,7 +523,56 @@ u8 func_080038E4(ObjTiles* a, u16* b, void* c) {
     }
     return 0;
 }
-INCLUDE_ASM("engine/func_08003970.s");
+ObjTiles* func_08003970(u16 size) {
+    ObjTiles* node;
+    ObjTiles* cur;
+    ObjTiles* next;
+    s32 avail;
+    s16 end;
+
+    node = func_08000D0C(gUnk_030074C8 + 0x1A94);
+    if (node == 0) {
+        return 0;
+    }
+    node->unk_20 = 2;
+    node->unk_08 = size / 32;
+    node->unk_00 = 0;
+    node->unk_04 = 0;
+    *(ObjTiles**)((u8*)node + 0x24) = node;
+    cur = func_08000C8C(gUnk_030074C8 + 0x1A94);
+    if (cur == 0) {
+        node->unk_06 = *(u16*)(gUnk_030074C8 + 0x1AA4);
+        func_08000BC8(node->unk_0C, gUnk_030074C8 + 0x1A94);
+        return node;
+    }
+    node->unk_06 = *(u16*)(gUnk_030074C8 + 0x1AA4);
+    avail = cur->unk_06 - *(u16*)(gUnk_030074C8 + 0x1AA4);
+    if (node->unk_08 <= (s16)avail) {
+        func_08000C24(node->unk_0C, gUnk_030074C8 + 0x1A94, cur->unk_0C);
+        return node;
+    }
+    for (;;) {
+        if (cur == 0) {
+            break;
+        }
+        next = func_08000CD4(cur->unk_0C);
+        node->unk_06 = cur->unk_06 + cur->unk_08;
+        if (node->unk_06 + node->unk_08 > *(u16*)(gUnk_030074C8 + 0x1AA6)) {
+            break;
+        }
+        if (next != 0) {
+            end = next->unk_06 - node->unk_06;
+        } else {
+            end = *(u16*)(gUnk_030074C8 + 0x1AA6) - node->unk_06;
+        }
+        if (node->unk_08 <= end) {
+            func_08000BF4(node->unk_0C, gUnk_030074C8 + 0x1A94, cur->unk_0C);
+            return node;
+        }
+        cur = next;
+    }
+    return 0;
+}
 
 void func_08003A70(ObjTiles* t, void* src) {
     if (t->unk_20 == 2) {
@@ -1623,7 +1696,48 @@ u16 GetRandom(void) {
     return x;
 }
 
-INCLUDE_ASM("engine/func_080065FC.s");
+void func_080065FC(s32 bg, u16 b, u16 c) {
+    gUnk_02034048 = bg;
+    gUnk_02034040 = 0;
+    gUnk_02034050 = 0;
+    gUnk_02034052 = 0;
+    gUnk_02034054 = 1;
+    if (c == 0) {
+        gUnk_02034058 = 0;
+        switch (b) {
+        case 0x4000:
+        case 0x8000:
+            gUnk_02034056 = 0x1000;
+            break;
+        case 0xC000:
+            gUnk_02034056 = 0x2000;
+            break;
+        case 0:
+        default:
+            gUnk_02034056 = 0x800;
+            break;
+        }
+    } else {
+        gUnk_02034058 = 1;
+        switch (b) {
+        case 0x4000:
+            gUnk_02034056 = 0x400;
+            break;
+        case 0x8000:
+            gUnk_02034056 = 0x1000;
+            break;
+        case 0xC000:
+            gUnk_02034056 = 0x4000;
+            break;
+        case 0:
+        default:
+            gUnk_02034056 = 0x100;
+            break;
+        }
+    }
+    SetBgSize(bg, b);
+    DisableBg(bg);
+}
 void func_080066F4(s16 x, s16 y) {
     if (gUnk_02034058 != 0) {
         gUnk_02034050 = -x;
@@ -1665,7 +1779,37 @@ void func_08006778(u8* a, s32 x, s32 y) {
     func_08007E7C();
     LoadBgMap(gUnk_02034048, *(void**)(a + 0x04), gUnk_02034056);
 }
-INCLUDE_ASM("engine/func_0800685C.s");
+void func_0800685C(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
+    BgAffineSrcData src;
+    BgAffineDstData dst;
+
+    src.texX = *(u16*)(gUnk_02034040 + 0x10) << 10;
+    src.texY = *(u16*)(gUnk_02034040 + 0x12) << 10;
+    src.scrX = -cx;
+    src.scrY = -cy;
+    src.sx = 0x10000 / sx;
+    src.sy = 0x10000 / sy;
+    src.alpha = -rot << 8;
+    BgAffineSet(&src, &dst, 1);
+    switch (bg) {
+    case 2:
+        gUnk_03007510 = dst.pa;
+        gUnk_030074F8 = dst.pb;
+        gUnk_03007514 = dst.pc;
+        gUnk_0300754C = dst.pd;
+        gUnk_0300752C = dst.dx;
+        gUnk_030074F4 = dst.dy;
+        break;
+    case 3:
+        gUnk_030074E8 = dst.pa;
+        gUnk_030074E0 = dst.pb;
+        gUnk_03007504 = dst.pc;
+        gUnk_03007540 = dst.pd;
+        gUnk_03007524 = dst.dx;
+        gUnk_03007560 = dst.dy;
+        break;
+    }
+}
 INCLUDE_ASM("engine/func_08006954.s");
 
 void func_08006B34(u16 a) {
