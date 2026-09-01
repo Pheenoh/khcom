@@ -224,6 +224,7 @@ void task_bos_md_hahen_0(MdHahenWork* work, s32* src) {
 INCLUDE_ASM("bos5/task_bos_md_hahen_0.s");
 #endif
 
+#ifndef VERSION_EU
 s32 task_bos_md_hahen_1(MdHahenWork* work) {
     s32 result;
 
@@ -250,6 +251,9 @@ s32 task_bos_md_hahen_1(MdHahenWork* work) {
 
     return result;
 }
+#else
+INCLUDE_ASM("bos5/task_bos_md_hahen_1.s");
+#endif
 
 void task_bos_md_hahen_2(MdHahenWork* work) {
     s16 x;
@@ -274,6 +278,7 @@ void task_bos_md_hahen_3(MdHahenWork* work) {
     ReleaseObjTiles((void*)work->unk_01C);
 }
 
+#ifndef VERSION_EU
 void func_080FD9B8(u16 model, u16 slot) {
     void* src;
     s32 size;
@@ -288,7 +293,11 @@ void func_080FD9B8(u16 model, u16 slot) {
 
     gUnk_02034FF8[(s16)slot].unk_0C = LoadObjPalette(src, size);
 }
+#else
+INCLUDE_ASM("bos5/func_080FD9B8.s");
+#endif
 
+#ifndef VERSION_EU
 void func_080FDA28(u16 model, u16 slot) {
     void* src;
 
@@ -300,7 +309,11 @@ void func_080FDA28(u16 model, u16 slot) {
 
     gUnk_02034FF8[(s16)slot].unk_10 = LoadObjTiles(src, 0x1000);
 }
+#else
+INCLUDE_ASM("bos5/func_080FDA28.s");
+#endif
 
+#ifndef VERSION_EU
 s16 func_080FDA98(u16 model, u16 slot) {
     if (gUnk_09992F70[(s16)model].unk_02 == 13 && func_080D2DD8()) {
         gUnk_02034FF8[(s16)slot].unk_14 = gUnk_099A8914;
@@ -308,6 +321,9 @@ s16 func_080FDA98(u16 model, u16 slot) {
         gUnk_02034FF8[(s16)slot].unk_14 = gUnk_09992F70[(s16)model].unk_10;
     }
 }
+#else
+INCLUDE_ASM("bos5/func_080FDA98.s");
+#endif
 
 INCLUDE_ASM("bos5/func_080FDB1C.s");
 INCLUDE_ASM("bos5/func_080FE89C.s");

@@ -83,6 +83,7 @@ void func_08110994(LstWork* work, u16 a) {
     s->unk_12 = a;
 }
 
+#ifndef VERSION_EU
 void func_081109A8(LstWork* work) {
     LstState* s;
     u16 zero;
@@ -94,6 +95,9 @@ void func_081109A8(LstWork* work) {
     s->unk_06 = zero;
     s->unk_08 = zero;
 }
+#else
+INCLUDE_ASM("bos7/func_081109A8.s");
+#endif
 
 INCLUDE_ASM("bos7/func_081109B8.s");
 INCLUDE_ASM("bos7/func_08110A38.s");

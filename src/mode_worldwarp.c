@@ -185,6 +185,7 @@ void mode_worldwarp_1(void) {
     func_08100980();
 }
 
+#ifndef VERSION_EU
 void mode_worldwarp_2(void) {
     s32 i;
 
@@ -207,6 +208,9 @@ void mode_worldwarp_2(void) {
     func_08065AE0(gUnk_020356E0, 24);
     EwramFree(gUnk_0203550C);
 }
+#else
+INCLUDE_ASM("mode_worldwarp/mode_worldwarp_2.s");
+#endif
 
 u32 func_08101518(void) {
     return gUnk_02039BB0.unk_174;
@@ -305,6 +309,7 @@ void func_08101768(void) {
     }
 }
 
+#ifndef VERSION_EU
 void func_081017A0(void) {
     s16 prev;
     u16 keys;
@@ -357,7 +362,11 @@ void func_081017A0(void) {
         m4aSongNumStart(0x65);
     }
 }
+#else
+INCLUDE_ASM("mode_worldwarp/func_081017A0.s");
+#endif
 
+#ifndef VERSION_EU
 void func_08101970(void) {
     s32 i;
     u16 flags;
@@ -405,3 +414,6 @@ void func_08101970(void) {
     SetBgScroll(0, gUnk_02035884 >> 8, 0);
     SetBgScroll(1, gUnk_02035880 >> 8, 0);
 }
+#else
+INCLUDE_ASM("mode_worldwarp/func_08101970.s");
+#endif

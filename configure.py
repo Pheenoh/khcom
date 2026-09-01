@@ -11,7 +11,7 @@ import ninja_syntax
 
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 
-ARCHIVE_BSS = {"us": 0x020387B8, "jp": 0x02038728}
+ARCHIVE_BSS = {"us": 0x020387B8, "jp": 0x02038728, "eu": 0x02038DC8}
 BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 
 DEFAULT_VERSION = "us"

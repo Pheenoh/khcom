@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "mode_status.h"
 
+#ifndef VERSION_EU
 void mode_status_0(void) {
     func_08004D74();
     func_08004DB0();
@@ -28,6 +29,9 @@ void mode_status_0(void) {
     TaskCreate(&gUnk_02034EE0, &gUnk_09EF4EF0, 0);
     func_08006120(0, 0x10);
 }
+#else
+INCLUDE_ASM("mode_status/mode_status_0.s");
+#endif
 
 void mode_status_1(void) {
     func_0801CC80();

@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "mode_title.h"
 
+#ifndef VERSION_EU
 void mode_title_0(void) {
     gUnk_02034ECA = 0;
     func_0801CB44();
@@ -48,6 +49,9 @@ void mode_title_0(void) {
     m4aSongNumStart(0);
     gUnk_02034EC0 = 0x1E;
 }
+#else
+INCLUDE_ASM("mode_title/mode_title_0.s");
+#endif
 
 void mode_title_1(void) {
     switch (gUnk_02034E98) {

@@ -45,16 +45,23 @@ def named(rom):
 
 def us_functions(mapfile):
     rows = []
+    owner = {}
+    cur = None
     for line in Path(mapfile).read_text().splitlines():
+        m = re.match(r"^ \.text +0x08[0-9a-f]{6} +0x[0-9a-f]+ (\S+)$", line)
+        if m:
+            cur = m.group(1)
+            continue
         if "=" in line:
             continue
         m = MAP_RE.match(line)
         if m:
             rows.append((int(m.group(1), 16), m.group(2)))
+            owner.setdefault(m.group(2), cur)
     rows = sorted(set(rows))
     rows = [r for r in rows if CODE_LO <= r[0] < CODE_HI]
-    return [(a, (rows[i + 1][0] if i + 1 < len(rows) else CODE_HI), n)
-            for i, (a, n) in enumerate(rows)]
+    return ([(a, (rows[i + 1][0] if i + 1 < len(rows) else CODE_HI), n)
+             for i, (a, n) in enumerate(rows)], owner)
 
 
 def mask(b):
@@ -81,15 +88,76 @@ def main():
     ot = Path(f"roms/{args.code}.gba").read_bytes()
     usn = named("roms/B8CE.gba")
     otn = named(f"roms/{args.code}.gba")
-    funcs = us_functions(args.map)
+    funcs, owner = us_functions(args.map)
     n = len(funcs)
     addr = [None] * n
     how = ["-"] * n
 
+    dropped = set()
+    per_obj = {}
+    for a, e, nm in funcs:
+        if nm in usn:
+            per_obj.setdefault(owner.get(nm), []).append(nm)
+    for obj, names in per_obj.items():
+        if obj and not any(nm in otn for nm in names):
+            dropped.add(obj)
     for i, (a, e, nm) in enumerate(funcs):
+        if owner.get(nm) in dropped or (nm in usn and nm not in otn):
+            how[i] = "absent"
+
+    for i, (a, e, nm) in enumerate(funcs):
+        if how[i] == "absent":
+            continue
         if nm in usn and nm in otn:
             addr[i] = otn[nm]
             how[i] = "named"
+
+    span = CODE_HI - ROM_BASE + 0x1000
+    mus, mot = mask(us[:span]), mask(ot[:span])
+    for i, (a, e, nm) in enumerate(funcs):
+        if addr[i] is not None or how[i] == "absent":
+            continue
+        sz = e - a
+        if sz < 24 or sz > 16384:
+            continue
+        pat = mus[a - ROM_BASE:a - ROM_BASE + sz]
+        j = mot.find(pat)
+        if j < 0 or j % 2 or mot.find(pat, j + 1) >= 0:
+            continue
+        addr[i] = ROM_BASE + j
+        how[i] = "global"
+
+    span_of = {}
+    for i, (a, e, nm) in enumerate(funcs):
+        if addr[i] is None:
+            continue
+        o = owner.get(nm)
+        if o is None:
+            continue
+        d = span_of.setdefault(o, {"named": [], "all": [], "lo": a, "hi": e})
+        d["lo"] = min(d["lo"], a)
+        d["hi"] = max(d["hi"], e)
+        d["all"].append(addr[i])
+        if how[i] == "named":
+            d["named"].append(addr[i])
+    ranges = {}
+    for o, d in span_of.items():
+        ref = d["named"] or d["all"]
+        ref = sorted(ref)
+        mid = ref[len(ref) // 2]
+        slack = max(2 * (d["hi"] - d["lo"]), 0x2000)
+        ranges[o] = (mid - slack, mid + slack)
+    culled = 0
+    for i, (a, e, nm) in enumerate(funcs):
+        if how[i] != "global":
+            continue
+        r = ranges.get(owner.get(nm))
+        if r and not (r[0] <= addr[i] <= r[1]):
+            addr[i] = None
+            how[i] = "-"
+            culled += 1
+    if culled:
+        print(f"  culled {culled} anchors inconsistent with their unit")
 
     def guess(i):
         slack = 0
@@ -107,7 +175,7 @@ def main():
     for _ in range(PASSES):
         progress = False
         for i, (a, e, nm) in enumerate(funcs):
-            if addr[i] is not None:
+            if addr[i] is not None or how[i] == "absent":
                 continue
             sz = e - a
             if sz < 4 or sz > 16384:
@@ -115,12 +183,16 @@ def main():
             g = guess(i)
             if g is None:
                 g = a
-            pat = mask(us[a - ROM_BASE:a - ROM_BASE + sz])
-            for d in range(0, WINDOW, 2):
+            off = a - ROM_BASE
+            pat = mus[off:off + sz]
+            phase = off % 4
+            g -= (g - ROM_BASE - phase) % 4
+            for d in range(0, WINDOW, 4):
                 for cand in (g + d, g - d):
-                    if cand < CODE_LO:
+                    o = cand - ROM_BASE
+                    if cand < CODE_LO or o + sz > len(mot):
                         continue
-                    if mask(ot[cand - ROM_BASE:cand - ROM_BASE + sz]) == pat:
+                    if mot[o:o + sz] == pat:
                         addr[i] = cand
                         how[i] = "body"
                         progress = True
@@ -132,11 +204,11 @@ def main():
 
     i = 0
     while i < n:
-        if addr[i] is not None:
+        if addr[i] is not None or how[i] == "absent":
             i += 1
             continue
         j = i
-        while j < n and addr[j] is None:
+        while j < n and addr[j] is None and how[j] != "absent":
             j += 1
         if i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
             start = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
@@ -155,7 +227,7 @@ def main():
         for i, (a, e, nm) in enumerate(funcs):
             va = "-" if addr[i] is None else f"{addr[i]:#010x}"
             f.write(f"{nm}\t{a:#010x}\t{e - a}\t{va}\t{how[i]}\n")
-    counts = {k: how.count(k) for k in ("named", "body", "fill", "-")}
+    counts = {k: how.count(k) for k in ("named", "global", "body", "fill", "absent", "-")}
     print(f"{out}: {n} functions -> "
           + ", ".join(f"{k} {v}" for k, v in counts.items()))
 

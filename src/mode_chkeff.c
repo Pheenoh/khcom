@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "mode_chkeff.h"
 
+#ifndef VERSION_EU
 void mode_chkeff_0(void) {
     gUnk_020348B8 = EwramAlloc(sizeof(ChkEffWork));
     func_08004E64();
@@ -35,6 +36,9 @@ void mode_chkeff_0(void) {
     gUnk_020348B8->unk_26 = 16;
     func_08006778(gUnk_09ED9A1C[0], 0x78, 0x50);
 }
+#else
+INCLUDE_ASM("mode_chkeff/mode_chkeff_0.s");
+#endif
 
 #ifdef NON_MATCHING
 void mode_chkeff_1(void) {
