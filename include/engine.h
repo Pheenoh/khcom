@@ -38,6 +38,17 @@ typedef struct Dma3Request {
     u16 size;
 } Dma3Request;
 
+typedef struct BgEntry {
+    u8 unk_00;
+    u8 unk_01[3];
+    void* unk_04;
+    u8 unk_08;
+    u8 unk_09;
+    u16 unk_0A;
+    u16 unk_0C;
+    u16 unk_0E;
+} BgEntry;
+
 typedef struct Dma3Pending {
     void* unk_00;
     u16 unk_04;
@@ -101,7 +112,7 @@ extern u16 gUnk_030074E4;
 extern u16 gUnk_030074CC;
 extern u16 gUnk_030074D8;
 extern vu16 gUnk_03007528;
-extern void* gUnk_030074D4;
+extern BgEntry* gUnk_030074D4;
 extern u16 gUnk_03007554;
 extern u8 gUnk_08121680[];
 extern u8 gUnk_08121688[];
@@ -111,7 +122,10 @@ extern u32 gUnk_0203401C;
 extern u32 gUnk_02034020;
 extern u16 gUnk_02034024;
 extern u8 gUnk_02034026;
-extern u32 gUnk_02034040;
+extern u8* gUnk_02034040;
+extern s16 gUnk_02034050;
+extern s16 gUnk_02034052;
+extern u8 gUnk_02034058;
 extern s32 gUnk_02034048;
 extern u8 gUnk_02034054;
 extern u32 gUnk_0203405C;
@@ -175,7 +189,7 @@ u8 func_0800558C(u32 a);
 void func_08005654(s32 bg, u8 on);
 void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size);
 void func_08003858(ObjTiles* t, u16 slot, u16 size, void* src);
-void* func_08004BD8(u8* a, u16 x, u16 y);
+void* func_08004BD8(BgEntry* e, u16 x, u16 y);
 u8 func_08005AC4(AnimState* a);
 void func_08006494(u16 a, u16 b);
 void func_080064E8(u16 a, u16 b);
