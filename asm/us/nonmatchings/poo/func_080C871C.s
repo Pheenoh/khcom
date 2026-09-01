@@ -66,7 +66,7 @@ _080C8794:
 	ldr r2, [r2, #0x00]
 	ldr r3, _080C87C8 @ =0x0203C3E8
 	ldr r3, [r3, #0x00]
-	bl func_0801CB6C
+	bl GetAngle
 	adds r1, r4, #0x0
 	adds r1, #0x38
 	strb r0, [r1, #0x00]
@@ -91,7 +91,7 @@ _080C87CC:
 	ldr r2, [r2, #0x00]
 	ldr r3, _080C8808 @ =0x0203C3E8
 	ldr r3, [r3, #0x00]
-	bl func_0801CB6C
+	bl GetAngle
 	adds r1, r4, #0x0
 	adds r1, #0x38
 	movs r2, #0x00

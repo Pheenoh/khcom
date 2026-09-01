@@ -28,7 +28,7 @@ task_wlogo_hlw_0: @ 080B5C64
 	strb r1, [r4, #0x04]
 	movs r1, #0x10
 	movs r2, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	pop {r4}
 	pop {r0}
 	bx r0

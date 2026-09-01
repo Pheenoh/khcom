@@ -102,7 +102,7 @@ _080123C8:
 	ldr r1, [r5, #0x08]
 	ldr r2, [r4, #0x04]
 	ldr r3, [r4, #0x08]
-	bl func_0801CB6C
+	bl GetAngle
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	ldr r3, _08012498 @ =0x08121400

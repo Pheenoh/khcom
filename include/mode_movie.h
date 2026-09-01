@@ -21,7 +21,7 @@ extern s16 gUnk_0203495C;
 extern s16 gUnk_0203495E;
 extern s16 gUnk_02034960;
 extern void* gUnk_03007484;
-extern u16 gUnk_03007500;
+extern u16 gDispCnt;
 extern u8 gUnk_0815C3EC[];
 extern u8 gUnk_084E0F34[];
 extern u8 gUnk_084F4660[];

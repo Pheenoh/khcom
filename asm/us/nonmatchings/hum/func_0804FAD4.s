@@ -32,7 +32,7 @@ func_0804FAD4: @ 0804FAD4
 	strh r0, [r1, #0x00]
 	movs r0, #0x04
 	movs r1, #0x0E
-	bl func_08005810
+	bl SetBlendAlpha
 	ldr r3, _0804FB1C @ =0x00000804
 	mov r8, r3
 	b _0804FB2C

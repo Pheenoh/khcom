@@ -113,7 +113,7 @@ extern u8 gUnk_09A3489C[];
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void func_08065AE0(void* a, s32 b);
-void func_0801CC80(void);
+void UpdatePlayTime(void);
 void func_080058FC(s32* value, s32 target, u16 steps);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006184(s32 a, u16 b);
@@ -147,7 +147,7 @@ u16 func_08065B54(void* a);
 u8 func_08065B6C(void* a, void* b);
 void func_08107280(void);
 void func_081073F0(void);
-void func_08004FC8(s32 a);
-void func_0800501C(s32 bg);
+void EnableBg(s32 a);
+void DisableBg(s32 bg);
 
 #endif /* GUARD_MODE_MAPINSPECT_H */

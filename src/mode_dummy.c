@@ -8,14 +8,14 @@ void mode_dummy_0(u32 arg) {
     func_08006120(0, 0x10);
     func_08004DB0();
     SetupBg(0, 0, 0x0F, 0);
-    func_08004FC8(0);
+    EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gUnk_08128304, 0x20, 0x0F);
     SetupBg(1, 1, 0x0C, 8);
     LoadBgTiles(1, gUnk_08C6B0C4, 0x7C20);
     LoadBgPalette(1, gUnk_08F683C4, 0x20);
     LoadBgMap(1, gUnk_08EEE384, 0x800);
-    func_08004FC8(1);
+    EnableBg(1);
     gUnk_020348BC = arg;
 
     if (arg > 9) {
@@ -77,7 +77,7 @@ void func_0800C064(void) {
         func_080605A4(0);
         func_08060598();
         SetBgScroll(1, (gFrameCounter << 14) >> 16, 0);
-        func_0801CC80();
+        UpdatePlayTime();
     }
 }
 
@@ -90,7 +90,7 @@ void mode_dummy_1(void) {
     func_080605A4(0);
     func_08060598();
     SetBgScroll(1, (gFrameCounter << 14) >> 16, 0);
-    func_0801CC80();
+    UpdatePlayTime();
 }
 
 void mode_dummy_2(void) {

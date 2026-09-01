@@ -18,7 +18,7 @@ void mode_chkobj_0(void) {
     gUnk_0203489C->unk_46 = 0;
     func_0800B30C(gUnk_0812E744[0].unk_00);
     SetupBg(1, 0, 15, 0);
-    func_08004FC8(0);
+    EnableBg(0);
     func_0805FA8C(1, 0x5400, 0x500);
     func_0805FA60(1, gUnk_08128304, 0x20, 0x0F);
     func_0805FCB0(166, 0, 2, gUnk_0812E744[0].unk_08);

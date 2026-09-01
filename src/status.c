@@ -790,9 +790,9 @@ u8 task_status_meswindow_1(StatusMeswindowWork* work) {
 
 void task_status_meswindow_2(StatusMeswindowWork* work) {
     if (*work->unk_1C == 0) {
-        func_0800501C(0);
+        DisableBg(0);
     } else {
-        func_08004FC8(0);
+        EnableBg(0);
         TaskPoolDraw(&work->pool);
     }
 }

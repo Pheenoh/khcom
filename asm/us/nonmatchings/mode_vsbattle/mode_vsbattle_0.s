@@ -72,10 +72,10 @@ _0800C474:
 	bl SetBgPriority
 	movs r0, #0x03
 	movs r1, #0x01
-	bl func_08005654
+	bl SetBgOverflow
 	movs r0, #0x02
 	movs r1, #0x00
-	bl func_08005654
+	bl SetBgOverflow
 	ldr r0, [r7, #0x00]
 	adds r0, #0x2C
 	movs r1, #0x20

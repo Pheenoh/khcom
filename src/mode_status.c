@@ -22,7 +22,7 @@ void mode_status_0(void) {
     }
 
     LoadBgMap(0, gUnk_09848B98, 0x500);
-    func_0800501C(0);
+    DisableBg(0);
     func_080D733C();
     TaskPoolInit(&gUnk_02034EE0, 4);
     gUnk_02034EF4 = TaskCreate(&gUnk_02034EE0, &gUnk_09EF4F08, 0);
@@ -34,7 +34,7 @@ INCLUDE_ASM("mode_status/mode_status_0.s");
 #endif
 
 void mode_status_1(void) {
-    func_0801CC80();
+    UpdatePlayTime();
     TaskPoolUpdate(&gUnk_02034EE0);
     TaskPoolDraw(&gUnk_02034EE0);
 

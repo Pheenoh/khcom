@@ -63,7 +63,7 @@ _080B5538:
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	movs r0, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	b _080B55C2
 _080B554A:
 	ldrh r0, [r5, #0x02]
@@ -110,9 +110,9 @@ _080B557C:
 	movs r0, #0x00
 	movs r1, #0x10
 	movs r2, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	movs r0, #0x00
-	bl func_0800501C
+	bl DisableBg
 	movs r0, #0x00
 	b _080B5678
 _080B55B2:
@@ -122,7 +122,7 @@ _080B55B2:
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	movs r0, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 _080B55C2:
 	ldrh r1, [r5, #0x08]
 	adds r0, r1, #0x0

@@ -29,7 +29,7 @@ func_08014D78: @ 08014D78
 	bl func_08012674
 	movs r0, #0x02
 	movs r1, #0x10
-	bl func_08005810
+	bl SetBlendAlpha
 	ldr r6, _08014E28 @ =0x02034928
 	ldr r2, [r6, #0x00]
 	str r7, [r2, #0x10]

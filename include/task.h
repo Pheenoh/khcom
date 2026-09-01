@@ -45,8 +45,8 @@ void func_08085C3C(void);
 void _08085D04(s32 a);
 void func_080DFAF4(s32 a, s32 b);
 
-u8 func_0801CB6C(s32 x0, s32 y0, s32 x1, s32 y1);
-void func_0801CC80(void);
+u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
+void UpdatePlayTime(void);
 void func_0801CCB4(void);
 void func_0801CD20(void);
 void func_0801CD74(EvtObj* obj, s32 anim);

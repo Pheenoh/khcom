@@ -85,7 +85,7 @@ void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* pool);
 void TaskPoolDestroy(TaskPool* pool);
 void SetBgPriority(s32 bg, u16 priority);
-void func_0800501C(s32 bg);
+void DisableBg(s32 bg);
 void func_080058FC(s32* value, s32 target, u16 steps);
 void func_08006120(s32 a, s32 b);
 void func_080062F4(u16 a, s32 b);

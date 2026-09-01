@@ -322,13 +322,13 @@ _08101E70:
 	movs r1, #0x01
 	bl TaskPoolInit
 	movs r0, #0x00
-	bl func_08004FC8
+	bl EnableBg
 	movs r0, #0x01
-	bl func_08004FC8
+	bl EnableBg
 	movs r0, #0x02
-	bl func_08004FC8
+	bl EnableBg
 	movs r0, #0x03
-	bl func_0800501C
+	bl DisableBg
 	add sp, #0x004
 	pop {r4, r5}
 	pop {r0}

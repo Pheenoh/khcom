@@ -10,14 +10,14 @@ void mode_debug_0(void) {
     func_08004DB0();
     SetupBg(0, 0, 15, 0);
     SetupBg(1, 2, 31, 0);
-    func_08005610(1, 0x80);
-    func_080055EC(1, 0);
+    SetBgColorMode(1, 0x80);
+    SetBgSize(1, 0);
     LoadBgTiles(1, gUnk_08C72CE4, 0x5B40);
     LoadBgPalette(1, gUnk_08F683E4, 0x200);
     LoadBgMap(1, gUnk_08EEEB84, 0x800);
-    func_08004FC8(1);
+    EnableBg(1);
     func_08005778(31, 31, 31);
-    func_08004FC8(0);
+    EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gUnk_08F68604, 0x20, 0x0F);
     gUnk_02034898->unk_04 = LoadObjTiles(gUnk_08950902, 0x2E0);

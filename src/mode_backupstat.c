@@ -7,7 +7,7 @@ void mode_backupstat_0(void) {
 
     func_08004DB0();
     SetupBg(0, 0, 15, 0);
-    func_08004FC8(0);
+    EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gUnk_08128304, 32, 15);
     gUnk_02035FE8 = 0;

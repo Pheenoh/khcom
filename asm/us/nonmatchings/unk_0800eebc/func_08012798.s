@@ -42,7 +42,7 @@ _080127E0:
 	adds r0, r6, #0x0
 	movs r1, #0x10
 	movs r2, #0x10
-	bl func_080057A0
+	bl SetBgBlend
 	ldr r4, _0801280C @ =0x02034928
 	ldr r0, [r4, #0x00]
 	movs r5, #0x00

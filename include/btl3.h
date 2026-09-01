@@ -282,7 +282,7 @@ void func_08019A30(void);
 u32 func_0801A8A4(void* a, void* b, s32 c, s32 d);
 u16 func_0801AF1C(s32 a);
 void func_0801BDDC(void* a, s32 b, s32 c, s32 d);
-s32 func_0801CB6C(s32 a, s32 b, s32 c, s32 d);
+s32 GetAngle(s32 a, s32 b, s32 c, s32 d);
 void func_0802F284(s32 a, s32 b, s32 c);
 u16 func_0803FDC8(BtlFormEntry* entry);
 

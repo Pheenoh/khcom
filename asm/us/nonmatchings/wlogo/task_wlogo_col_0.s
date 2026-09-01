@@ -64,7 +64,7 @@ task_wlogo_col_0: @ 080B59C8
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	movs r0, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	adds r4, r6, #0x0
 	adds r4, #0x10
 	ldr r1, _080B5A90 @ =0x09EF3610

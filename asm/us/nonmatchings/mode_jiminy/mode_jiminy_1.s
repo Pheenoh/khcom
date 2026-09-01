@@ -133,7 +133,7 @@ _0805B5DC:
 	subs r1, r1, r0
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
-	bl func_08005810
+	bl SetBlendAlpha
 	ldr r0, [r4, #0x00]
 	ldr r7, _0805B654 @ =0x00000CAC
 	adds r0, r0, r7
@@ -143,7 +143,7 @@ _0805B5DC:
 	cmp r0, #0x00
 	beq _0805B65C
 	movs r0, #0x02
-	bl func_08004FC8
+	bl EnableBg
 	ldr r0, [r4, #0x00]
 	movs r1, #0xC7
 	lsls r1, r1, #0x04
@@ -175,7 +175,7 @@ _0805B654: .4byte 0x00000CAC
 _0805B658: .4byte 0x00000C7C
 _0805B65C:
 	movs r0, #0x02
-	bl func_0800501C
+	bl DisableBg
 _0805B662:
 	movs r5, #0x00
 	ldr r4, _0805B6E8 @ =0x02034934
@@ -566,7 +566,7 @@ _0805B968:
 	adds r0, r4, r1
 	bl func_08005B64
 _0805B99E:
-	bl func_0801CC80
+	bl UpdatePlayTime
 	ldr r0, _0805B9C8 @ =0x02034934
 	ldr r1, [r0, #0x00]
 	ldr r2, _0805B9CC @ =0x00000D3E

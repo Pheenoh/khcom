@@ -7,7 +7,7 @@
 mode_ms_top_1: @ 08101FF4
 	push {r4, r5, lr}
 	add sp, #-0x004
-	bl func_0801CC80
+	bl UpdatePlayTime
 	ldr r0, _08102014 @ =0x02035890
 	movs r1, #0x00
 	ldsh r0, [r0, r1]

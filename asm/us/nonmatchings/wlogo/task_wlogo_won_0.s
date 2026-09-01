@@ -104,7 +104,7 @@ _080B4F6E:
 	movs r0, #0x00
 	movs r1, #0x10
 	movs r2, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

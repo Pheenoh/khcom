@@ -7,7 +7,7 @@
 func_080B3A48: @ 080B3A48
 	push {lr}
 	movs r0, #0x00
-	bl func_0800501C
+	bl DisableBg
 	ldr r0, _080B3A64 @ =0x02034B4C
 	ldr r0, [r0, #0x00]
 	movs r1, #0xD8

@@ -731,13 +731,13 @@ _08100158:
 	ldr r1, _081002B4 @ =0x02035120
 	str r0, [r1, #0x00]
 	movs r0, #0x00
-	bl func_08004FC8
+	bl EnableBg
 	movs r0, #0x01
-	bl func_08004FC8
+	bl EnableBg
 	movs r0, #0x02
-	bl func_0800501C
+	bl DisableBg
 	movs r0, #0x03
-	bl func_0800501C
+	bl DisableBg
 	add sp, #0x014
 	pop {r3, r4, r5}
 	mov r8, r3

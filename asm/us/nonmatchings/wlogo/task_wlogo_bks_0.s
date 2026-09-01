@@ -40,7 +40,7 @@ task_wlogo_bks_0: @ 080B7838
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	movs r0, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	adds r0, r6, #0x0
 	adds r0, #0x3C
 	movs r1, #0x0F

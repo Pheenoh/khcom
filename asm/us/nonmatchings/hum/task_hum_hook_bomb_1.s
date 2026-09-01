@@ -108,7 +108,7 @@ _0804CD64:
 	adds r7, #0x04
 	adds r3, r3, r7
 	ldr r3, [r3, #0x00]
-	bl func_0801CB6C
+	bl GetAngle
 	b _0804CDAC
 _0804CDA4: .4byte 0x00000301
 _0804CDA8:
@@ -213,7 +213,7 @@ _0804CDEA:
 	lsls r5, r5, #0x01
 	adds r3, r3, r5
 	ldr r3, [r3, #0x00]
-	bl func_0801CB6C
+	bl GetAngle
 	strb r0, [r4, #0x00]
 	b _0804CEBE
 _0804CE78: .4byte 0x08121400

@@ -59,8 +59,8 @@ void mode_battle_0(u32 mode) {
             SetBgPriority(0, 2);
             SetBgPriority(2, 0);
             SetBgPriority(1, 1);
-            func_08005654(2, 0);
-            func_080055EC(1, 0x4000);
+            SetBgOverflow(2, 0);
+            SetBgSize(1, 0x4000);
             break;
         case 0x94:
         case 0x95:
@@ -76,7 +76,7 @@ void mode_battle_0(u32 mode) {
             SetBgPriority(0, 2);
             SetBgPriority(2, 0);
             SetBgPriority(1, 1);
-            func_08005654(2, 0);
+            SetBgOverflow(2, 0);
             break;
         }
     } else if (gUnk_02039B84->unk_068 & 0x800000000) {
@@ -88,8 +88,8 @@ void mode_battle_0(u32 mode) {
         SetupBg(gUnk_02039B84->unk_1C4, 2, 28, 10);
         SetBgPriority(gUnk_02039B84->unk_1C6, 2);
         SetBgPriority(gUnk_02039B84->unk_1C4, 0);
-        func_08005654(gUnk_02039B84->unk_1C6, 1);
-        func_08005654(gUnk_02039B84->unk_1C4, 0);
+        SetBgOverflow(gUnk_02039B84->unk_1C6, 1);
+        SetBgOverflow(gUnk_02039B84->unk_1C4, 0);
     } else if (gUnk_02039B84->unk_068 & 0x800) {
         gUnk_02039B84->unk_1C4 = 2;
         gUnk_02039B84->unk_1C6 = 3;
@@ -123,8 +123,8 @@ void mode_battle_0(u32 mode) {
         SetupBg(2, 2, 28, 10);
         SetBgPriority(3, 2);
         SetBgPriority(2, 0);
-        func_08005654(3, 1);
-        func_08005654(2, 0);
+        SetBgOverflow(3, 1);
+        SetBgOverflow(2, 0);
     } else {
         gUnk_02039B84->unk_1C4 = 2;
         gUnk_02039B84->unk_1C6 = 3;
@@ -178,8 +178,8 @@ void mode_battle_0(u32 mode) {
         SetupBg(2, 2, 28, 10);
         SetBgPriority(3, 2);
         SetBgPriority(2, 0);
-        func_08005654(3, 1);
-        func_08005654(2, 0);
+        SetBgOverflow(3, 1);
+        SetBgOverflow(2, 0);
     }
 
     TaskPoolInit(&gUnk_02039B84->unk_02C, 40);
@@ -371,7 +371,7 @@ void mode_battle_1(void) {
                 gUnk_02039B84->unk_068 &= ~0x800000;
             }
 
-            func_0801CC80();
+            UpdatePlayTime();
         }
 
         if (!(gUnk_02039B84->unk_068 & 0x2000)) {

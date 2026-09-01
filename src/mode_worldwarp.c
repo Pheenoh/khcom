@@ -126,17 +126,17 @@ void mode_worldwarp_0(void) {
     func_08065ACC(gUnk_020356E0, 24);
     gUnk_020356D8 = func_08100608(gUnk_020354F0[gUnk_02039BB0.unk_00E]);
     gUnk_020357A0 = func_0810063C(gUnk_020354F0[gUnk_020354E8]);
-    func_08004FC8(0);
-    func_08004FC8(1);
-    func_0800501C(2);
-    func_0800501C(3);
+    EnableBg(0);
+    EnableBg(1);
+    DisableBg(2);
+    DisableBg(3);
 }
 #else
 INCLUDE_ASM("mode_worldwarp/mode_worldwarp_0.s");
 #endif
 
 void mode_worldwarp_1(void) {
-    func_0801CC80();
+    UpdatePlayTime();
     switch (gUnk_020357A2) {
     case 0:
         func_080058FC(&gUnk_020357A8[0], 0, gUnk_020357A4);

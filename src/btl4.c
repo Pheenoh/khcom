@@ -675,7 +675,7 @@ void task_btl_hpoth_3(BtlHpothWork* work) {
 }
 
 void func_0805DA64(u16 a) {
-    gUnk_03007500 = (gUnk_03007500 & 0xFFF8) | 1;
+    gDispCnt = (gDispCnt & 0xFFF8) | 1;
     func_080A411C(gUnk_02039B84->unk_040, 0, a);
 }
 
@@ -684,7 +684,7 @@ void func_0805DA98(u16 a) {
 }
 
 void func_0805DAB4(void) {
-    gUnk_03007500 = (gUnk_03007500 & 0xFFF8) | 2;
+    gDispCnt = (gDispCnt & 0xFFF8) | 2;
 }
 
 void func_0805DACC(BtlEffect* p, u16 b, void* c) {

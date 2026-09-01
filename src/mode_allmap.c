@@ -59,7 +59,7 @@ void func_080D3370(void) {
 }
 
 void mode_allmap_1(void) {
-    func_0801CC80();
+    UpdatePlayTime();
     TaskPoolUpdate(&gUnk_0203C4F0);
     TaskPoolDraw(&gUnk_0203C4F0);
     if (gUnk_0203C4E0 == 0 && !func_08006314()) {
@@ -93,12 +93,12 @@ void mode_allmap_1(void) {
     }
     func_080D3050();
     if (gUnk_0203C4E0 == 2 || gUnk_0203C4E0 == 3) {
-        func_08004FC8(0);
-        func_08004FC8(1);
+        EnableBg(0);
+        EnableBg(1);
         func_080D51D8();
     } else {
-        func_0800501C(0);
-        func_0800501C(1);
+        DisableBg(0);
+        DisableBg(1);
     }
 }
 

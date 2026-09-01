@@ -99,7 +99,7 @@ _08006A18:
 _08006A1C:
 	ldr r7, _08006A9C @ =0x02034048
 	ldr r0, [r7, #0x00]
-	bl func_08004FC8
+	bl EnableBg
 	ldr r0, _08006AAC @ =0x02034044
 	ldrh r0, [r0, #0x00]
 	cmp r0, #0x00
@@ -175,7 +175,7 @@ _08006AC0:
 _08006AD4:
 	ldr r0, _08006B14 @ =0x02034048
 	ldr r0, [r0, #0x00]
-	bl func_0800501C
+	bl DisableBg
 _08006ADC:
 	ldr r2, _08006B18 @ =0x02034044
 	ldrh r0, [r2, #0x00]

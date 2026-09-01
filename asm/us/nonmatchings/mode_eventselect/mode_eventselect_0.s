@@ -16,7 +16,7 @@ mode_eventselect_0: @ 080750D4
 	movs r3, #0x00
 	bl SetupBg
 	movs r0, #0x00
-	bl func_08004FC8
+	bl EnableBg
 	movs r1, #0x80
 	lsls r1, r1, #0x08
 	movs r2, #0x80

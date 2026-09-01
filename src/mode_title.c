@@ -18,7 +18,7 @@ void mode_title_0(void) {
     } else {
         LoadBgMap(0, gUnk_0983E398, 0x800);
     }
-    func_0800501C(0);
+    DisableBg(0);
     SetupBg(1, 0, 0x1E, 0);
     SetBgPriority(1, 3);
     if (gUnk_02039BB0.unk_008 & 0x200) {
@@ -28,11 +28,11 @@ void mode_title_0(void) {
         LoadBgTiles(1, gUnk_097C77B8, 0x7FA0);
         LoadBgMap(1, gUnk_0983EB98, 0x800);
     }
-    func_0800501C(1);
+    DisableBg(1);
     func_080C736C();
     func_080C73A4(0, 0, 0);
     SetupBg(2, 2, 0x1F, 0xB);
-    func_080055EC(2, 0x4000);
+    SetBgSize(2, 0x4000);
     SetBgPriority(2, 2);
     LoadBgTiles(2, gUnk_097CF758, 0x3F00);
     LoadBgPalette(2, gUnk_0984A618, 0xA0);
@@ -111,10 +111,10 @@ void mode_title_1(void) {
         }
         gUnk_02034E98 = 4;
         gUnk_02034EC8 = 0;
-        gUnk_03007554 = 0x1343;
-        gUnk_03007564 = 0x10;
+        gBldCnt = 0x1343;
+        gBldAlpha = 0x10;
         gUnk_02034EC0 = 4;
-        func_08004FC8(1);
+        EnableBg(1);
         break;
     case 4:
         if (gUnk_02034EC0 != 0) {
@@ -123,9 +123,9 @@ void mode_title_1(void) {
         }
         gUnk_02034EC0 = 4;
         gUnk_02034EC8++;
-        gUnk_03007564 = (gUnk_02034EC8 << 8) | (16 - gUnk_02034EC8);
+        gBldAlpha = (gUnk_02034EC8 << 8) | (16 - gUnk_02034EC8);
         if (gUnk_02034EC8 > 15) {
-            gUnk_03007554 = 0;
+            gBldCnt = 0;
             func_080D5B04();
             gUnk_02034E98 = 5;
         }
@@ -151,11 +151,11 @@ void mode_title_1(void) {
         func_08000DE8(&gUnk_02034EA0, gUnk_02034EB8);
         func_08000DE8(&gUnk_02034EA0, gUnk_02034EBC);
         gUnk_02034EB4 = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E90, &gUnk_02034EC2);
-        func_0800501C(0);
+        DisableBg(0);
         gUnk_02034E98 = 6;
         gUnk_02034EC8 = 0;
-        gUnk_03007554 = 0x250;
-        gUnk_03007564 = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
+        gBldCnt = 0x250;
+        gBldAlpha = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
         gUnk_02034EC0 = 4;
         break;
     case 6:
@@ -165,9 +165,9 @@ void mode_title_1(void) {
         }
         gUnk_02034EC0 = 4;
         gUnk_02034EC8++;
-        gUnk_03007564 = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
+        gBldAlpha = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
         if (gUnk_02034EC8 > 15) {
-            gUnk_03007554 = 0;
+            gBldCnt = 0;
             gUnk_02034E98 = 8;
         }
         break;
@@ -178,13 +178,13 @@ void mode_title_1(void) {
         }
         gUnk_02034EC0 = 1;
         gUnk_02034EC8--;
-        gUnk_03007564 = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
+        gBldAlpha = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
         if (gUnk_02034EC8 > 15) {
-            gUnk_03007554 = 0;
+            gBldCnt = 0;
             func_08000DE8(&gUnk_02034EA0, gUnk_02034EB4);
             gUnk_02034EB8 = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E60, 0);
             gUnk_02034EBC = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E78, 0);
-            func_08004FC8(0);
+            EnableBg(0);
             gUnk_02034E98 = 5;
         }
         break;

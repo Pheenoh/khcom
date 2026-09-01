@@ -14,7 +14,7 @@ func_080D3034: @ 080D3034
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	adds r0, r2, #0x0
-	bl func_08005810
+	bl SetBlendAlpha
 	pop {r0}
 	bx r0
 	.byte 0x00, 0x00

@@ -8,7 +8,7 @@ void mode_chkeff_0(void) {
     SetupBg(0, 0, 7, 0);
     SetupBg(1, 1, 12, 8);
     SetupBg(2, 2, 28, 10);
-    func_080057A0(2, 16, 16);
+    SetBgBlend(2, 16, 16);
     SetBgPriority(2, 0);
     SetBgPriority(0, 1);
     SetBgPriority(1, 2);
@@ -140,7 +140,7 @@ void mode_chkeff_1(void) {
         TaskPoolUpdate(&gUnk_020348B8->pool);
         TaskPoolDraw(&gUnk_020348B8->pool);
         func_0800675C(gUnk_020348B8->unk_1C, gUnk_020348B8->unk_20, gUnk_020348B8->unk_20);
-        func_08005810(gUnk_020348B8->unk_24, gUnk_020348B8->unk_26);
+        SetBlendAlpha(gUnk_020348B8->unk_24, gUnk_020348B8->unk_26);
 
         if (gUnk_020348B8->unk_16 == 0 || (GetKeysRepeat() & 1)) {
             func_08006954();

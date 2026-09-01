@@ -32,7 +32,7 @@ func_08057E90: @ 08057E90
 	strh r0, [r1, #0x00]
 	movs r0, #0x06
 	movs r1, #0x0C
-	bl func_08005810
+	bl SetBlendAlpha
 	ldr r3, _08057ED8 @ =0x00000804
 	mov r8, r3
 	b _08057EE8

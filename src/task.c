@@ -1,6 +1,6 @@
 #include "task.h"
 
-u8 func_0801CB6C(s32 x0, s32 y0, s32 x1, s32 y1) {
+u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1) {
     s32 dx;
     s32 dy;
     u8 angle;
@@ -55,7 +55,7 @@ u8 func_0801CB6C(s32 x0, s32 y0, s32 x1, s32 y1) {
     return angle;
 }
 
-void func_0801CC80(void) {
+void UpdatePlayTime(void) {
     if (gFrameCounter % 60 == 0) {
         if (gUnk_02039BB0.unk_1DC <= 0x57E3E) {
             gUnk_02039BB0.unk_1DC++;

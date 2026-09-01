@@ -24,7 +24,7 @@ _080C8B74:
 	ldr r1, [r4, #0x2C]
 	ldr r2, [r4, #0x40]
 	ldr r3, [r4, #0x44]
-	bl func_0801CB6C
+	bl GetAngle
 	strb r0, [r5, #0x00]
 	adds r1, r4, #0x0
 	adds r1, #0x3A

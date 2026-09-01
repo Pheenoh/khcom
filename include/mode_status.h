@@ -38,7 +38,7 @@ extern TaskDesc gUnk_09EF4EF0;
 
 void func_08004D74(void);
 void func_08004DB0(void);
-void func_0800501C(s32 bg);
+void DisableBg(s32 bg);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);
@@ -47,7 +47,7 @@ void SetBgPriority(s32 bg, u16 priority);
 void func_08006120(s32 a, u16 b);
 u8 func_08000F48(Task* t);
 u8 func_08006314(void);
-void func_0801CC80(void);
+void UpdatePlayTime(void);
 void func_080D733C(void);
 void func_080E052C(u8 a);
 
