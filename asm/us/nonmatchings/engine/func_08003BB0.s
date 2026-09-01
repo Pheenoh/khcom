@@ -1,79 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08003B24
+	.global func_08003BB0
 	.thumb
 	.thumb_func
-	.type func_08003B24, %function
-func_08003B24: @ 08003B24
-	push {r4, r5, r6, lr}
-	lsls r0, r0, #0x10
-	lsrs r5, r0, #0x10
-	ldr r6, _08003B54 @ =0x030074C8
-	ldr r0, [r6, #0x00]
-	ldr r1, _08003B58 @ =0x00001A94
-	adds r0, r0, r1
-	bl func_08000C8C
-	adds r4, r0, #0x0
-	cmp r4, #0x00
-	beq _08003B50
-	ldr r0, [r6, #0x00]
-	ldr r1, _08003B5C @ =0x00001AA4
-	adds r0, r0, r1
-	ldrh r2, [r0, #0x00]
-	ldrh r0, [r4, #0x06]
-	subs r0, r0, r2
-	lsls r0, r0, #0x10
-	asrs r0, r0, #0x10
-	cmp r5, r0
-	bgt _08003B76
-_08003B50:
-	movs r0, #0x01
-	b _08003BA2
-_08003B54: .4byte 0x030074C8
-_08003B58: .4byte 0x00001A94
-_08003B5C: .4byte 0x00001AA4
-_08003B60:
-	cmp r3, #0x00
-	beq _08003B66
-	ldrh r0, [r3, #0x06]
-_08003B66:
-	subs r0, r0, r2
-	lsls r0, r0, #0x10
-	lsrs r0, r0, #0x10
-	lsls r0, r0, #0x10
-	asrs r0, r0, #0x10
-	cmp r5, r0
-	ble _08003B50
-	adds r4, r3, #0x0
-_08003B76:
-	cmp r4, #0x00
-	beq _08003BA0
-	adds r0, r4, #0x0
-	adds r0, #0x0C
-	bl func_08000CD4
-	adds r3, r0, #0x0
-	ldrh r1, [r4, #0x08]
-	ldrh r4, [r4, #0x06]
-	adds r1, r1, r4
-	lsls r1, r1, #0x10
-	lsrs r2, r1, #0x10
-	asrs r1, r1, #0x10
-	adds r1, r1, r5
-	ldr r0, _08003BA8 @ =0x030074C8
-	ldr r0, [r0, #0x00]
-	ldr r4, _08003BAC @ =0x00001AA6
-	adds r0, r0, r4
-	ldrh r0, [r0, #0x00]
-	cmp r1, r0
-	ble _08003B60
-_08003BA0:
-	movs r0, #0x00
-_08003BA2:
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-_08003BA8: .4byte 0x030074C8
-_08003BAC: .4byte 0x00001AA6
+	.type func_08003BB0, %function
+func_08003BB0: @ 08003BB0
 	.byte 0x00, 0x04, 0x00, 0x0C, 0x09, 0x04, 0x01, 0x43, 0x09, 0x48, 0x01, 0x40, 0x09, 0x48, 0x81, 0x42
 	.byte 0x5C, 0xD0, 0x81, 0x42, 0x1A, 0xD8, 0x80, 0x20, 0x00, 0x02, 0x81, 0x42, 0x52, 0xD0, 0x81, 0x42
 	.byte 0x0A, 0xD8, 0x00, 0x29, 0x36, 0xD0, 0x80, 0x20, 0xC0, 0x01, 0x81, 0x42, 0x3A, 0xD0, 0x59, 0xE0
