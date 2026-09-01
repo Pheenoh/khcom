@@ -327,8 +327,41 @@ INCLUDE_ASM("bos5/func_080FDA98.s");
 
 INCLUDE_ASM("bos5/func_080FDB1C.s");
 INCLUDE_ASM("bos5/func_080FE89C.s");
-INCLUDE_ASM("bos5/func_080FF10C.s");
-INCLUDE_ASM("bos5/func_080FF19C.s");
+void func_080FF10C(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y) {
+    s16 i;
+    s16 j;
+    s16 n;
+    u16 v;
+
+    n = w;
+    v = pal << 12;
+    map += x + y * 32;
+
+    for (j = 0; j < h; j++) {
+        for (i = 0; i < n; i++) {
+            *map = (*map & 0xFFF) | v;
+            map++;
+        }
+        map += 32 - n;
+    }
+}
+void func_080FF19C(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy) {
+    s16 i;
+    s16 j;
+    s16 n;
+
+    n = w;
+    src += sx + sy * 32;
+    dst += dx + dy * 32;
+
+    for (j = 0; j < h; j++) {
+        for (i = 0; i < n; i++) {
+            *dst++ = *src++;
+        }
+        src += 32 - n;
+        dst += 32 - n;
+    }
+}
 INCLUDE_ASM("bos5/func_080FF228.s");
 INCLUDE_ASM("bos5/func_080FF2B8.s");
 INCLUDE_ASM("bos5/func_080FF310.s");
