@@ -12,6 +12,9 @@ void* func_08007E00(void* src, void* dst, u16 size);
 void func_08000C54(void* node, void* pool);
 void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
+void func_08000AE4(void* name);
+void* IwramAlloc(u32 size);
+void IwramFree(void* p);
 
 INCLUDE_ASM("engine/func_0800216C.s");
 INCLUDE_ASM("engine/func_080022D4.s");
@@ -259,7 +262,20 @@ INCLUDE_ASM("engine/func_08003CD4.s");
 INCLUDE_ASM("engine/func_08003E2C.s");
 INCLUDE_ASM("engine/func_08004034.s");
 INCLUDE_ASM("engine/func_0800415C.s");
-INCLUDE_ASM("engine/func_08004314.s");
+
+void func_08004314(void) {
+    u32 zero;
+
+    func_08000AE4(gUnk_08121680);
+    gDma3Requests = IwramAlloc(0x10B0);
+    zero = 0;
+    CpuSet(&zero, gDma3Requests, 0x0500042C);
+}
+
+void func_08004350(void) {
+    IwramFree(gDma3Requests);
+}
+
 INCLUDE_ASM("engine/func_08004364.s");
 
 #ifdef NON_MATCHING
@@ -299,10 +315,35 @@ INCLUDE_ASM("engine/func_0800448C.s");
 INCLUDE_ASM("engine/func_080045AC.s");
 INCLUDE_ASM("engine/func_080046C8.s");
 INCLUDE_ASM("engine/func_08004938.s");
-INCLUDE_ASM("engine/func_08004B8C.s");
+
+void func_08004B8C(void) {
+    void** p;
+    u32 zero;
+
+    func_08000AE4(gUnk_08121688);
+    p = &gUnk_030074D4;
+    *p = IwramAlloc(0x40);
+    zero = 0;
+    CpuSet(&zero, *p, 0x05000010);
+}
+
+void func_08004BC4(void) {
+    IwramFree(gUnk_030074D4);
+}
+
 INCLUDE_ASM("engine/func_08004BD8.s");
 INCLUDE_ASM("engine/func_08004C20.s");
-INCLUDE_ASM("engine/func_08004D74.s");
+
+void func_08004D74(void) {
+    gUnk_030074D8 = 0;
+    func_0800501C(0);
+    func_0800501C(1);
+    func_0800501C(2);
+    func_0800501C(3);
+    func_080054C8(0, 0);
+    gUnk_03007554 = 0;
+}
+
 INCLUDE_ASM("engine/func_08004DB0.s");
 INCLUDE_ASM("engine/func_08004E64.s");
 INCLUDE_ASM("engine/func_08004F08.s");
@@ -359,7 +400,14 @@ void* GetBgScreenBase(s32 bg) {
 INCLUDE_ASM("engine/func_0800516C.s");
 INCLUDE_ASM("engine/func_080051C4.s");
 INCLUDE_ASM("engine/func_08005244.s");
-INCLUDE_ASM("engine/func_08005490.s");
+
+void func_08005490(s32 bg, u8 on) {
+    if (on) {
+        *gBgControl[bg] |= 0x40;
+    } else {
+        *gBgControl[bg] &= 0xFFBF;
+    }
+}
 
 void func_080054C8(u8 a, u8 b) {
     a &= 0xF;
@@ -568,7 +616,18 @@ void func_08005B64(AnimState* a) {
     a->unk_08 &= 0xEFFF;
 }
 
-INCLUDE_ASM("engine/func_08005B78.s");
+void func_08005B78(void) {
+    u32 zero;
+
+    func_08000AE4(gUnk_0812168C);
+    gUnk_03007568 = IwramAlloc(0x598);
+    zero = 0;
+    CpuSet(&zero, gUnk_03007568, 0x05000166);
+}
+
+void func_08005BB0(void) {
+    IwramFree(gUnk_03007568);
+}
 
 void func_08005BC4(void) {
     u32 zero = 0;
@@ -651,7 +710,15 @@ void func_080063A8(void) {
     *(u16*)(gUnk_03007568 + 0x594) = v;
 }
 
-INCLUDE_ASM("engine/func_080063C4.s");
+void func_080063C4(u8 on) {
+    if (on) {
+        u16 v = *(u16*)(gUnk_03007568 + 0x594) | 4;
+
+        *(u16*)(gUnk_03007568 + 0x594) = v;
+    } else {
+        *(u16*)(gUnk_03007568 + 0x594) &= 0xFFFB;
+    }
+}
 
 void func_08006404(void) {
     gUnk_0203401C = 0;
