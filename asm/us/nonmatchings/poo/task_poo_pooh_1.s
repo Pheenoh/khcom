@@ -37,7 +37,7 @@ _080C99A0:
 	ldr r4, _080C99F4 @ =0x02034DAC
 	ldr r1, [r4, #0x00]
 	adds r0, r5, #0x0
-	bl _080C7FEC
+	bl func_080C7FEC
 	adds r6, r5, #0x0
 	adds r6, #0x0C
 	adds r0, r6, #0x0

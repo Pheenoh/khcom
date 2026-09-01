@@ -1,9 +1,0 @@
-.syntax unified
-	.align 2, 0
-	.global func_08031F60
-	.thumb
-	.thumb_func
-	.type func_08031F60, %function
-func_08031F60:
-	.incbin "roms/B8CJ.gba", 0x31f60, 0x38
-.syntax divided

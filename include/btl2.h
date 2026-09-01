@@ -1,0 +1,498 @@
+#ifndef GUARD_BTL2_H
+#define GUARD_BTL2_H
+
+#include "types.h"
+
+typedef struct AnimFrame {
+    u16 unk_00;
+    u16 unk_02;
+} AnimFrame;
+
+typedef struct AnimHeader {
+    u32 unk_00;
+    u16 unk_04;
+    u16 unk_06;
+} AnimHeader;
+
+typedef struct AnimState {
+    AnimHeader** unk_00;
+    u32* unk_04;
+    u16 unk_08;
+    u16 unk_0A;
+    u16 unk_0C;
+    u16 unk_0E;
+    u16 unk_10;
+    u16 unk_12;
+    AnimFrame* unk_14;
+} AnimState;
+
+typedef struct FldPos {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+} FldPos;
+
+typedef struct FldActor {
+    FldPos unk_00;
+    s32 unk_10;
+    u8 unk_14;
+    u8 unk_15[0x25];
+    u16 unk_3A;
+    s32 unk_3C;
+    u8 unk_40[0x10];
+} FldActor;
+
+typedef struct FldAnimDef {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    u8 unk_0C;
+    u8 unk_0D[0x03];
+} FldAnimDef;
+
+typedef struct UnkStruct_02039BA0 {
+    s32 unk_00;
+    s32 unk_04;
+    u8 unk_08[0x10];
+    FldActor unk_18;
+    s32 unk_68;
+    u8 unk_6C[0x04];
+    u32 unk_70;
+} UnkStruct_02039BA0;
+
+typedef struct FldWork {
+    void* unk_00;
+    void* unk_04;
+    u8 unk_08[0x0A];
+    u16 unk_12;
+    u8 unk_14[0x02];
+    u16 unk_16;
+    u8 unk_18[0x08];
+    void* unk_20;
+    u8 unk_24[0x14];
+    u8 unk_38[0x10];
+    s32 unk_48;
+    u8 unk_4C[0x18];
+    u8 unk_64;
+    u8 unk_65;
+    u16 unk_66;
+    u8 unk_68[0x04];
+    s32 unk_6C;
+    s32 unk_70;
+    s32 unk_74;
+    s32 unk_78;
+    s32 unk_7C;
+    s32 unk_80;
+    s32 unk_84;
+    u8 unk_88[0x0C];
+    s32 unk_94;
+    s16 unk_98;
+    u8 unk_9A[0x06];
+    s32 unk_A0;
+    u16 unk_A4;
+    u8 unk_A6[0x02];
+    s32 unk_A8;
+    u16* unk_AC;
+    s32 unk_B0;
+    s32 unk_B4;
+    s32 unk_B8;
+    u8 unk_BC;
+    u8 unk_BD[0x03];
+} FldWork;
+
+typedef struct BtlActor {
+    s32 unk_000;
+    s32 unk_004;
+    s32 unk_008;
+    s32 unk_00C;
+    s32 unk_010;
+    s32 unk_014;
+    u8 unk_018[0x0C];
+    s32 unk_024;
+    u8 unk_028[0x04];
+    s16 unk_02C;
+    s16 unk_02E;
+    s32 unk_030;
+    u64 unk_034;
+    u8 unk_03C[0x2C];
+    u64 unk_068;
+    u8 unk_070;
+    u8 unk_071[0x07];
+    struct BtlActor* unk_078;
+    struct BtlActor* unk_07C;
+    u8 unk_080[0x20];
+    s32 unk_0A0;
+    u8 unk_0A4[0x0C];
+    u16 unk_0B0;
+    u8 unk_0B2[0x1A];
+    u16 unk_0CC;
+    u8 unk_0CE[0x0A];
+    struct BtlActor* unk_0D8;
+    u8 unk_0DC[0x4C];
+    void (*unk_128)(s32* a, s32* b, s32* c, s32* d);
+    u8 unk_12C[0x98];
+    u16 unk_1C4;
+    u8 unk_1C6[0x02];
+} BtlActor;
+
+typedef struct BtlSetup {
+    u8 unk_000[0x08];
+    u32 unk_008;
+    u8 unk_00C[0xF4];
+    u32 unk_100;
+    u32 unk_104;
+    u8 unk_108;
+    u8 unk_109[0x03];
+} BtlSetup;
+
+typedef struct BtlShadowWork {
+    void* unk_00;
+    void* unk_04;
+    BtlActor* unk_08;
+    void* unk_0C;
+} BtlShadowWork;
+
+typedef struct BtlHpplyWork {
+    s32 unk_00;
+    u8 unk_04;
+    u8 unk_05[0x03];
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    void* unk_14;
+    void* unk_18;
+    void* unk_1C;
+    void* unk_20;
+    void* unk_24;
+    void* unk_28;
+    AnimState unk_2C;
+    AnimState unk_44;
+    u8 unk_5C;
+    u8 unk_5D;
+    s16 unk_5E;
+    s16 unk_60;
+    s16 unk_62;
+    s16 unk_64;
+    u8 unk_66[0x02];
+    u32 unk_68;
+} BtlHpplyWork;
+
+typedef struct BtlHpenmWork {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    s32 unk_10;
+    u8 unk_14;
+    u8 unk_15[0x03];
+    BtlActor* unk_18;
+    s16 unk_1C;
+    s16 unk_1E;
+    u32 unk_20;
+} BtlHpenmWork;
+
+typedef struct BtlPauseWork {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    u8 unk_10;
+    u8 unk_11[0x03];
+    s32 unk_14;
+    s32 unk_18;
+    s32 unk_1C;
+    s32 unk_20;
+    s16 unk_24;
+    s16 unk_26;
+} BtlPauseWork;
+
+typedef struct BtlPopWork {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    AnimState unk_0C;
+    s32 unk_24;
+    s32 unk_28;
+    s32 unk_2C;
+    s16 unk_30;
+    s16 unk_32;
+} BtlPopWork;
+
+typedef struct BtlEscapeWork {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    s32 unk_14;
+    s32 unk_18;
+    s32 unk_1C;
+    s16 unk_20;
+    u8 unk_22;
+    u8 unk_23;
+} BtlEscapeWork;
+
+typedef struct BtlPrizeWork {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    void* unk_10;
+    void* unk_14;
+    void* unk_18;
+    void* unk_1C;
+    s32 unk_20;
+    s32 unk_24;
+    s16 unk_28;
+    s16 unk_2A;
+    u16 unk_2C;
+    u8 unk_2E[0x02];
+    s32 unk_30;
+    s32 unk_34;
+    s16 unk_38;
+    s16 unk_3A;
+    s32 unk_3C;
+    s32 unk_40;
+    s32 unk_44;
+    void* unk_48;
+} BtlPrizeWork;
+
+typedef struct BtlPremireWork {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    void* unk_10;
+    void* unk_14;
+    void* unk_18;
+    void* unk_1C;
+    s32 unk_20;
+    s32 unk_24;
+    s16 unk_28;
+    s16 unk_2A;
+    u16 unk_2C;
+    u8 unk_2E[0x02];
+    s32 unk_30;
+    s32 unk_34;
+    s32 unk_38;
+    s32 unk_3C;
+    s32 unk_40;
+    void* unk_44;
+    AnimState unk_48;
+} BtlPremireWork;
+
+typedef struct BtlPremireSrc {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x06];
+    s16 unk_12;
+    s16 unk_14;
+    s16 unk_16;
+} BtlPremireSrc;
+
+typedef struct BtlStartWork {
+    s16 unk_00;
+    s16 unk_02;
+} BtlStartWork;
+
+void* AllocObjTiles(s32 a, void* b);
+void* LoadObjTiles(void* a, s32 b);
+void ReleaseObjTiles(void* a);
+void* LoadObjPalette(void* a, s32 b);
+void ReleaseObjPalette(void* a);
+s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
+void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
+void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
+void AnimInit(AnimState* a, void* b, void* c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
+void m4aSongNumStart(u16 n);
+void m4aMPlayVolumeControl(void* mplay, u16 trackBits, u16 volume);
+void func_080063C4(u8 a);
+void func_080058FC(s32* value, s32 target, u16 steps);
+u16 GetKeysPressed(void);
+u16 GetKeysHeld(void);
+u8 func_08001534(s32 a);
+void m4aSongNumStop(u16 n);
+void AnimChange(AnimState* a, u16 animId, u16 flags);
+void* AnimUpdate(AnimState* a);
+void* AnimGetGfx(AnimState* a);
+u16 GetRandom(void);
+u16 func_0801AF1C(s32 a);
+s32 abs(s32 a);
+s32 func_080DFF1C(FldPos* p);
+u8 func_080DFCDC(FldPos* p);
+u8 func_080DFBDC(FldPos* p);
+u8 _080DFE1C(FldPos* p);
+s8 func_08005824(u8 a, u8 b);
+void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
+void func_08002A10(void* a, void* b);
+void func_08006778(void* a, s32 x, s32 y);
+void func_0800675C(u8 a, s32 b, s32 c);
+void func_080057A0(s32 a, s32 b, s32 c);
+void func_08019050(s32 a, s32 b, s32 c, s32 d);
+void func_08006120(s32 a, s32 b);
+void SetBgPriority(s32 bg, u16 priority);
+
+extern UnkStruct_02039BA0* gUnk_02039BA0;
+extern BtlActor* gUnk_02039B84;
+extern BtlActor* gUnk_02039B9C;
+extern BtlSetup gUnk_02039BB0;
+
+extern u8 gUnk_0203D990[];
+extern u8 gUnk_0203D9D0[];
+extern u8 gUnk_0203DA10[];
+extern u8 gUnk_0203DA50[];
+extern u8 gUnk_0203DA90[];
+extern u8 gUnk_0203DAD0[];
+extern u8 gUnk_0203DB10[];
+extern u8 gUnk_0203DB50[];
+extern u8 gUnk_0203DB90[];
+extern u8 gUnk_0203DBD0[];
+extern u8 gUnk_0203DC10[];
+extern u8 gUnk_0203DC50[];
+extern u8 gUnk_0203DC90[];
+extern u8 gUnk_0203DCD0[];
+extern u8 gUnk_0203DD10[];
+extern u8 gUnk_0203DD50[];
+extern u8 gUnk_0203DD90[];
+extern u8 gUnk_0203DDD0[];
+extern u8 gUnk_0203DE10[];
+extern u8 gUnk_0203DE50[];
+extern u8 gUnk_0203DEA0[];
+extern u8 gUnk_0203DEE0[];
+extern u8 gUnk_0203DF20[];
+extern s16 gSineTable[];
+extern FldAnimDef gUnk_0813C89C[][5];
+extern u8 gUnk_08B1E7F4[];
+extern u8 gUnk_08B1EB1C[];
+extern u8 gUnk_08B1ED76[];
+extern u8 gUnk_08B1EF0C[];
+extern u8 gUnk_08B1F020[];
+extern u8 gUnk_08B1F13A[];
+extern u8 gUnk_08B1F2D6[];
+extern u8 gUnk_08B1F472[];
+extern u8 gUnk_08B1F60E[];
+extern u8 gUnk_08B1F7AC[];
+extern u8 gUnk_09EE11BC[];
+extern u8 gUnk_09EE11C0[];
+extern u8 gUnk_09EE11C4[];
+extern u8 gUnk_09EE11C8[];
+extern u8 gUnk_09EE11CC[];
+extern u8 gUnk_09EE11D0[];
+extern u8 gUnk_09EE11D4[];
+extern u8 gUnk_09EE11D8[];
+extern u8 gUnk_09EE11DC[];
+extern u8 gUnk_09EE11E0[];
+extern u8 gUnk_09EE11E4[];
+extern u8 gUnk_09EE11E8[];
+extern u8 gUnk_09EE11EC[];
+extern u8 gUnk_09EE11F0[];
+extern u8 gUnk_09EE11F4[];
+extern u8 gUnk_09EE1204[];
+extern u8 gUnk_08B208E8[];
+extern u8 gUnk_08B208F2[];
+extern u8 gUnk_08B208FC[];
+extern u8 gUnk_08B20906[];
+extern u8 gUnk_08B20910[];
+extern u8 gUnk_08B2091A[];
+extern u8 gUnk_08B20924[];
+extern u8 gUnk_08B2092E[];
+extern u8 gUnk_08B20938[];
+extern u8 gUnk_08B20942[];
+extern u8 gUnk_08B209E0[];
+extern u8 gUnk_08B20D20[];
+extern u8 gUnk_08B20D6E[];
+extern u8 gUnk_08B213F0[];
+extern u8 gUnk_08B21438[];
+extern u8 gUnk_08B22BA8[];
+extern u8 gUnk_08B22BBC[];
+extern u8 gUnk_08B22CBC[];
+extern u8 gUnk_08B22CE4[];
+extern u8 gUnk_08B22EE4[];
+extern u8 gUnk_08B22EFE[];
+extern u8 gUnk_08B23CB0[];
+extern u8 gUnk_08B23CBA[];
+extern u8 gUnk_08B23E7C[];
+extern u8 gUnk_08B23E8C[];
+extern u8 gUnk_08B23E9C[];
+extern u8 gUnk_08B23EAC[];
+extern u8 gUnk_08B23EBC[];
+extern u8 gUnk_08B23ED2[];
+extern u8 gUnk_08B23EE8[];
+extern u8 gUnk_08B23EFE[];
+extern u8 gUnk_08B23F08[];
+extern u8 gUnk_08B24016[];
+extern u8 gUnk_08B24C98[];
+extern u8 gUnk_08B24CA2[];
+extern u8 gUnk_08B24CB2[];
+extern u8 gUnk_08B24CC2[];
+extern u8 gUnk_08B24CD2[];
+extern u8 gUnk_08B24CE2[];
+extern u8 gUnk_08B24CF8[];
+extern u8 gUnk_08B24D0E[];
+extern u8 gUnk_08B24D18[];
+extern u8 gUnk_08B24D22[];
+extern u8 gUnk_08B24D2C[];
+extern u8 gUnk_08B24D42[];
+extern u8 gUnk_08B24D58[];
+extern u8 gUnk_08B24D6E[];
+extern u8 gUnk_08B24DAA[];
+extern u8 gUnk_08F683A4[];
+extern u8 gUnk_08F69BA4[];
+extern u8 gUnk_09618118[];
+extern void* gUnk_09EE115C[];
+extern void* gUnk_09EE11A4[];
+extern u8 gUnk_09EDA918[];
+extern u8 gUnk_09EE1244[];
+extern u8 gUnk_09EE1278[];
+extern u8 gUnk_09EE12A4[];
+extern u8 gUnk_09EE12B0[];
+extern u8 gUnk_09EE12BC[];
+extern u8 gUnk_09EE12C8[];
+extern u8 gUnk_09EE1420[];
+extern u8 gUnk_09EE1498[];
+
+void task_btl_shadow_0(BtlShadowWork* work, BtlActor* actor);
+s32 task_btl_shadow_1(void);
+void task_btl_shadow_2(BtlShadowWork* work);
+void task_btl_shadow_3(BtlShadowWork* work);
+void task_btl_hpply_0(BtlHpplyWork* work);
+s32 task_btl_hpply_1(BtlHpplyWork* work);
+void task_btl_hpply_2(BtlHpplyWork* work);
+void task_btl_hpply_3(BtlHpplyWork* work);
+void task_btl_hpenm_0(BtlHpenmWork* work);
+s32 task_btl_hpenm_1(BtlHpenmWork* work);
+void task_btl_hpenm_2(BtlHpenmWork* work);
+void task_btl_pause_0(BtlPauseWork* work);
+s32 task_btl_pause_1(BtlPauseWork* work);
+void task_btl_pause_2(BtlPauseWork* work);
+void task_btl_pause_3(BtlPauseWork* work);
+void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src);
+s32 task_btl_pop_1(BtlPopWork* work);
+void task_btl_pop_2(BtlPopWork* work);
+void task_btl_pop_3(BtlPopWork* work);
+void task_btl_escape_0(BtlEscapeWork* work);
+s32 task_btl_escape_1(BtlEscapeWork* work);
+void task_btl_escape_2(BtlEscapeWork* work);
+void task_btl_escape_3(BtlEscapeWork* work);
+void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src);
+void task_btl_prize_2(BtlPrizeWork* work);
+void task_btl_prize_3(BtlPrizeWork* work);
+void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src);
+void task_btl_premire_2(BtlPremireWork* work);
+void task_btl_premire_3(BtlPremireWork* work);
+void task_btl_start_0(BtlStartWork* work);
+s32 task_btl_start_1(BtlStartWork* work);
+void func_08031BC4(FldActor* act);
+u8 func_08031D74(FldPos* p);
+s32 func_08031DF8(FldPos* p);
+u8 func_08031E48(FldPos* p, FldWork* work);
+u8 func_08031EC4(FldActor* act);
+s32 func_08031F1C(FldWork* work);
+void func_08031F60(FldActor* act);
+void func_08031F98(FldWork* work, s32 a, s32 b);
+void task_btl_hpenm_3(BtlHpenmWork* work);
+
+#endif /* GUARD_BTL2_H */
