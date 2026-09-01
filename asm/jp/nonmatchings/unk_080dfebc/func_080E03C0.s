@@ -5,5 +5,5 @@
 	.thumb_func
 	.type func_080E03C0, %function
 func_080E03C0:
-	.incbin "roms/B8CJ.gba", 0xe03e0, 0x12c
+	.incbin "roms/B8CJ.gba", 0xe03e0, 0x58
 .syntax divided

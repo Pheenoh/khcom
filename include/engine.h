@@ -38,6 +38,24 @@ typedef struct Dma3Request {
     u16 size;
 } Dma3Request;
 
+typedef struct Dma3Pending {
+    void* unk_00;
+    u16 unk_04;
+    u16 unk_06;
+} Dma3Pending;
+
+typedef struct Dma3Queue {
+    Dma3Request requests[352];
+    Dma3Pending pending[4];
+    u16 unk_10A0;
+    u16 unk_10A2;
+    u16 unk_10A4;
+    u16 unk_10A6;
+    u16 count;
+    u16 unk_10AA;
+    u32 unk_10AC;
+} Dma3Queue;
+
 typedef struct AnimHeader {
     u32 unk_00;
     u16 unk_04;
@@ -155,6 +173,9 @@ void func_080063C4(u8 on);
 u8 func_08005550(u32 a);
 u8 func_0800558C(u32 a);
 void func_08005654(s32 bg, u8 on);
+void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size);
+void func_08003858(ObjTiles* t, u16 slot, u16 size, void* src);
+void* func_08004BD8(u8* a, u16 x, u16 y);
 u8 func_08005AC4(AnimState* a);
 void func_08006494(u16 a, u16 b);
 void func_080064E8(u16 a, u16 b);
