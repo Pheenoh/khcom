@@ -218,6 +218,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("version")
     p.add_argument("code")
+    p.add_argument("-q", "--quiet", action="store_true")
     args = p.parse_args()
     ver, code = args.version, args.code
 
@@ -274,6 +275,7 @@ def main():
     byname = {r[0]: r for r in rows}
     asm_root = Path(f"asm/{ver}/nonmatchings")
     wrote = missing = absent = 0
+    kept = set()
     for src in sorted(Path("src").glob("*.c")):
         for tu, name in active_includes(src, ver):
             r = byname.get(name)
@@ -292,8 +294,18 @@ def main():
             (d / f"{name}.s").write_text(
                 tmpl.format(name=name, code=code, off=r[3] - ROM_BASE, size=r[5],
                             align="\t.align 2, 0\n" if r[3] % 4 == 0 and r[5] else ""))
+            kept.add(d / f"{name}.s")
             wrote += 1
-    print(f"  chunks: {wrote} written ({absent} empty), {missing} missing")
+    stale = 0
+    for old in asm_root.glob("*/*.s"):
+        if old not in kept:
+            old.unlink()
+            stale += 1
+    for d in asm_root.glob("*"):
+        if d.is_dir() and not any(d.iterdir()):
+            d.rmdir()
+    print(f"  chunks: {wrote} written ({absent} empty), {missing} missing"
+          + (f", {stale} stale removed" if stale else ""))
 
     first = rows[0][3]
     Path(f"asm/{ver}").mkdir(parents=True, exist_ok=True)
@@ -345,8 +357,9 @@ def main():
 
     Path(f"config/{ver}/units.txt").write_text("\n".join(units) + "\n")
     print(f"  units.txt: {len(units)} entries")
-    for nm, how in uncertain:
-        print(f"    {how:9s} {nm}")
+    if not args.quiet:
+        for nm, how in uncertain:
+            print(f"    {how:9s} {nm}")
 
 
 if __name__ == "__main__":
