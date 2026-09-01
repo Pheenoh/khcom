@@ -1341,90 +1341,90 @@ s32 func_08005954(s32 a, s32 b, s32 t) {
 }
 
 void AnimInit(AnimState* a, s32 b, s32 c) {
-    a->unk_04 = (u32*)c;
-    a->unk_00 = (AnimHeader**)b;
-    a->unk_14 = 0;
+    a->gfxTable = (u32*)c;
+    a->anims = (AnimHeader**)b;
+    a->frames = 0;
 }
 
 void func_08005974(AnimState* a, u16 animId, u16 flags, s32 b, s32 c) {
-    if (a->unk_04 != (u32*)c || a->unk_00 != (AnimHeader**)b || a->unk_10 != animId) {
-        a->unk_04 = (u32*)c;
-        a->unk_00 = (AnimHeader**)b;
+    if (a->gfxTable != (u32*)c || a->anims != (AnimHeader**)b || a->animId != animId) {
+        a->gfxTable = (u32*)c;
+        a->anims = (AnimHeader**)b;
         AnimStart(a, animId, flags);
     }
 }
 
 void AnimStart(AnimState* a, u16 animId, u16 flags) {
-    AnimHeader* h = a->unk_00[animId];
+    AnimHeader* h = a->anims[animId];
 
-    a->unk_0C = h->unk_04;
-    if (a->unk_0C == 0) {
-        a->unk_14 = 0;
+    a->frameCount = h->frameCount;
+    if (a->frameCount == 0) {
+        a->frames = 0;
         return;
     }
-    a->unk_14 = (AnimFrame*)&h->unk_06;
+    a->frames = (AnimFrame*)&h->unk_06;
     if ((flags & 4) == 0) {
-        a->unk_0A = 0;
+        a->timer = 0;
         if (flags & 2) {
-            a->unk_0E = GetRandom() % a->unk_0C;
+            a->frame = GetRandom() % a->frameCount;
         } else {
-            a->unk_0E = 0;
+            a->frame = 0;
         }
     }
-    a->unk_08 = flags;
-    a->unk_10 = animId;
+    a->flags = flags;
+    a->animId = animId;
 }
 
 void AnimChange(AnimState* a, u16 id, u16 flags) {
     AnimHeader* h;
 
-    if (a->unk_10 == id) {
+    if (a->animId == id) {
         return;
     }
-    h = a->unk_00[id];
-    a->unk_0C = h->unk_04;
-    if (a->unk_0C == 0) {
-        a->unk_14 = 0;
+    h = a->anims[id];
+    a->frameCount = h->frameCount;
+    if (a->frameCount == 0) {
+        a->frames = 0;
         return;
     }
-    a->unk_14 = (AnimFrame*)&h->unk_06;
+    a->frames = (AnimFrame*)&h->unk_06;
     if ((flags & 4) == 0) {
-        a->unk_0A = 0;
+        a->timer = 0;
         if (flags & 2) {
-            a->unk_0E = GetRandom() % a->unk_0C;
+            a->frame = GetRandom() % a->frameCount;
         } else {
-            a->unk_0E = 0;
+            a->frame = 0;
         }
     }
-    a->unk_08 = flags;
-    a->unk_10 = id;
+    a->flags = flags;
+    a->animId = id;
 }
 
 #ifdef NON_MATCHING
 void* AnimUpdate(AnimState* a) {
     void* gfx = AnimGetGfx(a);
-    AnimFrame* frames = a->unk_14;
+    AnimFrame* frames = a->frames;
     u16 index;
 
     if (frames == 0) {
         return 0;
     }
-    a->unk_0A++;
-    index = a->unk_0E;
-    if (a->unk_0A < frames[index].unk_02) {
+    a->timer++;
+    index = a->frame;
+    if (a->timer < frames[index].duration) {
         return gfx;
     }
-    a->unk_0E = index + 1;
-    a->unk_0A = 0;
-    if (a->unk_0E < a->unk_0C) {
+    a->frame = index + 1;
+    a->timer = 0;
+    if (a->frame < a->frameCount) {
         return gfx;
     }
-    if (a->unk_08 & 1) {
-        a->unk_0E = 0;
+    if (a->flags & 1) {
+        a->frame = 0;
     } else {
-        a->unk_0E = index;
+        a->frame = index;
     }
-    a->unk_08 |= 0x1000;
+    a->flags |= 0x1000;
     return gfx;
 }
 #else
@@ -1432,15 +1432,15 @@ INCLUDE_ASM("engine/AnimUpdate.s");
 #endif
 
 u8 func_08005AC4(AnimState* a) {
-    if (a->unk_14 == 0) {
+    if (a->frames == 0) {
         return 0;
     }
-    if (!(a->unk_08 & 1)) {
-        if (a->unk_08 & 0x1000) {
+    if (!(a->flags & 1)) {
+        if (a->flags & 0x1000) {
             return 0;
         }
     }
-    if (a->unk_0A + 1 >= a->unk_14[a->unk_0E].unk_02) {
+    if (a->timer + 1 >= a->frames[a->frame].duration) {
         return 1;
     }
 
@@ -1450,8 +1450,8 @@ u8 func_08005AC4(AnimState* a) {
 void* AnimGetGfx(AnimState* a) {
     void* result;
 
-    if (a->unk_14 != 0) {
-        result = (void*)a->unk_04[a->unk_14[a->unk_0E].unk_00];
+    if (a->frames != 0) {
+        result = (void*)a->gfxTable[a->frames[a->frame].gfxIndex];
     } else {
         result = 0;
     }
@@ -1460,7 +1460,7 @@ void* AnimGetGfx(AnimState* a) {
 }
 
 u8 AnimIsFinished(AnimState* a) {
-    if (a->unk_08 & 0x1000) {
+    if (a->flags & 0x1000) {
         return 1;
     }
 
@@ -1468,29 +1468,29 @@ u8 AnimIsFinished(AnimState* a) {
 }
 
 u16 func_08005B30(AnimState* a) {
-    return a->unk_10;
+    return a->animId;
 }
 
 u16 func_08005B34(AnimState* a) {
-    return a->unk_0E;
+    return a->frame;
 }
 
 u16 func_08005B38(AnimState* a) {
-    return a->unk_14[a->unk_0E].unk_00;
+    return a->frames[a->frame].gfxIndex;
 }
 
 void func_08005B44(AnimState* a, u16 frame) {
-    if (frame < a->unk_0C) {
-        a->unk_0E = frame;
-        a->unk_0A = 0;
-        a->unk_08 &= 0xEFFF;
+    if (frame < a->frameCount) {
+        a->frame = frame;
+        a->timer = 0;
+        a->flags &= 0xEFFF;
     }
 }
 
 void func_08005B64(AnimState* a) {
-    a->unk_0E = 0;
-    a->unk_0A = 0;
-    a->unk_08 &= 0xEFFF;
+    a->frame = 0;
+    a->timer = 0;
+    a->flags &= 0xEFFF;
 }
 
 void func_08005B78(void) {

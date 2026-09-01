@@ -119,9 +119,6 @@ typedef struct PcFldWork {
     u8 unk_014[0x58];
 } PcFldWork;
 
-void func_08012304(void* a);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
 void LoadPalette(void* src, void* dst, s32 size);
 
 extern u8 gUnk_09D69374[];

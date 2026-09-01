@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "game.h"
+#include "mode.h"
 
 typedef struct MaskFadeWork {
     u8* unk_000;
@@ -47,14 +48,6 @@ typedef struct CharaLinkData {
     u16 unk_1C;
     u16 unk_1E;
 } CharaLinkData;
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
 typedef struct ChgCardObjWork {
     s16 unk_00;
     s16 unk_02;
@@ -237,7 +230,6 @@ void func_080010CC(Mode* mode, s32 arg);
 void* EwramAlloc(u32 size);
 void EwramFree(void* p);
 void TaskPoolInit(void* a, s32 count);
-void TaskPoolDestroy(void* a);
 u16 GetKeysHeld(void);
 u16 GetKeysPressed(void);
 u16 GetRandom(void);

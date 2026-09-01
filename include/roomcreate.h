@@ -2,35 +2,8 @@
 #define GUARD_ROOMCREATE_H
 
 #include "types.h"
-
-typedef struct ListNode {
-    void* unk_00;
-    u8 unk_04[0x04];
-    struct ListNode* unk_08;
-    u16 unk_0C;
-} ListNode;
-
-typedef struct TaskPool {
-    ListNode head;
-    void* unk_10;
-} TaskPool;
-
-typedef struct TaskDesc {
-    const char* name;
-    void (*unk_04)(void* work, void* arg);
-    void* unk_08;
-    void (*unk_0C)(void* work);
-    void* unk_10;
-    s32 unk_14;
-} TaskDesc;
-
-typedef struct FldPos {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-} FldPos;
-
+#include "taskpool.h"
+#include "fld_types.h"
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;

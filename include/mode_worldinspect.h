@@ -46,7 +46,6 @@ void func_080E052C(u8 a);
 void func_080FF330(void);
 void func_080FF794(void);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 
 #endif /* GUARD_MODE_WORLDINSPECT_H */

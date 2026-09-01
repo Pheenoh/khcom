@@ -148,11 +148,6 @@ void task_bos_ursula_backtako_3(UrsulaBacktakoWork* work);
 void task_bos_boogie_saku_3(BoogieSakuWork* work);
 void task_bos_boogie_knife_3(BoogieKnifeWork* work);
 void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work);
-void func_0801B7D8(void* a);
-void func_08012304(void* a);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
-void TaskPoolDestroy(void* a);
 
 void task_bos_boogie_knifereader_2(BoogieKnifereaderWork* work);
 void task_bos_boogie_knifereader_3(BoogieKnifereaderWork* work);

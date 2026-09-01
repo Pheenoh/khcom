@@ -2,6 +2,7 @@
 #define GUARD_MAIN_H
 
 #include "types.h"
+#include "taskpool.h"
 
 typedef struct HeapBlock {
     s32 size;
@@ -20,23 +21,6 @@ typedef struct Heap {
     u8 unk_08;
     void* name;
 } Heap;
-
-typedef struct ListNode {
-    void* unk_00;
-    u8 unk_04[0x04];
-    struct ListNode* unk_08;
-    u16 unk_0C;
-} ListNode;
-
-typedef struct TaskDesc {
-    const char* name;
-    void (*unk_04)(void* work, void* arg);
-    void* unk_08;
-    void (*unk_0C)(void* work);
-    void* unk_10;
-    s32 unk_14;
-} TaskDesc;
-
 struct Task;
 
 typedef struct Task {
@@ -47,12 +31,6 @@ typedef struct Task {
     u8 unk_1C[0x04];
     u8 (*unk_20)(void* work, struct Task* task);
 } Task;
-
-typedef struct TaskPool {
-    ListNode head;
-    void* unk_10;
-} TaskPool;
-
 void* HeapAlloc(u32 size, Heap* heap);
 void HeapFree(void* p, Heap* heap);
 void* EwramAlloc(u32 size);

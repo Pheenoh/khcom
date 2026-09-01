@@ -2,31 +2,8 @@
 #define GUARD_SMN_H
 
 #include "types.h"
-
-typedef struct AnimState {
-    void** unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    void* unk_14;
-} AnimState;
-
-typedef struct ListNode {
-    void* unk_00;
-    u8 unk_04[0x04];
-    struct ListNode* unk_08;
-    u16 unk_0C;
-} ListNode;
-
-typedef struct TaskPool {
-    ListNode head;
-    void* unk_10;
-} TaskPool;
-
+#include "anim.h"
+#include "taskpool.h"
 typedef struct SmnArgs {
     u16 unk_00;
     u8 unk_02;

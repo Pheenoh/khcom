@@ -2,14 +2,7 @@
 #define GUARD_UNK_0800EEBC_H
 
 #include "types.h"
-
-typedef struct ListNode {
-    void* unk_00;
-    u8 unk_04[0x04];
-    struct ListNode* unk_08;
-    u16 unk_0C;
-} ListNode;
-
+#include "taskpool.h"
 typedef struct Collider {
     s32 unk_00;
     s32 unk_04;

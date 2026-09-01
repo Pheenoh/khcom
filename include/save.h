@@ -47,7 +47,7 @@ typedef struct SaveCommon {
     u16 unk_8E;
     u8 unk_90;
     u8 unk_91;
-    u8 unk_92[2];
+    u8 unk_92[0x02];
     u32 unk_94;
 } SaveCommon;
 

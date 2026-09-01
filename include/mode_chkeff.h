@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "main.h"
+#include "mode.h"
 
 typedef struct ChkEffWork {
     TaskPool pool;
@@ -17,14 +18,6 @@ typedef struct ChkEffWork {
     u16 unk_24;
     u16 unk_26;
 } ChkEffWork;
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(void);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
 void func_080010CC(Mode* mode, s32 b);
 u16 GetKeysRepeat(void);
 void func_08004E64(void);

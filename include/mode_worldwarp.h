@@ -3,23 +3,7 @@
 
 #include "types.h"
 #include "main.h"
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimState {
-    s32 unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u8 unk_10[0x04];
-    AnimFrame* unk_14;
-} AnimState;
-
+#include "anim.h"
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
     u32 unk_008;
@@ -226,7 +210,6 @@ void func_081004EC(s32 a, s32 b, s32 c, void* d, s32 e, s32 f);
 u8 func_08100608(s16 a);
 u8 func_0810063C(s16 a);
 void func_08100670(s32 a, void* b, void* c);
-u16 GetKeysPressed(void);
 
 void mode_worldwarp_0(void);
 void mode_worldwarp_1(void);

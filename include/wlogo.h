@@ -3,27 +3,10 @@
 
 #include "types.h"
 #include "main.h"
+#include "anim.h"
 
 #define REG_VCOUNT (*(vu16*)0x04000006)
 #define REG_BGHOFS(n) (*(vu16*)(0x04000010 + (n) * 4))
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimState {
-    void* unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    AnimFrame* unk_14;
-} AnimState;
-
 typedef struct WlogoPal {
     void* unk_00;
     u16 unk_04;

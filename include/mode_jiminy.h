@@ -3,30 +3,8 @@
 
 #include "types.h"
 #include "main.h"
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimState {
-    s32 unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    AnimFrame* unk_14;
-} AnimState;
-
-typedef struct ObjPalette {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} ObjPalette;
-
+#include "anim.h"
+#include "obj.h"
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
     u32 unk_008;
@@ -186,7 +164,6 @@ void LoadObjPaletteBank(u16 bank, void* src);
 void SetBlendAlpha(u16 a, u16 b);
 void UpdatePlayTime(void);
 void m4aSongNumStart(u16 id);
-u16 GetKeysPressed(void);
 s32 abs(s32 x);
 void func_08001248(void (*fn)(void));
 void func_080058FC(s32* value, s32 target, u16 steps);

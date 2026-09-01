@@ -1226,7 +1226,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
             }
         }
 
-        if (func_08005B38(&work->unk_008) == 5 && work->unk_008.unk_0A == 0) {
+        if (func_08005B38(&work->unk_008) == 5 && work->unk_008.timer == 0) {
             if (body->unk_34 & 4) {
                 x = body->unk_04 - 0xC800;
             } else {

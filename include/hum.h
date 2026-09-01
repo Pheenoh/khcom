@@ -2,25 +2,9 @@
 #define GUARD_HUM_H
 
 #include "types.h"
-
-typedef struct ObjPalette {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} ObjPalette;
-
-typedef struct AnimState {
-    void** unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    void* unk_14;
-} AnimState;
-
+#include "anim.h"
+#include "taskpool.h"
+#include "obj.h"
 typedef struct HumSub {
     void* unk_00;
     void* unk_04;
@@ -41,19 +25,6 @@ typedef struct VixenSub {
     s32 unk_04;
     s32 unk_08;
 } VixenSub;
-
-typedef struct HumListNode {
-    void* unk_00;
-    u8 unk_04[0x04];
-    struct HumListNode* unk_08;
-    u16 unk_0C;
-} HumListNode;
-
-typedef struct TaskPool {
-    HumListNode head;
-    void* unk_10;
-} TaskPool;
-
 typedef struct HumActor {
     s32 unk_00;
     s32 unk_04;

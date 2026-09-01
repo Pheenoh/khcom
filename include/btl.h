@@ -2,33 +2,10 @@
 #define GUARD_BTL_H
 
 #include "types.h"
-
-typedef struct AnimState {
-    void** unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    void* unk_14;
-} AnimState;
-
-typedef struct FldAnimDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} FldAnimDef;
-
-typedef struct ObjPalette {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} ObjPalette;
-
+#include "anim.h"
+#include "taskpool.h"
+#include "obj.h"
+#include "fld_types.h"
 struct BtlWork;
 
 typedef struct UnkStruct_0801AF08 {
@@ -55,14 +32,6 @@ typedef struct UnkStruct_0801AF08 {
     u8 unk_B1[0x33];
     struct BtlWork* unk_E4;
 } UnkStruct_0801AF08;
-
-typedef struct ListNode {
-    void* unk_00;
-    u8 unk_04[0x04];
-    struct ListNode* unk_08;
-    u16 unk_0C;
-} ListNode;
-
 typedef struct BtlWork {
     u16 unk_000;
     u16 unk_002;

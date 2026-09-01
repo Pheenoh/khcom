@@ -3,14 +3,7 @@
 
 #include "types.h"
 #include "main.h"
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(void);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
+#include "mode.h"
 typedef struct SoundEntry {
     const char* name;
     u16 unk_04;

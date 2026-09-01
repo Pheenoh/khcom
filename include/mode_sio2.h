@@ -3,6 +3,8 @@
 
 #include "types.h"
 #include "main.h"
+#include "mode.h"
+#include "obj.h"
 
 typedef struct PoohAnim {
     void* unk_00;
@@ -19,23 +21,6 @@ typedef struct PoohPrizeArgs {
     s32 unk_10;
     u16 unk_14;
 } PoohPrizeArgs;
-
-typedef struct PaletteSlot {
-    void* unk_00;
-    void* unk_04;
-    u8 unk_08[0x20];
-    u8 unk_28;
-    u8 unk_29;
-    u8 unk_2A[0x02];
-} PaletteSlot;
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
 typedef struct PoohSetup {
     u8 unk_00[0x0C];
     u8 unk_0C;

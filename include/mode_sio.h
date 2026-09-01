@@ -2,40 +2,9 @@
 #define GUARD_MODE_SIO_H
 
 #include "types.h"
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
-typedef struct TaskDesc {
-    const char* name;
-    void (*unk_04)(void* work, void* arg);
-    void* unk_08;
-    void (*unk_0C)(void* work);
-    void* unk_10;
-    s32 unk_14;
-} TaskDesc;
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimState {
-    void* unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    AnimFrame* unk_14;
-} AnimState;
-
+#include "anim.h"
+#include "mode.h"
+#include "taskpool.h"
 typedef struct TextSlot {
     void* unk_00;
     u8 unk_04;

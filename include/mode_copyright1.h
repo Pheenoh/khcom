@@ -3,14 +3,7 @@
 
 #include "types.h"
 #include "save.h"
-
-typedef struct Mode {
-    const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
-} Mode;
-
+#include "mode.h"
 extern u8 gUnk_02034ED4;
 extern u16 gUnk_02034ED6;
 extern u8 gUnk_02034ED8;
@@ -28,8 +21,6 @@ int SaveRepairHeader(void);
 void func_080010CC(Mode* mode, s32 arg);
 void func_08004DB0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgPriority(s32 bg, u16 priority);
 void func_08006120(s32 a, u16 b);

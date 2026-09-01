@@ -3,14 +3,7 @@
 
 #include "types.h"
 #include "game.h"
-
-typedef struct FldPos {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-} FldPos;
-
+#include "fld_types.h"
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
@@ -49,12 +42,6 @@ typedef struct UnkStruct_02039BB0 {
 } UnkStruct_02039BB0;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
-
-typedef struct FldRes {
-    u8 unk_00[0x06];
-    u16 unk_06;
-} FldRes;
-
 typedef struct FldWork {
     void* unk_00;
     FldRes* unk_04;
@@ -94,15 +81,6 @@ typedef struct FldWork {
     u8 unk_BC;
     u8 unk_BD[0x03];
 } FldWork;
-
-typedef struct FldAnimDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} FldAnimDef;
-
 extern FldAnimDef gUnk_0813CDDC[][5];
 
 typedef struct FldShadowWork {
