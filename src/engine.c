@@ -255,7 +255,17 @@ u16 func_08003598(u16* p) {
 
 INCLUDE_ASM("engine/func_080035CC.s");
 INCLUDE_ASM("engine/func_0800380C.s");
-INCLUDE_ASM("engine/func_0800388C.s");
+
+void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size) {
+    if (slot + (size >> 5) <= 0x10) {
+        t->unk_20 = 0;
+        t->unk_08 = size >> 5;
+        t->unk_00 = src;
+        t->unk_04 = 0;
+        t->unk_06 = slot;
+        RequestDma3Copy(src, (void*)((t->unk_06 << 5) + 0x05000200), size);
+    }
+}
 
 ObjTiles* func_080038C8(u16 a) {
     ObjTiles* t = AllocObjTiles(a, 0);
@@ -277,7 +287,25 @@ void func_08003A70(ObjTiles* t, void* src) {
 
 INCLUDE_ASM("engine/func_08003A98.s");
 INCLUDE_ASM("engine/func_08003B24.s");
-INCLUDE_ASM("engine/func_08003C9C.s");
+
+s32 func_08003C9C(s32 a) {
+    s32 x;
+    s32 prev;
+
+    if (a > 0) {
+        x = 0x100;
+        if (a > 0x100) {
+            x = a;
+        }
+        do {
+            prev = x;
+            x = ((a << 8) / prev + prev) / 2;
+        } while (x < prev);
+        return prev;
+    }
+    return 0;
+}
+
 INCLUDE_ASM("engine/func_08003CD4.s");
 INCLUDE_ASM("engine/func_08003E2C.s");
 INCLUDE_ASM("engine/func_08004034.s");
@@ -611,7 +639,13 @@ void AnimInit(AnimState* a, s32 b, s32 c) {
     a->unk_14 = 0;
 }
 
-INCLUDE_ASM("engine/func_08005974.s");
+void func_08005974(AnimState* a, u16 animId, u16 flags, s32 b, s32 c) {
+    if (a->unk_04 != (u32*)c || a->unk_00 != (AnimHeader**)b || a->unk_10 != animId) {
+        a->unk_04 = (u32*)c;
+        a->unk_00 = (AnimHeader**)b;
+        AnimStart(a, animId, flags);
+    }
+}
 
 void AnimStart(AnimState* a, u16 animId, u16 flags) {
     AnimHeader* h = a->unk_00[animId];
