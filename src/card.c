@@ -172,6 +172,8 @@ void func_080838FC(void) {
 }
 
 INCLUDE_ASM("card/func_08083900.s");
+INCLUDE_ASM("card/func_08083914.s");
+INCLUDE_ASM("card/func_08083920.s");
 INCLUDE_ASM("card/func_08083B20.s");
 INCLUDE_ASM("card/func_08083C94.s");
 INCLUDE_ASM("card/func_08083D68.s");
@@ -373,6 +375,8 @@ INCLUDE_ASM("card/func_080A09C0.s");
 INCLUDE_ASM("card/func_080A151C.s");
 INCLUDE_ASM("card/func_080A1554.s");
 INCLUDE_ASM("card/func_080A1B4C.s");
+INCLUDE_ASM("card/func_080A2334.s");
+INCLUDE_ASM("card/func_080A235C.s");
 INCLUDE_ASM("card/func_080A324C.s");
 INCLUDE_ASM("card/func_080A32DC.s");
 INCLUDE_ASM("card/func_080A3370.s");
