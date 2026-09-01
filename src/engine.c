@@ -14,6 +14,7 @@ extern s16 gSineTable[];
 extern u16 gUnk_0300750C;
 extern u16 gUnk_03007508;
 extern u16 gUnk_030074DC;
+extern u16 gUnk_0300753C;
 s32 func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 extern u16 gUnk_03006C78;
 void CpuSet(void* src, void* dst, u32 ctrl);
@@ -582,7 +583,30 @@ void func_08004D74(void) {
     gBldCnt = 0;
 }
 
+#ifdef NON_MATCHING
+void func_08004DB0(void) {
+    s32 i;
+
+    gDispCnt = gDispCnt & 0xFFF8;
+    gUnk_0300750C = 0;
+    gUnk_03007508 = 1;
+    gUnk_030074DC = 2;
+    gUnk_0300753C = 3;
+    SetupBg(0, 0, 7, 0);
+    SetupBg(1, 1, 15, 4);
+    SetupBg(2, 2, 23, 8);
+    SetupBg(3, 3, 31, 12);
+    SetBgScroll(0, 0, 0);
+    SetBgScroll(1, 0, 0);
+    SetBgScroll(2, 0, 0);
+    SetBgScroll(3, 0, 0);
+    for (i = 0; i <= 3; i++) {
+        gUnk_030074D4[i].unk_04 = 0;
+    }
+}
+#else
 INCLUDE_ASM("engine/func_08004DB0.s");
+#endif
 #ifdef NON_MATCHING
 void func_08004E64(void) {
     s32 i;
@@ -604,7 +628,28 @@ void func_08004E64(void) {
 #else
 INCLUDE_ASM("engine/func_08004E64.s");
 #endif
+#ifdef NON_MATCHING
+void func_08004F08(void) {
+    s32 i;
+
+    gDispCnt = (gDispCnt & 0xFFF8) | 2;
+    gUnk_030074DC = 0x6080;
+    gUnk_0300753C = 0x4081;
+    SetupBg(2, 0, 15, 0);
+    SetupBg(3, 2, 31, 0);
+    func_08005690(2, 0, 0x100, 0x100, 0, 0);
+    func_08005690(3, 0, 0x100, 0x100, 0, 0);
+    for (i = 0; i <= 3; i++) {
+        gUnk_030074D4[i].unk_04 = 0;
+    }
+}
+#else
 INCLUDE_ASM("engine/func_08004F08.s");
+#endif
+void func_08004FA0(void) {
+    gDispCnt = (gDispCnt & 0xFFF8) | 3;
+    SetBgScroll(2, 0, 0);
+}
 
 void EnableBg(s32 bg) {
     switch ((u32)bg) {
