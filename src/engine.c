@@ -13,6 +13,9 @@ void func_08000C54(void* node, void* pool);
 void CpuSet(void* src, void* dst, u32 ctrl);
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
+s32 func_08005824(s32 a, s32 b);
+s32 func_0800585C(s32 a, s32 b);
+void func_08005C60(u16 a);
 void func_08000AE4(void* name);
 void* IwramAlloc(u32 size);
 void IwramFree(void* p);
@@ -213,7 +216,17 @@ void LoadObjPaletteBank(u16 bank, void* src) {
     LoadPalette(src, (void*)((bank << 5) + 0x05000200), 32);
 }
 
-INCLUDE_ASM("engine/func_08002BCC.s");
+void func_08002BCC(void* a) {
+    u8* p = a;
+
+    if ((s16)*(u16*)(p + 4) > 0) {
+        *(u16*)(p + 4) -= 1;
+    } else {
+        *(u32*)(p + 0x24) = 0;
+        func_08005C60(*(u16*)(p + 6) + 0x10);
+        func_08000C54(p + 0x0C, gUnk_030074C8 + 0x1A94);
+    }
+}
 
 void ReleaseObjPalette(u8* p) {
     if (p != 0 && *(u8**)(p + 36) == p) {
@@ -582,7 +595,7 @@ void func_08005810(u16 a, u16 b) {
 }
 
 #ifdef NON_MATCHING
-s16 func_08005824(s32 a, s32 b) {
+s32 func_08005824(s32 a, s32 b) {
     s32 x = a & 0xFF;
     s32 y = b & 0xFF;
     s32 d = x - y;
@@ -599,7 +612,29 @@ s16 func_08005824(s32 a, s32 b) {
 INCLUDE_ASM("engine/func_08005824.s");
 #endif
 INCLUDE_ASM("engine/func_0800585C.s");
-INCLUDE_ASM("engine/func_0800589C.s");
+
+void func_0800589C(u16* p, u16 target, u16 shift) {
+    s16 d;
+    u16 v;
+
+    if (*p == target) {
+        return;
+    }
+    d = func_08005824((s16)target, (s16)*p);
+    if (d == 0) {
+        return;
+    }
+    v = d >> shift;
+    *p = v + *p;
+}
+
+void func_080058D4(u16* p, u16 target, u16 shift) {
+    s32 d = func_0800585C(target, *p);
+
+    if (d != 0) {
+        *p = (d >> shift) + *p;
+    }
+}
 
 void func_080058FC(s32* value, s32 target, u16 steps) {
     s32 cur;
