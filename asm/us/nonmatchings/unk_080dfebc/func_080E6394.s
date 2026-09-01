@@ -149,7 +149,7 @@ _080E64B0:
 	movs r1, #0x01
 	bl func_08012614
 	adds r0, r6, #0x0
-	bl _080E5CD4
+	bl func_080E5CD4
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

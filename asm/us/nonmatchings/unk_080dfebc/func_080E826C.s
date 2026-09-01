@@ -23,7 +23,7 @@ func_080E826C: @ 080E826C
 _080E828A:
 	lsls r0, r5, #0x18
 	lsrs r0, r0, #0x18
-	bl _080E6634
+	bl func_080E6634
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	lsls r1, r0, #0x02

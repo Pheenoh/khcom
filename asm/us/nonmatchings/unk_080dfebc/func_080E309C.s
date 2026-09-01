@@ -140,7 +140,7 @@ _080E31A0:
 	lsls r2, r1, #0x10
 	asrs r2, r2, #0x10
 	adds r1, r4, #0x0
-	bl _080E1194
+	bl func_080E1194
 	adds r1, r0, #0x0
 	lsls r1, r1, #0x10
 	str r4, [sp, #0x014]
@@ -176,7 +176,7 @@ _080E31EC:
 	lsls r2, r3, #0x10
 	asrs r2, r2, #0x10
 	movs r1, #0x06
-	bl _080E1194
+	bl func_080E1194
 	adds r4, r0, #0x0
 	lsls r0, r7, #0x10
 	asrs r0, r0, #0x10
@@ -250,7 +250,7 @@ _080E3286:
 	lsls r2, r3, #0x10
 	asrs r2, r2, #0x10
 	movs r1, #0x01
-	bl _080E1194
+	bl func_080E1194
 	lsls r0, r0, #0x10
 	lsrs r5, r0, #0x10
 	lsls r1, r7, #0x10
@@ -365,7 +365,7 @@ _080E335E:
 	lsls r2, r3, #0x10
 	asrs r2, r2, #0x10
 	adds r1, r4, #0x0
-	bl _080E1194
+	bl func_080E1194
 	adds r1, r0, #0x0
 	lsls r1, r1, #0x10
 	str r4, [sp, #0x014]
@@ -403,7 +403,7 @@ _080E33AE:
 	lsls r2, r3, #0x10
 	asrs r2, r2, #0x10
 	movs r1, #0x03
-	bl _080E1194
+	bl func_080E1194
 	adds r1, r0, #0x0
 	lsls r0, r7, #0x10
 	asrs r0, r0, #0x10
