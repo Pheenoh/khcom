@@ -307,14 +307,10 @@ def main():
     print(f"  chunks: {wrote} written ({absent} empty), {missing} missing"
           + (f", {stale} stale removed" if stale else ""))
 
-    first = rows[0][3]
     Path(f"asm/{ver}").mkdir(parents=True, exist_ok=True)
     Path(f"asm/{ver}/header.s").write_text(
         f'\t.arm\n\t.section .text\n\t.global _start\n_start:\n'
         f'\tb EntryPoint\n\t.incbin "roms/{code}.gba", 0x4, 0xBC\n')
-    Path(f"asm/{ver}/crt0.s").write_text(
-        f'\t.arm\n\t.section .text\n\t.global EntryPoint\nEntryPoint:\n'
-        f'\t.incbin "roms/{code}.gba", 0xC0, {first - ROM_BASE - 0xC0:#x}\n')
 
     def unit_key(name):
         if name.startswith("@"):
