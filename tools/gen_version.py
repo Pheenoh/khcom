@@ -308,9 +308,6 @@ def main():
           + (f", {stale} stale removed" if stale else ""))
 
     Path(f"asm/{ver}").mkdir(parents=True, exist_ok=True)
-    Path(f"asm/{ver}/header.s").write_text(
-        f'\t.arm\n\t.section .text\n\t.global _start\n_start:\n'
-        f'\tb EntryPoint\n\t.incbin "roms/{code}.gba", 0x4, 0xBC\n')
 
     def unit_key(name):
         if name.startswith("@"):

@@ -15,6 +15,9 @@ ARCHIVE_BSS = {"us": 0x020387B8, "jp": 0x02038728, "eu": 0x02038DC8}
 BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 
 DEFAULT_VERSION = "us"
+ROM_TITLE = "KINGDOMHEART"
+ROM_MAKER_CODE = "GD"
+
 VERSIONS = {
     "us": ("B8CE", "10729bd884f8fdca7a310b6d606c52e46657aa48"),
     "jp": ("B8CJ", "59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa"),
@@ -165,7 +168,8 @@ with out.open("w") as f:
     )
     n.rule(
         "rom",
-        command="$objcopy -O binary --only-section=.text $in $out",
+        command=f'$objcopy -O binary --only-section=.text $in $out'
+                f' && python3 tools/gbafix.py $out "{ROM_TITLE}" {code} {ROM_MAKER_CODE}',
         description="ROM $out",
     )
     n.rule(
@@ -218,7 +222,7 @@ with out.open("w") as f:
         implicit=[ldscript],
         variables={"ldscript": ldscript, "map": mapfile},
     )
-    n.build(rom, "rom", elf)
+    n.build(rom, "rom", elf, implicit=["tools/gbafix.py"])
     if not args.non_matching:
         n.build(f"{build_dir}/ok", "check", rom)
     n.newline()
