@@ -408,7 +408,23 @@ void func_08004D74(void) {
 INCLUDE_ASM("engine/func_08004DB0.s");
 INCLUDE_ASM("engine/func_08004E64.s");
 INCLUDE_ASM("engine/func_08004F08.s");
-INCLUDE_ASM("engine/func_08004FC8.s");
+
+void func_08004FC8(s32 bg) {
+    switch ((u32)bg) {
+    case 0:
+        gUnk_03007500 |= 0x100;
+        break;
+    case 1:
+        gUnk_03007500 |= 0x200;
+        break;
+    case 2:
+        gUnk_03007500 |= 0x400;
+        break;
+    case 3:
+        gUnk_03007500 |= 0x800;
+        break;
+    }
+}
 
 void func_0800501C(s32 bg) {
     switch ((u32)bg) {
@@ -735,7 +751,22 @@ void* AnimUpdate(AnimState* a) {
 #else
 INCLUDE_ASM("engine/AnimUpdate.s");
 #endif
-INCLUDE_ASM("engine/func_08005AC4.s");
+
+u8 func_08005AC4(AnimState* a) {
+    if (a->unk_14 == 0) {
+        return 0;
+    }
+    if (!(a->unk_08 & 1)) {
+        if (a->unk_08 & 0x1000) {
+            return 0;
+        }
+    }
+    if (a->unk_0A + 1 >= a->unk_14[a->unk_0E].unk_02) {
+        return 1;
+    }
+
+    return 0;
+}
 
 void* AnimGetGfx(AnimState* a) {
     void* result;
@@ -896,7 +927,34 @@ void func_08006404(void) {
 }
 
 INCLUDE_ASM("engine/func_0800642C.s");
-INCLUDE_ASM("engine/func_08006494.s");
+
+void func_08006494(u16 a, u16 b) {
+    gUnk_02034024 = a;
+    gUnk_0203401C = b << 8;
+    gUnk_02034020 = 0;
+    gUnk_02034026 = 1;
+    func_08005490(0, 1);
+    func_08005490(1, 1);
+    func_08005490(2, 1);
+    func_08005490(3, 1);
+    func_080034D8(1);
+}
+
+void func_080064E8(u16 a, u16 b) {
+    gUnk_02034024 = a;
+    gUnk_0203401C = 0;
+    gUnk_02034020 = b << 8;
+    gUnk_02034026 = 1;
+    func_08005490(0, 1);
+    func_08005490(1, 1);
+    func_08005490(2, 1);
+    func_08005490(3, 1);
+    func_080034D8(1);
+}
+
+u8 func_0800653C(void) {
+    return gUnk_02034026;
+}
 
 void SeedRand(u32 seed) {
     gRandSeed = seed;
