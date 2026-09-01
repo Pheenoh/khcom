@@ -313,7 +313,7 @@ u16 GetRandom(void);
 void m4aSongNumStart(u16 id);
 void m4aSongNumStop(u16 id);
 void func_08012304(void* a);
-void TaskPoolDestroy(void* a);
+void TaskPoolDestroy(TaskPool* a);
 BtlWork* func_08000C8C(void* node);
 BtlWork* func_08000CD4(void* node);
 void func_080140C0(s32* a, s32* b, s32* c);
