@@ -18,6 +18,7 @@ INCLUDE_ASM("main/func_080005A4.s");
 INCLUDE_ASM("main/func_080005A8.s");
 INCLUDE_ASM("main/func_080005AC.s");
 INCLUDE_ASM("main/func_08000660.s");
+INCLUDE_ASM("main/func_08000714.s");
 
 void func_080007A8(HeapBlock* b) {
     b->prevFree->nextFree = b->nextFree;
