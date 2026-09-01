@@ -26,7 +26,7 @@ func_080E853C: @ 080E853C
 	bl func_080E7FCC
 	bl func_080E8058
 	bl func_080E826C
-	bl _080E80E0
+	bl func_080E80E0
 _080E8576:
 	bl func_080E8594
 	pop {r4, r5}
