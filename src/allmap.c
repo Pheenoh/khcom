@@ -218,7 +218,20 @@ s16 func_080D3D40(u16 a) {
 #else
 INCLUDE_ASM("allmap/func_080D3D40.s");
 #endif
-INCLUDE_ASM("allmap/func_080D3DCC.s");
+s32 func_080D3DCC(u8 a) {
+    switch (func_080987C0(a)) {
+    case 1:
+        return 64;
+    case 2:
+        return 96;
+    case 4:
+        return 0;
+    case 0:
+    case 3:
+    default:
+        return 32;
+    }
+}
 
 void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
     u16 pal;
@@ -886,7 +899,38 @@ void func_080D5998(void) {
     LoadPalette(gUnk_02034EC4, (void*)0x05000000, 0x400);
 }
 
-INCLUDE_ASM("allmap/func_080D59B4.s");
+void func_080D59B4(void) {
+    if (gUnk_02034ECA != 0) {
+        func_080010CC(&gUnk_09EF4E50, 0);
+        return;
+    }
+    switch (gUnk_02034EC2) {
+    case 3:
+        SaveLoadSystem();
+        SaveClearSystem();
+        func_080E04EC();
+        return;
+    case 1:
+        func_080010CC(&gUnk_09EF6AE0, 0);
+        return;
+    case 2:
+        func_080AEB94();
+        func_080010CC(&gUnk_09EF12F8, 0);
+        return;
+    case 4:
+        func_0801CD20();
+        func_080010CC(&gUnk_09EF6AD0, 0);
+        return;
+    case 5:
+        func_0801CCB4();
+        func_080010CC(&gUnk_09EF6AD0, 0);
+        return;
+    case 0:
+    default:
+        func_080010CC(&gUnk_09EF6AD0, 0);
+        return;
+    }
+}
 
 void func_080D5A4C(u16 a) {
     if ((gUnk_02039BB0.unk_08 & 0x200) != 0) {
