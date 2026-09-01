@@ -454,13 +454,13 @@ _08106B0E:
 	bl func_08104BBC
 	bl func_08104D18
 	movs r0, #0x00
-	bl func_08004FC8
+	bl EnableBg
 	movs r0, #0x01
-	bl func_08004FC8
+	bl EnableBg
 	movs r0, #0x02
-	bl func_0800501C
+	bl DisableBg
 	movs r0, #0x03
-	bl func_0800501C
+	bl DisableBg
 	pop {r3, r4, r5}
 	mov r8, r3
 	mov r9, r4

@@ -82,8 +82,8 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     case 3:
         if (work->unk_26 == 0) {
             gUnk_02039BA0->unk_70 |= 0x100000;
-            func_0800501C(2);
-            func_0800501C(3);
+            DisableBg(2);
+            DisableBg(3);
             func_08006120(0, 1);
             work->unk_26++;
         } else if (work->unk_26 == 1) {
@@ -139,7 +139,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             gUnk_02039BA0->unk_18.unk_14 = work->unk_25;
             gUnk_02039BA0->unk_70 &= ~0x40000;
             gUnk_02039BA0->unk_70 &= ~2;
-            func_0800501C(0);
+            DisableBg(0);
             SetBgPriority(1, 1);
             return 0;
         }

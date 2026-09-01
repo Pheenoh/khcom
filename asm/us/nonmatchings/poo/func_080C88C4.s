@@ -82,7 +82,7 @@ _080C892A:
 	ldr r3, [r5, #0x08]
 	ldr r2, [r3, #0x00]
 	ldr r3, [r3, #0x04]
-	bl func_0801CB6C
+	bl GetAngle
 	adds r1, r4, #0x0
 	adds r1, #0x39
 	strb r0, [r1, #0x00]

@@ -118,17 +118,17 @@ void mode_mapinspect_0(void) {
 
     func_08107280();
     func_081073F0();
-    func_08004FC8(0);
-    func_08004FC8(1);
-    func_0800501C(2);
-    func_0800501C(3);
+    EnableBg(0);
+    EnableBg(1);
+    DisableBg(2);
+    DisableBg(3);
 }
 #else
 INCLUDE_ASM("mode_mapinspect/mode_mapinspect_0.s");
 #endif
 
 void mode_mapinspect_1(void) {
-    func_0801CC80();
+    UpdatePlayTime();
 
     switch (gUnk_02035FCA) {
     case 0:

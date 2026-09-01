@@ -28,7 +28,7 @@ func_08015B50: @ 08015B50
 	bl func_08012674
 	movs r0, #0x10
 	movs r1, #0x00
-	bl func_08005810
+	bl SetBlendAlpha
 	cmp r4, #0x00
 	beq _08015B96
 	ldr r0, _08015BD0 @ =0x02034928

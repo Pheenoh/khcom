@@ -166,7 +166,7 @@ void LoadBgTiles(s32 bg, void* src, u16 size);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgScroll(s32 a, u16 b, u16 c);
 void func_08004DB0(void);
-void func_08004FC8(s32 a);
+void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 u16 GetKeysRepeat(void);
 void func_080010CC(Mode* mode, s32 b);

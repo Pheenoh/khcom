@@ -29,7 +29,7 @@ func_08014FDC: @ 08014FDC
 	str r0, [r1, #0x14]
 	movs r0, #0x10
 	movs r1, #0x08
-	bl func_08005810
+	bl SetBlendAlpha
 	mov r3, r8
 	cmp r3, #0x00
 	beq _08015024

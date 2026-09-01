@@ -5,12 +5,12 @@ void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     SetupBg(1, 0, 23, 12);
     work->unk_02 = arg;
     work->unk_00 = 0;
-    func_0800501C(1);
+    DisableBg(1);
     func_08007E68(0);
     LoadBgPalette(1, gUnk_08F6D9E4, 0x20);
     func_08007E7C();
     SetBgPriority(1, 0);
-    func_080057A0(1, 16, 16);
+    SetBgBlend(1, 16, 16);
 
     switch (work->unk_02) {
     case 0xAD:
@@ -163,7 +163,7 @@ u8 task_romcri_eff_1(RomcriEffWork* work) {
 }
 
 void task_romcri_eff_3(void) {
-    func_0800501C(1);
+    DisableBg(1);
 }
 
 void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg) {
@@ -171,12 +171,12 @@ void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg) {
     work->unk_00 = 0;
     work->unk_03 = 0;
     work->unk_02 = arg;
-    func_0800501C(1);
+    DisableBg(1);
     func_08007E68(0);
     LoadBgPalette(1, gUnk_08F6DA04, 0x20);
     func_08007E7C();
     SetBgPriority(1, 0);
-    func_080057A0(1, 16, 16);
+    SetBgBlend(1, 16, 16);
     LoadBgTiles(1, gUnk_08EE3064, 0xA20);
 
     if (gUnk_02039BB0.unk_008 & 8) {
@@ -219,7 +219,7 @@ u8 task_romcri_eff2_1(RomcriEff2Work* work) {
             LoadBgMap(1, gUnk_08F5C384, 0x800);
             break;
         case 1:
-            func_08004FC8(1);
+            EnableBg(1);
             LoadBgMap(1, gUnk_08F5CB84, 0x800);
             break;
         case 2:
@@ -252,7 +252,7 @@ u8 task_romcri_eff2_1(RomcriEff2Work* work) {
 }
 
 void task_romcri_eff2_3(void) {
-    func_0800501C(1);
+    DisableBg(1);
 }
 
 u16 func_0803FDC8(RomcriList* list) {

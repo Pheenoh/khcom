@@ -110,7 +110,7 @@ _0804CC0E:
 	adds r4, #0x04
 	adds r3, r3, r4
 	ldr r3, [r3, #0x00]
-	bl func_0801CB6C
+	bl GetAngle
 	adds r1, r5, #0x0
 	adds r1, #0x34
 	strb r0, [r1, #0x00]
@@ -138,7 +138,7 @@ _0804CC4C:
 	adds r4, #0x04
 	adds r3, r3, r4
 	ldr r3, [r3, #0x00]
-	bl func_0801CB6C
+	bl GetAngle
 	adds r1, r5, #0x0
 	adds r1, #0x34
 	strb r0, [r1, #0x00]

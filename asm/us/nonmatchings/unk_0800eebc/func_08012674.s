@@ -36,7 +36,7 @@ _080126AC:
 	ldr r0, [r0, #0x00]
 	movs r1, #0x10
 	movs r2, #0x10
-	bl func_080057A0
+	bl SetBgBlend
 	ldr r0, [r4, #0x00]
 	movs r1, #0x80
 	lsls r1, r1, #0x01

@@ -343,7 +343,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         if (obj != 0) {
             if (work->unk_3A <= 0) {
                 func_0800589C(&work->unk_58,
-                              func_0801CB6C(work->unk_24, work->unk_2C, obj->unk_004,
+                              GetAngle(work->unk_24, work->unk_2C, obj->unk_004,
                                             obj->unk_00C - (obj->unk_0A2 << 8)),
                               2);
             } else {

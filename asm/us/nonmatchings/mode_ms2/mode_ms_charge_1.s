@@ -6,7 +6,7 @@
 	.type mode_ms_charge_1, %function
 mode_ms_charge_1: @ 08106E30
 	push {r4, r5, lr}
-	bl func_0801CC80
+	bl UpdatePlayTime
 	ldr r1, _08106E54 @ =0x02035CB8
 	ldrb r0, [r1, #0x00]
 	adds r0, #0x02

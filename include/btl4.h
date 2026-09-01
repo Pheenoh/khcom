@@ -137,7 +137,7 @@ typedef struct BtlHpothWork {
 extern BtlActor* gUnk_02039B84;
 extern BtlActor* gUnk_02039B9C;
 extern BtlSetup gUnk_02039BB0;
-extern u16 gUnk_03007500;
+extern u16 gDispCnt;
 
 extern u8 gUnk_08B1D8BC[];
 extern u8 gUnk_08B1FCBC[];

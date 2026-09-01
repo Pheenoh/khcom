@@ -14,7 +14,7 @@ func_0800F3BC: @ 0800F3BC
 	ldr r1, [r5, #0x48]
 	adds r2, r6, #0x0
 	adds r3, r7, #0x0
-	bl func_0801CB6C
+	bl GetAngle
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	ldr r3, _0800F424 @ =0x08121400

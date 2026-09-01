@@ -23,7 +23,7 @@ func_0800516C: @ 0800516C
 	bls _080051B6
 _0800518C:
 	adds r0, r4, #0x0
-	bl func_08004FC8
+	bl EnableBg
 	ldr r3, _080051C0 @ =0x030074D4
 	ldr r1, [r3, #0x00]
 	lsls r2, r4, #0x04

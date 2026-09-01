@@ -101,7 +101,7 @@ _0805FB00:
 	ldr r0, _0805FB74 @ =0x02034A18
 	strb r1, [r0, #0x00]
 	ldr r0, [sp, #0x008]
-	bl func_08004FC8
+	bl EnableBg
 	add sp, #0x00C
 	pop {r3, r4, r5}
 	mov r8, r3

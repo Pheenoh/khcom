@@ -29,7 +29,7 @@ task_wlogo_hwt_0: @ 080B4AE4
 	strb r1, [r4, #0x05]
 	movs r1, #0x10
 	movs r2, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	ldr r0, _080B4B38 @ =0x02034C38
 	movs r1, #0x04
 	bl TaskPoolInit

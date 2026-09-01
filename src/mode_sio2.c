@@ -6,7 +6,7 @@ void mode_sio_dbg_flg_0(s32 arg) {
 
     func_08004DB0();
     SetupBg(0, 0, 0x0F, 0);
-    func_08004FC8(0);
+    EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gUnk_08128304, 0x20, 0x0F);
     gUnk_02034CF4 = 0;
@@ -435,7 +435,7 @@ void mode_pooh_0(s32 arg) {
 }
 
 void mode_pooh_1(void) {
-    func_0801CC80();
+    UpdatePlayTime();
     func_080C7CB0(0);
 
     if (gUnk_02034D44 != 0 && !func_08006314()) {

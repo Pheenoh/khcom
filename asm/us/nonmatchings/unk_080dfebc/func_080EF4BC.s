@@ -19,7 +19,7 @@ func_080EF4BC: @ 080EF4BC
 	ldr r1, [r4, #0x04]
 	ldr r2, [r3, #0x18]
 	ldr r3, [r3, #0x1C]
-	bl func_0801CB6C
+	bl GetAngle
 	lsls r0, r0, #0x18
 	lsrs r5, r0, #0x18
 	ldrb r1, [r4, #0x14]

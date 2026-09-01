@@ -43,7 +43,7 @@ task_wlogo_atl_0: @ 080B525C
 	movs r0, #0x00
 	movs r1, #0x10
 	movs r2, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	ldr r0, _080B52DC @ =0x080B5445
 	bl func_080081B8
 	ldrb r1, [r4, #0x09]

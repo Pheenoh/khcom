@@ -45,7 +45,7 @@ task_wlogo_dil_0: @ 080B5D8C
 	strb r1, [r4, #0x10]
 	movs r0, #0x00
 	movs r1, #0x10
-	bl func_080057A0
+	bl SetBgBlend
 	pop {r4, r5}
 	pop {r0}
 	bx r0

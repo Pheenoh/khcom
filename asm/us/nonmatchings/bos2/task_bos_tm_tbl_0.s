@@ -25,7 +25,7 @@ task_bos_tm_tbl_0: @ 080BCBA4
 	movs r1, #0x00
 	bl func_08012614
 	movs r0, #0x01
-	bl func_0800501C
+	bl DisableBg
 	str r5, [r6, #0x00]
 	movs r1, #0x00
 	str r1, [r6, #0x68]

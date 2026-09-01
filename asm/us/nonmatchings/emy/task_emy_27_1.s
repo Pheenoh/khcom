@@ -162,7 +162,7 @@ _0803AD94:
 	ldr r1, [r4, #0x08]
 	ldr r2, [sp, #0x01C]
 	ldr r3, [sp, #0x020]
-	bl func_0801CB6C
+	bl GetAngle
 	movs r3, #0xB0
 	lsls r3, r3, #0x01
 	adds r1, r5, r3

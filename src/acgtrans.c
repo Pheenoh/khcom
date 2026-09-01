@@ -11,7 +11,7 @@ void task_acgtrans_0(AcgTransWork* work, AcgTransConfig* cfg) {
     }
     work->unk_00C = 0;
     work->unk_010 = cfg->unk_00C;
-    func_0800501C(cfg->unk_00C);
+    DisableBg(cfg->unk_00C);
 }
 
 s32 task_acgtrans_1(AcgTransWork* work) {
@@ -22,13 +22,13 @@ s32 task_acgtrans_1(AcgTransWork* work) {
         work->unk_004 += work->unk_00A;
         work->unk_000 += work->unk_00A;
         work->unk_00C += work->unk_00A;
-        func_0800501C(work->unk_010);
+        DisableBg(work->unk_010);
         return 1;
     }
 
     work->unk_00A += rest;
     RequestDma3Copy(work->unk_004, work->unk_000, work->unk_00A);
-    func_0800501C(work->unk_010);
+    DisableBg(work->unk_010);
     return 0;
 }
 

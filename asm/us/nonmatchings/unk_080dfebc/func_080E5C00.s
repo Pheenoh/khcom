@@ -69,7 +69,7 @@ _080E5C74:
 	ldr r3, [r2, #0x00]
 	ldr r2, [r3, #0x18]
 	ldr r3, [r3, #0x1C]
-	bl func_0801CB6C
+	bl GetAngle
 	strb r0, [r5, #0x18]
 _080E5C90:
 	cmp r4, #0x00

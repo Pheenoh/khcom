@@ -164,7 +164,7 @@ typedef struct MdWork {
     u8 unk_1B6[0x2];
 } MdWork;
 
-void func_0800501C(s32 bg);
+void DisableBg(s32 bg);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);
 void ReleaseObjTiles(void* a);

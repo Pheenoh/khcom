@@ -83,9 +83,9 @@ void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgPriority(s32 bg, u16 priority);
 void SetBgScroll(s32 bg, u16 x, u16 y);
-void func_080057A0(s32 a, s32 b, s32 c);
-void func_08004FC8(s32 a);
-void func_0800501C(s32 bg);
+void SetBgBlend(s32 a, s32 b, s32 c);
+void EnableBg(s32 a);
+void DisableBg(s32 bg);
 void func_08007E68(s32 a);
 void func_08007E7C(void);
 

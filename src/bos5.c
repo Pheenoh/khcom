@@ -65,7 +65,7 @@ void task_bos_md_3(MdWork* work) {
     s32 i;
     s32 off;
 
-    func_0800501C(1);
+    DisableBg(1);
     a = (u8*)work + 0xA8;
     b = (u8*)work + 0x68;
     i = 0;

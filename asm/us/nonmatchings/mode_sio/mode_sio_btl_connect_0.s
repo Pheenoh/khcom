@@ -26,9 +26,9 @@ mode_sio_btl_connect_0: @ 080AEBA0
 	movs r3, #0x00
 	bl SetupBg
 	movs r0, #0x00
-	bl func_08004FC8
+	bl EnableBg
 	movs r0, #0x01
-	bl func_08004FC8
+	bl EnableBg
 	ldr r1, _080AEC74 @ =0x096AD604
 	movs r2, #0xA0
 	lsls r2, r2, #0x01

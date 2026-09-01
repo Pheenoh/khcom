@@ -1117,7 +1117,7 @@ void task_btl_premire_3(BtlPremireWork* work) {
 void task_btl_start_0(BtlStartWork* work) {
     func_08006778(gUnk_09EDA918, 120, 72);
     func_0800675C(0, 0x200, 0x200);
-    func_080057A0(gUnk_02039B84->unk_1C4, 16, 16);
+    SetBgBlend(gUnk_02039B84->unk_1C4, 16, 16);
     func_08019050(1, 0x200, 0x10000, 0x14000);
     func_08006120(0, 60);
     work->unk_00 = 0;

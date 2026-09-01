@@ -71,7 +71,7 @@ _0803DDC4:
 	ldr r3, [sp, #0x004]
 	ldr r0, [r6, #0x04]
 	ldr r1, [r6, #0x08]
-	bl func_0801CB6C
+	bl GetAngle
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	add sp, #0x008

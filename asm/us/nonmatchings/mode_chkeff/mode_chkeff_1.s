@@ -326,7 +326,7 @@ _0800BDF4:
 	ldr r1, [r5, #0x00]
 	ldrh r0, [r1, #0x24]
 	ldrh r1, [r1, #0x26]
-	bl func_08005810
+	bl SetBlendAlpha
 	ldr r0, [r5, #0x00]
 	ldrb r0, [r0, #0x16]
 	cmp r0, #0x00

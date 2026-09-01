@@ -23,7 +23,7 @@ func_080175BC: @ 080175BC
 	ldr r1, [r4, #0x08]
 	ldr r2, [r6, #0x04]
 	ldr r3, [r6, #0x08]
-	bl func_0801CB6C
+	bl GetAngle
 	adds r1, r6, #0x0
 	adds r1, #0xB0
 	movs r2, #0x00

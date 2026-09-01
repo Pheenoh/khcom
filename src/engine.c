@@ -447,48 +447,48 @@ INCLUDE_ASM("engine/func_08004C20.s");
 
 void func_08004D74(void) {
     gUnk_030074D8 = 0;
-    func_0800501C(0);
-    func_0800501C(1);
-    func_0800501C(2);
-    func_0800501C(3);
+    DisableBg(0);
+    DisableBg(1);
+    DisableBg(2);
+    DisableBg(3);
     func_080054C8(0, 0);
-    gUnk_03007554 = 0;
+    gBldCnt = 0;
 }
 
 INCLUDE_ASM("engine/func_08004DB0.s");
 INCLUDE_ASM("engine/func_08004E64.s");
 INCLUDE_ASM("engine/func_08004F08.s");
 
-void func_08004FC8(s32 bg) {
+void EnableBg(s32 bg) {
     switch ((u32)bg) {
     case 0:
-        gUnk_03007500 |= 0x100;
+        gDispCnt |= 0x100;
         break;
     case 1:
-        gUnk_03007500 |= 0x200;
+        gDispCnt |= 0x200;
         break;
     case 2:
-        gUnk_03007500 |= 0x400;
+        gDispCnt |= 0x400;
         break;
     case 3:
-        gUnk_03007500 |= 0x800;
+        gDispCnt |= 0x800;
         break;
     }
 }
 
-void func_0800501C(s32 bg) {
+void DisableBg(s32 bg) {
     switch ((u32)bg) {
     case 0:
-        gUnk_03007500 &= 0xFEFF;
+        gDispCnt &= 0xFEFF;
         break;
     case 1:
-        gUnk_03007500 &= 0xFDFF;
+        gDispCnt &= 0xFDFF;
         break;
     case 2:
-        gUnk_03007500 &= 0xFBFF;
+        gDispCnt &= 0xFBFF;
         break;
     case 3:
-        gUnk_03007500 &= 0xF7FF;
+        gDispCnt &= 0xF7FF;
         break;
     }
 }
@@ -502,17 +502,17 @@ void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette) {
 }
 
 void LoadBgTiles(s32 bg, void* src, u16 size) {
-    func_08004FC8(bg);
+    EnableBg(bg);
     RequestDma3Copy(src, GetBgCharBase(bg), size);
 }
 
 void LoadBgPalette(s32 bg, void* src, u16 size) {
-    func_08004FC8(bg);
+    EnableBg(bg);
     LoadPalette(src, (void*)((gBgPaletteBank[bg] << 5) + 0x05000000), size);
 }
 
 void LoadBgMap(s32 bg, void* src, u16 size) {
-    func_08004FC8(bg);
+    EnableBg(bg);
     RequestDma3Copy(src, GetBgScreenBase(bg), size);
 }
 
@@ -526,12 +526,12 @@ void* GetBgScreenBase(s32 bg) {
 
 #ifdef NON_MATCHING
 void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
-    if (gUnk_03007500 & 7) {
+    if (gDispCnt & 7) {
         if (bg == 2 || bg == 3) {
             return;
         }
     }
-    func_08004FC8(bg);
+    EnableBg(bg);
     gUnk_030074D4[bg].unk_04 = src;
     gUnk_030074D4[bg].unk_08 = w;
     gUnk_030074D4[bg].unk_09 = h;
@@ -545,7 +545,7 @@ INCLUDE_ASM("engine/func_0800516C.s");
 INCLUDE_ASM("engine/func_080051C4.s");
 INCLUDE_ASM("engine/func_08005244.s");
 
-void func_08005490(s32 bg, u8 on) {
+void SetBgMosaic(s32 bg, u8 on) {
     if (on) {
         *gBgControl[bg] |= 0x40;
     } else {
@@ -633,14 +633,14 @@ void SetBgPriority(s32 bg, u16 priority) {
     *p |= priority;
 }
 
-void func_080055EC(s32 bg, u16 v) {
+void SetBgSize(s32 bg, u16 v) {
     vu16* p = gBgControl[bg];
 
     *p &= 0x3FFF;
     *p |= v;
 }
 
-void func_08005610(s32 bg, u16 v) {
+void SetBgColorMode(s32 bg, u16 v) {
     if (v == 0x80) {
         vu16* p = gBgControl[bg];
 
@@ -654,7 +654,7 @@ void func_08005610(s32 bg, u16 v) {
     }
 }
 
-void func_08005654(s32 bg, u8 on) {
+void SetBgOverflow(s32 bg, u8 on) {
     if (on) {
         *gBgControl[bg] |= 0x2000;
     } else {
@@ -671,27 +671,27 @@ void func_08005778(u8 r, u8 g, u8 b) {
     gUnk_030074D8 = gUnk_030074CC;
 }
 
-void func_080057A0(s32 a, u16 b, u16 c) {
+void SetBgBlend(s32 a, u16 b, u16 c) {
     switch ((u32)a) {
     case 0:
-        gUnk_03007554 = 0x1E01;
+        gBldCnt = 0x1E01;
         break;
     case 1:
-        gUnk_03007554 = 0x1D02;
+        gBldCnt = 0x1D02;
         break;
     case 2:
-        gUnk_03007554 = 0x1B04;
+        gBldCnt = 0x1B04;
         break;
     default:
-        gUnk_03007554 = 0x1708;
+        gBldCnt = 0x1708;
         break;
     }
-    gUnk_03007554 |= 0x40;
-    gUnk_03007564 = (b << 8) | c;
+    gBldCnt |= 0x40;
+    gBldAlpha = (b << 8) | c;
 }
 
-void func_08005810(u16 a, u16 b) {
-    gUnk_03007564 = (a << 8) | b;
+void SetBlendAlpha(u16 a, u16 b) {
+    gBldAlpha = (a << 8) | b;
 }
 
 #ifdef NON_MATCHING
@@ -1065,10 +1065,10 @@ void func_08006494(u16 a, u16 b) {
     gUnk_0203401C = b << 8;
     gUnk_02034020 = 0;
     gUnk_02034026 = 1;
-    func_08005490(0, 1);
-    func_08005490(1, 1);
-    func_08005490(2, 1);
-    func_08005490(3, 1);
+    SetBgMosaic(0, 1);
+    SetBgMosaic(1, 1);
+    SetBgMosaic(2, 1);
+    SetBgMosaic(3, 1);
     func_080034D8(1);
 }
 
@@ -1077,10 +1077,10 @@ void func_080064E8(u16 a, u16 b) {
     gUnk_0203401C = 0;
     gUnk_02034020 = b << 8;
     gUnk_02034026 = 1;
-    func_08005490(0, 1);
-    func_08005490(1, 1);
-    func_08005490(2, 1);
-    func_08005490(3, 1);
+    SetBgMosaic(0, 1);
+    SetBgMosaic(1, 1);
+    SetBgMosaic(2, 1);
+    SetBgMosaic(3, 1);
     func_080034D8(1);
 }
 
@@ -1164,5 +1164,5 @@ void func_08006B40(u16 a) {
 void func_08006B4C(void) {
     gUnk_02034040 = 0;
     gUnk_02034054 = 1;
-    func_0800501C(gUnk_02034048);
+    DisableBg(gUnk_02034048);
 }

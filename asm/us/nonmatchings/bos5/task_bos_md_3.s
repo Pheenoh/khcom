@@ -12,7 +12,7 @@ task_bos_md_3: @ 080FCA28
 	push {r5, r6, r7}
 	adds r7, r0, #0x0
 	movs r0, #0x01
-	bl func_0800501C
+	bl DisableBg
 	adds r5, r7, #0x0
 	adds r5, #0xA8
 	adds r4, r7, #0x0

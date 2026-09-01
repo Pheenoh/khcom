@@ -330,7 +330,7 @@ void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_08002A10(void* a, void* b);
 void func_08006778(void* a, s32 x, s32 y);
 void func_0800675C(u8 a, s32 b, s32 c);
-void func_080057A0(s32 a, s32 b, s32 c);
+void SetBgBlend(s32 a, s32 b, s32 c);
 void func_08019050(s32 a, s32 b, s32 c, s32 d);
 void func_08006120(s32 a, s32 b);
 void SetBgPriority(s32 bg, u16 priority);

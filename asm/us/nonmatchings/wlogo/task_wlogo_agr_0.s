@@ -48,7 +48,7 @@ task_wlogo_agr_0: @ 080B5F94
 	movs r0, #0x00
 	movs r1, #0x10
 	movs r2, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	ldr r0, _080B601C @ =0x02034C80
 	movs r1, #0x32
 	bl TaskPoolInit

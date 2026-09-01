@@ -1082,7 +1082,7 @@ _08011E14:
 _08011E1A:
 	ldr r2, [r7, #0x04]
 	ldr r3, [r7, #0x08]
-	bl func_0801CB6C
+	bl GetAngle
 	adds r1, r7, #0x0
 	adds r1, #0xB0
 _08011E26:

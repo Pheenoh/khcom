@@ -32,7 +32,7 @@ void mode_movie_1(void) {
         s32 fill;
 
         func_08004034();
-        gUnk_03007500 &= 0xE0FF;
+        gDispCnt &= 0xE0FF;
         fill = 0;
         CpuSet(&fill, (void*)0x06000000, 0x05006000);
         gUnk_02034938++;

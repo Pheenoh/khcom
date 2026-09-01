@@ -38,7 +38,7 @@ func_08012824: @ 08012824
 	ldr r0, [r0, #0x00]
 	movs r1, #0x10
 	movs r2, #0x10
-	bl func_080057A0
+	bl SetBgBlend
 _0801286C:
 	ldr r4, _080128B4 @ =0x02034928
 	ldr r0, [r4, #0x00]

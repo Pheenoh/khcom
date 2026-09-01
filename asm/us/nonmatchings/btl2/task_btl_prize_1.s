@@ -578,7 +578,7 @@ _080311C8:
 	ldr r1, [r1, #0x08]
 	ldr r2, [r7, #0x00]
 	ldr r3, [r7, #0x04]
-	bl func_0801CB6C
+	bl GetAngle
 	adds r1, r7, #0x0
 	adds r1, #0x44
 	strb r0, [r1, #0x00]

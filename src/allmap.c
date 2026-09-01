@@ -940,9 +940,9 @@ void func_080D5A4C(u16 a) {
         LoadBgPalette(1, gUnk_0984A418, 0x200);
         func_080D5978(0, gUnk_0984A418, 0x200);
     }
-    func_08004FC8(0);
-    func_0800501C(1);
-    func_0800501C(2);
+    EnableBg(0);
+    DisableBg(1);
+    DisableBg(2);
     if (func_08000F48(gUnk_02034EB8) == 0) {
         gUnk_02034EB8 = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E60, 0);
     }
@@ -954,8 +954,8 @@ void func_080D5A4C(u16 a) {
 
 void func_080D5B04(void) {
     LoadBgMap(0, gUnk_0983F398, 0x800);
-    func_080057A0(0, 5, 16);
-    func_08004FC8(1);
+    SetBgBlend(0, 5, 16);
+    EnableBg(1);
     m4aSongNumStart(6);
 }
 

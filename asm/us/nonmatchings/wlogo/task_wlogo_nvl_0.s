@@ -40,7 +40,7 @@ task_wlogo_nvl_0: @ 080B5460
 	movs r0, #0x00
 	movs r1, #0x10
 	movs r2, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	ldr r0, _080B54D4 @ =0x02034C50
 	movs r1, #0x04
 	bl TaskPoolInit

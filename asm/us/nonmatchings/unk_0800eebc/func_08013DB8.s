@@ -27,7 +27,7 @@ func_08013DB8: @ 08013DB8
 	ldr r0, [r0, #0x00]
 	movs r1, #0x00
 	movs r2, #0x10
-	bl func_080057A0
+	bl SetBgBlend
 	ldr r2, _08013E3C @ =0x02034928
 	ldr r0, [r2, #0x00]
 	str r5, [r0, #0x10]

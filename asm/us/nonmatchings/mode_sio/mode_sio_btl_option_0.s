@@ -24,10 +24,10 @@ mode_sio_btl_option_0: @ 080AEF38
 	bl SetBgPriority
 	movs r0, #0x00
 	movs r1, #0x01
-	bl func_08005654
+	bl SetBgOverflow
 	movs r0, #0x00
 	movs r1, #0x00
-	bl func_080055EC
+	bl SetBgSize
 	movs r0, #0x01
 	movs r1, #0x00
 	movs r2, #0x0F
@@ -38,10 +38,10 @@ mode_sio_btl_option_0: @ 080AEF38
 	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x01
-	bl func_08005654
+	bl SetBgOverflow
 	movs r0, #0x01
 	movs r1, #0x00
-	bl func_080055EC
+	bl SetBgSize
 	movs r0, #0x02
 	movs r1, #0x02
 	movs r2, #0x18
@@ -52,11 +52,11 @@ mode_sio_btl_option_0: @ 080AEF38
 	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x01
-	bl func_08005654
+	bl SetBgOverflow
 	movs r1, #0x80
 	lsls r1, r1, #0x08
 	movs r0, #0x02
-	bl func_080055EC
+	bl SetBgSize
 	ldr r4, _080AF094 @ =0x096AD744
 	movs r0, #0x00
 	bl GetBgCharBase
@@ -133,9 +133,9 @@ mode_sio_btl_option_0: @ 080AEF38
 	adds r2, r2, r1
 	strb r0, [r2, #0x00]
 	movs r0, #0x00
-	bl func_0800501C
+	bl DisableBg
 	movs r0, #0x01
-	bl func_0800501C
+	bl DisableBg
 	ldr r2, [r5, #0x00]
 	ldr r3, _080AF0AC @ =0x0000021A
 	adds r0, r2, r3

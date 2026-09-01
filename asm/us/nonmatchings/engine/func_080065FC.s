@@ -115,9 +115,9 @@ _080066D6:
 _080066DA:
 	adds r0, r4, #0x0
 	adds r1, r3, #0x0
-	bl func_080055EC
+	bl SetBgSize
 	adds r0, r4, #0x0
-	bl func_0800501C
+	bl DisableBg
 	pop {r4}
 	pop {r0}
 	bx r0

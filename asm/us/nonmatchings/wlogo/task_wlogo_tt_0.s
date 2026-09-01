@@ -52,7 +52,7 @@ task_wlogo_tt_0: @ 080B6DFC
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	movs r0, #0x00
-	bl func_080057A0
+	bl SetBgBlend
 	movs r4, #0x80
 	lsls r4, r4, #0x02
 	ldr r5, _080B6FCC @ =0x09624F72

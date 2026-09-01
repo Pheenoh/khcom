@@ -102,7 +102,7 @@ INCLUDE_ASM("bos2/task_bos_tm_tbl_1.s");
 
 void task_bos_tm_tbl_3(TmTblWork* work) {
     func_08012304(&work->unk_004);
-    func_0800501C(1);
+    DisableBg(1);
 }
 
 INCLUDE_ASM("bos2/task_bos_jf_0.s");

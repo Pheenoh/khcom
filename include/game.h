@@ -165,7 +165,7 @@ s32 func_0802F268(void);
 
 void TaskPoolDraw(void* a);
 void TaskPoolDestroy(void* a);
-void func_0800501C(s32 bg);
+void DisableBg(s32 bg);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);
 

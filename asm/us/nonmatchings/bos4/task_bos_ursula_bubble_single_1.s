@@ -103,7 +103,7 @@ _080DDB3A:
 	ldr r3, [r2, #0x7C]
 	ldr r2, [r3, #0x04]
 	ldr r3, [r3, #0x0C]
-	bl func_0801CB6C
+	bl GetAngle
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	movs r2, #0x9F

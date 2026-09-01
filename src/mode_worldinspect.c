@@ -5,7 +5,7 @@ INCLUDE_ASM("mode_worldinspect/mode_worldinspect_0.s");
 
 #ifndef VERSION_EU
 void mode_worldinspect_1(void) {
-    func_0801CC80();
+    UpdatePlayTime();
     gUnk_0203511A += 2;
 
     switch (gUnk_020354C0) {

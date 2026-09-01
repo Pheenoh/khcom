@@ -47,7 +47,7 @@ task_wlogo_mons_0: @ 080B4818
 	strb r1, [r0, #0x00]
 	movs r0, #0x00
 	movs r1, #0x10
-	bl func_080057A0
+	bl SetBgBlend
 	adds r4, r5, #0x0
 	adds r4, #0x10
 	ldr r1, _080B48B0 @ =0x09EF3544

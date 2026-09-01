@@ -6,7 +6,7 @@ void mode_debflag_0(s32 arg) {
 
     func_08004DB0();
     SetupBg(0, 0, 0x0F, 0);
-    func_08004FC8(0);
+    EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gUnk_08128304, 0x20, 0x0F);
     gUnk_020348C0 = 0;

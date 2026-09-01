@@ -22,10 +22,10 @@ mode_sio_chg_card_0: @ 080B1CD0
 	bl SetBgPriority
 	movs r0, #0x00
 	movs r1, #0x01
-	bl func_08005654
+	bl SetBgOverflow
 	movs r0, #0x00
 	movs r1, #0x00
-	bl func_080055EC
+	bl SetBgSize
 	movs r0, #0x01
 	movs r1, #0x00
 	movs r2, #0x0F
@@ -36,10 +36,10 @@ mode_sio_chg_card_0: @ 080B1CD0
 	bl SetBgPriority
 	movs r0, #0x01
 	movs r1, #0x01
-	bl func_08005654
+	bl SetBgOverflow
 	movs r0, #0x01
 	movs r1, #0x00
-	bl func_080055EC
+	bl SetBgSize
 	movs r0, #0x02
 	movs r1, #0x00
 	movs r2, #0x18
@@ -50,10 +50,10 @@ mode_sio_chg_card_0: @ 080B1CD0
 	bl SetBgPriority
 	movs r0, #0x02
 	movs r1, #0x01
-	bl func_08005654
+	bl SetBgOverflow
 	movs r0, #0x02
 	movs r1, #0x00
-	bl func_080055EC
+	bl SetBgSize
 	ldr r4, _080B1DC4 @ =0x096B2BE4
 	movs r0, #0x00
 	bl GetBgCharBase
@@ -63,11 +63,11 @@ mode_sio_chg_card_0: @ 080B1CD0
 	adds r0, r4, #0x0
 	bl RequestDma3Copy
 	movs r0, #0x00
-	bl func_0800501C
+	bl DisableBg
 	movs r0, #0x01
-	bl func_0800501C
+	bl DisableBg
 	movs r0, #0x02
-	bl func_0800501C
+	bl DisableBg
 	ldr r0, [r6, #0x00]
 	movs r3, #0x00
 	movs r2, #0x00
