@@ -922,7 +922,6 @@ void func_08004D74(void) {
     gBldCnt = 0;
 }
 
-#ifdef NON_MATCHING
 void func_08004DB0(void) {
     s32 i;
 
@@ -940,13 +939,13 @@ void func_08004DB0(void) {
     SetBgScroll(2, 0, 0);
     SetBgScroll(3, 0, 0);
     for (i = 0; i <= 3; i++) {
-        gUnk_030074D4[i].unk_04 = 0;
+        u8* p = (u8*)gUnk_030074D4;
+        s32 o = i * 16;
+        p += 4;
+        p += o;
+        *(void**)p = 0;
     }
 }
-#else
-INCLUDE_ASM("engine/func_08004DB0.s");
-#endif
-#ifdef NON_MATCHING
 void func_08004E64(void) {
     s32 i;
 
@@ -961,13 +960,13 @@ void func_08004E64(void) {
     SetBgScroll(1, 0, 0);
     func_08005690(2, 0, 0x100, 0x100, 0, 0);
     for (i = 0; i <= 3; i++) {
-        gUnk_030074D4[i].unk_04 = 0;
+        u8* p = (u8*)gUnk_030074D4;
+        s32 o = i * 16;
+        p += 4;
+        p += o;
+        *(void**)p = 0;
     }
 }
-#else
-INCLUDE_ASM("engine/func_08004E64.s");
-#endif
-#ifdef NON_MATCHING
 void func_08004F08(void) {
     s32 i;
 
@@ -979,12 +978,13 @@ void func_08004F08(void) {
     func_08005690(2, 0, 0x100, 0x100, 0, 0);
     func_08005690(3, 0, 0x100, 0x100, 0, 0);
     for (i = 0; i <= 3; i++) {
-        gUnk_030074D4[i].unk_04 = 0;
+        u8* p = (u8*)gUnk_030074D4;
+        s32 o = i * 16;
+        p += 4;
+        p += o;
+        *(void**)p = 0;
     }
 }
-#else
-INCLUDE_ASM("engine/func_08004F08.s");
-#endif
 void func_08004FA0(void) {
     gDispCnt = (gDispCnt & 0xFFF8) | 3;
     SetBgScroll(2, 0, 0);
