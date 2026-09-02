@@ -31,7 +31,7 @@ void mode_chkobj_1(void) {
     s16 v;
 
     if (GetKeysPressed() & 2) {
-        func_080010CC(&gUnk_09ECEB64, 0);
+        ModeRequest(&gUnk_09ECEB64, 0);
     } else {
         if (GetKeysPressed() & 8) {
             gUnk_0203489C->unk_40 = !gUnk_0203489C->unk_40;

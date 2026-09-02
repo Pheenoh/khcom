@@ -15,7 +15,7 @@ typedef struct ChkObjEntry {
 } ChkObjEntry;
 
 
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
 void* AllocObjTiles(s32 a, void* b);
 void* LoadObjPalette(void* a, s32 b);

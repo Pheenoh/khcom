@@ -18,7 +18,7 @@ extern Mode gUnk_09EF4EC0;
 extern Mode gUnk_09EF4ED0;
 
 int SaveRepairHeader(void);
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void func_08004DB0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgMap(s32 bg, void* src, u16 size);

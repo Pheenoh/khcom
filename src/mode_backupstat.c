@@ -115,7 +115,7 @@ void mode_backupstat_1(void) {
     }
 
     if (GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON)) {
-        func_080010CC(&gUnk_09ECEB64, 0);
+        ModeRequest(&gUnk_09ECEB64, 0);
     } else {
         func_080605A4(0);
         func_08060598();

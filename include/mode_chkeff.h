@@ -18,7 +18,7 @@ typedef struct ChkEffWork {
     u16 unk_24;
     u16 unk_26;
 } ChkEffWork;
-void func_080010CC(Mode* mode, s32 b);
+void ModeRequest(Mode* mode, s32 b);
 u16 GetKeysRepeat(void);
 void func_08004E64(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

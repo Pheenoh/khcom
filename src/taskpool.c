@@ -8,17 +8,17 @@
 #include "gba/keys.h"
 
 extern u16 gUnk_03006C78;
-extern Mode* gUnk_03007488;
-extern void (*gUnk_0300748C)(void);
-extern u16 gUnk_03007490;
-extern Mode* gUnk_03007494;
-extern s32 gUnk_03007498;
-extern vu8 gUnk_0300749C;
+extern Mode* gCurrentMode;
+extern void (*gCurrentModeUpdate)(void);
+extern u16 gDebugModeIndex;
+extern Mode* gPendingMode;
+extern s32 gPendingModeArg;
+extern vu8 gModeFlags;
 extern u16 gUnk_0300749E;
 extern void (*gUnk_030074A0)(void);
 extern void (*gUnk_030074A4)(void);
 extern Mode gUnk_09EF4EC0;
-extern Mode* gUnk_09ECEAC8[];
+extern Mode* gDebugModes[];
 
 Task* func_08000C54(ListNode* node, TaskPool* a);
 void func_08000DE8(TaskPool* a, Task* t);
@@ -26,22 +26,22 @@ u8 func_08000F48(Task* t);
 u8 func_08000F60(Task* t, const char* name);
 const char* func_08000F84(Task* t);
 void func_08000F94(void);
-void func_08000FB4(Mode* mode, s32 arg);
-void func_08001010(void);
+void ModeStart(Mode* mode, s32 arg);
+void ModeInit(void);
 void func_08001058(void (*a)(void), void (*b)(void));
 void func_08001080(void);
 void func_0800109C(void (*fn)(void));
 void func_080010A8(void);
-u8 func_080010B4(void);
-void func_080010CC(Mode* mode, s32 arg);
-void func_080010E0(Mode* mode, s32 arg);
-void func_08001100(void);
+u8 IsModeStarted(void);
+void ModeRequest(Mode* mode, s32 arg);
+void ModeRequestHeapReset(Mode* mode, s32 arg);
+void ModeUpdate(void);
 void func_08001248(void (*fn)(void));
 void func_08001254(void);
 void func_080012A8(void);
 void func_080012E0(void);
-const char* func_080012F8(void);
-void func_08001304(void);
+const char* GetModeName(void);
+void UpdateDebugModeSelect(void);
 
 u16 _08006338(void);
 void VTransReset(void);
@@ -216,29 +216,29 @@ void func_08000F94(void) {
     *(vu16*)0x05000000 = gUnk_0300749E;
 }
 
-void func_08000FB4(Mode* mode, s32 arg) {
+void ModeStart(Mode* mode, s32 arg) {
     gUnk_0300749E = _08006338();
     VTransReset();
     func_08004D74();
     func_08001F98();
     FadeReset();
     func_08006404();
-    gUnk_03007488 = mode;
+    gCurrentMode = mode;
 
     if (mode->unk_04 != 0) {
         mode->unk_04(arg);
     }
 
-    gUnk_0300748C = gUnk_03007488->unk_08;
-    gUnk_0300749C |= 8;
+    gCurrentModeUpdate = gCurrentMode->unk_08;
+    gModeFlags |= 8;
 }
 
-void func_08001010(void) {
-    gUnk_0300749C = 3;
+void ModeInit(void) {
+    gModeFlags = 3;
     gUnk_0300749E = 0;
-    gUnk_03007490 = 0;
-    func_08000FB4(&gUnk_09EF4EC0, 0);
-    gUnk_03007494 = 0;
+    gDebugModeIndex = 0;
+    ModeStart(&gUnk_09EF4EC0, 0);
+    gPendingMode = 0;
     gUnk_030074A0 = 0;
     gUnk_030074A4 = 0;
 }
@@ -248,11 +248,11 @@ void func_08001058(void (*a)(void), void (*b)(void)) {
     }
 
     gUnk_030074A0 = b;
-    gUnk_0300749C |= 4;
+    gModeFlags |= 4;
 }
 
 void func_08001080(void) {
-    gUnk_0300749C &= ~4;
+    gModeFlags &= ~4;
     gUnk_030074A0 = 0;
 }
 
@@ -264,25 +264,25 @@ void func_080010A8(void) {
     gUnk_030074A4 = 0;
 }
 
-u8 func_080010B4(void) {
-    if (gUnk_0300749C & 8) {
+u8 IsModeStarted(void) {
+    if (gModeFlags & 8) {
         return 1;
     }
 
     return 0;
 }
 
-void func_080010CC(Mode* mode, s32 arg) {
-    gUnk_03007494 = mode;
-    gUnk_03007498 = arg;
+void ModeRequest(Mode* mode, s32 arg) {
+    gPendingMode = mode;
+    gPendingModeArg = arg;
 }
 
-void func_080010E0(Mode* mode, s32 arg) {
-    gUnk_03007494 = mode;
-    gUnk_03007498 = arg;
-    gUnk_0300749C |= 0x10;
+void ModeRequestHeapReset(Mode* mode, s32 arg) {
+    gPendingMode = mode;
+    gPendingModeArg = arg;
+    gModeFlags |= 0x10;
 }
-void func_08001100(void) {
+void ModeUpdate(void) {
     u8 v;
 
     if ((((GetKeysPressed() & START_BUTTON) && (GetKeysHeld() & SELECT_BUTTON) && (GetKeysHeld() & A_BUTTON) &&
@@ -298,36 +298,36 @@ void func_08001100(void) {
         SoftReset(0xFF);
         func_08116CEC();
     } else {
-        if (gUnk_0300749C & 4) {
+        if (gModeFlags & 4) {
             return;
         }
 
-        v = gUnk_0300749C & 2;
+        v = gModeFlags & 2;
 
         if (v != 0) {
-            if (gUnk_0300749C & 1) {
+            if (gModeFlags & 1) {
                 return;
             }
 
             func_08005C78();
             func_08004938();
-            gUnk_0300749C &= ~2;
-        } else if (gUnk_03007494 != 0) {
-            if (gUnk_03007488->unk_0C != 0) {
-                gUnk_03007488->unk_0C();
+            gModeFlags &= ~2;
+        } else if (gPendingMode != 0) {
+            if (gCurrentMode->unk_0C != 0) {
+                gCurrentMode->unk_0C();
             }
 
-            if (gUnk_0300749C & 0x10) {
-                gUnk_0300749C &= ~0x10;
+            if (gModeFlags & 0x10) {
+                gModeFlags &= ~0x10;
                 EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
             }
 
-            gUnk_0300749C = 3;
-            func_08000FB4(gUnk_03007494, gUnk_03007498);
-            gUnk_03007494 = 0;
+            gModeFlags = 3;
+            ModeStart(gPendingMode, gPendingModeArg);
+            gPendingMode = 0;
         } else {
-            if (gUnk_0300748C != 0) {
-                gUnk_0300748C();
+            if (gCurrentModeUpdate != 0) {
+                gCurrentModeUpdate();
             }
 
             func_08005C78();
@@ -337,16 +337,16 @@ void func_08001100(void) {
     }
 }
 void func_08001248(void (*fn)(void)) {
-    gUnk_0300748C = fn;
+    gCurrentModeUpdate = fn;
 }
 
 void func_08001254(void) {
-    if (gUnk_0300749C & 1) {
+    if (gModeFlags & 1) {
         func_08000F94();
-        gUnk_0300749C &= ~1;
+        gModeFlags &= ~1;
     }
 
-    if (!(gUnk_0300749C & 2)) {
+    if (!(gModeFlags & 2)) {
         if (gUnk_03006C78 & 0x10) {
             func_08004938();
         } else {
@@ -359,7 +359,7 @@ void func_08001254(void) {
 }
 
 void func_080012A8(void) {
-    if ((gUnk_0300749C & 2) && gUnk_030074A0 != 0) {
+    if ((gModeFlags & 2) && gUnk_030074A0 != 0) {
         gUnk_030074A0();
     }
 
@@ -369,35 +369,35 @@ void func_080012A8(void) {
 }
 
 void func_080012E0(void) {
-    if (gUnk_03007488->unk_0C != 0) {
-        gUnk_03007488->unk_0C();
+    if (gCurrentMode->unk_0C != 0) {
+        gCurrentMode->unk_0C();
     }
 }
 
-const char* func_080012F8(void) {
-    return gUnk_03007488->name;
+const char* GetModeName(void) {
+    return gCurrentMode->name;
 }
 
-void func_08001304(void) {
+void UpdateDebugModeSelect(void) {
     if (GetKeysHeld() & SELECT_BUTTON) {
         if (GetKeysPressed() & L_BUTTON) {
-            gUnk_03007490--;
+            gDebugModeIndex--;
 
-            if ((s16)gUnk_03007490 < 0) {
-                gUnk_03007490 = 25;
+            if ((s16)gDebugModeIndex < 0) {
+                gDebugModeIndex = 25;
             }
 
-            func_080010CC(gUnk_09ECEAC8[(s16)gUnk_03007490], 0);
+            ModeRequest(gDebugModes[(s16)gDebugModeIndex], 0);
         }
 
         if (GetKeysPressed() & R_BUTTON) {
-            gUnk_03007490++;
+            gDebugModeIndex++;
 
-            if (gUnk_03007490 > 25) {
-                gUnk_03007490 = 0;
+            if (gDebugModeIndex > 25) {
+                gDebugModeIndex = 0;
             }
 
-            func_080010CC(gUnk_09ECEAC8[(s16)gUnk_03007490], 0);
+            ModeRequest(gDebugModes[(s16)gDebugModeIndex], 0);
         }
     }
 }

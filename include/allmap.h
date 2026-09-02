@@ -170,7 +170,7 @@ typedef struct AllmapPushaWork {
 void* AllocObjTiles(s32 a, void* b);
 void SaveClearSystem(void);
 int SaveLoadSystem(void);
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void func_0801CCB4(void);
 void func_0801CD20(void);
 void func_080AEB94(void);

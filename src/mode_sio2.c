@@ -107,7 +107,7 @@ void mode_sio_dbg_flg_1(void) {
     if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
         gUnk_0203A9E4 = 1;
         func_08085CB0();
-        func_080010CC(&gUnk_09EF1308, 0);
+        ModeRequest(&gUnk_09EF1308, 0);
     } else {
         func_080605A4(0);
         func_08060598();

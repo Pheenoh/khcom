@@ -178,7 +178,7 @@ void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* pool);
 void TaskPoolDestroy(TaskPool* pool);
 void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void UpdatePlayTime(void);
 void func_080B0754(void);
 void func_080E052C(u8 a);

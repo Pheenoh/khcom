@@ -41,7 +41,7 @@ extern u8 gKeyReleaseStart;
 extern u8 gKeyReleaseSelect;
 
 void func_080C55DC(void);
-void func_08001100(void);
+void ModeUpdate(void);
 
 u16 GetKeysRepeat(void);
 void ResetKeyState(void);

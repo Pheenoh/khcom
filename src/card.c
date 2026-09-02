@@ -113,7 +113,7 @@ void func_08090170(UnkStruct_0808E890* node);
 u8 func_08096390(PrizeCardWork* w);
 void* AnimGetGfx(void* a);
 u8 func_080A9968(u8* work);
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void UpdatePlayTime(void);
 void func_080B31A0(void);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
@@ -5015,7 +5015,7 @@ void func_080AAFB4(void) {
     TaskPoolDraw(gUnk_02034B08);
 
     if (gUnk_02034B1C == 6) {
-        func_080010CC(&gUnk_09EF15A8, gUnk_0203A9DC);
+        ModeRequest(&gUnk_09EF15A8, gUnk_0203A9DC);
     }
 }
 void func_080AB008(void) {
@@ -5116,7 +5116,7 @@ void func_080AB99C(void) {
 
     t = gUnk_02039BB0.unk_17A | 0x1000;
     gUnk_02039BB0.unk_17A = t;
-    func_080010CC(&gUnk_09ECEB40, (s32)gUnk_02034B34);
+    ModeRequest(&gUnk_09ECEB40, (s32)gUnk_02034B34);
     TaskPoolUpdate(gUnk_02034B20);
     TaskPoolDraw(gUnk_02034B20);
 }

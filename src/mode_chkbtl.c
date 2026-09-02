@@ -154,7 +154,7 @@ void mode_chkbtl_1(void) {
     }
 
     if (GetKeysPressed() & 4) {
-        func_080010CC(&gUnk_09EE2704, 0);
+        ModeRequest(&gUnk_09EE2704, 0);
     } else if (GetKeysPressed() & 9) {
         SeedRandom(gFrameCounter);
         gUnk_02039BB0.unk_0D = gUnk_08128234[gUnk_09ECEB50->unk_01].unk_00;
@@ -173,9 +173,9 @@ void mode_chkbtl_1(void) {
             _08085D04(gUnk_09ECEB50->unk_04);
         }
 
-        func_080010CC(&gUnk_09ECEB40, gUnk_08126630[gUnk_09ECEB50->unk_02].unk_08);
+        ModeRequest(&gUnk_09ECEB40, gUnk_08126630[gUnk_09ECEB50->unk_02].unk_08);
     } else if (GetKeysPressed() & 2) {
-        func_080010CC(&gUnk_09ECEB64, 0);
+        ModeRequest(&gUnk_09ECEB64, 0);
         return;
     }
 

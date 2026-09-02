@@ -52,8 +52,8 @@ extern IntrFunc gIntrTable[14];
 extern const IntrFunc gIntrTableTemplate[14];
 
 void func_080C55DC(void);
-void func_08001010(void);
-void func_08001100(void);
+void ModeInit(void);
+void ModeUpdate(void);
 void func_08001254(void);
 void func_080012A8(void);
 void ResetKeyState(void);
@@ -151,7 +151,7 @@ void InitSystem(void) {
     InitDisplayRegs();
     SaveInitSram();
     func_08116CEC();
-    func_08001010();
+    ModeInit();
 }
 
 #ifdef NON_MATCHING
@@ -177,7 +177,7 @@ void AgbMain(void) {
         }
 
         if ((gUnk_03006C00 & bit) == 0) {
-            func_08001100();
+            ModeUpdate();
             gUnk_03006C00 |= 4;
         }
     next:

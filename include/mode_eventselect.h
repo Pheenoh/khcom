@@ -152,7 +152,7 @@ extern s16 gUnk_09033E76[];
 extern const char* gUnk_09EE42C8[];
 extern Mode gUnk_09ECEB64;
 
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void func_08004DB0(void);
