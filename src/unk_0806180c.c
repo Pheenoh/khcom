@@ -1528,12 +1528,48 @@ void func_08073274(MsgWinWork* p) {
     func_08065940();
     TaskPoolDestroy(p);
 }
-INCLUDE_ASM("unk_0806180c/func_08073294.s");
+u8 func_08073294(MsgWinWork* p, void* a) {
+    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+
+    ApproachValue(&p->unk_18, gUnk_09033CA0[p->unk_20], p->unk_1E);
+    if (e->unk_00 != 62) {
+        func_08005244(p->unk_38, p->unk_18, 0);
+    }
+
+    if (p->unk_1E != 0) {
+        p->unk_1E--;
+    } else {
+        p->unk_1E = 0;
+        if ((e->unk_14 & 0xF) == 0) {
+            gUnk_02039DC8->unk_7B = 1;
+        }
+        func_08000F8C(a, (void*)func_08073318);
+    }
+    TaskPoolUpdate(p);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_08073318.s");
 INCLUDE_ASM("unk_0806180c/func_0807344C.s");
 INCLUDE_ASM("unk_0806180c/func_08073508.s");
 INCLUDE_ASM("unk_0806180c/func_0807361C.s");
-INCLUDE_ASM("unk_0806180c/func_080736F8.s");
+void func_080736F8(MsgWinWork* p) {
+    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+
+    if (gUnk_02039DC8->unk_6C >= e->unk_16) {
+        if (p->unk_2A == 0) {
+            gUnk_02039DC8->unk_64 |= 1;
+            p->unk_2A = 1;
+            p->unk_1E = 8;
+            if ((e->unk_14 & 0x10) != 0) {
+                gUnk_02039DC8->unk_7C = 1;
+                gUnk_02039DC8->unk_88 = e->unk_00;
+                gUnk_02039DC8->unk_89 = 32;
+            } else {
+                gUnk_02039DC8->unk_7C = 0;
+            }
+        }
+    }
+}
 INCLUDE_ASM("unk_0806180c/func_08073768.s");
 INCLUDE_ASM("unk_0806180c/func_0807388C.s");
 INCLUDE_ASM("unk_0806180c/func_08073A58.s");
@@ -1603,7 +1639,21 @@ void func_08073E74(Work08073E34* p) {
     p->unk_02 = 2;
 }
 INCLUDE_ASM("unk_0806180c/func_08073E7C.s");
-INCLUDE_ASM("unk_0806180c/func_08073F08.s");
+u8 func_08073F08(MsgWaitWork* p, void* a) {
+    p->unk_BC = AnimUpdate(p->unk_DC);
+    if (GetKeysPressed() & 1) {
+        AnimStart(p->unk_DC, 3, 1);
+        if (p->unk_103 == 4) {
+            gUnk_02039DC8->unk_7D = 0;
+            m4aSongNumStart(0x66);
+            return 0;
+        } else {
+            func_08000F8C(a, (void*)func_08073F78);
+            m4aSongNumStart(0x66);
+        }
+    }
+    return 1;
+}
 u8 func_08073F78(MsgWaitWork* p) {
     u8 r;
 
