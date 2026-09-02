@@ -365,7 +365,9 @@ void func_0800CD40(EmyWork* work) {
     work->unk_154 = 0;
     actor->unk_34 &= ~0x300;
 }
+
 INCLUDE_ASM("mode_vsbattle/_0800CDF0.s");
+
 #ifdef NON_MATCHING
 void func_0800DF30(EmyWork* work) {
     if (work->unk_15A != 0) {
@@ -423,6 +425,7 @@ void func_0800DF30(EmyWork* work) {
     }
 }
 #else
+
 INCLUDE_ASM("mode_vsbattle/func_0800DF30.s");
 #endif
 
