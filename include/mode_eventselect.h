@@ -9,11 +9,51 @@
 #include "game.h"
 #include "card.h"
 #include "mode.h"
+#include "anim.h"
 
 typedef struct UnkStruct_02039DD0 {
     s16 unk_00;
     u16 unk_02;
 } UnkStruct_02039DD0;
+
+typedef struct EventBody {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+} EventBody;
+
+typedef struct EventActor {
+    u8 unk_00[0x26];
+    u8 unk_26;
+    u8 unk_27;
+    EventBody unk_28;
+    u8 unk_38[0x06];
+    u16 unk_3E;
+    u8 unk_40[0x172];
+    u8 unk_1B2;
+} EventActor;
+
+typedef struct EffectWork {
+    EventActor* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    u8 unk_10[0x04];
+    AnimState unk_14;
+    s32 unk_2C;
+    s32 unk_30;
+    s32 unk_34;
+    s32 unk_38;
+    s32 unk_3C;
+    s32 unk_40;
+    u16 unk_44;
+    u16 unk_46;
+    u8 unk_48;
+    u8 unk_49;
+    u8 unk_4A[0x02];
+    TaskPool unk_4C;
+} EffectWork;
 
 extern UnkStruct_02039DD0* gUnk_02039DD0;
 extern UnkStruct_02039DC8* gUnk_02039DC8;
@@ -25,6 +65,19 @@ extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EEE6[];
 extern u8 gUnk_09611AB8[];
+extern u8 gUnk_08F6DC84[];
+extern u8 gUnk_08BCB3D8[];
+extern u8 gUnk_08F69BE4[];
+extern u8 gUnk_09EE1CB4[];
+extern u8 gUnk_09EE1C94[];
+extern u8 gUnk_09EEFD78[];
+extern u8 gUnk_09EEFD60[];
+extern u8 gUnk_09EEFD38[];
+extern u8 gUnk_09EEFCAC[];
+extern u8 gUnk_09EDE7E4[];
+extern u8 gUnk_09EDE7B4[];
+extern s16 gUnk_0903380C[][6];
+extern TaskDesc gUnk_09EE47D4;
 extern const char gUnk_08F70990[];
 extern const char gUnk_09033ED8[];
 extern const char gUnk_09033EDC[];
@@ -60,6 +113,17 @@ u8 _080669DC(s32 a, void* b);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_080062F4(u16 a, s32 b);
 void TaskPoolInit(TaskPool* pool, s32 count);
+void* TaskCreate(TaskPool* pool, void* desc, void* arg);
+void TaskPoolUpdate(TaskPool* pool);
+void AnimInit(AnimState* a, void* b, void* c);
+void AnimStart(AnimState* a, s32 b, s32 c);
+void* AnimUpdate(AnimState* a);
+void* AnimGetGfx(AnimState* a);
+void* AllocObjTiles(s32 a, void* b);
+void func_08002A10(void* a, u32 b);
+u8 func_08006314(void);
+u16 GetRandom(void);
+void func_080609A0(void);
 void func_0807B668(UnkStruct_02039DD4* p);
 void func_0807E23C(void);
 void func_0807E248(void);
@@ -67,6 +131,24 @@ void func_0807E248(void);
 void mode_eventselect_0(void);
 void mode_eventselect_1(void);
 void mode_eventselect_2(void);
+void func_08075360(EffectWork* w, void* arg);
+s32 func_0807538C(EffectWork* w);
+void func_0807539C(EffectWork* w);
+void func_080753A8(EffectWork* w);
+void func_080753B4(EffectWork* w, EventActor* arg);
+void func_08075530(EffectWork* w);
+void func_08075590(EffectWork* w);
+void func_080755A8(EffectWork* w, EventActor* arg);
+void func_08075624(EffectWork* w, EventActor* arg);
+void func_080756B0(EffectWork* w, EventActor* arg);
+s32 func_08075720(EffectWork* w);
+s32 func_08075748(EffectWork* w);
+void func_080757F4(EffectWork* w);
+void func_0807580C(EffectWork* w, EventActor* arg);
+s32 func_08075880(EffectWork* w);
+s32 func_080759B0(EffectWork* w);
+void func_080759E0(EffectWork* w);
+void func_08075A54(EffectWork* w);
 void func_08076110(u16 song, s16 x, s16 y);
 void func_08076214(u8* work);
 s32 func_0807622C(u8* work);
