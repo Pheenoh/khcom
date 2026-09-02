@@ -202,7 +202,7 @@ void func_080755A8(EffectWork* w, EventActor* arg) {
     w->unk_30 = b->unk_08 - 0x800;
     w->unk_04 = AllocObjTiles(128, 0);
     w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, 0x093215CA);
+    func_08002A10(w->unk_04, gUnk_093215CA);
     AnimInit(&w->unk_14, gUnk_09EEFD78, gUnk_09EEFD60);
     AnimStart(&w->unk_14, 0, 1);
     w->unk_0C = AnimGetGfx(&w->unk_14);
@@ -224,7 +224,7 @@ void func_08075624(EffectWork* w, EventActor* arg) {
         func_080062F4(((UnkStruct_080038C8*)w->unk_08)->unk_06 + 16, 1);
     }
 
-    func_08002A10(w->unk_04, 0x09320796);
+    func_08002A10(w->unk_04, gUnk_09320796);
     AnimInit(&w->unk_14, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(&w->unk_14, 0, 0);
     w->unk_0C = AnimGetGfx(&w->unk_14);
@@ -241,7 +241,7 @@ void func_080756B0(EffectWork* w, EventActor* arg) {
     w->unk_30 = b->unk_08;
     w->unk_04 = AllocObjTiles(128, 0);
     w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, 0x09320796);
+    func_08002A10(w->unk_04, gUnk_09320796);
     AnimInit(&w->unk_14, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(&w->unk_14, 1, 1);
     w->unk_0C = AnimGetGfx(&w->unk_14);
@@ -300,7 +300,7 @@ void func_0807580C(EffectWork* w, EventActor* arg) {
     w->unk_30 = b->unk_08;
     w->unk_04 = AllocObjTiles(128, 0);
     w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, 0x09320796);
+    func_08002A10(w->unk_04, gUnk_09320796);
     AnimInit(&w->unk_14, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(&w->unk_14, 5, 0);
     w->unk_0C = AnimGetGfx(&w->unk_14);
@@ -370,7 +370,7 @@ void func_08075A7C(EffectWork* w, EventActor* arg) {
     w->unk_30 = b->unk_08 + 3072;
     w->unk_04 = AllocObjTiles(128, 0);
     w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, 0x09321804);
+    func_08002A10(w->unk_04, gUnk_09321804);
     AnimInit(&w->unk_14, gUnk_09EEFD9C, gUnk_09EEFD7C);
     AnimStart(&w->unk_14, 0, 1);
     w->unk_0C = AnimGetGfx(&w->unk_14);
@@ -408,7 +408,7 @@ void func_08075B24(EffectWork* w, EventActor* arg) {
 
     w->unk_04 = AllocObjTiles(128, 0);
     w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, 0x09321804);
+    func_08002A10(w->unk_04, gUnk_09321804);
     AnimInit(&w->unk_14, gUnk_09EEFD9C, gUnk_09EEFD7C);
     AnimStart(&w->unk_14, 1, 1);
     w->unk_0C = AnimGetGfx(&w->unk_14);
@@ -451,7 +451,7 @@ void func_08075BEC(EffectWork* w, EventActor* arg) {
     }
 
     w->unk_04 = func_080038C8(32);
-    func_080038E4(w->unk_04, gUnk_09EEA19C[3], 0x0908C686);
+    func_080038E4(w->unk_04, gUnk_09EEA19C[3], gUnk_0908C686);
     w->unk_08 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_10 = EwramAlloc(sizeof(DownWork));
     s = w->unk_10;
