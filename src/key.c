@@ -232,4 +232,162 @@ u16 func_080016EC(void) {
     return r;
 }
 
-INCLUDE_ASM("key/UpdateKeyState.s");
+void UpdateKeyState(void) {
+    u16 keys;
+
+    keys = *(vu16*)0x04000130 ^ 0x3FF;
+    gKeysPressed = keys & ~gKeysHeld;
+    gKeysHeld = keys;
+
+    if (gKeysHeld & 0x20) {
+        gUnk_02034008++;
+        gUnk_02034012 = 0;
+        if (gUnk_02034008 > 32) {
+            gUnk_02034008 = 29;
+        }
+    } else {
+        gUnk_02034008 = 0;
+        if (gUnk_02034012 < 255) {
+            gUnk_02034012++;
+        }
+    }
+    if (gKeysHeld & 0x10) {
+        gUnk_02034009++;
+        gUnk_02034013 = 0;
+        if (gUnk_02034009 > 32) {
+            gUnk_02034009 = 29;
+        }
+    } else {
+        gUnk_02034009 = 0;
+        if (gUnk_02034013 < 255) {
+            gUnk_02034013++;
+        }
+    }
+    if (gKeysHeld & 0x40) {
+        gUnk_0203400A++;
+        gUnk_02034014 = 0;
+        if (gUnk_0203400A > 32) {
+            gUnk_0203400A = 29;
+        }
+    } else {
+        gUnk_0203400A = 0;
+        if (gUnk_02034014 < 255) {
+            gUnk_02034014++;
+        }
+    }
+    if (gKeysHeld & 0x80) {
+        gUnk_0203400B++;
+        gUnk_02034015 = 0;
+        if (gUnk_0203400B > 32) {
+            gUnk_0203400B = 29;
+        }
+    } else {
+        gUnk_0203400B = 0;
+        if (gUnk_02034015 < 255) {
+            gUnk_02034015++;
+        }
+    }
+    if (gKeysHeld & 0x200) {
+        gUnk_0203400E++;
+        gUnk_02034018 = 0;
+        if (gUnk_0203400E > 32) {
+            gUnk_0203400E = 29;
+        }
+    } else {
+        gUnk_0203400E = 0;
+        if (gUnk_02034018 < 255) {
+            gUnk_02034018++;
+        }
+    }
+    if (gKeysHeld & 0x100) {
+        gUnk_0203400F++;
+        gUnk_02034019 = 0;
+        if (gUnk_0203400F > 32) {
+            gUnk_0203400F = 29;
+        }
+    } else {
+        gUnk_0203400F = 0;
+        if (gUnk_02034019 < 255) {
+            gUnk_02034019++;
+        }
+    }
+    if (gKeysHeld & 0x1) {
+        gUnk_0203400C++;
+        gUnk_02034016 = 0;
+        if (gUnk_0203400C > 32) {
+            gUnk_0203400C = 29;
+        }
+    } else {
+        gUnk_0203400C = 0;
+        if (gUnk_02034016 < 255) {
+            gUnk_02034016++;
+        }
+    }
+    if (gKeysHeld & 0x2) {
+        gUnk_0203400D++;
+        gUnk_02034017 = 0;
+        if (gUnk_0203400D > 32) {
+            gUnk_0203400D = 29;
+        }
+    } else {
+        gUnk_0203400D = 0;
+        if (gUnk_02034017 < 255) {
+            gUnk_02034017++;
+        }
+    }
+    if (gKeysHeld & 0x8) {
+        gUnk_02034010++;
+        gUnk_0203401A = 0;
+        if (gUnk_02034010 > 32) {
+            gUnk_02034010 = 29;
+        }
+    } else {
+        gUnk_02034010 = 0;
+        if (gUnk_0203401A < 255) {
+            gUnk_0203401A++;
+        }
+    }
+    if (gKeysHeld & 0x4) {
+        gUnk_02034011++;
+        gUnk_0203401B = 0;
+        if (gUnk_02034011 > 32) {
+            gUnk_02034011 = 29;
+        }
+    } else {
+        gUnk_02034011 = 0;
+        if (gUnk_0203401B < 255) {
+            gUnk_0203401B++;
+        }
+    }
+    gKeysRepeat = 0;
+    if (gUnk_02034008 == 1 || gUnk_02034008 == 32) {
+        gKeysRepeat |= 0x20;
+    }
+    if (gUnk_02034009 == 1 || gUnk_02034009 == 32) {
+        gKeysRepeat |= 0x10;
+    }
+    if (gUnk_0203400A == 1 || gUnk_0203400A == 32) {
+        gKeysRepeat |= 0x40;
+    }
+    if (gUnk_0203400B == 1 || gUnk_0203400B == 32) {
+        gKeysRepeat |= 0x80;
+    }
+    if (gUnk_0203400E == 1 || gUnk_0203400E == 32) {
+        gKeysRepeat |= 0x200;
+    }
+    if (gUnk_0203400F == 1 || gUnk_0203400F == 32) {
+        gKeysRepeat |= 0x100;
+    }
+    if (gUnk_0203400C == 1 || gUnk_0203400C == 32) {
+        gKeysRepeat |= 0x1;
+    }
+    if (gUnk_0203400D == 1 || gUnk_0203400D == 32) {
+        gKeysRepeat |= 0x2;
+    }
+    if (gUnk_02034010 == 1 || gUnk_02034010 == 32) {
+        gKeysRepeat |= 0x8;
+    }
+    if (gUnk_02034011 == 1 || gUnk_02034011 == 32) {
+        gKeysRepeat |= 0x4;
+    }
+}
