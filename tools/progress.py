@@ -55,7 +55,9 @@ def main():
         mf, tf = m.get("matched_functions", 0), m.get("total_functions", 0)
         cc = to_int(m, "complete_code")
         cu, tu = to_int(m, "complete_units"), to_int(m, "total_units")
-        emit(f"  {name}: {pct(mc + md, tc + td):.2f}% matched, "
+        # Code only, so this headline is the same number decomp.dev publishes as
+        # matched_code_percent. Data has its own line.
+        emit(f"  {name}: {pct(mc, tc):.2f}% matched, "
              f"{pct(cc, tc):.2f}% linked ({cu} / {tu} files)")
         emit(f"    Code: {mc} / {tc} bytes ({mf} / {tf} functions)")
         if td:

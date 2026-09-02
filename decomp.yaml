@@ -59,65 +59,61 @@ tools:
       # (tools/gen_symbols.py), so these buckets group by evidence, not guesswork.
       # Anything whose subsystem is not established stays in `named` or `unidentified`.
       categories:
+        # Specific groups first: prefix matching means `src/task` would otherwise
+        # swallow `src/taskpool`, and the trailing `src/` catch-all would swallow
+        # everything. Data is a dimension, not a category, so each bucket reports
+        # its own code and data; unattributed bytes sit in `other` until the unit
+        # that owns them is written.
         - id: core
-          name: Core & engine
+          name: Core engine
           paths:
             - src/main
             - src/malloc
             - src/taskpool
+            - src/task
             - src/key
             - src/sprite
             - src/engine
             - src/sio
             - src/pallet
             - src/util
-            - src/task
             - src/save
+            - asm/header
+            - asm/crt0
 
-        - id: battle
-          name: Battle
+        - id: sdk
+          name: SDK
+          paths:
+            - src/m4a
+            - src/agb_sram
+            - src/libagbsyscall
+            - src/movie
+            - src/snd_stream
+            - src/lib
+
+        - id: thirdparty
+          name: Third party
+          paths:
+            - lib/
+
+        - id: game
+          name: Game code
           paths:
             - src/btl
             - src/bos
             - src/emy
-
-        - id: card
-          name: Card system
-          paths:
+            - src/pc
+            - src/hum
             - src/card
-
-        - id: modes
-          name: Game modes
-          paths:
             - src/mode_
-
-        - id: sound
-          name: Sound & movie
-          paths:
-            - src/m4a
-            - src/snd_stream
-            - src/movie
-
-        - id: library
-          name: Library
-          paths:
-            - lib/
-            - src/lib
-            - src/agb_sram
-
-        - id: named
-          name: Other named subsystems
-          paths:
             - src/acgtrans
             - src/allmap
             - src/chara
             - src/evt
             - src/fld
             - src/frd
-            - src/hum
             - src/monsgage
             - src/ms
-            - src/pc
             - src/poo
             - src/romcri
             - src/room
@@ -127,33 +123,4 @@ tools:
             - src/title
             - src/tutorial
             - src/wlogo
-
-        - id: unidentified
-          name: Unidentified
-          paths:
             - src/unk_
-
-        - id: asm
-          name: Raw assembly
-          paths:
-            - asm/header
-            - asm/crt0
-
-        # The post-code region, split along the boundaries in docs/rom_map.md.
-        # Only the rodata_* units are ever going to be C; the assets are LZ77 and
-        # RLE compressed art and audio that will always be incbin, and keeping
-        # them in a separate bucket is what makes the data percentage legible.
-        - id: rodata
-          name: Data tables & text
-          paths:
-            - asm/rodata_
-
-        - id: assets
-          name: Assets
-          paths:
-            - asm/asset_
-
-        - id: padding
-          name: Padding
-          paths:
-            - asm/padding

@@ -19,7 +19,8 @@ from pathlib import Path
 # written asm: compressed art and audio, FMV, and 0xFF filler. They are real
 # cartridge bytes and the build needs them, but they are not decompilation work,
 # so counting them as unmatched data would report 31 MB as outstanding forever.
-EXCLUDED_CATEGORIES = {"assets", "padding"}
+EXCLUDED_UNITS = ("asm/asset_", "asm/padding")
+UNATTRIBUTED_UNITS = ("asm/rodata_",)
 
 DIMENSIONS = {
     "code": ("total_code", ("matched_code_percent", "complete_code_percent", "fuzzy_match_percent")),
@@ -90,16 +91,19 @@ def aggregate(units):
 
 
 def drop_excluded(report):
-    kept = []
-    for unit in report.get("units", []):
-        cats = set(unit.get("metadata", {}).get("progress_categories") or [])
-        if cats & EXCLUDED_CATEGORIES:
-            continue
-        kept.append(unit)
-    report["units"] = kept
-    report["categories"] = [
-        c for c in report.get("categories", []) if c.get("id") not in EXCLUDED_CATEGORIES
+    report["units"] = [
+        u for u in report.get("units", [])
+        if not u.get("name", "").startswith(EXCLUDED_UNITS)
     ]
+    # ROM data that no translation unit owns yet. It counts toward the project
+    # totals but belongs to no subsystem, so leave it uncategorised rather than
+    # invent a bucket for it.
+    for unit in report["units"]:
+        if unit.get("name", "").startswith(UNATTRIBUTED_UNITS):
+            unit.setdefault("metadata", {})["progress_categories"] = []
+    used = {c for u in report["units"]
+            for c in (u.get("metadata", {}).get("progress_categories") or [])}
+    report["categories"] = [c for c in report.get("categories", []) if c.get("id") in used]
 
 
 def normalize(report):
