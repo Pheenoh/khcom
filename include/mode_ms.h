@@ -4,6 +4,12 @@
 #include "types.h"
 #include "taskpool.h"
 
+typedef struct UnkStruct_099931E4_1C {
+    u16* unk_00;
+    s16 unk_04;
+    s16 unk_06;
+} UnkStruct_099931E4_1C;
+
 typedef struct UnkStruct_099931E4 {
     s16 unk_00;
     s16 unk_02;
@@ -13,12 +19,12 @@ typedef struct UnkStruct_099931E4 {
     u16 unk_0A;
     void* unk_0C;
     u16 unk_10;
-    u16 unk_12;
-    u16 unk_14;
+    s16 unk_12;
+    s16 unk_14;
     u16 unk_16;
     u16 unk_18;
     u16 unk_1A;
-    u8 unk_1C[0x20];
+    UnkStruct_099931E4_1C unk_1C[4];
 } UnkStruct_099931E4;
 
 void func_081025AC(void);
@@ -48,6 +54,9 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
 void m4aSongNumStart(u16 n);
+void* GetBgCharBase(s32 bg);
+void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
+void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 void func_08006184(s32 a, u16 b);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
@@ -72,6 +81,10 @@ extern void* gUnk_02035858;
 extern void* gUnk_0203585C;
 extern TaskPool gUnk_020358A8;
 extern UnkStruct_099931E4 gUnk_099931E4[];
+extern s16 gUnk_02035B18[][4][2];
+extern u16* gUnk_02035C00;
+extern s16 gUnk_09993760[][4];
+extern u8 gUnk_09A18EBC[];
 extern s16 gUnk_02035B02;
 extern s16 gUnk_02035B04;
 extern s16 gUnk_02035B10;

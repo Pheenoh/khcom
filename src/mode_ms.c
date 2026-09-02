@@ -135,7 +135,30 @@ void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16
         dst += 32 - n;
     }
 }
-INCLUDE_ASM("mode_ms/func_08102984.s");
+void func_08102984(s16 a) {
+    vu32* dma;
+    vu16 zero;
+    s32 j;
+
+    zero = 0;
+    dma = (vu32*)0x040000D4;
+    dma[0] = (u32)&zero;
+    dma[1] = (u32)gUnk_02035C00;
+    dma[2] = 0x81000280;
+    dma[2];
+
+    for (j = 0; j < 4; j++) {
+        if (gUnk_02035B18[a][j][0] >= 0) {
+            func_08101588(gUnk_09993760[gUnk_02035B08[a]][gUnk_02035B18[a][j][1]], gUnk_09A18EBC,
+                (u8*)GetBgCharBase(2) + (j * 0xC0 + 0xC0), 0x40, 3);
+            func_081028F8(12, 8, gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_00,
+                gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_04,
+                gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_06, gUnk_02035C00,
+                gUnk_099931E4[j].unk_12, gUnk_099931E4[j].unk_14);
+        }
+    }
+    LoadBgMap(2, gUnk_02035C00, 0x500);
+}
 s32 func_08102A94(void) {
     s32 k;
 
