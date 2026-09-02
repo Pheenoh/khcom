@@ -52,104 +52,104 @@ void mode_chkbtl_1(void) {
     }
 
     switch (gUnk_09ECEB50->unk_00) {
-        case 0:
-            if (GetKeysRepeat() & DPAD_LEFT) {
-                gUnk_09ECEB50->unk_02--;
-            }
+    case 0:
+        if (GetKeysRepeat() & DPAD_LEFT) {
+            gUnk_09ECEB50->unk_02--;
+        }
 
-            if (GetKeysRepeat() & DPAD_RIGHT) {
-                gUnk_09ECEB50->unk_02++;
-            }
+        if (GetKeysRepeat() & DPAD_RIGHT) {
+            gUnk_09ECEB50->unk_02++;
+        }
 
-            if (gUnk_09ECEB50->unk_02 < 0) {
-                gUnk_09ECEB50->unk_02 = 0xD0;
-            } else if ((u16)gUnk_09ECEB50->unk_02 > 0xD0) {
-                gUnk_09ECEB50->unk_02 = 0;
-            }
-            break;
-        case 1:
-            if (GetKeysRepeat() & DPAD_LEFT) {
-                gUnk_09ECEB50->unk_01--;
-            }
+        if (gUnk_09ECEB50->unk_02 < 0) {
+            gUnk_09ECEB50->unk_02 = 0xD0;
+        } else if ((u16)gUnk_09ECEB50->unk_02 > 0xD0) {
+            gUnk_09ECEB50->unk_02 = 0;
+        }
+        break;
+    case 1:
+        if (GetKeysRepeat() & DPAD_LEFT) {
+            gUnk_09ECEB50->unk_01--;
+        }
 
-            if (GetKeysRepeat() & DPAD_RIGHT) {
-                gUnk_09ECEB50->unk_01++;
-            }
+        if (GetKeysRepeat() & DPAD_RIGHT) {
+            gUnk_09ECEB50->unk_01++;
+        }
 
-            if (gUnk_09ECEB50->unk_01 < 0) {
-                gUnk_09ECEB50->unk_01 = 12;
-            } else if ((u8)gUnk_09ECEB50->unk_01 > 12) {
-                gUnk_09ECEB50->unk_01 = 0;
-            }
-            break;
-        case 2:
-            if (GetKeysRepeat() & DPAD_LEFT) {
-                gUnk_09ECEB50->unk_04--;
-            }
+        if (gUnk_09ECEB50->unk_01 < 0) {
+            gUnk_09ECEB50->unk_01 = 12;
+        } else if ((u8)gUnk_09ECEB50->unk_01 > 12) {
+            gUnk_09ECEB50->unk_01 = 0;
+        }
+        break;
+    case 2:
+        if (GetKeysRepeat() & DPAD_LEFT) {
+            gUnk_09ECEB50->unk_04--;
+        }
 
-            if (GetKeysRepeat() & DPAD_RIGHT) {
-                gUnk_09ECEB50->unk_04++;
-            }
+        if (GetKeysRepeat() & DPAD_RIGHT) {
+            gUnk_09ECEB50->unk_04++;
+        }
 
-            if (gUnk_09ECEB50->unk_04 < 0) {
-                gUnk_09ECEB50->unk_04 = 0;
-            }
+        if (gUnk_09ECEB50->unk_04 < 0) {
+            gUnk_09ECEB50->unk_04 = 0;
+        }
 
-            if (gUnk_02039BB0.unk_08 & 8) {
-                if (gUnk_09ECEB50->unk_04 > 11) {
-                    gUnk_09ECEB50->unk_04 = 11;
-                }
-            } else {
-                if (gUnk_09ECEB50->unk_04 > 12) {
-                    gUnk_09ECEB50->unk_04 = 12;
-                }
+        if (gUnk_02039BB0.unk_08 & 8) {
+            if (gUnk_09ECEB50->unk_04 > 11) {
+                gUnk_09ECEB50->unk_04 = 11;
             }
-            break;
-        case 3:
-            if (GetKeysRepeat() & DPAD_LEFT) {
-                gUnk_09ECEB50->unk_06--;
+        } else {
+            if (gUnk_09ECEB50->unk_04 > 12) {
+                gUnk_09ECEB50->unk_04 = 12;
             }
+        }
+        break;
+    case 3:
+        if (GetKeysRepeat() & DPAD_LEFT) {
+            gUnk_09ECEB50->unk_06--;
+        }
 
-            if (GetKeysRepeat() & DPAD_RIGHT) {
-                gUnk_09ECEB50->unk_06++;
-            }
+        if (GetKeysRepeat() & DPAD_RIGHT) {
+            gUnk_09ECEB50->unk_06++;
+        }
 
-            if (gUnk_09ECEB50->unk_06 <= 0) {
-                gUnk_09ECEB50->unk_06 = 1;
-            } else if (gUnk_09ECEB50->unk_06 > 560) {
-                gUnk_09ECEB50->unk_06 = 560;
-            }
-            break;
-        case 4:
-            gUnk_09ECEB50->unk_00 = 0;
-            break;
-        case -1:
-            gUnk_09ECEB50->unk_00 = 3;
-            break;
+        if (gUnk_09ECEB50->unk_06 <= 0) {
+            gUnk_09ECEB50->unk_06 = 1;
+        } else if (gUnk_09ECEB50->unk_06 > 560) {
+            gUnk_09ECEB50->unk_06 = 560;
+        }
+        break;
+    case 4:
+        gUnk_09ECEB50->unk_00 = 0;
+        break;
+    case -1:
+        gUnk_09ECEB50->unk_00 = 3;
+        break;
     }
 
     func_0805FCB0(12, gUnk_09ECEB50->unk_00 * 12 + 32, 2, gUnk_08128388);
 
     if (GetKeysRepeat() & (DPAD_RIGHT | DPAD_LEFT)) {
         switch (gUnk_09ECEB50->unk_00) {
-            case 0:
-            case 1:
-                func_0805FCB0(62, 32, 2, gUnk_0812838C);
-                func_0805FCB0(62, 32, 2, gUnk_08126630[gUnk_09ECEB50->unk_02].unk_10);
-                func_0805FCB0(62, 44, 2, gUnk_0812838C);
+        case 0:
+        case 1:
+            func_0805FCB0(62, 32, 2, gUnk_0812838C);
+            func_0805FCB0(62, 32, 2, gUnk_08126630[gUnk_09ECEB50->unk_02].unk_10);
+            func_0805FCB0(62, 44, 2, gUnk_0812838C);
 
-                if (gUnk_08126630[gUnk_09ECEB50->unk_02].unk_04 == 2) {
-                    func_0805FCB0(62, 44, 2, gUnk_0812837C);
-                } else {
-                    func_0805FCB0(62, 44, 2, gUnk_08128234[gUnk_09ECEB50->unk_01].unk_04);
-                }
-                break;
-            case 2:
-                func_0805FC04(62, 56, 2, gUnk_09ECEB50->unk_04 + 1);
-                break;
-            case 3:
-                func_0805FC04(62, 68, 2, gUnk_09ECEB50->unk_06);
-                break;
+            if (gUnk_08126630[gUnk_09ECEB50->unk_02].unk_04 == 2) {
+                func_0805FCB0(62, 44, 2, gUnk_0812837C);
+            } else {
+                func_0805FCB0(62, 44, 2, gUnk_08128234[gUnk_09ECEB50->unk_01].unk_04);
+            }
+            break;
+        case 2:
+            func_0805FC04(62, 56, 2, gUnk_09ECEB50->unk_04 + 1);
+            break;
+        case 3:
+            func_0805FC04(62, 68, 2, gUnk_09ECEB50->unk_06);
+            break;
         }
     }
 

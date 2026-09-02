@@ -1095,15 +1095,15 @@ void func_08103F94(s16 a, s16 b) {
                     id = list[m]->unk_00;
                 } else {
                     switch (gCardDefs[list[m]->unk_00].unk_2A) {
-                        case 0:
-                            id = 0;
-                            break;
-                        case 1:
-                            id = 200;
-                            break;
-                        case 2:
-                            id = 380;
-                            break;
+                    case 0:
+                        id = 0;
+                        break;
+                    case 1:
+                        id = 200;
+                        break;
+                    case 2:
+                        id = 380;
+                        break;
                     }
                 }
 

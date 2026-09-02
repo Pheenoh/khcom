@@ -853,11 +853,11 @@ void func_0807E158(void) {
     p = gUnk_02039B84;
 
     switch (p->unk_0F4) {
-        case 15:
-        case 28:
-        case 47:
-            p->unk_0F8--;
-            break;
+    case 15:
+    case 28:
+    case 47:
+        p->unk_0F8--;
+        break;
     }
 }
 void func_0807E184(void) {
@@ -1193,11 +1193,11 @@ void func_080838A0(void) {
     p = gUnk_02039B9C;
 
     switch (p->unk_0F4) {
-        case 15:
-        case 28:
-        case 47:
-            p->unk_0F8--;
-            break;
+    case 15:
+    case 28:
+    case 47:
+        p->unk_0F8--;
+        break;
     }
 }
 void func_080838CC(void) {

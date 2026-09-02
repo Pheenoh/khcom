@@ -203,12 +203,12 @@ void func_0805F7E8(u8 x, u8 y, u16* s) {
         c = (u8)(c >> 8) | (c << 8);
 
         switch (c & 0xFF00) {
-            case 0x8100:
-                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = c + 0x7EC0;
-                break;
-            case 0x8200:
-                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = (c + 0x7DC0) | 0x400;
-                break;
+        case 0x8100:
+            gUnk_02034A1C[gUnk_02034A20].unk_00[i] = c + 0x7EC0;
+            break;
+        case 0x8200:
+            gUnk_02034A1C[gUnk_02034A20].unk_00[i] = (c + 0x7DC0) | 0x400;
+            break;
         }
     }
 
@@ -430,152 +430,152 @@ void func_08060BBC(MenuWork* w) {
 
 u8 func_08060C18(MenuWork* w) {
     switch (w->unk_10) {
-        case 0:
-            w->unk_08 += (0xBC00 - w->unk_08) >> 1;
+    case 0:
+        w->unk_08 += (0xBC00 - w->unk_08) >> 1;
 
-            if ((w->unk_08 >> 8) == 0xBC) {
-                w->unk_10 = 1;
+        if ((w->unk_08 >> 8) == 0xBC) {
+            w->unk_10 = 1;
+        }
+
+        if (GetKeysPressed() & B_BUTTON) {
+            w->unk_10 = 4;
+        }
+
+        break;
+    case 1:
+        if (GetKeysRepeat() & DPAD_UP) {
+            if (w->unk_11 != 0) {
+                w->unk_11--;
+            } else {
+                w->unk_11 = 5;
             }
 
-            if (GetKeysPressed() & B_BUTTON) {
-                w->unk_10 = 4;
-            }
+            m4aSongNumStart(101);
+        }
 
-            break;
-        case 1:
-            if (GetKeysRepeat() & DPAD_UP) {
-                if (w->unk_11 != 0) {
-                    w->unk_11--;
-                } else {
-                    w->unk_11 = 5;
-                }
-
-                m4aSongNumStart(101);
-            }
-
-            if (GetKeysRepeat() & DPAD_DOWN) {
-                if (w->unk_11 <= 4) {
-                    w->unk_11++;
-                } else {
-                    w->unk_11 = 0;
-                }
-
-                m4aSongNumStart(101);
-            }
-
-            if (GetKeysPressed() & A_BUTTON) {
-                switch (w->unk_11) {
-                    case 0:
-                        w->unk_10 = 2;
-                        w->unk_11 = 6;
-                        m4aSongNumStart(103);
-                        break;
-                    case 2:
-                        func_0801CB0C();
-                        func_08006184(0, 32);
-                        w->unk_10 = 4;
-                        m4aSongNumStart(102);
-                        break;
-                    case 1:
-                    case 3:
-                    case 4:
-                        m4aSongNumStart(105);
-                        break;
-                    case 5:
-                        m4aSongNumStart(105);
-                        break;
-                }
-            }
-
-            if (GetKeysPressed() & B_BUTTON) {
-                w->unk_10 = 5;
-                m4aSongNumStart(104);
-            }
-
-            break;
-        case 2:
-            if (GetKeysRepeat() & DPAD_UP) {
-                if (w->unk_11 > 6) {
-                    w->unk_11--;
-                } else {
-                    w->unk_11 = 9;
-                }
-
-                m4aSongNumStart(101);
-            }
-
-            if (GetKeysRepeat() & DPAD_DOWN) {
-                if (w->unk_11 <= 8) {
-                    w->unk_11++;
-                } else {
-                    w->unk_11 = 6;
-                }
-
-                m4aSongNumStart(101);
-            }
-
-            if (GetKeysPressed() & B_BUTTON) {
-                w->unk_10 = 1;
+        if (GetKeysRepeat() & DPAD_DOWN) {
+            if (w->unk_11 <= 4) {
+                w->unk_11++;
+            } else {
                 w->unk_11 = 0;
-                m4aSongNumStart(104);
             }
 
-            if (GetKeysPressed() & A_BUTTON) {
-                switch (w->unk_11) {
-                    case 6:
-                        w->unk_11 = 0;
-                        w->unk_10 = 1;
-                        m4aSongNumStart(102);
-                        break;
-                    case 7:
-                        w->unk_11 = 0;
-                        w->unk_10 = 1;
-                        m4aSongNumStart(102);
-                        break;
-                    case 8:
-                        w->unk_11 = 0;
-                        w->unk_10 = 1;
-                        m4aSongNumStart(102);
-                        break;
-                    case 9:
-                        func_0801CB0C();
-                        func_08006184(0, 32);
-                        w->unk_10 = 4;
-                        m4aSongNumStart(102);
-                        break;
-                }
+            m4aSongNumStart(101);
+        }
+
+        if (GetKeysPressed() & A_BUTTON) {
+            switch (w->unk_11) {
+            case 0:
+                w->unk_10 = 2;
+                w->unk_11 = 6;
+                m4aSongNumStart(103);
+                break;
+            case 2:
+                func_0801CB0C();
+                func_08006184(0, 32);
+                w->unk_10 = 4;
+                m4aSongNumStart(102);
+                break;
+            case 1:
+            case 3:
+            case 4:
+                m4aSongNumStart(105);
+                break;
+            case 5:
+                m4aSongNumStart(105);
+                break;
+            }
+        }
+
+        if (GetKeysPressed() & B_BUTTON) {
+            w->unk_10 = 5;
+            m4aSongNumStart(104);
+        }
+
+        break;
+    case 2:
+        if (GetKeysRepeat() & DPAD_UP) {
+            if (w->unk_11 > 6) {
+                w->unk_11--;
+            } else {
+                w->unk_11 = 9;
             }
 
-            break;
-        case 4:
-            w->unk_08 += (0x11800 - w->unk_08) >> 1;
+            m4aSongNumStart(101);
+        }
 
-            if ((w->unk_08 >> 8) > 274) {
-                if (func_08006314() == 0) {
-                    if (w->unk_11 != 2) {
-                        if (w->unk_11 == 9) {
-                            func_080010CC(&gUnk_09EE2704, 0);
-                        }
-                    } else {
-                        func_080010CC(&gUnk_09EF4DB0, 0);
+        if (GetKeysRepeat() & DPAD_DOWN) {
+            if (w->unk_11 <= 8) {
+                w->unk_11++;
+            } else {
+                w->unk_11 = 6;
+            }
+
+            m4aSongNumStart(101);
+        }
+
+        if (GetKeysPressed() & B_BUTTON) {
+            w->unk_10 = 1;
+            w->unk_11 = 0;
+            m4aSongNumStart(104);
+        }
+
+        if (GetKeysPressed() & A_BUTTON) {
+            switch (w->unk_11) {
+            case 6:
+                w->unk_11 = 0;
+                w->unk_10 = 1;
+                m4aSongNumStart(102);
+                break;
+            case 7:
+                w->unk_11 = 0;
+                w->unk_10 = 1;
+                m4aSongNumStart(102);
+                break;
+            case 8:
+                w->unk_11 = 0;
+                w->unk_10 = 1;
+                m4aSongNumStart(102);
+                break;
+            case 9:
+                func_0801CB0C();
+                func_08006184(0, 32);
+                w->unk_10 = 4;
+                m4aSongNumStart(102);
+                break;
+            }
+        }
+
+        break;
+    case 4:
+        w->unk_08 += (0x11800 - w->unk_08) >> 1;
+
+        if ((w->unk_08 >> 8) > 274) {
+            if (func_08006314() == 0) {
+                if (w->unk_11 != 2) {
+                    if (w->unk_11 == 9) {
+                        func_080010CC(&gUnk_09EE2704, 0);
                     }
-
-                    w->unk_10 = 5;
+                } else {
+                    func_080010CC(&gUnk_09EF4DB0, 0);
                 }
+
+                w->unk_10 = 5;
             }
+        }
 
-            break;
-        case 5:
-            w->unk_08 += (0x11800 - w->unk_08) >> 1;
+        break;
+    case 5:
+        w->unk_08 += (0x11800 - w->unk_08) >> 1;
 
-            if ((w->unk_08 >> 8) > 274) {
-                return 0;
-            }
+        if ((w->unk_08 >> 8) > 274) {
+            return 0;
+        }
 
-            break;
-        case 3:
-        default:
-            break;
+        break;
+    case 3:
+    default:
+        break;
     }
 
     return 1;
@@ -604,12 +604,12 @@ void func_08060F1C(void) {
 
     if (w->unk_6A == 3) {
         switch (w->unk_60) {
-            case 0:
-                func_080E04EC();
-                break;
-            case 1:
-                SoftReset(255);
-                break;
+        case 0:
+            func_080E04EC();
+            break;
+        case 1:
+            SoftReset(255);
+            break;
         }
     }
 }
