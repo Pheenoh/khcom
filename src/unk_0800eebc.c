@@ -1394,7 +1394,31 @@ void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t
     func_08006238(0, gUnk_02039B84->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
-INCLUDE_ASM("unk_0800eebc/func_080155BC.s");
+void func_080155BC(s32 x, s32 y, s32 z, s32 w) {
+    s16 sx;
+    s16 sy;
+    s32 t;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    WorldToScreen(&sx, &sy, x, y, z);
+    t = sy << 8;
+    gUnk_02034928->unk_1C = 384;
+    gUnk_02034928->unk_20 = t / 40;
+    if (gUnk_02034928->unk_20 < 384) {
+        gUnk_02034928->unk_20 = 384;
+    }
+    func_08006778(gUnk_09EDA798, sx, sy);
+    m4aSongNumStart(0x201);
+    func_08011F78(w, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 16, 16, 256);
+    gUnk_02034928->unk_04 = func_08012908;
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 INCLUDE_ASM("unk_0800eebc/func_08015698.s");
 void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s) {
     s16 sx;
@@ -1679,7 +1703,34 @@ void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a) {
     gUnk_02034928->unk_34 |= 8;
 }
 INCLUDE_ASM("unk_0800eebc/func_08016D00.s");
-INCLUDE_ASM("unk_0800eebc/func_08016F2C.s");
+void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDA570, sx, sy);
+    m4aSongNumStart(0x29D);
+    func_08006B34(8);
+    gUnk_02034928->unk_04 = func_08016D00;
+    gUnk_02034928->unk_28 = p;
+    gUnk_02034928->unk_2C = q;
+    gUnk_02034928->unk_30 = r;
+    gUnk_02034928->unk_08 = 15;
+    gUnk_02034928->unk_26 = 3;
+    gUnk_02034928->unk_48 = w;
+    if (f) {
+        gUnk_02034928->unk_34 |= 1;
+        gUnk_02034928->unk_1C = -0x100;
+    }
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 void func_08017008(s32 x, s32 y, s32 z) {
     s16 sx;
     s16 sy;
@@ -1845,9 +1896,58 @@ void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f) {
     gUnk_02034928->unk_34 |= 8;
 }
 INCLUDE_ASM("unk_0800eebc/func_08017AC0.s");
-INCLUDE_ASM("unk_0800eebc/func_08017B74.s");
+void func_08017B74(s32 x, s32 w) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = gUnk_02039B84->unk_0DE << 8;
+    gUnk_02034928->unk_18 = 0;
+    gUnk_02034928->unk_48 = w;
+    gUnk_02034928->unk_1C = 10;
+    gUnk_02034928->unk_20 = -((gUnk_02039B84->unk_0E0 - gUnk_02039B84->unk_0DE) << 8) / 96;
+    WorldToScreen(&sx, &sy, x, gUnk_02034928->unk_14, 0);
+    func_08006778(gUnk_09EDAC00, sx, sy);
+    gUnk_02034928->unk_34 |= 0x20;
+    gUnk_02034928->unk_26 = 0;
+    SetBlendAlpha(16, 8);
+    gUnk_02034928->unk_04 = func_08017AC0;
+    func_08006B34(0);
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 INCLUDE_ASM("unk_0800eebc/func_08017C54.s");
-INCLUDE_ASM("unk_0800eebc/func_08017E18.s");
+void func_08017E18(s32 x, u8 f, s32 w) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_26 = 0;
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = (gUnk_02039B84->unk_0DE + gUnk_02039B84->unk_0E0) << 7;
+    gUnk_02034928->unk_18 = 0;
+    gUnk_02034928->unk_48 = w;
+    gUnk_02034928->unk_0A = 20;
+    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, 0);
+    func_08006778(gUnk_09EDAC60, sx, sy);
+    if (f) {
+        gUnk_02034928->unk_1C = 10;
+        gUnk_02034928->unk_28 = x - 0x3700;
+    } else {
+        gUnk_02034928->unk_1C = -10;
+        gUnk_02034928->unk_28 = x + 0x3700;
+        gUnk_02034928->unk_34 |= 1;
+    }
+    gUnk_02034928->unk_20 = 10;
+    gUnk_02034928->unk_34 |= 0x20;
+    gUnk_02034928->unk_04 = func_08017C54;
+    func_08006B34(0);
+}
 
 void func_08017EF4(void) {
     u16 k;
