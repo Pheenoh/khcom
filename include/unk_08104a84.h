@@ -138,8 +138,10 @@ u8 func_08065B6C(void* a, void* b);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s16 func_08084BAC(void);
 s16 func_08084BF0(void);
+void func_080850B0(u16* p);
 u32 func_08101518(void);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
+u8 func_0810155C(u32 a);
 void m4aSongNumStart(u16 song);
 
 s16 func_08104A84(s16 a);

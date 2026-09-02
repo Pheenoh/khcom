@@ -966,15 +966,16 @@ void func_080C8428(PoohWork* w, u32 b) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_080C84E0(PoohWork* w, u32 b) {
     gUnk_02034DAC = b;
+
     if (b == 0) {
         gUnk_0203C3F0 = 0;
     }
 
-    if (b == 38 || b == 39) {
+    if (b >= 38 && b <= 39) {
         w->unk_AC = 0;
+
         if (!func_08000F48(w->unk_C4)) {
             w->unk_C4 = TaskCreate(&w->unk_B0, &gUnk_09EF4910, w->unk_28);
         }
@@ -988,24 +989,25 @@ void func_080C84E0(PoohWork* w, u32 b) {
         w->unk_48 = -0x130;
     }
 
-    if (b == 36 || b == 37) {
+    if (b >= 36 && b <= 37) {
         m4aSongNumStart(0x149);
     } else if (b == 16) {
-        m4aSongNumStart(164 * 2);
+        m4aSongNumStart(0x148);
     } else if (b == 39 || b == 22 || (b >= 32 && b <= 35)) {
-        w->unk_38 = 173;
-        w->unk_3A = 173;
-        w->unk_3B = w->unk_38;
+        do {
+            w->unk_38 = 0xAD;
+            w->unk_3A = 0xAD;
+            w->unk_3B = w->unk_38;
+        } while (0);
     }
 
     if (b > 35) {
-        w->unk_38 = 83;
-        w->unk_3A = 83;
-        w->unk_3B = w->unk_38;
+        do {
+            w->unk_38 = 0x53;
+            w->unk_3A = 0x53;
+            w->unk_3B = w->unk_38;
+        } while (0);
     }
 
     func_080C8428(w, b);
 }
-#else
-INCLUDE_ASM("mode_sio2/func_080C84E0.s");
-#endif

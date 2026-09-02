@@ -898,7 +898,27 @@ u16 func_080D8B84(void** a, void** b, void** c) {
 INCLUDE_ASM("status/func_080D8B84.s");
 #endif
 
-INCLUDE_ASM("status/stock_mes_disp_0.s");
+void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
+    gUnk_0203C460 = (u8*)work;
+    *(StockMesDispParam*)&work->unk_3C = *arg;
+    work->unk_44 = func_080A235C(work->unk_42);
+
+    if (work->unk_40 >= work->unk_44 - 1) {
+        work->unk_40 = work->unk_44 - 1;
+    }
+    work->unk_00 = func_080D85C0(work->unk_42);
+    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    TaskPoolInit(&work->unk_24, 1);
+    work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->unk_3C + 6, work->unk_3E + 16,
+                                        func_080A2334(work->unk_42, work->unk_40));
+    work->unk_08 = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
+    work->unk_10 = LoadObjPalette(gUnk_0984B258, 0x20);
+    work->unk_18 = gUnk_09EF6948[0];
+    work->unk_0C = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
+    work->unk_14 = LoadObjPalette(gUnk_0984B258, 0x20);
+    work->unk_1C = gUnk_09EF6948[1];
+    work->unk_20 = 0;
+}
 INCLUDE_ASM("status/stock_mes_disp_1.s");
 
 void stock_mes_disp_2(StockMesDispWork* work) {

@@ -115,7 +115,6 @@ int SaveCheckHeaderSlot(s16 slot) {
     return ret;
 }
 
-#ifdef NON_MATCHING
 int SaveRepairHeader(void) {
     int results[2];
     int good;
@@ -123,6 +122,7 @@ int SaveRepairHeader(void) {
     s16 i;
     int ret;
     u8* buf;
+    s64 off;
 
     good = -1;
     bad = -1;
@@ -145,7 +145,8 @@ int SaveRepairHeader(void) {
 
         for (i = 0; i < SAVE_SLOTS; i++) {
             if (results[i] != SAVE_OK) {
-                WriteAndVerifySramFast(buf, SRAM_HEADER + i * SAVE_HEADER_SIZE, SAVE_HEADER_SIZE);
+                off = i * SAVE_HEADER_SIZE;
+                WriteAndVerifySramFast(buf, SRAM_HEADER + off, SAVE_HEADER_SIZE);
             }
         }
 
@@ -155,9 +156,6 @@ int SaveRepairHeader(void) {
 
     return ret;
 }
-#else
-INCLUDE_ASM("save/SaveRepairHeader.s");
-#endif
 
 int SaveLoadHeader(void) {
     u8* buf;
@@ -468,11 +466,11 @@ int SaveLoadFileLarge(u16 file) {
     return ret;
 }
 
-#ifdef NON_MATCHING
 void SaveWriteFileLarge(u16 file) {
     SaveBlockLarge* blk;
     u8* dst;
     s16 i;
+    s32 off;
 
     blk = EwramAlloc(SAVE_FILE_LARGE_SIZE);
     ZeroFill(blk, SAVE_FILE_LARGE_SIZE);
@@ -482,17 +480,14 @@ void SaveWriteFileLarge(u16 file) {
     blk->checksum = SaveChecksum((u16*)blk, SAVE_FILE_LARGE_SIZE);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
+        off = (s16)file * (SAVE_FILE_LARGE_SIZE * 2);
         dst = SRAM_FILE_LARGE + i * SAVE_FILE_LARGE_SIZE;
-        WriteAndVerifySramFast((u8*)blk, (s16)file * (SAVE_FILE_LARGE_SIZE * 2) + dst,
-                               SAVE_FILE_LARGE_SIZE);
+        WriteAndVerifySramFast((u8*)blk, (u8*)(off + (u32)dst), SAVE_FILE_LARGE_SIZE);
     }
 
     EwramFree(blk);
     SaveWriteHeader((s16)file);
 }
-#else
-INCLUDE_ASM("save/SaveWriteFileLarge.s");
-#endif
 
 #ifdef NON_MATCHING
 void SaveSetFileLargeState(u16 file, u16 slot, u16 state) {
@@ -609,7 +604,6 @@ int SaveRepairFileSmall(u16 file) {
 INCLUDE_ASM("save/SaveRepairFileSmall.s");
 #endif
 
-#ifdef NON_MATCHING
 int SaveLoadFileSmall(u16 file) {
     u8* buf;
     u8* dst;
@@ -620,8 +614,8 @@ int SaveLoadFileSmall(u16 file) {
 
     for (i = 0; i < SAVE_SLOTS; i++) {
         dst = SRAM_FILE_SMALL + i * SAVE_FILE_SMALL_SIZE;
-        ret = SaveVerifyBlock((s16)file * (SAVE_FILE_SMALL_SIZE * 2) + dst, buf, buf,
-                              SAVE_FILE_SMALL_SIZE);
+        ret = SaveVerifyBlock((u8*)((s16)file * (SAVE_FILE_SMALL_SIZE * 2) + (u32)dst), buf,
+                              buf, SAVE_FILE_SMALL_SIZE);
 
         if (ret == SAVE_OK) {
             ApplySaveFileSmall(&((SaveBlockSmall*)buf)->data);
@@ -632,16 +626,15 @@ int SaveLoadFileSmall(u16 file) {
     EwramFree(buf);
     return ret;
 }
-#else
-INCLUDE_ASM("save/SaveLoadFileSmall.s");
-#endif
 
-#ifdef NON_MATCHING
 void SaveWriteFileSmall(u16 file) {
     SaveBlockSmall* blk;
     u8* dst;
     s16 i;
+    s32 off;
+    s16 f;
 
+    f = file;
     blk = EwramAlloc(SAVE_FILE_SMALL_SIZE);
     ZeroFill(blk, SAVE_FILE_SMALL_SIZE);
     MakeSaveFileSmall(&blk->data);
@@ -650,17 +643,14 @@ void SaveWriteFileSmall(u16 file) {
     blk->checksum = SaveChecksum((u16*)blk, SAVE_FILE_SMALL_SIZE);
 
     for (i = 0; i < SAVE_SLOTS; i++) {
+        off = f * (SAVE_FILE_SMALL_SIZE * 2);
         dst = SRAM_FILE_SMALL + i * SAVE_FILE_SMALL_SIZE;
-        WriteAndVerifySramFast((u8*)blk, (s16)file * (SAVE_FILE_SMALL_SIZE * 2) + dst,
-                               SAVE_FILE_SMALL_SIZE);
+        WriteAndVerifySramFast((u8*)blk, (u8*)(off + (u32)dst), SAVE_FILE_SMALL_SIZE);
     }
 
     EwramFree(blk);
-    SaveWriteHeader((s16)file + 2);
+    SaveWriteHeader(f + 2);
 }
-#else
-INCLUDE_ASM("save/SaveWriteFileSmall.s");
-#endif
 
 void SaveSetFileSmallState(u16 file, u16 slot, u16 state) {
     SaveBlockSmall* blk;

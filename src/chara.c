@@ -561,7 +561,6 @@ s32 func_080C5D80(void) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 void func_080C5DC0(s32 (*a)(void), s32 (*b)(void)) {
     u16* base;
     u16* p;
@@ -570,10 +569,10 @@ void func_080C5DC0(s32 (*a)(void), s32 (*b)(void)) {
     s32 j;
     s32 k;
     s32 off;
-    s32 (**pa)(void);
     s32 (**pb)(void);
     u16* p1;
     u16* p2;
+    s32 (**pa)(void);
 
     gUnk_0203C38C = 0;
     gUnk_020397F0 = 0;
@@ -603,9 +602,7 @@ void func_080C5DC0(s32 (*a)(void), s32 (*b)(void)) {
     *p1 = 0;
     *p2 = 0;
 }
-#else
-INCLUDE_ASM("chara/func_080C5DC0.s");
-#endif
+
 
 s32 func_080C5E58(void) {
     if (gUnk_02039828 == 0) {
