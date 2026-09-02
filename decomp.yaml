@@ -1,7 +1,7 @@
 name: Kingdom Hearts - Chain of Memories
-repo: https://github.com/pheenoh/com
+repo: https://github.com/Pheenoh/khcom
 platform: gba
-build_system: make
+build_system: ninja
 versions:
   - name: us
     fullname: USA (B8CE)
@@ -43,23 +43,94 @@ tools:
       check_asm_paths: True
       # Objects live at build/<ver>/asm/foo.o -> asm file lookup starts at part 3
       path_index: 3
-      report_data: True
+      # The ROM's ~32 MB of assets are .rodata. Counting them would put every
+      # headline percentage near zero; pret, kleod and knidl all report code only.
+      report_data: False
       prefixes_to_trim:
         - build/us/
         - build/jp/
         - build/eu/
         - build/
 
+      # Module names come from the ROM's own task and mode registration tables
+      # (tools/gen_symbols.py), so these buckets group by evidence, not guesswork.
+      # Anything whose subsystem is not established stays in `named` or `unidentified`.
       categories:
-        - id: code
-          name: Code
+        - id: core
+          name: Core & engine
           paths:
-            - src/
-        - id: asm
-          name: Asm
+            - src/main
+            - src/malloc
+            - src/taskpool
+            - src/key
+            - src/sprite
+            - src/engine
+            - src/sio
+            - src/pallet
+            - src/util
+            - src/task
+            - src/save
+
+        - id: battle
+          name: Battle
           paths:
-            - asm/
-        - id: vendored
-          name: Vendored
+            - src/btl
+            - src/bos
+            - src/emy
+
+        - id: card
+          name: Card system
+          paths:
+            - src/card
+
+        - id: modes
+          name: Game modes
+          paths:
+            - src/mode_
+
+        - id: sound
+          name: Sound & movie
+          paths:
+            - src/m4a
+            - src/snd_stream
+            - src/movie
+
+        - id: library
+          name: Library
           paths:
             - lib/
+            - src/lib
+            - src/agb_sram
+
+        - id: named
+          name: Other named subsystems
+          paths:
+            - src/acgtrans
+            - src/allmap
+            - src/chara
+            - src/evt
+            - src/fld
+            - src/frd
+            - src/hum
+            - src/monsgage
+            - src/ms
+            - src/pc
+            - src/poo
+            - src/romcri
+            - src/room
+            - src/smn
+            - src/sroll
+            - src/status
+            - src/title
+            - src/tutorial
+            - src/wlogo
+
+        - id: unidentified
+          name: Unidentified
+          paths:
+            - src/unk_
+
+        - id: asm
+          name: Raw assembly
+          paths:
+            - asm/
