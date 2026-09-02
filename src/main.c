@@ -59,19 +59,19 @@ void func_080012A8(void);
 void ResetKeyState(void);
 void SaveInitSram(void);
 
-void* func_08000240(void) {
+void* GetEwramHeapStart(void) {
     return gEwramHeapStart;
 }
 
-u32 func_08000248(void) {
+u32 GetEwramHeapSize(void) {
     return 0x34000;
 }
 
-void* func_08000250(void) {
+void* GetIwramHeapStart(void) {
     return gIwramHeapStart;
 }
 
-u32 func_08000258(void) {
+u32 GetIwramHeapSize(void) {
     return 0x6800;
 }
 
@@ -137,8 +137,8 @@ void InitSystem(void) {
     InitIntrTable();
     m4aSoundInit();
     m4aSoundVSyncOff();
-    IwramHeapInit(func_08000250(), func_08000258());
-    EwramHeapInit(func_08000240(), func_08000248());
+    IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
+    EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
     VTransInit();
     SpriteInit();
     BgInit();

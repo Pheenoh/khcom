@@ -44,8 +44,8 @@ void mode_movie_1(void) {
     case 2:
         m4aSoundVSyncOff();
         gUnk_03007484 = func_0805EA90;
-        IwramHeapInit(func_08000250(), func_08000258());
-        EwramHeapInit(func_08000240(), func_08000248());
+        IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
+        EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
         SetEwramHeapName(sMovieHeapName);
         SetIwramHeapName(sMovieHeapName);
         CpuSet(gUnk_08F69C04, (void*)0x05000200, 16);
@@ -92,8 +92,8 @@ void mode_movie_1(void) {
         }
 
         func_08118538();
-        IwramHeapInit(func_08000250(), func_08000258());
-        EwramHeapInit(func_08000240(), func_08000248());
+        IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
+        EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
         VTransInit();
         SpriteInit();
         BgInit();
