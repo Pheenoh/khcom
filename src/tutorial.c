@@ -54,6 +54,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_00C++;
             break;
         }
+
         if (func_080A42C8() != 0) {
             break;
         }
@@ -86,6 +87,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         if (work->unk_00C == 0) {
             func_0809B644(gUnk_02039B84->unk_02C, 320, 0x181, 0, 1);
         }
+
         if (work->unk_00C > 120) {
             work->unk_004 = 7;
             work->unk_00C = 0;
@@ -103,6 +105,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         if (work->unk_00C == 0) {
             gUnk_02039B84->unk_068 &= ~0x1000000000ULL;
         }
+
         if (!(gUnk_02039B84->unk_068 & 0x20000000000ULL)) {
             work->unk_00C++;
             break;
@@ -130,6 +133,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         if (work->unk_00C == 10) {
             gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
         }
+
         if (!(gUnk_02039B84->unk_068 & 0x20000000)) {
             work->unk_00C++;
             break;
@@ -156,10 +160,12 @@ s32 task_tutorial_1(TutorialWork* work) {
             gUnk_02039B84->unk_068 &= ~0x200000000000ULL;
             gUnk_02039B84->unk_068 &= ~0x100000000000ULL;
         }
+
         if (!(gUnk_02039B84->unk_068 & 0x40000000000ULL)) {
             work->unk_00C++;
             break;
         }
+
         if (!(gUnk_02039B84->unk_068 & 0x80000000000ULL)) {
             work->unk_00C++;
             break;
@@ -180,9 +186,11 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_00E = 0;
             work->unk_000 &= ~2;
         }
+
         if (work->unk_00C == 10) {
             gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
         }
+
         if (work->unk_000 & 2) {
             if (!(gUnk_02039B84->unk_068 & 0x20000000)) {
                 if (work->unk_00E == 0) {
@@ -194,6 +202,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         } else if (gUnk_02039B84->unk_068 & 0x20000000) {
             work->unk_000 |= 2;
         }
+
         if (work->unk_00E <= 2) {
             work->unk_00C++;
             break;
@@ -215,13 +224,16 @@ s32 task_tutorial_1(TutorialWork* work) {
         if (work->unk_00C == 0) {
             func_0805DB28(work);
         }
+
         if (work->unk_00C == 10) {
             gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
         }
+
         if (gUnk_02039B84->unk_068 & 0x20000000) {
             work->unk_00C++;
             break;
         }
+
         if (func_080763D0() == 0) {
             work->unk_00C++;
             break;
@@ -244,10 +256,12 @@ s32 task_tutorial_1(TutorialWork* work) {
         if (work->unk_00C == 10) {
             gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
         }
+
         if (gUnk_02039B84->unk_068 & 0x80000000) {
             work->unk_00C++;
             break;
         }
+
         if (func_080763D0() != 0) {
             work->unk_00C++;
             break;
@@ -271,6 +285,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_010 = 0;
             gUnk_02039B84->unk_068 &= ~0x4000000000ULL;
         }
+
         if (work->unk_010 <= 0) {
             if (GetKeysPressed() & 0x300) {
                 work->unk_010 = 10;
@@ -279,6 +294,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         } else {
             work->unk_010--;
         }
+
         if (work->unk_00E <= 6) {
             work->unk_00C++;
             break;
@@ -302,9 +318,11 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_00E = 0;
             gUnk_02039B84->unk_068 &= ~0x10000000000ULL;
         }
+
         if (GetKeysPressed() & 4) {
             work->unk_00E++;
         }
+
         if (work->unk_00E <= 1) {
             work->unk_00C++;
             break;
@@ -339,9 +357,11 @@ s32 task_tutorial_1(TutorialWork* work) {
             gUnk_02039B84->unk_068 |= 0x100000ULL;
             gUnk_02039B84->unk_068 |= 0x20000000000ULL;
         }
+
         if (work->unk_00C == 10) {
             gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
         }
+
         if (work->unk_000 & 2) {
             if (!(gUnk_02039B84->unk_068 & 0x20000000)) {
                 work->unk_000 &= ~2;
@@ -350,6 +370,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         } else if (gUnk_02039B84->unk_068 & 0x20000000) {
             work->unk_000 |= 2;
         }
+
         if (work->unk_00E <= 6) {
             work->unk_00C++;
             break;
@@ -372,6 +393,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         if (gUnk_02039B84->unk_068 & 0x20000000) {
             break;
         }
+
         if (gUnk_02039B84->unk_068 & 0x40) {
             break;
         }
@@ -408,13 +430,16 @@ s32 task_tutorial_1(TutorialWork* work) {
         if (work->unk_00C == 0) {
             work->unk_00E = 0;
         }
+
         if (work->unk_00C == 10) {
             gUnk_02039B84->unk_068 &= ~0x8000000000ULL;
         }
+
         if (work->unk_00E == 0 && func_0807B3E0() != 0) {
             func_0805DAEC();
             work->unk_00E++;
         }
+
         if (func_0807B3E0() <= 2) {
             work->unk_00C++;
             break;
@@ -435,9 +460,11 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_000 &= ~2;
             work->unk_00E = 0;
         }
+
         if (work->unk_00C == 10) {
             gUnk_02039B84->unk_068 &= ~0x4000000000000ULL;
         }
+
         if (work->unk_000 & 2) {
             if (!(gUnk_02039B84->unk_068 & 0x20000000)) {
                 work->unk_000 &= ~2;
@@ -449,6 +476,7 @@ s32 task_tutorial_1(TutorialWork* work) {
                 func_0805DAEC();
             }
         }
+
         if (work->unk_00E > 0) {
             gUnk_02039B84->unk_068 |= 0x4000000000000ULL;
             gUnk_02039B84->unk_068 &= ~0x20000000000ULL;
@@ -511,6 +539,7 @@ s16 func_0805E848(u16* widths, u16 count) {
         total += *widths;
         widths++;
     }
+
     if (total / 2 > 120) {
         total = 240;
     }
@@ -531,6 +560,7 @@ u16 func_0805E89C(u16* str) {
         if (c == 0) {
             return n;
         }
+
         if (c != 0x20) {
             n++;
         }

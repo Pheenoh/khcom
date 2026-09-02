@@ -29,6 +29,7 @@ s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
                 work->unk_02 = 0;
                 work->unk_00 = 0;
             }
+
             if (!(gUnk_02039B84->unk_068 & 0x8000)) {
                 work->unk_00 = 0x28;
             }

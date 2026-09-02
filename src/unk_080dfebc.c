@@ -112,27 +112,35 @@ u8 func_080E02E0(UnkStruct_080DFF1C* p, s16 a, s16 b) {
     if (gUnk_0203C7AC->unk_20 == 0) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_00 & 0x80) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_24 - 0x1400 > p->unk_00 + (a << 8)) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_24 + 0x1400 < p->unk_00 - (a << 8)) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_28 - 0x1400 > p->unk_04 + (a << 8)) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_28 + 0x1400 < p->unk_04 - (a << 8)) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_2C - 0x2000 > p->unk_08) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_2C + 0x800 < p->unk_08 - (b << 8)) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_2C <= p->unk_0C) {
         return 1;
     }
@@ -154,12 +162,15 @@ s32 func_080E03C0(s32 a) {
     if (func_080A42C8(a)) {
         return 0;
     }
+
     if (gUnk_02039BA0->unk_70 & 0x841000) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_00 & 0x84) {
         return 0;
     }
+
     if (gUnk_02039BA0->unk_20 != gUnk_02039BA0->unk_24) {
         return 0;
     }
@@ -215,6 +226,7 @@ void func_080E0820(void) {
     if ((gUnk_0203C7AC->unk_00 & 0x1000) == 0) {
         TaskPoolDraw(gUnk_02039BA0->unk_8C);
     }
+
     if ((gUnk_02039BA0->unk_70 & 0x100) == 0) {
         TaskPoolDraw(gUnk_02039BA0->unk_B4);
     }
@@ -235,6 +247,7 @@ UnkStruct_080DFB8C* func_080E08BC(s16 x, s16 y) {
     if (y < 0 || y >= gUnk_02034F2A) {
         return 0;
     }
+
     if (x < 0 || x >= gUnk_02034F28) {
         return 0;
     }
@@ -287,6 +300,7 @@ void func_080E09B4(UnkStruct_080DFB8C* p, u8 n, u8 v) {
         if (p->unk_00 & 4) {
             t = t + q[3] * 4;
         }
+
         if (p->unk_00 & 8) {
             t = t + q[3] * 8;
         }
@@ -382,6 +396,7 @@ u8 func_080E2BA0(u8 a) {
             a = 5;
             break;
     }
+
     if (a != 5) {
         func_080E2668(p, a);
     }
@@ -464,6 +479,7 @@ s32 func_080E2F48(s16 a, s16 b, s16 c, u8 d) {
         }
         return 6;
     }
+
     if (c - a < b - c) {
         return 5;
     }
@@ -475,14 +491,17 @@ s32 func_080E2F98(s16 a, s16 b, s16 c, u8 d) {
         if (c - a < (b - a) / 3) {
             return 4;
         }
+
         if (b - c > (b - a) / 3) {
             return 2;
         }
         return 6;
     }
+
     if (c - a < (b - a) / 3) {
         return 5;
     }
+
     if (b - c > (b - a) / 3) {
         return 1;
     }
@@ -684,6 +703,7 @@ void func_080E5F50(UnkStruct_080E590C* p) {
             func_080E5EAC(p);
             return;
         }
+
         if (func_08012660(p->unk_48, 6)) {
             p->unk_08.unk_00 += p->unk_80;
             p->unk_08.unk_04 += p->unk_84;
@@ -792,6 +812,7 @@ s16 func_080E6A14(s16 x, s16 y) {
         if (p->unk_00 & 0x100) {
             return 0;
         }
+
         if (p->unk_02 == 0 || p->unk_02 == 4 || p->unk_02 == 2 || p->unk_02 == 6) {
             return i;
         }
@@ -823,6 +844,7 @@ s32 func_080E7DB8(u8 flag, void* a) {
     if (flag != 0) {
         return 1;
     }
+
     for (i = 0; i < gUnk_02034F78; i++) {
         if (gUnk_0203C7B8[i].unk_14->unk_04 == a) {
             return 0;
@@ -1070,6 +1092,7 @@ s32 func_080E8F50(UnkStruct_080E8E24* a, u8 b, s32 c, s32 d, s32 e) {
     if (w.unk_14 <= 0x1B8) {
         w.unk_14 += func_080E8F0C();
     }
+
     if (CountCardsById(w.unk_14) <= 0x62) {
         TaskCreate(gUnk_02039BA0->unk_C8, &gUnk_09EF6E64, &w);
         return 1;
@@ -1083,15 +1106,19 @@ u8 func_080E8FB8(u8 a, s32 b, s32 c, s32 d) {
     if (gUnk_02039BB0.unk_08 & 8) {
         return 0;
     }
+
     if (func_080840E4()) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_00 & 0x20) {
         return 0;
     }
+
     if (gUnk_0203C7AC->unk_00 & 0x10) {
         return 0;
     }
+
     if (func_080DEE18(gUnk_0203C590[6])->unk_0C == 0) {
         return 0;
     }
@@ -1380,6 +1407,7 @@ s32 func_080F023C(UnkStruct_080F023C* p, s32 lim) {
     if (dy < 0) {
         dy = gUnk_02039BA0->unk_1C - p->unk_FC;
     }
+
     if (dx > 0x8000 || dy > 0x8000) {
         return 0;
     }
@@ -1462,6 +1490,7 @@ s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
     if (dy < 0) {
         dy = gUnk_02039BA0->unk_1C - p->unk_04;
     }
+
     if (dx > 0x8000 || dy > 0x8000) {
         return 0;
     }

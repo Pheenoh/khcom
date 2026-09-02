@@ -82,6 +82,7 @@ void mode_worldinspect_2(void) {
         if (gUnk_02035168[i]) {
             ReleaseObjPalette(gUnk_02035168[i]);
         }
+
         if (gUnk_02035198[i]) {
             ReleaseObjTiles(gUnk_02035198[i]);
         }

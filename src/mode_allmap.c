@@ -70,13 +70,16 @@ void mode_allmap_1(void) {
             func_080E052C(gUnk_02034E80);
         }
     }
+
     if (gUnk_0203C4E0 == 2) {
         if (gUnk_0203C534 != 0) {
             gUnk_0203C534--;
         }
+
         if (gUnk_0203C508 != 0) {
             gUnk_0203C508--;
         }
+
         if (gUnk_02034E3C > 0) {
             if (gUnk_02034E3C == 16) {
                 func_080D3008();
@@ -87,6 +90,7 @@ void mode_allmap_1(void) {
                 func_080D3370();
             }
         }
+
         if (gUnk_0203C534 == 0 && gUnk_0203C508 == 0) {
             gUnk_0203C4E0 = 3;
         }
@@ -160,6 +164,7 @@ s32 func_080D35B0(AllmapRoomWork* work) {
         if (func_080D5944(work->unk_098, 8) != 0) {
             return 17;
         }
+
         if (func_080D5944(work->unk_098, 2) == 0) {
             return 1;
         }

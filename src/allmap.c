@@ -18,6 +18,7 @@ void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
         work->unk_000 = AllocObjTiles(func_08003524(gUnk_09EF6424, 17), gUnk_0976B340);
         work->unk_008 = gUnk_09EF6424[work->unk_09A];
     }
+
     if (work->unk_09C == 0 && work->unk_098 == gUnk_0203C590[6]) {
         pal = gUnk_0984A138;
     } else {
@@ -51,18 +52,23 @@ void task_allmap_room_2(AllmapRoomWork* work) {
         g = 0;
         h = 80;
     }
+
     if (x < -32 || x > 240) {
         return;
     }
+
     if (y < -32) {
         return;
     }
+
     if (y > 160) {
         return;
     }
+
     if (work->unk_008 != 0) {
         DrawSprite(x, y, work->unk_008, work->unk_000, work->unk_004, 0, g, h);
     }
+
     for (i = 0; i < 4; i++) {
         if (work->unk_01C[i] != 0) {
             work->unk_01C[i] = AnimUpdate(&work->unk_02C[i]);
@@ -99,6 +105,7 @@ u8 func_080D3A70(u8 a, u8 b) {
             return 0;
         }
     }
+
     if (func_080D5944(a, 2) != 0) {
         return func_080D3564(a, b);
     }
@@ -112,6 +119,7 @@ u8 func_080D3AB8(u8 a, u8 b) {
             return 0;
         }
     }
+
     if (func_080D5944(a, 2) != 0) {
         if (func_080D3564(a, b) != 0) {
             return func_080D358C(a, b) == 0;
@@ -152,6 +160,7 @@ s32 task_allmap_cursor_1(AllmapCursorWork* work) {
             func_0800592C(&work->unk_28, work->unk_2C, gUnk_0203C508);
         }
     }
+
     if (gUnk_0203C4E0 != 3) {
         work->unk_08 = gUnk_09EF64B4[0];
         return 1;
@@ -164,6 +173,7 @@ s32 task_allmap_cursor_1(AllmapCursorWork* work) {
         work->unk_38 = y;
         work->unk_44 = 4;
     }
+
     if (work->unk_44 != 0) {
         ApproachValue(&work->unk_3C, work->unk_34, work->unk_44);
         ApproachValue(&work->unk_40, work->unk_38, work->unk_44);
@@ -179,6 +189,7 @@ void task_allmap_cursor_2(AllmapCursorWork* work) {
     if (func_080D4D1C() != 0) {
         return;
     }
+
     if (gUnk_0203C4E0 != 3) {
         x = work->unk_24;
         y = work->unk_28 >> 8;
@@ -281,6 +292,7 @@ void func_080D3F10(AllmapBarWork* work) {
     } else {
         work->unk_28 = 3;
     }
+
     if (work->unk_0C == 0) {
         work->unk_0C = 16;
     }
@@ -362,9 +374,11 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         if (work->unk_2C != 0) {
             break;
         }
+
         if (gUnk_0203C4E0 != 3) {
             break;
         }
+
         if ((GetKeysPressed() & 8) != 0) {
             m4aSongNumStart(104);
             func_080D3FD4(work);
@@ -373,6 +387,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
             func_080D352C(0);
             return 0;
         }
+
         if ((GetKeysPressed() & 2) != 0 && func_080D4D1C() == 0) {
             m4aSongNumStart(104);
             func_080D3F10(work);
@@ -416,6 +431,7 @@ u8 func_080D422C(AllmapCursorPos a) {
             } else {
                 v = func_080D3A70(r, gUnk_096FDC40[i][0]);
             }
+
             if (v != 0) {
                 return 1;
             }
@@ -470,11 +486,13 @@ s32 task_allmap_doorinfo_1(AllmapDoorinfoWork* work) {
         work->unk_110 = work->unk_0FE << 8;
         func_080061E8(0, 8);
     }
+
     if (work->unk_100 != 0) {
         ApproachValue(&work->unk_104, work->unk_10C, work->unk_100);
         ApproachValue(&work->unk_108, work->unk_110, work->unk_100);
         work->unk_100--;
     }
+
     if (work->unk_116 != 0 && work->unk_100 == 0) {
         return 0;
     }
@@ -487,6 +505,7 @@ void func_080D484C(AllmapDoorinfoWork* work) {
     if (gUnk_0203C4E0 == 0) {
         return;
     }
+
     for (i = 0; i < 4; i++) {
         if (work->unk_008[i] != 0 && work->unk_100 == 0) {
             DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->unk_008[i], work->unk_018, work->unk_0EC, 0, 0, i + 51);
@@ -541,6 +560,7 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
             }
         }
     }
+
     for (i = 0; i < 32; i++) {
         func_080062F4(i, 1);
     }
@@ -635,6 +655,7 @@ void func_080D4D50(s16 a, s16 b, s32 c, u8 d) {
     } else {
         tile += 0xE000;
     }
+
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 4; j++) {
             map[(y8 + i) / 32 * 2048 + (y8 + i) % 32 * 32 + (x8 + j) / 32 * 1024 + (x8 + j) % 32] = tile;
@@ -664,6 +685,7 @@ void func_080D510C(AllmapState* s) {
     } else if (dx < -0x800) {
         dx = -0x800;
     }
+
     if (dy > 0x800) {
         dy = 0x800;
     } else if (dy < -0x800) {
@@ -676,6 +698,7 @@ void func_080D510C(AllmapState* s) {
     if (abs(px - gUnk_02034E8C) <= 7) {
         gUnk_02034E8C = tx;
     }
+
     if (abs(py - gUnk_02034E90) <= 7) {
         gUnk_02034E90 = ty;
     }
@@ -713,6 +736,7 @@ void func_080D53F8(void) {
             w->unk_090 = w->unk_094 - base;
         }
     }
+
     if (func_08000F48(gUnk_0203C4B4->unk_94) != 0) {
         c = gUnk_0203C4B4->unk_94->unk_04;
         c->unk_28 = c->unk_2C - base;
@@ -744,6 +768,7 @@ void func_080D54FC(void) {
     } else if (gUnk_0203C4B4->unk_A2 > gUnk_0203C4B4->unk_B2 - 160) {
         gUnk_0203C4B4->unk_A2 = gUnk_0203C4B4->unk_B2 - 160;
     }
+
     if ((s16)(w->unk_08E * 24 - gUnk_0203C4B4->unk_AE) <= 15) {
         gUnk_0203C4B4->unk_A2 -= 16;
     }
@@ -801,6 +826,7 @@ void func_080D55E4(void) {
         m4aSongNumStart(101);
         func_080D54FC();
     }
+
     if (func_08000F48(gUnk_0203C4B4->unk_98) != 0) {
         func_08000DE8(gUnk_0203C4B4, gUnk_0203C4B4->unk_98);
     }
@@ -811,9 +837,11 @@ void func_080D55E4(void) {
         gUnk_0203C4B4->unk_98 = 0;
         func_080D3ED0();
     }
+
     if (func_08000F48(gUnk_0203C4B4->unk_9C) != 0) {
         func_08000DE8(gUnk_0203C4B4, gUnk_0203C4B4->unk_9C);
     }
+
     if (func_080D422C(c->unk_30) != 0) {
         gUnk_0203C4B4->unk_9C = TaskCreate(gUnk_0203C4B4, &gUnk_09EF4E38, c);
     }
@@ -828,15 +856,19 @@ void func_080D576C(u8 a, u16 b, u16 c) {
     if (func_08000F48(gUnk_0203C4B4->unk_14[a]) != 0) {
         return;
     }
+
     if (gUnk_0203C4B4->unk_B6 < b) {
         gUnk_0203C4B4->unk_B6 = b;
     }
+
     if (gUnk_0203C4B4->unk_B4 > b) {
         gUnk_0203C4B4->unk_B4 = b;
     }
+
     if (gUnk_0203C4B4->unk_BA < c) {
         gUnk_0203C4B4->unk_BA = c;
     }
+
     if (gUnk_0203C4B4->unk_B8 > c) {
         gUnk_0203C4B4->unk_B8 = c;
     }
@@ -848,12 +880,15 @@ void func_080D576C(u8 a, u16 b, u16 c) {
     if ((u8)(d[0] + 3) > 2) {
         func_080D576C(d[0], b + 1, c - 1);
     }
+
     if ((u8)(d[1] + 3) > 2) {
         func_080D576C(d[1], b - 1, c + 1);
     }
+
     if ((u8)(d[2] + 3) > 2) {
         func_080D576C(d[2], b + 1, c + 1);
     }
+
     if ((u8)(d[3] + 3) > 2) {
         func_080D576C(d[3], b - 1, c - 1);
     }
@@ -904,6 +939,7 @@ void func_080D59B4(void) {
         func_080010CC(&gUnk_09EF4E50, 0);
         return;
     }
+
     switch (gUnk_02034EC2) {
     case 3:
         SaveLoadSystem();
@@ -946,6 +982,7 @@ void func_080D5A4C(u16 a) {
     if (func_08000F48(gUnk_02034EB8) == 0) {
         gUnk_02034EB8 = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E60, 0);
     }
+
     if (func_08000F48(gUnk_02034EBC) == 0) {
         gUnk_02034EBC = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E78, 0);
     }

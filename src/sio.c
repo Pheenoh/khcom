@@ -8,6 +8,7 @@ void func_08006B80(u16* a, u16* b) {
     if (a != 0) {
         *a = gUnk_02034046;
     }
+
     if (b != 0) {
         *b = gUnk_02034044;
     }
@@ -290,6 +291,7 @@ void func_0800712C(u16* p) {
         if (idx > 31) {
             idx -= 32;
         }
+
         for (i = 0; i < 4; i++) {
             gUnk_02034076 |= *p;
             gUnk_02039830.unk_1C[i][idx] = *p;
@@ -299,6 +301,7 @@ void func_0800712C(u16* p) {
     } else {
         gUnk_02039830.unk_14 |= 1;
     }
+
     if (gUnk_02034076 != 0) {
         gUnk_02039830.unk_11D++;
         gUnk_02034076 = 0;
@@ -344,6 +347,7 @@ void func_08007318(void) {
         }
         gUnk_02039830.unk_0E = 0;
     }
+
     if (gUnk_02039830.unk_00 != 0) {
         if (gUnk_02039830.unk_01 == 2) {
             SioStartTransfer();
@@ -365,6 +369,7 @@ void func_08007318(void) {
             if (gUnk_02039830.unk_01 == 4) {
                 gUnk_02039830.unk_15 = 2;
             }
+
             if (gUnk_02039830.unk_01 == 2) {
                 gUnk_02039830.unk_02 = 0;
                 gUnk_02039830.unk_03 = 0;
@@ -449,6 +454,7 @@ u8 func_08007454(void) {
         if (gUnk_02039830.unk_03 == gUnk_02034073 && gUnk_02039830.unk_04[0] == 0x8FFF) {
             return 1;
         }
+
         if (gUnk_02039830.unk_03 == 2) {
             gUnk_02039830.unk_11 = (min & 3) + 1;
         } else {
@@ -480,6 +486,7 @@ void func_08007550(void) {
         if (idx > 31) {
             idx -= 32;
         }
+
         if (gUnk_02039830.unk_321 < 32) {
             for (i = 0; i < gUnk_02039830.unk_03; i++) {
                 gUnk_02039830.unk_16 += buf[i];
@@ -517,11 +524,13 @@ void func_08007694(void) {
         if (gUnk_02039830.unk_18 == 0 && gUnk_02039830.unk_11D == 0) {
             gUnk_02034071 = 1;
         }
+
         if (gUnk_02034071 != 0) {
             REG_SIOMLT_SEND = 0;
         } else {
             REG_SIOMLT_SEND = gUnk_02039830.unk_1C[gUnk_02039830.unk_18][gUnk_02039830.unk_11C];
         }
+
         if (gUnk_02039830.unk_0E == 0 && gUnk_02039830.unk_18 == 0 && gUnk_02039830.unk_321 > 3) {
             REG_SIOMLT_SEND |= 0x1000;
         }

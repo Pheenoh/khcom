@@ -25,6 +25,7 @@ u8 task_room_name_1(RoomNameWork* work) {
     if (gUnk_02039BA0->unk_70 & 0x42000) {
         return 0;
     }
+
     switch (work->unk_28) {
     case 0:
         work->unk_2A++;
@@ -130,6 +131,7 @@ s32 func_080F7E0C(s32 x0, s32 y0, s32 x1, s32 y1) {
         dx = -dx;
         dy = -dy;
     }
+
     if (dy > dx) {
         if (dy == 0) {
             return 0;
@@ -156,6 +158,7 @@ void func_080F7E84(RoomEntry* e) {
         e->unk_00C = 0;
         e->unk_120 = -e->unk_120 / 2;
     }
+
     if (e->unk_164 > 0) {
         e->unk_004 += e->unk_164;
         e->unk_164 -= 0x11;
@@ -169,6 +172,7 @@ void func_080F7E84(RoomEntry* e) {
             e->unk_164 = 0;
         }
     }
+
     if (e->unk_168 > 0) {
         e->unk_008 += e->unk_168 / 2;
         e->unk_168 -= 0x11;
@@ -249,6 +253,7 @@ void func_080F80C0(RoomWork* work) {
     if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
         flip = 1;
     }
+
     if (work->unk_018 != flip) {
         work->unk_018 = flip;
         for (i = 0; i <= 5; i++) {
@@ -348,6 +353,7 @@ void func_080F83E0(RoomWork* work, RoomEntry* e) {
     if (work->unk_018 == 1) {
         g |= 1;
     }
+
     if (func_0801CA00(e)) {
         pal = work->unk_A34;
     } else {
@@ -376,6 +382,7 @@ u8 func_080F8958(RoomWork* work) {
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
     }
+
     switch (work->unk_008) {
     case 0:
         work->unk_010 = 15;
@@ -446,9 +453,11 @@ u8 func_080F8958(RoomWork* work) {
     case 2:
         break;
     }
+
     if (work->unk_008 == 0) {
         work->unk_008 = 1;
     }
+
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
@@ -469,6 +478,7 @@ u8 func_080F9744(RoomWork* work) {
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
     }
+
     for (i = 0; i <= 5; i++) {
         e = &work->entries[i];
         switch (work->unk_008) {
@@ -565,9 +575,11 @@ u8 func_080F9744(RoomWork* work) {
             break;
         }
     }
+
     if (work->unk_008 == 0) {
         work->unk_008 = 1;
     }
+
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
@@ -587,6 +599,7 @@ u8 func_080F99C0(RoomWork* work) {
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
     }
+
     for (i = 0; i <= 5; i++) {
         e = &work->entries[i];
         switch (work->unk_008) {
@@ -676,9 +689,11 @@ u8 func_080F99C0(RoomWork* work) {
             break;
         }
     }
+
     if (work->unk_008 == 0) {
         work->unk_008 = 1;
     }
+
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
@@ -697,6 +712,7 @@ u8 func_080F9C2C(RoomWork* work) {
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
     }
+
     switch (work->unk_008) {
     case 0:
         for (i = 0; i <= 5; i++) {
@@ -716,6 +732,7 @@ u8 func_080F9C2C(RoomWork* work) {
             if (gUnk_02039B84->unk_0D4 > 0x1800) {
                 work->unk_00C = 1;
             }
+
             for (i = 0; i <= 5; i++) {
                 if (i <= 3) {
                     func_080F800C(work, i);
@@ -740,6 +757,7 @@ u8 func_080F9C2C(RoomWork* work) {
                 func_08011F78(0xE5, gUnk_02039B84->unk_000, gUnk_02039B84->unk_004, 0, 0x140, 0xF0, 1);
                 work->unk_00C = 3;
             }
+
             for (i = 0; i <= 5; i++) {
                 func_080F800C(work, i);
             }
@@ -756,6 +774,7 @@ u8 func_080F9C2C(RoomWork* work) {
             if (gUnk_02039B84->unk_0D4 <= 0 && t < 0) {
                 func_080F7F54(work, 1);
             }
+
             for (i = 0; i <= 5; i++) {
                 if (i <= 3) {
                     func_080F800C(work, i);
@@ -784,9 +803,11 @@ u8 func_080F9C2C(RoomWork* work) {
         }
         break;
     }
+
     if (work->unk_008 == 0) {
         work->unk_008 = 1;
     }
+
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;
@@ -812,6 +833,7 @@ u8 func_080FAA18(RoomWork* work) {
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
     }
+
     switch (work->unk_008) {
     case 0:
         work->unk_010 = 0x12C;
@@ -854,9 +876,11 @@ u8 func_080FAA18(RoomWork* work) {
         }
         break;
     }
+
     if (work->unk_008 == 0) {
         work->unk_008 = 1;
     }
+
     if (work->unk_008 == 2) {
         work->unk_000 = work->unk_004;
         work->unk_008 = 0;

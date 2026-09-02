@@ -59,6 +59,7 @@ void SndStreamInit(u32 rate, u32 channels) {
         gSndStream.unk_18[i] = 0;
         gSndStream.unk_20[i] = 0;
     }
+
     if (channels == 1) {
         REG_SOUNDCNT_H = 0x0B04;
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
@@ -126,6 +127,7 @@ void SndStreamLock(u32 ch, u32 len, void** dst1, u32* len1, void** dst2,
         gSndStream.unk_18[ch] += len;
         gSndStream.unk_20[ch] += len;
     }
+
     if (gSndStream.unk_18[ch] == gSndStream.unk_34) {
         gSndStream.unk_18[ch] = 0;
     }

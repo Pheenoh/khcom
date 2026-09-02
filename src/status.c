@@ -141,6 +141,7 @@ void func_080D78B8(StatusBarWork* work) {
     } else {
         gUnk_0203C550 = 3;
     }
+
     if (work->unk_08 == 0) {
         work->unk_08 = 16;
     }
@@ -417,6 +418,7 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
         func_080D8584(e);
         e++;
     }
+
     if (gUnk_02039BB0.unk_008 & 8) {
         for (i = 66; i <= 69; i++) {
             if (func_0800FBCC(i)) {
@@ -431,6 +433,7 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
             }
         }
     }
+
     for (i = 0; i < 8; i++) {
         work->unk_490[i] = 0;
     }
@@ -559,6 +562,7 @@ s32 func_080D85A8(u32 a) {
     if (a <= 8) {
         return 1;
     }
+
     if (a >= 9 && a <= 46) {
         return 2;
     }
@@ -901,6 +905,7 @@ void stock_mes_disp_2(StockMesDispWork* work) {
     if (work->unk_40 != 0) {
         DrawSprite(work->unk_3C - (work->unk_20 / 8) % 4, work->unk_3E, work->unk_18, work->unk_08, work->unk_10, 0, 0, 2);
     }
+
     if (work->unk_40 < work->unk_44 - 1) {
         DrawSprite(work->unk_3C + ((work->unk_20 / 8) % 4 + 136), work->unk_3E, work->unk_1C, work->unk_0C, work->unk_14, 0, 0, 3);
     }
@@ -980,14 +985,17 @@ u8 func_080D9058(s32* a, s32* b) {
         *a = 0xA000;
         r = 1;
     }
+
     if (*a > 0x15000) {
         *a = 0x15000;
         r = 1;
     }
+
     if (*b < 0x22800) {
         *b = 0x22800;
         r = 1;
     }
+
     if (*b > 0x22800) {
         *b = 0x22800;
         r = 1;
@@ -1058,6 +1066,7 @@ void task_bos_boogie_2(StatusDialogWork* work) {
     if (!(a->unk_34 & 4)) {
         f |= 1;
     }
+
     if (func_0801CA00(a) && work->unk_000 != 4) {
         pal = work->unk_010;
     } else {
@@ -1113,14 +1122,17 @@ u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d) {
         *a = (128 - c) << 8;
         r = 1;
     }
+
     if (*a > (c + 368) << 8) {
         *a = (c + 368) << 8;
         r = 1;
     }
+
     if (*b < (576 - (s16)d) << 8) {
         *b = (576 - (s16)d) << 8;
         r = 1;
     }
+
     if (*b > ((s16)d + 632) << 8) {
         *b = ((s16)d + 632) << 8;
         r = 1;
@@ -1145,6 +1157,7 @@ void func_080D9B6C(StatusDialogWork* work) {
     if (work->unk_160 <= 255) {
         work->unk_160 += 8;
     }
+
     if (work->unk_15C <= 255) {
         work->unk_15C += 8;
     }

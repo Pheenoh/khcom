@@ -128,9 +128,11 @@ u8 task_wlogo_hwt_1(WlogoHwtWork* work) {
             TaskCreate(&gUnk_02034C38, &gUnk_09EF1664, (void*)0);
             TaskCreate(&gUnk_02034C38, &gUnk_09EF1664, (void*)1);
         }
+
         if (work->unk_002 == 100) {
             TaskCreate(&gUnk_02034C38, &gUnk_09EF1664, (void*)2);
         }
+
         if (work->unk_002 == 140) {
             work->unk_002 = 0;
             TaskCreate(&gUnk_02034C38, &gUnk_09EF1664, (void*)3);
@@ -169,10 +171,12 @@ u8 task_wlogo_hwt_1(WlogoHwtWork* work) {
             }
             SetBgBlend(0, 16 - work->unk_005, work->unk_005);
         }
+
         if (work->unk_002 == 0) {
             if (work->unk_005 == 15) {
                 TaskCreate(&gUnk_02034C38, &gUnk_09EF1664, (void*)4);
             }
+
             if (work->unk_005 == 12) {
                 TaskCreate(&gUnk_02034C38, &gUnk_09EF1664, (void*)5);
             }
@@ -422,6 +426,7 @@ u8 task_wlogo_atl_1(WlogoAtlWork* work) {
         work->unk_006++;
         break;
     }
+
     if (work->unk_006 > 9) {
         work->unk_006 = 0;
         work->unk_004++;
@@ -487,6 +492,7 @@ u8 task_wlogo_nvl_1(WlogoNvlWork* work) {
             work->unk_002 = 0;
             work->unk_000++;
         }
+
         if (work->unk_002 == 1) {
             TaskCreate(&gUnk_02034C50, &gUnk_09EF18A4, (void*)0);
         }
@@ -506,6 +512,7 @@ u8 task_wlogo_nvl_1(WlogoNvlWork* work) {
         }
         break;
     }
+
     if (work->unk_008 >= 50 && work->unk_008 <= 124) {
         work->unk_006++;
         if (work->unk_006 > 14) {
@@ -582,6 +589,7 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
             work->unk_010 = gUnk_096198D4[work->unk_01C].unk_0C;
             work->unk_014 = gUnk_096198D4[work->unk_01C].unk_10;
         }
+
         if (work->unk_01E % 5 == 0) {
             arg.unk_00 = work->unk_000;
             arg.unk_04 = work->unk_004;
@@ -593,9 +601,11 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
         if (work->unk_01E == 40) {
             func_08005974(&work->unk_030, 2, 0, gUnk_09EF35A4, gUnk_09EF3574);
         }
+
         if (work->unk_01E == 55) {
             func_08005974(&work->unk_030, 4, 0, gUnk_09EF35A4, gUnk_09EF3574);
         }
+
         if (work->unk_01E == 75) {
             func_08005974(&work->unk_030, 2, 0, gUnk_09EF35A4, gUnk_09EF3574);
         }
@@ -980,6 +990,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
                 work->unk_011++;
             }
         }
+
         if (work->unk_012 >= 30 && work->unk_012 <= 78) {
             if ((work->unk_012 - 30) % 3 == 0) {
                 work->unk_016++;
@@ -1004,6 +1015,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
                 work->unk_014 = 9;
             }
         }
+
         if (work->unk_012 == 60) {
             b.unk_08 = 115;
             b.unk_0A = 80;
@@ -1014,6 +1026,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
             b.unk_0C = 8;
             TaskCreate(&gUnk_02034C80, &gUnk_09EF1AA4, &b);
         }
+
         if (work->unk_012 == 70) {
             b.unk_08 = 95;
             b.unk_0A = 65;
@@ -1024,6 +1037,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
             b.unk_0C = 6;
             TaskCreate(&gUnk_02034C80, &gUnk_09EF1AA4, &b);
         }
+
         if (work->unk_012 == 80) {
             b.unk_08 = 134;
             b.unk_0A = 42;
@@ -1230,6 +1244,7 @@ u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
             work->unk_02C = 1 - work->unk_02C;
             RequestDma3Copy(&gUnk_096474A4[work->unk_02C * 1024], (u8*)GetBgCharBase(0) + 32, 0x320);
         }
+
         if (AnimIsFinished(&work->unk_010)) {
             LoadBgTiles(0, gUnk_09646884, 0xC00);
             work->unk_02C += 2;
@@ -1680,23 +1695,29 @@ void task_wlogo_tt_2(WlogoTtWork* work) {
     if (work->unk_100[4] == 1) {
         DrawSprite(72, 64, work->unk_030, work->unk_008, work->unk_01C, 0, 0, 4);
     }
+
     if (work->unk_100[5] == 1) {
         DrawSprite(96, 80, work->unk_034, work->unk_008, work->unk_01C, 0, 0, 6);
     }
+
     if (work->unk_100[0] == 1) {
         affine = AllocObjAffine(0, work->unk_108, 0x100, 0);
         DrawSprite(78, 72, work->unk_020, work->unk_00C, work->unk_01C, affine, 0, 24);
     }
+
     if (work->unk_100[2] == 1) {
         DrawSprite(65, 65, work->unk_028, work->unk_014, work->unk_01C, 0, 0, 20);
     }
+
     if (work->unk_100[1] == 1) {
         affine = AllocObjAffine(0, work->unk_10C, 0x100, 0);
         DrawSprite(108, 94, work->unk_024, work->unk_010, work->unk_01C, affine, 0, 26);
     }
+
     if (work->unk_100[3] == 1) {
         DrawSprite(96, 87, work->unk_02C, work->unk_014, work->unk_01C, 0, 0, 22);
     }
+
     if (work->unk_100[6] == 1) {
         DrawSprite(64, 64, work->unk_038, work->unk_018, work->unk_01C, 0, 0, 32);
     }
@@ -1870,6 +1891,7 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
                 SetBgWaveParams(0, work->unk_036, work->unk_037);
             }
         }
+
         switch (work->unk_032) {
         case 20:
             TaskCreate(&work->unk_03C, &gUnk_09EF1D28, (void*)13);
@@ -1922,6 +1944,7 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
                 work->unk_004++;
             }
         }
+
         if (AnimIsFinished(&work->unk_018)) {
             StopBgWave(0);
             work->unk_002 = 0;

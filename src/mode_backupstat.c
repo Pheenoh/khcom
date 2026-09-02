@@ -248,6 +248,7 @@ void func_0810A018(PcWork* work) {
     } else {
         work->unk_00A = 0;
     }
+
     if (work->unk_00A != work->unk_00C) {
         if (work->unk_00A == 0) {
             LoadPalette(gUnk_09D69274, gUnk_05000000, 32);
@@ -277,6 +278,7 @@ void func_0810A018(PcWork* work) {
             if (t & 0x80) {
                 t |= 0xFF00;
             }
+
             if ((u16)((s16)((s16)t + cmd->unk_06) + sy + 7) <= 0xAE) {
                 oam->attr[oam->count * 3 + 1] = (def->unk_02 & 0xFF00) | ((cmd->unk_06 + def->unk_02 + 0x40) & 0xFF);
                 oam->attr[oam->count * 3 + 2] = (def->unk_04 & 0xFE00) | ((def->unk_04 + cmd->unk_04) & 0x1FF);

@@ -66,6 +66,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             SetBgPriority(1, 1);
             work->unk_26--;
         }
+
         switch (work->unk_29) {
         case 1:
             work->unk_40 = 2;
@@ -98,6 +99,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             TaskCreate(&work->unk_2C, &gUnk_09EDB398, (void*)(u32)work->unk_24);
             work->unk_26++;
         }
+
         if (work->unk_29 == 1) {
             work->unk_26 = 0;
             work->unk_40 = 4;
@@ -107,9 +109,11 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         if (work->unk_26 == 16) {
             TaskCreate(&work->unk_2C, &gUnk_09EDB380, (void*)(u32)work->unk_24);
         }
+
         if (work->unk_26 == 40) {
             gUnk_02039BA0->unk_70 |= 0x200000;
         }
+
         if (work->unk_26 > 60) {
             work->unk_26 = 0;
             work->unk_40 = 6;

@@ -192,6 +192,7 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
     if (actor == 0) {
         return 0;
     }
+
     if (gUnk_02039B84->unk_068 & 0x2000) {
         return 0;
     }
@@ -257,6 +258,7 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
             work->unk_5D = 1;
             m4aSongNumStart(0x92);
         }
+
         if (work->unk_68 == 0) {
             switch (work->unk_64) {
             case 0:
@@ -314,6 +316,7 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
         } else {
             AnimChange(&work->unk_2C, 11, 1);
         }
+
         if (work->unk_5D != 0) {
             work->unk_5D = 0;
             m4aSongNumStop(0x92);
@@ -413,11 +416,13 @@ void task_btl_hpply_2(BtlHpplyWork* work) {
         if (v <= 9) {
             v = 10;
         }
+
         if (v > 0x100) {
             aff = AllocObjAffine(0, v, 0x100, 1);
         } else {
             aff = AllocObjAffine(0, v, 0x100, 0);
         }
+
         if (work->unk_68 == 1) {
             DrawSprite(31, 9, gUnk_08B23EFE, work->unk_1C, work->unk_08, aff, 0x410, 2);
         } else {
@@ -624,6 +629,7 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         if (v <= 9) {
             v = 10;
         }
+
         if (v > 0x100) {
             aff = AllocObjAffine(0, v, 0x100, 1);
         } else {
@@ -1200,9 +1206,11 @@ u8 func_08031D74(FldPos* p) {
     if (v2 > b.unk_0C) {
         b.unk_0C = v2;
     }
+
     if (func_080DFBDC(&a) != 0) {
         return 1;
     }
+
     if (func_080DFBDC(&b) != 0) {
         return 1;
     }

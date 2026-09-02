@@ -17,12 +17,14 @@ u8 task_btl_lockon_1(BtlLockonWork* work) {
     if ((gUnk_02039B84->unk_068 & 0x20000000) == 0) {
         func_0801D288();
     }
+
     if (gUnk_02039B84->unk_078 != 0) {
         work->unk_020 = AnimUpdate(&work->unk_008);
         if (gUnk_02039B84->unk_078->unk_034 & 0x1000000) {
             gUnk_02039B84->unk_078 = 0;
         }
     }
+
     if (work->unk_024 != 0) {
         work->unk_024--;
     }
@@ -60,15 +62,18 @@ u8 task_btl_area_1(BtlAreaWork* work) {
         work->unk_008 = 0;
         return 1;
     }
+
     if (gUnk_02039B84->unk_0B4 != 0) {
         work->unk_00A = 20;
         gUnk_02039B84->unk_0B4 = 0;
     }
+
     if (work->unk_00A > 0) {
         work->unk_008 = 1;
     } else {
         work->unk_008 = 0;
     }
+
     if (work->unk_00A > 0) {
         work->unk_00A--;
     }
@@ -110,9 +115,11 @@ u16 func_0801DC80(BtlSoraWork* work) {
     if (work->unk_040.unk_E4->unk_068 & 0x8000) {
         return 3;
     }
+
     if (b == 0) {
         return 0;
     }
+
     if (a->unk_00C - b->unk_00C > 0x2000) {
         return 2;
     }
@@ -256,6 +263,7 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
         work->unk_160 = 0xC0;
         p->unk_34 |= 4;
     }
+
     if (a & 0xF0) {
         func_0801DE1C(work, 0, 1);
         if (work->unk_00C.timer == 0) {
@@ -271,6 +279,7 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
     } else {
         func_0801DDE4(work, 1, 1);
     }
+
     if (a & 0xF0) {
         if (p->unk_E4->unk_0F4 == 50) {
             work->unk_15C += 256;
@@ -348,6 +357,7 @@ void func_0801E518(BtlSoraWork* work) {
         t = work->unk_15A & 0xFFBF;
         work->unk_15A = t;
     }
+
     if (work->unk_040.unk_E4->unk_0F4 == 44) {
         work->unk_190 = 0;
     }
@@ -367,12 +377,14 @@ BtlWork* func_0801E6DC(BtlSoraWork* work) {
     if (work->unk_040.unk_E4->unk_078 != 0) {
         return work->unk_040.unk_E4->unk_078;
     }
+
     if (gUnk_02039B84->unk_068 & 0x4000) {
         if (work->unk_172 != 0) {
             e = gUnk_02039B9C->unk_07C;
         } else {
             e = gUnk_02039B84->unk_07C;
         }
+
         if (e->unk_02C <= 0) {
             return 0;
         }
@@ -392,6 +404,7 @@ BtlWork* func_0801E6DC(BtlSoraWork* work) {
             n++;
         } while (n <= 9);
     }
+
     if (n == 0) {
         return 0;
     }
@@ -482,9 +495,11 @@ u16 func_08027468(BtlRikuWork* work) {
     if (work->unk_044.unk_E4->unk_068 & 0x8000) {
         return 3;
     }
+
     if (b == 0) {
         return 0;
     }
+
     if (a->unk_00C - b->unk_00C > 0x2000) {
         return 2;
     }
@@ -563,6 +578,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
     } else {
         flags = func_0801AF1C(a->unk_08);
     }
+
     if (out->unk_0C & 1) {
         p = out->unk_2C;
         q = p;
@@ -577,6 +593,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
             p = v;
         }
     }
+
     if (p == 256 && q == p) {
         affine = 0;
     } else if (p <= 255) {
@@ -672,6 +689,7 @@ void func_08027A64(BtlRikuWork* work, u16 a) {
         work->unk_164 = 0xC0;
         p->unk_34 |= 4;
     }
+
     if (a & 0xF0) {
         func_080276D4(work, 13, 1);
         if (work->unk_010.timer == 0) {
@@ -687,6 +705,7 @@ void func_08027A64(BtlRikuWork* work, u16 a) {
     } else {
         func_080276D4(work, 12, 1);
     }
+
     if (a & 0xF0) {
         if (p->unk_E4->unk_0F4 == 50) {
             work->unk_160 += 256;
@@ -816,12 +835,14 @@ BtlWork* func_08028370(BtlRikuWork* work) {
     if (work->unk_044.unk_E4->unk_078 != 0) {
         return work->unk_044.unk_E4->unk_078;
     }
+
     if (gUnk_02039B84->unk_068 & 0x4000) {
         if (work->unk_178 != 0) {
             e = gUnk_02039B9C->unk_07C;
         } else {
             e = gUnk_02039B84->unk_07C;
         }
+
         if (e->unk_02C <= 0) {
             return 0;
         }
@@ -841,6 +862,7 @@ BtlWork* func_08028370(BtlRikuWork* work) {
             n++;
         } while (n <= 9);
     }
+
     if (n == 0) {
         return 0;
     }
