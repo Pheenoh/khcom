@@ -366,7 +366,65 @@ void func_0800CD40(EmyWork* work) {
     actor->unk_34 &= ~0x300;
 }
 INCLUDE_ASM("mode_vsbattle/_0800CDF0.s");
+#ifdef NON_MATCHING
+void func_0800DF30(EmyWork* work) {
+    if (work->unk_15A != 0) {
+        VsActor* actor;
+        u16 g;
+        s32 affine;
+        s32 sx;
+        s32 sy;
+        s16 x;
+        s16 y;
+
+        actor = &work->unk_03C;
+        g = func_0801AF1C(actor->unk_08) | work->unk_162;
+        WorldToScreen(&x, &y, actor->unk_04, actor->unk_08, actor->unk_0C);
+
+        if (work->unk_17C == 0x100 && work->unk_180 == 0x100) {
+            if (actor->unk_34 & 4) {
+                sy = gUnk_02039B84->unk_024;
+                sx = sy;
+            } else if (gUnk_02039B84->unk_024 == 0x100) {
+                sy = gUnk_02039B84->unk_024;
+                sx = sy;
+                g |= 1;
+            } else {
+                sy = gUnk_02039B84->unk_024;
+                sx = -sy;
+            }
+        } else {
+            if (actor->unk_34 & 4) {
+                sx = (gUnk_02039B84->unk_024 * work->unk_17C) >> 8;
+                sy = gUnk_02039B84->unk_024;
+            } else {
+                sx = -((gUnk_02039B84->unk_024 * work->unk_17C) >> 8);
+                sy = gUnk_02039B84->unk_024;
+            }
+
+            sy = (sy * work->unk_180) >> 8;
+        }
+
+        if (sy == 0x100 && sx == sy) {
+            affine = 0;
+        } else if (sy < 256) {
+            affine = AllocObjAffine(0, sx, sy, 0);
+        } else {
+            affine = AllocObjAffine(0, sx, sy, 1);
+        }
+
+        if (func_0801CA00(actor) != 0) {
+            DrawSprite(x, y, work->unk_00C, work->unk_000, work->unk_008, affine, g, (-4100 - ((actor->unk_08 >> 8) << 2)) | 3);
+        } else {
+            DrawSprite(x, y, work->unk_00C, work->unk_000, work->unk_004, affine, g, (-4100 - ((actor->unk_08 >> 8) << 2)) | 3);
+        }
+
+        TaskPoolDraw(&work->unk_028);
+    }
+}
+#else
 INCLUDE_ASM("mode_vsbattle/func_0800DF30.s");
+#endif
 
 void func_0800E0D0(EmyWork* work) {
     gUnk_02039B84->unk_0EC -= gUnk_09EDA4EC[work->unk_03C.unk_00];
