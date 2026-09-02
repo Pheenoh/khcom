@@ -8,13 +8,18 @@
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_VCOUNT (*(vu16*)0x04000006)
 #define REG_IE (*(vu16*)0x04000200)
+#define REG_IF (*(vu16*)0x04000202)
+#define REG_WAITCNT (*(vu16*)0x04000204)
 #define REG_IME (*(vu16*)0x04000208)
+#define INTR_VECTOR (*(void**)0x03007FFC)
 
 extern u8 sEwramHeapName[];
 extern u8 sIwramHeapName[];
 
 extern u8 gEwramHeapStart[];
 extern u8 gIwramHeapStart[];
+extern u8 gIntrHandler[];
+extern u8 IrqHandler[];
 
 extern u32 gFrameCounter;
 extern u32 gUnk_03006C68;
@@ -37,10 +42,15 @@ extern IntrFunc gVBlankCallback;
 extern IntrFunc* gIntrTableHBlank;
 
 void InitSystem(void);
+void InitIntrTable(void);
+void RegisterRamReset(u32 flags);
 void func_080C55DC(void);
+void func_08001010(void);
 void func_08001100(void);
 void func_08001254(void);
 void func_080012A8(void);
+void func_080013A8(void);
+void func_08116CEC(void);
 void func_08116D28(void);
 void func_08116EF0(void);
 void func_08007318(void);
@@ -49,6 +59,17 @@ void ResetVCountCallback(void);
 void ResetHBlankCallback(void);
 void ResetSerialCallback(void);
 void ResetTimer3Callback(void);
+void ResetPaletteEffect(void);
+void SeedRandom(u32 seed);
+void VTransInit(void);
+void SpriteInit(void);
+void BgInit(void);
+void FadeInit(void);
+void PalletInit(void);
+void SioKeyInit(void);
+void InitDisplayRegs(void);
+void SaveInitSram(void);
+void m4aSoundInit(void);
 void m4aSoundMain(void);
 void m4aSoundVSync(void);
 void m4aSoundVSyncOff(void);
@@ -100,7 +121,54 @@ void DisableHBlankIntr(void) {
     REG_IME = 1;
 }
 
-INCLUDE_ASM("main/InitSystem.s");
+void InitSystem(void) {
+    vu32* dma;
+    u32 zero;
+
+    RegisterRamReset(0xFF);
+    REG_WAITCNT = 0x45B6;
+    zero = 0;
+    dma = (vu32*)0x040000D4;
+    dma[0] = (vu32)&zero;
+    dma[1] = 0x02000000;
+    dma[2] = 0x85010000;
+    dma[2];
+    zero = 0;
+    dma[0] = (vu32)&zero;
+    dma[1] = 0x03000000;
+    dma[2] = 0x85001F80;
+    dma[2];
+    gUnk_03006C02 = 0;
+    gUnk_03006C00 = 0;
+    gUnk_03007484 = 0;
+    REG_IME = 0;
+    dma[0] = (vu32)IrqHandler;
+    dma[1] = (vu32)gIntrHandler;
+    dma[2] = 0x84000200;
+    dma[2];
+    INTR_VECTOR = gIntrHandler;
+    REG_IE = 0x2000;
+    REG_IF = 0x2000;
+    REG_IME = 1;
+    InitIntrTable();
+    m4aSoundInit();
+    m4aSoundVSyncOff();
+    IwramHeapInit(func_08000250(), func_08000258());
+    EwramHeapInit(func_08000240(), func_08000248());
+    VTransInit();
+    SpriteInit();
+    BgInit();
+    FadeInit();
+    PalletInit();
+    SioKeyInit();
+    ResetPaletteEffect();
+    func_080013A8();
+    SeedRandom(0x12D687);
+    InitDisplayRegs();
+    SaveInitSram();
+    func_08116CEC();
+    func_08001010();
+}
 
 #ifdef NON_MATCHING
 void AgbMain(void) {
