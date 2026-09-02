@@ -45,10 +45,12 @@ def normalize_unit(unit):
     for total_key, percent_keys in DIMENSIONS.values():
         total = amount(measures, total_key)
         for percent_key in percent_keys:
-            if total:
-                measures.setdefault(percent_key, 0.0)
-            else:
+            if not total:
                 measures.pop(percent_key, None)
+            elif percent_key.startswith("complete_"):
+                measures[percent_key] = 100.0 if complete else 0.0
+            else:
+                measures.setdefault(percent_key, 0.0)
 
 
 def aggregate(units):
@@ -76,10 +78,8 @@ def aggregate(units):
         result["matched_functions"] = matched_functions
 
     complete_code = sum(amount(u["measures"], "total_code") for u in complete_units)
-    total_code = sum(amount(u["measures"], "total_code") for u in units)
-    if total_code:
+    if complete_code:
         result["complete_code"] = str(complete_code)
-        result["complete_code_percent"] = 100.0 * complete_code / total_code
     return result
 
 
