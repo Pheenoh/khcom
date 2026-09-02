@@ -29,3 +29,5 @@ tools/decomp-permuter/
 permuter/
 debug_source.c
 debug_compiled_object.o
+docs/
+CLAUDE.md
