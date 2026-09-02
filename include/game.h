@@ -68,14 +68,13 @@ typedef struct UnkStruct_02039DD4 {
     u8 unk_0F1[0x03];
     u32 unk_0F4;
     u8 unk_0F8[0x04];
-    u8 unk_0FC;
-    u8 unk_0FD;
+    u16 unk_0FC;
     u8 unk_0FE;
     u8 unk_0FF;
     s16 unk_100;
     s16 unk_102;
-    u16 unk_104;
-    u16 unk_106;
+    s16 unk_104;
+    s16 unk_106;
     u8 unk_108[0x04];
 } UnkStruct_02039DD4;
 

@@ -33,7 +33,9 @@ typedef struct UnkStruct_02034AAC {
     u8 unk_46;
     u8 unk_47;
     CardDef* unk_48;
-    u8 unk_4C[0x18];
+    s32 unk_4C;
+    s32 unk_50;
+    u8 unk_54[0x10];
     u8 unk_64[0x14];
     u32 unk_78;
     u8 unk_7C[0x25];
@@ -57,6 +59,11 @@ extern void* gUnk_02034AD4;
 extern u8 gUnk_02034B1C;
 extern u16 gUnk_0203A9DC;
 extern u8 gUnk_09EE75D8[];
+extern void** gUnk_09EE3CA0[];
+extern u16 gUnk_0903BFD4[];
+extern void* gUnk_09EE91A8[];
+extern u8 gUnk_094233B8[];
+extern u8 gUnk_096148D8[];
 extern u8 gUnk_09417378[];
 extern u8 gUnk_02034AF8;
 extern void* gUnk_09EEAF4C[];
@@ -83,6 +90,15 @@ extern u8 gUnk_09EE781C[];
 extern u8 gUnk_09EE8F08[];
 extern void** gUnk_09EE275C[];
 extern u8 gUnk_0203A8C0[];
+
+typedef struct UnkStruct_080991CC {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    u8 unk_0C;
+    u8 unk_0D;
+    u8 unk_0E[0x02];
+} UnkStruct_080991CC;
 
 typedef struct UnkStruct_09EE7D84 {
     void** unk_00;
