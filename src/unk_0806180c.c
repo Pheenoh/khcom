@@ -1457,8 +1457,25 @@ void func_08073AEC(MsgFaceWork* p) {
     ReleaseObjTiles(p->unk_00);
     ReleaseObjPalette(p->unk_04);
 }
-INCLUDE_ASM("unk_0806180c/func_08073B04.s");
-INCLUDE_ASM("unk_0806180c/func_08073B54.s");
+u8 func_08073B04(MsgFaceWork* p, void* a) {
+    ApproachValue(&p->unk_24, gUnk_09033CE0[p->unk_38->unk_04], p->unk_30);
+    p->unk_30--;
+    if (p->unk_30 == 0) {
+        p->unk_38->unk_02 = 0;
+        p->unk_31 = 1;
+        func_08000F8C(a, (void*)func_0807388C);
+    }
+    return 1;
+}
+u8 func_08073B54(MsgFaceWork* p, void* a) {
+    ApproachValue(&p->unk_24, gUnk_09033CD0[p->unk_38->unk_04], p->unk_30);
+    p->unk_30--;
+    if (p->unk_30 == 0) {
+        p->unk_38->unk_02 = 0;
+        func_08000F8C(a, (void*)func_0807388C);
+    }
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_08073B9C.s");
 INCLUDE_ASM("unk_0806180c/func_08073CA4.s");
 INCLUDE_ASM("unk_0806180c/func_08073DA4.s");
@@ -1506,7 +1523,16 @@ INCLUDE_ASM("unk_0806180c/func_08073FB8.s");
 INCLUDE_ASM("unk_0806180c/func_08074040.s");
 INCLUDE_ASM("unk_0806180c/func_08074068.s");
 INCLUDE_ASM("unk_0806180c/func_0807420C.s");
-INCLUDE_ASM("unk_0806180c/func_08074330.s");
+u8 func_08074330(MsgWaitYesNoWork* p, void* a) {
+    p->unk_BC = AnimUpdate(p->unk_DC);
+    if (GetKeysPressed() & 1) {
+        AnimStart(p->unk_DC, 3, 1);
+        p->unk_104 = 1;
+        m4aSongNumStart(0x67);
+        func_08000F8C(a, (void*)func_0807420C);
+    }
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_08074380.s");
 void func_080744C8(MsgWaitYesNoWork* p) {
     ReleaseObjTiles(p->unk_04);
