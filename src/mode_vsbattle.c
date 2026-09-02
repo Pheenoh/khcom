@@ -368,7 +368,6 @@ void func_0800CD40(EmyWork* work) {
 
 INCLUDE_ASM("mode_vsbattle/_0800CDF0.s");
 
-#ifdef NON_MATCHING
 void func_0800DF30(EmyWork* work) {
     if (work->unk_15A != 0) {
         VsActor* actor;
@@ -399,12 +398,12 @@ void func_0800DF30(EmyWork* work) {
             if (actor->unk_34 & 4) {
                 sx = (gUnk_02039B84->unk_024 * work->unk_17C) >> 8;
                 sy = gUnk_02039B84->unk_024;
+                sy = (sy * work->unk_180) >> 8;
             } else {
                 sx = -((gUnk_02039B84->unk_024 * work->unk_17C) >> 8);
                 sy = gUnk_02039B84->unk_024;
+                sy = (sy * work->unk_180) >> 8;
             }
-
-            sy = (sy * work->unk_180) >> 8;
         }
 
         if (sy == 0x100 && sx == sy) {
@@ -424,10 +423,6 @@ void func_0800DF30(EmyWork* work) {
         TaskPoolDraw(&work->unk_028);
     }
 }
-#else
-
-INCLUDE_ASM("mode_vsbattle/func_0800DF30.s");
-#endif
 
 void func_0800E0D0(EmyWork* work) {
     gUnk_02039B84->unk_0EC -= gUnk_09EDA4EC[work->unk_03C.unk_00];
