@@ -10,6 +10,7 @@ typedef struct UnkStruct_02039DC8 {
     u8 unk_60[0x08];
     u16 unk_68;
     u16 unk_6A;
+    u16 unk_6C;
 } UnkStruct_02039DC8;
 
 #endif
