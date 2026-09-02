@@ -96,27 +96,6 @@ typedef struct PoohWork {
     u8 unk_FA;
 } PoohWork;
 
-extern s8 gUnk_02034CF4;
-extern s8 gUnk_02034CF5;
-extern u16 gUnk_02034CF8;
-extern u32 gUnk_02034CFC;
-extern u32 gUnk_02034D00;
-extern u32 gUnk_02034D04;
-extern u16 gUnk_02034D08;
-extern u32 gUnk_02034D0C;
-extern u8 gUnk_02034D10;
-extern TaskPool gUnk_02034D18;
-extern TaskPool gUnk_02034D30;
-extern u8 gUnk_02034D44;
-extern u32 gUnk_02034D48;
-extern u16 gUnk_02034D4C;
-extern Task* gUnk_02034D50[];
-extern TaskPool gUnk_02034D80;
-extern Task* gUnk_02034D94;
-extern u8 gUnk_02034D98;
-extern s32 gUnk_02034D9C;
-extern s32 gUnk_02034DA0;
-extern s32 gUnk_02034DA4;
 extern u32 gUnk_02034DAC;
 extern PoohSetup gUnk_02039BB0;
 extern u8 gUnk_0203A9E4;

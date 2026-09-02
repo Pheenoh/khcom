@@ -51,7 +51,7 @@ wlogo.c
 bos2.c
 chara.c
 bos3.c
-mode_sio2.c
+mode_sio2.c -O2 -fprologue-bugfix -fno-common
 poo.c
 mode_allmap.c
 allmap.c
@@ -66,7 +66,7 @@ unk_080dfebc.c
 room.c
 unk_080fb000.c
 bos5.c
-mode_worldinspect.c
+mode_worldinspect.c -O2 -fprologue-bugfix -fno-common
 mode_worldwarp.c
 mode_ms.c
 unk_08104a84.c

@@ -10,24 +10,6 @@ typedef struct UnkStruct_09EF9488 {
 } UnkStruct_09EF9488;
 
 extern UnkStruct_09EF9488 gUnk_09EF9488[];
-extern u8 gUnk_0203511A;
-extern void* gUnk_0203511C;
-extern void* gUnk_02035120;
-extern void* gUnk_02035124;
-extern void* gUnk_02035128;
-extern void* gUnk_02035148;
-extern void* gUnk_0203514C;
-extern void* gUnk_02035168[];
-extern void* gUnk_02035198[];
-extern u8 gUnk_020351F8[];
-extern u8 gUnk_020352C0[];
-extern s16 gUnk_020354C0;
-extern void* gUnk_020354D4;
-extern s16 gUnk_02035118;
-extern s32 gUnk_020354C8[];
-extern s32 gUnk_020354D0;
-extern s16 gUnk_020354C2;
-extern u8 gUnk_020354E0;
 extern u8 gUnk_09A329DC[];
 extern u8 gUnk_02035618[];
 extern u8 gUnk_020356E0[];
