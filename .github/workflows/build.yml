@@ -7,6 +7,10 @@ on:
 
 jobs:
   build:
+    if: >
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
+
     container:
       image: ghcr.io/pheenoh/khcom-build:main
       credentials:
@@ -43,11 +47,11 @@ jobs:
           ninja
 
       - name: Generate progress report
-        if: matrix.version != 'eu'
+        if: github.event_name == 'push' && matrix.version != 'eu'
         run: python3 -m mapfile_parser objdiff_report report.json --version ${{ matrix.version }}
 
       - name: Upload progress report artifact
-        if: matrix.version != 'eu'
+        if: github.event_name == 'push' && matrix.version != 'eu'
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.version }}_report
