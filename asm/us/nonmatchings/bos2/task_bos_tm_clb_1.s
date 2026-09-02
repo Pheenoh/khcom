@@ -48,7 +48,7 @@ _080BB336:
 	ldr r1, [r3, #0x08]
 	ldrh r1, [r1, #0x0C]
 	movs r2, #0x02
-	bl func_0800589C
+	bl ApproachAngle
 	b _080BB34C
 _080BB346:
 	ldr r0, [r3, #0x08]

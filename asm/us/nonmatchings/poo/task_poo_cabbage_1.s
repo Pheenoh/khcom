@@ -226,7 +226,7 @@ _080D1358:
 	ldr r2, [r6, #0x00]
 	adds r1, r1, r2
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	strh r0, [r4, #0x00]
@@ -247,12 +247,12 @@ _080D1390:
 	adds r4, r5, #0x0
 	adds r4, #0xCA
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	adds r0, r5, #0x0
 	adds r0, #0x28
 	ldr r1, [r5, #0x38]
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	strh r0, [r4, #0x00]

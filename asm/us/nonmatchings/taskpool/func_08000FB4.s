@@ -11,10 +11,10 @@ func_08000FB4: @ 08000FB4
 	bl _08006338
 	ldr r1, _08001000 @ =0x0300749E
 	strh r0, [r1, #0x00]
-	bl func_08004364
+	bl VTransReset
 	bl func_08004D74
 	bl func_08001F98
-	bl func_08005BC4
+	bl FadeReset
 	bl func_08006404
 	ldr r5, _08001004 @ =0x03007488
 	str r4, [r5, #0x00]

@@ -2,22 +2,22 @@
 #include "malloc.h"
 #include "m4a.h"
 
-extern u8 gUnk_0812171C[];
+extern u8 sSioKeyHeapName[];
 
 
-u16 func_0800833C(KeyState* k) {
+u16 KeyGetHeld(KeyState* k) {
     return k->held;
 }
 
-u16 func_08008340(KeyState* k) {
+u16 KeyGetPressed(KeyState* k) {
     return k->trg;
 }
 
-u16 func_08008344(KeyState* k) {
+u16 KeyGetRepeat(KeyState* k) {
     return k->rep;
 }
 
-void func_08008348(KeyState* k) {
+void KeyStateClear(KeyState* k) {
     k->held = 0;
     k->trg = 0;
     k->rep = 0;
@@ -44,7 +44,7 @@ void func_08008348(KeyState* k) {
     k->off[9] = -1;
 }
 
-u8 func_08008384(KeyState* k, u16 key) {
+u8 KeyGetHoldFrames(KeyState* k, u16 key) {
     switch (key) {
     case 0x20:
         return k->on[0];
@@ -69,7 +69,7 @@ u8 func_08008384(KeyState* k, u16 key) {
     }
 }
 
-u8 func_080083F8(KeyState* k, u16 key) {
+u8 KeyGetOffFrames(KeyState* k, u16 key) {
     switch (key) {
     case 0x20:
         return k->off[0];
@@ -96,8 +96,8 @@ u8 func_080083F8(KeyState* k, u16 key) {
 
 u16 func_0800846C(KeyState* k, u16 a, u16 b) {
     u16 r = 0;
-    u8 ca = func_080083F8(k, a);
-    u8 cb = func_080083F8(k, b);
+    u8 ca = KeyGetOffFrames(k, a);
+    u8 cb = KeyGetOffFrames(k, b);
 
     if (ca == 2) {
         k->unk_6 &= ~a;
@@ -105,19 +105,19 @@ u16 func_0800846C(KeyState* k, u16 a, u16 b) {
     if (cb == 2) {
         k->unk_6 &= ~b;
     }
-    if (((func_08008340(k) & a) && (func_0800833C(k) & b)) ||
-        ((func_08008340(k) & b) && (func_0800833C(k) & a))) {
+    if (((KeyGetPressed(k) & a) && (KeyGetHeld(k) & b)) ||
+        ((KeyGetPressed(k) & b) && (KeyGetHeld(k) & a))) {
         k->unk_6 |= a | b;
         r = a | b;
     }
     if (!(k->unk_6 & a)) {
-        if (func_08008384(k, a) == 5 || ca == 1) {
+        if (KeyGetHoldFrames(k, a) == 5 || ca == 1) {
             k->unk_6 |= a;
             r = a;
         }
     }
     if (!(k->unk_6 & b)) {
-        if (func_08008384(k, b) == 5 || cb == 1) {
+        if (KeyGetHoldFrames(k, b) == 5 || cb == 1) {
             k->unk_6 |= b;
             r = b;
         }
@@ -125,7 +125,7 @@ u16 func_0800846C(KeyState* k, u16 a, u16 b) {
     return r;
 }
 
-void func_08008558(KeyState* k, u16 keys) {
+void KeyStateUpdate(KeyState* k, u16 keys) {
     k->trg = keys & ~k->held;
     k->held = keys;
     if (k->held & 0x20) {
@@ -281,42 +281,42 @@ void func_08008558(KeyState* k, u16 keys) {
     }
 }
 
-void func_08008808(void) {
-    SetIwramHeapName(gUnk_0812171C);
+void SioKeyInit(void) {
+    SetIwramHeapName(sSioKeyHeapName);
     gUnk_0203407C = IwramAlloc(sizeof(KeyState));
     gUnk_02034080 = IwramAlloc(sizeof(KeyState));
-    func_08008348(gUnk_0203407C);
-    func_08008348(gUnk_02034080);
+    KeyStateClear(gUnk_0203407C);
+    KeyStateClear(gUnk_02034080);
     gUnk_02034084 = 0;
 }
 
-void func_0800884C(void) {
+void SioKeyFree(void) {
     IwramFree(gUnk_02034080);
     IwramFree(gUnk_0203407C);
 }
 
 u16 func_0800886C(void) {
-    return func_0800833C(gUnk_0203407C);
+    return KeyGetHeld(gUnk_0203407C);
 }
 
 u16 func_08008884(void) {
-    return func_0800833C(gUnk_02034080);
+    return KeyGetHeld(gUnk_02034080);
 }
 
 u16 func_0800889C(void) {
-    return func_08008340(gUnk_0203407C);
+    return KeyGetPressed(gUnk_0203407C);
 }
 
 u16 func_080088B4(void) {
-    return func_08008340(gUnk_02034080);
+    return KeyGetPressed(gUnk_02034080);
 }
 
 u16 func_080088CC(void) {
-    return func_08008344(gUnk_0203407C);
+    return KeyGetRepeat(gUnk_0203407C);
 }
 
 u16 func_080088E4(void) {
-    return func_08008344(gUnk_02034080);
+    return KeyGetRepeat(gUnk_02034080);
 }
 
 u16 func_080088FC(u16 a, u16 b) {
@@ -328,14 +328,14 @@ u16 func_08008920(u16 a, u16 b) {
 }
 
 void func_08008944(u16 keys) {
-    func_08008558(gUnk_0203407C, keys);
+    KeyStateUpdate(gUnk_0203407C, keys);
 }
 
 void func_0800895C(u16 keys) {
-    func_08008558(gUnk_02034080, keys);
+    KeyStateUpdate(gUnk_02034080, keys);
 }
 
-s32 func_08008974(u16 songNum) {
+s32 IsSongPlaying(u16 songNum) {
     u8 idx = gSongTable[songNum].ms;
     SongHeader* header = gSongTable[songNum].header;
     MusicPlayerInfo* info = gMPlayTable[idx].info;
@@ -347,7 +347,7 @@ s32 func_08008974(u16 songNum) {
     return r;
 }
 
-void func_080089A8(u16 songNum) {
+void StopSong(u16 songNum) {
     u8 idx = gSongTable[songNum].ms;
     SongHeader* header = gSongTable[songNum].header;
     MusicPlayerInfo* info = gMPlayTable[idx].info;

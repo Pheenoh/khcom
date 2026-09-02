@@ -258,7 +258,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
             m4aSongNumStart(0x235);
         }
 
-        func_080058FC(&work->unk_154, 256, work->unk_14A);
+        ApproachValue(&work->unk_154, 256, work->unk_14A);
 
         if (work->unk_14A > 0) {
             work->unk_148++;
@@ -282,7 +282,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         }
 
         do {
-            func_080058FC(&work->unk_154, 25, work->unk_14A);
+            ApproachValue(&work->unk_154, 25, work->unk_14A);
         } while (0);
 
         if (work->unk_14A <= 0) {
@@ -566,7 +566,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
             work->unk_148 = 0;
         }
     } else {
-        func_080058FC(&work->unk_178, work->unk_174, work->unk_16E);
+        ApproachValue(&work->unk_178, work->unk_174, work->unk_16E);
         work->unk_17C->unk_02C = work->unk_178 >> 8;
         work->unk_16E--;
     }
@@ -579,7 +579,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
             m4aSongNumStart(0x235);
         }
 
-        func_080058FC(&work->unk_14C, 256, work->unk_14A);
+        ApproachValue(&work->unk_14C, 256, work->unk_14A);
 
         if (work->unk_14A > 0) {
             work->unk_148++;
@@ -599,7 +599,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
             m4aSongNumStart(0x239);
         }
 
-        func_080058FC(&work->unk_14C, 25, work->unk_14A);
+        ApproachValue(&work->unk_14C, 25, work->unk_14A);
 
         if (work->unk_14A <= 0) {
             return 0;
@@ -911,7 +911,7 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
             m4aSongNumStart(0x235);
         }
 
-        func_080058FC(&work->unk_150, 256, work->unk_14A);
+        ApproachValue(&work->unk_150, 256, work->unk_14A);
 
         if (work->unk_14A > 0) {
             work->unk_148++;
@@ -929,7 +929,7 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
             m4aSongNumStart(0x239);
         }
 
-        func_080058FC(&work->unk_150, 25, work->unk_14A);
+        ApproachValue(&work->unk_150, 25, work->unk_14A);
 
         if (work->unk_14A <= 0) {
             return 0;
@@ -1173,7 +1173,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
             m4aSongNumStart(0x235);
         }
 
-        func_080058FC(&work->unk_14C, 256, work->unk_14A);
+        ApproachValue(&work->unk_14C, 256, work->unk_14A);
 
         if (work->unk_14A > 0) {
             work->unk_148++;
@@ -1191,7 +1191,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
             m4aSongNumStart(0x239);
         }
 
-        func_080058FC(&work->unk_14C, 25, work->unk_14A);
+        ApproachValue(&work->unk_14C, 25, work->unk_14A);
 
         if (work->unk_14A <= 0) {
             return 0;
@@ -1399,7 +1399,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
             m4aSongNumStart(0x235);
         }
 
-        func_080058FC(&work->unk_150, 256, work->unk_14A);
+        ApproachValue(&work->unk_150, 256, work->unk_14A);
 
         if (work->unk_14A > 0) {
             work->unk_148++;
@@ -1417,7 +1417,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
             m4aSongNumStart(0x239);
         }
 
-        func_080058FC(&work->unk_150, 25, work->unk_14A);
+        ApproachValue(&work->unk_150, 25, work->unk_14A);
 
         if (work->unk_14A <= 0) {
             return 0;

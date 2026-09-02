@@ -223,7 +223,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
         }
         e->unk_00C += v;
         t = e->unk_112;
-        func_0800589C(&t, 0, 3);
+        ApproachAngle(&t, 0, 3);
         e->unk_112 = t;
         if (e->unk_15A & 1) {
             break;

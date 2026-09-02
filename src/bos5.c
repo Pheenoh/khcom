@@ -145,9 +145,9 @@ void task_bos_md_fire_2(MdFireWork* work) {
     frame = func_0801AF1C(work->unk_14C);
 
     if (work->unk_000 == 0) {
-        func_080058FC(&work->unk_030, 0x100, work->unk_034);
+        ApproachValue(&work->unk_030, 0x100, work->unk_034);
     } else if (work->unk_000 == 4) {
-        func_080058FC(&work->unk_030, 25, work->unk_034);
+        ApproachValue(&work->unk_030, 25, work->unk_034);
     } else {
         sprite = 0;
         goto draw;

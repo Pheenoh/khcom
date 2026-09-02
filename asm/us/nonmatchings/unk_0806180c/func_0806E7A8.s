@@ -85,7 +85,7 @@ _0806E828:
 	lsls r2, r2, #0x01
 	adds r4, r5, r2
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	adds r0, r5, #0x0
 	adds r0, #0x30
 	ldr r2, [r6, #0x00]
@@ -96,7 +96,7 @@ _0806E828:
 	adds r1, r1, r3
 	ldr r1, [r1, #0x0C]
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	adds r0, r5, #0x0
 	adds r0, #0x34
 	ldr r2, [r6, #0x00]
@@ -107,7 +107,7 @@ _0806E828:
 	adds r1, r1, r3
 	ldr r1, [r1, #0x10]
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldr r0, [r4, #0x00]
 	subs r0, #0x01
 	str r0, [r4, #0x00]

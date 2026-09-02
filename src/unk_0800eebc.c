@@ -1141,7 +1141,7 @@ INCLUDE_ASM("unk_0800eebc/func_08017E18.s");
 void func_08017EF4(void) {
     u16 k;
     u16 t;
-    func_080058FC(&gUnk_02034928->unk_1C, 0x300, gUnk_02034928->unk_0A);
+    ApproachValue(&gUnk_02034928->unk_1C, 0x300, gUnk_02034928->unk_0A);
     gUnk_02034928->unk_20 = gUnk_02034928->unk_1C;
     gUnk_02034928->unk_0A--;
     func_08006B80(&k, 0);

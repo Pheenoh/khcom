@@ -90,11 +90,11 @@ _08102340:
 	ldr r4, _08102368 @ =0x0203587A
 	ldrh r2, [r4, #0x00]
 	movs r1, #0x00
-	bl func_080058FC
+	bl ApproachValue
 	ldr r0, _0810236C @ =0x02035884
 	ldrh r2, [r4, #0x00]
 	movs r1, #0x00
-	bl func_080058FC
+	bl ApproachValue
 	ldr r0, _08102370 @ =0x02035888
 	ldrh r2, [r4, #0x00]
 	movs r1, #0x00
@@ -110,17 +110,17 @@ _08102374:
 	ldr r1, _081023C4 @ =0xFFFF9F00
 	ldr r4, _081023C8 @ =0x0203587A
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldr r0, _081023CC @ =0x02035884
 	movs r1, #0x84
 	lsls r1, r1, #0x06
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldr r0, _081023D0 @ =0x02035888
 	ldr r1, _081023D4 @ =0xFFFFE400
 	ldrh r2, [r4, #0x00]
 _08102396:
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	strh r0, [r4, #0x00]

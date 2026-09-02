@@ -23,15 +23,15 @@ typedef struct {
     void (*unk_54)(void*);
 } SoundStream;
 
-extern SoundStream gUnk_0203C7F0;
+extern SoundStream gSndStream;
 
-void func_0811D1B0(u32 rate, u32 channels);
-void func_0811D348(void);
-void func_0811D408(u32 ch, u32 len, void** dst1, u32* len1, void** dst2, u32* len2);
-void func_0811D4B4(void (*a)(void), void* (*b)(u32), void (*c)(void), void (*d)(void*));
-void func_0811D4CC(void);
-void func_0811D4FC(void);
-void func_0811D518(void);
-void func_0811D550(u32 ch);
+void SndStreamInit(u32 rate, u32 channels);
+void SndStreamUpdate(void);
+void SndStreamLock(u32 ch, u32 len, void** dst1, u32* len1, void** dst2, u32* len2);
+void SndStreamSetCallbacks(void (*a)(void), void* (*b)(u32), void (*c)(void), void (*d)(void*));
+void SndStreamClose(void);
+void SndStreamStart(void);
+void SndStreamStop(void);
+void SndStreamUnlock(u32 ch);
 
 #endif /* GUARD_SND_STREAM_H */

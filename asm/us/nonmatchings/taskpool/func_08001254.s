@@ -35,7 +35,7 @@ _0800126E:
 _0800128C: .4byte 0x0300749C
 _08001290: .4byte 0x03006C78
 _08001294:
-	bl func_080046C8
+	bl FlushDma3Queue
 _08001298:
 	bl func_08002F50
 	bl CommitDisplayRegs

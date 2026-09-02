@@ -1,9 +1,9 @@
 .syntax unified
 	.align 2, 0
-	.global func_0800585C
+	.global GetAngleDiff16
 	.thumb
 	.thumb_func
-	.type func_0800585C, %function
-func_0800585C:
+	.type GetAngleDiff16, %function
+GetAngleDiff16:
 	.incbin "roms/B8CJ.gba", 0x585c, 0x40
 .syntax divided

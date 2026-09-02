@@ -139,15 +139,15 @@ void mode_worldwarp_1(void) {
     UpdatePlayTime();
     switch (gUnk_020357A2) {
     case 0:
-        func_080058FC(&gUnk_020357A8[0], 0, gUnk_020357A4);
-        func_080058FC(&gUnk_020357A8[1], 0x9800, gUnk_020357A4);
+        ApproachValue(&gUnk_020357A8[0], 0, gUnk_020357A4);
+        ApproachValue(&gUnk_020357A8[1], 0x9800, gUnk_020357A4);
         if (--gUnk_020357A4 <= 0) {
             gUnk_020357A4 = 16;
             gUnk_020357A2 = 1;
         }
         break;
     case 1:
-        func_080058FC(&gUnk_020357B0, 0, gUnk_020357A4);
+        ApproachValue(&gUnk_020357B0, 0, gUnk_020357A4);
         if (--gUnk_020357A4 <= 0) {
             LoadBgMap(0, gUnk_09A35F1C, 0x500);
             gUnk_020357A2 = 2;
@@ -157,15 +157,15 @@ void mode_worldwarp_1(void) {
         func_081006AC();
         break;
     case 3:
-        func_080058FC(&gUnk_020357B0, -0x8000, gUnk_020357A4);
+        ApproachValue(&gUnk_020357B0, -0x8000, gUnk_020357A4);
         if (--gUnk_020357A4 <= 0) {
             gUnk_020357A4 = 16;
             gUnk_020357A2 = 4;
         }
         break;
     case 4:
-        func_080058FC(&gUnk_020357A8[0], -0x800, gUnk_020357A4);
-        func_080058FC(&gUnk_020357A8[1], 0xA800, gUnk_020357A4);
+        ApproachValue(&gUnk_020357A8[0], -0x800, gUnk_020357A4);
+        ApproachValue(&gUnk_020357A8[1], 0xA800, gUnk_020357A4);
         if (--gUnk_020357A4 <= 0) {
             gUnk_020357A4 = 16;
             func_08006184(0, 16);

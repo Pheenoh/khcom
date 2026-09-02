@@ -132,8 +132,8 @@ void mode_mapinspect_1(void) {
 
     switch (gUnk_02035FCA) {
     case 0:
-        func_080058FC(&gUnk_02035FD0[0], 0, gUnk_02035FCC);
-        func_080058FC(&gUnk_02035FD0[1], 0x9800, gUnk_02035FCC);
+        ApproachValue(&gUnk_02035FD0[0], 0, gUnk_02035FCC);
+        ApproachValue(&gUnk_02035FD0[1], 0x9800, gUnk_02035FCC);
         gUnk_02035FCC--;
         if (gUnk_02035FCC <= 0) {
             gUnk_02035FCC = 16;
@@ -141,7 +141,7 @@ void mode_mapinspect_1(void) {
         }
         break;
     case 1:
-        func_080058FC(&gUnk_02035FD8, 0, gUnk_02035FCC);
+        ApproachValue(&gUnk_02035FD8, 0, gUnk_02035FCC);
         gUnk_02035FCC--;
         if (gUnk_02035FCC <= 0) {
             LoadBgMap(0, gUnk_09A3489C, 0x500);
@@ -168,7 +168,7 @@ void mode_mapinspect_1(void) {
         }
         break;
     case 3:
-        func_080058FC(&gUnk_02035FD8, -0x8000, gUnk_02035FCC);
+        ApproachValue(&gUnk_02035FD8, -0x8000, gUnk_02035FCC);
         gUnk_02035FCC--;
         if (gUnk_02035FCC <= 0) {
             gUnk_02035FCC = 16;
@@ -176,8 +176,8 @@ void mode_mapinspect_1(void) {
         }
         break;
     case 4:
-        func_080058FC(&gUnk_02035FD0[0], -0x800, gUnk_02035FCC);
-        func_080058FC(&gUnk_02035FD0[1], 0xA800, gUnk_02035FCC);
+        ApproachValue(&gUnk_02035FD0[0], -0x800, gUnk_02035FCC);
+        ApproachValue(&gUnk_02035FD0[1], 0xA800, gUnk_02035FCC);
         gUnk_02035FCC--;
         if (gUnk_02035FCC <= 0) {
             func_08006184(0, 16);

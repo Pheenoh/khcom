@@ -67,7 +67,7 @@ _080FD382:
 	ldrh r2, [r6, #0x34]
 	movs r1, #0x19
 _080FD38E:
-	bl func_080058FC
+	bl ApproachValue
 	ldr r2, [r6, #0x30]
 	movs r0, #0x00
 	adds r1, r2, #0x0

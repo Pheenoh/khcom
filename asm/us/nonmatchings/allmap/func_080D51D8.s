@@ -35,7 +35,7 @@ _080D51F0:
 	subs r2, #0x07
 	lsls r2, r2, #0x10
 	lsrs r2, r2, #0x10
-	bl func_080058FC
+	bl ApproachValue
 	b _080D5262
 _080D521C: .4byte 0x0203C4E0
 _080D5220: .4byte 0x0203C534
@@ -53,7 +53,7 @@ _080D522C:
 	adds r1, #0xA8
 	ldr r1, [r1, #0x00]
 	movs r2, #0x01
-	bl func_080058FC
+	bl ApproachValue
 	b _080D5262
 _080D5248: .4byte 0x0203C4B4
 _080D524C:
@@ -66,7 +66,7 @@ _080D524C:
 	ldr r5, _080D5288 @ =0xFFFFFE00
 	adds r1, r1, r5
 	movs r2, #0x01
-	bl func_080058FC
+	bl ApproachValue
 _080D5262:
 	ldr r0, _080D5284 @ =0x0203C4B4
 	ldr r1, [r0, #0x00]

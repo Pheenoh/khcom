@@ -28,7 +28,7 @@ _08005C0C:
 	adds r0, r6, #0x0
 	adds r1, r5, #0x0
 	adds r2, r3, #0x0
-	bl func_08007E00
+	bl LoadPaletteWithEffect
 	adds r6, r0, #0x0
 	cmp r7, #0x00
 	beq _08005C4E

@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_080046C8
+	.global FlushDma3Queue
 	.thumb
 	.thumb_func
-	.type func_080046C8, %function
-func_080046C8: @ 080046C8
+	.type FlushDma3Queue, %function
+FlushDma3Queue: @ 080046C8
 	push {r4, r5, r6, r7, lr}
 	mov r7, r10
 	mov r6, r9

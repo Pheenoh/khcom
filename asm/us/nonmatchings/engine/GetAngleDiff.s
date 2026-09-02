@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08005824
+	.global GetAngleDiff
 	.thumb
 	.thumb_func
-	.type func_08005824, %function
-func_08005824: @ 08005824
+	.type GetAngleDiff, %function
+GetAngleDiff: @ 08005824
 	adds r3, r0, #0x0
 	movs r0, #0xFF
 	ands r3, r0

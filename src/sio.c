@@ -21,7 +21,7 @@ u8* func_08006BA8(void) {
     return gUnk_02034040;
 }
 
-u16 func_08006BB4(void) {
+u16 IsVBlankIntrLive(void) {
     if (REG_IME & 1) {
         if (REG_DISPSTAT & 8) {
             if (REG_IE & 1) {
@@ -36,7 +36,7 @@ u16 func_08006BB4(void) {
 
 void SetVBlankCallback(IntrFunc fn) {
     gVBlankCallback = fn;
-    if (!func_08006BB4()) {
+    if (!IsVBlankIntrLive()) {
         *gIntrTableVBlank = fn;
     }
 }
@@ -48,7 +48,7 @@ void ResetVBlankCallback(void) {
 
 void SetVCountCallback(IntrFunc fn) {
     gVCountCallback = fn;
-    if (!func_08006BB4()) {
+    if (!IsVBlankIntrLive()) {
         *gIntrTableVCount = fn;
     }
 }
@@ -60,7 +60,7 @@ void ResetVCountCallback(void) {
 
 void SetHBlankCallback(IntrFunc fn) {
     gHBlankCallback = fn;
-    if (!func_08006BB4()) {
+    if (!IsVBlankIntrLive()) {
         *gIntrTableHBlank = fn;
     }
 }
@@ -86,7 +86,7 @@ void ResetTimer3Callback(void) {
     *gIntrTableTimer3 = SerialIntrDummy;
 }
 
-void func_08006D08(void) {
+void SioInit(void) {
     u16* p;
     u16 ime;
     u32 zero;
@@ -101,8 +101,8 @@ void func_08006D08(void) {
     REG_SIOCNT |= 0x4003;
     *p = REG_IME;
     SetVBlankCallback(VBlankIntrSio);
-    SetSerialCallback(func_080073B4);
-    SetTimer3Callback(func_080073A4);
+    SetSerialCallback(SioSerialIntr);
+    SetTimer3Callback(SioTimer3Intr);
     REG_IME = 0;
     REG_IE |= 0x80;
     REG_IME = *p;
@@ -132,14 +132,14 @@ void func_08006D08(void) {
 }
 
 void func_08006E60(void) {
-    func_08006D08();
-    func_08006E74();
+    SioInit();
+    SioStop();
 }
 
 void func_08006E70(void) {
 }
 
-void func_08006E74(void) {
+void SioStop(void) {
     u32 zero;
 
     gUnk_0203406E = REG_IME;
@@ -161,11 +161,11 @@ u32 func_08006ED4(u8* a, u16* b, u16 (*c)[2]) {
 
     switch (gUnk_02039830.unk_01) {
     case 0:
-        func_08006E74();
+        SioStop();
         gUnk_02039830.unk_01 = 1;
         break;
     case 1:
-        func_08006D08();
+        SioInit();
         gUnk_02039830.unk_01 = 2;
         break;
     case 2:
@@ -346,17 +346,17 @@ void func_08007318(void) {
     }
     if (gUnk_02039830.unk_00 != 0) {
         if (gUnk_02039830.unk_01 == 2) {
-            func_08007444();
+            SioStartTransfer();
         } else if (gUnk_02039830.unk_01 == 4) {
             if (gUnk_02039830.unk_0D <= 4) {
                 if (gUnk_02039830.unk_12 != 0) {
-                    func_08007444();
+                    SioStartTransfer();
                 } else {
                     gUnk_02039830.unk_15 = 1;
                 }
             } else if (gUnk_02039830.unk_15 == 0) {
                 gUnk_02039830.unk_0D = 0;
-                func_08007444();
+                SioStartTransfer();
             }
         }
     } else if (gUnk_02039830.unk_01 == 4 || gUnk_02039830.unk_01 == 2) {
@@ -374,12 +374,12 @@ void func_08007318(void) {
     }
 }
 
-void func_080073A4(void) {
+void SioTimer3Intr(void) {
     func_08007768();
-    func_08007444();
+    SioStartTransfer();
 }
 
-void func_080073B4(void) {
+void SioSerialIntr(void) {
     u32 cnt;
 
     cnt = REG_SIOCNT32;
@@ -411,7 +411,7 @@ void func_080073B4(void) {
     }
 }
 
-void func_08007444(void) {
+void SioStartTransfer(void) {
     REG_SIOCNT |= 0x80;
 }
 
@@ -574,7 +574,7 @@ void func_08007814(void) {
     }
 }
 
-void func_08007874(void) {
+void SioClearRegs(void) {
     REG_RCNT = 0;
     REG_SIOCNT = 0;
     REG_SIODATA8 = 0;
@@ -588,7 +588,7 @@ void func_08007874(void) {
 }
 
 void func_080078A4(void) {
-    func_08007874();
+    SioClearRegs();
     REG_IME = 0;
     ResetVBlankCallback();
     ResetSerialCallback();
@@ -596,7 +596,7 @@ void func_080078A4(void) {
     REG_IE = 0x2001;
     REG_DISPSTAT = 8;
     REG_IME = 1;
-    func_08006E74();
+    SioStop();
 }
 
 u8 func_080078E8(void) {

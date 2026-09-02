@@ -121,7 +121,7 @@ _080DC800:
 	ldr r1, [r5, #0x04]
 	adds r2, r0, #0x0
 	adds r0, r5, #0x0
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r5, #0x08]
 	subs r0, #0x01
 	strh r0, [r5, #0x08]

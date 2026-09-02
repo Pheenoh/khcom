@@ -21,7 +21,7 @@ _080BB5A0:
 	ldrh r1, [r4, #0x0C]
 	adds r0, r4, #0x0
 	mov r2, r8
-	bl func_0800589C
+	bl ApproachAngle
 	adds r4, #0x34
 	adds r5, #0x34
 	cmp r5, r7

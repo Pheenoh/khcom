@@ -331,7 +331,7 @@ void func_08070008(Work0806180C* p) {
 
     func_0806FE90(p);
     if (old != p->unk_1AB) {
-        if (abs(func_08005824(old, p->unk_1AB)) > 100) {
+        if (abs(GetAngleDiff(old, p->unk_1AB)) > 100) {
             p->unk_19C = 0;
         } else {
             p->unk_19C >>= 1;
@@ -537,8 +537,8 @@ void func_08074DC4(Work08074DC4* a) {
     x = gUnk_02039DC8->unk_50 - 0x7800;
     y = gUnk_02039DC8->unk_54 - 0x5000;
     if (a->unk_10 != 0) {
-        func_080058FC(&gUnk_02039DC8->unk_48, x, a->unk_10);
-        func_080058FC(&gUnk_02039DC8->unk_4C, y, a->unk_10);
+        ApproachValue(&gUnk_02039DC8->unk_48, x, a->unk_10);
+        ApproachValue(&gUnk_02039DC8->unk_4C, y, a->unk_10);
         a->unk_10--;
     } else {
         gUnk_02039DC8->unk_48 = x;

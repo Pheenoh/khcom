@@ -26,9 +26,9 @@ void mode_debug_0(void) {
     AnimStart(&gUnk_02034898->unk_0C, 0, 1);
     func_0805FCB0(0, 0, 2, gUnk_081283CC);
 
-    if (func_08007E50() < 0) {
+    if (GetPaletteEffect() < 0) {
         func_0805FCB0(168, 150, 2, gUnk_081283E0);
-    } else if (func_08007E50() > 0) {
+    } else if (GetPaletteEffect() > 0) {
         func_0805FCB0(168, 150, 2, gUnk_081283F0);
     } else {
         func_0805FCB0(144, 150, 2, gUnk_08128400);
@@ -47,19 +47,19 @@ void mode_debug_1(void) {
     s8 old;
     void* gfx;
 
-    v = func_08007E50();
+    v = GetPaletteEffect();
 
     switch (GetKeysPressed() & 0x300) {
         case 0x100:
             if (v <= 23) {
-                func_08007E5C(v + 1);
+                SetPaletteEffect(v + 1);
                 func_080010CC(&gUnk_09ECEB64, 0);
                 return;
             }
             break;
         case 0x200:
             if (v > -24) {
-                func_08007E5C(v - 1);
+                SetPaletteEffect(v - 1);
                 func_080010CC(&gUnk_09ECEB64, 0);
                 return;
             }

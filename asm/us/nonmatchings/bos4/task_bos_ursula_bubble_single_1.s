@@ -116,7 +116,7 @@ _080DDB3A:
 	ldrh r1, [r1, #0x00]
 	adds r0, r4, #0x0
 	movs r2, #0x04
-	bl func_0800589C
+	bl ApproachAngle
 	ldr r3, _080DDC3C @ =0x08121400
 	ldrb r0, [r4, #0x00]
 	lsls r0, r0, #0x01
@@ -155,7 +155,7 @@ _080DDB3A:
 	ldr r1, [r1, #0x7C]
 	ldr r1, [r1, #0x08]
 	movs r2, #0x1E
-	bl func_080058FC
+	bl ApproachValue
 _080DDBD2:
 	ldr r0, [r5, #0x04]
 	movs r1, #0x82

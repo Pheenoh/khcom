@@ -35,7 +35,7 @@ task_bos_jf_majin_2: @ 080BE7B4
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x20
-	bl func_08007E00
+	bl LoadPaletteWithEffect
 	ldr r7, [r6, #0x0C]
 	b _080BE812
 _080BE7F8: .4byte 0x02039B84
@@ -46,7 +46,7 @@ _080BE804:
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x20
-	bl func_08007E00
+	bl LoadPaletteWithEffect
 _080BE810:
 	ldr r7, [r6, #0x08]
 _080BE812:

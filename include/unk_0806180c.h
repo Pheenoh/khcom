@@ -161,7 +161,7 @@ void func_08072A64(Actor0806180C* a, u8 kind, u8 flag);
 u16 func_0806BA74(s32 mode, s32 flag);
 void func_0806BA0C(s16 v, u8* out);
 void func_0806C2C0(u8 n);
-void func_080058FC(s32* value, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08074D00(Work08074DC4* p);
 void func_08074D14(Work08074DC4* a);
 u8 func_08074E40(Work08074DC4* p);
@@ -172,7 +172,7 @@ s16 func_08075064(u8 a);
 void func_08074DC4(Work08074DC4* a);
 
 s32 abs(s32 a);
-s8 func_08005824(u8 a, u8 b);
+s8 GetAngleDiff(u8 a, u8 b);
 void func_0806FE90(Work0806180C* p);
 void func_08070008(Work0806180C* p);
 

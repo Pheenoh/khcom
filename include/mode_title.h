@@ -112,7 +112,7 @@ void func_080D5A4C(s32 a);
 void func_080D5B04(void);
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
-void func_080058FC(s32* value, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void EnableBg(s32 a);
 void func_080C75A4(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);

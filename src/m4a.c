@@ -63,13 +63,13 @@ extern MoviePlayer* gUnk_0203C7C4;
 extern MovieHeap gUnk_0203C7D0;
 
 
-void func_0811D1B0(u32 rate, u32 channels);
-void func_0811D348(void);
-void func_0811D408(u32 ch, u32 len, void** dst1, s32* len1, void** dst2, s32* len2);
-void func_0811D4B4(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
-void func_0811D4CC(void);
-void func_0811D4FC(void);
-void func_0811D550(u32 ch);
+void SndStreamInit(u32 rate, u32 channels);
+void SndStreamUpdate(void);
+void SndStreamLock(u32 ch, u32 len, void** dst1, s32* len1, void** dst2, s32* len2);
+void SndStreamSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
+void SndStreamClose(void);
+void SndStreamStart(void);
+void SndStreamUnlock(u32 ch);
 
 void func_081181BC(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
 s32 func_081181EC(void* a);
@@ -97,7 +97,7 @@ void func_0811968C(MoviePlayer* a, s32* w, s32* h);
 
 void func_081181BC(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
     func_08118578(a, b, c, d);
-    func_0811D4B4(a, b, c, d);
+    SndStreamSetCallbacks(a, b, c, d);
 }
 
 s32 func_081181EC(void* a) {
@@ -118,19 +118,19 @@ s32 func_081181EC(void* a) {
     }
     channels = func_08119654(gUnk_0203C7C4);
     if (channels != 0) {
-        func_0811D1B0(func_08119670(gUnk_0203C7C4), channels);
+        SndStreamInit(func_08119670(gUnk_0203C7C4), channels);
         for (i = 0; i < 4; i++) {
             if (channels == 1) {
-                func_0811D408(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
-                func_0811D550(0);
+                SndStreamUnlock(0);
                 func_08119480(gUnk_0203C7C4);
             } else {
-                func_0811D408(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
-                func_0811D408(1, func_081192B0(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
+                SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(1, func_081192B0(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
-                func_0811D550(0);
-                func_0811D550(1);
+                SndStreamUnlock(0);
+                SndStreamUnlock(1);
                 func_08119480(gUnk_0203C7C4);
             }
         }
@@ -159,7 +159,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
     y = (160 - h) >> 1;
     func_0811904C(gUnk_0203C7C4, (u16*)0x06000000 + (y * 240 + x));
     func_08119224(gUnk_0203C7C4);
-    func_0811D4FC();
+    SndStreamStart();
     channels = func_08119654(gUnk_0203C7C4);
     if (channels != 0) {
         ok = 1;
@@ -175,18 +175,18 @@ void func_08118344(s32 (*a)(s32), s32 b) {
         }
         if (ok != 0) {
             if (channels == 1) {
-                func_0811D408(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
-                func_0811D550(0);
+                SndStreamUnlock(0);
                 if (func_08119480(gUnk_0203C7C4) == 0) {
                     ok = 0;
                 }
             } else {
-                func_0811D408(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
-                func_0811D408(1, func_081192B0(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
+                SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(1, func_081192B0(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
-                func_0811D550(0);
-                func_0811D550(1);
+                SndStreamUnlock(0);
+                SndStreamUnlock(1);
                 if (func_08119480(gUnk_0203C7C4) == 0) {
                     ok = 0;
                 }
@@ -200,13 +200,13 @@ void func_08118344(s32 (*a)(s32), s32 b) {
 
 void func_08118538(void) {
     if (func_08119654(gUnk_0203C7C4)) {
-        func_0811D4CC();
+        SndStreamClose();
     }
     func_08118EEC(gUnk_0203C7C4);
 }
 
 void func_08118564(void) {
-    func_0811D348();
+    SndStreamUpdate();
     func_081185B0();
 }
 

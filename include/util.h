@@ -16,16 +16,16 @@ extern KeyState* gUnk_0203407C;
 extern KeyState* gUnk_02034080;
 extern u16 gUnk_02034084;
 
-u16 func_0800833C(KeyState* k);
-u16 func_08008340(KeyState* k);
-u16 func_08008344(KeyState* k);
-void func_08008348(KeyState* k);
-u8 func_08008384(KeyState* k, u16 key);
-u8 func_080083F8(KeyState* k, u16 key);
+u16 KeyGetHeld(KeyState* k);
+u16 KeyGetPressed(KeyState* k);
+u16 KeyGetRepeat(KeyState* k);
+void KeyStateClear(KeyState* k);
+u8 KeyGetHoldFrames(KeyState* k, u16 key);
+u8 KeyGetOffFrames(KeyState* k, u16 key);
 u16 func_0800846C(KeyState* k, u16 a, u16 b);
-void func_08008558(KeyState* k, u16 keys);
-void func_08008808(void);
-void func_0800884C(void);
+void KeyStateUpdate(KeyState* k, u16 keys);
+void SioKeyInit(void);
+void SioKeyFree(void);
 u16 func_0800886C(void);
 u16 func_08008884(void);
 u16 func_0800889C(void);
@@ -36,7 +36,7 @@ u16 func_080088FC(u16 a, u16 b);
 u16 func_08008920(u16 a, u16 b);
 void func_08008944(u16 keys);
 void func_0800895C(u16 keys);
-s32 func_08008974(u16 songNum);
-void func_080089A8(u16 songNum);
+s32 IsSongPlaying(u16 songNum);
+void StopSong(u16 songNum);
 
 #endif

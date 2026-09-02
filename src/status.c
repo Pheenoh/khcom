@@ -168,8 +168,8 @@ void task_status_bar_0(StatusBarWork* work) {
 u8 task_status_bar_1(StatusBarWork* work) {
     switch (gUnk_0203C550) {
     case 0:
-        func_080058FC(&work->unk_0C, work->unk_10, work->unk_08);
-        func_080058FC(&work->unk_14, work->unk_18, work->unk_08);
+        ApproachValue(&work->unk_0C, work->unk_10, work->unk_08);
+        ApproachValue(&work->unk_14, work->unk_18, work->unk_08);
         work->unk_08--;
         if (work->unk_08 == 0) {
             work->unk_08 = 16;
@@ -177,7 +177,7 @@ u8 task_status_bar_1(StatusBarWork* work) {
         }
         break;
     case 1:
-        func_080058FC(&work->unk_1C, work->unk_20, work->unk_08);
+        ApproachValue(&work->unk_1C, work->unk_20, work->unk_08);
         work->unk_08--;
         if (work->unk_08 == 0) {
             LoadBgMap(3, gUnk_09848698, 0x500);
@@ -185,7 +185,7 @@ u8 task_status_bar_1(StatusBarWork* work) {
         }
         break;
     case 3:
-        func_080058FC(&work->unk_1C, work->unk_20, work->unk_08);
+        ApproachValue(&work->unk_1C, work->unk_20, work->unk_08);
         work->unk_08--;
         if (work->unk_08 == 0) {
             work->unk_08 = 16;
@@ -197,8 +197,8 @@ u8 task_status_bar_1(StatusBarWork* work) {
             func_08006184(0, 16);
             work->unk_25 = 1;
         }
-        func_080058FC(&work->unk_0C, work->unk_10, work->unk_08);
-        func_080058FC(&work->unk_14, work->unk_18, work->unk_08);
+        ApproachValue(&work->unk_0C, work->unk_10, work->unk_08);
+        ApproachValue(&work->unk_14, work->unk_18, work->unk_08);
         work->unk_08--;
         if (work->unk_08 == 0) {
             return 0;

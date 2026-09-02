@@ -86,8 +86,8 @@ void SetBgScroll(s32 bg, u16 x, u16 y);
 void SetBgBlend(s32 a, s32 b, s32 c);
 void EnableBg(s32 a);
 void DisableBg(s32 bg);
-void func_08007E68(s32 a);
-void func_08007E7C(void);
+void PushPaletteEffect(s32 a);
+void PopPaletteEffect(void);
 
 void task_romcri_eff_0(RomcriEffWork* work, s32 arg);
 u8 task_romcri_eff_1(RomcriEffWork* work);

@@ -67,7 +67,7 @@ _08042984:
 	ldr r1, [r0, #0x00]
 	ldrh r2, [r5, #0x00]
 	adds r0, r4, #0x0
-	bl func_080058FC
+	bl ApproachValue
 	movs r2, #0xBE
 	lsls r2, r2, #0x01
 	adds r0, r7, r2

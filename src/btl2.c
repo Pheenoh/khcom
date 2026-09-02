@@ -694,8 +694,8 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
         m4aMPlayVolumeControl(gUnk_0203DB90, 0xFF, 0);
         m4aMPlayVolumeControl(gUnk_0203DD50, 0xFF, 0);
         } else {
-            func_080058FC(&work->unk_14, 0x7800, work->unk_24);
-            func_080058FC(&work->unk_1C, 0x7800, work->unk_24);
+            ApproachValue(&work->unk_14, 0x7800, work->unk_24);
+            ApproachValue(&work->unk_1C, 0x7800, work->unk_24);
             if (work->unk_24 > 1) {
                 work->unk_24--;
             }
@@ -1294,7 +1294,7 @@ void func_08031F60(FldActor* act) {
     if (old != act->unk_14) {
         s32 v;
 
-        if (abs(func_08005824(old, act->unk_14)) > 100) {
+        if (abs(GetAngleDiff(old, act->unk_14)) > 100) {
             v = 0;
         } else {
             v = act->unk_10 >> 1;

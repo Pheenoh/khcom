@@ -79,7 +79,7 @@ _080BD2C2:
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x20
-	bl func_08007E00
+	bl LoadPaletteWithEffect
 	adds r0, r7, #0x0
 	bl func_0801AF08
 	movs r2, #0x2C

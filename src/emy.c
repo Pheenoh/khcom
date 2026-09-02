@@ -1499,9 +1499,9 @@ void task_emy_29_0(Emy29Work* work, void* obj) {
 void func_0803B468(Emy29Work* work, s16 anim, s16 dx, s16 dy, s16 dz) {
     if (work->unk_186 > 0) {
         AnimChange(&work->base.unk_010, anim, 0);
-        func_080058FC(&work->base.unk_03C.unk_04, work->base.unk_03C.unk_14 + ((s16)dx << 8), work->unk_186);
-        func_080058FC(&work->base.unk_03C.unk_08, work->base.unk_03C.unk_18 + ((s16)dy << 8), work->unk_186);
-        func_080058FC(&work->base.unk_03C.unk_0C, (s16)dz << 8, work->unk_186);
+        ApproachValue(&work->base.unk_03C.unk_04, work->base.unk_03C.unk_14 + ((s16)dx << 8), work->unk_186);
+        ApproachValue(&work->base.unk_03C.unk_08, work->base.unk_03C.unk_18 + ((s16)dy << 8), work->unk_186);
+        ApproachValue(&work->base.unk_03C.unk_0C, (s16)dz << 8, work->unk_186);
         work->unk_186--;
     } else {
         work->unk_186 = 8;

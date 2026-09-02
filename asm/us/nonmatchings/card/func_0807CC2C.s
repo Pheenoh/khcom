@@ -17,7 +17,7 @@ func_0807CC2C: @ 0807CC2C
 	adds r4, r7, #0x0
 	adds r4, #0xA3
 	ldrb r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldrb r0, [r4, #0x00]
 	cmp r0, #0x00
 	beq _0807CC52
@@ -47,7 +47,7 @@ _0807CC52:
 	adds r1, #0x80
 	ldr r1, [r1, #0x00]
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	movs r2, #0x00

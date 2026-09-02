@@ -48,9 +48,9 @@ INCLUDE_ASM("hum/task_hum_hook_3.s");
 
 void task_hum_hook_moon_0(HookMoonWork* work) {
     work->unk_00 = LoadObjTiles(gUnk_08B5A872, 0xC00);
-    func_08007E68(0);
+    PushPaletteEffect(0);
     work->unk_04 = LoadObjPalette(gUnk_08F6DC64, 0x20);
-    func_08007E7C();
+    PopPaletteEffect();
     func_0801C298(work->unk_04[6] + 16, 0);
     work->unk_0A = 0;
     work->unk_08 = 0;
@@ -1015,7 +1015,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
             work->unk_86 = 30;
             work->unk_84++;
         }
-        func_080058FC(&work->unk_8C, work->unk_90, work->unk_86);
+        ApproachValue(&work->unk_8C, work->unk_90, work->unk_86);
         work->unk_86--;
         if ((s16)work->unk_86 <= 0) {
             func_08012614(&work->unk_28, 0);
@@ -1048,7 +1048,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
     switch (work->unk_00) {
     case 1:
     case 2:
-        func_080058FC(&work->unk_8C, 10, work->unk_88);
+        ApproachValue(&work->unk_8C, 10, work->unk_88);
         work->unk_88--;
         if ((s16)work->unk_88 <= 0) {
             work->unk_24->unk_01 = 0;
@@ -1249,8 +1249,8 @@ INCLUDE_ASM("hum/task_hum_lexceus_1.s");
 void task_hum_lexceus_2(LexceusWork* work) {
     func_0800EFE8(&work->base);
     if (work->unk_1CC > 0) {
-        func_080058FC(&work->base.unk_168, work->unk_1D0, work->unk_1CC);
-        func_080058FC(&work->base.unk_16C, work->unk_1D4, work->unk_1CC);
+        ApproachValue(&work->base.unk_168, work->unk_1D0, work->unk_1CC);
+        ApproachValue(&work->base.unk_16C, work->unk_1D4, work->unk_1CC);
         work->unk_1CC--;
     }
     TaskPoolDraw(&work->unk_1D8);
@@ -1403,7 +1403,7 @@ void task_hum_lex_tmh0_0(LexTmh0Work* work, VixenNdlArgs* args) {
 
 u8 task_hum_lex_tmh0_1(LexTmh0Work* work) {
     if (gUnk_02039B84->unk_068 & 0x40) {
-        func_080058FC(&work->unk_30, 0x100, work->unk_34--);
+        ApproachValue(&work->unk_30, 0x100, work->unk_34--);
         if (work->unk_34 > 0) {
             AnimUpdate(&work->unk_08);
             return 1;

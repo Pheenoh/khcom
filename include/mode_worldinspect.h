@@ -38,7 +38,7 @@ void func_08065AE0(void* a, s32 b);
 u16 func_08065B6C(void* a, void* b);
 void func_080FF8CC(void);
 void UpdatePlayTime(void);
-void func_080058FC(s32* value, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
