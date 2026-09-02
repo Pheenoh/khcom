@@ -1,10 +1,18 @@
 .syntax unified
+	.include "gba_constants.inc"
 	.align 2, 0
 	.global ply_lfos
 	.thumb
 	.thumb_func
 	.type ply_lfos, %function
-ply_lfos: @ 0811FD18
-	.byte 0xF4, 0x46, 0xFF, 0xF7, 0xF7, 0xFF, 0x4B, 0x76, 0x00, 0x2B, 0x01, 0xD1, 0xFF, 0xF7, 0xE4, 0xFF
-	.byte 0x60, 0x47, 0x00, 0x00
+ply_lfos:
+	mov r12, lr
+	bl ld_r3_tp_adr_i_unchecked
+	strb r3, [r1, o_MusicPlayerTrack_lfoSpeed]
+	cmp r3, 0
+	bne ply_lfos_1
+	bl clear_modM
+ply_lfos_1:
+	bx r12
+	.align 2, 0
 .syntax divided

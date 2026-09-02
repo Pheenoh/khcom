@@ -1,17 +1,61 @@
 #include "m4a.h"
 #include "macros.h"
 
-INCLUDE_ASM("m4a2/func_0811F140.s");
+INCLUDE_ASM("m4a2/umul3232H32.s");
 INCLUDE_ASM("m4a2/SoundMain.s");
 INCLUDE_ASM("m4a2/SoundMainRAM.s");
+INCLUDE_ASM("m4a2/SoundMainBTM.s");
+INCLUDE_ASM("m4a2/RealClearChain.s");
+INCLUDE_ASM("m4a2/ply_fine.s");
 INCLUDE_ASM("m4a2/MPlayJumpTableCopy.s");
-INCLUDE_ASM("m4a2/func_0811F602.s");
+INCLUDE_ASM("m4a2/ld_r3_tp_adr_i.s");
+INCLUDE_ASM("m4a2/ply_goto.s");
+INCLUDE_ASM("m4a2/ply_patt.s");
+INCLUDE_ASM("m4a2/ply_pend.s");
+INCLUDE_ASM("m4a2/ply_rept.s");
+INCLUDE_ASM("m4a2/ply_prio.s");
+INCLUDE_ASM("m4a2/ply_tempo.s");
+INCLUDE_ASM("m4a2/ply_keysh.s");
+INCLUDE_ASM("m4a2/ply_voice.s");
+INCLUDE_ASM("m4a2/ply_vol.s");
+INCLUDE_ASM("m4a2/ply_pan.s");
+INCLUDE_ASM("m4a2/ply_bend.s");
+INCLUDE_ASM("m4a2/ply_bendr.s");
+INCLUDE_ASM("m4a2/ply_lfodl.s");
+INCLUDE_ASM("m4a2/ply_modt.s");
+INCLUDE_ASM("m4a2/ply_tune.s");
+INCLUDE_ASM("m4a2/ply_port.s");
+INCLUDE_ASM("m4a2/MPlayMain.s");
 INCLUDE_ASM("m4a2/TrackStop.s");
+INCLUDE_ASM("m4a2/ChnVolSetAsm.s");
 INCLUDE_ASM("m4a2/ply_note.s");
 INCLUDE_ASM("m4a2/ply_endtie.s");
+INCLUDE_ASM("m4a2/clear_modM.s");
+INCLUDE_ASM("m4a2/ld_r3_tp_adr_i_unchecked.s");
 INCLUDE_ASM("m4a2/ply_lfos.s");
 INCLUDE_ASM("m4a2/ply_mod.s");
-INCLUDE_ASM("m4a2/func_0811FD40.s");
+
+u32 MidiKeyToFreq(WaveData* wav, u8 key, u8 fineAdjust) {
+    u32 val1;
+    u32 val2;
+    u32 fineAdjustShifted = fineAdjust << 24;
+
+    if (key > 178) {
+        key = 178;
+        fineAdjustShifted = 255 << 24;
+    }
+
+    val1 = gScaleTable[key];
+    val1 = gFreqTable[val1 & 0xF] >> (val1 >> 4);
+
+    val2 = gScaleTable[key + 1];
+    val2 = gFreqTable[val2 & 0xF] >> (val2 >> 4);
+
+    return umul3232H32(wav->freq, val1 + umul3232H32(val2 - val1, fineAdjustShifted));
+}
+
+void UnusedDummyFunc(void) {
+}
 
 void MPlayContinue(MusicPlayerInfo* mplayInfo) {
     if (mplayInfo->ident == ID_NUMBER) {

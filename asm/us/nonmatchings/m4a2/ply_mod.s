@@ -1,10 +1,18 @@
 .syntax unified
+	.include "gba_constants.inc"
 	.align 2, 0
 	.global ply_mod
 	.thumb
 	.thumb_func
 	.type ply_mod, %function
-ply_mod: @ 0811FD2C
-	.byte 0xF4, 0x46, 0xFF, 0xF7, 0xED, 0xFF, 0xCB, 0x75, 0x00, 0x2B, 0x01, 0xD1, 0xFF, 0xF7, 0xDA, 0xFF
-	.byte 0x60, 0x47, 0x00, 0x00
+ply_mod:
+	mov r12, lr
+	bl ld_r3_tp_adr_i_unchecked
+	strb r3, [r1, o_MusicPlayerTrack_mod]
+	cmp r3, 0
+	bne ply_mod_1
+	bl clear_modM
+ply_mod_1:
+	bx r12
+	.align 2, 0
 .syntax divided

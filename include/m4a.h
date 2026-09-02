@@ -367,6 +367,9 @@ extern const s16 gCgbFreqTable[];
 extern const u8 gNoiseTable[];
 extern const u8 gCgb3Vol[];
 extern const u8 gClockTable[];
+extern const MPlayFunc gMPlayJumpTableTemplate[];
+extern const u8 gScaleTable[];
+extern const u32 gFreqTable[];
 extern char SoundMainRAM[];
 extern char SoundMainRAM_Buffer[0x400];
 extern char gNumMusicPlayers[];
@@ -374,6 +377,7 @@ extern char gMaxLines[];
 extern SoundInfo* gSoundInfoPtr;
 
 
+u32 umul3232H32(u32 multiplier, u32 multiplicand);
 void SoundMain(void);
 void MPlayMain(MusicPlayerInfo* mplayInfo);
 void MPlayJumpTableCopy(MPlayFunc* mplayJumpTable);
@@ -425,6 +429,8 @@ void m4aMPlayTempoControl(MusicPlayerInfo* mplayInfo, u16 tempo);
 void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 void m4aMPlayPitchControl(MusicPlayerInfo* mplayInfo, u16 trackBits, s16 pitch);
 void m4aMPlayPanpotControl(MusicPlayerInfo* mplayInfo, u16 trackBits, s8 pan);
+u32 MidiKeyToFreq(WaveData* wav, u8 key, u8 fineAdjust);
+void UnusedDummyFunc(void);
 void ClearModM(MusicPlayerTrack* track);
 void m4aMPlayModDepthSet(MusicPlayerInfo* mplayInfo, u16 trackBits, u8 modDepth);
 void m4aMPlayLFOSpeedSet(MusicPlayerInfo* mplayInfo, u16 trackBits, u8 lfoSpeed);

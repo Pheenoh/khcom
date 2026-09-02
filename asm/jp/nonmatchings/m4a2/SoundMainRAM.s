@@ -5,5 +5,5 @@
 	.thumb_func
 	.type SoundMainRAM, %function
 SoundMainRAM:
-	.incbin "roms/B8CJ.gba", 0x11f250, 0x414
+	.incbin "roms/B8CJ.gba", 0x11f250, 0x3a4
 .syntax divided

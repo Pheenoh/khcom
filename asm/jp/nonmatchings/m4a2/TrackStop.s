@@ -5,5 +5,5 @@
 	.thumb_func
 	.type TrackStop, %function
 TrackStop:
-	.incbin "roms/B8CJ.gba", 0x11faa4, 0x7c
+	.incbin "roms/B8CJ.gba", 0x11faa4, 0x4c
 .syntax divided
