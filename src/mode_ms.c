@@ -305,7 +305,60 @@ u16 func_08103F3C(void) {
     return i % 10;
 }
 INCLUDE_ASM("mode_ms/func_08103F94.s");
-INCLUDE_ASM("mode_ms/func_081041B4.s");
+void func_081041B4(void) {
+    u16 keys;
+    s16 old;
+
+    old = gUnk_02035B10;
+    keys = func_08102A94();
+    if (keys & A_BUTTON) {
+        if (gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0] >= 0 &&
+            func_08101538(gUnk_09993760[gUnk_02035B08[gUnk_02035B04]][gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][1]]) != 0) {
+            func_08103F94(gUnk_02035B08[gUnk_02035B04], gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][1]);
+            func_08102AB4(gUnk_02035B10 % 2 * 96 + 72, gUnk_02035B10 / 2 * 64 + 48);
+            func_080062F4(13, 1);
+            func_08006238(0, 16, 8);
+            m4aSongNumStart(0x66);
+            gUnk_02035B02 = 4;
+        } else {
+            m4aSongNumStart(0x69);
+        }
+    } else if (keys & B_BUTTON) {
+        m4aSongNumStart(0x68);
+        func_08006184(0, 16);
+        gUnk_02035C0C = 1;
+        gUnk_02035B02 = 5;
+    } else if (keys & START_BUTTON) {
+        m4aSongNumStart(0x68);
+        func_08006184(0, 16);
+        gUnk_02035C0C = 0;
+        gUnk_02035B02 = 5;
+    } else if (keys & DPAD_UP) {
+        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].unk_00;
+    } else if (keys & DPAD_DOWN) {
+        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].unk_02;
+    } else if (keys & DPAD_LEFT) {
+        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].unk_04;
+    } else if (keys & DPAD_RIGHT) {
+        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].unk_06;
+    }
+
+    if (gUnk_02035B10 == -1) {
+        gUnk_02035B10 = old;
+    } else if (gUnk_02035B10 == 5) {
+        gUnk_02035B10 = old;
+        gUnk_02035B02 = 2;
+        DisableBg(1);
+        m4aSongNumStart(0x65);
+    } else if (gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0] < 0) {
+        gUnk_02035B10 = old;
+    }
+
+    if (gUnk_02035B10 != old) {
+        func_08103D54(gUnk_02035B10);
+        m4aSongNumStart(0x65);
+    }
+}
 INCLUDE_ASM("mode_ms/func_08104404.s");
 INCLUDE_ASM("mode_ms/mode_ms_shop_0.s");
 INCLUDE_ASM("mode_ms/mode_ms_shop_1.s");
