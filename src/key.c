@@ -19,26 +19,26 @@ extern u16 gUnk_03006C00;
 
 extern u16 gKeysRepeat;
 extern u16 gUnk_02034006;
-extern u8 gUnk_02034008;
-extern u8 gUnk_02034009;
-extern u8 gUnk_0203400A;
-extern u8 gUnk_0203400B;
-extern u8 gUnk_0203400C;
-extern u8 gUnk_0203400D;
-extern u8 gUnk_0203400E;
-extern u8 gUnk_0203400F;
-extern u8 gUnk_02034010;
-extern u8 gUnk_02034011;
-extern u8 gUnk_02034012;
-extern u8 gUnk_02034013;
-extern u8 gUnk_02034014;
-extern u8 gUnk_02034015;
-extern u8 gUnk_02034016;
-extern u8 gUnk_02034017;
-extern u8 gUnk_02034018;
-extern u8 gUnk_02034019;
-extern u8 gUnk_0203401A;
-extern u8 gUnk_0203401B;
+extern u8 gKeyHoldLeft;
+extern u8 gKeyHoldRight;
+extern u8 gKeyHoldUp;
+extern u8 gKeyHoldDown;
+extern u8 gKeyHoldA;
+extern u8 gKeyHoldB;
+extern u8 gKeyHoldL;
+extern u8 gKeyHoldR;
+extern u8 gKeyHoldStart;
+extern u8 gKeyHoldSelect;
+extern u8 gKeyReleaseLeft;
+extern u8 gKeyReleaseRight;
+extern u8 gKeyReleaseUp;
+extern u8 gKeyReleaseDown;
+extern u8 gKeyReleaseA;
+extern u8 gKeyReleaseB;
+extern u8 gKeyReleaseL;
+extern u8 gKeyReleaseR;
+extern u8 gKeyReleaseStart;
+extern u8 gKeyReleaseSelect;
 
 void InitSystem(void);
 void func_080C55DC(void);
@@ -69,75 +69,75 @@ void func_080013A8(void) {
     gKeysPressed = 0;
     gKeysRepeat = 0;
     gUnk_02034006 = 0;
-    gUnk_02034008 = 0;
-    gUnk_02034009 = 0;
-    gUnk_0203400A = 0;
-    gUnk_0203400B = 0;
-    gUnk_0203400E = 0;
-    gUnk_0203400F = 0;
-    gUnk_0203400C = 0;
-    gUnk_0203400D = 0;
-    gUnk_02034010 = 0;
-    gUnk_02034011 = 0;
-    gUnk_02034012 = 0xFF;
-    gUnk_02034013 = 0xFF;
-    gUnk_02034014 = 0xFF;
-    gUnk_02034015 = 0xFF;
-    gUnk_02034018 = 0xFF;
-    gUnk_02034019 = 0xFF;
-    gUnk_02034016 = 0xFF;
-    gUnk_02034017 = 0xFF;
-    gUnk_0203401A = 0xFF;
-    gUnk_0203401B = 0xFF;
+    gKeyHoldLeft = 0;
+    gKeyHoldRight = 0;
+    gKeyHoldUp = 0;
+    gKeyHoldDown = 0;
+    gKeyHoldL = 0;
+    gKeyHoldR = 0;
+    gKeyHoldA = 0;
+    gKeyHoldB = 0;
+    gKeyHoldStart = 0;
+    gKeyHoldSelect = 0;
+    gKeyReleaseLeft = 0xFF;
+    gKeyReleaseRight = 0xFF;
+    gKeyReleaseUp = 0xFF;
+    gKeyReleaseDown = 0xFF;
+    gKeyReleaseL = 0xFF;
+    gKeyReleaseR = 0xFF;
+    gKeyReleaseA = 0xFF;
+    gKeyReleaseB = 0xFF;
+    gKeyReleaseStart = 0xFF;
+    gKeyReleaseSelect = 0xFF;
 }
 
 u8 func_08001470(u16 key) {
     switch (key) {
     case DPAD_LEFT:
-        return gUnk_02034008;
+        return gKeyHoldLeft;
     case DPAD_RIGHT:
-        return gUnk_02034009;
+        return gKeyHoldRight;
     case DPAD_UP:
-        return gUnk_0203400A;
+        return gKeyHoldUp;
     case DPAD_DOWN:
-        return gUnk_0203400B;
+        return gKeyHoldDown;
     case L_BUTTON:
-        return gUnk_0203400E;
+        return gKeyHoldL;
     case R_BUTTON:
-        return gUnk_0203400F;
+        return gKeyHoldR;
     case A_BUTTON:
-        return gUnk_0203400C;
+        return gKeyHoldA;
     case B_BUTTON:
-        return gUnk_0203400D;
+        return gKeyHoldB;
     case START_BUTTON:
-        return gUnk_02034010;
+        return gKeyHoldStart;
     case SELECT_BUTTON:
-        return gUnk_02034011;
+        return gKeyHoldSelect;
     }
 }
 
 u8 func_08001534(u16 key) {
     switch (key) {
     case DPAD_LEFT:
-        return gUnk_02034012;
+        return gKeyReleaseLeft;
     case DPAD_RIGHT:
-        return gUnk_02034013;
+        return gKeyReleaseRight;
     case DPAD_UP:
-        return gUnk_02034014;
+        return gKeyReleaseUp;
     case DPAD_DOWN:
-        return gUnk_02034015;
+        return gKeyReleaseDown;
     case L_BUTTON:
-        return gUnk_02034018;
+        return gKeyReleaseL;
     case R_BUTTON:
-        return gUnk_02034019;
+        return gKeyReleaseR;
     case A_BUTTON:
-        return gUnk_02034016;
+        return gKeyReleaseA;
     case B_BUTTON:
-        return gUnk_02034017;
+        return gKeyReleaseB;
     case START_BUTTON:
-        return gUnk_0203401A;
+        return gKeyReleaseStart;
     case SELECT_BUTTON:
-        return gUnk_0203401B;
+        return gKeyReleaseSelect;
     }
 }
 
@@ -149,25 +149,30 @@ u16 func_080015F8(u16 a, u16 b) {
     if (va == 2) {
         gUnk_02034006 &= ~a;
     }
+
     if (vb == 2) {
         gUnk_02034006 &= ~b;
     }
+
     if (((GetKeysPressed() & a) && (GetKeysHeld() & b)) || ((GetKeysPressed() & b) && (GetKeysHeld() & a))) {
         gUnk_02034006 |= a | b;
         r = a | b;
     }
+
     if ((gUnk_02034006 & a) == 0) {
         if (func_08001470(a) == 5 || va == 1) {
             gUnk_02034006 |= a;
             r = a;
         }
     }
+
     if ((gUnk_02034006 & b) == 0) {
         if (func_08001470(b) == 5 || vb == 1) {
             gUnk_02034006 |= b;
             r = b;
         }
     }
+
     return r;
 }
 
@@ -181,55 +186,67 @@ u16 func_080016EC(void) {
     if (up == 2) {
         gUnk_02034006 &= ~DPAD_UP;
     }
+
     if (down == 2) {
         gUnk_02034006 &= ~DPAD_DOWN;
     }
+
     if (left == 2) {
         gUnk_02034006 &= ~DPAD_LEFT;
     }
+
     if (right == 2) {
         gUnk_02034006 &= ~DPAD_RIGHT;
     }
+
     if (((GetKeysPressed() & DPAD_UP) && (GetKeysHeld() & DPAD_LEFT)) || ((GetKeysPressed() & DPAD_LEFT) && (GetKeysHeld() & DPAD_UP))) {
         gUnk_02034006 |= (DPAD_UP | DPAD_LEFT);
         r = (DPAD_UP | DPAD_LEFT);
     }
+
     if (((GetKeysPressed() & DPAD_UP) && (GetKeysHeld() & DPAD_RIGHT)) || ((GetKeysPressed() & DPAD_RIGHT) && (GetKeysHeld() & DPAD_UP))) {
         gUnk_02034006 |= (DPAD_UP | DPAD_RIGHT);
         r = (DPAD_UP | DPAD_RIGHT);
     }
+
     if (((GetKeysPressed() & DPAD_DOWN) && (GetKeysHeld() & DPAD_LEFT)) || ((GetKeysPressed() & DPAD_LEFT) && (GetKeysHeld() & DPAD_DOWN))) {
         gUnk_02034006 |= (DPAD_DOWN | DPAD_LEFT);
         r = (DPAD_DOWN | DPAD_LEFT);
     }
+
     if (((GetKeysPressed() & DPAD_DOWN) && (GetKeysHeld() & DPAD_RIGHT)) || ((GetKeysPressed() & DPAD_RIGHT) && (GetKeysHeld() & DPAD_DOWN))) {
         gUnk_02034006 |= (DPAD_DOWN | DPAD_RIGHT);
         r = (DPAD_DOWN | DPAD_RIGHT);
     }
+
     if ((gUnk_02034006 & DPAD_UP) == 0) {
         if (func_08001470(DPAD_UP) == 10 || up == 1) {
             gUnk_02034006 |= DPAD_UP;
             r = DPAD_UP;
         }
     }
+
     if ((gUnk_02034006 & DPAD_DOWN) == 0) {
         if (func_08001470(DPAD_DOWN) == 10 || down == 1) {
             gUnk_02034006 |= DPAD_DOWN;
             r = DPAD_DOWN;
         }
     }
+
     if ((gUnk_02034006 & DPAD_LEFT) == 0) {
         if (func_08001470(DPAD_LEFT) == 10 || left == 1) {
             gUnk_02034006 |= DPAD_LEFT;
             r = DPAD_LEFT;
         }
     }
+
     if ((gUnk_02034006 & DPAD_RIGHT) == 0) {
         if (func_08001470(DPAD_RIGHT) == 10 || right == 1) {
             gUnk_02034006 |= DPAD_RIGHT;
             r = DPAD_RIGHT;
         }
     }
+
     return r;
 }
 
@@ -241,154 +258,174 @@ void UpdateKeyState(void) {
     gKeysHeld = keys;
 
     if (gKeysHeld & DPAD_LEFT) {
-        gUnk_02034008++;
-        gUnk_02034012 = 0;
-        if (gUnk_02034008 > 32) {
-            gUnk_02034008 = 29;
+        gKeyHoldLeft++;
+        gKeyReleaseLeft = 0;
+        if (gKeyHoldLeft > 32) {
+            gKeyHoldLeft = 29;
         }
     } else {
-        gUnk_02034008 = 0;
-        if (gUnk_02034012 < 255) {
-            gUnk_02034012++;
+        gKeyHoldLeft = 0;
+        if (gKeyReleaseLeft < 255) {
+            gKeyReleaseLeft++;
         }
     }
+
     if (gKeysHeld & DPAD_RIGHT) {
-        gUnk_02034009++;
-        gUnk_02034013 = 0;
-        if (gUnk_02034009 > 32) {
-            gUnk_02034009 = 29;
+        gKeyHoldRight++;
+        gKeyReleaseRight = 0;
+        if (gKeyHoldRight > 32) {
+            gKeyHoldRight = 29;
         }
     } else {
-        gUnk_02034009 = 0;
-        if (gUnk_02034013 < 255) {
-            gUnk_02034013++;
+        gKeyHoldRight = 0;
+        if (gKeyReleaseRight < 255) {
+            gKeyReleaseRight++;
         }
     }
+
     if (gKeysHeld & DPAD_UP) {
-        gUnk_0203400A++;
-        gUnk_02034014 = 0;
-        if (gUnk_0203400A > 32) {
-            gUnk_0203400A = 29;
+        gKeyHoldUp++;
+        gKeyReleaseUp = 0;
+        if (gKeyHoldUp > 32) {
+            gKeyHoldUp = 29;
         }
     } else {
-        gUnk_0203400A = 0;
-        if (gUnk_02034014 < 255) {
-            gUnk_02034014++;
+        gKeyHoldUp = 0;
+        if (gKeyReleaseUp < 255) {
+            gKeyReleaseUp++;
         }
     }
+
     if (gKeysHeld & DPAD_DOWN) {
-        gUnk_0203400B++;
-        gUnk_02034015 = 0;
-        if (gUnk_0203400B > 32) {
-            gUnk_0203400B = 29;
+        gKeyHoldDown++;
+        gKeyReleaseDown = 0;
+        if (gKeyHoldDown > 32) {
+            gKeyHoldDown = 29;
         }
     } else {
-        gUnk_0203400B = 0;
-        if (gUnk_02034015 < 255) {
-            gUnk_02034015++;
+        gKeyHoldDown = 0;
+        if (gKeyReleaseDown < 255) {
+            gKeyReleaseDown++;
         }
     }
+
     if (gKeysHeld & L_BUTTON) {
-        gUnk_0203400E++;
-        gUnk_02034018 = 0;
-        if (gUnk_0203400E > 32) {
-            gUnk_0203400E = 29;
+        gKeyHoldL++;
+        gKeyReleaseL = 0;
+        if (gKeyHoldL > 32) {
+            gKeyHoldL = 29;
         }
     } else {
-        gUnk_0203400E = 0;
-        if (gUnk_02034018 < 255) {
-            gUnk_02034018++;
+        gKeyHoldL = 0;
+        if (gKeyReleaseL < 255) {
+            gKeyReleaseL++;
         }
     }
+
     if (gKeysHeld & R_BUTTON) {
-        gUnk_0203400F++;
-        gUnk_02034019 = 0;
-        if (gUnk_0203400F > 32) {
-            gUnk_0203400F = 29;
+        gKeyHoldR++;
+        gKeyReleaseR = 0;
+        if (gKeyHoldR > 32) {
+            gKeyHoldR = 29;
         }
     } else {
-        gUnk_0203400F = 0;
-        if (gUnk_02034019 < 255) {
-            gUnk_02034019++;
+        gKeyHoldR = 0;
+        if (gKeyReleaseR < 255) {
+            gKeyReleaseR++;
         }
     }
+
     if (gKeysHeld & A_BUTTON) {
-        gUnk_0203400C++;
-        gUnk_02034016 = 0;
-        if (gUnk_0203400C > 32) {
-            gUnk_0203400C = 29;
+        gKeyHoldA++;
+        gKeyReleaseA = 0;
+        if (gKeyHoldA > 32) {
+            gKeyHoldA = 29;
         }
     } else {
-        gUnk_0203400C = 0;
-        if (gUnk_02034016 < 255) {
-            gUnk_02034016++;
+        gKeyHoldA = 0;
+        if (gKeyReleaseA < 255) {
+            gKeyReleaseA++;
         }
     }
+
     if (gKeysHeld & B_BUTTON) {
-        gUnk_0203400D++;
-        gUnk_02034017 = 0;
-        if (gUnk_0203400D > 32) {
-            gUnk_0203400D = 29;
+        gKeyHoldB++;
+        gKeyReleaseB = 0;
+        if (gKeyHoldB > 32) {
+            gKeyHoldB = 29;
         }
     } else {
-        gUnk_0203400D = 0;
-        if (gUnk_02034017 < 255) {
-            gUnk_02034017++;
+        gKeyHoldB = 0;
+        if (gKeyReleaseB < 255) {
+            gKeyReleaseB++;
         }
     }
+
     if (gKeysHeld & START_BUTTON) {
-        gUnk_02034010++;
-        gUnk_0203401A = 0;
-        if (gUnk_02034010 > 32) {
-            gUnk_02034010 = 29;
+        gKeyHoldStart++;
+        gKeyReleaseStart = 0;
+        if (gKeyHoldStart > 32) {
+            gKeyHoldStart = 29;
         }
     } else {
-        gUnk_02034010 = 0;
-        if (gUnk_0203401A < 255) {
-            gUnk_0203401A++;
+        gKeyHoldStart = 0;
+        if (gKeyReleaseStart < 255) {
+            gKeyReleaseStart++;
         }
     }
+
     if (gKeysHeld & SELECT_BUTTON) {
-        gUnk_02034011++;
-        gUnk_0203401B = 0;
-        if (gUnk_02034011 > 32) {
-            gUnk_02034011 = 29;
+        gKeyHoldSelect++;
+        gKeyReleaseSelect = 0;
+        if (gKeyHoldSelect > 32) {
+            gKeyHoldSelect = 29;
         }
     } else {
-        gUnk_02034011 = 0;
-        if (gUnk_0203401B < 255) {
-            gUnk_0203401B++;
+        gKeyHoldSelect = 0;
+        if (gKeyReleaseSelect < 255) {
+            gKeyReleaseSelect++;
         }
     }
+
     gKeysRepeat = 0;
-    if (gUnk_02034008 == 1 || gUnk_02034008 == 32) {
+
+    if (gKeyHoldLeft == 1 || gKeyHoldLeft == 32) {
         gKeysRepeat |= DPAD_LEFT;
     }
-    if (gUnk_02034009 == 1 || gUnk_02034009 == 32) {
+
+    if (gKeyHoldRight == 1 || gKeyHoldRight == 32) {
         gKeysRepeat |= DPAD_RIGHT;
     }
-    if (gUnk_0203400A == 1 || gUnk_0203400A == 32) {
+
+    if (gKeyHoldUp == 1 || gKeyHoldUp == 32) {
         gKeysRepeat |= DPAD_UP;
     }
-    if (gUnk_0203400B == 1 || gUnk_0203400B == 32) {
+
+    if (gKeyHoldDown == 1 || gKeyHoldDown == 32) {
         gKeysRepeat |= DPAD_DOWN;
     }
-    if (gUnk_0203400E == 1 || gUnk_0203400E == 32) {
+
+    if (gKeyHoldL == 1 || gKeyHoldL == 32) {
         gKeysRepeat |= L_BUTTON;
     }
-    if (gUnk_0203400F == 1 || gUnk_0203400F == 32) {
+
+    if (gKeyHoldR == 1 || gKeyHoldR == 32) {
         gKeysRepeat |= R_BUTTON;
     }
-    if (gUnk_0203400C == 1 || gUnk_0203400C == 32) {
+
+    if (gKeyHoldA == 1 || gKeyHoldA == 32) {
         gKeysRepeat |= A_BUTTON;
     }
-    if (gUnk_0203400D == 1 || gUnk_0203400D == 32) {
+
+    if (gKeyHoldB == 1 || gKeyHoldB == 32) {
         gKeysRepeat |= B_BUTTON;
     }
-    if (gUnk_02034010 == 1 || gUnk_02034010 == 32) {
+
+    if (gKeyHoldStart == 1 || gKeyHoldStart == 32) {
         gKeysRepeat |= START_BUTTON;
     }
-    if (gUnk_02034011 == 1 || gUnk_02034011 == 32) {
+    
+    if (gKeyHoldSelect == 1 || gKeyHoldSelect == 32) {
         gKeysRepeat |= SELECT_BUTTON;
     }
 }
