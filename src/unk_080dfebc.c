@@ -378,7 +378,33 @@ void func_080E0BF4(s16 x, s16 y, s32 a, s32 b) {
 }
 
 INCLUDE_ASM("unk_080dfebc/func_080E0C1C.s");
-INCLUDE_ASM("unk_080dfebc/func_080E1194.s");
+s16 func_080E1194(u8 a, u8 b, s16 c) {
+    switch (a) {
+    case 2:
+    case 6:
+        if (b == 6) {
+            c++;
+        }
+        break;
+    case 4:
+        if (b != 6) {
+            c--;
+        }
+        break;
+    case 1:
+    case 3:
+        if (b == 3) {
+            c--;
+        }
+        break;
+    case 5:
+        if (b != 3) {
+            c++;
+        }
+        break;
+    }
+    return c;
+}
 INCLUDE_ASM("unk_080dfebc/func_080E1204.s");
 
 void func_080E1C64(s16 x, s16 y, u8 n) {
@@ -653,7 +679,7 @@ s32 func_080E58F8(s16 a, s16 b) {
     return func_080E55A4(a, b);
 }
 
-void func_080E590C(UnkStruct_080E590C* p) {
+void func_080E590C(UnkStruct_080E5B90* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
     s32 t;
 
@@ -665,7 +691,7 @@ void func_080E590C(UnkStruct_080E590C* p) {
     q->unk_08 = t;
 }
 
-void func_080E5938(UnkStruct_080E590C* p) {
+void func_080E5938(UnkStruct_080E5B90* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
     s32 t;
 
@@ -677,7 +703,7 @@ void func_080E5938(UnkStruct_080E590C* p) {
     q->unk_08 = -0xA000;
 }
 
-s32 func_080E5968(UnkStruct_080E590C* p) {
+s32 func_080E5968(UnkStruct_080E5B90* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
     s32 t;
     s32 i;
@@ -700,7 +726,32 @@ s32 func_080E5968(UnkStruct_080E590C* p) {
 
 INCLUDE_ASM("unk_080dfebc/func_080E59D8.s");
 INCLUDE_ASM("unk_080dfebc/func_080E5AC8.s");
-INCLUDE_ASM("unk_080dfebc/func_080E5B90.s");
+void func_080E5B90(UnkStruct_080E5B90* p, UnkStruct_0984BC9C* q) {
+    if (q->unk_14 & 4) {
+        func_080E5968(p);
+    } else if (q->unk_14 & 2) {
+        func_080E5938(p);
+    } else {
+        func_080E590C(p);
+    }
+    switch (GetRandom() % 4) {
+    case 0:
+        p->unk_18 = 0xAD;
+        break;
+    case 1:
+        p->unk_18 = 0x53;
+        break;
+    case 2:
+        p->unk_18 = 0xD3;
+        break;
+    default:
+        p->unk_18 = 0x2D;
+        break;
+    }
+    p->unk_1C = 0;
+    p->unk_00 = q;
+    p->unk_04 = 0;
+}
 INCLUDE_ASM("unk_080dfebc/func_080E5C00.s");
 INCLUDE_ASM("unk_080dfebc/func_080E5CD4.s");
 INCLUDE_ASM("unk_080dfebc/func_080E5D6C.s");
@@ -759,8 +810,40 @@ s32 func_080E5FB4(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E6034.s");
-INCLUDE_ASM("unk_080dfebc/func_080E607C.s");
+void func_080E6034(UnkStruct_080E590C* p) {
+    UnkStruct_080E6034* q = func_08000D0C(gUnk_02039BB0.unk_E8);
+
+    if (q != 0) {
+        q->unk_30 = p->unk_00;
+        q->unk_34 = p->unk_CC;
+        q->unk_00 = p->unk_08;
+        q->unk_10 = p->unk_1C;
+        q->unk_14 = p->unk_18;
+        func_08000BC8(q->unk_1C, gUnk_02039BB0.unk_E8);
+    }
+}
+void func_080E607C(void) {
+    UnkStruct_080E6034* q;
+    UnkStruct_080E5B90 w;
+    UnkStruct_0984BC9C* d;
+    s32 i;
+
+    q = func_08000C8C(gUnk_02039BB0.unk_E8);
+    while (q != 0) {
+        d = q->unk_30;
+        w.unk_00 = d;
+        w.unk_04 = q->unk_34;
+        w.unk_08 = q->unk_00;
+        w.unk_18 = q->unk_10;
+        w.unk_1C = q->unk_14;
+        TaskCreate(gUnk_02039BA0->unk_B4, d->unk_10, &w);
+        q = func_08000CD4(q->unk_1C);
+    }
+    func_08000BA4(gUnk_02039BB0.unk_E8);
+    for (i = 0; i < 3; i++) {
+        func_08000BB0(gUnk_02039BB0.unk_40[i].unk_1C, gUnk_02039BB0.unk_E8, gUnk_02039BB0.unk_40[i].unk_00);
+    }
+}
 
 void func_080E6100(void) {
     u8 w[0x20];
