@@ -937,7 +937,7 @@ void func_080D5998(void) {
 
 void func_080D59B4(void) {
     if (gUnk_02034ECA != 0) {
-        func_080010CC(&gUnk_09EF4E50, 0);
+        ModeRequest(&gUnk_09EF4E50, 0);
         return;
     }
 
@@ -948,23 +948,23 @@ void func_080D59B4(void) {
         func_080E04EC();
         return;
     case 1:
-        func_080010CC(&gUnk_09EF6AE0, 0);
+        ModeRequest(&gUnk_09EF6AE0, 0);
         return;
     case 2:
         func_080AEB94();
-        func_080010CC(&gUnk_09EF12F8, 0);
+        ModeRequest(&gUnk_09EF12F8, 0);
         return;
     case 4:
         func_0801CD20();
-        func_080010CC(&gUnk_09EF6AD0, 0);
+        ModeRequest(&gUnk_09EF6AD0, 0);
         return;
     case 5:
         func_0801CCB4();
-        func_080010CC(&gUnk_09EF6AD0, 0);
+        ModeRequest(&gUnk_09EF6AD0, 0);
         return;
     case 0:
     default:
-        func_080010CC(&gUnk_09EF6AD0, 0);
+        ModeRequest(&gUnk_09EF6AD0, 0);
         return;
     }
 }

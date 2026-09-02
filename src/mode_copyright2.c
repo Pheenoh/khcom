@@ -25,7 +25,7 @@ void mode_copyright2_1(void) {
                 func_08006184(0, 0x43);
             }
         } else {
-            func_080010CC(&gUnk_09EF4E50, 0);
+            ModeRequest(&gUnk_09EF4E50, 0);
         }
     }
 }

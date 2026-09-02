@@ -14,7 +14,7 @@ mode_chkeff_1: @ 0800BC50
 	beq _0800BC70
 	ldr r0, _0800BC6C @ =0x09ECEB64
 	movs r1, #0x00
-	bl func_080010CC
+	bl ModeRequest
 	b _0800BF44
 	.byte 0x00, 0x00
 _0800BC6C: .4byte 0x09ECEB64

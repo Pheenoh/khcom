@@ -15,8 +15,8 @@ typedef struct DebugWork {
     AnimState unk_0C;
 } DebugWork;
 
-void func_080010CC(Mode* mode, s32 arg);
-void func_080010E0(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
+void ModeRequestHeapReset(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);

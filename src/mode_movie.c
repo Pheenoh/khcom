@@ -130,13 +130,13 @@ void mode_movie_1(void) {
                 func_0806180C(57);
                 break;
             case 4:
-                func_080010CC(gUnk_09EFA9C4, 0);
+                ModeRequest(gUnk_09EFA9C4, 0);
                 break;
             case 5:
-                func_080010CC(gUnk_09EFA9C4, 0);
+                ModeRequest(gUnk_09EFA9C4, 0);
                 break;
             default:
-                func_080010CC(gUnk_09ECEB64, 0);
+                ModeRequest(gUnk_09ECEB64, 0);
                 break;
             }
         }

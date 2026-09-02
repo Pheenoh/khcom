@@ -74,7 +74,7 @@ void mode_debflag_1(void) {
         if (gUnk_02039B94 != 0) {
             func_080E04EC();
         } else {
-            func_080010CC(&gUnk_09ECEB64, 0);
+            ModeRequest(&gUnk_09ECEB64, 0);
         }
     } else {
         func_080605A4(0);

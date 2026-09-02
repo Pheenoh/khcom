@@ -43,8 +43,8 @@ extern Mode gUnk_09EF8F9C;
 extern Mode gUnk_09EF4EC0;
 
 void func_08001248(void (*fn)(void));
-void func_080010CC(Mode* mode, s32 arg);
-void func_080010E0(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
+void ModeRequestHeapReset(Mode* mode, s32 arg);
 void func_08004DB0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

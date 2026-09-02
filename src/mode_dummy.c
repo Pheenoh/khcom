@@ -40,11 +40,11 @@ void func_0800C064(void) {
 
         switch (entry->unk_08) {
         case 0:
-            func_080010E0(&gUnk_09EDE4D0, 1);
+            ModeRequestHeapReset(&gUnk_09EDE4D0, 1);
             break;
         case 1:
             gUnk_02039BB0.unk_180 = 0x200;
-            func_080010CC(&gUnk_09EF8F9C, 0);
+            ModeRequest(&gUnk_09EF8F9C, 0);
             break;
         case 2:
             func_080DF380();
@@ -70,7 +70,7 @@ void func_0800C064(void) {
             break;
         case 9:
         default:
-            func_080010CC(&gUnk_09EF4EC0, 0);
+            ModeRequest(&gUnk_09EF4EC0, 0);
             break;
         }
     } else {

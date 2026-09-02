@@ -30,7 +30,7 @@ extern u8 gUnk_09841F98[];
 extern u8 gUnk_09801C98[];
 extern Mode gUnk_09EF4E50;
 
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void func_08004DB0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgTiles(s32 bg, void* src, u16 size);

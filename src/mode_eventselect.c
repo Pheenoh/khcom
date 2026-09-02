@@ -85,7 +85,7 @@ void mode_eventselect_1(void) {
     }
 
     if (GetKeysPressed() & B_BUTTON) {
-        func_080010CC(&gUnk_09ECEB64, 0);
+        ModeRequest(&gUnk_09ECEB64, 0);
     }
 
     func_080605A4(0);

@@ -72,7 +72,7 @@ void mode_sio_btl_connect_1(void) {
             }
             gUnk_0203A9EC = 0;
             gUnk_0203A9F0 = 0;
-            func_080010CC(&gUnk_09EF14DC, 0);
+            ModeRequest(&gUnk_09EF14DC, 0);
             return;
         }
         break;
@@ -96,7 +96,7 @@ void func_080AEE50(void) {
 
 void func_080AEE6C(void) {
     m4aSongNumStart(0x68);
-    func_080010CC(&gUnk_09EF12F8, 2);
+    ModeRequest(&gUnk_09EF12F8, 2);
 }
 
 void func_080AEE84(void) {
@@ -420,7 +420,7 @@ void func_080AFADC(void) {
             m4aMPlayAllStop();
             gUnk_0203A9EC = 0;
             gUnk_0203A9F0 = 0;
-            func_080010CC(&gUnk_09EF1308, 0);
+            ModeRequest(&gUnk_09EF1308, 0);
         }
     } else if ((gUnk_02039810[1][0] & 0xFFF0) == 0x1F20) {
         gUnk_02034B40->unk_416 = 10;
@@ -507,7 +507,7 @@ void func_080AFCD4(void) {
             gUnk_02034B40->unk_002 = 9;
             break;
         case 1:
-            func_080010CC(&gUnk_09EE2704, 0);
+            ModeRequest(&gUnk_09EE2704, 0);
             break;
         case 2:
             gUnk_02034B40->unk_1E0 = 0;
@@ -724,9 +724,9 @@ void func_080B0494(void) {
         func_080C5DC0(func_080C5E58, func_080C5ECC);
         func_080B0F18();
         if (gUnk_02039828 == 0) {
-            func_080010CC(&gUnk_09ED9B98, 0);
+            ModeRequest(&gUnk_09ED9B98, 0);
         } else {
-            func_080010CC(&gUnk_09ED9B98, 1);
+            ModeRequest(&gUnk_09ED9B98, 1);
         }
     }
 }
@@ -1163,7 +1163,7 @@ void mode_sio_btl_cardget_1(void) {
         func_080B1848();
         break;
     case 9:
-        func_080010E0(&gUnk_09EF14DC, 0);
+        ModeRequestHeapReset(&gUnk_09EF14DC, 0);
         gUnk_02034B44->unk_00++;
         break;
     }
@@ -1278,7 +1278,7 @@ void func_080B1BE0(void) {
 
 void func_080B1BFC(void) {
     m4aSongNumStart(0x68);
-    func_080010CC(&gUnk_09EF12F8, 3);
+    ModeRequest(&gUnk_09EF12F8, 3);
 }
 
 void func_080B1C14(void) {
@@ -1296,7 +1296,7 @@ void func_080B1C14(void) {
     for (i = 0; i < 2; i++) {
         gUnk_0203AB34[i] = 0;
     }
-    func_080010CC(&gUnk_09EF15A8, 0x800);
+    ModeRequest(&gUnk_09EF15A8, 0x800);
 }
 
 void func_080B1C70(u16 a, u16 b, u16 c) {
@@ -1557,21 +1557,21 @@ void func_080B2480(void) {
             m4aSongNumStart(104);
             func_080B3DA0();
             func_080C57B4();
-            func_080010CC(&gUnk_09EF14FC, 3);
+            ModeRequest(&gUnk_09EF14FC, 3);
         }
     } else if (gUnk_02039810[1][0] == 0x1D58) {
         gUnk_02034B4C->unk_BE0 = 10;
         if (gUnk_02039828 == 0) {
             m4aSongNumStart(102);
             gUnk_0203AB10 = gUnk_02034B4C->unk_076;
-            func_080010CC(&gUnk_09EE8F20, 0);
+            ModeRequest(&gUnk_09EE8F20, 0);
         }
     } else if (gUnk_02039810[1][1] == 0x1D58) {
         gUnk_02034B4C->unk_BE0 = 10;
         if (gUnk_02039828 == 1) {
             m4aSongNumStart(102);
             gUnk_0203AB10 = gUnk_02034B4C->unk_076;
-            func_080010CC(&gUnk_09EE8F20, 0);
+            ModeRequest(&gUnk_09EE8F20, 0);
         }
     }
     func_080B2FC0();
@@ -1670,7 +1670,7 @@ void func_080B29D8(void) {
         }
     } else {
         gUnk_03006C78 &= 0xFFFE;
-        func_080010CC(&gUnk_09EF15B8, 0);
+        ModeRequest(&gUnk_09EF15B8, 0);
     }
     gUnk_02034B4C->unk_004 = 0;
     gUnk_02034B4C->unk_001++;
@@ -1727,7 +1727,7 @@ void func_080B2B78(void) {
         }
         gUnk_0203AB34[0] = 0;
         gUnk_0203AB34[1] = 0;
-        func_080010CC(&gUnk_09EF15A8, 0x800);
+        ModeRequest(&gUnk_09EF15A8, 0x800);
     }
 }
 
@@ -2253,7 +2253,7 @@ void mode_wLogo_1(void) {
         }
 
         if (GetKeysPressed() & 2) {
-            func_080010CC(&gUnk_09ECEB64, 0);
+            ModeRequest(&gUnk_09ECEB64, 0);
         }
         break;
     case 1:
@@ -2271,7 +2271,7 @@ void mode_wLogo_1(void) {
     case 3:
         gUnk_02034B5A++;
         if (gUnk_02034B5A > 10) {
-            func_080010CC(&gUnk_09EF160C, gUnk_02034B59);
+            ModeRequest(&gUnk_09EF160C, gUnk_02034B59);
         }
         break;
     }

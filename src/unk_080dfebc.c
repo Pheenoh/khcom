@@ -217,13 +217,13 @@ void func_080E04EC(void) {
     case 0xFC:
     case 0xFD:
     case 0xFE:
-        func_080010CC(&gUnk_09EF6AC0, 0);
+        ModeRequest(&gUnk_09EF6AC0, 0);
         break;
     default:
         if (gUnk_0203C590[4] != 13) {
-            func_080010CC(&gUnk_09EF6AA0, 0);
+            ModeRequest(&gUnk_09EF6AA0, 0);
         } else {
-            func_080010CC(&gUnk_09EF3C88, 1);
+            ModeRequest(&gUnk_09EF3C88, 1);
         }
         break;
     }

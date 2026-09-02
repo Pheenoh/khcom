@@ -23,7 +23,7 @@ extern const char gUnk_08130E40[];
 extern const char gUnk_08130E48[];
 extern Mode gUnk_09ECEB64;
 
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
 void func_08004DB0(void);
 void EnableBg(s32 a);

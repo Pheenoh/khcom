@@ -226,7 +226,7 @@ void func_08105BD8(void);
 void func_08105DE0(void);
 void func_0810601C(void);
 void func_081061DC(void);
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void func_080E04EC(void);
 u16 func_08005B30(AnimState* a);
 void AnimStart(AnimState* a, u16 animId, u16 flags);

@@ -17,7 +17,7 @@ extern TaskDesc gUnk_09EE9190;
 extern const char gUnk_081309B0[];
 extern const char gUnk_081309D0[];
 
-void func_080010CC(Mode* mode, s32 b);
+void ModeRequest(Mode* mode, s32 b);
 u16 GetKeysRepeat(void);
 void func_08004DB0(void);
 void func_0809D2B0(u8 x, u8 y, u8 c, const char* s);

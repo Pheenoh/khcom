@@ -31,7 +31,7 @@ extern u32 gUnk_02039820;
 extern u16 gUnk_03006C00;
 
 void func_080C55DC(void);
-void func_08001100(void);
+void ModeUpdate(void);
 void* func_08000CD4(Node* node);
 void* func_08000CF0(Node* node);
 

@@ -62,7 +62,7 @@ void func_08006404(void);
 void m4aSoundInit(void);
 void m4aSoundVSyncOn(void);
 void func_0806180C(s32 a);
-void func_080010CC(void* a, s32 b);
+void ModeRequest(void* a, s32 b);
 void func_0805EA90(void);
 void func_0805E93C(void);
 

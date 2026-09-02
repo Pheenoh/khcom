@@ -545,14 +545,14 @@ _0801111C:
 	bgt _08011148
 	ldr r0, _08011144 @ =0x09EF14EC
 	movs r1, #0x01
-	bl func_080010CC
+	bl ModeRequest
 	b _08011260
 	.byte 0x00, 0x00
 _08011144: .4byte 0x09EF14EC
 _08011148:
 	ldr r0, _08011154 @ =0x09EF14EC
 	movs r1, #0x00
-	bl func_080010CC
+	bl ModeRequest
 	b _08011260
 	.byte 0x00, 0x00
 _08011154: .4byte 0x09EF14EC

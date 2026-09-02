@@ -16,7 +16,7 @@ void mode_chksnd_1(void) {
     keys = GetKeysPressed() & 2;
 
     if (keys != 0) {
-        func_080010CC(&gUnk_09ECEB64, 0);
+        ModeRequest(&gUnk_09ECEB64, 0);
     } else {
         if (GetKeysRepeat() & DPAD_LEFT) {
             gUnk_020348B4--;

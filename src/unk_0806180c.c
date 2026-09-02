@@ -2,7 +2,7 @@
 #include "unk_0806180c.h"
 
 void func_0806180C(u16 a) {
-    func_080010CC(gUnk_09EE274C, a);
+    ModeRequest(gUnk_09EE274C, a);
 }
 INCLUDE_ASM("unk_0806180c/func_08061824.s");
 INCLUDE_ASM("unk_0806180c/func_08061FC8.s");
@@ -12,12 +12,12 @@ void func_0806297C(void) {
 
     switch (gUnk_02034A78) {
     case 68:
-        func_080010CC(gUnk_09EE274C, 69);
+        ModeRequest(gUnk_09EE274C, 69);
         break;
     case 83:
     case 84:
         gUnk_02039BB0.unk_0D = 5;
-        func_080010CC(gUnk_09ECEB40, m->unk_20);
+        ModeRequest(gUnk_09ECEB40, m->unk_20);
         break;
     }
 }

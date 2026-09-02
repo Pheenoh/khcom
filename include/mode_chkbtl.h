@@ -54,7 +54,7 @@ typedef struct ChkBtlSetup {
     u8 unk_FC[0x80];
     u16 unk_17C;
 } ChkBtlSetup;
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
 void func_08004DB0(void);
 void EnableBg(s32 a);

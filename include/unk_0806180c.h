@@ -353,7 +353,7 @@ void func_08000F8C(void* a, void* b);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
 void* memcpy(void* dst, const void* src, unsigned long n);
-void func_080010CC(void* mode, s32 arg);
+void ModeRequest(void* mode, s32 arg);
 void* TaskCreate(void* a, TaskDesc* desc, void* arg);
 void TaskPoolDestroy(void* pool);
 void TaskPoolDraw(void* pool);

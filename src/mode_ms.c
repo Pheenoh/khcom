@@ -202,7 +202,7 @@ void mode_ms_top_1(void) {
     case 11:
         if (func_08006314() == 0) {
             if (gUnk_020357C4 != 0) {
-                func_080010CC(gUnk_020357C4, 0);
+                ModeRequest(gUnk_020357C4, 0);
             } else {
                 func_080E04EC();
             }
@@ -1328,7 +1328,7 @@ void mode_ms_shop_1(void) {
     case 5:
         if (func_08006314() == 0) {
             if (gUnk_02035C0C != 0) {
-                func_080010CC(&gUnk_09EF95E8, 2);
+                ModeRequest(&gUnk_09EF95E8, 2);
             } else {
                 func_080E04EC();
             }

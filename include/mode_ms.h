@@ -180,7 +180,7 @@ void func_08065ACC(void* a, s32 b);
 void UpdatePlayTime(void);
 u8 func_08006314(void);
 void func_080061E8(s32 a, u16 b);
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void func_080E04EC(void);
 void func_0810264C(u16 a, u16 b, u16 c);
 u8 func_0810329C(u16 a);

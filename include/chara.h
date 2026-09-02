@@ -229,7 +229,7 @@ void func_08008944(u16 a);
 void func_0800895C(u16 a);
 u16* func_08083C94(void);
 u16* func_08083D7C(void);
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void TaskPoolInit(void* a, s32 count);
 u16 GetRandom(void);
 void SeedRandom(u32 seed);

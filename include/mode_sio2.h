@@ -195,7 +195,7 @@ extern TaskDesc gUnk_09EF4C58;
 extern TaskDesc gUnk_09EF4D80;
 extern TaskDesc gUnk_09EF4D98;
 
-void func_080010CC(Mode* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 u8 func_08000F48(Task* t);
 u16 GetKeysRepeat(void);
 void func_08002A10(void* a, void* b);

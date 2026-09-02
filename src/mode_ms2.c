@@ -166,7 +166,7 @@ void mode_ms_charge_1(void) {
     case 2:
         if (!func_08006314()) {
             if (gUnk_02035E20 != 0) {
-                func_080010CC(&gUnk_09EF95E8, 2);
+                ModeRequest(&gUnk_09EF95E8, 2);
             } else {
                 func_080E04EC();
             }
