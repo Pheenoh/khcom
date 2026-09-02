@@ -1194,9 +1194,33 @@ INCLUDE_ASM("unk_0800eebc/func_08016D00.s");
 INCLUDE_ASM("unk_0800eebc/func_08016F2C.s");
 INCLUDE_ASM("unk_0800eebc/func_08017008.s");
 INCLUDE_ASM("unk_0800eebc/func_0801709C.s");
-INCLUDE_ASM("unk_0800eebc/func_08017138.s");
+void func_08017138(u16 a) {
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_0A = a;
+    gUnk_02034928->unk_26 = 0;
+    func_08006778(gUnk_09EDABD0, 120, 80);
+    gUnk_02034928->unk_04 = func_0801709C;
+    func_08006B34(0);
+    gUnk_02034928->unk_34 |= 0x10;
+}
 INCLUDE_ASM("unk_0800eebc/func_0801718C.s");
-INCLUDE_ASM("unk_0800eebc/func_080171FC.s");
+void func_080171FC(u16 a) {
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_0A = a;
+    gUnk_02034928->unk_0C = 0;
+    gUnk_02034928->unk_26 = 0;
+    func_08006778(gUnk_09EDABE8, 120, 80);
+    func_0800675C(10, 0x133, 0x133);
+    gUnk_02034928->unk_04 = func_0801718C;
+    func_08006B34(0);
+    gUnk_02034928->unk_34 |= 0x10;
+}
 
 void func_08017260(s32 x, s32 y, s32 z, s32 s) {
     s16 sx;
@@ -1357,7 +1381,20 @@ void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w) {
     gUnk_02034928->unk_34 |= 8;
 }
 
-INCLUDE_ASM("unk_0800eebc/func_08018970.s");
+void func_08018970(s32 x, s32 y, s32 z) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(1)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDAD50, sx, sy);
+    gUnk_02034928->unk_04 = func_08012908;
+}
 INCLUDE_ASM("unk_0800eebc/func_080189DC.s");
 INCLUDE_ASM("unk_0800eebc/func_08018A70.s");
 void func_08018B04(s32 x, s32 y, s32 z, s32 s) {
@@ -1380,7 +1417,20 @@ INCLUDE_ASM("unk_0800eebc/func_08018B78.s");
 INCLUDE_ASM("unk_0800eebc/func_08018C38.s");
 INCLUDE_ASM("unk_0800eebc/func_08018CC4.s");
 INCLUDE_ASM("unk_0800eebc/func_08018F28.s");
-INCLUDE_ASM("unk_0800eebc/func_08018FE4.s");
+void func_08018FE4(s32 x, s32 y, s32 z) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(2)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDADB0, sx, sy);
+    gUnk_02034928->unk_04 = func_08012908;
+}
 
 void func_08019050(u16 a, s32 b, s32 c, s32 d) {
     gUnk_02039B84->unk_028 = b;
