@@ -5,6 +5,11 @@
 #include "anim.h"
 #include "taskpool.h"
 
+typedef struct VsActorSub {
+    u8 unk_00[0x30];
+    u16 unk_30;
+} VsActorSub;
+
 typedef struct VsActor {
     s32 unk_00;
     s32 unk_04;
@@ -30,7 +35,14 @@ typedef struct VsActor {
     u8 unk_44[0x04];
     u32 unk_48;
     u32 unk_4C;
-    u8 unk_50[0x4C];
+    u8 unk_50[0x1C];
+    u8 unk_6C;
+    u8 unk_6D[0x0B];
+    s32 unk_78;
+    s32 unk_7C;
+    u8 unk_80[0x10];
+    VsActorSub* unk_90;
+    u8 unk_94[0x08];
     u16 unk_9C;
     u8 unk_9E[0x04];
     u16 unk_A2;
@@ -91,7 +103,10 @@ typedef struct UnkStruct_02039BB0 {
 } UnkStruct_02039BB0;
 
 typedef struct VsBattleWork {
-    u8 unk_000[0x24];
+    u8 unk_000[0x10];
+    s32 unk_010;
+    s32 unk_014;
+    u8 unk_018[0x0C];
     s32 unk_024;
     u8 unk_028[0x04];
     TaskPool unk_02C;
@@ -107,13 +122,22 @@ typedef struct VsBattleWork {
     VsActor* unk_07C;
     u8 unk_080[0x28];
     VsActor* unk_0A8;
-    u8 unk_0AC[0x40];
+    u8 unk_0AC[0x07];
+    u8 unk_0B3;
+    u8 unk_0B4[0x26];
+    s16 unk_0DA;
+    s16 unk_0DC;
+    s16 unk_0DE;
+    s16 unk_0E0;
+    u8 unk_0E2[0x0A];
     u16 unk_0EC;
     u8 unk_0EE;
     u8 unk_0EF;
     u8 unk_0F0[0x30];
     s16 unk_120;
-    u8 unk_122[0xA2];
+    u8 unk_122[0x0A];
+    s32 unk_12C;
+    u8 unk_130[0x94];
     u16 unk_1C4;
     u16 unk_1C6;
     u8 unk_1C8[0x08];
@@ -122,8 +146,10 @@ typedef struct VsBattleWork {
 typedef struct EmyDef {
     void* unk_00;
     void* unk_04;
-    u32 unk_08;
-    u8 unk_0C[0x06];
+    s32 unk_08;
+    u16 unk_0C;
+    u16 unk_0E;
+    u16 unk_10;
     u16 unk_12;
     u16 unk_14;
     u16 unk_16;
@@ -149,7 +175,7 @@ typedef struct EmyWork {
     u32 unk_14C;
     u32 unk_150;
     s16 unk_154;
-    u16 unk_156;
+    s16 unk_156;
     u16 unk_158;
     u8 unk_15A;
     u8 unk_15B;
@@ -157,7 +183,7 @@ typedef struct EmyWork {
     u8 unk_160;
     u8 unk_161;
     u16 unk_162;
-    u32 unk_164;
+    s32 unk_164;
     s32 unk_168;
     u32 unk_16C;
     s32 unk_170;
@@ -190,22 +216,22 @@ typedef struct HumWork {
     AnimState unk_014;
     TaskPool unk_02C;
     VsActor unk_040;
-    u16 unk_150;
-    u16 unk_152;
+    s16 unk_150;
+    s16 unk_152;
     u32 unk_154;
     u32 unk_158;
     u32 unk_15C;
     u32 unk_160;
-    u32 unk_164;
+    s32 unk_164;
     s32 unk_168;
     s32 unk_16C;
     u32 unk_170;
-    u16 unk_174;
+    s16 unk_174;
     u16 unk_176;
     void* unk_178;
     u16 unk_17C;
     u16 unk_17E;
-    u32 unk_180;
+    void* unk_180;
     u32 unk_184;
 } HumWork;
 
@@ -214,6 +240,13 @@ typedef struct HumSubDef {
     u16 unk_04;
     u16 unk_06;
 } HumSubDef;
+
+typedef struct PrizeCardArg {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x14];
+} PrizeCardArg;
 
 typedef struct HumDef {
     u16 unk_00;
@@ -263,7 +296,14 @@ s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void m4aSongNumStart(u16 id);
+u8 AnimIsFinished(AnimState* a);
+void ApproachValue(s32* value, s32 target, u16 steps);
+u16 GetRandom(void);
 void func_08004F08(void);
+void func_080063A8(void);
+void func_08006238(s32 a, s32 b, s32 c);
+u8 func_08006314(void);
+void func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
 void func_0800592C(s32* value, s32 target, u16 steps);
 void func_08005B64(void* a);
 void func_08006120(s32 a, s32 b);
@@ -271,21 +311,60 @@ void func_08010CC8(void);
 void func_0801071C(void);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0801227C(void);
+void func_08012324(void* a, s32 x, s32 y, s32 z);
+void func_08012614(void* a, s32 b);
+u8 func_080128EC(void);
+void func_08013A68(s32 a, s32 b, s32 c);
+void func_08014A34(s32 x, s32 y);
+void func_08014AAC(s32 x, s32 y);
+void func_0801536C(void);
 void func_080125A4(void);
 void func_08012798(s32 a, u16 b);
 void func_08012810(void);
 void func_08012824(void);
+void func_08019050(s32 a, s32 b, s32 c, s32 d);
 void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
+void func_08019190(VsActor* a, s32 b);
+u32 func_0801A8A4(s32* px, s32* py, s16 rx, s16 ry);
 void func_0801A920(s16 a, s16 b, s16 c, s16 d);
 s32 func_0801ADAC(void* a);
 void func_0801AF08(void* p);
+void func_0801AF4C(VsActor* a);
 u16 func_0801AF1C(s32 a);
 void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 void func_0801B7D8(void* p);
+void func_0801B008(void);
+void func_0801B918(VsActor* a);
 void func_0801C068(void);
 void func_0801C104(void);
+void func_0801C700(VsActor* actor, s32* a, s32* b, s32* c);
+void func_0801BBF0(VsActor* a);
+void func_0801BCD4(void* a);
+void func_0801BCF8(VsActor* a);
+void func_0801B994(VsActor* a);
+void func_0801C830(VsActor* a);
+u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
+u8 func_08005AC4(AnimState* a);
+void func_08006B4C(void);
+u8 func_08006B74(void);
+void SetBlendAlpha(u16 a, u16 b);
+void func_08013DB8(s32 a, s32 b, s32 c);
+void func_08013E4C(s32 a, s32 b, s32 c);
+extern vu32 gFrameCounter;
+extern u16 gBldCnt;
 void func_0801C2DC(void* a, s32 b);
 u8 func_0801CA00(void* a);
+void func_0802F284(s32 a, s32 b, s32 c);
+void func_0807E1A0(void);
+void func_0807E1AC(void);
+void func_0807E1B8(void);
+void func_0807E1C4(void);
+void func_0807E1D0(void);
+void func_0807E1DC(void);
+void func_0807E1E8(void);
+u8 func_0807E29C(void);
+void func_0807E2F4(void);
+void func_08096DC4(TaskPool* pool, void* arg);
 
 void mode_vsbattle_0(u32 mode);
 void mode_vsbattle_1(void);
@@ -307,6 +386,8 @@ void func_0800E364(HumSub* sub);
 void func_0800E380(HumWork* work);
 void func_0800E3D0(HumWork* work);
 s32 _0800E434(HumWork* work);
+s32 _0800CDF0(EmyWork* work);
 void func_0800E5CC(HumSub* sub);
+s32 func_0800E5F0(HumWork* work);
 
 #endif
