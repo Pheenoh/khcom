@@ -466,7 +466,75 @@ void func_08060F1C(void) {
 void func_08060F64(void) {
     TaskPoolDestroy(&gUnk_02034A48);
 }
-INCLUDE_ASM("mode_test/func_08060F74.s");
+void func_08060F74(s32 arg) {
+    EvtArg cfg;
+    UnkStruct_09EE3CA0* e;
+
+    gUnk_02039DC8 = EwramAlloc(0x8C);
+    e = gUnk_09EE3CA0[arg & 0x7FFF];
+    gBldCnt = 0;
+    gBldAlpha = 0;
+    gUnk_02034A78 = arg;
+    gUnk_02034A74 = 0;
+
+    if (e != 0) {
+        if (e->unk_24 != 0) {
+            func_08004E64();
+            SetupBg(0, 3, 31, 14);
+            SetupBg(1, 0, 16, 0);
+            SetupBg(2, 0, 17, 0);
+            SetupBg(3, 0, 18, 0);
+            SetBgPriority(0, 0);
+            SetBgPriority(1, 1);
+            SetBgPriority(2, 2);
+            SetBgPriority(3, 3);
+        } else {
+            func_08004DB0();
+            SetupBg(0, 3, 31, 14);
+            SetupBg(1, 0, 21, 0);
+            SetupBg(2, 0, 22, 0);
+            SetupBg(3, 0, 23, 0);
+            SetBgPriority(0, 0);
+            SetBgPriority(1, 1);
+            SetBgPriority(2, 2);
+            SetBgPriority(3, 3);
+            DisableBg(0);
+            DisableBg(1);
+            DisableBg(2);
+            DisableBg(3);
+        }
+    } else {
+        func_08004DB0();
+        func_08004DB0();
+        SetupBg(0, 0, 22, 0);
+        SetupBg(1, 0, 24, 0);
+        SetupBg(2, 2, 28, 14);
+        SetBgPriority(0, 3);
+        SetBgPriority(1, 2);
+        SetBgPriority(2, 1);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+    }
+
+    cfg.unk_00 = arg;
+    gUnk_02039DC8->unk_74 = arg & 0x7FFF;
+
+    if (arg & 0x8000) {
+        cfg.unk_08 = 0;
+    } else {
+        cfg.unk_08 = 1;
+    }
+
+    if (gUnk_09EE3FB4[gUnk_02034A78 & 0x8000]->unk_08->unk_14 & 0x80) {
+        func_08006120(1, 999);
+    }
+
+    TaskPoolInit(&gUnk_02034A60, 2);
+    TaskCreate(&gUnk_02034A60, &gUnk_09EE46D4, &cfg);
+    func_080A42B4();
+    gUnk_02034A7C = 0;
+}
 void func_0806119C(void) {
     if (gUnk_02039DC8 == 0) {
         func_080010CC(&gUnk_09EE47AC, 0);
