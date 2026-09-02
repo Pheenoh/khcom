@@ -323,42 +323,58 @@ def main():
                                 if owner.get(r[0]) == obj and r[5])
         return addrs[len(addrs) // 2] if addrs else None
 
-    # US splits the post-code region into named units for progress reporting.
-    # Other versions keep the two generated blobs, because their internal
-    # boundaries are not known and the concatenated bytes are identical either
-    # way. Drop the US-only region lines and rebuild the canonical tail below.
-    us_data_units = {
-        "rodata_tables", "rodata_strings", "rodata_tasknames", "rodata_script",
-        "asset_gfx", "asset_fmv", "asset_misc1", "asset_misc2",
-        "rodata_regtables", "rodata_tail", "padding",
-    }
-    head, body, tail = [], [], []
+    placed = re.compile(r"^ (\.\w+) +0x(0[89][0-9a-f]{6}) +0x([0-9a-f]+) "
+                        r"build/us/src/(\S+)\.o$")
+    spans = {}
+    for line in Path("build/us/com_us.map").read_text().splitlines():
+        m = placed.match(line)
+        if m:
+            spans[(m.group(4) + ".c", m.group(1))] = (int(m.group(2), 16),
+                                                      int(m.group(3), 16))
+
+    head, body, cdata = [], [], []
     for line in Path("config/us/units.txt").read_text().splitlines():
         t = line.strip()
-        if t.endswith(")") and t.split("(")[0].removesuffix(".s") in us_data_units:
+        if t.endswith(")"):
+            nm, _, sec = t.partition("(")
+            if nm.endswith(".s"):
+                continue
+            lo, size = spans[(nm, sec[:-1])]
+            here, _ = tr(lo)
+            cdata.append((here, here + size, line))
             continue
-        if not t or t.startswith("#") or t.endswith(".s") or "(" in t.split()[0]:
-            (tail if t.endswith(")") else head).append(line)
+        if not t or t.startswith("#") or t.endswith(".s"):
+            head.append(line)
             continue
-        name = t.split()[0]
-        body.append((unit_key(name), line))
+        body.append((unit_key(t.split()[0]), line))
     ordered = [l for k, l in sorted(body, key=lambda kl: (kl[0] is None, kl[0]))]
     moved = [l for (k, l), l2 in zip(body, ordered) if l != l2]
     if moved:
         print(f"  units reordered: {len(moved)}")
-    tail = ["data.s(.rodata)"] + tail + ["data2.s(.rodata)"]
+
+    tail, bounds = [], []
+    pos = code_end
+    for lo, hi, line in sorted(cdata):
+        if lo > pos:
+            nm = "data.s" if not bounds else f"data{len(bounds) + 1}.s"
+            bounds.append((nm, pos, lo))
+            tail.append(f"{nm}(.rodata)")
+        tail.append(line)
+        pos = hi
+    nm = "data.s" if not bounds else f"data{len(bounds) + 1}.s"
+    bounds.append((nm, pos, ROM_END))
+    tail.append(f"{nm}(.rodata)")
     units = head + ordered + tail
 
-    tbl_start, _ = tr(0x09D6D4BC)
-    tbl_end, _ = tr(0x09D6D5ED)
-    data_bounds = [(code_end, tbl_start), (tbl_end, ROM_END)]
-    for i, (lo, hi) in enumerate(data_bounds):
-        nm = "data.s" if i == 0 else "data2.s"
+    for nm, lo, hi in bounds:
         Path(f"asm/{ver}/{nm}").write_text(
             f'\t.section .rodata\n\t.global data_{lo:08X}\ndata_{lo:08X}:\n'
             f'\t.incbin "roms/{code}.gba", {lo - ROM_BASE:#x}, {hi - lo:#x}\n')
-    print(f"  data.s {data_bounds[0][0]:#x}..{data_bounds[0][1]:#x}  "
-          f"data2.s {data_bounds[1][0]:#x}..{data_bounds[1][1]:#x}")
+    fresh = {nm for nm, _lo, _hi in bounds}
+    for old in Path(f"asm/{ver}").glob("data*.s"):
+        if old.name not in fresh:
+            old.unlink()
+    print("  " + "  ".join(f"{nm} {lo:#x}..{hi:#x}" for nm, lo, hi in bounds))
 
     Path(f"config/{ver}/units.txt").write_text("\n".join(units) + "\n")
     print(f"  units.txt: {len(units)} entries")
