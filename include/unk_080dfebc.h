@@ -39,11 +39,14 @@ typedef struct UnkStruct_02039BA0 {
     s32 unk_1C;
     s32 unk_20;
     s32 unk_24;
-    u8 unk_28[0x40];
+    u8 unk_28[0x30];
+    u8 unk_58[0x10];
     s32 unk_68;
-    u8 unk_6C[0x04];
+    u16 unk_6C;
+    u16 unk_6E;
     u32 unk_70;
-    u8 unk_74[0x04];
+    u16 unk_74;
+    u16 unk_76;
     u8 unk_78[0x14];
     u8 unk_8C[0x14];
     u8 unk_A0[0x14];
@@ -60,7 +63,9 @@ typedef struct UnkStruct_0203C7AC {
     u8 unk_0E[0x02];
     s32 unk_10;
     s32 unk_14;
-    u8 unk_18[0x08];
+    u8 unk_18;
+    u8 unk_19[0x03];
+    s32 unk_1C;
     u8 unk_20;
     u8 unk_21[0x03];
     s32 unk_24;
@@ -145,6 +150,14 @@ typedef struct UnkStruct_080E92B8 {
     u8 unk_04[0x21C];
     UnkStruct_02039BB0Tail unk_220;
 } UnkStruct_080E92B8;
+
+typedef struct UnkStruct_0984BB9C {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    u8 unk_0C;
+    u8 unk_0D[0x03];
+} UnkStruct_0984BB9C;
 
 typedef struct UnkStruct_0984BC9C {
     void* unk_00;
@@ -431,6 +444,7 @@ void* GetBgScreenBase(s32 bg);
 void SetBgScroll(s32 a, u16 b, u16 c);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void* TaskCreate(void* pool, void* desc, void* arg);
+void TaskPoolInit(void* pool, s32 count);
 void TaskPoolDestroy(void* pool);
 void TaskPoolDraw(void* pool);
 void* AnimUpdate(void* a);
@@ -505,6 +519,7 @@ u8 func_080E0920(UnkStruct_080DFF1C* p, u16 a);
 u8 func_080E0938(u8 a);
 void func_080E09B4(UnkStruct_080DFB8C* p, u8 n, u8 v);
 void func_080E0A38(UnkStruct_080DFB8C* p);
+void func_080E0A70(UnkStruct_080DFB8C* p, s32 n);
 void func_080E0B98(UnkStruct_080DFB8C* p, s32 n, u8 v);
 void func_080E0BF4(s16 x, s16 y, s32 a, s32 b);
 u8 func_080E1CE0(s16 x, s16 y, u8 n);
@@ -532,6 +547,8 @@ s32 func_080E58F8(s16 a, s16 b);
 void func_080E590C(UnkStruct_080E5B90* p);
 void func_080E5938(UnkStruct_080E5B90* p);
 s32 func_080E5968(UnkStruct_080E5B90* p);
+void func_080E5CD4(UnkStruct_080E590C* p);
+void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a);
 void func_080E5DEC(UnkStruct_080E590C* p);
 u8 func_080E5E44(void);
 void func_080E5F50(UnkStruct_080E590C* p);
