@@ -182,6 +182,8 @@ void _08065994(void) {
         gUnk_02034A84[i].unk_15 = 0;
     }
 }
+
+#ifndef VERSION_JP
 u16 func_080659BC(u8 v, TextSlot* out) {
     u8 buf[8];
     u8 q;
@@ -202,6 +204,9 @@ u16 func_080659BC(u8 v, TextSlot* out) {
     }
     return func_080660C0(buf, out);
 }
+#else
+INCLUDE_ASM("unk_0806180c/func_080659BC.s");
+#endif
 void func_08065A30(void** p, u8 n) {
     s32 i;
 
@@ -220,6 +225,8 @@ void func_08065A44(void** p, u8 n) {
         p++;
     }
 }
+
+#ifndef VERSION_JP
 u16 func_08065A70(u8 v, TextSlot* out) {
     u16 buf[4];
     u16* p;
@@ -241,6 +248,9 @@ u16 func_08065A70(u8 v, TextSlot* out) {
     }
     return func_08065B6C(buf, out);
 }
+#else
+INCLUDE_ASM("unk_0806180c/func_08065A70.s");
+#endif
 
 void func_08065ACC(TextSlot* p, s32 n) {
     s32 i;
