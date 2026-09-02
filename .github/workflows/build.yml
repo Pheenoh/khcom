@@ -54,10 +54,13 @@ jobs:
           ninja
 
       - name: Generate progress report
+        if: matrix.version != 'eu'
         run: python3 -m mapfile_parser objdiff_report report.json --version ${{ matrix.version }}
 
       - name: Upload progress report artifact
+        if: matrix.version != 'eu'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.version }}_report
           path: report.json
+          if-no-files-found: error

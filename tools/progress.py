@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Print a human-readable summary of an objdiff progress report.
 
-Code and data are told apart by input section name, so what the ROM's data
-region is declared as in asm/<ver>/data.s decides which column its 32 MB lands
-in. Code, Asm and Vendored are path buckets over src/, asm/ and the linked
-archive members, not sections.
+Units are bucketed by the progress categories the report already carries, so
+this stays in step with decomp.yaml rather than duplicating its path prefixes.
+A unit counts as linked once every byte the report attributes to it matches.
 """
 
 import argparse
@@ -33,19 +32,21 @@ def main():
     if not args.report.is_file():
         sys.exit(f"Report file {args.report} does not exist")
     report = json.loads(args.report.read_text())
+    units = report.get("units", [])
 
-    prefixes = {"Code": "src/", "Asm": "asm/", "Vendored": "tools/"}
-
-    def files(prefix):
+    def files(category):
         done = total = 0
-        for u in report.get("units", []):
-            if prefix and not u["name"].startswith(prefix):
-                continue
+        for u in units:
+            if category is not None:
+                cats = u.get("metadata", {}).get("progress_categories") or []
+                if category not in cats:
+                    continue
             m = u["measures"]
-            total += 1
             size = to_int(m, "total_code") + to_int(m, "total_data")
-            matched = to_int(m, "matched_code") + to_int(m, "matched_data")
-            if size and matched == size:
+            if not size:
+                continue
+            total += 1
+            if to_int(m, "matched_code") + to_int(m, "matched_data") == size:
                 done += 1
         return done, total
 
@@ -59,20 +60,21 @@ def main():
         if summary:
             summary.write(s + "\n")
 
-    def block(name, m, prefix):
+    def block(name, m, category):
         mc, tc = to_int(m, "matched_code"), to_int(m, "total_code")
         md, td = to_int(m, "matched_data"), to_int(m, "total_data")
         mf, tf = m.get("matched_functions", 0), m.get("total_functions", 0)
-        done, total = files(prefix)
+        done, total = files(category)
         emit(f"  {name}: {pct(mc + md, tc + td):.2f}% matched, "
              f"{pct(done, total):.2f}% linked ({done} / {total} files)")
         emit(f"    Code: {mc:,} / {tc:,} bytes ({mf:,} / {tf:,} functions)")
-        emit(f"    Data: {md:,} / {td:,} bytes ({pct(md, td):.2f}%)")
+        if td:
+            emit(f"    Data: {md:,} / {td:,} bytes ({pct(md, td):.2f}%)")
 
     emit("Progress:")
     block("All", report["measures"], None)
     for c in report.get("categories", []):
-        block(c["name"], c["measures"], prefixes.get(c["name"]))
+        block(c["name"], c["measures"], c["id"])
 
     if summary:
         summary.write("```\n")
