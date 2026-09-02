@@ -219,11 +219,93 @@ void func_080609A0(void) {
     func_0806098C();
 }
 
-INCLUDE_ASM("mode_test/func_080609AC.s");
-INCLUDE_ASM("mode_test/func_08060A2C.s");
-INCLUDE_ASM("mode_test/func_08060A74.s");
-INCLUDE_ASM("mode_test/func_08060AD8.s");
-INCLUDE_ASM("mode_test/func_08060BAC.s");
+u16 func_080609AC(u16 a) {
+    s32 n;
+    u16 v;
+    CardStat* stat;
+
+    if (a & 0x8000) {
+        return gCardDefs[a & 0x0FFF].unk_1C.unk_10;
+    }
+
+    if ((a & 0x0FFF) <= 0x1C1) {
+        stat = &gCardDefs[a & 0x0FFF].unk_1C;
+        n = stat->unk_04;
+
+        if (n == 0) {
+            n = 10;
+        }
+
+        n--;
+        v = stat->unk_10;
+        v += (v / 10) * n;
+        return v;
+    }
+
+    return gCardDefs[a & 0x0FFF].unk_1C.unk_10;
+}
+
+u16 func_08060A2C(u16 a) {
+    u16 v;
+
+    if ((a & 0x8000) == 0) {
+        v = func_080609AC(a) / 5 * 2;
+    } else {
+        v = func_080609AC(a & 0x0FFF) / 5 * 2 + 10;
+    }
+
+    return v;
+}
+
+void func_08060A74(void) {
+    gUnk_02034A44 = 0;
+    TaskPoolInit(&gUnk_02034A30, 1);
+
+    if ((gUnk_02039BB0.unk_008 & 8) == 0) {
+        TaskCreate(&gUnk_02034A30, &gUnk_09EE4AF4, &gUnk_02034A44);
+    } else {
+        TaskCreate(&gUnk_02034A30, &gUnk_09EE8EF0, &gUnk_02034A44);
+    }
+
+    if (gUnk_03006C78 & 1) {
+        m4aMPlayAllStop();
+    }
+}
+
+void func_08060AD8(void) {
+    if (gUnk_03006C78 & 1) {
+        func_080B0754();
+    } else {
+        UpdatePlayTime();
+    }
+
+    TaskPoolUpdate(&gUnk_02034A30);
+    TaskPoolDraw(&gUnk_02034A30);
+
+    if (gUnk_02034A44 == 7) {
+        if (gUnk_03006C10 & 1) {
+            func_080010CC(&gUnk_09ECEB54, 0);
+        } else if (gUnk_03006C78 & 1) {
+            func_080010CC(&gUnk_09EF14DC, 1);
+        } else {
+            func_080E052C(0);
+        }
+    }
+
+    if (gUnk_02034A44 == 8) {
+        if (gUnk_03006C10 & 1) {
+            func_080010CC(&gUnk_09ECEB54, 0);
+        } else if (gUnk_03006C78 & 1) {
+            func_080010CC(&gUnk_09EF14DC, 1);
+        } else {
+            func_080E052C(1);
+        }
+    }
+}
+
+void func_08060BAC(void) {
+    TaskPoolDestroy(&gUnk_02034A30);
+}
 INCLUDE_ASM("mode_test/func_08060BBC.s");
 INCLUDE_ASM("mode_test/func_08060C18.s");
 INCLUDE_ASM("mode_test/func_08060E64.s");
