@@ -60,7 +60,9 @@ typedef struct MsgLine0806180C {
 typedef struct Ent02034A80 {
     void* unk_00;
     void* unk_04;
-    u8 unk_08[0x48];
+    u32 unk_08[16];
+    u32 unk_48;
+    u8 unk_4C[4];
     u8 unk_50;
     u8 unk_51;
     u8 unk_52;
@@ -70,6 +72,8 @@ typedef struct Ent02034A80 {
 typedef struct Ctx02039BB0 {
     u8 unk_00[8];
     u32 unk_08;
+    u8 unk_0C;
+    u8 unk_0D;
 } Ctx02039BB0;
 
 typedef struct MsgFaceCtl {
@@ -109,7 +113,8 @@ typedef struct ContinueWork {
     void* unk_04;
     void* unk_08;
     void* unk_0C;
-    u8 unk_10[8];
+    void* unk_10;
+    void* unk_14;
     void* unk_18;
     void* unk_1C;
     u8 unk_20[0x30];
@@ -250,11 +255,15 @@ typedef struct AnimSet0806180C {
     u8 unk_00;
     u8 unk_01[3];
     AnimEntry0806180C* unk_04;
+    u8 unk_08[0x18];
+    u16 unk_20;
 } AnimSet0806180C;
 
 extern TextCtx* gUnk_02039DC8;
 extern u16 gUnk_09033C8C[];
 extern u8 gUnk_09EE274C[];
+extern u8 gUnk_09ECEB40[];
+extern u8 gUnk_08125E24[];
 extern TaskDesc gUnk_09EE474C[];
 extern u8 gUnk_096145D8[];
 extern u8 gUnk_09614618[];
@@ -326,6 +335,8 @@ u8 func_08006314(void);
 void func_08074504(void);
 void* AnimUpdate(void* a);
 void AnimStart(void* a, s32 b, s32 c);
+void DisableBg(s32 bg);
+void LoadBgMap(s32 bg, void* src, u16 size);
 u16 GetKeysPressed(void);
 u8 func_0807388C(MsgFaceWork* p, void* a);
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a);
