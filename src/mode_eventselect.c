@@ -432,7 +432,8 @@ s32 func_08075CAC(EffectWork* w) {
 
     for (i = 0; i < 8; i++) {
         s->unk_00[i] = gSineTable[s->unk_48[i] & 0xFF] * 8 + w->unk_2C;
-        s->unk_20[i] = -gSineTable[(s->unk_48[i] & 0xFF) + 64] * (s->unk_40[i] + 4) + w->unk_30;
+        s->unk_20[i] = -gSineTable[(s->unk_48[i] & 0xFF) + 64] * (s->unk_40[i] + 4) +
+                       w->unk_30;
         s->unk_48[i] += 4;
 
         if (s->unk_40[i] == 0) {
