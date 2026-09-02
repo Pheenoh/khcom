@@ -10,13 +10,28 @@
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
+typedef struct FldObj {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    u8 unk_10[0x0C];
+    ListNode unk_1C;
+    u8 unk_2C[0x04];
+    u16 unk_30;
+    u8 unk_32[0x02];
+} FldObj;
+
 typedef struct UnkStruct_02039BA0 {
     s32 unk_00;
     s32 unk_04;
     u8 unk_08[0x10];
     s32 unk_18;
     s32 unk_1C;
-    u8 unk_20[0x48];
+    u8 unk_20[0x0C];
+    u8 unk_2C;
+    u8 unk_2D[0x2B];
+    ListNode unk_58;
     s32 unk_68;
     u8 unk_6C[0x04];
     u32 unk_70;
@@ -93,7 +108,7 @@ typedef struct LockonWork {
     void* unk_00;
     void* unk_04;
     void* unk_08;
-    s32 unk_0C[8];
+    FldObj* unk_0C[8];
     u8 unk_2C;
     u8 unk_2D;
     u8 unk_2E;
@@ -139,6 +154,8 @@ void func_0801CB0C(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
 void func_080E04EC(void);
+FldObj* func_08000C8C(ListNode* node);
+FldObj* func_08000CD4(ListNode* node);
 
 void mode_test_0(void);
 void mode_test_1(void);
@@ -172,6 +189,9 @@ void func_08060ED8(void);
 void func_08060F1C(void);
 void func_08060F64(void);
 void task_lockon_0(LockonWork* w);
+s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list);
+u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d);
+void func_080617E8(void);
 void task_lockon_3(LockonWork* w);
 void func_0805F7E8(u8 x, u8 y, u16* s);
 void func_08060598(void);
@@ -190,6 +210,9 @@ extern s32 gUnk_02034A28;
 extern void* gUnk_02034A2C;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern UnkStruct_02039DC4* gUnk_02039DC4;
+extern void* gUnk_02039DC8;
+extern TaskPool gUnk_02034A60;
+extern const s16 gSineTable[];
 extern TaskPool gUnk_02034A30;
 extern TaskPool gUnk_02034A48;
 extern UnkStruct_02034A5C* gUnk_02034A5C;

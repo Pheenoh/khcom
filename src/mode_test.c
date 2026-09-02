@@ -83,7 +83,39 @@ s32 func_0805F5A4(s32* x, s32* y) {
     return d;
 }
 
-INCLUDE_ASM("mode_test/func_0805F5D8.s");
+s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list) {
+    s8 i;
+    s8 best;
+    s32 bestDist;
+    FldObj* o;
+    s32 dist;
+    s32 dx;
+    s32 dy;
+
+    best = -1;
+    bestDist = 0x10000;
+
+    for (i = 0; i < n; i++) {
+        o = w->unk_0C[list[i]];
+
+        if (o != 0) {
+            dx = o->unk_00;
+            dy = o->unk_04;
+            dist = func_0805F588(dx - a, dy - b);
+
+            if (bestDist > dist) {
+                bestDist = dist;
+                best = i;
+            }
+        }
+    }
+
+    if (best != -1) {
+        return list[best];
+    }
+
+    return best;
+}
 
 void func_0805F66C(LockonWork* w) {
     s8 i;
@@ -99,7 +131,34 @@ void func_0805F66C(LockonWork* w) {
     }
 }
 
-INCLUDE_ASM("mode_test/func_0805F6B4.s");
+u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d) {
+    s32 x;
+    s32 y;
+    s32 sn;
+    s32 cs;
+    s32 dot;
+
+    if (d != 0) {
+        x = d->unk_00 - b;
+        y = d->unk_04 - c;
+        sn = gSineTable[a & 0xFF];
+        cs = -gSineTable[(a & 0xFF) + 0x40];
+        func_0805F5A4(&x, &y);
+        dot = (sn * x >> 8) + (y * cs >> 8);
+
+        if (d->unk_30 == 3) {
+            if (dot > 99) {
+                return 1;
+            }
+        } else {
+            if (dot > 19) {
+                return 1;
+            }
+        }
+    }
+
+    return 0;
+}
 
 void func_0805F728(s32* x, s32* y) {
     if (gUnk_02039DC4 != 0) {
@@ -388,4 +447,8 @@ void func_08060F64(void) {
 INCLUDE_ASM("mode_test/func_08060F74.s");
 INCLUDE_ASM("mode_test/func_0806119C.s");
 INCLUDE_ASM("mode_test/func_08061248.s");
-INCLUDE_ASM("mode_test/func_080617E8.s");
+void func_080617E8(void) {
+    TaskPoolDestroy(&gUnk_02034A60);
+    EwramFree(gUnk_02039DC8);
+    gUnk_02039DC8 = 0;
+}
