@@ -294,7 +294,13 @@ s32 func_08012170(s32 a, s32 b, s32 c, s32 d) {
     return func_08011F78(a, b, c, d, 16, 16, 16);
 }
 
-INCLUDE_ASM("unk_0800eebc/func_08012188.s");
+s32 func_08012188(BtlObj* p, s16 h, s32 c) {
+    if (p->unk_034 & 4) {
+        return func_08012170(p->unk_004 - (h << 8), p->unk_008, p->unk_00C - (p->unk_09C >> 1), c);
+    } else {
+        return func_08012170(p->unk_004 + (h << 8), p->unk_008, p->unk_00C - (p->unk_09C >> 1), c);
+    }
+}
 
 void func_080121D4(FldObj* p) {
     func_08000D20(&p->unk_1C, &gUnk_02039BA0->unk_58, p);
@@ -848,7 +854,21 @@ void func_08014AAC(s32 x, s32 y) {
     gUnk_02034928->unk_34 |= 0x10;
 }
 
-INCLUDE_ASM("unk_0800eebc/func_08014B30.s");
+void func_08014B30(s32 x, s32 y) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    WorldToScreen(&sx, &sy, x, y, 0);
+    func_08006778(gUnk_09EDA7E0, sx, sy);
+    func_08006B34(0);
+    gUnk_02034928->unk_04 = func_08012908;
+    gUnk_02034928->unk_34 |= 0x10;
+}
 INCLUDE_ASM("unk_0800eebc/func_08014BA8.s");
 
 void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w) {
@@ -1272,7 +1292,22 @@ void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w) {
 }
 
 INCLUDE_ASM("unk_0800eebc/func_08018970.s");
-INCLUDE_ASM("unk_0800eebc/func_08018B04.s");
+void func_08018B04(s32 x, s32 y, s32 z, s32 s) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(1)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    gUnk_02034928->unk_1C = s;
+    gUnk_02034928->unk_20 = s;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDAD80, sx, sy);
+    gUnk_02034928->unk_04 = func_08012908;
+}
 INCLUDE_ASM("unk_0800eebc/func_08018B78.s");
 INCLUDE_ASM("unk_0800eebc/func_08018CC4.s");
 INCLUDE_ASM("unk_0800eebc/func_08018F28.s");
