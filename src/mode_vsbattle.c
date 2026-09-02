@@ -615,4 +615,365 @@ void func_0800E5CC(HumSub* sub) {
     }
 }
 
-INCLUDE_ASM("mode_vsbattle/func_0800E5F0.s");
+s32 func_0800E5F0(HumWork* work);
+
+s32 func_0800E5F0(HumWork* work) {
+    VsActor* actor = &work->unk_040;
+    s32 x;
+
+    func_0801C700(actor, &x, 0, 0);
+
+    switch (work->unk_170) {
+    case 12:
+        if (work->unk_150 > 100) {
+            work->unk_170 = 0;
+            work->unk_150 = 0;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 1:
+        if (work->unk_150 == 0) {
+            func_08005B64(&work->unk_014);
+        }
+        if (work->unk_150 > 10) {
+            func_0801AF08(actor);
+            work->unk_170 = 2;
+            work->unk_150 = 0;
+            if (actor->unk_04 < x) {
+                if (actor->unk_34 & 4) {
+                    if (GetRandom() % 3 == 0) {
+                        actor->unk_34 &= ~4;
+                    }
+                }
+            } else {
+                if (!(actor->unk_34 & 4)) {
+                    if (GetRandom() % 3 == 0) {
+                        actor->unk_34 |= 4;
+                    }
+                }
+            }
+            func_0800F5A4(work, 3, 64, 64, 32);
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 2:
+        if (AnimIsFinished(&work->unk_014)) {
+            work->unk_170 = 0;
+            work->unk_150 = 0;
+        }
+        break;
+    case 14:
+        if (work->unk_150 == 0) {
+            func_08005B64(&work->unk_014);
+            func_08012614(&actor->unk_40, 1);
+            actor->unk_34 |= 0x100;
+            work->unk_014.frame = 0;
+            work->unk_014.timer = 0;
+            work->unk_158 = 0x400;
+            actor->unk_108 = 0;
+            actor->unk_10C = 0;
+            work->unk_152 = 10;
+        }
+        ApproachValue(&work->unk_16C, 64, work->unk_152--);
+        if (work->unk_152 > 0) {
+            work->unk_150++;
+        } else {
+            work->unk_150 = 0;
+            work->unk_170 = 15;
+        }
+        break;
+    case 15:
+        if (work->unk_150 > 44) {
+            if (actor->unk_2C <= 0) {
+                work->unk_170 = 3;
+            } else {
+                work->unk_170 = 16;
+            }
+            work->unk_150 = 0;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 16:
+        if (work->unk_150 == 0) {
+            func_08012614(&actor->unk_40, 0);
+            work->unk_152 = 10;
+        }
+        func_0800592C(&work->unk_16C, 0x100, work->unk_152--);
+        if (work->unk_152 <= 0) {
+            actor->unk_34 &= ~0x100;
+            func_0801AF08(actor);
+            work->unk_170 = 0;
+            work->unk_150 = 0;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 11:
+        if (work->unk_150 == 0) {
+            func_08005B64(&work->unk_014);
+            work->unk_150++;
+        }
+        if (AnimIsFinished(&work->unk_014)) {
+            actor->unk_34 &= ~0x80;
+            actor->unk_34 &= ~0x2000;
+        }
+        if (GetRandom() % 3 == 0) {
+            actor->unk_EC -= 6;
+        }
+        if (actor->unk_E8 != 1) {
+            func_0801AF08(actor);
+            work->unk_170 = 0;
+            work->unk_150 = 0;
+        }
+        break;
+    case 9:
+        if (AnimIsFinished(&work->unk_014) && work->unk_150 > 60) {
+            func_0801AF08(actor);
+            work->unk_170 = 0;
+            work->unk_150 = 0;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 10:
+        if (work->unk_150 == 0) {
+            work->unk_168 = 0x100;
+            work->unk_16C = 0x100;
+            actor->unk_108 = 0;
+            actor->unk_10C = 0;
+        }
+        work->unk_158 = 0;
+        if (work->unk_150 == 40) {
+            func_08019190(actor, 10);
+            actor->unk_2C -= actor->unk_20;
+            if (actor->unk_2C > actor->unk_2E) {
+                actor->unk_2C = actor->unk_2E;
+            }
+            func_0801AF08(actor);
+            work->unk_170 = 0;
+            work->unk_150 = 0;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 18:
+        if (work->unk_150 == 23) {
+            func_08013A68(actor->unk_04, actor->unk_08, actor->unk_0C - ((actor->unk_9C - 48) << 8));
+        }
+        if (work->unk_150 > 23 && func_080128EC() == 0) {
+            switch (work->unk_17E) {
+            case 0:
+                func_0807E1A0();
+                break;
+            case 1:
+                func_0807E1AC();
+                break;
+            case 2:
+                func_0807E1B8();
+                break;
+            case 3:
+                func_0807E1C4();
+                break;
+            case 4:
+                func_0807E1D0();
+                break;
+            case 5:
+                func_0807E1DC();
+                break;
+            default:
+                func_0807E1E8();
+                break;
+            }
+            func_0801AF08(actor);
+            work->unk_170 = 0;
+            work->unk_150 = 0;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 13:
+        if (actor->unk_E8 != 2) {
+            work->unk_170 = 0;
+            func_0801AF08(actor);
+        }
+        break;
+    case 3:
+        if (work->unk_150 == 0) {
+            func_0801AF4C(actor);
+            if (!(work->unk_154 & 0x40)) {
+                m4aSongNumStart(0x20E);
+            }
+            func_08019050(1, 0x100, gUnk_02039B84->unk_010, gUnk_02039B84->unk_014);
+        }
+        if (func_08006314() == 0) {
+            work->unk_150 = 0;
+            if (work->unk_154 & 0x40) {
+                work->unk_170 = 6;
+            } else {
+                work->unk_170 = 4;
+            }
+        } else {
+            func_0802F284(actor->unk_04, actor->unk_08, actor->unk_0C);
+            work->unk_150++;
+        }
+        break;
+    case 4:
+        if (work->unk_150 == 0) {
+            func_08014A34(actor->unk_04, actor->unk_08 + actor->unk_0C - ((s16)actor->unk_A2 << 8));
+            func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+        }
+        func_0802F284(actor->unk_04, actor->unk_08, actor->unk_0C);
+        work->unk_158 = 0;
+        if (work->unk_150 > 150) {
+            work->unk_150 = 0;
+            work->unk_170 = 5;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 5:
+        if (work->unk_150 == 0) {
+            PrizeCardArg arg;
+
+            func_08006120(2, 60);
+            func_080063A8();
+            m4aSongNumStart(0x20F);
+            gUnk_02039B84->unk_068 |= 0x400000;
+            func_0801B008();
+            func_0801B918(actor);
+            arg.unk_00 = actor->unk_04;
+            arg.unk_04 = actor->unk_08;
+            arg.unk_08 = -0x4600;
+            func_08096DC4(&gUnk_02039B84->unk_02C, &arg);
+            return 0;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 6:
+        if (work->unk_150 == 0) {
+            func_08014AAC(actor->unk_04, actor->unk_08 + actor->unk_0C - ((s16)actor->unk_A2 << 8));
+            func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+        }
+        func_0802F284(actor->unk_04, actor->unk_08, actor->unk_0C);
+        work->unk_158 = 0;
+        if (work->unk_150 > 150) {
+            work->unk_150 = 0;
+            work->unk_170 = 7;
+            func_0801536C();
+        } else {
+            work->unk_150++;
+        }
+        break;
+    case 7:
+        func_0802F284(actor->unk_04, actor->unk_08, actor->unk_0C);
+        if (func_080128EC() == 0) {
+            PrizeCardArg arg2;
+
+            func_0801B008();
+            func_0801B918(actor);
+            arg2.unk_00 = actor->unk_04;
+            arg2.unk_04 = actor->unk_08;
+            arg2.unk_08 = -0x4600;
+            func_08096DC4(&gUnk_02039B84->unk_02C, &arg2);
+            return 0;
+        }
+        work->unk_150++;
+        break;
+    case 0:
+        work->unk_154 &= ~4;
+        if (func_0807E29C()) {
+            work->unk_150 = 0;
+            work->unk_170 = 17;
+        }
+        break;
+    case 17:
+        func_0807E2F4();
+        if (func_0807E29C() == 0) {
+            work->unk_150 = 0;
+            work->unk_170 = 0;
+        } else {
+            work->unk_150++;
+        }
+        break;
+    }
+
+    if (actor->unk_E8 != 2) {
+        actor->unk_0C += work->unk_158;
+        work->unk_158 += gUnk_02039B84->unk_12C;
+        if (actor->unk_0C > 0) {
+            actor->unk_0C = 0;
+            work->unk_158 = 0;
+        }
+        if (actor->unk_6C != 0 && !(work->unk_154 & 4) && !(actor->unk_90->unk_30 & 2)) {
+            actor->unk_04 += actor->unk_78 >> 1;
+            actor->unk_08 += actor->unk_7C >> 1;
+        }
+    }
+
+    if (actor->unk_108 > 0) {
+        actor->unk_04 += actor->unk_108;
+        actor->unk_108 -= 17;
+        if (actor->unk_108 < 0) {
+            actor->unk_108 = 0;
+        }
+    } else if (actor->unk_108 < 0) {
+        actor->unk_04 += actor->unk_108;
+        actor->unk_108 += 17;
+        if (actor->unk_108 > 0) {
+            actor->unk_108 = 0;
+        }
+    }
+
+    if (actor->unk_10C > 0) {
+        actor->unk_08 += actor->unk_10C;
+        actor->unk_10C -= 17;
+        if (actor->unk_10C < 0) {
+            actor->unk_10C = 0;
+        }
+    } else if (actor->unk_10C < 0) {
+        actor->unk_08 += actor->unk_10C;
+        actor->unk_10C += 17;
+        if (actor->unk_10C > 0) {
+            actor->unk_10C = 0;
+        }
+    }
+
+    if (!(work->unk_154 & 8)) {
+        switch (func_0801A8A4(&actor->unk_04, &actor->unk_08, work->unk_174, 0)) {
+        case 1:
+        case 2:
+            actor->unk_108 = -(actor->unk_108 >> 1);
+            work->unk_154 |= 1;
+            break;
+        case 3:
+        case 4:
+            actor->unk_10C = -(actor->unk_10C >> 1);
+            work->unk_154 |= 1;
+            break;
+        default:
+            work->unk_154 &= ~1;
+            break;
+        }
+    }
+
+    if (actor->unk_E8 != 2) {
+        work->unk_180 = AnimUpdate(&work->unk_014);
+        func_0800E5CC(work->unk_00C);
+        func_0800E5CC(work->unk_010);
+    }
+
+    if (actor->unk_E8 == 5) {
+        actor->unk_04 = actor->unk_FC;
+        actor->unk_08 = actor->unk_100;
+    }
+
+    TaskPoolUpdate(&work->unk_02C);
+    func_08012324(&actor->unk_40, actor->unk_04, actor->unk_08, actor->unk_0C);
+    return 1;
+}
+
+ALIGN_ZERO(2);
