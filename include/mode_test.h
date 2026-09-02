@@ -3,6 +3,8 @@
 
 #include "types.h"
 #include "anim.h"
+#include "mode.h"
+#include "taskpool.h"
 #include "gba/syscall.h"
 
 #define CPU_SET_SRC_FIXED 0x01000000
@@ -20,6 +22,35 @@ typedef struct UnkStruct_02039DC4 {
     s32 unk_04;
     s32 unk_08;
 } UnkStruct_02039DC4;
+
+typedef struct CardStat {
+    u16 unk_00;
+    u16 unk_02;
+    u8 unk_04;
+    u8 unk_05[0x03];
+    u32 unk_08;
+    u16 unk_0C;
+    u8 unk_0E;
+    u8 unk_0F;
+    u16 unk_10;
+    u8 unk_12[0x06];
+} CardStat;
+
+typedef struct CardDef {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    void* unk_14;
+    void* unk_18;
+    CardStat unk_1C;
+} CardDef;
+
+typedef struct UnkStruct_02039BB0 {
+    u8 unk_000[0x08];
+    u32 unk_008;
+} UnkStruct_02039BB0;
 
 typedef struct UnkStruct_02034A1C {
     u16 unk_00[61];
@@ -64,6 +95,16 @@ void* GetBgCharBase(s32 bg);
 void* GetBgScreenBase(s32 bg);
 void EnableBg(s32 bg);
 void LoadPalette(void* src, void* dst, s32 size);
+void TaskPoolInit(TaskPool* pool, s32 count);
+void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolDraw(TaskPool* pool);
+void TaskPoolDestroy(TaskPool* pool);
+void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
+void func_080010CC(Mode* mode, s32 arg);
+void UpdatePlayTime(void);
+void func_080B0754(void);
+void func_080E052C(u8 a);
+void m4aMPlayAllStop(void);
 
 void mode_test_0(void);
 void mode_test_1(void);
@@ -85,6 +126,11 @@ void func_0805FB78(s32 a);
 void func_0805FB84(u8 x, u8 y, u32 c, u8 v);
 void func_0805FC04(u8 x, u8 y, u32 c, u16 v);
 void func_0805FCB0(u8 x, u8 y, u32 c, const char* s);
+u16 func_080609AC(u16 a);
+u16 func_08060A2C(u16 a);
+void func_08060A74(void);
+void func_08060AD8(void);
+void func_08060BAC(void);
 void func_08060598(void);
 void func_0806098C(void);
 void func_080609A0(void);
@@ -101,7 +147,17 @@ extern s32 gUnk_02034A28;
 extern void* gUnk_02034A2C;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern UnkStruct_02039DC4* gUnk_02039DC4;
+extern TaskPool gUnk_02034A30;
+extern u8 gUnk_02034A44;
+extern u32 gUnk_03006C10;
+extern vu16 gUnk_03006C78;
+extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern void* gUnk_09EE14D4[];
+extern CardDef gCardDefs[];
+extern Mode gUnk_09ECEB54;
+extern Mode gUnk_09EF14DC;
+extern TaskDesc gUnk_09EE4AF4;
+extern TaskDesc gUnk_09EE8EF0;
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_08F69BA4[];
 
