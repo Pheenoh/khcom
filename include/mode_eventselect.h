@@ -202,6 +202,7 @@ void func_08075624(EffectWork* w, EventActor* arg);
 void func_080756B0(EffectWork* w, EventActor* arg);
 s32 func_08075720(EffectWork* w);
 s32 func_08075748(EffectWork* w);
+void func_08075780(EffectWork* w);
 void func_080757F4(EffectWork* w);
 void func_0807580C(EffectWork* w, EventActor* arg);
 s32 func_08075880(EffectWork* w);
