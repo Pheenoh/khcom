@@ -77,7 +77,7 @@ void func_08102688(u16 a, u16 b, u16 c) {
     }
 }
 
-s32 func_081026C4(u16 a, u16 b, u16 c) {
+u8 func_081026C4(u16 a, u16 b, u16 c) {
     u16 v;
 
     v = a * 16 + b * 4 + c;
@@ -166,7 +166,38 @@ s32 func_08102A94(void) {
     return k | (GetKeysRepeat() & (DPAD_ANY | R_BUTTON | L_BUTTON));
 }
 INCLUDE_ASM("mode_ms/func_08102AB4.s");
-INCLUDE_ASM("mode_ms/func_08102DC8.s");
+void func_08102DC8(void) {
+    s16 i;
+
+    for (i = 0; i < 5; i++) {
+        func_080062F4(gUnk_020358C8[i].unk_00->unk_06 + 0x10, 0);
+        ReleaseObjPalette(gUnk_020358C8[i].unk_00);
+        ReleaseObjTiles(gUnk_020358C8[i].unk_04);
+        func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 0);
+        ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
+        ReleaseObjTiles(gUnk_020358C8[i].unk_10);
+    }
+    func_080062F4(gUnk_02035AE0->unk_06 + 0x10, 0);
+    ReleaseObjPalette(gUnk_02035AE0);
+    ReleaseObjTiles(gUnk_02035ADC);
+    func_080062F4(gUnk_02035A40->unk_06 + 0x10, 0);
+    ReleaseObjPalette(gUnk_02035A40);
+    func_08065AE0(gUnk_02035A44, 0x24);
+    EwramFree(gUnk_02035A44);
+    func_08065AE0(gUnk_02035A4C, 0x5A);
+    EwramFree(gUnk_02035A4C);
+    func_080062F4(gUnk_02035A30->unk_06 + 0x10, 0);
+    ReleaseObjPalette(gUnk_02035A30);
+    ReleaseObjTiles(gUnk_02035A34);
+    func_080062F4(gUnk_02035A38->unk_06 + 0x10, 0);
+    ReleaseObjPalette(gUnk_02035A38);
+    ReleaseObjTiles(gUnk_02035A3C);
+    ReleaseObjTiles(gUnk_02035A54);
+
+    for (i = 0; i < 5; i++) {
+        TaskPoolDestroy(&gUnk_02035A70[i]);
+    }
+}
 INCLUDE_ASM("mode_ms/func_08102F30.s");
 INCLUDE_ASM("mode_ms/func_0810329C.s");
 void func_08103CD8(s16 a) {
