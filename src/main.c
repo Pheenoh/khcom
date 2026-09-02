@@ -41,6 +41,9 @@ extern IntrFunc gVCountCallback;
 extern IntrFunc gVBlankCallback;
 extern IntrFunc* gIntrTableHBlank;
 
+extern IntrFunc gIntrTable[14];
+extern const IntrFunc gIntrTableTemplate[14];
+
 void InitSystem(void);
 void InitIntrTable(void);
 void RegisterRamReset(u32 flags);
@@ -54,11 +57,6 @@ void func_08116CEC(void);
 void func_08116D28(void);
 void func_08116EF0(void);
 void func_08007318(void);
-void ResetVBlankCallback(void);
-void ResetVCountCallback(void);
-void ResetHBlankCallback(void);
-void ResetSerialCallback(void);
-void ResetTimer3Callback(void);
 void ResetPaletteEffect(void);
 void SeedRandom(u32 seed);
 void VTransInit(void);
@@ -244,7 +242,27 @@ void VCountIntrDummy(void) {
 void SerialIntrDummy(void) {
 }
 
+#ifdef NON_MATCHING
+void InitIntrTable(void) {
+    s32 i;
+
+    for (i = 0; i < 14; i++) {
+        gIntrTable[i] = gIntrTableTemplate[i];
+    }
+    gIntrTableVBlank = &gIntrTable[1];
+    gIntrTableVCount = &gIntrTable[3];
+    gIntrTableHBlank = &gIntrTable[2];
+    gIntrTableSerial = &gIntrTable[0];
+    gIntrTableTimer3 = &gIntrTable[7];
+    ResetVBlankCallback();
+    ResetVCountCallback();
+    ResetHBlankCallback();
+    ResetSerialCallback();
+    ResetTimer3Callback();
+}
+#else
 INCLUDE_ASM("main/InitIntrTable.s");
+#endif
 
 void ApplyIntrCallbacks(void) {
     *gIntrTableVBlank = gVBlankCallback;
