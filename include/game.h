@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "taskpool.h"
+#include "anim.h"
 
 typedef struct UnkStruct_02039DD4 {
     u32 unk_000;
@@ -16,20 +17,19 @@ typedef struct UnkStruct_02039DD4 {
     void* unk_034;
     void* unk_038;
     void* unk_03C;
-    u32 unk_040;
+    void* unk_040;
     void* unk_044;
     void* unk_048;
     void* unk_04C;
-    u32 unk_050;
+    void* unk_050;
     void* unk_054;
     void* unk_058;
     u32 unk_05C;
     u32 unk_060;
-    u32 unk_064;
-    u64 unk_068;
-    u8 unk_070[0x08];
-    u32 unk_078;
-    u8 unk_07C[0x20];
+    AnimState unk_064;
+    AnimState unk_07C;
+    void* unk_094;
+    void* unk_098;
     TaskPool unk_09C;
     u32 unk_0B0;
     u32 unk_0B4;
@@ -108,7 +108,7 @@ typedef struct UnkStruct_02039B84 {
     u8 unk_03C[0x0C];
     u32 unk_048;
     u32 unk_04C;
-    u32 unk_050;
+    void* unk_050;
     u32 unk_054;
     u32 unk_058;
     u32 unk_05C;

@@ -16,6 +16,20 @@ typedef struct UnkStruct_02039DD0 {
     u16 unk_02;
 } UnkStruct_02039DD0;
 
+typedef struct CardBattleWork {
+    TaskPool unk_00;
+    void* unk_14;
+    void* unk_18;
+    u8 unk_1C[0x28];
+    void* unk_44[4];
+    u8 unk_54[0x50];
+    s16 unk_A4;
+    u8 unk_A6[0x13];
+    u8 unk_B9;
+    u8 unk_BA;
+    u8 unk_BB[0x11];
+} CardBattleWork;
+
 typedef struct DownWork {
     s32 unk_00[8];
     s32 unk_20[8];
@@ -107,6 +121,7 @@ extern u8 gUnk_09EDE7B4[];
 extern s16 gUnk_0903380C[][6];
 extern s16 gSineTable[];
 extern void* gUnk_09EEA19C[];
+extern void* gUnk_09EF12E8[];
 extern u8 gUnk_09EEFD9C[];
 extern u8 gUnk_09EEFD7C[];
 extern TaskDesc gUnk_09EE47BC;
@@ -219,6 +234,8 @@ s32 func_08075F68(EvSoundWork* w);
 void func_080760C0(void);
 void func_080760C4(void);
 void func_080760D8(EvSoundWork* w);
+void func_08077E10(CardBattleWork* w);
+void func_08077E98(CardBattleWork* w);
 void func_08076110(u16 song, s16 x, s16 y);
 void func_08076214(u8* work);
 s32 func_0807622C(u8* work);
