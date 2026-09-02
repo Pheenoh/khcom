@@ -174,7 +174,9 @@ with out.open("w") as f:
     )
     n.rule(
         "report",
-        command=f"$pyreport -m mapfile_parser objdiff_report $out --version {version} --quiet",
+        command=f"$pyreport -m mapfile_parser objdiff_report $out --version {version} --quiet"
+        f" && python3 tools/normalize_report.py $out"
+        f" && python3 tools/check_report.py $out",
         description="REPORT $out",
     )
     n.rule(
@@ -231,7 +233,8 @@ with out.open("w") as f:
         n.build("all", "phony", rom)
     else:
         report = f"{build_dir}/report.json"
-        n.build(report, "report", implicit=[f"{build_dir}/ok", "decomp.yaml"])
+        n.build(report, "report", implicit=[f"{build_dir}/ok", "decomp.yaml",
+                                            "tools/normalize_report.py", "tools/check_report.py"])
         n.build("progress", "progress", report, implicit=["tools/progress.py"])
         n.newline()
         n.build("all", "phony", f"{build_dir}/ok")

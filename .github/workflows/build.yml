@@ -48,7 +48,10 @@ jobs:
 
       - name: Generate progress report
         if: github.event_name == 'push' && matrix.version != 'eu'
-        run: python3 -m mapfile_parser objdiff_report report.json --version ${{ matrix.version }}
+        run: |
+          python3 -m mapfile_parser objdiff_report report.json --version ${{ matrix.version }}
+          python3 tools/normalize_report.py report.json
+          python3 tools/check_report.py report.json
 
       - name: Upload progress report artifact
         if: github.event_name == 'push' && matrix.version != 'eu'
