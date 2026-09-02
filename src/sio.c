@@ -37,6 +37,7 @@ u16 IsVBlankIntrLive(void) {
 
 void SetVBlankCallback(IntrFunc fn) {
     gVBlankCallback = fn;
+
     if (!IsVBlankIntrLive()) {
         *gIntrTableVBlank = fn;
     }
@@ -49,6 +50,7 @@ void ResetVBlankCallback(void) {
 
 void SetVCountCallback(IntrFunc fn) {
     gVCountCallback = fn;
+
     if (!IsVBlankIntrLive()) {
         *gIntrTableVCount = fn;
     }
@@ -61,6 +63,7 @@ void ResetVCountCallback(void) {
 
 void SetHBlankCallback(IntrFunc fn) {
     gHBlankCallback = fn;
+
     if (!IsVBlankIntrLive()) {
         *gIntrTableHBlank = fn;
     }
@@ -173,6 +176,7 @@ u32 func_08006ED4(u8* a, u16* b, u16 (*c)[2]) {
         switch (*a) {
         default:
             func_080070B4();
+
             if (gUnk_02034074 == 0) {
                 if (gUnk_02039830.unk_00 != 0 && gUnk_02039830.unk_03 == 2) {
                     gUnk_02039830.unk_10 = 1;
@@ -205,6 +209,7 @@ u32 func_08006ED4(u8* a, u16* b, u16 (*c)[2]) {
 
     *a = 0;
     r = gUnk_02039830.unk_02 | (gUnk_02039830.unk_03 << 2);
+
     if (gUnk_02039830.unk_00 == 8) {
         r |= 0x20;
     }
@@ -214,12 +219,14 @@ u32 func_08006ED4(u8* a, u16* b, u16 (*c)[2]) {
     t3 = gUnk_02039830.unk_13 << 17;
     t4 = gUnk_02039830.unk_14 << 18;
     t5 = gUnk_02039830.unk_15 << 20;
+
     if (gUnk_02039830.unk_01 == 4) {
         v = r | 0x40 | t0 | t1 | t2 | t3 | t4 | t5;
     } else {
         v = r | t0 | t1 | t2 | t3 | t4 | t5;
     }
     w = v;
+
     if (gUnk_02039830.unk_02 > 1) {
         w |= 0x400000;
     }
@@ -240,6 +247,7 @@ u32 func_0800702C(u8* a, u16* b, u16 (*c)[2]) {
     }
 
     r = gUnk_02039830.unk_02 | (gUnk_02039830.unk_03 << 2);
+
     if (gUnk_02039830.unk_00 == 8) {
         r |= 0x20;
     }
@@ -249,12 +257,14 @@ u32 func_0800702C(u8* a, u16* b, u16 (*c)[2]) {
     t3 = gUnk_02039830.unk_13 << 17;
     t4 = gUnk_02039830.unk_14 << 18;
     t5 = gUnk_02039830.unk_15 << 20;
+
     if (gUnk_02039830.unk_01 == 4) {
         v = r | 0x40 | t0 | t1 | t2 | t3 | t4 | t5;
     } else {
         v = r | t0 | t1 | t2 | t3 | t4 | t5;
     }
     w = v;
+
     if (gUnk_02039830.unk_02 > 1) {
         w |= 0x400000;
     }
@@ -286,6 +296,7 @@ void func_0800712C(u16* p) {
 
     gUnk_0203406E = REG_IME;
     REG_IME = 0;
+
     if (gUnk_02039830.unk_11D < 32) {
         idx = gUnk_02039830.unk_11D + gUnk_02039830.unk_11C;
         if (idx > 31) {
@@ -316,6 +327,7 @@ void func_08007210(u16 (*c)[2]) {
 
     gUnk_0203406E = REG_IME;
     REG_IME = 0;
+
     if (gUnk_02039830.unk_321 == 0) {
         for (i = 0; i < 4; i++) {
             for (j = 0; j < gUnk_02039830.unk_03; j++) {
@@ -389,6 +401,7 @@ void SioSerialIntr(void) {
 
     cnt = REG_SIOCNT32;
     gUnk_02039830.unk_02 = (cnt << 26) >> 30;
+
     switch (gUnk_02039830.unk_01) {
     case 4:
         if (cnt & 0x40) {
@@ -411,6 +424,7 @@ void SioSerialIntr(void) {
     }
     gUnk_02039830.unk_0D++;
     gUnk_02034070 = 0;
+
     if (gUnk_02039830.unk_0D == 4) {
         gUnk_02039800 = gUnk_02039830.unk_321;
     }
@@ -427,6 +441,7 @@ u8 func_08007454(void) {
 
     count = 0;
     min = 0xFFFF;
+
     if (gUnk_02039830.unk_10 == 1) {
         REG_SIOMLT_SEND = 0x8FFF;
     } else {
@@ -434,9 +449,11 @@ u8 func_08007454(void) {
     }
     gUnk_02039830.unk_10 = 0;
     *(u64*)gUnk_02039830.unk_04 = *(u64*)0x04000120;
+
     for (i = 0; i < 2; i++) {
         if ((gUnk_02039830.unk_04[i] & ~3) == 0xD5E0 || gUnk_02039830.unk_04[i] == 0x8FFF) {
             count++;
+
             if (min > gUnk_02039830.unk_04[i] && gUnk_02039830.unk_04[i] != 0) {
                 min = gUnk_02039830.unk_04[i];
             }
@@ -473,6 +490,7 @@ void func_08007550(void) {
     u8 idx;
 
     *(u64*)buf = *(u64*)0x04000120;
+
     if (gUnk_02039830.unk_18 == 0) {
         for (i = 0; i < gUnk_02039830.unk_03; i++) {
             if (gUnk_02039830.unk_16 != buf[i] && gUnk_0203406C != 0) {
@@ -492,6 +510,7 @@ void func_08007550(void) {
                 gUnk_02039830.unk_16 += buf[i];
                 gUnk_02034078 |= buf[i];
                 gUnk_02039830.unk_120[i][gUnk_02039830.unk_19][idx] = buf[i];
+
                 if (gUnk_02039830.unk_18 == 1 && gUnk_02039830.unk_0E == 0 && (buf[i] & 0x1000)) {
                     gUnk_02039830.unk_0E = 1;
                     gUnk_02034072 = 5;
@@ -511,6 +530,7 @@ void func_08007550(void) {
 void func_08007694(void) {
     if (gUnk_02039830.unk_18 == 4) {
         REG_SIOMLT_SEND = gUnk_02039830.unk_16;
+
         if (gUnk_02034071 == 0) {
             gUnk_02039830.unk_11D--;
             gUnk_02039830.unk_11C++;
@@ -560,6 +580,7 @@ void func_080077C4(void) {
 
     gUnk_02039830.unk_11D = 0;
     gUnk_02039830.unk_11C = 0;
+
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 32; j++) {
             gUnk_02039830.unk_1C[i][j] = 0xEFFF;
@@ -574,6 +595,7 @@ void func_08007814(void) {
 
     gUnk_02039830.unk_321 = 0;
     gUnk_02039830.unk_320 = 0;
+
     for (i = 0; i < 2; i++) {
         for (j = 0; j < 4; j++) {
             for (k = 0; k < 32; k++) {

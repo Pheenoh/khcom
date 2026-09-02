@@ -27,9 +27,11 @@ void func_080C89B4(PooWork* w, PooSpot* b, u16 c) {
     s32 i;
 
     f = func_08005B34(w->unk_0C) + 1;
+
     if (w->unk_78 == 0) {
         i = w->unk_A8 * c + f;
         v = b[i].unk_00;
+
         if (w->unk_24 != 0) {
             v = -v;
         }
@@ -53,6 +55,7 @@ s32 func_080C8A50(PooWork* w) {
     u32 i;
 
     memcpy(t, gUnk_096FC6B0, sizeof(t));
+
     for (i = 0; i < 4; i++) {
         if (w->unk_90 == t[i].unk_00 && w->unk_94 == t[i].unk_04) {
             break;
@@ -327,6 +330,7 @@ u16 func_080C9EFC(void* pool, u16 b) {
         gUnk_02034DC8.unk_00 = gUnk_096FC6F8[i].unk_00;
         gUnk_02034DC8.unk_04 = gUnk_096FC6F8[i].unk_04;
         gUnk_02034DC8.unk_08 = 0;
+
         if (gUnk_096FC6F8[i].unk_08 == &gUnk_09EF4B20 || gUnk_096FC6F8[i].unk_08 == &gUnk_09EF4B08) {
             gUnk_02034DB0.unk_00 = gUnk_02034DC8;
             gUnk_02034DB0.unk_10 = b;
@@ -546,6 +550,7 @@ void func_080CA9DC(PooSoraWork* w) {
 
     old = w->unk_14;
     func_080CA724(w);
+
     if (old != w->unk_14) {
         if (abs((s8)GetAngleDiff(old, w->unk_14)) > 100) {
             w->unk_10 = 0;
@@ -560,6 +565,7 @@ s32 func_080CAA14(PooSoraWork* w) {
     s32 v;
 
     p = &gUnk_0203C420;
+
     if ((w->unk_66 & 1) != 0) {
         if (p->unk_0C < w->unk_78) {
             v = p->unk_0C;
@@ -676,6 +682,7 @@ void task_poo_trap_2(PooTrapWork* w) {
 void task_poo_trap_3(PooTrapWork* w) {
     ReleaseObjTiles(w->unk_00);
     ReleaseObjPalette(w->unk_04);
+
     if (w->unk_8C != 0) {
         func_08012304(w->unk_1C);
     }
@@ -690,6 +697,7 @@ void task_poo_pitAndButterfly_0(PooTrapWork* w, PooPos* p) {
 
 u8 task_poo_pitAndButterfly_1(PooTrapWork* w) {
     task_poo_trap_1(w);
+
     if (w->unk_8C != 0) {
         if (func_08012660(w->unk_1C, 9) != 0) {
             func_080CCB84(&w->unk_90.unk_00, 0);
@@ -700,6 +708,7 @@ u8 task_poo_pitAndButterfly_1(PooTrapWork* w) {
 
 void task_poo_pitAndButterfly_2(PooTrapWork* w) {
     task_poo_trap_2(w);
+
     if (w->unk_8C != 0) {
         TaskPoolUpdate(&w->unk_78);
         TaskPoolDraw(&w->unk_78);
@@ -898,6 +907,7 @@ s32 func_080CC488(u16 x) {
 
     a = x;
     v = 3 - gUnk_0203C3E4;
+
     if (gUnk_0203C3E0 <= 0x1CD) {
         c = (a / 20) & 1;
         if (c != 0) {
@@ -921,6 +931,7 @@ void task_poo_gauge_0(PooGaugeWork* w) {
 u8 task_poo_gauge_1(PooGaugeWork* w) {
     w->unk_12++;
     w->unk_08 = gUnk_09EF5B2C[func_080CC488(w->unk_12)];
+
     if (gUnk_0203C3E4 <= 1 && gUnk_0203C3E0 <= 0x1CD) {
         w->unk_10 = 1;
     } else {
@@ -1067,6 +1078,7 @@ s32 func_080CCBF8(PooNode* n) {
     dx = (q->unk_00 - p->unk_00) >> 8;
     dy = (q->unk_04 - p->unk_04) >> 8;
     r = func_080CCB80(&n->unk_00);
+
     if ((s16)dx * (s16)dx > 0x3840 && (s16)dy * (s16)dy > 0x1900) {
         return 0;
     }
@@ -1089,6 +1101,7 @@ PooNode* func_080CCC98(void) {
     best = (PooNode*)func_08000C8C(&gUnk_02034DF8.head);
     n = best;
     gUnk_02034DF0 = 0;
+
     while (n != 0) {
         gUnk_02034DF4 = func_080CCBF8(n);
         if (gUnk_02034DF4 > gUnk_02034DF0) {
@@ -1130,6 +1143,7 @@ u8 task_poo_mapanime_1(PooMapAnimeWork* w) {
     u32 i;
 
     r = 0;
+
     for (i = 0; i < 2; i++) {
         r = func_080DDDEC(&w->unk_00[i], w->unk_00[i].unk_08, r);
     }
@@ -1190,6 +1204,7 @@ void task_poo_pile_0(PooPileWork* w, PooPileArgs* a) {
     w->unk_2C = 0;
     w->unk_04 = 0;
     AnimInit(w->unk_0C, gUnk_09EF5C8C, gUnk_09EF5C6C);
+
     if (a->unk_10 == 8) {
         w->unk_B0 = func_080CD198();
     } else {
@@ -1305,6 +1320,7 @@ INCLUDE_ASM("poo/task_poo_piglet_2.s");
 
 void task_poo_piglet_3(PooPigletWork* w) {
     ReleaseObjTiles(w->unk_00);
+
     if (w->unk_04 != 0) {
         ReleaseObjPalette(w->unk_04);
         func_08012304(w->unk_38);
@@ -1413,6 +1429,7 @@ void func_080CE710(PooTiggerWork* w, u16 b) {
     s32 a;
 
     func_08005B64(w->unk_0C);
+
     if (w->unk_C0 == 2) {
         switch (w->unk_B8) {
         case 0xAD:
@@ -1447,6 +1464,7 @@ void func_080CE77C(PooTiggerWork* w, u16 b) {
     u16 r;
 
     func_08005B64(w->unk_0C);
+
     if (w->unk_C0 == 0) {
         r = 0;
     } else if (w->unk_C0 == 1) {
@@ -1500,6 +1518,7 @@ u16 func_080CE880(PooAnimWork* w) {
 
     d = ((PooAnimData**)gUnk_096FD59C[w->unk_26].unk_00)[gUnk_096FD59C[w->unk_26].unk_0C];
     t = 0;
+
     for (i = 0; i < d->unk_04; i++) {
         t += d->unk_08[i].unk_00;
     }
@@ -1508,6 +1527,7 @@ u16 func_080CE880(PooAnimWork* w) {
 
 void func_080CE8B4(PooTiggerWork* w) {
     w->unk_BA = func_080CE880(w);
+
     if (w->unk_B8 == 0xAD) {
         w->unk_28 = gUnk_096FD5FC[0];
         w->unk_2C = gUnk_096FD5FC[1];
@@ -1560,6 +1580,7 @@ void task_poo_tigger_0(PooTiggerWork* w) {
     w->unk_D1 = 1;
     w->unk_04 = 0;
     m = 0;
+
     for (i = 0; i < 4; i++) {
         t = func_08003524(gUnk_096FD5DC[i].unk_00, gUnk_096FD5DC[i].unk_04);
         if (m < t) {
@@ -1631,6 +1652,7 @@ void task_poo_roo_2(PooRooWork* w) {
     y = t + (w->unk_30 >> 8) - gUnk_0203C3F8;
     pr = w->unk_24 != 0 ? 0x801 : 0x800;
     DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, pr, -0x1006 - t * 4);
+
     if (w->unk_B4 != 0) {
         TaskPoolDraw(&w->unk_98);
     }
@@ -1657,6 +1679,7 @@ void task_poo_roo_footmark_0(PooFootmarkWork* w) {
     w->unk_14 = 0;
     w->unk_00 = LoadObjTiles(gUnk_09755A34, 0x500);
     w->unk_04 = 0;
+
     if (func_080D2D50(5) == 0) {
         w->unk_08 = gUnk_097559F4;
     } else {
@@ -1672,6 +1695,7 @@ INCLUDE_ASM("poo/task_poo_roo_footmark_2.s");
 
 void task_poo_roo_footmark_3(PooFootmarkWork* w) {
     ReleaseObjTiles(w->unk_00);
+
     if (w->unk_04 != 0) {
         ReleaseObjPalette(w->unk_04);
         func_080CCBD4(&w->unk_1C);
@@ -1697,6 +1721,7 @@ u8 task_poo_leaf_1(PooLeafWork* w) {
         w->unk_90 = 1;
         func_08005B64(w->unk_0C);
         m4aSongNumStart(0xE0);
+
         if (func_080D2C1C(w->unk_94) == 0) {
             if (func_080C7BF8(2, 3, w->unk_24 + 0x1C00, w->unk_28 + 0x2000, w->unk_2C) != 0) {
                 func_080D2BF8(w->unk_94);
@@ -1723,6 +1748,7 @@ u8 task_poo_tanpopo_1(PooTanpopoWork* w) {
         w->unk_B0 = 1;
         func_08005B64(w->unk_0C);
         func_08005B64(w->unk_2C);
+
         if (func_080D2C1C(w->unk_B6) == 0) {
             if (func_080C7BF8(2, 1, w->unk_44 + 0x1800, w->unk_48 + 0x2000, w->unk_4C) != 0) {
                 func_080D2BF8(w->unk_B6);
@@ -1785,6 +1811,7 @@ void task_poo_ti_board_2(PooBoardWork* w) {
 
 void task_poo_ti_board_3(PooBoardWork* w) {
     ReleaseObjTiles(w->unk_00);
+
     if (w->unk_04 != 0) {
         ReleaseObjPalette(w->unk_04);
         func_08012304(w->unk_1C);
@@ -1864,6 +1891,7 @@ u8 task_poo_honeycomb_1(PooHoneycombWork* w) {
                 c = func_080D2D50(2);
                 if (c == 0) {
                     gUnk_0203C3F0 = 9;
+
                     if (func_080C9E70() != 0) {
                         gUnk_02034E1C = 1;
                         w->unk_94 = c;
@@ -1944,6 +1972,7 @@ s32 func_080CFE34(PooPos* p) {
     s32 y;
 
     k = 0x2500;
+
     if (func_080D2D50(6) != 0) {
         k = 0x2100;
     }
@@ -1973,6 +2002,7 @@ s32 func_080CFEA0(PooPos* p) {
     s32 y;
 
     k = 0x2500;
+
     if (func_080D2D50(6) != 0) {
         k = 0x2100;
     }
@@ -2120,6 +2150,7 @@ void task_poo_wagon_0(PooCamera* w) {
     w->unk_1C.unk_08 = 0;
     w->unk_1C.unk_0C = 0;
     w->unk_2C = w->unk_1C;
+
     if (func_080D2D50(6) != 0) {
         w->unk_1C.unk_04 += 0xC00;
     }
@@ -2188,6 +2219,7 @@ u8 task_poo_wagonwheel_1(PooWheelWork* w) {
 
     if (w->unk_36 == 3) {
         w->unk_08 = AnimUpdate(w->unk_0C);
+
         if (w->unk_38 <= 0x4FF) {
             w->unk_38 += 6;
         }
@@ -2227,6 +2259,7 @@ void task_poo_spark_0(PooSparkWork* w, PooPos* p) {
 
 u8 task_poo_spark_1(PooSparkWork* w) {
     AnimUpdate(w->unk_10);
+
     if (AnimIsFinished(w->unk_10) != 0) {
         return 0;
     }
@@ -2490,6 +2523,7 @@ void func_080D1B94(PooPrizeWork* w) {
     w->unk_08 += (tz - w->unk_08) >> 2;
     w->unk_0C = 0;
     w->unk_90 -= 2;
+
     if (w->unk_82 > 60) {
         w->unk_7C = 0;
     } else {
@@ -2502,6 +2536,7 @@ INCLUDE_ASM("poo/task_poo_prize_0.s");
 u8 task_poo_prize_1(PooPrizeWork* w) {
     if (w->unk_7C != 0) {
         w->unk_7C(w);
+
         if (w->unk_7C != 0) {
             return 1;
         }
@@ -2522,6 +2557,7 @@ void task_poo_zzz_0(PooZzzWork* w, u8* arg) {
     w->unk_00 = AllocObjTiles(0x100, gUnk_097257D8);
     w->unk_04 = LoadObjPalette(gUnk_09849A98, 0x20);
     AnimInit(w->unk_0C, gUnk_09EF5904, gUnk_09EF5844);
+
     if (*arg != 0) {
         AnimStart(w->unk_0C, 8, 1);
     } else {
@@ -2739,6 +2775,7 @@ void task_poo_mapbee_2(PooMapBeeWork* w) {
 void task_poo_mapbee_3(PooObjWork* w) {
     ReleaseObjTiles(w->unk_00);
     ReleaseObjPalette(w->unk_04);
+
     if (func_080D1050() == 0) {
         m4aSongNumStop(0x182);
     }
@@ -3100,10 +3137,12 @@ u8 func_080D2DD8(void) {
     s32 n;
 
     memcpy(v, gUnk_096FDA74, sizeof(v));
+
     if (func_080D2D94(1) != 0) {
         return 1;
     }
     n = 0;
+
     for (i = 0; i < 6; i++) {
         if (func_080D2D50(v[i]) != 0) {
             n++;
@@ -3179,6 +3218,7 @@ void func_080D2F64(void) {
 
     gUnk_0203C530 = EwramAlloc(0x4000);
     gUnk_0203C504 = EwramAlloc(0x4000);
+
     for (i = 0; i < 0x2000; i++) {
         gUnk_0203C530[i] = 0;
         gUnk_0203C504[i] = 0;
@@ -3233,6 +3273,7 @@ void func_080D313C(void) {
     void* dst;
 
     dst = (u8*)GetBgCharBase(2) + 0x20;
+
     if ((gUnk_02039BB0.unk_08 & 8) != 0) {
         src = &gUnk_097B8258[gUnk_02039BB0.unk_0E * 0x140];
     } else {

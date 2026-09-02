@@ -75,6 +75,7 @@ void func_08001E64(SpriteEntry** arr, s32 lo, s32 hi) {
     pivot = arr[(lo + hi) >> 1]->unk_14;
     i = lo;
     j = hi;
+
     for (;;) {
         while (arr[i]->unk_14 < pivot) {
             i++;
@@ -114,6 +115,7 @@ void func_08001F20(u16 a, u16 b) {
     *(u16*)(p + 0x1810) = a;
     v = a + b;
     *(u16*)(p + 0x1812) = v;
+
     if ((u16)v > 0x400) {
         *(u16*)(p + 0x1812) = 0x400;
     }
@@ -126,6 +128,7 @@ void func_08001F5C(u16 a, u16 b) {
     *(u16*)(p + 0x1AA4) = a;
     v = a + b;
     *(u16*)(p + 0x1AA6) = v;
+
     if ((u16)v > 0x10) {
         *(u16*)(p + 0x1AA6) = 0x10;
     }
@@ -137,10 +140,12 @@ void func_08001F98(void) {
 
     EnableObj();
     func_08000BA4(gSpriteWork + 0x1800);
+
     for (i = 0; i < 128; i++) {
         func_08000BB0(gSpriteWork + i * 0x30 + 0x0C, gSpriteWork + 0x1800, gSpriteWork + i * 0x30);
     }
     func_08000BA4(gSpriteWork + 0x1A94);
+
     for (i = 0; i < 16; i++) {
         func_08000BB0(gSpriteWork + 0x1814 + i * 0x28 + 0x0C, gSpriteWork + 0x1A94,
                       gSpriteWork + 0x1814 + i * 0x28);

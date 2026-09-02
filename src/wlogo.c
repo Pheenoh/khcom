@@ -56,6 +56,7 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work) {
         work->unk_02A++;
         if (work->unk_02A > 7) {
             work->unk_02A = 0;
+
             if (work->unk_028 <= 4) {
                 LoadObjPaletteBank(work->unk_004->unk_06, &gUnk_096FACC4[work->unk_028 * 32]);
                 LoadPaletteWithEffect(&gUnk_096FACC4[work->unk_028 * 32], (void*)0x050001C0, 0x20);
@@ -226,8 +227,10 @@ u8 task_wlogo_hwt_obj_1(WlogoHwtObjWork* work) {
     work->unk_028 += work->unk_030;
     work->unk_02C += work->unk_034;
     work->unk_030 += work->unk_038;
+
     if (++work->unk_03E >= gUnk_09619530[work->unk_04A][work->unk_03C].unk_00) {
         work->unk_03E = 0;
+
         if (gUnk_09619530[work->unk_04A][work->unk_03C].unk_14 == 1) {
             return 0;
         }
@@ -258,6 +261,7 @@ void task_wlogo_won_0(WlogoWonWork* work) {
     LoadBgMap(0, gUnk_096B6464, 0x800);
     work->unk_000 = LoadObjTiles(gUnk_09630CC4, 0x1800);
     work->unk_004 = LoadObjPalette(gUnk_096FAC84, 0x20);
+
     for (i = 0; i < 10; i++) {
         work->unk_084[i] = gUnk_09EF3924[i];
         work->unk_00C[i] = gUnk_09EF1744[i].unk_00;
@@ -298,8 +302,10 @@ u8 task_wlogo_won_1(WlogoWonWork* work) {
                 work->unk_0C0[i]++;
             } else {
                 work->unk_00C[i] -= work->unk_05C[i];
+
                 if (++work->unk_0DE[i] > 1) {
                     work->unk_0DE[i] = 0;
+
                     if (++work->unk_0CA[i] > 19) {
                         work->unk_0CA[i] = 0;
                     }
@@ -577,8 +583,10 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
         work->unk_004 += work->unk_00C;
         work->unk_008 += work->unk_010;
         work->unk_00C += work->unk_014;
+
         if (++work->unk_01A >= gUnk_096198D4[work->unk_01C].unk_00) {
             work->unk_01A = 0;
+
             if (gUnk_096198D4[work->unk_01C].unk_14 == 1) {
                 work->unk_049 = 0;
                 work->unk_018++;
@@ -598,6 +606,7 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
             work->unk_020 = 1 - work->unk_020;
         }
         work->unk_02C = AnimUpdate(&work->unk_030);
+
         if (work->unk_01E == 40) {
             func_08005974(&work->unk_030, 2, 0, gUnk_09EF35A4, gUnk_09EF3574);
         }
@@ -1405,6 +1414,7 @@ u8 task_wlogo_poo_obj_1(WlogoPooObjWork* work) {
     work->unk_02C += work->unk_034;
     work->unk_030 += work->unk_038;
     work->unk_008 = AnimUpdate(&work->unk_00C);
+
     if (work->unk_040 != 0) {
         if (work->unk_03E > 150) {
             return 0;
@@ -1476,6 +1486,7 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
     AnimStart(&work->unk_040[5], 0, 0);
     work->unk_034 = AnimGetGfx(&work->unk_040[5]);
     work->unk_038 = gUnk_09EF37F4[0];
+
     for (i = 0; i < 8; i++) {
         work->unk_100[i] = 0;
     }
@@ -1510,6 +1521,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
     case 2:
         gUnk_0203AB38 += work->unk_110;
         work->unk_110 = work->unk_110;
+
         if (gUnk_0203AB38 > 332) {
             work->unk_100[2] = 1;
             work->unk_002 = 0;
@@ -1518,6 +1530,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         break;
     case 3:
         work->unk_028 = AnimUpdate(&work->unk_040[2]);
+
         if (work->unk_002 > 13) {
             work->unk_002 = 0;
             work->unk_004 = 0;
@@ -1538,6 +1551,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_108 = gUnk_09EF1B08[work->unk_004];
         }
         work->unk_002++;
+
         if (AnimIsFinished(&work->unk_040[2])) {
             work->unk_100[2] = 0;
             work->unk_100[3] = 1;
@@ -1550,6 +1564,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         break;
     case 5:
         work->unk_02C = AnimUpdate(&work->unk_040[3]);
+
         if (work->unk_002 > 13) {
             work->unk_002 = 0;
             work->unk_004 = 0;
@@ -1570,6 +1585,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_10C = gUnk_09EF1B08[work->unk_004 + 6];
         }
         work->unk_002++;
+
         if (AnimIsFinished(&work->unk_040[3])) {
             work->unk_100[3] = 0;
             work->unk_100[4] = 1;
@@ -1771,6 +1787,7 @@ void task_wlogo_tt_obj_0(WlogoTtObjWork* work, WlogoTtObjArg* arg) {
 
 u8 task_wlogo_tt_obj_1(WlogoTtObjWork* work) {
     work->unk_024 += 0x100;
+
     if (AnimIsFinished(&work->unk_00C)) {
         return 0;
     }
@@ -1883,6 +1900,7 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
         work->unk_034++;
         if (work->unk_034 > 29) {
             work->unk_034 = 0;
+
             if (work->unk_036 <= 1) {
                 work->unk_036 = 1;
                 StopBgWave(0);
@@ -2027,6 +2045,7 @@ u8 task_wlogo_bks_obj_1(WlogoBksObjWork* work) {
             ApproachValue(&work->unk_02C, work->unk_034, work->unk_026);
             ApproachValue(&work->unk_030, work->unk_038, work->unk_026);
             work->unk_026--;
+
             if (++work->unk_046 > 19) {
                 work->unk_046 = 0;
             }
@@ -2138,6 +2157,7 @@ void func_080B8554(WlogoTtEffTop* p) {
     p->unk_244 = 226;
     p->unk_35C = gUnk_09EF397C[0];
     p->unk_478 = gUnk_09EF3960[0];
+
     if (p->unk_000->unk_28 & 0x20) {
         p->unk_000->unk_14 = p->unk_000->unk_08 - 0xA00;
         p->unk_000->unk_18 = p->unk_000->unk_0C;
@@ -2169,6 +2189,7 @@ void func_080B8688(WlogoTtEffTop* p) {
     p->unk_244 = 10;
     p->unk_35C = gUnk_09EF397C[0];
     p->unk_478 = gUnk_09EF3960[0];
+
     if (p->unk_000->unk_28 & 0x20) {
         p->unk_000->unk_14 = p->unk_000->unk_08 + 0xA00;
         p->unk_000->unk_18 = p->unk_000->unk_0C;

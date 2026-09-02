@@ -47,6 +47,7 @@ void func_08117F5C(u8* src, s32 a1, void* dst) {
     gUnk_0203862C = *src;
     *p = src + 1;
     gUnk_02038630 = 8;
+
     for (i = 31; i >= 0; i--) {
         func_08117E44(dst);
         dst = (u8*)dst + 0x10;

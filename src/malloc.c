@@ -261,6 +261,7 @@ s32 HeapGetFreeTotal(Heap* heap) {
 
     b = heap->start->nextFree;
     total = 0;
+
     while (b != 0 && b->size > 0) {
         total += b->size;
         b = b->nextFree;

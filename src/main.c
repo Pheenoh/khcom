@@ -167,10 +167,13 @@ void AgbMain(void) {
     InitSystem();
     EnableVBlankIntr();
     bit = 4;
+
     for (;;) {
         UpdateKeyState();
+
         if (gUnk_03006C78 & 1) {
             func_080C55DC();
+
             if (gUnk_02039820 & 0x100) {
                 goto next;
             }
@@ -205,6 +208,7 @@ void VBlankIntr(void) {
         m4aSoundVSync();
     }
     gUnk_03007FF8 |= 1;
+
     if (gFrameSyncFlags & 4) {
         func_08001254();
     }
@@ -265,10 +269,12 @@ void VBlankIntrSio(void) {
     }
     gFrameSyncFlags |= 2;
     func_08007318();
+
     if (!(gFrameSyncFlags & 1)) {
         m4aSoundVSync();
     }
     gUnk_03007FF8 |= 1;
+
     if (gFrameSyncFlags & 4) {
         func_08001254();
     }
@@ -294,6 +300,7 @@ void func_08000714(void) {
     func_08116EF0();
     REG_IME = 1;
     gUnk_03007FF8 |= 1;
+
     if (gFrameSyncFlags & 4) {
         func_08001254();
     }

@@ -40,6 +40,7 @@ void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src) {
     cfg.unk_008 = count << 5;
     cfg.unk_00A = frames;
     cfg.unk_00C = bg;
+
     if (cfg.unk_00A == 0) {
         cfg.unk_00A = 1;
     }

@@ -154,6 +154,7 @@ void func_080C73D8(void) {
             r -= amt;
             g -= amt;
             b -= amt;
+
             if ((s16)r < 0) {
                 r = 0;
             }
@@ -183,6 +184,7 @@ void func_080C73D8(void) {
             r = amt + r;
             g -= amt;
             b -= amt;
+
             if ((s16)r > 31) {
                 r = 31;
             }
@@ -199,6 +201,7 @@ void func_080C73D8(void) {
             r -= amt;
             g = amt + g;
             b -= amt;
+
             if ((s16)r < 0) {
                 r = 0;
             }
@@ -215,6 +218,7 @@ void func_080C73D8(void) {
             r -= amt;
             g -= amt;
             b = amt + b;
+
             if ((s16)r < 0) {
                 r = 0;
             }
@@ -231,6 +235,7 @@ void func_080C73D8(void) {
             r = amt + r;
             g = amt + g;
             b = amt + b;
+
             if ((s16)r > 31) {
                 r = 31;
             }
@@ -350,6 +355,7 @@ void func_080C774C(void) {
     p.unk_04 = 0x5DE00;
     p.unk_08 = 0;
     func_080D2D0C(&p);
+
     if (func_080D2D94(3)) {
         p.unk_00 = 0xB3400;
         p.unk_04 = 0x5EE00;
@@ -465,6 +471,7 @@ void mode_pooh_1(void) {
 
     if (func_08006314() == 0) {
         gUnk_0203C3D8 = 0;
+
         if (func_08000F48(gUnk_02034D94)) {
             TaskPoolUpdate(&gUnk_02034D80);
         } else if (func_080A42C8() == 0) {
@@ -508,6 +515,7 @@ void func_080C7B84(u32 a) {
 
     if (gUnk_02034D44 == 0) {
         gUnk_02034D48 = a;
+
         for (i = 0; i <= 31; i++) {
             func_080062F4(i, 0);
         }
@@ -519,6 +527,7 @@ void func_080C7B84(u32 a) {
 
 void func_080C7BCC(u16 a) {
     gUnk_02034D4C = a;
+
     if (a == 0xFFFD || a == 0xFFFE) {
         a = 0x45;
     }
@@ -555,6 +564,7 @@ u16 func_080C7C80(void) {
     s32 i;
 
     n = 0;
+
     for (i = 0; i < 12; i++) {
         if (func_08000F48(gUnk_02034D50[i])) {
             n++;
@@ -803,6 +813,7 @@ void func_080C7FEC(PoohWork* w, u32 anim) {
     case 21:
         w->unk_FA = 1;
         func_080C7E98(w);
+
         if (func_080D2D50(6) != 0 || w->unk_F6 != 0 || (w->unk_A8 == 5 && w->unk_24 == 0)) {
             e = &gUnk_09EF3EE8[w->unk_A8];
         } else {

@@ -15,6 +15,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
     switch (func_0801ADAC(e)) {
     case 5:
         work->unk_A52 = 1;
+
         if (work->unk_000 == 10 || work->unk_004 == 10) {
             func_0801AF08(e);
         } else {
@@ -22,6 +23,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
             d1 = (d1 * d1) >> 8;
             d2 = gUnk_02039B84->unk_07C[2] - e->unk_128;
             d2 = (d2 * d2) >> 8;
+
             if (work->entries[2].unk_15A & work->entries[3].unk_15A & work->entries[4].unk_15A & work->entries[5].unk_15A & 4) {
                 switch (GetRandom() % 3) {
                 case 0:
@@ -38,6 +40,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                 if (GetRandom() % 100 < 70) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
+
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
@@ -63,6 +66,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         }
                     } else {
                         flag = 0;
+
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
@@ -78,6 +82,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                 if (GetRandom() % 100 < 50) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
+
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
@@ -103,6 +108,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         }
                     } else {
                         flag = 0;
+
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
@@ -118,6 +124,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                 if (GetRandom() % 100 < 30) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
+
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
@@ -143,6 +150,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         }
                     } else {
                         flag = 0;
+
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
@@ -170,6 +178,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
     case 7:
         e->unk_15A |= 2;
         e->unk_1A6 = 0;
+
         if (e->unk_1A0 == 0) {
             work->entries[1].unk_15A |= 2;
             work->entries[1].unk_1A6 = 0;
@@ -179,6 +188,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
     case 8:
         func_0801C2DC(e, 1);
         e->unk_15A |= 4;
+
         if (e->unk_1A0 == 0) {
             func_0801AF4C(e);
             e->unk_11C = 0;
@@ -189,6 +199,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
         } else {
             e->unk_11C = 3;
             e->unk_15C = 0;
+
             if (work->unk_000 != 10 && work->unk_004 != 10) {
                 if (work->unk_A52 != 0) {
                     func_0801AF08(&work->entries[0]);
@@ -234,6 +245,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
         t = e->unk_112;
         ApproachAngle(&t, 0, 3);
         e->unk_112 = t;
+
         if (e->unk_15A & 1) {
             break;
         }
@@ -247,6 +259,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
         if (e->unk_15C == 0) {
             e->unk_15A |= 2;
             e->unk_1A6 = 0;
+
             if (!func_080128EC()) {
                 func_08013DB8(e->unk_004, e->unk_008 + e->unk_00C, 0, 0x100);
                 e->unk_15C++;
@@ -272,6 +285,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
         }
     }
     e->unk_19C = AnimUpdate(&e->unk_180);
+
     if (e->unk_1A0 == 0) {
         work->unk_A2C = AnimUpdate(&work->unk_A10);
     }

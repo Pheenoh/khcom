@@ -38,6 +38,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 1:
         gUnk_02039B84->unk_072 = 8;
+
         if (work->unk_00C > 20) {
             work->unk_004 = 2;
             work->unk_00C = 0;
@@ -47,6 +48,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 2:
         gUnk_02039B84->unk_072 = 8;
+
         if (work->unk_00C == 0) {
             if (func_080128EC() != 0) {
                 break;
@@ -65,6 +67,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 3:
         gUnk_02039B84->unk_072 = 8;
+
         if (work->unk_00C > 20) {
             work->unk_004 = 4;
             work->unk_00C = 0;
@@ -74,6 +77,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 4:
         gUnk_02039B84->unk_072 = 8;
+
         if (func_080128EC() != 0) {
             break;
         }
@@ -473,6 +477,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             }
         } else if (gUnk_02039B84->unk_068 & 0x20000000) {
             work->unk_000 |= 2;
+
             if (work->unk_00E == 0) {
                 func_0805DAEC();
             }
@@ -511,6 +516,7 @@ void task_tutorial_2(TutorialWork* work) {
 
     if (work->unk_000 & 4) {
         spr = AnimUpdate(work->unk_020);
+
         if (work->unk_030 == 0) {
             x = work->unk_012;
             s = gSineTable[(gFrameCounter << 3) & 0xFF];
@@ -536,6 +542,7 @@ s16 func_0805E848(u16* widths, u16 count) {
     s16 total;
 
     total = 0;
+
     for (i = 0; i < count; i++) {
         total += *widths;
         widths++;
@@ -556,6 +563,7 @@ u16 func_0805E89C(u16* str) {
     u16 c;
 
     n = 0;
+
     for (;;) {
         c = *str;
         if (c == 0) {

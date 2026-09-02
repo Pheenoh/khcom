@@ -817,6 +817,7 @@ u8 func_0810329C(u16 a) {
             if (--gUnk_020358C8[i].unk_44 == 0) {
                 m4aSongNumStart(0xD2);
                 gUnk_020358C8[i].unk_38 = 8;
+
                 for (j = 0; j < 5; j++) {
                     if (gUnk_020358C8[j].unk_38 == 5) {
                         gUnk_020358C8[j].unk_44 = 8;
@@ -1269,6 +1270,7 @@ void mode_ms_shop_0(void) {
 
 void mode_ms_shop_1(void) {
     UpdatePlayTime();
+
     switch (gUnk_02035B02) {
     case 0:
         if (func_08006314() == 0) {

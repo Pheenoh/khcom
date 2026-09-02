@@ -10,6 +10,7 @@ void task_chara_mask_fade_0(MaskFadeWork* work, MaskFadeArgs* args) {
     work->unk_00A = 0;
     work->unk_008 = 1;
     work->unk_006 = args->unk_06;
+
     for (i = 0; i < work->unk_004; i++) {
         work->unk_04C[i] = GetRandom() % 5;
     }
@@ -21,8 +22,10 @@ u8 task_chara_mask_fade_1(MaskFadeWork* work) {
 
     if (++work->unk_00A > work->unk_006) {
         work->unk_00A = 0;
+
         for (i = 0; i < work->unk_004; i++) {
             CpuFastSet(work->unk_000 + i * 32, work->unk_00C, 8);
+
             for (j = 0; j <= 31; j++) {
                 work->unk_02C[j] = work->unk_00C[j] & gUnk_09EF2F08[j + work->unk_008 * 32 + work->unk_04C[i] * 288];
             }
@@ -100,6 +103,7 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
         *p10 = (-gSineTable[((work->unk_2B + 128) & 0xFF) + 64] * work->unk_2C) >> 8;
         p14 = work->unk_14;
         *p14 = (-gSineTable[((work->unk_2A + 128) & 0xFF) + 64] * work->unk_2C) >> 8;
+
         if (*p10 >= -2 && *p10 <= 2) {
             *p10 = 2;
         }
@@ -114,6 +118,7 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
             func_0805F5A4(&x, &y);
             work->unk_38 = -x;
             work->unk_3C = -y;
+
             if (work->unk_40 <= 0x7FF) {
                 m4aSongNumStart(0x6A);
                 *work->unk_1C = 0;
@@ -142,8 +147,10 @@ u8 func_080C54B4(void) {
     gUnk_02039828 = gUnk_02039820 & 3;
     gUnk_020397FC = (gUnk_02039820 & 0x1C) >> 2;
     gUnk_02039824 = (gUnk_02039820 & 0xE00) >> 9;
+
     if ((gUnk_02039820 & 0x40) && gUnk_02039828 <= 1) {
         func_080C5AA4();
+
         if ((gUnk_02039820 & 0x100) == 0) {
             gUnk_02039B60 = func_080C5B50();
         }
@@ -172,6 +179,7 @@ u8 func_080C54B4(void) {
             gUnk_0203BEA4--;
             if (gUnk_0203BEA4 == 0) {
                 func_080078A4();
+
                 if (gUnk_0203BEAC != 0) {
                     gUnk_0203BEAC();
                 }
@@ -189,6 +197,7 @@ u8 func_080C55DC(void) {
     gUnk_02039828 = gUnk_02039820 & 3;
     gUnk_020397FC = (gUnk_02039820 & 0x1C) >> 2;
     gUnk_02039824 = (gUnk_02039820 & 0xE00) >> 9;
+
     if ((gUnk_02039820 & 0x40) && gUnk_02039828 <= 1) {
         if (gUnk_020397F8 != 0) {
             gUnk_02039B60 = gUnk_020397F8();
@@ -222,8 +231,10 @@ u8 func_080C56BC(void) {
     gUnk_02039828 = gUnk_02039820 & 3;
     gUnk_020397FC = (gUnk_02039820 & 0x1C) >> 2;
     gUnk_02039824 = (gUnk_02039820 & 0xE00) >> 9;
+
     if ((gUnk_02039820 & 0x40) && gUnk_02039828 <= 1) {
         func_080C5C24();
+
         if ((gUnk_02039820 & 0x100) == 0) {
             gUnk_02039B60 = func_080C5C7C();
         }
@@ -343,6 +354,7 @@ u8 func_080C5978(void) {
         gUnk_0203BEA8++;
         if (gUnk_0203BEA8 > 4) {
             gUnk_02039B68[1] = 0x2811;
+
             if (gUnk_020397E0[1][0] == 0x2811 && gUnk_020397E0[1][1] == gUnk_020397E0[1][0]) {
                 gUnk_0203BEA8 = 0;
                 gUnk_0203BEB8++;
@@ -440,6 +452,7 @@ s32 func_080C5B50(void) {
             }
         } else if (gUnk_020397E0[0][0] == 0xECEC) {
             gUnk_0203C3A8 = 1;
+
             if (gUnk_0203C3AC != 0) {
                 gUnk_0203C3AC();
             }
@@ -484,6 +497,7 @@ s32 func_080C5C7C(void) {
             }
         } else if (gUnk_020397E0[0][0] == 0xECEC) {
             gUnk_0203C3A8 = 1;
+
             if (gUnk_0203C3AC != 0) {
                 gUnk_0203C3AC();
             }
@@ -526,6 +540,7 @@ void func_080C5D24(void) {
     do {
         off = i * 4;
         k = i + 1;
+
         for (j = 1; j >= 0; j--) {
             *(u16*)((u8*)gUnk_02039810 + off + j * 2) = 0;
         }
@@ -592,6 +607,7 @@ void func_080C5DC0(s32 (*a)(void), s32 (*b)(void)) {
     do {
         off = i * 2;
         k = i + 1;
+
         for (j = 3; j >= 0; j--) {
             *(u16*)((u8*)gUnk_020397E0 + off + j * 4) = 0;
         }
@@ -754,6 +770,7 @@ void func_080C61D4(void) {
     gUnk_0203AAC0.unk_18 = gUnk_02039BB0.unk_118;
     gUnk_0203AAC0.unk_1C = 0;
     q = gUnk_02039BB0.unk_186;
+
     for (i = 12; i >= 0; i--) {
         if ((u8)(*q - 1) <= 11) {
             gUnk_0203AAC0.unk_1C |= 1 << *q;
@@ -842,6 +859,7 @@ void func_080C640C(CharaObjParam2* param) {
     gUnk_02034CD8->unk_34 = 0;
     gUnk_02034CD8->unk_38 = 0;
     gUnk_02034CD8->unk_104C = param->unk_20;
+
     for (i = 0; i < 32; i++) {
         gUnk_02034CD8->unk_1050[i] = 0;
     }
@@ -884,6 +902,7 @@ void func_080C6894(CharaObjParam* param) {
     gUnk_02034CD8->unk_1048 = param->unk_3C;
     gUnk_02034CD8->unk_104C = param->unk_40;
     gUnk_02034CD8->unk_1090 = param->unk_44;
+
     for (i = 0; i < 10; i++) {
         gUnk_02034CD8->unk_1050[i] = 1;
     }
@@ -892,6 +911,7 @@ void func_080C6894(CharaObjParam* param) {
         gUnk_02034CD8->unk_1050[i] = 0;
     }
     idx = gUnk_02034CD8->unk_24 >> 5;
+
     if (gUnk_02034CD8->unk_28 == 32) {
         gUnk_02034CD8->unk_1050[(s16)idx] = 1;
     }

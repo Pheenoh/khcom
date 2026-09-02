@@ -12,6 +12,7 @@ void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
     work->unk_098 = arg->unk_04;
     work->unk_09C = arg->unk_06;
     work->unk_09A = func_080D35B0(work);
+
     if (work->unk_09C == 0) {
         work->unk_000 = LoadObjTiles(gUnk_0976B340, 0x2400);
         work->unk_008 = 0;
@@ -83,6 +84,7 @@ void task_allmap_room_3(AllmapRoomWork* work) {
 
     ReleaseObjTiles(work->unk_000);
     ReleaseObjPalette(work->unk_004);
+
     for (i = 0; i < 4; i++) {
         if (work->unk_00C[i] != 0) {
             ReleaseObjTiles(work->unk_00C[i]);
@@ -289,6 +291,7 @@ void func_080D3ED0(void) {
 
 void func_080D3F10(AllmapBarWork* work) {
     work->unk_2C = 1;
+
     if (work->unk_28 == 0) {
         work->unk_28 = 4;
     } else {
@@ -465,6 +468,7 @@ void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
     work->unk_0FC = work->unk_000.unk_00 * 24 - gUnk_0203C540;
     work->unk_0FE = work->unk_000.unk_02 * 24 - gUnk_0203C53C;
     work->unk_10C = 0x6800;
+
     if (func_080DF51C(work->unk_004) == 1 || func_080DF51C(work->unk_004) == 4 || func_080DF51C(work->unk_004) == 2) {
         work->unk_110 = 0x2100;
         func_080D44D4(work);
@@ -546,6 +550,7 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
         func_080061E8(0, 8);
     }
     ReleaseObjTiles(work->unk_0F0);
+
     if (func_080DF51C(work->unk_004) == 1 || func_080DF51C(work->unk_004) == 4 || func_080DF51C(work->unk_004) == 2) {
         for (i = 0; i < work->unk_114; i++) {
             func_08098778(&work->unk_01C[i]);
@@ -553,6 +558,7 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
     } else {
         ReleaseObjTiles(work->unk_018);
         ReleaseObjPalette(work->unk_0EC);
+
         for (i = 0; i < 4; i++) {
             if (work->unk_008[i] != 0) {
                 ReleaseObjTiles(work->unk_01C[i].unk_00);
@@ -644,6 +650,7 @@ void func_080D4D50(s16 a, s16 b, s32 c, u8 d) {
     p.unk_02 = b;
     room = func_080D5494(p);
     tile = c * 16;
+
     if (func_080D5944(room, 8) != 0 || func_080D5944(room, 2) != 0 || func_080D422C(p) != 0) {
         if (d != 0) {
             tile += 0x2000;
@@ -682,6 +689,7 @@ void func_080D510C(AllmapState* s) {
     ty = (s->unk_AE + s->unk_A2) << 8;
     dx = (tx - gUnk_02034E8C) >> 3;
     dy = (ty - gUnk_02034E90) >> 3;
+
     if (dx > 0x800) {
         dx = 0x800;
     } else if (dx < -0x800) {
@@ -697,6 +705,7 @@ void func_080D510C(AllmapState* s) {
     py = gUnk_02034E90;
     gUnk_02034E8C += dx;
     gUnk_02034E90 += dy;
+
     if (abs(px - gUnk_02034E8C) <= 7) {
         gUnk_02034E8C = tx;
     }
@@ -731,6 +740,7 @@ void func_080D53F8(void) {
     u8 i;
 
     base = (gUnk_0203C4B4->unk_BA * 24 - gUnk_0203C53C) << 9;
+
     for (i = 0; i < 32; i++) {
         if (func_08000F48(gUnk_0203C4B4->unk_14[i]) != 0) {
             w = gUnk_0203C4B4->unk_14[i]->unk_04;
@@ -792,6 +802,7 @@ void func_080D55E4(void) {
     moved = 0;
     c = gUnk_0203C4B4->unk_94->unk_04;
     p = c->unk_30;
+
     switch (GetKeysRepeat()) {
     case 64:
         p.unk_00++;
@@ -819,11 +830,13 @@ void func_080D55E4(void) {
         return;
     }
     c->unk_30 = p;
+
     if (gUnk_0203C4B4->unk_C0 == r) {
         return;
     }
     gUnk_0203C4B4->unk_C0 = r;
     gUnk_0203C538 = r;
+
     if (moved != 0) {
         m4aSongNumStart(101);
         func_080D54FC();
@@ -855,6 +868,7 @@ void func_080D576C(u8 a, u16 b, u16 c) {
     u8* d;
 
     d = func_080DED98(a);
+
     if (func_08000F48(gUnk_0203C4B4->unk_14[a]) != 0) {
         return;
     }
@@ -879,6 +893,7 @@ void func_080D576C(u8 a, u16 b, u16 c) {
     arg.unk_04 = a;
     arg.unk_06 = 0;
     gUnk_0203C4B4->unk_14[a] = TaskCreate(gUnk_0203C4B4, &gUnk_09EF4DC0, &arg);
+
     if ((u8)(d[0] + 3) > 2) {
         func_080D576C(d[0], b + 1, c - 1);
     }
@@ -981,6 +996,7 @@ void func_080D5A4C(u16 a) {
     EnableBg(0);
     DisableBg(1);
     DisableBg(2);
+
     if (func_08000F48(gUnk_02034EB8) == 0) {
         gUnk_02034EB8 = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E60, 0);
     }

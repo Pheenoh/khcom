@@ -93,6 +93,7 @@ u16 func_080F7DD8(s32 a) {
         return 0x20;
     }
     i = 0;
+
     if (a >= gUnk_0999204C[0]) {
         do {
             i++;
@@ -113,8 +114,10 @@ s32 func_080F7E0C(s32 x0, s32 y0, s32 x1, s32 y1) {
 
     dx = x1 - x0;
     dy = y1 - y0;
+
     if (dx >= 0) {
         q = 0;
+
         if (dy < 0) {
             q = 3;
             tmp = dx;
@@ -200,6 +203,7 @@ s32 func_080F7F70(RoomWork* work, s16 i) {
     s32 v;
 
     v = gUnk_09991F54[i].unk_04;
+
     if (work->unk_018 != 0) {
         v = -v;
     }
@@ -227,6 +231,7 @@ void func_080F800C(RoomWork* work, s32 i) {
     s32 v;
 
     e = &work->entries[i];
+
     if (work->unk_018 == 0) {
         e->unk_034 |= 4;
     } else {
@@ -238,6 +243,7 @@ void func_080F800C(RoomWork* work, s32 i) {
     e->unk_128 = func_080F7FC8(work, i);
     e->unk_12C = func_080F7FE4(work, i);
     v = gUnk_09991F54[i].unk_10;
+
     if (work->unk_018 != 0) {
         v = -v;
     }
@@ -250,12 +256,14 @@ void func_080F80C0(RoomWork* work) {
     u32 i;
 
     flip = 0;
+
     if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
         flip = 1;
     }
 
     if (work->unk_018 != flip) {
         work->unk_018 = flip;
+
         for (i = 0; i <= 5; i++) {
             func_080F800C(work, i);
         }
@@ -281,6 +289,7 @@ void func_080F80FC(RoomWork* work, u32 i, s32 c) {
     e->unk_134 = 0;
     e->unk_138 = 0;
     e->unk_1A4 = 0;
+
     if (c != 0) {
         if (i != 1) {
             e->unk_124 -= (GetRandom() & 0x1F) << 8;
@@ -291,12 +300,14 @@ void func_080F80FC(RoomWork* work, u32 i, s32 c) {
     func_0801B37C(e, gUnk_09991F44, e->unk_124, e->unk_128, e->unk_12C);
     func_0801C7FC(e, gUnk_09991F44[0], gUnk_09991F54[i].unk_00);
     e->unk_0A0 = 0x10;
+
     if (i == 0) {
         e->unk_034 |= 0x400;
     } else {
         e->unk_034 |= 0x1000;
     }
     e->unk_034 |= 4;
+
     switch (i) {
     case 4:
     case 5:
@@ -310,6 +321,7 @@ void func_080F80FC(RoomWork* work, u32 i, s32 c) {
     AnimInit(&e->unk_180, gUnk_09991F54[i].unk_18, p);
     AnimStart(&e->unk_180, 0, 1);
     e->unk_19C = AnimGetGfx(&e->unk_180);
+
     if (i == 0) {
         work->unk_A28 = AllocObjTiles(func_08003524(gUnk_09EF9728, 4), gUnk_099999AC);
         AnimInit(&work->unk_A10, gUnk_09EF9738, gUnk_09EF9728);
@@ -350,6 +362,7 @@ void func_080F83E0(RoomWork* work, RoomEntry* e) {
     f = func_08002C28(e->unk_112, 1);
     q = e;
     g = func_0801AF1C(e->unk_008);
+
     if (work->unk_018 == 1) {
         g |= 1;
     }
@@ -362,6 +375,7 @@ void func_080F83E0(RoomWork* work, RoomEntry* e) {
     WorldToScreen(&sx, &sy, q->unk_004, q->unk_008, q->unk_00C);
     v = q->unk_008 >> 8;
     DrawSprite(e->unk_15E + sx, e->unk_160 + sy, e->unk_19C, e->unk_198, pal, f, g, 0xFFFFEFFC - (v << 2));
+
     if (e->unk_1A0 == 0 && work->unk_000 != 7 && work->unk_000 != 8 && work->unk_000 != 9) {
         DrawSprite(e->unk_15E + sx, e->unk_160 + sy, work->unk_A2C, work->unk_A28, pal, f, g,
                    0xFFFFEFFC - ((q->unk_008 >> 8) << 2));
@@ -481,6 +495,7 @@ u8 func_080F9744(RoomWork* work) {
 
     for (i = 0; i <= 5; i++) {
         e = &work->entries[i];
+
         switch (work->unk_008) {
         case 0:
             switch (e->unk_1A0) {
@@ -514,6 +529,7 @@ u8 func_080F9744(RoomWork* work) {
                     t = e->unk_124;
                     e->unk_124 = work->unk_018 == 0 ? t - 0x300 : t + 0x300;
                     e->unk_128 += 0x133;
+
                     if (!(e->unk_15A & 4)) {
                         if (func_08011F78(0xE3, e->unk_004, e->unk_008, e->unk_00C, 0x10, 0x10, 0x20)) {
                             m4aSongNumStart(0x25A);
@@ -546,6 +562,7 @@ u8 func_080F9744(RoomWork* work) {
                     t = e->unk_124;
                     e->unk_124 = work->unk_018 == 0 ? t - 0x300 : t + 0x300;
                     e->unk_128 -= 0x133;
+
                     if (!(e->unk_15A & 4)) {
                         if (func_08011F78(0xE3, e->unk_004, e->unk_008, e->unk_00C, 0x10, 0x10, 0x20)) {
                             m4aSongNumStart(0x25A);
@@ -602,6 +619,7 @@ u8 func_080F99C0(RoomWork* work) {
 
     for (i = 0; i <= 5; i++) {
         e = &work->entries[i];
+
         switch (work->unk_008) {
         case 0:
             switch (e->unk_1A0) {
@@ -660,6 +678,7 @@ u8 func_080F99C0(RoomWork* work) {
                 case 2:
                 case 3:
                     e->unk_1A4 = e->unk_1A4 + 4;
+
                     if (!(e->unk_15A & 4)) {
                         if (func_08011F78(0xE4, e->unk_004, e->unk_008, e->unk_00C, 0x10, 0x10, 0x20)) {
                             m4aSongNumStart(0x25A);
@@ -709,6 +728,7 @@ u8 func_080F9C2C(RoomWork* work) {
     s32 t;
 
     t = 0;
+
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
     }
@@ -718,6 +738,7 @@ u8 func_080F9C2C(RoomWork* work) {
         for (i = 0; i <= 5; i++) {
             e = &work->entries[i];
             e->unk_15A |= 1;
+
             if (i == 0) {
                 AnimStart(&work->unk_A10, 1, 1);
                 AnimStart(&e->unk_180, 2, 1);
@@ -751,6 +772,7 @@ u8 func_080F9C2C(RoomWork* work) {
             gUnk_02039B84->unk_0D0 += work->unk_A3C;
             gUnk_02039B84->unk_0D4 -= work->unk_A40;
             work->unk_A40 -= 0x33;
+
             if (gUnk_02039B84->unk_0D4 > 0) {
                 func_0802F1E8();
                 m4aSongNumStart(0x25B);
@@ -771,6 +793,7 @@ u8 func_080F9C2C(RoomWork* work) {
             gUnk_02039B84->unk_0D4 += work->unk_A40;
             t = work->unk_A40 - 7;
             work->unk_A40 = t;
+
             if (gUnk_02039B84->unk_0D4 <= 0 && t < 0) {
                 func_080F7F54(work, 1);
             }
@@ -785,8 +808,10 @@ u8 func_080F9C2C(RoomWork* work) {
         break;
     case 2:
         gUnk_02039B84->unk_0D4 = t;
+
         for (i = 0; i <= 5; i++) {
             e = &work->entries[i];
+
             switch (i) {
             case 0:
                 AnimStart(&work->unk_A10, 0, 1);
@@ -830,6 +855,7 @@ u8 func_080FAA18(RoomWork* work) {
     s32 t;
 
     t = 0;
+
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
     }
@@ -837,6 +863,7 @@ u8 func_080FAA18(RoomWork* work) {
     switch (work->unk_008) {
     case 0:
         work->unk_010 = 0x12C;
+
         for (i = 0; i <= 5; i++) {
             e = &work->entries[i];
             if (!(e->unk_15A & 4)) {
@@ -844,6 +871,7 @@ u8 func_080FAA18(RoomWork* work) {
                 e->unk_164 = gSineTable[(GetRandom() % 0x100) & 0xFF] * 0x233 >> 8;
                 e->unk_168 = -gSineTable[((GetRandom() % 0x100) & 0xFF) + 0x40] * 0x233 >> 8;
                 e->unk_11C = 1;
+
                 if (i == 0) {
                     AnimStart(&work->unk_A10, 1, 1);
                     AnimStart(&e->unk_180, 2, 1);
@@ -862,6 +890,7 @@ u8 func_080FAA18(RoomWork* work) {
         break;
     case 2:
         gUnk_02039B84->unk_0D4 = t;
+
         for (i = 0; i <= 5; i++) {
             e = &work->entries[i];
             t = e->unk_15A & 4;

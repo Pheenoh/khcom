@@ -134,6 +134,7 @@ u16* BrightenPalette(u16* src, u16* dst, u16 size, u16 amount) {
         rv += amount * gUnk_08121694[r];
         gv += amount * gUnk_08121694[g];
         bv += amount * gUnk_08121694[b];
+
         if (rv > 0x1F00) {
             rv = 0x1F00;
         }
@@ -163,6 +164,7 @@ u16* LoadPaletteBuffered(void* src, u16* dst, u16 size) {
     s32 base = ((s32)dst - 0x05000000) >> 1;
 
     CpuSet(src, &gPaletteBuffer->colors[base], size >> 1);
+
     if (base == 0) {
         RequestDma3Copy(&gPaletteBuffer->colors[1], dst + 1, size - 2);
     } else {
@@ -356,6 +358,7 @@ void HBlankIntrBgWave1(s32 a) {
 
     line = REG_VCOUNT;
     line = (line + 1) % 228;
+
     if (gBgWaves[a].unk_02 == 1) {
         REG_BGHOFS(0) = gSineTable[((line + gFrameCounter) * gBgWaves[a].unk_01) & 0xFF] * gBgWaves[a].unk_00 >> 8;
     }
@@ -373,6 +376,7 @@ void HBlankIntrBgWave(void) {
 
     line = REG_VCOUNT;
     line = (line + 1) % 228;
+
     for (i = 0; i < 4; i++) {
         s16* sine = gSineTable;
 

@@ -50,6 +50,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
     } else if (work->unk_0C->unk_00 <= work->unk_04) {
         if (work->unk_24-- <= 0) {
             work->unk_20 |= 2;
+
             if (gUnk_02039BB0.unk_1B8 != 4) {
                 gUnk_02039BB0.unk_008 &= ~4;
             }
@@ -69,6 +70,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
                 work->unk_14 = (obj->unk_004 + 0x10000) >> 1;
                 work->unk_18 = obj->unk_008;
                 work->unk_1C = 0;
+
                 if (obj->unk_034 & 4) {
                     if (GetRandom() % 5 != 0) {
                         work->unk_20 |= 1;
@@ -268,6 +270,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     case 6:
         work->unk_4C = 105;
         work->unk_40 = 3;
+
         if (work->unk_3C != 0) {
             work->unk_58 = 192;
         } else {
@@ -279,6 +282,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     case 7:
         work->unk_4C = 111;
         work->unk_40 = 4;
+
         if (work->unk_3C != 0) {
             work->unk_58 = 192;
         } else {
@@ -355,6 +359,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
 
             if (func_08011F78(work->unk_4C, work->unk_24, work->unk_28, work->unk_2C, 8, 8, 8) != 0) {
                 m4aSongNumStart(work->unk_68);
+
                 if (obj->unk_034 & 2) {
                     work->unk_3A = 20;
                 }
@@ -418,6 +423,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         break;
     case 0:
         ApproachValue(&work->unk_30, -0x800, work->unk_38);
+
         if (work->unk_3C != 0) {
             work->unk_24 = work->unk_24 - work->unk_30;
         } else {
@@ -459,6 +465,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         break;
     case 1:
         ApproachValue(&work->unk_30, -work->unk_34, work->unk_3A);
+
         if (work->unk_3C != 0) {
             work->unk_24 = work->unk_24 - work->unk_30;
         } else {
@@ -481,6 +488,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
     case 2:
         if (work->unk_38 == 0) {
             work->unk_3A = 30;
+
             switch (work->unk_48) {
             case 4:
                 func_080155BC(work->unk_24, work->unk_28, 0, work->unk_4C);
@@ -533,6 +541,7 @@ void task_btl_raid_2(BtlRaidWork* work) {
 
         if (scale == 256) {
             affine = 0;
+
             if (work->unk_3C == 0) {
                 flags |= 1;
             }

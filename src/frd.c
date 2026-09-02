@@ -799,6 +799,7 @@ void func_08048980(FrdPanWork* work) {
         case 3:
         case 4:
             sub.unk_0C -= 0x1800;
+
             if (work->unk_020.unk_34 & 4) {
                 sub.unk_04 += 0x2000;
             } else {
@@ -808,6 +809,7 @@ void func_08048980(FrdPanWork* work) {
         case 5:
         default:
             sub.unk_0C -= 0x1000;
+
             if (work->unk_020.unk_34 & 4) {
                 sub.unk_04 += 0x1000;
             } else {
