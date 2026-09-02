@@ -1022,12 +1022,158 @@ u8 func_0806F898(Work0806180C* p, void* a) {
     return 1;
 }
 INCLUDE_ASM("unk_0806180c/func_0806F94C.s");
-INCLUDE_ASM("unk_0806180c/func_0806FA84.s");
-INCLUDE_ASM("unk_0806180c/func_0806FAB8.s");
-INCLUDE_ASM("unk_0806180c/func_0806FB6C.s");
-INCLUDE_ASM("unk_0806180c/func_0806FC28.s");
-INCLUDE_ASM("unk_0806180c/func_0806FCF4.s");
-INCLUDE_ASM("unk_0806180c/func_0806FDB0.s");
+u8 func_0806FA84(Work0806180C* p, void* a) {
+    p->unk_1AA = 0;
+    p->unk_1A9 = 0;
+    func_08000F8C(a, (void*)func_0806FAB8);
+    TaskPoolUpdate(&p->unk_010);
+    return 1;
+}
+u8 func_0806FAB8(Work0806180C* p, void* a) {
+    u16 buf[2];
+
+    memcpy(buf, gUnk_09033C8C, 4);
+    func_0801CD74(p->unk_028, buf[p->unk_1A9]);
+    p->unk_1AA++;
+    if (p->unk_1AA == 12) {
+        p->unk_1AA = 0;
+        p->unk_1A9 ^= 1;
+    }
+
+    if (func_0806E570(p) != 0) {
+        if (p->unk_004 != NULL) {
+            ReleaseObjTiles(p->unk_004);
+        }
+
+        if (p->unk_008 != NULL) {
+            ReleaseObjPalette(p->unk_008);
+        }
+        p->unk_004 = NULL;
+        p->unk_008 = NULL;
+        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
+            func_08000F8C(a, p->unk_000[p->unk_1A0].unk_1C);
+        } else {
+            func_08000F8C(a, (void*)func_0806E184);
+        }
+    }
+    TaskPoolUpdate(&p->unk_010);
+    return 1;
+}
+u8 func_0806FB6C(void* work, void* a) {
+    Work0806180C* p = work;
+    u16 z;
+
+    func_0806E7A8(p);
+    func_08070AD4(p);
+    if (func_0806E570(p) != 0) {
+        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
+            func_08000F8C(a, p->unk_000[p->unk_1A0].unk_1C);
+        }
+
+        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
+            p->unk_000[p->unk_1A0].unk_20(p);
+            p->unk_1B2 = 1;
+        } else {
+            p->unk_1B2 = 0;
+        }
+    }
+    z = p->unk_03E;
+    z |= 4;
+    func_0801CE00(p->unk_028, z);
+    gBldCnt = 0xF40;
+    gBldAlpha = 16;
+    p->unk_1AA = 0;
+    p->unk_1A9 = 16;
+    func_08000F8C(a, (void*)func_0806FC28);
+    TaskPoolUpdate(&p->unk_010);
+    return 1;
+}
+u8 func_0806FC28(Work0806180C* p, void* a) {
+    func_0806E7A8(p);
+    func_08070AD4(p);
+    p->unk_1AA++;
+    if (p->unk_1AA % 2 == 0) {
+        if (p->unk_1A9 != 0) {
+            p->unk_1A9--;
+        }
+    }
+    gBldAlpha = p->unk_1A9;
+    if (func_0806E570(p) != 0) {
+        gBldCnt = 0;
+        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
+            func_08000F8C(a, p->unk_000[p->unk_1A0].unk_1C);
+        } else {
+            func_08000F8C(a, (void*)func_0806E184);
+        }
+
+        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
+            p->unk_000[p->unk_1A0].unk_20(p);
+            p->unk_1B2 = 1;
+        } else {
+            p->unk_1B2 = 0;
+        }
+    }
+    TaskPoolUpdate(&p->unk_010);
+    return 1;
+}
+u8 func_0806FCF4(void* work, void* a) {
+    Work0806180C* p = work;
+    u16 z;
+
+    func_0806E7A8(p);
+    func_08070AD4(p);
+    if (func_0806E570(p) != 0) {
+        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
+            func_08000F8C(a, p->unk_000[p->unk_1A0].unk_1C);
+        }
+
+        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
+            p->unk_000[p->unk_1A0].unk_20(p);
+            p->unk_1B2 = 1;
+        } else {
+            p->unk_1B2 = 0;
+        }
+    }
+    z = p->unk_03E;
+    z |= 4;
+    func_0801CE00(p->unk_028, z);
+    gBldCnt = 0xF40;
+    gBldAlpha = 0;
+    p->unk_1AA = 0;
+    p->unk_1A9 = 16;
+    func_08000F8C(a, (void*)func_0806FDB0);
+    TaskPoolUpdate(&p->unk_010);
+    return 1;
+}
+u8 func_0806FDB0(Work0806180C* p, void* a) {
+    func_0806E7A8(p);
+    func_08070AD4(p);
+    p->unk_1AA++;
+    if (p->unk_1AA % 2 == 0) {
+        if (p->unk_1A9 != 0) {
+            p->unk_1A9--;
+        }
+    }
+    gBldAlpha = (16 - p->unk_1A9) | (p->unk_1A9 << 8);
+    gBldAlpha = (p->unk_1A9 << 8) | 16;
+    if (func_0806E570(p) != 0) {
+        gBldCnt = 0;
+        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
+            func_08000F8C(a, p->unk_000[p->unk_1A0].unk_1C);
+        } else {
+            func_08000F8C(a, (void*)func_0806E184);
+        }
+
+        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
+            p->unk_000[p->unk_1A0].unk_20(p);
+            p->unk_1B2 = 1;
+        } else {
+            p->unk_1B2 = 0;
+        }
+    }
+    TaskPoolUpdate(&p->unk_010);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_0806FE90.s");
 
 void func_08070008(Work0806180C* p) {

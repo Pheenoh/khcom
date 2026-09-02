@@ -20,7 +20,9 @@ typedef struct Ent0806E9BC {
 
 typedef struct Work0806180C {
     Ent0806E9BC* unk_000;
-    u8 unk_004[0xC];
+    void* unk_004;
+    void* unk_008;
+    u8 unk_00C[4];
     TaskPool unk_010;
     u8 unk_024[2];
     u8 unk_026;
@@ -135,8 +137,9 @@ typedef struct AnimSet0806180C {
 } AnimSet0806180C;
 
 extern TextCtx* gUnk_02039DC8;
+extern u16 gUnk_09033C8C[];
 extern u16 gBldCnt;
-extern u16 gBldAlpha;
+extern vu16 gBldAlpha;
 extern AnimSet0806180C* gUnk_09EE3FB4[];
 extern Ent080658B8* gUnk_02034A84;
 extern Ent080658B8* gUnk_02034A88;
@@ -184,7 +187,12 @@ void TaskPoolUpdate(TaskPool* a);
 void func_08000F8C(void* a, void* b);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
+void* memcpy(void* dst, const void* src, unsigned long n);
 u8 func_0806E184(Work0806180C* p, void* a);
+u8 func_0806FA84(Work0806180C* p, void* a);
+u8 func_0806FDB0(Work0806180C* p, void* a);
+u8 func_0806FC28(Work0806180C* p, void* a);
+u8 func_0806FAB8(Work0806180C* p, void* a);
 u8 func_0806E570(Work0806180C* p);
 void func_0806E7A8(Work0806180C* p);
 void func_08070AD4(Work0806180C* p);
