@@ -153,7 +153,28 @@ void func_0800CB78(EmyWork* work) {
 }
 
 INCLUDE_ASM("mode_vsbattle/_0800CBDC.s");
-INCLUDE_ASM("mode_vsbattle/func_0800CD40.s");
+void func_0800CD40(EmyWork* work) {
+    VsActor* actor = &work->unk_03C;
+
+    if (gUnk_02039BB0.unk_008 & 4) {
+        actor->unk_34 |= 0x4002;
+
+        if (gUnk_02039BB0.unk_1B8 == 3) {
+            actor->unk_20 = (actor->unk_2E * 204) >> 8;
+        } else {
+            actor->unk_20 = (actor->unk_2E * 25) >> 8;
+        }
+
+        actor->unk_24 = 0x200;
+        gUnk_02039B84->unk_076 = 0;
+        actor->unk_A8 = 0;
+        actor->unk_AC = 0;
+    }
+
+    work->unk_14C = work->unk_150;
+    work->unk_154 = 0;
+    actor->unk_34 &= ~0x300;
+}
 INCLUDE_ASM("mode_vsbattle/_0800CDF0.s");
 INCLUDE_ASM("mode_vsbattle/func_0800DF30.s");
 
