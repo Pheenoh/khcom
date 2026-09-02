@@ -59,6 +59,7 @@ void mode_title_1(void) {
         if (func_08006314()) {
             break;
         }
+
         if (gUnk_02034EC0 != 0) {
             gUnk_02034EC0--;
             if (gUnk_02034EC0 != 0) {
@@ -84,6 +85,7 @@ void mode_title_1(void) {
                 func_08006184(1, 0x46);
             }
         }
+
         if (gUnk_02034EC0 == 0) {
             gUnk_02034E98 = 2;
             gUnk_02034EC0 = 2;
@@ -105,6 +107,7 @@ void mode_title_1(void) {
         if (func_08006314()) {
             break;
         }
+
         if (gUnk_02034EC0 != 0) {
             gUnk_02034EC0--;
             break;
@@ -134,6 +137,7 @@ void mode_title_1(void) {
         if (!func_080D6790()) {
             break;
         }
+
         if (!(GetKeysPressed() & 8) && !(GetKeysPressed() & 1)) {
             break;
         }

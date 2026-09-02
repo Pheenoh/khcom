@@ -102,20 +102,24 @@ u16 func_0800846C(KeyState* k, u16 a, u16 b) {
     if (ca == 2) {
         k->unk_6 &= ~a;
     }
+
     if (cb == 2) {
         k->unk_6 &= ~b;
     }
+
     if (((KeyGetPressed(k) & a) && (KeyGetHeld(k) & b)) ||
         ((KeyGetPressed(k) & b) && (KeyGetHeld(k) & a))) {
         k->unk_6 |= a | b;
         r = a | b;
     }
+
     if (!(k->unk_6 & a)) {
         if (KeyGetHoldFrames(k, a) == 5 || ca == 1) {
             k->unk_6 |= a;
             r = a;
         }
     }
+
     if (!(k->unk_6 & b)) {
         if (KeyGetHoldFrames(k, b) == 5 || cb == 1) {
             k->unk_6 |= b;
@@ -140,6 +144,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[0]++;
         }
     }
+
     if (k->held & 0x10) {
         k->on[1]++;
         k->off[1] = 0;
@@ -152,6 +157,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[1]++;
         }
     }
+
     if (k->held & 0x40) {
         k->on[2]++;
         k->off[2] = 0;
@@ -164,6 +170,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[2]++;
         }
     }
+
     if (k->held & 0x80) {
         k->on[3]++;
         k->off[3] = 0;
@@ -176,6 +183,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[3]++;
         }
     }
+
     if (k->held & 0x200) {
         k->on[6]++;
         k->off[6] = 0;
@@ -188,6 +196,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[6]++;
         }
     }
+
     if (k->held & 0x100) {
         k->on[7]++;
         k->off[7] = 0;
@@ -200,6 +209,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[7]++;
         }
     }
+
     if (k->held & 0x1) {
         k->on[4]++;
         k->off[4] = 0;
@@ -212,6 +222,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[4]++;
         }
     }
+
     if (k->held & 0x2) {
         k->on[5]++;
         k->off[5] = 0;
@@ -224,6 +235,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[5]++;
         }
     }
+
     if (k->held & 0x8) {
         k->on[8]++;
         k->off[8] = 0;
@@ -236,6 +248,7 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
             k->off[8]++;
         }
     }
+
     if (k->held & 0x4) {
         k->on[9]++;
         k->off[9] = 0;
@@ -252,30 +265,39 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->on[0] == 1 || k->on[0] == 32) {
         k->rep |= 0x20;
     }
+
     if (k->on[1] == 1 || k->on[1] == 32) {
         k->rep |= 0x10;
     }
+
     if (k->on[2] == 1 || k->on[2] == 32) {
         k->rep |= 0x40;
     }
+
     if (k->on[3] == 1 || k->on[3] == 32) {
         k->rep |= 0x80;
     }
+
     if (k->on[6] == 1 || k->on[6] == 32) {
         k->rep |= 0x200;
     }
+
     if (k->on[7] == 1 || k->on[7] == 32) {
         k->rep |= 0x100;
     }
+
     if (k->on[4] == 1 || k->on[4] == 32) {
         k->rep |= 0x1;
     }
+
     if (k->on[5] == 1 || k->on[5] == 32) {
         k->rep |= 0x2;
     }
+
     if (k->on[8] == 1 || k->on[8] == 32) {
         k->rep |= 0x8;
     }
+
     if (k->on[9] == 1 || k->on[9] == 32) {
         k->rep |= 0x4;
     }

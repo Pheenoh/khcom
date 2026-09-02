@@ -38,9 +38,11 @@ void func_08065940(void) {
         if (gUnk_02034A84[i].unk_08 != NULL) {
             ReleaseObjTiles(gUnk_02034A84[i].unk_08);
         }
+
         if (gUnk_02034A84[i].unk_0C != NULL) {
             ReleaseObjPalette(gUnk_02034A84[i].unk_0C);
         }
+
         if (gUnk_02034A84[i].unk_10 != NULL) {
             ReleaseObjPalette(gUnk_02034A84[i].unk_10);
         }
@@ -83,6 +85,7 @@ s16 func_08065B08(TextSlot* p, u8 n) {
         if (p[i].unk_00 == NULL) {
             return x;
         }
+
         if (p[i].unk_05 == -1) {
             x += 3;
         } else {
@@ -149,36 +152,47 @@ u16 func_0806692C(u8* s, u16* out) {
         if ((u8)(s[i] - '0') <= 9) {
             g = s[i] - '0';
         }
+
         if ((u8)(s[i] - 'A') <= 25) {
             g = s[i] - 0x37;
         }
+
         if ((u8)(s[i] - 'a') <= 25) {
             g = s[i] - 0x57;
         }
+
         if (s[i] == '/') {
             g = 0x24;
         }
+
         if (s[i] == '-') {
             g = 0x25;
         }
+
         if (s[i] == '_') {
             g = 0x26;
         }
+
         if (s[i] == '.') {
             g = 0x27;
         }
+
         if (s[i] == '+') {
             g = 0x28;
         }
+
         if (s[i] == '!') {
             g = 0x29;
         }
+
         if (s[i] == '?') {
             g = 0x2A;
         }
+
         if (s[i] == '#') {
             g = 0x2B;
         }
+
         if (s[i] == '%') {
             g = 0x2C;
         }
@@ -258,6 +272,7 @@ u16 func_0806BA74(s32 mode, s32 flag) {
             gUnk_02034A88[i].unk_0C = LoadObjPalette(gUnk_09614738, 0x20);
             break;
         }
+
         if (flag == 0) {
             gUnk_02034A88[i].unk_10 = _08066468(3);
         } else {
@@ -300,9 +315,11 @@ void func_0806C34C(void) {
         if (gUnk_02034A88[i].unk_08 != NULL) {
             ReleaseObjTiles(gUnk_02034A88[i].unk_08);
         }
+
         if (gUnk_02034A88[i].unk_0C != NULL) {
             ReleaseObjPalette(gUnk_02034A88[i].unk_0C);
         }
+
         if (gUnk_02034A88[i].unk_10 != NULL) {
             ReleaseObjPalette(gUnk_02034A88[i].unk_10);
         }
@@ -375,6 +392,7 @@ void func_08072918(Actor0806180C* a, u8 kind, u8 flag) {
                 m4aSongNumStart(0x389);
                 func_08076110(0x389, x, y);
             }
+
             if (flag != 0) {
                 m4aSongNumStart(0x388);
                 func_08076110(0x388, x, y);

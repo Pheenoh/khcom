@@ -57,6 +57,7 @@ void func_080C8B60(PooMover* w, s32 b, u8 c) {
     if (w->unk_3C > b) {
         w->unk_3C = b;
     }
+
     if (c != 0) {
         a = GetAngle(w->unk_28, w->unk_2C, w->unk_40, w->unk_44);
         w->unk_38 = a;
@@ -74,6 +75,7 @@ void func_080C98B8(PooWork* w) {
         if (gUnk_0203C3E4 != 0) {
             gUnk_0203C3E0--;
         }
+
         if (gUnk_0203C3E0 == 0) {
             if (gUnk_0203C3E4 == 0) {
                 func_080C84E0(w, 0x17);
@@ -172,9 +174,11 @@ u8 func_080C9E4C(void) {
     if (gUnk_02034DAC == 0x21) {
         return 0;
     }
+
     if (gUnk_02034DAC == 0x22) {
         return 1;
     }
+
     if (gUnk_02034DAC == 0x23) {
         return 2;
     }
@@ -283,12 +287,15 @@ u8 func_080CA3A0(PooPos* p) {
     if (v >= 1 && v <= 9) {
         return 0;
     }
+
     if (v >= 0x20 && v <= 0x29) {
         return 0;
     }
+
     if (v >= 0x40 && v <= 0x49) {
         return 0;
     }
+
     if (v < 0x1E0 || v > 0x23F) {
         return 1;
     }
@@ -611,9 +618,11 @@ u8 func_080CC284(s16 x, s16 y) {
     if (x < -64 || x > 304) {
         return 0;
     }
+
     if (y < -64) {
         return 0;
     }
+
     if (y <= 224) {
         return 1;
     }
@@ -668,12 +677,14 @@ u8 task_poo_gauge_1(PooGaugeWork* w) {
     } else {
         w->unk_10 = 0;
     }
+
     if (w->unk_10 != 0) {
         if (w->unk_0C != gUnk_09849BB8) {
             LoadObjPaletteBank(w->unk_04->unk_06, gUnk_09849BB8);
             w->unk_0C = gUnk_09849BB8;
         }
     }
+
     if (w->unk_10 == 0) {
         if (w->unk_0C != gUnk_09849B98) {
             LoadObjPaletteBank(w->unk_04->unk_06, gUnk_09849B98);
@@ -784,6 +795,7 @@ PooNode* func_080CCC98(void) {
         }
         n = (PooNode*)func_08000CD4(&n->unk_0C);
     }
+
     if (gUnk_02034DF0 == 0 && best == (PooNode*)func_08000C8C(&gUnk_02034DF8.head)) {
         return 0;
     }
@@ -848,9 +860,11 @@ s32 func_080CD1DC(u32 a) {
     if (a == 0) {
         return 1;
     }
+
     if (a <= 2) {
         return 3;
     }
+
     if (a <= 4) {
         return 5;
     }
@@ -861,9 +875,11 @@ s32 func_080CD1F8(u32 a) {
     if (a == 0) {
         return 32;
     }
+
     if (a <= 2) {
         return 24;
     }
+
     if (a <= 4) {
         return 16;
     }
@@ -881,6 +897,7 @@ void task_poo_pile_3(PooPileWork* w) {
         ReleaseObjTiles(w->unk_00);
         ReleaseObjPalette(w->unk_04);
     }
+
     if (w->unk_CC != 0) {
         func_08012304(w->unk_34);
         func_080CCBD4(&w->unk_90);
@@ -991,6 +1008,7 @@ void task_poo_eeyore_3(PooEeyoreWork* w) {
         ReleaseObjTiles(w->unk_00);
         ReleaseObjPalette(w->unk_04);
     }
+
     if (w->unk_AC != 0) {
         func_08012304(w->unk_34);
     }
@@ -1061,6 +1079,7 @@ void func_080CE710(PooTiggerWork* w, u16 b) {
     } else {
         a = 0;
     }
+
     if (w->unk_26 != a) {
         w->unk_26 = a;
         AnimStart(w->unk_0C, a, b);
@@ -1108,6 +1127,7 @@ void task_poo_tiggerroo_3(PooTiggerWork* w) {
     if (w->unk_00 != 0) {
         ReleaseObjTiles(w->unk_00);
     }
+
     if (w->unk_04 != 0) {
         ReleaseObjPalette(w->unk_04);
         func_08012304(w->unk_38);
@@ -1326,6 +1346,7 @@ void task_poo_honeycomb_3(PooHoneycombWork* w) {
         ReleaseObjTiles(w->unk_00);
         ReleaseObjPalette(w->unk_04);
     }
+
     if (w->unk_9C != 0) {
         func_08012304(w->unk_38);
     }
@@ -1382,12 +1403,15 @@ s32 func_080CFE34(PooPos* p) {
     if (y + x < -0x1A00) {
         return 0;
     }
+
     if (y - x / 2 > k - 0xB80) {
         return 0;
     }
+
     if (y + x > k + 0x1700) {
         return 0;
     }
+
     if (y - x / 2 < -0x1180) {
         return 0;
     }
@@ -1408,12 +1432,15 @@ s32 func_080CFEA0(PooPos* p) {
     if (y + x < -0x1A00) {
         return 0;
     }
+
     if (y - x / 2 > k - 0xB80) {
         return 0;
     }
+
     if (y + x > 0x3100) {
         return 0;
     }
+
     if (y - x / 2 < -0x1180) {
         return 0;
     }
@@ -1492,12 +1519,15 @@ s32 func_080D0210(s32 a, s32 b) {
     if (x < -0x3D00 || x > 0x4300 || y < -0x1F00 || y > 0x3800) {
         return 0;
     }
+
     if (x < -0x1100 && y <= 0x2FF) {
         return 0x53;
     }
+
     if (x > 0x1700 && y > 0x500) {
         return 0xD3;
     }
+
     if (-x / 2 + y > 0) {
         return 0x2D;
     }
@@ -1551,6 +1581,7 @@ u8 task_poo_wagonwheel_1(PooWheelWork* w) {
         w->unk_36 = 3;
         AnimStart(w->unk_0C, 3, 1);
     }
+
     if (w->unk_36 == 3) {
         w->unk_08 = AnimUpdate(w->unk_0C);
         if (w->unk_38 <= 0x4FF) {
@@ -1562,6 +1593,7 @@ u8 task_poo_wagonwheel_1(PooWheelWork* w) {
             w->unk_24 = w->unk_3C + 0x4800;
         }
     }
+
     if (w->unk_40 != 0 && w->unk_04 == 0) {
         return 0;
     }
@@ -1574,6 +1606,7 @@ void task_poo_wagonwheel_3(PooWheelWork* w) {
     if (func_080D2D50(6) != 0) {
         func_080D2CE0(w->unk_24 >> 8, w->unk_28 >> 8);
     }
+
     if (w->unk_04 != 0) {
         ReleaseObjTiles(w->unk_00);
         ReleaseObjPalette(w->unk_04);
@@ -1652,6 +1685,7 @@ void task_poo_cabbage_3(PooCabbageWork* w) {
         ReleaseObjTiles(w->unk_00);
         ReleaseObjPalette(w->unk_04);
     }
+
     if (w->unk_D0 != 0) {
         func_08012304(w->unk_44);
     }
@@ -1678,6 +1712,7 @@ u8 task_poo_cabbageborn_1(PooCabbageBornWork* w) {
         TaskCreate(&w->unk_00, &gUnk_09EF4C10, 0);
         w->unk_16 = 40;
     }
+
     if (w->unk_16 != 0) {
         w->unk_16--;
     }
@@ -1874,6 +1909,7 @@ u8 task_poo_mapbee_1(PooMapBeeWork* w) {
     if (w->unk_34 == 0) {
         return 0;
     }
+
     switch (w->unk_36) {
         case 0:
             if (AnimIsFinished(w->unk_0C) != 0) {
@@ -2126,6 +2162,7 @@ u8 func_080D2DD8(void) {
             n++;
         }
     }
+
     if (n <= 4) {
         return 0;
     }
@@ -2163,9 +2200,11 @@ u16 func_080D2EB8(void) {
         if (gUnk_0203C4B4->unk_00[i].unk_04 == 0x3B && gUnk_0203C4B4->unk_32 != 0) {
             continue;
         }
+
         if (gUnk_0203C4B4->unk_00[i].unk_06 == 0) {
             continue;
         }
+
         if (func_080C76B0(gUnk_0203C4B4->unk_00[i].unk_00) == 0) {
             continue;
         }
@@ -2197,6 +2236,7 @@ void func_080D2F64(void) {
         gUnk_0203C530[i] = 0;
         gUnk_0203C504[i] = 0;
     }
+
     for (j = 0; j < 4; j++) {
         for (k = 0; k < 2; k++) {
             gUnk_0203C4C0[j * 2 + k] = gUnk_0203C530 + (j * 2 + k) * 0x400;

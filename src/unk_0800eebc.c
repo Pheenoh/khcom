@@ -24,6 +24,7 @@ u8 func_0800F4C8(BtlObj* p, u16 b) {
     if (p->unk_040.unk_04 < (gUnk_02039B84->unk_0DA + b) << 8) {
         return 1;
     }
+
     if (p->unk_040.unk_04 > (gUnk_02039B84->unk_0DC - b) << 8) {
         return 1;
     }
@@ -445,6 +446,7 @@ u8 func_080126E4(u8 a) {
         gUnk_02034928->unk_38 = a;
         return 0;
     }
+
     if (gUnk_02034928->unk_38 < a) {
         return 1;
     }
@@ -472,6 +474,7 @@ void func_08012798(u16 a, u16 bg) {
     for (i = 10; i < 16; i++) {
         func_080062F4(i, 1);
     }
+
     if (a == 0) {
         func_080065FC(bg, 0xC000, 0);
     } else {
@@ -881,6 +884,7 @@ void func_08014E38(void) {
     } else {
         SetBlendAlpha(8 - t, 16);
     }
+
     if (gUnk_02034928->unk_08 == 0x23) {
         if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 40, 20, 256)) {
             m4aSongNumStart(0x234);
@@ -923,6 +927,7 @@ void func_08014F4C(void) {
     if (gUnk_02034928->unk_0A > 7) {
         func_08006B4C();
     }
+
     if (gUnk_02034928->unk_08 % 5 == 0) {
         gUnk_02034928->unk_0A++;
     }
@@ -1058,6 +1063,7 @@ Collider* func_08016320(void) {
         }
         return gUnk_02039B9C->unk_07C;
     }
+
     if (gUnk_02039B84->unk_078 != 0) {
         return gUnk_02039B84->unk_078;
     }
@@ -1092,6 +1098,7 @@ void func_08016A64(void) {
     } else {
         gUnk_02034928->unk_10 += -0x700;
     }
+
     if (gUnk_02034928->unk_10 < (gUnk_02039B84->unk_0DA - 0x40) << 8 || gUnk_02034928->unk_10 > (gUnk_02039B84->unk_0DC + 0x40) << 8) {
         func_08006B4C();
     } else if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 16, 16, 48)) {
@@ -1233,6 +1240,7 @@ void func_0801884C(void) {
         gUnk_02034928->unk_20 += 10;
         break;
     }
+
     if (gUnk_02034928->unk_08 == 10) {
         t = (gUnk_02034928->unk_1C * 3) >> 4;
         if (func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, t, t, 100)) {
@@ -1325,14 +1333,17 @@ u8 func_0801A8A4(s32* px, s32* py, u16 rx, u16 ry) {
         *py = (gUnk_02039B84->unk_0DE - (s16)ry) << 8;
         r = 3;
     }
+
     if (*py > (gUnk_02039B84->unk_0E0 + (s16)ry) << 8) {
         *py = (gUnk_02039B84->unk_0E0 + (s16)ry) << 8;
         r = 4;
     }
+
     if (*px < (gUnk_02039B84->unk_0DA - (s16)rx) << 8) {
         *px = (gUnk_02039B84->unk_0DA - (s16)rx) << 8;
         r = 1;
     }
+
     if (*px > (gUnk_02039B84->unk_0DC + (s16)rx) << 8) {
         *px = (gUnk_02039B84->unk_0DC + (s16)rx) << 8;
         r = 2;
@@ -1502,9 +1513,11 @@ u8 func_0801CA00(BtlObj* p) {
     if (gUnk_02039B84->unk_070 == 1) {
         return 0;
     }
+
     if (!(p->unk_034 & 0x2000)) {
         return 0;
     }
+
     if (p->unk_106 > 0x17) {
         return 0;
     }
@@ -1519,9 +1532,11 @@ u8 func_0801CA48(BtlObj* p) {
     if (gUnk_02039B84->unk_070 == 1) {
         return 0;
     }
+
     if (!(p->unk_034 & 0x2000)) {
         return 0;
     }
+
     if (p->unk_106 > 0x17) {
         return 0;
     }

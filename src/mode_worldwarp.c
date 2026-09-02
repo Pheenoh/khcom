@@ -200,6 +200,7 @@ void mode_worldwarp_2(void) {
         if (gUnk_020355A8[i] != 0) {
             ReleaseObjPalette(gUnk_020355A8[i]);
         }
+
         if (gUnk_02035570[i] != 0) {
             ReleaseObjTiles(gUnk_02035570[i]);
         }
@@ -283,9 +284,11 @@ void func_08101654(void) {
         if (v <= base + 0x18 || v >= base + 0x18 + 0x6A) {
             flag = 1;
         }
+
         if (gUnk_02035820[i] != 0) {
             ReleaseObjPalette(gUnk_02035820[i]);
         }
+
         if (gUnk_02035818[i] != 0) {
             ReleaseObjTiles(gUnk_02035818[i]);
         }
@@ -353,6 +356,7 @@ void func_081017A0(void) {
         gUnk_0203587C = 2;
         AnimStart(&gUnk_02035860, 1, 1);
     }
+
     if (gUnk_020357C0 != prev) {
         if (func_080A42C8()) {
             func_080A42E0();

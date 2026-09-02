@@ -53,6 +53,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
             if (gUnk_02039BB0.unk_1B8 != 4) {
                 gUnk_02039BB0.unk_008 &= ~4;
             }
+
             if (work->unk_10 >= work->unk_08->unk_00) {
                 work->unk_22 = 0;
                 return 0;
@@ -463,10 +464,12 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         } else {
             work->unk_24 = work->unk_24 + work->unk_30;
         }
+
         if (func_08011F78(work->unk_4C, work->unk_24, work->unk_28, work->unk_2C,
                           work->unk_54, work->unk_54, 32) != 0) {
             m4aSongNumStart(work->unk_68);
         }
+
         if (work->unk_3A <= 0) {
             work->unk_38 = 100 - work->unk_38;
             func_08019A30();

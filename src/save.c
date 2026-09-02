@@ -774,6 +774,7 @@ void WaitSramErrorInput(void) {
                 prev = cur;
                 cur = i;
             }
+
             if (prev != 0 && cur - prev <= 3) {
                 ok = 1;
             }

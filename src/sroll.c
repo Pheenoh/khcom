@@ -112,11 +112,13 @@ u8 task_sroll_b_secn_1(SrollBSecnWork* w) {
     if (y <= -32) {
         r = 0;
     }
+
     if (y <= 159) {
         func_0800592C(&w->unk_04, 0x7800, 20);
         if (abs(w->unk_04 - 0x7800) <= 255) {
             w->unk_04 = 0x7800;
         }
+
         if (w->unk_04 == 0x7800) {
             AnimUpdate(&w->unk_1C);
             AnimUpdate(&w->unk_34);
@@ -385,6 +387,7 @@ u8 func_08115F8C(u16 c, u8* font, u8* widths, u32 count) {
             w = widths[idx];
         }
     }
+
     if (w == 0) {
         w = 8;
     }
@@ -495,6 +498,7 @@ void func_08116228(SrollWork* w, u16 x, u16 y) {
     if (x >= w->unk_1C) {
         x = 0;
     }
+
     if (y + w->unk_24 > w->unk_1E) {
         y = 0;
     }
@@ -527,6 +531,7 @@ void func_0811627C(SrollWork* w, u8 flush) {
         CpuSet(fill, p, w->unk_14 | CPU_SET_SRC_FIXED);
         p += w->unk_0A;
     }
+
     if (flush == 1) {
         func_08116B1C(w);
     }
@@ -551,6 +556,7 @@ void func_08116AD8(SrollWork* w, u8 flush) {
     while (!func_081161DC(w)) {
         sub_0811683C(w);
     }
+
     if (flush == 1 && (w->unk_00 & 1)) {
         func_08116B1C(w);
     }
@@ -641,6 +647,7 @@ void func_08116D28(void) {
             }
             gUnk_02036028.unk_01 = 0;
         }
+
         if (gUnk_02036028.unk_10[gUnk_02036028.unk_0C] != 0 && gUnk_02036028.unk_08 != 0 &&
             gUnk_02036028.unk_1C != 0) {
             dma32 = (vu32*)REG_ADDR_DMA0;
@@ -649,6 +656,7 @@ void func_08116D28(void) {
             dma32[2] = gUnk_02036028.unk_1C;
             dma32[2];
         }
+
         if (gUnk_02036028.unk_04 != 0) {
             gUnk_02036028.unk_04();
         }
@@ -869,6 +877,7 @@ void func_08117194(void) {
         for (i = 0; i < 0x800 - pos; i++) {
             dst[i] = src[pos + i] >> 8;
         }
+
         for (; i < gUnk_020380A4; i++) {
             dst[i] = src[pos + i - 0x800] >> 8;
         }

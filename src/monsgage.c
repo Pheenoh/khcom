@@ -19,12 +19,14 @@ s32 task_monsgage_1(MonsgageWork* work) {
         if (gUnk_02039B84->unk_0A0 == 4) {
             return 0;
         }
+
         switch (work->unk_20) {
         case 0:
             if (work->unk_1C == 0) {
                 work->unk_24 = 1;
                 work->unk_18 = gUnk_08B2557C;
             }
+
             if (work->unk_1C > 120) {
                 work->unk_20 = 1;
                 work->unk_1C = 0;
@@ -36,17 +38,20 @@ s32 task_monsgage_1(MonsgageWork* work) {
             if (work->unk_1C == 0) {
                 work->unk_18 = gUnk_08B25586;
             }
+
             if (work->unk_1C % 8 < 4) {
                 work->unk_24 = 1;
             } else {
                 work->unk_24 = 0;
             }
+
             if ((work->unk_1C % 4) == 0) {
                 work->unk_0C--;
                 if (work->unk_0C < 0) {
                     work->unk_0C = 0;
                 }
             }
+
             if (gUnk_02039B84->unk_068 & 0x10000) {
                 gUnk_02039B84->unk_068 &= ~0x10000;
                 work->unk_1C = 0;
@@ -68,11 +73,13 @@ s32 task_monsgage_1(MonsgageWork* work) {
                 gUnk_02039B84->unk_068 |= 0x0100000000000000;
                 gUnk_02039B84->unk_068 |= 0x100000;
             }
+
             if (work->unk_1C % 8 < 4) {
                 work->unk_24 = 1;
             } else {
                 work->unk_24 = 0;
             }
+
             if (work->unk_1C > 99 && gUnk_02039B84->unk_0EE == 0) {
                 gUnk_02039B84->unk_068 |= 0x200000000;
             }

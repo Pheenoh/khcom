@@ -61,6 +61,7 @@ void mode_sio_dbg_flg_1(void) {
                 gUnk_0203C3C8--;
             }
         }
+
         if (GetKeysHeld() & 0x10) {
             if (gUnk_0203C3C8 <= 98) {
                 gUnk_0203C3C8++;
@@ -74,6 +75,7 @@ void mode_sio_dbg_flg_1(void) {
                 gUnk_0203C3CC -= 5;
             }
         }
+
         if (GetKeysHeld() & 0x10) {
             if (gUnk_0203C3CC <= 994) {
                 gUnk_0203C3CC += 5;
@@ -87,6 +89,7 @@ void mode_sio_dbg_flg_1(void) {
                 gUnk_0203C3D0 -= 5;
             }
         }
+
         if (GetKeysHeld() & 0x10) {
             if (gUnk_0203C3D0 <= 994) {
                 gUnk_0203C3D0 += 5;
@@ -153,9 +156,11 @@ void func_080C73D8(void) {
             if ((s16)r < 0) {
                 r = 0;
             }
+
             if ((s16)g < 0) {
                 g = 0;
             }
+
             if ((s16)b < 0) {
                 b = 0;
             }
@@ -164,9 +169,11 @@ void func_080C73D8(void) {
             if ((s16)r < amt) {
                 r = amt;
             }
+
             if ((s16)g < amt) {
                 g = amt;
             }
+
             if ((s16)b < amt) {
                 b = amt;
             }
@@ -178,9 +185,11 @@ void func_080C73D8(void) {
             if ((s16)r > 31) {
                 r = 31;
             }
+
             if ((s16)g < 0) {
                 g = 0;
             }
+
             if ((s16)b < 0) {
                 b = 0;
             }
@@ -192,9 +201,11 @@ void func_080C73D8(void) {
             if ((s16)r < 0) {
                 r = 0;
             }
+
             if ((s16)g > 31) {
                 g = 31;
             }
+
             if ((s16)b < 0) {
                 b = 0;
             }
@@ -206,9 +217,11 @@ void func_080C73D8(void) {
             if ((s16)r < 0) {
                 r = 0;
             }
+
             if ((s16)g < 0) {
                 g = 0;
             }
+
             if ((s16)b > 31) {
                 b = 31;
             }
@@ -220,9 +233,11 @@ void func_080C73D8(void) {
             if ((s16)r > 31) {
                 r = 31;
             }
+
             if ((s16)g > 31) {
                 g = 31;
             }
+
             if ((s16)b > 31) {
                 b = 31;
             }

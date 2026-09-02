@@ -166,6 +166,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
     } else {
         ok = 0;
     }
+
     while (1) {
         while (func_0811950C(gUnk_0203C7C4) == 0) {
         }
@@ -173,6 +174,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
         if (func_08119224(gUnk_0203C7C4) == 0) {
             break;
         }
+
         if (ok != 0) {
             if (channels == 1) {
                 SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
@@ -192,6 +194,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
                 }
             }
         }
+
         if (a != 0 && a(b) != 0) {
             break;
         }
@@ -417,6 +420,7 @@ s32 func_08119224(MoviePlayer* a) {
         p->unk_8C = 1;
         return 0;
     }
+
     if (p->unk_6C == 0) {
         p->unk_6C = 1;
         p->unk_68 = func_081185CC();
@@ -479,6 +483,7 @@ s32 func_08119480(MoviePlayer* a) {
         }
         return 0;
     }
+
     if (p->unk_40 != 0) {
         p->unk_1C = p->unk_1C + *(p->unk_58 + p->unk_64 - 1);
     }
@@ -505,6 +510,7 @@ s32 func_0811950C(MoviePlayer* a) {
         p->unk_68 = func_081185CC();
         return 1;
     }
+
     if (p->unk_6C == 0) {
         p->unk_74 = 0;
         p->unk_6C = 1;

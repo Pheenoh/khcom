@@ -182,6 +182,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     if (size == 0) {
         return 0;
     }
+
     if (src == 0) {
         return 0;
     }
@@ -218,6 +219,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
         func_08000C24(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
         return node;
     }
+
     for (;;) {
         if (cur == 0) {
             break;
@@ -227,11 +229,13 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
         if (node->unk_06 + node->unk_08 > *(u16*)(gSpriteWork + 0x1812)) {
             break;
         }
+
         if (next != 0) {
             end = next->unk_06 - node->unk_06;
         } else {
             end = *(u16*)(gSpriteWork + 0x1812) - node->unk_06;
         }
+
         if (node->unk_08 <= end) {
             RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
             func_08000BF4(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
@@ -272,6 +276,7 @@ void ReleaseObjTiles(void* a) {
     if (q != p) {
         return;
     }
+
     switch (*(u32*)(q + 0x28)) {
     case 0:
         func_0800284C(q);
@@ -318,6 +323,7 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
         func_08000C24(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
         return node;
     }
+
     for (;;) {
         if (cur == 0) {
             break;
@@ -327,11 +333,13 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
         if (node->unk_06 + node->unk_08 > *(u16*)(gSpriteWork + 0x1812)) {
             break;
         }
+
         if (next != 0) {
             end = next->unk_06 - node->unk_06;
         } else {
             end = *(u16*)(gSpriteWork + 0x1812) - node->unk_06;
         }
+
         if (node->unk_08 <= end) {
             func_08000BF4(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
             return node;
@@ -429,6 +437,7 @@ u16 func_08003524(u16** a, u16 n) {
             sum += func_08001DB0(p[0], p[1]);
             p += 3;
         }
+
         if (max < sum) {
             max = sum;
         }
@@ -452,12 +461,15 @@ u8 func_080035CC(s16 x, u16 y, u16 a, u16 b, u16 c, s16 d) {
     if (x + d < 0) {
         return 1;
     }
+
     if (x - (s16)c > 0xF0) {
         return 1;
     }
+
     if ((s16)y + (s16)b < 0) {
         return 1;
     }
+
     if ((s16)y - (s16)a > 0xA0) {
         return 1;
     }
@@ -568,6 +580,7 @@ ObjTiles* func_08003970(u16 size) {
         func_08000C24(node->unk_0C, gSpriteWork + 0x1A94, cur->unk_0C);
         return node;
     }
+
     for (;;) {
         if (cur == 0) {
             break;
@@ -577,11 +590,13 @@ ObjTiles* func_08003970(u16 size) {
         if (node->unk_06 + node->unk_08 > *(u16*)(gSpriteWork + 0x1AA6)) {
             break;
         }
+
         if (next != 0) {
             end = next->unk_06 - node->unk_06;
         } else {
             end = *(u16*)(gSpriteWork + 0x1AA6) - node->unk_06;
         }
+
         if (node->unk_08 <= end) {
             func_08000BF4(node->unk_0C, gSpriteWork + 0x1A94, cur->unk_0C);
             return node;
@@ -611,6 +626,7 @@ u8 func_08003A98(u16 n) {
     if (n <= (s16)(cur->unk_06 - pos)) {
         return 1;
     }
+
     for (;;) {
         if (cur == 0) {
             break;
@@ -620,11 +636,13 @@ u8 func_08003A98(u16 n) {
         if ((s16)pos + n > *(u16*)(gSpriteWork + 0x1812)) {
             break;
         }
+
         if (next != 0) {
             end = next->unk_06 - pos;
         } else {
             end = *(u16*)(gSpriteWork + 0x1812) - pos;
         }
+
         if (n <= end) {
             return 1;
         }
@@ -646,6 +664,7 @@ u8 func_08003B24(u16 n) {
     if (n <= (s16)(cur->unk_06 - pos)) {
         return 1;
     }
+
     for (;;) {
         if (cur == 0) {
             break;
@@ -655,11 +674,13 @@ u8 func_08003B24(u16 n) {
         if ((s16)pos + n > *(u16*)(gSpriteWork + 0x1AA6)) {
             break;
         }
+
         if (next != 0) {
             end = next->unk_06 - pos;
         } else {
             end = *(u16*)(gSpriteWork + 0x1AA6) - pos;
         }
+
         if (n <= end) {
             return 1;
         }
@@ -678,6 +699,7 @@ s32 func_08003C9C(s32 a) {
         if (a > 0x100) {
             x = a;
         }
+
         do {
             prev = x;
             x = ((a << 8) / prev + prev) / 2;
@@ -710,6 +732,7 @@ s32 func_08003E2C(s16* n, s32 v, s32* a, s32* c, s32* b) {
             hi = mid;
         }
     }
+
     if (lo > 0) {
         lo--;
     }
@@ -834,6 +857,7 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
     if (q->unk_10A0 > 255) {
         return 0;
     }
+
     if ((gUnk_03006C78 & 8) == 0) {
         q->requests[q->unk_10A0].src = src;
         q->requests[q->unk_10A0].dst = dst;
@@ -1269,6 +1293,7 @@ s32 GetAngleDiff(s32 a, s32 b) {
     if (d <= -0x80) {
         return d + 0x100;
     }
+
     if (d > 0x7F) {
         return (x - 0x100) - y;
     }
@@ -1413,6 +1438,7 @@ void* AnimUpdate(AnimState* a) {
     if (a->frame < a->frameCount) {
         return gfx;
     }
+
     if (a->flags & 1) {
         a->frame = 0;
     } else {
@@ -1429,11 +1455,13 @@ u8 func_08005AC4(AnimState* a) {
     if (a->frames == 0) {
         return 0;
     }
+
     if (!(a->flags & 1)) {
         if (a->flags & 0x1000) {
             return 0;
         }
     }
+
     if (a->timer + 1 >= a->frames[a->frame].duration) {
         return 1;
     }

@@ -30,6 +30,7 @@ void func_08117E44(void* p) {
         } else {
             _08117284(p);
         }
+
         if (ReadBits(1) != 0) {
             _08117674((u8*)p + 8);
         } else {

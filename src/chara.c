@@ -102,9 +102,11 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
         if (*p10 >= -2 && *p10 <= 2) {
             *p10 = 2;
         }
+
         if (*p14 >= -2 && *p14 <= 2) {
             *p14 = 2;
         }
+
         if (work->unk_34 < 0) {
             x = work->unk_20 - *work->unk_08;
             y = work->unk_24 - *work->unk_0C;
@@ -144,6 +146,7 @@ u8 func_080C54B4(void) {
         if ((gUnk_02039820 & 0x100) == 0) {
             gUnk_02039B60 = func_080C5B50();
         }
+
         if (gUnk_02039820 & 0x7F0000) {
             if (gUnk_0203C3A8 == 1) {
                 gUnk_020397D4++;
@@ -152,6 +155,7 @@ u8 func_080C54B4(void) {
                 }
             }
         }
+
         if (gUnk_02039B60 == 1) {
             gUnk_03006C78 &= 0xFFFE;
             gUnk_020397F0 = gUnk_02039820;
@@ -162,6 +166,7 @@ u8 func_080C54B4(void) {
         if (GetKeysPressed() & 2) {
             gUnk_0203BEA4 = 10;
         }
+
         if (gUnk_0203BEA4 > 0) {
             gUnk_0203BEA4--;
             if (gUnk_0203BEA4 == 0) {
@@ -187,9 +192,11 @@ u8 func_080C55DC(void) {
         if (gUnk_020397F8 != 0) {
             gUnk_02039B60 = gUnk_020397F8();
         }
+
         if (gUnk_02039804 != 0) {
             gUnk_02039804();
         }
+
         if (gUnk_02039820 & 0x7F0000) {
             if (gUnk_0203C3A8 == 1) {
                 gUnk_020397D4++;
@@ -219,6 +226,7 @@ u8 func_080C56BC(void) {
         if ((gUnk_02039820 & 0x100) == 0) {
             gUnk_02039B60 = func_080C5C7C();
         }
+
         if (gUnk_02039820 & 0x7F0000) {
             if (gUnk_0203C3A8 == 1) {
                 gUnk_020397D4++;
@@ -227,6 +235,7 @@ u8 func_080C56BC(void) {
                 }
             }
         }
+
         if (gUnk_02039B60 == 1) {
             gUnk_03006C78 &= 0xFFFE;
             gUnk_020397F0 = gUnk_02039820;
@@ -247,9 +256,11 @@ void func_080C57B4(void) {
         func_080078A4();
         gUnk_03006C78 &= 0xFFFE;
     }
+
     if (gUnk_03006C78 & 0x10) {
         gUnk_03006C78 &= 0xFFEF;
     }
+
     if (gUnk_0203C374 == 1) {
         func_080C57A4();
         gUnk_0203C374 = 0;
@@ -539,6 +550,7 @@ s32 func_080C5D80(void) {
         gUnk_02039810[2][0] = gUnk_020397E0[2][0];
         gUnk_02039810[3][0] = gUnk_020397E0[3][0];
     }
+
     if (gUnk_020397E0[0][1] == 0xACD) {
         gUnk_02039810[0][1] = gUnk_020397E0[0][1];
         gUnk_02039810[1][1] = gUnk_020397E0[1][1];
@@ -618,6 +630,7 @@ s32 func_080C5ECC(void) {
         } else {
             gUnk_02039820 |= 0x100;
         }
+
         if (gUnk_020397E0[0][0] == 0xACD) {
             func_08008944(gUnk_020397E0[2][0]);
             func_0800895C(gUnk_020397E0[3][0]);
@@ -749,6 +762,7 @@ void func_080C61D4(void) {
         }
         q += 4;
     }
+
     if (gUnk_02039828 == 0) {
         SeedRandom(gUnk_03007480 & 0xFFFF);
         gUnk_0203AAC0.unk_1E = GetRandom() % 0xFFFF;
@@ -875,6 +889,7 @@ void func_080C6894(CharaObjParam* param) {
     for (i = 0; i < 10; i++) {
         gUnk_02034CD8->unk_1050[i] = 1;
     }
+
     for (i = 10; i < 32; i++) {
         gUnk_02034CD8->unk_1050[i] = 0;
     }

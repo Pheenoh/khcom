@@ -211,6 +211,7 @@ void mode_mapinspect_2(void) {
             if (gUnk_02035EA0[i][j] != 0) {
                 ReleaseObjPalette(gUnk_02035EA0[i][j]);
             }
+
             if (gUnk_02035ED0[i][j] != 0) {
                 ReleaseObjTiles(gUnk_02035ED0[i][j]);
             }
@@ -220,15 +221,19 @@ void mode_mapinspect_2(void) {
     if (gUnk_02035F3C != 0) {
         ReleaseObjPalette(gUnk_02035F3C);
     }
+
     if (gUnk_02035F40 != 0) {
         ReleaseObjTiles(gUnk_02035F40);
     }
+
     if (gUnk_02035F48 != 0) {
         ReleaseObjPalette(gUnk_02035F48);
     }
+
     if (gUnk_02035F4C != 0) {
         ReleaseObjTiles(gUnk_02035F4C);
     }
+
     if (gUnk_02035E74 != 0) {
         ReleaseObjPalette(gUnk_02035E74);
     }

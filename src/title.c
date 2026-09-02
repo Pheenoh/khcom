@@ -29,6 +29,7 @@ void task_title_logo_2(TitleLogoWork* work) {
         if (i == 1 && !(gUnk_02039BB0.unk_008 & 0x200)) {
             continue;
         }
+
         if (gUnk_02039BB0.unk_008 & 0x200) {
             x = 0xA4;
         } else {
@@ -38,6 +39,7 @@ void task_title_logo_2(TitleLogoWork* work) {
         if (i == 0) {
             x++;
         }
+
         if (i == 1) {
             if (work->unk_4C == 0) {
                 continue;
@@ -212,6 +214,7 @@ s16 func_080D6908(s16 a) {
             break;
         }
     }
+
     if (i > 3) {
         i = 0;
     }
@@ -287,15 +290,18 @@ void func_080D6A64(TitleMenuWork* work) {
         count = 2;
         y = 48;
     }
+
     for (i = 0; i < count; i++) {
         DrawSprite(work->unk_60, y, gUnk_09EF6668[i], work->unk_00, work->unk_04, 0, 0x400, i + 100);
         y += 24;
     }
+
     if (gUnk_02039BB0.unk_008 & 0x20) {
         y = work->unk_44[0] * 24 + 32;
     } else {
         y = work->unk_44[0] * 24 + 48;
     }
+
     for (i = 0; i < 3; i++) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
@@ -351,6 +357,7 @@ void task_title_menu_2(TitleMenuWork* work) {
     } else {
         work->unk_60 = 0;
     }
+
     if (work->unk_5C == 0) {
         func_080D6A64(work);
     } else if (work->unk_5C == 3) {
@@ -413,6 +420,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
         }
         break;
     }
+
     if (GetKeysPressed() & 0x300) {
         SetPaletteEffect(v);
         func_080D5998();

@@ -42,6 +42,7 @@ void func_0802F284(s32 a, s32 b, s32 c) {
     } else if (x - a > 0x3000) {
         x = a + 0x3000;
     }
+
     if (b - y > 0x3000) {
         y = b - 0x3000;
     } else if (y - b > 0x3000) {
@@ -80,6 +81,7 @@ s32 task_btl_map_1(BtlMapWork* work) {
         } else if (dx < -0x400) {
             dx = -0x400;
         }
+
         if (dy > 0x400) {
             dy = 0x400;
         } else if (dy < -0x400) {
@@ -93,11 +95,13 @@ s32 task_btl_map_1(BtlMapWork* work) {
     if (gUnk_0203492C != 0) {
         gUnk_02039B84->unk_018 = (gUnk_02034930 >> 8) / 3;
     }
+
     if (gUnk_02039B84->unk_000 - 0x7800 < work->unk_00) {
         gUnk_02039B84->unk_000 = work->unk_00 + 0x7800;
     } else if (gUnk_02039B84->unk_000 + 0x7800 > work->unk_04) {
         gUnk_02039B84->unk_000 = work->unk_04 - 0x7800;
     }
+
     if (gUnk_02039B84->unk_004 - 0x5000 < 0x9000) {
         gUnk_02039B84->unk_004 = 0xE000;
     } else if (gUnk_02039B84->unk_004 + 0x5000 > work->unk_0C) {

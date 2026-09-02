@@ -11,6 +11,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
     if (e->unk_15A & 0x10) {
         return;
     }
+
     switch (func_0801ADAC(e)) {
     case 5:
         work->unk_A52 = 1;
@@ -40,6 +41,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
+
                         if (work->unk_018 == flag) {
                             func_080F7F54(work, 4);
                         } else {
@@ -64,6 +66,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
+
                         if (work->unk_018 == flag) {
                             func_080F7F54(work, 4);
                         } else {
@@ -78,6 +81,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
+
                         if (work->unk_018 == flag) {
                             func_080F7F54(work, 4);
                         } else {
@@ -102,6 +106,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
+
                         if (work->unk_018 == flag) {
                             func_080F7F54(work, 4);
                         } else {
@@ -116,6 +121,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
+
                         if (work->unk_018 == flag) {
                             func_080F7F54(work, 4);
                         } else {
@@ -140,6 +146,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                         if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
                             flag = 1;
                         }
+
                         if (work->unk_018 == flag) {
                             func_080F7F54(work, 4);
                         } else {
@@ -149,6 +156,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                 }
             }
         }
+
         if (GetRandom() % 3 != 0) {
             if (work->unk_A4C == 0) {
                 work->unk_A4C = 1;
@@ -199,6 +207,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
         func_0801AF08(e);
         break;
     }
+
     switch (e->unk_11C) {
     case 0:
         v = (e->unk_124 - e->unk_004) >> 1;
@@ -253,6 +262,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
         func_080F7E84(e);
         break;
     }
+
     if (e->unk_15A & 2) {
         e->unk_1A6++;
         if (e->unk_1A6 > 30) {
@@ -265,6 +275,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
     if (e->unk_1A0 == 0) {
         work->unk_A2C = AnimUpdate(&work->unk_A10);
     }
+
     if (e->unk_06C != 0) {
         e->unk_004 += e->unk_078;
         e->unk_008 += e->unk_07C;

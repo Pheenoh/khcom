@@ -169,6 +169,7 @@ void mode_jiminy_1(void) {
             func_08006184(0, 16);
             func_080063A8();
         }
+
         if (func_08006390() > 30) {
             func_080E052C(1);
         }
@@ -178,6 +179,7 @@ void mode_jiminy_1(void) {
             func_08006184(0, 16);
             func_080063A8();
         }
+
         if (func_08006390() > 30) {
             func_080E052C(0);
         }
@@ -323,10 +325,12 @@ void mode_jiminy_1(void) {
             DrawSprite(gUnk_02034934->unk_CC2, gUnk_02034934->unk_CC4 - ((gUnk_02034934->unk_D3E >> 3) & 3),
                 gUnk_08C6A51C, gUnk_02034934->unk_028, gUnk_02034934->unk_02C, 0, 0, 0);
         }
+
         if (gUnk_02034934->unk_CAC & 0x10) {
             DrawSprite(gUnk_02034934->unk_CC6, gUnk_02034934->unk_CC8 + ((gUnk_02034934->unk_D3E >> 3) & 3),
                 gUnk_08C6A526, gUnk_02034934->unk_028, gUnk_02034934->unk_02C, 0, 0, 0);
         }
+
         if (func_08006314() == 0) {
             if (gUnk_02034934->unk_CAC & 4) {
                 if (gUnk_02034934->unk_CC0 <= 0) {

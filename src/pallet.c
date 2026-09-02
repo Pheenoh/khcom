@@ -26,11 +26,13 @@ u16* FadePaletteToBlack(u16* src, u16* dst, u16 size, u16 amount) {
         } else {
             b[0] = b[1];
         }
+
         if (g[0] > g[1]) {
             g[0] = g[0] - (amount * g[0] >> 5);
         } else {
             g[0] = g[1];
         }
+
         if (r[0] > r[1]) {
             r[0] = r[0] - (amount * r[0] >> 5);
         } else {
@@ -38,6 +40,7 @@ u16* FadePaletteToBlack(u16* src, u16* dst, u16 size, u16 amount) {
         }
         gPaletteBuffer->colors[i + base] = (b[0] << 10) | (g[0] << 5) | r[0];
     }
+
     if (base == 0) {
         RequestDma3Copy(&gPaletteBuffer->colors[1], dst + 1, size - 2);
     } else {
@@ -63,6 +66,7 @@ u16* FadePaletteToGray(u16* src, u16* dst, u16 size, u16 amount) {
         b = (gray + b * inv) >> 5;
         gPaletteBuffer->colors[i + base] = (b << 10) | (g << 5) | r;
     }
+
     if (base == 0) {
         RequestDma3Copy(&gPaletteBuffer->colors[1], dst + 1, size - 2);
     } else {
@@ -91,11 +95,13 @@ u16* FadePaletteToWhite(u16* src, u16* dst, u16 size, u16 amount) {
         } else {
             b[0] = b[0] - ((b[0] - b[1]) * amount >> 5);
         }
+
         if (g[0] < g[1]) {
             g[0] = g[0] + ((g[1] - g[0]) * amount >> 5);
         } else {
             g[0] = g[0] - ((g[0] - g[1]) * amount >> 5);
         }
+
         if (r[0] < r[1]) {
             r[0] = r[0] + ((r[1] - r[0]) * amount >> 5);
         } else {
@@ -103,6 +109,7 @@ u16* FadePaletteToWhite(u16* src, u16* dst, u16 size, u16 amount) {
         }
         gPaletteBuffer->colors[i + base] = (b[0] << 10) | (g[0] << 5) | r[0];
     }
+
     if (base == 0) {
         RequestDma3Copy(&gPaletteBuffer->colors[1], dst + 1, size - 2);
     } else {
@@ -130,9 +137,11 @@ u16* BrightenPalette(u16* src, u16* dst, u16 size, u16 amount) {
         if (rv > 0x1F00) {
             rv = 0x1F00;
         }
+
         if (gv > 0x1F00) {
             gv = 0x1F00;
         }
+
         if (bv > 0x1F00) {
             bv = 0x1F00;
         }
@@ -141,6 +150,7 @@ u16* BrightenPalette(u16* src, u16* dst, u16 size, u16 amount) {
         b = bv >> 8;
         gPaletteBuffer->colors[i + base] = (b << 10) | (g << 5) | r;
     }
+
     if (base == 0) {
         RequestDma3Copy(&gPaletteBuffer->colors[1], dst + 1, size - 2);
     } else {
@@ -174,6 +184,7 @@ u16* LoadPaletteWithEffect(void* src, u16* dst, u16 size) {
     if (gPaletteEffect == 0) {
         return LoadPaletteBuffered(src, dst, size);
     }
+
     if (gPaletteEffect < 0) {
         return FadePaletteToGray(src, dst, size, -gPaletteEffect);
     }
@@ -217,6 +228,7 @@ void PalletClear(void) {
     for (i = 0; i < 512; i++) {
         gPaletteBuffer->colors[i] = 0;
     }
+
     for (i = 0; i < 32; i++) {
         gPaletteBuffer->banks[i] = 0;
     }
@@ -250,11 +262,13 @@ u16* FadeAllPalettesToBlack(u16* src, u16 amount) {
                 } else {
                     b[0] = b[1];
                 }
+
                 if (g[0] > g[1]) {
                     g[0] = g[0] - (amount * g[0] >> 5);
                 } else {
                     g[0] = g[1];
                 }
+
                 if (r[0] > r[1]) {
                     r[0] = r[0] - (amount * r[0] >> 5);
                 } else {
@@ -292,11 +306,13 @@ u16* FadeAllPalettesToWhite(u16* src, u16 amount) {
                 } else {
                     b[0] = b[0] - ((b[0] - b[1]) * amount >> 5);
                 }
+
                 if (g[0] < g[1]) {
                     g[0] = g[0] + ((g[1] - g[0]) * amount >> 5);
                 } else {
                     g[0] = g[0] - ((g[0] - g[1]) * amount >> 5);
                 }
+
                 if (r[0] < r[1]) {
                     r[0] = r[0] + ((r[1] - r[0]) * amount >> 5);
                 } else {
