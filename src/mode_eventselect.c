@@ -232,7 +232,21 @@ s32 func_08075748(EffectWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("mode_eventselect/func_08075780.s");
+void func_08075780(EffectWork* w) {
+    u16 pr;
+    s32 y;
+
+    pr = w->unk_00->unk_3E;
+
+    if (w->unk_48 == 0) {
+        pr &= 0xFFFE;
+    }
+
+    DrawSprite((w->unk_2C >> 8) - (gUnk_02039DC8->unk_58 >> 8),
+               (y = (w->unk_30 >> 8) + gUnk_0903380C[w->unk_00->unk_26][0]) -
+                   (gUnk_02039DC8->unk_5C >> 8),
+               w->unk_0C, w->unk_04, w->unk_08, 0, pr, 50);
+}
 
 void func_080757F4(EffectWork* w) {
     ReleaseObjTiles(w->unk_04);
