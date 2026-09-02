@@ -3,12 +3,11 @@
 
 Units are bucketed by the progress categories the report already carries, so
 this stays in step with decomp.yaml rather than duplicating its path prefixes.
-A unit counts as linked once every byte the report attributes to it matches.
 
-Two linking figures are shown because they answer different questions. The file
-count is how many units are finished; "Linked code" is how many bytes live in
-those finished units, which is the byte-weighted number decomp.dev publishes as
-complete_code_percent. They diverge sharply while the large units are partial.
+"Linked" is the byte-weighted completion decomp.dev publishes as
+complete_code_percent: the share of code living in units where every byte
+matches. It is read from the report rather than recomputed, so this output and
+the published figure cannot drift apart.
 """
 
 import argparse
@@ -37,23 +36,6 @@ def main():
     if not args.report.is_file():
         sys.exit(f"Report file {args.report} does not exist")
     report = json.loads(args.report.read_text())
-    units = report.get("units", [])
-
-    def files(category):
-        done = total = 0
-        for u in units:
-            if category is not None:
-                cats = u.get("metadata", {}).get("progress_categories") or []
-                if category not in cats:
-                    continue
-            m = u["measures"]
-            size = to_int(m, "total_code") + to_int(m, "total_data")
-            if not size:
-                continue
-            total += 1
-            if to_int(m, "matched_code") + to_int(m, "matched_data") == size:
-                done += 1
-        return done, total
 
     summary_path = os.getenv("GITHUB_STEP_SUMMARY")
     summary = open(summary_path, "a", encoding="utf-8") if summary_path else None
@@ -65,23 +47,22 @@ def main():
         if summary:
             summary.write(s + "\n")
 
-    def block(name, m, category):
+    def block(name, m):
         mc, tc = to_int(m, "matched_code"), to_int(m, "total_code")
         md, td = to_int(m, "matched_data"), to_int(m, "total_data")
         mf, tf = m.get("matched_functions", 0), m.get("total_functions", 0)
-        done, total = files(category)
         cc = to_int(m, "complete_code")
         emit(f"  {name}: {pct(mc + md, tc + td):.2f}% matched, "
-             f"{pct(done, total):.2f}% linked ({done} / {total} files)")
+             f"{pct(cc, tc):.2f}% linked")
         emit(f"    Code: {mc:,} / {tc:,} bytes ({mf:,} / {tf:,} functions)")
-        emit(f"    Linked code: {cc:,} / {tc:,} bytes ({pct(cc, tc):.2f}%)")
+        emit(f"    Linked: {cc:,} / {tc:,} bytes")
         if td:
             emit(f"    Data: {md:,} / {td:,} bytes ({pct(md, td):.2f}%)")
 
     emit("Progress:")
-    block("All", report["measures"], None)
+    block("All", report["measures"])
     for c in report.get("categories", []):
-        block(c["name"], c["measures"], c["id"])
+        block(c["name"], c["measures"])
 
     if summary:
         summary.write("```\n")
