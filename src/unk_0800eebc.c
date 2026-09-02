@@ -1039,7 +1039,43 @@ void func_08014588(s32 x, s32 y, s32 z, s32 w, u16 a, u16 b) {
     func_08006238(0, gUnk_02039B84->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
-INCLUDE_ASM("unk_0800eebc/func_08014654.s");
+void func_08014654(void) {
+    u16 t;
+    s16 u;
+    gUnk_02034928->unk_1C += 25;
+    gUnk_02034928->unk_20 += 25;
+    func_08012908();
+    t = gUnk_02034928->unk_08;
+    if (gUnk_02034928->unk_08 > 3) {
+        u = t - 3;
+        SetBlendAlpha(16, 16 - u);
+        if (u > 15) {
+            func_08006B4C();
+        }
+    }
+    gUnk_02034928->unk_08++;
+}
+void func_080146A8(s32 x, s32 y, s32 z) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z - 0x1000;
+    WorldToScreen(&sx, &sy, x, y, 0);
+    gUnk_02034928->unk_1C = 512;
+    gUnk_02034928->unk_20 = 768;
+    gUnk_02034928->unk_24 = 0;
+    func_08006778(gUnk_09EDA618, sx, sy);
+    func_08006B34(0);
+    gUnk_02034928->unk_04 = func_08014654;
+    gUnk_02034928->unk_08 = 0;
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 
 void func_0801475C(s32 a, s32 b, s32 c) {
     gUnk_02034928->unk_10 += a;
