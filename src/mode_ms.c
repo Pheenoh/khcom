@@ -448,7 +448,35 @@ void func_081041B4(void) {
         m4aSongNumStart(0x65);
     }
 }
-INCLUDE_ASM("mode_ms/func_08104404.s");
+void func_08104404(void) {
+    s32 i;
+    s16 v;
+
+    switch (gUnk_02035B02) {
+        case 2:
+            if (gUnk_02035B00 != 0) {
+                func_0805F1C0(&gUnk_02035C04, 0x400);
+                func_0805F1C0(&gUnk_02035C08, gUnk_02035B04 * 6144 + 0x800);
+                DrawSprite(gUnk_02035C04 >> 8, gUnk_02035C08 >> 8, AnimUpdate(&gUnk_02035BB8), gUnk_02035BAC, gUnk_02035BB0, 0, 0x400, 0x3E8);
+            }
+            break;
+        case 3:
+            func_0805F1C0(&gUnk_02035C04, gUnk_099931E4[gUnk_02035B10].unk_08 << 8);
+            func_0805F1C0(&gUnk_02035C08, gUnk_099931E4[gUnk_02035B10].unk_0A << 8);
+            DrawSprite(gUnk_02035C04 >> 8, gUnk_02035C08 >> 8, AnimUpdate(&gUnk_02035BB8), gUnk_02035BAC, gUnk_02035BB0, 0, 0x400, 0x3E8);
+            break;
+        case 4:
+            func_08102F30();
+            break;
+    }
+
+    for (i = 0; i < 4; i++) {
+        if (gUnk_02035B18[gUnk_02035B04][i][0] >= 0) {
+            v = gUnk_02035B18[gUnk_02035B04][i][1];
+            DrawSprite(gUnk_099931E4[i].unk_16 + gUnk_099932D4[v].unk_14, gUnk_099931E4[i].unk_18 + gUnk_099932D4[v].unk_16, gUnk_02035BF0[v], gUnk_02035BD0[v], gUnk_02035BE0[v], 0, 0x400, 0x3F2);
+        }
+    }
+}
 void mode_ms_shop_0(void) {
     s16 i;
     s32 size;
