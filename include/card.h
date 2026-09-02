@@ -65,6 +65,8 @@ extern void** gUnk_09EE3CA0[];
 extern u16 gUnk_0903BFD4[];
 extern void* gUnk_09EE91A8[];
 extern u8 gUnk_094233B8[];
+extern void* gUnk_09EEA19C[];
+extern u8 gUnk_093FB6C4[];
 extern u8 gUnk_08125E24[];
 extern u8 gUnk_096148D8[];
 extern u8 gUnk_09417378[];
