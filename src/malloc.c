@@ -2,8 +2,22 @@
 #include "intr.h"
 #include "gba/syscall.h"
 #include "key.h"
-#include "main.h"
 #include "malloc.h"
+
+typedef struct Node {
+    void* unk_00;
+    struct Node* unk_04;
+    struct Node* unk_08;
+    u16 unk_0C;
+    struct Node* unk_10;
+} Node;
+
+typedef struct NodeList {
+    Node* unk_00;
+    Node* unk_04;
+    Node* unk_08;
+    Node* unk_0C;
+} NodeList;
 
 extern u8 sEwramHeapName[];
 extern u8 sIwramHeapName[];
@@ -19,6 +33,8 @@ extern u16 gUnk_03006C00;
 void InitSystem(void);
 void func_080C55DC(void);
 void func_08001100(void);
+void* func_08000CD4(Node* node);
+void* func_08000CF0(Node* node);
 
 
 void HeapUnlinkFreeBlock(HeapBlock* b) {
@@ -316,20 +332,165 @@ void* func_08000AF0(void) {
 void* func_08000AFC(void) {
     return gIwramHeap.name;
 }
-INCLUDE_ASM("malloc/func_08000B08.s");
-INCLUDE_ASM("malloc/func_08000B24.s");
-INCLUDE_ASM("malloc/func_08000B48.s");
-INCLUDE_ASM("malloc/func_08000B6C.s");
-INCLUDE_ASM("malloc/func_08000BA4.s");
-INCLUDE_ASM("malloc/func_08000BB0.s");
-INCLUDE_ASM("malloc/func_08000BC8.s");
-INCLUDE_ASM("malloc/func_08000BF4.s");
-INCLUDE_ASM("malloc/func_08000C24.s");
-INCLUDE_ASM("malloc/func_08000C54.s");
+void func_08000B08(Node* node, Node** head, Node** tail) {
+    if (*head == 0) {
+        *head = node;
+    }
 
-Task* func_08000C8C(ListNode* node) {
-    ListNode* n;
-    Task* result;
+    node->unk_04 = *tail;
+
+    if (*tail != 0) {
+        (*tail)->unk_08 = node;
+    }
+
+    node->unk_08 = 0;
+    *tail = node;
+}
+void func_08000B24(Node* node, Node** head, Node** tail, Node* after) {
+    Node* next;
+
+    if (after != 0) {
+        node->unk_04 = after;
+        next = after->unk_08;
+        node->unk_08 = next;
+        after->unk_08 = node;
+
+        if (next != 0) {
+            next->unk_04 = node;
+        } else {
+            *tail = node;
+        }
+    } else {
+        func_08000B08(node, head, tail);
+    }
+}
+void func_08000B48(Node* node, Node** head, Node** tail, Node* before) {
+    Node* prev;
+
+    if (before != 0) {
+        node->unk_08 = before;
+        prev = before->unk_04;
+        node->unk_04 = prev;
+        before->unk_04 = node;
+
+        if (prev != 0) {
+            prev->unk_08 = node;
+        } else {
+            *head = node;
+        }
+    } else {
+        func_08000B08(node, head, tail);
+    }
+}
+void func_08000B6C(Node* node, Node** head, Node** tail) {
+    if (node->unk_04 == 0) {
+        if (node->unk_08 == 0) {
+            *head = 0;
+            *tail = 0;
+        } else {
+            node->unk_08->unk_04 = node->unk_04;
+            *head = node->unk_08;
+        }
+    } else {
+        if (node->unk_08 == 0) {
+            *tail = node->unk_04;
+            node->unk_04->unk_08 = node->unk_08;
+        } else {
+            node->unk_08->unk_04 = node->unk_04;
+            node->unk_04->unk_08 = node->unk_08;
+        }
+    }
+}
+void func_08000BA4(NodeList* list) {
+    list->unk_00 = 0;
+    list->unk_04 = 0;
+    list->unk_08 = 0;
+    list->unk_0C = 0;
+}
+void func_08000BB0(Node* node, NodeList* list, void* owner) {
+    func_08000B08(node, &list->unk_00, &list->unk_04);
+    node->unk_00 = owner;
+    node->unk_0C = 0;
+}
+void func_08000BC8(void* a, void* b) {
+    Node* node;
+    NodeList* list;
+
+    node = a;
+    list = b;
+    func_08000B6C(node, &list->unk_00, &list->unk_04);
+    func_08000B08(node, &list->unk_08, &list->unk_0C);
+    node->unk_0C |= 1;
+    node->unk_10 = node;
+}
+void func_08000BF4(Node* node, NodeList* list, Node* after) {
+    func_08000B6C(node, &list->unk_00, &list->unk_04);
+    func_08000B24(node, &list->unk_08, &list->unk_0C, after);
+    node->unk_0C |= 1;
+    node->unk_10 = node;
+}
+void func_08000C24(Node* node, NodeList* list, Node* before) {
+    func_08000B6C(node, &list->unk_00, &list->unk_04);
+    func_08000B48(node, &list->unk_08, &list->unk_0C, before);
+    node->unk_0C |= 1;
+    node->unk_10 = node;
+}
+void* func_08000C54(Node* node, NodeList* list) {
+    Node* next;
+
+    next = node->unk_08;
+    func_08000B6C(node, &list->unk_08, &list->unk_0C);
+    func_08000B08(node, &list->unk_00, &list->unk_04);
+    node->unk_0C &= 0xFFFE;
+
+    if (next != 0) {
+        return next->unk_00;
+    }
+
+    return 0;
+}
+
+void* func_08000C8C(NodeList* list) {
+    Node* n;
+    void* result;
+
+    n = list->unk_08;
+
+    if (n != 0) {
+        if (n->unk_0C & 2) {
+            return func_08000CD4(n);
+        }
+
+        result = n->unk_00;
+    } else {
+        result = 0;
+    }
+
+    return result;
+}
+
+void* func_08000CB0(NodeList* list) {
+    Node* n;
+    void* result;
+
+    n = list->unk_0C;
+
+    if (n != 0) {
+        if (n->unk_0C & 2) {
+            return func_08000CF0(n);
+        }
+
+        result = n->unk_00;
+    } else {
+        result = 0;
+    }
+
+    return result;
+}
+
+void* func_08000CD4(Node* node) {
+    Node* n;
+    void* result;
 
     n = node->unk_08;
 
@@ -346,17 +507,15 @@ Task* func_08000C8C(ListNode* node) {
     return result;
 }
 
-INCLUDE_ASM("malloc/func_08000CB0.s");
+void* func_08000CF0(Node* node) {
+    Node* n;
+    void* result;
 
-Task* func_08000CD4(ListNode* node) {
-    ListNode* n;
-    Task* result;
-
-    n = node->unk_08;
+    n = node->unk_04;
 
     if (n != 0) {
         if (n->unk_0C & 2) {
-            return func_08000CD4(n);
+            return func_08000CF0(n);
         }
 
         result = n->unk_00;
@@ -366,13 +525,48 @@ Task* func_08000CD4(ListNode* node) {
 
     return result;
 }
+void* func_08000D0C(NodeList* list) {
+    Node* n;
 
-INCLUDE_ASM("malloc/func_08000CF0.s");
-INCLUDE_ASM("malloc/func_08000D0C.s");
+    n = list->unk_00;
+
+    if (n != 0) {
+        return n->unk_00;
+    }
+
+    return 0;
+}
 void func_08000D1C(void) {
 }
-INCLUDE_ASM("malloc/func_08000D20.s");
-INCLUDE_ASM("malloc/func_08000D28.s");
-INCLUDE_ASM("malloc/func_08000D48.s");
-INCLUDE_ASM("malloc/func_08000D6C.s");
-INCLUDE_ASM("malloc/func_08000D90.s");
+void func_08000D20(Node* node, NodeList* list, void* owner) {
+    node->unk_00 = owner;
+    node->unk_0C = 0;
+}
+void func_08000D28(Node* node, NodeList* list) {
+    func_08000B08(node, &list->unk_08, &list->unk_0C);
+    node->unk_0C |= 1;
+    node->unk_10 = node;
+}
+void func_08000D48(Node* node, NodeList* list, Node* after) {
+    func_08000B24(node, &list->unk_08, &list->unk_0C, after);
+    node->unk_0C |= 1;
+    node->unk_10 = node;
+}
+void func_08000D6C(Node* node, NodeList* list, Node* before) {
+    func_08000B48(node, &list->unk_08, &list->unk_0C, before);
+    node->unk_0C |= 1;
+    node->unk_10 = node;
+}
+void* func_08000D90(Node* node, NodeList* list) {
+    Node* next;
+
+    next = node->unk_08;
+    func_08000B6C(node, &list->unk_08, &list->unk_0C);
+    node->unk_0C &= 0xFFFE;
+
+    if (next != 0) {
+        return next->unk_00;
+    }
+
+    return 0;
+}
