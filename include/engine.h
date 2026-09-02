@@ -41,8 +41,30 @@ typedef struct Dma3Pending {
     u16 unk_06;
 } Dma3Pending;
 
+typedef struct Dma3Blit {
+    void* unk_00;
+    void* unk_04;
+    u8 unk_08;
+    u8 unk_09;
+    u8 unk_0A;
+    u8 unk_0B;
+    u8 unk_0C;
+    u8 unk_0D;
+} Dma3Blit;
+
+typedef struct Dma3Fill {
+    void* unk_00;
+    void* unk_04;
+    u8 unk_08;
+    u8 unk_09;
+    u8 unk_0A;
+} Dma3Fill;
+
 typedef struct Dma3Queue {
-    Dma3Request requests[352];
+    Dma3Request requests[256];
+    Dma3Blit unk_0C00[64];
+    Dma3Fill unk_1000[8];
+    void* unk_1060[8];
     Dma3Pending pending[4];
     vu16 unk_10A0;
     vu16 unk_10A2;
@@ -63,7 +85,7 @@ extern u8 gBgPaletteBank[];
 extern u16 gDispCnt;
 
 extern u8* gSpriteWork;
-extern Dma3Request* gDma3Requests;
+extern Dma3Queue* gDma3Requests;
 extern u32 gRandSeed;
 extern u32 gRandomState[4];
 extern u8* gFadeWork;
