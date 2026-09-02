@@ -983,7 +983,32 @@ void func_080141FC(BtlObj* p) {
 }
 INCLUDE_ASM("unk_0800eebc/func_08014294.s");
 INCLUDE_ASM("unk_0800eebc/func_0801440C.s");
-INCLUDE_ASM("unk_0800eebc/func_08014588.s");
+void func_08014588(s32 x, s32 y, s32 z, s32 w, u16 a, u16 b) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    SetBlendAlpha(16, 0);
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    gUnk_02034928->unk_26 = 0;
+    gUnk_02034928->unk_1C = w;
+    gUnk_02034928->unk_20 = w;
+    gUnk_02034928->unk_28 = w;
+    gUnk_02034928->unk_3C = 0;
+    gUnk_02034928->unk_36 = 0;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDAA38, sx, sy);
+    func_08006B34(0);
+    gUnk_02034928->unk_04 = func_0801440C;
+    gUnk_02034928->unk_0A = a;
+    gUnk_02034928->unk_0C = b;
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 INCLUDE_ASM("unk_0800eebc/func_08014654.s");
 
 void func_0801475C(s32 a, s32 b, s32 c) {
@@ -1055,7 +1080,37 @@ void func_08014850(void) {
     func_08012908();
 }
 
-INCLUDE_ASM("unk_0800eebc/func_080148E0.s");
+void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_4C = 20;
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    gUnk_02034928->unk_48 = w;
+    gUnk_02034928->unk_26 = a;
+    WorldToScreen(&sx, &sy, x, y, 0);
+    switch (a) {
+    case 0:
+        func_08006778(gUnk_09EDA8A0, sx, sy);
+        m4aSongNumStart(0x25C);
+        break;
+    case 1:
+        func_08006778(gUnk_09EDA8B8, sx, sy);
+        m4aSongNumStart(0x25D);
+        break;
+    case 2:
+    default:
+        func_08006778(gUnk_09EDA8D0, sx, sy);
+        m4aSongNumStart(0x25E);
+        break;
+    }
+    gUnk_02034928->unk_04 = func_08014850;
+}
 
 void func_080149BC(s32 x, s32 y) {
     s16 sx;
@@ -1312,7 +1367,33 @@ void func_0801536C(void) {
 }
 
 INCLUDE_ASM("unk_0800eebc/func_080153C8.s");
-INCLUDE_ASM("unk_0800eebc/func_080154F4.s");
+void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    SetBlendAlpha(16, 0);
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    gUnk_02034928->unk_28 = p;
+    gUnk_02034928->unk_2C = q;
+    gUnk_02034928->unk_30 = r;
+    gUnk_02034928->unk_0A = a;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDAA08, sx, sy);
+    func_08006B34(0);
+    gUnk_02034928->unk_1C = 25;
+    gUnk_02034928->unk_20 = 25;
+    gUnk_02034928->unk_04 = func_080153C8;
+    gUnk_02034928->unk_26 = 0;
+    gUnk_02034928->unk_48 = s;
+    gUnk_02034928->unk_3C = t;
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 INCLUDE_ASM("unk_0800eebc/func_080155BC.s");
 INCLUDE_ASM("unk_0800eebc/func_08015698.s");
 void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s) {
@@ -1735,7 +1816,34 @@ void func_08017514(s32 x, s32 y, s32 z, s32 w) {
 INCLUDE_ASM("unk_0800eebc/func_080175BC.s");
 INCLUDE_ASM("unk_0800eebc/func_08017728.s");
 INCLUDE_ASM("unk_0800eebc/func_080177EC.s");
-INCLUDE_ASM("unk_0800eebc/func_080179F8.s");
+void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    gUnk_02034928->unk_0A = 220;
+    gUnk_02034928->unk_0C = 0;
+    gUnk_02034928->unk_26 = 0;
+    gUnk_02034928->unk_48 = w;
+    gUnk_02034928->unk_20 = 10;
+    if (f) {
+        gUnk_02034928->unk_1C = -10;
+        gUnk_02034928->unk_34 |= 1;
+    } else {
+        gUnk_02034928->unk_1C = 10;
+    }
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDAC18, sx, sy);
+    gUnk_02034928->unk_04 = func_080177EC;
+    func_08006B34(0);
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 INCLUDE_ASM("unk_0800eebc/func_08017AC0.s");
 INCLUDE_ASM("unk_0800eebc/func_08017B74.s");
 INCLUDE_ASM("unk_0800eebc/func_08017C54.s");
