@@ -38,13 +38,17 @@ typedef struct VsActor {
     s32 unk_A8;
     s32 unk_AC;
     u8 unk_B0;
-    u8 unk_B1[0x07];
+    u8 unk_B1;
+    u16 unk_B2;
+    u32 unk_B4;
     u32 unk_B8;
     u8 unk_BC[0x12];
     s16 unk_CE;
     s16 unk_D0;
     u16 unk_D2;
-    u8 unk_D4[0x34];
+    u8 unk_D4[0x10];
+    void* unk_E4;
+    u8 unk_E8[0x20];
     s32 unk_108;
     s32 unk_10C;
 } VsActor;
@@ -92,7 +96,7 @@ typedef struct VsBattleWork {
     VsActor* unk_078;
     VsActor* unk_07C;
     u8 unk_080[0x28];
-    u32 unk_0A8;
+    VsActor* unk_0A8;
     u8 unk_0AC[0x40];
     u16 unk_0EC;
     u8 unk_0EE;
@@ -178,7 +182,7 @@ typedef struct HumWork {
     s32 unk_168;
     s32 unk_16C;
     u32 unk_170;
-    s16 unk_174;
+    u16 unk_174;
     u16 unk_176;
     void* unk_178;
     u16 unk_17C;
@@ -187,10 +191,18 @@ typedef struct HumWork {
     u32 unk_184;
 } HumWork;
 
-typedef struct HumDef {
+typedef struct HumSubDef {
     void* unk_00;
     u16 unk_04;
     u16 unk_06;
+} HumSubDef;
+
+typedef struct HumDef {
+    u16 unk_00;
+    u16 unk_02;
+    void* unk_04;
+    u32 unk_08;
+    u32 unk_0C;
 } HumDef;
 
 void ReleaseObjTiles(void* p);
@@ -209,6 +221,7 @@ void func_08010CC8(void);
 void func_0801071C(void);
 void func_0801C068(void);
 void func_08004F08(void);
+void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 void func_0801227C(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
@@ -228,7 +241,7 @@ void func_08012824(void);
 void func_080125A4(void);
 
 extern VsBattleWork* gUnk_02039B84;
-extern void* gUnk_02039B9C;
+extern VsBattleWork* gUnk_02039B9C;
 extern u32 gUnk_02039828;
 extern CharaLinkData gUnk_0203AA10;
 extern CharaLinkData gUnk_0203AAC0;
@@ -236,6 +249,9 @@ extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
 extern u8 gUnk_02039B98;
+extern u16 gUnk_09EDA4EC[];
+extern TaskDesc gUnk_09EDAE88;
+extern TaskDesc gUnk_09EDB3F8;
 extern TaskDesc gUnk_09EDAE40;
 extern TaskDesc gUnk_09EDAE70;
 extern UnkStruct_02039BB0 gUnk_02039BB0;
@@ -243,6 +259,7 @@ extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern s16 gUnk_08121400[];
 
 void func_0800CB4C(EmyWork* work);
+void func_0800E0D0(EmyWork* work);
 void func_0800CB78(EmyWork* work);
 void mode_vsbattle_0(u32 mode);
 void mode_vsbattle_1(void);
@@ -253,7 +270,8 @@ void func_0800C6B8(void);
 void func_0800E364(HumSub* sub);
 void func_0800E380(HumWork* work);
 void func_0800E3D0(HumWork* work);
-void func_0800E314(HumWork* work, HumSub* sub, HumDef* def);
+void func_0800E168(HumWork* work, HumDef* def);
+void func_0800E314(HumWork* work, HumSub* sub, HumSubDef* def);
 void func_0800E5CC(HumSub* sub);
 
 #endif
