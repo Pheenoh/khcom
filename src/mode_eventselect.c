@@ -985,6 +985,16 @@ INCLUDE_ASM("mode_eventselect/func_08076674.s");
 INCLUDE_ASM("mode_eventselect/func_08076750.s");
 INCLUDE_ASM("mode_eventselect/func_0807682C.s");
 
+s32 func_08076F4C(CardBattleWork* w) {
+    if (func_080787B8(w, 0) == 0 && w->unk_B0 <= 1 && w->unk_B9 != 0) {
+        return 1;
+    }
+
+    return 0;
+}
+
+INCLUDE_ASM("mode_eventselect/func_08076F80.s");
+
 void func_08077E10(CardBattleWork* w) {
     gUnk_02039DD4->unk_094 = AnimUpdate(&gUnk_02039DD4->unk_064);
     gUnk_02039DD4->unk_098 = AnimUpdate(&gUnk_02039DD4->unk_07C);
