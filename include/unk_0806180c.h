@@ -54,7 +54,9 @@ typedef struct Work0806180C {
 
 typedef struct MsgLine0806180C {
     u32 unk_00;
-    u8 unk_04[0x14];
+    u8 unk_04[0x10];
+    u16 unk_14;
+    u16 unk_16;
 } MsgLine0806180C;
 
 typedef struct Ent02034A80 {
@@ -100,11 +102,19 @@ typedef struct MsgFaceWork {
 typedef struct MsgWinWork {
     u8 unk_00[0x14];
     void* unk_14;
-    u8 unk_18[0xC];
+    s32 unk_18;
+    u8 unk_1C[2];
+    u8 unk_1E;
+    u8 unk_1F;
+    u32 unk_20;
     u8 unk_24;
     u8 unk_25[2];
     u8 unk_27;
-    u8 unk_28[0x14];
+    u8 unk_28[2];
+    u8 unk_2A;
+    u8 unk_2B[0xD];
+    u8 unk_38;
+    u8 unk_39[3];
     MsgLine0806180C* unk_3C;
     u8 unk_40[4];
 } MsgWinWork;
@@ -155,14 +165,19 @@ typedef struct TextCtx {
     s32 unk_54;
     s32 unk_58;
     s32 unk_5C;
-    u8 unk_60[8];
+    u8 unk_60[4];
+    u32 unk_64;
     s16 unk_68;
     s16 unk_6A;
     u16 unk_6C;
     u8 unk_6E[0xC];
     u8 unk_7A;
-    u8 unk_7B[2];
+    u8 unk_7B;
+    u8 unk_7C;
     u8 unk_7D;
+    u8 unk_7E[0xA];
+    u8 unk_88;
+    u8 unk_89;
 } TextCtx;
 
 typedef struct Actor0806180C {
@@ -206,7 +221,8 @@ typedef struct MsgWaitWork {
     u8 unk_C0[0x1C];
     u8 unk_DC[0x26];
     u8 unk_102;
-    u8 unk_103[5];
+    u8 unk_103;
+    u8 unk_104[4];
 } MsgWaitWork;
 
 typedef struct MsgWaitYesNoWork {
@@ -273,6 +289,7 @@ extern u32 gUnk_02034A78;
 extern Ent02034A80* gUnk_02034A80;
 extern void* gUnk_02034A8C;
 extern Ctx02039BB0 gUnk_02039BB0;
+extern u16 gUnk_09033CA0[];
 extern s32 gUnk_09033CD0[];
 extern s32 gUnk_09033CE0[];
 extern Ctx02039B84* gUnk_02039B84;
@@ -340,6 +357,9 @@ void func_08074504(void);
 void* AnimUpdate(void* a);
 void AnimStart(void* a, s32 b, s32 c);
 void DisableBg(s32 bg);
+void func_08005244(s32 a, u16 b, u16 c);
+u8 func_08073318(MsgWinWork* p, void* a);
+u8 func_08073F78(MsgWaitWork* p);
 void LoadBgMap(s32 bg, void* src, u16 size);
 u16 GetKeysPressed(void);
 u8 func_0807388C(MsgFaceWork* p, void* a);
