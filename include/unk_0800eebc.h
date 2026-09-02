@@ -155,19 +155,6 @@ typedef struct Actor {
     u64 unk_74;
 } Actor;
 
-typedef struct MusicPlayer {
-    void* info;
-    void* track;
-    u8 numTracks;
-    u16 unk_0A;
-} MusicPlayer;
-
-typedef struct Song {
-    void* header;
-    u16 ms;
-    u16 me;
-} Song;
-
 typedef struct BtlWork {
     u16 unk_000;
     u16 unk_002;
@@ -305,8 +292,6 @@ extern ListNode gUnk_020348F8;
 extern ListNode gUnk_02034908;
 extern ListNode gUnk_02034918;
 extern const UnkStruct_08133E5C gUnk_08133E5C[];
-extern const MusicPlayer gMPlayTable[];
-extern const Song gSongTable[];
 
 void SeedRandom(u32 seed);
 void func_0800ABD8(void);

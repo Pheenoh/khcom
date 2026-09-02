@@ -35,7 +35,7 @@ void mode_mapinspect_0(void) {
         gUnk_02035FE0 = 0x1000;
         gUnk_02035E2C = 0;
     } else {
-        gUnk_02035FDC = gUnk_09EF9618.unk_24 * 7 * 512 - 0x100;
+        gUnk_02035FDC = gUnk_09EF9618[4].unk_04 * 7 * 512 - 0x100;
         gUnk_02035FE0 = 0;
         gUnk_02035E2C = 1;
     }

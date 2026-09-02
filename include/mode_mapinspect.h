@@ -2,19 +2,10 @@
 #define GUARD_MODE_MAPINSPECT_H
 
 #include "types.h"
+#include "ms_types.h"
 #include "main.h"
 #include "anim.h"
-typedef struct UnkStruct_0810718C {
-    u8 unk_00[0x04];
-    u16 unk_04;
-} UnkStruct_0810718C;
-
-typedef struct UnkStruct_09EF9618 {
-    u8 unk_00[0x24];
-    s16 unk_24;
-} UnkStruct_09EF9618;
-
-extern UnkStruct_09EF9618 gUnk_09EF9618;
+extern UnkStruct_09EF9618 gUnk_09EF9618[];
 extern s16 gUnk_02035E2C;
 extern s16 gUnk_02035E2E;
 extern s16 gUnk_02035E48;

@@ -2,6 +2,7 @@
 #define GUARD_MODE_TITLE_H
 
 #include "types.h"
+#include "title_types.h"
 #include "intr.h"
 #include "main.h"
 
@@ -13,31 +14,6 @@ typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
     u32 unk_008;
 } UnkStruct_02039BB0;
-
-typedef struct TitleLogoWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
-    void* unk_1C;
-    void* unk_20;
-    void* unk_24;
-    void* unk_28;
-    void* unk_2C;
-    void* unk_30;
-    void* unk_34;
-    void* unk_38;
-    void* unk_3C;
-    void* unk_40;
-    void* unk_44;
-    s32 unk_48;
-    s32 unk_4C;
-    u16 unk_50;
-    u16 unk_52;
-} TitleLogoWork;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern u32 gUnk_02034E98;
