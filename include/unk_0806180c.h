@@ -50,6 +50,21 @@ typedef struct Work0806180C {
     u8 unk_1B2;
 } Work0806180C;
 
+typedef struct Ent02034A80 {
+    void* unk_00;
+    void* unk_04;
+    u8 unk_08[0x48];
+    u8 unk_50;
+    u8 unk_51;
+    u8 unk_52;
+    u8 unk_53[5];
+} Ent02034A80;
+
+typedef struct Ctx02039BB0 {
+    u8 unk_00[8];
+    u32 unk_08;
+} Ctx02039BB0;
+
 typedef struct MsgFaceWork {
     void* unk_00;
     void* unk_04;
@@ -171,6 +186,10 @@ extern TaskDesc gUnk_09EE474C[];
 extern u8 gUnk_096145D8[];
 extern u8 gUnk_09614618[];
 extern vu16 gUnk_03007FF8;
+extern u32 gUnk_02034A78;
+extern Ent02034A80* gUnk_02034A80;
+extern void* gUnk_02034A8C;
+extern Ctx02039BB0 gUnk_02039BB0;
 extern Ctx02039B84* gUnk_02039B84;
 extern u16 gBldCnt;
 extern vu16 gBldAlpha;
@@ -230,6 +249,11 @@ void LoadBgPalette(s32 bg, void* src, u16 size);
 void m4aMPlayAllStop(void);
 u8 func_08006314(void);
 void func_08074504(void);
+void func_080635C4(void);
+void func_080DF828(void);
+void func_080E04EC(void);
+void func_0800FDD0(s32 a);
+void SaveWriteFileLarge(u16 file);
 u8 func_0806E184(Work0806180C* p, void* a);
 u8 func_0806FA84(Work0806180C* p, void* a);
 u8 func_0806FDB0(Work0806180C* p, void* a);
