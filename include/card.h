@@ -91,7 +91,7 @@ extern u8 gUnk_09EE77A4[];
 extern u8 gUnk_09EE77BC[];
 extern u8 gUnk_09EE781C[];
 extern u8 gUnk_09EE8F08[];
-extern void** gUnk_09EE275C[];
+extern s32* gUnk_09EE275C[];
 extern u8 gUnk_0203A8C0[];
 
 typedef struct UnkStruct_0807FA0C {
