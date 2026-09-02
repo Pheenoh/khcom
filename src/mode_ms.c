@@ -158,8 +158,79 @@ void func_08103CD8(s16 a) {
 void func_08103D54(s16 a) {
     LoadBgMap(1, gUnk_099931E4[a].unk_0C, gUnk_099931E4[a].unk_10);
 }
-INCLUDE_ASM("mode_ms/func_08103D7C.s");
-INCLUDE_ASM("mode_ms/func_08103DE8.s");
+void func_08103D7C(void) {
+    u16 keys;
+
+    keys = func_08102A94();
+    if ((keys & A_BUTTON) == 0) {
+        if (keys & B_BUTTON) {
+            m4aSongNumStart(0x68);
+            func_08006184(0, 16);
+            gUnk_02035C0C = 1;
+            gUnk_02035B02 = 5;
+        } else if (keys & START_BUTTON) {
+            m4aSongNumStart(0x68);
+            func_08006184(0, 16);
+            gUnk_02035C0C = 0;
+            gUnk_02035B02 = 5;
+        }
+    }
+}
+void func_08103DE8(void) {
+    u16 keys;
+    s16 old;
+    s16 i;
+
+    old = gUnk_02035B04;
+    keys = func_08102A94();
+    if ((keys & A_BUTTON) == 0) {
+        if (keys & B_BUTTON) {
+            m4aSongNumStart(0x68);
+            func_08006184(0, 16);
+            gUnk_02035C0C = 1;
+            gUnk_02035B02 = 5;
+        } else if (keys & START_BUTTON) {
+            m4aSongNumStart(0x68);
+            func_08006184(0, 16);
+            gUnk_02035C0C = 0;
+            gUnk_02035B02 = 5;
+        } else if (keys & DPAD_UP) {
+            gUnk_02035B04--;
+            if (gUnk_02035B04 < 0) {
+                i = 3;
+                if (gUnk_02035B08[i] < 0) {
+                    do {
+                        i--;
+                        if (i <= 0) {
+                            break;
+                        }
+                    } while (gUnk_02035B08[i] < 0);
+                }
+                gUnk_02035B04 = i;
+            }
+        } else if (keys & DPAD_DOWN) {
+            gUnk_02035B04++;
+            if (gUnk_02035B04 > 3) {
+                gUnk_02035B04 = 0;
+            } else if (gUnk_02035B08[gUnk_02035B04] < 0) {
+                gUnk_02035B04 = 0;
+            }
+        } else if (keys & DPAD_RIGHT) {
+            gUnk_02035B02 = 3;
+            gUnk_02035B10 = 0;
+            func_08103D54(0);
+            m4aSongNumStart(0x65);
+        }
+    }
+    if (gUnk_02035B04 == -1) {
+        gUnk_02035B04 = old;
+    }
+    if (gUnk_02035B04 != old) {
+        func_08103CD8(gUnk_02035B04);
+        func_08102984(gUnk_02035B04);
+        m4aSongNumStart(0x65);
+    }
+}
 u16 func_08103F3C(void) {
     s16 i;
     u16 r;
