@@ -198,7 +198,8 @@ typedef struct UnkStruct_080DEDD8 {
 } UnkStruct_080DEDD8;
 
 typedef struct UnkStruct_080DEE18 {
-    u8 unk_00[0x0C];
+    u8 unk_00[0x0B];
+    u8 unk_0B;
     u8 unk_0C;
 } UnkStruct_080DEE18;
 
@@ -364,6 +365,8 @@ extern u16 gUnk_02034F2A;
 extern UnkStruct_02034F34* gUnk_02034F34;
 extern u8* gUnk_02034F38;
 extern u8 gUnk_02034F40;
+extern u8 gUnk_02034F41;
+extern u8 gUnk_02034F42;
 extern UnkStruct_080DFF1C gUnk_02034F48[];
 extern u8 gUnk_02034F78;
 extern u8 gUnk_02034F79;
@@ -380,6 +383,7 @@ extern UnkStruct_02034F84 gUnk_0203C598[];
 extern void* gUnk_0203DB10;
 extern const UnkStruct_0203C7B0 gUnk_0984D1F4[];
 extern UnkStruct_09EF70D0* gUnk_09EF70D0[];
+extern UnkStruct_0984BC9C* gUnk_09EF83F8[];
 extern UnkStruct_080E7D80 gUnk_0984C1CC;
 extern UnkStruct_02034F7C gUnk_0984CECC[];
 extern u8 gUnk_0984B860[][8];
@@ -530,6 +534,8 @@ s32 func_080E5FB4(UnkStruct_080E590C* p);
 void func_080E6034(UnkStruct_080E590C* p);
 void func_080E607C(void);
 void func_080E6100(void);
+void func_080E6178(void);
+void func_080E6264(void);
 UnkStruct_080DFB8C* func_080E67D4(s32 x, s32 y);
 u8 func_080E68A4(s16 x, s16 y, u8 n);
 s32 func_080E68E4(s16 x, s16 y, u8 w, u8 h, u8 n);
