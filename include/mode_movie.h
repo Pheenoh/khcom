@@ -41,10 +41,10 @@ extern u8 gUnk_09EFA9C4[];
 
 void InitDisplayRegs(void);
 void m4aSoundVSyncOff(void);
-s32 func_08000250(void);
-s32 func_08000258(void);
-s32 func_08000240(void);
-s32 func_08000248(void);
+s32 GetIwramHeapStart(void);
+s32 GetIwramHeapSize(void);
+s32 GetEwramHeapStart(void);
+s32 GetEwramHeapSize(void);
 void func_081181BC(void* a, void* b, void* c, void* d);
 s32 func_081181EC(void* a);
 void func_08118344(void* a, s32 b);
