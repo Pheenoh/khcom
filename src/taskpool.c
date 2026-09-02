@@ -4,6 +4,8 @@
 #include "key.h"
 #include "malloc.h"
 #include "main.h"
+#include "mode.h"
+#include "gba/keys.h"
 
 extern u8 sEwramHeapName[];
 extern u8 sIwramHeapName[];
@@ -15,6 +17,17 @@ extern u32 gUnk_03006C10;
 extern u32 gUnk_02039828;
 extern u32 gUnk_02039820;
 extern u16 gUnk_03006C00;
+extern Mode* gUnk_03007488;
+extern void (*gUnk_0300748C)(void);
+extern u16 gUnk_03007490;
+extern Mode* gUnk_03007494;
+extern s32 gUnk_03007498;
+extern u8 gUnk_0300749C;
+extern u16 gUnk_0300749E;
+extern void (*gUnk_030074A0)(void);
+extern void (*gUnk_030074A4)(void);
+extern Mode gUnk_09EF4EC0;
+extern Mode* gUnk_09ECEAC8[];
 
 void func_080C55DC(void);
 Task* func_08000C54(ListNode* node, TaskPool* a);
@@ -22,7 +35,36 @@ void func_08000DE8(TaskPool* a, Task* t);
 u8 func_08000F48(Task* t);
 u8 func_08000F60(Task* t, const char* name);
 const char* func_08000F84(Task* t);
+void func_08000F94(void);
+void func_08000FB4(Mode* mode, s32 arg);
+void func_08001010(void);
+void func_08001058(void (*a)(void), void (*b)(void));
+void func_08001080(void);
+void func_0800109C(void (*fn)(void));
+void func_080010A8(void);
+u8 func_080010B4(void);
+void func_080010CC(Mode* mode, s32 arg);
+void func_080010E0(Mode* mode, s32 arg);
 void func_08001100(void);
+void func_08001248(void (*fn)(void));
+void func_08001254(void);
+void func_080012A8(void);
+void func_080012E0(void);
+const char* func_080012F8(void);
+void func_08001304(void);
+
+u16 _08006338(void);
+void VTransReset(void);
+void func_08004D74(void);
+void func_08001F98(void);
+void FadeReset(void);
+void func_08006404(void);
+void func_08004938(void);
+void FlushDma3Queue(void);
+void func_08002F50(void);
+void CommitDisplayRegs(void);
+void func_08005C78(void);
+void func_0800642C(void);
 
 
 Task* TaskDestroy(TaskPool* a, Task* t) {
@@ -173,20 +215,140 @@ s32 func_08000F90(void) {
     return 0;
 }
 
-INCLUDE_ASM("taskpool/func_08000F94.s");
-INCLUDE_ASM("taskpool/func_08000FB4.s");
-INCLUDE_ASM("taskpool/func_08001010.s");
-INCLUDE_ASM("taskpool/func_08001058.s");
-INCLUDE_ASM("taskpool/func_08001080.s");
-INCLUDE_ASM("taskpool/func_0800109C.s");
-INCLUDE_ASM("taskpool/func_080010A8.s");
-INCLUDE_ASM("taskpool/func_080010B4.s");
-INCLUDE_ASM("taskpool/func_080010CC.s");
-INCLUDE_ASM("taskpool/func_080010E0.s");
+void func_08000F94(void) {
+    *(vu16*)0x04000000 &= 0xE0FF;
+    *(vu16*)0x05000000 = gUnk_0300749E;
+}
+
+void func_08000FB4(Mode* mode, s32 arg) {
+    gUnk_0300749E = _08006338();
+    VTransReset();
+    func_08004D74();
+    func_08001F98();
+    FadeReset();
+    func_08006404();
+    gUnk_03007488 = mode;
+
+    if (mode->unk_04 != 0) {
+        mode->unk_04(arg);
+    }
+
+    gUnk_0300748C = gUnk_03007488->unk_08;
+    gUnk_0300749C |= 8;
+}
+
+void func_08001010(void) {
+    gUnk_0300749C = 3;
+    gUnk_0300749E = 0;
+    gUnk_03007490 = 0;
+    func_08000FB4(&gUnk_09EF4EC0, 0);
+    gUnk_03007494 = 0;
+    gUnk_030074A0 = 0;
+    gUnk_030074A4 = 0;
+}
+void func_08001058(void (*a)(void), void (*b)(void)) {
+    if (a != 0) {
+        a();
+    }
+
+    gUnk_030074A0 = b;
+    gUnk_0300749C |= 4;
+}
+
+void func_08001080(void) {
+    gUnk_0300749C &= ~4;
+    gUnk_030074A0 = 0;
+}
+
+void func_0800109C(void (*fn)(void)) {
+    gUnk_030074A4 = fn;
+}
+
+void func_080010A8(void) {
+    gUnk_030074A4 = 0;
+}
+
+u8 func_080010B4(void) {
+    if (gUnk_0300749C & 8) {
+        return 1;
+    }
+
+    return 0;
+}
+
+void func_080010CC(Mode* mode, s32 arg) {
+    gUnk_03007494 = mode;
+    gUnk_03007498 = arg;
+}
+
+void func_080010E0(Mode* mode, s32 arg) {
+    gUnk_03007494 = mode;
+    gUnk_03007498 = arg;
+    gUnk_0300749C |= 0x10;
+}
 INCLUDE_ASM("taskpool/func_08001100.s");
-INCLUDE_ASM("taskpool/func_08001248.s");
-INCLUDE_ASM("taskpool/func_08001254.s");
-INCLUDE_ASM("taskpool/func_080012A8.s");
-INCLUDE_ASM("taskpool/func_080012E0.s");
-INCLUDE_ASM("taskpool/func_080012F8.s");
-INCLUDE_ASM("taskpool/func_08001304.s");
+void func_08001248(void (*fn)(void)) {
+    gUnk_0300748C = fn;
+}
+
+void func_08001254(void) {
+    if (gUnk_0300749C & 1) {
+        func_08000F94();
+        gUnk_0300749C &= ~1;
+    }
+
+    if (!(gUnk_0300749C & 2)) {
+        if (gUnk_03006C78 & 0x10) {
+            func_08004938();
+        } else {
+            FlushDma3Queue();
+        }
+
+        func_08002F50();
+        CommitDisplayRegs();
+    }
+}
+
+void func_080012A8(void) {
+    if ((gUnk_0300749C & 2) && gUnk_030074A0 != 0) {
+        gUnk_030074A0();
+    }
+
+    if (gUnk_030074A4 != 0) {
+        gUnk_030074A4();
+    }
+}
+
+void func_080012E0(void) {
+    if (gUnk_03007488->unk_0C != 0) {
+        gUnk_03007488->unk_0C();
+    }
+}
+
+const char* func_080012F8(void) {
+    return gUnk_03007488->name;
+}
+
+void func_08001304(void) {
+    if (GetKeysHeld() & SELECT_BUTTON) {
+        if (GetKeysPressed() & L_BUTTON) {
+            gUnk_03007490--;
+
+            if ((s16)gUnk_03007490 < 0) {
+                gUnk_03007490 = 25;
+            }
+
+            func_080010CC(gUnk_09ECEAC8[(s16)gUnk_03007490], 0);
+        }
+
+        if (GetKeysPressed() & R_BUTTON) {
+            gUnk_03007490++;
+
+            if (gUnk_03007490 > 25) {
+                gUnk_03007490 = 0;
+            }
+
+            func_080010CC(gUnk_09ECEAC8[(s16)gUnk_03007490], 0);
+        }
+    }
+}
