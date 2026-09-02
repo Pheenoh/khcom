@@ -7,46 +7,35 @@ on:
 
 jobs:
   build:
+    container:
+      image: ghcr.io/pheenoh/khcom-build:main
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         version: [us, jp, eu]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install toolchain
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y binutils-arm-none-eabi ninja-build
+      - name: Git config
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-      - name: Install Python dependencies
-        run: pip install -r requirements.txt
-
-      - name: Install agbcc
+      - name: Prepare toolchain and base ROMs
         run: |
-          git clone --depth 1 https://github.com/pret/agbcc /tmp/agbcc
-          cd /tmp/agbcc && ./build.sh && ./install.sh "$GITHUB_WORKSPACE"
-
-      # ROMs are not committed. Host them privately and set the repository
-      # secret BASEROM_URL to a base URL such that
-      # "$BASEROM_URL/<code>.gba" resolves (codes: B8CE, B8CJ, B8CP).
-      - name: Fetch base ROM
-        env:
-          BASEROM_URL: ${{ secrets.BASEROM_URL }}
-        run: |
-          if [ -z "$BASEROM_URL" ]; then
-            echo "::error::BASEROM_URL secret is not set; cannot fetch base ROM."
-            exit 1
-          fi
-          case "${{ matrix.version }}" in
-            us) CODE=B8CE ;;
-            jp) CODE=B8CJ ;;
-            eu) CODE=B8CP ;;
-          esac
-          mkdir -p roms
-          curl -fsSL -o "roms/$CODE.gba" "$BASEROM_URL/$CODE.gba"
+          mkdir -p tools roms
+          cp -a /agbcc/tools/agbcc tools/
+          cp -a /orig/. roms/
+          sha1sum -c --status <<'SUMS'
+          10729bd884f8fdca7a310b6d606c52e46657aa48  roms/B8CE.gba
+          59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa  roms/B8CJ.gba
+          8db73586cdb11b3795907edebf43228dbcd3e6b2  roms/B8CP.gba
+          SUMS
 
       - name: Build and verify
         run: |
