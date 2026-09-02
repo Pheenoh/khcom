@@ -248,11 +248,11 @@ s32 HeapGetBlockSize(void* p, Heap* heap) {
     return 0;
 }
 
-s32 func_08000A08(void* p) {
+s32 EwramGetBlockSize(void* p) {
     return HeapGetBlockSize(p, &gEwramHeap);
 }
 
-s32 func_08000A18(void* p) {
+s32 IwramGetBlockSize(void* p) {
     return HeapGetBlockSize(p, &gIwramHeap);
 }
 
@@ -269,11 +269,11 @@ s32 HeapGetFreeTotal(Heap* heap) {
     return total;
 }
 
-s32 func_08000A40(void) {
+s32 EwramGetFreeTotal(void) {
     return HeapGetFreeTotal(&gEwramHeap);
 }
 
-s32 func_08000A50(void) {
+s32 IwramGetFreeTotal(void) {
     return HeapGetFreeTotal(&gIwramHeap);
 }
 
@@ -325,15 +325,15 @@ void SetIwramHeapName(void* name) {
     gIwramHeap.name = name;
 }
 
-void* func_08000AF0(void) {
+void* GetEwramHeapName(void) {
     return gEwramHeap.name;
 }
 
-void* func_08000AFC(void) {
+void* GetIwramHeapName(void) {
     return gIwramHeap.name;
 }
 
-void func_08000B08(Node* node, Node** head, Node** tail) {
+void ListAppend(Node* node, Node** head, Node** tail) {
     if (*head == 0) {
         *head = node;
     }
@@ -348,7 +348,7 @@ void func_08000B08(Node* node, Node** head, Node** tail) {
     *tail = node;
 }
 
-void func_08000B24(Node* node, Node** head, Node** tail, Node* after) {
+void ListInsertAfter(Node* node, Node** head, Node** tail, Node* after) {
     Node* next;
 
     if (after != 0) {
@@ -363,11 +363,11 @@ void func_08000B24(Node* node, Node** head, Node** tail, Node* after) {
             *tail = node;
         }
     } else {
-        func_08000B08(node, head, tail);
+        ListAppend(node, head, tail);
     }
 }
 
-void func_08000B48(Node* node, Node** head, Node** tail, Node* before) {
+void ListInsertBefore(Node* node, Node** head, Node** tail, Node* before) {
     Node* prev;
 
     if (before != 0) {
@@ -382,11 +382,11 @@ void func_08000B48(Node* node, Node** head, Node** tail, Node* before) {
             *head = node;
         }
     } else {
-        func_08000B08(node, head, tail);
+        ListAppend(node, head, tail);
     }
 }
 
-void func_08000B6C(Node* node, Node** head, Node** tail) {
+void ListRemove(Node* node, Node** head, Node** tail) {
     if (node->unk_04 == 0) {
         if (node->unk_08 == 0) {
             *head = 0;
@@ -414,7 +414,7 @@ void func_08000BA4(NodeList* list) {
 }
 
 void func_08000BB0(Node* node, NodeList* list, void* owner) {
-    func_08000B08(node, &list->unk_00, &list->unk_04);
+    ListAppend(node, &list->unk_00, &list->unk_04);
     node->unk_00 = owner;
     node->unk_0C = 0;
 }
@@ -425,22 +425,22 @@ void func_08000BC8(void* a, void* b) {
 
     node = a;
     list = b;
-    func_08000B6C(node, &list->unk_00, &list->unk_04);
-    func_08000B08(node, &list->unk_08, &list->unk_0C);
+    ListRemove(node, &list->unk_00, &list->unk_04);
+    ListAppend(node, &list->unk_08, &list->unk_0C);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
 
 void func_08000BF4(Node* node, NodeList* list, Node* after) {
-    func_08000B6C(node, &list->unk_00, &list->unk_04);
-    func_08000B24(node, &list->unk_08, &list->unk_0C, after);
+    ListRemove(node, &list->unk_00, &list->unk_04);
+    ListInsertAfter(node, &list->unk_08, &list->unk_0C, after);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
 
 void func_08000C24(Node* node, NodeList* list, Node* before) {
-    func_08000B6C(node, &list->unk_00, &list->unk_04);
-    func_08000B48(node, &list->unk_08, &list->unk_0C, before);
+    ListRemove(node, &list->unk_00, &list->unk_04);
+    ListInsertBefore(node, &list->unk_08, &list->unk_0C, before);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
@@ -449,8 +449,8 @@ void* func_08000C54(Node* node, NodeList* list) {
     Node* next;
 
     next = node->unk_08;
-    func_08000B6C(node, &list->unk_08, &list->unk_0C);
-    func_08000B08(node, &list->unk_00, &list->unk_04);
+    ListRemove(node, &list->unk_08, &list->unk_0C);
+    ListAppend(node, &list->unk_00, &list->unk_04);
     node->unk_0C &= 0xFFFE;
 
     if (next != 0) {
@@ -557,19 +557,19 @@ void func_08000D20(Node* node, NodeList* list, void* owner) {
 }
 
 void func_08000D28(Node* node, NodeList* list) {
-    func_08000B08(node, &list->unk_08, &list->unk_0C);
+    ListAppend(node, &list->unk_08, &list->unk_0C);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
 
 void func_08000D48(Node* node, NodeList* list, Node* after) {
-    func_08000B24(node, &list->unk_08, &list->unk_0C, after);
+    ListInsertAfter(node, &list->unk_08, &list->unk_0C, after);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
 
 void func_08000D6C(Node* node, NodeList* list, Node* before) {
-    func_08000B48(node, &list->unk_08, &list->unk_0C, before);
+    ListInsertBefore(node, &list->unk_08, &list->unk_0C, before);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
@@ -578,7 +578,7 @@ void* func_08000D90(Node* node, NodeList* list) {
     Node* next;
 
     next = node->unk_08;
-    func_08000B6C(node, &list->unk_08, &list->unk_0C);
+    ListRemove(node, &list->unk_08, &list->unk_0C);
     node->unk_0C &= 0xFFFE;
 
     if (next != 0) {
