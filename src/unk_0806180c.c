@@ -462,13 +462,45 @@ void func_0806E9BC(Work0806180C* p) {
     func_0801CD74(p->unk_028, e->unk_14);
 }
 
-INCLUDE_ASM("unk_0806180c/_0806E9DC.s");
+u8 _0806E9DC(Work0806180C* p, void* a) {
+    p->unk_188 = 0x800;
+    p->unk_18C = 0;
+    p->unk_1A8 = 0;
+    p->unk_198 = p->unk_034;
+    TaskPoolUpdate(&p->unk_010);
+    func_08000F8C(a, (void*)func_0806EA28);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_0806EA28.s");
-INCLUDE_ASM("unk_0806180c/func_0806EB94.s");
+u8 func_0806EB94(Work0806180C* p, void* a) {
+    p->unk_188 = 0xC00;
+    p->unk_18C = 0;
+    p->unk_1A8 = 0;
+    p->unk_198 = p->unk_034;
+    TaskPoolUpdate(&p->unk_010);
+    func_08000F8C(a, (void*)func_0806EBE0);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_0806EBE0.s");
-INCLUDE_ASM("unk_0806180c/func_0806ECE0.s");
+u8 func_0806ECE0(Work0806180C* p, void* a) {
+    p->unk_188 = 0x300;
+    p->unk_18C = 0;
+    p->unk_1A8 = 0;
+    p->unk_198 = p->unk_034;
+    TaskPoolUpdate(&p->unk_010);
+    func_08000F8C(a, (void*)func_0806ED2C);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_0806ED2C.s");
-INCLUDE_ASM("unk_0806180c/func_0806EE20.s");
+u8 func_0806EE20(Work0806180C* p, void* a) {
+    p->unk_188 = 0x300;
+    p->unk_18C = 0;
+    p->unk_1A8 = 0;
+    p->unk_198 = p->unk_034;
+    TaskPoolUpdate(&p->unk_010);
+    func_08000F8C(a, (void*)func_0806EE6C);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_0806EE6C.s");
 INCLUDE_ASM("unk_0806180c/func_0806EF40.s");
 INCLUDE_ASM("unk_0806180c/func_0806F02C.s");
@@ -478,11 +510,32 @@ INCLUDE_ASM("unk_0806180c/func_0806F2EC.s");
 INCLUDE_ASM("unk_0806180c/func_0806F3A8.s");
 INCLUDE_ASM("unk_0806180c/func_0806F47C.s");
 INCLUDE_ASM("unk_0806180c/func_0806F53C.s");
-INCLUDE_ASM("unk_0806180c/func_0806F610.s");
+u8 func_0806F610(Work0806180C* p, void* a) {
+    p->unk_18C = 0;
+    p->unk_198 = 0;
+    p->unk_190 = p->unk_02C;
+    p->unk_194 = p->unk_034;
+    func_08000F8C(a, (void*)func_0806F64C);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_0806F64C.s");
-INCLUDE_ASM("unk_0806180c/func_0806F734.s");
+u8 func_0806F734(Work0806180C* p, void* a) {
+    p->unk_18C = 0;
+    p->unk_198 = 0;
+    p->unk_190 = p->unk_02C;
+    p->unk_194 = p->unk_034;
+    func_08000F8C(a, (void*)func_0806F770);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_0806F770.s");
-INCLUDE_ASM("unk_0806180c/func_0806F858.s");
+u8 func_0806F858(Work0806180C* p, void* a) {
+    p->unk_18C = 1;
+    p->unk_198 = 0;
+    p->unk_190 = p->unk_02C;
+    p->unk_194 = p->unk_034;
+    func_08000F8C(a, (void*)func_0806F898);
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_0806F898.s");
 INCLUDE_ASM("unk_0806180c/func_0806F94C.s");
 INCLUDE_ASM("unk_0806180c/func_0806FA84.s");
