@@ -456,7 +456,131 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     }
 }
 
-INCLUDE_ASM("frd/task_frd_ariel_1.s");
+u8 task_frd_ariel_1(FrdArielWork* work) {
+    FrdBody* body;
+    FrdObj* obj;
+    s32 t;
+
+
+    body = &work->unk_020;
+
+    if (gUnk_02039BB0.unk_00C != 2) {
+        return 0;
+    }
+
+    obj = work->unk_14C != 0 ? gUnk_02039B84 : gUnk_02039B9C;
+
+    if (obj->unk_068 & 0x40000000) {
+        return 0;
+    }
+
+    func_0801C6D4(&body->unk_04, &body->unk_08, &body->unk_0C, &body->unk_10);
+
+    switch (work->unk_148) {
+    case 0:
+        if (body->unk_34 & 4) {
+            t = gUnk_02039B84->unk_0DC - 0x30;
+        } else {
+            t = gUnk_02039B84->unk_0DA + 0x30;
+        }
+
+        body->unk_04 += ((t << 8) - body->unk_04) >> 3;
+
+        if (work->unk_14E > 20) {
+            work->unk_14E = 0;
+            work->unk_148 = 1;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 1:
+        if (work->unk_14E == 0) {
+            work->unk_160 = 0;
+            work->unk_150 = 12;
+            func_08019068(gUnk_0813EC5C, &work->unk_130, 2, 0, work->unk_018);
+        }
+
+        switch (func_08005B34(&work->unk_130)) {
+        case 0:
+        case 1:
+        case 2:
+            break;
+        case 3:
+        default:
+            if (work->unk_150 > 0) {
+                ApproachValue(&work->unk_160, work->unk_15C, work->unk_150);
+                work->unk_150--;
+            }
+
+            if (body->unk_34 & 4) {
+                body->unk_04 -= work->unk_160;
+            } else {
+                body->unk_04 += work->unk_160;
+            }
+            break;
+        }
+
+        if (work->unk_150 <= 0 && AnimIsFinished(&work->unk_130)) {
+            work->unk_14E = 0;
+            work->unk_148 = 2;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 2:
+        func_08019068(gUnk_0813EC5C, &work->unk_130, 0, 1, work->unk_018);
+
+        if (body->unk_34 & 4
+                ? func_08011F78(0x77, body->unk_04, body->unk_08, body->unk_0C, 0x10, 0x10, 0x10)
+                : func_08011F78(0x77, body->unk_04, body->unk_08, body->unk_0C, 0x10, 0x10, 0x10)) {
+            m4aSongNumStart(0x250);
+        }
+
+        if (body->unk_34 & 4) {
+            body->unk_04 -= work->unk_15C;
+
+            if (body->unk_04 < (gUnk_02039B84->unk_0DA - 0x30) << 8) {
+                if (work->unk_158 == 0) {
+                    return 0;
+                }
+
+                work->unk_158--;
+                body->unk_34 &= 0xFFFFFFFFFFFFFFFB;
+                work->unk_14E = 0;
+                body->unk_08 = work->unk_014->unk_008;
+                func_08019A30();
+            }
+        } else {
+            body->unk_04 += work->unk_15C;
+
+            if (body->unk_04 > (gUnk_02039B84->unk_0DC + 0x30) << 8) {
+                if (work->unk_158 == 0) {
+                    return 0;
+                }
+
+                work->unk_158--;
+                body->unk_34 |= 4;
+                work->unk_14E = 0;
+                body->unk_08 = work->unk_014->unk_008;
+                func_08019A30();
+            }
+        }
+
+        body->unk_0C = work->unk_154 + (gSineTable[((u16)work->unk_14E * 8) & 0xFF] << 3);
+        body->unk_08 += (work->unk_014->unk_008 - body->unk_08) >> 4;
+
+        if (work->unk_14E == 20) {
+            m4aSongNumStart(0xBE);
+        }
+
+        work->unk_14E++;
+        break;
+    }
+
+    AnimUpdate(&work->unk_130);
+    TaskPoolUpdate(&work->unk_000);
+    return 1;
+}
 
 void task_frd_ariel_2(FrdArielWork* work) {
     FrdBody* body;
