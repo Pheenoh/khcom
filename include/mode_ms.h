@@ -4,6 +4,24 @@
 #include "types.h"
 #include "taskpool.h"
 #include "fld_types.h"
+#include "anim.h"
+
+typedef struct UnkStruct_099932D4 {
+    void* unk_00;
+    u16 unk_04;
+    u8 unk_06[0x2];
+    void* unk_08;
+    u16 unk_0C;
+    u8 unk_0E[0x2];
+    void* unk_10;
+    u8 unk_14[0x4];
+} UnkStruct_099932D4;
+
+typedef struct UnkStruct_02039BB0 {
+    u8 unk_000[0x0E];
+    s8 unk_00E;
+    u8 unk_00F[0x1];
+} UnkStruct_02039BB0;
 
 typedef struct UnkStruct_020358C8 {
     FldRes* unk_00;
@@ -47,13 +65,14 @@ void func_08102704(u16 a);
 void func_08102728(u16 a);
 s32 func_0810274C(u16 a);
 void func_08102774(void);
-s32 func_081027B4(s16 a);
+u8 func_081027B4(s16 a);
 s32 func_08102A94(void);
 u16 func_08103F3C(void);
 void func_08102984(s16 a);
 void func_08103CD8(s16 a);
 void mode_ms_top_2(void);
 void func_08102DC8(void);
+void mode_ms_shop_0(void);
 void func_081041B4(void);
 void mode_ms_shop_2(void);
 void func_08103D54(s16 a);
@@ -69,6 +88,20 @@ void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
 void m4aSongNumStart(u16 n);
 void DisableBg(s32 bg);
+void EnableBg(s32 a);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
+void SetBgPriority(s32 bg, u16 priority);
+void LoadBgPalette(s32 bg, void* src, u16 size);
+void LoadBgTiles(s32 bg, void* src, u16 size);
+void* LoadObjPalette(void* a, s32 b);
+void* LoadObjTiles(void* a, s32 b);
+void AnimInit(AnimState* a, void* b, void* c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
+void* EwramAlloc(u32 size);
+void func_08001F98(void);
+void func_08004DB0(void);
+void func_08006120(s32 a, s32 b);
+u32 func_08101518(void);
 void func_08006238(s32 a, s32 b, s32 c);
 u8 func_08101538(u32 a);
 void func_08102AB4(s16 x, s16 y);
@@ -113,10 +146,24 @@ extern void* gUnk_02035A4C;
 extern void* gUnk_02035A54;
 extern TaskPool gUnk_02035A70[];
 extern void* gUnk_02035ADC;
+extern u8 gUnk_02035B00;
 extern void* gUnk_02035BAC;
 extern void* gUnk_02035BB0;
 extern void* gUnk_02035BD0[];
 extern void* gUnk_02035BE0[];
+extern AnimState gUnk_02035BB8;
+extern void* gUnk_02035BF0[];
+extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern UnkStruct_099932D4 gUnk_099932D4[];
+extern u8 gUnk_09A3D87C[];
+extern u8 gUnk_09A1251C[];
+extern u8 gUnk_09A18D7C[];
+extern u8 gUnk_09A382DC[];
+extern u8 gUnk_09A3AD5C[];
+extern u8 gUnk_09A3DA7C[];
+extern u8 gUnk_099A3CE4[];
+extern u8 gUnk_09EF99F8[];
+extern u8 gUnk_09EF99D8[];
 extern FldRes* gUnk_02035AE0;
 extern UnkStruct_099931E4 gUnk_099931E4[];
 extern s16 gUnk_02035B18[][4][2];
