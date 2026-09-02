@@ -2,12 +2,21 @@
 #define GUARD_MODE_EVENTSELECT_H
 
 #include "types.h"
+#include "gba/syscall.h"
+#include "malloc.h"
 #include "game.h"
 #include "card.h"
 
 extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
+extern u8 gUnk_0905EAE8[];
+extern u8 gUnk_0905ED36[];
+extern u8 gUnk_0905EEE6[];
+extern u8 gUnk_09611AB8[];
 
+void func_080062F4(u16 a, s32 b);
+void TaskPoolInit(TaskPool* pool, s32 count);
+void func_0807B668(UnkStruct_02039DD4* p);
 void func_0807E23C(void);
 void func_0807E248(void);
 
@@ -40,5 +49,7 @@ void func_080763C4(void);
 u8 func_080763D0(void);
 void func_080763F0(void);
 void func_08076438(void);
+u8 func_0807643C(void);
+void func_08076458(void);
 
 #endif

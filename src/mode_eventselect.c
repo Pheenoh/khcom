@@ -135,7 +135,92 @@ void func_080763F0(void) {
 void func_08076438(void) {
 }
 
-INCLUDE_ASM("mode_eventselect/func_0807643C.s");
+u8 func_0807643C(void) {
+    if (gUnk_02034A98 != 0) {
+        return gUnk_02034A98->unk_78 & 2;
+    }
+
+    return 0;
+}
+
+void func_08076458(void) {
+    u32 zero;
+
+    gUnk_02039DD4 = EwramAlloc(sizeof(UnkStruct_02039DD4));
+    zero = 0;
+    CpuSet(&zero, gUnk_02039DD4, 0x05000043);
+    gUnk_02039DD4->unk_000 = 0;
+    gUnk_02039DD4->unk_004 = 0;
+    gUnk_02039DD4->unk_008 = 0;
+    gUnk_02039DD4->unk_00C = 0;
+    gUnk_02039DD4->unk_010 = 0;
+    gUnk_02039DD4->unk_014 = 0;
+    gUnk_02039DD4->unk_0B0 = 145;
+    gUnk_02039DD4->unk_0B4 = 145;
+    gUnk_02039DD4->unk_0B8 = 950;
+    gUnk_02039DD4->unk_0BC = 950;
+    gUnk_02039DD4->unk_0C0 = 0;
+    gUnk_02039DD4->unk_0C2 = 0;
+    gUnk_02039DD4->unk_0C4 = 106;
+    gUnk_02039DD4->unk_0C6 = 106;
+    gUnk_02039DD4->unk_0C8 = 256;
+    gUnk_02039DD4->unk_0CA = 256;
+    gUnk_02039DD4->unk_0CC = 0;
+    gUnk_02039DD4->unk_0CE = 0;
+    gUnk_02039DD4->unk_0D0 = 0;
+    gUnk_02039DD4->unk_0D1 = 0;
+    gUnk_02039DD4->unk_0D2 = 0;
+    gUnk_02039DD4->unk_0D3 = 0;
+    gUnk_02039DD4->unk_0D4 = 0;
+    gUnk_02039DD4->unk_0D5 = 0;
+    gUnk_02039DD4->unk_0D6 = 0;
+    gUnk_02039DD4->unk_0D7 = 0;
+    gUnk_02039DD4->unk_0D8 = 0;
+    gUnk_02039DD4->unk_0D9 = 0;
+    gUnk_02039DD4->unk_0DC = 0;
+    gUnk_02039DD4->unk_0E0 = 0;
+    gUnk_02039DD4->unk_0E1 = 0;
+    gUnk_02039DD4->unk_0E2 = 0;
+    gUnk_02039DD4->unk_0E0 = 0;
+    gUnk_02039DD4->unk_0E3 = 0;
+    gUnk_02039DD4->unk_0E4 = 0;
+    gUnk_02039DD4->unk_0E5 = 0;
+    gUnk_02039DD4->unk_0E6 = 0;
+    gUnk_02039DD4->unk_0E9 = 0;
+    gUnk_02039DD4->unk_0DA[0] = 0;
+    gUnk_02039DD4->unk_0DA[1] = 0;
+    gUnk_02039DD4->unk_0EA = 0;
+    gUnk_02039DD4->unk_0EB = 0;
+    gUnk_02039DD4->unk_0EC = 0;
+    gUnk_02039DD4->unk_0ED = 0;
+    gUnk_02039DD4->unk_0DE = 0;
+    gUnk_02039DD4->unk_0DF = 0;
+    gUnk_02039DD4->unk_0EE = 0;
+    gUnk_02039DD4->unk_0F0 = 0;
+    gUnk_02039DD4->unk_0F4 = 0;
+    gUnk_02039DD4->unk_0F8 = 0;
+    gUnk_02039DD4->unk_0FC = 0;
+    gUnk_02039DD4->unk_0FE = 0;
+    gUnk_02039DD4->unk_100 = 4;
+    gUnk_02039DD4->unk_102 = 4;
+    gUnk_02039DD4->unk_104 = 2;
+    gUnk_02039DD4->unk_106 = 2;
+    gUnk_02039DD4->unk_108[0] = 0;
+    gUnk_02039DD4->unk_108[1] = 0;
+    TaskPoolInit(&gUnk_02039DD4->unk_09C, 6);
+    gUnk_02039DD4->unk_030 = LoadObjTiles(gUnk_08F709B0[0].unk_0C, 640);
+    gUnk_02039DD4->unk_034 = LoadObjTiles(gUnk_08F709B0[1].unk_0C, 640);
+    gUnk_02039DD4->unk_038 = LoadObjTiles(gUnk_08F709B0[2].unk_0C, 640);
+    gUnk_02039DD4->unk_03C = LoadObjTiles(gUnk_08F709B0[3].unk_0C, 640);
+    gUnk_02039DD4->unk_044 = LoadObjTiles(gUnk_0905EAE8, 320);
+    gUnk_02039DD4->unk_048 = LoadObjTiles(gUnk_0905ED36, 320);
+    gUnk_02039DD4->unk_04C = LoadObjTiles(gUnk_0905EEE6, 320);
+    gUnk_02039DD4->unk_054 = LoadObjPalette(gUnk_09611AB8, 32);
+    gUnk_02039DD4->unk_058 = LoadObjPalette(gUnk_08F69BA4, 32);
+    func_080062F4(((UnkStruct_080038C8*)gUnk_02039DD4->unk_054)->unk_06 + 16, 1);
+    func_0807B668(gUnk_02039DD4);
+}
+
 INCLUDE_ASM("mode_eventselect/func_08076674.s");
 INCLUDE_ASM("mode_eventselect/func_08076750.s");
 INCLUDE_ASM("mode_eventselect/func_0807682C.s");
