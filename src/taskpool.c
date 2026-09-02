@@ -122,6 +122,7 @@ s32 func_08000F90(void) {
 
 INCLUDE_ASM("taskpool/func_08000F94.s");
 INCLUDE_ASM("taskpool/func_08000FB4.s");
+INCLUDE_ASM("taskpool/func_08001010.s");
 INCLUDE_ASM("taskpool/func_080010CC.s");
 INCLUDE_ASM("taskpool/func_080010E0.s");
 INCLUDE_ASM("taskpool/func_08001100.s");
