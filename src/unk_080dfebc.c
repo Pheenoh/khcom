@@ -270,7 +270,25 @@ void func_080E05E4(void) {
 }
 
 INCLUDE_ASM("unk_080dfebc/func_080E062C.s");
-INCLUDE_ASM("unk_080dfebc/func_080E0780.s");
+void func_080E0780(void) {
+    if (gUnk_02039BA0->unk_6C > 0) {
+        gUnk_02039BA0->unk_70 |= 1;
+        gUnk_02039BA0->unk_6C--;
+    } else {
+        gUnk_02039BA0->unk_70 &= ~1;
+    }
+    gUnk_0203C7AC->unk_1C = 0;
+    TaskPoolUpdate(gUnk_02039BA0->unk_78);
+    gUnk_0203C7AC->unk_20 = 0;
+    if ((gUnk_02039BA0->unk_70 & 0x1000) == 0 && (gUnk_0203C7AC->unk_00 & 4) == 0) {
+        TaskPoolUpdate(gUnk_02039BA0->unk_8C);
+    }
+    if ((gUnk_02039BA0->unk_70 & 0x80) == 0) {
+        TaskPoolUpdate(gUnk_02039BA0->unk_B4);
+    }
+    TaskPoolUpdate(gUnk_02039BA0->unk_A0);
+    TaskPoolUpdate(gUnk_02039BA0->unk_C8);
+}
 
 void func_080E0820(void) {
     TaskPoolDraw(gUnk_02039BA0->unk_78);
@@ -1089,7 +1107,28 @@ void func_080E6264(void) {
 }
 INCLUDE_ASM("unk_080dfebc/func_080E6394.s");
 INCLUDE_ASM("unk_080dfebc/func_080E64D4.s");
-INCLUDE_ASM("unk_080dfebc/func_080E657C.s");
+void func_080E657C(UnkStruct_080E590C* p) {
+    UnkStruct_080E6034* q;
+
+    if (gUnk_02039BB0.unk_00 != 0 && (p->unk_04 & 4) == 0 &&
+        ((gUnk_0203C7AC->unk_00 & 2) == 0 || (p->unk_04 & 2))) {
+        q = func_08000D0C(gUnk_02039BB0.unk_E8);
+        if (q != 0) {
+            q->unk_30 = p->unk_00;
+            q->unk_34 = p->unk_CC;
+            q->unk_00 = p->unk_08;
+            q->unk_10 = p->unk_1C;
+            q->unk_14 = p->unk_18;
+            func_08000BC8(q->unk_1C, gUnk_02039BB0.unk_E8);
+        }
+    }
+    gUnk_02034F40--;
+    gUnk_02034F41 -= p->unk_00->unk_08;
+    func_08012304(p->unk_48);
+    ReleaseObjTiles(p->unk_BC);
+    ReleaseObjPalette(p->unk_C0);
+    TaskPoolDestroy(p->unk_E4);
+}
 INCLUDE_ASM("unk_080dfebc/func_080E6634.s");
 
 UnkStruct_080DFB8C* func_080E67D4(s32 x, s32 y) {
@@ -1130,7 +1169,16 @@ s32 func_080E6968(s16 a, s16 b, u8 c) {
     return d > (c << 4);
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E6998.s");
+void func_080E6998(s16 x, s16 y, u8 w, u8 h) {
+    s32 i;
+    s32 j;
+
+    for (i = 0; i < w; i++) {
+        for (j = 0; j < h; j++) {
+            func_080E548C(x + i, y + j)->unk_00 |= 0x100;
+        }
+    }
+}
 
 s16 func_080E6A14(s16 x, s16 y) {
     u16 n = gUnk_0203C7AC->unk_06 - y;
@@ -1364,7 +1412,7 @@ void func_080E891C(UnkStruct_080E8864* p) {
 
 INCLUDE_ASM("unk_080dfebc/func_080E893C.s");
 
-s32 func_080E89E4(s16 x, s16 y, const u8* p) {
+u8 func_080E89E4(s16 x, s16 y, const u8* p) {
     while (p[0] != 0xFF) {
         if (func_080E548C(p[0] + x, p[1] + y)->unk_05 != p[2]) {
             return 0;
@@ -1374,7 +1422,24 @@ s32 func_080E89E4(s16 x, s16 y, const u8* p) {
     return 1;
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E8A24.s");
+void func_080E8A24(UnkStruct_080E8864* p) {
+    s16 i;
+    s16 j;
+    u16 w;
+    u16 h;
+
+    w = gUnk_0203C7AC->unk_04 - p->unk_04 + 1;
+    h = gUnk_0203C7AC->unk_06 - p->unk_05 + 1;
+    for (j = 0; j < h; j++) {
+        for (i = 0; i < w; i++) {
+            if (func_080E89E4(i, j, p->unk_00)) {
+                if (GetRandom() % 100 < p->unk_06) {
+                    func_080E893C(i, j, p->unk_08, p->unk_0C);
+                }
+            }
+        }
+    }
+}
 
 void func_080E8AC8(UnkStruct_080E8864* p) {
     if (p != 0) {
