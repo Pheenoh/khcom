@@ -201,7 +201,59 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     gUnk_02039B84->unk_0EC += t;
     gUnk_02039B84->unk_120--;
 }
-INCLUDE_ASM("mode_vsbattle/func_0800C980.s");
+s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g, s16 h, u16 i) {
+    VsActor* actor = &work->unk_03C;
+    s32 ret;
+    s32 v;
+    s32 target;
+    s16 steps;
+
+    ret = 0;
+
+    if (work->unk_154 == 0) {
+        work->unk_158 &= ~4;
+    }
+
+    if (work->unk_154 >= a) {
+        if (work->unk_154 < a + b) {
+            steps = (a + b) - work->unk_154;
+            target = actor->unk_18;
+
+            if (work->unk_03C.unk_34 & 4) {
+                v = actor->unk_14 - (e << 8);
+            } else {
+                v = actor->unk_14 + (e << 8);
+            }
+
+            if (actor->unk_E8 != 5) {
+                func_0800592C(&actor->unk_04, v, steps);
+                func_0800592C(&actor->unk_08, target, steps);
+            }
+
+            if (!(work->unk_158 & 4)) {
+                if (actor->unk_34 & 4) {
+                    if (func_08011F78(d, actor->unk_04 - (g << 8), actor->unk_08, actor->unk_0C + (h << 8), (s16)i, i / 2, (s16)i) != 0) {
+                        m4aSongNumStart(f);
+                        work->unk_158 |= 4;
+                        ret = 1;
+                    }
+                } else {
+                    if (func_08011F78(d, actor->unk_04 + (g << 8), actor->unk_08, actor->unk_0C + (h << 8), (s16)i, i / 2, (s16)i) != 0) {
+                        m4aSongNumStart(f);
+                        ret = 1;
+                        work->unk_158 |= 4;
+                    }
+                }
+            }
+        } else if (work->unk_154 > a + b + c) {
+            func_0800CB4C(work);
+            return 2;
+        }
+    }
+
+    work->unk_154++;
+    return ret;
+}
 
 void func_0800CB4C(EmyWork* work) {
     func_0801AF08(&work->unk_03C);

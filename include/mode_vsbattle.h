@@ -228,6 +228,8 @@ void ReleaseObjPalette(void* p);
 void* AnimUpdate(void* a);
 void* AnimGetGfx(void* a);
 void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
+void func_0800592C(s32* value, s32 target, u16 steps);
+s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 
 extern u8 gUnk_08F69BC4[];
 void AnimInit(void* a, void* b, void* c);
@@ -292,6 +294,7 @@ void func_0800CB4C(EmyWork* work);
 u8 _0800CBDC(EmyWork* work);
 s32 _0800E434(HumWork* work);
 void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj);
+s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g, s16 h, u16 i);
 void func_0800CD40(EmyWork* work);
 void func_0800DF30(EmyWork* work);
 void func_0800E0D0(EmyWork* work);
