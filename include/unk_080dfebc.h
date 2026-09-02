@@ -371,7 +371,7 @@ void* memcpy(void* dst, const void* src, unsigned long n);
 void func_08000DE8(void* a, void* b);
 u16 GetRandom(void);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
-s16 func_08005824(u8 a, u8 b);
+s16 GetAngleDiff(u8 a, u8 b);
 s32 abs(s32 x);
 void* GetBgCharBase(s32 bg);
 void* GetBgScreenBase(s32 bg);

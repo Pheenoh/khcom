@@ -118,7 +118,7 @@ u8 task_btl_born_1(BtlBornWork* work) {
     if (func_080128EC() == 0) {
         func_0801A8A4(&work->unk_00.unk_00, &work->unk_00.unk_04, -24, -12);
 
-        if (func_08008974(0x22D) == 0) {
+        if (IsSongPlaying(0x22D) == 0) {
             m4aSongNumStart(0x22D);
         }
 
@@ -342,7 +342,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
 
         if (obj != 0) {
             if (work->unk_3A <= 0) {
-                func_0800589C(&work->unk_58,
+                ApproachAngle(&work->unk_58,
                               GetAngle(work->unk_24, work->unk_2C, obj->unk_004,
                                             obj->unk_00C - (obj->unk_0A2 << 8)),
                               2);
@@ -406,9 +406,9 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         if (work->unk_38 == 0) {
             work->unk_3A = 16;
         }
-        func_080058FC(&work->unk_24, work->unk_5C->unk_004, work->unk_3A);
-        func_080058FC(&work->unk_28, work->unk_5C->unk_008, work->unk_3A);
-        func_080058FC(&work->unk_2C, work->unk_5C->unk_00C - 0x1000, work->unk_3A);
+        ApproachValue(&work->unk_24, work->unk_5C->unk_004, work->unk_3A);
+        ApproachValue(&work->unk_28, work->unk_5C->unk_008, work->unk_3A);
+        ApproachValue(&work->unk_2C, work->unk_5C->unk_00C - 0x1000, work->unk_3A);
         work->unk_3A--;
         if (work->unk_3A <= 3) {
             return 0;
@@ -416,7 +416,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         work->unk_38++;
         break;
     case 0:
-        func_080058FC(&work->unk_30, -0x800, work->unk_38);
+        ApproachValue(&work->unk_30, -0x800, work->unk_38);
         if (work->unk_3C != 0) {
             work->unk_24 = work->unk_24 - work->unk_30;
         } else {
@@ -457,7 +457,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         work->unk_38--;
         break;
     case 1:
-        func_080058FC(&work->unk_30, -work->unk_34, work->unk_3A);
+        ApproachValue(&work->unk_30, -work->unk_34, work->unk_3A);
         if (work->unk_3C != 0) {
             work->unk_24 = work->unk_24 - work->unk_30;
         } else {
@@ -489,7 +489,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         }
 
         if (work->unk_3A > 0) {
-            func_080058FC(&work->unk_44, 25, work->unk_3A);
+            ApproachValue(&work->unk_44, 25, work->unk_3A);
             work->unk_3A--;
             if (work->unk_3A <= 0) {
                 work->unk_56 &= ~2;

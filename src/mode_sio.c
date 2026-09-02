@@ -568,12 +568,12 @@ void func_080B0010(void) {
                 gUnk_02034B40->unk_410++;
             } else {
                 gUnk_02034B40->unk_004 += 8;
-                func_080078FC(gUnk_09EF1318[a].unk_10, (u16*)0x05000000, gUnk_09EF1318[a].unk_14, gUnk_02034B40->unk_004);
+                FadePaletteToBlack(gUnk_09EF1318[a].unk_10, (u16*)0x05000000, gUnk_09EF1318[a].unk_14, gUnk_02034B40->unk_004);
             }
         }
         break;
     case 1:
-        func_080078FC(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14, 32);
+        FadePaletteToBlack(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14, 32);
         LoadBgMap(2, gUnk_09EF1318[b].unk_08, gUnk_09EF1318[b].unk_0C);
         RequestDma3Copy(gUnk_09EF1318[b].unk_00, GetBgCharBase(2), 0x2000);
         gUnk_02034B40->unk_410++;
@@ -595,9 +595,9 @@ void func_080B0010(void) {
             } else {
                 gUnk_02034B40->unk_004 -= 8;
                 if (gUnk_02034B40->unk_004 == 0) {
-                    func_08007E00(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14);
+                    LoadPaletteWithEffect(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14);
                 } else {
-                    func_080078FC(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14, gUnk_02034B40->unk_004);
+                    FadePaletteToBlack(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14, gUnk_02034B40->unk_004);
                 }
             }
         }

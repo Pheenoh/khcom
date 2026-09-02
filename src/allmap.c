@@ -145,7 +145,7 @@ s32 task_allmap_cursor_1(AllmapCursorWork* work) {
 
     if (gUnk_0203C4E0 == 2) {
         if (gUnk_0203C508 > 6) {
-            func_080058FC(&work->unk_28, work->unk_2C, gUnk_0203C508 - 7);
+            ApproachValue(&work->unk_28, work->unk_2C, gUnk_0203C508 - 7);
         } else if (gUnk_0203C508 > 3) {
             func_0800592C(&work->unk_28, work->unk_2C - 0x800, gUnk_0203C508 - 3);
         } else {
@@ -165,8 +165,8 @@ s32 task_allmap_cursor_1(AllmapCursorWork* work) {
         work->unk_44 = 4;
     }
     if (work->unk_44 != 0) {
-        func_080058FC(&work->unk_3C, work->unk_34, work->unk_44);
-        func_080058FC(&work->unk_40, work->unk_38, work->unk_44);
+        ApproachValue(&work->unk_3C, work->unk_34, work->unk_44);
+        ApproachValue(&work->unk_40, work->unk_38, work->unk_44);
         work->unk_44--;
     }
     return 1;
@@ -317,8 +317,8 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
 
     switch (work->unk_28) {
     case 0:
-        func_080058FC(&work->unk_10, work->unk_14, work->unk_0C);
-        func_080058FC(&work->unk_18, work->unk_1C, work->unk_0C);
+        ApproachValue(&work->unk_10, work->unk_14, work->unk_0C);
+        ApproachValue(&work->unk_18, work->unk_1C, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
             work->unk_0C = 16;
@@ -326,7 +326,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         }
         break;
     case 1:
-        func_080058FC(&work->unk_20, work->unk_24, work->unk_0C);
+        ApproachValue(&work->unk_20, work->unk_24, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
             LoadBgMap(3, gUnk_0983B298, 0x500);
@@ -335,7 +335,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         }
         break;
     case 3:
-        func_080058FC(&work->unk_20, work->unk_24, work->unk_0C);
+        ApproachValue(&work->unk_20, work->unk_24, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
             work->unk_0C = 16;
@@ -350,8 +350,8 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
             func_080D3FD4(work);
             work->unk_2D = 1;
         }
-        func_080058FC(&work->unk_10, work->unk_14, work->unk_0C);
-        func_080058FC(&work->unk_18, work->unk_1C, work->unk_0C);
+        ApproachValue(&work->unk_10, work->unk_14, work->unk_0C);
+        ApproachValue(&work->unk_18, work->unk_1C, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
             gUnk_0203C4E0 = 0;
@@ -471,8 +471,8 @@ s32 task_allmap_doorinfo_1(AllmapDoorinfoWork* work) {
         func_080061E8(0, 8);
     }
     if (work->unk_100 != 0) {
-        func_080058FC(&work->unk_104, work->unk_10C, work->unk_100);
-        func_080058FC(&work->unk_108, work->unk_110, work->unk_100);
+        ApproachValue(&work->unk_104, work->unk_10C, work->unk_100);
+        ApproachValue(&work->unk_108, work->unk_110, work->unk_100);
         work->unk_100--;
     }
     if (work->unk_116 != 0 && work->unk_100 == 0) {

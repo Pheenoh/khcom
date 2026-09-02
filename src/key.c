@@ -5,8 +5,8 @@
 #include "main.h"
 #include "key.h"
 
-extern u8 gUnk_081213DC[];
-extern u8 gUnk_081213E8[];
+extern u8 sEwramHeapName[];
+extern u8 sIwramHeapName[];
 
 extern u32 gFrameCounter;
 extern u32 gUnk_03006C68;

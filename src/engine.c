@@ -10,7 +10,7 @@ void func_08000C24(void* node, void* pool, void* before);
 void* func_08000C8C(void* pool);
 void* func_08000CD4(void* node);
 void* func_08000D0C(void* pool);
-void* func_08007E00(void* src, void* dst, u16 size);
+void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
 void func_08000C54(void* node, void* pool);
 extern s16 gSineTable[];
 extern u16 gBg0Cnt;
@@ -55,14 +55,14 @@ extern u32 gUnk_0203405C;
 extern u32 gUnk_02034060;
 extern u8 gUnk_02034064;
 void func_080066F4(s16 x, s16 y);
-void func_08007E68(s32 a);
-void func_08007E7C(void);
+void PushPaletteEffect(s32 a);
+void PopPaletteEffect(void);
 
 extern u16 gUnk_03006C78;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
-s32 func_08005824(s32 a, s32 b);
-s32 func_0800585C(s32 a, s32 b);
+s32 GetAngleDiff(s32 a, s32 b);
+s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 
 extern u16 gBldY;
@@ -96,14 +96,14 @@ extern u32 gUnk_0203405C;
 extern u32 gUnk_02034060;
 extern u8 gUnk_02034064;
 void func_080066F4(s16 x, s16 y);
-void func_08007E68(s32 a);
-void func_08007E7C(void);
+void PushPaletteEffect(s32 a);
+void PopPaletteEffect(void);
 
 extern u16 gUnk_03006C78;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
-s32 func_08005824(s32 a, s32 b);
-s32 func_0800585C(s32 a, s32 b);
+s32 GetAngleDiff(s32 a, s32 b);
+s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 
 INCLUDE_ASM("engine/func_0800216C.s");
@@ -799,20 +799,20 @@ void CommitDisplayRegs(void) {
     *(vu16*)0x05000000 = gBackdropColor;
 }
 
-void func_08004314(void) {
+void VTransInit(void) {
     u32 zero;
 
-    SetIwramHeapName(gUnk_08121680);
+    SetIwramHeapName(sVTransHeapName);
     gDma3Requests = IwramAlloc(0x10B0);
     zero = 0;
     CpuSet(&zero, gDma3Requests, 0x0500042C);
 }
 
-void func_08004350(void) {
+void VTransFree(void) {
     IwramFree(gDma3Requests);
 }
 
-void func_08004364(void) {
+void VTransReset(void) {
     Dma3Queue* q = (Dma3Queue*)gDma3Requests;
 
     q->unk_10A0 = 0;
@@ -879,22 +879,22 @@ u8 func_080045AC(void* a, void* b, u8 c, u8 d, u8 e) {
 INCLUDE_ASM("engine/func_080045AC.s");
 #endif
 INCLUDE_ASM("engine/func_08004678.s");
-INCLUDE_ASM("engine/func_080046C8.s");
+INCLUDE_ASM("engine/FlushDma3Queue.s");
 INCLUDE_ASM("engine/func_08004938.s");
 
-void func_08004B8C(void) {
+void BgInit(void) {
     BgEntry** p;
     u32 zero;
 
-    SetIwramHeapName(gUnk_08121688);
-    p = &gUnk_030074D4;
+    SetIwramHeapName(sBgHeapName);
+    p = &gBgEntries;
     *p = IwramAlloc(0x40);
     zero = 0;
     CpuSet(&zero, *p, 0x05000010);
 }
 
 void func_08004BC4(void) {
-    IwramFree(gUnk_030074D4);
+    IwramFree(gBgEntries);
 }
 
 void* func_08004BD8(BgEntry* e, u16 x, u16 y) {
@@ -933,7 +933,7 @@ void func_08004DB0(void) {
     SetBgScroll(2, 0, 0);
     SetBgScroll(3, 0, 0);
     for (i = 0; i <= 3; i++) {
-        u8* p = (u8*)gUnk_030074D4;
+        u8* p = (u8*)gBgEntries;
         s32 o = i * 16;
         p += 4;
         p += o;
@@ -954,7 +954,7 @@ void func_08004E64(void) {
     SetBgScroll(1, 0, 0);
     func_08005690(2, 0, 0x100, 0x100, 0, 0);
     for (i = 0; i <= 3; i++) {
-        u8* p = (u8*)gUnk_030074D4;
+        u8* p = (u8*)gBgEntries;
         s32 o = i * 16;
         p += 4;
         p += o;
@@ -972,7 +972,7 @@ void func_08004F08(void) {
     func_08005690(2, 0, 0x100, 0x100, 0, 0);
     func_08005690(3, 0, 0x100, 0x100, 0, 0);
     for (i = 0; i <= 3; i++) {
-        u8* p = (u8*)gUnk_030074D4;
+        u8* p = (u8*)gBgEntries;
         s32 o = i * 16;
         p += 4;
         p += o;
@@ -1057,18 +1057,18 @@ void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
         }
     }
     EnableBg(bg);
-    gUnk_030074D4[bg].unk_04 = src;
-    gUnk_030074D4[bg].unk_08 = w;
-    gUnk_030074D4[bg].unk_09 = h;
-    gUnk_030074D4[bg].unk_0A = 0;
-    gUnk_030074D4[bg].unk_0C = 0;
-    gUnk_030074D4[bg].unk_00 = 1;
+    gBgEntries[bg].unk_04 = src;
+    gBgEntries[bg].unk_08 = w;
+    gBgEntries[bg].unk_09 = h;
+    gBgEntries[bg].unk_0A = 0;
+    gBgEntries[bg].unk_0C = 0;
+    gBgEntries[bg].unk_00 = 1;
 }
 #else
 INCLUDE_ASM("engine/func_0800516C.s");
 #endif
 void func_080051C4(s32 bg, u16 x, u16 y) {
-    BgEntry* e = &gUnk_030074D4[bg];
+    BgEntry* e = &gBgEntries[bg];
 
     if (e->unk_04 == 0) {
         return;
@@ -1261,7 +1261,7 @@ void SetBlendAlpha(u16 a, u16 b) {
 }
 
 #ifdef NON_MATCHING
-s32 func_08005824(s32 a, s32 b) {
+s32 GetAngleDiff(s32 a, s32 b) {
     s32 x = a & 0xFF;
     s32 y = b & 0xFF;
     s32 d = x - y;
@@ -1275,18 +1275,18 @@ s32 func_08005824(s32 a, s32 b) {
     return d;
 }
 #else
-INCLUDE_ASM("engine/func_08005824.s");
+INCLUDE_ASM("engine/GetAngleDiff.s");
 #endif
-INCLUDE_ASM("engine/func_0800585C.s");
+INCLUDE_ASM("engine/GetAngleDiff16.s");
 
-void func_0800589C(u16* p, u16 target, u16 shift) {
+void ApproachAngle(u16* p, u16 target, u16 shift) {
     s16 d;
     u16 v;
 
     if (*p == target) {
         return;
     }
-    d = func_08005824((s16)target, (s16)*p);
+    d = GetAngleDiff((s16)target, (s16)*p);
     if (d == 0) {
         return;
     }
@@ -1294,15 +1294,15 @@ void func_0800589C(u16* p, u16 target, u16 shift) {
     *p = v + *p;
 }
 
-void func_080058D4(u16* p, u16 target, u16 shift) {
-    s32 d = func_0800585C(target, *p);
+void ApproachAngle16(u16* p, u16 target, u16 shift) {
+    s32 d = GetAngleDiff16(target, *p);
 
     if (d != 0) {
         *p = (d >> shift) + *p;
     }
 }
 
-void func_080058FC(s32* value, s32 target, u16 steps) {
+void ApproachValue(s32* value, s32 target, u16 steps) {
     s32 cur;
     s32 delta;
 
@@ -1330,7 +1330,7 @@ void func_0800592C(s32* p, s32 target, u16 steps) {
     *p += d / func_08005920(steps);
 }
 
-s32 func_08005954(s32 a, s32 b, s32 t) {
+s32 Lerp8(s32 a, s32 b, s32 t) {
     return (a * (0x100 - t) >> 8) + (b * t >> 8);
 }
 
@@ -1487,23 +1487,23 @@ void func_08005B64(AnimState* a) {
     a->flags &= 0xEFFF;
 }
 
-void func_08005B78(void) {
+void FadeInit(void) {
     u32 zero;
 
-    SetIwramHeapName(gUnk_0812168C);
-    gUnk_03007568 = IwramAlloc(0x598);
+    SetIwramHeapName(sFadeHeapName);
+    gFadeWork = IwramAlloc(0x598);
     zero = 0;
-    CpuSet(&zero, gUnk_03007568, 0x05000166);
+    CpuSet(&zero, gFadeWork, 0x05000166);
 }
 
-void func_08005BB0(void) {
-    IwramFree(gUnk_03007568);
+void FadeFree(void) {
+    IwramFree(gFadeWork);
 }
 
-void func_08005BC4(void) {
+void FadeReset(void) {
     u32 zero = 0;
 
-    CpuSet(&zero, gUnk_03007568, 0x05000166);
+    CpuSet(&zero, gFadeWork, 0x05000166);
 }
 
 #ifdef NON_MATCHING
@@ -1515,10 +1515,10 @@ void LoadPalette(void* src, void* dst, s32 size) {
     s32 count;
     void* p;
 
-    base = gUnk_03007568;
+    base = gFadeWork;
     count = (u16)size / 32;
     idx = ((s32)dst - 0x05000000) / 32;
-    p = func_08007E00(src, dst, size);
+    p = LoadPaletteWithEffect(src, dst, size);
     if (count != 0) {
         e = (PaletteSlot*)(base + idx * 44);
         flag = base + idx * 44 + 0x29;
@@ -1539,7 +1539,7 @@ INCLUDE_ASM("engine/LoadPalette.s");
 #endif
 
 void func_08005C60(u16 a) {
-    PaletteSlot* p = (PaletteSlot*)gUnk_03007568;
+    PaletteSlot* p = (PaletteSlot*)gFadeWork;
 
     p += a;
     p->unk_00 = 0;
@@ -1547,7 +1547,7 @@ void func_08005C60(u16 a) {
 
 INCLUDE_ASM("engine/func_08005C78.s");
 void func_08006120(s32 a, u16 b) {
-    u8* base = gUnk_03007568;
+    u8* base = gFadeWork;
     u32 z;
 
     if (*(u16*)(base + 0x594) & 2) {
@@ -1564,7 +1564,7 @@ void func_08006120(s32 a, u16 b) {
     *(u32*)(base + 0x590) = a;
 }
 void func_08006184(s32 a, u16 b) {
-    u8* base = gUnk_03007568;
+    u8* base = gFadeWork;
     u32 z;
 
     if (*(u16*)(base + 0x594) & 2) {
@@ -1581,7 +1581,7 @@ void func_08006184(s32 a, u16 b) {
     *(u32*)(base + 0x590) = a;
 }
 void func_080061E8(s32 a, u16 b) {
-    u8* base = gUnk_03007568;
+    u8* base = gFadeWork;
     u32 z;
 
     if (*(u16*)(base + 0x594) & 2) {
@@ -1597,7 +1597,7 @@ void func_080061E8(s32 a, u16 b) {
 }
 
 void func_08006238(s32 a, u16 b, u16 c) {
-    u8* base = gUnk_03007568;
+    u8* base = gFadeWork;
 
     if (*(u16*)(base + 0x594) & 2) {
         if (*(u16*)(base + 0x594) & 1) {
@@ -1611,7 +1611,7 @@ void func_08006238(s32 a, u16 b, u16 c) {
 }
 
 void func_08006290(s32 a, u16 b, u16 c) {
-    u8* base = gUnk_03007568;
+    u8* base = gFadeWork;
     u32 z;
 
     if (*(u16*)(base + 0x594) & 2) {
@@ -1634,13 +1634,13 @@ void func_080062F4(u16 slot, u8 value) {
     if (slot > 0x1F) {
         return;
     }
-    p = (PaletteSlot*)gUnk_03007568;
+    p = (PaletteSlot*)gFadeWork;
     p += slot;
     p->unk_28 = value;
 }
 
 u8 func_08006314(void) {
-    if (*(u16*)(gUnk_03007568 + 0x594) & 1) {
+    if (*(u16*)(gFadeWork + 0x594) & 1) {
         return 1;
     }
     return 0;
@@ -1649,22 +1649,22 @@ u8 func_08006314(void) {
 INCLUDE_ASM("engine/_08006338.s");
 
 u16 func_08006390(void) {
-    return *(u32*)(gUnk_03007568 + 0x580) >> 8;
+    return *(u32*)(gFadeWork + 0x580) >> 8;
 }
 
 void func_080063A8(void) {
-    u16 v = *(u16*)(gUnk_03007568 + 0x594) | 2;
+    u16 v = *(u16*)(gFadeWork + 0x594) | 2;
 
-    *(u16*)(gUnk_03007568 + 0x594) = v;
+    *(u16*)(gFadeWork + 0x594) = v;
 }
 
 void func_080063C4(u8 on) {
     if (on) {
-        u16 v = *(u16*)(gUnk_03007568 + 0x594) | 4;
+        u16 v = *(u16*)(gFadeWork + 0x594) | 4;
 
-        *(u16*)(gUnk_03007568 + 0x594) = v;
+        *(u16*)(gFadeWork + 0x594) = v;
     } else {
-        *(u16*)(gUnk_03007568 + 0x594) &= 0xFFFB;
+        *(u16*)(gFadeWork + 0x594) &= 0xFFFB;
     }
 }
 
@@ -1825,9 +1825,9 @@ void func_08006778(u8* a, s32 x, s32 y) {
         gUnk_02034060 = 0x100;
         gUnk_02034064 = 0;
     }
-    func_08007E68(0);
+    PushPaletteEffect(0);
     LoadBgPalette(gUnk_02034048, *(void**)(a + 0x08), *(u16*)(a + 0x0C));
-    func_08007E7C();
+    PopPaletteEffect();
     LoadBgMap(gUnk_02034048, *(void**)(a + 0x04), gUnk_02034056);
 }
 void func_0800685C(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {

@@ -5,8 +5,8 @@
 #include "main.h"
 #include "malloc.h"
 
-extern u8 gUnk_081213DC[];
-extern u8 gUnk_081213E8[];
+extern u8 sEwramHeapName[];
+extern u8 sIwramHeapName[];
 
 extern u32 gFrameCounter;
 extern u32 gUnk_03006C68;
@@ -89,12 +89,12 @@ INCLUDE_ASM("malloc/HeapInit.s");
 #endif
 
 void EwramHeapInit(void* addr, u32 size) {
-    SetEwramHeapName(gUnk_081213DC);
+    SetEwramHeapName(sEwramHeapName);
     HeapInit(addr, size, &gEwramHeap);
 }
 
 void IwramHeapInit(void* addr, u32 size) {
-    SetIwramHeapName(gUnk_081213E8);
+    SetIwramHeapName(sIwramHeapName);
     HeapInit(addr, size, &gIwramHeap);
 }
 

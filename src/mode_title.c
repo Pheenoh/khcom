@@ -70,12 +70,12 @@ void mode_title_1(void) {
         break;
     case 1:
         if (gUnk_02039BB0.unk_008 & 0x200) {
-            func_080058FC(&gUnk_0203C548, 0x3F3F, gUnk_02034EC0);
+            ApproachValue(&gUnk_0203C548, 0x3F3F, gUnk_02034EC0);
         } else {
-            func_080058FC(&gUnk_0203C548, 0xB0C1, gUnk_02034EC0);
+            ApproachValue(&gUnk_0203C548, 0xB0C1, gUnk_02034EC0);
         }
-        func_080058FC(&gUnk_0203C54C, 0x6A37, gUnk_02034EC0);
-        func_080058FC(&gUnk_0203C544, 0xBD0, gUnk_02034EC0);
+        ApproachValue(&gUnk_0203C54C, 0x6A37, gUnk_02034EC0);
+        ApproachValue(&gUnk_0203C544, 0xBD0, gUnk_02034EC0);
         func_08005690(2, 0, gUnk_0203C544 / 16, gUnk_0203C544 / 16, gUnk_0203C548, gUnk_0203C54C);
         gUnk_02034EC0--;
         if (gUnk_02034EC0 == 0x46) {

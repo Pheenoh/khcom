@@ -176,7 +176,7 @@ void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void LoadBgMap(s32 bg, void* src, u16 size);
-void func_080058FC(s32* value, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void UpdatePlayTime(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);

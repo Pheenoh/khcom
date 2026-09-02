@@ -6,9 +6,9 @@ void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     work->unk_02 = arg;
     work->unk_00 = 0;
     DisableBg(1);
-    func_08007E68(0);
+    PushPaletteEffect(0);
     LoadBgPalette(1, gUnk_08F6D9E4, 0x20);
-    func_08007E7C();
+    PopPaletteEffect();
     SetBgPriority(1, 0);
     SetBgBlend(1, 16, 16);
 
@@ -172,9 +172,9 @@ void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg) {
     work->unk_03 = 0;
     work->unk_02 = arg;
     DisableBg(1);
-    func_08007E68(0);
+    PushPaletteEffect(0);
     LoadBgPalette(1, gUnk_08F6DA04, 0x20);
-    func_08007E7C();
+    PopPaletteEffect();
     SetBgPriority(1, 0);
     SetBgBlend(1, 16, 16);
     LoadBgTiles(1, gUnk_08EE3064, 0xA20);

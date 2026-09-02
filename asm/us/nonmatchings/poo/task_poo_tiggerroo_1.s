@@ -48,7 +48,7 @@ task_poo_tiggerroo_1: @ 080CEA78
 	ldr r1, [r1, #0x00]
 	adds r4, #0x02
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	strh r0, [r4, #0x00]

@@ -374,7 +374,7 @@ void* AllocObjTiles(s32 size, void* src);
 void AnimInit(void* a, void* b, void* c);
 void AnimStart(void* a, u16 animId, u16 flags);
 void AnimChange(void* a, u16 animId, u16 flags);
-void func_080058FC(s32* value, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0800592C(s32* value, s32 target, u16 steps);
 void* AnimGetGfx(void* a);
 void* AnimUpdate(void* a);

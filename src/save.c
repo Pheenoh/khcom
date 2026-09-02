@@ -10,8 +10,8 @@ extern u8 gUnk_08121724[];
 extern u8 gUnk_08121924[];
 extern u8 gUnk_08125924[];
 
-void func_080098D4(void);
-void func_080099A8(void);
+void WaitSramErrorInput(void);
+void ReadKeysRaw(void);
 
 void ZeroFill(void* dst, s16 size) {
     u16 zero;
@@ -693,7 +693,7 @@ void SaveSetFileSmallState(u16 file, u16 slot, u16 state) {
     EwramFree(blk);
 }
 
-void func_080097CC(void) {
+void ShowSramErrorScreen(void) {
     vu16* ime;
     vu16* ie;
     vu16* dispstat;
@@ -736,7 +736,7 @@ void func_080097CC(void) {
     dma[1] = 0x06000000;
     dma[2] = 0x80000400;
     dma[2];
-    func_080098D4();
+    WaitSramErrorInput();
     *ime = 0;
     *ie &= 0xFFFE;
     *dispstat &= 0xFFF7;
@@ -744,7 +744,7 @@ void func_080097CC(void) {
     *dispcnt = 0;
 }
 
-void func_080098D4(void) {
+void WaitSramErrorInput(void) {
     vu16* bldy;
     vu16* bldy2;
     vu32* dma;
@@ -769,7 +769,7 @@ void func_080098D4(void) {
     if (i <= 19) {
         dma = (vu32*)0x040000D4;
         do {
-            func_080099A8();
+            ReadKeysRaw();
             if ((((gUnk_0203408A ^ gUnk_02034088) & gUnk_02034088) & 0xF0) == 0xF0) {
                 prev = cur;
                 cur = i;
@@ -801,7 +801,7 @@ void func_080098D4(void) {
     }
 }
 
-void func_080099A8(void) {
+void ReadKeysRaw(void) {
     u16 keys = 0x3FF ^ *(vu16*)0x04000130;
 
     gUnk_0203408A = gUnk_02034088;

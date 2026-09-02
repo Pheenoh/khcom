@@ -42,7 +42,7 @@ _080DBC32:
 	adds r4, r2, r0
 	ldrh r2, [r4, #0x00]
 	adds r0, r5, #0x0
-	bl func_080058FC
+	bl ApproachValue
 	ldr r0, _080DBC64 @ =0x0203C580
 	ldr r0, [r0, #0x00]
 	ldr r1, [r5, #0x00]

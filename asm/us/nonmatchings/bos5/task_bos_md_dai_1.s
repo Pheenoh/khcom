@@ -36,7 +36,7 @@ _080FD4EC:
 	adds r0, #0x0C
 	ldrh r2, [r5, #0x10]
 	movs r1, #0x00
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r5, #0x10]
 	subs r0, #0x01
 	strh r0, [r5, #0x10]
@@ -71,7 +71,7 @@ _080FD538:
 	adds r0, #0x0C
 	ldr r1, _080FD588 @ =0xFFFFF200
 	ldrh r2, [r5, #0x10]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r5, #0x10]
 	subs r0, #0x01
 	strh r0, [r5, #0x10]
@@ -112,7 +112,7 @@ _080FD590:
 	adds r0, #0x0C
 	ldr r1, _080FD5DC @ =0xFFFFE400
 	ldrh r2, [r5, #0x10]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r5, #0x10]
 	subs r0, #0x01
 	strh r0, [r5, #0x10]

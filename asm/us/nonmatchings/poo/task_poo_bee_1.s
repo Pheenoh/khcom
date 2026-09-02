@@ -112,7 +112,7 @@ _080D0B9C:
 	adds r4, r6, #0x0
 	adds r4, #0xC6
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldr r1, _080D0C3C @ =0x02034E2C
 	ldr r2, [r1, #0x00]
 	lsls r2, r2, #0x05
@@ -123,7 +123,7 @@ _080D0B9C:
 	adds r1, r1, r2
 	ldr r1, [r1, #0x00]
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	strh r0, [r4, #0x00]

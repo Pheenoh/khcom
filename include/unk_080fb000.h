@@ -95,7 +95,7 @@ extern s16 gSineTable[];
 u16 GetRandom(void);
 void* AnimUpdate(GaAnimState* a);
 void TaskPoolUpdate(GaTaskPool* a);
-void func_0800589C(u16* a, s32 b, s32 c);
+void ApproachAngle(u16* a, s32 b, s32 c);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 u8 func_080128EC(void);
 void func_08013DB8(s32 a, s32 b, s32 c, s32 d);

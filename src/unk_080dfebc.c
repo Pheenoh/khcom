@@ -1353,7 +1353,7 @@ s32 func_080EF4BC(UnkStruct_080E590C* p) {
         return 0;
     }
     ang = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->unk_18, gUnk_02039BA0->unk_1C);
-    if (abs(func_08005824(ang, q->unk_14)) > 0x18) {
+    if (abs(GetAngleDiff(ang, q->unk_14)) > 0x18) {
         return 0;
     }
     q->unk_14 = ang;

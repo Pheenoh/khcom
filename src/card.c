@@ -54,7 +54,7 @@ void* AnimUpdate(void* a);
 void AnimStart(void* a, s32 b, s32 c);
 void func_08000D20(void* a, void* b, void* c);
 void func_08000D28(void* a, void* b);
-void func_080058FC(void* a, s32 b, s32 c);
+void ApproachValue(void* a, s32 b, s32 c);
 void func_08006184(s32 a, s32 b);
 void func_08000F8C(void* a, void* b);
 u8 func_080A8C20(u8* work);
@@ -1541,11 +1541,11 @@ INCLUDE_ASM("card/func_0808B238.s");
 
 u8 func_0808B30C(u8* work, void* a) {
     if ((s8)work[0x8CD] > 0) {
-        func_080058FC(&work[0x868], -0x8000, (u16)(s8)work[0x8CD]);
+        ApproachValue(&work[0x868], -0x8000, (u16)(s8)work[0x8CD]);
         work[0x8CD]--;
     } else if ((s8)work[0x8CC] > 0) {
-        func_080058FC(&work[0x860], -0x800, (u16)(s8)work[0x8CC]);
-        func_080058FC(&work[0x864], 0xA000, (u16)(s8)work[0x8CC]);
+        ApproachValue(&work[0x860], -0x800, (u16)(s8)work[0x8CC]);
+        ApproachValue(&work[0x864], 0xA000, (u16)(s8)work[0x8CC]);
         work[0x8CC]--;
     } else {
         func_08006184(0, 4);
@@ -2012,11 +2012,11 @@ u8 func_080928E4(u8* work, void* a) {
 }
 INCLUDE_ASM("card/func_08092A34.s");
 u8 func_08092E2C(u8* work) {
-    func_080058FC(&work[0x240], 0, work[0x28F]);
-    func_080058FC(&work[0x248], -0xA000, work[0x28F]);
-    func_080058FC(&work[0x25C], 0x16400, work[0x28F]);
-    func_080058FC(&work[0x254], 0x17A00, work[0x28F]);
-    func_080058FC(&work[0x244], 0x19100, work[0x28F]);
+    ApproachValue(&work[0x240], 0, work[0x28F]);
+    ApproachValue(&work[0x248], -0xA000, work[0x28F]);
+    ApproachValue(&work[0x25C], 0x16400, work[0x28F]);
+    ApproachValue(&work[0x254], 0x17A00, work[0x28F]);
+    ApproachValue(&work[0x244], 0x19100, work[0x28F]);
     func_08005244(1, 0, *(u32*)&work[0x240] >> 8);
     work[0x2C0] = 0;
 
@@ -2033,8 +2033,8 @@ u8 func_08092E2C(u8* work) {
     if (work[0x28F] != 0) {
         work[0x28F]--;
     } else if (work[0x290] != 0) {
-        func_080058FC(&work[0x26C], -0x800, work[0x290]);
-        func_080058FC(&work[0x270], 0xA000, work[0x290]);
+        ApproachValue(&work[0x26C], -0x800, work[0x290]);
+        ApproachValue(&work[0x270], 0xA000, work[0x290]);
         work[0x290]--;
     } else {
         if (work[0x2BF] != 0 ||
@@ -2238,9 +2238,9 @@ INCLUDE_ASM("card/func_08094CE4.s");
 
 void func_08094DA8(MapcardWork* w) {
     if (w->unk_6C & 2) {
-        func_080058FC(&w->unk_50, 0x7900, w->unk_6F);
+        ApproachValue(&w->unk_50, 0x7900, w->unk_6F);
     } else {
-        func_080058FC(&w->unk_50, 0x10500, w->unk_6F);
+        ApproachValue(&w->unk_50, 0x10500, w->unk_6F);
     }
 
     if (w->unk_6F != 0) {
@@ -2256,11 +2256,11 @@ void func_08094DEC(MapcardWork* w) {
         w->unk_5C -= 0x10000;
     }
 
-    func_080058FC(&w->unk_5C, w->unk_60, w->unk_6F);
+    ApproachValue(&w->unk_5C, w->unk_60, w->unk_6F);
     w->unk_6F--;
 }
 u8 func_08094E4C(MapcardWork* w) {
-    func_080058FC(&w->unk_5C, w->unk_60, w->unk_6F);
+    ApproachValue(&w->unk_5C, w->unk_60, w->unk_6F);
 
     if (w->unk_6F != 0) {
         w->unk_6F--;
@@ -2328,10 +2328,10 @@ void func_08095B04(u8* p, ReloadGageWork* w) {
     if (w->unk_9C > 0 && w->unk_A2 == 1) {
         switch (w->unk_40) {
         case 1:
-            func_080058FC(&p[4], -0x3000, (u16)w->unk_9C);
+            ApproachValue(&p[4], -0x3000, (u16)w->unk_9C);
             break;
         case 2:
-            func_080058FC(&p[4], 0x12000, (u16)w->unk_9C);
+            ApproachValue(&p[4], 0x12000, (u16)w->unk_9C);
             break;
         }
     } else {
@@ -2455,10 +2455,10 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
     s32 v;
 
     v = w->unk_F6 << 8;
-    func_080058FC(&w->unk_F7, 0, w->unk_FA);
-    func_080058FC(&v, 0, w->unk_FA);
-    func_080058FC(&w->unk_A8, 0x7800, w->unk_FA);
-    func_080058FC(&w->unk_AC, 0x5800, w->unk_FA);
+    ApproachValue(&w->unk_F7, 0, w->unk_FA);
+    ApproachValue(&v, 0, w->unk_FA);
+    ApproachValue(&w->unk_A8, 0x7800, w->unk_FA);
+    ApproachValue(&w->unk_AC, 0x5800, w->unk_FA);
     w->unk_F6 = v >> 8;
 
     if (w->unk_FA != 0) {

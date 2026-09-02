@@ -119,8 +119,8 @@ u8 task_title_obj_1(TitleObjWork* work) {
         if (work->unk_62 != 0) {
             work->unk_62--;
         } else if (work->unk_60 != 0) {
-            func_080058FC(&work->unk_00[1].unk_10, work->unk_00[1].unk_14, work->unk_60);
-            func_080058FC(&work->unk_00[2].unk_10, work->unk_00[2].unk_14, work->unk_60);
+            ApproachValue(&work->unk_00[1].unk_10, work->unk_00[1].unk_14, work->unk_60);
+            ApproachValue(&work->unk_00[2].unk_10, work->unk_00[2].unk_14, work->unk_60);
             work->unk_60--;
             if (work->unk_60 == 0) {
                 gUnk_02034ED0 = 1;
@@ -391,7 +391,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
     u32 i;
     s32 j;
 
-    v = func_08007E50();
+    v = GetPaletteEffect();
     memcpy(tbl, gUnk_096FDCE8, sizeof(tbl));
     switch (GetKeysPressed() & 0x300) {
     case 0x100:
@@ -414,7 +414,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
         break;
     }
     if (GetKeysPressed() & 0x300) {
-        func_08007E5C(v);
+        SetPaletteEffect(v);
         func_080D5998();
     }
     return 1;
@@ -425,7 +425,7 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
     void** tbl;
     s16 x;
 
-    v = func_08007E50();
+    v = GetPaletteEffect();
     tbl = (gUnk_02039BB0.unk_008 & 0x200) ? gUnk_09EF6684 : gUnk_09EF6658;
     if (v < 0) {
         work->unk_08 = tbl[0];

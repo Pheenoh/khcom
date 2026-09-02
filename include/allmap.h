@@ -198,7 +198,7 @@ u16 func_08003524(void* a, s32 b);
 void EnableBg(s32 a);
 void DisableBg(s32 bg);
 void SetBgBlend(s32 a, s32 b, s32 c);
-void func_080058FC(s32* value, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0800592C(s32* value, s32 target, u16 steps);
 void func_08006120(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);

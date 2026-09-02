@@ -24,7 +24,7 @@ task_bos_dsd_main_2: @ 080C2514
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x20
-	bl func_08007E00
+	bl LoadPaletteWithEffect
 	ldr r1, [r7, #0x4C]
 	mov r10, r1
 	b _080C25A0
@@ -49,7 +49,7 @@ _080C254C:
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x20
-	bl func_08007E00
+	bl LoadPaletteWithEffect
 	ldr r2, [r7, #0x50]
 	mov r10, r2
 	b _080C25A0
@@ -61,7 +61,7 @@ _080C2584:
 	movs r1, #0xA0
 	lsls r1, r1, #0x13
 	movs r2, #0x20
-	bl func_08007E00
+	bl LoadPaletteWithEffect
 	ldr r4, [r7, #0x4C]
 	mov r10, r4
 	b _080C25A0

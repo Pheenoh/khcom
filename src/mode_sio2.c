@@ -233,7 +233,7 @@ void func_080C73D8(void) {
 
     if (gUnk_02034D08 != 0) {
         gUnk_02034D04 = gUnk_02034CFC;
-        func_080058FC(&gUnk_02034CFC, gUnk_02034D00, gUnk_02034D08);
+        ApproachValue(&gUnk_02034CFC, gUnk_02034D00, gUnk_02034D08);
         gUnk_02034D08--;
     } else {
         gUnk_02034D10 = 0;

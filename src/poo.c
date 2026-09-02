@@ -365,7 +365,7 @@ void func_080CA9DC(PooSoraWork* w) {
     old = w->unk_14;
     func_080CA724(w);
     if (old != w->unk_14) {
-        if (abs((s8)func_08005824(old, w->unk_14)) > 100) {
+        if (abs((s8)GetAngleDiff(old, w->unk_14)) > 100) {
             w->unk_10 = 0;
         } else {
             w->unk_10 >>= 1;
@@ -1273,9 +1273,9 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w) {
 u8 task_poo_eeyoretail_1(PooEeyoreTailWork* w) {
     if (func_080C9D84() != 0) {
         if (gUnk_02034E18 != 0) {
-            func_080058FC(&w->unk_0C, 0x7FD00, gUnk_02034E18);
-            func_080058FC(&w->unk_10, 0x49300, gUnk_02034E18);
-            func_080058FC(&w->unk_20, 0, gUnk_02034E18);
+            ApproachValue(&w->unk_0C, 0x7FD00, gUnk_02034E18);
+            ApproachValue(&w->unk_10, 0x49300, gUnk_02034E18);
+            ApproachValue(&w->unk_20, 0, gUnk_02034E18);
             w->unk_14 = -w->unk_20;
             gUnk_02034E18--;
             func_080C9FA8(w->unk_0C, w->unk_10 + w->unk_14);
@@ -1445,8 +1445,8 @@ void func_080CFF58(u32* a, u32* b, u16 c) {
         d = 0xA00;
     }
     e = d / 2 - 0x300;
-    func_080058FC(a, d + gUnk_02034E20->unk_1C.unk_00, c);
-    func_080058FC(b, e + gUnk_02034E20->unk_1C.unk_04, c);
+    ApproachValue(a, d + gUnk_02034E20->unk_1C.unk_00, c);
+    ApproachValue(b, e + gUnk_02034E20->unk_1C.unk_04, c);
 }
 
 void func_080CFFC0(s32* a, s32* b) {
@@ -1802,8 +1802,8 @@ INCLUDE_ASM("poo/task_poo_butterfly_0.s");
 
 void func_080D2190(PooBflyPart* p) {
     if (p->unk_52 != 0) {
-        func_080058FC(&p->unk_20, p->unk_40, p->unk_52);
-        func_080058FC(&p->unk_24, p->unk_44, p->unk_52);
+        ApproachValue(&p->unk_20, p->unk_40, p->unk_52);
+        ApproachValue(&p->unk_24, p->unk_44, p->unk_52);
         p->unk_52--;
     } else {
         p->unk_52 = 0x60;

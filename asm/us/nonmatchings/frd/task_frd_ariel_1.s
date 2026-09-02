@@ -170,7 +170,7 @@ _0804711C:
 	adds r1, r7, r3
 	ldr r1, [r1, #0x00]
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	strh r0, [r4, #0x00]

@@ -374,7 +374,7 @@ void func_080065FC(s32 a, s32 b, s32 c);
 void SetBlendAlpha(u16 a, u16 b);
 void func_08006B4C(void);
 void func_0800592C(s32* p, s32 target, u16 steps);
-void func_080058FC(s32* p, s32 target, u16 steps);
+void ApproachValue(s32* p, s32 target, u16 steps);
 void* memcpy(void* dst, const void* src, unsigned long n);
 void func_080C6FF8(void);
 void func_080DDEA4(void);

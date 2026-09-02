@@ -111,8 +111,8 @@ void mode_jiminy_1(void) {
         if (gUnk_02034934->unk_048 == 0) {
             gUnk_02034934->unk_04A = 16;
         }
-        func_080058FC(&gUnk_02034934->unk_050, 0, gUnk_02034934->unk_04A);
-        func_080058FC(&gUnk_02034934->unk_054, 0x9800, gUnk_02034934->unk_04A);
+        ApproachValue(&gUnk_02034934->unk_050, 0, gUnk_02034934->unk_04A);
+        ApproachValue(&gUnk_02034934->unk_054, 0x9800, gUnk_02034934->unk_04A);
         gUnk_02034934->unk_04A--;
         if (gUnk_02034934->unk_04A <= 0) {
             gUnk_02034934->unk_000 = 1;
@@ -125,7 +125,7 @@ void mode_jiminy_1(void) {
         if (gUnk_02034934->unk_048 == 0) {
             gUnk_02034934->unk_04A = 16;
         }
-        func_080058FC(&gUnk_02034934->unk_04C, 0, gUnk_02034934->unk_04A);
+        ApproachValue(&gUnk_02034934->unk_04C, 0, gUnk_02034934->unk_04A);
         gUnk_02034934->unk_04A--;
         if (gUnk_02034934->unk_04A <= 0) {
             gUnk_02034934->unk_000 = 6;
@@ -141,7 +141,7 @@ void mode_jiminy_1(void) {
             gUnk_02034934->unk_04A = 16;
             LoadBgMap(1, gUnk_08F61B84, 0x800);
         }
-        func_080058FC(&gUnk_02034934->unk_04C, -0x8000, gUnk_02034934->unk_04A);
+        ApproachValue(&gUnk_02034934->unk_04C, -0x8000, gUnk_02034934->unk_04A);
         gUnk_02034934->unk_04A--;
         if (gUnk_02034934->unk_04A <= 0) {
             gUnk_02034934->unk_000 = 3;
@@ -154,8 +154,8 @@ void mode_jiminy_1(void) {
         if (gUnk_02034934->unk_048 == 0) {
             gUnk_02034934->unk_04A = 16;
         }
-        func_080058FC(&gUnk_02034934->unk_050, -0x800, gUnk_02034934->unk_04A);
-        func_080058FC(&gUnk_02034934->unk_054, 0xA000, gUnk_02034934->unk_04A);
+        ApproachValue(&gUnk_02034934->unk_050, -0x800, gUnk_02034934->unk_04A);
+        ApproachValue(&gUnk_02034934->unk_054, 0xA000, gUnk_02034934->unk_04A);
         gUnk_02034934->unk_04A--;
         if (gUnk_02034934->unk_04A <= 0) {
             gUnk_02034934->unk_000 = 4;

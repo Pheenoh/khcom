@@ -50,12 +50,12 @@ _080CDE46:
 	adds r0, #0x24
 	ldr r1, _080CDEAC @ =0x00080B00
 	ldrh r2, [r5, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	adds r0, r4, #0x0
 	adds r0, #0x28
 	ldr r1, _080CDEB0 @ =0x00048C00
 	ldrh r2, [r5, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldr r0, [r4, #0x24]
 	ldr r1, [r4, #0x28]
 	ldr r2, [r4, #0x2C]

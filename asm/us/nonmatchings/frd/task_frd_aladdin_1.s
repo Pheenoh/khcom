@@ -213,7 +213,7 @@ _080494B2:
 	subs r2, #0x08
 	adds r4, r6, r2
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	adds r0, r6, #0x0
 	bl func_080490FC
 	movs r1, #0x00

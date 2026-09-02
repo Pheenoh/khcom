@@ -39,66 +39,66 @@
 
 void* memset(void* dst, s32 c, unsigned long n);
 
-void func_0811D1B0(u32 rate, u32 channels) {
+void SndStreamInit(u32 rate, u32 channels) {
     u32 i;
 
-    gUnk_0203C7F0.unk_38 = rate;
-    gUnk_0203C7F0.unk_3C = 0x10000 - (s32)(GBA_CLOCK / rate + 0.5f);
-    gUnk_0203C7F0.unk_30 = (s32)(rate / GBA_REFRESH + 0.5f);
-    gUnk_0203C7F0.unk_34 = gUnk_0203C7F0.unk_30 * FRAMES_PER_BUFFER;
-    gUnk_0203C7F0.unk_40 = channels;
-    gUnk_0203C7F0.unk_44 = 0;
-    gUnk_0203C7F0.unk_28 = 0;
-    gUnk_0203C7F0.unk_2C = 0;
+    gSndStream.unk_38 = rate;
+    gSndStream.unk_3C = 0x10000 - (s32)(GBA_CLOCK / rate + 0.5f);
+    gSndStream.unk_30 = (s32)(rate / GBA_REFRESH + 0.5f);
+    gSndStream.unk_34 = gSndStream.unk_30 * FRAMES_PER_BUFFER;
+    gSndStream.unk_40 = channels;
+    gSndStream.unk_44 = 0;
+    gSndStream.unk_28 = 0;
+    gSndStream.unk_2C = 0;
     for (i = 0; i < channels; i++) {
-        gUnk_0203C7F0.unk_00[i] =
-            gUnk_0203C7F0.unk_4C((gUnk_0203C7F0.unk_34 + 3) & ~3);
-        memset(gUnk_0203C7F0.unk_00[i], 0, gUnk_0203C7F0.unk_34);
-        gUnk_0203C7F0.unk_08[i] = 0;
-        gUnk_0203C7F0.unk_10[i] = 0;
-        gUnk_0203C7F0.unk_18[i] = 0;
-        gUnk_0203C7F0.unk_20[i] = 0;
+        gSndStream.unk_00[i] =
+            gSndStream.unk_4C((gSndStream.unk_34 + 3) & ~3);
+        memset(gSndStream.unk_00[i], 0, gSndStream.unk_34);
+        gSndStream.unk_08[i] = 0;
+        gSndStream.unk_10[i] = 0;
+        gSndStream.unk_18[i] = 0;
+        gSndStream.unk_20[i] = 0;
     }
     if (channels == 1) {
         REG_SOUNDCNT_H = 0x0B04;
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
-        REG_DMA1SAD = gUnk_0203C7F0.unk_00[0];
+        REG_DMA1SAD = gSndStream.unk_00[0];
         REG_DMA1DAD = REG_ADDR_FIFO_A;
         REG_DMA1CNT = DMA_SOUND_FIFO;
     } else {
         REG_SOUNDCNT_H = 0xA90C;
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
-        REG_DMA1SAD = gUnk_0203C7F0.unk_00[0];
+        REG_DMA1SAD = gSndStream.unk_00[0];
         REG_DMA1DAD = REG_ADDR_FIFO_A;
         REG_DMA1CNT = DMA_SOUND_FIFO;
-        REG_DMA2SAD = gUnk_0203C7F0.unk_00[1];
+        REG_DMA2SAD = gSndStream.unk_00[1];
         REG_DMA2DAD = REG_ADDR_FIFO_B;
         REG_DMA2CNT = DMA_SOUND_FIFO;
     }
 }
 
-void func_0811D348(void) {
-    if (gUnk_0203C7F0.unk_44 != 0) {
-        gUnk_0203C7F0.unk_28 += gUnk_0203C7F0.unk_30;
-        if (gUnk_0203C7F0.unk_28 == gUnk_0203C7F0.unk_34) {
-            gUnk_0203C7F0.unk_28 = 0;
+void SndStreamUpdate(void) {
+    if (gSndStream.unk_44 != 0) {
+        gSndStream.unk_28 += gSndStream.unk_30;
+        if (gSndStream.unk_28 == gSndStream.unk_34) {
+            gSndStream.unk_28 = 0;
         }
-        gUnk_0203C7F0.unk_2C += gUnk_0203C7F0.unk_30;
-        if (gUnk_0203C7F0.unk_40 == 1) {
+        gSndStream.unk_2C += gSndStream.unk_30;
+        if (gSndStream.unk_40 == 1) {
             REG_DMA1CNT = 0;
             REG_DMA1SAD =
-                (u8*)gUnk_0203C7F0.unk_00[0] + gUnk_0203C7F0.unk_28;
+                (u8*)gSndStream.unk_00[0] + gSndStream.unk_28;
             REG_DMA1DAD = REG_ADDR_FIFO_A;
             REG_DMA1CNT = DMA_SOUND_FIFO;
         } else {
             REG_DMA1CNT = 0;
             REG_DMA1SAD =
-                (u8*)gUnk_0203C7F0.unk_00[0] + gUnk_0203C7F0.unk_28;
+                (u8*)gSndStream.unk_00[0] + gSndStream.unk_28;
             REG_DMA1DAD = REG_ADDR_FIFO_A;
             REG_DMA1CNT = DMA_SOUND_FIFO;
             REG_DMA2CNT = 0;
             REG_DMA2SAD =
-                (u8*)gUnk_0203C7F0.unk_00[1] + gUnk_0203C7F0.unk_28;
+                (u8*)gSndStream.unk_00[1] + gSndStream.unk_28;
             REG_DMA2DAD = REG_ADDR_FIFO_B;
             REG_DMA2CNT = DMA_SOUND_FIFO;
         }
@@ -106,59 +106,59 @@ void func_0811D348(void) {
     }
 }
 
-void func_0811D408(u32 ch, u32 len, void** dst1, u32* len1, void** dst2,
+void SndStreamLock(u32 ch, u32 len, void** dst1, u32* len1, void** dst2,
                    u32* len2) {
     u32 avail;
 
-    avail = gUnk_0203C7F0.unk_34 - gUnk_0203C7F0.unk_08[ch];
+    avail = gSndStream.unk_34 - gSndStream.unk_08[ch];
     if (avail < len) {
-        *dst1 = (u8*)gUnk_0203C7F0.unk_00[ch] + gUnk_0203C7F0.unk_08[ch];
+        *dst1 = (u8*)gSndStream.unk_00[ch] + gSndStream.unk_08[ch];
         *len1 = avail;
-        *dst2 = gUnk_0203C7F0.unk_00[ch];
+        *dst2 = gSndStream.unk_00[ch];
         *len2 = len - avail;
-        gUnk_0203C7F0.unk_18[ch] = len - avail;
-        gUnk_0203C7F0.unk_20[ch] += len;
+        gSndStream.unk_18[ch] = len - avail;
+        gSndStream.unk_20[ch] += len;
     } else {
-        *dst1 = (u8*)gUnk_0203C7F0.unk_00[ch] + gUnk_0203C7F0.unk_08[ch];
+        *dst1 = (u8*)gSndStream.unk_00[ch] + gSndStream.unk_08[ch];
         *len1 = len;
         *dst2 = 0;
         *len2 = 0;
-        gUnk_0203C7F0.unk_18[ch] += len;
-        gUnk_0203C7F0.unk_20[ch] += len;
+        gSndStream.unk_18[ch] += len;
+        gSndStream.unk_20[ch] += len;
     }
-    if (gUnk_0203C7F0.unk_18[ch] == gUnk_0203C7F0.unk_34) {
-        gUnk_0203C7F0.unk_18[ch] = 0;
+    if (gSndStream.unk_18[ch] == gSndStream.unk_34) {
+        gSndStream.unk_18[ch] = 0;
     }
 }
 
-void func_0811D4B4(void (*a)(void), void* (*b)(u32), void (*c)(void),
+void SndStreamSetCallbacks(void (*a)(void), void* (*b)(u32), void (*c)(void),
                    void (*d)(void*)) {
-    gUnk_0203C7F0.unk_48 = a;
-    gUnk_0203C7F0.unk_4C = b;
-    gUnk_0203C7F0.unk_50 = c;
-    gUnk_0203C7F0.unk_54 = d;
+    gSndStream.unk_48 = a;
+    gSndStream.unk_4C = b;
+    gSndStream.unk_50 = c;
+    gSndStream.unk_54 = d;
 }
 
-void func_0811D4CC(void) {
+void SndStreamClose(void) {
     u32 i;
 
-    func_0811D518();
-    for (i = 0; i < gUnk_0203C7F0.unk_40; i++) {
-        gUnk_0203C7F0.unk_54(gUnk_0203C7F0.unk_00[i]);
+    SndStreamStop();
+    for (i = 0; i < gSndStream.unk_40; i++) {
+        gSndStream.unk_54(gSndStream.unk_00[i]);
     }
 }
 
-void func_0811D4FC(void) {
-    REG_TM0CNT_L = gUnk_0203C7F0.unk_3C;
+void SndStreamStart(void) {
+    REG_TM0CNT_L = gSndStream.unk_3C;
     REG_TM0CNT_H = TIMER_ENABLE;
-    gUnk_0203C7F0.unk_44 = 1;
+    gSndStream.unk_44 = 1;
 }
 
-void func_0811D518(void) {
-    if (gUnk_0203C7F0.unk_44 != 0) {
+void SndStreamStop(void) {
+    if (gSndStream.unk_44 != 0) {
         REG_TM0CNT_H = 0;
-        gUnk_0203C7F0.unk_44 = 0;
-        if (gUnk_0203C7F0.unk_40 == 1) {
+        gSndStream.unk_44 = 0;
+        if (gSndStream.unk_40 == 1) {
             REG_DMA1CNT = 0;
         } else {
             REG_DMA1CNT = 0;
@@ -167,7 +167,7 @@ void func_0811D518(void) {
     }
 }
 
-void func_0811D550(u32 ch) {
-    gUnk_0203C7F0.unk_08[ch] = gUnk_0203C7F0.unk_18[ch];
-    gUnk_0203C7F0.unk_10[ch] = gUnk_0203C7F0.unk_20[ch];
+void SndStreamUnlock(u32 ch) {
+    gSndStream.unk_08[ch] = gSndStream.unk_18[ch];
+    gSndStream.unk_10[ch] = gSndStream.unk_20[ch];
 }

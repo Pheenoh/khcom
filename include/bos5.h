@@ -166,7 +166,7 @@ typedef struct MdWork {
 
 
 s32 GetRandom(void);
-void func_080058FC(void* a, s32 b, u16 c);
+void ApproachValue(void* a, s32 b, u16 c);
 void* AnimUpdate(void* a);
 
 extern s16 gSineTable[];

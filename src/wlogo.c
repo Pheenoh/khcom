@@ -58,11 +58,11 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work) {
             work->unk_02A = 0;
             if (work->unk_028 <= 4) {
                 LoadObjPaletteBank(work->unk_004->unk_06, &gUnk_096FACC4[work->unk_028 * 32]);
-                func_08007E00(&gUnk_096FACC4[work->unk_028 * 32], (void*)0x050001C0, 0x20);
+                LoadPaletteWithEffect(&gUnk_096FACC4[work->unk_028 * 32], (void*)0x050001C0, 0x20);
             } else if (work->unk_028 > 11) {
                 if (work->unk_028 <= 15) {
                     LoadObjPaletteBank(work->unk_004->unk_06, &gUnk_096FACC4[(15 - work->unk_028) * 32]);
-                    func_08007E00(&gUnk_096FACC4[(15 - work->unk_028) * 32], (void*)0x050001C0, 0x20);
+                    LoadPaletteWithEffect(&gUnk_096FACC4[(15 - work->unk_028) * 32], (void*)0x050001C0, 0x20);
                 } else if (work->unk_028 == 20) {
                     work->unk_02D = 0;
                     RequestDma3Copy(gUnk_096B7464, GetBgScreenBase(0), 0x800);
@@ -362,8 +362,8 @@ void task_wlogo_atl_0(WlogoAtlWork* work) {
     work->unk_009 = 4;
     work->unk_00A = 0;
     SetBgBlend(0, 16, 0);
-    func_080081B8(func_080B5444);
-    func_080081E4(0, work->unk_009, 4);
+    StartBgWave(func_080B5444);
+    SetBgWaveParams(0, work->unk_009, 4);
 }
 
 u8 task_wlogo_atl_1(WlogoAtlWork* work) {
@@ -372,7 +372,7 @@ u8 task_wlogo_atl_1(WlogoAtlWork* work) {
         work->unk_002++;
         if (work->unk_002 > 29) {
             work->unk_002 = 0;
-            func_080081F4(0);
+            EnableBgWave(0);
             work->unk_000++;
         }
         break;
@@ -384,7 +384,7 @@ u8 task_wlogo_atl_1(WlogoAtlWork* work) {
             if (work->unk_009 <= 1) {
                 work->unk_009 = 1;
             }
-            func_080081E4(0, work->unk_009, 4);
+            SetBgWaveParams(0, work->unk_009, 4);
         }
         work->unk_002++;
         if (work->unk_002 > 7) {
@@ -392,7 +392,7 @@ u8 task_wlogo_atl_1(WlogoAtlWork* work) {
             work->unk_008++;
             if (work->unk_008 > 15) {
                 work->unk_008 = 16;
-                func_08008280(0);
+                StopBgWave(0);
                 work->unk_000++;
             }
             SetBgBlend(0, 16 - work->unk_008, work->unk_008);
@@ -437,12 +437,12 @@ void task_wlogo_atl_2(WlogoAtlWork* work) {
 }
 
 void task_wlogo_atl_3(WlogoAtlWork* work) {
-    func_08008280(0);
+    StopBgWave(0);
 }
 
 void func_080B5444(void) {
     gUnk_03007FF8 |= 2;
-    func_08008214(0);
+    HBlankIntrBgWave1(0);
 }
 
 void task_wlogo_nvl_0(WlogoNvlWork* work) {
@@ -1835,8 +1835,8 @@ void task_wlogo_bks_0(WlogoBksWork* work) {
     work->unk_038 = 0;
     work->unk_036 = 4;
     work->unk_037 = 6;
-    func_080081B8(func_080B7C7C);
-    func_080081E4(0, work->unk_036, work->unk_037);
+    StartBgWave(func_080B7C7C);
+    SetBgWaveParams(0, work->unk_036, work->unk_037);
 }
 
 u8 task_wlogo_bks_1(WlogoBksWork* work) {
@@ -1845,7 +1845,7 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
         work->unk_002++;
         if (work->unk_002 > 29) {
             work->unk_002 = 0;
-            func_080081F4(0);
+            EnableBgWave(0);
             work->unk_000++;
         }
         break;
@@ -1864,10 +1864,10 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
             work->unk_034 = 0;
             if (work->unk_036 <= 1) {
                 work->unk_036 = 1;
-                func_08008280(0);
+                StopBgWave(0);
             } else {
                 work->unk_036--;
-                func_080081E4(0, work->unk_036, work->unk_037);
+                SetBgWaveParams(0, work->unk_036, work->unk_037);
             }
         }
         switch (work->unk_032) {
@@ -1909,7 +1909,7 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
         break;
     case 2:
         work->unk_030 = 1;
-        func_08008280(0);
+        StopBgWave(0);
         work->unk_004 = 1;
         work->unk_002 = 0;
         work->unk_000++;
@@ -1923,7 +1923,7 @@ u8 task_wlogo_bks_1(WlogoBksWork* work) {
             }
         }
         if (AnimIsFinished(&work->unk_018)) {
-            func_08008280(0);
+            StopBgWave(0);
             work->unk_002 = 0;
             work->unk_030 = 0;
             LoadPalette(gUnk_096FB0C4, (void*)0x050001C0, 0x20);
@@ -1967,7 +1967,7 @@ void task_wlogo_bks_2(WlogoBksWork* work) {
 }
 
 void task_wlogo_bks_3(WlogoBksWork* work) {
-    func_08008280(0);
+    StopBgWave(0);
     TaskPoolDestroy(&work->unk_03C);
     ReleaseObjTiles(work->unk_00C);
     ReleaseObjPalette(work->unk_010);
@@ -1975,7 +1975,7 @@ void task_wlogo_bks_3(WlogoBksWork* work) {
 
 void func_080B7C7C(void) {
     gUnk_03007FF8 |= 2;
-    func_08008214(0);
+    HBlankIntrBgWave1(0);
 }
 
 void task_wlogo_bks_obj_0(WlogoBksObjWork* work, s32 arg) {
@@ -2001,8 +2001,8 @@ u8 task_wlogo_bks_obj_1(WlogoBksObjWork* work) {
     switch (work->unk_028) {
     case 0:
         if (work->unk_026 > 0) {
-            func_080058FC(&work->unk_02C, work->unk_034, work->unk_026);
-            func_080058FC(&work->unk_030, work->unk_038, work->unk_026);
+            ApproachValue(&work->unk_02C, work->unk_034, work->unk_026);
+            ApproachValue(&work->unk_030, work->unk_038, work->unk_026);
             work->unk_026--;
             if (++work->unk_046 > 19) {
                 work->unk_046 = 0;

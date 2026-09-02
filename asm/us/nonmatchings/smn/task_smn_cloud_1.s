@@ -119,14 +119,14 @@ _08041156:
 	adds r4, r7, r1
 	ldrh r2, [r4, #0x00]
 	movs r1, #0x0A
-	bl func_080058FC
+	bl ApproachValue
 	movs r2, #0xAA
 	lsls r2, r2, #0x01
 	adds r0, r7, r2
 	movs r1, #0x80
 	lsls r1, r1, #0x02
 	ldrh r2, [r4, #0x00]
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r4, #0x00]
 	subs r0, #0x01
 	strh r0, [r4, #0x00]
@@ -214,13 +214,13 @@ _08041214:
 	adds r5, r7, r3
 	ldrh r2, [r5, #0x00]
 	adds r1, r4, #0x0
-	bl func_080058FC
+	bl ApproachValue
 	movs r1, #0xAA
 	lsls r1, r1, #0x01
 	adds r0, r7, r1
 	ldrh r2, [r5, #0x00]
 	adds r1, r4, #0x0
-	bl func_080058FC
+	bl ApproachValue
 	ldrh r0, [r5, #0x00]
 	subs r0, #0x01
 	strh r0, [r5, #0x00]

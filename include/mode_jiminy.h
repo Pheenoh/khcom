@@ -166,7 +166,7 @@ void UpdatePlayTime(void);
 void m4aSongNumStart(u16 id);
 s32 abs(s32 x);
 void func_08001248(void (*fn)(void));
-void func_080058FC(s32* value, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08005B64(AnimState* a);
 void func_08006184(s32 a, u16 b);
 u16 func_08006390(void);
