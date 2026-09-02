@@ -107,30 +107,47 @@ s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 
 INCLUDE_ASM("engine/func_0800216C.s");
-#ifdef NON_MATCHING
 u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
     u8* p;
+    u8* q0;
+    u8* q1;
+    u8* q2;
+    u8* q3;
+    u8* q4;
+    s32 ofs;
 
-    if (e != 0 && ((ObjTiles*)obj)->unk_00 != 0) {
-        p = gSpriteWork;
-        *(u16*)(p + 0x1AB8 + *(u16*)(p + 0x28A8) * 24) = x;
-        *(u16*)(p + 0x1ABA + *(u16*)(p + 0x28A8) * 24) = y;
-        *(void**)(p + 0x1AA8 + *(u16*)(p + 0x28A8) * 24) = obj;
-        *(void**)(p + 0x1AAC + *(u16*)(p + 0x28A8) * 24) = e;
-        *(s32*)(p + 0x1AB0 + *(u16*)(p + 0x28A8) * 24) = f;
-        *(u16*)(p + 0x1ABE + *(u16*)(p + 0x28A8) * 24) = g;
-        *(u16*)(p + 0x1ABC + *(u16*)(p + 0x28A8) * 24) = h;
-        *(u32*)(p + 0x1AB4 + *(u16*)(p + 0x28A8) * 24) = ((ObjTiles*)obj)->unk_20;
-        *(u32*)(p + 0x26A8 + *(u16*)(p + 0x28A8) * 4) =
-            (u32)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AA8);
-        *(u16*)(p + 0x28A8) += 1;
-        return 1;
+    if (e == 0 || ((ObjTiles*)obj)->unk_00 == 0) {
+        return 0;
     }
-    return 0;
+    {
+        p = gSpriteWork;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        *(u16*)(p + ofs + 0x1AB8) = x;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        *(u16*)(p + ofs + 0x1ABA) = y;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        q0 = p + 0x1AA8;
+        *(void**)(q0 + ofs) = obj;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        q1 = p + 0x1AAC;
+        *(void**)(q1 + ofs) = e;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        q2 = p + 0x1AB0;
+        *(s32*)(q2 + ofs) = f;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        *(u16*)(p + ofs + 0x1ABE) = g;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        *(u16*)(p + ofs + 0x1ABC) = h;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        q3 = p + 0x1AB4;
+        *(void**)(q3 + ofs) = ((ObjTiles*)obj)->unk_20;
+        ofs = *(u16*)(p + 0x28A8) * 4;
+        q4 = p + 0x26A8;
+        *(u32*)(q4 + ofs) = (u32)(p + (*(u16*)(p + 0x28A8) * 24 + 0x1AA8));
+        *(u16*)(p + 0x28A8) += 1;
+    }
+    return 1;
 }
-#else
-INCLUDE_ASM("engine/func_080022D4.s");
-#endif
 
 u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     if (*(u16*)(gSpriteWork + 0x28A8) <= 127 && obj != 0) {
@@ -170,6 +187,7 @@ void func_08002488(u16 a, u16 b, void* c, void* d, void* e, u16 f) {
 }
 #else
 INCLUDE_ASM("engine/func_08002488.s");
+INCLUDE_ASM("engine/func_08002594.s");
 #endif
 
 ObjTiles* LoadObjTiles(void* src, u16 size) {
