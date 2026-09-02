@@ -100,6 +100,13 @@ snd_stream.c
 @libc.a:strcmp.o
 m4a2.c -O2
 rodata_tables.s(.rodata)
+malloc_data.c(.rodata)
+sprite_data.c(.rodata)
+engine_data.c(.rodata)
+pallet_data.c(.rodata)
+util_data.c(.rodata)
+save_data.c(.rodata)
+rodata_tables2.s(.rodata)
 rodata_strings.s(.rodata)
 rodata_tasknames.s(.rodata)
 rodata_script.s(.rodata)
