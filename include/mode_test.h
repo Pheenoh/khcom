@@ -52,6 +52,29 @@ typedef struct UnkStruct_02039BB0 {
     u32 unk_008;
 } UnkStruct_02039BB0;
 
+typedef struct MenuWork {
+    void* unk_00;
+    void* unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    u8 unk_10;
+    u8 unk_11;
+    u8 unk_12[0x02];
+} MenuWork;
+
+typedef struct ContinueWork {
+    u8 unk_00[0x60];
+    s32 unk_60;
+    u8 unk_64[0x06];
+    u8 unk_6A;
+    u8 unk_6B;
+} ContinueWork;
+
+typedef struct UnkStruct_02034A5C {
+    TaskDesc* unk_00;
+    ContinueWork* unk_04;
+} UnkStruct_02034A5C;
+
 typedef struct UnkStruct_02034A1C {
     u16 unk_00[61];
     u8 unk_7A;
@@ -105,6 +128,12 @@ void UpdatePlayTime(void);
 void func_080B0754(void);
 void func_080E052C(u8 a);
 void m4aMPlayAllStop(void);
+void m4aSongNumStart(u16 id);
+u16 GetKeysPressed(void);
+void func_0801CB0C(void);
+void func_08006184(s32 a, u16 b);
+u8 func_08006314(void);
+void func_080E04EC(void);
 
 void mode_test_0(void);
 void mode_test_1(void);
@@ -131,6 +160,12 @@ u16 func_08060A2C(u16 a);
 void func_08060A74(void);
 void func_08060AD8(void);
 void func_08060BAC(void);
+void func_08060BBC(MenuWork* w);
+void func_08060E64(MenuWork* w);
+void func_08060EA0(MenuWork* w);
+void func_08060ED8(void);
+void func_08060F1C(void);
+void func_08060F64(void);
 void func_08060598(void);
 void func_0806098C(void);
 void func_080609A0(void);
@@ -148,6 +183,8 @@ extern void* gUnk_02034A2C;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern UnkStruct_02039DC4* gUnk_02039DC4;
 extern TaskPool gUnk_02034A30;
+extern TaskPool gUnk_02034A48;
+extern UnkStruct_02034A5C* gUnk_02034A5C;
 extern u8 gUnk_02034A44;
 extern u32 gUnk_03006C10;
 extern vu16 gUnk_03006C78;
@@ -156,9 +193,14 @@ extern void* gUnk_09EE14D4[];
 extern CardDef gCardDefs[];
 extern Mode gUnk_09ECEB54;
 extern Mode gUnk_09EF14DC;
+extern TaskDesc gUnk_09EE2834;
+extern TaskDesc gUnk_09EE284C;
 extern TaskDesc gUnk_09EE4AF4;
 extern TaskDesc gUnk_09EE8EF0;
 extern u8 gUnk_08B24DAA[];
+extern u8 gUnk_090D4DD0[];
+extern u8 gUnk_096148B8[];
+extern void* gUnk_09EEC600[];
 extern u8 gUnk_08F69BA4[];
 
 #endif /* GUARD_MODE_TEST_H */

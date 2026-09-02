@@ -306,13 +306,57 @@ void func_08060AD8(void) {
 void func_08060BAC(void) {
     TaskPoolDestroy(&gUnk_02034A30);
 }
-INCLUDE_ASM("mode_test/func_08060BBC.s");
+void func_08060BBC(MenuWork* w) {
+    gUnk_02039BA0->unk_70 |= 0x1000;
+    gUnk_02039BA0->unk_70 |= 0x80;
+    gUnk_02039BA0->unk_70 |= 0x2000;
+    w->unk_08 = 0xF000;
+    w->unk_0C = 0x4800;
+    w->unk_11 = 0;
+    w->unk_10 = 0;
+    w->unk_00 = LoadObjTiles(gUnk_090D4DD0, 0x2E80);
+    w->unk_04 = LoadObjPalette(gUnk_096148B8, 0x20);
+    m4aSongNumStart(103);
+}
+
 INCLUDE_ASM("mode_test/func_08060C18.s");
-INCLUDE_ASM("mode_test/func_08060E64.s");
-INCLUDE_ASM("mode_test/func_08060EA0.s");
+
+void func_08060E64(MenuWork* w) {
+    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, gUnk_09EEC600[w->unk_11], w->unk_00, w->unk_04, 0, 0, 80);
+}
+
+void func_08060EA0(MenuWork* w) {
+    ReleaseObjTiles(w->unk_00);
+    ReleaseObjPalette(w->unk_04);
+    gUnk_02039BA0->unk_70 &= ~0x1000;
+    gUnk_02039BA0->unk_70 &= ~0x80;
+    gUnk_02039BA0->unk_70 &= ~0x2000;
+}
+
 INCLUDE_ASM("mode_test/func_08060ED8.s");
-INCLUDE_ASM("mode_test/func_08060F1C.s");
-INCLUDE_ASM("mode_test/func_08060F64.s");
+
+void func_08060F1C(void) {
+    ContinueWork* w;
+
+    TaskPoolUpdate(&gUnk_02034A48);
+    TaskPoolDraw(&gUnk_02034A48);
+    w = gUnk_02034A5C->unk_04;
+
+    if (w->unk_6A == 3) {
+        switch (w->unk_60) {
+            case 0:
+                func_080E04EC();
+                break;
+            case 1:
+                SoftReset(255);
+                break;
+        }
+    }
+}
+
+void func_08060F64(void) {
+    TaskPoolDestroy(&gUnk_02034A48);
+}
 INCLUDE_ASM("mode_test/func_08060F74.s");
 INCLUDE_ASM("mode_test/func_0806119C.s");
 INCLUDE_ASM("mode_test/func_08061248.s");
