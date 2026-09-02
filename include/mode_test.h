@@ -13,7 +13,12 @@
 typedef struct UnkStruct_02039BA0 {
     s32 unk_00;
     s32 unk_04;
-    u8 unk_08[0x68];
+    u8 unk_08[0x10];
+    s32 unk_18;
+    s32 unk_1C;
+    u8 unk_20[0x48];
+    s32 unk_68;
+    u8 unk_6C[0x04];
     u32 unk_70;
 } UnkStruct_02039BA0;
 
@@ -166,6 +171,9 @@ void func_08060EA0(MenuWork* w);
 void func_08060ED8(void);
 void func_08060F1C(void);
 void func_08060F64(void);
+void task_lockon_0(LockonWork* w);
+void task_lockon_3(LockonWork* w);
+void func_0805F7E8(u8 x, u8 y, u16* s);
 void func_08060598(void);
 void func_0806098C(void);
 void func_080609A0(void);
@@ -199,8 +207,12 @@ extern TaskDesc gUnk_09EE4AF4;
 extern TaskDesc gUnk_09EE8EF0;
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_090D4DD0[];
+extern u8 gUnk_090D7C84[];
 extern u8 gUnk_096148B8[];
 extern void* gUnk_09EEC600[];
+extern u8 gUnk_09EEC660[];
+extern u8 gUnk_09EEC66C[];
 extern u8 gUnk_08F69BA4[];
+extern u8 gUnk_08F69BE4[];
 
 #endif /* GUARD_MODE_TEST_H */
