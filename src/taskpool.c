@@ -7,29 +7,19 @@
 #include "mode.h"
 #include "gba/keys.h"
 
-extern u8 sEwramHeapName[];
-extern u8 sIwramHeapName[];
-
-extern u32 gFrameCounter;
-extern u32 gUnk_03006C68;
 extern u16 gUnk_03006C78;
-extern u32 gUnk_03006C10;
-extern u32 gUnk_02039828;
-extern u32 gUnk_02039820;
-extern u16 gUnk_03006C00;
 extern Mode* gUnk_03007488;
 extern void (*gUnk_0300748C)(void);
 extern u16 gUnk_03007490;
 extern Mode* gUnk_03007494;
 extern s32 gUnk_03007498;
-extern u8 gUnk_0300749C;
+extern vu8 gUnk_0300749C;
 extern u16 gUnk_0300749E;
 extern void (*gUnk_030074A0)(void);
 extern void (*gUnk_030074A4)(void);
 extern Mode gUnk_09EF4EC0;
 extern Mode* gUnk_09ECEAC8[];
 
-void func_080C55DC(void);
 Task* func_08000C54(ListNode* node, TaskPool* a);
 void func_08000DE8(TaskPool* a, Task* t);
 u8 func_08000F48(Task* t);
@@ -65,11 +55,17 @@ void func_08002F50(void);
 void CommitDisplayRegs(void);
 void func_08005C78(void);
 void func_0800642C(void);
-
+void func_08002F0C(void);
+u8 func_080078E8(void);
+void func_080C57B4(void);
+void m4aMPlayAllStop(void);
+void func_08116CEC(void);
+void* GetEwramHeapStart(void);
+u32 GetEwramHeapSize(void);
 
 Task* TaskDestroy(TaskPool* a, Task* t) {
     if (t->unk_00->unk_10 != 0) {
-        ((void (*)(void*))t->unk_00->unk_10)(t->unk_04);
+        t->unk_00->unk_10(t->unk_04);
     }
 
     EwramFree(t->unk_04);
@@ -79,7 +75,7 @@ Task* TaskDestroy(TaskPool* a, Task* t) {
 
 void func_08000DE8(TaskPool* a, Task* t) {
     if (t->unk_00->unk_10 != 0) {
-        ((void (*)(void*))t->unk_00->unk_10)(t->unk_04);
+        t->unk_00->unk_10(t->unk_04);
     }
 
     EwramFree(t->unk_04);
@@ -286,7 +282,60 @@ void func_080010E0(Mode* mode, s32 arg) {
     gUnk_03007498 = arg;
     gUnk_0300749C |= 0x10;
 }
-INCLUDE_ASM("taskpool/func_08001100.s");
+void func_08001100(void) {
+    u8 v;
+
+    if ((((GetKeysPressed() & START_BUTTON) && (GetKeysHeld() & SELECT_BUTTON) && (GetKeysHeld() & A_BUTTON) &&
+             (GetKeysHeld() & B_BUTTON)) ||
+            ((GetKeysHeld() & START_BUTTON) && (GetKeysPressed() & SELECT_BUTTON) && (GetKeysHeld() & A_BUTTON) &&
+                (GetKeysHeld() & B_BUTTON))) &&
+        !(gUnk_03006C78 & 0x20)) {
+        if (func_080078E8()) {
+            func_080C57B4();
+        }
+
+        m4aMPlayAllStop();
+        SoftReset(0xFF);
+        func_08116CEC();
+    } else {
+        if (gUnk_0300749C & 4) {
+            return;
+        }
+
+        v = gUnk_0300749C & 2;
+
+        if (v != 0) {
+            if (gUnk_0300749C & 1) {
+                return;
+            }
+
+            func_08005C78();
+            func_08004938();
+            gUnk_0300749C &= ~2;
+        } else if (gUnk_03007494 != 0) {
+            if (gUnk_03007488->unk_0C != 0) {
+                gUnk_03007488->unk_0C();
+            }
+
+            if (gUnk_0300749C & 0x10) {
+                gUnk_0300749C &= ~0x10;
+                EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
+            }
+
+            gUnk_0300749C = 3;
+            func_08000FB4(gUnk_03007494, gUnk_03007498);
+            gUnk_03007494 = 0;
+        } else {
+            if (gUnk_0300748C != 0) {
+                gUnk_0300748C();
+            }
+
+            func_08005C78();
+            func_0800642C();
+            func_08002F0C();
+        }
+    }
+}
 void func_08001248(void (*fn)(void)) {
     gUnk_0300748C = fn;
 }
