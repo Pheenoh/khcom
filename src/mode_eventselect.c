@@ -931,3 +931,47 @@ void func_08076458(void) {
 INCLUDE_ASM("mode_eventselect/func_08076674.s");
 INCLUDE_ASM("mode_eventselect/func_08076750.s");
 INCLUDE_ASM("mode_eventselect/func_0807682C.s");
+
+void func_08077E10(CardBattleWork* w) {
+    gUnk_02039DD4->unk_094 = AnimUpdate(&gUnk_02039DD4->unk_064);
+    gUnk_02039DD4->unk_098 = AnimUpdate(&gUnk_02039DD4->unk_07C);
+
+    if (gUnk_02039DD4->unk_0EA != 0 && w->unk_B9 != 0 && w->unk_BA != 0) {
+        DrawSprite(w->unk_A4, 4, gUnk_09EF12E8[0], w->unk_14, w->unk_18, 0, 16,
+                   12);
+    }
+
+    TaskPoolDraw(w);
+    TaskPoolDraw(&gUnk_02039DD4->unk_09C);
+}
+
+void func_08077E98(CardBattleWork* w) {
+    u8 i;
+
+    TaskPoolDestroy(w);
+    TaskPoolDestroy(&gUnk_02039DD4->unk_09C);
+
+    for (i = 0; i < 4; i++) {
+        if (w->unk_44[i] != 0) {
+            EwramFree(w->unk_44[i]);
+        }
+    }
+
+    ReleaseObjTiles(gUnk_02039DD4->unk_04C);
+    ReleaseObjTiles(gUnk_02039DD4->unk_048);
+    ReleaseObjTiles(gUnk_02039DD4->unk_044);
+    ReleaseObjPalette(gUnk_02039DD4->unk_054);
+    ReleaseObjPalette(gUnk_02039DD4->unk_058);
+    ReleaseObjTiles(gUnk_02039DD4->unk_040);
+    ReleaseObjTiles(gUnk_02039DD4->unk_050);
+    ReleaseObjTiles(gUnk_02039DD4->unk_030);
+    ReleaseObjTiles(gUnk_02039DD4->unk_034);
+    ReleaseObjTiles(gUnk_02039DD4->unk_038);
+    ReleaseObjTiles(gUnk_02039DD4->unk_03C);
+    EwramFree(gUnk_02039DD4);
+    gUnk_02039DD4 = 0;
+    ReleaseObjTiles(w->unk_14);
+    ReleaseObjPalette(w->unk_18);
+}
+
+INCLUDE_ASM("mode_eventselect/func_08077F44.s");
