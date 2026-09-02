@@ -63,26 +63,8 @@ def main():
         if td:
             emit(f"    Data: {md:,} / {td:,} bytes")
 
-    # Assets and padding are incbin forever, so a data percentage taken over the
-    # whole 32 MB is unreadable. Report the decompilable remainder as well: the
-    # data in every unit that is not raw asset or padding.
-    excluded = {"assets", "padding"}
-    dec_total = dec_matched = 0
-    for u in report.get("units", []):
-        if excluded & set(u.get("metadata", {}).get("progress_categories", [])):
-            continue
-        m = u["measures"]
-        td = to_int(m, "total_data")
-        if not td:
-            continue
-        dec_total += td
-        dec_matched += round(td * float(m.get("matched_data_percent", 0.0)) / 100.0)
-
     emit("Progress:")
     block("All", report["measures"])
-    if dec_total:
-        emit(f"    Data excluding assets: {dec_matched:,} / {dec_total:,} bytes "
-             f"({pct(dec_matched, dec_total):.4f}%)")
     for c in report.get("categories", []):
         block(c["name"], c["measures"])
 
