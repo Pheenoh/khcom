@@ -57,6 +57,7 @@ extern void* gUnk_02034AD4;
 extern u8 gUnk_02034B1C;
 extern u16 gUnk_0203A9DC;
 extern u8 gUnk_09EE75D8[];
+extern u8 gUnk_09417378[];
 extern u8 gUnk_02034AF8;
 extern void* gUnk_09EEAF4C[];
 extern u8* gUnk_0203A9D0;
@@ -95,6 +96,7 @@ typedef struct UnkStruct_02034AFC {
     u8 unk_145;
     u8 unk_146[0x08];
     u8 unk_14E;
+    u8 unk_14F;
 } UnkStruct_02034AFC;
 
 extern UnkStruct_09EE7D84* gUnk_09EE7D84[];
