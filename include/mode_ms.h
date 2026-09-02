@@ -5,6 +5,7 @@
 #include "taskpool.h"
 #include "fld_types.h"
 #include "anim.h"
+#include "mode.h"
 
 typedef struct UnkStruct_099932D4 {
     void* unk_00;
@@ -59,7 +60,6 @@ typedef struct UnkStruct_099931E4 {
 void func_081025AC(void);
 void func_081025D4(void* a);
 void func_08102610(void* a);
-void func_0810264C(u16 a, u16 b, u16 c);
 void func_08102688(u16 a, u16 b, u16 c);
 u8 func_081026C4(u16 a, u16 b, u16 c);
 void func_08102704(u16 a);
@@ -73,6 +73,7 @@ void func_08102984(s16 a);
 void func_08103CD8(s16 a);
 void mode_ms_top_2(void);
 void func_08102DC8(void);
+void mode_ms_shop_1(void);
 void func_08104404(void);
 void mode_ms_top_0(u32 a);
 void mode_ms_shop_0(void);
@@ -90,6 +91,13 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
 void m4aSongNumStart(u16 n);
+void UpdatePlayTime(void);
+u8 func_08006314(void);
+void func_080061E8(s32 a, u16 b);
+void func_080010CC(Mode* mode, s32 arg);
+void func_080E04EC(void);
+void func_0810264C(u16 a, u16 b, u16 c);
+u8 func_0810329C(s32 a);
 void func_0805F1C0(s32* p, s32 v);
 void* AnimUpdate(AnimState* a);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
@@ -208,6 +216,7 @@ extern void* gUnk_02035BD0[];
 extern void* gUnk_02035BE0[];
 extern AnimState gUnk_02035BB8;
 extern void* gUnk_02035BF0[];
+extern Mode gUnk_09EF95E8;
 extern s32 gUnk_02035C04;
 extern s32 gUnk_02035C08;
 extern UnkStruct_02039BB0 gUnk_02039BB0;
