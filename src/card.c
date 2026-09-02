@@ -2367,7 +2367,26 @@ u8 func_080901B8(u8* p) {
 
     return 1;
 }
-INCLUDE_ASM("card/func_080901E0.s");
+void func_080901E0(s32* a, u8* b, u8 c) {
+    s32* t;
+    s32 v;
+    s32 id;
+
+    t = (s32*)a[1];
+    v = a[2];
+
+    if (v != -1) {
+        *(u16*)&b[0x14] = v;
+    }
+
+    if (t != 0) {
+        id = *(s32*)((u8*)t + c * 12);
+
+        if (id != 0xFFFF) {
+            *(CardDef**)&b[0x00] = &gCardDefs[id];
+        }
+    }
+}
 void func_08090224(u8* p) {
     u8* q;
 
@@ -3662,7 +3681,22 @@ void func_0809CA1C(u8* work) {
     }
 }
 
-INCLUDE_ASM("card/func_0809CAC8.s");
+void func_0809CAC8(void* p) {
+    u8* work;
+
+    work = (u8*)p;
+
+    if (work[0x54] != 0) {
+        ReleaseObjTiles(*(void**)&work[0x0C]);
+        ReleaseObjPalette(*(void**)&work[0x28]);
+        ReleaseObjTiles(*(void**)&work[0x08]);
+        ReleaseObjPalette(*(void**)&work[0x24]);
+        ReleaseObjTiles(*(void**)&work[0x10]);
+        ReleaseObjPalette(*(void**)&work[0x20]);
+        ReleaseObjTiles(*(void**)&work[0x1C]);
+        work[0x54] = 0;
+    }
+}
 INCLUDE_ASM("card/func_0809CB0C.s");
 INCLUDE_ASM("card/func_0809CB78.s");
 s32 func_0809CBD0(u8* work) {
