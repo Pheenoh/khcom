@@ -59,7 +59,9 @@ typedef struct FrdObj {
     s32 unk_10C;
     void* unk_110;
     void* unk_114;
-    u8 unk_118[0xB0];
+    u8 unk_118[0x10];
+    void (*unk_128)(s32* a, s32* b, s32* c, s32* d);
+    u8 unk_12C[0x9C];
 } FrdObj;
 
 typedef struct FrdBody {
@@ -164,10 +166,10 @@ typedef struct FrdPanWork {
     void* unk_01C;
     FrdBody unk_020;
     AnimState unk_130;
-    s32 unk_148;
+    u32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
-    u16 unk_14E;
+    s16 unk_14E;
     s16 unk_150;
     s16 unk_152;
     s16 unk_154;
@@ -264,6 +266,10 @@ s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0802F1E8(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08019A30(void);
+void func_0800592C(s32* a, s32 b, u16 c);
+void func_08006238(s32 a, s32 b, s32 c);
+void func_080061E8(s32 a, u16 b);
+void func_08048A68(FrdPanWork* work);
 void func_0801D288(void);
 u16 GetRandom(void);
 u8 func_080465F0(FrdGoofyWork* work);
