@@ -72,10 +72,24 @@ typedef struct Ctx02039BB0 {
     u32 unk_08;
 } Ctx02039BB0;
 
+typedef struct MsgFaceCtl {
+    u8 unk_00[2];
+    u8 unk_02;
+    u8 unk_03;
+    u32 unk_04;
+} MsgFaceCtl;
+
 typedef struct MsgFaceWork {
     void* unk_00;
     void* unk_04;
-    u8 unk_08[0x34];
+    u8 unk_08[0x1C];
+    s32 unk_24;
+    u8 unk_28[8];
+    u8 unk_30;
+    u8 unk_31;
+    u8 unk_32[2];
+    u32 unk_34;
+    MsgFaceCtl* unk_38;
 } MsgFaceWork;
 
 typedef struct MsgWinWork {
@@ -199,7 +213,11 @@ typedef struct MsgWaitYesNoWork {
     void* unk_18;
     TextSlot unk_1C[10];
     TextSlot unk_6C[10];
-    u8 unk_BC[0x4C];
+    void* unk_BC;
+    u8 unk_C0[0x1C];
+    u8 unk_DC[0x28];
+    u8 unk_104;
+    u8 unk_105[3];
 } MsgWaitYesNoWork;
 
 typedef struct Ent080658B8 {
@@ -245,6 +263,8 @@ extern u32 gUnk_02034A78;
 extern Ent02034A80* gUnk_02034A80;
 extern void* gUnk_02034A8C;
 extern Ctx02039BB0 gUnk_02039BB0;
+extern s32 gUnk_09033CD0[];
+extern s32 gUnk_09033CE0[];
 extern Ctx02039B84* gUnk_02039B84;
 extern u16 gBldCnt;
 extern vu16 gBldAlpha;
@@ -305,6 +325,10 @@ void m4aMPlayAllStop(void);
 u8 func_08006314(void);
 void func_08074504(void);
 void* AnimUpdate(void* a);
+void AnimStart(void* a, s32 b, s32 c);
+u16 GetKeysPressed(void);
+u8 func_0807388C(MsgFaceWork* p, void* a);
+u8 func_0807420C(MsgWaitYesNoWork* p, void* a);
 void _0806C3A0(u8 a, void* b);
 void func_08065AE0(TextSlot* p, s32 n);
 void func_080635C4(void);
