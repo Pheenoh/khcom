@@ -7,7 +7,7 @@
 #include "mode.h"
 #include "gba/keys.h"
 
-extern u16 gUnk_03006C78;
+extern u16 gSystemFlags;
 extern Mode* gCurrentMode;
 extern void (*gCurrentModeUpdate)(void);
 extern u16 gDebugModeIndex;
@@ -289,7 +289,7 @@ void ModeUpdate(void) {
              (GetKeysHeld() & B_BUTTON)) ||
             ((GetKeysHeld() & START_BUTTON) && (GetKeysPressed() & SELECT_BUTTON) && (GetKeysHeld() & A_BUTTON) &&
                 (GetKeysHeld() & B_BUTTON))) &&
-        !(gUnk_03006C78 & 0x20)) {
+        !(gSystemFlags & 0x20)) {
         if (func_080078E8()) {
             func_080C57B4();
         }
@@ -347,7 +347,7 @@ void func_08001254(void) {
     }
 
     if (!(gModeFlags & 2)) {
-        if (gUnk_03006C78 & 0x10) {
+        if (gSystemFlags & 0x10) {
             func_08004938();
         } else {
             FlushDma3Queue();

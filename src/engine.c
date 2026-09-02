@@ -58,7 +58,7 @@ void func_080066F4(s16 x, s16 y);
 void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 
-extern u16 gUnk_03006C78;
+extern u16 gSystemFlags;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
 s32 GetAngleDiff(s32 a, s32 b);
@@ -99,7 +99,7 @@ void func_080066F4(s16 x, s16 y);
 void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 
-extern u16 gUnk_03006C78;
+extern u16 gSystemFlags;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 func_08001DB0(u16 a, u16 b);
 s32 GetAngleDiff(s32 a, s32 b);
@@ -1058,7 +1058,7 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
         return 0;
     }
 
-    if ((gUnk_03006C78 & 8) == 0) {
+    if ((gSystemFlags & 8) == 0) {
         q->requests[q->unk_10A0].src = src;
         q->requests[q->unk_10A0].dst = dst;
         q->requests[q->unk_10A0].size = size;

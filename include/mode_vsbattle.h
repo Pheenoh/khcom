@@ -263,7 +263,7 @@ extern u16 gUnk_02039B90;
 extern u8 gUnk_02039B98;
 extern VsBattleWork* gUnk_02039B9C;
 extern UnkStruct_02039BB0 gUnk_02039BB0;
-extern u32 gUnk_02039828;
+extern u32 gSioPlayerId;
 extern CharaLinkData gUnk_0203AA10;
 extern CharaLinkData gUnk_0203AAC0;
 extern s16 gUnk_08121400[];

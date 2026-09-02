@@ -10,7 +10,7 @@ void mode_vsbattle_0(u32 mode) {
     p = &gUnk_02039B9C;
     *p = EwramAlloc(sizeof(VsBattleWork));
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         SeedRandom(gUnk_0203AAC0.unk_1E);
     } else {
         SeedRandom(gUnk_0203AA10.unk_1E);

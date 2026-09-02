@@ -247,7 +247,7 @@ extern u16 gUnk_0203A9F0;
 extern u32 gUnk_03007480;
 extern Mode gUnk_09EF15B8;
 extern u16 gUnk_0203982C[];
-extern u32 gUnk_02039828;
+extern u32 gSioPlayerId;
 extern u8 gUnk_020397FC;
 extern u8 gUnk_02039824;
 extern u8 gUnk_02039B60;
@@ -291,9 +291,9 @@ extern u32 gUnk_0203C050[];
 extern u32 gUnk_0203C1E0[];
 extern u16 gUnk_0203C370;
 extern s8 gUnk_0203C374;
-extern u32 gUnk_02039820;
-extern u32 gUnk_03006C68;
-extern vu16 gUnk_03006C78;
+extern u32 gSioStatus;
+extern u32 gVBlankCounter;
+extern vu16 gSystemFlags;
 extern void (*gUnk_0203BEAC)(void);
 
 #endif /* GUARD_CHARA_H */

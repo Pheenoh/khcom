@@ -29,11 +29,11 @@ extern u8 gIntrHandler[];
 extern u8 IrqHandler[];
 
 extern u32 gFrameCounter;
-extern u32 gUnk_03006C68;
-extern u16 gUnk_03006C78;
+extern u32 gVBlankCounter;
+extern u16 gSystemFlags;
 extern u32 gUnk_03006C10;
-extern u32 gUnk_02039828;
-extern u32 gUnk_02039820;
+extern u32 gSioPlayerId;
+extern u32 gSioStatus;
 extern vu16 gFrameSyncFlags;
 extern u16 gVBlankEndVCount;
 extern u16 gUnk_03007FF8;
@@ -159,11 +159,11 @@ void AgbMain(void) {
     s32 bit;
 
     gFrameCounter = 0;
-    gUnk_03006C68 = 0;
-    gUnk_03006C78 = 0;
+    gVBlankCounter = 0;
+    gSystemFlags = 0;
     gUnk_03006C10 = 0;
-    gUnk_02039828 = 0;
-    gUnk_02039820 = 0;
+    gSioPlayerId = 0;
+    gSioStatus = 0;
     InitSystem();
     EnableVBlankIntr();
     bit = 4;
@@ -171,10 +171,10 @@ void AgbMain(void) {
     for (;;) {
         UpdateKeyState();
 
-        if (gUnk_03006C78 & 1) {
+        if (gSystemFlags & 1) {
             func_080C55DC();
 
-            if (gUnk_02039820 & 0x100) {
+            if (gSioStatus & 0x100) {
                 goto next;
             }
         }
@@ -222,7 +222,7 @@ void VBlankIntr(void) {
         gFrameSyncFlags &= 0xFFFE;
     }
     gFrameSyncFlags &= 0xFFFD;
-    gUnk_03006C68++;
+    gVBlankCounter++;
 }
 
 void HBlankIntrDummy(void) {
@@ -287,7 +287,7 @@ void VBlankIntrSio(void) {
         gFrameSyncFlags &= 0xFFFE;
     }
     gFrameSyncFlags &= 0xFFFD;
-    gUnk_03006C68++;
+    gVBlankCounter++;
 }
 
 void func_08000714(void) {
@@ -309,5 +309,5 @@ void func_08000714(void) {
     gVBlankEndVCount = REG_VCOUNT;
     gFrameSyncFlags &= 0xFFFB;
     gFrameSyncFlags &= 0xFFFD;
-    gUnk_03006C68++;
+    gVBlankCounter++;
 }

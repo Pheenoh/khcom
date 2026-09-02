@@ -321,10 +321,10 @@ extern s8 gUnk_0203AA8C;
 extern s8 gUnk_0203AA90;
 extern s8 gUnk_0203AAA0[];
 extern u8 gUnk_0203AAE0[][20];
-extern vu16 gUnk_03006C78;
+extern vu16 gSystemFlags;
 extern u32 gUnk_03007480;
 
-extern u32 gUnk_02039828;
+extern u32 gSioPlayerId;
 
 extern SioAnimDef gUnk_096193E0[];
 extern SioAnimDef gUnk_09619444[];

@@ -376,13 +376,13 @@ void func_08060A74(void) {
         TaskCreate(&gUnk_02034A30, &gUnk_09EE8EF0, &gUnk_02034A44);
     }
 
-    if (gUnk_03006C78 & 1) {
+    if (gSystemFlags & 1) {
         m4aMPlayAllStop();
     }
 }
 
 void func_08060AD8(void) {
-    if (gUnk_03006C78 & 1) {
+    if (gSystemFlags & 1) {
         func_080B0754();
     } else {
         UpdatePlayTime();
@@ -394,7 +394,7 @@ void func_08060AD8(void) {
     if (gUnk_02034A44 == 7) {
         if (gUnk_03006C10 & 1) {
             ModeRequest(&gUnk_09ECEB54, 0);
-        } else if (gUnk_03006C78 & 1) {
+        } else if (gSystemFlags & 1) {
             ModeRequest(&gUnk_09EF14DC, 1);
         } else {
             func_080E052C(0);
@@ -404,7 +404,7 @@ void func_08060AD8(void) {
     if (gUnk_02034A44 == 8) {
         if (gUnk_03006C10 & 1) {
             ModeRequest(&gUnk_09ECEB54, 0);
-        } else if (gUnk_03006C78 & 1) {
+        } else if (gSystemFlags & 1) {
             ModeRequest(&gUnk_09EF14DC, 1);
         } else {
             func_080E052C(1);

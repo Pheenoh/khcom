@@ -42,8 +42,8 @@ void mode_sio_btl_connect_1(void) {
         if (gUnk_02034B3C->unk_02 > 4) {
             func_080C5DC0(func_080C6008, func_080C60D8);
             func_080C61D4();
-            gUnk_03006C78 |= 1;
-            gUnk_03006C78 |= 0x10;
+            gSystemFlags |= 1;
+            gSystemFlags |= 0x10;
             gUnk_02034B3C->unk_04++;
         }
         break;
@@ -196,7 +196,7 @@ void func_080AF11C(void) {
         gUnk_02034B40->unk_018[i] = AnimGetGfx(&gUnk_02034B40->unk_020[i]);
     }
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_02034B40->unk_008[2] = LoadObjPalette(gUnk_08F683A4, 32);
         gUnk_02034B40->unk_008[3] = LoadObjPalette(gUnk_096FAC64, 32);
     } else {
@@ -236,7 +236,7 @@ void func_080AF11C(void) {
     gUnk_02034B40->unk_204[1] = gUnk_09EF3904[0];
     gUnk_02034B40->unk_214[1] = gUnk_0203AA58[1];
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_02034B40->unk_216 = gUnk_0203AA58[0];
     } else {
         gUnk_02034B40->unk_216 = gUnk_0203AA58[1];
@@ -367,7 +367,7 @@ void func_080AF70C(void) {
     DrawSprite(132, 24, gUnk_02034B40->unk_204[1], gUnk_02034B40->unk_1FC[1], gUnk_02034B40->unk_20C[1], 0, 0, 0xF100);
 
     if (gUnk_02034B40->unk_1F8 == 1) {
-        DrawSprite(gUnk_02039828 * 101 + 44 + gUnk_09EF14B8[gUnk_02034B40->unk_216], -((gUnk_02034B40->unk_1FA >> 3) % 4) / 2 + 22, gUnk_02034B40->unk_1F4, gUnk_02034B40->unk_1E4, gUnk_02034B40->unk_1E8, 0, 0, 0xF000);
+        DrawSprite(gSioPlayerId * 101 + 44 + gUnk_09EF14B8[gUnk_02034B40->unk_216], -((gUnk_02034B40->unk_1FA >> 3) % 4) / 2 + 22, gUnk_02034B40->unk_1F4, gUnk_02034B40->unk_1E4, gUnk_02034B40->unk_1E8, 0, 0, 0xF000);
     }
     gUnk_02034B40->unk_1FA++;
 }
@@ -437,7 +437,7 @@ void func_080AFADC(void) {
     } else if ((gUnk_02039810[1][0] & 0xFFF0) == 0x1F20) {
         gUnk_02034B40->unk_416 = 10;
 
-        if (gUnk_02039828 == 0) {
+        if (gSioPlayerId == 0) {
             m4aSongNumStart(103);
             gUnk_02034B40->unk_1B4 = 1;
             gUnk_02034B40->unk_002 = 6;
@@ -445,7 +445,7 @@ void func_080AFADC(void) {
     } else if ((gUnk_02039810[1][1] & 0xFFF0) == 0x1F20) {
         gUnk_02034B40->unk_416 = 10;
 
-        if (gUnk_02039828 == 1) {
+        if (gSioPlayerId == 1) {
             m4aSongNumStart(103);
             gUnk_02034B40->unk_1B4 = 1;
             gUnk_02034B40->unk_002 = 6;
@@ -511,7 +511,7 @@ void func_080AFCD4(void) {
 
         switch (gUnk_02034B40->unk_000) {
         case 0:
-            if (gUnk_02039828 == 0) {
+            if (gSioPlayerId == 0) {
                 gUnk_02039B58[1] = 0x2FCF;
             } else {
                 gUnk_02039B58[1] = 0x6AD6;
@@ -563,7 +563,7 @@ void func_080AFEFC(void) {
         }
     }
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_0203AA58[0] = gUnk_02034B40->unk_216;
     } else {
         gUnk_0203AA58[1] = gUnk_02034B40->unk_216;
@@ -642,7 +642,7 @@ void func_080B0010(void) {
 
 #ifndef VERSION_JP
 void func_080B01FC(void) {
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_02039B58[1] = 0x2FCF;
     } else {
         gUnk_02039B58[1] = 0x6AD6;
@@ -732,7 +732,7 @@ void func_080B0440(void) {
 
         if (gUnk_02039810[1][0] == 0x7CD2 && gUnk_02039810[1][1] == 0x7CD2) {
             gUnk_02034B40->unk_006 = 0;
-            gUnk_03006C78 &= 0xFFEF;
+            gSystemFlags &= 0xFFEF;
             gUnk_02034B40->unk_002++;
         }
     }
@@ -745,7 +745,7 @@ void func_080B0494(void) {
         func_080C5DC0(func_080C5E58, func_080C5ECC);
         func_080B0F18();
 
-        if (gUnk_02039828 == 0) {
+        if (gSioPlayerId == 0) {
             ModeRequest(&gUnk_09ED9B98, 0);
         } else {
             ModeRequest(&gUnk_09ED9B98, 1);
@@ -924,7 +924,7 @@ INCLUDE_ASM("mode_sio/func_080B0F18.s");
 void func_080B1064(void) {
     u8 buf[2];
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_02039B58[2] |= (gUnk_0203AA58[0] & 15) << 4;
     } else {
         gUnk_02039B58[2] |= (gUnk_0203AA58[1] & 15) << 4;
@@ -1043,7 +1043,7 @@ void func_080B13D0(void) {
 }
 
 void mode_sio_btl_cardget_0(s32 arg) {
-    gUnk_03006C78 |= 0x10;
+    gSystemFlags |= 0x10;
 
     if (gUnk_0203C374 == 1) {
         func_080C57A4();
@@ -1089,7 +1089,7 @@ void func_080B15A4(void) {
             gUnk_0203A9EC = 0x270F;
         }
 
-        if (gUnk_02039828 == 0) {
+        if (gSioPlayerId == 0) {
             func_080B18C4();
             gUnk_02034B44->unk_10 = LoadObjPalette(gUnk_08F683A4, 32);
             gUnk_02034B44->unk_14 = LoadObjPalette(gUnk_096FAC64, 32);
@@ -1104,7 +1104,7 @@ void func_080B15A4(void) {
             gUnk_0203A9F0 = 0x270F;
         }
 
-        if (gUnk_02039828 == 0) {
+        if (gSioPlayerId == 0) {
             func_080B1974();
             gUnk_02034B44->unk_10 = LoadObjPalette(gUnk_08F683A4, 32);
             gUnk_02034B44->unk_14 = LoadObjPalette(gUnk_096FAC64, 32);
@@ -1115,7 +1115,7 @@ void func_080B15A4(void) {
         }
     }
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_02034B44->unk_20 = 0x3C00;
         gUnk_02034B44->unk_24 = 0x6000;
     } else {
@@ -1290,8 +1290,8 @@ void mode_sio_chg_connect_1(void) {
         if (gUnk_02034B48->unk_02 > 4) {
             func_080C5DC0(func_080C5D50, func_080C5D80);
             func_080C5D00();
-            gUnk_03006C78 |= 1;
-            gUnk_03006C78 |= 0x10;
+            gSystemFlags |= 1;
+            gSystemFlags |= 0x10;
             func_080B1C14();
             return;
         }
@@ -1319,7 +1319,7 @@ void func_080B1BFC(void) {
 void func_080B1C14(void) {
     s32 i;
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_0203AB10 = 0;
     } else {
         gUnk_0203AB10 = 5;
@@ -1408,7 +1408,7 @@ void func_080B1E70(void) {
         gUnk_02034B4C->unk_018[i] = AnimGetGfx(&gUnk_02034B4C->unk_020[i]);
     }
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_02034B4C->unk_008[2] = LoadObjPalette(gUnk_08F683A4, 32);
         gUnk_02034B4C->unk_008[3] = LoadObjPalette(gUnk_096FAC64, 32);
     } else {
@@ -1602,7 +1602,7 @@ void func_080B2480(void) {
     } else if (gUnk_02039810[1][0] == 0x1D58) {
         gUnk_02034B4C->unk_BE0 = 10;
 
-        if (gUnk_02039828 == 0) {
+        if (gSioPlayerId == 0) {
             m4aSongNumStart(102);
             gUnk_0203AB10 = gUnk_02034B4C->unk_076;
             ModeRequest(&gUnk_09EE8F20, 0);
@@ -1610,7 +1610,7 @@ void func_080B2480(void) {
     } else if (gUnk_02039810[1][1] == 0x1D58) {
         gUnk_02034B4C->unk_BE0 = 10;
 
-        if (gUnk_02039828 == 1) {
+        if (gSioPlayerId == 1) {
             m4aSongNumStart(102);
             gUnk_0203AB10 = gUnk_02034B4C->unk_076;
             ModeRequest(&gUnk_09EE8F20, 0);
@@ -1713,7 +1713,7 @@ void func_080B29D8(void) {
             }
         }
     } else {
-        gUnk_03006C78 &= 0xFFFE;
+        gSystemFlags &= 0xFFFE;
         ModeRequest(&gUnk_09EF15B8, 0);
     }
     gUnk_02034B4C->unk_004 = 0;
@@ -1762,7 +1762,7 @@ void func_080B2B78(void) {
     gUnk_02039B58[1] = 0x25FD;
 
     if (gUnk_02039810[1][0] == 0x25FD || gUnk_02039810[1][1] == 0x25FD) {
-        if (gUnk_02039828 == 0) {
+        if (gSioPlayerId == 0) {
             gUnk_0203AB10 = 0;
         } else {
             gUnk_0203AB10 = 5;
@@ -1927,7 +1927,7 @@ void func_080B3354(void) {
                 func_080B3A48();
             }
         }
-    } else if (gUnk_02039828 == 0) {
+    } else if (gSioPlayerId == 0) {
         if (k1 & 0xF0) {
             m4aSongNumStart(101);
         }
@@ -2079,7 +2079,7 @@ void func_080B38A4(void) {
 s8 func_080B3908(void) {
     s32 i;
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         for (i = 0; i < 5; i++) {
             if (gUnk_0203AB20[i] != 0x800) {
                 return 1;
@@ -2172,7 +2172,7 @@ s16 func_080B3D28(void) {
     s32 i;
     s32 t;
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         for (i = 5; i < 10; i++) {
             t = gUnk_0203AB20[i] != 0x800;
             if (t) {
@@ -2197,7 +2197,7 @@ s16 func_080B3D28(void) {
 void func_080B3DA0(void) {
     s32 i;
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         for (i = 0; i < 5; i++) {
             if (gUnk_0203AB20[i] != 0x800) {
                 func_08084068(gUnk_0203AB20[i]);
@@ -2221,7 +2221,7 @@ INCLUDE_ASM("mode_sio/func_080B3DF8.s");
 
 #ifndef VERSION_JP
 void mode_sioError_0(s32 arg) {
-    gUnk_03006C78 |= 0x20;
+    gSystemFlags |= 0x20;
     gUnk_02034B50 = EwramAlloc(sizeof(SioErrorWork));
     m4aMPlayAllStop();
     func_08006120(0, 16);

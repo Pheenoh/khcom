@@ -277,7 +277,7 @@ extern TaskPool gUnk_02034A48;
 extern UnkStruct_02034A5C* gUnk_02034A5C;
 extern u8 gUnk_02034A44;
 extern u32 gUnk_03006C10;
-extern vu16 gUnk_03006C78;
+extern vu16 gSystemFlags;
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern void* gUnk_09EE14D4[];
 extern CardDef gCardDefs[];
