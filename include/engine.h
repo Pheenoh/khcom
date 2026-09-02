@@ -171,4 +171,9 @@ void func_0800592C(s32* p, s32 target, u16 steps);
 s32 Lerp8(s32 a, s32 b, s32 t);
 void func_08005B44(AnimState* a, u16 frame);
 
+void VTransInit(void);
+void BgInit(void);
+void FadeInit(void);
+void InitDisplayRegs(void);
+
 #endif /* GUARD_ENGINE_H */

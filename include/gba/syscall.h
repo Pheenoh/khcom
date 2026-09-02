@@ -6,6 +6,7 @@
 void SoftReset(s32 flags);
 void CpuSet(void* src, void* dst, u32 ctrl);
 void CpuFastSet(void* src, void* dst, s32 ctrl);
+void RegisterRamReset(u32 flags);
 void VBlankIntrWait(void);
 
 #endif
