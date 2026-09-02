@@ -122,9 +122,17 @@ s32 func_08000F90(void) {
 INCLUDE_ASM("taskpool/func_08000F94.s");
 INCLUDE_ASM("taskpool/func_08000FB4.s");
 INCLUDE_ASM("taskpool/func_08001010.s");
+INCLUDE_ASM("taskpool/func_08001058.s");
+INCLUDE_ASM("taskpool/func_08001080.s");
+INCLUDE_ASM("taskpool/func_0800109C.s");
+INCLUDE_ASM("taskpool/func_080010A8.s");
+INCLUDE_ASM("taskpool/func_080010B4.s");
 INCLUDE_ASM("taskpool/func_080010CC.s");
 INCLUDE_ASM("taskpool/func_080010E0.s");
 INCLUDE_ASM("taskpool/func_08001100.s");
 INCLUDE_ASM("taskpool/func_08001248.s");
 INCLUDE_ASM("taskpool/func_08001254.s");
 INCLUDE_ASM("taskpool/func_080012A8.s");
+INCLUDE_ASM("taskpool/func_080012E0.s");
+INCLUDE_ASM("taskpool/func_080012F8.s");
+INCLUDE_ASM("taskpool/func_08001304.s");

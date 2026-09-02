@@ -1,0 +1,9 @@
+.syntax unified
+	.align 2, 0
+	.global func_0800109C
+	.thumb
+	.thumb_func
+	.type func_0800109C, %function
+func_0800109C: @ 0800109C
+	.byte 0x01, 0x49, 0x08, 0x60, 0x70, 0x47, 0x00, 0x00, 0xA4, 0x74, 0x00, 0x03
+.syntax divided
