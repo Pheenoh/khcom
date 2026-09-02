@@ -1450,7 +1450,37 @@ u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y) {
     return (t[by] >> (7 - bx)) & 1;
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E8724.s");
+void func_080E8724(s16 x, s16 y, const u8* p, u16* base) {
+    s32 i;
+    s32 j;
+    s32 off;
+    u8 v;
+    UnkStruct_080DFB8C* q;
+
+    v = GetRandom() % 100;
+    while (v >= p[0]) {
+        p += 8;
+    }
+    for (j = 0; j < p[3]; j++) {
+        for (i = 0; i < p[4]; i++) {
+            switch (p[5]) {
+            case 1:
+                q = func_080E548C(x + j, y + i + (p[3] - 1 - j));
+                break;
+            case 2:
+                q = func_080E548C(x + j, y + i + j);
+                break;
+            case 0:
+            default:
+                q = func_080E548C(x + j, y + i);
+                break;
+            }
+            off = (p[2] + i) * 64 + (p[1] + j) * 4;
+            q->unk_04 = 50;
+            q->unk_18 = base + off;
+        }
+    }
+}
 INCLUDE_ASM("unk_080dfebc/func_080E87EC.s");
 INCLUDE_ASM("unk_080dfebc/func_080E8864.s");
 
