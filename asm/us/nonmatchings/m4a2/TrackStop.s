@@ -1,53 +1,51 @@
 .syntax unified
+	.include "gba_constants.inc"
 	.align 2, 0
 	.global TrackStop
 	.thumb
 	.thumb_func
 	.type TrackStop, %function
-TrackStop: @ 0811FA28
-	push {r4, r5, r6, lr}
-	adds r5, r1, #0x0
-	ldrb r1, [r5, #0x00]
-	movs r0, #0x80
+TrackStop:
+	push {r4-r6,lr}
+	adds r5, r1, 0
+	ldrb r1, [r5, o_MusicPlayerTrack_flags]
+	movs r0, 0x80
 	tst r0, r1
-	beq _0811FA6A
-	ldr r4, [r5, #0x20]
-	cmp r4, #0x00
-	beq _0811FA68
-	movs r6, #0x00
-_0811FA3C:
-	ldrb r0, [r4, #0x00]
-	cmp r0, #0x00
-	beq _0811FA56
-	ldrb r0, [r4, #0x01]
-	movs r3, #0x07
+	beq TrackStop_Done
+	ldr r4, [r5, o_MusicPlayerTrack_chan]
+	cmp r4, 0
+	beq TrackStop_3
+	movs r6, 0
+TrackStop_Loop:
+	ldrb r0, [r4, o_SoundChannel_statusFlags]
+	cmp r0, 0
+	beq TrackStop_2
+	ldrb r0, [r4, o_SoundChannel_type]
+	movs r3, 0x7
 	ands r0, r3
-	beq _0811FA54
-	ldr r3, _0811FA70 @ =0x03007FF0
-	ldr r3, [r3, #0x00]
-	ldr r3, [r3, #0x2C]
-	bl _0811FA18
-_0811FA54:
-	strb r6, [r4, #0x00]
-_0811FA56:
-	str r6, [r4, #0x2C]
-	ldr r0, [r4, #0x34]
+	beq TrackStop_1
+	ldr r3, =SOUND_INFO_PTR
+	ldr r3, [r3]
+	ldr r3, [r3, o_SoundInfo_CgbOscOff]
+	bl call_r3
+TrackStop_1:
+	strb r6, [r4, o_SoundChannel_statusFlags]
+TrackStop_2:
+	str r6, [r4, o_SoundChannel_track]
+	ldr r0, [r4, o_SoundChannel_nextChannelPointer]
 	cmp r0, r4
-	bne _0811FA62
-	movs r0, #0x00
-	str r0, [r4, #0x34]
-_0811FA62:
-	adds r4, r0, #0x0
-	cmp r4, #0x00
-	bne _0811FA3C
-_0811FA68:
-	str r4, [r5, #0x20]
-_0811FA6A:
-	pop {r4, r5, r6}
+	bne TrackStop_Next
+	movs r0, 0
+	str r0, [r4, o_SoundChannel_nextChannelPointer]
+TrackStop_Next:
+	adds r4, r0, 0
+	cmp r4, 0
+	bne TrackStop_Loop
+TrackStop_3:
+	str r4, [r5, o_MusicPlayerTrack_chan]
+TrackStop_Done:
+	pop {r4-r6}
 	pop {r0}
 	bx r0
-_0811FA70: .4byte 0x03007FF0
-	.byte 0xA1, 0x7C, 0x14, 0x20, 0x22, 0x56, 0x80, 0x23, 0x9B, 0x18, 0x4B, 0x43, 0x28, 0x7C, 0x58, 0x43
-	.byte 0x80, 0x13, 0xFF, 0x28, 0x00, 0xD9, 0xFF, 0x20, 0xA0, 0x70, 0x7F, 0x23, 0x9B, 0x1A, 0x4B, 0x43
-	.byte 0x68, 0x7C, 0x58, 0x43, 0x80, 0x13, 0xFF, 0x28, 0x00, 0xD9, 0xFF, 0x20, 0xE0, 0x70, 0x70, 0x47
+	.pool
 .syntax divided

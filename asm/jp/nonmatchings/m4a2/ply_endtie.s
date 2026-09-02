@@ -5,5 +5,5 @@
 	.thumb_func
 	.type ply_endtie, %function
 ply_endtie:
-	.incbin "roms/B8CJ.gba", 0x11fd20, 0x74
+	.incbin "roms/B8CJ.gba", 0x11fd20, 0x4c
 .syntax divided
