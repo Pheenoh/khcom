@@ -314,7 +314,31 @@ INCLUDE_ASM("unk_0806180c/func_08065B6C.s");
 INCLUDE_ASM("unk_0806180c/func_08065B7C.s");
 INCLUDE_ASM("unk_0806180c/func_08065D10.s");
 INCLUDE_ASM("unk_0806180c/func_080660C0.s");
-INCLUDE_ASM("unk_0806180c/_08066468.s");
+void* _08066468(s32 a) {
+    void* r = NULL;
+
+    switch (a) {
+    case 0:
+        r = LoadObjPalette(gUnk_09614758, 32);
+        break;
+    case 1:
+        r = LoadObjPalette(gUnk_09614718, 32);
+        break;
+    case 2:
+        r = LoadObjPalette(gUnk_09614738, 32);
+        break;
+    case 3:
+        r = LoadObjPalette(gUnk_09614798, 32);
+        break;
+    case 4:
+        r = LoadObjPalette(gUnk_096147B8, 32);
+        break;
+    case 5:
+        r = LoadObjPalette(gUnk_09614778, 32);
+        break;
+    }
+    return r;
+}
 INCLUDE_ASM("unk_0806180c/func_080664D8.s");
 INCLUDE_ASM("unk_0806180c/func_08066588.s");
 INCLUDE_ASM("unk_0806180c/func_0806662C.s");
@@ -1538,7 +1562,21 @@ u8 func_08073B54(MsgFaceWork* p, void* a) {
 }
 INCLUDE_ASM("unk_0806180c/func_08073B9C.s");
 INCLUDE_ASM("unk_0806180c/func_08073CA4.s");
-INCLUDE_ASM("unk_0806180c/func_08073DA4.s");
+u8 func_08073DA4(MsgFaceWork* p, void* a) {
+    if (p->unk_2C < 0) {
+        ApproachValue(&p->unk_2C, -255, p->unk_30);
+    } else {
+        ApproachValue(&p->unk_2C, 256, p->unk_30);
+    }
+    p->unk_30--;
+    if (p->unk_30 == 0) {
+        p->unk_31 = 1;
+        p->unk_38->unk_02 = 0;
+        p->unk_2C = 256;
+        func_08000F8C(a, (void*)func_0807388C);
+    }
+    return 1;
+}
 INCLUDE_ASM("unk_0806180c/func_08073E0C.s");
 
 void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c) {
