@@ -100,7 +100,7 @@ s8 GetAngleDiff(u8 a, u8 b);
 void func_08002A10(void* a, void* b);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_0803473C(FldWork* work, s32 index, u16 flags);
-u8 func_08001534(s32 a);
+u8 GetKeyReleaseTime(s32 a);
 void TaskPoolUpdate(void* a);
 void func_08000F8C(void* task, void* fn);
 u8 AnimIsFinished(void* a);
