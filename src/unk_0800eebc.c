@@ -588,7 +588,37 @@ void func_08012BCC(void) {
 
 INCLUDE_ASM("unk_0800eebc/func_08012C08.s");
 INCLUDE_ASM("unk_0800eebc/func_08012E44.s");
-INCLUDE_ASM("unk_0800eebc/func_08012F74.s");
+void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDA570, sx, sy);
+    m4aSongNumStart(0x23D);
+    func_08006B34(8);
+    gUnk_02034928->unk_04 = func_08012C08;
+    gUnk_02034928->unk_28 = gUnk_02039B84->unk_07C->unk_04;
+    gUnk_02034928->unk_2C = gUnk_02039B84->unk_07C->unk_08;
+    gUnk_02034928->unk_30 = gUnk_02039B84->unk_07C->unk_0C;
+    gUnk_02034928->unk_08 = a;
+    gUnk_02034928->unk_26 = 1;
+    gUnk_02034928->unk_48 = w;
+    if (f) {
+        gUnk_02034928->unk_34 |= 1;
+        gUnk_02034928->unk_1C = -0x180;
+    } else {
+        gUnk_02034928->unk_1C = 0x180;
+    }
+    gUnk_02034928->unk_20 = 0x180;
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 INCLUDE_ASM("unk_0800eebc/func_08013070.s");
 INCLUDE_ASM("unk_0800eebc/func_08013308.s");
 
@@ -1638,7 +1668,35 @@ void func_08016750(s32 x, s32 y, s32 z, u8 f) {
     gUnk_02034928->unk_04 = func_080166F8;
 }
 INCLUDE_ASM("unk_0800eebc/func_080167F8.s");
-INCLUDE_ASM("unk_0800eebc/func_080168B8.s");
+void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    gUnk_02034928->unk_0A = a;
+    gUnk_02034928->unk_26 = 0;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDAB10, sx, sy);
+    if (f) {
+        gUnk_02034928->unk_28 = w;
+        gUnk_02034928->unk_1C = 76;
+    } else {
+        gUnk_02034928->unk_28 = -w;
+        gUnk_02034928->unk_1C = -76;
+    }
+    gUnk_02034928->unk_2C = w;
+    gUnk_02034928->unk_20 = 76;
+    m4aSongNumStart(0x282);
+    gUnk_02034928->unk_04 = func_080167F8;
+    func_08006B34(0);
+    func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+    gUnk_02034928->unk_34 |= 8;
+}
 void func_080169A0(s32 x, s32 y, s32 z, u8 f) {
     s16 sx;
     s16 sy;
