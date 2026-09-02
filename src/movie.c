@@ -241,8 +241,8 @@ float func_08118630(s32 a) {
     return a * MOVIE_SECONDS_PER_TICK;
 }
 
-INCLUDE_ASM("m4a/func_0811865C.s");
-INCLUDE_ASM("m4a/func_08118ADC.s");
+INCLUDE_ASM("movie/func_0811865C.s");
+INCLUDE_ASM("movie/func_08118ADC.s");
 
 MoviePlayer* func_08118C34(void* a) {
     u32* q;
@@ -543,4 +543,4 @@ void func_0811968C(MoviePlayer* a, s32* w, s32* h) {
     *h = p->unk_30;
 }
 
-INCLUDE_ASM("m4a/func_081196B4.s");
+INCLUDE_ASM("movie/func_081196B4.s");
