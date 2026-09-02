@@ -15,7 +15,8 @@ typedef struct FldObj {
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    u8 unk_10[0x0C];
+    u8 unk_10[0x0A];
+    s16 unk_1A;
     ListNode unk_1C;
     u8 unk_2C[0x04];
     u16 unk_30;
@@ -38,11 +39,35 @@ typedef struct UnkStruct_02039BA0 {
 } UnkStruct_02039BA0;
 
 typedef struct UnkStruct_02039DC8 {
-    u8 unk_00[0x7A];
+    u8 unk_00[0x74];
+    s32 unk_74;
+    u8 unk_78[0x02];
     u8 unk_7A;
     u8 unk_7B;
-    u8 unk_7C[0x02];
+    u8 unk_7C[0x10];
 } UnkStruct_02039DC8;
+
+typedef struct UnkStruct_09EE3CA0 {
+    u8 unk_00[0x24];
+    u8 unk_24;
+    u8 unk_25[0x03];
+} UnkStruct_09EE3CA0;
+
+typedef struct UnkStruct_09EE3FB4_08 {
+    u8 unk_00[0x14];
+    u32 unk_14;
+} UnkStruct_09EE3FB4_08;
+
+typedef struct UnkStruct_09EE3FB4 {
+    u8 unk_00[0x08];
+    UnkStruct_09EE3FB4_08* unk_08;
+} UnkStruct_09EE3FB4;
+
+typedef struct EvtArg {
+    u32 unk_00 : 8;
+    u32 unk_08 : 8;
+    u32 unk_10 : 16;
+} EvtArg;
 
 typedef struct UnkStruct_02039DC4 {
     s32 unk_00;
@@ -161,6 +186,13 @@ void func_0801CB0C(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
 void func_080E04EC(void);
+void func_08004DB0(void);
+void func_08004E64(void);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
+void SetBgPriority(s32 bg, u16 priority);
+void DisableBg(s32 bg);
+void func_08006120(s32 a, s32 b);
+void func_080A42B4(void);
 void func_08061824(void);
 u8 func_080A42C8(void);
 FldObj* func_08000C8C(ListNode* node);
@@ -200,8 +232,10 @@ void func_08060F64(void);
 void task_lockon_0(LockonWork* w);
 s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list);
 u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d);
+void func_08060F74(s32 arg);
 void func_0806119C(void);
 void func_080617E8(void);
+void task_lockon_2(LockonWork* w);
 void task_lockon_3(LockonWork* w);
 void func_0805F7E8(u8 x, u8 y, u16* s);
 void func_08060470(u8 bg);
@@ -223,6 +257,12 @@ extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern UnkStruct_02039DC4* gUnk_02039DC4;
 extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern u8 gUnk_02034A74;
+extern s32 gUnk_02034A78;
+extern u16 gBldCnt;
+extern u16 gBldAlpha;
+extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
+extern UnkStruct_09EE3FB4* gUnk_09EE3FB4[];
+extern TaskDesc gUnk_09EE46D4;
 extern u8 gUnk_02034A7C;
 extern Mode gUnk_09EE47AC;
 extern TaskPool gUnk_02034A60;
