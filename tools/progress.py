@@ -49,15 +49,19 @@ def main():
 
     def block(name, m):
         mc, tc = to_int(m, "matched_code"), to_int(m, "total_code")
-        md, td = to_int(m, "matched_data"), to_int(m, "total_data")
+        td = to_int(m, "total_data")
+        # Only a percentage is published for data, so recover the byte count.
+        md = to_int(m, "matched_data") or round(td * float(m.get("matched_data_percent", 0.0)) / 100.0)
         mf, tf = m.get("matched_functions", 0), m.get("total_functions", 0)
         cc = to_int(m, "complete_code")
-        emit(f"  {name}: {pct(mc + md, tc + td):.2f}% matched, "
-             f"{pct(cc, tc):.2f}% linked")
+        head = f"  {name}: {pct(mc, tc):.2f}% code"
+        if td:
+            head += f", {pct(md, td):.4f}% data"
+        emit(head + f", {pct(cc, tc):.2f}% linked")
         emit(f"    Code: {mc:,} / {tc:,} bytes ({mf:,} / {tf:,} functions)")
         emit(f"    Linked: {cc:,} / {tc:,} bytes")
         if td:
-            emit(f"    Data: {md:,} / {td:,} bytes ({pct(md, td):.2f}%)")
+            emit(f"    Data: {md:,} / {td:,} bytes")
 
     emit("Progress:")
     block("All", report["measures"])

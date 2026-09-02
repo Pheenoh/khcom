@@ -43,9 +43,12 @@ tools:
       check_asm_paths: True
       # Objects live at build/<ver>/asm/foo.o -> asm file lookup starts at part 3
       path_index: 3
-      # The ROM's ~32 MB of assets are .rodata. Counting them would put every
-      # headline percentage near zero; pret, kleod and knidl all report code only.
-      report_data: False
+      # The ROM's ~32 MB of assets are .rodata, so data progress is near zero and
+      # will stay there for a long time. It is reported anyway because a dimension
+      # that is not measured is published as 100% complete, and because moving a
+      # global into C should be visible. Code and data are kept as separate
+      # percentages so the 32 MB does not swamp the code figure.
+      report_data: True
       prefixes_to_trim:
         - build/us/
         - build/jp/
