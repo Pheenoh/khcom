@@ -268,7 +268,31 @@ u8 func_0800FF00(u32 a) {
     return 0;
 }
 
-INCLUDE_ASM("unk_0800eebc/func_0800FF70.s");
+u8 func_0800FF70(u32 a) {
+    u64* p;
+    u8* q;
+    if (a <= 0x3F) {
+        q = (u8*)&gUnk_02039BB0;
+        q += 0x154;
+    } else if (a <= 0x7F) {
+        a -= 0x40;
+        q = (u8*)&gUnk_02039BB0;
+        q += 0x15C;
+    } else if (a <= 0xBF) {
+        a -= 0x80;
+        q = (u8*)&gUnk_02039BB0;
+        q += 0x164;
+    } else {
+        a -= 0xC0;
+        q = (u8*)&gUnk_02039BB0;
+        q += 0x16C;
+    }
+    p = (u64*)q;
+    if (*p & (1LL << a)) {
+        return 1;
+    }
+    return 0;
+}
 INCLUDE_ASM("unk_0800eebc/func_0800FFE0.s");
 
 void func_0801007C(void) {
@@ -1206,7 +1230,15 @@ void func_08017138(u16 a) {
     func_08006B34(0);
     gUnk_02034928->unk_34 |= 0x10;
 }
-INCLUDE_ASM("unk_0800eebc/func_0801718C.s");
+void func_0801718C(void) {
+    u16 t;
+    s32 w;
+    t = (gUnk_08121400[(gUnk_02034928->unk_0C / 3) & 0xFF] * 10240) >> 16;
+    w = ((abs(gUnk_08121400[(u8)gUnk_02034928->unk_0C]) >> 1) + 0x100) * 0x133 >> 8;
+    func_0800675C(t + 15, 0x133, w);
+    func_0801709C();
+    gUnk_02034928->unk_0C++;
+}
 void func_080171FC(u16 a) {
     if (func_080126E4(0)) {
         return;
@@ -1465,7 +1497,27 @@ void func_08019270(void) {
     func_08000BA4(&gUnk_02039B84->unk_090);
 }
 
-INCLUDE_ASM("unk_0800eebc/func_080192E0.s");
+void func_080192E0(void) {
+    BtlObj* p;
+    if (gUnk_02039B84->unk_068 & 0x40) {
+        return;
+    }
+    if (gUnk_02039B84->unk_068 & 0x10000000) {
+        return;
+    }
+    if (gUnk_02039B84->unk_068 & 0x800000) {
+        return;
+    }
+    p = gUnk_02039B84->unk_0AC;
+    if (p == 0) {
+        return;
+    }
+    if (p->unk_034 & 0x7202) {
+        return;
+    }
+    gUnk_02039B84->unk_0A8 = p;
+    func_08091234(p->unk_000);
+}
 
 INCLUDE_ASM("unk_0800eebc/func_08019350.s");
 INCLUDE_ASM("unk_0800eebc/func_080197AC.s");
