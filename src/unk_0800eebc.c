@@ -609,6 +609,7 @@ void func_08013D60(void) {
 }
 
 INCLUDE_ASM("unk_0800eebc/func_08013DB8.s");
+INCLUDE_ASM("unk_0800eebc/func_08013E4C.s");
 
 void func_08013EDC(s32 x, s32 y, s32 z, s32 s) {
     s16 sx;
