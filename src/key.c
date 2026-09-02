@@ -40,7 +40,6 @@ extern u8 gKeyReleaseR;
 extern u8 gKeyReleaseStart;
 extern u8 gKeyReleaseSelect;
 
-void InitSystem(void);
 void func_080C55DC(void);
 void func_08001100(void);
 

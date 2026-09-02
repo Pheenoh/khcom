@@ -51,8 +51,6 @@ extern IntrFunc* gIntrTableHBlank;
 extern IntrFunc gIntrTable[14];
 extern const IntrFunc gIntrTableTemplate[14];
 
-void InitSystem(void);
-void InitIntrTable(void);
 void RegisterRamReset(u32 flags);
 void func_080C55DC(void);
 void func_08001010(void);
