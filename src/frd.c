@@ -806,7 +806,92 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
 }
 
-INCLUDE_ASM("frd/task_frd_beast_1.s");
+u8 task_frd_beast_1(FrdBeastWork* work) {
+    FrdBody* body;
+    FrdObj* obj;
+
+    body = &work->unk_020;
+
+    if (gUnk_02039BB0.unk_00C != 8) {
+        return 0;
+    }
+
+    obj = work->unk_14C != 0 ? gUnk_02039B84 : gUnk_02039B9C;
+
+    if (obj->unk_068 & 0x40000000) {
+        return 0;
+    }
+
+    switch (work->unk_148) {
+    case 2:
+        if (work->unk_14E == 0) {
+            m4aSongNumStart(0xBD);
+        }
+
+        if (work->unk_130.timer == 0 && func_08005B34(&work->unk_130) == 2) {
+            work->unk_158 = -0x400;
+            m4aSongNumStart(0x270);
+        }
+
+        if (body->unk_0C < body->unk_10) {
+            body->unk_04 += (work->unk_150 - body->unk_04) >> 4;
+            body->unk_08 += (work->unk_154 - body->unk_08) >> 4;
+        }
+
+        if (work->unk_158 > 0) {
+            if (gUnk_02039B84->unk_10C == 0x99) {
+                func_08011F78(0xA3, body->unk_04, body->unk_08, body->unk_0C - 0x1800, 0x28, 0x14, 0x10);
+            } else {
+                func_08011F78(0xA2, body->unk_04, body->unk_08, body->unk_0C - 0x1800, 0x28, 0x14, 0x10);
+            }
+        }
+
+        if (func_080497E8(work) && AnimIsFinished(&work->unk_130)) {
+            work->unk_148 = 1;
+            work->unk_15C = 0xA1;
+            work->unk_14E = 0;
+            func_0802F1E8();
+            break;
+        }
+
+        work->unk_14E++;
+        break;
+    case 1:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ED90, &work->unk_130, 1, 1, work->unk_018);
+
+            if (work->unk_14D != 2) {
+                m4aSongNumStart(0xBD);
+            }
+        }
+
+        if (body->unk_34 & 4) {
+            body->unk_04 -= 0x380;
+
+            if (body->unk_04 < (gUnk_02039B84->unk_0DA - 0x28) << 8) {
+                return 0;
+            }
+        } else {
+            body->unk_04 += 0x380;
+
+            if (body->unk_04 > (gUnk_02039B84->unk_0DC + 0x28) << 8) {
+                return 0;
+            }
+        }
+
+        if (func_08011F78(work->unk_15C, body->unk_04, body->unk_08, body->unk_0C - 0x1800, 0x28, 0x14, 0x10)) {
+            m4aSongNumStart(0x26F);
+        }
+
+        func_080497E8(work);
+        work->unk_14E++;
+        break;
+    }
+
+    AnimUpdate(&work->unk_130);
+    TaskPoolUpdate(&work->unk_000);
+    return 1;
+}
 
 void task_frd_beast_2(FrdBeastWork* work) {
     FrdBody* body;
