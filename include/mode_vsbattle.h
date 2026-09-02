@@ -91,7 +91,9 @@ typedef struct UnkStruct_02039BB0 {
 } UnkStruct_02039BB0;
 
 typedef struct VsBattleWork {
-    u8 unk_000[0x2C];
+    u8 unk_000[0x24];
+    s32 unk_024;
+    u8 unk_028[0x04];
     TaskPool unk_02C;
     TaskPool unk_040;
     u8 unk_054[0x14];
@@ -120,22 +122,28 @@ typedef struct VsBattleWork {
 typedef struct EmyDef {
     void* unk_00;
     void* unk_04;
+    u32 unk_08;
+    u8 unk_0C[0x06];
+    u16 unk_12;
+    u16 unk_14;
+    u16 unk_16;
+    u16 unk_18;
+    u16 unk_1A;
+    u32 unk_1C;
 } EmyDef;
+
+typedef struct EmyObj {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+} EmyObj;
 
 typedef struct EmyWork {
     void* unk_000;
     void* unk_004;
     void* unk_008;
     void* unk_00C;
-    u32 unk_010;
-    u8 unk_014[0x02];
-    u16 unk_016;
-    u8 unk_018[0x02];
-    u16 unk_01A;
-    u8 unk_01C[0x02];
-    u16 unk_01E;
-    u32 unk_020;
-    u8 unk_024[0x04];
+    AnimState unk_010;
     TaskPool unk_028;
     VsActor unk_03C;
     u32 unk_14C;
@@ -149,10 +157,12 @@ typedef struct EmyWork {
     u8 unk_160;
     u8 unk_161;
     u16 unk_162;
-    u8 unk_164[0x04];
+    u32 unk_164;
     s32 unk_168;
     u32 unk_16C;
-    u8 unk_170[0x0C];
+    s32 unk_170;
+    s32 unk_174;
+    s32 unk_178;
     s32 unk_17C;
     s32 unk_180;
 } EmyWork;
@@ -216,6 +226,10 @@ typedef struct HumDef {
 void ReleaseObjTiles(void* p);
 void ReleaseObjPalette(void* p);
 void* AnimUpdate(void* a);
+void* AnimGetGfx(void* a);
+void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
+
+extern u8 gUnk_08F69BC4[];
 void AnimInit(void* a, void* b, void* c);
 void* AllocObjTiles(u16 size, void* src);
 void* LoadObjPalette(void* src, s32 size);
@@ -232,6 +246,11 @@ void func_08004F08(void);
 void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 s32 func_0801ADAC(void* a);
 void func_08005B64(void* a);
+u16 func_0801AF1C(s32 a);
+u8 func_0801CA00(void* a);
+s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
+void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
+void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void func_0801C2DC(void* a, s32 b);
 void func_0801227C(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
@@ -272,7 +291,9 @@ extern s16 gUnk_08121400[];
 void func_0800CB4C(EmyWork* work);
 u8 _0800CBDC(EmyWork* work);
 s32 _0800E434(HumWork* work);
+void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj);
 void func_0800CD40(EmyWork* work);
+void func_0800DF30(EmyWork* work);
 void func_0800E0D0(EmyWork* work);
 void func_0800CB78(EmyWork* work);
 void mode_vsbattle_0(u32 mode);
