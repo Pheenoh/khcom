@@ -136,4 +136,24 @@ tools:
         - id: asm
           name: Raw assembly
           paths:
-            - asm/
+            - asm/header
+            - asm/crt0
+
+        # The post-code region, split along the boundaries in docs/rom_map.md.
+        # Only the rodata_* units are ever going to be C; the assets are LZ77 and
+        # RLE compressed art and audio that will always be incbin, and keeping
+        # them in a separate bucket is what makes the data percentage legible.
+        - id: rodata
+          name: Data tables & text
+          paths:
+            - asm/rodata_
+
+        - id: assets
+          name: Assets
+          paths:
+            - asm/asset_
+
+        - id: padding
+          name: Padding
+          paths:
+            - asm/padding

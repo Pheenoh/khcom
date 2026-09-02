@@ -99,6 +99,15 @@ snd_stream.c
 @libc.a:memset.o
 @libc.a:strcmp.o
 m4a2.c -O2
-data.s(.rodata)
+rodata_tables.s(.rodata)
+rodata_strings.s(.rodata)
+rodata_tasknames.s(.rodata)
+rodata_script.s(.rodata)
+asset_gfx.s(.rodata)
+asset_fmv.s(.rodata)
+asset_misc1.s(.rodata)
 m4a_tables.c(.rodata)
-data2.s(.rodata)
+asset_misc2.s(.rodata)
+rodata_regtables.s(.rodata)
+rodata_tail.s(.rodata)
+padding.s(.rodata)

@@ -323,9 +323,20 @@ def main():
                                 if owner.get(r[0]) == obj and r[5])
         return addrs[len(addrs) // 2] if addrs else None
 
+    # US splits the post-code region into named units for progress reporting.
+    # Other versions keep the two generated blobs, because their internal
+    # boundaries are not known and the concatenated bytes are identical either
+    # way. Drop the US-only region lines and rebuild the canonical tail below.
+    us_data_units = {
+        "rodata_tables", "rodata_strings", "rodata_tasknames", "rodata_script",
+        "asset_gfx", "asset_fmv", "asset_misc1", "asset_misc2",
+        "rodata_regtables", "rodata_tail", "padding",
+    }
     head, body, tail = [], [], []
     for line in Path("config/us/units.txt").read_text().splitlines():
         t = line.strip()
+        if t.endswith(")") and t.split("(")[0].removesuffix(".s") in us_data_units:
+            continue
         if not t or t.startswith("#") or t.endswith(".s") or "(" in t.split()[0]:
             (tail if t.endswith(")") else head).append(line)
             continue
@@ -335,6 +346,7 @@ def main():
     moved = [l for (k, l), l2 in zip(body, ordered) if l != l2]
     if moved:
         print(f"  units reordered: {len(moved)}")
+    tail = ["data.s(.rodata)"] + tail + ["data2.s(.rodata)"]
     units = head + ordered + tail
 
     tbl_start, _ = tr(0x09D6D4BC)
