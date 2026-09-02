@@ -382,7 +382,46 @@ void func_08102774(void) {
     }
     func_08102728(gUnk_0203C590[6]);
 }
-INCLUDE_ASM("mode_ms/func_081027B4.s");
+u8 func_081027B4(s16 a) {
+    s16 i;
+    s16 k;
+    s16 m;
+    s16 n;
+    s16 v;
+    s32 r;
+
+    for (i = 0; i < 4; i++) {
+        gUnk_02035B08[i] |= 0xFFFFu;
+        for (k = 0; k < 4; k++) {
+            gUnk_02035B18[i][k][0] |= 0xFFFFu;
+        }
+    }
+
+    n = 0;
+    for (i = 0; i < 4; i++) {
+        m = 0;
+        for (k = 0; k < 4; k++) {
+            v = gUnk_099935C0[a][i][k];
+            if (func_081026C4(gUnk_0203C590[6], i, k) == 0) {
+                if (v >= 0) {
+                    gUnk_02035B18[n][m][0] = k;
+                    gUnk_02035B18[n][m][1] = v;
+                    m++;
+                }
+            }
+        }
+        if (m > 0) {
+            gUnk_02035B08[n] = i;
+            n++;
+        }
+    }
+
+    r = 0;
+    if (n > 0) {
+        r = 1;
+    }
+    return r;
+}
 void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy) {
     s16 i;
     s16 j;
