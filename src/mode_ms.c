@@ -940,7 +940,87 @@ u16 func_08103F3C(void) {
     }
     return i % 10;
 }
-INCLUDE_ASM("mode_ms/func_08103F94.s");
+void func_08103F94(s16 a, s16 b) {
+    s16 lo;
+    s16 hi;
+    s16 j;
+    s16 m;
+    s16 k;
+    s16 cnt;
+    u16 total;
+    u16 rnd;
+    u16 acc;
+    u16 id;
+    UnkStruct_099935A8_00** list;
+    UnkStruct_099935A8_00* e;
+    s16 n;
+
+    id = 0;
+    if (a <= 2) {
+        lo = a;
+        hi = a + 1;
+    } else {
+        lo = 0;
+        hi = 3;
+    }
+    total = 0;
+    cnt = 0;
+
+    for (j = lo; j < hi; j++) {
+        cnt += gUnk_099935A8[j].unk_04;
+    }
+    list = EwramAlloc(cnt * 4);
+    k = 0;
+
+    for (j = lo; j < hi; j++) {
+        e = gUnk_099935A8[j].unk_00;
+        n = gUnk_099935A8[j].unk_04;
+        for (m = 0; m < n; m++) {
+            if (e[m].unk_08[b] != 0) {
+                total += e[m].unk_08[b];
+                list[k] = &e[m];
+                k++;
+            }
+        }
+    }
+
+    for (j = 0; j < 5; j++) {
+        rnd = GetRandom() % total;
+        acc = 0;
+        for (m = 0; m < k; m++) {
+            acc += list[m]->unk_08[b];
+            if (rnd < acc) {
+                if (func_0800FC5C(list[m]->unk_04) != 0) {
+                    id = list[m]->unk_00;
+                } else {
+                    switch (gCardDefs[list[m]->unk_00].unk_2A) {
+                        case 0:
+                            id = 0;
+                            break;
+                        case 1:
+                            id = 200;
+                            break;
+                        case 2:
+                            id = 380;
+                            break;
+                    }
+                }
+                id += func_08103F3C();
+                if (gCardDefs[id].unk_2A <= 1) {
+                    if (GetRandom() % 100 <= 9) {
+                        id |= 0x8000;
+                    }
+                }
+                gUnk_02035B58[j] = id;
+                if (func_08084458(id) < 0) {
+                    func_0810155C(func_08060A2C(id));
+                }
+                break;
+            }
+        }
+    }
+    EwramFree(list);
+}
 void func_081041B4(void) {
     u16 keys;
     s16 old;
