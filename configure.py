@@ -138,10 +138,14 @@ with open(ldscript, "w") as f:
         for obj in bss_members:
             f.write(f"        {obj}(.bss);\n")
         f.write("    }\n")
+    # Only place a unit this version actually links. EU builds from a whole-ROM
+    # incbin and has no src/*.o at all, so an unconditional placement makes ld
+    # fail on a missing object.
+    linked = {o for _s, o, _f, _sec in units}
     unit_bss = {}
     for obj, addr in UNIT_BSS.items():
         a = addr[version] if isinstance(addr, dict) else addr
-        if a is not None:
+        if a is not None and f"{build_dir}/{obj}" in linked:
             unit_bss[obj] = a
     for obj, addr in sorted(unit_bss.items(), key=lambda kv: kv[1]):
         f.write(f"\n    .bss.{obj.rsplit('/', 1)[-1].removesuffix('.o')} {addr:#x} (NOLOAD) :\n"
