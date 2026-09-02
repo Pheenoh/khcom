@@ -152,7 +152,82 @@ void func_0800CB78(EmyWork* work) {
     work->unk_03C.unk_10C = ((-gUnk_08121400[work->unk_03C.unk_B0 + 0x40] << 1) * work->unk_03C.unk_A8) >> 8;
 }
 
-INCLUDE_ASM("mode_vsbattle/_0800CBDC.s");
+
+u8 _0800CBDC(EmyWork* work) {
+    VsActor* actor = &work->unk_03C;
+
+    actor->unk_FC = actor->unk_04;
+    actor->unk_100 = actor->unk_08;
+
+    if (work->unk_14C == 3) {
+        return 0;
+    }
+
+    if (work->unk_14C == 10) {
+        return 0;
+    }
+
+    switch (func_0801ADAC(actor)) {
+    case 6:
+        func_0800CB78(work);
+        work->unk_14C = 9;
+        work->unk_154 = 0;
+        break;
+    case 7:
+        work->unk_14C = 15;
+        work->unk_154 = 0;
+        break;
+    case 8:
+        func_0801C2DC(actor, 1);
+        work->unk_14C = 15;
+        work->unk_154 = 0;
+        break;
+    case 1:
+        func_0800CB78(work);
+        work->unk_14C = 1;
+        work->unk_154 = 0;
+        break;
+    case 11:
+        func_0801C2DC(actor, 1);
+        work->unk_14C = 10;
+        work->unk_154 = 0;
+        break;
+    case 3:
+        func_0801C2DC(actor, 1);
+        func_0800CB78(work);
+        work->unk_14C = 3;
+        work->unk_154 = 0;
+        break;
+    case 12:
+        work->unk_14C = 13;
+        work->unk_154 = 0;
+        break;
+    case 2:
+        if (work->unk_14C != 12) {
+            work->unk_14C = 6;
+            work->unk_154 = 0;
+        }
+        break;
+    case 5:
+        work->unk_154 = 0;
+        return 1;
+    case 4:
+        work->unk_14C = 5;
+        work->unk_154 = 0;
+        work->unk_15A = 1;
+        break;
+    case 10:
+        if (work->unk_14C != 12) {
+            work->unk_14C = 12;
+            work->unk_154 = 0;
+            actor->unk_108 = actor->unk_10C = 0;
+        }
+        break;
+    }
+
+    return 0;
+}
+
 void func_0800CD40(EmyWork* work) {
     VsActor* actor = &work->unk_03C;
 
@@ -293,7 +368,73 @@ void func_0800E3D0(HumWork* work) {
     work->unk_040.unk_10C = ((-gUnk_08121400[work->unk_040.unk_B0 + 0x40] << 1) * work->unk_040.unk_A8) >> 8;
 }
 
-INCLUDE_ASM("mode_vsbattle/_0800E434.s");
+s32 _0800E434(HumWork* work) {
+    VsActor* actor = &work->unk_040;
+    s32 r;
+
+    actor->unk_FC = actor->unk_04;
+    actor->unk_100 = actor->unk_08;
+    r = func_0801ADAC(actor);
+
+    switch (r) {
+    case 5:
+        work->unk_154 |= 4;
+        gUnk_02039B9C->unk_068 &= ~0x40000000;
+        work->unk_17E = 0;
+        work->unk_150 = 0;
+        func_08005B64(&work->unk_014);
+        break;
+    case 11:
+        func_08006120(2, 20);
+        gUnk_02039B84->unk_072 = 15;
+
+        if (actor->unk_E8 != 1) {
+            actor->unk_E8 = 1;
+            actor->unk_EC = 0x168;
+        }
+
+        work->unk_170 = 11;
+        work->unk_150 = 0;
+        break;
+    case 6:
+        func_0800E3D0(work);
+        work->unk_170 = 11;
+        work->unk_150 = 0;
+        break;
+    case 7:
+    case 8:
+        work->unk_170 = 14;
+        work->unk_150 = 0;
+        break;
+    case 1:
+        func_0800E3D0(work);
+        work->unk_170 = 1;
+        work->unk_150 = 0;
+        break;
+    case 3:
+        work->unk_154 |= 4;
+        work->unk_170 = 3;
+        work->unk_150 = 0;
+        break;
+    case 2:
+        work->unk_170 = 10;
+        work->unk_150 = 0;
+        break;
+    case 4:
+        work->unk_170 = 9;
+        work->unk_150 = 0;
+        break;
+    case 10:
+        if (work->unk_170 != 13) {
+            work->unk_170 = 13;
+            work->unk_150 = 0;
+            actor->unk_108 = actor->unk_10C = 0;
+        }
+        break;
+    }
+
+    return r;
+}
 
 void func_0800E5CC(HumSub* sub) {
     if (sub != 0) {
