@@ -102,7 +102,7 @@ typedef struct FrdGoofyWork {
     void* unk_01C;
     FrdBody unk_020;
     AnimState unk_130;
-    s32 unk_148;
+    u32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -188,7 +188,7 @@ typedef struct FrdAladdinWork {
     void* unk_01C;
     FrdBody unk_020;
     AnimState unk_130;
-    s32 unk_148;
+    u32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -264,5 +264,10 @@ s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0802F1E8(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08019A30(void);
+void func_0801D288(void);
+u16 GetRandom(void);
+u8 func_080465F0(FrdGoofyWork* work);
+u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
+u8 func_080490FC(FrdAladdinWork* work);
 
 #endif /* GUARD_FRD_H */

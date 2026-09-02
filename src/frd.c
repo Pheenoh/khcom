@@ -179,7 +179,174 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
 }
 
-INCLUDE_ASM("frd/task_frd_goofy_1.s");
+u8 task_frd_goofy_1(FrdGoofyWork* work) {
+    FrdBody* body;
+    FrdObj* obj;
+    s32 t;
+
+    body = &work->unk_020;
+    obj = work->unk_14C != 0 ? gUnk_02039B84 : gUnk_02039B9C;
+
+    if (obj->unk_068 & 0x40000000) {
+        return 0;
+    }
+
+    switch (work->unk_148) {
+    case 0:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813EBFC, &work->unk_130, 0, 0, work->unk_018);
+            work->unk_14E++;
+        }
+
+        body->unk_04 += (work->unk_158 - body->unk_04) >> 4;
+        func_0801A8A4(&body->unk_04, &body->unk_08, -16, 0);
+
+        if (func_080465F0(work)) {
+            work->unk_148 = 1;
+            work->unk_14E = 0;
+            m4aSongNumStart(0xB2);
+        }
+        break;
+    case 1:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813EBFC, &work->unk_130, 1, 0, work->unk_018);
+        }
+
+        if (AnimIsFinished(&work->unk_130)) {
+            switch (work->unk_14D) {
+            case 0:
+            case 1:
+                work->unk_148 = 4;
+                break;
+            case 2:
+                work->unk_148 = 5;
+                break;
+            }
+
+            work->unk_14E = 0;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 2:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813EBFC, &work->unk_130, 1, 0, work->unk_018);
+        }
+
+        if (AnimIsFinished(&work->unk_130)) {
+            work->unk_148 = 3;
+            work->unk_14E = 0;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 3:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813EBFC, &work->unk_130, 0, 0, work->unk_018);
+
+            if (body->unk_34 & 4) {
+                work->unk_158 = (gUnk_02039B84->unk_0DA - 0x40) << 8;
+            } else {
+                work->unk_158 = (gUnk_02039B84->unk_0DC + 0x40) << 8;
+            }
+
+            work->unk_154 = -0x500;
+            work->unk_150 = 30;
+        }
+
+        ApproachValue(&body->unk_04, work->unk_158, work->unk_150);
+        func_080465F0(work);
+
+        if (work->unk_150 <= 0) {
+            return 0;
+        }
+
+        work->unk_14E++;
+        work->unk_150--;
+        break;
+    case 4:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813EBFC, &work->unk_130, 2, 0, work->unk_018);
+
+            if (body->unk_34 & 4) {
+                work->unk_158 = body->unk_04 - 0x8500;
+            } else {
+                work->unk_158 = body->unk_04 + 0x8500;
+            }
+        }
+
+        if (work->unk_14E == 40) {
+            work->unk_15C = work->unk_014->unk_008;
+        }
+
+        if (work->unk_14E > 39) {
+            body->unk_04 += (work->unk_158 - body->unk_04) >> 4;
+            body->unk_08 += (work->unk_15C - body->unk_08) >> 4;
+
+            if (body->unk_34 & 4
+                    ? func_08011F78(work->unk_14D + 120, body->unk_04 - 0xF00, body->unk_08, body->unk_0C, 0x1E, 0x0C, 0x30)
+                    : func_08011F78(work->unk_14D + 120, body->unk_04 + 0xF00, body->unk_08, body->unk_0C, 0x1E, 0x0C, 0x30)) {
+                m4aSongNumStart(0x20A);
+            }
+
+            func_0801A8A4(&body->unk_04, &body->unk_08, -16, 0);
+        }
+
+        func_080465F0(work);
+
+        if (AnimIsFinished(&work->unk_130)) {
+            work->unk_148 = 2;
+            work->unk_14E = 0;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 5:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813EBFC, &work->unk_130, 3, 0, work->unk_018);
+        }
+
+        func_080465F0(work);
+
+        if (AnimIsFinished(&work->unk_130)) {
+            work->unk_148 = 6;
+            work->unk_14E = 0;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 6:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813EBFC, &work->unk_130, 4, 1, work->unk_018);
+            work->unk_160 = GetRandom();
+        }
+
+        work->unk_158 = work->unk_014->unk_004 + (gSineTable[work->unk_160] << 6);
+        work->unk_15C = work->unk_014->unk_008 - (gSineTable[work->unk_160 + 0x40] << 5);
+        body->unk_04 += (work->unk_158 - body->unk_04) >> 3;
+        body->unk_08 += (work->unk_15C - body->unk_08) >> 3;
+        func_0801A8A4(&body->unk_04, &body->unk_08, -16, 0);
+        work->unk_160 += 4;
+
+        if (func_08011F78(0x7A, body->unk_04, body->unk_08, body->unk_0C, 0x23, 0x1C, 0x30)) {
+            m4aSongNumStart(0x20A);
+        }
+
+        func_080465F0(work);
+
+        if (work->unk_14E > 179) {
+            work->unk_148 = 2;
+            work->unk_14E = 0;
+        }
+
+        work->unk_14E++;
+        break;
+    }
+
+    AnimUpdate(&work->unk_130);
+    TaskPoolUpdate(&work->unk_000);
+    return 1;
+}
 
 void task_frd_goofy_2(FrdGoofyWork* work) {
     FrdBody* body;
