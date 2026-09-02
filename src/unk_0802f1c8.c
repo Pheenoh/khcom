@@ -57,10 +57,12 @@ s32 task_btl_map_1(BtlMapWork* work) {
     s32 dy;
 
     func_0802F208();
+
     if (gUnk_02039B84->unk_01A > 0) {
         func_0800592C(&gUnk_02039B84->unk_024, gUnk_02039B84->unk_028, gUnk_02039B84->unk_01A);
         func_0800592C(&gUnk_02039B84->unk_008, gUnk_02039B84->unk_01C, gUnk_02039B84->unk_01A);
         func_0800592C(&gUnk_02039B84->unk_00C, gUnk_02039B84->unk_020, gUnk_02039B84->unk_01A);
+
         if (gUnk_02039B84->unk_028 == 0x100) {
             func_0800592C(&work->unk_00, gUnk_02039B84->unk_0DA << 8, gUnk_02039B84->unk_01A);
             func_0800592C(&work->unk_04, gUnk_02039B84->unk_0DC << 8, gUnk_02039B84->unk_01A);
@@ -76,6 +78,7 @@ s32 task_btl_map_1(BtlMapWork* work) {
     } else if (gUnk_02039B84->unk_024 == 0x100) {
         dx = (gUnk_02039B84->unk_010 - gUnk_02039B84->unk_008) >> 3;
         dy = (gUnk_02039B84->unk_014 - gUnk_02039B84->unk_00C) >> 3;
+
         if (dx > 0x400) {
             dx = 0x400;
         } else if (dx < -0x400) {
@@ -92,6 +95,7 @@ s32 task_btl_map_1(BtlMapWork* work) {
     }
     gUnk_02039B84->unk_000 = gUnk_02039B84->unk_008;
     gUnk_02039B84->unk_004 = gUnk_02039B84->unk_00C;
+
     if (gUnk_0203492C != 0) {
         gUnk_02039B84->unk_018 = (gUnk_02034930 >> 8) / 3;
     }

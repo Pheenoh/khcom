@@ -4,6 +4,7 @@
 
 void task_btl_shadow_0(BtlShadowWork* work, BtlActor* actor) {
     work->unk_08 = actor;
+
     if (actor->unk_034 & 0x80000) {
         work->unk_00 = LoadObjTiles(gUnk_08B22CE4, 0x200);
         work->unk_0C = gUnk_08B22CBC;
@@ -31,6 +32,7 @@ void task_btl_shadow_2(BtlShadowWork* work) {
     if (actor->unk_0CC != 0) {
         if (!(actor->unk_034 & 0x0000000402000000)) {
             anim = func_0801AF1C(actor->unk_008);
+
             if (actor->unk_00C >= 0 && gUnk_02039B84->unk_024 == 0x100) {
                 aff = 0;
             } else {
@@ -148,6 +150,7 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
         work->unk_28 = 0;
     } else {
         AnimStart(&work->unk_2C, 11, 1);
+
         switch (work->unk_64) {
         case 0:
             work->unk_28 = gUnk_08B23E7C;
@@ -482,6 +485,7 @@ s32 task_btl_hpenm_1(BtlHpenmWork* work) {
     if (work->unk_18 != actor) {
         work->unk_18 = actor;
         work->unk_1E = actor->unk_02C;
+
         if (actor->unk_02E <= 80) {
             work->unk_1C = 0;
         } else if (actor->unk_02E <= 160) {
@@ -703,6 +707,7 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
         } else {
             ApproachValue(&work->unk_14, 0x7800, work->unk_24);
             ApproachValue(&work->unk_1C, 0x7800, work->unk_24);
+
             if (work->unk_24 > 1) {
                 work->unk_24--;
             }
@@ -821,6 +826,7 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
 
 s32 task_btl_pop_1(BtlPopWork* work) {
     work->unk_2C -= 0xC0;
+
     if (work->unk_30 > 49) {
         return 0;
     }
@@ -873,6 +879,7 @@ s32 task_btl_escape_1(BtlEscapeWork* work) {
         } else {
             work->unk_22 = 1;
             work->unk_14 = (work->unk_1C << 8) / work->unk_18;
+
             if (work->unk_1C >= work->unk_18) {
                 gUnk_02039BB0.unk_008 |= 0x40;
                 gUnk_02039B84->unk_068 |= 0x10;
@@ -931,6 +938,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     work->unk_04 = src->unk_04;
     work->unk_08 = src->unk_08;
     work->unk_0C = 0;
+
     if (gUnk_02039B84->unk_128 != 0) {
         gUnk_02039B84->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
     }
@@ -943,6 +951,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     work->unk_28 = 0;
     work->unk_1C = gUnk_08B208E8;
     work->unk_2C = 3;
+
     if (src->unk_14 != 0) {
         work->unk_2C = 11;
     }
@@ -1045,6 +1054,7 @@ void task_btl_prize_2(BtlPrizeWork* work) {
         aff = AllocObjAffine(0, gUnk_02039B84->unk_024, gUnk_02039B84->unk_024, 1);
         DrawSprite(x, y, work->unk_18, work->unk_10, work->unk_14, aff, pri,
                    (u16)(-4100 - (work->unk_04 >> 8) * 4));
+
         if (work->unk_2C & 2) {
             WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_0C);
             DrawSprite(x, y, work->unk_1C, work->unk_10, work->unk_14, aff, pri, 0xFFFF);
@@ -1066,6 +1076,7 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     work->unk_04 = src->unk_04;
     work->unk_08 = src->unk_08;
     work->unk_0C = 0;
+
     if (gUnk_02039B84->unk_128 != 0) {
         gUnk_02039B84->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
     }
@@ -1081,6 +1092,7 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     work->unk_28 = 0;
     work->unk_1C = gUnk_08B208E8;
     work->unk_2C = 3;
+
     if (src->unk_14 != 0) {
         work->unk_2C = 11;
     }
@@ -1108,6 +1120,7 @@ void task_btl_premire_2(BtlPremireWork* work) {
         aff = AllocObjAffine(0, gUnk_02039B84->unk_024, gUnk_02039B84->unk_024, 1);
         DrawSprite(x, y, work->unk_18, work->unk_10, work->unk_14, aff, anim,
                    (u16)(-4100 - (work->unk_04 >> 8) * 4));
+
         if (work->unk_2C & 2) {
             WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_0C);
             DrawSprite(x, y, work->unk_1C, work->unk_10, work->unk_14, aff, anim, 0xFFFF);
@@ -1268,6 +1281,7 @@ u8 func_08031EC4(FldActor* act) {
     a = act->unk_00;
     a.unk_00 += gSineTable[act->unk_14] * 8;
     a.unk_04 -= gSineTable[act->unk_14 + 64] * 8;
+
     if (func_080DFCDC(&a) != 0) {
         return 1;
     }
@@ -1300,6 +1314,7 @@ void func_08031F60(FldActor* act) {
     u8 old = act->unk_14;
 
     func_08031BC4(act);
+
     if (old != act->unk_14) {
         s32 v;
 

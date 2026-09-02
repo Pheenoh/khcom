@@ -135,11 +135,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x20) {
         k->on[0]++;
         k->off[0] = 0;
+
         if (k->on[0] > 32) {
             k->on[0] = 29;
         }
     } else {
         k->on[0] = 0;
+
         if (k->off[0] < 255) {
             k->off[0]++;
         }
@@ -148,11 +150,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x10) {
         k->on[1]++;
         k->off[1] = 0;
+
         if (k->on[1] > 32) {
             k->on[1] = 29;
         }
     } else {
         k->on[1] = 0;
+
         if (k->off[1] < 255) {
             k->off[1]++;
         }
@@ -161,11 +165,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x40) {
         k->on[2]++;
         k->off[2] = 0;
+
         if (k->on[2] > 32) {
             k->on[2] = 29;
         }
     } else {
         k->on[2] = 0;
+
         if (k->off[2] < 255) {
             k->off[2]++;
         }
@@ -174,11 +180,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x80) {
         k->on[3]++;
         k->off[3] = 0;
+
         if (k->on[3] > 32) {
             k->on[3] = 29;
         }
     } else {
         k->on[3] = 0;
+
         if (k->off[3] < 255) {
             k->off[3]++;
         }
@@ -187,11 +195,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x200) {
         k->on[6]++;
         k->off[6] = 0;
+
         if (k->on[6] > 32) {
             k->on[6] = 29;
         }
     } else {
         k->on[6] = 0;
+
         if (k->off[6] < 255) {
             k->off[6]++;
         }
@@ -200,11 +210,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x100) {
         k->on[7]++;
         k->off[7] = 0;
+
         if (k->on[7] > 32) {
             k->on[7] = 29;
         }
     } else {
         k->on[7] = 0;
+
         if (k->off[7] < 255) {
             k->off[7]++;
         }
@@ -213,11 +225,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x1) {
         k->on[4]++;
         k->off[4] = 0;
+
         if (k->on[4] > 32) {
             k->on[4] = 29;
         }
     } else {
         k->on[4] = 0;
+
         if (k->off[4] < 255) {
             k->off[4]++;
         }
@@ -226,11 +240,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x2) {
         k->on[5]++;
         k->off[5] = 0;
+
         if (k->on[5] > 32) {
             k->on[5] = 29;
         }
     } else {
         k->on[5] = 0;
+
         if (k->off[5] < 255) {
             k->off[5]++;
         }
@@ -239,11 +255,13 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x8) {
         k->on[8]++;
         k->off[8] = 0;
+
         if (k->on[8] > 32) {
             k->on[8] = 29;
         }
     } else {
         k->on[8] = 0;
+
         if (k->off[8] < 255) {
             k->off[8]++;
         }
@@ -252,16 +270,19 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
     if (k->held & 0x4) {
         k->on[9]++;
         k->off[9] = 0;
+
         if (k->on[9] > 32) {
             k->on[9] = 29;
         }
     } else {
         k->on[9] = 0;
+
         if (k->off[9] < 255) {
             k->off[9]++;
         }
     }
     k->rep = 0;
+
     if (k->on[0] == 1 || k->on[0] == 32) {
         k->rep |= 0x20;
     }

@@ -31,6 +31,7 @@ void mode_sio_btl_connect_0(s32 arg) {
 void mode_sio_btl_connect_1(void) {
     s32 i;
     s32 j;
+
     switch (gUnk_02034B3C->unk_04) {
     case 0:
         func_080C54B4();
@@ -63,6 +64,7 @@ void mode_sio_btl_connect_1(void) {
             gUnk_0203AA8C = 1;
             gUnk_0203AA58[0] = 6;
             gUnk_0203AA58[1] = 6;
+
             for (i = 0; i < 2; i++) {
                 for (j = 0; j < 20; j++) {
                     gUnk_0203AA60[i][j] = 0;
@@ -103,10 +105,12 @@ void func_080AEE84(void) {
     s32 i;
     s32 flags;
     gUnk_0203AA88 = 0;
+
     for (i = 0; i < 13; i++) {
         gUnk_0203AAA0[i] = 0;
     }
     flags = 0x1FFE;
+
     for (i = 1; i < 14; i++) {
         if ((flags >> i) & 1) {
             gUnk_0203AAA0[gUnk_0203AA88 + 1] = i;
@@ -165,6 +169,7 @@ void func_080AF0B0(void) {
 #ifndef VERSION_JP
 void func_080AF11C(void) {
     s32 i;
+
     if (gUnk_02034B40->unk_21A == 1) {
         gUnk_02034B40->unk_1B4 = 1;
         gUnk_02034B40->unk_000 = 1;
@@ -183,6 +188,7 @@ void func_080AF11C(void) {
     gUnk_02034B40->unk_416 = 0;
     gUnk_02034B40->unk_418 = 0;
     func_08005690(2, 0, 256, 256, 0x10000, 0x16800);
+
     for (i = 0; i < 2; i++) {
         gUnk_02034B40->unk_008[i] = AllocObjTiles(0xC80, 0);
         AnimInit(&gUnk_02034B40->unk_020[i], 0, 0);
@@ -229,6 +235,7 @@ void func_080AF11C(void) {
     gUnk_02034B40->unk_20C[1] = LoadObjPalette(gUnk_096FBDA4, 32);
     gUnk_02034B40->unk_204[1] = gUnk_09EF3904[0];
     gUnk_02034B40->unk_214[1] = gUnk_0203AA58[1];
+
     if (gUnk_02039828 == 0) {
         gUnk_02034B40->unk_216 = gUnk_0203AA58[0];
     } else {
@@ -342,8 +349,10 @@ void func_080AF70C(void) {
     func_080664D8(136, 144, gUnk_02034B40->unk_154, gUnk_02034B40->unk_1A4, 0xF200, gUnk_02034B40->unk_150);
     DrawSprite(-((gUnk_02034B40->unk_1FA >> 3) % 4) + 88, 2, gUnk_02034B40->unk_1EC, gUnk_02034B40->unk_1E4, gUnk_02034B40->unk_1E8, 0, 0, 0xFF00);
     DrawSprite(224 + ((gUnk_02034B40->unk_1FA >> 3) % 4), 2, gUnk_02034B40->unk_1F0, gUnk_02034B40->unk_1E4, gUnk_02034B40->unk_1E8, 0, 0, 0xFF00);
+
     if (gUnk_02034B40->unk_1B4 == 1) {
         DrawSprite(72, 38, gUnk_02034B40->unk_1B0, gUnk_02034B40->unk_1A8, gUnk_02034B40->unk_1AC, 0, 0, 0x200);
+
         if (gUnk_02034B40->unk_1E0 == 1) {
             func_0805F1C0(&gUnk_02034B40->unk_1DC, gUnk_02034B40->unk_000 * 4608 + 10752);
             DrawSprite(64, gUnk_02034B40->unk_1DC >> 8, gUnk_02034B40->unk_1C0, gUnk_02034B40->unk_1B8, gUnk_02034B40->unk_1BC, 0, 0, 0x100);
@@ -356,6 +365,7 @@ void func_080AF70C(void) {
     }
     DrawSprite(32, 24, gUnk_02034B40->unk_204[0], gUnk_02034B40->unk_1FC[0], gUnk_02034B40->unk_20C[0], 0, 0, 0xF100);
     DrawSprite(132, 24, gUnk_02034B40->unk_204[1], gUnk_02034B40->unk_1FC[1], gUnk_02034B40->unk_20C[1], 0, 0, 0xF100);
+
     if (gUnk_02034B40->unk_1F8 == 1) {
         DrawSprite(gUnk_02039828 * 101 + 44 + gUnk_09EF14B8[gUnk_02034B40->unk_216], -((gUnk_02034B40->unk_1FA >> 3) % 4) / 2 + 22, gUnk_02034B40->unk_1F4, gUnk_02034B40->unk_1E4, gUnk_02034B40->unk_1E8, 0, 0, 0xF000);
     }
@@ -365,6 +375,7 @@ void func_080AF70C(void) {
 void func_080AFA90(void) {
     if (gUnk_02034B40->unk_006 > 4) {
         gUnk_02034B40->unk_006 = 0;
+
         if (gUnk_02034B40->unk_21A == 1) {
             gUnk_02034B40->unk_002 = 6;
         } else {
@@ -382,6 +393,7 @@ void func_080AFA90(void) {
 void func_080AFADC(void) {
     s8 v = 0;
     gUnk_02039B58[1] |= 5;
+
     if (GetKeysPressed() & 1) {
         gUnk_02039B58[1] |= 0x1F20;
     } else if (GetKeysPressed() & 2) {
@@ -424,6 +436,7 @@ void func_080AFADC(void) {
         }
     } else if ((gUnk_02039810[1][0] & 0xFFF0) == 0x1F20) {
         gUnk_02034B40->unk_416 = 10;
+
         if (gUnk_02039828 == 0) {
             m4aSongNumStart(103);
             gUnk_02034B40->unk_1B4 = 1;
@@ -431,6 +444,7 @@ void func_080AFADC(void) {
         }
     } else if ((gUnk_02039810[1][1] & 0xFFF0) == 0x1F20) {
         gUnk_02034B40->unk_416 = 10;
+
         if (gUnk_02039828 == 1) {
             m4aSongNumStart(103);
             gUnk_02034B40->unk_1B4 = 1;
@@ -441,6 +455,7 @@ void func_080AFADC(void) {
     func_080B1064();
     func_080B06D4();
     func_080B0874();
+
     if (gUnk_02034B40->unk_416 > 0) {
         gUnk_02034B40->unk_416--;
     }
@@ -450,6 +465,7 @@ void func_080AFADC(void) {
 void func_080AFCD4(void) {
     s8 v = 0;
     gUnk_02039B58[1] = 6;
+
     if (GetKeysPressed() & DPAD_UP) {
         m4aSongNumStart(101);
         gUnk_02034B40->unk_000--;
@@ -492,6 +508,7 @@ void func_080AFCD4(void) {
 
     if (GetKeysPressed() & 1) {
         m4aSongNumStart(102);
+
         switch (gUnk_02034B40->unk_000) {
         case 0:
             if (gUnk_02039828 == 0) {
@@ -567,11 +584,13 @@ void func_080AFEFC(void) {
 void func_080B0010(void) {
     s8 a = gUnk_0203AAA0[gUnk_0203AA90];
     s8 b = gUnk_0203AAA0[gUnk_0203AA00];
+
     switch (gUnk_02034B40->unk_410) {
     case 0:
         gUnk_02034B40->unk_006++;
         if (gUnk_02034B40->unk_006 > 1) {
             gUnk_02034B40->unk_006 = 0;
+
             if (gUnk_02034B40->unk_004 > 31) {
                 gUnk_02034B40->unk_004 = 32;
                 gUnk_02034B40->unk_410++;
@@ -597,6 +616,7 @@ void func_080B0010(void) {
         gUnk_02034B40->unk_006++;
         if (gUnk_02034B40->unk_006 > 1) {
             gUnk_02034B40->unk_006 = 0;
+
             if (gUnk_02034B40->unk_004 <= 0) {
                 gUnk_02034B40->unk_004 = 0;
                 func_080B13D0();
@@ -709,6 +729,7 @@ void func_080B0440(void) {
     gUnk_02034B40->unk_006++;
     if (gUnk_02034B40->unk_006 > 20) {
         gUnk_02039B58[1] = 0x7CD2;
+
         if (gUnk_02039810[1][0] == 0x7CD2 && gUnk_02039810[1][1] == 0x7CD2) {
             gUnk_02034B40->unk_006 = 0;
             gUnk_03006C78 &= 0xFFEF;
@@ -723,6 +744,7 @@ void func_080B0494(void) {
         gUnk_02034B40->unk_006 = 0;
         func_080C5DC0(func_080C5E58, func_080C5ECC);
         func_080B0F18();
+
         if (gUnk_02039828 == 0) {
             ModeRequest(&gUnk_09ED9B98, 0);
         } else {
@@ -762,6 +784,7 @@ void mode_sio_btl_option_2(void) {
 void func_080B0634(void) {
     if (gUnk_02039810[1][0] == 0x2FCF) {
         RequestDma3Copy(gUnk_096B2724, (void*)0x06000020, 0xC0);
+
         if (gUnk_02034B40->unk_217 == 0) {
             func_080AEED8(0, 1, 1);
         }
@@ -770,6 +793,7 @@ void func_080B0634(void) {
 
     if (gUnk_02039810[1][1] == 0x6AD6) {
         RequestDma3Copy(gUnk_096B2B24, (void*)0x06000300, 0xC0);
+
         if (gUnk_02034B40->unk_218 == 0) {
             func_080AEED8(1, 1, 1);
         }
@@ -783,6 +807,7 @@ void func_080B06D4(void) {
     if (x != 0 || y != 0) {
         if (x <= 12 && y <= 12) {
             gUnk_0203AA90 = gUnk_0203AA00;
+
             if (x > y) {
                 gUnk_0203AA00 = x;
             } else if (x < y) {
@@ -807,6 +832,7 @@ void func_080B0754(void) {
     s32 i;
     buf[0] = (gUnk_02039810[2][0] & 0xF0) >> 4;
     buf[1] = (gUnk_02039810[2][1] & 0xF0) >> 4;
+
     if (buf[0] >= 1 && buf[0] <= 11) {
         gUnk_0203AA58[0] = buf[0];
     }
@@ -819,6 +845,7 @@ void func_080B0754(void) {
         u16 n = (gUnk_02039810[2][0] >> 12) - 1;
         gUnk_0203AAE0[0][n * 2] = gUnk_02039810[3][0];
         gUnk_0203AAE0[0][n * 2 + 1] = gUnk_02039810[3][0] >> 8;
+
         if (n == 9) {
             for (i = 0; i < 20; i++) {
                 gUnk_0203AA60[0][i] = gUnk_0203AAE0[0][i];
@@ -830,6 +857,7 @@ void func_080B0754(void) {
         u16 n = (gUnk_02039810[2][1] >> 12) - 1;
         gUnk_0203AAE0[1][n * 2] = gUnk_02039810[3][1];
         gUnk_0203AAE0[1][n * 2 + 1] = gUnk_02039810[3][1] >> 8;
+
         if (n == 9) {
             for (i = 0; i < 20; i++) {
                 gUnk_0203AA60[1][i] = gUnk_0203AAE0[1][i];
@@ -865,6 +893,7 @@ void func_080B0874(void) {
         u16 n = (gUnk_02039810[2][0] >> 12) - 1;
         gUnk_0203AAE0[0][n * 2] = gUnk_02039810[3][0];
         gUnk_0203AAE0[0][n * 2 + 1] = gUnk_02039810[3][0] >> 8;
+
         if (n == 9) {
             for (i = 0; i < 20; i++) {
                 gUnk_0203AA60[0][i] = gUnk_0203AAE0[0][i];
@@ -878,6 +907,7 @@ void func_080B0874(void) {
         u16 n = (gUnk_02039810[2][1] >> 12) - 1;
         gUnk_0203AAE0[1][n * 2] = gUnk_02039810[3][1];
         gUnk_0203AAE0[1][n * 2 + 1] = gUnk_02039810[3][1] >> 8;
+
         if (n == 9) {
             for (i = 0; i < 20; i++) {
                 gUnk_0203AA60[1][i] = gUnk_0203AAE0[1][i];
@@ -893,6 +923,7 @@ INCLUDE_ASM("mode_sio/func_080B0F18.s");
 
 void func_080B1064(void) {
     u8 buf[2];
+
     if (gUnk_02039828 == 0) {
         gUnk_02039B58[2] |= (gUnk_0203AA58[0] & 15) << 4;
     } else {
@@ -900,6 +931,7 @@ void func_080B1064(void) {
     }
     buf[0] = (gUnk_02039810[2][0] & 0xF0) >> 4;
     buf[1] = (gUnk_02039810[2][1] & 0xF0) >> 4;
+
     if (buf[0] >= 1 && buf[0] <= 11) {
         gUnk_02034B40->unk_214[0] = buf[0];
         gUnk_0203AA58[0] = gUnk_02034B40->unk_214[0];
@@ -1012,11 +1044,13 @@ void func_080B13D0(void) {
 
 void mode_sio_btl_cardget_0(s32 arg) {
     gUnk_03006C78 |= 0x10;
+
     if (gUnk_0203C374 == 1) {
         func_080C57A4();
         gUnk_0203C374 = 0;
     }
     gUnk_02034B44 = EwramAlloc(sizeof(SioBtlCardgetWork));
+
     if (arg == 0) {
         gUnk_02034B44->unk_06 = 0;
     } else {
@@ -1048,6 +1082,7 @@ void func_080B15A4(void) {
     EnableBg(1);
     EnableBg(2);
     DisableBg(3);
+
     if (gUnk_02034B44->unk_06 == 0) {
         gUnk_0203A9EC++;
         if (gUnk_0203A9EC > 0x270F) {
@@ -1283,6 +1318,7 @@ void func_080B1BFC(void) {
 
 void func_080B1C14(void) {
     s32 i;
+
     if (gUnk_02039828 == 0) {
         gUnk_0203AB10 = 0;
     } else {
@@ -1359,9 +1395,11 @@ void func_080B1E70(void) {
     gUnk_02034B4C->unk_07C = gUnk_09EF150C[gUnk_02034B4C->unk_076].unk_02;
     gUnk_02034B4C->unk_078 = gUnk_02034B4C->unk_076;
     gUnk_02034B4C->unk_074 = 1;
+
     for (i = 0; i < 2; i++) {
         gUnk_02034B4C->unk_008[i] = AllocObjTiles(0xC80, 0);
         AnimInit(&gUnk_02034B4C->unk_020[i], 0, 0);
+
         if (gUnk_0203AB34[i] == 0) {
             func_080B1C70(i, 0, 0);
         } else {
@@ -1387,6 +1425,7 @@ void func_080B1E70(void) {
     AnimInit(&gUnk_02034B4C->unk_08C, gUnk_09EF38B4, gUnk_09EF3894);
     AnimStart(&gUnk_02034B4C->unk_08C, 0, 1);
     gUnk_02034B4C->unk_088 = AnimGetGfx(&gUnk_02034B4C->unk_08C);
+
     for (i = 0; i < 10; i++) {
         if (gUnk_0203AB20[i] == 0x800) {
             gUnk_02034B4C->unk_0A5[i] = 0;
@@ -1502,6 +1541,7 @@ void func_080B2420(void) {
 void func_080B2480(void) {
     gUnk_02039B58[2] = (GetKeysPressed() & 0x0FFF) | 0x5000;
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gUnk_02034B4C->unk_202 + 1) & 0x0FFF);
+
     if (gUnk_02034B4C->unk_0A4 == 0) {
         func_080B3354();
     } else {
@@ -1561,6 +1601,7 @@ void func_080B2480(void) {
         }
     } else if (gUnk_02039810[1][0] == 0x1D58) {
         gUnk_02034B4C->unk_BE0 = 10;
+
         if (gUnk_02039828 == 0) {
             m4aSongNumStart(102);
             gUnk_0203AB10 = gUnk_02034B4C->unk_076;
@@ -1568,6 +1609,7 @@ void func_080B2480(void) {
         }
     } else if (gUnk_02039810[1][1] == 0x1D58) {
         gUnk_02034B4C->unk_BE0 = 10;
+
         if (gUnk_02039828 == 1) {
             m4aSongNumStart(102);
             gUnk_0203AB10 = gUnk_02034B4C->unk_076;
@@ -1576,6 +1618,7 @@ void func_080B2480(void) {
     }
     func_080B2FC0();
     func_080B3204();
+
     if (gUnk_02034B4C->unk_BE0 > 0) {
         gUnk_02034B4C->unk_BE0--;
     }
@@ -1660,6 +1703,7 @@ void func_080B29BC(void) {
 
 void func_080B29D8(void) {
     TaskPoolUpdate(gUnk_02034B4C->unk_BE4);
+
     if (func_080C5930() == 0) {
         if (gUnk_0203A9E4 == 0) {
             if (gUnk_02039BB0.unk_08 & 0x10) {
@@ -1678,6 +1722,7 @@ void func_080B29D8(void) {
 
 void func_080B2A5C(void) {
     TaskPoolUpdate(gUnk_02034B4C->unk_BE4);
+
     if (gUnk_02034B4C->unk_004 == 80) {
         gUnk_02034B4C->unk_20C = 0;
     }
@@ -1715,6 +1760,7 @@ void func_080B2B48(void) {
 void func_080B2B78(void) {
     s32 i;
     gUnk_02039B58[1] = 0x25FD;
+
     if (gUnk_02039810[1][0] == 0x25FD || gUnk_02039810[1][1] == 0x25FD) {
         if (gUnk_02039828 == 0) {
             gUnk_0203AB10 = 0;
@@ -1741,6 +1787,7 @@ void mode_sio_chg_card_2(void) {
     ReleaseObjPalette(gUnk_02034B4C->unk_054);
     ReleaseObjTiles(gUnk_02034B4C->unk_080);
     ReleaseObjPalette(gUnk_02034B4C->unk_084);
+
     for (i = 0; i < 10; i++) {
         ReleaseObjTiles(gUnk_02034B4C->unk_100[i]);
         ReleaseObjPalette(gUnk_02034B4C->unk_128[i]);
@@ -1763,6 +1810,7 @@ void func_080B2CD0(void) {
     gUnk_02034B4C->unk_088 = AnimUpdate(&gUnk_02034B4C->unk_08C);
     DrawSprite(72, 72, gUnk_02034B4C->unk_018[0], gUnk_02034B4C->unk_008[0], gUnk_02034B4C->unk_008[2], 0, 0x401, 0xFFFF);
     DrawSprite(168, 72, gUnk_02034B4C->unk_018[1], gUnk_02034B4C->unk_008[1], gUnk_02034B4C->unk_008[3], 0, 0x400, 0xFFFF);
+
     if (gUnk_02034B4C->unk_074 == 1) {
         DrawSprite(gUnk_02034B4C->unk_07A, gUnk_02034B4C->unk_07C, gUnk_02034B4C->unk_058, gUnk_02034B4C->unk_050, gUnk_02034B4C->unk_054, 0, 0x400, 0xFFC0);
         DrawSprite(gUnk_02034B4C->unk_07A + 2, gUnk_02034B4C->unk_07C - 8, gUnk_02034B4C->unk_088, gUnk_02034B4C->unk_080, gUnk_02034B4C->unk_084, 0, 0x400, 0xFFA0);
@@ -1772,6 +1820,7 @@ void func_080B2CD0(void) {
         if (gUnk_02034B4C->unk_0A5[i] == 1) {
             aff = AllocObjAffine(gUnk_02034B4C->unk_1F8[i], gUnk_02034B4C->unk_1A8[i], gUnk_02034B4C->unk_1D0[i], 1);
             DrawSprite((gUnk_02034B4C->unk_0B0[i] >> 8) + 16, (gUnk_02034B4C->unk_0D8[i] >> 8) + 20, gUnk_02034B4C->unk_150[i], gUnk_02034B4C->unk_100[i], gUnk_02034B4C->unk_128[i], aff, 0x400, 0xFFF0);
+
             if (gCardDefs[gUnk_0203AB20[i]].unk_2A != 3) {
                 DrawSprite((gUnk_02034B4C->unk_0B0[i] >> 8) + 13, (gUnk_02034B4C->unk_0D8[i] >> 8) + 16, gUnk_02034B4C->unk_180[i], gUnk_02034B4C->unk_178, gUnk_02034B4C->unk_17C, aff, 0x400, 0xFFE0);
             }
@@ -1802,6 +1851,7 @@ void func_080B2FC0(void) {
 void func_080B2FEC(u16 a) {
     u16 slot;
     s32 i;
+
     if (a != 0) {
         i = a;
         i = i >> 12;
@@ -1815,6 +1865,7 @@ void func_080B2FEC(u16 a) {
             gUnk_02034B4C->unk_150[i] = gCardDefs[0].unk_10;
             gUnk_02034B4C->unk_180[i] = gUnk_09EE981C[0];
             gUnk_0203AB20[i] = slot;
+
             if (gUnk_02034B4C->unk_360 == 1) {
                 if (i == gUnk_02034B4C->unk_076) {
                     func_080B3A48();
@@ -1835,6 +1886,7 @@ void func_080B2FEC(u16 a) {
 
 void func_080B31A0(void) {
     gUnk_02039B58[2] = 0x6000;
+
     if (gUnk_02039810[0][0] == 0xACD) {
         func_080B31D8(gUnk_02039810[3][0]);
     }
@@ -1847,6 +1899,7 @@ void func_080B31A0(void) {
 void func_080B31D8(u16 a) {
     u16 slot;
     s32 i;
+
     if (a != 0) {
         i = a;
         i = i >> 12;
@@ -1867,6 +1920,7 @@ void func_080B3354(void) {
     s16 v;
     k1 = GetKeysPressed();
     k2 = GetKeysPressed();
+
     if (gUnk_02034B4C->unk_360 == 1) {
         if (GetKeysPressed() & 2) {
             if (gUnk_02034B4C->unk_360 == 1) {
@@ -1902,6 +1956,7 @@ void func_080B3354(void) {
         gUnk_02034B4C->unk_07A = gUnk_09EF150C[gUnk_02034B4C->unk_076].unk_00;
         gUnk_02034B4C->unk_07C = gUnk_09EF150C[gUnk_02034B4C->unk_076].unk_02;
         v = gUnk_09EF150C[gUnk_02034B4C->unk_076].unk_04;
+
         if (k1 & 1) {
             if (v == 2) {
                 if (func_080B3908() == 1) {
@@ -1960,6 +2015,7 @@ void func_080B3354(void) {
         gUnk_02034B4C->unk_07A = gUnk_09EF150C[gUnk_02034B4C->unk_076].unk_00;
         gUnk_02034B4C->unk_07C = gUnk_09EF150C[gUnk_02034B4C->unk_076].unk_02;
         v = gUnk_09EF150C[gUnk_02034B4C->unk_076].unk_04;
+
         if (k2 & 1) {
             if (v == 2) {
                 if (func_080B3908() == 1) {
@@ -1993,12 +2049,14 @@ void func_080B3354(void) {
 
     if (gUnk_02034B4C->unk_076 == 10) {
         gUnk_02034B4C->unk_074 = 0;
+
         if (gUnk_03007480 % 10 == 0) {
             RequestDma3Copy(&gUnk_096B5EE4[gUnk_02034B4C->unk_002 * 192], (void*)0x06000020, 0xC0);
             gUnk_02034B4C->unk_002 = 1 - gUnk_02034B4C->unk_002;
         }
     } else if (gUnk_02034B4C->unk_076 == 11) {
         gUnk_02034B4C->unk_074 = 0;
+
         if (gUnk_03007480 % 10 == 0) {
             RequestDma3Copy(&gUnk_096B62E4[gUnk_02034B4C->unk_002 * 192], (void*)0x060000E0, 0xC0);
             gUnk_02034B4C->unk_002 = 1 - gUnk_02034B4C->unk_002;
@@ -2020,6 +2078,7 @@ void func_080B38A4(void) {
 
 s8 func_080B3908(void) {
     s32 i;
+
     if (gUnk_02039828 == 0) {
         for (i = 0; i < 5; i++) {
             if (gUnk_0203AB20[i] != 0x800) {
@@ -2038,6 +2097,7 @@ s8 func_080B3908(void) {
 
 s8 func_080B3958(void) {
     s32 i;
+
     for (i = 0; i < 10; i++) {
         if (gUnk_0203AB20[i] != 0x800) {
             return 0;
@@ -2058,6 +2118,7 @@ INCLUDE_ASM("mode_sio/func_080B3A68.s");
 void func_080B3B5C(void) {
     SioCardTaskArg arg;
     s32 i;
+
     for (i = 0; i < 5; i++) {
         if (gUnk_0203AB20[i] != 0x800) {
             arg.unk_00 = &gUnk_02034B4C->unk_0B0[i];
@@ -2091,6 +2152,7 @@ void func_080B3B5C(void) {
 
 void func_080B3C64(void) {
     u16 i;
+
     for (i = 0; i <= 0x3E6; i++) {
         gUnk_02034B4C->unk_406[i] = gCardCollection[i];
     }
@@ -2099,6 +2161,7 @@ void func_080B3C64(void) {
 
 void func_080B3CC0(void) {
     u16 i;
+
     for (i = 0; i <= 0x3E6; i++) {
         gCardCollection[i] = gUnk_02034B4C->unk_406[i];
     }
@@ -2108,6 +2171,7 @@ void func_080B3CC0(void) {
 s16 func_080B3D28(void) {
     s32 i;
     s32 t;
+
     if (gUnk_02039828 == 0) {
         for (i = 5; i < 10; i++) {
             t = gUnk_0203AB20[i] != 0x800;
@@ -2132,6 +2196,7 @@ s16 func_080B3D28(void) {
 
 void func_080B3DA0(void) {
     s32 i;
+
     if (gUnk_02039828 == 0) {
         for (i = 0; i < 5; i++) {
             if (gUnk_0203AB20[i] != 0x800) {
@@ -2225,9 +2290,11 @@ INCLUDE_ASM("mode_sio/mode_wLogo_0.s");
 #ifndef VERSION_JP
 void mode_wLogo_1(void) {
     u8* p;
+
     switch (gUnk_02034B58) {
     case 0:
         func_080664D8(35, 75, gUnk_02034B60, gUnk_02034C00, 20, gUnk_02034B5B);
+
         if (GetKeysPressed() & DPAD_LEFT) {
             gUnk_02034B59--;
             if (gUnk_02034B59 < 0) {
@@ -2284,6 +2351,7 @@ INCLUDE_ASM("mode_sio/mode_wLogo_1.s");
 void mode_wLogo_2(void) {
     func_08065AE0(gUnk_02034B60, 20);
     ReleaseObjPalette(gUnk_02034C00);
+
     if (gUnk_02034B58 != 0) {
         if (gUnk_02034B58 == 3) {
             TaskPoolDestroy(gUnk_02034C08);
@@ -2330,6 +2398,7 @@ void func_080B4210(u8 a) {
     SetBgOverflow(2, 1);
     SetBgSize(2, 0x8000);
     TaskPoolInit(gUnk_02034C08, 2);
+
     switch (a) {
     case 4:
         LoadBgTiles(2, gUnk_08C84824, 0x4000);
@@ -2422,6 +2491,7 @@ void task_wLogo_0(WLogoTaskWork* work, u8 arg) {
     work->unk_04 = -0x5A00;
     work->unk_08 = 0;
     TaskPoolInit(gUnk_02034C20, 2);
+
     switch (work->unk_00) {
     case 4:
         gUnk_02034C34 = TaskCreate(gUnk_02034C20, &gUnk_09EF185C, 0);

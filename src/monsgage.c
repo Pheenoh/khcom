@@ -96,6 +96,7 @@ void task_monsgage_2(MonsgageWork* work) {
 
     if (gUnk_02039B84->unk_0A0 != 0) {
         DrawSprite(172, 12, work->unk_14, work->unk_00, work->unk_08, 0, 0x410, 3);
+
         if (work->unk_24 != 0) {
             if (work->unk_10 * 2 > 4) {
                 if (work->unk_10 * 2 > 256) {

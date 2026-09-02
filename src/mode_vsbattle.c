@@ -387,6 +387,7 @@ s32 _0800CDF0(EmyWork* work) {
         work->unk_168 = 0;
         ApproachValue(&work->unk_180, 0x100, work->unk_156--);
         work->unk_17C = work->unk_180;
+
         if (work->unk_156 <= 0) {
             func_0800CD40(work);
         } else {
@@ -398,6 +399,7 @@ s32 _0800CDF0(EmyWork* work) {
         func_08019068(work->unk_15C->unk_04, &work->unk_010, 2, 1, work->unk_000);
         func_0801BCF8(actor);
         actor->unk_0C += ((work->unk_178 + gUnk_08121400[gFrameCounter & 0xFF] * 10) - actor->unk_0C) >> 4;
+
         if (GetRandom() % work->unk_15C->unk_0E == 0) {
             if (actor->unk_04 > x) {
                 actor->unk_34 |= 4;
@@ -427,6 +429,7 @@ s32 _0800CDF0(EmyWork* work) {
                 d = -work->unk_164;
             }
             actor->unk_08 += d;
+
             if (work->unk_154 > 64) {
                 work->unk_14C = work->unk_150;
             } else {
@@ -439,6 +442,7 @@ s32 _0800CDF0(EmyWork* work) {
         func_08019068(work->unk_15C->unk_04, &work->unk_010, 0, 1, work->unk_000);
         func_0801BCF8(actor);
         actor->unk_0C += ((work->unk_178 + gUnk_08121400[gFrameCounter * 2 & 0xFF] * 12) - actor->unk_0C) >> 4;
+
         if (GetRandom() % work->unk_15C->unk_0E == 0) {
             if (actor->unk_04 > x) {
                 actor->unk_34 |= 4;
@@ -449,6 +453,7 @@ s32 _0800CDF0(EmyWork* work) {
         if (GetRandom() % work->unk_15C->unk_0C == 0) {
             work->unk_164 = 0;
             work->unk_14C = 8;
+
             if (GetRandom() % 2 == 0) {
                 s32 lo;
 
@@ -519,6 +524,7 @@ s32 _0800CDF0(EmyWork* work) {
             work->unk_160 = GetAngle(tx, ty, actor->unk_04, actor->unk_08);
             actor->unk_04 += ((gUnk_08121400[work->unk_160] << 1) * work->unk_15C->unk_08) >> 8;
             actor->unk_08 += ((-gUnk_08121400[work->unk_160 + 64] << 1) * work->unk_15C->unk_08) >> 8;
+
             if ((s8)work->unk_160 >= 0) {
                 actor->unk_34 &= ~4;
             } else {
@@ -544,6 +550,7 @@ s32 _0800CDF0(EmyWork* work) {
             func_0801BCF8(actor);
             tx = x + work->unk_170;
             ty = y;
+
             if (tx < (gUnk_02039B84->unk_0DA + 32) << 8) {
                 tx = x + ((actor->unk_CE + actor->unk_D0) << 8);
             } else if (tx > (gUnk_02039B84->unk_0DC - 32) << 8) {
@@ -586,8 +593,10 @@ s32 _0800CDF0(EmyWork* work) {
     case 0:
         func_08019068(work->unk_15C->unk_04, &work->unk_010, 0, 1, work->unk_000);
         func_0801BCF8(actor);
+
         if (GetRandom() % work->unk_15C->unk_0C == 0) {
             work->unk_14C = 4;
+
             if (GetRandom() % 2 == 0) {
                 s32 lo;
 
@@ -642,6 +651,7 @@ s32 _0800CDF0(EmyWork* work) {
             func_0801AF08(actor);
             work->unk_14C = 2;
             work->unk_154 = 0;
+
             if (actor->unk_04 < x) {
                 if (actor->unk_34 & 4) {
                     if (GetRandom() % 5 == 0) {
@@ -691,6 +701,7 @@ turned:
             work->unk_156 = 10;
         }
         ApproachValue(&work->unk_180, 64, work->unk_156--);
+
         if (work->unk_156 <= 0) {
             work->unk_154 = 0;
             work->unk_14C = 16;
@@ -716,6 +727,7 @@ turned:
             work->unk_156 = 10;
         }
         func_0800592C(&work->unk_180, 0x100, work->unk_156--);
+
         if (work->unk_156 <= 0) {
             actor->unk_34 &= ~0x100;
             func_0801AF08(actor);
@@ -734,6 +746,7 @@ turned:
             actor->unk_10C = 0;
         }
         work->unk_168 = 0;
+
         if (work->unk_154 == 40) {
             func_08019190(actor, 10);
             actor->unk_2C -= actor->unk_20;
@@ -752,6 +765,7 @@ turned:
             work->unk_156 = 16;
         }
         actor->unk_0C -= (16 - work->unk_156) << 8;
+
         if (func_08006B74()) {
             gBldCnt = 0xF10;
             work->unk_162 = 4;
@@ -781,6 +795,7 @@ turned:
             s32 t;
 
             func_08019068(work->unk_15C->unk_04, &work->unk_010, 1, 0, work->unk_000);
+
             if (actor->unk_34 & 0x800000000) {
                 work->unk_154++;
                 break;
@@ -798,6 +813,7 @@ turned:
                 break;
             }
             t = (actor->unk_9C / 2) * work->unk_16C;
+
             if (work->unk_158 & 1) {
                 func_08013E4C(actor->unk_04, actor->unk_08, actor->unk_0C - t);
             } else {
@@ -810,6 +826,7 @@ turned:
                 func_080063A8();
             }
             func_0801B994(actor);
+
             if (gUnk_02039BB0.unk_1B8 == 6) {
                 if (GetRandom() % 10 == 0) {
                     func_0801BBF0(actor);
@@ -841,6 +858,7 @@ turned:
     if (actor->unk_E8 != 2) {
         actor->unk_0C += work->unk_168;
         work->unk_168 += gUnk_02039B84->unk_12C;
+
         if (actor->unk_0C > 0) {
             actor->unk_0C = 0;
             work->unk_168 = 0;
@@ -1195,6 +1213,7 @@ s32 func_0800E5F0(HumWork* work) {
             func_0801AF08(actor);
             work->unk_170 = 2;
             work->unk_150 = 0;
+
             if (actor->unk_04 < x) {
                 if (actor->unk_34 & 4) {
                     if (GetRandom() % 3 == 0) {
@@ -1232,6 +1251,7 @@ s32 func_0800E5F0(HumWork* work) {
             work->unk_152 = 10;
         }
         ApproachValue(&work->unk_16C, 64, work->unk_152--);
+
         if (work->unk_152 > 0) {
             work->unk_150++;
         } else {
@@ -1257,6 +1277,7 @@ s32 func_0800E5F0(HumWork* work) {
             work->unk_152 = 10;
         }
         func_0800592C(&work->unk_16C, 0x100, work->unk_152--);
+
         if (work->unk_152 <= 0) {
             actor->unk_34 &= ~0x100;
             func_0801AF08(actor);
@@ -1301,6 +1322,7 @@ s32 func_0800E5F0(HumWork* work) {
             actor->unk_10C = 0;
         }
         work->unk_158 = 0;
+
         if (work->unk_150 == 40) {
             func_08019190(actor, 10);
             actor->unk_2C -= actor->unk_20;
@@ -1358,6 +1380,7 @@ s32 func_0800E5F0(HumWork* work) {
     case 3:
         if (work->unk_150 == 0) {
             func_0801AF4C(actor);
+
             if (!(work->unk_154 & 0x40)) {
                 m4aSongNumStart(0x20E);
             }
@@ -1365,6 +1388,7 @@ s32 func_0800E5F0(HumWork* work) {
         }
         if (func_08006314() == 0) {
             work->unk_150 = 0;
+
             if (work->unk_154 & 0x40) {
                 work->unk_170 = 6;
             } else {
@@ -1382,6 +1406,7 @@ s32 func_0800E5F0(HumWork* work) {
         }
         func_0802F284(actor->unk_04, actor->unk_08, actor->unk_0C);
         work->unk_158 = 0;
+
         if (work->unk_150 > 150) {
             work->unk_150 = 0;
             work->unk_170 = 5;
@@ -1415,6 +1440,7 @@ s32 func_0800E5F0(HumWork* work) {
         }
         func_0802F284(actor->unk_04, actor->unk_08, actor->unk_0C);
         work->unk_158 = 0;
+
         if (work->unk_150 > 150) {
             work->unk_150 = 0;
             work->unk_170 = 7;
@@ -1425,6 +1451,7 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 7:
         func_0802F284(actor->unk_04, actor->unk_08, actor->unk_0C);
+
         if (func_080128EC() == 0) {
             PrizeCardArg arg2;
 
@@ -1440,6 +1467,7 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 0:
         work->unk_154 &= ~4;
+
         if (func_0807E29C()) {
             work->unk_150 = 0;
             work->unk_170 = 17;
@@ -1447,6 +1475,7 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 17:
         func_0807E2F4();
+
         if (func_0807E29C() == 0) {
             work->unk_150 = 0;
             work->unk_170 = 0;
@@ -1459,6 +1488,7 @@ s32 func_0800E5F0(HumWork* work) {
     if (actor->unk_E8 != 2) {
         actor->unk_0C += work->unk_158;
         work->unk_158 += gUnk_02039B84->unk_12C;
+
         if (actor->unk_0C > 0) {
             actor->unk_0C = 0;
             work->unk_158 = 0;

@@ -119,6 +119,7 @@ s32 func_081181EC(void* a) {
     channels = func_08119654(gUnk_0203C7C4);
     if (channels != 0) {
         SndStreamInit(func_08119670(gUnk_0203C7C4), channels);
+
         for (i = 0; i < 4; i++) {
             if (channels == 1) {
                 SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
@@ -171,6 +172,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
         while (func_0811950C(gUnk_0203C7C4) == 0) {
         }
         func_0811904C(gUnk_0203C7C4, (u16*)0x06000000 + (y * 240 + x));
+
         if (func_08119224(gUnk_0203C7C4) == 0) {
             break;
         }
@@ -180,6 +182,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
                 SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
+
                 if (func_08119480(gUnk_0203C7C4) == 0) {
                     ok = 0;
                 }
@@ -189,6 +192,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
                 SndStreamUnlock(1);
+
                 if (func_08119480(gUnk_0203C7C4) == 0) {
                     ok = 0;
                 }
@@ -291,6 +295,7 @@ MoviePlayer* func_08118C34(void* a) {
     p->unk_10 = (u8*)q;
     p->unk_14 = (u8*)q;
     q = (u32*)((u8*)q + n);
+
     if ((p->unk_2C & 7) != 0 || p->unk_2C > 288 || (p->unk_30 & 7) != 0) {
         gUnk_0203C7D0.unk_08(p);
         return 0;
@@ -298,6 +303,7 @@ MoviePlayer* func_08118C34(void* a) {
     func_0811865C(p, &p->unk_7C, &p->unk_80, &p->unk_84, p->unk_2C, p->unk_30);
     p->unk_20 = gUnk_0203C7D0.unk_04(p->unk_2C * p->unk_30 * 2);
     p->unk_24 = gUnk_0203C7D0.unk_04(p->unk_2C * p->unk_30 * 2);
+
     if (p->unk_40 != 0) {
         p->unk_8D = 0;
         len = *q;
@@ -333,6 +339,7 @@ void func_08118EEC(MoviePlayer* a) {
     gUnk_0203C7D0.unk_08(p->unk_08);
     gUnk_0203C7D0.unk_0C(p->unk_20);
     gUnk_0203C7D0.unk_0C(p->unk_24);
+
     if (p->unk_40 != 0) {
         gUnk_0203C7D0.unk_0C(p->unk_28);
     }
@@ -370,6 +377,7 @@ s32 func_0811904C(MoviePlayer* a, void* dst) {
     }
     CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->unk_60) >> 2) & 0xFFFF);
     func_08118F7C(p);
+
     if (p->unk_78 != 0) {
         CpuFastSet(p->unk_20, dst, (p->unk_2C * p->unk_30 / 2) & 0x1FFFFF);
     }
@@ -384,9 +392,11 @@ u32 func_081190C8(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 
 
     CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->unk_60) >> 2) & 0xFFFF);
     func_08118F7C(p);
+
     if (p->unk_78 != 0) {
         d = dst;
         s = (u8*)p->unk_20 + x * 2 + (p->unk_2C << 1) * y;
+
         for (i = 0; i < rows; i++) {
             CpuFastSet(s, d, ((w << 1) >> 2) & 0x1FFFFF);
             d = d + dstStride;
@@ -404,6 +414,7 @@ u32 func_08119190(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 
 
     d = dst;
     s = (u8*)p->unk_20 + x * 2 + (p->unk_2C << 1) * y;
+
     for (i = 0; i < rows; i++) {
         CpuFastSet(s, d, ((w << 1) >> 2) & 0x1FFFFF);
         d = d + dstStride;
@@ -449,10 +460,12 @@ void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA
     }
     CpuFastSet(p->unk_1C, p->unk_5C, (*(p->unk_58 + p->unk_64) >> 2) & 0xFFFF);
     n = *(s32*)p->unk_5C;
+
     if (p->unk_40 == 1) {
         q = (u8*)p->unk_5C + 4;
         p->unk_88(q, p->unk_28, n);
         CpuFastSet(p->unk_28, dstA1, (lenA1 / 4) & 0x1FFFFF);
+
         if (lenA2 != 0) {
             CpuFastSet((u8*)p->unk_28 + lenA1, dstA2, (lenA2 / 4) & 0x1FFFFF);
         }
@@ -462,11 +475,13 @@ void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA
         p->unk_88(q, p->unk_28, n);
         q = (u8*)q + ((*(p->unk_58 + p->unk_64) - 4) >> 1);
         CpuFastSet(p->unk_28, dstA1, (lenA1 / 4) & 0x1FFFFF);
+
         if (lenA2 != 0) {
             CpuFastSet((u8*)p->unk_28 + lenA1, dstA2, (lenA2 / 4) & 0x1FFFFF);
         }
         p->unk_88(q, p->unk_28, n);
         CpuFastSet(p->unk_28, dstB1, (lenB1 / 4) & 0x1FFFFF);
+
         if (lenB2 != 0) {
             CpuFastSet((u8*)p->unk_28 + lenB1, dstB2, (lenB2 / 4) & 0x1FFFFF);
         }
@@ -498,6 +513,7 @@ s32 func_0811950C(MoviePlayer* a) {
 
     if (p->unk_8C != 0 && p->unk_8D != 0) {
         p->unk_8C = 0;
+
         if (p->unk_8D != 2) {
             p->unk_8D = 0;
         }
@@ -519,8 +535,10 @@ s32 func_0811950C(MoviePlayer* a) {
     t = func_081185CC();
     now = func_08118630(t - p->unk_68);
     target = p->unk_70 * (p->unk_60 + 1);
+
     if (p->unk_74 != 0) {
         p->unk_74 = 0;
+
         if (now >= target + 0.01f) {
             p->unk_78 = 0;
             return 1;

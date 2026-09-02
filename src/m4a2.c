@@ -632,6 +632,7 @@ void FadeOutBody(MusicPlayerInfo* mplayInfo) {
 
     if (mplayInfo->fadeOI == 0)
         return;
+
     if (--mplayInfo->fadeOC != 0)
         return;
 
@@ -813,6 +814,7 @@ void CgbModVol(CgbChannel* chan) {
     } else {
         u32 goal = (u32)(chan->rightVolume + chan->leftVolume) / 16;
         chan->envelopeGoal = goal;
+
         if (goal > 15)
             chan->envelopeGoal = 15;
     }
@@ -889,6 +891,7 @@ void CgbSound(void) {
                 channels->statusFlags = SOUND_CHANNEL_SF_ENV_ATTACK;
                 channels->modify = CGB_CHANNEL_MO_PIT | CGB_CHANNEL_MO_VOL;
                 CgbModVol(channels);
+
                 switch (ch) {
                 case 1:
                     *nrx0ptr = channels->sweep;
@@ -906,6 +909,7 @@ void CgbSound(void) {
                     }
                     *nrx0ptr = 0;
                     *nrx1ptr = channels->length;
+
                     if (channels->length)
                         channels->n4 = 0xC0;
                     else
@@ -916,6 +920,7 @@ void CgbSound(void) {
                     *nrx3ptr = (u32)channels->wavePointer << 3;
                 init_env_step_time_dir:
                     envelopeStepTimeAndDir = channels->attack + CGB_NRx2_ENV_DIR_INC;
+
                     if (channels->length)
                         channels->n4 = 0x40;
                     else
@@ -923,6 +928,7 @@ void CgbSound(void) {
                     break;
                 }
                 channels->envelopeCounter = channels->attack;
+
                 if ((s8)(channels->attack & mask)) {
                     channels->envelopeVolume = 0;
                     goto envelope_step_complete;
@@ -944,8 +950,10 @@ void CgbSound(void) {
         } else if ((channels->statusFlags & SOUND_CHANNEL_SF_STOP) && (channels->statusFlags & SOUND_CHANNEL_SF_ENV)) {
             channels->statusFlags &= ~SOUND_CHANNEL_SF_ENV;
             channels->envelopeCounter = channels->release;
+
             if ((s8)(channels->release & mask)) {
                 channels->modify |= CGB_CHANNEL_MO_VOL;
+
                 if (ch != 3)
                     envelopeStepTimeAndDir = channels->release | CGB_NRx2_ENV_DIR_DEC;
                 goto envelope_step_complete;
@@ -959,6 +967,7 @@ void CgbSound(void) {
                     channels->modify |= CGB_CHANNEL_MO_VOL;
 
                 CgbModVol(channels);
+
                 if ((channels->statusFlags & SOUND_CHANNEL_SF_ENV) == SOUND_CHANNEL_SF_ENV_RELEASE) {
                     channels->envelopeVolume--;
                     if ((s8)(channels->envelopeVolume & mask) <= 0) {
@@ -967,6 +976,7 @@ void CgbSound(void) {
                         if (channels->envelopeVolume) {
                             channels->statusFlags |= SOUND_CHANNEL_SF_IEC;
                             channels->modify |= CGB_CHANNEL_MO_VOL;
+
                             if (ch != 3)
                                 envelopeStepTimeAndDir = 0 | CGB_NRx2_ENV_DIR_INC;
                             goto envelope_complete;
@@ -992,6 +1002,7 @@ void CgbSound(void) {
                         } else {
                             channels->statusFlags--;
                             channels->modify |= CGB_CHANNEL_MO_VOL;
+
                             if (ch != 3)
                                 envelopeStepTimeAndDir = 0 | CGB_NRx2_ENV_DIR_INC;
                             goto envelope_sustain;
@@ -1008,6 +1019,7 @@ void CgbSound(void) {
                         if ((u8)(channels->envelopeCounter & mask)) {
                             channels->modify |= CGB_CHANNEL_MO_VOL;
                             channels->envelopeVolume = channels->envelopeGoal;
+
                             if (ch != 3)
                                 envelopeStepTimeAndDir = channels->decay | CGB_NRx2_ENV_DIR_DEC;
                         } else {
@@ -1022,6 +1034,7 @@ void CgbSound(void) {
 
     envelope_step_complete:
         channels->envelopeCounter--;
+
         if (prevC15 == 0) {
             prevC15--;
             goto envelope_step_repeat;
@@ -1048,8 +1061,10 @@ void CgbSound(void) {
 
         if (channels->modify & CGB_CHANNEL_MO_VOL) {
             REG_NR51 = (REG_NR51 & ~channels->panMask) | channels->pan;
+
             if (ch == 3) {
                 *nrx2ptr = gCgb3Vol[channels->envelopeVolume];
+
                 if (channels->n4 & 0x80) {
                     *nrx0ptr = 0x80;
                     *nrx4ptr = channels->n4;
@@ -1059,6 +1074,7 @@ void CgbSound(void) {
                 envelopeStepTimeAndDir &= 0xF;
                 *nrx2ptr = (channels->envelopeVolume << 4) + envelopeStepTimeAndDir;
                 *nrx4ptr = channels->n4 | 0x80;
+
                 if (ch == 1 && !(*nrx0ptr & 0x08))
                     *nrx4ptr = channels->n4 | 0x80;
             }

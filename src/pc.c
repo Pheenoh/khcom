@@ -15,6 +15,7 @@ s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
         obj = work->unk_04;
         if (obj->unk_00C >= 0) {
             work->unk_08 = 1;
+
             if (work->unk_00 <= 0) {
                 if (work->unk_02 % 60 == 0) {
                     obj->unk_034 |= 0x20000000;
@@ -76,9 +77,11 @@ s32 func_08049F50(PcCharaWork* work) {
     UnkStruct_02039B84* obj;
 
     obj = (UnkStruct_02039B84*)gUnk_02039B84->unk_07C;
+
     if ((u16)GetRandom() % 60 == 0) {
         func_0801C700(work->unk_040, &x, &y, 0);
         func_0800F368(work, 1);
+
         if (func_0800F504(work, 0x100, 0x100, 0x100)) {
             if (gUnk_02039B84->unk_068 & 0x8000) {
                 func_08049E70(work, -0x63, 0x280);

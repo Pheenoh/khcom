@@ -44,6 +44,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_00, work->unk_18, steps);
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_04, work->unk_1C, steps);
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_08, work->unk_20, steps);
+
         if (steps <= 1) {
             func_080E0418();
             work->unk_40 = 1;
@@ -139,6 +140,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_00, work->unk_00, steps);
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_04, work->unk_04, steps);
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_08, work->unk_08, steps);
+
         if (steps <= 1) {
             gUnk_02039BA0->unk_18.unk_14 = work->unk_25;
             gUnk_02039BA0->unk_70 &= ~0x40000;
@@ -159,6 +161,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_00, work->unk_0C, steps);
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_04, work->unk_10, steps);
         ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_08, work->unk_14, steps);
+
         if (func_080DFD84(&gUnk_02039BA0->unk_18.unk_00)) {
             gUnk_02039BA0->unk_70 |= 0x10;
         }

@@ -140,6 +140,7 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
     work->unk_4A = 0;
     work->unk_50 = GetRandom() % 0x201 + 0x14C;
     work->unk_30 = -(GetRandom() % 0x201 + 0x100);
+
     switch (work->unk_4E) {
     case 0:
         work->unk_34 = GetAngle(work->unk_20, work->unk_24,
@@ -178,6 +179,7 @@ void task_hum_hook_bomb_2(HookBombWork* work) {
     }
     gfx = AnimGetGfx(&work->unk_08);
     attr = func_0801AF1C(work->unk_24);
+
     if (work->unk_2C == 0) {
         attr |= 1;
     }
@@ -299,13 +301,16 @@ void task_hum_hades_2(HadesWork* work) {
     s32 i;
 
     func_0800EFE8(&work->base);
+
     if ((work->unk_1CA & 2) == 0) {
         return;
     }
     act = &work->base.unk_040;
+
     for (i = 0; i < 2; i++) {
         e = &work->unk_22C[i];
         attr = func_0801AF1C(e->unk_00);
+
         if (work->unk_27C == 0x100) {
             if ((act->unk_34 & 4) == 0) {
                 attr |= 1;
@@ -348,6 +353,7 @@ void func_0804F8F0(MahluxiaWork* work, s16 a) {
     s32 v;
 
     func_0801C700(act, &v, 0, 0);
+
     if (act->unk_34 & 4) {
         w->unk_15C = act->unk_04 - (a << 8);
     } else {
@@ -356,6 +362,7 @@ void func_0804F8F0(MahluxiaWork* work, s16 a) {
     w->unk_170 = 20;
     w->unk_150 = 0;
     work->unk_1C4 = -0x300;
+
     if (act->unk_08 < v) {
         w->unk_160 = (gUnk_02039B84->unk_0DE + 16) << 8;
     } else {
@@ -377,6 +384,7 @@ u8 func_0804F9C8(MahluxiaWork* work) {
     c = gUnk_02039B84->unk_07C;
     func_0801C700(&work->base.unk_040, &v, 0, 0);
     func_0800F368(work, 1);
+
     if (func_0800F504(work, 0x100, 0x100, 0x100)) {
         if (gUnk_02039B84->unk_068 & 0x8000) {
             func_0804F8F0(work, -128);
@@ -400,6 +408,7 @@ void func_0804FA70(MahluxiaWork* work, RikuSpawn* dst) {
     dst->unk_00 = act->unk_04;
     dst->unk_04 = act->unk_08;
     dst->unk_08 = act->unk_0C;
+
     if (act->unk_34 & 4) {
         dst->unk_0C |= 1;
     } else {
@@ -425,6 +434,7 @@ void func_0804FAD4(MahluxiaWork* work, RikuSpawn* p) {
     sub = work->base.unk_00C;
     gfx = AnimGetGfx(&p->unk_10);
     act = &work->base.unk_040;
+
     if (func_080128EC() == 0) {
         gBldCnt = 0xF10;
         SetBlendAlpha(4, 14);
@@ -518,6 +528,7 @@ INCLUDE_ASM("hum/task_hum_mahluxia_1.s");
 
 void task_hum_mahluxia_2(MahluxiaWork* work) {
     func_0800EFE8(&work->base);
+
     if ((work->unk_1D0 & 2) && (work->unk_188.unk_34 & 2)) {
         switch (work->unk_1D8 % 12) {
         case 0:
@@ -616,6 +627,7 @@ void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
     work->unk_00 = LoadObjTiles(gUnk_08BD99F4, 0x2C0);
     AnimInit(&work->unk_08, gUnk_09EE1DB4, gUnk_09EE1DA4);
     AnimStart(&work->unk_08, 0, 0);
+
     if (args->unk_12 != 0) {
         work->unk_2C = 1;
     } else {
@@ -669,6 +681,7 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
         work->unk_20 += c->unk_04 - work->unk_30;
         work->unk_24 += c->unk_08 - work->unk_34;
         work->unk_28 += c->unk_0C - work->unk_38;
+
         if ((s16)work->unk_2E > 30) {
             return 0;
         }
@@ -689,6 +702,7 @@ void task_hum_laxene_knf_2(LaxeneKnfWork* work) {
     u16 attr;
 
     gfx = AnimGetGfx(&work->unk_08);
+
     if (work->unk_2C != 0) {
         attr = func_0801AF1C(work->unk_24);
     } else {
@@ -697,6 +711,7 @@ void task_hum_laxene_knf_2(LaxeneKnfWork* work) {
     WorldToScreen(&x, &y, work->unk_20, work->unk_24, work->unk_28);
     DrawSprite(x, y, gfx, work->unk_00, work->unk_04, 0, attr,
         -0x1004 - (work->unk_24 >> 8) * 4);
+
     if (func_080035CC(x, y, 2, 2, 32, 32)) {
         work->unk_2D = 0;
     }
@@ -777,6 +792,7 @@ void func_08054100(AxcelWork* work, HumSub* sub) {
                 scale = 128;
             }
             f = 0;
+
             if (scale > 0x100) {
                 f = 1;
             }
@@ -809,6 +825,7 @@ void task_hum_axcel_ptc_0(AxcelPtcWork* work, s32* args) {
     work->unk_00 = LoadObjTiles(gUnk_08BF73C6, 0x300);
     work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 0x20);
     AnimInit(&work->unk_0C, gUnk_09EE1FC0, gUnk_09EE1F90);
+
     switch (GetRandom() % 3) {
     case 0:
         AnimStart(&work->unk_0C, 0, 0);
@@ -850,6 +867,7 @@ void func_08054334(VixenWork* work) {
 
     m4aSongNumStart(0x287);
     p = work->unk_1C4;
+
     for (i = 0; i < 3; i++) {
         p[i].unk_00 = p[i].unk_01 = 1;
         p[i].unk_04 = (gUnk_02039B84->unk_0DA + 32 +
@@ -866,6 +884,7 @@ void func_080543B4(VixenWork* work) {
 
     z = 0;
     p = work->unk_1C4;
+
     for (i = 0; i < 3; i++) {
         p->unk_01 = z;
         p->unk_00 = z;
@@ -894,6 +913,7 @@ void task_hum_vixen_0(VixenWork* work) {
     TaskPoolInit(&work->unk_1A4, 15);
     func_080543B4(work);
     work->base.unk_184 = (u32)gUnk_0813F7A8;
+
     if (gUnk_02039BB0.unk_008 & 8) {
         gUnk_02039B84->unk_114 = AllocObjTiles(0x840, 0);
     }
@@ -925,6 +945,7 @@ void task_hum_vixen_ndl_0(VixenNdlWork* work, VixenNdlArgs* args) {
     work->unk_28 = args->unk_08;
     work->unk_2D = 0;
     m4aSongNumStart(0x286);
+
     if ((GetRandom() & 1) != 0) {
         work->unk_2E = 1;
     } else {
@@ -967,6 +988,7 @@ void task_hum_vixen_ndl_2(VixenNdlWork* work) {
 
     gfx = AnimGetGfx(&work->unk_08);
     attr = func_0801AF1C(work->unk_24);
+
     if (work->unk_2E != 0) {
         attr |= 1;
     }
@@ -1006,6 +1028,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         work->unk_00 = 0;
         work->unk_84 = 0;
         work->unk_8C = 10;
+
         switch (GetRandom() % 3) {
         case 0:
             work->unk_90 = 0x100;
@@ -1104,6 +1127,7 @@ void task_hum_vixen_ice_3(VixenIceWork* work) {
 void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
     work->unk_04 = LoadObjPalette(gUnk_08F6DCA4, 0x20);
     work->unk_00 = gUnk_02039B84->unk_114;
+
     if (gUnk_02039BB0.unk_008 & 8) {
         if (gUnk_02039B84->unk_068 & 0x800000000000) {
             work->unk_32 = 2;
@@ -1116,6 +1140,7 @@ void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
     AnimInit(&work->unk_08, 0, 0);
     func_08019068(gUnk_0813F91C, &work->unk_08, 0, 0, work->unk_00);
     work->unk_2C = 0;
+
     if (gUnk_02039B84->unk_07C->unk_34 & 4) {
         work->unk_34 = 0;
     } else {
@@ -1159,6 +1184,7 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
     work->unk_34 = LoadObjPalette(gUnk_08F6DCA4, 0x20);
     work->unk_38 = 0;
     work->unk_21C = 0;
+
     for (i = 0; i < 15; i++) {
         VixenFrgDef* d = &gUnk_0813FA00[i];
         e = &work->unk_3C[i];
@@ -1190,6 +1216,7 @@ u8 task_hum_vixen_frg_1(VixenFrgWork* work) {
         e->unk_08 += e->unk_18;
         e->unk_0C += e->unk_10;
         e->unk_10 += gUnk_02039B84->unk_12C;
+
         if (e->unk_0C > 0) {
             e->unk_0C = 0;
             e->unk_10 = -(e->unk_10 >> 1);
@@ -1222,6 +1249,7 @@ void task_hum_vixen_frg_2(VixenFrgWork* work) {
         }
     }
     p = work->unk_3C;
+
     for (i = 0; i < 15; i++) {
         attr = func_0801AF1C(p[i].unk_08) | p[i].unk_1C;
         WorldToScreen(&x, &y, p[i].unk_04, p[i].unk_08, p[i].unk_0C);
@@ -1263,6 +1291,7 @@ INCLUDE_ASM("hum/task_hum_lexceus_1.s");
 
 void task_hum_lexceus_2(LexceusWork* work) {
     func_0800EFE8(&work->base);
+
     if (work->unk_1CC > 0) {
         ApproachValue(&work->base.unk_168, work->unk_1D0, work->unk_1CC);
         ApproachValue(&work->base.unk_16C, work->unk_1D4, work->unk_1CC);
@@ -1281,6 +1310,7 @@ void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
     work->unk_00 = AllocObjTiles(0x400, gUnk_08C3724C);
     AnimInit(&work->unk_08, gUnk_09EE22B0, gUnk_09EE2298);
     AnimStart(&work->unk_08, 0, 1);
+
     if (args->unk_12 != 0) {
         work->unk_2C = 1;
     } else {
@@ -1315,6 +1345,7 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
         work->unk_24 += (work->unk_38 - work->unk_24) >> 4;
         work->unk_28 += work->unk_3C;
         work->unk_3C += 64;
+
         if (func_08011F78(0x146, work->unk_20, work->unk_24, work->unk_28, 16, 12, 16)) {
             m4aSongNumStart(0x2B3);
             work->unk_4A = 0;
@@ -1330,6 +1361,7 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
     case 1:
         if (work->unk_4A == 0) {
             work->unk_3C = -work->unk_3C >> 1;
+
             if (gUnk_02039B84->unk_130 < work->unk_20) {
                 work->unk_48 = 1;
             } else {
@@ -1350,6 +1382,7 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
         work->unk_24 += (gUnk_02039B84->unk_134 - work->unk_24) >> 4;
         work->unk_28 += work->unk_3C;
         work->unk_3C += 64;
+
         if (func_08011F78(0x146, work->unk_20, work->unk_24, work->unk_28, 16, 12, 16)) {
             m4aSongNumStart(0x2B3);
         }
@@ -1375,6 +1408,7 @@ void task_hum_lex_tmh_2(LexTmhWork* work) {
     s32 scale;
 
     gfx = AnimGetGfx(&work->unk_08);
+
     if (work->unk_2C != 0) {
         attr = func_0801AF1C(work->unk_24);
     } else {
@@ -1383,6 +1417,7 @@ void task_hum_lex_tmh_2(LexTmhWork* work) {
     WorldToScreen(&x, &y, work->unk_20, work->unk_24, work->unk_28);
     DrawSprite(x, y, gfx, work->unk_00, work->unk_04, 0, attr,
         -0x1004 - (work->unk_24 >> 8) * 4);
+
     if (work->unk_28 >= 0) {
         affine = 0;
     } else {
@@ -1408,6 +1443,7 @@ void task_hum_lex_tmh0_0(LexTmh0Work* work, VixenNdlArgs* args) {
     work->unk_00 = AllocObjTiles(0x400, gUnk_08C3151E);
     AnimInit(&work->unk_08, gUnk_09EE2288, gUnk_09EE2250);
     AnimStart(&work->unk_08, 2, 1);
+
     if (args->unk_12 != 0) {
         work->unk_2C = 1;
     } else {
@@ -1424,6 +1460,7 @@ void task_hum_lex_tmh0_0(LexTmh0Work* work, VixenNdlArgs* args) {
 u8 task_hum_lex_tmh0_1(LexTmh0Work* work) {
     if (gUnk_02039B84->unk_068 & 0x40) {
         ApproachValue(&work->unk_30, 0x100, work->unk_34--);
+
         if (work->unk_34 > 0) {
             AnimUpdate(&work->unk_08);
             return 1;
@@ -1499,6 +1536,7 @@ void task_hum_lex_rock_2(LexRockWork* work) {
 
     if (work->unk_164 == 1) {
         gfx = AnimGetGfx(&work->unk_34[0]);
+
         if (work->unk_160 != 0) {
             attr = func_0801AF1C(work->unk_158);
         } else {
@@ -1511,6 +1549,7 @@ void task_hum_lex_rock_2(LexRockWork* work) {
         for (i = 0; i < work->unk_164; i++) {
             e = &work->unk_16C[i];
             gfx = AnimGetGfx(&work->unk_34[i]);
+
             if (work->unk_160 != 0) {
                 attr = func_0801AF1C(e->unk_04);
             } else {
@@ -1531,8 +1570,10 @@ void task_hum_lex_rock_3(LexRockWork* work) {
 
     ReleaseObjTiles(work->unk_2B8);
     ReleaseObjPalette(work->unk_2BC);
+
     if (work->unk_164 != 0) {
         ReleaseObjPalette(work->unk_30);
+
         for (i = 0; i < work->unk_164; i++) {
             ReleaseObjTiles(work->unk_00[i]);
         }
@@ -1568,6 +1609,7 @@ u8 task_hum_mahluxia_flw_1(MahluxiaFlwWork* work) {
         work->unk_28 -= 12;
         if (work->unk_28 < 0) {
             work->unk_28 = GetRandom() % 181 + 204;
+
             if (work->unk_2C > 0) {
                 work->unk_2C = -(GetRandom() % 257 + 128);
             } else {
@@ -1630,9 +1672,11 @@ u8 func_08057D68(RikuWork* work) {
     Collider* c;
 
     c = gUnk_02039B84->unk_07C;
+
     if (GetRandom() % 30 == 0) {
         func_0801C700(&work->base.unk_040, &v, &w, 0);
         func_0800F368(work, 1);
+
         if (func_0800F504(work, 0x100, 0x100, 0x100)) {
             if (gUnk_02039B84->unk_068 & 0x8000) {
                 func_08057CBC(work, -99, 0x280);
@@ -1657,6 +1701,7 @@ void func_08057E2C(RikuWork* work, RikuSpawn* dst) {
     dst->unk_00 = act->unk_04;
     dst->unk_04 = act->unk_08;
     dst->unk_08 = act->unk_0C;
+
     if (act->unk_34 & 4) {
         dst->unk_0C |= 1;
     } else {
@@ -1682,6 +1727,7 @@ void func_08057E90(RikuWork* work, RikuSpawn* p) {
     sub = work->base.unk_00C;
     gfx = AnimGetGfx(&p->unk_10);
     act = &work->base.unk_040;
+
     if (func_080128EC() == 0) {
         gBldCnt = 0xF10;
         SetBlendAlpha(6, 12);
@@ -1722,6 +1768,7 @@ void task_hum_riku_0(RikuWork* work) {
     work->unk_1CA = 0;
     work->unk_188.unk_34 |= 3;
     work->unk_1CC = 0;
+
     if (gUnk_02039B84->unk_10C != 0xA1) {
         work->base.unk_184 = (u32)gUnk_0813FBBC;
     }
@@ -1740,6 +1787,7 @@ INCLUDE_ASM("hum/task_hum_riku_1.s");
 
 void task_hum_riku_2(RikuWork* work) {
     func_0800EFE8(&work->base);
+
     if ((work->unk_1CA & 4) && (work->unk_188.unk_34 & 2)) {
         switch (work->unk_1CC % 2) {
         case 0:
@@ -1788,6 +1836,7 @@ u8 task_hum_leon_1(LeonWork* work) {
     w = work;
     act = &work->base.unk_040;
     func_0801C700(act, &a, &b, &c);
+
     switch (_0800E434(work)) {
     case 4:
         break;
@@ -1797,6 +1846,7 @@ u8 task_hum_leon_1(LeonWork* work) {
         break;
     }
     func_0800F368(work, 1);
+
     switch (work->base.unk_170) {
     case 12:
         func_08019068(gUnk_0813FD58, &w->base.unk_014, 0, 1, w->base.unk_004);
@@ -1943,12 +1993,14 @@ void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
     s16 i;
 
     data->flags = 0;
+
     if (gUnk_02039BB0.unk_008 & 0x20) {
         data->flags = 1;
     }
 
     if (gUnk_02039BB0.unk_008 & 0x800) {
         data->flags |= 4;
+
         if (gUnk_02039BB0.unk_008 & 8) {
             data->flags |= 2;
         } else {
@@ -2004,6 +2056,7 @@ void MakeSaveFileLarge(SaveFileLarge* save) {
     func_080C700C(save->unk_E6C);
     func_080DDEB0(save->unk_E70);
     func_0810962C(save->unk_EB4);
+
     if (gUnk_02039BB0.unk_008 & 0x10) {
         gUnk_02039BB0.unk_1BC[1].unk_00 = gUnk_02039BB0.unk_00E;
         gUnk_02039BB0.unk_1BC[1].unk_01 = gUnk_02039BB0.unk_00C;
@@ -2027,6 +2080,7 @@ void MakeSaveFileSmall(SaveFileSmall* save) {
     save->common.unk_94 = gUnk_02039BB0.unk_1DC;
     func_080E92B8(save->unk_098);
     func_080A3370(save->unk_2EC);
+
     if (gUnk_02039BB0.unk_008 & 0x10) {
         gUnk_02039BB0.unk_1BC[3].unk_00 = gUnk_02039BB0.unk_00E;
         gUnk_02039BB0.unk_1BC[3].unk_01 = gUnk_02039BB0.unk_00C;
@@ -2167,6 +2221,7 @@ void func_0805A484(void) {
     for (i = 0; i < 8; i++) {
         gUnk_02034934->unk_C68[i] = 0;
         func_08065AE0(&gUnk_02034934->unk_060[i], 48);
+
         for (j = 0; j < 48; j++) {
             if (gUnk_02034934->unk_060[i].unk_000[j].unk_00 != 0) {
                 gUnk_02034934->unk_060[i].unk_000[j].unk_00 = 0;
@@ -2186,6 +2241,7 @@ void func_0805A514(s16 a, s16 b, s16 c) {
 
     v = (b + gUnk_02034934->unk_C74 * c) << 8;
     func_0805F1C0(&gUnk_02034934->unk_05C, v);
+
     if (gUnk_02034934->unk_CC0 > 0) {
         gUnk_02034934->unk_CC0--;
     }
@@ -2198,6 +2254,7 @@ u16 func_0805A55C(u16* p) {
 
     n = 0;
     q = p;
+
     while (1) {
         if (*q == 0) {
             return n;
@@ -2222,6 +2279,7 @@ s32 func_0805A574(s32 idx) {
     if (e->unk_10 != 0) {
         a = 1;
         b = 1;
+
         for (i = 0; i < e->unk_08; i++) {
             if (func_0800FF70(e->unk_10[i])) {
                 return 1;
@@ -2249,6 +2307,7 @@ s32 func_0805A574(s32 idx) {
     }
     c = 1;
     d = 1;
+
     for (i = 0; i < e->unk_08; i++) {
         switch (func_0805A574(e->unk_0C[i])) {
         case 1:
@@ -2296,6 +2355,7 @@ void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h) {
     s32 i;
 
     n = a > b ? b : a;
+
     if (c == 0) {
         for (i = 0; i < n; i++) {
             if (e != 0) {
@@ -2316,6 +2376,7 @@ void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h) {
             if (func_0800FF00(c[i])) {
                 gUnk_02034934->unk_C60[i] =
                     func_08065B6C(d[i], &gUnk_02034934->unk_060[i]);
+
                 if (func_0800FF70(c[i])) {
                     gUnk_02034934->unk_C68[i] = 1;
                 }
@@ -2331,6 +2392,7 @@ void func_0805A7D0(void) {
 
     t = gUnk_02034934->unk_C72 - gUnk_02034934->unk_C74;
     func_0805A484();
+
     if (gUnk_02034934->unk_CB8 != 0) {
         func_0805A698(gUnk_02034934->unk_C78, gUnk_02034934->unk_C76,
             gUnk_02034934->unk_CB4 + t, gUnk_02034934->unk_CB8 + t, 0,
@@ -2380,6 +2442,7 @@ u8 func_0805AA9C(void) {
 
     if (gUnk_02034934->unk_C70 < gUnk_02034934->unk_C71) {
         AnimChange(&gUnk_02034934->unk_C7C, 1, 1);
+
         if (!func_08006314()) {
             if (gUnk_02034934->unk_048 % 5 == 0) {
                 gUnk_02034934->unk_C70++;
@@ -2408,6 +2471,7 @@ u8 func_0805AA9C(void) {
                 gUnk_02034934->unk_CC0 = 1;
                 gUnk_02034934->unk_C72--;
                 m4aSongNumStart(101);
+
                 if (gUnk_02034934->unk_C74 > 0) {
                     gUnk_02034934->unk_C74--;
                 } else {
@@ -2419,6 +2483,7 @@ u8 func_0805AA9C(void) {
                 gUnk_02034934->unk_CC0 = 1;
                 gUnk_02034934->unk_C72++;
                 m4aSongNumStart(101);
+
                 if (gUnk_02034934->unk_C74 < gUnk_02034934->unk_C78 - 1) {
                     gUnk_02034934->unk_C74++;
                 } else {
@@ -2429,6 +2494,7 @@ u8 func_0805AA9C(void) {
     }
     func_0805A514(gUnk_02034934->unk_CAE - 24, gUnk_02034934->unk_CB0 - 4,
         gUnk_02034934->unk_CB2);
+
     if (GetKeysPressed() & 8) {
         gUnk_02034934->unk_048 = 0;
         gUnk_02034934->unk_000 = 5;

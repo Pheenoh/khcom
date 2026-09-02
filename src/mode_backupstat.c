@@ -43,6 +43,7 @@ void mode_backupstat_0(void) {
 
     for (i = 0; i < gUnk_02035FE9 * 2; i++) {
         func_0805FCB0(12, i * 9, 2, gUnk_02035FEC[i / 2].name);
+
         switch (i % 2) {
         case 0:
             func_0805FCB0(75, i * 9, 2, gUnk_09993878);
@@ -59,6 +60,7 @@ void func_081097F4(void) {
     u16 slot;
 
     slot = gUnk_02035FE8 % 2;
+
     switch (gUnk_02035FE8 / 2) {
     case 0:
         SaveSetHeaderState(slot, gUnk_02035FF0[gUnk_02035FE8]);
@@ -86,6 +88,7 @@ void mode_backupstat_1(void) {
     u8 prev;
 
     prev = gUnk_02035FE8;
+
     if (GetKeysRepeat() & DPAD_UP) {
         gUnk_02035FE8--;
     } else if (GetKeysRepeat() & DPAD_DOWN) {
@@ -234,11 +237,13 @@ void func_0810A018(PcWork* work) {
     }
     ox = 0;
     oy = 0;
+
     if (work->unk_2E8.unk_05 == 1) {
         ox = gUnk_02039DC8->unk_68;
         oy = gUnk_02039DC8->unk_6A;
     }
     gfx = work->unk_04C;
+
     if (work->unk_018 == 0) {
         if (func_0801CA00(&work->unk_054)) {
             gfx = work->unk_050;
@@ -266,6 +271,7 @@ void func_0810A018(PcWork* work) {
     }
 
     j = 0;
+
     while (!(cmd->unk_00 & 0x80)) {
         if (cmd->unk_00 & 1) {
             DrawSprite(cmd->unk_04 + sx, cmd->unk_06 + sy, gUnk_09EFAB18[cmd->unk_01],
@@ -306,6 +312,7 @@ void func_0810A018(PcWork* work) {
         gUnk_02039B84->unk_0D8 = 0xFFF6;
     }
     WorldToScreen(&sx, &sy, work->unk_020 + ((-0x70 - ox) << 8), work->unk_024 + ((-0x64 - oy) << 8), work->unk_028);
+
     if (work->unk_032 != work->unk_036) {
         LoadBgTiles(1, gUnk_09A4AC84[step->unk_1E].unk_00, gUnk_09A4AC84[step->unk_1E].unk_04);
         LoadBgMap(1, gUnk_09A4AC84[step->unk_1E].unk_08, gUnk_09A4AC84[step->unk_1E].unk_0C);

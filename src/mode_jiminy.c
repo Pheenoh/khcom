@@ -221,6 +221,7 @@ void mode_jiminy_1(void) {
 
         if (GetKeysPressed() & 2) {
             gUnk_02034934->unk_048 = 0;
+
             if (e2->unk_0A == -1) {
                 gUnk_02034934->unk_000 = 2;
             } else {
@@ -237,6 +238,7 @@ void mode_jiminy_1(void) {
             u32 ok;
 
             ok = 1;
+
             if (e2->unk_10 != 0) {
                 ok = func_0800FF00(e2->unk_10[gUnk_02034934->unk_C72]) != 0;
             } else {
@@ -247,6 +249,7 @@ void mode_jiminy_1(void) {
 
             if (ok != 0) {
                 m4aSongNumStart(0x66);
+
                 if (e2->unk_0C != 0) {
                     gUnk_02034934->unk_000 = 6;
                     gUnk_02034934->unk_D2C = e2->unk_0C[gUnk_02034934->unk_C72];
@@ -340,6 +343,7 @@ void mode_jiminy_1(void) {
                 } else {
                     DrawSprite(gUnk_02034934->unk_058 >> 8, gUnk_02034934->unk_05C >> 8, gUnk_08C6A8F8,
                         gUnk_02034934->unk_020, gUnk_02034934->unk_024, 0, 0, 0);
+
                     if (gUnk_02034934->unk_CC0 == 1) {
                         func_08005B64(&gUnk_02034934->unk_C94);
                     }

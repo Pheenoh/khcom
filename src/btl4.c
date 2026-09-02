@@ -113,6 +113,7 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
     d1 = func_0805CDC8(value / 1000, flag);
     work->unk_24[1] = d1;
     value %= 1000;
+
     if (d1 != 0) {
         flag = 1;
     }
@@ -120,6 +121,7 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
     d2 = func_0805CDC8(value / 100, flag);
     work->unk_24[2] = d2;
     value %= 100;
+
     if (d2 != 0) {
         flag = 1;
     }
@@ -127,6 +129,7 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
     d3 = func_0805CDC8(value / 10, flag);
     work->unk_24[3] = d3;
     value %= 10;
+
     if (d3 != 0) {
         flag = 1;
     }
@@ -397,6 +400,7 @@ void task_btl_hpoth_0(BtlHpothWork* work) {
         work->unk_28 = 0;
     } else {
         AnimStart(&work->unk_2C, 11, 1);
+
         switch (work->unk_64) {
         case 0:
             work->unk_28 = gUnk_08B23E7C;

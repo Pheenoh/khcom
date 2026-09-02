@@ -13,6 +13,7 @@ void mode_title_0(void) {
     func_08004E64();
     SetupBg(0, 0, 0x1D, 0);
     SetBgPriority(0, 3);
+
     if (gUnk_02039BB0.unk_008 & 0x200) {
         LoadBgMap(0, gUnk_09840798, 0x800);
     } else {
@@ -21,6 +22,7 @@ void mode_title_0(void) {
     DisableBg(0);
     SetupBg(1, 0, 0x1E, 0);
     SetBgPriority(1, 3);
+
     if (gUnk_02039BB0.unk_008 & 0x200) {
         LoadBgTiles(1, gUnk_097D3658, 0x7FA0);
         LoadBgMap(1, gUnk_09840F98, 0x800);
@@ -81,6 +83,7 @@ void mode_title_1(void) {
         gUnk_02034EC0--;
         if (gUnk_02034EC0 == 0x46) {
             func_080C75A4(1, 0x46);
+
             if (gUnk_02034EC0 == 0x46) {
                 func_08006184(1, 0x46);
             }
@@ -127,6 +130,7 @@ void mode_title_1(void) {
         gUnk_02034EC0 = 4;
         gUnk_02034EC8++;
         gBldAlpha = (gUnk_02034EC8 << 8) | (16 - gUnk_02034EC8);
+
         if (gUnk_02034EC8 > 15) {
             gBldCnt = 0;
             func_080D5B04();
@@ -142,6 +146,7 @@ void mode_title_1(void) {
             break;
         }
         m4aSongNumStart(0x66);
+
         if (SaveRepairSystem() == 2) {
             gUnk_02034EC2 = 3;
         } else if (SaveRepairFileLarge(0) == 2 || SaveRepairFileLarge(1) == 2) {
@@ -170,6 +175,7 @@ void mode_title_1(void) {
         gUnk_02034EC0 = 4;
         gUnk_02034EC8++;
         gBldAlpha = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
+
         if (gUnk_02034EC8 > 15) {
             gBldCnt = 0;
             gUnk_02034E98 = 8;
@@ -183,6 +189,7 @@ void mode_title_1(void) {
         gUnk_02034EC0 = 1;
         gUnk_02034EC8--;
         gBldAlpha = ((16 - gUnk_02034EC8) << 8) | gUnk_02034EC8;
+
         if (gUnk_02034EC8 > 15) {
             gBldCnt = 0;
             func_08000DE8(&gUnk_02034EA0, gUnk_02034EB4);
@@ -223,8 +230,10 @@ void mode_title_1(void) {
     }
     TaskPoolDraw(&gUnk_02034EA0);
     func_080C73D8();
+
     if (gUnk_02034E98 <= 4 && (GetKeysPressed() & 9)) {
         m4aSongNumStart(0x65);
+
         if (gUnk_02034E98 <= 3) {
             func_080D5A4C(2);
         }
@@ -260,6 +269,7 @@ u8 func_080D6294(void) {
 void func_080D62A8(TitleLogoWork* work) {
     work->unk_00[0].unk_00 = LoadObjTiles(gUnk_0976E9F4, 0x240);
     work->unk_00[0].unk_08 = gUnk_09EF659C;
+
     if (gUnk_02039BB0.unk_008 & 0x200) {
         work->unk_00[1].unk_00 = LoadObjTiles(gUnk_09776076, 0x43C0);
         work->unk_00[1].unk_08 = gUnk_09EF669C;

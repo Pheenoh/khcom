@@ -760,6 +760,7 @@ void WaitSramErrorInput(void) {
         dma = (vu32*)0x040000D4;
         do {
             ReadKeysRaw();
+
             if ((((gUnk_0203408A ^ gUnk_02034088) & gUnk_02034088) & 0xF0) == 0xF0) {
                 prev = cur;
                 cur = i;

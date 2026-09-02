@@ -2157,6 +2157,7 @@ u8 func_0803DD44(EmyWork* work) {
     } else {
         t = (work->unk_03C.unk_CE + ((lo = -work->unk_03C.unk_D0) +
             GetRandom() % (work->unk_03C.unk_D0 - lo + 1))) << 8;
+
         if (act->unk_04 < x) {
             d = x - t;
         } else {

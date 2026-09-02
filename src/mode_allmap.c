@@ -4,6 +4,7 @@
 #ifndef VERSION_EU
 void mode_allmap_0(s32 a) {
     gUnk_02034E81 = 0;
+
     if (a == 1) {
         gUnk_02034E81 = a;
     }
@@ -40,6 +41,7 @@ void mode_allmap_0(s32 a) {
     SetVCountCallback(func_080D2F20);
     REG_IME = 1;
     func_08006120(0, 16);
+
     if (gUnk_02034E81 != 0) {
         m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x80);
     }
@@ -62,6 +64,7 @@ void mode_allmap_1(void) {
     UpdatePlayTime();
     TaskPoolUpdate(&gUnk_0203C4F0);
     TaskPoolDraw(&gUnk_0203C4F0);
+
     if (gUnk_0203C4E0 == 0 && !func_08006314()) {
         if (gUnk_0203C534 != 0 && gUnk_0203C508 != 0) {
             gUnk_0203C4E0 = 1;
@@ -86,6 +89,7 @@ void mode_allmap_1(void) {
             }
             gUnk_02034E3C--;
             func_080D3034(gUnk_02034E3C);
+
             if (gUnk_02034E3C == 0) {
                 func_080D3370();
             }
@@ -96,6 +100,7 @@ void mode_allmap_1(void) {
         }
     }
     func_080D3050();
+
     if (gUnk_0203C4E0 == 2 || gUnk_0203C4E0 == 3) {
         EnableBg(0);
         EnableBg(1);
@@ -114,6 +119,7 @@ void mode_allmap_2(void) {
     REG_DISPSTAT &= 0xFFDF;
     REG_IME = 1;
     ResetVCountCallback();
+
     if (gUnk_02034E81 != 0) {
         m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x100);
     }
@@ -173,15 +179,18 @@ s32 func_080D35B0(AllmapRoomWork* work) {
     }
 
     mask = 0;
+
     for (i = 0; i < 4; i++) {
         if (func_080D3564(work->unk_098, i) == 0) {
             continue;
         }
         mask += 1 << i;
+
         if (func_080D3538(work->unk_098, i) != 0) {
             AnimInit(&work->unk_02C[i], gUnk_09EF653C, gUnk_09EF64FC);
             AnimStart(&work->unk_02C[i], dirs.unk_00[i], 1);
             work->unk_01C[i] = AnimGetGfx(&work->unk_02C[i]);
+
             if (work->unk_09C == 0) {
                 work->unk_00C[i] = LoadObjTiles(gUnk_0976DEDC, 0x500);
             } else {
@@ -191,6 +200,7 @@ s32 func_080D35B0(AllmapRoomWork* work) {
             AnimInit(&work->unk_02C[i], gUnk_09EF658C, gUnk_09EF654C);
             AnimStart(&work->unk_02C[i], dirs.unk_00[i], 1);
             work->unk_01C[i] = AnimGetGfx(&work->unk_02C[i]);
+
             if (work->unk_09C == 0) {
                 work->unk_00C[i] = LoadObjTiles(gUnk_0976E4D4, 0x500);
             } else {
@@ -203,6 +213,7 @@ s32 func_080D35B0(AllmapRoomWork* work) {
 
 s32 func_080D37BC(u8 a) {
     u8 r = 0;
+
     if (func_080DF51C(a) == 1 || func_080DF51C(a) == 4) {
         r = 1;
     }

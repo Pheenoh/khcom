@@ -259,11 +259,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & DPAD_LEFT) {
         gKeyHoldLeft++;
         gKeyReleaseLeft = 0;
+
         if (gKeyHoldLeft > 32) {
             gKeyHoldLeft = 29;
         }
     } else {
         gKeyHoldLeft = 0;
+
         if (gKeyReleaseLeft < 255) {
             gKeyReleaseLeft++;
         }
@@ -272,11 +274,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & DPAD_RIGHT) {
         gKeyHoldRight++;
         gKeyReleaseRight = 0;
+
         if (gKeyHoldRight > 32) {
             gKeyHoldRight = 29;
         }
     } else {
         gKeyHoldRight = 0;
+
         if (gKeyReleaseRight < 255) {
             gKeyReleaseRight++;
         }
@@ -285,11 +289,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & DPAD_UP) {
         gKeyHoldUp++;
         gKeyReleaseUp = 0;
+
         if (gKeyHoldUp > 32) {
             gKeyHoldUp = 29;
         }
     } else {
         gKeyHoldUp = 0;
+
         if (gKeyReleaseUp < 255) {
             gKeyReleaseUp++;
         }
@@ -298,11 +304,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & DPAD_DOWN) {
         gKeyHoldDown++;
         gKeyReleaseDown = 0;
+
         if (gKeyHoldDown > 32) {
             gKeyHoldDown = 29;
         }
     } else {
         gKeyHoldDown = 0;
+
         if (gKeyReleaseDown < 255) {
             gKeyReleaseDown++;
         }
@@ -311,11 +319,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & L_BUTTON) {
         gKeyHoldL++;
         gKeyReleaseL = 0;
+
         if (gKeyHoldL > 32) {
             gKeyHoldL = 29;
         }
     } else {
         gKeyHoldL = 0;
+
         if (gKeyReleaseL < 255) {
             gKeyReleaseL++;
         }
@@ -324,11 +334,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & R_BUTTON) {
         gKeyHoldR++;
         gKeyReleaseR = 0;
+
         if (gKeyHoldR > 32) {
             gKeyHoldR = 29;
         }
     } else {
         gKeyHoldR = 0;
+
         if (gKeyReleaseR < 255) {
             gKeyReleaseR++;
         }
@@ -337,11 +349,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & A_BUTTON) {
         gKeyHoldA++;
         gKeyReleaseA = 0;
+
         if (gKeyHoldA > 32) {
             gKeyHoldA = 29;
         }
     } else {
         gKeyHoldA = 0;
+
         if (gKeyReleaseA < 255) {
             gKeyReleaseA++;
         }
@@ -350,11 +364,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & B_BUTTON) {
         gKeyHoldB++;
         gKeyReleaseB = 0;
+
         if (gKeyHoldB > 32) {
             gKeyHoldB = 29;
         }
     } else {
         gKeyHoldB = 0;
+
         if (gKeyReleaseB < 255) {
             gKeyReleaseB++;
         }
@@ -363,11 +379,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & START_BUTTON) {
         gKeyHoldStart++;
         gKeyReleaseStart = 0;
+
         if (gKeyHoldStart > 32) {
             gKeyHoldStart = 29;
         }
     } else {
         gKeyHoldStart = 0;
+
         if (gKeyReleaseStart < 255) {
             gKeyReleaseStart++;
         }
@@ -376,11 +394,13 @@ void UpdateKeyState(void) {
     if (gKeysHeld & SELECT_BUTTON) {
         gKeyHoldSelect++;
         gKeyReleaseSelect = 0;
+
         if (gKeyHoldSelect > 32) {
             gKeyHoldSelect = 29;
         }
     } else {
         gKeyHoldSelect = 0;
+
         if (gKeyReleaseSelect < 255) {
             gKeyReleaseSelect++;
         }

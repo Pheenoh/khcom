@@ -37,6 +37,7 @@ void task_title_logo_2(TitleLogoWork* work) {
             x = 0x50;
         }
         y = 70;
+
         if (i == 0) {
             x++;
         }
@@ -46,6 +47,7 @@ void task_title_logo_2(TitleLogoWork* work) {
                 continue;
             }
             affine = AllocObjAffine(0, 0x100, work->unk_4C, 0);
+
             if (gUnk_02039BB0.unk_008 & 0x200) {
                 y = 86;
                 x--;
@@ -91,6 +93,7 @@ void task_title_obj_0(TitleObjWork* work) {
     work->unk_00[0].unk_00 = LoadObjTiles(gUnk_09771060, 0x3C0);
     work->unk_00[0].unk_04 = LoadObjPalette(gUnk_0984A718, 0x20);
     work->unk_00[0].unk_08 = gUnk_09EF65E0[0];
+
     if (gUnk_02039BB0.unk_008 & 0x200) {
         work->unk_00[0].unk_10 = 0xBA00;
         work->unk_00[0].unk_0C = 0x76;
@@ -138,6 +141,7 @@ void task_title_obj_2(TitleObjWork* work) {
     s32 i;
 
     work->unk_00[1].unk_08 = AnimUpdate(&work->unk_48);
+
     for (i = 0; i < 2; i++) {
         DrawSprite(work->unk_00[i].unk_10 >> 8, work->unk_00[i].unk_0C, work->unk_00[i].unk_08,
                    work->unk_00[i].unk_00, work->unk_00[i].unk_04, 0, 0, i);
@@ -168,6 +172,7 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
 
     t = (gUnk_02039BB0.unk_008 & 0x200) ? 0x20 : 0;
     work->unk_44 = arg;
+
     if (arg[0] == 0) {
         if (gUnk_02039BB0.unk_008 & 0x20) {
             work->unk_5C = 4;
@@ -231,6 +236,7 @@ void func_080D6944(s16* p) {
     if (keys != 0) {
         m4aSongNumStart(0x65);
         (*p)--;
+
         if (*p < 0) {
             *p = max;
         }
@@ -287,6 +293,7 @@ void func_080D6A64(TitleMenuWork* work) {
     y = 32;
     t = gUnk_02039BB0.unk_008 & 0x20;
     count = 3;
+
     if (t == 0) {
         count = 2;
         y = 48;
@@ -313,11 +320,13 @@ void func_080D6B7C(TitleMenuWork* work) {
     s16 y;
 
     y = 16;
+
     for (i = 0; i < 4; i++) {
         DrawSprite(work->unk_60, y, gUnk_09EF6668[gUnk_096FDCC8[i]], work->unk_00, work->unk_04, 0, 0x400, i + 100);
         y += 24;
     }
     y = func_080D6908(work->unk_44[0]) * 24 + 16;
+
     for (i = 0; i < 3; i++) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
@@ -328,11 +337,13 @@ void func_080D6C54(TitleMenuWork* work) {
     s16 y;
 
     y = 48;
+
     for (i = 0; i < 2; i++) {
         DrawSprite(work->unk_60, y, gUnk_09EF6668[gUnk_096FDCC8[i]], work->unk_00, work->unk_04, 0, 0x400, i + 100);
         y += 24;
     }
     y = func_080D6908(work->unk_44[0]) * 24 + 48;
+
     for (i = 0; i < 3; i++) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
@@ -344,6 +355,7 @@ void func_080D6D2C(TitleMenuWork* work) {
 
     y = 56;
     DrawSprite(work->unk_60, y, gUnk_09EF6668[work->unk_44[0]], work->unk_00, work->unk_04, 0, 0x400, 100);
+
     for (i = 0; i < 3; i++) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
@@ -353,6 +365,7 @@ void task_title_menu_2(TitleMenuWork* work) {
     work->unk_20[0] = AnimUpdate(&work->unk_2C);
     work->unk_20[1] = gUnk_09EF6620[work->unk_44[0]];
     work->unk_20[2] = gUnk_09EF663C[work->unk_44[0]];
+
     if (gUnk_02039BB0.unk_008 & 0x200) {
         work->unk_60 = 120;
     } else {
@@ -376,6 +389,7 @@ void task_title_menu_3(TitleMenuWork* work) {
 
     ReleaseObjTiles(work->unk_00);
     ReleaseObjPalette(work->unk_04);
+
     for (i = 0; i < 3; i++) {
         ReleaseObjTiles(work->unk_08[i]);
         ReleaseObjPalette(work->unk_14[i]);
@@ -401,6 +415,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
 
     v = GetPaletteEffect();
     memcpy(tbl, gUnk_096FDCE8, sizeof(tbl));
+
     switch (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
     case 0x100:
         for (i = 0; i < 3; i++) {
@@ -436,6 +451,7 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
 
     v = GetPaletteEffect();
     tbl = (gUnk_02039BB0.unk_008 & 0x200) ? gUnk_09EF6684 : gUnk_09EF6658;
+
     if (v < 0) {
         work->unk_08 = tbl[0];
     } else if (v == 0) {

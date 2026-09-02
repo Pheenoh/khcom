@@ -50,6 +50,7 @@ void SndStreamInit(u32 rate, u32 channels) {
     gSndStream.unk_44 = 0;
     gSndStream.unk_28 = 0;
     gSndStream.unk_2C = 0;
+
     for (i = 0; i < channels; i++) {
         gSndStream.unk_00[i] =
             gSndStream.unk_4C((gSndStream.unk_34 + 3) & ~3);
@@ -85,6 +86,7 @@ void SndStreamUpdate(void) {
             gSndStream.unk_28 = 0;
         }
         gSndStream.unk_2C += gSndStream.unk_30;
+
         if (gSndStream.unk_40 == 1) {
             REG_DMA1CNT = 0;
             REG_DMA1SAD =
@@ -145,6 +147,7 @@ void SndStreamClose(void) {
     u32 i;
 
     SndStreamStop();
+
     for (i = 0; i < gSndStream.unk_40; i++) {
         gSndStream.unk_54(gSndStream.unk_00[i]);
     }
@@ -160,6 +163,7 @@ void SndStreamStop(void) {
     if (gSndStream.unk_44 != 0) {
         REG_TM0CNT_H = 0;
         gSndStream.unk_44 = 0;
+
         if (gSndStream.unk_40 == 1) {
             REG_DMA1CNT = 0;
         } else {

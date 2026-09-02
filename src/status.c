@@ -11,6 +11,7 @@ void task_status_0(StatusWork* work) {
     TaskPoolInit(&work->pool, 9);
     TaskCreate(work, &gUnk_09EF4FE0, 0);
     TaskCreate(work, &gUnk_09EF4F38, 0);
+
     if (!(gUnk_02039BB0.unk_008 & 8)) {
         TaskCreate(work, &gUnk_09EF4F20, &work->unk_14);
         TaskCreate(work, &gUnk_09EF4F50, &gUnk_02034F00);
@@ -18,6 +19,7 @@ void task_status_0(StatusWork* work) {
     TaskCreate(work, &gUnk_09EF4F80, &work->unk_14);
     TaskCreate(work, &gUnk_09EF4F98, &work->unk_1C);
     TaskCreate(work, &gUnk_09EF4FB0, &gUnk_02034F00);
+
     if (func_080D82D4() == 0) {
         work->unk_1A = ~work->unk_14;
     } else {
@@ -65,6 +67,7 @@ void func_080D764C(StatusWork* work) {
     } else if ((GetKeysRepeat() & DPAD_LEFT) && !(gUnk_02039BB0.unk_008 & 8)) {
         if (work->unk_14 != 0) {
             work->unk_14--;
+
             if (work->unk_1A < 0 || func_080D82D4() == 0) {
                 work->unk_1A = ~work->unk_14;
                 gUnk_02034F00 = 0;
@@ -78,6 +81,7 @@ void func_080D764C(StatusWork* work) {
     } else if ((GetKeysRepeat() & DPAD_RIGHT) && !(gUnk_02039BB0.unk_008 & 8)) {
         if (work->unk_14 <= 2) {
             work->unk_14++;
+
             if (work->unk_1A < 0 || func_080D82D4() == 0) {
                 work->unk_1A = ~work->unk_14;
                 gUnk_02034F00 = 0;
@@ -137,6 +141,7 @@ s16 func_080D78A8(void) {
 
 void func_080D78B8(StatusBarWork* work) {
     work->unk_24 = 1;
+
     if (gUnk_0203C550 == 0) {
         gUnk_0203C550 = 4;
     } else {
@@ -233,6 +238,7 @@ u8 task_status_bar_1(StatusBarWork* work) {
 
 void task_status_bar_2(StatusBarWork* work) {
     DrawSprite(work->unk_1C >> 8, 0, gUnk_097A18CC, work->unk_00, work->unk_04, 0, 0xC00, 29);
+
     if (gUnk_0203C550 != 2) {
         DrawSprite(128, work->unk_0C >> 8, gUnk_097A1864, work->unk_00, work->unk_04, 0, 0xC00, 30);
         DrawSprite(128, work->unk_14 >> 8, gUnk_097A1898, work->unk_00, work->unk_04, 0, 0xC00, 31);
@@ -374,6 +380,7 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
     if (work->unk_4C != *work->unk_48) {
         work->unk_4C = *work->unk_48;
         work->unk_4E = 4;
+
         if (work->unk_4C < 0) {
             work->unk_5C = gUnk_096FDD8C[~work->unk_4C];
             work->unk_54 = 0x1000;
@@ -384,6 +391,7 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
     }
     func_0805F1C0(&work->unk_50, work->unk_54);
     func_0805F1C0(&work->unk_58, work->unk_5C);
+
     for (i = 0; i < 2; i++) {
         work->unk_10[i] = AnimUpdate(&work->anim[i]);
     }
@@ -394,6 +402,7 @@ void task_status_cursor_2(StatusCursorWork* work) {
     if (func_08006314() == 0) {
         if (!(gUnk_02039BB0.unk_008 & 8) || func_080D8340()) {
             DrawSprite(work->unk_58 >> 8, (work->unk_50 >> 8) - 16, work->unk_10[1], work->unk_04, work->unk_0C, 0, 0, 0);
+
             if (work->unk_4C >= 0) {
                 DrawSprite(1, (work->unk_50 >> 8) + 3, work->unk_10[0], work->unk_00, work->unk_08, 0, 0, 1);
             }
@@ -415,6 +424,7 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
     gUnk_02034F04 = work;
     work->unk_4C0 = arg;
     e = work->entries;
+
     for (i = 0; i < 4; i++) {
         func_080D8584(e);
         e++;
@@ -461,6 +471,7 @@ void task_status_stocklist_2(StatusStocklistWork* work) {
     s16 y;
 
     y = 36;
+
     for (i = 0; i < 8; i++) {
         if (work->unk_490[i] != 0) {
             if (work->unk_4C8 != 0) {
@@ -513,6 +524,7 @@ void func_080D8374(void) {
     s32 i;
 
     ReleaseObjTiles(gUnk_02034F04->unk_490[0]);
+
     for (i = 0; i < 7; i++) {
         gUnk_02034F04->unk_490[i] = gUnk_02034F04->unk_490[i + 1];
     }
@@ -524,6 +536,7 @@ void func_080D83F4(void) {
     s32 i;
 
     ReleaseObjTiles(gUnk_02034F04->unk_490[7]);
+
     for (i = 7; i > 0; i--) {
         gUnk_02034F04->unk_490[i] = gUnk_02034F04->unk_490[i - 1];
     }
@@ -541,6 +554,7 @@ void func_080D8474(u16 a) {
         }
     }
     gUnk_02034F04->unk_4C4 = a;
+
     for (i = 0; i < gUnk_02034F04->entries[*gUnk_02034F04->unk_4C0].unk_120 - a && i <= 7; i++) {
         gUnk_02034F04->unk_490[i] = func_080D85C0(func_080D85F8(gUnk_02034F04->entries[*gUnk_02034F04->unk_4C0].unk_000[a + i]));
     }
@@ -780,6 +794,7 @@ u8 task_status_meswindow_1(StatusMeswindowWork* work) {
             v = func_080D855C(func_080D789C());
             if (work->unk_18 != v) {
                 work->unk_18 = v;
+
                 if (work->unk_14 != 0) {
                     work->unk_20 = func_080D8F04(work->unk_14);
                     func_08000DE8(&work->pool, work->unk_14);
@@ -848,6 +863,7 @@ void task_status_friend_2(StatusFriendWork* work) {
     s16 x;
 
     x = (gUnk_02039BB0.unk_008 & 8) ? 216 : 186;
+
     for (i = 0; i < work->unk_24; i++) {
         DrawSprite(x, 45, work->unk_18[i], work->unk_00[i], work->unk_0C[i], 0, 0x800, i + 7);
         x += 20;
@@ -873,12 +889,14 @@ u16 func_080D8B84(void** a, void** b, void** c) {
     u16 lim;
 
     t = gUnk_096FDE24;
+
     if (gUnk_02039BB0.unk_008 & 8) {
         lim = 1;
     } else {
         lim = 3;
     }
     n = 0;
+
     for (i = 0; i <= 7; i++) {
         e = &t.unk_00[i];
         if (gUnk_02039D2C & e->unk_00) {
@@ -923,6 +941,7 @@ INCLUDE_ASM("status/stock_mes_disp_1.s");
 
 void stock_mes_disp_2(StockMesDispWork* work) {
     DrawSprite(work->unk_3C + 14, work->unk_3E - 4, 0, work->unk_00, work->unk_04, 0, 0, 5);
+
     if (work->unk_40 != 0) {
         DrawSprite(work->unk_3C - (work->unk_20 / 8) % 4, work->unk_3E, work->unk_18, work->unk_08, work->unk_10, 0, 0, 2);
     }
@@ -962,6 +981,7 @@ void func_080D8F14(StatusDialogWork* work) {
     if (gUnk_0203C560 <= 2) {
         gUnk_0203C56C = 0;
         gUnk_0203C570 = 0;
+
         if (gUnk_0203C558 == 0) {
             work->unk_000 = 8;
             work->unk_164 = TaskCreate(&work->unk_02C, &gUnk_09EF50A0, &work->unk_040);
@@ -1002,6 +1022,7 @@ u8 func_080D9058(s32* a, s32* b) {
     u8 r;
 
     r = 0;
+
     if (*a < 0xA000) {
         *a = 0xA000;
         r = 1;
@@ -1050,6 +1071,7 @@ void task_bos_boogie_0(StatusDialogWork* work) {
     work->unk_00C = LoadObjPalette(gUnk_0984AF78, 0x20);
     work->unk_010 = LoadObjPalette(gUnk_08F69BC4, 0x20);
     sz = 0;
+
     for (i = 0; i <= 5; i++) {
         t = func_08003524(gUnk_096FDEE4[i].unk_00, gUnk_096FDEE4[i].unk_04);
         if (sz < t) {
@@ -1084,6 +1106,7 @@ void task_bos_boogie_2(StatusDialogWork* work) {
 
     a = &work->unk_040;
     f = func_0801AF1C(a->unk_08);
+
     if (!(a->unk_34 & 4)) {
         f |= 1;
     }
@@ -1122,6 +1145,7 @@ void func_080D9A14(void) {
 void func_080D9A58(void) {
     func_080D9A14();
     gUnk_0203C568 = 0;
+
     if (gUnk_0203C560 <= 2) {
         gUnk_0203C560 = 3;
         gUnk_0203C554 += 540;
@@ -1139,6 +1163,7 @@ u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d) {
     u8 r;
 
     r = 0;
+
     if (*a < (128 - c) << 8) {
         *a = (128 - c) << 8;
         r = 1;

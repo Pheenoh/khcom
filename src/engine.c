@@ -552,11 +552,13 @@ u16 func_08003524(u16** a, u16 n) {
     u16 j;
 
     max = 0;
+
     for (i = 0; i < n; i++) {
         p = a[i];
         count = p[0];
         p++;
         sum = 0;
+
         for (j = 0; j < count; j++) {
             sum += func_08001DB0(p[0], p[1]);
             p += 3;
@@ -660,6 +662,7 @@ u8 func_080038E4(ObjTiles* a, u16* b, void* c) {
             count = *b;
             b++;
             acc = 0;
+
             if (count != 0) {
                 j = count;
                 do {
@@ -875,6 +878,7 @@ s32 func_08003C9C(s32 a) {
 
     if (a > 0) {
         x = 0x100;
+
         if (a > 0x100) {
             x = a;
         }
@@ -1168,6 +1172,7 @@ void func_08004DB0(void) {
     SetBgScroll(1, 0, 0);
     SetBgScroll(2, 0, 0);
     SetBgScroll(3, 0, 0);
+
     for (i = 0; i <= 3; i++) {
         u8* p = (u8*)gBgEntries;
         s32 o = i * 16;
@@ -1189,6 +1194,7 @@ void func_08004E64(void) {
     SetBgScroll(0, 0, 0);
     SetBgScroll(1, 0, 0);
     func_08005690(2, 0, 0x100, 0x100, 0, 0);
+
     for (i = 0; i <= 3; i++) {
         u8* p = (u8*)gBgEntries;
         s32 o = i * 16;
@@ -1207,6 +1213,7 @@ void func_08004F08(void) {
     SetupBg(3, 2, 31, 0);
     func_08005690(2, 0, 0x100, 0x100, 0, 0);
     func_08005690(3, 0, 0x100, 0x100, 0, 0);
+
     for (i = 0; i <= 3; i++) {
         u8* p = (u8*)gBgEntries;
         s32 o = i * 16;
@@ -1360,6 +1367,7 @@ void func_080054C8(u8 a, u8 b) {
 void SetBgScroll(s32 bg, s32 x, s32 y) {
     x &= 0x1FF;
     y &= 0x1FF;
+
     switch ((u32)bg) {
     case 0:
         gBg0HOfs = x;
@@ -1472,6 +1480,7 @@ void func_08005690(s32 bg, u8 rot, s32 sx, s32 sy, s32 dx, s32 dy) {
     src.sy = 0x10000 / sy;
     src.alpha = -rot << 8;
     BgAffineSet(&src, &dst, 1);
+
     switch (bg) {
     case 2:
         gBg2PA = dst.pa;
@@ -1597,6 +1606,7 @@ void ApproachValue(s32* value, s32 target, u16 steps) {
 
 s32 func_08005920(u16 a) {
     a >>= 1;
+
     if (a == 0) {
         a = 1;
     }
@@ -1636,8 +1646,10 @@ void AnimStart(AnimState* a, u16 animId, u16 flags) {
         return;
     }
     a->frames = (AnimFrame*)&h->unk_06;
+
     if ((flags & 4) == 0) {
         a->timer = 0;
+
         if (flags & 2) {
             a->frame = GetRandom() % a->frameCount;
         } else {
@@ -1661,8 +1673,10 @@ void AnimChange(AnimState* a, u16 id, u16 flags) {
         return;
     }
     a->frames = (AnimFrame*)&h->unk_06;
+
     if ((flags & 4) == 0) {
         a->timer = 0;
+
         if (flags & 2) {
             a->frame = GetRandom() % a->frameCount;
         } else {
@@ -2025,14 +2039,17 @@ u16 GetRandom(void) {
 
     x = gRandomState[1];
     x <<= 1;
+
     if (gRandomState[0] & 0x80000000) {
         x++;
     }
     x <<= 1;
+
     if (gRandomState[0] & 0x40000000) {
         x++;
     }
     gRandomState[3] <<= 1;
+
     if (gRandomState[2] & 0x80000000) {
         gRandomState[3]++;
     }
@@ -2051,8 +2068,10 @@ void func_080065FC(s32 bg, u16 b, u16 c) {
     gUnk_02034050 = 0;
     gUnk_02034052 = 0;
     gUnk_02034054 = 1;
+
     if (c == 0) {
         gUnk_02034058 = 0;
+
         switch (b) {
         case 0x4000:
         case 0x8000:
@@ -2068,6 +2087,7 @@ void func_080065FC(s32 bg, u16 b, u16 c) {
         }
     } else {
         gUnk_02034058 = 1;
+
         switch (b) {
         case 0x4000:
             gUnk_02034056 = 0x400;
@@ -2106,6 +2126,7 @@ void func_0800675C(u8 a, s32 b, s32 c) {
 void func_08006778(u8* a, s32 x, s32 y) {
     gUnk_02034040 = a;
     func_080066F4((s16)x, (s16)y);
+
     if (gUnk_02034058 != 0) {
         gUnk_0203404C = *(u16*)(a + 0x0E) << 6;
     } else {
@@ -2118,6 +2139,7 @@ void func_08006778(u8* a, s32 x, s32 y) {
     gUnk_02034046 = 0;
     gUnk_02034054 = 0;
     gUnk_0203406A = *(u16*)(a + 0x16);
+
     if (gUnk_02034058 != 0) {
         gUnk_0203405C = 0x100;
         gUnk_02034060 = 0x100;
@@ -2140,6 +2162,7 @@ void func_0800685C(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
     src.sy = 0x10000 / sy;
     src.alpha = -rot << 8;
     BgAffineSet(&src, &dst, 1);
+
     switch (bg) {
     case 2:
         gBg2PA = dst.pa;

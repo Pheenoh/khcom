@@ -20,6 +20,7 @@ u8 task_btl_lockon_1(BtlLockonWork* work) {
 
     if (gUnk_02039B84->unk_078 != 0) {
         work->unk_020 = AnimUpdate(&work->unk_008);
+
         if (gUnk_02039B84->unk_078->unk_034 & 0x1000000) {
             gUnk_02039B84->unk_078 = 0;
         }
@@ -112,6 +113,7 @@ u16 func_0801DC80(BtlSoraWork* work) {
 
     a = work->unk_040.unk_E4->unk_07C;
     b = work->unk_040.unk_E4->unk_078;
+
     if (work->unk_040.unk_E4->unk_068 & 0x8000) {
         return 3;
     }
@@ -194,6 +196,7 @@ void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
     s32 idx;
 
     idx = 0;
+
     switch (((work->unk_160 + 16) & 0xFF) >> 5) {
     case 0:
         idx = 1;
@@ -221,6 +224,7 @@ void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
 
 void func_0801DEB8(BtlSoraWork* work) {
     work->unk_000 = work->unk_040.unk_E4->unk_110;
+
     if (work->unk_172 != 0) {
         work->unk_004 = LoadObjPalette(gUnk_08F683A4, 0x20);
     } else {
@@ -240,6 +244,7 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
     UnkStruct_0801AF08* p;
 
     p = &work->unk_040;
+
     if ((a & 0x10) && (a & 0x40)) {
         work->unk_160 = 0x20;
         p->unk_34 &= ~4;
@@ -266,6 +271,7 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
 
     if (a & 0xF0) {
         func_0801DE1C(work, 0, 1);
+
         if (work->unk_00C.timer == 0) {
             switch (work->unk_00C.frame) {
             case 3:
@@ -416,6 +422,7 @@ u16 func_0801E794(u16 a, u16 b, u16 c) {
     u16 d;
 
     d = b;
+
     if (a & b) {
         if ((a & c) == 0) {
             a &= ~b;
@@ -455,6 +462,7 @@ void task_btl_sora_3(BtlSoraWork* work) {
 
     p = &work->unk_040;
     m4aSongNumStop(590);
+
     if (!(gUnk_02039B84->unk_068 & 0x4000)) {
         if (*(s32*)&gUnk_02039B84->unk_0A0 == 3) {
             gUnk_02039BB0.unk_032 = gUnk_02039BB0.unk_0F8;
@@ -492,6 +500,7 @@ u16 func_08027468(BtlRikuWork* work) {
 
     a = work->unk_044.unk_E4->unk_07C;
     b = work->unk_044.unk_E4->unk_078;
+
     if (work->unk_044.unk_E4->unk_068 & 0x8000) {
         return 3;
     }
@@ -547,6 +556,7 @@ void func_08027570(BtlRikuWork* work, BtlDrawInfo* out) {
     out->unk_00 = a->unk_04;
     out->unk_04 = a->unk_08;
     out->unk_08 = a->unk_0C;
+
     if (a->unk_34 & 4) {
         out->unk_0C |= 1;
     } else {
@@ -571,6 +581,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
 
     gfx = AnimGetGfx(&out->unk_10);
     a = &work->unk_044;
+
     if (func_080128EC() == 0) {
         gBldCnt = 0xF10;
         SetBlendAlpha(6, 12);
@@ -620,6 +631,7 @@ void func_0802770C(BtlRikuWork* work, u16 a, u16 b) {
     s32 idx;
 
     idx = 0;
+
     switch (((work->unk_164 + 16) & 0xFF) >> 5) {
     case 0:
         idx = 1;
@@ -647,6 +659,7 @@ void func_0802770C(BtlRikuWork* work, u16 a, u16 b) {
 
 void func_080277A8(BtlRikuWork* work) {
     work->unk_000 = work->unk_044.unk_E4->unk_110;
+
     if (work->unk_178 != 0) {
         work->unk_008 = LoadObjPalette(work->unk_1AC, 0x20);
     } else {
@@ -666,6 +679,7 @@ void func_08027A64(BtlRikuWork* work, u16 a) {
     UnkStruct_0801AF08* p;
 
     p = &work->unk_044;
+
     if ((a & 0x10) && (a & 0x40)) {
         work->unk_164 = 0x20;
         p->unk_34 &= ~4;
@@ -692,6 +706,7 @@ void func_08027A64(BtlRikuWork* work, u16 a) {
 
     if (a & 0xF0) {
         func_080276D4(work, 13, 1);
+
         if (work->unk_010.timer == 0) {
             switch (work->unk_010.frame) {
             case 3:
@@ -874,6 +889,7 @@ u16 func_08028428(u16 a, u16 b, u16 c) {
     u16 d;
 
     d = b;
+
     if (a & b) {
         if ((a & c) == 0) {
             a &= ~b;
@@ -914,6 +930,7 @@ void task_btl_riku_3(BtlRikuWork* work) {
     UnkStruct_0801AF08* p;
 
     p = &work->unk_044;
+
     if (*(s32*)&gUnk_02039B84->unk_0A0 == 3) {
         gUnk_02039BB0.unk_032 = gUnk_02039BB0.unk_0F8;
     } else {
