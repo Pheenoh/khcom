@@ -15,6 +15,12 @@ import argparse
 import json
 from pathlib import Path
 
+# Regions that can never be defined in a translation unit, header, or hand
+# written asm: compressed art and audio, FMV, and 0xFF filler. They are real
+# cartridge bytes and the build needs them, but they are not decompilation work,
+# so counting them as unmatched data would report 31 MB as outstanding forever.
+EXCLUDED_CATEGORIES = {"assets", "padding"}
+
 DIMENSIONS = {
     "code": ("total_code", ("matched_code_percent", "complete_code_percent", "fuzzy_match_percent")),
     "data": ("total_data", ("matched_data_percent", "complete_data_percent")),
@@ -83,7 +89,21 @@ def aggregate(units):
     return result
 
 
+def drop_excluded(report):
+    kept = []
+    for unit in report.get("units", []):
+        cats = set(unit.get("metadata", {}).get("progress_categories") or [])
+        if cats & EXCLUDED_CATEGORIES:
+            continue
+        kept.append(unit)
+    report["units"] = kept
+    report["categories"] = [
+        c for c in report.get("categories", []) if c.get("id") not in EXCLUDED_CATEGORIES
+    ]
+
+
 def normalize(report):
+    drop_excluded(report)
     units = report["units"]
     for unit in units:
         normalize_unit(unit)
