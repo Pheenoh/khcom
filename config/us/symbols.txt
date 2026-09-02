@@ -697,6 +697,7 @@ gUnk_09EDA4EC = 0x09EDA4EC
 gIwramHeap = 0x030074B8
 sEwramHeapName = 0x081213DC
 sIwramHeapName = 0x081213E8
+sSpriteHeapName = 0x081213F8
 gPaletteBuffer = 0x0300756C
 gPaletteEffect = 0x03007570
 gPaletteEffectSaved = 0x03007572
