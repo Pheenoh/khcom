@@ -1,6 +1,23 @@
 #include "macros.h"
 #include "mode_movie.h"
 
+vu16 gUnk_02034938;
+s32 gUnk_0203493C;
+s16 gUnk_02034940;
+s16 gUnk_02034942;
+s16 gUnk_02034944;
+s16 gUnk_02034946;
+s32 gUnk_02034948;
+s32 gUnk_0203494C;
+void* gUnk_02034950;
+s16 gUnk_02034954;
+s16 gUnk_02034956;
+s16 gUnk_02034958;
+s16 gUnk_0203495A;
+s16 gUnk_0203495C;
+s16 gUnk_0203495E;
+s16 gUnk_02034960;
+
 void mode_movie_0(s32 a) {
     gUnk_02034938 = 0;
     gUnk_0203493C = a;
