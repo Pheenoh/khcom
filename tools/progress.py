@@ -4,6 +4,11 @@
 Units are bucketed by the progress categories the report already carries, so
 this stays in step with decomp.yaml rather than duplicating its path prefixes.
 A unit counts as linked once every byte the report attributes to it matches.
+
+Two linking figures are shown because they answer different questions. The file
+count is how many units are finished; "Linked code" is how many bytes live in
+those finished units, which is the byte-weighted number decomp.dev publishes as
+complete_code_percent. They diverge sharply while the large units are partial.
 """
 
 import argparse
@@ -65,9 +70,11 @@ def main():
         md, td = to_int(m, "matched_data"), to_int(m, "total_data")
         mf, tf = m.get("matched_functions", 0), m.get("total_functions", 0)
         done, total = files(category)
+        cc = to_int(m, "complete_code")
         emit(f"  {name}: {pct(mc + md, tc + td):.2f}% matched, "
              f"{pct(done, total):.2f}% linked ({done} / {total} files)")
         emit(f"    Code: {mc:,} / {tc:,} bytes ({mf:,} / {tf:,} functions)")
+        emit(f"    Linked code: {cc:,} / {tc:,} bytes ({pct(cc, tc):.2f}%)")
         if td:
             emit(f"    Data: {md:,} / {td:,} bytes ({pct(md, td):.2f}%)")
 
