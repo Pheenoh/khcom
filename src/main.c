@@ -51,17 +51,12 @@ extern IntrFunc* gIntrTableHBlank;
 extern IntrFunc gIntrTable[14];
 extern const IntrFunc gIntrTableTemplate[14];
 
-void RegisterRamReset(u32 flags);
 void func_080C55DC(void);
 void func_08001010(void);
 void func_08001100(void);
 void func_08001254(void);
 void func_080012A8(void);
 void ResetKeyState(void);
-void VTransInit(void);
-void BgInit(void);
-void FadeInit(void);
-void InitDisplayRegs(void);
 void SaveInitSram(void);
 
 void* func_08000240(void) {
