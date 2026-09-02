@@ -43,7 +43,7 @@ void mode_movie_1(void) {
         break;
     case 2:
         m4aSoundVSyncOff();
-        gUnk_03007484 = func_0805EA90;
+        gVBlankHandlerOverride = func_0805EA90;
         IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
         EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
         SetEwramHeapName(sMovieHeapName);
@@ -106,7 +106,7 @@ void mode_movie_1(void) {
         FadeReset();
         func_08006404();
         InitDisplayRegs();
-        gUnk_03007484 = 0;
+        gVBlankHandlerOverride = 0;
         m4aSoundInit();
         m4aSoundVSyncOn();
         gUnk_02034938++;
@@ -150,5 +150,5 @@ INCLUDE_ASM("mode_movie/mode_movie_1.s");
 #endif
 
 void mode_movie_2(void) {
-    gUnk_03007484 = 0;
+    gVBlankHandlerOverride = 0;
 }

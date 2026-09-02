@@ -34,10 +34,10 @@ extern u16 gUnk_03006C78;
 extern u32 gUnk_03006C10;
 extern u32 gUnk_02039828;
 extern u32 gUnk_02039820;
-extern vu16 gUnk_03006C00;
-extern u16 gUnk_03006C02;
+extern vu16 gFrameSyncFlags;
+extern u16 gVBlankEndVCount;
 extern u16 gUnk_03007FF8;
-extern IntrFunc gUnk_03007484;
+extern IntrFunc gVBlankHandlerOverride;
 
 extern IntrFunc* gIntrTableSerial;
 extern IntrFunc* gIntrTableVCount;
@@ -122,9 +122,9 @@ void InitSystem(void) {
     dma[1] = 0x03000000;
     dma[2] = 0x85001F80;
     dma[2];
-    gUnk_03006C02 = 0;
-    gUnk_03006C00 = 0;
-    gUnk_03007484 = 0;
+    gVBlankEndVCount = 0;
+    gFrameSyncFlags = 0;
+    gVBlankHandlerOverride = 0;
     REG_IME = 0;
     dma[0] = (vu32)IrqHandler;
     dma[1] = (vu32)gIntrHandler;
@@ -176,9 +176,9 @@ void AgbMain(void) {
             }
         }
 
-        if ((gUnk_03006C00 & bit) == 0) {
+        if ((gFrameSyncFlags & bit) == 0) {
             ModeUpdate();
-            gUnk_03006C00 |= 4;
+            gFrameSyncFlags |= 4;
         }
     next:
         ApplyIntrCallbacks();
@@ -191,33 +191,33 @@ INCLUDE_ASM("main/AgbMain.s");
 #endif
 
 void VBlankIntr(void) {
-    if (gUnk_03007484 != 0) {
-        gUnk_03007484();
+    if (gVBlankHandlerOverride != 0) {
+        gVBlankHandlerOverride();
         return;
     }
 
-    if (gUnk_03006C00 & 2) {
-        gUnk_03006C00 |= 8;
+    if (gFrameSyncFlags & 2) {
+        gFrameSyncFlags |= 8;
         return;
     }
-    gUnk_03006C00 |= 2;
-    if (!(gUnk_03006C00 & 1)) {
+    gFrameSyncFlags |= 2;
+    if (!(gFrameSyncFlags & 1)) {
         m4aSoundVSync();
     }
     gUnk_03007FF8 |= 1;
-    if (gUnk_03006C00 & 4) {
+    if (gFrameSyncFlags & 4) {
         func_08001254();
     }
     func_080012A8();
     func_08116D28();
-    gUnk_03006C02 = REG_VCOUNT;
-    gUnk_03006C00 &= 0xFFFB;
-    if (!(gUnk_03006C00 & 1)) {
-        gUnk_03006C00 |= 1;
+    gVBlankEndVCount = REG_VCOUNT;
+    gFrameSyncFlags &= 0xFFFB;
+    if (!(gFrameSyncFlags & 1)) {
+        gFrameSyncFlags |= 1;
         m4aSoundMain();
-        gUnk_03006C00 &= 0xFFFE;
+        gFrameSyncFlags &= 0xFFFE;
     }
-    gUnk_03006C00 &= 0xFFFD;
+    gFrameSyncFlags &= 0xFFFD;
     gUnk_03006C68++;
 }
 
@@ -259,48 +259,48 @@ void ApplyIntrCallbacks(void) {
 }
 
 void VBlankIntrSio(void) {
-    if (gUnk_03006C00 & 2) {
-        gUnk_03006C00 |= 8;
+    if (gFrameSyncFlags & 2) {
+        gFrameSyncFlags |= 8;
         return;
     }
-    gUnk_03006C00 |= 2;
+    gFrameSyncFlags |= 2;
     func_08007318();
-    if (!(gUnk_03006C00 & 1)) {
+    if (!(gFrameSyncFlags & 1)) {
         m4aSoundVSync();
     }
     gUnk_03007FF8 |= 1;
-    if (gUnk_03006C00 & 4) {
+    if (gFrameSyncFlags & 4) {
         func_08001254();
     }
     func_080012A8();
-    gUnk_03006C02 = REG_VCOUNT;
-    gUnk_03006C00 &= 0xFFFB;
-    if (!(gUnk_03006C00 & 1)) {
-        gUnk_03006C00 |= 1;
+    gVBlankEndVCount = REG_VCOUNT;
+    gFrameSyncFlags &= 0xFFFB;
+    if (!(gFrameSyncFlags & 1)) {
+        gFrameSyncFlags |= 1;
         m4aSoundMain();
-        gUnk_03006C00 &= 0xFFFE;
+        gFrameSyncFlags &= 0xFFFE;
     }
-    gUnk_03006C00 &= 0xFFFD;
+    gFrameSyncFlags &= 0xFFFD;
     gUnk_03006C68++;
 }
 
 void func_08000714(void) {
-    if (gUnk_03006C00 & 2) {
-        gUnk_03006C00 |= 8;
+    if (gFrameSyncFlags & 2) {
+        gFrameSyncFlags |= 8;
         return;
     }
-    gUnk_03006C00 |= 2;
+    gFrameSyncFlags |= 2;
     REG_IME = 0;
     func_08116EF0();
     REG_IME = 1;
     gUnk_03007FF8 |= 1;
-    if (gUnk_03006C00 & 4) {
+    if (gFrameSyncFlags & 4) {
         func_08001254();
     }
     func_080012A8();
     func_08116D28();
-    gUnk_03006C02 = REG_VCOUNT;
-    gUnk_03006C00 &= 0xFFFB;
-    gUnk_03006C00 &= 0xFFFD;
+    gVBlankEndVCount = REG_VCOUNT;
+    gFrameSyncFlags &= 0xFFFB;
+    gFrameSyncFlags &= 0xFFFD;
     gUnk_03006C68++;
 }
