@@ -125,6 +125,16 @@ extern s16 gUnk_09033E76[];
 extern u8 gUnk_090D4180[];
 extern u8 gUnk_08F69BE4[];
 
+void _08065994(void);
+u16 func_080659BC(u8 v, TextSlot* out);
+void func_08065A30(void** p, u8 n);
+void func_08065A44(void** p, u8 n);
+u16 func_08065A70(u8 v, TextSlot* out);
+u16 func_080660C0(u8* s, TextSlot* p);
+void _08073E6C(Work08073E34* p);
+void func_08073E74(Work08073E34* p);
+void func_08074CF8(void);
+void func_08074CFC(void);
 void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
 s16 func_08065B08(TextSlot* p, u8 n);
