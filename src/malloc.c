@@ -6,8 +6,8 @@
 
 typedef struct Node {
     void* unk_00;
-    struct Node* unk_04;
-    struct Node* unk_08;
+    struct Node* prev;
+    struct Node* next;
     u16 unk_0C;
     struct Node* unk_10;
 } Node;
@@ -338,13 +338,13 @@ void ListAppend(Node* node, Node** head, Node** tail) {
         *head = node;
     }
 
-    node->unk_04 = *tail;
+    node->prev = *tail;
 
     if (*tail != 0) {
-        (*tail)->unk_08 = node;
+        (*tail)->next = node;
     }
 
-    node->unk_08 = 0;
+    node->next = 0;
     *tail = node;
 }
 
@@ -352,13 +352,13 @@ void ListInsertAfter(Node* node, Node** head, Node** tail, Node* after) {
     Node* next;
 
     if (after != 0) {
-        node->unk_04 = after;
-        next = after->unk_08;
-        node->unk_08 = next;
-        after->unk_08 = node;
+        node->prev = after;
+        next = after->next;
+        node->next = next;
+        after->next = node;
 
         if (next != 0) {
-            next->unk_04 = node;
+            next->prev = node;
         } else {
             *tail = node;
         }
@@ -371,13 +371,13 @@ void ListInsertBefore(Node* node, Node** head, Node** tail, Node* before) {
     Node* prev;
 
     if (before != 0) {
-        node->unk_08 = before;
-        prev = before->unk_04;
-        node->unk_04 = prev;
-        before->unk_04 = node;
+        node->next = before;
+        prev = before->prev;
+        node->prev = prev;
+        before->prev = node;
 
         if (prev != 0) {
-            prev->unk_08 = node;
+            prev->next = node;
         } else {
             *head = node;
         }
@@ -387,21 +387,21 @@ void ListInsertBefore(Node* node, Node** head, Node** tail, Node* before) {
 }
 
 void ListRemove(Node* node, Node** head, Node** tail) {
-    if (node->unk_04 == 0) {
-        if (node->unk_08 == 0) {
+    if (node->prev == 0) {
+        if (node->next == 0) {
             *head = 0;
             *tail = 0;
         } else {
-            node->unk_08->unk_04 = node->unk_04;
-            *head = node->unk_08;
+            node->next->prev = node->prev;
+            *head = node->next;
         }
     } else {
-        if (node->unk_08 == 0) {
-            *tail = node->unk_04;
-            node->unk_04->unk_08 = node->unk_08;
+        if (node->next == 0) {
+            *tail = node->prev;
+            node->prev->next = node->next;
         } else {
-            node->unk_08->unk_04 = node->unk_04;
-            node->unk_04->unk_08 = node->unk_08;
+            node->next->prev = node->prev;
+            node->prev->next = node->next;
         }
     }
 }
@@ -448,7 +448,7 @@ void func_08000C24(Node* node, NodeList* list, Node* before) {
 void* func_08000C54(Node* node, NodeList* list) {
     Node* next;
 
-    next = node->unk_08;
+    next = node->next;
     ListRemove(node, &list->unk_08, &list->unk_0C);
     ListAppend(node, &list->unk_00, &list->unk_04);
     node->unk_0C &= 0xFFFE;
@@ -502,7 +502,7 @@ void* func_08000CD4(Node* node) {
     Node* n;
     void* result;
 
-    n = node->unk_08;
+    n = node->next;
 
     if (n != 0) {
         if (n->unk_0C & 2) {
@@ -521,7 +521,7 @@ void* func_08000CF0(Node* node) {
     Node* n;
     void* result;
 
-    n = node->unk_04;
+    n = node->prev;
 
     if (n != 0) {
         if (n->unk_0C & 2) {
@@ -577,7 +577,7 @@ void func_08000D6C(Node* node, NodeList* list, Node* before) {
 void* func_08000D90(Node* node, NodeList* list) {
     Node* next;
 
-    next = node->unk_08;
+    next = node->next;
     ListRemove(node, &list->unk_08, &list->unk_0C);
     node->unk_0C &= 0xFFFE;
 
