@@ -210,7 +210,7 @@ _08078B5E:
 	adds r1, r5, #0x0
 	bl func_080991CC
 _08078B8E:
-	bl _0807BB04
+	bl func_0807BB04
 	add sp, #0x018
 	pop {r4, r5, r6, r7}
 	pop {r0}

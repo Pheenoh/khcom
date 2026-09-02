@@ -4,6 +4,7 @@
 #include "types.h"
 #include "card_types.h"
 #include "game.h"
+#include "mode.h"
 
 #define CARD_ID_MASK 0xFFF
 
@@ -14,6 +15,8 @@ extern u16 gCardCount;
 extern Deck gDecks[];
 extern u8 gActiveDeck;
 extern u32 gUnk_02034AA4;
+extern u32 gUnk_02034AA8;
+extern u8 gUnk_02034AD8;
 extern u8 gUnk_02039DDC;
 extern u8 gUnk_02034ACC;
 extern u32 gUnk_02034AD0;
@@ -23,14 +26,20 @@ extern u8 gUnk_0203A9D8;
 typedef struct UnkStruct_02034AAC {
     void* unk_00;
     void* unk_04;
-    u8 unk_08[0x0C];
+    void* unk_08;
+    void* unk_0C;
+    u8 unk_10[0x04];
     void* unk_14;
     void* unk_18;
-    u8 unk_1C[0x2A];
+    u8 unk_1C[0x04];
+    void* unk_20;
+    u8 unk_24[0x22];
     u8 unk_46;
     u8 unk_47;
     CardDef* unk_48;
-    u8 unk_4C[0x18];
+    s32 unk_4C;
+    s32 unk_50;
+    u8 unk_54[0x10];
     u8 unk_64[0x14];
     u32 unk_78;
     u8 unk_7C[0x25];
@@ -47,7 +56,70 @@ extern u8 gUnk_0203A9E8;
 extern void* gUnk_0203A854;
 extern u8 gUnk_09EE4BC8[];
 extern u8 gUnk_09EE75F0[];
+extern u8 gUnk_02034AE0[];
+extern u8 gUnk_02034B08[];
+extern u8 gUnk_02034B20[];
+extern void* gUnk_02034AD4;
+extern u8 gUnk_02034B1C;
+extern u16 gUnk_0203A9DC;
+extern u8 gUnk_09EE75D8[];
+extern void** gUnk_09EE3CA0[];
+extern u16 gUnk_0903BFD4[];
+extern void* gUnk_09EE91A8[];
+extern u8 gUnk_094233B8[];
+extern void* gUnk_09EEA19C[];
+extern u8 gUnk_093FB6C4[];
+extern u8 gUnk_08125E24[];
+extern u8 gUnk_096148D8[];
+extern u8 gUnk_09417378[];
+extern u8 gUnk_02034AF8;
+extern void* gUnk_09EEAF4C[];
+extern u8* gUnk_0203A9D0;
+extern void** gUnk_09EE3FB4[];
+extern u8 gUnk_081283C0[];
+extern void** gUnk_09EEA28C;
+extern void* gUnk_02034B34;
+extern u8 gUnk_0203A9E0;
+extern vu16 gUnk_03006C78;
+extern Mode gUnk_09EF15A8;
+extern Mode gUnk_09ECEB40;
+extern u8 gUnk_09EE7608[];
+extern u8 gUnk_09EE7620[];
+extern u8 gUnk_09EE7638[];
+extern u8 gUnk_09EE7650[];
+extern u8 gUnk_09EE79D4[];
+extern u8 gUnk_09EE8ED8[];
+extern u8 gUnk_09EE76F0[];
+extern u8 gUnk_09EE7774[];
+extern u8 gUnk_09EE77A4[];
+extern u8 gUnk_09EE77BC[];
+extern u8 gUnk_09EE781C[];
+extern u8 gUnk_09EE8F08[];
+extern s32* gUnk_09EE275C[];
 extern u8 gUnk_0203A8C0[];
+
+typedef struct UnkStruct_0807FA0C {
+    u8 unk_00[0x14];
+    void* unk_14;
+    void* unk_18;
+    u8 unk_1C[0x28];
+    void* unk_44[0x04];
+} UnkStruct_0807FA0C;
+
+typedef struct UnkStruct_080A1C48 {
+    u8 unk_00[0x04];
+    void* unk_04[0x0A];
+    void* unk_2C[0x0A];
+} UnkStruct_080A1C48;
+
+typedef struct UnkStruct_080991CC {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    u8 unk_0C;
+    u8 unk_0D;
+    u8 unk_0E[0x02];
+} UnkStruct_080991CC;
 
 typedef struct UnkStruct_09EE7D84 {
     void** unk_00;
@@ -61,6 +133,7 @@ typedef struct UnkStruct_02034AFC {
     u8 unk_145;
     u8 unk_146[0x08];
     u8 unk_14E;
+    u8 unk_14F;
 } UnkStruct_02034AFC;
 
 extern UnkStruct_09EE7D84* gUnk_09EE7D84[];
@@ -76,6 +149,7 @@ typedef struct UnkStruct_02039BB0 {
     u8 unk_108;
     u8 unk_109[0x6F];
     u16 unk_178;
+    u16 unk_17A;
 } UnkStruct_02039BB0;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;

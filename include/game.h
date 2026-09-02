@@ -68,10 +68,14 @@ typedef struct UnkStruct_02039DD4 {
     u8 unk_0F1[0x03];
     u32 unk_0F4;
     u8 unk_0F8[0x04];
-    u8 unk_0FC;
-    u8 unk_0FD;
+    u16 unk_0FC;
     u8 unk_0FE;
-    u8 unk_0FF[0x0D];
+    u8 unk_0FF;
+    s16 unk_100;
+    s16 unk_102;
+    s16 unk_104;
+    s16 unk_106;
+    u8 unk_108[0x04];
 } UnkStruct_02039DD4;
 
 extern UnkStruct_02039DD4* gUnk_02039DD4;
@@ -142,7 +146,9 @@ typedef struct UnkStruct_02039B84 {
     u8 unk_0FA;
     u8 unk_0FB;
     u32 unk_0FC;
-    u8 unk_100[0xD0];
+    u8 unk_100[0xC8];
+    s16 unk_1C8;
+    u8 unk_1CA[0x06];
 } UnkStruct_02039B84;
 
 extern UnkStruct_02039B84* gUnk_02039B84;
