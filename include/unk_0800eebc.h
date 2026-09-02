@@ -471,6 +471,8 @@ void func_0800F9A0(void);
 void func_0800FB2C(u32 a);
 u8 func_0800FF00(u32 a);
 void func_080121D4(FldObj* p);
+void func_080146A8(s32 x, s32 y, s32 z);
+void func_08014654(void);
 void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a);
 void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a);
 void func_080167F8(void);
