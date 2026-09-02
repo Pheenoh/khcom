@@ -3,6 +3,13 @@
 #include "gba/syscall.h"
 #include "key.h"
 #include "malloc.h"
+#include "m4a.h"
+#include "pallet.h"
+#include "sprite.h"
+#include "sroll.h"
+#include "util.h"
+#include "sio.h"
+#include "engine.h"
 #include "main.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
@@ -53,25 +60,11 @@ void func_08001100(void);
 void func_08001254(void);
 void func_080012A8(void);
 void ResetKeyState(void);
-void func_08116CEC(void);
-void func_08116D28(void);
-void func_08116EF0(void);
-void func_08007318(void);
-void ResetPaletteEffect(void);
-void SeedRandom(u32 seed);
 void VTransInit(void);
-void SpriteInit(void);
 void BgInit(void);
 void FadeInit(void);
-void PalletInit(void);
-void SioKeyInit(void);
 void InitDisplayRegs(void);
 void SaveInitSram(void);
-void m4aSoundInit(void);
-void m4aSoundMain(void);
-void m4aSoundVSync(void);
-void m4aSoundVSyncOff(void);
-void m4aSoundVSyncOn(void);
 
 void* func_08000240(void) {
     return gEwramHeapStart;
