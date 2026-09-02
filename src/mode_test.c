@@ -716,7 +716,9 @@ void func_0806119C(void) {
         gUnk_02034A74 = 0;
     }
 }
+
 INCLUDE_ASM("mode_test/func_08061248.s");
+
 void func_080617E8(void) {
     TaskPoolDestroy(&gUnk_02034A60);
     EwramFree(gUnk_02039DC8);
