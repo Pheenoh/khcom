@@ -4,7 +4,7 @@
 void mode_vsbattle_0(u32 mode) {
     VsTaskArg arg;
     VsTaskArg arg2;
-    void** p;
+    VsBattleWork** p;
 
     gUnk_02039B84 = EwramAlloc(sizeof(VsBattleWork));
     p = &gUnk_02039B9C;
@@ -156,10 +156,80 @@ INCLUDE_ASM("mode_vsbattle/_0800CBDC.s");
 INCLUDE_ASM("mode_vsbattle/func_0800CD40.s");
 INCLUDE_ASM("mode_vsbattle/_0800CDF0.s");
 INCLUDE_ASM("mode_vsbattle/func_0800DF30.s");
-INCLUDE_ASM("mode_vsbattle/func_0800E0D0.s");
-INCLUDE_ASM("mode_vsbattle/func_0800E168.s");
 
-void func_0800E314(HumWork* work, HumSub* sub, HumDef* def) {
+void func_0800E0D0(EmyWork* work) {
+    gUnk_02039B84->unk_0EC -= gUnk_09EDA4EC[work->unk_03C.unk_00];
+
+    if (gUnk_02039B84->unk_078 == &work->unk_03C) {
+        gUnk_02039B84->unk_078 = 0;
+    }
+
+    func_0801B7D8(&work->unk_03C);
+
+    if (gUnk_02039B84->unk_0EE == 0) {
+        if (gUnk_02039B84->unk_120 <= 0) {
+            if (gUnk_02039B84->unk_07C->unk_2C > 0) {
+                gUnk_02039B84->unk_068 |= 0x200000000;
+            }
+        }
+    }
+
+    ReleaseObjTiles(work->unk_000);
+    ReleaseObjPalette(work->unk_004);
+    ReleaseObjPalette(work->unk_008);
+    TaskPoolDestroy(&work->unk_028);
+}
+
+void func_0800E168(HumWork* work, HumDef* def) {
+    VsActor* actor = &work->unk_040;
+
+    s32 a = 0x14000;
+    s32 b = 0x18100;
+    s32 z = 0;
+
+    func_0801B37C(actor, &def->unk_0C, a, b, z);
+    actor->unk_CE = 0;
+    actor->unk_D0 = 0;
+    actor->unk_D2 = 0;
+    actor->unk_B2 = 1;
+    actor->unk_34 |= 0x40000000000000;
+
+    if (gUnk_02039B84->unk_07C->unk_04 < actor->unk_04) {
+        actor->unk_34 |= 4;
+    }
+
+    work->unk_000 = def;
+    work->unk_004 = AllocObjTiles(def->unk_00 * 32, 0);
+    work->unk_008 = LoadObjPalette(def->unk_04, 32);
+    work->unk_178 = def->unk_04;
+    work->unk_150 = 0;
+    work->unk_152 = 0;
+    work->unk_154 = 0;
+    work->unk_158 = 0;
+    actor->unk_108 = 0;
+    actor->unk_10C = 0;
+    work->unk_15C = 0;
+    work->unk_160 = 0;
+    work->unk_164 = 0;
+    work->unk_174 = 0xFFF0;
+    work->unk_17C = 1;
+    AnimInit(&work->unk_014, 0, 0);
+    TaskPoolInit(&work->unk_02C, 3);
+    TaskCreate(&work->unk_02C, &gUnk_09EDAE88, actor);
+    TaskCreate(&work->unk_02C, &gUnk_09EDB3F8, actor);
+    work->unk_170 = 12;
+    work->unk_168 = 0x100;
+    work->unk_16C = 0x100;
+    work->unk_00C = 0;
+    work->unk_010 = 0;
+    work->unk_184 = 0;
+    gUnk_02039B9C->unk_07C = actor;
+    gUnk_02039B84->unk_0A8 = actor;
+    actor->unk_E4 = gUnk_02039B9C;
+    actor->unk_34 |= 0x24000000000;
+}
+
+void func_0800E314(HumWork* work, HumSub* sub, HumSubDef* def) {
     if (work->unk_00C == 0) {
         work->unk_00C = sub;
     } else {
