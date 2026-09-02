@@ -1,8 +1,97 @@
 #include "macros.h"
 #include "mode_eventselect.h"
+#include "gba/keys.h"
 
-INCLUDE_ASM("mode_eventselect/mode_eventselect_0.s");
-INCLUDE_ASM("mode_eventselect/mode_eventselect_1.s");
+void mode_eventselect_0(void) {
+    func_08004DB0();
+    func_08085FB0();
+    func_08085C3C();
+    func_08093BB4();
+    SetupBg(0, 0, 30, 0);
+    EnableBg(0);
+    func_0805FA8C(0, 0x8000, 0x800);
+    func_0805FA60(0, gUnk_08F70990, 0x20, 0);
+}
+
+void mode_eventselect_1(void) {
+    if (GetKeysRepeat() & DPAD_UP) {
+        if (gUnk_02034A96 != 0) {
+            gUnk_02034A96--;
+        } else {
+            gUnk_02034A96 = 1;
+        }
+    }
+
+    if (GetKeysRepeat() & DPAD_DOWN) {
+        if (gUnk_02034A96 == 0) {
+            gUnk_02034A96++;
+        } else {
+            gUnk_02034A96 = 0;
+        }
+    }
+
+    switch (gUnk_02034A96) {
+    case 0:
+        func_0805FCB0(0, 0, 2, gUnk_09033ED8);
+        func_0805FCB0(0, 10, 2, gUnk_09033EDC);
+        func_0805FCB0(0, 20, 2, gUnk_09033EDC);
+        break;
+    case 1:
+        func_0805FCB0(0, 0, 2, gUnk_09033EDC);
+        func_0805FCB0(0, 10, 2, gUnk_09033ED8);
+        func_0805FCB0(0, 20, 2, gUnk_09033EDC);
+        break;
+    }
+
+    if (GetKeysRepeat() & DPAD_RIGHT) {
+        gUnk_02034A94++;
+    }
+
+    if (GetKeysRepeat() & DPAD_LEFT) {
+        gUnk_02034A94--;
+    }
+
+    if (func_08075064(gUnk_02034A96) - 1 < gUnk_02034A94) {
+        gUnk_02034A94 = 0;
+    }
+
+    if (gUnk_02034A94 < 0) {
+        gUnk_02034A94 = func_08075064(gUnk_02034A96) - 1;
+    }
+
+    func_0805FCB0(10, 0, 2, gUnk_09033EE0);
+    func_0805FCB0(10, 10, 2, gUnk_09033EF8);
+    func_0805FCB0(20, 40, 2, gUnk_09033F10);
+    func_0805FC04(100, 40, 2, gUnk_02034A94 + 1);
+
+    switch (gUnk_02034A96) {
+    case 0:
+        func_0805FCB0(20, 80, 2, gUnk_09EE42C8[gUnk_09033D50[gUnk_02034A94]]);
+        break;
+    case 1:
+        func_0805FCB0(20, 80, 2, gUnk_09EE42C8[gUnk_09033E76[gUnk_02034A94]]);
+        break;
+    }
+
+    if (GetKeysPressed() & A_BUTTON) {
+        switch (gUnk_02034A96) {
+        case 0:
+            func_0806180C(gUnk_09033D50[gUnk_02034A94]);
+            break;
+        case 1:
+            func_0806180C(gUnk_09033E76[gUnk_02034A94]);
+            break;
+        }
+    }
+
+    if (GetKeysPressed() & B_BUTTON) {
+        func_080010CC(&gUnk_09ECEB64, 0);
+    }
+
+    func_080605A4(0);
+    func_08060598();
+}
+
 INCLUDE_ASM("mode_eventselect/mode_eventselect_2.s");
 
 void func_08076110(u16 song, s16 x, s16 y) {
