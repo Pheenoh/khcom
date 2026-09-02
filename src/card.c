@@ -3254,7 +3254,7 @@ INCLUDE_ASM("card/func_08096D0C.s");
 #endif
 
 #ifdef NON_MATCHING
-u16 func_08096D48(u16 a) {
+u16 func_08096D48(s32 a, s32 b) {
     u16 base;
     u16 off;
 
