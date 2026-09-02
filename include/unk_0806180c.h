@@ -12,19 +12,26 @@
 typedef struct Ent0806E9BC {
     u8 unk_00[0x14];
     u16 unk_14;
-    u8 unk_16[0xE];
+    u8 unk_16[2];
+    u32 unk_18;
+    void* unk_1C;
+    void (*unk_20)(void*);
 } Ent0806E9BC;
 
 typedef struct Work0806180C {
     Ent0806E9BC* unk_000;
     u8 unk_004[0xC];
     TaskPool unk_010;
-    u8 unk_024[4];
+    u8 unk_024[2];
+    u8 unk_026;
+    u8 unk_027;
     u8 unk_028[4];
     s32 unk_02C;
     s32 unk_030;
     s32 unk_034;
-    u8 unk_038[0x150];
+    u8 unk_038[6];
+    u16 unk_03E;
+    u8 unk_040[0x148];
     s32 unk_188;
     s32 unk_18C;
     s32 unk_190;
@@ -37,6 +44,8 @@ typedef struct Work0806180C {
     u8 unk_1A9;
     u8 unk_1AA;
     u8 unk_1AB;
+    u8 unk_1AC[6];
+    u8 unk_1B2;
 } Work0806180C;
 
 typedef struct Work08073E34 {
@@ -126,6 +135,8 @@ typedef struct AnimSet0806180C {
 } AnimSet0806180C;
 
 extern TextCtx* gUnk_02039DC8;
+extern u16 gBldCnt;
+extern u16 gBldAlpha;
 extern AnimSet0806180C* gUnk_09EE3FB4[];
 extern Ent080658B8* gUnk_02034A84;
 extern Ent080658B8* gUnk_02034A88;
@@ -172,6 +183,11 @@ void func_0801CD74(void* a, u16 b);
 void TaskPoolUpdate(TaskPool* a);
 void func_08000F8C(void* a, void* b);
 u8 _0806E9DC(Work0806180C* p, void* a);
+void func_0801CE00(void* a, u16 b);
+u8 func_0806E184(Work0806180C* p, void* a);
+u8 func_0806E570(Work0806180C* p);
+void func_0806E7A8(Work0806180C* p);
+void func_08070AD4(Work0806180C* p);
 u8 func_0806EA28(Work0806180C* p, void* a);
 u8 func_0806EB94(Work0806180C* p, void* a);
 u8 func_0806EBE0(Work0806180C* p, void* a);
