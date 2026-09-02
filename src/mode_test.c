@@ -35,10 +35,38 @@ void func_0805F1C0(s32* p, s32 v) {
     *p += (v - *p) >> 1;
 }
 
-INCLUDE_ASM("mode_test/task_lockon_0.s");
+void task_lockon_0(LockonWork* w) {
+    s32 i;
+
+    gUnk_02039DC4 = EwramAlloc(12);
+    w->unk_00 = AllocObjTiles(0x80, 0);
+    w->unk_04 = LoadObjPalette(gUnk_08F69BE4, 0x20);
+    func_08002A10(w->unk_00, gUnk_090D7C84);
+    AnimInit(&w->unk_34, gUnk_09EEC66C, gUnk_09EEC660);
+    AnimStart(&w->unk_34, 0, 1);
+    w->unk_08 = AnimGetGfx(&w->unk_34);
+
+    for (i = 0; i < 8; i++) {
+        w->unk_0C[i] = 0;
+    }
+
+    w->unk_2C = 0;
+    w->unk_2D = -1;
+    w->unk_2F = 0;
+    w->unk_30 = 0;
+    w->unk_4C = 0;
+}
+
 INCLUDE_ASM("mode_test/task_lockon_1.s");
 INCLUDE_ASM("mode_test/task_lockon_2.s");
-INCLUDE_ASM("mode_test/task_lockon_3.s");
+
+void task_lockon_3(LockonWork* w) {
+    ReleaseObjTiles(w->unk_00);
+    ReleaseObjPalette(w->unk_04);
+    gUnk_02039BA0->unk_68 = 0;
+    EwramFree(gUnk_02039DC4);
+    gUnk_02039DC4 = 0;
+}
 
 s32 func_0805F588(s32 a, s32 b) {
     return (u16)Sqrt(a * a + b * b);
