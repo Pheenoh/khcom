@@ -33,9 +33,12 @@ s32 func_0810274C(u16 a);
 void func_08102774(void);
 s32 func_08102A94(void);
 u16 func_08103F3C(void);
+void func_08102984(s16 a);
 void func_08103CD8(s16 a);
 void mode_ms_top_2(void);
 void func_08103D54(s16 a);
+void func_08103D7C(void);
+void func_08103DE8(void);
 
 u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
@@ -44,6 +47,8 @@ void* GetBgScreenBase(s32 bg);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
+void m4aSongNumStart(u16 n);
+void func_08006184(s32 a, u16 b);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 
@@ -67,5 +72,9 @@ extern void* gUnk_02035858;
 extern void* gUnk_0203585C;
 extern TaskPool gUnk_020358A8;
 extern UnkStruct_099931E4 gUnk_099931E4[];
+extern s16 gUnk_02035B02;
+extern s16 gUnk_02035B04;
+extern s16 gUnk_02035B10;
+extern u8 gUnk_02035C0C;
 
 #endif /* GUARD_MODE_MS_H */
