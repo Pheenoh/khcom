@@ -249,7 +249,33 @@ void func_081052C8(s16 a) {
     func_0800448C(gUnk_09A3B75C, base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
 }
 
-INCLUDE_ASM("unk_08104a84/func_08105334.s");
+void func_08105334(void) {
+    MsCard* card;
+    u16 id;
+    s16 i;
+
+    card = func_08104B2C();
+
+    if (card->unk_06[func_08104EB4()][0] > 0) {
+        id = card->unk_06[func_08104EB4()][1];
+
+        if (card->unk_2E != 0) {
+            id |= 0x8000;
+        }
+
+        for (i = 0; i < gCardCount; i++) {
+            if (gCardCollection[i] == id) {
+                func_0810155C(func_08104ED8(func_08104AEC()));
+                gUnk_02035C30[card->unk_04]--;
+                gUnk_02035C3A--;
+                gUnk_02035C3C--;
+                card->unk_06[func_08104EB4()][0]--;
+                func_080850B0(&gCardCollection[i]);
+                break;
+            }
+        }
+    }
+}
 
 u8 func_08105404(MsCard* card) {
     s16 i;

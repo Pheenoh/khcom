@@ -236,6 +236,11 @@ typedef struct StockMesDispWork {
     u8 unk_45[3];
 } StockMesDispWork;
 
+typedef struct StockMesDispParam {
+    u32 unk_00;
+    u32 unk_04;
+} StockMesDispParam;
+
 typedef struct StatusWork {
     TaskPool pool;
     u32 unk_14;
@@ -278,6 +283,9 @@ extern TaskDesc gUnk_09EF4FE0;
 extern TaskDesc gUnk_09EF4FF8;
 
 extern u8 gUnk_08F69BA4[];
+extern u8 gUnk_097A2CF6[];
+extern u8 gUnk_0984B258[];
+extern void* gUnk_09EF6948[];
 extern u8 gUnk_097A2E16[];
 extern u8 gUnk_0984B278[];
 extern u8 gUnk_097A2DF8[];
@@ -367,6 +375,8 @@ s32 func_080D855C(s16 a);
 void func_080D8584(StatusEntry* e);
 void func_080D8590(StatusEntry* e, s32 v);
 s32 func_080D85A8(u32 a);
+void* func_080A2334(u16 a, u8 b);
+u8 func_080A235C(u16 a);
 void* func_080D85C0(u16 a);
 s32 func_080D85F8(s32 a);
 s16 func_080D885C(StatusScrollcursorWork* work);

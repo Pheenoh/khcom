@@ -1312,7 +1312,6 @@ void func_08031F60(FldActor* act) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_08031F98(FldWork* work, s32 a, s32 b) {
     FldAnimDef* e;
     u16 flags = b;
@@ -1347,6 +1346,7 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
         idx = 4;
         work->unk_A4 &= 0xFFFD;
         break;
+    case 0:
     default:
         idx = 0;
         work->unk_A4 &= 0xFFFD;
@@ -1362,6 +1362,3 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
     func_08005974(&work->unk_08, e->unk_0C, flags, e->unk_04, e->unk_00);
     func_08002A10(work->unk_00, e->unk_08);
 }
-#else
-INCLUDE_ASM("btl2/func_08031F98.s");
-#endif

@@ -206,30 +206,31 @@ void task_allmap_cursor_3(AllmapCursorWork* work) {
     ReleaseObjPalette(work->unk_04);
 }
 
-#ifdef NON_MATCHING
 s16 func_080D3D40(u16 a) {
     u8* base;
     u8* p;
     s16 v;
     s16 q;
+    u8* dst;
 
     v = 120 - a;
+
     if (v < 0) {
         v = 0;
     }
     q = v / 8;
     base = GetBgScreenBase(2);
+    dst = base + 28;
     p = gUnk_0983B7B4 - q * 2;
-    RequestDma3Copy(p, base + 28, 32);
+    RequestDma3Copy(p, dst, 32);
+    dst = base + 92;
     p += 64;
-    RequestDma3Copy(p, base + 92, 32);
+    RequestDma3Copy(p, dst, 32);
+    dst = base + 156;
     p += 64;
-    RequestDma3Copy(p, base + 156, 32);
+    RequestDma3Copy(p, dst, 32);
     return v - v % 8 / 2;
 }
-#else
-INCLUDE_ASM("allmap/func_080D3D40.s");
-#endif
 s32 func_080D3DCC(u8 a) {
     switch (func_080987C0(a)) {
     case 1:
@@ -269,22 +270,22 @@ void task_allmap_roomname_3(AllmapRoomnameWork* work) {
     ReleaseObjPalette(work->unk_0C8);
 }
 
-#ifdef NON_MATCHING
 void func_080D3ED0(void) {
     u8* base;
     u8* p;
+    u8* dst;
 
     base = GetBgScreenBase(2);
+    dst = base + 28;
     p = gUnk_08125E24;
-    RequestDma3Copy(p, base + 28, 32);
+    RequestDma3Copy(p, dst, 32);
+    dst = base + 92;
     p += 64;
-    RequestDma3Copy(p, base + 92, 32);
+    RequestDma3Copy(p, dst, 32);
+    dst = base + 156;
     p += 64;
-    RequestDma3Copy(p, base + 156, 32);
+    RequestDma3Copy(p, dst, 32);
 }
-#else
-INCLUDE_ASM("allmap/func_080D3ED0.s");
-#endif
 
 void func_080D3F10(AllmapBarWork* work) {
     work->unk_2C = 1;
