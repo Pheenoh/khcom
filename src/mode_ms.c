@@ -567,7 +567,236 @@ void func_08102F30(void) {
         TaskPoolDraw(&gUnk_02035A70[i]);
     }
 }
-INCLUDE_ASM("mode_ms/func_0810329C.s");
+u8 func_0810329C(u16 a) {
+    MsShopHosiArg arg0;
+    MsShopHosiArg arg1;
+    MsShopHosiArg arg2;
+    u8 result;
+    s16 i;
+    s16 j;
+    s16 k;
+    s16 old;
+    u16 keys;
+    u16 d;
+    s32 f;
+    s32 g;
+    s32 h;
+
+    result = 1;
+
+    for (i = 0; i < 5; i++) {
+        switch (gUnk_020358C8[i].unk_38) {
+            case 0:
+                if (func_08006314() == 0) {
+                    if (gUnk_020358C8[i].unk_44 != 0) {
+                        gUnk_020358C8[i].unk_38 = 1;
+                    }
+                }
+                break;
+            case 1:
+                ApproachValue(&gUnk_020358C8[i].unk_3C, i * 10240 + 0x2800, gUnk_020358C8[i].unk_44);
+                ApproachValue(&gUnk_020358C8[i].unk_40, 0x6400, gUnk_020358C8[i].unk_44);
+                ApproachValue(&gUnk_020358C8[i].unk_34, 0x100, gUnk_020358C8[i].unk_44);
+                if (--gUnk_020358C8[i].unk_44 == 0) {
+                    if (gUnk_020358C8[i].unk_46 != 0) {
+                        gUnk_020358C8[i].unk_38 = 5;
+                    } else {
+                        gUnk_020358C8[i].unk_38 = 2;
+                    }
+                    if (i <= 3) {
+                        gUnk_020358C8[i + 1].unk_44 = 15;
+                    } else {
+                        for (j = 0; j < 5; j++) {
+                            if (gUnk_020358C8[j].unk_38 == 2) {
+                                gUnk_020358C8[j].unk_44 = 8;
+                                break;
+                            }
+                        }
+                        if (j == 5) {
+                            gUnk_020358C8[0].unk_44 = 8;
+                        }
+                    }
+                }
+                break;
+            case 2:
+                if (gUnk_020358C8[i].unk_44 != 0) {
+                    if (func_08005B34(&gUnk_020358C8[i].unk_18) == 3 || func_08005B34(&gUnk_020358C8[i].unk_18) == 8) {
+                        ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
+                        ReleaseObjTiles(gUnk_020358C8[i].unk_10);
+                        gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09611AB8, 0x20);
+                        func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 1);
+                        gUnk_020358C8[i].unk_10 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
+                        gUnk_020358C8[i].unk_14 = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_00;
+                        gUnk_020358C8[i].unk_30 = 0x40;
+                        gUnk_020358C8[i].unk_38 = 3;
+                        gUnk_020358C8[i].unk_47 = 1;
+                    }
+                }
+                break;
+            case 3:
+                d = 0x80 - gUnk_020358C8[i].unk_30;
+                gUnk_020358C8[i].unk_30 += d / gUnk_020358C8[i].unk_44;
+                if (--gUnk_020358C8[i].unk_44 == 0) {
+                    gUnk_020358C8[i].unk_44 = 5;
+                    gUnk_020358C8[i].unk_38 = 4;
+                }
+                break;
+            case 4:
+                ApproachValue(&gUnk_020358C8[i].unk_40, 0x4600, gUnk_020358C8[i].unk_44);
+                if (--gUnk_020358C8[i].unk_44 == 0) {
+                    m4aSongNumStart(0xD2);
+                    gUnk_020358C8[i].unk_38 = 8;
+                    for (j = 0; j < 5; j++) {
+                        if (gUnk_020358C8[j].unk_38 == 2) {
+                            gUnk_020358C8[j].unk_44 = 8;
+                            break;
+                        }
+                    }
+                    if (j == 5) {
+                        for (j = 0; j < 5; j++) {
+                            if (gUnk_020358C8[j].unk_38 == 5) {
+                                gUnk_020358C8[j].unk_44 = 8;
+                                break;
+                            }
+                        }
+                        if (j == 5) {
+                            gUnk_020358C8[0].unk_44 = 60;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                if (gUnk_020358C8[i].unk_44 != 0) {
+                    if (func_08005B34(&gUnk_020358C8[i].unk_18) == 3 || func_08005B34(&gUnk_020358C8[i].unk_18) == 8) {
+                        ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
+                        ReleaseObjTiles(gUnk_020358C8[i].unk_10);
+                        gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09611AB8, 0x20);
+                        func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 1);
+                        gUnk_020358C8[i].unk_10 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
+                        gUnk_020358C8[i].unk_14 = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_00;
+                        gUnk_020358C8[i].unk_30 = 0x40;
+                        gUnk_020358C8[i].unk_38 = 6;
+                        gUnk_020358C8[i].unk_47 = 1;
+                    }
+                }
+                break;
+            case 6:
+                d = 0x80 - gUnk_020358C8[i].unk_30;
+                gUnk_020358C8[i].unk_30 += d / gUnk_020358C8[i].unk_44;
+                if (--gUnk_020358C8[i].unk_44 == 0) {
+                    gUnk_020358C8[i].unk_44 = 5;
+                    gUnk_020358C8[i].unk_38 = 7;
+                    for (k = 0; k < 8; k++) {
+                        arg0.unk_00 = gUnk_020358C8[i].unk_3C >> 8;
+                        arg0.unk_02 = gUnk_020358C8[i].unk_40 >> 8;
+                        arg0.unk_04 = gUnk_02035A40;
+                        arg0.unk_08 = GetRandom() % 96 - 48;
+                        arg0.unk_0C = GetRandom() % 256 + 0x1C0;
+                        TaskCreate(&gUnk_02035A70[i], gUnk_09EF9650, &arg0);
+                    }
+                }
+                break;
+            case 7:
+                ApproachValue(&gUnk_020358C8[i].unk_40, 0x4600, gUnk_020358C8[i].unk_44);
+                f = gFrameCounter & 0x1F;
+                if (f == 0) {
+                    arg0.unk_00 = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
+                    arg0.unk_02 = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
+                    arg0.unk_04 = gUnk_02035A40;
+                    arg0.unk_08 = 0x80;
+                    arg0.unk_0C = f;
+                    TaskCreate(&gUnk_02035A70[i], gUnk_09EF9650, &arg0);
+                }
+                if (--gUnk_020358C8[i].unk_44 == 0) {
+                    m4aSongNumStart(0xD2);
+                    gUnk_020358C8[i].unk_38 = 8;
+                    for (j = 0; j < 5; j++) {
+                        if (gUnk_020358C8[j].unk_38 == 5) {
+                            gUnk_020358C8[j].unk_44 = 8;
+                            break;
+                        }
+                    }
+                    if (j == 5) {
+                        gUnk_020358C8[0].unk_44 = 60;
+                    }
+                }
+                break;
+            case 8:
+                if (gUnk_020358C8[i].unk_46 != 0) {
+                    g = gFrameCounter & 0x1F;
+                    if (g == 0) {
+                        arg1.unk_00 = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
+                        arg1.unk_02 = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
+                        arg1.unk_04 = gUnk_02035A40;
+                        arg1.unk_08 = 0x80;
+                        arg1.unk_0C = g;
+                        TaskCreate(&gUnk_02035A70[i], gUnk_09EF9650, &arg1);
+                    }
+                }
+                if (gUnk_020358C8[i].unk_44 != 0) {
+                    if (--gUnk_020358C8[i].unk_44 == 0) {
+                        if (a & 1) {
+                            SetupBg(3, 0, 31, 0);
+                            SetBgScroll(3, 0, 0);
+                            RequestDma3Copy(gUnk_09A17D1C, (u8*)GetBgCharBase(3) + 0x5800, 0x1400);
+                            LoadBgMap(3, gUnk_09A3AD5C, 0x500);
+                        }
+                        gUnk_02035B62 = 0;
+                        gUnk_02035AD4 = gUnk_020358C8[0].unk_3C - 0x1000;
+                        gUnk_02035AD8 = gUnk_020358C8[0].unk_40 - 0x2000;
+                        LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
+                        gUnk_02035A48 = func_08065B6C(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C, gUnk_02035A44);
+                        gUnk_02035A50 = func_08065B6C(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C], gUnk_02035A4C);
+                        LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
+                        EnableBg(3);
+                        gUnk_020358C8[i].unk_38 = 9;
+                    }
+                }
+                break;
+            case 9:
+                if (gUnk_020358C8[i].unk_46 != 0) {
+                    h = gFrameCounter & 0x1F;
+                    if (h == 0) {
+                        arg2.unk_00 = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
+                        arg2.unk_02 = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
+                        arg2.unk_04 = gUnk_02035A40;
+                        arg2.unk_08 = 0x80;
+                        arg2.unk_0C = h;
+                        TaskCreate(&gUnk_02035A70[i], gUnk_09EF9650, &arg2);
+                    }
+                }
+                keys = func_08102A94();
+                old = gUnk_02035B62;
+                if (keys & (A_BUTTON | B_BUTTON)) {
+                    m4aSongNumStart(0x68);
+                    result = 0;
+                } else if (keys & DPAD_LEFT) {
+                    gUnk_02035B62--;
+                    if (gUnk_02035B62 < 0) {
+                        gUnk_02035B62 = 4;
+                    }
+                } else if (keys & DPAD_RIGHT) {
+                    gUnk_02035B62++;
+                    if (gUnk_02035B62 > 4) {
+                        gUnk_02035B62 = 0;
+                    }
+                }
+                if (gUnk_02035B62 != old) {
+                    LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
+                    gUnk_02035A48 = func_08065B6C(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C, gUnk_02035A44);
+                    gUnk_02035A50 = func_08065B6C(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C], gUnk_02035A4C);
+                    LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
+                    m4aSongNumStart(0x65);
+                }
+                break;
+        }
+    }
+
+    for (i = 0; i < 5; i++) {
+        TaskPoolUpdate(&gUnk_02035A70[i]);
+    }
+    return result;
+}
 void func_08103CD8(s16 a) {
     s32 i;
 

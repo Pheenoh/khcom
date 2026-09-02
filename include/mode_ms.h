@@ -7,6 +7,22 @@
 #include "anim.h"
 #include "mode.h"
 
+typedef struct MsCardBack {
+    void* unk_00;
+    u8 unk_04[0x8];
+    void* unk_0C;
+    u8 unk_10[0x8];
+} MsCardBack;
+
+typedef struct MsShopHosiArg {
+    s16 unk_00;
+    s16 unk_02;
+    void* unk_04;
+    u8 unk_08;
+    u8 unk_09[0x3];
+    s32 unk_0C;
+} MsShopHosiArg;
+
 typedef struct MsCardDef {
     void* unk_00;
     void* unk_04;
@@ -134,6 +150,13 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
 void m4aSongNumStart(u16 n);
+u16 func_08005B34(AnimState* a);
+void SetBgScroll(s32 bg, s32 x, s32 y);
+u8 RequestDma3Copy(void* src, void* dst, u16 size);
+void LoadPalette(void* src, void* dst, s32 size);
+s32 func_08065B6C(void* a, void* b);
+void TaskCreate(TaskPool* pool, void* desc, void* arg);
+void LoadObjPaletteBank(u16 bank, void* src);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void TaskPoolUpdate(TaskPool* pool);
 void func_0800FDD0(s32 a);
@@ -160,7 +183,7 @@ void func_080061E8(s32 a, u16 b);
 void func_080010CC(Mode* mode, s32 arg);
 void func_080E04EC(void);
 void func_0810264C(u16 a, u16 b, u16 c);
-u8 func_0810329C(s32 a);
+u8 func_0810329C(u16 a);
 void func_0805F1C0(s32* p, s32 v);
 void* AnimUpdate(AnimState* a);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
@@ -269,6 +292,12 @@ extern s32 gUnk_02035AD8;
 extern u16 gUnk_02035B58[];
 extern s16 gUnk_02035B62;
 extern UnkStruct_099935A8 gUnk_099935A8[];
+extern MsCardBack gUnk_08F709B0[];
+extern u32 gFrameCounter;
+extern u8 gUnk_09A17D1C[];
+extern u8 gUnk_09A3DA1C[];
+extern void* gUnk_09EE8F48[];
+extern u8 gUnk_09EF9650[];
 extern void* gUnk_09EE981C[];
 extern void* gUnk_09EE9894[];
 extern s16 gSineTable[];
