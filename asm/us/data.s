@@ -1,6 +1,6 @@
 @ All data past the code section (rodata, strings, script text, assets,
-@ descriptor tables, padding). See docs/rom_map.md. Split out of this incbin
-@ as regions get identified.
+@ descriptor tables, padding). Split out of this incbin as regions get
+@ identified.
 
 	.section .rodata
 	.global data_08121330
