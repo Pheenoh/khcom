@@ -191,7 +191,7 @@ _080CB7F0:
 	mov r0, r8
 	bl func_08000F8C
 	adds r0, r6, #0x0
-	bl _080CA960
+	bl func_080CA960
 	strb r0, [r6, #0x14]
 	b _080CB83C
 	.byte 0x00, 0x00
