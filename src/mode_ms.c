@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_ms.h"
+#include "gba/keys.h"
 
 INCLUDE_ASM("mode_ms/mode_ms_top_0.s");
 INCLUDE_ASM("mode_ms/mode_ms_top_1.s");
@@ -116,11 +117,42 @@ void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16
     }
 }
 INCLUDE_ASM("mode_ms/func_08102984.s");
-INCLUDE_ASM("mode_ms/func_08102A94.s");
+s32 func_08102A94(void) {
+    s32 k;
+
+    k = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
+    return k | (GetKeysRepeat() & (DPAD_ANY | R_BUTTON | L_BUTTON));
+}
 INCLUDE_ASM("mode_ms/func_08102AB4.s");
 INCLUDE_ASM("mode_ms/func_08102DC8.s");
 INCLUDE_ASM("mode_ms/func_08102F30.s");
-INCLUDE_ASM("mode_ms/func_08103CD8.s");
+void func_08103CD8(s16 a) {
+    s32 i;
+
+    for (i = 0; i < 4; i++) {
+        if (gUnk_02035B08[i] >= 0) {
+            func_0800448C(gUnk_09A3ABDC, GetBgScreenBase(0), gUnk_02035B08[i] * 6, i == a ? 0 : 3, 0, i * 3 + 3, 6, 3);
+        }
+    }
+}
 INCLUDE_ASM("mode_ms/func_08103D54.s");
-INCLUDE_ASM("mode_ms/func_08103F3C.s");
+u16 func_08103F3C(void) {
+    s16 i;
+    u16 r;
+    u16 acc;
+
+    r = GetRandom() % 100;
+    i = 0;
+    acc = gUnk_09993334[0];
+    if (r >= acc) {
+        do {
+            i++;
+            if (i > 9) {
+                break;
+            }
+            acc += gUnk_09993334[i];
+        } while (r >= acc);
+    }
+    return i % 10;
+}
 INCLUDE_ASM("mode_ms/func_08103F94.s");
