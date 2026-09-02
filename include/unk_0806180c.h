@@ -48,7 +48,14 @@ typedef struct Work0806180C {
     u8 unk_1AB;
     u8 unk_1AC[6];
     u8 unk_1B2;
+    u8 unk_1B3;
+    u8 unk_1B4[8];
 } Work0806180C;
+
+typedef struct MsgLine0806180C {
+    u32 unk_00;
+    u8 unk_04[0x14];
+} MsgLine0806180C;
 
 typedef struct Ent02034A80 {
     void* unk_00;
@@ -74,8 +81,28 @@ typedef struct MsgFaceWork {
 typedef struct MsgWinWork {
     u8 unk_00[0x14];
     void* unk_14;
-    u8 unk_18[0x2C];
+    u8 unk_18[0xC];
+    u8 unk_24;
+    u8 unk_25[2];
+    u8 unk_27;
+    u8 unk_28[0x14];
+    MsgLine0806180C* unk_3C;
+    u8 unk_40[4];
 } MsgWinWork;
+
+typedef struct ContinueWork {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    u8 unk_10[8];
+    void* unk_18;
+    void* unk_1C;
+    u8 unk_20[0x30];
+    s32 unk_50;
+    s32 unk_54;
+    u8 unk_58[0x14];
+} ContinueWork;
 
 typedef struct EventSeqWork {
     TaskPool unk_00;
@@ -89,6 +116,7 @@ typedef struct EventSeqWork {
 typedef struct Ctx02039B84 {
     u8 unk_00[0x2C];
     TaskPool unk_2C;
+    TaskPool unk_40;
 } Ctx02039B84;
 
 typedef struct Work08073E34 {
@@ -113,6 +141,8 @@ typedef struct TextCtx {
     u16 unk_6C;
     u8 unk_6E[0xC];
     u8 unk_7A;
+    u8 unk_7B[2];
+    u8 unk_7D;
 } TextCtx;
 
 typedef struct Actor0806180C {
@@ -146,6 +176,31 @@ typedef struct Handle0806180C {
     u8 unk_00[6];
     u16 unk_06;
 } Handle0806180C;
+
+typedef struct MsgWaitWork {
+    void* unk_00;
+    u8 unk_04[0x10];
+    Handle0806180C* unk_14;
+    u8 unk_18[0xA4];
+    void* unk_BC;
+    u8 unk_C0[0x1C];
+    u8 unk_DC[0x26];
+    u8 unk_102;
+    u8 unk_103[5];
+} MsgWaitWork;
+
+typedef struct MsgWaitYesNoWork {
+    u8 unk_00[4];
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    u8 unk_14[4];
+    void* unk_18;
+    TextSlot unk_1C[10];
+    TextSlot unk_6C[10];
+    u8 unk_BC[0x4C];
+} MsgWaitYesNoWork;
 
 typedef struct Ent080658B8 {
     s32 unk_00;
@@ -249,6 +304,9 @@ void LoadBgPalette(s32 bg, void* src, u16 size);
 void m4aMPlayAllStop(void);
 u8 func_08006314(void);
 void func_08074504(void);
+void* AnimUpdate(void* a);
+void _0806C3A0(u8 a, void* b);
+void func_08065AE0(TextSlot* p, s32 n);
 void func_080635C4(void);
 void func_080DF828(void);
 void func_080E04EC(void);
