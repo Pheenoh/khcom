@@ -49,6 +49,35 @@ typedef struct VsActor {
     s32 unk_10C;
 } VsActor;
 
+typedef struct CharaLinkData {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u16 unk_06;
+    u16 unk_08;
+    u16 unk_0A;
+    u32 unk_0C;
+    u32 unk_10;
+    u32 unk_14;
+    u32 unk_18;
+    u16 unk_1C;
+    u16 unk_1E;
+} CharaLinkData;
+
+typedef struct VsTaskArg {
+    s32 unk_00;
+    u32 unk_04 : 8;
+} VsTaskArg;
+
+typedef struct UnkStruct_02039BB0 {
+    u8 unk_000[0x08];
+    u32 unk_008;
+    u8 unk_00C;
+    u8 unk_00D;
+    u8 unk_00E[0x02];
+    u16 unk_010;
+} UnkStruct_02039BB0;
+
 typedef struct VsBattleWork {
     u8 unk_000[0x2C];
     TaskPool unk_02C;
@@ -174,13 +203,53 @@ void* LoadObjPalette(void* src, s32 size);
 void func_0801AF08(void* p);
 void func_0801B7D8(void* p);
 void TaskPoolDestroy(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolDraw(TaskPool* pool);
+void func_08010CC8(void);
+void func_0801071C(void);
+void func_0801C068(void);
+void func_08004F08(void);
+void func_0801227C(void);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
+void SetBgPriority(s32 bg, u16 priority);
+void SetBgOverflow(s32 bg, u8 on);
+void TaskPoolInit(TaskPool* pool, s32 count);
+void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
+void func_08012798(s32 a, u16 b);
+void func_0801A920(s16 a, s16 b, s16 c, s16 d);
+void func_08006120(s32 a, s32 b);
+void SeedRandom(u32 seed);
+void* EwramAlloc(u32 size);
+void func_08012810(void);
+void func_0801C104(void);
+void EwramFree(void* p);
+void m4aSongNumStart(u16 id);
+void func_08012824(void);
+void func_080125A4(void);
 
 extern VsBattleWork* gUnk_02039B84;
+extern void* gUnk_02039B9C;
+extern u32 gUnk_02039828;
+extern CharaLinkData gUnk_0203AA10;
+extern CharaLinkData gUnk_0203AAC0;
+extern u16 gUnk_02039B88;
+extern u16 gUnk_02039B8C;
+extern u16 gUnk_02039B90;
+extern u8 gUnk_02039B98;
+extern TaskDesc gUnk_09EDAE40;
+extern TaskDesc gUnk_09EDAE70;
+extern UnkStruct_02039BB0 gUnk_02039BB0;
 
 extern s16 gUnk_08121400[];
 
 void func_0800CB4C(EmyWork* work);
 void func_0800CB78(EmyWork* work);
+void mode_vsbattle_0(u32 mode);
+void mode_vsbattle_1(void);
+void mode_vsbattle_2(void);
+void func_0800C6B0(void);
+void func_0800C6B4(void);
+void func_0800C6B8(void);
 void func_0800E364(HumSub* sub);
 void func_0800E380(HumWork* work);
 void func_0800E3D0(HumWork* work);
