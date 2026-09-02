@@ -60,7 +60,8 @@ typedef struct UnkStruct_0203C7AC {
     u16 unk_06;
     u8 unk_08[0x05];
     u8 unk_0D;
-    u8 unk_0E[0x02];
+    u8 unk_0E;
+    u8 unk_0F;
     s32 unk_10;
     s32 unk_14;
     u8 unk_18;
@@ -238,8 +239,8 @@ typedef struct UnkStruct_080E8864 {
     u8 unk_05;
     u8 unk_06;
     u8 unk_07;
-    s32 unk_08;
-    s32 unk_0C;
+    const u8* unk_08;
+    u16* unk_0C;
 } UnkStruct_080E8864;
 
 typedef struct UnkStruct_09EF70D0 {
@@ -502,7 +503,7 @@ u8 func_080E8374(UnkStruct_080E8374* p);
 u16 func_080E83C4(void);
 void func_080E83DC(s32 a, s32 b, s32 c);
 void func_080E8864(UnkStruct_080E8864* p);
-void func_080E893C(s16 x, s16 y, s32 a, s32 b);
+void func_080E893C(s16 x, s16 y, const u8* p, u16* base);
 void func_080E8A24(UnkStruct_080E8864* p);
 u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y);
 UnkStruct_080E8E24* func_080E8E74(u8 a);
@@ -584,8 +585,9 @@ UnkStruct_080DFB8C* func_080E67D4(s32 x, s32 y);
 u8 func_080E68A4(s16 x, s16 y, u8 n);
 s32 func_080E68E4(s16 x, s16 y, u8 w, u8 h, u8 n);
 s32 func_080E6968(s16 a, s16 b, u8 c);
+s32 func_080E6A80(s16 x, s16 y, u16 n);
 void func_080E657C(UnkStruct_080E590C* p);
-void func_080E6804(s16 x, s16 y);
+s32 func_080E6804(s16 x, s16 y);
 void func_080E6998(s16 x, s16 y, u8 w, u8 h);
 s16 func_080E6A14(s16 x, s16 y);
 u8 func_080E7D64(UnkStruct_080DFF1C* a, u8 b);
