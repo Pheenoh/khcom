@@ -4264,11 +4264,16 @@ u8 func_080A2370(void) {
     return 0;
 }
 INCLUDE_ASM("card/func_080A23A0.s");
+
+#ifndef VERSION_JP
 s32 func_080A25B8(u8* work, void* a) {
     func_08000F8C(a, func_080A25E0);
     work[0x2B1]++;
     return 1;
 }
+#else
+INCLUDE_ASM("card/func_080A25B8.s");
+#endif
 INCLUDE_ASM("card/func_080A25E0.s");
 INCLUDE_ASM("card/func_080A2678.s");
 INCLUDE_ASM("card/func_080A27EC.s");
