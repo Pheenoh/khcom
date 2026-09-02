@@ -108,14 +108,100 @@ void func_0805F7C8(u8 a) {
 }
 
 INCLUDE_ASM("mode_test/func_0805F7E8.s");
-INCLUDE_ASM("mode_test/func_0805F8F0.s");
-INCLUDE_ASM("mode_test/func_0805F904.s");
+
+u8 func_0805F8F0(u8 a) {
+    return a * 4 % 32;
+}
+
+void func_0805F904(void) {
+    u8 i;
+    u8 j;
+
+    for (i = 0; i <= 19; i++) {
+        for (j = 0; j <= 60; j++) {
+            gUnk_02034A1C[i].unk_00[j] = 0;
+        }
+    }
+}
+
 INCLUDE_ASM("mode_test/func_0805F93C.s");
-INCLUDE_ASM("mode_test/func_0805FA60.s");
-INCLUDE_ASM("mode_test/func_0805FA8C.s");
-INCLUDE_ASM("mode_test/func_0805FB78.s");
-INCLUDE_ASM("mode_test/func_0805FB84.s");
-INCLUDE_ASM("mode_test/func_0805FC04.s");
+
+void func_0805FA60(s32 a, void* b, s32 c, u8 d) {
+    if (b != 0) {
+        LoadPalette(b, (void*)(d * 32 + 0x05000000), 32);
+    }
+
+    gUnk_02034A18 = d;
+}
+
+void func_0805FA8C(u8 bg, u16 b, u16 c) {
+    s32 fillA;
+    s32 fillB;
+    u8 i;
+    u8 j;
+    void* charBase = GetBgCharBase(bg);
+    void* screenBase = GetBgScreenBase(bg);
+
+    fillA = 0;
+    CpuSet(&fillA, charBase, (b >> 2) | CPU_SET_32BIT | CPU_SET_SRC_FIXED);
+    fillB = 0;
+    CpuSet(&fillB, screenBase, (c >> 2) | CPU_SET_32BIT | CPU_SET_SRC_FIXED);
+
+    gUnk_02034A1C = EwramAlloc(0xA50);
+    gUnk_02034A20 = 0;
+
+    for (i = 0; i <= 19; i++) {
+        for (j = 0; j <= 60; j++) {
+            gUnk_02034A1C[i].unk_00[j] = 0;
+        }
+
+        gUnk_02034A1C[i].unk_7A = 0;
+        gUnk_02034A1C[i].unk_7B = 0;
+        gUnk_02034A1C[i].unk_7C = 0;
+        gUnk_02034A1C[i].unk_7D = 0;
+    }
+
+    func_0805F7B0(0);
+    gUnk_02034A21 = 0;
+    gUnk_02034A18 = 0;
+    EnableBg(bg);
+}
+
+void func_0805FB78(s32 a) {
+    gUnk_02034A28 = a;
+}
+
+void func_0805FB84(u8 x, u8 y, u32 c, u8 v) {
+    u8 buf[8];
+
+    buf[3] = v / 10;
+    buf[5] = v - buf[3] * 10;
+    buf[0] = 0x82;
+    buf[1] = 0x98;
+    buf[2] = 0x82;
+    buf[3] += 0x4F;
+    buf[4] = 0x82;
+    buf[5] += 0x4F;
+    buf[6] = 0;
+    func_0805FCB0(x, y, c, buf);
+}
+
+void func_0805FC04(u8 x, u8 y, u32 c, u16 v) {
+    u8 buf[8];
+
+    buf[1] = v / 100;
+    buf[3] = v / 10 - buf[1] * 10;
+    buf[5] = v - (buf[1] * 100 + buf[3] * 10);
+    buf[0] = 0x82;
+    buf[1] += 0x4F;
+    buf[2] = 0x82;
+    buf[3] += 0x4F;
+    buf[4] = 0x82;
+    buf[5] += 0x4F;
+    buf[6] = 0;
+    func_0805FCB0(x, y, c, buf);
+}
+
 INCLUDE_ASM("mode_test/func_0805FCB0.s");
 INCLUDE_ASM("mode_test/func_08060470.s");
 
