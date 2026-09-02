@@ -1,7 +1,9 @@
 #include "macros.h"
 #include "unk_0806180c.h"
 
-INCLUDE_ASM("unk_0806180c/func_0806180C.s");
+void func_0806180C(u16 a) {
+    func_080010CC(gUnk_09EE274C, a);
+}
 INCLUDE_ASM("unk_0806180c/func_08061824.s");
 INCLUDE_ASM("unk_0806180c/func_08061FC8.s");
 INCLUDE_ASM("unk_0806180c/func_0806250C.s");
@@ -437,7 +439,16 @@ INCLUDE_ASM("unk_0806180c/func_0806C42C.s");
 INCLUDE_ASM("unk_0806180c/func_0806C490.s");
 INCLUDE_ASM("unk_0806180c/func_0806C81C.s");
 INCLUDE_ASM("unk_0806180c/func_0806CBAC.s");
-INCLUDE_ASM("unk_0806180c/func_0806CD30.s");
+void func_0806CD30(s32 a) {
+    switch (a) {
+    case 0:
+        LoadBgPalette(0, gUnk_096145D8, 0x40);
+        break;
+    case 1:
+        LoadBgPalette(0, gUnk_09614618, 0x40);
+        break;
+    }
+}
 INCLUDE_ASM("unk_0806180c/func_0806CD60.s");
 INCLUDE_ASM("unk_0806180c/func_0806CF04.s");
 INCLUDE_ASM("unk_0806180c/func_0806D0A8.s");
@@ -445,10 +456,33 @@ INCLUDE_ASM("unk_0806180c/func_0806D288.s");
 INCLUDE_ASM("unk_0806180c/func_0806D2D0.s");
 INCLUDE_ASM("unk_0806180c/func_0806D334.s");
 INCLUDE_ASM("unk_0806180c/func_0806D40C.s");
-INCLUDE_ASM("unk_0806180c/func_0806D808.s");
+u8 func_0806D808(void) {
+    u8 r = func_08006314();
+    u8 v;
+
+    if (r != 0) {
+        v = 1;
+    } else {
+        gUnk_02039DC8->unk_7A = 0;
+        m4aMPlayAllStop();
+        v = 0;
+    }
+    return v;
+}
 INCLUDE_ASM("unk_0806180c/func_0806D830.s");
-INCLUDE_ASM("unk_0806180c/func_0806D9E8.s");
-INCLUDE_ASM("unk_0806180c/func_0806DA18.s");
+void func_0806D9E8(EventSeqWork* p) {
+    TaskPoolDraw(&p->unk_14);
+    if (p->unk_32 != 0) {
+        TaskPoolDraw(&gUnk_02039B84->unk_2C);
+    }
+    TaskPoolDraw(&p->unk_00);
+}
+void func_0806DA18(EventSeqWork* p) {
+    TaskPoolDestroy(&p->unk_00);
+    if (p->unk_28 != 0) {
+        TaskPoolDestroy(&p->unk_14);
+    }
+}
 INCLUDE_ASM("unk_0806180c/func_0806DA34.s");
 INCLUDE_ASM("unk_0806180c/func_0806E184.s");
 INCLUDE_ASM("unk_0806180c/func_0806E400.s");
@@ -1321,7 +1355,13 @@ INCLUDE_ASM("unk_0806180c/func_08072D98.s");
 INCLUDE_ASM("unk_0806180c/func_08072EAC.s");
 INCLUDE_ASM("unk_0806180c/func_08073170.s");
 INCLUDE_ASM("unk_0806180c/func_08073238.s");
-INCLUDE_ASM("unk_0806180c/func_08073274.s");
+void func_08073274(MsgWinWork* p) {
+    if (p->unk_14 != NULL) {
+        ReleaseObjPalette(p->unk_14);
+    }
+    func_08065940();
+    TaskPoolDestroy(p);
+}
 INCLUDE_ASM("unk_0806180c/func_08073294.s");
 INCLUDE_ASM("unk_0806180c/func_08073318.s");
 INCLUDE_ASM("unk_0806180c/func_0807344C.s");
@@ -1331,7 +1371,10 @@ INCLUDE_ASM("unk_0806180c/func_080736F8.s");
 INCLUDE_ASM("unk_0806180c/func_08073768.s");
 INCLUDE_ASM("unk_0806180c/func_0807388C.s");
 INCLUDE_ASM("unk_0806180c/func_08073A58.s");
-INCLUDE_ASM("unk_0806180c/func_08073AEC.s");
+void func_08073AEC(MsgFaceWork* p) {
+    ReleaseObjTiles(p->unk_00);
+    ReleaseObjPalette(p->unk_04);
+}
 INCLUDE_ASM("unk_0806180c/func_08073B04.s");
 INCLUDE_ASM("unk_0806180c/func_08073B54.s");
 INCLUDE_ASM("unk_0806180c/func_08073B9C.s");
@@ -1373,7 +1416,10 @@ INCLUDE_ASM("unk_0806180c/func_08074330.s");
 INCLUDE_ASM("unk_0806180c/func_08074380.s");
 INCLUDE_ASM("unk_0806180c/func_080744C8.s");
 INCLUDE_ASM("unk_0806180c/func_08074504.s");
-INCLUDE_ASM("unk_0806180c/func_08074564.s");
+void func_08074564(void) {
+    gUnk_03007FF8 |= 2;
+    func_08074504();
+}
 INCLUDE_ASM("unk_0806180c/func_0807457C.s");
 
 void func_080746D8(void) {
