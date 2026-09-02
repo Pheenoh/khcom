@@ -24,6 +24,19 @@ typedef struct MsCardDef {
     u8 unk_2B[0x9];
 } MsCardDef;
 
+typedef struct UnkStruct_099935A8_00 {
+    u16 unk_00;
+    u8 unk_02[0x2];
+    void* unk_04;
+    u16 unk_08[4];
+} UnkStruct_099935A8_00;
+
+typedef struct UnkStruct_099935A8 {
+    UnkStruct_099935A8_00* unk_00;
+    s16 unk_04;
+    u8 unk_06[0x2];
+} UnkStruct_099935A8;
+
 typedef struct UnkStruct_099932D4 {
     void* unk_00;
     u16 unk_04;
@@ -39,7 +52,9 @@ typedef struct UnkStruct_099932D4 {
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x0E];
     s8 unk_00E;
-    u8 unk_00F[0x1];
+    u8 unk_00F[0x16B];
+    u16 unk_17A;
+    u8 unk_17C[0x2];
 } UnkStruct_02039BB0;
 
 typedef struct UnkStruct_020358C8 {
@@ -92,7 +107,7 @@ void func_08102688(u16 a, u16 b, u16 c);
 u8 func_081026C4(u16 a, u16 b, u16 c);
 void func_08102704(u16 a);
 void func_08102728(u16 a);
-s32 func_0810274C(u16 a);
+u8 func_0810274C(u16 a);
 void func_08102774(void);
 u8 func_081027B4(s16 a);
 s32 func_08102A94(void);
@@ -119,6 +134,22 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
 void m4aSongNumStart(u16 n);
+void ApproachValue(s32* value, s32 target, u16 steps);
+void TaskPoolUpdate(TaskPool* pool);
+void func_0800FDD0(s32 a);
+u8 func_080A42C8(void);
+void func_080A4234(void* pool, u32 a, u16 b);
+u8 func_080A411C(TaskPool* a, s32 b, u16 c);
+void func_08101768(void);
+void func_081017A0(void);
+void func_08101970(void);
+void func_080063A8(void);
+void mode_ms_top_1(void);
+s16 func_08084458(u16 a);
+u16 func_08060A2C(u16 a);
+u8 func_0800FC5C(void* a);
+u8 func_0810155C(u32 a);
+void EwramFree(void* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void TaskPoolDraw(TaskPool* pool);
@@ -159,7 +190,6 @@ void func_08102AB4(s16 x, s16 y);
 void func_08103F94(s16 a, s16 b);
 void func_080062F4(u16 a, s32 b);
 void func_08065AE0(void* a, s32 b);
-void EwramFree(void* p);
 void* GetBgCharBase(s32 bg);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
 void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
@@ -204,9 +234,10 @@ extern s32 gUnk_02035898[];
 extern s32 gUnk_020358A0;
 extern u8 gUnk_020358A4;
 extern TaskPool gUnk_020358A8;
-extern s16 gUnk_020358BC;
-extern s16 gUnk_020358BE;
+extern void* gUnk_020357C4;
+extern s16 gUnk_020358BC;extern s16 gUnk_020358BE;
 extern u8 gUnk_020358C0;
+extern s16 gUnk_020358C2;
 extern u8 gUnk_09A3D79C[];
 extern u8 gUnk_09A10A3C[];
 extern u8 gUnk_09A123DC[];
@@ -237,6 +268,7 @@ extern s32 gUnk_02035AD4;
 extern s32 gUnk_02035AD8;
 extern u16 gUnk_02035B58[];
 extern s16 gUnk_02035B62;
+extern UnkStruct_099935A8 gUnk_099935A8[];
 extern void* gUnk_09EE981C[];
 extern void* gUnk_09EE9894[];
 extern s16 gSineTable[];
