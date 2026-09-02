@@ -23,8 +23,8 @@ void func_08000BB0(void* node, void* pool, void* owner);
 void func_080034EC(u8 a, u8 b);
 
 void func_08001E64(SpriteEntry** arr, s32 lo, s32 hi);
-void func_08001EF8(void);
-void func_08001F0C(void);
+void EnableObj(void);
+void DisableObj(void);
 void func_08001F20(u16 a, u16 b);
 void func_08001F5C(u16 a, u16 b);
 
@@ -99,11 +99,11 @@ void func_08001E64(SpriteEntry** arr, s32 lo, s32 hi) {
     }
 }
 
-void func_08001EF8(void) {
+void EnableObj(void) {
     gDispCnt |= 0x1000;
 }
 
-void func_08001F0C(void) {
+void DisableObj(void) {
     gDispCnt &= 0xEFFF;
 }
 
@@ -135,7 +135,7 @@ void func_08001F98(void) {
     u8* p;
     s32 i;
 
-    func_08001EF8();
+    EnableObj();
     func_08000BA4(gSpriteWork + 0x1800);
     for (i = 0; i < 128; i++) {
         func_08000BB0(gSpriteWork + i * 0x30 + 0x0C, gSpriteWork + 0x1800, gSpriteWork + i * 0x30);
