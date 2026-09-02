@@ -359,7 +359,8 @@ INCLUDE_ASM("card/func_0807AEF4.s");
 INCLUDE_ASM("card/func_0807AF40.s");
 INCLUDE_ASM("card/func_0807B16C.s");
 INCLUDE_ASM("card/func_0807B378.s");
-INCLUDE_ASM("card/func_0807B3C4.s");
+void func_0807B3C4(void) {
+}
 
 u8 func_0807B3C8(void) {
     u8 result;
@@ -584,7 +585,9 @@ INCLUDE_ASM("card/func_0807BD64.s");
 INCLUDE_ASM("card/func_0807BE54.s");
 INCLUDE_ASM("card/func_0807BEC0.s");
 INCLUDE_ASM("card/func_0807C248.s");
-INCLUDE_ASM("card/func_0807C2E0.s");
+void func_0807C2E0(UnkStruct_02034AAC* p) {
+    func_0807C39C(p);
+}
 
 void func_0807C2EC(UnkStruct_02034AAC* p) {
     if (p->unk_A1 != 6) {
@@ -675,13 +678,27 @@ INCLUDE_ASM("card/func_0807DE10.s");
 INCLUDE_ASM("card/func_0807E018.s");
 INCLUDE_ASM("card/func_0807E158.s");
 INCLUDE_ASM("card/func_0807E184.s");
-INCLUDE_ASM("card/func_0807E1A0.s");
-INCLUDE_ASM("card/func_0807E1AC.s");
-INCLUDE_ASM("card/func_0807E1B8.s");
-INCLUDE_ASM("card/func_0807E1C4.s");
-INCLUDE_ASM("card/func_0807E1D0.s");
-INCLUDE_ASM("card/func_0807E1DC.s");
-INCLUDE_ASM("card/func_0807E1E8.s");
+void func_0807E1A0(void) {
+    gUnk_02034AA8 = 17;
+}
+void func_0807E1AC(void) {
+    gUnk_02034AA8 = 18;
+}
+void func_0807E1B8(void) {
+    gUnk_02034AA8 = 19;
+}
+void func_0807E1C4(void) {
+    gUnk_02034AA8 = 21;
+}
+void func_0807E1D0(void) {
+    gUnk_02034AA8 = 22;
+}
+void func_0807E1DC(void) {
+    gUnk_02034AA8 = 23;
+}
+void func_0807E1E8(void) {
+    gUnk_02034AA8 = 24;
+}
 
 void func_0807E1F4(void) {
     gUnk_02034AA4 = 1;
@@ -860,11 +877,14 @@ INCLUDE_ASM("card/func_08080B44.s");
 INCLUDE_ASM("card/func_08080EB4.s");
 INCLUDE_ASM("card/func_08081210.s");
 INCLUDE_ASM("card/func_080814BC.s");
-INCLUDE_ASM("card/func_08081740.s");
+void func_08081740(void) {
+}
 INCLUDE_ASM("card/func_08081744.s");
 
 INCLUDE_ASM("card/func_08081760.s");
-INCLUDE_ASM("card/func_08081828.s");
+u8 func_08081828(void) {
+    return gUnk_02039DD4->unk_0ED;
+}
 
 u8 func_08081838(void) {
     return gUnk_02039DD4->unk_0D4;
@@ -931,18 +951,24 @@ void func_08083914(void) {
     gUnk_02039DDC = 2;
 }
 
-INCLUDE_ASM("card/func_08083920.s");
+u8 func_08083920(void) {
+    return func_08091B44();
+}
 INCLUDE_ASM("card/func_08083930.s");
 INCLUDE_ASM("card/func_080839FC.s");
 INCLUDE_ASM("card/func_08083ADC.s");
-INCLUDE_ASM("card/func_08083B18.s");
-INCLUDE_ASM("card/func_08083B1C.s");
+void func_08083B18(void) {
+}
+void func_08083B1C(void) {
+}
 
 INCLUDE_ASM("card/func_08083B20.s");
 INCLUDE_ASM("card/func_08083B94.s");
 INCLUDE_ASM("card/func_08083BE4.s");
-INCLUDE_ASM("card/func_08083C8C.s");
-INCLUDE_ASM("card/func_08083C90.s");
+void func_08083C8C(void) {
+}
+void func_08083C90(void) {
+}
 
 INCLUDE_ASM("card/func_08083C94.s");
 
@@ -1139,7 +1165,8 @@ INCLUDE_ASM("card/func_08084C40.s");
 INCLUDE_ASM("card/func_08084D78.s");
 
 INCLUDE_ASM("card/func_08084E50.s");
-INCLUDE_ASM("card/func_08084FA8.s");
+void func_08084FA8(void) {
+}
 
 u16 func_08084FAC(u8 slot) {
     u16 count;
@@ -2058,7 +2085,9 @@ INCLUDE_ASM("card/func_08091138.s");
 INCLUDE_ASM("card/func_08091234.s");
 INCLUDE_ASM("card/func_080917C8.s");
 INCLUDE_ASM("card/func_08091978.s");
-INCLUDE_ASM("card/func_08091B28.s");
+void func_08091B28(void) {
+    gUnk_02034AB4 = -1;
+}
 
 void func_08091B38(u16 a) {
     gUnk_02034AB4 = a;
@@ -2722,12 +2751,18 @@ INCLUDE_ASM("card/func_08096638.s");
 INCLUDE_ASM("card/func_080966B4.s");
 INCLUDE_ASM("card/func_080966E4.s");
 
-INCLUDE_ASM("card/func_08096700.s");
+void func_08096700(void* a, void* b) {
+    TaskCreate(a, gUnk_09EE75D8, b);
+}
 INCLUDE_ASM("card/func_08096714.s");
 INCLUDE_ASM("card/func_08096738.s");
 INCLUDE_ASM("card/func_08096994.s");
-INCLUDE_ASM("card/func_08096C20.s");
-INCLUDE_ASM("card/func_08096C2C.s");
+void func_08096C20(void* pool) {
+    TaskPoolDraw(pool);
+}
+void func_08096C2C(void* pool) {
+    TaskPoolDestroy(pool);
+}
 
 INCLUDE_ASM("card/func_08096C38.s");
 
@@ -2782,18 +2817,30 @@ void func_08096DB0(void* a, void* b) {
     TaskCreate(a, gUnk_09EE75F0, b);
 }
 
-INCLUDE_ASM("card/func_08096DC4.s");
+void func_08096DC4(void* a, void* b) {
+    TaskCreate(a, gUnk_09EE7608, b);
+}
 INCLUDE_ASM("card/func_08096DD8.s");
-INCLUDE_ASM("card/func_08096E60.s");
+s32 func_08096E60(void) {
+    return 1;
+}
 INCLUDE_ASM("card/func_08096E64.s");
 INCLUDE_ASM("card/func_08096EC4.s");
 
-INCLUDE_ASM("card/func_08096F08.s");
+void func_08096F08(void* a, void* b) {
+    TaskCreate(a, gUnk_09EE7620, b);
+}
 INCLUDE_ASM("card/func_08096F1C.s");
-INCLUDE_ASM("card/func_08096F44.s");
+s32 func_08096F44(void) {
+    return 1;
+}
 INCLUDE_ASM("card/func_08096F48.s");
-INCLUDE_ASM("card/func_08096F70.s");
-INCLUDE_ASM("card/func_08096F80.s");
+void func_08096F70(s32* p) {
+    func_08066918(p[0], p[1]);
+}
+s32 func_08096F80(void* a) {
+    return (s32)TaskCreate(a, gUnk_09EE7638, 0);
+}
 INCLUDE_ASM("card/func_08096F94.s");
 INCLUDE_ASM("card/func_08097138.s");
 INCLUDE_ASM("card/func_08097390.s");
@@ -2806,12 +2853,17 @@ INCLUDE_ASM("card/func_08097834.s");
 INCLUDE_ASM("card/func_080978B0.s");
 INCLUDE_ASM("card/func_0809792C.s");
 
-INCLUDE_ASM("card/func_0809797C.s");
+void func_0809797C(void* a, void* b) {
+    TaskCreate(a, gUnk_09EE7650, b);
+}
 INCLUDE_ASM("card/func_08097990.s");
 INCLUDE_ASM("card/func_08097A14.s");
 INCLUDE_ASM("card/func_08097A80.s");
-INCLUDE_ASM("card/func_08097AB8.s");
-INCLUDE_ASM("card/func_08097ABC.s");
+void func_08097AB8(void) {
+}
+void func_08097ABC(void) {
+    func_080062F4(13, 0);
+}
 INCLUDE_ASM("card/func_08097ACC.s");
 INCLUDE_ASM("card/func_08097C84.s");
 INCLUDE_ASM("card/func_08097DE4.s");
@@ -2821,7 +2873,10 @@ INCLUDE_ASM("card/func_08097FDC.s");
 INCLUDE_ASM("card/func_08098014.s");
 INCLUDE_ASM("card/func_080984E4.s");
 
-INCLUDE_ASM("card/func_08098598.s");
+void func_08098598(s32 a, s32 b, s32* c) {
+    c[9] = a;
+    c[10] = b;
+}
 INCLUDE_ASM("card/func_080985A0.s");
 
 void func_08098670(UnkStruct_08098670* p, u16 a) {
@@ -2917,14 +2972,30 @@ INCLUDE_ASM("card/func_08099E70.s");
 INCLUDE_ASM("card/func_08099EE0.s");
 INCLUDE_ASM("card/func_08099F20.s");
 INCLUDE_ASM("card/func_08099F40.s");
-INCLUDE_ASM("card/func_08099F68.s");
-INCLUDE_ASM("card/func_08099F6C.s");
-INCLUDE_ASM("card/func_08099F70.s");
-INCLUDE_ASM("card/func_08099F74.s");
+u8 func_08099F68(u8* p) {
+    return p[22];
+}
+void func_08099F6C(void) {
+}
+void func_08099F70(void) {
+}
+void func_08099F74(u8* p) {
+    if (p != 0) {
+        p[22] = 0;
+    }
+}
 INCLUDE_ASM("card/func_08099F80.s");
 INCLUDE_ASM("card/func_08099FA4.s");
-INCLUDE_ASM("card/func_08099FC8.s");
-INCLUDE_ASM("card/func_08099FD8.s");
+void func_08099FC8(u16* p) {
+    if (p != 0) {
+        p[10]--;
+    }
+}
+void func_08099FD8(u16* p) {
+    if (p != 0) {
+        p[10]++;
+    }
+}
 INCLUDE_ASM("card/func_08099FE8.s");
 INCLUDE_ASM("card/func_08099FFC.s");
 INCLUDE_ASM("card/func_0809A02C.s");
@@ -3027,7 +3098,9 @@ INCLUDE_ASM("card/func_0809CB78.s");
 INCLUDE_ASM("card/func_0809CBD0.s");
 INCLUDE_ASM("card/func_0809CBF8.s");
 INCLUDE_ASM("card/func_0809CC80.s");
-INCLUDE_ASM("card/func_0809CDAC.s");
+s32 func_0809CDAC(void) {
+    return 1;
+}
 INCLUDE_ASM("card/func_0809CDB0.s");
 INCLUDE_ASM("card/func_0809CE38.s");
 INCLUDE_ASM("card/func_0809CE88.s");
@@ -3042,7 +3115,9 @@ INCLUDE_ASM("card/func_0809D124.s");
 INCLUDE_ASM("card/func_0809D160.s");
 INCLUDE_ASM("card/func_0809D1B0.s");
 INCLUDE_ASM("card/func_0809D1FC.s");
-INCLUDE_ASM("card/func_0809D26C.s");
+void func_0809D26C(void) {
+    EwramFree(gUnk_02034AD4);
+}
 
 #ifdef NON_MATCHING
 u8 func_0809D280(u8* p) {
@@ -3075,15 +3150,22 @@ INCLUDE_ASM("card/func_0809D280.s");
 #endif
 
 INCLUDE_ASM("card/func_0809D2B0.s");
-INCLUDE_ASM("card/func_0809D3F0.s");
+void func_0809D3F0(void) {
+    gUnk_02034AD8 = 0;
+}
 INCLUDE_ASM("card/func_0809D3FC.s");
 
 INCLUDE_ASM("card/func_0809D458.s");
 INCLUDE_ASM("card/func_0809D87C.s");
 INCLUDE_ASM("card/func_0809D900.s");
 INCLUDE_ASM("card/func_0809D998.s");
-INCLUDE_ASM("card/func_0809DA38.s");
-INCLUDE_ASM("card/func_0809DA54.s");
+void func_0809DA38(void) {
+    TaskPoolUpdate(gUnk_02034AE0);
+    TaskPoolDraw(gUnk_02034AE0);
+}
+void func_0809DA54(void) {
+    TaskPoolDestroy(gUnk_02034AE0);
+}
 INCLUDE_ASM("card/func_0809DA64.s");
 INCLUDE_ASM("card/func_0809DB70.s");
 INCLUDE_ASM("card/func_0809DCB8.s");
@@ -3259,7 +3341,9 @@ INCLUDE_ASM("card/func_080A1C48.s");
 INCLUDE_ASM("card/func_080A1C7C.s");
 INCLUDE_ASM("card/func_080A1CAC.s");
 INCLUDE_ASM("card/func_080A1CF0.s");
-INCLUDE_ASM("card/func_080A1DA0.s");
+void func_080A1DA0(void) {
+    func_080A1C48();
+}
 INCLUDE_ASM("card/func_080A1DAC.s");
 INCLUDE_ASM("card/func_080A1E4C.s");
 INCLUDE_ASM("card/func_080A1E80.s");
@@ -3268,8 +3352,10 @@ INCLUDE_ASM("card/func_080A1F18.s");
 INCLUDE_ASM("card/func_080A1F38.s");
 INCLUDE_ASM("card/func_080A2024.s");
 INCLUDE_ASM("card/func_080A207C.s");
-INCLUDE_ASM("card/func_080A211C.s");
-INCLUDE_ASM("card/func_080A2120.s");
+void func_080A211C(void) {
+}
+void func_080A2120(void) {
+}
 INCLUDE_ASM("card/func_080A2124.s");
 INCLUDE_ASM("card/func_080A2138.s");
 INCLUDE_ASM("card/func_080A2230.s");
@@ -3285,7 +3371,9 @@ void* func_080A2334(u16 a, u8 b) {
     return 0;
 }
 
-INCLUDE_ASM("card/func_080A235C.s");
+u8 func_080A235C(u16 a) {
+    return gUnk_09EE7D84[a]->unk_04;
+}
 INCLUDE_ASM("card/func_080A2370.s");
 INCLUDE_ASM("card/func_080A23A0.s");
 INCLUDE_ASM("card/func_080A25B8.s");
@@ -3890,11 +3978,15 @@ void func_080AAEEC(UnkStruct_0808C940* w, s16 n) {
 INCLUDE_ASM("card/func_080AAF20.s");
 INCLUDE_ASM("card/func_080AAF78.s");
 INCLUDE_ASM("card/func_080AAFB4.s");
-INCLUDE_ASM("card/func_080AB008.s");
+void func_080AB008(void) {
+    TaskPoolDestroy(gUnk_02034B08);
+}
 INCLUDE_ASM("card/func_080AB018.s");
 INCLUDE_ASM("card/func_080AB058.s");
 INCLUDE_ASM("card/func_080AB09C.s");
-INCLUDE_ASM("card/func_080AB1EC.s");
+void func_080AB1EC(void** p) {
+    ReleaseObjTiles(p[0]);
+}
 
 void func_080AB1F8(u8 a, u16 b) {
     u8 saved;
@@ -3957,11 +4049,14 @@ void func_080AB8E4(void) {
 void func_080AB964(void) {
 }
 
-INCLUDE_ASM("card/func_080AB968.s");
+void func_080AB968(void) {
+}
 INCLUDE_ASM("card/func_080AB96C.s");
 INCLUDE_ASM("card/func_080AB99C.s");
 INCLUDE_ASM("card/func_080AB9E0.s");
-INCLUDE_ASM("card/func_080ABA70.s");
+void func_080ABA70(void) {
+    TaskPoolDestroy(gUnk_02034B20);
+}
 
 INCLUDE_ASM("card/func_080ABA80.s");
 
@@ -4386,7 +4481,9 @@ s32 func_080AE1E8(UnkStruct_02034AAC** p, u8 b) {
 INCLUDE_ASM("card/func_080AE274.s");
 INCLUDE_ASM("card/func_080AE28C.s");
 INCLUDE_ASM("card/task_print_0.s");
-INCLUDE_ASM("card/task_print_1.s");
+s32 task_print_1(void) {
+    return 1;
+}
 INCLUDE_ASM("card/task_print_2.s");
 INCLUDE_ASM("card/task_print_3.s");
 INCLUDE_ASM("card/func_080AE594.s");
