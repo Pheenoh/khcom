@@ -16,6 +16,34 @@ typedef struct UnkStruct_02039DD0 {
     u16 unk_02;
 } UnkStruct_02039DD0;
 
+typedef struct DownWork {
+    s32 unk_00[8];
+    s32 unk_20[8];
+    u8 unk_40[8];
+    u16 unk_48[8];
+} DownWork;
+
+typedef struct EvSoundCue {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u16 unk_06;
+} EvSoundCue;
+
+typedef struct EvSoundWork {
+    EvSoundCue* unk_00;
+    u8 unk_04;
+    u8 unk_05;
+    u8 unk_06;
+    u8 unk_07;
+    s32 unk_08;
+} EvSoundWork;
+
+typedef struct EventTaskHost {
+    u8 unk_00[0x10];
+    TaskPool unk_10;
+} EventTaskHost;
+
 typedef struct EventBody {
     s32 unk_00;
     s32 unk_04;
@@ -39,7 +67,7 @@ typedef struct EffectWork {
     void* unk_04;
     void* unk_08;
     void* unk_0C;
-    u8 unk_10[0x04];
+    DownWork* unk_10;
     AnimState unk_14;
     s32 unk_2C;
     s32 unk_30;
@@ -77,7 +105,21 @@ extern u8 gUnk_09EEFCAC[];
 extern u8 gUnk_09EDE7E4[];
 extern u8 gUnk_09EDE7B4[];
 extern s16 gUnk_0903380C[][6];
+extern s16 gSineTable[];
+extern void* gUnk_09EEA19C[];
+extern u8 gUnk_09EEFD9C[];
+extern u8 gUnk_09EEFD7C[];
+extern TaskDesc gUnk_09EE47BC;
 extern TaskDesc gUnk_09EE47D4;
+extern TaskDesc gUnk_09EE47EC;
+extern TaskDesc gUnk_09EE4804;
+extern TaskDesc gUnk_09EE481C;
+extern TaskDesc gUnk_09EE4834;
+extern TaskDesc gUnk_09EE484C;
+extern TaskDesc gUnk_09EE4864;
+extern TaskDesc gUnk_09EE487C;
+extern TaskDesc gUnk_09EE4894;
+extern TaskDesc gUnk_09EE48AC;
 extern const char gUnk_08F70990[];
 extern const char gUnk_09033ED8[];
 extern const char gUnk_09033EDC[];
@@ -124,6 +166,8 @@ void func_08002A10(void* a, u32 b);
 u8 func_08006314(void);
 u16 GetRandom(void);
 void func_080609A0(void);
+void* func_080038C8(u16 a);
+void func_080038E4(void* a, void* b, u32 c);
 void func_0807B668(UnkStruct_02039DD4* p);
 void func_0807E23C(void);
 void func_0807E248(void);
@@ -149,6 +193,32 @@ s32 func_08075880(EffectWork* w);
 s32 func_080759B0(EffectWork* w);
 void func_080759E0(EffectWork* w);
 void func_08075A54(EffectWork* w);
+void func_08075A7C(EffectWork* w, EventActor* arg);
+s32 func_08075AFC(EffectWork* w);
+void func_08075B24(EffectWork* w, EventActor* arg);
+s32 func_08075BC4(EffectWork* w);
+void func_08075BEC(EffectWork* w, EventActor* arg);
+s32 func_08075CAC(EffectWork* w);
+s32 func_08075D58(EffectWork* w);
+void func_08075DBC(EffectWork* w);
+void func_08075DD8(EffectWork* w, void* arg);
+s32 func_08075DFC(EffectWork* w);
+void func_08075E48(EffectWork* w);
+void func_08075E54(EffectWork* w);
+void func_08075E60(EventTaskHost* h);
+void func_08075E74(EventTaskHost* h);
+void func_08075E88(EventTaskHost* h);
+void func_08075E9C(EventTaskHost* h);
+void func_08075EB0(EventTaskHost* h);
+void func_08075EC4(EventTaskHost* h);
+void func_08075ED8(EventTaskHost* h);
+void func_08075EEC(EventTaskHost* h);
+void func_08075F00(EventTaskHost* h);
+void func_08075F14(EvSoundWork* w, u8* arg);
+s32 func_08075F68(EvSoundWork* w);
+void func_080760C0(void);
+void func_080760C4(void);
+void func_080760D8(EvSoundWork* w);
 void func_08076110(u16 song, s16 x, s16 y);
 void func_08076214(u8* work);
 s32 func_0807622C(u8* work);

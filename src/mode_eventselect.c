@@ -309,7 +309,318 @@ void func_08075A54(EffectWork* w) {
     gUnk_02039DC8->unk_86--;
 }
 
-INCLUDE_ASM("mode_eventselect/func_08075A7C.s");
+void func_08075A7C(EffectWork* w, EventActor* arg) {
+    EventBody* b;
+
+    w->unk_00 = arg;
+    b = &arg->unk_28;
+    w->unk_2C = b->unk_04 - 1536;
+    w->unk_30 = b->unk_08 + 3072;
+    w->unk_04 = AllocObjTiles(128, 0);
+    w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
+    func_08002A10(w->unk_04, 0x09321804);
+    AnimInit(&w->unk_14, gUnk_09EEFD9C, gUnk_09EEFD7C);
+    AnimStart(&w->unk_14, 0, 1);
+    w->unk_0C = AnimGetGfx(&w->unk_14);
+    w->unk_48 = 1;
+    w->unk_46 = 0;
+}
+
+s32 func_08075AFC(EffectWork* w) {
+    w->unk_0C = AnimUpdate(&w->unk_14);
+    w->unk_46++;
+
+    if (w->unk_46 > 44) {
+        return 0;
+    }
+
+    return 1;
+}
+
+void func_08075B24(EffectWork* w, EventActor* arg) {
+    EventBody* b;
+
+    w->unk_00 = arg;
+    b = &arg->unk_28;
+
+    switch (arg->unk_26) {
+    case 3:
+        w->unk_2C = b->unk_04 - 6144;
+        w->unk_30 = b->unk_08 + 8192;
+        break;
+    case 43:
+        w->unk_2C = b->unk_04 + 2048;
+        w->unk_30 = b->unk_08 + 2048;
+        break;
+    }
+
+    w->unk_04 = AllocObjTiles(128, 0);
+    w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
+    func_08002A10(w->unk_04, 0x09321804);
+    AnimInit(&w->unk_14, gUnk_09EEFD9C, gUnk_09EEFD7C);
+    AnimStart(&w->unk_14, 1, 1);
+    w->unk_0C = AnimGetGfx(&w->unk_14);
+    w->unk_48 = 1;
+    w->unk_46 = 0;
+}
+
+s32 func_08075BC4(EffectWork* w) {
+    w->unk_0C = AnimUpdate(&w->unk_14);
+    w->unk_46++;
+
+    if (w->unk_46 > 8) {
+        return 0;
+    }
+
+    return 1;
+}
+
+void func_08075BEC(EffectWork* w, EventActor* arg) {
+    EventBody* b;
+    DownWork* s;
+    u8 i;
+
+    w->unk_00 = arg;
+    b = &arg->unk_28;
+
+    switch (arg->unk_26) {
+    case 0:
+        w->unk_2C = b->unk_04 + 4096;
+        w->unk_30 = b->unk_08 - 6144;
+        break;
+    case 2:
+        w->unk_2C = b->unk_04 - 2048;
+        w->unk_30 = b->unk_08 - 6144;
+        break;
+    case 1:
+        w->unk_2C = b->unk_04 + 3584;
+        w->unk_30 = b->unk_08 - 1024;
+        break;
+    }
+
+    w->unk_04 = func_080038C8(32);
+    func_080038E4(w->unk_04, gUnk_09EEA19C[3], 0x0908C686);
+    w->unk_08 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->unk_10 = EwramAlloc(sizeof(DownWork));
+    s = w->unk_10;
+
+    for (i = 0; i < 8; i++) {
+        s->unk_48[i] = i * 32;
+        s->unk_40[i] = 0;
+    }
+}
+
+s32 func_08075CAC(EffectWork* w) {
+    DownWork* s;
+    u8 i;
+
+    s = w->unk_10;
+
+    for (i = 0; i < 8; i++) {
+        s->unk_00[i] = gSineTable[s->unk_48[i] & 0xFF] * 8 + w->unk_2C;
+        s->unk_20[i] = -gSineTable[(s->unk_48[i] & 0xFF) + 64] * (s->unk_40[i] + 4) + w->unk_30;
+        s->unk_48[i] += 4;
+
+        if (s->unk_40[i] == 0) {
+            s->unk_40[i]++;
+        } else {
+            s->unk_40[i] = 0;
+        }
+    }
+
+    if (w->unk_00->unk_1B2 == 0) {
+        return 0;
+    }
+
+    return 1;
+}
+
+s32 func_08075D58(EffectWork* w) {
+    DownWork* s;
+    u16 pr;
+    u8 i;
+
+    pr = w->unk_00->unk_3E;
+    s = w->unk_10;
+
+    for (i = 0; i < 8; i++) {
+        DrawSprite((s->unk_00[i] >> 8) - (gUnk_02039DC8->unk_58 >> 8),
+                   (s->unk_20[i] >> 8) - (gUnk_02039DC8->unk_5C >> 8), 0,
+                   w->unk_04, w->unk_08, 0, pr, 50);
+    }
+}
+
+void func_08075DBC(EffectWork* w) {
+    ReleaseObjTiles(w->unk_04);
+    ReleaseObjPalette(w->unk_08);
+    EwramFree(w->unk_10);
+}
+
+void func_08075DD8(EffectWork* w, void* arg) {
+    w->unk_00 = arg;
+    gUnk_02039DC8->unk_86 = 0;
+    w->unk_44 = 0;
+    TaskPoolInit(&w->unk_4C, 8);
+}
+
+s32 func_08075DFC(EffectWork* w) {
+    w->unk_44++;
+
+    if (w->unk_44 == 5) {
+        if (gUnk_02039DC8->unk_86 <= 3) {
+            TaskCreate(&w->unk_4C, &gUnk_09EE484C, w->unk_00);
+        }
+
+        w->unk_44 = 0;
+    }
+
+    TaskPoolUpdate(&w->unk_4C);
+
+    return 1;
+}
+
+void func_08075E48(EffectWork* w) {
+    TaskPoolDraw(&w->unk_4C);
+}
+
+void func_08075E54(EffectWork* w) {
+    TaskPoolDestroy(&w->unk_4C);
+}
+
+void func_08075E60(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE48AC, h);
+}
+
+void func_08075E74(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE4894, h);
+}
+
+void func_08075E88(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE47EC, h);
+}
+
+void func_08075E9C(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE4804, h);
+}
+
+void func_08075EB0(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE481C, h);
+}
+
+void func_08075EC4(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE4834, h);
+}
+
+void func_08075ED8(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE4864, h);
+}
+
+void func_08075EEC(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE487C, h);
+}
+
+void func_08075F00(EventTaskHost* h) {
+    TaskCreate(&h->unk_10, &gUnk_09EE47BC, h);
+}
+
+void func_08075F14(EvSoundWork* w, u8* arg) {
+    u8 i;
+
+    w->unk_04 = arg[0];
+    w->unk_05 = 0;
+    w->unk_06 = 0;
+    w->unk_07 = 0;
+    w->unk_08 = 256;
+    w->unk_00 = gUnk_09EE3FB4[w->unk_04][4];
+    gUnk_02039DD0 = EwramAlloc(256);
+
+    for (i = 0; i < 64; i++) {
+        gUnk_02039DD0[i].unk_00 = 0;
+        gUnk_02039DD0[i].unk_02 = 256;
+    }
+}
+
+s32 func_08075F68(EvSoundWork* w) {
+    EvSoundCue* p;
+    MusicPlayerInfo* mp;
+    u8 idx;
+    u8 n;
+    u8 i;
+
+    if (w->unk_00 == 0) {
+        return 0;
+    }
+
+    p = &w->unk_00[w->unk_05];
+
+    if (gUnk_02039DC8->unk_6C == p->unk_02) {
+        if (p->unk_00 != 0xFFFF) {
+            if ((p->unk_04 & 4) == 0) {
+                m4aSongNumStartOrContinue(p->unk_00);
+                idx = gSongTable[p->unk_00].ms;
+                m4aMPlayImmInit(gMPlayTable[idx].info);
+                gUnk_02039DD0[idx].unk_00 = 0;
+                gUnk_02039DD0[idx].unk_02 = 256;
+            } else {
+                m4aSongNumStop(p->unk_00);
+            }
+        } else {
+            m4aMPlayAllStop();
+        }
+
+        if (p->unk_04 & 1) {
+            m4aMPlayFadeOut(gMPlayTable[gSongTable[p->unk_00].ms].info, 5);
+            w->unk_07 = 2;
+        }
+
+        if (p->unk_04 & 2) {
+            n = gSongTable[p->unk_00].ms;
+            mp = gMPlayTable[n].info;
+            w->unk_08 = 3;
+            m4aMPlayVolumeControl(mp, 255, 3);
+            w->unk_07 = 1;
+        }
+
+        if ((p->unk_04 & 0x8000) == 0) {
+            w->unk_05++;
+        }
+    }
+
+    func_080760D8(w);
+
+    for (i = 16; i <= 24; i++) {
+        m4aMPlayPanpotControl(gMPlayTable[i].info, 255,
+                              gUnk_02039DD0[i].unk_00);
+        m4aMPlayVolumeControl(gMPlayTable[i].info, 255,
+                              gUnk_02039DD0[i].unk_02);
+    }
+
+    return 1;
+}
+
+void func_080760C0(void) {
+}
+
+void func_080760C4(void) {
+    EwramFree(gUnk_02039DD0);
+}
+
+void func_080760D8(EvSoundWork* w) {
+    MusicPlayerInfo* mp;
+
+    mp = gMPlayTable[0].info;
+
+    if (w->unk_07 == 1) {
+        w->unk_08 += 2;
+
+        if (w->unk_08 > 255) {
+            w->unk_08 = 256;
+        }
+
+        m4aMPlayImmInit(mp);
+        m4aMPlayVolumeControl(mp, 255, w->unk_08);
+    }
+}
 
 void func_08076110(u16 song, s16 x, s16 y) {
     u8 idx;
