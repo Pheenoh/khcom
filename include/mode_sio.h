@@ -279,22 +279,6 @@ typedef struct SioBtlOptionWork {
     u8 unk_41A[2];
 } SioBtlOptionWork;
 
-extern SioBtlConnectWork* gUnk_02034B3C;
-extern SioBtlOptionWork* gUnk_02034B40;
-extern SioBtlCardgetWork* gUnk_02034B44;
-extern SioBtlConnectWork* gUnk_02034B48;
-extern SioChgCardWork* gUnk_02034B4C;
-extern SioErrorWork* gUnk_02034B50;
-extern u8 gUnk_02034B58;
-extern s8 gUnk_02034B59;
-extern u8 gUnk_02034B5A;
-extern u8 gUnk_02034B5B;
-extern TextSlot gUnk_02034B60[];
-extern void* gUnk_02034C00;
-extern u8 gUnk_02034C08[];
-extern void* gUnk_02034C1C;
-extern u8 gUnk_02034C20[];
-extern void* gUnk_02034C34;
 
 extern u16 gUnk_02039810[4][2];
 extern u16 gCardCollection[];

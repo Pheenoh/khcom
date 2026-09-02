@@ -1,6 +1,36 @@
 #include "macros.h"
 #include "mode_worldwarp.h"
 
+s16 gUnk_020354E8;
+s16 gUnk_020354EA;
+u8 gUnk_020354EC[4];
+s16 gUnk_020354F0[13];
+s16 gUnk_0203550A;
+void* gUnk_0203550C;
+void* gUnk_02035510;
+void* gUnk_02035514;
+void* gUnk_02035518;
+void* gUnk_0203551C;
+AnimState gUnk_02035520;
+AnimState gUnk_02035538;
+void* gUnk_02035550;
+void* gUnk_02035554;
+AnimState gUnk_02035558;
+void* gUnk_02035570[14];
+void* gUnk_020355A8[14];
+void* gUnk_020355E0[14];
+u8 gUnk_02035618[192];
+u8 gUnk_020356D8;
+u8 gUnk_020356D9[7];
+u8 gUnk_020356E0[192];
+u8 gUnk_020357A0;
+s16 gUnk_020357A2;
+s16 gUnk_020357A4;
+s32 gUnk_020357A8[2];
+s32 gUnk_020357B0;
+s32 gUnk_020357B4;
+s32 gUnk_020357B8;
+
 #ifdef NON_MATCHING
 void mode_worldwarp_0(void) {
     s32 i;

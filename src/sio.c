@@ -1,5 +1,15 @@
 #include "sio.h"
 
+u8 gUnk_0203406C;
+u16 gUnk_0203406E;
+u8 gUnk_02034070;
+u8 gUnk_02034071;
+u8 gUnk_02034072;
+u8 gUnk_02034073;
+s8 gUnk_02034074;
+u16 gUnk_02034076;
+u16 gUnk_02034078;
+
 u8 func_08006B74(void) {
     return gUnk_02034054;
 }
