@@ -907,6 +907,7 @@ void func_080E6178(void) {
         func_08000BB0(gUnk_02039BB0.unk_40[i].unk_1C, gUnk_02039BB0.unk_E8, gUnk_02039BB0.unk_40[i].unk_00);
     }
 }
+
 void func_080E6264(void) {
     const u8* t;
     UnkStruct_080DEE18* e;
@@ -1080,7 +1081,19 @@ void func_080E7FCC(void) {
     }
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E8058.s");
+void func_080E8058(void) {
+    UnkStruct_080DFF1C w;
+
+    if (gUnk_0203C7AC->unk_0D == 11) {
+        func_080E7D64(&w, gUnk_0984C204.unk_15);
+        gUnk_0203C7B8[gUnk_02034F78].unk_00 = 0;
+        gUnk_0203C7B8[gUnk_02034F78].unk_14 = &gUnk_0984C204;
+        gUnk_0203C7B8[gUnk_02034F78].unk_04 = w;
+        gUnk_02034F7A += gUnk_0984C204.unk_08 >> 5;
+        gUnk_02034F79++;
+        gUnk_02034F78++;
+    }
+}
 INCLUDE_ASM("unk_080dfebc/func_080E80E0.s");
 INCLUDE_ASM("unk_080dfebc/func_080E826C.s");
 
@@ -1111,8 +1124,40 @@ void func_080E84DC(UnkStruct_080DFF1C* p) {
     }
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E853C.s");
-INCLUDE_ASM("unk_080dfebc/func_080E8594.s");
+void func_080E853C(void) {
+    if (gUnk_02039BB0.unk_00 == 0) {
+        gUnk_0203C7B8 = EwramAlloc(384);
+        gUnk_02034F78 = 0;
+        gUnk_02034F79 = 0;
+        gUnk_02034F7A = 0;
+        func_080E7DF8();
+        func_080E7E3C();
+        func_080E7FCC();
+        func_080E8058();
+        func_080E826C();
+        func_080E80E0();
+    }
+    func_080E8594();
+}
+void func_080E8594(void) {
+    s32 i;
+    UnkStruct_02034F20* p;
+    UnkStruct_080E7D80* d;
+
+    for (i = 0; i < 12; i++) {
+        p = func_080E54A0(i);
+        if (p->unk_08 == 0 && p->unk_14 != 0x100000) {
+            TaskCreate(gUnk_02039BA0->unk_78, gUnk_09EF6C54, p);
+        }
+    }
+    for (i = 0; i < gUnk_02034F78; i++) {
+        d = gUnk_0203C7B8[i].unk_14;
+        if ((gUnk_0203C7B8[i].unk_00 & 1) == 0) {
+            TaskCreate(gUnk_02039BA0->unk_78, d->unk_24, &gUnk_0203C7B8[i]);
+        }
+    }
+    TaskCreate(gUnk_02039BA0->unk_78, gUnk_09EF6C84, 0);
+}
 
 void func_080E8624(void) {
     if (gUnk_02039BB0.unk_00 == 0) {
