@@ -4,6 +4,7 @@
 #include "types.h"
 #include "card_types.h"
 #include "game.h"
+#include "mode.h"
 
 #define CARD_ID_MASK 0xFFF
 
@@ -56,6 +57,12 @@ extern void* gUnk_02034AD4;
 extern u8 gUnk_02034B1C;
 extern u16 gUnk_0203A9DC;
 extern u8 gUnk_09EE75D8[];
+extern void** gUnk_09EEA28C;
+extern void* gUnk_02034B34;
+extern u8 gUnk_0203A9E0;
+extern vu16 gUnk_03006C78;
+extern Mode gUnk_09EF15A8;
+extern Mode gUnk_09ECEB40;
 extern u8 gUnk_09EE7608[];
 extern u8 gUnk_09EE7620[];
 extern u8 gUnk_09EE7638[];
