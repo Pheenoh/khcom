@@ -5,6 +5,12 @@
 #include "anim.h"
 #include "taskpool.h"
 
+typedef struct FrdSetup {
+    u8 unk_000[0x0C];
+    u8 unk_00C;
+    u8 unk_00D[0x03];
+} FrdSetup;
+
 typedef struct FrdArgs {
     u16 unk_00;
     u8 unk_02;
@@ -116,7 +122,7 @@ typedef struct FrdArielWork {
     void* unk_01C;
     FrdBody unk_020;
     AnimState unk_130;
-    s32 unk_148;
+    u32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -210,6 +216,7 @@ typedef struct FrdBeastWork {
     s32 unk_15C;
 } FrdBeastWork;
 
+extern FrdSetup gUnk_02039BB0;
 extern FrdObj* gUnk_02039B84;
 extern FrdObj* gUnk_02039B9C;
 
@@ -249,5 +256,13 @@ void func_08045494(FrdBody* body, u8 a, s16 b, s16 c);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskCreate(TaskPool* pool, void* desc, void* arg);
 u16 func_08005B38(AnimState* a);
+u16 func_08005B34(AnimState* a);
+u8 AnimIsFinished(AnimState* a);
+void* AnimUpdate(AnimState* a);
+void TaskPoolUpdate(TaskPool* a);
+s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
+void func_0802F1E8(void);
+void ApproachValue(s32* value, s32 target, u16 steps);
+void func_08019A30(void);
 
 #endif /* GUARD_FRD_H */
