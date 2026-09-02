@@ -31,7 +31,7 @@ typedef struct FrdObj {
     u64 unk_068;
     u8 unk_070;
     u8 unk_071[0x07];
-    s32 unk_078;
+    struct FrdObj* unk_078;
     struct FrdObj* unk_07C;
     u8 unk_080[0x1C];
     u8 unk_09C[0x17];
@@ -143,8 +143,7 @@ typedef struct FrdJackWork {
     s16 unk_150;
     s16 unk_152;
     s32 unk_154;
-    s16 unk_158;
-    s16 unk_15A;
+    s32 unk_158;
     s32 unk_15C;
     s32 unk_160;
     s32 unk_164;
@@ -167,8 +166,7 @@ typedef struct FrdPanWork {
     s16 unk_152;
     s16 unk_154;
     s16 unk_156;
-    s16 unk_158;
-    s16 unk_15A;
+    s32 unk_158;
     s32 unk_15C;
     s32 unk_160;
     s32 unk_164;
@@ -217,6 +215,20 @@ extern FrdObj* gUnk_02039B9C;
 
 extern u8 gUnk_09EDAE88[];
 extern s16 gSineTable[];
+extern u8 gUnk_09617C58[];
+extern u8 gUnk_0813EB8C[];
+extern u8 gUnk_08F68384[];
+extern u8 gUnk_0813EBFC[];
+extern u8 gUnk_09617DF8[];
+extern u8 gUnk_0813EC5C[];
+extern u8 gUnk_09617DB8[];
+extern u8 gUnk_0813EC9C[];
+extern u8 gUnk_09617DD8[];
+extern u8 gUnk_0813ECFC[];
+extern u8 gUnk_09617D98[];
+extern u8 gUnk_0813ED4C[];
+extern u8 gUnk_09617E18[];
+extern u8 gUnk_0813ED90[];
 
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* a);
@@ -227,5 +239,13 @@ s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void TaskPoolDraw(TaskPool* a);
 void func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
+void m4aSongNumStart(u16 n);
+void* LoadObjPalette(void* src, s32 size);
+void AnimInit(AnimState* a, void* b, void* c);
+void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
+void func_08017260(s32 a, s32 b, s32 c, s32 d);
+void func_08045494(FrdBody* body, u8 a, s16 b, s16 c);
+void TaskPoolInit(TaskPool* a, s32 count);
+void TaskCreate(TaskPool* pool, void* desc, void* arg);
 
 #endif /* GUARD_FRD_H */
