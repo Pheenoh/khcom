@@ -5005,7 +5005,7 @@ void func_080AAF78(void) {
     TaskCreate(gUnk_02034B08, gUnk_09EE8F08, &gUnk_02034B1C);
 }
 void func_080AAFB4(void) {
-    if (gUnk_03006C78 & 1) {
+    if (gSystemFlags & 1) {
         func_080B31A0();
     } else {
         UpdatePlayTime();

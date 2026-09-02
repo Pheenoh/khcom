@@ -119,10 +119,10 @@ void SioInit(void) {
     gUnk_02034073 = 0;
     gUnk_020397D0 = 0;
     gUnk_02039800 = 0;
-    gUnk_02039820 = 0;
+    gSioStatus = 0;
     gUnk_020397D4 = 0;
     gUnk_020397F0 = 0;
-    gUnk_02039828 = 0;
+    gSioPlayerId = 0;
     gUnk_020397FC = 0;
     gUnk_02039824 = 0;
     gUnk_0203982C = 0;

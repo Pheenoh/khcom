@@ -142,20 +142,20 @@ void task_chgCardObj_3(void) {
 u8 func_080C54B4(void) {
     u32* p;
 
-    p = &gUnk_02039820;
+    p = &gSioStatus;
     *p = func_08006ED4(gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
-    gUnk_02039828 = gUnk_02039820 & 3;
-    gUnk_020397FC = (gUnk_02039820 & 0x1C) >> 2;
-    gUnk_02039824 = (gUnk_02039820 & 0xE00) >> 9;
+    gSioPlayerId = gSioStatus & 3;
+    gUnk_020397FC = (gSioStatus & 0x1C) >> 2;
+    gUnk_02039824 = (gSioStatus & 0xE00) >> 9;
 
-    if ((gUnk_02039820 & 0x40) && gUnk_02039828 <= 1) {
+    if ((gSioStatus & 0x40) && gSioPlayerId <= 1) {
         func_080C5AA4();
 
-        if ((gUnk_02039820 & 0x100) == 0) {
+        if ((gSioStatus & 0x100) == 0) {
             gUnk_02039B60 = func_080C5B50();
         }
 
-        if (gUnk_02039820 & 0x7F0000) {
+        if (gSioStatus & 0x7F0000) {
             if (gUnk_0203C3A8 == 1) {
                 gUnk_020397D4++;
                 if (gUnk_020397D4 > 180) {
@@ -165,8 +165,8 @@ u8 func_080C54B4(void) {
         }
 
         if (gUnk_02039B60 == 1) {
-            gUnk_03006C78 &= 0xFFFE;
-            gUnk_020397F0 = gUnk_02039820;
+            gSystemFlags &= 0xFFFE;
+            gUnk_020397F0 = gSioStatus;
             ModeRequest(&gUnk_09EF15B8, 0);
             return gUnk_02039B60;
         }
@@ -192,13 +192,13 @@ u8 func_080C54B4(void) {
 u8 func_080C55DC(void) {
     u32* p;
 
-    p = &gUnk_02039820;
+    p = &gSioStatus;
     *p = func_0800702C(gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
-    gUnk_02039828 = gUnk_02039820 & 3;
-    gUnk_020397FC = (gUnk_02039820 & 0x1C) >> 2;
-    gUnk_02039824 = (gUnk_02039820 & 0xE00) >> 9;
+    gSioPlayerId = gSioStatus & 3;
+    gUnk_020397FC = (gSioStatus & 0x1C) >> 2;
+    gUnk_02039824 = (gSioStatus & 0xE00) >> 9;
 
-    if ((gUnk_02039820 & 0x40) && gUnk_02039828 <= 1) {
+    if ((gSioStatus & 0x40) && gSioPlayerId <= 1) {
         if (gUnk_020397F8 != 0) {
             gUnk_02039B60 = gUnk_020397F8();
         }
@@ -207,12 +207,12 @@ u8 func_080C55DC(void) {
             gUnk_02039804();
         }
 
-        if (gUnk_02039820 & 0x7F0000) {
+        if (gSioStatus & 0x7F0000) {
             if (gUnk_0203C3A8 == 1) {
                 gUnk_020397D4++;
                 if (gUnk_020397D4 > 180) {
-                    gUnk_03006C78 &= 0xFFFE;
-                    gUnk_020397F0 = gUnk_02039820;
+                    gSystemFlags &= 0xFFFE;
+                    gUnk_020397F0 = gSioStatus;
                     ModeRequest(&gUnk_09EF15B8, 0);
                     gUnk_02039B60 = 1;
                 }
@@ -226,20 +226,20 @@ u8 func_080C55DC(void) {
 u8 func_080C56BC(void) {
     u32* p;
 
-    p = &gUnk_02039820;
+    p = &gSioStatus;
     *p = func_08006ED4(gUnk_0203982C, gUnk_02039B68, gUnk_020397E0);
-    gUnk_02039828 = gUnk_02039820 & 3;
-    gUnk_020397FC = (gUnk_02039820 & 0x1C) >> 2;
-    gUnk_02039824 = (gUnk_02039820 & 0xE00) >> 9;
+    gSioPlayerId = gSioStatus & 3;
+    gUnk_020397FC = (gSioStatus & 0x1C) >> 2;
+    gUnk_02039824 = (gSioStatus & 0xE00) >> 9;
 
-    if ((gUnk_02039820 & 0x40) && gUnk_02039828 <= 1) {
+    if ((gSioStatus & 0x40) && gSioPlayerId <= 1) {
         func_080C5C24();
 
-        if ((gUnk_02039820 & 0x100) == 0) {
+        if ((gSioStatus & 0x100) == 0) {
             gUnk_02039B60 = func_080C5C7C();
         }
 
-        if (gUnk_02039820 & 0x7F0000) {
+        if (gSioStatus & 0x7F0000) {
             if (gUnk_0203C3A8 == 1) {
                 gUnk_020397D4++;
                 if (gUnk_020397D4 > 180) {
@@ -249,8 +249,8 @@ u8 func_080C56BC(void) {
         }
 
         if (gUnk_02039B60 == 1) {
-            gUnk_03006C78 &= 0xFFFE;
-            gUnk_020397F0 = gUnk_02039820;
+            gSystemFlags &= 0xFFFE;
+            gUnk_020397F0 = gSioStatus;
             ModeRequest(&gUnk_09EF15B8, 0);
             return gUnk_02039B60;
         }
@@ -264,13 +264,13 @@ void func_080C57A4(void) {
 }
 
 void func_080C57B4(void) {
-    if (gUnk_03006C78 & 1) {
+    if (gSystemFlags & 1) {
         func_080078A4();
-        gUnk_03006C78 &= 0xFFFE;
+        gSystemFlags &= 0xFFFE;
     }
 
-    if (gUnk_03006C78 & 0x10) {
-        gUnk_03006C78 &= 0xFFEF;
+    if (gSystemFlags & 0x10) {
+        gSystemFlags &= 0xFFEF;
     }
 
     if (gUnk_0203C374 == 1) {
@@ -314,15 +314,15 @@ void func_080C58DC(void) {
 
 void func_080C58F0(void) {
     gUnk_0203BEA0 = 0;
-    gUnk_0203BEB0 = gUnk_03006C68;
+    gUnk_0203BEB0 = gVBlankCounter;
 }
 
 void func_080C590C(void) {
-    gUnk_0203BEA0 = (gUnk_03006C68 - gUnk_0203BEB0) & 0xFFFF;
+    gUnk_0203BEA0 = (gVBlankCounter - gUnk_0203BEB0) & 0xFFFF;
 }
 
 s32 func_080C5930(void) {
-    if (gUnk_02039820 & 0x7F0000) {
+    if (gSioStatus & 0x7F0000) {
         return 1;
     }
     return 0;
@@ -345,8 +345,8 @@ u8 func_080C5978(void) {
         if (gUnk_0203BEA8 > 4) {
             gUnk_0203BEA8 = 0;
             func_080C5DC0(func_080C5E58, func_080C5ECC);
-            gUnk_03006C78 |= 1;
-            gUnk_03006C78 &= 0xFFEF;
+            gSystemFlags |= 1;
+            gSystemFlags &= 0xFFEF;
             gUnk_0203BEB8++;
         }
         break;
@@ -442,7 +442,7 @@ s32 func_080C5B50(void) {
                 c = 0xAFAF;
                 if (gUnk_020397E0[0][0] == c || gUnk_020397E0[0][1] == c) {
                     func_080078A4();
-                    v = gUnk_02039828 == 0 ? gUnk_020397E0[0][0] : gUnk_020397E0[0][1];
+                    v = gSioPlayerId == 0 ? gUnk_020397E0[0][0] : gUnk_020397E0[0][1];
                     if (v == c) {
                         if (gUnk_0203BEAC != 0) {
                             gUnk_0203BEAC();
@@ -621,7 +621,7 @@ void func_080C5DC0(s32 (*a)(void), s32 (*b)(void)) {
 
 
 s32 func_080C5E58(void) {
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         gUnk_02039B68[0] = 0xACD;
         gUnk_02039B68[1] = GetKeysHeld() & KEYS_MASK;
         gUnk_02039B68[2] = gUnk_0203C3B4;
@@ -636,29 +636,29 @@ s32 func_080C5E58(void) {
 }
 
 s32 func_080C5ECC(void) {
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         if (gUnk_020397E0[0][0] == 0xACD && gUnk_020397E0[0][1] == gUnk_020397E0[0][0]) {
             gUnk_0203C3B4 = gUnk_020397E0[1][0];
             gUnk_0203C388 = gUnk_020397E0[1][1];
-            gUnk_02039820 &= ~0x100;
+            gSioStatus &= ~0x100;
         } else {
-            gUnk_02039820 |= 0x100;
+            gSioStatus |= 0x100;
         }
 
         if (gUnk_020397E0[0][0] == 0xACD) {
             func_08008944(gUnk_020397E0[2][0]);
             func_0800895C(gUnk_020397E0[3][0]);
-            gUnk_02039820 &= ~0x100;
+            gSioStatus &= ~0x100;
         } else {
-            gUnk_02039820 |= 0x100;
+            gSioStatus |= 0x100;
         }
     } else {
         if (gUnk_020397E0[0][0] == 0xACD) {
             func_08008944(gUnk_020397E0[2][0]);
             func_0800895C(gUnk_020397E0[3][0]);
-            gUnk_02039820 &= ~0x100;
+            gSioStatus &= ~0x100;
         } else {
-            gUnk_02039820 |= 0x100;
+            gSioStatus |= 0x100;
         }
     }
     return 0;
@@ -730,7 +730,7 @@ s32 func_080C60D8(void) {
             gUnk_0203C380 = 1;
             gUnk_0203C394 = 1;
         }
-    } else if (gUnk_02039828 == 0) {
+    } else if (gSioPlayerId == 0) {
         if (gUnk_020397E0[1][1] != 0xDDDD && gUnk_020397E0[1][1] > 3) {
             if (gUnk_020397E0[1][1] > gUnk_0203C378) {
                 return 2;
@@ -778,7 +778,7 @@ void func_080C61D4(void) {
         q += 4;
     }
 
-    if (gUnk_02039828 == 0) {
+    if (gSioPlayerId == 0) {
         SeedRandom(gUnk_03007480 & 0xFFFF);
         gUnk_0203AAC0.unk_1E = GetRandom() % 0xFFFF;
     } else {
@@ -823,7 +823,7 @@ s32 func_080C6378(void) {
                 gUnk_0203C3A4 = 1;
             }
         } else if (gUnk_020397E0[0][0] != 0xDF89) {
-            if (gUnk_02039828 == 0 && gUnk_020397E0[0][0] == 0xECEC &&
+            if (gSioPlayerId == 0 && gUnk_020397E0[0][0] == 0xECEC &&
                 gUnk_020397E0[0][1] == gUnk_020397E0[0][0]) {
                 gUnk_0203C384 = 1;
             }

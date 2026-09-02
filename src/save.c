@@ -5,7 +5,7 @@
 extern u16 gUnk_02034088;
 extern u16 gUnk_0203408A;
 extern u8 gUnk_02034090[];
-extern u16 gUnk_03006C78;
+extern u16 gSystemFlags;
 extern u8 gUnk_08121724[];
 extern u8 gUnk_08121924[];
 extern u8 gUnk_08125924[];
@@ -787,9 +787,9 @@ void WaitSramErrorInput(void) {
     } while (j <= 16);
 
     if (ok) {
-        gUnk_03006C78 |= 4;
+        gSystemFlags |= 4;
     } else {
-        gUnk_03006C78 &= 0xFFFB;
+        gSystemFlags &= 0xFFFB;
     }
 }
 

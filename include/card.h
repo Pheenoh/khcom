@@ -80,7 +80,7 @@ extern u8 gUnk_081283C0[];
 extern void** gUnk_09EEA28C;
 extern void* gUnk_02034B34;
 extern u8 gUnk_0203A9E0;
-extern vu16 gUnk_03006C78;
+extern vu16 gSystemFlags;
 extern Mode gUnk_09EF15A8;
 extern Mode gUnk_09ECEB40;
 extern u8 gUnk_09EE7608[];
