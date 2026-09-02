@@ -366,7 +366,562 @@ void func_0800CD40(EmyWork* work) {
     actor->unk_34 &= ~0x300;
 }
 
+#ifdef NON_MATCHING
+s32 _0800CDF0(EmyWork* work) {
+    VsActor* actor = &work->unk_03C;
+    s32 x;
+    s32 y;
+    s32 z;
+
+    func_0801C700(actor, &x, &y, &z);
+
+    if (gUnk_02039B84->unk_068 & 0x2000) {
+        return 0;
+    }
+
+    switch (work->unk_14C) {
+    case 11:
+        if (work->unk_154 == 0) {
+            work->unk_156 = 18;
+        }
+        work->unk_168 = 0;
+        ApproachValue(&work->unk_180, 0x100, work->unk_156--);
+        work->unk_17C = work->unk_180;
+        if (work->unk_156 <= 0) {
+            func_0800CD40(work);
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 8:
+        work->unk_168 = 0;
+        func_08019068(work->unk_15C->unk_04, &work->unk_010, 2, 1, work->unk_000);
+        func_0801BCF8(actor);
+        actor->unk_0C += ((work->unk_178 + gUnk_08121400[gFrameCounter & 0xFF] * 10) - actor->unk_0C) >> 4;
+        if (GetRandom() % work->unk_15C->unk_0E == 0) {
+            if (actor->unk_04 > x) {
+                actor->unk_34 |= 4;
+            } else {
+                actor->unk_34 &= ~4;
+            }
+        }
+        if (gUnk_02039B84->unk_068 & 0x40000) {
+            s32 tx;
+            s32 ty;
+            s32 d;
+
+            tx = work->unk_170;
+            ty = work->unk_174;
+            work->unk_164 += 51;
+            d = (tx - actor->unk_04) >> 5;
+            if (d > work->unk_164) {
+                d = work->unk_164;
+            } else if (d < -work->unk_164) {
+                d = -work->unk_164;
+            }
+            actor->unk_04 += d;
+            d = (ty - actor->unk_08) >> 5;
+            if (d > work->unk_164) {
+                d = work->unk_164;
+            } else if (d < -work->unk_164) {
+                d = -work->unk_164;
+            }
+            actor->unk_08 += d;
+            if (work->unk_154 > 64) {
+                work->unk_14C = work->unk_150;
+            } else {
+                work->unk_154++;
+            }
+        }
+        break;
+    case 7:
+        work->unk_168 = 0;
+        func_08019068(work->unk_15C->unk_04, &work->unk_010, 0, 1, work->unk_000);
+        func_0801BCF8(actor);
+        actor->unk_0C += ((work->unk_178 + gUnk_08121400[gFrameCounter * 2 & 0xFF] * 12) - actor->unk_0C) >> 4;
+        if (GetRandom() % work->unk_15C->unk_0E == 0) {
+            if (actor->unk_04 > x) {
+                actor->unk_34 |= 4;
+            } else {
+                actor->unk_34 &= ~4;
+            }
+        }
+        if (GetRandom() % work->unk_15C->unk_0C == 0) {
+            work->unk_164 = 0;
+            work->unk_14C = 8;
+            if (GetRandom() % 2 == 0) {
+                s32 lo;
+
+                work->unk_170 = x - ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+            } else {
+                s32 lo;
+
+                work->unk_170 = x + ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+            }
+            work->unk_174 = y + ((GetRandom() % 121 - 60) << 8);
+            work->unk_178 = -((GetRandom() % 49 + 16) << 8);
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 13:
+        if (work->unk_154 == 0) {
+            func_08005B64(&work->unk_010);
+            func_08019068(work->unk_15C->unk_04, &work->unk_010, 1, 0, work->unk_000);
+            actor->unk_14 = actor->unk_04;
+            actor->unk_18 = actor->unk_08;
+        }
+        switch (work->unk_154 % 4) {
+        case 0:
+            actor->unk_04 = actor->unk_14 + 0x100;
+            actor->unk_08 = actor->unk_18;
+            break;
+        case 1:
+            actor->unk_04 = actor->unk_14 - 0x100;
+            actor->unk_08 = actor->unk_18;
+            break;
+        case 2:
+            actor->unk_04 = actor->unk_14;
+            actor->unk_08 = actor->unk_18 + 0x100;
+            break;
+        case 3:
+            actor->unk_04 = actor->unk_14;
+            actor->unk_08 = actor->unk_18 - 0x100;
+            break;
+        }
+        if (AnimIsFinished(&work->unk_010)) {
+            func_0801AF08(actor);
+            work->unk_14C = 14;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 14:
+        if (gUnk_02039B84->unk_068 & 0x40000) {
+            s32 tx;
+            s32 ty;
+
+            if (work->unk_154 == 0) {
+                func_08019068(work->unk_15C->unk_04, &work->unk_010, 2, 1, work->unk_000);
+            }
+            if (x < 0x10000) {
+                tx = x >> 1;
+            } else {
+                tx = (x + 0x20000) >> 1;
+            }
+            if (y < ((gUnk_02039B84->unk_0DE + gUnk_02039B84->unk_0E0) >> 1) << 8) {
+                ty = (gUnk_02039B84->unk_0DE << 8) - 0x4000;
+            } else {
+                ty = (gUnk_02039B84->unk_0E0 << 8) + 0x4000;
+            }
+            work->unk_160 = GetAngle(tx, ty, actor->unk_04, actor->unk_08);
+            actor->unk_04 += ((gUnk_08121400[work->unk_160] << 1) * work->unk_15C->unk_08) >> 8;
+            actor->unk_08 += ((-gUnk_08121400[work->unk_160 + 64] << 1) * work->unk_15C->unk_08) >> 8;
+            if ((s8)work->unk_160 >= 0) {
+                actor->unk_34 &= ~4;
+            } else {
+                actor->unk_34 |= 4;
+            }
+            if (actor->unk_E8 != 4) {
+                work->unk_14C = work->unk_150;
+                work->unk_154 = 0;
+            } else {
+                work->unk_154++;
+            }
+        }
+        break;
+    case 4:
+        if (gUnk_02039B84->unk_068 & 0x40000) {
+            s32 tx;
+            s32 ty;
+            s32 d;
+            s32 ax;
+            s32 ay;
+
+            func_08019068(work->unk_15C->unk_04, &work->unk_010, 2, 1, work->unk_000);
+            func_0801BCF8(actor);
+            tx = x + work->unk_170;
+            ty = y;
+            if (tx < (gUnk_02039B84->unk_0DA + 32) << 8) {
+                tx = x + ((actor->unk_CE + actor->unk_D0) << 8);
+            } else if (tx > (gUnk_02039B84->unk_0DC - 32) << 8) {
+                tx = ty - ((actor->unk_CE + actor->unk_D0) << 8);
+            }
+            if (GetRandom() % 100 == 0) {
+                if (GetRandom() % 2 == 0) {
+                    s32 lo;
+
+                    work->unk_170 = -((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+                } else {
+                    s32 lo;
+
+                    work->unk_170 = ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+                }
+            } else {
+                ax = actor->unk_04;
+                d = tx - ax;
+                if (d < 0) {
+                    d = ax - tx;
+                }
+                ay = actor->unk_08;
+                if (d > 0x400 || ((d = ty - ay) >= 0 ? d > 0x400 : ay - ty > 0x400)) {
+                    work->unk_160 = GetAngle(ax, ay, tx, ty);
+                    actor->unk_04 += (gUnk_08121400[work->unk_160] * work->unk_164) >> 8;
+                    actor->unk_08 += (-gUnk_08121400[work->unk_160 + 64] * work->unk_164) >> 8;
+                } else if (AnimIsFinished(&work->unk_010)) {
+                    work->unk_14C = work->unk_150;
+                }
+            }
+            if (GetRandom() % work->unk_15C->unk_0E == 0) {
+                if (actor->unk_04 > x) {
+                    actor->unk_34 |= 4;
+                } else {
+                    actor->unk_34 &= ~4;
+                }
+            }
+        }
+        break;
+    case 0:
+        func_08019068(work->unk_15C->unk_04, &work->unk_010, 0, 1, work->unk_000);
+        func_0801BCF8(actor);
+        if (GetRandom() % work->unk_15C->unk_0C == 0) {
+            work->unk_14C = 4;
+            if (GetRandom() % 2 == 0) {
+                s32 lo;
+
+                work->unk_170 = -((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+            } else {
+                s32 lo;
+
+                work->unk_170 = ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+            }
+        }
+        if (GetRandom() % work->unk_15C->unk_0E == 0) {
+            if (actor->unk_04 > x) {
+                actor->unk_34 |= 4;
+            } else {
+                actor->unk_34 &= ~4;
+            }
+        }
+        break;
+    case 12:
+        if (actor->unk_E8 != 2) {
+            work->unk_14C = work->unk_150;
+            func_0801AF08(actor);
+        }
+        break;
+    case 9:
+        if (work->unk_154 == 0) {
+            func_08005B64(&work->unk_010);
+            func_08019068(work->unk_15C->unk_04, &work->unk_010, 1, 0, work->unk_000);
+            work->unk_154++;
+        }
+        if (AnimIsFinished(&work->unk_010)) {
+            actor->unk_34 &= ~0x80;
+            actor->unk_34 &= ~0x2000;
+        }
+        if (GetRandom() % 10 == 0) {
+            actor->unk_EC--;
+        }
+        if (actor->unk_E8 != 1) {
+            func_0801AF08(actor);
+            work->unk_14C = work->unk_150;
+            work->unk_154 = 0;
+        }
+        break;
+    case 1:
+        if (work->unk_154 == 0) {
+            func_08005B64(&work->unk_010);
+            func_08019068(work->unk_15C->unk_04, &work->unk_010, 1, 0, work->unk_000);
+        }
+        if (work->unk_154 >= work->unk_15C->unk_10) {
+            s32 ok = 0;
+
+            func_0801AF08(actor);
+            work->unk_14C = 2;
+            work->unk_154 = 0;
+            if (actor->unk_04 < x) {
+                if (actor->unk_34 & 4) {
+                    if (GetRandom() % 5 == 0) {
+                        actor->unk_34 &= ~4;
+                        goto turned;
+                    }
+                } else {
+                    goto turned;
+                }
+            } else {
+                if (actor->unk_34 & 4) {
+                    goto turned;
+                } else {
+                    if (GetRandom() % 5 == 0) {
+                        actor->unk_34 |= 4;
+                        ok = 1;
+                    }
+                }
+            }
+            if (ok == 0) {
+                break;
+            }
+turned:
+            if (GetRandom() % 4 == 0) {
+                func_0801BCD4(actor);
+            }
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 2:
+        if (AnimIsFinished(&work->unk_010)) {
+            work->unk_14C = work->unk_150;
+            work->unk_154 = 0;
+        }
+        break;
+    case 15:
+        if (work->unk_154 == 0) {
+            func_08012614(&actor->unk_40, 1);
+            actor->unk_34 |= 0x100;
+            func_08019068(work->unk_15C->unk_04, &work->unk_010, 1, 0, work->unk_000);
+            work->unk_010.frame = 0;
+            work->unk_010.timer = 0;
+            work->unk_168 = 0x400;
+            actor->unk_108 = 0;
+            actor->unk_10C = 0;
+            work->unk_156 = 10;
+        }
+        ApproachValue(&work->unk_180, 64, work->unk_156--);
+        if (work->unk_156 <= 0) {
+            work->unk_154 = 0;
+            work->unk_14C = 16;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 16:
+        if (work->unk_154 > 44) {
+            if (actor->unk_2C <= 0) {
+                work->unk_14C = 3;
+            } else {
+                work->unk_14C = 17;
+            }
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 17:
+        if (work->unk_154 == 0) {
+            func_08012614(&actor->unk_40, 0);
+            work->unk_156 = 10;
+        }
+        func_0800592C(&work->unk_180, 0x100, work->unk_156--);
+        if (work->unk_156 <= 0) {
+            actor->unk_34 &= ~0x100;
+            func_0801AF08(actor);
+            work->unk_14C = work->unk_150;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 6:
+        if (work->unk_154 == 0) {
+            func_08019068(work->unk_15C->unk_04, &work->unk_010, 0, 1, work->unk_000);
+            work->unk_17C = 0x100;
+            work->unk_180 = 0x100;
+            actor->unk_108 = 0;
+            actor->unk_10C = 0;
+        }
+        work->unk_168 = 0;
+        if (work->unk_154 == 40) {
+            func_08019190(actor, 10);
+            actor->unk_2C -= actor->unk_20;
+            if (actor->unk_2C > actor->unk_2E) {
+                actor->unk_2C = actor->unk_2E;
+            }
+            func_0801AF08(actor);
+            work->unk_14C = work->unk_150;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 10:
+        if (work->unk_154 == 0) {
+            work->unk_156 = 16;
+        }
+        actor->unk_0C -= (16 - work->unk_156) << 8;
+        if (func_08006B74()) {
+            gBldCnt = 0xF10;
+            work->unk_162 = 4;
+            SetBlendAlpha(16 - work->unk_156, work->unk_156);
+        } else {
+            work->unk_162 &= 0xFFFB;
+        }
+        ApproachValue(&work->unk_17C, 10, work->unk_156);
+        ApproachValue(&work->unk_180, 0x200, work->unk_156);
+        work->unk_156--;
+        if (work->unk_156 <= 0) {
+            if (gUnk_02039B84->unk_0EE == 1 && gUnk_02039B84->unk_120 <= 0) {
+                func_08006B4C();
+                func_08006120(2, 20);
+                func_080063A8();
+            }
+            func_0801B994(actor);
+            gUnk_02039B84->unk_068 |= 0x10000;
+            func_0801C830(actor);
+            return 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 3:
+        if (work->unk_154 == 0) {
+            s32 t;
+
+            func_08019068(work->unk_15C->unk_04, &work->unk_010, 1, 0, work->unk_000);
+            if (actor->unk_34 & 0x800000000) {
+                work->unk_154++;
+                break;
+            }
+            if (actor->unk_108 != 0) {
+                break;
+            }
+            if (actor->unk_10C != 0) {
+                break;
+            }
+            if (actor->unk_0C != actor->unk_10) {
+                break;
+            }
+            if (func_080128EC()) {
+                break;
+            }
+            t = (actor->unk_9C / 2) * work->unk_16C;
+            if (work->unk_158 & 1) {
+                func_08013E4C(actor->unk_04, actor->unk_08, actor->unk_0C - t);
+            } else {
+                func_08013DB8(actor->unk_04, actor->unk_08, actor->unk_0C - t);
+            }
+            work->unk_154++;
+        } else if (work->unk_154 > 0) {
+            if (gUnk_02039B84->unk_0EE == 1 && gUnk_02039B84->unk_120 <= 0) {
+                func_08006120(2, 20);
+                func_080063A8();
+            }
+            func_0801B994(actor);
+            if (gUnk_02039BB0.unk_1B8 == 6) {
+                if (GetRandom() % 10 == 0) {
+                    func_0801BBF0(actor);
+                }
+            } else {
+                if (GetRandom() % 1000 == 0) {
+                    func_0801BBF0(actor);
+                }
+            }
+            gUnk_02039B84->unk_068 |= 0x10000;
+            func_0801C830(actor);
+            return 0;
+        }
+        break;
+    case 5:
+        if (work->unk_154 == 0) {
+            func_08019068(work->unk_15C->unk_04, &work->unk_010, 1, 0, work->unk_000);
+        }
+        if (AnimIsFinished(&work->unk_010) && work->unk_154 > 40) {
+            func_0801AF08(actor);
+            work->unk_14C = work->unk_150;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    }
+
+    if (actor->unk_E8 != 2) {
+        actor->unk_0C += work->unk_168;
+        work->unk_168 += gUnk_02039B84->unk_12C;
+        if (actor->unk_0C > 0) {
+            actor->unk_0C = 0;
+            work->unk_168 = 0;
+        }
+        if (actor->unk_6C != 0 && !(actor->unk_34 & 0x10) && !(actor->unk_90->unk_30 & 2)) {
+            actor->unk_04 += actor->unk_78 >> 1;
+            actor->unk_08 += actor->unk_7C >> 1;
+        }
+    }
+
+    if (actor->unk_108 > 0) {
+        actor->unk_04 += actor->unk_108;
+        actor->unk_108 -= 17;
+        if (actor->unk_108 < 0) {
+            actor->unk_108 = 0;
+        }
+    } else if (actor->unk_108 < 0) {
+        actor->unk_04 += actor->unk_108;
+        actor->unk_108 += 17;
+        if (actor->unk_108 > 0) {
+            actor->unk_108 = 0;
+        }
+    }
+
+    if (actor->unk_10C > 0) {
+        actor->unk_08 += actor->unk_10C;
+        actor->unk_10C -= 17;
+        if (actor->unk_10C < 0) {
+            actor->unk_10C = 0;
+        }
+    } else if (actor->unk_10C < 0) {
+        actor->unk_08 += actor->unk_10C;
+        actor->unk_10C += 17;
+        if (actor->unk_10C > 0) {
+            actor->unk_10C = 0;
+        }
+    }
+
+    switch (func_0801A8A4(&actor->unk_04, &actor->unk_08, -20, 0)) {
+    case 1:
+    case 2:
+        work->unk_158 |= 2;
+        actor->unk_108 = -(actor->unk_108 >> 1);
+        break;
+    case 3:
+    case 4:
+        work->unk_158 |= 2;
+        actor->unk_10C = -(actor->unk_10C >> 1);
+        break;
+    default:
+        work->unk_158 &= 0xFFFD;
+        break;
+    }
+
+    if (actor->unk_34 & 0x10) {
+        work->unk_00C = AnimUpdate(&work->unk_010);
+    } else if (actor->unk_E8 != 2) {
+        if (gUnk_02039B84->unk_068 & 1) {
+            if (!func_08005AC4(&work->unk_010)) {
+                work->unk_00C = AnimUpdate(&work->unk_010);
+            }
+        } else {
+            if (func_08005AC4(&work->unk_010)) {
+                gUnk_02039B84->unk_068 |= 1;
+            }
+            work->unk_00C = AnimUpdate(&work->unk_010);
+        }
+    }
+
+    if (actor->unk_E8 == 5) {
+        actor->unk_04 = actor->unk_FC;
+        actor->unk_08 = actor->unk_100;
+    }
+
+    TaskPoolUpdate(&work->unk_028);
+    func_08012324(&actor->unk_40, actor->unk_04, actor->unk_08, actor->unk_0C);
+    return 1;
+}
+#else
 INCLUDE_ASM("mode_vsbattle/_0800CDF0.s");
+#endif
 
 void func_0800DF30(EmyWork* work) {
     if (work->unk_15A != 0) {
