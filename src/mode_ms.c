@@ -360,7 +360,54 @@ void func_081041B4(void) {
     }
 }
 INCLUDE_ASM("mode_ms/func_08104404.s");
-INCLUDE_ASM("mode_ms/mode_ms_shop_0.s");
+void mode_ms_shop_0(void) {
+    s16 i;
+    s32 size;
+    u16** p;
+
+    p = &gUnk_02035C00;
+    size = 0x500;
+    *p = EwramAlloc(size);
+    func_08001F98();
+    func_08006120(0, 16);
+    func_08004DB0();
+    SetupBg(0, 0, 28, 0);
+    SetupBg(1, 0, 29, 0);
+    SetupBg(2, 0, 30, 0);
+    SetupBg(3, 0, 31, 0);
+    SetBgPriority(0, 3);
+    SetBgPriority(1, 2);
+    SetBgPriority(2, 1);
+    SetBgPriority(3, 0);
+    gUnk_02035B02 = 0;
+    gUnk_02035B04 = 0;
+    gUnk_02035B10 = 0;
+    gUnk_02035B00 = func_081027B4(gUnk_02039BB0.unk_00E);
+    LoadBgPalette(0, gUnk_09A3D87C, 0x1A0);
+    LoadBgTiles(0, gUnk_09A1251C, 0x6860);
+    func_08101588(func_08101518(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+    LoadBgMap(0, gUnk_09A382DC, size);
+    func_08103CD8(gUnk_02035B04);
+    if (gUnk_02035B00 != 0) {
+        func_08103D54(gUnk_02035B10);
+    }
+    func_08102984(gUnk_02035B04);
+    LoadBgMap(3, gUnk_09A3AD5C, size);
+    gUnk_02035BB0 = LoadObjPalette(gUnk_09A3DA7C, 0x20);
+    gUnk_02035BAC = LoadObjTiles(gUnk_099A3CE4, 0x1C0);
+    AnimInit(&gUnk_02035BB8, gUnk_09EF99F8, gUnk_09EF99D8);
+    AnimStart(&gUnk_02035BB8, 0, 1);
+
+    for (i = 0; i < 4; i++) {
+        gUnk_02035BE0[i] = LoadObjPalette(gUnk_099932D4[i].unk_00, gUnk_099932D4[i].unk_04);
+        gUnk_02035BD0[i] = LoadObjTiles(gUnk_099932D4[i].unk_08, gUnk_099932D4[i].unk_0C);
+        gUnk_02035BF0[i] = gUnk_099932D4[i].unk_10;
+    }
+    EnableBg(0);
+    DisableBg(1);
+    EnableBg(2);
+    DisableBg(3);
+}
 INCLUDE_ASM("mode_ms/mode_ms_shop_1.s");
 void mode_ms_shop_2(void) {
     s32 i;
