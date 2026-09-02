@@ -703,8 +703,14 @@ INCLUDE_ASM("card/func_0807DAD0.s");
 INCLUDE_ASM("card/func_0807DBB8.s");
 INCLUDE_ASM("card/func_0807DD30.s");
 INCLUDE_ASM("card/func_0807DD70.s");
-INCLUDE_ASM("card/func_0807DDA8.s");
-INCLUDE_ASM("card/func_0807DDCC.s");
+void func_0807DDA8(u8* p) {
+    gUnk_02039DD4->unk_104 = 2;
+    AnimStart(&p[0x40], 2, 5);
+}
+void func_0807DDCC(u8* p) {
+    *(void**)&p[0x58] = gUnk_09EEAF4C[3];
+    *(void**)&p[0x5C] = gUnk_09EEAF4C[gUnk_02039DD4->unk_100 + 2];
+}
 void func_0807DDF4(u8* p) {
     *(void**)&p[0x58] = AnimUpdate(&p[0x28]);
     *(void**)&p[0x5C] = AnimUpdate(&p[0x40]);
@@ -968,8 +974,14 @@ INCLUDE_ASM("card/func_08083020.s");
 INCLUDE_ASM("card/func_08083114.s");
 INCLUDE_ASM("card/func_08083234.s");
 INCLUDE_ASM("card/func_08083278.s");
-INCLUDE_ASM("card/func_080832B0.s");
-INCLUDE_ASM("card/func_080832D0.s");
+void func_080832B0(u8* p) {
+    gUnk_02039DD4->unk_106 = 2;
+    AnimStart(&p[0x40], 2, 5);
+}
+void func_080832D0(u8* p) {
+    *(void**)&p[0x58] = gUnk_09EEAF4C[3];
+    *(void**)&p[0x5C] = gUnk_09EEAF4C[gUnk_02039DD4->unk_102 + 2];
+}
 void func_080832F8(u8* p) {
     *(void**)&p[0x58] = AnimUpdate(&p[0x28]);
     *(void**)&p[0x5C] = AnimUpdate(&p[0x40]);
@@ -2113,7 +2125,10 @@ INCLUDE_ASM("card/func_0808FA8C.s");
 INCLUDE_ASM("card/func_0808FE04.s");
 INCLUDE_ASM("card/func_0808FF58.s");
 INCLUDE_ASM("card/func_08090024.s");
-INCLUDE_ASM("card/func_080900E8.s");
+void func_080900E8(u8* p) {
+    func_08090170((UnkStruct_0808E890*)p);
+    func_08000D90(&p[0x2C], *(void**)&p[0x1C]);
+}
 INCLUDE_ASM("card/func_08090100.s");
 
 INCLUDE_ASM("card/func_08090170.s");
@@ -2821,7 +2836,15 @@ void func_080965CC(PrizeCardWork* w) {
 
 INCLUDE_ASM("card/func_08096638.s");
 INCLUDE_ASM("card/func_080966B4.s");
-INCLUDE_ASM("card/func_080966E4.s");
+void func_080966E4(void* a, s32 b, s32 c, s32 d, s32 e) {
+    s32 args[9];
+
+    args[0] = b;
+    args[1] = c;
+    args[2] = d;
+    args[8] = e;
+    func_08096700(a, args);
+}
 
 void func_08096700(void* a, void* b) {
     TaskCreate(a, gUnk_09EE75D8, b);
@@ -2902,11 +2925,18 @@ INCLUDE_ASM("card/func_08096EC4.s");
 void func_08096F08(void* a, void* b) {
     TaskCreate(a, gUnk_09EE7620, b);
 }
-INCLUDE_ASM("card/func_08096F1C.s");
+void func_08096F1C(u8* work) {
+    *(void**)&work[0x00] = func_080668F0();
+    *(void**)&work[0x04] = func_08066904();
+    work[0x28] = func_0806692C(gUnk_081283C0, &work[0x08]);
+}
 s32 func_08096F44(void) {
     return 1;
 }
-INCLUDE_ASM("card/func_08096F48.s");
+void func_08096F48(u8* work) {
+    func_08066DC0(0, 152, &work[0x08], *(s32*)&work[0x00], *(s32*)&work[0x04], 0,
+                  work[0x28]);
+}
 void func_08096F70(s32* p) {
     func_08066918(p[0], p[1]);
 }
@@ -3195,7 +3225,15 @@ void func_0809CA1C(u8* work) {
 INCLUDE_ASM("card/func_0809CAC8.s");
 INCLUDE_ASM("card/func_0809CB0C.s");
 INCLUDE_ASM("card/func_0809CB78.s");
-INCLUDE_ASM("card/func_0809CBD0.s");
+s32 func_0809CBD0(u8* work) {
+    *(void**)&work[0x44] = AnimUpdate(&work[0x2C]);
+
+    if (*(u16*)&work[0x36] == 0 && *(u16*)&work[0x3A] == 4) {
+        work[0x74] = 1;
+    }
+
+    return 1;
+}
 INCLUDE_ASM("card/func_0809CBF8.s");
 INCLUDE_ASM("card/func_0809CC80.s");
 s32 func_0809CDAC(void) {
@@ -3509,7 +3547,11 @@ u8 func_080A235C(u16 a) {
 }
 INCLUDE_ASM("card/func_080A2370.s");
 INCLUDE_ASM("card/func_080A23A0.s");
-INCLUDE_ASM("card/func_080A25B8.s");
+s32 func_080A25B8(u8* work, void* a) {
+    func_08000F8C(a, func_080A25E0);
+    work[0x2B1]++;
+    return 1;
+}
 INCLUDE_ASM("card/func_080A25E0.s");
 INCLUDE_ASM("card/func_080A2678.s");
 INCLUDE_ASM("card/func_080A27EC.s");
@@ -3522,7 +3564,13 @@ INCLUDE_ASM("card/func_080A2DE4.s");
 INCLUDE_ASM("card/func_080A2E14.s");
 INCLUDE_ASM("card/func_080A2EF8.s");
 INCLUDE_ASM("card/func_080A2F54.s");
-INCLUDE_ASM("card/func_080A30C0.s");
+s32 func_080A30C0(void) {
+    if ((GetKeysPressed() & 1) || (GetKeysPressed() & 2)) {
+        return 0;
+    }
+
+    return 1;
+}
 INCLUDE_ASM("card/func_080A30E4.s");
 
 void func_080A324C(UnkStruct_080A324C* p) {
@@ -3708,7 +3756,14 @@ void func_080A581C(u8* work) {
     TaskCreate(&work[0x10], gUnk_09EE8ED8, work);
 }
 
-INCLUDE_ASM("card/func_080A5830.s");
+void func_080A5830(void* a, s32 b, s32 c, s32 d) {
+    s32 args[3];
+
+    args[0] = b;
+    args[1] = c;
+    args[2] = d;
+    TaskCreate(a, gUnk_09EE8ED8, args);
+}
 INCLUDE_ASM("card/func_080A584C.s");
 INCLUDE_ASM("card/func_080A5C20.s");
 
