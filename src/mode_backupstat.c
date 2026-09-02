@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_backupstat.h"
+#include "gba/keys.h"
 
 void mode_backupstat_0(void) {
     s32 i;
@@ -85,9 +86,9 @@ void mode_backupstat_1(void) {
     u8 prev;
 
     prev = gUnk_02035FE8;
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         gUnk_02035FE8--;
-    } else if (GetKeysRepeat() & 0x80) {
+    } else if (GetKeysRepeat() & DPAD_DOWN) {
         gUnk_02035FE8++;
     }
 
@@ -101,19 +102,19 @@ void mode_backupstat_1(void) {
         func_0805FCB0(0, gUnk_02035FE8 * 9, 2, gUnk_09993874);
     }
 
-    if ((GetKeysPressed() & 0x20) != 0) {
+    if ((GetKeysPressed() & DPAD_LEFT) != 0) {
         if (--gUnk_02035FF0[gUnk_02035FE8] < 0) {
             gUnk_02035FF0[gUnk_02035FE8] = 2;
         }
         func_081097F4();
-    } else if (GetKeysPressed() & 0x10) {
+    } else if (GetKeysPressed() & DPAD_RIGHT) {
         if (++gUnk_02035FF0[gUnk_02035FE8] > 2) {
             gUnk_02035FF0[gUnk_02035FE8] = 0;
         }
         func_081097F4();
     }
 
-    if (GetKeysPressed() & 0xF) {
+    if (GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON)) {
         func_080010CC(&gUnk_09ECEB64, 0);
     } else {
         func_080605A4(0);

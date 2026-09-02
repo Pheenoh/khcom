@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_chkbtl.h"
+#include "gba/keys.h"
 
 void mode_chkbtl_0(void) {
     func_08006120(0, 8);
@@ -36,15 +37,15 @@ void mode_chkbtl_0(void) {
 void mode_chkbtl_1(void) {
     s32 i;
 
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         gUnk_09ECEB50->unk_00--;
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         gUnk_09ECEB50->unk_00++;
     }
 
-    if (GetKeysRepeat() & 0xC0) {
+    if (GetKeysRepeat() & (DPAD_UP | DPAD_DOWN)) {
         for (i = 0; i < 4; i++) {
             func_0805FCB0(12, i * 12 + 32, 2, gUnk_08128384);
         }
@@ -52,11 +53,11 @@ void mode_chkbtl_1(void) {
 
     switch (gUnk_09ECEB50->unk_00) {
         case 0:
-            if (GetKeysRepeat() & 0x20) {
+            if (GetKeysRepeat() & DPAD_LEFT) {
                 gUnk_09ECEB50->unk_02--;
             }
 
-            if (GetKeysRepeat() & 0x10) {
+            if (GetKeysRepeat() & DPAD_RIGHT) {
                 gUnk_09ECEB50->unk_02++;
             }
 
@@ -67,11 +68,11 @@ void mode_chkbtl_1(void) {
             }
             break;
         case 1:
-            if (GetKeysRepeat() & 0x20) {
+            if (GetKeysRepeat() & DPAD_LEFT) {
                 gUnk_09ECEB50->unk_01--;
             }
 
-            if (GetKeysRepeat() & 0x10) {
+            if (GetKeysRepeat() & DPAD_RIGHT) {
                 gUnk_09ECEB50->unk_01++;
             }
 
@@ -82,11 +83,11 @@ void mode_chkbtl_1(void) {
             }
             break;
         case 2:
-            if (GetKeysRepeat() & 0x20) {
+            if (GetKeysRepeat() & DPAD_LEFT) {
                 gUnk_09ECEB50->unk_04--;
             }
 
-            if (GetKeysRepeat() & 0x10) {
+            if (GetKeysRepeat() & DPAD_RIGHT) {
                 gUnk_09ECEB50->unk_04++;
             }
 
@@ -105,11 +106,11 @@ void mode_chkbtl_1(void) {
             }
             break;
         case 3:
-            if (GetKeysRepeat() & 0x20) {
+            if (GetKeysRepeat() & DPAD_LEFT) {
                 gUnk_09ECEB50->unk_06--;
             }
 
-            if (GetKeysRepeat() & 0x10) {
+            if (GetKeysRepeat() & DPAD_RIGHT) {
                 gUnk_09ECEB50->unk_06++;
             }
 
@@ -129,7 +130,7 @@ void mode_chkbtl_1(void) {
 
     func_0805FCB0(12, gUnk_09ECEB50->unk_00 * 12 + 32, 2, gUnk_08128388);
 
-    if (GetKeysRepeat() & 0x30) {
+    if (GetKeysRepeat() & (DPAD_RIGHT | DPAD_LEFT)) {
         switch (gUnk_09ECEB50->unk_00) {
             case 0:
             case 1:
@@ -162,7 +163,7 @@ void mode_chkbtl_1(void) {
         gUnk_02039BB0.unk_F8 = gUnk_09ECEB50->unk_06;
         gUnk_02039BB0.unk_0C = gUnk_08126630[gUnk_09ECEB50->unk_02].unk_00;
 
-        if (GetKeysHeld() & 0x200) {
+        if (GetKeysHeld() & L_BUTTON) {
             gUnk_02039BB0.unk_08 |= 4;
         } else {
             gUnk_02039BB0.unk_08 &= ~4;

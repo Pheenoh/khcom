@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "status.h"
+#include "gba/keys.h"
 
 void task_status_0(StatusWork* work) {
     gUnk_02034EFC = work;
@@ -29,7 +30,7 @@ void task_status_0(StatusWork* work) {
 void func_080D764C(StatusWork* work) {
     u16 keys;
 
-    keys = GetKeysRepeat() & 0x40;
+    keys = GetKeysRepeat() & DPAD_UP;
     if (keys != 0) {
         if (work->unk_1A > 0) {
             work->unk_1A--;
@@ -45,7 +46,7 @@ void func_080D764C(StatusWork* work) {
                 gUnk_02034F00 = 0;
             }
         }
-    } else if (GetKeysRepeat() & 0x80) {
+    } else if (GetKeysRepeat() & DPAD_DOWN) {
         if (work->unk_1A < func_080D82D4() - 1) {
             if (work->unk_1A >= 0) {
                 work->unk_1A++;
@@ -61,7 +62,7 @@ void func_080D764C(StatusWork* work) {
             func_080D8374();
             m4aSongNumStart(121);
         }
-    } else if ((GetKeysRepeat() & 0x20) && !(gUnk_02039BB0.unk_008 & 8)) {
+    } else if ((GetKeysRepeat() & DPAD_LEFT) && !(gUnk_02039BB0.unk_008 & 8)) {
         if (work->unk_14 != 0) {
             work->unk_14--;
             if (work->unk_1A < 0 || func_080D82D4() == 0) {
@@ -74,7 +75,7 @@ void func_080D764C(StatusWork* work) {
             func_080D8474(0);
             m4aSongNumStart(101);
         }
-    } else if ((GetKeysRepeat() & 0x10) && !(gUnk_02039BB0.unk_008 & 8)) {
+    } else if ((GetKeysRepeat() & DPAD_RIGHT) && !(gUnk_02039BB0.unk_008 & 8)) {
         if (work->unk_14 <= 2) {
             work->unk_14++;
             if (work->unk_1A < 0 || func_080D82D4() == 0) {

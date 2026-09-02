@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_chkeff.h"
+#include "gba/keys.h"
 
 #ifndef VERSION_EU
 void mode_chkeff_0(void) {
@@ -56,11 +57,11 @@ void mode_chkeff_1(void) {
 
         prev = gUnk_020348B8->unk_14;
 
-        if (GetKeysRepeat() & 0x20) {
+        if (GetKeysRepeat() & DPAD_LEFT) {
             gUnk_020348B8->unk_14--;
         }
 
-        if (GetKeysRepeat() & 0x10) {
+        if (GetKeysRepeat() & DPAD_RIGHT) {
             gUnk_020348B8->unk_14++;
         }
 
@@ -79,9 +80,9 @@ void mode_chkeff_1(void) {
             func_08006778(obj, 120, 80);
         }
 
-        if (GetKeysRepeat() & 0x40) {
+        if (GetKeysRepeat() & DPAD_UP) {
             gUnk_020348B8->unk_20 += 8;
-        } else if (GetKeysRepeat() & 0x80) {
+        } else if (GetKeysRepeat() & DPAD_DOWN) {
             gUnk_020348B8->unk_20 -= 8;
         }
 
@@ -90,12 +91,12 @@ void mode_chkeff_1(void) {
             gUnk_020348B8->unk_1C = 0;
         }
 
-        if (GetKeysRepeat() & 0x200) {
+        if (GetKeysRepeat() & L_BUTTON) {
             gUnk_020348B8->unk_24++;
             gUnk_020348B8->unk_24 %= 17;
         }
 
-        if (GetKeysRepeat() & 0x100) {
+        if (GetKeysRepeat() & R_BUTTON) {
             gUnk_020348B8->unk_26++;
             gUnk_020348B8->unk_26 %= 17;
         }

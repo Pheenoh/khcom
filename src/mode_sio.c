@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_sio.h"
+#include "gba/keys.h"
 
 void mode_sio_btl_connect_0(s32 arg) {
     gUnk_02034B3C = EwramAlloc(sizeof(SioBtlConnectWork));
@@ -387,7 +388,7 @@ void func_080AFADC(void) {
         gUnk_02039B58[1] |= 0xC2F0;
     }
 
-    if (GetKeysPressed() & 0x200) {
+    if (GetKeysPressed() & L_BUTTON) {
         if (gUnk_0203AA88 == 1) {
             m4aSongNumStart(105);
         } else {
@@ -398,7 +399,7 @@ void func_080AFADC(void) {
             }
             gUnk_02039B58[2] |= v & 15;
         }
-    } else if (GetKeysPressed() & 0x100) {
+    } else if (GetKeysPressed() & R_BUTTON) {
         if (gUnk_0203AA88 == 1) {
             m4aSongNumStart(105);
         } else {
@@ -449,13 +450,13 @@ void func_080AFADC(void) {
 void func_080AFCD4(void) {
     s8 v = 0;
     gUnk_02039B58[1] = 6;
-    if (GetKeysPressed() & 0x40) {
+    if (GetKeysPressed() & DPAD_UP) {
         m4aSongNumStart(101);
         gUnk_02034B40->unk_000--;
         if (gUnk_02034B40->unk_000 < 0) {
             gUnk_02034B40->unk_000 = 2;
         }
-    } else if (GetKeysPressed() & 0x80) {
+    } else if (GetKeysPressed() & DPAD_DOWN) {
         m4aSongNumStart(101);
         gUnk_02034B40->unk_000++;
         if (gUnk_02034B40->unk_000 > 2) {
@@ -463,7 +464,7 @@ void func_080AFCD4(void) {
         }
     }
 
-    if (GetKeysPressed() & 0x200) {
+    if (GetKeysPressed() & L_BUTTON) {
         if (gUnk_0203AA88 == 1) {
             m4aSongNumStart(105);
         } else {
@@ -474,7 +475,7 @@ void func_080AFCD4(void) {
             }
             gUnk_02039B58[2] |= v & 15;
         }
-    } else if (GetKeysPressed() & 0x100) {
+    } else if (GetKeysPressed() & R_BUTTON) {
         if (gUnk_0203AA88 == 1) {
             m4aSongNumStart(105);
         } else {
@@ -529,14 +530,14 @@ INCLUDE_ASM("mode_sio/func_080AFCD4.s");
 #endif
 
 void func_080AFEFC(void) {
-    if (GetKeysPressed() & 0x20) {
+    if (GetKeysPressed() & DPAD_LEFT) {
         if (gUnk_02034B40->unk_216 > 1) {
             m4aSongNumStart(101);
             gUnk_02034B40->unk_216--;
         } else {
             m4aSongNumStart(105);
         }
-    } else if (GetKeysPressed() & 0x10) {
+    } else if (GetKeysPressed() & DPAD_RIGHT) {
         if (gUnk_02034B40->unk_216 <= 10) {
             m4aSongNumStart(101);
             gUnk_02034B40->unk_216++;
@@ -1125,7 +1126,7 @@ void mode_sio_btl_cardget_1(void) {
         func_080B1848();
         break;
     case 5:
-        if (GetKeysPressed() & 0x0B) {
+        if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
             gUnk_02039B58[1] = 0x45FC;
         }
 
@@ -2227,7 +2228,7 @@ void mode_wLogo_1(void) {
     switch (gUnk_02034B58) {
     case 0:
         func_080664D8(35, 75, gUnk_02034B60, gUnk_02034C00, 20, gUnk_02034B5B);
-        if (GetKeysPressed() & 0x20) {
+        if (GetKeysPressed() & DPAD_LEFT) {
             gUnk_02034B59--;
             if (gUnk_02034B59 < 0) {
                 gUnk_02034B59 = 12;
@@ -2235,7 +2236,7 @@ void mode_wLogo_1(void) {
             gUnk_02034B5B = func_08065B6C(gUnk_09EF15C8[gUnk_02034B59], gUnk_02034B60);
         }
 
-        if (GetKeysPressed() & 0x10) {
+        if (GetKeysPressed() & DPAD_RIGHT) {
             gUnk_02034B59++;
             if (gUnk_02034B59 > 12) {
                 gUnk_02034B59 = 0;

@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "title.h"
+#include "gba/keys.h"
 
 void task_title_logo_0(TitleLogoWork* work) {
     func_080D62A8(work);
@@ -226,14 +227,14 @@ void func_080D6944(s16* p) {
     u16 keys;
 
     max = (gUnk_02039BB0.unk_008 & 0x20) ? 2 : 1;
-    keys = GetKeysPressed() & 0x40;
+    keys = GetKeysPressed() & DPAD_UP;
     if (keys != 0) {
         m4aSongNumStart(0x65);
         (*p)--;
         if (*p < 0) {
             *p = max;
         }
-    } else if (GetKeysPressed() & 0x80) {
+    } else if (GetKeysPressed() & DPAD_DOWN) {
         m4aSongNumStart(0x65);
         *p = *p + 1;
         if (*p > max) {
@@ -245,14 +246,14 @@ void func_080D6944(s16* p) {
 void func_080D69AC(s16* p, s16 count) {
     s16 i;
 
-    if (GetKeysPressed() & 0x40) {
+    if (GetKeysPressed() & DPAD_UP) {
         m4aSongNumStart(0x65);
         i = func_080D6908(*p);
         i--;
         if (i < 0) {
             i = count;
         }
-    } else if (GetKeysPressed() & 0x80) {
+    } else if (GetKeysPressed() & DPAD_DOWN) {
         m4aSongNumStart(0x65);
         i = func_080D6908(*p);
         i++;
@@ -400,7 +401,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
 
     v = GetPaletteEffect();
     memcpy(tbl, gUnk_096FDCE8, sizeof(tbl));
-    switch (GetKeysPressed() & 0x300) {
+    switch (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
     case 0x100:
         for (i = 0; i < 3; i++) {
             if (v < tbl[i]) {
@@ -421,7 +422,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
         break;
     }
 
-    if (GetKeysPressed() & 0x300) {
+    if (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
         SetPaletteEffect(v);
         func_080D5998();
     }

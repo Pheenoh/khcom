@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_debug.h"
+#include "gba/keys.h"
 
 #ifndef VERSION_EU
 void mode_debug_0(void) {
@@ -49,7 +50,7 @@ void mode_debug_1(void) {
 
     v = GetPaletteEffect();
 
-    switch (GetKeysPressed() & 0x300) {
+    switch (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
         case 0x100:
             if (v <= 23) {
                 SetPaletteEffect(v + 1);
@@ -66,12 +67,12 @@ void mode_debug_1(void) {
             break;
     }
 
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         gUnk_02034898->unk_00--;
         m4aSongNumStart(101);
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         gUnk_02034898->unk_00++;
         m4aSongNumStart(101);
     }
@@ -201,7 +202,7 @@ void mode_debug_1(void) {
     old = gUnk_02034898->unk_01;
     gUnk_02034898->unk_01 = gUnk_02034898->unk_00 / 9;
 
-    if (GetKeysRepeat() & 0x20) {
+    if (GetKeysRepeat() & DPAD_LEFT) {
         gUnk_02034898->unk_01--;
 
         if (gUnk_02034898->unk_01 < 0) {
@@ -209,7 +210,7 @@ void mode_debug_1(void) {
         }
 
         gUnk_02034898->unk_00 = gUnk_02034898->unk_01 * 9;
-    } else if (GetKeysRepeat() & 0x10) {
+    } else if (GetKeysRepeat() & DPAD_RIGHT) {
         gUnk_02034898->unk_01++;
 
         if (gUnk_02034898->unk_01 > 2) {

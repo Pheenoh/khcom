@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_sio2.h"
+#include "gba/keys.h"
 
 void mode_sio_dbg_flg_0(s32 arg) {
     s32 i;
@@ -35,11 +36,11 @@ void mode_sio_dbg_flg_1(void) {
 
     prev = gUnk_02034CF4;
 
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         gUnk_02034CF4--;
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         gUnk_02034CF4++;
     }
 
@@ -56,13 +57,13 @@ void mode_sio_dbg_flg_1(void) {
 
     switch (gUnk_02034CF4) {
     case 0:
-        if (GetKeysHeld() & 0x20) {
+        if (GetKeysHeld() & DPAD_LEFT) {
             if (gUnk_0203C3C8 > 1) {
                 gUnk_0203C3C8--;
             }
         }
 
-        if (GetKeysHeld() & 0x10) {
+        if (GetKeysHeld() & DPAD_RIGHT) {
             if (gUnk_0203C3C8 <= 98) {
                 gUnk_0203C3C8++;
             }
@@ -70,13 +71,13 @@ void mode_sio_dbg_flg_1(void) {
         func_0805FC04(0x64, 0x24, 2, gUnk_0203C3C8);
         break;
     case 1:
-        if (GetKeysHeld() & 0x20) {
+        if (GetKeysHeld() & DPAD_LEFT) {
             if (gUnk_0203C3CC > 5) {
                 gUnk_0203C3CC -= 5;
             }
         }
 
-        if (GetKeysHeld() & 0x10) {
+        if (GetKeysHeld() & DPAD_RIGHT) {
             if (gUnk_0203C3CC <= 994) {
                 gUnk_0203C3CC += 5;
             }
@@ -84,13 +85,13 @@ void mode_sio_dbg_flg_1(void) {
         func_0805FC04(0x64, 0x2D, 2, gUnk_0203C3CC);
         break;
     case 2:
-        if (GetKeysHeld() & 0x20) {
+        if (GetKeysHeld() & DPAD_LEFT) {
             if (gUnk_0203C3D0 > 5) {
                 gUnk_0203C3D0 -= 5;
             }
         }
 
-        if (GetKeysHeld() & 0x10) {
+        if (GetKeysHeld() & DPAD_RIGHT) {
             if (gUnk_0203C3D0 <= 994) {
                 gUnk_0203C3D0 += 5;
             }
@@ -103,7 +104,7 @@ void mode_sio_dbg_flg_1(void) {
         break;
     }
 
-    if (GetKeysPressed() & 0x0B) {
+    if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
         gUnk_0203A9E4 = 1;
         func_08085CB0();
         func_080010CC(&gUnk_09EF1308, 0);

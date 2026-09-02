@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "chara.h"
+#include "gba/keys.h"
 
 void task_chara_mask_fade_0(MaskFadeWork* work, MaskFadeArgs* args) {
     s32 i;
@@ -609,12 +610,12 @@ INCLUDE_ASM("chara/func_080C5DC0.s");
 s32 func_080C5E58(void) {
     if (gUnk_02039828 == 0) {
         gUnk_02039B68[0] = 0xACD;
-        gUnk_02039B68[1] = GetKeysHeld() & 0x3FF;
+        gUnk_02039B68[1] = GetKeysHeld() & KEYS_MASK;
         gUnk_02039B68[2] = gUnk_0203C3B4;
         gUnk_02039B68[3] = gUnk_0203C388;
     } else {
         gUnk_02039B68[0] = 0xACD;
-        gUnk_02039B68[1] = GetKeysHeld() & 0x3FF;
+        gUnk_02039B68[1] = GetKeysHeld() & KEYS_MASK;
         gUnk_02039B68[2] = 0x1234;
         gUnk_02039B68[3] = 0x3456;
     }

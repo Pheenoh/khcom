@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "hum.h"
+#include "gba/keys.h"
 
 void task_hum_cloud_0(CloudWork* work, void* obj) {
     func_0800E168(&work->base, gUnk_0813EF28);
@@ -2402,7 +2403,7 @@ u8 func_0805AA9C(void) {
     }
 
     if (gUnk_02034934->unk_CC0 <= 0) {
-        if (GetKeysRepeat() & 0x40) {
+        if (GetKeysRepeat() & DPAD_UP) {
             if (gUnk_02034934->unk_C72 > 0) {
                 gUnk_02034934->unk_CC0 = 1;
                 gUnk_02034934->unk_C72--;
@@ -2413,7 +2414,7 @@ u8 func_0805AA9C(void) {
                     func_0805A7D0();
                 }
             }
-        } else if (GetKeysRepeat() & 0x80) {
+        } else if (GetKeysRepeat() & DPAD_DOWN) {
             if (gUnk_02034934->unk_C72 < gUnk_02034934->unk_C76 - 1) {
                 gUnk_02034934->unk_CC0 = 1;
                 gUnk_02034934->unk_C72++;

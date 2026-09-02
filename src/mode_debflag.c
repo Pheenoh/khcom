@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_debflag.h"
+#include "gba/keys.h"
 
 void mode_debflag_0(s32 arg) {
     s32 i;
@@ -39,11 +40,11 @@ void mode_debflag_1(void) {
 
     prev = gUnk_020348C0;
 
-    if (GetKeysRepeat() & 0x40) {
+    if (GetKeysRepeat() & DPAD_UP) {
         gUnk_020348C0--;
     }
 
-    if (GetKeysRepeat() & 0x80) {
+    if (GetKeysRepeat() & DPAD_DOWN) {
         gUnk_020348C0++;
     }
 
@@ -58,7 +59,7 @@ void mode_debflag_1(void) {
         func_0805FCB0(0, gUnk_020348C0 * 9, 2, gUnk_08130E34);
     }
 
-    if (GetKeysPressed() & 0x30) {
+    if (GetKeysPressed() & (DPAD_RIGHT | DPAD_LEFT)) {
         entry = &gUnk_020348C4[gUnk_020348C0];
         gUnk_03006C10 ^= entry->mask;
 
@@ -69,7 +70,7 @@ void mode_debflag_1(void) {
         }
     }
 
-    if (GetKeysPressed() & 0x0F) {
+    if (GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON)) {
         if (gUnk_02039B94 != 0) {
             func_080E04EC();
         } else {

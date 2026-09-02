@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "unk_08104a84.h"
+#include "gba/keys.h"
 
 s16 func_08104A84(s16 a) {
     s16 v;
@@ -450,8 +451,8 @@ INCLUDE_ASM("unk_08104a84/func_0810563C.s");
 s32 func_0810592C(void) {
     s32 keys;
 
-    keys = GetKeysPressed() & 0xF;
-    return keys | (GetKeysRepeat() & 0x3F0);
+    keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
+    return keys | (GetKeysRepeat() & (DPAD_ANY | L_BUTTON | R_BUTTON));
 }
 
 void func_0810594C(void) {

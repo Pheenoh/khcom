@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "allmap.h"
+#include "gba/keys.h"
 
 void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
     void* pal;
@@ -716,7 +717,7 @@ void func_080D53A8(void) {
 }
 
 u16 func_080D53C4(void) {
-    if ((GetKeysHeld() & 0x100) != 0) {
+    if ((GetKeysHeld() & R_BUTTON) != 0) {
         return gUnk_0203C4B4->unk_BC >> 7;
     }
     return gUnk_0203C4B4->unk_BC >> 8;

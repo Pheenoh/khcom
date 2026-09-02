@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "fld.h"
+#include "gba/keys.h"
 
 INCLUDE_ASM("fld/task_fld_sora_0.s");
 INCLUDE_ASM("fld/func_08032268.s");
@@ -79,37 +80,37 @@ void task_fld_sora_3(FldWork* work) {
 }
 
 void func_08034368(FldActor* act) {
-    if ((GetKeysHeld() & 0x20) && (GetKeysHeld() & 0x80)) {
+    if ((GetKeysHeld() & DPAD_LEFT) && (GetKeysHeld() & DPAD_DOWN)) {
         act->unk_14 = 0xAD;
-    } else if ((GetKeysHeld() & 0x40) && (GetKeysHeld() & 0x20)) {
+    } else if ((GetKeysHeld() & DPAD_UP) && (GetKeysHeld() & DPAD_LEFT)) {
         act->unk_14 = 0xD3;
-    } else if ((GetKeysHeld() & 0x40) && (GetKeysHeld() & 0x10)) {
+    } else if ((GetKeysHeld() & DPAD_UP) && (GetKeysHeld() & DPAD_RIGHT)) {
         act->unk_14 = 0x2D;
-    } else if ((GetKeysHeld() & 0x10) && (GetKeysHeld() & 0x80)) {
+    } else if ((GetKeysHeld() & DPAD_RIGHT) && (GetKeysHeld() & DPAD_DOWN)) {
         act->unk_14 = 0x53;
-    } else if ((GetKeysHeld() & 0x80) && GetKeyReleaseTime(0x20) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_DOWN) && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
         act->unk_14 = 0xAD;
-    } else if ((GetKeysHeld() & 0x80) && GetKeyReleaseTime(0x10) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_DOWN) && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
         act->unk_14 = 0x53;
-    } else if ((GetKeysHeld() & 0x40) && GetKeyReleaseTime(0x20) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_UP) && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
         act->unk_14 = 0xD3;
-    } else if ((GetKeysHeld() & 0x40) && GetKeyReleaseTime(0x10) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_UP) && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
         act->unk_14 = 0x2D;
-    } else if ((GetKeysHeld() & 0x20) && GetKeyReleaseTime(0x40) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_LEFT) && GetKeyReleaseTime(DPAD_UP) <= 4) {
         act->unk_14 = 0xD3;
-    } else if ((GetKeysHeld() & 0x20) && GetKeyReleaseTime(0x80) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_LEFT) && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
         act->unk_14 = 0xAD;
-    } else if ((GetKeysHeld() & 0x10) && GetKeyReleaseTime(0x40) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_RIGHT) && GetKeyReleaseTime(DPAD_UP) <= 4) {
         act->unk_14 = 0x2D;
-    } else if ((GetKeysHeld() & 0x10) && GetKeyReleaseTime(0x80) <= 4) {
+    } else if ((GetKeysHeld() & DPAD_RIGHT) && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
         act->unk_14 = 0x53;
-    } else if (GetKeysHeld() & 0x80) {
+    } else if (GetKeysHeld() & DPAD_DOWN) {
         act->unk_14 = 0x80;
-    } else if (GetKeysHeld() & 0x40) {
+    } else if (GetKeysHeld() & DPAD_UP) {
         act->unk_14 = 0;
-    } else if (GetKeysHeld() & 0x20) {
+    } else if (GetKeysHeld() & DPAD_LEFT) {
         act->unk_14 = 0xC0;
-    } else if (GetKeysHeld() & 0x10) {
+    } else if (GetKeysHeld() & DPAD_RIGHT) {
         act->unk_14 = 0x40;
     }
 }

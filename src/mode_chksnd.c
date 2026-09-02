@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_chksnd.h"
+#include "gba/keys.h"
 
 void mode_chksnd_0(void) {
     func_08004DB0();
@@ -17,11 +18,11 @@ void mode_chksnd_1(void) {
     if (keys != 0) {
         func_080010CC(&gUnk_09ECEB64, 0);
     } else {
-        if (GetKeysRepeat() & 0x20) {
+        if (GetKeysRepeat() & DPAD_LEFT) {
             gUnk_020348B4--;
         }
 
-        if (GetKeysRepeat() & 0x10) {
+        if (GetKeysRepeat() & DPAD_RIGHT) {
             gUnk_020348B4++;
         }
 
