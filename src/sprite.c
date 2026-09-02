@@ -159,4 +159,42 @@ void func_08001F98(void) {
     func_08001F5C(0, 0x10);
 }
 
-INCLUDE_ASM("sprite/func_08002060.s");
+u8 func_08002060(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
+    u8* p;
+    u8* q0;
+    u8* q1;
+    u8* q2;
+    u8* q3;
+    u8* q4;
+    s32 ofs;
+
+    if (e != 0 && c != 0) {
+        p = gSpriteWork;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        *(u16*)(p + ofs + 0x1AB8) = x;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        *(u16*)(p + ofs + 0x1ABA) = y;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        q0 = p + 0x1AA8;
+        *(void**)(q0 + ofs) = obj;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        q1 = p + 0x1AAC;
+        *(void**)(q1 + ofs) = e;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        q2 = p + 0x1AB0;
+        *(s32*)(q2 + ofs) = f;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        *(u16*)(p + ofs + 0x1ABE) = g;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        *(u16*)(p + ofs + 0x1ABC) = h;
+        ofs = *(u16*)(p + 0x28A8) * 24;
+        q3 = p + 0x1AB4;
+        *(void**)(q3 + ofs) = c;
+        ofs = *(u16*)(p + 0x28A8) * 4;
+        q4 = p + 0x26A8;
+        *(u32*)(q4 + ofs) = (u32)(p + (*(u16*)(p + 0x28A8) * 24 + 0x1AA8));
+        *(u16*)(p + 0x28A8) += 1;
+        return 1;
+    }
+    return 0;
+}
