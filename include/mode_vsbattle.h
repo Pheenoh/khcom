@@ -17,7 +17,7 @@ typedef struct VsActor {
     u8 unk_1D;
     u8 unk_1E;
     u8 unk_1F;
-    u16 unk_20;
+    s16 unk_20;
     u8 unk_22[0x02];
     s32 unk_24;
     u8 unk_28[0x04];
@@ -80,6 +80,8 @@ typedef struct UnkStruct_02039BB0 {
     u8 unk_00D;
     u8 unk_00E[0x02];
     u16 unk_010;
+    u8 unk_012[0x1A6];
+    u32 unk_1B8;
 } UnkStruct_02039BB0;
 
 typedef struct VsBattleWork {
@@ -92,7 +94,7 @@ typedef struct VsBattleWork {
     u8 unk_071;
     s16 unk_072;
     s16 unk_074;
-    u8 unk_076[0x02];
+    u16 unk_076;
     VsActor* unk_078;
     VsActor* unk_07C;
     u8 unk_080[0x28];
@@ -259,6 +261,7 @@ extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern s16 gUnk_08121400[];
 
 void func_0800CB4C(EmyWork* work);
+void func_0800CD40(EmyWork* work);
 void func_0800E0D0(EmyWork* work);
 void func_0800CB78(EmyWork* work);
 void mode_vsbattle_0(u32 mode);
