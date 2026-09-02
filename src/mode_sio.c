@@ -2,6 +2,26 @@
 #include "mode_sio.h"
 #include "gba/keys.h"
 
+SioBtlConnectWork* gUnk_02034B3C;
+SioBtlOptionWork* gUnk_02034B40;
+SioBtlCardgetWork* gUnk_02034B44;
+SioBtlConnectWork* gUnk_02034B48;
+SioChgCardWork* gUnk_02034B4C;
+SioErrorWork* gUnk_02034B50;
+u8 gUnk_02034B54[4];
+u8 gUnk_02034B58;
+s8 gUnk_02034B59;
+u8 gUnk_02034B5A;
+u8 gUnk_02034B5B;
+u8 gUnk_02034B5C[4];
+TextSlot gUnk_02034B60[20];
+void* gUnk_02034C00;
+u8 gUnk_02034C04[4];
+u8 gUnk_02034C08[20];
+void* gUnk_02034C1C;
+u8 gUnk_02034C20[20];
+void* gUnk_02034C34;
+
 void mode_sio_btl_connect_0(s32 arg) {
     gUnk_02034B3C = EwramAlloc(sizeof(SioBtlConnectWork));
     func_08006120(0, 16);

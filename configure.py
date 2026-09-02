@@ -29,6 +29,9 @@ UNIT_BSS = {
     "src/mode_movie.o": 0x02034938,
     "src/mode_worldinspect.o": {"us": 0x02035118, "jp": 0x02035078, "eu": None},
     "src/mode_sio2.o": {"us": 0x02034CF4, "jp": 0x02034C54, "eu": None},
+    "src/sio.o": 0x0203406C,
+    "src/mode_sio.o": {"us": 0x02034B3C, "jp": 0x02034A9C},
+    "src/mode_worldwarp.o": {"us": 0x020354E8, "jp": 0x02035448},
 }
 
 DEFAULT_VERSION = "us"

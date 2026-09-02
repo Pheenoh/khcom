@@ -7,7 +7,7 @@ taskpool.c -O2 -fprologue-bugfix -fno-common
 key.c -O2 -fprologue-bugfix -fno-common
 sprite.c
 engine.c
-sio.c
+sio.c -O2 -fprologue-bugfix -fno-common
 pallet.c
 util.c
 save.c
@@ -46,7 +46,7 @@ mode_test.c
 unk_0806180c.c
 mode_eventselect.c
 card.c
-mode_sio.c
+mode_sio.c -O2 -fprologue-bugfix -fno-common
 wlogo.c
 bos2.c
 chara.c
@@ -67,7 +67,7 @@ room.c
 unk_080fb000.c
 bos5.c
 mode_worldinspect.c -O2 -fprologue-bugfix -fno-common
-mode_worldwarp.c
+mode_worldwarp.c -O2 -fprologue-bugfix -fno-common
 mode_ms.c
 unk_08104a84.c
 mode_ms2.c
