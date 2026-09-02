@@ -18,7 +18,7 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # symbols.txt. The linker script ends in /DISCARD/, so a unit's .bss is thrown
 # away unless it is placed here. IWRAM addresses are identical across versions,
 # so one address serves all three.
-UNIT_BSS = {"src/taskpool.o": 0x03007488}
+UNIT_BSS = {"src/taskpool.o": 0x03007488, "src/malloc.o": 0x030074A8}
 
 DEFAULT_VERSION = "us"
 ROM_TITLE = "KINGDOMHEART"
