@@ -237,7 +237,29 @@ void func_080E052C(u8 a) {
     func_080E04EC();
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E0558.s");
+void func_080E0558(void) {
+    gUnk_02039BA0->unk_00 = 0;
+    gUnk_02039BA0->unk_04 = 0;
+    gUnk_02039BA0->unk_08 = 0;
+    gUnk_02039BA0->unk_0C = 0;
+    gUnk_02039BA0->unk_10 = 32;
+    gUnk_02039BA0->unk_12 = 32;
+    gUnk_02039BA0->unk_68 = 0;
+    gUnk_02039BA0->unk_6C = 60;
+    gUnk_02039BA0->unk_70 = 0;
+    gUnk_02039BA0->unk_74 = 0;
+    TaskPoolInit(gUnk_02039BA0->unk_78, 50);
+    TaskPoolInit(gUnk_02039BA0->unk_8C, 1);
+    func_08000BA4(gUnk_02039BA0->unk_58);
+    TaskPoolInit(gUnk_02039BA0->unk_A0, 25);
+    TaskPoolInit(gUnk_02039BA0->unk_C8, 1);
+    TaskPoolInit(gUnk_02039BA0->unk_B4, 8);
+    gUnk_0203C7AC->unk_00 = 0;
+    gUnk_0203C7AC->unk_18 = 0;
+    gUnk_0203C7AC->unk_1C = 0;
+    gUnk_0203C7AC->unk_20 = 0;
+    TaskPoolInit(gUnk_0203C7AC->unk_30, 1);
+}
 
 void func_080E05E4(void) {
     func_080DF6D0(gUnk_0203C7AC, gUnk_0203C590[6]);
@@ -352,8 +374,70 @@ void func_080E0A38(UnkStruct_080DFB8C* p) {
     }
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E0A70.s");
-INCLUDE_ASM("unk_080dfebc/sub_080E0B00.s");
+void func_080E0A70(UnkStruct_080DFB8C* p, s32 n) {
+    u16* base;
+    const u8* t;
+    u8 r;
+    u16 off;
+    u16 step;
+
+    if (p == 0) {
+        return;
+    }
+    if ((p->unk_00 & 0x0C) == 0) {
+        p->unk_04 = n;
+        return;
+    }
+    base = gUnk_02034F34->unk_18;
+    t = gUnk_0984D32C[n];
+    r = GetRandom() % t[3];
+    off = (r % 8 + t[1]) * 4 + (r / 8 + t[2]) * 64;
+    if (p->unk_00 & 8) {
+        step = t[3] * 4;
+        off += step;
+        if (p->unk_00 & 4) {
+            off += step;
+        }
+    }
+    p->unk_04 = n;
+    p->unk_18 = base + off;
+}
+void sub_080E0B00(UnkStruct_080DFB8C* p, s32 n) {
+    const u8* t;
+    u16* base;
+    u16 off;
+
+    if (p == 0) {
+        return;
+    }
+    t = gUnk_0984D32C[n];
+    off = t[1] * 4 + t[2] * 64;
+    base = gUnk_02034F34->unk_1C;
+    switch (n) {
+    case 26:
+    case 27:
+    case 28:
+    case 29:
+    case 30:
+    case 31:
+        if (p->unk_00 & 8) {
+            off += t[3] * 4;
+        }
+        break;
+    case 23:
+    case 24:
+    case 25:
+    case 32:
+    case 33:
+    case 34:
+        if (p->unk_00 & 4) {
+            off += t[3] * 4;
+        }
+        break;
+    }
+    p->unk_04 = n;
+    p->unk_18 = base + off;
+}
 
 void func_080E0B98(UnkStruct_080DFB8C* p, s32 n, u8 v) {
     if (p != 0) {
@@ -753,8 +837,50 @@ void func_080E5B90(UnkStruct_080E5B90* p, UnkStruct_0984BC9C* q) {
     p->unk_04 = 0;
 }
 INCLUDE_ASM("unk_080dfebc/func_080E5C00.s");
-INCLUDE_ASM("unk_080dfebc/func_080E5CD4.s");
-INCLUDE_ASM("unk_080dfebc/func_080E5D6C.s");
+void func_080E5CD4(UnkStruct_080E590C* p) {
+    switch (gUnk_0203C7AC->unk_0D) {
+    case 4:
+        p->unk_04 |= 8;
+        break;
+    case 5:
+        p->unk_04 |= 0x20;
+        p->unk_04 |= 2;
+        break;
+    case 18:
+        p->unk_04 |= 0x10;
+        break;
+    case 20:
+        p->unk_04 |= 0x100;
+        break;
+    case 21:
+        p->unk_04 |= 0x200;
+        break;
+    }
+}
+void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a) {
+    UnkStruct_0984BB9C* q = p->unk_00->unk_00;
+
+    switch (p->unk_1C >> 6) {
+    case 0:
+        q += n * 2;
+        p->unk_04 |= 1;
+        break;
+    case 1:
+        q += n * 2 + 1;
+        p->unk_04 |= 1;
+        break;
+    case 2:
+        q += n * 2 + 1;
+        p->unk_04 &= ~1;
+        break;
+    default:
+        q += n * 2;
+        p->unk_04 &= ~1;
+        break;
+    }
+    func_08005974(p->unk_A4, q->unk_0C, a, q->unk_04, q->unk_00);
+    func_08002A10(p->unk_BC, q->unk_08);
+}
 
 void func_080E5DEC(UnkStruct_080E590C* p) {
     if (gUnk_02039BA0->unk_70 & 0x10000) {
