@@ -927,7 +927,23 @@ u8 func_080E5E44(void) {
     return v + gUnk_09EF6A34[gUnk_0203C590[4]];
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E5EAC.s");
+void func_080E5EAC(UnkStruct_080E590C* p) {
+    gUnk_02039BB0.unk_08 |= 2;
+    func_08012614(p->unk_48, 1);
+    gUnk_0203C7AC->unk_00 |= 2;
+    gUnk_02039BA0->unk_70 |= 0x80;
+    p->unk_04 |= 4;
+    if (p->unk_04 & 0x40) {
+        gUnk_02039BB0.unk_08 |= 4;
+    }
+    if (p->unk_04 & 0x100) {
+        gUnk_0203C7AC->unk_0E = GetRandom() % 3 + 128;
+    } else if (p->unk_04 & 0x200) {
+        gUnk_0203C7AC->unk_0E = GetRandom() % 3 + 131;
+    } else {
+        gUnk_0203C7AC->unk_0E = func_080E5E44();
+    }
+}
 
 void func_080E5F50(UnkStruct_080E590C* p) {
     if (p->unk_74 != 0) {
@@ -1137,7 +1153,25 @@ UnkStruct_080DFB8C* func_080E67D4(s32 x, s32 y) {
     return func_080E548C(a, b);
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E6804.s");
+s32 func_080E6804(s16 x, s16 y) {
+    s32 i;
+    u8 n;
+    s16 cx;
+    s16 cy;
+
+    n = 0;
+    for (i = 0; i < gUnk_02034F78; i++) {
+        cx = (gUnk_0203C7B8[i].unk_04.unk_00 >> 8) / 32;
+        cy = ((gUnk_0203C7B8[i].unk_04.unk_04 + gUnk_0203C7B8[i].unk_04.unk_08) >> 8) / 16;
+        if (cx > x - 9 && cx < x + 9 && cy > y - 11 && cy < y + 11) {
+            n++;
+            if (n > 2) {
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
 
 u8 func_080E68A4(s16 x, s16 y, u8 n) {
     UnkStruct_080DFB8C* p = func_080E548C(x, y);
@@ -1410,7 +1444,26 @@ void func_080E891C(UnkStruct_080E8864* p) {
     }
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E893C.s");
+void func_080E893C(s16 x, s16 y, const u8* p, u16* base) {
+    s32 i;
+    s32 j;
+    s32 off;
+    u8 v;
+    UnkStruct_080DFB8C* q;
+
+    v = GetRandom() % 100;
+    while (v >= p[0]) {
+        p += 8;
+    }
+    for (j = 0; j < p[3]; j++) {
+        for (i = 0; i < p[4]; i++) {
+            q = func_080E548C(x + j, y + i);
+            off = (p[2] + i) * 64 + (p[1] + j) * 4;
+            q->unk_05 = 38;
+            q->unk_1C = base + off;
+        }
+    }
+}
 
 u8 func_080E89E4(s16 x, s16 y, const u8* p) {
     while (p[0] != 0xFF) {
