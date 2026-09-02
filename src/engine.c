@@ -163,32 +163,51 @@ u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 void func_08002488(u16 a, u16 b, void* c, void* d, void* e, u16 f) {
     u8* p;
+    u8* q0;
+    u8* q1;
+    u8* q2;
+    u8* q3;
+    u8* q4;
+    u8* q5;
+    s32 ofs;
     u32 z;
 
     p = gSpriteWork;
     if (*(u16*)(p + 0x28A8) > 0x7F) {
         return;
     }
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q5 = p + ofs + 0x1AB8;
     z = 0;
-    *(u16*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AB8) = a;
-    *(u16*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1ABA) = b;
-    *(void**)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AA8) = d;
-    *(void**)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AAC) = e;
-    *(u32*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AB0) = z;
-    *(u16*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1ABE) = f;
-    *(u16*)(p + *(u16*)(p + 0x28A8) * 24 + 0x1ABC) = z;
-    *(void**)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AB4) = c;
-    *(u32*)(p + *(u16*)(p + 0x28A8) * 4 + 0x26A8) = (u32)(p + *(u16*)(p + 0x28A8) * 24 + 0x1AA8);
+    *(u16*)q5 = a;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABA) = b;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q0 = p + 0x1AA8;
+    *(void**)(q0 + ofs) = d;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q1 = p + 0x1AAC;
+    *(void**)(q1 + ofs) = e;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q2 = p + 0x1AB0;
+    *(u32*)(q2 + ofs) = z;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABE) = f;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABC) = z;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q3 = p + 0x1AB4;
+    *(void**)(q3 + ofs) = c;
+    ofs = *(u16*)(p + 0x28A8) * 4;
+    q4 = p + 0x26A8;
+    *(u32*)(q4 + ofs) = (u32)(p + (*(u16*)(p + 0x28A8) * 24 + 0x1AA8));
     *(u16*)(p + 0x28A8) += 1;
     *(u16*)(p + 0x28AA) += 1;
 }
-#else
-INCLUDE_ASM("engine/func_08002488.s");
+
 INCLUDE_ASM("engine/func_08002594.s");
-#endif
 
 ObjTiles* LoadObjTiles(void* src, u16 size) {
     ObjTiles* node;
