@@ -525,7 +525,72 @@ void mode_ms_shop_0(void) {
     EnableBg(2);
     DisableBg(3);
 }
-INCLUDE_ASM("mode_ms/mode_ms_shop_1.s");
+void mode_ms_shop_1(void) {
+    UpdatePlayTime();
+    switch (gUnk_02035B02) {
+        case 0:
+            if (func_08006314() == 0) {
+                if (gUnk_02035B00 != 0) {
+                    gUnk_02035C04 = 0x400;
+                    gUnk_02035C08 = gUnk_02035B04 * 6144 + 0x800;
+                    gUnk_02035B02 = 2;
+                } else {
+                    gUnk_02035B02 = 1;
+                }
+            }
+            break;
+        case 1:
+            func_08103D7C();
+            break;
+        case 2:
+            func_08103DE8();
+            break;
+        case 3:
+            func_081041B4();
+            break;
+        case 4:
+            if (func_0810329C(0) == 0) {
+                func_08102DC8();
+                func_0810264C(gUnk_0203C590[6], gUnk_02035B08[gUnk_02035B04], gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0]);
+                gUnk_02035B00 = func_081027B4(gUnk_02039BB0.unk_00E);
+                LoadBgMap(0, gUnk_09A382DC, 0x500);
+                if (gUnk_02035B04 > 0) {
+                    if (gUnk_02035B08[gUnk_02035B04] < 0) {
+                        do {
+                            gUnk_02035B04--;
+                            if (gUnk_02035B04 <= 0) {
+                                break;
+                            }
+                        } while (gUnk_02035B08[gUnk_02035B04] < 0);
+                    }
+                }
+                func_08103CD8(gUnk_02035B04);
+                func_08102984(gUnk_02035B04);
+                if (gUnk_02035B00 != 0) {
+                    for (; gUnk_02035B10 > 0 && gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0] < 0; gUnk_02035B10--) {
+                    }
+                    func_08103D54(gUnk_02035B10);
+                } else {
+                    DisableBg(1);
+                }
+                func_08101588(func_08101518(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+                DisableBg(3);
+                func_080061E8(0, 8);
+                gUnk_02035B02 = gUnk_02035B00 != 0 ? 3 : 1;
+            }
+            break;
+        case 5:
+            if (func_08006314() == 0) {
+                if (gUnk_02035C0C != 0) {
+                    func_080010CC(&gUnk_09EF95E8, 2);
+                } else {
+                    func_080E04EC();
+                }
+            }
+            break;
+    }
+    func_08104404();
+}
 void mode_ms_shop_2(void) {
     s32 i;
 
