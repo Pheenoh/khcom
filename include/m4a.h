@@ -88,6 +88,7 @@
 #define REG_ADDR_NR43   0x0400007C
 #define REG_ADDR_NR44   0x0400007D
 #define REG_NR51        (*(vu8*)0x04000081)
+#define REG_NR52        (*(vu8*)0x04000084)
 #define REG_WAVE_RAM0   (*(vu32*)0x04000090)
 #define REG_WAVE_RAM1   (*(vu32*)0x04000094)
 #define REG_WAVE_RAM2   (*(vu32*)0x04000098)
