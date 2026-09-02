@@ -45,9 +45,9 @@ void func_080C55DC(void);
 void func_08001100(void);
 
 u16 GetKeysRepeat(void);
-void func_080013A8(void);
-u8 func_08001470(u16 key);
-u8 func_08001534(u16 key);
+void ResetKeyState(void);
+u8 GetKeyHoldTime(u16 key);
+u8 GetKeyReleaseTime(u16 key);
 u16 func_080015F8(u16 a, u16 b);
 u16 func_080016EC(void);
 
@@ -64,7 +64,7 @@ u16 GetKeysRepeat(void) {
     return gKeysRepeat;
 }
 
-void func_080013A8(void) {
+void ResetKeyState(void) {
     gKeysHeld = 0;
     gKeysPressed = 0;
     gKeysRepeat = 0;
@@ -91,7 +91,7 @@ void func_080013A8(void) {
     gKeyReleaseSelect = 0xFF;
 }
 
-u8 func_08001470(u16 key) {
+u8 GetKeyHoldTime(u16 key) {
     switch (key) {
     case DPAD_LEFT:
         return gKeyHoldLeft;
@@ -116,7 +116,7 @@ u8 func_08001470(u16 key) {
     }
 }
 
-u8 func_08001534(u16 key) {
+u8 GetKeyReleaseTime(u16 key) {
     switch (key) {
     case DPAD_LEFT:
         return gKeyReleaseLeft;
@@ -143,8 +143,8 @@ u8 func_08001534(u16 key) {
 
 u16 func_080015F8(u16 a, u16 b) {
     u16 r = 0;
-    u8 va = func_08001534(a);
-    u8 vb = func_08001534(b);
+    u8 va = GetKeyReleaseTime(a);
+    u8 vb = GetKeyReleaseTime(b);
 
     if (va == 2) {
         gUnk_02034006 &= ~a;
@@ -160,14 +160,14 @@ u16 func_080015F8(u16 a, u16 b) {
     }
 
     if ((gUnk_02034006 & a) == 0) {
-        if (func_08001470(a) == 5 || va == 1) {
+        if (GetKeyHoldTime(a) == 5 || va == 1) {
             gUnk_02034006 |= a;
             r = a;
         }
     }
 
     if ((gUnk_02034006 & b) == 0) {
-        if (func_08001470(b) == 5 || vb == 1) {
+        if (GetKeyHoldTime(b) == 5 || vb == 1) {
             gUnk_02034006 |= b;
             r = b;
         }
@@ -178,10 +178,10 @@ u16 func_080015F8(u16 a, u16 b) {
 
 u16 func_080016EC(void) {
     u16 r = 0;
-    u8 up = func_08001534(DPAD_UP);
-    u8 down = func_08001534(DPAD_DOWN);
-    u8 left = func_08001534(DPAD_LEFT);
-    u8 right = func_08001534(DPAD_RIGHT);
+    u8 up = GetKeyReleaseTime(DPAD_UP);
+    u8 down = GetKeyReleaseTime(DPAD_DOWN);
+    u8 left = GetKeyReleaseTime(DPAD_LEFT);
+    u8 right = GetKeyReleaseTime(DPAD_RIGHT);
 
     if (up == 2) {
         gUnk_02034006 &= ~DPAD_UP;
@@ -220,28 +220,28 @@ u16 func_080016EC(void) {
     }
 
     if ((gUnk_02034006 & DPAD_UP) == 0) {
-        if (func_08001470(DPAD_UP) == 10 || up == 1) {
+        if (GetKeyHoldTime(DPAD_UP) == 10 || up == 1) {
             gUnk_02034006 |= DPAD_UP;
             r = DPAD_UP;
         }
     }
 
     if ((gUnk_02034006 & DPAD_DOWN) == 0) {
-        if (func_08001470(DPAD_DOWN) == 10 || down == 1) {
+        if (GetKeyHoldTime(DPAD_DOWN) == 10 || down == 1) {
             gUnk_02034006 |= DPAD_DOWN;
             r = DPAD_DOWN;
         }
     }
 
     if ((gUnk_02034006 & DPAD_LEFT) == 0) {
-        if (func_08001470(DPAD_LEFT) == 10 || left == 1) {
+        if (GetKeyHoldTime(DPAD_LEFT) == 10 || left == 1) {
             gUnk_02034006 |= DPAD_LEFT;
             r = DPAD_LEFT;
         }
     }
 
     if ((gUnk_02034006 & DPAD_RIGHT) == 0) {
-        if (func_08001470(DPAD_RIGHT) == 10 || right == 1) {
+        if (GetKeyHoldTime(DPAD_RIGHT) == 10 || right == 1) {
             gUnk_02034006 |= DPAD_RIGHT;
             r = DPAD_RIGHT;
         }

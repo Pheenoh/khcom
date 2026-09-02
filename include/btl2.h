@@ -274,7 +274,7 @@ void m4aSongNumStart(u16 n);
 void m4aMPlayVolumeControl(void* mplay, u16 trackBits, u16 volume);
 void func_080063C4(u8 a);
 void ApproachValue(s32* value, s32 target, u16 steps);
-u8 func_08001534(s32 a);
+u8 GetKeyReleaseTime(s32 a);
 void m4aSongNumStop(u16 n);
 void AnimChange(AnimState* a, u16 animId, u16 flags);
 void* AnimUpdate(AnimState* a);

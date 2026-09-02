@@ -1160,21 +1160,21 @@ void func_08031BC4(FldActor* act) {
         act->unk_14 = 45;
     } else if ((GetKeysHeld() & 0x10) && (GetKeysHeld() & 0x80)) {
         act->unk_14 = 83;
-    } else if ((GetKeysHeld() & 0x80) && func_08001534(0x20) <= 4) {
+    } else if ((GetKeysHeld() & 0x80) && GetKeyReleaseTime(0x20) <= 4) {
         act->unk_14 = 173;
-    } else if ((GetKeysHeld() & 0x80) && func_08001534(0x10) <= 4) {
+    } else if ((GetKeysHeld() & 0x80) && GetKeyReleaseTime(0x10) <= 4) {
         act->unk_14 = 83;
-    } else if ((GetKeysHeld() & 0x40) && func_08001534(0x20) <= 4) {
+    } else if ((GetKeysHeld() & 0x40) && GetKeyReleaseTime(0x20) <= 4) {
         act->unk_14 = 211;
-    } else if ((GetKeysHeld() & 0x40) && func_08001534(0x10) <= 4) {
+    } else if ((GetKeysHeld() & 0x40) && GetKeyReleaseTime(0x10) <= 4) {
         act->unk_14 = 45;
-    } else if ((GetKeysHeld() & 0x20) && func_08001534(0x40) <= 4) {
+    } else if ((GetKeysHeld() & 0x20) && GetKeyReleaseTime(0x40) <= 4) {
         act->unk_14 = 211;
-    } else if ((GetKeysHeld() & 0x20) && func_08001534(0x80) <= 4) {
+    } else if ((GetKeysHeld() & 0x20) && GetKeyReleaseTime(0x80) <= 4) {
         act->unk_14 = 173;
-    } else if ((GetKeysHeld() & 0x10) && func_08001534(0x40) <= 4) {
+    } else if ((GetKeysHeld() & 0x10) && GetKeyReleaseTime(0x40) <= 4) {
         act->unk_14 = 45;
-    } else if ((GetKeysHeld() & 0x10) && func_08001534(0x80) <= 4) {
+    } else if ((GetKeysHeld() & 0x10) && GetKeyReleaseTime(0x80) <= 4) {
         act->unk_14 = 83;
     } else if (GetKeysHeld() & 0x80) {
         act->unk_14 = 128;

@@ -52,7 +52,7 @@ _0806FEDC:
 	b _0806FFFC
 _0806FEDE:
 	movs r0, #0x20
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -64,7 +64,7 @@ _0806FEDE:
 _0806FEF4: .4byte 0x000001AB
 _0806FEF8:
 	movs r0, #0x10
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -83,13 +83,13 @@ _0806FF14:
 _0806FF1C: .4byte 0x000001AB
 _0806FF20:
 	movs r0, #0x20
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
 	bls _0806FFF4
 	movs r0, #0x10
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -107,7 +107,7 @@ _0806FF48:
 _0806FF50: .4byte 0x000001AB
 _0806FF54:
 	movs r0, #0x40
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -120,7 +120,7 @@ _0806FF54:
 _0806FF6C: .4byte 0x000001AB
 _0806FF70:
 	movs r0, #0x80
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -133,7 +133,7 @@ _0806FF70:
 _0806FF88: .4byte 0x000001AB
 _0806FF8C:
 	movs r0, #0x40
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -146,7 +146,7 @@ _0806FF8C:
 _0806FFA4: .4byte 0x000001AB
 _0806FFA8:
 	movs r0, #0x80
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04

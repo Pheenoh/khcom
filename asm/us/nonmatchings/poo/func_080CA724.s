@@ -65,7 +65,7 @@ _080CA798:
 	cmp r1, #0x00
 	beq _080CA7B6
 	movs r0, #0x20
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -79,7 +79,7 @@ _080CA7B6:
 	cmp r1, #0x00
 	beq _080CA7D4
 	movs r0, #0x10
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -93,7 +93,7 @@ _080CA7D4:
 	cmp r1, #0x00
 	beq _080CA7F2
 	movs r0, #0x20
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -107,7 +107,7 @@ _080CA7F2:
 	cmp r1, #0x00
 	beq _080CA810
 	movs r0, #0x10
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -121,7 +121,7 @@ _080CA810:
 	cmp r1, #0x00
 	beq _080CA82E
 	movs r0, #0x40
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -135,7 +135,7 @@ _080CA82E:
 	cmp r1, #0x00
 	beq _080CA84C
 	movs r0, #0x80
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -149,7 +149,7 @@ _080CA84C:
 	cmp r1, #0x00
 	beq _080CA86A
 	movs r0, #0x40
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
@@ -163,7 +163,7 @@ _080CA86A:
 	cmp r1, #0x00
 	beq _080CA888
 	movs r0, #0x80
-	bl func_08001534
+	bl GetKeyReleaseTime
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	cmp r0, #0x04
