@@ -1,7 +1,4 @@
-#include "macros.h"
-#include "intr.h"
 #include "gba/syscall.h"
-#include "key.h"
 #include "malloc.h"
 #include "sprite.h"
 
