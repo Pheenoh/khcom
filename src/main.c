@@ -52,7 +52,7 @@ void func_08001010(void);
 void func_08001100(void);
 void func_08001254(void);
 void func_080012A8(void);
-void func_080013A8(void);
+void ResetKeyState(void);
 void func_08116CEC(void);
 void func_08116D28(void);
 void func_08116EF0(void);
@@ -160,7 +160,7 @@ void InitSystem(void) {
     PalletInit();
     SioKeyInit();
     ResetPaletteEffect();
-    func_080013A8();
+    ResetKeyState();
     SeedRandom(0x12D687);
     InitDisplayRegs();
     SaveInitSram();
@@ -189,6 +189,7 @@ void AgbMain(void) {
                 goto next;
             }
         }
+
         if ((gUnk_03006C00 & bit) == 0) {
             func_08001100();
             gUnk_03006C00 |= 4;
@@ -208,6 +209,7 @@ void VBlankIntr(void) {
         gUnk_03007484();
         return;
     }
+
     if (gUnk_03006C00 & 2) {
         gUnk_03006C00 |= 8;
         return;
