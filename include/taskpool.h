@@ -20,7 +20,7 @@ typedef struct TaskDesc {
     void (*unk_04)(void* work, void* arg);
     void* unk_08;
     void (*unk_0C)(void* work);
-    void* unk_10;
+    void (*unk_10)(void* work);
     s32 unk_14;
 } TaskDesc;
 

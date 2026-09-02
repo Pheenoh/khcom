@@ -403,6 +403,7 @@ u8* func_08002C28(u8 a, u8 b) {
     return 0;
 }
 INCLUDE_ASM("engine/AllocObjAffine.s");
+INCLUDE_ASM("engine/func_08002F0C.s");
 INCLUDE_ASM("engine/func_08002F50.s");
 
 void func_080034D8(u8 a) {
