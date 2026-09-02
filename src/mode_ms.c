@@ -254,7 +254,65 @@ s32 func_08102A94(void) {
     k = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
     return k | (GetKeysRepeat() & (DPAD_ANY | R_BUTTON | L_BUTTON));
 }
-INCLUDE_ASM("mode_ms/func_08102AB4.s");
+void func_08102AB4(s16 x, s16 y) {
+    s16 i;
+    u16 id;
+    void** p;
+
+    for (i = 0; i < 5; i++) {
+        id = gUnk_02035B58[i];
+        if (id & 0x8000) {
+            gUnk_020358C8[i].unk_46 = 1;
+        } else {
+            gUnk_020358C8[i].unk_46 = 0;
+        }
+        gUnk_020358C8[i].unk_47 = 0;
+        id &= 0xFFF;
+        gUnk_020358C8[i].unk_00 = LoadObjPalette(gCardDefs[id].unk_08, 0x20);
+        func_080062F4(gUnk_020358C8[i].unk_00->unk_06 + 0x10, 1);
+        gUnk_020358C8[i].unk_04 = LoadObjTiles(gCardDefs[id].unk_04, 0x200);
+        gUnk_020358C8[i].unk_08 = gCardDefs[id].unk_00;
+        gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09A3DB1C + gCardDefs[id].unk_2A * 32, 0x20);
+        func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 1);
+        gUnk_020358C8[i].unk_10 = LoadObjTiles(gUnk_099A4B9A, 0x1D80);
+        gUnk_020358C8[i].unk_14 = 0;
+        AnimInit(&gUnk_020358C8[i].unk_18, gUnk_09EF9A48, gUnk_09EF9A20);
+        AnimStart(&gUnk_020358C8[i].unk_18, 0, 1);
+        gUnk_020358C8[i].unk_3C = x << 8;
+        gUnk_020358C8[i].unk_40 = y << 8;
+        gUnk_020358C8[i].unk_34 = 2;
+        gUnk_020358C8[i].unk_30 = 0;
+        gUnk_020358C8[i].unk_38 = 0;
+        gUnk_020358C8[i].unk_44 = 0;
+    }
+    gUnk_02035A30 = LoadObjPalette(gUnk_09611AB8, 0x20);
+    func_080062F4(((FldRes*)gUnk_02035A30)->unk_06 + 0x10, 1);
+    gUnk_02035A34 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
+    gUnk_02035A38 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    func_080062F4(((FldRes*)gUnk_02035A38)->unk_06 + 0x10, 1);
+    gUnk_02035A3C = LoadObjTiles(gUnk_0905ED36, 0x140);
+    gUnk_02035AE0 = LoadObjPalette(gUnk_09A3DA7C, 0x20);
+    gUnk_02035ADC = LoadObjTiles(gUnk_099A3CE4, 0x1C0);
+    AnimInit(&gUnk_02035AE8, gUnk_09EF99F8, gUnk_09EF99D8);
+    AnimStart(&gUnk_02035AE8, 0, 1);
+    func_080062F4(((FldRes*)gUnk_02035AE0)->unk_06 + 0x10, 1);
+    gUnk_02035A40 = LoadObjPalette(gUnk_09A3DB7C, 0x20);
+    func_080062F4(((FldRes*)gUnk_02035A40)->unk_06 + 0x10, 1);
+    p = &gUnk_02035A44;
+    *p = EwramAlloc(0x120);
+    func_08065ACC(gUnk_02035A44, 0x24);
+    p = &gUnk_02035A4C;
+    *p = EwramAlloc(0x2D0);
+    func_08065ACC(gUnk_02035A4C, 0x5A);
+    gUnk_02035A54 = LoadObjTiles(gUnk_0908B1B4, 0x9A0);
+    AnimInit(&gUnk_02035A58, gUnk_09EEA164, gUnk_09EEA148);
+    AnimStart(&gUnk_02035A58, 0, 1);
+
+    for (i = 0; i < 5; i++) {
+        TaskPoolInit(&gUnk_02035A70[i], 8);
+    }
+    gUnk_020358C8[0].unk_44 = 15;
+}
 void func_08102DC8(void) {
     s16 i;
 
@@ -266,19 +324,19 @@ void func_08102DC8(void) {
         ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
         ReleaseObjTiles(gUnk_020358C8[i].unk_10);
     }
-    func_080062F4(gUnk_02035AE0->unk_06 + 0x10, 0);
+    func_080062F4(((FldRes*)gUnk_02035AE0)->unk_06 + 0x10, 0);
     ReleaseObjPalette(gUnk_02035AE0);
     ReleaseObjTiles(gUnk_02035ADC);
-    func_080062F4(gUnk_02035A40->unk_06 + 0x10, 0);
+    func_080062F4(((FldRes*)gUnk_02035A40)->unk_06 + 0x10, 0);
     ReleaseObjPalette(gUnk_02035A40);
     func_08065AE0(gUnk_02035A44, 0x24);
     EwramFree(gUnk_02035A44);
     func_08065AE0(gUnk_02035A4C, 0x5A);
     EwramFree(gUnk_02035A4C);
-    func_080062F4(gUnk_02035A30->unk_06 + 0x10, 0);
+    func_080062F4(((FldRes*)gUnk_02035A30)->unk_06 + 0x10, 0);
     ReleaseObjPalette(gUnk_02035A30);
     ReleaseObjTiles(gUnk_02035A34);
-    func_080062F4(gUnk_02035A38->unk_06 + 0x10, 0);
+    func_080062F4(((FldRes*)gUnk_02035A38)->unk_06 + 0x10, 0);
     ReleaseObjPalette(gUnk_02035A38);
     ReleaseObjTiles(gUnk_02035A3C);
     ReleaseObjTiles(gUnk_02035A54);

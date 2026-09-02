@@ -7,6 +7,23 @@
 #include "anim.h"
 #include "mode.h"
 
+typedef struct MsCardDef {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    void* unk_14;
+    void* unk_18;
+    u16 unk_1C;
+    u8 unk_1E[0x2];
+    u8 unk_20;
+    u8 unk_21[0x7];
+    u16 unk_28;
+    u8 unk_2A;
+    u8 unk_2B[0x9];
+} MsCardDef;
+
 typedef struct UnkStruct_099932D4 {
     void* unk_00;
     u16 unk_04;
@@ -28,10 +45,21 @@ typedef struct UnkStruct_02039BB0 {
 typedef struct UnkStruct_020358C8 {
     FldRes* unk_00;
     void* unk_04;
-    u8 unk_08[0x4];
+    void* unk_08;
     FldRes* unk_0C;
     void* unk_10;
-    u8 unk_14[0x34];
+    s32 unk_14;
+    AnimState unk_18;
+    u16 unk_30;
+    u16 unk_32;
+    s32 unk_34;
+    u16 unk_38;
+    u16 unk_3A;
+    s32 unk_3C;
+    s32 unk_40;
+    u16 unk_44;
+    u8 unk_46;
+    u8 unk_47;
 } UnkStruct_020358C8;
 
 typedef struct UnkStruct_099931E4_1C {
@@ -91,6 +119,7 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
 void m4aSongNumStart(u16 n);
+void func_08065ACC(void* a, s32 b);
 void UpdatePlayTime(void);
 u8 func_08006314(void);
 void func_080061E8(s32 a, u16 b);
@@ -199,11 +228,26 @@ extern u8 gUnk_092028EC[];
 extern u8 gUnk_09EEEAC8[];
 extern u8 gUnk_09EEEA98[];
 extern UnkStruct_020358C8 gUnk_020358C8[];
-extern FldRes* gUnk_02035A30;
+extern u16 gUnk_02035B58[];
+extern MsCardDef gCardDefs[];
+extern AnimState gUnk_02035A58;
+extern AnimState gUnk_02035AE8;
+extern u8 gUnk_09A3DB1C[];
+extern u8 gUnk_099A4B9A[];
+extern u8 gUnk_09EF9A48[];
+extern u8 gUnk_09EF9A20[];
+extern u8 gUnk_09611AB8[];
+extern u8 gUnk_0905EAE8[];
+extern u8 gUnk_0905ED36[];
+extern u8 gUnk_09A3DB7C[];
+extern u8 gUnk_0908B1B4[];
+extern u8 gUnk_09EEA164[];
+extern u8 gUnk_09EEA148[];
+extern void* gUnk_02035A30;
 extern void* gUnk_02035A34;
-extern FldRes* gUnk_02035A38;
+extern void* gUnk_02035A38;
 extern void* gUnk_02035A3C;
-extern FldRes* gUnk_02035A40;
+extern void* gUnk_02035A40;
 extern void* gUnk_02035A44;
 extern void* gUnk_02035A4C;
 extern void* gUnk_02035A54;
@@ -230,7 +274,7 @@ extern u8 gUnk_09A3DA7C[];
 extern u8 gUnk_099A3CE4[];
 extern u8 gUnk_09EF99F8[];
 extern u8 gUnk_09EF99D8[];
-extern FldRes* gUnk_02035AE0;
+extern void* gUnk_02035AE0;
 extern UnkStruct_099931E4 gUnk_099931E4[];
 extern s16 gUnk_02035B18[][4][2];
 extern s16 gUnk_099935C0[][4][4];
