@@ -18,7 +18,14 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # symbols.txt. The linker script ends in /DISCARD/, so a unit's .bss is thrown
 # away unless it is placed here. IWRAM addresses are identical across versions,
 # so one address serves all three.
-UNIT_BSS = {"src/taskpool.o": 0x03007488, "src/malloc.o": 0x030074A8}
+# An int means every version places the unit at the same address; a dict gives
+# a per-version address. RAM below 0x02034A08 and all of IWRAM agree across
+# versions, but 0x02034A08..0x0203DF20 is shifted down by 0x90..0xA4 in JP, so
+# any unit owning globals in that window needs the dict form.
+UNIT_BSS = {
+    "src/taskpool.o": 0x03007488,
+    "src/malloc.o": 0x030074A8,
+}
 
 DEFAULT_VERSION = "us"
 ROM_TITLE = "KINGDOMHEART"
@@ -127,7 +134,12 @@ with open(ldscript, "w") as f:
         for obj in bss_members:
             f.write(f"        {obj}(.bss);\n")
         f.write("    }\n")
-    for i, (obj, addr) in enumerate(sorted(UNIT_BSS.items(), key=lambda kv: kv[1])):
+    unit_bss = {}
+    for obj, addr in UNIT_BSS.items():
+        a = addr[version] if isinstance(addr, dict) else addr
+        if a is not None:
+            unit_bss[obj] = a
+    for obj, addr in sorted(unit_bss.items(), key=lambda kv: kv[1]):
         f.write(f"\n    .bss.{obj.rsplit('/', 1)[-1].removesuffix('.o')} {addr:#x} (NOLOAD) :\n"
                 f"    {{\n        {build_dir}/{obj}(.bss COMMON);\n    }}\n")
     f.write("\n    /DISCARD/ : { *(*); }\n}\n")
