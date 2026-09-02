@@ -2,7 +2,96 @@
 #include "mode_ms.h"
 #include "gba/keys.h"
 
-INCLUDE_ASM("mode_ms/mode_ms_top_0.s");
+void mode_ms_top_0(u32 a) {
+    s32 i;
+
+    func_08001F98();
+    func_08006120(0, 16);
+    func_08004DB0();
+    gBldCnt = 0x142;
+    gBldAlpha = 0x1010;
+    SetupBg(0, 0, 28, 0);
+    SetupBg(1, 0, 29, 0);
+    SetupBg(2, 0, 30, 0);
+    SetupBg(3, 3, 31, 14);
+    SetBgPriority(0, 3);
+    SetBgPriority(1, 2);
+    SetBgPriority(2, 1);
+    SetBgPriority(3, 0);
+
+    if (a & 1) {
+        func_08102774();
+    }
+
+    if (a & 2) {
+        gUnk_020358A4 = 0;
+        gUnk_02035890 = 7;
+    } else {
+        gUnk_020358A4 = 1;
+        gUnk_02035890 = 0;
+        gUnk_02035892 = 16;
+        gUnk_02035898[0] = -0x800;
+        gUnk_02035898[1] = 0xA800;
+        gUnk_020358A0 = -0x8000;
+        gUnk_020357C0 = 0;
+    }
+    gUnk_02035878 = 0;
+    gUnk_0203587A = 0;
+    gUnk_0203587C = 0;
+
+    if (gUnk_020357C0 == 0) {
+        gUnk_02035880 = 0;
+        gUnk_02035884 = 0;
+        gUnk_02035888 = 0;
+        gUnk_0203588C = 0;
+    } else {
+        gUnk_02035880 = -0x6100;
+        gUnk_02035884 = 0x2100;
+        gUnk_02035888 = -0x1C00;
+        gUnk_0203588C = 0xBC00;
+    }
+    gUnk_020358BC = -1;
+    gUnk_020358BE = -1;
+    gUnk_020358C0 = 0;
+    LoadBgPalette(0, gUnk_09A3D79C, 0x60);
+    LoadBgTiles(0, gUnk_09A10A3C, 0x19A0);
+    func_08101588(func_08101518(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+    LoadBgMap(0, gUnk_09A36EDC, 0x500);
+    LoadBgMap(1, gUnk_09A373DC, 0x500);
+    if (gUnk_020358A4 != 0) {
+        LoadBgMap(2, gUnk_09A378DC, 0x500);
+    } else {
+        LoadBgMap(2, gUnk_09A37DDC, 0x500);
+    }
+
+    for (i = 0; i < 2; i++) {
+        gUnk_02035820[i] = 0;
+        gUnk_02035818[i] = 0;
+    }
+    gUnk_020357CC = LoadObjPalette(gUnk_09A3D7FC, 0x20);
+    gUnk_020357C8 = LoadObjTiles(gUnk_099A2B62, 0x400);
+    gUnk_020357D4 = LoadObjPalette(gUnk_09A3D85C, 0x20);
+    gUnk_020357D0 = LoadObjTiles(gUnk_099A36F8, 0x500);
+    AnimInit(&gUnk_020357D8, gUnk_09EF99D0, gUnk_09EF99A8);
+    gUnk_020357F4 = LoadObjPalette(gUnk_08F683A4, 0x20);
+    gUnk_020357F0 = LoadObjTiles(gUnk_088C56C6, 0x300);
+    AnimInit(&gUnk_020357F8, gUnk_09EDEA6C, gUnk_09EDEA68);
+    AnimStart(&gUnk_020357F8, 0, 1);
+    gUnk_02035814 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    gUnk_02035810 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    gUnk_0203585C = LoadObjPalette(gUnk_09617D58, 0x20);
+    gUnk_02035858 = LoadObjTiles(gUnk_092028EC, 0xC00);
+    AnimInit(&gUnk_02035860, gUnk_09EEEAC8, gUnk_09EEEA98);
+    AnimStart(&gUnk_02035860, 0, 1);
+    func_08101740(gUnk_020357C0);
+    func_08101654();
+    func_081015E8();
+    TaskPoolInit(&gUnk_020358A8, 1);
+    EnableBg(0);
+    EnableBg(1);
+    EnableBg(2);
+    DisableBg(3);
+}
 INCLUDE_ASM("mode_ms/mode_ms_top_1.s");
 void mode_ms_top_2(void) {
     s32 i;
