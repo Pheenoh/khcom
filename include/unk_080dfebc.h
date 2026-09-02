@@ -507,8 +507,8 @@ void func_080E893C(s16 x, s16 y, const u8* p, u16* base);
 void func_080E8A24(UnkStruct_080E8864* p);
 u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y);
 UnkStruct_080E8E24* func_080E8E74(u8 a);
-void func_080EAB20(u8 a, s32 b, u8 c);
-void func_080EABB8(u8 a, u8 b);
+void func_080EAB20(u8 a, u8 b, u8 c);
+void func_080EABB8(u8 a, u16 v);
 void func_080EAC60(u8 a, s32 b);
 
 s32 func_080DFEBC(s32 x, s32 y, s32 z);
