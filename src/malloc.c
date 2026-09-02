@@ -332,6 +332,7 @@ void* func_08000AF0(void) {
 void* func_08000AFC(void) {
     return gIwramHeap.name;
 }
+
 void func_08000B08(Node* node, Node** head, Node** tail) {
     if (*head == 0) {
         *head = node;
@@ -346,6 +347,7 @@ void func_08000B08(Node* node, Node** head, Node** tail) {
     node->unk_08 = 0;
     *tail = node;
 }
+
 void func_08000B24(Node* node, Node** head, Node** tail, Node* after) {
     Node* next;
 
@@ -364,6 +366,7 @@ void func_08000B24(Node* node, Node** head, Node** tail, Node* after) {
         func_08000B08(node, head, tail);
     }
 }
+
 void func_08000B48(Node* node, Node** head, Node** tail, Node* before) {
     Node* prev;
 
@@ -382,6 +385,7 @@ void func_08000B48(Node* node, Node** head, Node** tail, Node* before) {
         func_08000B08(node, head, tail);
     }
 }
+
 void func_08000B6C(Node* node, Node** head, Node** tail) {
     if (node->unk_04 == 0) {
         if (node->unk_08 == 0) {
@@ -401,17 +405,20 @@ void func_08000B6C(Node* node, Node** head, Node** tail) {
         }
     }
 }
+
 void func_08000BA4(NodeList* list) {
     list->unk_00 = 0;
     list->unk_04 = 0;
     list->unk_08 = 0;
     list->unk_0C = 0;
 }
+
 void func_08000BB0(Node* node, NodeList* list, void* owner) {
     func_08000B08(node, &list->unk_00, &list->unk_04);
     node->unk_00 = owner;
     node->unk_0C = 0;
 }
+
 void func_08000BC8(void* a, void* b) {
     Node* node;
     NodeList* list;
@@ -423,18 +430,21 @@ void func_08000BC8(void* a, void* b) {
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
+
 void func_08000BF4(Node* node, NodeList* list, Node* after) {
     func_08000B6C(node, &list->unk_00, &list->unk_04);
     func_08000B24(node, &list->unk_08, &list->unk_0C, after);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
+
 void func_08000C24(Node* node, NodeList* list, Node* before) {
     func_08000B6C(node, &list->unk_00, &list->unk_04);
     func_08000B48(node, &list->unk_08, &list->unk_0C, before);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
+
 void* func_08000C54(Node* node, NodeList* list) {
     Node* next;
 
@@ -525,6 +535,7 @@ void* func_08000CF0(Node* node) {
 
     return result;
 }
+
 void* func_08000D0C(NodeList* list) {
     Node* n;
 
@@ -536,27 +547,33 @@ void* func_08000D0C(NodeList* list) {
 
     return 0;
 }
+
 void func_08000D1C(void) {
 }
+
 void func_08000D20(Node* node, NodeList* list, void* owner) {
     node->unk_00 = owner;
     node->unk_0C = 0;
 }
+
 void func_08000D28(Node* node, NodeList* list) {
     func_08000B08(node, &list->unk_08, &list->unk_0C);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
+
 void func_08000D48(Node* node, NodeList* list, Node* after) {
     func_08000B24(node, &list->unk_08, &list->unk_0C, after);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
+
 void func_08000D6C(Node* node, NodeList* list, Node* before) {
     func_08000B48(node, &list->unk_08, &list->unk_0C, before);
     node->unk_0C |= 1;
     node->unk_10 = node;
 }
+
 void* func_08000D90(Node* node, NodeList* list) {
     Node* next;
 
