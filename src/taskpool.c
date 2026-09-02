@@ -8,15 +8,15 @@
 #include "gba/keys.h"
 
 extern u16 gSystemFlags;
-extern Mode* gCurrentMode;
-extern void (*gCurrentModeUpdate)(void);
-extern u16 gDebugModeIndex;
-extern Mode* gPendingMode;
-extern s32 gPendingModeArg;
-extern vu8 gModeFlags;
-extern u16 gUnk_0300749E;
-extern void (*gUnk_030074A0)(void);
-extern void (*gUnk_030074A4)(void);
+Mode* gCurrentMode;
+void (*gCurrentModeUpdate)(void);
+u16 gDebugModeIndex;
+Mode* gPendingMode;
+s32 gPendingModeArg;
+vu8 gModeFlags;
+u16 gUnk_0300749E;
+void (*gUnk_030074A0)(void);
+void (*gUnk_030074A4)(void);
 extern Mode gUnk_09EF4EC0;
 extern Mode* gDebugModes[];
 

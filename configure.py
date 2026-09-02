@@ -14,6 +14,12 @@ INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 ARCHIVE_BSS = {"us": 0x020387B8, "jp": 0x02038728, "eu": 0x02038DC8}
 BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 
+# Source units whose globals are defined in C rather than given an address in
+# symbols.txt. The linker script ends in /DISCARD/, so a unit's .bss is thrown
+# away unless it is placed here. IWRAM addresses are identical across versions,
+# so one address serves all three.
+UNIT_BSS = {"src/taskpool.o": 0x03007488}
+
 DEFAULT_VERSION = "us"
 ROM_TITLE = "KINGDOMHEART"
 ROM_MAKER_CODE = "GD"
@@ -121,6 +127,9 @@ with open(ldscript, "w") as f:
         for obj in bss_members:
             f.write(f"        {obj}(.bss);\n")
         f.write("    }\n")
+    for i, (obj, addr) in enumerate(sorted(UNIT_BSS.items(), key=lambda kv: kv[1])):
+        f.write(f"\n    .bss.{obj.rsplit('/', 1)[-1].removesuffix('.o')} {addr:#x} (NOLOAD) :\n"
+                f"    {{\n        {build_dir}/{obj}(.bss COMMON);\n    }}\n")
     f.write("\n    /DISCARD/ : { *(*); }\n}\n")
 
 out = Path("build.ninja")
