@@ -7,7 +7,20 @@ void func_0806180C(u16 a) {
 INCLUDE_ASM("unk_0806180c/func_08061824.s");
 INCLUDE_ASM("unk_0806180c/func_08061FC8.s");
 INCLUDE_ASM("unk_0806180c/func_0806250C.s");
-INCLUDE_ASM("unk_0806180c/func_0806297C.s");
+void func_0806297C(void) {
+    AnimSet0806180C* m = gUnk_09EE3FB4[gUnk_02034A78];
+
+    switch (gUnk_02034A78) {
+    case 68:
+        func_080010CC(gUnk_09EE274C, 69);
+        break;
+    case 83:
+    case 84:
+        gUnk_02039BB0.unk_0D = 5;
+        func_080010CC(gUnk_09ECEB40, m->unk_20);
+        break;
+    }
+}
 u8 func_080629CC(void) {
     switch (gUnk_02034A78) {
     case 0x44:
@@ -58,7 +71,22 @@ void func_08062D3C(void) {
         break;
     }
 }
-INCLUDE_ASM("unk_0806180c/func_08062D64.s");
+void func_08062D64(void) {
+    u8 i;
+    u8 j;
+
+    gUnk_02034A80 = EwramAlloc(0xF78);
+    gUnk_02034A90 = 0;
+    for (i = 0; i < 45; i++) {
+        gUnk_02034A80[i].unk_00 = NULL;
+        gUnk_02034A80[i].unk_04 = NULL;
+        gUnk_02034A80[i].unk_48 = 0;
+        gUnk_02034A80[i].unk_50 = 0;
+        for (j = 0; j < 16; j++) {
+            gUnk_02034A80[i].unk_08[j] = 0;
+        }
+    }
+}
 INCLUDE_ASM("unk_0806180c/func_08062DC8.s");
 INCLUDE_ASM("unk_0806180c/func_08062F18.s");
 INCLUDE_ASM("unk_0806180c/func_08063034.s");
@@ -498,7 +526,27 @@ void func_0806C34C(void) {
 }
 
 INCLUDE_ASM("unk_0806180c/_0806C3A0.s");
-INCLUDE_ASM("unk_0806180c/func_0806C42C.s");
+u16 func_0806C42C(s16 v, u16* out) {
+    u8 buf[8];
+    u8* p;
+    s32 i;
+
+    buf[0] = (v & 0xF000) >> 12;
+    buf[1] = (v & 0x0F00) >> 8;
+    buf[2] = (v & 0x00F0) >> 4;
+    buf[3] = v & 0xF;
+    buf[4] = 0;
+    p = buf;
+    for (i = 0; i < 4; i++) {
+        if (*p <= 9) {
+            *p += 0x30;
+        } else {
+            *p += 0x37;
+        }
+        p++;
+    }
+    return func_0806692C(buf, out);
+}
 INCLUDE_ASM("unk_0806180c/func_0806C490.s");
 INCLUDE_ASM("unk_0806180c/func_0806C81C.s");
 INCLUDE_ASM("unk_0806180c/func_0806CBAC.s");
@@ -519,7 +567,19 @@ void func_0806D288(ContinueWork* p) {
     DrawSprite(p->unk_50 >> 8, p->unk_54 >> 8, p->unk_18, p->unk_00, p->unk_04, 0, 4, 100);
     DrawSprite(120, 120, p->unk_1C, p->unk_08, p->unk_0C, 0, 0, 100);
 }
-INCLUDE_ASM("unk_0806180c/func_0806D2D0.s");
+void func_0806D2D0(ContinueWork* p) {
+    DisableBg(0);
+    DisableBg(2);
+    LoadBgMap(0, gUnk_08125E24, 0x800);
+    LoadBgMap(2, gUnk_08125E24, 0x800);
+    ReleaseObjTiles(p->unk_08);
+    ReleaseObjPalette(p->unk_0C);
+    ReleaseObjPalette(p->unk_04);
+    ReleaseObjTiles(p->unk_00);
+    ReleaseObjTiles(p->unk_10);
+    ReleaseObjPalette(p->unk_14);
+    gBldCnt = 0;
+}
 INCLUDE_ASM("unk_0806180c/func_0806D334.s");
 INCLUDE_ASM("unk_0806180c/func_0806D40C.s");
 u8 func_0806D808(void) {
