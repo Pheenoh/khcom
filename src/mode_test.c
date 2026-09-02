@@ -194,7 +194,29 @@ void func_0805F7C8(u8 a) {
     gUnk_02034A2C = (u8*)GetBgCharBase(0) + (a << 12);
 }
 
-INCLUDE_ASM("mode_test/func_0805F7E8.s");
+void func_0805F7E8(u8 x, u8 y, u16* s) {
+    u8 i;
+    u16 c;
+
+    for (i = 0; i <= 59 && (u8)*s != 0; i++, s++) {
+        c = *s;
+        c = (u8)(c >> 8) | (c << 8);
+
+        switch (c & 0xFF00) {
+            case 0x8100:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = c + 0x7EC0;
+                break;
+            case 0x8200:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = (c + 0x7DC0) | 0x400;
+                break;
+        }
+    }
+
+    gUnk_02034A1C[gUnk_02034A20].unk_7A = x;
+    gUnk_02034A1C[gUnk_02034A20].unk_7B = y;
+    gUnk_02034A1C[gUnk_02034A20].unk_7D = i;
+    gUnk_02034A20++;
+}
 
 u8 func_0805F8F0(u8 a) {
     return a * 4 % 32;
