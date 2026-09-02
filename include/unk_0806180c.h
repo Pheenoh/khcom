@@ -4,6 +4,7 @@
 #include "types.h"
 #include "text_types.h"
 #include "malloc.h"
+#include "taskpool.h"
 
 
 #define NULL ((void*)0)
@@ -16,11 +17,25 @@ typedef struct Ent0806E9BC {
 
 typedef struct Work0806180C {
     Ent0806E9BC* unk_000;
-    u8 unk_004[0x24];
-    u8 unk_028[0x174];
+    u8 unk_004[0xC];
+    TaskPool unk_010;
+    u8 unk_024[4];
+    u8 unk_028[4];
+    s32 unk_02C;
+    s32 unk_030;
+    s32 unk_034;
+    u8 unk_038[0x150];
+    s32 unk_188;
+    s32 unk_18C;
+    s32 unk_190;
+    s32 unk_194;
+    s32 unk_198;
     s32 unk_19C;
     u32 unk_1A0;
-    u8 unk_1A4[7];
+    u8 unk_1A4[4];
+    u8 unk_1A8;
+    u8 unk_1A9;
+    u8 unk_1AA;
     u8 unk_1AB;
 } Work0806180C;
 
@@ -154,6 +169,30 @@ u8 func_0809D280(u8* s);
 u16 func_0806692C(u8* s, u16* out);
 u16 func_08066AF8(s32 v, u16* out);
 void func_0801CD74(void* a, u16 b);
+void TaskPoolUpdate(TaskPool* a);
+void func_08000F8C(void* a, void* b);
+u8 _0806E9DC(Work0806180C* p, void* a);
+u8 func_0806EA28(Work0806180C* p, void* a);
+u8 func_0806EB94(Work0806180C* p, void* a);
+u8 func_0806EBE0(Work0806180C* p, void* a);
+u8 func_0806ECE0(Work0806180C* p, void* a);
+u8 func_0806ED2C(Work0806180C* p, void* a);
+u8 func_0806EE20(Work0806180C* p, void* a);
+u8 func_0806EE6C(Work0806180C* p, void* a);
+u8 func_0806EF40(Work0806180C* p, void* a);
+u8 func_0806F02C(Work0806180C* p, void* a);
+u8 func_0806F114(Work0806180C* p, void* a);
+u8 func_0806F204(Work0806180C* p, void* a);
+u8 func_0806F2EC(Work0806180C* p, void* a);
+u8 func_0806F3A8(Work0806180C* p, void* a);
+u8 func_0806F47C(Work0806180C* p, void* a);
+u8 func_0806F53C(Work0806180C* p, void* a);
+u8 func_0806F610(Work0806180C* p, void* a);
+u8 func_0806F64C(Work0806180C* p, void* a);
+u8 func_0806F734(Work0806180C* p, void* a);
+u8 func_0806F770(Work0806180C* p, void* a);
+u8 func_0806F858(Work0806180C* p, void* a);
+u8 func_0806F898(Work0806180C* p, void* a);
 void func_08065940(void);
 void func_080658B8(u8 n);
 void func_0806C34C(void);
