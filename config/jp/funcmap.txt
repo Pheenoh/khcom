@@ -397,7 +397,10 @@ mode_debflag_1	0x0800c2e0	316	0x0800c2e0	named
 mode_debflag_2	0x0800c41c	12	0x0800c41c	named
 mode_vsbattle_0	0x0800c428	464	0x0800c428	named
 mode_vsbattle_1	0x0800c5f8	128	0x0800c5f8	named
-mode_vsbattle_2	0x0800c678	256	0x0800c678	named
+mode_vsbattle_2	0x0800c678	56	0x0800c678	named
+func_0800C6B0	0x0800c6b0	4	0x0800c6b0	body
+func_0800C6B4	0x0800c6b4	4	0x0800c6b4	body
+func_0800C6B8	0x0800c6b8	192	0x0800c6b8	global
 func_0800C778	0x0800c778	520	0x0800c778	global
 func_0800C980	0x0800c980	460	0x0800c980	global
 func_0800CB4C	0x0800cb4c	44	0x0800cb4c	global
