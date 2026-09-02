@@ -515,7 +515,10 @@ void func_0806CD30(s32 a) {
 INCLUDE_ASM("unk_0806180c/func_0806CD60.s");
 INCLUDE_ASM("unk_0806180c/func_0806CF04.s");
 INCLUDE_ASM("unk_0806180c/func_0806D0A8.s");
-INCLUDE_ASM("unk_0806180c/func_0806D288.s");
+void func_0806D288(ContinueWork* p) {
+    DrawSprite(p->unk_50 >> 8, p->unk_54 >> 8, p->unk_18, p->unk_00, p->unk_04, 0, 4, 100);
+    DrawSprite(120, 120, p->unk_1C, p->unk_08, p->unk_0C, 0, 0, 100);
+}
 INCLUDE_ASM("unk_0806180c/func_0806D2D0.s");
 INCLUDE_ASM("unk_0806180c/func_0806D334.s");
 INCLUDE_ASM("unk_0806180c/func_0806D40C.s");
@@ -549,7 +552,14 @@ void func_0806DA18(EventSeqWork* p) {
 INCLUDE_ASM("unk_0806180c/func_0806DA34.s");
 INCLUDE_ASM("unk_0806180c/func_0806E184.s");
 INCLUDE_ASM("unk_0806180c/func_0806E400.s");
-INCLUDE_ASM("unk_0806180c/func_0806E534.s");
+void func_0806E534(Work0806180C* p) {
+    TaskPoolDestroy(&p->unk_010);
+    if (p->unk_1B3 != 0) {
+        TaskPoolDestroy(&gUnk_02039B84->unk_2C);
+        TaskPoolDestroy(&gUnk_02039B84->unk_40);
+        EwramFree(gUnk_02039B84);
+    }
+}
 INCLUDE_ASM("unk_0806180c/func_0806E570.s");
 INCLUDE_ASM("unk_0806180c/func_0806E7A8.s");
 
@@ -1417,7 +1427,16 @@ INCLUDE_ASM("unk_0806180c/func_08072C34.s");
 INCLUDE_ASM("unk_0806180c/func_08072D98.s");
 INCLUDE_ASM("unk_0806180c/func_08072EAC.s");
 INCLUDE_ASM("unk_0806180c/func_08073170.s");
-INCLUDE_ASM("unk_0806180c/func_08073238.s");
+void func_08073238(MsgWinWork* p) {
+    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+
+    if (e->unk_00 != 62) {
+        func_080658B8(p->unk_24);
+    } else {
+        _0806C3A0(p->unk_24, p->unk_14);
+    }
+    TaskPoolDraw(p);
+}
 void func_08073274(MsgWinWork* p) {
     if (p->unk_14 != NULL) {
         ReleaseObjPalette(p->unk_14);
@@ -1470,14 +1489,34 @@ void func_08073E74(Work08073E34* p) {
 }
 INCLUDE_ASM("unk_0806180c/func_08073E7C.s");
 INCLUDE_ASM("unk_0806180c/func_08073F08.s");
-INCLUDE_ASM("unk_0806180c/func_08073F78.s");
+u8 func_08073F78(MsgWaitWork* p) {
+    u8 r;
+
+    p->unk_BC = AnimUpdate(p->unk_DC);
+    p->unk_102++;
+    if (p->unk_102 <= 15) {
+        r = 1;
+    } else {
+        gUnk_02039DC8->unk_7D = 0;
+        r = 0;
+    }
+    return r;
+}
 INCLUDE_ASM("unk_0806180c/func_08073FB8.s");
 INCLUDE_ASM("unk_0806180c/func_08074040.s");
 INCLUDE_ASM("unk_0806180c/func_08074068.s");
 INCLUDE_ASM("unk_0806180c/func_0807420C.s");
 INCLUDE_ASM("unk_0806180c/func_08074330.s");
 INCLUDE_ASM("unk_0806180c/func_08074380.s");
-INCLUDE_ASM("unk_0806180c/func_080744C8.s");
+void func_080744C8(MsgWaitYesNoWork* p) {
+    ReleaseObjTiles(p->unk_04);
+    ReleaseObjTiles(p->unk_0C);
+    ReleaseObjPalette(p->unk_10);
+    ReleaseObjPalette(p->unk_08);
+    ReleaseObjPalette(p->unk_18);
+    func_08065AE0(p->unk_1C, 10);
+    func_08065AE0(p->unk_6C, 10);
+}
 INCLUDE_ASM("unk_0806180c/func_08074504.s");
 void func_08074564(void) {
     gUnk_03007FF8 |= 2;
