@@ -345,7 +345,52 @@ void func_08102DC8(void) {
         TaskPoolDestroy(&gUnk_02035A70[i]);
     }
 }
-INCLUDE_ASM("mode_ms/func_08102F30.s");
+void func_08102F30(void) {
+    s16 i;
+    s32 affine;
+    void* obj;
+    s32 v;
+    void* anim;
+
+    anim = AnimUpdate(&gUnk_02035A58);
+
+    for (i = 0; i < 5; i++) {
+        if (gUnk_020358C8[i].unk_47 == 0) {
+            v = gUnk_020358C8[i].unk_34;
+            affine = AllocObjAffine(0, v, v, 0);
+            obj = AnimUpdate(&gUnk_020358C8[i].unk_18);
+        } else {
+            v = gUnk_020358C8[i].unk_34 * -gSineTable[(gUnk_020358C8[i].unk_30 & 0xFF) + 0x40] >> 8;
+            affine = AllocObjAffine(0, v, gUnk_020358C8[i].unk_34, 0);
+            obj = gUnk_020358C8[i].unk_14;
+        }
+
+        if (v != 0) {
+            DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, obj, gUnk_020358C8[i].unk_10, gUnk_020358C8[i].unk_0C, affine, 0, 0x50);
+            if (gUnk_020358C8[i].unk_47 != 0) {
+                DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, gUnk_020358C8[i].unk_08, gUnk_020358C8[i].unk_04, gUnk_020358C8[i].unk_00, affine, 0, 0x58);
+                if (gUnk_020358C8[i].unk_46 != 0) {
+                    DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, gUnk_09EE9894[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_20], gUnk_02035A3C, gUnk_02035A38, affine, 0, 0x48);
+                    DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, anim, gUnk_02035A54, gUnk_02035A30, affine, 0, 0x40);
+                } else {
+                    DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, gUnk_09EE981C[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_20], gUnk_02035A34, gUnk_02035A30, affine, 0, 0x48);
+                }
+            }
+        }
+
+        if (gUnk_020358C8[i].unk_38 == 9) {
+            func_080664D8(0x30, 0x63, gUnk_02035A44, gUnk_02035A40, 0, gUnk_02035A48);
+            func_080664D8(0x31, 0x72, gUnk_02035A4C, gUnk_02035AE0, 0, gUnk_02035A50);
+            func_0805F1C0(&gUnk_02035AD4, gUnk_020358C8[gUnk_02035B62].unk_3C - 0x1000);
+            func_0805F1C0(&gUnk_02035AD8, gUnk_020358C8[gUnk_02035B62].unk_40 - 0x2000);
+            DrawSprite(gUnk_02035AD4 >> 8, gUnk_02035AD8 >> 8, AnimUpdate(&gUnk_02035AE8), gUnk_02035ADC, gUnk_02035AE0, 0, 0, 0);
+        }
+    }
+
+    for (i = 0; i < 5; i++) {
+        TaskPoolDraw(&gUnk_02035A70[i]);
+    }
+}
 INCLUDE_ASM("mode_ms/func_0810329C.s");
 void func_08103CD8(s16 a) {
     s32 i;
