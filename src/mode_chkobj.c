@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_chkobj.h"
+#include "gba/keys.h"
 
 void mode_chkobj_0(void) {
     func_08004DB0();
@@ -40,12 +41,12 @@ void mode_chkobj_1(void) {
             AnimStart(&gUnk_0203489C->unk_24, gUnk_0203489C->unk_16, 0);
         }
 
-        if (GetKeysRepeat() & 0x30) {
-            if (GetKeysRepeat() & 0x20) {
+        if (GetKeysRepeat() & (DPAD_RIGHT | DPAD_LEFT)) {
+            if (GetKeysRepeat() & DPAD_LEFT) {
                 gUnk_0203489C->unk_16--;
             }
 
-            if (GetKeysRepeat() & 0x10) {
+            if (GetKeysRepeat() & DPAD_RIGHT) {
                 gUnk_0203489C->unk_16++;
             }
 
@@ -96,23 +97,23 @@ void mode_chkobj_1(void) {
         keys = GetKeysHeld() & 4;
 
         if (keys != 0) {
-            if (GetKeysHeld() & 0x200) {
+            if (GetKeysHeld() & L_BUTTON) {
                 gUnk_0203489C->unk_42--;
             }
 
-            if (GetKeysHeld() & 0x100) {
+            if (GetKeysHeld() & R_BUTTON) {
                 gUnk_0203489C->unk_42++;
             }
-        } else if (GetKeysRepeat() & 0x300) {
+        } else if (GetKeysRepeat() & (L_BUTTON | R_BUTTON)) {
             gUnk_0203489C->unk_46 = 0;
             gUnk_0203489C->unk_40 = 0;
             gUnk_0203489C->unk_44 = 0;
 
-            if (GetKeysRepeat() & 0x200) {
+            if (GetKeysRepeat() & L_BUTTON) {
                 gUnk_0203489C->unk_18--;
             }
 
-            if (GetKeysRepeat() & 0x100) {
+            if (GetKeysRepeat() & R_BUTTON) {
                 gUnk_0203489C->unk_18++;
             }
 
@@ -133,9 +134,9 @@ void mode_chkobj_1(void) {
                       abs(gSineTable[(gUnk_0203489C->unk_42 / 2) & 0xFF] * 5 >> 6),
                       abs(gSineTable[(gUnk_0203489C->unk_42 / 4) & 0xFF] * 5 >> 6));
 
-        if (GetKeysHeld() & 0x40) {
+        if (GetKeysHeld() & DPAD_UP) {
             gUnk_0203489C->unk_46--;
-        } else if (GetKeysHeld() & 0x80) {
+        } else if (GetKeysHeld() & DPAD_DOWN) {
             gUnk_0203489C->unk_46++;
         }
 

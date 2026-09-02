@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "tutorial.h"
+#include "gba/keys.h"
 
 void task_tutorial_0(TutorialWork* work, s32 arg1) {
     gBg0Cnt = 0;
@@ -287,7 +288,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
 
         if (work->unk_010 <= 0) {
-            if (GetKeysPressed() & 0x300) {
+            if (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
                 work->unk_010 = 10;
                 work->unk_00E++;
             }

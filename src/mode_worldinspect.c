@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_worldinspect.h"
+#include "gba/keys.h"
 
 INCLUDE_ASM("mode_worldinspect/mode_worldinspect_0.s");
 
@@ -162,8 +163,8 @@ void func_08100670(s16 a, u8* b, void* c) {
 u16 func_0810068C(void) {
     s32 keys;
 
-    keys = GetKeysPressed() & 0xF;
-    keys |= GetKeysRepeat() & 0x3F0;
+    keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
+    keys |= GetKeysRepeat() & (DPAD_ANY | L_BUTTON | R_BUTTON);
     return keys;
 }
 

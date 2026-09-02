@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_ms2.h"
+#include "gba/keys.h"
 
 #ifdef NON_MATCHING
 void mode_ms_charge_0(void) {
@@ -639,8 +640,8 @@ INCLUDE_ASM("mode_ms2/func_08107B84.s");
 u16 func_08107D24(void) {
     u16 keys;
 
-    keys = GetKeysPressed() & 0xF;
-    keys |= GetKeysRepeat() & 0x3F0;
+    keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
+    keys |= GetKeysRepeat() & (DPAD_ANY | L_BUTTON | R_BUTTON);
     return keys;
 }
 
