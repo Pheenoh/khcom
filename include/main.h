@@ -33,4 +33,7 @@ void func_08000F30(TaskPool* a);
 void func_08000F8C(u8* p, u32 v);
 s32 func_08000F90(void);
 
+void InitSystem(void);
+void InitIntrTable(void);
+
 #endif /* GUARD_MAIN_H */
