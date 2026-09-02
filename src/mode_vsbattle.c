@@ -137,7 +137,70 @@ void func_0800C6B8(void) {
     }
 }
 
-INCLUDE_ASM("mode_vsbattle/func_0800C778.s");
+void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
+    VsActor* actor = &work->unk_03C;
+    u16 t;
+
+    func_0801B37C(actor, &def->unk_1C, obj->unk_00, obj->unk_04, obj->unk_08);
+    actor->unk_CE = def->unk_12;
+    actor->unk_D0 = def->unk_14;
+    actor->unk_D2 = def->unk_16;
+    actor->unk_B2 = def->unk_18;
+
+    if (gUnk_02039B84->unk_07C->unk_04 < actor->unk_04) {
+        actor->unk_34 |= 4;
+    }
+
+    actor->unk_34 |= 0x300;
+    t = gUnk_09EDA4EC[actor->unk_00];
+    work->unk_15C = def;
+    work->unk_000 = AllocObjTiles(t * 32, 0);
+    work->unk_004 = LoadObjPalette(def->unk_00, 32);
+    work->unk_008 = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->unk_150 = 0;
+    work->unk_14C = 11;
+    work->unk_154 = 0;
+    work->unk_156 = 0;
+    work->unk_158 = 0;
+    work->unk_15A = 1;
+    work->unk_160 = 0;
+    work->unk_164 = def->unk_08;
+    work->unk_168 = 0;
+    actor->unk_108 = 0;
+    actor->unk_10C = 0;
+    work->unk_162 = 0;
+
+    if (actor->unk_34 & 0x20000) {
+        work->unk_16C = 281;
+    } else {
+        work->unk_16C = 0x100;
+    }
+
+    work->unk_170 = 0;
+    work->unk_174 = 0;
+    work->unk_178 = 0;
+    AnimInit(&work->unk_010, 0, 0);
+    func_08019068(work->unk_15C->unk_04, &work->unk_010, 0, 1, work->unk_000);
+    work->unk_00C = AnimGetGfx(&work->unk_010);
+    TaskPoolInit(&work->unk_028, 3);
+
+    if (!(def->unk_1A & 1)) {
+        TaskCreate(&work->unk_028, &gUnk_09EDAE88, actor);
+    }
+
+    TaskCreate(&work->unk_028, &gUnk_09EDB3F8, actor);
+
+    if (def->unk_1A & 2) {
+        work->unk_17C = 0x100;
+        work->unk_180 = 0x100;
+    } else {
+        work->unk_17C = 0x80;
+        work->unk_180 = 0x80;
+    }
+
+    gUnk_02039B84->unk_0EC += t;
+    gUnk_02039B84->unk_120--;
+}
 INCLUDE_ASM("mode_vsbattle/func_0800C980.s");
 
 void func_0800CB4C(EmyWork* work) {
