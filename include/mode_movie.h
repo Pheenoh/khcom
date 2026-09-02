@@ -23,7 +23,7 @@ extern s16 gUnk_0203495A;
 extern s16 gUnk_0203495C;
 extern s16 gUnk_0203495E;
 extern s16 gUnk_02034960;
-extern void* gUnk_03007484;
+extern void* gVBlankHandlerOverride;
 extern u16 gDispCnt;
 extern u8 gUnk_0815C3EC[];
 extern u8 gUnk_084E0F34[];
