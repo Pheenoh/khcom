@@ -858,7 +858,42 @@ void func_080E5B90(UnkStruct_080E5B90* p, UnkStruct_0984BC9C* q) {
     p->unk_00 = q;
     p->unk_04 = 0;
 }
-INCLUDE_ASM("unk_080dfebc/func_080E5C00.s");
+void func_080E5C00(UnkStruct_080E5B90* w, u8 a, u8 b) {
+    const u8* t;
+    UnkStruct_080DEE18* e;
+    UnkStruct_0984BC9C* d;
+    u8 ok;
+
+    t = gUnk_0984D134[gUnk_0203C7AC->unk_0D];
+    e = func_080DEE18(gUnk_0203C590[6]);
+    if (gUnk_02034F40 >= t[1]) {
+        return;
+    }
+    if (e->unk_0B - gUnk_02034F40 <= 0) {
+        return;
+    }
+    d = gUnk_09EF83F8[a];
+    switch (b) {
+    case 2:
+        ok = func_080E59D8(w);
+        break;
+    case 3:
+        ok = func_080E5AC8(w);
+        break;
+    case 0:
+    default:
+        ok = func_080E5968(w);
+        w->unk_18 = GetAngle(w->unk_08.unk_00, w->unk_08.unk_04, gUnk_02039BA0->unk_18, gUnk_02039BA0->unk_1C);
+        break;
+    }
+    if (ok) {
+        gUnk_02034F48[gUnk_02034F40] = w->unk_08;
+        w->unk_1C = 0;
+        w->unk_00 = d;
+        w->unk_04 = 0;
+        TaskCreate(gUnk_02039BA0->unk_B4, d->unk_10, w);
+    }
+}
 void func_080E5CD4(UnkStruct_080E590C* p) {
     switch (gUnk_0203C7AC->unk_0D) {
     case 4:
@@ -1955,7 +1990,31 @@ void func_080EE62C(u16 v) {
     }
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080EE6AC.s");
+void func_080EE6AC(u32 t) {
+    u16 d[6];
+    s32 off;
+    u16* q;
+    s32 i;
+    u32 v;
+
+    v = t / 3600;
+    d[0] = v / 10;
+    d[1] = v - d[0] * 10;
+    t -= v * 3600;
+    v = t / 60;
+    d[2] = v / 10;
+    d[3] = v - d[2] * 10;
+    t -= v * 60;
+    d[4] = t / 10;
+    d[5] = t - d[4] * 10;
+    off = 128;
+    q = d;
+    for (i = 0; i < 6; i++) {
+        RequestDma3Copy((void*)&gUnk_09966064[*q * 32], (u8*)GetBgCharBase(0) + off, 0x20);
+        off += 0x20;
+        q++;
+    }
+}
 INCLUDE_ASM("unk_080dfebc/func_080EE760.s");
 INCLUDE_ASM("unk_080dfebc/func_080EE7B0.s");
 
