@@ -14,7 +14,8 @@ typedef struct UnkStruct_099932D4 {
     u16 unk_0C;
     u8 unk_0E[0x2];
     void* unk_10;
-    u8 unk_14[0x4];
+    u16 unk_14;
+    u16 unk_16;
 } UnkStruct_099932D4;
 
 typedef struct UnkStruct_02039BB0 {
@@ -43,8 +44,8 @@ typedef struct UnkStruct_099931E4 {
     s16 unk_02;
     s16 unk_04;
     s16 unk_06;
-    u16 unk_08;
-    u16 unk_0A;
+    s16 unk_08;
+    s16 unk_0A;
     void* unk_0C;
     u16 unk_10;
     s16 unk_12;
@@ -72,6 +73,7 @@ void func_08102984(s16 a);
 void func_08103CD8(s16 a);
 void mode_ms_top_2(void);
 void func_08102DC8(void);
+void func_08104404(void);
 void mode_ms_top_0(u32 a);
 void mode_ms_shop_0(void);
 void func_081041B4(void);
@@ -88,6 +90,10 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
 void m4aSongNumStart(u16 n);
+void func_0805F1C0(s32* p, s32 v);
+void* AnimUpdate(AnimState* a);
+void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
+void func_08102F30(void);
 void DisableBg(s32 bg);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
@@ -202,6 +208,8 @@ extern void* gUnk_02035BD0[];
 extern void* gUnk_02035BE0[];
 extern AnimState gUnk_02035BB8;
 extern void* gUnk_02035BF0[];
+extern s32 gUnk_02035C04;
+extern s32 gUnk_02035C08;
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern UnkStruct_099932D4 gUnk_099932D4[];
 extern u8 gUnk_09A3D87C[];
