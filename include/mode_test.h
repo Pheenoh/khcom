@@ -37,6 +37,13 @@ typedef struct UnkStruct_02039BA0 {
     u32 unk_70;
 } UnkStruct_02039BA0;
 
+typedef struct UnkStruct_02039DC8 {
+    u8 unk_00[0x7A];
+    u8 unk_7A;
+    u8 unk_7B;
+    u8 unk_7C[0x02];
+} UnkStruct_02039DC8;
+
 typedef struct UnkStruct_02039DC4 {
     s32 unk_00;
     s32 unk_04;
@@ -154,6 +161,8 @@ void func_0801CB0C(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
 void func_080E04EC(void);
+void func_08061824(void);
+u8 func_080A42C8(void);
 FldObj* func_08000C8C(ListNode* node);
 FldObj* func_08000CD4(ListNode* node);
 
@@ -191,9 +200,11 @@ void func_08060F64(void);
 void task_lockon_0(LockonWork* w);
 s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list);
 u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d);
+void func_0806119C(void);
 void func_080617E8(void);
 void task_lockon_3(LockonWork* w);
 void func_0805F7E8(u8 x, u8 y, u16* s);
+void func_08060470(u8 bg);
 void func_08060598(void);
 void func_0806098C(void);
 void func_080609A0(void);
@@ -210,7 +221,10 @@ extern s32 gUnk_02034A28;
 extern void* gUnk_02034A2C;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern UnkStruct_02039DC4* gUnk_02039DC4;
-extern void* gUnk_02039DC8;
+extern UnkStruct_02039DC8* gUnk_02039DC8;
+extern u8 gUnk_02034A74;
+extern u8 gUnk_02034A7C;
+extern Mode gUnk_09EE47AC;
 extern TaskPool gUnk_02034A60;
 extern const s16 gSineTable[];
 extern TaskPool gUnk_02034A30;
@@ -231,6 +245,7 @@ extern TaskDesc gUnk_09EE8EF0;
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_090D4DD0[];
 extern u8 gUnk_090D7C84[];
+extern u8 gUnk_0941DD38[];
 extern u8 gUnk_096148B8[];
 extern void* gUnk_09EEC600[];
 extern u8 gUnk_09EEC660[];

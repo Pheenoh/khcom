@@ -467,7 +467,36 @@ void func_08060F64(void) {
     TaskPoolDestroy(&gUnk_02034A48);
 }
 INCLUDE_ASM("mode_test/func_08060F74.s");
-INCLUDE_ASM("mode_test/func_0806119C.s");
+void func_0806119C(void) {
+    if (gUnk_02039DC8 == 0) {
+        func_080010CC(&gUnk_09EE47AC, 0);
+    }
+
+    if (gUnk_02034A74 == 0) {
+        TaskPoolUpdate(&gUnk_02034A60);
+    } else if (GetKeysRepeat() & 4) {
+        TaskPoolUpdate(&gUnk_02034A60);
+    }
+
+    TaskPoolDraw(&gUnk_02034A60);
+
+    if (gUnk_02039DC8->unk_7A == 0) {
+        if (gUnk_02034A7C == 0) {
+            func_08061824();
+            gUnk_02034A7C = 1;
+        }
+
+        if (gUnk_02034A7C == 1) {
+            if (func_080A42C8() == 0) {
+                func_080010CC(&gUnk_09EE47AC, 0);
+            }
+        }
+    }
+
+    if (GetKeysPressed() & 8) {
+        gUnk_02034A74 = 0;
+    }
+}
 INCLUDE_ASM("mode_test/func_08061248.s");
 void func_080617E8(void) {
     TaskPoolDestroy(&gUnk_02034A60);
