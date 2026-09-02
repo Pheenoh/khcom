@@ -824,7 +824,7 @@ void func_08048A68(FrdPanWork* work) {
     FrdBody* body;
 
     body = &work->unk_020;
-    body->unk_0C += ((work->unk_164 + (gSineTable[(work->unk_14E * 2) & 0xFF] << 4)) - body->unk_0C) >> 2;
+    body->unk_0C += ((work->unk_164 + (gSineTable[((u16)work->unk_14E * 2) & 0xFF] << 4)) - body->unk_0C) >> 2;
 }
 
 INCLUDE_ASM("frd/task_frd_pan_1.s");
