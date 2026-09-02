@@ -17,11 +17,33 @@ extern u32 gUnk_02039820;
 extern u16 gUnk_03006C00;
 
 void func_080C55DC(void);
+Task* func_08000C54(ListNode* node, TaskPool* a);
+void func_08000DE8(TaskPool* a, Task* t);
+u8 func_08000F48(Task* t);
+u8 func_08000F60(Task* t, const char* name);
+const char* func_08000F84(Task* t);
 void func_08001100(void);
 
 
-INCLUDE_ASM("taskpool/TaskDestroy.s");
-INCLUDE_ASM("taskpool/func_08000DE8.s");
+Task* TaskDestroy(TaskPool* a, Task* t) {
+    if (t->unk_00->unk_10 != 0) {
+        ((void (*)(void*))t->unk_00->unk_10)(t->unk_04);
+    }
+
+    EwramFree(t->unk_04);
+
+    return func_08000C54(&t->unk_0C, a);
+}
+
+void func_08000DE8(TaskPool* a, Task* t) {
+    if (t->unk_00->unk_10 != 0) {
+        ((void (*)(void*))t->unk_00->unk_10)(t->unk_04);
+    }
+
+    EwramFree(t->unk_04);
+
+    func_08000C54(&t->unk_0C, a);
+}
 
 Task* TaskCreate(void* a, TaskDesc* desc, void* arg) {
     Task* task;
@@ -53,7 +75,23 @@ Task* TaskCreate(void* a, TaskDesc* desc, void* arg) {
     return task;
 }
 
-INCLUDE_ASM("taskpool/TaskPoolInit.s");
+void TaskPoolInit(TaskPool* a, s32 count) {
+    Task* t;
+    s32 i;
+
+    a->unk_10 = EwramAlloc(count * sizeof(Task));
+
+    if (a->unk_10 == 0) {
+        return;
+    }
+
+    func_08000BA4(a);
+
+    for (i = 0; i < count; i++) {
+        t = &((Task*)a->unk_10)[i];
+        func_08000BB0(&t->unk_0C, a, t);
+    }
+}
 
 void TaskPoolUpdate(TaskPool* a) {
     Task* t;
@@ -107,9 +145,25 @@ void func_08000F30(TaskPool* a) {
     }
 }
 
-INCLUDE_ASM("taskpool/func_08000F48.s");
-INCLUDE_ASM("taskpool/func_08000F60.s");
-INCLUDE_ASM("taskpool/func_08000F84.s");
+u8 func_08000F48(Task* t) {
+    if (t == 0 || (t->unk_0C.unk_0C & 1) == 0) {
+        return 0;
+    }
+
+    return 1;
+}
+
+u8 func_08000F60(Task* t, const char* name) {
+    if (t == 0 || name == 0 || t->unk_00->name != name || (t->unk_0C.unk_0C & 1) == 0) {
+        return 0;
+    }
+
+    return 1;
+}
+
+const char* func_08000F84(Task* t) {
+    return t->unk_00->name;
+}
 
 void func_08000F8C(u8* p, u32 v) {
     *(u32*)(p + 32) = v;

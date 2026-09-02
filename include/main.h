@@ -22,7 +22,7 @@ Task* func_08000CD4(ListNode* node);
 Task* func_08000D0C(void);
 Task* TaskDestroy(TaskPool* a, Task* t);
 void func_08000BA4(TaskPool* a);
-void func_08000BB0(void* a, void* b);
+void func_08000BB0(ListNode* node, TaskPool* pool, void* owner);
 void func_08000BC8(void* a, void* b);
 Task* TaskCreate(void* a, TaskDesc* desc, void* arg);
 void TaskPoolInit(TaskPool* a, s32 count);
