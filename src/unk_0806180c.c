@@ -82,11 +82,72 @@ void func_08065940(void) {
     EwramFree(gUnk_02034A84);
 }
 
-INCLUDE_ASM("unk_0806180c/_08065994.s");
-INCLUDE_ASM("unk_0806180c/func_080659BC.s");
-INCLUDE_ASM("unk_0806180c/func_08065A30.s");
-INCLUDE_ASM("unk_0806180c/func_08065A44.s");
-INCLUDE_ASM("unk_0806180c/func_08065A70.s");
+void _08065994(void) {
+    u8 i;
+
+    for (i = 0; i < 128; i++) {
+        gUnk_02034A84[i].unk_15 = 0;
+    }
+}
+u16 func_080659BC(u8 v, TextSlot* out) {
+    u8 buf[8];
+    u8 q;
+
+    q = v / 10;
+    if (q != 0) {
+        buf[1] = v / 10;
+        buf[3] = v - buf[1] * 10;
+        buf[0] = 0x82;
+        buf[1] += 0x4F;
+        buf[2] = 0x82;
+        buf[3] += 0x4F;
+        buf[4] = 0;
+    } else {
+        buf[1] = v + 0x4F;
+        buf[0] = 0x82;
+        buf[2] = 0;
+    }
+    return func_080660C0(buf, out);
+}
+void func_08065A30(void** p, u8 n) {
+    s32 i;
+
+    for (i = 0; i < n; i++) {
+        *p++ = NULL;
+    }
+}
+void func_08065A44(void** p, u8 n) {
+    s32 i;
+
+    for (i = 0; i < n; i++) {
+        if (*p != NULL) {
+            ReleaseObjTiles(*p);
+            *p = NULL;
+        }
+        p++;
+    }
+}
+u16 func_08065A70(u8 v, TextSlot* out) {
+    u16 buf[4];
+    u16* p;
+    u8 q;
+    u16 c;
+    u16 end;
+
+    if (v > 9) {
+        p = buf;
+        q = v / 10;
+        c = q + '0';
+        end = 0;
+        p[0] = c;
+        buf[1] = v - q * 10 + '0';
+        buf[2] = end;
+    } else {
+        buf[0] = v + '0';
+        buf[1] = 0;
+    }
+    return func_08065B6C(buf, out);
+}
 
 void func_08065ACC(TextSlot* p, s32 n) {
     s32 i;
@@ -612,8 +673,12 @@ void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c) {
     p->unk_04 = c;
 }
 
-INCLUDE_ASM("unk_0806180c/_08073E6C.s");
-INCLUDE_ASM("unk_0806180c/func_08073E74.s");
+void _08073E6C(Work08073E34* p) {
+    p->unk_02 = 1;
+}
+void func_08073E74(Work08073E34* p) {
+    p->unk_02 = 2;
+}
 INCLUDE_ASM("unk_0806180c/func_08073E7C.s");
 INCLUDE_ASM("unk_0806180c/func_08073F08.s");
 INCLUDE_ASM("unk_0806180c/func_08073F78.s");
@@ -637,8 +702,10 @@ void func_080746D8(void) {
 }
 
 INCLUDE_ASM("unk_0806180c/_080746F8.s");
-INCLUDE_ASM("unk_0806180c/func_08074CF8.s");
-INCLUDE_ASM("unk_0806180c/func_08074CFC.s");
+void func_08074CF8(void) {
+}
+void func_08074CFC(void) {
+}
 
 void func_08074D00(Work08074DC4* p) {
     gUnk_02039DC8->unk_50 = p->unk_00;
