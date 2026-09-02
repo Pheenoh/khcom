@@ -1572,7 +1572,24 @@ void func_080736F8(MsgWinWork* p) {
 }
 INCLUDE_ASM("unk_0806180c/func_08073768.s");
 INCLUDE_ASM("unk_0806180c/func_0807388C.s");
-INCLUDE_ASM("unk_0806180c/func_08073A58.s");
+void func_08073A58(MsgFaceWork* p) {
+    s32 t;
+    u8 v;
+
+    if (p->unk_34 != 0) {
+        t = AllocObjAffine(0, p->unk_2C, 256, 0);
+        if (t != 0) {
+            DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_08, p->unk_00, p->unk_04, t, 0, 50);
+        } else {
+            v = p->unk_33;
+            if (v != 0) {
+                DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_08, p->unk_00, p->unk_04, t, 1, 50);
+            } else {
+                DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_08, p->unk_00, p->unk_04, v, v, 50);
+            }
+        }
+    }
+}
 void func_08073AEC(MsgFaceWork* p) {
     ReleaseObjTiles(p->unk_00);
     ReleaseObjPalette(p->unk_04);
@@ -1638,7 +1655,18 @@ void _08073E6C(Work08073E34* p) {
 void func_08073E74(Work08073E34* p) {
     p->unk_02 = 2;
 }
-INCLUDE_ASM("unk_0806180c/func_08073E7C.s");
+void func_08073E7C(MsgWaitWork* p, u8* arg) {
+    p->unk_103 = arg[0];
+    p->unk_00 = AllocObjTiles(64, 0);
+    p->unk_14 = LoadObjPalette(gUnk_08F69BA4, 32);
+    LoadObjPaletteBank(p->unk_14->unk_06, gUnk_08F69BA4);
+    func_080062F4(p->unk_14->unk_06 + 16, 1);
+    func_08002A10(p->unk_00, gUnk_09320796);
+    AnimInit(p->unk_DC, gUnk_09EEFD38, gUnk_09EEFCAC);
+    AnimStart(p->unk_DC, 2, 1);
+    p->unk_102 = 0;
+    gUnk_02039DC8->unk_7D = 1;
+}
 u8 func_08073F08(MsgWaitWork* p, void* a) {
     p->unk_BC = AnimUpdate(p->unk_DC);
     if (GetKeysPressed() & 1) {
