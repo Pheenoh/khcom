@@ -137,7 +137,45 @@ void func_080753B4(EffectWork* w, EventActor* arg) {
     w->unk_49 = 0;
 }
 
-INCLUDE_ASM("mode_eventselect/func_08075460.s");
+s32 func_08075460(EffectWork* w) {
+    s32 v;
+    s32 r;
+
+    switch (w->unk_49) {
+    case 0:
+        w->unk_2C += w->unk_3C;
+        w->unk_34 += w->unk_40;
+        w->unk_40 += 17;
+
+        if (w->unk_40 > 256) {
+            w->unk_49 = 1;
+        }
+        break;
+    case 1:
+        w->unk_2C += w->unk_3C;
+        w->unk_34 += w->unk_40;
+        w->unk_40 = (v = w->unk_40 - 12) - (r = GetRandom()) % 9;
+
+        if (w->unk_40 < 0) {
+            w->unk_40 = GetRandom() % 181 + 204;
+
+            if (w->unk_3C > 0) {
+                w->unk_3C = -(GetRandom() % 257 + 128);
+            } else {
+                w->unk_3C = GetRandom() % 257 + 128;
+            }
+        }
+
+        if (w->unk_34 >= 0) {
+            return 0;
+        }
+        break;
+    }
+
+    w->unk_0C = AnimUpdate(&w->unk_14);
+
+    return 1;
+}
 
 void func_08075530(EffectWork* w) {
     s32 x;
