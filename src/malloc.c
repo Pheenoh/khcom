@@ -232,21 +232,90 @@ s32 HeapGetBlockSize(void* p, Heap* heap) {
     return 0;
 }
 
-INCLUDE_ASM("malloc/func_08000A08.s");
-INCLUDE_ASM("malloc/func_08000A18.s");
-INCLUDE_ASM("malloc/HeapGetFreeTotal.s");
-INCLUDE_ASM("malloc/func_08000A40.s");
-INCLUDE_ASM("malloc/func_08000A50.s");
-INCLUDE_ASM("malloc/func_08000A60.s");
-INCLUDE_ASM("malloc/func_08000A70.s");
-INCLUDE_ASM("malloc/func_08000A80.s");
-INCLUDE_ASM("malloc/func_08000A90.s");
-INCLUDE_ASM("malloc/func_08000A9C.s");
-INCLUDE_ASM("malloc/func_08000AA8.s");
-INCLUDE_ASM("malloc/func_08000AB8.s");
-INCLUDE_ASM("malloc/func_08000AC8.s");
-INCLUDE_ASM("malloc/SetEwramHeapName.s");
-INCLUDE_ASM("malloc/SetIwramHeapName.s");
+s32 func_08000A08(void* p) {
+    return HeapGetBlockSize(p, &gEwramHeap);
+}
+
+s32 func_08000A18(void* p) {
+    return HeapGetBlockSize(p, &gIwramHeap);
+}
+
+s32 HeapGetFreeTotal(Heap* heap) {
+    HeapBlock* b;
+    s32 total;
+
+    b = heap->start->nextFree;
+    total = 0;
+    while (b != 0 && b->size > 0) {
+        total += b->size;
+        b = b->nextFree;
+    }
+    return total;
+}
+
+s32 func_08000A40(void) {
+    return HeapGetFreeTotal(&gEwramHeap);
+}
+
+s32 func_08000A50(void) {
+    return HeapGetFreeTotal(&gIwramHeap);
+}
+
+void func_08000A60(Heap* heap) {
+    HeapBlock* b;
+
+    for (b = heap->start; b != 0; b = b->next) {
+        *(volatile s32*)&b->size;
+    }
+}
+
+void func_08000A70(void) {
+    func_08000A60(&gEwramHeap);
+}
+
+void func_08000A80(void) {
+    func_08000A60(&gIwramHeap);
+}
+
+void func_08000A90(u8 v) {
+    gEwramHeap.unk_08 = v;
+}
+
+void func_08000A9C(u8 v) {
+    gIwramHeap.unk_08 = v;
+}
+
+void func_08000AA8(Heap* heap) {
+    HeapBlock* b;
+
+    for (b = heap->start; b != 0; b = b->next) {
+        *(volatile s32*)&b->size;
+    }
+}
+
+void func_08000AB8(void) {
+    func_08000AA8(&gEwramHeap);
+}
+
+void func_08000AC8(void) {
+    func_08000AA8(&gIwramHeap);
+}
+
+void SetEwramHeapName(void* name) {
+    gEwramHeap.name = name;
+}
+
+void SetIwramHeapName(void* name) {
+    gIwramHeap.name = name;
+}
+
+void* func_08000AF0(void) {
+    return gEwramHeap.name;
+}
+
+void* func_08000AFC(void) {
+    return gIwramHeap.name;
+}
 INCLUDE_ASM("malloc/func_08000B08.s");
 INCLUDE_ASM("malloc/func_08000B24.s");
 INCLUDE_ASM("malloc/func_08000B48.s");
@@ -300,7 +369,10 @@ Task* func_08000CD4(ListNode* node) {
 
 INCLUDE_ASM("malloc/func_08000CF0.s");
 INCLUDE_ASM("malloc/func_08000D0C.s");
+void func_08000D1C(void) {
+}
 INCLUDE_ASM("malloc/func_08000D20.s");
 INCLUDE_ASM("malloc/func_08000D28.s");
+INCLUDE_ASM("malloc/func_08000D48.s");
 INCLUDE_ASM("malloc/func_08000D6C.s");
 INCLUDE_ASM("malloc/func_08000D90.s");
