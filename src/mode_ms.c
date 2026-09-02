@@ -309,4 +309,15 @@ INCLUDE_ASM("mode_ms/func_081041B4.s");
 INCLUDE_ASM("mode_ms/func_08104404.s");
 INCLUDE_ASM("mode_ms/mode_ms_shop_0.s");
 INCLUDE_ASM("mode_ms/mode_ms_shop_1.s");
-INCLUDE_ASM("mode_ms/mode_ms_shop_2.s");
+void mode_ms_shop_2(void) {
+    s32 i;
+
+    ReleaseObjPalette(gUnk_02035BB0);
+    ReleaseObjTiles(gUnk_02035BAC);
+
+    for (i = 0; i < 4; i++) {
+        ReleaseObjPalette(gUnk_02035BE0[i]);
+        ReleaseObjTiles(gUnk_02035BD0[i]);
+    }
+    EwramFree(gUnk_02035C00);
+}
