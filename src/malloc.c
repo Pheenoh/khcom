@@ -4,6 +4,9 @@
 #include "key.h"
 #include "malloc.h"
 
+Heap gEwramHeap;
+Heap gIwramHeap;
+
 typedef struct Node {
     void* unk_00;
     struct Node* prev;
