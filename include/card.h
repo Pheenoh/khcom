@@ -26,7 +26,9 @@ extern u8 gUnk_0203A9D8;
 typedef struct UnkStruct_02034AAC {
     void* unk_00;
     void* unk_04;
-    u8 unk_08[0x0C];
+    void* unk_08;
+    void* unk_0C;
+    u8 unk_10[0x04];
     void* unk_14;
     void* unk_18;
     u8 unk_1C[0x04];
@@ -147,6 +149,7 @@ typedef struct UnkStruct_02039BB0 {
     u8 unk_108;
     u8 unk_109[0x6F];
     u16 unk_178;
+    u16 unk_17A;
 } UnkStruct_02039BB0;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
