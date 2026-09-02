@@ -12,6 +12,7 @@ void* func_08000CD4(void* node);
 void* func_08000D0C(void* pool);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
 void func_08000C54(void* node, void* pool);
+void func_08001E64(void* arr, s32 lo, s32 hi);
 extern s16 gSineTable[];
 extern u16 gBg0Cnt;
 extern u16 gBg1Cnt;
@@ -39,7 +40,6 @@ typedef struct BgAffineDstData {
 
 void BgAffineSet(BgAffineSrcData* src, BgAffineDstData* dst, s32 count);
 
-extern u8* gUnk_03007574;
 extern u16 gBg0Cnt;
 extern u16 gBg1Cnt;
 extern u16 gBg2Cnt;
@@ -439,8 +439,94 @@ u8* func_08002C28(u8 a, u8 b) {
     }
     return 0;
 }
-INCLUDE_ASM("engine/AllocObjAffine.s");
-INCLUDE_ASM("engine/func_08002F0C.s");
+
+u8* AllocObjAffine(u8 a, s32 sx, s32 sy, u8 f) {
+    u8* base;
+    u8* e;
+    s32 sin;
+    s32 cos;
+
+    if (*(u16*)(gSpriteWork + 0x2BAC) > 0x1F || (a == 0 && sx == 0x100 && sy == sx)) {
+        return 0;
+    }
+    sin = gSineTable[a];
+    cos = gSineTable[a + 0x40];
+    base = gSpriteWork;
+    e = base + 0x28AC + *(u16*)(base + 0x2BAC) * 24;
+    *(u16*)(e + 0x00) = (cos << 8) / sx;
+    *(u16*)(e + 0x02) = (sin << 8) / sy;
+    *(u16*)(e + 0x04) = (-sin << 8) / sx;
+    *(u16*)(e + 0x06) = (cos << 8) / sy;
+    *(u16*)(e + 0x08) = *(u16*)(base + 0x2BAC);
+    *(u8*)(e + 0x0A) = f;
+    *(u32*)(e + 0x0C) = sx;
+    *(u32*)(e + 0x10) = sy;
+    *(u8*)(e + 0x14) = a;
+    *(u16*)(gSpriteWork + 0x2BAC) += 1;
+
+    return e;
+}
+
+u8* func_08002DA0(u8 a, s32 sx, s32 sy, u8 f) {
+    u8* base;
+    u8* e;
+    s32 sin;
+    s32 cos;
+
+    if (*(u16*)(gSpriteWork + 0x2BAC) > 0x1F || (a == 0 && sx == 0x100 && sy == sx)) {
+        return 0;
+    }
+    sin = gSineTable[a];
+    cos = gSineTable[a + 0x40];
+    base = gSpriteWork;
+    e = base + 0x28AC + *(u16*)(base + 0x2BAC) * 24;
+    *(u16*)(e + 0x00) = (cos << 8) / sx;
+    *(u16*)(e + 0x02) = (sin << 8) / sx;
+    *(u16*)(e + 0x04) = (-sin << 8) / sy;
+    *(u16*)(e + 0x06) = (cos << 8) / sy;
+    *(u16*)(e + 0x08) = *(u16*)(base + 0x2BAC);
+    *(u8*)(e + 0x0A) = f;
+    *(u32*)(e + 0x0C) = sx;
+    *(u32*)(e + 0x10) = sy;
+    *(u8*)(e + 0x14) = a;
+    *(u16*)(gSpriteWork + 0x2BAC) += 1;
+
+    return e;
+}
+
+u8* func_08002E8C(u16 a, u16 b, u16 c, u16 d, u8 f) {
+    u8* base;
+    u8* e;
+    u32 z;
+
+    if (*(u16*)(gSpriteWork + 0x2BAC) > 0x1F) {
+        return 0;
+    }
+    base = gSpriteWork;
+    e = base + 0x28AC + *(u16*)(base + 0x2BAC) * 24;
+    z = 0;
+    *(u16*)(e + 0x00) = a;
+    *(u16*)(e + 0x02) = b;
+    *(u16*)(e + 0x04) = c;
+    *(u16*)(e + 0x06) = d;
+    *(u16*)(e + 0x08) = *(u16*)(base + 0x2BAC);
+    *(u8*)(e + 0x0A) = f;
+    *(u32*)(e + 0x0C) = 0x100;
+    *(u32*)(e + 0x10) = 0x100;
+    *(u8*)(e + 0x14) = z;
+    *(u16*)(gSpriteWork + 0x2BAC) += 1;
+
+    return e;
+}
+
+void func_08002F0C(void) {
+    if (*(u16*)(gSpriteWork + 0x28A8) > 1) {
+        func_08001E64(gSpriteWork + 0x26A8, *(u16*)(gSpriteWork + 0x28AA),
+                      *(u16*)(gSpriteWork + 0x28A8) - 1);
+    }
+    *(u16*)(gSpriteWork + 0x28AA) = 0;
+}
+
 INCLUDE_ASM("engine/func_08002F50.s");
 
 void func_080034D8(u8 a) {
@@ -726,7 +812,62 @@ u8 func_08003B24(u16 n) {
     }
     return 0;
 }
-INCLUDE_ASM("engine/func_08003BB0.s");
+void func_08003BB0(u16 a, u16 b, u16* w, u16* h) {
+    switch (((b << 16) | a) & 0xC000C000) {
+    case 0x00000000:
+        *w = 8;
+        *h = 8;
+        break;
+    case 0x40000000:
+        *w = 16;
+        *h = 16;
+        break;
+    case 0x80000000:
+        *w = 32;
+        *h = 32;
+        break;
+    case 0xC0000000:
+        *w = 64;
+        *h = 64;
+        break;
+    case 0x00004000:
+        *w = 16;
+        *h = 8;
+        break;
+    case 0x40004000:
+        *w = 32;
+        *h = 8;
+        break;
+    case 0x80004000:
+        *w = 32;
+        *h = 16;
+        break;
+    case 0xC0004000:
+        *w = 64;
+        *h = 32;
+        break;
+    case 0x00008000:
+        *w = 8;
+        *h = 16;
+        break;
+    case 0x40008000:
+        *w = 8;
+        *h = 32;
+        break;
+    case 0x80008000:
+        *w = 16;
+        *h = 32;
+        break;
+    case 0xC0008000:
+        *w = 32;
+        *h = 64;
+        break;
+    default:
+        *w = 0;
+        *h = 0;
+        break;
+    }
+}
 
 s32 func_08003C9C(s32 a) {
     s32 x;
@@ -784,6 +925,23 @@ s32 func_08003E2C(s16* n, s32 v, s32* a, s32* c, s32* b) {
     return ((t * r) >> 8) + c[lo];
 }
 INCLUDE_ASM("engine/func_08003ED4.s");
+
+void func_08003FCC(void* a, s32 v, s32* outX, s32* outY) {
+    u8* p = a;
+
+    *outX = func_08003E2C((s16*)p, v, *(s32**)(p + 0x0C), *(s32**)(p + 0x18), *(s32**)(p + 0x10));
+    *outY = func_08003E2C((s16*)p, v, *(s32**)(p + 0x0C), *(s32**)(p + 0x1C), *(s32**)(p + 0x14));
+}
+
+void func_0800400C(void* a) {
+    u8* p = a;
+
+    EwramFree(*(void**)(p + 0x04));
+    EwramFree(*(void**)(p + 0x08));
+    EwramFree(*(void**)(p + 0x0C));
+    EwramFree(*(void**)(p + 0x10));
+    EwramFree(*(void**)(p + 0x14));
+}
 void InitDisplayRegs(void) {
     gDispCnt = 0x40;
     gMosaic = 0;
@@ -874,7 +1032,7 @@ void VTransFree(void) {
 }
 
 void VTransReset(void) {
-    Dma3Queue* q = (Dma3Queue*)gDma3Requests;
+    Dma3Queue* q = gDma3Requests;
 
     q->unk_10A0 = 0;
     q->unk_10A2 = 0;
@@ -891,7 +1049,7 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
     if (size == 0) {
         return 0;
     }
-    q = (Dma3Queue*)gDma3Requests;
+    q = gDma3Requests;
     if (q->unk_10A0 > 255) {
         return 0;
     }
@@ -912,7 +1070,7 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
 }
 
 u8 func_0800443C(void* a, u16 b) {
-    Dma3Queue* q = (Dma3Queue*)gDma3Requests;
+    Dma3Queue* q = gDma3Requests;
 
     if (q->count > 3) {
         return 0;
@@ -924,23 +1082,39 @@ u8 func_0800443C(void* a, u16 b) {
     return 1;
 }
 INCLUDE_ASM("engine/func_0800448C.s");
-#ifdef NON_MATCHING
+
 u8 func_080045AC(void* a, void* b, u8 c, u8 d, u8 e) {
-    if (*(u16*)(gUnk_03007574 + 0x10A4) > 7) {
+    if (gDma3Requests->unk_10A4 > 7) {
         return 0;
     }
-    *(void**)(gUnk_03007574 + 0x1000 + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = a;
-    *(void**)(gUnk_03007574 + 0x1004 + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = b;
-    *(u8*)(gUnk_03007574 + 0x1008 + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = c & 0x1F;
-    *(u8*)(gUnk_03007574 + 0x1009 + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = d & 0x1F;
-    *(u8*)(gUnk_03007574 + 0x100A + *(u16*)(gUnk_03007574 + 0x10A4) * 12) = e;
-    *(u16*)(gUnk_03007574 + 0x10A4) += 1;
+    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_00 = a;
+    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_04 = b;
+    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_08 = c & 0x1F;
+    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_09 = d & 0x1F;
+    gDma3Requests->unk_1000[gDma3Requests->unk_10A4].unk_0A = e;
+    gDma3Requests->unk_10A4 = gDma3Requests->unk_10A4 + 1;
+
     return 1;
 }
-#else
-INCLUDE_ASM("engine/func_080045AC.s");
-#endif
-INCLUDE_ASM("engine/func_08004678.s");
+
+u8 func_08004678(void* a) {
+    Dma3Queue* q = gDma3Requests;
+
+    if (q->unk_10A6 > 7) {
+        return 0;
+    }
+    q->unk_1060[q->unk_10A6] = a;
+    q->unk_10A6 = q->unk_10A6 + 1;
+
+    return 1;
+}
+
+u32 func_080046B4(void) {
+    Dma3Queue* q = gDma3Requests;
+
+    return q->unk_10AC;
+}
+
 INCLUDE_ASM("engine/FlushDma3Queue.s");
 INCLUDE_ASM("engine/func_08004938.s");
 
@@ -1111,24 +1285,32 @@ void* GetBgScreenBase(s32 bg) {
     return (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000);
 }
 
-#ifdef NON_MATCHING
 void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
+    u8* p;
+    u8* q;
+    s32 ofs;
+    u32 z;
+
     if (gDispCnt & 7) {
         if (bg == 2 || bg == 3) {
             return;
         }
     }
+
     EnableBg(bg);
-    gBgEntries[bg].unk_04 = src;
-    gBgEntries[bg].unk_08 = w;
-    gBgEntries[bg].unk_09 = h;
-    gBgEntries[bg].unk_0A = 0;
-    gBgEntries[bg].unk_0C = 0;
-    gBgEntries[bg].unk_00 = 1;
+    p = (u8*)gBgEntries;
+    ofs = bg * 16;
+    q = p + 4;
+    *(void**)(q + ofs) = src;
+    p += ofs;
+    z = 0;
+    ((BgEntry*)p)->unk_08 = w;
+    ((BgEntry*)((u8*)gBgEntries + ofs))->unk_09 = h;
+    ((BgEntry*)((u8*)gBgEntries + ofs))->unk_0A = z;
+    ((BgEntry*)((u8*)gBgEntries + ofs))->unk_0C = z;
+    ((BgEntry*)((u8*)gBgEntries + ofs))->unk_00 = 1;
 }
-#else
-INCLUDE_ASM("engine/func_0800516C.s");
-#endif
+
 void func_080051C4(s32 bg, u16 x, u16 y) {
     BgEntry* e = &gBgEntries[bg];
 
@@ -1142,6 +1324,24 @@ void func_080051C4(s32 bg, u16 x, u16 y) {
     e->unk_00 = 0;
 }
 INCLUDE_ASM("engine/func_08005244.s");
+
+u16 func_08005458(s32 bg) {
+    BgEntry* e = &gBgEntries[bg];
+
+    if (e->unk_04 == 0) {
+        return 0;
+    }
+    return e->unk_0A;
+}
+
+u16 func_08005474(s32 bg) {
+    BgEntry* e = &gBgEntries[bg];
+
+    if (e->unk_04 == 0) {
+        return 0;
+    }
+    return e->unk_0C;
+}
 
 void SetBgMosaic(s32 bg, u8 on) {
     if (on) {
@@ -1340,7 +1540,23 @@ s32 GetAngleDiff(s32 a, s32 b) {
 #else
 INCLUDE_ASM("engine/GetAngleDiff.s");
 #endif
-INCLUDE_ASM("engine/GetAngleDiff16.s");
+
+s32 GetAngleDiff16(s32 a, s32 b) {
+    s32 x = a & 0xFFFF;
+    s32 y = b & 0xFFFF;
+    s32 d = x - y;
+    s32 c;
+
+    if (d <= -0x8000) {
+        return (x + 0x10000) - y;
+    }
+    c = 0x10000;
+
+    if (d > 0x7FFF) {
+        return (x - c) - y;
+    }
+    return d;
+}
 
 void ApproachAngle(u16* p, u16 target, u16 shift) {
     s16 d;
@@ -1457,7 +1673,6 @@ void AnimChange(AnimState* a, u16 id, u16 flags) {
     a->animId = id;
 }
 
-#ifdef NON_MATCHING
 void* AnimUpdate(AnimState* a) {
     void* gfx = AnimGetGfx(a);
     AnimFrame* frames = a->frames;
@@ -1468,26 +1683,23 @@ void* AnimUpdate(AnimState* a) {
     }
     a->timer++;
     index = a->frame;
-    if (a->timer < frames[index].duration) {
-        return gfx;
-    }
-    a->frame = index + 1;
-    a->timer = 0;
-    if (a->frame < a->frameCount) {
-        return gfx;
+
+    if (a->timer >= frames[index].duration) {
+        a->frame = index + 1;
+        a->timer = 0;
+
+        if (a->frame >= a->frameCount) {
+            if (a->flags & 1) {
+                a->frame = 0;
+            } else {
+                a->frame = index;
+            }
+            a->flags |= 0x1000;
+        }
     }
 
-    if (a->flags & 1) {
-        a->frame = 0;
-    } else {
-        a->frame = index;
-    }
-    a->flags |= 0x1000;
     return gfx;
 }
-#else
-INCLUDE_ASM("engine/AnimUpdate.s");
-#endif
 
 u8 func_08005AC4(AnimState* a) {
     if (a->frames == 0) {
@@ -1574,30 +1786,21 @@ void FadeReset(void) {
 
 #ifdef NON_MATCHING
 void LoadPalette(void* src, void* dst, s32 size) {
-    u8* base;
-    u8* flag;
-    PaletteSlot* e;
+    PaletteSlot* base;
     s32 idx;
     s32 count;
+    s32 i;
     void* p;
 
-    base = gFadeWork;
+    base = (PaletteSlot*)gFadeWork;
     count = (u16)size / 32;
     idx = ((s32)dst - 0x05000000) / 32;
     p = LoadPaletteWithEffect(src, dst, size);
-    if (count != 0) {
-        e = (PaletteSlot*)(base + idx * 44);
-        flag = base + idx * 44 + 0x29;
-        do {
-            e->unk_00 = p;
-            e->unk_04 = dst;
-            *flag = 1;
-            flag += 44;
-            dst = (u8*)dst + 32;
-            e++;
-            p = (u8*)p + 32;
-            count--;
-        } while (count != 0);
+
+    for (i = 0; i < count; i++) {
+        base[idx + i].unk_00 = (u8*)p + i * 32;
+        base[idx + i].unk_04 = (u8*)dst + i * 32;
+        base[idx + i].unk_29 = 1;
     }
 }
 #else
@@ -1712,7 +1915,22 @@ u8 func_08006314(void) {
     return 0;
 }
 
-INCLUDE_ASM("engine/_08006338.s");
+u16 _08006338(void) {
+    switch (*(u32*)(gFadeWork + 0x590)) {
+    case 1:
+    case 2:
+        return 0x7FFF;
+    case 3:
+        return 0x1F;
+    case 4:
+        return 0x7C00;
+    case 5:
+        return 0x3E0;
+    case 0:
+    default:
+        return 0;
+    }
+}
 
 u16 func_08006390(void) {
     return *(u32*)(gFadeWork + 0x580) >> 8;
@@ -1741,7 +1959,21 @@ void func_08006404(void) {
     gUnk_02034026 = 0;
 }
 
-INCLUDE_ASM("engine/func_0800642C.s");
+void func_0800642C(void) {
+    u16 t;
+    u8 v;
+
+    if (gUnk_02034024 != 0) {
+        ApproachValue((s32*)&gUnk_0203401C, gUnk_02034020, gUnk_02034024--);
+        t = gUnk_0203401C >> 8;
+        v = t;
+        func_080054C8(v, v);
+        func_080034EC(v, v);
+    } else if (gUnk_02034026 != 0) {
+        gUnk_02034026 = 0;
+        func_080034D8(0);
+    }
+}
 
 void func_08006494(u16 a, u16 b) {
     gUnk_02034024 = a;
@@ -1928,6 +2160,10 @@ void func_0800685C(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
     }
 }
 INCLUDE_ASM("engine/func_08006954.s");
+
+void func_08006B28(u16 a) {
+    gUnk_0203406A = a;
+}
 
 void func_08006B34(u16 a) {
     gUnk_02034066 = a;
