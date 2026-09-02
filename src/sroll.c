@@ -322,33 +322,324 @@ u8 task_sroll_tmr_1(SrollTmrWork* w) {
 }
 
 INCLUDE_ASM("sroll/task_sroll_tmr_2.s");
-INCLUDE_ASM("sroll/task_sroll_tmr_3.s");
+void task_sroll_tmr_3(SrollTmrWork* w) {
+    ReleaseObjTiles(w->unk_08);
+    ReleaseObjPalette((u8*)w->unk_0C);
+}
 
 void func_0811549C(void) {
 }
 
-INCLUDE_ASM("sroll/func_081154A0.s");
-INCLUDE_ASM("sroll/func_081154EC.s");
-INCLUDE_ASM("sroll/func_08115548.s");
-INCLUDE_ASM("sroll/func_081155B0.s");
-INCLUDE_ASM("sroll/func_08115628.s");
-INCLUDE_ASM("sroll/func_081156AC.s");
-INCLUDE_ASM("sroll/func_08115740.s");
+void func_081154A0(u32* dst, u8* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 24;
+        v = pal[(c >> 31) & 1];
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
+void func_081154EC(u32* dst, u8* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 24;
+        v = pal[(c >> 31) & 1];
+        v |= pal[(c >> 30) & 1] << 4;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
+void func_08115548(u32* dst, u8* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 24;
+        v = pal[(c >> 31) & 1];
+        v |= pal[(c >> 30) & 1] << 4;
+        v |= pal[(c >> 29) & 1] << 8;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
+void func_081155B0(u32* dst, u8* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 24;
+        v = pal[(c >> 31) & 1];
+        v |= pal[(c >> 30) & 1] << 4;
+        v |= pal[(c >> 29) & 1] << 8;
+        v |= pal[(c >> 28) & 1] << 12;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
+void func_08115628(u32* dst, u8* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 24;
+        v = pal[(c >> 31) & 1];
+        v |= pal[(c >> 30) & 1] << 4;
+        v |= pal[(c >> 29) & 1] << 8;
+        v |= pal[(c >> 28) & 1] << 12;
+        v |= pal[(c >> 27) & 1] << 16;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
+void func_081156AC(u32* dst, u8* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 24;
+        v = pal[(c >> 31) & 1];
+        v |= pal[(c >> 30) & 1] << 4;
+        v |= pal[(c >> 29) & 1] << 8;
+        v |= pal[(c >> 28) & 1] << 12;
+        v |= pal[(c >> 27) & 1] << 16;
+        v |= pal[(c >> 26) & 1] << 20;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
+void func_08115740(u32* dst, u8* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 24;
+        v = pal[(c >> 31) & 1];
+        v |= pal[(c >> 30) & 1] << 4;
+        v |= pal[(c >> 29) & 1] << 8;
+        v |= pal[(c >> 28) & 1] << 12;
+        v |= pal[(c >> 27) & 1] << 16;
+        v |= pal[(c >> 26) & 1] << 20;
+        v |= pal[(c >> 25) & 1] << 24;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
 INCLUDE_ASM("sroll/func_081157E0.s");
-INCLUDE_ASM("sroll/func_0811589C.s");
+u32 func_0811589C(SrollBlit* w) {
+    SrollMask* m;
+    u32* d;
+    u32* p;
+    u32 k;
+    s32 e;
+    u32 r;
+
+    e = w->unk_00 + w->unk_04;
+    p = w->unk_14;
+    d = w->unk_0C;
+    m = &gUnk_09A54918[w->unk_04][w->unk_00];
+    k = m->unk_00 | m->unk_08;
+    p[0] = d[0] & k;
+    p[1] = d[1] & k;
+    p[2] = d[2] & k;
+    p[3] = d[3] & k;
+    p[4] = d[4] & k;
+    p[5] = d[5] & k;
+    p[6] = d[6] & k;
+    p[7] = d[7] & k;
+
+    if (e > 8) {
+        k = m->unk_04;
+        p[8] = d[8] & k;
+        p[9] = d[9] & k;
+        p[10] = d[10] & k;
+        p[11] = d[11] & k;
+        p[12] = d[12] & k;
+        p[13] = d[13] & k;
+        p[14] = d[14] & k;
+        p[15] = d[15] & k;
+    }
+    gUnk_09A54CB8[w->unk_04](p, w->unk_08, w->unk_10, w->unk_00);
+    d[0] = p[0];
+    d[1] = p[1];
+    d[2] = p[2];
+    d[3] = p[3];
+    d[4] = p[4];
+    d[5] = p[5];
+    d[6] = p[6];
+    d[7] = p[7];
+
+    if (e > 8) {
+        d[8] = p[8];
+        d[9] = p[9];
+        d[10] = p[10];
+        d[11] = p[11];
+        d[12] = p[12];
+        d[13] = p[13];
+        d[14] = p[14];
+        d[15] = p[15];
+    }
+    r = 1;
+
+    if (e > 8) {
+        r = 2;
+    }
+    return r;
+}
 
 void func_081159AC(void) {
 }
 
-INCLUDE_ASM("sroll/func_081159B0.s");
-INCLUDE_ASM("sroll/func_081159FC.s");
-INCLUDE_ASM("sroll/func_08115A5C.s");
+void func_081159B0(u32* dst, u16* src, u32* pal, s32 x) {
+    SrollShift* t;
+    u32* d;
+    u16* s;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    d = dst;
+    s = src;
+    for (i = 0; i <= 7; i++) {
+        c = *s << 16;
+        v = pal[(c >> 22) & 3];
+        d[0] |= v << t->unk_00;
+        d[8] |= v >> t->unk_04;
+        d++;
+        s++;
+    }
+}
+
+void func_081159FC(u32* dst, u16* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 16;
+        v = pal[(c >> 22) & 3];
+        v |= pal[(c >> 20) & 3] << 4;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
+void func_08115A5C(u32* dst, u16* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 16;
+        v = pal[(c >> 22) & 3];
+        v |= pal[(c >> 20) & 3] << 4;
+        v |= pal[(c >> 18) & 3] << 8;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+
 INCLUDE_ASM("sroll/func_08115AD4.s");
 INCLUDE_ASM("sroll/func_08115B6C.s");
 INCLUDE_ASM("sroll/func_08115C04.s");
 INCLUDE_ASM("sroll/func_08115CAC.s");
 INCLUDE_ASM("sroll/func_08115D60.s");
-INCLUDE_ASM("sroll/func_08115E24.s");
+u32 func_08115E24(SrollBlit* w) {
+    SrollMask* m;
+    u32* d;
+    u32* p;
+    u32 k;
+    s32 e;
+    u32 r;
+
+    e = w->unk_00 + w->unk_04;
+    p = w->unk_14;
+    d = w->unk_0C;
+    m = &gUnk_09A54918[w->unk_04][w->unk_00];
+    k = m->unk_00 | m->unk_08;
+    p[0] = d[0] & k;
+    p[1] = d[1] & k;
+    p[2] = d[2] & k;
+    p[3] = d[3] & k;
+    p[4] = d[4] & k;
+    p[5] = d[5] & k;
+    p[6] = d[6] & k;
+    p[7] = d[7] & k;
+
+    if (e > 8) {
+        k = m->unk_04;
+        p[8] = d[8] & k;
+        p[9] = d[9] & k;
+        p[10] = d[10] & k;
+        p[11] = d[11] & k;
+        p[12] = d[12] & k;
+        p[13] = d[13] & k;
+        p[14] = d[14] & k;
+        p[15] = d[15] & k;
+    }
+    gUnk_09A54CDC[w->unk_04](p, w->unk_08, w->unk_10, w->unk_00);
+    d[0] = p[0];
+    d[1] = p[1];
+    d[2] = p[2];
+    d[3] = p[3];
+    d[4] = p[4];
+    d[5] = p[5];
+    d[6] = p[6];
+    d[7] = p[7];
+
+    if (e > 8) {
+        d[8] = p[8];
+        d[9] = p[9];
+        d[10] = p[10];
+        d[11] = p[11];
+        d[12] = p[12];
+        d[13] = p[13];
+        d[14] = p[14];
+        d[15] = p[15];
+    }
+    r = 1;
+
+    if (e > 8) {
+        r = 2;
+    }
+    return r;
+}
 
 #ifdef NON_MATCHING
 u16 func_08115F34(u16 c, u8* font) {
@@ -418,7 +709,53 @@ u32 func_08116008(u16 c, u8* font, u32 base, u16 a, u16 b) {
     return base + func_08115F34(c, font) * (a << 3) * b;
 }
 
-INCLUDE_ASM("sroll/func_08116034.s");
+u32 func_08116034(SrollWork* w, u32* dst, u8* src, s32 width) {
+    SrollBlit b;
+    u32 pal[16];
+    u32 fill;
+    u32* q;
+    u32 bg;
+    u32 r;
+    u16 c;
+    u16 n;
+
+    r = 0;
+    pal[0] = c = w->unk_06;
+    pal[1] = w->unk_02;
+    pal[2] = w->unk_04;
+    pal[3] = w->unk_08;
+    bg = (c << 4) | c;
+    bg |= bg << 8;
+    bg |= bg << 16;
+    b.unk_00 = w->unk_20 & 7;
+    b.unk_04 = width;
+    b.unk_08 = src;
+    b.unk_0C = dst;
+    b.unk_10 = pal;
+    n = w->unk_24;
+
+    if (n-- != 0) {
+        q = &fill;
+        do {
+            if (b.unk_00 == 0) {
+                *q = bg;
+                CpuFastSet(q, b.unk_0C, CPU_SET_SRC_FIXED | 8);
+            }
+
+            switch (w->unk_26) {
+            case 1:
+                r = func_0811589C(&b);
+                break;
+            case 2:
+                r = func_08115E24(&b);
+                break;
+            }
+            b.unk_08 += w->unk_26 * 8;
+            b.unk_0C += w->unk_1C * 8;
+        } while (n-- != 0);
+    }
+    return r;
+}
 
 void func_081160EC(SrollWork* w, u32 mode) {
     if (mode > 1) {
@@ -537,20 +874,197 @@ void func_0811627C(SrollWork* w, u8 flush) {
     }
 }
 
-INCLUDE_ASM("sroll/func_081162E8.s");
+void func_081162E8(SrollWork* w) {
+    u16 a;
+    u16 b;
+    u16 c;
+    u16* p;
+    u16* q;
+    u16 i;
+    u16 t;
+
+    p = (u16*)((u8*)sub_08116B10(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
+    t = w->unk_2E + 1;
+    q = &a;
+    a = t + 2;
+    CpuSet(q, p + 1, (((u32)(w->unk_14 - 2) << 11) >> 11) | CPU_SET_SRC_FIXED);
+    p[0] = t + 1;
+    p[w->unk_14 - 1] = t + 3;
+    p += w->unk_0A;
+    for (i = 1; i < w->unk_16 - 1; i++) {
+        b = t;
+        CpuSet(&b, p + 1, (((u32)(w->unk_14 - 2) << 11) >> 11) | CPU_SET_SRC_FIXED);
+        p[0] = t + 4;
+        p[w->unk_14 - 1] = t + 5;
+        p += w->unk_0A;
+    }
+    c = t + 7;
+    CpuSet(&c, p + 1, (((u32)(w->unk_14 - 2) << 11) >> 11) | CPU_SET_SRC_FIXED);
+    p[0] = t + 6;
+    p[w->unk_14 - 1] = t + 8;
+}
 INCLUDE_ASM("sroll/func_081163CC.s");
 INCLUDE_ASM("sroll/func_08116500.s");
-INCLUDE_ASM("sroll/func_08116644.s");
-INCLUDE_ASM("sroll/func_08116698.s");
+void func_08116644(SrollWork* w) {
+    u16 fill;
+    u16* p;
+    u16 i;
+    u16 t;
+
+    p = (u16*)((u8*)sub_08116B10(w) + w->unk_1A * w->unk_0A * 2 + w->unk_18 * 2);
+    t = w->unk_2E + 1;
+    for (i = 0; i < w->unk_1E; i++) {
+        fill = t;
+        CpuSet(&fill, p, w->unk_1C | CPU_SET_SRC_FIXED);
+        p += w->unk_0A;
+    }
+}
+void func_08116698(SrollWork* w, u8 flush) {
+    u16 t;
+
+    switch (w->unk_0C) {
+    case 1:
+        func_081162E8(w);
+        break;
+    case 2:
+        func_081163CC(w);
+        break;
+    case 3:
+        func_08116500(w);
+        break;
+    default:
+        func_08116644(w);
+        break;
+    }
+    func_08116228(w, 0, 0);
+
+    if (flush == 1) {
+        func_08116B1C(w);
+    } else {
+        t = w->unk_00 | 1;
+        w->unk_00 = t;
+    }
+}
 INCLUDE_ASM("sroll/func_081166F8.s");
 
 void func_081167CC(void) {
 }
 
-INCLUDE_ASM("sroll/func_081167D0.s");
-INCLUDE_ASM("sroll/func_081167F8.s");
-INCLUDE_ASM("sroll/sub_0811683C.s");
-INCLUDE_ASM("sroll/func_08116A98.s");
+u16 func_081167D0(u16 c) {
+    u16 v;
+
+    v = c;
+    if ((u16)(v - '0') <= 9) {
+        v -= '0';
+    } else {
+        v -= 'a';
+        v += 10;
+    }
+    return v;
+}
+u8* func_081167F8(SrollWork* w, u8* s) {
+    s32 hi;
+
+    while (*s != 0) {
+        if (*s & 0x80) {
+            hi = s[0] << 8;
+            func_081161EC(w, s[1] | hi);
+            s += 2;
+        } else {
+            func_081161EC(w, func_08116CDC(s[0]));
+            s += 1;
+        }
+    }
+    return s + 1;
+}
+u8 sub_0811683C(SrollWork* w) {
+    u16 v[2];
+    u16* p;
+    u32 off;
+    u32 g;
+    u32 n;
+    u16 c;
+    u16 t;
+    u16 i;
+    u8 r;
+    u8 wd;
+
+    r = 0;
+    if (w->unk_20 >= w->unk_1C * 8) {
+        w->unk_20 = 0;
+    }
+    c = sub_08116204(w);
+    if (c & 0xFF00) {
+        off = (w->unk_22 * w->unk_1C + (w->unk_20 >> 3)) * 32;
+        g = func_08116008(c, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
+        wd = func_08115F8C(c, w->unk_34, w->unk_3C, w->unk_40);
+        n = func_08116034(w, (u32*)(w->unk_50 + off), (u8*)g, wd);
+        t = w->unk_22 * w->unk_1C + (w->unk_20 >> 3) + w->unk_30;
+        p = (u16*)((u8*)sub_08116B10(w) +
+                   ((w->unk_1A + w->unk_22) * w->unk_0A + ((w->unk_20 >> 3) + w->unk_18)) * 2);
+        for (i = 0; i < w->unk_24; i++) {
+            if (n == 1) {
+                p[0] = t;
+            } else {
+                p[0] = t;
+                p[1] = t + 1;
+            }
+            p += w->unk_0A;
+            t += w->unk_1C;
+        }
+        w->unk_20 += wd;
+        w->unk_00 |= 1;
+        r = 1;
+    } else {
+        switch (c) {
+        case '@':
+            v[0] = sub_08116204(w);
+            v[1] = sub_08116204(w);
+
+            switch (v[0]) {
+            case 'F':
+                func_081160EC(w, func_081167D0(v[1]));
+                break;
+            case 'f':
+                w->unk_02 = func_081167D0(v[1]);
+                break;
+            case 's':
+                w->unk_04 = func_081167D0(v[1]);
+                break;
+            case 'b':
+                w->unk_06 = func_081167D0(v[1]);
+                break;
+            case 'e':
+                w->unk_08 = func_081167D0(v[1]);
+                break;
+            }
+            break;
+        case 0:
+            break;
+        case '\n':
+            w->unk_20 = 0;
+            w->unk_22 += w->unk_24;
+
+            if (w->unk_22 + w->unk_24 > w->unk_1E) {
+                w->unk_22 = 0;
+            }
+            break;
+        }
+    }
+    return r;
+}
+void func_08116A98(SrollWork* w, u8 flush) {
+    u8 r;
+
+    r = 0;
+    while (!func_081161DC(w) && r == 0) {
+        r = sub_0811683C(w);
+    }
+
+    if (flush == 1 && (w->unk_00 & 1)) {
+        func_08116B1C(w);
+    }
+}
 
 void func_08116AD8(SrollWork* w, u8 flush) {
     while (!func_081161DC(w)) {
@@ -601,7 +1115,33 @@ void func_08116B90(SrollWork* w, u16 x, u16 y, u8* s, u8 flush) {
     }
 }
 
-INCLUDE_ASM("sroll/func_08116BEC.s");
+void func_08116BEC(SrollWork* w, u16 x, u16 y, u8* s, u8 flush) {
+    u32 off;
+    u32 g;
+    s32 n;
+
+    func_08116AD8(w, 0);
+    func_08116228(w, x >> 3, y);
+    n = x & 7;
+    if (n != 0) {
+        off = (w->unk_22 * w->unk_1C + (x >> 3)) * 32;
+        g = func_08116008(0x8140, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
+        func_08116034(w, (u32*)(w->unk_50 + off), (u8*)g, n);
+    }
+    func_08116254(w, x);
+    func_081167F8(w, s);
+    func_08116AD8(w, 0);
+
+    if ((w->unk_20 & 7) != 0) {
+        off = (w->unk_22 * w->unk_1C + (w->unk_20 >> 3)) * 32;
+        g = func_08116008(0x8140, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
+        func_08116034(w, (u32*)(w->unk_50 + off), (u8*)g, 8 - (w->unk_20 & 7));
+    }
+
+    if (flush == 1 && (w->unk_00 & 1)) {
+        func_08116B1C(w);
+    }
+}
 
 u16 func_08116CDC(u8 c) {
     return gUnk_09A5B470[c];

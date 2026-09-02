@@ -18,6 +18,26 @@ typedef struct DmaStream {
     u32 unk_1C;
 } DmaStream;
 
+typedef struct SrollShift {
+    u32 unk_00;
+    u32 unk_04;
+} SrollShift;
+
+typedef struct SrollMask {
+    u32 unk_00;
+    u32 unk_04;
+    u32 unk_08;
+} SrollMask;
+
+typedef struct SrollBlit {
+    s32 unk_00;
+    s32 unk_04;
+    u8* unk_08;
+    u32* unk_0C;
+    u32* unk_10;
+    u32 unk_14[32];
+} SrollBlit;
+
 typedef struct SrollPal {
     void* unk_00;
     u16 unk_04;
@@ -138,7 +158,7 @@ typedef struct SrollInit {
     u16 unk_22;
     u16 unk_24;
     u16 unk_26;
-    u8* unk_28;
+    u32 unk_28;
     u16 unk_2C;
     u16 unk_2E;
     u16 unk_30;
@@ -166,7 +186,7 @@ typedef struct SrollWork {
     u16 unk_06;
     u16 unk_08;
     u16 unk_0A;
-    u8* unk_0C;
+    u32 unk_0C;
     u16 unk_10;
     u16 unk_12;
     u16 unk_14;
@@ -204,6 +224,10 @@ typedef struct SoundEntry {
     u32 unk_08;
 } SoundEntry;
 
+extern SrollShift gUnk_09A54C78[];
+extern SrollMask gUnk_09A54918[][8];
+extern void (*gUnk_09A54CB8[])(u32*, u8*, u32*, s32);
+extern void (*gUnk_09A54CDC[])(u32*, u8*, u32*, s32);
 extern DmaStream gUnk_02036028;
 extern u8 gUnk_02036048;
 extern s32 gUnk_02036050[];
@@ -257,9 +281,9 @@ void func_0811614C(SrollWork* w, SrollInit* a);
 void func_081161C8(SrollWork* w);
 void func_08116268(SrollWork* w, u16 a, u16 b, u16 c, u16 d);
 void func_0811627C(SrollWork* w, u8 flush);
-void func_08116698(SrollWork* w, s32 a);
-void func_081167F8(SrollWork* w, u8* s);
-void sub_0811683C(SrollWork* w);
+void func_08116698(SrollWork* w, u8 flush);
+u8* func_081167F8(SrollWork* w, u8* s);
+u8 sub_0811683C(SrollWork* w);
 void func_08116AD8(SrollWork* w, u8 flush);
 void func_08116B1C(SrollWork* w);
 void func_08116B54(SrollWork* w, u8* s, u8 flush);
@@ -283,6 +307,25 @@ void* LoadObjTiles(void* src, s32 size);
 SrollPal* LoadObjPalette(void* src, s32 size);
 void func_080062F4(u16 a, s32 b);
 void DrawSprite(s16 x, s16 y, void* a, void* b, void* c, s32 d, s32 e, u16 f);
+void func_081154A0(u32* dst, u8* src, u32* pal, s32 x);
+void func_081154EC(u32* dst, u8* src, u32* pal, s32 x);
+void func_08115548(u32* dst, u8* src, u32* pal, s32 x);
+void func_081155B0(u32* dst, u8* src, u32* pal, s32 x);
+void func_08115628(u32* dst, u8* src, u32* pal, s32 x);
+void func_081156AC(u32* dst, u8* src, u32* pal, s32 x);
+void func_08115740(u32* dst, u8* src, u32* pal, s32 x);
+void func_081159B0(u32* dst, u16* src, u32* pal, s32 x);
+void func_081159FC(u32* dst, u16* src, u32* pal, s32 x);
+void func_08115A5C(u32* dst, u16* src, u32* pal, s32 x);
+u32 func_0811589C(SrollBlit* w);
+u32 func_08115E24(SrollBlit* w);
+void task_sroll_tmr_3(SrollTmrWork* w);
+u16 func_081167D0(u16 c);
+void func_08116A98(SrollWork* w, u8 flush);
+void func_08116644(SrollWork* w);
+u32 func_08116034(SrollWork* w, u32* dst, u8* src, s32 width);
+void func_08116BEC(SrollWork* w, u16 x, u16 y, u8* s, u8 flush);
+void func_081162E8(SrollWork* w);
 u16 func_08115F34(u16 c, u8* font);
 u8 func_08115F8C(u16 c, u8* font, u8* widths, u32 count);
 s32 func_08115FBC(SrollWork* w, u8* s);
