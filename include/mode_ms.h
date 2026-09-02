@@ -2,6 +2,24 @@
 #define GUARD_MODE_MS_H
 
 #include "types.h"
+#include "taskpool.h"
+
+typedef struct UnkStruct_099931E4 {
+    s16 unk_00;
+    s16 unk_02;
+    s16 unk_04;
+    s16 unk_06;
+    u16 unk_08;
+    u16 unk_0A;
+    void* unk_0C;
+    u16 unk_10;
+    u16 unk_12;
+    u16 unk_14;
+    u16 unk_16;
+    u16 unk_18;
+    u16 unk_1A;
+    u8 unk_1C[0x20];
+} UnkStruct_099931E4;
 
 void func_081025AC(void);
 void func_081025D4(void* a);
@@ -16,11 +34,17 @@ void func_08102774(void);
 s32 func_08102A94(void);
 u16 func_08103F3C(void);
 void func_08103CD8(s16 a);
+void mode_ms_top_2(void);
+void func_08103D54(s16 a);
 
 u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 u16 GetRandom(void);
 void* GetBgScreenBase(s32 bg);
+void ReleaseObjTiles(void* a);
+void ReleaseObjPalette(void* a);
+void TaskPoolDestroy(TaskPool* pool);
+void LoadBgMap(s32 bg, void* src, u16 size);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 
 extern u8 gUnk_0203C590[];
@@ -29,5 +53,19 @@ extern u16 gUnk_02035BA8[];
 extern s16 gUnk_02035B08[];
 extern u16 gUnk_09993334[];
 extern u8 gUnk_09A3ABDC[];
+extern void* gUnk_020357C8;
+extern void* gUnk_020357CC;
+extern void* gUnk_020357D0;
+extern void* gUnk_020357D4;
+extern void* gUnk_020357F0;
+extern void* gUnk_020357F4;
+extern void* gUnk_02035810;
+extern void* gUnk_02035814;
+extern void* gUnk_02035818[];
+extern void* gUnk_02035820[];
+extern void* gUnk_02035858;
+extern void* gUnk_0203585C;
+extern TaskPool gUnk_020358A8;
+extern UnkStruct_099931E4 gUnk_099931E4[];
 
 #endif /* GUARD_MODE_MS_H */

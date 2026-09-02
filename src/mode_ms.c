@@ -4,7 +4,26 @@
 
 INCLUDE_ASM("mode_ms/mode_ms_top_0.s");
 INCLUDE_ASM("mode_ms/mode_ms_top_1.s");
-INCLUDE_ASM("mode_ms/mode_ms_top_2.s");
+void mode_ms_top_2(void) {
+    s32 i;
+
+    ReleaseObjPalette(gUnk_020357CC);
+    ReleaseObjTiles(gUnk_020357C8);
+    ReleaseObjPalette(gUnk_020357D4);
+    ReleaseObjTiles(gUnk_020357D0);
+    ReleaseObjPalette(gUnk_020357F4);
+    ReleaseObjTiles(gUnk_020357F0);
+    ReleaseObjPalette(gUnk_02035814);
+    ReleaseObjTiles(gUnk_02035810);
+
+    for (i = 0; i < 2; i++) {
+        ReleaseObjPalette(gUnk_02035820[i]);
+        ReleaseObjTiles(gUnk_02035818[i]);
+    }
+    ReleaseObjPalette(gUnk_0203585C);
+    ReleaseObjTiles(gUnk_02035858);
+    TaskPoolDestroy(&gUnk_020358A8);
+}
 void func_081025AC(void) {
     s32 i;
 
@@ -126,6 +145,7 @@ s32 func_08102A94(void) {
 INCLUDE_ASM("mode_ms/func_08102AB4.s");
 INCLUDE_ASM("mode_ms/func_08102DC8.s");
 INCLUDE_ASM("mode_ms/func_08102F30.s");
+INCLUDE_ASM("mode_ms/func_0810329C.s");
 void func_08103CD8(s16 a) {
     s32 i;
 
@@ -135,7 +155,11 @@ void func_08103CD8(s16 a) {
         }
     }
 }
-INCLUDE_ASM("mode_ms/func_08103D54.s");
+void func_08103D54(s16 a) {
+    LoadBgMap(1, gUnk_099931E4[a].unk_0C, gUnk_099931E4[a].unk_10);
+}
+INCLUDE_ASM("mode_ms/func_08103D7C.s");
+INCLUDE_ASM("mode_ms/func_08103DE8.s");
 u16 func_08103F3C(void) {
     s16 i;
     u16 r;
@@ -156,3 +180,8 @@ u16 func_08103F3C(void) {
     return i % 10;
 }
 INCLUDE_ASM("mode_ms/func_08103F94.s");
+INCLUDE_ASM("mode_ms/func_081041B4.s");
+INCLUDE_ASM("mode_ms/func_08104404.s");
+INCLUDE_ASM("mode_ms/mode_ms_shop_0.s");
+INCLUDE_ASM("mode_ms/mode_ms_shop_1.s");
+INCLUDE_ASM("mode_ms/mode_ms_shop_2.s");
