@@ -732,7 +732,9 @@ s32* func_080E54B8(u8 a) {
     return gUnk_09EF70D0[gUnk_0203C590[4]]->unk_30 + a;
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E5504.s");
+void* func_080E5504(void) {
+    return gUnk_02034F30;
+}
 
 void func_080E5510(u8 a) {
     if (a != 0x10) {
@@ -742,7 +744,9 @@ void func_080E5510(u8 a) {
     }
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E5564.s");
+u16 func_080E5564(void) {
+    return gUnk_0203C7B0.unk_01 + GetRandom() % (gUnk_0203C7B0.unk_02 - gUnk_0203C7B0.unk_01 + 1);
+}
 
 UnkStruct_02034F24* func_080E5590(u8 a) {
     return &gUnk_02034F24[a];
@@ -1297,7 +1301,35 @@ u8* func_080E8644(void* a, u16 b, u16 c) {
     return gUnk_0984B860[p[(u8)(b >> 3) + (u8)(c >> 3) * 4]];
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E8668.s");
+void* func_080E8668(u8 a) {
+    s32 i;
+
+    switch (a) {
+    case 1:
+    case 2:
+    case 7:
+    case 8:
+    case 9:
+        i = 1;
+        break;
+    case 3:
+        i = 2;
+        break;
+    case 5:
+        i = 3;
+        break;
+    case 4:
+        i = 4;
+        break;
+    case 6:
+        i = 5;
+        break;
+    default:
+        i = 0;
+        break;
+    }
+    return &gUnk_0984B860[i + 10];
+}
 
 u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y) {
     u16 cx;
@@ -1736,8 +1768,30 @@ s32 func_080EF3A0(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080EF404.s");
-INCLUDE_ASM("unk_080dfebc/func_080EF478.s");
+void func_080EF404(UnkStruct_080E590C* p, s32 b, s32 c) {
+    UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
+
+    if (p->unk_04 & 0x10) {
+        b /= 5;
+        c /= 5;
+    }
+    p->unk_08.unk_00 += gSineTable[q->unk_14] * q->unk_10 >> 8;
+    q->unk_04 += -gSineTable[q->unk_14 + 64] * q->unk_10 >> 8;
+    q->unk_10 += b;
+    if (q->unk_10 > c) {
+        q->unk_10 = c;
+    }
+}
+void func_080EF478(UnkStruct_080E590C* p, s32 b, s32 c) {
+    UnkStruct_080DFF1C* q = &p->unk_08;
+
+    if (func_080DFBDC(q) != 0 || func_080DFF1C(q) != q->unk_08) {
+        p->unk_08.unk_00 = b;
+        q->unk_04 = c;
+        p->unk_CC = func_080EF84C;
+        func_08012614(p->unk_48, 1);
+    }
+}
 
 s32 func_080EF4BC(UnkStruct_080E590C* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
