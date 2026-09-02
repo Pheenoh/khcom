@@ -4,7 +4,7 @@ crt0.s
 main.c
 malloc.c -O2 -fprologue-bugfix -fno-common
 taskpool.c -O2 -fprologue-bugfix -fno-common
-key.c
+key.c -O2 -fprologue-bugfix -fno-common
 sprite.c
 engine.c
 sio.c
@@ -41,7 +41,7 @@ mode_jiminy.c
 monsgage.c
 btl4.c
 tutorial.c
-mode_movie.c
+mode_movie.c -O2 -fprologue-bugfix -fno-common
 mode_test.c
 unk_0806180c.c
 mode_eventselect.c
