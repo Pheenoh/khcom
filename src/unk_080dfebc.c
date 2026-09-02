@@ -1,7 +1,36 @@
 #include "macros.h"
 #include "unk_080dfebc.h"
 
-INCLUDE_ASM("unk_080dfebc/func_080DFEBC.s");
+s32 func_080DFEBC(s32 x, s32 y, s32 z) {
+    UnkStruct_080DFB8C* p = func_080DFB8C(x, y);
+    s32 r;
+
+    if (p == 0) {
+        return 0;
+    }
+    if (p->unk_08 < z) {
+        if (p->unk_02 == 4 || p->unk_02 == 6) {
+            if (func_080E86C8(p, x, y)) {
+                r = p->unk_08;
+            } else {
+                r = p->unk_0C;
+            }
+        } else {
+            r = p->unk_08;
+        }
+    } else {
+        if (p->unk_02 == 3 || p->unk_02 == 5) {
+            if (func_080E86C8(p, x, y)) {
+                r = p->unk_0C;
+            } else {
+                r = p->unk_08;
+            }
+        } else {
+            r = p->unk_0C;
+        }
+    }
+    return r;
+}
 
 s32 func_080DFF1C(UnkStruct_080DFF1C* p) {
     return func_080DFEBC(p->unk_00, p->unk_04 + p->unk_0C, p->unk_0C);
@@ -262,7 +291,11 @@ void func_080E0900(UnkStruct_080DFB8C* p, s32 a, s32 b) {
     }
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E0920.s");
+u8 func_080E0920(UnkStruct_080DFF1C* p, u16 a) {
+    u16 d = (p->unk_0C - p->unk_08) >> 8;
+
+    return d > a * 16;
+}
 
 u8 func_080E0938(u8 a) {
     const u8* p = gUnk_0984D32C[a];
@@ -896,7 +929,9 @@ u8 func_080E8374(UnkStruct_080E8374* p) {
     return 0;
 }
 
-INCLUDE_ASM("unk_080dfebc/func_080E83C4.s");
+u16 func_080E83C4(void) {
+    return 512 - gUnk_02034F7A;
+}
 INCLUDE_ASM("unk_080dfebc/func_080E83DC.s");
 
 void func_080E84DC(UnkStruct_080DFF1C* p) {
@@ -928,11 +963,11 @@ u8* func_080E8644(void* a, u16 b, u16 c) {
 
 INCLUDE_ASM("unk_080dfebc/func_080E8668.s");
 
-#ifdef NON_MATCHING
-
 u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y) {
     u16 cx;
     u16 cy;
+    u8 bx;
+    u8 by;
     u8* t;
 
     if (p == 0) {
@@ -941,14 +976,10 @@ u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y) {
     cx = (x >> 8) % 32;
     cy = (y >> 8) % 16;
     t = func_080E8644(p->unk_10, cx, cy);
-    return (t[cy & 7] >> (7 - (cx & 7))) & 1;
+    bx = cx & 7;
+    by = cy & 7;
+    return (t[by] >> (7 - bx)) & 1;
 }
-
-#else
-
-INCLUDE_ASM("unk_080dfebc/func_080E86C8.s");
-
-#endif
 
 INCLUDE_ASM("unk_080dfebc/func_080E8724.s");
 INCLUDE_ASM("unk_080dfebc/func_080E87EC.s");
