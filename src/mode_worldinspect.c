@@ -2,6 +2,32 @@
 #include "mode_worldinspect.h"
 #include "gba/keys.h"
 
+s16 gUnk_02035118;
+u8 gUnk_0203511A;
+void* gUnk_0203511C;
+void* gUnk_02035120;
+void* gUnk_02035124;
+void* gUnk_02035128;
+s32 gUnk_0203512C;
+u8 gUnk_02035130[0x18];
+void* gUnk_02035148;
+void* gUnk_0203514C;
+u8 gUnk_02035150[0x18];
+void* gUnk_02035168[12];
+void* gUnk_02035198[12];
+void* gUnk_020351C8[12];
+u8 gUnk_020351F8[0xC8];
+u8 gUnk_020352C0[0x200];
+s16 gUnk_020354C0;
+s16 gUnk_020354C2;
+s32 gUnk_020354C4;
+s32 gUnk_020354C8[2];
+s32 gUnk_020354D0;
+void* gUnk_020354D4;
+s32 gUnk_020354D8;
+s32 gUnk_020354DC;
+u8 gUnk_020354E0;
+
 INCLUDE_ASM("mode_worldinspect/mode_worldinspect_0.s");
 
 #ifndef VERSION_EU

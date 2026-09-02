@@ -27,6 +27,8 @@ UNIT_BSS = {
     "src/malloc.o": 0x030074A8,
     "src/key.o": 0x02034000,
     "src/mode_movie.o": 0x02034938,
+    "src/mode_worldinspect.o": {"us": 0x02035118, "jp": 0x02035078, "eu": None},
+    "src/mode_sio2.o": {"us": 0x02034CF4, "jp": 0x02034C54, "eu": None},
 }
 
 DEFAULT_VERSION = "us"

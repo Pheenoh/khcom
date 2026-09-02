@@ -2,6 +2,31 @@
 #include "mode_sio2.h"
 #include "gba/keys.h"
 
+s8 gUnk_02034CF4;
+s8 gUnk_02034CF5;
+u16 gUnk_02034CF6;
+u16 gUnk_02034CF8;
+u32 gUnk_02034CFC;
+u32 gUnk_02034D00;
+u32 gUnk_02034D04;
+u16 gUnk_02034D08;
+u32 gUnk_02034D0C;
+u8 gUnk_02034D10;
+u32 gUnk_02034D14;
+TaskPool gUnk_02034D18;
+u32 gUnk_02034D2C;
+TaskPool gUnk_02034D30;
+u8 gUnk_02034D44;
+u32 gUnk_02034D48;
+u16 gUnk_02034D4C;
+Task* gUnk_02034D50[12];
+TaskPool gUnk_02034D80;
+Task* gUnk_02034D94;
+u8 gUnk_02034D98;
+s32 gUnk_02034D9C;
+s32 gUnk_02034DA0;
+s32 gUnk_02034DA4;
+
 void mode_sio_dbg_flg_0(s32 arg) {
     s32 i;
 
