@@ -2,15 +2,9 @@
 #define GUARD_UNK_0806180C_H
 
 #include "types.h"
+#include "text_types.h"
 #include "malloc.h"
 
-typedef struct TextSlot {
-    void* unk_00;
-    u8 unk_04;
-    s8 unk_05;
-    u8 unk_06;
-    u8 unk_07;
-} TextSlot;
 
 #define NULL ((void*)0)
 

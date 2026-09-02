@@ -2,6 +2,8 @@
 #define GUARD_HUM_H
 
 #include "types.h"
+#include "jiminy_types.h"
+#include "save_types.h"
 #include "key.h"
 #include "anim.h"
 #include "taskpool.h"
@@ -498,11 +500,6 @@ typedef struct JiminyLine {
     JiminyCell unk_000[48];
 } JiminyLine;
 
-typedef struct JiminyPair {
-    u16 unk_00;
-    u16 unk_02;
-} JiminyPair;
-
 typedef struct JiminyWork {
     s32 unk_000;
     void* unk_004;
@@ -568,14 +565,6 @@ typedef struct JiminyWork {
     u16 unk_D3E;
 } JiminyWork;
 
-typedef struct SaveFileSummary {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u32 unk_04;
-} SaveFileSummary;
-
 typedef struct BtlSetup {
     u8 unk_000[0x08];
     u32 unk_008;
@@ -605,17 +594,6 @@ typedef struct SaveHeaderData {
     u16 unk_02;
     SaveFileSummary files[4];
 } SaveHeaderData;
-
-typedef struct SaveCommon {
-    u32 flags;
-    u8 unk_04[0x88];
-    u16 unk_8C;
-    u16 unk_8E;
-    u8 unk_90;
-    u8 unk_91;
-    u8 unk_92[0x02];
-    u32 unk_94;
-} SaveCommon;
 
 typedef struct SaveFileLarge {
     SaveCommon common;

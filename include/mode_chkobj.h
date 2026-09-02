@@ -2,21 +2,10 @@
 #define GUARD_MODE_CHKOBJ_H
 
 #include "types.h"
+#include "chkobj.h"
 #include "main.h"
 #include "engine.h"
 #include "mode.h"
-typedef struct ObjDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-    void* unk_10;
-    const char* unk_14;
-    const char* unk_18;
-    u16 unk_1C;
-    u16 unk_1E;
-} ObjDef;
 
 typedef struct ChkObjEntry {
     ObjDef* unk_00;
@@ -25,22 +14,6 @@ typedef struct ChkObjEntry {
     const char* unk_08;
 } ChkObjEntry;
 
-typedef struct ChkObjWork {
-    TaskPool pool;
-    s16 unk_14;
-    s16 unk_16;
-    s16 unk_18;
-    u8 unk_1A[0x02];
-    void* unk_1C;
-    void* unk_20;
-    AnimState unk_24;
-    void* unk_3C;
-    u8 unk_40;
-    u8 unk_41;
-    u16 unk_42;
-    s16 unk_44;
-    s16 unk_46;
-} ChkObjWork;
 
 void func_080010CC(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
