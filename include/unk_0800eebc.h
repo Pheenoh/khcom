@@ -79,7 +79,9 @@ typedef struct BtlObj {
     u8 unk_03E[0x02];
     Collider unk_040;
     u16 unk_09C;
-    u8 unk_09E[0x1A];
+    u8 unk_09E[0x16];
+    u16 unk_0B4;
+    u8 unk_0B6[0x02];
     ListNode unk_0B8;
     u8 unk_0C8[0x10];
     s32 unk_0D8;
@@ -124,6 +126,16 @@ typedef struct BtlSetup {
     u64 unk_200;
     u64 unk_208;
 } BtlSetup;
+
+typedef struct UnkStruct_0801B8A8 {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x06];
+    u16 unk_12;
+    u16 unk_14;
+    u8 unk_16[0x0A];
+} UnkStruct_0801B8A8;
 
 typedef struct UnkStruct_020348C8 {
     s32 unk_00;
@@ -286,9 +298,13 @@ extern u8 gUnk_09EDA9C0[];
 extern u8 gUnk_09EDA9F0[];
 extern u8 gUnk_09EDAA20[];
 extern u8 gUnk_09EDAA50[];
+extern u8 gUnk_09EDAA98[];
 extern u8 gUnk_09EDAAC8[];
+extern u8 gUnk_09EDAB70[];
 extern u8 gUnk_09EDAC78[];
 extern u8 gUnk_09EDAC90[];
+extern u8 gUnk_09EDACA8[];
+extern u8 gUnk_09EDAF18[];
 extern u8 gUnk_09EDABD0[];
 extern u8 gUnk_09EDABE8[];
 extern u8 gUnk_09EDAD20[];
@@ -427,6 +443,12 @@ void func_080121D4(FldObj* p);
 void func_0801709C(void);
 void func_0801718C(void);
 s32 abs(s32 x);
+void* TaskCreate(void* pool, void* desc, void* arg);
+void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n);
+void func_0801B918(BtlObj* p);
+void func_080184C4(s32 x, s32 y, s32 z, u8 f);
+void func_08015DC8(s32 x, s32 y, s32 z);
+void func_08016684(s32 x, s32 y, s32 z);
 void func_08017138(u16 a);
 void func_08018970(s32 x, s32 y, s32 z);
 void func_08018FE4(s32 x, s32 y, s32 z);

@@ -1123,7 +1123,23 @@ void func_08015D04(void) {
     func_08012908();
 }
 INCLUDE_ASM("unk_0800eebc/func_08015D30.s");
-INCLUDE_ASM("unk_0800eebc/func_08015DC8.s");
+void func_08015DC8(s32 x, s32 y, s32 z) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    WorldToScreen(&sx, &sy, x, y, z);
+    gUnk_02034928->unk_1C = 0x200;
+    gUnk_02034928->unk_20 = 0x200;
+    func_08006B34(7);
+    func_08006778(gUnk_09EDAA98, sx, sy);
+    gUnk_02034928->unk_04 = func_08012908;
+}
 INCLUDE_ASM("unk_0800eebc/func_08015E3C.s");
 INCLUDE_ASM("unk_0800eebc/func_08015F3C.s");
 
@@ -1176,7 +1192,22 @@ Collider* func_08016320(void) {
 INCLUDE_ASM("unk_0800eebc/func_08016374.s");
 INCLUDE_ASM("unk_0800eebc/func_08016468.s");
 INCLUDE_ASM("unk_0800eebc/func_080165DC.s");
-INCLUDE_ASM("unk_0800eebc/func_08016684.s");
+void func_08016684(s32 x, s32 y, s32 z) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(0)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    WorldToScreen(&sx, &sy, x, y, z);
+    func_08006778(gUnk_09EDAB70, sx, sy);
+    gUnk_02034928->unk_1C = 0x200;
+    gUnk_02034928->unk_20 = 0x200;
+    gUnk_02034928->unk_04 = func_08012908;
+}
 
 void func_080166F8(void) {
     gUnk_02034928->unk_1C += gUnk_02034928->unk_28;
@@ -1362,7 +1393,22 @@ void func_0801848C(void) {
     func_08012908();
 }
 
-INCLUDE_ASM("unk_0800eebc/func_080184C4.s");
+void func_080184C4(s32 x, s32 y, s32 z, u8 f) {
+    s16 sx;
+    s16 sy;
+    if (func_080126E4(3)) {
+        return;
+    }
+    func_08012674();
+    gUnk_02034928->unk_10 = x;
+    gUnk_02034928->unk_14 = y;
+    gUnk_02034928->unk_18 = z;
+    gUnk_02034928->unk_24 = f;
+    WorldToScreen(&sx, &sy, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18);
+    func_08006778(gUnk_09EDACA8, sx, sy);
+    gUnk_02034928->unk_34 |= 0x20;
+    gUnk_02034928->unk_04 = func_0801848C;
+}
 INCLUDE_ASM("unk_0800eebc/func_0801853C.s");
 INCLUDE_ASM("unk_0800eebc/func_080185D0.s");
 INCLUDE_ASM("unk_0800eebc/func_08018724.s");
@@ -1621,8 +1667,32 @@ void func_0801B7D8(BtlObj* obj) {
 }
 
 INCLUDE_ASM("unk_0800eebc/func_0801B818.s");
-INCLUDE_ASM("unk_0800eebc/func_0801B8A8.s");
-INCLUDE_ASM("unk_0800eebc/func_0801B918.s");
+void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n) {
+    s16 i;
+    s16 lim;
+    lim = *n / c;
+    p->unk_12 = b;
+    for (i = 0; i < lim; i++) {
+        TaskCreate(&gUnk_02039B84->unk_02C, gUnk_09EDAF18, p);
+    }
+    *n = *n % c;
+}
+void func_0801B918(BtlObj* p) {
+    UnkStruct_0801B8A8 a;
+    s16 n;
+    a.unk_00 = p->unk_004;
+    a.unk_04 = p->unk_008;
+    a.unk_08 = p->unk_00C;
+    a.unk_14 = 1;
+    n = p->unk_0B4;
+    func_0801B8A8(&a, 0, 0x578, &n);
+    func_0801B8A8(&a, 8, 199, &n);
+    func_0801B8A8(&a, 5, 60, &n);
+    func_0801B8A8(&a, 7, 30, &n);
+    func_0801B8A8(&a, 4, 10, &n);
+    func_0801B8A8(&a, 6, 5, &n);
+    func_0801B8A8(&a, 3, 1, &n);
+}
 INCLUDE_ASM("unk_0800eebc/func_0801B994.s");
 INCLUDE_ASM("unk_0800eebc/func_0801BBF0.s");
 u8 func_0801BCA8(s32 a) {
