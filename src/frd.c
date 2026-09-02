@@ -492,9 +492,49 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     }
 }
 
-INCLUDE_ASM("frd/func_08048980.s");
+void func_08048980(FrdPanWork* work) {
+    FrdBody sub;
 
-INCLUDE_ASM("frd/func_08048A68.s");
+    if ((s16)work->unk_14E % 3 == 0) {
+        sub.unk_04 = work->unk_020.unk_04;
+        sub.unk_08 = work->unk_020.unk_08;
+        sub.unk_0C = work->unk_020.unk_0C;
+
+        switch (func_08005B38(&work->unk_130)) {
+        case 1:
+        case 2:
+            sub.unk_0C -= 0x800;
+            break;
+        case 3:
+        case 4:
+            sub.unk_0C -= 0x1800;
+            if (work->unk_020.unk_34 & 4) {
+                sub.unk_04 += 0x2000;
+            } else {
+                sub.unk_04 -= 0x2000;
+            }
+            break;
+        case 5:
+        default:
+            sub.unk_0C -= 0x1000;
+            if (work->unk_020.unk_34 & 4) {
+                sub.unk_04 += 0x1000;
+            } else {
+                sub.unk_04 -= 0x1000;
+            }
+            break;
+        }
+
+        TaskCreate(&work->unk_000, gUnk_09EDB458, &sub);
+    }
+}
+
+void func_08048A68(FrdPanWork* work) {
+    FrdBody* body;
+
+    body = &work->unk_020;
+    body->unk_0C += ((work->unk_164 + (gSineTable[(work->unk_14E * 2) & 0xFF] << 4)) - body->unk_0C) >> 2;
+}
 
 INCLUDE_ASM("frd/task_frd_pan_1.s");
 
@@ -549,7 +589,27 @@ void task_frd_pan_3(FrdPanWork* work) {
     TaskPoolDestroy(&work->unk_000);
 }
 
-INCLUDE_ASM("frd/func_080490FC.s");
+u8 func_080490FC(FrdAladdinWork* work) {
+    FrdBody* body;
+
+    body = &work->unk_020;
+
+    if (func_0801C6D4(&body->unk_04, &body->unk_08, &body->unk_0C, &body->unk_10)) {
+        body->unk_0C += work->unk_154;
+        work->unk_154 = -0x200;
+    } else {
+        body->unk_0C += work->unk_154;
+        work->unk_154 += 0x33;
+    }
+
+    if (body->unk_0C > body->unk_10) {
+        body->unk_0C = body->unk_10;
+        work->unk_154 = 0;
+        return 1;
+    }
+
+    return 0;
+}
 
 void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     FrdBody* body;

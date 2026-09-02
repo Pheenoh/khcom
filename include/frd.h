@@ -161,7 +161,7 @@ typedef struct FrdPanWork {
     s32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
-    s16 unk_14E;
+    u16 unk_14E;
     s16 unk_150;
     s16 unk_152;
     s16 unk_154;
@@ -214,6 +214,7 @@ extern FrdObj* gUnk_02039B84;
 extern FrdObj* gUnk_02039B9C;
 
 extern u8 gUnk_09EDAE88[];
+extern u8 gUnk_09EDB458[];
 extern s16 gSineTable[];
 extern u8 gUnk_09617C58[];
 extern u8 gUnk_0813EB8C[];
@@ -238,7 +239,7 @@ void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void TaskPoolDraw(TaskPool* a);
-void func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
+u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void m4aSongNumStart(u16 n);
 void* LoadObjPalette(void* src, s32 size);
 void AnimInit(AnimState* a, void* b, void* c);
@@ -247,5 +248,6 @@ void func_08017260(s32 a, s32 b, s32 c, s32 d);
 void func_08045494(FrdBody* body, u8 a, s16 b, s16 c);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskCreate(TaskPool* pool, void* desc, void* arg);
+u16 func_08005B38(AnimState* a);
 
 #endif /* GUARD_FRD_H */
