@@ -2,6 +2,7 @@
 #define GUARD_MODE_JIMINY_H
 
 #include "types.h"
+#include "jiminy_types.h"
 #include "main.h"
 #include "anim.h"
 #include "obj.h"
@@ -15,10 +16,6 @@ typedef struct JiminyLine {
     u8 unk_004[0x17C];
 } JiminyLine;
 
-typedef struct JiminyPair {
-    u16 unk_00;
-    u16 unk_02;
-} JiminyPair;
 
 typedef struct JiminyEntry {
     void* unk_00;
