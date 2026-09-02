@@ -31,7 +31,7 @@ _080C99A0:
 	movs r0, #0x00
 	strb r0, [r2, #0x00]
 	adds r0, r5, #0x0
-	bl _080C8C40
+	bl func_080C8C40
 	adds r0, r5, #0x0
 	bl func_080C98B8
 	ldr r4, _080C99F4 @ =0x02034DAC
