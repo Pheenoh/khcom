@@ -615,6 +615,13 @@ INCLUDE_ASM("card/func_0807D380.s");
 INCLUDE_ASM("card/func_0807D4B8.s");
 
 INCLUDE_ASM("card/func_0807E018.s");
+INCLUDE_ASM("card/func_0807E1A0.s");
+INCLUDE_ASM("card/func_0807E1AC.s");
+INCLUDE_ASM("card/func_0807E1B8.s");
+INCLUDE_ASM("card/func_0807E1C4.s");
+INCLUDE_ASM("card/func_0807E1D0.s");
+INCLUDE_ASM("card/func_0807E1DC.s");
+INCLUDE_ASM("card/func_0807E1E8.s");
 
 void func_0807E1F4(void) {
     gUnk_02034AA4 = 1;
