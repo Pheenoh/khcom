@@ -4,9 +4,18 @@
 #include "types.h"
 #include "gba/syscall.h"
 #include "malloc.h"
+#include "m4a.h"
+#include "evt_types.h"
 #include "game.h"
 #include "card.h"
 
+typedef struct UnkStruct_02039DD0 {
+    s16 unk_00;
+    u16 unk_02;
+} UnkStruct_02039DD0;
+
+extern UnkStruct_02039DD0* gUnk_02039DD0;
+extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
 extern u8 gUnk_0905EAE8[];
@@ -14,12 +23,22 @@ extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EEE6[];
 extern u8 gUnk_09611AB8[];
 
+void* func_080668F0(void);
+void* func_08066904(void);
+void func_08066918(void* a, void* b);
+u8 _080669DC(s32 a, void* b);
+void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_080062F4(u16 a, s32 b);
 void TaskPoolInit(TaskPool* pool, s32 count);
 void func_0807B668(UnkStruct_02039DD4* p);
 void func_0807E23C(void);
 void func_0807E248(void);
 
+void func_08076110(u16 song, s16 x, s16 y);
+void func_08076214(u8* work);
+s32 func_0807622C(u8* work);
+void func_08076250(u8* work);
+void func_08076274(s32* p);
 void func_08076284(void);
 void func_08076290(void);
 void func_0807629C(void);
