@@ -846,12 +846,12 @@ void task_poo_mapanime_3(void* w) {
 
 s32 func_080CD198(void) {
     switch (GetRandom() % 40 / 10) {
-        case 0:
-            return 0;
-        case 1:
-            return 2;
-        case 2:
-            return 4;
+    case 0:
+        return 0;
+    case 1:
+        return 2;
+    case 2:
+        return 4;
     }
     return 6;
 }
@@ -1058,23 +1058,23 @@ void func_080CE710(PooTiggerWork* w, u16 b) {
     func_08005B64(w->unk_0C);
     if (w->unk_C0 == 2) {
         switch (w->unk_B8) {
-            case 0xAD:
-                a = 2;
-                w->unk_24 = 0;
-                break;
-            case 0x53:
-                a = 2;
-                w->unk_24 = 1;
-                break;
-            case 0xD3:
-                a = 3;
-                w->unk_24 = 0;
-                break;
-            case 0x00:
-            default:
-                a = 3;
-                w->unk_24 = 1;
-                break;
+        case 0xAD:
+            a = 2;
+            w->unk_24 = 0;
+            break;
+        case 0x53:
+            a = 2;
+            w->unk_24 = 1;
+            break;
+        case 0xD3:
+            a = 3;
+            w->unk_24 = 0;
+            break;
+        case 0x00:
+        default:
+            a = 3;
+            w->unk_24 = 1;
+            break;
         }
     } else {
         a = 0;
@@ -1911,15 +1911,15 @@ u8 task_poo_mapbee_1(PooMapBeeWork* w) {
     }
 
     switch (w->unk_36) {
-        case 0:
-            if (AnimIsFinished(w->unk_0C) != 0) {
-                AnimStart(w->unk_0C, 1, 1);
-                w->unk_36 = 1;
-            }
-            break;
-        case 1:
-            w->unk_2C -= 0xCC;
-            break;
+    case 0:
+        if (AnimIsFinished(w->unk_0C) != 0) {
+            AnimStart(w->unk_0C, 1, 1);
+            w->unk_36 = 1;
+        }
+        break;
+    case 1:
+        w->unk_2C -= 0xCC;
+        break;
     }
     w->unk_08 = AnimUpdate(w->unk_0C);
     return 1;

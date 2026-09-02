@@ -54,18 +54,18 @@ void func_080DFF5C(UnkStruct_080DFF1C* p, s16 x, s16 y, u8 a, u8 b) {
 
 s32 func_080DFF94(s32 x, s32 y, s32 z) {
     switch (func_080DFB8C(x, y + z)->unk_02) {
-        case 1:
-        case 2:
-        case 7:
-            return 0;
-        case 3:
-        case 4:
-        case 8:
-            return 0xD3;
-        case 5:
-        case 6:
-        case 9:
-            return 0x2D;
+    case 1:
+    case 2:
+    case 7:
+        return 0;
+    case 3:
+    case 4:
+    case 8:
+        return 0xD3;
+    case 5:
+    case 6:
+    case 9:
+        return 0x2D;
     }
     return 0x80;
 }
@@ -214,18 +214,18 @@ INCLUDE_ASM("unk_080dfebc/func_080E042C.s");
 
 void func_080E04EC(void) {
     switch (gUnk_0203C590[6]) {
-        case 0xFC:
-        case 0xFD:
-        case 0xFE:
-            func_080010CC(&gUnk_09EF6AC0, 0);
-            break;
-        default:
-            if (gUnk_0203C590[4] != 13) {
-                func_080010CC(&gUnk_09EF6AA0, 0);
-            } else {
-                func_080010CC(&gUnk_09EF3C88, 1);
-            }
-            break;
+    case 0xFC:
+    case 0xFD:
+    case 0xFE:
+        func_080010CC(&gUnk_09EF6AC0, 0);
+        break;
+    default:
+        if (gUnk_0203C590[4] != 13) {
+            func_080010CC(&gUnk_09EF6AA0, 0);
+        } else {
+            func_080010CC(&gUnk_09EF3C88, 1);
+        }
+        break;
     }
 }
 
@@ -361,13 +361,13 @@ void func_080E09B4(UnkStruct_080DFB8C* p, u8 n, u8 v) {
         u16 t;
 
         switch (q[0]) {
-            case 1:
-                base = gUnk_02034F34->unk_1C;
-                break;
-            case 0:
-            default:
-                base = gUnk_02034F34->unk_18;
-                break;
+        case 1:
+            base = gUnk_02034F34->unk_1C;
+            break;
+        case 0:
+        default:
+            base = gUnk_02034F34->unk_18;
+            break;
         }
         t = ((v & 7) + q[1]) * 4 + ((v >> 3) + q[2]) * 64;
         if (p->unk_00 & 4) {
@@ -545,17 +545,17 @@ u8 func_080E2BA0(u8 a) {
     UnkStruct_02034F20* p = gUnk_02034F20;
 
     switch (gUnk_0203C7AC->unk_00 & 0x9000000) {
-        case 0x1000000:
-            a = 0;
-            break;
-        case 0x8000000:
-            a = 3;
-            break;
-        case 0x9000000:
-            break;
-        default:
-            a = 5;
-            break;
+    case 0x1000000:
+        a = 0;
+        break;
+    case 0x8000000:
+        a = 3;
+        break;
+    case 0x9000000:
+        break;
+    default:
+        a = 5;
+        break;
     }
 
     if (a != 5) {
@@ -623,12 +623,12 @@ s32 func_080E2E9C(s16 a, s16 b, s16 c) {
 
 s32 func_080E2F14(s16 x, s16 y) {
     switch (func_080E08BC(x, y)->unk_02) {
-        case 6:
-            return 5;
-        case 2:
-            return 1;
-        case 4:
-            return 3;
+    case 6:
+        return 5;
+    case 2:
+        return 1;
+    case 4:
+        return 3;
     }
     return 0xB;
 }
@@ -675,12 +675,12 @@ s32 func_080E300C(u8 d, s16 x, s16 y) {
     if (d != 0) {
         for (i = y; i >= 0; i--) {
             switch (func_080E08BC(x, i)->unk_02) {
-                case 3:
-                    return 4;
-                case 5:
-                    return 6;
-                case 1:
-                    return 2;
+            case 3:
+                return 4;
+            case 5:
+                return 6;
+            case 1:
+                return 2;
             }
         }
     }

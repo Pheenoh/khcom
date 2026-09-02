@@ -39,39 +39,39 @@ void func_0800C064(void) {
         entry = &gUnk_08130A4C[gUnk_020348BC];
 
         switch (entry->unk_08) {
-            case 0:
-                func_080010E0(&gUnk_09EDE4D0, 1);
-                break;
-            case 1:
-                gUnk_02039BB0.unk_180 = 0x200;
-                func_080010CC(&gUnk_09EF8F9C, 0);
-                break;
-            case 2:
-                func_080DF380();
-                func_080E04EC();
-                break;
-            case 3:
-                func_0806180C(6);
-                break;
-            case 4:
-                func_0806180C(0x14);
-                break;
-            case 5:
-                func_0806180C(0x1C);
-                break;
-            case 6:
-                func_0806180C(0x2C);
-                break;
-            case 7:
-                func_0806180C(0x3D);
-                break;
-            case 8:
-                func_0806180C(0x49);
-                break;
-            case 9:
-            default:
-                func_080010CC(&gUnk_09EF4EC0, 0);
-                break;
+        case 0:
+            func_080010E0(&gUnk_09EDE4D0, 1);
+            break;
+        case 1:
+            gUnk_02039BB0.unk_180 = 0x200;
+            func_080010CC(&gUnk_09EF8F9C, 0);
+            break;
+        case 2:
+            func_080DF380();
+            func_080E04EC();
+            break;
+        case 3:
+            func_0806180C(6);
+            break;
+        case 4:
+            func_0806180C(0x14);
+            break;
+        case 5:
+            func_0806180C(0x1C);
+            break;
+        case 6:
+            func_0806180C(0x2C);
+            break;
+        case 7:
+            func_0806180C(0x3D);
+            break;
+        case 8:
+            func_0806180C(0x49);
+            break;
+        case 9:
+        default:
+            func_080010CC(&gUnk_09EF4EC0, 0);
+            break;
         }
     } else {
         func_080605A4(0);

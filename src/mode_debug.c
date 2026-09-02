@@ -51,20 +51,20 @@ void mode_debug_1(void) {
     v = GetPaletteEffect();
 
     switch (GetKeysPressed() & (L_BUTTON | R_BUTTON)) {
-        case 0x100:
-            if (v <= 23) {
-                SetPaletteEffect(v + 1);
-                func_080010CC(&gUnk_09ECEB64, 0);
-                return;
-            }
-            break;
-        case 0x200:
-            if (v > -24) {
-                SetPaletteEffect(v - 1);
-                func_080010CC(&gUnk_09ECEB64, 0);
-                return;
-            }
-            break;
+    case 0x100:
+        if (v <= 23) {
+            SetPaletteEffect(v + 1);
+            func_080010CC(&gUnk_09ECEB64, 0);
+            return;
+        }
+        break;
+    case 0x200:
+        if (v > -24) {
+            SetPaletteEffect(v - 1);
+            func_080010CC(&gUnk_09ECEB64, 0);
+            return;
+        }
+        break;
     }
 
     if (GetKeysRepeat() & DPAD_UP) {
@@ -78,125 +78,125 @@ void mode_debug_1(void) {
     }
 
     switch (gUnk_02034898->unk_00) {
-        case 0:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09EF4EC0, 0);
-                return;
-            }
-            break;
-        case 1:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09ED8634, 0);
-                return;
-            }
-            break;
-        case 2:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09EF69D0, 0);
-                return;
-            }
-            break;
-        case 3:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09ED9B68, 0);
-                return;
-            }
-            break;
-        case 4:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09ED9A0C, 0);
-                return;
-            }
-            break;
-        case 5:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09EE47AC, 0);
-                return;
-            }
-            break;
-        case 6:
-            if (GetKeysPressed() & 9) {
-                SaveLoadHeader();
-                func_08085FB0();
-                func_08085C3C();
-                func_080010CC(&gUnk_09EF12F8, 0);
-                return;
-            }
-            break;
-        case 7:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09ECEB54, 0);
-            }
-            break;
-        case 8:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09EF3C88, 0);
-            }
-            break;
-        case 9:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09ED9B88, 0);
-            }
-            break;
-        case 10:
-            if (GetKeysPressed() & 9) {
-                func_080010CC(&gUnk_09EF160C, 0);
-            }
-            break;
-        case 11:
-            if (GetKeysPressed() & 9) {
-                SaveClearHeader();
-                SaveClearFileLarge(0);
-                SaveClearFileLarge(1);
-                SaveClearFileSmall(0);
-                SaveClearFileSmall(1);
-                SaveClearSystem();
-                func_080010CC(&gUnk_09ECEB64, 0);
-            }
-            break;
-        case 12:
-            if (GetKeysPressed() & 9) {
-                func_0800FDD0(0);
-                func_0800FDD0(17);
-                func_0800FDD0(18);
-                func_0800FDD0(19);
-                func_0800FDD0(20);
-                func_0800FDD0(21);
-                func_0800FDD0(22);
-                func_080010CC(&gUnk_09EF9674, 0);
-            }
-            break;
-        case 13:
-            if (GetKeysPressed() & 9) {
-                func_080010E0(&gUnk_09EDE4D0, 1);
-            }
-            break;
-        case 14:
-            if (GetKeysPressed() & 9) {
-                func_080010E0(&gUnk_09EDE4D0, 2);
-            }
-            break;
-        case 15:
-            if (GetKeysPressed() & 9) {
-                func_080010E0(&gUnk_09EDE4D0, 3);
-            }
-            break;
-        case 16:
-            if (GetKeysPressed() & 9) {
-                func_080010E0(&gUnk_09EDE4D0, 4);
-            }
-            break;
-        case 17:
-            if (GetKeysPressed() & 9) {
-                func_080010E0(&gUnk_09EDE4D0, 5);
-            }
-            break;
-        case 18:
-            gUnk_02034898->unk_00 = 0;
-            break;
-        case -1:
-            gUnk_02034898->unk_00 = 17;
-            break;
+    case 0:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09EF4EC0, 0);
+            return;
+        }
+        break;
+    case 1:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09ED8634, 0);
+            return;
+        }
+        break;
+    case 2:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09EF69D0, 0);
+            return;
+        }
+        break;
+    case 3:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09ED9B68, 0);
+            return;
+        }
+        break;
+    case 4:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09ED9A0C, 0);
+            return;
+        }
+        break;
+    case 5:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09EE47AC, 0);
+            return;
+        }
+        break;
+    case 6:
+        if (GetKeysPressed() & 9) {
+            SaveLoadHeader();
+            func_08085FB0();
+            func_08085C3C();
+            func_080010CC(&gUnk_09EF12F8, 0);
+            return;
+        }
+        break;
+    case 7:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09ECEB54, 0);
+        }
+        break;
+    case 8:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09EF3C88, 0);
+        }
+        break;
+    case 9:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09ED9B88, 0);
+        }
+        break;
+    case 10:
+        if (GetKeysPressed() & 9) {
+            func_080010CC(&gUnk_09EF160C, 0);
+        }
+        break;
+    case 11:
+        if (GetKeysPressed() & 9) {
+            SaveClearHeader();
+            SaveClearFileLarge(0);
+            SaveClearFileLarge(1);
+            SaveClearFileSmall(0);
+            SaveClearFileSmall(1);
+            SaveClearSystem();
+            func_080010CC(&gUnk_09ECEB64, 0);
+        }
+        break;
+    case 12:
+        if (GetKeysPressed() & 9) {
+            func_0800FDD0(0);
+            func_0800FDD0(17);
+            func_0800FDD0(18);
+            func_0800FDD0(19);
+            func_0800FDD0(20);
+            func_0800FDD0(21);
+            func_0800FDD0(22);
+            func_080010CC(&gUnk_09EF9674, 0);
+        }
+        break;
+    case 13:
+        if (GetKeysPressed() & 9) {
+            func_080010E0(&gUnk_09EDE4D0, 1);
+        }
+        break;
+    case 14:
+        if (GetKeysPressed() & 9) {
+            func_080010E0(&gUnk_09EDE4D0, 2);
+        }
+        break;
+    case 15:
+        if (GetKeysPressed() & 9) {
+            func_080010E0(&gUnk_09EDE4D0, 3);
+        }
+        break;
+    case 16:
+        if (GetKeysPressed() & 9) {
+            func_080010E0(&gUnk_09EDE4D0, 4);
+        }
+        break;
+    case 17:
+        if (GetKeysPressed() & 9) {
+            func_080010E0(&gUnk_09EDE4D0, 5);
+        }
+        break;
+    case 18:
+        gUnk_02034898->unk_00 = 0;
+        break;
+    case -1:
+        gUnk_02034898->unk_00 = 17;
+        break;
     }
 
     old = gUnk_02034898->unk_01;

@@ -266,39 +266,39 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
     s32 dir;
 
     switch (gUnk_02039BA0->unk_18.unk_14) {
-        case 0x2D:
-            dir = 4;
-            work->unk_A4 |= 2;
-            break;
-        case 0x40:
-            dir = 3;
-            work->unk_A4 |= 2;
-            break;
-        case 0x53:
-            dir = 2;
-            work->unk_A4 |= 2;
-            break;
-        case 0x80:
-            dir = 1;
-            work->unk_A4 &= 0xFFFD;
-            break;
-        case 0xAD:
-            dir = 2;
-            work->unk_A4 &= 0xFFFD;
-            break;
-        case 0xC0:
-            dir = 3;
-            work->unk_A4 &= 0xFFFD;
-            break;
-        case 0xD3:
-            dir = 4;
-            work->unk_A4 &= 0xFFFD;
-            break;
-        case 0x00:
-        default:
-            dir = 0;
-            work->unk_A4 &= 0xFFFD;
-            break;
+    case 0x2D:
+        dir = 4;
+        work->unk_A4 |= 2;
+        break;
+    case 0x40:
+        dir = 3;
+        work->unk_A4 |= 2;
+        break;
+    case 0x53:
+        dir = 2;
+        work->unk_A4 |= 2;
+        break;
+    case 0x80:
+        dir = 1;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    case 0xAD:
+        dir = 2;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    case 0xC0:
+        dir = 3;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    case 0xD3:
+        dir = 4;
+        work->unk_A4 &= 0xFFFD;
+        break;
+    case 0x00:
+    default:
+        dir = 0;
+        work->unk_A4 &= 0xFFFD;
+        break;
     }
 
     if (work->unk_A8 == index) {
