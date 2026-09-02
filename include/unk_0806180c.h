@@ -50,6 +50,32 @@ typedef struct Work0806180C {
     u8 unk_1B2;
 } Work0806180C;
 
+typedef struct MsgFaceWork {
+    void* unk_00;
+    void* unk_04;
+    u8 unk_08[0x34];
+} MsgFaceWork;
+
+typedef struct MsgWinWork {
+    u8 unk_00[0x14];
+    void* unk_14;
+    u8 unk_18[0x2C];
+} MsgWinWork;
+
+typedef struct EventSeqWork {
+    TaskPool unk_00;
+    TaskPool unk_14;
+    u32 unk_28;
+    u8 unk_2C[6];
+    u8 unk_32;
+    u8 unk_33[9];
+} EventSeqWork;
+
+typedef struct Ctx02039B84 {
+    u8 unk_00[0x2C];
+    TaskPool unk_2C;
+} Ctx02039B84;
+
 typedef struct Work08073E34 {
     u8 unk_00;
     u8 unk_01;
@@ -70,6 +96,8 @@ typedef struct TextCtx {
     s16 unk_68;
     s16 unk_6A;
     u16 unk_6C;
+    u8 unk_6E[0xC];
+    u8 unk_7A;
 } TextCtx;
 
 typedef struct Actor0806180C {
@@ -138,6 +166,12 @@ typedef struct AnimSet0806180C {
 
 extern TextCtx* gUnk_02039DC8;
 extern u16 gUnk_09033C8C[];
+extern u8 gUnk_09EE274C[];
+extern TaskDesc gUnk_09EE474C[];
+extern u8 gUnk_096145D8[];
+extern u8 gUnk_09614618[];
+extern vu16 gUnk_03007FF8;
+extern Ctx02039B84* gUnk_02039B84;
 extern u16 gBldCnt;
 extern vu16 gBldAlpha;
 extern AnimSet0806180C* gUnk_09EE3FB4[];
@@ -188,6 +222,14 @@ void func_08000F8C(void* a, void* b);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
 void* memcpy(void* dst, const void* src, unsigned long n);
+void func_080010CC(void* mode, s32 arg);
+void* TaskCreate(void* a, TaskDesc* desc, void* arg);
+void TaskPoolDestroy(void* pool);
+void TaskPoolDraw(void* pool);
+void LoadBgPalette(s32 bg, void* src, u16 size);
+void m4aMPlayAllStop(void);
+u8 func_08006314(void);
+void func_08074504(void);
 u8 func_0806E184(Work0806180C* p, void* a);
 u8 func_0806FA84(Work0806180C* p, void* a);
 u8 func_0806FDB0(Work0806180C* p, void* a);
