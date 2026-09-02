@@ -8,6 +8,7 @@
 #include "evt_types.h"
 #include "game.h"
 #include "card.h"
+#include "mode.h"
 
 typedef struct UnkStruct_02039DD0 {
     s16 unk_00;
@@ -16,13 +17,42 @@ typedef struct UnkStruct_02039DD0 {
 
 extern UnkStruct_02039DD0* gUnk_02039DD0;
 extern UnkStruct_02039DC8* gUnk_02039DC8;
+extern s16 gUnk_02034A94;
+extern u8 gUnk_02034A96;
 extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EEE6[];
 extern u8 gUnk_09611AB8[];
+extern const char gUnk_08F70990[];
+extern const char gUnk_09033ED8[];
+extern const char gUnk_09033EDC[];
+extern const char gUnk_09033EE0[];
+extern const char gUnk_09033EF8[];
+extern const char gUnk_09033F10[];
+extern s16 gUnk_09033D50[];
+extern s16 gUnk_09033E76[];
+extern const char* gUnk_09EE42C8[];
+extern Mode gUnk_09ECEB64;
 
+void func_080010CC(Mode* mode, s32 arg);
+u16 GetKeysPressed(void);
+u16 GetKeysRepeat(void);
+void func_08004DB0(void);
+void EnableBg(s32 a);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
+void func_0805FA60(s32 a, const char* b, s32 c, s32 d);
+void func_0805FA8C(s32 a, s32 b, s32 c);
+void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
+void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
+void func_08060598(void);
+void func_080605A4(s32 a);
+void func_0806180C(u16 a);
+s16 func_08075064(u8 a);
+void func_08085C3C(void);
+void func_08085FB0(void);
+void func_08093BB4(void);
 void* func_080668F0(void);
 void* func_08066904(void);
 void func_08066918(void* a, void* b);
@@ -34,6 +64,9 @@ void func_0807B668(UnkStruct_02039DD4* p);
 void func_0807E23C(void);
 void func_0807E248(void);
 
+void mode_eventselect_0(void);
+void mode_eventselect_1(void);
+void mode_eventselect_2(void);
 void func_08076110(u16 song, s16 x, s16 y);
 void func_08076214(u8* work);
 s32 func_0807622C(u8* work);
