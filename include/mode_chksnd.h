@@ -4,14 +4,14 @@
 #include "types.h"
 #include "main.h"
 #include "mode.h"
-typedef struct SoundEntry {
+typedef struct ChkSndEntry {
     const char* name;
     u16 unk_04;
-} SoundEntry;
+} ChkSndEntry;
 
 extern TaskPool gUnk_020348A0;
 extern s16 gUnk_020348B4;
-extern SoundEntry gUnk_09ED8644[];
+extern ChkSndEntry gUnk_09ED8644[];
 extern Mode gUnk_09ECEB64;
 extern TaskDesc gUnk_09EE9190;
 extern const char gUnk_081309B0[];

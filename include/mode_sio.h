@@ -2,6 +2,7 @@
 #define GUARD_MODE_SIO_H
 
 #include "types.h"
+#include "card_types.h"
 #include "text_types.h"
 #include "key.h"
 #include "malloc.h"
@@ -181,28 +182,6 @@ typedef struct ObjPalSlot {
     u8 unk_00[6];
     u16 unk_06;
 } ObjPalSlot;
-
-typedef struct Deck {
-    u16 cards[0x63];
-    u8 unk_C6[0x14];
-    u16 unk_DA;
-    u16 unk_DC;
-    u16 unk_DE;
-} Deck;
-
-typedef struct CardDef {
-    u8 unk_00[12];
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
-    u16 unk_1C;
-    u16 unk_1E;
-    u8 unk_20;
-    u8 unk_21[9];
-    u8 unk_2A;
-    u8 unk_2B[9];
-} CardDef;
 
 typedef struct SioChgCardPos {
     s16 unk_00;

@@ -2,6 +2,7 @@
 #define GUARD_TITLE_H
 
 #include "types.h"
+#include "title_types.h"
 #include "main.h"
 #include "anim.h"
 typedef struct UnkStruct_02039BB0 {
@@ -14,20 +15,6 @@ typedef struct TitlePal {
     u16 unk_04;
     u16 unk_06;
 } TitlePal;
-
-typedef struct TitleSprite {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-} TitleSprite;
-
-typedef struct TitleLogoWork {
-    TitleSprite unk_00[6];
-    s32 unk_48;
-    s32 unk_4C;
-    u16 unk_50;
-    u16 unk_52;
-} TitleLogoWork;
 
 typedef struct TitleObjSprite {
     void* unk_00;

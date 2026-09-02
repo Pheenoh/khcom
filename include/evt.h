@@ -2,13 +2,8 @@
 #define GUARD_EVT_H
 
 #include "types.h"
+#include "evt_types.h"
 #include "game.h"
-
-typedef struct UnkStruct_02039DC8 {
-    u8 unk_00[0x58];
-    s32 unk_58;
-    s32 unk_5C;
-} UnkStruct_02039DC8;
 
 extern UnkStruct_02039DC8* gUnk_02039DC8;
 
