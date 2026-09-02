@@ -2,31 +2,40 @@
 #define GUARD_GAME_H
 
 #include "types.h"
+#include "taskpool.h"
+#include "anim.h"
 
 typedef struct UnkStruct_02039DD4 {
     u32 unk_000;
     u32 unk_004;
     u32 unk_008;
-    u8 unk_00C[0x38];
-    u32 unk_044;
-    u32 unk_048;
-    u32 unk_04C;
-    u32 unk_050;
-    u32 unk_054;
-    u32 unk_058;
+    u32 unk_00C;
+    u32 unk_010;
+    u32 unk_014;
+    u8 unk_018[0x18];
+    void* unk_030;
+    void* unk_034;
+    void* unk_038;
+    void* unk_03C;
+    void* unk_040;
+    void* unk_044;
+    void* unk_048;
+    void* unk_04C;
+    void* unk_050;
+    void* unk_054;
+    void* unk_058;
     u32 unk_05C;
     u32 unk_060;
-    u32 unk_064;
-    u64 unk_068;
-    u8 unk_070[0x08];
-    u32 unk_078;
-    u8 unk_07C[0x24];
-    u8 unk_0A0;
-    u8 unk_0A1[0x0F];
-    u16 unk_0B0;
-    u8 unk_0B2[0x06];
+    AnimState unk_064;
+    AnimState unk_07C;
+    void* unk_094;
+    void* unk_098;
+    TaskPool unk_09C;
+    u32 unk_0B0;
+    u32 unk_0B4;
     u32 unk_0B8;
-    u8 unk_0BC[0x06];
+    u32 unk_0BC;
+    u16 unk_0C0;
     u16 unk_0C2;
     u16 unk_0C4;
     u16 unk_0C6;
@@ -60,17 +69,17 @@ typedef struct UnkStruct_02039DD4 {
     u8 unk_0E8;
     u8 unk_0E9;
     u8 unk_0EA;
-    u8 unk_0EB[0x02];
+    u8 unk_0EB;
+    u8 unk_0EC;
     u8 unk_0ED;
     u8 unk_0EE;
     u8 unk_0EF;
-    u8 unk_0F0;
-    u8 unk_0F1[0x03];
+    u16 unk_0F0;
+    u8 unk_0F2[0x02];
     u32 unk_0F4;
-    u8 unk_0F8[0x04];
+    u32 unk_0F8;
     u16 unk_0FC;
-    u8 unk_0FE;
-    u8 unk_0FF;
+    u16 unk_0FE;
     s16 unk_100;
     s16 unk_102;
     s16 unk_104;
@@ -99,7 +108,7 @@ typedef struct UnkStruct_02039B84 {
     u8 unk_03C[0x0C];
     u32 unk_048;
     u32 unk_04C;
-    u32 unk_050;
+    void* unk_050;
     u32 unk_054;
     u32 unk_058;
     u32 unk_05C;
