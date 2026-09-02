@@ -147,7 +147,7 @@ with open(ldscript, "w") as f:
     linked = {o for _s, o, _f, _sec in units}
     unit_bss = {}
     for obj, addr in UNIT_BSS.items():
-        a = addr[version] if isinstance(addr, dict) else addr
+        a = addr.get(version) if isinstance(addr, dict) else addr
         if a is not None and f"{build_dir}/{obj}" in linked:
             unit_bss[obj] = a
     for obj, addr in sorted(unit_bss.items(), key=lambda kv: kv[1]):
