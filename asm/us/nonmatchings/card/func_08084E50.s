@@ -187,5 +187,4 @@ _08084F98:
 	pop {r4, r5, r6, r7}
 	pop {r1}
 	bx r1
-	.byte 0x70, 0x47, 0x00, 0x00
 .syntax divided
