@@ -5,9 +5,11 @@
 #include "types.h"
 
 extern u32 gFrameCounter;
-PaletteBuffer* gPaletteBuffer;
-s16 gPaletteEffect;
-s16 gPaletteEffectSaved;
+static PaletteBuffer* gPaletteBuffer;
+static s16 gPaletteEffect;
+static s16 gPaletteEffectSaved;
+
+PaletteWave gBgWaves[5];
 
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 
