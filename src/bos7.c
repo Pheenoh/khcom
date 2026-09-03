@@ -675,7 +675,279 @@ void func_08110C9C(LstState* work) {
     }
 }
 
-INCLUDE_ASM("bos7/task_bos_lst_bit_1.s");
+u8 task_bos_lst_bit_1(LstState* work) {
+    Vec3 a;
+    Vec3 b;
+    s16 x1;
+    s16 y1;
+    s16 x2;
+    s16 y2;
+    LstPos* p;
+    s32 d;
+    u8 dir;
+    LstObj* obj;
+
+    obj = &work->unk_0A0;
+
+    if (obj->unk_2C <= 0) {
+        func_0801C2DC(obj, 1);
+        return 1;
+    }
+
+    func_08110C9C(work);
+
+    switch (work->unk_002) {
+    case 0:
+        func_0800592C(&work->unk_028, work->unk_050, 20);
+        func_0800592C(&work->unk_02C, work->unk_054, 20);
+        func_0800592C(&work->unk_030, work->unk_058, 20);
+        func_0800592C(&work->unk_074, 0x100, 32);
+        func_0800592C(&work->unk_078, 0x100, 32);
+        work->unk_006++;
+
+        if (work->unk_006 > 29) {
+            work->unk_002 = 1;
+            work->unk_004 = 0;
+            work->unk_006 = 0;
+            work->unk_008 = 0;
+            work->unk_074 = 0x100;
+            work->unk_078 = 0x100;
+        }
+        break;
+    case 1:
+        if (work->unk_006 == 0) {
+            if (gUnk_02039B84->unk_068 & 0x2000000000000) {
+                work->unk_050 = (GetRandom() % 113 << 8) + 0xC000;
+                work->unk_054 = gUnk_02039B84->unk_07C->unk_08;
+            } else if (work->unk_00E == 0) {
+                work->unk_050 = (GetRandom() % 113 << 8) + 0xC000;
+                work->unk_054 = gUnk_02039B84->unk_07C->unk_08 + (gUnk_09A4FDDC[work->unk_010] << 8);
+            } else {
+                work->unk_050 = gUnk_02039B84->unk_07C->unk_04;
+                work->unk_054 = gUnk_02039B84->unk_07C->unk_08;
+            }
+
+            func_08005B64(&work->unk_07C);
+            AnimChange(&work->unk_07C, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
+        }
+
+        if (!(gUnk_02039B84->unk_068 & 0x2000000000000)) {
+            if (gUnk_02039B84->unk_07C->unk_0C > -0xC000) {
+                work->unk_058 = -0x6000;
+            } else {
+                work->unk_058 = gUnk_02039B84->unk_0D4 - 0x5000;
+            }
+        }
+
+        work->unk_006++;
+
+        if ((work->unk_014 & 31) == 0) {
+            func_081108AC(work, 0);
+        }
+
+        func_0800592C(&work->unk_028, work->unk_050, 20);
+        func_0800592C(&work->unk_02C, work->unk_054, 20);
+        func_0800592C(&work->unk_030, work->unk_058, 20);
+        break;
+    case 2:
+        if (work->unk_006 == 0) {
+            work->unk_050 = gUnk_02039B84->unk_07C->unk_04;
+            work->unk_054 = gUnk_02039B84->unk_07C->unk_08;
+
+            if (gUnk_02039B84->unk_07C->unk_0C > -0xC000) {
+                work->unk_058 = 0;
+            } else {
+                work->unk_058 = gUnk_02039B84->unk_0D4;
+            }
+
+            func_08005B64(&work->unk_07C);
+            AnimChange(&work->unk_07C, gUnk_09EF9EA4[work->unk_000].unk_02, 0);
+        }
+
+        work->unk_006++;
+
+        if (func_08005B30(&work->unk_07C) == (s16)gUnk_09EF9EA4[work->unk_000].unk_02 && AnimIsFinished(&work->unk_07C) == 1) {
+            work->unk_002 = 3;
+            work->unk_006 = 0;
+            work->unk_018 = 1;
+            work->unk_01A = work->unk_01B;
+            work->unk_05C = work->unk_028 + work->unk_034;
+            work->unk_060 = work->unk_02C + work->unk_038;
+            work->unk_064 = work->unk_030 + work->unk_03C;
+            m4aSongNumStart(0x2C4);
+            func_08005B64(&work->unk_07C);
+            AnimChange(&work->unk_07C, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
+        }
+        break;
+    case 3:
+        if (work->unk_006 == 0) {
+            if (func_081115B4(work->unk_1C4) == 0) {
+                a.x = work->unk_05C;
+                a.y = work->unk_060;
+                a.z = work->unk_064;
+                b.x = work->unk_050;
+                b.y = work->unk_054;
+                b.z = work->unk_058;
+                func_081115CC(work->unk_1C4, &a, &b, work->unk_01A, 0);
+            }
+
+            work->unk_006++;
+        } else {
+            work->unk_050 = gUnk_02039B84->unk_07C->unk_04;
+            work->unk_054 = gUnk_02039B84->unk_07C->unk_08;
+
+            if (gUnk_02039B84->unk_07C->unk_0C > -0xC000) {
+                work->unk_058 = 0;
+            } else {
+                work->unk_058 = gUnk_02039B84->unk_0D4;
+            }
+
+            if (func_081115B4(work->unk_1C4) == 0) {
+                if (work->unk_012 > 1) {
+                    work->unk_002 = 2;
+                    work->unk_006 = 0;
+                    work->unk_012--;
+                } else {
+                    work->unk_012 = 0;
+                }
+            }
+        }
+        break;
+    case 4:
+        if (work->unk_006 > 14) {
+            break;
+        }
+
+        func_08011F78(0x10D, work->unk_050, work->unk_054, work->unk_058, 8, 8, 8);
+
+        if ((work->unk_006 & 3) == 0) {
+            func_081108AC(work, 1);
+        }
+
+        if (abs(work->unk_050 - gUnk_02039B84->unk_07C->unk_04) < 0x180) {
+            work->unk_050 = gUnk_02039B84->unk_07C->unk_04;
+        } else if (work->unk_050 > gUnk_02039B84->unk_07C->unk_04) {
+            work->unk_050 = work->unk_050 - 0x180;
+        } else if (work->unk_050 < gUnk_02039B84->unk_07C->unk_04) {
+            work->unk_050 = work->unk_050 + 0x180;
+        }
+
+        if (abs(work->unk_054 - gUnk_02039B84->unk_07C->unk_08) < 0x180) {
+            work->unk_054 = gUnk_02039B84->unk_07C->unk_08;
+        } else if (work->unk_054 > gUnk_02039B84->unk_07C->unk_08) {
+            work->unk_054 = work->unk_054 - 0x180;
+        } else if (work->unk_054 < gUnk_02039B84->unk_07C->unk_08) {
+            work->unk_054 = work->unk_054 + 0x180;
+        }
+
+        work->unk_006++;
+        break;
+    case 5:
+        work->unk_050 = gUnk_02039B84->unk_0CC;
+        work->unk_054 = gUnk_02039B84->unk_0D0 - 0x1400;
+        work->unk_058 = gUnk_02039B84->unk_0D4;
+        func_0800592C(&work->unk_028, work->unk_050, 16);
+        func_0800592C(&work->unk_02C, work->unk_054, 16);
+        func_0800592C(&work->unk_030, work->unk_058, 16);
+        func_0800592C(&work->unk_074, 0x200, 16);
+        func_0800592C(&work->unk_078, 2, 16);
+        work->unk_006++;
+
+        if (work->unk_006 > 59) {
+            work->unk_002 = 6;
+            work->unk_004 = 0;
+            work->unk_006 = 0;
+            work->unk_008 = 0;
+        }
+        break;
+    case 6:
+        work->unk_074 = 0x100;
+        work->unk_078 = 0x100;
+        func_08005B64(&work->unk_07C);
+        AnimChange(&work->unk_07C, 4, 1);
+        break;
+    case 7:
+        AnimChange(&work->unk_07C, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
+        break;
+    }
+
+    WorldToScreen(&x1, &y1, work->unk_028 + work->unk_034, work->unk_02C + work->unk_038,
+                  work->unk_030 + work->unk_03C);
+
+    if (gUnk_02039B84->unk_068 & 0x2000000000000) {
+        WorldToScreen(&x2, &y2, work->unk_068, work->unk_06C, work->unk_070);
+        work->unk_016 += 2;
+    } else {
+        if (work->unk_00E == 0) {
+            switch (work->unk_002) {
+            case 2:
+            case 3:
+                work->unk_016 += 2;
+                WorldToScreen(&x2, &y2, work->unk_050, work->unk_054, work->unk_058);
+                break;
+            default:
+                work->unk_016 += 2;
+                WorldToScreen(&x2, &y2, gUnk_02039B84->unk_07C->unk_04, gUnk_02039B84->unk_07C->unk_08,
+                              gUnk_02039B84->unk_07C->unk_0C);
+                break;
+            }
+        } else {
+            switch (work->unk_002) {
+            case 2:
+            case 3:
+            case 4:
+                work->unk_016 += 6;
+                WorldToScreen(&x2, &y2, work->unk_050, work->unk_054, work->unk_058);
+                break;
+            default:
+                work->unk_016 += 2;
+                WorldToScreen(&x2, &y2, gUnk_02039B84->unk_07C->unk_04, gUnk_02039B84->unk_07C->unk_08,
+                              gUnk_02039B84->unk_07C->unk_0C);
+                break;
+            }
+        }
+
+        work->unk_068 = gUnk_02039B84->unk_07C->unk_04;
+        work->unk_06C = gUnk_02039B84->unk_07C->unk_08;
+        work->unk_070 = gUnk_02039B84->unk_07C->unk_0C;
+    }
+
+    work->unk_016 &= 0xFF;
+
+    if (work->unk_00E == 0) {
+        work->unk_034 = (-gSineTable[(work->unk_016 & 0xFF) + 64] * 3 >> 6) << 8;
+        work->unk_038 = (gSineTable[work->unk_016 & 0xFF] * 3 >> 6) << 8;
+        work->unk_03C = work->unk_03C / 2;
+    } else if (work->unk_010 == 0) {
+        work->unk_034 = work->unk_034 / 2;
+        work->unk_038 = work->unk_038 / 2;
+        work->unk_03C = work->unk_03C / 2;
+    } else {
+        work->unk_034 = (-gSineTable[(work->unk_016 & 0xFF) + 64] >> 3) << 8;
+        work->unk_038 = (gSineTable[work->unk_016 & 0xFF] * 3 >> 6) << 8;
+        work->unk_03C = 0x800;
+    }
+
+    work->unk_040 = gUnk_09A4FDE8[(work->unk_00C >> 2) & 15] << 8;
+    dir = func_08110A98(x2, y2, x1, y1);
+    d = func_08110B10(work->unk_01B, dir);
+
+    if (abs(d) <= 1) {
+        work->unk_01B = dir;
+    } else {
+        work->unk_01B += d / 2;
+    }
+
+    obj->unk_04 = work->unk_028 + work->unk_034;
+    obj->unk_08 = work->unk_02C + work->unk_038;
+    obj->unk_0C = work->unk_030 + work->unk_03C + work->unk_040;
+    AnimUpdate(&work->unk_07C);
+    TaskPoolUpdate(&work->unk_1B0);
+    work->unk_014++;
+    work->unk_00C++;
+
+    return 1;
+}
 
 void task_bos_lst_bit_2(LstState* work) {
     s16 x;
@@ -1502,7 +1774,6 @@ u8* func_08112748(StaffRollWork* w) {
     return &w->unk_13C[w->unk_0CC[w->unk_0D0 + 3] * 0x2C];
 }
 
-#ifdef NON_MATCHING
 void func_08112768(StaffRollWork* w) {
     StaffRollLabelArg arg;
     EvtObj* e;
@@ -1522,7 +1793,8 @@ void func_08112768(StaffRollWork* w) {
             case 5:
                 if (w->unk_0F4 > w->unk_0E0) {
                     x = w->unk_0E4 + (w->unk_0EC - w->unk_0E4) * w->unk_0E0 / w->unk_0F4;
-                    y = w->unk_0E8 + (w->unk_0F0 - w->unk_0E8) * w->unk_0E0 / w->unk_0F4;
+                    y = w->unk_0E0;
+                    y = w->unk_0E8 + (w->unk_0F0 - w->unk_0E8) * y / w->unk_0F4;
                 } else {
                     x = w->unk_0EC;
                     y = w->unk_0F0;
@@ -1577,9 +1849,8 @@ void func_08112768(StaffRollWork* w) {
             w->unk_0F4 = w->unk_0CC[w->unk_0D0 + 6];
             break;
         case 6:
-            e = (EvtObj*)func_08112748(w);
             w->unk_124[w->unk_0CC[w->unk_0D0 + 3] + 3] =
-                func_0801CE04(w->unk_110, gUnk_09EFA9EC, e, w->unk_0CC[w->unk_0D0 + 4],
+                func_0801CE04(w->unk_110, gUnk_09EFA9EC, (EvtObj*)func_08112748(w), w->unk_0CC[w->unk_0D0 + 4],
                               w->unk_0CC[w->unk_0D0 + 5], 0x2800, 0xF000, 0);
             break;
         case 7:
@@ -1624,6 +1895,8 @@ void func_08112768(StaffRollWork* w) {
             func_081149B0((void*)w->unk_124[w->unk_0CC[w->unk_0D0 + 3] + 3],
                           w->unk_0CC[w->unk_0D0 + 4]);
             break;
+        default:
+            continue;
         }
 
         w->unk_0D0 += w->unk_0CC[w->unk_0D0 + 1];
@@ -1632,9 +1905,6 @@ void func_08112768(StaffRollWork* w) {
 done:
     w->unk_0D4++;
 }
-#else
-INCLUDE_ASM("bos7/func_08112768.s");
-#endif
 
 void mode_StaffRoll_0(void) {
     StaffRollWork* w;
@@ -1897,7 +2167,262 @@ u8 func_08112C38(StaffRollWork* w) {
     return result;
 }
 
-INCLUDE_ASM("bos7/func_08113180.s");
+#ifdef VERSION_JP
+#define STAFFROLL_SCROLL_FRAMES 0x4321
+#define STAFFROLL_SCROLL_SPEED 0x16000000
+#define STAFFROLL_SCRIPT_PERIOD 635
+#else
+#define STAFFROLL_SCROLL_FRAMES 0x431C
+#define STAFFROLL_SCROLL_SPEED 0x13C00000
+#define STAFFROLL_SCRIPT_PERIOD 627
+#endif
+
+u8 func_08113180(StaffRollWork* w) {
+    u8 buf[80];
+    StaffRollLogoArg logo;
+    StaffRollSecnArg secn;
+    u8 result;
+    s32 i;
+    u32 row;
+    u8* s;
+    s32 loop;
+    s32 x;
+    u32 y;
+    s32 total;
+    s32 wa;
+    s32 wb;
+    s32 wc;
+    s32 w1;
+    s32 n;
+    s32 t;
+    s32 sub;
+    s32 idx;
+
+    result = 1;
+
+    switch (w->unk_0A4) {
+    case 0:
+        func_081125BC(w);
+        func_08004E64();
+        SetupBg(0, 0, 28, 0);
+        SetupBg(1, 0, 29, 0);
+        SetupBg(2, 0, 30, 11);
+        SetupBg(3, 0, 31, 0);
+        SetBgPriority(0, 0);
+        SetBgPriority(1, 0);
+        SetBgPriority(2, 0);
+        SetBgPriority(3, 0);
+        SetBgSize(0, 0);
+        SetBgSize(1, 0);
+        SetBgSize(2, 0x4000);
+        SetBgSize(3, 0x4000);
+        SetBgScroll(0, 0, 0);
+        SetBgScroll(1, 0, 0);
+        SetBgScroll(2, 0, 0);
+        SetBgScroll(3, 0, 0);
+        EnableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+
+        for (i = 0; i < 32; i++) {
+            func_080062F4(i, 1);
+        }
+
+        func_0811614C(w->unk_1C0, gUnk_09A541C8);
+        LoadBgPalette(0, gUnk_09D6BE14, 32);
+        gDispCnt |= 0;
+        gWinIn = 31;
+        gWinOut = 30;
+        gWin0H = 0x10E0;
+        gWin0V = 0x898;
+        w->unk_0A4 = 1;
+        w->unk_0A8 = 0;
+    case 1:
+        w->unk_0B4 = STAFFROLL_SCROLL_SPEED / ((STAFFROLL_SCROLL_FRAMES - w->unk_010) << 8);
+        w->unk_0A4 = 2;
+        w->unk_0A8 = 0;
+        break;
+    case 2:
+        w->unk_0B8 += w->unk_0B4;
+        sub = w->unk_0B8 >> 8;
+        row = w->unk_0B8 >> 11;
+
+        if (sub % 8 == 0 && w->unk_0B0 != row) {
+            s = gUnk_09EF9F54[row];
+
+            if (w->unk_0A0 == 0 && s == 0) {
+                w->unk_0B4 = 0;
+                w->unk_0A0 = 1;
+            }
+
+            if (*s != '!') {
+                func_081166F8(w->unk_1C0, 0, (row + 20) & 31, 30, 2, 1);
+            }
+
+            if (w->unk_0A0 == 0) {
+                func_08116268(w->unk_1C0, 15, 13, 0, 14);
+                loop = 1;
+
+                while (loop) {
+                    switch (*s) {
+                    case '!':
+                        loop = 0;
+                        break;
+                    case '*':
+                        switch (s[1]) {
+                        case 'D':
+                            logo.unk_10 = 0;
+                            break;
+                        case 'S':
+                            logo.unk_10 = 1;
+                            break;
+                        case 'J':
+                            logo.unk_10 = 2;
+                            break;
+                        }
+                        logo.unk_00 = 0x7800;
+                        logo.unk_04 = ((w->unk_0B8 >> 8) + 168) << 8;
+                        logo.unk_08 = &w->unk_0B8;
+                        logo.unk_0C = &w->unk_0B4;
+                        TaskCreate(w->unk_110, gUnk_09EFAA04, &logo);
+                        loop = 0;
+                        break;
+                    case '<':
+                        secn.unk_00 = w->unk_014;
+                        secn.unk_04 = 0x17800;
+                        secn.unk_08 = ((w->unk_0B8 >> 8) + 168) << 8;
+                        secn.unk_0C = &w->unk_0B8;
+                        secn.unk_10 = &w->unk_0B4;
+                        TaskCreate(w->unk_110, gUnk_09EFAA1C, &secn);
+                        w->unk_014++;
+                        loop = 0;
+                        break;
+                    case '[':
+                        secn.unk_00 = -1;
+                        secn.unk_04 = 0x7800;
+                        secn.unk_08 = ((w->unk_0B8 >> 8) + 168) << 8;
+                        secn.unk_0C = &w->unk_0B8;
+                        secn.unk_10 = &w->unk_0B4;
+                        TaskCreate(w->unk_110, gUnk_09EFAA1C, &secn);
+                        loop = 0;
+                        break;
+                    case '#':
+                        func_081160EC(w->unk_1C0, s[1] - '0');
+                        s += 2;
+                        break;
+                    case '@':
+                        func_08116268(w->unk_1C0, 7, 5, 0, 6);
+                        s++;
+                        break;
+                    case '~':
+                        s++;
+                        wa = func_08115FBC(w->unk_1C0, s);
+                        wb = func_08115FBC(w->unk_1C0, gUnk_09EFA9C0);
+                        wc = func_08115FBC(w->unk_1C0, gUnk_09EFA9BC);
+                        w1 = wa - wb + wc * 3;
+                        x = (240 - w1) >> 1;
+                        func_08116268(w->unk_1C0, 7, 5, 0, 6);
+
+                        for (n = 0; s[n] != '~'; n++) {
+                            buf[n] = s[n];
+                        }
+
+                        buf[n] = ' ';
+                        buf[n + 1] = ' ';
+                        buf[n + 2] = ' ';
+                        buf[n + 3] = 0;
+                        w1 = func_08115FBC(w->unk_1C0, buf);
+                        func_08116BEC(w->unk_1C0, x, (row + 20) & 31, buf, 1);
+                        s += n + 1;
+
+                        for (n = 0; s[n] != 0; n++) {
+                            buf[n] = s[n];
+                        }
+
+                        buf[n] = 0;
+                        func_08116268(w->unk_1C0, 15, 13, 0, 14);
+                        func_08116BEC(w->unk_1C0, x + w1, (row + 20) & 31, buf, 1);
+                        loop = 0;
+                        break;
+                    case '=':
+                        func_08116BEC(w->unk_1C0, (240 - func_08115FBC(w->unk_1C0, s + 1)) >> 1, (row + 20) & 31, s + 1, 1);
+                        loop = 0;
+                        break;
+                    case '-':
+                        func_08116BEC(w->unk_1C0, 0, (row + 20) & 31, s + 1, 1);
+                        loop = 0;
+                        break;
+                    case '+':
+                        func_08116BEC(w->unk_1C0, 240 - func_08115FBC(w->unk_1C0, s + 1), (row + 20) & 31, s + 1, 1);
+                        loop = 0;
+                        break;
+                    default:
+                        func_08116BEC(w->unk_1C0, (240 - func_08115FBC(w->unk_1C0, s)) >> 1, (row + 20) & 31, s, 1);
+                        loop = 0;
+                        break;
+                    }
+                }
+            }
+        }
+
+        w->unk_0B0 = row;
+        t = w->unk_0A8;
+
+        if (t % STAFFROLL_SCRIPT_PERIOD == 60) {
+            w->unk_0CC = 0;
+            idx = t / STAFFROLL_SCRIPT_PERIOD;
+
+            if (idx <= 16) {
+                if ((gUnk_02039BB0.unk_008 & 8) != 0) {
+                    w->unk_0CC = gUnk_09EFA978[idx];
+                } else {
+                    w->unk_0CC = gUnk_09EFA934[idx];
+                }
+            }
+
+            w->unk_0D0 = 0;
+            w->unk_0D4 = 0;
+            w->unk_0D8 = -1;
+            w->unk_0E0 = 0;
+        }
+
+        w->unk_0A8++;
+        SetBgScroll(0, 0, (u16)(w->unk_0B8 >> 8));
+
+        if (w->unk_010 >= STAFFROLL_SCROLL_FRAMES || (w->unk_002 & 2) != 0) {
+            w->unk_0A4 = 4;
+            w->unk_0A8 = 0;
+        }
+        break;
+    case 4:
+        w->unk_0A8++;
+        if (w->unk_0A8 > 120) {
+            w->unk_0A4 = 3;
+            w->unk_0A8 = 0;
+        }
+        break;
+    case 3:
+        for (i = 0; i < 32; i++) {
+            func_080062F4(i, 0);
+        }
+
+        gDispCnt &= 0xDFFF;
+        gWinIn = 0;
+        gWinOut = 0;
+        gWin0H = 0;
+        gWin0V = 0;
+        result = 0;
+        break;
+    }
+
+    func_08112768(w);
+    TaskPoolUpdate(w->unk_110);
+    TaskPoolDraw(w->unk_110);
+    func_08112600(w);
+
+    return result;
+}
 
 u8 func_0811394C(StaffRollWork* w) {
     u8 result;
