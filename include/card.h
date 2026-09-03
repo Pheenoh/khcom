@@ -13,13 +13,7 @@ extern u16 gCardCollection[];
 extern u16 gCardCount;
 
 extern Deck gDecks[];
-extern u8 gActiveDeck;
-extern u32 gUnk_02034AA4;
-extern u32 gUnk_02034AA8;
-extern u8 gUnk_02034AD8;
 extern u8 gUnk_02039DDC;
-extern u8 gUnk_02034ACC;
-extern u32 gUnk_02034AD0;
 extern u8 gUnk_0203A9D4;
 extern u8 gUnk_0203A9D8;
 
@@ -49,8 +43,6 @@ typedef struct UnkStruct_02034AAC {
     u8 unk_A2[0x03];
     u8 unk_A5;
 } UnkStruct_02034AAC;
-
-extern UnkStruct_02034AAC* gUnk_02034AAC;
 extern UnkStruct_02034AAC* gUnk_02034A98;
 extern UnkStruct_02039B84* gUnk_02039B9C;
 extern u8 gUnk_02039DD8;
@@ -58,11 +50,6 @@ extern u8 gUnk_0203A9E8;
 extern void* gUnk_0203A854;
 extern u8 gUnk_09EE4BC8[];
 extern u8 gUnk_09EE75F0[];
-extern u8 gUnk_02034AE0[];
-extern u8 gUnk_02034B08[];
-extern u8 gUnk_02034B20[];
-extern void* gUnk_02034AD4;
-extern u8 gUnk_02034B1C;
 extern u16 gUnk_0203A9DC;
 extern u8 gUnk_09EE75D8[];
 extern void** gUnk_09EE3CA0[];
@@ -74,13 +61,11 @@ extern u8 gUnk_093FB6C4[];
 extern u8 gUnk_08125E24[];
 extern u8 gUnk_096148D8[];
 extern u8 gUnk_09417378[];
-extern u8 gUnk_02034AF8;
 extern void* gUnk_09EEAF4C[];
 extern u8* gUnk_0203A9D0;
 extern void** gUnk_09EE3FB4[];
 extern u8 gUnk_081283C0[];
 extern void** gUnk_09EEA28C;
-extern void* gUnk_02034B34;
 extern u8 gUnk_0203A9E0;
 extern vu16 gSystemFlags;
 extern Mode gUnk_09EF15A8;
@@ -139,9 +124,6 @@ typedef struct UnkStruct_02034AFC {
 } UnkStruct_02034AFC;
 
 extern UnkStruct_09EE7D84* gUnk_09EE7D84[];
-extern UnkStruct_02034AFC* gUnk_02034AFC;
-extern UnkStruct_02034AFC* gUnk_02034B00;
-
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
     u32 unk_008;
@@ -499,8 +481,6 @@ extern u8 gUnk_0940FA98[];
 extern u8 gUnk_0940FAD8[];
 extern void* gUnk_09EE8F48[];
 extern u8 gUnk_09EE7FC0[];
-extern s16 gUnk_02034AB4;
-extern u8 gUnk_02034AB8[];
 extern u8 gUnk_09EE7548[];
 extern void** gUnk_09EE75B8[];
 extern void* gUnk_09EE75C8[];

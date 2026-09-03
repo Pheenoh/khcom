@@ -27,6 +27,7 @@ UNIT_BSS = {
     "src/malloc.o": 0x030074A8,
     "src/engine.o": 0x0203401C,
     "src/mode_ms.o": {"us": 0x020358C8, "jp": 0x02035828},
+    "src/card.o": {"us": 0x02034AA4, "jp": 0x02034A04},
     "src/key.o": 0x02034000,
     "src/mode_movie.o": 0x02034938,
     "src/mode_worldinspect.o": {"us": 0x02035118, "jp": 0x02035078, "eu": None},
