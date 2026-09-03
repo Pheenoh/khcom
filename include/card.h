@@ -124,6 +124,8 @@ extern void* gUnk_09EE7938[];
 extern u8 gUnk_09EE7950[];
 extern u8 gUnk_09EE775C[];
 extern u8 gUnk_0908C686[];
+extern u8 gUnk_0908FCEE[];
+extern u8 gUnk_09613F78[];
 extern void* gUnk_09EF12E8[];
 extern u8 gUnk_09EE8F08[];
 extern s32* gUnk_09EE275C[];
@@ -185,6 +187,40 @@ typedef struct UnkStruct_02039BB0 {
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern s16 gUnk_09037FBA[];
 extern u16 gUnk_09EE48F4[];
+extern u8 gUnk_09EE49CC[];
+extern u8 gUnk_09EE49FC[];
+extern s32 gUnk_090352E4[];
+extern u8 gUnk_09512AB8[];
+extern u8 gUnk_08B22BBC[];
+extern u8 gUnk_09EE7834[];
+extern u8 gUnk_09EDA9A8[];
+extern void* gUnk_09EF1298[];
+extern u8 gUnk_08B25ADE[];
+extern u8 gUnk_093FB954[];
+extern void* gUnk_09EF12C8[];
+extern u8 gUnk_09EE4B28[];
+extern u8 gUnk_09619178[];
+extern u8 gUnk_09EE8E60[];
+extern u8 gUnk_093FB1AC[];
+extern u8 gUnk_09619378[];
+extern u8 gUnk_093FB0CC[];
+extern s32 gUnk_09033D08[][2];
+extern s32 gUnk_09041E9C[];
+extern u8 gUnk_093F7C9C[];
+extern u8 gUnk_08159E18[];
+extern u8 gUnk_08159E10[];
+extern u8 gUnk_09EEB008[];
+extern u8 gUnk_09EEB03C[];
+extern u8 gUnk_090A4664[];
+extern u8 gUnk_09614418[];
+extern u8 gUnk_093F8C8E[];
+extern u8 gUnk_09985F44[];
+extern u8 gUnk_099597E4[];
+extern u8 gUnk_09EEFCAC[];
+extern u8 gUnk_09EEFD38[];
+extern u8 gUnk_09320796[];
+extern u8 gUnk_08F69BE4[];
+extern u8 gUnk_09EE7FD8[];
 extern u8 gUnk_09EE7FA8[];
 
 typedef struct CardBack {
@@ -239,6 +275,41 @@ typedef struct UnkStruct_0808E890 {
     u8 unk_4D;
 } UnkStruct_0808E890;
 
+typedef struct UnkStruct_0808E3E0 {
+    u8 unk_00[0x24];
+    u16 unk_24;
+} UnkStruct_0808E3E0;
+
+typedef struct UnkStruct_0809C534_Args {
+    s32 unk_00;
+    u16 unk_04;
+    u8 unk_06;
+} UnkStruct_0809C534_Args;
+
+typedef struct UnkStruct_0809C534 {
+    CardDef* unk_00;
+    CardBack* unk_04;
+    u8 unk_08[0x10];
+    u32 unk_18;
+    u8 unk_1C[0x2C];
+    u16 unk_48;
+    s16 unk_4A;
+    s16 unk_4C;
+    u16 unk_4E;
+    u16 unk_50;
+    s8 unk_52;
+    u8 unk_53;
+    u8 unk_54;
+    u8 unk_55;
+    u8 unk_56[0x02];
+    u8 unk_58[0x14];
+    u16 unk_6C;
+    u16 unk_6E;
+    u16 unk_70;
+    u16 unk_72;
+    u8 unk_74;
+} UnkStruct_0809C534;
+
 typedef struct UnkStruct_0809C9A4 {
     u8 unk_00[0x4A];
     s16 unk_4A;
@@ -259,14 +330,21 @@ typedef struct UnkStruct_0808C940 {
 } UnkStruct_0808C940;
 
 typedef struct UnkStruct_0808E2F0 {
-    u8 unk_00[0x1C];
-    void* unk_1C;
+    u16 unk_00[0x0B];
+    u16 unk_16;
+    u8 unk_18[0x04];
+    u16* unk_1C;
 } UnkStruct_0808E2F0;
 
 typedef struct UnkStruct_0808DB04 {
     u8 unk_000[0x4D4];
     UnkStruct_0808E2F0* unk_4D4;
-    u8 unk_4D8[0x3C0];
+    u8 unk_4D8[0x3A8];
+    u16 unk_880;
+    u8 unk_882[0x02];
+    s16 unk_884;
+    u16 unk_886;
+    u8 unk_888[0x10];
     u16 unk_898;
 } UnkStruct_0808DB04;
 
@@ -284,14 +362,20 @@ typedef struct UnkStruct_08080268 {
     void* unk_18;
     u8 unk_1C[0x0C];
     UnkStruct_02034AAC* unk_28[3];
-    u8 unk_34[0x20];
+    UnkStruct_02034AAC* unk_34[8];
     u8 unk_54[4][0x10];
-    u8 unk_94[0x10];
+    u16 unk_94[4];
+    u16 unk_9C[4];
     s16 unk_A4;
-    u8 unk_A6[0x13];
+    u8 unk_A6[0x0A];
+    s16 unk_B0[4];
+    s8 unk_B8;
     u8 unk_B9;
     u8 unk_BA;
-    u8 unk_BB[0x0E];
+    u8 unk_BB;
+    u8 unk_BC[4];
+    u8 unk_C0[4];
+    u8 unk_C4[5];
     u8 unk_C9;
 } UnkStruct_08080268;
 
@@ -302,7 +386,14 @@ typedef struct UnkStruct_0809DF7C {
     void* unk_0C;
     void* unk_10;
     void* unk_14;
-    u8 unk_18[0x0C];
+    u8 unk_18;
+    u8 unk_19;
+    u16 unk_1A;
+    u16 unk_1C;
+    u16 unk_1E;
+    u16 unk_20;
+    u8 unk_22;
+    u8 unk_23;
     u8 unk_24;
     u8 unk_25;
     u8 unk_26;
@@ -370,6 +461,15 @@ typedef struct CardSlot {
     u8 unk_0A;
     u8 unk_0B;
 } CardSlot;
+
+typedef struct UnkStruct_0807FD10_Args {
+    void* unk_00;
+    CardSlot* unk_04;
+    u8 unk_08[0x04];
+    u16 unk_0C;
+    u8 unk_0E;
+    u8 unk_0F;
+} UnkStruct_0807FD10_Args;
 
 typedef struct UnkStruct_08078754 {
     u8 unk_00[0x44];
@@ -645,6 +745,7 @@ extern u16 gUnk_09EE4AE4[];
 extern Deck* gUnk_0203A850;
 extern s16 gSineTable[];
 extern u32 gUnk_09036210[];
+extern s16 gUnk_09036278[];
 extern u8 gUnk_09036380[];
 extern u8 gUnk_09036300[];
 extern void* gUnk_09EE4724[];
@@ -667,6 +768,7 @@ extern void* gUnk_09EE7598[];
 extern s32 gUnk_09033FF4[];
 extern s32 gUnk_09033FA8[];
 extern s32 gUnk_0903401C[];
+extern s32 gUnk_0903404C[];
 extern s16 gUnk_09EE7520[];
 extern u8 gUnk_090A261E[];
 extern u8 gUnk_096144D8[];
@@ -719,6 +821,7 @@ extern u8 gUnk_09EF1260[];
 extern u8 gUnk_09EF1230[];
 extern u8 gUnk_095162B8[];
 extern u8 gUnk_095182B8[];
+extern u8 gUnk_095192B8[];
 extern u8 gUnk_09514AB8[];
 extern u8 gUnk_09614458[];
 extern u8 gUnk_09614478[];
@@ -764,7 +867,8 @@ typedef struct UnkStruct_08097A14 {
 } UnkStruct_08097A14;
 
 typedef struct UnkStruct_08099E70 {
-    u8 unk_00[0x08];
+    void* unk_00;
+    void* unk_04;
     u8 unk_08[0x18];
     void* unk_20;
     s32 unk_24;
@@ -772,8 +876,13 @@ typedef struct UnkStruct_08099E70 {
     s32 unk_2C;
     s16 unk_30;
     s16 unk_32;
-    u8 unk_34[0x10];
+    u8 unk_34[0x04];
+    s32 unk_38;
+    s32 unk_3C;
+    s32 unk_40;
     u8 unk_44;
+    u8 unk_45[0x03];
+    u8* unk_48;
 } UnkStruct_08099E70;
 
 typedef struct UnkStruct_08083B20 {
@@ -850,12 +959,25 @@ typedef struct UnkStruct_08093838 {
     u8 unk_000[0x14];
     u8 unk_014[0x1D8];
     MapcardWork* unk_1EC;
-    u8 unk_1F0[0x68];
+    u8 unk_1F0[0x04];
+    MapcardWork* unk_1F4;
+    u8 unk_1F8[0x60];
     s32 unk_258;
+    u8 unk_25C[0x08];
+    s32 unk_264;
+    u8 unk_268[0x1C];
+    u8 unk_284;
+    u8 unk_285[0x07];
+    u8 unk_28C;
+    u8 unk_28D[0x0B];
+    u8 unk_298;
 } UnkStruct_08093838;
 
 typedef struct UnkStruct_08F7CBA8 {
-    u8 unk_00[0x0E];
+    void* unk_00;
+    u8 unk_04[0x04];
+    void** unk_08;
+    u16 unk_0C;
     u16 unk_0E;
 } UnkStruct_08F7CBA8;
 
@@ -904,6 +1026,48 @@ typedef struct UnkStruct_080A18F4 {
     u8 unk_96[0x02];
     u8 unk_98[0x14];
 } UnkStruct_080A18F4;
+
+typedef struct UnkStruct_0809A368_Args {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+} UnkStruct_0809A368_Args;
+
+typedef struct UnkStruct_080A5490 {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    UnkStruct_080038C8* unk_0C;
+    s32 unk_10;
+    s32 unk_14;
+    s32 unk_18;
+    u8 unk_1C;
+    u8 unk_1D;
+    u8 unk_1E[0x02];
+    s32 unk_20[10];
+    s32 unk_48[10];
+    s32 unk_70[10];
+    u8 unk_98[10];
+    u8 unk_A2;
+    u8 unk_A3;
+} UnkStruct_080A5490;
+
+typedef struct UnkStruct_080A5490_Args {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+} UnkStruct_080A5490_Args;
+
+typedef struct UnkStruct_080A6838_Args {
+    void* unk_00;
+    u16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    u8 unk_0A;
+    u8 unk_0B;
+    u16* unk_0C;
+} UnkStruct_080A6838_Args;
 
 typedef struct UnkStruct_080A1DAC_Frame {
     u16 unk_00;
@@ -991,7 +1155,10 @@ typedef struct UnkStruct_080A3F5C_Sel {
 } UnkStruct_080A3F5C_Sel;
 
 typedef struct UnkStruct_080A3F5C_Entry {
-    u8 unk_00[0x10];
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
     u8 unk_10;
     u8 unk_11;
     u8 unk_12[0x02];
@@ -1000,9 +1167,17 @@ typedef struct UnkStruct_080A3F5C_Entry {
 extern UnkStruct_080A3F5C_Entry* gUnk_09EE45DC[];
 
 typedef struct UnkStruct_080A3F5C {
-    u8 unk_000[0x08];
+    void* unk_000;
+    void* unk_004;
     void* unk_008;
-    u8 unk_00C[0xB8];
+    void* unk_00C;
+    void* unk_010;
+    void* unk_014;
+    void* unk_018;
+    UnkStruct_080038C8* unk_01C;
+    u8 unk_020[0x50];
+    u8 unk_070[0x50];
+    s32 unk_0C0;
     u8 unk_0C4[0x18];
     u8 unk_0DC[0x18];
     u8 unk_0F4[0x18];
@@ -1012,12 +1187,14 @@ typedef struct UnkStruct_080A3F5C {
     UnkStruct_080A3F5C_Sel* unk_114;
     s32 unk_118;
     s32 unk_11C;
-    u8 unk_120[0x08];
+    s32 unk_120;
+    s32 unk_124;
     s32 unk_128;
     void* unk_12C;
     void* unk_130;
     void* unk_134;
-    u8 unk_138[0x06];
+    u8 unk_138[0x05];
+    u8 unk_13D;
     s16 unk_13E;
     u8 unk_140;
     u8 unk_141;
@@ -1034,6 +1211,7 @@ typedef struct UnkStruct_080A3F5C {
 extern u16 gUnk_09033C98[];
 extern u16 gUnk_09033CA0[];
 extern s32 gUnk_09033CE0[];
+extern s32 gUnk_09033CF0[];
 extern s32 gUnk_09033CD0[];
 
 typedef struct UnkStruct_08094CE4_A {
@@ -1286,5 +1464,59 @@ void func_08094548(u8* work);
 u8 func_08099B60(u8* work, void* a);
 void func_08083714(UnkStruct_08083B20* w);
 void func_080836C4(UnkStruct_08095A5C* p, void* a, u8 b, s8 c);
+u8 func_08082A64(UnkStruct_02034AAC* p, void* a);
+void func_0808E3E0(u8* work);
+u8 func_080A18F4(UnkStruct_080A18F4* w);
+u8 func_0809753C(u8* work, void* a);
+void func_0809B76C(u8* work, void** src);
+void func_0809B920(u8* work, void** src);
+void func_0808D438(u8 kind, u8 slot);
+u8 func_0807BD64(UnkStruct_02034AAC* p, void* a);
+u8 func_0807D3A0(UnkStruct_02034AAC* p, void* a);
+u8 func_08082E0C(UnkStruct_02034AAC* p, void* a);
+u8 func_08090DB0(UnkStruct_02034AAC* p, void* a);
+void func_0807D840(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
+void func_08091048(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
+void func_0807DAD0(UnkStruct_02034AAC* p);
+u8 func_080987C0(u16 n);
+void func_08083020(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
+void func_08091138(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
+u8 func_0809C620(u8* work, void* a);
+u8 func_080A1F38(UnkStruct_080A1DAC* w, void* a);
+void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a);
+void func_08099D88(UnkStruct_08099E70* w, UnkStruct_08099CDC_Args* a);
+void func_080A9598(u8* work);
+void func_0807BB04(void);
+void func_080818E4(void);
+u8 func_0809DA64(s32 a, u16 n);
+void func_080A2138(u8* work, void* a);
+u8 func_080A3754(UnkStruct_080A3F5C* w, void* a);
+u8 func_08082C98(UnkStruct_02034AAC* p, void* a);
+u8 func_08083114(UnkStruct_02034AAC* p, void* a);
+u8 func_0808686C(u8* work, void* a);
+u8 func_0807C4BC(UnkStruct_02034AAC* p, void* a);
+u8 func_080A5034(UnkStruct_080A3F5C* w, void* a);
+u8 func_0808E474(UnkStruct_0808DB04* w);
+u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a);
+u8 func_08082224(UnkStruct_02034AAC* p, void* a);
+u8 func_08081B70(UnkStruct_02034AAC* p, void* a);
+u8 func_0807D68C(UnkStruct_02034AAC* p, void* a);
+u8 func_0808A7E4(u8* work, void* a);
+u8 func_080A5198(UnkStruct_080A3F5C* w, void* a);
+void func_080A52BC(UnkStruct_080A3F5C* w);
+void func_080A6D0C(void);
+void func_080A5490(UnkStruct_080A5490* w, UnkStruct_080A5490_Args* a);
+void func_0807BC24(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
+void func_08081A3C(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
+u8 func_080989AC(u8* work, void* a);
+u8 func_0807CFA8(UnkStruct_02034AAC* p, void* a);
+u8 func_08097404(u8* work, void* a);
+u8 func_080824C8(UnkStruct_02034AAC* p, void* a);
+u8 func_0809423C(u8* work, void* a);
+u8 func_08099A18(u8* work, void* a);
+void func_0809DB70(UnkStruct_0809DF7C* w, u8* a);
+u8 func_08082348(UnkStruct_02034AAC* p, void* a);
+u8 func_0809C2D0(u8* work, void* a);
+u8 func_08090C3C(UnkStruct_02034AAC* p, void* a);
 
 #endif /* GUARD_CARD_H */
