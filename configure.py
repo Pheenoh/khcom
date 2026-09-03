@@ -35,7 +35,7 @@ UNIT_BSS = {
     "src/mode_chkeff.o": 0X020348B8,
     "src/mode_dummy.o": 0X020348BC,
     "src/mode_debflag.o": 0X020348C0,
-    "src/unk_0800eebc.o": 0X020348C8,
+    "src/unk_0801007c.o": 0X020348C8,
     "src/btl.o": 0x0203492C,
     "src/msg.o": {"us": 0X02034A80, "jp": 0X020349E0},
     "src/mode_eventselect.o": {"us": 0X02034A94, "jp": 0X020349F4},

@@ -20,7 +20,9 @@ mode_chkeff.c -O2 -fprologue-bugfix -fno-common
 mode_dummy.c -O2 -fprologue-bugfix -fno-common
 mode_debflag.c -O2 -fprologue-bugfix -fno-common
 mode_vsbattle.c
-unk_0800eebc.c -O2 -fprologue-bugfix -fno-common
+unk_0800eebc.c
+unk_0801007c.c -O2 -fprologue-bugfix -fno-common
+unk_08019050.c
 task.c
 evt.c
 acgtrans.c
