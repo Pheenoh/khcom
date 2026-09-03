@@ -44,6 +44,8 @@ void mode_dummy_0(u32 arg) {
     }
 }
 #else
+const char gUnkEu_0812F880[0x14] = "\x83\x47\x83\x89\x81\x5b\x81\x46\x96\xb3\x8c\xf8\x82\xc8\x88\xf8\x90\x94";
+
 INCLUDE_ASM("mode_dummy/mode_dummy_0.s");
 #endif
 

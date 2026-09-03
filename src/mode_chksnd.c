@@ -684,6 +684,10 @@ void mode_chksnd_1(void) {
     }
 }
 #else
+const char gUnkEu_0812F5E4[0x20] = "                              ";
+
+const char gUnkEu_0812F604[4] = ": ";
+
 INCLUDE_ASM("mode_chksnd/mode_chksnd_1.s");
 #endif
 
