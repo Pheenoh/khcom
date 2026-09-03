@@ -33,8 +33,7 @@ typedef struct UnkStruct_0801AF08 {
     struct BtlWork* unk_E4;
 } UnkStruct_0801AF08;
 typedef struct BtlWork {
-    u16 unk_000;
-    u16 unk_002;
+    s32 unk_000;
     s32 unk_004;
     s32 unk_008;
     s32 unk_00C;
@@ -42,7 +41,7 @@ typedef struct BtlWork {
     s32 unk_014;
     u8 unk_018;
     u8 unk_019;
-    u16 unk_01A;
+    s16 unk_01A;
     s32 unk_01C;
     s32 unk_020;
     s32 unk_024;
@@ -105,7 +104,8 @@ typedef struct BtlWork {
     s32 unk_12C;
     u8 unk_130[0x0C];
     u8 unk_13C[0x88];
-    u8 unk_1C4[0x4];
+    u16 unk_1C4;
+    u16 unk_1C6;
     s16 unk_1C8;
     u8 unk_1CA[0x6];
 } BtlWork;
@@ -324,5 +324,23 @@ void* LoadObjTiles(void* src, s32 size);
 void* LoadObjPalette(void* src, s32 size);
 void ReleaseObjTiles(void* p);
 void ReleaseObjPalette(void* p);
+
+typedef struct BtlMapWork {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+} BtlMapWork;
+
+extern const s8 gUnk_0813C7D8[];
+void func_0800592C(s32* p, s32 target, u16 steps);
+void func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
+void func_0802F1C8(void);
+void func_0802F1E8(void);
+void func_0802F208(void);
+s32 func_0802F268(void);
+void func_0802F274(s32 a, s32 b);
+void func_0802F284(s32 a, s32 b, s32 c);
+s32 task_btl_map_1(BtlMapWork* work);
 
 #endif /* GUARD_BTL_H */

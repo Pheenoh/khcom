@@ -24,8 +24,7 @@ unk_0800eebc.c -O2 -fprologue-bugfix -fno-common
 task.c
 evt.c
 acgtrans.c
-btl.c
-unk_0802f1c8.c -O2 -fprologue-bugfix -fno-common
+btl.c -O2 -fprologue-bugfix -fno-common
 btl2.c
 fld.c
 emy.c
