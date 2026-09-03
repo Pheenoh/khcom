@@ -358,7 +358,6 @@ gScaleTable   = 0x09D6D3D8
 gFreqTable    = 0x09D6D48C
 gNumMusicPlayers = 0x0000001A
 gMaxLines     = 0x00000050
-DummyFunc     = 0x081213C1
 gBgControl = 0x09ECEB30
 gBgPaletteBank = 0x030074D0
 gDma3Requests = 0x03007574

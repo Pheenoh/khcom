@@ -4811,3 +4811,12 @@ ply_xcmd	0x081212a0	32	0x0811fdc0	global
 ply_xxx	0x081212c0	20	0x0811fde0	body
 ply_xwave	0x081212d4	72	0x0811fdf4	global
 ply_xtype	0x0812131c	20	0x0811fe3c	body
+ply_xatta	0x08121330	20	0x0811fe50	body
+ply_xdeca	0x08121344	20	0x0811fe64	body
+ply_xsust	0x08121358	20	0x0811fe78	body
+ply_xrele	0x0812136c	20	0x0811fe8c	body
+ply_xiecv	0x08121380	12	0x0811fea0	body
+ply_xiecl	0x0812138c	12	0x0811feac	body
+ply_xleng	0x08121398	20	0x0811feb8	body
+ply_xswee	0x081213ac	20	0x0811fecc	body
+DummyFunc	0x081213c0	4	0x0811fee0	body

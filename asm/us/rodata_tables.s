@@ -1,8 +1,7 @@
-@ Trailing code and interworking veneers ahead of the first rodata.
-@ ROM 0x0121330..0x01213DC (172 bytes). Split out of this incbin
-@ as regions get identified.
+@ Thumb-to-ARM interworking veneers at the end of the code section.
+@ ROM 0x01213C4..0x01213DC (24 bytes).
 
 	.section .rodata
-	.global data_08121330
-data_08121330:
-	.incbin "roms/B8CE.gba", 0x121330, 0xac
+	.global data_081213C4
+data_081213C4:
+	.incbin "roms/B8CE.gba", 0x1213c4, 0x18

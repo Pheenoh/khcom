@@ -1412,4 +1412,47 @@ void ply_xtype(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
     track->cmdPtr++;
 }
 
+void ply_xatta(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
+    track->tone.attack = *track->cmdPtr;
+    track->cmdPtr++;
+}
+
+void ply_xdeca(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
+    track->tone.decay = *track->cmdPtr;
+    track->cmdPtr++;
+}
+
+void ply_xsust(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
+    track->tone.sustain = *track->cmdPtr;
+    track->cmdPtr++;
+}
+
+void ply_xrele(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
+    track->tone.release = *track->cmdPtr;
+    track->cmdPtr++;
+}
+
+void ply_xiecv(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
+    track->pseudoEchoVolume = *track->cmdPtr;
+    track->cmdPtr++;
+}
+
+void ply_xiecl(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
+    track->pseudoEchoLength = *track->cmdPtr;
+    track->cmdPtr++;
+}
+
+void ply_xleng(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
+    track->tone.length = *track->cmdPtr;
+    track->cmdPtr++;
+}
+
+void ply_xswee(MusicPlayerInfo* mplayInfo, MusicPlayerTrack* track) {
+    track->tone.pan_sweep = *track->cmdPtr;
+    track->cmdPtr++;
+}
+
+void DummyFunc(void) {
+}
+
 ALIGN_ZERO(2);

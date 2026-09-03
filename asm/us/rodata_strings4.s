@@ -1,8 +1,8 @@
 @ Debug name strings: mode_*, task and script names.
-@ ROM 0x0130E5C..0x013B9DC (43,904 bytes). Split out of this incbin
+@ ROM 0x0133E54..0x013B9DC (31,624 bytes). Split out of this incbin
 @ as regions get identified.
 
 	.section .rodata
-	.global data_08130E5C
-data_08130E5C:
-	.incbin "roms/B8CE.gba", 0x130e5c, 0xab80
+	.global data_08133E54
+data_08133E54:
+	.incbin "roms/B8CE.gba", 0x133e54, 0x7b88

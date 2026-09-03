@@ -26,7 +26,7 @@ import struct
 from pathlib import Path
 
 ROM_BASE = 0x08000000
-CODE_HI = 0x08121330
+CODE_HI = 0x081213C4
 ROM_END = 0x0A000000
 
 TARGET_ANCHORS = {
@@ -34,11 +34,14 @@ TARGET_ANCHORS = {
         0x02034890: 0x02034898,
         0x09ED77D4: 0x09F476C8,
         0x09ED82D4: 0x09F481C8,
+        0x08130E6C: 0x0887F340,
     },
 }
 
 TARGET_DATA_SIZE = {
     "eu": {
+        ("unk_0800c778_data.c", ".rodata"): 0x2928,
+        ("unk_0800c778_data.c", ".data"): 0,
         ("mode_battle.c", ".rodata"): 0x914,
         ("mode_debug.c", ".rodata"): 0x1F4,
         ("mode_chkobj.c", ".rodata"): 0x6350,
