@@ -1,6 +1,20 @@
 #include "macros.h"
 #include "mode_mapinspect.h"
 
+s16 gUnk_02035FC4;
+s16 gUnk_02035FC6;
+s16 gUnk_02035FC8;
+s16 gUnk_02035FCA;
+s16 gUnk_02035FCC;
+#ifdef VERSION_JP
+u32 gUnkJp_02035F3C;
+#endif
+s32 gUnk_02035FD0[2];
+s32 gUnk_02035FD8;
+s32 gUnk_02035FDC;
+s32 gUnk_02035FE0;
+u8 gUnk_02035FE4;
+
 #ifdef NON_MATCHING
 
 void mode_mapinspect_0(void) {

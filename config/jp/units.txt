@@ -69,9 +69,9 @@ bos5.c
 mode_worldinspect.c -O2 -fprologue-bugfix -fno-common
 mode_worldwarp.c -O2 -fprologue-bugfix -fno-common
 mode_ms.c -O2 -fprologue-bugfix -fno-common
-unk_08104a84.c
-mode_ms2.c
-mode_mapinspect.c
+unk_08104a84.c -O2 -fprologue-bugfix -fno-common
+mode_ms2.c -O2 -fprologue-bugfix -fno-common
+mode_mapinspect.c -O2 -fprologue-bugfix -fno-common
 ms.c
 mode_backupstat.c -O2 -fprologue-bugfix -fno-common
 bos6.c
