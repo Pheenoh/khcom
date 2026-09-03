@@ -5,7 +5,7 @@
 #include "taskpool.h"
 #include "anim.h"
 
-typedef struct UnkStruct_02039B84 {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -78,9 +78,9 @@ typedef struct UnkStruct_02039B84 {
     s16 unk_1C8;
     u8 unk_1CA;
     u8 unk_1CB[0x05];
-} UnkStruct_02039B84;
+} BtlWork;
 
-extern UnkStruct_02039B84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
@@ -399,7 +399,7 @@ void func_0810B370(u8** p, u8 v);
 void func_08109EF8(void* work, s32 a);
 s32 func_08109F20(void* work);
 u8 func_0801BCA8(void* a);
-u16 func_08005B38(void* a);
+u16 AnimGetGfxIndex(void* a);
 s32 func_0810B350(void** p);
 u8 func_0810B800(void** p);
 u8 func_0810B824(void** p);
@@ -427,14 +427,14 @@ void func_0810B4B4(u8* p);
 
 void AnimChange(AnimState* a, u16 animId, u16 flags);
 u8 AnimIsFinished(AnimState* a);
-void func_08005B64(AnimState* a);
+void AnimReset(AnimState* a);
 
 void func_0810B930(PcFltWork* work);
 void func_0810B9A8(PcFltWork* work);
 void func_0810BA14(PcFltWork* work);
 
 void func_08012324(void* a, s32 x, s32 y, s32 z);
-void func_08012658(void* a, u16 b);
+void ColliderSetHeight(void* a, u16 b);
 void func_08012614(void* a, s32 b);
 
 void func_0810B8F8(PcFltWork* work);
@@ -485,12 +485,12 @@ s32 func_0810CC14(s32 a, s32 b, s32 c, s32 d, s32 e);
 u8 func_0810AE74(PcWork* work, s32 arg);
 u8 func_0810D304(BosLstWork* work, s32 idx);
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x8];
     u32 flags;
-} UnkStruct_02039BB0;
+} GameState;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern s32 gUnk_09A4D154[];
 
 u16 GetRandom(void);
@@ -506,7 +506,7 @@ s32 func_0810D70C(BosLstWork* work);
 
 void AnimUpdate(AnimState* a);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
-void func_08012650(void* a, u16 b);
+void ColliderSetRadius(void* a, u16 b);
 void func_08110994(LstTask* t, s16 a);
 
 u8 func_0810D3E0(BosLstWork* work, s32 idx, s16 a);
@@ -593,14 +593,14 @@ void func_0801BCC0(s32 a, s32 b, s32 c);
 void func_0801C298(u8 a, u8 b);
 void LoadBgMap(s32 bg, void* src, u16 size);
 
-extern u8 gUnk_09EF9E0C[];
+extern u8 gTaskDescBosPcFld[];
 extern u8 gUnk_09A3DF0C[];
 extern u8 gUnk_09A3DEFC[];
 extern u8 gUnk_09D34A74[];
 extern u8 gUnk_09CB84B4[];
 extern u8 gUnk_09C448D2[];
 extern u8 gUnk_08F69BC4[];
-extern u8 gUnk_09EF9E74[];
+extern u8 gTaskDescBosLstFld[];
 extern u8 gUnk_09A4CF6C[];
 extern u8 gUnk_09A4CF5C[];
 extern u8 gUnk_09C53724[];
@@ -660,14 +660,14 @@ void func_08006184(s32 a, u16 b);
 void func_08006120(s32 a, u16 b);
 void func_080063A8(void);
 
-typedef struct PcCam {
+typedef struct UnkStruct_02039DC8 {
     u8 unk_00[0x68];
     s16 unk_68;
     s16 unk_6A;
-} PcCam;
+} UnkStruct_02039DC8;
 
-extern PcCam* gUnk_02039DC8;
-u16 func_08005B30(AnimState* a);
+extern UnkStruct_02039DC8* gUnk_02039DC8;
+u16 AnimGetId(AnimState* a);
 void task_bos_pc_acd_2(PcAcdWork* work);
 
 extern u16 gUnk_09A4D0EC[];
@@ -760,7 +760,7 @@ typedef struct LstSpawn {
     void* unk_14;
 } LstSpawn;
 
-extern u8 gUnk_09EF9F0C[];
+extern u8 gTaskDescBosLstFal[];
 
 void* TaskCreate(void* pool, void* desc, void* arg);
 
@@ -781,7 +781,7 @@ typedef struct LstSpawn2 {
     s32 unk_14;
 } LstSpawn2;
 
-extern u8 gUnk_09EF9F24[];
+extern u8 gTaskDescBosLstCtr[];
 
 void func_08018A70(s32 a, s32 b, s32 c, s32 d);
 void func_080189DC(s32 a, s32 b, s32 c, s32 d);
@@ -810,7 +810,7 @@ typedef struct LstSpawn4 {
     s32 unk_28;
 } LstSpawn4;
 
-extern u8 gUnk_09EF9EC4[];
+extern u8 gTaskDescBosLstBit[];
 
 typedef struct LstSpawn5 {
     s32 unk_00;
@@ -824,7 +824,7 @@ extern u8 gUnk_09EFAE1C[];
 extern u8 gUnk_09EFADC4[];
 extern u8 gUnk_09EFAEAC[];
 extern u8 gUnk_09EFAE54[];
-extern u8 gUnk_09EF9F3C[];
+extern u8 gTaskDescBosLstSnp[];
 
 s32 func_0801ADAC(void* a);
 void func_0810F064(BosLstWork* work, LstSub* p);
