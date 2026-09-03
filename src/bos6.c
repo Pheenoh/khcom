@@ -356,7 +356,7 @@ u8 func_0810AED4(PcWork* work, s32 arg) {
 
     p = &work->unk_054;
     work->unk_2F0 = 240;
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         if (work->unk_2F4 <= 0) {
             if (GetRandom() % 0xA01 > 0x800) {
                 _0801C1F8(0, work->unk_020, work->unk_024, work->unk_028);
