@@ -62,6 +62,7 @@ UNIT_BSS = {
     "src/unk_08104a84.o": {"us": 0x02035c10, "jp": 0x02035b70},
     "src/mode_ms2.o": {"us": 0x02035e28, "jp": 0x02035d88},
     "src/mode_mapinspect.o": {"us": 0x02035fc4, "jp": 0x02035f30},
+    "src/mode_test.o": {"us": 0x02034A08, "jp": 0x02034964},
     "src/mode_worldinspect.o": {"us": 0x02035118, "jp": 0x02035078, "eu": None},
     "src/mode_sio2.o": {"us": 0x02034CF4, "jp": 0x02034C54, "eu": None},
     "src/sio.o": 0x0203406C,

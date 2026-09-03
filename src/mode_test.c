@@ -2,6 +2,29 @@
 #include "mode_test.h"
 #include "gba/keys.h"
 
+void* gUnk_02034A08;
+void* gUnk_02034A0C;
+s32 gUnk_02034A10;
+u32 gUnk_02034A14;
+u8 gUnk_02034A18;
+UnkStruct_02034A1C* gUnk_02034A1C;
+u8 gUnk_02034A20;
+u8 gUnk_02034A21;
+s32 gUnk_02034A24;
+s32 gUnk_02034A28;
+void* gUnk_02034A2C;
+#ifdef VERSION_JP
+u32 gUnkJp_0203498C;
+#endif
+TaskPool gUnk_02034A30;
+u8 gUnk_02034A44;
+TaskPool gUnk_02034A48;
+UnkStruct_02034A5C* gUnk_02034A5C;
+TaskPool gUnk_02034A60;
+u8 gUnk_02034A74;
+s32 gUnk_02034A78;
+u8 gUnk_02034A7C;
+
 void mode_test_0(void) {
     gUnk_02034A10 = 0;
     gUnk_02034A08 = LoadObjTiles(gUnk_08B24DAA, 0x7C0);

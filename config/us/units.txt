@@ -42,7 +42,7 @@ monsgage.c
 btl4.c
 tutorial.c
 mode_movie.c -O2 -fprologue-bugfix -fno-common
-mode_test.c
+mode_test.c -O2 -fprologue-bugfix -fno-common
 msg.c -O2 -fprologue-bugfix -fno-common
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
