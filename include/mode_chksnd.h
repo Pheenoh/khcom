@@ -14,8 +14,6 @@ extern s16 gUnk_020348B4;
 extern ChkSndEntry gUnk_09ED8644[];
 extern Mode gUnk_09ECEB64;
 extern TaskDesc gUnk_09EE9190;
-extern const char gUnk_081309B0[];
-extern const char gUnk_081309D0[];
 
 void ModeRequest(Mode* mode, s32 b);
 u16 GetKeysRepeat(void);

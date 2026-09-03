@@ -2,6 +2,14 @@
 #include "mode_debug.h"
 #include "gba/keys.h"
 
+#ifdef VERSION_US
+const char gUnk_081283C0[12] = "N041001a";
+#elif defined(VERSION_JP)
+const char gUnk_081283C0[12] = "J041001a";
+#else
+const char gUnk_081283C0[12] = "E041220b";
+#endif
+
 #ifndef VERSION_EU
 void mode_debug_0(void) {
     m4aMPlayAllStop();
@@ -25,14 +33,18 @@ void mode_debug_0(void) {
     gUnk_02034898->unk_08 = LoadObjPalette(gUnk_08F685E4, 0x20);
     AnimInit(&gUnk_02034898->unk_0C, gUnk_09EDF774, gUnk_09EDF764);
     AnimStart(&gUnk_02034898->unk_0C, 0, 1);
-    func_0805FCB0(0, 0, 2, gUnk_081283CC);
+#ifdef VERSION_JP
+    func_0805FCB0(0, 0, 2, "\x82\x69\x82\x4f\x82\x53\x82\x50\x82\x4f\x82\x4f\x82\x50\x82\x81");
+#else
+    func_0805FCB0(0, 0, 2, "\x82\x6d\x82\x4f\x82\x53\x82\x50\x82\x4f\x82\x4f\x82\x50\x82\x81");
+#endif
 
     if (GetPaletteEffect() < 0) {
-        func_0805FCB0(168, 150, 2, gUnk_081283E0);
+        func_0805FCB0(168, 150, 2, "\x82\x63\x82\x60\x82\x71\x82\x6a\x82\x64\x82\x71");
     } else if (GetPaletteEffect() > 0) {
-        func_0805FCB0(168, 150, 2, gUnk_081283F0);
+        func_0805FCB0(168, 150, 2, "\x82\x6b\x82\x68\x82\x66\x82\x67\x82\x73\x82\x64\x82\x71");
     } else {
-        func_0805FCB0(144, 150, 2, gUnk_08128400);
+        func_0805FCB0(144, 150, 2, "\x82\x61\x82\x71\x82\x68\x82\x66\x82\x67\x82\x73\x82\x6d\x82\x64\x82\x72\x82\x72");
     }
 
     gUnk_02034898->unk_00 = 0;
@@ -223,26 +235,26 @@ void mode_debug_1(void) {
     if (old != gUnk_02034898->unk_01) {
         switch (gUnk_02034898->unk_01) {
         case 0:
-            func_0805FCB0(24, 12, 2, gUnk_08128418);
-            func_0805FCB0(24, 28, 2, gUnk_0812842C);
-            func_0805FCB0(24, 44, 2, gUnk_08128440);
-            func_0805FCB0(24, 60, 2, gUnk_08128454);
-            func_0805FCB0(24, 76, 2, gUnk_08128468);
-            func_0805FCB0(24, 92, 2, gUnk_0812847C);
-            func_0805FCB0(24, 108, 2, gUnk_08128490);
-            func_0805FCB0(24, 124, 2, gUnk_081284A4);
-            func_0805FCB0(24, 140, 2, gUnk_081284B8);
+            func_0805FCB0(24, 12, 2, "\x82\x6c\x82\x60\x82\x68\x82\x6d\x81\x40\x81\x40\x81\x40\x81\x40");
+            func_0805FCB0(24, 28, 2, "\x82\x6e\x82\x61\x82\x69\x82\x64\x82\x62\x82\x73\x81\x40\x81\x40");
+            func_0805FCB0(24, 44, 2, "\x82\x6c\x82\x60\x82\x6f\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40");
+            func_0805FCB0(24, 60, 2, "\x82\x64\x82\x65\x82\x65\x82\x64\x82\x62\x82\x73\x81\x40\x81\x40");
+            func_0805FCB0(24, 76, 2, "\x82\x72\x82\x6e\x82\x74\x82\x6d\x82\x63\x81\x40\x81\x40\x81\x40");
+            func_0805FCB0(24, 92, 2, "\x82\x64\x82\x75\x82\x64\x82\x6d\x82\x73\x81\x40\x81\x40\x81\x40");
+            func_0805FCB0(24, 108, 2, "\x82\x6b\x82\x68\x82\x6d\x82\x6a\x81\x40\x81\x40\x81\x40\x81\x40");
+            func_0805FCB0(24, 124, 2, "\x82\x61\x82\x60\x82\x73\x82\x73\x82\x6b\x82\x64\x81\x40\x81\x40");
+            func_0805FCB0(24, 140, 2, "\x82\x6f\x82\x6e\x82\x6e\x82\x67\x81\x40\x81\x40\x81\x40\x81\x40");
             break;
         default:
-            func_0805FCB0(24, 12, 2, gUnk_081284CC);
-            func_0805FCB0(24, 28, 2, gUnk_081284E0);
-            func_0805FCB0(24, 44, 2, gUnk_081284F4);
-            func_0805FCB0(24, 60, 2, gUnk_08128508);
-            func_0805FCB0(24, 76, 2, gUnk_0812851C);
-            func_0805FCB0(24, 92, 2, gUnk_08128530);
-            func_0805FCB0(24, 108, 2, gUnk_08128544);
-            func_0805FCB0(24, 124, 2, gUnk_08128558);
-            func_0805FCB0(24, 140, 2, gUnk_0812856C);
+            func_0805FCB0(24, 12, 2, "\x82\x65\x82\x6b\x82\x60\x82\x66\x81\x40\x81\x40\x81\x40\x81\x40");
+            func_0805FCB0(24, 28, 2, "\x82\x6b\x82\x6e\x82\x66\x82\x6e\x81\x40\x81\x40\x81\x40\x81\x40");
+            func_0805FCB0(24, 44, 2, "\x82\x63\x82\x64\x82\x6b\x81\x40\x82\x72\x82\x60\x82\x75\x82\x64");
+            func_0805FCB0(24, 60, 2, "\x82\x6e\x82\x6f\x82\x64\x81\x40\x82\x72\x82\x60\x82\x75\x82\x64");
+            func_0805FCB0(24, 76, 2, "\x82\x6c\x82\x6e\x82\x75\x82\x68\x82\x64\x82\x50\x81\x40\x81\x40");
+            func_0805FCB0(24, 92, 2, "\x82\x6c\x82\x6e\x82\x75\x82\x68\x82\x64\x82\x51\x81\x40\x81\x40");
+            func_0805FCB0(24, 108, 2, "\x82\x6c\x82\x6e\x82\x75\x82\x68\x82\x64\x82\x52\x81\x40\x81\x40");
+            func_0805FCB0(24, 124, 2, "\x82\x6c\x82\x6e\x82\x75\x82\x68\x82\x64\x82\x53\x81\x40\x81\x40");
+            func_0805FCB0(24, 140, 2, "\x82\x6c\x82\x6e\x82\x75\x82\x68\x82\x64\x82\x54\x81\x40\x81\x40");
             break;
         }
     }
@@ -274,3 +286,5 @@ void func_0800B30C(ObjDef* def) {
     ReleaseObjPalette(gUnk_0203489C->unk_20);
     gUnk_0203489C->unk_20 = LoadObjPalette(def->unk_10, def->unk_1C);
 }
+
+const char gUnk_08128580[12] = "mode_debug";

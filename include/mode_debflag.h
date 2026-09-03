@@ -11,16 +11,12 @@ typedef struct DebugFlag {
 
 extern s8 gUnk_020348C0;
 extern s8 gUnk_020348C1;
-extern DebugFlag* gUnk_020348C4;
+extern const DebugFlag* gUnk_020348C4;
 extern u8 gUnk_02039B94;
 extern u32 gUnk_03006C10;
 extern u8 gUnk_08128304[];
-extern DebugFlag gUnk_08130BE8[];
-extern DebugFlag gUnk_08130DE0[];
-extern const char gUnk_08130E34[];
-extern const char gUnk_08130E38[];
-extern const char gUnk_08130E40[];
-extern const char gUnk_08130E48[];
+extern const DebugFlag gUnk_08130BE8[];
+extern const DebugFlag gUnk_08130DE0[];
 extern Mode gUnk_09ECEB64;
 
 void ModeRequest(Mode* mode, s32 arg);

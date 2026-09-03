@@ -32,8 +32,7 @@ typedef struct DummyEntry {
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern u16 gUnk_020348BC;
 extern u32 gFrameCounter;
-extern DummyEntry gUnk_08130A4C[];
-extern const char gUnk_08130BC8[];
+extern const DummyEntry gUnk_08130A4C[];
 extern u8 gUnk_08128304[];
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08F683C4[];

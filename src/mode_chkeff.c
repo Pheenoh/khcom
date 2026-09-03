@@ -2,6 +2,16 @@
 #include "mode_chkeff.h"
 #include "gba/keys.h"
 
+const char gUnk_081309E0[8] = "PAUSE";
+const char gUnk_081309E8[8] = "     ";
+const char gUnk_081309F0[40] = "                                      ";
+const char gUnk_08130A18[8] = "alp A";
+const char gUnk_08130A20[8] = "alp B";
+const char gUnk_08130A28[8] = "scale";
+const char gUnk_08130A30[4] = "num";
+const char gUnk_08130A34[4] = "pic";
+const char gUnk_08130A38[8] = "frame";
+
 #ifndef VERSION_EU
 void mode_chkeff_0(void) {
     gUnk_020348B8 = EwramAlloc(sizeof(ChkEffWork));
@@ -162,3 +172,5 @@ void mode_chkeff_2(void) {
     TaskPoolDestroy(&gUnk_020348B8->pool);
     EwramFree(gUnk_020348B8);
 }
+
+const char gUnk_08130A40[12] = "mode_chkeff";

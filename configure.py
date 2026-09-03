@@ -231,9 +231,11 @@ with out.open("w") as f:
         n.build(obj, "arx", implicit=[path],
                 variables={"archive": path, "member": member})
         objs.append(obj)
+    emitted = set()
     for src, obj, flags, _section in units:
-        if src is None:
+        if src is None or obj in emitted:
             continue
+        emitted.add(obj)
         rule = "cc" if src.suffix == ".c" else "as"
         variables = {"cflags": f"-mthumb-interwork {flags}"} if flags else None
         deps = [baserom]
@@ -295,8 +297,10 @@ compile_commands = [
         "output": str(root / obj),
         "arguments": cc_args + [str(src)],
     }
-    for src, obj, _flags, _section in units
-    if src is not None and src.suffix == ".c"
+    for obj, src in dict(
+        (obj, src) for src, obj, _flags, _section in units
+        if src is not None and src.suffix == ".c"
+    ).items()
 ]
 Path("compile_commands.json").write_text(json.dumps(compile_commands, indent=2) + "\n")
 
