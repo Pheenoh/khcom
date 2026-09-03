@@ -65,7 +65,7 @@ bos4.c -O2 -fprologue-bugfix -fno-common
 map.c -O2 -fprologue-bugfix -fno-common
 room.c
 unk_080fb000.c
-bos5.c
+bos5.c -O2 -fprologue-bugfix -fno-common
 mode_worldinspect.c -O2 -fprologue-bugfix -fno-common
 mode_worldwarp.c -O2 -fprologue-bugfix -fno-common
 mode_ms.c -O2 -fprologue-bugfix -fno-common
