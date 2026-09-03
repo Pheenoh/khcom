@@ -1,6 +1,9 @@
 #include "macros.h"
 #include "bos3.h"
 
+u16 gUnk_0203C3BC COMMON;
+u16 gUnk_0203C3C0 COMMON;
+
 void task_bos_jf_shadow_0(JfShadowWork* work, UnkStruct_02039B84* obj) {
     work->unk_0C = obj;
     work->unk_00 = LoadObjTiles(gUnk_08B22EFE, 0x140);

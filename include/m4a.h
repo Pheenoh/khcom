@@ -357,11 +357,7 @@ typedef struct Song {
 
 extern const MusicPlayer gMPlayTable[];
 extern const Song gSongTable[];
-extern MPlayFunc gMPlayJumpTable[];
 extern const XcmdFunc gXcmdTable[];
-extern CgbChannel gCgbChans[];
-extern SoundInfo gSoundInfo;
-extern u8 gMPlayMemAccArea[];
 extern const u16 gPcmSamplesPerVBlankTable[];
 extern const u8 gCgbScaleTable[];
 extern const s16 gCgbFreqTable[];

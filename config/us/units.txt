@@ -48,9 +48,9 @@ mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common
 wlogo.c -O2 -fprologue-bugfix -fno-common
-bos2.c
+bos2.c -O2 -fprologue-bugfix -fno-common
 chara.c -O2 -fprologue-bugfix -fno-common
-bos3.c
+bos3.c -O2 -fprologue-bugfix -fno-common
 mode_sio2.c -O2 -fprologue-bugfix -fno-common
 poo.c -O2 -fprologue-bugfix -fno-common
 mode_allmap.c -O2 -fprologue-bugfix -fno-common
@@ -81,8 +81,8 @@ sroll.c -O2 -fprologue-bugfix -fno-common
 lib.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.c
 agb_sram.c -O1 -fno-common
-movie.c -O0
-snd_stream.c
+movie.c -O0 -fno-common
+snd_stream.c -O2 -fprologue-bugfix -fno-common
 @libgcc.a:_ashldi3.o
 @libgcc.a:_call_via_rX.o
 @libgcc.a:_divsi3.o
@@ -98,7 +98,7 @@ snd_stream.c
 @libc.a:memcpy.o
 @libc.a:memset.o
 @libc.a:strcmp.o
-m4a2.c -O2
+m4a2.c -O2 -fno-common
 rodata_tables.s(.rodata)
 malloc_data.c(.rodata)
 sprite_data.c(.rodata)

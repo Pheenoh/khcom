@@ -1,6 +1,8 @@
 #include "types.h"
 #include "snd_stream.h"
 
+SoundStream gSndStream;
+
 #define REG_SOUNDCNT_H (*(vu16*)0x04000082)
 #define REG_SOUNDCNT_X (*(vu16*)0x04000084)
 #define REG_SOUNDBIAS (*(vu16*)0x04000088)
