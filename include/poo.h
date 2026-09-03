@@ -1238,7 +1238,7 @@ extern u8 gUnk_097257D8[];
 extern u8 gUnk_09849A98[];
 extern u8 gUnk_09EF5904[];
 extern u8 gUnk_09EF5844[];
-extern const s16 gUnk_08121400[];
+extern const s16 gSineTable[];
 extern TaskDesc gUnk_09EF4D20;
 extern u8 gUnk_09EF6158[];
 extern u8 gUnk_097606E8[];

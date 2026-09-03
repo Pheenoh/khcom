@@ -779,7 +779,7 @@ void func_080C61D4(void) {
     }
 
     if (gSioPlayerId == 0) {
-        SeedRandom(gUnk_03007480 & 0xFFFF);
+        SeedRandom(gFrameCounter & 0xFFFF);
         gUnk_0203AAC0.unk_1E = GetRandom() % 0xFFFF;
     } else {
         gUnk_0203AAC0.unk_1E = 0;

@@ -244,7 +244,7 @@ extern CharaLinkData gUnk_0203AAC0;
 extern u16 gUnk_0203AA10[];
 extern u16 gUnk_0203A9EC;
 extern u16 gUnk_0203A9F0;
-extern u32 gUnk_03007480;
+extern u32 gFrameCounter;
 extern Mode gUnk_09EF15B8;
 extern u16 gUnk_0203982C[];
 extern u32 gSioPlayerId;
