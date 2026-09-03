@@ -272,7 +272,6 @@ void func_0810A018(void* a);
 void func_0810A498(void* a);
 void func_0801BCD4(void* a);
 
-extern s32 gUnk_02036010;
 
 s32 func_0810B49C(void);
 void func_0810B4A8(u8* p);
@@ -319,9 +318,6 @@ void func_08110984(LstTask* t);
 void func_081109A8(LstTask* t);
 void func_08000DE8(void* pool, LstTask* t);
 
-extern u8 gUnk_02036008;
-extern s16 gUnk_0203600A;
-extern s16 gUnk_0203600C;
 extern u16 gUnk_09A4CABE[];
 extern s16 gUnk_09A4CAC4[];
 
