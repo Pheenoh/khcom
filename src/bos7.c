@@ -130,6 +130,7 @@ INCLUDE_ASM("bos7/task_bos_lst_fal_0.s");
 INCLUDE_ASM("bos7/task_bos_lst_fal_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_fal_2.s");
 INCLUDE_ASM("bos7/task_bos_lst_fal_3.s");
+INCLUDE_ASM("bos7/func_08111F4C.s");
 INCLUDE_ASM("bos7/task_bos_lst_ctr_0.s");
 INCLUDE_ASM("bos7/task_bos_lst_ctr_1.s");
 INCLUDE_ASM("bos7/task_bos_lst_ctr_2.s");
