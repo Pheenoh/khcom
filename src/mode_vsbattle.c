@@ -1,6 +1,8 @@
 #include "mode_vsbattle.h"
 #include "macros.h"
 
+u8 gUnk_02039B98;
+
 void mode_vsbattle_0(u32 mode) {
     VsTaskArg arg;
     VsTaskArg arg2;

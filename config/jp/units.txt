@@ -12,14 +12,14 @@ pallet.c -O2 -fprologue-bugfix -fno-common
 util.c -O2 -fprologue-bugfix -fno-common
 save.c -O2 -fprologue-bugfix -fno-common
 mode_battle.c
-mode_chkbtl.c
+mode_chkbtl.c -O2 -fprologue-bugfix -fno-common
 mode_debug.c -O2 -fprologue-bugfix -fno-common
 mode_chkobj.c
 mode_chksnd.c -O2 -fprologue-bugfix -fno-common
 mode_chkeff.c -O2 -fprologue-bugfix -fno-common
 mode_dummy.c -O2 -fprologue-bugfix -fno-common
 mode_debflag.c -O2 -fprologue-bugfix
-mode_vsbattle.c
+mode_vsbattle.c -O2 -fprologue-bugfix -fno-common
 unk_0800c778.c
 unk_0800eebc.c -O2 -fprologue-bugfix -fno-common
 unk_0801007c.c -O2 -fprologue-bugfix -fno-common

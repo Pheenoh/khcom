@@ -28,6 +28,8 @@ UNIT_COMMON = {
 }
 
 UNIT_BSS = {
+    "src/mode_chkbtl.o": {"us": 0X02039B84, "jp": 0x02039af4, "eu": 0x0203a194},
+    "src/mode_vsbattle.o": {"us": 0X02039B98, "jp": 0x02039b08, "eu": 0x0203a1a8},
     "src/evt.o": {"us": 0X02039DC8, "jp": 0x02039d38, "eu": 0x0203a3d8},
     "src/fld.o": {"us": 0X0203C7AC, "jp": 0x0203c71c, "eu": 0x0203cd9c},
     "src/unk_0800eebc.o": {"us": 0X02039CA8, "jp": 0x02039c18, "eu": 0x0203a2b8},
