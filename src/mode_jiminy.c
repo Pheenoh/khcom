@@ -1,6 +1,8 @@
 #include "macros.h"
 #include "mode_jiminy.h"
 
+JiminyWork* gUnk_02034934;
+
 #ifndef VERSION_JP
 void mode_jiminy_0(void) {
     s32 i;

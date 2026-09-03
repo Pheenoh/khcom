@@ -66,6 +66,7 @@ UNIT_BSS = {
     "src/main.o": 0x03006C00,
     "src/sprite.o": 0x030074C8,
     "src/pallet.o": 0x0300756C,
+    "src/mode_jiminy.o": 0x02034934,
     "src/mode_worldinspect.o": {"us": 0x02035118, "jp": 0x02035078, "eu": None},
     "src/mode_sio2.o": {"us": 0x02034CF4, "jp": 0x02034C54, "eu": None},
     "src/sio.o": 0x0203406C,

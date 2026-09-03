@@ -92,7 +92,6 @@ typedef struct JiminyWork {
     u16 unk_D3E;
 } JiminyWork;
 
-extern JiminyWork* gUnk_02034934;
 extern JiminyEntry gUnk_08155554[];
 extern s16 gSineTable[];
 extern u16 gBldCnt;
