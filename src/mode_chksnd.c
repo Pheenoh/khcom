@@ -1,7 +1,7 @@
 #include "macros.h"
 #include "mode_chksnd.h"
 
-TaskPool gUnk_020348A0;
+TaskPool gChkSndPool;
 s16 gUnk_020348B4;
 #include "gba/keys.h"
 
@@ -640,10 +640,10 @@ const char gUnk_08130990[16] = "BGM_ALICE_FIELD";
 const char gUnk_081309A0[16] = "BGM_ALICE_BTL";
 
 void mode_chksnd_0(void) {
-    func_08004DB0();
+    SetBgMode0();
     gUnk_020348B4 = 0;
-    TaskPoolInit(&gUnk_020348A0, 10);
-    TaskCreate(&gUnk_020348A0, &gUnk_09EE9190, 0);
+    TaskPoolInit(&gChkSndPool, 10);
+    TaskCreate(&gChkSndPool, &gTaskDescPrint, 0);
 }
 
 #ifndef VERSION_EU
@@ -664,7 +664,7 @@ void mode_chksnd_1(void) {
         }
 
         if (GetKeysPressed() & 1) {
-            m4aSongNumStart(gChkSndEntries[gUnk_020348B4].unk_04);
+            m4aSongNumStart(gChkSndEntries[gUnk_020348B4].songNum);
         }
 
         if (gUnk_020348B4 < 0) {
@@ -676,11 +676,11 @@ void mode_chksnd_1(void) {
         }
 
         func_0809D2B0(0, 0, 0, "                              ");
-        func_0809D458(0, 0, 0, gChkSndEntries[gUnk_020348B4].unk_04);
+        func_0809D458(0, 0, 0, gChkSndEntries[gUnk_020348B4].songNum);
         func_0809D2B0(5, 0, 0, ": ");
         func_0809D2B0(7, 0, 0, gChkSndEntries[gUnk_020348B4].name);
-        TaskPoolUpdate(&gUnk_020348A0);
-        TaskPoolDraw(&gUnk_020348A0);
+        TaskPoolUpdate(&gChkSndPool);
+        TaskPoolDraw(&gChkSndPool);
     }
 }
 #else
@@ -689,7 +689,7 @@ INCLUDE_ASM("mode_chksnd/mode_chksnd_1.s");
 
 void mode_chksnd_2(void) {
     m4aMPlayAllStop();
-    TaskPoolDestroy(&gUnk_020348A0);
+    TaskPoolDestroy(&gChkSndPool);
 }
 
-const char gUnk_081309D4[12] = "mode_chksnd";
+const char gModeNameChksnd[12] = "mode_chksnd";

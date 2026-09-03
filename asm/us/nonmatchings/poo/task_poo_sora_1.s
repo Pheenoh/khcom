@@ -128,7 +128,7 @@ _080CB732:
 	str r2, [r0, #0x00]
 	ldr r1, _080CB7A0 @ =0x080CAD09
 	mov r0, r8
-	bl func_08000F8C
+	bl SetTaskUpdate
 	adds r0, r5, #0x0
 	adds r0, #0xA8
 	ldr r0, [r0, #0x00]
@@ -165,7 +165,7 @@ _080CB7D0:
 	str r0, [r1, #0x00]
 	ldr r1, _080CB7EC @ =0x080CB1BD
 	mov r0, r8
-	bl func_08000F8C
+	bl SetTaskUpdate
 _080CB7E6:
 	adds r4, r5, #0x0
 	adds r4, #0x08
@@ -189,7 +189,7 @@ _080CB7F0:
 	str r0, [r1, #0x00]
 	ldr r1, _080CB824 @ =0x080CB5A9
 	mov r0, r8
-	bl func_08000F8C
+	bl SetTaskUpdate
 	adds r0, r6, #0x0
 	bl func_080CA960
 	strb r0, [r6, #0x14]
@@ -262,7 +262,7 @@ _080CB886:
 	str r0, [r1, #0x00]
 	ldr r1, _080CB8EC @ =0x080CAD09
 	mov r0, r8
-	bl func_08000F8C
+	bl SetTaskUpdate
 _080CB8B0:
 	adds r0, r5, #0x0
 	adds r0, #0x38

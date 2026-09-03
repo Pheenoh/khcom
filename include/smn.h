@@ -10,7 +10,7 @@ typedef struct SmnArgs {
     u8 unk_03;
 } SmnArgs;
 
-typedef struct SmnObj {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -30,7 +30,7 @@ typedef struct SmnObj {
     u64 unk_068;
     u8 unk_070;
     u8 unk_071[0x0B];
-    struct SmnObj* unk_07C;
+    struct BtlWork* unk_07C;
     u8 unk_080[0x1C];
     u8 unk_09C[0x17];
     u8 unk_0B3;
@@ -52,16 +52,16 @@ typedef struct SmnObj {
     void* unk_110;
     void* unk_114;
     u8 unk_118[0xB0];
-} SmnObj;
+} BtlWork;
 
 typedef struct SmnBody {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     u8 unk_14[0x20];
-    u64 unk_34;
+    u64 flags;
     u8 unk_3C[0x90];
     u16 unk_CC;
     u8 unk_CE[0x42];
@@ -69,8 +69,8 @@ typedef struct SmnBody {
 
 typedef struct SmnCloudWork {
     void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
+    void* palette;
+    AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
     SmnBody unk_038;
@@ -99,8 +99,8 @@ typedef struct SmnCloudWork {
 
 typedef struct SmnBambiWork {
     void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
+    void* palette;
+    AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
     SmnBody unk_038;
@@ -118,7 +118,7 @@ typedef struct SmnBambiWork {
     u8 unk_163;
     u8 unk_164;
     u8 unk_165[0x03];
-    struct SmnObj* unk_168;
+    struct BtlWork* unk_168;
     s16 unk_16C;
     u8 unk_16E[0x02];
     s32 unk_170;
@@ -127,8 +127,8 @@ typedef struct SmnBambiWork {
 
 typedef struct SmnTinkWork {
     void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
+    void* palette;
+    AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
     SmnBody unk_038;
@@ -149,23 +149,23 @@ typedef struct SmnTinkWork {
     u8 unk_172[0x02];
     s32 unk_174;
     s32 unk_178;
-    struct SmnObj* unk_17C;
+    struct BtlWork* unk_17C;
 } SmnTinkWork;
 
 typedef struct SmnTinkeffWork {
-    void* unk_00;
-    void* unk_04;
-    AnimState unk_08;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    void* tiles;
+    void* palette;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_2C;
 } SmnTinkeffWork;
 
 typedef struct SmnSimbaWork {
     void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
+    void* palette;
+    AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
     SmnBody unk_038;
@@ -182,8 +182,8 @@ typedef struct SmnSimbaWork {
 
 typedef struct SmnMushuWork {
     void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
+    void* palette;
+    AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
     SmnBody unk_038;
@@ -195,13 +195,13 @@ typedef struct SmnMushuWork {
     u8 unk_153;
     u8 unk_154;
     u8 unk_155[0x03];
-    struct SmnObj* unk_158;
+    struct BtlWork* unk_158;
 } SmnMushuWork;
 
 typedef struct SmnDumboWork {
     void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
+    void* palette;
+    AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
     SmnBody unk_038;
@@ -218,8 +218,8 @@ typedef struct SmnDumboWork {
 
 typedef struct SmnGenieWork {
     void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
+    void* palette;
+    AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
     SmnBody unk_038;
@@ -230,7 +230,7 @@ typedef struct SmnGenieWork {
     u8 unk_151;
     u8 unk_152;
     u8 unk_153;
-    struct SmnObj* unk_154;
+    struct BtlWork* unk_154;
     s16 unk_158;
     u16 unk_15A;
     s32 unk_15C;
@@ -239,9 +239,9 @@ typedef struct SmnGenieWork {
 } SmnGenieWork;
 
 typedef struct SmnPrizeArgs {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_0C[0x06];
     s16 unk_12;
     s16 unk_14;
@@ -257,8 +257,8 @@ typedef struct SmnFrdWork {
 
 typedef struct SmnKingWork {
     void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
+    void* palette;
+    AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
     SmnBody unk_038;
@@ -274,8 +274,8 @@ typedef struct SmnKingWork {
     u8 unk_15F[0x09];
 } SmnKingWork;
 
-extern SmnObj* gUnk_02039B84;
-extern SmnObj* gUnk_02039B9C;
+extern BtlWork* gBtlWork;
+extern BtlWork* gUnk_02039B9C;
 
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* a);
@@ -296,7 +296,7 @@ void func_08014780(s32 a, s32 b, s32 c);
 void func_080140E0(s32 a, s32 b, s32 c);
 void func_08019050(s32 a, s32 b, s32 c, s32 d);
 void func_08019A30(void);
-u16 func_08005B38(AnimState* a);
+u16 AnimGetGfxIndex(AnimState* a);
 void func_08006B80(u16* a, u16* b);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_0801416C(s32 a, s32 b, s32 c);
@@ -313,8 +313,8 @@ void func_0802F284(s32 a, s32 b, s32 c);
 void TaskPoolUpdate(TaskPool* a);
 void func_080147C8(s32 a, s32 b);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-struct SmnObj* func_08000C8C(void* a);
-struct SmnObj* func_08000CD4(void* a);
+struct BtlWork* ListPoolFirst(void* a);
+struct BtlWork* ListPoolNext(void* a);
 void* LoadObjPalette(void* src, s32 size);
 void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
@@ -364,8 +364,8 @@ void func_08044518(SmnGenieWork* work);
 u8 func_0804544C(SmnFrdWork* work);
 void func_08045494(SmnBody* body, u8 a, s16 b, s16 c);
 u8 func_08041FCC(SmnBambiWork* work);
-SmnObj* func_08042018(SmnBambiWork* work);
-SmnObj* func_08044450(SmnGenieWork* work);
+BtlWork* func_08042018(SmnBambiWork* work);
+BtlWork* func_08044450(SmnGenieWork* work);
 void func_080428E8(SmnTinkWork* work);
 u8 func_08044F98(SmnKingWork* work);
 u8 task_smn_bambi_1(SmnBambiWork* work);

@@ -10,12 +10,12 @@
 #define REG_IE (*(vu16*)0x04000200)
 #define REG_IME (*(vu16*)0x04000208)
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
-} UnkStruct_02039BB0;
+} GameState;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 extern s32 gUnk_0203C544;
@@ -43,9 +43,9 @@ extern u8 gUnk_0984A6B8[];
 extern u8 gUnk_0984A6F8[];
 extern u8 gUnk_0984A718[];
 extern u8 gUnk_0984A738[];
-extern TaskDesc gUnk_09EF4E60;
-extern TaskDesc gUnk_09EF4E78;
-extern TaskDesc gUnk_09EF4E90;
+extern TaskDesc gTaskDescTitleLogo;
+extern TaskDesc gTaskDescTitleObj;
+extern TaskDesc gTaskDescTitleMenu;
 extern void* gUnk_09EF659C;
 extern void* gUnk_09EF669C;
 extern void* gUnk_09EF65A4;
@@ -58,7 +58,7 @@ void func_0801CB44(void);
 s32 SaveLoadHeader(void);
 void func_08093BB4(void);
 void func_08093C04(void);
-void func_08004E64(void);
+void SetBgMode1(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void LoadBgTiles(s32 bg, void* src, u16 size);
@@ -68,7 +68,7 @@ void DisableBg(s32 bg);
 void func_080C736C(void);
 void func_080C73A4(s32 a, s32 b, s32 c);
 void SetBgSize(s32 a, s32 b);
-void func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
+void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08006120(s32 a, s32 b);
 void m4aSongNumStart(u16 id);
 u8 func_08006314(void);

@@ -7,16 +7,16 @@
 #include "anim.h"
 #include "mode.h"
 
-typedef struct MsCardBack {
+typedef struct CardBack {
     void* unk_00;
     u8 unk_04[0x8];
     void* unk_0C;
     u8 unk_10[0x8];
-} MsCardBack;
+} CardBack;
 
 typedef struct MsShopHosiArg {
-    s16 unk_00;
-    s16 unk_02;
+    s16 x;
+    s16 y;
     void* unk_04;
     u8 unk_08;
     u8 unk_09[0x3];
@@ -65,13 +65,13 @@ typedef struct UnkStruct_099932D4 {
     u16 unk_16;
 } UnkStruct_099932D4;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x0E];
     s8 floor;
     u8 unk_00F[0x16B];
     u16 unk_17A;
     u8 unk_17C[0x2];
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct UnkStruct_020358C8 {
     FldRes* unk_00;
@@ -150,7 +150,7 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void TaskPoolDestroy(TaskPool* pool);
 void m4aSongNumStart(u16 n);
-u16 func_08005B34(AnimState* a);
+u16 AnimGetFrame(AnimState* a);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void LoadPalette(void* src, void* dst, s32 size);
@@ -199,14 +199,14 @@ void* LoadObjTiles(void* a, s32 b);
 void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* EwramAlloc(u32 size);
-void func_08001F98(void);
+void SpriteReset(void);
 void TaskPoolInit(TaskPool* pool, s32 a);
 void func_081015E8(void);
 void func_08101654(void);
 void func_08101740(s16 a);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void func_08006120(s32 a, s32 b);
-u32 func_08101518(void);
+u32 GetMooglePoints(void);
 void func_08006238(s32 a, s32 b, s32 c);
 u8 func_08101538(u32 a);
 void func_08102AB4(s16 x, s16 y);
@@ -282,12 +282,12 @@ extern u8 gUnk_092028EC[];
 extern u8 gUnk_09EEEAC8[];
 extern u8 gUnk_09EEEA98[];
 extern UnkStruct_099935A8 gUnk_099935A8[];
-extern MsCardBack gUnk_08F709B0[];
+extern CardBack gUnk_08F709B0[];
 extern u32 gFrameCounter;
 extern u8 gUnk_09A17D1C[];
 extern u8 gUnk_09A3DA1C[];
 extern void* gUnk_09EE8F48[];
-extern u8 gUnk_09EF9650[];
+extern u8 gTaskDescMsShopHosi[];
 extern void* gUnk_09EE981C[];
 extern void* gUnk_09EE9894[];
 extern s16 gSineTable[];
@@ -303,8 +303,8 @@ extern u8 gUnk_09A3DB7C[];
 extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_09EEA164[];
 extern u8 gUnk_09EEA148[];
-extern Mode gUnk_09EF95E8;
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern Mode gModeMsTop;
+extern GameState gGameState;
 extern UnkStruct_099932D4 gUnk_099932D4[];
 extern u8 gUnk_09A3D87C[];
 extern u8 gUnk_09A1251C[];

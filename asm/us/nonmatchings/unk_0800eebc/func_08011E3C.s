@@ -89,7 +89,7 @@ _08011ECE:
 	beq _08011F22
 	mov r0, r12
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	beq _08011F54
@@ -113,7 +113,7 @@ _08011EFA:
 	bne _08011F50
 	adds r0, r4, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	bne _08011EFA

@@ -19,10 +19,10 @@ void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
     work->unk_09A = func_080D35B0(work);
 
     if (work->unk_09C == 0) {
-        work->unk_000 = LoadObjTiles(gUnk_0976B340, 0x2400);
+        work->tiles = LoadObjTiles(gUnk_0976B340, 0x2400);
         work->unk_008 = 0;
     } else {
-        work->unk_000 = AllocObjTiles(func_08003524(gUnk_09EF6424, 17), gUnk_0976B340);
+        work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6424, 17), gUnk_0976B340);
         work->unk_008 = gUnk_09EF6424[work->unk_09A];
     }
 
@@ -31,7 +31,7 @@ void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
     } else {
         pal = gUnk_0984A0F8 + func_080D37BC(work->unk_098);
     }
-    work->unk_004 = LoadObjPalette(pal, 32);
+    work->palette = LoadObjPalette(pal, 32);
 }
 
 s32 task_allmap_room_1(void) {
@@ -73,13 +73,13 @@ void task_allmap_room_2(AllmapRoomWork* work) {
     }
 
     if (work->unk_008 != 0) {
-        DrawSprite(x, y, work->unk_008, work->unk_000, work->unk_004, 0, g, h);
+        DrawSprite(x, y, work->unk_008, work->tiles, work->palette, 0, g, h);
     }
 
     for (i = 0; i < 4; i++) {
         if (work->unk_01C[i] != 0) {
             work->unk_01C[i] = AnimUpdate(&work->unk_02C[i]);
-            DrawSprite(x, y, work->unk_01C[i], work->unk_00C[i], work->unk_004, 0, g, i - 4 + h);
+            DrawSprite(x, y, work->unk_01C[i], work->unk_00C[i], work->palette, 0, g, i - 4 + h);
         }
     }
 }
@@ -87,8 +87,8 @@ void task_allmap_room_2(AllmapRoomWork* work) {
 void task_allmap_room_3(AllmapRoomWork* work) {
     s32 i;
 
-    ReleaseObjTiles(work->unk_000);
-    ReleaseObjPalette(work->unk_004);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 
     for (i = 0; i < 4; i++) {
         if (work->unk_00C[i] != 0) {
@@ -104,7 +104,7 @@ Task* func_080D3A20(TaskPool* pool) {
     arg.unk_02 = 0;
     arg.unk_04 = gUnk_0203C590[6];
     arg.unk_06 = 1;
-    return TaskCreate(pool, &gUnk_09EF4DC0, &arg);
+    return TaskCreate(pool, &gTaskDescAllmapRoom, &arg);
 }
 
 u8 func_080D3A70(u8 a, u8 b) {
@@ -147,11 +147,11 @@ void task_allmap_cursor_0(AllmapCursorWork* work, AllmapCursorPos* arg) {
     work->unk_2C = work->unk_26 << 8;
     work->unk_34 = work->unk_3C = work->unk_24 << 8;
     work->unk_38 = work->unk_40 = work->unk_26 << 8;
-    work->unk_00 = LoadObjTiles(gUnk_0976D7C0, 0xC0);
-    work->unk_04 = LoadObjPalette(gUnk_0984A1D8, 32);
-    AnimInit(&work->unk_0C, gUnk_09EF64C4, gUnk_09EF64B4);
-    AnimStart(&work->unk_0C, 0, 1);
-    work->unk_08 = AnimGetGfx(&work->unk_0C);
+    work->tiles = LoadObjTiles(gUnk_0976D7C0, 0xC0);
+    work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
+    AnimInit(&work->anim, gUnk_09EF64C4, gUnk_09EF64B4);
+    AnimStart(&work->anim, 0, 1);
+    work->gfx = AnimGetGfx(&work->anim);
     work->unk_44 = 0;
 }
 
@@ -170,10 +170,10 @@ s32 task_allmap_cursor_1(AllmapCursorWork* work) {
     }
 
     if (gUnk_0203C4E0 != 3) {
-        work->unk_08 = gUnk_09EF64B4[0];
+        work->gfx = gUnk_09EF64B4[0];
         return 1;
     }
-    work->unk_08 = AnimUpdate(&work->unk_0C);
+    work->gfx = AnimUpdate(&work->anim);
     x = (work->unk_30.unk_00 * 24 + 16 - gUnk_0203C540) << 8;
     y = (work->unk_30.unk_02 * 24 + 11 - gUnk_0203C53C) << 8;
     if (x != work->unk_34 || y != work->unk_38) {
@@ -205,12 +205,12 @@ void task_allmap_cursor_2(AllmapCursorWork* work) {
         x = work->unk_3C >> 8;
         y = work->unk_40 >> 8;
     }
-    DrawSprite(x - 15, y - 22, work->unk_08, work->unk_00, work->unk_04, 0, 0, 49);
+    DrawSprite(x - 15, y - 22, work->gfx, work->tiles, work->palette, 0, 0, 49);
 }
 
 void task_allmap_cursor_3(AllmapCursorWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 s16 func_080D3D40(u16 a) {
@@ -259,7 +259,7 @@ void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
     func_08065ACC(work, 24);
     work->unk_0CC = func_08065B6C(func_08093C18(arg[0]), work);
     pal = func_080D3DCC(arg[0]);
-    work->unk_0C8 = LoadObjPalette(gUnk_0984A1F8 + pal, 32);
+    work->palette = LoadObjPalette(gUnk_0984A1F8 + pal, 32);
     LoadPalette(gUnk_0984A078 + pal, gUnk_05000160, 32);
     work->unk_0CE = func_080D3D40(func_08065B08(work, work->unk_0CC));
 }
@@ -269,12 +269,12 @@ s32 task_allmap_roomname_1(void) {
 }
 
 void task_allmap_roomname_2(AllmapRoomnameWork* work) {
-    func_080664D8(work->unk_0CE + 117, 3, work, work->unk_0C8, 50, work->unk_0CC);
+    func_080664D8(work->unk_0CE + 117, 3, work, work->palette, 50, work->unk_0CC);
 }
 
 void task_allmap_roomname_3(AllmapRoomnameWork* work) {
     func_08065AE0(work, 24);
-    ReleaseObjPalette(work->unk_0C8);
+    ReleaseObjPalette(work->palette);
 }
 
 void func_080D3ED0(void) {
@@ -313,10 +313,10 @@ void func_080D3F10(AllmapBarWork* work) {
 }
 
 void task_allmap_bar_0(AllmapBarWork* work) {
-    gUnk_0203C460 = work;
+    gStockMesDispWork = work;
     work->unk_00 = LoadObjTiles(gUnk_0976D8A6, 0x2C0);
     work->unk_04 = LoadObjTiles(gUnk_0976DBDA, 0xC0);
-    work->unk_08 = LoadObjPalette(gUnk_0984A1D8, 32);
+    work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->unk_0C = 16;
     work->unk_28 = 0;
     work->unk_10 = -0x800;
@@ -414,15 +414,15 @@ void task_allmap_bar_2(AllmapBarWork* work) {
     if (work->unk_28 == 2) {
         return;
     }
-    DrawSprite(work->unk_20 >> 8, 0, gUnk_0976D880, work->unk_00, work->unk_08, 0, 0xC00, 1000);
-    DrawSprite(128, work->unk_10 >> 8, gUnk_0976DB68, work->unk_04, work->unk_08, 0, 0xC00, 1001);
-    DrawSprite(128, work->unk_18 >> 8, gUnk_0976DB9C, work->unk_04, work->unk_08, 0, 0xC00, 1002);
+    DrawSprite(work->unk_20 >> 8, 0, gUnk_0976D880, work->unk_00, work->palette, 0, 0xC00, 1000);
+    DrawSprite(128, work->unk_10 >> 8, gUnk_0976DB68, work->unk_04, work->palette, 0, 0xC00, 1001);
+    DrawSprite(128, work->unk_18 >> 8, gUnk_0976DB9C, work->unk_04, work->palette, 0, 0xC00, 1002);
 }
 
 void task_allmap_bar_3(AllmapBarWork* work) {
     ReleaseObjTiles(work->unk_00);
     ReleaseObjTiles(work->unk_04);
-    ReleaseObjPalette(work->unk_08);
+    ReleaseObjPalette(work->palette);
 }
 
 u8 func_080D422C(AllmapCursorPos a) {
@@ -519,7 +519,7 @@ void func_080D484C(AllmapDoorinfoWork* work) {
 
     for (i = 0; i < 4; i++) {
         if (work->unk_008[i] != 0 && work->unk_100 == 0) {
-            DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->unk_008[i], work->unk_018, work->unk_0EC, 0, 0, i + 51);
+            DrawSprite(work->unk_104 >> 8, work->unk_108 >> 8, work->unk_008[i], work->unk_018, work->palette, 0, 0, i + 51);
             gUnk_02034E84 = gUnk_096FDC10[i][0];
             gUnk_02034E88 = gUnk_096FDC10[i][1];
             DrawSprite(gUnk_02034E84 + (work->unk_104 >> 8), gUnk_02034E88 + (work->unk_108 >> 8), work->unk_01C[i].unk_18, work->unk_01C[i].unk_00, work->unk_01C[i].unk_0C, 0, 0, i + 40);
@@ -562,7 +562,7 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
         }
     } else {
         ReleaseObjTiles(work->unk_018);
-        ReleaseObjPalette(work->unk_0EC);
+        ReleaseObjPalette(work->palette);
 
         for (i = 0; i < 4; i++) {
             if (work->unk_008[i] != 0) {
@@ -582,12 +582,12 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
 }
 
 void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
-    gUnk_0203C460 = work;
+    gStockMesDispWork = work;
     work->unk_0C = arg;
     work->unk_2C = arg->unk_30.unk_00 * 24 - gUnk_0203C540;
     work->unk_2E = arg->unk_30.unk_02 * 24 - gUnk_0203C53C;
-    work->unk_00 = LoadObjTiles(gUnk_0976DCB0, 0x80);
-    work->unk_04 = LoadObjPalette(gUnk_0984A1D8, 32);
+    work->tiles = LoadObjTiles(gUnk_0976DCB0, 0x80);
+    work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->unk_08 = gUnk_0976DC9C;
     work->unk_10 = 0;
     TaskPoolInit(&work->unk_14, 1);
@@ -597,7 +597,7 @@ void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
 s32 task_allmap_pusha_1(AllmapPushaWork* work) {
     if (func_080D4D1C() == 0 && (GetKeysPressed() & 1) != 0) {
         m4aSongNumStart(102);
-        work->unk_28 = TaskCreate(&work->unk_14, &gUnk_09EF4E20, &work->unk_0C->unk_30);
+        work->unk_28 = TaskCreate(&work->unk_14, &gTaskDescAllmapDoorinfo, &work->unk_0C->unk_30);
     }
     work->unk_12 = gSineTable[(u8)work->unk_10] >> 8;
     work->unk_10 += 16;
@@ -611,26 +611,26 @@ void task_allmap_pusha_2(AllmapPushaWork* work) {
     } else {
         work->unk_2C = work->unk_0C->unk_30.unk_00 * 24 - gUnk_0203C540;
         work->unk_2E = work->unk_0C->unk_30.unk_02 * 24 - gUnk_0203C53C;
-        DrawSprite(work->unk_2C, work->unk_2E - work->unk_12 + 2, work->unk_08, work->unk_00, work->unk_04, 0, 0, 48);
+        DrawSprite(work->unk_2C, work->unk_2E - work->unk_12 + 2, work->unk_08, work->tiles, work->palette, 0, 0, 48);
     }
 }
 
 void task_allmap_pusha_3(AllmapPushaWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->unk_14);
     func_080D4D44();
 }
 
 u8 func_080D4D1C(void) {
-    if (gUnk_0203C460 == 0 || func_08000F48(((AllmapPushaWork*)gUnk_0203C460)->unk_28) == 0) {
+    if (gStockMesDispWork == 0 || IsTaskActive(((AllmapPushaWork*)gStockMesDispWork)->unk_28) == 0) {
         return 0;
     }
     return 1;
 }
 
 void func_080D4D44(void) {
-    gUnk_0203C460 = 0;
+    gStockMesDispWork = 0;
 }
 
 #ifdef NON_MATCHING
@@ -682,7 +682,7 @@ INCLUDE_ASM("allmap/func_080D4D50.s");
 #endif
 INCLUDE_ASM("allmap/func_080D4EBC.s");
 #ifdef NON_MATCHING
-void func_080D510C(AllmapState* s) {
+void func_080D510C(UnkStruct_0203C4B4* s) {
     s32 tx;
     s32 ty;
     s32 dx;
@@ -747,15 +747,15 @@ void func_080D53F8(void) {
     base = (gUnk_0203C4B4->unk_BA * 24 - gUnk_0203C53C) << 9;
 
     for (i = 0; i < 32; i++) {
-        if (func_08000F48(gUnk_0203C4B4->unk_14[i]) != 0) {
-            w = gUnk_0203C4B4->unk_14[i]->unk_04;
+        if (IsTaskActive(gUnk_0203C4B4->unk_14[i]) != 0) {
+            w = gUnk_0203C4B4->unk_14[i]->work;
             w->unk_094 = (w->unk_08E * 24 - gUnk_0203C53C) << 8;
             w->unk_090 = w->unk_094 - base;
         }
     }
 
-    if (func_08000F48(gUnk_0203C4B4->unk_94) != 0) {
-        c = gUnk_0203C4B4->unk_94->unk_04;
+    if (IsTaskActive(gUnk_0203C4B4->unk_94) != 0) {
+        c = gUnk_0203C4B4->unk_94->work;
         c->unk_28 = c->unk_2C - base;
     }
 }
@@ -765,8 +765,8 @@ s32 func_080D5494(AllmapCursorPos a) {
     u8 i;
 
     for (i = 0; i < 32; i++) {
-        if (func_08000F48(gUnk_0203C4B4->unk_14[i]) != 0) {
-            w = gUnk_0203C4B4->unk_14[i]->unk_04;
+        if (IsTaskActive(gUnk_0203C4B4->unk_14[i]) != 0) {
+            w = gUnk_0203C4B4->unk_14[i]->work;
             if (a.unk_00 == w->unk_08C && a.unk_02 == w->unk_08E) {
                 return i;
             }
@@ -778,7 +778,7 @@ s32 func_080D5494(AllmapCursorPos a) {
 void func_080D54FC(void) {
     AllmapRoomWork* w;
 
-    w = gUnk_0203C4B4->unk_14[gUnk_0203C538]->unk_04;
+    w = gUnk_0203C4B4->unk_14[gUnk_0203C538]->work;
     gUnk_0203C4B4->unk_A2 = w->unk_08E * 24 - gUnk_0203C4B4->unk_AE - 69;
     if (gUnk_0203C4B4->unk_A2 < 0 || gUnk_0203C4B4->unk_B2 <= 159) {
         gUnk_0203C4B4->unk_A2 = 0;
@@ -805,7 +805,7 @@ void func_080D55E4(void) {
     u8 r;
 
     moved = 0;
-    c = gUnk_0203C4B4->unk_94->unk_04;
+    c = gUnk_0203C4B4->unk_94->work;
     p = c->unk_30;
 
     switch (GetKeysRepeat()) {
@@ -847,23 +847,23 @@ void func_080D55E4(void) {
         func_080D54FC();
     }
 
-    if (func_08000F48(gUnk_0203C4B4->unk_98) != 0) {
+    if (IsTaskActive(gUnk_0203C4B4->unk_98) != 0) {
         func_08000DE8(gUnk_0203C4B4, gUnk_0203C4B4->unk_98);
     }
     d = func_080DEE18(r);
     if (d[8] != 26 && (func_080D5944(r, 2) != 0 || func_080D5944(r, 8) != 0)) {
-        gUnk_0203C4B4->unk_98 = TaskCreate(gUnk_0203C4B4, &gUnk_09EF4DF0, d + 8);
+        gUnk_0203C4B4->unk_98 = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapRoomname, d + 8);
     } else {
         gUnk_0203C4B4->unk_98 = 0;
         func_080D3ED0();
     }
 
-    if (func_08000F48(gUnk_0203C4B4->unk_9C) != 0) {
+    if (IsTaskActive(gUnk_0203C4B4->unk_9C) != 0) {
         func_08000DE8(gUnk_0203C4B4, gUnk_0203C4B4->unk_9C);
     }
 
     if (func_080D422C(c->unk_30) != 0) {
-        gUnk_0203C4B4->unk_9C = TaskCreate(gUnk_0203C4B4, &gUnk_09EF4E38, c);
+        gUnk_0203C4B4->unk_9C = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapPusha, c);
     }
 }
 
@@ -874,7 +874,7 @@ void func_080D576C(u8 a, u16 b, u16 c) {
 
     d = func_080DED98(a);
 
-    if (func_08000F48(gUnk_0203C4B4->unk_14[a]) != 0) {
+    if (IsTaskActive(gUnk_0203C4B4->unk_14[a]) != 0) {
         return;
     }
 
@@ -897,7 +897,7 @@ void func_080D576C(u8 a, u16 b, u16 c) {
     arg.unk_02 = c;
     arg.unk_04 = a;
     arg.unk_06 = 0;
-    gUnk_0203C4B4->unk_14[a] = TaskCreate(gUnk_0203C4B4, &gUnk_09EF4DC0, &arg);
+    gUnk_0203C4B4->unk_14[a] = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapRoom, &arg);
 
     if ((u8)(d[0] + 3) > 2) {
         func_080D576C(d[0], b + 1, c - 1);
@@ -945,7 +945,7 @@ u8 func_080D5944(u8 a, u16 b) {
 }
 
 void* func_080D5960(u8 a) {
-    return gUnk_0203C4B4->unk_14[a]->unk_04;
+    return gUnk_0203C4B4->unk_14[a]->work;
 }
 
 void func_080D5978(u16 a, void* b, u16 c) {
@@ -958,7 +958,7 @@ void func_080D5998(void) {
 
 void func_080D59B4(void) {
     if (gUnk_02034ECA != 0) {
-        ModeRequest(&gUnk_09EF4E50, 0);
+        ModeRequest(&gModeTitle, 0);
         return;
     }
 
@@ -969,29 +969,29 @@ void func_080D59B4(void) {
         func_080E04EC();
         return;
     case 1:
-        ModeRequest(&gUnk_09EF6AE0, 0);
+        ModeRequest(&gModeMenuLoad, 0);
         return;
     case 2:
         func_080AEB94();
-        ModeRequest(&gUnk_09EF12F8, 0);
+        ModeRequest(&gModeSioBattle, 0);
         return;
     case 4:
         func_0801CD20();
-        ModeRequest(&gUnk_09EF6AD0, 0);
+        ModeRequest(&gModeMenuNew, 0);
         return;
     case 5:
         func_0801CCB4();
-        ModeRequest(&gUnk_09EF6AD0, 0);
+        ModeRequest(&gModeMenuNew, 0);
         return;
     case 0:
     default:
-        ModeRequest(&gUnk_09EF6AD0, 0);
+        ModeRequest(&gModeMenuNew, 0);
         return;
     }
 }
 
 void func_080D5A4C(u16 a) {
-    if ((gUnk_02039BB0.flags & 0x200) != 0) {
+    if ((gGameState.flags & 0x200) != 0) {
         LoadBgPalette(1, gUnk_0984A818, 0x200);
         func_080D5978(0, gUnk_0984A818, 0x200);
     } else {
@@ -1002,12 +1002,12 @@ void func_080D5A4C(u16 a) {
     DisableBg(1);
     DisableBg(2);
 
-    if (func_08000F48(gUnk_02034EB8) == 0) {
-        gUnk_02034EB8 = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E60, 0);
+    if (IsTaskActive(gTitleLogoTask) == 0) {
+        gTitleLogoTask = TaskCreate(&gTitleTaskPool, &gTaskDescTitleLogo, 0);
     }
 
-    if (func_08000F48(gUnk_02034EBC) == 0) {
-        gUnk_02034EBC = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E78, 0);
+    if (IsTaskActive(gTitleObjTask) == 0) {
+        gTitleObjTask = TaskCreate(&gTitleTaskPool, &gTaskDescTitleObj, 0);
     }
     func_08006120(2, a);
 }

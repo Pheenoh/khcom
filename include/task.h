@@ -22,7 +22,7 @@ typedef struct EvtObjResTable {
     u8 unk_0C[0x04];
 } EvtObjResTable;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 unk_00C[0x16E];
@@ -30,9 +30,9 @@ typedef struct UnkStruct_02039BB0 {
     u16 unk_17C;
     u8 unk_17E[0x5E];
     u32 playTime;
-} UnkStruct_02039BB0;
+} GameState;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u32 gFrameCounter;
 extern EvtObjAnim gUnk_0813766C[];
 extern EvtObjResTable gUnk_0813B09C[];
@@ -50,7 +50,7 @@ void UpdatePlayTime(void);
 void func_0801CCB4(void);
 void func_0801CD20(void);
 void func_0801CD74(EvtObj* obj, s32 anim);
-void func_0801CD8C(EvtObj* obj, s32 a, s32 b, s32 c);
+void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c);
 void func_0801CD94(EvtObj* obj, s32 a);
 void func_0801CD98(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
 void func_0801CE00(EvtObj* obj, u16 a);

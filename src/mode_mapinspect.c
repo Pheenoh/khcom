@@ -22,9 +22,9 @@ void mode_mapinspect_0(void) {
     s16 j;
 
     gUnk_02035E28 = EwramAlloc(0x2F4);
-    func_08001F98();
+    SpriteReset();
     func_08006120(0, 16);
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 28, 0);
     SetupBg(1, 0, 29, 0);
     SetupBg(2, 2, 30, 15);

@@ -40,9 +40,9 @@ typedef struct BosPos {
 
 typedef struct BosSub {
     u32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_010[0x1C];
     s16 unk_02C;
     s16 unk_02E;
@@ -139,9 +139,9 @@ typedef struct DsdEnergy2Work {
 
 typedef struct DsdRockWork {
     DsdWork* unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
@@ -153,9 +153,9 @@ typedef struct DsdRockWork {
 typedef struct DsdCircleWork {
     DsdWork* unk_00;
     void* unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
+    s32 x;
+    s32 y;
+    s32 z;
     s16 unk_14;
     s16 unk_16;
     s16 unk_18;
@@ -196,9 +196,9 @@ typedef struct DsdItaWork {
     DsdWork* unk_000;
     u32 unk_004;
     u8 unk_008[0x58];
-    s32 unk_060;
-    s32 unk_064;
-    s32 unk_068;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_06C;
     s32 unk_070;
     s16 unk_074;
@@ -248,20 +248,20 @@ typedef struct TmClbArg {
 
 typedef struct TmClbWork {
     TmClbArg* unk_000;
-    void* unk_004;
-    void* unk_008;
+    void* tiles;
+    void* palette;
     u16 unk_00C;
     u8 unk_00E[0x2];
-    s32 unk_010;
-    s32 unk_014;
-    s32 unk_018;
+    s32 x;
+    s32 y;
+    s32 z;
 } TmClbWork;
 
 typedef struct JfWork {
     u32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_010[0x24];
     u64 unk_034;
     u8 unk_03C[0x4];
@@ -387,10 +387,10 @@ typedef struct JfMajinFx {
 
 typedef struct JfMajinWork {
     JfWork* unk_00;
-    void* unk_04;
+    void* tiles;
     void* unk_08;
     void* unk_0C;
-    void* unk_10;
+    void* gfx;
     AnimState unk_14;
     u8 unk_2C;
     u8 unk_2D[0x3];
@@ -424,8 +424,8 @@ typedef struct JfMajinWork {
 
 typedef struct JfBorderlineWork {
     BosPos* unk_000;
-    u32 unk_004;
-    u32 unk_008;
+    u32 tiles;
+    u32 palette;
     void* unk_00C;
     void* unk_010;
     void* unk_014;
@@ -459,7 +459,7 @@ typedef struct TmWork {
 
 typedef struct TmBodyWork {
     TmWork* unk_000;
-    void* unk_004;
+    void* tiles;
     void* unk_008;
     void* unk_00C;
     u8 unk_010[0x11C];
@@ -567,7 +567,7 @@ typedef struct TmFootWork {
     u8 unk_003;
     u8 unk_004;
     u8 unk_005[0x3];
-    u32 unk_008;
+    u32 tiles;
     u32 unk_00C;
     u32 unk_010;
     u32 unk_014;
@@ -621,16 +621,16 @@ extern u8 gUnk_096C5C64[];
 extern u8 gUnk_096FB304[];
 extern u8 gUnk_0962E838[];
 extern u8 gUnk_096FB484[];
-extern u8 gUnk_09EF2EA8[];
+extern u8 gTaskDescBosDsdRock[];
 extern s16 gUnk_0961A7D0[];
 extern s8 gUnk_0961A82E[];
 extern u32 gFrameCounter;
 extern void* gUnk_09EF275C[][15];
 extern void* gUnk_09EF2D94[];
-extern u8 gUnk_09EF26FC[];
+extern u8 gTaskDescBosTmClb[];
 extern u8 gUnk_09652E84[];
 extern u8 gUnk_096FB2A4[];
-extern u8 gUnk_09EF2E90[];
+extern u8 gTaskDescBosDsdIta[];
 extern u8 gUnk_096983E4[];
 extern u8 gUnk_09EF3C34[];
 extern u8 gUnk_09EF3C20[];
@@ -654,12 +654,12 @@ extern u8 gTaskDescBtlShadow[];
 extern u8 gUnk_096FB584[];
 extern u8 gUnk_08F69BC4[];
 extern s16 gUnk_0961A860[];
-extern u8 gUnk_09EF2EC0[];
-extern u8 gUnk_09EF2ED8[];
+extern u8 gTaskDescBosDsdCircle[];
+extern u8 gTaskDescBosDsdEnergy1[];
 extern u8 gUnk_09699684[];
 extern u8 gUnk_096A3F44[];
 extern u8 gUnk_096A8BA4[];
-extern u8 gUnk_09EF2EF0[];
+extern u8 gTaskDescBosDsdEnergy2[];
 extern s16 gUnk_0961A6A8[];
 extern s8 gUnk_0961A70A[];
 extern void* gUnk_09EF39DC[];
@@ -681,7 +681,7 @@ void m4aSongNumStart(u16 a);
 void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 a, s32 b);
 void func_080C6EB0(void* a, void* b, s32 c, s32 d);
 void LoadObjPaletteBank(u16 bank, void* src);
-u8* func_08002C28(u8 a, s32 b);
+u8* AllocObjAffineAngle(u8 a, s32 b);
 u16 GetRandom(void);
 s32 __divsi3(s32 a, s32 b);
 void LoadPalette(void* src, void* dst, s32 size);
@@ -800,7 +800,7 @@ void func_080BFFF8(JfMajinWork* work);
 void func_080C02AC(JfMajinWork* work);
 u8 task_bos_jf_majin_1(JfMajinWork* work);
 u8 func_080128EC(void);
-u8 func_08000F48(void* t);
+u8 IsTaskActive(void* t);
 void func_080C3754(DsdMainWork* work);
 void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src);
 void func_080C2BB0(DsdMainWork* work);
@@ -812,8 +812,8 @@ void func_0802F1E8(void);
 void func_0801801C(s32 a, s32 b, s32 c, s32 d);
 void func_080C2FD8(DsdMainWork* work);
 void func_080C3574(DsdMainWork* work);
-UnkStruct_02039B84* func_08000C8C(void* pool);
-UnkStruct_02039B84* func_08000CD4(void* node);
+BtlWork* ListPoolFirst(void* pool);
+BtlWork* ListPoolNext(void* node);
 void func_0801AF4C(BosSub* a);
 void func_0801B008(void);
 u8 func_080C69B4(void);

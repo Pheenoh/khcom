@@ -5,11 +5,11 @@
 #include "anim.h"
 #include "taskpool.h"
 
-typedef struct FrdSetup {
+typedef struct GameState {
     u8 unk_000[0x0C];
     u8 world;
     u8 unk_00D[0x03];
-} FrdSetup;
+} GameState;
 
 typedef struct FrdArgs {
     u16 unk_00;
@@ -17,7 +17,7 @@ typedef struct FrdArgs {
     u8 unk_03;
 } FrdArgs;
 
-typedef struct FrdObj {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -37,8 +37,8 @@ typedef struct FrdObj {
     u64 unk_068;
     u8 unk_070;
     u8 unk_071[0x07];
-    struct FrdObj* unk_078;
-    struct FrdObj* unk_07C;
+    struct BtlWork* unk_078;
+    struct BtlWork* unk_07C;
     u8 unk_080[0x1C];
     u8 unk_09C[0x17];
     u8 unk_0B3;
@@ -62,16 +62,16 @@ typedef struct FrdObj {
     u8 unk_118[0x10];
     void (*unk_128)(s32* a, s32* b, s32* c, s32* d);
     u8 unk_12C[0x9C];
-} FrdObj;
+} BtlWork;
 
 typedef struct FrdBody {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     u8 unk_14[0x20];
-    u64 unk_34;
+    u64 flags;
     u8 unk_3C[0x90];
     u16 unk_CC;
     u8 unk_CE[0x42];
@@ -79,11 +79,11 @@ typedef struct FrdBody {
 
 typedef struct FrdDonaldWork {
     TaskPool unk_000;
-    FrdObj* unk_014;
+    BtlWork* unk_014;
     void* unk_018;
-    void* unk_01C;
+    void* palette;
     FrdBody unk_020;
-    AnimState unk_130;
+    AnimState anim;
     s32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
@@ -99,11 +99,11 @@ typedef struct FrdDonaldWork {
 
 typedef struct FrdGoofyWork {
     TaskPool unk_000;
-    FrdObj* unk_014;
+    BtlWork* unk_014;
     void* unk_018;
-    void* unk_01C;
+    void* palette;
     FrdBody unk_020;
-    AnimState unk_130;
+    AnimState anim;
     u32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
@@ -119,11 +119,11 @@ typedef struct FrdGoofyWork {
 
 typedef struct FrdArielWork {
     TaskPool unk_000;
-    FrdObj* unk_014;
+    BtlWork* unk_014;
     void* unk_018;
-    void* unk_01C;
+    void* palette;
     FrdBody unk_020;
-    AnimState unk_130;
+    AnimState anim;
     u32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
@@ -139,11 +139,11 @@ typedef struct FrdArielWork {
 
 typedef struct FrdJackWork {
     TaskPool unk_000;
-    FrdObj* unk_014;
+    BtlWork* unk_014;
     void* unk_018;
-    void* unk_01C;
+    void* palette;
     FrdBody unk_020;
-    AnimState unk_130;
+    AnimState anim;
     s32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
@@ -161,11 +161,11 @@ typedef struct FrdJackWork {
 
 typedef struct FrdPanWork {
     TaskPool unk_000;
-    FrdObj* unk_014;
+    BtlWork* unk_014;
     void* unk_018;
-    void* unk_01C;
+    void* palette;
     FrdBody unk_020;
-    AnimState unk_130;
+    AnimState anim;
     u32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
@@ -185,11 +185,11 @@ typedef struct FrdPanWork {
 
 typedef struct FrdAladdinWork {
     TaskPool unk_000;
-    FrdObj* unk_014;
+    BtlWork* unk_014;
     void* unk_018;
-    void* unk_01C;
+    void* palette;
     FrdBody unk_020;
-    AnimState unk_130;
+    AnimState anim;
     u32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
@@ -203,11 +203,11 @@ typedef struct FrdAladdinWork {
 
 typedef struct FrdBeastWork {
     TaskPool unk_000;
-    FrdObj* unk_014;
+    BtlWork* unk_014;
     void* unk_018;
-    void* unk_01C;
+    void* palette;
     FrdBody unk_020;
-    AnimState unk_130;
+    AnimState anim;
     s32 unk_148;
     u8 unk_14C;
     u8 unk_14D;
@@ -218,9 +218,9 @@ typedef struct FrdBeastWork {
     s32 unk_15C;
 } FrdBeastWork;
 
-extern FrdSetup gUnk_02039BB0;
-extern FrdObj* gUnk_02039B84;
-extern FrdObj* gUnk_02039B9C;
+extern GameState gGameState;
+extern BtlWork* gBtlWork;
+extern BtlWork* gUnk_02039B9C;
 
 extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescSmnTinkeff[];
@@ -257,8 +257,8 @@ void func_08017260(s32 a, s32 b, s32 c, s32 d);
 void func_08045494(FrdBody* body, u8 a, s16 b, s16 c);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskCreate(TaskPool* pool, void* desc, void* arg);
-u16 func_08005B38(AnimState* a);
-u16 func_08005B34(AnimState* a);
+u16 AnimGetGfxIndex(AnimState* a);
+u16 AnimGetFrame(AnimState* a);
 u8 AnimIsFinished(AnimState* a);
 void* AnimUpdate(AnimState* a);
 void TaskPoolUpdate(TaskPool* a);

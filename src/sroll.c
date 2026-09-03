@@ -49,7 +49,7 @@ u8 task_sroll_a_name_1(SrollANameWork* w) {
 INCLUDE_ASM("sroll/task_sroll_a_name_2.s");
 
 void task_sroll_a_name_3(SrollANameWork* w) {
-    ReleaseObjTiles(w->unk_18);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_1C);
 }
 
@@ -68,7 +68,7 @@ void func_081149B8(SrollBCharWork* w) {
     def = w->unk_08->unk_00;
     gfx = def->unk_00;
     func_08005974(&w->unk_14, def->unk_0C, def->unk_0E, gfx->unk_04, gfx->unk_00);
-    func_08002A10(w->unk_0C, gfx->unk_08);
+    func_08002A10(w->tiles, gfx->unk_08);
     w->unk_08->unk_14 &= 0xFFFE;
 }
 
@@ -77,7 +77,7 @@ INCLUDE_ASM("sroll/task_sroll_b_char_1.s");
 INCLUDE_ASM("sroll/task_sroll_b_char_2.s");
 
 void task_sroll_b_char_3(SrollBCharWork* w) {
-    ReleaseObjTiles(w->unk_0C);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_10);
     TaskPoolDestroy(&w->unk_2C);
 }
@@ -104,11 +104,11 @@ void task_sroll_b_logo_2(SrollBLogoWork* w) {
     u16 y;
 
     y = (w->unk_04 >> 8) - (*w->unk_08 >> 8);
-    DrawSprite(w->unk_00 >> 8, y, AnimGetGfx(&w->unk_18), w->unk_10, w->unk_14, 0, 0, 0xFF0);
+    DrawSprite(w->unk_00 >> 8, y, AnimGetGfx(&w->unk_18), w->tiles, w->unk_14, 0, 0, 0xFF0);
 }
 
 void task_sroll_b_logo_3(SrollBLogoWork* w) {
-    ReleaseObjTiles(w->unk_10);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_14);
 }
 
@@ -148,12 +148,12 @@ void task_sroll_b_secn_2(SrollBSecnWork* w) {
     u16 y;
 
     y = (w->unk_08 >> 8) - (*w->unk_0C >> 8);
-    DrawSprite(120, y, AnimGetGfx(&w->unk_1C), w->unk_14, w->unk_18, 0, 0, 0xEF0);
-    DrawSprite(120, y, AnimGetGfx(&w->unk_34), w->unk_14, w->unk_18, 0, 0, 0xEE0);
+    DrawSprite(120, y, AnimGetGfx(&w->unk_1C), w->tiles, w->unk_18, 0, 0, 0xEF0);
+    DrawSprite(120, y, AnimGetGfx(&w->unk_34), w->tiles, w->unk_18, 0, 0, 0xEE0);
 }
 
 void task_sroll_b_secn_3(SrollBSecnWork* w) {
-    ReleaseObjTiles(w->unk_14);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_18);
 }
 
@@ -174,7 +174,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
     case 5:
         w->unk_08 = a->unk_04;
         w->unk_0C = a->unk_08 + 0xFFFFE000;
-        w->unk_10 = AllocObjTiles(128, gUnk_09320796);
+        w->tiles = AllocObjTiles(128, gUnk_09320796);
         w->unk_14 = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->unk_18;
         AnimInit(anim, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
@@ -183,7 +183,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
     case 3:
         w->unk_08 = a->unk_04;
         w->unk_0C = a->unk_08 + 0xFFFFD000;
-        w->unk_10 = AllocObjTiles(128, gUnk_09320796);
+        w->tiles = AllocObjTiles(128, gUnk_09320796);
         w->unk_14 = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->unk_18;
         AnimInit(anim, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
@@ -194,7 +194,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         w->unk_08 = t + a->unk_04;
         t = (GetRandom() % 9) * 256 - 0x400;
         w->unk_0C = t + a->unk_08;
-        w->unk_10 = AllocObjTiles(128, gUnk_088A5D7A);
+        w->tiles = AllocObjTiles(128, gUnk_088A5D7A);
         w->unk_14 = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->unk_18;
         AnimInit(anim, (s32)gUnk_09EDE7E4, (s32)gUnk_09EDE7B4);
@@ -242,12 +242,12 @@ u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
 }
 
 void task_sroll_b_crtn_2(SrollBCrtnWork* w) {
-    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, AnimGetGfx(&w->unk_18), w->unk_10, w->unk_14, 0, 0x400,
+    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, AnimGetGfx(&w->unk_18), w->tiles, w->unk_14, 0, 0x400,
                0xFE0);
 }
 
 void task_sroll_b_crtn_3(SrollBCrtnWork* w) {
-    ReleaseObjTiles(w->unk_10);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_14);
 }
 
@@ -261,7 +261,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
     s32 i;
 
     if (kind == 0) {
-        w->unk_18 = LoadObjTiles(gUnk_09C8D47A, 154 * 32);
+        w->tiles = LoadObjTiles(gUnk_09C8D47A, 154 * 32);
         w->unk_1C = LoadObjPalette(gUnk_09D6CF54, 224);
 
         for (i = 0, p = w->unk_20; i <= 4; i++) {
@@ -270,7 +270,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             p++;
         }
     } else {
-        w->unk_18 = LoadObjTiles(gUnk_09C8F1FA, 146 * 32);
+        w->tiles = LoadObjTiles(gUnk_09C8F1FA, 146 * 32);
         w->unk_1C = LoadObjPalette(gUnk_09D6D034, 224);
 
         for (i = 0, p = w->unk_20; i <= 4; i++) {
@@ -306,13 +306,13 @@ void task_sroll_c_char_2(SrollCCharWork* w) {
     p = w->unk_20;
 
     for (i = 4; i >= 0; i--) {
-        DrawSprite(120, 80, AnimGetGfx(p), w->unk_18, w->unk_1C, 0, flags, 0xFF0);
+        DrawSprite(120, 80, AnimGetGfx(p), w->tiles, w->unk_1C, 0, flags, 0xFF0);
         p++;
     }
 }
 
 void task_sroll_c_char_3(SrollCCharWork* w) {
-    ReleaseObjTiles(w->unk_18);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_1C);
 }
 
@@ -323,7 +323,7 @@ static s32 func_0811529C(s32 x) {
 void task_sroll_tmr_0(SrollTmrWork* w, void* arg) {
     w->unk_00 = 0;
     w->unk_04 = 0;
-    w->unk_08 = LoadObjTiles(gUnk_09C904B4, 352);
+    w->tiles = LoadObjTiles(gUnk_09C904B4, 352);
     w->unk_0C = LoadObjPalette(gUnk_09D6D114, 32);
 }
 
@@ -346,7 +346,7 @@ u8 task_sroll_tmr_1(SrollTmrWork* w) {
 
 INCLUDE_ASM("sroll/task_sroll_tmr_2.s");
 void task_sroll_tmr_3(SrollTmrWork* w) {
-    ReleaseObjTiles(w->unk_08);
+    ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->unk_0C);
 }
 
@@ -837,8 +837,8 @@ void func_081161C8(SrollWork* w) {
 }
 
 void func_081161D4(SrollWork* w) {
-    w->unk_28 = 0;
-    w->unk_2A = 0;
+    w->writeIdx = 0;
+    w->readIdx = 0;
 }
 
 u8 func_081161DC(SrollWork* w) {
@@ -846,25 +846,25 @@ u8 func_081161DC(SrollWork* w) {
 
     r = 0;
 
-    if (w->unk_28 == w->unk_2A) {
+    if (w->writeIdx == w->readIdx) {
         r = 1;
     }
     return r;
 }
 
 void func_081161EC(SrollWork* w, u16 c) {
-    w->unk_58[w->unk_28] = c;
-    w->unk_28 = (w->unk_28 + 1) & 0xFF;
+    w->charQueue[w->writeIdx] = c;
+    w->writeIdx = (w->writeIdx + 1) & 0xFF;
 }
 
 u16 sub_08116204(SrollWork* w) {
     u16 c;
 
-    if (w->unk_28 == w->unk_2A) {
+    if (w->writeIdx == w->readIdx) {
         return 0;
     }
-    c = w->unk_58[w->unk_2A];
-    w->unk_2A = (w->unk_2A + 1) & 0xFF;
+    c = w->charQueue[w->readIdx];
+    w->readIdx = (w->readIdx + 1) & 0xFF;
     return c;
 }
 
@@ -1201,11 +1201,11 @@ void func_08116CEC(void) {
     gUnk_02036028.unk_00 = 0;
     gUnk_02036028.unk_01 = 0;
     gUnk_02036028.unk_04 = 0;
-    gUnk_02036028.unk_08 = 0;
+    gUnk_02036028.dst = 0;
     gUnk_02036028.unk_0C = 0;
-    gUnk_02036028.unk_10[0] = 0;
-    gUnk_02036028.unk_10[1] = 0;
-    gUnk_02036028.unk_1C = 0;
+    gUnk_02036028.src[0] = 0;
+    gUnk_02036028.src[1] = 0;
+    gUnk_02036028.cnt = 0;
 }
 
 void func_08116D28(void) {
@@ -1221,11 +1221,11 @@ void func_08116D28(void) {
     if (gUnk_02036028.unk_00 != 0) {
         if (gUnk_02036028.unk_01 != 0) {
             gUnk_02036028.unk_0C ^= 1;
-            src = gUnk_02036028.unk_10[gUnk_02036028.unk_0C];
+            src = gUnk_02036028.src[gUnk_02036028.unk_0C];
             gUnk_02036028.unk_18 = src;
 
-            if (!(gUnk_02036028.unk_1C & CPU_SET_SRC_FIXED)) {
-                if (gUnk_02036028.unk_1C & CPU_SET_32BIT) {
+            if (!(gUnk_02036028.cnt & CPU_SET_SRC_FIXED)) {
+                if (gUnk_02036028.cnt & CPU_SET_32BIT) {
                     gUnk_02036028.unk_18 = src + 4;
                 } else {
                     gUnk_02036028.unk_18 = src + 2;
@@ -1234,12 +1234,12 @@ void func_08116D28(void) {
             gUnk_02036028.unk_01 = 0;
         }
 
-        if (gUnk_02036028.unk_10[gUnk_02036028.unk_0C] != 0 && gUnk_02036028.unk_08 != 0 &&
-            gUnk_02036028.unk_1C != 0) {
+        if (gUnk_02036028.src[gUnk_02036028.unk_0C] != 0 && gUnk_02036028.dst != 0 &&
+            gUnk_02036028.cnt != 0) {
             dma32 = (vu32*)REG_ADDR_DMA0;
             dma32[0] = (u32)gUnk_02036028.unk_18;
-            dma32[1] = (u32)gUnk_02036028.unk_08;
-            dma32[2] = gUnk_02036028.unk_1C;
+            dma32[1] = (u32)gUnk_02036028.dst;
+            dma32[2] = gUnk_02036028.cnt;
             dma32[2];
         }
 
@@ -1250,17 +1250,17 @@ void func_08116D28(void) {
 }
 
 void func_08116DD0(void) {
-    *gUnk_02036028.unk_08 = *(u32*)gUnk_02036028.unk_10[gUnk_02036028.unk_0C];
+    *gUnk_02036028.dst = *(u32*)gUnk_02036028.src[gUnk_02036028.unk_0C];
 }
 
 void func_08116DE8(void) {
-    *gUnk_02036028.unk_08 = *(u16*)gUnk_02036028.unk_10[gUnk_02036028.unk_0C];
+    *gUnk_02036028.dst = *(u16*)gUnk_02036028.src[gUnk_02036028.unk_0C];
 }
 
 void func_08116E00(vu16* dst, u8* src, u32 cnt) {
     func_08116CEC();
-    gUnk_02036028.unk_10[0] = src;
-    gUnk_02036028.unk_10[1] = src;
+    gUnk_02036028.src[0] = src;
+    gUnk_02036028.src[1] = src;
     gUnk_02036028.unk_18 = src;
 
     if (cnt & CPU_SET_32BIT) {
@@ -1276,12 +1276,12 @@ void func_08116E00(vu16* dst, u8* src, u32 cnt) {
             gUnk_02036028.unk_18 = src + 2;
         }
     }
-    gUnk_02036028.unk_08 = dst;
-    gUnk_02036028.unk_1C = cnt;
+    gUnk_02036028.dst = dst;
+    gUnk_02036028.cnt = cnt;
 }
 
 void func_08116E60(u8* src) {
-    gUnk_02036028.unk_10[gUnk_02036028.unk_0C ^ 1] = src;
+    gUnk_02036028.src[gUnk_02036028.unk_0C ^ 1] = src;
     gUnk_02036028.unk_01 = 1;
 }
 

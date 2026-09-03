@@ -10,7 +10,7 @@ MusicPlayerInfo gUnk_0203DA10;
 MusicPlayerInfo gUnk_0203DA50;
 MusicPlayerInfo gUnk_0203DA90;
 MusicPlayerInfo gUnk_0203DAD0;
-MusicPlayerInfo gUnk_0203DB10;
+MusicPlayerInfo gMPlayInfo_BGM;
 MusicPlayerInfo gUnk_0203DB50;
 MusicPlayerInfo gUnk_0203DB90;
 MusicPlayerInfo gUnk_0203DBD0;

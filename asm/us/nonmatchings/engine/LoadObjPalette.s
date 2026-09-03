@@ -25,7 +25,7 @@ _08002A30:
 	ldr r0, [r0, #0x00]
 	ldr r1, _08002A44 @ =0x00001A94
 	adds r0, r0, r1
-	bl func_08000C8C
+	bl ListPoolFirst
 	b _08002A56
 	.byte 0x00, 0x00
 _08002A40: .4byte 0x030074C8
@@ -36,7 +36,7 @@ _08002A48:
 	beq _08002B14
 	adds r0, r5, #0x0
 	adds r0, #0x0C
-	bl func_08000CD4
+	bl ListPoolNext
 _08002A56:
 	adds r5, r0, #0x0
 	cmp r5, #0x00
@@ -46,7 +46,7 @@ _08002A56:
 	ldr r2, _08002AC0 @ =0x00001A94
 	mov r9, r2
 	add r0, r9
-	bl func_08000D0C
+	bl ListPoolFirstFree
 	adds r6, r0, #0x0
 	cmp r6, #0x00
 	bne _08002A72
@@ -63,7 +63,7 @@ _08002A72:
 	ldr r0, [r4, #0x00]
 	ldr r1, _08002AC0 @ =0x00001A94
 	adds r0, r0, r1
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r5, r0, #0x0
 	cmp r5, #0x00
 	bne _08002ACC
@@ -83,7 +83,7 @@ _08002A72:
 	adds r0, #0x0C
 	ldr r1, [r4, #0x00]
 	add r1, r9
-	bl func_08000BC8
+	bl ListPoolActivate
 	adds r0, r6, #0x0
 	b _08002B96
 _08002ABC: .4byte 0x030074C8
@@ -117,7 +117,7 @@ _08002ACC:
 	add r1, r9
 	adds r2, r5, #0x0
 	adds r2, #0x0C
-	bl func_08000C24
+	bl ListPoolActivateBefore
 	adds r0, r6, #0x0
 	b _08002B96
 	.byte 0x00, 0x00
@@ -144,7 +144,7 @@ _08002B1E:
 	ldr r2, _08002B4C @ =0x00001A94
 	adds r1, r1, r2
 	adds r2, r4, #0x0
-	bl func_08000BF4
+	bl ListPoolActivateAfter
 	adds r0, r6, #0x0
 	b _08002B96
 _08002B44: .4byte 0x05000200
@@ -170,7 +170,7 @@ _08002B68:
 	adds r4, r5, #0x0
 	adds r4, #0x0C
 	adds r0, r4, #0x0
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r3, r0, #0x0
 	ldrh r0, [r5, #0x08]
 	ldrh r5, [r5, #0x06]

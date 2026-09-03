@@ -37,7 +37,7 @@ s32 func_0810FF44(void) {
 }
 
 void func_0810FF50(Task* t, s32 a, s32 b) {
-    LstFldWork* w = t->unk_04;
+    LstFldWork* w = t->work;
 
     if (a != w->unk_010) {
         w->unk_010 = a;
@@ -47,13 +47,13 @@ void func_0810FF50(Task* t, s32 a, s32 b) {
 }
 
 void func_0810FF64(Task* t, s32 a) {
-    LstFldWork* w = t->unk_04;
+    LstFldWork* w = t->work;
 
     w->unk_000 = a;
 }
 
 void func_0810FF6C(Task* t, s32 a) {
-    LstFldWork* w = t->unk_04;
+    LstFldWork* w = t->work;
 
     w->unk_01C = ((a >> 8) * 5 >> 2) + 2;
 }

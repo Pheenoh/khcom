@@ -22,11 +22,11 @@ mode_worldwarp_0: @ 08100C7C
 	lsls r0, r0, #0x03
 	bl EwramAlloc
 	str r0, [r4, #0x00]
-	bl func_08001F98
+	bl SpriteReset
 	movs r0, #0x00
 	movs r1, #0x10
 	bl func_08006120
-	bl func_08004DB0
+	bl SetBgMode0
 	movs r0, #0x00
 	movs r1, #0x00
 	movs r2, #0x1C

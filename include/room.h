@@ -4,7 +4,7 @@
 #include "types.h"
 
 typedef struct RoomNameWork {
-    void* unk_00;
+    void* tiles;
     void* unk_04;
     void* unk_08;
     s32 unk_0C;
@@ -26,12 +26,12 @@ typedef struct RoomNameWork {
     u8 unk_3C[0x120];
 } RoomNameWork;
 
-typedef struct RoomFld {
+typedef struct UnkStruct_02039BA0 {
     u8 unk_00[0x70];
     u32 unk_70;
-} RoomFld;
+} UnkStruct_02039BA0;
 
-extern RoomFld* gUnk_02039BA0;
+extern UnkStruct_02039BA0* gUnk_02039BA0;
 
 extern s16 gSineTable[];
 extern s32 gUnk_0999204C[];
@@ -52,19 +52,19 @@ u8 func_08065B6C(void* a, void* b);
 void* _08066468(s32 a);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 
-typedef struct RoomAnimHeader {
+typedef struct AnimHeader {
     u32 unk_00;
     u16 unk_04;
     u16 unk_06;
-} RoomAnimHeader;
+} AnimHeader;
 
-typedef struct RoomAnimFrame {
+typedef struct AnimFrame {
     u16 unk_00;
     u16 unk_02;
-} RoomAnimFrame;
+} AnimFrame;
 
-typedef struct RoomAnimState {
-    RoomAnimHeader** unk_00;
+typedef struct AnimState {
+    AnimHeader** unk_00;
     u32* unk_04;
     u16 unk_08;
     u16 unk_0A;
@@ -72,27 +72,27 @@ typedef struct RoomAnimState {
     u16 unk_0E;
     u16 unk_10;
     u16 unk_12;
-    RoomAnimFrame* unk_14;
-} RoomAnimState;
+    AnimFrame* unk_14;
+} AnimState;
 
-typedef struct RoomListNode {
+typedef struct ListNode {
     void* unk_00;
     u8 unk_04[0x04];
-    struct RoomListNode* unk_08;
+    struct ListNode* unk_08;
     u16 unk_0C;
     u8 unk_0E[0x02];
-} RoomListNode;
+} ListNode;
 
-typedef struct RoomTaskPool {
-    RoomListNode head;
+typedef struct TaskPool {
+    ListNode head;
     void* unk_10;
-} RoomTaskPool;
+} TaskPool;
 
-typedef struct RoomEntry {
+typedef struct GaEntryWork {
     s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_010[0x24];
     u64 unk_034;
     u8 unk_03C[0x04];
@@ -122,16 +122,16 @@ typedef struct RoomEntry {
     u8 unk_162[0x02];
     s32 unk_164;
     s32 unk_168;
-    RoomTaskPool unk_16C;
-    RoomAnimState unk_180;
-    void* unk_198;
-    void* unk_19C;
+    TaskPool unk_16C;
+    AnimState anim;
+    void* tiles;
+    void* gfx;
     u32 unk_1A0;
     u8 unk_1A4;
     u8 unk_1A5[0x03];
-} RoomEntry;
+} GaEntryWork;
 
-typedef struct RoomWork {
+typedef struct GaWork {
     s32 unk_000;
     s32 unk_004;
     u32 unk_008;
@@ -144,10 +144,10 @@ typedef struct RoomWork {
     s32 unk_018;
     u8 unk_01C;
     u8 unk_01D[0x03];
-    RoomEntry entries[6];
-    RoomAnimState unk_A10;
+    GaEntryWork entries[6];
+    AnimState anim;
     void* unk_A28;
-    void* unk_A2C;
+    void* gfx;
     void* unk_A30;
     void* unk_A34;
     s32 unk_A38;
@@ -159,7 +159,7 @@ typedef struct RoomWork {
     u16 unk_A50;
     u8 unk_A52;
     u8 unk_A53;
-} RoomWork;
+} GaWork;
 
 typedef struct RoomTableEntry {
     s32 unk_00;
@@ -175,7 +175,7 @@ typedef struct RoomTableEntry {
     u16 unk_22;
 } RoomTableEntry;
 
-extern RoomWork* gUnk_02034FE8;
+extern GaWork* gGaWork;
 extern s32 gUnk_09991F44[];
 extern RoomTableEntry gUnk_09991F54[];
 extern u8 gTaskDescBtlShadow[];
@@ -183,7 +183,7 @@ extern u8 gUnk_09EF9728[];
 extern u8 gUnk_099999AC[];
 extern u8 gUnk_09EF9738[];
 
-typedef struct RoomB84 {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     u8 unk_008[0x74];
@@ -194,20 +194,20 @@ typedef struct RoomB84 {
     s32 unk_0CC;
     s32 unk_0D0;
     s32 unk_0D4;
-} RoomB84;
+} BtlWork;
 
-extern RoomB84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 
 u16 GetRandom(void);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
-void AnimInit(RoomAnimState* a, void* b, void* c);
-void AnimStart(RoomAnimState* a, u16 animId, u16 flags);
-void* AnimGetGfx(RoomAnimState* a);
-void TaskPoolInit(RoomTaskPool* a, s32 count);
-void TaskPoolDestroy(RoomTaskPool* a);
-void TaskPoolDraw(RoomTaskPool* a);
-void* TaskCreate(RoomTaskPool* a, void* desc, void* arg);
+void AnimInit(AnimState* a, void* b, void* c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
+void* AnimGetGfx(AnimState* a);
+void TaskPoolInit(TaskPool* a, s32 count);
+void TaskPoolDestroy(TaskPool* a);
+void TaskPoolDraw(TaskPool* a);
+void* TaskCreate(TaskPool* a, void* desc, void* arg);
 void m4aSongNumStart(u16 a);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012304(void* a);
@@ -216,7 +216,7 @@ void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 void func_0801B7D8(void* a);
 void func_0801C7FC(void* a, s32 b, s32 c);
 void func_0801BCD4(void* a);
-s32 func_08002C28(u8 a, s32 b);
+s32 AllocObjAffineAngle(u8 a, s32 b);
 u16 func_0801AF1C(s32 a);
 u8 func_0801CA00(void* a);
 void WorldToScreen(u16* a, u16* b, s32 c, s32 d, s32 e);
@@ -224,24 +224,24 @@ void func_0802F1E8(void);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0801AF08(void* a);
 
-s32 func_080F7F70(RoomWork* work, s16 i);
-s32 func_080F7F94(RoomWork* work, s16 i);
-s32 func_080F7FAC(RoomWork* work, s16 i);
-s32 func_080F7FC8(RoomWork* work, s16 i);
-s32 func_080F7FE4(RoomWork* work, s16 i);
-void func_080F800C(RoomWork* work, s32 i);
-void func_080F80C0(RoomWork* work);
-void func_080F7F54(RoomWork* work, s32 state);
-void func_080F7E84(RoomEntry* e);
-void func_080F80FC(RoomWork* work, u32 i, s32 c);
-void func_080F8374(RoomEntry* e);
+s32 func_080F7F70(GaWork* work, s16 i);
+s32 func_080F7F94(GaWork* work, s16 i);
+s32 func_080F7FAC(GaWork* work, s16 i);
+s32 func_080F7FC8(GaWork* work, s16 i);
+s32 func_080F7FE4(GaWork* work, s16 i);
+void func_080F800C(GaWork* work, s32 i);
+void func_080F80C0(GaWork* work);
+void func_080F7F54(GaWork* work, s32 state);
+void func_080F7E84(GaEntryWork* e);
+void func_080F80FC(GaWork* work, u32 i, s32 c);
+void func_080F8374(GaEntryWork* e);
 void func_080F83BC(void);
-u8 func_080F8958(RoomWork* work);
-void func_080F83E0(RoomWork* work, RoomEntry* e);
-u8 func_080FAA18(RoomWork* work);
-u8 func_080F99C0(RoomWork* work);
-u8 func_080F9C2C(RoomWork* work);
-u8 func_080F9744(RoomWork* work);
+u8 func_080F8958(GaWork* work);
+void func_080F83E0(GaWork* work, GaEntryWork* e);
+u8 func_080FAA18(GaWork* work);
+u8 func_080F99C0(GaWork* work);
+u8 func_080F9C2C(GaWork* work);
+u8 func_080F9744(GaWork* work);
 
 u16 func_080F7DD8(s32 a);
 s32 func_080F7E0C(s32 a, s32 b, s32 c, s32 d);

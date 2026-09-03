@@ -7,7 +7,7 @@
 typedef struct MonsgageWork {
     void* unk_00;
     void* unk_04;
-    void* unk_08;
+    void* palette;
     s32 unk_0C;
     s32 unk_10;
     void* unk_14;

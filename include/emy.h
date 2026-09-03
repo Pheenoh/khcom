@@ -3,7 +3,7 @@
 
 #include "types.h"
 #include "taskpool.h"
-typedef struct UnkStruct_02039B84 {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -35,8 +35,8 @@ typedef struct UnkStruct_02039B84 {
     u16 unk_072;
     u16 unk_074;
     u16 unk_076;
-    struct UnkStruct_02039B84* unk_078;
-    struct UnkStruct_02039B84* unk_07C;
+    struct BtlWork* unk_078;
+    struct BtlWork* unk_07C;
     u8 unk_080[0x1C];
     u16 unk_09C;
     u16 unk_09E;
@@ -84,13 +84,13 @@ typedef struct UnkStruct_02039B84 {
     u8 unk_122[0x16];
     s32 unk_138;
     u8 unk_13C[0x8C];
-} UnkStruct_02039B84;
+} BtlWork;
 
 typedef struct EmyActor {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
@@ -102,10 +102,10 @@ typedef struct EmyActor {
     u8 unk_22[0x02];
     s32 unk_24;
     u8 unk_28[0x04];
-    s16 unk_2C;
-    s16 unk_2E;
+    s16 hp;
+    s16 maxHp;
     u8 unk_30[0x04];
-    u64 unk_34;
+    u64 flags;
     u8 unk_3C[0x04];
     u32 unk_40;
     u8 unk_44[0x04];
@@ -130,9 +130,9 @@ typedef struct EmyDef {
 } EmyDef;
 
 typedef struct EmySpawn {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_0C[0x06];
     s16 unk_12;
     u16 unk_14;
@@ -140,11 +140,11 @@ typedef struct EmySpawn {
 } EmySpawn;
 
 typedef struct EmyWork {
-    void* unk_000;
+    void* tiles;
     void* unk_004;
     void* unk_008;
-    void* unk_00C;
-    u32 unk_010;
+    void* gfx;
+    u32 anim;
     u8 unk_014[0x02];
     u16 unk_016;
     u8 unk_018[0x02];
@@ -163,7 +163,7 @@ typedef struct EmyWork {
     u8 unk_15A;
     u8 unk_15B;
     EmyDef* unk_15C;
-    u8 unk_160;
+    u8 angle;
     u8 unk_161;
     u16 unk_162;
     u8 unk_164[0x04];
@@ -202,7 +202,7 @@ typedef struct Emy07Work {
 
 typedef struct Emy08Work {
     EmyWork base;
-    void* unk_184;
+    void* palette;
     void* unk_188;
     u16 unk_18C;
 } Emy08Work;
@@ -216,12 +216,12 @@ typedef struct Emy16Work {
 } Emy16Work;
 
 typedef struct Emy16bWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     u8 unk_008[0x18];
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_02C;
     u8 unk_02D[0x03];
     s32 unk_030;
@@ -239,12 +239,12 @@ typedef struct Emy16bWork {
 } Emy16bWork;
 
 typedef struct Emy16pWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     u8 unk_008[0x18];
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_02C;
     u8 unk_02D[0x03];
     s32 unk_030;
@@ -325,14 +325,14 @@ typedef struct Emy83Work {
 } Emy83Work;
 
 typedef struct Emy83bWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     u8 unk_008[0x0A];
     u16 unk_012;
     u8 unk_014[0x0C];
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
+    s32 x;
+    s32 y;
+    s32 z;
     u32 unk_02C;
     s16 unk_030;
     u8 unk_032[0x02];
@@ -341,11 +341,11 @@ typedef struct Emy83bWork {
 } Emy83bWork;
 
 typedef struct Emy83sWork {
-    void* unk_000;
-    void* unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
+    void* tiles;
+    void* palette;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_014;
     s32 unk_018;
     s32 unk_01C;
@@ -357,7 +357,7 @@ void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolUpdate(TaskPool* a);
 void* TaskCreate(TaskPool* pool, void* desc, void* arg);
-u8 func_08000F60(void* task, void* name);
+u8 IsTaskActiveNamed(void* task, void* name);
 void TaskPoolDestroy(TaskPool* a);
 void func_0800C778(EmyWork* work, void* def, void* obj);
 void func_0800DF30(EmyWork* work);
@@ -387,7 +387,7 @@ void m4aSongNumStart(u16 n);
 void func_08012614(void* a, s32 b);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 
-extern UnkStruct_02039B84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 u8 _0800CBDC(EmyWork* work);
 u8 _0800CDF0(EmyWork* work);
 void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
@@ -397,16 +397,16 @@ void func_080141FC(EmyActor* a);
 void func_08019190(EmyActor* a, s32 b);
 void func_08012AAC(s32 a, s32 b, s32 c, s32 d);
 void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
-EmyActor* func_08000C8C(void* node);
-EmyActor* func_08000CD4(void* node);
+EmyActor* ListPoolFirst(void* node);
+EmyActor* ListPoolNext(void* node);
 void func_08006B4C(void);
 u8 func_08006B74(void);
 void func_0802F1E8(void);
 void func_08013480(s32 a, s32 b, s32 c);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 u8 func_0801CA00(EmyActor* a);
-u16 func_08005B34(void* a);
-u16 func_08005B38(void* a);
+u16 AnimGetFrame(void* a);
+u16 AnimGetGfxIndex(void* a);
 void func_0801BCF8(EmyActor* a);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_080128EC(void);

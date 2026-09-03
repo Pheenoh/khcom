@@ -18,7 +18,7 @@ _080CC696:
 	adds r4, r5, #0x0
 	adds r4, #0xC8
 	ldr r0, [r4, #0x00]
-	bl func_08000F48
+	bl IsTaskActive
 	lsls r0, r0, #0x18
 	adds r7, r4, #0x0
 	cmp r0, #0x00
@@ -28,13 +28,13 @@ _080CC6AA:
 	adds r4, r5, #0x0
 	adds r4, #0xC4
 	ldr r0, [r4, #0x00]
-	bl func_08000F48
+	bl IsTaskActive
 	lsls r0, r0, #0x18
 	mov r8, r4
 	cmp r0, #0x00
 	bne _080CC6CC
 	ldr r0, [r7, #0x00]
-	bl func_08000F48
+	bl IsTaskActive
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080CC6CC

@@ -3,7 +3,7 @@
 
 u16 gUnk_020348BC;
 
-const DummyEntry gUnk_08130A4C[10] = {
+const DummyEntry gDummyEntries[10] = {
     { "\x83\x49\x81\x5b\x83\x76\x83\x6a\x83\x93\x83\x4f", "\x83\x80\x81\x5b\x83\x72\x81\x5b\x81\x40\x91\x90\x8c\xb4\x81\x60\x8f\xe9\x8a\x4f\x8a\xcf", 0 },
     { "\x82\x50\x8a\x4b", "\x83\x8f\x81\x5b\x83\x8b\x83\x68\x91\x49\x91\xf0\x83\x60\x83\x85\x81\x5b\x83\x67\x83\x8a\x83\x41\x83\x8b", 1 },
     { "\x83\x67\x83\x89\x83\x94\x83\x40\x81\x5b\x83\x58\x83\x5e\x83\x45\x83\x93", "\x83\x8b\x81\x5b\x83\x80\x83\x4e\x83\x8a\x83\x47\x83\x43\x83\x67\x83\x60\x83\x85\x81\x5b\x83\x67\x83\x8a\x83\x41\x83\x8b", 2 },
@@ -21,11 +21,11 @@ void mode_dummy_0(u32 arg) {
     const DummyEntry* entry;
 
     func_08006120(0, 0x10);
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 0x0F, 0);
     EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
-    func_0805FA60(0, gUnk_08128304, 0x20, 0x0F);
+    func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
     SetupBg(1, 1, 0x0C, 8);
     LoadBgTiles(1, gUnk_08C6B0C4, 0x7C20);
     LoadBgPalette(1, gUnk_08F683C4, 0x20);
@@ -38,7 +38,7 @@ void mode_dummy_0(u32 arg) {
         func_0805FCB0(0, 0, 2, "\x83\x47\x83\x89\x81\x5b\x81\x46\x96\xb3\x8c\xf8\x82\xc8\x88\xf8\x90\x94");
     } else {
         gUnk_020348BC = arg;
-        entry = &gUnk_08130A4C[arg];
+        entry = &gDummyEntries[arg];
         func_0805FCB0(0, 0, 2, entry->name);
         func_0805FCB0(0x10, 0x18, 2, entry->desc);
     }
@@ -51,15 +51,15 @@ void func_0800C064(void) {
     const DummyEntry* entry;
 
     if (!func_08006314()) {
-        entry = &gUnk_08130A4C[gUnk_020348BC];
+        entry = &gDummyEntries[gUnk_020348BC];
 
         switch (entry->unk_08) {
         case 0:
-            ModeRequestHeapReset(&gUnk_09EDE4D0, 1);
+            ModeRequestHeapReset(&gModeMovie, 1);
             break;
         case 1:
-            gUnk_02039BB0.unk_180 = 0x200;
-            ModeRequest(&gUnk_09EF8F9C, 0);
+            gGameState.unk_180 = 0x200;
+            ModeRequest(&gModeWorldselect, 0);
             break;
         case 2:
             func_080DF380();
@@ -85,7 +85,7 @@ void func_0800C064(void) {
             break;
         case 9:
         default:
-            ModeRequest(&gUnk_09EF4EC0, 0);
+            ModeRequest(&gModeCopyright1, 0);
             break;
         }
     } else {
@@ -99,7 +99,7 @@ void func_0800C064(void) {
 void mode_dummy_1(void) {
     if (!func_08006314() && (GetKeysPressed() & 9)) {
         func_08006184(0, 0x10);
-        func_08001248(func_0800C064);
+        SetModeUpdate(func_0800C064);
     }
 
     func_080605A4(0);
@@ -114,4 +114,4 @@ void mode_dummy_2(void) {
 
 ALIGN_ZERO(2);
 
-const char gUnk_08130BDC[12] = "mode_dummy";
+const char gModeNameDummy[12] = "mode_dummy";

@@ -62,7 +62,7 @@ typedef struct LstState {
     u32 unk_070;
     u32 unk_074;
     u32 unk_078;
-    u32 unk_07C;
+    u32 anim;
     u8 unk_080[0x14];
     u32 unk_094;
     u32 unk_098;
@@ -90,19 +90,19 @@ typedef struct LstEdgWork {
     s16 unk_002;
     s16 unk_004;
     s16 unk_006;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_014;
     s32 unk_018;
     s32 unk_01C;
     s32 unk_020;
     s32 unk_024;
     s32 unk_028;
-    u32 unk_02C;
+    u32 anim;
     u8 unk_030[0x14];
-    u32 unk_044;
-    u32 unk_048;
+    u32 tiles;
+    u32 palette;
 } LstEdgWork;
 
 typedef struct LstCtrWork {
@@ -128,10 +128,10 @@ typedef struct LstCtrWork {
     s32 unk_038;
     s32 unk_03C;
     s32 unk_040;
-    u32 unk_044;
+    u32 anim;
     u8 unk_048[0x14];
-    u32 unk_05C;
-    u32 unk_060;
+    u32 tiles;
+    u32 palette;
     u8 unk_064[0x124];
 } LstCtrWork;
 
@@ -171,9 +171,9 @@ typedef struct LstLsrWork {
     s32 unk_030;
     s32 unk_034;
     s32 unk_038;
-    u32 unk_03C;
-    u32 unk_040;
-    u32 unk_044;
+    u32 tiles;
+    u32 palette;
+    u32 anim;
     u8 unk_048[0x14];
 } LstLsrWork;
 
@@ -186,38 +186,38 @@ typedef struct LstPtlWork {
     s32 unk_00C;
     s32 unk_010;
     s32 unk_014;
-    u32 unk_018;
+    u32 anim;
     u8 unk_01C[0x14];
-    u32 unk_030;
-    u32 unk_034;
+    u32 tiles;
+    u32 palette;
 } LstPtlWork;
 
 typedef struct LstFalWork {
     s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_010;
     s32 unk_014;
     s32 unk_018;
     u16* unk_01C;
-    u32 unk_020;
-    u32 unk_024;
-    u32 unk_028;
+    u32 tiles;
+    u32 palette;
+    u32 anim;
     u8 unk_02C[0x14];
 } LstFalWork;
 
 typedef struct LstSnpWork {
     u8 unk_000;
     u8 unk_001[0x3];
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_010;
     s32 unk_014;
-    u32 unk_018;
-    u32 unk_01C;
-    u32 unk_020;
+    u32 tiles;
+    u32 palette;
+    u32 anim;
     u8 unk_024[0x14];
 } LstSnpWork;
 
@@ -271,10 +271,10 @@ typedef struct Vec3 {
     s32 z;
 } Vec3;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x8];
     u32 flags;
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct LstPos {
     s32 unk_00;
@@ -283,7 +283,7 @@ typedef struct LstPos {
     s32 unk_0C;
 } LstPos;
 
-typedef struct UnkStruct_02039B84 {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -311,7 +311,7 @@ typedef struct UnkStruct_02039B84 {
     s16 unk_0DC;
     u8 unk_0DE[0x2];
     s16 unk_0E0;
-} UnkStruct_02039B84;
+} BtlWork;
 
 typedef struct LstLsrArg {
     s32 unk_00;
@@ -337,19 +337,19 @@ typedef struct LstPtlArg {
 } LstPtlArg;
 
 typedef struct LstSnpArg {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     s16 unk_0C;
 } LstSnpArg;
 
 typedef struct EvtObj {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
-    u16 unk_14;
+    u16 flags;
     u16 unk_16;
     void* unk_18;
     u16 unk_1C;
@@ -460,7 +460,7 @@ typedef struct StaffRollWork {
     s32 unk_0EC;
     s32 unk_0F0;
     s32 unk_0F4;
-    u32 unk_0F8;
+    u32 palette;
     u8 unk_0FC[0x14];
     u8 unk_110[0x14];
     s32 unk_124[6];
@@ -519,12 +519,12 @@ extern u8 gUnk_09D6C774[];
 extern u8 gUnk_09D6C974[];
 extern u8 gUnk_09D6CB74[];
 extern LstAnimSet gUnk_09EF9EA4[];
-extern u8 gUnk_09EF9EDC[];
-extern u8 gUnk_09EF9F0C[];
-extern u8 gUnk_09EFA9D4[];
-extern u8 gUnk_09EFA9EC[];
-extern u8 gUnk_09EFAA34[];
-extern u8 gUnk_09EFAA4C[];
+extern u8 gTaskDescBosLstLsr[];
+extern u8 gTaskDescBosLstFal[];
+extern u8 gTaskDescSrollAName[];
+extern u8 gTaskDescSrollBChar[];
+extern u8 gTaskDescSrollBCrtn[];
+extern u8 gTaskDescSrollCChar[];
 extern u8 gUnk_09EFAEF8[];
 extern u8 gUnk_09EFAF24[];
 extern u8 gUnk_09EFAF50[];
@@ -538,9 +538,9 @@ extern u8 gUnk_09EFBF54[];
 extern u8 gUnk_09EFBF5C[];
 extern u8 gUnk_09EFBF60[];
 
-extern UnkStruct_02039B84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u8 gUnk_09D6BE74[];
 
 extern u16 gBldCnt;
@@ -553,8 +553,8 @@ extern s32* gUnk_09EFA934[];
 extern s32* gUnk_09EFA978[];
 extern u8 gUnk_09A541C8[];
 extern u8 gUnk_09D6BE14[];
-extern u8 gUnk_09EFAA04[];
-extern u8 gUnk_09EFAA1C[];
+extern u8 gTaskDescSrollBLogo[];
+extern u8 gTaskDescSrollBSecn[];
 extern vu16 gDispCnt;
 extern u16 gWin0H;
 extern u16 gWin0V;
@@ -577,7 +577,7 @@ void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 void TaskPoolInit(void* pool, s32 count);
 void* EwramAlloc(s32 size);
 void EwramFree(void* p);
-void func_08005778(s32 a, s32 b, s32 c);
+void SetBackdropColor(s32 a, s32 b, s32 c);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006120(s32 a, s32 b);
 void func_08006184(s32 a, s32 b);
@@ -586,13 +586,13 @@ void DisableBg(s32 bg);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 void SetBgColorMode(s32 bg, s32 mode);
 u16 GetKeysPressed(void);
-void func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
+void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08116F08(void);
-void func_08004DB0(void);
-void func_08004E64(void);
+void SetBgMode0(void);
+void SetBgMode1(void);
 void func_08000DE8(void* pool, void* task);
 void func_0801CD74(EvtObj* obj, s32 anim);
-void func_0801CD8C(EvtObj* obj, s32 a, s32 b, s32 c);
+void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c);
 void func_0801CE00(EvtObj* obj, u16 a);
 s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
 void func_081149B0(void* w, s32 v);
@@ -606,7 +606,7 @@ void SetupBg(s32 bg, s32 a, s32 b, s32 c);
 void SetBgPriority(s32 bg, s32 prio);
 void SetBgSize(s32 bg, s32 size);
 u8 func_08006314(void);
-void func_08001F98(void);
+void SpriteReset(void);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_0802F1C8(void);
@@ -628,14 +628,14 @@ s32 abs(s32 x);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 a, void* b);
 void func_0800592C(s32* value, s32 target, u16 steps);
-void func_08005B64(void* a);
+void AnimReset(void* a);
 void* AnimGetGfx(void* a);
-u16 func_08005B30(void* a);
+u16 AnimGetId(void* a);
 u8 AnimIsFinished(void* a);
 void AnimInit(void* a, void* b, void* c);
 u16 GetRandom(void);
 void m4aSongNumStart(u16 id);
-s32 func_08002C28(s32 a, s32 b);
+s32 AllocObjAffineAngle(s32 a, s32 b);
 
 void func_08116CEC(void);
 

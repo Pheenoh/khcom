@@ -15,8 +15,8 @@ typedef struct TutorialWork {
     u16 unk_012;
     u16 unk_014;
     u8 unk_016[0x2];
-    void* unk_018;
-    void* unk_01C;
+    void* tiles;
+    void* palette;
     u8 unk_020[0x10];
     u16 unk_030;
     u8 unk_032[0x6];

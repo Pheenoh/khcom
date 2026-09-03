@@ -6,10 +6,10 @@
 #include "main.h"
 #include "anim.h"
 #include "obj.h"
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct JiminyLine {
     s32 unk_000;
@@ -134,9 +134,9 @@ extern u8 gUnk_09EECA44[];
 extern u8 gUnk_09EECAA0[];
 extern u8 gUnk_09EED2BC[];
 extern u8 gUnk_09EED320[];
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 
-void func_08004DB0(void);
+void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void LoadBgTiles(s32 bg, void* src, u16 size);
@@ -161,9 +161,9 @@ void SetBlendAlpha(u16 a, u16 b);
 void UpdatePlayTime(void);
 void m4aSongNumStart(u16 id);
 s32 abs(s32 x);
-void func_08001248(void (*fn)(void));
+void SetModeUpdate(void (*fn)(void));
 void ApproachValue(s32* value, s32 target, u16 steps);
-void func_08005B64(AnimState* a);
+void AnimReset(AnimState* a);
 void func_08006184(s32 a, u16 b);
 u16 func_08006390(void);
 void func_080063A8(void);

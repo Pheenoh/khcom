@@ -14,9 +14,9 @@ void mode_allmap_0(s32 a) {
     if (a == 1) {
         gUnk_02034E81 = a;
     }
-    func_08001F5C(0, 14);
+    SetObjPaletteRange(0, 14);
     func_080D4D44();
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(3, 1, 28, 8);
     SetBgPriority(3, 3);
     LoadBgTiles(3, gUnk_097B62B8, 0xF60);
@@ -37,7 +37,7 @@ void mode_allmap_0(s32 a) {
     SetBgPriority(1, 2);
     func_0800516C(1, gUnk_0203C510, 2, 4);
     TaskPoolInit(&gUnk_0203C4F0, 1);
-    TaskCreate(&gUnk_0203C4F0, &gUnk_09EF4E08, 0);
+    TaskCreate(&gUnk_0203C4F0, &gTaskDescAllmapBar, 0);
     gUnk_0203C4E0 = 0;
     func_080D4EBC();
     REG_IME = 0;
@@ -49,7 +49,7 @@ void mode_allmap_0(s32 a) {
     func_08006120(0, 16);
 
     if (gUnk_02034E81 != 0) {
-        m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x80);
+        m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x80);
     }
     gUnk_0203C534 = 30;
     gUnk_0203C508 = 30;
@@ -127,7 +127,7 @@ void mode_allmap_2(void) {
     ResetVCountCallback();
 
     if (gUnk_02034E81 != 0) {
-        m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x100);
+        m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x100);
     }
     EwramFree(gUnk_0203C530);
     EwramFree(gUnk_0203C504);

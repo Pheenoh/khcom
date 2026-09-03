@@ -3,7 +3,7 @@
 
 #include "types.h"
 #include "anim.h"
-typedef struct UnkStruct_02039B84 {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -35,8 +35,8 @@ typedef struct UnkStruct_02039B84 {
     u16 unk_072;
     u16 unk_074;
     u16 unk_076;
-    struct UnkStruct_02039B84* unk_078;
-    struct UnkStruct_02039B84* unk_07C;
+    struct BtlWork* unk_078;
+    struct BtlWork* unk_07C;
     u8 unk_080[0x1C];
     u16 unk_09C;
     u16 unk_09E;
@@ -82,14 +82,14 @@ typedef struct UnkStruct_02039B84 {
     u32 unk_11C;
     u16 unk_120;
     u8 unk_122[0xAE];
-} UnkStruct_02039B84;
+} BtlWork;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 unk_00C[0x1AC];
     u32 unk_1B8;
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct BtlFormStep {
     void* unk_00;
@@ -155,11 +155,11 @@ typedef struct BtlBornArgs {
 typedef struct BtlRaidWork {
     void* unk_00;
     void* unk_04;
-    void* unk_08;
-    AnimState unk_0C;
-    s32 unk_24;
-    s32 unk_28;
-    s32 unk_2C;
+    void* gfx;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_30;
     s32 unk_34;
     s16 unk_38;
@@ -175,10 +175,10 @@ typedef struct BtlRaidWork {
     s32 unk_50;
     s16 unk_54;
     u16 unk_56;
-    u16 unk_58;
+    u16 angle;
     u16 unk_5A;
-    UnkStruct_02039B84* unk_5C;
-    void* unk_60;
+    BtlWork* unk_5C;
+    void* tiles;
     void* unk_64;
     u16 unk_68;
     u8 unk_6A[0x02];
@@ -197,11 +197,11 @@ typedef struct BtlRaidArgs {
 } BtlRaidArgs;
 
 typedef struct BtlBadStatusWork {
-    void* unk_00;
+    void* tiles;
     void* unk_04;
     void* unk_08;
-    AnimState unk_0C;
-    UnkStruct_02039B84* unk_24;
+    AnimState anim;
+    BtlWork* unk_24;
     u32 unk_28;
     void* unk_2C;
 } BtlBadStatusWork;
@@ -215,9 +215,9 @@ typedef struct BtlAiWork {
     s16 unk_16C;
 } BtlAiWork;
 
-extern UnkStruct_02039B84* gUnk_02039B84;
-extern UnkStruct_02039B84* gUnk_02039B9C;
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern BtlWork* gBtlWork;
+extern BtlWork* gUnk_02039B9C;
+extern GameState gGameState;
 
 extern s16 gSineTable[];
 extern u8 gUnk_08901C8A[];
@@ -234,8 +234,8 @@ extern u8 gUnk_09EDF154[];
 u16 GetRandom(void);
 void m4aSongNumStart(u16 song);
 void TaskCreate(void* pool, void* desc, void* arg);
-UnkStruct_02039B84* func_08000C8C(void* node);
-UnkStruct_02039B84* func_08000CD4(void* node);
+BtlWork* ListPoolFirst(void* node);
+BtlWork* ListPoolNext(void* node);
 void* AllocObjTiles(s32 a, s32 b);
 void* LoadObjTiles(void* src, s32 size);
 void ReleaseObjTiles(void* a);
@@ -243,11 +243,11 @@ void* LoadObjPalette(void* src, s32 size);
 void ReleaseObjPalette(void* a);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-u8 func_08003A98(u16 a);
-u8 func_08003B24(s32 a);
+u8 CanAllocObjTiles(u16 a);
+u8 CanAllocObjPalette(s32 a);
 void ApproachValue(void* a, s32 b, u16 c);
 void ApproachAngle(void* a, u8 b, s32 c);
-u16 func_08005B34(AnimState* a);
+u16 AnimGetFrame(AnimState* a);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(AnimState* a);
@@ -281,15 +281,15 @@ void task_btl_born_0(BtlBornWork* work, BtlBornArgs* args);
 u8 task_btl_born_1(BtlBornWork* work);
 void func_08040150(BtlRaidWork* work, s32* outX, s32* outY, s32* outZ);
 void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args);
-UnkStruct_02039B84* func_08040458(BtlRaidWork* work);
+BtlWork* func_08040458(BtlRaidWork* work);
 u8 task_btl_raid_1(BtlRaidWork* work);
 void task_btl_raid_2(BtlRaidWork* work);
 void task_btl_raid_3(BtlRaidWork* work);
-void task_btl_badstatus_0(BtlBadStatusWork* work, UnkStruct_02039B84* obj);
+void task_btl_badstatus_0(BtlBadStatusWork* work, BtlWork* obj);
 u8 task_btl_badstatus_1(BtlBadStatusWork* work);
 void task_btl_badstatus_2(BtlBadStatusWork* work);
 void task_btl_badstatus_3(BtlBadStatusWork* work);
-UnkStruct_02039B84* func_08040C8C(BtlAiWork* work);
-UnkStruct_02039B84* func_08040D54(BtlAiWork* work);
+BtlWork* func_08040C8C(BtlAiWork* work);
+BtlWork* func_08040D54(BtlAiWork* work);
 
 #endif /* GUARD_BTL3_H */

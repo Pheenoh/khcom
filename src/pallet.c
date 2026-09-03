@@ -178,7 +178,7 @@ u16* LoadPaletteBuffered(void* src, u16* dst, u16 size) {
     return &gPaletteBuffer->colors[base];
 }
 
-u16* func_08007DD8(u8 bank) {
+u16* GetPaletteBufferBank(u8 bank) {
     return &gPaletteBuffer->colors[bank * 32];
 }
 
@@ -337,25 +337,25 @@ void StartBgWave(s32 a) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
-        gBgWaves[i].unk_00 = 1;
-        gBgWaves[i].unk_01 = 1;
-        gBgWaves[i].unk_02 = 0;
+        gBgWaves[i].amplitude = 1;
+        gBgWaves[i].frequency = 1;
+        gBgWaves[i].enabled = 0;
     }
     SetHBlankCallback(a);
     EnableHBlankIntr();
 }
 
 void SetBgWaveParams(s32 a, u8 b, u8 c) {
-    gBgWaves[a].unk_00 = b;
-    gBgWaves[a].unk_01 = c;
+    gBgWaves[a].amplitude = b;
+    gBgWaves[a].frequency = c;
 }
 
 void EnableBgWave(s32 a) {
-    gBgWaves[a].unk_02 = 1;
+    gBgWaves[a].enabled = 1;
 }
 
 void DisableBgWave(s32 a) {
-    gBgWaves[a].unk_02 = 0;
+    gBgWaves[a].enabled = 0;
 }
 
 void HBlankIntrBgWave1(s32 a) {
@@ -364,13 +364,13 @@ void HBlankIntrBgWave1(s32 a) {
     line = REG_VCOUNT;
     line = (line + 1) % 228;
 
-    if (gBgWaves[a].unk_02 == 1) {
-        REG_BGHOFS(0) = gSineTable[((line + gFrameCounter) * gBgWaves[a].unk_01) & 0xFF] * gBgWaves[a].unk_00 >> 8;
+    if (gBgWaves[a].enabled == 1) {
+        REG_BGHOFS(0) = gSineTable[((line + gFrameCounter) * gBgWaves[a].frequency) & 0xFF] * gBgWaves[a].amplitude >> 8;
     }
 }
 
 void StopBgWave(s32 a) {
-    gBgWaves[a].unk_02 = 0;
+    gBgWaves[a].enabled = 0;
     ResetHBlankCallback();
     DisableHBlankIntr();
 }
@@ -385,8 +385,8 @@ void HBlankIntrBgWave(void) {
     for (i = 0; i < 4; i++) {
         s16* sine = gSineTable;
 
-        if (gBgWaves[i].unk_02 == 1) {
-            REG_BGHOFS(i) = sine[((line + gFrameCounter) * gBgWaves[i].unk_01) & 0xFF] * gBgWaves[i].unk_00 / 256;
+        if (gBgWaves[i].enabled == 1) {
+            REG_BGHOFS(i) = sine[((line + gFrameCounter) * gBgWaves[i].frequency) & 0xFF] * gBgWaves[i].amplitude / 256;
         }
     }
 }
@@ -395,7 +395,7 @@ void StopAllBgWaves(void) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
-        gBgWaves[i].unk_02 = 0;
+        gBgWaves[i].enabled = 0;
     }
     ResetHBlankCallback();
     DisableHBlankIntr();

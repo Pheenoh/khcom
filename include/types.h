@@ -1,6 +1,8 @@
 #ifndef GUARD_TYPES_H
 #define GUARD_TYPES_H
 
+#include "rename_compat.h"
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

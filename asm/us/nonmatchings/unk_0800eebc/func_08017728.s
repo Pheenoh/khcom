@@ -61,7 +61,7 @@ _08017794:
 	ldr r5, [r3, #0x7C]
 	adds r0, r3, #0x0
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	beq _080177D6
@@ -86,7 +86,7 @@ _080177A8:
 _080177C8:
 	adds r0, r4, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	bne _080177A8

@@ -51,7 +51,7 @@ _080C9A68:
 	bne _080C9AEC
 	adds r0, r5, #0x0
 	adds r0, #0x0C
-	bl func_08005B34
+	bl AnimGetFrame
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x04

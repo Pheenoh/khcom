@@ -5,10 +5,10 @@
 #include "title_types.h"
 #include "main.h"
 #include "anim.h"
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct TitlePal {
     void* unk_00;
@@ -27,18 +27,18 @@ typedef struct TitleObjSprite {
 
 typedef struct TitleObjWork {
     TitleObjSprite unk_00[3];
-    AnimState unk_48;
+    AnimState anim;
     u16 unk_60;
     u16 unk_62;
 } TitleObjWork;
 
 typedef struct TitleMenuWork {
-    void* unk_00;
-    TitlePal* unk_04;
+    void* tiles;
+    TitlePal* palette;
     void* unk_08[3];
     TitlePal* unk_14[3];
     void* unk_20[3];
-    AnimState unk_2C;
+    AnimState anim;
     s16* unk_44;
     TaskPool unk_48;
     s32 unk_5C;
@@ -47,12 +47,12 @@ typedef struct TitleMenuWork {
 } TitleMenuWork;
 
 typedef struct TitleLumiChangeWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
 } TitleLumiChangeWork;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u8 gUnk_02034ECC;
 
 extern u8 gUnk_09771060[];
@@ -71,7 +71,7 @@ extern u8 gUnk_0984A7D8[];
 extern u8 gUnk_0984A7F8[];
 extern s32 gUnk_096FDCC8[];
 extern s16 gUnk_096FDCE8[];
-extern TaskDesc gUnk_09EF4EA8;
+extern TaskDesc gTaskDescTitleLumichange;
 extern void* gUnk_09EF65E0[];
 extern void* gUnk_09EF65E8[];
 extern u8 gUnk_09EF65F0[];

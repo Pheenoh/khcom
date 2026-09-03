@@ -233,7 +233,7 @@ u16 func_08104ED8(u16 index) {
 void func_08104F2C(void) {
     u32 v;
 
-    v = func_08101518();
+    v = GetMooglePoints();
     func_08101588(v, gUnk_09A1DB9C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
 
     if (gUnk_02035C16 >= 2 && gUnk_02035C16 <= 3) {
@@ -738,7 +738,7 @@ void func_08105DE0(void) {
     oldRow = gUnk_02035E0E;
     keys = func_0810592C();
     if (keys & 1) {
-        if (func_08101518() + func_08104ED8(func_08104AEC()) > 99999) {
+        if (GetMooglePoints() + func_08104ED8(func_08104AEC()) > 99999) {
             m4aSongNumStart(0x69);
         } else if (gUnk_02035C3C <= 1) {
             EnableBg(2);

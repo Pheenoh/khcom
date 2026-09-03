@@ -4,7 +4,7 @@
 u16 gUnk_02034EDC;
 
 void mode_copyright2_0(s32 arg) {
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 0x1F, 0);
     SetBgPriority(0, 3);
     LoadBgTiles(0, gUnk_097E05B8, 0x4FC0);
@@ -27,7 +27,7 @@ void mode_copyright2_1(void) {
                 func_08006184(0, 0x43);
             }
         } else {
-            ModeRequest(&gUnk_09EF4E50, 0);
+            ModeRequest(&gModeTitle, 0);
         }
     }
 }
@@ -73,25 +73,25 @@ void func_080D733C(void) {
     u8* p;
 
     p = GetBgCharBase(2) + 0x40;
-    p = func_080D728C(p, gUnk_02039BB0.level, 2);
-    p = func_080D728C(p, gUnk_02039BB0.hp, 3);
-    p = func_080D728C(p, gUnk_02039BB0.maxHp, 3);
+    p = func_080D728C(p, gGameState.level, 2);
+    p = func_080D728C(p, gGameState.hp, 3);
+    p = func_080D728C(p, gGameState.maxHp, 3);
 
-    if (gUnk_02039BB0.flags & 8) {
+    if (gGameState.flags & 8) {
         p += 0x80;
     } else {
-        p = func_080D728C(p, gUnk_02039BB0.cp, 4);
+        p = func_080D728C(p, gGameState.cp, 4);
     }
 
-    p = func_080D728C(p, gUnk_02039BB0.exp, 6);
-    p = func_080D728C(p, gUnk_02039BB0.nextExp, 6);
+    p = func_080D728C(p, gGameState.exp, 6);
+    p = func_080D728C(p, gGameState.nextExp, 6);
 
-    if (gUnk_02039BB0.flags & 8) {
+    if (gGameState.flags & 8) {
         p += 0xC0;
-        p = func_080D728C(p, gUnk_02039BB0.ap, 2);
-        func_080D728C(p, gUnk_02039BB0.dp, 3);
+        p = func_080D728C(p, gGameState.ap, 2);
+        func_080D728C(p, gGameState.dp, 3);
     } else {
         p += 0x20;
-        func_080D728C(p, gUnk_02039BB0.mooglePoints, 5);
+        func_080D728C(p, gGameState.mooglePoints, 5);
     }
 }

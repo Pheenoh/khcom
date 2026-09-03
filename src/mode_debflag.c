@@ -36,11 +36,11 @@ const DebugFlag gUnk_08130DE0[7] = {
 void mode_debflag_0(s32 arg) {
     s32 i;
 
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 0x0F, 0);
     EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
-    func_0805FA60(0, gUnk_08128304, 0x20, 0x0F);
+    func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
     gUnk_020348C0 = 0;
     func_0805FCB0(0, 0, 2, "\x81\x84");
 
@@ -119,4 +119,4 @@ void mode_debflag_2(void) {
 
 ALIGN_ZERO(2);
 
-const char gUnk_08130E4C[16] = "mode_debflag";
+const char gModeNameDebflag[16] = "mode_debflag";

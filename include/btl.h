@@ -14,8 +14,8 @@ typedef struct UnkStruct_0801AF08 {
     s32 unk_08;
     s32 unk_0C;
     u8 unk_10[0x1C];
-    u16 unk_2C;
-    u16 unk_2E;
+    u16 hp;
+    u16 maxHp;
     u8 unk_30[0x4];
     u64 unk_34;
     u8 unk_3C[0x4];
@@ -110,7 +110,7 @@ typedef struct BtlWork {
     u8 unk_1CA[0x6];
 } BtlWork;
 
-typedef struct BtlSetup {
+typedef struct GameState {
     u8 unk_000[0x8];
     u32 flags;
     u8 unk_00C[0x26];
@@ -118,12 +118,12 @@ typedef struct BtlSetup {
     u8 unk_034[0xC4];
     u16 maxHp;
     u8 unk_0FA[0x116];
-} BtlSetup;
+} GameState;
 
 typedef struct BtlDrawInfo {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u16 unk_0C;
     u8 unk_0E[0x2];
     AnimState unk_10;
@@ -132,17 +132,17 @@ typedef struct BtlDrawInfo {
 } BtlDrawInfo;
 
 typedef struct BtlLockonWork {
-    void* unk_000;
-    void* unk_004;
-    AnimState unk_008;
-    void* unk_020;
+    void* tiles;
+    void* palette;
+    AnimState anim;
+    void* gfx;
     s16 unk_024;
     u8 unk_026[0x02];
 } BtlLockonWork;
 
 typedef struct BtlAreaWork {
-    void* unk_000;
-    void* unk_004;
+    void* palette;
+    void* tiles;
     u8 unk_008;
     u8 unk_009;
     s16 unk_00A;
@@ -150,7 +150,7 @@ typedef struct BtlAreaWork {
 
 typedef struct BtlSoraWork {
     void* unk_000;
-    void* unk_004;
+    void* palette;
     u32 unk_008;
     AnimState unk_00C;
     u32 unk_024;
@@ -196,8 +196,8 @@ typedef struct BtlSoraWork {
 
 typedef struct BtlRikuWork {
     void* unk_000;
-    void* unk_004;
-    ObjPalette* unk_008;
+    void* tiles;
+    ObjPalette* palette;
     u32 unk_00C;
     AnimState unk_010;
     u32 unk_028;
@@ -279,9 +279,9 @@ extern FldAnimDef gUnk_0813C4DC[][5];
 
 extern u16 gBldCnt;
 
-extern BtlSetup gUnk_02039BB0;
+extern GameState gGameState;
 
-extern BtlWork* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
 
 extern s16 gSineTable[];
@@ -314,8 +314,8 @@ void m4aSongNumStart(u16 id);
 void m4aSongNumStop(u16 id);
 void func_08012304(void* a);
 void TaskPoolDestroy(TaskPool* a);
-BtlWork* func_08000C8C(void* node);
-BtlWork* func_08000CD4(void* node);
+BtlWork* ListPoolFirst(void* node);
+BtlWork* ListPoolNext(void* node);
 void func_080140C0(s32* a, s32* b, s32* c);
 void func_0801AF08(void* p);
 void func_0802F284(s32 a, s32 b, s32 c);
@@ -334,7 +334,7 @@ typedef struct BtlMapWork {
 
 extern const s8 gUnk_0813C7D8[];
 void func_0800592C(s32* p, s32 target, u16 steps);
-void func_08005690(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
+void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0802F1C8(void);
 void func_0802F1E8(void);
 void func_0802F208(void);

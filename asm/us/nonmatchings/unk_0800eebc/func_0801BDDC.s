@@ -82,12 +82,12 @@ _0801C014: .4byte 0x09EDB3C8
 _0801C018:
 	mov r0, sp
 	ldrh r0, [r0, #0x12]
-	bl func_08003A98
+	bl CanAllocObjTiles
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0801C032
 	movs r0, #0x01
-	bl func_08003B24
+	bl CanAllocObjPalette
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _0801C04C

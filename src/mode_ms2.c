@@ -63,9 +63,9 @@ void mode_ms_charge_0(void) {
 
     pd = &gUnk_02035C10;
     *pd = EwramAlloc(0x3A18);
-    func_08001F98();
+    SpriteReset();
     func_08006120(0, 16);
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 28, 0);
     SetupBg(1, 0, 29, 0);
     SetupBg(2, 0, 30, 0);
@@ -221,7 +221,7 @@ void mode_ms_charge_1(void) {
     case 2:
         if (!func_08006314()) {
             if (gUnk_02035E20 != 0) {
-                ModeRequest(&gUnk_09EF95E8, 2);
+                ModeRequest(&gModeMsTop, 2);
             } else {
                 func_080E04EC();
             }
@@ -230,21 +230,21 @@ void mode_ms_charge_1(void) {
     }
 
     if (gUnk_02035CBC > 0) {
-        if (func_08005B30(&gUnk_02035CA0) != 2) {
+        if (AnimGetId(&gUnk_02035CA0) != 2) {
             if (gUnk_02035CBA < 0) {
-                gUnk_02035CBA = func_08005B30(&gUnk_02035CA0);
+                gUnk_02035CBA = AnimGetId(&gUnk_02035CA0);
             }
             AnimStart(&gUnk_02035CA0, 2, 1);
         }
 
         if (--gUnk_02035CBC <= 0) {
-            if (func_08005B30(&gUnk_02035CA0) != gUnk_02035CBA) {
+            if (AnimGetId(&gUnk_02035CA0) != gUnk_02035CBA) {
                 AnimStart(&gUnk_02035CA0, gUnk_02035CBA, 1);
             }
             gUnk_02035CBA = -1;
         }
     } else if (gUnk_02035CBA >= 0) {
-        if (func_08005B30(&gUnk_02035CA0) != gUnk_02035CBA) {
+        if (AnimGetId(&gUnk_02035CA0) != gUnk_02035CBA) {
             AnimStart(&gUnk_02035CA0, gUnk_02035CBA, 1);
         }
         gUnk_02035CBA = -1;

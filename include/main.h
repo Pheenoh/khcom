@@ -9,28 +9,28 @@
 struct Task;
 
 typedef struct Task {
-    TaskDesc* unk_00;
-    void* unk_04;
+    TaskDesc* desc;
+    void* work;
     u8 unk_08[0x04];
-    ListNode unk_0C;
+    ListNode node;
     u8 unk_1C[0x04];
-    u8 (*unk_20)(void* work, struct Task* task);
+    u8 (*update)(void* work, struct Task* task);
 } Task;
 
-Task* func_08000C8C(ListNode* node);
-Task* func_08000CD4(ListNode* node);
-Task* func_08000D0C(void);
+Task* ListPoolFirst(ListNode* node);
+Task* ListPoolNext(ListNode* node);
+Task* ListPoolFirstFree(void);
 Task* TaskDestroy(TaskPool* a, Task* t);
-void func_08000BA4(TaskPool* a);
-void func_08000BB0(ListNode* node, TaskPool* pool, void* owner);
-void func_08000BC8(void* a, void* b);
+void ListPoolInit(TaskPool* a);
+void ListPoolAddFree(ListNode* node, TaskPool* pool, void* owner);
+void ListPoolActivate(void* a, void* b);
 Task* TaskCreate(void* a, TaskDesc* desc, void* arg);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* a);
 void func_08000F30(TaskPool* a);
-void func_08000F8C(u8* p, u32 v);
+void SetTaskUpdate(u8* p, u32 v);
 s32 func_08000F90(void);
 
 void InitSystem(void);

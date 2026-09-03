@@ -53,7 +53,7 @@ void mode_copyright1_0(s32 arg) {
     }
 
     m4aSongNumStart(0);
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 0x1F, 0);
     SetBgPriority(0, 3);
 
@@ -77,16 +77,16 @@ INCLUDE_ASM("mode_copyright1/mode_copyright1_0.s");
 #ifndef VERSION_JP
 void mode_copyright1_1(void) {
     if (gUnk_02034ED8 != 0) {
-        ModeRequest(&gUnk_09EF6AF0, 0);
+        ModeRequest(&gModeMenuMsg, 0);
     } else if (!func_08006314()) {
         if (gUnk_02034ED6 != 0) {
             if (--gUnk_02034ED6 == 0) {
                 func_08006184(1, 0x43);
             }
         } else if (gUnk_02034ED4 != 0) {
-            ModeRequest(&gUnk_09EF4EC0, 1);
+            ModeRequest(&gModeCopyright1, 1);
         } else {
-            ModeRequest(&gUnk_09EF4ED0, 1);
+            ModeRequest(&gModeCopyright2, 1);
         }
     }
 }

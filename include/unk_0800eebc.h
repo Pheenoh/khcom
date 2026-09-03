@@ -10,8 +10,8 @@ typedef struct Collider {
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
+    s32 radius;
+    s32 height;
     ListNode unk_18;
     u8 unk_28[0x04];
     u8 unk_2C;
@@ -27,7 +27,7 @@ typedef struct Collider {
     s32 unk_48;
     s32 unk_4C;
     struct Collider* unk_50;
-    struct Collider* unk_54;
+    struct Collider* self;
     u32 unk_58;
 } Collider;
 
@@ -91,10 +91,10 @@ typedef struct BtlObj {
     u8 unk_108[0x02];
 } BtlObj;
 
-typedef struct BtlSetup {
+typedef struct GameState {
     u8 unk_000;
     u8 unk_001[0x03];
-    u32 unk_004;
+    u32 randomSeed;
     u32 flags;
     u8 world;
     u8 unk_00D;
@@ -125,12 +125,12 @@ typedef struct BtlSetup {
     u64 unk_1F8;
     u64 unk_200;
     u64 unk_208;
-} BtlSetup;
+} GameState;
 
 typedef struct UnkStruct_0801B8A8 {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_0C[0x06];
     u16 unk_12;
     u16 unk_14;
@@ -237,13 +237,13 @@ typedef struct BtlWork {
 } BtlWork;
 
 typedef struct UnkStruct_02039CA8 {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-    u32 unk_08;
-    s32 unk_0C;
-    u8 unk_10;
+    u16 maxHp;
+    u16 cp;
+    u16 dp;
+    u16 ap;
+    u32 exp;
+    s32 nextExp;
+    u8 level;
     u8 unk_11[0x03];
     u64 unk_14[13];
     u32 unk_7C;
@@ -265,17 +265,17 @@ typedef struct FldObj {
     ListNode unk_1C;
 } FldObj;
 
-typedef struct FldWork {
+typedef struct UnkStruct_02039BA0 {
     u8 unk_00[0x58];
     ListNode unk_58;
-} FldWork;
+} UnkStruct_02039BA0;
 extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
-extern BtlWork* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
 extern UnkStruct_02039CA8 gUnk_02039CA8;
-extern BtlSetup gUnk_02039BB0;
-extern FldWork* gUnk_02039BA0;
+extern GameState gGameState;
+extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern u32 gUnk_03006C10;
 extern const s16 gSineTable[];
 extern u8 gUnk_09EDA5A0[];
@@ -351,8 +351,8 @@ void SeedRandom(u32 seed);
 void func_0800ABD8(void);
 void func_08000D90(ListNode* node, void* pool);
 void* func_08012218(u32 type);
-void* func_08000C8C(ListNode* pool);
-void* func_08000CD4(ListNode* node);
+void* ListPoolFirst(ListNode* pool);
+void* ListPoolNext(ListNode* node);
 void m4aMPlayFadeOut(void* info, u16 speed);
 void func_08006120(s32 a, s32 b);
 void func_080063A8(void);
@@ -383,7 +383,7 @@ void func_080150D8(s32 x, s32 y, s32 z, u8 f);
 void func_08015228(s32 x, s32 y, s32 z, s32 s);
 void func_08014EC0(s32 x, s32 y, s32 z, s32 w);
 void func_08016A64(void);
-void func_08019270(void);
+void BtlWorkInit(void);
 void func_08014E38(void);
 void func_08014F4C(void);
 void func_08017EF4(void);
@@ -405,7 +405,7 @@ void func_0801848C(void);
 void func_0801884C(void);
 void func_0801235C(ListNode* a, ListNode* b);
 s64 __ashldi3(s64 v, s32 n);
-void func_08000BA4(ListNode* pool);
+void ListPoolInit(ListNode* pool);
 void func_08000D20(ListNode* node, void* pool, void* owner);
 void func_08000D28(ListNode* node, void* pool);
 void SetBgBlend(s32 a, s32 b, s32 c);
@@ -441,13 +441,13 @@ u8 func_0801C6D4(s32 a);
 void func_0801CA88(void);
 void func_0801CB00(void);
 void func_0801CB44(void);
-u8 func_0800FAFC(void);
+u8 CanLevelUp(void);
 const UnkStruct_08133E5C* func_0800FB14(u16 i);
 s32 func_08011398(s32 a, s32 b);
 s32 func_08011F68(s32 a, s32 b);
 void func_08012324(Collider* p, s32 a, s32 b, s32 c);
-void func_08012650(Collider* p, u16 r);
-void func_08012658(Collider* p, u16 h);
+void ColliderSetRadius(Collider* p, u16 r);
+void ColliderSetHeight(Collider* p, u16 h);
 u8 func_08012660(Collider* p, s32 bit);
 void func_08012810(void);
 u8 func_080128EC(void);
@@ -544,12 +544,12 @@ void func_08017138(u16 a);
 void func_08018970(s32 x, s32 y, s32 z);
 void func_08018FE4(s32 x, s32 y, s32 z);
 void func_080171FC(u16 a);
-u8 func_0800FA1C(void);
+u8 LevelUp(void);
 s32 func_0800FA58(void);
 s32 func_0800FA7C(void);
 s32 func_0800FAA0(void);
 s32 func_0800FAC4(void);
-void func_0800FAE8(u16 a);
+void AddExp(u16 a);
 void func_08015D04(void);
 u8 func_0801BCA8(s32 a);
 void func_0801C1A0(u8 a);

@@ -28,7 +28,7 @@ _080F8402:
 	adds r0, r5, r2
 	ldrb r0, [r0, #0x00]
 	movs r1, #0x01
-	bl func_08002C28
+	bl AllocObjAffineAngle
 	str r0, [sp, #0x014]
 	mov r8, r5
 	ldr r0, [r5, #0x08]

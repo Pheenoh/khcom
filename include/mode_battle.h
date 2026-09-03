@@ -5,7 +5,7 @@
 #include "gba/syscall.h"
 #include "main.h"
 
-typedef struct BattleWork {
+typedef struct BtlWork {
     u8 unk_000[0x2C];
     TaskPool unk_02C;
     TaskPool unk_040;
@@ -27,23 +27,23 @@ typedef struct BattleWork {
     u16 unk_1C4;
     u16 unk_1C6;
     u8 unk_1C8[0x08];
-} BattleWork;
+} BtlWork;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 world;
     u8 unk_00D;
     u8 unk_00E[0x02];
     u16 unk_010;
-} UnkStruct_02039BB0;
+} GameState;
 
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
-extern BattleWork* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern void* gUnk_02039B9C;
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u32 gUnk_03006C10;
 extern void* gUnk_09EDA2A0[];
 extern TaskDesc gTaskDescBtlSora;
@@ -64,22 +64,22 @@ extern TaskDesc gTaskDescHumLexceus;
 extern TaskDesc gTaskDescHumRiku;
 extern TaskDesc gTaskDescHumLeon;
 extern TaskDesc gTaskDescHumRobe;
-extern TaskDesc gUnk_09EDE440;
-extern TaskDesc gUnk_09EDE4B8;
-extern TaskDesc gUnk_09EF1D40;
-extern TaskDesc gUnk_09EF2744;
-extern TaskDesc gUnk_09EF2A8C;
-extern TaskDesc gUnk_09EF5010;
-extern TaskDesc gUnk_09EF51C0;
-extern TaskDesc gUnk_09EF8E94;
-extern TaskDesc gUnk_09EF8EAC;
-extern TaskDesc gUnk_09EF9DEC;
-extern TaskDesc gUnk_09EF9E54;
+extern TaskDesc gTaskDescMonsgage;
+extern TaskDesc gTaskDescTutorial;
+extern TaskDesc gTaskDescBosTm;
+extern TaskDesc gTaskDescBosJf;
+extern TaskDesc gTaskDescBosDsd;
+extern TaskDesc gTaskDescBosBoogie;
+extern TaskDesc gTaskDescBosUrsula;
+extern TaskDesc gTaskDescBosGa;
+extern TaskDesc gTaskDescBosMd;
+extern TaskDesc gTaskDescBosPc;
+extern TaskDesc gTaskDescBosLst;
 
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
-void func_08004E64(void);
-void func_08004F08(void);
+void SetBgMode1(void);
+void SetBgMode2(void);
 void SetBgOverflow(s32 bg, u8 on);
 void SetBgSize(s32 a, s32 b);
 void func_08006120(s32 a, s32 b);
@@ -90,7 +90,7 @@ void func_080125A4(void);
 void func_08012798(s32 a, u16 b);
 void func_08012810(void);
 void func_08012824(void);
-void func_08019270(void);
+void BtlWorkInit(void);
 void _08019CB4(void);
 void func_0801A920(s32 a, s32 b, s32 c, s32 d);
 void func_0801C068(void);

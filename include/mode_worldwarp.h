@@ -4,7 +4,7 @@
 #include "types.h"
 #include "main.h"
 #include "anim.h"
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 unk_00C[0x02];
@@ -13,7 +13,7 @@ typedef struct UnkStruct_02039BB0 {
     u32 mooglePoints;
     u8 unk_178[0x0E];
     u8 unk_186[13][4];
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct WarpIcon {
     u8 unk_00[0x08];
@@ -25,7 +25,7 @@ typedef struct WarpIcon {
     u8 unk_12[0x02];
 } WarpIcon;
 
-typedef struct WarpObjSet {
+typedef struct UnkStruct_09EF9488 {
     void* unk_00;
     u16 unk_04;
     u8 unk_06[0x02];
@@ -34,7 +34,7 @@ typedef struct WarpObjSet {
     u8 unk_0E[0x02];
     void* unk_10;
     u8 unk_14[0x04];
-} WarpObjSet;
+} UnkStruct_09EF9488;
 
 typedef struct WarpRect {
     s16 unk_00;
@@ -73,7 +73,7 @@ typedef struct WarpDef {
     WarpGfx unk_1C[2];
 } WarpDef;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern const WarpDef gUnk_09993118[];
 extern u16 gUnk_099931D0[];
 extern s32 gUnk_02035880;
@@ -119,7 +119,7 @@ extern u8 gUnk_099A2AF0[];
 extern u8 gUnk_099A2B24[];
 extern u8 gUnk_08B22BA8[];
 extern WarpIcon gUnk_09EF9384[];
-extern WarpObjSet gUnk_09EF9488[];
+extern UnkStruct_09EF9488 gUnk_09EF9488[];
 extern WarpRect gUnk_099930E8[];
 extern u8 gUnk_09A3D37C[];
 extern u8 gUnk_09A06A7C[];
@@ -171,8 +171,8 @@ void SetBgPriority(s32 bg, u16 priority);
 void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void* GetBgCharBase(s32 bg);
-void func_08001F98(void);
-void func_08004DB0(void);
+void SpriteReset(void);
+void SetBgMode0(void);
 void EnableBg(s32 a);
 void DisableBg(s32 bg);
 void func_08006120(s32 a, s32 b);
@@ -187,8 +187,8 @@ void func_08100670(s32 a, void* b, void* c);
 void mode_worldwarp_0(void);
 void mode_worldwarp_1(void);
 void mode_worldwarp_2(void);
-u32 func_08101518(void);
-void func_08101528(u32 a);
+u32 GetMooglePoints(void);
+void SetMooglePoints(u32 a);
 u8 func_08101538(u32 a);
 u8 func_0810155C(u32 a);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);

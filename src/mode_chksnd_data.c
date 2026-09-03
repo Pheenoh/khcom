@@ -633,7 +633,7 @@ extern const char gUnk_0812E910[];
 extern const char gUnk_0812E908[];
 extern const char gUnk_0812E900[];
 extern const char gUnk_0812E8F8[];
-extern const char gUnk_081309D4[];
+extern const char gModeNameChksnd[];
 
 ChkSndEntry gChkSndEntries[] = {
     { gUnk_081309A0, 1 },
@@ -1271,4 +1271,4 @@ ChkSndEntry gChkSndEntries[] = {
     { gUnk_0812E8F8, 970 },
 };
 
-Mode gModeChksnd = { gUnk_081309D4, (void (*)(s32))mode_chksnd_0, mode_chksnd_1, mode_chksnd_2 };
+Mode gModeChksnd = { gModeNameChksnd, (void (*)(s32))mode_chksnd_0, mode_chksnd_1, mode_chksnd_2 };

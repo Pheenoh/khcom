@@ -1,113 +1,113 @@
 #include "taskpool.h"
 
-extern const char gUnk_0813B9DC[];
-extern const char gUnk_0813B9EC[];
-extern const char gUnk_0813B9FC[];
-extern const char gUnk_0813BA0C[];
-extern const char gUnk_0813BA1C[];
-extern const char gUnk_0813C29C[];
-extern const char gUnk_0813C7C8[];
-extern const char gUnk_0813C7F8[];
-extern const char gUnk_0813C808[];
-extern const char gUnk_0813C818[];
-extern const char gUnk_0813C828[];
-extern const char gUnk_0813C838[];
-extern const char gUnk_0813C848[];
-extern const char gUnk_0813C858[];
-extern const char gUnk_0813C868[];
-extern const char gUnk_0813C878[];
-extern const char gUnk_0813C88C[];
-extern const char gUnk_0813CDCC[];
-extern const char gUnk_0813D30C[];
-extern const char gUnk_0813D31C[];
-extern const char gUnk_0813D3F8[];
-extern const char gUnk_0813D480[];
-extern const char gUnk_0813D508[];
-extern const char gUnk_0813D590[];
-extern const char gUnk_0813D608[];
-extern const char gUnk_0813D690[];
-extern const char gUnk_0813D768[];
-extern const char gUnk_0813D830[];
-extern const char gUnk_0813D8B8[];
-extern const char gUnk_0813D970[];
-extern const char gUnk_0813D9F8[];
-extern const char gUnk_0813DA04[];
-extern const char gUnk_0813DA14[];
-extern const char gUnk_0813DAC0[];
-extern const char gUnk_0813DB78[];
-extern const char gUnk_0813DC20[];
-extern const char gUnk_0813DCA8[];
-extern const char gUnk_0813DD30[];
-extern const char gUnk_0813DDB8[];
-extern const char gUnk_0813DE40[];
-extern const char gUnk_0813DEC8[];
-extern const char gUnk_0813DF70[];
-extern const char gUnk_0813DFF8[];
-extern const char gUnk_0813E0E0[];
-extern const char gUnk_0813E178[];
-extern const char gUnk_0813E290[];
-extern const char gUnk_0813E318[];
-extern const char gUnk_0813E3A0[];
-extern const char gUnk_0813E428[];
-extern const char gUnk_0813E4B0[];
-extern const char gUnk_0813E568[];
-extern const char gUnk_0813E630[];
-extern const char gUnk_0813E6D8[];
-extern const char gUnk_0813E6E4[];
-extern const char gUnk_0813E6F4[];
-extern const char gUnk_0813E770[];
-extern const char gUnk_0813E7F0[];
-extern const char gUnk_0813E860[];
-extern const char gUnk_0813E870[];
-extern const char gUnk_0813E880[];
-extern const char gUnk_0813E890[];
-extern const char gUnk_0813E8A0[];
-extern const char gUnk_0813E8B0[];
-extern const char gUnk_0813E8C4[];
-extern const char gUnk_0813E8D4[];
-extern const char gUnk_0813E8E4[];
-extern const char gUnk_0813E944[];
-extern const char gUnk_0813E9D8[];
-extern const char gUnk_0813E9F8[];
-extern const char gUnk_0813EA38[];
-extern const char gUnk_0813EA48[];
-extern const char gUnk_0813EA6C[];
-extern const char gUnk_0813EACC[];
-extern const char gUnk_0813EB0C[];
-extern const char gUnk_0813EB3C[];
-extern const char gUnk_0813EB7C[];
-extern const char gUnk_0813EBEC[];
-extern const char gUnk_0813EC4C[];
-extern const char gUnk_0813EC8C[];
-extern const char gUnk_0813ECEC[];
-extern const char gUnk_0813ED3C[];
-extern const char gUnk_0813ED7C[];
-extern const char gUnk_0813EDB0[];
-extern const char gUnk_0813EDC0[];
-extern const char gUnk_0813EF44[];
-extern const char gUnk_0813F080[];
-extern const char gUnk_0813F090[];
-extern const char gUnk_0813F0A4[];
-extern const char gUnk_0813F204[];
-extern const char gUnk_0813F340[];
-extern const char gUnk_0813F46C[];
-extern const char gUnk_0813F5A4[];
-extern const char gUnk_0813F5B4[];
-extern const char gUnk_0813F784[];
-extern const char gUnk_0813F794[];
-extern const char gUnk_0813F8E4[];
-extern const char gUnk_0813F8F4[];
-extern const char gUnk_0813F908[];
-extern const char gUnk_0813F9EC[];
-extern const char gUnk_0813FA78[];
-extern const char gUnk_0813FB54[];
-extern const char gUnk_0813FB68[];
-extern const char gUnk_0813FB7C[];
-extern const char gUnk_0813FB90[];
-extern const char gUnk_0813FBA4[];
-extern const char gUnk_0813FD48[];
-extern const char gUnk_0813FDC4[];
-extern const char gUnk_0813FE10[];
+extern const char gTaskNameEvtObj[];
+extern const char gTaskNameEvtShadow[];
+extern const char gTaskNameAcgtrans[];
+extern const char gTaskNameBtlLockon[];
+extern const char gTaskNameBtlArea[];
+extern const char gTaskNameBtlSora[];
+extern const char gTaskNameBtlRiku[];
+extern const char gTaskNameBtlMap[];
+extern const char gTaskNameBtlShadow[];
+extern const char gTaskNameBtlHpply[];
+extern const char gTaskNameBtlHpenm[];
+extern const char gTaskNameBtlPause[];
+extern const char gTaskNameBtlPop[];
+extern const char gTaskNameBtlEscape[];
+extern const char gTaskNameBtlPrize[];
+extern const char gTaskNameBtlPremire[];
+extern const char gTaskNameBtlStart[];
+extern const char gTaskNameFldSora[];
+extern const char gTaskNameFldRiku[];
+extern const char gTaskNameFldShadow[];
+extern const char gTaskNameEmy00[];
+extern const char gTaskNameEmy01[];
+extern const char gTaskNameEmy02[];
+extern const char gTaskNameEmy03[];
+extern const char gTaskNameEmy04[];
+extern const char gTaskNameEmy06[];
+extern const char gTaskNameEmy07[];
+extern const char gTaskNameEmy08[];
+extern const char gTaskNameEmy14[];
+extern const char gTaskNameEmy15[];
+extern const char gTaskNameEmy16[];
+extern const char gTaskNameEmy16B[];
+extern const char gTaskNameEmy16P[];
+extern const char gTaskNameEmy18[];
+extern const char gTaskNameEmy19[];
+extern const char gTaskNameEmy21[];
+extern const char gTaskNameEmy22[];
+extern const char gTaskNameEmy23[];
+extern const char gTaskNameEmy25[];
+extern const char gTaskNameEmy26[];
+extern const char gTaskNameEmy27[];
+extern const char gTaskNameEmy28[];
+extern const char gTaskNameEmy29[];
+extern const char gTaskNameEmy30[];
+extern const char gTaskNameEmy31[];
+extern const char gTaskNameEmy37[];
+extern const char gTaskNameEmy38[];
+extern const char gTaskNameEmy39[];
+extern const char gTaskNameEmy41[];
+extern const char gTaskNameEmy44[];
+extern const char gTaskNameEmy81[];
+extern const char gTaskNameEmy82[];
+extern const char gTaskNameEmy83[];
+extern const char gTaskNameEmy83B[];
+extern const char gTaskNameEmy83S[];
+extern const char gTaskNameEmyTrumpH[];
+extern const char gTaskNameEmyTrumpS[];
+extern const char gTaskNameEmyTest[];
+extern const char gTaskNameBosMap[];
+extern const char gTaskNameBosShadow[];
+extern const char gTaskNameRoomcreate[];
+extern const char gTaskNameRomcriEff[];
+extern const char gTaskNameRomcriEff2[];
+extern const char gTaskNameBtlForm[];
+extern const char gTaskNameBtlBorn[];
+extern const char gTaskNameBtlRaid[];
+extern const char gTaskNameBtlBadstatus[];
+extern const char gTaskNameSmnCloud[];
+extern const char gTaskNameSmnBambi[];
+extern const char gTaskNameSmnTink[];
+extern const char gTaskNameSmnTinkeff[];
+extern const char gTaskNameSmnSimba[];
+extern const char gTaskNameSmnMushu[];
+extern const char gTaskNameSmnDumbo[];
+extern const char gTaskNameSmnGenie[];
+extern const char gTaskNameSmnKing[];
+extern const char gTaskNameFrdDonald[];
+extern const char gTaskNameFrdGoofy[];
+extern const char gTaskNameFrdAriel[];
+extern const char gTaskNameFrdJack[];
+extern const char gTaskNameFrdPan[];
+extern const char gTaskNameFrdAladdin[];
+extern const char gTaskNameFrdBeast[];
+extern const char gTaskNamePcAcddmg[];
+extern const char gTaskNameHumCloud[];
+extern const char gTaskNameHumHook[];
+extern const char gTaskNameHumHookMoon[];
+extern const char gTaskNameHumHookBomb[];
+extern const char gTaskNameHumAnsem[];
+extern const char gTaskNameHumHades[];
+extern const char gTaskNameHumMahluxia[];
+extern const char gTaskNameHumLaxene[];
+extern const char gTaskNameHumLaxeneKnf[];
+extern const char gTaskNameHumAxcel[];
+extern const char gTaskNameHumAxcelPtc[];
+extern const char gTaskNameHumVixen[];
+extern const char gTaskNameHumVixenNdl[];
+extern const char gTaskNameHumVixenIce[];
+extern const char gTaskNameHumVixenFrz[];
+extern const char gTaskNameHumVixenFrg[];
+extern const char gTaskNameHumLexceus[];
+extern const char gTaskNameHumLexTmh[];
+extern const char gTaskNameHumLexTmh0[];
+extern const char gTaskNameHumLexRock[];
+extern const char gTaskNameHumMahluxiaFlw[];
+extern const char gTaskNameHumRiku[];
+extern const char gTaskNameHumLeon[];
+extern const char gTaskNameHumRobe[];
 
 void task_evt_obj_0(void* work, void* arg);
 void task_evt_obj_1(void* work);
@@ -527,218 +527,218 @@ void task_hum_robe_1(void* work);
 void task_hum_robe_2(void* work);
 void task_hum_robe_3(void* work);
 
-TaskDesc gTaskDescEvtObj = { gUnk_0813B9DC, task_evt_obj_0, task_evt_obj_1, task_evt_obj_2, task_evt_obj_3, 0x38 };
+TaskDesc gTaskDescEvtObj = { gTaskNameEvtObj, task_evt_obj_0, task_evt_obj_1, task_evt_obj_2, task_evt_obj_3, 0x38 };
 
-TaskDesc gTaskDescEvtShadow = { gUnk_0813B9EC, task_evt_shadow_0, task_evt_shadow_1, task_evt_shadow_2, task_evt_shadow_3, 0x14 };
+TaskDesc gTaskDescEvtShadow = { gTaskNameEvtShadow, task_evt_shadow_0, task_evt_shadow_1, task_evt_shadow_2, task_evt_shadow_3, 0x14 };
 
-TaskDesc gTaskDescAcgtrans = { gUnk_0813B9FC, task_acgtrans_0, task_acgtrans_1, 0, 0, 0x14 };
+TaskDesc gTaskDescAcgtrans = { gTaskNameAcgtrans, task_acgtrans_0, task_acgtrans_1, 0, 0, 0x14 };
 
-TaskDesc gTaskDescBtlLockon = { gUnk_0813BA0C, task_btl_lockon_0, task_btl_lockon_1, task_btl_lockon_2, task_btl_lockon_3, 0x28 };
+TaskDesc gTaskDescBtlLockon = { gTaskNameBtlLockon, task_btl_lockon_0, task_btl_lockon_1, task_btl_lockon_2, task_btl_lockon_3, 0x28 };
 
-TaskDesc gTaskDescBtlArea = { gUnk_0813BA1C, task_btl_area_0, task_btl_area_1, task_btl_area_2, task_btl_area_3, 0xC };
+TaskDesc gTaskDescBtlArea = { gTaskNameBtlArea, task_btl_area_0, task_btl_area_1, task_btl_area_2, task_btl_area_3, 0xC };
 
-TaskDesc gTaskDescBtlSora = { gUnk_0813C29C, task_btl_sora_0, task_btl_sora_1, task_btl_sora_2, task_btl_sora_3, 0x1AC };
+TaskDesc gTaskDescBtlSora = { gTaskNameBtlSora, task_btl_sora_0, task_btl_sora_1, task_btl_sora_2, task_btl_sora_3, 0x1AC };
 
-TaskDesc gTaskDescBtlRiku = { gUnk_0813C7C8, task_btl_riku_0, task_btl_riku_1, task_btl_riku_2, task_btl_riku_3, 0x374 };
+TaskDesc gTaskDescBtlRiku = { gTaskNameBtlRiku, task_btl_riku_0, task_btl_riku_1, task_btl_riku_2, task_btl_riku_3, 0x374 };
 
-TaskDesc gTaskDescBtlMap = { gUnk_0813C7F8, task_btl_map_0, task_btl_map_1, 0, 0, 0x10 };
+TaskDesc gTaskDescBtlMap = { gTaskNameBtlMap, task_btl_map_0, task_btl_map_1, 0, 0, 0x10 };
 
-TaskDesc gTaskDescBtlShadow = { gUnk_0813C808, task_btl_shadow_0, task_btl_shadow_1, task_btl_shadow_2, task_btl_shadow_3, 0x10 };
+TaskDesc gTaskDescBtlShadow = { gTaskNameBtlShadow, task_btl_shadow_0, task_btl_shadow_1, task_btl_shadow_2, task_btl_shadow_3, 0x10 };
 
-TaskDesc gTaskDescBtlHpply = { gUnk_0813C818, task_btl_hpply_0, task_btl_hpply_1, task_btl_hpply_2, task_btl_hpply_3, 0x6C };
+TaskDesc gTaskDescBtlHpply = { gTaskNameBtlHpply, task_btl_hpply_0, task_btl_hpply_1, task_btl_hpply_2, task_btl_hpply_3, 0x6C };
 
-TaskDesc gTaskDescBtlHpenm = { gUnk_0813C828, task_btl_hpenm_0, task_btl_hpenm_1, task_btl_hpenm_2, task_btl_hpenm_3, 0x24 };
+TaskDesc gTaskDescBtlHpenm = { gTaskNameBtlHpenm, task_btl_hpenm_0, task_btl_hpenm_1, task_btl_hpenm_2, task_btl_hpenm_3, 0x24 };
 
-TaskDesc gTaskDescBtlPause = { gUnk_0813C838, task_btl_pause_0, task_btl_pause_1, task_btl_pause_2, task_btl_pause_3, 0x28 };
+TaskDesc gTaskDescBtlPause = { gTaskNameBtlPause, task_btl_pause_0, task_btl_pause_1, task_btl_pause_2, task_btl_pause_3, 0x28 };
 
-TaskDesc gTaskDescBtlPop = { gUnk_0813C848, task_btl_pop_0, task_btl_pop_1, task_btl_pop_2, task_btl_pop_3, 0x34 };
+TaskDesc gTaskDescBtlPop = { gTaskNameBtlPop, task_btl_pop_0, task_btl_pop_1, task_btl_pop_2, task_btl_pop_3, 0x34 };
 
-TaskDesc gTaskDescBtlEscape = { gUnk_0813C858, task_btl_escape_0, task_btl_escape_1, task_btl_escape_2, task_btl_escape_3, 0x24 };
+TaskDesc gTaskDescBtlEscape = { gTaskNameBtlEscape, task_btl_escape_0, task_btl_escape_1, task_btl_escape_2, task_btl_escape_3, 0x24 };
 
-TaskDesc gTaskDescBtlPrize = { gUnk_0813C868, task_btl_prize_0, task_btl_prize_1, task_btl_prize_2, task_btl_prize_3, 0x4C };
+TaskDesc gTaskDescBtlPrize = { gTaskNameBtlPrize, task_btl_prize_0, task_btl_prize_1, task_btl_prize_2, task_btl_prize_3, 0x4C };
 
-TaskDesc gTaskDescBtlPremire = { gUnk_0813C878, task_btl_premire_0, task_btl_premire_1, task_btl_premire_2, task_btl_premire_3, 0x60 };
+TaskDesc gTaskDescBtlPremire = { gTaskNameBtlPremire, task_btl_premire_0, task_btl_premire_1, task_btl_premire_2, task_btl_premire_3, 0x60 };
 
-TaskDesc gTaskDescBtlStart = { gUnk_0813C88C, task_btl_start_0, task_btl_start_1, 0, 0, 0x4 };
+TaskDesc gTaskDescBtlStart = { gTaskNameBtlStart, task_btl_start_0, task_btl_start_1, 0, 0, 0x4 };
 
-TaskDesc gTaskDescFldSora = { gUnk_0813CDCC, task_fld_sora_0, task_fld_sora_1, task_fld_sora_2, task_fld_sora_3, 0xC0 };
+TaskDesc gTaskDescFldSora = { gTaskNameFldSora, task_fld_sora_0, task_fld_sora_1, task_fld_sora_2, task_fld_sora_3, 0xC0 };
 
-TaskDesc gTaskDescFldRiku = { gUnk_0813D30C, task_fld_riku_0, task_fld_riku_1, task_fld_riku_2, task_fld_riku_3, 0xC0 };
+TaskDesc gTaskDescFldRiku = { gTaskNameFldRiku, task_fld_riku_0, task_fld_riku_1, task_fld_riku_2, task_fld_riku_3, 0xC0 };
 
-TaskDesc gTaskDescFldShadow = { gUnk_0813D31C, task_fld_shadow_0, task_fld_shadow_1, task_fld_shadow_2, task_fld_shadow_3, 0x2C };
+TaskDesc gTaskDescFldShadow = { gTaskNameFldShadow, task_fld_shadow_0, task_fld_shadow_1, task_fld_shadow_2, task_fld_shadow_3, 0x2C };
 
-TaskDesc gTaskDescEmy00 = { gUnk_0813D3F8, task_emy_00_0, task_emy_00_1, task_emy_00_2, task_emy_00_3, 0x184 };
+TaskDesc gTaskDescEmy00 = { gTaskNameEmy00, task_emy_00_0, task_emy_00_1, task_emy_00_2, task_emy_00_3, 0x184 };
 
-TaskDesc gTaskDescEmy01 = { gUnk_0813D480, task_emy_01_0, task_emy_01_1, task_emy_01_2, task_emy_01_3, 0x184 };
+TaskDesc gTaskDescEmy01 = { gTaskNameEmy01, task_emy_01_0, task_emy_01_1, task_emy_01_2, task_emy_01_3, 0x184 };
 
-TaskDesc gTaskDescEmy02 = { gUnk_0813D508, task_emy_02_0, task_emy_02_1, task_emy_02_2, task_emy_02_3, 0x184 };
+TaskDesc gTaskDescEmy02 = { gTaskNameEmy02, task_emy_02_0, task_emy_02_1, task_emy_02_2, task_emy_02_3, 0x184 };
 
-TaskDesc gTaskDescEmy03 = { gUnk_0813D590, task_emy_03_0, task_emy_03_1, task_emy_03_2, task_emy_03_3, 0x190 };
+TaskDesc gTaskDescEmy03 = { gTaskNameEmy03, task_emy_03_0, task_emy_03_1, task_emy_03_2, task_emy_03_3, 0x190 };
 
-TaskDesc gTaskDescEmy04 = { gUnk_0813D608, task_emy_04_0, task_emy_04_1, task_emy_04_2, task_emy_04_3, 0x188 };
+TaskDesc gTaskDescEmy04 = { gTaskNameEmy04, task_emy_04_0, task_emy_04_1, task_emy_04_2, task_emy_04_3, 0x188 };
 
-TaskDesc gTaskDescEmy06 = { gUnk_0813D690, task_emy_06_0, task_emy_06_1, task_emy_06_2, task_emy_06_3, 0x188 };
+TaskDesc gTaskDescEmy06 = { gTaskNameEmy06, task_emy_06_0, task_emy_06_1, task_emy_06_2, task_emy_06_3, 0x188 };
 
-TaskDesc gTaskDescEmy07 = { gUnk_0813D768, task_emy_07_0, task_emy_07_1, task_emy_07_2, task_emy_07_3, 0x188 };
+TaskDesc gTaskDescEmy07 = { gTaskNameEmy07, task_emy_07_0, task_emy_07_1, task_emy_07_2, task_emy_07_3, 0x188 };
 
-TaskDesc gTaskDescEmy08 = { gUnk_0813D830, task_emy_08_0, task_emy_08_1, task_emy_08_2, task_emy_08_3, 0x190 };
+TaskDesc gTaskDescEmy08 = { gTaskNameEmy08, task_emy_08_0, task_emy_08_1, task_emy_08_2, task_emy_08_3, 0x190 };
 
-TaskDesc gTaskDescEmy14 = { gUnk_0813D8B8, task_emy_14_0, task_emy_14_1, task_emy_14_2, task_emy_14_3, 0x184 };
+TaskDesc gTaskDescEmy14 = { gTaskNameEmy14, task_emy_14_0, task_emy_14_1, task_emy_14_2, task_emy_14_3, 0x184 };
 
-TaskDesc gTaskDescEmy15 = { gUnk_0813D970, task_emy_15_0, task_emy_15_1, task_emy_15_2, task_emy_15_3, 0x184 };
+TaskDesc gTaskDescEmy15 = { gTaskNameEmy15, task_emy_15_0, task_emy_15_1, task_emy_15_2, task_emy_15_3, 0x184 };
 
-TaskDesc gTaskDescEmy16 = { gUnk_0813D9F8, task_emy_16_0, task_emy_16_1, task_emy_16_2, task_emy_16_3, 0x1A4 };
+TaskDesc gTaskDescEmy16 = { gTaskNameEmy16, task_emy_16_0, task_emy_16_1, task_emy_16_2, task_emy_16_3, 0x1A4 };
 
-TaskDesc gTaskDescEmy16B = { gUnk_0813DA04, task_emy_16_b_0, task_emy_16_b_1, task_emy_16_b_2, task_emy_16_b_3, 0xA0 };
+TaskDesc gTaskDescEmy16B = { gTaskNameEmy16B, task_emy_16_b_0, task_emy_16_b_1, task_emy_16_b_2, task_emy_16_b_3, 0xA0 };
 
-TaskDesc gTaskDescEmy16P = { gUnk_0813DA14, task_emy_16_p_0, task_emy_16_p_1, task_emy_16_p_2, task_emy_16_p_3, 0x34 };
+TaskDesc gTaskDescEmy16P = { gTaskNameEmy16P, task_emy_16_p_0, task_emy_16_p_1, task_emy_16_p_2, task_emy_16_p_3, 0x34 };
 
-TaskDesc gTaskDescEmy18 = { gUnk_0813DAC0, task_emy_18_0, task_emy_18_1, task_emy_18_2, task_emy_18_3, 0x188 };
+TaskDesc gTaskDescEmy18 = { gTaskNameEmy18, task_emy_18_0, task_emy_18_1, task_emy_18_2, task_emy_18_3, 0x188 };
 
-TaskDesc gTaskDescEmy19 = { gUnk_0813DB78, task_emy_19_0, task_emy_19_1, task_emy_19_2, task_emy_19_3, 0x188 };
+TaskDesc gTaskDescEmy19 = { gTaskNameEmy19, task_emy_19_0, task_emy_19_1, task_emy_19_2, task_emy_19_3, 0x188 };
 
-TaskDesc gTaskDescEmy21 = { gUnk_0813DC20, task_emy_21_0, task_emy_21_1, task_emy_21_2, task_emy_21_3, 0x188 };
+TaskDesc gTaskDescEmy21 = { gTaskNameEmy21, task_emy_21_0, task_emy_21_1, task_emy_21_2, task_emy_21_3, 0x188 };
 
-TaskDesc gTaskDescEmy22 = { gUnk_0813DCA8, task_emy_22_0, task_emy_22_1, task_emy_22_2, task_emy_22_3, 0x188 };
+TaskDesc gTaskDescEmy22 = { gTaskNameEmy22, task_emy_22_0, task_emy_22_1, task_emy_22_2, task_emy_22_3, 0x188 };
 
-TaskDesc gTaskDescEmy23 = { gUnk_0813DD30, task_emy_23_0, task_emy_23_1, task_emy_23_2, task_emy_23_3, 0x188 };
+TaskDesc gTaskDescEmy23 = { gTaskNameEmy23, task_emy_23_0, task_emy_23_1, task_emy_23_2, task_emy_23_3, 0x188 };
 
-TaskDesc gTaskDescEmy25 = { gUnk_0813DDB8, task_emy_25_0, task_emy_25_1, task_emy_25_2, task_emy_25_3, 0x184 };
+TaskDesc gTaskDescEmy25 = { gTaskNameEmy25, task_emy_25_0, task_emy_25_1, task_emy_25_2, task_emy_25_3, 0x184 };
 
-TaskDesc gTaskDescEmy26 = { gUnk_0813DE40, task_emy_26_0, task_emy_26_1, task_emy_26_2, task_emy_26_3, 0x184 };
+TaskDesc gTaskDescEmy26 = { gTaskNameEmy26, task_emy_26_0, task_emy_26_1, task_emy_26_2, task_emy_26_3, 0x184 };
 
-TaskDesc gTaskDescEmy27 = { gUnk_0813DEC8, task_emy_27_0, task_emy_27_1, task_emy_27_2, task_emy_27_3, 0x184 };
+TaskDesc gTaskDescEmy27 = { gTaskNameEmy27, task_emy_27_0, task_emy_27_1, task_emy_27_2, task_emy_27_3, 0x184 };
 
-TaskDesc gTaskDescEmy28 = { gUnk_0813DF70, task_emy_28_0, task_emy_28_1, task_emy_28_2, task_emy_28_3, 0x188 };
+TaskDesc gTaskDescEmy28 = { gTaskNameEmy28, task_emy_28_0, task_emy_28_1, task_emy_28_2, task_emy_28_3, 0x188 };
 
-TaskDesc gTaskDescEmy29 = { gUnk_0813DFF8, task_emy_29_0, task_emy_29_1, task_emy_29_2, task_emy_29_3, 0x188 };
+TaskDesc gTaskDescEmy29 = { gTaskNameEmy29, task_emy_29_0, task_emy_29_1, task_emy_29_2, task_emy_29_3, 0x188 };
 
-TaskDesc gTaskDescEmy30 = { gUnk_0813E0E0, task_emy_30_0, task_emy_30_1, task_emy_30_2, task_emy_30_3, 0x184 };
+TaskDesc gTaskDescEmy30 = { gTaskNameEmy30, task_emy_30_0, task_emy_30_1, task_emy_30_2, task_emy_30_3, 0x184 };
 
-TaskDesc gTaskDescEmy31 = { gUnk_0813E178, task_emy_31_0, task_emy_31_1, task_emy_31_2, task_emy_31_3, 0x194 };
+TaskDesc gTaskDescEmy31 = { gTaskNameEmy31, task_emy_31_0, task_emy_31_1, task_emy_31_2, task_emy_31_3, 0x194 };
 
-TaskDesc gTaskDescEmy37 = { gUnk_0813E290, task_emy_37_0, task_emy_37_1, task_emy_37_2, task_emy_37_3, 0x190 };
+TaskDesc gTaskDescEmy37 = { gTaskNameEmy37, task_emy_37_0, task_emy_37_1, task_emy_37_2, task_emy_37_3, 0x190 };
 
-TaskDesc gTaskDescEmy38 = { gUnk_0813E318, task_emy_38_0, task_emy_38_1, task_emy_38_2, task_emy_38_3, 0x184 };
+TaskDesc gTaskDescEmy38 = { gTaskNameEmy38, task_emy_38_0, task_emy_38_1, task_emy_38_2, task_emy_38_3, 0x184 };
 
-TaskDesc gTaskDescEmy39 = { gUnk_0813E3A0, task_emy_39_0, task_emy_39_1, task_emy_39_2, task_emy_39_3, 0x188 };
+TaskDesc gTaskDescEmy39 = { gTaskNameEmy39, task_emy_39_0, task_emy_39_1, task_emy_39_2, task_emy_39_3, 0x188 };
 
-TaskDesc gTaskDescEmy41 = { gUnk_0813E428, task_emy_41_0, task_emy_41_1, task_emy_41_2, task_emy_41_3, 0x190 };
+TaskDesc gTaskDescEmy41 = { gTaskNameEmy41, task_emy_41_0, task_emy_41_1, task_emy_41_2, task_emy_41_3, 0x190 };
 
-TaskDesc gTaskDescEmy44 = { gUnk_0813E4B0, task_emy_44_0, task_emy_44_1, task_emy_44_2, task_emy_44_3, 0x184 };
+TaskDesc gTaskDescEmy44 = { gTaskNameEmy44, task_emy_44_0, task_emy_44_1, task_emy_44_2, task_emy_44_3, 0x184 };
 
-TaskDesc gTaskDescEmy81 = { gUnk_0813E568, task_emy_81_0, task_emy_81_1, task_emy_81_2, task_emy_81_3, 0x194 };
+TaskDesc gTaskDescEmy81 = { gTaskNameEmy81, task_emy_81_0, task_emy_81_1, task_emy_81_2, task_emy_81_3, 0x194 };
 
-TaskDesc gTaskDescEmy82 = { gUnk_0813E630, task_emy_82_0, task_emy_82_1, task_emy_82_2, task_emy_82_3, 0x188 };
+TaskDesc gTaskDescEmy82 = { gTaskNameEmy82, task_emy_82_0, task_emy_82_1, task_emy_82_2, task_emy_82_3, 0x188 };
 
-TaskDesc gTaskDescEmy83 = { gUnk_0813E6D8, task_emy_83_0, task_emy_83_1, task_emy_83_2, task_emy_83_3, 0x1A8 };
+TaskDesc gTaskDescEmy83 = { gTaskNameEmy83, task_emy_83_0, task_emy_83_1, task_emy_83_2, task_emy_83_3, 0x1A8 };
 
-TaskDesc gTaskDescEmy83B = { gUnk_0813E6E4, task_emy_83_b_0, task_emy_83_b_1, task_emy_83_b_2, task_emy_83_b_3, 0x90 };
+TaskDesc gTaskDescEmy83B = { gTaskNameEmy83B, task_emy_83_b_0, task_emy_83_b_1, task_emy_83_b_2, task_emy_83_b_3, 0x90 };
 
-TaskDesc gTaskDescEmy83S = { gUnk_0813E6F4, task_emy_83_s_0, task_emy_83_s_1, task_emy_83_s_2, task_emy_83_s_3, 0x24 };
+TaskDesc gTaskDescEmy83S = { gTaskNameEmy83S, task_emy_83_s_0, task_emy_83_s_1, task_emy_83_s_2, task_emy_83_s_3, 0x24 };
 
-TaskDesc gTaskDescEmyTrumpH = { gUnk_0813E770, task_emy_trump_h_0, task_emy_trump_h_1, task_emy_trump_h_2, task_emy_trump_h_3, 0x184 };
+TaskDesc gTaskDescEmyTrumpH = { gTaskNameEmyTrumpH, task_emy_trump_h_0, task_emy_trump_h_1, task_emy_trump_h_2, task_emy_trump_h_3, 0x184 };
 
-TaskDesc gTaskDescEmyTrumpS = { gUnk_0813E7F0, task_emy_trump_s_0, task_emy_trump_s_1, task_emy_trump_s_2, task_emy_trump_s_3, 0x184 };
+TaskDesc gTaskDescEmyTrumpS = { gTaskNameEmyTrumpS, task_emy_trump_s_0, task_emy_trump_s_1, task_emy_trump_s_2, task_emy_trump_s_3, 0x184 };
 
-TaskDesc gTaskDescEmyTest = { gUnk_0813E860, task_emy_test_0, task_emy_test_1, task_emy_test_2, task_emy_test_3, 0x184 };
+TaskDesc gTaskDescEmyTest = { gTaskNameEmyTest, task_emy_test_0, task_emy_test_1, task_emy_test_2, task_emy_test_3, 0x184 };
 
-TaskDesc gTaskDescBosMap = { gUnk_0813E870, task_bos_map_0, task_bos_map_1, 0, 0, 0x4 };
+TaskDesc gTaskDescBosMap = { gTaskNameBosMap, task_bos_map_0, task_bos_map_1, 0, 0, 0x4 };
 
-TaskDesc gTaskDescBosShadow = { gUnk_0813E880, task_bos_shadow_0, task_bos_shadow_1, task_bos_shadow_2, task_bos_shadow_3, 0xC };
+TaskDesc gTaskDescBosShadow = { gTaskNameBosShadow, task_bos_shadow_0, task_bos_shadow_1, task_bos_shadow_2, task_bos_shadow_3, 0xC };
 
-TaskDesc gTaskDescRoomcreate = { gUnk_0813E890, task_roomcreate_0, task_roomcreate_1, task_roomcreate_2, task_roomcreate_3, 0x44 };
+TaskDesc gTaskDescRoomcreate = { gTaskNameRoomcreate, task_roomcreate_0, task_roomcreate_1, task_roomcreate_2, task_roomcreate_3, 0x44 };
 
-TaskDesc gTaskDescRomcriEff = { gUnk_0813E8A0, task_romcri_eff_0, task_romcri_eff_1, 0, task_romcri_eff_3, 0x4 };
+TaskDesc gTaskDescRomcriEff = { gTaskNameRomcriEff, task_romcri_eff_0, task_romcri_eff_1, 0, task_romcri_eff_3, 0x4 };
 
-TaskDesc gTaskDescRomcriEff2 = { gUnk_0813E8B0, task_romcri_eff2_0, task_romcri_eff2_1, 0, task_romcri_eff2_3, 0x4 };
+TaskDesc gTaskDescRomcriEff2 = { gTaskNameRomcriEff2, task_romcri_eff2_0, task_romcri_eff2_1, 0, task_romcri_eff2_3, 0x4 };
 
-TaskDesc gTaskDescBtlForm = { gUnk_0813E8C4, task_btl_form_0, task_btl_form_1, 0, task_btl_form_3, 0x28 };
+TaskDesc gTaskDescBtlForm = { gTaskNameBtlForm, task_btl_form_0, task_btl_form_1, 0, task_btl_form_3, 0x28 };
 
-TaskDesc gTaskDescBtlBorn = { gUnk_0813E8D4, task_btl_born_0, task_btl_born_1, 0, 0, 0x14 };
+TaskDesc gTaskDescBtlBorn = { gTaskNameBtlBorn, task_btl_born_0, task_btl_born_1, 0, 0, 0x14 };
 
-TaskDesc gTaskDescBtlRaid = { gUnk_0813E8E4, task_btl_raid_0, task_btl_raid_1, task_btl_raid_2, task_btl_raid_3, 0x6C };
+TaskDesc gTaskDescBtlRaid = { gTaskNameBtlRaid, task_btl_raid_0, task_btl_raid_1, task_btl_raid_2, task_btl_raid_3, 0x6C };
 
-TaskDesc gTaskDescBtlBadstatus = { gUnk_0813E944, task_btl_badstatus_0, task_btl_badstatus_1, task_btl_badstatus_2, task_btl_badstatus_3, 0x30 };
+TaskDesc gTaskDescBtlBadstatus = { gTaskNameBtlBadstatus, task_btl_badstatus_0, task_btl_badstatus_1, task_btl_badstatus_2, task_btl_badstatus_3, 0x30 };
 
-TaskDesc gTaskDescSmnCloud = { gUnk_0813E9D8, task_smn_cloud_0, task_smn_cloud_1, task_smn_cloud_2, task_smn_cloud_3, 0x180 };
+TaskDesc gTaskDescSmnCloud = { gTaskNameSmnCloud, task_smn_cloud_0, task_smn_cloud_1, task_smn_cloud_2, task_smn_cloud_3, 0x180 };
 
-TaskDesc gTaskDescSmnBambi = { gUnk_0813E9F8, task_smn_bambi_0, task_smn_bambi_1, task_smn_bambi_2, task_smn_bambi_3, 0x178 };
+TaskDesc gTaskDescSmnBambi = { gTaskNameSmnBambi, task_smn_bambi_0, task_smn_bambi_1, task_smn_bambi_2, task_smn_bambi_3, 0x178 };
 
-TaskDesc gTaskDescSmnTink = { gUnk_0813EA38, task_smn_tink_0, task_smn_tink_1, task_smn_tink_2, task_smn_tink_3, 0x180 };
+TaskDesc gTaskDescSmnTink = { gTaskNameSmnTink, task_smn_tink_0, task_smn_tink_1, task_smn_tink_2, task_smn_tink_3, 0x180 };
 
-TaskDesc gTaskDescSmnTinkeff = { gUnk_0813EA48, task_smn_tinkeff_0, task_smn_tinkeff_1, task_smn_tinkeff_2, task_smn_tinkeff_3, 0x30 };
+TaskDesc gTaskDescSmnTinkeff = { gTaskNameSmnTinkeff, task_smn_tinkeff_0, task_smn_tinkeff_1, task_smn_tinkeff_2, task_smn_tinkeff_3, 0x30 };
 
-TaskDesc gTaskDescSmnSimba = { gUnk_0813EA6C, task_smn_simba_0, task_smn_simba_1, task_smn_simba_2, task_smn_simba_3, 0x158 };
+TaskDesc gTaskDescSmnSimba = { gTaskNameSmnSimba, task_smn_simba_0, task_smn_simba_1, task_smn_simba_2, task_smn_simba_3, 0x158 };
 
-TaskDesc gTaskDescSmnMushu = { gUnk_0813EACC, task_smn_mushu_0, task_smn_mushu_1, task_smn_mushu_2, task_smn_mushu_3, 0x15C };
+TaskDesc gTaskDescSmnMushu = { gTaskNameSmnMushu, task_smn_mushu_0, task_smn_mushu_1, task_smn_mushu_2, task_smn_mushu_3, 0x15C };
 
-TaskDesc gTaskDescSmnDumbo = { gUnk_0813EB0C, task_smn_dumbo_0, task_smn_dumbo_1, task_smn_dumbo_2, task_smn_dumbo_3, 0x158 };
+TaskDesc gTaskDescSmnDumbo = { gTaskNameSmnDumbo, task_smn_dumbo_0, task_smn_dumbo_1, task_smn_dumbo_2, task_smn_dumbo_3, 0x158 };
 
-TaskDesc gTaskDescSmnGenie = { gUnk_0813EB3C, task_smn_genie_0, task_smn_genie_1, task_smn_genie_2, task_smn_genie_3, 0x168 };
+TaskDesc gTaskDescSmnGenie = { gTaskNameSmnGenie, task_smn_genie_0, task_smn_genie_1, task_smn_genie_2, task_smn_genie_3, 0x168 };
 
-TaskDesc gTaskDescSmnKing = { gUnk_0813EB7C, task_smn_king_0, task_smn_king_1, task_smn_king_2, task_smn_king_3, 0x168 };
+TaskDesc gTaskDescSmnKing = { gTaskNameSmnKing, task_smn_king_0, task_smn_king_1, task_smn_king_2, task_smn_king_3, 0x168 };
 
-TaskDesc gTaskDescFrdDonald = { gUnk_0813EBEC, task_frd_donald_0, task_frd_donald_1, task_frd_donald_2, task_frd_donald_3, 0x164 };
+TaskDesc gTaskDescFrdDonald = { gTaskNameFrdDonald, task_frd_donald_0, task_frd_donald_1, task_frd_donald_2, task_frd_donald_3, 0x164 };
 
-TaskDesc gTaskDescFrdGoofy = { gUnk_0813EC4C, task_frd_goofy_0, task_frd_goofy_1, task_frd_goofy_2, task_frd_goofy_3, 0x164 };
+TaskDesc gTaskDescFrdGoofy = { gTaskNameFrdGoofy, task_frd_goofy_0, task_frd_goofy_1, task_frd_goofy_2, task_frd_goofy_3, 0x164 };
 
-TaskDesc gTaskDescFrdAriel = { gUnk_0813EC8C, task_frd_ariel_0, task_frd_ariel_1, task_frd_ariel_2, task_frd_ariel_3, 0x164 };
+TaskDesc gTaskDescFrdAriel = { gTaskNameFrdAriel, task_frd_ariel_0, task_frd_ariel_1, task_frd_ariel_2, task_frd_ariel_3, 0x164 };
 
-TaskDesc gTaskDescFrdJack = { gUnk_0813ECEC, task_frd_jack_0, task_frd_jack_1, task_frd_jack_2, task_frd_jack_3, 0x16C };
+TaskDesc gTaskDescFrdJack = { gTaskNameFrdJack, task_frd_jack_0, task_frd_jack_1, task_frd_jack_2, task_frd_jack_3, 0x16C };
 
-TaskDesc gTaskDescFrdPan = { gUnk_0813ED3C, task_frd_pan_0, task_frd_pan_1, task_frd_pan_2, task_frd_pan_3, 0x170 };
+TaskDesc gTaskDescFrdPan = { gTaskNameFrdPan, task_frd_pan_0, task_frd_pan_1, task_frd_pan_2, task_frd_pan_3, 0x170 };
 
-TaskDesc gTaskDescFrdAladdin = { gUnk_0813ED7C, task_frd_aladdin_0, task_frd_aladdin_1, task_frd_aladdin_2, task_frd_aladdin_3, 0x160 };
+TaskDesc gTaskDescFrdAladdin = { gTaskNameFrdAladdin, task_frd_aladdin_0, task_frd_aladdin_1, task_frd_aladdin_2, task_frd_aladdin_3, 0x160 };
 
-TaskDesc gTaskDescFrdBeast = { gUnk_0813EDB0, task_frd_beast_0, task_frd_beast_1, task_frd_beast_2, task_frd_beast_3, 0x160 };
+TaskDesc gTaskDescFrdBeast = { gTaskNameFrdBeast, task_frd_beast_0, task_frd_beast_1, task_frd_beast_2, task_frd_beast_3, 0x160 };
 
-TaskDesc gTaskDescPcAcddmg = { gUnk_0813EDC0, task_pc_acddmg_0, task_pc_acddmg_1, 0, 0, 0xC };
+TaskDesc gTaskDescPcAcddmg = { gTaskNamePcAcddmg, task_pc_acddmg_0, task_pc_acddmg_1, 0, 0, 0xC };
 
-TaskDesc gTaskDescHumCloud = { gUnk_0813EF44, task_hum_cloud_0, task_hum_cloud_1, task_hum_cloud_2, task_hum_cloud_3, 0x194 };
+TaskDesc gTaskDescHumCloud = { gTaskNameHumCloud, task_hum_cloud_0, task_hum_cloud_1, task_hum_cloud_2, task_hum_cloud_3, 0x194 };
 
-TaskDesc gTaskDescHumHook = { gUnk_0813F080, task_hum_hook_0, task_hum_hook_1, task_hum_hook_2, task_hum_hook_3, 0x1BC };
+TaskDesc gTaskDescHumHook = { gTaskNameHumHook, task_hum_hook_0, task_hum_hook_1, task_hum_hook_2, task_hum_hook_3, 0x1BC };
 
-TaskDesc gTaskDescHumHookMoon = { gUnk_0813F090, task_hum_hook_moon_0, task_hum_hook_moon_1, task_hum_hook_moon_2, task_hum_hook_moon_3, 0xC };
+TaskDesc gTaskDescHumHookMoon = { gTaskNameHumHookMoon, task_hum_hook_moon_0, task_hum_hook_moon_1, task_hum_hook_moon_2, task_hum_hook_moon_3, 0xC };
 
-TaskDesc gTaskDescHumHookBomb = { gUnk_0813F0A4, task_hum_hook_bomb_0, task_hum_hook_bomb_1, task_hum_hook_bomb_2, task_hum_hook_bomb_3, 0x54 };
+TaskDesc gTaskDescHumHookBomb = { gTaskNameHumHookBomb, task_hum_hook_bomb_0, task_hum_hook_bomb_1, task_hum_hook_bomb_2, task_hum_hook_bomb_3, 0x54 };
 
-TaskDesc gTaskDescHumAnsem = { gUnk_0813F204, task_hum_ansem_0, task_hum_ansem_1, task_hum_ansem_2, task_hum_ansem_3, 0x1DC };
+TaskDesc gTaskDescHumAnsem = { gTaskNameHumAnsem, task_hum_ansem_0, task_hum_ansem_1, task_hum_ansem_2, task_hum_ansem_3, 0x1DC };
 
-TaskDesc gTaskDescHumHades = { gUnk_0813F340, task_hum_hades_0, task_hum_hades_1, task_hum_hades_2, task_hum_hades_3, 0x280 };
+TaskDesc gTaskDescHumHades = { gTaskNameHumHades, task_hum_hades_0, task_hum_hades_1, task_hum_hades_2, task_hum_hades_3, 0x280 };
 
-TaskDesc gTaskDescHumMahluxia = { gUnk_0813F46C, task_hum_mahluxia_0, task_hum_mahluxia_1, task_hum_mahluxia_2, task_hum_mahluxia_3, 0x3A4 };
+TaskDesc gTaskDescHumMahluxia = { gTaskNameHumMahluxia, task_hum_mahluxia_0, task_hum_mahluxia_1, task_hum_mahluxia_2, task_hum_mahluxia_3, 0x3A4 };
 
-TaskDesc gTaskDescHumLaxene = { gUnk_0813F5A4, task_hum_laxene_0, task_hum_laxene_1, task_hum_laxene_2, task_hum_laxene_3, 0x1A8 };
+TaskDesc gTaskDescHumLaxene = { gTaskNameHumLaxene, task_hum_laxene_0, task_hum_laxene_1, task_hum_laxene_2, task_hum_laxene_3, 0x1A8 };
 
-TaskDesc gTaskDescHumLaxeneKnf = { gUnk_0813F5B4, task_hum_laxene_knf_0, task_hum_laxene_knf_1, task_hum_laxene_knf_2, task_hum_laxene_knf_3, 0x44 };
+TaskDesc gTaskDescHumLaxeneKnf = { gTaskNameHumLaxeneKnf, task_hum_laxene_knf_0, task_hum_laxene_knf_1, task_hum_laxene_knf_2, task_hum_laxene_knf_3, 0x44 };
 
-TaskDesc gTaskDescHumAxcel = { gUnk_0813F784, task_hum_axcel_0, task_hum_axcel_1, task_hum_axcel_2, task_hum_axcel_3, 0x238 };
+TaskDesc gTaskDescHumAxcel = { gTaskNameHumAxcel, task_hum_axcel_0, task_hum_axcel_1, task_hum_axcel_2, task_hum_axcel_3, 0x238 };
 
-TaskDesc gTaskDescHumAxcelPtc = { gUnk_0813F794, task_hum_axcel_ptc_0, task_hum_axcel_ptc_1, task_hum_axcel_ptc_2, task_hum_axcel_ptc_3, 0x30 };
+TaskDesc gTaskDescHumAxcelPtc = { gTaskNameHumAxcelPtc, task_hum_axcel_ptc_0, task_hum_axcel_ptc_1, task_hum_axcel_ptc_2, task_hum_axcel_ptc_3, 0x30 };
 
-TaskDesc gTaskDescHumVixen = { gUnk_0813F8E4, task_hum_vixen_0, task_hum_vixen_1, task_hum_vixen_2, task_hum_vixen_3, 0x218 };
+TaskDesc gTaskDescHumVixen = { gTaskNameHumVixen, task_hum_vixen_0, task_hum_vixen_1, task_hum_vixen_2, task_hum_vixen_3, 0x218 };
 
-TaskDesc gTaskDescHumVixenNdl = { gUnk_0813F8F4, task_hum_vixen_ndl_0, task_hum_vixen_ndl_1, task_hum_vixen_ndl_2, task_hum_vixen_ndl_3, 0x30 };
+TaskDesc gTaskDescHumVixenNdl = { gTaskNameHumVixenNdl, task_hum_vixen_ndl_0, task_hum_vixen_ndl_1, task_hum_vixen_ndl_2, task_hum_vixen_ndl_3, 0x30 };
 
-TaskDesc gTaskDescHumVixenIce = { gUnk_0813F908, task_hum_vixen_ice_0, task_hum_vixen_ice_1, task_hum_vixen_ice_2, task_hum_vixen_ice_3, 0x94 };
+TaskDesc gTaskDescHumVixenIce = { gTaskNameHumVixenIce, task_hum_vixen_ice_0, task_hum_vixen_ice_1, task_hum_vixen_ice_2, task_hum_vixen_ice_3, 0x94 };
 
-TaskDesc gTaskDescHumVixenFrz = { gUnk_0813F9EC, task_hum_vixen_frz_0, task_hum_vixen_frz_1, task_hum_vixen_frz_2, task_hum_vixen_frz_3, 0x38 };
+TaskDesc gTaskDescHumVixenFrz = { gTaskNameHumVixenFrz, task_hum_vixen_frz_0, task_hum_vixen_frz_1, task_hum_vixen_frz_2, task_hum_vixen_frz_3, 0x38 };
 
-TaskDesc gTaskDescHumVixenFrg = { gUnk_0813FA78, task_hum_vixen_frg_0, task_hum_vixen_frg_1, task_hum_vixen_frg_2, task_hum_vixen_frg_3, 0x220 };
+TaskDesc gTaskDescHumVixenFrg = { gTaskNameHumVixenFrg, task_hum_vixen_frg_0, task_hum_vixen_frg_1, task_hum_vixen_frg_2, task_hum_vixen_frg_3, 0x220 };
 
-TaskDesc gTaskDescHumLexceus = { gUnk_0813FB54, task_hum_lexceus_0, task_hum_lexceus_1, task_hum_lexceus_2, task_hum_lexceus_3, 0x204 };
+TaskDesc gTaskDescHumLexceus = { gTaskNameHumLexceus, task_hum_lexceus_0, task_hum_lexceus_1, task_hum_lexceus_2, task_hum_lexceus_3, 0x204 };
 
-TaskDesc gTaskDescHumLexTmh = { gUnk_0813FB68, task_hum_lex_tmh_0, task_hum_lex_tmh_1, task_hum_lex_tmh_2, task_hum_lex_tmh_3, 0x4C };
+TaskDesc gTaskDescHumLexTmh = { gTaskNameHumLexTmh, task_hum_lex_tmh_0, task_hum_lex_tmh_1, task_hum_lex_tmh_2, task_hum_lex_tmh_3, 0x4C };
 
-TaskDesc gTaskDescHumLexTmh0 = { gUnk_0813FB7C, task_hum_lex_tmh0_0, task_hum_lex_tmh0_1, task_hum_lex_tmh0_2, task_hum_lex_tmh0_3, 0x38 };
+TaskDesc gTaskDescHumLexTmh0 = { gTaskNameHumLexTmh0, task_hum_lex_tmh0_0, task_hum_lex_tmh0_1, task_hum_lex_tmh0_2, task_hum_lex_tmh0_3, 0x38 };
 
-TaskDesc gTaskDescHumLexRock = { gUnk_0813FB90, task_hum_lex_rock_0, task_hum_lex_rock_1, task_hum_lex_rock_2, task_hum_lex_rock_3, 0x2C4 };
+TaskDesc gTaskDescHumLexRock = { gTaskNameHumLexRock, task_hum_lex_rock_0, task_hum_lex_rock_1, task_hum_lex_rock_2, task_hum_lex_rock_3, 0x2C4 };
 
-TaskDesc gTaskDescHumMahluxiaFlw = { gUnk_0813FBA4, task_hum_mahluxia_flw_0, task_hum_mahluxia_flw_1, task_hum_mahluxia_flw_2, task_hum_mahluxia_flw_3, 0x3C };
+TaskDesc gTaskDescHumMahluxiaFlw = { gTaskNameHumMahluxiaFlw, task_hum_mahluxia_flw_0, task_hum_mahluxia_flw_1, task_hum_mahluxia_flw_2, task_hum_mahluxia_flw_3, 0x3C };
 
-TaskDesc gTaskDescHumRiku = { gUnk_0813FD48, task_hum_riku_0, task_hum_riku_1, task_hum_riku_2, task_hum_riku_3, 0x384 };
+TaskDesc gTaskDescHumRiku = { gTaskNameHumRiku, task_hum_riku_0, task_hum_riku_1, task_hum_riku_2, task_hum_riku_3, 0x384 };
 
-TaskDesc gTaskDescHumLeon = { gUnk_0813FDC4, task_hum_leon_0, task_hum_leon_1, task_hum_leon_2, task_hum_leon_3, 0x19C };
+TaskDesc gTaskDescHumLeon = { gTaskNameHumLeon, task_hum_leon_0, task_hum_leon_1, task_hum_leon_2, task_hum_leon_3, 0x19C };
 
-TaskDesc gTaskDescHumRobe = { gUnk_0813FE10, task_hum_robe_0, task_hum_robe_1, task_hum_robe_2, task_hum_robe_3, 0x18C };
+TaskDesc gTaskDescHumRobe = { gTaskNameHumRobe, task_hum_robe_0, task_hum_robe_1, task_hum_robe_2, task_hum_robe_3, 0x18C };

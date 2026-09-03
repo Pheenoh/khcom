@@ -12,9 +12,9 @@ typedef struct VsActorSub {
 
 typedef struct VsActor {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
@@ -29,7 +29,7 @@ typedef struct VsActor {
     s16 unk_2C;
     s16 unk_2E;
     u8 unk_30[0x04];
-    u64 unk_34;
+    u64 flags;
     u8 unk_3C[0x04];
     u32 unk_40;
     u8 unk_44[0x04];
@@ -91,7 +91,7 @@ typedef struct VsTaskArg {
     u32 unk_04 : 8;
 } VsTaskArg;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 world;
@@ -100,9 +100,9 @@ typedef struct UnkStruct_02039BB0 {
     u16 unk_010;
     u8 unk_012[0x1A6];
     u32 unk_1B8;
-} UnkStruct_02039BB0;
+} GameState;
 
-typedef struct VsBattleWork {
+typedef struct BtlWork {
     u8 unk_000[0x10];
     s32 unk_010;
     s32 unk_014;
@@ -141,7 +141,7 @@ typedef struct VsBattleWork {
     u16 unk_1C4;
     u16 unk_1C6;
     u8 unk_1C8[0x08];
-} VsBattleWork;
+} BtlWork;
 
 typedef struct EmyDef {
     void* unk_00;
@@ -165,11 +165,11 @@ typedef struct EmyObj {
 } EmyObj;
 
 typedef struct EmyWork {
-    void* unk_000;
+    void* tiles;
     void* unk_004;
     void* unk_008;
-    void* unk_00C;
-    AnimState unk_010;
+    void* gfx;
+    AnimState anim;
     TaskPool unk_028;
     VsActor unk_03C;
     u32 unk_14C;
@@ -180,7 +180,7 @@ typedef struct EmyWork {
     u8 unk_15A;
     u8 unk_15B;
     EmyDef* unk_15C;
-    u8 unk_160;
+    u8 angle;
     u8 unk_161;
     u16 unk_162;
     s32 unk_164;
@@ -195,25 +195,25 @@ typedef struct EmyWork {
 
 typedef struct HumSub {
     void* unk_00;
-    void* unk_04;
-    void* unk_08;
+    void* tiles;
+    void* palette;
     void* unk_0C;
-    AnimState unk_10;
+    AnimState anim;
     s32 unk_28;
     s32 unk_2C;
     s32 unk_30;
     u16 unk_34;
     u16 unk_36;
-    void* unk_38;
+    void* gfx;
 } HumSub;
 
 typedef struct HumWork {
     void* unk_000;
-    void* unk_004;
-    void* unk_008;
+    void* tiles;
+    void* palette;
     HumSub* unk_00C;
     HumSub* unk_010;
-    AnimState unk_014;
+    AnimState anim;
     TaskPool unk_02C;
     VsActor unk_040;
     s16 unk_150;
@@ -231,7 +231,7 @@ typedef struct HumWork {
     void* unk_178;
     u16 unk_17C;
     u16 unk_17E;
-    void* unk_180;
+    void* gfx;
     u32 unk_184;
 } HumWork;
 
@@ -256,13 +256,13 @@ typedef struct HumDef {
     u32 unk_0C;
 } HumDef;
 
-extern VsBattleWork* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
 extern u8 gUnk_02039B98;
-extern VsBattleWork* gUnk_02039B9C;
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern BtlWork* gUnk_02039B9C;
+extern GameState gGameState;
 extern u32 gSioPlayerId;
 extern CharaLinkData gUnk_0203AA10;
 extern CharaLinkData gUnk_0203AAC0;
@@ -299,13 +299,13 @@ void m4aSongNumStart(u16 id);
 u8 AnimIsFinished(AnimState* a);
 void ApproachValue(s32* value, s32 target, u16 steps);
 u16 GetRandom(void);
-void func_08004F08(void);
+void SetBgMode2(void);
 void func_080063A8(void);
 void func_08006238(s32 a, s32 b, s32 c);
 u8 func_08006314(void);
 void func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
 void func_0800592C(s32* value, s32 target, u16 steps);
-void func_08005B64(void* a);
+void AnimReset(void* a);
 void func_08006120(s32 a, s32 b);
 void func_08010CC8(void);
 void func_0801071C(void);

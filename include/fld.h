@@ -8,7 +8,7 @@
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
-    u8 unk_14;
+    u8 angle;
     u8 unk_15[0x25];
     u16 unk_3A;
     s32 unk_3C;
@@ -27,7 +27,7 @@ typedef struct UnkStruct_02039BA0 {
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_00;
     u8 unk_01[0x13];
     FldPos unk_14;
@@ -40,12 +40,12 @@ typedef struct UnkStruct_02039BB0 {
     s32 unk_34;
     s32 unk_38;
     s32 unk_3C;
-} UnkStruct_02039BB0;
+} GameState;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 typedef struct FldWork {
-    void* unk_00;
-    FldRes* unk_04;
+    void* tiles;
+    FldRes* palette;
     u8 unk_08[0x0A];
     u16 unk_12;
     u8 unk_14[0x02];
@@ -87,8 +87,8 @@ extern FldAnimDef gUnk_0813CDDC[][5];
 typedef struct FldShadowWork {
     s32 unk_00;
     s32 unk_04;
-    void* unk_08;
-    void* unk_0C;
+    void* tiles;
+    void* palette;
     FldActor* unk_10;
     u8 unk_14[0x18];
 } FldShadowWork;
@@ -102,7 +102,7 @@ void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_0803473C(FldWork* work, s32 index, u16 flags);
 u8 GetKeyReleaseTime(s32 a);
 void TaskPoolUpdate(void* a);
-void func_08000F8C(void* task, void* fn);
+void SetTaskUpdate(void* task, void* fn);
 u8 AnimIsFinished(void* a);
 void func_080062F4(u16 a, s32 b);
 void func_08012324(void* a, s32 x, s32 y, s32 z);

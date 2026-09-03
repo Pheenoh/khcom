@@ -7,7 +7,7 @@
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
-    u8 unk_14;
+    u8 angle;
     u8 unk_15[0x3B];
 } FldActor;
 
@@ -45,10 +45,10 @@ typedef struct RoomCreateWork {
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern s16 gSineTable[];
-extern u8 gUnk_0203DB10[];
+extern u8 gMPlayInfo_BGM[];
 extern TaskDesc gTaskDescRomcriEff;
 extern TaskDesc gTaskDescRomcriEff2;
-extern TaskDesc gUnk_09EE7668;
+extern TaskDesc gTaskDescSpotLight;
 
 struct Task;
 

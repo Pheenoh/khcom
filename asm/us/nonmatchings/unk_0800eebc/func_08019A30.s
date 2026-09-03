@@ -45,7 +45,7 @@ _08019A6C:
 	beq _08019AB4
 	adds r0, r5, #0x0
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r3, r0, #0x0
 	cmp r3, #0x00
 	beq _08019AC4
@@ -64,7 +64,7 @@ _08019A92:
 	strh r0, [r1, #0x00]
 	adds r0, r3, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r3, r0, #0x0
 	cmp r3, #0x00
 	bne _08019A92

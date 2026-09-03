@@ -9,7 +9,7 @@ u32 gUnk_02034AA0;
 #include "gba/keys.h"
 
 void mode_eventselect_0(void) {
-    func_08004DB0();
+    SetBgMode0();
     func_08085FB0();
     func_08085C3C();
     func_08093BB4();
@@ -72,10 +72,10 @@ void mode_eventselect_1(void) {
 
     switch (gUnk_02034A96) {
     case 0:
-        func_0805FCB0(20, 80, 2, gUnk_09EE42C8[gUnk_09033D50[gUnk_02034A94]]);
+        func_0805FCB0(20, 80, 2, gEventNames[gUnk_09033D50[gUnk_02034A94]]);
         break;
     case 1:
-        func_0805FCB0(20, 80, 2, gUnk_09EE42C8[gUnk_09033E76[gUnk_02034A94]]);
+        func_0805FCB0(20, 80, 2, gEventNames[gUnk_09033E76[gUnk_02034A94]]);
         break;
     }
 
@@ -102,48 +102,48 @@ void mode_eventselect_2(void) {
     func_080609A0();
 }
 
-void func_08075360(EffectWork* w, void* arg) {
+void Hanabira_0(EffectWork* w, void* arg) {
     s32 i;
 
     TaskPoolInit(&w->unk_4C, 16);
 
     for (i = 15; i >= 0; i--) {
-        TaskCreate(&w->unk_4C, &gUnk_09EE47D4, arg);
+        TaskCreate(&w->unk_4C, &gTaskDescHanabiraC, arg);
     }
 }
 
-s32 func_0807538C(EffectWork* w) {
+s32 Hanabira_1(EffectWork* w) {
     TaskPoolUpdate(&w->unk_4C);
 
     return 1;
 }
 
-void func_0807539C(EffectWork* w) {
+void Hanabira_2(EffectWork* w) {
     TaskPoolDraw(&w->unk_4C);
 }
 
-void func_080753A8(EffectWork* w) {
+void Hanabira_3(EffectWork* w) {
     TaskPoolDestroy(&w->unk_4C);
 }
 
-void func_080753B4(EffectWork* w, EventActor* arg) {
+void Hanabira_c_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->unk_00 = arg;
     b = &arg->unk_28;
-    w->unk_08 = LoadObjPalette(gUnk_08F6DC84, 32);
-    w->unk_04 = LoadObjTiles(gUnk_08BCB3D8, 256);
+    w->palette = LoadObjPalette(gUnk_08F6DC84, 32);
+    w->tiles = LoadObjTiles(gUnk_08BCB3D8, 256);
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
     w->unk_34 = b->unk_0C - 0x3000;
     w->unk_3C = GetRandom() % 717 - 358;
     w->unk_40 = -(GetRandom() % 539 + 102);
-    AnimInit(&w->unk_14, gUnk_09EE1CB4, gUnk_09EE1C94);
-    AnimStart(&w->unk_14, GetRandom() & 1, 1);
+    AnimInit(&w->anim, gUnk_09EE1CB4, gUnk_09EE1C94);
+    AnimStart(&w->anim, GetRandom() & 1, 1);
     w->unk_49 = 0;
 }
 
-s32 func_08075460(EffectWork* w) {
+s32 Hanabira_c_1(EffectWork* w) {
     s32 v;
     s32 r;
 
@@ -178,12 +178,12 @@ s32 func_08075460(EffectWork* w) {
         break;
     }
 
-    w->unk_0C = AnimUpdate(&w->unk_14);
+    w->gfx = AnimUpdate(&w->anim);
 
     return 1;
 }
 
-void func_08075530(EffectWork* w) {
+void Hanabira_c_2(EffectWork* w) {
     s32 x;
     s32 y;
     s32 t;
@@ -191,72 +191,72 @@ void func_08075530(EffectWork* w) {
     x = (w->unk_2C >> 8) - (gUnk_02039DC8->unk_58 >> 8);
     t = w->unk_30 >> 8;
     y = t + (w->unk_34 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
-    DrawSprite(x, y, w->unk_0C, w->unk_04, w->unk_08, 0, 0x800, (u16)(-0x1004 - t * 4));
+    DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, (u16)(-0x1004 - t * 4));
 }
 
-void func_08075590(EffectWork* w) {
-    ReleaseObjTiles(w->unk_04);
-    ReleaseObjPalette(w->unk_08);
+void Hanabira_c_3(EffectWork* w) {
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
-void func_080755A8(EffectWork* w, EventActor* arg) {
+void smoke_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->unk_00 = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08 - 0x800;
-    w->unk_04 = AllocObjTiles(128, 0);
-    w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, gUnk_093215CA);
-    AnimInit(&w->unk_14, gUnk_09EEFD78, gUnk_09EEFD60);
-    AnimStart(&w->unk_14, 0, 1);
-    w->unk_0C = AnimGetGfx(&w->unk_14);
+    w->tiles = AllocObjTiles(128, 0);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+    func_08002A10(w->tiles, gUnk_093215CA);
+    AnimInit(&w->anim, gUnk_09EEFD78, gUnk_09EEFD60);
+    AnimStart(&w->anim, 0, 1);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 1;
     w->unk_46 = 0;
 }
 
-void func_08075624(EffectWork* w, EventActor* arg) {
+void Exclamation_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->unk_00 = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
-    w->unk_04 = AllocObjTiles(128, 0);
-    w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
+    w->tiles = AllocObjTiles(128, 0);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
 
     if (func_08006314() == 0) {
-        func_080062F4(((UnkStruct_080038C8*)w->unk_08)->unk_06 + 16, 1);
+        func_080062F4(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
     }
 
-    func_08002A10(w->unk_04, gUnk_09320796);
-    AnimInit(&w->unk_14, gUnk_09EEFD38, gUnk_09EEFCAC);
-    AnimStart(&w->unk_14, 0, 0);
-    w->unk_0C = AnimGetGfx(&w->unk_14);
+    func_08002A10(w->tiles, gUnk_09320796);
+    AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+    AnimStart(&w->anim, 0, 0);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 1;
     w->unk_46 = 0;
 }
 
-void func_080756B0(EffectWork* w, EventActor* arg) {
+void balloon_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->unk_00 = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
-    w->unk_04 = AllocObjTiles(128, 0);
-    w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, gUnk_09320796);
-    AnimInit(&w->unk_14, gUnk_09EEFD38, gUnk_09EEFCAC);
-    AnimStart(&w->unk_14, 1, 1);
-    w->unk_0C = AnimGetGfx(&w->unk_14);
+    w->tiles = AllocObjTiles(128, 0);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+    func_08002A10(w->tiles, gUnk_09320796);
+    AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+    AnimStart(&w->anim, 1, 1);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 0;
     w->unk_46 = 0;
 }
 
 s32 func_08075720(EffectWork* w) {
-    w->unk_0C = AnimUpdate(&w->unk_14);
+    w->gfx = AnimUpdate(&w->anim);
 
     if (w->unk_00->unk_1B2 == 0) {
         return 0;
@@ -265,9 +265,9 @@ s32 func_08075720(EffectWork* w) {
     return 1;
 }
 
-s32 func_08075748(EffectWork* w) {
+s32 Exclamation_1(EffectWork* w) {
     w->unk_46++;
-    w->unk_0C = AnimUpdate(&w->unk_14);
+    w->gfx = AnimUpdate(&w->anim);
 
     if (w->unk_00->unk_1B2 == 0 || w->unk_46 == 50) {
         return 0;
@@ -289,38 +289,38 @@ void func_08075780(EffectWork* w) {
     DrawSprite((w->unk_2C >> 8) - (gUnk_02039DC8->unk_58 >> 8),
                (y = (w->unk_30 >> 8) + gUnk_0903380C[w->unk_00->unk_26][0]) -
                    (gUnk_02039DC8->unk_5C >> 8),
-               w->unk_0C, w->unk_04, w->unk_08, 0, pr, 50);
+               w->gfx, w->tiles, w->palette, 0, pr, 50);
 }
 
 void func_080757F4(EffectWork* w) {
-    ReleaseObjTiles(w->unk_04);
-    ReleaseObjPalette(w->unk_08);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
-void func_0807580C(EffectWork* w, EventActor* arg) {
+void Question_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->unk_00 = arg;
     b = &arg->unk_28;
     w->unk_2C = b->unk_04;
     w->unk_30 = b->unk_08;
-    w->unk_04 = AllocObjTiles(128, 0);
-    w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, gUnk_09320796);
-    AnimInit(&w->unk_14, gUnk_09EEFD38, gUnk_09EEFCAC);
-    AnimStart(&w->unk_14, 5, 0);
-    w->unk_0C = AnimGetGfx(&w->unk_14);
+    w->tiles = AllocObjTiles(128, 0);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+    func_08002A10(w->tiles, gUnk_09320796);
+    AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+    AnimStart(&w->anim, 5, 0);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 0;
     w->unk_44 = 0;
     w->unk_46 = 0;
 }
 
-s32 func_08075880(EffectWork* w) {
-    w->unk_0C = AnimUpdate(&w->unk_14);
+s32 Question_1(EffectWork* w) {
+    w->gfx = AnimUpdate(&w->anim);
     w->unk_44++;
 
     if (w->unk_44 == 12) {
-        AnimStart(&w->unk_14, 6, 1);
+        AnimStart(&w->anim, 6, 1);
     }
 
     if (w->unk_00->unk_1B2 == 0) {
@@ -335,7 +335,7 @@ s32 func_08075880(EffectWork* w) {
 INCLUDE_ASM("mode_eventselect/func_080758D0.s");
 
 s32 func_080759B0(EffectWork* w) {
-    w->unk_0C = AnimUpdate(&w->unk_14);
+    w->gfx = AnimUpdate(&w->anim);
     w->unk_46++;
     w->unk_38 += 256;
 
@@ -357,13 +357,13 @@ void func_080759E0(EffectWork* w) {
 
     DrawSprite((w->unk_2C >> 8) - (gUnk_02039DC8->unk_58 >> 8),
                ((w->unk_30 + w->unk_38) >> 8) - (gUnk_02039DC8->unk_5C >> 8),
-               w->unk_0C, w->unk_04, w->unk_08, 0, pr,
+               w->gfx, w->tiles, w->palette, 0, pr,
                (u16)(-0x1004 - (w->unk_30 >> 8) * 4));
 }
 
 void func_08075A54(EffectWork* w) {
-    ReleaseObjTiles(w->unk_04);
-    ReleaseObjPalette(w->unk_08);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     gUnk_02039DC8->unk_86--;
 }
 
@@ -374,18 +374,18 @@ void func_08075A7C(EffectWork* w, EventActor* arg) {
     b = &arg->unk_28;
     w->unk_2C = b->unk_04 - 1536;
     w->unk_30 = b->unk_08 + 3072;
-    w->unk_04 = AllocObjTiles(128, 0);
-    w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, gUnk_09321804);
-    AnimInit(&w->unk_14, gUnk_09EEFD9C, gUnk_09EEFD7C);
-    AnimStart(&w->unk_14, 0, 1);
-    w->unk_0C = AnimGetGfx(&w->unk_14);
+    w->tiles = AllocObjTiles(128, 0);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+    func_08002A10(w->tiles, gUnk_09321804);
+    AnimInit(&w->anim, gUnk_09EEFD9C, gUnk_09EEFD7C);
+    AnimStart(&w->anim, 0, 1);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 1;
     w->unk_46 = 0;
 }
 
 s32 func_08075AFC(EffectWork* w) {
-    w->unk_0C = AnimUpdate(&w->unk_14);
+    w->gfx = AnimUpdate(&w->anim);
     w->unk_46++;
 
     if (w->unk_46 > 44) {
@@ -412,18 +412,18 @@ void func_08075B24(EffectWork* w, EventActor* arg) {
         break;
     }
 
-    w->unk_04 = AllocObjTiles(128, 0);
-    w->unk_08 = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->unk_04, gUnk_09321804);
-    AnimInit(&w->unk_14, gUnk_09EEFD9C, gUnk_09EEFD7C);
-    AnimStart(&w->unk_14, 1, 1);
-    w->unk_0C = AnimGetGfx(&w->unk_14);
+    w->tiles = AllocObjTiles(128, 0);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+    func_08002A10(w->tiles, gUnk_09321804);
+    AnimInit(&w->anim, gUnk_09EEFD9C, gUnk_09EEFD7C);
+    AnimStart(&w->anim, 1, 1);
+    w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 1;
     w->unk_46 = 0;
 }
 
 s32 func_08075BC4(EffectWork* w) {
-    w->unk_0C = AnimUpdate(&w->unk_14);
+    w->gfx = AnimUpdate(&w->anim);
     w->unk_46++;
 
     if (w->unk_46 > 8) {
@@ -433,7 +433,7 @@ s32 func_08075BC4(EffectWork* w) {
     return 1;
 }
 
-void func_08075BEC(EffectWork* w, EventActor* arg) {
+void down_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
     DownWork* s;
     u8 i;
@@ -456,9 +456,9 @@ void func_08075BEC(EffectWork* w, EventActor* arg) {
         break;
     }
 
-    w->unk_04 = func_080038C8(32);
-    func_080038E4(w->unk_04, gUnk_09EEA19C[3], gUnk_0908C686);
-    w->unk_08 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->tiles = func_080038C8(32);
+    func_080038E4(w->tiles, gUnk_09EEA19C[3], gUnk_0908C686);
+    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_10 = EwramAlloc(sizeof(DownWork));
     s = w->unk_10;
 
@@ -468,7 +468,7 @@ void func_08075BEC(EffectWork* w, EventActor* arg) {
     }
 }
 
-s32 func_08075CAC(EffectWork* w) {
+s32 down_1(EffectWork* w) {
     DownWork* s;
     u8 i;
 
@@ -494,7 +494,7 @@ s32 func_08075CAC(EffectWork* w) {
     return 1;
 }
 
-s32 func_08075D58(EffectWork* w) {
+s32 down_2(EffectWork* w) {
     DownWork* s;
     u16 pr;
     u8 i;
@@ -505,24 +505,24 @@ s32 func_08075D58(EffectWork* w) {
     for (i = 0; i < 8; i++) {
         DrawSprite((s->unk_00[i] >> 8) - (gUnk_02039DC8->unk_58 >> 8),
                    (s->unk_20[i] >> 8) - (gUnk_02039DC8->unk_5C >> 8), 0,
-                   w->unk_04, w->unk_08, 0, pr, 50);
+                   w->tiles, w->palette, 0, pr, 50);
     }
 }
 
-void func_08075DBC(EffectWork* w) {
-    ReleaseObjTiles(w->unk_04);
-    ReleaseObjPalette(w->unk_08);
+void down_3(EffectWork* w) {
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     EwramFree(w->unk_10);
 }
 
-void func_08075DD8(EffectWork* w, void* arg) {
+void Tinkerbell_0(EffectWork* w, void* arg) {
     w->unk_00 = arg;
     gUnk_02039DC8->unk_86 = 0;
     w->unk_44 = 0;
     TaskPoolInit(&w->unk_4C, 8);
 }
 
-s32 func_08075DFC(EffectWork* w) {
+s32 Tinkerbell_1(EffectWork* w) {
     w->unk_44++;
 
     if (w->unk_44 == 5) {
@@ -538,36 +538,36 @@ s32 func_08075DFC(EffectWork* w) {
     return 1;
 }
 
-void func_08075E48(EffectWork* w) {
+void Tinkerbell_2(EffectWork* w) {
     TaskPoolDraw(&w->unk_4C);
 }
 
-void func_08075E54(EffectWork* w) {
+void Tinkerbell_3(EffectWork* w) {
     TaskPoolDestroy(&w->unk_4C);
 }
 
 void func_08075E60(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE48AC, h);
+    TaskCreate(&h->unk_10, &gTaskDescTinkerbell, h);
 }
 
 void func_08075E74(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE4894, h);
+    TaskCreate(&h->unk_10, &gTaskDescDown, h);
 }
 
 void func_08075E88(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE47EC, h);
+    TaskCreate(&h->unk_10, &gTaskDescSmoke, h);
 }
 
 void func_08075E9C(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE4804, h);
+    TaskCreate(&h->unk_10, &gTaskDescExclamation, h);
 }
 
 void func_08075EB0(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE481C, h);
+    TaskCreate(&h->unk_10, &gTaskDescBalloon, h);
 }
 
 void func_08075EC4(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE4834, h);
+    TaskCreate(&h->unk_10, &gTaskDescQuestion, h);
 }
 
 void func_08075ED8(EventTaskHost* h) {
@@ -579,10 +579,10 @@ void func_08075EEC(EventTaskHost* h) {
 }
 
 void func_08075F00(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE47BC, h);
+    TaskCreate(&h->unk_10, &gTaskDescHanabira, h);
 }
 
-void func_08075F14(EvSoundWork* w, u8* arg) {
+void EV_SOUND_0(EvSoundWork* w, u8* arg) {
     u8 i;
 
     w->unk_04 = arg[0];
@@ -594,12 +594,12 @@ void func_08075F14(EvSoundWork* w, u8* arg) {
     gUnk_02039DD0 = EwramAlloc(256);
 
     for (i = 0; i < 64; i++) {
-        gUnk_02039DD0[i].unk_00 = 0;
-        gUnk_02039DD0[i].unk_02 = 256;
+        gUnk_02039DD0[i].pan = 0;
+        gUnk_02039DD0[i].volume = 256;
     }
 }
 
-s32 func_08075F68(EvSoundWork* w) {
+s32 EV_SOUND_1(EvSoundWork* w) {
     EvSoundCue* p;
     MusicPlayerInfo* mp;
     u8 idx;
@@ -618,8 +618,8 @@ s32 func_08075F68(EvSoundWork* w) {
                 m4aSongNumStartOrContinue(p->unk_00);
                 idx = gSongTable[p->unk_00].ms;
                 m4aMPlayImmInit(gMPlayTable[idx].info);
-                gUnk_02039DD0[idx].unk_00 = 0;
-                gUnk_02039DD0[idx].unk_02 = 256;
+                gUnk_02039DD0[idx].pan = 0;
+                gUnk_02039DD0[idx].volume = 256;
             } else {
                 m4aSongNumStop(p->unk_00);
             }
@@ -649,18 +649,18 @@ s32 func_08075F68(EvSoundWork* w) {
 
     for (i = 16; i <= 24; i++) {
         m4aMPlayPanpotControl(gMPlayTable[i].info, 255,
-                              gUnk_02039DD0[i].unk_00);
+                              gUnk_02039DD0[i].pan);
         m4aMPlayVolumeControl(gMPlayTable[i].info, 255,
-                              gUnk_02039DD0[i].unk_02);
+                              gUnk_02039DD0[i].volume);
     }
 
     return 1;
 }
 
-void func_080760C0(void) {
+void EV_SOUND_2(void) {
 }
 
-void func_080760C4(void) {
+void EV_SOUND_3(void) {
     EwramFree(gUnk_02039DD0);
 }
 
@@ -701,13 +701,13 @@ void func_08076110(u16 song, s16 x, s16 y) {
     m4aMPlayImmInit(gMPlayTable[idx].info);
 
     if ((u16)x > 240) {
-        gUnk_02039DD0[idx].unk_00 = v;
-        gUnk_02039DD0[idx].unk_02 = v;
+        gUnk_02039DD0[idx].pan = v;
+        gUnk_02039DD0[idx].volume = v;
     }
 
     if ((u16)y > 160) {
-        gUnk_02039DD0[idx].unk_00 = v;
-        gUnk_02039DD0[idx].unk_02 = v;
+        gUnk_02039DD0[idx].pan = v;
+        gUnk_02039DD0[idx].volume = v;
     }
 
     sx = x;
@@ -723,7 +723,7 @@ void func_08076110(u16 song, s16 x, s16 y) {
         pan = -128;
     }
 
-    gUnk_02039DD0[idx].unk_00 = pan;
+    gUnk_02039DD0[idx].pan = pan;
 
     if (120 - sx >= 0) {
         t = 120 - sx;
@@ -746,29 +746,29 @@ void func_08076110(u16 song, s16 x, s16 y) {
         v = 256;
     }
 
-    gUnk_02039DD0[idx].unk_02 = 256 - v;
+    gUnk_02039DD0[idx].volume = 256 - v;
 
-    if (gUnk_02039DD0[idx].unk_02 < 12) {
-        gUnk_02039DD0[idx].unk_02 = 12;
+    if (gUnk_02039DD0[idx].volume < 12) {
+        gUnk_02039DD0[idx].volume = 12;
     }
 }
 
-void func_08076214(u8* work) {
+void Event_Debug_0(u8* work) {
     *(void**)&work[0x00] = func_080668F0();
     *(void**)&work[0x04] = func_08066904();
 }
 
-s32 func_0807622C(u8* work) {
+s32 Event_Debug_1(u8* work) {
     work[0x28] = _080669DC(gUnk_02039DC8->unk_6C, &work[0x08]);
     return 1;
 }
 
-void func_08076250(u8* work) {
+void Event_Debug_2(u8* work) {
     func_08066DC0(0, 0, &work[0x08], *(s32*)&work[0x00], *(s32*)&work[0x04], 0,
                   work[0x28]);
 }
 
-void func_08076274(s32* p) {
+void Event_Debug_3(s32* p) {
     func_08066918(p[0], p[1]);
 }
 
@@ -1006,7 +1006,7 @@ void func_08077E10(CardBattleWork* w) {
     gUnk_02039DD4->unk_098 = AnimUpdate(&gUnk_02039DD4->unk_07C);
 
     if (gUnk_02039DD4->unk_0EA != 0 && w->unk_B9 != 0 && w->unk_BA != 0) {
-        DrawSprite(w->unk_A4, 4, gUnk_09EF12E8[0], w->unk_14, w->unk_18, 0, 16,
+        DrawSprite(w->unk_A4, 4, gUnk_09EF12E8[0], w->tiles, w->palette, 0, 16,
                    12);
     }
 
@@ -1039,8 +1039,8 @@ void func_08077E98(CardBattleWork* w) {
     ReleaseObjTiles(gUnk_02039DD4->unk_03C);
     EwramFree(gUnk_02039DD4);
     gUnk_02039DD4 = 0;
-    ReleaseObjTiles(w->unk_14);
-    ReleaseObjPalette(w->unk_18);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 INCLUDE_ASM("mode_eventselect/func_08077F44.s");

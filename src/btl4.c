@@ -2,8 +2,8 @@
 #include "btl4.h"
 
 void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
-    work->unk_00 = AllocObjTiles(0x200, gUnk_08B1FD66);
-    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->tiles = AllocObjTiles(0x200, gUnk_08B1FD66);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
 
     switch (src->unk_12) {
     case 0:
@@ -39,14 +39,14 @@ void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
         break;
     }
 
-    work->unk_0C = src->unk_00;
-    work->unk_10 = src->unk_04;
-    work->unk_14 = src->unk_08;
+    work->x = src->x;
+    work->y = src->y;
+    work->z = src->z;
     work->unk_18 = 0;
 }
 
 s32 task_btl_pop_cb_1(BtlPopCbWork* work) {
-    work->unk_14 -= 192;
+    work->z -= 192;
 
     if (work->unk_18 > 49) {
         return 0;
@@ -60,13 +60,13 @@ void task_btl_pop_cb_2(BtlPopCbWork* work) {
     s16 x;
     s16 y;
 
-    WorldToScreen(&x, &y, work->unk_0C, work->unk_10, work->unk_14);
-    DrawSprite(x, y, work->unk_08, work->unk_00, work->unk_04, 0, 16, 5);
+    WorldToScreen(&x, &y, work->x, work->y, work->z);
+    DrawSprite(x, y, work->unk_08, work->tiles, work->palette, 0, 16, 5);
 }
 
 void task_btl_pop_cb_3(BtlPopCbWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 void* func_0805CDC8(s32 digit, u8 leading) {
@@ -141,8 +141,8 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
 void task_btl_exp_0(BtlExpWork* work) {
     s32 i;
 
-    work->unk_00 = LoadObjPalette(gUnk_08F69BA4, 32);
-    work->unk_04 = AllocObjTiles(0xA0, gUnk_08B25EF0);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->tiles = AllocObjTiles(0xA0, gUnk_08B25EF0);
     work->unk_20 = 0;
 
     for (i = 0; i <= 5; i++) {
@@ -151,34 +151,34 @@ void task_btl_exp_0(BtlExpWork* work) {
     }
 
     work->unk_3C = 0;
-    work->unk_3E = gUnk_02039BB0.level;
-    work->unk_44 = gUnk_02039BB0.exp;
+    work->unk_3E = gGameState.level;
+    work->unk_44 = gGameState.exp;
     work->unk_48 = 0;
     work->unk_40 = 0;
 }
 
 s32 task_btl_exp_1(BtlExpWork* work) {
-    if (gUnk_02039B84->unk_068 & 0x2000) {
+    if (gBtlWork->unk_068 & 0x2000) {
         return 0;
     }
 
-    if (work->unk_3E < gUnk_02039BB0.level) {
-        func_0805CE60(work, gUnk_02039BB0.level);
+    if (work->unk_3E < gGameState.level) {
+        func_0805CE60(work, gGameState.level);
         work->unk_20 = gUnk_08B25E40;
         work->unk_3C = 0;
         work->unk_48 = 3;
-        work->unk_3E = gUnk_02039BB0.level;
+        work->unk_3E = gGameState.level;
         work->unk_40 = 0;
     }
 
     if (work->unk_48 != 3) {
-        if (work->unk_44 < gUnk_02039BB0.exp) {
-            work->unk_40 += gUnk_02039BB0.exp - work->unk_44;
+        if (work->unk_44 < gGameState.exp) {
+            work->unk_40 += gGameState.exp - work->unk_44;
             func_0805CE60(work, work->unk_40);
             work->unk_20 = gUnk_08B25E54;
             work->unk_3C = 0;
             work->unk_48 = 1;
-            work->unk_44 = gUnk_02039BB0.exp;
+            work->unk_44 = gGameState.exp;
         }
     }
 
@@ -187,11 +187,11 @@ s32 task_btl_exp_1(BtlExpWork* work) {
         break;
     case 3:
         if (work->unk_3C > 100) {
-            if (gUnk_02039BB0.level > 98) {
+            if (gGameState.level > 98) {
                 work->unk_48 = 0;
             } else {
                 work->unk_48 = 2;
-                func_0805CE60(work, gUnk_02039BB0.nextExp - gUnk_02039BB0.exp);
+                func_0805CE60(work, gGameState.nextExp - gGameState.exp);
                 work->unk_20 = gUnk_08B25E5E;
             }
             work->unk_3C = 0;
@@ -202,11 +202,11 @@ s32 task_btl_exp_1(BtlExpWork* work) {
         break;
     case 1:
         if (work->unk_3C > 60) {
-            if (gUnk_02039BB0.level > 98) {
+            if (gGameState.level > 98) {
                 work->unk_48 = 0;
             } else {
                 work->unk_48 = 2;
-                func_0805CE60(work, gUnk_02039BB0.nextExp - gUnk_02039BB0.exp);
+                func_0805CE60(work, gGameState.nextExp - gGameState.exp);
                 work->unk_20 = gUnk_08B25E5E;
             }
             work->unk_3C = 0;
@@ -237,7 +237,7 @@ void task_btl_exp_2(BtlExpWork* work) {
     if (work->unk_48 != 0) {
         y = 40;
         x = 0;
-        DrawSprite(0, y, work->unk_20, work->unk_04, work->unk_00, x, 0x410, x);
+        DrawSprite(0, y, work->unk_20, work->tiles, work->palette, x, 0x410, x);
 
         if (work->unk_48 == 2) {
             x = 40;
@@ -247,7 +247,7 @@ void task_btl_exp_2(BtlExpWork* work) {
 
         for (i = 0; i <= 5; i++) {
             if (work->unk_24[i] != 0) {
-                DrawSprite(x, y, work->unk_24[i], work->unk_08[i], work->unk_00, 0, 0x410, 0);
+                DrawSprite(x, y, work->unk_24[i], work->unk_08[i], work->palette, 0, 0x410, 0);
                 x += 8;
             }
         }
@@ -264,52 +264,52 @@ void task_btl_exp_3(BtlExpWork* work) {
         ReleaseObjTiles(work->unk_08[i]);
     }
 
-    ReleaseObjTiles(work->unk_04);
-    ReleaseObjPalette(work->unk_00);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 void task_btl_vslockon_0(BtlVslockonWork* work) {
-    work->unk_00 = LoadObjTiles(gUnk_08B1D8BC, 0x180);
-    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 32);
-    AnimInit(&work->unk_08, gUnk_09EE10F8, gUnk_09EE10EC);
-    AnimStart(&work->unk_08, 0, 1);
-    work->unk_20 = AnimGetGfx(&work->unk_08);
-    gUnk_02039B84->unk_078 = gUnk_02039B9C->unk_07C;
-    gUnk_02039B9C->unk_078 = gUnk_02039B84->unk_07C;
+    work->tiles = LoadObjTiles(gUnk_08B1D8BC, 0x180);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    AnimInit(&work->anim, gUnk_09EE10F8, gUnk_09EE10EC);
+    AnimStart(&work->anim, 0, 1);
+    work->gfx = AnimGetGfx(&work->anim);
+    gBtlWork->unk_078 = gUnk_02039B9C->unk_07C;
+    gUnk_02039B9C->unk_078 = gBtlWork->unk_07C;
 }
 
 s32 task_btl_vslockon_1(BtlVslockonWork* work) {
-    if (gUnk_02039B84->unk_0F4 == 19) {
+    if (gBtlWork->unk_0F4 == 19) {
         gUnk_02039B9C->unk_078 = 0;
     } else {
-        gUnk_02039B9C->unk_078 = gUnk_02039B84->unk_07C;
+        gUnk_02039B9C->unk_078 = gBtlWork->unk_07C;
     }
 
     if (gUnk_02039B9C->unk_0F4 == 19) {
-        gUnk_02039B84->unk_078 = 0;
+        gBtlWork->unk_078 = 0;
     } else {
-        gUnk_02039B84->unk_078 = gUnk_02039B9C->unk_07C;
+        gBtlWork->unk_078 = gUnk_02039B9C->unk_07C;
     }
 
-    work->unk_20 = AnimUpdate(&work->unk_08);
+    work->gfx = AnimUpdate(&work->anim);
     return 1;
 }
 
 void task_btl_vslockon_2(BtlVslockonWork* work) {
     s16 x;
     s16 y;
-    BtlActor* p;
+    BtlWork* p;
 
-    p = gUnk_02039B84->unk_078;
+    p = gBtlWork->unk_078;
     if (p != 0) {
         WorldToScreen(&x, &y, p->unk_004, p->unk_008, p->unk_00C - (p->unk_0A2 << 8));
-        DrawSprite(x, y, work->unk_20, work->unk_00, work->unk_04, 0, 0, 0x100);
+        DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, 0, 0x100);
     }
 }
 
 void task_btl_vslockon_3(BtlVslockonWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 void task_btl_hpoth_0(BtlHpothWork* work) {
@@ -436,7 +436,7 @@ void task_btl_hpoth_0(BtlHpothWork* work) {
 }
 
 s32 task_btl_hpoth_1(BtlHpothWork* work) {
-    BtlActor* actor;
+    BtlWork* actor;
     s32 flag;
     u32 state;
 
@@ -445,7 +445,7 @@ s32 task_btl_hpoth_1(BtlHpothWork* work) {
         return 0;
     }
 
-    if (gUnk_02039B84->unk_068 & 0x2000) {
+    if (gBtlWork->unk_068 & 0x2000) {
         return 0;
     }
 
@@ -680,11 +680,11 @@ void task_btl_hpoth_3(BtlHpothWork* work) {
 
 void func_0805DA64(u16 a) {
     gDispCnt = (gDispCnt & 0xFFF8) | 1;
-    func_080A411C(gUnk_02039B84->unk_040, 0, a);
+    func_080A411C(gBtlWork->unk_040, 0, a);
 }
 
 void func_0805DA98(u16 a) {
-    func_080A41F0(gUnk_02039B84->unk_040, a);
+    func_080A41F0(gBtlWork->unk_040, a);
 }
 
 void func_0805DAB4(void) {

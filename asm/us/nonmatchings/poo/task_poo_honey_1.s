@@ -90,7 +90,7 @@ _080CCE6C:
 	b _080CCFEA
 _080CCE86:
 	adds r0, r5, #0x0
-	bl func_08005B38
+	bl AnimGetGfxIndex
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x0D

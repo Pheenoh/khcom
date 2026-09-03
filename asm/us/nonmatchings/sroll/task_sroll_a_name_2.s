@@ -46,7 +46,7 @@ _08114910:
 	movs r2, #0x04
 	mov r8, r2
 	adds r0, r5, #0x0
-	bl func_08005B34
+	bl AnimGetFrame
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x0B
 	adds r0, #0x20

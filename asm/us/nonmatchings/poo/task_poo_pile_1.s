@@ -70,7 +70,7 @@ _080CD2D6:
 	adds r4, r6, #0x0
 	adds r4, #0xC8
 	ldr r0, [r4, #0x00]
-	bl func_08000F48
+	bl IsTaskActive
 	lsls r0, r0, #0x18
 	adds r5, r6, #0x0
 	adds r5, #0xB4
@@ -117,7 +117,7 @@ _080CD384:
 	lsls r1, r1, #0x10
 	lsrs r1, r1, #0x10
 	mov r0, r8
-	bl func_08012658
+	bl ColliderSetHeight
 _080CD396:
 	movs r0, #0x01
 	add sp, #0x010

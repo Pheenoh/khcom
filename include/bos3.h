@@ -5,13 +5,13 @@
 #include "game.h"
 
 typedef struct JfShadowWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
-    UnkStruct_02039B84* unk_0C;
+    BtlWork* unk_0C;
 } JfShadowWork;
 
-void task_bos_jf_shadow_0(JfShadowWork* work, UnkStruct_02039B84* obj);
+void task_bos_jf_shadow_0(JfShadowWork* work, BtlWork* obj);
 s32 task_bos_jf_shadow_1(void);
 void task_bos_jf_shadow_2(JfShadowWork* work);
 void task_bos_jf_shadow_3(JfShadowWork* work);

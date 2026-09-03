@@ -28,9 +28,9 @@
 typedef struct {
     u8 unk_00;
     u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u16 unk_04[4];
+    u8 playerId;
+    u8 playerCount;
+    u16 recv[4];
     u8 unk_0C;
     u8 unk_0D;
     u8 unk_0E;
@@ -46,14 +46,14 @@ typedef struct {
     u8 unk_19;
     u8 unk_1A;
     u8 unk_1B;
-    u16 unk_1C[4][32];
-    u8 unk_11C;
-    u8 unk_11D;
+    u16 sendBuf[4][32];
+    u8 sendReadIdx;
+    u8 sendCount;
     u8 unk_11E;
     u8 unk_11F;
-    u16 unk_120[2][4][32];
-    u8 unk_320;
-    u8 unk_321;
+    u16 recvBuf[2][4][32];
+    u8 recvReadIdx;
+    u8 recvCount;
 } SioWork;
 
 extern u8* gUnk_02034040;

@@ -34,7 +34,7 @@ void task_fld_sora_2(FldWork* work) {
             act->unk_3A = depth + 1;
         }
     } else {
-        depth = -0x1004 - (act->unk_00.unk_04 >> 8) * 4;
+        depth = -0x1004 - (act->unk_00.y >> 8) * 4;
 
         if (work->unk_A4 & 0x10) {
             act->unk_3C = act->unk_00.unk_0C;
@@ -49,9 +49,9 @@ void task_fld_sora_2(FldWork* work) {
         }
     }
 
-    x = (act->unk_00.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    y = (act->unk_00.unk_04 >> 8) + (act->unk_00.unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, work->unk_20, work->unk_00, work->unk_04, 0, pri, depth);
+    x = (act->unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    y = (act->unk_00.y >> 8) + (act->unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    DrawSprite(x, y, work->unk_20, work->tiles, work->palette, 0, pri, depth);
     TaskPoolDraw(work->unk_24);
 }
 
@@ -59,21 +59,21 @@ void task_fld_sora_3(FldWork* work) {
     FldActor* act;
 
     act = &gUnk_02039BA0->unk_18;
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
     func_08012304(work->unk_38);
 
-    if (gUnk_02039BB0.unk_00 != 0) {
-        gUnk_02039BB0.unk_28 = act->unk_10;
-        gUnk_02039BB0.unk_14 = act->unk_00;
-        gUnk_02039BB0.unk_24 = act->unk_14;
-        gUnk_02039BB0.unk_30 = work->unk_94;
-        gUnk_02039BB0.unk_2C = work->unk_A0;
-        gUnk_02039BB0.unk_34 = work->unk_B0;
-        gUnk_02039BB0.unk_38 = work->unk_B4;
-        gUnk_02039BB0.unk_3C = work->unk_B8;
+    if (gGameState.unk_00 != 0) {
+        gGameState.unk_28 = act->unk_10;
+        gGameState.unk_14 = act->unk_00;
+        gGameState.unk_24 = act->angle;
+        gGameState.unk_30 = work->unk_94;
+        gGameState.unk_2C = work->unk_A0;
+        gGameState.unk_34 = work->unk_B0;
+        gGameState.unk_38 = work->unk_B4;
+        gGameState.unk_3C = work->unk_B8;
     } else {
-        gUnk_02039BB0.unk_24 = act->unk_14;
+        gGameState.unk_24 = act->angle;
     }
 
     TaskPoolDestroy(work->unk_24);
@@ -81,37 +81,37 @@ void task_fld_sora_3(FldWork* work) {
 
 void func_08034368(FldActor* act) {
     if ((GetKeysHeld() & DPAD_LEFT) && (GetKeysHeld() & DPAD_DOWN)) {
-        act->unk_14 = 0xAD;
+        act->angle = 0xAD;
     } else if ((GetKeysHeld() & DPAD_UP) && (GetKeysHeld() & DPAD_LEFT)) {
-        act->unk_14 = 0xD3;
+        act->angle = 0xD3;
     } else if ((GetKeysHeld() & DPAD_UP) && (GetKeysHeld() & DPAD_RIGHT)) {
-        act->unk_14 = 0x2D;
+        act->angle = 0x2D;
     } else if ((GetKeysHeld() & DPAD_RIGHT) && (GetKeysHeld() & DPAD_DOWN)) {
-        act->unk_14 = 0x53;
+        act->angle = 0x53;
     } else if ((GetKeysHeld() & DPAD_DOWN) && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
-        act->unk_14 = 0xAD;
+        act->angle = 0xAD;
     } else if ((GetKeysHeld() & DPAD_DOWN) && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
-        act->unk_14 = 0x53;
+        act->angle = 0x53;
     } else if ((GetKeysHeld() & DPAD_UP) && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
-        act->unk_14 = 0xD3;
+        act->angle = 0xD3;
     } else if ((GetKeysHeld() & DPAD_UP) && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
-        act->unk_14 = 0x2D;
+        act->angle = 0x2D;
     } else if ((GetKeysHeld() & DPAD_LEFT) && GetKeyReleaseTime(DPAD_UP) <= 4) {
-        act->unk_14 = 0xD3;
+        act->angle = 0xD3;
     } else if ((GetKeysHeld() & DPAD_LEFT) && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
-        act->unk_14 = 0xAD;
+        act->angle = 0xAD;
     } else if ((GetKeysHeld() & DPAD_RIGHT) && GetKeyReleaseTime(DPAD_UP) <= 4) {
-        act->unk_14 = 0x2D;
+        act->angle = 0x2D;
     } else if ((GetKeysHeld() & DPAD_RIGHT) && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
-        act->unk_14 = 0x53;
+        act->angle = 0x53;
     } else if (GetKeysHeld() & DPAD_DOWN) {
-        act->unk_14 = 0x80;
+        act->angle = 0x80;
     } else if (GetKeysHeld() & DPAD_UP) {
-        act->unk_14 = 0;
+        act->angle = 0;
     } else if (GetKeysHeld() & DPAD_LEFT) {
-        act->unk_14 = 0xC0;
+        act->angle = 0xC0;
     } else if (GetKeysHeld() & DPAD_RIGHT) {
-        act->unk_14 = 0x40;
+        act->angle = 0x40;
     }
 }
 
@@ -124,8 +124,8 @@ u8 func_08034518(FldPos* p) {
 
     a = *p;
     b = *p;
-    a.unk_04 -= 0x600;
-    b.unk_04 += 0x600;
+    a.y -= 0x600;
+    b.y += 0x600;
 
     lo = func_080DFF1C(&a);
 
@@ -161,8 +161,8 @@ s32 func_0803459C(FldPos* p) {
 
     a = *p;
     b = *p;
-    a.unk_04 -= 0x600;
-    b.unk_04 += 0x600;
+    a.y -= 0x600;
+    b.y += 0x600;
 
     lo = func_080DFF1C(&a);
     hi = func_080DFF1C(&b);
@@ -181,22 +181,22 @@ u8 func_080345EC(FldPos* p, FldWork* work) {
 
     a = *p;
     b = *p;
-    a.unk_04 -= 0x600;
-    b.unk_04 += 0x600;
+    a.y -= 0x600;
+    b.y += 0x600;
 
     hit = _080DFE1C(&a);
 
     if (hit != 0) {
-        work->unk_B0 = a.unk_00;
-        work->unk_B4 = a.unk_04;
+        work->unk_B0 = a.x;
+        work->unk_B4 = a.y;
         return hit;
     }
 
     hit = _080DFE1C(&b);
 
     if (hit != 0) {
-        work->unk_B0 = b.unk_00;
-        work->unk_B4 = b.unk_04;
+        work->unk_B0 = b.x;
+        work->unk_B4 = b.y;
         return hit;
     }
 
@@ -207,8 +207,8 @@ u8 func_08034668(FldActor* act) {
     FldPos v;
 
     v = act->unk_00;
-    v.unk_00 += gSineTable[act->unk_14] * 8;
-    v.unk_04 -= gSineTable[act->unk_14 + 64] * 8;
+    v.x += gSineTable[act->angle] * 8;
+    v.y -= gSineTable[act->angle + 64] * 8;
 
     if (func_080DFCDC(&v) != 0) {
         return 1;
@@ -243,11 +243,11 @@ void func_08034704(FldActor* act) {
     u8 dir;
     s32 diff;
 
-    dir = act->unk_14;
+    dir = act->angle;
     func_08034368(act);
 
-    if (dir != act->unk_14) {
-        diff = GetAngleDiff(dir, act->unk_14);
+    if (dir != act->angle) {
+        diff = GetAngleDiff(dir, act->angle);
 
         if (diff < 0) {
             diff = -diff;
@@ -265,7 +265,7 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
     FldAnimDef* def;
     s32 dir;
 
-    switch (gUnk_02039BA0->unk_18.unk_14) {
+    switch (gUnk_02039BA0->unk_18.angle) {
     case 0x2D:
         dir = 4;
         work->unk_A4 |= 2;
@@ -308,7 +308,7 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
     work->unk_A8 = index;
     def = &gUnk_0813CDDC[index][dir];
     func_08005974(work->unk_08, def->unk_0C, flags, def->unk_04, def->unk_00);
-    func_08002A10(work->unk_00, def->unk_08);
+    func_08002A10(work->tiles, def->unk_08);
 }
 
 INCLUDE_ASM("fld/task_fld_riku_0.s");
@@ -343,7 +343,7 @@ void task_fld_riku_2(FldWork* work) {
             act->unk_3A = depth + 1;
         }
     } else {
-        depth = -0x1004 - (act->unk_00.unk_04 >> 8) * 4;
+        depth = -0x1004 - (act->unk_00.y >> 8) * 4;
 
         if (work->unk_A4 & 0x10) {
             act->unk_3C = act->unk_00.unk_0C;
@@ -358,9 +358,9 @@ void task_fld_riku_2(FldWork* work) {
         }
     }
 
-    x = (act->unk_00.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    y = (act->unk_00.unk_04 >> 8) + (act->unk_00.unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, work->unk_20, work->unk_00, work->unk_04, 0, pri, depth);
+    x = (act->unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    y = (act->unk_00.y >> 8) + (act->unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    DrawSprite(x, y, work->unk_20, work->tiles, work->palette, 0, pri, depth);
     TaskPoolDraw(work->unk_24);
 }
 
@@ -368,21 +368,21 @@ void task_fld_riku_3(FldWork* work) {
     FldActor* act;
 
     act = &gUnk_02039BA0->unk_18;
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
     func_08012304(work->unk_38);
 
-    if (gUnk_02039BB0.unk_00 != 0) {
-        gUnk_02039BB0.unk_28 = act->unk_10;
-        gUnk_02039BB0.unk_14 = act->unk_00;
-        gUnk_02039BB0.unk_24 = act->unk_14;
-        gUnk_02039BB0.unk_30 = work->unk_94;
-        gUnk_02039BB0.unk_2C = work->unk_A0;
-        gUnk_02039BB0.unk_34 = work->unk_B0;
-        gUnk_02039BB0.unk_38 = work->unk_B4;
-        gUnk_02039BB0.unk_3C = work->unk_B8;
+    if (gGameState.unk_00 != 0) {
+        gGameState.unk_28 = act->unk_10;
+        gGameState.unk_14 = act->unk_00;
+        gGameState.unk_24 = act->angle;
+        gGameState.unk_30 = work->unk_94;
+        gGameState.unk_2C = work->unk_A0;
+        gGameState.unk_34 = work->unk_B0;
+        gGameState.unk_38 = work->unk_B4;
+        gGameState.unk_3C = work->unk_B8;
     } else {
-        gUnk_02039BB0.unk_24 = act->unk_14;
+        gGameState.unk_24 = act->angle;
     }
 
     TaskPoolDestroy(work->unk_24);
@@ -390,17 +390,17 @@ void task_fld_riku_3(FldWork* work) {
 
 void task_fld_shadow_0(FldShadowWork* work, FldActor* obj) {
     work->unk_10 = obj;
-    work->unk_00 = obj->unk_00.unk_00;
-    work->unk_04 = obj->unk_00.unk_04;
-    work->unk_08 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    work->unk_0C = LoadObjPalette(gUnk_08F69BE4, 32);
+    work->unk_00 = obj->unk_00.x;
+    work->unk_04 = obj->unk_00.y;
+    work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    work->palette = LoadObjPalette(gUnk_08F69BE4, 32);
     AnimInit(work->unk_14, gUnk_09EE1384, gUnk_09EE1380);
     AnimStart(work->unk_14, 0, 1);
 }
 
 s32 task_fld_shadow_1(FldShadowWork* work) {
-    work->unk_00 = work->unk_10->unk_00.unk_00;
-    work->unk_04 = work->unk_10->unk_00.unk_04;
+    work->unk_00 = work->unk_10->unk_00.x;
+    work->unk_04 = work->unk_10->unk_00.y;
     return 1;
 }
 
@@ -422,10 +422,10 @@ void task_fld_shadow_2(FldShadowWork* work) {
     spr = AnimUpdate(work->unk_14);
     z = obj->unk_3C;
 
-    if (obj->unk_00.unk_08 >= z) {
+    if (obj->unk_00.z >= z) {
         sprite = 0;
     } else {
-        size = 0x100 - (z - obj->unk_00.unk_08) / 128;
+        size = 0x100 - (z - obj->unk_00.z) / 128;
 
         if (size <= 0x18) {
             size = 0x19;
@@ -436,12 +436,12 @@ void task_fld_shadow_2(FldShadowWork* work) {
 
     x = (work->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (work->unk_04 >> 8) + (z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, spr, work->unk_08, work->unk_0C, sprite, 0x800, obj->unk_3A);
+    DrawSprite(x, y, spr, work->tiles, work->palette, sprite, 0x800, obj->unk_3A);
 }
 
 void task_fld_shadow_3(FldShadowWork* work) {
-    ReleaseObjTiles(work->unk_08);
-    ReleaseObjPalette(work->unk_0C);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 ALIGN_ZERO(2);

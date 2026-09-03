@@ -3,7 +3,7 @@
 
 #include "types.h"
 #include "mode.h"
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 unk_00C[0x26];
@@ -20,17 +20,17 @@ typedef struct UnkStruct_02039BB0 {
     s32 mooglePoints;
     u8 unk_178[0x08];
     u16 unk_180;
-} UnkStruct_02039BB0;
+} GameState;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u8 gUnk_097E05B8[];
 extern u8 gUnk_0984AC38[];
 extern u8 gUnk_09841F98[];
 extern u8 gUnk_09801C98[];
-extern Mode gUnk_09EF4E50;
+extern Mode gModeTitle;
 
 void ModeRequest(Mode* mode, s32 arg);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);

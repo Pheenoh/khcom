@@ -4,7 +4,7 @@
 void task_btl_form_0(BtlFormWork* work, BtlFormList* list) {
     s32 i;
 
-    gUnk_02039B84->unk_068 |= 0x2000000;
+    gBtlWork->unk_068 |= 0x2000000;
     work->unk_20 = 0;
     work->unk_08 = list;
     work->unk_0C = list->unk_04[0];
@@ -14,28 +14,28 @@ void task_btl_form_0(BtlFormWork* work, BtlFormList* list) {
     work->unk_04 = 0;
     work->unk_22 = 0;
     work->unk_24 = 100;
-    gUnk_02039B84->unk_120 = 0;
+    gBtlWork->unk_120 = 0;
 
     for (i = 0; i < list->unk_00; i++) {
-        gUnk_02039B84->unk_120 += list->unk_04[i]->unk_00;
+        gBtlWork->unk_120 += list->unk_04[i]->unk_00;
     }
 }
 
 u8 task_btl_form_1(BtlFormWork* work) {
     BtlFormList* list;
     BtlFormStep* step;
-    UnkStruct_02039B84* obj;
+    BtlWork* obj;
     s32 x;
     s32 y;
     s32 z;
 
-    if (gUnk_02039B84->unk_068 & 0x0100000000000000) {
+    if (gBtlWork->unk_068 & 0x0100000000000000) {
         return 0;
     }
 
     if (work->unk_20 & 2) {
         list = work->unk_08;
-        if (list->unk_08 >= work->unk_22 + gUnk_02039B84->unk_0EC) {
+        if (list->unk_08 >= work->unk_22 + gBtlWork->unk_0EC) {
             if (work->unk_22 == 0) {
                 return 0;
             }
@@ -51,8 +51,8 @@ u8 task_btl_form_1(BtlFormWork* work) {
         if (work->unk_24-- <= 0) {
             work->unk_20 |= 2;
 
-            if (gUnk_02039BB0.unk_1B8 != 4) {
-                gUnk_02039BB0.flags &= ~4;
+            if (gGameState.unk_1B8 != 4) {
+                gGameState.flags &= ~4;
             }
 
             if (work->unk_10 >= work->unk_08->unk_00) {
@@ -66,7 +66,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
             work->unk_00--;
         } else {
             if (work->unk_00 == 0) {
-                obj = gUnk_02039B84->unk_07C;
+                obj = gBtlWork->unk_07C;
                 work->unk_14 = (obj->unk_004 + 0x10000) >> 1;
                 work->unk_18 = obj->unk_008;
                 work->unk_1C = 0;
@@ -107,7 +107,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
 }
 
 void task_btl_form_3(void) {
-    gUnk_02039B84->unk_068 &= ~0x2000000;
+    gBtlWork->unk_068 &= ~0x2000000;
 }
 
 void task_btl_born_0(BtlBornWork* work, BtlBornArgs* args) {
@@ -125,13 +125,13 @@ u8 task_btl_born_1(BtlBornWork* work) {
             m4aSongNumStart(0x22D);
         }
 
-        if (func_08003A98(work->unk_12) == 0) {
-            gUnk_02039B84->unk_120--;
+        if (CanAllocObjTiles(work->unk_12) == 0) {
+            gBtlWork->unk_120--;
             return 0;
         }
 
-        if (func_08003B24(1) == 0) {
-            gUnk_02039B84->unk_120--;
+        if (CanAllocObjPalette(1) == 0) {
+            gBtlWork->unk_120--;
             return 0;
         }
 
@@ -143,7 +143,7 @@ u8 task_btl_born_1(BtlBornWork* work) {
                           work->unk_00.unk_08 - 0x800, 0x100);
         }
 
-        TaskCreate(&gUnk_02039B84->unk_02C, work->unk_0C, work);
+        TaskCreate(&gBtlWork->unk_02C, work->unk_0C, work);
         return 0;
     }
 
@@ -154,7 +154,7 @@ void func_08040150(BtlRaidWork* work, s32* outX, s32* outY, s32* outZ) {
     s16 dx;
     s16 dz;
 
-    switch (func_08005B34(&work->unk_0C)) {
+    switch (AnimGetFrame(&work->anim)) {
     case 0:
     case 1:
         dx = -15;
@@ -192,9 +192,9 @@ void func_08040150(BtlRaidWork* work, s32* outX, s32* outY, s32* outZ) {
         dx = -dx;
     }
 
-    *outX = work->unk_24 + (dx << 8);
-    *outY = work->unk_28;
-    *outZ = work->unk_2C + (dz << 8);
+    *outX = work->x + (dx << 8);
+    *outY = work->y;
+    *outZ = work->z + (dz << 8);
 }
 
 void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
@@ -212,22 +212,22 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
 
     if (args->unk_14 != 0) {
         work->unk_3D = 1;
-        work->unk_00 = gUnk_02039B84->unk_114;
-        work->unk_5C = gUnk_02039B84->unk_07C;
+        work->unk_00 = gBtlWork->unk_114;
+        work->unk_5C = gBtlWork->unk_07C;
         work->unk_04 = LoadObjPalette(gUnk_08F683A4, 32);
     } else {
         work->unk_3D = 0;
-        work->unk_00 = gUnk_02039B84->unk_114;
+        work->unk_00 = gBtlWork->unk_114;
         work->unk_5C = gUnk_02039B9C->unk_07C;
         work->unk_04 = LoadObjPalette(gUnk_096FAC64, 32);
     }
 
-    AnimInit(&work->unk_0C, 0, 0);
-    func_08005974(&work->unk_0C, 0, 1, gUnk_09EDF154, gUnk_09EDF124);
+    AnimInit(&work->anim, 0, 0);
+    func_08005974(&work->anim, 0, 1, gUnk_09EDF154, gUnk_09EDF124);
     func_08002A10(work->unk_00, gUnk_08901C8A);
-    work->unk_24 = args->unk_00;
-    work->unk_28 = args->unk_04;
-    work->unk_2C = args->unk_08;
+    work->x = args->unk_00;
+    work->y = args->unk_04;
+    work->z = args->unk_08;
     work->unk_38 = 100;
     work->unk_40 = 0;
     work->unk_44 = 256;
@@ -272,9 +272,9 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
         work->unk_40 = 3;
 
         if (work->unk_3C != 0) {
-            work->unk_58 = 192;
+            work->angle = 192;
         } else {
-            work->unk_58 = 64;
+            work->angle = 64;
         }
         work->unk_38 = 0;
         work->unk_5A = GetRandom() % 5 + 0xFFFE;
@@ -284,28 +284,28 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
         work->unk_40 = 4;
 
         if (work->unk_3C != 0) {
-            work->unk_58 = 192;
+            work->angle = 192;
         } else {
-            work->unk_58 = 64;
+            work->angle = 64;
         }
         work->unk_38 = 0;
         work->unk_3A = 0;
         break;
     }
 
-    work->unk_60 = LoadObjTiles(gUnk_08B22CE4, 0x200);
+    work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
     work->unk_64 = LoadObjPalette(gUnk_08F69BA4, 32);
     m4aSongNumStart(0x237);
 }
 
-UnkStruct_02039B84* func_08040458(BtlRaidWork* work) {
-    UnkStruct_02039B84* obj;
+BtlWork* func_08040458(BtlRaidWork* work) {
+    BtlWork* obj;
 
-    if (gUnk_02039B84->unk_068 & 0x4000) {
+    if (gBtlWork->unk_068 & 0x4000) {
         if (work->unk_3D != 0) {
             obj = gUnk_02039B9C->unk_07C;
         } else {
-            obj = gUnk_02039B84->unk_07C;
+            obj = gBtlWork->unk_07C;
         }
 
         if (obj->unk_02C <= 0) {
@@ -315,49 +315,49 @@ UnkStruct_02039B84* func_08040458(BtlRaidWork* work) {
         return obj;
     }
 
-    if (gUnk_02039B84->unk_078 == 0) {
-        return func_08000C8C(gUnk_02039B84->unk_080);
+    if (gBtlWork->unk_078 == 0) {
+        return ListPoolFirst(gBtlWork->unk_080);
     }
 
-    return gUnk_02039B84->unk_078;
+    return gBtlWork->unk_078;
 }
 
 u8 task_btl_raid_1(BtlRaidWork* work) {
-    UnkStruct_02039B84* obj;
+    BtlWork* obj;
     u16 hit;
     s32 x;
     s32 y;
     s32 z;
 
-    if ((work->unk_3D != 0 ? gUnk_02039B84 : gUnk_02039B9C)->unk_068 & 0x40000000) {
+    if ((work->unk_3D != 0 ? gBtlWork : gUnk_02039B9C)->unk_068 & 0x40000000) {
         return 0;
     }
 
-    func_0802F284(work->unk_24, work->unk_28, work->unk_2C + 0x1800);
+    func_0802F284(work->x, work->y, work->z + 0x1800);
 
     switch (work->unk_40) {
     case 4:
-        work->unk_24 += gSineTable[(u8)work->unk_58] * 5;
-        work->unk_2C += -gSineTable[(u8)work->unk_58 + 64] * 5;
-        if (work->unk_2C > 0) {
-            work->unk_2C = 0;
+        work->x += gSineTable[(u8)work->angle] * 5;
+        work->z += -gSineTable[(u8)work->angle + 64] * 5;
+        if (work->z > 0) {
+            work->z = 0;
         }
 
         obj = func_08040458(work);
 
         if (obj != 0) {
             if (work->unk_3A <= 0) {
-                ApproachAngle(&work->unk_58,
-                              GetAngle(work->unk_24, work->unk_2C, obj->unk_004,
+                ApproachAngle(&work->angle,
+                              GetAngle(work->x, work->z, obj->unk_004,
                                             obj->unk_00C - (obj->unk_0A2 << 8)),
                               2);
             } else {
                 work->unk_3A--;
             }
 
-            work->unk_28 += (obj->unk_008 - work->unk_28) >> 3;
+            work->y += (obj->unk_008 - work->y) >> 3;
 
-            if (func_08011F78(work->unk_4C, work->unk_24, work->unk_28, work->unk_2C, 8, 8, 8) != 0) {
+            if (func_08011F78(work->unk_4C, work->x, work->y, work->z, 8, 8, 8) != 0) {
                 m4aSongNumStart(work->unk_68);
 
                 if (obj->unk_034 & 2) {
@@ -374,26 +374,26 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         }
         break;
     case 3:
-        work->unk_24 += gSineTable[(u8)work->unk_58] * 8;
-        work->unk_28 -= gSineTable[(u8)work->unk_58 + 64] * 4;
-        hit = func_0801A8A4(&work->unk_24, &work->unk_28, 0, 0);
+        work->x += gSineTable[(u8)work->angle] * 8;
+        work->y -= gSineTable[(u8)work->angle + 64] * 4;
+        hit = func_0801A8A4(&work->x, &work->y, 0, 0);
 
         switch (hit) {
         case 1:
-            work->unk_58 = GetRandom() % 65 + 32;
+            work->angle = GetRandom() % 65 + 32;
             break;
         case 2:
-            work->unk_58 = GetRandom() % 65 + 160;
+            work->angle = GetRandom() % 65 + 160;
             break;
         case 4:
-            work->unk_58 = GetRandom() % 65 + 0xFFE0;
+            work->angle = GetRandom() % 65 + 0xFFE0;
             break;
         case 3:
-            work->unk_58 = GetRandom() % 65 + 96;
+            work->angle = GetRandom() % 65 + 96;
             break;
         }
 
-        if (func_08011F78(work->unk_4C, work->unk_24, work->unk_28, work->unk_2C, 8, 8, 32) != 0) {
+        if (func_08011F78(work->unk_4C, work->x, work->y, work->z, 8, 8, 32) != 0) {
             m4aSongNumStart(work->unk_68);
         }
 
@@ -412,9 +412,9 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         if (work->unk_38 == 0) {
             work->unk_3A = 16;
         }
-        ApproachValue(&work->unk_24, work->unk_5C->unk_004, work->unk_3A);
-        ApproachValue(&work->unk_28, work->unk_5C->unk_008, work->unk_3A);
-        ApproachValue(&work->unk_2C, work->unk_5C->unk_00C - 0x1000, work->unk_3A);
+        ApproachValue(&work->x, work->unk_5C->unk_004, work->unk_3A);
+        ApproachValue(&work->y, work->unk_5C->unk_008, work->unk_3A);
+        ApproachValue(&work->z, work->unk_5C->unk_00C - 0x1000, work->unk_3A);
         work->unk_3A--;
         if (work->unk_3A <= 3) {
             return 0;
@@ -425,19 +425,19 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         ApproachValue(&work->unk_30, -0x800, work->unk_38);
 
         if (work->unk_3C != 0) {
-            work->unk_24 = work->unk_24 - work->unk_30;
+            work->x = work->x - work->unk_30;
         } else {
-            work->unk_24 = work->unk_24 + work->unk_30;
+            work->x = work->x + work->unk_30;
         }
 
         if (work->unk_56 & 1) {
-            if (func_08011E3C(work->unk_24, work->unk_28, work->unk_2C, work->unk_54, work->unk_54, 32) != 0) {
+            if (func_08011E3C(work->x, work->y, work->z, work->unk_54, work->unk_54, 32) != 0) {
                 work->unk_40 = 2;
                 work->unk_38 = 0;
                 break;
             }
         } else {
-            if (func_08011F78(work->unk_4C, work->unk_24, work->unk_28, work->unk_2C,
+            if (func_08011F78(work->unk_4C, work->x, work->y, work->z,
                               work->unk_54, work->unk_54, 32) != 0) {
                 m4aSongNumStart(work->unk_68);
             }
@@ -453,7 +453,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
             return 0;
         }
 
-        switch (func_0801A8A4(&work->unk_24, &work->unk_28, -20, 0)) {
+        switch (func_0801A8A4(&work->x, &work->y, -20, 0)) {
         case 1:
         case 2:
             work->unk_40 = 1;
@@ -467,12 +467,12 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         ApproachValue(&work->unk_30, -work->unk_34, work->unk_3A);
 
         if (work->unk_3C != 0) {
-            work->unk_24 = work->unk_24 - work->unk_30;
+            work->x = work->x - work->unk_30;
         } else {
-            work->unk_24 = work->unk_24 + work->unk_30;
+            work->x = work->x + work->unk_30;
         }
 
-        if (func_08011F78(work->unk_4C, work->unk_24, work->unk_28, work->unk_2C,
+        if (func_08011F78(work->unk_4C, work->x, work->y, work->z,
                           work->unk_54, work->unk_54, 32) != 0) {
             m4aSongNumStart(work->unk_68);
         }
@@ -491,10 +491,10 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
 
             switch (work->unk_48) {
             case 4:
-                func_080155BC(work->unk_24, work->unk_28, 0, work->unk_4C);
+                func_080155BC(work->x, work->y, 0, work->unk_4C);
                 break;
             case 5:
-                func_08014EC0(work->unk_24, work->unk_28, 0, work->unk_4C);
+                func_08014EC0(work->x, work->y, 0, work->unk_4C);
                 break;
             }
         }
@@ -523,7 +523,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         break;
     }
 
-    work->unk_08 = AnimUpdate(&work->unk_0C);
+    work->gfx = AnimUpdate(&work->anim);
     return 1;
 }
 
@@ -535,9 +535,9 @@ void task_btl_raid_2(BtlRaidWork* work) {
     s32 scale;
 
     if (work->unk_56 & 2) {
-        flags = func_0801AF1C(work->unk_28);
-        WorldToScreen(&sx, &sy, work->unk_24, work->unk_28, work->unk_2C);
-        scale = gUnk_02039B84->unk_024 * work->unk_44 >> 8;
+        flags = func_0801AF1C(work->y);
+        WorldToScreen(&sx, &sy, work->x, work->y, work->z);
+        scale = gBtlWork->unk_024 * work->unk_44 >> 8;
 
         if (scale == 256) {
             affine = 0;
@@ -553,32 +553,32 @@ void task_btl_raid_2(BtlRaidWork* work) {
             }
         }
 
-        DrawSprite(sx, sy, work->unk_08, work->unk_00, work->unk_04, affine, flags,
-                   -4100 - (((work->unk_28 + 0x1000) >> 8) * 4));
-        WorldToScreen(&sx, &sy, work->unk_24, work->unk_28, 0);
-        DrawSprite(sx, sy, gUnk_08B22CBC, work->unk_60, work->unk_64, 0, flags, 0xFFFE);
+        DrawSprite(sx, sy, work->gfx, work->unk_00, work->unk_04, affine, flags,
+                   -4100 - (((work->y + 0x1000) >> 8) * 4));
+        WorldToScreen(&sx, &sy, work->x, work->y, 0);
+        DrawSprite(sx, sy, gUnk_08B22CBC, work->tiles, work->unk_64, 0, flags, 0xFFFE);
     }
 }
 
 void task_btl_raid_3(BtlRaidWork* work) {
     ReleaseObjPalette(work->unk_04);
-    ReleaseObjTiles(work->unk_60);
+    ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->unk_64);
 }
 
-void task_btl_badstatus_0(BtlBadStatusWork* work, UnkStruct_02039B84* obj) {
+void task_btl_badstatus_0(BtlBadStatusWork* work, BtlWork* obj) {
     work->unk_28 = 0;
     work->unk_24 = obj;
-    work->unk_00 = AllocObjTiles(128, 0);
+    work->tiles = AllocObjTiles(128, 0);
     work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 32);
     work->unk_08 = LoadObjPalette(gUnk_09611AB8, 32);
     work->unk_2C = work->unk_04;
-    AnimInit(&work->unk_0C, 0, 0);
-    func_08019068(gUnk_0813E8F4, &work->unk_0C, 0, 1, work->unk_00);
+    AnimInit(&work->anim, 0, 0);
+    func_08019068(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
 }
 
 u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
-    UnkStruct_02039B84* obj;
+    BtlWork* obj;
     u32 state;
 
     obj = work->unk_24;
@@ -593,24 +593,24 @@ u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
 
         switch (state) {
         case 2:
-            func_08019068(gUnk_0813E8F4, &work->unk_0C, 0, 1, work->unk_00);
+            func_08019068(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
             work->unk_2C = work->unk_04;
             break;
         case 5:
-            func_08019068(gUnk_0813E8F4, &work->unk_0C, 2, 1, work->unk_00);
+            func_08019068(gUnk_0813E8F4, &work->anim, 2, 1, work->tiles);
             work->unk_2C = work->unk_08;
             break;
         case 3:
-            func_08019068(gUnk_0813E8F4, &work->unk_0C, 3, 1, work->unk_00);
+            func_08019068(gUnk_0813E8F4, &work->anim, 3, 1, work->tiles);
             work->unk_2C = work->unk_04;
             break;
         case 4:
-            func_08019068(gUnk_0813E8F4, &work->unk_0C, 4, 1, work->unk_00);
+            func_08019068(gUnk_0813E8F4, &work->anim, 4, 1, work->tiles);
             work->unk_2C = work->unk_08;
             break;
         case 1:
         default:
-            func_08019068(gUnk_0813E8F4, &work->unk_0C, 1, 1, work->unk_00);
+            func_08019068(gUnk_0813E8F4, &work->anim, 1, 1, work->tiles);
             work->unk_2C = work->unk_04;
             break;
         }
@@ -627,7 +627,7 @@ u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
 }
 
 void task_btl_badstatus_2(BtlBadStatusWork* work) {
-    UnkStruct_02039B84* obj;
+    BtlWork* obj;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -638,35 +638,35 @@ void task_btl_badstatus_2(BtlBadStatusWork* work) {
     if (obj->unk_0E8 != 0) {
         flags = func_0801AF1C(obj->unk_008);
 
-        if (gUnk_02039B84->unk_070 != 0) {
-            gfx = AnimGetGfx(&work->unk_0C);
+        if (gBtlWork->unk_070 != 0) {
+            gfx = AnimGetGfx(&work->anim);
         } else {
-            gfx = AnimUpdate(&work->unk_0C);
+            gfx = AnimUpdate(&work->anim);
         }
 
         WorldToScreen(&sx, &sy, obj->unk_004, obj->unk_008,
                       obj->unk_00C - ((obj->unk_09C + 8) << 8));
-        DrawSprite(sx, sy, gfx, work->unk_00, work->unk_2C, 0, flags,
+        DrawSprite(sx, sy, gfx, work->tiles, work->unk_2C, 0, flags,
                    -4101 - ((obj->unk_008 >> 8) * 4));
     }
 }
 
 void task_btl_badstatus_3(BtlBadStatusWork* work) {
-    ReleaseObjTiles(work->unk_00);
+    ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->unk_04);
     ReleaseObjPalette(work->unk_08);
 }
 
-UnkStruct_02039B84* func_08040C8C(BtlAiWork* work) {
-    UnkStruct_02039B84* list[10];
-    UnkStruct_02039B84* p;
+BtlWork* func_08040C8C(BtlAiWork* work) {
+    BtlWork* list[10];
+    BtlWork* p;
     s16 count;
 
-    if (gUnk_02039B84->unk_068 & 0x4000) {
+    if (gBtlWork->unk_068 & 0x4000) {
         if (work->unk_163 != 0) {
             p = gUnk_02039B9C->unk_07C;
         } else {
-            p = gUnk_02039B84->unk_07C;
+            p = gBtlWork->unk_07C;
         }
 
         if (p->unk_02C <= 0) {
@@ -677,7 +677,7 @@ UnkStruct_02039B84* func_08040C8C(BtlAiWork* work) {
     }
 
     count = 0;
-    p = func_08000C8C(gUnk_02039B84->unk_080);
+    p = ListPoolFirst(gBtlWork->unk_080);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
@@ -687,7 +687,7 @@ UnkStruct_02039B84* func_08040C8C(BtlAiWork* work) {
                 break;
             }
         }
-        p = func_08000CD4(&p->unk_0B8);
+        p = ListPoolNext(&p->unk_0B8);
     }
 
     if (count == 0) {
@@ -699,17 +699,17 @@ UnkStruct_02039B84* func_08040C8C(BtlAiWork* work) {
     return p;
 }
 
-UnkStruct_02039B84* func_08040D54(BtlAiWork* work) {
-    UnkStruct_02039B84* list[10];
-    UnkStruct_02039B84* p;
+BtlWork* func_08040D54(BtlAiWork* work) {
+    BtlWork* list[10];
+    BtlWork* p;
     s16 count;
     s32 d;
 
-    if (gUnk_02039B84->unk_068 & 0x4000) {
+    if (gBtlWork->unk_068 & 0x4000) {
         if (work->unk_163 != 0) {
             p = gUnk_02039B9C->unk_07C;
         } else {
-            p = gUnk_02039B84->unk_07C;
+            p = gBtlWork->unk_07C;
         }
 
         if (p->unk_02C <= 0) {
@@ -720,7 +720,7 @@ UnkStruct_02039B84* func_08040D54(BtlAiWork* work) {
     }
 
     count = 0;
-    p = func_08000C8C(gUnk_02039B84->unk_080);
+    p = ListPoolFirst(gBtlWork->unk_080);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
@@ -733,7 +733,7 @@ UnkStruct_02039B84* func_08040D54(BtlAiWork* work) {
                 }
             }
         }
-        p = func_08000CD4(&p->unk_0B8);
+        p = ListPoolNext(&p->unk_0B8);
     }
 
     if (count == 0) {

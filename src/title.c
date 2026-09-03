@@ -29,11 +29,11 @@ void task_title_logo_2(TitleLogoWork* work) {
     s16 y;
 
     for (i = 0; i < 6; i++) {
-        if (i == 1 && !(gUnk_02039BB0.flags & 0x200)) {
+        if (i == 1 && !(gGameState.flags & 0x200)) {
             continue;
         }
 
-        if (gUnk_02039BB0.flags & 0x200) {
+        if (gGameState.flags & 0x200) {
             x = 0xA4;
         } else {
             x = 0x50;
@@ -50,7 +50,7 @@ void task_title_logo_2(TitleLogoWork* work) {
             }
             affine = AllocObjAffine(0, 0x100, work->unk_4C, 0);
 
-            if (gUnk_02039BB0.flags & 0x200) {
+            if (gGameState.flags & 0x200) {
                 y = 86;
                 x--;
             } else {
@@ -91,12 +91,12 @@ u8 func_080D6574(void) {
 void task_title_obj_0(TitleObjWork* work) {
     s32 t;
 
-    t = (gUnk_02039BB0.flags & 0x200) ? 0x20 : 0;
+    t = (gGameState.flags & 0x200) ? 0x20 : 0;
     work->unk_00[0].unk_00 = LoadObjTiles(gUnk_09771060, 0x3C0);
     work->unk_00[0].unk_04 = LoadObjPalette(gUnk_0984A718, 0x20);
     work->unk_00[0].unk_08 = gUnk_09EF65E0[0];
 
-    if (gUnk_02039BB0.flags & 0x200) {
+    if (gGameState.flags & 0x200) {
         work->unk_00[0].unk_10 = 0xBA00;
         work->unk_00[0].unk_0C = 0x76;
     } else {
@@ -108,9 +108,9 @@ void task_title_obj_0(TitleObjWork* work) {
     work->unk_00[1].unk_10 = -0x7800;
     work->unk_00[1].unk_14 = 0x7C00;
     work->unk_00[1].unk_0C = 0xA0;
-    AnimInit(&work->unk_48, gUnk_09EF6604, gUnk_09EF65F0);
-    AnimStart(&work->unk_48, 0, 1);
-    work->unk_00[1].unk_08 = AnimGetGfx(&work->unk_48);
+    AnimInit(&work->anim, gUnk_09EF6604, gUnk_09EF65F0);
+    AnimStart(&work->anim, 0, 1);
+    work->unk_00[1].unk_08 = AnimGetGfx(&work->anim);
     work->unk_00[2].unk_00 = LoadObjTiles(gUnk_0977143A, 0x100);
     work->unk_00[2].unk_04 = LoadObjPalette(&gUnk_0984A778[t], 0x20);
     work->unk_00[2].unk_08 = gUnk_09EF65E8[0];
@@ -142,7 +142,7 @@ u8 task_title_obj_1(TitleObjWork* work) {
 void task_title_obj_2(TitleObjWork* work) {
     s32 i;
 
-    work->unk_00[1].unk_08 = AnimUpdate(&work->unk_48);
+    work->unk_00[1].unk_08 = AnimUpdate(&work->anim);
 
     for (i = 0; i < 2; i++) {
         DrawSprite(work->unk_00[i].unk_10 >> 8, work->unk_00[i].unk_0C, work->unk_00[i].unk_08,
@@ -172,11 +172,11 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     u8* pal;
     u8* pal2;
 
-    t = (gUnk_02039BB0.flags & 0x200) ? 0x20 : 0;
+    t = (gGameState.flags & 0x200) ? 0x20 : 0;
     work->unk_44 = arg;
 
     if (arg[0] == 0) {
-        if (gUnk_02039BB0.flags & 0x20) {
+        if (gGameState.flags & 0x20) {
             work->unk_5C = 4;
             arg[0] = 4;
         } else {
@@ -184,14 +184,14 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
         }
     } else if (arg[0] == 3) {
         work->unk_5C = 2;
-    } else if (gUnk_02039BB0.flags & 0x20) {
+    } else if (gGameState.flags & 0x20) {
         work->unk_5C = 3;
     } else {
         work->unk_5C = 0;
     }
-    work->unk_00 = LoadObjTiles(gUnk_09773E1A, 0x1600);
-    work->unk_04 = LoadObjPalette(gUnk_0984A7F8, 0x20);
-    func_080D5978(work->unk_04->unk_06 + 16, gUnk_0984A7F8, 0x20);
+    work->tiles = LoadObjTiles(gUnk_09773E1A, 0x1600);
+    work->palette = LoadObjPalette(gUnk_0984A7F8, 0x20);
+    func_080D5978(work->palette->unk_06 + 16, gUnk_0984A7F8, 0x20);
     work->unk_08[0] = LoadObjTiles(gUnk_09771DC0, 0x280);
     work->unk_08[1] = LoadObjTiles(gUnk_097720F2, 0xB20);
     work->unk_08[2] = LoadObjTiles(gUnk_09772CC6, 0x700);
@@ -202,13 +202,13 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     work->unk_14[2] = LoadObjPalette(pal2, 0x20);
     func_080D5978(work->unk_14[0]->unk_06 + 16, pal, 0x20);
     func_080D5978(work->unk_14[2]->unk_06 + 16, pal2, 0x20);
-    AnimInit(&work->unk_2C, gUnk_09EF661C, gUnk_09EF6608);
-    AnimStart(&work->unk_2C, 0, 1);
-    work->unk_20[0] = AnimGetGfx(&work->unk_2C);
+    AnimInit(&work->anim, gUnk_09EF661C, gUnk_09EF6608);
+    AnimStart(&work->anim, 0, 1);
+    work->unk_20[0] = AnimGetGfx(&work->anim);
     work->unk_20[1] = gUnk_09EF6620[work->unk_44[0]];
     work->unk_20[2] = gUnk_09EF663C[work->unk_44[0]];
     TaskPoolInit(&work->unk_48, 1);
-    TaskCreate(&work->unk_48, &gUnk_09EF4EA8, 0);
+    TaskCreate(&work->unk_48, &gTaskDescTitleLumichange, 0);
 }
 #else
 INCLUDE_ASM("title/task_title_menu_0.s");
@@ -233,7 +233,7 @@ void func_080D6944(s16* p) {
     s16 max;
     u16 keys;
 
-    max = (gUnk_02039BB0.flags & 0x20) ? 2 : 1;
+    max = (gGameState.flags & 0x20) ? 2 : 1;
     keys = GetKeysPressed() & DPAD_UP;
     if (keys != 0) {
         m4aSongNumStart(0x65);
@@ -293,7 +293,7 @@ void func_080D6A64(TitleMenuWork* work) {
     s16 count;
 
     y = 32;
-    t = gUnk_02039BB0.flags & 0x20;
+    t = gGameState.flags & 0x20;
     count = 3;
 
     if (t == 0) {
@@ -302,11 +302,11 @@ void func_080D6A64(TitleMenuWork* work) {
     }
 
     for (i = 0; i < count; i++) {
-        DrawSprite(work->unk_60, y, gUnk_09EF6668[i], work->unk_00, work->unk_04, 0, 0x400, i + 100);
+        DrawSprite(work->unk_60, y, gUnk_09EF6668[i], work->tiles, work->palette, 0, 0x400, i + 100);
         y += 24;
     }
 
-    if (gUnk_02039BB0.flags & 0x20) {
+    if (gGameState.flags & 0x20) {
         y = work->unk_44[0] * 24 + 32;
     } else {
         y = work->unk_44[0] * 24 + 48;
@@ -324,7 +324,7 @@ void func_080D6B7C(TitleMenuWork* work) {
     y = 16;
 
     for (i = 0; i < 4; i++) {
-        DrawSprite(work->unk_60, y, gUnk_09EF6668[gUnk_096FDCC8[i]], work->unk_00, work->unk_04, 0, 0x400, i + 100);
+        DrawSprite(work->unk_60, y, gUnk_09EF6668[gUnk_096FDCC8[i]], work->tiles, work->palette, 0, 0x400, i + 100);
         y += 24;
     }
     y = func_080D6908(work->unk_44[0]) * 24 + 16;
@@ -341,7 +341,7 @@ void func_080D6C54(TitleMenuWork* work) {
     y = 48;
 
     for (i = 0; i < 2; i++) {
-        DrawSprite(work->unk_60, y, gUnk_09EF6668[gUnk_096FDCC8[i]], work->unk_00, work->unk_04, 0, 0x400, i + 100);
+        DrawSprite(work->unk_60, y, gUnk_09EF6668[gUnk_096FDCC8[i]], work->tiles, work->palette, 0, 0x400, i + 100);
         y += 24;
     }
     y = func_080D6908(work->unk_44[0]) * 24 + 48;
@@ -356,7 +356,7 @@ void func_080D6D2C(TitleMenuWork* work) {
     s16 y;
 
     y = 56;
-    DrawSprite(work->unk_60, y, gUnk_09EF6668[work->unk_44[0]], work->unk_00, work->unk_04, 0, 0x400, 100);
+    DrawSprite(work->unk_60, y, gUnk_09EF6668[work->unk_44[0]], work->tiles, work->palette, 0, 0x400, 100);
 
     for (i = 0; i < 3; i++) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
@@ -364,11 +364,11 @@ void func_080D6D2C(TitleMenuWork* work) {
 }
 
 void task_title_menu_2(TitleMenuWork* work) {
-    work->unk_20[0] = AnimUpdate(&work->unk_2C);
+    work->unk_20[0] = AnimUpdate(&work->anim);
     work->unk_20[1] = gUnk_09EF6620[work->unk_44[0]];
     work->unk_20[2] = gUnk_09EF663C[work->unk_44[0]];
 
-    if (gUnk_02039BB0.flags & 0x200) {
+    if (gGameState.flags & 0x200) {
         work->unk_60 = 120;
     } else {
         work->unk_60 = 0;
@@ -389,8 +389,8 @@ void task_title_menu_2(TitleMenuWork* work) {
 void task_title_menu_3(TitleMenuWork* work) {
     s32 i;
 
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 
     for (i = 0; i < 3; i++) {
         ReleaseObjTiles(work->unk_08[i]);
@@ -400,12 +400,12 @@ void task_title_menu_3(TitleMenuWork* work) {
 }
 
 void task_title_lumichange_0(TitleLumiChangeWork* work) {
-    if (gUnk_02039BB0.flags & 0x200) {
-        work->unk_00 = LoadObjTiles(gUnk_0977548C, 0x840);
-        work->unk_04 = LoadObjPalette(gUnk_0984A7D8, 0x20);
+    if (gGameState.flags & 0x200) {
+        work->tiles = LoadObjTiles(gUnk_0977548C, 0x840);
+        work->palette = LoadObjPalette(gUnk_0984A7D8, 0x20);
     } else {
-        work->unk_00 = LoadObjTiles(gUnk_09773426, 0x940);
-        work->unk_04 = LoadObjPalette(gUnk_0984A7B8, 0x20);
+        work->tiles = LoadObjTiles(gUnk_09773426, 0x940);
+        work->palette = LoadObjPalette(gUnk_0984A7B8, 0x20);
     }
 }
 
@@ -452,7 +452,7 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
     s16 x;
 
     v = GetPaletteEffect();
-    tbl = (gUnk_02039BB0.flags & 0x200) ? gUnk_09EF6684 : gUnk_09EF6658;
+    tbl = (gGameState.flags & 0x200) ? gUnk_09EF6684 : gUnk_09EF6658;
 
     if (v < 0) {
         work->unk_08 = tbl[0];
@@ -461,13 +461,13 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
     } else if (v > 0) {
         work->unk_08 = tbl[2];
     }
-    x = (gUnk_02039BB0.flags & 0x200) ? 240 : 0;
-    DrawSprite(x, 0x8F, work->unk_08, work->unk_00, work->unk_04, 0, 0x400, 100);
+    x = (gGameState.flags & 0x200) ? 240 : 0;
+    DrawSprite(x, 0x8F, work->unk_08, work->tiles, work->palette, 0, 0x400, 100);
 }
 
 void task_title_lumichange_3(TitleLumiChangeWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 ALIGN_ZERO(2);

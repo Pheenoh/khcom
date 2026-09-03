@@ -10,14 +10,14 @@ typedef struct DebugFlag {
 } DebugFlag;
 extern u8 gUnk_02039B94;
 extern u32 gUnk_03006C10;
-extern u8 gUnk_08128304[];
+extern u8 gWhitePalette[];
 extern const DebugFlag gUnk_08130BE8[];
 extern const DebugFlag gUnk_08130DE0[];
 extern Mode gModeDebug;
 
 void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_0805FA60(s32 a, void* b, s32 c, s32 d);

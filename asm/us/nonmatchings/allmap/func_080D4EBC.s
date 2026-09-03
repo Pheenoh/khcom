@@ -134,7 +134,7 @@ _080D4FB8:
 	adds r0, #0x14
 	adds r0, r0, r4
 	ldr r0, [r0, #0x00]
-	bl func_08000F48
+	bl IsTaskActive
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _080D4FFA
