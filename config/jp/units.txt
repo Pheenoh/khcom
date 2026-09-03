@@ -21,15 +21,15 @@ mode_dummy.c -O2 -fprologue-bugfix -fno-common
 mode_debflag.c -O2 -fprologue-bugfix -fno-common
 mode_vsbattle.c
 unk_0800c778.c
-unk_0800eebc.c
+unk_0800eebc.c -O2 -fprologue-bugfix -fno-common
 unk_0801007c.c -O2 -fprologue-bugfix -fno-common
-unk_08019050.c
+unk_08019050.c -O2 -fprologue-bugfix -fno-common
 task.c
-evt.c
+evt.c -O2 -fprologue-bugfix -fno-common
 acgtrans.c
 btl.c -O2 -fprologue-bugfix -fno-common
 btl2.c
-fld.c
+fld.c -O2 -fprologue-bugfix -fno-common
 emy.c
 bos.c
 roomcreate.c

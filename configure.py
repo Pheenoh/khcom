@@ -22,6 +22,10 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # is shifted down by 0x90..0xA4 above that; EU differs from 0x02034898 on and
 # in IWRAM from 0x03007484, so most units need the dict form.
 UNIT_BSS = {
+    "src/evt.o": {"us": 0X02039DC8, "jp": 0x02039d38, "eu": 0x0203a3d8},
+    "src/fld.o": {"us": 0X0203C7AC, "jp": 0x0203c71c, "eu": 0x0203cd9c},
+    "src/unk_0800eebc.o": {"us": 0X02039CA8, "jp": 0x02039c18, "eu": 0x0203a2b8},
+    "src/unk_08019050.o": {"us": 0X02039DC0, "jp": 0x02039d30, "eu": 0x0203a3d0},
     "src/taskpool.o": {"us": 0x03007488, "jp": 0x03007488, "eu": 0x0300748C},
     "src/malloc.o": {"us": 0x030074A8, "jp": 0x030074A8, "eu": 0x030074B0},
     "src/engine.o": 0x0203401C,

@@ -1,6 +1,8 @@
 #include "macros.h"
 #include "unk_0800eebc.h"
 
+UnkStruct_02039CA8 gUnk_02039CA8;
+
 INCLUDE_ASM("unk_0800eebc/func_0800EEBC.s");
 INCLUDE_ASM("unk_0800eebc/func_0800EFE8.s");
 INCLUDE_ASM("unk_0800eebc/func_0800F230.s");

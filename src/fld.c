@@ -2,6 +2,8 @@
 #include "fld.h"
 #include "gba/keys.h"
 
+struct UnkStruct_0203C7AC* gUnk_0203C7AC;
+
 INCLUDE_ASM("fld/task_fld_sora_0.s");
 INCLUDE_ASM("fld/func_08032268.s");
 INCLUDE_ASM("fld/func_0803234C.s");

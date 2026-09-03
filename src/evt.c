@@ -1,6 +1,8 @@
 #include "macros.h"
 #include "evt.h"
 
+UnkStruct_02039DC8* gUnk_02039DC8;
+
 void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param) {
     EvtObjRes* res;
 
