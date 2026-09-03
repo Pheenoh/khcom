@@ -272,7 +272,7 @@ typedef struct FldWork {
 
 extern UnkStruct_020348C8* gUnk_020348C8;
 extern BgFx* gUnk_02034928;
-extern u32 gUnk_03007480;
+extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
 extern BtlWork* gUnk_02039B84;
 extern BtlWork* gUnk_02039B9C;
@@ -280,7 +280,7 @@ extern UnkStruct_02039CA8 gUnk_02039CA8;
 extern BtlSetup gUnk_02039BB0;
 extern FldWork* gUnk_02039BA0;
 extern u32 gUnk_03006C10;
-extern const s16 gUnk_08121400[];
+extern const s16 gSineTable[];
 extern u8 gUnk_09EDA5A0[];
 extern u8 gUnk_09EDA600[];
 extern u8 gUnk_09EDA648[];

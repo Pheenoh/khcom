@@ -402,8 +402,8 @@ u8 task_emy_06_1(Emy06Work* work) {
                 work->base.unk_160 = GetAngle(act->unk_04, act->unk_08, tx, ty);
             }
 
-            act->unk_04 += gUnk_08121400[work->base.unk_160] * 2;
-            act->unk_08 -= gUnk_08121400[work->base.unk_160 + 0x40] * 2;
+            act->unk_04 += gSineTable[work->base.unk_160] * 2;
+            act->unk_08 -= gSineTable[work->base.unk_160 + 0x40] * 2;
 
             if (func_08011F78(0xAF, act->unk_04, act->unk_08, act->unk_0C - 0x800, 0x14, 0x14,
                     8)) {
@@ -1431,8 +1431,8 @@ u8 task_emy_27_1(EmyWork* work) {
             work->unk_160 = GetAngle(act->unk_04, act->unk_08, tx, ty);
         }
 
-        act->unk_04 += gUnk_08121400[work->unk_160];
-        act->unk_08 -= gUnk_08121400[work->unk_160 + 0x40];
+        act->unk_04 += gSineTable[work->unk_160];
+        act->unk_08 -= gSineTable[work->unk_160 + 0x40];
 
         if (act->unk_04 > tx) {
             act->unk_34 |= 4;
@@ -1536,7 +1536,7 @@ u8 task_emy_29_1(Emy29Work* work) {
     case 0x12:
         func_08019068(gUnk_0813DFAC, &w->base.unk_010, 0, 0, w->base.unk_000);
         work->base.unk_168 = 0;
-        a = -gUnk_08121400[(((u16)work->base.unk_154 * 2) & 0xFF) + 0x40] << 4;
+        a = -gSineTable[(((u16)work->base.unk_154 * 2) & 0xFF) + 0x40] << 4;
         t = act->unk_0C + 0x1000;
         act->unk_0C += (a - t) >> 2;
 
@@ -1989,7 +1989,7 @@ u8 task_emy_41_1(Emy41Work* work) {
     case 0x12:
         func_08019068(gUnk_0813E3DC, &w->base.unk_010, 0, 0, w->base.unk_000);
         work->base.unk_168 = 0;
-        a = gUnk_08121400[((u16)work->base.unk_154 * 4) & 0xFF] << 4;
+        a = gSineTable[((u16)work->base.unk_154 * 4) & 0xFF] << 4;
         t = act->unk_0C + 0x1000;
         act->unk_0C += (a - t) >> 2;
         func_0800C980(&work->base, 0x14, 0x63, 0x1E, 0xD8, 0x40, 0x221, 0, -0x10, 0x2C);
@@ -2502,7 +2502,7 @@ u8 task_emy_trump_h_1(EmyWork* work) {
             m4aSongNumStart(0x23B);
         }
 
-        work->unk_17C = gUnk_08121400[(u8)work->unk_154 + 0x40];
+        work->unk_17C = gSineTable[(u8)work->unk_154 + 0x40];
         work->unk_154 += 8;
 
         if (work->unk_154 > 0x13F) {
@@ -2557,7 +2557,7 @@ u8 task_emy_trump_s_1(EmyWork* work) {
             m4aSongNumStart(0x23B);
         }
 
-        work->unk_17C = gUnk_08121400[(u8)work->unk_154 + 0x40];
+        work->unk_17C = gSineTable[(u8)work->unk_154 + 0x40];
         work->unk_154 += 8;
 
         if (work->unk_154 > 0x13F) {

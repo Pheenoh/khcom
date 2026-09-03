@@ -31,7 +31,6 @@ extern u16 gSystemFlags;
 extern u32 gUnk_03006C10;
 extern u32 gSioPlayerId;
 extern u32 gSioStatus;
-extern u16 gFrameSyncFlags;
 
 void func_080C55DC(void);
 void ModeUpdate(void);

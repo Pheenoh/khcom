@@ -266,7 +266,7 @@ extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern u32 gSioPlayerId;
 extern CharaLinkData gUnk_0203AA10;
 extern CharaLinkData gUnk_0203AAC0;
-extern s16 gUnk_08121400[];
+extern s16 gSineTable[];
 extern u8 gUnk_08F69BC4[];
 extern u16 gUnk_09EDA4EC[];
 extern TaskDesc gUnk_09EDAE40;

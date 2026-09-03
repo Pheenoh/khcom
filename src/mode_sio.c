@@ -2070,14 +2070,14 @@ void func_080B3354(void) {
     if (gUnk_02034B4C->unk_076 == 10) {
         gUnk_02034B4C->unk_074 = 0;
 
-        if (gUnk_03007480 % 10 == 0) {
+        if (gFrameCounter % 10 == 0) {
             RequestDma3Copy(&gUnk_096B5EE4[gUnk_02034B4C->unk_002 * 192], (void*)0x06000020, 0xC0);
             gUnk_02034B4C->unk_002 = 1 - gUnk_02034B4C->unk_002;
         }
     } else if (gUnk_02034B4C->unk_076 == 11) {
         gUnk_02034B4C->unk_074 = 0;
 
-        if (gUnk_03007480 % 10 == 0) {
+        if (gFrameCounter % 10 == 0) {
             RequestDma3Copy(&gUnk_096B62E4[gUnk_02034B4C->unk_002 * 192], (void*)0x060000E0, 0xC0);
             gUnk_02034B4C->unk_002 = 1 - gUnk_02034B4C->unk_002;
         }

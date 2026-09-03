@@ -415,7 +415,7 @@ void func_0800CB4C(EmyWork* work);
 void func_08015834(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h);
 void func_0801C700(EmyActor* a, s32* b, s32* c, s32 d);
 
-extern s16 gUnk_08121400[];
+extern s16 gSineTable[];
 extern u8 gUnk_08A20BCE[];
 extern u8 gUnk_08A23630[];
 extern u8 gUnk_08B1D828[];

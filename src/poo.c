@@ -127,8 +127,8 @@ void func_080C8B60(PooMover* w, s32 b, u8 c) {
         w->unk_3A = a;
         w->unk_3B = w->unk_38;
     }
-    w->unk_28 += gUnk_08121400[w->unk_38] * w->unk_3C >> 8;
-    w->unk_2C += -gUnk_08121400[w->unk_38 + 0x40] * w->unk_3C >> 8;
+    w->unk_28 += gSineTable[w->unk_38] * w->unk_3C >> 8;
+    w->unk_2C += -gSineTable[w->unk_38 + 0x40] * w->unk_3C >> 8;
 }
 
 u8 func_080C8BD4(void) {
@@ -688,21 +688,21 @@ void func_080CAB24(PooActor* p) {
     switch (p->unk_14) {
     case 0x2D:
     case 0xD3:
-        x = p->unk_00.unk_00 + gUnk_08121400[p->unk_14] * 12;
-        y = p->unk_00.unk_04 + -gUnk_08121400[p->unk_14 + 0x40] * 12;
+        x = p->unk_00.unk_00 + gSineTable[p->unk_14] * 12;
+        y = p->unk_00.unk_04 + -gSineTable[p->unk_14 + 0x40] * 12;
         break;
     case 0x40:
     case 0xC0:
-        x = p->unk_00.unk_00 + gUnk_08121400[p->unk_14] * 27;
-        y = p->unk_00.unk_04 + -gUnk_08121400[p->unk_14 + 0x40] * 27;
+        x = p->unk_00.unk_00 + gSineTable[p->unk_14] * 27;
+        y = p->unk_00.unk_04 + -gSineTable[p->unk_14 + 0x40] * 27;
         break;
     case 0x00:
     case 0x53:
     case 0x80:
     case 0xAD:
     default:
-        x = p->unk_00.unk_00 + gUnk_08121400[p->unk_14] * 20;
-        y = p->unk_00.unk_04 + -gUnk_08121400[p->unk_14 + 0x40] * 20;
+        x = p->unk_00.unk_00 + gSineTable[p->unk_14] * 20;
+        y = p->unk_00.unk_04 + -gSineTable[p->unk_14 + 0x40] * 20;
         break;
     }
     func_080C7684(x, y, p->unk_00.unk_08 - 0x800);
@@ -2532,7 +2532,7 @@ u8 task_poo_honeycomb_1(PooHoneycombWork* w) {
             }
             break;
         case 1:
-            w->unk_98 = gUnk_08121400[(u8)w->unk_96];
+            w->unk_98 = gSineTable[(u8)w->unk_96];
             w->unk_96 += 16;
             w->unk_94++;
             if (w->unk_94 > 60) {
@@ -3333,10 +3333,10 @@ void func_080D1B94(PooPrizeWork* w) {
     u8 a;
 
     g = &gUnk_0203C420.unk_00;
-    t = gUnk_08121400;
+    t = gSineTable;
     a = w->unk_8C;
     tx = g->unk_00 + ((t[a] << 5) * w->unk_90 >> 8);
-    s = -gUnk_08121400[a + 0x40] * 22;
+    s = -gSineTable[a + 0x40] * 22;
     ty = g->unk_04 + (s * w->unk_90 >> 8);
     tz = g->unk_08 - ((w->unk_82 >> 1) << 8);
     w->unk_8C = a + w->unk_8D;

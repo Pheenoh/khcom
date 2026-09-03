@@ -2018,8 +2018,8 @@ void func_08017138(u16 a) {
 void func_0801718C(void) {
     u16 t;
     s32 w;
-    t = (gUnk_08121400[(gUnk_02034928->unk_0C / 3) & 0xFF] * 10240) >> 16;
-    w = ((abs(gUnk_08121400[(u8)gUnk_02034928->unk_0C]) >> 1) + 0x100) * 0x133 >> 8;
+    t = (gSineTable[(gUnk_02034928->unk_0C / 3) & 0xFF] * 10240) >> 16;
+    w = ((abs(gSineTable[(u8)gUnk_02034928->unk_0C]) >> 1) + 0x100) * 0x133 >> 8;
     func_0800675C(t + 15, 0x133, w);
     func_0801709C();
     gUnk_02034928->unk_0C++;
@@ -2903,7 +2903,7 @@ void func_0801CB18(void) {
 }
 
 void func_0801CB44(void) {
-    SeedRandom(gUnk_03007480);
+    SeedRandom(gFrameCounter);
     func_0801CA88();
     func_0801CB00();
     func_0800ABD8();
