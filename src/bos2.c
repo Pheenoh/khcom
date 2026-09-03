@@ -1,6 +1,24 @@
 #include "macros.h"
 #include "bos2.h"
 
+s16 gUnk_0203ACC0 COMMON;
+s16 gUnk_0203ACC4 COMMON;
+s16 gUnk_0203ACC8 COMMON;
+s16 gUnk_0203ACCC COMMON;
+s8 gUnk_0203ACD0 COMMON;
+s16 gUnk_0203ACD4 COMMON;
+void* gUnk_0203ACD8;
+u32 gUnk_0203ACDC;
+u8 gUnk_0203ACE0[0x800];
+s16 gUnk_0203B4E0 COMMON;
+s16 gUnk_0203B4E4 COMMON;
+s32 gUnk_0203B4E8;
+u32 gUnk_0203B4EC;
+void* gUnk_0203B4F0[4];
+void* gUnk_0203B500;
+u8 gUnk_0203B504[12];
+u8 gUnk_0203B510[0x800];
+
 INCLUDE_ASM("bos2/task_bos_tm_body_0.s");
 INCLUDE_ASM("bos2/task_bos_tm_body_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_body_2.s");
@@ -493,9 +511,9 @@ u8 task_bos_jf_map_1(JfMapWork* work) {
 }
 
 void func_080BDAAC(void) {
-    func_080C6EB0(gUnk_09EF275C[0][gUnk_0203ACC4], gUnk_0203AF2C[0], 7, 0x17);
-    func_080C6EB0(gUnk_09EF275C[1][gUnk_0203ACD4], gUnk_0203AF2C[1], 7, 0x17);
-    func_080C6EB0(gUnk_09EF275C[0][gUnk_0203ACC0], gUnk_0203AF2C[2], 7, 0x17);
+    func_080C6EB0(gUnk_09EF275C[0][gUnk_0203ACC4], gUnk_0203ACE0 + 0x24c, 7, 0x17);
+    func_080C6EB0(gUnk_09EF275C[1][gUnk_0203ACD4], gUnk_0203ACE0 + 0x25a, 7, 0x17);
+    func_080C6EB0(gUnk_09EF275C[0][gUnk_0203ACC0], gUnk_0203ACE0 + 0x268, 7, 0x17);
     func_0800516C(0, gUnk_0203ACD8, 2, 2);
 }
 void func_080BDB28(s16 a) {

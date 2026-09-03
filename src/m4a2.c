@@ -1,6 +1,34 @@
 #include "m4a.h"
 #include "macros.h"
 
+SoundInfo gSoundInfo;
+MPlayFunc gMPlayJumpTable[36];
+CgbChannel gCgbChans[4];
+MusicPlayerInfo gUnk_0203D990;
+MusicPlayerInfo gUnk_0203D9D0;
+MusicPlayerInfo gUnk_0203DA10;
+MusicPlayerInfo gUnk_0203DA50;
+MusicPlayerInfo gUnk_0203DA90;
+MusicPlayerInfo gUnk_0203DAD0;
+MusicPlayerInfo gUnk_0203DB10;
+MusicPlayerInfo gUnk_0203DB50;
+MusicPlayerInfo gUnk_0203DB90;
+MusicPlayerInfo gUnk_0203DBD0;
+MusicPlayerInfo gUnk_0203DC10;
+MusicPlayerInfo gUnk_0203DC50;
+MusicPlayerInfo gUnk_0203DC90;
+MusicPlayerInfo gUnk_0203DCD0;
+MusicPlayerInfo gUnk_0203DD10;
+MusicPlayerInfo gUnk_0203DD50;
+MusicPlayerInfo gUnk_0203DD90;
+MusicPlayerInfo gUnk_0203DDD0;
+MusicPlayerInfo gUnk_0203DE10;
+MusicPlayerInfo gUnk_0203DE50;
+u8 gMPlayMemAccArea[16];
+MusicPlayerInfo gUnk_0203DEA0;
+MusicPlayerInfo gUnk_0203DEE0;
+MusicPlayerInfo gUnk_0203DF20;
+
 INCLUDE_ASM("m4a2/umul3232H32.s");
 INCLUDE_ASM("m4a2/SoundMain.s");
 INCLUDE_ASM("m4a2/SoundMainRAM.s");

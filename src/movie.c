@@ -59,8 +59,9 @@ typedef struct MoviePlayer {
     u8 unk_8D;
 } MoviePlayer;
 
-extern MoviePlayer* gUnk_0203C7C4;
-extern MovieHeap gUnk_0203C7D0;
+MoviePlayer* gUnk_0203C7C4;
+u8 gUnk_0203C7C8[8];
+MovieHeap gUnk_0203C7D0;
 
 
 void SndStreamInit(u32 rate, u32 channels);

@@ -75,6 +75,11 @@ UNIT_BSS = {
     "src/sio.o": 0x0203406C,
     "src/mode_sio.o": {"us": 0x02034B3C, "jp": 0x02034A9C},
     "src/mode_worldwarp.o": {"us": 0x020354E8, "jp": 0x02035448},
+    "src/bos3.o": {"us": 0x0203C3BC, "jp": 0x0203C32C},
+    "src/snd_stream.o": {"us": 0x0203C7F0, "jp": 0x0203C760},
+    "src/movie.o": {"us": 0x0203C7C4, "jp": 0x0203C734},
+    "src/m4a2.o": {"us": 0x0203C850, "jp": 0x0203C7C0},
+    "src/bos2.o": {"us": 0x0203ACC0, "jp": 0x0203AC30},
 }
 
 DEFAULT_VERSION = "us"
