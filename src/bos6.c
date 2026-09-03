@@ -82,7 +82,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     func_0801BCC0(x, y, z - 0x400);
     func_0810A51C(work, (TaskPool*)arg);
     g = gUnk_02039B84;
-    *(s32*)&g->unk_0CC = work->unk_058;
+    g->unk_0CC = work->unk_058;
     g->unk_0D0 = work->unk_05C;
     g->unk_0D4 = work->unk_060;
     g->unk_0D8 = -10;
@@ -515,7 +515,7 @@ u8 task_bos_pc_1(PcWork* work, s32 arg) {
     func_08012324(p->unk_40, p->unk_04, p->unk_08, p->unk_0C);
     func_08012324(&work->unk_274, work->unk_168, work->unk_16C, work->unk_028 + 0x800);
     g = gUnk_02039B84;
-    *(s32*)&g->unk_0CC = p->unk_04;
+    g->unk_0CC = p->unk_04;
     g->unk_0D0 = p->unk_08;
     g->unk_0D4 = p->unk_0C;
     work->unk_2E8 = (work->unk_080 << 8) / work->unk_082;
@@ -1181,7 +1181,6 @@ u8 task_bos_pc_acd_1(PcAcdWork* work) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void task_bos_pc_acd_2(PcAcdWork* work) {
     s16 sx;
     s16 sy;
@@ -1189,11 +1188,11 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
     PcPos* pos;
     PcFltWork* flt;
     AnimState* anim;
-    void** tbl;
+    u8* tbl;
+    s32 ofs;
     void* gfx;
     s32 ox;
     s32 oy;
-    u16 g;
 
     gp = &gUnk_02039B84;
     pos = (PcPos*)(*gp)->unk_07C;
@@ -1209,15 +1208,15 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
     work->unk_010 = pos->unk_08 - 0x400;
     work->unk_014 = 0;
     if (flt->unk_004 == 1) {
-        tbl = (void**)gUnk_09EFAB68;
-        gfx = tbl[func_08005B38(&work->unk_020) + 5];
+        tbl = gUnk_09EFAB68;
+        ofs = (func_08005B38(&work->unk_020) + 5) * 4;
+        gfx = *(void**)((u32)tbl + ofs);
         if (((PcPos*)(*gp)->unk_07C)->unk_34 & 4) {
             WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x600, work->unk_010 - oy, 0);
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
         }
-        g = func_0801AF1C(work->unk_010);
-        DrawSprite(sx, sy, gfx, (void*)work->unk_004, (void*)work->unk_008, 0, g,
+        DrawSprite(sx, sy, gfx, (void*)work->unk_004, (void*)work->unk_008, 0, func_0801AF1C(work->unk_010),
                    (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
     } else if (pos->unk_0C >= 0) {
         if (((*gp)->unk_068 & 0x20000000) && ((*gp)->unk_068 & 0x200000)) {
@@ -1225,33 +1224,27 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
         }
         anim = &work->unk_020;
         if (func_08005B30(anim) == 1) {
-            pos = (PcPos*)(*gp)->unk_07C;
-            pos->unk_34 |= 0x2000000;
-            if (pos->unk_34 & 0x80) {
+            ((PcPos*)(*gp)->unk_07C)->unk_34 |= 0x2000000;
+            if (((PcPos*)(*gp)->unk_07C)->unk_34 & 0x80) {
                 return;
             }
-            tbl = (void**)gUnk_09EFAB68;
-            gfx = tbl[func_08005B38(anim) + 5];
+            tbl = gUnk_09EFAB68;
+            ofs = (func_08005B38(anim) + 5) * 4;
+            gfx = *(void**)((u32)tbl + ofs);
             if (((PcPos*)(*gp)->unk_07C)->unk_34 & 4) {
                 WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x600, work->unk_010 - oy, 0);
             } else {
                 WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
             }
-            g = func_0801AF1C(work->unk_010);
-            DrawSprite(sx, sy, gfx, (void*)work->unk_004, (void*)work->unk_008, 0, g,
+            DrawSprite(sx, sy, gfx, (void*)work->unk_004, (void*)work->unk_008, 0, func_0801AF1C(work->unk_010),
                        (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox, work->unk_010 - oy, 0);
-            gfx = AnimGetGfx(anim);
-            g = func_0801AF1C(((PcPos*)(*gp)->unk_07C)->unk_08);
-            DrawSprite(sx, sy, gfx, (void*)work->unk_004, (void*)work->unk_008, 0, g,
+            DrawSprite(sx, sy, AnimGetGfx(anim), (void*)work->unk_004, (void*)work->unk_008, 0, func_0801AF1C(((PcPos*)(*gp)->unk_07C)->unk_08),
                        (u16)(-0x1004 - ((((PcPos*)(*gp)->unk_07C)->unk_08 >> 8) << 2)));
         }
     }
 }
-#else
-INCLUDE_ASM("bos6/task_bos_pc_acd_2.s");
-#endif
 
 void task_bos_pc_acd_3(PcAcdWork* work) {
     ReleaseObjTiles((void*)work->unk_004);
@@ -1615,7 +1608,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     LoadBgMap(1, gUnk_09D4DA74, 0x800);
     LoadBgMap(0, gUnk_09D4B274, 0x800);
     g = gUnk_02039B84;
-    *(s32*)&g->unk_0CC = work->unk_044;
+    g->unk_0CC = work->unk_044;
     g->unk_0D0 = work->unk_048;
     g->unk_0D4 = work->unk_04C;
     g->unk_0D8 = -16;
@@ -3187,7 +3180,6 @@ void func_0810F064(BosLstWork* work, LstSub* p) {
     }
 }
 
-#ifdef NON_MATCHING
 u8 task_bos_lst_1(BosLstWork* work) {
     s16 sx;
     s16 sy;
@@ -3198,6 +3190,9 @@ u8 task_bos_lst_1(BosLstWork* work) {
     LstSub* s;
     UnkStruct_02039B84** gp;
     s32 v;
+    PcPos* p2;
+    s32 t;
+    s32 y;
     s32 lim;
     s16 anim;
     s16 idx;
@@ -3214,22 +3209,22 @@ u8 task_bos_lst_1(BosLstWork* work) {
     pos->unk_34 |= 0x2000000;
     (*gp)->unk_0D8 = -16;
     if (work->unk_0D4 == 1) {
-        v = func_0810D70C(work);
-        pos = (PcPos*)(*gp)->unk_07C;
-        pos->unk_08 = v;
+        y = func_0810D70C(work);
+        p2 = (PcPos*)(*gp)->unk_07C;
+        p2->unk_08 = y;
         if (((*gp)->unk_068 & 0x2000000000000) == 0) {
-            v = (work->unk_0DC * 70) >> 8;
-            v = pos->unk_04 + work->unk_012 * v;
-            pos->unk_04 = v;
+            t = (work->unk_0DC * 70) >> 8;
+            v = p2->unk_04 + t * work->unk_012;
+            p2->unk_04 = v;
             if (work->unk_012 < 0) {
                 lim = work->unk_044 - 0x2000;
                 if (v > lim) {
-                    pos->unk_04 = lim;
+                    p2->unk_04 = lim;
                 }
             } else {
                 lim = work->unk_044 + 0x2000;
                 if (v < lim) {
-                    pos->unk_04 = lim;
+                    p2->unk_04 = lim;
                 }
             }
         }
@@ -3240,6 +3235,7 @@ u8 task_bos_lst_1(BosLstWork* work) {
         anim |= 1;
         idx = 1;
     }
+    idx = (s16)idx;
     work->unk_026 -= 1;
     if (work->unk_026 < 0) {
         work->unk_026 = 0;
@@ -3258,12 +3254,12 @@ u8 task_bos_lst_1(BosLstWork* work) {
         work->unk_006 = 0;
     }
     switch (func_0801ADAC(obj)) {
-    case 1:
-    case 6:
+    case 5:
         work->unk_008 = 1;
         work->unk_00A = 0;
         break;
-    case 2:
+    case 1:
+    case 6:
     case 7:
         work->unk_07C = work->unk_07C * 3;
         work->unk_07C = work->unk_07C / 4;
@@ -3280,12 +3276,12 @@ u8 task_bos_lst_1(BosLstWork* work) {
             work->unk_008 = 3;
         }
         break;
-    case 4:
+    case 3:
         work->unk_008 = 4;
         work->unk_00A = 0;
         work->unk_07A = 0;
         break;
-    case 5:
+    case 4:
         work->unk_008 = 2;
         work->unk_00A = 0;
         break;
@@ -3328,7 +3324,7 @@ u8 task_bos_lst_1(BosLstWork* work) {
         sub->unk_08 = work->unk_048 + work->unk_054 + (gUnk_09A4CF8C[anim].unk_14 << 8);
         sub->unk_0C = work->unk_04C + work->unk_058 + (gUnk_09A4CF8C[anim].unk_16 << 8);
     }
-    j = k ^ 1;
+    j = idx ^ 1;
     if (work->unk_1F4[j].unk_000 == 0) {
         s = &work->unk_1F4[j];
         sub = (PcPos*)s->unk_018;
@@ -3358,9 +3354,9 @@ u8 task_bos_lst_1(BosLstWork* work) {
     AnimUpdate(&work->unk_02C);
     work->unk_010 += 1;
     work->unk_010 = (u32)work->unk_010 % 48;
-    *(s32*)&(*gp)->unk_0CC = work->unk_044;
-    (*gp)->unk_0D0 = work->unk_048;
-    (*gp)->unk_0D4 = work->unk_04C;
+    gUnk_02039B84->unk_0CC = work->unk_044;
+    gUnk_02039B84->unk_0D0 = work->unk_048;
+    gUnk_02039B84->unk_0D4 = work->unk_04C;
     if (work->unk_008 != 4 && (work->unk_06C & 0xF) == 0) {
         WorldToScreen(&sx, &sy, work->unk_044 + work->unk_050, work->unk_048 + work->unk_054, work->unk_04C + work->unk_058);
         if (sy < -16) {
@@ -3375,24 +3371,21 @@ u8 task_bos_lst_1(BosLstWork* work) {
     TaskPoolUpdate(&work->unk_890);
     return r;
 }
-#else
-INCLUDE_ASM("bos6/task_bos_lst_1.s");
-#endif
 
-#ifdef NON_MATCHING
 void task_bos_lst_2(BosLstWork* work) {
     s16 sx;
     s16 sy;
     u32 fill;
-    s32 idx;
+    s16 idx;
     vu32* dma;
-    void** p;
+    u32* src;
     LstSub* sub;
     s16 anim;
     s16 n;
     s32 k;
     s32 j;
     u16 v;
+    u16 w;
 
     TaskPoolDraw(&work->unk_890);
     anim = gUnk_09A4D0EC[work->unk_010] << 1;
@@ -3401,6 +3394,7 @@ void task_bos_lst_2(BosLstWork* work) {
         anim |= 1;
         idx = 1;
     }
+    idx = (s16)idx;
     if (func_0801CA00(&work->unk_0E4) != 0 || func_0801CA00(work->unk_1F4[0].unk_018) != 0 ||
         func_0801CA00(work->unk_1F4[1].unk_018) != 0) {
         work->unk_014 = 1;
@@ -3478,16 +3472,16 @@ void task_bos_lst_2(BosLstWork* work) {
         dma[1] = (u32)work->unk_8A4;
         dma[2] = 0x80000400;
         dma[2];
-        p = &gUnk_09A4D194[0][1];
-        dma[0] = (u32)p[n * 2];
+        src = gUnk_09A4D194[n][1];
+        dma[0] = (u32)src;
         dma[1] = (u32)work->unk_8A4;
         dma[2] = 0x80000140;
         dma[2];
         if (work->unk_012 > 0) {
-            dma[0] = (u32)(p + 160);
+            dma[0] = (u32)(src + 160);
             dma[1] = (u32)work->unk_B24;
         } else {
-            dma[0] = (u32)(p + 169);
+            dma[0] = (u32)(src + 169);
             dma[1] = (u32)work->unk_B48;
         }
         dma[2] = 0x8000000E;
@@ -3506,7 +3500,7 @@ void task_bos_lst_2(BosLstWork* work) {
                func_0801AF1C(work->unk_048 + work->unk_054 + ((s16)gUnk_02039B84->unk_0D8 << 8)),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054 + ((s16)gUnk_02039B84->unk_0D8 << 8)) >> 8) << 2)));
     WorldToScreen(&sx, &sy, work->unk_044 + work->unk_050, work->unk_048 + work->unk_054, work->unk_04C + work->unk_058);
-    k = (s16)idx;
+    k = idx;
     v = work->unk_1F4[k].unk_008;
     if (work->unk_1F4[k].unk_008 > 0) {
         work->unk_1F4[k].unk_008 = v - 1;
@@ -3515,20 +3509,16 @@ void task_bos_lst_2(BosLstWork* work) {
     DrawSprite(sx + gUnk_09A4CF8C[anim].unk_0C, sy + gUnk_09A4CF8C[anim].unk_0E, AnimGetGfx(&sub->unk_128), (void*)work->unk_1F4[0].unk_010, (void*)work->unk_0E0, 0,
                func_0801AF1C(work->unk_048 + work->unk_054),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054) >> 8) << 2)));
-    j = k;
-    j ^= 1;
-    v = work->unk_1F4[j].unk_008;
+    j = idx ^ 1;
+    w = work->unk_1F4[j].unk_008;
     if (work->unk_1F4[j].unk_008 > 0) {
-        work->unk_1F4[j].unk_008 = v - 1;
+        work->unk_1F4[j].unk_008 = w - 1;
     }
     sub = &work->unk_1F4[j];
     DrawSprite(sx + gUnk_09A4CF8C[anim].unk_18, sy + gUnk_09A4CF8C[anim].unk_1A, AnimGetGfx(&sub->unk_128), (void*)work->unk_1F4[1].unk_010, (void*)work->unk_0E0, 0,
                func_0801AF1C(work->unk_048 + work->unk_054 - 0x1100),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054 - 0x1100) >> 8) << 2)));
 }
-#else
-INCLUDE_ASM("bos6/task_bos_lst_2.s");
-#endif
 
 void task_bos_lst_3(BosLstWork* work) {
     s32 i;
