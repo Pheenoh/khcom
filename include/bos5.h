@@ -473,7 +473,7 @@ u8 func_080FA644(GaWork* work);
 u8 func_080FAA18(GaWork* work);
 u8 func_080FABE4(GaWork* work);
 extern GaWork* gUnk_02034FE8;
-extern u8 gUnk_09EDB338[];
+extern u8 gTaskDescBosMap[];
 extern u8 gUnk_0999202C[];
 extern u8 gUnk_09A3C89C[];
 void func_080FB930(MdWork* work, u16 id);

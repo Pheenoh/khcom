@@ -269,10 +269,10 @@ extern CharaLinkData gUnk_0203AAC0;
 extern s16 gSineTable[];
 extern u8 gUnk_08F69BC4[];
 extern u16 gUnk_09EDA4EC[];
-extern TaskDesc gUnk_09EDAE40;
-extern TaskDesc gUnk_09EDAE70;
-extern TaskDesc gUnk_09EDAE88;
-extern TaskDesc gUnk_09EDB3F8;
+extern TaskDesc gTaskDescBtlSora;
+extern TaskDesc gTaskDescBtlMap;
+extern TaskDesc gTaskDescBtlShadow;
+extern TaskDesc gTaskDescBtlBadstatus;
 
 void* EwramAlloc(u32 size);
 void EwramFree(void* p);

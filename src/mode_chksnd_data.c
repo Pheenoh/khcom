@@ -1,0 +1,1274 @@
+#include "mode_chksnd.h"
+
+extern const char gUnk_081309A0[];
+extern const char gUnk_08130990[];
+extern const char gUnk_08130980[];
+extern const char gUnk_08130974[];
+extern const char gUnk_08130968[];
+extern const char gUnk_0813095C[];
+extern const char gUnk_08130950[];
+extern const char gUnk_0813093C[];
+extern const char gUnk_08130928[];
+extern const char gUnk_08130914[];
+extern const char gUnk_08130900[];
+extern const char gUnk_081308F0[];
+extern const char gUnk_081308E0[];
+extern const char gUnk_081308D0[];
+extern const char gUnk_081308BC[];
+extern const char gUnk_081308A8[];
+extern const char gUnk_08130894[];
+extern const char gUnk_08130884[];
+extern const char gUnk_08130870[];
+extern const char gUnk_0813085C[];
+extern const char gUnk_08130848[];
+extern const char gUnk_08130838[];
+extern const char gUnk_08130824[];
+extern const char gUnk_08130818[];
+extern const char gUnk_08130804[];
+extern const char gUnk_081307F0[];
+extern const char gUnk_081307DC[];
+extern const char gUnk_081307C8[];
+extern const char gUnk_081307B8[];
+extern const char gUnk_081307A8[];
+extern const char gUnk_08130794[];
+extern const char gUnk_08130780[];
+extern const char gUnk_0813076C[];
+extern const char gUnk_0813075C[];
+extern const char gUnk_0813074C[];
+extern const char gUnk_08130738[];
+extern const char gUnk_08130728[];
+extern const char gUnk_08130718[];
+extern const char gUnk_08130700[];
+extern const char gUnk_081306EC[];
+extern const char gUnk_081306DC[];
+extern const char gUnk_081306CC[];
+extern const char gUnk_081306B8[];
+extern const char gUnk_081306AC[];
+extern const char gUnk_081306A0[];
+extern const char gUnk_08130694[];
+extern const char gUnk_08130688[];
+extern const char gUnk_0813067C[];
+extern const char gUnk_08130670[];
+extern const char gUnk_08130660[];
+extern const char gUnk_08130650[];
+extern const char gUnk_08130640[];
+extern const char gUnk_08130630[];
+extern const char gUnk_08130624[];
+extern const char gUnk_08130618[];
+extern const char gUnk_08130608[];
+extern const char gUnk_081305F8[];
+extern const char gUnk_081305E8[];
+extern const char gUnk_081305DC[];
+extern const char gUnk_081305CC[];
+extern const char gUnk_081305BC[];
+extern const char gUnk_081305B0[];
+extern const char gUnk_081305A0[];
+extern const char gUnk_08130590[];
+extern const char gUnk_08130580[];
+extern const char gUnk_08130570[];
+extern const char gUnk_08130560[];
+extern const char gUnk_08130550[];
+extern const char gUnk_08130544[];
+extern const char gUnk_08130538[];
+extern const char gUnk_08130528[];
+extern const char gUnk_08130518[];
+extern const char gUnk_08130508[];
+extern const char gUnk_081304F8[];
+extern const char gUnk_081304E8[];
+extern const char gUnk_081304D8[];
+extern const char gUnk_081304C8[];
+extern const char gUnk_081304B8[];
+extern const char gUnk_081304A8[];
+extern const char gUnk_0813049C[];
+extern const char gUnk_0813048C[];
+extern const char gUnk_08130480[];
+extern const char gUnk_08130474[];
+extern const char gUnk_08130464[];
+extern const char gUnk_08130454[];
+extern const char gUnk_08130448[];
+extern const char gUnk_08130438[];
+extern const char gUnk_0813042C[];
+extern const char gUnk_08130420[];
+extern const char gUnk_08130414[];
+extern const char gUnk_08130408[];
+extern const char gUnk_08130400[];
+extern const char gUnk_081303F0[];
+extern const char gUnk_081303E0[];
+extern const char gUnk_081303D0[];
+extern const char gUnk_081303C0[];
+extern const char gUnk_081303B0[];
+extern const char gUnk_081303A0[];
+extern const char gUnk_08130390[];
+extern const char gUnk_08130380[];
+extern const char gUnk_08130370[];
+extern const char gUnk_08130360[];
+extern const char gUnk_08130350[];
+extern const char gUnk_08130340[];
+extern const char gUnk_08130330[];
+extern const char gUnk_08130320[];
+extern const char gUnk_08130310[];
+extern const char gUnk_08130300[];
+extern const char gUnk_081302F0[];
+extern const char gUnk_081302E0[];
+extern const char gUnk_081302D0[];
+extern const char gUnk_081302C0[];
+extern const char gUnk_081302B0[];
+extern const char gUnk_081302A0[];
+extern const char gUnk_08130290[];
+extern const char gUnk_08130280[];
+extern const char gUnk_08130270[];
+extern const char gUnk_08130260[];
+extern const char gUnk_08130250[];
+extern const char gUnk_08130240[];
+extern const char gUnk_08130230[];
+extern const char gUnk_08130220[];
+extern const char gUnk_08130210[];
+extern const char gUnk_08130200[];
+extern const char gUnk_081301F0[];
+extern const char gUnk_081301E0[];
+extern const char gUnk_081301D0[];
+extern const char gUnk_081301C0[];
+extern const char gUnk_081301B0[];
+extern const char gUnk_081301A0[];
+extern const char gUnk_08130190[];
+extern const char gUnk_08130180[];
+extern const char gUnk_08130170[];
+extern const char gUnk_08130160[];
+extern const char gUnk_08130150[];
+extern const char gUnk_08130140[];
+extern const char gUnk_08130130[];
+extern const char gUnk_08130120[];
+extern const char gUnk_08130110[];
+extern const char gUnk_08130100[];
+extern const char gUnk_081300F0[];
+extern const char gUnk_081300E0[];
+extern const char gUnk_081300D4[];
+extern const char gUnk_081300C8[];
+extern const char gUnk_081300BC[];
+extern const char gUnk_081300AC[];
+extern const char gUnk_081300A0[];
+extern const char gUnk_08130090[];
+extern const char gUnk_08130080[];
+extern const char gUnk_08130074[];
+extern const char gUnk_08130068[];
+extern const char gUnk_0813005C[];
+extern const char gUnk_08130050[];
+extern const char gUnk_08130040[];
+extern const char gUnk_08130038[];
+extern const char gUnk_08130030[];
+extern const char gUnk_08130028[];
+extern const char gUnk_08130020[];
+extern const char gUnk_08130018[];
+extern const char gUnk_08130010[];
+extern const char gUnk_08130008[];
+extern const char gUnk_08130000[];
+extern const char gUnk_0812FFF8[];
+extern const char gUnk_0812FFF0[];
+extern const char gUnk_0812FFE8[];
+extern const char gUnk_0812FFE0[];
+extern const char gUnk_0812FFD8[];
+extern const char gUnk_0812FFD0[];
+extern const char gUnk_0812FFC8[];
+extern const char gUnk_0812FFC0[];
+extern const char gUnk_0812FFB8[];
+extern const char gUnk_0812FFB0[];
+extern const char gUnk_0812FFA8[];
+extern const char gUnk_0812FFA0[];
+extern const char gUnk_0812FF98[];
+extern const char gUnk_0812FF90[];
+extern const char gUnk_0812FF88[];
+extern const char gUnk_0812FF80[];
+extern const char gUnk_0812FF78[];
+extern const char gUnk_0812FF70[];
+extern const char gUnk_0812FF68[];
+extern const char gUnk_0812FF60[];
+extern const char gUnk_0812FF58[];
+extern const char gUnk_0812FF50[];
+extern const char gUnk_0812FF48[];
+extern const char gUnk_0812FF40[];
+extern const char gUnk_0812FF38[];
+extern const char gUnk_0812FF30[];
+extern const char gUnk_0812FF28[];
+extern const char gUnk_0812FF20[];
+extern const char gUnk_0812FF18[];
+extern const char gUnk_0812FF10[];
+extern const char gUnk_0812FF00[];
+extern const char gUnk_0812FEF0[];
+extern const char gUnk_0812FEE0[];
+extern const char gUnk_0812FED0[];
+extern const char gUnk_0812FEC0[];
+extern const char gUnk_0812FEB0[];
+extern const char gUnk_0812FEA0[];
+extern const char gUnk_0812FE90[];
+extern const char gUnk_0812FE80[];
+extern const char gUnk_0812FE70[];
+extern const char gUnk_0812FE60[];
+extern const char gUnk_0812FE50[];
+extern const char gUnk_0812FE40[];
+extern const char gUnk_0812FE30[];
+extern const char gUnk_0812FE20[];
+extern const char gUnk_0812FE10[];
+extern const char gUnk_0812FE00[];
+extern const char gUnk_0812FDF0[];
+extern const char gUnk_0812FDE0[];
+extern const char gUnk_0812FDD0[];
+extern const char gUnk_0812FDC0[];
+extern const char gUnk_0812FDB0[];
+extern const char gUnk_0812FDA0[];
+extern const char gUnk_0812FD90[];
+extern const char gUnk_0812FD80[];
+extern const char gUnk_0812FD70[];
+extern const char gUnk_0812FD60[];
+extern const char gUnk_0812FD50[];
+extern const char gUnk_0812FD3C[];
+extern const char gUnk_0812FD28[];
+extern const char gUnk_0812FD14[];
+extern const char gUnk_0812FD00[];
+extern const char gUnk_0812FCF0[];
+extern const char gUnk_0812FCE8[];
+extern const char gUnk_0812FCE0[];
+extern const char gUnk_0812FCD8[];
+extern const char gUnk_0812FCD0[];
+extern const char gUnk_0812FCC8[];
+extern const char gUnk_0812FCC0[];
+extern const char gUnk_0812FCB8[];
+extern const char gUnk_0812FCB0[];
+extern const char gUnk_0812FCA8[];
+extern const char gUnk_0812FCA0[];
+extern const char gUnk_0812FC98[];
+extern const char gUnk_0812FC90[];
+extern const char gUnk_0812FC88[];
+extern const char gUnk_0812FC80[];
+extern const char gUnk_0812FC78[];
+extern const char gUnk_0812FC70[];
+extern const char gUnk_0812FC68[];
+extern const char gUnk_0812FC58[];
+extern const char gUnk_0812FC4C[];
+extern const char gUnk_0812FC40[];
+extern const char gUnk_0812FC34[];
+extern const char gUnk_0812FC28[];
+extern const char gUnk_0812FC1C[];
+extern const char gUnk_0812FC10[];
+extern const char gUnk_0812FC04[];
+extern const char gUnk_0812FBF8[];
+extern const char gUnk_0812FBEC[];
+extern const char gUnk_0812FBE0[];
+extern const char gUnk_0812FBD4[];
+extern const char gUnk_0812FBC8[];
+extern const char gUnk_0812FBBC[];
+extern const char gUnk_0812FBB0[];
+extern const char gUnk_0812FBA4[];
+extern const char gUnk_0812FB98[];
+extern const char gUnk_0812FB8C[];
+extern const char gUnk_0812FB80[];
+extern const char gUnk_0812FB74[];
+extern const char gUnk_0812FB68[];
+extern const char gUnk_0812FB5C[];
+extern const char gUnk_0812FB50[];
+extern const char gUnk_0812FB44[];
+extern const char gUnk_0812FB38[];
+extern const char gUnk_0812FB2C[];
+extern const char gUnk_0812FB1C[];
+extern const char gUnk_0812FB10[];
+extern const char gUnk_0812FB04[];
+extern const char gUnk_0812FAF8[];
+extern const char gUnk_0812FAEC[];
+extern const char gUnk_0812FAE0[];
+extern const char gUnk_0812FAD4[];
+extern const char gUnk_0812FAC8[];
+extern const char gUnk_0812FABC[];
+extern const char gUnk_0812FAB0[];
+extern const char gUnk_0812FAA4[];
+extern const char gUnk_0812FA98[];
+extern const char gUnk_0812FA8C[];
+extern const char gUnk_0812FA80[];
+extern const char gUnk_0812FA74[];
+extern const char gUnk_0812FA64[];
+extern const char gUnk_0812FA54[];
+extern const char gUnk_0812FA48[];
+extern const char gUnk_0812FA40[];
+extern const char gUnk_0812FA38[];
+extern const char gUnk_0812FA30[];
+extern const char gUnk_0812FA28[];
+extern const char gUnk_0812FA20[];
+extern const char gUnk_0812FA18[];
+extern const char gUnk_0812FA10[];
+extern const char gUnk_0812FA08[];
+extern const char gUnk_0812FA00[];
+extern const char gUnk_0812F9F8[];
+extern const char gUnk_0812F9F0[];
+extern const char gUnk_0812F9E8[];
+extern const char gUnk_0812F9E0[];
+extern const char gUnk_0812F9D8[];
+extern const char gUnk_0812F9D0[];
+extern const char gUnk_0812F9C8[];
+extern const char gUnk_0812F9C0[];
+extern const char gUnk_0812F9B8[];
+extern const char gUnk_0812F9B0[];
+extern const char gUnk_0812F9A8[];
+extern const char gUnk_0812F9A0[];
+extern const char gUnk_0812F998[];
+extern const char gUnk_0812F990[];
+extern const char gUnk_0812F988[];
+extern const char gUnk_0812F980[];
+extern const char gUnk_0812F978[];
+extern const char gUnk_0812F970[];
+extern const char gUnk_0812F968[];
+extern const char gUnk_0812F960[];
+extern const char gUnk_0812F958[];
+extern const char gUnk_0812F950[];
+extern const char gUnk_0812F948[];
+extern const char gUnk_0812F940[];
+extern const char gUnk_0812F938[];
+extern const char gUnk_0812F930[];
+extern const char gUnk_0812F928[];
+extern const char gUnk_0812F920[];
+extern const char gUnk_0812F918[];
+extern const char gUnk_0812F910[];
+extern const char gUnk_0812F908[];
+extern const char gUnk_0812F900[];
+extern const char gUnk_0812F8F8[];
+extern const char gUnk_0812F8F0[];
+extern const char gUnk_0812F8E8[];
+extern const char gUnk_0812F8E0[];
+extern const char gUnk_0812F8D0[];
+extern const char gUnk_0812F8C0[];
+extern const char gUnk_0812F8B0[];
+extern const char gUnk_0812F8A0[];
+extern const char gUnk_0812F894[];
+extern const char gUnk_0812F888[];
+extern const char gUnk_0812F87C[];
+extern const char gUnk_0812F870[];
+extern const char gUnk_0812F864[];
+extern const char gUnk_0812F858[];
+extern const char gUnk_0812F84C[];
+extern const char gUnk_0812F840[];
+extern const char gUnk_0812F834[];
+extern const char gUnk_0812F828[];
+extern const char gUnk_0812F81C[];
+extern const char gUnk_0812F810[];
+extern const char gUnk_0812F804[];
+extern const char gUnk_0812F7F8[];
+extern const char gUnk_0812F7EC[];
+extern const char gUnk_0812F7E0[];
+extern const char gUnk_0812F7D4[];
+extern const char gUnk_0812F7C4[];
+extern const char gUnk_0812F7B8[];
+extern const char gUnk_0812F7AC[];
+extern const char gUnk_0812F7A0[];
+extern const char gUnk_0812F794[];
+extern const char gUnk_0812F788[];
+extern const char gUnk_0812F77C[];
+extern const char gUnk_0812F770[];
+extern const char gUnk_0812F760[];
+extern const char gUnk_0812F750[];
+extern const char gUnk_0812F744[];
+extern const char gUnk_0812F734[];
+extern const char gUnk_0812F724[];
+extern const char gUnk_0812F718[];
+extern const char gUnk_0812F70C[];
+extern const char gUnk_0812F6FC[];
+extern const char gUnk_0812F6EC[];
+extern const char gUnk_0812F6DC[];
+extern const char gUnk_0812F6CC[];
+extern const char gUnk_0812F6C0[];
+extern const char gUnk_0812F6B4[];
+extern const char gUnk_0812F6A4[];
+extern const char gUnk_0812F694[];
+extern const char gUnk_0812F688[];
+extern const char gUnk_0812F678[];
+extern const char gUnk_0812F668[];
+extern const char gUnk_0812F658[];
+extern const char gUnk_0812F64C[];
+extern const char gUnk_0812F640[];
+extern const char gUnk_0812F634[];
+extern const char gUnk_0812F624[];
+extern const char gUnk_0812F614[];
+extern const char gUnk_0812F604[];
+extern const char gUnk_0812F5F4[];
+extern const char gUnk_0812F5E4[];
+extern const char gUnk_0812F5D4[];
+extern const char gUnk_0812F5C8[];
+extern const char gUnk_0812F5B8[];
+extern const char gUnk_0812F5A8[];
+extern const char gUnk_0812F598[];
+extern const char gUnk_0812F58C[];
+extern const char gUnk_0812F580[];
+extern const char gUnk_0812F574[];
+extern const char gUnk_0812F568[];
+extern const char gUnk_0812F558[];
+extern const char gUnk_0812F548[];
+extern const char gUnk_0812F53C[];
+extern const char gUnk_0812F530[];
+extern const char gUnk_0812F520[];
+extern const char gUnk_0812F514[];
+extern const char gUnk_0812F504[];
+extern const char gUnk_0812F4F8[];
+extern const char gUnk_0812F4EC[];
+extern const char gUnk_0812F4DC[];
+extern const char gUnk_0812F4D0[];
+extern const char gUnk_0812F4C4[];
+extern const char gUnk_0812F4B4[];
+extern const char gUnk_0812F4A4[];
+extern const char gUnk_0812F498[];
+extern const char gUnk_0812F488[];
+extern const char gUnk_0812F478[];
+extern const char gUnk_0812F468[];
+extern const char gUnk_0812F458[];
+extern const char gUnk_0812F448[];
+extern const char gUnk_0812F438[];
+extern const char gUnk_0812F428[];
+extern const char gUnk_0812F418[];
+extern const char gUnk_0812F408[];
+extern const char gUnk_0812F3FC[];
+extern const char gUnk_0812F3EC[];
+extern const char gUnk_0812F3DC[];
+extern const char gUnk_0812F3CC[];
+extern const char gUnk_0812F3BC[];
+extern const char gUnk_0812F3AC[];
+extern const char gUnk_0812F39C[];
+extern const char gUnk_0812F390[];
+extern const char gUnk_0812F384[];
+extern const char gUnk_0812F374[];
+extern const char gUnk_0812F368[];
+extern const char gUnk_0812F358[];
+extern const char gUnk_0812F348[];
+extern const char gUnk_0812F338[];
+extern const char gUnk_0812F328[];
+extern const char gUnk_0812F31C[];
+extern const char gUnk_0812F310[];
+extern const char gUnk_0812F304[];
+extern const char gUnk_0812F2F4[];
+extern const char gUnk_0812F2E4[];
+extern const char gUnk_0812F2D4[];
+extern const char gUnk_0812F2C8[];
+extern const char gUnk_0812F2BC[];
+extern const char gUnk_0812F2AC[];
+extern const char gUnk_0812F29C[];
+extern const char gUnk_0812F290[];
+extern const char gUnk_0812F280[];
+extern const char gUnk_0812F270[];
+extern const char gUnk_0812F260[];
+extern const char gUnk_0812F24C[];
+extern const char gUnk_0812F240[];
+extern const char gUnk_0812F230[];
+extern const char gUnk_0812F220[];
+extern const char gUnk_0812F210[];
+extern const char gUnk_0812F200[];
+extern const char gUnk_0812F1F0[];
+extern const char gUnk_0812F1DC[];
+extern const char gUnk_0812F1CC[];
+extern const char gUnk_0812F1C0[];
+extern const char gUnk_0812F1B4[];
+extern const char gUnk_0812F1A8[];
+extern const char gUnk_0812F19C[];
+extern const char gUnk_0812F190[];
+extern const char gUnk_0812F180[];
+extern const char gUnk_0812F170[];
+extern const char gUnk_0812F164[];
+extern const char gUnk_0812F154[];
+extern const char gUnk_0812F148[];
+extern const char gUnk_0812F13C[];
+extern const char gUnk_0812F130[];
+extern const char gUnk_0812F120[];
+extern const char gUnk_0812F110[];
+extern const char gUnk_0812F100[];
+extern const char gUnk_0812F0F4[];
+extern const char gUnk_0812F0E8[];
+extern const char gUnk_0812F0DC[];
+extern const char gUnk_0812F0C8[];
+extern const char gUnk_0812F0B8[];
+extern const char gUnk_0812F0A4[];
+extern const char gUnk_0812F094[];
+extern const char gUnk_0812F084[];
+extern const char gUnk_0812F070[];
+extern const char gUnk_0812F060[];
+extern const char gUnk_0812F050[];
+extern const char gUnk_0812F040[];
+extern const char gUnk_0812F030[];
+extern const char gUnk_0812F020[];
+extern const char gUnk_0812F010[];
+extern const char gUnk_0812F000[];
+extern const char gUnk_0812EFF0[];
+extern const char gUnk_0812EFE4[];
+extern const char gUnk_0812EFDC[];
+extern const char gUnk_0812EFD0[];
+extern const char gUnk_0812EFC4[];
+extern const char gUnk_0812EFB8[];
+extern const char gUnk_0812EFAC[];
+extern const char gUnk_0812EFA4[];
+extern const char gUnk_0812EF98[];
+extern const char gUnk_0812EF8C[];
+extern const char gUnk_0812EF80[];
+extern const char gUnk_0812EF74[];
+extern const char gUnk_0812EF60[];
+extern const char gUnk_0812EF50[];
+extern const char gUnk_0812EF40[];
+extern const char gUnk_0812EF2C[];
+extern const char gUnk_0812EF20[];
+extern const char gUnk_0812EF14[];
+extern const char gUnk_0812EF08[];
+extern const char gUnk_0812EEF8[];
+extern const char gUnk_0812EEE8[];
+extern const char gUnk_0812EED8[];
+extern const char gUnk_0812EEC8[];
+extern const char gUnk_0812EEB8[];
+extern const char gUnk_0812EEA8[];
+extern const char gUnk_0812EE94[];
+extern const char gUnk_0812EE84[];
+extern const char gUnk_0812EE74[];
+extern const char gUnk_0812EE60[];
+extern const char gUnk_0812EE50[];
+extern const char gUnk_0812EE44[];
+extern const char gUnk_0812EE34[];
+extern const char gUnk_0812EE28[];
+extern const char gUnk_0812EE18[];
+extern const char gUnk_0812EE08[];
+extern const char gUnk_0812EDF4[];
+extern const char gUnk_0812EDE4[];
+extern const char gUnk_0812EDD4[];
+extern const char gUnk_0812EDC0[];
+extern const char gUnk_0812EDB8[];
+extern const char gUnk_0812EDAC[];
+extern const char gUnk_0812ED98[];
+extern const char gUnk_0812ED8C[];
+extern const char gUnk_0812ED84[];
+extern const char gUnk_0812ED7C[];
+extern const char gUnk_0812ED74[];
+extern const char gUnk_0812ED6C[];
+extern const char gUnk_0812ED64[];
+extern const char gUnk_0812ED5C[];
+extern const char gUnk_0812ED54[];
+extern const char gUnk_0812ED4C[];
+extern const char gUnk_0812ED44[];
+extern const char gUnk_0812ED3C[];
+extern const char gUnk_0812ED34[];
+extern const char gUnk_0812ED2C[];
+extern const char gUnk_0812ED24[];
+extern const char gUnk_0812ED1C[];
+extern const char gUnk_0812ED14[];
+extern const char gUnk_0812ED0C[];
+extern const char gUnk_0812ED04[];
+extern const char gUnk_0812ECFC[];
+extern const char gUnk_0812ECF4[];
+extern const char gUnk_0812ECEC[];
+extern const char gUnk_0812ECE4[];
+extern const char gUnk_0812ECDC[];
+extern const char gUnk_0812ECD4[];
+extern const char gUnk_0812ECCC[];
+extern const char gUnk_0812ECC4[];
+extern const char gUnk_0812ECBC[];
+extern const char gUnk_0812ECB4[];
+extern const char gUnk_0812ECAC[];
+extern const char gUnk_0812ECA4[];
+extern const char gUnk_0812EC9C[];
+extern const char gUnk_0812EC90[];
+extern const char gUnk_0812EC84[];
+extern const char gUnk_0812EC74[];
+extern const char gUnk_0812EC64[];
+extern const char gUnk_0812EC54[];
+extern const char gUnk_0812EC44[];
+extern const char gUnk_0812EC34[];
+extern const char gUnk_0812EC24[];
+extern const char gUnk_0812EC18[];
+extern const char gUnk_0812EC0C[];
+extern const char gUnk_0812EC00[];
+extern const char gUnk_0812EBF4[];
+extern const char gUnk_0812EBE4[];
+extern const char gUnk_0812EBD4[];
+extern const char gUnk_0812EBC4[];
+extern const char gUnk_0812EBB4[];
+extern const char gUnk_0812EBA8[];
+extern const char gUnk_0812EB9C[];
+extern const char gUnk_0812EB90[];
+extern const char gUnk_0812EB84[];
+extern const char gUnk_0812EB78[];
+extern const char gUnk_0812EB6C[];
+extern const char gUnk_0812EB60[];
+extern const char gUnk_0812EB54[];
+extern const char gUnk_0812EB48[];
+extern const char gUnk_0812EB3C[];
+extern const char gUnk_0812EB2C[];
+extern const char gUnk_0812EB1C[];
+extern const char gUnk_0812EB0C[];
+extern const char gUnk_0812EAFC[];
+extern const char gUnk_0812EAEC[];
+extern const char gUnk_0812EADC[];
+extern const char gUnk_0812EAD0[];
+extern const char gUnk_0812EAC4[];
+extern const char gUnk_0812EAB4[];
+extern const char gUnk_0812EAA4[];
+extern const char gUnk_0812EA94[];
+extern const char gUnk_0812EA84[];
+extern const char gUnk_0812EA74[];
+extern const char gUnk_0812EA64[];
+extern const char gUnk_0812EA54[];
+extern const char gUnk_0812EA44[];
+extern const char gUnk_0812EA34[];
+extern const char gUnk_0812EA24[];
+extern const char gUnk_0812EA14[];
+extern const char gUnk_0812EA04[];
+extern const char gUnk_0812E9F4[];
+extern const char gUnk_0812E9E4[];
+extern const char gUnk_0812E9D0[];
+extern const char gUnk_0812E9BC[];
+extern const char gUnk_0812E9AC[];
+extern const char gUnk_0812E99C[];
+extern const char gUnk_0812E98C[];
+extern const char gUnk_0812E980[];
+extern const char gUnk_0812E978[];
+extern const char gUnk_0812E970[];
+extern const char gUnk_0812E968[];
+extern const char gUnk_0812E960[];
+extern const char gUnk_0812E958[];
+extern const char gUnk_0812E950[];
+extern const char gUnk_0812E948[];
+extern const char gUnk_0812E940[];
+extern const char gUnk_0812E938[];
+extern const char gUnk_0812E930[];
+extern const char gUnk_0812E928[];
+extern const char gUnk_0812E920[];
+extern const char gUnk_0812E918[];
+extern const char gUnk_0812E910[];
+extern const char gUnk_0812E908[];
+extern const char gUnk_0812E900[];
+extern const char gUnk_0812E8F8[];
+extern const char gUnk_081309D4[];
+
+ChkSndEntry gChkSndEntries[] = {
+    { gUnk_081309A0, 1 },
+    { gUnk_08130990, 2 },
+    { gUnk_08130980, 3 },
+    { gUnk_08130974, 4 },
+    { gUnk_08130968, 5 },
+    { gUnk_0813095C, 6 },
+    { gUnk_08130950, 7 },
+    { gUnk_0813093C, 8 },
+    { gUnk_08130928, 9 },
+    { gUnk_08130914, 10 },
+    { gUnk_08130900, 11 },
+    { gUnk_081308F0, 12 },
+    { gUnk_081308E0, 13 },
+    { gUnk_081308D0, 14 },
+    { gUnk_081308BC, 15 },
+    { gUnk_081308A8, 16 },
+    { gUnk_08130894, 17 },
+    { gUnk_08130884, 18 },
+    { gUnk_08130870, 19 },
+    { gUnk_0813085C, 20 },
+    { gUnk_08130848, 21 },
+    { gUnk_08130838, 22 },
+    { gUnk_08130824, 23 },
+    { gUnk_08130818, 24 },
+    { gUnk_08130804, 25 },
+    { gUnk_081307F0, 26 },
+    { gUnk_081307DC, 27 },
+    { gUnk_081307C8, 28 },
+    { gUnk_081307B8, 29 },
+    { gUnk_081307A8, 30 },
+    { gUnk_08130794, 31 },
+    { gUnk_08130780, 32 },
+    { gUnk_0813076C, 33 },
+    { gUnk_0813075C, 34 },
+    { gUnk_0813074C, 35 },
+    { gUnk_08130738, 36 },
+    { gUnk_08130728, 37 },
+    { gUnk_08130718, 38 },
+    { gUnk_08130700, 39 },
+    { gUnk_081306EC, 40 },
+    { gUnk_081306DC, 41 },
+    { gUnk_081306CC, 42 },
+    { gUnk_081306B8, 43 },
+    { gUnk_081306AC, 101 },
+    { gUnk_081306A0, 102 },
+    { gUnk_08130694, 103 },
+    { gUnk_08130688, 104 },
+    { gUnk_0813067C, 105 },
+    { gUnk_08130670, 106 },
+    { gUnk_08130660, 107 },
+    { gUnk_08130650, 108 },
+    { gUnk_08130640, 109 },
+    { gUnk_08130630, 110 },
+    { gUnk_08130624, 111 },
+    { gUnk_08130618, 112 },
+    { gUnk_08130608, 113 },
+    { gUnk_081305F8, 114 },
+    { gUnk_081305E8, 115 },
+    { gUnk_081305DC, 116 },
+    { gUnk_081305CC, 117 },
+    { gUnk_081305BC, 118 },
+    { gUnk_081305B0, 119 },
+    { gUnk_081305A0, 120 },
+    { gUnk_08130590, 121 },
+    { gUnk_08130580, 122 },
+    { gUnk_08130570, 123 },
+    { gUnk_08130560, 124 },
+    { gUnk_08130550, 125 },
+    { gUnk_08130544, 126 },
+    { gUnk_08130538, 127 },
+    { gUnk_08130528, 128 },
+    { gUnk_08130518, 129 },
+    { gUnk_08130508, 130 },
+    { gUnk_081304F8, 131 },
+    { gUnk_081304E8, 132 },
+    { gUnk_081304D8, 133 },
+    { gUnk_081304C8, 134 },
+    { gUnk_081304B8, 135 },
+    { gUnk_081304A8, 136 },
+    { gUnk_0813049C, 137 },
+    { gUnk_0813048C, 138 },
+    { gUnk_08130480, 139 },
+    { gUnk_08130474, 140 },
+    { gUnk_08130464, 141 },
+    { gUnk_08130454, 142 },
+    { gUnk_08130448, 143 },
+    { gUnk_08130438, 144 },
+    { gUnk_0813042C, 145 },
+    { gUnk_08130420, 146 },
+    { gUnk_08130414, 147 },
+    { gUnk_08130408, 148 },
+    { gUnk_08130400, 149 },
+    { gUnk_081303F0, 150 },
+    { gUnk_081303E0, 151 },
+    { gUnk_081303D0, 152 },
+    { gUnk_081303C0, 153 },
+    { gUnk_081303B0, 154 },
+    { gUnk_081303A0, 155 },
+    { gUnk_08130390, 156 },
+    { gUnk_08130380, 157 },
+    { gUnk_08130370, 158 },
+    { gUnk_08130360, 159 },
+    { gUnk_08130350, 160 },
+    { gUnk_08130340, 161 },
+    { gUnk_08130330, 162 },
+    { gUnk_08130320, 163 },
+    { gUnk_08130310, 164 },
+    { gUnk_08130300, 165 },
+    { gUnk_081302F0, 166 },
+    { gUnk_081302E0, 167 },
+    { gUnk_081302D0, 168 },
+    { gUnk_081302C0, 169 },
+    { gUnk_081302B0, 170 },
+    { gUnk_081302A0, 171 },
+    { gUnk_08130290, 172 },
+    { gUnk_08130280, 173 },
+    { gUnk_08130270, 174 },
+    { gUnk_08130260, 175 },
+    { gUnk_08130250, 176 },
+    { gUnk_08130240, 177 },
+    { gUnk_08130230, 178 },
+    { gUnk_08130220, 179 },
+    { gUnk_08130210, 180 },
+    { gUnk_08130200, 181 },
+    { gUnk_081301F0, 182 },
+    { gUnk_081301E0, 183 },
+    { gUnk_081301D0, 184 },
+    { gUnk_081301C0, 185 },
+    { gUnk_081301B0, 186 },
+    { gUnk_081301A0, 187 },
+    { gUnk_08130190, 188 },
+    { gUnk_08130180, 189 },
+    { gUnk_08130170, 190 },
+    { gUnk_08130160, 191 },
+    { gUnk_08130150, 192 },
+    { gUnk_08130140, 193 },
+    { gUnk_08130130, 194 },
+    { gUnk_08130120, 195 },
+    { gUnk_08130110, 196 },
+    { gUnk_08130100, 197 },
+    { gUnk_081300F0, 198 },
+    { gUnk_081300E0, 199 },
+    { gUnk_081300D4, 200 },
+    { gUnk_081300C8, 201 },
+    { gUnk_081300BC, 202 },
+    { gUnk_081300AC, 203 },
+    { gUnk_081300A0, 204 },
+    { gUnk_08130090, 205 },
+    { gUnk_08130080, 206 },
+    { gUnk_08130074, 207 },
+    { gUnk_08130068, 208 },
+    { gUnk_0813005C, 209 },
+    { gUnk_08130050, 210 },
+    { gUnk_08130040, 211 },
+    { gUnk_08130038, 212 },
+    { gUnk_08130030, 213 },
+    { gUnk_08130028, 214 },
+    { gUnk_08130020, 215 },
+    { gUnk_08130018, 216 },
+    { gUnk_08130010, 217 },
+    { gUnk_08130008, 218 },
+    { gUnk_08130000, 219 },
+    { gUnk_0812FFF8, 220 },
+    { gUnk_0812FFF0, 221 },
+    { gUnk_0812FFE8, 222 },
+    { gUnk_0812FFE0, 223 },
+    { gUnk_0812FFD8, 224 },
+    { gUnk_0812FFD0, 225 },
+    { gUnk_0812FFC8, 226 },
+    { gUnk_0812FFC0, 227 },
+    { gUnk_0812FFB8, 228 },
+    { gUnk_0812FFB0, 229 },
+    { gUnk_0812FFA8, 230 },
+    { gUnk_0812FFA0, 231 },
+    { gUnk_0812FF98, 232 },
+    { gUnk_0812FF90, 233 },
+    { gUnk_0812FF88, 234 },
+    { gUnk_0812FF80, 235 },
+    { gUnk_0812FF78, 236 },
+    { gUnk_0812FF70, 237 },
+    { gUnk_0812FF68, 238 },
+    { gUnk_0812FF60, 239 },
+    { gUnk_0812FF58, 240 },
+    { gUnk_0812FF50, 241 },
+    { gUnk_0812FF48, 242 },
+    { gUnk_0812FF40, 243 },
+    { gUnk_0812FF38, 244 },
+    { gUnk_0812FF30, 245 },
+    { gUnk_0812FF28, 246 },
+    { gUnk_0812FF20, 247 },
+    { gUnk_0812FF18, 248 },
+    { gUnk_0812FF10, 249 },
+    { gUnk_0812FF00, 250 },
+    { gUnk_0812FEF0, 251 },
+    { gUnk_0812FEE0, 252 },
+    { gUnk_0812FED0, 253 },
+    { gUnk_0812FEC0, 254 },
+    { gUnk_0812FEB0, 255 },
+    { gUnk_0812FEA0, 256 },
+    { gUnk_0812FE90, 257 },
+    { gUnk_0812FE80, 258 },
+    { gUnk_0812FE70, 259 },
+    { gUnk_0812FE60, 260 },
+    { gUnk_0812FE50, 261 },
+    { gUnk_0812FE40, 262 },
+    { gUnk_0812FE30, 263 },
+    { gUnk_0812FE20, 264 },
+    { gUnk_0812FE10, 265 },
+    { gUnk_0812FE00, 266 },
+    { gUnk_0812FDF0, 267 },
+    { gUnk_0812FDE0, 268 },
+    { gUnk_0812FDD0, 269 },
+    { gUnk_0812FDC0, 270 },
+    { gUnk_0812FDB0, 271 },
+    { gUnk_0812FDA0, 272 },
+    { gUnk_0812FD90, 273 },
+    { gUnk_0812FD80, 274 },
+    { gUnk_0812FD70, 275 },
+    { gUnk_0812FD60, 276 },
+    { gUnk_0812FD50, 277 },
+    { gUnk_0812FD3C, 278 },
+    { gUnk_0812FD28, 279 },
+    { gUnk_0812FD14, 280 },
+    { gUnk_0812FD00, 281 },
+    { gUnk_0812FCF0, 282 },
+    { gUnk_0812FCE8, 283 },
+    { gUnk_0812FCE0, 284 },
+    { gUnk_0812FCD8, 285 },
+    { gUnk_0812FCD0, 286 },
+    { gUnk_0812FCC8, 287 },
+    { gUnk_0812FCC0, 288 },
+    { gUnk_0812FCB8, 289 },
+    { gUnk_0812FCB0, 290 },
+    { gUnk_0812FCA8, 291 },
+    { gUnk_0812FCA0, 292 },
+    { gUnk_0812FC98, 293 },
+    { gUnk_0812FC90, 294 },
+    { gUnk_0812FC88, 295 },
+    { gUnk_0812FC80, 296 },
+    { gUnk_0812FC78, 297 },
+    { gUnk_0812FC70, 298 },
+    { gUnk_0812FC68, 299 },
+    { gUnk_0812FC58, 300 },
+    { gUnk_0812FC4C, 301 },
+    { gUnk_0812FC40, 302 },
+    { gUnk_0812FC34, 303 },
+    { gUnk_0812FC28, 304 },
+    { gUnk_0812FC1C, 305 },
+    { gUnk_0812FC10, 306 },
+    { gUnk_0812FC04, 307 },
+    { gUnk_0812FBF8, 308 },
+    { gUnk_0812FBEC, 309 },
+    { gUnk_0812FBE0, 310 },
+    { gUnk_0812FBD4, 311 },
+    { gUnk_0812FBC8, 312 },
+    { gUnk_0812FBBC, 313 },
+    { gUnk_0812FBB0, 314 },
+    { gUnk_0812FBA4, 315 },
+    { gUnk_0812FB98, 316 },
+    { gUnk_0812FB8C, 317 },
+    { gUnk_0812FB80, 318 },
+    { gUnk_0812FB74, 319 },
+    { gUnk_0812FB68, 320 },
+    { gUnk_0812FB5C, 321 },
+    { gUnk_0812FB50, 322 },
+    { gUnk_0812FB44, 323 },
+    { gUnk_0812FB38, 325 },
+    { gUnk_0812FB2C, 326 },
+    { gUnk_0812FB1C, 327 },
+    { gUnk_0812FB10, 328 },
+    { gUnk_0812FB04, 330 },
+    { gUnk_0812FAF8, 331 },
+    { gUnk_0812FAEC, 332 },
+    { gUnk_0812FAE0, 333 },
+    { gUnk_0812FAD4, 334 },
+    { gUnk_0812FAC8, 335 },
+    { gUnk_0812FABC, 336 },
+    { gUnk_0812FAB0, 337 },
+    { gUnk_0812FAA4, 338 },
+    { gUnk_0812FA98, 339 },
+    { gUnk_0812FA8C, 340 },
+    { gUnk_0812FA80, 341 },
+    { gUnk_0812FA74, 342 },
+    { gUnk_0812FA64, 343 },
+    { gUnk_0812FA54, 344 },
+    { gUnk_0812FA48, 345 },
+    { gUnk_0812FA40, 346 },
+    { gUnk_0812FA38, 347 },
+    { gUnk_0812FA30, 348 },
+    { gUnk_0812FA28, 349 },
+    { gUnk_0812FA20, 350 },
+    { gUnk_0812FA18, 351 },
+    { gUnk_0812FA10, 352 },
+    { gUnk_0812FA08, 353 },
+    { gUnk_0812FA00, 354 },
+    { gUnk_0812F9F8, 355 },
+    { gUnk_0812F9F0, 356 },
+    { gUnk_0812F9E8, 357 },
+    { gUnk_0812F9E0, 358 },
+    { gUnk_0812F9D8, 359 },
+    { gUnk_0812F9D0, 360 },
+    { gUnk_0812F9C8, 361 },
+    { gUnk_0812F9C0, 362 },
+    { gUnk_0812F9B8, 363 },
+    { gUnk_0812F9B0, 364 },
+    { gUnk_0812F9A8, 365 },
+    { gUnk_0812F9A0, 366 },
+    { gUnk_0812F998, 367 },
+    { gUnk_0812F990, 368 },
+    { gUnk_0812F988, 369 },
+    { gUnk_0812F980, 370 },
+    { gUnk_0812F978, 371 },
+    { gUnk_0812F970, 372 },
+    { gUnk_0812F968, 373 },
+    { gUnk_0812F960, 374 },
+    { gUnk_0812F958, 375 },
+    { gUnk_0812F950, 376 },
+    { gUnk_0812F948, 377 },
+    { gUnk_0812F940, 378 },
+    { gUnk_0812F938, 379 },
+    { gUnk_0812F930, 380 },
+    { gUnk_0812F928, 381 },
+    { gUnk_0812F920, 382 },
+    { gUnk_0812F918, 383 },
+    { gUnk_0812F910, 384 },
+    { gUnk_0812F908, 385 },
+    { gUnk_0812F900, 386 },
+    { gUnk_0812F8F8, 387 },
+    { gUnk_0812F8F0, 388 },
+    { gUnk_0812F8E8, 389 },
+    { gUnk_0812F8E0, 390 },
+    { gUnk_0812F8D0, 500 },
+    { gUnk_0812F8C0, 501 },
+    { gUnk_0812F8B0, 502 },
+    { gUnk_0812F8A0, 503 },
+    { gUnk_0812F894, 504 },
+    { gUnk_0812F888, 505 },
+    { gUnk_0812F87C, 506 },
+    { gUnk_0812F870, 507 },
+    { gUnk_0812F864, 508 },
+    { gUnk_0812F858, 509 },
+    { gUnk_0812F84C, 510 },
+    { gUnk_0812F840, 511 },
+    { gUnk_0812F834, 512 },
+    { gUnk_0812F828, 513 },
+    { gUnk_0812F81C, 514 },
+    { gUnk_0812F810, 515 },
+    { gUnk_0812F804, 516 },
+    { gUnk_0812F7F8, 517 },
+    { gUnk_0812F7EC, 518 },
+    { gUnk_0812F7E0, 519 },
+    { gUnk_0812F7D4, 520 },
+    { gUnk_0812F7C4, 521 },
+    { gUnk_0812F7B8, 522 },
+    { gUnk_0812F7AC, 523 },
+    { gUnk_0812F7A0, 524 },
+    { gUnk_0812F794, 525 },
+    { gUnk_0812F788, 526 },
+    { gUnk_0812F77C, 527 },
+    { gUnk_0812F770, 528 },
+    { gUnk_0812F760, 529 },
+    { gUnk_0812F750, 530 },
+    { gUnk_0812F744, 531 },
+    { gUnk_0812F734, 532 },
+    { gUnk_0812F724, 533 },
+    { gUnk_0812F718, 534 },
+    { gUnk_0812F70C, 535 },
+    { gUnk_0812F6FC, 536 },
+    { gUnk_0812F6EC, 537 },
+    { gUnk_0812F6DC, 538 },
+    { gUnk_0812F6CC, 539 },
+    { gUnk_0812F6C0, 540 },
+    { gUnk_0812F6B4, 541 },
+    { gUnk_0812F6A4, 542 },
+    { gUnk_0812F694, 543 },
+    { gUnk_0812F688, 544 },
+    { gUnk_0812F678, 545 },
+    { gUnk_0812F668, 546 },
+    { gUnk_0812F658, 547 },
+    { gUnk_0812F64C, 548 },
+    { gUnk_0812F640, 549 },
+    { gUnk_0812F634, 550 },
+    { gUnk_0812F624, 551 },
+    { gUnk_0812F614, 552 },
+    { gUnk_0812F604, 553 },
+    { gUnk_0812F5F4, 554 },
+    { gUnk_0812F5E4, 555 },
+    { gUnk_0812F5D4, 556 },
+    { gUnk_0812F5C8, 557 },
+    { gUnk_0812F5B8, 558 },
+    { gUnk_0812F5A8, 559 },
+    { gUnk_0812F598, 560 },
+    { gUnk_0812F58C, 561 },
+    { gUnk_0812F580, 562 },
+    { gUnk_0812F574, 563 },
+    { gUnk_0812F568, 564 },
+    { gUnk_0812F558, 565 },
+    { gUnk_0812F548, 566 },
+    { gUnk_0812F53C, 567 },
+    { gUnk_0812F530, 568 },
+    { gUnk_0812F520, 569 },
+    { gUnk_0812F514, 570 },
+    { gUnk_0812F504, 571 },
+    { gUnk_0812F4F8, 572 },
+    { gUnk_0812F4EC, 573 },
+    { gUnk_0812F4DC, 574 },
+    { gUnk_0812F4D0, 575 },
+    { gUnk_0812F4C4, 576 },
+    { gUnk_0812F4B4, 577 },
+    { gUnk_0812F4A4, 578 },
+    { gUnk_0812F498, 579 },
+    { gUnk_0812F488, 580 },
+    { gUnk_0812F478, 581 },
+    { gUnk_0812F468, 582 },
+    { gUnk_0812F458, 583 },
+    { gUnk_0812F448, 584 },
+    { gUnk_0812F438, 585 },
+    { gUnk_0812F428, 586 },
+    { gUnk_0812F418, 587 },
+    { gUnk_0812F408, 588 },
+    { gUnk_0812F3FC, 589 },
+    { gUnk_0812F3EC, 590 },
+    { gUnk_0812F3DC, 591 },
+    { gUnk_0812F3CC, 592 },
+    { gUnk_0812F3BC, 593 },
+    { gUnk_0812F3AC, 594 },
+    { gUnk_0812F39C, 595 },
+    { gUnk_0812F390, 596 },
+    { gUnk_0812F384, 597 },
+    { gUnk_0812F374, 598 },
+    { gUnk_0812F368, 599 },
+    { gUnk_0812F358, 600 },
+    { gUnk_0812F348, 601 },
+    { gUnk_0812F338, 602 },
+    { gUnk_0812F328, 603 },
+    { gUnk_0812F31C, 604 },
+    { gUnk_0812F310, 605 },
+    { gUnk_0812F304, 606 },
+    { gUnk_0812F2F4, 607 },
+    { gUnk_0812F2E4, 608 },
+    { gUnk_0812F2D4, 609 },
+    { gUnk_0812F2C8, 610 },
+    { gUnk_0812F2BC, 611 },
+    { gUnk_0812F2AC, 612 },
+    { gUnk_0812F29C, 613 },
+    { gUnk_0812F290, 614 },
+    { gUnk_0812F280, 615 },
+    { gUnk_0812F270, 616 },
+    { gUnk_0812F260, 617 },
+    { gUnk_0812F24C, 618 },
+    { gUnk_0812F240, 619 },
+    { gUnk_0812F230, 620 },
+    { gUnk_0812F220, 621 },
+    { gUnk_0812F210, 622 },
+    { gUnk_0812F200, 623 },
+    { gUnk_0812F1F0, 624 },
+    { gUnk_0812F1DC, 625 },
+    { gUnk_0812F1CC, 626 },
+    { gUnk_0812F1C0, 627 },
+    { gUnk_0812F1B4, 628 },
+    { gUnk_0812F1A8, 629 },
+    { gUnk_0812F19C, 630 },
+    { gUnk_0812F190, 631 },
+    { gUnk_0812F180, 632 },
+    { gUnk_0812F170, 633 },
+    { gUnk_0812F164, 634 },
+    { gUnk_0812F154, 635 },
+    { gUnk_0812F148, 636 },
+    { gUnk_0812F13C, 637 },
+    { gUnk_0812F130, 638 },
+    { gUnk_0812F120, 639 },
+    { gUnk_0812F110, 640 },
+    { gUnk_0812F100, 641 },
+    { gUnk_0812F0F4, 642 },
+    { gUnk_0812F0E8, 643 },
+    { gUnk_0812F0DC, 644 },
+    { gUnk_0812F0C8, 645 },
+    { gUnk_0812F0B8, 646 },
+    { gUnk_0812F0A4, 647 },
+    { gUnk_0812F094, 648 },
+    { gUnk_0812F084, 649 },
+    { gUnk_0812F070, 650 },
+    { gUnk_0812F060, 651 },
+    { gUnk_0812F050, 652 },
+    { gUnk_0812F040, 653 },
+    { gUnk_0812F030, 654 },
+    { gUnk_0812F020, 655 },
+    { gUnk_0812F010, 656 },
+    { gUnk_0812F000, 657 },
+    { gUnk_0812EFF0, 658 },
+    { gUnk_0812EFE4, 659 },
+    { gUnk_0812EFDC, 660 },
+    { gUnk_0812EFD0, 661 },
+    { gUnk_0812EFC4, 662 },
+    { gUnk_0812EFB8, 663 },
+    { gUnk_0812EFAC, 664 },
+    { gUnk_0812EFA4, 665 },
+    { gUnk_0812EF98, 666 },
+    { gUnk_0812EF8C, 667 },
+    { gUnk_0812EF80, 668 },
+    { gUnk_0812EF74, 669 },
+    { gUnk_0812EF60, 670 },
+    { gUnk_0812EF50, 671 },
+    { gUnk_0812EF40, 672 },
+    { gUnk_0812EF2C, 673 },
+    { gUnk_0812EF20, 674 },
+    { gUnk_0812EF14, 675 },
+    { gUnk_0812EF08, 676 },
+    { gUnk_0812EEF8, 677 },
+    { gUnk_0812EEE8, 678 },
+    { gUnk_0812EED8, 679 },
+    { gUnk_0812EEC8, 680 },
+    { gUnk_0812EEB8, 681 },
+    { gUnk_0812EEA8, 682 },
+    { gUnk_0812EE94, 683 },
+    { gUnk_0812EE84, 684 },
+    { gUnk_0812EE74, 685 },
+    { gUnk_0812EE60, 686 },
+    { gUnk_0812EE50, 687 },
+    { gUnk_0812EE44, 688 },
+    { gUnk_0812EE34, 689 },
+    { gUnk_0812EE28, 690 },
+    { gUnk_0812EE18, 691 },
+    { gUnk_0812EE08, 692 },
+    { gUnk_0812EDF4, 693 },
+    { gUnk_0812EDE4, 694 },
+    { gUnk_0812EDD4, 695 },
+    { gUnk_0812EDC0, 696 },
+    { gUnk_0812EDB8, 697 },
+    { gUnk_0812EDAC, 698 },
+    { gUnk_0812ED98, 699 },
+    { gUnk_0812ED8C, 700 },
+    { gUnk_0812ED84, 701 },
+    { gUnk_0812ED7C, 702 },
+    { gUnk_0812ED74, 703 },
+    { gUnk_0812ED6C, 704 },
+    { gUnk_0812ED64, 705 },
+    { gUnk_0812ED5C, 706 },
+    { gUnk_0812ED54, 707 },
+    { gUnk_0812ED4C, 708 },
+    { gUnk_0812ED44, 709 },
+    { gUnk_0812ED3C, 710 },
+    { gUnk_0812ED34, 711 },
+    { gUnk_0812ED2C, 712 },
+    { gUnk_0812ED24, 713 },
+    { gUnk_0812ED1C, 714 },
+    { gUnk_0812ED14, 715 },
+    { gUnk_0812ED0C, 716 },
+    { gUnk_0812ED04, 717 },
+    { gUnk_0812ECFC, 718 },
+    { gUnk_0812ECF4, 719 },
+    { gUnk_0812ECEC, 720 },
+    { gUnk_0812ECE4, 721 },
+    { gUnk_0812ECDC, 722 },
+    { gUnk_0812ECD4, 723 },
+    { gUnk_0812ECCC, 724 },
+    { gUnk_0812ECC4, 725 },
+    { gUnk_0812ECBC, 726 },
+    { gUnk_0812ECB4, 727 },
+    { gUnk_0812ECAC, 728 },
+    { gUnk_0812ECA4, 729 },
+    { gUnk_0812EC9C, 730 },
+    { gUnk_0812EC90, 900 },
+    { gUnk_0812EC84, 901 },
+    { gUnk_0812EC74, 902 },
+    { gUnk_0812EC64, 903 },
+    { gUnk_0812EC54, 904 },
+    { gUnk_0812EC44, 905 },
+    { gUnk_0812EC34, 906 },
+    { gUnk_0812EC24, 907 },
+    { gUnk_0812EC18, 908 },
+    { gUnk_0812EC0C, 909 },
+    { gUnk_0812EC00, 910 },
+    { gUnk_0812EBF4, 911 },
+    { gUnk_0812EBE4, 912 },
+    { gUnk_0812EBD4, 913 },
+    { gUnk_0812EBC4, 914 },
+    { gUnk_0812EBB4, 915 },
+    { gUnk_0812EBA8, 916 },
+    { gUnk_0812EB9C, 917 },
+    { gUnk_0812EB90, 918 },
+    { gUnk_0812EB84, 919 },
+    { gUnk_0812EB78, 920 },
+    { gUnk_0812EB6C, 921 },
+    { gUnk_0812EB60, 922 },
+    { gUnk_0812EB54, 923 },
+    { gUnk_0812EB48, 924 },
+    { gUnk_0812EB3C, 925 },
+    { gUnk_0812EB2C, 926 },
+    { gUnk_0812EB1C, 927 },
+    { gUnk_0812EB0C, 928 },
+    { gUnk_0812EAFC, 929 },
+    { gUnk_0812EAEC, 930 },
+    { gUnk_0812EADC, 931 },
+    { gUnk_0812EAD0, 932 },
+    { gUnk_0812EAC4, 933 },
+    { gUnk_0812EAB4, 934 },
+    { gUnk_0812EAA4, 935 },
+    { gUnk_0812EA94, 936 },
+    { gUnk_0812EA84, 937 },
+    { gUnk_0812EA74, 938 },
+    { gUnk_0812EA64, 939 },
+    { gUnk_0812EA54, 940 },
+    { gUnk_0812EA44, 941 },
+    { gUnk_0812EA34, 942 },
+    { gUnk_0812EA24, 943 },
+    { gUnk_0812EA14, 944 },
+    { gUnk_0812EA04, 945 },
+    { gUnk_0812E9F4, 946 },
+    { gUnk_0812E9E4, 947 },
+    { gUnk_0812E9D0, 948 },
+    { gUnk_0812E9BC, 949 },
+    { gUnk_0812E9AC, 950 },
+    { gUnk_0812E99C, 951 },
+    { gUnk_0812E98C, 952 },
+    { gUnk_0812E980, 953 },
+    { gUnk_0812E978, 954 },
+    { gUnk_0812E970, 955 },
+    { gUnk_0812E968, 956 },
+    { gUnk_0812E960, 957 },
+    { gUnk_0812E958, 958 },
+    { gUnk_0812E950, 959 },
+    { gUnk_0812E948, 960 },
+    { gUnk_0812E940, 961 },
+    { gUnk_0812E938, 962 },
+    { gUnk_0812E930, 963 },
+    { gUnk_0812E928, 964 },
+    { gUnk_0812E920, 965 },
+    { gUnk_0812E918, 966 },
+    { gUnk_0812E910, 967 },
+    { gUnk_0812E908, 968 },
+    { gUnk_0812E900, 969 },
+    { gUnk_0812E8F8, 970 },
+};
+
+Mode gModeChksnd = { gUnk_081309D4, (void (*)(s32))mode_chksnd_0, mode_chksnd_1, mode_chksnd_2 };

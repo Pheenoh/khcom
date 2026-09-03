@@ -47,7 +47,7 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     work->unk_17C = 0;
     work->unk_16C = 0;
     TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
 INCLUDE_ASM("smn/task_smn_cloud_1.s");
@@ -172,7 +172,7 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     work->unk_16C = 0;
     m4aSongNumStart(0xAB);
     TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
 u8 func_08041FCC(SmnBambiWork* work) {
@@ -382,7 +382,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
             }
 
             args.unk_14 = 0;
-            TaskCreate((TaskPool*)&gUnk_02039B84->unk_02C, gUnk_09EDAF18, &args);
+            TaskCreate((TaskPool*)&gUnk_02039B84->unk_02C, gTaskDescBtlPrize, &args);
         } else {
             work->unk_14C++;
         }
@@ -533,12 +533,12 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     }
 
     TaskPoolInit(&work->unk_020, 15);
-    TaskCreate(&work->unk_020, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
 void func_080428E8(SmnTinkWork* work) {
     if (work->unk_170 % 3 == 0) {
-        TaskCreate(&work->unk_020, gUnk_09EDB458, &work->unk_038);
+        TaskCreate(&work->unk_020, gTaskDescSmnTinkeff, &work->unk_038);
     }
 }
 #ifdef NON_MATCHING
@@ -885,7 +885,7 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
     work->unk_150 = 10;
     work->unk_156 = 0;
     TaskPoolInit(&work->unk_020, 2);
-    TaskCreate(&work->unk_020, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
 u8 task_smn_simba_1(SmnSimbaWork* work) {
@@ -1375,7 +1375,7 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
     work->unk_150 = 10;
     work->unk_156 = 0;
     TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
 u8 task_smn_dumbo_1(SmnDumboWork* work) {
@@ -1597,7 +1597,7 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
 
     work->unk_158 = 0;
     TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
 SmnObj* func_08044450(SmnGenieWork* work) {
@@ -1795,7 +1795,7 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
     work->unk_154 = 10;
     work->unk_15E = 0;
     TaskPoolInit(&work->unk_020, 1);
-    TaskCreate(&work->unk_020, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
 u8 func_08044F98(SmnKingWork* work) {

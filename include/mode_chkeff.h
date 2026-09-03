@@ -46,7 +46,7 @@ extern u32 gFrameCounter;
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08EEE384[];
 extern u8 gUnk_08F683C4[];
-extern Mode gUnk_09ECEB64;
+extern Mode gModeDebug;
 extern void* gUnk_09ED9A1C[];
 extern TaskDesc gUnk_09EE9190;
 extern const char gUnk_081309E0[];

@@ -2720,7 +2720,7 @@ void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n) {
     p->unk_12 = b;
 
     for (i = 0; i < lim; i++) {
-        TaskCreate(&gUnk_02039B84->unk_02C, gUnk_09EDAF18, p);
+        TaskCreate(&gUnk_02039B84->unk_02C, gTaskDescBtlPrize, p);
     }
     *n = *n % c;
 }

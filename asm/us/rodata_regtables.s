@@ -1,8 +1,8 @@
-@ Registration tables: modes, BGM, and the 218-entry task table.
-@ ROM 0x1ECEB40..0x1EFAC00 (180,416 bytes). Split out of this incbin
+@ Per-unit .data: the chkobj object lists.
+@ ROM 0x1ECEB74..0x1ED8644 (39,632 bytes). Split out of this incbin
 @ as regions get identified.
 
 	.section .rodata
-	.global data_09ECEB40
-data_09ECEB40:
-	.incbin "roms/B8CE.gba", 0x1eceb40, 0x2c0c0
+	.global data_09ECEB74
+data_09ECEB74:
+	.incbin "roms/B8CE.gba", 0x1eceb74, 0x9ad0

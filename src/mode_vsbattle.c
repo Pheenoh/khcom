@@ -36,22 +36,22 @@ void mode_vsbattle_0(u32 mode) {
     if (mode == 0) {
         arg.unk_04 = 1;
         arg.unk_00 = 0;
-        TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDAE40, &arg);
+        TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlSora, &arg);
         arg.unk_04 = 0;
         arg.unk_00 = 1;
-        TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDAE40, &arg);
+        TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlSora, &arg);
         gUnk_02039B84->unk_068 |= 0x1000;
     } else {
         arg2.unk_04 = 0;
         arg2.unk_00 = 0;
-        TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDAE40, &arg2);
+        TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlSora, &arg2);
         arg2.unk_04 = 1;
         arg2.unk_00 = 1;
-        TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDAE40, &arg2);
+        TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlSora, &arg2);
     }
 
     func_0801A920(0x100 - gUnk_02039B90, gUnk_02039B90 + 0x100, gUnk_02039B88, gUnk_02039B8C);
-    TaskCreate(&gUnk_02039B84->unk_040, &gUnk_09EDAE70, 0);
+    TaskCreate(&gUnk_02039B84->unk_040, &gTaskDescBtlMap, 0);
     gUnk_02039B98 = 0;
     func_08006120(0, 60);
 }
@@ -185,10 +185,10 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     TaskPoolInit(&work->unk_028, 3);
 
     if (!(def->unk_1A & 1)) {
-        TaskCreate(&work->unk_028, &gUnk_09EDAE88, actor);
+        TaskCreate(&work->unk_028, &gTaskDescBtlShadow, actor);
     }
 
-    TaskCreate(&work->unk_028, &gUnk_09EDB3F8, actor);
+    TaskCreate(&work->unk_028, &gTaskDescBtlBadstatus, actor);
 
     if (def->unk_1A & 2) {
         work->unk_17C = 0x100;
@@ -1055,8 +1055,8 @@ void func_0800E168(HumWork* work, HumDef* def) {
     work->unk_17C = 1;
     AnimInit(&work->unk_014, 0, 0);
     TaskPoolInit(&work->unk_02C, 3);
-    TaskCreate(&work->unk_02C, &gUnk_09EDAE88, actor);
-    TaskCreate(&work->unk_02C, &gUnk_09EDB3F8, actor);
+    TaskCreate(&work->unk_02C, &gTaskDescBtlShadow, actor);
+    TaskCreate(&work->unk_02C, &gTaskDescBtlBadstatus, actor);
     work->unk_170 = 12;
     work->unk_168 = 0x100;
     work->unk_16C = 0x100;

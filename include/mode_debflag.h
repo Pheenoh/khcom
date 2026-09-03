@@ -13,7 +13,7 @@ extern u32 gUnk_03006C10;
 extern u8 gUnk_08128304[];
 extern const DebugFlag gUnk_08130BE8[];
 extern const DebugFlag gUnk_08130DE0[];
-extern Mode gUnk_09ECEB64;
+extern Mode gModeDebug;
 
 void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);

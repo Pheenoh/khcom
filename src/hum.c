@@ -517,7 +517,7 @@ void func_0804FD7C(MahluxiaWork* work) {
         args.unk_04 += t;
         t = ((GetRandom() % 41) << 8) - 0x1000;
         args.unk_08 += t;
-        TaskCreate(&work->unk_390, gUnk_09EDB788, &args);
+        TaskCreate(&work->unk_390, gTaskDescHumMahluxiaFlw, &args);
     }
 }
 #else
@@ -596,7 +596,7 @@ void func_08050F10(LaxeneWork* work, s16 a, s16 b) {
     }
     args.unk_08 = act->unk_0C + (b << 8);
     args.unk_04 = act->unk_08;
-    TaskCreate(&work->unk_194, gUnk_09EDB668, &args);
+    TaskCreate(&work->unk_194, gTaskDescHumLaxeneKnf, &args);
 }
 
 void task_hum_laxene_0(LaxeneWork* work) {
@@ -754,7 +754,7 @@ void func_0805273C(AxcelWork* work, HumSub* sub) {
         args[0] = sub->unk_28 + (GetRandom() % 29 - 14) * 256;
         args[1] = sub->unk_2C + (GetRandom() % 15 - 7) * 256;
         args[2] = sub->unk_30;
-        TaskCreate(&work->unk_220, gUnk_09EDB698, args);
+        TaskCreate(&work->unk_220, gTaskDescHumAxcelPtc, args);
     }
 }
 
@@ -888,7 +888,7 @@ void func_080543B4(VixenWork* work) {
     for (i = 0; i < 3; i++) {
         p->unk_01 = z;
         p->unk_00 = z;
-        TaskCreate(&work->unk_1A4, gUnk_09EDB6E0, &work->unk_1C4[i]);
+        TaskCreate(&work->unk_1A4, gTaskDescHumVixenIce, &work->unk_1C4[i]);
         p++;
     }
 }

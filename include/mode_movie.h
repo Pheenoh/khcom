@@ -36,7 +36,7 @@ extern u8 gUnk_0886AC70[];
 extern u8 sMovieHeapName[];
 extern u8 gUnk_08F69C04[];
 extern u8 gUnk_09614718[];
-extern u8 gUnk_09ECEB64[];
+extern u8 gModeDebug[];
 extern u8 gUnk_09EFA9C4[];
 
 void InitDisplayRegs(void);

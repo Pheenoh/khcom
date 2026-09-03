@@ -46,8 +46,8 @@ typedef struct RoomCreateWork {
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern s16 gSineTable[];
 extern u8 gUnk_0203DB10[];
-extern TaskDesc gUnk_09EDB380;
-extern TaskDesc gUnk_09EDB398;
+extern TaskDesc gTaskDescRomcriEff;
+extern TaskDesc gTaskDescRomcriEff2;
 extern TaskDesc gUnk_09EE7668;
 
 struct Task;

@@ -886,7 +886,7 @@ extern const char gUnk_0984B834[];
 extern void (*const gUnk_09EF69A8[])(UnkStruct_02034F14* p);
 extern const u8 gUnk_0984B458[][8];
 extern u8 gUnk_09EF6A90[];
-extern u8 gUnk_09ECEB64[];
+extern u8 gModeDebug[];
 void func_080DF048(void);
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
 extern s16 gSineTable[];
@@ -965,7 +965,7 @@ extern u8 gUnk_09EF6774[];
 extern u8 gUnk_0979666A[];
 extern u8 gUnk_0984AF98[];
 extern u8 gUnk_09EF6784[];
-extern u8 gUnk_09EDB350[];
+extern u8 gTaskDescBosShadow[];
 
 typedef struct UnkStruct_096FDFC4 {
     u8 unk_00[0x06];

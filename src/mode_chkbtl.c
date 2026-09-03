@@ -147,39 +147,39 @@ const ChkBtlEntry gUnk_08126630[209] = {
     { 8, { 0 }, 0, 141, 0, "\x82\x71\x82\x6a\x81\x40\x82\x67\x82\x6e\x82\x6b\x82\x56" },
     { 8, { 0 }, 0, 142, 0, "\x82\x71\x82\x6a\x81\x40\x82\x67\x82\x6e\x82\x6b\x82\x57" },
     { 8, { 0 }, 0, 143, 0, "\x82\x71\x82\x6a\x81\x40\x82\x67\x82\x6e\x82\x6b\x82\x58" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDAFA8, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x4f" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDAFC0, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x50" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDAFD8, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x51" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDAFF0, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x52" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB008, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x53" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB020, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x55" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB038, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x56" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB050, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x57" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB068, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x53" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB080, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x54" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB098, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x55" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB0E0, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x57" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB0F8, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x58" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB110, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x50" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB128, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x51" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB140, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x52" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB158, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x54" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB170, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x55" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB188, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x56" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB1A0, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x57" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB1B8, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x58" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB1D0, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x4f" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB1E8, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x50" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB200, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x56" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB218, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x57" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB230, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x58" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB248, "\x82\x64\x82\x6c\x82\x78\x82\x53\x82\x50" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB260, "\x82\x64\x82\x6c\x82\x78\x82\x53\x82\x53" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB278, "\x82\x64\x82\x6c\x82\x78\x82\x57\x82\x50" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB290, "\x82\x64\x82\x6c\x82\x78\x82\x57\x82\x51" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB2A8, "\x82\x64\x82\x6c\x82\x78\x82\x57\x82\x52" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB2F0, "\x82\x67\x82\x64\x82\x60\x82\x71\x82\x73" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB308, "\x82\x72\x82\x6f\x82\x60\x82\x63\x82\x64" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy00, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x4f" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy01, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x50" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy02, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x51" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy03, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x52" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy04, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x53" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy06, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x55" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy07, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x56" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy08, "\x82\x64\x82\x6c\x82\x78\x82\x4f\x82\x57" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy14, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x53" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy15, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x54" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy16, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x55" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy18, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x57" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy19, "\x82\x64\x82\x6c\x82\x78\x82\x50\x82\x58" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy21, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x50" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy22, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x51" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy23, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x52" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy25, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x54" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy26, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x55" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy27, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x56" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy28, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x57" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy29, "\x82\x64\x82\x6c\x82\x78\x82\x51\x82\x58" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy30, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x4f" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy31, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x50" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy37, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x56" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy38, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x57" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy39, "\x82\x64\x82\x6c\x82\x78\x82\x52\x82\x58" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy41, "\x82\x64\x82\x6c\x82\x78\x82\x53\x82\x50" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy44, "\x82\x64\x82\x6c\x82\x78\x82\x53\x82\x53" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy81, "\x82\x64\x82\x6c\x82\x78\x82\x57\x82\x50" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy82, "\x82\x64\x82\x6c\x82\x78\x82\x57\x82\x51" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmy83, "\x82\x64\x82\x6c\x82\x78\x82\x57\x82\x52" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmyTrumpH, "\x82\x67\x82\x64\x82\x60\x82\x71\x82\x73" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmyTrumpS, "\x82\x72\x82\x6f\x82\x60\x82\x63\x82\x64" },
     { 7, { 0 }, 2, 158, 0, "\x82\x67\x82\x6e\x82\x6e\x82\x6a\x81\x69\x82\x67\x82\x74\x82\x6c\x81\x6a" },
     { 3, { 0 }, 2, 159, 0, "\x82\x62\x82\x6b\x82\x6e\x82\x74\x82\x63\x81\x69\x82\x67\x82\x74\x82\x6c\x81\x6a" },
     { 3, { 0 }, 2, 160, 0, "\x82\x67\x82\x60\x82\x63\x82\x64\x82\x72\x81\x69\x82\x67\x82\x74\x82\x6c\x81\x6a" },
@@ -209,7 +209,7 @@ const ChkBtlEntry gUnk_08126630[209] = {
     { 2, { 0 }, 2, 151, 0, "\x82\x74\x82\x71\x82\x72\x82\x74\x82\x6b\x82\x60" },
     { 1, { 0 }, 2, 149, 0, "\x82\x69\x82\x60\x82\x65\x82\x60\x82\x71" },
     { 12, { 0 }, 2, 156, 0, "\x82\x6c\x82\x60\x82\x71\x82\x6b\x82\x74\x82\x77\x82\x68\x82\x60\x81\x7c\x82\x51" },
-    { 12, { 0 }, 1, 185, &gUnk_09EDB320, "\x82\x73\x82\x64\x82\x72\x82\x73" },
+    { 12, { 0 }, 1, 185, &gTaskDescEmyTest, "\x82\x73\x82\x64\x82\x72\x82\x73" },
     { 10, { 0 }, 1, 178, 0, "\x82\x73\x82\x74\x82\x73\x82\x6e\x82\x71\x82\x68\x82\x60\x82\x6b\x82\x4f" },
     { 10, { 0 }, 1, 179, 0, "\x82\x73\x82\x74\x82\x73\x82\x6e\x82\x71\x82\x68\x82\x60\x82\x6b\x82\x50" },
 };
@@ -244,16 +244,16 @@ void mode_chkbtl_0(void) {
     func_0805FCB0(24, 44, 2, "\x82\x61\x82\x66\x81\x40\x81\x46");
     func_0805FCB0(24, 56, 2, "\x82\x65\x82\x6b\x81\x40\x81\x46");
     func_0805FCB0(24, 68, 2, "\x82\x67\x82\x6f\x81\x40\x81\x46");
-    func_0805FCB0(62, 32, 2, gUnk_08126630[gUnk_09ECEB50->unk_02].unk_10);
+    func_0805FCB0(62, 32, 2, gUnk_08126630[gChkBtlWork->unk_02].unk_10);
 
-    if (gUnk_08126630[gUnk_09ECEB50->unk_02].unk_04 == 2) {
+    if (gUnk_08126630[gChkBtlWork->unk_02].unk_04 == 2) {
         func_0805FCB0(62, 44, 2, "\x81\x5c\x81\x5c");
     } else {
-        func_0805FCB0(62, 44, 2, gUnk_08128234[gUnk_09ECEB50->unk_01].unk_04);
+        func_0805FCB0(62, 44, 2, gUnk_08128234[gChkBtlWork->unk_01].unk_04);
     }
 
-    func_0805FC04(62, 56, 2, gUnk_09ECEB50->unk_04 + 1);
-    func_0805FC04(62, 68, 2, gUnk_09ECEB50->unk_06);
+    func_0805FC04(62, 56, 2, gChkBtlWork->unk_04 + 1);
+    func_0805FC04(62, 68, 2, gChkBtlWork->unk_06);
 
     if (!(gUnk_03006C10 & 1)) {
         func_08085FB0();
@@ -268,11 +268,11 @@ void mode_chkbtl_1(void) {
     s32 i;
 
     if (GetKeysRepeat() & DPAD_UP) {
-        gUnk_09ECEB50->unk_00--;
+        gChkBtlWork->unk_00--;
     }
 
     if (GetKeysRepeat() & DPAD_DOWN) {
-        gUnk_09ECEB50->unk_00++;
+        gChkBtlWork->unk_00++;
     }
 
     if (GetKeysRepeat() & (DPAD_UP | DPAD_DOWN)) {
@@ -281,104 +281,104 @@ void mode_chkbtl_1(void) {
         }
     }
 
-    switch (gUnk_09ECEB50->unk_00) {
+    switch (gChkBtlWork->unk_00) {
     case 0:
         if (GetKeysRepeat() & DPAD_LEFT) {
-            gUnk_09ECEB50->unk_02--;
+            gChkBtlWork->unk_02--;
         }
 
         if (GetKeysRepeat() & DPAD_RIGHT) {
-            gUnk_09ECEB50->unk_02++;
+            gChkBtlWork->unk_02++;
         }
 
-        if (gUnk_09ECEB50->unk_02 < 0) {
-            gUnk_09ECEB50->unk_02 = 0xD0;
-        } else if ((u16)gUnk_09ECEB50->unk_02 > 0xD0) {
-            gUnk_09ECEB50->unk_02 = 0;
+        if (gChkBtlWork->unk_02 < 0) {
+            gChkBtlWork->unk_02 = 0xD0;
+        } else if ((u16)gChkBtlWork->unk_02 > 0xD0) {
+            gChkBtlWork->unk_02 = 0;
         }
         break;
     case 1:
         if (GetKeysRepeat() & DPAD_LEFT) {
-            gUnk_09ECEB50->unk_01--;
+            gChkBtlWork->unk_01--;
         }
 
         if (GetKeysRepeat() & DPAD_RIGHT) {
-            gUnk_09ECEB50->unk_01++;
+            gChkBtlWork->unk_01++;
         }
 
-        if (gUnk_09ECEB50->unk_01 < 0) {
-            gUnk_09ECEB50->unk_01 = 12;
-        } else if ((u8)gUnk_09ECEB50->unk_01 > 12) {
-            gUnk_09ECEB50->unk_01 = 0;
+        if (gChkBtlWork->unk_01 < 0) {
+            gChkBtlWork->unk_01 = 12;
+        } else if ((u8)gChkBtlWork->unk_01 > 12) {
+            gChkBtlWork->unk_01 = 0;
         }
         break;
     case 2:
         if (GetKeysRepeat() & DPAD_LEFT) {
-            gUnk_09ECEB50->unk_04--;
+            gChkBtlWork->unk_04--;
         }
 
         if (GetKeysRepeat() & DPAD_RIGHT) {
-            gUnk_09ECEB50->unk_04++;
+            gChkBtlWork->unk_04++;
         }
 
-        if (gUnk_09ECEB50->unk_04 < 0) {
-            gUnk_09ECEB50->unk_04 = 0;
+        if (gChkBtlWork->unk_04 < 0) {
+            gChkBtlWork->unk_04 = 0;
         }
 
         if (gUnk_02039BB0.unk_08 & 8) {
-            if (gUnk_09ECEB50->unk_04 > 11) {
-                gUnk_09ECEB50->unk_04 = 11;
+            if (gChkBtlWork->unk_04 > 11) {
+                gChkBtlWork->unk_04 = 11;
             }
         } else {
-            if (gUnk_09ECEB50->unk_04 > 12) {
-                gUnk_09ECEB50->unk_04 = 12;
+            if (gChkBtlWork->unk_04 > 12) {
+                gChkBtlWork->unk_04 = 12;
             }
         }
         break;
     case 3:
         if (GetKeysRepeat() & DPAD_LEFT) {
-            gUnk_09ECEB50->unk_06--;
+            gChkBtlWork->unk_06--;
         }
 
         if (GetKeysRepeat() & DPAD_RIGHT) {
-            gUnk_09ECEB50->unk_06++;
+            gChkBtlWork->unk_06++;
         }
 
-        if (gUnk_09ECEB50->unk_06 <= 0) {
-            gUnk_09ECEB50->unk_06 = 1;
-        } else if (gUnk_09ECEB50->unk_06 > 560) {
-            gUnk_09ECEB50->unk_06 = 560;
+        if (gChkBtlWork->unk_06 <= 0) {
+            gChkBtlWork->unk_06 = 1;
+        } else if (gChkBtlWork->unk_06 > 560) {
+            gChkBtlWork->unk_06 = 560;
         }
         break;
     case 4:
-        gUnk_09ECEB50->unk_00 = 0;
+        gChkBtlWork->unk_00 = 0;
         break;
     case -1:
-        gUnk_09ECEB50->unk_00 = 3;
+        gChkBtlWork->unk_00 = 3;
         break;
     }
 
-    func_0805FCB0(12, gUnk_09ECEB50->unk_00 * 12 + 32, 2, "\x81\x84");
+    func_0805FCB0(12, gChkBtlWork->unk_00 * 12 + 32, 2, "\x81\x84");
 
     if (GetKeysRepeat() & (DPAD_RIGHT | DPAD_LEFT)) {
-        switch (gUnk_09ECEB50->unk_00) {
+        switch (gChkBtlWork->unk_00) {
         case 0:
         case 1:
             func_0805FCB0(62, 32, 2, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40");
-            func_0805FCB0(62, 32, 2, gUnk_08126630[gUnk_09ECEB50->unk_02].unk_10);
+            func_0805FCB0(62, 32, 2, gUnk_08126630[gChkBtlWork->unk_02].unk_10);
             func_0805FCB0(62, 44, 2, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40");
 
-            if (gUnk_08126630[gUnk_09ECEB50->unk_02].unk_04 == 2) {
+            if (gUnk_08126630[gChkBtlWork->unk_02].unk_04 == 2) {
                 func_0805FCB0(62, 44, 2, "\x81\x5c\x81\x5c");
             } else {
-                func_0805FCB0(62, 44, 2, gUnk_08128234[gUnk_09ECEB50->unk_01].unk_04);
+                func_0805FCB0(62, 44, 2, gUnk_08128234[gChkBtlWork->unk_01].unk_04);
             }
             break;
         case 2:
-            func_0805FC04(62, 56, 2, gUnk_09ECEB50->unk_04 + 1);
+            func_0805FC04(62, 56, 2, gChkBtlWork->unk_04 + 1);
             break;
         case 3:
-            func_0805FC04(62, 68, 2, gUnk_09ECEB50->unk_06);
+            func_0805FC04(62, 68, 2, gChkBtlWork->unk_06);
             break;
         }
     }
@@ -387,11 +387,11 @@ void mode_chkbtl_1(void) {
         ModeRequest(&gUnk_09EE2704, 0);
     } else if (GetKeysPressed() & 9) {
         SeedRandom(gFrameCounter);
-        gUnk_02039BB0.unk_0D = gUnk_08128234[gUnk_09ECEB50->unk_01].unk_00;
-        gUnk_02039BB0.unk_0E = gUnk_09ECEB50->unk_04;
-        gUnk_02039BB0.unk_32 = gUnk_09ECEB50->unk_06;
-        gUnk_02039BB0.unk_F8 = gUnk_09ECEB50->unk_06;
-        gUnk_02039BB0.unk_0C = gUnk_08126630[gUnk_09ECEB50->unk_02].unk_00;
+        gUnk_02039BB0.unk_0D = gUnk_08128234[gChkBtlWork->unk_01].unk_00;
+        gUnk_02039BB0.unk_0E = gChkBtlWork->unk_04;
+        gUnk_02039BB0.unk_32 = gChkBtlWork->unk_06;
+        gUnk_02039BB0.unk_F8 = gChkBtlWork->unk_06;
+        gUnk_02039BB0.unk_0C = gUnk_08126630[gChkBtlWork->unk_02].unk_00;
 
         if (GetKeysHeld() & L_BUTTON) {
             gUnk_02039BB0.unk_08 |= 4;
@@ -400,12 +400,12 @@ void mode_chkbtl_1(void) {
         }
 
         if (gUnk_02039BB0.unk_08 & 8) {
-            _08085D04(gUnk_09ECEB50->unk_04);
+            _08085D04(gChkBtlWork->unk_04);
         }
 
-        ModeRequest(&gUnk_09ECEB40, gUnk_08126630[gUnk_09ECEB50->unk_02].unk_08);
+        ModeRequest(&gModeBattle, gUnk_08126630[gChkBtlWork->unk_02].unk_08);
     } else if (GetKeysPressed() & 2) {
-        ModeRequest(&gUnk_09ECEB64, 0);
+        ModeRequest(&gModeDebug, 0);
         return;
     }
 
@@ -421,7 +421,7 @@ void func_0800AB8C(void) {
     ChkBtlEntry* entry;
     ChkBtlPos pos;
 
-    entry = &gUnk_08126630[gUnk_09ECEB50->unk_02];
+    entry = &gUnk_08126630[gChkBtlWork->unk_02];
 
     if (entry->unk_08 == 0xB9) {
         pos.unk_00 = 0x15000;
@@ -432,11 +432,11 @@ void func_0800AB8C(void) {
 }
 
 void func_0800ABD8(void) {
-    gUnk_09ECEB50->unk_00 = 0;
-    gUnk_09ECEB50->unk_01 = 0;
-    gUnk_09ECEB50->unk_02 = 0;
-    gUnk_09ECEB50->unk_04 = 0;
-    gUnk_09ECEB50->unk_06 = gUnk_02039BB0.unk_F8;
+    gChkBtlWork->unk_00 = 0;
+    gChkBtlWork->unk_01 = 0;
+    gChkBtlWork->unk_02 = 0;
+    gChkBtlWork->unk_04 = 0;
+    gChkBtlWork->unk_06 = gUnk_02039BB0.unk_F8;
     gUnk_03006C10 &= ~1;
     gUnk_02039B90 = 0x98;
     gUnk_02039B88 = 0x160;

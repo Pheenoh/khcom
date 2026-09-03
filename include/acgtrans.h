@@ -21,7 +21,7 @@ typedef struct AcgTransConfig {
     u32 unk_00C;
 } AcgTransConfig;
 
-extern u8 gUnk_09EDADF8[];
+extern u8 gTaskDescAcgtrans[];
 
 void* TaskCreate(void* a, void* desc, void* args);
 s32 RequestDma3Copy(u32 src, u32 dst, u32 size);

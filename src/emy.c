@@ -665,7 +665,7 @@ u8 task_emy_16_1(Emy16Work* work) {
     act = &work->base.unk_03C;
 
     if (_0800CBDC(&work->base)) {
-        if (func_08000F60(work->unk_188, gUnk_09EDB0B0)) {
+        if (func_08000F60(work->unk_188, gTaskDescEmy16B)) {
             work->base.unk_14C = 0x12;
         } else {
             r = GetRandom();
@@ -700,12 +700,12 @@ u8 task_emy_16_1(Emy16Work* work) {
                 spawn.unk_12 = 0;
             }
 
-            w->unk_184 = TaskCreate(&w->unk_18C, &gUnk_09EDB0C8, &spawn);
+            w->unk_184 = TaskCreate(&w->unk_18C, &gTaskDescEmy16P, &spawn);
             w->unk_1A0 = 1;
         }
 
         if (w->unk_1A0 != 0) {
-            if (!func_08000F60(w->unk_184, gUnk_09EDB0C8)) {
+            if (!func_08000F60(w->unk_184, gTaskDescEmy16P)) {
                 func_0800CB4C(&work->base);
             }
         }
@@ -726,7 +726,7 @@ u8 task_emy_16_1(Emy16Work* work) {
                 spawn.unk_12 = 0;
             }
 
-            w->unk_188 = TaskCreate(&w->unk_18C, &gUnk_09EDB0B0, &spawn);
+            w->unk_188 = TaskCreate(&w->unk_18C, &gTaskDescEmy16B, &spawn);
         }
 
         if (AnimIsFinished(&work->base.unk_010)) {
@@ -2244,12 +2244,12 @@ u8 task_emy_83_1(Emy83Work* work) {
                 spawn.unk_00 = w->unk_19C;
                 spawn.unk_04 = w->unk_1A0;
                 spawn.unk_08 = c;
-                w->unk_184 = TaskCreate(&w->unk_188, &gUnk_09EDB2C0, &spawn);
+                w->unk_184 = TaskCreate(&w->unk_188, &gTaskDescEmy83B, &spawn);
                 break;
             }
         }
 
-        if (AnimIsFinished(&work->base.unk_010) && !func_08000F60(w->unk_184, gUnk_09EDB2C0)) {
+        if (AnimIsFinished(&work->base.unk_010) && !func_08000F60(w->unk_184, gTaskDescEmy83B)) {
             func_0800CB4C(&work->base);
         }
         break;
@@ -2275,11 +2275,11 @@ u8 task_emy_83_1(Emy83Work* work) {
             spawn.unk_04 = act->unk_08;
             spawn.unk_08 = act->unk_0C - 0x1200;
             spawn.unk_14 = 0;
-            TaskCreate(&w->unk_188, &gUnk_09EDB2D8, &spawn);
+            TaskCreate(&w->unk_188, &gTaskDescEmy83S, &spawn);
             spawn.unk_14 = 1;
-            TaskCreate(&w->unk_188, &gUnk_09EDB2D8, &spawn);
+            TaskCreate(&w->unk_188, &gTaskDescEmy83S, &spawn);
             spawn.unk_14 = 2;
-            TaskCreate(&w->unk_188, &gUnk_09EDB2D8, &spawn);
+            TaskCreate(&w->unk_188, &gTaskDescEmy83S, &spawn);
             w->unk_1A4++;
         }
 

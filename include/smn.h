@@ -325,9 +325,9 @@ void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskCreate(TaskPool* pool, void* desc, void* arg);
 
-extern u8 gUnk_09EDAE88[];
-extern u8 gUnk_09EDAF18[];
-extern u8 gUnk_09EDB458[];
+extern u8 gTaskDescBtlShadow[];
+extern u8 gTaskDescBtlPrize[];
+extern u8 gTaskDescSmnTinkeff[];
 extern u8 gUnk_096183F8[];
 extern u8 gUnk_0813EB4C[];
 extern u8 gUnk_08F6DC24[];

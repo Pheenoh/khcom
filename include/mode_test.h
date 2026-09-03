@@ -281,7 +281,7 @@ extern vu16 gSystemFlags;
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern void* gUnk_09EE14D4[];
 extern CardDef gCardDefs[];
-extern Mode gUnk_09ECEB54;
+extern Mode gModeChkbtl;
 extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EF14DC;
 extern Mode gUnk_09EF4DB0;

@@ -282,7 +282,7 @@ typedef struct AnimSet0806180C {
 extern TextCtx* gUnk_02039DC8;
 extern u16 gUnk_09033C8C[];
 extern u8 gUnk_09EE274C[];
-extern u8 gUnk_09ECEB40[];
+extern u8 gModeBattle[];
 extern u8 gUnk_08125E24[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];

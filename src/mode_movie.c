@@ -154,7 +154,7 @@ void mode_movie_1(void) {
                 ModeRequest(gUnk_09EFA9C4, 0);
                 break;
             default:
-                ModeRequest(gUnk_09ECEB64, 0);
+                ModeRequest(gModeDebug, 0);
                 break;
             }
         }

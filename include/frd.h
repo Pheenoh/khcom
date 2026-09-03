@@ -222,8 +222,8 @@ extern FrdSetup gUnk_02039BB0;
 extern FrdObj* gUnk_02039B84;
 extern FrdObj* gUnk_02039B9C;
 
-extern u8 gUnk_09EDAE88[];
-extern u8 gUnk_09EDB458[];
+extern u8 gTaskDescBtlShadow[];
+extern u8 gTaskDescSmnTinkeff[];
 extern s16 gSineTable[];
 extern u8 gUnk_09617C58[];
 extern u8 gUnk_0813EB8C[];

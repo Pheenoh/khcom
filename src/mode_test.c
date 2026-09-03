@@ -393,7 +393,7 @@ void func_08060AD8(void) {
 
     if (gUnk_02034A44 == 7) {
         if (gUnk_03006C10 & 1) {
-            ModeRequest(&gUnk_09ECEB54, 0);
+            ModeRequest(&gModeChkbtl, 0);
         } else if (gSystemFlags & 1) {
             ModeRequest(&gUnk_09EF14DC, 1);
         } else {
@@ -403,7 +403,7 @@ void func_08060AD8(void) {
 
     if (gUnk_02034A44 == 8) {
         if (gUnk_03006C10 & 1) {
-            ModeRequest(&gUnk_09ECEB54, 0);
+            ModeRequest(&gModeChkbtl, 0);
         } else if (gSystemFlags & 1) {
             ModeRequest(&gUnk_09EF14DC, 1);
         } else {

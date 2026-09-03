@@ -178,7 +178,7 @@ typedef struct RoomTableEntry {
 extern RoomWork* gUnk_02034FE8;
 extern s32 gUnk_09991F44[];
 extern RoomTableEntry gUnk_09991F54[];
-extern u8 gUnk_09EDAE88[];
+extern u8 gTaskDescBtlShadow[];
 extern u8 gUnk_09EF9728[];
 extern u8 gUnk_099999AC[];
 extern u8 gUnk_09EF9738[];

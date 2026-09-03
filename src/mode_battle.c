@@ -256,9 +256,9 @@ void mode_battle_0(u32 mode) {
     func_0801227C();
 
     if (gUnk_02039BB0.unk_008 & 8) {
-        TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDAE58, 0);
+        TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlRiku, 0);
     } else {
-        TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDAE40, 0);
+        TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlSora, 0);
     }
 
     if (gUnk_02039B84->unk_068 & 4) {
@@ -293,7 +293,7 @@ void mode_battle_0(u32 mode) {
         case 0x98:
             func_0801A920(0x80, 0x1A8, 0x126, 0x180);
             TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EF9DEC, 0);
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB590, gUnk_02039B84->unk_07C);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescPcAcddmg, gUnk_02039B84->unk_07C);
             gUnk_02039B84->unk_0B3 = 12;
             break;
         case 0x9C:
@@ -318,81 +318,81 @@ void mode_battle_0(u32 mode) {
         func_0801A920(0x68, 0x198, 0x160, 0x1A2);
 
         if (mode == 0xB2) {
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB7D0, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumRobe, 0);
             TaskCreate(&gUnk_02039B84->unk_040, &gUnk_09EDE4B8, 0);
         } else {
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB7B8, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumLeon, 0);
             TaskCreate(&gUnk_02039B84->unk_040, &gUnk_09EDE4B8, (void*)1);
         }
 
         gUnk_02039BB0.unk_00D = 11;
-        TaskCreate(&gUnk_02039B84->unk_040, &gUnk_09EDAE70, 0);
+        TaskCreate(&gUnk_02039B84->unk_040, &gTaskDescBtlMap, 0);
     } else if (gUnk_02039B84->unk_068 & 0x800) {
         gUnk_02039B84->unk_068 |= 0x400000000;
 
         switch (mode) {
         case 0x9E:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB5C0, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumHook, 0);
             func_0801A920(0x68, 0x198, 0x160, 0x1A2);
             break;
         case 0xA6:
         case 0xB1:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB608, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumAnsem, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0x9F:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB5A8, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumCloud, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA0:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB620, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumHades, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA5:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB638, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumMahluxia, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA3:
         case 0xAE:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB650, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumLaxene, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA2:
         case 0xAD:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB680, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumAxcel, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA4:
         case 0xAF:
         case 0xB0:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB6B0, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumVixen, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA7:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB728, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumLexceus, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0x9D:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB7B8, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumLeon, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         default:
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB7A0, 0);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescHumRiku, 0);
             func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         }
 
-        TaskCreate(&gUnk_02039B84->unk_040, &gUnk_09EDAE70, 0);
+        TaskCreate(&gUnk_02039B84->unk_040, &gTaskDescBtlMap, 0);
     } else {
         func_0801A920(0x68, 0x198, 0x160, 0x1A2);
 
         if (mode <= 0x92) {
-            TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDB3B0, gUnk_09EDA2A0[mode]);
+            TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlForm, gUnk_09EDA2A0[mode]);
         } else if (gUnk_03006C10 & 1) {
             func_0800AB8C();
         }
 
-        TaskCreate(&gUnk_02039B84->unk_040, &gUnk_09EDAE70, 0);
+        TaskCreate(&gUnk_02039B84->unk_040, &gTaskDescBtlMap, 0);
 
         if (mode == 0x79) {
             gUnk_02039B84->unk_068 |= 0x400000000;
@@ -402,7 +402,7 @@ void mode_battle_0(u32 mode) {
     }
 
     if (!(gUnk_02039B84->unk_068 & 0x800000000)) {
-        TaskCreate(&gUnk_02039B84->unk_054, &gUnk_09EDAED0, 0);
+        TaskCreate(&gUnk_02039B84->unk_054, &gTaskDescBtlPause, 0);
     }
 
     func_08006120(0, 60);

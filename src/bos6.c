@@ -1813,7 +1813,7 @@ u8 func_0810E99C(BosLstWork* work) {
     s.unk_04 = work->unk_048 + work->unk_054;
     s.unk_08 = (work->unk_04C + work->unk_058) - ((obj->unk_9C >> 1) << 8);
     s.unk_12 = 9;
-    TaskCreate(&gUnk_02039B84->unk_03C[4], gUnk_09EDAEE8, &s);
+    TaskCreate(&gUnk_02039B84->unk_03C[4], gTaskDescBtlPop, &s);
     return 1;
 }
 

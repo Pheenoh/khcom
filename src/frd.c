@@ -62,7 +62,7 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     }
 
     TaskPoolInit(&work->unk_000, 1);
-    TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
 
 INCLUDE_ASM("frd/task_frd_donald_1.s");
@@ -176,7 +176,7 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     AnimInit(&work->unk_130, 0, 0);
     func_08019068(gUnk_0813EBFC, &work->unk_130, 0, 0, work->unk_018);
     TaskPoolInit(&work->unk_000, 1);
-    TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
 
 u8 task_frd_goofy_1(FrdGoofyWork* work) {
@@ -437,7 +437,7 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     AnimInit(&work->unk_130, 0, 0);
     func_08019068(gUnk_0813EC5C, &work->unk_130, 1, 0, work->unk_018);
     TaskPoolInit(&work->unk_000, 1);
-    TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 
     switch (args->unk_00) {
     case 0:
@@ -706,7 +706,7 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     }
 
     TaskPoolInit(&work->unk_000, 1);
-    TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
 
 INCLUDE_ASM("frd/task_frd_jack_1.s");
@@ -767,7 +767,7 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     AnimInit(&work->unk_130, 0, 0);
     func_08019068(gUnk_0813ECFC, &work->unk_130, 0, 0, work->unk_018);
     TaskPoolInit(&work->unk_000, 15);
-    TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 
     switch (work->unk_14D) {
     case 0:
@@ -818,7 +818,7 @@ void func_08048980(FrdPanWork* work) {
             break;
         }
 
-        TaskCreate(&work->unk_000, gUnk_09EDB458, &sub);
+        TaskCreate(&work->unk_000, gTaskDescSmnTinkeff, &sub);
     }
 }
 
@@ -945,7 +945,7 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     AnimInit(&work->unk_130, 0, 0);
     func_08019068(gUnk_0813ED4C, &work->unk_130, 0, 0, work->unk_018);
     TaskPoolInit(&work->unk_000, 1);
-    TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 
     switch (work->unk_14D) {
     case 0:
@@ -1096,7 +1096,7 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     AnimInit(&work->unk_130, 0, 0);
     func_08019068(gUnk_0813ED90, &work->unk_130, 0, 0, work->unk_018);
     TaskPoolInit(&work->unk_000, 1);
-    TaskCreate(&work->unk_000, gUnk_09EDAE88, body);
+    TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
 
 u8 task_frd_beast_1(FrdBeastWork* work) {
