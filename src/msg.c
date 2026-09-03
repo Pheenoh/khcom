@@ -1,13 +1,15 @@
 #include "macros.h"
 #include "msg.h"
 
-Ent02034A80* gUnk_02034A80;
-Ent080658B8* gUnk_02034A84;
-Ent080658B8* gUnk_02034A88;
+static Ent02034A80* gUnk_02034A80;
+static Ent080658B8* gUnk_02034A84;
+static Ent080658B8* gUnk_02034A88;
 #ifndef VERSION_EU
-void* gUnk_02034A8C;
+static void* gUnk_02034A8C;
 #endif
-u8 gUnk_02034A90;
+static u8 gUnk_02034A90;
+
+struct UnkStruct_02039DD0* gUnk_02039DD0;
 
 void func_0806180C(u16 a) {
     ModeRequest(gUnk_09EE274C, a);

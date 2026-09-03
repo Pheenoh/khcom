@@ -21,6 +21,10 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # a per-version address. US and JP agree below 0x02034A08 and in IWRAM, and JP
 # is shifted down by 0x90..0xA4 above that; EU differs from 0x02034898 on and
 # in IWRAM from 0x03007484, so most units need the dict form.
+UNIT_COMMON = {
+    "src/msg.o": {"us": 0x02039DD0, "jp": 0x02039D40, "eu": 0x0203A3E0},
+}
+
 UNIT_BSS = {
     "src/evt.o": {"us": 0X02039DC8, "jp": 0x02039d38, "eu": 0x0203a3d8},
     "src/fld.o": {"us": 0X0203C7AC, "jp": 0x0203c71c, "eu": 0x0203cd9c},
@@ -201,9 +205,18 @@ with open(ldscript, "w") as f:
         a = addr.get(version) if isinstance(addr, dict) else addr
         if a is not None and f"{build_dir}/{obj}" in linked:
             unit_bss[obj] = a
-    for obj, addr in sorted(unit_bss.items(), key=lambda kv: kv[1]):
-        f.write(f"\n    .bss.{obj.rsplit('/', 1)[-1].removesuffix('.o')} {addr:#x} (NOLOAD) :\n"
-                f"    {{\n        {build_dir}/{obj}(.bss COMMON);\n    }}\n")
+    unit_common = {}
+    for obj, addr in UNIT_COMMON.items():
+        a = addr.get(version) if isinstance(addr, dict) else addr
+        if a is not None and f"{build_dir}/{obj}" in linked:
+            unit_common[obj] = a
+    placements = [(a, obj, ".bss COMMON" if obj not in unit_common else ".bss") for obj, a in unit_bss.items()]
+    placements += [(a, obj, "COMMON") for obj, a in unit_common.items()]
+    for addr, obj, sec in sorted(placements):
+        name = obj.rsplit("/", 1)[-1].removesuffix(".o")
+        tag = "bss" if sec != "COMMON" else "common"
+        f.write(f"\n    .{tag}.{name} {addr:#x} (NOLOAD) :\n"
+                f"    {{\n        {build_dir}/{obj}({sec});\n    }}\n")
     f.write("\n    /DISCARD/ : { *(*); }\n}\n")
 
 out = Path("build.ninja")

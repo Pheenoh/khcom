@@ -49,7 +49,7 @@ eu_0805E924.s
 btl4.c
 tutorial.c
 mode_test.c -O2 -fprologue-bugfix -fno-common
-msg.c -O2 -fprologue-bugfix -fno-common
+msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common
