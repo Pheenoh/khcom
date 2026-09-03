@@ -46,8 +46,7 @@ typedef struct UnkStruct_02039B84 {
     u8 unk_0B3;
     u8 unk_0B4;
     u8 unk_0B5[0x17];
-    u16 unk_0CC;
-    u16 unk_0CE;
+    u32 unk_0CC;
     u32 unk_0D0;
     u32 unk_0D4;
     u16 unk_0D8;
@@ -76,6 +75,19 @@ typedef struct UnkStruct_02039B84 {
 
 extern UnkStruct_02039B84* gUnk_02039B84;
 
+typedef struct UnkStruct_080DEE18 {
+    u16 unk_00;
+    u8 unk_02;
+    u8 unk_03;
+    u32 unk_04;
+    u8 unk_08;
+    u8 unk_09;
+    u8 unk_0A;
+    u8 unk_0B;
+    u8 unk_0C;
+    u8 unk_0D[0x03];
+} UnkStruct_080DEE18;
+
 typedef struct UnkStruct_0203C590 {
     u8 unk_00;
     u8 unk_01;
@@ -84,9 +96,9 @@ typedef struct UnkStruct_0203C590 {
     u8 unk_05;
     u8 unk_06;
     u8 unk_07;
-    u8 unk_08[0x10];
+    u8 unk_08[4][4];
     u8 unk_18[0x04];
-    u8 unk_1C[0x200];
+    UnkStruct_080DEE18 unk_1C[32];
 } UnkStruct_0203C590;
 
 extern UnkStruct_0203C590 gUnk_0203C590;
@@ -107,7 +119,9 @@ typedef struct UnkStruct_080DEDD8 {
     u8 unk_01;
     u8 unk_02;
     u8 unk_03;
-    u8 unk_04[0x04];
+    u8 unk_04;
+    u8 unk_05;
+    u8 unk_06[0x02];
 } UnkStruct_080DEDD8;
 
 typedef struct UnkStruct_0984C868 {
@@ -121,19 +135,6 @@ typedef struct UnkStruct_0984C868 {
 
 extern UnkStruct_0984C868 gUnk_0984C868[];
 extern UnkStruct_0984C868 gUnk_0984CBD0[];
-
-typedef struct UnkStruct_080DEE18 {
-    u16 unk_00;
-    u8 unk_02;
-    u8 unk_03;
-    u32 unk_04;
-    u8 unk_08;
-    u8 unk_09;
-    u8 unk_0A;
-    u8 unk_0B;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} UnkStruct_080DEE18;
 
 extern UnkStruct_080DEE18 gUnk_0203C5AC[];
 
@@ -214,12 +215,11 @@ typedef struct BoogieDiskWork {
     u32 unk_048;
     u32 unk_04C;
     u8 unk_050[0x24];
-    u32 unk_074;
-    u32 unk_078;
+    u64 unk_074;
     u8 unk_07C[0xD4];
-    u32 unk_150;
-    u32 unk_154;
-    u32 unk_158;
+    s32 unk_150;
+    s32 unk_154;
+    s32 unk_158;
     u8 unk_15C;
     u8 unk_15D[0x3];
 } BoogieDiskWork;
@@ -238,8 +238,7 @@ typedef struct UrsulaWork {
     u32 unk_030;
     u32 unk_034;
     u8 unk_038[0x20];
-    u32 unk_058;
-    u32 unk_05C;
+    u64 unk_058;
     u8 unk_060[0x4];
     u32 unk_064;
     u8 unk_068[0xCC];
@@ -294,7 +293,17 @@ void func_080609A0(void);
 void EwramFree(void* p);
 u8 func_080E8C84(u8 a, u8 b);
 u8* func_080E8D1C(s32 a);
-extern void* gUnk_02034F14;
+typedef struct UnkStruct_02034F14 {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+    u8 unk_04;
+    u8 unk_05;
+    u8 unk_06[0x02];
+} UnkStruct_02034F14;
+
+extern UnkStruct_02034F14* gUnk_02034F14;
 void func_080DEB94(void);
 void func_080DFC7C(void);
 void func_080DF480(void);
@@ -339,7 +348,7 @@ typedef struct UrsulaBubbleSingleWork {
     u32 unk_138;
     u16 unk_13C;
     u16 unk_13E;
-    u32 unk_140;
+    s32 unk_140;
     u8 unk_144[0x4];
 } UrsulaBubbleSingleWork;
 
@@ -364,7 +373,11 @@ typedef struct UnkStruct_02039BB0 {
     u8 unk_00D;
     u8 unk_00E;
     u8 unk_00F;
-    u8 unk_010[0x174];
+    u8 unk_010[0x16A];
+    u16 unk_17A;
+    u16 unk_17C;
+    u16 unk_17E;
+    u8 unk_180[0x04];
     UnkStruct_02039D34 unk_184[13];
     u32 unk_1B8;
 } UnkStruct_02039BB0;
@@ -384,7 +397,7 @@ typedef struct BoogieKnifereaderWork {
     u8 unk_00C[0x10];
     u32 unk_01C;
     u8 unk_020[0x10C];
-    u32 unk_12C[5];
+    void* unk_12C[5];
 } BoogieKnifereaderWork;
 
 typedef struct BoogieDiceWork {
@@ -402,19 +415,21 @@ typedef struct BoogieDiceWork {
     u32 unk_044;
     u32 unk_048;
     u32 unk_04C;
-    u8 unk_050[0x24];
-    u32 unk_074;
-    u32 unk_078;
+    u8 unk_050[0x1C];
+    u16 unk_06C;
+    s16 unk_06E;
+    u8 unk_070[0x04];
+    u64 unk_074;
     u8 unk_07C[0x4];
     u32 unk_080;
     u8 unk_084[0xCC];
-    u32 unk_150;
-    u32 unk_154;
+    s32 unk_150;
+    s32 unk_154;
     u8 unk_158;
     u8 unk_159[0x3];
-    u32 unk_15C;
-    u32 unk_160;
-    u32 unk_164;
+    s32 unk_15C;
+    s32 unk_160;
+    s32 unk_164;
     u8 unk_168;
     u8 unk_169[0x3];
     u32 unk_16C;
@@ -444,8 +459,7 @@ typedef struct UrsulaTakoWork {
     u32 unk_030;
     u32 unk_034;
     u8 unk_038[0x24];
-    u32 unk_05C;
-    u32 unk_060;
+    u64 unk_05C;
     u8 unk_064[0xD4];
     u32 unk_138;
     u16 unk_13C;
@@ -458,9 +472,9 @@ typedef struct UrsulaTakoWork {
     u8 unk_170[0x2C];
     u32 unk_19C;
     u8 unk_1A0[0x58];
-    u32 unk_1F8;
-    u32 unk_1FC;
-    u8 unk_200[0x4];
+    s32 unk_1F8;
+    s32 unk_1FC;
+    s32 unk_200;
 } UrsulaTakoWork;
 
 extern u8 gUnk_0979D0B6[];
@@ -494,6 +508,14 @@ typedef struct UnkStruct_02034F7C {
 extern UnkStruct_02034F7C gUnk_0984CECC[];
 extern const u8 gUnk_09EF69EE[];
 
+typedef struct UnkStruct_080DFB7C {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u8 unk_06;
+    u8 unk_07;
+} UnkStruct_080DFB7C;
+
 typedef struct UnkStruct_080DFB8C {
     u16 unk_00;
     u8 unk_02;
@@ -525,7 +547,18 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size);
 u8 func_0801CA00(void* a);
 void func_08014020(s32 x, s32 y, s32 z);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
-void func_080DF640(u8 a, u8 b);
+typedef struct UnkStruct_080DF640 {
+    u16 unk_00;
+    u16 unk_02;
+} UnkStruct_080DF640;
+
+extern const u8 gUnk_0984D0CC[][4];
+extern vu32 gFrameCounter;
+
+void func_080DF640(u8 a, UnkStruct_080DF640* p);
+s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
+extern u8 gUnk_0203C578;
+extern u8 gUnk_0203C56C;
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
@@ -555,13 +588,12 @@ void func_0801BCD4(void* a);
 extern u8 gUnk_0203C564;
 extern u8 gUnk_0203C574;
 extern u8 gUnk_096FE0E8[];
-u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h);
+u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
 void task_bos_boogie_dice_3(BoogieDiceWork* work);
 void AnimInit(void* a, void* b, void* c);
 void SeedRandom(u32 seed);
 void* AnimUpdate(void* a);
 void func_080E5510(u8 a);
-void func_080DD248(void* a, void* b, void* c, void* d);
 extern u8 gUnk_0203C584;
 extern const u8 gUnk_0984D134[][8];
 extern u8 gUnk_09799CBA[];
@@ -576,6 +608,12 @@ void* TaskCreate(void* pool, void* desc, void* arg);
 UnkStruct_080DFB8C* func_080E548C(s16 a, s16 b);
 UnkStruct_080DFB8C* func_080E58F8(s16 a, s16 b);
 extern u8 gUnk_09EF5268[];
+extern u8 gUnk_09EF5190[];
+extern u8 gUnk_09EF5100[];
+extern u8 gUnk_09EF5160[];
+void func_080DB978(UrsulaWork* work);
+extern u8 gUnk_09EF5130[];
+void task_bos_ursula_2(UrsulaWork* work);
 void func_080DFB2C(void);
 u16 func_080DD7C4(UrsulaBubbleWork* work);
 u16 func_080DD854(UrsulaBubbleWork* work);
@@ -610,15 +648,26 @@ typedef struct UrsulaMapanimeWork {
     u32 unk_00C;
     u32 unk_010;
     u8 unk_014[0x10];
-    u32 unk_024;
+    void* unk_024;
     u8 unk_028;
     u8 unk_029[0x3];
 } UrsulaMapanimeWork;
+
+typedef struct UrsulaMapWork {
+    s32 unk_00;
+    s32 unk_04;
+    u16 unk_08;
+    u8 unk_0A[0x2];
+} UrsulaMapWork;
 
 typedef struct UrsulaBorderWork {
     void* unk_000;
     void* unk_004;
 } UrsulaBorderWork;
+
+void task_bos_ursula_map_0(UrsulaMapWork* work, UnkStruct_080DAA28* arg);
+u8 task_bos_ursula_map_1(UrsulaMapWork* work);
+extern u8 gUnk_0203C57C;
 
 typedef struct BoogieSakuWork {
     u32 unk_000;
@@ -643,20 +692,22 @@ typedef struct BoogieKnifeWork {
     u32 unk_00C;
     u32 unk_010;
     u32 unk_014;
-    u8 unk_018[0x18];
+    u8 unk_018[0x14];
+    u32 unk_02C;
     u32 unk_030;
     u32 unk_034;
     u32 unk_038;
     u8 unk_03C[0x30];
     u32 unk_06C;
     u8 unk_070[0xBC];
-    void* unk_12C[5];
-    u32 unk_140;
+    u8 unk_12C[0x10];
+    s32 unk_13C;
+    s32 unk_140;
     u8 unk_144[0x4];
     u32 unk_148;
     u32 unk_14C;
-    u32 unk_150;
-    u32 unk_154;
+    s32 unk_150;
+    s32 unk_154;
 } BoogieKnifeWork;
 
 typedef struct UrsulaBacktakoWork {
@@ -694,9 +745,9 @@ typedef struct BoogieKaihukuWork {
     u32 unk_048;
     u32 unk_04C;
     u8 unk_050[0x24];
-    u32 unk_074;
-    u32 unk_078;
-    u8 unk_07C[0xD8];
+    u64 unk_074;
+    u8 unk_07C[0xD4];
+    u32 unk_150;
     u32 unk_154;
 } BoogieKaihukuWork;
 
@@ -731,7 +782,7 @@ UnkStruct_02039B84* func_08000CD4(void* node);
 u8 func_080DA73C(void);
 u8 func_080DB428(u8* p);
 u8 func_080DC628(void);
-u8 func_080DCA78(u8 a);
+s32 func_080DCA78(u8 a);
 void task_bos_ursula_border_0(UrsulaBorderWork* work);
 void task_bos_ursula_border_3(UrsulaBorderWork* work);
 u8 task_bos_ursula_backtako_1(UrsulaBacktakoWork* work);
@@ -740,7 +791,7 @@ void func_080DA954(BoogieSakuWork* work, s32 a, u16 b);
 void task_bos_boogie_saku_0(BoogieSakuWork* work, void* arg);
 void task_bos_boogie_saku_3(BoogieSakuWork* work);
 void task_bos_boogie_knife_3(BoogieKnifeWork* work);
-u8 func_080DB438(BoogieKnifeWork* work);
+u8 func_080DB438(BoogieKnifereaderWork* work);
 void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work);
 
 void task_bos_boogie_knifereader_0(BoogieKnifereaderWork* work);
@@ -759,13 +810,241 @@ void task_bos_ursula_bubble_3(UrsulaBubbleWork* work);
 extern UrsulaMapanimeWork* gUnk_02034F10;
 
 void task_bos_ursula_mapanime_0(UrsulaMapanimeWork* work);
+u8 task_bos_ursula_mapanime_1(UrsulaMapanimeWork* work);
 void task_bos_ursula_mapanime_2(UrsulaMapanimeWork* work);
 void task_bos_ursula_mapanime_3(UrsulaMapanimeWork* work);
 
 void task_bos_ursula_tako_2(UrsulaTakoWork* work);
+void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg);
+u8 task_bos_ursula_tako_1(UrsulaTakoWork* work);
+void _0801C1F8(s32 a, s32 b, s32 c, s32 d);
+void func_08005B64(void* a);
+u8 func_08005AC4(void* a);
+void func_08012614(void* a, s32 b);
+void func_0801C7FC(void* a, s32 b, s32 c);
+void func_08083914(void);
+extern u8 gUnk_096FE1A8[];
 u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work);
 void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work);
 
+void func_080DB04C(BoogieKnifeWork* work);
+void func_080DE910(void);
+u16 GetKeysRepeat(void);
+u16 GetKeysPressed(void);
+void ModeRequest(void* mode, s32 arg);
+void func_08085FB0(void);
+void func_08093BB4(void);
+void func_08060598(void);
+void func_080605A4(s32 a);
+void func_080DDF04(u8 a, u8 b);
+void func_080DE2A4(UnkStruct_02034F14* p);
+void func_080DE724(void);
+void* EwramAlloc(s32 size);
+s32 SaveLoadHeader(void);
+void EnableBg(s32 bg);
+void func_0805FA8C(s32 a, s32 b, s32 c);
+void func_0805FA60(s32 a, const char* b, s32 c, s32 d);
+void func_08004DB0(void);
+void func_08006120(s32 a, s32 b);
+void m4aMPlayAllStop(void);
+extern const char gUnk_0984B72C[];
+extern const char gUnk_0984B77C[];
+extern const char gUnk_0984B7B0[];
+extern const char gUnk_0984B7C0[];
+extern const char gUnk_0984B7D0[];
+extern const char gUnk_0984B7E0[];
+extern const char gUnk_0984B7F0[];
+extern const char gUnk_0984B800[];
+extern const char gUnk_0984B810[];
+extern const char gUnk_0984B820[];
+void func_080DE5B0(UnkStruct_02034F14* p);
+void func_080DE62C(UnkStruct_02034F14* p);
+void func_080DE6A8(UnkStruct_02034F14* p);
+void func_080DE50C(UnkStruct_02034F14* p);
+void func_080DE534(UnkStruct_02034F14* p);
+void func_080DE3E8(UnkStruct_02034F14* p);
+void func_080DE4A4(UnkStruct_02034F14* p);
+extern const char* const gUnk_09EF6974[];
+
+typedef struct UnkStruct_02034F18 {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+    u8 unk_04;
+    u8 unk_05;
+    u8 unk_06;
+    u8 unk_07;
+} UnkStruct_02034F18;
+
+extern UnkStruct_02034F18* gUnk_02034F18;
+extern UnkStruct_02034F18 gUnk_0203C7B0;
+void func_080DE2FC(UnkStruct_02034F14* p);
+void func_080DE35C(UnkStruct_02034F14* p);
+void func_0805FC04(u8 x, u8 y, u32 c, u16 n);
+extern const char* const gUnk_09EF6960[];
+extern const char gUnk_0984B75C[];
+extern const char gUnk_0984B76C[];
+extern const char gUnk_0984B830[];
+extern const char gUnk_0984B834[];
+extern void (*const gUnk_09EF69A8[])(UnkStruct_02034F14* p);
+extern const u8 gUnk_0984B458[][8];
+extern u8 gUnk_09EF6A90[];
+extern u8 gUnk_09ECEB64[];
+void func_080DF048(void);
+u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
+extern s16 gSineTable[];
+s32 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
+void ApproachAngle(u16* p, u16 target, u16 step);
+void task_bos_ursula_0(UrsulaWork* work);
+void func_0801BCC0(s32 a, s32 b, s32 c);
+void func_080051C4(s32 a, u16 b, u16 c);
+extern u8 gUnk_09EF51D8[];
+extern u8 gUnk_096FE14C[];
+extern u8 gUnk_09EF51F0[];
+extern u8 gUnk_096FE13C[];
+extern u8 gUnk_09EF5208[];
+extern u8 gUnk_09EF5238[];
+extern u8 gUnk_09EF5220[];
+extern u8 gUnk_096FE098[];
+extern u8 gUnk_09EF6824[];
+extern u8 gUnk_0979A426[];
+extern u8 gUnk_09EF6844[];
+u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
+u8 AnimIsFinished(void* a);
+void AnimChange(void* a, u16 animId, u16 flags);
+void func_0802F1E8(void);
+void func_0801A920(s32 a, s32 b, s32 c, s32 d);
+extern u16 gUnk_0203C554;
+extern u8 gUnk_09EF5040[];
+void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg);
+u8 task_bos_boogie_dice_1(BoogieDiceWork* work);
+u32 func_080D9A90(void);
+u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d);
+void func_080D9B6C(BoogieDiceWork* work);
+void func_08013F5C(s32 x, s32 y, s32 s, u16 b, u16 c);
+extern u8 gUnk_0203C568;
+extern u8 gUnk_09EF6788[];
+extern u8 gUnk_09796EAA[];
+extern u8 gUnk_09EF6798[];
+u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work);
+void func_0802F274(s32 a, s32 b);
+void func_08015228(s32 x, s32 y, s32 z, s32 s);
+void func_08019190(void* a, s32 b);
+extern u8 gUnk_0203C570;
+void func_08014780(s32 a, s32 b, s32 c);
+void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a);
+extern UnkStruct_096FE034 gUnk_096FE260;
+extern u8 gUnk_09EF5250[];
+void func_080DF244(void);
+void func_0800FDD0(s32 a);
+void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg);
+extern u8 gUnk_0979C44E[];
+extern u8 gUnk_0984AFD8[];
+extern u8 gUnk_09EF684C[];
+extern u8 gUnk_09EF6848[];
+
+typedef struct UnkStruct_0203C55C {
+    u8 unk_00[0x2C];
+    s16 unk_2C;
+    s16 unk_2E;
+} UnkStruct_0203C55C;
+
+extern UnkStruct_0203C55C* gUnk_0203C55C;
+void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg);
+u8 task_bos_boogie_disk_1(BoogieDiskWork* work);
+void func_080DEF20(void);
+extern const u8 gUnk_09EF69E0[];
+u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work);
+u32 func_0801ADAC(void* a);
+void func_0801AF08(void* a);
+u8 func_0801C1C0(s32 a);
+void func_080D9A58(void);
+u8 task_bos_boogie_knife_1(BoogieKnifeWork* work);
+void func_080DF380(void);
+void task_bos_boogie_knife_2(BoogieKnifeWork* work);
+void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg);
+void func_080122AC(void* a, s32 b, s32 c, s32 d);
+extern u8 gUnk_09EF6774[];
+extern u8 gUnk_0979666A[];
+extern u8 gUnk_0984AF98[];
+extern u8 gUnk_09EF6784[];
+extern u8 gUnk_09EDB350[];
+
+typedef struct UnkStruct_096FDFC4 {
+    u8 unk_00[0x06];
+    u16 unk_06;
+    u16 unk_08;
+} UnkStruct_096FDFC4;
+
+extern UnkStruct_096FDFC4 gUnk_096FDFC4;
+extern UnkStruct_096FDFC4 gUnk_096FE0C0;
+extern UnkStruct_096FDFC4 gUnk_096FDF54;
+u8 task_bos_boogie_map_1(void);
+void func_0802F208(void);
+s32 func_0802F268(void);
+void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
+void SetBgPriority(s32 bg, u16 priority);
+extern u16 gWin0H;
+extern u16 gWin0V;
+extern u16 gWinIn;
+extern u16 gWinOut;
+u16 func_080DEE44(u8 a, u8 b);
+void task_bos_boogie_dice_2(BoogieDiceWork* work);
+u8 func_080D9B28(BoogieDiceWork* work);
+s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
+void task_bos_ursula_backtako_0(UrsulaBacktakoWork* work, u8* arg);
+void* AllocObjTiles(s32 size, void* src);
+u16 func_08003524(void* a, s32 b);
+void func_08005B44(void* a, u16 frame);
+extern u8 gUnk_09EF6860[];
+extern u8 gUnk_0979E344[];
+extern u8 gUnk_09EF68A0[];
+void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg);
+extern u8 gUnk_096FE324[];
+extern u8 gUnk_097A0DE4[];
+extern u8 gUnk_0984B0F8[];
+extern u8 gUnk_09EF68D8[];
+extern u8 gUnk_09EF68C0[];
+void task_bos_ursula_border_2(UrsulaBorderWork* work);
+extern u8 gUnk_0979D090[];
+extern u8 gUnk_0979D8B8[];
+u8 func_080DF750(void);
+const char* func_08000F84(void* t);
+void func_08000DE8(void* a, void* b);
+s32 strcmp(const char* a, const char* b);
+extern const char gUnk_096FE2F4[];
+extern u8 gUnk_09EF5280[];
+extern UnkStruct_096FE034 gUnk_096FE2C0;
+void func_080DA42C(BoogieDiceWork* work);
+void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
+void func_08002A10(void* a, void* b);
+void* memcpy(void* dst, const void* src, unsigned long n);
+extern u8 gUnk_096FDF7C[];
+extern u8 gUnk_0203C558;
+void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg);
+extern u8 gUnk_096FE114[];
+extern u8 gUnk_09799FB0[];
+extern u8 gUnk_0984AFB8[];
+extern u8 gUnk_08F69BC4[];
+extern u8 gUnk_09EF6820[];
+extern u8 gUnk_09EF681C[];
+u8 func_080DFCDC(UnkStruct_080DFF1C* p);
+void func_080DB468(BoogieKnifereaderWork* work);
+extern u8 gUnk_09EF50B8[];
+void task_bos_ursula_backtako_2(UrsulaBacktakoWork* work);
+void func_080DF8C0(u8 a, u8 b);
+void func_080DC9DC(s32* a, s32* b, s32* c, UrsulaTakoWork* d);
+u8 func_080DFD84(UnkStruct_080DFF1C* p);
+extern const u8 gUnk_0984B844[];
+extern const u8 gUnk_0984B851[];
+void _08085D04(u8 a);
+void func_0806180C(u16 a);
+void func_080DF828(void);
+void task_bos_boogie_explosiondice_2(BoogieExplosiondiceWork* work);
+void func_080DD248(s32* a, s32* b, s32* c, UrsulaBacktakoWork* d);
+u8* func_08002C28(u8 a, s32 b);
+void task_bos_boogie_disk_2(BoogieDiskWork* work);
 void func_080DF570(u8 a);
 void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work);
 
