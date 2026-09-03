@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_09F5909C
-data_09F5909C:
-	.incbin "roms/B8CP.gba", 0x1f5909c, 0xa6f64
+	.global data_09F49910
+data_09F49910:
+	.incbin "roms/B8CP.gba", 0x1f49910, 0x19c
