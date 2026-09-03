@@ -2,6 +2,11 @@
 #include "mode_chkbtl.h"
 #include "gba/keys.h"
 
+BtlWork* gBtlWork;
+COMMON u16 gUnk_02039B88;
+COMMON u16 gUnk_02039B8C;
+COMMON u16 gUnk_02039B90;
+
 const ChkBtlEntry gChkBtlEntries[209] = {
     { 10, { 0 }, 0, 10, 0, "\x82\x73\x82\x76\x82\x6d\x82\x4f" },
     { 10, { 0 }, 0, 11, 0, "\x82\x73\x82\x76\x82\x6d\x82\x50" },
