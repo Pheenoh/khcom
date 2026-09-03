@@ -273,7 +273,6 @@ extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
-extern UnkStruct_02039CA8 gUnk_02039CA8;
 extern GameState gGameState;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern u32 gUnk_03006C10;

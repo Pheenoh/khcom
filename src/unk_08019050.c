@@ -1,6 +1,8 @@
 #include "macros.h"
 #include "unk_0800eebc.h"
 
+s32 gUnk_02039DC0;
+
 void func_08019050(u16 a, s32 b, s32 c, s32 d) {
     gBtlWork->unk_028 = b;
     gBtlWork->unk_01A = a;

@@ -5,7 +5,6 @@
 #include "evt_types.h"
 #include "game.h"
 
-extern UnkStruct_02039DC8* gUnk_02039DC8;
 
 typedef struct EvtObj {
     s32 unk_00;
