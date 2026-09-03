@@ -393,7 +393,6 @@ int SaveCheckFileLargeSlot(s16 file, s16 slot) {
     return ret;
 }
 
-#ifdef NON_MATCHING
 int SaveRepairFileLarge(u16 file) {
     int results[2];
     int good;
@@ -401,6 +400,7 @@ int SaveRepairFileLarge(u16 file) {
     s16 i;
     int ret;
     u8* buf;
+    u8* src;
     u8* dst;
     s32 off;
 
@@ -422,13 +422,13 @@ int SaveRepairFileLarge(u16 file) {
     if (good >= 0 && bad >= 0) {
         buf = EwramAlloc(SAVE_FILE_LARGE_SIZE);
         off = (s16)file * (SAVE_FILE_LARGE_SIZE * 2);
-        dst = SRAM_FILE_LARGE + good * SAVE_FILE_LARGE_SIZE;
-        SaveVerifyBlock(off + dst, buf, buf, SAVE_FILE_LARGE_SIZE);
+        src = SRAM_FILE_LARGE + good * SAVE_FILE_LARGE_SIZE;
+        SaveVerifyBlock((u8*)(off + (u32)src), buf, buf, SAVE_FILE_LARGE_SIZE);
 
         for (i = 0; i < SAVE_SLOTS; i++) {
             if (results[i] != SAVE_OK) {
                 dst = SRAM_FILE_LARGE + i * SAVE_FILE_LARGE_SIZE;
-                WriteAndVerifySramFast(buf, off + dst, SAVE_FILE_LARGE_SIZE);
+                WriteAndVerifySramFast(buf, (u8*)((s16)file * (SAVE_FILE_LARGE_SIZE * 2) + (u32)dst), SAVE_FILE_LARGE_SIZE);
             }
         }
 
@@ -438,9 +438,6 @@ int SaveRepairFileLarge(u16 file) {
 
     return ret;
 }
-#else
-INCLUDE_ASM("save/SaveRepairFileLarge.s");
-#endif
 
 int SaveLoadFileLarge(u16 file) {
     u8* buf;
@@ -556,7 +553,6 @@ int SaveCheckFileSmallSlot(s16 file, s16 slot) {
     return ret;
 }
 
-#ifdef NON_MATCHING
 int SaveRepairFileSmall(u16 file) {
     int results[2];
     int good;
@@ -564,6 +560,7 @@ int SaveRepairFileSmall(u16 file) {
     s16 i;
     int ret;
     u8* buf;
+    u8* src;
     u8* dst;
     s32 off;
 
@@ -585,13 +582,13 @@ int SaveRepairFileSmall(u16 file) {
     if (good >= 0 && bad >= 0) {
         buf = EwramAlloc(SAVE_FILE_SMALL_SIZE);
         off = (s16)file * (SAVE_FILE_SMALL_SIZE * 2);
-        dst = SRAM_FILE_SMALL + good * SAVE_FILE_SMALL_SIZE;
-        SaveVerifyBlock(off + dst, buf, buf, SAVE_FILE_SMALL_SIZE);
+        src = SRAM_FILE_SMALL + good * SAVE_FILE_SMALL_SIZE;
+        SaveVerifyBlock((u8*)(off + (u32)src), buf, buf, SAVE_FILE_SMALL_SIZE);
 
         for (i = 0; i < SAVE_SLOTS; i++) {
             if (results[i] != SAVE_OK) {
                 dst = SRAM_FILE_SMALL + i * SAVE_FILE_SMALL_SIZE;
-                WriteAndVerifySramFast(buf, off + dst, SAVE_FILE_SMALL_SIZE);
+                WriteAndVerifySramFast(buf, (u8*)((s16)file * (SAVE_FILE_SMALL_SIZE * 2) + (u32)dst), SAVE_FILE_SMALL_SIZE);
             }
         }
 
@@ -601,9 +598,6 @@ int SaveRepairFileSmall(u16 file) {
 
     return ret;
 }
-#else
-INCLUDE_ASM("save/SaveRepairFileSmall.s");
-#endif
 
 int SaveLoadFileSmall(u16 file) {
     u8* buf;
