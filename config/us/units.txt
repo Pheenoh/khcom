@@ -37,7 +37,7 @@ smn.c
 frd.c
 pc.c
 hum.c
-mode_jiminy.c
+mode_jiminy.c -O2 -fprologue-bugfix -fno-common
 monsgage.c
 btl4.c
 tutorial.c
