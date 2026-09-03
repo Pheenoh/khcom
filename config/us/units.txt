@@ -6,7 +6,7 @@ malloc.c -O2 -fprologue-bugfix -fno-common
 taskpool.c -O2 -fprologue-bugfix -fno-common
 key.c -O2 -fprologue-bugfix -fno-common
 sprite.c
-engine.c
+engine.c -O2 -fprologue-bugfix -fno-common
 sio.c -O2 -fprologue-bugfix -fno-common
 pallet.c
 util.c

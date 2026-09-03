@@ -25,6 +25,7 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 UNIT_BSS = {
     "src/taskpool.o": 0x03007488,
     "src/malloc.o": 0x030074A8,
+    "src/engine.o": 0x0203401C,
     "src/key.o": 0x02034000,
     "src/mode_movie.o": 0x02034938,
     "src/mode_worldinspect.o": {"us": 0x02035118, "jp": 0x02035078, "eu": None},
