@@ -1,6 +1,11 @@
 #include "macros.h"
 #include "bos4.h"
 
+void* gUnk_02034F0C;
+UrsulaMapanimeWork* gUnk_02034F10;
+UnkStruct_02034F14* gUnk_02034F14;
+UnkStruct_02034F18* gUnk_02034F18;
+
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)(arg + 0x40);
     s32 c;

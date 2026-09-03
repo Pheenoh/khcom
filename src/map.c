@@ -1,6 +1,45 @@
 #include "macros.h"
 #include "map.h"
 
+UnkStruct_080DFB8C* gUnk_02034F1C;
+UnkStruct_02034F20* gUnk_02034F20;
+UnkStruct_02034F24* gUnk_02034F24;
+u16 gUnk_02034F28;
+u16 gUnk_02034F2A;
+u16 gUnk_02034F2C;
+u16 gUnk_02034F2E;
+void* gUnk_02034F30;
+UnkStruct_02034F34* gUnk_02034F34;
+u8* gUnk_02034F38;
+u8 gUnk_02034F3C[4];
+u8 gUnk_02034F40;
+u8 gUnk_02034F41;
+u8 gUnk_02034F42;
+u32 gUnk_02034F44;
+UnkStruct_080DFF1C gUnk_02034F48[3];
+u8 gUnk_02034F78;
+u8 gUnk_02034F79;
+u16 gUnk_02034F7A;
+UnkStruct_02034F7C* gUnk_02034F7C;
+UnkStruct_02034F80 gUnk_02034F80;
+UnkStruct_02034F84* gUnk_02034F84;
+s32 gUnk_02034F88;
+u32 gUnk_02034F8C;
+u8 gUnk_02034F90[0x14];
+u8 gUnk_02034FA4;
+void* gUnk_02034FA8;
+u32 gUnk_02034FAC;
+s32 gUnk_02034FB0;
+void* gUnk_02034FB4;
+void* gUnk_02034FB8;
+u8 gUnk_02034FBC;
+u8 gUnk_02034FBD[0x17];
+s32 gUnk_02034FD4;
+u8 gUnk_02034FD8;
+u32 gUnk_02034FDC;
+u32 gUnk_02034FE0;
+u32 gUnk_02034FE4;
+
 s32 func_080DFEBC(s32 x, s32 y, s32 z) {
     UnkStruct_080DFB8C* p = func_080DFB8C(x, y);
     s32 r;
