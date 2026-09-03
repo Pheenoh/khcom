@@ -259,7 +259,8 @@ typedef struct UnkStruct_0808E890 {
     void* unk_0C;
     void* unk_10;
     CardDef* unk_14;
-    u8 unk_18[0x08];
+    CardBack* unk_18;
+    void* unk_1C;
     u16 unk_20;
     s16 unk_22;
     s16 unk_24;
@@ -346,6 +347,8 @@ typedef struct UnkStruct_0808DB04 {
     u16 unk_886;
     u8 unk_888[0x10];
     u16 unk_898;
+    u8 unk_89A[0x26];
+    u8 unk_8C0;
 } UnkStruct_0808DB04;
 
 typedef struct UnkStruct_080A324C {
@@ -797,6 +800,8 @@ extern u8 gUnk_09EE7560[];
 extern u8 gUnk_09EE4BB0[];
 extern u8 gTaskDescSELMAPEVKEY[];
 extern void* gUnk_09EE7698[];
+extern void* gUnk_09EE76C0[];
+extern void** gUnk_09EE76D0[];
 extern u8 gUnk_090A583E[];
 extern u8 gUnk_090A418E[];
 extern u8 gUnk_090A3E46[];
@@ -1259,10 +1264,12 @@ extern s16 gUnk_09035964[];
 extern s32 gUnk_09033D28[];
 
 typedef struct UnkStruct_08084D78 {
-    u8 unk_00[0x14];
+    u16 unk_00[0x0A];
     u16 unk_14;
     u16 unk_16;
-    u8 unk_18[0x08];
+    u16 unk_18;
+    u8 unk_1A[0x02];
+    u16* unk_1C;
 } UnkStruct_08084D78;
 
 typedef struct UnkStruct_02039BA0 {
