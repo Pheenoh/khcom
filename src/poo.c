@@ -3581,21 +3581,21 @@ void task_poo_butterfly_3(PooButterflyWork* w) {
     ReleaseObjPalette(w->unk_D0);
 }
 
-u8 func_080D22F4(PooButterflyWork* w) {
+u8 task_poo_butterflyRight_1(PooButterflyWork* w) {
     func_080D2190(&w->unk_00[1]);
     return 1;
 }
 
-void func_080D2304(PooButterflyWork* w) {
+void task_poo_butterflyRight_2(PooButterflyWork* w) {
     func_080D220C(&w->unk_00[1], w->unk_D0);
 }
 
-u8 func_080D2318(PooButterflyWork* w) {
+u8 task_poo_butterflyLeft_1(PooButterflyWork* w) {
     func_080D2190(&w->unk_00[0]);
     return 1;
 }
 
-void func_080D2324(PooButterflyWork* w) {
+void task_poo_butterflyLeft_2(PooButterflyWork* w) {
     func_080D220C(&w->unk_00[0], w->unk_D0);
 }
 

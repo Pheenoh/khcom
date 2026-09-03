@@ -3359,10 +3359,10 @@ task_poo_butterfly_1	0x080d21f4	24	0x080d22a8	named
 func_080D220C	0x080d220c	168	0x080d22c0	global
 task_poo_butterfly_2	0x080d22b4	32	0x080d2368	named
 task_poo_butterfly_3	0x080d22d4	32	0x080d2388	named
-func_080D22F4	0x080d22f4	16	0x080d23a8	body
-func_080D2304	0x080d2304	20	0x080d23b8	body
-func_080D2318	0x080d2318	12	0x080d23cc	body
-func_080D2324	0x080d2324	16	0x080d23d8	body
+task_poo_butterflyRight_1	0x080d22f4	16	0x080d23a8	body
+task_poo_butterflyRight_2	0x080d2304	20	0x080d23b8	body
+task_poo_butterflyLeft_1	0x080d2318	12	0x080d23cc	body
+task_poo_butterflyLeft_2	0x080d2324	16	0x080d23d8	body
 task_poo_mapbee_0	0x080d2334	120	0x080d23e8	named
 task_poo_mapbee_1	0x080d23ac	88	0x080d2460	named
 task_poo_mapbee_2	0x080d2404	144	0x080d24b8	named
