@@ -6,5 +6,5 @@
 	.thumb_func
 	.type mode_allmap_0, %function
 mode_allmap_0:
-	.incbin "roms/B8CP.gba", 0xcf9d0, 0x1b0
+	.incbin "roms/B8CP.gba", 0xcf9d4, 0x1ac
 .syntax divided

@@ -1,3 +1,4 @@
+#include "macros.h"
 #include "mode_battle.h"
 
 const u16 gUnk_08125E24[1024] = {
@@ -67,6 +68,7 @@ const u16 gUnk_08125E24[1024] = {
     0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 };
 
+#ifndef VERSION_EU
 void mode_battle_0(u32 mode) {
     void** p;
     vu32 zero;
@@ -408,6 +410,9 @@ void mode_battle_0(u32 mode) {
     func_08006120(0, 60);
     gGameState.unk_010++;
 }
+#else
+INCLUDE_ASM("mode_battle/mode_battle_0.s");
+#endif
 
 void mode_battle_1(void) {
     TaskPoolUpdate(&gBtlWork->unk_054);

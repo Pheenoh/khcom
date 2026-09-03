@@ -63,6 +63,9 @@ typedef struct Dma3Fill {
 typedef struct Dma3Queue {
     Dma3Request requests[256];
     Dma3Blit unk_0C00[64];
+#ifdef VERSION_EU
+    u8 unkEu_1000[0x180];
+#endif
     Dma3Fill unk_1000[8];
     void* unk_1060[8];
     Dma3Pending pending[4];

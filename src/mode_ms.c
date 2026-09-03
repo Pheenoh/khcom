@@ -46,6 +46,7 @@ s32 gUnk_02035C08;
 u8 gUnk_02035C0C;
 #include "gba/keys.h"
 
+#ifndef VERSION_EU
 void mode_ms_top_0(u32 a) {
     s32 i;
 
@@ -140,7 +141,11 @@ void mode_ms_top_0(u32 a) {
     EnableBg(2);
     DisableBg(3);
 }
+#else
+INCLUDE_ASM("mode_ms/mode_ms_top_0.s");
+#endif
 
+#ifndef VERSION_EU
 void mode_ms_top_1(void) {
     UpdatePlayTime();
 
@@ -335,6 +340,9 @@ void mode_ms_top_1(void) {
     TaskPoolUpdate(&gUnk_020358A8);
     func_08101970();
 }
+#else
+INCLUDE_ASM("mode_ms/mode_ms_top_1.s");
+#endif
 
 void mode_ms_top_2(void) {
     s32 i;
@@ -524,6 +532,7 @@ void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16
     }
 }
 
+#ifndef VERSION_EU
 void func_08102984(s16 a) {
     vu32* dma;
     vu16 zero;
@@ -549,6 +558,9 @@ void func_08102984(s16 a) {
 
     LoadBgMap(2, gUnk_02035C00, 0x500);
 }
+#else
+INCLUDE_ASM("mode_ms/func_08102984.s");
+#endif
 
 s32 func_08102A94(void) {
     s32 k;
@@ -704,6 +716,7 @@ void func_08102F30(void) {
     }
 }
 
+#ifndef VERSION_EU
 u8 func_0810329C(u16 a) {
     MsShopHosiArg arg0;
     MsShopHosiArg arg1;
@@ -958,6 +971,9 @@ u8 func_0810329C(u16 a) {
 
     return result;
 }
+#else
+INCLUDE_ASM("mode_ms/func_0810329C.s");
+#endif
 
 void func_08103CD8(s16 a) {
     s32 i;
@@ -1260,6 +1276,7 @@ void func_08104404(void) {
     }
 }
 
+#ifndef VERSION_EU
 void mode_ms_shop_0(void) {
     s16 i;
     s32 size;
@@ -1311,7 +1328,11 @@ void mode_ms_shop_0(void) {
     EnableBg(2);
     DisableBg(3);
 }
+#else
+INCLUDE_ASM("mode_ms/mode_ms_shop_0.s");
+#endif
 
+#ifndef VERSION_EU
 void mode_ms_shop_1(void) {
     UpdatePlayTime();
 
@@ -1384,6 +1405,9 @@ void mode_ms_shop_1(void) {
 
     func_08104404();
 }
+#else
+INCLUDE_ASM("mode_ms/mode_ms_shop_1.s");
+#endif
 
 void mode_ms_shop_2(void) {
     s32 i;

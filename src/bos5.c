@@ -754,6 +754,7 @@ void func_080FC3FC(MdWork* work) {
         }
     }
 }
+#ifndef VERSION_EU
 void task_bos_md_0(MdWork* work, void* arg) {
     s16 i;
 
@@ -817,6 +818,9 @@ void task_bos_md_0(MdWork* work, void* arg) {
     func_08005244(1, (gBtlWork->unk_000 >> 8) + 72 - work->unk_178,
                   (gBtlWork->unk_004 >> 8) + 48 - work->unk_17A);
 }
+#else
+INCLUDE_ASM("bos5/task_bos_md_0.s");
+#endif
 
 s32 task_bos_md_1(MdWork* work) {
     void* args[2];
@@ -1042,6 +1046,7 @@ void func_080FCC14(MdFireWork* work) {
         break;
     }
 }
+#ifndef VERSION_EU
 u8 func_080FCCB4(MdFireWork* work) {
     u8 result;
     MdSub* e;
@@ -1144,6 +1149,9 @@ u8 func_080FCCB4(MdFireWork* work) {
 
     return result;
 }
+#else
+INCLUDE_ASM("bos5/func_080FCCB4.s");
+#endif
 void func_080FCF78(MdFireWork* work) {
     MdFirePoint* p;
 
@@ -1534,6 +1542,7 @@ s16 func_080FDA98(s16 model, s16 slot) {
 INCLUDE_ASM("bos5/func_080FDA98.s");
 #endif
 
+#ifndef VERSION_EU
 void func_080FDB1C(s16 model, s16 n) {
     vu32* dma;
     u16 zero;
@@ -1587,7 +1596,11 @@ void func_080FDB1C(s16 model, s16 n) {
 
     RequestDma3Copy(gUnk_020350BC, (u8*)GetBgCharBase(0) + 1024, 0x6C0);
 }
+#else
+INCLUDE_ASM("bos5/func_080FDB1C.s");
+#endif
 
+#ifndef VERSION_EU
 void func_080FDC04(void) {
     s16 i;
     s16 j;
@@ -1824,7 +1837,11 @@ void func_080FDC04(void) {
         break;
     }
 }
+#else
+INCLUDE_ASM("bos5/func_080FDC04.s");
+#endif
 
+#ifndef VERSION_EU
 void func_080FE47C(void) {
     s16 i;
     s32 sprite;
@@ -1930,6 +1947,9 @@ void func_080FE47C(void) {
 
     TaskPoolDraw(&gUnk_020350D8);
 }
+#else
+INCLUDE_ASM("bos5/func_080FE47C.s");
+#endif
 
 void func_080FE854(void) {
     SetBgMode0();
@@ -1966,6 +1986,7 @@ void func_080FE900(void) {
     }
 }
 
+#ifndef VERSION_EU
 void mode_worldselect_0(void) {
     s16 i;
     s16 j;
@@ -2057,7 +2078,11 @@ void mode_worldselect_0(void) {
         EnableBg(2);
     }
 }
+#else
+INCLUDE_ASM("bos5/mode_worldselect_0.s");
+#endif
 
+#ifndef VERSION_EU
 void mode_worldselect_1(void) {
     s16 a;
     s16 b;
@@ -2198,6 +2223,9 @@ void mode_worldselect_1(void) {
     TaskPoolUpdate(&gUnk_020350D8);
     func_080FE47C();
 }
+#else
+INCLUDE_ASM("bos5/mode_worldselect_1.s");
+#endif
 void mode_worldselect_2(void) {
     s16 i;
 
@@ -2253,6 +2281,7 @@ void func_080FF19C(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16
         dst += 32 - n;
     }
 }
+#ifndef VERSION_EU
 u8 func_080FF228(s16 id) {
     if (id == 0) {
         return 0;
@@ -2260,6 +2289,10 @@ u8 func_080FF228(s16 id) {
 
     return func_08065B6C(gUnk_09EF909C[id].unk_2C, gUnk_020351F8);
 }
+#else
+INCLUDE_ASM("bos5/func_080FF228.s");
+#endif
+#ifndef VERSION_EU
 u8 func_080FF25C(s16 id) {
     void** tbl;
     void** p;
@@ -2280,7 +2313,11 @@ u8 func_080FF25C(s16 id) {
 
     return 0;
 }
+#else
+INCLUDE_ASM("bos5/func_080FF25C.s");
+#endif
 
+#ifndef VERSION_EU
 void func_080FF2B8(s16 index) {
     u8* src;
 
@@ -2298,6 +2335,9 @@ void func_080FF2B8(s16 index) {
 
     RequestDma3Copy(src, (u8*)GetBgCharBase(0) + 32, 0x100);
 }
+#else
+INCLUDE_ASM("bos5/func_080FF2B8.s");
+#endif
 s32 func_080FF310(void) {
     s32 keys;
 
@@ -2305,6 +2345,7 @@ s32 func_080FF310(void) {
     keys |= GetKeysRepeat() & 0x3F0;
     return keys;
 }
+#ifndef VERSION_EU
 void func_080FF330(void) {
     u16 keys;
     s16 old;
@@ -2427,6 +2468,10 @@ void func_080FF330(void) {
         m4aSongNumStart(101);
     }
 }
+#else
+INCLUDE_ASM("bos5/func_080FF330.s");
+#endif
+#ifndef VERSION_EU
 void func_080FF794(void) {
     u16 keys;
     s32 i;
@@ -2472,6 +2517,10 @@ void func_080FF794(void) {
         }
     }
 }
+#else
+INCLUDE_ASM("bos5/func_080FF794.s");
+#endif
+#ifndef VERSION_EU
 void func_080FF8CC(void) {
     s32 i;
     u16 prio;
@@ -2531,3 +2580,6 @@ void func_080FF8CC(void) {
                       gUnk_020354B0[1], gUnk_020354A8[1], 0, 0, 0);
     }
 }
+#else
+INCLUDE_ASM("bos5/func_080FF8CC.s");
+#endif

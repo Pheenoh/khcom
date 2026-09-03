@@ -820,6 +820,7 @@ s32 func_080C6314(void) {
     return 0;
 }
 
+#ifndef VERSION_EU
 s32 func_080C6378(void) {
     if (gUnk_0203C380 == 0) {
         if (gUnk_0203C3A4 == 0) {
@@ -840,6 +841,9 @@ s32 func_080C6378(void) {
     }
     return 0;
 }
+#else
+INCLUDE_ASM("chara/func_080C6378.s");
+#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("chara/eu_080C273C.s");

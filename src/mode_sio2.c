@@ -27,6 +27,7 @@ s32 gUnk_02034D9C;
 s32 gUnk_02034DA0;
 s32 gUnk_02034DA4;
 
+#ifndef VERSION_EU
 void mode_sio_dbg_flg_0(s32 arg) {
     s32 i;
 
@@ -55,7 +56,11 @@ void mode_sio_dbg_flg_0(s32 arg) {
     func_0805FCB0(0x64, 0x3F, 2, gUnk_09EF3504[gUnk_0203C3C4]);
     func_0805FCB0(0x64, 0x48, 2, gUnk_09EF3504[gUnk_0203C3D4]);
 }
+#else
+INCLUDE_ASM("mode_sio2/mode_sio_dbg_flg_0.s");
+#endif
 
+#ifndef VERSION_EU
 void mode_sio_dbg_flg_1(void) {
     u8 prev;
 
@@ -138,15 +143,22 @@ void mode_sio_dbg_flg_1(void) {
         func_08060598();
     }
 }
+#else
+INCLUDE_ASM("mode_sio2/mode_sio_dbg_flg_1.s");
+#endif
 
 void mode_sio_dbg_flg_2(void) {
     func_080609A0();
 }
 
+#ifndef VERSION_EU
 void func_080C7350(void) {
     gUnk_0203AAC0.unk_04 = gUnk_0203C3C8;
     gUnk_0203AAC0.unk_02 = gUnk_0203C3CC;
 }
+#else
+INCLUDE_ASM("mode_sio2/func_080C7350.s");
+#endif
 
 void func_080C736C(void) {
     gUnk_02034CFC = 0;
@@ -389,6 +401,7 @@ void func_080C774C(void) {
     }
 }
 
+#ifndef VERSION_EU
 void mode_pooh_0(s32 arg) {
     s32 i;
 
@@ -480,7 +493,11 @@ void mode_pooh_0(s32 arg) {
     gUnk_02034D44 = 0;
     gUnk_02034D4C = 180;
 }
+#else
+INCLUDE_ASM("mode_sio2/mode_pooh_0.s");
+#endif
 
+#ifndef VERSION_EU
 void mode_pooh_1(void) {
     UpdatePlayTime();
     func_080C7CB0(0);
@@ -526,6 +543,9 @@ void mode_pooh_1(void) {
     func_080125A4();
     func_080C73D8();
 }
+#else
+INCLUDE_ASM("mode_sio2/mode_pooh_1.s");
+#endif
 
 void mode_pooh_2(void) {
     TaskPoolDestroy(&gUnk_02034D18);

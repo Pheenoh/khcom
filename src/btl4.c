@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "btl4.h"
 
+#ifndef VERSION_EU
 void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
     work->tiles = AllocObjTiles(0x200, gUnk_08B1FD66);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
@@ -44,6 +45,9 @@ void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
     work->z = src->z;
     work->unk_18 = 0;
 }
+#else
+INCLUDE_ASM("btl4/task_btl_pop_cb_0.s");
+#endif
 
 s32 task_btl_pop_cb_1(BtlPopCbWork* work) {
     work->z -= 192;
@@ -138,6 +142,7 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
     work->unk_24[5] = gUnk_08B25ED2;
 }
 
+#ifndef VERSION_EU
 void task_btl_exp_0(BtlExpWork* work) {
     s32 i;
 
@@ -156,7 +161,11 @@ void task_btl_exp_0(BtlExpWork* work) {
     work->unk_48 = 0;
     work->unk_40 = 0;
 }
+#else
+INCLUDE_ASM("btl4/task_btl_exp_0.s");
+#endif
 
+#ifndef VERSION_EU
 s32 task_btl_exp_1(BtlExpWork* work) {
     if (gBtlWork->unk_068 & 0x2000) {
         return 0;
@@ -227,8 +236,11 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 
     return 1;
 }
+#else
+INCLUDE_ASM("btl4/task_btl_exp_1.s");
+#endif
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 void task_btl_exp_2(BtlExpWork* work) {
     s32 i;
     s16 x;

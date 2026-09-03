@@ -978,6 +978,7 @@ void func_080BFEF0(JfMajinWork* work) {
     }
 }
 
+#ifndef VERSION_EU
 void func_080BFFF8(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
     BosSub* q = (BosSub*)&jf->unk_110;
@@ -1078,6 +1079,9 @@ void func_080BFFF8(JfMajinWork* work) {
         break;
     }
 }
+#else
+INCLUDE_ASM("bos2/func_080BFFF8.s");
+#endif
 
 u8 func_080C0258(u16* p, s16 b, u8 c, u8 d) {
     if ((s16)*p == b) {

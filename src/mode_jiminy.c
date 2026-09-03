@@ -3,7 +3,7 @@
 
 JiminyWork* gJiminyWork;
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 void mode_jiminy_0(void) {
     s32 i;
     s32 j;
@@ -98,7 +98,7 @@ void mode_jiminy_0(void) {
 INCLUDE_ASM("mode_jiminy/mode_jiminy_0.s");
 #endif
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 void mode_jiminy_1(void) {
     s32 i;
     u16 c;

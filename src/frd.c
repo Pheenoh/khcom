@@ -1,6 +1,7 @@
 #include "frd.h"
 #include "macros.h"
 
+#ifndef VERSION_EU
 void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     FrdBody* body;
 
@@ -64,6 +65,9 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
+#else
+INCLUDE_ASM("frd/task_frd_donald_0.s");
+#endif
 
 INCLUDE_ASM("frd/task_frd_donald_1.s");
 
@@ -135,6 +139,7 @@ u8 func_080465F0(FrdGoofyWork* work) {
     return 0;
 }
 
+#ifndef VERSION_EU
 void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     FrdBody* body;
 
@@ -178,6 +183,9 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
+#else
+INCLUDE_ASM("frd/task_frd_goofy_0.s");
+#endif
 
 u8 task_frd_goofy_1(FrdGoofyWork* work) {
     FrdBody* body;
@@ -1031,6 +1039,7 @@ u8 func_080497E8(FrdBeastWork* work) {
     return 0;
 }
 
+#ifndef VERSION_EU
 void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     FrdBody* body;
     BtlWork* obj;
@@ -1098,6 +1107,9 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
+#else
+INCLUDE_ASM("frd/task_frd_beast_0.s");
+#endif
 
 u8 task_frd_beast_1(FrdBeastWork* work) {
     FrdBody* body;

@@ -253,6 +253,7 @@ s32 func_080D3DCC(u8 a) {
     }
 }
 
+#ifndef VERSION_EU
 void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
     u16 pal;
 
@@ -263,19 +264,30 @@ void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
     LoadPalette(gUnk_0984A078 + pal, gUnk_05000160, 32);
     work->unk_0CE = func_080D3D40(func_08065B08(work, work->unk_0CC));
 }
+#else
+INCLUDE_ASM("allmap/task_allmap_roomname_0.s");
+#endif
 
 s32 task_allmap_roomname_1(void) {
     return 1;
 }
 
+#ifndef VERSION_EU
 void task_allmap_roomname_2(AllmapRoomnameWork* work) {
     func_080664D8(work->unk_0CE + 117, 3, work, work->palette, 50, work->unk_0CC);
 }
+#else
+INCLUDE_ASM("allmap/task_allmap_roomname_2.s");
+#endif
 
+#ifndef VERSION_EU
 void task_allmap_roomname_3(AllmapRoomnameWork* work) {
     func_08065AE0(work, 24);
     ReleaseObjPalette(work->palette);
 }
+#else
+INCLUDE_ASM("allmap/task_allmap_roomname_3.s");
+#endif
 
 void func_080D3ED0(void) {
     u8* base;
@@ -312,6 +324,7 @@ void func_080D3F10(AllmapBarWork* work) {
     work->unk_24 = -0x8000;
 }
 
+#ifndef VERSION_EU
 void task_allmap_bar_0(AllmapBarWork* work) {
     gStockMesDispWork = work;
     work->unk_00 = LoadObjTiles(gUnk_0976D8A6, 0x2C0);
@@ -328,12 +341,16 @@ void task_allmap_bar_0(AllmapBarWork* work) {
     work->unk_2C = 0;
     work->unk_2D = 0;
 }
+#else
+INCLUDE_ASM("allmap/task_allmap_bar_0.s");
+#endif
 
 void func_080D3FD4(AllmapBarWork* work) {
     func_08006184(0, 16);
     func_080063A8();
 }
 
+#ifndef VERSION_EU
 s32 task_allmap_bar_1(AllmapBarWork* work) {
     s32 i;
 
@@ -409,7 +426,11 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
     }
     return 1;
 }
+#else
+INCLUDE_ASM("allmap/task_allmap_bar_1.s");
+#endif
 
+#ifndef VERSION_EU
 void task_allmap_bar_2(AllmapBarWork* work) {
     if (work->unk_28 == 2) {
         return;
@@ -418,6 +439,9 @@ void task_allmap_bar_2(AllmapBarWork* work) {
     DrawSprite(128, work->unk_10 >> 8, gUnk_0976DB68, work->unk_04, work->palette, 0, 0xC00, 1001);
     DrawSprite(128, work->unk_18 >> 8, gUnk_0976DB9C, work->unk_04, work->palette, 0, 0xC00, 1002);
 }
+#else
+INCLUDE_ASM("allmap/task_allmap_bar_2.s");
+#endif
 
 void task_allmap_bar_3(AllmapBarWork* work) {
     ReleaseObjTiles(work->unk_00);
@@ -1012,12 +1036,16 @@ void func_080D5A4C(u16 a) {
     func_08006120(2, a);
 }
 
+#ifndef VERSION_EU
 void func_080D5B04(void) {
     LoadBgMap(0, gUnk_0983F398, 0x800);
     SetBgBlend(0, 5, 16);
     EnableBg(1);
     m4aSongNumStart(6);
 }
+#else
+INCLUDE_ASM("allmap/func_080D5B04.s");
+#endif
 
 void func_080D5B30(void) {
     m4aMPlayFadeOut(gMPlayTable[gSongTable[6].ms].info, 5);

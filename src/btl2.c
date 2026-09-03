@@ -547,6 +547,7 @@ s32 task_btl_hpenm_1(BtlHpenmWork* work) {
     return 1;
 }
 
+#ifndef VERSION_EU
 void task_btl_hpenm_2(BtlHpenmWork* work) {
     void* gfx;
     void* bar;
@@ -643,6 +644,9 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         DrawSprite(217, 6, bar, work->unk_04, work->palette, aff, 0x410, 2);
     }
 }
+#else
+INCLUDE_ASM("btl2/task_btl_hpenm_2.s");
+#endif
 
 void task_btl_hpenm_3(BtlHpenmWork* work) {
     ReleaseObjTiles(work->unk_0C);
@@ -651,6 +655,7 @@ void task_btl_hpenm_3(BtlHpenmWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
+#ifndef VERSION_EU
 void task_btl_pause_0(BtlPauseWork* work) {
     work->tiles = LoadObjTiles(gUnk_08B1E7F4, 0x180);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
@@ -661,6 +666,9 @@ void task_btl_pause_0(BtlPauseWork* work) {
     work->unk_26 = 0;
     gBtlWork->unk_068 |= 0x04000000;
 }
+#else
+INCLUDE_ASM("btl2/task_btl_pause_0.s");
+#endif
 
 s32 task_btl_pause_1(BtlPauseWork* work) {
     s32 paused;
@@ -756,6 +764,7 @@ void task_btl_pause_3(BtlPauseWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
+#ifndef VERSION_EU
 void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     switch (src->unk_12) {
     case 0:
@@ -823,6 +832,9 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     work->z = src->z;
     work->unk_30 = 0;
 }
+#else
+INCLUDE_ASM("btl2/task_btl_pop_0.s");
+#endif
 
 s32 task_btl_pop_1(BtlPopWork* work) {
     work->z -= 0xC0;
@@ -848,6 +860,7 @@ void task_btl_pop_3(BtlPopWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
+#ifndef VERSION_EU
 void task_btl_escape_0(BtlEscapeWork* work) {
     work->unk_18 = 0x5A00;
     work->tiles = LoadObjTiles(gUnk_08B1EB1C, 0x240);
@@ -860,6 +873,9 @@ void task_btl_escape_0(BtlEscapeWork* work) {
     work->unk_22 = 0;
     work->unk_20 = 0;
 }
+#else
+INCLUDE_ASM("btl2/task_btl_escape_0.s");
+#endif
 
 s32 task_btl_escape_1(BtlEscapeWork* work) {
     if (gBtlWork->unk_068 & 0x0100000000000000) {

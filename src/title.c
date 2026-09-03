@@ -88,6 +88,7 @@ u8 func_080D6574(void) {
     return gUnk_02034ECC;
 }
 
+#ifndef VERSION_EU
 void task_title_obj_0(TitleObjWork* work) {
     s32 t;
 
@@ -121,6 +122,9 @@ void task_title_obj_0(TitleObjWork* work) {
     gUnk_02034ED0 = 0;
     work->unk_62 = 0;
 }
+#else
+INCLUDE_ASM("title/task_title_obj_0.s");
+#endif
 
 u8 task_title_obj_1(TitleObjWork* work) {
     if (func_080D6294()) {
@@ -166,7 +170,7 @@ u8 func_080D6790(void) {
     return gUnk_02034ED0;
 }
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     s32 t;
     u8* pal;
@@ -286,6 +290,7 @@ u8 task_title_menu_1(TitleMenuWork* work) {
     return 1;
 }
 
+#ifndef VERSION_EU
 void func_080D6A64(TitleMenuWork* work) {
     s32 i;
     s32 t;
@@ -316,7 +321,11 @@ void func_080D6A64(TitleMenuWork* work) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
 }
+#else
+INCLUDE_ASM("title/func_080D6A64.s");
+#endif
 
+#ifndef VERSION_EU
 void func_080D6B7C(TitleMenuWork* work) {
     s32 i;
     s16 y;
@@ -333,7 +342,11 @@ void func_080D6B7C(TitleMenuWork* work) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
 }
+#else
+INCLUDE_ASM("title/func_080D6B7C.s");
+#endif
 
+#ifndef VERSION_EU
 void func_080D6C54(TitleMenuWork* work) {
     s32 i;
     s16 y;
@@ -350,7 +363,11 @@ void func_080D6C54(TitleMenuWork* work) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
 }
+#else
+INCLUDE_ASM("title/func_080D6C54.s");
+#endif
 
+#ifndef VERSION_EU
 void func_080D6D2C(TitleMenuWork* work) {
     s32 i;
     s16 y;
@@ -362,7 +379,11 @@ void func_080D6D2C(TitleMenuWork* work) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
 }
+#else
+INCLUDE_ASM("title/func_080D6D2C.s");
+#endif
 
+#ifndef VERSION_EU
 void task_title_menu_2(TitleMenuWork* work) {
     work->unk_20[0] = AnimUpdate(&work->anim);
     work->unk_20[1] = gUnk_09EF6620[work->unk_44[0]];
@@ -385,6 +406,9 @@ void task_title_menu_2(TitleMenuWork* work) {
     }
     TaskPoolDraw(&work->unk_48);
 }
+#else
+INCLUDE_ASM("title/task_title_menu_2.s");
+#endif
 
 void task_title_menu_3(TitleMenuWork* work) {
     s32 i;
@@ -399,6 +423,7 @@ void task_title_menu_3(TitleMenuWork* work) {
     TaskPoolDestroy(&work->unk_48);
 }
 
+#ifndef VERSION_EU
 void task_title_lumichange_0(TitleLumiChangeWork* work) {
     if (gGameState.flags & 0x200) {
         work->tiles = LoadObjTiles(gUnk_0977548C, 0x840);
@@ -408,6 +433,9 @@ void task_title_lumichange_0(TitleLumiChangeWork* work) {
         work->palette = LoadObjPalette(gUnk_0984A7B8, 0x20);
     }
 }
+#else
+INCLUDE_ASM("title/task_title_lumichange_0.s");
+#endif
 
 u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
     s16 tbl[3];
@@ -446,6 +474,7 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
     return 1;
 }
 
+#ifndef VERSION_EU
 void task_title_lumichange_2(TitleLumiChangeWork* work) {
     s16 v;
     void** tbl;
@@ -464,6 +493,9 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
     x = (gGameState.flags & 0x200) ? 240 : 0;
     DrawSprite(x, 0x8F, work->unk_08, work->tiles, work->palette, 0, 0x400, 100);
 }
+#else
+INCLUDE_ASM("title/task_title_lumichange_2.s");
+#endif
 
 void task_title_lumichange_3(TitleLumiChangeWork* work) {
     ReleaseObjTiles(work->tiles);

@@ -2094,6 +2094,7 @@ void MakeSaveFileSmall(SaveFileSmall* save) {
     }
 }
 
+#ifndef VERSION_EU
 void ApplySaveHeaderData(SaveHeaderData* data) {
     if (SaveRepairHeader() == SAVE_OK) {
         if (data->flags & 1) {
@@ -2157,6 +2158,9 @@ void ApplySaveHeaderData(SaveHeaderData* data) {
         gGameState.fileSummaries[3].unk_04 = 0;
     }
 }
+#else
+INCLUDE_ASM("hum/ApplySaveHeaderData.s");
+#endif
 
 void ApplySaveSystem(SaveFileLarge* save) {
     u32 t;

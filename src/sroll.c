@@ -255,7 +255,7 @@ static s32 func_08115178(s32 x) {
     return x * x;
 }
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
     AnimState* p;
     s32 i;

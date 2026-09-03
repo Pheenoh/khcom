@@ -407,6 +407,7 @@ void func_08107280(void) {
     }
 }
 
+#ifndef VERSION_EU
 void func_081073F0(void) {
     UnkStruct_0810718C* p;
     u16 idx;
@@ -463,6 +464,9 @@ void func_081073F0(void) {
         gUnk_02035FA0 = 0;
     }
 }
+#else
+INCLUDE_ASM("mode_ms2/func_081073F0.s");
+#endif
 
 s16 func_081075C0(s16 a, s16 b) {
     return b + a * 5;
@@ -1027,7 +1031,7 @@ void func_081085E8(void) {
     }
 }
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 void func_08108650(void) {
     s32 i;
     s32 j;

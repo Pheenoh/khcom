@@ -6,5 +6,5 @@
 	.thumb_func
 	.type task_frd_donald_1, %function
 task_frd_donald_1:
-	.incbin "roms/B8CP.gba", 0x49b34, 0xd9c
+	.incbin "roms/B8CP.gba", 0x49b5c, 0xd74
 .syntax divided
