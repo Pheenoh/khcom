@@ -4,6 +4,7 @@
 INCLUDE_ASM("bos2/task_bos_tm_body_0.s");
 INCLUDE_ASM("bos2/task_bos_tm_body_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_body_2.s");
+
 void task_bos_tm_body_3(TmBodyWork* work) {
     if ((work->unk_000->unk_28 & 8) == 0) {
         func_080B83B8(work->unk_12C);
@@ -28,6 +29,7 @@ void func_080B9FC4(TmBodyWork* work) {
         func_08083900(GetRandom() % 6 + 1);
     }
 }
+
 INCLUDE_ASM("bos2/func_080BA08C.s");
 
 void func_080BA0E4(s32* p, s32 a, s32 b, s32 c) {
@@ -40,8 +42,30 @@ void func_080BA0F8(u8* work) {
     func_08012304(work + 0x40);
 }
 
-INCLUDE_ASM("bos2/func_080BA104.s");
+void func_080BA104(BosSub* work) {
+    func_08012324(&work->unk_040, work->unk_004, work->unk_008, work->unk_00C);
+}
+
+INCLUDE_ASM("bos2/func_080BA11C.s");
 INCLUDE_ASM("bos2/func_080BA2B0.s");
+
+void func_080BA43C(TmFootWork* work, s16 a) {
+    work->unk_12C = gUnk_09EF39DC[gUnk_09EF2244[a].unk_06];
+    work->unk_244 = gUnk_09EF39DC[gUnk_09EF2244[a].unk_0E];
+    work->unk_028 += gUnk_09EF2244[a].unk_02 << 8;
+    work->unk_140 += gUnk_09EF2244[a].unk_0A << 8;
+}
+
+INCLUDE_ASM("bos2/func_080BA49C.s");
+INCLUDE_ASM("bos2/func_080BA62C.s");
+
+void func_080BA8C8(TmFootWork* work, s16 a) {
+    work->unk_12C = gUnk_09EF39DC[gUnk_09EF25A4[a].unk_06];
+    work->unk_244 = gUnk_09EF39DC[gUnk_09EF25A4[a].unk_0E];
+    work->unk_028 += gUnk_09EF25A4[a].unk_02 << 8;
+    work->unk_140 += gUnk_09EF25A4[a].unk_0A << 8;
+}
+
 INCLUDE_ASM("bos2/task_bos_tm_foot_0.s");
 INCLUDE_ASM("bos2/task_bos_tm_foot_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_foot_2.s");
@@ -226,10 +250,27 @@ void func_080BB4C0(TmArmWork* work) {
 
 INCLUDE_ASM("bos2/func_080BB518.s");
 INCLUDE_ASM("bos2/func_080BB588.s");
-INCLUDE_ASM("bos2/func_080BB5E8.s");
+
+void func_080BB5E8(u8* joints, TmAnim* a) {
+    if (a->unk_00 >= a->unk_08[a->unk_02].unk_00) {
+        a->unk_00 = 0;
+        a->unk_02++;
+
+        if (a->unk_02 >= a->unk_04) {
+            a->unk_02 = 0;
+        }
+
+        func_080BB428(joints, a->unk_08[a->unk_02].unk_04);
+    }
+
+    a->unk_00++;
+    func_080BB588(joints, 1);
+}
+
 INCLUDE_ASM("bos2/task_bos_tm_arm_0.s");
 INCLUDE_ASM("bos2/func_080BB924.s");
 INCLUDE_ASM("bos2/func_080BC304.s");
+
 u8 task_bos_tm_arm_1(TmArmWork* work) {
     void* gfx;
 
@@ -260,6 +301,7 @@ u8 task_bos_tm_arm_1(TmArmWork* work) {
 
     return 1;
 }
+
 INCLUDE_ASM("bos2/task_bos_tm_arm_2.s");
 
 void task_bos_tm_arm_3(TmArmWork* work) {
@@ -275,7 +317,7 @@ void task_bos_tm_tbl_0(TmTblWork* work, void* arg) {
     func_08012324(&work->unk_004, 0x10000, 0x16000, 0);
     func_08012614(&work->unk_004, 0);
     DisableBg(1);
-    work->unk_000 = (u32)arg;
+    work->unk_000 = arg;
     work->unk_068 = 0;
     work->unk_062 = 1;
     work->unk_064 = 0;
@@ -306,7 +348,9 @@ void task_bos_jf_3(JfWork* work) {
 
     TaskPoolDestroy(&work->unk_254);
 }
+
 INCLUDE_ASM("bos2/func_080BD4A8.s");
+
 u8 func_080BD7F8(s32* p, s32* a, s32 b, s32* out) {
     s32 v1;
     s32 v2;
@@ -484,8 +528,118 @@ s32 func_080BDB58(void) {
 
 INCLUDE_ASM("bos2/task_bos_jf_lamp_0.s");
 INCLUDE_ASM("bos2/task_bos_jf_lamp_1.s");
-INCLUDE_ASM("bos2/task_bos_jf_lamp_2.s");
-INCLUDE_ASM("bos2/task_bos_jf_lamp_3.s");
+
+void task_bos_jf_lamp_2(JfLampWork* work) {
+    BosSub* sub = &((BosSub*)work->unk_00)[1];
+    void* pal;
+    u16 mode;
+    s16 x;
+    s16 y;
+
+    mode = func_0801AF1C(sub->unk_008);
+
+    if (sub->unk_034 & 4) {
+        mode &= 0xFFFE;
+    } else {
+        mode |= 1;
+    }
+
+    if (gUnk_02039B84->unk_070 == 0 && (work->unk_00->unk_24C & 1) && (gFrameCounter & 1)) {
+        pal = work->unk_18;
+    } else {
+        pal = work->unk_14;
+    }
+
+    WorldToScreen(&x, &y, sub->unk_004, sub->unk_008, sub->unk_00C);
+    DrawSprite(x, y, work->unk_08, work->unk_04, pal, 0, mode, (u16)(-4100 - (sub->unk_008 >> 8) * 4));
+    DrawSprite(x, y - 14, work->unk_10, work->unk_0C, work->unk_14, 0, mode,
+               (u16)(-4101 - (sub->unk_008 >> 8) * 4));
+
+    if (work->unk_2D == 1) {
+        TaskPoolDraw(&work->unk_44);
+    }
+}
+
+void task_bos_jf_lamp_3(JfLampWork* work) {
+    ReleaseObjTiles(work->unk_0C);
+    ReleaseObjTiles(work->unk_04);
+    ReleaseObjPalette(work->unk_14);
+    ReleaseObjPalette(work->unk_18);
+    TaskPoolDestroy(&work->unk_44);
+}
+
+s32 func_080BE278(JfLampWork* work) {
+    s16 v;
+    s32 r;
+
+    if (work->unk_00->unk_034 & 4) {
+        switch (gUnk_0203B4E4) {
+        case 5:
+        case 6:
+            r = 0x27800;
+            break;
+        case 1:
+        case 4:
+        case 7:
+            r = 0x21800;
+            break;
+        case 8:
+            v = GetRandom() % 3;
+
+            if (v == 0) {
+                r = 0x27800;
+            } else if (v == 1) {
+                r = 0x24600;
+            } else {
+                r = 0x21800;
+            }
+            break;
+        case 0:
+        case 2:
+        case 3:
+            r = 0x24600;
+            break;
+        default:
+            r = 0;
+            break;
+        }
+
+        return r;
+    }
+
+    switch (gUnk_0203B4E4) {
+    case 0:
+    case 2:
+        r = 0x1F400;
+        break;
+    case 3:
+    case 5:
+    case 7:
+        r = 0x19400;
+        break;
+    case 8:
+        v = GetRandom() % 3;
+
+        if (v == 0) {
+            r = 0x19400;
+        } else if (v == 1) {
+            r = 0x1CE00;
+        } else {
+            r = 0x1F400;
+        }
+        break;
+    case 1:
+    case 4:
+    case 6:
+        r = 0x1CE00;
+        break;
+    default:
+        r = 0;
+        break;
+    }
+
+    return r;
+}
 
 void func_080BE380(u8 a, u16 b, JfMajinWork* work) {
     func_080BE3DC(a, work);
@@ -527,15 +681,559 @@ void func_080BE478(u8 a, JfMajinWork* work) {
 }
 
 INCLUDE_ASM("bos2/task_bos_jf_majin_0.s");
-INCLUDE_ASM("bos2/task_bos_jf_majin_1.s");
-INCLUDE_ASM("bos2/task_bos_jf_majin_2.s");
-INCLUDE_ASM("bos2/task_bos_jf_majin_3.s");
-INCLUDE_ASM("bos2/func_080C0258.s");
+
+u8 task_bos_jf_majin_1(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+
+    jf->unk_24C |= 0x10;
+
+    switch (work->unk_00->unk_238) {
+    case 0:
+        func_080BE9A0(work);
+        break;
+    case 1:
+        func_080BEAE8(work);
+        break;
+    case 2:
+        func_080BEDF4(work);
+        break;
+    case 3:
+        func_080BF160(work);
+        break;
+    case 4:
+        func_080BF4F4(work);
+        break;
+    case 5:
+        func_080BF8C4(work);
+        break;
+    case 8:
+        func_080BFDD4(work);
+        break;
+    case 6:
+        func_080C02AC(work);
+        break;
+    case 7:
+        func_080BFDD8(work);
+        break;
+    case 9:
+        func_080BFFF8(work);
+        break;
+    case 10:
+        func_080C0624(work);
+        break;
+    case 11:
+        func_080BFEF0(work);
+        break;
+    }
+
+    func_08012324(&jf->unk_040, jf->unk_004, jf->unk_008, jf->unk_00C);
+    TaskPoolUpdate(&work->unk_6C);
+
+    if (work->unk_00->unk_24C & 0x10) {
+        if (work->unk_00->unk_238 != 6) {
+            func_080BE478(work->unk_00->unk_248, work);
+        }
+    }
+
+    return 1;
+}
+
+void task_bos_jf_majin_2(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    void* gfx;
+    u16 pal;
+    s16 x;
+    s16 y;
+
+    if (gUnk_02039B84->unk_070 == 0) {
+        if (jf->unk_24C & 1) {
+            if (gFrameCounter & 1) {
+                LoadPaletteWithEffect(gUnk_08F69BC4, (void*)0x05000000, 32);
+                gfx = work->unk_0C;
+            } else {
+                LoadPaletteWithEffect(gUnk_096FB584, (void*)0x05000000, 32);
+                gfx = work->unk_08;
+            }
+        } else {
+            gfx = work->unk_08;
+        }
+    } else {
+        LoadPaletteWithEffect(gUnk_096FB584, (void*)0x05000000, 32);
+        gfx = work->unk_08;
+    }
+
+    func_08005244(1, ((gUnk_02039B84->unk_000 - jf->unk_004) >> 8) + 776,
+                  ((gUnk_02039B84->unk_004 - (jf->unk_008 + jf->unk_00C)) >> 8) + 294);
+
+    if (work->unk_2C == 1) {
+        if (jf->unk_034 & 4) {
+            pal = func_0801AF1C(jf->unk_008);
+        } else {
+            pal = func_0801AF1C(jf->unk_008);
+            pal |= 1;
+        }
+
+        WorldToScreen(&x, &y, jf->unk_004, jf->unk_008, jf->unk_00C);
+        DrawSprite(x, work->unk_40 + (y - 61), work->unk_10, work->unk_04, gfx, 0, pal,
+                   (u16)(-4100 - (jf->unk_008 >> 8) * 4));
+    }
+
+    TaskPoolDraw(&work->unk_6C);
+}
+
+void task_bos_jf_majin_3(JfMajinWork* work) {
+    ReleaseObjTiles(work->unk_04);
+    ReleaseObjPalette(work->unk_08);
+    ReleaseObjPalette(work->unk_0C);
+    TaskPoolDestroy(&work->unk_6C);
+}
+s32 func_080BE910(void) {
+    s32 v = ((UnkStruct_02039B84*)gUnk_02039B84->unk_07C)->unk_004;
+
+    if (v < 0x1EA00) {
+        return 0;
+    }
+
+    if (v < 0x22200) {
+        return 1;
+    }
+
+    return 2;
+}
+
+s32 func_080BE940(JfMajinWork* work) {
+    s32 v;
+
+    if (work->unk_00->unk_034 & 4) {
+        v = ((UnkStruct_02039B84*)gUnk_02039B84->unk_07C)->unk_004;
+
+        if (v < 0x1EA00) {
+            return 2;
+        }
+
+        if (v < 0x22200) {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    v = ((UnkStruct_02039B84*)gUnk_02039B84->unk_07C)->unk_004;
+
+    if (v > 0x22200) {
+        return 2;
+    }
+
+    if (v > 0x1EA00) {
+        return 1;
+    }
+
+    return 0;
+}
+
+void func_080BE9A0(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_248 = 8;
+            work->unk_5C = 8;
+        } else {
+            jf->unk_248 = 28;
+            work->unk_5C = 28;
+        }
+
+        work->unk_00->unk_24A = 0;
+        func_080BE380(work->unk_00->unk_248, 0x80, work);
+        work->unk_3C = 0;
+        work->unk_2C = 1;
+        work->unk_00->unk_244++;
+    } else {
+        if (jf->unk_24A >= gUnk_0961A6A8[jf->unk_248]) {
+            jf->unk_24A = 0;
+            work->unk_00->unk_248++;
+            work->unk_3C++;
+
+            if (work->unk_00->unk_248 > work->unk_5C + 5) {
+                work->unk_00->unk_248 = work->unk_5C;
+                work->unk_3C = 0;
+            }
+
+            func_080BE380(work->unk_00->unk_248, 0x80, work);
+        }
+
+        work->unk_00->unk_24A++;
+        work->unk_10 = AnimUpdate(&work->unk_14);
+        work->unk_40 = gUnk_0961A70A[work->unk_3C];
+
+        if (gUnk_02039B84->unk_0A0 != 0) {
+            if (GetRandom() % 80 == 0) {
+                func_080C0714(work);
+                work->unk_00->unk_244 = 0;
+            }
+        }
+    }
+}
+
+INCLUDE_ASM("bos2/func_080BEAE8.s");
+INCLUDE_ASM("bos2/func_080BEDF4.s");
+INCLUDE_ASM("bos2/func_080BF160.s");
+INCLUDE_ASM("bos2/func_080BF4F4.s");
+INCLUDE_ASM("bos2/func_080BF8C4.s");
+
+void func_080BFDD4(JfMajinWork* work) {
+}
+void func_080BFDD8(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    u32* q = &jf->unk_110;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_004 = 0x2A200;
+            jf->unk_248 = 8;
+        } else {
+            jf->unk_004 = 0x16A00;
+            jf->unk_248 = 28;
+        }
+
+        jf->unk_008 = 0x15E00;
+        jf->unk_00C = -0x3800;
+        work->unk_00->unk_24A = 0;
+        func_080BE380(work->unk_00->unk_248, 0x80, work);
+        work->unk_3C = 0;
+        work->unk_2C = 1;
+        work->unk_6A = 0;
+        jf->unk_034 &= ~0x1000000;
+        func_08019190(jf, 9);
+        work->unk_00->unk_244++;
+    } else if (jf->unk_244 > 60) {
+        func_0801AF08(q);
+        work->unk_00->unk_244 = 0;
+
+        if (jf->unk_034 & 4) {
+            work->unk_00->unk_248 = 8;
+        } else {
+            work->unk_00->unk_248 = 28;
+        }
+
+        work->unk_00->unk_24A = 0;
+        work->unk_00->unk_238 = 6;
+    } else {
+        work->unk_00->unk_244++;
+    }
+}
+
+void func_080BFEF0(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    u32* q = &jf->unk_110;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_004 = 0x2A200;
+            jf->unk_248 = 8;
+        } else {
+            jf->unk_004 = 0x16A00;
+            jf->unk_248 = 28;
+        }
+
+        jf->unk_008 = 0x15E00;
+        jf->unk_00C = -0x3800;
+        work->unk_00->unk_24A = 0;
+        func_080BE380(work->unk_00->unk_248, 0x80, work);
+        work->unk_3C = 0;
+        work->unk_2C = 1;
+        work->unk_6A = 0;
+        jf->unk_034 &= ~0x1000000;
+        work->unk_00->unk_244++;
+    } else {
+        func_0801AF08(q);
+        work->unk_00->unk_244 = 0;
+
+        if (jf->unk_034 & 4) {
+            work->unk_00->unk_248 = 8;
+        } else {
+            work->unk_00->unk_248 = 28;
+        }
+
+        work->unk_00->unk_24A = 0;
+        work->unk_00->unk_238 = 6;
+    }
+}
+
+void func_080BFFF8(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    BosSub* q = (BosSub*)&jf->unk_110;
+    JfMajinFx fx;
+    s32 v;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_248 = 8;
+            v = 0x2A200;
+        } else {
+            jf->unk_248 = 28;
+            v = 0x16A00;
+        }
+
+        jf->unk_004 = v;
+
+        jf->unk_008 = 0x15E00;
+        jf->unk_00C = -0x3800;
+        func_080BE380(work->unk_00->unk_248, 0x80, work);
+        work->unk_2C = 1;
+        func_0802F274(jf->unk_004, jf->unk_008 + jf->unk_00C);
+        func_0801AF4C((BosSub*)jf);
+        work->unk_48 = 0;
+        work->unk_44 = 0;
+        work->unk_00->unk_244++;
+        return;
+    }
+
+    switch (work->unk_48) {
+    case 0:
+        func_0802F274(jf->unk_004, jf->unk_008 + jf->unk_00C);
+
+        if (work->unk_44 > 1) {
+            work->unk_44 = 0;
+            work->unk_48++;
+        } else {
+            work->unk_44++;
+        }
+        break;
+    case 1:
+        func_0802F274(jf->unk_004, jf->unk_008 + jf->unk_00C);
+
+        if (func_08006314() != 0) {
+            break;
+        }
+
+        if (jf->unk_034 & 4) {
+            func_08014AAC(jf->unk_004 - 0x800, jf->unk_008 + jf->unk_00C - 0x800);
+        } else {
+            func_08014AAC(jf->unk_004 + 0x800, jf->unk_008 + jf->unk_00C - 0x800);
+        }
+
+        func_08006238(0, gUnk_02039B84->unk_0B3, 8);
+        work->unk_48++;
+        break;
+    case 2:
+        func_0802F274(jf->unk_004, jf->unk_008 + jf->unk_00C);
+
+        if (work->unk_44 <= 119) {
+            work->unk_44++;
+        } else {
+            func_0801536C();
+            work->unk_48++;
+        }
+        break;
+    case 3:
+        if (func_080128EC() == 0) {
+            if (q->unk_004 < 0x1B200) {
+                q->unk_004 = 0x1BA00;
+            }
+
+            if (q->unk_004 > 0x25A00) {
+                q->unk_004 = 0x25200;
+            }
+
+            fx.unk_00 = q->unk_004;
+            fx.unk_04 = q->unk_008;
+            fx.unk_08 = -0x7800;
+            func_08096DC4((u8*)gUnk_02039B84 + 44, &fx);
+            func_0801B918((BosSub*)jf);
+            gUnk_0203ACC4 = 0;
+            gUnk_0203ACD4 = 0;
+            gUnk_0203ACC0 = 0;
+            func_080BDAAC();
+            jf->unk_004 = 0;
+            jf->unk_008 = 0;
+            jf->unk_00C = 0;
+            func_08005244(1, (gUnk_02039B84->unk_000 >> 8) + 776, (gUnk_02039B84->unk_004 >> 8) + 294);
+            work->unk_48++;
+        } else {
+            func_0802F274(jf->unk_004, jf->unk_008 + jf->unk_00C);
+        }
+        break;
+    default:
+        func_0801B008();
+        work->unk_00->unk_24C |= 2;
+        break;
+    }
+}
+
+u8 func_080C0258(u16* p, s16 b, u8 c, u8 d) {
+    if ((s16)*p == b) {
+        return 1;
+    }
+
+    if ((s16)*p > b) {
+        *p = *p - 1;
+    } else {
+        UnkStruct_02039B84* q;
+        s32 v;
+
+        *p = *p + 1;
+
+        if (c == d) {
+            q = (UnkStruct_02039B84*)gUnk_02039B84->unk_07C;
+            v = -(((s16)*p + 1) << 11);
+
+            if (q->unk_00C >= v) {
+                q->unk_00C = v;
+            }
+        }
+    }
+
+    return 0;
+}
+
+INCLUDE_ASM("bos2/func_080C02AC.s");
+
+void func_080C0624(JfMajinWork* work) {
+    if (work->unk_00->unk_244 == 0) {
+        work->unk_00->unk_248 = 8;
+        work->unk_5C = 8;
+        work->unk_00->unk_24A = 0;
+        func_080BE380(work->unk_00->unk_248, 0x80, work);
+        work->unk_3C = 0;
+        work->unk_2C = 1;
+        work->unk_00->unk_244++;
+    } else {
+        if (work->unk_00->unk_24A >= gUnk_0961A6A8[work->unk_00->unk_248]) {
+            work->unk_00->unk_24A = 0;
+            work->unk_00->unk_248++;
+            work->unk_3C++;
+
+            if (work->unk_00->unk_248 > work->unk_5C + 5) {
+                work->unk_00->unk_248 = work->unk_5C;
+                work->unk_3C = 0;
+            }
+
+            func_080BE380(work->unk_00->unk_248, 0x80, work);
+        }
+
+        work->unk_00->unk_24A++;
+        work->unk_10 = AnimUpdate(&work->unk_14);
+        work->unk_40 = gUnk_0961A70A[work->unk_3C];
+    }
+}
+
+INCLUDE_ASM("bos2/func_080C0714.s");
 INCLUDE_ASM("bos2/task_bos_jf_rock_0.s");
 INCLUDE_ASM("bos2/task_bos_jf_rock_1.s");
-INCLUDE_ASM("bos2/task_bos_jf_rock_2.s");
-INCLUDE_ASM("bos2/task_bos_jf_rock_3.s");
-INCLUDE_ASM("bos2/task_bos_jf_borderline_0.s");
+
+void task_bos_jf_rock_2(JfRockWork* work) {
+    JfWork* jf = work->unk_000;
+    u16 pal;
+    s32 prio;
+    s16 x;
+    s16 y;
+
+    if (work->unk_15A == 1) {
+        if (jf->unk_034 & 4) {
+            if (work->unk_030 <= 0x259FF) {
+                pal = func_0801AF1C(work->unk_034);
+                prio = 0xFD00;
+            } else {
+                pal = 0x400;
+                prio = 0xFFF5;
+            }
+        } else if (work->unk_030 > 0x1B200) {
+            pal = func_0801AF1C(work->unk_034);
+            prio = 0xFD00;
+        } else {
+            pal = 0x400;
+            prio = 0xFFF5;
+        }
+
+        WorldToScreen(&x, &y, work->unk_030, work->unk_034, work->unk_038);
+        DrawSprite(x, y, work->unk_00C, work->unk_004, work->unk_008, 0, pal, prio);
+    }
+
+    if (work->unk_17C == 1) {
+        if (jf->unk_034 & 4) {
+            pal = 0x400;
+        } else {
+            pal = 0x400;
+            pal |= 1;
+        }
+
+        WorldToScreen(&x, &y, work->unk_170, work->unk_174, work->unk_178);
+        DrawSprite(x, y, work->unk_16C, work->unk_164, work->unk_168, 0, pal, 0xFFF2);
+    }
+
+    if (work->unk_194 == 1) {
+        TaskPoolDraw(&work->unk_180);
+    }
+}
+
+void task_bos_jf_rock_3(JfRockWork* work) {
+    ReleaseObjTiles(work->unk_004);
+    ReleaseObjPalette(work->unk_008);
+    ReleaseObjTiles(work->unk_164);
+    ReleaseObjPalette(work->unk_168);
+    TaskPoolDestroy(&work->unk_180);
+}
+
+u8 func_080C1370(s32 a, s32 b, s32 c) {
+    s32 t0 = -((gUnk_0203ACC4 + 1) << 11);
+    s32 t1 = -((gUnk_0203ACD4 + 1) << 11);
+    s32 t2 = -((gUnk_0203ACC0 + 1) << 11);
+    s32 hi = a + 0x1C00;
+    s32 lo = a - 0x1C00;
+    s32 zh = c + 0x1C00;
+    s32 zl = c - 0x1C00;
+
+    if (zh >= t0 && hi > 0x1B200 && lo < 0x1EA00) {
+        return 1;
+    }
+
+    if (zh >= t1 && hi > 0x1EA00 && lo < 0x22200) {
+        return 1;
+    }
+
+    if (zh >= t2 && hi > 0x22200 && lo < 0x25A00) {
+        return 1;
+    }
+
+    if (zl > 0 || lo > 0x2CA00 || hi < 0x14200) {
+        return 2;
+    }
+
+    return 0;
+}
+
+void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg) {
+    work->unk_000 = arg;
+    func_080C1A48(work);
+    work->unk_0A8 = 0xA00;
+    work->unk_0AC = 0x3600;
+    work->unk_098 = arg->unk_04 + work->unk_0A4;
+    work->unk_09C = arg->unk_08 + work->unk_0A8;
+    work->unk_0A0 = arg->unk_0C + work->unk_0AC;
+    work->unk_0B0 = 0;
+    work->unk_0B2 = 0;
+    work->unk_0B4 = 0;
+    work->unk_0B5 = 0;
+    work->unk_004 = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->unk_008 = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    AnimInit(&work->unk_01C, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->unk_01C, 27, 1);
+    work->unk_00C = AnimGetGfx(&work->unk_01C);
+    AnimInit(&work->unk_034, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->unk_034, 8, 1);
+    work->unk_010 = AnimGetGfx(&work->unk_034);
+    AnimInit(&work->unk_04C, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->unk_04C, 7, 1);
+    work->unk_014 = AnimGetGfx(&work->unk_04C);
+    AnimInit(&work->unk_064, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->unk_064, 28, 1);
+    work->unk_018 = AnimGetGfx(&work->unk_064);
+    AnimInit(&work->unk_080, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->unk_080, 6, 1);
+    work->unk_07C = AnimGetGfx(&work->unk_080);
+    func_0801C298(*(u8*)((u8*)work->unk_008 + 6) + 16, 0);
+}
 
 u8 task_bos_jf_borderline_1(JfBorderlineWork* work) {
     BosPos* p = work->unk_000;
@@ -559,7 +1257,60 @@ void task_bos_jf_borderline_3(JfBorderlineWork* work) {
     ReleaseObjPalette((void*)work->unk_008);
 }
 
-INCLUDE_ASM("bos2/func_080C1A48.s");
+void func_080C1A48(JfBorderlineWork* work) {
+    JfWork* jf = (JfWork*)work->unk_000;
+
+    switch (jf->unk_238) {
+    case 0:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+    case 11:
+        if (jf->unk_034 & 4) {
+            work->unk_0A4 = -0x500;
+        } else {
+            work->unk_0A4 = 0x500;
+        }
+        break;
+    case 3:
+        if (jf->unk_034 & 4) {
+            work->unk_0A4 = -0x100;
+        } else {
+            work->unk_0A4 = 0x100;
+        }
+        break;
+    case 4:
+    case 5:
+        if (jf->unk_034 & 4) {
+            work->unk_0A4 = 0x1000;
+        } else {
+            work->unk_0A4 = -0x1000;
+        }
+        break;
+    case 1:
+    case 2:
+        if (jf->unk_034 & 4) {
+            work->unk_0A4 = -0xA00;
+        } else {
+            work->unk_0A4 = 0xA00;
+        }
+
+        work->unk_0B5 = 1;
+        return;
+    default:
+        if (jf->unk_034 & 4) {
+            work->unk_0A4 = -0x500;
+        } else {
+            work->unk_0A4 = 0x500;
+        }
+        break;
+    }
+
+    work->unk_0B5 = 0;
+}
+
 INCLUDE_ASM("bos2/task_bos_dsd_0.s");
 INCLUDE_ASM("bos2/task_bos_dsd_1.s");
 
@@ -590,8 +1341,103 @@ void func_080C213C(u8 index, u16 a) {
 }
 
 INCLUDE_ASM("bos2/task_bos_dsd_main_0.s");
-INCLUDE_ASM("bos2/task_bos_dsd_main_1.s");
-INCLUDE_ASM("bos2/task_bos_dsd_main_2.s");
+
+u8 task_bos_dsd_main_1(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* p = &work->unk_074;
+
+    func_080C2734(work);
+
+    switch (work->unk_000->unk_334) {
+    case 0:
+        work->unk_000->unk_330 = work->unk_000->unk_334;
+        func_080C2BB0(work);
+        break;
+    case 1:
+        work->unk_000->unk_330 = work->unk_000->unk_334;
+        func_080C2944(work);
+        break;
+    case 2:
+        work->unk_000->unk_330 = work->unk_000->unk_334;
+        func_080C2A2C(work);
+        break;
+    case 3:
+        work->unk_000->unk_330 = work->unk_000->unk_334;
+        func_080C2CC0(work);
+        break;
+    case 4:
+        work->unk_000->unk_330 = work->unk_000->unk_334;
+        func_080C2FD8(work);
+        break;
+    case 5:
+        work->unk_000->unk_330 = work->unk_000->unk_334;
+        func_080C3188(work);
+        break;
+    case 6:
+        work->unk_000->unk_330 = work->unk_000->unk_334;
+        func_080C3574(work);
+        break;
+    case 7:
+        work->unk_000->unk_330 = work->unk_000->unk_334;
+        func_080C3754(work);
+        break;
+    case 8:
+        func_080C386C(work);
+        break;
+    case 9:
+        func_080C3C34(work);
+        break;
+    case 10:
+        func_080C3868(work);
+        break;
+    case 11:
+        func_080C3928(work);
+        break;
+    }
+
+    func_08012324(&d->unk_000[0].unk_040, d->unk_000[0].unk_004, d->unk_000[0].unk_008, d->unk_000[0].unk_00C);
+    func_08012324(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
+    TaskPoolUpdate(&work->unk_058);
+    work->unk_070 = gUnk_02039B84->unk_1CA;
+
+    return 1;
+}
+
+void task_bos_dsd_main_2(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    void* gfx;
+    s16 x;
+    s16 y;
+
+    if (gUnk_02039B84->unk_070 != 0) {
+        LoadPaletteWithEffect(gUnk_096FB744, (void*)0x05000000, 32);
+        gfx = work->unk_04C;
+    } else if (d->unk_358 & 1) {
+        if (gFrameCounter & 1) {
+            LoadPaletteWithEffect(gUnk_08F69BC4, (void*)0x05000000, 32);
+            gfx = work->unk_050;
+        } else {
+            LoadPaletteWithEffect(gUnk_096FB744, (void*)0x05000000, 32);
+            gfx = work->unk_04C;
+        }
+    } else {
+        gfx = work->unk_04C;
+    }
+
+    func_08005244(1, ((gUnk_02039B84->unk_000 - d->unk_000[0].unk_004) >> 8) + 100,
+                  ((gUnk_02039B84->unk_004 - (d->unk_000[0].unk_008 + d->unk_000[0].unk_00C)) >> 8) + 280);
+
+    if (work->unk_054 == 1) {
+        func_0801AF1C(d->unk_000[0].unk_008);
+        WorldToScreen(&x, &y, d->unk_000[0].unk_004, d->unk_000[0].unk_008, -0x6400);
+        DrawSprite(x - 96, y + 20, work->unk_014, work->unk_00C, gfx, 0, 0x400,
+                   (u16)(-4101 - (d->unk_000[0].unk_008 >> 8) * 4));
+        DrawSprite(x - 96, y + 20, work->unk_018, work->unk_010, gfx, 0, 0x800,
+                   (u16)(-4099 - (d->unk_000[0].unk_008 >> 8) * 4));
+    }
+
+    TaskPoolDraw(&work->unk_058);
+}
 
 void task_bos_dsd_main_3(DsdMainWork* work) {
     ReleaseObjTiles(work->unk_00C);
@@ -605,7 +1451,7 @@ void task_bos_dsd_main_3(DsdMainWork* work) {
     ReleaseObjPalette(work->unk_000->unk_370);
     ReleaseObjTiles(work->unk_000->unk_374);
     ReleaseObjPalette(work->unk_000->unk_378);
-    func_08012304(work->unk_0B4);
+    func_08012304(&work->unk_074.unk_040);
     TaskPoolDestroy(&work->unk_058);
 }
 
@@ -621,18 +1467,18 @@ void func_080C2734(DsdMainWork* work) {
             *(s32*)((u8*)gUnk_02039B84->unk_07C + 4) += work->unk_000->unk_35C;
         }
 
-        if (work->unk_070 != (s8)gUnk_02039B84->unk_1CA[0]) {
-            if ((s8)gUnk_02039B84->unk_1CA[0] > 0) {
+        if (work->unk_070 != (s8)gUnk_02039B84->unk_1CA) {
+            if ((s8)gUnk_02039B84->unk_1CA > 0) {
                 work->unk_000->unk_358 |= 0x40;
 
-                if ((s8)gUnk_02039B84->unk_1CA[0] > 14) {
+                if ((s8)gUnk_02039B84->unk_1CA > 14) {
                     work->unk_000->unk_35C = 0x180;
                 } else {
-                    work->unk_000->unk_35C = ((s8)gUnk_02039B84->unk_1CA[0] << 8) / 10;
+                    work->unk_000->unk_35C = ((s8)gUnk_02039B84->unk_1CA << 8) / 10;
                 }
-            } else if ((s8)gUnk_02039B84->unk_1CA[0] < 0) {
+            } else if ((s8)gUnk_02039B84->unk_1CA < 0) {
                 work->unk_000->unk_358 |= 0x40;
-                work->unk_000->unk_35C = ((s8)gUnk_02039B84->unk_1CA[0] << 9) / 10;
+                work->unk_000->unk_35C = ((s8)gUnk_02039B84->unk_1CA << 9) / 10;
             } else {
                 work->unk_000->unk_358 &= ~0x40;
             }
@@ -657,8 +1503,37 @@ void func_080C2828(DsdMainWork* work) {
     q->unk_00C = -0x8C00;
 }
 
-INCLUDE_ASM("bos2/func_080C288C.s");
-INCLUDE_ASM("bos2/func_080C2944.s");
+void func_080C288C(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* q = &d->unk_000[1];
+
+    if (d->unk_356 >= gUnk_0961A7D0[d->unk_354]) {
+        d->unk_356 = 0;
+        work->unk_000->unk_354++;
+
+        if (work->unk_000->unk_354 > work->unk_00A + 7) {
+            work->unk_000->unk_354 = work->unk_00A;
+        }
+
+        func_080C213C(work->unk_000->unk_354, 0x60);
+        d->unk_000[0].unk_00C += gUnk_0961A82E[work->unk_000->unk_354] << 8;
+        q->unk_00C += gUnk_0961A82E[work->unk_000->unk_354] << 8;
+    }
+
+    work->unk_000->unk_356++;
+    work->unk_014 = AnimUpdate(&work->unk_01C);
+    work->unk_018 = AnimUpdate(&work->unk_034);
+}
+
+void func_080C2944(DsdMainWork* work) {
+    func_080C288C(work);
+
+    if (gUnk_02039B84->unk_0A0 != 0) {
+        if (GetRandom() % 80 == 0) {
+            func_080C3C40(work);
+        }
+    }
+}
 
 void func_080C297C(DsdMainWork* work, s32 x, s32 y, s32 z) {
     BosSub* q = &work->unk_000->unk_000[1];
@@ -671,9 +1546,707 @@ void func_080C297C(DsdMainWork* work, s32 x, s32 y, s32 z) {
     q->unk_034 |= 0x01000000;
 }
 
-INCLUDE_ASM("bos2/func_080C29F4.s");
-INCLUDE_ASM("bos2/func_080C2F68.s");
-INCLUDE_ASM("bos2/func_080C3504.s");
+void func_080C29F4(DsdMainWork* work) {
+    BosSub* q = &work->unk_000->unk_000[1];
+
+    func_080061E8(0, 8);
+    func_080062F4(0, 1);
+    func_080062F4(19, 1);
+    q->unk_034 &= ~0x1000000;
+}
+
+void func_080C2A2C(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* q = &d->unk_000[1];
+    BosSub* p = &work->unk_074;
+
+    switch (d->unk_350) {
+    case 0:
+        func_080C297C(work, d->unk_000[0].unk_004, d->unk_000[0].unk_008, d->unk_000[0].unk_00C);
+        work->unk_006 = 0;
+        work->unk_000->unk_350++;
+        break;
+    case 1:
+        work->unk_006++;
+
+        if (work->unk_006 > 11) {
+            DisableBg(1);
+            work->unk_054 = 0;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 2:
+        switch (d->unk_338) {
+        case 4:
+        case 5:
+            func_0801D1C4(&work->unk_058, 1, 0, 0x2C8, 8, (u32)gUnk_09699684);
+            break;
+        case 6:
+            func_0801D1C4(&work->unk_058, 1, 0, 0x280, 8, (u32)gUnk_096A3F44);
+            break;
+        case 7:
+            func_0801D1C4(&work->unk_058, 1, 0, 0x200, 8, (u32)gUnk_096A8BA4);
+            break;
+        }
+
+        work->unk_006 = 0;
+        work->unk_000->unk_350++;
+        break;
+    case 3:
+        work->unk_006++;
+
+        if (work->unk_006 > 9) {
+            work->unk_006 = 0;
+            d->unk_350++;
+        }
+        break;
+    default:
+        work->unk_000->unk_350 = 0;
+
+        switch (work->unk_000->unk_338) {
+        case 4:
+        case 5:
+            p->unk_004 = 0xDC00;
+            p->unk_008 = 0x16800;
+            p->unk_00C = -0x4000;
+            work->unk_000->unk_334 = 3;
+            break;
+        case 6:
+            p->unk_004 = 0xBC00;
+            p->unk_008 = 0x16800;
+            p->unk_00C = 0;
+            work->unk_000->unk_334 = 6;
+            break;
+        case 7:
+            p->unk_004 = 0xDC00;
+            p->unk_008 = 0x16800;
+            p->unk_00C = 0;
+            work->unk_000->unk_334 = 7;
+            break;
+        }
+
+        q->unk_034 &= ~0x1000000;
+        break;
+    }
+}
+
+void func_080C2BB0(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* q = &d->unk_000[1];
+    BosSub* p = &work->unk_074;
+
+    switch (d->unk_350) {
+    case 0:
+        func_080C297C(work, d->unk_000[0].unk_004, d->unk_000[0].unk_008, d->unk_000[0].unk_00C);
+        work->unk_006 = 0;
+        work->unk_000->unk_350++;
+        break;
+    case 1:
+        work->unk_006++;
+
+        if (work->unk_006 > 4) {
+            DisableBg(1);
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 2:
+        func_0801D1C4(&work->unk_058, 1, 0, 0x120, 3, (u32)gUnk_096874E4);
+        work->unk_006 = 0;
+        work->unk_000->unk_350++;
+        break;
+    case 3:
+        work->unk_006++;
+
+        if (work->unk_006 > 4) {
+            work->unk_006 = 0;
+            func_080C2828(work);
+            d->unk_000[0].unk_004 = 0xDC00;
+            q->unk_004 = 0xDC00;
+            p->unk_004 = 0xDC00;
+            p->unk_008 = 0x16800;
+            p->unk_00C = 0;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 4:
+        if (func_080128EC() == 0) {
+            func_080C29F4(work);
+            work->unk_000->unk_350++;
+        }
+        break;
+    default:
+        d->unk_350 = 0;
+        work->unk_000->unk_334 = 1;
+        break;
+    }
+}
+
+void func_080C2CC0(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* q = &d->unk_000[1];
+
+    switch (d->unk_350) {
+    case 0:
+        work->unk_000->unk_354 = 8;
+        work->unk_00A = 8;
+        work->unk_000->unk_356 = 0;
+        work->unk_006 = 0;
+        work->unk_004 = 30;
+        func_080C213C(8, 0x80);
+        EnableBg(1);
+        d->unk_000[0].unk_004 = 0x13C00;
+        d->unk_000[0].unk_008 = 0x16800;
+        d->unk_000[0].unk_00C = -0xAC00;
+        q->unk_004 = 0x13C00;
+        q->unk_008 = 0x16800;
+        q->unk_00C = -0xD400;
+        work->unk_000->unk_350++;
+        break;
+    case 1:
+        if (func_080128EC() != 0) {
+            break;
+        }
+
+        func_080C29F4(work);
+        work->unk_000->unk_350++;
+        break;
+    case 2:
+        if ((s16)work->unk_004 > 0) {
+            ApproachValue(&d->unk_000[0].unk_004, 0xDC00, work->unk_004);
+            ApproachValue(&d->unk_000[0].unk_00C, -0x9400, work->unk_004);
+            ApproachValue(&q->unk_004, 0xDC00, work->unk_004);
+            ApproachValue(&q->unk_00C, -0xBC00, work->unk_004);
+            func_0802F274(d->unk_000[0].unk_004, d->unk_000[0].unk_008 + d->unk_000[0].unk_00C);
+            work->unk_004--;
+        } else {
+            work->unk_006 = 0;
+            work->unk_000->unk_354 = 9;
+            func_080C213C(work->unk_000->unk_354, 0x80);
+            q->unk_004 = 0xEC00;
+            q->unk_00C = -0x9400;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 3:
+        work->unk_006++;
+
+        if (work->unk_006 > 3) {
+            work->unk_006 = 0;
+            work->unk_000->unk_354 = 10;
+            func_080C213C(work->unk_000->unk_354, 0x80);
+            q->unk_004 = 0xFC00;
+            q->unk_00C = -0x9400;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 4:
+        work->unk_006++;
+
+        if (work->unk_006 > 1) {
+            work->unk_006 = 0;
+            d->unk_000[0].unk_004 += 0x100;
+            d->unk_000[0].unk_00C += -0x100;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 5:
+        work->unk_006++;
+
+        if (work->unk_006 > 1) {
+            work->unk_006 = 0;
+            d->unk_000[0].unk_004 += -0x100;
+            d->unk_000[0].unk_00C += 0x100;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 6:
+        work->unk_006++;
+
+        if (work->unk_006 > 25) {
+            work->unk_006 = 0;
+            work->unk_000->unk_354 = 11;
+            func_080C213C(work->unk_000->unk_354, 0x80);
+            q->unk_004 = 0xEC00;
+            q->unk_00C = -0x9400;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 7:
+        work->unk_006++;
+
+        if (work->unk_006 > 3) {
+            work->unk_006 = 0;
+            work->unk_000->unk_354 = 12;
+            func_080C213C(work->unk_000->unk_354, 0x80);
+            q->unk_004 = 0xB400;
+            q->unk_00C = -0x8400;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 8:
+        work->unk_006++;
+
+        if (work->unk_006 > 3) {
+            work->unk_006 = 0;
+            work->unk_000->unk_350++;
+        }
+        break;
+    default:
+        d->unk_350 = 0;
+        work->unk_000->unk_334 = work->unk_000->unk_338;
+        break;
+    }
+}
+
+void func_080C2F68(DsdMainWork* work) {
+    if (work->unk_000->unk_356 >= gUnk_0961A7D0[work->unk_000->unk_354]) {
+        work->unk_000->unk_356 = 0;
+        work->unk_000->unk_354++;
+
+        if (work->unk_000->unk_354 > work->unk_00A + 7) {
+            work->unk_000->unk_354 = work->unk_00A;
+        }
+
+        func_080C213C(work->unk_000->unk_354, 0x80);
+    }
+
+    work->unk_000->unk_356++;
+}
+
+void func_080C2FD8(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* a = &d->unk_000[1];
+    BosSub* b = &d->unk_000[2];
+
+    switch (d->unk_350) {
+    case 0:
+        work->unk_000->unk_354 = 13;
+        work->unk_00A = 13;
+        work->unk_000->unk_356 = 0;
+        work->unk_006 = 0;
+        func_080C213C(13, 0x80);
+        b->unk_004 = 0x7600;
+        b->unk_008 = 0x16800;
+        b->unk_00C = 0;
+        b->unk_034 &= ~0x1000000;
+        func_0802F1E8();
+        m4aSongNumStart(0x2B9);
+        func_0801801C(0x7800, 0x16800, 0, 0x100);
+        func_08012614(&b->unk_040, 0);
+        work->unk_000->unk_350++;
+        break;
+    case 1:
+        func_080C2F68(work);
+        work->unk_006++;
+
+        if (work->unk_006 > 1) {
+            work->unk_006 = 0;
+            d->unk_000[0].unk_004 += -0x100;
+            d->unk_000[0].unk_00C += 0x100;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 2:
+        func_080C2F68(work);
+        work->unk_006++;
+
+        if (work->unk_006 > 1) {
+            work->unk_006 = 0;
+            d->unk_000[0].unk_004 += 0x100;
+            d->unk_000[0].unk_00C += -0x100;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 3:
+        func_080C2F68(work);
+
+        if (func_080128EC() == 0) {
+            func_0801AF08(a);
+            work->unk_006 = 0;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 4:
+        func_080C2F68(work);
+        work->unk_006++;
+
+        if (work->unk_006 > 179) {
+            work->unk_006 = 0;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 5:
+        func_080C213C(8, 0x80);
+        b->unk_034 |= 0x1000000;
+        func_08012614(&b->unk_040, 1);
+        work->unk_000->unk_350++;
+        break;
+    default:
+        d->unk_350 = 0;
+        work->unk_000->unk_334 = 0;
+        break;
+    }
+}
+
+INCLUDE_ASM("bos2/func_080C3188.s");
+
+void func_080C3504(DsdMainWork* work) {
+    if (work->unk_000->unk_356 >= gUnk_0961A7D0[work->unk_000->unk_354]) {
+        work->unk_000->unk_356 = 0;
+        work->unk_000->unk_354++;
+
+        if (work->unk_000->unk_354 > work->unk_00A + 4) {
+            work->unk_000->unk_354 = work->unk_00A;
+        }
+
+        func_080C211C(work->unk_000->unk_354);
+    }
+
+    work->unk_000->unk_356++;
+}
+
+void func_080C3574(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* q = &d->unk_000[1];
+
+    switch (d->unk_350) {
+    case 0:
+        work->unk_000->unk_354 = 36;
+        work->unk_00A = 36;
+        work->unk_000->unk_356 = 0;
+        work->unk_004 = 30;
+        work->unk_054 = 0;
+        func_080C211C(work->unk_000->unk_354);
+        q->unk_004 = 0xDC00;
+        q->unk_00C = -0x6000;
+        work->unk_000->unk_350++;
+        break;
+    case 1:
+        if (func_080128EC() != 0) {
+            break;
+        }
+
+        func_080C29F4(work);
+        work->unk_006 = 0;
+        work->unk_004 = 0;
+        work->unk_000->unk_350++;
+        break;
+    case 2:
+        func_080C3504(work);
+        work->unk_184 = TaskCreate(&work->unk_058, gUnk_09EF2ED8, work->unk_000);
+        work->unk_000->unk_350++;
+        break;
+    case 3:
+        func_080C3504(work);
+
+        if (func_08000F48(work->unk_184) != 0) {
+            break;
+        }
+
+        if (work->unk_000->unk_35A == 0) {
+            work->unk_000->unk_350 = 6;
+            break;
+        }
+
+        work->unk_006++;
+
+        if (work->unk_006 > 4) {
+            work->unk_006 = 0;
+            work->unk_188 = TaskCreate(&work->unk_058, gUnk_09EF2ED8, work->unk_000);
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 4:
+        func_080C3504(work);
+
+        if (func_08000F48(work->unk_188) != 0) {
+            break;
+        }
+
+        if (work->unk_000->unk_35A == 1) {
+            work->unk_000->unk_350 = 6;
+            break;
+        }
+
+        work->unk_006++;
+
+        if (work->unk_006 > 4) {
+            work->unk_006 = 0;
+            work->unk_18C = TaskCreate(&work->unk_058, gUnk_09EF2ED8, work->unk_000);
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 5:
+        func_080C3504(work);
+
+        if (func_08000F48(work->unk_18C) != 0) {
+            break;
+        }
+
+        work->unk_000->unk_350++;
+        break;
+    case 6:
+        func_080C3504(work);
+        func_0801AF08(q);
+        work->unk_000->unk_350++;
+        break;
+    default:
+        d->unk_350 = 0;
+        work->unk_000->unk_334 = 0;
+        break;
+    }
+}
+
+void func_080C3754(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* q = &d->unk_000[1];
+
+    switch (d->unk_350) {
+    case 0:
+        work->unk_000->unk_354 = 41;
+        work->unk_00A = 41;
+        work->unk_000->unk_356 = 0;
+        work->unk_004 = 30;
+        work->unk_054 = 0;
+        func_080C211C(work->unk_000->unk_354);
+        work->unk_006 = 0;
+        q->unk_004 = 0xE400;
+        q->unk_00C = -0x5C00;
+        work->unk_000->unk_350++;
+        break;
+    case 1:
+        if (func_080128EC() != 0) {
+            break;
+        }
+
+        func_080C29F4(work);
+        work->unk_004 = 0;
+        work->unk_000->unk_350++;
+        break;
+    case 2:
+        func_080C3504(work);
+        LoadPalette(gUnk_096FB744, (void*)0x05000000, 32);
+        work->unk_06C = TaskCreate(&work->unk_058, gUnk_09EF2EF0, work->unk_000);
+        work->unk_000->unk_350++;
+        break;
+    case 3:
+        func_080C3504(work);
+
+        if (func_08000F48(work->unk_06C) != 0) {
+            break;
+        }
+
+        work->unk_000->unk_350++;
+        break;
+    case 4:
+        func_080C3504(work);
+        func_0801AF08(q);
+        work->unk_000->unk_350++;
+        break;
+    default:
+        d->unk_350 = 0;
+        work->unk_000->unk_334 = 0;
+        break;
+    }
+}
+
+void func_080C3868(DsdMainWork* work) {
+}
+
+void func_080C386C(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* a = &d->unk_000[1];
+    BosSub* b = &d->unk_000[2];
+
+    if (d->unk_330 == 2 || d->unk_330 == 3) {
+        func_0801AF08(a);
+        b->unk_034 |= 0x1000000;
+        func_08012614(&b->unk_040, 1);
+        work->unk_000->unk_350 = 0;
+        work->unk_000->unk_334 = 0;
+    } else if (d->unk_350 > 60) {
+        func_0801AF08(a);
+        b->unk_034 |= 0x1000000;
+        func_08012614(&b->unk_040, 1);
+        work->unk_000->unk_350 = 0;
+        work->unk_000->unk_334 = 0;
+    } else {
+        d->unk_350++;
+    }
+}
+
+void func_080C3928(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* a = &d->unk_000[1];
+    BosSub* b = &d->unk_000[2];
+    BosSub* c = &work->unk_074;
+    UnkStruct_02039B84* e;
+    CharaObjParam param;
+
+    switch (d->unk_350) {
+    case 0:
+        e = func_08000C8C(gUnk_02039B84->unk_080);
+
+        while (e != 0) {
+            if (e->unk_000 == 0) {
+                e->unk_034 |= 0x40;
+                m4aSongNumStart(0x227);
+            }
+
+            e = func_08000CD4((u8*)e + 0xB8);
+        }
+
+        work->unk_000->unk_350++;
+        break;
+    case 1:
+        func_0801AF4C(a);
+        func_08012614(&a->unk_040, 1);
+        func_08012614(&b->unk_040, 1);
+        func_08012614(&c->unk_040, 1);
+        func_080062F4(0, 0);
+        func_080062F4(19, 0);
+        func_08006238(0, 20, 8);
+        func_08018B04(a->unk_004 - 0x1400, a->unk_008, a->unk_00C - 0xA00, 0x100);
+        m4aSongNumStart(0x2D1);
+        work->unk_006 = 0;
+        work->unk_000->unk_350++;
+        func_0802F274(d->unk_000[0].unk_004 - 0x1400, d->unk_000[0].unk_008 + d->unk_000[0].unk_00C + 0x3000);
+        break;
+    case 2:
+        func_0802F274(d->unk_000[0].unk_004 - 0x1400, d->unk_000[0].unk_008 + d->unk_000[0].unk_00C + 0x3000);
+        work->unk_006++;
+
+        if (work->unk_006 > 11) {
+            DisableBg(1);
+            work->unk_054 = 0;
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 3:
+        func_080C213C(36, 0xE0);
+        EnableBg(1);
+        func_0802F274(d->unk_000[0].unk_004 - 0x1400, d->unk_000[0].unk_008 + d->unk_000[0].unk_00C + 0x3000);
+        work->unk_000->unk_350++;
+        break;
+    case 4:
+        func_0802F274(d->unk_000[0].unk_004 - 0x1400, d->unk_000[0].unk_008 + d->unk_000[0].unk_00C + 0x3000);
+
+        if (func_080128EC() != 0) {
+            break;
+        }
+
+        func_080061E8(0, 8);
+        func_080062F4(0, 1);
+        func_080062F4(19, 1);
+        work->unk_000->unk_350++;
+        break;
+    case 5:
+        func_0802F274(d->unk_000[0].unk_004 - 0x1400, d->unk_000[0].unk_008 + d->unk_000[0].unk_00C + 0x3000);
+        work->unk_000->unk_350++;
+        break;
+    case 6:
+        func_0802F274(d->unk_000[0].unk_004 - 0x1400, d->unk_000[0].unk_008 + d->unk_000[0].unk_00C + 0x3000);
+        param.unk_00 = 0;
+        param.unk_04 = 0;
+        param.unk_08 = 0;
+        param.unk_0C = 0;
+        param.unk_10 = 0;
+        param.unk_14 = 0;
+        param.unk_18 = 0;
+        param.unk_1C = 0;
+        param.unk_20 = 0x6000000;
+        param.unk_24 = 0xE0;
+        param.unk_28 = 0x5000000;
+        param.unk_2C = 32;
+        param.unk_30 = d->unk_000[0].unk_004 - 0x1400;
+        param.unk_34 = d->unk_000[0].unk_008;
+        param.unk_38 = d->unk_000[0].unk_00C + 0x3000;
+        param.unk_3C = 0;
+        param.unk_40 = (u32)a;
+        param.unk_44 = 1;
+        func_080C6894(&param);
+        work->unk_000->unk_350++;
+        break;
+    case 7:
+        if (func_080C69B4() == 0) {
+            d->unk_000[0].unk_004 = 300;
+            d->unk_000[0].unk_008 = 0;
+            d->unk_000[0].unk_00C = 0;
+            func_08005244(1, ((gUnk_02039B84->unk_000 - 300) >> 8) + 100, (gUnk_02039B84->unk_004 >> 8) + 280);
+            func_0801B008();
+            work->unk_000->unk_350++;
+        } else {
+            func_0802F274(d->unk_000[0].unk_004 - 0x1800, d->unk_000[0].unk_008 + d->unk_000[0].unk_00C + 0x3000);
+        }
+        break;
+    default:
+        d->unk_358 |= 2;
+        break;
+    }
+}
+
+void func_080C3C34(DsdMainWork* work) {
+    func_080C288C(work);
+}
+
+void func_080C3C40(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* a = &d->unk_000[1];
+
+    if (a->unk_02C < a->unk_02E / 3) {
+        d->unk_35A = 2;
+
+        if (GetRandom() % 100 <= 9) {
+            func_08083900(1);
+        } else if (GetRandom() % 90 <= 49) {
+            func_08083900(GetRandom() % 2 + 8);
+        } else {
+            func_08083900(GetRandom() % 3 + 5);
+        }
+    } else if (a->unk_02C < a->unk_02E / 3 * 2) {
+        d->unk_35A = 1;
+
+        if (GetRandom() % 100 <= 29) {
+            func_08083900(GetRandom() % 2 + 8);
+        } else {
+            func_08083900(GetRandom() % 3 + 4);
+        }
+    } else {
+        d->unk_35A = 0;
+
+        if (GetRandom() % 100 <= 59) {
+            func_08083900(GetRandom() % 3 + 7);
+        } else {
+            func_08083900(GetRandom() % 4 + 3);
+        }
+    }
+
+    switch (work->unk_000->unk_33C) {
+    case 0:
+        work->unk_000->unk_338 = 5;
+        break;
+    case 1:
+        work->unk_000->unk_338 = 6;
+        break;
+    case 2:
+        work->unk_000->unk_338 = 4;
+        break;
+    case 3:
+        work->unk_000->unk_338 = 7;
+        break;
+    default:
+        work->unk_000->unk_338 = 0;
+        break;
+    }
+
+    work->unk_000->unk_33C++;
+
+    if (work->unk_000->unk_33C > 3) {
+        work->unk_000->unk_33C = 0;
+    }
+
+    func_0801BCD4(a);
+}
 
 void task_bos_dsd_map_0(void) {
     LoadBgTiles(0, gUnk_096874E4, 0x8000);
@@ -733,7 +2306,7 @@ u8 task_bos_dsd_map_1(void) {
 }
 
 void task_bos_dsd_ita_0(DsdItaWork* work, void* arg) {
-    work->unk_000 = (u32)arg;
+    work->unk_000 = arg;
     work->unk_074 = 0x1E;
     work->unk_076 = 0;
     work->unk_078 = 0;
@@ -752,14 +2325,173 @@ void task_bos_dsd_ita_0(DsdItaWork* work, void* arg) {
     work->unk_08C = (u32)gUnk_09EF3C18;
 }
 
-INCLUDE_ASM("bos2/task_bos_dsd_ita_1.s");
-INCLUDE_ASM("bos2/task_bos_dsd_ita_2.s");
+u8 task_bos_dsd_ita_1(DsdItaWork* work) {
+    BosSub* a = &work->unk_000->unk_000[1];
+
+    func_080C427C(work);
+
+    switch (work->unk_07A) {
+    case 0:
+        if (work->unk_074 > 0) {
+            ApproachValue(&work->unk_060, 0x1400, work->unk_074);
+            ApproachValue(&work->unk_068, -0x1400, work->unk_074);
+            work->unk_074--;
+        } else {
+            work->unk_07A = 1;
+        }
+        break;
+    case 1:
+        if (work->unk_000->unk_358 & 32) {
+            work->unk_07A = 2;
+        }
+
+        func_080C4398(work);
+        break;
+    case 2:
+        if (work->unk_000->unk_358 & 32) {
+            func_080C43E4(&work->unk_060, a->unk_004 - 12800);
+            func_080C43E4(&work->unk_064, a->unk_008);
+            func_080C43E4(&work->unk_068, a->unk_00C + 0x500);
+        } else if (work->unk_078 > 49) {
+            work->unk_07A = 3;
+        } else {
+            work->unk_078++;
+        }
+
+        func_080C4398(work);
+        break;
+    case 3:
+        if (work->unk_068 < 0) {
+            work->unk_068 += work->unk_06C;
+            work->unk_06C += work->unk_070;
+        } else {
+            work->unk_068 = 0;
+        }
+
+        if (work->unk_000->unk_358 & 32) {
+            work->unk_078 = 0;
+            work->unk_07A = 2;
+        }
+
+        func_080C4398(work);
+        break;
+    case 4:
+        if (work->unk_074 > 0) {
+            ApproachValue(&work->unk_060, -0x5000, work->unk_074);
+            ApproachValue(&work->unk_068, -0x1400, work->unk_074);
+            work->unk_074--;
+        } else {
+            work->unk_07A++;
+        }
+        break;
+    default:
+        work->unk_000->unk_358 &= ~8;
+        return 0;
+    }
+
+    func_08012324(&work->unk_004, work->unk_060, work->unk_064, work->unk_068);
+
+    return 1;
+}
+
+void task_bos_dsd_ita_2(DsdItaWork* work) {
+    u16 pal;
+    u16 prio;
+    s32 affine;
+    s32 scale;
+    s32 flag;
+    s16 x;
+    s16 y;
+
+    if (work->unk_000->unk_358 & 32) {
+        pal = 0x800;
+        prio = -4100 - ((work->unk_064 - 0x4000) >> 8) * 4;
+    } else {
+        pal = func_0801AF1C(work->unk_064);
+        prio = -4102 - (work->unk_064 >> 8) * 4;
+    }
+
+    WorldToScreen(&x, &y, work->unk_060, work->unk_064, work->unk_068);
+    DrawSprite(x, y, work->unk_088, work->unk_000->unk_368, work->unk_000->unk_36C, 0, pal, prio);
+
+    if (work->unk_068 >= 0 && gUnk_02039B84->unk_024 == 0x100) {
+        affine = 0;
+    } else {
+        scale = 0x100 - -work->unk_068 / 128;
+
+        if (scale <= 0x7F) {
+            scale = 0x80;
+        }
+
+        flag = 0;
+
+        if (scale > 0x100) {
+            flag = 1;
+        }
+
+        affine = AllocObjAffine(0, scale, scale, flag);
+    }
+
+    WorldToScreen(&x, &y, work->unk_060, work->unk_064, 0);
+    DrawSprite(x, y, work->unk_08C, work->unk_000->unk_368, work->unk_000->unk_370, affine, 0xC00, 0xFFF0);
+}
 
 void task_bos_dsd_ita_3(DsdItaWork* work) {
     func_08012304(&work->unk_004);
 }
 
-INCLUDE_ASM("bos2/func_080C427C.s");
+void func_080C427C(DsdItaWork* work) {
+    s32 v;
+    s16 k;
+
+    if (gUnk_02039B84->unk_0F0 == (u32)&work->unk_004) {
+        v = work->unk_000->unk_358 & 32;
+
+        if (v == 0) {
+            work->unk_07C |= 1;
+            work->unk_000->unk_358 |= 32;
+            work->unk_07E = v;
+        }
+    } else if (work->unk_000->unk_358 & 32) {
+        work->unk_000->unk_358 &= ~32;
+        work->unk_07C |= 2;
+        work->unk_07E = 0;
+    }
+
+    if (work->unk_07C & 2) {
+        k = gUnk_0961A860[work->unk_07E];
+        work->unk_080 -= k << 8;
+
+        if (k == 0) {
+            work->unk_07C &= 0xFFFD;
+            work->unk_080 = 0;
+        } else {
+            work->unk_07E++;
+        }
+    } else if (work->unk_07C & 1) {
+        k = gUnk_0961A860[work->unk_07E];
+        work->unk_080 += k << 8;
+
+        if (k == 0) {
+            work->unk_07C &= 0xFFFE;
+        } else {
+            work->unk_07E++;
+        }
+    }
+}
+
+void func_080C4398(DsdItaWork* work) {
+    if ((s16)work->unk_076 >= 600) {
+        work->unk_074 = 30;
+        work->unk_07A = 4;
+    } else {
+        work->unk_076++;
+    }
+
+    if (work->unk_000->unk_334 == 11) {
+        work->unk_07A = 4;
+    }
+}
 
 void func_080C43E4(s32* p, s32 target) {
     s32 cur;
@@ -826,15 +2558,15 @@ void task_bos_dsd_rock_3(void) {
 
 void task_bos_dsd_circle_0(DsdCircleWork* work, void* arg) {
     work->unk_00 = arg;
-    work->unk_08 = (gUnk_0961A89E << 8) + 0xDC00;
-    work->unk_0C = (gUnk_0961A8B0 << 8) + 0x16800;
+    work->unk_08 = (gUnk_0961A89E[0] << 8) + 0xDC00;
+    work->unk_0C = (gUnk_0961A8B0[0] << 8) + 0x16800;
     work->unk_10 = 0;
     work->unk_14 = 0;
     work->unk_16 = 0;
     work->unk_1A = 0;
     work->unk_1C = 0;
     work->unk_18 = 0;
-    work->unk_04 = gUnk_09EF3C50;
+    work->unk_04 = gUnk_09EF3C50[0];
 }
 
 INCLUDE_ASM("bos2/task_bos_dsd_circle_1.s");
@@ -874,7 +2606,62 @@ void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
     work->unk_44 = gUnk_08B22CBC;
 }
 
-INCLUDE_ASM("bos2/task_bos_dsd_energy1_1.s");
+u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
+    switch (work->unk_34) {
+    case 0:
+        func_08013EDC(work->unk_04, work->unk_08, work->unk_0C, 0x100);
+        work->unk_34++;
+        break;
+    case 1:
+        if (func_080128EC() != 0) {
+            break;
+        }
+
+        func_08014588(work->unk_04, work->unk_08, work->unk_0C, 0x100, work->unk_3C, 0);
+        m4aSongNumStart(0x2BD);
+        work->unk_34++;
+        break;
+    case 2:
+        work->unk_38++;
+
+        if (work->unk_38 >= work->unk_3C) {
+            work->unk_48 = 1;
+            work->unk_38 = 0;
+            work->unk_36 = 10;
+            work->unk_20 = (gUnk_02039B84->unk_134 - work->unk_08) / 15;
+            work->unk_34++;
+        }
+        break;
+    case 3:
+        func_080C4C54(work);
+        break;
+    case 4:
+        func_080C4CCC(work);
+        break;
+    case 5:
+        func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
+        work->unk_04 += work->unk_1C;
+        work->unk_08 += work->unk_20;
+        work->unk_0C += work->unk_24;
+        break;
+    }
+
+    if (func_08011F78(0x102, work->unk_04, work->unk_08, work->unk_0C, 16, 16, 16) == 1) {
+        func_08014790(0);
+        m4aSongNumStart(0x2A1);
+        work->unk_48 = 0;
+        return 0;
+    }
+
+    if (work->unk_0C >= -0x800 || work->unk_04 <= -0x2000 || work->unk_04 > 0x11FFF ||
+        work->unk_00->unk_334 == 8 || work->unk_00->unk_334 == 11) {
+        func_08014790(0);
+        work->unk_48 = 0;
+        return 0;
+    }
+
+    return 1;
+}
 
 void task_bos_dsd_energy1_2(DsdEnergy1Work* work) {
     s32 affine;
@@ -907,7 +2694,60 @@ void task_bos_dsd_energy1_2(DsdEnergy1Work* work) {
     }
 }
 
-INCLUDE_ASM("bos2/task_bos_dsd_energy1_3.s");
+void task_bos_dsd_energy1_3(void) {
+}
+
+void func_080C4C54(DsdEnergy1Work* work) {
+    work->unk_1C = gSineTable[work->unk_28] * work->unk_2C >> 8;
+    work->unk_24 = -gSineTable[work->unk_28 + 0x40] * work->unk_2C >> 8;
+    work->unk_2C -= 76;
+    work->unk_28 -= 3;
+    work->unk_04 += work->unk_1C;
+    work->unk_08 += work->unk_20;
+    work->unk_0C += work->unk_24;
+    func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
+
+    if ((s16)work->unk_38 > 15) {
+        work->unk_34++;
+    } else {
+        work->unk_38++;
+    }
+}
+
+void func_080C4CCC(DsdEnergy1Work* work) {
+    u16 d;
+
+    if (work->unk_40 > 0) {
+        work->unk_40 = 0;
+        work->unk_29 = GetAngle(work->unk_04, work->unk_0C, gUnk_02039B84->unk_130, gUnk_02039B84->unk_138);
+
+        if (work->unk_29 >= work->unk_28) {
+            d = work->unk_29 - work->unk_28;
+
+            if ((s16)d > 10) {
+                d = 10;
+            }
+        } else {
+            d = work->unk_29 - work->unk_28;
+
+            if ((s16)d < -10) {
+                d = -10;
+            }
+        }
+
+        work->unk_28 += d;
+        work->unk_1C = gSineTable[work->unk_28] * work->unk_2C >> 8;
+        work->unk_20 = 0;
+        work->unk_24 = -gSineTable[work->unk_28 + 0x40] * work->unk_2C >> 8;
+    }
+
+    work->unk_40++;
+    work->unk_2C += 25;
+    func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
+    work->unk_04 += work->unk_1C;
+    work->unk_08 += work->unk_20;
+    work->unk_0C += work->unk_24;
+}
 
 void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
     work->unk_00 = arg;
