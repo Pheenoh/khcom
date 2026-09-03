@@ -6,5 +6,5 @@
 	.thumb_func
 	.type SetBgMode2, %function
 SetBgMode2:
-	.incbin "roms/B8CP.gba", 0x509c, 0xa0
+	.incbin "roms/B8CP.gba", 0x50a0, 0x9c
 .syntax divided

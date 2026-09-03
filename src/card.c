@@ -2424,6 +2424,7 @@ void func_0807FAD8(UnkStruct_08080268* w) {
 INCLUDE_ASM("card/func_0807FB5C.s");
 INCLUDE_ASM("card/func_0807FD10.s");
 INCLUDE_ASM("card/func_0807FE30.s");
+#ifndef VERSION_EU
 void func_0807FF48(UnkStruct_08080268* w) {
     if ((gUnk_02034AAC->unk_78 & 0x40) != 0) {
         m4aSongNumStart(103);
@@ -2475,6 +2476,9 @@ void func_0807FF48(UnkStruct_08080268* w) {
         gUnk_02039DD4->unk_0D4 = w->unk_B8;
     }
 }
+#else
+INCLUDE_ASM("card/func_0807FF48.s");
+#endif
 INCLUDE_ASM("card/func_080800B4.s");
 
 void func_08080228(void) {
@@ -6904,6 +6908,7 @@ u8 func_0809217C(u8* work, void* a) {
     return 1;
 }
 INCLUDE_ASM("card/func_08092234.s");
+#ifndef VERSION_EU
 u8 func_080923E0(UnkStruct_08093838* w, void* a) {
     s8 v;
 
@@ -6953,6 +6958,9 @@ u8 func_080923E0(UnkStruct_08093838* w, void* a) {
     TaskPoolUpdate(w);
     return 1;
 }
+#else
+INCLUDE_ASM("card/func_080923E0.s");
+#endif
 INCLUDE_ASM("card/func_0809254C.s");
 u8 func_080928E4(u8* work, void* a) {
     MapcardWork* node;

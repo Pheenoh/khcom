@@ -6,5 +6,5 @@
 	.thumb_func
 	.type InitSystem, %function
 InitSystem:
-	.incbin "roms/B8CP.gba", 0x334, 0x15c
+	.incbin "roms/B8CP.gba", 0x390, 0x100
 .syntax divided

@@ -112,6 +112,10 @@ void DisableHBlankIntr(void) {
     REG_IME = 1;
 }
 
+#ifdef VERSION_EU
+INCLUDE_ASM("main/eu_08000334.s");
+#endif
+
 #ifndef VERSION_EU
 void InitSystem(void) {
     vu32* dma;

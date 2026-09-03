@@ -757,6 +757,10 @@ s32 func_080C60D8(void) {
 }
 
 
+#ifdef VERSION_EU
+INCLUDE_ASM("chara/eu_080C24D8.s");
+#endif
+
 #ifdef NON_MATCHING
 void func_080C61D4(void) {
     s32 i;

@@ -1590,6 +1590,10 @@ void SetBlendAlpha(u16 a, u16 b) {
     gBldAlpha = (a << 8) | b;
 }
 
+#ifdef VERSION_EU
+INCLUDE_ASM("engine/eu_080059D4.s");
+#endif
+
 #ifdef NON_MATCHING
 s32 GetAngleDiff(s32 a, s32 b) {
     s32 x = a & 0xFF;

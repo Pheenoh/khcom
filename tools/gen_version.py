@@ -171,9 +171,10 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None):
     for k, r in enumerate(present):
         nxt = present[k + 1][3] if k + 1 < len(present) else code_end
         if r[0] in flexible:
-            if (k and r[3] > pos and r[4] != "-"
-                    and unit_of.get(r[0]) != unit_of.get(present[k - 1][0])
-                    and clean(present[k - 1])):
+            if (k and r[3] > pos and clean(present[k - 1])
+                    and (r[4] in ("named", "xref", "global", "body")
+                         or (r[4] != "-" and unit_of.get(r[0])
+                             != unit_of.get(present[k - 1][0])))):
                 pos = r[3]
             start[id(r)] = pos
             size[id(r)] = max(0, nxt - pos)

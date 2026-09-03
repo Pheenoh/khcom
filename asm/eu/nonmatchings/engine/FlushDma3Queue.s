@@ -6,5 +6,5 @@
 	.thumb_func
 	.type FlushDma3Queue, %function
 FlushDma3Queue:
-	.incbin "roms/B8CP.gba", 0x47d4, 0x2a4
+	.incbin "roms/B8CP.gba", 0x47d0, 0x2a8
 .syntax divided

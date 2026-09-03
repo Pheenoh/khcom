@@ -6,5 +6,5 @@
 	.thumb_func
 	.type GetAngleDiff, %function
 GetAngleDiff:
-	.incbin "roms/B8CP.gba", 0x59d4, 0x188
+	.incbin "roms/B8CP.gba", 0x5b24, 0x38
 .syntax divided
