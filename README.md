@@ -13,8 +13,7 @@ The project can target the following versions:
 |---------|------|-------|
 | `us`    | B8CE | `10729bd884f8fdca7a310b6d606c52e46657aa48` |
 | `jp`    | B8CJ | `59ec0a0a4ccd1e6acb3bbd7bfb21d63988958cfa` |
-
-EU version (B8CP) will build but isn't fully support in source code yet
+| `eu`    | B8CP | `8db73586cdb11b3795907edebf43228dbcd3e6b2` |
 
 ## Dependencies
 
