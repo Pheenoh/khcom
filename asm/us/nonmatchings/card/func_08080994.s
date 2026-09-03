@@ -199,7 +199,7 @@ _08080AB4:
 	ldr r0, _08080B40 @ =0x02034AAC
 	str r3, [r0, #0x00]
 _08080B22:
-	bl _080818E4
+	bl func_080818E4
 	add sp, #0x014
 	pop {r4, r5, r6}
 	pop {r0}

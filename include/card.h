@@ -39,7 +39,9 @@ typedef struct UnkStruct_02034AAC {
     CardDef* unk_48;
     s32 unk_4C;
     s32 unk_50;
-    u8 unk_54[0x10];
+    s32 unk_54;
+    s32 unk_58;
+    u8 unk_5C[0x08];
     u8 unk_64[0x14];
     u32 unk_78;
     u8 unk_7C[0x25];
@@ -186,13 +188,18 @@ typedef struct UnkStruct_0807B410 {
 } UnkStruct_0807B410;
 
 typedef struct UnkStruct_0808E890 {
-    u8 unk_00[0x22];
+    u8 unk_00[0x04];
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    u8 unk_14[0x0E];
     s16 unk_22;
     s16 unk_24;
     u8 unk_26[0x06];
     u8 unk_2C[0x18];
     s32 unk_44;
-    u8 unk_48[0x02];
+    u16 unk_48;
     u8 unk_4A;
 } UnkStruct_0808E890;
 
@@ -331,6 +338,73 @@ typedef struct ReloadGageArgs {
     u8 unk_0F;
 } ReloadGageArgs;
 
+typedef struct UnkStruct_02034AD4 {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+    u16 unk_04;
+    u8 unk_06[0x3E];
+} UnkStruct_02034AD4;
+
+typedef struct UnkStruct_0809E0A4 {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    s32 unk_14;
+    s32 unk_18;
+} UnkStruct_0809E0A4;
+
+typedef struct UnkWork_0809E0A4 {
+    void* unk_00;
+    void* unk_04;
+    UnkStruct_0809E0A4 unk_08;
+    s16 unk_24;
+    s16 unk_26;
+    u8 unk_28;
+    u8 unk_29;
+} UnkWork_0809E0A4;
+
+typedef struct UnkStruct_08083B94 {
+    u8 unk_00;
+    u8 unk_01[8];
+    u8 unk_09[8];
+    u8 unk_11[3];
+    u8* unk_14;
+} UnkStruct_08083B94;
+
+typedef struct UnkStruct_09EE752C {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+} UnkStruct_09EE752C;
+
+typedef struct PrizeCardArgs {
+    s32 unk_00[8];
+} PrizeCardArgs;
+
+typedef struct PrizeCardInitWork {
+    TaskPool unk_00;
+    u8 unk_14;
+    PrizeCardArgs unk_18;
+} PrizeCardInitWork;
+
+typedef struct ScrollBarWork {
+    u8 unk_00[0x08];
+    u16 unk_08;
+    u16 unk_0A;
+    u16 unk_0C;
+    u16 unk_0E;
+    u16 unk_10;
+    u16 unk_12;
+    u8 unk_14[0x02];
+    u8 unk_16;
+    u8 unk_17;
+} ScrollBarWork;
+
 typedef struct PrizeCardWork {
     UnkStruct_080038C8* unk_00;
     UnkStruct_080038C8* unk_04;
@@ -437,6 +511,12 @@ extern u8 gUnk_090A261E[];
 extern u8 gUnk_096144D8[];
 extern u8 gUnk_090A4A0C[];
 extern u8 gUnk_090A51F6[];
+extern void** gUnk_02034B38;
+extern u8 gUnk_090451C0[];
+extern void* gUnk_09EE4A2C[];
+extern UnkStruct_09EE752C gUnk_09EE752C[];
+extern u8 gUnk_09EEA4E0[];
+extern u8 gUnk_09EEA494[];
 extern u8 gUnk_09EEB064[];
 extern u8 gUnk_09EEB050[];
 extern u8 gUnk_09EEB07C[];
