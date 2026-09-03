@@ -400,6 +400,22 @@ typedef struct StaffRollTaskArg {
     s32 unk_14;
 } StaffRollTaskArg;
 
+typedef struct StaffRollLogoArg {
+    s32 unk_00;
+    s32 unk_04;
+    s32* unk_08;
+    s32* unk_0C;
+    u16 unk_10;
+} StaffRollLogoArg;
+
+typedef struct StaffRollSecnArg {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32* unk_0C;
+    s32* unk_10;
+} StaffRollSecnArg;
+
 typedef struct StaffRollWork {
     u8 unk_000;
     u8 unk_001;
@@ -448,7 +464,8 @@ typedef struct StaffRollWork {
     u8 unk_0FC[0x14];
     u8 unk_110[0x14];
     s32 unk_124[6];
-    u8 unk_13C[0x2DC];
+    u8 unk_13C[0x84];
+    u8 unk_1C0[0x258];
 } StaffRollWork;
 
 extern s16 gSineTable[];
@@ -530,6 +547,20 @@ extern u8 gUnk_09D6BE74[];
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 extern u16 gBldY;
+extern u8* gUnk_09EF9F54[];
+extern u8* gUnk_09EFA9C0;
+extern u8* gUnk_09EFA9BC;
+extern s32* gUnk_09EFA934[];
+extern s32* gUnk_09EFA978[];
+extern u8 gUnk_09A541C8[];
+extern u8 gUnk_09D6BE14[];
+extern u8 gUnk_09EFAA04[];
+extern u8 gUnk_09EFAA1C[];
+extern vu16 gDispCnt;
+extern u16 gWin0H;
+extern u16 gWin0V;
+extern u16 gWinIn;
+extern u16 gWinOut;
 
 void AnimStart(void* a, s32 b, s32 c);
 void* LoadObjTiles(void* a, s32 b);
@@ -696,9 +727,17 @@ s32 func_08110A98(s32 x0, s32 y0, s32 x1, s32 y1);
 s32 func_08110B10(u8 a, u8 b);
 void func_08110058(u16* dst, u16* src, s32 count, s32 level);
 void task_bos_lst_bit_0(LstState* work, LstBitArg* arg);
+u8 task_bos_lst_bit_1(LstState* work);
 void task_bos_lst_bit_2(LstState* work);
 void func_08110C9C(LstState* work);
 void func_081115CC(LstWork* work, Vec3* a, Vec3* b, s32 c, u16 d);
 void func_08111660(LstLsrTask* t);
+void func_080062F4(u16 a, s32 b);
+void func_0811614C(void* sw, void* init);
+void func_081166F8(void* sw, s32 a, s32 b, s32 c, s32 d, s32 e);
+void func_08116268(void* sw, u16 a, u16 b, u16 c, u16 d);
+void func_08116BEC(void* sw, u16 x, u16 y, u8* s, u8 flush);
+s32 func_08115FBC(void* sw, u8* s);
+void func_081160EC(void* sw, u32 mode);
 
 #endif /* GUARD_BOS7_H */

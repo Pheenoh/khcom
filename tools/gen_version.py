@@ -71,6 +71,11 @@ def mask(b):
     return bytes(out)
 
 
+def near_identical(a, b):
+    diff = sum(1 for k in range(0, len(a) - 1, 2) if a[k:k + 2] != b[k:k + 2])
+    return diff <= 8 and diff * 64 <= len(a)
+
+
 VERSION_IF_RE = re.compile(r"#\s*(ifdef|ifndef|if|else|elif|endif)\b(.*)")
 
 
@@ -176,7 +181,7 @@ def symbol_map(rows, us, ot):
             continue
         a = us[ua - ROM_BASE:ua - ROM_BASE + sz]
         b = ot[va - ROM_BASE:va - ROM_BASE + sz]
-        if len(b) != sz or mask(a) != mask(b):
+        if len(b) != sz or not near_identical(mask(a), mask(b)):
             continue
         for k in range(0, sz - 3, 4):
             w1 = struct.unpack_from("<I", a, k)[0]
