@@ -2,6 +2,8 @@
 #include "malloc.h"
 #include "sprite.h"
 
+u8* gSpriteWork;
+
 typedef struct SpriteEntry {
     void* unk_00;
     void* unk_04;
@@ -15,7 +17,6 @@ typedef struct SpriteEntry {
 
 extern u8 sSpriteHeapName[];
 
-extern u8* gSpriteWork;
 extern u16 gDispCnt;
 
 void func_08000BA4(void* pool);

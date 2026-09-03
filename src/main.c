@@ -20,35 +20,39 @@
 #define REG_IME (*(vu16*)0x04000208)
 #define INTR_VECTOR (*(void**)0x03007FFC)
 
+vu16 gFrameSyncFlags;
+u16 gVBlankEndVCount;
+u32 gUnk_03006C04[3];
+u32 gUnk_03006C10;
+IntrFunc* gIntrTableSerial;
+u32 gUnk_03006C18[2];
+IntrFunc gIntrTable[14];
+IntrFunc* gIntrTableVCount;
+IntrFunc* gIntrTableVBlank;
+IntrFunc* gIntrTableTimer3;
+IntrFunc gHBlankCallback;
+u32 gVBlankCounter;
+IntrFunc gVCountCallback;
+IntrFunc gVBlankCallback;
+IntrFunc* gIntrTableHBlank;
+u16 gSystemFlags;
+u8 gUnk_03006C7A[6];
+u8 gIntrHandler[0x800];
+u32 gFrameCounter;
+IntrFunc gVBlankHandlerOverride;
+
 extern u8 sEwramHeapName[];
 extern u8 sIwramHeapName[];
 
 extern u8 gEwramHeapStart[];
 extern u8 gIwramHeapStart[];
-extern u8 gIntrHandler[];
 extern u8 IrqHandler[];
 
-extern u32 gFrameCounter;
-extern u32 gVBlankCounter;
-extern u16 gSystemFlags;
-extern u32 gUnk_03006C10;
 extern u32 gSioPlayerId;
 extern u32 gSioStatus;
-extern vu16 gFrameSyncFlags;
-extern u16 gVBlankEndVCount;
 extern u16 gUnk_03007FF8;
-extern IntrFunc gVBlankHandlerOverride;
 
-extern IntrFunc* gIntrTableSerial;
-extern IntrFunc* gIntrTableVCount;
-extern IntrFunc* gIntrTableVBlank;
-extern IntrFunc* gIntrTableTimer3;
-extern IntrFunc gHBlankCallback;
-extern IntrFunc gVCountCallback;
-extern IntrFunc gVBlankCallback;
-extern IntrFunc* gIntrTableHBlank;
 
-extern IntrFunc gIntrTable[14];
 extern const IntrFunc gIntrTableTemplate[14];
 
 void func_080C55DC(void);
