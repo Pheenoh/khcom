@@ -1,0 +1,10 @@
+.syntax unified
+	.text
+	.align 2, 0
+	.global func_080B4154
+	.thumb
+	.thumb_func
+	.type func_080B4154, %function
+func_080B4154:
+	.incbin "roms/B8CP.gba", 0xb0488, 0xb4
+.syntax divided
