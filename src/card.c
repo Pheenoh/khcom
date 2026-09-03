@@ -471,7 +471,7 @@ void func_080788CC(UnkStruct_08078754* w, u8 b) {
 void func_08078914(UnkStruct_08078754* w, u8 n) {
     u8 i;
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         for (i = 0; i < w->unk_A8[n]; i++) {
             if (w->unk_44[n][i].unk_07 == 0) {
                 w->unk_44[n][i].unk_08 = 0;
@@ -1074,7 +1074,7 @@ void func_0807B9EC(UnkStruct_08078754* w) {
 }
 
 u8 func_0807BA54(void) {
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         if (!(gUnk_02039B84->unk_068 & 0x800000000000)) {
             gUnk_02039B84->unk_1C8 += (s8)gUnk_02039B84->unk_1CA;
         } else if ((s8)gUnk_02039B84->unk_1CA < 0) {
@@ -3557,7 +3557,7 @@ void func_08083F84(u16 a) {
     v = func_08084458(a);
 
     if (gCardDefs[a].unk_20 + func_08085770(GetActiveDeckIndex()) <=
-            gUnk_02039BB0.unk_0FA &&
+            gUnk_02039BB0.cp &&
         v != -1) {
         func_08085290(v);
     }
@@ -3639,7 +3639,7 @@ INCLUDE_ASM("card/func_08084124.s");
 INCLUDE_ASM("card/func_08084458.s");
 
 void func_08084AC8(u16 a) {
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         switch (a) {
         case 0x51:
             func_0800FC14(44);
@@ -3838,7 +3838,7 @@ void func_080850BC(u16 id) {
 u8 func_0808510C(u16 id) {
     s32 i;
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         return 0;
     }
 
@@ -4580,7 +4580,7 @@ u8 func_0808B208(u8* work) {
 u8 func_0808B238(u8* work, void* a) {
     *(void**)&work[0x4BC] = LoadObjTiles(gUnk_090A583E, 0x620);
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         *(void**)&work[0x18] = LoadObjTiles(gUnk_090A418E, 0x320);
     } else {
         *(void**)&work[0x18] = LoadObjTiles(gUnk_090A3E46, 0x320);
@@ -5234,7 +5234,7 @@ u8 func_0808E474(UnkStruct_0808DB04* w) {
 INCLUDE_ASM("card/func_0808E58C.s");
 
 s32 func_0808E750(u8* work) {
-    if (func_08085770(GetActiveDeckIndex()) > gUnk_02039BB0.unk_0FA) {
+    if (func_08085770(GetActiveDeckIndex()) > gUnk_02039BB0.cp) {
         TaskCreate(&work[0x7DC], gUnk_09EE7FA8, &work[0x8C9]);
         m4aSongNumStart(105);
 
@@ -7102,7 +7102,7 @@ u16 func_08096CCC(void) {
 
 #ifdef NON_MATCHING
 u16 func_08096D0C(u16 a) {
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         return func_08096C38(gUnk_090360BC[a].unk_00, gUnk_090360BC[a].unk_04);
     } else {
         return func_08096C38(gUnk_09035DCC[a].unk_00, gUnk_09035DCC[a].unk_04);
@@ -7119,7 +7119,7 @@ u16 func_08096D48(u16 a, s32 b) {
 
     off = 0;
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         base = func_08096C38(gUnk_090360BC[a].unk_00, gUnk_090360BC[a].unk_04);
     } else {
         base = func_08096C38(gUnk_09035DCC[a].unk_00, gUnk_09035DCC[a].unk_04);
@@ -9588,7 +9588,7 @@ INCLUDE_ASM("card/func_080A0A44.s");
 INCLUDE_ASM("card/func_080A11CC.s");
 
 s32 func_080A151C(void) {
-    if (gUnk_02039BB0.unk_108 >= gUnk_09037FBA[gUnk_02039BB0.unk_178]) {
+    if (gUnk_02039BB0.level >= gUnk_09037FBA[gUnk_02039BB0.unk_178]) {
         return 1;
     }
 
@@ -10083,7 +10083,7 @@ u8 func_080A235C(u16 a) {
     return gUnk_09EE7D84[a]->unk_04;
 }
 u8 func_080A2370(void) {
-    if (gUnk_02039BB0.unk_108 >= gUnk_0903BFD4[gUnk_02039BB0.unk_178]) {
+    if (gUnk_02039BB0.level >= gUnk_0903BFD4[gUnk_02039BB0.unk_178]) {
         return 1;
     }
 
@@ -11296,7 +11296,7 @@ void func_080A7284(u8* work, u8 mode) {
     }
 }
 u8 func_080A7300(u8* work) {
-    if (func_08085770(GetActiveDeckIndex()) > gUnk_02039BB0.unk_0FA) {
+    if (func_08085770(GetActiveDeckIndex()) > gUnk_02039BB0.cp) {
         TaskCreate(&work[0x420], gUnk_09EE7FA8, &work[0x501]);
         m4aSongNumStart(0x69);
         return 0;
@@ -11792,7 +11792,7 @@ void func_080AAA8C(u8* work, u8 kind) {
 INCLUDE_ASM("card/func_080AAB08.s");
 
 s32 func_080AAC40(u8* work) {
-    if (func_08085770(GetActiveDeckIndex()) > gUnk_02039BB0.unk_0FA) {
+    if (func_08085770(GetActiveDeckIndex()) > gUnk_02039BB0.cp) {
         TaskCreate(&work[0x628], gUnk_09EE7FA8, &work[0x70D]);
         m4aSongNumStart(105);
 

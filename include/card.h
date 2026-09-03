@@ -174,11 +174,11 @@ typedef struct UnkStruct_02034AFC {
 extern UnkStruct_09EE7D84* gUnk_09EE7D84[];
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
-    u32 unk_008;
+    u32 flags;
     u8 unk_00C[0xEE];
-    s16 unk_0FA;
+    s16 cp;
     u8 unk_0FC[0x0C];
-    u8 unk_108;
+    u8 level;
     u8 unk_109[0x6F];
     u16 unk_178;
     u16 unk_17A;
