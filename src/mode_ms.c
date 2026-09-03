@@ -49,9 +49,9 @@ u8 gUnk_02035C0C;
 void mode_ms_top_0(u32 a) {
     s32 i;
 
-    func_08001F98();
+    SpriteReset();
     func_08006120(0, 16);
-    func_08004DB0();
+    SetBgMode0();
     gBldCnt = 0x142;
     gBldAlpha = 0x1010;
     SetupBg(0, 0, 28, 0);
@@ -101,7 +101,7 @@ void mode_ms_top_0(u32 a) {
     gUnk_020358C0 = 0;
     LoadBgPalette(0, gUnk_09A3D79C, 0x60);
     LoadBgTiles(0, gUnk_09A10A3C, 0x19A0);
-    func_08101588(func_08101518(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+    func_08101588(GetMooglePoints(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
     LoadBgMap(0, gUnk_09A36EDC, 0x500);
     LoadBgMap(1, gUnk_09A373DC, 0x500);
 
@@ -165,7 +165,7 @@ void mode_ms_top_1(void) {
         }
         break;
     case 2:
-        if ((gUnk_02039BB0.unk_17A & 0x80) == 0) {
+        if ((gGameState.unk_17A & 0x80) == 0) {
             gUnk_020358C2 = 0;
             gUnk_02035890 = 3;
         } else {
@@ -177,7 +177,7 @@ void mode_ms_top_1(void) {
 
         if (gUnk_020358C2 > 2 && gUnk_020358BC < 0 && func_080A42C8() == 0) {
             func_0800FDD0(27);
-            gUnk_02039BB0.unk_17A |= 0x80;
+            gGameState.unk_17A |= 0x80;
             gUnk_02035890 = 4;
         }
         break;
@@ -191,9 +191,9 @@ void mode_ms_top_1(void) {
         break;
     case 5:
         if (func_080A42C8() == 0) {
-            if (gUnk_02039BB0.floor <= 5) {
+            if (gGameState.floor <= 5) {
                 func_08103F94(0, 0);
-            } else if (gUnk_02039BB0.floor <= 9) {
+            } else if (gGameState.floor <= 9) {
                 func_08103F94(0, 1);
             } else {
                 func_08103F94(0, 2);
@@ -211,7 +211,7 @@ void mode_ms_top_1(void) {
             func_08102704(gUnk_0203C590[6]);
             SetupBg(3, 3, 31, 14);
             DisableBg(3);
-            func_08101588(func_08101518(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+            func_08101588(GetMooglePoints(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
             func_080061E8(0, 8);
             gUnk_02035890 = 7;
         }
@@ -760,7 +760,7 @@ u8 func_0810329C(u16 a) {
             break;
         case 2:
             if (gUnk_020358C8[i].unk_44 != 0) {
-                if (func_08005B34(&gUnk_020358C8[i].unk_18) == 3 || func_08005B34(&gUnk_020358C8[i].unk_18) == 8) {
+                if (AnimGetFrame(&gUnk_020358C8[i].unk_18) == 3 || AnimGetFrame(&gUnk_020358C8[i].unk_18) == 8) {
                     ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
                     ReleaseObjTiles(gUnk_020358C8[i].unk_10);
                     gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09611AB8, 0x20);
@@ -813,7 +813,7 @@ u8 func_0810329C(u16 a) {
             break;
         case 5:
             if (gUnk_020358C8[i].unk_44 != 0) {
-                if (func_08005B34(&gUnk_020358C8[i].unk_18) == 3 || func_08005B34(&gUnk_020358C8[i].unk_18) == 8) {
+                if (AnimGetFrame(&gUnk_020358C8[i].unk_18) == 3 || AnimGetFrame(&gUnk_020358C8[i].unk_18) == 8) {
                     ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
                     ReleaseObjTiles(gUnk_020358C8[i].unk_10);
                     gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09611AB8, 0x20);
@@ -836,12 +836,12 @@ u8 func_0810329C(u16 a) {
                 gUnk_020358C8[i].unk_38 = 7;
 
                 for (k = 0; k < 8; k++) {
-                    arg0.unk_00 = gUnk_020358C8[i].unk_3C >> 8;
-                    arg0.unk_02 = gUnk_020358C8[i].unk_40 >> 8;
+                    arg0.x = gUnk_020358C8[i].unk_3C >> 8;
+                    arg0.y = gUnk_020358C8[i].unk_40 >> 8;
                     arg0.unk_04 = gUnk_02035A40;
                     arg0.unk_08 = GetRandom() % 96 - 48;
                     arg0.unk_0C = GetRandom() % 256 + 0x1C0;
-                    TaskCreate(&gUnk_02035A70[i], gUnk_09EF9650, &arg0);
+                    TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg0);
                 }
             }
 
@@ -850,12 +850,12 @@ u8 func_0810329C(u16 a) {
             ApproachValue(&gUnk_020358C8[i].unk_40, 0x4600, gUnk_020358C8[i].unk_44);
             f = gFrameCounter & 0x1F;
             if (f == 0) {
-                arg0.unk_00 = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
-                arg0.unk_02 = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
+                arg0.x = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
+                arg0.y = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
                 arg0.unk_04 = gUnk_02035A40;
                 arg0.unk_08 = 0x80;
                 arg0.unk_0C = f;
-                TaskCreate(&gUnk_02035A70[i], gUnk_09EF9650, &arg0);
+                TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg0);
             }
 
             if (--gUnk_020358C8[i].unk_44 == 0) {
@@ -878,12 +878,12 @@ u8 func_0810329C(u16 a) {
             if (gUnk_020358C8[i].unk_46 != 0) {
                 g = gFrameCounter & 0x1F;
                 if (g == 0) {
-                    arg1.unk_00 = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
-                    arg1.unk_02 = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
+                    arg1.x = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
+                    arg1.y = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
                     arg1.unk_04 = gUnk_02035A40;
                     arg1.unk_08 = 0x80;
                     arg1.unk_0C = g;
-                    TaskCreate(&gUnk_02035A70[i], gUnk_09EF9650, &arg1);
+                    TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg1);
                 }
             }
 
@@ -913,12 +913,12 @@ u8 func_0810329C(u16 a) {
             if (gUnk_020358C8[i].unk_46 != 0) {
                 h = gFrameCounter & 0x1F;
                 if (h == 0) {
-                    arg2.unk_00 = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
-                    arg2.unk_02 = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
+                    arg2.x = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
+                    arg2.y = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
                     arg2.unk_04 = gUnk_02035A40;
                     arg2.unk_08 = 0x80;
                     arg2.unk_0C = h;
-                    TaskCreate(&gUnk_02035A70[i], gUnk_09EF9650, &arg2);
+                    TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg2);
                 }
             }
 
@@ -1268,9 +1268,9 @@ void mode_ms_shop_0(void) {
     p = &gUnk_02035C00;
     size = 0x500;
     *p = EwramAlloc(size);
-    func_08001F98();
+    SpriteReset();
     func_08006120(0, 16);
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 28, 0);
     SetupBg(1, 0, 29, 0);
     SetupBg(2, 0, 30, 0);
@@ -1282,10 +1282,10 @@ void mode_ms_shop_0(void) {
     gUnk_02035B02 = 0;
     gUnk_02035B04 = 0;
     gUnk_02035B10 = 0;
-    gUnk_02035B00 = func_081027B4(gUnk_02039BB0.floor);
+    gUnk_02035B00 = func_081027B4(gGameState.floor);
     LoadBgPalette(0, gUnk_09A3D87C, 0x1A0);
     LoadBgTiles(0, gUnk_09A1251C, 0x6860);
-    func_08101588(func_08101518(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+    func_08101588(GetMooglePoints(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
     LoadBgMap(0, gUnk_09A382DC, size);
     func_08103CD8(gUnk_02035B04);
 
@@ -1340,7 +1340,7 @@ void mode_ms_shop_1(void) {
         if (func_0810329C(0) == 0) {
             func_08102DC8();
             func_0810264C(gUnk_0203C590[6], gUnk_02035B08[gUnk_02035B04], gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0]);
-            gUnk_02035B00 = func_081027B4(gUnk_02039BB0.floor);
+            gUnk_02035B00 = func_081027B4(gGameState.floor);
             LoadBgMap(0, gUnk_09A382DC, 0x500);
 
             if (gUnk_02035B04 > 0) {
@@ -1365,7 +1365,7 @@ void mode_ms_shop_1(void) {
                 DisableBg(1);
             }
             
-            func_08101588(func_08101518(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+            func_08101588(GetMooglePoints(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
             DisableBg(3);
             func_080061E8(0, 8);
             gUnk_02035B02 = gUnk_02035B00 != 0 ? 3 : 1;
@@ -1374,7 +1374,7 @@ void mode_ms_shop_1(void) {
     case 5:
         if (func_08006314() == 0) {
             if (gUnk_02035C0C != 0) {
-                ModeRequest(&gUnk_09EF95E8, 2);
+                ModeRequest(&gModeMsTop, 2);
             } else {
                 func_080E04EC();
             }

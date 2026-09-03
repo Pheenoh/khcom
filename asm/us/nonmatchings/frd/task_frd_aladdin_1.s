@@ -335,7 +335,7 @@ _0804959C:
 	movs r2, #0x98
 	lsls r2, r2, #0x01
 	adds r0, r6, r2
-	bl func_08005B34
+	bl AnimGetFrame
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x00

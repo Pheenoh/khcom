@@ -3,7 +3,7 @@
 
 void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     SetupBg(1, 0, 23, 12);
-    work->unk_02 = arg;
+    work->angle = arg;
     work->unk_00 = 0;
     DisableBg(1);
     PushPaletteEffect(0);
@@ -12,7 +12,7 @@ void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     SetBgPriority(1, 0);
     SetBgBlend(1, 16, 16);
 
-    switch (work->unk_02) {
+    switch (work->angle) {
     case 0xAD:
         LoadBgTiles(1, gUnk_08ED21E4, 0x4AC0);
         SetBgScroll(1, -35, -23);
@@ -33,7 +33,7 @@ void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
 }
 
 u8 task_romcri_eff_1(RomcriEffWork* work) {
-    switch (work->unk_02) {
+    switch (work->angle) {
     case 0xAD:
         switch (work->unk_00) {
         case 0:
@@ -170,7 +170,7 @@ void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg) {
     SetupBg(1, 0, 23, 12);
     work->unk_00 = 0;
     work->unk_03 = 0;
-    work->unk_02 = arg;
+    work->angle = arg;
     DisableBg(1);
     PushPaletteEffect(0);
     LoadBgPalette(1, gUnk_08F6DA04, 0x20);
@@ -179,8 +179,8 @@ void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg) {
     SetBgBlend(1, 16, 16);
     LoadBgTiles(1, gUnk_08EE3064, 0xA20);
 
-    if (gUnk_02039BB0.flags & 8) {
-        switch (work->unk_02) {
+    if (gGameState.flags & 8) {
+        switch (work->angle) {
         case 0x2D:
             SetBgScroll(1, -100, 4);
             break;
@@ -195,7 +195,7 @@ void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg) {
             break;
         }
     } else {
-        switch (work->unk_02) {
+        switch (work->angle) {
         case 0x2D:
             SetBgScroll(1, -100, -6);
             break;

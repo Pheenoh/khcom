@@ -9,11 +9,11 @@ extern UnkStruct_02039DC8* gUnk_02039DC8;
 
 typedef struct EvtObj {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
-    u16 unk_14;
+    u16 flags;
     u16 unk_16;
     void* unk_18;
     u16 unk_1C;
@@ -35,16 +35,16 @@ typedef struct EvtObjParam {
 } EvtObjParam;
 
 typedef struct EvtObjWork {
-    EvtObj* unk_00;
-    void* unk_04;
-    u16* unk_08;
-    u8 unk_0C[0x18];
+    EvtObj* obj;
+    void* tiles;
+    u16* palette;
+    u8 anim[0x18];
     u8 unk_24[0x14];
 } EvtObjWork;
 
 typedef struct EvtShadowWork {
-    void* unk_00;
-    EvtObj* unk_04;
+    void* palette;
+    EvtObj* obj;
     void* unk_08;
     void* unk_0C;
     void* unk_10;

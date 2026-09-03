@@ -7,7 +7,7 @@
 typedef struct PcAcdDmgWork {
     s16 unk_00;
     s16 unk_02;
-    UnkStruct_02039B84* unk_04;
+    BtlWork* unk_04;
     u8 unk_08;
     u8 unk_09[0x3];
 } PcAcdDmgWork;
@@ -29,7 +29,7 @@ typedef struct PcCharaWork {
     u8 unk_192[0x2];
 } PcCharaWork;
 
-void task_pc_acddmg_0(PcAcdDmgWork* work, UnkStruct_02039B84* obj);
+void task_pc_acddmg_0(PcAcdDmgWork* work, BtlWork* obj);
 s32 task_pc_acddmg_1(PcAcdDmgWork* work);
 void func_08049E70(PcCharaWork* work, s16 a, s32 b);
 void func_08049EE4(PcCharaWork* work, s32 a, s32 b);

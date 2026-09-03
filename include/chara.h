@@ -19,7 +19,7 @@ typedef struct MaskFadeWork {
     s8 unk_04C[0x1F4];
 } MaskFadeWork;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x32];
     u16 hp;
     u8 unk_034[0xC4];
@@ -35,7 +35,7 @@ typedef struct UnkStruct_02039BB0 {
     u32 unk_118;
     u8 unk_11C[0x6A];
     u8 unk_186[0x34];
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct CharaLinkData {
     u16 unk_00;
@@ -239,13 +239,13 @@ void func_08083D68(void);
 void func_08083DD4(void);
 
 extern s16 gSineTable[];
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern CharaLinkData gUnk_0203AAC0;
 extern u16 gUnk_0203AA10[];
 extern u16 gUnk_0203A9EC;
 extern u16 gUnk_0203A9F0;
 extern u32 gFrameCounter;
-extern Mode gUnk_09EF15B8;
+extern Mode gModeSioError;
 extern u16 gUnk_0203982C[];
 extern u32 gSioPlayerId;
 extern u8 gUnk_020397FC;

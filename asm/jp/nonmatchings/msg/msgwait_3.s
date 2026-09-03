@@ -1,9 +1,9 @@
 .syntax unified
 	.align 2, 0
-	.global func_08074040
+	.global msgwait_3
 	.thumb
 	.thumb_func
-	.type func_08074040, %function
-func_08074040:
+	.type msgwait_3, %function
+msgwait_3:
 	.incbin "roms/B8CJ.gba", 0x73e98, 0x28
 .syntax divided

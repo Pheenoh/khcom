@@ -69,7 +69,7 @@ _08036430:
 	strh r4, [r0, #0x00]
 	ldr r1, _08036474 @ =0x08035AD5
 	mov r0, r10
-	bl func_08000F8C
+	bl SetTaskUpdate
 	adds r0, r7, #0x0
 	adds r0, #0x24
 	bl TaskPoolUpdate
@@ -105,7 +105,7 @@ _08036478:
 	strh r1, [r0, #0x00]
 	ldr r1, _08036498 @ =0x08034A0D
 	mov r0, r10
-	bl func_08000F8C
+	bl SetTaskUpdate
 	b _0803694C
 _08036498: .4byte 0x08034A0D
 _0803649C:
@@ -239,7 +239,7 @@ _0803653C:
 	str r3, [r2, #0x00]
 	ldr r1, _080365BC @ =0x08034C89
 	mov r0, r10
-	bl func_08000F8C
+	bl SetTaskUpdate
 	adds r0, r7, #0x0
 	adds r0, #0xAC
 	ldr r0, [r0, #0x00]
@@ -266,7 +266,7 @@ _080365C0:
 	str r0, [r3, #0x00]
 	ldr r1, _080365EC @ =0x08035DFD
 	mov r0, r10
-	bl func_08000F8C
+	bl SetTaskUpdate
 	b _08036602
 _080365E8: .4byte 0x02039BA0
 _080365EC: .4byte 0x08035DFD
@@ -366,7 +366,7 @@ _08036698:
 	str r1, [r0, #0x68]
 	ldr r1, _080366B0 @ =0x080353DD
 	mov r0, r10
-	bl func_08000F8C
+	bl SetTaskUpdate
 	b _080368C2
 	.byte 0x00, 0x00
 _080366AC: .4byte 0x02039BA0
@@ -672,7 +672,7 @@ _080368DA:
 	str r0, [r3, #0x00]
 	ldr r1, _08036918 @ =0x08034C89
 	mov r0, r10
-	bl func_08000F8C
+	bl SetTaskUpdate
 	b _08036928
 	.byte 0x00, 0x00
 _08036914: .4byte 0x02039BA0

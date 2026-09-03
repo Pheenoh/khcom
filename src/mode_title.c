@@ -3,10 +3,10 @@
 
 u32 gUnk_02034E98;
 u32 gUnk_02034E9C;
-TaskPool gUnk_02034EA0;
-Task* gUnk_02034EB4;
-Task* gUnk_02034EB8;
-Task* gUnk_02034EBC;
+TaskPool gTitleTaskPool;
+Task* gTitleMenuTask;
+Task* gTitleLogoTask;
+Task* gTitleObjTask;
 u16 gUnk_02034EC0;
 s16 gUnk_02034EC2;
 u8* gUnk_02034EC4;
@@ -24,11 +24,11 @@ void mode_title_0(void) {
     func_08093C04();
     gUnk_02034EC2 = 0;
     gUnk_02034EC4 = EwramAlloc(0x400);
-    func_08004E64();
+    SetBgMode1();
     SetupBg(0, 0, 0x1D, 0);
     SetBgPriority(0, 3);
 
-    if (gUnk_02039BB0.flags & 0x200) {
+    if (gGameState.flags & 0x200) {
         LoadBgMap(0, gUnk_09840798, 0x800);
     } else {
         LoadBgMap(0, gUnk_0983E398, 0x800);
@@ -37,7 +37,7 @@ void mode_title_0(void) {
     SetupBg(1, 0, 0x1E, 0);
     SetBgPriority(1, 3);
 
-    if (gUnk_02039BB0.flags & 0x200) {
+    if (gGameState.flags & 0x200) {
         LoadBgTiles(1, gUnk_097D3658, 0x7FA0);
         LoadBgMap(1, gUnk_09840F98, 0x800);
     } else {
@@ -56,10 +56,10 @@ void mode_title_0(void) {
     gUnk_0203C548 = 0x7800;
     gUnk_0203C54C = 0x5A00;
     gUnk_0203C544 = 0x1000;
-    func_08005690(2, 0, gUnk_0203C544 >> 4, gUnk_0203C544 >> 4, gUnk_0203C548, gUnk_0203C54C);
-    TaskPoolInit(&gUnk_02034EA0, 4);
-    gUnk_02034EB8 = 0;
-    gUnk_02034EBC = 0;
+    SetBgAffine(2, 0, gUnk_0203C544 >> 4, gUnk_0203C544 >> 4, gUnk_0203C548, gUnk_0203C54C);
+    TaskPoolInit(&gTitleTaskPool, 4);
+    gTitleLogoTask = 0;
+    gTitleObjTask = 0;
     func_08006120(0, 0x4C);
     gUnk_02034E98 = 0;
     m4aSongNumStart(0);
@@ -86,14 +86,14 @@ void mode_title_1(void) {
         gUnk_02034EC0 = 100;
         break;
     case 1:
-        if (gUnk_02039BB0.flags & 0x200) {
+        if (gGameState.flags & 0x200) {
             ApproachValue(&gUnk_0203C548, 0x3F3F, gUnk_02034EC0);
         } else {
             ApproachValue(&gUnk_0203C548, 0xB0C1, gUnk_02034EC0);
         }
         ApproachValue(&gUnk_0203C54C, 0x6A37, gUnk_02034EC0);
         ApproachValue(&gUnk_0203C544, 0xBD0, gUnk_02034EC0);
-        func_08005690(2, 0, gUnk_0203C544 / 16, gUnk_0203C544 / 16, gUnk_0203C548, gUnk_0203C54C);
+        SetBgAffine(2, 0, gUnk_0203C544 / 16, gUnk_0203C544 / 16, gUnk_0203C548, gUnk_0203C54C);
         gUnk_02034EC0--;
         if (gUnk_02034EC0 == 0x46) {
             func_080C75A4(1, 0x46);
@@ -165,15 +165,15 @@ void mode_title_1(void) {
             gUnk_02034EC2 = 3;
         } else if (SaveRepairFileLarge(0) == 2 || SaveRepairFileLarge(1) == 2) {
             gUnk_02034EC2 = 1;
-        } else if ((gUnk_02039BB0.flags & 0x20) &&
+        } else if ((gGameState.flags & 0x20) &&
                    (SaveRepairFileSmall(0) == 2 || SaveRepairFileSmall(1) == 2)) {
             gUnk_02034EC2 = 1;
         } else {
             gUnk_02034EC2 = 0;
         }
-        func_08000DE8(&gUnk_02034EA0, gUnk_02034EB8);
-        func_08000DE8(&gUnk_02034EA0, gUnk_02034EBC);
-        gUnk_02034EB4 = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E90, &gUnk_02034EC2);
+        func_08000DE8(&gTitleTaskPool, gTitleLogoTask);
+        func_08000DE8(&gTitleTaskPool, gTitleObjTask);
+        gTitleMenuTask = TaskCreate(&gTitleTaskPool, &gTaskDescTitleMenu, &gUnk_02034EC2);
         DisableBg(0);
         gUnk_02034E98 = 6;
         gUnk_02034EC8 = 0;
@@ -206,9 +206,9 @@ void mode_title_1(void) {
 
         if (gUnk_02034EC8 > 15) {
             gBldCnt = 0;
-            func_08000DE8(&gUnk_02034EA0, gUnk_02034EB4);
-            gUnk_02034EB8 = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E60, 0);
-            gUnk_02034EBC = TaskCreate(&gUnk_02034EA0, &gUnk_09EF4E78, 0);
+            func_08000DE8(&gTitleTaskPool, gTitleMenuTask);
+            gTitleLogoTask = TaskCreate(&gTitleTaskPool, &gTaskDescTitleLogo, 0);
+            gTitleObjTask = TaskCreate(&gTitleTaskPool, &gTaskDescTitleObj, 0);
             EnableBg(0);
             gUnk_02034E98 = 5;
         }
@@ -240,9 +240,9 @@ void mode_title_1(void) {
     }
 
     if (!func_08006314() && gUnk_02034E98 != 6) {
-        TaskPoolUpdate(&gUnk_02034EA0);
+        TaskPoolUpdate(&gTitleTaskPool);
     }
-    TaskPoolDraw(&gUnk_02034EA0);
+    TaskPoolDraw(&gTitleTaskPool);
     func_080C73D8();
 
     if (gUnk_02034E98 <= 4 && (GetKeysPressed() & 9)) {
@@ -257,7 +257,7 @@ void mode_title_1(void) {
 }
 
 void mode_title_2(void) {
-    TaskPoolDestroy(&gUnk_02034EA0);
+    TaskPoolDestroy(&gTitleTaskPool);
     REG_IME = 0;
     REG_IE &= 0xFFFB;
     REG_DISPSTAT &= 0xFFDF;
@@ -284,7 +284,7 @@ void func_080D62A8(TitleLogoWork* work) {
     work->unk_00[0].unk_00 = LoadObjTiles(gUnk_0976E9F4, 0x240);
     work->unk_00[0].unk_08 = gUnk_09EF659C;
 
-    if (gUnk_02039BB0.flags & 0x200) {
+    if (gGameState.flags & 0x200) {
         work->unk_00[1].unk_00 = LoadObjTiles(gUnk_09776076, 0x43C0);
         work->unk_00[1].unk_08 = gUnk_09EF669C;
         work->unk_00[1].unk_04 = LoadObjPalette(gUnk_0984AA18, 0x20);

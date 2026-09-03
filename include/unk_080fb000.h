@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-typedef struct GaAnimState {
+typedef struct AnimState {
     void** unk_00;
     u32* unk_04;
     u16 unk_08;
@@ -13,22 +13,22 @@ typedef struct GaAnimState {
     u16 unk_10;
     u16 unk_12;
     void* unk_14;
-} GaAnimState;
+} AnimState;
 
-typedef struct GaListNode {
+typedef struct ListNode {
     void* unk_00;
     u8 unk_04[0x4];
-    struct GaListNode* unk_08;
+    struct ListNode* unk_08;
     u16 unk_0C;
     u8 unk_0E[0x2];
-} GaListNode;
+} ListNode;
 
-typedef struct GaTaskPool {
-    GaListNode head;
+typedef struct TaskPool {
+    ListNode head;
     void* unk_10;
-} GaTaskPool;
+} TaskPool;
 
-typedef struct GaEntry {
+typedef struct GaEntryWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -55,15 +55,15 @@ typedef struct GaEntry {
     u16 unk_15A;
     s16 unk_15C;
     u8 unk_15E[0xE];
-    GaTaskPool unk_16C;
-    GaAnimState unk_180;
+    TaskPool unk_16C;
+    AnimState unk_180;
     void* unk_198;
-    void* unk_19C;
+    void* gfx;
     u32 unk_1A0;
     u8 unk_1A4;
     u8 unk_1A5;
     s16 unk_1A6;
-} GaEntry;
+} GaEntryWork;
 
 typedef struct GaWork {
     s32 unk_000;
@@ -71,10 +71,10 @@ typedef struct GaWork {
     u8 unk_008[0x10];
     s32 unk_018;
     u8 unk_01C[0x4];
-    GaEntry entries[6];
-    GaAnimState unk_A10;
-    u8 unk_A28[0x4];
-    void* unk_A2C;
+    GaEntryWork entries[6];
+    AnimState unk_A10;
+    u8 tiles[0x4];
+    void* gfx;
     u8 unk_A30[0x1C];
     s32 unk_A4C;
     u16 unk_A50;
@@ -82,32 +82,32 @@ typedef struct GaWork {
     u8 unk_A53;
 } GaWork;
 
-typedef struct GaB84 {
+typedef struct BtlWork {
     u8 unk_000[0x7C];
     s32* unk_07C;
     u8 unk_080[0x4C];
     s32 unk_0CC;
-} GaB84;
+} BtlWork;
 
-extern GaB84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern s16 gSineTable[];
 
 u16 GetRandom(void);
-void* AnimUpdate(GaAnimState* a);
-void TaskPoolUpdate(GaTaskPool* a);
+void* AnimUpdate(AnimState* a);
+void TaskPoolUpdate(TaskPool* a);
 void ApproachAngle(u16* a, s32 b, s32 c);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 u8 func_080128EC(void);
 void func_08013DB8(s32 a, s32 b, s32 c, s32 d);
-s32 func_0801ADAC(GaEntry* e);
+s32 func_0801ADAC(GaEntryWork* e);
 void func_0801AF08(void* a);
-void func_0801AF4C(GaEntry* e);
+void func_0801AF4C(GaEntryWork* e);
 void _0801C1F8(s32 a, s32 b, s32 c, s32 d);
 void func_0801C2DC(void* a, s32 b);
-void func_080F7E84(GaEntry* e);
+void func_080F7E84(GaEntryWork* e);
 void func_080F7F54(GaWork* work, s32 state);
-void func_080F8374(GaEntry* e);
+void func_080F8374(GaEntryWork* e);
 
-void func_080FB000(GaWork* work, GaEntry* e);
+void func_080FB000(GaWork* work, GaEntryWork* e);
 
 #endif /* GUARD_UNK_080FB000_H */

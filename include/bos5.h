@@ -5,7 +5,7 @@
 #include "taskpool.h"
 #include "anim.h"
 
-typedef struct MdB84 {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -73,9 +73,9 @@ typedef struct MdB84 {
     u8 unk_100[0xC8];
     s16 unk_1C8;
     u8 unk_1CA[0x06];
-} MdB84;
+} BtlWork;
 
-extern MdB84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
@@ -163,14 +163,14 @@ typedef struct MdSub {
 } MdSub;
 
 typedef struct MdHahenWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_00C;
     s32 unk_010;
     s32 unk_014;
-    u32 unk_018;
-    u32 unk_01C;
+    u32 palette;
+    u32 tiles;
     u32 unk_020;
     u16 unk_024;
     u8 unk_026[0x2];
@@ -181,14 +181,14 @@ typedef struct MdDaiTarget {
 } MdDaiTarget;
 
 typedef struct MdDaiWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_00C;
     s16 unk_010;
     u8 unk_012[0x2];
-    u32 unk_014;
-    u32 unk_018;
+    u32 palette;
+    u32 tiles;
     u32 unk_01C;
     u8 unk_020[0x58];
     MdDaiTarget* unk_078;
@@ -209,15 +209,15 @@ typedef struct MdFireWork {
     u8 unk_00A[0x2];
     u32 unk_00C;
     u32 unk_010;
-    u32 unk_014;
-    AnimState unk_018;
+    u32 tiles;
+    AnimState anim;
     u32 unk_030;
     s16 unk_034;
     u8 unk_036[0x2];
     MdSub unk_038;
-    s32 unk_148;
-    s32 unk_14C;
-    s32 unk_150;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_154;
     s32 unk_158;
     s16 unk_15C;
@@ -271,8 +271,8 @@ typedef struct GaWork {
     u8 unk_01D[0x3];
     GaEntryWork entries[6];
     u8 unk_A10[0x18];
-    u32 unk_A28;
-    u8 unk_A2C[0x4];
+    u32 tiles;
+    u8 gfx[0x4];
     u8* unk_A30;
     u8* unk_A34;
     u8 unk_A38[0x14];
@@ -389,16 +389,16 @@ void task_bos_md_dai_3(MdDaiWork* work);
 void func_080FB8E8(MdWork* work, u16 index);
 void func_080FB908(MdWork* work, u16 index);
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x8];
     u32 flags;
     u8 unk_00C[0x16E];
     u16 unk_17A;
     u8 unk_17C[0x4];
     u16 unk_180;
-} UnkStruct_02039BB0;
+} GameState;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u8 gUnk_09A02EFC[];
 extern u8 gUnk_09A020FC[];
 
@@ -445,13 +445,13 @@ extern u8 gUnk_09A3C99C[];
 extern u8 gUnk_099E367C[];
 extern u8 gUnk_09EF9BC0[];
 extern u8 gUnk_09EF9BB0[];
-extern u8 gUnk_09EF8EDC[];
+extern u8 gTaskDescBosMdFire[];
 void task_bos_md_dai_2(MdDaiWork* work);
 extern u8 gUnk_09999E0C[];
 extern u8 gUnk_09999E1C[];
-void func_08012658(void* a, u16 b);
+void ColliderSetHeight(void* a, u16 b);
 void m4aSongNumStart(u16 n);
-extern u8 gUnk_09EF8F0C[];
+extern u8 gTaskDescBosMdHahen[];
 u8 task_bos_ga_1(GaWork* work);
 void func_080FB000(GaWork* work, GaEntryWork* p);
 void func_080F7F54(GaWork* work, s32 b);
@@ -509,7 +509,7 @@ void func_080FE47C(void);
 extern u8 gUnk_09A315DC[];
 extern u8 gUnk_09A31FDC[];
 void mode_worldselect_0(void);
-void func_08001F98(void);
+void SpriteReset(void);
 void func_08006120(s32 a, u16 b);
 void* EwramAlloc(s32 size);
 void func_080065FC(s32 a, s32 b, s32 c);
@@ -583,22 +583,22 @@ void func_080FDB1C(s16 model, s16 n);
 void mode_worldselect_2(void);
 void EwramFree(void* p);
 void func_080FE89C(void);
-void func_08004E64(void);
+void SetBgMode1(void);
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 void func_080FE900(void);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 extern void* gUnk_09EF8F24[];
 void* func_080038C8(u16 a);
 void TaskPoolInit(void* pool, s32 count);
-extern u8 gUnk_09EF8EC4[];
+extern u8 gTaskDescBosMdMap[];
 extern u8 gUnk_099920E8[];
 extern u8 gUnk_099D42FC[];
 extern u8 gUnk_099920D8[];
 void TaskPoolUpdate(void* a);
-extern u8 gUnk_09EF8EF4[];
+extern u8 gTaskDescBosMdDai[];
 void func_0801853C(s32 a, s32 b, s32 c, s32 d);
 void func_0802F1E8(void);
 void func_08019A30(void);

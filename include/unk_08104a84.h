@@ -24,12 +24,12 @@ typedef struct MsCardDef {
     u8 unk_2B[0x9];
 } MsCardDef;
 
-typedef struct MsCardBack {
+typedef struct CardBack {
     void* unk_00;
     u8 unk_04[0x8];
     void* unk_0C;
     u8 unk_10[0x8];
-} MsCardBack;
+} CardBack;
 
 typedef struct MsCard {
     u16 unk_00;
@@ -44,7 +44,7 @@ typedef struct MsCard {
 extern u16 gCardCollection[];
 extern u16 gCardCount;
 extern s16 gSineTable[];
-extern MsCardBack gUnk_08F709B0[];
+extern CardBack gUnk_08F709B0[];
 extern MsCardDef gCardDefs[];
 extern u8 gUnk_099A7C64[];
 extern u8 gUnk_09A1DB9C[];
@@ -77,7 +77,7 @@ void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s16 func_08084BAC(void);
 s16 func_08084BF0(void);
 void func_080850B0(u16* p);
-u32 func_08101518(void);
+u32 GetMooglePoints(void);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
 u8 func_0810155C(u32 a);
 void m4aSongNumStart(u16 song);

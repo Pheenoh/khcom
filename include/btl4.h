@@ -3,7 +3,7 @@
 
 #include "types.h"
 #include "anim.h"
-typedef struct BtlActor {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -15,21 +15,21 @@ typedef struct BtlActor {
     u8 unk_040[0x28];
     u64 unk_068;
     u8 unk_070[0x08];
-    struct BtlActor* unk_078;
-    struct BtlActor* unk_07C;
+    struct BtlWork* unk_078;
+    struct BtlWork* unk_07C;
     u8 unk_080[0x22];
     s16 unk_0A2;
     u8 unk_0A4[0x50];
     s32 unk_0F4;
-} BtlActor;
+} BtlWork;
 
-typedef struct BtlSetup {
+typedef struct GameState {
     u8 unk_000[0x100];
     u32 exp;
     u32 nextExp;
     u8 level;
     u8 unk_109[0x03];
-} BtlSetup;
+} GameState;
 
 typedef struct BtlEffect {
     u16 unk_00;
@@ -46,27 +46,27 @@ typedef struct BtlEffect {
 } BtlEffect;
 
 typedef struct BtlPopSrc {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_0C[0x06];
     s16 unk_12;
 } BtlPopSrc;
 
 typedef struct BtlPopCbWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
+    s32 x;
+    s32 y;
+    s32 z;
     s16 unk_18;
     u8 unk_1A[0x02];
 } BtlPopCbWork;
 
 typedef struct BtlExpWork {
-    void* unk_00;
-    void* unk_04;
+    void* palette;
+    void* tiles;
     void* unk_08[6];
     void* unk_20;
     void* unk_24[6];
@@ -80,10 +80,10 @@ typedef struct BtlExpWork {
 } BtlExpWork;
 
 typedef struct BtlVslockonWork {
-    void* unk_00;
-    void* unk_04;
-    AnimState unk_08;
-    void* unk_20;
+    void* tiles;
+    void* palette;
+    AnimState anim;
+    void* gfx;
 } BtlVslockonWork;
 
 typedef struct BtlHpothWork {
@@ -111,9 +111,9 @@ typedef struct BtlHpothWork {
     u32 unk_68;
 } BtlHpothWork;
 
-extern BtlActor* gUnk_02039B84;
-extern BtlActor* gUnk_02039B9C;
-extern BtlSetup gUnk_02039BB0;
+extern BtlWork* gBtlWork;
+extern BtlWork* gUnk_02039B9C;
+extern GameState gGameState;
 extern u16 gDispCnt;
 
 extern u8 gUnk_08B1D8BC[];

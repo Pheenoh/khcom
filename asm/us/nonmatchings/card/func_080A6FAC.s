@@ -12,7 +12,7 @@ func_080A6FAC: @ 080A6FAC
 	ldr r6, _080A6FCC @ =0x0000FFFF
 	ldr r1, _080A6FD0 @ =0x00000434
 	adds r0, r5, r1
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _080A700A
@@ -26,7 +26,7 @@ _080A6FD4: .4byte 0x000004CA
 _080A6FD8:
 	adds r0, r2, #0x0
 	adds r0, #0x2C
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _080A700A

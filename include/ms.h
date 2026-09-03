@@ -4,8 +4,8 @@
 #include "types.h"
 
 typedef struct MsShopHosiArg {
-    s16 unk_00;
-    s16 unk_02;
+    s16 x;
+    s16 y;
     void* unk_04;
     u8 unk_08;
     u8 unk_09[0x3];
@@ -13,16 +13,16 @@ typedef struct MsShopHosiArg {
 } MsShopHosiArg;
 
 typedef struct MsShopHosiWork {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 velX;
+    s32 velY;
     s16 unk_10;
     s16 unk_12;
     s16 unk_14;
     u8 unk_16[0x2];
     void* unk_18;
-    void* unk_1C;
+    void* tiles;
 } MsShopHosiWork;
 
 u16 GetRandom(void);

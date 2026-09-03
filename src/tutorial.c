@@ -11,16 +11,16 @@ void task_tutorial_0(TutorialWork* work, s32 arg1) {
     work->unk_004 = 0;
     work->unk_00E = 120;
     work->unk_008 = arg1 == 0 ? 5 : 0x2B;
-    gUnk_02039B84->unk_068 |= 0x1000000000ULL;
-    gUnk_02039B84->unk_068 |= 0x100000000000ULL;
-    gUnk_02039B84->unk_068 |= 0x200000000000ULL;
-    gUnk_02039B84->unk_068 |= 0x2000000000ULL;
-    gUnk_02039B84->unk_068 |= 0x4000000000ULL;
-    gUnk_02039B84->unk_068 |= 0x8000000000ULL;
-    gUnk_02039B84->unk_068 |= 0x4000000000000ULL;
-    gUnk_02039B84->unk_068 |= 0x10000000000ULL;
-    work->unk_018 = AllocObjTiles(0x100, gUnk_08B263D2);
-    work->unk_01C = LoadObjPalette(gUnk_08F69BA4, 32);
+    gBtlWork->unk_068 |= 0x1000000000ULL;
+    gBtlWork->unk_068 |= 0x100000000000ULL;
+    gBtlWork->unk_068 |= 0x200000000000ULL;
+    gBtlWork->unk_068 |= 0x2000000000ULL;
+    gBtlWork->unk_068 |= 0x4000000000ULL;
+    gBtlWork->unk_068 |= 0x8000000000ULL;
+    gBtlWork->unk_068 |= 0x4000000000000ULL;
+    gBtlWork->unk_068 |= 0x10000000000ULL;
+    work->tiles = AllocObjTiles(0x100, gUnk_08B263D2);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     AnimInit(work->unk_020, gUnk_09EE15F0, gUnk_09EE15C0);
     AnimStart(work->unk_020, 0, 1);
     SeedRandom(2);
@@ -37,7 +37,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
         break;
     case 1:
-        gUnk_02039B84->unk_072 = 8;
+        gBtlWork->unk_072 = 8;
 
         if (work->unk_00C > 20) {
             work->unk_004 = 2;
@@ -47,7 +47,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
         break;
     case 2:
-        gUnk_02039B84->unk_072 = 8;
+        gBtlWork->unk_072 = 8;
 
         if (work->unk_00C == 0) {
             if (func_080128EC() != 0) {
@@ -66,7 +66,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         work->unk_00C = 0;
         break;
     case 3:
-        gUnk_02039B84->unk_072 = 8;
+        gBtlWork->unk_072 = 8;
 
         if (work->unk_00C > 20) {
             work->unk_004 = 4;
@@ -76,7 +76,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
         break;
     case 4:
-        gUnk_02039B84->unk_072 = 8;
+        gBtlWork->unk_072 = 8;
 
         if (func_080128EC() != 0) {
             break;
@@ -90,7 +90,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 6:
         if (work->unk_00C == 0) {
-            func_0809B644(gUnk_02039B84->unk_02C, 320, 0x181, 0, 1);
+            func_0809B644(gBtlWork->unk_02C, 320, 0x181, 0, 1);
         }
 
         if (work->unk_00C > 120) {
@@ -108,15 +108,15 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 10:
         if (work->unk_00C == 0) {
-            gUnk_02039B84->unk_068 &= ~0x1000000000ULL;
+            gBtlWork->unk_068 &= ~0x1000000000ULL;
         }
 
-        if (!(gUnk_02039B84->unk_068 & 0x20000000000ULL)) {
+        if (!(gBtlWork->unk_068 & 0x20000000000ULL)) {
             work->unk_00C++;
             break;
         }
         func_0805DAEC();
-        gUnk_02039B84->unk_068 &= ~0x20000000000ULL;
+        gBtlWork->unk_068 &= ~0x20000000000ULL;
         work->unk_004 = 11;
         work->unk_00C = 0;
         break;
@@ -136,20 +136,20 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 14:
         if (work->unk_00C == 10) {
-            gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
+            gBtlWork->unk_068 &= ~0x2000000000ULL;
         }
 
-        if (!(gUnk_02039B84->unk_068 & 0x20000000)) {
+        if (!(gBtlWork->unk_068 & 0x20000000)) {
             work->unk_00C++;
             break;
         }
         func_0805DAEC();
-        gUnk_02039B84->unk_068 |= 0x2000000000ULL;
+        gBtlWork->unk_068 |= 0x2000000000ULL;
         work->unk_004 = 15;
         work->unk_00C = 0;
         break;
     case 15:
-        if (gUnk_02039B84->unk_068 & 0x20000000) {
+        if (gBtlWork->unk_068 & 0x20000000) {
             break;
         }
         func_0805DACC(work, 0x4D, 16);
@@ -162,22 +162,22 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 18:
         if (work->unk_00C == 0) {
-            gUnk_02039B84->unk_068 &= ~0x200000000000ULL;
-            gUnk_02039B84->unk_068 &= ~0x100000000000ULL;
+            gBtlWork->unk_068 &= ~0x200000000000ULL;
+            gBtlWork->unk_068 &= ~0x100000000000ULL;
         }
 
-        if (!(gUnk_02039B84->unk_068 & 0x40000000000ULL)) {
+        if (!(gBtlWork->unk_068 & 0x40000000000ULL)) {
             work->unk_00C++;
             break;
         }
 
-        if (!(gUnk_02039B84->unk_068 & 0x80000000000ULL)) {
+        if (!(gBtlWork->unk_068 & 0x80000000000ULL)) {
             work->unk_00C++;
             break;
         }
         func_0805DAEC();
-        gUnk_02039B84->unk_068 &= ~0x40000000000ULL;
-        gUnk_02039B84->unk_068 &= ~0x80000000000ULL;
+        gBtlWork->unk_068 &= ~0x40000000000ULL;
+        gBtlWork->unk_068 &= ~0x80000000000ULL;
         func_0805DAF8(work, 15, 19);
         break;
     case 19:
@@ -193,18 +193,18 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
 
         if (work->unk_00C == 10) {
-            gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
+            gBtlWork->unk_068 &= ~0x2000000000ULL;
         }
 
         if (work->unk_000 & 2) {
-            if (!(gUnk_02039B84->unk_068 & 0x20000000)) {
+            if (!(gBtlWork->unk_068 & 0x20000000)) {
                 if (work->unk_00E == 0) {
                     func_0805DAEC();
                 }
                 work->unk_000 &= ~2;
                 work->unk_00E++;
             }
-        } else if (gUnk_02039B84->unk_068 & 0x20000000) {
+        } else if (gBtlWork->unk_068 & 0x20000000) {
             work->unk_000 |= 2;
         }
 
@@ -212,7 +212,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_00C++;
             break;
         }
-        gUnk_02039B84->unk_068 |= 0x2000000000ULL;
+        gBtlWork->unk_068 |= 0x2000000000ULL;
         func_0805DAF8(work, 30, 22);
         break;
     case 22:
@@ -231,10 +231,10 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
 
         if (work->unk_00C == 10) {
-            gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
+            gBtlWork->unk_068 &= ~0x2000000000ULL;
         }
 
-        if (gUnk_02039B84->unk_068 & 0x20000000) {
+        if (gBtlWork->unk_068 & 0x20000000) {
             work->unk_00C++;
             break;
         }
@@ -243,7 +243,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_00C++;
             break;
         }
-        gUnk_02039B84->unk_068 |= 0x2000000000ULL;
+        gBtlWork->unk_068 |= 0x2000000000ULL;
         func_0805DAF8(work, 60, 27);
         break;
     case 27:
@@ -259,10 +259,10 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 31:
         if (work->unk_00C == 10) {
-            gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
+            gBtlWork->unk_068 &= ~0x2000000000ULL;
         }
 
-        if (gUnk_02039B84->unk_068 & 0x80000000) {
+        if (gBtlWork->unk_068 & 0x80000000) {
             work->unk_00C++;
             break;
         }
@@ -272,7 +272,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             break;
         }
         func_0805DAEC();
-        gUnk_02039B84->unk_068 |= 0x2000000000ULL;
+        gBtlWork->unk_068 |= 0x2000000000ULL;
         func_0805DAF8(work, 30, 32);
         break;
     case 32:
@@ -288,7 +288,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         if (work->unk_00C == 0) {
             work->unk_00E = 0;
             work->unk_010 = 0;
-            gUnk_02039B84->unk_068 &= ~0x4000000000ULL;
+            gBtlWork->unk_068 &= ~0x4000000000ULL;
         }
 
         if (work->unk_010 <= 0) {
@@ -306,7 +306,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
         work->unk_00C = 0;
         work->unk_004 = 36;
-        gUnk_02039B84->unk_068 |= 0x4000000000ULL;
+        gBtlWork->unk_068 |= 0x4000000000ULL;
         func_0805DAEC();
         break;
     case 36:
@@ -321,7 +321,7 @@ s32 task_tutorial_1(TutorialWork* work) {
     case 39:
         if (work->unk_00C == 0) {
             work->unk_00E = 0;
-            gUnk_02039B84->unk_068 &= ~0x10000000000ULL;
+            gBtlWork->unk_068 &= ~0x10000000000ULL;
         }
 
         if (GetKeysPressed() & 4) {
@@ -335,8 +335,8 @@ s32 task_tutorial_1(TutorialWork* work) {
         func_0805DAEC();
         work->unk_00C = 0;
         work->unk_004 = 40;
-        gUnk_02039B84->unk_068 |= 0x10000000000ULL;
-        gUnk_02039B84->unk_068 |= 0x4000000000ULL;
+        gBtlWork->unk_068 |= 0x10000000000ULL;
+        gBtlWork->unk_068 |= 0x4000000000ULL;
         break;
     case 40:
         func_0805DACC(work, 0x5E, 41);
@@ -356,23 +356,23 @@ s32 task_tutorial_1(TutorialWork* work) {
             func_0805DB28(work);
             work->unk_000 &= ~2;
             work->unk_00E = 0;
-            gUnk_02039B84->unk_068 &= ~0x1000000000ULL;
-            gUnk_02039B84->unk_068 &= ~0x100000000000ULL;
-            gUnk_02039B84->unk_068 &= ~0x200000000000ULL;
-            gUnk_02039B84->unk_068 |= 0x100000ULL;
-            gUnk_02039B84->unk_068 |= 0x20000000000ULL;
+            gBtlWork->unk_068 &= ~0x1000000000ULL;
+            gBtlWork->unk_068 &= ~0x100000000000ULL;
+            gBtlWork->unk_068 &= ~0x200000000000ULL;
+            gBtlWork->unk_068 |= 0x100000ULL;
+            gBtlWork->unk_068 |= 0x20000000000ULL;
         }
 
         if (work->unk_00C == 10) {
-            gUnk_02039B84->unk_068 &= ~0x2000000000ULL;
+            gBtlWork->unk_068 &= ~0x2000000000ULL;
         }
 
         if (work->unk_000 & 2) {
-            if (!(gUnk_02039B84->unk_068 & 0x20000000)) {
+            if (!(gBtlWork->unk_068 & 0x20000000)) {
                 work->unk_000 &= ~2;
                 work->unk_00E++;
             }
-        } else if (gUnk_02039B84->unk_068 & 0x20000000) {
+        } else if (gBtlWork->unk_068 & 0x20000000) {
             work->unk_000 |= 2;
         }
 
@@ -382,9 +382,9 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
         work->unk_00C = 0;
         work->unk_004 = 46;
-        gUnk_02039B84->unk_068 |= 0x2000000000ULL;
-        gUnk_02039B84->unk_068 &= ~0x100000ULL;
-        gUnk_02039B84->unk_068 &= ~0x20000000000ULL;
+        gBtlWork->unk_068 |= 0x2000000000ULL;
+        gBtlWork->unk_068 &= ~0x100000ULL;
+        gBtlWork->unk_068 &= ~0x20000000000ULL;
         break;
     case 46:
         if (work->unk_00C > 30) {
@@ -395,11 +395,11 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
         break;
     case 47:
-        if (gUnk_02039B84->unk_068 & 0x20000000) {
+        if (gBtlWork->unk_068 & 0x20000000) {
             break;
         }
 
-        if (gUnk_02039B84->unk_068 & 0x40) {
+        if (gBtlWork->unk_068 & 0x40) {
             break;
         }
         func_0805DACC(work, 0x73, 48);
@@ -437,7 +437,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
 
         if (work->unk_00C == 10) {
-            gUnk_02039B84->unk_068 &= ~0x8000000000ULL;
+            gBtlWork->unk_068 &= ~0x8000000000ULL;
         }
 
         if (work->unk_00E == 0 && func_0807B3E0() != 0) {
@@ -449,7 +449,7 @@ s32 task_tutorial_1(TutorialWork* work) {
             work->unk_00C++;
             break;
         }
-        gUnk_02039B84->unk_068 |= 0x8000000000ULL;
+        gBtlWork->unk_068 |= 0x8000000000ULL;
         work->unk_00C = 0;
         work->unk_004 = 58;
         break;
@@ -461,21 +461,21 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 60:
         if (work->unk_00C == 0) {
-            gUnk_02039B84->unk_068 |= 0x20000000000ULL;
+            gBtlWork->unk_068 |= 0x20000000000ULL;
             work->unk_000 &= ~2;
             work->unk_00E = 0;
         }
 
         if (work->unk_00C == 10) {
-            gUnk_02039B84->unk_068 &= ~0x4000000000000ULL;
+            gBtlWork->unk_068 &= ~0x4000000000000ULL;
         }
 
         if (work->unk_000 & 2) {
-            if (!(gUnk_02039B84->unk_068 & 0x20000000)) {
+            if (!(gBtlWork->unk_068 & 0x20000000)) {
                 work->unk_000 &= ~2;
                 work->unk_00E++;
             }
-        } else if (gUnk_02039B84->unk_068 & 0x20000000) {
+        } else if (gBtlWork->unk_068 & 0x20000000) {
             work->unk_000 |= 2;
 
             if (work->unk_00E == 0) {
@@ -484,8 +484,8 @@ s32 task_tutorial_1(TutorialWork* work) {
         }
 
         if (work->unk_00E > 0) {
-            gUnk_02039B84->unk_068 |= 0x4000000000000ULL;
-            gUnk_02039B84->unk_068 &= ~0x20000000000ULL;
+            gBtlWork->unk_068 |= 0x4000000000000ULL;
+            gBtlWork->unk_068 &= ~0x20000000000ULL;
             func_0805DAF8(work, 30, 61);
         } else {
             work->unk_00C++;
@@ -502,7 +502,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 42:
     case 64:
-        gUnk_02039B84->unk_068 |= 0x200000000ULL;
+        gBtlWork->unk_068 |= 0x200000000ULL;
         break;
     }
     return 1;
@@ -526,13 +526,13 @@ void task_tutorial_2(TutorialWork* work) {
             x = (s >> 7) + work->unk_012;
             y = work->unk_014;
         }
-        DrawSprite(x, y, spr, work->unk_018, work->unk_01C, 0, 0x10, 0);
+        DrawSprite(x, y, spr, work->tiles, work->palette, 0, 0x10, 0);
     }
 }
 
 void task_tutorial_3(TutorialWork* work) {
-    ReleaseObjTiles(work->unk_018);
-    ReleaseObjPalette(work->unk_01C);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
     SeedRandom(gFrameCounter);
 }
 

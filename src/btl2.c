@@ -2,20 +2,20 @@
 #include "btl2.h"
 #include "gba/keys.h"
 
-void task_btl_shadow_0(BtlShadowWork* work, BtlActor* actor) {
-    work->unk_08 = actor;
+void task_btl_shadow_0(BtlShadowWork* work, BtlWork* actor) {
+    work->actor = actor;
 
     if (actor->unk_034 & 0x80000) {
-        work->unk_00 = LoadObjTiles(gUnk_08B22CE4, 0x200);
+        work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
         work->unk_0C = gUnk_08B22CBC;
     } else if (actor->unk_034 & 0x20000) {
-        work->unk_00 = LoadObjTiles(gUnk_08B22EFE, 0x140);
+        work->tiles = LoadObjTiles(gUnk_08B22EFE, 0x140);
         work->unk_0C = gUnk_08B22EE4;
     } else {
-        work->unk_00 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+        work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
         work->unk_0C = gUnk_08B22BA8;
     }
-    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
 }
 
 s32 task_btl_shadow_1(void) {
@@ -23,7 +23,7 @@ s32 task_btl_shadow_1(void) {
 }
 
 void task_btl_shadow_2(BtlShadowWork* work) {
-    BtlActor* actor = work->unk_08;
+    BtlWork* actor = work->actor;
     s16 x;
     s16 y;
     u16 anim;
@@ -33,29 +33,29 @@ void task_btl_shadow_2(BtlShadowWork* work) {
         if (!(actor->unk_034 & 0x0000000402000000)) {
             anim = func_0801AF1C(actor->unk_008);
 
-            if (actor->unk_00C >= 0 && gUnk_02039B84->unk_024 == 0x100) {
+            if (actor->unk_00C >= 0 && gBtlWork->unk_024 == 0x100) {
                 aff = 0;
             } else {
                 s32 sc = 0x100 - (actor->unk_010 - actor->unk_00C) / 128;
-                sc = (gUnk_02039B84->unk_024 * sc) >> 8;
+                sc = (gBtlWork->unk_024 * sc) >> 8;
                 if (sc <= 127) {
                     sc = 128;
                 }
                 aff = AllocObjAffine(0, sc, sc, sc > 0x100);
             }
             WorldToScreen(&x, &y, actor->unk_004, actor->unk_008, actor->unk_010);
-            DrawSprite(x, y, work->unk_0C, work->unk_00, work->unk_04, aff, anim, actor->unk_0CC);
+            DrawSprite(x, y, work->unk_0C, work->tiles, work->palette, aff, anim, actor->unk_0CC);
         }
     }
 }
 
 void task_btl_shadow_3(BtlShadowWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 void task_btl_hpply_0(BtlHpplyWork* work) {
-    if (gUnk_02039BB0.flags & 8) {
+    if (gGameState.flags & 8) {
         work->unk_0C = LoadObjPalette(gUnk_09618118, 0x20);
         work->unk_10 = AllocObjTiles(0x280, gUnk_08B21438);
         work->unk_20 = gUnk_08B213F0;
@@ -75,46 +75,46 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
     AnimInit(&work->unk_2C, gUnk_09EE1498, gUnk_09EE1420);
     AnimStart(&work->unk_44, 0, 1);
 
-    if (gUnk_02039B84->unk_07C->unk_02E <= 40) {
+    if (gBtlWork->unk_07C->unk_02E <= 40) {
         work->unk_64 = 0;
         work->unk_68 = 0;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 80) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 80) {
         work->unk_64 = 1;
         work->unk_68 = 0;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 120) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 120) {
         work->unk_64 = 2;
         work->unk_68 = 0;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 160) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 160) {
         work->unk_64 = 3;
         work->unk_68 = 0;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 200) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 200) {
         work->unk_64 = 4;
         work->unk_68 = 0;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 240) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 240) {
         work->unk_64 = 5;
         work->unk_68 = 0;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 280) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 280) {
         work->unk_64 = 6;
         work->unk_68 = 0;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 320) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 320) {
         work->unk_64 = 0;
         work->unk_68 = 1;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 360) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 360) {
         work->unk_64 = 1;
         work->unk_68 = 1;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 400) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 400) {
         work->unk_64 = 2;
         work->unk_68 = 1;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 440) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 440) {
         work->unk_64 = 3;
         work->unk_68 = 1;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 480) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 480) {
         work->unk_64 = 4;
         work->unk_68 = 1;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 520) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 520) {
         work->unk_64 = 5;
         work->unk_68 = 1;
-    } else if (gUnk_02039B84->unk_07C->unk_02E <= 560) {
+    } else if (gBtlWork->unk_07C->unk_02E <= 560) {
         work->unk_64 = 6;
         work->unk_68 = 1;
     } else {
@@ -189,15 +189,15 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
 }
 
 s32 task_btl_hpply_1(BtlHpplyWork* work) {
-    BtlActor* actor;
+    BtlWork* actor;
     s32 flag;
 
-    actor = gUnk_02039B84->unk_07C;
+    actor = gBtlWork->unk_07C;
     if (actor == 0) {
         return 0;
     }
 
-    if (gUnk_02039B84->unk_068 & 0x2000) {
+    if (gBtlWork->unk_068 & 0x2000) {
         return 0;
     }
 
@@ -449,7 +449,7 @@ void task_btl_hpenm_0(BtlHpenmWork* work) {
     work->unk_00 = AllocObjTiles(0x140, gUnk_08B24DAA);
     work->unk_04 = AllocObjTiles(0x80, gUnk_08B24DAA);
     work->unk_0C = AllocObjTiles(0x20, gUnk_08B24DAA);
-    work->unk_08 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_14 = 0;
     work->unk_10 = 0x100;
     work->unk_18 = 0;
@@ -458,24 +458,24 @@ void task_btl_hpenm_0(BtlHpenmWork* work) {
 }
 
 s32 task_btl_hpenm_1(BtlHpenmWork* work) {
-    BtlActor* actor;
+    BtlWork* actor;
 
-    if (gUnk_02039B84->unk_0A0 == 4) {
+    if (gBtlWork->unk_0A0 == 4) {
         return 0;
     }
 
-    if (gUnk_02039B84->unk_068 & 0x800) {
+    if (gBtlWork->unk_068 & 0x800) {
         actor = gUnk_02039B9C->unk_07C;
         work->unk_14 = 1;
     } else {
-        if (gUnk_02039B84->unk_078 == 0) {
+        if (gBtlWork->unk_078 == 0) {
             if (work->unk_14 != 0) {
                 work->unk_14 = 0;
             }
             return 1;
         }
         work->unk_14 = 1;
-        actor = gUnk_02039B84->unk_078;
+        actor = gBtlWork->unk_078;
     }
 
     if (actor->unk_0D8 != 0) {
@@ -600,8 +600,8 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         break;
     }
 
-    DrawSprite(236, 2, gfx, work->unk_00, work->unk_08, 0, 0x410, 3);
-    DrawSprite(236, 2, gUnk_08B24D6E, work->unk_0C, work->unk_08, 0, 0x410, 1);
+    DrawSprite(236, 2, gfx, work->unk_00, work->palette, 0, 0x410, 3);
+    DrawSprite(236, 2, gUnk_08B24D6E, work->unk_0C, work->palette, 0, 0x410, 1);
 
     switch (work->unk_1C) {
     case 0:
@@ -640,7 +640,7 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         } else {
             aff = AllocObjAffine(0, v, 0x100, 0);
         }
-        DrawSprite(217, 6, bar, work->unk_04, work->unk_08, aff, 0x410, 2);
+        DrawSprite(217, 6, bar, work->unk_04, work->palette, aff, 0x410, 2);
     }
 }
 
@@ -648,30 +648,30 @@ void task_btl_hpenm_3(BtlHpenmWork* work) {
     ReleaseObjTiles(work->unk_0C);
     ReleaseObjTiles(work->unk_04);
     ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_08);
+    ReleaseObjPalette(work->palette);
 }
 
 void task_btl_pause_0(BtlPauseWork* work) {
-    work->unk_00 = LoadObjTiles(gUnk_08B1E7F4, 0x180);
-    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->tiles = LoadObjTiles(gUnk_08B1E7F4, 0x180);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_08 = gUnk_09EE115C[0];
     work->unk_0C = gUnk_09EE115C[1];
     work->unk_10 = 0;
     work->unk_24 = 0;
     work->unk_26 = 0;
-    gUnk_02039B84->unk_068 |= 0x04000000;
+    gBtlWork->unk_068 |= 0x04000000;
 }
 
 s32 task_btl_pause_1(BtlPauseWork* work) {
     s32 paused;
 
     if (GetKeysPressed() & 8) {
-        if (!(gUnk_02039B84->unk_068 & 0x04000000)) {
-            gUnk_02039B84->unk_070 = gUnk_02039B84->unk_070 == 0 ? 1 : 0;
+        if (!(gBtlWork->unk_068 & 0x04000000)) {
+            gBtlWork->unk_070 = gBtlWork->unk_070 == 0 ? 1 : 0;
         }
     }
 
-    paused = gUnk_02039B84->unk_070;
+    paused = gBtlWork->unk_070;
     if (paused != 0) {
         if (work->unk_10 == 0) {
             func_080063C4(1);
@@ -681,7 +681,7 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
             work->unk_1C = 0x13000;
             work->unk_20 = 0x5000;
             work->unk_24 = 14;
-        m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x80);
+        m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x80);
         m4aMPlayVolumeControl(gUnk_0203DC90, 0xFF, 0);
         m4aMPlayVolumeControl(gUnk_0203DCD0, 0xFF, 0);
         m4aMPlayVolumeControl(gUnk_0203DEE0, 0xFF, 0);
@@ -713,7 +713,7 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
             }
         }
     } else if (work->unk_10 != 0) {
-        m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x100);
+        m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x100);
         m4aMPlayVolumeControl(gUnk_0203DC90, 0xFF, 0x100);
         m4aMPlayVolumeControl(gUnk_0203DCD0, 0xFF, 0x100);
         m4aMPlayVolumeControl(gUnk_0203DEE0, 0xFF, 0x100);
@@ -745,93 +745,93 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
 
 void task_btl_pause_2(BtlPauseWork* work) {
     if (work->unk_10 != 0) {
-        DrawSprite(work->unk_14 >> 8, work->unk_18 >> 8, work->unk_08, work->unk_00, work->unk_04, 0, 0, 0);
-        DrawSprite(work->unk_1C >> 8, work->unk_20 >> 8, work->unk_0C, work->unk_00, work->unk_04, 0, 0, 0);
+        DrawSprite(work->unk_14 >> 8, work->unk_18 >> 8, work->unk_08, work->tiles, work->palette, 0, 0, 0);
+        DrawSprite(work->unk_1C >> 8, work->unk_20 >> 8, work->unk_0C, work->tiles, work->palette, 0, 0, 0);
     }
 }
 
 void task_btl_pause_3(BtlPauseWork* work) {
     func_080063C4(0);
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     switch (src->unk_12) {
     case 0:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F020, 0x100);
-        AnimInit(&work->unk_0C, gUnk_09EE11D0, gUnk_09EE11CC);
-        AnimStart(&work->unk_0C, 0, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F020, 0x100);
+        AnimInit(&work->anim, gUnk_09EE11D0, gUnk_09EE11CC);
+        AnimStart(&work->anim, 0, 1);
         break;
     case 1:
-        work->unk_00 = LoadObjTiles(gUnk_08B1ED76, 0x180);
-        AnimInit(&work->unk_0C, gUnk_09EE11C0, gUnk_09EE11BC);
-        AnimStart(&work->unk_0C, 0, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1ED76, 0x180);
+        AnimInit(&work->anim, gUnk_09EE11C0, gUnk_09EE11BC);
+        AnimStart(&work->anim, 0, 1);
         break;
     case 2:
-        work->unk_00 = LoadObjTiles(gUnk_08B1EF0C, 0x100);
-        AnimInit(&work->unk_0C, gUnk_09EE11C8, gUnk_09EE11C4);
-        AnimStart(&work->unk_0C, 0, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1EF0C, 0x100);
+        AnimInit(&work->anim, gUnk_09EE11C8, gUnk_09EE11C4);
+        AnimStart(&work->anim, 0, 1);
         break;
     case 3:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F13A, 0x180);
-        AnimInit(&work->unk_0C, gUnk_09EE11D8, gUnk_09EE11D4);
-        AnimStart(&work->unk_0C, 0, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F13A, 0x180);
+        AnimInit(&work->anim, gUnk_09EE11D8, gUnk_09EE11D4);
+        AnimStart(&work->anim, 0, 1);
         break;
     case 5:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F7AC, 0x500);
-        AnimInit(&work->unk_0C, gUnk_09EE1204, gUnk_09EE11F4);
-        AnimStart(&work->unk_0C, 0, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F7AC, 0x500);
+        AnimInit(&work->anim, gUnk_09EE1204, gUnk_09EE11F4);
+        AnimStart(&work->anim, 0, 1);
         break;
     case 6:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F7AC, 0x500);
-        AnimInit(&work->unk_0C, gUnk_09EE1204, gUnk_09EE11F4);
-        AnimStart(&work->unk_0C, 2, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F7AC, 0x500);
+        AnimInit(&work->anim, gUnk_09EE1204, gUnk_09EE11F4);
+        AnimStart(&work->anim, 2, 1);
         break;
     case 7:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F7AC, 0x500);
-        AnimInit(&work->unk_0C, gUnk_09EE1204, gUnk_09EE11F4);
-        AnimStart(&work->unk_0C, 1, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F7AC, 0x500);
+        AnimInit(&work->anim, gUnk_09EE1204, gUnk_09EE11F4);
+        AnimStart(&work->anim, 1, 1);
         break;
     case 8:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F7AC, 0x500);
-        AnimInit(&work->unk_0C, gUnk_09EE1204, gUnk_09EE11F4);
-        AnimStart(&work->unk_0C, 3, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F7AC, 0x500);
+        AnimInit(&work->anim, gUnk_09EE1204, gUnk_09EE11F4);
+        AnimStart(&work->anim, 3, 1);
         break;
     case 9:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F472, 0x180);
-        AnimInit(&work->unk_0C, gUnk_09EE11E8, gUnk_09EE11E4);
-        AnimStart(&work->unk_0C, 0, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F472, 0x180);
+        AnimInit(&work->anim, gUnk_09EE11E8, gUnk_09EE11E4);
+        AnimStart(&work->anim, 0, 1);
         break;
     case 10:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F60E, 0x140);
-        AnimInit(&work->unk_0C, gUnk_09EE11F0, gUnk_09EE11EC);
-        AnimStart(&work->unk_0C, 0, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F60E, 0x140);
+        AnimInit(&work->anim, gUnk_09EE11F0, gUnk_09EE11EC);
+        AnimStart(&work->anim, 0, 1);
         break;
     case 4:
     default:
-        work->unk_00 = LoadObjTiles(gUnk_08B1F2D6, 0x180);
-        AnimInit(&work->unk_0C, gUnk_09EE11E0, gUnk_09EE11DC);
-        AnimStart(&work->unk_0C, 0, 1);
+        work->tiles = LoadObjTiles(gUnk_08B1F2D6, 0x180);
+        AnimInit(&work->anim, gUnk_09EE11E0, gUnk_09EE11DC);
+        AnimStart(&work->anim, 0, 1);
         break;
     }
 
-    work->unk_08 = AnimGetGfx(&work->unk_0C);
-    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    work->unk_24 = src->unk_00;
-    work->unk_28 = src->unk_04;
-    work->unk_2C = src->unk_08;
+    work->gfx = AnimGetGfx(&work->anim);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->x = src->x;
+    work->y = src->y;
+    work->z = src->z;
     work->unk_30 = 0;
 }
 
 s32 task_btl_pop_1(BtlPopWork* work) {
-    work->unk_2C -= 0xC0;
+    work->z -= 0xC0;
 
     if (work->unk_30 > 49) {
         return 0;
     }
     work->unk_30++;
-    work->unk_08 = AnimUpdate(&work->unk_0C);
+    work->gfx = AnimUpdate(&work->anim);
     return 1;
 }
 
@@ -839,19 +839,19 @@ void task_btl_pop_2(BtlPopWork* work) {
     s16 x;
     s16 y;
 
-    WorldToScreen(&x, &y, work->unk_24, work->unk_28, work->unk_2C);
-    DrawSprite(x, y, work->unk_08, work->unk_00, work->unk_04, 0, 16, 5);
+    WorldToScreen(&x, &y, work->x, work->y, work->z);
+    DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, 16, 5);
 }
 
 void task_btl_pop_3(BtlPopWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 void task_btl_escape_0(BtlEscapeWork* work) {
     work->unk_18 = 0x5A00;
-    work->unk_00 = LoadObjTiles(gUnk_08B1EB1C, 0x240);
-    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->tiles = LoadObjTiles(gUnk_08B1EB1C, 0x240);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_08 = gUnk_09EE11A4[0];
     work->unk_0C = gUnk_09EE11A4[2];
     work->unk_10 = gUnk_09EE11A4[1];
@@ -862,11 +862,11 @@ void task_btl_escape_0(BtlEscapeWork* work) {
 }
 
 s32 task_btl_escape_1(BtlEscapeWork* work) {
-    if (gUnk_02039B84->unk_068 & 0x0100000000000000) {
+    if (gBtlWork->unk_068 & 0x0100000000000000) {
         return 0;
     }
 
-    if (!(gUnk_02039B84->unk_068 & 8)) {
+    if (!(gBtlWork->unk_068 & 8)) {
         if (work->unk_22 != 0) {
             work->unk_1C = 0;
             work->unk_22 = 0;
@@ -881,9 +881,9 @@ s32 task_btl_escape_1(BtlEscapeWork* work) {
             work->unk_14 = (work->unk_1C << 8) / work->unk_18;
 
             if (work->unk_1C >= work->unk_18) {
-                gUnk_02039BB0.flags |= 0x40;
-                gUnk_02039B84->unk_068 |= 0x10;
-                gUnk_02039B84->unk_068 |= 0x0000000200000000;
+                gGameState.flags |= 0x40;
+                gBtlWork->unk_068 |= 0x10;
+                gBtlWork->unk_068 |= 0x0000000200000000;
                 work->unk_22 = 0;
             } else {
                 work->unk_1C += 256;
@@ -895,7 +895,7 @@ s32 task_btl_escape_1(BtlEscapeWork* work) {
 }
 
 void task_btl_escape_2(BtlEscapeWork* work) {
-    BtlActor* actor;
+    BtlWork* actor;
     s16 x;
     s16 y;
     s32 v;
@@ -905,13 +905,13 @@ void task_btl_escape_2(BtlEscapeWork* work) {
         return;
     }
 
-    actor = gUnk_02039B84->unk_07C;
+    actor = gBtlWork->unk_07C;
     if (actor->unk_034 & 4) {
         WorldToScreen(&x, &y, actor->unk_004 - 768, actor->unk_008, actor->unk_00C - 10240);
-        DrawSprite(x, y, work->unk_08, work->unk_00, work->unk_04, 0, 0, 2);
+        DrawSprite(x, y, work->unk_08, work->tiles, work->palette, 0, 0, 2);
     } else {
         WorldToScreen(&x, &y, actor->unk_004 - 3072, actor->unk_008, actor->unk_00C - 10240);
-        DrawSprite(x, y, work->unk_0C, work->unk_00, work->unk_04, 0, 0, 2);
+        DrawSprite(x, y, work->unk_0C, work->tiles, work->palette, 0, 0, 2);
     }
 
     if (work->unk_14 > 0) {
@@ -921,33 +921,33 @@ void task_btl_escape_2(BtlEscapeWork* work) {
         } else {
             aff = AllocObjAffine(0, v, 256, 0);
         }
-        DrawSprite(x, y, work->unk_10, work->unk_00, work->unk_04, aff, 0, 1);
+        DrawSprite(x, y, work->unk_10, work->tiles, work->palette, aff, 0, 1);
     }
 }
 
 void task_btl_escape_3(BtlEscapeWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
 }
 
 void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     u8 angle;
     s32 spd;
 
-    work->unk_00 = src->unk_00;
-    work->unk_04 = src->unk_04;
-    work->unk_08 = src->unk_08;
+    work->unk_00 = src->x;
+    work->unk_04 = src->y;
+    work->unk_08 = src->z;
     work->unk_0C = 0;
 
-    if (gUnk_02039B84->unk_128 != 0) {
-        gUnk_02039B84->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
+    if (gBtlWork->unk_128 != 0) {
+        gBtlWork->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
     }
 
     work->unk_20 = -(GetRandom() % 897 + 768);
     angle = GetRandom();
 
-    work->unk_10 = LoadObjTiles(gUnk_08B209E0, 0x340);
-    work->unk_14 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->tiles = LoadObjTiles(gUnk_08B209E0, 0x340);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_28 = 0;
     work->unk_1C = gUnk_08B208E8;
     work->unk_2C = 3;
@@ -1025,7 +1025,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
 
     work->unk_30 = 0;
     work->unk_34 = 0x100;
-    gUnk_02039B84->unk_0B0++;
+    gBtlWork->unk_0B0++;
     work->unk_3C = (gSineTable[angle] * spd) >> 8;
     work->unk_40 = (-gSineTable[angle + 64] * spd) >> 8;
 
@@ -1037,7 +1037,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
         }
     }
 
-    work->unk_48 = gUnk_02039B84->unk_07C;
+    work->unk_48 = gBtlWork->unk_07C;
 }
 
 INCLUDE_ASM("btl2/task_btl_prize_1.s");
@@ -1051,44 +1051,44 @@ void task_btl_prize_2(BtlPrizeWork* work) {
         s32 pri = 0x800;
 
         WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_08);
-        aff = AllocObjAffine(0, gUnk_02039B84->unk_024, gUnk_02039B84->unk_024, 1);
-        DrawSprite(x, y, work->unk_18, work->unk_10, work->unk_14, aff, pri,
+        aff = AllocObjAffine(0, gBtlWork->unk_024, gBtlWork->unk_024, 1);
+        DrawSprite(x, y, work->unk_18, work->tiles, work->palette, aff, pri,
                    (u16)(-4100 - (work->unk_04 >> 8) * 4));
 
         if (work->unk_2C & 2) {
             WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_0C);
-            DrawSprite(x, y, work->unk_1C, work->unk_10, work->unk_14, aff, pri, 0xFFFF);
+            DrawSprite(x, y, work->unk_1C, work->tiles, work->palette, aff, pri, 0xFFFF);
         }
     }
 }
 
 void task_btl_prize_3(BtlPrizeWork* work) {
-    ReleaseObjTiles(work->unk_10);
-    ReleaseObjPalette(work->unk_14);
-    gUnk_02039B84->unk_0B0--;
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
+    gBtlWork->unk_0B0--;
 }
 
 void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     u8 angle;
     s32 spd;
 
-    work->unk_00 = src->unk_00;
-    work->unk_04 = src->unk_04;
-    work->unk_08 = src->unk_08;
+    work->unk_00 = src->x;
+    work->unk_04 = src->y;
+    work->unk_08 = src->z;
     work->unk_0C = 0;
 
-    if (gUnk_02039B84->unk_128 != 0) {
-        gUnk_02039B84->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
+    if (gBtlWork->unk_128 != 0) {
+        gBtlWork->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
     }
 
     work->unk_20 = -(GetRandom() % 897 + 768);
     angle = GetRandom();
 
-    work->unk_10 = LoadObjTiles(gUnk_08B209E0, 0x340);
-    work->unk_14 = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    AnimInit(&work->unk_48, gUnk_09EE1278, gUnk_09EE1244);
-    AnimStart(&work->unk_48, 10, 1);
-    work->unk_18 = AnimGetGfx(&work->unk_48);
+    work->tiles = LoadObjTiles(gUnk_08B209E0, 0x340);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    AnimInit(&work->anim, gUnk_09EE1278, gUnk_09EE1244);
+    AnimStart(&work->anim, 10, 1);
+    work->gfx = AnimGetGfx(&work->anim);
     work->unk_28 = 0;
     work->unk_1C = gUnk_08B208E8;
     work->unk_2C = 3;
@@ -1100,10 +1100,10 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     spd = 384;
     work->unk_30 = 0;
     work->unk_34 = 0x100;
-    gUnk_02039B84->unk_0B0++;
+    gBtlWork->unk_0B0++;
     work->unk_38 = (gSineTable[angle] * spd) >> 8;
     work->unk_3C = (-gSineTable[angle + 64] * spd) >> 8;
-    work->unk_44 = gUnk_02039B84->unk_07C;
+    work->unk_44 = gBtlWork->unk_07C;
 }
 
 INCLUDE_ASM("btl2/task_btl_premire_1.s");
@@ -1117,32 +1117,32 @@ void task_btl_premire_2(BtlPremireWork* work) {
         u16 anim = func_0801AF1C(work->unk_04);
 
         WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_08);
-        aff = AllocObjAffine(0, gUnk_02039B84->unk_024, gUnk_02039B84->unk_024, 1);
-        DrawSprite(x, y, work->unk_18, work->unk_10, work->unk_14, aff, anim,
+        aff = AllocObjAffine(0, gBtlWork->unk_024, gBtlWork->unk_024, 1);
+        DrawSprite(x, y, work->gfx, work->tiles, work->palette, aff, anim,
                    (u16)(-4100 - (work->unk_04 >> 8) * 4));
 
         if (work->unk_2C & 2) {
             WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_0C);
-            DrawSprite(x, y, work->unk_1C, work->unk_10, work->unk_14, aff, anim, 0xFFFF);
+            DrawSprite(x, y, work->unk_1C, work->tiles, work->palette, aff, anim, 0xFFFF);
         }
     }
 }
 
 void task_btl_premire_3(BtlPremireWork* work) {
-    ReleaseObjTiles(work->unk_10);
-    ReleaseObjPalette(work->unk_14);
-    gUnk_02039B84->unk_0B0--;
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
+    gBtlWork->unk_0B0--;
 }
 
 void task_btl_start_0(BtlStartWork* work) {
     func_08006778(gUnk_09EDA918, 120, 72);
     func_0800675C(0, 0x200, 0x200);
-    SetBgBlend(gUnk_02039B84->unk_1C4, 16, 16);
+    SetBgBlend(gBtlWork->unk_1C4, 16, 16);
     func_08019050(1, 0x200, 0x10000, 0x14000);
     func_08006120(0, 60);
     work->unk_00 = 0;
     m4aSongNumStart(0x8F);
-    SetBgPriority(gUnk_02039B84->unk_1C4, 0);
+    SetBgPriority(gBtlWork->unk_1C4, 0);
 }
 
 s32 task_btl_start_1(BtlStartWork* work) {
@@ -1152,7 +1152,7 @@ s32 task_btl_start_1(BtlStartWork* work) {
 
     switch (work->unk_00) {
     case 34:
-        func_08019050(35, 0x100, gUnk_02039B84->unk_010, gUnk_02039B84->unk_014);
+        func_08019050(35, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
         break;
     case 43:
         func_08006120(2, 30);
@@ -1167,37 +1167,37 @@ s32 task_btl_start_1(BtlStartWork* work) {
 
 void func_08031BC4(FldActor* act) {
     if ((GetKeysHeld() & DPAD_LEFT) && (GetKeysHeld() & DPAD_DOWN)) {
-        act->unk_14 = 173;
+        act->angle = 173;
     } else if ((GetKeysHeld() & DPAD_UP) && (GetKeysHeld() & DPAD_LEFT)) {
-        act->unk_14 = 211;
+        act->angle = 211;
     } else if ((GetKeysHeld() & DPAD_UP) && (GetKeysHeld() & DPAD_RIGHT)) {
-        act->unk_14 = 45;
+        act->angle = 45;
     } else if ((GetKeysHeld() & DPAD_RIGHT) && (GetKeysHeld() & DPAD_DOWN)) {
-        act->unk_14 = 83;
+        act->angle = 83;
     } else if ((GetKeysHeld() & DPAD_DOWN) && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
-        act->unk_14 = 173;
+        act->angle = 173;
     } else if ((GetKeysHeld() & DPAD_DOWN) && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
-        act->unk_14 = 83;
+        act->angle = 83;
     } else if ((GetKeysHeld() & DPAD_UP) && GetKeyReleaseTime(DPAD_LEFT) <= 4) {
-        act->unk_14 = 211;
+        act->angle = 211;
     } else if ((GetKeysHeld() & DPAD_UP) && GetKeyReleaseTime(DPAD_RIGHT) <= 4) {
-        act->unk_14 = 45;
+        act->angle = 45;
     } else if ((GetKeysHeld() & DPAD_LEFT) && GetKeyReleaseTime(DPAD_UP) <= 4) {
-        act->unk_14 = 211;
+        act->angle = 211;
     } else if ((GetKeysHeld() & DPAD_LEFT) && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
-        act->unk_14 = 173;
+        act->angle = 173;
     } else if ((GetKeysHeld() & DPAD_RIGHT) && GetKeyReleaseTime(DPAD_UP) <= 4) {
-        act->unk_14 = 45;
+        act->angle = 45;
     } else if ((GetKeysHeld() & DPAD_RIGHT) && GetKeyReleaseTime(DPAD_DOWN) <= 4) {
-        act->unk_14 = 83;
+        act->angle = 83;
     } else if (GetKeysHeld() & DPAD_DOWN) {
-        act->unk_14 = 128;
+        act->angle = 128;
     } else if (GetKeysHeld() & DPAD_UP) {
-        act->unk_14 = 0;
+        act->angle = 0;
     } else if (GetKeysHeld() & DPAD_LEFT) {
-        act->unk_14 = 192;
+        act->angle = 192;
     } else if (GetKeysHeld() & DPAD_RIGHT) {
-        act->unk_14 = 64;
+        act->angle = 64;
     }
 }
 
@@ -1209,8 +1209,8 @@ u8 func_08031D74(FldPos* p) {
 
     a = *p;
     b = *p;
-    a.unk_04 -= 1536;
-    b.unk_04 += 1536;
+    a.y -= 1536;
+    b.y += 1536;
 
     v1 = func_080DFF1C(&a);
     if (v1 > a.unk_0C) {
@@ -1240,8 +1240,8 @@ s32 func_08031DF8(FldPos* p) {
 
     a = *p;
     b = *p;
-    a.unk_04 -= 1536;
-    b.unk_04 += 1536;
+    a.y -= 1536;
+    b.y += 1536;
     v1 = func_080DFF1C(&a);
     v2 = func_080DFF1C(&b);
     if (v2 > v1) {
@@ -1257,19 +1257,19 @@ u8 func_08031E48(FldPos* p, FldWork* work) {
 
     a = *p;
     b = *p;
-    a.unk_04 -= 1536;
-    b.unk_04 += 1536;
+    a.y -= 1536;
+    b.y += 1536;
 
     r = _080DFE1C(&a);
     if (r != 0) {
-        work->unk_B0 = a.unk_00;
-        work->unk_B4 = a.unk_04;
+        work->unk_B0 = a.x;
+        work->unk_B4 = a.y;
         return r;
     }
     r = _080DFE1C(&b);
     if (r != 0) {
-        work->unk_B0 = b.unk_00;
-        work->unk_B4 = b.unk_04;
+        work->unk_B0 = b.x;
+        work->unk_B4 = b.y;
         return r;
     }
     return 0;
@@ -1279,8 +1279,8 @@ u8 func_08031EC4(FldActor* act) {
     FldPos a;
 
     a = act->unk_00;
-    a.unk_00 += gSineTable[act->unk_14] * 8;
-    a.unk_04 -= gSineTable[act->unk_14 + 64] * 8;
+    a.x += gSineTable[act->angle] * 8;
+    a.y -= gSineTable[act->angle + 64] * 8;
 
     if (func_080DFCDC(&a) != 0) {
         return 1;
@@ -1311,14 +1311,14 @@ s32 func_08031F1C(FldWork* work) {
 }
 
 void func_08031F60(FldActor* act) {
-    u8 old = act->unk_14;
+    u8 old = act->angle;
 
     func_08031BC4(act);
 
-    if (old != act->unk_14) {
+    if (old != act->angle) {
         s32 v;
 
-        if (abs(GetAngleDiff(old, act->unk_14)) > 100) {
+        if (abs(GetAngleDiff(old, act->angle)) > 100) {
             v = 0;
         } else {
             v = act->unk_10 >> 1;
@@ -1332,7 +1332,7 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
     u16 flags = b;
     s32 idx;
 
-    switch (gUnk_02039BA0->unk_18.unk_14) {
+    switch (gUnk_02039BA0->unk_18.angle) {
     case 45:
         idx = 4;
         work->unk_A4 |= 2;
@@ -1375,5 +1375,5 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
 
     e = &gUnk_0813C89C[a][idx];
     func_08005974(&work->unk_08, e->unk_0C, flags, e->unk_04, e->unk_00);
-    func_08002A10(work->unk_00, e->unk_08);
+    func_08002A10(work->tiles, e->unk_08);
 }

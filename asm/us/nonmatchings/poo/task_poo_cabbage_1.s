@@ -57,7 +57,7 @@ _080D11F6:
 	adds r4, r5, #0x0
 	adds r4, #0xBC
 	ldr r0, [r4, #0x00]
-	bl func_08000F48
+	bl IsTaskActive
 	lsls r0, r0, #0x18
 	adds r6, r5, #0x0
 	adds r6, #0xA8

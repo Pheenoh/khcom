@@ -290,7 +290,7 @@ _0801D6A2:
 	b _0801DA94
 _0801D8DC:
 	subs r0, #0x24
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r5, r0, #0x0
 	cmp r5, #0x00
 	bne _0801D8EA
@@ -475,7 +475,7 @@ _0801D8F4:
 	bl DrawSprite
 	adds r0, r5, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r5, r0, #0x0
 	cmp r5, #0x00
 	beq _0801DA72

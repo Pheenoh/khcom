@@ -11,11 +11,11 @@ typedef struct DmaStream {
     u8 unk_01;
     u8 unk_02[0x2];
     void (*unk_04)(void);
-    vu16* unk_08;
+    vu16* dst;
     s32 unk_0C;
-    u8* unk_10[2];
+    u8* src[2];
     u8* unk_18;
-    u32 unk_1C;
+    u32 cnt;
 } DmaStream;
 
 typedef struct SrollShift {
@@ -53,7 +53,7 @@ typedef struct SrollANameWork {
     s32 unk_0C;
     s32 unk_10;
     s32 unk_14;
-    void* unk_18;
+    void* tiles;
     SrollPal* unk_1C;
     AnimState unk_20;
 } SrollANameWork;
@@ -81,7 +81,7 @@ typedef struct SrollBCharWork {
     s32 unk_00;
     s32* unk_04;
     SrollBCharSub* unk_08;
-    void* unk_0C;
+    void* tiles;
     SrollPal* unk_10;
     AnimState unk_14;
     TaskPool unk_2C;
@@ -92,7 +92,7 @@ typedef struct SrollBLogoWork {
     s32 unk_04;
     s32* unk_08;
     s32 unk_0C;
-    void* unk_10;
+    void* tiles;
     SrollPal* unk_14;
     AnimState unk_18;
 } SrollBLogoWork;
@@ -103,7 +103,7 @@ typedef struct SrollBSecnWork {
     s32 unk_08;
     s32* unk_0C;
     s32 unk_10;
-    void* unk_14;
+    void* tiles;
     SrollPal* unk_18;
     AnimState unk_1C;
     AnimState unk_34;
@@ -115,7 +115,7 @@ typedef struct SrollBCrtnWork {
     u8 unk_06[0x2];
     s32 unk_08;
     s32 unk_0C;
-    void* unk_10;
+    void* tiles;
     SrollPal* unk_14;
     AnimState unk_18;
 } SrollBCrtnWork;
@@ -123,7 +123,7 @@ typedef struct SrollBCrtnWork {
 typedef struct SrollCCharWork {
     s32 unk_00;
     u8 unk_04[0x14];
-    void* unk_18;
+    void* tiles;
     SrollPal* unk_1C;
     AnimState unk_20[5];
 } SrollCCharWork;
@@ -139,7 +139,7 @@ typedef struct SrollTmrWork {
     u8 unk_00;
     u8 unk_01[0x3];
     s32 unk_04;
-    void* unk_08;
+    void* tiles;
     SrollPal* unk_0C;
 } SrollTmrWork;
 
@@ -199,8 +199,8 @@ typedef struct SrollWork {
     u16 unk_22;
     u16 unk_24;
     u16 unk_26;
-    u16 unk_28;
-    u16 unk_2A;
+    u16 writeIdx;
+    u16 readIdx;
     u16 unk_2C;
     u16 unk_2E;
     u16 unk_30;
@@ -215,7 +215,7 @@ typedef struct SrollWork {
     u32 unk_4C;
     u32 unk_50;
     u32 unk_54;
-    u16 unk_58[0x100];
+    u16 charQueue[0x100];
 } SrollWork;
 
 typedef struct SoundEntry {

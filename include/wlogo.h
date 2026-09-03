@@ -103,7 +103,7 @@ typedef struct WlogoTtWork {
     void* unk_010;
     void* unk_014;
     void* unk_018;
-    WlogoPal* unk_01C;
+    WlogoPal* palette;
     void* unk_020;
     void* unk_024;
     void* unk_028;
@@ -124,8 +124,8 @@ typedef struct WlogoTtWork {
 } WlogoTtWork;
 
 typedef struct WlogoBksObjWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     void* unk_008;
     u8 unk_00C[0x18];
     s16 unk_024;
@@ -156,10 +156,10 @@ typedef struct WlogoBksWork {
     u16 unk_008;
     u8 unk_00A;
     u8 unk_00B;
-    void* unk_00C;
-    void* unk_010;
-    void* unk_014;
-    AnimState unk_018;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s8 unk_030;
     u8 unk_031;
     u16 unk_032;
@@ -179,10 +179,10 @@ typedef struct WlogoTtObjArg {
 } WlogoTtObjArg;
 
 typedef struct WlogoTtObjWork {
-    void* unk_000;
-    void* unk_004;
-    void* unk_008;
-    AnimState unk_00C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s32 unk_024;
     s32 unk_028;
     u16 unk_02C;
@@ -218,10 +218,10 @@ typedef struct WlogoPooObjStep {
 } WlogoPooObjStep;
 
 typedef struct WlogoPooObjWork {
-    void* unk_000;
-    void* unk_004;
-    void* unk_008;
-    AnimState unk_00C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s32 unk_024;
     s32 unk_028;
     s32 unk_02C;
@@ -237,12 +237,12 @@ typedef struct WlogoPooObjWork {
 } WlogoPooObjWork;
 
 typedef struct WlogoTvtWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     s16 unk_008;
     s16 unk_00A;
-    void* unk_00C;
-    AnimState unk_010;
+    void* gfx;
+    AnimState anim;
     u8 unk_028;
     u8 unk_029;
     u16 unk_02A;
@@ -266,10 +266,10 @@ typedef struct WlogoAgrEntry {
 } WlogoAgrEntry;
 
 typedef struct WlogoAgrSmokeWork {
-    void* unk_000;
-    void* unk_004;
-    void* unk_008;
-    AnimState unk_00C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s32 unk_024;
     s32 unk_028;
     s32 unk_02C;
@@ -281,10 +281,10 @@ typedef struct WlogoAgrSmokeWork {
 } WlogoAgrSmokeWork;
 
 typedef struct WlogoAgrFlashWork {
-    void* unk_000;
-    void* unk_004;
-    void* unk_008;
-    AnimState unk_00C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s16 unk_024;
     s16 unk_026;
     u8 unk_028;
@@ -292,8 +292,8 @@ typedef struct WlogoAgrFlashWork {
 } WlogoAgrFlashWork;
 
 typedef struct WlogoAgrWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     void* unk_008;
     s16 unk_00C;
     s16 unk_00E;
@@ -306,8 +306,8 @@ typedef struct WlogoAgrWork {
 } WlogoAgrWork;
 
 typedef struct WlogoDilWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     void* unk_008;
     u8 unk_00C;
     u8 unk_00D;
@@ -321,12 +321,12 @@ typedef struct WlogoDilWork {
 } WlogoDilWork;
 
 typedef struct WlogoColWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     s16 unk_008;
     s16 unk_00A;
-    void* unk_00C;
-    AnimState unk_010;
+    void* gfx;
+    AnimState anim;
     u8 unk_028;
     u8 unk_029;
     u16 unk_02A;
@@ -368,18 +368,18 @@ typedef struct WlogoNvlMovWork {
     u8 unk_021[0x3];
     void* unk_024;
     void* unk_028;
-    void* unk_02C;
-    AnimState unk_030;
+    void* gfx;
+    AnimState anim;
     u8 unk_048;
     u8 unk_049;
     u8 unk_04A[0x2];
 } WlogoNvlMovWork;
 
 typedef struct WlogoNvlObjWork {
-    void* unk_000;
-    void* unk_004;
-    void* unk_008;
-    AnimState unk_00C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s32 unk_024;
     s32 unk_028;
     u8 unk_02C;
@@ -421,8 +421,8 @@ typedef struct WlogoWonEntry {
 } WlogoWonEntry;
 
 typedef struct WlogoWonWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     u16 unk_008;
     u8 unk_00A;
     u8 unk_00B;
@@ -459,10 +459,10 @@ typedef struct WlogoHwtObjB {
 } WlogoHwtObjB;
 
 typedef struct WlogoHwtObjWork {
-    void* unk_000;
-    void* unk_004;
-    void* unk_008;
-    AnimState unk_00C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s32 unk_024;
     s32 unk_028;
     s32 unk_02C;
@@ -488,12 +488,12 @@ typedef struct WlogoHwtWork {
 } WlogoHwtWork;
 
 typedef struct WlogoMonsWork {
-    void* unk_000;
-    WlogoPal* unk_004;
+    void* tiles;
+    WlogoPal* palette;
     s16 unk_008;
     s16 unk_00A;
-    void* unk_00C;
-    AnimState unk_010;
+    void* gfx;
+    AnimState anim;
     u16 unk_028;
     u16 unk_02A;
     u8 unk_02C;
@@ -502,7 +502,7 @@ typedef struct WlogoMonsWork {
     u8 unk_02F;
 } WlogoMonsWork;
 extern s32 gUnk_0203AB38;
-extern vu16 gUnk_03007FF8;
+extern vu16 gIntrCheck;
 extern WlogoHwtObjA gUnk_096194D0[];
 extern WlogoHwtObjB gUnk_09619530[][6];
 extern WlogoHwtObjB gUnk_096198D4[];
@@ -577,22 +577,22 @@ extern u8 gUnk_096FAFA4[];
 extern u8 gUnk_096FB084[];
 extern u8 gUnk_096FB0A4[];
 extern u8 gUnk_096FB0C4[];
-extern TaskDesc gUnk_09EF1664;
+extern TaskDesc gTaskDescWlogoHwtObj;
 extern WlogoWonEntry gUnk_09EF167C[];
 extern WlogoWonEntry gUnk_09EF1744[];
 extern s32 gUnk_09EF180C[];
-extern TaskDesc gUnk_09EF18A4;
-extern TaskDesc gUnk_09EF18BC;
+extern TaskDesc gTaskDescWlogoNvlMov;
+extern TaskDesc gTaskDescWlogoNvlObj;
 extern WlogoAgrEntry gUnk_09EF191C[];
-extern TaskDesc gUnk_09EF1A74;
-extern TaskDesc gUnk_09EF1A8C;
-extern TaskDesc gUnk_09EF1AA4;
+extern TaskDesc gTaskDescWlogoAgrSmoke;
+extern TaskDesc gTaskDescWlogoAgrFlash0;
+extern TaskDesc gTaskDescWlogoAgrFlash1;
 extern u8 gUnk_09EF1AEC[];
-extern TaskDesc gUnk_09EF1AF0;
+extern TaskDesc gTaskDescWlogoPooObj;
 extern s32 gUnk_09EF1B08[];
-extern TaskDesc gUnk_09EF1B50;
+extern TaskDesc gTaskDescWlogoTtObj;
 extern s16 gUnk_09EF1B68[][3];
-extern TaskDesc gUnk_09EF1C30;
+extern TaskDesc gTaskDescWlogoTtLine;
 extern s8 gUnk_09EF1C48[];
 extern s8 gUnk_09EF1C50[];
 extern u8 gUnk_09EF1C70[];
@@ -600,7 +600,7 @@ extern s16 gUnk_09EF1C7E[][2];
 extern s16 gUnk_09EF1CB6[][2];
 extern s16 gUnk_09EF1CEE[];
 extern u16 gUnk_09EF1D0A[];
-extern TaskDesc gUnk_09EF1D28;
+extern TaskDesc gTaskDescWlogoBksObj;
 extern u8 gUnk_09EF1D58[];
 extern WlogoTtEffStep gUnk_09EF1E14[];
 extern u8 gUnk_09EF351C[];

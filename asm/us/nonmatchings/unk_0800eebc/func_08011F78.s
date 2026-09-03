@@ -102,7 +102,7 @@ _08012028:
 	beq _0801210C
 	mov r0, r12
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r4, r0, #0x0
 	movs r1, #0x00
 	mov r8, r1
@@ -164,7 +164,7 @@ _080120AE:
 _080120B6:
 	adds r0, r4, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	bne _08012050

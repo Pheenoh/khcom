@@ -4,50 +4,50 @@
 
 s8 gUnk_02035FE8;
 s8 gUnk_02035FE9;
-BackupStatEntry* gUnk_02035FEC;
-s16 gUnk_02035FF0[10];
+BackupStatEntry* gBackupStatEntries;
+s16 gBackupStatStates[10];
 
 void mode_backupstat_0(void) {
     s32 i;
     s32 j;
 
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 15, 0);
     EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
-    func_0805FA60(0, gUnk_08128304, 32, 15);
+    func_0805FA60(0, gWhitePalette, 32, 15);
     gUnk_02035FE8 = 0;
     func_0805FCB0(0, 0, 2, gUnk_09993874);
     gUnk_02035FE9 = 6;
-    gUnk_02035FEC = gUnk_099937E4;
+    gBackupStatEntries = gUnk_099937E4;
 
     for (i = 0; i < gUnk_02035FE9; i++) {
         for (j = 0; j <= 1; j++) {
             switch (i) {
             case 0:
-                gUnk_02035FF0[i * 2 + j] = SaveCheckHeaderSlot(j);
+                gBackupStatStates[i * 2 + j] = SaveCheckHeaderSlot(j);
                 break;
             case 1:
-                gUnk_02035FF0[i * 2 + j] = SaveCheckFileLargeSlot(0, j);
+                gBackupStatStates[i * 2 + j] = SaveCheckFileLargeSlot(0, j);
                 break;
             case 2:
-                gUnk_02035FF0[i * 2 + j] = SaveCheckFileLargeSlot(1, j);
+                gBackupStatStates[i * 2 + j] = SaveCheckFileLargeSlot(1, j);
                 break;
             case 3:
-                gUnk_02035FF0[i * 2 + j] = SaveCheckFileSmallSlot(0, j);
+                gBackupStatStates[i * 2 + j] = SaveCheckFileSmallSlot(0, j);
                 break;
             case 4:
-                gUnk_02035FF0[i * 2 + j] = SaveCheckFileSmallSlot(1, j);
+                gBackupStatStates[i * 2 + j] = SaveCheckFileSmallSlot(1, j);
                 break;
             case 5:
-                gUnk_02035FF0[i * 2 + j] = SaveCheckSystemSlot(j);
+                gBackupStatStates[i * 2 + j] = SaveCheckSystemSlot(j);
                 break;
             }
         }
     }
 
     for (i = 0; i < gUnk_02035FE9 * 2; i++) {
-        func_0805FCB0(12, i * 9, 2, gUnk_02035FEC[i / 2].name);
+        func_0805FCB0(12, i * 9, 2, gBackupStatEntries[i / 2].name);
 
         switch (i % 2) {
         case 0:
@@ -57,7 +57,7 @@ void mode_backupstat_0(void) {
             func_0805FCB0(75, i * 9, 2, gUnk_09993880);
             break;
         }
-        func_0805FCB0(120, i * 9, 2, gUnk_09EF9668[gUnk_02035FF0[i]]);
+        func_0805FCB0(120, i * 9, 2, gUnk_09EF9668[gBackupStatStates[i]]);
     }
 }
 
@@ -68,25 +68,25 @@ void func_081097F4(void) {
 
     switch (gUnk_02035FE8 / 2) {
     case 0:
-        SaveSetHeaderState(slot, gUnk_02035FF0[gUnk_02035FE8]);
+        SaveSetHeaderState(slot, gBackupStatStates[gUnk_02035FE8]);
         break;
     case 1:
-        SaveSetFileLargeState(0, slot, gUnk_02035FF0[gUnk_02035FE8]);
+        SaveSetFileLargeState(0, slot, gBackupStatStates[gUnk_02035FE8]);
         break;
     case 2:
-        SaveSetFileLargeState(1, slot, gUnk_02035FF0[gUnk_02035FE8]);
+        SaveSetFileLargeState(1, slot, gBackupStatStates[gUnk_02035FE8]);
         break;
     case 3:
-        SaveSetFileSmallState(0, slot, gUnk_02035FF0[gUnk_02035FE8]);
+        SaveSetFileSmallState(0, slot, gBackupStatStates[gUnk_02035FE8]);
         break;
     case 4:
-        SaveSetFileSmallState(1, slot, gUnk_02035FF0[gUnk_02035FE8]);
+        SaveSetFileSmallState(1, slot, gBackupStatStates[gUnk_02035FE8]);
         break;
     case 5:
-        SaveSetSystemState(slot, gUnk_02035FF0[gUnk_02035FE8]);
+        SaveSetSystemState(slot, gBackupStatStates[gUnk_02035FE8]);
         break;
     }
-    func_0805FCB0(120, gUnk_02035FE8 * 9, 2, gUnk_09EF9668[gUnk_02035FF0[gUnk_02035FE8]]);
+    func_0805FCB0(120, gUnk_02035FE8 * 9, 2, gUnk_09EF9668[gBackupStatStates[gUnk_02035FE8]]);
 }
 
 void mode_backupstat_1(void) {
@@ -111,13 +111,13 @@ void mode_backupstat_1(void) {
     }
 
     if ((GetKeysPressed() & DPAD_LEFT) != 0) {
-        if (--gUnk_02035FF0[gUnk_02035FE8] < 0) {
-            gUnk_02035FF0[gUnk_02035FE8] = 2;
+        if (--gBackupStatStates[gUnk_02035FE8] < 0) {
+            gBackupStatStates[gUnk_02035FE8] = 2;
         }
         func_081097F4();
     } else if (GetKeysPressed() & DPAD_RIGHT) {
-        if (++gUnk_02035FF0[gUnk_02035FE8] > 2) {
-            gUnk_02035FF0[gUnk_02035FE8] = 0;
+        if (++gBackupStatStates[gUnk_02035FE8] > 2) {
+            gBackupStatStates[gUnk_02035FE8] = 0;
         }
         func_081097F4();
     }
@@ -312,9 +312,9 @@ void func_0810A018(PcWork* work) {
     }
 
     if (work->unk_02C == gUnk_09A4C278) {
-        gUnk_02039B84->unk_0D8 = 24;
+        gBtlWork->unk_0D8 = 24;
     } else {
-        gUnk_02039B84->unk_0D8 = 0xFFF6;
+        gBtlWork->unk_0D8 = 0xFFF6;
     }
     WorldToScreen(&sx, &sy, work->unk_020 + ((-0x70 - ox) << 8), work->unk_024 + ((-0x64 - oy) << 8), work->unk_028);
 
@@ -376,16 +376,16 @@ void func_0810A4CC(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e) {
     arg.unk_08 = c;
     arg.unk_0C = d;
     arg.unk_10 = &work->unk_2E8;
-    work->unk_2D4[e] = TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EF9E24, &arg);
+    work->unk_2D4[e] = TaskCreate(&gBtlWork->unk_02C, &gTaskDescBosPcFlt, &arg);
 }
 
 void func_0810A51C(PcWork* work, TaskPool* pool) {
     if ((s32)pool > 0x01FFFFFF) {
-        gUnk_02039B84->unk_07C->unk_04 = 0xFE00;
-        gUnk_02039B84->unk_07C->unk_08 = 0x15D00;
-        gUnk_02039B84->unk_07C->unk_0C = 0;
-        work->unk_2E4 = TaskCreate(pool, &gUnk_09EF9E3C, &work->unk_2E8);
+        gBtlWork->unk_07C->unk_04 = 0xFE00;
+        gBtlWork->unk_07C->unk_08 = 0x15D00;
+        gBtlWork->unk_07C->unk_0C = 0;
+        work->unk_2E4 = TaskCreate(pool, &gTaskDescBosPcAcd, &work->unk_2E8);
     } else {
-        work->unk_2E4 = TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EF9E3C, &work->unk_2E8);
+        work->unk_2E4 = TaskCreate(&gBtlWork->unk_02C, &gTaskDescBosPcAcd, &work->unk_2E8);
     }
 }

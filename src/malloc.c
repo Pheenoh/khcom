@@ -8,18 +8,18 @@ Heap gEwramHeap;
 Heap gIwramHeap;
 
 typedef struct Node {
-    void* unk_00;
+    void* owner;
     struct Node* prev;
     struct Node* next;
-    u16 unk_0C;
-    struct Node* unk_10;
+    u16 flags;
+    struct Node* self;
 } Node;
 
 typedef struct NodeList {
-    Node* unk_00;
-    Node* unk_04;
-    Node* unk_08;
-    Node* unk_0C;
+    Node* freeHead;
+    Node* freeTail;
+    Node* activeHead;
+    Node* activeTail;
 } NodeList;
 
 extern u8 sEwramHeapName[];
@@ -34,8 +34,8 @@ extern u32 gSioStatus;
 
 void func_080C55DC(void);
 void ModeUpdate(void);
-void* func_08000CD4(Node* node);
-void* func_08000CF0(Node* node);
+void* ListPoolNext(Node* node);
+void* ListPoolPrev(Node* node);
 
 
 void HeapUnlinkFreeBlock(HeapBlock* b) {
@@ -408,72 +408,72 @@ void ListRemove(Node* node, Node** head, Node** tail) {
     }
 }
 
-void func_08000BA4(NodeList* list) {
-    list->unk_00 = 0;
-    list->unk_04 = 0;
-    list->unk_08 = 0;
-    list->unk_0C = 0;
+void ListPoolInit(NodeList* list) {
+    list->freeHead = 0;
+    list->freeTail = 0;
+    list->activeHead = 0;
+    list->activeTail = 0;
 }
 
-void func_08000BB0(Node* node, NodeList* list, void* owner) {
-    ListAppend(node, &list->unk_00, &list->unk_04);
-    node->unk_00 = owner;
-    node->unk_0C = 0;
+void ListPoolAddFree(Node* node, NodeList* list, void* owner) {
+    ListAppend(node, &list->freeHead, &list->freeTail);
+    node->owner = owner;
+    node->flags = 0;
 }
 
-void func_08000BC8(void* a, void* b) {
+void ListPoolActivate(void* a, void* b) {
     Node* node;
     NodeList* list;
 
     node = a;
     list = b;
-    ListRemove(node, &list->unk_00, &list->unk_04);
-    ListAppend(node, &list->unk_08, &list->unk_0C);
-    node->unk_0C |= 1;
-    node->unk_10 = node;
+    ListRemove(node, &list->freeHead, &list->freeTail);
+    ListAppend(node, &list->activeHead, &list->activeTail);
+    node->flags |= 1;
+    node->self = node;
 }
 
-void func_08000BF4(Node* node, NodeList* list, Node* after) {
-    ListRemove(node, &list->unk_00, &list->unk_04);
-    ListInsertAfter(node, &list->unk_08, &list->unk_0C, after);
-    node->unk_0C |= 1;
-    node->unk_10 = node;
+void ListPoolActivateAfter(Node* node, NodeList* list, Node* after) {
+    ListRemove(node, &list->freeHead, &list->freeTail);
+    ListInsertAfter(node, &list->activeHead, &list->activeTail, after);
+    node->flags |= 1;
+    node->self = node;
 }
 
-void func_08000C24(Node* node, NodeList* list, Node* before) {
-    ListRemove(node, &list->unk_00, &list->unk_04);
-    ListInsertBefore(node, &list->unk_08, &list->unk_0C, before);
-    node->unk_0C |= 1;
-    node->unk_10 = node;
+void ListPoolActivateBefore(Node* node, NodeList* list, Node* before) {
+    ListRemove(node, &list->freeHead, &list->freeTail);
+    ListInsertBefore(node, &list->activeHead, &list->activeTail, before);
+    node->flags |= 1;
+    node->self = node;
 }
 
-void* func_08000C54(Node* node, NodeList* list) {
+void* ListPoolRelease(Node* node, NodeList* list) {
     Node* next;
 
     next = node->next;
-    ListRemove(node, &list->unk_08, &list->unk_0C);
-    ListAppend(node, &list->unk_00, &list->unk_04);
-    node->unk_0C &= 0xFFFE;
+    ListRemove(node, &list->activeHead, &list->activeTail);
+    ListAppend(node, &list->freeHead, &list->freeTail);
+    node->flags &= 0xFFFE;
 
     if (next != 0) {
-        return next->unk_00;
+        return next->owner;
     }
 
     return 0;
 }
 
-void* func_08000C8C(NodeList* list) {
+void* ListPoolFirst(NodeList* list) {
     Node* n;
     void* result;
 
-    n = list->unk_08;
+    n = list->activeHead;
 
     if (n != 0) {
-        if (n->unk_0C & 2) {
-            return func_08000CD4(n);
+        if (n->flags & 2) {
+            return ListPoolNext(n);
         }
 
-        result = n->unk_00;
+        result = n->owner;
     } else {
         result = 0;
     }
@@ -481,18 +481,18 @@ void* func_08000C8C(NodeList* list) {
     return result;
 }
 
-void* func_08000CB0(NodeList* list) {
+void* ListPoolLast(NodeList* list) {
     Node* n;
     void* result;
 
-    n = list->unk_0C;
+    n = list->activeTail;
 
     if (n != 0) {
-        if (n->unk_0C & 2) {
-            return func_08000CF0(n);
+        if (n->flags & 2) {
+            return ListPoolPrev(n);
         }
 
-        result = n->unk_00;
+        result = n->owner;
     } else {
         result = 0;
     }
@@ -500,18 +500,18 @@ void* func_08000CB0(NodeList* list) {
     return result;
 }
 
-void* func_08000CD4(Node* node) {
+void* ListPoolNext(Node* node) {
     Node* n;
     void* result;
 
     n = node->next;
 
     if (n != 0) {
-        if (n->unk_0C & 2) {
-            return func_08000CD4(n);
+        if (n->flags & 2) {
+            return ListPoolNext(n);
         }
 
-        result = n->unk_00;
+        result = n->owner;
     } else {
         result = 0;
     }
@@ -519,18 +519,18 @@ void* func_08000CD4(Node* node) {
     return result;
 }
 
-void* func_08000CF0(Node* node) {
+void* ListPoolPrev(Node* node) {
     Node* n;
     void* result;
 
     n = node->prev;
 
     if (n != 0) {
-        if (n->unk_0C & 2) {
-            return func_08000CF0(n);
+        if (n->flags & 2) {
+            return ListPoolPrev(n);
         }
 
-        result = n->unk_00;
+        result = n->owner;
     } else {
         result = 0;
     }
@@ -538,13 +538,13 @@ void* func_08000CF0(Node* node) {
     return result;
 }
 
-void* func_08000D0C(NodeList* list) {
+void* ListPoolFirstFree(NodeList* list) {
     Node* n;
 
-    n = list->unk_00;
+    n = list->freeHead;
 
     if (n != 0) {
-        return n->unk_00;
+        return n->owner;
     }
 
     return 0;
@@ -554,37 +554,37 @@ void func_08000D1C(void) {
 }
 
 void func_08000D20(Node* node, NodeList* list, void* owner) {
-    node->unk_00 = owner;
-    node->unk_0C = 0;
+    node->owner = owner;
+    node->flags = 0;
 }
 
 void func_08000D28(Node* node, NodeList* list) {
-    ListAppend(node, &list->unk_08, &list->unk_0C);
-    node->unk_0C |= 1;
-    node->unk_10 = node;
+    ListAppend(node, &list->activeHead, &list->activeTail);
+    node->flags |= 1;
+    node->self = node;
 }
 
 void func_08000D48(Node* node, NodeList* list, Node* after) {
-    ListInsertAfter(node, &list->unk_08, &list->unk_0C, after);
-    node->unk_0C |= 1;
-    node->unk_10 = node;
+    ListInsertAfter(node, &list->activeHead, &list->activeTail, after);
+    node->flags |= 1;
+    node->self = node;
 }
 
 void func_08000D6C(Node* node, NodeList* list, Node* before) {
-    ListInsertBefore(node, &list->unk_08, &list->unk_0C, before);
-    node->unk_0C |= 1;
-    node->unk_10 = node;
+    ListInsertBefore(node, &list->activeHead, &list->activeTail, before);
+    node->flags |= 1;
+    node->self = node;
 }
 
 void* func_08000D90(Node* node, NodeList* list) {
     Node* next;
 
     next = node->next;
-    ListRemove(node, &list->unk_08, &list->unk_0C);
-    node->unk_0C &= 0xFFFE;
+    ListRemove(node, &list->activeHead, &list->activeTail);
+    node->flags &= 0xFFFE;
 
     if (next != 0) {
-        return next->unk_00;
+        return next->owner;
     }
 
     return 0;

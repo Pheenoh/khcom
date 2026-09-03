@@ -10,13 +10,13 @@ extern u8 gUnk_09849098[];
 extern u8 gUnk_097DB5F8[];
 extern u8 gUnk_0984AA38[];
 extern u8 gUnk_09841798[];
-extern Mode gUnk_09EF6AF0;
-extern Mode gUnk_09EF4EC0;
-extern Mode gUnk_09EF4ED0;
+extern Mode gModeMenuMsg;
+extern Mode gModeCopyright1;
+extern Mode gModeCopyright2;
 
 int SaveRepairHeader(void);
 void ModeRequest(Mode* mode, s32 arg);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgPriority(s32 bg, u16 priority);

@@ -578,7 +578,7 @@ _0800338E:
 	beq _0800347E
 	mov r0, r12
 	adds r1, r7, #0x0
-	bl func_08001DB0
+	bl GetObjTileCount
 	ldr r6, [sp, #0x020]
 	adds r0, r6, r0
 	lsls r0, r0, #0x10
@@ -633,7 +633,7 @@ _080033AE:
 	strh r4, [r3, #0x04]
 	ldrh r0, [r3, #0x00]
 	ldrh r1, [r3, #0x02]
-	bl func_08001DB0
+	bl GetObjTileCount
 	ldr r4, [sp, #0x020]
 	adds r0, r4, r0
 	lsls r0, r0, #0x10

@@ -19,15 +19,15 @@ extern u8 sSpriteHeapName[];
 
 extern u16 gDispCnt;
 
-void func_08000BA4(void* pool);
-void func_08000BB0(void* node, void* pool, void* owner);
-void func_080034EC(u8 a, u8 b);
+void ListPoolInit(void* pool);
+void ListPoolAddFree(void* node, void* pool, void* owner);
+void SetObjMosaicSize(u8 a, u8 b);
 
-void func_08001E64(SpriteEntry** arr, s32 lo, s32 hi);
+void SortSpriteEntries(SpriteEntry** arr, s32 lo, s32 hi);
 void EnableObj(void);
 void DisableObj(void);
-void func_08001F20(u16 a, u16 b);
-void func_08001F5C(u16 a, u16 b);
+void SetObjTileRange(u16 a, u16 b);
+void SetObjPaletteRange(u16 a, u16 b);
 
 void SpriteInit(void) {
     u32 zero;
@@ -42,7 +42,7 @@ void SpriteFree(void) {
     IwramFree(gSpriteWork);
 }
 
-u16 func_08001DB0(u16 a, u16 b) {
+u16 GetObjTileCount(u16 a, u16 b) {
     switch ((((u32)b << 16) | a) & 0xC000C000) {
     case 0x00000000:
         return 1;
@@ -67,7 +67,7 @@ u16 func_08001DB0(u16 a, u16 b) {
     return 0;
 }
 
-void func_08001E64(SpriteEntry** arr, s32 lo, s32 hi) {
+void SortSpriteEntries(SpriteEntry** arr, s32 lo, s32 hi) {
     SpriteEntry* t;
     u16 pivot;
     s32 i;
@@ -94,10 +94,10 @@ void func_08001E64(SpriteEntry** arr, s32 lo, s32 hi) {
         j--;
     }
     if (lo < i - 1) {
-        func_08001E64(arr, lo, i - 1);
+        SortSpriteEntries(arr, lo, i - 1);
     }
     if (j + 1 < hi) {
-        func_08001E64(arr, j + 1, hi);
+        SortSpriteEntries(arr, j + 1, hi);
     }
 }
 
@@ -109,7 +109,7 @@ void DisableObj(void) {
     gDispCnt &= 0xEFFF;
 }
 
-void func_08001F20(u16 a, u16 b) {
+void SetObjTileRange(u16 a, u16 b) {
     u8* p = gSpriteWork;
     s32 v;
 
@@ -122,7 +122,7 @@ void func_08001F20(u16 a, u16 b) {
     }
 }
 
-void func_08001F5C(u16 a, u16 b) {
+void SetObjPaletteRange(u16 a, u16 b) {
     u8* p = gSpriteWork;
     s32 v;
 
@@ -135,31 +135,31 @@ void func_08001F5C(u16 a, u16 b) {
     }
 }
 
-void func_08001F98(void) {
+void SpriteReset(void) {
     u8* p;
     s32 i;
 
     EnableObj();
-    func_08000BA4(gSpriteWork + 0x1800);
+    ListPoolInit(gSpriteWork + 0x1800);
 
     for (i = 0; i < 128; i++) {
-        func_08000BB0(gSpriteWork + i * 0x30 + 0x0C, gSpriteWork + 0x1800, gSpriteWork + i * 0x30);
+        ListPoolAddFree(gSpriteWork + i * 0x30 + 0x0C, gSpriteWork + 0x1800, gSpriteWork + i * 0x30);
     }
-    func_08000BA4(gSpriteWork + 0x1A94);
+    ListPoolInit(gSpriteWork + 0x1A94);
 
     for (i = 0; i < 16; i++) {
-        func_08000BB0(gSpriteWork + 0x1814 + i * 0x28 + 0x0C, gSpriteWork + 0x1A94,
+        ListPoolAddFree(gSpriteWork + 0x1814 + i * 0x28 + 0x0C, gSpriteWork + 0x1A94,
                       gSpriteWork + 0x1814 + i * 0x28);
     }
     p = gSpriteWork;
     *(u16*)(p + 0x28A8) = 0;
     *(u16*)(p + 0x2BAC) = 0;
     *(u16*)(p + 0x28AA) = 0;
-    func_080034EC(0, 0);
+    SetObjMosaicSize(0, 0);
     gSpriteWork[0x2BAE] = 0;
     gSpriteWork[0x2BAF] = 0;
-    func_08001F20(0, 0x400);
-    func_08001F5C(0, 0x10);
+    SetObjTileRange(0, 0x400);
+    SetObjPaletteRange(0, 0x10);
 }
 
 u8 func_08002060(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {

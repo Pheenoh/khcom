@@ -89,7 +89,7 @@ typedef struct UnkStruct_02039DD4 {
 
 extern UnkStruct_02039DD4* gUnk_02039DD4;
 
-typedef struct UnkStruct_02039B84 {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -163,9 +163,9 @@ typedef struct UnkStruct_02039B84 {
     s16 unk_1C8;
     u8 unk_1CA;
     u8 unk_1CB[0x05];
-} UnkStruct_02039B84;
+} BtlWork;
 
-extern UnkStruct_02039B84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
@@ -194,7 +194,7 @@ extern u8 gUnk_09EF2AA4[];
 extern u8 gUnk_0203C5AC[];
 extern u8 gUnk_0203C590[];
 extern u32 gUnk_09EF69FC[];
-extern void* gUnk_02034F0C;
+extern void* gUrsulaWork;
 
 extern u8 gUnk_08B22BA8[];
 extern u8 gUnk_08B22EE4[];

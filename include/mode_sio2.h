@@ -21,10 +21,10 @@ typedef struct PoohPrizeArgs {
     s32 unk_10;
     u16 unk_14;
 } PoohPrizeArgs;
-typedef struct PoohSetup {
+typedef struct GameState {
     u8 unk_00[0x0C];
     u8 world;
-} PoohSetup;
+} GameState;
 
 typedef struct CharaLinkData {
     u16 unk_00;
@@ -67,7 +67,7 @@ typedef struct PoohHit {
 
 typedef struct PoohWork {
     void* unk_00;
-    PaletteSlot* unk_04;
+    PaletteSlot* palette;
     u8 unk_08[0x04];
     u8 unk_0C[0x18];
     u8 unk_24;
@@ -97,7 +97,7 @@ typedef struct PoohWork {
 } PoohWork;
 
 extern u32 gUnk_02034DAC;
-extern PoohSetup gUnk_02039BB0;
+extern GameState gGameState;
 extern u8 gUnk_0203A9E4;
 extern CharaLinkData gUnk_0203AAC0;
 extern s8 gUnk_0203C3C4;
@@ -108,7 +108,7 @@ extern s8 gUnk_0203C3D4;
 extern u8 gUnk_0203C3D8;
 extern u32 gUnk_0203C3F0;
 
-extern u8 gUnk_08128304[];
+extern u8 gWhitePalette[];
 extern const char gUnk_0961A9C8[];
 extern const char gUnk_0961A9CC[];
 extern const char gUnk_0961A9E8[];
@@ -145,46 +145,46 @@ extern PoohAnim gUnk_09EF3FD8[];
 extern PoohAnim gUnk_09EF3FE8[];
 extern PoohAnim gUnk_09EF3FF8[];
 extern PoohAnim gUnk_09EF4048[][5];
-extern Mode gUnk_09EF1308;
+extern Mode gModeSioBtlConnect;
 extern const char* const gUnk_09EF34F0[];
 extern const char* const gUnk_09EF3504[];
-extern TaskDesc gUnk_09EF161C;
-extern TaskDesc gUnk_09EF41D8;
-extern TaskDesc gUnk_09EF41F0;
-extern TaskDesc gUnk_09EF48C8;
-extern TaskDesc gUnk_09EF4988;
-extern TaskDesc gUnk_09EF4A48;
-extern TaskDesc gUnk_09EF4A60;
-extern TaskDesc gUnk_09EF4A90;
-extern TaskDesc gUnk_09EF4AA8;
-extern TaskDesc gUnk_09EF4AC0;
-extern TaskDesc gUnk_09EF4AD8;
-extern TaskDesc gUnk_09EF4A78;
-extern TaskDesc gUnk_09EF4AF0;
-extern TaskDesc gUnk_09EF4B50;
-extern TaskDesc gUnk_09EF4B68;
-extern TaskDesc gUnk_09EF4B80;
-extern TaskDesc gUnk_09EF4B98;
-extern TaskDesc gUnk_09EF4BB0;
-extern TaskDesc gUnk_09EF4BE0;
-extern TaskDesc gUnk_09EF4BF8;
-extern TaskDesc gUnk_09EF4C28;
-extern TaskDesc gUnk_09EF4910;
-extern TaskDesc gUnk_09EF4C58;
-extern TaskDesc gUnk_09EF4D80;
-extern TaskDesc gUnk_09EF4D98;
+extern TaskDesc gTaskDescWLogo;
+extern TaskDesc gTaskDescPooPooh;
+extern TaskDesc gTaskDescPooMap;
+extern TaskDesc gTaskDescPooSora;
+extern TaskDesc gTaskDescPooGauge;
+extern TaskDesc gTaskDescPooPiglet;
+extern TaskDesc gTaskDescPooEeyore;
+extern TaskDesc gTaskDescPooRabbit;
+extern TaskDesc gTaskDescPooTigger;
+extern TaskDesc gTaskDescPooTiggerroo;
+extern TaskDesc gTaskDescPooRoo;
+extern TaskDesc gTaskDescPooOwl;
+extern TaskDesc gTaskDescPooRooFootmark;
+extern TaskDesc gTaskDescPooEeyoretail;
+extern TaskDesc gTaskDescPooHoneycomb;
+extern TaskDesc gTaskDescPooVegetable;
+extern TaskDesc gTaskDescPooWagon;
+extern TaskDesc gTaskDescPooWagonwheel;
+extern TaskDesc gTaskDescPooBee;
+extern TaskDesc gTaskDescPooBeeAfterEvent;
+extern TaskDesc gTaskDescPooCabbageborn;
+extern TaskDesc gTaskDescPooBalloon;
+extern TaskDesc gTaskDescPooPrize;
+extern TaskDesc gTaskDescPooRabbitAfterEvent;
+extern TaskDesc gTaskDescPooCabbageAfterEvent;
 
 void ModeRequest(Mode* mode, s32 arg);
-u8 func_08000F48(Task* t);
+u8 IsTaskActive(Task* t);
 u16 GetKeysRepeat(void);
 void func_08002A10(void* a, void* b);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjPalette(void* a);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
-void func_08005778(u16 r, u16 g, u16 b);
+void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_08005974(void* a, u8 b, s32 c, void* d, void* e);
 void ApproachValue(u32* value, u32 target, u16 steps);
 void func_08006120(s32 a, u16 b);
@@ -193,7 +193,7 @@ void func_080062F4(u16 a, s32 b);
 u8 func_08006314(void);
 void func_0801227C(void);
 void func_080125A4(void);
-void func_08012650(void* a, u16 b);
+void ColliderSetRadius(void* a, u16 b);
 void UpdatePlayTime(void);
 void func_0805FA60(s32 a, void* b, s32 c, s32 d);
 void func_0805FA8C(s32 a, u16 b, u16 c);

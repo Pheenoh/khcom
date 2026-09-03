@@ -29,15 +29,15 @@ s16 gUnk_02034066;
 s16 gUnk_02034068;
 u16 gUnk_0203406A;
 
-void* func_08000BC8(void* node, void* pool);
-void func_08000BF4(void* node, void* pool, void* after);
-void func_08000C24(void* node, void* pool, void* before);
-void* func_08000C8C(void* pool);
-void* func_08000CD4(void* node);
-void* func_08000D0C(void* pool);
+void* ListPoolActivate(void* node, void* pool);
+void ListPoolActivateAfter(void* node, void* pool, void* after);
+void ListPoolActivateBefore(void* node, void* pool, void* before);
+void* ListPoolFirst(void* pool);
+void* ListPoolNext(void* node);
+void* ListPoolFirstFree(void* pool);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
-void func_08000C54(void* node, void* pool);
-void func_08001E64(void* arr, s32 lo, s32 hi);
+void ListPoolRelease(void* node, void* pool);
+void SortSpriteEntries(void* arr, s32 lo, s32 hi);
 extern s16 gSineTable[];
 extern u16 gBg0Cnt;
 extern u16 gBg1Cnt;
@@ -74,7 +74,7 @@ void PopPaletteEffect(void);
 
 extern u16 gSystemFlags;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
-u16 func_08001DB0(u16 a, u16 b);
+u16 GetObjTileCount(u16 a, u16 b);
 s32 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
@@ -104,7 +104,7 @@ void PopPaletteEffect(void);
 
 extern u16 gSystemFlags;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
-u16 func_08001DB0(u16 a, u16 b);
+u16 GetObjTileCount(u16 a, u16 b);
 s32 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
@@ -226,37 +226,37 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     if (src == 0) {
         return 0;
     }
-    cur = func_08000C8C(gSpriteWork + 0x1800);
+    cur = ListPoolFirst(gSpriteWork + 0x1800);
     while (cur != 0) {
         if (cur->unk_00 == src && cur->unk_24 == 0) {
-            cur->unk_04++;
+            cur->refCount++;
             return cur;
         }
-        cur = func_08000CD4(cur->unk_0C);
+        cur = ListPoolNext(cur->unk_0C);
     }
-    node = func_08000D0C(gSpriteWork + 0x1800);
+    node = ListPoolFirstFree(gSpriteWork + 0x1800);
     if (node == 0) {
         return 0;
     }
     node->unk_28 = 0;
     node->unk_08 = size / 32;
     node->unk_00 = src;
-    node->unk_04 = 0;
+    node->refCount = 0;
     node->unk_20 = 0;
     node->unk_24 = 0;
-    node->unk_2C = node;
-    cur = func_08000C8C(gSpriteWork + 0x1800);
+    node->self = node;
+    cur = ListPoolFirst(gSpriteWork + 0x1800);
     if (cur == 0) {
         node->unk_06 = *(u16*)(gSpriteWork + 0x1810);
         RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
-        func_08000BC8(node->unk_0C, gSpriteWork + 0x1800);
+        ListPoolActivate(node->unk_0C, gSpriteWork + 0x1800);
         return node;
     }
     node->unk_06 = *(u16*)(gSpriteWork + 0x1810);
     avail = cur->unk_06 - *(u16*)(gSpriteWork + 0x1810);
     if (node->unk_08 <= (s16)avail) {
         RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
-        func_08000C24(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
+        ListPoolActivateBefore(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
         return node;
     }
 
@@ -264,7 +264,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
         if (cur == 0) {
             break;
         }
-        next = func_08000CD4(cur->unk_0C);
+        next = ListPoolNext(cur->unk_0C);
         node->unk_06 = cur->unk_06 + cur->unk_08;
         if (node->unk_06 + node->unk_08 > *(u16*)(gSpriteWork + 0x1812)) {
             break;
@@ -278,7 +278,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
 
         if (node->unk_08 <= end) {
             RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
-            func_08000BF4(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
+            ListPoolActivateAfter(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
             return node;
         }
         cur = next;
@@ -291,18 +291,18 @@ void func_0800284C(u8* p) {
         *(u16*)(p + 4) -= 1;
     } else {
         *(void**)(p + 0x2C) = 0;
-        func_08000C54(p + 0x0C, gSpriteWork + 0x1800);
+        ListPoolRelease(p + 0x0C, gSpriteWork + 0x1800);
     }
 }
 
 void func_08002880(u8* p) {
     *(void**)(p + 0x2C) = 0;
-    func_08000C54(p + 0x0C, gSpriteWork + 0x1800);
+    ListPoolRelease(p + 0x0C, gSpriteWork + 0x1800);
 }
 
 void func_080028A0(u8* p) {
     *(void**)(p + 0x2C) = 0;
-    func_08000C54(p + 0x0C, gSpriteWork + 0x1800);
+    ListPoolRelease(p + 0x0C, gSpriteWork + 0x1800);
 }
 
 void ReleaseObjTiles(void* a) {
@@ -340,27 +340,27 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
     if (size == 0) {
         return 0;
     }
-    node = func_08000D0C(gSpriteWork + 0x1800);
+    node = ListPoolFirstFree(gSpriteWork + 0x1800);
     if (node == 0) {
         return 0;
     }
     node->unk_28 = 1;
     node->unk_08 = size / 32;
     node->unk_00 = owner;
-    node->unk_04 = 0;
+    node->refCount = 0;
     node->unk_20 = 0;
     node->unk_24 = 1;
-    node->unk_2C = node;
-    cur = func_08000C8C(gSpriteWork + 0x1800);
+    node->self = node;
+    cur = ListPoolFirst(gSpriteWork + 0x1800);
     if (cur == 0) {
         node->unk_06 = *(u16*)(gSpriteWork + 0x1810);
-        func_08000BC8(node->unk_0C, gSpriteWork + 0x1800);
+        ListPoolActivate(node->unk_0C, gSpriteWork + 0x1800);
         return node;
     }
     node->unk_06 = *(u16*)(gSpriteWork + 0x1810);
     avail = cur->unk_06 - *(u16*)(gSpriteWork + 0x1810);
     if (node->unk_08 <= (s16)avail) {
-        func_08000C24(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
+        ListPoolActivateBefore(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
         return node;
     }
 
@@ -368,7 +368,7 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
         if (cur == 0) {
             break;
         }
-        next = func_08000CD4(cur->unk_0C);
+        next = ListPoolNext(cur->unk_0C);
         node->unk_06 = cur->unk_06 + cur->unk_08;
         if (node->unk_06 + node->unk_08 > *(u16*)(gSpriteWork + 0x1812)) {
             break;
@@ -381,7 +381,7 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
         }
 
         if (node->unk_08 <= end) {
-            func_08000BF4(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
+            ListPoolActivateAfter(node->unk_0C, gSpriteWork + 0x1800, cur->unk_0C);
             return node;
         }
         cur = next;
@@ -407,7 +407,7 @@ void func_08002BCC(void* a) {
     } else {
         *(u32*)(p + 0x24) = 0;
         func_08005C60(*(u16*)(p + 6) + 0x10);
-        func_08000C54(p + 0x0C, gSpriteWork + 0x1A94);
+        ListPoolRelease(p + 0x0C, gSpriteWork + 0x1A94);
     }
 }
 
@@ -417,7 +417,7 @@ void ReleaseObjPalette(u8* p) {
     }
 }
 
-u8* func_08002C28(u8 a, u8 b) {
+u8* AllocObjAffineAngle(u8 a, u8 b) {
     u8* base;
     u8* e;
     s32 sin;
@@ -497,7 +497,7 @@ u8* func_08002DA0(u8 a, s32 sx, s32 sy, u8 f) {
     return e;
 }
 
-u8* func_08002E8C(u16 a, u16 b, u16 c, u16 d, u8 f) {
+u8* AllocObjAffineMatrix(u16 a, u16 b, u16 c, u16 d, u8 f) {
     u8* base;
     u8* e;
     u32 z;
@@ -522,9 +522,9 @@ u8* func_08002E8C(u16 a, u16 b, u16 c, u16 d, u8 f) {
     return e;
 }
 
-void func_08002F0C(void) {
+void SortSprites(void) {
     if (*(u16*)(gSpriteWork + 0x28A8) > 1) {
-        func_08001E64(gSpriteWork + 0x26A8, *(u16*)(gSpriteWork + 0x28AA),
+        SortSpriteEntries(gSpriteWork + 0x26A8, *(u16*)(gSpriteWork + 0x28AA),
                       *(u16*)(gSpriteWork + 0x28A8) - 1);
     }
     *(u16*)(gSpriteWork + 0x28AA) = 0;
@@ -536,7 +536,7 @@ void func_080034D8(u8 a) {
     gSpriteWork[0x2BAF] = a;
 }
 
-void func_080034EC(u8 a, u8 b) {
+void SetObjMosaicSize(u8 a, u8 b) {
     a &= 0xF;
     b &= 0xF;
     gMosaic = (gMosaic & 0xFF) | (a << 8) | (b << 12);
@@ -563,7 +563,7 @@ u16 func_08003524(u16** a, u16 n) {
         sum = 0;
 
         for (j = 0; j < count; j++) {
-            sum += func_08001DB0(p[0], p[1]);
+            sum += GetObjTileCount(p[0], p[1]);
             p += 3;
         }
 
@@ -580,7 +580,7 @@ u16 func_08003598(u16* p) {
     u16 i;
 
     for (i = 0; i < count; i++) {
-        total += func_08001DB0(p[0], p[1]);
+        total += GetObjTileCount(p[0], p[1]);
         p += 3;
     }
     return (u16)(total << 5);
@@ -612,7 +612,7 @@ void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size) {
         t->unk_28 = 0;
         t->unk_08 = size >> 5;
         t->unk_00 = src;
-        t->unk_04 = 0;
+        t->refCount = 0;
         t->unk_20 = 0;
         t->unk_24 = 0;
         t->unk_06 = slot;
@@ -625,7 +625,7 @@ void func_08003858(ObjTiles* t, u16 slot, u16 size, void* src) {
         t->unk_28 = 1;
         t->unk_08 = size >> 5;
         t->unk_00 = src;
-        t->unk_04 = 0;
+        t->refCount = 0;
         t->unk_20 = 0;
         t->unk_24 = 1;
         t->unk_06 = slot;
@@ -637,7 +637,7 @@ void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size) {
         t->unk_20 = 0;
         t->unk_08 = size >> 5;
         t->unk_00 = src;
-        t->unk_04 = 0;
+        t->refCount = 0;
         t->unk_06 = slot;
         RequestDma3Copy(src, (void*)((t->unk_06 << 5) + 0x05000200), size);
     }
@@ -669,7 +669,7 @@ u8 func_080038E4(ObjTiles* a, u16* b, void* c) {
             if (count != 0) {
                 j = count;
                 do {
-                    n = func_08001DB0(b[0], b[1]);
+                    n = GetObjTileCount(b[0], b[1]);
                     RequestDma3Copy((u8*)a->unk_00 + ((b[2] & 0x3FF) << 5),
                                     (void*)(((a->unk_06 + acc) << 5) + 0x06010000), n * 32);
                     acc = acc + n;
@@ -682,32 +682,32 @@ u8 func_080038E4(ObjTiles* a, u16* b, void* c) {
     }
     return 0;
 }
-ObjTiles* func_08003970(u16 size) {
+ObjTiles* AllocObjPalette(u16 size) {
     ObjTiles* node;
     ObjTiles* cur;
     ObjTiles* next;
     s32 avail;
     s16 end;
 
-    node = func_08000D0C(gSpriteWork + 0x1A94);
+    node = ListPoolFirstFree(gSpriteWork + 0x1A94);
     if (node == 0) {
         return 0;
     }
     node->unk_20 = 2;
     node->unk_08 = size / 32;
     node->unk_00 = 0;
-    node->unk_04 = 0;
+    node->refCount = 0;
     *(ObjTiles**)((u8*)node + 0x24) = node;
-    cur = func_08000C8C(gSpriteWork + 0x1A94);
+    cur = ListPoolFirst(gSpriteWork + 0x1A94);
     if (cur == 0) {
         node->unk_06 = *(u16*)(gSpriteWork + 0x1AA4);
-        func_08000BC8(node->unk_0C, gSpriteWork + 0x1A94);
+        ListPoolActivate(node->unk_0C, gSpriteWork + 0x1A94);
         return node;
     }
     node->unk_06 = *(u16*)(gSpriteWork + 0x1AA4);
     avail = cur->unk_06 - *(u16*)(gSpriteWork + 0x1AA4);
     if (node->unk_08 <= (s16)avail) {
-        func_08000C24(node->unk_0C, gSpriteWork + 0x1A94, cur->unk_0C);
+        ListPoolActivateBefore(node->unk_0C, gSpriteWork + 0x1A94, cur->unk_0C);
         return node;
     }
 
@@ -715,7 +715,7 @@ ObjTiles* func_08003970(u16 size) {
         if (cur == 0) {
             break;
         }
-        next = func_08000CD4(cur->unk_0C);
+        next = ListPoolNext(cur->unk_0C);
         node->unk_06 = cur->unk_06 + cur->unk_08;
         if (node->unk_06 + node->unk_08 > *(u16*)(gSpriteWork + 0x1AA6)) {
             break;
@@ -728,7 +728,7 @@ ObjTiles* func_08003970(u16 size) {
         }
 
         if (node->unk_08 <= end) {
-            func_08000BF4(node->unk_0C, gSpriteWork + 0x1A94, cur->unk_0C);
+            ListPoolActivateAfter(node->unk_0C, gSpriteWork + 0x1A94, cur->unk_0C);
             return node;
         }
         cur = next;
@@ -742,13 +742,13 @@ void func_08003A70(ObjTiles* t, void* src) {
     }
 }
 
-u8 func_08003A98(u16 n) {
+u8 CanAllocObjTiles(u16 n) {
     ObjTiles* cur;
     ObjTiles* next;
     u16 pos;
     s16 end;
 
-    cur = func_08000C8C(gSpriteWork + 0x1800);
+    cur = ListPoolFirst(gSpriteWork + 0x1800);
     if (cur == 0) {
         return 1;
     }
@@ -761,7 +761,7 @@ u8 func_08003A98(u16 n) {
         if (cur == 0) {
             break;
         }
-        next = func_08000CD4(cur->unk_0C);
+        next = ListPoolNext(cur->unk_0C);
         pos = cur->unk_06 + cur->unk_08;
         if ((s16)pos + n > *(u16*)(gSpriteWork + 0x1812)) {
             break;
@@ -780,13 +780,13 @@ u8 func_08003A98(u16 n) {
     }
     return 0;
 }
-u8 func_08003B24(u16 n) {
+u8 CanAllocObjPalette(u16 n) {
     ObjTiles* cur;
     ObjTiles* next;
     u16 pos;
     s16 end;
 
-    cur = func_08000C8C(gSpriteWork + 0x1A94);
+    cur = ListPoolFirst(gSpriteWork + 0x1A94);
     if (cur == 0) {
         return 1;
     }
@@ -799,7 +799,7 @@ u8 func_08003B24(u16 n) {
         if (cur == 0) {
             break;
         }
-        next = func_08000CD4(cur->unk_0C);
+        next = ListPoolNext(cur->unk_0C);
         pos = cur->unk_06 + cur->unk_08;
         if ((s16)pos + n > *(u16*)(gSpriteWork + 0x1AA6)) {
             break;
@@ -818,7 +818,7 @@ u8 func_08003B24(u16 n) {
     }
     return 0;
 }
-void func_08003BB0(u16 a, u16 b, u16* w, u16* h) {
+void GetObjSize(u16 a, u16 b, u16* w, u16* h) {
     switch (((b << 16) | a) & 0xC000C000) {
     case 0x00000000:
         *w = 8;
@@ -1041,7 +1041,7 @@ void VTransFree(void) {
 void VTransReset(void) {
     Dma3Queue* q = gDma3Requests;
 
-    q->unk_10A0 = 0;
+    q->requestCount = 0;
     q->unk_10A2 = 0;
     q->unk_10A4 = 0;
     q->unk_10A6 = 0;
@@ -1057,15 +1057,15 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
         return 0;
     }
     q = gDma3Requests;
-    if (q->unk_10A0 > 255) {
+    if (q->requestCount > 255) {
         return 0;
     }
 
     if ((gSystemFlags & 8) == 0) {
-        q->requests[q->unk_10A0].src = src;
-        q->requests[q->unk_10A0].dst = dst;
-        q->requests[q->unk_10A0].size = size;
-        q->unk_10A0 = q->unk_10A0 + 1;
+        q->requests[q->requestCount].src = src;
+        q->requests[q->requestCount].dst = dst;
+        q->requests[q->requestCount].size = size;
+        q->requestCount = q->requestCount + 1;
     } else {
         dma = (vu32*)0x040000D4;
         dma[0] = (u32)src;
@@ -1136,7 +1136,7 @@ void BgInit(void) {
     CpuSet(&zero, *p, 0x05000010);
 }
 
-void func_08004BC4(void) {
+void BgFree(void) {
     IwramFree(gBgEntries);
 }
 
@@ -1149,17 +1149,17 @@ void* func_08004BD8(BgEntry* e, u16 x, u16 y) {
 
 INCLUDE_ASM("engine/func_08004C20.s");
 
-void func_08004D74(void) {
+void BgReset(void) {
     gBackdropColor = 0;
     DisableBg(0);
     DisableBg(1);
     DisableBg(2);
     DisableBg(3);
-    func_080054C8(0, 0);
+    SetBgMosaicSize(0, 0);
     gBldCnt = 0;
 }
 
-void func_08004DB0(void) {
+void SetBgMode0(void) {
     s32 i;
 
     gDispCnt = gDispCnt & 0xFFF8;
@@ -1184,7 +1184,7 @@ void func_08004DB0(void) {
         *(void**)p = 0;
     }
 }
-void func_08004E64(void) {
+void SetBgMode1(void) {
     s32 i;
 
     gDispCnt = (gDispCnt & 0xFFF8) | 1;
@@ -1196,7 +1196,7 @@ void func_08004E64(void) {
     SetupBg(2, 2, 23, 0);
     SetBgScroll(0, 0, 0);
     SetBgScroll(1, 0, 0);
-    func_08005690(2, 0, 0x100, 0x100, 0, 0);
+    SetBgAffine(2, 0, 0x100, 0x100, 0, 0);
 
     for (i = 0; i <= 3; i++) {
         u8* p = (u8*)gBgEntries;
@@ -1206,7 +1206,7 @@ void func_08004E64(void) {
         *(void**)p = 0;
     }
 }
-void func_08004F08(void) {
+void SetBgMode2(void) {
     s32 i;
 
     gDispCnt = (gDispCnt & 0xFFF8) | 2;
@@ -1214,8 +1214,8 @@ void func_08004F08(void) {
     gBg3Cnt = 0x4081;
     SetupBg(2, 0, 15, 0);
     SetupBg(3, 2, 31, 0);
-    func_08005690(2, 0, 0x100, 0x100, 0, 0);
-    func_08005690(3, 0, 0x100, 0x100, 0, 0);
+    SetBgAffine(2, 0, 0x100, 0x100, 0, 0);
+    SetBgAffine(3, 0, 0x100, 0x100, 0, 0);
 
     for (i = 0; i <= 3; i++) {
         u8* p = (u8*)gBgEntries;
@@ -1225,7 +1225,7 @@ void func_08004F08(void) {
         *(void**)p = 0;
     }
 }
-void func_08004FA0(void) {
+void SetBgMode3(void) {
     gDispCnt = (gDispCnt & 0xFFF8) | 3;
     SetBgScroll(2, 0, 0);
 }
@@ -1361,7 +1361,7 @@ void SetBgMosaic(s32 bg, u8 on) {
     }
 }
 
-void func_080054C8(u8 a, u8 b) {
+void SetBgMosaicSize(u8 a, u8 b) {
     a &= 0xF;
     b &= 0xF;
     gMosaic = (gMosaic & 0xFF00) | a | (b << 4);
@@ -1471,7 +1471,7 @@ void SetBgOverflow(s32 bg, u8 on) {
     }
 }
 
-void func_08005690(s32 bg, u8 rot, s32 sx, s32 sy, s32 dx, s32 dy) {
+void SetBgAffine(s32 bg, u8 rot, s32 sx, s32 sy, s32 dx, s32 dy) {
     BgAffineSrcData src;
     BgAffineDstData dst;
 
@@ -1504,7 +1504,7 @@ void func_08005690(s32 bg, u8 rot, s32 sx, s32 sy, s32 dx, s32 dy) {
     }
 }
 
-void func_08005778(u8 r, u8 g, u8 b) {
+void SetBackdropColor(u8 r, u8 g, u8 b) {
     g &= 0x1F;
     b &= 0x1F;
     gUnk_030074CC = (b << 10) | (g << 5) | (r & 0x1F);
@@ -1756,19 +1756,19 @@ u8 AnimIsFinished(AnimState* a) {
     return 0;
 }
 
-u16 func_08005B30(AnimState* a) {
+u16 AnimGetId(AnimState* a) {
     return a->animId;
 }
 
-u16 func_08005B34(AnimState* a) {
+u16 AnimGetFrame(AnimState* a) {
     return a->frame;
 }
 
-u16 func_08005B38(AnimState* a) {
+u16 AnimGetGfxIndex(AnimState* a) {
     return a->frames[a->frame].gfxIndex;
 }
 
-void func_08005B44(AnimState* a, u16 frame) {
+void AnimSetFrame(AnimState* a, u16 frame) {
     if (frame < a->frameCount) {
         a->frame = frame;
         a->timer = 0;
@@ -1776,7 +1776,7 @@ void func_08005B44(AnimState* a, u16 frame) {
     }
 }
 
-void func_08005B64(AnimState* a) {
+void AnimReset(AnimState* a) {
     a->frame = 0;
     a->timer = 0;
     a->flags &= 0xEFFF;
@@ -1969,14 +1969,14 @@ void func_080063C4(u8 on) {
     }
 }
 
-void func_08006404(void) {
+void MosaicReset(void) {
     gUnk_0203401C = 0;
     gUnk_02034020 = 0;
     gUnk_02034024 = 0;
     gUnk_02034026 = 0;
 }
 
-void func_0800642C(void) {
+void MosaicUpdate(void) {
     u16 t;
     u8 v;
 
@@ -1984,8 +1984,8 @@ void func_0800642C(void) {
         ApproachValue((s32*)&gUnk_0203401C, gUnk_02034020, gUnk_02034024--);
         t = gUnk_0203401C >> 8;
         v = t;
-        func_080054C8(v, v);
-        func_080034EC(v, v);
+        SetBgMosaicSize(v, v);
+        SetObjMosaicSize(v, v);
     } else if (gUnk_02034026 != 0) {
         gUnk_02034026 = 0;
         func_080034D8(0);

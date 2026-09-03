@@ -44,20 +44,20 @@ void* memset(void* dst, s32 c, unsigned long n);
 void SndStreamInit(u32 rate, u32 channels) {
     u32 i;
 
-    gSndStream.unk_38 = rate;
-    gSndStream.unk_3C = 0x10000 - (s32)(GBA_CLOCK / rate + 0.5f);
-    gSndStream.unk_30 = (s32)(rate / GBA_REFRESH + 0.5f);
-    gSndStream.unk_34 = gSndStream.unk_30 * FRAMES_PER_BUFFER;
-    gSndStream.unk_40 = channels;
-    gSndStream.unk_44 = 0;
-    gSndStream.unk_28 = 0;
+    gSndStream.sampleRate = rate;
+    gSndStream.timerReload = 0x10000 - (s32)(GBA_CLOCK / rate + 0.5f);
+    gSndStream.samplesPerFrame = (s32)(rate / GBA_REFRESH + 0.5f);
+    gSndStream.bufferSize = gSndStream.samplesPerFrame * FRAMES_PER_BUFFER;
+    gSndStream.channels = channels;
+    gSndStream.playing = 0;
+    gSndStream.dmaOffset = 0;
     gSndStream.unk_2C = 0;
 
     for (i = 0; i < channels; i++) {
-        gSndStream.unk_00[i] =
-            gSndStream.unk_4C((gSndStream.unk_34 + 3) & ~3);
-        memset(gSndStream.unk_00[i], 0, gSndStream.unk_34);
-        gSndStream.unk_08[i] = 0;
+        gSndStream.buffers[i] =
+            gSndStream.alloc((gSndStream.bufferSize + 3) & ~3);
+        memset(gSndStream.buffers[i], 0, gSndStream.bufferSize);
+        gSndStream.writePos[i] = 0;
         gSndStream.unk_10[i] = 0;
         gSndStream.unk_18[i] = 0;
         gSndStream.unk_20[i] = 0;
@@ -66,44 +66,44 @@ void SndStreamInit(u32 rate, u32 channels) {
     if (channels == 1) {
         REG_SOUNDCNT_H = 0x0B04;
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
-        REG_DMA1SAD = gSndStream.unk_00[0];
+        REG_DMA1SAD = gSndStream.buffers[0];
         REG_DMA1DAD = REG_ADDR_FIFO_A;
         REG_DMA1CNT = DMA_SOUND_FIFO;
     } else {
         REG_SOUNDCNT_H = 0xA90C;
         REG_SOUNDCNT_X = SOUND_MASTER_ENABLE;
-        REG_DMA1SAD = gSndStream.unk_00[0];
+        REG_DMA1SAD = gSndStream.buffers[0];
         REG_DMA1DAD = REG_ADDR_FIFO_A;
         REG_DMA1CNT = DMA_SOUND_FIFO;
-        REG_DMA2SAD = gSndStream.unk_00[1];
+        REG_DMA2SAD = gSndStream.buffers[1];
         REG_DMA2DAD = REG_ADDR_FIFO_B;
         REG_DMA2CNT = DMA_SOUND_FIFO;
     }
 }
 
 void SndStreamUpdate(void) {
-    if (gSndStream.unk_44 != 0) {
-        gSndStream.unk_28 += gSndStream.unk_30;
-        if (gSndStream.unk_28 == gSndStream.unk_34) {
-            gSndStream.unk_28 = 0;
+    if (gSndStream.playing != 0) {
+        gSndStream.dmaOffset += gSndStream.samplesPerFrame;
+        if (gSndStream.dmaOffset == gSndStream.bufferSize) {
+            gSndStream.dmaOffset = 0;
         }
-        gSndStream.unk_2C += gSndStream.unk_30;
+        gSndStream.unk_2C += gSndStream.samplesPerFrame;
 
-        if (gSndStream.unk_40 == 1) {
+        if (gSndStream.channels == 1) {
             REG_DMA1CNT = 0;
             REG_DMA1SAD =
-                (u8*)gSndStream.unk_00[0] + gSndStream.unk_28;
+                (u8*)gSndStream.buffers[0] + gSndStream.dmaOffset;
             REG_DMA1DAD = REG_ADDR_FIFO_A;
             REG_DMA1CNT = DMA_SOUND_FIFO;
         } else {
             REG_DMA1CNT = 0;
             REG_DMA1SAD =
-                (u8*)gSndStream.unk_00[0] + gSndStream.unk_28;
+                (u8*)gSndStream.buffers[0] + gSndStream.dmaOffset;
             REG_DMA1DAD = REG_ADDR_FIFO_A;
             REG_DMA1CNT = DMA_SOUND_FIFO;
             REG_DMA2CNT = 0;
             REG_DMA2SAD =
-                (u8*)gSndStream.unk_00[1] + gSndStream.unk_28;
+                (u8*)gSndStream.buffers[1] + gSndStream.dmaOffset;
             REG_DMA2DAD = REG_ADDR_FIFO_B;
             REG_DMA2CNT = DMA_SOUND_FIFO;
         }
@@ -115,16 +115,16 @@ void SndStreamLock(u32 ch, u32 len, void** dst1, u32* len1, void** dst2,
                    u32* len2) {
     u32 avail;
 
-    avail = gSndStream.unk_34 - gSndStream.unk_08[ch];
+    avail = gSndStream.bufferSize - gSndStream.writePos[ch];
     if (avail < len) {
-        *dst1 = (u8*)gSndStream.unk_00[ch] + gSndStream.unk_08[ch];
+        *dst1 = (u8*)gSndStream.buffers[ch] + gSndStream.writePos[ch];
         *len1 = avail;
-        *dst2 = gSndStream.unk_00[ch];
+        *dst2 = gSndStream.buffers[ch];
         *len2 = len - avail;
         gSndStream.unk_18[ch] = len - avail;
         gSndStream.unk_20[ch] += len;
     } else {
-        *dst1 = (u8*)gSndStream.unk_00[ch] + gSndStream.unk_08[ch];
+        *dst1 = (u8*)gSndStream.buffers[ch] + gSndStream.writePos[ch];
         *len1 = len;
         *dst2 = 0;
         *len2 = 0;
@@ -132,7 +132,7 @@ void SndStreamLock(u32 ch, u32 len, void** dst1, u32* len1, void** dst2,
         gSndStream.unk_20[ch] += len;
     }
 
-    if (gSndStream.unk_18[ch] == gSndStream.unk_34) {
+    if (gSndStream.unk_18[ch] == gSndStream.bufferSize) {
         gSndStream.unk_18[ch] = 0;
     }
 }
@@ -140,9 +140,9 @@ void SndStreamLock(u32 ch, u32 len, void** dst1, u32* len1, void** dst2,
 void SndStreamSetCallbacks(void (*a)(void), void* (*b)(u32), void (*c)(void),
                    void (*d)(void*)) {
     gSndStream.unk_48 = a;
-    gSndStream.unk_4C = b;
+    gSndStream.alloc = b;
     gSndStream.unk_50 = c;
-    gSndStream.unk_54 = d;
+    gSndStream.free = d;
 }
 
 void SndStreamClose(void) {
@@ -150,23 +150,23 @@ void SndStreamClose(void) {
 
     SndStreamStop();
 
-    for (i = 0; i < gSndStream.unk_40; i++) {
-        gSndStream.unk_54(gSndStream.unk_00[i]);
+    for (i = 0; i < gSndStream.channels; i++) {
+        gSndStream.free(gSndStream.buffers[i]);
     }
 }
 
 void SndStreamStart(void) {
-    REG_TM0CNT_L = gSndStream.unk_3C;
+    REG_TM0CNT_L = gSndStream.timerReload;
     REG_TM0CNT_H = TIMER_ENABLE;
-    gSndStream.unk_44 = 1;
+    gSndStream.playing = 1;
 }
 
 void SndStreamStop(void) {
-    if (gSndStream.unk_44 != 0) {
+    if (gSndStream.playing != 0) {
         REG_TM0CNT_H = 0;
-        gSndStream.unk_44 = 0;
+        gSndStream.playing = 0;
 
-        if (gSndStream.unk_40 == 1) {
+        if (gSndStream.channels == 1) {
             REG_DMA1CNT = 0;
         } else {
             REG_DMA1CNT = 0;
@@ -176,6 +176,6 @@ void SndStreamStop(void) {
 }
 
 void SndStreamUnlock(u32 ch) {
-    gSndStream.unk_08[ch] = gSndStream.unk_18[ch];
+    gSndStream.writePos[ch] = gSndStream.unk_18[ch];
     gSndStream.unk_10[ch] = gSndStream.unk_20[ch];
 }

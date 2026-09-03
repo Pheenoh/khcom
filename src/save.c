@@ -2,10 +2,10 @@
 #include "gba/syscall.h"
 #include "save.h"
 
-u16 gUnk_02034088;
-u16 gUnk_0203408A;
+u16 gRawKeys;
+u16 gRawKeysPrev;
 u8 gUnk_0203408C[4];
-u8 gUnk_02034090[0x500];
+u8 gSramErrorTilemapBuf[0x500];
 extern u16 gSystemFlags;
 extern u8 gSramErrorPalette[];
 extern u8 gSramErrorTiles[];
@@ -714,10 +714,10 @@ void ShowSramErrorScreen(void) {
     dma[2] = 0x80000100;
     dma[2];
     dma[0] = (u32)gSramErrorTilemap;
-    dma[1] = (u32)gUnk_02034090;
+    dma[1] = (u32)gSramErrorTilemapBuf;
     dma[2] = 0x80000280;
     dma[2];
-    dma[0] = (u32)gUnk_02034090;
+    dma[0] = (u32)gSramErrorTilemapBuf;
     dma[1] = 0x06000000;
     dma[2] = 0x80000400;
     dma[2];
@@ -756,7 +756,7 @@ void WaitSramErrorInput(void) {
         do {
             ReadKeysRaw();
 
-            if ((((gUnk_0203408A ^ gUnk_02034088) & gUnk_02034088) & 0xF0) == 0xF0) {
+            if ((((gRawKeysPrev ^ gRawKeys) & gRawKeys) & 0xF0) == 0xF0) {
                 prev = cur;
                 cur = i;
             }
@@ -766,7 +766,7 @@ void WaitSramErrorInput(void) {
             }
             i++;
             VBlankIntrWait();
-            dma[0] = (u32)gUnk_02034090;
+            dma[0] = (u32)gSramErrorTilemapBuf;
             dma[1] = 0x06000000;
             dma[2] = 0x84000200;
             dma[2];
@@ -791,6 +791,6 @@ void WaitSramErrorInput(void) {
 void ReadKeysRaw(void) {
     u16 keys = 0x3FF ^ *(vu16*)0x04000130;
 
-    gUnk_0203408A = gUnk_02034088;
-    gUnk_02034088 = keys;
+    gRawKeysPrev = gRawKeys;
+    gRawKeys = keys;
 }

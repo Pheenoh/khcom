@@ -57,19 +57,19 @@ u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1) {
 
 void UpdatePlayTime(void) {
     if (gFrameCounter % 60 == 0) {
-        if (gUnk_02039BB0.playTime <= 0x57E3E) {
-            gUnk_02039BB0.playTime++;
+        if (gGameState.playTime <= 0x57E3E) {
+            gGameState.playTime++;
         }
     }
 }
 
 void func_0801CCB4(void) {
     func_080DFAF4(0, 0);
-    gUnk_02039BB0.unk_17A = 0xE7FF;
-    gUnk_02039BB0.unk_17C = 0x80;
+    gGameState.unk_17A = 0xE7FF;
+    gGameState.unk_17C = 0x80;
     _08085D04(0);
-    gUnk_02039BB0.flags |= 8;
-    gUnk_02039BB0.flags |= 0x100;
+    gGameState.flags |= 8;
+    gGameState.flags |= 0x100;
     func_0800FDD0(0);
     func_0800FDD0(0x15);
     func_0800FDD0(0xED);
@@ -80,9 +80,9 @@ void func_0801CCB4(void) {
 }
 
 void func_0801CD20(void) {
-    gUnk_02039BB0.unk_17C = 3;
+    gGameState.unk_17C = 3;
     func_08085C3C();
-    gUnk_02039BB0.flags &= ~8;
+    gGameState.flags &= ~8;
     func_0800FDD0(0x11);
     func_0800FDD0(0x12);
     func_0800FDD0(0x13);
@@ -93,16 +93,16 @@ void func_0801CD20(void) {
 }
 
 void func_0801CD74(EvtObj* obj, s32 anim) {
-    u16 t = obj->unk_14 | 1;
+    u16 t = obj->flags | 1;
 
-    obj->unk_14 = t;
+    obj->flags = t;
     obj->unk_00 = (s32)&gUnk_0813766C[anim];
 }
 
-void func_0801CD8C(EvtObj* obj, s32 a, s32 b, s32 c) {
-    obj->unk_04 = a;
-    obj->unk_08 = b;
-    obj->unk_0C = c;
+void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c) {
+    obj->x = a;
+    obj->y = b;
+    obj->z = c;
 }
 
 void func_0801CD94(EvtObj* obj, s32 a) {
@@ -115,8 +115,8 @@ void func_0801CD98(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32
     param.unk_00 = &gUnk_0813B09C[res].unk_00;
     param.unk_04 = obj;
     func_0801CD74(obj, anim);
-    func_0801CD8C(obj, a, b, c);
-    obj->unk_14 = 0;
+    EvtObjSetPos(obj, a, b, c);
+    obj->flags = 0;
     obj->unk_10 = 0;
     obj->unk_16 = 0x800;
     obj->unk_24 = 0x100;
@@ -135,8 +135,8 @@ s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a,
     param.unk_00 = &gUnk_0813B09C[res].unk_00;
     param.unk_04 = obj;
     func_0801CD74(obj, anim);
-    func_0801CD8C(obj, a, b, c);
-    obj->unk_14 = 0;
+    EvtObjSetPos(obj, a, b, c);
+    obj->flags = 0;
     obj->unk_10 = 0;
     obj->unk_16 = 0x800;
     obj->unk_24 = 0x100;
@@ -150,10 +150,10 @@ void func_0801CE70(EvtObjWork* work) {
     EvtObjAnim* anim;
     EvtAnimDef* def;
 
-    obj = work->unk_00;
+    obj = work->obj;
     anim = (EvtObjAnim*)obj->unk_00;
     def = anim->unk_00;
-    func_08005974(&work->unk_0C, anim->unk_0C, anim->unk_0E, def->unk_04, def->unk_00);
-    func_08002A10(work->unk_04, def->unk_08);
-    work->unk_00->unk_14 &= 0xFFFE;
+    func_08005974(&work->anim, anim->unk_0C, anim->unk_0E, def->unk_04, def->unk_00);
+    func_08002A10(work->tiles, def->unk_08);
+    work->obj->flags &= 0xFFFE;
 }

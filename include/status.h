@@ -5,27 +5,27 @@
 #include "main.h"
 #include "engine.h"
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
-} UnkStruct_02039BB0;
+} GameState;
 
-typedef struct StatusGfxDef {
+typedef struct UnkStruct_08F7CF18 {
     u32 unk_00;
     u32* unk_04;
     u16 unk_08;
     u16 unk_0A;
-} StatusGfxDef;
+} UnkStruct_08F7CF18;
 
 typedef struct StatusEntry {
     s32 unk_000[72];
-    u16 unk_120;
+    u16 count;
     u16 unk_122;
 } StatusEntry;
 
 typedef struct StatusBarWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     u16 unk_08;
     u16 unk_0A;
     s32 unk_0C;
@@ -50,15 +50,15 @@ typedef struct StatusTabWork {
 } StatusTabWork;
 
 typedef struct StatusSoraWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
+    void* tiles;
+    void* palette;
+    void* gfx;
     AnimState anim;
 } StatusSoraWork;
 
 typedef struct StatusDecknameWork {
     u8 unk_00[0x50];
-    void* unk_50;
+    void* palette;
     u8 unk_54;
     u8 unk_55[0x3];
     u8* unk_58;
@@ -81,8 +81,8 @@ typedef struct StatusCursorWork {
 } StatusCursorWork;
 
 typedef struct StatusScrollcursorWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
     u16* unk_0C;
     u16 unk_10;
@@ -108,7 +108,7 @@ typedef struct StatusMessageWork {
     u8 unk_000[0x320];
     u8 unk_320;
     u8 unk_321[3];
-    void* unk_324;
+    void* palette;
     StatusMessageParam unk_328;
 } StatusMessageWork;
 
@@ -128,11 +128,11 @@ typedef struct StatusMesParam {
     u32 unk_04_16 : 16;
 } StatusMesParam;
 
-typedef struct StatusActor {
+typedef struct UnkStruct_0203C55C {
     s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     u8 unk_14[0x10];
     s32 unk_24;
@@ -140,9 +140,9 @@ typedef struct StatusActor {
     u64 unk_34;
     u8 unk_3C[0x7C];
     ListNode unk_B8;
-} StatusActor;
+} UnkStruct_0203C55C;
 
-typedef struct StatusActorPool {
+typedef struct BtlWork {
     u8 unk_00[0x40];
     TaskPool unk_40;
     u8 unk_54[0x2C];
@@ -151,7 +151,7 @@ typedef struct StatusActorPool {
     s32 unk_CC;
     s32 unk_D0;
     s32 unk_D4;
-} StatusActorPool;
+} BtlWork;
 
 typedef struct StatusDialogSub {
     s32 unk_00;
@@ -159,16 +159,16 @@ typedef struct StatusDialogSub {
     AnimState unk_14;
 } StatusDialogSub;
 
-typedef struct StatusDialogWork {
+typedef struct BoogieWork {
     s32 unk_000;
     u16 unk_004;
     u16 unk_006;
-    void* unk_008;
+    void* tiles;
     void* unk_00C;
     void* unk_010;
-    AnimState unk_014;
+    AnimState anim;
     TaskPool unk_02C;
-    StatusActor unk_040;
+    UnkStruct_0203C55C unk_040;
     u8 unk_108[0x48];
     s32 unk_150;
     s32 unk_154;
@@ -181,7 +181,7 @@ typedef struct StatusDialogWork {
     u8 unk_170[0x04];
     u8 unk_174;
     u8 unk_175[0x03];
-} StatusDialogWork;
+} BoogieWork;
 
 typedef struct StatusObjDef {
     void* unk_00;
@@ -254,7 +254,7 @@ typedef struct StatusStocklistWork {
     StatusEntry entries[4];
     void* unk_490[8];
     void* unk_4B0;
-    void* unk_4B4;
+    void* tiles;
     void* unk_4B8;
     void* unk_4BC;
     s32* unk_4C0;
@@ -264,19 +264,19 @@ typedef struct StatusStocklistWork {
     u8 unk_4C9[3];
 } StatusStocklistWork;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern s32 gUnk_0203C550;
 
-extern TaskDesc gUnk_09EF4F20;
-extern TaskDesc gUnk_09EF4F38;
-extern TaskDesc gUnk_09EF4F50;
-extern TaskDesc gUnk_09EF4F68;
-extern TaskDesc gUnk_09EF4F80;
-extern TaskDesc gUnk_09EF4F98;
-extern TaskDesc gUnk_09EF4FB0;
-extern TaskDesc gUnk_09EF4FC8;
-extern TaskDesc gUnk_09EF4FE0;
-extern TaskDesc gUnk_09EF4FF8;
+extern TaskDesc gTaskDescStatusTab;
+extern TaskDesc gTaskDescStatusSora;
+extern TaskDesc gTaskDescStatusDeckname;
+extern TaskDesc gTaskDescStatusCursor;
+extern TaskDesc gTaskDescStatusStocklist;
+extern TaskDesc gTaskDescStatusScrollcursor;
+extern TaskDesc gTaskDescStatusMeswindow;
+extern TaskDesc gTaskDescStatusMessage;
+extern TaskDesc gTaskDescStatusFriend;
+extern TaskDesc gTaskDescStockMesDisp;
 
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_097A2CF6[];
@@ -315,33 +315,33 @@ extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
 extern u8 gUnk_0984B1F8[];
 extern s32 gUnk_096FDD8C[];
-extern StatusGfxDef gUnk_08F7CF18[];
+extern UnkStruct_08F7CF18 gUnk_08F7CF18[];
 extern StatusAnimDef gUnk_096FDE54[];
 extern const StatusFriendTable gUnk_096FDE24;
 extern StatusCardDef gCardDefs[];
 extern u16 gUnk_02039D2C;
-extern u8* gUnk_0203C460;
+extern u8* gStockMesDispWork;
 extern u8 gUnk_0203C564;
-extern StatusActor* gUnk_0203C55C;
+extern UnkStruct_0203C55C* gUnk_0203C55C;
 extern u8 gUnk_0984AF78[];
 extern u8 gUnk_08F69BC4[];
 extern StatusObjDef gUnk_096FDEE4[];
 extern u8 gUnk_096FDF14[];
 extern u8 gUnk_096FDF24[];
-extern TaskDesc gUnk_09EF5070;
-extern TaskDesc gUnk_09EF5058;
-extern TaskDesc gUnk_09EF5088;
+extern TaskDesc gTaskDescBosBoogieMap;
+extern TaskDesc gTaskDescBosBoogieSaku;
+extern TaskDesc gTaskDescBosBoogieMapanime;
 extern TaskDesc gTaskDescBosShadow;
-extern StatusActorPool* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern u8 gUnk_0203C558;
 extern u16 gUnk_0203C554;
 extern u16 gUnk_0203C560;
 extern u8 gUnk_0203C568;
 extern u8 gUnk_0203C56C;
 extern u8 gUnk_0203C570;
-extern TaskDesc gUnk_09EF50A0;
-extern TaskDesc gUnk_09EF50D0;
-extern TaskDesc gUnk_09EF50E8;
+extern TaskDesc gTaskDescBosBoogieDisk;
+extern TaskDesc gTaskDescBosBoogieKnifereader;
+extern TaskDesc gTaskDescBosBoogieKaihuku;
 
 void* LoadObjTiles(void* src, s32 size);
 void* AllocObjTiles(s32 a, void* b);
@@ -397,8 +397,8 @@ void func_0801B7D8(void* a);
 void func_0801A920(s32 a, s32 b, s32 c, s32 d);
 void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 void func_0801C2DC(void* a, s32 b);
-void func_080D900C(StatusDialogWork* work, s32 a, u16 b);
-u8 func_08000F48(Task* t);
+void func_080D900C(BoogieWork* work, s32 a, u16 b);
+u8 IsTaskActive(Task* t);
 void func_080D83F4(void);
 
 #endif /* GUARD_STATUS_H */

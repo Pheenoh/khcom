@@ -11,11 +11,11 @@ func_0801235C: @ 0801235C
 	mov r5, r8
 	push {r5, r6, r7}
 	mov r10, r1
-	bl func_08000C8C
+	bl ListPoolFirst
 	b _0801258E
 _0801236E:
 	mov r0, r10
-	bl func_08000CB0
+	bl ListPoolLast
 	adds r4, r0, #0x0
 	movs r0, #0x18
 	adds r0, r0, r5
@@ -283,7 +283,7 @@ _08012554:
 _08012574:
 	adds r0, r4, #0x0
 	adds r0, #0x18
-	bl func_08000CF0
+	bl ListPoolPrev
 	adds r4, r0, #0x0
 _0801257E:
 	cmp r4, #0x00
@@ -293,7 +293,7 @@ _0801257E:
 	b _0801237E
 _08012588:
 	mov r0, r9
-	bl func_08000CD4
+	bl ListPoolNext
 _0801258E:
 	adds r5, r0, #0x0
 	cmp r5, #0x00

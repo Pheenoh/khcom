@@ -14,7 +14,7 @@ func_080AA450: @ 080AA450
 	mov r8, r0
 	ldr r1, _080AA478 @ =0x0000063C
 	adds r0, r5, r1
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _080AA4B4
@@ -28,7 +28,7 @@ _080AA47C: .4byte 0x000006D2
 _080AA480:
 	adds r0, r2, #0x0
 	adds r0, #0x2C
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _080AA4B4

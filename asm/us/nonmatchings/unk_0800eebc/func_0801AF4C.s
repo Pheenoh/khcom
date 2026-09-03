@@ -48,7 +48,7 @@ func_0801AF4C: @ 0801AF4C
 	mov r1, r9
 	ldr r0, [r1, #0x00]
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _0801AFCC
@@ -60,7 +60,7 @@ _0801AFB6:
 	orrs r1, r5
 	strh r1, [r0, #0x00]
 	subs r0, #0x0C
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	bne _0801AFB6

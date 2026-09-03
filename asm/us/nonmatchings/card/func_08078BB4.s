@@ -196,7 +196,7 @@ _08078D04:
 	strh r0, [r2, #0x00]
 	adds r0, r6, #0x0
 	adds r0, #0x54
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r5, r6, #0x0
 	adds r5, #0xBC
 	cmp r0, #0x00
@@ -207,7 +207,7 @@ _08078D42:
 	adds r1, #0xA1
 	strb r4, [r1, #0x00]
 	adds r0, #0x64
-	bl func_08000CD4
+	bl ListPoolNext
 	cmp r0, #0x00
 	bne _08078D42
 _08078D52:

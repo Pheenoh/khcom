@@ -118,10 +118,10 @@ void mode_movie_1(void) {
         PalletInit();
         SioKeyInit();
         VTransReset();
-        func_08004D74();
-        func_08001F98();
+        BgReset();
+        SpriteReset();
         FadeReset();
-        func_08006404();
+        MosaicReset();
         InitDisplayRegs();
         gVBlankHandlerOverride = 0;
         m4aSoundInit();
@@ -148,10 +148,10 @@ void mode_movie_1(void) {
                 func_0806180C(57);
                 break;
             case 4:
-                ModeRequest(gUnk_09EFA9C4, 0);
+                ModeRequest(gModeStaffRoll, 0);
                 break;
             case 5:
-                ModeRequest(gUnk_09EFA9C4, 0);
+                ModeRequest(gModeStaffRoll, 0);
                 break;
             default:
                 ModeRequest(gModeDebug, 0);

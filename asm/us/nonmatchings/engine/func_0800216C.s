@@ -116,7 +116,7 @@ _0800219A:
 _08002240:
 	ldrh r0, [r5, #0x00]
 	ldrh r1, [r5, #0x02]
-	bl func_08001DB0
+	bl GetObjTileCount
 	adds r4, r0, #0x0
 	lsls r4, r4, #0x10
 	lsrs r4, r4, #0x10

@@ -11,8 +11,8 @@
 #define REG_IE (*(vu16*)0x04000200)
 #define REG_IME (*(vu16*)0x04000208)
 typedef struct AllmapRoomWork {
-    u32 unk_000;
-    u32 unk_004;
+    u32 tiles;
+    u32 palette;
     u32 unk_008;
     void* unk_00C[4];
     void* unk_01C[4];
@@ -46,7 +46,7 @@ extern u16 gUnk_0203C508;
 extern u8 gUnk_0203C510[];
 extern void* gUnk_0203C530;
 extern u16 gUnk_0203C534;
-extern u8 gUnk_0203DB10[];
+extern u8 gMPlayInfo_BGM[];
 extern u8 gUnk_05000140[];
 extern u8 gUnk_08125E24[];
 extern AllmapRoomOrder gUnk_096FDB70;
@@ -62,13 +62,13 @@ extern u8 gUnk_09EF64FC[];
 extern u8 gUnk_09EF653C[];
 extern u8 gUnk_09EF654C[];
 extern u8 gUnk_09EF658C[];
-extern TaskDesc gUnk_09EF4E08;
+extern TaskDesc gTaskDescAllmapBar;
 
-void func_08001F5C(s32 a, s32 b);
+void SetObjPaletteRange(s32 a, s32 b);
 void* LoadObjTiles(void* a, s32 b);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void EnableBg(s32 a);
 void DisableBg(s32 bg);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

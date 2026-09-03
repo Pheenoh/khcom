@@ -31,24 +31,24 @@ typedef struct MoviePlayer {
     void* unk_20;
     void* unk_24;
     void* unk_28;
-    u32 unk_2C;
-    u32 unk_30;
-    float unk_34;
-    u32 unk_38;
-    u32 unk_3C;
-    u32 unk_40;
-    u32 unk_44;
+    u32 width;
+    u32 height;
+    float frameRate;
+    u32 frameCount;
+    u32 audioBlockCount;
+    u32 channels;
+    u32 sampleRate;
     u32 unk_48;
     u8* unk_4C;
     u16* unk_50;
     u8* unk_54;
     u16* unk_58;
     void* unk_5C;
-    u32 unk_60;
-    u32 unk_64;
+    u32 frameIndex;
+    u32 audioBlockIndex;
     u8* unk_68;
     u32 unk_6C;
-    float unk_70;
+    float secondsPerFrame;
     u32 unk_74;
     u32 unk_78;
     void (*unk_7C)(void*, u32, u32, void*);
@@ -92,9 +92,9 @@ u32 func_081192B0(MoviePlayer* a);
 void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2);
 s32 func_08119480(MoviePlayer* a);
 s32 func_0811950C(MoviePlayer* a);
-u32 func_08119654(MoviePlayer* a);
-u32 func_08119670(MoviePlayer* a);
-void func_0811968C(MoviePlayer* a, s32* w, s32* h);
+u32 MovieGetChannels(MoviePlayer* a);
+u32 MovieGetSampleRate(MoviePlayer* a);
+void MovieGetSize(MoviePlayer* a, s32* w, s32* h);
 
 void func_081181BC(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
     func_08118578(a, b, c, d);
@@ -117,9 +117,9 @@ s32 func_081181EC(void* a) {
     if (gUnk_0203C7C4 == 0) {
         return 0;
     }
-    channels = func_08119654(gUnk_0203C7C4);
+    channels = MovieGetChannels(gUnk_0203C7C4);
     if (channels != 0) {
-        SndStreamInit(func_08119670(gUnk_0203C7C4), channels);
+        SndStreamInit(MovieGetSampleRate(gUnk_0203C7C4), channels);
 
         for (i = 0; i < 4; i++) {
             if (channels == 1) {
@@ -156,13 +156,13 @@ void func_08118344(s32 (*a)(s32), s32 b) {
     s32 x;
     s32 y;
 
-    func_0811968C(gUnk_0203C7C4, &w, &h);
+    MovieGetSize(gUnk_0203C7C4, &w, &h);
     x = (240 - w) >> 1;
     y = (160 - h) >> 1;
     func_0811904C(gUnk_0203C7C4, (u16*)0x06000000 + (y * 240 + x));
     func_08119224(gUnk_0203C7C4);
     SndStreamStart();
-    channels = func_08119654(gUnk_0203C7C4);
+    channels = MovieGetChannels(gUnk_0203C7C4);
     if (channels != 0) {
         ok = 1;
     } else {
@@ -207,7 +207,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
 }
 
 void func_08118538(void) {
-    if (func_08119654(gUnk_0203C7C4)) {
+    if (MovieGetChannels(gUnk_0203C7C4)) {
         SndStreamClose();
     }
     func_08118EEC(gUnk_0203C7C4);
@@ -265,23 +265,23 @@ MoviePlayer* func_08118C34(void* a) {
     p->unk_8C = 0;
     p->unk_8D = 2;
     q = a;
-    p->unk_2C = *q;
+    p->width = *q;
     q++;
-    p->unk_30 = *q;
+    p->height = *q;
     q++;
-    p->unk_34 = *(float*)q;
+    p->frameRate = *(float*)q;
     q++;
-    p->unk_38 = *q;
+    p->frameCount = *q;
     q++;
-    p->unk_3C = *q;
+    p->audioBlockCount = *q;
     q++;
-    p->unk_40 = *q;
+    p->channels = *q;
     q++;
-    p->unk_44 = *q;
+    p->sampleRate = *q;
     q++;
     p->unk_48 = *q;
     q++;
-    p->unk_70 = 1.0f / p->unk_34;
+    p->secondsPerFrame = 1.0f / p->frameRate;
     len = *q;
     q++;
     p->unk_4C = (u8*)q;
@@ -297,15 +297,15 @@ MoviePlayer* func_08118C34(void* a) {
     p->unk_14 = (u8*)q;
     q = (u32*)((u8*)q + n);
 
-    if ((p->unk_2C & 7) != 0 || p->unk_2C > 288 || (p->unk_30 & 7) != 0) {
+    if ((p->width & 7) != 0 || p->width > 288 || (p->height & 7) != 0) {
         gUnk_0203C7D0.unk_08(p);
         return 0;
     }
-    func_0811865C(p, &p->unk_7C, &p->unk_80, &p->unk_84, p->unk_2C, p->unk_30);
-    p->unk_20 = gUnk_0203C7D0.unk_04(p->unk_2C * p->unk_30 * 2);
-    p->unk_24 = gUnk_0203C7D0.unk_04(p->unk_2C * p->unk_30 * 2);
+    func_0811865C(p, &p->unk_7C, &p->unk_80, &p->unk_84, p->width, p->height);
+    p->unk_20 = gUnk_0203C7D0.unk_04(p->width * p->height * 2);
+    p->unk_24 = gUnk_0203C7D0.unk_04(p->width * p->height * 2);
 
-    if (p->unk_40 != 0) {
+    if (p->channels != 0) {
         p->unk_8D = 0;
         len = *q;
         q++;
@@ -325,8 +325,8 @@ MoviePlayer* func_08118C34(void* a) {
         func_08118ADC(p, &p->unk_88, p->unk_48);
     }
     p->unk_5C = gUnk_0203C7D0.unk_00(v1 > v2 ? v1 : v2);
-    p->unk_60 = 0;
-    p->unk_64 = 0;
+    p->frameIndex = 0;
+    p->audioBlockIndex = 0;
     p->unk_6C = 0;
     p->unk_78 = 1;
     return p;
@@ -341,7 +341,7 @@ void func_08118EEC(MoviePlayer* a) {
     gUnk_0203C7D0.unk_0C(p->unk_20);
     gUnk_0203C7D0.unk_0C(p->unk_24);
 
-    if (p->unk_40 != 0) {
+    if (p->channels != 0) {
         gUnk_0203C7D0.unk_0C(p->unk_28);
     }
     gUnk_0203C7D0.unk_08(p->unk_5C);
@@ -352,16 +352,16 @@ void func_08118F7C(MoviePlayer* a) {
     void* t;
     MoviePlayer* p = a;
 
-    switch (p->unk_4C[p->unk_60]) {
+    switch (p->unk_4C[p->frameIndex]) {
     case 0:
-        p->unk_7C(p->unk_24, p->unk_2C, p->unk_30, p->unk_5C);
+        p->unk_7C(p->unk_24, p->width, p->height, p->unk_5C);
         break;
     case 1:
         p->unk_84(p->unk_20, p->unk_24, p->unk_5C);
         break;
     case 2:
         p->unk_84(p->unk_20, p->unk_24, p->unk_5C);
-        p->unk_80(p->unk_24, p->unk_2C, p->unk_30);
+        p->unk_80(p->unk_24, p->width, p->height);
         break;
     }
     p->unk_74 = 1;
@@ -376,11 +376,11 @@ s32 func_0811904C(MoviePlayer* a, void* dst) {
     if (p->unk_8C != 0) {
         return 0;
     }
-    CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->unk_60) >> 2) & 0xFFFF);
+    CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->frameIndex) >> 2) & 0xFFFF);
     func_08118F7C(p);
 
     if (p->unk_78 != 0) {
-        CpuFastSet(p->unk_20, dst, (p->unk_2C * p->unk_30 / 2) & 0x1FFFFF);
+        CpuFastSet(p->unk_20, dst, (p->width * p->height / 2) & 0x1FFFFF);
     }
     return p->unk_78;
 }
@@ -391,17 +391,17 @@ u32 func_081190C8(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 
     u8* d;
     u8* s;
 
-    CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->unk_60) >> 2) & 0xFFFF);
+    CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->frameIndex) >> 2) & 0xFFFF);
     func_08118F7C(p);
 
     if (p->unk_78 != 0) {
         d = dst;
-        s = (u8*)p->unk_20 + x * 2 + (p->unk_2C << 1) * y;
+        s = (u8*)p->unk_20 + x * 2 + (p->width << 1) * y;
 
         for (i = 0; i < rows; i++) {
             CpuFastSet(s, d, ((w << 1) >> 2) & 0x1FFFFF);
             d = d + dstStride;
-            s = s + (p->unk_2C << 1);
+            s = s + (p->width << 1);
         }
     }
     return p->unk_78;
@@ -414,12 +414,12 @@ u32 func_08119190(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 
     u8* s;
 
     d = dst;
-    s = (u8*)p->unk_20 + x * 2 + (p->unk_2C << 1) * y;
+    s = (u8*)p->unk_20 + x * 2 + (p->width << 1) * y;
 
     for (i = 0; i < rows; i++) {
         CpuFastSet(s, d, ((w << 1) >> 2) & 0x1FFFFF);
         d = d + dstStride;
-        s = s + (p->unk_2C << 1);
+        s = s + (p->width << 1);
     }
     return p->unk_78;
 }
@@ -427,8 +427,8 @@ u32 func_08119190(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 
 s32 func_08119224(MoviePlayer* a) {
     MoviePlayer* p = a;
 
-    p->unk_60++;
-    if (p->unk_8C != 0 || p->unk_60 == p->unk_38) {
+    p->frameIndex++;
+    if (p->unk_8C != 0 || p->frameIndex == p->frameCount) {
         p->unk_8C = 1;
         return 0;
     }
@@ -437,14 +437,14 @@ s32 func_08119224(MoviePlayer* a) {
         p->unk_6C = 1;
         p->unk_68 = func_081185CC();
     }
-    p->unk_14 = p->unk_14 + *(p->unk_50 + p->unk_60 - 1);
+    p->unk_14 = p->unk_14 + *(p->unk_50 + p->frameIndex - 1);
     return 1;
 }
 
 u32 func_081192B0(MoviePlayer* a) {
     MoviePlayer* p = a;
 
-    if (p->unk_40 == 1) {
+    if (p->channels == 1) {
         return *(u32*)p->unk_1C / 2;
     } else {
         return *(u32*)p->unk_1C / 4;
@@ -459,10 +459,10 @@ void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA
     if (p->unk_8D != 0) {
         return;
     }
-    CpuFastSet(p->unk_1C, p->unk_5C, (*(p->unk_58 + p->unk_64) >> 2) & 0xFFFF);
+    CpuFastSet(p->unk_1C, p->unk_5C, (*(p->unk_58 + p->audioBlockIndex) >> 2) & 0xFFFF);
     n = *(s32*)p->unk_5C;
 
-    if (p->unk_40 == 1) {
+    if (p->channels == 1) {
         q = (u8*)p->unk_5C + 4;
         p->unk_88(q, p->unk_28, n);
         CpuFastSet(p->unk_28, dstA1, (lenA1 / 4) & 0x1FFFFF);
@@ -474,7 +474,7 @@ void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA
         n >>= 1;
         q = (u8*)p->unk_5C + 4;
         p->unk_88(q, p->unk_28, n);
-        q = (u8*)q + ((*(p->unk_58 + p->unk_64) - 4) >> 1);
+        q = (u8*)q + ((*(p->unk_58 + p->audioBlockIndex) - 4) >> 1);
         CpuFastSet(p->unk_28, dstA1, (lenA1 / 4) & 0x1FFFFF);
 
         if (lenA2 != 0) {
@@ -492,16 +492,16 @@ void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA
 s32 func_08119480(MoviePlayer* a) {
     MoviePlayer* p = a;
 
-    p->unk_64++;
-    if (p->unk_8D != 0 || p->unk_64 == p->unk_3C) {
+    p->audioBlockIndex++;
+    if (p->unk_8D != 0 || p->audioBlockIndex == p->audioBlockCount) {
         if (p->unk_8D != 2) {
             p->unk_8D = 1;
         }
         return 0;
     }
 
-    if (p->unk_40 != 0) {
-        p->unk_1C = p->unk_1C + *(p->unk_58 + p->unk_64 - 1);
+    if (p->channels != 0) {
+        p->unk_1C = p->unk_1C + *(p->unk_58 + p->audioBlockIndex - 1);
     }
     return 1;
 }
@@ -518,9 +518,9 @@ s32 func_0811950C(MoviePlayer* a) {
         if (p->unk_8D != 2) {
             p->unk_8D = 0;
         }
-        p->unk_64 = 0;
+        p->audioBlockIndex = 0;
         p->unk_1C = p->unk_18;
-        p->unk_60 = 0;
+        p->frameIndex = 0;
         p->unk_14 = p->unk_10;
         p->unk_74 = 0;
         p->unk_6C = 1;
@@ -535,7 +535,7 @@ s32 func_0811950C(MoviePlayer* a) {
     }
     t = func_081185CC();
     now = func_08118630(t - p->unk_68);
-    target = p->unk_70 * (p->unk_60 + 1);
+    target = p->secondsPerFrame * (p->frameIndex + 1);
 
     if (p->unk_74 != 0) {
         p->unk_74 = 0;
@@ -549,23 +549,23 @@ s32 func_0811950C(MoviePlayer* a) {
     return now >= target;
 }
 
-u32 func_08119654(MoviePlayer* a) {
+u32 MovieGetChannels(MoviePlayer* a) {
     MoviePlayer* p = a;
 
-    return p->unk_40;
+    return p->channels;
 }
 
-u32 func_08119670(MoviePlayer* a) {
+u32 MovieGetSampleRate(MoviePlayer* a) {
     MoviePlayer* p = a;
 
-    return p->unk_44;
+    return p->sampleRate;
 }
 
-void func_0811968C(MoviePlayer* a, s32* w, s32* h) {
+void MovieGetSize(MoviePlayer* a, s32* w, s32* h) {
     MoviePlayer* p = a;
 
-    *w = p->unk_2C;
-    *h = p->unk_30;
+    *w = p->width;
+    *h = p->height;
 }
 
 INCLUDE_ASM("movie/func_081196B4.s");

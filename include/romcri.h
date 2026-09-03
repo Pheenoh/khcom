@@ -5,13 +5,13 @@
 
 typedef struct RomcriEffWork {
     s16 unk_00;
-    u8 unk_02;
+    u8 angle;
     u8 unk_03;
 } RomcriEffWork;
 
 typedef struct RomcriEff2Work {
     s16 unk_00;
-    u8 unk_02;
+    u8 angle;
     u8 unk_03;
 } RomcriEff2Work;
 
@@ -26,12 +26,12 @@ typedef struct RomcriList {
     RomcriEntry* unk_04;
 } RomcriList;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
-} UnkStruct_02039BB0;
+} GameState;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 
 extern u8 gUnk_08ED21E4[];
 extern u8 gUnk_08ED6CA4[];

@@ -1,9 +1,9 @@
 #include "macros.h"
 #include "chara.h"
 
-CharaObj* gUnk_02034CD8;
+CharaObj* gCharaObj;
 u8 gUnk_02034CDC[4];
-u8 gUnk_02034CE0[0x14];
+u8 gCharaTaskPool[0x14];
 #include "gba/keys.h"
 
 void task_chara_mask_fade_0(MaskFadeWork* work, MaskFadeArgs* args) {
@@ -171,7 +171,7 @@ u8 func_080C54B4(void) {
         if (gUnk_02039B60 == 1) {
             gSystemFlags &= 0xFFFE;
             gUnk_020397F0 = gSioStatus;
-            ModeRequest(&gUnk_09EF15B8, 0);
+            ModeRequest(&gModeSioError, 0);
             return gUnk_02039B60;
         }
     } else {
@@ -217,7 +217,7 @@ u8 func_080C55DC(void) {
                 if (gUnk_020397D4 > 180) {
                     gSystemFlags &= 0xFFFE;
                     gUnk_020397F0 = gSioStatus;
-                    ModeRequest(&gUnk_09EF15B8, 0);
+                    ModeRequest(&gModeSioError, 0);
                     gUnk_02039B60 = 1;
                 }
             }
@@ -255,7 +255,7 @@ u8 func_080C56BC(void) {
         if (gUnk_02039B60 == 1) {
             gSystemFlags &= 0xFFFE;
             gUnk_020397F0 = gSioStatus;
-            ModeRequest(&gUnk_09EF15B8, 0);
+            ModeRequest(&gModeSioError, 0);
             return gUnk_02039B60;
         }
     }
@@ -762,18 +762,18 @@ void func_080C61D4(void) {
     s32 i;
     u8* q;
 
-    gUnk_0203AAC0.unk_00 = gUnk_02039BB0.hp;
-    gUnk_0203AAC0.unk_02 = gUnk_02039BB0.maxHp;
-    gUnk_0203AAC0.unk_04 = gUnk_02039BB0.level;
+    gUnk_0203AAC0.unk_00 = gGameState.hp;
+    gUnk_0203AAC0.unk_02 = gGameState.maxHp;
+    gUnk_0203AAC0.unk_04 = gGameState.level;
     gUnk_0203AAC0.unk_06 = gUnk_0203A9EC;
     gUnk_0203AAC0.unk_08 = gUnk_0203A9F0;
-    gUnk_0203AAC0.unk_0A = gUnk_02039BB0.ap;
-    gUnk_0203AAC0.unk_0C = gUnk_02039BB0.unk_10C;
-    gUnk_0203AAC0.unk_10 = gUnk_02039BB0.unk_110;
-    gUnk_0203AAC0.unk_14 = gUnk_02039BB0.unk_114;
-    gUnk_0203AAC0.unk_18 = gUnk_02039BB0.unk_118;
+    gUnk_0203AAC0.unk_0A = gGameState.ap;
+    gUnk_0203AAC0.unk_0C = gGameState.unk_10C;
+    gUnk_0203AAC0.unk_10 = gGameState.unk_110;
+    gUnk_0203AAC0.unk_14 = gGameState.unk_114;
+    gUnk_0203AAC0.unk_18 = gGameState.unk_118;
     gUnk_0203AAC0.unk_1C = 0;
-    q = gUnk_02039BB0.unk_186;
+    q = gGameState.unk_186;
 
     for (i = 12; i >= 0; i--) {
         if ((u8)(*q - 1) <= 11) {
@@ -844,87 +844,87 @@ s32 func_080C6378(void) {
 void func_080C640C(CharaObjParam2* param) {
     s32 i;
 
-    gUnk_02034CD8 = EwramAlloc(0x1094);
-    gUnk_02034CD8->unk_0C = param->unk_00;
-    gUnk_02034CD8->unk_10 = param->unk_04;
-    gUnk_02034CD8->unk_24 = param->unk_08;
-    gUnk_02034CD8->unk_28 = param->unk_0C;
-    gUnk_02034CD8->unk_00 = param->unk_10;
-    gUnk_02034CD8->unk_04 = param->unk_14;
-    gUnk_02034CD8->unk_08 = param->unk_18;
-    gUnk_02034CD8->unk_3A = 0;
-    gUnk_02034CD8->unk_3C = -76;
-    gUnk_02034CD8->unk_40 = 0;
-    gUnk_02034CD8->unk_42 = 0;
-    gUnk_02034CD8->unk_44 = 0;
-    gUnk_02034CD8->unk_1048 = param->unk_1C;
-    gUnk_02034CD8->unk_2C = 0;
-    gUnk_02034CD8->unk_30 = 0;
-    gUnk_02034CD8->unk_34 = 0;
-    gUnk_02034CD8->unk_38 = 0;
-    gUnk_02034CD8->unk_104C = param->unk_20;
+    gCharaObj = EwramAlloc(0x1094);
+    gCharaObj->unk_0C = param->unk_00;
+    gCharaObj->unk_10 = param->unk_04;
+    gCharaObj->unk_24 = param->unk_08;
+    gCharaObj->unk_28 = param->unk_0C;
+    gCharaObj->unk_00 = param->unk_10;
+    gCharaObj->unk_04 = param->unk_14;
+    gCharaObj->unk_08 = param->unk_18;
+    gCharaObj->unk_3A = 0;
+    gCharaObj->unk_3C = -76;
+    gCharaObj->unk_40 = 0;
+    gCharaObj->unk_42 = 0;
+    gCharaObj->unk_44 = 0;
+    gCharaObj->unk_1048 = param->unk_1C;
+    gCharaObj->unk_2C = 0;
+    gCharaObj->unk_30 = 0;
+    gCharaObj->unk_34 = 0;
+    gCharaObj->unk_38 = 0;
+    gCharaObj->unk_104C = param->unk_20;
 
     for (i = 0; i < 32; i++) {
-        gUnk_02034CD8->unk_1050[i] = 0;
+        gCharaObj->unk_1050[i] = 0;
     }
-    TaskPoolInit(gUnk_02034CE0, 2);
+    TaskPoolInit(gCharaTaskPool, 2);
 }
 
 INCLUDE_ASM("chara/func_080C64A4.s");
 
 void func_080C6878(void) {
-    EwramFree(gUnk_02034CD8);
-    TaskPoolDestroy(gUnk_02034CE0);
+    EwramFree(gCharaObj);
+    TaskPoolDestroy(gCharaTaskPool);
 }
 
 void func_080C6894(CharaObjParam* param) {
     s32 i;
     u16 idx;
 
-    gUnk_02034CD8 = EwramAlloc(0x1094);
-    gUnk_02034CD8->unk_1090 = 0;
-    gUnk_02034CD8->unk_0C = param->unk_00;
-    gUnk_02034CD8->unk_10 = param->unk_04;
-    gUnk_02034CD8->unk_14 = param->unk_08;
-    gUnk_02034CD8->unk_18 = param->unk_0C;
-    gUnk_02034CD8->unk_1C = param->unk_10;
-    gUnk_02034CD8->unk_20 = param->unk_14;
-    gUnk_02034CD8->unk_24 = param->unk_18;
-    gUnk_02034CD8->unk_28 = param->unk_1C;
-    gUnk_02034CD8->unk_2C = param->unk_20;
-    gUnk_02034CD8->unk_30 = param->unk_24;
-    gUnk_02034CD8->unk_34 = param->unk_28;
-    gUnk_02034CD8->unk_38 = param->unk_2C;
-    gUnk_02034CD8->unk_00 = param->unk_30;
-    gUnk_02034CD8->unk_04 = param->unk_34;
-    gUnk_02034CD8->unk_08 = param->unk_38;
-    gUnk_02034CD8->unk_3A = 0;
-    gUnk_02034CD8->unk_3C = -76;
-    gUnk_02034CD8->unk_40 = 0;
-    gUnk_02034CD8->unk_42 = 0;
-    gUnk_02034CD8->unk_44 = 0;
-    gUnk_02034CD8->unk_1048 = param->unk_3C;
-    gUnk_02034CD8->unk_104C = param->unk_40;
-    gUnk_02034CD8->unk_1090 = param->unk_44;
+    gCharaObj = EwramAlloc(0x1094);
+    gCharaObj->unk_1090 = 0;
+    gCharaObj->unk_0C = param->unk_00;
+    gCharaObj->unk_10 = param->unk_04;
+    gCharaObj->unk_14 = param->unk_08;
+    gCharaObj->unk_18 = param->unk_0C;
+    gCharaObj->unk_1C = param->unk_10;
+    gCharaObj->unk_20 = param->unk_14;
+    gCharaObj->unk_24 = param->unk_18;
+    gCharaObj->unk_28 = param->unk_1C;
+    gCharaObj->unk_2C = param->unk_20;
+    gCharaObj->unk_30 = param->unk_24;
+    gCharaObj->unk_34 = param->unk_28;
+    gCharaObj->unk_38 = param->unk_2C;
+    gCharaObj->unk_00 = param->unk_30;
+    gCharaObj->unk_04 = param->unk_34;
+    gCharaObj->unk_08 = param->unk_38;
+    gCharaObj->unk_3A = 0;
+    gCharaObj->unk_3C = -76;
+    gCharaObj->unk_40 = 0;
+    gCharaObj->unk_42 = 0;
+    gCharaObj->unk_44 = 0;
+    gCharaObj->unk_1048 = param->unk_3C;
+    gCharaObj->unk_104C = param->unk_40;
+    gCharaObj->unk_1090 = param->unk_44;
 
     for (i = 0; i < 10; i++) {
-        gUnk_02034CD8->unk_1050[i] = 1;
+        gCharaObj->unk_1050[i] = 1;
     }
 
     for (i = 10; i < 32; i++) {
-        gUnk_02034CD8->unk_1050[i] = 0;
+        gCharaObj->unk_1050[i] = 0;
     }
-    idx = gUnk_02034CD8->unk_24 >> 5;
+    idx = gCharaObj->unk_24 >> 5;
 
-    if (gUnk_02034CD8->unk_28 == 32) {
-        gUnk_02034CD8->unk_1050[(s16)idx] = 1;
+    if (gCharaObj->unk_28 == 32) {
+        gCharaObj->unk_1050[(s16)idx] = 1;
     }
-    TaskPoolInit(gUnk_02034CE0, 4);
+    TaskPoolInit(gCharaTaskPool, 4);
 }
 
 void func_080C6990(u16 a, u8 b) {
     if (a <= 31) {
-        gUnk_02034CD8->unk_1050[a] = b;
+        gCharaObj->unk_1050[a] = b;
     }
 }
 

@@ -9,9 +9,9 @@
 
 typedef struct ChkObjEntry {
     ObjDef* unk_00;
-    u16 unk_04;
+    u16 count;
     u16 unk_06;
-    const char* unk_08;
+    const char* name;
 } ChkObjEntry;
 
 
@@ -20,8 +20,8 @@ u16 GetKeysRepeat(void);
 void* AllocObjTiles(s32 a, void* b);
 void* LoadObjPalette(void* a, s32 b);
 u16 func_08003598(void* a);
-void func_08004DB0(void);
-void func_08005778(u16 r, u16 g, u16 b);
+void SetBgMode0(void);
+void SetBackdropColor(u16 r, u16 g, u16 b);
 s32 abs(s32 n);
 void func_08005974(void* a, u16 b, s32 c, void* d, void* e);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
@@ -39,11 +39,11 @@ void mode_chkobj_0(void);
 void mode_chkobj_1(void);
 void mode_chkobj_2(void);
 
-extern ChkObjWork* gUnk_0203489C;
+extern ChkObjWork* gChkObjWork;
 extern s16 gSineTable[];
 extern u8 gUnk_088B629C[];
-extern const char gUnk_08128304[];
-extern const ChkObjEntry gUnk_0812E744[];
+extern const char gWhitePalette[];
+extern const ChkObjEntry gChkObjEntries[];
 extern ObjDef gUnk_09ECEB74[];
 extern ObjDef gUnk_09ED82D4[];
 extern ObjDef gUnk_09ECF354[];
@@ -56,6 +56,6 @@ extern ObjDef gUnk_09ED76F4[];
 extern ObjDef gUnk_09ED77D4[];
 extern u8 gUnk_08F683A4[];
 extern Mode gModeDebug;
-extern TaskDesc gUnk_09EE9190;
+extern TaskDesc gTaskDescPrint;
 
 #endif /* GUARD_MODE_CHKOBJ_H */

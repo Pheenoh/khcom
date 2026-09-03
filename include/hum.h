@@ -10,10 +10,10 @@
 #include "obj.h"
 typedef struct HumSub {
     void* unk_00;
-    void* unk_04;
-    void* unk_08;
+    void* tiles;
+    void* palette;
     void* unk_0C;
-    AnimState unk_10;
+    AnimState anim;
     s32 unk_28;
     s32 unk_2C;
     s32 unk_30;
@@ -68,11 +68,11 @@ typedef struct HumActor {
 
 typedef struct HumWork {
     void* unk_000;
-    void* unk_004;
-    void* unk_008;
+    void* tiles;
+    void* palette;
     HumSub* unk_00C;
     void* unk_010;
-    AnimState unk_014;
+    AnimState anim;
     TaskPool unk_02C;
     HumActor unk_040;
     u16 unk_150;
@@ -90,7 +90,7 @@ typedef struct HumWork {
     void* unk_178;
     u16 unk_17C;
     u16 unk_17E;
-    u32 unk_180;
+    u32 gfx;
     u32 unk_184;
 } HumWork;
 
@@ -104,8 +104,8 @@ typedef struct CloudWork {
 } CloudWork;
 
 typedef struct HookMoonWork {
-    void* unk_00;
-    u8* unk_04;
+    void* tiles;
+    u8* palette;
     u16 unk_08;
     u8 unk_0A;
     u8 unk_0B;
@@ -125,11 +125,11 @@ typedef struct VixenNdlArgs {
 
 typedef struct VixenNdlWork {
     void* unk_00;
-    void* unk_04;
-    AnimState unk_08;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    void* palette;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_2C;
     u8 unk_2D;
     u8 unk_2E;
@@ -138,11 +138,11 @@ typedef struct VixenNdlWork {
 
 typedef struct VixenFrzWork {
     void* unk_00;
-    void* unk_04;
-    AnimState unk_08;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    void* palette;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_2C;
     s16 unk_30;
     u16 unk_32;
@@ -152,9 +152,9 @@ typedef struct VixenFrzWork {
 
 typedef struct VixenIceWork {
     u32 unk_00;
-    void* unk_04;
-    void* unk_08;
-    AnimState unk_0C;
+    void* tiles;
+    void* palette;
+    AnimState anim;
     VixenSub* unk_24;
     u8 unk_28[0x5C];
     s16 unk_84;
@@ -166,12 +166,12 @@ typedef struct VixenIceWork {
 } VixenIceWork;
 
 typedef struct LexTmh0Work {
-    void* unk_00;
-    void* unk_04;
-    AnimState unk_08;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    void* tiles;
+    void* palette;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_2C;
     u8 unk_2D[0x03];
     s32 unk_30;
@@ -182,10 +182,10 @@ typedef struct LexTmh0Work {
 typedef struct LexTmhWork {
     void* unk_00;
     void* unk_04;
-    AnimState unk_08;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_2C;
     u8 unk_2D;
     u16 unk_2E;
@@ -201,9 +201,9 @@ typedef struct LexTmhWork {
 } LexTmhWork;
 
 typedef struct RikuSpawn {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u16 unk_0C;
     u16 unk_0E;
     AnimState unk_10;
@@ -213,15 +213,15 @@ typedef struct RikuSpawn {
 
 typedef struct MahluxiaFlwWork {
     s32 unk_00;
-    void* unk_04;
-    void* unk_08;
-    AnimState unk_0C;
+    void* tiles;
+    void* palette;
+    AnimState anim;
     u8 unk_24[0x04];
     s32 unk_28;
     s32 unk_2C;
-    s32 unk_30;
-    s32 unk_34;
-    s32 unk_38;
+    s32 x;
+    s32 y;
+    s32 z;
 } MahluxiaFlwWork;
 
 typedef struct MahluxiaWork {
@@ -241,12 +241,12 @@ typedef struct MahluxiaWork {
 } MahluxiaWork;
 
 typedef struct LaxeneKnfWork {
-    void* unk_00;
-    void* unk_04;
-    AnimState unk_08;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    void* tiles;
+    void* palette;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_2C;
     u8 unk_2D;
     u16 unk_2E;
@@ -325,7 +325,7 @@ typedef struct HadesWork {
     AnimState unk_1E0;
     AnimState unk_1F8;
     AnimState unk_210;
-    void* unk_228;
+    void* palette;
     HadesSub unk_22C[2];
     s32 unk_27C;
 } HadesWork;
@@ -371,7 +371,7 @@ typedef struct VixenFrgSub {
 typedef struct VixenFrgWork {
     u8 unk_00[0x30];
     void* unk_30;
-    void* unk_34;
+    void* palette;
     s16 unk_38;
     u16 unk_3A;
     VixenFrgSub unk_3C[15];
@@ -394,10 +394,10 @@ typedef struct RikuWork {
 typedef struct HookBombWork {
     void* unk_00;
     void* unk_04;
-    AnimState unk_08;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_2C;
     u8 unk_2D[0x03];
     s32 unk_30;
@@ -427,9 +427,9 @@ typedef struct LexRockWork {
     void* unk_00[12];
     void* unk_30;
     AnimState unk_34[12];
-    s32 unk_154;
-    s32 unk_158;
-    s32 unk_15C;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_160;
     u8 unk_161;
     u16 unk_162;
@@ -438,7 +438,7 @@ typedef struct LexRockWork {
     u8 unk_168[0x04];
     LexRockSub unk_16C[11];
     u8 unk_2A0[0x18];
-    void* unk_2B8;
+    void* tiles;
     void* unk_2BC;
     u8 unk_2C0;
     u8 unk_2C1[0x03];
@@ -449,7 +449,7 @@ typedef struct Collider {
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    u8 unk_10[0x24];
+    u8 radius[0x24];
     u64 unk_34;
 } Collider;
 
@@ -565,7 +565,7 @@ typedef struct JiminyWork {
     u16 unk_D3E;
 } JiminyWork;
 
-typedef struct BtlSetup {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 world;
@@ -585,7 +585,7 @@ typedef struct BtlSetup {
     u8 unk_182[0x3A];
     SaveFileSummary fileSummaries[4];
     u32 playTime;
-} BtlSetup;
+} GameState;
 
 #define SAVE_OK 2
 
@@ -622,20 +622,20 @@ typedef struct AxcelWork {
     s32 unk_20C;
     s32 unk_210;
     u8 unk_214[0x04];
-    void* unk_218;
-    void* unk_21C;
+    void* tiles;
+    void* palette;
     TaskPool unk_220;
     u8 unk_234[0x04];
 } AxcelWork;
 
 typedef struct AxcelPtcWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    AnimState unk_0C;
-    s32 unk_24;
-    s32 unk_28;
-    s32 unk_2C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
 } AxcelPtcWork;
 
 typedef struct RobeWork {
@@ -679,8 +679,8 @@ extern u8 gUnk_0813F214[];
 extern u8 gUnk_0813FD58[];
 extern u8 gUnk_0813FDA8[];
 extern u16 gBldCnt;
-extern BtlWork* gUnk_02039B84;
-extern BtlSetup gUnk_02039BB0;
+extern BtlWork* gBtlWork;
+extern GameState gGameState;
 extern u8 gUnk_0813F91C[];
 extern s16 gSineTable[];
 extern u32 gFrameCounter;
@@ -726,7 +726,7 @@ extern u8 gUnk_0813FD24[];
 extern u8 gUnk_0813FD40[];
 extern u8 gUnk_0813FBBC[];
 extern u8 gTaskDescHumMahluxiaFlw[];
-extern JiminyWork* gUnk_02034934;
+extern JiminyWork* gJiminyWork;
 extern void* gUnk_09EDE3FC[];
 extern JiminyEntry gUnk_08155554[];
 extern u8 gUnk_02039CB8;
@@ -771,11 +771,11 @@ void func_0800380C(void* work, u16 a, void* b, s32 c);
 void func_08013994(s32 a, s32 b, s32 c);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 void func_080062F4(u16 a, s32 b);
-void func_08012650(void* a, u16 b);
+void ColliderSetRadius(void* a, u16 b);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 u16 func_08006390(void);
 u16 _08006338(void);
-void func_08005778(u16 r, u16 g, u16 b);
+void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_08057E90(RikuWork* work, RikuSpawn* p);
 void func_08057E2C(RikuWork* work, RikuSpawn* dst);
 void func_0800F368(void* p, u16 n);
@@ -788,7 +788,7 @@ u8 func_080128EC(void);
 void SetBlendAlpha(u16 a, u16 b);
 void func_08002A10(void* a, u32 b);
 void* AnimGetGfx(AnimState* a);
-u16 func_08005B34(AnimState* a);
+u16 AnimGetFrame(AnimState* a);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void m4aSongNumStart(u16 n);
 void m4aSongNumStop(u16 n);

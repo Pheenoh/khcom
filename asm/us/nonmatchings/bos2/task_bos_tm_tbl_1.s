@@ -112,7 +112,7 @@ _080BCD6C:
 	adds r0, r4, #0x4
 	adds r4, #0x60
 	ldrh r1, [r4, #0x00]
-	bl func_08012658
+	bl ColliderSetHeight
 	ldrh r0, [r4, #0x00]
 	adds r0, #0x03
 	strh r0, [r4, #0x00]

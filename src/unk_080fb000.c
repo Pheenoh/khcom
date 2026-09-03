@@ -1,7 +1,7 @@
 #include "macros.h"
 #include "unk_080fb000.h"
 
-void func_080FB000(GaWork* work, GaEntry* e) {
+void func_080FB000(GaWork* work, GaEntryWork* e) {
     s32 d1;
     s32 d2;
     s32 flag;
@@ -19,9 +19,9 @@ void func_080FB000(GaWork* work, GaEntry* e) {
         if (work->unk_000 == 10 || work->unk_004 == 10) {
             func_0801AF08(e);
         } else {
-            d1 = gUnk_02039B84->unk_07C[1] - e->unk_124;
+            d1 = gBtlWork->unk_07C[1] - e->unk_124;
             d1 = (d1 * d1) >> 8;
-            d2 = gUnk_02039B84->unk_07C[2] - e->unk_128;
+            d2 = gBtlWork->unk_07C[2] - e->unk_128;
             d2 = (d2 * d2) >> 8;
 
             if (work->entries[2].unk_15A & work->entries[3].unk_15A & work->entries[4].unk_15A & work->entries[5].unk_15A & 4) {
@@ -41,7 +41,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
                             flag = 1;
                         }
 
@@ -67,7 +67,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                     } else {
                         flag = 0;
 
-                        if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
                             flag = 1;
                         }
 
@@ -83,7 +83,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
                             flag = 1;
                         }
 
@@ -109,7 +109,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                     } else {
                         flag = 0;
 
-                        if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
                             flag = 1;
                         }
 
@@ -125,7 +125,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
                             flag = 1;
                         }
 
@@ -151,7 +151,7 @@ void func_080FB000(GaWork* work, GaEntry* e) {
                     } else {
                         flag = 0;
 
-                        if (gUnk_02039B84->unk_0CC <= gUnk_02039B84->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
                             flag = 1;
                         }
 
@@ -284,10 +284,10 @@ void func_080FB000(GaWork* work, GaEntry* e) {
             e->unk_1A6 = 0;
         }
     }
-    e->unk_19C = AnimUpdate(&e->unk_180);
+    e->gfx = AnimUpdate(&e->unk_180);
 
     if (e->unk_1A0 == 0) {
-        work->unk_A2C = AnimUpdate(&work->unk_A10);
+        work->gfx = AnimUpdate(&work->unk_A10);
     }
 
     if (e->unk_06C != 0) {

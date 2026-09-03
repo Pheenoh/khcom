@@ -29,7 +29,7 @@ func_080D576C: @ 080D576C
 	adds r0, #0x14
 	add r0, r9
 	ldr r0, [r0, #0x00]
-	bl func_08000F48
+	bl IsTaskActive
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	bne _080D588A

@@ -92,7 +92,7 @@ typedef struct PcSpawnArg {
     void* unk_10;
 } PcSpawnArg;
 
-typedef struct UnkStruct_02039B84 {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -104,14 +104,14 @@ typedef struct UnkStruct_02039B84 {
     u8 unk_080[0x58];
     u16 unk_0D8;
     u8 unk_0DA[0xF6];
-} UnkStruct_02039B84;
+} BtlWork;
 
 typedef struct BackupStatEntry {
     const char* name;
     s32 unk_04;
 } BackupStatEntry;
 
-extern UnkStruct_02039B84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern PcAnimStep gUnk_09A4C278[];
 extern PcGfxSet gUnk_09A4AC84[];
@@ -125,9 +125,9 @@ extern const char gUnk_09993878[];
 extern const char gUnk_09993880[];
 extern const char gUnk_09993888[];
 extern const char* gUnk_09EF9668[];
-extern u8 gUnk_08128304[];
-extern TaskDesc gUnk_09EF9E24;
-extern TaskDesc gUnk_09EF9E3C;
+extern u8 gWhitePalette[];
+extern TaskDesc gTaskDescBosPcFlt;
+extern TaskDesc gTaskDescBosPcAcd;
 extern u8 gUnk_09D69374[];
 extern u8 gUnk_05000080[];
 extern u16 gUnk_09A4C9EC[];
@@ -147,7 +147,7 @@ void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgScroll(s32 a, u16 b, u16 c);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 u16 GetKeysRepeat(void);

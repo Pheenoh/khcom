@@ -50,7 +50,7 @@ extern u8 IrqHandler[];
 
 extern u32 gSioPlayerId;
 extern u32 gSioStatus;
-extern u16 gUnk_03007FF8;
+extern u16 gIntrCheck;
 
 
 extern const IntrFunc gIntrTableTemplate[14];
@@ -211,7 +211,7 @@ void VBlankIntr(void) {
     if (!(gFrameSyncFlags & 1)) {
         m4aSoundVSync();
     }
-    gUnk_03007FF8 |= 1;
+    gIntrCheck |= 1;
 
     if (gFrameSyncFlags & 4) {
         func_08001254();
@@ -277,7 +277,7 @@ void VBlankIntrSio(void) {
     if (!(gFrameSyncFlags & 1)) {
         m4aSoundVSync();
     }
-    gUnk_03007FF8 |= 1;
+    gIntrCheck |= 1;
 
     if (gFrameSyncFlags & 4) {
         func_08001254();
@@ -303,7 +303,7 @@ void func_08000714(void) {
     REG_IME = 0;
     func_08116EF0();
     REG_IME = 1;
-    gUnk_03007FF8 |= 1;
+    gIntrCheck |= 1;
 
     if (gFrameSyncFlags & 4) {
         func_08001254();

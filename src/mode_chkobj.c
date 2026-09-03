@@ -1519,7 +1519,7 @@ const char gUnk_0812E714[16] = "riku_bt04.aob";
 const char gUnk_0812E724[16] = "riku_bt02.aob";
 const char gUnk_0812E734[16] = "riku_bt00.aob";
 
-const ChkObjEntry gUnk_0812E744[10] = {
+const ChkObjEntry gChkObjEntries[10] = {
     { gUnk_09ECEB74, 0x3F, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x72\x82\x6e\x82\x71\x82\x60" },
     { gUnk_09ED82D4, 0x1B, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x71\x82\x68\x82\x6a\x82\x74" },
     { gUnk_09ECF354, 0xA3, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x82\x64\x82\x6d\x82\x64\x82\x6c\x82\x78" },
@@ -1533,26 +1533,26 @@ const ChkObjEntry gUnk_0812E744[10] = {
 };
 
 void mode_chkobj_0(void) {
-    func_08004DB0();
-    gUnk_0203489C = EwramAlloc(sizeof(ChkObjWork));
-    TaskPoolInit(&gUnk_0203489C->pool, 1);
-    TaskCreate(&gUnk_0203489C->pool, &gUnk_09EE9190, 0);
-    gUnk_0203489C->unk_14 = 0;
-    gUnk_0203489C->unk_16 = 0;
-    gUnk_0203489C->unk_18 = 0;
-    gUnk_0203489C->unk_1C = AllocObjTiles(0x2000, 0);
-    gUnk_0203489C->unk_20 = LoadObjPalette(gUnk_08F683A4, 0x20);
-    gUnk_0203489C->unk_3C = gUnk_088B629C;
-    gUnk_0203489C->unk_40 = 0;
-    gUnk_0203489C->unk_42 = 0x80A0;
-    gUnk_0203489C->unk_44 = 0;
-    gUnk_0203489C->unk_46 = 0;
-    func_0800B30C(gUnk_0812E744[0].unk_00);
+    SetBgMode0();
+    gChkObjWork = EwramAlloc(sizeof(ChkObjWork));
+    TaskPoolInit(&gChkObjWork->pool, 1);
+    TaskCreate(&gChkObjWork->pool, &gTaskDescPrint, 0);
+    gChkObjWork->unk_14 = 0;
+    gChkObjWork->animId = 0;
+    gChkObjWork->unk_18 = 0;
+    gChkObjWork->tiles = AllocObjTiles(0x2000, 0);
+    gChkObjWork->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
+    gChkObjWork->gfx = gUnk_088B629C;
+    gChkObjWork->paused = 0;
+    gChkObjWork->unk_42 = 0x80A0;
+    gChkObjWork->unk_44 = 0;
+    gChkObjWork->unk_46 = 0;
+    func_0800B30C(gChkObjEntries[0].unk_00);
     SetupBg(1, 0, 15, 0);
     EnableBg(0);
     func_0805FA8C(1, 0x5400, 0x500);
-    func_0805FA60(1, gUnk_08128304, 0x20, 0x0F);
-    func_0805FCB0(166, 0, 2, gUnk_0812E744[0].unk_08);
+    func_0805FA60(1, gWhitePalette, 0x20, 0x0F);
+    func_0805FCB0(166, 0, 2, gChkObjEntries[0].name);
 }
 
 void mode_chkobj_1(void) {
@@ -1564,128 +1564,128 @@ void mode_chkobj_1(void) {
         ModeRequest(&gModeDebug, 0);
     } else {
         if (GetKeysPressed() & 8) {
-            gUnk_0203489C->unk_40 = !gUnk_0203489C->unk_40;
+            gChkObjWork->paused = !gChkObjWork->paused;
         }
 
-        if (AnimIsFinished(&gUnk_0203489C->unk_24) && (GetKeysHeld() & 1)) {
-            AnimStart(&gUnk_0203489C->unk_24, gUnk_0203489C->unk_16, 0);
+        if (AnimIsFinished(&gChkObjWork->anim) && (GetKeysHeld() & 1)) {
+            AnimStart(&gChkObjWork->anim, gChkObjWork->animId, 0);
         }
 
         if (GetKeysRepeat() & (DPAD_RIGHT | DPAD_LEFT)) {
             if (GetKeysRepeat() & DPAD_LEFT) {
-                gUnk_0203489C->unk_16--;
+                gChkObjWork->animId--;
             }
 
             if (GetKeysRepeat() & DPAD_RIGHT) {
-                gUnk_0203489C->unk_16++;
+                gChkObjWork->animId++;
             }
 
-            gUnk_0203489C->unk_46 = 0;
-            gUnk_0203489C->unk_40 = 0;
-            gUnk_0203489C->unk_44 = 0;
-            def = &gUnk_0812E744[gUnk_0203489C->unk_18].unk_00[gUnk_0203489C->unk_14];
+            gChkObjWork->unk_46 = 0;
+            gChkObjWork->paused = 0;
+            gChkObjWork->unk_44 = 0;
+            def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
 
-            if (gUnk_0203489C->unk_16 < 0) {
-                gUnk_0203489C->unk_14--;
+            if (gChkObjWork->animId < 0) {
+                gChkObjWork->unk_14--;
 
-                if (gUnk_0203489C->unk_14 < 0) {
-                    gUnk_0203489C->unk_18--;
+                if (gChkObjWork->unk_14 < 0) {
+                    gChkObjWork->unk_18--;
 
-                    if (gUnk_0203489C->unk_18 < 0) {
-                        gUnk_0203489C->unk_18 = 9;
+                    if (gChkObjWork->unk_18 < 0) {
+                        gChkObjWork->unk_18 = 9;
                     }
 
-                    gUnk_0203489C->unk_14 = gUnk_0812E744[gUnk_0203489C->unk_18].unk_04 - 1;
+                    gChkObjWork->unk_14 = gChkObjEntries[gChkObjWork->unk_18].count - 1;
                 }
 
-                def = &gUnk_0812E744[gUnk_0203489C->unk_18].unk_00[gUnk_0203489C->unk_14];
-                gUnk_0203489C->unk_16 = def->unk_0C - 1;
+                def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
+                gChkObjWork->animId = def->animCount - 1;
                 func_0800B30C(def);
-            } else if (gUnk_0203489C->unk_16 >= def->unk_0C) {
-                gUnk_0203489C->unk_14++;
+            } else if (gChkObjWork->animId >= def->animCount) {
+                gChkObjWork->unk_14++;
 
-                if (gUnk_0203489C->unk_14 >= gUnk_0812E744[gUnk_0203489C->unk_18].unk_04) {
-                    gUnk_0203489C->unk_18++;
+                if (gChkObjWork->unk_14 >= gChkObjEntries[gChkObjWork->unk_18].count) {
+                    gChkObjWork->unk_18++;
 
-                    if ((u16)gUnk_0203489C->unk_18 > 9) {
-                        gUnk_0203489C->unk_18 = 0;
+                    if ((u16)gChkObjWork->unk_18 > 9) {
+                        gChkObjWork->unk_18 = 0;
                     }
 
-                    gUnk_0203489C->unk_14 = 0;
+                    gChkObjWork->unk_14 = 0;
                 }
 
-                def = &gUnk_0812E744[gUnk_0203489C->unk_18].unk_00[gUnk_0203489C->unk_14];
-                gUnk_0203489C->unk_16 = 0;
+                def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
+                gChkObjWork->animId = 0;
                 func_0800B30C(def);
             } else {
-                AnimStart(&gUnk_0203489C->unk_24, gUnk_0203489C->unk_16, 0);
+                AnimStart(&gChkObjWork->anim, gChkObjWork->animId, 0);
             }
 
-            func_0805FCB0(166, 0, 2, gUnk_0812E744[gUnk_0203489C->unk_18].unk_08);
+            func_0805FCB0(166, 0, 2, gChkObjEntries[gChkObjWork->unk_18].name);
         }
 
         keys = GetKeysHeld() & 4;
 
         if (keys != 0) {
             if (GetKeysHeld() & L_BUTTON) {
-                gUnk_0203489C->unk_42--;
+                gChkObjWork->unk_42--;
             }
 
             if (GetKeysHeld() & R_BUTTON) {
-                gUnk_0203489C->unk_42++;
+                gChkObjWork->unk_42++;
             }
         } else if (GetKeysRepeat() & (L_BUTTON | R_BUTTON)) {
-            gUnk_0203489C->unk_46 = 0;
-            gUnk_0203489C->unk_40 = 0;
-            gUnk_0203489C->unk_44 = 0;
+            gChkObjWork->unk_46 = 0;
+            gChkObjWork->paused = 0;
+            gChkObjWork->unk_44 = 0;
 
             if (GetKeysRepeat() & L_BUTTON) {
-                gUnk_0203489C->unk_18--;
+                gChkObjWork->unk_18--;
             }
 
             if (GetKeysRepeat() & R_BUTTON) {
-                gUnk_0203489C->unk_18++;
+                gChkObjWork->unk_18++;
             }
 
-            if (gUnk_0203489C->unk_18 < 0) {
-                gUnk_0203489C->unk_18 = 9;
-            } else if ((u16)gUnk_0203489C->unk_18 > 9) {
-                gUnk_0203489C->unk_18 = 0;
+            if (gChkObjWork->unk_18 < 0) {
+                gChkObjWork->unk_18 = 9;
+            } else if ((u16)gChkObjWork->unk_18 > 9) {
+                gChkObjWork->unk_18 = 0;
             }
 
-            gUnk_0203489C->unk_16 = 0;
-            gUnk_0203489C->unk_14 = 0;
-            def = gUnk_0812E744[gUnk_0203489C->unk_18].unk_00;
+            gChkObjWork->animId = 0;
+            gChkObjWork->unk_14 = 0;
+            def = gChkObjEntries[gChkObjWork->unk_18].unk_00;
             func_0800B30C(def);
-            func_0805FCB0(166, 0, 2, gUnk_0812E744[gUnk_0203489C->unk_18].unk_08);
+            func_0805FCB0(166, 0, 2, gChkObjEntries[gChkObjWork->unk_18].name);
         }
 
-        func_08005778(abs(gSineTable[gUnk_0203489C->unk_42 & 0xFF] * 5 >> 6),
-                      abs(gSineTable[(gUnk_0203489C->unk_42 / 2) & 0xFF] * 5 >> 6),
-                      abs(gSineTable[(gUnk_0203489C->unk_42 / 4) & 0xFF] * 5 >> 6));
+        SetBackdropColor(abs(gSineTable[gChkObjWork->unk_42 & 0xFF] * 5 >> 6),
+                      abs(gSineTable[(gChkObjWork->unk_42 / 2) & 0xFF] * 5 >> 6),
+                      abs(gSineTable[(gChkObjWork->unk_42 / 4) & 0xFF] * 5 >> 6));
 
         if (GetKeysHeld() & DPAD_UP) {
-            gUnk_0203489C->unk_46--;
+            gChkObjWork->unk_46--;
         } else if (GetKeysHeld() & DPAD_DOWN) {
-            gUnk_0203489C->unk_46++;
+            gChkObjWork->unk_46++;
         }
 
-        TaskPoolUpdate(&gUnk_0203489C->pool);
-        TaskPoolDraw(&gUnk_0203489C->pool);
+        TaskPoolUpdate(&gChkObjWork->pool);
+        TaskPoolDraw(&gChkObjWork->pool);
 
-        if (gUnk_0203489C->unk_40 == 0 || (GetKeysRepeat() & 1)) {
-            AnimUpdate(&gUnk_0203489C->unk_24);
+        if (gChkObjWork->paused == 0 || (GetKeysRepeat() & 1)) {
+            AnimUpdate(&gChkObjWork->anim);
         }
 
-        gUnk_0203489C->unk_3C = AnimGetGfx(&gUnk_0203489C->unk_24);
+        gChkObjWork->gfx = AnimGetGfx(&gChkObjWork->anim);
 
-        if (gUnk_0203489C->unk_40 != 0) {
+        if (gChkObjWork->paused != 0) {
             func_0809D2B0(0, 1, 0, "PAUSE");
         } else {
             func_0809D2B0(0, 1, 0, "     ");
         }
 
-        def = &gUnk_0812E744[gUnk_0203489C->unk_18].unk_00[gUnk_0203489C->unk_14];
+        def = &gChkObjEntries[gChkObjWork->unk_18].unk_00[gChkObjWork->unk_14];
         func_0809D2B0(0, 12, 0, "                                      ");
         func_0809D2B0(0, 13, 0, "                                      ");
         func_0809D2B0(0, 14, 0, "                                      ");
@@ -1695,40 +1695,40 @@ void mode_chkobj_1(void) {
         func_0809D2B0(0, 18, 0, "                                      ");
         func_0809D2B0(0, 19, 0, "                                      ");
         func_0809D2B0(0, 0, 0, "    ");
-        func_0809D458(0, 0, 0, gUnk_0203489C->unk_14);
-        func_0809D2B0(0, 12, 0, def->unk_14);
+        func_0809D458(0, 0, 0, gChkObjWork->unk_14);
+        func_0809D2B0(0, 12, 0, def->aobName);
         func_0809D2B0(0, 13, 0, "aob");
-        func_0809D458(6, 13, 0, func_08005B38(&gUnk_0203489C->unk_24));
-        func_0809D2B0(0, 14, 0, def->unk_18);
+        func_0809D458(6, 13, 0, AnimGetGfxIndex(&gChkObjWork->anim));
+        func_0809D2B0(0, 14, 0, def->aclName);
         func_0809D2B0(0, 15, 0, "anime");
-        func_0809D458(6, 15, 0, gUnk_0203489C->unk_16);
+        func_0809D458(6, 15, 0, gChkObjWork->animId);
         func_0809D2B0(0, 16, 0, "pic");
-        func_0809D458(6, 16, 0, gUnk_0203489C->unk_24.frame);
+        func_0809D458(6, 16, 0, gChkObjWork->anim.frame);
         func_0809D2B0(0, 17, 0, "frame");
-        func_0809D458(6, 17, 0, gUnk_0203489C->unk_24.timer);
-        v = func_08003598(gUnk_0203489C->unk_3C) >> 5;
+        func_0809D458(6, 17, 0, gChkObjWork->anim.timer);
+        v = func_08003598(gChkObjWork->gfx) >> 5;
         func_0809D2B0(0, 18, 0, "chara");
         func_0809D458(6, 18, 0, v);
 
-        if (gUnk_0203489C->unk_44 < v) {
-            gUnk_0203489C->unk_44 = v;
+        if (gChkObjWork->unk_44 < v) {
+            gChkObjWork->unk_44 = v;
         }
 
         func_0809D2B0(0, 19, 0, "maxChr");
-        func_0809D458(6, 19, 0, gUnk_0203489C->unk_44);
-        DrawSprite(120, gUnk_0203489C->unk_46 + 96, gUnk_0203489C->unk_3C, gUnk_0203489C->unk_1C,
-                   gUnk_0203489C->unk_20, 0, 0, 0);
+        func_0809D458(6, 19, 0, gChkObjWork->unk_44);
+        DrawSprite(120, gChkObjWork->unk_46 + 96, gChkObjWork->gfx, gChkObjWork->tiles,
+                   gChkObjWork->palette, 0, 0, 0);
         func_080605A4(1);
         func_08060598();
     }
 }
 
 void mode_chkobj_2(void) {
-    TaskPoolDestroy(&gUnk_0203489C->pool);
-    ReleaseObjTiles(gUnk_0203489C->unk_1C);
-    ReleaseObjPalette(gUnk_0203489C->unk_20);
-    EwramFree(gUnk_0203489C);
+    TaskPoolDestroy(&gChkObjWork->pool);
+    ReleaseObjTiles(gChkObjWork->tiles);
+    ReleaseObjPalette(gChkObjWork->palette);
+    EwramFree(gChkObjWork);
     func_080609A0();
 }
 
-const char gUnk_0812E8EC[12] = "mode_chkobj";
+const char gModeNameChkobj[12] = "mode_chkobj";

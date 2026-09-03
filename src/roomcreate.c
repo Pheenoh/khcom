@@ -15,18 +15,18 @@ void task_roomcreate_0(RoomCreateWork* work) {
     SetBgPriority(0, 2);
     SetBgPriority(1, 2);
     TaskPoolInit(&work->unk_2C, 3);
-    work->unk_00 = gUnk_02039BA0->unk_18.unk_00.unk_00;
-    work->unk_04 = gUnk_02039BA0->unk_18.unk_00.unk_04;
-    work->unk_08 = gUnk_02039BA0->unk_18.unk_00.unk_08;
+    work->unk_00 = gUnk_02039BA0->unk_18.unk_00.x;
+    work->unk_04 = gUnk_02039BA0->unk_18.unk_00.y;
+    work->unk_08 = gUnk_02039BA0->unk_18.unk_00.z;
     act = gUnk_02039BA0->unk_68;
-    work->unk_0C = act->unk_00.unk_00;
-    work->unk_10 = act->unk_00.unk_04;
-    work->unk_14 = act->unk_00.unk_08;
-    work->unk_24 = act->unk_14;
+    work->unk_0C = act->unk_00.x;
+    work->unk_10 = act->unk_00.y;
+    work->unk_14 = act->unk_00.z;
+    work->unk_24 = act->angle;
     work->unk_18 = work->unk_0C + gSineTable[work->unk_24] * 50;
     work->unk_1C = work->unk_10 + -gSineTable[work->unk_24 + 0x40] * 50;
     work->unk_20 = work->unk_14;
-    work->unk_25 = gUnk_02039BA0->unk_18.unk_14;
+    work->unk_25 = gUnk_02039BA0->unk_18.angle;
 }
 
 u8 task_roomcreate_1(RoomCreateWork* work) {
@@ -36,14 +36,14 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     switch (work->unk_40) {
     case 0:
         if (work->unk_26 == 0) {
-            gUnk_02039BA0->unk_18.unk_14 = work->unk_24 + 0x80;
-            TaskCreate(&work->unk_2C, &gUnk_09EE7668, &work->unk_28);
+            gUnk_02039BA0->unk_18.angle = work->unk_24 + 0x80;
+            TaskCreate(&work->unk_2C, &gTaskDescSpotLight, &work->unk_28);
             gUnk_02039BA0->unk_70 |= 0x80000;
         }
         steps = 30 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_00, work->unk_18, steps);
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_04, work->unk_1C, steps);
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_08, work->unk_20, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.x, work->unk_18, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.y, work->unk_1C, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.z, work->unk_20, steps);
 
         if (steps <= 1) {
             func_080E0418();
@@ -51,8 +51,8 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             gUnk_02039BA0->unk_70 &= ~0x80000;
             work->unk_26 = 8;
         } else {
-            func_080E0298((gUnk_02039BA0->unk_18.unk_00.unk_00 + work->unk_0C) / 2,
-                          (gUnk_02039BA0->unk_18.unk_00.unk_04 + gUnk_02039BA0->unk_18.unk_00.unk_08 + work->unk_10 + work->unk_14) / 2);
+            func_080E0298((gUnk_02039BA0->unk_18.unk_00.x + work->unk_0C) / 2,
+                          (gUnk_02039BA0->unk_18.unk_00.y + gUnk_02039BA0->unk_18.unk_00.z + work->unk_10 + work->unk_14) / 2);
             work->unk_26++;
         }
         break;
@@ -62,7 +62,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             ApproachValue(&gUnk_02039BA0->unk_04, gUnk_02039BA0->unk_0C - 0x6000, work->unk_26);
             work->unk_26--;
         } else if (work->unk_26 == 0) {
-            m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x80);
+            m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x80);
             func_08093B78(&work->unk_2C, &work->unk_29);
             SetBgPriority(1, 1);
             work->unk_26--;
@@ -137,12 +137,12 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             gUnk_02039BA0->unk_70 |= 0x80000;
         }
         steps = 30 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_00, work->unk_00, steps);
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_04, work->unk_04, steps);
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_08, work->unk_08, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.x, work->unk_00, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.y, work->unk_04, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.z, work->unk_08, steps);
 
         if (steps <= 1) {
-            gUnk_02039BA0->unk_18.unk_14 = work->unk_25;
+            gUnk_02039BA0->unk_18.angle = work->unk_25;
             gUnk_02039BA0->unk_70 &= ~0x40000;
             gUnk_02039BA0->unk_70 &= ~2;
             DisableBg(0);
@@ -150,17 +150,17 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             return 0;
         }
         work->unk_26++;
-        func_080E0298((gUnk_02039BA0->unk_18.unk_00.unk_00 + work->unk_0C) / 2,
-                      (gUnk_02039BA0->unk_18.unk_00.unk_04 + gUnk_02039BA0->unk_18.unk_00.unk_08 + work->unk_10 + work->unk_14) / 2);
+        func_080E0298((gUnk_02039BA0->unk_18.unk_00.x + work->unk_0C) / 2,
+                      (gUnk_02039BA0->unk_18.unk_00.y + gUnk_02039BA0->unk_18.unk_00.z + work->unk_10 + work->unk_14) / 2);
         break;
     case 6:
         if (work->unk_26 == 0) {
             gUnk_02039BA0->unk_70 |= 0x80000;
         }
         steps = 40 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_00, work->unk_0C, steps);
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_04, work->unk_10, steps);
-        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.unk_08, work->unk_14, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.x, work->unk_0C, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.y, work->unk_10, steps);
+        ApproachValue(&gUnk_02039BA0->unk_18.unk_00.z, work->unk_14, steps);
 
         if (func_080DFD84(&gUnk_02039BA0->unk_18.unk_00)) {
             gUnk_02039BA0->unk_70 |= 0x10;
@@ -178,6 +178,6 @@ void task_roomcreate_2(RoomCreateWork* work) {
 }
 
 void task_roomcreate_3(RoomCreateWork* work) {
-    m4aMPlayVolumeControl(gUnk_0203DB10, 0xFF, 0x100);
+    m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x100);
     TaskPoolDestroy(&work->unk_2C);
 }

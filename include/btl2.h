@@ -8,7 +8,7 @@
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
-    u8 unk_14;
+    u8 angle;
     u8 unk_15[0x25];
     u16 unk_3A;
     s32 unk_3C;
@@ -25,8 +25,8 @@ typedef struct UnkStruct_02039BA0 {
 } UnkStruct_02039BA0;
 
 typedef struct FldWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     u8 unk_08[0x0A];
     u16 unk_12;
     u8 unk_14[0x02];
@@ -64,7 +64,7 @@ typedef struct FldWork {
     u8 unk_BD[0x03];
 } FldWork;
 
-typedef struct BtlActor {
+typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
     s32 unk_008;
@@ -82,8 +82,8 @@ typedef struct BtlActor {
     u64 unk_068;
     u8 unk_070;
     u8 unk_071[0x07];
-    struct BtlActor* unk_078;
-    struct BtlActor* unk_07C;
+    struct BtlWork* unk_078;
+    struct BtlWork* unk_07C;
     u8 unk_080[0x20];
     s32 unk_0A0;
     u8 unk_0A4[0x0C];
@@ -91,15 +91,15 @@ typedef struct BtlActor {
     u8 unk_0B2[0x1A];
     u16 unk_0CC;
     u8 unk_0CE[0x0A];
-    struct BtlActor* unk_0D8;
+    struct BtlWork* unk_0D8;
     u8 unk_0DC[0x4C];
     void (*unk_128)(s32* a, s32* b, s32* c, s32* d);
     u8 unk_12C[0x98];
     u16 unk_1C4;
     u8 unk_1C6[0x02];
-} BtlActor;
+} BtlWork;
 
-typedef struct BtlSetup {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 unk_00C[0xF4];
@@ -107,12 +107,12 @@ typedef struct BtlSetup {
     u32 nextExp;
     u8 level;
     u8 unk_109[0x03];
-} BtlSetup;
+} GameState;
 
 typedef struct BtlShadowWork {
-    void* unk_00;
-    void* unk_04;
-    BtlActor* unk_08;
+    void* tiles;
+    void* palette;
+    BtlWork* actor;
     void* unk_0C;
 } BtlShadowWork;
 
@@ -144,20 +144,20 @@ typedef struct BtlHpplyWork {
 typedef struct BtlHpenmWork {
     void* unk_00;
     void* unk_04;
-    void* unk_08;
+    void* palette;
     void* unk_0C;
     s32 unk_10;
     u8 unk_14;
     u8 unk_15[0x03];
-    BtlActor* unk_18;
+    BtlWork* unk_18;
     s16 unk_1C;
     s16 unk_1E;
     u32 unk_20;
 } BtlHpenmWork;
 
 typedef struct BtlPauseWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
     void* unk_0C;
     u8 unk_10;
@@ -171,20 +171,20 @@ typedef struct BtlPauseWork {
 } BtlPauseWork;
 
 typedef struct BtlPopWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    AnimState unk_0C;
-    s32 unk_24;
-    s32 unk_28;
-    s32 unk_2C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
+    s32 x;
+    s32 y;
+    s32 z;
     s16 unk_30;
     s16 unk_32;
 } BtlPopWork;
 
 typedef struct BtlEscapeWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
     void* unk_0C;
     void* unk_10;
@@ -201,8 +201,8 @@ typedef struct BtlPrizeWork {
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    void* unk_10;
-    void* unk_14;
+    void* tiles;
+    void* palette;
     void* unk_18;
     void* unk_1C;
     s32 unk_20;
@@ -226,9 +226,9 @@ typedef struct BtlPremireWork {
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
+    void* tiles;
+    void* palette;
+    void* gfx;
     void* unk_1C;
     s32 unk_20;
     s32 unk_24;
@@ -242,13 +242,13 @@ typedef struct BtlPremireWork {
     s32 unk_3C;
     s32 unk_40;
     void* unk_44;
-    AnimState unk_48;
+    AnimState anim;
 } BtlPremireWork;
 
 typedef struct BtlPremireSrc {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     u8 unk_0C[0x06];
     s16 unk_12;
     s16 unk_14;
@@ -297,9 +297,9 @@ void func_08006120(s32 a, s32 b);
 void SetBgPriority(s32 bg, u16 priority);
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
-extern BtlActor* gUnk_02039B84;
-extern BtlActor* gUnk_02039B9C;
-extern BtlSetup gUnk_02039BB0;
+extern BtlWork* gBtlWork;
+extern BtlWork* gUnk_02039B9C;
+extern GameState gGameState;
 
 extern u8 gUnk_0203D990[];
 extern u8 gUnk_0203D9D0[];
@@ -307,7 +307,7 @@ extern u8 gUnk_0203DA10[];
 extern u8 gUnk_0203DA50[];
 extern u8 gUnk_0203DA90[];
 extern u8 gUnk_0203DAD0[];
-extern u8 gUnk_0203DB10[];
+extern u8 gMPlayInfo_BGM[];
 extern u8 gUnk_0203DB50[];
 extern u8 gUnk_0203DB90[];
 extern u8 gUnk_0203DBD0[];
@@ -415,7 +415,7 @@ extern u8 gUnk_09EE12C8[];
 extern u8 gUnk_09EE1420[];
 extern u8 gUnk_09EE1498[];
 
-void task_btl_shadow_0(BtlShadowWork* work, BtlActor* actor);
+void task_btl_shadow_0(BtlShadowWork* work, BtlWork* actor);
 s32 task_btl_shadow_1(void);
 void task_btl_shadow_2(BtlShadowWork* work);
 void task_btl_shadow_3(BtlShadowWork* work);

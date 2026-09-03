@@ -318,7 +318,7 @@ _080412F2:
 	cmp r0, #0x00
 	bne _080413E4
 	adds r0, r4, #0x0
-	bl func_08005B34
+	bl AnimGetFrame
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x06
@@ -425,7 +425,7 @@ _080413DC:
 	b _08041B66
 _080413E4:
 	adds r0, r4, #0x0
-	bl func_08005B34
+	bl AnimGetFrame
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	cmp r0, #0x06

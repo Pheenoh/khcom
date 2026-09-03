@@ -217,7 +217,7 @@ _08047C06:
 	movs r3, #0x00
 	bl func_08019068
 	adds r0, r4, #0x0
-	bl func_08005B64
+	bl AnimReset
 	mov r2, r8
 	cmp r2, #0x00
 	beq _08047C66

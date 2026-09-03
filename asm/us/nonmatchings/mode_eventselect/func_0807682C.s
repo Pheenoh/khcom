@@ -298,7 +298,7 @@ _08076A52:
 	mov r2, sp
 	bl TaskCreate
 	adds r0, r4, #0x0
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r3, r0, #0x0
 	adds r1, r3, #0x0
 	adds r1, #0x80
@@ -335,7 +335,7 @@ _08076ACC:
 	adds r0, r4, #0x0
 	adds r0, #0x54
 	adds r0, r7, r0
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r3, r0, #0x0
 	adds r1, r3, #0x0
 	adds r1, #0x80
@@ -370,7 +370,7 @@ _08076B14:
 	mov r0, r9
 	adds r0, #0x54
 	adds r0, r7, r0
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r3, r0, #0x0
 	adds r1, r3, #0x0
 	adds r1, #0x80
@@ -401,7 +401,7 @@ _08076B14:
 	str r0, [r3, #0x78]
 	adds r0, r3, #0x0
 	adds r0, #0x64
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r3, r0, #0x0
 	adds r1, r3, #0x0
 	adds r1, #0x80
@@ -431,7 +431,7 @@ _08076B94:
 	mov r0, r9
 	adds r0, #0x54
 	adds r0, r7, r0
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r3, r0, #0x0
 	adds r1, r3, #0x0
 	adds r1, #0x80
@@ -461,7 +461,7 @@ _08076B94:
 	str r0, [r3, #0x78]
 	adds r0, r3, #0x0
 	adds r0, #0x64
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r3, r0, #0x0
 	adds r1, r3, #0x0
 	adds r1, #0x80
@@ -488,7 +488,7 @@ _08076B94:
 	str r0, [r3, #0x78]
 	adds r0, r3, #0x0
 	adds r0, #0x64
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r3, r0, #0x0
 	adds r1, r3, #0x0
 	adds r1, #0x80
@@ -518,7 +518,7 @@ _08076C46:
 	adds r0, r4, #0x0
 	adds r0, #0x54
 	adds r0, r7, r0
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r1, r0, #0x0
 	movs r3, #0x34
 	adds r3, r3, r7
@@ -531,7 +531,7 @@ _08076C5E:
 	strb r6, [r0, #0x06]
 	adds r0, r1, #0x0
 	adds r0, #0x64
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r1, r0, #0x0
 	cmp r1, #0x00
 	bne _08076C5E
@@ -539,13 +539,13 @@ _08076C70:
 	adds r4, #0x54
 	adds r4, r7, r4
 	adds r0, r4, #0x0
-	bl func_08000C8C
+	bl ListPoolFirst
 	mov r2, r8
 	adds r1, r2, r5
 	str r0, [r1, #0x00]
 	ldr r5, _08076CAC @ =0x02034A98
 	adds r0, r4, #0x0
-	bl func_08000C8C
+	bl ListPoolFirst
 	str r0, [r5, #0x00]
 	ldr r1, [r0, #0x78]
 	ldr r2, _08076CB0 @ =0x00000804

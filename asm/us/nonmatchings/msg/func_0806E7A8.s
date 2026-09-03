@@ -23,7 +23,7 @@ func_0806E7A8: @ 0806E7A8
 	ldr r0, _0806E7FC @ =0x02039B84
 	ldr r0, [r0, #0x00]
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	beq _0806E7E4
@@ -66,7 +66,7 @@ _0806E806:
 	ldr r1, [r3, #0x08]
 	ldr r2, [r3, #0x0C]
 	ldr r3, [r3, #0x10]
-	bl func_0801CD8C
+	bl EvtObjSetPos
 	b _0806E95A
 _0806E828:
 	adds r0, r5, #0x0

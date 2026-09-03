@@ -5,9 +5,9 @@
 
 typedef struct Mode {
     const char* name;
-    void (*unk_04)(s32 arg);
-    void (*unk_08)(void);
-    void (*unk_0C)(void);
+    void (*init)(s32 arg);
+    void (*update)(void);
+    void (*exit)(void);
 } Mode;
 
 #endif

@@ -101,14 +101,14 @@ typedef struct CardDef {
     CardStat unk_1C;
 } CardDef;
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct MenuWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     s32 unk_08;
     s32 unk_0C;
     u8 unk_10;
@@ -139,9 +139,9 @@ typedef struct UnkStruct_02034A1C {
 } UnkStruct_02034A1C;
 
 typedef struct LockonWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
+    void* tiles;
+    void* palette;
+    void* gfx;
     FldObj* unk_0C[8];
     u8 unk_2C;
     s8 unk_2D;
@@ -149,7 +149,7 @@ typedef struct LockonWork {
     u8 unk_2F;
     u8 unk_30;
     u8 unk_31[3];
-    AnimState unk_34;
+    AnimState anim;
     u8 unk_4C;
     u8 unk_4D[3];
 } LockonWork;
@@ -189,8 +189,8 @@ void func_0801CB0C(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
 void func_080E04EC(void);
-void func_08004DB0(void);
-void func_08004E64(void);
+void SetBgMode0(void);
+void SetBgMode1(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void DisableBg(s32 bg);
@@ -198,8 +198,8 @@ void func_08006120(s32 a, s32 b);
 void func_080A42B4(void);
 void func_08061824(void);
 u8 func_080A42C8(void);
-FldObj* func_08000C8C(ListNode* node);
-FldObj* func_08000CD4(ListNode* node);
+FldObj* ListPoolFirst(ListNode* node);
+FldObj* ListPoolNext(ListNode* node);
 
 void mode_test_0(void);
 void mode_test_1(void);
@@ -226,19 +226,19 @@ u16 func_08060A2C(u16 a);
 void func_08060A74(void);
 void func_08060AD8(void);
 void func_08060BAC(void);
-void func_08060BBC(MenuWork* w);
-u8 func_08060C18(MenuWork* w);
-void func_08060E64(MenuWork* w);
-void func_08060EA0(MenuWork* w);
+void menu_0(MenuWork* w);
+u8 menu_1(MenuWork* w);
+void menu_2(MenuWork* w);
+void menu_3(MenuWork* w);
 void func_08060ED8(void);
 void func_08060F1C(void);
 void func_08060F64(void);
 void task_lockon_0(LockonWork* w);
 s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list);
 u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d);
-void func_08060F74(s32 arg);
+void Event_0(s32 arg);
 void func_0806119C(void);
-void func_080617E8(void);
+void Event_2(void);
 u8 task_lockon_1(LockonWork* w);
 void task_lockon_2(LockonWork* w);
 void task_lockon_3(LockonWork* w);
@@ -255,18 +255,18 @@ extern u16 gBldCnt;
 extern u16 gBldAlpha;
 extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
 extern UnkStruct_09EE3FB4* gUnk_09EE3FB4[];
-extern TaskDesc gUnk_09EE46D4;
-extern Mode gUnk_09EE47AC;
+extern TaskDesc gTaskDescEventSeq;
+extern Mode gModeEventselect;
 extern const s16 gSineTable[];
 extern u32 gUnk_03006C10;
 extern vu16 gSystemFlags;
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern void* gUnk_09EE14D4[];
 extern CardDef gCardDefs[];
 extern Mode gModeChkbtl;
 extern Mode gUnk_09EE2704;
-extern Mode gUnk_09EF14DC;
-extern Mode gUnk_09EF4DB0;
+extern Mode gModeSioBtlOption;
+extern Mode gModeAllmap;
 extern TaskDesc gUnk_09EE2834;
 extern TaskDesc gUnk_09EE284C;
 extern TaskDesc gUnk_09EE4AF4;

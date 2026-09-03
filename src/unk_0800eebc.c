@@ -22,11 +22,11 @@ INCLUDE_ASM("unk_0800eebc/func_0800F3BC.s");
 INCLUDE_ASM("unk_0800eebc/func_0800F440.s");
 
 u8 func_0800F4C8(BtlObj* p, u16 b) {
-    if (p->unk_040.unk_04 < (gUnk_02039B84->unk_0DA + b) << 8) {
+    if (p->unk_040.unk_04 < (gBtlWork->unk_0DA + b) << 8) {
         return 1;
     }
 
-    if (p->unk_040.unk_04 > (gUnk_02039B84->unk_0DC - b) << 8) {
+    if (p->unk_040.unk_04 > (gBtlWork->unk_0DC - b) << 8) {
         return 1;
     }
     return 0;
@@ -38,20 +38,20 @@ INCLUDE_ASM("unk_0800eebc/_0800F84C.s");
 
 #ifdef NON_MATCHING
 void func_0800F988(UnkStruct_02039CA8* p) {
-    s32 n = p->unk_10 + 1;
-    p->unk_0C += n * n * 3;
+    s32 n = p->level + 1;
+    p->nextExp += n * n * 3;
 }
 #else
 INCLUDE_ASM("unk_0800eebc/func_0800F988.s");
 #endif
 
 void func_0800F9A0(void) {
-    gUnk_02039CA8.unk_00 = 0x50;
-    gUnk_02039CA8.unk_02 = 0x113;
-    gUnk_02039CA8.unk_04 = 8;
-    gUnk_02039CA8.unk_06 = 10;
-    gUnk_02039CA8.unk_08 = 0;
-    gUnk_02039CA8.unk_10 = 1;
+    gUnk_02039CA8.maxHp = 0x50;
+    gUnk_02039CA8.cp = 0x113;
+    gUnk_02039CA8.dp = 8;
+    gUnk_02039CA8.ap = 10;
+    gUnk_02039CA8.exp = 0;
+    gUnk_02039CA8.level = 1;
     gUnk_02039CA8.unk_14[0] = 0;
     gUnk_02039CA8.unk_14[1] = 0;
     gUnk_02039CA8.unk_14[2] = 0;
@@ -69,16 +69,16 @@ void func_0800F9A0(void) {
     gUnk_02039CA8.unk_80 = 0;
     gUnk_02039CA8.unk_82 = 0;
     gUnk_02039CA8.unk_84 = 0;
-    gUnk_02039CA8.unk_0C = 0x19;
+    gUnk_02039CA8.nextExp = 0x19;
     func_080C6FF8();
     func_080DDEA4();
     func_08109620();
 }
 
-u8 func_0800FA1C(void) {
-    if (gUnk_02039CA8.unk_10 + gUnk_02039B84->unk_0FA + 1 <= 99) {
-        gUnk_02039B84->unk_0FA++;
-        gUnk_02039CA8.unk_10++;
+u8 LevelUp(void) {
+    if (gUnk_02039CA8.level + gBtlWork->unk_0FA + 1 <= 99) {
+        gBtlWork->unk_0FA++;
+        gUnk_02039CA8.level++;
         func_0800F988(&gUnk_02039CA8);
         return 1;
     } else {
@@ -86,39 +86,39 @@ u8 func_0800FA1C(void) {
     }
 }
 s32 func_0800FA58(void) {
-    gUnk_02039BB0.maxHp += 15;
-    if (gUnk_02039BB0.maxHp > 560) {
-        gUnk_02039BB0.maxHp = 560;
+    gGameState.maxHp += 15;
+    if (gGameState.maxHp > 560) {
+        gGameState.maxHp = 560;
     }
     return 15;
 }
 s32 func_0800FA7C(void) {
-    gUnk_02039BB0.cp += 25;
-    if (gUnk_02039BB0.cp > 9999) {
-        gUnk_02039BB0.cp = 9999;
+    gGameState.cp += 25;
+    if (gGameState.cp > 9999) {
+        gGameState.cp = 9999;
     }
     return 25;
 }
 s32 func_0800FAA0(void) {
-    gUnk_02039BB0.dp += 2;
-    if (gUnk_02039BB0.dp > 999) {
-        gUnk_02039BB0.dp = 999;
+    gGameState.dp += 2;
+    if (gGameState.dp > 999) {
+        gGameState.dp = 999;
     }
     return 2;
 }
 s32 func_0800FAC4(void) {
-    gUnk_02039BB0.ap += 1;
-    if (gUnk_02039BB0.ap > 999) {
-        gUnk_02039BB0.ap = 999;
+    gGameState.ap += 1;
+    if (gGameState.ap > 999) {
+        gGameState.ap = 999;
     }
     return 1;
 }
-void func_0800FAE8(u16 a) {
-    gUnk_02039CA8.unk_08 += a;
+void AddExp(u16 a) {
+    gUnk_02039CA8.exp += a;
 }
 
-u8 func_0800FAFC(void) {
-    if (gUnk_02039CA8.unk_08 >= gUnk_02039CA8.unk_0C) {
+u8 CanLevelUp(void) {
+    if (gUnk_02039CA8.exp >= gUnk_02039CA8.nextExp) {
         return 1;
     }
     return 0;
@@ -138,11 +138,11 @@ u8 func_0800FBCC(u32 a) {
     u8* q;
 
     if (a <= 0x1E) {
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x10C;
     } else {
         a -= 0x1F;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x114;
     }
     p = (u64*)q;
@@ -154,14 +154,14 @@ u8 func_0800FBCC(u32 a) {
 
 void func_0800FC14(s32 a) {
     if (a == 0x3A) {
-        gUnk_02039BB0.unk_12C = -1;
+        gGameState.unk_12C = -1;
     } else {
-        gUnk_02039BB0.unk_12C |= 1LL << a;
+        gGameState.unk_12C |= 1LL << a;
     }
 }
 
 u8 func_0800FC5C(s32 a) {
-    if (gUnk_02039BB0.unk_12C & (1LL << a)) {
+    if (gGameState.unk_12C & (1LL << a)) {
         return 1;
     }
     return 0;
@@ -172,11 +172,11 @@ u8 func_0800FC90(u32 a) {
     u8* q;
 
     if (a <= 0x1E) {
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x1E8;
     } else {
         a -= 0x1F;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x1F0;
     }
     p = (u64*)q;
@@ -191,11 +191,11 @@ u8 func_0800FCD8(u32 a) {
     u8* q;
 
     if (a <= 0x1E) {
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x200;
     } else {
         a -= 0x1F;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x208;
     }
     p = (u64*)q;
@@ -210,11 +210,11 @@ u8 func_0800FD20(u32 a) {
     u8* q;
 
     if (a <= 0x1E) {
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x11C;
     } else {
         a -= 0x1F;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x124;
     }
     p = (u64*)q;
@@ -229,16 +229,16 @@ void func_0800FD68(u32 a) {
     u8* q;
 
     if (a == 0x48) {
-        BtlSetup* s = &gUnk_02039BB0;
+        GameState* s = &gGameState;
         s->unk_11C = 0;
         s->unk_124 = 0;
     } else {
         if (a <= 0x1E) {
-            q = (u8*)&gUnk_02039BB0;
+            q = (u8*)&gGameState;
             q += 0x11C;
         } else {
             a -= 0x1F;
-            q = (u8*)&gUnk_02039BB0;
+            q = (u8*)&gGameState;
             q += 0x124;
         }
         p = (u64*)q;
@@ -253,19 +253,19 @@ u8 func_0800FF00(u32 a) {
     u8* q;
 
     if (a <= 0x3F) {
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x134;
     } else if (a <= 0x7F) {
         a -= 0x40;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x13C;
     } else if (a <= 0xBF) {
         a -= 0x80;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x144;
     } else {
         a -= 0xC0;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x14C;
     }
     p = (u64*)q;
@@ -280,19 +280,19 @@ u8 func_0800FF70(u32 a) {
     u8* q;
 
     if (a <= 0x3F) {
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x154;
     } else if (a <= 0x7F) {
         a -= 0x40;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x15C;
     } else if (a <= 0xBF) {
         a -= 0x80;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x164;
     } else {
         a -= 0xC0;
-        q = (u8*)&gUnk_02039BB0;
+        q = (u8*)&gGameState;
         q += 0x16C;
     }
     p = (u64*)q;

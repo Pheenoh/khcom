@@ -15,7 +15,7 @@ func_0808DB50: @ 0808DB50
 	movs r1, #0xFE
 	lsls r1, r1, #0x03
 	adds r0, r5, r1
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _0808DBAE
@@ -27,7 +27,7 @@ _0808DB78: .4byte 0x00000886
 _0808DB7C:
 	adds r0, r2, #0x0
 	adds r0, #0x2C
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _0808DBAE

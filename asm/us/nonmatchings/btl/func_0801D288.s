@@ -17,7 +17,7 @@ func_0801D288: @ 0801D288
 	movs r1, #0x00
 	str r1, [r0, #0x78]
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r4, r0, #0x0
 	ldr r0, [r7, #0x34]
 	ldr r1, [r7, #0x38]
@@ -96,7 +96,7 @@ _0801D310:
 _0801D330:
 	adds r0, r4, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	bne _0801D2BC
@@ -113,7 +113,7 @@ _0801D34A:
 	mov r8, r0
 	adds r0, r1, #0x0
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	bne _0801D360
@@ -185,7 +185,7 @@ _0801D3BC:
 _0801D3DC:
 	adds r0, r4, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	bne _0801D360
@@ -256,7 +256,7 @@ _0801D446:
 _0801D466:
 	adds r0, r4, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r4, r0, #0x0
 _0801D470:
 	cmp r4, #0x00
@@ -271,7 +271,7 @@ _0801D470:
 	mov r8, r0
 	adds r0, r1, #0x0
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	b _0801D512
 	.byte 0x00, 0x00
 _0801D490: .4byte 0x01000000
@@ -340,7 +340,7 @@ _0801D4EA:
 _0801D50A:
 	adds r0, r4, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 _0801D512:
 	adds r4, r0, #0x0
 	cmp r4, #0x00

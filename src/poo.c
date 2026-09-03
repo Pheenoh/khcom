@@ -1,7 +1,7 @@
 #include "poo.h"
 #include "macros.h"
 
-PooWork* gUnk_02034DA8;
+PooWork* gPooWork;
 u32 gUnk_02034DAC;
 PooSpawnArgs gUnk_02034DB0;
 u32 gUnk_02034DC4;
@@ -11,7 +11,7 @@ s32 gUnk_02034DDC;
 u8 gUnk_02034DE0;
 u8 gUnk_02034DE1;
 s32 gUnk_02034DE4;
-PooSoraWork* gUnk_02034DE8;
+PooSoraWork* gPooSoraWork;
 u16 gUnk_02034DEC;
 s32 gUnk_02034DF0;
 s32 gUnk_02034DF4;
@@ -24,7 +24,7 @@ u16 gUnk_02034E24;
 u16 gUnk_02034E26;
 u16 gUnk_02034E28;
 u32 gUnk_02034E2C;
-PooBeeAfterEventWork* gUnk_02034E30;
+PooBeeAfterEventWork* gPooBeeAfterEventWork;
 u16 gUnk_02034E34;
 u16 gUnk_02034E36;
 u16 gUnk_02034E38;
@@ -55,7 +55,7 @@ void func_080C89B4(PooWork* w, PooSpot* b, u16 c) {
     s32 v;
     s32 i;
 
-    f = func_08005B34(w->unk_0C) + 1;
+    f = AnimGetFrame(w->unk_0C) + 1;
 
     if (w->unk_78 == 0) {
         i = w->unk_A8 * c + f;
@@ -221,11 +221,11 @@ u8 task_poo_pooh_1(PooWork* w) {
     func_080C8C40(w, n);
     func_080C98B8(w);
     func_080C7FEC(w, gUnk_02034DAC);
-    w->unk_08 = AnimUpdate(w->unk_0C);
+    w->gfx = AnimUpdate(w->unk_0C);
 
     if (gUnk_02034DAC == 3 || gUnk_02034DAC == 7) {
         if (w->unk_16 == 0) {
-            switch (func_08005B34(w->unk_0C)) {
+            switch (AnimGetFrame(w->unk_0C)) {
             case 9:
                 m4aSongNumStart(0x39E);
                 break;
@@ -255,8 +255,8 @@ void task_poo_pooh_3(PooWork* w) {
     }
     func_080D2C8C(&w->unk_28, gUnk_02034DAC);
     func_080D2CC4(gUnk_0203C3E4, gUnk_0203C3E0);
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     func_08012304(w->unk_4C);
     TaskPoolDestroy(&w->unk_B0);
 }
@@ -304,7 +304,7 @@ u8 func_080C9DAC(void) {
     }
 
     if (gUnk_02034DAC == 2) {
-        if (gUnk_02034DA8->unk_F6 != 0) {
+        if (gPooWork->unk_F6 != 0) {
             return 0;
         }
         return 1;
@@ -314,13 +314,13 @@ u8 func_080C9DAC(void) {
         return 0;
     }
 
-    w = gUnk_02034DA8;
+    w = gPooWork;
     if (w->unk_F6 != 0) {
         if (w->unk_A8 != 1) {
             return 1;
         }
 
-        if (func_08005B34(w->unk_0C) > 4) {
+        if (AnimGetFrame(w->unk_0C) > 4) {
             return 0;
         }
         return 1;
@@ -330,7 +330,7 @@ u8 func_080C9DAC(void) {
         return 0;
     }
 
-    if (func_08005B34(w->unk_0C) <= 4) {
+    if (AnimGetFrame(w->unk_0C) <= 4) {
         return 0;
     }
     return 1;
@@ -391,7 +391,7 @@ u16 func_080C9EFC(void* pool, u16 b) {
         gUnk_02034DC8.unk_04 = gUnk_096FC6F8[i].unk_04;
         gUnk_02034DC8.unk_08 = 0;
 
-        if (gUnk_096FC6F8[i].unk_08 == &gUnk_09EF4B20 || gUnk_096FC6F8[i].unk_08 == &gUnk_09EF4B08) {
+        if (gUnk_096FC6F8[i].unk_08 == &gTaskDescPooTanpopo || gUnk_096FC6F8[i].unk_08 == &gTaskDescPooLeaf) {
             gUnk_02034DB0.unk_00 = gUnk_02034DC8;
             gUnk_02034DB0.unk_10 = b;
             TaskCreate(pool, gUnk_096FC6F8[i].unk_08, &gUnk_02034DB0);
@@ -823,7 +823,7 @@ void func_080CAA50(PooSoraWork* w, s32 b, u16 c) {
     w->unk_A4 = b;
     e = &gUnk_096FCF54[b][d];
     func_08005974(w->unk_08, (u8)e->unk_0C, c, e->unk_04, e->unk_00);
-    func_08002A10(w->unk_00, e->unk_08);
+    func_08002A10(w->tiles, e->unk_08);
 }
 
 void func_080CAB24(PooActor* p) {
@@ -879,7 +879,7 @@ u8 func_080CB5A8(PooSoraWork* w, u8* t) {
             } else {
                 w->unk_98 = 0;
                 w->unk_94 = 0;
-                func_08000F8C(t, (u32)task_poo_sora_1);
+                SetTaskUpdate(t, (u32)task_poo_sora_1);
             }
         } else {
             w->unk_98++;
@@ -895,7 +895,7 @@ u8 func_080CB5A8(PooSoraWork* w, u8* t) {
     }
     func_08012324(w->unk_38, gUnk_0203C420.unk_00.unk_00, gUnk_0203C420.unk_00.unk_04, gUnk_0203C420.unk_00.unk_08);
     func_080C9FA8(gUnk_0203C420.unk_00.unk_00, gUnk_0203C420.unk_00.unk_04 + gUnk_0203C420.unk_00.unk_08);
-    w->unk_20 = AnimUpdate(w->unk_08);
+    w->gfx = AnimUpdate(w->unk_08);
     TaskPoolUpdate(&w->unk_24);
     return 1;
 }
@@ -909,8 +909,8 @@ INCLUDE_ASM("poo/task_poo_sora_2.s");
 
 void task_poo_sora_3(PooSoraWork* w) {
     func_080D2D0C(&gUnk_0203C420.unk_00);
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     func_08012304(w->unk_38);
     TaskPoolDestroy(&w->unk_24);
     EwramFree(gUnk_02039BA0);
@@ -918,14 +918,14 @@ void task_poo_sora_3(PooSoraWork* w) {
 }
 
 u8 func_080CBA4C(void) {
-    if (gUnk_02034DE8->unk_94 == 8 && gUnk_02034DE8->unk_98 == 0) {
+    if (gPooSoraWork->unk_94 == 8 && gPooSoraWork->unk_98 == 0) {
         return 1;
     }
     return 0;
 }
 
 u8 func_080CBA74(void) {
-    if (gUnk_02034DE8->unk_94 == 8) {
+    if (gPooSoraWork->unk_94 == 8) {
         return 1;
     }
     return 0;
@@ -991,8 +991,8 @@ void task_poo_trap_0(PooTrapWork* w, PooPos* p) {
     w->unk_0C = p->unk_00;
     w->unk_10 = p->unk_04;
     w->unk_14 = 0;
-    w->unk_00 = LoadObjTiles(gUnk_0972BD8C, 0x100);
-    w->unk_04 = LoadObjPalette(gUnk_09849AB8, 0x20);
+    w->tiles = LoadObjTiles(gUnk_0972BD8C, 0x100);
+    w->palette = LoadObjPalette(gUnk_09849AB8, 0x20);
     w->unk_08 = gUnk_0972BD78;
     func_08012324(w->unk_1C, w->unk_0C, w->unk_10, w->unk_14);
     w->unk_8C = 0;
@@ -1025,13 +1025,13 @@ void task_poo_trap_2(PooTrapWork* w) {
             func_080122AC(w->unk_1C, 10, 8, 16);
             w->unk_8C = 1;
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, 0xFFEF);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, 0xFFEF);
     }
 }
 
 void task_poo_trap_3(PooTrapWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 
     if (w->unk_8C != 0) {
         func_08012304(w->unk_1C);
@@ -1041,7 +1041,7 @@ void task_poo_trap_3(PooTrapWork* w) {
 void task_poo_pitAndButterfly_0(PooTrapWork* w, PooPos* p) {
     task_poo_trap_0(w, p);
     TaskPoolInit(&w->unk_78, 1);
-    TaskCreate(&w->unk_78, &gUnk_09EF4CD8, &w->unk_0C);
+    TaskCreate(&w->unk_78, &gTaskDescPooButterfly, &w->unk_0C);
     func_080CCB90(&w->unk_90, 0xE10, &w->unk_0C);
 }
 
@@ -1085,7 +1085,7 @@ void task_poo_balloon_0(PooBalloonObjWork* w, PooPos* p) {
         AnimInit(w->unk_0C, gUnk_09EF5AE0, gUnk_09EF5AD0);
         AnimStart(w->unk_0C, 0, 1);
     }
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
 }
 
 u8 task_poo_balloon_1(void* w) {
@@ -1099,14 +1099,14 @@ void task_poo_balloon_2(PooBalloonObjWork* w) {
     x = (w->unk_24->unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_24->unk_04 >> 8) + (w->unk_24->unk_08 >> 8) - gUnk_0203C3F8;
     if (x >= -16 && x <= 256 && y >= -16 && y <= 176) {
-        w->unk_08 = AnimUpdate(w->unk_0C);
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_24->unk_04 >> 8) * 4);
+        w->gfx = AnimUpdate(w->unk_0C);
+        DrawSprite(x, y, w->gfx, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_24->unk_04 >> 8) * 4);
     }
 }
 
 void task_poo_balloon_3(PooObjWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void task_poo_shadow_0(TaskPool* w, void* arg) {
@@ -1115,7 +1115,7 @@ void task_poo_shadow_0(TaskPool* w, void* arg) {
     args.unk_00 = arg;
     args.unk_08 = 0xA6;
     TaskPoolInit(w, 1);
-    TaskCreate(w, &gUnk_09EF4958, &args);
+    TaskCreate(w, &gTaskDescPooShadowscale, &args);
 }
 
 u8 task_poo_shadow_1(TaskPool* w) {
@@ -1136,11 +1136,11 @@ void task_poo_shadowdodai_0(PooShadowWork* w, PooShadowArgs* a) {
     w->unk_18 = a->unk_04;
     w->unk_00 = w->unk_14->unk_00;
     w->unk_04 = w->unk_14->unk_04;
-    w->unk_08 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    w->unk_0C = LoadObjPalette(gUnk_08F69BE4, 0x20);
+    w->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 0x20);
     AnimInit(w->unk_1C, gUnk_09EE1384, gUnk_09EE1380);
     AnimStart(w->unk_1C, 0, 1);
-    w->unk_10 = AnimUpdate(w->unk_1C);
+    w->gfx = AnimUpdate(w->unk_1C);
 }
 
 u8 task_poo_shadowdodai_1(PooShadowWork* w) {
@@ -1169,13 +1169,13 @@ void task_poo_shadowdodai_2(PooShadowWork* w) {
         aff = AllocObjAffine(0, s, s, 0);
         x = (w->unk_00 >> 8) - gUnk_0203C40C;
         y = (w->unk_04 >> 8) + (h >> 8) - gUnk_0203C3F8;
-        DrawSprite(x, y, w->unk_10, w->unk_08, w->unk_0C, aff, 0x800, w->unk_18->unk_00);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, aff, 0x800, w->unk_18->unk_00);
     }
 }
 
 void task_poo_shadowdodai_3(PooShadowWork* w) {
-    ReleaseObjTiles(w->unk_08);
-    ReleaseObjPalette(w->unk_0C);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void task_poo_shadowscale_0(PooScaleWork* w, PooShadowArgs* a) {
@@ -1183,11 +1183,11 @@ void task_poo_shadowscale_0(PooScaleWork* w, PooShadowArgs* a) {
     w->unk_00 = w->unk_10->unk_00;
     w->unk_04 = w->unk_10->unk_04;
     w->unk_2C = a->unk_08;
-    w->unk_08 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    w->unk_0C = LoadObjPalette(gUnk_08F69BE4, 0x20);
+    w->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 0x20);
     AnimInit(w->unk_14, gUnk_09EE1384, gUnk_09EE1380);
     AnimStart(w->unk_14, 0, 1);
-    w->unk_30 = AnimUpdate(w->unk_14);
+    w->gfx = AnimUpdate(w->unk_14);
 }
 
 u8 task_poo_shadowscale_1(PooScaleWork* w) {
@@ -1213,12 +1213,12 @@ void task_poo_shadowscale_2(PooScaleWork* w) {
     affine = AllocObjAffine(0, s, s, 0);
     x = (w->unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_04 >> 8) - gUnk_0203C3F8;
-    DrawSprite(x, y, w->unk_30, w->unk_08, w->unk_0C, affine, 0x800, 0xFFF0);
+    DrawSprite(x, y, w->gfx, w->tiles, w->palette, affine, 0x800, 0xFFF0);
 }
 
 void task_poo_shadowscale_3(PooScaleWork* w) {
-    ReleaseObjTiles(w->unk_08);
-    ReleaseObjPalette(w->unk_0C);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void func_080CC178(void* pool, void* a, s32 b) {
@@ -1226,7 +1226,7 @@ void func_080CC178(void* pool, void* a, s32 b) {
 
     args.unk_00 = a;
     args.unk_08 = b;
-    TaskCreate(pool, &gUnk_09EF4958, &args);
+    TaskCreate(pool, &gTaskDescPooShadowscale, &args);
 }
 
 void task_poo_freeballoon_0(PooFreeBalloonWork* w, PooPos* p) {
@@ -1341,8 +1341,8 @@ void task_poo_gauge_2(PooObjWork3* w) {
 }
 
 void task_poo_gauge_3(PooObjWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void task_poo_trapballoon_0(PooBalloonWork* w, PooPos* p) {
@@ -1350,12 +1350,12 @@ void task_poo_trapballoon_0(PooBalloonWork* w, PooPos* p) {
     w->unk_24.unk_08 = 0;
     w->unk_24.unk_0C = 0;
     w->unk_CC = func_08003524(gUnk_09EF5AD0, 4);
-    w->unk_04 = 0;
+    w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF5AE0, gUnk_09EF5AD0);
     AnimStart(w->unk_0C, 0, 1);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_B0, 3);
-    w->unk_C4 = TaskCreate(&w->unk_B0, &gUnk_09EF4928, &w->unk_24);
+    w->unk_C4 = TaskCreate(&w->unk_B0, &gTaskDescPooShadow, &w->unk_24);
     w->unk_C8 = 0;
     w->unk_CE = GetRandom();
     func_08012324(w->unk_34, w->unk_24.unk_00, w->unk_24.unk_04, w->unk_24.unk_08);
@@ -1368,11 +1368,11 @@ void task_poo_trapballoon_2(PooBalloonWork* w) {
     s16 x;
     s16 y;
 
-    if (func_08000F48((Task*)w->unk_C8) != 0) {
+    if (IsTaskActive((Task*)w->unk_C8) != 0) {
         TaskPoolUpdate(&w->unk_B0);
         TaskPoolDraw(&w->unk_B0);
     } else {
-        w->unk_08 = AnimUpdate(w->unk_0C);
+        w->gfx = AnimUpdate(w->unk_0C);
         w->unk_CE += 2;
         d = gSineTable[w->unk_CE & 0xFF] * 2;
         x = ((w->unk_24.unk_00 - 0x800) >> 8) - gUnk_0203C40C;
@@ -1380,21 +1380,21 @@ void task_poo_trapballoon_2(PooBalloonWork* w) {
         y = ((w->unk_24.unk_04 + d) >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
 
         if (func_080035CC(x, y, 64, 8, 24, 24) != 0) {
-            if (w->unk_04 != 0) {
-                ReleaseObjTiles(w->unk_00);
-                ReleaseObjPalette(w->unk_04);
-                w->unk_04 = 0;
+            if (w->palette != 0) {
+                ReleaseObjTiles(w->tiles);
+                ReleaseObjPalette(w->palette);
+                w->palette = 0;
                 func_08012304(w->unk_34);
                 func_080CCBD4(&w->unk_90);
             }
         } else {
-            if (w->unk_04 == 0) {
-                w->unk_00 = AllocObjTiles(w->unk_CC, gUnk_09732FB6);
-                w->unk_04 = LoadObjPalette(gUnk_09849B78, 0x20);
+            if (w->palette == 0) {
+                w->tiles = AllocObjTiles(w->unk_CC, gUnk_09732FB6);
+                w->palette = LoadObjPalette(gUnk_09849B78, 0x20);
                 func_080122AC(w->unk_34, 10, 8, 16);
                 func_080CCB90(&w->unk_90, 0x400, &w->unk_24);
             }
-            DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
+            DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
             TaskPoolUpdate(&w->unk_B0);
             TaskPoolDraw(&w->unk_B0);
         }
@@ -1402,9 +1402,9 @@ void task_poo_trapballoon_2(PooBalloonWork* w) {
 }
 
 void task_poo_trapballoon_3(PooBalloonWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_34);
         func_080CCBD4(&w->unk_90);
     }
@@ -1416,18 +1416,18 @@ void task_poo_owlballoon_0(PooOwlBalloonWork* w, PooPos* p) {
     w->unk_24.unk_08 = 0;
     w->unk_24.unk_0C = 0;
     w->unk_C8 = func_08003524(gUnk_09EF5E38, 3);
-    w->unk_04 = 0;
+    w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF5E44, gUnk_09EF5E38);
     AnimStart(w->unk_0C, 0, 1);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_B0, 2);
-    w->unk_C4 = TaskCreate(&w->unk_B0, &gUnk_09EF4928, &w->unk_24);
+    w->unk_C4 = TaskCreate(&w->unk_B0, &gTaskDescPooShadow, &w->unk_24);
     func_08012324(w->unk_34, w->unk_24.unk_00, w->unk_24.unk_04, w->unk_24.unk_08);
     func_080CCB90(&w->unk_90, 0x240, &w->unk_24);
 }
 
 u8 task_poo_owlballoon_1(PooOwlBalloonWork* w) {
-    if (w->unk_04 != 0 && func_08012660(w->unk_34, 9) != 0 && func_080C9D70() != 0) {
+    if (w->palette != 0 && func_08012660(w->unk_34, 9) != 0 && func_080C9D70() != 0) {
         gUnk_0203C3DC = w->unk_24.unk_00;
         gUnk_0203C3E8 = w->unk_24.unk_04;
         gUnk_0203C3F0 = 7;
@@ -1442,32 +1442,32 @@ void task_poo_owlballoon_2(PooOwlBalloonWork* w) {
     s16 x;
     s16 y;
 
-    w->unk_08 = AnimUpdate(w->unk_0C);
+    w->gfx = AnimUpdate(w->unk_0C);
     x = ((w->unk_24.unk_00 - 0x800) >> 8) - gUnk_0203C40C;
     y = ((w->unk_24.unk_04 + 0x1000) >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 64, 8, 24, 24) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_34);
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = AllocObjTiles(w->unk_C8, gUnk_0974B4D8);
-            w->unk_04 = LoadObjPalette(gUnk_09849C98, 0x20);
+        if (w->palette == 0) {
+            w->tiles = AllocObjTiles(w->unk_C8, gUnk_0974B4D8);
+            w->palette = LoadObjPalette(gUnk_09849C98, 0x20);
             func_080122AC(w->unk_34, 10, 8, 16);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1003 - (w->unk_24.unk_04 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1003 - (w->unk_24.unk_04 >> 8) * 4);
         TaskPoolUpdate(&w->unk_B0);
         TaskPoolDraw(&w->unk_B0);
     }
 }
 
 void task_poo_owlballoon_3(PooOwlBalloonWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_34);
     }
     TaskPoolDestroy(&w->unk_B0);
@@ -1504,7 +1504,7 @@ void func_080CCBD4(PooNode* p) {
 }
 
 void func_080CCBE8(void) {
-    func_08000BA4(&gUnk_02034DF8);
+    ListPoolInit(&gUnk_02034DF8);
 }
 
 s32 func_080CCBF8(PooNode* n) {
@@ -1540,7 +1540,7 @@ PooNode* func_080CCC98(void) {
     PooNode* best;
     PooNode* n;
 
-    best = (PooNode*)func_08000C8C(&gUnk_02034DF8);
+    best = (PooNode*)ListPoolFirst(&gUnk_02034DF8);
     n = best;
     gUnk_02034DF0 = 0;
 
@@ -1550,10 +1550,10 @@ PooNode* func_080CCC98(void) {
             gUnk_02034DF0 = gUnk_02034DF4;
             best = n;
         }
-        n = (PooNode*)func_08000CD4(&n->unk_0C);
+        n = (PooNode*)ListPoolNext(&n->unk_0C);
     }
 
-    if (gUnk_02034DF0 == 0 && best == (PooNode*)func_08000C8C(&gUnk_02034DF8)) {
+    if (gUnk_02034DF0 == 0 && best == (PooNode*)ListPoolFirst(&gUnk_02034DF8)) {
         return 0;
     }
     return best;
@@ -1563,7 +1563,7 @@ void task_poo_honey_0(PooHoneyWork* w, PooPos* p) {
     w->unk_24.unk_00 = p->unk_00;
     w->unk_24.unk_04 = p->unk_04;
     w->unk_24.unk_08 = 0;
-    w->unk_04 = 0;
+    w->palette = 0;
     w->unk_20 = func_08003524(gUnk_09EF5AE4, 14);
     AnimInit(w->unk_08, gUnk_09EF5B1C, gUnk_09EF5AE4);
     AnimStart(w->unk_08, 3, 1);
@@ -1596,30 +1596,30 @@ void task_poo_honey_2(PooHoneyWork* w) {
     x = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 24, 8, 16, 16) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_74);
             func_080CCBD4(&w->unk_D0);
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = AllocObjTiles(w->unk_20, gUnk_097339E8);
-            w->unk_04 = LoadObjPalette(gUnk_09849B98, 0x20);
+        if (w->palette == 0) {
+            w->tiles = AllocObjTiles(w->unk_20, gUnk_097339E8);
+            w->palette = LoadObjPalette(gUnk_09849B98, 0x20);
             func_080122AC(w->unk_74, 10, 8, 16);
             func_080CCB90(&w->unk_D0, 0x1FA4, &w->unk_34);
         }
-        DrawSprite(x, y, AnimGetGfx(w->unk_08), w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
+        DrawSprite(x, y, AnimGetGfx(w->unk_08), w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_24.unk_04 >> 8) * 4);
         TaskPoolUpdate(&w->unk_F4);
         TaskPoolDraw(&w->unk_F4);
     }
 }
 
 void task_poo_honey_3(PooHoneyWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_74);
         func_080CCBD4(&w->unk_D0);
     }
@@ -1695,7 +1695,7 @@ void task_poo_pile_0(PooPileWork* w, PooPileArgs* a) {
     w->unk_24 = a->unk_00;
     w->unk_28 = a->unk_04;
     w->unk_2C = 0;
-    w->unk_04 = 0;
+    w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF5C8C, gUnk_09EF5C6C);
 
     if (a->unk_10 == 8) {
@@ -1704,7 +1704,7 @@ void task_poo_pile_0(PooPileWork* w, PooPileArgs* a) {
         w->unk_B0 = a->unk_10;
     }
     AnimStart(w->unk_0C, w->unk_B0, 0);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     func_08012324(w->unk_34, w->unk_24, w->unk_28, w->unk_2C);
     w->unk_CC = 0;
     TaskPoolInit(&w->unk_B4, 1);
@@ -1721,10 +1721,10 @@ void task_poo_pile_2(PooPileWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
     if (x < -16 || x > 256 || y < -36 || y > 196) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
         }
 
         if (w->unk_CC != 0) {
@@ -1735,11 +1735,11 @@ void task_poo_pile_2(PooPileWork* w) {
         TaskPoolUpdate(&w->unk_B4);
         TaskPoolDraw(&w->unk_B4);
     } else {
-        w->unk_08 = AnimUpdate(w->unk_0C);
+        w->gfx = AnimUpdate(w->unk_0C);
 
-        if (w->unk_04 == 0) {
-            w->unk_00 = LoadObjTiles(gUnk_09742CC2, 0x300);
-            w->unk_04 = LoadObjPalette(gUnk_09849BF8, 0x20);
+        if (w->palette == 0) {
+            w->tiles = LoadObjTiles(gUnk_09742CC2, 0x300);
+            w->palette = LoadObjPalette(gUnk_09849BF8, 0x20);
         }
 
         if (w->unk_B0 != 7) {
@@ -1753,16 +1753,16 @@ void task_poo_pile_2(PooPileWork* w) {
         } else {
             z = 0xFFF1;
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, z);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, z);
         TaskPoolUpdate(&w->unk_B4);
         TaskPoolDraw(&w->unk_B4);
     }
 }
 
 void task_poo_pile_3(PooPileWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
 
     if (w->unk_CC != 0) {
@@ -1780,20 +1780,20 @@ void func_080CD550(void* pool, u16 b, void* c, void* d) {
     args.unk_00 = c;
     args.unk_04 = d;
     args.unk_10 = t[b];
-    TaskCreate(pool, &gUnk_09EF4A00, &args);
+    TaskCreate(pool, &gTaskDescPooPile, &args);
 }
 
 void task_poo_tigerstump_0(PooStumpWork* w, PooPos* p) {
     w->unk_24 = p->unk_00;
     w->unk_28 = p->unk_04 + 0x800;
     w->unk_2C = 0;
-    w->unk_04 = 0;
+    w->palette = 0;
     w->unk_08 = gUnk_097561D4;
     func_08012324(w->unk_34, w->unk_24, w->unk_28, 0);
 }
 
 u8 task_poo_tigerstump_1(PooStumpWork* w) {
-    if (w->unk_04 != 0) {
+    if (w->palette != 0) {
         if (func_08012660(w->unk_34, 9) != 0) {
             gUnk_0203C3F0 = 5;
         }
@@ -1808,26 +1808,26 @@ void task_poo_tigerstump_2(PooStumpWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = ((w->unk_28 - 0x800) >> 8) - gUnk_0203C3F8;
     if (x < -96 || x > 336 || y < -64 || y > 224) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_34);
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = LoadObjTiles(gUnk_097561E8, 0x400);
-            w->unk_04 = LoadObjPalette(gUnk_09849D38, 0x20);
+        if (w->palette == 0) {
+            w->tiles = LoadObjTiles(gUnk_097561E8, 0x400);
+            w->palette = LoadObjPalette(gUnk_09849D38, 0x20);
             func_080122AC(w->unk_34, 7, 15, 24);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - ((w->unk_28 - 0x700) >> 8) * 4);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_28 - 0x700) >> 8) * 4);
     }
 }
 
 void task_poo_tigerstump_3(PooStumpWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_34);
     }
 }
@@ -1836,13 +1836,13 @@ void task_poo_poohstump_0(PooStumpWork* w, PooPos* p) {
     w->unk_24 = p->unk_00;
     w->unk_28 = p->unk_04;
     w->unk_2C = 0;
-    w->unk_04 = 0;
+    w->palette = 0;
     w->unk_08 = gUnk_09755F34;
     func_08012324(w->unk_34, w->unk_24, w->unk_28, 0);
 }
 
 u8 task_poo_poohstump_1(PooStumpWork* w) {
-    if (w->unk_04 != 0) {
+    if (w->palette != 0) {
         if (func_08012660(w->unk_34, 9) != 0) {
             gUnk_0203C3DC = w->unk_24;
             gUnk_0203C3E8 = w->unk_28;
@@ -1859,26 +1859,26 @@ void task_poo_poohstump_2(PooStumpWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
     if (x < -80 || x > 320 || y < -24 || y > 184) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_34);
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = LoadObjTiles(gUnk_09755F54, 0x280);
-            w->unk_04 = LoadObjPalette(gUnk_09849D38, 0x20);
+        if (w->palette == 0) {
+            w->tiles = LoadObjTiles(gUnk_09755F54, 0x280);
+            w->palette = LoadObjPalette(gUnk_09849D38, 0x20);
             func_080122AC(w->unk_34, 7, 7, 14);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - ((w->unk_28 - 0x500) >> 8) * 4);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_28 - 0x500) >> 8) * 4);
     }
 }
 
 void task_poo_poohstump_3(PooStumpWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_34);
     }
 }
@@ -1901,7 +1901,7 @@ void task_poo_piglet_0(PooPigletWork* w) {
     w->unk_30 = 0;
     w->unk_A8 = 0;
     w->unk_AC = 0;
-    w->unk_04 = 0;
+    w->palette = 0;
     m = 0;
 
     for (i = 0; i < 4; i++) {
@@ -1911,14 +1911,14 @@ void task_poo_piglet_0(PooPigletWork* w) {
             m = n;
         }
     }
-    w->unk_00 = AllocObjTiles(m, 0);
+    w->tiles = AllocObjTiles(m, 0);
     AnimInit(w->unk_0C, 0, 0);
     w->unk_26 = 4;
     func_080CD854((PooAnimWork*)w, 0, 1);
     w->unk_24 = 0;
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_94, 1);
-    TaskCreate(&w->unk_94, &gUnk_09EF4928, &w->unk_28);
+    TaskCreate(&w->unk_94, &gTaskDescPooShadow, &w->unk_28);
 
     if (func_080D2D50(0) != 0) {
         w->unk_B4 = func_080D2E28(w->unk_38, 0x36);
@@ -1936,16 +1936,16 @@ void task_poo_piglet_2(PooPigletWork* w) {
     x = (w->unk_28 >> 8) - gUnk_0203C40C;
     y = (w->unk_2C >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 24, 8, 8, 8) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjPalette(w->unk_04);
+        if (w->palette != 0) {
+            ReleaseObjPalette(w->palette);
             func_08012304(w->unk_38);
             func_080D2E70(w->unk_B4, 0);
-            w->unk_04 = 0;
+            w->palette = 0;
         }
     } else {
         TaskPoolUpdate(&w->unk_94);
-        if (w->unk_04 == 0) {
-            w->unk_04 = LoadObjPalette(gUnk_09849C18, 0x20);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849C18, 0x20);
             if (func_080D2D50(0) != 0) {
                 func_080122AC(w->unk_38, 10, 4, 16);
             } else {
@@ -1955,16 +1955,16 @@ void task_poo_piglet_2(PooPigletWork* w) {
         }
         func_08012324(w->unk_38, w->unk_28, w->unk_2C, w->unk_30);
         pr = w->unk_24 != 0 ? 0x801 : 0x800;
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, pr, -0x1004 - (w->unk_2C >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, pr, -0x1004 - (w->unk_2C >> 8) * 4);
         TaskPoolDraw(&w->unk_94);
     }
 }
 
 void task_poo_piglet_3(PooPigletWork* w) {
-    ReleaseObjTiles(w->unk_00);
+    ReleaseObjTiles(w->tiles);
 
-    if (w->unk_04 != 0) {
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_38);
     }
     TaskPoolDestroy(&w->unk_94);
@@ -1976,8 +1976,8 @@ void task_poo_eeyore_0(PooEeyoreWork* w) {
     w->unk_2C = 0;
     w->unk_30 = 0;
     w->unk_A8 = func_08003524(gUnk_09EF5D68, 0x10);
-    w->unk_00 = 0;
-    w->unk_04 = 0;
+    w->tiles = 0;
+    w->palette = 0;
 
     if (func_080D2D50(2) != 0) {
         w->unk_A4 = 0;
@@ -1986,9 +1986,9 @@ void task_poo_eeyore_0(PooEeyoreWork* w) {
     }
     AnimInit(w->unk_0C, gUnk_09EF5DA8, gUnk_09EF5D68);
     AnimStart(w->unk_0C, w->unk_A4, 1);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_90, 1);
-    TaskCreate(&w->unk_90, &gUnk_09EF4928, &w->unk_24);
+    TaskCreate(&w->unk_90, &gTaskDescPooShadow, &w->unk_24);
     func_080122AC(w->unk_34, 10, 16, 16);
     func_08012324(w->unk_34, w->unk_24, w->unk_28, w->unk_2C);
     w->unk_AC = 1;
@@ -2039,10 +2039,10 @@ void task_poo_eeyore_2(PooEeyoreWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 24, 10, 24, 24) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
-            ReleaseObjTiles(w->unk_00);
+        if (w->palette != 0) {
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
+            ReleaseObjTiles(w->tiles);
         }
         p = &w->unk_AC;
         if (*p != 0) {
@@ -2058,21 +2058,21 @@ void task_poo_eeyore_2(PooEeyoreWork* w) {
             *p = 1;
         }
         func_08012324(w->unk_34, w->unk_24, w->unk_28, w->unk_2C);
-        w->unk_08 = AnimUpdate(w->unk_0C);
-        if (w->unk_04 == 0) {
-            w->unk_04 = LoadObjPalette(gUnk_09849C58, 0x20);
-            w->unk_00 = AllocObjTiles(w->unk_A8, gUnk_097448BA);
+        w->gfx = AnimUpdate(w->unk_0C);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849C58, 0x20);
+            w->tiles = AllocObjTiles(w->unk_A8, gUnk_097448BA);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
         TaskPoolUpdate(&w->unk_90);
         TaskPoolDraw(&w->unk_90);
     }
 }
 
 void task_poo_eeyore_3(PooEeyoreWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
 
     if (w->unk_AC != 0) {
@@ -2087,15 +2087,15 @@ void task_poo_owl_0(PooOwlWork* w) {
     w->unk_24.unk_08 = -0x3000;
     w->unk_24.unk_0C = 0;
     w->unk_4C = func_08003524(gUnk_09EF5DC4, 18);
-    w->unk_04 = 0;
-    w->unk_08 = gUnk_09746EDC;
+    w->palette = 0;
+    w->gfx = gUnk_09746EDC;
     AnimInit(w->unk_0C, gUnk_09EF5E24, gUnk_09EF5DC4);
     w->unk_48 = 0;
     w->unk_49 = 0;
     gUnk_02034E08.unk_00 = 0x3FD00;
     gUnk_02034E08.unk_04 = 0x21B00;
     TaskPoolInit(&w->unk_34, 1);
-    TaskCreate(&w->unk_34, &gUnk_09EF49B8, &gUnk_02034E08);
+    TaskCreate(&w->unk_34, &gTaskDescPooOwlballoon, &gUnk_02034E08);
 }
 
 u8 task_poo_owl_1(PooOwlWork* w) {
@@ -2114,7 +2114,7 @@ u8 task_poo_owl_1(PooOwlWork* w) {
                 m4aSongNumStart(0x15F);
             }
 
-            if (func_08005B34(w->unk_0C) > 3) {
+            if (AnimGetFrame(w->unk_0C) > 3) {
                 if (w->unk_4A != 0) {
                     func_0800592C(&w->unk_24.unk_08, -0x9000, w->unk_4A);
                     w->unk_4A--;
@@ -2123,7 +2123,7 @@ u8 task_poo_owl_1(PooOwlWork* w) {
                     w->unk_24.unk_08 -= 0x100;
                 }
             }
-            w->unk_08 = AnimUpdate(w->unk_0C);
+            w->gfx = AnimUpdate(w->unk_0C);
         }
     }
 
@@ -2133,11 +2133,11 @@ u8 task_poo_owl_1(PooOwlWork* w) {
             AnimStart(w->unk_0C, 4, 1);
         }
 
-        if (func_08005B34(w->unk_0C) == 0 && w->unk_16 == 0) {
+        if (AnimGetFrame(w->unk_0C) == 0 && w->unk_16 == 0) {
             m4aSongNumStart(0x158);
         }
         w->unk_24 = *gUnk_0203C3EC;
-        w->unk_08 = AnimUpdate(w->unk_0C);
+        w->gfx = AnimUpdate(w->unk_0C);
     }
     TaskPoolUpdate(&w->unk_34);
     return 1;
@@ -2151,24 +2151,24 @@ void task_poo_owl_2(PooOwlWork* w) {
     x = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 24, 8, 8, 8) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = AllocObjTiles(w->unk_4C, gUnk_097471E2);
-            w->unk_04 = LoadObjPalette(gUnk_09849C78, 0x20);
+        if (w->palette == 0) {
+            w->tiles = AllocObjTiles(w->unk_4C, gUnk_097471E2);
+            w->palette = LoadObjPalette(gUnk_09849C78, 0x20);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - ((w->unk_24.unk_04 + w->unk_24.unk_08) >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_24.unk_04 + w->unk_24.unk_08) >> 8) * 4);
     }
 }
 
 void task_poo_owl_3(PooOwlWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
     TaskPoolDestroy(&w->unk_34);
 }
@@ -2177,7 +2177,7 @@ void func_080CE2C4(PooRabbitWork* w, s32 b, u16 c) {
     if (w->unk_A8 != b) {
         w->unk_A8 = b;
         func_08005974(w->unk_0C, gUnk_096FD50C[b].unk_0C, c, gUnk_096FD50C[b].unk_00, gUnk_096FD50C[b].unk_04);
-        func_08002A10(w->unk_00, gUnk_096FD50C[b].unk_08);
+        func_08002A10(w->tiles, gUnk_096FD50C[b].unk_08);
     }
 }
 
@@ -2190,7 +2190,7 @@ void task_poo_rabbit_0(PooRabbitWork* w) {
     w->unk_2C = 0x16E00;
     w->unk_30 = 0;
     w->unk_34 = 0;
-    w->unk_04 = 0;
+    w->palette = 0;
     m = 0;
 
     for (i = 0; i < 2; i++) {
@@ -2200,13 +2200,13 @@ void task_poo_rabbit_0(PooRabbitWork* w) {
             m = n;
         }
     }
-    w->unk_00 = AllocObjTiles(m, 0);
+    w->tiles = AllocObjTiles(m, 0);
     AnimInit(w->unk_0C, 0, 0);
     w->unk_A8 = 7;
     func_080CE2C4(w, 1, 0);
     w->unk_24 = 0;
     w->unk_AC = 0;
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_38, 1);
     func_080CC178(&w->unk_38, &w->unk_28, 0x100);
     func_08012324(w->unk_4C, w->unk_28, w->unk_2C, w->unk_30);
@@ -2225,31 +2225,31 @@ void task_poo_rabbit_2(PooRabbitWork* w) {
     x = (w->unk_28 >> 8) - gUnk_0203C40C;
     y = (w->unk_2C >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 48, 8, 16, 16) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjPalette(w->unk_04);
+        if (w->palette != 0) {
+            ReleaseObjPalette(w->palette);
             func_08012304(w->unk_4C);
             func_080D2E70(w->unk_AE, 0);
-            w->unk_04 = 0;
+            w->palette = 0;
         }
     } else {
         pool = &w->unk_38;
         TaskPoolUpdate(pool);
-        if (w->unk_04 == 0) {
-            w->unk_04 = LoadObjPalette(gUnk_09849CB8, 0x40);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849CB8, 0x40);
             func_080122AC(w->unk_4C, 10, 4, 48);
             func_080D2E70(w->unk_AE, 1);
         }
         func_08012324(w->unk_4C, w->unk_28, w->unk_2C, w->unk_30);
         pr = w->unk_24 != 0 ? 0x801 : 0x800;
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, pr, -0x1004 - (w->unk_2C >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, pr, -0x1004 - (w->unk_2C >> 8) * 4);
         TaskPoolDraw(pool);
     }
 }
 
 void task_poo_rabbit_3(PooRabbitWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_4C);
     }
     TaskPoolDestroy(&w->unk_38);
@@ -2258,7 +2258,7 @@ void task_poo_rabbit_3(PooRabbitWork* w) {
 void func_080CE710(PooTiggerWork* w, u16 b) {
     s32 a;
 
-    func_08005B64(w->unk_0C);
+    AnimReset(w->unk_0C);
 
     if (w->unk_C0 == 2) {
         switch (w->unk_B8) {
@@ -2293,7 +2293,7 @@ void func_080CE710(PooTiggerWork* w, u16 b) {
 void func_080CE77C(PooTiggerWork* w, u16 b) {
     u16 r;
 
-    func_08005B64(w->unk_0C);
+    AnimReset(w->unk_0C);
 
     if (w->unk_C0 == 0) {
         r = 0;
@@ -2326,7 +2326,7 @@ void func_080CE77C(PooTiggerWork* w, u16 b) {
     if (w->unk_26 != r) {
         w->unk_26 = r;
         func_08005974(w->unk_0C, gUnk_096FD59C[r].unk_0C, b, gUnk_096FD59C[r].unk_00, gUnk_096FD59C[r].unk_04);
-        func_08002A10(w->unk_00, gUnk_096FD59C[r].unk_08);
+        func_08002A10(w->tiles, gUnk_096FD59C[r].unk_08);
     }
 }
 
@@ -2408,7 +2408,7 @@ void task_poo_tigger_0(PooTiggerWork* w) {
     w->unk_C0 = 2;
     w->unk_B8 = 0xAD;
     w->unk_D1 = 1;
-    w->unk_04 = 0;
+    w->palette = 0;
     m = 0;
 
     for (i = 0; i < 4; i++) {
@@ -2417,16 +2417,16 @@ void task_poo_tigger_0(PooTiggerWork* w) {
             m = t;
         }
     }
-    w->unk_00 = AllocObjTiles(m, 0);
+    w->tiles = AllocObjTiles(m, 0);
     AnimInit(w->unk_0C, 0, 0);
     w->unk_26 = 4;
     func_080CE77C(w, 0);
     func_080CE8B4(w);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_94, 1);
     args.unk_00 = &w->unk_28;
     args.unk_04 = &w->unk_C8;
-    TaskCreate(&w->unk_94, &gUnk_09EF4940, &args);
+    TaskCreate(&w->unk_94, &gTaskDescPooShadowdodai, &args);
     func_08012324(w->unk_38, w->unk_28, w->unk_2C, w->unk_30);
 }
 
@@ -2469,7 +2469,7 @@ u8 task_poo_tiggerroo_1(PooTiggerWork* w) {
             func_080CE960(w->unk_28, w->unk_2C, w->unk_30, w->unk_D1);
         }
     }
-    w->unk_08 = AnimUpdate(w->unk_0C);
+    w->gfx = AnimUpdate(w->unk_0C);
     TaskPoolUpdate(&w->unk_94);
     return 1;
 }
@@ -2484,26 +2484,26 @@ void task_poo_tiggerroo_2(PooTiggerWork* w) {
     x = (w->unk_28 >> 8) - gUnk_0203C40C;
     y = (w->unk_2C >> 8) + (w->unk_30 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 56, 8, 24, 24) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_38);
 
             if (w->unk_D1 == 0) {
-                if (w->unk_00 != 0) {
-                    ReleaseObjTiles(w->unk_00);
-                    w->unk_00 = 0;
+                if (w->tiles != 0) {
+                    ReleaseObjTiles(w->tiles);
+                    w->tiles = 0;
                 }
             }
         }
     } else {
-        if (w->unk_04 == 0) {
+        if (w->palette == 0) {
             if (w->unk_D1 != 0) {
-                w->unk_04 = LoadObjPalette(gUnk_09849BD8, 0x20);
+                w->palette = LoadObjPalette(gUnk_09849BD8, 0x20);
                 func_080122AC(w->unk_38, 4, 8, 8);
             } else {
-                w->unk_04 = LoadObjPalette(gUnk_09849CF8, 0x20);
-                w->unk_00 = AllocObjTiles(w->unk_D2, gUnk_09753154);
+                w->palette = LoadObjPalette(gUnk_09849CF8, 0x20);
+                w->tiles = AllocObjTiles(w->unk_D2, gUnk_09753154);
                 func_080122AC(w->unk_38, 4, 8, 8);
             }
         }
@@ -2537,18 +2537,18 @@ void task_poo_tiggerroo_2(PooTiggerWork* w) {
                 w->unk_C8 = z + 1;
             }
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, pr, z);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, pr, z);
         TaskPoolDraw(&w->unk_94);
     }
 }
 
 void task_poo_tiggerroo_3(PooTiggerWork* w) {
-    if (w->unk_00 != 0) {
-        ReleaseObjTiles(w->unk_00);
+    if (w->tiles != 0) {
+        ReleaseObjTiles(w->tiles);
     }
 
-    if (w->unk_04 != 0) {
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_38);
     }
     TaskPoolDestroy(&w->unk_94);
@@ -2560,26 +2560,26 @@ void task_poo_tiggerroo_0(PooTiggerWork* w) {
     w->unk_C0 = 2;
     w->unk_B8 = 0x2D;
     w->unk_D1 = 0;
-    w->unk_04 = 0;
-    w->unk_00 = 0;
+    w->palette = 0;
+    w->tiles = 0;
     w->unk_D2 = func_08003524(gUnk_09EF5EF8, 18);
     AnimInit(w->unk_0C, gUnk_09EF5FA0, gUnk_09EF5EF8);
     w->unk_26 = 4;
     func_080CE710(w, 0);
     func_080CE8B4(w);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_94, 1);
     args.unk_00 = &w->unk_28;
     args.unk_04 = &w->unk_C8;
-    TaskCreate(&w->unk_94, &gUnk_09EF4940, &args);
+    TaskCreate(&w->unk_94, &gTaskDescPooShadowdodai, &args);
     func_08012324(w->unk_38, w->unk_28, w->unk_2C, w->unk_30);
 }
 
 void task_poo_roo_0(PooRooWork* w, PooPos* p) {
-    gUnk_0203C460 = w;
+    gStockMesDispWork = w;
     w->unk_38 = p;
-    w->unk_00 = AllocObjTiles(func_08003524(gUnk_09EF5EF8, 8), gUnk_09753154);
-    w->unk_04 = LoadObjPalette(gUnk_09849CF8, 0x20);
+    w->tiles = AllocObjTiles(func_08003524(gUnk_09EF5EF8, 8), gUnk_09753154);
+    w->palette = LoadObjPalette(gUnk_09849CF8, 0x20);
     AnimInit(w->unk_0C, gUnk_09EF5FA0, gUnk_09EF5EF8);
 
     if (func_080D2D50(5) != 0) {
@@ -2595,9 +2595,9 @@ void task_poo_roo_0(PooRooWork* w, PooPos* p) {
         w->unk_24 = 0;
         w->unk_B4 = 0;
     }
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_98, 1);
-    TaskCreate(&w->unk_98, &gUnk_09EF4928, &w->unk_28);
+    TaskCreate(&w->unk_98, &gTaskDescPooShadow, &w->unk_28);
     func_080122AC(w->unk_3C, 10, 4, 32);
     func_08012324(w->unk_3C, w->unk_28.unk_00, w->unk_28.unk_04, w->unk_28.unk_08);
 
@@ -2655,7 +2655,7 @@ u8 task_poo_roo_1(PooRooWork* w) {
         }
         break;
     }
-    w->unk_08 = AnimUpdate(w->unk_0C);
+    w->gfx = AnimUpdate(w->unk_0C);
     func_08012324(w->unk_3C, w->unk_28.unk_00, w->unk_28.unk_04, w->unk_28.unk_08);
     TaskPoolUpdate(&w->unk_98);
     return 1;
@@ -2671,7 +2671,7 @@ void task_poo_roo_2(PooRooWork* w) {
     t = w->unk_28.unk_04 >> 8;
     y = t + (w->unk_28.unk_08 >> 8) - gUnk_0203C3F8;
     pr = w->unk_24 != 0 ? 0x801 : 0x800;
-    DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, pr, -0x1006 - t * 4);
+    DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, pr, -0x1006 - t * 4);
 
     if (w->unk_B4 != 0) {
         TaskPoolDraw(&w->unk_98);
@@ -2679,26 +2679,26 @@ void task_poo_roo_2(PooRooWork* w) {
 }
 
 void task_poo_roo_3(PooRooWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     func_08012304(w->unk_3C);
     TaskPoolDestroy(&w->unk_98);
 }
 
 u8 func_080CF114(void) {
-    return func_08005AC4((u8*)gUnk_0203C460 + 0x0C);
+    return func_08005AC4((u8*)gStockMesDispWork + 0x0C);
 }
 
 u8 func_080CF12C(void) {
-    return AnimIsFinished((u8*)gUnk_0203C460 + 0x0C);
+    return AnimIsFinished((u8*)gStockMesDispWork + 0x0C);
 }
 
 void task_poo_roo_footmark_0(PooFootmarkWork* w) {
     w->unk_0C = 0x4A700;
     w->unk_10 = 0x28E00;
     w->unk_14 = 0;
-    w->unk_00 = LoadObjTiles(gUnk_09755A34, 0x500);
-    w->unk_04 = 0;
+    w->tiles = LoadObjTiles(gUnk_09755A34, 0x500);
+    w->palette = 0;
 
     if (func_080D2D50(5) == 0) {
         w->unk_08 = gUnk_097559F4;
@@ -2719,29 +2719,29 @@ void task_poo_roo_footmark_2(PooFootmarkWork* w) {
     x = (w->unk_0C >> 8) - gUnk_0203C40C;
     y = (w->unk_10 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 0, 48, 0, 48) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjPalette(w->unk_04);
+        if (w->palette != 0) {
+            ReleaseObjPalette(w->palette);
             func_080CCBD4(&w->unk_1C);
-            w->unk_04 = 0;
+            w->palette = 0;
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_04 = LoadObjPalette(gUnk_09849D18, 0x20);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849D18, 0x20);
             n = &w->unk_1C;
             func_080CCB90(n, 0x240, &w->unk_0C);
             if (func_080D2D50(5) != 0) {
                 func_080CCB84(&n->unk_00, 0);
             }
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, 0xFFF1);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, 0xFFF1);
     }
 }
 
 void task_poo_roo_footmark_3(PooFootmarkWork* w) {
-    ReleaseObjTiles(w->unk_00);
+    ReleaseObjTiles(w->tiles);
 
-    if (w->unk_04 != 0) {
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjPalette(w->palette);
         func_080CCBD4(&w->unk_1C);
     }
 }
@@ -2752,18 +2752,18 @@ void task_poo_leaf_0(PooLeafWork* w, PooLeafArgs* a) {
     w->unk_2C = 0;
     w->unk_94 = a->unk_10;
     w->unk_92 = func_08003524(gUnk_09EF610C, 5);
-    w->unk_04 = 0;
+    w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF612C, gUnk_09EF610C);
     AnimStart(w->unk_0C, 0, 0);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     func_08012324(w->unk_34, w->unk_24 + 0x1C00, w->unk_28 + 0x1000, w->unk_2C);
     w->unk_90 = 0;
 }
 
 u8 task_poo_leaf_1(PooLeafWork* w) {
-    if (w->unk_04 != 0 && (w->unk_62 & 2) != 0 && w->unk_90 == 0) {
+    if (w->palette != 0 && (w->unk_62 & 2) != 0 && w->unk_90 == 0) {
         w->unk_90 = 1;
-        func_08005B64(w->unk_0C);
+        AnimReset(w->unk_0C);
         m4aSongNumStart(0xE0);
 
         if (func_080D2C1C(w->unk_94) == 0) {
@@ -2783,25 +2783,25 @@ void task_poo_leaf_2(PooLeafWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 0, 32, 0, 56) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_34);
             w->unk_90 = 0;
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = AllocObjTiles(w->unk_92, gUnk_0975C3E2);
-            w->unk_04 = LoadObjPalette(gUnk_09849DF8, 0x20);
+        if (w->palette == 0) {
+            w->tiles = AllocObjTiles(w->unk_92, gUnk_0975C3E2);
+            w->palette = LoadObjPalette(gUnk_09849DF8, 0x20);
             func_080122AC(w->unk_34, 6, 28, 0);
         }
         p = &w->unk_90;
         if (*p != 0) {
-            w->unk_08 = AnimUpdate(w->unk_0C);
+            w->gfx = AnimUpdate(w->unk_0C);
 
             if (AnimIsFinished(w->unk_0C) == 0) {
-                DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, 0xFFF1);
+                DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, 0xFFF1);
             } else if ((w->unk_62 & 2) == 0) {
                 *p = 0;
             }
@@ -2810,9 +2810,9 @@ void task_poo_leaf_2(PooLeafWork* w) {
 }
 
 void task_poo_leaf_3(PooLeafWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_34);
     }
 }
@@ -2824,7 +2824,7 @@ void task_poo_tanpopo_0(PooTanpopoWork* w, PooLeafArgs* a) {
     w->unk_B6 = a->unk_10;
     w->unk_B2 = func_08003524(gUnk_09EF6130, 2);
     w->unk_B4 = func_08003524(gUnk_09EF613C, 6);
-    w->unk_04 = 0;
+    w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF6138, gUnk_09EF6130);
     AnimStart(w->unk_0C, 0, 0);
     w->unk_08 = AnimGetGfx(w->unk_0C);
@@ -2836,10 +2836,10 @@ void task_poo_tanpopo_0(PooTanpopoWork* w, PooLeafArgs* a) {
 }
 
 u8 task_poo_tanpopo_1(PooTanpopoWork* w) {
-    if (w->unk_04 != 0 && (w->unk_82 & 2) != 0 && w->unk_B0 == 0) {
+    if (w->palette != 0 && (w->unk_82 & 2) != 0 && w->unk_B0 == 0) {
         w->unk_B0 = 1;
-        func_08005B64(w->unk_0C);
-        func_08005B64(w->unk_2C);
+        AnimReset(w->unk_0C);
+        AnimReset(w->unk_2C);
 
         if (func_080D2C1C(w->unk_B6) == 0) {
             if (func_080C7BF8(2, 1, w->unk_44 + 0x1800, w->unk_48 + 0x2000, w->unk_4C) != 0) {
@@ -2858,29 +2858,29 @@ void task_poo_tanpopo_2(PooTanpopoWork* w) {
     x = (w->unk_44 >> 8) - gUnk_0203C40C;
     y = (w->unk_48 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 0, 32, 0, 48) != 0) {
-        if (w->unk_04 != 0) {
+        if (w->palette != 0) {
             ReleaseObjTiles(w->unk_00);
             ReleaseObjTiles(w->unk_24);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_54);
             w->unk_B0 = 0;
         }
     } else {
-        if (w->unk_04 == 0) {
+        if (w->palette == 0) {
             w->unk_00 = LoadObjTiles(gUnk_0975E40E, 0x800);
             w->unk_24 = LoadObjTiles(gUnk_0975EC8E, 0x1800);
-            w->unk_04 = LoadObjPalette(gUnk_09849E18, 0x20);
+            w->palette = LoadObjPalette(gUnk_09849E18, 0x20);
             func_080122AC(w->unk_54, 6, 24, 0);
         }
         p = &w->unk_B0;
         if (*p != 0) {
             w->unk_08 = AnimUpdate(w->unk_0C);
             w->unk_28 = AnimUpdate(w->unk_2C);
-            DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, 0xFFF1);
+            DrawSprite(x, y, w->unk_08, w->unk_00, w->palette, 0, 0x800, 0xFFF1);
 
             if (AnimIsFinished(w->unk_2C) == 0) {
-                DrawSprite(x, y, w->unk_28, w->unk_24, w->unk_04, 0, 0x800, 100);
+                DrawSprite(x, y, w->unk_28, w->unk_24, w->palette, 0, 0x800, 100);
             } else if ((w->unk_82 & 2) == 0) {
                 *p = 0;
             }
@@ -2889,8 +2889,8 @@ void task_poo_tanpopo_2(PooTanpopoWork* w) {
 }
 
 void task_poo_tanpopo_3(PooTanpopoWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjPalette(w->palette);
         ReleaseObjTiles(w->unk_00);
         ReleaseObjTiles(w->unk_24);
         func_08012304(w->unk_54);
@@ -2901,14 +2901,14 @@ void task_poo_ti_board_0(PooBoardWork* w, PooPos* p) {
     w->unk_0C = p->unk_00;
     w->unk_10 = p->unk_04;
     w->unk_14 = 0;
-    w->unk_00 = LoadObjTiles(gUnk_097565FC, 0x200);
-    w->unk_04 = 0;
+    w->tiles = LoadObjTiles(gUnk_097565FC, 0x200);
+    w->palette = 0;
     w->unk_08 = gUnk_097565E8;
     func_08012324(w->unk_1C, w->unk_0C, w->unk_10, w->unk_14);
 }
 
 u8 task_poo_ti_board_1(PooBoardWork* w) {
-    if (w->unk_04 != 0) {
+    if (w->palette != 0) {
         if (func_08012660(w->unk_1C, 9) != 0) {
             gUnk_0203C3F0 = 5;
         }
@@ -2923,25 +2923,25 @@ void task_poo_ti_board_2(PooBoardWork* w) {
     x = (w->unk_0C >> 8) - gUnk_0203C40C;
     y = (w->unk_10 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 16, 1, 8, 8) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_1C);
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_04 = LoadObjPalette(gUnk_09849D58, 0x20);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849D58, 0x20);
             func_080122AC(w->unk_1C, 7, 8, 16);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
     }
 }
 
 void task_poo_ti_board_3(PooBoardWork* w) {
-    ReleaseObjTiles(w->unk_00);
+    ReleaseObjTiles(w->tiles);
 
-    if (w->unk_04 != 0) {
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_1C);
     }
 }
@@ -2952,7 +2952,7 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w) {
     w->unk_14 = -0x2000;
     w->unk_18 = 0;
     w->unk_1C = func_08003524(gUnk_09EF5D68, 0x10);
-    w->unk_04 = 0;
+    w->palette = 0;
     w->unk_08 = gUnk_09744842;
     TaskPoolInit(&w->unk_24, 1);
     func_080CC178(&w->unk_24, &w->unk_0C, 0x66);
@@ -2984,15 +2984,15 @@ void task_poo_eeyoretail_2(PooEeyoreTailWork* w) {
     x = ((s32)w->unk_0C >> 8) - gUnk_0203C40C;
     y = ((s32)w->unk_10 >> 8) + (w->unk_14 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 8, 8, 8, 8) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = AllocObjTiles(w->unk_1C, gUnk_097448BA);
-            w->unk_04 = LoadObjPalette(gUnk_09849C58, 0x20);
+        if (w->palette == 0) {
+            w->tiles = AllocObjTiles(w->unk_1C, gUnk_097448BA);
+            w->palette = LoadObjPalette(gUnk_09849C58, 0x20);
         }
         if (func_080CFA70() != 0) {
             pr = 0x800;
@@ -3001,7 +3001,7 @@ void task_poo_eeyoretail_2(PooEeyoreTailWork* w) {
             pr = 0x400;
             z = 10;
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, pr, z);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, pr, z);
         if (func_080C9D84() != 0) {
             TaskPoolDraw(&w->unk_24);
         }
@@ -3009,9 +3009,9 @@ void task_poo_eeyoretail_2(PooEeyoreTailWork* w) {
 }
 
 void task_poo_eeyoretail_3(PooEeyoreTailWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
     TaskPoolDestroy(&w->unk_24);
 }
@@ -3029,7 +3029,7 @@ void task_poo_honeycomb_0(PooHoneycombWork* w) {
     w->unk_2C = -0xA00;
     w->unk_30 = 0;
     w->unk_34 = func_08003524(gUnk_09EF5FF0, 1);
-    w->unk_04 = 0;
+    w->palette = 0;
     w->unk_08 = gUnk_097567FC;
     func_08012324(w->unk_38, w->unk_24, w->unk_28, 0);
     w->unk_9C = 0;
@@ -3083,10 +3083,10 @@ void task_poo_honeycomb_2(PooHoneycombWork* w) {
     x = ((w->unk_24 + w->unk_98) >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) + (w->unk_2C >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 16, 16, 16, 16) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjPalette(w->unk_04);
-            ReleaseObjTiles(w->unk_00);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjPalette(w->palette);
+            ReleaseObjTiles(w->tiles);
+            w->palette = 0;
         }
         p = &w->unk_9C;
         if (*p != 0) {
@@ -3094,23 +3094,23 @@ void task_poo_honeycomb_2(PooHoneycombWork* w) {
             *p = 0;
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_04 = LoadObjPalette(gUnk_09849D78, 0x20);
-            w->unk_00 = AllocObjTiles(w->unk_34, gUnk_09756810);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849D78, 0x20);
+            w->tiles = AllocObjTiles(w->unk_34, gUnk_09756810);
         }
         p = &w->unk_9C;
         if (*p == 0) {
             func_080122AC(w->unk_38, 6, 64, 0);
             *p = 1;
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0xC00, 0xFFF0);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0xC00, 0xFFF0);
     }
 }
 
 void task_poo_honeycomb_3(PooHoneycombWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
 
     if (w->unk_9C != 0) {
@@ -3131,13 +3131,13 @@ void task_poo_vegetable_0(PooVegetableWork* w) {
     w->unk_2C = 0;
     w->unk_30 = 0;
     w->unk_34 = func_08003524(gUnk_09EF602C, 1);
-    w->unk_04 = 0;
+    w->palette = 0;
     w->unk_08 = gUnk_09756C50;
     func_08012324(w->unk_38, w->unk_24, w->unk_28, w->unk_2C);
 }
 
 u8 task_poo_vegetable_1(PooVegetableWork* w) {
-    if (w->unk_04 != 0) {
+    if (w->palette != 0) {
         if (func_08012660(w->unk_38, 9) != 0) {
             gUnk_0203C3F0 = 5;
         }
@@ -3152,26 +3152,26 @@ void task_poo_vegetable_2(PooVegetableWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 32, 40, 48, 48) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
             func_08012304(w->unk_38);
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = AllocObjTiles(w->unk_34, gUnk_09756E28);
-            w->unk_04 = LoadObjPalette(gUnk_09849DB8, 0x20);
+        if (w->palette == 0) {
+            w->tiles = AllocObjTiles(w->unk_34, gUnk_09756E28);
+            w->palette = LoadObjPalette(gUnk_09849DB8, 0x20);
             func_080122AC(w->unk_38, 7, 0x26, 12);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
     }
 }
 
 void task_poo_vegetable_3(PooVegetableWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_38);
     }
 }
@@ -3435,11 +3435,11 @@ u8 task_poo_wagon_1(PooCamera* w) {
 INCLUDE_ASM("poo/task_poo_wagon_2.s");
 
 void task_poo_wagon_3(PooWagonWork* w) {
-    if (w->unk_04 != 0) {
+    if (w->palette != 0) {
         ReleaseObjTiles(w->unk_00);
         ReleaseObjTiles(w->unk_0C);
         ReleaseObjTiles(w->unk_14);
-        ReleaseObjPalette(w->unk_04);
+        ReleaseObjPalette(w->palette);
     }
 }
 
@@ -3459,19 +3459,19 @@ void task_poo_wagonwheel_0(PooWheelWork* w) {
         w->unk_24 = 0x2A800;
         w->unk_28 = 0x18D00;
         w->unk_36 = 2;
-        w->unk_08 = gUnk_09758B9C;
+        w->gfx = gUnk_09758B9C;
     } else {
         func_080D2CF4(&x, &y);
         w->unk_24 = x << 8;
         w->unk_28 = y << 8;
         w->unk_36 = 4;
-        w->unk_08 = gUnk_09758BF4;
+        w->gfx = gUnk_09758BF4;
     }
     w->unk_3C = w->unk_24;
     w->unk_2C = 0;
     w->unk_30 = 0;
     w->unk_34 = 0x180;
-    w->unk_04 = 0;
+    w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF60AC, gUnk_09EF6078);
     AnimStart(w->unk_0C, w->unk_36, 1);
     w->unk_38 = 0;
@@ -3485,7 +3485,7 @@ u8 task_poo_wagonwheel_1(PooWheelWork* w) {
     }
 
     if (w->unk_36 == 3) {
-        w->unk_08 = AnimUpdate(w->unk_0C);
+        w->gfx = AnimUpdate(w->unk_0C);
 
         if (w->unk_38 <= 0x4FF) {
             w->unk_38 += 6;
@@ -3497,7 +3497,7 @@ u8 task_poo_wagonwheel_1(PooWheelWork* w) {
         }
     }
 
-    if (w->unk_40 != 0 && w->unk_04 == 0) {
+    if (w->unk_40 != 0 && w->palette == 0) {
         return 0;
     }
     return 1;
@@ -3511,20 +3511,20 @@ void task_poo_wagonwheel_2(PooWheelWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) + (w->unk_2C >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 32, 0, 16, 16) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
 
             if (w->unk_36 == 3) {
                 w->unk_36 = 4;
-                w->unk_08 = gUnk_09758BF4;
+                w->gfx = gUnk_09758BF4;
             }
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = AllocObjTiles(w->unk_34, gUnk_09758C94);
-            w->unk_04 = LoadObjPalette(gUnk_09849DD8, 0x20);
+        if (w->palette == 0) {
+            w->tiles = AllocObjTiles(w->unk_34, gUnk_09758C94);
+            w->palette = LoadObjPalette(gUnk_09849DD8, 0x20);
         }
 
         if (func_080D2D50(6) == 0) {
@@ -3533,7 +3533,7 @@ void task_poo_wagonwheel_2(PooWheelWork* w) {
         } else {
             gUnk_02034E28 = -0x1004 - (w->unk_28 >> 8) * 4;
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, gUnk_02034E28);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, gUnk_02034E28);
     }
 }
 
@@ -3542,16 +3542,16 @@ void task_poo_wagonwheel_3(PooWheelWork* w) {
         func_080D2CE0(w->unk_24 >> 8, w->unk_28 >> 8);
     }
 
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
 }
 
 void task_poo_spark_0(PooSparkWork* w, PooPos* p) {
     w->unk_00 = *p;
-    w->unk_28 = AllocObjTiles(0x200, gUnk_098A4B68);
-    w->unk_2C = LoadObjPalette(gUnk_08F69BE4, 0x20);
+    w->tiles = AllocObjTiles(0x200, gUnk_098A4B68);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 0x20);
     AnimInit(w->unk_10, gUnk_09EF8CC0, gUnk_09EF8CA0);
     AnimStart(w->unk_10, 0, 1);
 }
@@ -3571,12 +3571,12 @@ void task_poo_spark_2(PooSparkWork* w) {
 
     x = (w->unk_00.unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_00.unk_04 >> 8) + (w->unk_00.unk_08 >> 8) - gUnk_0203C3F8;
-    DrawSprite(x, y, AnimGetGfx(w->unk_10), w->unk_28, w->unk_2C, 0, 0x400, 0x50);
+    DrawSprite(x, y, AnimGetGfx(w->unk_10), w->tiles, w->palette, 0, 0x400, 0x50);
 }
 
 void task_poo_spark_3(PooSparkWork* w) {
-    ReleaseObjTiles(w->unk_28);
-    ReleaseObjPalette(w->unk_2C);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void task_poo_bee_0(PooBeeWork* w) {
@@ -3600,7 +3600,7 @@ void task_poo_bee_0(PooBeeWork* w) {
     }
     AnimInit(w->unk_0C, a, b);
     AnimStart(w->unk_0C, 0, 1);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     w->unk_04 = 0;
     gUnk_02034E2C = 0;
     w->unk_C6 = 8;
@@ -3612,9 +3612,9 @@ INCLUDE_ASM("poo/task_poo_bee_1.s");
 INCLUDE_ASM("poo/task_poo_bee_2.s");
 
 void task_poo_bee_3(PooObjWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
 }
 
@@ -3626,7 +3626,7 @@ u8 func_080D0E3C(void) {
 }
 
 void task_poo_beeAfterEvent_0(PooBeeAfterEventWork* w) {
-    gUnk_02034E30 = w;
+    gPooBeeAfterEventWork = w;
     w->unk_44 = 0x8DE00;
     w->unk_48 = 0x46600;
     w->unk_4C = -0xA00;
@@ -3637,7 +3637,7 @@ void task_poo_beeAfterEvent_0(PooBeeAfterEventWork* w) {
     AnimInit(w->unk_2C, gUnk_09EF6024, gUnk_09EF5FF8);
     AnimStart(w->unk_2C, 0, 1);
     w->unk_10 = AnimGetGfx(w->unk_2C);
-    w->unk_08 = 0;
+    w->palette = 0;
 }
 
 u8 task_poo_beeAfterEvent_1(PooBeeAfterEventWork* w) {
@@ -3653,39 +3653,39 @@ void task_poo_beeAfterEvent_2(PooBeeAfterEventWork* w) {
     x = (w->unk_44 >> 8) - gUnk_0203C40C;
     y = (w->unk_48 >> 8) + (w->unk_4C >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 19, 17, 46, 16) != 0) {
-        if (w->unk_08 != 0) {
-            ReleaseObjPalette(w->unk_08);
+        if (w->palette != 0) {
+            ReleaseObjPalette(w->palette);
             ReleaseObjTiles(w->unk_00);
             ReleaseObjTiles(w->unk_04);
-            w->unk_08 = 0;
+            w->palette = 0;
 
             if (func_080C7CBC() == 0) {
                 m4aSongNumStop(0x182);
             }
         }
     } else {
-        if (w->unk_08 == 0) {
-            w->unk_08 = LoadObjPalette(gUnk_09849D98, 0x20);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849D98, 0x20);
             w->unk_00 = LoadObjTiles(gUnk_09756ACE, 0x180);
             w->unk_04 = LoadObjTiles(gUnk_09756ACE, 0x180);
             m4aSongNumStart(0x182);
         }
-        DrawSprite(x, y, w->unk_0C, w->unk_00, w->unk_08, 0, 0x800, -0x1002 - (w->unk_48 >> 8) * 4);
-        DrawSprite(x - 5, y + 5, w->unk_10, w->unk_04, w->unk_08, 0, 0x800, -0x1003 - (w->unk_48 >> 8) * 4);
+        DrawSprite(x, y, w->unk_0C, w->unk_00, w->palette, 0, 0x800, -0x1002 - (w->unk_48 >> 8) * 4);
+        DrawSprite(x - 5, y + 5, w->unk_10, w->unk_04, w->palette, 0, 0x800, -0x1003 - (w->unk_48 >> 8) * 4);
     }
 }
 
 void task_poo_beeAfterEvent_3(PooBeeAfterEventWork* w) {
-    if (w->unk_08 != 0) {
+    if (w->palette != 0) {
         ReleaseObjTiles(w->unk_00);
         ReleaseObjTiles(w->unk_04);
-        ReleaseObjPalette(w->unk_08);
+        ReleaseObjPalette(w->palette);
     }
 }
 
 u8 func_080D1050(void) {
     if (func_080D2D50(2) != 0) {
-        if (gUnk_02034E30->unk_08 != 0) {
+        if (gPooBeeAfterEventWork->palette != 0) {
             return 1;
         }
     }
@@ -3716,11 +3716,11 @@ void task_poo_cabbage_0(PooCabbageWork* w) {
     r = GetRandom();
     w->unk_C8 = (r & 15) + 88;
     w->unk_C0 = 0x1CC;
-    w->unk_04 = 0;
+    w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF6060, gUnk_09EF602C);
     w->unk_A4 = 2;
     AnimStart(w->unk_0C, 2, 1);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     func_080122AC(w->unk_44, 10, 8, 16);
     func_08012324(w->unk_44, w->unk_24, w->unk_28, w->unk_2C);
     w->unk_D0 = 1;
@@ -3737,9 +3737,9 @@ INCLUDE_ASM("poo/task_poo_cabbage_1.s");
 INCLUDE_ASM("poo/task_poo_cabbage_2.s");
 
 void task_poo_cabbage_3(PooCabbageWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
 
     if (w->unk_D0 != 0) {
@@ -3765,7 +3765,7 @@ u8 func_080D1650(void) {
 
 u8 task_poo_cabbageborn_1(PooCabbageBornWork* w) {
     if (func_080D1650() != 0 && w->unk_16 == 0) {
-        TaskCreate(&w->unk_00, &gUnk_09EF4C10, 0);
+        TaskCreate(&w->unk_00, &gTaskDescPooCabbage, 0);
         w->unk_16 = 40;
     }
 
@@ -3821,10 +3821,10 @@ void task_poo_mapobjhit_0(PooMapObjHitWork* w, PooMapObjHitArgs* a) {
     w->unk_9C = a->unk_18;
     w->unk_34 = a->unk_10;
     w->unk_3A = func_08003524(w->unk_34->unk_0C, w->unk_34->unk_04);
-    w->unk_04 = 0;
+    w->palette = 0;
     AnimInit(w->unk_0C, w->unk_34->unk_08, w->unk_34->unk_0C);
     AnimStart(w->unk_0C, 0, 1);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     w->unk_4C = 0x1000;
     w->unk_50 = 0x1800;
     func_08012324(w->unk_3C, w->unk_24 + 0x1000, w->unk_28 + 0xC00, w->unk_2C);
@@ -3838,7 +3838,7 @@ u8 task_poo_mapobjhit_1(PooMapObjHitWork* w) {
         if (func_080C76B0(w->unk_3C) != 0) {
             if (w->unk_38 == 0) {
                 w->unk_38 = 1;
-                func_08005B64(w->unk_0C);
+                AnimReset(w->unk_0C);
 
                 if (func_080D2C1C(w->unk_9C) == 0) {
                     if (func_080C7BF8(2, 1, w->unk_24 + 0x1000, w->unk_28 + 0x1800, w->unk_2C) != 0) {
@@ -3856,7 +3856,7 @@ u8 task_poo_mapobjhit_1(PooMapObjHitWork* w) {
     }
 
     if (w->unk_38 != 0) {
-        w->unk_08 = AnimUpdate(w->unk_0C);
+        w->gfx = AnimUpdate(w->unk_0C);
 
         if (AnimIsFinished(w->unk_0C) != 0) {
             w->unk_38 = 0;
@@ -3873,26 +3873,26 @@ void task_poo_mapobjhit_2(PooMapObjHitWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
     if (w->unk_38 == 0 || func_080035CC(x, y, 0, 24, 0, 32) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_00 = AllocObjTiles(w->unk_3A, w->unk_34->unk_00);
-            w->unk_04 = LoadObjPalette(w->unk_34->unk_10, 0x20);
+        if (w->palette == 0) {
+            w->tiles = AllocObjTiles(w->unk_3A, w->unk_34->unk_00);
+            w->palette = LoadObjPalette(w->unk_34->unk_10, 0x20);
         }
         pr = 0x800;
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, pr, 0xFFF1);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, pr, 0xFFF1);
         func_080D2F10(1);
     }
 }
 
 void task_poo_mapobjhit_3(PooObjWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjPalette(w->unk_04);
-        ReleaseObjTiles(w->unk_00);
+    if (w->palette != 0) {
+        ReleaseObjPalette(w->palette);
+        ReleaseObjTiles(w->tiles);
     }
 }
 
@@ -3904,7 +3904,7 @@ void func_080D1990(void* pool, u32 a, s32 x, s32 y, u16 e) {
     args.unk_10 = &gUnk_096FD8A4[a];
     args.unk_14 = a;
     args.unk_18 = e;
-    TaskCreate(pool, &gUnk_09EF4C40, &args);
+    TaskCreate(pool, &gTaskDescPooMapobjhit, &args);
 }
 
 INCLUDE_ASM("poo/func_080D19C4.s");
@@ -3974,24 +3974,24 @@ void task_poo_prize_2(PooPrizeWork* w) {
     } else {
         aff = 0;
     }
-    DrawSprite(x, y, w->unk_74, w->unk_6C, w->unk_70, aff, 0x800, -0x1004 - (w->unk_04 >> 8) * 4);
+    DrawSprite(x, y, w->unk_74, w->tiles, w->palette, aff, 0x800, -0x1004 - (w->unk_04 >> 8) * 4);
 
     if (w->unk_97 == 0) {
         y = (w->unk_04 >> 8) + (w->unk_0C >> 8) - gUnk_0203C3F8;
-        DrawSprite(x, y, w->unk_78, w->unk_6C, w->unk_70, aff, 0x800, 0xFFF0);
+        DrawSprite(x, y, w->unk_78, w->tiles, w->palette, aff, 0x800, 0xFFF0);
     }
 }
 
 void task_poo_prize_3(PooPrizeWork* w) {
-    ReleaseObjTiles(w->unk_6C);
-    ReleaseObjPalette(w->unk_70);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     func_08012304(w->unk_10);
 }
 
 void task_poo_zzz_0(PooZzzWork* w, u8* arg) {
     w->unk_24 = gUnk_0203C3EC;
-    w->unk_00 = AllocObjTiles(0x100, gUnk_097257D8);
-    w->unk_04 = LoadObjPalette(gUnk_09849A98, 0x20);
+    w->tiles = AllocObjTiles(0x100, gUnk_097257D8);
+    w->palette = LoadObjPalette(gUnk_09849A98, 0x20);
     AnimInit(w->unk_0C, gUnk_09EF5904, gUnk_09EF5844);
 
     if (*arg != 0) {
@@ -3999,7 +3999,7 @@ void task_poo_zzz_0(PooZzzWork* w, u8* arg) {
     } else {
         AnimStart(w->unk_0C, 7, 1);
     }
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
 }
 
 u8 task_poo_zzz_1(void* w) {
@@ -4017,14 +4017,14 @@ void task_poo_zzz_2(PooZzzWork* w) {
     y = (p->unk_04 >> 8) + (p->unk_08 >> 8) - gUnk_0203C3F8;
     if (x >= -0x20 && x <= 0x110 && y >= -0x20 && y <= 0xC0) {
         g = AnimUpdate(w->unk_0C);
-        w->unk_08 = g;
-        DrawSprite(x, y, g, w->unk_00, w->unk_04, 0, 0x400, 0x0B);
+        w->gfx = g;
+        DrawSprite(x, y, g, w->tiles, w->palette, 0, 0x400, 0x0B);
     }
 }
 
 void task_poo_zzz_3(PooZzzWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void func_080D1FB8(PooBflyPart* p) {
@@ -4085,14 +4085,14 @@ void func_080D206C(PooBflyPart* p) {
     p->unk_00 = AllocObjTiles(0x40, 0);
     AnimInit(p->unk_08, 0, 0);
     func_080D2034(p);
-    p->unk_04 = AnimGetGfx(p->unk_08);
+    p->gfx = AnimGetGfx(p->unk_08);
 }
 
 void task_poo_butterfly_0(PooButterflyWork* w, PooPos* p) {
     w->unk_D4 = p->unk_00;
     w->unk_D8 = p->unk_04;
     w->unk_DC = p->unk_08 - 0xE00;
-    w->unk_D0 = LoadObjPalette(gUnk_09849C38, 0x20);
+    w->palette = LoadObjPalette(gUnk_09849C38, 0x20);
     w->unk_00[0].unk_20 = w->unk_D4 - 0x1000;
     w->unk_00[0].unk_24 = w->unk_D8;
     w->unk_00[0].unk_28 = w->unk_DC;
@@ -4131,7 +4131,7 @@ void func_080D2190(PooBflyPart* p) {
             p->unk_44 = p->unk_34;
         }
     }
-    p->unk_04 = AnimUpdate(p->unk_08);
+    p->gfx = AnimUpdate(p->unk_08);
 }
 
 u8 task_poo_butterfly_1(PooButterflyWork* w) {
@@ -4152,19 +4152,19 @@ u8 func_080D220C(PooBflyPart* p, void* pal) {
     }
     pr = p->unk_50 != 0 ? 0x801 : 0x800;
     func_080D2034(p);
-    DrawSprite(x, y, p->unk_04, p->unk_00, pal, 0, pr, -0x1004 - (p->unk_24 >> 8) * 4);
+    DrawSprite(x, y, p->gfx, p->unk_00, pal, 0, pr, -0x1004 - (p->unk_24 >> 8) * 4);
     return 1;
 }
 
 void task_poo_butterfly_2(PooButterflyWork* w) {
-    func_080D220C(&w->unk_00[0], w->unk_D0);
-    func_080D220C(&w->unk_00[1], w->unk_D0);
+    func_080D220C(&w->unk_00[0], w->palette);
+    func_080D220C(&w->unk_00[1], w->palette);
 }
 
 void task_poo_butterfly_3(PooButterflyWork* w) {
     ReleaseObjTiles(w->unk_00[0].unk_00);
     ReleaseObjTiles(w->unk_00[1].unk_00);
-    ReleaseObjPalette(w->unk_D0);
+    ReleaseObjPalette(w->palette);
 }
 
 u8 task_poo_butterflyRight_1(PooButterflyWork* w) {
@@ -4173,7 +4173,7 @@ u8 task_poo_butterflyRight_1(PooButterflyWork* w) {
 }
 
 void task_poo_butterflyRight_2(PooButterflyWork* w) {
-    func_080D220C(&w->unk_00[1], w->unk_D0);
+    func_080D220C(&w->unk_00[1], w->palette);
 }
 
 u8 task_poo_butterflyLeft_1(PooButterflyWork* w) {
@@ -4182,7 +4182,7 @@ u8 task_poo_butterflyLeft_1(PooButterflyWork* w) {
 }
 
 void task_poo_butterflyLeft_2(PooButterflyWork* w) {
-    func_080D220C(&w->unk_00[0], w->unk_D0);
+    func_080D220C(&w->unk_00[0], w->palette);
 }
 
 void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p) {
@@ -4193,7 +4193,7 @@ void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p) {
     w->unk_04 = LoadObjPalette(gUnk_09849E38, 0x20);
     AnimInit(w->unk_0C, gUnk_09EF6200, gUnk_09EF6158);
     AnimStart(w->unk_0C, 0, 0);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     w->unk_34 = 1;
     w->unk_36 = 0;
     m4aSongNumStart(0x182);
@@ -4215,7 +4215,7 @@ u8 task_poo_mapbee_1(PooMapBeeWork* w) {
         w->unk_2C -= 0xCC;
         break;
     }
-    w->unk_08 = AnimUpdate(w->unk_0C);
+    w->gfx = AnimUpdate(w->unk_0C);
     return 1;
 }
 
@@ -4229,13 +4229,13 @@ void task_poo_mapbee_2(PooMapBeeWork* w) {
         w->unk_34 = 0;
     } else {
         func_080C7CB0(1);
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
     }
 }
 
 void task_poo_mapbee_3(PooObjWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 
     if (func_080D1050() == 0) {
         m4aSongNumStop(0x182);
@@ -4259,9 +4259,9 @@ void task_poo_mapbeeborn_0(PooMapBornWork* w, PooPos* p) {
 u8 task_poo_mapbeeborn_1(PooMapBornWork* w) {
     if (w->unk_98 != 0) {
         if ((w->unk_4E & 2) != 0) {
-            if (func_08000F48(w->unk_94) == 0 && w->unk_99 != 0) {
+            if (IsTaskActive(w->unk_94) == 0 && w->unk_99 != 0) {
                 w->unk_99 = 0;
-                w->unk_94 = TaskCreate(&w->unk_80, &gUnk_09EF4D20, &w->unk_10);
+                w->unk_94 = TaskCreate(&w->unk_80, &gTaskDescPooMapbee, &w->unk_10);
             }
         } else {
             w->unk_99 = 1;
@@ -4308,7 +4308,7 @@ void task_poo_mapbutterfly_0(PooMapButterflyWork* w, PooPos* p) {
     w->unk_04 = LoadObjPalette(gUnk_09849E58, 0x20);
     AnimInit(w->unk_0C, gUnk_09EF6298, gUnk_09EF6208);
     AnimStart(w->unk_0C, 0, 0);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     w->unk_34 = 1;
 }
 
@@ -4317,7 +4317,7 @@ u8 task_poo_mapbutterfly_1(PooMapButterflyWork* w) {
         return 0;
     }
     w->unk_2C -= 0x80;
-    w->unk_08 = AnimUpdate(w->unk_0C);
+    w->gfx = AnimUpdate(w->unk_0C);
     return 1;
 }
 
@@ -4330,13 +4330,13 @@ void task_poo_mapbutterfly_2(PooMapButterflyWork* w) {
     if (func_080035CC(x, y, 8, 8, 8, 8) != 0) {
         w->unk_34 = 0;
     } else {
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
     }
 }
 
 void task_poo_mapbutterfly_3(PooObjWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
 }
 
 void task_poo_mapbutterflyborn_0(PooMapBornWork* w, PooPos* p) {
@@ -4356,9 +4356,9 @@ void task_poo_mapbutterflyborn_0(PooMapBornWork* w, PooPos* p) {
 u8 task_poo_mapbutterflyborn_1(PooMapBornWork* w) {
     if (w->unk_98 != 0) {
         if ((w->unk_4E & 2) != 0) {
-            if (func_08000F48(w->unk_94) == 0 && w->unk_99 != 0) {
+            if (IsTaskActive(w->unk_94) == 0 && w->unk_99 != 0) {
                 w->unk_99 = 0;
-                w->unk_94 = TaskCreate(&w->unk_80, &gUnk_09EF4D50, &w->unk_10);
+                w->unk_94 = TaskCreate(&w->unk_80, &gTaskDescPooMapbutterfly, &w->unk_10);
             }
         } else {
             w->unk_99 = 1;
@@ -4402,11 +4402,11 @@ void task_poo_rabbitAfterEvent_0(PooRabbitAfterEventWork* w) {
     w->unk_28 = 0x57200;
     w->unk_2C = 0;
     w->unk_30 = 0;
-    w->unk_04 = 0;
+    w->palette = 0;
     w->unk_A4 = func_08003524(gUnk_09EF5EA8, 15);
     AnimInit(w->unk_0C, gUnk_09EF5EE4, gUnk_09EF5EA8);
     AnimStart(w->unk_0C, 0, 1);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     TaskPoolInit(&w->unk_34, 1);
     func_080CC178(&w->unk_34, &w->unk_24, 0x100);
     func_08012324(w->unk_48, w->unk_24, w->unk_28, w->unk_2C);
@@ -4415,7 +4415,7 @@ void task_poo_rabbitAfterEvent_0(PooRabbitAfterEventWork* w) {
 }
 
 u8 task_poo_rabbitAfterEvent_1(PooRabbitAfterEventWork* w) {
-    if (w->unk_04 != 0) {
+    if (w->palette != 0) {
         if (func_08012660(w->unk_48, 9) != 0) {
             gUnk_0203C3F0 = 5;
         }
@@ -4430,32 +4430,32 @@ void task_poo_rabbitAfterEvent_2(PooRabbitAfterEventWork* w) {
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 48, 8, 16, 16) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
             func_08012304(w->unk_48);
             func_080D2E70(w->unk_A6, 0);
-            w->unk_04 = 0;
+            w->palette = 0;
         }
     } else {
-        w->unk_08 = AnimUpdate(w->unk_0C);
+        w->gfx = AnimUpdate(w->unk_0C);
         TaskPoolUpdate(&w->unk_34);
 
-        if (w->unk_04 == 0) {
-            w->unk_04 = LoadObjPalette(gUnk_09849CB8, 0x40);
-            w->unk_00 = AllocObjTiles(w->unk_A4, gUnk_0974FB26);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849CB8, 0x40);
+            w->tiles = AllocObjTiles(w->unk_A4, gUnk_0974FB26);
             func_080122AC(w->unk_48, 10, 4, 48);
             func_080D2E70(w->unk_A6, 1);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x801, -0x1004 - (w->unk_28 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x801, -0x1004 - (w->unk_28 >> 8) * 4);
         TaskPoolDraw(&w->unk_34);
     }
 }
 
 void task_poo_rabbitAfterEvent_3(PooRabbitAfterEventWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
         func_08012304(w->unk_48);
     }
     TaskPoolDestroy(&w->unk_34);
@@ -4466,13 +4466,13 @@ void task_poo_cabbageAfterEvent_0(PooCabbageAfterEventWork* w) {
     w->unk_10 = 0x57100;
     w->unk_14 = 0;
     w->unk_18 = 0;
-    w->unk_04 = 0;
+    w->palette = 0;
     w->unk_1C = func_08003524(gUnk_09EF602C, 13);
     w->unk_08 = gUnk_09756D16;
 }
 
 u8 task_poo_cabbageAfterEvent_1(PooCabbageAfterEventWork* w) {
-    *(vu32*)&w->unk_04;
+    *(vu32*)&w->palette;
     return 1;
 }
 
@@ -4483,24 +4483,24 @@ void task_poo_cabbageAfterEvent_2(PooCabbageAfterEventWork* w) {
     x = (w->unk_0C >> 8) - gUnk_0203C40C;
     y = (w->unk_10 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 48, 8, 16, 16) != 0) {
-        if (w->unk_04 != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjPalette(w->unk_04);
-            w->unk_04 = 0;
+        if (w->palette != 0) {
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjPalette(w->palette);
+            w->palette = 0;
         }
     } else {
-        if (w->unk_04 == 0) {
-            w->unk_04 = LoadObjPalette(gUnk_09849DB8, 0x20);
-            w->unk_00 = AllocObjTiles(w->unk_1C, gUnk_09756E28);
+        if (w->palette == 0) {
+            w->palette = LoadObjPalette(gUnk_09849DB8, 0x20);
+            w->tiles = AllocObjTiles(w->unk_1C, gUnk_09756E28);
         }
-        DrawSprite(x, y, w->unk_08, w->unk_00, w->unk_04, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
+        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
     }
 }
 
 void task_poo_cabbageAfterEvent_3(PooObjWork* w) {
-    if (w->unk_04 != 0) {
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjPalette(w->unk_04);
+    if (w->palette != 0) {
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjPalette(w->palette);
     }
 }
 
@@ -4751,9 +4751,9 @@ void func_080D3050(void) {
 }
 
 void func_080D30C8(void) {
-    RequestDma3Copy(gUnk_096FDA8C[gUnk_02039BB0.world].unk_00, (u8*)GetBgScreenBase(2) + 0x200, 0x300);
-    RequestDma3Copy(gUnk_096FDA8C[gUnk_02039BB0.world].unk_04, (u8*)GetBgCharBase(2) + 0x2000, 0x2000);
-    LoadPalette(gUnk_096FDA8C[gUnk_02039BB0.world].unk_08, (void*)0x05000140, 0x20);
+    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].unk_00, (u8*)GetBgScreenBase(2) + 0x200, 0x300);
+    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].unk_04, (u8*)GetBgCharBase(2) + 0x2000, 0x2000);
+    LoadPalette(gUnk_096FDA8C[gGameState.world].unk_08, (void*)0x05000140, 0x20);
 }
 
 void func_080D313C(void) {
@@ -4762,10 +4762,10 @@ void func_080D313C(void) {
 
     dst = (u8*)GetBgCharBase(2) + 0x20;
 
-    if ((gUnk_02039BB0.flags & 8) != 0) {
-        src = &gUnk_097B8258[gUnk_02039BB0.floor * 0x140];
+    if ((gGameState.flags & 8) != 0) {
+        src = &gUnk_097B8258[gGameState.floor * 0x140];
     } else {
-        src = &gUnk_097B7218[gUnk_02039BB0.floor * 0x140];
+        src = &gUnk_097B7218[gGameState.floor * 0x140];
     }
     RequestDma3Copy(src, dst, 0x140);
     dst = (u8*)GetBgScreenBase(2) + 0x480;

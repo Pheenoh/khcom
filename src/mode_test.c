@@ -62,12 +62,12 @@ void task_lockon_0(LockonWork* w) {
     s32 i;
 
     gUnk_02039DC4 = EwramAlloc(12);
-    w->unk_00 = AllocObjTiles(0x80, 0);
-    w->unk_04 = LoadObjPalette(gUnk_08F69BE4, 0x20);
-    func_08002A10(w->unk_00, gUnk_090D7C84);
-    AnimInit(&w->unk_34, gUnk_09EEC66C, gUnk_09EEC660);
-    AnimStart(&w->unk_34, 0, 1);
-    w->unk_08 = AnimGetGfx(&w->unk_34);
+    w->tiles = AllocObjTiles(0x80, 0);
+    w->palette = LoadObjPalette(gUnk_08F69BE4, 0x20);
+    func_08002A10(w->tiles, gUnk_090D7C84);
+    AnimInit(&w->anim, gUnk_09EEC66C, gUnk_09EEC660);
+    AnimStart(&w->anim, 0, 1);
+    w->gfx = AnimGetGfx(&w->anim);
 
     for (i = 0; i < 8; i++) {
         w->unk_0C[i] = 0;
@@ -84,8 +84,8 @@ INCLUDE_ASM("mode_test/task_lockon_1.s");
 INCLUDE_ASM("mode_test/task_lockon_2.s");
 
 void task_lockon_3(LockonWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     gUnk_02039BA0->unk_68 = 0;
     EwramFree(gUnk_02039DC4);
     gUnk_02039DC4 = 0;
@@ -393,7 +393,7 @@ void func_08060A74(void) {
     gUnk_02034A44 = 0;
     TaskPoolInit(&gUnk_02034A30, 1);
 
-    if ((gUnk_02039BB0.flags & 8) == 0) {
+    if ((gGameState.flags & 8) == 0) {
         TaskCreate(&gUnk_02034A30, &gUnk_09EE4AF4, &gUnk_02034A44);
     } else {
         TaskCreate(&gUnk_02034A30, &gUnk_09EE8EF0, &gUnk_02034A44);
@@ -418,7 +418,7 @@ void func_08060AD8(void) {
         if (gUnk_03006C10 & 1) {
             ModeRequest(&gModeChkbtl, 0);
         } else if (gSystemFlags & 1) {
-            ModeRequest(&gUnk_09EF14DC, 1);
+            ModeRequest(&gModeSioBtlOption, 1);
         } else {
             func_080E052C(0);
         }
@@ -428,7 +428,7 @@ void func_08060AD8(void) {
         if (gUnk_03006C10 & 1) {
             ModeRequest(&gModeChkbtl, 0);
         } else if (gSystemFlags & 1) {
-            ModeRequest(&gUnk_09EF14DC, 1);
+            ModeRequest(&gModeSioBtlOption, 1);
         } else {
             func_080E052C(1);
         }
@@ -438,7 +438,7 @@ void func_08060AD8(void) {
 void func_08060BAC(void) {
     TaskPoolDestroy(&gUnk_02034A30);
 }
-void func_08060BBC(MenuWork* w) {
+void menu_0(MenuWork* w) {
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
     gUnk_02039BA0->unk_70 |= 0x2000;
@@ -446,12 +446,12 @@ void func_08060BBC(MenuWork* w) {
     w->unk_0C = 0x4800;
     w->unk_11 = 0;
     w->unk_10 = 0;
-    w->unk_00 = LoadObjTiles(gUnk_090D4DD0, 0x2E80);
-    w->unk_04 = LoadObjPalette(gUnk_096148B8, 0x20);
+    w->tiles = LoadObjTiles(gUnk_090D4DD0, 0x2E80);
+    w->palette = LoadObjPalette(gUnk_096148B8, 0x20);
     m4aSongNumStart(103);
 }
 
-u8 func_08060C18(MenuWork* w) {
+u8 menu_1(MenuWork* w) {
     switch (w->unk_10) {
     case 0:
         w->unk_08 += (0xBC00 - w->unk_08) >> 1;
@@ -580,7 +580,7 @@ u8 func_08060C18(MenuWork* w) {
                         ModeRequest(&gUnk_09EE2704, 0);
                     }
                 } else {
-                    ModeRequest(&gUnk_09EF4DB0, 0);
+                    ModeRequest(&gModeAllmap, 0);
                 }
 
                 w->unk_10 = 5;
@@ -604,13 +604,13 @@ u8 func_08060C18(MenuWork* w) {
     return 1;
 }
 
-void func_08060E64(MenuWork* w) {
-    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, gUnk_09EEC600[w->unk_11], w->unk_00, w->unk_04, 0, 0, 80);
+void menu_2(MenuWork* w) {
+    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, gUnk_09EEC600[w->unk_11], w->tiles, w->palette, 0, 0, 80);
 }
 
-void func_08060EA0(MenuWork* w) {
-    ReleaseObjTiles(w->unk_00);
-    ReleaseObjPalette(w->unk_04);
+void menu_3(MenuWork* w) {
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->palette);
     gUnk_02039BA0->unk_70 &= ~0x1000;
     gUnk_02039BA0->unk_70 &= ~0x80;
     gUnk_02039BA0->unk_70 &= ~0x2000;
@@ -640,7 +640,7 @@ void func_08060F1C(void) {
 void func_08060F64(void) {
     TaskPoolDestroy(&gUnk_02034A48);
 }
-void func_08060F74(s32 arg) {
+void Event_0(s32 arg) {
     EvtArg cfg;
     UnkStruct_09EE3CA0* e;
 
@@ -653,7 +653,7 @@ void func_08060F74(s32 arg) {
 
     if (e != 0) {
         if (e->unk_24 != 0) {
-            func_08004E64();
+            SetBgMode1();
             SetupBg(0, 3, 31, 14);
             SetupBg(1, 0, 16, 0);
             SetupBg(2, 0, 17, 0);
@@ -663,7 +663,7 @@ void func_08060F74(s32 arg) {
             SetBgPriority(2, 2);
             SetBgPriority(3, 3);
         } else {
-            func_08004DB0();
+            SetBgMode0();
             SetupBg(0, 3, 31, 14);
             SetupBg(1, 0, 21, 0);
             SetupBg(2, 0, 22, 0);
@@ -678,8 +678,8 @@ void func_08060F74(s32 arg) {
             DisableBg(3);
         }
     } else {
-        func_08004DB0();
-        func_08004DB0();
+        SetBgMode0();
+        SetBgMode0();
         SetupBg(0, 0, 22, 0);
         SetupBg(1, 0, 24, 0);
         SetupBg(2, 2, 28, 14);
@@ -705,13 +705,13 @@ void func_08060F74(s32 arg) {
     }
 
     TaskPoolInit(&gUnk_02034A60, 2);
-    TaskCreate(&gUnk_02034A60, &gUnk_09EE46D4, &cfg);
+    TaskCreate(&gUnk_02034A60, &gTaskDescEventSeq, &cfg);
     func_080A42B4();
     gUnk_02034A7C = 0;
 }
 void func_0806119C(void) {
     if (gUnk_02039DC8 == 0) {
-        ModeRequest(&gUnk_09EE47AC, 0);
+        ModeRequest(&gModeEventselect, 0);
     }
 
     if (gUnk_02034A74 == 0) {
@@ -730,7 +730,7 @@ void func_0806119C(void) {
 
         if (gUnk_02034A7C == 1) {
             if (func_080A42C8() == 0) {
-                ModeRequest(&gUnk_09EE47AC, 0);
+                ModeRequest(&gModeEventselect, 0);
             }
         }
     }
@@ -742,7 +742,7 @@ void func_0806119C(void) {
 
 INCLUDE_ASM("mode_test/func_08061248.s");
 
-void func_080617E8(void) {
+void Event_2(void) {
     TaskPoolDestroy(&gUnk_02034A60);
     EwramFree(gUnk_02039DC8);
     gUnk_02039DC8 = 0;

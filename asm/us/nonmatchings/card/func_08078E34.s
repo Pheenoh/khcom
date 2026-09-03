@@ -32,7 +32,7 @@ func_08078E34: @ 08078E34
 	lsls r0, r6, #0x04
 	adds r0, #0x54
 	adds r0, r5, r0
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r2, r0, #0x0
 	add r4, sp, #0x010
 	cmp r2, #0x00
@@ -49,7 +49,7 @@ _08078E88: .4byte 0x02034A98
 _08078E8C:
 	adds r0, r2, #0x0
 	adds r0, #0x64
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _08078EAA
@@ -168,7 +168,7 @@ _08078F7C:
 	mov r0, r8
 	adds r0, #0x54
 	adds r0, r5, r0
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	beq _08078FD0
@@ -203,7 +203,7 @@ _08078FA4:
 	mov r1, r10
 	strh r1, [r0, #0x00]
 	subs r0, #0x38
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r2, r0, #0x0
 	cmp r2, #0x00
 	bne _08078F90

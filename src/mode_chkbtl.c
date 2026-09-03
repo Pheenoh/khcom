@@ -2,7 +2,7 @@
 #include "mode_chkbtl.h"
 #include "gba/keys.h"
 
-const ChkBtlEntry gUnk_08126630[209] = {
+const ChkBtlEntry gChkBtlEntries[209] = {
     { 10, { 0 }, 0, 10, 0, "\x82\x73\x82\x76\x82\x6d\x82\x4f" },
     { 10, { 0 }, 0, 11, 0, "\x82\x73\x82\x76\x82\x6d\x82\x50" },
     { 10, { 0 }, 0, 12, 0, "\x82\x73\x82\x76\x82\x6d\x82\x51" },
@@ -214,7 +214,7 @@ const ChkBtlEntry gUnk_08126630[209] = {
     { 10, { 0 }, 1, 179, 0, "\x82\x73\x82\x74\x82\x73\x82\x6e\x82\x71\x82\x68\x82\x60\x82\x6b\x82\x50" },
 };
 
-const ChkBtlWorld gUnk_08128234[13] = {
+const ChkBtlWorld gChkBtlWorlds[13] = {
     { 13, { 0 }, "\x82\x73\x82\x76\x82\x68" },
     { 11, { 0 }, "\x82\x73\x82\x76\x82\x6d" },
     { 1, { 0 }, "\x82\x76\x82\x6e\x82\x6d" },
@@ -230,37 +230,37 @@ const ChkBtlWorld gUnk_08128234[13] = {
     { 12, { 0 }, "\x82\x62\x82\x72\x82\x6b" },
 };
 
-const char gUnk_08128304[32] = "\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff";
+const char gWhitePalette[32] = "\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff";
 
 void mode_chkbtl_0(void) {
     func_08006120(0, 8);
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 15, 0);
     EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
-    func_0805FA60(0, gUnk_08128304, 0x20, 0x0F);
+    func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
     func_0805FCB0(0, 0, 2, "\x82\x63\x82\x64\x82\x62\x82\x6a\x81\x7c\x82\x72\x82\x64\x82\x6b\x82\x64\x82\x62\x82\x73\x81\x40\x82\x61\x82\x74\x82\x73\x82\x73\x82\x6e\x82\x6d");
     func_0805FCB0(24, 32, 2, "\x82\x64\x82\x6d\x82\x6c\x81\x46");
     func_0805FCB0(24, 44, 2, "\x82\x61\x82\x66\x81\x40\x81\x46");
     func_0805FCB0(24, 56, 2, "\x82\x65\x82\x6b\x81\x40\x81\x46");
     func_0805FCB0(24, 68, 2, "\x82\x67\x82\x6f\x81\x40\x81\x46");
-    func_0805FCB0(62, 32, 2, gUnk_08126630[gChkBtlWork->unk_02].unk_10);
+    func_0805FCB0(62, 32, 2, gChkBtlEntries[gChkBtlWork->enemy].name);
 
-    if (gUnk_08126630[gChkBtlWork->unk_02].unk_04 == 2) {
+    if (gChkBtlEntries[gChkBtlWork->enemy].unk_04 == 2) {
         func_0805FCB0(62, 44, 2, "\x81\x5c\x81\x5c");
     } else {
-        func_0805FCB0(62, 44, 2, gUnk_08128234[gChkBtlWork->unk_01].unk_04);
+        func_0805FCB0(62, 44, 2, gChkBtlWorlds[gChkBtlWork->bg].name);
     }
 
-    func_0805FC04(62, 56, 2, gChkBtlWork->unk_04 + 1);
-    func_0805FC04(62, 68, 2, gChkBtlWork->unk_06);
+    func_0805FC04(62, 56, 2, gChkBtlWork->floor + 1);
+    func_0805FC04(62, 68, 2, gChkBtlWork->hp);
 
     if (!(gUnk_03006C10 & 1)) {
         func_08085FB0();
         func_08085CB0();
-        gUnk_02039BB0.cp = 9999;
+        gGameState.cp = 9999;
         gUnk_03006C10 |= 1;
-        gUnk_02039BB0.unk_17C = 0xFFFF;
+        gGameState.unk_17C = 0xFFFF;
     }
 }
 
@@ -284,70 +284,70 @@ void mode_chkbtl_1(void) {
     switch (gChkBtlWork->unk_00) {
     case 0:
         if (GetKeysRepeat() & DPAD_LEFT) {
-            gChkBtlWork->unk_02--;
+            gChkBtlWork->enemy--;
         }
 
         if (GetKeysRepeat() & DPAD_RIGHT) {
-            gChkBtlWork->unk_02++;
+            gChkBtlWork->enemy++;
         }
 
-        if (gChkBtlWork->unk_02 < 0) {
-            gChkBtlWork->unk_02 = 0xD0;
-        } else if ((u16)gChkBtlWork->unk_02 > 0xD0) {
-            gChkBtlWork->unk_02 = 0;
+        if (gChkBtlWork->enemy < 0) {
+            gChkBtlWork->enemy = 0xD0;
+        } else if ((u16)gChkBtlWork->enemy > 0xD0) {
+            gChkBtlWork->enemy = 0;
         }
         break;
     case 1:
         if (GetKeysRepeat() & DPAD_LEFT) {
-            gChkBtlWork->unk_01--;
+            gChkBtlWork->bg--;
         }
 
         if (GetKeysRepeat() & DPAD_RIGHT) {
-            gChkBtlWork->unk_01++;
+            gChkBtlWork->bg++;
         }
 
-        if (gChkBtlWork->unk_01 < 0) {
-            gChkBtlWork->unk_01 = 12;
-        } else if ((u8)gChkBtlWork->unk_01 > 12) {
-            gChkBtlWork->unk_01 = 0;
+        if (gChkBtlWork->bg < 0) {
+            gChkBtlWork->bg = 12;
+        } else if ((u8)gChkBtlWork->bg > 12) {
+            gChkBtlWork->bg = 0;
         }
         break;
     case 2:
         if (GetKeysRepeat() & DPAD_LEFT) {
-            gChkBtlWork->unk_04--;
+            gChkBtlWork->floor--;
         }
 
         if (GetKeysRepeat() & DPAD_RIGHT) {
-            gChkBtlWork->unk_04++;
+            gChkBtlWork->floor++;
         }
 
-        if (gChkBtlWork->unk_04 < 0) {
-            gChkBtlWork->unk_04 = 0;
+        if (gChkBtlWork->floor < 0) {
+            gChkBtlWork->floor = 0;
         }
 
-        if (gUnk_02039BB0.flags & 8) {
-            if (gChkBtlWork->unk_04 > 11) {
-                gChkBtlWork->unk_04 = 11;
+        if (gGameState.flags & 8) {
+            if (gChkBtlWork->floor > 11) {
+                gChkBtlWork->floor = 11;
             }
         } else {
-            if (gChkBtlWork->unk_04 > 12) {
-                gChkBtlWork->unk_04 = 12;
+            if (gChkBtlWork->floor > 12) {
+                gChkBtlWork->floor = 12;
             }
         }
         break;
     case 3:
         if (GetKeysRepeat() & DPAD_LEFT) {
-            gChkBtlWork->unk_06--;
+            gChkBtlWork->hp--;
         }
 
         if (GetKeysRepeat() & DPAD_RIGHT) {
-            gChkBtlWork->unk_06++;
+            gChkBtlWork->hp++;
         }
 
-        if (gChkBtlWork->unk_06 <= 0) {
-            gChkBtlWork->unk_06 = 1;
-        } else if (gChkBtlWork->unk_06 > 560) {
-            gChkBtlWork->unk_06 = 560;
+        if (gChkBtlWork->hp <= 0) {
+            gChkBtlWork->hp = 1;
+        } else if (gChkBtlWork->hp > 560) {
+            gChkBtlWork->hp = 560;
         }
         break;
     case 4:
@@ -365,20 +365,20 @@ void mode_chkbtl_1(void) {
         case 0:
         case 1:
             func_0805FCB0(62, 32, 2, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40");
-            func_0805FCB0(62, 32, 2, gUnk_08126630[gChkBtlWork->unk_02].unk_10);
+            func_0805FCB0(62, 32, 2, gChkBtlEntries[gChkBtlWork->enemy].name);
             func_0805FCB0(62, 44, 2, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40");
 
-            if (gUnk_08126630[gChkBtlWork->unk_02].unk_04 == 2) {
+            if (gChkBtlEntries[gChkBtlWork->enemy].unk_04 == 2) {
                 func_0805FCB0(62, 44, 2, "\x81\x5c\x81\x5c");
             } else {
-                func_0805FCB0(62, 44, 2, gUnk_08128234[gChkBtlWork->unk_01].unk_04);
+                func_0805FCB0(62, 44, 2, gChkBtlWorlds[gChkBtlWork->bg].name);
             }
             break;
         case 2:
-            func_0805FC04(62, 56, 2, gChkBtlWork->unk_04 + 1);
+            func_0805FC04(62, 56, 2, gChkBtlWork->floor + 1);
             break;
         case 3:
-            func_0805FC04(62, 68, 2, gChkBtlWork->unk_06);
+            func_0805FC04(62, 68, 2, gChkBtlWork->hp);
             break;
         }
     }
@@ -387,23 +387,23 @@ void mode_chkbtl_1(void) {
         ModeRequest(&gUnk_09EE2704, 0);
     } else if (GetKeysPressed() & 9) {
         SeedRandom(gFrameCounter);
-        gUnk_02039BB0.unk_0D = gUnk_08128234[gChkBtlWork->unk_01].unk_00;
-        gUnk_02039BB0.floor = gChkBtlWork->unk_04;
-        gUnk_02039BB0.hp = gChkBtlWork->unk_06;
-        gUnk_02039BB0.maxHp = gChkBtlWork->unk_06;
-        gUnk_02039BB0.world = gUnk_08126630[gChkBtlWork->unk_02].unk_00;
+        gGameState.unk_0D = gChkBtlWorlds[gChkBtlWork->bg].unk_00;
+        gGameState.floor = gChkBtlWork->floor;
+        gGameState.hp = gChkBtlWork->hp;
+        gGameState.maxHp = gChkBtlWork->hp;
+        gGameState.world = gChkBtlEntries[gChkBtlWork->enemy].world;
 
         if (GetKeysHeld() & L_BUTTON) {
-            gUnk_02039BB0.flags |= 4;
+            gGameState.flags |= 4;
         } else {
-            gUnk_02039BB0.flags &= ~4;
+            gGameState.flags &= ~4;
         }
 
-        if (gUnk_02039BB0.flags & 8) {
-            _08085D04(gChkBtlWork->unk_04);
+        if (gGameState.flags & 8) {
+            _08085D04(gChkBtlWork->floor);
         }
 
-        ModeRequest(&gModeBattle, gUnk_08126630[gChkBtlWork->unk_02].unk_08);
+        ModeRequest(&gModeBattle, gChkBtlEntries[gChkBtlWork->enemy].unk_08);
     } else if (GetKeysPressed() & 2) {
         ModeRequest(&gModeDebug, 0);
         return;
@@ -421,26 +421,26 @@ void func_0800AB8C(void) {
     ChkBtlEntry* entry;
     ChkBtlPos pos;
 
-    entry = &gUnk_08126630[gChkBtlWork->unk_02];
+    entry = &gChkBtlEntries[gChkBtlWork->enemy];
 
     if (entry->unk_08 == 0xB9) {
         pos.unk_00 = 0x15000;
         pos.unk_04 = 0x16000;
         pos.unk_08 = 0;
-        TaskCreate(&gUnk_02039B84->unk_2C, entry->unk_0C, &pos);
+        TaskCreate(&gBtlWork->unk_2C, entry->taskDesc, &pos);
     }
 }
 
 void func_0800ABD8(void) {
     gChkBtlWork->unk_00 = 0;
-    gChkBtlWork->unk_01 = 0;
-    gChkBtlWork->unk_02 = 0;
-    gChkBtlWork->unk_04 = 0;
-    gChkBtlWork->unk_06 = gUnk_02039BB0.maxHp;
+    gChkBtlWork->bg = 0;
+    gChkBtlWork->enemy = 0;
+    gChkBtlWork->floor = 0;
+    gChkBtlWork->hp = gGameState.maxHp;
     gUnk_03006C10 &= ~1;
     gUnk_02039B90 = 0x98;
     gUnk_02039B88 = 0x160;
     gUnk_02039B8C = 0x1A2;
 }
 
-const char gUnk_081283B4[12] = "mode_chkbtl";
+const char gModeNameChkbtl[12] = "mode_chkbtl";

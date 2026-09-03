@@ -1,8 +1,8 @@
 #include "macros.h"
 #include "mode_debug.h"
 
-DebugWork* gUnk_02034898;
-ChkObjWork* gUnk_0203489C;
+DebugWork* gDebugWork;
+ChkObjWork* gChkObjWork;
 #include "gba/keys.h"
 
 #ifdef VERSION_US
@@ -16,10 +16,10 @@ const char gUnk_081283C0[12] = "E041220b";
 #ifndef VERSION_EU
 void mode_debug_0(void) {
     m4aMPlayAllStop();
-    gUnk_02034898 = EwramAlloc(sizeof(DebugWork));
+    gDebugWork = EwramAlloc(sizeof(DebugWork));
     func_08006120(1, 16);
     func_0801CB44();
-    func_08004DB0();
+    SetBgMode0();
     SetupBg(0, 0, 15, 0);
     SetupBg(1, 2, 31, 0);
     SetBgColorMode(1, 0x80);
@@ -28,14 +28,14 @@ void mode_debug_0(void) {
     LoadBgPalette(1, gUnk_08F683E4, 0x200);
     LoadBgMap(1, gUnk_08EEEB84, 0x800);
     EnableBg(1);
-    func_08005778(31, 31, 31);
+    SetBackdropColor(31, 31, 31);
     EnableBg(0);
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gUnk_08F68604, 0x20, 0x0F);
-    gUnk_02034898->unk_04 = LoadObjTiles(gUnk_08950902, 0x2E0);
-    gUnk_02034898->unk_08 = LoadObjPalette(gUnk_08F685E4, 0x20);
-    AnimInit(&gUnk_02034898->unk_0C, gUnk_09EDF774, gUnk_09EDF764);
-    AnimStart(&gUnk_02034898->unk_0C, 0, 1);
+    gDebugWork->tiles = LoadObjTiles(gUnk_08950902, 0x2E0);
+    gDebugWork->palette = LoadObjPalette(gUnk_08F685E4, 0x20);
+    AnimInit(&gDebugWork->anim, gUnk_09EDF774, gUnk_09EDF764);
+    AnimStart(&gDebugWork->anim, 0, 1);
 #ifdef VERSION_JP
     func_0805FCB0(0, 0, 2, "\x82\x69\x82\x4f\x82\x53\x82\x50\x82\x4f\x82\x4f\x82\x50\x82\x81");
 #else
@@ -50,8 +50,8 @@ void mode_debug_0(void) {
         func_0805FCB0(144, 150, 2, "\x82\x61\x82\x71\x82\x68\x82\x66\x82\x67\x82\x73\x82\x6d\x82\x64\x82\x72\x82\x72");
     }
 
-    gUnk_02034898->unk_00 = 0;
-    gUnk_02034898->unk_01 = -1;
+    gDebugWork->unk_00 = 0;
+    gDebugWork->unk_01 = -1;
 }
 #else
 INCLUDE_ASM("mode_debug/mode_debug_0.s");
@@ -83,37 +83,37 @@ void mode_debug_1(void) {
     }
 
     if (GetKeysRepeat() & DPAD_UP) {
-        gUnk_02034898->unk_00--;
+        gDebugWork->unk_00--;
         m4aSongNumStart(101);
     }
 
     if (GetKeysRepeat() & DPAD_DOWN) {
-        gUnk_02034898->unk_00++;
+        gDebugWork->unk_00++;
         m4aSongNumStart(101);
     }
 
-    switch (gUnk_02034898->unk_00) {
+    switch (gDebugWork->unk_00) {
     case 0:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09EF4EC0, 0);
+            ModeRequest(&gModeCopyright1, 0);
             return;
         }
         break;
     case 1:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09ED8634, 0);
+            ModeRequest(&gModeChkobj, 0);
             return;
         }
         break;
     case 2:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09EF69D0, 0);
+            ModeRequest(&gModeMapChk, 0);
             return;
         }
         break;
     case 3:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09ED9B68, 0);
+            ModeRequest(&gModeChkeff, 0);
             return;
         }
         break;
@@ -125,7 +125,7 @@ void mode_debug_1(void) {
         break;
     case 5:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09EE47AC, 0);
+            ModeRequest(&gModeEventselect, 0);
             return;
         }
         break;
@@ -134,7 +134,7 @@ void mode_debug_1(void) {
             SaveLoadHeader();
             func_08085FB0();
             func_08085C3C();
-            ModeRequest(&gUnk_09EF12F8, 0);
+            ModeRequest(&gModeSioBattle, 0);
             return;
         }
         break;
@@ -145,17 +145,17 @@ void mode_debug_1(void) {
         break;
     case 8:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09EF3C88, 0);
+            ModeRequest(&gModePooh, 0);
         }
         break;
     case 9:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09ED9B88, 0);
+            ModeRequest(&gModeDebflag, 0);
         }
         break;
     case 10:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09EF160C, 0);
+            ModeRequest(&gModeWLogo, 0);
         }
         break;
     case 11:
@@ -178,65 +178,65 @@ void mode_debug_1(void) {
             func_0800FDD0(20);
             func_0800FDD0(21);
             func_0800FDD0(22);
-            ModeRequest(&gUnk_09EF9674, 0);
+            ModeRequest(&gModeBackupstat, 0);
         }
         break;
     case 13:
         if (GetKeysPressed() & 9) {
-            ModeRequestHeapReset(&gUnk_09EDE4D0, 1);
+            ModeRequestHeapReset(&gModeMovie, 1);
         }
         break;
     case 14:
         if (GetKeysPressed() & 9) {
-            ModeRequestHeapReset(&gUnk_09EDE4D0, 2);
+            ModeRequestHeapReset(&gModeMovie, 2);
         }
         break;
     case 15:
         if (GetKeysPressed() & 9) {
-            ModeRequestHeapReset(&gUnk_09EDE4D0, 3);
+            ModeRequestHeapReset(&gModeMovie, 3);
         }
         break;
     case 16:
         if (GetKeysPressed() & 9) {
-            ModeRequestHeapReset(&gUnk_09EDE4D0, 4);
+            ModeRequestHeapReset(&gModeMovie, 4);
         }
         break;
     case 17:
         if (GetKeysPressed() & 9) {
-            ModeRequestHeapReset(&gUnk_09EDE4D0, 5);
+            ModeRequestHeapReset(&gModeMovie, 5);
         }
         break;
     case 18:
-        gUnk_02034898->unk_00 = 0;
+        gDebugWork->unk_00 = 0;
         break;
     case -1:
-        gUnk_02034898->unk_00 = 17;
+        gDebugWork->unk_00 = 17;
         break;
     }
 
-    old = gUnk_02034898->unk_01;
-    gUnk_02034898->unk_01 = gUnk_02034898->unk_00 / 9;
+    old = gDebugWork->unk_01;
+    gDebugWork->unk_01 = gDebugWork->unk_00 / 9;
 
     if (GetKeysRepeat() & DPAD_LEFT) {
-        gUnk_02034898->unk_01--;
+        gDebugWork->unk_01--;
 
-        if (gUnk_02034898->unk_01 < 0) {
-            gUnk_02034898->unk_01 = 2;
+        if (gDebugWork->unk_01 < 0) {
+            gDebugWork->unk_01 = 2;
         }
 
-        gUnk_02034898->unk_00 = gUnk_02034898->unk_01 * 9;
+        gDebugWork->unk_00 = gDebugWork->unk_01 * 9;
     } else if (GetKeysRepeat() & DPAD_RIGHT) {
-        gUnk_02034898->unk_01++;
+        gDebugWork->unk_01++;
 
-        if (gUnk_02034898->unk_01 > 2) {
-            gUnk_02034898->unk_01 = 0;
+        if (gDebugWork->unk_01 > 2) {
+            gDebugWork->unk_01 = 0;
         }
 
-        gUnk_02034898->unk_00 = gUnk_02034898->unk_01 * 9;
+        gDebugWork->unk_00 = gDebugWork->unk_01 * 9;
     }
 
-    if (old != gUnk_02034898->unk_01) {
-        switch (gUnk_02034898->unk_01) {
+    if (old != gDebugWork->unk_01) {
+        switch (gDebugWork->unk_01) {
         case 0:
             func_0805FCB0(24, 12, 2, "\x82\x6c\x82\x60\x82\x68\x82\x6d\x81\x40\x81\x40\x81\x40\x81\x40");
             func_0805FCB0(24, 28, 2, "\x82\x6e\x82\x61\x82\x69\x82\x64\x82\x62\x82\x73\x81\x40\x81\x40");
@@ -263,14 +263,14 @@ void mode_debug_1(void) {
     }
 
     if (GetKeysPressed() & 4) {
-        ModeRequest(&gUnk_09ED9B88, 0);
+        ModeRequest(&gModeDebflag, 0);
     }
 
     func_080605A4(0);
     func_08060598();
-    gfx = AnimUpdate(&gUnk_02034898->unk_0C);
-    DrawSprite(9, gUnk_02034898->unk_00 % 9 * 16 + 13, gfx, gUnk_02034898->unk_04,
-               gUnk_02034898->unk_08, 0, 0, 0);
+    gfx = AnimUpdate(&gDebugWork->anim);
+    DrawSprite(9, gDebugWork->unk_00 % 9 * 16 + 13, gfx, gDebugWork->tiles,
+               gDebugWork->palette, 0, 0, 0);
 }
 #else
 INCLUDE_ASM("mode_debug/mode_debug_1.s");
@@ -278,16 +278,16 @@ INCLUDE_ASM("mode_debug/mode_debug_1.s");
 
 void mode_debug_2(void) {
     func_080609A0();
-    ReleaseObjTiles(gUnk_02034898->unk_04);
-    ReleaseObjPalette(gUnk_02034898->unk_08);
-    EwramFree(gUnk_02034898);
+    ReleaseObjTiles(gDebugWork->tiles);
+    ReleaseObjPalette(gDebugWork->palette);
+    EwramFree(gDebugWork);
 }
 
 void func_0800B30C(ObjDef* def) {
-    func_08005974(&gUnk_0203489C->unk_24, gUnk_0203489C->unk_16, 0, def->unk_04, def->unk_00);
-    func_08002A10(gUnk_0203489C->unk_1C, def->unk_08);
-    ReleaseObjPalette(gUnk_0203489C->unk_20);
-    gUnk_0203489C->unk_20 = LoadObjPalette(def->unk_10, def->unk_1C);
+    func_08005974(&gChkObjWork->anim, gChkObjWork->animId, 0, def->unk_04, def->unk_00);
+    func_08002A10(gChkObjWork->tiles, def->unk_08);
+    ReleaseObjPalette(gChkObjWork->palette);
+    gChkObjWork->palette = LoadObjPalette(def->palette, def->paletteSize);
 }
 
-const char gUnk_08128580[12] = "mode_debug";
+const char gModeNameDebug[12] = "mode_debug";

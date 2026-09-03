@@ -125,14 +125,14 @@ _0801E900:
 	str r0, [r4, #0x68]
 	str r1, [r4, #0x6C]
 _0801E94A:
-	bl func_0800FAFC
+	bl CanLevelUp
 	lsls r0, r0, #0x18
 	adds r3, r7, #0x0
 	adds r3, #0x24
 	str r3, [sp, #0x078]
 	cmp r0, #0x00
 	beq _0801E96C
-	bl func_0800FA1C
+	bl LevelUp
 	lsls r0, r0, #0x18
 	cmp r0, #0x00
 	beq _0801E96C
@@ -551,7 +551,7 @@ _0801EE06:
 _0801EE48:
 	adds r0, r3, #0x0
 	adds r0, #0x80
-	bl func_08000C8C
+	bl ListPoolFirst
 	b _0801EE72
 _0801EE52:
 	ldrh r2, [r1, #0x2C]
@@ -569,7 +569,7 @@ _0801EE52:
 _0801EE6A:
 	adds r0, r1, #0x0
 	adds r0, #0xB8
-	bl func_08000CD4
+	bl ListPoolNext
 _0801EE72:
 	adds r1, r0, #0x0
 	cmp r1, #0x00

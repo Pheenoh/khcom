@@ -4,23 +4,23 @@
 #include "types.h"
 
 typedef struct {
-    void* unk_00[2];
-    u32 unk_08[2];
+    void* buffers[2];
+    u32 writePos[2];
     u32 unk_10[2];
     u32 unk_18[2];
     u32 unk_20[2];
-    u32 unk_28;
+    u32 dmaOffset;
     u32 unk_2C;
-    u32 unk_30;
-    u32 unk_34;
-    u32 unk_38;
-    u32 unk_3C;
-    u32 unk_40;
-    u32 unk_44;
+    u32 samplesPerFrame;
+    u32 bufferSize;
+    u32 sampleRate;
+    u32 timerReload;
+    u32 channels;
+    u32 playing;
     void (*unk_48)(void);
-    void* (*unk_4C)(u32);
+    void* (*alloc)(u32);
     void (*unk_50)(void);
-    void (*unk_54)(void*);
+    void (*free)(void*);
 } SoundStream;
 
 extern SoundStream gSndStream;

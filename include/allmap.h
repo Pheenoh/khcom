@@ -7,8 +7,8 @@
 #include "anim.h"
 #include "mode.h"
 typedef struct AllmapRoomWork {
-    void* unk_000;
-    void* unk_004;
+    void* tiles;
+    void* palette;
     void* unk_008;
     void* unk_00C[4];
     void* unk_01C[4];
@@ -26,16 +26,16 @@ typedef struct AllmapRoomWork {
 
 typedef struct AllmapRoomnameWork {
     u8 unk_000[0xC8];
-    void* unk_0C8;
+    void* palette;
     u8 unk_0CC;
     u8 unk_0CD;
     u16 unk_0CE;
 } AllmapRoomnameWork;
 
-typedef struct AllmapFld {
+typedef struct UnkStruct_02039BA0 {
     u8 unk_00[0x70];
     u32 unk_70;
-} AllmapFld;
+} UnkStruct_02039BA0;
 
 typedef struct AllmapRoomArg {
     u32 unk_00 : 16;
@@ -45,15 +45,15 @@ typedef struct AllmapRoomArg {
     u32 unk_06 : 16;
 } AllmapRoomArg;
 
-typedef struct AllmapSetup {
+typedef struct GameState {
     u8 unk_00[0x08];
     u32 flags;
-} AllmapSetup;
+} GameState;
 
 typedef struct AllmapBarWork {
     void* unk_00;
     void* unk_04;
-    void* unk_08;
+    void* palette;
     u16 unk_0C;
     u8 unk_0E[0x02];
     s32 unk_10;
@@ -74,10 +74,10 @@ typedef struct AllmapCursorPos {
 } AllmapCursorPos;
 
 typedef struct AllmapCursorWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    AnimState unk_0C;
+    void* tiles;
+    void* palette;
+    void* gfx;
+    AnimState anim;
     s16 unk_24;
     s16 unk_26;
     s32 unk_28;
@@ -91,7 +91,7 @@ typedef struct AllmapCursorWork {
     u8 unk_46[0x02];
 } AllmapCursorWork;
 
-typedef struct AllmapState {
+typedef struct UnkStruct_0203C4B4 {
     TaskPool unk_00;
     Task* unk_14[32];
     Task* unk_94;
@@ -111,7 +111,7 @@ typedef struct AllmapState {
     s32 unk_BC;
     u8 unk_C0;
     u8 unk_C1[0x03];
-} AllmapState;
+} UnkStruct_0203C4B4;
 
 typedef struct AllmapPal {
     u8 unk_00[0x06];
@@ -137,7 +137,7 @@ typedef struct AllmapDoorinfoWork {
     void* unk_008[4];
     void* unk_018;
     AllmapDoorEntry unk_01C[4];
-    void* unk_0EC;
+    void* palette;
     void* unk_0F0;
     void* unk_0F4;
     void* unk_0F8;
@@ -155,8 +155,8 @@ typedef struct AllmapDoorinfoWork {
 } AllmapDoorinfoWork;
 
 typedef struct AllmapPushaWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
     AllmapCursorWork* unk_0C;
     u16 unk_10;
@@ -193,7 +193,7 @@ void ReleaseObjTiles(void* a);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 s32 abs(s32 x);
 void func_08000DE8(void* a, Task* t);
-u8 func_08000F48(Task* t);
+u8 IsTaskActive(Task* t);
 u16 func_08003524(void* a, s32 b);
 void EnableBg(s32 a);
 void DisableBg(s32 bg);
@@ -247,19 +247,19 @@ void* memcpy(void* dst, const void* src, unsigned long n);
 extern s16 gSineTable[];
 extern s16 gUnk_02034EC2;
 extern u8 gUnk_02034ECA;
-extern Mode gUnk_09EF12F8;
-extern Mode gUnk_09EF4E50;
-extern Mode gUnk_09EF6AD0;
-extern Mode gUnk_09EF6AE0;
+extern Mode gModeSioBattle;
+extern Mode gModeTitle;
+extern Mode gModeMenuNew;
+extern Mode gModeMenuLoad;
 extern u32 gUnk_02034E98;
-extern TaskPool gUnk_02034EA0;
-extern Task* gUnk_02034EB8;
-extern Task* gUnk_02034EBC;
+extern TaskPool gTitleTaskPool;
+extern Task* gTitleLogoTask;
+extern Task* gTitleObjTask;
 extern u8* gUnk_02034EC4;
-extern AllmapFld* gUnk_02039BA0;
-extern AllmapSetup gUnk_02039BB0;
-extern void* gUnk_0203C460;
-extern AllmapState* gUnk_0203C4B4;
+extern UnkStruct_02039BA0* gUnk_02039BA0;
+extern GameState gGameState;
+extern void* gStockMesDispWork;
+extern UnkStruct_0203C4B4* gUnk_0203C4B4;
 extern u32 gUnk_0203C4E0;
 extern void* gUnk_0203C504;
 extern u16 gUnk_0203C508;
@@ -294,12 +294,12 @@ extern u8 gUnk_0984A1D8[];
 extern u8 gUnk_0984A1F8[];
 extern u8 gUnk_0984A418[];
 extern u8 gUnk_0984A818[];
-extern TaskDesc gUnk_09EF4DC0;
-extern TaskDesc gUnk_09EF4DF0;
-extern TaskDesc gUnk_09EF4E20;
-extern TaskDesc gUnk_09EF4E38;
-extern TaskDesc gUnk_09EF4E60;
-extern TaskDesc gUnk_09EF4E78;
+extern TaskDesc gTaskDescAllmapRoom;
+extern TaskDesc gTaskDescAllmapRoomname;
+extern TaskDesc gTaskDescAllmapDoorinfo;
+extern TaskDesc gTaskDescAllmapPusha;
+extern TaskDesc gTaskDescTitleLogo;
+extern TaskDesc gTaskDescTitleObj;
 extern void* gUnk_09EF6424[];
 extern void* gUnk_09EF64B4[];
 extern u8 gUnk_09EF64C4[];

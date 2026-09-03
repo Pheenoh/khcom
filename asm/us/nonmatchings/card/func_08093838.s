@@ -8,7 +8,7 @@ func_08093838: @ 08093838
 	push {r4, r5, r6, lr}
 	adds r5, r0, #0x0
 	adds r0, #0x14
-	bl func_08000C8C
+	bl ListPoolFirst
 	adds r4, r0, #0x0
 	movs r6, #0x80
 	lsls r6, r6, #0x01
@@ -46,7 +46,7 @@ _08093856:
 _08093886:
 	adds r0, r4, #0x0
 	adds r0, #0x38
-	bl func_08000CD4
+	bl ListPoolNext
 	adds r4, r0, #0x0
 	cmp r4, #0x00
 	bne _08093856

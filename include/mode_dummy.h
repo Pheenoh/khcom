@@ -4,7 +4,7 @@
 #include "types.h"
 #include "key.h"
 #include "mode.h"
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 unk_00C[0x26];
@@ -21,7 +21,7 @@ typedef struct UnkStruct_02039BB0 {
     s32 mooglePoints;
     u8 unk_178[0x08];
     u16 unk_180;
-} UnkStruct_02039BB0;
+} GameState;
 
 typedef struct DummyEntry {
     const char* name;
@@ -29,21 +29,21 @@ typedef struct DummyEntry {
     u16 unk_08;
 } DummyEntry;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u32 gFrameCounter;
-extern const DummyEntry gUnk_08130A4C[];
-extern u8 gUnk_08128304[];
+extern const DummyEntry gDummyEntries[];
+extern u8 gWhitePalette[];
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08F683C4[];
 extern u8 gUnk_08EEE384[];
-extern Mode gUnk_09EDE4D0;
-extern Mode gUnk_09EF8F9C;
-extern Mode gUnk_09EF4EC0;
+extern Mode gModeMovie;
+extern Mode gModeWorldselect;
+extern Mode gModeCopyright1;
 
-void func_08001248(void (*fn)(void));
+void SetModeUpdate(void (*fn)(void));
 void ModeRequest(Mode* mode, s32 arg);
 void ModeRequestHeapReset(Mode* mode, s32 arg);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgTiles(s32 bg, void* src, u16 size);

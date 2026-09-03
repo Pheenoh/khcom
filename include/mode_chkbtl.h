@@ -7,26 +7,26 @@
 
 typedef struct ChkBtlWork {
     s8 unk_00;
-    s8 unk_01;
-    s16 unk_02;
-    s8 unk_04;
+    s8 bg;
+    s16 enemy;
+    s8 floor;
     u8 unk_05;
-    s16 unk_06;
+    s16 hp;
 } ChkBtlWork;
 
 typedef struct ChkBtlEntry {
-    u8 unk_00;
+    u8 world;
     u8 unk_01[0x03];
     s32 unk_04;
     s32 unk_08;
-    TaskDesc* unk_0C;
-    const char* unk_10;
+    TaskDesc* taskDesc;
+    const char* name;
 } ChkBtlEntry;
 
-typedef struct ChkBtlActor {
+typedef struct BtlWork {
     u8 unk_00[0x2C];
     TaskPool unk_2C;
-} ChkBtlActor;
+} BtlWork;
 
 typedef struct ChkBtlPos {
     s32 unk_00;
@@ -37,10 +37,10 @@ typedef struct ChkBtlPos {
 typedef struct ChkBtlWorld {
     u8 unk_00;
     u8 unk_01[0x03];
-    const char* unk_04;
+    const char* name;
 } ChkBtlWorld;
 
-typedef struct ChkBtlSetup {
+typedef struct GameState {
     u8 unk_00[0x08];
     u32 flags;
     u8 world;
@@ -53,10 +53,10 @@ typedef struct ChkBtlSetup {
     u16 cp;
     u8 unk_FC[0x80];
     u16 unk_17C;
-} ChkBtlSetup;
+} GameState;
 void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
-void func_08004DB0(void);
+void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_08006120(s32 a, s32 b);
@@ -78,20 +78,20 @@ void mode_chkbtl_0(void);
 void mode_chkbtl_1(void);
 void mode_chkbtl_2(void);
 
-extern ChkBtlActor* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
-extern ChkBtlSetup gUnk_02039BB0;
+extern GameState gGameState;
 extern u32 gUnk_03006C10;
 extern u32 gFrameCounter;
-extern const ChkBtlEntry gUnk_08126630[];
-extern const ChkBtlWorld gUnk_08128234[];
+extern const ChkBtlEntry gChkBtlEntries[];
+extern const ChkBtlWorld gChkBtlWorlds[];
 extern ChkBtlWork* gChkBtlWork;
 extern Mode gModeBattle;
 extern Mode gModeDebug;
 extern Mode gUnk_09EE2704;
-extern const char gUnk_08128304[];
+extern const char gWhitePalette[];
 extern TaskDesc gTaskDescEmy00;
 extern TaskDesc gTaskDescEmy01;
 extern TaskDesc gTaskDescEmy02;

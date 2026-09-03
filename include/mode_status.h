@@ -4,7 +4,7 @@
 #include "types.h"
 #include "main.h"
 
-typedef struct UnkStruct_02039BB0 {
+typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
     u8 unk_00C[0x26];
@@ -21,20 +21,20 @@ typedef struct UnkStruct_02039BB0 {
     s32 mooglePoints;
     u8 unk_178[0x08];
     u16 unk_180;
-} UnkStruct_02039BB0;
+} GameState;
 
-extern UnkStruct_02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u8 gUnk_097FFB98[];
 extern u8 gUnk_0984B118[];
 extern u8 gUnk_09848198[];
 extern u8 gUnk_09847C98[];
 extern u8 gUnk_09847798[];
 extern u8 gUnk_09848B98[];
-extern TaskDesc gUnk_09EF4F08;
-extern TaskDesc gUnk_09EF4EF0;
+extern TaskDesc gTaskDescStatusBar;
+extern TaskDesc gTaskDescStatus;
 
-void func_08004D74(void);
-void func_08004DB0(void);
+void BgReset(void);
+void SetBgMode0(void);
 void DisableBg(s32 bg);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgTiles(s32 bg, void* src, u16 size);
@@ -42,7 +42,7 @@ void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgPriority(s32 bg, u16 priority);
 void func_08006120(s32 a, u16 b);
-u8 func_08000F48(Task* t);
+u8 IsTaskActive(Task* t);
 u8 func_08006314(void);
 void UpdatePlayTime(void);
 void func_080D733C(void);

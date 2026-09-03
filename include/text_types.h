@@ -4,7 +4,7 @@
 #include "types.h"
 
 typedef struct TextSlot {
-    void* unk_00;
+    void* tiles;
     u8 unk_04;
     s8 unk_05;
     u8 unk_06;

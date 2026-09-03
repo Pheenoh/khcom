@@ -224,7 +224,7 @@ _0806E700:
 	ldr r2, [r3, #0x0C]
 	ldr r3, [r3, #0x10]
 	adds r0, r7, #0x0
-	bl func_0801CD8C
+	bl EvtObjSetPos
 _0806E734:
 	movs r2, #0xBE
 	lsls r2, r2, #0x01

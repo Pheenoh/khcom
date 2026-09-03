@@ -20,8 +20,8 @@ typedef struct Ent0806E9BC {
 
 typedef struct Work0806180C {
     Ent0806E9BC* unk_000;
-    void* unk_004;
-    void* unk_008;
+    void* tiles;
+    void* palette;
     u8 unk_00C[4];
     TaskPool unk_010;
     u8 unk_024[2];
@@ -71,12 +71,12 @@ typedef struct Ent02034A80 {
     u8 unk_53[5];
 } Ent02034A80;
 
-typedef struct Ctx02039BB0 {
+typedef struct GameState {
     u8 unk_00[8];
     u32 flags;
     u8 world;
     u8 unk_0D;
-} Ctx02039BB0;
+} GameState;
 
 typedef struct MsgFaceCtl {
     u8 unk_00[2];
@@ -86,8 +86,8 @@ typedef struct MsgFaceCtl {
 } MsgFaceCtl;
 
 typedef struct MsgFaceWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
     u8 unk_0C[0x18];
     s32 unk_24;
@@ -104,7 +104,7 @@ typedef struct MsgFaceWork {
 
 typedef struct MsgWinWork {
     u8 unk_00[0x14];
-    void* unk_14;
+    void* palette;
     s32 unk_18;
     u8 unk_1C[2];
     u8 unk_1E;
@@ -146,11 +146,11 @@ typedef struct EventSeqWork {
     u8 unk_33[9];
 } EventSeqWork;
 
-typedef struct Ctx02039B84 {
+typedef struct BtlWork {
     u8 unk_00[0x2C];
     TaskPool unk_2C;
     TaskPool unk_40;
-} Ctx02039B84;
+} BtlWork;
 
 typedef struct Work08073E34 {
     u8 unk_00;
@@ -160,7 +160,7 @@ typedef struct Work08073E34 {
     u32 unk_04;
 } Work08073E34;
 
-typedef struct TextCtx {
+typedef struct UnkStruct_02039DC8 {
     u8 unk_00[0x48];
     s32 unk_48;
     s32 unk_4C;
@@ -181,7 +181,7 @@ typedef struct TextCtx {
     u8 unk_7E[0xA];
     u8 unk_88;
     u8 unk_89;
-} TextCtx;
+} UnkStruct_02039DC8;
 
 typedef struct Actor0806180C {
     u8 unk_00[0x24];
@@ -220,7 +220,7 @@ typedef struct MsgWaitWork {
     u8 unk_04[0x10];
     Handle0806180C* unk_14;
     u8 unk_18[0xA4];
-    void* unk_BC;
+    void* gfx;
     u8 unk_C0[0x1C];
     u8 unk_DC[0x26];
     u8 unk_102;
@@ -238,7 +238,7 @@ typedef struct MsgWaitYesNoWork {
     void* unk_18;
     TextSlot unk_1C[10];
     TextSlot unk_6C[10];
-    void* unk_BC;
+    void* gfx;
     u8 unk_C0[0x1C];
     u8 unk_DC[0x28];
     u8 unk_104;
@@ -271,15 +271,15 @@ typedef struct AnimEntry0806180C {
     u8 unk_05[3];
 } AnimEntry0806180C;
 
-typedef struct AnimSet0806180C {
+typedef struct UnkStruct_09EE3FB4 {
     u8 unk_00;
     u8 unk_01[3];
     AnimEntry0806180C* unk_04;
     u8 unk_08[0x18];
     u16 unk_20;
-} AnimSet0806180C;
+} UnkStruct_09EE3FB4;
 
-extern TextCtx* gUnk_02039DC8;
+extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern u16 gUnk_09033C8C[];
 extern u8 gUnk_09EE274C[];
 extern u8 gModeBattle[];
@@ -288,19 +288,19 @@ extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_09EEFCAC[];
 extern u8 gUnk_09EEFD38[];
-extern TaskDesc gUnk_09EE474C[];
+extern TaskDesc gTaskDescMsgface[];
 extern u8 gUnk_096145D8[];
 extern u8 gUnk_09614618[];
-extern vu16 gUnk_03007FF8;
+extern vu16 gIntrCheck;
 extern u32 gUnk_02034A78;
-extern Ctx02039BB0 gUnk_02039BB0;
+extern GameState gGameState;
 extern u16 gUnk_09033CA0[];
 extern s32 gUnk_09033CD0[];
 extern s32 gUnk_09033CE0[];
-extern Ctx02039B84* gUnk_02039B84;
+extern BtlWork* gBtlWork;
 extern u16 gBldCnt;
 extern vu16 gBldAlpha;
-extern AnimSet0806180C* gUnk_09EE3FB4[];
+extern UnkStruct_09EE3FB4* gUnk_09EE3FB4[];
 extern u8 gUnk_09614718[];
 extern u8 gUnk_09614738[];
 extern u8 gUnk_09614758[];
@@ -322,8 +322,8 @@ u16 func_08065A70(u8 v, TextSlot* out);
 u16 func_080660C0(u8* s, TextSlot* p);
 void _08073E6C(Work08073E34* p);
 void func_08073E74(Work08073E34* p);
-void func_08074CF8(void);
-void func_08074CFC(void);
+void view_2(void);
+void view_3(void);
 void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
 s16 func_08065B08(TextSlot* p, u8 n);
@@ -344,7 +344,7 @@ u16 func_0806692C(u8* s, u16* out);
 u16 func_08066AF8(s32 v, u16* out);
 void func_0801CD74(void* a, u16 b);
 void TaskPoolUpdate(TaskPool* a);
-void func_08000F8C(void* a, void* b);
+void SetTaskUpdate(void* a, void* b);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
 void* memcpy(void* dst, const void* src, unsigned long n);
@@ -369,7 +369,7 @@ u8 func_08073318(MsgWinWork* p, void* a);
 u8 func_08073F78(MsgWaitWork* p);
 void LoadBgMap(s32 bg, void* src, u16 size);
 u16 GetKeysPressed(void);
-u8 func_0807388C(MsgFaceWork* p, void* a);
+u8 msgface_1(MsgFaceWork* p, void* a);
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a);
 void _0806C3A0(u8 a, void* b);
 void func_08065AE0(TextSlot* p, s32 n);
@@ -378,7 +378,7 @@ void func_080DF828(void);
 void func_080E04EC(void);
 void func_0800FDD0(s32 a);
 void SaveWriteFileLarge(u16 file);
-u8 func_0806E184(Work0806180C* p, void* a);
+u8 event_chara_1(Work0806180C* p, void* a);
 u8 func_0806FA84(Work0806180C* p, void* a);
 u8 func_0806FDB0(Work0806180C* p, void* a);
 u8 func_0806FC28(Work0806180C* p, void* a);

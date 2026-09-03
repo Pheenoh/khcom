@@ -59,7 +59,7 @@ _0803309E:
 	str r2, [r0, #0x68]
 	ldr r1, _080330D0 @ =0x080324DD
 	adds r0, r4, #0x0
-	bl func_08000F8C
+	bl SetTaskUpdate
 	movs r0, #0x01
 	b _0803314A
 _080330CC: .4byte 0x02039BA0

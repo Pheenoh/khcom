@@ -5,20 +5,20 @@
 #include "game.h"
 
 typedef struct AcgTransWork {
-    u32 unk_000;
-    u32 unk_004;
-    u16 unk_008;
+    u32 dst;
+    u32 src;
+    u16 size;
     u16 unk_00A;
     u16 unk_00C;
-    u32 unk_010;
+    u32 bg;
 } AcgTransWork;
 
 typedef struct AcgTransConfig {
-    u32 unk_000;
-    u32 unk_004;
-    u16 unk_008;
+    u32 src;
+    u32 dst;
+    u16 size;
     u16 unk_00A;
-    u32 unk_00C;
+    u32 bg;
 } AcgTransConfig;
 
 extern u8 gTaskDescAcgtrans[];
