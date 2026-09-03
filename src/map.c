@@ -2096,28 +2096,28 @@ void func_080E9A00(void) {
 void func_080E9A28(void) {
     switch (gUnk_02039BB0.unk_0C) {
     case 10:
-        ModeRequest(&gUnk_09ECEB40, 0x94);
+        ModeRequest(&gModeBattle, 0x94);
         break;
     case 1:
-        ModeRequest(&gUnk_09ECEB40, 0x95);
+        ModeRequest(&gModeBattle, 0x95);
         break;
     case 5:
-        ModeRequest(&gUnk_09ECEB40, 0x98);
+        ModeRequest(&gModeBattle, 0x98);
         break;
     case 7:
-        ModeRequest(&gUnk_09ECEB40, 0x9E);
+        ModeRequest(&gModeBattle, 0x9E);
         break;
     case 6:
-        ModeRequest(&gUnk_09ECEB40, 0x9B);
+        ModeRequest(&gModeBattle, 0x9B);
         break;
     case 2:
-        ModeRequest(&gUnk_09ECEB40, 0x97);
+        ModeRequest(&gModeBattle, 0x97);
         break;
     case 4:
-        ModeRequest(&gUnk_09ECEB40, 0x96);
+        ModeRequest(&gModeBattle, 0x96);
         break;
     case 3:
-        ModeRequest(&gUnk_09ECEB40, 0xA0);
+        ModeRequest(&gModeBattle, 0xA0);
         break;
     }
 }
@@ -2242,12 +2242,12 @@ void func_080E9D94(void) {
         func_0801CB0C();
         if (gUnk_02039BB0.unk_08 & 8) {
             if (gUnk_02039BB0.unk_17A & 0x1000) {
-                ModeRequest(&gUnk_09ECEB40, gUnk_0203C7AC->unk_0E);
+                ModeRequest(&gModeBattle, gUnk_0203C7AC->unk_0E);
             } else {
                 ModeRequest(&gUnk_09EE9170, gUnk_0203C7AC->unk_0E);
             }
         } else {
-            ModeRequest(&gUnk_09ECEB40, gUnk_0203C7AC->unk_0E);
+            ModeRequest(&gModeBattle, gUnk_0203C7AC->unk_0E);
         }
     }
 }
@@ -2687,9 +2687,9 @@ void func_080EA864(void) {
     func_080E56B4(p->unk_2C);
 
     if (gUnk_02039BB0.unk_08 & 8) {
-        TaskCreate(gUnk_02039BA0->unk_8C, &gUnk_09EDAF78, 0);
+        TaskCreate(gUnk_02039BA0->unk_8C, &gTaskDescFldRiku, 0);
     } else {
-        TaskCreate(gUnk_02039BA0->unk_8C, &gUnk_09EDAF60, 0);
+        TaskCreate(gUnk_02039BA0->unk_8C, &gTaskDescFldSora, 0);
     }
 
     TaskCreate(gUnk_02039BA0->unk_78, &gUnk_09EE26D4, 0);

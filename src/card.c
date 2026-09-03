@@ -6003,7 +6003,7 @@ void func_080AB99C(void) {
 
     t = gUnk_02039BB0.unk_17A | 0x1000;
     gUnk_02039BB0.unk_17A = t;
-    ModeRequest(&gUnk_09ECEB40, (s32)gUnk_02034B34);
+    ModeRequest(&gModeBattle, (s32)gUnk_02034B34);
     TaskPoolUpdate(gUnk_02034B20);
     TaskPoolDraw(gUnk_02034B20);
 }

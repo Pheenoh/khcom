@@ -301,7 +301,7 @@ extern u8 gUnk_09EDAB70[];
 extern u8 gUnk_09EDAC78[];
 extern u8 gUnk_09EDAC90[];
 extern u8 gUnk_09EDACA8[];
-extern u8 gUnk_09EDAF18[];
+extern u8 gTaskDescBtlPrize[];
 extern u8 gUnk_09EDABD0[];
 extern u8 gUnk_09EDABE8[];
 extern u8 gUnk_09EDAD20[];

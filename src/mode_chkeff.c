@@ -61,7 +61,7 @@ void mode_chkeff_1(void) {
     u16 b;
 
     if (GetKeysPressed() & 2) {
-        ModeRequest(&gUnk_09ECEB64, 0);
+        ModeRequest(&gModeDebug, 0);
     } else {
         if (GetKeysPressed() & 8) {
             gUnk_020348B8->unk_16 = !gUnk_020348B8->unk_16;

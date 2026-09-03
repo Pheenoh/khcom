@@ -55,7 +55,7 @@ extern ObjDef gUnk_09ED5D34[];
 extern ObjDef gUnk_09ED76F4[];
 extern ObjDef gUnk_09ED77D4[];
 extern u8 gUnk_08F683A4[];
-extern Mode gUnk_09ECEB64;
+extern Mode gModeDebug;
 extern TaskDesc gUnk_09EE9190;
 
 #endif /* GUARD_MODE_CHKOBJ_H */

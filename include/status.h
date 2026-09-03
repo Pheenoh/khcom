@@ -331,7 +331,7 @@ extern u8 gUnk_096FDF24[];
 extern TaskDesc gUnk_09EF5070;
 extern TaskDesc gUnk_09EF5058;
 extern TaskDesc gUnk_09EF5088;
-extern TaskDesc gUnk_09EDB350;
+extern TaskDesc gTaskDescBosShadow;
 extern StatusActorPool* gUnk_02039B84;
 extern u8 gUnk_0203C558;
 extern u16 gUnk_0203C554;

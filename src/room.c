@@ -315,7 +315,7 @@ void func_080F80FC(RoomWork* work, u32 i, s32 c) {
         break;
     }
     TaskPoolInit(&e->unk_16C, 1);
-    TaskCreate(&e->unk_16C, gUnk_09EDAE88, e);
+    TaskCreate(&e->unk_16C, gTaskDescBtlShadow, e);
     p = gUnk_09991F54[i].unk_1C;
     e->unk_198 = AllocObjTiles(func_08003524(p, gUnk_09991F54[i].unk_20), gUnk_09991F54[i].unk_14);
     AnimInit(&e->unk_180, gUnk_09991F54[i].unk_18, p);

@@ -118,7 +118,7 @@ extern PcGfxSet gUnk_09A4AC84[];
 extern PcSpriteDef* gUnk_09EFBB18[];
 extern u8 gUnk_09D69274[];
 extern u8 gUnk_08F69BC4[];
-extern Mode gUnk_09ECEB64;
+extern Mode gModeDebug;
 extern BackupStatEntry gUnk_099937E4[];
 extern const char gUnk_09993874[];
 extern const char gUnk_09993878[];

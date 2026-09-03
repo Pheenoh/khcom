@@ -68,7 +68,7 @@ extern void** gUnk_09EEA28C;
 extern u8 gUnk_0203A9E0;
 extern vu16 gSystemFlags;
 extern Mode gUnk_09EF15A8;
-extern Mode gUnk_09ECEB40;
+extern Mode gModeBattle;
 extern u8 gUnk_09EE7608[];
 extern u8 gUnk_09EE7620[];
 extern u8 gUnk_09EE7638[];

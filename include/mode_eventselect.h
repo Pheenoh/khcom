@@ -146,7 +146,7 @@ extern const char gUnk_09033F10[];
 extern s16 gUnk_09033D50[];
 extern s16 gUnk_09033E76[];
 extern const char* gUnk_09EE42C8[];
-extern Mode gUnk_09ECEB64;
+extern Mode gModeDebug;
 
 void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysPressed(void);

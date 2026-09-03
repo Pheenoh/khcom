@@ -1089,7 +1089,7 @@ void task_bos_boogie_0(StatusDialogWork* work) {
     work->unk_15C = 9;
     func_080D900C(work, 0, 1);
     TaskPoolInit(&work->unk_02C, 7);
-    TaskCreate(&work->unk_02C, &gUnk_09EDB350, &work->unk_040);
+    TaskCreate(&work->unk_02C, &gTaskDescBosShadow, &work->unk_040);
     TaskCreate(&work->unk_02C, &gUnk_09EF5088, 0);
     TaskCreate(&work->unk_02C, &gUnk_09EF5058, work);
     work->unk_160 = 0;

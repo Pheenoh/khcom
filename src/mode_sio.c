@@ -2340,7 +2340,7 @@ void mode_wLogo_1(void) {
         }
 
         if (GetKeysPressed() & 2) {
-            ModeRequest(&gUnk_09ECEB64, 0);
+            ModeRequest(&gModeDebug, 0);
         }
         break;
     case 1:

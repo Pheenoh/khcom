@@ -597,7 +597,7 @@ extern u8 gUnk_09EF9F3C[];
 s32 func_0801ADAC(void* a);
 void func_0810F064(BosLstWork* work, LstSub* p);
 
-extern u8 gUnk_09EDAEE8[];
+extern u8 gTaskDescBtlPop[];
 u8 func_0810E99C(BosLstWork* work);
 
 #endif /* GUARD_BOS6_H */

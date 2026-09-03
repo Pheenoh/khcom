@@ -97,7 +97,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             work->unk_26++;
         } else if (work->unk_26 == 20) {
             m4aSongNumStart(0x77);
-            TaskCreate(&work->unk_2C, &gUnk_09EDB398, (void*)(u32)work->unk_24);
+            TaskCreate(&work->unk_2C, &gTaskDescRomcriEff2, (void*)(u32)work->unk_24);
             work->unk_26++;
         }
 
@@ -108,7 +108,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         break;
     case 4:
         if (work->unk_26 == 16) {
-            TaskCreate(&work->unk_2C, &gUnk_09EDB380, (void*)(u32)work->unk_24);
+            TaskCreate(&work->unk_2C, &gTaskDescRomcriEff, (void*)(u32)work->unk_24);
         }
 
         if (work->unk_26 == 40) {

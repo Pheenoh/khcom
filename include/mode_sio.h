@@ -436,7 +436,7 @@ extern u8 gUnk_096FBF04[];
 extern u8 gUnk_096FBF84[];
 extern void* gUnk_09EF1278[];
 extern Mode gUnk_09ED9B98;
-extern Mode gUnk_09ECEB64;
+extern Mode gModeDebug;
 extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EE8F20;
 extern void* gUnk_09EE8F48[];

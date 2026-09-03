@@ -23,7 +23,7 @@ void func_0806297C(void) {
     case 83:
     case 84:
         gUnk_02039BB0.unk_0D = 5;
-        ModeRequest(gUnk_09ECEB40, m->unk_20);
+        ModeRequest(gModeBattle, m->unk_20);
         break;
     }
 }

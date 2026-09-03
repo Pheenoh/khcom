@@ -13,7 +13,7 @@ void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param) {
     work->unk_00->unk_1C = work->unk_08[3];
     func_0801CE70(work);
     TaskPoolInit(&work->unk_24, 1);
-    TaskCreate(&work->unk_24, gUnk_09EDADE0, work->unk_00);
+    TaskCreate(&work->unk_24, gTaskDescEvtShadow, work->unk_00);
 }
 
 s32 task_evt_obj_1(EvtObjWork* work) {

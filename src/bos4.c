@@ -40,7 +40,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     r = GetRandom();
     func_08005B44(&work->unk_014, r & 3);
     TaskPoolInit(&work->unk_02C, 1);
-    TaskCreate(&work->unk_02C, gUnk_09EDB350, &work->unk_040);
+    TaskCreate(&work->unk_02C, gTaskDescBosShadow, &work->unk_040);
 
     if (work->unk_170 == 0) {
         func_0801BCD4(&work->unk_040);
@@ -427,7 +427,7 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     AnimInit(&work->unk_014, gUnk_09EF6784, gUnk_09EF6774);
     AnimStart(&work->unk_014, 0, 1);
     TaskPoolInit(&work->unk_02C, 1);
-    TaskCreate(&work->unk_02C, gUnk_09EDB350, &work->unk_040);
+    TaskCreate(&work->unk_02C, gTaskDescBosShadow, &work->unk_040);
 }
 
 u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work) {
@@ -742,7 +742,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg) {
     AnimInit(&work->unk_014, gUnk_09EF6844, gUnk_09EF6824);
     AnimStart(&work->unk_014, 0, 1);
     TaskPoolInit(&work->unk_02C, 1);
-    TaskCreate(&work->unk_02C, gUnk_09EDB350, &work->unk_040);
+    TaskCreate(&work->unk_02C, gTaskDescBosShadow, &work->unk_040);
     func_0801BCD4(&work->unk_040);
     m4aSongNumStart(0x253);
 }
@@ -2792,7 +2792,7 @@ void func_080DE910(void) {
             break;
         }
     } else if ((GetKeysPressed() & 6) != 0) {
-        ModeRequest(gUnk_09ECEB64, 0);
+        ModeRequest(gModeDebug, 0);
     } else {
         func_080605A4(0);
         func_08060598();

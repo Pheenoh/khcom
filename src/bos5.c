@@ -23,7 +23,7 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
     work->unk_01C = 0;
     work->unk_A4C = 0;
     work->unk_A50 = 60;
-    TaskCreate(&gUnk_02039B84->unk_03C[4], gUnk_09EDB338, gUnk_0999202C);
+    TaskCreate(&gUnk_02039B84->unk_03C[4], gTaskDescBosMap, gUnk_0999202C);
     gUnk_02039B84->unk_0CC = 0xE200;
     gUnk_02039B84->unk_0D0 = 0x15E00;
     gUnk_02039B84->unk_0D4 = 0;

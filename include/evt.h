@@ -62,7 +62,7 @@ void func_0801CE70(EvtObjWork* work);
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_08B22CE4[];
 extern u8 gUnk_08F69BE4[];
-extern u8 gUnk_09EDADE0[];
+extern u8 gTaskDescEvtShadow[];
 
 void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param);
 s32 task_evt_obj_1(EvtObjWork* work);

@@ -8,8 +8,8 @@ typedef struct ChkSndEntry {
     const char* name;
     u16 unk_04;
 } ChkSndEntry;
-extern ChkSndEntry gUnk_09ED8644[];
-extern Mode gUnk_09ECEB64;
+extern ChkSndEntry gChkSndEntries[];
+extern Mode gModeDebug;
 extern TaskDesc gUnk_09EE9190;
 
 void ModeRequest(Mode* mode, s32 b);

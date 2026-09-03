@@ -664,7 +664,7 @@ extern u8 gUnk_096FB904[];
 extern u8 gUnk_09682AA4[];
 extern void* gUnk_09EF3A48[];
 extern u8 gUnk_096FB5A4[];
-extern u8 gUnk_09EDAE88[];
+extern u8 gTaskDescBtlShadow[];
 extern u8 gUnk_096FB584[];
 extern u8 gUnk_08F69BC4[];
 extern s16 gUnk_0961A860[];

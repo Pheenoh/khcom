@@ -69,14 +69,14 @@ void mode_debug_1(void) {
     case 0x100:
         if (v <= 23) {
             SetPaletteEffect(v + 1);
-            ModeRequest(&gUnk_09ECEB64, 0);
+            ModeRequest(&gModeDebug, 0);
             return;
         }
         break;
     case 0x200:
         if (v > -24) {
             SetPaletteEffect(v - 1);
-            ModeRequest(&gUnk_09ECEB64, 0);
+            ModeRequest(&gModeDebug, 0);
             return;
         }
         break;
@@ -119,7 +119,7 @@ void mode_debug_1(void) {
         break;
     case 4:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09ED9A0C, 0);
+            ModeRequest(&gModeChksnd, 0);
             return;
         }
         break;
@@ -140,7 +140,7 @@ void mode_debug_1(void) {
         break;
     case 7:
         if (GetKeysPressed() & 9) {
-            ModeRequest(&gUnk_09ECEB54, 0);
+            ModeRequest(&gModeChkbtl, 0);
         }
         break;
     case 8:
@@ -166,7 +166,7 @@ void mode_debug_1(void) {
             SaveClearFileSmall(0);
             SaveClearFileSmall(1);
             SaveClearSystem();
-            ModeRequest(&gUnk_09ECEB64, 0);
+            ModeRequest(&gModeDebug, 0);
         }
         break;
     case 12:
