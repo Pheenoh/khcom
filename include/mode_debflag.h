@@ -8,10 +8,6 @@ typedef struct DebugFlag {
     const char* name;
     u32 mask;
 } DebugFlag;
-
-extern s8 gUnk_020348C0;
-extern s8 gUnk_020348C1;
-extern const DebugFlag* gUnk_020348C4;
 extern u8 gUnk_02039B94;
 extern u32 gUnk_03006C10;
 extern u8 gUnk_08128304[];

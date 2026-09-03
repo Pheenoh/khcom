@@ -1,5 +1,8 @@
 #include "macros.h"
 #include "mode_debug.h"
+
+DebugWork* gUnk_02034898;
+ChkObjWork* gUnk_0203489C;
 #include "gba/keys.h"
 
 #ifdef VERSION_US

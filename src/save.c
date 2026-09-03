@@ -2,9 +2,10 @@
 #include "gba/syscall.h"
 #include "save.h"
 
-extern u16 gUnk_02034088;
-extern u16 gUnk_0203408A;
-extern u8 gUnk_02034090[];
+u16 gUnk_02034088;
+u16 gUnk_0203408A;
+u8 gUnk_0203408C[4];
+u8 gUnk_02034090[0x500];
 extern u16 gSystemFlags;
 extern u8 gUnk_08121724[];
 extern u8 gUnk_08121924[];

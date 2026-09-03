@@ -9,23 +9,23 @@ sprite.c
 engine.c -O2 -fprologue-bugfix -fno-common
 sio.c -O2 -fprologue-bugfix -fno-common
 pallet.c
-util.c
-save.c
+util.c -O2 -fprologue-bugfix -fno-common
+save.c -O2 -fprologue-bugfix -fno-common
 mode_battle.c
 mode_chkbtl.c
-mode_debug.c
+mode_debug.c -O2 -fprologue-bugfix -fno-common
 mode_chkobj.c
-mode_chksnd.c
-mode_chkeff.c
-mode_dummy.c
-mode_debflag.c
+mode_chksnd.c -O2 -fprologue-bugfix -fno-common
+mode_chkeff.c -O2 -fprologue-bugfix -fno-common
+mode_dummy.c -O2 -fprologue-bugfix -fno-common
+mode_debflag.c -O2 -fprologue-bugfix -fno-common
 mode_vsbattle.c
-unk_0800eebc.c
+unk_0800eebc.c -O2 -fprologue-bugfix -fno-common
 task.c
 evt.c
 acgtrans.c
 btl.c
-unk_0802f1c8.c
+unk_0802f1c8.c -O2 -fprologue-bugfix -fno-common
 btl2.c
 fld.c
 emy.c
@@ -43,13 +43,13 @@ btl4.c
 tutorial.c
 mode_movie.c -O2 -fprologue-bugfix -fno-common
 mode_test.c
-unk_0806180c.c
-mode_eventselect.c
+unk_0806180c.c -O2 -fprologue-bugfix -fno-common
+mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common
-wlogo.c
+wlogo.c -O2 -fprologue-bugfix -fno-common
 bos2.c
-chara.c
+chara.c -O2 -fprologue-bugfix -fno-common
 bos3.c
 mode_sio2.c -O2 -fprologue-bugfix -fno-common
 poo.c
@@ -57,10 +57,10 @@ mode_allmap.c
 allmap.c
 mode_title.c
 title.c
-mode_copyright1.c
+mode_copyright1.c -O2 -fprologue-bugfix -fno-common
 mode_copyright2.c
-mode_status.c
-status.c
+mode_status.c -O2 -fprologue-bugfix -fno-common
+status.c -O2 -fprologue-bugfix -fno-common
 bos4.c
 unk_080dfebc.c
 room.c

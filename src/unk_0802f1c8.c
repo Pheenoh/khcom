@@ -1,5 +1,9 @@
 #include "unk_0802f1c8.h"
 
+u8 gUnk_0203492C;
+u16 gUnk_0203492E;
+s32 gUnk_02034930;
+
 void func_0802F1C8(void) {
     gUnk_0203492C = 0;
     gUnk_0203492E = 0;

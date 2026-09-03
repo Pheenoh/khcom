@@ -1,5 +1,8 @@
 #include "macros.h"
 #include "mode_chksnd.h"
+
+TaskPool gUnk_020348A0;
+s16 gUnk_020348B4;
 #include "gba/keys.h"
 
 const char gUnk_0812E8F8[8] = "SND_970";

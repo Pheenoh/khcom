@@ -42,8 +42,6 @@ void func_0809D458(s32 a, s32 b, s32 c, s32 v);
 void mode_chkeff_0(void);
 void mode_chkeff_1(void);
 void mode_chkeff_2(void);
-
-extern ChkEffWork* gUnk_020348B8;
 extern u32 gFrameCounter;
 extern u8 gUnk_08C6B0C4[];
 extern u8 gUnk_08EEE384[];

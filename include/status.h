@@ -265,10 +265,6 @@ typedef struct StatusStocklistWork {
 } StatusStocklistWork;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
-extern StatusWork* gUnk_02034EFC;
-extern u8 gUnk_02034F00;
-extern s16 gUnk_02034F02;
-extern StatusStocklistWork* gUnk_02034F04;
 extern s32 gUnk_0203C550;
 
 extern TaskDesc gUnk_09EF4F20;
@@ -337,7 +333,6 @@ extern TaskDesc gUnk_09EF5058;
 extern TaskDesc gUnk_09EF5088;
 extern TaskDesc gUnk_09EDB350;
 extern StatusActorPool* gUnk_02039B84;
-extern StatusDialogWork* gUnk_02034F08;
 extern u8 gUnk_0203C558;
 extern u16 gUnk_0203C554;
 extern u16 gUnk_0203C560;

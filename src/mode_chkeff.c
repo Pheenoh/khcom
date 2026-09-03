@@ -1,5 +1,7 @@
 #include "macros.h"
 #include "mode_chkeff.h"
+
+ChkEffWork* gUnk_020348B8;
 #include "gba/keys.h"
 
 const char gUnk_081309E0[8] = "PAUSE";

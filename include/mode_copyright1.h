@@ -4,9 +4,6 @@
 #include "types.h"
 #include "save.h"
 #include "mode.h"
-extern u8 gUnk_02034ED4;
-extern u16 gUnk_02034ED6;
-extern u8 gUnk_02034ED8;
 extern u8 gUnk_09801DD8[];
 extern u8 gUnk_0984B298[];
 extern u8 gUnk_09849098[];

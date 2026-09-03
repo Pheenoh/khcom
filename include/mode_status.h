@@ -24,9 +24,6 @@ typedef struct UnkStruct_02039BB0 {
 } UnkStruct_02039BB0;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
-extern TaskPool gUnk_02034EE0;
-extern Task* gUnk_02034EF4;
-extern u8 gUnk_02034EF8;
 extern u8 gUnk_097FFB98[];
 extern u8 gUnk_0984B118[];
 extern u8 gUnk_09848198[];

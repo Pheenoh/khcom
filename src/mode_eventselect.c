@@ -1,5 +1,11 @@
 #include "macros.h"
 #include "mode_eventselect.h"
+
+s16 gUnk_02034A94;
+u8 gUnk_02034A96;
+UnkStruct_02034AAC* gUnk_02034A98;
+u32 gUnk_02034A9C;
+u32 gUnk_02034AA0;
 #include "gba/keys.h"
 
 void mode_eventselect_0(void) {

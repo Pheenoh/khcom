@@ -501,12 +501,6 @@ typedef struct WlogoMonsWork {
     u8 unk_02E;
     u8 unk_02F;
 } WlogoMonsWork;
-
-extern TaskPool gUnk_02034C38;
-extern TaskPool gUnk_02034C50;
-extern TaskPool gUnk_02034C68;
-extern TaskPool gUnk_02034C80;
-extern TaskPool gUnk_02034C98;
 extern s32 gUnk_0203AB38;
 extern vu16 gUnk_03007FF8;
 extern WlogoHwtObjA gUnk_096194D0[];

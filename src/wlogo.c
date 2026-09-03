@@ -1,6 +1,16 @@
 #include "macros.h"
 #include "wlogo.h"
 
+TaskPool gUnk_02034C38;
+u8 gUnk_02034C4C[4];
+TaskPool gUnk_02034C50;
+u8 gUnk_02034C64[4];
+TaskPool gUnk_02034C68;
+u8 gUnk_02034C7C[4];
+TaskPool gUnk_02034C80;
+u8 gUnk_02034C94[4];
+TaskPool gUnk_02034C98;
+
 void task_wlogo_mons_0(WlogoMonsWork* work) {
     LoadBgPalette(0, gUnk_096FACA4, 0x20);
     LoadBgTiles(0, gUnk_096324C4, 0xC80);
