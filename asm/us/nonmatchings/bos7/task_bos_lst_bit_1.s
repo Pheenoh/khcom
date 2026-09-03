@@ -25,7 +25,7 @@ task_bos_lst_bit_1: @ 08110D10
 	b _08111448
 _08110D36:
 	adds r0, r6, #0x0
-	bl _08110C9C
+	bl func_08110C9C
 	movs r2, #0x02
 	ldsh r0, [r6, r2]
 	adds r7, r6, #0x0
