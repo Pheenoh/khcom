@@ -18,7 +18,7 @@ mode_chkobj.c
 mode_chksnd.c -O2 -fprologue-bugfix -fno-common
 mode_chkeff.c -O2 -fprologue-bugfix -fno-common
 mode_dummy.c -O2 -fprologue-bugfix -fno-common
-mode_debflag.c -O2 -fprologue-bugfix -fno-common
+mode_debflag.c -O2 -fprologue-bugfix
 mode_vsbattle.c
 unk_0800c778.c
 unk_0800eebc.c -O2 -fprologue-bugfix -fno-common
@@ -51,7 +51,7 @@ msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common
-wlogo.c -O2 -fprologue-bugfix -fno-common
+wlogo.c -O2 -fprologue-bugfix
 bos2.c -O2 -fprologue-bugfix -fno-common
 chara.c -O2 -fprologue-bugfix -fno-common
 bos3.c -O2 -fprologue-bugfix -fno-common

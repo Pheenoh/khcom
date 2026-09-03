@@ -1,15 +1,17 @@
 #include "macros.h"
 #include "wlogo.h"
 
-TaskPool gWlogoHwtTaskPool;
-u8 gUnk_02034C4C[4];
-TaskPool gWlogoNvlTaskPool;
-u8 gUnk_02034C64[4];
-TaskPool gWlogoNvlMovTaskPool;
-u8 gUnk_02034C7C[4];
-TaskPool gWlogoAgrTaskPool;
-u8 gUnk_02034C94[4];
-TaskPool gWlogoPooTaskPool;
+static TaskPool gWlogoHwtTaskPool;
+static u8 gUnk_02034C4C[4];
+static TaskPool gWlogoNvlTaskPool;
+static u8 gUnk_02034C64[4];
+static TaskPool gWlogoNvlMovTaskPool;
+static u8 gUnk_02034C7C[4];
+static TaskPool gWlogoAgrTaskPool;
+static u8 gUnk_02034C94[4];
+static TaskPool gWlogoPooTaskPool;
+
+s32 gUnk_0203AB38;
 
 void task_wlogo_mons_0(WlogoMonsWork* work) {
     LoadBgPalette(0, gUnk_096FACA4, 0x20);
