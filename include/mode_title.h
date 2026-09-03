@@ -18,9 +18,9 @@ typedef struct GameState {
 extern GameState gGameState;
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
-extern s32 gUnk_0203C544;
-extern s32 gUnk_0203C548;
-extern s32 gUnk_0203C54C;
+extern s32 gTitleBgScale;
+extern s32 gTitleBgX;
+extern s32 gTitleBgY;
 extern u8 gUnk_09840798[];
 extern u8 gUnk_0983E398[];
 extern u8 gUnk_097D3658[];

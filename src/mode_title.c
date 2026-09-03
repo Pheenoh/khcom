@@ -53,10 +53,10 @@ void mode_title_0(void) {
     LoadBgTiles(2, gUnk_097CF758, 0x3F00);
     LoadBgPalette(2, gUnk_0984A618, 0xA0);
     LoadBgMap(2, gUnk_0983FB98, 0x400);
-    gUnk_0203C548 = 0x7800;
-    gUnk_0203C54C = 0x5A00;
-    gUnk_0203C544 = 0x1000;
-    SetBgAffine(2, 0, gUnk_0203C544 >> 4, gUnk_0203C544 >> 4, gUnk_0203C548, gUnk_0203C54C);
+    gTitleBgX = 0x7800;
+    gTitleBgY = 0x5A00;
+    gTitleBgScale = 0x1000;
+    SetBgAffine(2, 0, gTitleBgScale >> 4, gTitleBgScale >> 4, gTitleBgX, gTitleBgY);
     TaskPoolInit(&gTitleTaskPool, 4);
     gTitleLogoTask = 0;
     gTitleObjTask = 0;
@@ -87,13 +87,13 @@ void mode_title_1(void) {
         break;
     case 1:
         if (gGameState.flags & 0x200) {
-            ApproachValue(&gUnk_0203C548, 0x3F3F, gUnk_02034EC0);
+            ApproachValue(&gTitleBgX, 0x3F3F, gUnk_02034EC0);
         } else {
-            ApproachValue(&gUnk_0203C548, 0xB0C1, gUnk_02034EC0);
+            ApproachValue(&gTitleBgX, 0xB0C1, gUnk_02034EC0);
         }
-        ApproachValue(&gUnk_0203C54C, 0x6A37, gUnk_02034EC0);
-        ApproachValue(&gUnk_0203C544, 0xBD0, gUnk_02034EC0);
-        SetBgAffine(2, 0, gUnk_0203C544 / 16, gUnk_0203C544 / 16, gUnk_0203C548, gUnk_0203C54C);
+        ApproachValue(&gTitleBgY, 0x6A37, gUnk_02034EC0);
+        ApproachValue(&gTitleBgScale, 0xBD0, gUnk_02034EC0);
+        SetBgAffine(2, 0, gTitleBgScale / 16, gTitleBgScale / 16, gTitleBgX, gTitleBgY);
         gUnk_02034EC0--;
         if (gUnk_02034EC0 == 0x46) {
             func_080C75A4(1, 0x46);
