@@ -45,6 +45,16 @@ u8 gUnk_02034B1D[3];
 #endif
 #include "game.h"
 
+void LoadBgTiles(s32 bg, void* src, u16 size);
+extern u8 gUnk_0950E2F8[];
+extern u8 gUnk_096112B8[];
+u8 func_080A470C(u8* work, void* a);
+u8 func_080A4CC8(u8* work, void* a);
+void func_0808DB04(void** p);
+void func_0808CDE8(u8* work, u8 b);
+u16 func_0806BA74(s32 mode, s32 flag);
+void func_080122AC(void* a, s32 b, s32 c, s32 d);
+void func_08012324(void* a, s32 x, s32 y, s32 z);
 void* TaskCreate(void* a, void* desc, void* args);
 u8 func_08085290(u16 a);
 void func_080938F8(u16 a);
@@ -456,7 +466,92 @@ void func_080784BC(u8* w, s32 mode) {
     }
 }
 
-INCLUDE_ASM("card/func_080785B8.s");
+void func_080785B8(u8* w, s32 mode) {
+    u16 n = func_080858B8(mode);
+
+    switch (mode) {
+    case 0:
+        if (n != 0) {
+            CardSlot* slots;
+            vu32 zero;
+            u8 i;
+
+            slots = EwramAlloc((n + 15) * sizeof(CardSlot));
+            *(CardSlot**)&w[0x44] = slots;
+            zero = 0;
+            CpuSet((void*)&zero, slots, ((n + 15) * 3) | 0x05000000);
+
+            for (i = 0; i < n + 1; i++) {
+                (*(CardSlot**)&w[0x44])[i].unk_06 = 0;
+                (*(CardSlot**)&w[0x44])[i].unk_00 = 0xFFFF;
+                (*(CardSlot**)&w[0x44])[i].unk_07 = 0;
+                (*(CardSlot**)&w[0x44])[i].unk_0A = 0;
+                (*(CardSlot**)&w[0x44])[i].unk_08 = 0;
+            }
+
+            for (i = n + 1; i < n + 15; i++) {
+                (*(CardSlot**)&w[0x44])[i].unk_06 = 1;
+                (*(CardSlot**)&w[0x44])[i].unk_00 = 0xFFFF;
+                (*(CardSlot**)&w[0x44])[i].unk_07 = 1;
+                (*(CardSlot**)&w[0x44])[i].unk_0A = 1;
+                (*(CardSlot**)&w[0x44])[i].unk_08 = 1;
+            }
+
+            func_08078330(*(CardSlot**)&w[0x44], 0);
+            *(u16*)&w[0x94] = 0;
+        } else {
+            CardSlot* slot;
+            vu32 zero;
+            u16* q;
+            s32 k;
+
+            slot = EwramAlloc(sizeof(CardSlot));
+            *(CardSlot**)&w[0x44] = slot;
+            zero = 0;
+            CpuSet((void*)&zero, slot, 3 | 0x05000000);
+            (*(CardSlot**)&w[0x44])->unk_00 = 0xFF;
+            q = (u16*)&w[0x94];
+            k = 0xFFFF;
+            *q = k;
+        }
+        break;
+    case 1:
+        if (n != 0) {
+            CardSlot* slots;
+            u8 i;
+
+            slots = EwramAlloc(n * sizeof(CardSlot));
+            *(CardSlot**)&w[0x50] = slots;
+
+            for (i = 0; i < n; i++) {
+                (*(CardSlot**)&w[0x50])[i].unk_06 = 0;
+                (*(CardSlot**)&w[0x50])[i].unk_00 = 0xFFFF;
+                (*(CardSlot**)&w[0x50])[i].unk_07 = 0;
+                (*(CardSlot**)&w[0x50])[i].unk_0A = 0;
+                (*(CardSlot**)&w[0x50])[i].unk_08 = 0;
+            }
+
+            func_08078330(*(CardSlot**)&w[0x50], 1);
+            *(u16*)&w[0x9A] = 0;
+        } else {
+            CardSlot* slot;
+            vu32 zero;
+            u16* q;
+            s32 k;
+
+            slot = EwramAlloc(sizeof(CardSlot));
+            *(CardSlot**)&w[0x50] = slot;
+            zero = 0;
+            CpuSet((void*)&zero, slot, 3 | 0x05000000);
+            (*(CardSlot**)&w[0x50])->unk_00 = 0x30FF;
+            q = (u16*)&w[0x9A];
+            k = 0xFFFF;
+            *q = k;
+        }
+        break;
+    }
+}
+
 
 u16 func_08078754(UnkStruct_08078754* w, u8 n) {
     u16 count;
@@ -4930,7 +5025,46 @@ INCLUDE_ASM("card/func_08089220.s");
 INCLUDE_ASM("card/func_080892E8.s");
 INCLUDE_ASM("card/func_08089558.s");
 INCLUDE_ASM("card/func_080897CC.s");
-INCLUDE_ASM("card/func_08089D20.s");
+
+u8 func_08089D20(u8* work, void* a) {
+    u8* q;
+
+    func_08006120(0, 4);
+    q = &work[0x8B1];
+    *q = 4;
+    ((UnkStruct_0808DB04*)work)->unk_878 = 95;
+    func_0808DB04((void**)work);
+    SetupBg(3, 0, 30, 0);
+    SetupBg(2, 1, 15, 0);
+    SetupBg(1, 2, 23, 0);
+    SetupBg(0, 3, 31, 0);
+    LoadBgMap(0, gUnk_08125E24, 0x800);
+    LoadBgMap(1, gUnk_08125E24, 0x800);
+    LoadBgMap(2, gUnk_08125E24, 0x800);
+    func_0808CDE8(work, work[0x8C0]);
+    LoadBgMap(3, gUnk_09512AB8, 0x800);
+    func_0808E2F0((UnkStruct_0808DB04*)work);
+    func_0808C90C(work);
+    work[0x8C1] = 0;
+    *(s16*)&work[0x884] = 0;
+    ((UnkStruct_0808DB04*)work)->unk_886 = work[0x8C0];
+    func_0808C3DC(work, work[0x8C1]);
+    work[0x8C7] = 0;
+    *q = 1;
+    func_0808CD48(work);
+    func_0805F1C0(&work[0x848], gUnk_090356EC[*(s16*)&work[0x884]] << 8);
+    func_0805F1C0(&work[0x84C], gUnk_090356F2[*(s16*)&work[0x886]] << 8);
+    SetTaskUpdate(a, (void*)func_080889DC);
+    LoadPalette(&gUnk_09614418[32],
+                (void*)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_06 * 32 +
+                        0x05000200),
+                (u16)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_08 << 5));
+    TaskPoolUpdate(&work[0x7C8]);
+    work += 0x7DC;
+    TaskPoolUpdate(work);
+    return 1;
+}
+
 INCLUDE_ASM("card/func_08089EC0.s");
 #ifdef NON_MATCHING
 u8 func_0808A114(u8* work, void* a) {
@@ -4959,7 +5093,42 @@ u8 func_0808A114(u8* work, void* a) {
 INCLUDE_ASM("card/func_0808A114.s");
 #endif
 INCLUDE_ASM("card/func_0808A218.s");
-INCLUDE_ASM("card/func_0808A650.s");
+
+u8 func_0808A650(u8* work, void* a) {
+    func_08006120(0, 4);
+    ((UnkStruct_0808DB04*)work)->unk_878 = 95;
+    func_0808DB04((void**)work);
+    SetupBg(3, 0, 30, 0);
+    SetupBg(2, 1, 15, 0);
+    SetupBg(1, 2, 23, 0);
+    SetupBg(0, 3, 31, 0);
+    LoadBgMap(0, gUnk_08125E24, 0x800);
+    LoadBgMap(1, gUnk_08125E24, 0x800);
+    LoadBgMap(2, gUnk_08125E24, 0x800);
+    func_0808CDE8(work, work[0x8C0]);
+    LoadBgMap(3, gUnk_09512AB8, 0x800);
+    func_0808E2F0((UnkStruct_0808DB04*)work);
+    func_0808C90C(work);
+    work[0x8C1] = 0;
+    *(s16*)&work[0x884] = 0;
+    ((UnkStruct_0808DB04*)work)->unk_886 = work[0x8C0];
+    func_0808C3DC(work, work[0x8C1]);
+    work[0x8C7] = 0;
+    work[0x8B1] = 1;
+    func_0808CD48(work);
+    func_0805F1C0(&work[0x848], gUnk_090356EC[*(s16*)&work[0x884]] << 8);
+    func_0805F1C0(&work[0x84C], gUnk_090356F2[*(s16*)&work[0x886]] << 8);
+    SetTaskUpdate(a, (void*)func_080889DC);
+    LoadPalette(&gUnk_09614418[32],
+                (void*)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_06 * 32 +
+                        0x05000200),
+                (u16)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_08 << 5));
+    TaskPoolUpdate(&work[0x7C8]);
+    work += 0x7DC;
+    TaskPoolUpdate(work);
+    return 1;
+}
+
 #ifndef VERSION_EU
 u8 func_0808A7E4(u8* work, void* a) {
     u8 z;
@@ -5000,7 +5169,46 @@ INCLUDE_ASM("card/func_0808A7E4.s");
 #endif
 INCLUDE_ASM("card/func_0808A910.s");
 INCLUDE_ASM("card/func_0808AB48.s");
-INCLUDE_ASM("card/func_0808B068.s");
+
+u8 func_0808B068(u8* work, void* a) {
+    u8* q;
+
+    func_08006120(0, 4);
+    q = &work[0x8B1];
+    *q = 9;
+    ((UnkStruct_0808DB04*)work)->unk_878 = 95;
+    func_0808DB04((void**)work);
+    SetupBg(3, 0, 30, 0);
+    SetupBg(2, 1, 15, 0);
+    SetupBg(1, 2, 23, 0);
+    SetupBg(0, 3, 31, 0);
+    LoadBgMap(0, gUnk_08125E24, 0x800);
+    LoadBgMap(1, gUnk_08125E24, 0x800);
+    LoadBgMap(2, gUnk_08125E24, 0x800);
+    func_0808CDE8(work, work[0x8C0]);
+    LoadBgMap(3, gUnk_09512AB8, 0x800);
+    func_0808E2F0((UnkStruct_0808DB04*)work);
+    func_0808C90C(work);
+    work[0x8C1] = 0;
+    *(s16*)&work[0x884] = 0;
+    ((UnkStruct_0808DB04*)work)->unk_886 = work[0x8C0];
+    func_0808C3DC(work, work[0x8C1]);
+    work[0x8C7] = 0;
+    *q = 1;
+    func_0808CD48(work);
+    func_0805F1C0(&work[0x848], gUnk_090356EC[*(s16*)&work[0x884]] << 8);
+    func_0805F1C0(&work[0x84C], gUnk_090356F2[*(s16*)&work[0x886]] << 8);
+    SetTaskUpdate(a, (void*)func_080889DC);
+    LoadPalette(&gUnk_09614418[32],
+                (void*)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_06 * 32 +
+                        0x05000200),
+                (u16)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_08 << 5));
+    TaskPoolUpdate(&work[0x7C8]);
+    work += 0x7DC;
+    TaskPoolUpdate(work);
+    return 1;
+}
+
 #ifndef VERSION_EU
 u8 func_0808B208(u8* work) {
     if (func_08006314() == 0) {
@@ -9246,7 +9454,48 @@ u8 PrizeBoss_1(u8* work, void* a) {
     TaskPoolUpdate(&work[0x20]);
     return 1;
 }
-INCLUDE_ASM("card/PrizeBoss_2.s");
+
+void PrizeBoss_2(u8* work) {
+    u16 pal;
+    s32 affine;
+    void* gfx;
+    CardBack* back;
+    CardDef* def;
+    s16 v;
+
+    pal = work[0xED] == 0 ? func_0801AF1C(*(s32*)&work[0xAC]) : 0;
+    affine = AllocObjAffine(work[0xE6], *(s16*)&work[0xD0], *(s16*)&work[0xD2], 1);
+    def = &gCardDefs[*(s32*)&work[0xB8]];
+    DrawSprite(*(s16*)&work[0xD6], *(u16*)&work[0xD8] - 8, def->unk_00,
+               *(void**)&work[0x00], *(void**)&work[0x04], affine, pal,
+               (u16)(*(u16*)&work[0xD4] + 1));
+    back = &gUnk_08F709B0[work[0x42]];
+    DrawSprite(*(s16*)&work[0xD6], *(u16*)&work[0xD8] - 8,
+               back->unk_00, *(void**)&work[0x08],
+               *(void**)&work[0x10], affine, pal, *(u16*)&work[0xD4]);
+    gfx = gUnk_09EE981C[work[0x38]];
+
+    if (def->unk_2A != 3) {
+        DrawSprite(*(s16*)&work[0xD6], *(u16*)&work[0xD8] - 8, gfx,
+                   *(void**)&work[0x14], *(void**)&work[0x10], affine, pal,
+                   (u16)(*(u16*)&work[0xD4] - 1));
+    }
+
+    if (work[0xED] == 0) {
+        v = 204 - ((*(s32*)&work[0xB4] - *(s32*)&work[0xB0]) >> 7);
+
+        if (v <= 2) {
+            v = 2;
+        }
+
+        DrawSprite(*(s16*)&work[0xDE], *(s16*)&work[0xE0], gUnk_09EE1380[0],
+                   *(void**)&work[0x18], *(void**)&work[0x1C],
+                   AllocObjAffine(0, v, v, 0), pal,
+                   (u16)(*(u16*)&work[0xD4] + 2));
+    }
+
+    TaskPoolDraw(&work[0x20]);
+}
 
 void PrizeBoss_3(u8* work) {
     func_080062F4((*(UnkStruct_080038C8**)&work[0x10])->unk_06 + 16, 0);
@@ -9580,7 +9829,50 @@ s32 func_08099FFC(void* pool, u16 a, u16 b, u16 c, u16 d, u16 e) {
     args[4] = e;
     return (s32)((void**)TaskCreate(pool, gTaskDescScrollbar, args))[1];
 }
-INCLUDE_ASM("card/func_0809A02C.s");
+
+void func_0809A02C(u8* work, s32* args) {
+    u8* p;
+
+    *(s32*)&work[0x1A0] = args[3];
+    *(s32*)&work[0x38] = args[0];
+    *(s32*)&work[0x3C] = args[1];
+    *(s32*)&work[0x40] = args[2];
+    *(s32*)&work[0x44] = 0;
+    work[0x1C6] = GetRandom();
+    *(s32*)&work[0x1A4] = -(GetRandom() % 129 + 0x300);
+    *(s32*)&work[0x1A8] = GetRandom() % 129 + 0x80;
+    work[0x1C7] = 0;
+    work[0x1C8] = 0;
+    work[0x1C9] = 24;
+    ((UnkStruct_0809A02C*)work)->unk_1B8 = 0x80;
+    *(u16*)&work[0x1BA] = 0x80;
+    *(u16*)&work[0x1BC] = 0x80;
+    work[0x1CA] = 0;
+    work[0x1CB] = 0;
+    work[0x1CC] = 0;
+    *(u16*)&work[0x1C4] = 0;
+    work[0x1CD] = 1;
+    *(CardDef**)&work[0x1C] = &gCardDefs[args[3]];
+
+    if ((*(CardDef**)&work[0x1C])->unk_1E & 8) {
+        ((UnkStruct_0809A02C*)work)->unk_1CE = 3;
+    } else {
+        ((UnkStruct_0809A02C*)work)->unk_1CE = (*(CardDef**)&work[0x1C])->unk_2A;
+    }
+
+    *(void**)&work[4] = LoadObjPalette(gUnk_09611AB8, 32);
+    *(void**)&work[0x10] = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
+    *(void**)&work[8] = LoadObjTiles((*(CardDef**)&work[0x1C])->unk_04, 0x300);
+    *(void**)&work[0xC] = LoadObjPalette((*(CardDef**)&work[0x1C])->unk_08, 32);
+    *(void**)&work[0x14] = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    *(void**)&work[0x18] = LoadObjPalette(gUnk_08F69BA4, 32);
+    p = &work[0x144];
+    func_080122AC(p, 5, 8, 10);
+    func_08012324(p, *(s32*)&work[0x38], *(s32*)&work[0x3C], *(s32*)&work[0x40]);
+    TaskPoolInit(&work[32], 1);
+    gBtlWork->unk_0B0++;
+}
+
 INCLUDE_ASM("card/func_0809A1B8.s");
 INCLUDE_ASM("card/func_0809A368.s");
 
@@ -11772,7 +12064,81 @@ void func_080A3398(u8* p) {
         gUnk_0203A8C0[i] = p[i];
     }
 }
-INCLUDE_ASM("card/func_080A33C4.s");
+
+void func_080A33C4(u8* work, void* a) {
+    vu32 zero;
+
+    zero = 0;
+    CpuSet((void*)&zero, work, 0x05000054);
+    ((UnkStruct_02034AFC*)work)->unk_13C = func_0806BA74(0, 0);
+    *(u64*)&work[0x10C] = *(u64*)a;
+    *(UnkStruct_080A3F5C_Sel**)&work[0x114] =
+        (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&work[0x110]];
+    *(s32*)&work[0x00] = 0;
+    *(s32*)&work[0x04] = 0;
+    *(s32*)&work[0x08] = 0;
+    *(s32*)&work[0x0C] = 0;
+    *(s32*)&work[0x10] = 0;
+    *(s32*)&work[0x14] = 0;
+    *(s32*)&work[0x18] = 0;
+    *(s32*)&work[0x1C] = 0;
+    *(s32*)&work[0xC0] = 0;
+    *(s32*)&work[0x118] =
+        gUnk_09033C98[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04];
+    *(s32*)&work[0x11C] = 0;
+    *(s32*)&work[0x120] = 0;
+    *(s32*)&work[0x124] = 0;
+    *(s32*)&work[0x128] = 0;
+    *(s32*)&work[0x12C] = 0;
+    *(s32*)&work[0x130] = 0;
+    *(s32*)&work[0x134] = 0;
+    *(s32*)&work[0x138] = 0;
+    *(u16*)&work[0x13C] = 0;
+    *(u16*)&work[0x13E] = 0;
+    work[0x140] = 8;
+    work[0x141] = 0;
+    work[0x142] = 0;
+    work[0x143] = 0;
+    work[0x144] = 0;
+    work[0x145] = 0;
+    work[0x146] = 0;
+    work[0x147] = 0;
+    work[0x148] = 1;
+    work[0x149] = 0;
+    work[0x14A] = 0;
+    work[0x14B] = 0;
+    work[0x14C] = 0;
+    work[0x14D] = 0;
+    work[0x14E] = 0;
+    work[0x14F] = 1;
+
+    switch ((u32)(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04) {
+    case 0:
+    case 1:
+        work[0x14D] = 1;
+        break;
+    case 2:
+    case 3:
+        work[0x14D] = 0;
+        break;
+    }
+
+    gUnk_0203A9D4 = 1;
+    gUnk_0203A9D8 = 0;
+    SetBgScroll(*(s32*)&work[0x10C], 0, 0);
+
+    switch (work[0x113]) {
+    case 0:
+    case 1:
+        SetBgPriority(*(s32*)&work[0x10C], 0);
+        break;
+    case 2:
+    case 3:
+        break;
+    }
+
+    gUnk_02034AFC = (UnkStruct_02034AFC*)work;
+}
 
 u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
     UnkStruct_080A3F5C_Entry* tbl;
@@ -12080,7 +12446,75 @@ u8 func_080A42E0(void) {
     return func_080A4DAC();
 }
 INCLUDE_ASM("card/func_080A430C.s");
-INCLUDE_ASM("card/func_080A4578.s");
+
+u8 func_080A4578(u8* work, void* a) {
+    void* pal;
+
+    switch (work[0x113]) {
+    case 0:
+    case 1:
+        pal = &gUnk_050001C0[0x20];
+        LoadBgTiles(*(s32*)&work[0x10C], gUnk_0950E2F8, 0x140);
+        LoadBgMap(*(s32*)&work[0x10C], gUnk_096112B8, 0x800);
+        LoadPalette(gUnk_09611AB8, pal, 32);
+
+        switch ((u32)(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04) {
+        case 0:
+        case 2:
+            SetBgScroll(*(s32*)&work[0x10C], -24, 0);
+            break;
+        case 1:
+        case 3:
+            SetBgScroll(*(s32*)&work[0x10C], -24, -94);
+            break;
+        default:
+            SetBgScroll(*(s32*)&work[0x10C], -24, -94);
+            break;
+        }
+        break;
+    case 2:
+    case 3:
+        switch ((u32)(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04) {
+        case 0:
+        case 2:
+            *(s32*)&work[0x120] = 0x7800;
+            *(s32*)&work[0x124] = 0x2200;
+            break;
+        case 1:
+        default:
+            *(s32*)&work[0x120] = 0x7800;
+            *(s32*)&work[0x124] = 0x7E00;
+            break;
+        }
+
+        *(void**)&work[0x18] = LoadObjTiles(&gUnk_093F8C8E[0xC1E], 0x1800);
+
+        if (*(void**)&work[0x18] == 0) {
+            work[0x147] = 1;
+            *(void**)&work[0x18] = LoadObjTiles(&gUnk_0950E2F8[0x140], 0x680);
+        } else {
+            work[0x147] = 0;
+        }
+
+        *(void**)&work[0x1C] = LoadObjPalette(gUnk_09611AB8, 32);
+        func_080062F4((*(UnkStruct_080038C8**)&work[0x1C])->unk_06 + 16, 1);
+        break;
+    }
+
+    switch (work[0x113]) {
+    case 0:
+    case 2:
+        SetTaskUpdate(a, (void*)func_080A470C);
+        break;
+    case 1:
+    case 3:
+        SetTaskUpdate(a, (void*)func_080A4CC8);
+        break;
+    }
+
+    return 1;
+}
+
 INCLUDE_ASM("card/func_080A470C.s");
 s32 func_080A4910(u8* work) {
     if (*(void**)&work[0x00] != 0) {
