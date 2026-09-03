@@ -15,7 +15,7 @@ task_bos_md_1: @ 080FC6D4
 	movs r0, #0x01
 	str r0, [sp, #0x008]
 	adds r0, r7, #0x0
-	bl _080FC360
+	bl func_080FC360
 	ldr r0, [r7, #0x00]
 	cmp r0, #0x04
 	bhi _080FC740
