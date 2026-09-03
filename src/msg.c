@@ -1,5 +1,5 @@
 #include "macros.h"
-#include "unk_0806180c.h"
+#include "msg.h"
 
 Ent02034A80* gUnk_02034A80;
 Ent080658B8* gUnk_02034A84;
@@ -10,9 +10,9 @@ u8 gUnk_02034A90;
 void func_0806180C(u16 a) {
     ModeRequest(gUnk_09EE274C, a);
 }
-INCLUDE_ASM("unk_0806180c/func_08061824.s");
-INCLUDE_ASM("unk_0806180c/func_08061FC8.s");
-INCLUDE_ASM("unk_0806180c/func_0806250C.s");
+INCLUDE_ASM("msg/func_08061824.s");
+INCLUDE_ASM("msg/func_08061FC8.s");
+INCLUDE_ASM("msg/func_0806250C.s");
 void func_0806297C(void) {
     AnimSet0806180C* m = gUnk_09EE3FB4[gUnk_02034A78];
 
@@ -37,7 +37,7 @@ u8 func_080629CC(void) {
     }
     return 0;
 }
-INCLUDE_ASM("unk_0806180c/func_080629F8.s");
+INCLUDE_ASM("msg/func_080629F8.s");
 void func_08062CE4(void) {
     switch (gUnk_02034A78) {
     case 0x8F:
@@ -95,11 +95,11 @@ void func_08062D64(void) {
         }
     }
 }
-INCLUDE_ASM("unk_0806180c/func_08062DC8.s");
-INCLUDE_ASM("unk_0806180c/func_08062F18.s");
-INCLUDE_ASM("unk_0806180c/func_08063034.s");
-INCLUDE_ASM("unk_0806180c/func_080634C4.s");
-INCLUDE_ASM("unk_0806180c/func_080635C4.s");
+INCLUDE_ASM("msg/func_08062DC8.s");
+INCLUDE_ASM("msg/func_08062F18.s");
+INCLUDE_ASM("msg/func_08063034.s");
+INCLUDE_ASM("msg/func_080634C4.s");
+INCLUDE_ASM("msg/func_080635C4.s");
 void func_08063658(void) {
     func_080635C4();
 
@@ -108,11 +108,11 @@ void func_08063658(void) {
     }
     gUnk_02034A80 = NULL;
 }
-INCLUDE_ASM("unk_0806180c/func_08063678.s");
-INCLUDE_ASM("unk_0806180c/func_08063744.s");
-INCLUDE_ASM("unk_0806180c/func_08063EE4.s");
-INCLUDE_ASM("unk_0806180c/func_08063F60.s");
-INCLUDE_ASM("unk_0806180c/func_080640E0.s");
+INCLUDE_ASM("msg/func_08063678.s");
+INCLUDE_ASM("msg/func_08063744.s");
+INCLUDE_ASM("msg/func_08063EE4.s");
+INCLUDE_ASM("msg/func_08063F60.s");
+INCLUDE_ASM("msg/func_080640E0.s");
 void func_080641CC(u8 i) {
     gUnk_02034A80[i].unk_52 = 0;
 }
@@ -125,22 +125,22 @@ void func_0806420C(void* a, void* b, u8 i) {
     gUnk_02034A80[i].unk_00 = a;
     gUnk_02034A80[i].unk_04 = b;
 }
-INCLUDE_ASM("unk_0806180c/func_0806422C.s");
-INCLUDE_ASM("unk_0806180c/func_080642A8.s");
-INCLUDE_ASM("unk_0806180c/func_08064338.s");
-INCLUDE_ASM("unk_0806180c/func_080643D4.s");
-INCLUDE_ASM("unk_0806180c/func_08064624.s");
+INCLUDE_ASM("msg/func_0806422C.s");
+INCLUDE_ASM("msg/func_080642A8.s");
+INCLUDE_ASM("msg/func_08064338.s");
+INCLUDE_ASM("msg/func_080643D4.s");
+INCLUDE_ASM("msg/func_08064624.s");
 void func_08064B68(void) {
     EwramFree(gUnk_02034A8C);
     gUnk_02034A8C = NULL;
 }
-INCLUDE_ASM("unk_0806180c/func_08064B80.s");
-INCLUDE_ASM("unk_0806180c/func_08064C34.s");
-INCLUDE_ASM("unk_0806180c/func_08064D04.s");
-INCLUDE_ASM("unk_0806180c/func_08064DD4.s");
-INCLUDE_ASM("unk_0806180c/func_08064EF4.s");
-INCLUDE_ASM("unk_0806180c/func_08065170.s");
-INCLUDE_ASM("unk_0806180c/func_080653D4.s");
+INCLUDE_ASM("msg/func_08064B80.s");
+INCLUDE_ASM("msg/func_08064C34.s");
+INCLUDE_ASM("msg/func_08064D04.s");
+INCLUDE_ASM("msg/func_08064DD4.s");
+INCLUDE_ASM("msg/func_08064EF4.s");
+INCLUDE_ASM("msg/func_08065170.s");
+INCLUDE_ASM("msg/func_080653D4.s");
 
 void func_080658B8(u8 n) {
     u8 i;
@@ -214,7 +214,7 @@ u16 func_080659BC(u8 v, TextSlot* out) {
     return func_080660C0(buf, out);
 }
 #else
-INCLUDE_ASM("unk_0806180c/func_080659BC.s");
+INCLUDE_ASM("msg/func_080659BC.s");
 #endif
 void func_08065A30(void** p, u8 n) {
     s32 i;
@@ -258,7 +258,7 @@ u16 func_08065A70(u8 v, TextSlot* out) {
     return func_08065B6C(buf, out);
 }
 #else
-INCLUDE_ASM("unk_0806180c/func_08065A70.s");
+INCLUDE_ASM("msg/func_08065A70.s");
 #endif
 
 void func_08065ACC(TextSlot* p, s32 n) {
@@ -305,7 +305,7 @@ s16 func_08065B08(TextSlot* p, u8 n) {
     return x;
 }
 #else
-INCLUDE_ASM("unk_0806180c/func_08065B08.s");
+INCLUDE_ASM("msg/func_08065B08.s");
 #endif
 
 #ifndef VERSION_JP
@@ -320,7 +320,7 @@ s32 func_08065B54(u16* s) {
     return n;
 }
 #else
-INCLUDE_ASM("unk_0806180c/func_08065B54.s");
+INCLUDE_ASM("msg/func_08065B54.s");
 #endif
 
 #ifndef VERSION_JP
@@ -328,12 +328,12 @@ u16 func_08065B6C(u16* a, TextSlot* b) {
     return func_08065B7C(a, b);
 }
 #else
-INCLUDE_ASM("unk_0806180c/func_08065B6C.s");
+INCLUDE_ASM("msg/func_08065B6C.s");
 #endif
 
-INCLUDE_ASM("unk_0806180c/func_08065B7C.s");
-INCLUDE_ASM("unk_0806180c/func_08065D10.s");
-INCLUDE_ASM("unk_0806180c/func_080660C0.s");
+INCLUDE_ASM("msg/func_08065B7C.s");
+INCLUDE_ASM("msg/func_08065D10.s");
+INCLUDE_ASM("msg/func_080660C0.s");
 void* _08066468(s32 a) {
     void* r = NULL;
 
@@ -359,12 +359,12 @@ void* _08066468(s32 a) {
     }
     return r;
 }
-INCLUDE_ASM("unk_0806180c/func_080664D8.s");
-INCLUDE_ASM("unk_0806180c/func_08066588.s");
-INCLUDE_ASM("unk_0806180c/func_0806662C.s");
-INCLUDE_ASM("unk_0806180c/func_080666F0.s");
-INCLUDE_ASM("unk_0806180c/func_080667D8.s");
-INCLUDE_ASM("unk_0806180c/func_08066864.s");
+INCLUDE_ASM("msg/func_080664D8.s");
+INCLUDE_ASM("msg/func_08066588.s");
+INCLUDE_ASM("msg/func_0806662C.s");
+INCLUDE_ASM("msg/func_080666F0.s");
+INCLUDE_ASM("msg/func_080667D8.s");
+INCLUDE_ASM("msg/func_08066864.s");
 
 void* func_080668F0(void) {
     return LoadObjTiles(gUnk_090D4180, 0x5A0);
@@ -441,7 +441,7 @@ u16 func_0806692C(u8* s, u16* out) {
     return n;
 }
 
-INCLUDE_ASM("unk_0806180c/_080669DC.s");
+INCLUDE_ASM("msg/_080669DC.s");
 
 u16 func_08066AF8(s32 v, u16* out) {
     u8 buf[11];
@@ -472,9 +472,9 @@ u16 func_08066AF8(s32 v, u16* out) {
     return func_0806692C(buf, out);
 }
 
-INCLUDE_ASM("unk_0806180c/_08066B84.s");
-INCLUDE_ASM("unk_0806180c/func_08066DC0.s");
-INCLUDE_ASM("unk_0806180c/func_08066E40.s");
+INCLUDE_ASM("msg/_08066B84.s");
+INCLUDE_ASM("msg/func_08066DC0.s");
+INCLUDE_ASM("msg/func_08066E40.s");
 
 void func_0806BA0C(s16 v, u8* out) {
     s16 acc = 0;
@@ -530,8 +530,8 @@ u16 func_0806BA74(s32 mode, s32 flag) {
     return gUnk_02034A88[0].unk_0C->unk_06;
 }
 
-INCLUDE_ASM("unk_0806180c/func_0806BB44.s");
-INCLUDE_ASM("unk_0806180c/func_0806BDB8.s");
+INCLUDE_ASM("msg/func_0806BB44.s");
+INCLUDE_ASM("msg/func_0806BDB8.s");
 
 void func_0806C2C0(u8 n) {
     u8 i;
@@ -573,7 +573,7 @@ void func_0806C34C(void) {
     EwramFree(gUnk_02034A88);
 }
 
-INCLUDE_ASM("unk_0806180c/_0806C3A0.s");
+INCLUDE_ASM("msg/_0806C3A0.s");
 u16 func_0806C42C(s16 v, u16* out) {
     u8 buf[8];
     u8* p;
@@ -596,9 +596,9 @@ u16 func_0806C42C(s16 v, u16* out) {
     }
     return func_0806692C(buf, out);
 }
-INCLUDE_ASM("unk_0806180c/func_0806C490.s");
-INCLUDE_ASM("unk_0806180c/func_0806C81C.s");
-INCLUDE_ASM("unk_0806180c/func_0806CBAC.s");
+INCLUDE_ASM("msg/func_0806C490.s");
+INCLUDE_ASM("msg/func_0806C81C.s");
+INCLUDE_ASM("msg/func_0806CBAC.s");
 void func_0806CD30(s32 a) {
     switch (a) {
     case 0:
@@ -609,9 +609,9 @@ void func_0806CD30(s32 a) {
         break;
     }
 }
-INCLUDE_ASM("unk_0806180c/func_0806CD60.s");
-INCLUDE_ASM("unk_0806180c/func_0806CF04.s");
-INCLUDE_ASM("unk_0806180c/func_0806D0A8.s");
+INCLUDE_ASM("msg/func_0806CD60.s");
+INCLUDE_ASM("msg/func_0806CF04.s");
+INCLUDE_ASM("msg/func_0806D0A8.s");
 void func_0806D288(ContinueWork* p) {
     DrawSprite(p->unk_50 >> 8, p->unk_54 >> 8, p->unk_18, p->unk_00, p->unk_04, 0, 4, 100);
     DrawSprite(120, 120, p->unk_1C, p->unk_08, p->unk_0C, 0, 0, 100);
@@ -629,8 +629,8 @@ void func_0806D2D0(ContinueWork* p) {
     ReleaseObjPalette(p->unk_14);
     gBldCnt = 0;
 }
-INCLUDE_ASM("unk_0806180c/func_0806D334.s");
-INCLUDE_ASM("unk_0806180c/func_0806D40C.s");
+INCLUDE_ASM("msg/func_0806D334.s");
+INCLUDE_ASM("msg/func_0806D40C.s");
 u8 func_0806D808(void) {
     u8 r = func_08006314();
     u8 v;
@@ -644,7 +644,7 @@ u8 func_0806D808(void) {
     }
     return v;
 }
-INCLUDE_ASM("unk_0806180c/func_0806D830.s");
+INCLUDE_ASM("msg/func_0806D830.s");
 void func_0806D9E8(EventSeqWork* p) {
     TaskPoolDraw(&p->unk_14);
 
@@ -660,9 +660,9 @@ void func_0806DA18(EventSeqWork* p) {
         TaskPoolDestroy(&p->unk_14);
     }
 }
-INCLUDE_ASM("unk_0806180c/func_0806DA34.s");
-INCLUDE_ASM("unk_0806180c/func_0806E184.s");
-INCLUDE_ASM("unk_0806180c/func_0806E400.s");
+INCLUDE_ASM("msg/func_0806DA34.s");
+INCLUDE_ASM("msg/func_0806E184.s");
+INCLUDE_ASM("msg/func_0806E400.s");
 void func_0806E534(Work0806180C* p) {
     TaskPoolDestroy(&p->unk_010);
 
@@ -672,8 +672,8 @@ void func_0806E534(Work0806180C* p) {
         EwramFree(gUnk_02039B84);
     }
 }
-INCLUDE_ASM("unk_0806180c/func_0806E570.s");
-INCLUDE_ASM("unk_0806180c/func_0806E7A8.s");
+INCLUDE_ASM("msg/func_0806E570.s");
+INCLUDE_ASM("msg/func_0806E7A8.s");
 
 void func_0806E9BC(Work0806180C* p) {
     Ent0806E9BC* e = &p->unk_000[p->unk_1A0];
@@ -1264,7 +1264,7 @@ u8 func_0806F898(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-INCLUDE_ASM("unk_0806180c/func_0806F94C.s");
+INCLUDE_ASM("msg/func_0806F94C.s");
 u8 func_0806FA84(Work0806180C* p, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
@@ -1424,7 +1424,7 @@ u8 func_0806FDB0(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-INCLUDE_ASM("unk_0806180c/func_0806FE90.s");
+INCLUDE_ASM("msg/func_0806FE90.s");
 
 void func_08070008(Work0806180C* p) {
     u8 old = p->unk_1AB;
@@ -1440,11 +1440,11 @@ void func_08070008(Work0806180C* p) {
     }
 }
 
-INCLUDE_ASM("unk_0806180c/func_08070058.s");
-INCLUDE_ASM("unk_0806180c/func_080700D4.s");
-INCLUDE_ASM("unk_0806180c/func_0807048C.s");
-INCLUDE_ASM("unk_0806180c/func_08070AD4.s");
-INCLUDE_ASM("unk_0806180c/func_08072914.s");
+INCLUDE_ASM("msg/func_08070058.s");
+INCLUDE_ASM("msg/func_080700D4.s");
+INCLUDE_ASM("msg/func_0807048C.s");
+INCLUDE_ASM("msg/func_08070AD4.s");
+INCLUDE_ASM("msg/func_08072914.s");
 
 void func_08072918(Actor0806180C* a, u8 kind, u8 flag) {
     u16 x;
@@ -1568,11 +1568,11 @@ void func_08072A64(Actor0806180C* a, u8 kind, u8 flag) {
     }
 }
 
-INCLUDE_ASM("unk_0806180c/func_08072B4C.s");
-INCLUDE_ASM("unk_0806180c/func_08072C34.s");
-INCLUDE_ASM("unk_0806180c/func_08072D98.s");
-INCLUDE_ASM("unk_0806180c/func_08072EAC.s");
-INCLUDE_ASM("unk_0806180c/func_08073170.s");
+INCLUDE_ASM("msg/func_08072B4C.s");
+INCLUDE_ASM("msg/func_08072C34.s");
+INCLUDE_ASM("msg/func_08072D98.s");
+INCLUDE_ASM("msg/func_08072EAC.s");
+INCLUDE_ASM("msg/func_08073170.s");
 void func_08073238(MsgWinWork* p) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
 
@@ -1612,10 +1612,10 @@ u8 func_08073294(MsgWinWork* p, void* a) {
     TaskPoolUpdate(p);
     return 1;
 }
-INCLUDE_ASM("unk_0806180c/func_08073318.s");
-INCLUDE_ASM("unk_0806180c/func_0807344C.s");
-INCLUDE_ASM("unk_0806180c/func_08073508.s");
-INCLUDE_ASM("unk_0806180c/func_0807361C.s");
+INCLUDE_ASM("msg/func_08073318.s");
+INCLUDE_ASM("msg/func_0807344C.s");
+INCLUDE_ASM("msg/func_08073508.s");
+INCLUDE_ASM("msg/func_0807361C.s");
 void func_080736F8(MsgWinWork* p) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
 
@@ -1635,8 +1635,8 @@ void func_080736F8(MsgWinWork* p) {
         }
     }
 }
-INCLUDE_ASM("unk_0806180c/func_08073768.s");
-INCLUDE_ASM("unk_0806180c/func_0807388C.s");
+INCLUDE_ASM("msg/func_08073768.s");
+INCLUDE_ASM("msg/func_0807388C.s");
 void func_08073A58(MsgFaceWork* p) {
     s32 t;
     u8 v;
@@ -1678,8 +1678,8 @@ u8 func_08073B54(MsgFaceWork* p, void* a) {
     }
     return 1;
 }
-INCLUDE_ASM("unk_0806180c/func_08073B9C.s");
-INCLUDE_ASM("unk_0806180c/func_08073CA4.s");
+INCLUDE_ASM("msg/func_08073B9C.s");
+INCLUDE_ASM("msg/func_08073CA4.s");
 u8 func_08073DA4(MsgFaceWork* p, void* a) {
     if (p->unk_2C < 0) {
         ApproachValue(&p->unk_2C, -255, p->unk_30);
@@ -1695,7 +1695,7 @@ u8 func_08073DA4(MsgFaceWork* p, void* a) {
     }
     return 1;
 }
-INCLUDE_ASM("unk_0806180c/func_08073E0C.s");
+INCLUDE_ASM("msg/func_08073E0C.s");
 
 void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c) {
     u8 v;
@@ -1762,10 +1762,10 @@ u8 func_08073F78(MsgWaitWork* p) {
     }
     return r;
 }
-INCLUDE_ASM("unk_0806180c/func_08073FB8.s");
-INCLUDE_ASM("unk_0806180c/func_08074040.s");
-INCLUDE_ASM("unk_0806180c/func_08074068.s");
-INCLUDE_ASM("unk_0806180c/func_0807420C.s");
+INCLUDE_ASM("msg/func_08073FB8.s");
+INCLUDE_ASM("msg/func_08074040.s");
+INCLUDE_ASM("msg/func_08074068.s");
+INCLUDE_ASM("msg/func_0807420C.s");
 u8 func_08074330(MsgWaitYesNoWork* p, void* a) {
     p->unk_BC = AnimUpdate(p->unk_DC);
 
@@ -1777,7 +1777,7 @@ u8 func_08074330(MsgWaitYesNoWork* p, void* a) {
     }
     return 1;
 }
-INCLUDE_ASM("unk_0806180c/func_08074380.s");
+INCLUDE_ASM("msg/func_08074380.s");
 void func_080744C8(MsgWaitYesNoWork* p) {
     ReleaseObjTiles(p->unk_04);
     ReleaseObjTiles(p->unk_0C);
@@ -1787,12 +1787,12 @@ void func_080744C8(MsgWaitYesNoWork* p) {
     func_08065AE0(p->unk_1C, 10);
     func_08065AE0(p->unk_6C, 10);
 }
-INCLUDE_ASM("unk_0806180c/func_08074504.s");
+INCLUDE_ASM("msg/func_08074504.s");
 void func_08074564(void) {
     gUnk_03007FF8 |= 2;
     func_08074504();
 }
-INCLUDE_ASM("unk_0806180c/func_0807457C.s");
+INCLUDE_ASM("msg/func_0807457C.s");
 
 void func_080746D8(void) {
     u8 i;
@@ -1802,7 +1802,7 @@ void func_080746D8(void) {
     }
 }
 
-INCLUDE_ASM("unk_0806180c/_080746F8.s");
+INCLUDE_ASM("msg/_080746F8.s");
 void func_08074CF8(void) {
 }
 void func_08074CFC(void) {
@@ -1893,7 +1893,7 @@ u8 func_08074E88(Work08074DC4* p, u8 v) {
     return 0xFF;
 }
 
-INCLUDE_ASM("unk_0806180c/_08074EC8.s");
+INCLUDE_ASM("msg/_08074EC8.s");
 
 void func_08075010(Work08075010* p) {
     u8 i;
