@@ -153,6 +153,11 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None):
         stop = nxt[3] if nxt is not None else code_end
         want = sum(rows[k][2] for k in range(i, j))
         span = max(0, stop - begin)
+        if span == 0:
+            for k in range(i, j):
+                rows[k][4] = "absent"
+            i = j
+            continue
         for k in range(i, j):
             rows[k][3] = begin
             share = rows[k][2] if want == 0 else round(span * rows[k][2] / want / 4) * 4
