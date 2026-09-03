@@ -252,6 +252,7 @@ void func_080E0418(void) {
 }
 
 INCLUDE_ASM("map/func_080E042C.s");
+INCLUDE_ASM("map/func_080E04E0.s");
 
 void func_080E04EC(void) {
     switch (gUnk_0203C590.unk_06) {
