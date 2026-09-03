@@ -1960,6 +1960,12 @@ u8 func_0811394C(StaffRollWork* w) {
     return result;
 }
 
+#ifdef VERSION_JP
+#define STAFFROLL_HOLD_FRAMES 720
+#else
+#define STAFFROLL_HOLD_FRAMES 900
+#endif
+
 u8 func_08113A94(StaffRollWork* w) {
     u8 result;
 
@@ -1992,7 +1998,7 @@ u8 func_08113A94(StaffRollWork* w) {
     case 2:
         w->unk_0C0++;
         if ((gUnk_02039BB0.unk_008 & 8) != 0) {
-            if (w->unk_0C0 >= 900) {
+            if (w->unk_0C0 >= STAFFROLL_HOLD_FRAMES) {
                 w->unk_0BC = 3;
                 w->unk_0C0 = 0;
             }
