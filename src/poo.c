@@ -1,6 +1,35 @@
 #include "poo.h"
 #include "macros.h"
 
+PooWork* gUnk_02034DA8;
+u32 gUnk_02034DAC;
+PooSpawnArgs gUnk_02034DB0;
+u32 gUnk_02034DC4;
+PooPos gUnk_02034DC8;
+s32 gUnk_02034DD8;
+s32 gUnk_02034DDC;
+u8 gUnk_02034DE0;
+u8 gUnk_02034DE1;
+s32 gUnk_02034DE4;
+PooSoraWork* gUnk_02034DE8;
+u16 gUnk_02034DEC;
+s32 gUnk_02034DF0;
+s32 gUnk_02034DF4;
+ListNode gUnk_02034DF8;
+PooPos gUnk_02034E08;
+u16 gUnk_02034E18;
+u32 gUnk_02034E1C;
+PooCamera* gUnk_02034E20;
+u16 gUnk_02034E24;
+u16 gUnk_02034E26;
+u16 gUnk_02034E28;
+u32 gUnk_02034E2C;
+PooBeeAfterEventWork* gUnk_02034E30;
+u16 gUnk_02034E34;
+u16 gUnk_02034E36;
+u16 gUnk_02034E38;
+u16 gUnk_02034E3A;
+
 INCLUDE_ASM("poo/task_poo_pooh_0.s");
 
 INCLUDE_ASM("poo/func_080C871C.s");
@@ -1511,7 +1540,7 @@ PooNode* func_080CCC98(void) {
     PooNode* best;
     PooNode* n;
 
-    best = (PooNode*)func_08000C8C(&gUnk_02034DF8.head);
+    best = (PooNode*)func_08000C8C(&gUnk_02034DF8);
     n = best;
     gUnk_02034DF0 = 0;
 
@@ -1524,7 +1553,7 @@ PooNode* func_080CCC98(void) {
         n = (PooNode*)func_08000CD4(&n->unk_0C);
     }
 
-    if (gUnk_02034DF0 == 0 && best == (PooNode*)func_08000C8C(&gUnk_02034DF8.head)) {
+    if (gUnk_02034DF0 == 0 && best == (PooNode*)func_08000C8C(&gUnk_02034DF8)) {
         return 0;
     }
     return best;

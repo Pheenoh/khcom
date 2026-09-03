@@ -2,6 +2,11 @@
 #include "allmap.h"
 #include "gba/keys.h"
 
+s32 gUnk_02034E84;
+s32 gUnk_02034E88;
+s32 gUnk_02034E8C;
+s32 gUnk_02034E90;
+
 void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
     void* pal;
 

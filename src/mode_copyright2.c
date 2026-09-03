@@ -1,6 +1,8 @@
 #include "macros.h"
 #include "mode_copyright2.h"
 
+u16 gUnk_02034EDC;
+
 void mode_copyright2_0(s32 arg) {
     func_08004DB0();
     SetupBg(0, 0, 0x1F, 0);

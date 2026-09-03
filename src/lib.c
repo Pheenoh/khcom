@@ -2,6 +2,13 @@
 #include "macros.h"
 #include "types.h"
 
+u8* gUnk_02038628;
+s32 gUnk_0203862C;
+s32 gUnk_02038630;
+s32 gUnk_02038634;
+u8 gUnk_02038638[0x20];
+u8 gUnk_02038658[0x40];
+
 void _08117284(void* p);
 void _08117674(void* p);
 void _08117A4C(void* p);

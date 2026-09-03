@@ -2,6 +2,11 @@
 #include "mode_backupstat.h"
 #include "gba/keys.h"
 
+s8 gUnk_02035FE8;
+s8 gUnk_02035FE9;
+BackupStatEntry* gUnk_02035FEC;
+s16 gUnk_02035FF0[10];
+
 void mode_backupstat_0(void) {
     s32 i;
     s32 j;

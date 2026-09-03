@@ -23,7 +23,6 @@ typedef struct UnkStruct_02039BB0 {
 } UnkStruct_02039BB0;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
-extern u16 gUnk_02034EDC;
 extern u8 gUnk_097E05B8[];
 extern u8 gUnk_0984AC38[];
 extern u8 gUnk_09841F98[];

@@ -16,17 +16,6 @@ typedef struct UnkStruct_02039BB0 {
 } UnkStruct_02039BB0;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
-extern u32 gUnk_02034E98;
-extern TaskPool gUnk_02034EA0;
-extern Task* gUnk_02034EB4;
-extern Task* gUnk_02034EB8;
-extern Task* gUnk_02034EBC;
-extern u16 gUnk_02034EC0;
-extern s16 gUnk_02034EC2;
-extern u16 gUnk_02034EC8;
-extern u8* gUnk_02034EC4;
-extern u8 gUnk_02034ECA;
-extern u8 gUnk_02034ECC;
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 extern s32 gUnk_0203C544;

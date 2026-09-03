@@ -1,5 +1,10 @@
 #include "unk_0810fe94.h"
 
+u8 gUnk_02036014;
+s16 gUnk_02036016;
+s16 gUnk_02036018;
+s32 gUnk_0203601C;
+
 void func_0810FE94(void) {
     gUnk_02036014 = 0;
     gUnk_02036016 = 0;

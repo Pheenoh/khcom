@@ -1,6 +1,12 @@
 #include "macros.h"
 #include "mode_allmap.h"
 
+s16 gUnk_02034E3C;
+s16 gUnk_02034E3E;
+u8 gUnk_02034E40[0x40];
+u8 gUnk_02034E80;
+u8 gUnk_02034E81;
+
 #ifndef VERSION_EU
 void mode_allmap_0(s32 a) {
     gUnk_02034E81 = 0;

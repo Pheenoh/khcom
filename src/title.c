@@ -2,6 +2,8 @@
 #include "title.h"
 #include "gba/keys.h"
 
+u8 gUnk_02034ED0;
+
 void task_title_logo_0(TitleLogoWork* work) {
     func_080D62A8(work);
 }
