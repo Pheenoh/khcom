@@ -520,7 +520,7 @@ void func_080065FC(s32 a, s32 b, s32 c);
 void func_08006778(void* a, s32 x, s32 y);
 void func_08006B34(u16 a);
 extern s16 gUnk_02034FF0;
-extern s32 gUnk_0203508C;
+extern u32 gUnk_0203508C;
 extern s16 gUnk_02035090;
 extern s16 gUnk_02035092;
 extern u16 gUnk_02039D30;
