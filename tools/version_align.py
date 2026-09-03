@@ -96,7 +96,7 @@ def main():
     dropped = set()
     per_obj = {}
     for a, e, nm in funcs:
-        if nm in usn:
+        if nm in usn or nm in otn:
             per_obj.setdefault(owner.get(nm), []).append(nm)
     for obj, names in per_obj.items():
         if obj and not any(nm in otn for nm in names):
@@ -108,7 +108,7 @@ def main():
     for i, (a, e, nm) in enumerate(funcs):
         if how[i] == "absent":
             continue
-        if nm in usn and nm in otn:
+        if nm in otn:
             addr[i] = otn[nm]
             how[i] = "named"
 
