@@ -19,7 +19,11 @@ from pathlib import Path
 # written asm: compressed art and audio, FMV, and 0xFF filler. They are real
 # cartridge bytes and the build needs them, but they are not decompilation work,
 # so counting them as unmatched data would report 31 MB as outstanding forever.
-EXCLUDED_UNITS = ("asm/asset_", "asm/padding")
+# rodata_script is the dialogue: 16-bit character cells that this compiler's
+# wide literals cannot produce, indexed by a 32006-entry generated table, and
+# replaced wholesale in the five-language EU build. It came from a text
+# pipeline, not from source, so it is an asset in everything but name.
+EXCLUDED_UNITS = ("asm/asset_", "asm/padding", "asm/rodata_script")
 UNATTRIBUTED_UNITS = ("asm/rodata_",)
 
 DIMENSIONS = {
