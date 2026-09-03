@@ -68,7 +68,7 @@ unk_080fb000.c
 bos5.c
 mode_worldinspect.c -O2 -fprologue-bugfix -fno-common
 mode_worldwarp.c -O2 -fprologue-bugfix -fno-common
-mode_ms.c
+mode_ms.c -O2 -fprologue-bugfix -fno-common
 unk_08104a84.c
 mode_ms2.c
 mode_mapinspect.c
