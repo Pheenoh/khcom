@@ -1384,8 +1384,10 @@ const char gUnk_0812DE78[16] = "card_itm01.acl";
 const char gUnk_0812DE88[16] = "card_itm01.aob";
 const char gUnk_0812DE98[12] = "card_00.acl";
 const char gUnk_0812DEA4[20] = "ri_card_f0_red.aob";
+#ifndef VERSION_EU
 const char gUnk_0812DEB8[16] = "b_hpgag_e.aob";
 const char gUnk_0812DEC8[12] = "b_hpgag.aob";
+#endif
 const char gUnk_0812DED4[16] = "b_puraizu.aob";
 const char gUnk_0812DEE4[12] = "saku.aob";
 const char gUnk_0812DEF0[12] = "knife.acl";
@@ -1519,6 +1521,12 @@ const char gUnk_0812E714[16] = "riku_bt04.aob";
 const char gUnk_0812E724[16] = "riku_bt02.aob";
 const char gUnk_0812E734[16] = "riku_bt00.aob";
 
+#ifdef VERSION_EU
+#define CHKOBJ_ETC_COUNT 5
+#else
+#define CHKOBJ_ETC_COUNT 7
+#endif
+
 const ChkObjEntry gChkObjEntries[10] = {
     { gUnk_09ECEB74, 0x3F, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x72\x82\x6e\x82\x71\x82\x60" },
     { gUnk_09ED82D4, 0x1B, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x71\x82\x68\x82\x6a\x82\x74" },
@@ -1528,7 +1536,7 @@ const ChkObjEntry gChkObjEntries[10] = {
     { gUnk_09ED1774, 0x186, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x82\x64\x82\x75\x82\x64\x82\x6d\x82\x73" },
     { gUnk_09ED4834, 0xA8, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x65\x82\x60\x82\x62\x82\x64" },
     { gUnk_09ED5D34, 0xCE, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x62\x82\x60\x82\x71\x82\x63" },
-    { gUnk_09ED76F4, 0x7, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x64\x82\x73\x82\x62" },
+    { gUnk_09ED76F4, CHKOBJ_ETC_COUNT, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x64\x82\x73\x82\x62" },
     { gUnk_09ED77D4, 0x58, 0, "\x81\x40\x82\x6f\x82\x6e\x82\x6e\x82\x67\x82\x66\x82\x60\x82\x6c\x82\x64" },
 };
 

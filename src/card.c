@@ -5026,6 +5026,7 @@ INCLUDE_ASM("card/func_080892E8.s");
 INCLUDE_ASM("card/func_08089558.s");
 INCLUDE_ASM("card/func_080897CC.s");
 
+#ifndef VERSION_EU
 u8 func_08089D20(u8* work, void* a) {
     u8* q;
 
@@ -5064,6 +5065,9 @@ u8 func_08089D20(u8* work, void* a) {
     TaskPoolUpdate(work);
     return 1;
 }
+#else
+INCLUDE_ASM("card/func_08089D20.s");
+#endif
 
 INCLUDE_ASM("card/func_08089EC0.s");
 #ifdef NON_MATCHING
@@ -5094,6 +5098,7 @@ INCLUDE_ASM("card/func_0808A114.s");
 #endif
 INCLUDE_ASM("card/func_0808A218.s");
 
+#ifndef VERSION_EU
 u8 func_0808A650(u8* work, void* a) {
     func_08006120(0, 4);
     ((UnkStruct_0808DB04*)work)->unk_878 = 95;
@@ -5128,6 +5133,9 @@ u8 func_0808A650(u8* work, void* a) {
     TaskPoolUpdate(work);
     return 1;
 }
+#else
+INCLUDE_ASM("card/func_0808A650.s");
+#endif
 
 #ifndef VERSION_EU
 u8 func_0808A7E4(u8* work, void* a) {
@@ -5170,6 +5178,7 @@ INCLUDE_ASM("card/func_0808A7E4.s");
 INCLUDE_ASM("card/func_0808A910.s");
 INCLUDE_ASM("card/func_0808AB48.s");
 
+#ifndef VERSION_EU
 u8 func_0808B068(u8* work, void* a) {
     u8* q;
 
@@ -5208,6 +5217,9 @@ u8 func_0808B068(u8* work, void* a) {
     TaskPoolUpdate(work);
     return 1;
 }
+#else
+INCLUDE_ASM("card/func_0808B068.s");
+#endif
 
 #ifndef VERSION_EU
 u8 func_0808B208(u8* work) {

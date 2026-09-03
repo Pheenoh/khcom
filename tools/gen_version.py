@@ -29,6 +29,24 @@ ROM_BASE = 0x08000000
 CODE_HI = 0x08121330
 ROM_END = 0x0A000000
 
+TARGET_ANCHORS = {
+    "eu": {
+        0x02034890: 0x02034898,
+        0x09ED77D4: 0x09F476C8,
+        0x09ED82D4: 0x09F481C8,
+    },
+}
+
+TARGET_DATA_SIZE = {
+    "eu": {
+        ("mode_battle.c", ".rodata"): 0x914,
+        ("mode_debug.c", ".rodata"): 0x1F4,
+        ("mode_chkobj.c", ".rodata"): 0x6350,
+        ("mode_chksnd.c", ".rodata"): 0x20E8,
+        ("mode_dummy.c", ".rodata"): 0x19C,
+    },
+}
+
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)/([^"/]+)\.s"\)')
 
 THUMB = """.syntax unified
@@ -285,10 +303,13 @@ def main():
     def clean(r):
         return r[0] in flexible or identical(r)
 
+    anchors = TARGET_ANCHORS.get(ver, {})
+
     provisional = [r for r in rows if r[3] is not None]
     guess_end = provisional[-1][3] + (CODE_HI - provisional[-1][1])
     rows = complete(rows, guess_end, flexible, owner, clean)
     res = symbol_map(rows, us, ot)
+    res.update(anchors)
     tr = translator(res)
 
     code_end, how_end = tr(CODE_HI)
@@ -296,6 +317,7 @@ def main():
         rows = load_funcmap(f"config/{ver}/funcmap.txt")
         rows = complete(rows, code_end, flexible, owner, clean)
         res = symbol_map(rows, us, ot)
+        res.update(anchors)
         tr = translator(res)
     print(f"{ver}: code region {rows[0][3]:#x} .. {code_end:#x} ({how_end})")
 
@@ -443,7 +465,8 @@ def main():
                 continue
             lo, size = spans[(nm, sec[:-1])]
             here, _ = tr(lo)
-            cdata.append((here, here + size, line))
+            size = TARGET_DATA_SIZE.get(ver, {}).get((nm, sec[:-1]), size)
+            cdata.append((here, size, line))
             continue
         if not t or t.startswith("#") or t.endswith(".s"):
             head.append(line)
@@ -461,13 +484,14 @@ def main():
 
     tail, bounds = [], []
     pos = code_end
-    for lo, hi, line in sorted(cdata):
+    for lo, size, line in sorted(cdata):
         if lo > pos:
             nm = "data.s" if not bounds else f"data{len(bounds) + 1}.s"
             bounds.append((nm, pos, lo))
             tail.append(f"{nm}(.rodata)")
+            pos = lo
         tail.append(line)
-        pos = hi
+        pos += size
     nm = "data.s" if not bounds else f"data{len(bounds) + 1}.s"
     bounds.append((nm, pos, ROM_END))
     tail.append(f"{nm}(.rodata)")
