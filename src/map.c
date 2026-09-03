@@ -11,7 +11,9 @@ u16 gUnk_02034F2E;
 void* gUnk_02034F30;
 UnkStruct_02034F34* gUnk_02034F34;
 u8* gUnk_02034F38;
+#ifndef VERSION_EU
 u8 gUnk_02034F3C[4];
+#endif
 u8 gUnk_02034F40;
 u8 gUnk_02034F41;
 u8 gUnk_02034F42;

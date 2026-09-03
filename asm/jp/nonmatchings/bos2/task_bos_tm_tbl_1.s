@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global task_bos_tm_tbl_1
 	.thumb

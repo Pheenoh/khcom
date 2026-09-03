@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global func_080104F4
 	.thumb

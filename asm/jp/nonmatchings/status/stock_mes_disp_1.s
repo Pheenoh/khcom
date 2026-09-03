@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global stock_mes_disp_1
 	.thumb

@@ -3,6 +3,9 @@
 
 void* gUrsulaWork;
 UrsulaMapanimeWork* gUrsulaMapanimeWork;
+#ifdef VERSION_EU
+u32 gUnkEu_02035104;
+#endif
 MapChkWork* gMapChkWork;
 UnkStruct_02034F18* gUnk_02034F18;
 
@@ -2106,6 +2109,10 @@ void func_080DD9B0(UrsulaBubbleWork* work) {
         }
     }
 }
+
+#ifdef VERSION_EU
+INCLUDE_ASM("bos4/eu_080DA80C.s");
+#endif
 
 void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
     work->unk_13C = *arg;

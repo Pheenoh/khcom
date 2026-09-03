@@ -4,7 +4,9 @@
 Ent02034A80* gUnk_02034A80;
 Ent080658B8* gUnk_02034A84;
 Ent080658B8* gUnk_02034A88;
+#ifndef VERSION_EU
 void* gUnk_02034A8C;
+#endif
 u8 gUnk_02034A90;
 
 void func_0806180C(u16 a) {
@@ -130,10 +132,14 @@ INCLUDE_ASM("msg/func_080642A8.s");
 INCLUDE_ASM("msg/func_08064338.s");
 INCLUDE_ASM("msg/func_080643D4.s");
 INCLUDE_ASM("msg/func_08064624.s");
+#ifndef VERSION_EU
 void func_08064B68(void) {
     EwramFree(gUnk_02034A8C);
     gUnk_02034A8C = NULL;
 }
+#else
+INCLUDE_ASM("msg/func_08064B68.s");
+#endif
 INCLUDE_ASM("msg/func_08064B80.s");
 INCLUDE_ASM("msg/func_08064C34.s");
 INCLUDE_ASM("msg/func_08064D04.s");

@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global _08117A4C
 _08117A4C:

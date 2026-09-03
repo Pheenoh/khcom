@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global umul3232H32
 	.thumb

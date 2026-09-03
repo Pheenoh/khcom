@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global _08019CB4
 _08019CB4:

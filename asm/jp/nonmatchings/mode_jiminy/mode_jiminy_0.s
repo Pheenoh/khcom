@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global mode_jiminy_0
 	.thumb

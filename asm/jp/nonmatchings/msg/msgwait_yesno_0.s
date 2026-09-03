@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global msgwait_yesno_0
 	.thumb

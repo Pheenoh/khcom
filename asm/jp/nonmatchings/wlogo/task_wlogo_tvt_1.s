@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global task_wlogo_tvt_1
 	.thumb

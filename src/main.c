@@ -39,6 +39,9 @@ u16 gSystemFlags;
 u8 gUnk_03006C7A[6];
 u8 gIntrHandler[0x800];
 u32 gFrameCounter;
+#ifdef VERSION_EU
+u32 gUnkEu_03007484;
+#endif
 IntrFunc gVBlankHandlerOverride;
 
 extern u8 sEwramHeapName[];

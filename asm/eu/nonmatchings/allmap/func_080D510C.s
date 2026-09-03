@@ -1,0 +1,10 @@
+.syntax unified
+	.text
+	.align 2, 0
+	.global func_080D510C
+	.thumb
+	.thumb_func
+	.type func_080D510C, %function
+func_080D510C:
+	.incbin "roms/B8CP.gba", 0xd1950, 0xcc
+.syntax divided

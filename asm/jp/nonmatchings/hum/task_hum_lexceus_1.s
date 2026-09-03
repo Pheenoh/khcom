@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global task_hum_lexceus_1
 	.thumb

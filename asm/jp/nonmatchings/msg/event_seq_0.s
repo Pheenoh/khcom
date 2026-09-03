@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global event_seq_0
 	.thumb

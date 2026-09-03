@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global DarkPoint_2
 	.thumb

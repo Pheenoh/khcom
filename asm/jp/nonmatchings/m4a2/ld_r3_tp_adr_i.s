@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global ld_r3_tp_adr_i
 	.thumb

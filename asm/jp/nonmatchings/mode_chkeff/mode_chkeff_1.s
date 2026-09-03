@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global mode_chkeff_1
 	.thumb

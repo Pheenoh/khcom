@@ -2,9 +2,11 @@
 #include "mode_test.h"
 #include "gba/keys.h"
 
+#ifndef VERSION_EU
 void* gUnk_02034A08;
 void* gUnk_02034A0C;
 s32 gUnk_02034A10;
+#endif
 u32 gUnk_02034A14;
 u8 gUnk_02034A18;
 UnkStruct_02034A1C* gUnk_02034A1C;
@@ -25,12 +27,15 @@ u8 gUnk_02034A74;
 s32 gUnk_02034A78;
 u8 gUnk_02034A7C;
 
+#ifndef VERSION_EU
 void mode_test_0(void) {
     gUnk_02034A10 = 0;
     gUnk_02034A08 = LoadObjTiles(gUnk_08B24DAA, 0x7C0);
     gUnk_02034A0C = LoadObjPalette(gUnk_08F69BA4, 0x20);
 }
+#endif
 
+#ifndef VERSION_EU
 void mode_test_1(void) {
     if (GetKeysRepeat() & DPAD_LEFT) {
         gUnk_02034A10--;
@@ -48,15 +53,22 @@ void mode_test_1(void) {
 
     DrawSprite(120, 80, gUnk_09EE14D4[gUnk_02034A10], gUnk_02034A08, gUnk_02034A0C, 0, 0, 0);
 }
+#endif
 
+#ifndef VERSION_EU
 void mode_test_2(void) {
     ReleaseObjTiles(gUnk_02034A08);
     ReleaseObjPalette(gUnk_02034A0C);
 }
+#endif
 
 void func_0805F1C0(s32* p, s32 v) {
     *p += (v - *p) >> 1;
 }
+
+#ifdef VERSION_EU
+INCLUDE_ASM("mode_test/eu_08060C44.s");
+#endif
 
 void task_lockon_0(LockonWork* w) {
     s32 i;

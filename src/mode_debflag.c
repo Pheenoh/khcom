@@ -4,6 +4,9 @@
 s8 gUnk_020348C0;
 s8 gUnk_020348C1;
 const DebugFlag* gUnk_020348C4;
+#ifdef VERSION_EU
+u32 gUnkEu_020348D4;
+#endif
 #include "gba/keys.h"
 
 const DebugFlag gUnk_08130BE8[14] = {

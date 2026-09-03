@@ -9,7 +9,9 @@ u16 gUnk_020348D8[2];
 u16 gUnk_020348DC[2];
 u16 gUnk_020348E0;
 u16 gUnk_020348E2;
+#ifndef VERSION_EU
 u8 gUnk_020348E4[4];
+#endif
 ListNode gUnk_020348E8;
 ListNode gUnk_020348F8;
 ListNode gUnk_02034908;

@@ -5,8 +5,10 @@
 SioBtlConnectWork* gSioBtlConnectWork;
 SioBtlOptionWork* gSioBtlOptionWork;
 SioBtlCardgetWork* gSioBtlCardgetWork;
+#ifndef VERSION_EU
 SioBtlConnectWork* gSioChgConnectWork;
 SioChgCardWork* gSioChgCardWork;
+#endif
 SioErrorWork* gSioErrorWork;
 u8 gUnk_02034B54[4];
 u8 gUnk_02034B58;
@@ -15,6 +17,11 @@ u8 gUnk_02034B5A;
 u8 gUnk_02034B5B;
 u8 gUnk_02034B5C[4];
 TextSlot gUnk_02034B60[20];
+#ifdef VERSION_EU
+SioBtlConnectWork* gSioChgConnectWork;
+SioChgCardWork* gSioChgCardWork;
+u8 gUnkEu_02034C18[0x1D8];
+#endif
 void* gUnk_02034C00;
 u8 gUnk_02034C04[4];
 u8 gUnk_02034C08[20];
@@ -1274,6 +1281,7 @@ void func_080B1974(void) {
 INCLUDE_ASM("mode_sio/func_080B1974.s");
 #endif
 
+#ifndef VERSION_EU
 void mode_sio_chg_connect_0(s32 arg) {
     gSioChgConnectWork = EwramAlloc(sizeof(SioBtlConnectWork));
     func_08006120(0, 16);
@@ -1298,7 +1306,9 @@ void mode_sio_chg_connect_0(s32 arg) {
     func_08006E60();
     func_080C5A3C(func_080B1BE0, func_080B1BFC, 1);
 }
+#endif
 
+#ifndef VERSION_EU
 void mode_sio_chg_connect_1(void) {
     switch (gSioChgConnectWork->unk_04) {
     case 0:
@@ -1319,12 +1329,15 @@ void mode_sio_chg_connect_1(void) {
     }
     func_080664D8(61, 68, gSioChgConnectWork->unk_08, gSioChgConnectWork->unk_2D8, 20, gSioChgConnectWork->unk_05);
 }
+#endif
 
+#ifndef VERSION_EU
 void mode_sio_chg_connect_2(void) {
     ReleaseObjPalette(gSioChgConnectWork->unk_2D8);
     func_08065AE0(gSioChgConnectWork->unk_08, 0x5A);
     EwramFree(gSioChgConnectWork);
 }
+#endif
 
 void func_080B1BE0(void) {
     m4aSongNumStart(0x6A);
@@ -1361,6 +1374,7 @@ void func_080B1C70(u16 a, u16 b, u16 c) {
     func_08002A10(gSioChgCardWork->unk_008[a], def->unk_08);
 }
 
+#ifndef VERSION_EU
 void mode_sio_chg_card_0(s32 arg) {
     gSioChgCardWork = EwramAlloc(sizeof(SioChgCardWork));
     SetBgMode0();
@@ -1389,6 +1403,7 @@ void mode_sio_chg_card_0(s32 arg) {
     gSioChgCardWork->unk_202 = arg;
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((arg + 1) & 0x0FFF);
 }
+#endif
 
 void func_080B1DDC(void) {
     RequestDma3Copy(gUnk_096B4BE4, (u8*)GetBgCharBase(0) + 0x2000, 0x11C0);
@@ -1489,6 +1504,7 @@ void func_080B1E70(void) {
     gSioChgCardWork->unk_001++;
 }
 
+#ifndef VERSION_EU
 void mode_sio_chg_card_1(void) {
     switch (gSioChgCardWork->unk_001) {
     case 0:
@@ -1547,6 +1563,7 @@ void mode_sio_chg_card_1(void) {
         break;
     }
 }
+#endif
 
 void func_080B2420(void) {
     gSioChgCardWork->unk_004++;
@@ -1797,6 +1814,7 @@ void func_080B2B78(void) {
     }
 }
 
+#ifndef VERSION_EU
 void mode_sio_chg_card_2(void) {
     s32 i;
     ReleaseObjTiles(gSioChgCardWork->unk_008[0]);
@@ -1820,6 +1838,7 @@ void mode_sio_chg_card_2(void) {
     TaskPoolDestroy(gSioChgCardWork->unk_BE4);
     EwramFree(gSioChgCardWork);
 }
+#endif
 
 void func_080B2CD0(void) {
     s32 i;

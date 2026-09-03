@@ -32,6 +32,7 @@ ROM_END = 0x0A000000
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)/([^"/]+)\.s"\)')
 
 THUMB = """.syntax unified
+	.text
 {align}\t.global {name}
 \t.thumb
 \t.thumb_func
@@ -42,6 +43,7 @@ THUMB = """.syntax unified
 """
 
 DATA = """.syntax unified
+	.text
 {align}\t.global {name}
 {name}:
 \t.incbin "roms/{code}.gba", {off:#x}, {size:#x}
@@ -49,6 +51,7 @@ DATA = """.syntax unified
 """
 
 EMPTY = """.syntax unified
+	.text
 \t.global {name}
 \t.thumb
 \t.thumb_func
@@ -128,7 +131,9 @@ def load_funcmap(path):
     return rows
 
 
-def complete(rows, code_end, flexible):
+def complete(rows, code_end, flexible, unit_of=None, clean=None):
+    unit_of = unit_of or {}
+    clean = clean or (lambda r: True)
     n = len(rows)
     i = 0
     while i < n:
@@ -161,6 +166,10 @@ def complete(rows, code_end, flexible):
     for k, r in enumerate(present):
         nxt = present[k + 1][3] if k + 1 < len(present) else code_end
         if r[0] in flexible:
+            if (k and r[3] > pos and r[4] != "-"
+                    and unit_of.get(r[0]) != unit_of.get(present[k - 1][0])
+                    and clean(present[k - 1])):
+                pos = r[3]
             start[id(r)] = pos
             size[id(r)] = max(0, nxt - pos)
             pos = nxt
@@ -190,10 +199,23 @@ def symbol_map(rows, us, ot):
                 pairs.setdefault(w1, {})
                 pairs[w1][w2] = pairs[w1].get(w2, 0) + 1
     res = {}
+    tied = {}
     for k, v in pairs.items():
         best = sorted(v.items(), key=lambda x: -x[1])
         if len(best) == 1 or best[0][1] > 2 * best[1][1]:
             res[k] = best[0][0]
+        else:
+            tied[k] = [w for w, _n in best]
+    keys = sorted(res)
+    for k, cands in tied.items():
+        i = bisect.bisect_left(keys, k)
+        near = [keys[j] for j in (i - 1, i) if 0 <= j < len(keys)]
+        if not near:
+            continue
+        deltas = {res[n] - n for n in near}
+        pick = [w for w in cands if w - k in deltas]
+        if len(pick) == 1:
+            res[k] = pick[0]
     return res
 
 
@@ -249,17 +271,39 @@ def main():
         for tu, name in active_includes(f, ver):
             flexible.add(name)
 
+    def identical(r):
+        a = us[r[1] - ROM_BASE:r[1] - ROM_BASE + r[2]]
+        b = ot[r[3] - ROM_BASE:r[3] - ROM_BASE + r[2]]
+        return mask(a) == mask(b)
+
+    def clean(r):
+        return r[0] in flexible or identical(r)
+
     provisional = [r for r in rows if r[3] is not None]
     guess_end = provisional[-1][3] + (CODE_HI - provisional[-1][1])
-    rows = complete(rows, guess_end, flexible)
-    tr = translator(symbol_map(rows, us, ot))
+    rows = complete(rows, guess_end, flexible, owner, clean)
+    res = symbol_map(rows, us, ot)
+    tr = translator(res)
 
     code_end, how_end = tr(CODE_HI)
     if code_end != guess_end:
         rows = load_funcmap(f"config/{ver}/funcmap.txt")
-        rows = complete(rows, code_end, flexible)
-        tr = translator(symbol_map(rows, us, ot))
+        rows = complete(rows, code_end, flexible, owner, clean)
+        res = symbol_map(rows, us, ot)
+        tr = translator(res)
     print(f"{ver}: code region {rows[0][3]:#x} .. {code_end:#x} ({how_end})")
+
+    present = sorted((r for r in rows if r[5]), key=lambda r: r[3])
+    gaps = {}
+    for a, b in zip(present, present[1:]):
+        end = a[3] + a[5]
+        if b[3] <= end:
+            continue
+        kind = "boundary" if owner.get(a[0]) != owner.get(b[0]) else "inside"
+        word = struct.unpack_from("<I", ot, end - ROM_BASE)[0]
+        if b[3] - end == 4 and (word >> 24) in (0x02, 0x03, 0x08, 0x09):
+            kind = "pool"
+        gaps[end] = (b[3] - end, kind, a, b, clean(a))
 
     out, uncertain = [], []
     for line in Path("config/us/symbols.txt").read_text().splitlines():
@@ -281,8 +325,25 @@ def main():
     asm_root = Path(f"asm/{ver}/nonmatchings")
     wrote = missing = absent = 0
     kept = set()
+    filled = set()
     for src in sorted(Path("src").glob("*.c")):
         for tu, name in active_includes(src, ver):
+            m = re.fullmatch(f"{ver}_([0-9A-Fa-f]{{8}})", name)
+            if m:
+                at = int(m.group(1), 16)
+                gap = gaps.get(at)
+                d = asm_root / tu
+                d.mkdir(parents=True, exist_ok=True)
+                if gap is None:
+                    (d / f"{name}.s").write_text(EMPTY.format(name=name))
+                else:
+                    filled.add(at)
+                    (d / f"{name}.s").write_text(
+                        THUMB.format(name=name, code=code, off=at - ROM_BASE, size=gap[0],
+                                     align="\t.align 2, 0\n" if at % 4 == 0 else ""))
+                kept.add(d / f"{name}.s")
+                wrote += 1
+                continue
             r = byname.get(name)
             if r is None:
                 missing += 1
@@ -314,6 +375,34 @@ def main():
 
     Path(f"asm/{ver}").mkdir(parents=True, exist_ok=True)
 
+    fillers = []
+    slack = 0
+    for at, (size, kind, a, b, clean) in sorted(gaps.items()):
+        unit = owner.get(a[0], "?").rsplit("/", 1)[-1][:-2]
+        if kind == "boundary":
+            nm = f"{ver}_{at:08X}.s"
+            Path(f"asm/{ver}/{nm}").write_text(
+                THUMB.format(name=nm[:-2], code=code, off=at - ROM_BASE, size=size,
+                             align="\t.align 2, 0\n" if at % 4 == 0 else ""))
+            fillers.append((at, nm))
+            print(f"  filler {nm}: {size:#x} bytes after {a[0]} ({unit})")
+        elif at in filled:
+            pass
+        elif kind == "pool":
+            print(f"  gap {size:#x} at {at:#x} inside {unit} after {a[0]}: a pool word,"
+                  f" so {a[0]} is longer in {ver}")
+        elif clean:
+            print(f"  gap {size:#x} at {at:#x} inside {unit} after {a[0]} before {b[0]}:"
+                  f" needs INCLUDE_ASM(\"{unit}/{ver}_{at:08X}.s\")")
+        else:
+            slack += size
+    if slack:
+        print(f"  slack after divergent functions: {slack:#x} bytes")
+    fresh = {nm for _at, nm in fillers}
+    for old in Path(f"asm/{ver}").glob(f"{ver}_*.s"):
+        if old.name not in fresh:
+            old.unlink()
+
     def unit_key(name):
         if name.startswith("@"):
             arch, member = name[1:].split(":")
@@ -326,6 +415,8 @@ def main():
                        if owner.get(r[0]) == obj and r[5] and r[4] == "named")
         addrs = named or sorted(r[3] for r in rows
                                 if owner.get(r[0]) == obj and r[5])
+        if not addrs and any(owner.get(r[0]) == obj for r in rows):
+            return "absent"
         return addrs[len(addrs) // 2] if addrs else None
 
     placed = re.compile(r"^ (\.\w+) +0x(0[89][0-9a-f]{6}) +0x([0-9a-f]+) "
@@ -352,7 +443,12 @@ def main():
             head.append(line)
             continue
         body.append((unit_key(t.split()[0]), line))
-    ordered = [l for k, l in sorted(body, key=lambda kl: (kl[0] is None, kl[0]))]
+    dropped = [l for k, l in body if k == "absent"]
+    for l in dropped:
+        print(f"  unit dropped: {l}")
+    body = [(k, l) for k, l in body if k != "absent"]
+    body += [(at, nm) for at, nm in fillers]
+    ordered = [l for k, l in sorted(body, key=lambda kl: (kl[0] is None, kl[0] or 0))]
     moved = [l for (k, l), l2 in zip(body, ordered) if l != l2]
     if moved:
         print(f"  units reordered: {len(moved)}")

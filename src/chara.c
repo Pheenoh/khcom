@@ -841,6 +841,10 @@ s32 func_080C6378(void) {
     return 0;
 }
 
+#ifdef VERSION_EU
+INCLUDE_ASM("chara/eu_080C273C.s");
+#endif
+
 void func_080C640C(CharaObjParam2* param) {
     s32 i;
 
