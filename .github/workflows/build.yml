@@ -47,14 +47,14 @@ jobs:
           ninja
 
       - name: Generate progress report
-        if: github.event_name == 'push' && matrix.version != 'eu'
+        if: github.event_name == 'push'
         run: |
           python3 -m mapfile_parser objdiff_report report.json --version ${{ matrix.version }}
           python3 tools/normalize_report.py report.json
           python3 tools/check_report.py report.json
 
       - name: Upload progress report artifact
-        if: github.event_name == 'push' && matrix.version != 'eu'
+        if: github.event_name == 'push'
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.version }}_report
