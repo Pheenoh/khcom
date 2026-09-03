@@ -24,12 +24,12 @@ typedef struct EvtObjResTable {
 
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
-    u32 unk_008;
+    u32 flags;
     u8 unk_00C[0x16E];
     u16 unk_17A;
     u16 unk_17C;
     u8 unk_17E[0x5E];
-    u32 unk_1DC;
+    u32 playTime;
 } UnkStruct_02039BB0;
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;

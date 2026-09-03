@@ -158,10 +158,10 @@ typedef struct UnkStruct_02039BF0 {
 typedef struct UnkStruct_02039BB0 {
     u8 unk_00;
     u8 unk_01[0x07];
-    u32 unk_08;
-    u8 unk_0C;
+    u32 flags;
+    u8 world;
     u8 unk_0D;
-    u8 unk_0E;
+    u8 floor;
     u8 unk_0F;
     u8 unk_10[0x04];
     s32 unk_14;

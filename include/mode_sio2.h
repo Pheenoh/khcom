@@ -23,7 +23,7 @@ typedef struct PoohPrizeArgs {
 } PoohPrizeArgs;
 typedef struct PoohSetup {
     u8 unk_00[0x0C];
-    u8 unk_0C;
+    u8 world;
 } PoohSetup;
 
 typedef struct CharaLinkData {

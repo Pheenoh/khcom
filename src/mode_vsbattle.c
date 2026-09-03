@@ -346,7 +346,7 @@ u8 _0800CBDC(EmyWork* work) {
 void func_0800CD40(EmyWork* work) {
     VsActor* actor = &work->unk_03C;
 
-    if (gUnk_02039BB0.unk_008 & 4) {
+    if (gUnk_02039BB0.flags & 4) {
         actor->unk_34 |= 0x4002;
 
         if (gUnk_02039BB0.unk_1B8 == 3) {

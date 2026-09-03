@@ -465,9 +465,9 @@ void task_btl_sora_3(BtlSoraWork* work) {
 
     if (!(gUnk_02039B84->unk_068 & 0x4000)) {
         if (*(s32*)&gUnk_02039B84->unk_0A0 == 3) {
-            gUnk_02039BB0.unk_032 = gUnk_02039BB0.unk_0F8;
+            gUnk_02039BB0.hp = gUnk_02039BB0.maxHp;
         } else {
-            gUnk_02039BB0.unk_032 = p->unk_2C;
+            gUnk_02039BB0.hp = p->unk_2C;
         }
     }
     func_08012304(&p->unk_40);
@@ -912,7 +912,7 @@ void func_08028468(BtlRikuWork* work) {
 }
 
 void func_080284C8(s16 a) {
-    if (gUnk_02039BB0.unk_008 & 0x100) {
+    if (gUnk_02039BB0.flags & 0x100) {
         return;
     }
     gUnk_02039B84->unk_1C8 += a;
@@ -932,9 +932,9 @@ void task_btl_riku_3(BtlRikuWork* work) {
     p = &work->unk_044;
 
     if (*(s32*)&gUnk_02039B84->unk_0A0 == 3) {
-        gUnk_02039BB0.unk_032 = gUnk_02039BB0.unk_0F8;
+        gUnk_02039BB0.hp = gUnk_02039BB0.maxHp;
     } else {
-        gUnk_02039BB0.unk_032 = p->unk_2C;
+        gUnk_02039BB0.hp = p->unk_2C;
     }
     func_08012304(&p->unk_40);
     func_080277E4(work);

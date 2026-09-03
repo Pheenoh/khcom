@@ -392,7 +392,7 @@ void func_080C774C(void) {
 void mode_pooh_0(s32 arg) {
     s32 i;
 
-    gUnk_02039BB0.unk_0C = 13;
+    gUnk_02039BB0.world = 13;
 
     if (arg == 0) {
         func_080D2BE0();

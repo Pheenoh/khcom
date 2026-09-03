@@ -76,7 +76,7 @@ void mode_battle_0(u32 mode) {
     func_08019270();
     func_0801C068();
     gUnk_02039B84->unk_10C = mode;
-    gUnk_02039BB0.unk_008 &= ~0x40;
+    gUnk_02039BB0.flags &= ~0x40;
 
     switch (mode) {
     case 0x94 ... 0x9C:
@@ -255,7 +255,7 @@ void mode_battle_0(u32 mode) {
     func_08012798(0x80, gUnk_02039B84->unk_1C4);
     func_0801227C();
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlRiku, 0);
     } else {
         TaskCreate(&gUnk_02039B84->unk_02C, &gTaskDescBtlSora, 0);
@@ -396,7 +396,7 @@ void mode_battle_0(u32 mode) {
 
         if (mode == 0x79) {
             gUnk_02039B84->unk_068 |= 0x400000000;
-            gUnk_02039BB0.unk_008 |= 0x400;
+            gUnk_02039BB0.flags |= 0x400;
             TaskCreate(&gUnk_02039B84->unk_02C, &gUnk_09EDE440, 0);
         }
     }
@@ -448,7 +448,7 @@ void mode_battle_1(void) {
 }
 
 void mode_battle_2(void) {
-    gUnk_02039BB0.unk_008 &= ~4;
+    gUnk_02039BB0.flags &= ~4;
     func_08012810();
     TaskPoolDestroy(&gUnk_02039B84->unk_054);
     TaskPoolDestroy(&gUnk_02039B84->unk_040);

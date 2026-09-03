@@ -366,10 +366,10 @@ typedef struct UnkStruct_02039D34 {
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000;
     u8 unk_001[0x07];
-    u32 unk_008;
-    u8 unk_00C;
+    u32 flags;
+    u8 world;
     u8 unk_00D;
-    u8 unk_00E;
+    u8 floor;
     u8 unk_00F;
     u8 unk_010[0x16A];
     u16 unk_17A;

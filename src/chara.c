@@ -762,12 +762,12 @@ void func_080C61D4(void) {
     s32 i;
     u8* q;
 
-    gUnk_0203AAC0.unk_00 = gUnk_02039BB0.unk_032;
-    gUnk_0203AAC0.unk_02 = gUnk_02039BB0.unk_0F8;
-    gUnk_0203AAC0.unk_04 = gUnk_02039BB0.unk_108;
+    gUnk_0203AAC0.unk_00 = gUnk_02039BB0.hp;
+    gUnk_0203AAC0.unk_02 = gUnk_02039BB0.maxHp;
+    gUnk_0203AAC0.unk_04 = gUnk_02039BB0.level;
     gUnk_0203AAC0.unk_06 = gUnk_0203A9EC;
     gUnk_0203AAC0.unk_08 = gUnk_0203A9F0;
-    gUnk_0203AAC0.unk_0A = gUnk_02039BB0.unk_0FE;
+    gUnk_0203AAC0.unk_0A = gUnk_02039BB0.ap;
     gUnk_0203AAC0.unk_0C = gUnk_02039BB0.unk_10C;
     gUnk_0203AAC0.unk_10 = gUnk_02039BB0.unk_110;
     gUnk_0203AAC0.unk_14 = gUnk_02039BB0.unk_114;

@@ -464,7 +464,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
 
     body = &work->unk_020;
 
-    if (gUnk_02039BB0.unk_00C != 2) {
+    if (gUnk_02039BB0.world != 2) {
         return 0;
     }
 
@@ -1105,7 +1105,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
 
     body = &work->unk_020;
 
-    if (gUnk_02039BB0.unk_00C != 8) {
+    if (gUnk_02039BB0.world != 8) {
         return 0;
     }
 

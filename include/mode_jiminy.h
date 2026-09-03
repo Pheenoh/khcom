@@ -8,7 +8,7 @@
 #include "obj.h"
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
-    u32 unk_008;
+    u32 flags;
 } UnkStruct_02039BB0;
 
 typedef struct JiminyLine {

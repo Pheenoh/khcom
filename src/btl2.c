@@ -55,7 +55,7 @@ void task_btl_shadow_3(BtlShadowWork* work) {
 }
 
 void task_btl_hpply_0(BtlHpplyWork* work) {
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         work->unk_0C = LoadObjPalette(gUnk_09618118, 0x20);
         work->unk_10 = AllocObjTiles(0x280, gUnk_08B21438);
         work->unk_20 = gUnk_08B213F0;
@@ -881,7 +881,7 @@ s32 task_btl_escape_1(BtlEscapeWork* work) {
             work->unk_14 = (work->unk_1C << 8) / work->unk_18;
 
             if (work->unk_1C >= work->unk_18) {
-                gUnk_02039BB0.unk_008 |= 0x40;
+                gUnk_02039BB0.flags |= 0x40;
                 gUnk_02039B84->unk_068 |= 0x10;
                 gUnk_02039B84->unk_068 |= 0x0000000200000000;
                 work->unk_22 = 0;

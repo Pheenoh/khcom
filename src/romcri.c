@@ -179,7 +179,7 @@ void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg) {
     SetBgBlend(1, 16, 16);
     LoadBgTiles(1, gUnk_08EE3064, 0xA20);
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         switch (work->unk_02) {
         case 0x2D:
             SetBgScroll(1, -100, 4);

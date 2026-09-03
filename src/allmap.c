@@ -991,7 +991,7 @@ void func_080D59B4(void) {
 }
 
 void func_080D5A4C(u16 a) {
-    if ((gUnk_02039BB0.unk_08 & 0x200) != 0) {
+    if ((gUnk_02039BB0.flags & 0x200) != 0) {
         LoadBgPalette(1, gUnk_0984A818, 0x200);
         func_080D5978(0, gUnk_0984A818, 0x200);
     } else {

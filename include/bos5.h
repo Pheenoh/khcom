@@ -391,7 +391,7 @@ void func_080FB908(MdWork* work, u16 index);
 
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x8];
-    u32 unk_008;
+    u32 flags;
     u8 unk_00C[0x16E];
     u16 unk_17A;
     u8 unk_17C[0x4];

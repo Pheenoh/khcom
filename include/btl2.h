@@ -101,11 +101,11 @@ typedef struct BtlActor {
 
 typedef struct BtlSetup {
     u8 unk_000[0x08];
-    u32 unk_008;
+    u32 flags;
     u8 unk_00C[0xF4];
-    u32 unk_100;
-    u32 unk_104;
-    u8 unk_108;
+    u32 exp;
+    u32 nextExp;
+    u8 level;
     u8 unk_109[0x03];
 } BtlSetup;
 

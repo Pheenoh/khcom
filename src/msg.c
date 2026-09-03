@@ -46,7 +46,7 @@ void func_08062CE4(void) {
     case 0x92:
     case 0x93:
     case 0x94:
-        if (gUnk_02039BB0.unk_08 & 0x10) {
+        if (gUnk_02039BB0.flags & 0x10) {
             SaveWriteFileLarge(1);
         } else {
             SaveWriteFileLarge(0);

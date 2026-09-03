@@ -47,7 +47,7 @@ typedef struct AllmapRoomArg {
 
 typedef struct AllmapSetup {
     u8 unk_00[0x08];
-    u32 unk_08;
+    u32 flags;
 } AllmapSetup;
 
 typedef struct AllmapBarWork {

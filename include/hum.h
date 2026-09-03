@@ -567,24 +567,24 @@ typedef struct JiminyWork {
 
 typedef struct BtlSetup {
     u8 unk_000[0x08];
-    u32 unk_008;
-    u8 unk_00C;
+    u32 flags;
+    u8 world;
     u8 unk_00D;
-    u8 unk_00E;
+    u8 floor;
     u8 unk_00F;
     u8 unk_010[0x22];
-    u16 unk_032;
+    u16 hp;
     u8 unk_034[0xC4];
     u8 unk_0F8[0x10];
-    u8 unk_108;
+    u8 level;
     u8 unk_109[0x03];
     u64 unk_10C;
     u64 unk_114;
     u8 unk_11C[0x64];
     u16 unk_180;
     u8 unk_182[0x3A];
-    SaveFileSummary unk_1BC[4];
-    u32 unk_1DC;
+    SaveFileSummary fileSummaries[4];
+    u32 playTime;
 } BtlSetup;
 
 #define SAVE_OK 2

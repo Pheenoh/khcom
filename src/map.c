@@ -792,7 +792,7 @@ UnkStruct_02034F20* func_080E54A0(u8 a) {
 }
 
 u8* func_080E54B8(u8 a) {
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         return (u8*)(gUnk_09EF70D0[gUnk_0203C590.unk_04]->unk_34 + a);
     }
     return (u8*)(gUnk_09EF70D0[gUnk_0203C590.unk_04]->unk_30 + a);
@@ -1007,20 +1007,20 @@ u8 func_080E5E44(void) {
     const u8* q = gUnk_0984D134[gUnk_0203C7AC->unk_0D];
     u8 v = q[3] + GetRandom() % (q[4] - q[3] + 1);
 
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         return v + gUnk_09EF6A42[gUnk_0203C590.unk_04];
     }
     return v + gUnk_09EF6A34[gUnk_0203C590.unk_04];
 }
 
 void func_080E5EAC(UnkStruct_080E590C* p) {
-    gUnk_02039BB0.unk_08 |= 2;
+    gUnk_02039BB0.flags |= 2;
     func_08012614(p->unk_48, 1);
     gUnk_0203C7AC->unk_00 |= 2;
     gUnk_02039BA0->unk_70 |= 0x80;
     p->unk_04 |= 4;
     if (p->unk_04 & 0x40) {
-        gUnk_02039BB0.unk_08 |= 4;
+        gUnk_02039BB0.flags |= 4;
     }
     if (p->unk_04 & 0x100) {
         gUnk_0203C7AC->unk_0E = GetRandom() % 3 + 128;
@@ -1051,7 +1051,7 @@ s32 func_080E5FB4(UnkStruct_080E590C* p) {
         gUnk_0203C7AC->unk_00 |= 4;
         TaskCreate(p->unk_E4, &gUnk_09EF6EC4, &p->unk_08);
 
-        if (gUnk_02039BB0.unk_08 & 8) {
+        if (gUnk_02039BB0.flags & 8) {
             m4aSongNumStart(0xE4);
         } else {
             m4aSongNumStart(0x75);
@@ -1143,9 +1143,9 @@ void func_080E6178(void) {
             TaskCreate(gUnk_02039BA0->unk_B4, d->unk_10, &w);
             q = func_08000CD4(q->unk_1C);
         }
-        if (gUnk_02039BB0.unk_08 & 2) {
-            gUnk_02039BB0.unk_08 &= ~2;
-            if ((gUnk_02039BB0.unk_08 & 0x40) == 0) {
+        if (gUnk_02039BB0.flags & 2) {
+            gUnk_02039BB0.flags &= ~2;
+            if ((gUnk_02039BB0.flags & 0x40) == 0) {
                 e = func_080DEE18(gUnk_0203C590.unk_06);
                 if (e->unk_0B != 0) {
                     e->unk_0B--;
@@ -1765,7 +1765,7 @@ s32 func_080E8F50(UnkStruct_080E8E24* a, u8 b, s32 c, s32 d, s32 e) {
 u8 func_080E8FB8(u8 a, s32 b, s32 c, s32 d) {
     UnkStruct_080E8E24* q;
 
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         return 0;
     }
 
@@ -1812,8 +1812,8 @@ void func_080E92B8(UnkStruct_080E92B8* p) {
     u32* src;
     u32* dst;
 
-    p->unk_00 = gUnk_02039BB0.unk_0C;
-    p->unk_01 = gUnk_02039BB0.unk_0E;
+    p->unk_00 = gUnk_02039BB0.world;
+    p->unk_01 = gUnk_02039BB0.floor;
     memcpy(p->unk_04, &gUnk_0203C590, 0x21C);
     src = (u32*)gUnk_02039BB0.unk_184.unk_00;
     dst = (u32*)p->unk_220.unk_00;
@@ -1828,8 +1828,8 @@ void func_080E92F8(UnkStruct_080E92B8* p) {
     u32* src;
     u32* dst;
 
-    gUnk_02039BB0.unk_0C = p->unk_00;
-    gUnk_02039BB0.unk_0E = p->unk_01;
+    gUnk_02039BB0.world = p->unk_00;
+    gUnk_02039BB0.floor = p->unk_01;
     memcpy(&gUnk_0203C590, p->unk_04, 0x21C);
     src = (u32*)p->unk_220.unk_00;
     dst = (u32*)gUnk_02039BB0.unk_184.unk_00;
@@ -2094,7 +2094,7 @@ void func_080E9A00(void) {
 }
 
 void func_080E9A28(void) {
-    switch (gUnk_02039BB0.unk_0C) {
+    switch (gUnk_02039BB0.world) {
     case 10:
         ModeRequest(&gModeBattle, 0x94);
         break;
@@ -2221,7 +2221,7 @@ void func_080E9CBC(void) {
     switch (d->unk_00) {
     case 1:
     case 3:
-        if (e[1] == 0x51 && (gUnk_02039BB0.unk_08 & 0x400)) {
+        if (e[1] == 0x51 && (gUnk_02039BB0.flags & 0x400)) {
             func_0806180C(0x55);
         } else {
             func_0806180C(e[1]);
@@ -2240,7 +2240,7 @@ void func_080E9D94(void) {
     func_080E0820();
     if (func_08006314() == 0) {
         func_0801CB0C();
-        if (gUnk_02039BB0.unk_08 & 8) {
+        if (gUnk_02039BB0.flags & 8) {
             if (gUnk_02039BB0.unk_17A & 0x1000) {
                 ModeRequest(&gModeBattle, gUnk_0203C7AC->unk_0E);
             } else {
@@ -2402,25 +2402,25 @@ void func_080EA1F4(s32 a) {
 }
 
 UnkStruct_09EF8370* func_080EA20C(void) {
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         if (gUnk_0203C590.unk_06 == 0xFD) {
             return gUnk_09EF8370[2];
         }
         if (gUnk_0203C590.unk_06 == 0xFE) {
-            if ((s8)gUnk_02039BB0.unk_0E != 0) {
+            if ((s8)gUnk_02039BB0.floor != 0) {
                 return gUnk_09EF8370[1];
             }
             return gUnk_09EF8370[5];
         }
     }
     if (gUnk_0203C590.unk_06 == 0xFD) {
-        if ((s8)gUnk_02039BB0.unk_0E != 12) {
+        if ((s8)gUnk_02039BB0.floor != 12) {
             return gUnk_09EF8370[2];
         }
         return gUnk_09EF8370[3];
     }
     if (gUnk_0203C590.unk_06 == 0xFE) {
-        if ((s8)gUnk_02039BB0.unk_0E != 0) {
+        if ((s8)gUnk_02039BB0.floor != 0) {
             return gUnk_09EF8370[1];
         }
         return gUnk_09EF8370[0];
@@ -2431,7 +2431,7 @@ void func_080EA2AC(void) {
     if (gUnk_0203C590.unk_06 == 0xFC) {
         return;
     }
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         switch (gUnk_0203C590.unk_00) {
         case 20:
         case 22:
@@ -2454,20 +2454,20 @@ void func_080EA2AC(void) {
     switch (gUnk_0203C590.unk_00) {
     case 23:
     case 24:
-        if ((s8)gUnk_02039BB0.unk_0E == 11) {
+        if ((s8)gUnk_02039BB0.floor == 11) {
             TaskCreate(gUnk_02039BA0->unk_78, &gUnk_09EF6F24, 0);
             TaskCreate(gUnk_02039BA0->unk_78, &gUnk_09EF6F3C, 0);
         }
         break;
     case 25:
     case 26:
-        if ((s8)gUnk_02039BB0.unk_0E == 11 && gUnk_02039BB0.unk_184.unk_00[12].unk_03 == 0) {
+        if ((s8)gUnk_02039BB0.floor == 11 && gUnk_02039BB0.unk_184.unk_00[12].unk_03 == 0) {
             TaskCreate(gUnk_02039BA0->unk_78, &gUnk_09EF6F24, 0);
             TaskCreate(gUnk_02039BA0->unk_78, &gUnk_09EF6F3C, 0);
         }
         break;
     case 27:
-        if ((s8)gUnk_02039BB0.unk_0E == 12) {
+        if ((s8)gUnk_02039BB0.floor == 12) {
             TaskCreate(gUnk_02039BA0->unk_78, &gUnk_09EF6F24, 0);
             TaskCreate(gUnk_02039BA0->unk_78, &gUnk_09EF6F3C, 0);
         }
@@ -2478,7 +2478,7 @@ u8 func_080EA400(void) {
     if (gUnk_0203C590.unk_02 & 2) {
         return 0xFF;
     }
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         switch (gUnk_0203C590.unk_04) {
         case 8:
             return 0x97;
@@ -2497,10 +2497,10 @@ u8 func_080EA45C(void) {
     if (gUnk_0203C590.unk_02 & 1) {
         return 0xFF;
     }
-    if (gUnk_02039BB0.unk_08 & 8) {
-        return gUnk_0984B905[(s8)gUnk_02039BB0.unk_0E];
+    if (gUnk_02039BB0.flags & 8) {
+        return gUnk_0984B905[(s8)gUnk_02039BB0.floor];
     }
-    return gUnk_0984B8F8[(s8)gUnk_02039BB0.unk_0E];
+    return gUnk_0984B8F8[(s8)gUnk_02039BB0.floor];
 }
 void func_080EA498(void) {
     if (gUnk_0203C7AC->unk_00 & 0x100) {
@@ -2550,8 +2550,8 @@ void func_080EA5CC(void) {
         return;
     }
     if (gUnk_0203C7AC->unk_00 & 0x200) {
-        if ((s8)gUnk_02039BB0.unk_0E == func_080DF750()) {
-            gUnk_02039BB0.unk_08 &= ~0x80;
+        if ((s8)gUnk_02039BB0.floor == func_080DF750()) {
+            gUnk_02039BB0.flags &= ~0x80;
             gUnk_02039BB0.unk_17C = (gUnk_02039BB0.unk_17C & 0xFF83) | gUnk_02039BB0.unk_17E;
         }
         if (gUnk_0203C590.unk_04 == 0) {
@@ -2686,7 +2686,7 @@ void func_080EA864(void) {
     TaskCreate(gUnk_02039BA0->unk_78, &gUnk_09EF6B18, p);
     func_080E56B4(p->unk_2C);
 
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         TaskCreate(gUnk_02039BA0->unk_8C, &gTaskDescFldRiku, 0);
     } else {
         TaskCreate(gUnk_02039BA0->unk_8C, &gTaskDescFldSora, 0);
@@ -2751,13 +2751,13 @@ void func_080EAB20(u8 a, u8 b, u8 c) {
     a &= 1;
 
     if (b != 0) {
-        if (gUnk_02039BB0.unk_08 & 8) {
+        if (gUnk_02039BB0.flags & 8) {
             src = gUnk_09963D64[c];
         } else {
             src = gUnk_09961A64[c];
         }
     } else {
-        if (gUnk_02039BB0.unk_08 & 8) {
+        if (gUnk_02039BB0.flags & 8) {
             src = gUnk_09964EE4[c];
         } else {
             src = gUnk_09962BE4[c];
@@ -2895,7 +2895,7 @@ void func_080EE580(UnkStruct_080EE580* p, u8 a) {
 void func_080EE5E0(u8 a) {
     const u8* src;
 
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         src = gUnk_09963D64[a];
     } else {
         src = gUnk_09961A64[a];
@@ -3072,7 +3072,7 @@ INCLUDE_ASM("map/func_080F07EC.s");
 void func_080F3D58(UnkStruct_080DFF1C* p) {
     u16 r;
 
-    if (gUnk_02039BB0.unk_08 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         r = GetRandom() % 10000;
         if (r < 6000) {
             func_080E9034(0, 5, p->unk_00, p->unk_04, p->unk_08);

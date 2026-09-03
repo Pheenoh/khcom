@@ -49,7 +49,7 @@ void mode_worldwarp_0(void) {
     SetBgPriority(1, 2);
     SetBgPriority(2, 1);
     SetBgPriority(3, 0);
-    gUnk_020354E8 = gUnk_02039BB0.unk_00E;
+    gUnk_020354E8 = gUnk_02039BB0.floor;
     gUnk_0203550A = -1;
 
     for (i = 0; i <= 12; i++) {
@@ -106,7 +106,7 @@ void mode_worldwarp_0(void) {
 
     for (i = 0; i < gUnk_020354EA; i++) {
         if (gUnk_020354F0[i] >= 0) {
-            if (gUnk_02039BB0.unk_008 & 8) {
+            if (gUnk_02039BB0.flags & 8) {
                 if (i <= 2) {
                     func_0810057C(4, 1, gUnk_09A3691C, i * 4, 21, gUnk_0203550C,
                         gUnk_09EF9384[i].unk_08 + 3, gUnk_09EF9384[i].unk_0A + 2);
@@ -134,11 +134,11 @@ void mode_worldwarp_0(void) {
 
     LoadBgMap(1, gUnk_0203550C, 0x500);
 
-    if (gUnk_02039BB0.unk_008 & 8) {
-        func_08100670(gUnk_02039BB0.unk_00E, gUnk_09A0FD3C, (u8*)GetBgCharBase(0) + 0x120);
+    if (gUnk_02039BB0.flags & 8) {
+        func_08100670(gUnk_02039BB0.floor, gUnk_09A0FD3C, (u8*)GetBgCharBase(0) + 0x120);
         func_08100670(gUnk_020354E8, gUnk_09A0F03C, (u8*)GetBgCharBase(0) + 0x20);
     } else {
-        func_08100670(gUnk_02039BB0.unk_00E, gUnk_09A0E33C, (u8*)GetBgCharBase(0) + 0x120);
+        func_08100670(gUnk_02039BB0.floor, gUnk_09A0E33C, (u8*)GetBgCharBase(0) + 0x120);
         func_08100670(gUnk_020354E8, gUnk_09A0D63C, (u8*)GetBgCharBase(0) + 0x20);
     }
     gUnk_02035514 = LoadObjPalette(gUnk_09A3D57C, 32);
@@ -155,7 +155,7 @@ void mode_worldwarp_0(void) {
     AnimStart(&gUnk_02035558, 0, 1);
     func_08065ACC(gUnk_02035618, 24);
     func_08065ACC(gUnk_020356E0, 24);
-    gUnk_020356D8 = func_08100608(gUnk_020354F0[gUnk_02039BB0.unk_00E]);
+    gUnk_020356D8 = func_08100608(gUnk_020354F0[gUnk_02039BB0.floor]);
     gUnk_020357A0 = func_0810063C(gUnk_020354F0[gUnk_020354E8]);
     EnableBg(0);
     EnableBg(1);
@@ -250,11 +250,11 @@ INCLUDE_ASM("mode_worldwarp/mode_worldwarp_2.s");
 #endif
 
 u32 func_08101518(void) {
-    return gUnk_02039BB0.unk_174;
+    return gUnk_02039BB0.mooglePoints;
 }
 
 void func_08101528(u32 a) {
-    gUnk_02039BB0.unk_174 = a;
+    gUnk_02039BB0.mooglePoints = a;
 }
 
 u8 func_08101538(u32 a) {

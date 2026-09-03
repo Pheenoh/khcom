@@ -6,11 +6,11 @@
 #include "anim.h"
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
-    u32 unk_008;
+    u32 flags;
     u8 unk_00C[0x02];
-    s8 unk_00E;
+    s8 floor;
     u8 unk_00F[0x165];
-    u32 unk_174;
+    u32 mooglePoints;
     u8 unk_178[0x0E];
     u8 unk_186[13][4];
 } UnkStruct_02039BB0;

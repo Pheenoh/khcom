@@ -1037,10 +1037,10 @@ typedef struct PooRooWork {
 
 typedef struct PooSetup {
     u8 unk_00[0x08];
-    u32 unk_08;
-    u8 unk_0C;
+    u32 flags;
+    u8 world;
     u8 unk_0D;
-    s8 unk_0E;
+    s8 floor;
 } PooSetup;
 
 typedef struct PooBgSet {

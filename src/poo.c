@@ -4751,9 +4751,9 @@ void func_080D3050(void) {
 }
 
 void func_080D30C8(void) {
-    RequestDma3Copy(gUnk_096FDA8C[gUnk_02039BB0.unk_0C].unk_00, (u8*)GetBgScreenBase(2) + 0x200, 0x300);
-    RequestDma3Copy(gUnk_096FDA8C[gUnk_02039BB0.unk_0C].unk_04, (u8*)GetBgCharBase(2) + 0x2000, 0x2000);
-    LoadPalette(gUnk_096FDA8C[gUnk_02039BB0.unk_0C].unk_08, (void*)0x05000140, 0x20);
+    RequestDma3Copy(gUnk_096FDA8C[gUnk_02039BB0.world].unk_00, (u8*)GetBgScreenBase(2) + 0x200, 0x300);
+    RequestDma3Copy(gUnk_096FDA8C[gUnk_02039BB0.world].unk_04, (u8*)GetBgCharBase(2) + 0x2000, 0x2000);
+    LoadPalette(gUnk_096FDA8C[gUnk_02039BB0.world].unk_08, (void*)0x05000140, 0x20);
 }
 
 void func_080D313C(void) {
@@ -4762,10 +4762,10 @@ void func_080D313C(void) {
 
     dst = (u8*)GetBgCharBase(2) + 0x20;
 
-    if ((gUnk_02039BB0.unk_08 & 8) != 0) {
-        src = &gUnk_097B8258[gUnk_02039BB0.unk_0E * 0x140];
+    if ((gUnk_02039BB0.flags & 8) != 0) {
+        src = &gUnk_097B8258[gUnk_02039BB0.floor * 0x140];
     } else {
-        src = &gUnk_097B7218[gUnk_02039BB0.unk_0E * 0x140];
+        src = &gUnk_097B7218[gUnk_02039BB0.floor * 0x140];
     }
     RequestDma3Copy(src, dst, 0x140);
     dst = (u8*)GetBgScreenBase(2) + 0x480;

@@ -151,8 +151,8 @@ void task_btl_exp_0(BtlExpWork* work) {
     }
 
     work->unk_3C = 0;
-    work->unk_3E = gUnk_02039BB0.unk_108;
-    work->unk_44 = gUnk_02039BB0.unk_100;
+    work->unk_3E = gUnk_02039BB0.level;
+    work->unk_44 = gUnk_02039BB0.exp;
     work->unk_48 = 0;
     work->unk_40 = 0;
 }
@@ -162,23 +162,23 @@ s32 task_btl_exp_1(BtlExpWork* work) {
         return 0;
     }
 
-    if (work->unk_3E < gUnk_02039BB0.unk_108) {
-        func_0805CE60(work, gUnk_02039BB0.unk_108);
+    if (work->unk_3E < gUnk_02039BB0.level) {
+        func_0805CE60(work, gUnk_02039BB0.level);
         work->unk_20 = gUnk_08B25E40;
         work->unk_3C = 0;
         work->unk_48 = 3;
-        work->unk_3E = gUnk_02039BB0.unk_108;
+        work->unk_3E = gUnk_02039BB0.level;
         work->unk_40 = 0;
     }
 
     if (work->unk_48 != 3) {
-        if (work->unk_44 < gUnk_02039BB0.unk_100) {
-            work->unk_40 += gUnk_02039BB0.unk_100 - work->unk_44;
+        if (work->unk_44 < gUnk_02039BB0.exp) {
+            work->unk_40 += gUnk_02039BB0.exp - work->unk_44;
             func_0805CE60(work, work->unk_40);
             work->unk_20 = gUnk_08B25E54;
             work->unk_3C = 0;
             work->unk_48 = 1;
-            work->unk_44 = gUnk_02039BB0.unk_100;
+            work->unk_44 = gUnk_02039BB0.exp;
         }
     }
 
@@ -187,11 +187,11 @@ s32 task_btl_exp_1(BtlExpWork* work) {
         break;
     case 3:
         if (work->unk_3C > 100) {
-            if (gUnk_02039BB0.unk_108 > 98) {
+            if (gUnk_02039BB0.level > 98) {
                 work->unk_48 = 0;
             } else {
                 work->unk_48 = 2;
-                func_0805CE60(work, gUnk_02039BB0.unk_104 - gUnk_02039BB0.unk_100);
+                func_0805CE60(work, gUnk_02039BB0.nextExp - gUnk_02039BB0.exp);
                 work->unk_20 = gUnk_08B25E5E;
             }
             work->unk_3C = 0;
@@ -202,11 +202,11 @@ s32 task_btl_exp_1(BtlExpWork* work) {
         break;
     case 1:
         if (work->unk_3C > 60) {
-            if (gUnk_02039BB0.unk_108 > 98) {
+            if (gUnk_02039BB0.level > 98) {
                 work->unk_48 = 0;
             } else {
                 work->unk_48 = 2;
-                func_0805CE60(work, gUnk_02039BB0.unk_104 - gUnk_02039BB0.unk_100);
+                func_0805CE60(work, gUnk_02039BB0.nextExp - gUnk_02039BB0.exp);
                 work->unk_20 = gUnk_08B25E5E;
             }
             work->unk_3C = 0;

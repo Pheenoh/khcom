@@ -7,7 +7,7 @@
 
 typedef struct FrdSetup {
     u8 unk_000[0x0C];
-    u8 unk_00C;
+    u8 world;
     u8 unk_00D[0x03];
 } FrdSetup;
 
