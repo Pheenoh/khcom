@@ -1,6 +1,45 @@
 #include "macros.h"
 #include "bos5.h"
 
+GaWork* gUnk_02034FE8;
+u32 gUnk_02034FEC;
+s16 gUnk_02034FF0;
+u32 gUnk_02034FF4;
+MdSlot gUnk_02034FF8[5];
+s16 gUnk_02035070[14];
+u32 gUnk_0203508C;
+s16 gUnk_02035090;
+s16 gUnk_02035092;
+u32 gUnk_02035094;
+void* gUnk_02035098[2];
+void* gUnk_020350A0[2];
+void* gUnk_020350A8;
+void* gUnk_020350AC;
+void* gUnk_020350B0;
+u8 gUnk_020350B4;
+s16 gUnk_020350B6;
+s16 gUnk_020350B8;
+s16 gUnk_020350BA;
+void* gUnk_020350BC;
+s16 gUnk_020350C0;
+s16 gUnk_020350C2;
+u32 gUnk_020350C4;
+s32 gUnk_020350C8[2];
+s32 gUnk_020350D0;
+u32 gUnk_020350D4;
+TaskPool gUnk_020350D8;
+s16 gUnk_020350EC;
+u8 gUnk_020350EE;
+u8 gUnk_020350EF;
+u8 gUnk_020350F0;
+s16 gUnk_020350F2;
+u16 gUnk_020350F4;
+u16 gUnk_020350F6;
+s16 gUnk_020350F8;
+s16 gUnk_020350FA;
+u32 gUnk_020350FC;
+s16 gUnk_02035100[3];
+
 void task_bos_ga_0(GaWork* work, s32 arg) {
     u32 i;
     GaEntryWork* p;
