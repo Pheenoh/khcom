@@ -52,7 +52,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
             work->unk_20 |= 2;
 
             if (gUnk_02039BB0.unk_1B8 != 4) {
-                gUnk_02039BB0.unk_008 &= ~4;
+                gUnk_02039BB0.flags &= ~4;
             }
 
             if (work->unk_10 >= work->unk_08->unk_00) {

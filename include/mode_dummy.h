@@ -6,19 +6,19 @@
 #include "mode.h"
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
-    u32 unk_008;
+    u32 flags;
     u8 unk_00C[0x26];
-    s16 unk_032;
+    s16 hp;
     u8 unk_034[0xC4];
-    s16 unk_0F8;
-    s16 unk_0FA;
-    s16 unk_0FC;
-    s16 unk_0FE;
-    s32 unk_100;
-    s32 unk_104;
-    u8 unk_108;
+    s16 maxHp;
+    s16 cp;
+    s16 dp;
+    s16 ap;
+    s32 exp;
+    s32 nextExp;
+    u8 level;
     u8 unk_109[0x6B];
-    s32 unk_174;
+    s32 mooglePoints;
     u8 unk_178[0x08];
     u16 unk_180;
 } UnkStruct_02039BB0;

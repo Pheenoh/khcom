@@ -42,7 +42,7 @@ void mode_jiminy_0(void) {
     gUnk_02034934->unk_C72 = 0;
     gUnk_02034934->unk_C74 = 0;
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         gUnk_02034934->unk_018 = AllocObjTiles(0x1000, gUnk_0913F0C2);
         gUnk_02034934->unk_01C = LoadObjPalette(gUnk_09614D58, 0x20);
         AnimInit(&gUnk_02034934->unk_C7C, gUnk_09EED320, gUnk_09EED2BC);
@@ -81,7 +81,7 @@ void mode_jiminy_0(void) {
         gUnk_02034934->unk_CD8[j].unk_02 = 0;
     }
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         gUnk_02034934->unk_D2C = 14;
         e = gUnk_08155554;
         e += 14;
@@ -196,7 +196,7 @@ void mode_jiminy_1(void) {
         gUnk_02034934->unk_C74 = p->unk_02;
 
         if (gUnk_02034934->unk_D2C == 0 || gUnk_02034934->unk_D2C == 14) {
-            if (gUnk_02039BB0.unk_008 & 8) {
+            if (gUnk_02039BB0.flags & 8) {
                 LoadBgMap(1, gUnk_08F62B84, 0x800);
             } else {
                 LoadBgMap(1, e->unk_00, 0x800);
@@ -311,7 +311,7 @@ void mode_jiminy_1(void) {
     }
 
     if (gUnk_02034934->unk_CAC & 2) {
-        if (gUnk_02039BB0.unk_008 & 8) {
+        if (gUnk_02039BB0.flags & 8) {
             DrawSprite(gUnk_02034934->unk_04C >> 8, 0, gUnk_08C69C76, gUnk_02034934->unk_004,
                 gUnk_02034934->unk_008, 0, 0, 0);
         } else {

@@ -57,8 +57,8 @@ u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1) {
 
 void UpdatePlayTime(void) {
     if (gFrameCounter % 60 == 0) {
-        if (gUnk_02039BB0.unk_1DC <= 0x57E3E) {
-            gUnk_02039BB0.unk_1DC++;
+        if (gUnk_02039BB0.playTime <= 0x57E3E) {
+            gUnk_02039BB0.playTime++;
         }
     }
 }
@@ -68,8 +68,8 @@ void func_0801CCB4(void) {
     gUnk_02039BB0.unk_17A = 0xE7FF;
     gUnk_02039BB0.unk_17C = 0x80;
     _08085D04(0);
-    gUnk_02039BB0.unk_008 |= 8;
-    gUnk_02039BB0.unk_008 |= 0x100;
+    gUnk_02039BB0.flags |= 8;
+    gUnk_02039BB0.flags |= 0x100;
     func_0800FDD0(0);
     func_0800FDD0(0x15);
     func_0800FDD0(0xED);
@@ -82,7 +82,7 @@ void func_0801CCB4(void) {
 void func_0801CD20(void) {
     gUnk_02039BB0.unk_17C = 3;
     func_08085C3C();
-    gUnk_02039BB0.unk_008 &= ~8;
+    gUnk_02039BB0.flags &= ~8;
     func_0800FDD0(0x11);
     func_0800FDD0(0x12);
     func_0800FDD0(0x13);

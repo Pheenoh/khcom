@@ -156,11 +156,11 @@ typedef struct SioBtlCardgetWork {
 
 typedef struct SioStatus {
     u8 unk_00[8];
-    u32 unk_08;
-    u8 unk_0C;
+    u32 flags;
+    u8 world;
     u8 unk_0D;
     u8 unk_0E[0x24];
-    u16 unk_32;
+    u16 hp;
     u8 unk_34[0xF8];
     u64 unk_12C;
     u8 unk_134[0xAC];

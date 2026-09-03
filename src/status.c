@@ -18,7 +18,7 @@ void task_status_0(StatusWork* work) {
     TaskCreate(work, &gUnk_09EF4FE0, 0);
     TaskCreate(work, &gUnk_09EF4F38, 0);
 
-    if (!(gUnk_02039BB0.unk_008 & 8)) {
+    if (!(gUnk_02039BB0.flags & 8)) {
         TaskCreate(work, &gUnk_09EF4F20, &work->unk_14);
         TaskCreate(work, &gUnk_09EF4F50, &gUnk_02034F00);
     }
@@ -48,7 +48,7 @@ void func_080D764C(StatusWork* work) {
             func_080D83F4();
             m4aSongNumStart(121);
         } else if (work->unk_1A == 0) {
-            if (!(gUnk_02039BB0.unk_008 & 8)) {
+            if (!(gUnk_02039BB0.flags & 8)) {
                 work->unk_1A = ~work->unk_14;
                 m4aSongNumStart(121);
                 gUnk_02034F00 = 0;
@@ -70,7 +70,7 @@ void func_080D764C(StatusWork* work) {
             func_080D8374();
             m4aSongNumStart(121);
         }
-    } else if ((GetKeysRepeat() & DPAD_LEFT) && !(gUnk_02039BB0.unk_008 & 8)) {
+    } else if ((GetKeysRepeat() & DPAD_LEFT) && !(gUnk_02039BB0.flags & 8)) {
         if (work->unk_14 != 0) {
             work->unk_14--;
 
@@ -84,7 +84,7 @@ void func_080D764C(StatusWork* work) {
             func_080D8474(0);
             m4aSongNumStart(101);
         }
-    } else if ((GetKeysRepeat() & DPAD_RIGHT) && !(gUnk_02039BB0.unk_008 & 8)) {
+    } else if ((GetKeysRepeat() & DPAD_RIGHT) && !(gUnk_02039BB0.flags & 8)) {
         if (work->unk_14 <= 2) {
             work->unk_14++;
 
@@ -292,7 +292,7 @@ void task_status_tab_3(StatusTabWork* work) {
 }
 
 void task_status_sora_0(StatusSoraWork* work) {
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         work->unk_00 = AllocObjTiles(0x800, 0);
         work->unk_04 = LoadObjPalette(gUnk_09618118, 0x20);
         func_08002A10(work->unk_00, gUnk_0891ED26);
@@ -316,7 +316,7 @@ void task_status_sora_2(StatusSoraWork* work) {
     s16 x;
     s16 y;
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         x = 160;
         y = 65;
     } else {
@@ -406,7 +406,7 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
 
 void task_status_cursor_2(StatusCursorWork* work) {
     if (func_08006314() == 0) {
-        if (!(gUnk_02039BB0.unk_008 & 8) || func_080D8340()) {
+        if (!(gUnk_02039BB0.flags & 8) || func_080D8340()) {
             DrawSprite(work->unk_58 >> 8, (work->unk_50 >> 8) - 16, work->unk_10[1], work->unk_04, work->unk_0C, 0, 0, 0);
 
             if (work->unk_4C >= 0) {
@@ -436,7 +436,7 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
         e++;
     }
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         for (i = 66; i <= 69; i++) {
             if (func_0800FBCC(i)) {
                 func_080D8590(work->entries, i);
@@ -868,7 +868,7 @@ void task_status_friend_2(StatusFriendWork* work) {
     s32 i;
     s16 x;
 
-    x = (gUnk_02039BB0.unk_008 & 8) ? 216 : 186;
+    x = (gUnk_02039BB0.flags & 8) ? 216 : 186;
 
     for (i = 0; i < work->unk_24; i++) {
         DrawSprite(x, 45, work->unk_18[i], work->unk_00[i], work->unk_0C[i], 0, 0x800, i + 7);
@@ -896,7 +896,7 @@ u16 func_080D8B84(void** a, void** b, void** c) {
 
     t = gUnk_096FDE24;
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         lim = 1;
     } else {
         lim = 3;

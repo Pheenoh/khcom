@@ -258,7 +258,7 @@ void mode_chkbtl_0(void) {
     if (!(gUnk_03006C10 & 1)) {
         func_08085FB0();
         func_08085CB0();
-        gUnk_02039BB0.unk_FA = 9999;
+        gUnk_02039BB0.cp = 9999;
         gUnk_03006C10 |= 1;
         gUnk_02039BB0.unk_17C = 0xFFFF;
     }
@@ -325,7 +325,7 @@ void mode_chkbtl_1(void) {
             gChkBtlWork->unk_04 = 0;
         }
 
-        if (gUnk_02039BB0.unk_08 & 8) {
+        if (gUnk_02039BB0.flags & 8) {
             if (gChkBtlWork->unk_04 > 11) {
                 gChkBtlWork->unk_04 = 11;
             }
@@ -388,18 +388,18 @@ void mode_chkbtl_1(void) {
     } else if (GetKeysPressed() & 9) {
         SeedRandom(gFrameCounter);
         gUnk_02039BB0.unk_0D = gUnk_08128234[gChkBtlWork->unk_01].unk_00;
-        gUnk_02039BB0.unk_0E = gChkBtlWork->unk_04;
-        gUnk_02039BB0.unk_32 = gChkBtlWork->unk_06;
-        gUnk_02039BB0.unk_F8 = gChkBtlWork->unk_06;
-        gUnk_02039BB0.unk_0C = gUnk_08126630[gChkBtlWork->unk_02].unk_00;
+        gUnk_02039BB0.floor = gChkBtlWork->unk_04;
+        gUnk_02039BB0.hp = gChkBtlWork->unk_06;
+        gUnk_02039BB0.maxHp = gChkBtlWork->unk_06;
+        gUnk_02039BB0.world = gUnk_08126630[gChkBtlWork->unk_02].unk_00;
 
         if (GetKeysHeld() & L_BUTTON) {
-            gUnk_02039BB0.unk_08 |= 4;
+            gUnk_02039BB0.flags |= 4;
         } else {
-            gUnk_02039BB0.unk_08 &= ~4;
+            gUnk_02039BB0.flags &= ~4;
         }
 
-        if (gUnk_02039BB0.unk_08 & 8) {
+        if (gUnk_02039BB0.flags & 8) {
             _08085D04(gChkBtlWork->unk_04);
         }
 
@@ -436,7 +436,7 @@ void func_0800ABD8(void) {
     gChkBtlWork->unk_01 = 0;
     gChkBtlWork->unk_02 = 0;
     gChkBtlWork->unk_04 = 0;
-    gChkBtlWork->unk_06 = gUnk_02039BB0.unk_F8;
+    gChkBtlWork->unk_06 = gUnk_02039BB0.maxHp;
     gUnk_03006C10 &= ~1;
     gUnk_02039B90 = 0x98;
     gUnk_02039B88 = 0x160;

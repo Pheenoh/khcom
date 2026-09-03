@@ -1144,8 +1144,8 @@ void func_080B15A4(void) {
     }
     gUnk_02034B44->unk_02 = 0;
     gUnk_02034B44->unk_04 = 0;
-    gUnk_02039BB0.unk_32 = gUnk_0203AAC0.unk_00;
-    gUnk_02039BB0.unk_0C = gUnk_0203AAB0;
+    gUnk_02039BB0.hp = gUnk_0203AAC0.unk_00;
+    gUnk_02039BB0.world = gUnk_0203AAB0;
 }
 
 void mode_sio_btl_cardget_1(void) {
@@ -1726,7 +1726,7 @@ void func_080B29D8(void) {
 
     if (func_080C5930() == 0) {
         if (gUnk_0203A9E4 == 0) {
-            if (gUnk_02039BB0.unk_08 & 0x10) {
+            if (gUnk_02039BB0.flags & 0x10) {
                 SaveWriteFileLarge(1);
             } else {
                 SaveWriteFileLarge(0);

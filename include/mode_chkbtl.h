@@ -42,15 +42,15 @@ typedef struct ChkBtlWorld {
 
 typedef struct ChkBtlSetup {
     u8 unk_00[0x08];
-    u32 unk_08;
-    u8 unk_0C;
+    u32 flags;
+    u8 world;
     u8 unk_0D;
-    u8 unk_0E;
+    u8 floor;
     u8 unk_0F[0x23];
-    u16 unk_32;
+    u16 hp;
     u8 unk_34[0xC4];
-    u16 unk_F8;
-    u16 unk_FA;
+    u16 maxHp;
+    u16 cp;
     u8 unk_FC[0x80];
     u16 unk_17C;
 } ChkBtlSetup;

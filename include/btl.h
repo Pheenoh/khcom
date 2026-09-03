@@ -112,11 +112,11 @@ typedef struct BtlWork {
 
 typedef struct BtlSetup {
     u8 unk_000[0x8];
-    u32 unk_008;
+    u32 flags;
     u8 unk_00C[0x26];
-    u16 unk_032;
+    u16 hp;
     u8 unk_034[0xC4];
-    u16 unk_0F8;
+    u16 maxHp;
     u8 unk_0FA[0x116];
 } BtlSetup;
 

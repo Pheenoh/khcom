@@ -31,8 +31,8 @@ typedef struct BattleWork {
 
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x08];
-    u32 unk_008;
-    u8 unk_00C;
+    u32 flags;
+    u8 world;
     u8 unk_00D;
     u8 unk_00E[0x02];
     u16 unk_010;

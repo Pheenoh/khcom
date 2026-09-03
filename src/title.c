@@ -29,11 +29,11 @@ void task_title_logo_2(TitleLogoWork* work) {
     s16 y;
 
     for (i = 0; i < 6; i++) {
-        if (i == 1 && !(gUnk_02039BB0.unk_008 & 0x200)) {
+        if (i == 1 && !(gUnk_02039BB0.flags & 0x200)) {
             continue;
         }
 
-        if (gUnk_02039BB0.unk_008 & 0x200) {
+        if (gUnk_02039BB0.flags & 0x200) {
             x = 0xA4;
         } else {
             x = 0x50;
@@ -50,7 +50,7 @@ void task_title_logo_2(TitleLogoWork* work) {
             }
             affine = AllocObjAffine(0, 0x100, work->unk_4C, 0);
 
-            if (gUnk_02039BB0.unk_008 & 0x200) {
+            if (gUnk_02039BB0.flags & 0x200) {
                 y = 86;
                 x--;
             } else {
@@ -91,12 +91,12 @@ u8 func_080D6574(void) {
 void task_title_obj_0(TitleObjWork* work) {
     s32 t;
 
-    t = (gUnk_02039BB0.unk_008 & 0x200) ? 0x20 : 0;
+    t = (gUnk_02039BB0.flags & 0x200) ? 0x20 : 0;
     work->unk_00[0].unk_00 = LoadObjTiles(gUnk_09771060, 0x3C0);
     work->unk_00[0].unk_04 = LoadObjPalette(gUnk_0984A718, 0x20);
     work->unk_00[0].unk_08 = gUnk_09EF65E0[0];
 
-    if (gUnk_02039BB0.unk_008 & 0x200) {
+    if (gUnk_02039BB0.flags & 0x200) {
         work->unk_00[0].unk_10 = 0xBA00;
         work->unk_00[0].unk_0C = 0x76;
     } else {
@@ -172,11 +172,11 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     u8* pal;
     u8* pal2;
 
-    t = (gUnk_02039BB0.unk_008 & 0x200) ? 0x20 : 0;
+    t = (gUnk_02039BB0.flags & 0x200) ? 0x20 : 0;
     work->unk_44 = arg;
 
     if (arg[0] == 0) {
-        if (gUnk_02039BB0.unk_008 & 0x20) {
+        if (gUnk_02039BB0.flags & 0x20) {
             work->unk_5C = 4;
             arg[0] = 4;
         } else {
@@ -184,7 +184,7 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
         }
     } else if (arg[0] == 3) {
         work->unk_5C = 2;
-    } else if (gUnk_02039BB0.unk_008 & 0x20) {
+    } else if (gUnk_02039BB0.flags & 0x20) {
         work->unk_5C = 3;
     } else {
         work->unk_5C = 0;
@@ -233,7 +233,7 @@ void func_080D6944(s16* p) {
     s16 max;
     u16 keys;
 
-    max = (gUnk_02039BB0.unk_008 & 0x20) ? 2 : 1;
+    max = (gUnk_02039BB0.flags & 0x20) ? 2 : 1;
     keys = GetKeysPressed() & DPAD_UP;
     if (keys != 0) {
         m4aSongNumStart(0x65);
@@ -293,7 +293,7 @@ void func_080D6A64(TitleMenuWork* work) {
     s16 count;
 
     y = 32;
-    t = gUnk_02039BB0.unk_008 & 0x20;
+    t = gUnk_02039BB0.flags & 0x20;
     count = 3;
 
     if (t == 0) {
@@ -306,7 +306,7 @@ void func_080D6A64(TitleMenuWork* work) {
         y += 24;
     }
 
-    if (gUnk_02039BB0.unk_008 & 0x20) {
+    if (gUnk_02039BB0.flags & 0x20) {
         y = work->unk_44[0] * 24 + 32;
     } else {
         y = work->unk_44[0] * 24 + 48;
@@ -368,7 +368,7 @@ void task_title_menu_2(TitleMenuWork* work) {
     work->unk_20[1] = gUnk_09EF6620[work->unk_44[0]];
     work->unk_20[2] = gUnk_09EF663C[work->unk_44[0]];
 
-    if (gUnk_02039BB0.unk_008 & 0x200) {
+    if (gUnk_02039BB0.flags & 0x200) {
         work->unk_60 = 120;
     } else {
         work->unk_60 = 0;
@@ -400,7 +400,7 @@ void task_title_menu_3(TitleMenuWork* work) {
 }
 
 void task_title_lumichange_0(TitleLumiChangeWork* work) {
-    if (gUnk_02039BB0.unk_008 & 0x200) {
+    if (gUnk_02039BB0.flags & 0x200) {
         work->unk_00 = LoadObjTiles(gUnk_0977548C, 0x840);
         work->unk_04 = LoadObjPalette(gUnk_0984A7D8, 0x20);
     } else {
@@ -452,7 +452,7 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
     s16 x;
 
     v = GetPaletteEffect();
-    tbl = (gUnk_02039BB0.unk_008 & 0x200) ? gUnk_09EF6684 : gUnk_09EF6658;
+    tbl = (gUnk_02039BB0.flags & 0x200) ? gUnk_09EF6684 : gUnk_09EF6658;
 
     if (v < 0) {
         work->unk_08 = tbl[0];
@@ -461,7 +461,7 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
     } else if (v > 0) {
         work->unk_08 = tbl[2];
     }
-    x = (gUnk_02039BB0.unk_008 & 0x200) ? 240 : 0;
+    x = (gUnk_02039BB0.flags & 0x200) ? 240 : 0;
     DrawSprite(x, 0x8F, work->unk_08, work->unk_00, work->unk_04, 0, 0x400, 100);
 }
 

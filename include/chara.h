@@ -21,13 +21,13 @@ typedef struct MaskFadeWork {
 
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x32];
-    u16 unk_032;
+    u16 hp;
     u8 unk_034[0xC4];
-    u16 unk_0F8;
+    u16 maxHp;
     u8 unk_0FA[0x04];
-    u16 unk_0FE;
+    u16 ap;
     u8 unk_100[0x08];
-    u8 unk_108;
+    u8 level;
     u8 unk_109[0x03];
     u32 unk_10C;
     u32 unk_110;

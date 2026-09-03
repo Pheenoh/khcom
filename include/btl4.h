@@ -25,9 +25,9 @@ typedef struct BtlActor {
 
 typedef struct BtlSetup {
     u8 unk_000[0x100];
-    u32 unk_100;
-    u32 unk_104;
-    u8 unk_108;
+    u32 exp;
+    u32 nextExp;
+    u8 level;
     u8 unk_109[0x03];
 } BtlSetup;
 

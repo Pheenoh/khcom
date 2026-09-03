@@ -73,8 +73,8 @@ typedef struct Ent02034A80 {
 
 typedef struct Ctx02039BB0 {
     u8 unk_00[8];
-    u32 unk_08;
-    u8 unk_0C;
+    u32 flags;
+    u8 world;
     u8 unk_0D;
 } Ctx02039BB0;
 

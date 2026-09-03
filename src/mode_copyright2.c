@@ -73,25 +73,25 @@ void func_080D733C(void) {
     u8* p;
 
     p = GetBgCharBase(2) + 0x40;
-    p = func_080D728C(p, gUnk_02039BB0.unk_108, 2);
-    p = func_080D728C(p, gUnk_02039BB0.unk_032, 3);
-    p = func_080D728C(p, gUnk_02039BB0.unk_0F8, 3);
+    p = func_080D728C(p, gUnk_02039BB0.level, 2);
+    p = func_080D728C(p, gUnk_02039BB0.hp, 3);
+    p = func_080D728C(p, gUnk_02039BB0.maxHp, 3);
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         p += 0x80;
     } else {
-        p = func_080D728C(p, gUnk_02039BB0.unk_0FA, 4);
+        p = func_080D728C(p, gUnk_02039BB0.cp, 4);
     }
 
-    p = func_080D728C(p, gUnk_02039BB0.unk_100, 6);
-    p = func_080D728C(p, gUnk_02039BB0.unk_104, 6);
+    p = func_080D728C(p, gUnk_02039BB0.exp, 6);
+    p = func_080D728C(p, gUnk_02039BB0.nextExp, 6);
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         p += 0xC0;
-        p = func_080D728C(p, gUnk_02039BB0.unk_0FE, 2);
-        func_080D728C(p, gUnk_02039BB0.unk_0FC, 3);
+        p = func_080D728C(p, gUnk_02039BB0.ap, 2);
+        func_080D728C(p, gUnk_02039BB0.dp, 3);
     } else {
         p += 0x20;
-        func_080D728C(p, gUnk_02039BB0.unk_174, 5);
+        func_080D728C(p, gUnk_02039BB0.mooglePoints, 5);
     }
 }

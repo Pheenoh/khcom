@@ -191,9 +191,9 @@ void mode_ms_top_1(void) {
         break;
     case 5:
         if (func_080A42C8() == 0) {
-            if (gUnk_02039BB0.unk_00E <= 5) {
+            if (gUnk_02039BB0.floor <= 5) {
                 func_08103F94(0, 0);
-            } else if (gUnk_02039BB0.unk_00E <= 9) {
+            } else if (gUnk_02039BB0.floor <= 9) {
                 func_08103F94(0, 1);
             } else {
                 func_08103F94(0, 2);
@@ -1282,7 +1282,7 @@ void mode_ms_shop_0(void) {
     gUnk_02035B02 = 0;
     gUnk_02035B04 = 0;
     gUnk_02035B10 = 0;
-    gUnk_02035B00 = func_081027B4(gUnk_02039BB0.unk_00E);
+    gUnk_02035B00 = func_081027B4(gUnk_02039BB0.floor);
     LoadBgPalette(0, gUnk_09A3D87C, 0x1A0);
     LoadBgTiles(0, gUnk_09A1251C, 0x6860);
     func_08101588(func_08101518(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
@@ -1340,7 +1340,7 @@ void mode_ms_shop_1(void) {
         if (func_0810329C(0) == 0) {
             func_08102DC8();
             func_0810264C(gUnk_0203C590[6], gUnk_02035B08[gUnk_02035B04], gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0]);
-            gUnk_02035B00 = func_081027B4(gUnk_02039BB0.unk_00E);
+            gUnk_02035B00 = func_081027B4(gUnk_02039BB0.floor);
             LoadBgMap(0, gUnk_09A382DC, 0x500);
 
             if (gUnk_02035B04 > 0) {

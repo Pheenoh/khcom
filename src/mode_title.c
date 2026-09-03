@@ -28,7 +28,7 @@ void mode_title_0(void) {
     SetupBg(0, 0, 0x1D, 0);
     SetBgPriority(0, 3);
 
-    if (gUnk_02039BB0.unk_008 & 0x200) {
+    if (gUnk_02039BB0.flags & 0x200) {
         LoadBgMap(0, gUnk_09840798, 0x800);
     } else {
         LoadBgMap(0, gUnk_0983E398, 0x800);
@@ -37,7 +37,7 @@ void mode_title_0(void) {
     SetupBg(1, 0, 0x1E, 0);
     SetBgPriority(1, 3);
 
-    if (gUnk_02039BB0.unk_008 & 0x200) {
+    if (gUnk_02039BB0.flags & 0x200) {
         LoadBgTiles(1, gUnk_097D3658, 0x7FA0);
         LoadBgMap(1, gUnk_09840F98, 0x800);
     } else {
@@ -86,7 +86,7 @@ void mode_title_1(void) {
         gUnk_02034EC0 = 100;
         break;
     case 1:
-        if (gUnk_02039BB0.unk_008 & 0x200) {
+        if (gUnk_02039BB0.flags & 0x200) {
             ApproachValue(&gUnk_0203C548, 0x3F3F, gUnk_02034EC0);
         } else {
             ApproachValue(&gUnk_0203C548, 0xB0C1, gUnk_02034EC0);
@@ -165,7 +165,7 @@ void mode_title_1(void) {
             gUnk_02034EC2 = 3;
         } else if (SaveRepairFileLarge(0) == 2 || SaveRepairFileLarge(1) == 2) {
             gUnk_02034EC2 = 1;
-        } else if ((gUnk_02039BB0.unk_008 & 0x20) &&
+        } else if ((gUnk_02039BB0.flags & 0x20) &&
                    (SaveRepairFileSmall(0) == 2 || SaveRepairFileSmall(1) == 2)) {
             gUnk_02034EC2 = 1;
         } else {
@@ -284,7 +284,7 @@ void func_080D62A8(TitleLogoWork* work) {
     work->unk_00[0].unk_00 = LoadObjTiles(gUnk_0976E9F4, 0x240);
     work->unk_00[0].unk_08 = gUnk_09EF659C;
 
-    if (gUnk_02039BB0.unk_008 & 0x200) {
+    if (gUnk_02039BB0.flags & 0x200) {
         work->unk_00[1].unk_00 = LoadObjTiles(gUnk_09776076, 0x43C0);
         work->unk_00[1].unk_08 = gUnk_09EF669C;
         work->unk_00[1].unk_04 = LoadObjPalette(gUnk_0984AA18, 0x20);

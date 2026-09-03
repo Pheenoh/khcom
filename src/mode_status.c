@@ -19,7 +19,7 @@ void mode_status_0(void) {
     LoadBgPalette(3, gUnk_0984B118, 0xA0);
     LoadBgMap(3, gUnk_09848198, 0x500);
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         LoadBgMap(2, gUnk_09847C98, 0x500);
     } else {
         LoadBgMap(2, gUnk_09847798, 0x500);

@@ -914,7 +914,7 @@ void task_hum_vixen_0(VixenWork* work) {
     func_080543B4(work);
     work->base.unk_184 = (u32)gUnk_0813F7A8;
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         gUnk_02039B84->unk_114 = AllocObjTiles(0x840, 0);
     }
 }
@@ -927,7 +927,7 @@ void task_hum_vixen_2(VixenWork* work) {
 }
 
 void task_hum_vixen_3(VixenWork* work) {
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         ReleaseObjTiles(gUnk_02039B84->unk_114);
     }
     func_0800E380(&work->base);
@@ -1128,7 +1128,7 @@ void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
     work->unk_04 = LoadObjPalette(gUnk_08F6DCA4, 0x20);
     work->unk_00 = gUnk_02039B84->unk_114;
 
-    if (gUnk_02039BB0.unk_008 & 8) {
+    if (gUnk_02039BB0.flags & 8) {
         if (gUnk_02039B84->unk_068 & 0x800000000000) {
             work->unk_32 = 2;
         } else {
@@ -1994,33 +1994,33 @@ void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
 
     data->flags = 0;
 
-    if (gUnk_02039BB0.unk_008 & 0x20) {
+    if (gUnk_02039BB0.flags & 0x20) {
         data->flags = 1;
     }
 
-    if (gUnk_02039BB0.unk_008 & 0x800) {
+    if (gUnk_02039BB0.flags & 0x800) {
         data->flags |= 4;
 
-        if (gUnk_02039BB0.unk_008 & 8) {
+        if (gUnk_02039BB0.flags & 8) {
             data->flags |= 2;
         } else {
             data->flags &= ~2;
         }
-    } else if (gUnk_02039BB0.unk_008 & 0x20) {
+    } else if (gUnk_02039BB0.flags & 0x20) {
         data->flags |= 2;
     }
 
     for (i = 0; i < 4; i++) {
         if (file == i) {
-            data->files[i].unk_00 = gUnk_02039BB0.unk_00E;
-            data->files[i].unk_01 = gUnk_02039BB0.unk_00C;
+            data->files[i].unk_00 = gUnk_02039BB0.floor;
+            data->files[i].unk_01 = gUnk_02039BB0.world;
             data->files[i].unk_02 = gUnk_02039CB8;
             data->files[i].unk_04 = gUnk_02039D8C;
         } else {
-            data->files[i].unk_00 = gUnk_02039BB0.unk_1BC[i].unk_00;
-            data->files[i].unk_01 = gUnk_02039BB0.unk_1BC[i].unk_01;
-            data->files[i].unk_02 = gUnk_02039BB0.unk_1BC[i].unk_02;
-            data->files[i].unk_04 = gUnk_02039BB0.unk_1BC[i].unk_04;
+            data->files[i].unk_00 = gUnk_02039BB0.fileSummaries[i].unk_00;
+            data->files[i].unk_01 = gUnk_02039BB0.fileSummaries[i].unk_01;
+            data->files[i].unk_02 = gUnk_02039BB0.fileSummaries[i].unk_02;
+            data->files[i].unk_04 = gUnk_02039BB0.fileSummaries[i].unk_04;
         }
     }
 }
@@ -2029,13 +2029,13 @@ INCLUDE_ASM("hum/MakeSaveHeaderData.s");
 #endif
 
 void MakeSaveSystem(SaveFileLarge* save) {
-    save->common.flags = gUnk_02039BB0.unk_008;
-    save->common.unk_8E = gUnk_02039BB0.unk_032;
+    save->common.flags = gUnk_02039BB0.flags;
+    save->common.unk_8E = gUnk_02039BB0.hp;
     memcpy(save->common.unk_04, gUnk_02039BB0.unk_0F8, 0x88);
     save->common.unk_8C = gUnk_02039BB0.unk_180;
-    save->common.unk_90 = gUnk_02039BB0.unk_00E;
-    save->common.unk_91 = gUnk_02039BB0.unk_00C;
-    save->common.unk_94 = gUnk_02039BB0.unk_1DC;
+    save->common.unk_90 = gUnk_02039BB0.floor;
+    save->common.unk_91 = gUnk_02039BB0.world;
+    save->common.unk_94 = gUnk_02039BB0.playTime;
     func_080E92B8(save->unk_098);
     func_080A324C(save->unk_2EC);
     func_080C700C(save->unk_E6C);
@@ -2044,132 +2044,132 @@ void MakeSaveSystem(SaveFileLarge* save) {
 }
 
 void MakeSaveFileLarge(SaveFileLarge* save) {
-    save->common.flags = gUnk_02039BB0.unk_008;
-    save->common.unk_8E = gUnk_02039BB0.unk_032;
+    save->common.flags = gUnk_02039BB0.flags;
+    save->common.unk_8E = gUnk_02039BB0.hp;
     memcpy(save->common.unk_04, gUnk_02039BB0.unk_0F8, 0x88);
     save->common.unk_8C = gUnk_02039BB0.unk_180;
-    save->common.unk_90 = gUnk_02039BB0.unk_00E;
-    save->common.unk_91 = gUnk_02039BB0.unk_00C;
-    save->common.unk_94 = gUnk_02039BB0.unk_1DC;
+    save->common.unk_90 = gUnk_02039BB0.floor;
+    save->common.unk_91 = gUnk_02039BB0.world;
+    save->common.unk_94 = gUnk_02039BB0.playTime;
     func_080E92B8(save->unk_098);
     func_080A324C(save->unk_2EC);
     func_080C700C(save->unk_E6C);
     func_080DDEB0(save->unk_E70);
     func_0810962C(save->unk_EB4);
 
-    if (gUnk_02039BB0.unk_008 & 0x10) {
-        gUnk_02039BB0.unk_1BC[1].unk_00 = gUnk_02039BB0.unk_00E;
-        gUnk_02039BB0.unk_1BC[1].unk_01 = gUnk_02039BB0.unk_00C;
-        gUnk_02039BB0.unk_1BC[1].unk_02 = gUnk_02039BB0.unk_108;
-        gUnk_02039BB0.unk_1BC[1].unk_04 = gUnk_02039BB0.unk_1DC;
+    if (gUnk_02039BB0.flags & 0x10) {
+        gUnk_02039BB0.fileSummaries[1].unk_00 = gUnk_02039BB0.floor;
+        gUnk_02039BB0.fileSummaries[1].unk_01 = gUnk_02039BB0.world;
+        gUnk_02039BB0.fileSummaries[1].unk_02 = gUnk_02039BB0.level;
+        gUnk_02039BB0.fileSummaries[1].unk_04 = gUnk_02039BB0.playTime;
     } else {
-        gUnk_02039BB0.unk_1BC[0].unk_00 = gUnk_02039BB0.unk_00E;
-        gUnk_02039BB0.unk_1BC[0].unk_01 = gUnk_02039BB0.unk_00C;
-        gUnk_02039BB0.unk_1BC[0].unk_02 = gUnk_02039BB0.unk_108;
-        gUnk_02039BB0.unk_1BC[0].unk_04 = gUnk_02039BB0.unk_1DC;
+        gUnk_02039BB0.fileSummaries[0].unk_00 = gUnk_02039BB0.floor;
+        gUnk_02039BB0.fileSummaries[0].unk_01 = gUnk_02039BB0.world;
+        gUnk_02039BB0.fileSummaries[0].unk_02 = gUnk_02039BB0.level;
+        gUnk_02039BB0.fileSummaries[0].unk_04 = gUnk_02039BB0.playTime;
     }
 }
 
 void MakeSaveFileSmall(SaveFileSmall* save) {
-    save->common.flags = gUnk_02039BB0.unk_008;
-    save->common.unk_8E = gUnk_02039BB0.unk_032;
+    save->common.flags = gUnk_02039BB0.flags;
+    save->common.unk_8E = gUnk_02039BB0.hp;
     memcpy(save->common.unk_04, gUnk_02039BB0.unk_0F8, 0x88);
     save->common.unk_8C = gUnk_02039BB0.unk_180;
-    save->common.unk_90 = gUnk_02039BB0.unk_00E;
-    save->common.unk_91 = gUnk_02039BB0.unk_00C;
-    save->common.unk_94 = gUnk_02039BB0.unk_1DC;
+    save->common.unk_90 = gUnk_02039BB0.floor;
+    save->common.unk_91 = gUnk_02039BB0.world;
+    save->common.unk_94 = gUnk_02039BB0.playTime;
     func_080E92B8(save->unk_098);
     func_080A3370(save->unk_2EC);
 
-    if (gUnk_02039BB0.unk_008 & 0x10) {
-        gUnk_02039BB0.unk_1BC[3].unk_00 = gUnk_02039BB0.unk_00E;
-        gUnk_02039BB0.unk_1BC[3].unk_01 = gUnk_02039BB0.unk_00C;
-        gUnk_02039BB0.unk_1BC[3].unk_02 = gUnk_02039BB0.unk_108;
-        gUnk_02039BB0.unk_1BC[3].unk_04 = gUnk_02039BB0.unk_1DC;
+    if (gUnk_02039BB0.flags & 0x10) {
+        gUnk_02039BB0.fileSummaries[3].unk_00 = gUnk_02039BB0.floor;
+        gUnk_02039BB0.fileSummaries[3].unk_01 = gUnk_02039BB0.world;
+        gUnk_02039BB0.fileSummaries[3].unk_02 = gUnk_02039BB0.level;
+        gUnk_02039BB0.fileSummaries[3].unk_04 = gUnk_02039BB0.playTime;
     } else {
-        gUnk_02039BB0.unk_1BC[2].unk_00 = gUnk_02039BB0.unk_00E;
-        gUnk_02039BB0.unk_1BC[2].unk_01 = gUnk_02039BB0.unk_00C;
-        gUnk_02039BB0.unk_1BC[2].unk_02 = gUnk_02039BB0.unk_108;
-        gUnk_02039BB0.unk_1BC[2].unk_04 = gUnk_02039BB0.unk_1DC;
+        gUnk_02039BB0.fileSummaries[2].unk_00 = gUnk_02039BB0.floor;
+        gUnk_02039BB0.fileSummaries[2].unk_01 = gUnk_02039BB0.world;
+        gUnk_02039BB0.fileSummaries[2].unk_02 = gUnk_02039BB0.level;
+        gUnk_02039BB0.fileSummaries[2].unk_04 = gUnk_02039BB0.playTime;
     }
 }
 
 void ApplySaveHeaderData(SaveHeaderData* data) {
     if (SaveRepairHeader() == SAVE_OK) {
         if (data->flags & 1) {
-            gUnk_02039BB0.unk_008 |= 0x20;
+            gUnk_02039BB0.flags |= 0x20;
         }
 
         if (data->flags & 4) {
-            gUnk_02039BB0.unk_008 |= 0x800;
+            gUnk_02039BB0.flags |= 0x800;
         }
 
         if (data->flags & 2) {
-            gUnk_02039BB0.unk_008 |= 0x200;
+            gUnk_02039BB0.flags |= 0x200;
         }
     }
 
     if (SaveRepairFileLarge(0) == SAVE_OK) {
-        gUnk_02039BB0.unk_1BC[0].unk_00 = data->files[0].unk_00;
-        gUnk_02039BB0.unk_1BC[0].unk_01 = data->files[0].unk_01;
-        gUnk_02039BB0.unk_1BC[0].unk_02 = data->files[0].unk_02;
-        gUnk_02039BB0.unk_1BC[0].unk_04 = data->files[0].unk_04;
+        gUnk_02039BB0.fileSummaries[0].unk_00 = data->files[0].unk_00;
+        gUnk_02039BB0.fileSummaries[0].unk_01 = data->files[0].unk_01;
+        gUnk_02039BB0.fileSummaries[0].unk_02 = data->files[0].unk_02;
+        gUnk_02039BB0.fileSummaries[0].unk_04 = data->files[0].unk_04;
     } else {
-        gUnk_02039BB0.unk_1BC[0].unk_00 = 0;
-        gUnk_02039BB0.unk_1BC[0].unk_01 = 0;
-        gUnk_02039BB0.unk_1BC[0].unk_02 = 0;
-        gUnk_02039BB0.unk_1BC[0].unk_04 = 0;
+        gUnk_02039BB0.fileSummaries[0].unk_00 = 0;
+        gUnk_02039BB0.fileSummaries[0].unk_01 = 0;
+        gUnk_02039BB0.fileSummaries[0].unk_02 = 0;
+        gUnk_02039BB0.fileSummaries[0].unk_04 = 0;
     }
 
     if (SaveRepairFileLarge(1) == SAVE_OK) {
-        gUnk_02039BB0.unk_1BC[1].unk_00 = data->files[1].unk_00;
-        gUnk_02039BB0.unk_1BC[1].unk_01 = data->files[1].unk_01;
-        gUnk_02039BB0.unk_1BC[1].unk_02 = data->files[1].unk_02;
-        gUnk_02039BB0.unk_1BC[1].unk_04 = data->files[1].unk_04;
+        gUnk_02039BB0.fileSummaries[1].unk_00 = data->files[1].unk_00;
+        gUnk_02039BB0.fileSummaries[1].unk_01 = data->files[1].unk_01;
+        gUnk_02039BB0.fileSummaries[1].unk_02 = data->files[1].unk_02;
+        gUnk_02039BB0.fileSummaries[1].unk_04 = data->files[1].unk_04;
     } else {
-        gUnk_02039BB0.unk_1BC[1].unk_00 = 0;
-        gUnk_02039BB0.unk_1BC[1].unk_01 = 0;
-        gUnk_02039BB0.unk_1BC[1].unk_02 = 0;
-        gUnk_02039BB0.unk_1BC[1].unk_04 = 0;
+        gUnk_02039BB0.fileSummaries[1].unk_00 = 0;
+        gUnk_02039BB0.fileSummaries[1].unk_01 = 0;
+        gUnk_02039BB0.fileSummaries[1].unk_02 = 0;
+        gUnk_02039BB0.fileSummaries[1].unk_04 = 0;
     }
 
     if (SaveRepairFileSmall(0) == SAVE_OK) {
-        gUnk_02039BB0.unk_1BC[2].unk_00 = data->files[2].unk_00;
-        gUnk_02039BB0.unk_1BC[2].unk_01 = data->files[2].unk_01;
-        gUnk_02039BB0.unk_1BC[2].unk_02 = data->files[2].unk_02;
-        gUnk_02039BB0.unk_1BC[2].unk_04 = data->files[2].unk_04;
+        gUnk_02039BB0.fileSummaries[2].unk_00 = data->files[2].unk_00;
+        gUnk_02039BB0.fileSummaries[2].unk_01 = data->files[2].unk_01;
+        gUnk_02039BB0.fileSummaries[2].unk_02 = data->files[2].unk_02;
+        gUnk_02039BB0.fileSummaries[2].unk_04 = data->files[2].unk_04;
     } else {
-        gUnk_02039BB0.unk_1BC[2].unk_00 = 0;
-        gUnk_02039BB0.unk_1BC[2].unk_01 = 0;
-        gUnk_02039BB0.unk_1BC[2].unk_02 = 0;
-        gUnk_02039BB0.unk_1BC[2].unk_04 = 0;
+        gUnk_02039BB0.fileSummaries[2].unk_00 = 0;
+        gUnk_02039BB0.fileSummaries[2].unk_01 = 0;
+        gUnk_02039BB0.fileSummaries[2].unk_02 = 0;
+        gUnk_02039BB0.fileSummaries[2].unk_04 = 0;
     }
 
     if (SaveRepairFileSmall(1) == SAVE_OK) {
-        gUnk_02039BB0.unk_1BC[3].unk_00 = data->files[3].unk_00;
-        gUnk_02039BB0.unk_1BC[3].unk_01 = data->files[3].unk_01;
-        gUnk_02039BB0.unk_1BC[3].unk_02 = data->files[3].unk_02;
-        gUnk_02039BB0.unk_1BC[3].unk_04 = data->files[3].unk_04;
+        gUnk_02039BB0.fileSummaries[3].unk_00 = data->files[3].unk_00;
+        gUnk_02039BB0.fileSummaries[3].unk_01 = data->files[3].unk_01;
+        gUnk_02039BB0.fileSummaries[3].unk_02 = data->files[3].unk_02;
+        gUnk_02039BB0.fileSummaries[3].unk_04 = data->files[3].unk_04;
     } else {
-        gUnk_02039BB0.unk_1BC[3].unk_00 = 0;
-        gUnk_02039BB0.unk_1BC[3].unk_01 = 0;
-        gUnk_02039BB0.unk_1BC[3].unk_02 = 0;
-        gUnk_02039BB0.unk_1BC[3].unk_04 = 0;
+        gUnk_02039BB0.fileSummaries[3].unk_00 = 0;
+        gUnk_02039BB0.fileSummaries[3].unk_01 = 0;
+        gUnk_02039BB0.fileSummaries[3].unk_02 = 0;
+        gUnk_02039BB0.fileSummaries[3].unk_04 = 0;
     }
 }
 
 void ApplySaveSystem(SaveFileLarge* save) {
     u32 t;
 
-    t = gUnk_02039BB0.unk_008 & 0xA20;
+    t = gUnk_02039BB0.flags & 0xA20;
     save->common.flags &= 0xFFFFF5DF;
-    gUnk_02039BB0.unk_008 = save->common.flags | t;
-    gUnk_02039BB0.unk_032 = save->common.unk_8E;
+    gUnk_02039BB0.flags = save->common.flags | t;
+    gUnk_02039BB0.hp = save->common.unk_8E;
     memcpy(gUnk_02039BB0.unk_0F8, save->common.unk_04, 0x88);
     gUnk_02039BB0.unk_180 = save->common.unk_8C;
-    gUnk_02039BB0.unk_00E = save->common.unk_90;
-    gUnk_02039BB0.unk_00C = save->common.unk_91;
-    gUnk_02039BB0.unk_1DC = save->common.unk_94;
+    gUnk_02039BB0.floor = save->common.unk_90;
+    gUnk_02039BB0.world = save->common.unk_91;
+    gUnk_02039BB0.playTime = save->common.unk_94;
     func_080E92F8(save->unk_098);
     func_080A32DC(save->unk_2EC);
     func_080C7024(save->unk_E6C);
@@ -2180,38 +2180,38 @@ void ApplySaveSystem(SaveFileLarge* save) {
 void ApplySaveFileLarge(SaveFileLarge* save) {
     u32 t;
 
-    t = gUnk_02039BB0.unk_008 & 0xA20;
+    t = gUnk_02039BB0.flags & 0xA20;
     save->common.flags &= 0xFFFFF5DF;
-    gUnk_02039BB0.unk_008 = save->common.flags | t;
-    gUnk_02039BB0.unk_032 = save->common.unk_8E;
+    gUnk_02039BB0.flags = save->common.flags | t;
+    gUnk_02039BB0.hp = save->common.unk_8E;
     memcpy(gUnk_02039BB0.unk_0F8, save->common.unk_04, 0x88);
     gUnk_02039BB0.unk_180 = save->common.unk_8C;
-    gUnk_02039BB0.unk_00E = save->common.unk_90;
-    gUnk_02039BB0.unk_00C = save->common.unk_91;
-    gUnk_02039BB0.unk_1DC = save->common.unk_94;
+    gUnk_02039BB0.floor = save->common.unk_90;
+    gUnk_02039BB0.world = save->common.unk_91;
+    gUnk_02039BB0.playTime = save->common.unk_94;
     func_080E92F8(save->unk_098);
     func_080A32DC(save->unk_2EC);
     func_080C7024(save->unk_E6C);
     func_080DDEBC(save->unk_E70);
     func_08109638(save->unk_EB4);
-    gUnk_02039BB0.unk_008 &= ~8;
+    gUnk_02039BB0.flags &= ~8;
 }
 
 void ApplySaveFileSmall(SaveFileSmall* save) {
     u32 t;
 
-    t = gUnk_02039BB0.unk_008 & 0xA20;
+    t = gUnk_02039BB0.flags & 0xA20;
     save->common.flags &= 0xFFFFF5DF;
-    gUnk_02039BB0.unk_008 = save->common.flags | t;
-    gUnk_02039BB0.unk_032 = save->common.unk_8E;
+    gUnk_02039BB0.flags = save->common.flags | t;
+    gUnk_02039BB0.hp = save->common.unk_8E;
     memcpy(gUnk_02039BB0.unk_0F8, save->common.unk_04, 0x88);
     gUnk_02039BB0.unk_180 = save->common.unk_8C;
-    gUnk_02039BB0.unk_00E = save->common.unk_90;
-    gUnk_02039BB0.unk_00C = save->common.unk_91;
-    gUnk_02039BB0.unk_1DC = save->common.unk_94;
+    gUnk_02039BB0.floor = save->common.unk_90;
+    gUnk_02039BB0.world = save->common.unk_91;
+    gUnk_02039BB0.playTime = save->common.unk_94;
     func_080E92F8(save->unk_098);
     func_080A3398(save->unk_2EC);
-    gUnk_02039BB0.unk_008 |= 8;
+    gUnk_02039BB0.flags |= 8;
 }
 
 void func_0805A484(void) {

@@ -1975,7 +1975,7 @@ u8 func_08112C38(StaffRollWork* w) {
 
     result = 1;
 
-    if ((gUnk_02039BB0.unk_008 & 8) != 0) {
+    if ((gUnk_02039BB0.flags & 8) != 0) {
         w->unk_09C = gUnk_09A53D50;
     } else {
         w->unk_09C = gUnk_09A538D8;
@@ -2376,7 +2376,7 @@ u8 func_08113180(StaffRollWork* w) {
             idx = t / STAFFROLL_SCRIPT_PERIOD;
 
             if (idx <= 16) {
-                if ((gUnk_02039BB0.unk_008 & 8) != 0) {
+                if ((gUnk_02039BB0.flags & 8) != 0) {
                     w->unk_0CC = gUnk_09EFA978[idx];
                 } else {
                     w->unk_0CC = gUnk_09EFA934[idx];
@@ -2513,7 +2513,7 @@ u8 func_08113A94(StaffRollWork* w) {
             w->unk_0C0++;
         }
         if (func_08006314() == 0) {
-            if ((gUnk_02039BB0.unk_008 & 8) != 0) {
+            if ((gUnk_02039BB0.flags & 8) != 0) {
                 w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, gUnk_09EFAA4C, (void*)1);
             } else {
                 w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, gUnk_09EFAA4C, (void*)0);
@@ -2524,7 +2524,7 @@ u8 func_08113A94(StaffRollWork* w) {
         break;
     case 2:
         w->unk_0C0++;
-        if ((gUnk_02039BB0.unk_008 & 8) != 0) {
+        if ((gUnk_02039BB0.flags & 8) != 0) {
             if (w->unk_0C0 >= STAFFROLL_HOLD_FRAMES) {
                 w->unk_0BC = 3;
                 w->unk_0C0 = 0;
@@ -2856,7 +2856,7 @@ u8 func_081141F8(StaffRollWork* w) {
         SetBgScroll(1, 0, 0);
         SetBgColorMode(1, 0x80);
 
-        if ((gUnk_02039BB0.unk_008 & 8) != 0) {
+        if ((gUnk_02039BB0.flags & 8) != 0) {
             LoadBgTiles(1, gUnk_09D2B334, 0x7F40);
             LoadBgMap(1, gUnk_09D68A74, 0x800);
             LoadBgPalette(1, gUnk_09D6CB74, 0x200);
@@ -3023,7 +3023,7 @@ void mode_StaffRoll_1(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        if ((gUnk_02039BB0.unk_008 & 8) != 0) {
+        if ((gUnk_02039BB0.flags & 8) != 0) {
             w->unk_008 = 7;
             w->unk_0BC = 0;
         } else {

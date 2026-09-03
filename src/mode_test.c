@@ -393,7 +393,7 @@ void func_08060A74(void) {
     gUnk_02034A44 = 0;
     TaskPoolInit(&gUnk_02034A30, 1);
 
-    if ((gUnk_02039BB0.unk_008 & 8) == 0) {
+    if ((gUnk_02039BB0.flags & 8) == 0) {
         TaskCreate(&gUnk_02034A30, &gUnk_09EE4AF4, &gUnk_02034A44);
     } else {
         TaskCreate(&gUnk_02034A30, &gUnk_09EE8EF0, &gUnk_02034A44);

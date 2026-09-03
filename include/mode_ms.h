@@ -67,7 +67,7 @@ typedef struct UnkStruct_099932D4 {
 
 typedef struct UnkStruct_02039BB0 {
     u8 unk_000[0x0E];
-    s8 unk_00E;
+    s8 floor;
     u8 unk_00F[0x16B];
     u16 unk_17A;
     u8 unk_17C[0x2];
