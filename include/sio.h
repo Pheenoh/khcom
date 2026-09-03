@@ -75,14 +75,6 @@ extern SioWork gUnk_02039830;
 extern u8 gUnk_02039B50;
 extern u8 gUnk_02039B60;
 
-extern IntrFunc* gIntrTableSerial;
-extern IntrFunc* gIntrTableVCount;
-extern IntrFunc* gIntrTableVBlank;
-extern IntrFunc* gIntrTableTimer3;
-extern IntrFunc gHBlankCallback;
-extern IntrFunc gVCountCallback;
-extern IntrFunc gVBlankCallback;
-extern IntrFunc* gIntrTableHBlank;
 
 
 

@@ -17,12 +17,8 @@ typedef struct PaletteWave {
     u8 unk_02;
 } PaletteWave;
 
-extern PaletteBuffer* gPaletteBuffer;
-extern s16 gPaletteEffect;
-extern s16 gPaletteEffectSaved;
 extern PaletteWave gBgWaves[];
 extern s16 gSineTable[];
-extern u32 gFrameCounter;
 extern u8 sPalletHeapName[];
 extern s32 gUnk_08121694[];
 

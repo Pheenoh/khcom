@@ -1,5 +1,14 @@
 #include "sio.h"
 
+extern IntrFunc* gIntrTableSerial;
+extern IntrFunc* gIntrTableVCount;
+extern IntrFunc* gIntrTableVBlank;
+extern IntrFunc* gIntrTableTimer3;
+extern IntrFunc gHBlankCallback;
+extern IntrFunc gVCountCallback;
+extern IntrFunc gVBlankCallback;
+extern IntrFunc* gIntrTableHBlank;
+
 u8 gUnk_0203406C;
 u16 gUnk_0203406E;
 u8 gUnk_02034070;

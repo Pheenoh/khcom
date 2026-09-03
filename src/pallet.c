@@ -4,6 +4,11 @@
 #include "malloc.h"
 #include "types.h"
 
+extern u32 gFrameCounter;
+PaletteBuffer* gPaletteBuffer;
+s16 gPaletteEffect;
+s16 gPaletteEffectSaved;
+
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 
 u16* FadePaletteToBlack(u16* src, u16* dst, u16 size, u16 amount) {
