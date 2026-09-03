@@ -1,13 +1,16 @@
 #include "macros.h"
 #include "mode_debflag.h"
 
-s8 gUnk_020348C0;
-s8 gUnk_020348C1;
-const DebugFlag* gUnk_020348C4;
+static s8 gUnk_020348C0;
+static s8 gUnk_020348C1;
+static const DebugFlag* gUnk_020348C4;
 #ifdef VERSION_EU
-u32 gUnkEu_020348D4;
+static u32 gUnkEu_020348D4;
 #endif
+
 #include "gba/keys.h"
+
+u8 gUnk_02039B94;
 
 const DebugFlag gUnk_08130BE8[14] = {
     { "\x82\x6c\x82\x74\x82\x73\x82\x64\x82\x6a\x82\x68\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x46", 0x2 },
