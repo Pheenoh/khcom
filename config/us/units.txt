@@ -76,7 +76,7 @@ ms.c
 mode_backupstat.c -O2 -fprologue-bugfix -fno-common
 bos6.c
 unk_0810fe94.c -O2 -fprologue-bugfix -fno-common
-bos7.c
+bos7.c -O2 -fprologue-bugfix -fno-common
 sroll.c -O2 -fprologue-bugfix -fno-common
 lib.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.c

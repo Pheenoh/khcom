@@ -540,7 +540,6 @@ extern u8 gUnk_09EFBF60[];
 
 extern UnkStruct_02039B84* gUnk_02039B84;
 
-extern StaffRollWork* gUnk_02036020;
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern u8 gUnk_09D6BE74[];
 

@@ -1,6 +1,8 @@
 #include "macros.h"
 #include "bos7.h"
 
+StaffRollWork* gUnk_02036020;
+
 void task_bos_lst_fld_0(LstFldWork* work, LstFldArg* arg) {
     vu32* dma;
     s32 i;
