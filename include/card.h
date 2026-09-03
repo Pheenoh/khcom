@@ -148,6 +148,13 @@ typedef struct UnkStruct_080A1C48 {
     void* unk_58;
 } UnkStruct_080A1C48;
 
+typedef struct UnkStruct_0809A02C {
+    u8 unk_000[0x1B8];
+    s16 unk_1B8;
+    u8 unk_1BA[0x14];
+    u8 unk_1CE;
+} UnkStruct_0809A02C;
+
 typedef struct UnkStruct_080991CC {
     void* unk_00;
     void* unk_04;
@@ -165,7 +172,9 @@ typedef struct UnkStruct_09EE7D84 {
 typedef struct UnkStruct_02034AFC {
     u8 unk_000[0x10C];
     u64 unk_10C;
-    u8 unk_114[0x31];
+    u8 unk_114[0x28];
+    s16 unk_13C;
+    u8 unk_13E[0x07];
     u8 unk_145;
     u8 unk_146[0x08];
     u8 unk_14E;
@@ -348,7 +357,9 @@ typedef struct UnkStruct_0808E2F0 {
 typedef struct UnkStruct_0808DB04 {
     u8 unk_000[0x4D4];
     UnkStruct_0808E2F0* unk_4D4;
-    u8 unk_4D8[0x3A8];
+    u8 unk_4D8[0x3A0];
+    s16 unk_878;
+    u8 unk_87A[0x06];
     u16 unk_880;
     u8 unk_882[0x02];
     s16 unk_884;
@@ -796,6 +807,8 @@ extern u8 gUnk_09EEB07C[];
 extern u8 gUnk_09EEB068[];
 extern s16 gUnk_09035950[];
 extern s16 gUnk_09035956[];
+extern s16 gUnk_090356EC[];
+extern s16 gUnk_090356F2[];
 extern u8 gUnk_093F7172[];
 extern u8 gUnk_09508098[];
 extern u8 gUnk_09618C58[];
@@ -1306,6 +1319,7 @@ typedef struct UnkStruct_08094CE4_B {
 
 extern void* gUnk_0203A860[];
 extern void* gUnk_09EE981C[];
+extern void* gUnk_09EE1380[];
 extern u8 gUnk_0940F938[];
 extern s16 gUnk_090361B0[];
 extern s16 gUnk_090361B8[];
