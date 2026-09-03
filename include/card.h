@@ -564,8 +564,7 @@ typedef struct UnkStruct_02034AD4 {
     u8 unk_01;
     u8 unk_02;
     u8 unk_03;
-    u16 unk_04;
-    u8 unk_06[0x3E];
+    u16 unk_04[32];
 } UnkStruct_02034AD4;
 
 typedef struct UnkStruct_0809E0A4 {
