@@ -35,6 +35,7 @@ void task_status_0(StatusWork* work) {
     gUnk_02034F02 = work->unk_1A + work->unk_1C;
 }
 
+#ifndef VERSION_EU
 void func_080D764C(StatusWork* work) {
     u16 keys;
 
@@ -115,6 +116,9 @@ void func_080D764C(StatusWork* work) {
         }
     }
 }
+#else
+INCLUDE_ASM("status/func_080D764C.s");
+#endif
 
 u8 task_status_1(StatusWork* work) {
     if (func_080D7B94()) {
@@ -163,6 +167,7 @@ void func_080D78B8(StatusBarWork* work) {
     work->unk_20 = -0x8000;
 }
 
+#ifndef VERSION_EU
 void task_status_bar_0(StatusBarWork* work) {
     work->tiles = LoadObjTiles(gUnk_097A18EC, 0x2E0);
     work->palette = LoadObjPalette(gUnk_0984B1B8, 0x20);
@@ -177,6 +182,9 @@ void task_status_bar_0(StatusBarWork* work) {
     work->unk_24 = 0;
     work->unk_25 = 0;
 }
+#else
+INCLUDE_ASM("status/task_status_bar_0.s");
+#endif
 
 u8 task_status_bar_1(StatusBarWork* work) {
     switch (gUnk_0203C550) {
@@ -242,6 +250,7 @@ u8 task_status_bar_1(StatusBarWork* work) {
     return 1;
 }
 
+#ifndef VERSION_EU
 void task_status_bar_2(StatusBarWork* work) {
     DrawSprite(work->unk_1C >> 8, 0, gUnk_097A18CC, work->tiles, work->palette, 0, 0xC00, 29);
 
@@ -250,6 +259,9 @@ void task_status_bar_2(StatusBarWork* work) {
         DrawSprite(128, work->unk_14 >> 8, gUnk_097A1898, work->tiles, work->palette, 0, 0xC00, 31);
     }
 }
+#else
+INCLUDE_ASM("status/task_status_bar_2.s");
+#endif
 
 void task_status_bar_3(StatusBarWork* work) {
     ReleaseObjTiles(work->tiles);
@@ -263,6 +275,7 @@ u8 func_080D7B94(void) {
     return 0;
 }
 
+#ifndef VERSION_EU
 void task_status_tab_0(StatusTabWork* work, s32* arg) {
     work->unk_18 = arg;
     work->unk_00 = AllocObjTiles(func_08003524(gUnk_09EF6920, 4), gUnk_097A24A6);
@@ -272,12 +285,19 @@ void task_status_tab_0(StatusTabWork* work, s32* arg) {
     work->unk_0C = LoadObjPalette(gUnk_0984B238, 0x20);
     work->unk_14 = gUnk_09EF6934[*work->unk_18];
 }
+#else
+INCLUDE_ASM("status/task_status_tab_0.s");
+#endif
 
+#ifndef VERSION_EU
 u8 task_status_tab_1(StatusTabWork* work) {
     work->unk_10 = gUnk_09EF6920[*work->unk_18];
     work->unk_14 = gUnk_09EF6934[*work->unk_18];
     return 1;
 }
+#else
+INCLUDE_ASM("status/task_status_tab_1.s");
+#endif
 
 void task_status_tab_2(StatusTabWork* work) {
     DrawSprite(0, 16, work->unk_10, work->unk_00, work->unk_08, 0, 0x800, 10);
@@ -423,6 +443,7 @@ void task_status_cursor_3(StatusCursorWork* work) {
     ReleaseObjPalette(work->unk_0C);
 }
 
+#ifndef VERSION_EU
 void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
     s32 i;
     StatusEntry* e;
@@ -462,6 +483,9 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
     work->unk_4C6 = 0;
     work->unk_4C8 = 0;
 }
+#else
+INCLUDE_ASM("status/task_status_stocklist_0.s");
+#endif
 
 u8 task_status_stocklist_1(StatusStocklistWork* work) {
     work->unk_4C6++;
@@ -590,6 +614,7 @@ s32 func_080D85A8(u32 a) {
     return 3;
 }
 
+#ifndef VERSION_EU
 void* func_080D85C0(u16 a) {
     UnkStruct_08F7CF18* d;
     void* t;
@@ -599,6 +624,9 @@ void* func_080D85C0(u16 a) {
     func_080038E4(t, d->unk_04[d->unk_0A], d->unk_00);
     return t;
 }
+#else
+INCLUDE_ASM("status/func_080D85C0.s");
+#endif
 
 s32 func_080D85F8(s32 a) {
     switch (a) {

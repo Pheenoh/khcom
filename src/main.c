@@ -112,6 +112,7 @@ void DisableHBlankIntr(void) {
     REG_IME = 1;
 }
 
+#ifndef VERSION_EU
 void InitSystem(void) {
     vu32* dma;
     u32 zero;
@@ -160,6 +161,9 @@ void InitSystem(void) {
     func_08116CEC();
     ModeInit();
 }
+#else
+INCLUDE_ASM("main/InitSystem.s");
+#endif
 
 #ifdef NON_MATCHING
 void AgbMain(void) {

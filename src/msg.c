@@ -40,6 +40,7 @@ u8 func_080629CC(void) {
     return 0;
 }
 INCLUDE_ASM("msg/func_080629F8.s");
+#ifndef VERSION_EU
 void func_08062CE4(void) {
     switch (gUnk_02034A78) {
     case 0x8F:
@@ -57,6 +58,10 @@ void func_08062CE4(void) {
         break;
     }
 }
+#else
+INCLUDE_ASM("msg/func_08062CE4.s");
+#endif
+#ifndef VERSION_EU
 void func_08062D20(void) {
     switch (gUnk_02034A78) {
     case 0x8F:
@@ -69,6 +74,9 @@ void func_08062D20(void) {
         break;
     }
 }
+#else
+INCLUDE_ASM("msg/func_08062D20.s");
+#endif
 void func_08062D3C(void) {
     switch (gUnk_02034A78) {
     case 0x43:
@@ -115,6 +123,7 @@ INCLUDE_ASM("msg/func_08063744.s");
 INCLUDE_ASM("msg/func_08063EE4.s");
 INCLUDE_ASM("msg/func_08063F60.s");
 INCLUDE_ASM("msg/func_080640E0.s");
+#ifndef VERSION_EU
 void func_080641CC(u8 i) {
     gUnk_02034A80[i].unk_52 = 0;
 }
@@ -127,6 +136,7 @@ void func_0806420C(void* a, void* b, u8 i) {
     gUnk_02034A80[i].unk_00 = a;
     gUnk_02034A80[i].unk_04 = b;
 }
+#endif
 INCLUDE_ASM("msg/func_0806422C.s");
 INCLUDE_ASM("msg/func_080642A8.s");
 INCLUDE_ASM("msg/func_08064338.s");
@@ -198,7 +208,7 @@ void _08065994(void) {
     }
 }
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 u16 func_080659BC(u8 v, TextSlot* out) {
     u8 buf[8];
     u8 q;
@@ -241,7 +251,7 @@ void func_08065A44(void** p, u8 n) {
     }
 }
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 u16 func_08065A70(u8 v, TextSlot* out) {
     u16 buf[4];
     u16* p;
@@ -314,7 +324,7 @@ s16 func_08065B08(TextSlot* p, u8 n) {
 INCLUDE_ASM("msg/func_08065B08.s");
 #endif
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 s32 func_08065B54(u16* s) {
     u16 n = 0;
     u16* p = s;
@@ -659,6 +669,7 @@ void event_seq_2(EventSeqWork* p) {
     }
     TaskPoolDraw(&p->unk_00);
 }
+#ifndef VERSION_EU
 void event_seq_3(EventSeqWork* p) {
     TaskPoolDestroy(&p->unk_00);
 
@@ -666,6 +677,9 @@ void event_seq_3(EventSeqWork* p) {
         TaskPoolDestroy(&p->unk_14);
     }
 }
+#else
+INCLUDE_ASM("msg/event_seq_3.s");
+#endif
 INCLUDE_ASM("msg/event_chara_0.s");
 INCLUDE_ASM("msg/event_chara_1.s");
 INCLUDE_ASM("msg/event_chara_2.s");

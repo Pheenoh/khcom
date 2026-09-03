@@ -35,7 +35,7 @@ void func_0805A514(s16 a, s16 b, s16 c) {
     }
 }
 
-#ifndef VERSION_JP
+#ifdef VERSION_US
 u16 func_0805A55C(u16* p) {
     s32 n;
     u16* q;
@@ -202,6 +202,7 @@ void func_0805A8D0(void) {
         gJiminyWork->unk_CAE, gJiminyWork->unk_CB0, gJiminyWork->unk_CB2);
 }
 
+#ifndef VERSION_EU
 void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
     gJiminyWork->unk_CAE = f;
     gJiminyWork->unk_CB0 = g;
@@ -222,6 +223,9 @@ void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
     func_0805A7D0();
     gJiminyWork->unk_D3E = 0;
 }
+#else
+INCLUDE_ASM("unk_0805a484/func_0805A95C.s");
+#endif
 
 u8 func_0805AA9C(void) {
     if (func_08006314()) {

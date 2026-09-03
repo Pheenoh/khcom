@@ -1484,6 +1484,7 @@ void func_0810C7C4(BosLstWork* work) {
     }
 }
 
+#ifndef VERSION_EU
 void task_bos_lst_0(BosLstWork* work, void* pool) {
     PcPos* pos;
     void* obj;
@@ -1613,6 +1614,9 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     g->unk_0D4 = work->unk_04C;
     g->unk_0D8 = -16;
 }
+#else
+INCLUDE_ASM("bos6/task_bos_lst_0.s");
+#endif
 
 s32 func_0810CC14(s32 a, s32 b, s32 c, s32 d, s32 e) {
     if (c == 0) {
@@ -1872,6 +1876,7 @@ void func_0810CEC8(BosLstWork* work) {
     }
 }
 
+#ifndef VERSION_EU
 u8 func_0810D304(BosLstWork* work, s32 idx) {
     s32 i;
     u8 r;
@@ -1891,6 +1896,9 @@ u8 func_0810D304(BosLstWork* work, s32 idx) {
     }
     return r;
 }
+#else
+INCLUDE_ASM("bos6/func_0810D304.s");
+#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("bos6/eu_0810BA1C.s");
@@ -1962,6 +1970,7 @@ void func_0810D4B0(BosLstWork* work) {
     }
 }
 
+#ifndef VERSION_EU
 void func_0810D4F8(BosLstWork* work) {
     LstSpawn4 s;
     PcPos* obj;
@@ -2037,6 +2046,9 @@ void func_0810D4F8(BosLstWork* work) {
         }
     }
 }
+#else
+INCLUDE_ASM("bos6/func_0810D4F8.s");
+#endif
 
 s32 func_0810D70C(BosLstWork* work) {
     s32 base;

@@ -236,6 +236,7 @@ void ModeStart(Mode* mode, s32 arg) {
     gModeFlags |= 8;
 }
 
+#ifndef VERSION_EU
 void ModeInit(void) {
     gModeFlags = 3;
     gUnk_0300749E = 0;
@@ -245,6 +246,9 @@ void ModeInit(void) {
     gUnk_030074A0 = 0;
     gUnk_030074A4 = 0;
 }
+#else
+INCLUDE_ASM("taskpool/ModeInit.s");
+#endif
 void func_08001058(void (*a)(void), void (*b)(void)) {
     if (a != 0) {
         a();
@@ -280,16 +284,21 @@ void ModeRequest(Mode* mode, s32 arg) {
     gPendingModeArg = arg;
 }
 
+#ifndef VERSION_EU
 void ModeRequestHeapReset(Mode* mode, s32 arg) {
     gPendingMode = mode;
     gPendingModeArg = arg;
     gModeFlags |= 0x10;
 }
+#else
+INCLUDE_ASM("taskpool/ModeRequestHeapReset.s");
+#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("taskpool/eu_0800115C.s");
 #endif
 
+#ifndef VERSION_EU
 void ModeUpdate(void) {
     u8 v;
 
@@ -344,6 +353,9 @@ void ModeUpdate(void) {
         }
     }
 }
+#else
+INCLUDE_ASM("taskpool/ModeUpdate.s");
+#endif
 void SetModeUpdate(void (*fn)(void)) {
     gCurrentModeUpdate = fn;
 }
@@ -386,6 +398,7 @@ const char* GetModeName(void) {
     return gCurrentMode->name;
 }
 
+#ifndef VERSION_EU
 void UpdateDebugModeSelect(void) {
     if (GetKeysHeld() & SELECT_BUTTON) {
         if (GetKeysPressed() & L_BUTTON) {
@@ -409,3 +422,6 @@ void UpdateDebugModeSelect(void) {
         }
     }
 }
+#else
+INCLUDE_ASM("taskpool/UpdateDebugModeSelect.s");
+#endif

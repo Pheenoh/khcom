@@ -2477,6 +2477,7 @@ void func_080EA2AC(void) {
         break;
     }
 }
+#ifndef VERSION_EU
 u8 func_080EA400(void) {
     if (gUnk_0203C590.unk_02 & 2) {
         return 0xFF;
@@ -2496,6 +2497,9 @@ u8 func_080EA400(void) {
     }
     return gUnk_09EF6AB0[gUnk_0203C590.unk_04];
 }
+#else
+INCLUDE_ASM("map/func_080EA400.s");
+#endif
 u8 func_080EA45C(void) {
     if (gUnk_0203C590.unk_02 & 1) {
         return 0xFF;
@@ -2547,6 +2551,7 @@ void func_080EA5A8(void) {
         ModeRequest(&gModeMapFld, 0);
     }
 }
+#ifndef VERSION_EU
 void func_080EA5CC(void) {
     func_080E0820();
     if (func_08006314() != 0) {
@@ -2575,6 +2580,9 @@ void func_080EA5CC(void) {
         func_080E04EC();
     }
 }
+#else
+INCLUDE_ASM("map/func_080EA5CC.s");
+#endif
 void func_080EA694(void) {
     u8 v;
     u16 t;
@@ -2748,6 +2756,7 @@ void Mode_MapFix_2(void) {
     EwramFree(gUnk_0203C7AC);
     EwramFree(gUnk_0203C7B8);
 }
+#ifndef VERSION_EU
 void func_080EAB20(u8 a, u8 b, u8 c) {
     const u8* src;
 
@@ -2768,6 +2777,9 @@ void func_080EAB20(u8 a, u8 b, u8 c) {
     }
     RequestDma3Copy((void*)src, (u8*)GetBgCharBase(1) + (a * 608 + 320), 320);
 }
+#else
+INCLUDE_ASM("map/func_080EAB20.s");
+#endif
 void func_080EABB8(u8 a, u16 v) {
     u16 d[4];
     s32 off;
@@ -2806,6 +2818,7 @@ s32 func_080EAD3C(u8 i) {
 INCLUDE_ASM("map/func_080EAD84.s");
 INCLUDE_ASM("map/func_080EAEB0.s");
 
+#ifndef VERSION_EU
 void func_080EB818(u8 a, u8 b, u8 c) {
     const u8* src;
 
@@ -2824,6 +2837,9 @@ void func_080EB818(u8 a, u8 b, u8 c) {
     }
     RequestDma3Copy((void*)src, (u8*)GetBgCharBase(1) + (a * 608 + 320), 320);
 }
+#else
+INCLUDE_ASM("map/func_080EB818.s");
+#endif
 
 INCLUDE_ASM("map/func_080EB898.s");
 INCLUDE_ASM("map/func_080EBA58.s");
@@ -2895,6 +2911,7 @@ void func_080EE580(UnkStruct_080EE580* p, u8 a) {
     func_080062F4(p->unk_188->unk_06 + 0x10, a);
 }
 
+#ifndef VERSION_EU
 void func_080EE5E0(u8 a) {
     const u8* src;
 
@@ -2905,6 +2922,9 @@ void func_080EE5E0(u8 a) {
     }
     RequestDma3Copy((void*)src, (u8*)GetBgCharBase(0) + 320, 320);
 }
+#else
+INCLUDE_ASM("map/func_080EE5E0.s");
+#endif
 
 void func_080EE62C(u16 v) {
     u16 d[4];

@@ -9,6 +9,7 @@ u32 gUnkEu_02035104;
 MapChkWork* gMapChkWork;
 UnkStruct_02034F18* gUnk_02034F18;
 
+#ifndef VERSION_EU
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)(arg + 0x40);
     s32 c;
@@ -49,6 +50,10 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
         func_0801BCD4(&work->unk_040);
     }
 }
+#else
+INCLUDE_ASM("bos4/task_bos_boogie_dice_0.s");
+#endif
+#ifndef VERSION_EU
 u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
 
@@ -307,6 +312,9 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
 
     return 1;
 }
+#else
+INCLUDE_ASM("bos4/task_bos_boogie_dice_1.s");
+#endif
 void task_bos_boogie_dice_2(BoogieDiceWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
     s16 x;
@@ -2050,6 +2058,7 @@ u16 func_080DD8A8(UrsulaBubbleWork* work) {
     return i;
 }
 
+#ifndef VERSION_EU
 void task_bos_ursula_bubble_0(UrsulaBubbleWork* work) {
     TaskPoolInit(&work->unk_004, 10);
     work->unk_040 = 0;
@@ -2069,7 +2078,11 @@ void task_bos_ursula_bubble_0(UrsulaBubbleWork* work) {
 
     m4aSongNumStart(640);
 }
+#else
+INCLUDE_ASM("bos4/task_bos_ursula_bubble_0.s");
+#endif
 
+#ifndef VERSION_EU
 u8 task_bos_ursula_bubble_1(UrsulaBubbleWork* work) {
     s32 i;
 
@@ -2087,6 +2100,9 @@ u8 task_bos_ursula_bubble_1(UrsulaBubbleWork* work) {
 
     return 1;
 }
+#else
+INCLUDE_ASM("bos4/task_bos_ursula_bubble_1.s");
+#endif
 
 void task_bos_ursula_bubble_2(UrsulaBubbleWork* work) {
     TaskPoolDraw(&work->unk_004);
@@ -2100,6 +2116,7 @@ void task_bos_ursula_bubble_3(UrsulaBubbleWork* work) {
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_3.s");
 #endif
 
+#ifndef VERSION_EU
 void func_080DD9B0(UrsulaBubbleWork* work) {
     s32 i;
 
@@ -2109,11 +2126,15 @@ void func_080DD9B0(UrsulaBubbleWork* work) {
         }
     }
 }
+#else
+INCLUDE_ASM("bos4/func_080DD9B0.s");
+#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("bos4/eu_080DA80C.s");
 #endif
 
+#ifndef VERSION_EU
 void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
     work->unk_13C = *arg;
     work->unk_140 = 0x333;
@@ -2128,6 +2149,10 @@ void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
     work->unk_138 = 0;
     work->unk_134 = 0x3C;
 }
+#else
+INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_0.s");
+#endif
+#ifndef VERSION_EU
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
 
@@ -2192,7 +2217,11 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
 
     return 1;
 }
+#else
+INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_1.s");
+#endif
 
+#ifndef VERSION_EU
 void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
     void* pal;
@@ -2205,14 +2234,22 @@ void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work) {
     WorldToScreen(&x, &y, p->x, p->y, p->z);
     DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, v, -0x1004 - (p->y >> 8) * 4);
 }
+#else
+INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_2.s");
+#endif
 
+#ifndef VERSION_EU
 void task_bos_ursula_bubble_single_3(UrsulaBubbleSingleWork* work) {
     func_0801B7D8(&work->unk_024);
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->unk_004);
     ReleaseObjPalette((void*)work->unk_008);
 }
+#else
+INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_3.s");
+#endif
 
+#ifndef VERSION_EU
 void func_080DDD30(UrsulaBubbleSingleWork* work) {
     if (AnimGetId(&work->anim) == 0) {
         work->unk_134 = 0;
@@ -2221,6 +2258,9 @@ void func_080DDD30(UrsulaBubbleSingleWork* work) {
         work->unk_138 = 2;
     }
 }
+#else
+INCLUDE_ASM("bos4/func_080DDD30.s");
+#endif
 
 void task_bos_ursula_thunder_0(UrsulaThunderWork* work) {
     u8* p = (u8*)gBtlWork->unk_07C;

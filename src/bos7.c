@@ -417,6 +417,7 @@ u8 func_08110918(LstWork* work) {
     return result;
 }
 
+#ifndef VERSION_EU
 u8 func_08110938(LstWork* work) {
     LstState* s;
     u8 result;
@@ -430,6 +431,9 @@ u8 func_08110938(LstWork* work) {
 
     return result;
 }
+#else
+INCLUDE_ASM("bos7/func_08110938.s");
+#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("bos7/eu_0810F08C.s");
@@ -489,6 +493,7 @@ void func_081109A8(LstWork* work) {
 INCLUDE_ASM("bos7/func_081109A8.s");
 #endif
 
+#ifndef VERSION_EU
 u8 func_081109B8(LstWork* work, u8 a) {
     LstState* s;
     u8 result;
@@ -519,6 +524,9 @@ u8 func_081109B8(LstWork* work, u8 a) {
 
     return result;
 }
+#else
+INCLUDE_ASM("bos7/func_081109B8.s");
+#endif
 
 s32 func_08110A38(s32 a, s32 b) {
     s32 v;
@@ -681,6 +689,7 @@ void func_08110C9C(LstState* work) {
     }
 }
 
+#ifndef VERSION_EU
 u8 task_bos_lst_bit_1(LstState* work) {
     Vec3 a;
     Vec3 b;
@@ -954,6 +963,9 @@ u8 task_bos_lst_bit_1(LstState* work) {
 
     return 1;
 }
+#else
+INCLUDE_ASM("bos7/task_bos_lst_bit_1.s");
+#endif
 
 void task_bos_lst_bit_2(LstState* work) {
     s16 x;
@@ -2183,6 +2195,7 @@ u8 func_08112C38(StaffRollWork* w) {
 #define STAFFROLL_SCRIPT_PERIOD 627
 #endif
 
+#ifndef VERSION_EU
 u8 func_08113180(StaffRollWork* w) {
     u8 buf[80];
     StaffRollLogoArg logo;
@@ -2429,6 +2442,9 @@ u8 func_08113180(StaffRollWork* w) {
 
     return result;
 }
+#else
+INCLUDE_ASM("bos7/func_08113180.s");
+#endif
 
 u8 func_0811394C(StaffRollWork* w) {
     u8 result;
@@ -2845,6 +2861,7 @@ u8 func_0811411C(StaffRollWork* w) {
     return result;
 }
 
+#ifndef VERSION_EU
 u8 func_081141F8(StaffRollWork* w) {
     u8 result;
     u8 t;
@@ -2901,7 +2918,11 @@ u8 func_081141F8(StaffRollWork* w) {
 
     return result;
 }
+#else
+INCLUDE_ASM("bos7/func_081141F8.s");
+#endif
 
+#ifndef VERSION_EU
 void mode_StaffRoll_1(void) {
     StaffRollWork* w;
     u16 tmp;
@@ -3285,6 +3306,9 @@ void mode_StaffRoll_1(void) {
     func_08116ECC();
     w->unk_010++;
 }
+#else
+INCLUDE_ASM("bos7/mode_StaffRoll_1.s");
+#endif
 
 void mode_StaffRoll_2(void) {
     StaffRollWork* w;

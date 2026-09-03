@@ -6,5 +6,5 @@
 	.thumb_func
 	.type mode_worldinspect_0, %function
 mode_worldinspect_0:
-	.incbin "roms/B8CP.gba", 0xfd95c, 0x840
+	.incbin "roms/B8CP.gba", 0xfd990, 0x80c
 .syntax divided

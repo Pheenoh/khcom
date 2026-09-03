@@ -47,6 +47,7 @@ void mode_dummy_0(u32 arg) {
 INCLUDE_ASM("mode_dummy/mode_dummy_0.s");
 #endif
 
+#ifndef VERSION_EU
 void func_0800C064(void) {
     const DummyEntry* entry;
 
@@ -95,6 +96,9 @@ void func_0800C064(void) {
         UpdatePlayTime();
     }
 }
+#else
+INCLUDE_ASM("mode_dummy/func_0800C064.s");
+#endif
 
 void mode_dummy_1(void) {
     if (!func_08006314() && (GetKeysPressed() & 9)) {

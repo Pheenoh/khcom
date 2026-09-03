@@ -106,6 +106,7 @@ u32 func_080C8AD4(u32 a) {
     return a;
 }
 
+#ifndef VERSION_EU
 void func_080C8AE0(PooWork* w) {
     s32 t;
 
@@ -124,6 +125,9 @@ void func_080C8AE0(PooWork* w) {
         func_080C8AB8(w);
     }
 }
+#else
+INCLUDE_ASM("poo/func_080C8AE0.s");
+#endif
 
 s32 func_080C8B38(PooAim* w, PooPos* p, u8* c) {
     s32 v;
@@ -942,6 +946,7 @@ u8 func_080CBA8C(void) {
     return 1;
 }
 
+#ifndef VERSION_EU
 u16 func_080CBAB0(PooPos* p) {
     u16 r;
 
@@ -982,6 +987,9 @@ u16 func_080CBAB0(PooPos* p) {
     }
     return r;
 }
+#else
+INCLUDE_ASM("poo/func_080CBAB0.s");
+#endif
 
 u16 func_080CBB7C(void) {
     return gUnk_02034DEC - 1;
@@ -2002,6 +2010,7 @@ void task_poo_eeyore_0(PooEeyoreWork* w) {
     w->unk_AA = 0;
 }
 
+#ifndef VERSION_EU
 u8 task_poo_eeyore_1(PooEeyoreWork* w) {
     if (w->unk_AC != 0) {
         if (func_08012660(w->unk_34, 9) != 0) {
@@ -2030,6 +2039,9 @@ u8 task_poo_eeyore_1(PooEeyoreWork* w) {
     }
     return 1;
 }
+#else
+INCLUDE_ASM("poo/task_poo_eeyore_1.s");
+#endif
 
 void task_poo_eeyore_2(PooEeyoreWork* w) {
     u8* p;
@@ -2606,6 +2618,7 @@ void task_poo_roo_0(PooRooWork* w, PooPos* p) {
     }
 }
 
+#ifndef VERSION_EU
 u8 task_poo_roo_1(PooRooWork* w) {
     s32 t;
 
@@ -2660,6 +2673,9 @@ u8 task_poo_roo_1(PooRooWork* w) {
     TaskPoolUpdate(&w->unk_98);
     return 1;
 }
+#else
+INCLUDE_ASM("poo/task_poo_roo_1.s");
+#endif
 
 void task_poo_roo_2(PooRooWork* w) {
     s16 x;
@@ -4270,6 +4286,7 @@ u8 task_poo_mapbeeborn_1(PooMapBornWork* w) {
     return 1;
 }
 
+#ifndef VERSION_EU
 void task_poo_mapbeeborn_2(PooMapBornWork* w) {
     s16 x;
     s16 y;
@@ -4292,6 +4309,9 @@ void task_poo_mapbeeborn_2(PooMapBornWork* w) {
         TaskPoolDraw(&w->unk_80);
     }
 }
+#else
+INCLUDE_ASM("poo/task_poo_mapbeeborn_2.s");
+#endif
 
 void task_poo_mapbeeborn_3(PooMapBornWork* w) {
     if (w->unk_98 != 0) {
@@ -4667,6 +4687,7 @@ void func_080D2E98(void) {
     func_080D2F10(0);
 }
 
+#ifndef VERSION_EU
 u16 func_080D2EB8(void) {
     s32 i;
 
@@ -4686,6 +4707,9 @@ u16 func_080D2EB8(void) {
     }
     return 0xB4;
 }
+#else
+INCLUDE_ASM("poo/func_080D2EB8.s");
+#endif
 
 void func_080D2F10(u8 a) {
     gUnk_0203C4B4->unk_32 = a;
@@ -4756,6 +4780,7 @@ void func_080D30C8(void) {
     LoadPalette(gUnk_096FDA8C[gGameState.world].unk_08, (void*)0x05000140, 0x20);
 }
 
+#ifndef VERSION_EU
 void func_080D313C(void) {
     u8* src;
     void* dst;
@@ -4775,3 +4800,6 @@ void func_080D313C(void) {
     src += 0x40;
     RequestDma3Copy(src, dst, 10);
 }
+#else
+INCLUDE_ASM("poo/func_080D313C.s");
+#endif

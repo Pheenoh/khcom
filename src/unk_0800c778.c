@@ -1054,6 +1054,7 @@ void func_0800E5CC(HumSub* sub) {
 
 s32 func_0800E5F0(HumWork* work);
 
+#ifndef VERSION_EU
 s32 func_0800E5F0(HumWork* work) {
     VsActor* actor = &work->unk_040;
     s32 x;
@@ -1424,5 +1425,8 @@ s32 func_0800E5F0(HumWork* work) {
     func_08012324(&actor->unk_40, actor->x, actor->y, actor->z);
     return 1;
 }
+#else
+INCLUDE_ASM("unk_0800c778/func_0800E5F0.s");
+#endif
 
 ALIGN_ZERO(2);

@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "romcri.h"
 
+#ifndef VERSION_EU
 void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     SetupBg(1, 0, 23, 12);
     work->angle = arg;
@@ -31,6 +32,9 @@ void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
         break;
     }
 }
+#else
+INCLUDE_ASM("romcri/task_romcri_eff_0.s");
+#endif
 
 u8 task_romcri_eff_1(RomcriEffWork* work) {
     switch (work->angle) {

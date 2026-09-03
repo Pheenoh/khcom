@@ -165,6 +165,7 @@ void func_08104BBC(void) {
     }
 }
 
+#ifndef VERSION_EU
 void func_08104D18(void) {
     MsCard* card;
     u8* p;
@@ -209,6 +210,9 @@ void func_08104D18(void) {
         gUnk_02035DE8 = 0;
     }
 }
+#else
+INCLUDE_ASM("unk_08104a84/func_08104D18.s");
+#endif
 
 s16 func_08104E9C(s16 a, s16 b) {
     return b + a * 5;
@@ -263,6 +267,7 @@ void func_08104FF8(void) {
     }
 }
 
+#ifndef VERSION_EU
 void func_08105090(void) {
     MsCard* card;
     s16 i;
@@ -314,7 +319,11 @@ void func_08105090(void) {
         }
     }
 }
+#else
+INCLUDE_ASM("unk_08104a84/func_08105090.s");
+#endif
 
+#ifndef VERSION_EU
 void func_081052C8(s16 a) {
     s16 t;
     void* base;
@@ -323,6 +332,9 @@ void func_081052C8(s16 a) {
     base = GetBgScreenBase(0);
     func_0800448C(gUnk_09A3B75C, base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
 }
+#else
+INCLUDE_ASM("unk_08104a84/func_081052C8.s");
+#endif
 
 void func_08105334(void) {
     MsCard* card;

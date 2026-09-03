@@ -6,5 +6,5 @@
 	.thumb_func
 	.type mode_mapinspect_0, %function
 mode_mapinspect_0:
-	.incbin "roms/B8CP.gba", 0x10722c, 0x654
+	.incbin "roms/B8CP.gba", 0x107258, 0x628
 .syntax divided
