@@ -46,6 +46,8 @@ UNIT_BSS = {
     "src/status.o": {"us": 0X02034EFC, "jp": 0X02034E5C},
     "src/key.o": 0x02034000,
     "src/mode_movie.o": 0x02034938,
+    "src/bos4.o": {"us": 0x02034F0C, "jp": 0x02034E6C},
+    "src/map.o": {"us": 0x02034F1C, "jp": 0x02034E7C},
     "src/mode_worldinspect.o": {"us": 0x02035118, "jp": 0x02035078, "eu": None},
     "src/mode_sio2.o": {"us": 0x02034CF4, "jp": 0x02034C54, "eu": None},
     "src/sio.o": 0x0203406C,

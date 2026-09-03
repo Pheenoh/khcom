@@ -103,7 +103,6 @@ typedef struct UnkStruct_0203C590 {
 
 extern UnkStruct_0203C590 gUnk_0203C590;
 extern u32 gUnk_09EF69FC[];
-extern void* gUnk_02034F0C;
 
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
@@ -303,7 +302,6 @@ typedef struct UnkStruct_02034F14 {
     u8 unk_06[0x02];
 } UnkStruct_02034F14;
 
-extern UnkStruct_02034F14* gUnk_02034F14;
 void func_080DEB94(void);
 void func_080DFC7C(void);
 void func_080DF480(void);
@@ -807,7 +805,6 @@ void func_080DDD30(UrsulaBubbleSingleWork* work);
 u8 task_bos_ursula_bubble_1(UrsulaBubbleWork* work);
 void task_bos_ursula_bubble_2(UrsulaBubbleWork* work);
 void task_bos_ursula_bubble_3(UrsulaBubbleWork* work);
-extern UrsulaMapanimeWork* gUnk_02034F10;
 
 void task_bos_ursula_mapanime_0(UrsulaMapanimeWork* work);
 u8 task_bos_ursula_mapanime_1(UrsulaMapanimeWork* work);
@@ -877,7 +874,6 @@ typedef struct UnkStruct_02034F18 {
     u8 unk_07;
 } UnkStruct_02034F18;
 
-extern UnkStruct_02034F18* gUnk_02034F18;
 extern UnkStruct_02034F18 gUnk_0203C7B0;
 void func_080DE2FC(UnkStruct_02034F14* p);
 void func_080DE35C(UnkStruct_02034F14* p);

@@ -61,8 +61,8 @@ mode_copyright1.c -O2 -fprologue-bugfix -fno-common
 mode_copyright2.c
 mode_status.c -O2 -fprologue-bugfix -fno-common
 status.c -O2 -fprologue-bugfix -fno-common
-bos4.c
-map.c
+bos4.c -O2 -fprologue-bugfix -fno-common
+map.c -O2 -fprologue-bugfix -fno-common
 room.c
 unk_080fb000.c
 bos5.c
