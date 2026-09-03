@@ -50,6 +50,7 @@ u8 func_08085290(u16 a);
 void func_080938F8(u16 a);
 u16 func_080857D4(u8 slot);
 u8 func_08065B6C(void* a, void* b);
+s16 func_08065B08(void* a, u8 b);
 u16 GetRandom(void);
 u16 func_08085770(u8 index);
 void func_08085788(u8 index, u16* src);
@@ -264,7 +265,7 @@ u8 func_08090808(u8* work, void* a);
 void func_08090864(UnkStruct_02034AAC* p);
 void func_08090B50(UnkStruct_02034AAC* p, void* a);
 void SetBgBlend(s32 a, s32 b, s32 c);
-u8 func_080A5D3C(u8* work, void* a);
+u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a);
 void func_08094DEC(MapcardWork* w);
 void func_0800FDD0(s32 a);
 u32 GetBgScreenBase(s32 bg);
@@ -10519,7 +10520,43 @@ void func_080A1554(u8* work) {
         *(s32*)&work[0x68] = y - 16;
     }
 }
-INCLUDE_ASM("card/LVUP_EFFECT_0.s");
+void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a) {
+    s32 i;
+    UnkStruct_080A1A44_Args args;
+
+    w->unk_0C = a->unk_0C;
+    w->unk_64 = a->unk_00;
+    w->unk_68 = a->unk_04;
+    w->unk_30 = 30;
+    w->unk_97 = a->unk_08;
+    func_080A1554((u8*)w);
+    w->unk_00 = LoadObjTiles(gUnk_0908C686, 0x3E0);
+    w->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
+
+    for (i = 0; i < 4; i++) {
+        w->unk_10[i] = (w->unk_64 << 8) + gUnk_09037FFC[i];
+        w->unk_20[i] = (w->unk_68 << 8) + gUnk_0903800C[i];
+        w->unk_8C[i] = gUnk_0903801C[i];
+        w->unk_34[i] = w->unk_30 * gSineTable[w->unk_8C[i] & 0xFF] + w->unk_10[i];
+        w->unk_44[i] = -gSineTable[(w->unk_8C[i] & 0xFF) + 64] * w->unk_30 + w->unk_20[i];
+        w->unk_54[i] = 0;
+    }
+
+    w->unk_94 = 0;
+    w->unk_95 = 0;
+    w->unk_96 = 24;
+    TaskPoolInit(w->unk_98, 4);
+
+    if (w->unk_0C != 0 && gUnk_02034AF8 == 0) {
+        args.unk_00 = w->unk_34[0];
+        args.unk_04 = w->unk_44[0];
+        args.unk_0C = w->unk_0C;
+        args.unk_10 = w->unk_00;
+        args.unk_14 = w->unk_04;
+        TaskCreate(w->unk_98, gTaskDescLvupLogo, &args);
+        gUnk_02034AF8 = 1;
+    }
+}
 INCLUDE_ASM("card/LVUP_EFFECT_1.s");
 u8 func_080A18F4(UnkStruct_080A18F4* w) {
     s32 i;
@@ -10527,7 +10564,7 @@ u8 func_080A18F4(UnkStruct_080A18F4* w) {
     for (i = 0; i < 4; i++) {
         w->unk_6C[i] += 25;
         w->unk_44[i] += w->unk_6C[i];
-        w->unk_34[i] += gSineTable[w->unk_8C[i * 2]] * (w->unk_7C[i] >> 8);
+        w->unk_34[i] += gSineTable[(u8)w->unk_8C[i]] * (w->unk_7C[i] >> 8);
     }
 
     w->unk_95++;
@@ -11045,7 +11082,39 @@ void func_080A2EF8(u8* work) {
     (*(u8**)&work[0x7A0])[0] = 0;
 }
 
-INCLUDE_ASM("card/Deck_Yes_No_0.s");
+#ifdef VERSION_JP
+#define DECK_PROMPT_LEFT_DX 30
+#define DECK_PROMPT_RIGHT_DX 35
+#define DECK_CLEAR_TEXT_Y 66
+#else
+#define DECK_PROMPT_LEFT_DX 20
+#define DECK_PROMPT_RIGHT_DX 20
+#define DECK_CLEAR_TEXT_Y 61
+#endif
+
+void Deck_Yes_No_0(UnkStruct_080A2F54* w, u8* a) {
+    w->unk_78C = 0;
+    w->unk_78D = 0;
+    func_08065ACC(w, 0x50);
+    func_08065ACC(w->unk_280, 0x50);
+    func_08065ACC(w->unk_500, 0x50);
+    w->unk_78C = func_08065B6C(gUnk_08159FBC, w);
+    w->unk_78D = func_08065B6C(gUnk_08159E10, w->unk_280);
+    w->unk_78E = func_08065B6C(gUnk_08159E18, w->unk_500);
+    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->unk_780 = LoadObjTiles(gUnk_093F8C8E, 0xC00);
+    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->unk_792 = (240 - func_08065B08(w, w->unk_78C)) / 2;
+    w->unk_796 = 66;
+    w->unk_794 = (240 - func_08065B08(w->unk_280, w->unk_78D)) / 2 - DECK_PROMPT_LEFT_DX;
+    w->unk_798 = 88;
+    w->unk_79A = (240 - func_08065B08(w->unk_500, w->unk_78E)) / 2 + DECK_PROMPT_RIGHT_DX;
+    w->unk_79C = 88;
+    w->unk_790 = 0;
+    w->unk_7A4 = 0;
+    w->unk_7A0 = a;
+    a[0] = 1;
+}
 s32 func_080A30C0(void) {
     if ((GetKeysPressed() & 1) || (GetKeysPressed() & 2)) {
         return 0;
@@ -11053,7 +11122,29 @@ s32 func_080A30C0(void) {
 
     return 1;
 }
-INCLUDE_ASM("card/Deck_Clear_0.s");
+void Deck_Clear_0(UnkStruct_080A2F54* w, u8* a) {
+    w->unk_78C = 0;
+    w->unk_78D = 0;
+    func_08065ACC(w, 0x50);
+    func_08065ACC(w->unk_280, 0x50);
+    func_08065ACC(w->unk_500, 0x50);
+    w->unk_78C = func_08065B6C(gUnk_0815C1C2, w);
+    w->unk_78D = func_08065B6C(gUnk_08159E10, w->unk_280);
+    w->unk_78E = func_08065B6C(gUnk_08159E18, w->unk_500);
+    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->unk_780 = LoadObjTiles(gUnk_093F8C8E, 0xC00);
+    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->unk_792 = (240 - func_08065B08(w, w->unk_78C)) / 2;
+    w->unk_794 = (240 - func_08065B08(w->unk_280, w->unk_78D)) / 2 - DECK_PROMPT_LEFT_DX;
+    w->unk_798 = 88;
+    w->unk_79A = (240 - func_08065B08(w->unk_280, w->unk_78E)) / 2 + DECK_PROMPT_RIGHT_DX;
+    w->unk_79C = 88;
+    w->unk_796 = DECK_CLEAR_TEXT_Y;
+    w->unk_790 = 0;
+    w->unk_7A4 = 0;
+    w->unk_7A0 = a;
+    a[0] = 1;
+}
 
 void func_080A324C(UnkStruct_080A324C* p) {
     s32 i;
@@ -11759,7 +11850,35 @@ u8 func_080A5C9C(u8* work, void* a) {
     return 1;
 }
 
-INCLUDE_ASM("card/func_080A5D3C.s");
+u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a) {
+    u8* base;
+    u16* pal;
+
+    base = (u8*)GetBgCharBase(1);
+    pal = (u16*)0x05000100;
+    LoadPalette(gUnk_09614118 + 0x1E0, pal, 32);
+    RequestDma3Copy(gUnk_0940FC58, base + 0x1A0, 0x1E0);
+    LoadBgMap(0, gUnk_09516AB8 + 0x800, 0x800);
+    LoadBgMap(1, gUnk_0951B2B8 + 0x800, 0x800);
+    func_080A6B40(w->unk_4EF, 0);
+    func_080A6B40(w->unk_4F0, 1);
+    func_080A6B40(w->unk_4F1, 2);
+    func_080A6B40(w->unk_4F2, 3);
+    func_080A6C50(0);
+    func_080A6D0C();
+    w->unk_494 = 0x4800;
+    w->unk_498 = 0x2800;
+    w->unk_4C8[1] = w->unk_4F8;
+    ApproachValue(&w->unk_48C, gUnk_09041EB4[w->unk_4C8[0]] << 8, w->unk_4EC);
+    ApproachValue(&w->unk_490, gUnk_09041EBA[w->unk_4C8[1]] << 8, w->unk_4EC);
+    w->unk_4E6 = 1;
+    func_080A6BB4((u8*)w);
+    func_080A6E3C((u8*)w);
+    w->unk_509 = 0;
+    w->unk_4EC = 16;
+    SetTaskUpdate(a, func_080A5EA0);
+    return 1;
+}
 
 u8 func_080A5EA0(u8* work, void* a) {
     u8 n;

@@ -122,6 +122,7 @@ extern u8 gUnk_0951B2B8[];
 extern u8 gUnk_09406F78[];
 extern void* gUnk_09EE7938[];
 extern u8 gTaskDescLVUPEFFECT[];
+extern u8 gTaskDescLvupLogo[];
 extern u8 gTaskDescCardEFFECT[];
 extern u8 gUnk_0908C686[];
 extern u8 gUnk_0908FCEE[];
@@ -186,6 +187,9 @@ typedef struct GameState {
 
 extern GameState gGameState;
 extern s16 gUnk_09037FBA[];
+extern s32 gUnk_09037FFC[];
+extern s32 gUnk_0903800C[];
+extern u16 gUnk_0903801C[];
 extern u16 gUnk_09EE48F4[];
 extern u8 gUnk_09EE49CC[];
 extern u8 gUnk_09EE49FC[];
@@ -206,8 +210,12 @@ extern u8 gUnk_09619378[];
 extern u8 gUnk_093FB0CC[];
 extern s32 gUnk_09033D08[][2];
 extern s32 gUnk_09041E9C[];
+extern s16 gUnk_09041EB4[];
+extern s16 gUnk_09041EBA[];
 extern u8 gUnk_093F7C9C[];
 extern u8 gUnk_08159E18[];
+extern u8 gUnk_08159FBC[];
+extern u8 gUnk_0815C1C2[];
 extern u8 gUnk_08159E10[];
 extern u8 gUnk_09EEB008[];
 extern u8 gUnk_09EEB03C[];
@@ -987,6 +995,52 @@ typedef struct UnkStruct_08F7CBA8 {
 
 extern UnkStruct_08F7CBA8 gUnk_08F7CBA8[];
 
+typedef struct UnkStruct_080A2F54 {
+    u8 unk_000[0x280];
+    u8 unk_280[0x280];
+    u8 unk_500[0x280];
+    void* unk_780;
+    void* unk_784;
+    void* unk_788;
+    u8 unk_78C;
+    u8 unk_78D;
+    u8 unk_78E;
+    u8 unk_78F;
+    s16 unk_790;
+    s16 unk_792;
+    s16 unk_794;
+    s16 unk_796;
+    s16 unk_798;
+    s16 unk_79A;
+    s16 unk_79C;
+    u8 unk_79E[2];
+    u8* unk_7A0;
+    u8 unk_7A4;
+} UnkStruct_080A2F54;
+
+typedef struct UnkStruct_080A5D3C {
+    u8 unk_000[0x48C];
+    s32 unk_48C;
+    s32 unk_490;
+    s32 unk_494;
+    s32 unk_498;
+    u8 unk_49C[0x2C];
+    s16 unk_4C8[2];
+    u8 unk_4CC[0x1A];
+    u8 unk_4E6;
+    u8 unk_4E7[5];
+    u8 unk_4EC;
+    u8 unk_4ED[2];
+    u8 unk_4EF;
+    u8 unk_4F0;
+    u8 unk_4F1;
+    u8 unk_4F2;
+    u8 unk_4F3[5];
+    u8 unk_4F8;
+    u8 unk_4F9[0x10];
+    u8 unk_509;
+} UnkStruct_080A5D3C;
+
 typedef struct UnkStruct_080A1A44_Args {
     s32 unk_00;
     s32 unk_04;
@@ -1016,18 +1070,21 @@ typedef struct UnkStruct_080A18F4 {
     void* unk_04;
     void* unk_08;
     void* unk_0C;
-    u8 unk_10[0x24];
+    s32 unk_10[4];
+    s32 unk_20[4];
+    s32 unk_30;
     s32 unk_34[4];
     s32 unk_44[4];
-    u8 unk_54[0x10];
+    s32 unk_54[4];
     s32 unk_64;
     s32 unk_68;
     s32 unk_6C[4];
     s32 unk_7C[4];
-    u8 unk_8C[8];
+    u16 unk_8C[4];
     s8 unk_94;
     u8 unk_95;
-    u8 unk_96[0x02];
+    u8 unk_96;
+    u8 unk_97;
     u8 unk_98[0x14];
 } UnkStruct_080A18F4;
 
@@ -1380,6 +1437,7 @@ void func_08078D98(u8* work, u8 kind, u8 c);
 u8 func_0807CB24(UnkStruct_02034AAC* p, void* a);
 u8 card_enemy_1(UnkStruct_02034AAC* p, void* a);
 void func_080A6BB4(u8* work);
+void func_080A6B40(u8 a, u8 b);
 void func_080A9AE8(u8* work);
 u8 func_0807D4E4(UnkStruct_02034AAC* p);
 u8 func_08082F50(UnkStruct_02034AAC* p);
@@ -1437,6 +1495,9 @@ u8 func_08085374(u16 card, u8 deck);
 void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode);
 void func_080AB228(void);
 u16 func_08093384(u8* work);
+void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a);
+void Deck_Clear_0(UnkStruct_080A2F54* w, u8* a);
+void Deck_Yes_No_0(UnkStruct_080A2F54* w, u8* a);
 void LVUP_EFFECT_2(UnkStruct_080A18F4* w);
 u8 func_0809CB0C(u8* work, void* a);
 void Lvup_Logo_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a);
