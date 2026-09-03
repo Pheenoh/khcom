@@ -32,7 +32,7 @@ def main():
     data = open(args.rom, "rb").read()
 
     names = {}
-    for m in re.finditer(rb"(?<=\x00)((task|mode)_[a-z0-9_]+)\x00", data):
+    for m in re.finditer(rb"(?<=\x00)((task|mode)_[A-Za-z0-9_]+)\x00", data):
         nfuncs = 4 if m.group(2) == b"task" else 3
         names[ROM_BASE + m.start(1)] = (m.group(1).decode(), nfuncs)
 
