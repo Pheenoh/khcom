@@ -1,5 +1,5 @@
-#ifndef GUARD_UNK_0806180C_H
-#define GUARD_UNK_0806180C_H
+#ifndef GUARD_MSG_H
+#define GUARD_MSG_H
 
 #include "types.h"
 #include "text_types.h"
@@ -438,4 +438,4 @@ void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 
-#endif /* GUARD_UNK_0806180C_H */
+#endif /* GUARD_MSG_H */

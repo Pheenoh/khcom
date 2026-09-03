@@ -37,7 +37,7 @@ UNIT_BSS = {
     "src/mode_debflag.o": 0X020348C0,
     "src/unk_0800eebc.o": 0X020348C8,
     "src/unk_0802f1c8.o": 0X0203492C,
-    "src/unk_0806180c.o": {"us": 0X02034A80, "jp": 0X020349E0},
+    "src/msg.o": {"us": 0X02034A80, "jp": 0X020349E0},
     "src/mode_eventselect.o": {"us": 0X02034A94, "jp": 0X020349F4},
     "src/wlogo.o": {"us": 0X02034C38, "jp": 0X02034B98},
     "src/chara.o": {"us": 0X02034CD8, "jp": 0X02034C38},

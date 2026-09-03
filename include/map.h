@@ -1,5 +1,5 @@
-#ifndef GUARD_UNK_080DFEBC_H
-#define GUARD_UNK_080DFEBC_H
+#ifndef GUARD_MAP_H
+#define GUARD_MAP_H
 
 #include "types.h"
 #include "malloc.h"
@@ -811,4 +811,4 @@ void func_080F0708(UnkStruct_080F023C* p, u8 flag);
 void func_080F3D58(UnkStruct_080DFF1C* p);
 s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim);
 
-#endif /* GUARD_UNK_080DFEBC_H */
+#endif /* GUARD_MAP_H */

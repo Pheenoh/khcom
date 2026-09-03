@@ -43,7 +43,7 @@ btl4.c
 tutorial.c
 mode_movie.c -O2 -fprologue-bugfix -fno-common
 mode_test.c
-unk_0806180c.c -O2 -fprologue-bugfix -fno-common
+msg.c -O2 -fprologue-bugfix -fno-common
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common
@@ -62,7 +62,7 @@ mode_copyright2.c
 mode_status.c -O2 -fprologue-bugfix -fno-common
 status.c -O2 -fprologue-bugfix -fno-common
 bos4.c
-unk_080dfebc.c
+map.c
 room.c
 unk_080fb000.c
 bos5.c
