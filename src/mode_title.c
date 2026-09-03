@@ -1,6 +1,20 @@
 #include "macros.h"
 #include "mode_title.h"
 
+u32 gUnk_02034E98;
+u32 gUnk_02034E9C;
+TaskPool gUnk_02034EA0;
+Task* gUnk_02034EB4;
+Task* gUnk_02034EB8;
+Task* gUnk_02034EBC;
+u16 gUnk_02034EC0;
+s16 gUnk_02034EC2;
+u8* gUnk_02034EC4;
+u16 gUnk_02034EC8;
+u8 gUnk_02034ECA;
+u8 gUnk_02034ECB;
+u8 gUnk_02034ECC;
+
 #ifndef VERSION_EU
 void mode_title_0(void) {
     gUnk_02034ECA = 0;

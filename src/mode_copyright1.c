@@ -3,7 +3,9 @@
 
 u8 gUnk_02034ED4;
 u16 gUnk_02034ED6;
+#ifndef VERSION_JP
 u8 gUnk_02034ED8;
+#endif
 
 #ifdef VERSION_US
 void mode_copyright1_0(s32 arg) {

@@ -15,10 +15,6 @@ typedef struct LstFldWork {
     u32 unk_01C;
 } LstFldWork;
 
-extern u8 gUnk_02036014;
-extern s16 gUnk_02036016;
-extern s16 gUnk_02036018;
-extern s32 gUnk_0203601C;
 extern const s8* const gUnk_09EF9E6C[];
 
 void func_0810FE94(void);

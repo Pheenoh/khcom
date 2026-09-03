@@ -2,8 +2,8 @@
 
 #define REG_WAITCNT (*(vu16*)0x4000204)
 
-extern u16 verifySramFast_Work[];
-extern u16 readSramFast_Work[];
+u16 verifySramFast_Work[80];
+u16 readSramFast_Work[64];
 
 extern void (*ReadSramFast)(const u8* src, u8* dest, u32 size);
 extern u32 (*VerifySramFast)(const u8* src, u8* dest, u32 size);

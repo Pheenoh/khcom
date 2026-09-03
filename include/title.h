@@ -54,7 +54,6 @@ typedef struct TitleLumiChangeWork {
 
 extern UnkStruct_02039BB0 gUnk_02039BB0;
 extern u8 gUnk_02034ECC;
-extern u8 gUnk_02034ED0;
 
 extern u8 gUnk_09771060[];
 extern u8 gUnk_0977143A[];

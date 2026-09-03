@@ -52,13 +52,13 @@ bos2.c
 chara.c -O2 -fprologue-bugfix -fno-common
 bos3.c
 mode_sio2.c -O2 -fprologue-bugfix -fno-common
-poo.c
-mode_allmap.c
-allmap.c
-mode_title.c
-title.c
+poo.c -O2 -fprologue-bugfix -fno-common
+mode_allmap.c -O2 -fprologue-bugfix -fno-common
+allmap.c -O2 -fprologue-bugfix -fno-common
+mode_title.c -O2 -fprologue-bugfix -fno-common
+title.c -O2 -fprologue-bugfix -fno-common
 mode_copyright1.c -O2 -fprologue-bugfix -fno-common
-mode_copyright2.c
+mode_copyright2.c -O2 -fprologue-bugfix -fno-common
 mode_status.c -O2 -fprologue-bugfix -fno-common
 status.c -O2 -fprologue-bugfix -fno-common
 bos4.c -O2 -fprologue-bugfix -fno-common
@@ -73,14 +73,14 @@ unk_08104a84.c
 mode_ms2.c
 mode_mapinspect.c
 ms.c
-mode_backupstat.c
+mode_backupstat.c -O2 -fprologue-bugfix -fno-common
 bos6.c
-unk_0810fe94.c
+unk_0810fe94.c -O2 -fprologue-bugfix -fno-common
 bos7.c
-sroll.c
-lib.c
+sroll.c -O2 -fprologue-bugfix -fno-common
+lib.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.c
-agb_sram.c -O1
+agb_sram.c -O1 -fno-common
 movie.c -O0
 snd_stream.c
 @libgcc.a:_ashldi3.o

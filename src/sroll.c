@@ -5,6 +5,19 @@
 #include "sroll.h"
 #include "types.h"
 
+DmaStream gUnk_02036028;
+u8 gUnk_02036048;
+u32 gUnk_0203604C;
+s32 gUnk_02036050[0x810];
+u32* gUnk_02038090;
+s32 gUnk_02038094;
+s32 gUnk_02038098;
+u32 gUnk_0203809C;
+s32 gUnk_020380A0;
+s32 gUnk_020380A4;
+s8 gUnk_020380A8[0x2C0];
+s8 gUnk_02038368[0x2C0];
+
 #define REG_ADDR_DMA0 0x040000B0
 
 #define DMA_SOUND_FIFO                                                        \
