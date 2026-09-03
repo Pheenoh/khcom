@@ -13,12 +13,13 @@ typedef struct PcPos {
     s32 unk_0C;
     u8 unk_10[0x24];
     u64 unk_34;
-    u8 unk_3C[0x60];
+    u8 unk_3C[0x4];
+    u8 unk_40[0x5C];
     u16 unk_9C;
 } PcPos;
 
 typedef struct PcWork {
-    u16 unk_000;
+    s16 unk_000;
     s16 unk_002;
     s16 unk_004;
     s16 unk_006;
@@ -30,7 +31,7 @@ typedef struct PcWork {
     s32 unk_014;
     u8 unk_018;
     u8 unk_019[0x3];
-    u32 unk_01C;
+    s32 unk_01C;
     u32 unk_020;
     u32 unk_024;
     u32 unk_028;
@@ -49,20 +50,19 @@ typedef struct PcWork {
     u32 unk_05C;
     u32 unk_060;
     u8 unk_064[0x1C];
-    u16 unk_080;
-    u16 unk_082;
+    s16 unk_080;
+    s16 unk_082;
     u8 unk_084[0x4];
-    u32 unk_088;
-    u32 unk_08C;
+    u64 unk_088;
     u8 unk_090[0x4];
     u32 unk_094;
     u8 unk_098[0xCC];
     u32 unk_164;
     u32 unk_168;
     u32 unk_16C;
-    u8 unk_170[0x28];
-    u32 unk_198;
-    u32 unk_19C;
+    s32 unk_170;
+    u8 unk_174[0x24];
+    u64 unk_198;
     u8 unk_1A0[0xD4];
     u32 unk_274;
     u8 unk_278[0x58];
@@ -72,8 +72,10 @@ typedef struct PcWork {
     s16 unk_2E8;
     u8 unk_2EA;
     u8 unk_2EB;
-    u8 unk_2EC[0x4];
-    u32 unk_2F0;
+    u8 unk_2EC;
+    u8 unk_2ED;
+    u8 unk_2EE[0x2];
+    s32 unk_2F0;
     s32 unk_2F4;
     u8 unk_2F8[0x1C24];
 } PcWork;
@@ -164,11 +166,11 @@ typedef struct BosLstWork {
     u8 unk_003;
     s16 unk_004;
     s16 unk_006;
-    u16 unk_008;
+    s16 unk_008;
     s16 unk_00A;
     s16 unk_00C;
     s16 unk_00E;
-    u16 unk_010;
+    s16 unk_010;
     s16 unk_012;
     u16 unk_014;
     u16 unk_016;
@@ -180,7 +182,7 @@ typedef struct BosLstWork {
     u16 unk_020;
     u16 unk_022;
     u16 unk_024;
-    u16 unk_026;
+    s16 unk_026;
     u32 unk_028;
     AnimState unk_02C;
     s32 unk_044;
@@ -189,14 +191,16 @@ typedef struct BosLstWork {
     s32 unk_050;
     s32 unk_054;
     s32 unk_058;
-    u8 unk_05C[0xC];
+    s32 unk_05C;
+    s32 unk_060;
+    s32 unk_064;
     s16 unk_068;
     s16 unk_06A;
     u16 unk_06C;
-    u16 unk_06E;
+    s16 unk_06E;
     u16 unk_070;
     s16 unk_072;
-    u8 unk_074[0x2];
+    u16 unk_074;
     u16 unk_076;
     u16 unk_078;
     s16 unk_07A;
@@ -205,12 +209,18 @@ typedef struct BosLstWork {
     s16 unk_082;
     s32 unk_084;
     s32 unk_088;
-    u8 unk_08C[0x2];
+    s16 unk_08C;
     s16 unk_08E;
-    u8 unk_090[0x18];
-    u16 unk_0A8;
-    u16 unk_0AA;
-    u8 unk_0AC[0x4];
+    s32 unk_090;
+    s32 unk_094;
+    s32 unk_098;
+    s32 unk_09C;
+    s32 unk_0A0;
+    s32 unk_0A4;
+    s16 unk_0A8;
+    s16 unk_0AA;
+    s16 unk_0AC;
+    u8 unk_0AE[0x2];
     s32 unk_0B0;
     s32 unk_0B4;
     s32 unk_0B8;
@@ -221,8 +231,10 @@ typedef struct BosLstWork {
     s32 unk_0C4;
     u8 unk_0C8[0xC];
     u8 unk_0D4;
-    u8 unk_0D5[0x7];
-    u32 unk_0DC;
+    u8 unk_0D5;
+    s16 unk_0D6;
+    u8 unk_0D8[0x4];
+    s32 unk_0DC;
     u32 unk_0E0;
     u16 unk_0E4;
     u16 unk_0E6;
@@ -230,8 +242,8 @@ typedef struct BosLstWork {
     u32 unk_0EC;
     u32 unk_0F0;
     u8 unk_0F4[0x1C];
-    u16 unk_110;
-    u16 unk_112;
+    s16 unk_110;
+    s16 unk_112;
     u32 unk_114;
     u64 unk_118;
     u32 unk_120;
@@ -245,7 +257,10 @@ typedef struct BosLstWork {
     void* unk_80C;
     LstTask* unk_810[0x20];
     u32 unk_890;
-    u8 unk_894[0x810];
+    u8 unk_894[0x10];
+    u8 unk_8A4[0x280];
+    u8 unk_B24[0x24];
+    u8 unk_B48[0x55C];
 } BosLstWork;
 
 void LoadPalette(void* src, void* dst, s32 size);
@@ -373,7 +388,7 @@ u8 func_08110938(LstTask* t);
 u8 func_0810A424(PcWork* work);
 
 s32 func_0810CC14(s32 a, s32 b, s32 c, s32 d, s32 e);
-u8 func_0810AE74(PcWork* work);
+u8 func_0810AE74(PcWork* work, s32 arg);
 u8 func_0810D304(BosLstWork* work, s32 idx);
 
 typedef struct UnkStruct_02039BB0 {
@@ -388,7 +403,7 @@ u16 GetRandom(void);
 void _0801C1F8(s32 a, s32 b, s32 c, s32 d);
 void func_0801BCD4(void* a);
 
-u8 func_0810AED4(PcWork* work);
+u8 func_0810AED4(PcWork* work, s32 arg);
 void func_0810C754(BosLstWork* work);
 void func_0810C7C4(BosLstWork* work);
 void func_0810CC68(BosLstWork* work);
@@ -439,7 +454,130 @@ extern u8 gUnk_09EFAB68[];
 void* AllocObjTiles(s32 a, void* b);
 void AnimInit(AnimState* a, void* b, void* c);
 void func_080062F4(u16 a, s32 b);
-PcStep* func_08109EB0(PcWork* work);
+typedef struct PcAnim {
+    u8 unk_00[0x4];
+    s16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    u8 unk_0A[0x2];
+    u16 unk_0C;
+    s16 unk_0E;
+    s16 unk_10;
+    s16 unk_12;
+    s16 unk_14;
+    s16 unk_16;
+    s16 unk_18;
+    u8 unk_1A[0x2];
+    u16 unk_1C;
+    u8 unk_1E[0x6];
+} PcAnim;
+
+typedef struct PcShot {
+    s32 unk_00;
+    s32 unk_04;
+    u16 unk_08;
+    u8 unk_0A[0x2];
+    s32 unk_0C;
+} PcShot;
+
+extern const PcShot gUnk_09A4C9F8[];
+
+PcAnim* func_08109EB0(PcWork* work);
+void func_080147D8(s32 x, s32 y);
+void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t);
+u8 func_0801C1C0(s32 a);
+void func_0810A454(PcWork* work);
+u8 func_0810A9CC(PcWork* work, s32 arg);
+u8 task_bos_pc_1(PcWork* work, s32 arg);
+void task_bos_pc_0(PcWork* work, s32 arg);
+void func_0810A444(PcWork* work);
+void func_0810A4CC(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e);
+void func_0810A51C(PcWork* work, TaskPool* pool);
+void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
+void func_0801BDD4(void* a, void* b);
+void func_0801BCC0(s32 a, s32 b, s32 c);
+void func_0801C298(u8 a, u8 b);
+void LoadBgMap(s32 bg, void* src, u16 size);
+
+extern u8 gUnk_09EF9E0C[];
+extern u8 gUnk_09A3DF0C[];
+extern u8 gUnk_09A3DEFC[];
+extern u8 gUnk_09D34A74[];
+extern u8 gUnk_09CB84B4[];
+extern u8 gUnk_09C448D2[];
+extern u8 gUnk_08F69BC4[];
+extern u8 gUnk_09EF9E74[];
+extern u8 gUnk_09A4CF6C[];
+extern u8 gUnk_09A4CF5C[];
+extern u8 gUnk_09C53724[];
+extern u8 gUnk_09C58590[];
+extern u8 gUnk_09D69594[];
+extern u8 gUnk_09D4DA74[];
+extern u8 gUnk_09D4B274[];
+
+void task_bos_lst_0(BosLstWork* work, void* pool);
+u16 func_08003524(void* a, s32 b);
+void func_0801C7FC(void* a, s32 b, s32 c);
+void TaskPoolInit(void* pool, s32 count);
+void func_0800592C(s32* value, s32 target, u16 steps);
+void func_0810FF6C(void* p, s32 a);
+void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
+void TaskPoolUpdate(void* a);
+u8 task_bos_lst_1(BosLstWork* work);
+
+typedef struct LstAnimDef {
+    void* unk_00;
+    u16 unk_04;
+    u16 unk_06;
+    u8 unk_08[0x4];
+    u16 unk_0C;
+    u16 unk_0E;
+    u8 unk_10[0x2];
+    s16 unk_12;
+    s16 unk_14;
+    s16 unk_16;
+    u16 unk_18;
+    u16 unk_1A;
+    u8 unk_1C[0x2];
+    s16 unk_1E;
+    s16 unk_20;
+    s16 unk_22;
+    s16 unk_24;
+    s16 unk_26;
+    s16 unk_28;
+    u8 unk_2A[0x2];
+} LstAnimDef;
+
+extern void* gUnk_09A4D194[][2];
+extern u8 gUnk_09D69454[];
+
+void task_bos_lst_2(BosLstWork* work);
+void TaskPoolDraw(void* a);
+u8 func_0801CA00(void* a);
+void SetBgScroll(s32 a, u16 b, u16 c);
+void DisableBg(s32 bg);
+void LoadBgTiles(s32 bg, void* src, u16 size);
+void CpuFastSet(void* src, void* dst, s32 ctrl);
+u8 func_0810EBA0(BosLstWork* work);
+void func_0810FF64(void* p, s32 a);
+void func_08014A34(s32 a, s32 b);
+void func_08006238(s32 a, s32 b, s32 c);
+void func_08006184(s32 a, u16 b);
+void func_08006120(s32 a, u16 b);
+void func_080063A8(void);
+
+typedef struct PcCam {
+    u8 unk_00[0x68];
+    s16 unk_68;
+    s16 unk_6A;
+} PcCam;
+
+extern PcCam* gUnk_02039DC8;
+u16 func_08005B30(AnimState* a);
+void task_bos_pc_acd_2(PcAcdWork* work);
+
+extern u16 gUnk_09A4D0EC[];
+extern LstAnimDef gUnk_09A4CF8C[];
 PcStep* func_08109ECC(PcWork* work);
 
 void func_0810A850(PcWork* work);
@@ -500,7 +638,7 @@ u8 func_0810E73C(BosLstWork* work);
 
 extern const s16 gSineTable[];
 
-u8 func_0810A914(PcWork* work);
+u8 func_0810A914(PcWork* work, s32 arg);
 void func_0810B844(PcFltWork* work);
 
 void m4aSongNumStart(u16 id);
@@ -515,7 +653,7 @@ void func_0801C2DC(void* a, s32 b);
 void func_0801B918(void* a);
 void func_0801B008(void);
 void func_08096DC4(void* a, void* b);
-u8 func_0810AF44(PcWork* work);
+u8 func_0810AF44(PcWork* work, s32 arg);
 
 typedef struct LstSpawn {
     s32 unk_00;
@@ -534,7 +672,7 @@ void* TaskCreate(void* pool, void* desc, void* arg);
 
 void func_08017F70(s32 a, s32 b, s32 c, s32 d);
 
-u8 func_0810ACB8(PcWork* work);
+u8 func_0810ACB8(PcWork* work, s32 arg);
 
 extern const s16 gUnk_09A4CCDC[];
 extern const s16 gUnk_09A4CADC[];
