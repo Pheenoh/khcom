@@ -45,7 +45,7 @@ mode_movie.c -O2 -fprologue-bugfix -fno-common
 mode_test.c
 unk_0806180c.c
 mode_eventselect.c
-card.c
+card.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common
 wlogo.c
 bos2.c
