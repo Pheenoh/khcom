@@ -6,5 +6,5 @@
 	.thumb_func
 	.type BgReset, %function
 BgReset:
-	.incbin "roms/B8CP.gba", 0x4eec, 0x40
+	.incbin "roms/B8CP.gba", 0x4eec, 0x54
 .syntax divided

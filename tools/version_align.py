@@ -69,6 +69,15 @@ def near_identical(a, b, share=64):
     return diff <= 8 and diff * share <= len(a)
 
 
+def blpair(b, k):
+    h1 = b[k] | (b[k + 1] << 8)
+    h2 = b[k + 2] | (b[k + 3] << 8)
+    if not (0xF000 <= h1 <= 0xF7FF and 0xF800 <= h2 <= 0xFFFF):
+        return None
+    off = ((h1 & 0x7FF) << 12) | ((h2 & 0x7FF) << 1)
+    return (off - 0x800000 if off & 0x400000 else off) + 4
+
+
 def mask(b):
     out = bytearray(b)
     for k in range(0, len(b) - 1, 2):
@@ -254,10 +263,58 @@ def main():
                         cur += e - a
             i = j
 
+    start_of = {a: i for i, (a, e, nm) in enumerate(funcs)}
+
+    def crossref():
+        placed, corrected = 0, []
+        for _ in range(PASSES):
+            votes = {}
+            for i, (a, e, nm) in enumerate(funcs):
+                if addr[i] is None or how[i] == "absent":
+                    continue
+                sz = e - a
+                x = us[a - ROM_BASE:a - ROM_BASE + sz]
+                y = ot[addr[i] - ROM_BASE:addr[i] - ROM_BASE + sz]
+                if len(y) != sz or mask(x) != mask(y):
+                    continue
+                for k in range(0, sz - 3, 2):
+                    o1, o2 = blpair(x, k), blpair(y, k)
+                    if o1 is None or o2 is None:
+                        continue
+                    t = a + k + o1
+                    if a <= t < e:
+                        continue
+                    j = start_of.get(t)
+                    if j is None or how[j] == "absent":
+                        continue
+                    votes.setdefault(j, set()).add(addr[i] + k + o2)
+            progress = 0
+            for j, cands in sorted(votes.items()):
+                if len(cands) != 1:
+                    continue
+                t = next(iter(cands))
+                if t == addr[j] or t % 2 or not CODE_LO <= t < CODE_HI:
+                    continue
+                if addr[j] is not None:
+                    corrected.append(f"{funcs[j][2]}({how[j]}{addr[j] - t:+#x})")
+                addr[j] = t
+                how[j] = "xref"
+                progress += 1
+            placed += progress
+            if not progress:
+                break
+        if corrected:
+            print(f"  {len(corrected)} placements corrected by call sites: "
+                  + " ".join(corrected))
+        return placed
+
     search(lambda pat, got: pat == got, "body", True)
     fill()
     search(near_identical, "near", False)
     fill()
+    if crossref():
+        fill()
+        crossref()
 
     def monotone():
         by_obj = {}
@@ -269,7 +326,7 @@ def main():
             best = [None] * len(idx)
             score = [0] * len(idx)
             for k, i in enumerate(idx):
-                w = 1000 if how[i] == "named" else 1
+                w = 1000 if how[i] in ("named", "xref") else 1
                 score[k] = w
                 for j in range(k):
                     if addr[idx[j]] < addr[i] and score[j] + w > score[k]:
@@ -296,7 +353,8 @@ def main():
         for i, (a, e, nm) in enumerate(funcs):
             va = "-" if addr[i] is None else f"{addr[i]:#010x}"
             f.write(f"{nm}\t{a:#010x}\t{e - a}\t{va}\t{how[i]}\n")
-    counts = {k: how.count(k) for k in ("named", "global", "body", "fill", "near", "absent", "-")}
+    counts = {k: how.count(k) for k in
+              ("named", "xref", "global", "body", "fill", "near", "absent", "-")}
     print(f"{out}: {n} functions -> "
           + ", ".join(f"{k} {v}" for k, v in counts.items()))
 

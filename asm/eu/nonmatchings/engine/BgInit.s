@@ -6,5 +6,5 @@
 	.thumb_func
 	.type BgInit, %function
 BgInit:
-	.incbin "roms/B8CP.gba", 0x4cfc, 0x40
+	.incbin "roms/B8CP.gba", 0x4ccc, 0x70
 .syntax divided

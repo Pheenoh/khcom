@@ -32,6 +32,15 @@ def nobl(b):
     return bytes(out)
 
 
+def blpair(b, k):
+    h1 = b[k] | (b[k + 1] << 8)
+    h2 = b[k + 2] | (b[k + 3] << 8)
+    if not (0xF000 <= h1 <= 0xF7FF and 0xF800 <= h2 <= 0xFFFF):
+        return None
+    off = ((h1 & 0x7FF) << 12) | ((h2 & 0x7FF) << 1)
+    return (off - 0x800000 if off & 0x400000 else off) + 4
+
+
 def load_map(path):
     units, syms = [], {}
     cur = None
@@ -71,6 +80,8 @@ def main():
             if lo <= a < lo + size:
                 owner.setdefault(nm, obj)
     flexible = {name for f in Path("src").glob("*.c") for _tu, name in g.active_includes(f, ver)}
+    filler_at = {int(m.group(1), 16) for name in flexible
+                 if (m := re.fullmatch(rf"{ver}_([0-9A-Fa-f]{{8}})", name))}
 
     def identical(r):
         return g.mask(us[r[1] - g.ROM_BASE:r[1] - g.ROM_BASE + r[2]]) == \
@@ -162,6 +173,7 @@ def main():
         return (anchors[i][1],) if i >= 0 else ()
 
     ident_ok = ident_bad = 0
+    calls = {}
     bad = []
     residual = {}
     constant_only = set()
@@ -175,6 +187,12 @@ def main():
         raw1 = built[a - g.ROM_BASE:a - g.ROM_BASE + r[2]]
         raw2 = ot[r[3] - g.ROM_BASE:r[3] - g.ROM_BASE + r[2]]
         b1, b2 = nobl(raw1), nobl(raw2)
+        for k in range(0, r[2] - 3, 2):
+            o1, o2 = blpair(raw1, k), blpair(raw2, k)
+            if o1 is None or o2 is None or a + o1 == r[3] + o2:
+                continue
+            t1, t2 = a + k + o1, r[3] + k + o2
+            calls.setdefault((name_of(t1), t1, t2), []).append(r[0])
         if b1 == b2:
             ident_ok += 1
         else:
@@ -206,6 +224,13 @@ def main():
             others = {u[3] for u in uses}
             print(f"    {nm:30s} {w1:#010x} -> {w2:#010x} ({w2 - w1:+#x}) x{len(uses)} in {' '.join(sorted(others))}")
 
+    print()
+    print(f"  {sum(len(v) for v in calls.values())} call sites reach"
+          f" {len(calls)} misplaced symbols:")
+    for (nm, t1, t2), sites in sorted(calls.items(), key=lambda kv: -len(kv[1])):
+        print(f"    {nm:30s} {t1:#010x} -> {t2:#010x} ({t2 - t1:+#x}) x{len(sites)}"
+              f" from {' '.join(sorted(set(sites))[:3])}")
+
     guards = []
     n = len(rows)
     for i, r in enumerate(rows):
@@ -234,7 +259,7 @@ def main():
         elif r[0] in constant_only:
             cls = "constant-only"
         elif i + 1 < n and rows[i + 1][3] > r[3] + r[2] and owner.get(rows[i + 1][0]) == o \
-                and placed_raw[rows[i + 1][0]] is not None:
+                and placed_raw[rows[i + 1][0]] is not None and r[3] + r[2] not in filler_at:
             cls = "longer"
         else:
             continue
