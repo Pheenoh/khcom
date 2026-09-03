@@ -62,9 +62,6 @@ void mode_debug_0(void);
 void mode_debug_1(void);
 void mode_debug_2(void);
 void func_0800B30C(ObjDef* def);
-
-extern DebugWork* gUnk_02034898;
-extern ChkObjWork* gUnk_0203489C;
 extern const char gUnk_08F68604[];
 extern u8 gUnk_08950902[];
 extern u8 gUnk_08C72CE4[];

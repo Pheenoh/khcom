@@ -1,5 +1,9 @@
 #include "macros.h"
 #include "mode_debflag.h"
+
+s8 gUnk_020348C0;
+s8 gUnk_020348C1;
+const DebugFlag* gUnk_020348C4;
 #include "gba/keys.h"
 
 const DebugFlag gUnk_08130BE8[14] = {

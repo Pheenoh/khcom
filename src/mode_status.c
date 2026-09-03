@@ -1,6 +1,10 @@
 #include "macros.h"
 #include "mode_status.h"
 
+TaskPool gUnk_02034EE0;
+Task* gUnk_02034EF4;
+u8 gUnk_02034EF8;
+
 #ifndef VERSION_EU
 void mode_status_0(void) {
     func_08004D74();

@@ -11,11 +11,6 @@ typedef struct KeyState {
     u8 on[10];
     u8 off[10];
 } KeyState;
-
-extern KeyState* gUnk_0203407C;
-extern KeyState* gUnk_02034080;
-extern u16 gUnk_02034084;
-
 u16 KeyGetHeld(KeyState* k);
 u16 KeyGetPressed(KeyState* k);
 u16 KeyGetRepeat(KeyState* k);

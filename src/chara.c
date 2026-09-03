@@ -1,5 +1,9 @@
 #include "macros.h"
 #include "chara.h"
+
+CharaObj* gUnk_02034CD8;
+u8 gUnk_02034CDC[4];
+u8 gUnk_02034CE0[0x14];
 #include "gba/keys.h"
 
 void task_chara_mask_fade_0(MaskFadeWork* work, MaskFadeArgs* args) {

@@ -269,9 +269,6 @@ typedef struct FldWork {
     u8 unk_00[0x58];
     ListNode unk_58;
 } FldWork;
-
-extern UnkStruct_020348C8* gUnk_020348C8;
-extern BgFx* gUnk_02034928;
 extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
 extern BtlWork* gUnk_02039B84;
@@ -348,10 +345,6 @@ extern u8 gUnk_09EDA6D8[];
 extern u8 gUnk_09EDA558[];
 extern u8 gUnk_09EDA840[];
 extern u8 gUnk_09EDA828[];
-extern ListNode gUnk_020348E8;
-extern ListNode gUnk_020348F8;
-extern ListNode gUnk_02034908;
-extern ListNode gUnk_02034918;
 extern const UnkStruct_08133E5C gUnk_08133E5C[];
 
 void SeedRandom(u32 seed);

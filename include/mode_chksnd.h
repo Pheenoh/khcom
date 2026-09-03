@@ -8,9 +8,6 @@ typedef struct ChkSndEntry {
     const char* name;
     u16 unk_04;
 } ChkSndEntry;
-
-extern TaskPool gUnk_020348A0;
-extern s16 gUnk_020348B4;
 extern ChkSndEntry gUnk_09ED8644[];
 extern Mode gUnk_09ECEB64;
 extern TaskDesc gUnk_09EE9190;

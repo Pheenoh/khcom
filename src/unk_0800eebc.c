@@ -1,6 +1,21 @@
 #include "macros.h"
 #include "unk_0800eebc.h"
 
+UnkStruct_020348C8* gUnk_020348C8;
+u16 gUnk_020348CC[2];
+u16 gUnk_020348D0[2];
+u16 gUnk_020348D4[2];
+u16 gUnk_020348D8[2];
+u16 gUnk_020348DC[2];
+u16 gUnk_020348E0;
+u16 gUnk_020348E2;
+u8 gUnk_020348E4[4];
+ListNode gUnk_020348E8;
+ListNode gUnk_020348F8;
+ListNode gUnk_02034908;
+ListNode gUnk_02034918;
+BgFx* gUnk_02034928;
+
 INCLUDE_ASM("unk_0800eebc/func_0800EEBC.s");
 INCLUDE_ASM("unk_0800eebc/func_0800EFE8.s");
 INCLUDE_ASM("unk_0800eebc/func_0800F230.s");

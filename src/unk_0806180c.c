@@ -1,6 +1,12 @@
 #include "macros.h"
 #include "unk_0806180c.h"
 
+Ent02034A80* gUnk_02034A80;
+Ent080658B8* gUnk_02034A84;
+Ent080658B8* gUnk_02034A88;
+void* gUnk_02034A8C;
+u8 gUnk_02034A90;
+
 void func_0806180C(u16 a) {
     ModeRequest(gUnk_09EE274C, a);
 }

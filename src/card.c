@@ -3,6 +3,8 @@
 #include "malloc.h"
 #include "card.h"
 
+extern UnkStruct_02034AAC* gUnk_02034A98;
+
 u32 gUnk_02034AA4;
 u32 gUnk_02034AA8;
 UnkStruct_02034AAC* gUnk_02034AAC;

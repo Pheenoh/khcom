@@ -267,8 +267,6 @@ extern u16 gUnk_020397E0[4][2];
 extern u16 gUnk_02039810[4][2];
 extern u16 gUnk_02039B58[];
 extern u16 gUnk_02039B68[];
-extern CharaObj* gUnk_02034CD8;
-extern u8 gUnk_02034CE0[];
 extern s8 gUnk_0203C38C;
 extern s8 gUnk_0203C380;
 extern s8 gUnk_0203C384;

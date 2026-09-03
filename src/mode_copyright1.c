@@ -1,6 +1,10 @@
 #include "macros.h"
 #include "mode_copyright1.h"
 
+u8 gUnk_02034ED4;
+u16 gUnk_02034ED6;
+u8 gUnk_02034ED8;
+
 #ifdef VERSION_US
 void mode_copyright1_0(s32 arg) {
     if (arg == 0) {

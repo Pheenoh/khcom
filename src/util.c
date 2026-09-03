@@ -1,4 +1,8 @@
 #include "util.h"
+
+KeyState* gUnk_0203407C;
+KeyState* gUnk_02034080;
+u16 gUnk_02034084;
 #include "malloc.h"
 #include "m4a.h"
 

@@ -101,10 +101,6 @@ typedef struct EffectWork {
 
 extern UnkStruct_02039DD0* gUnk_02039DD0;
 extern UnkStruct_02039DC8* gUnk_02039DC8;
-extern s16 gUnk_02034A94;
-extern u8 gUnk_02034A96;
-extern u32 gUnk_02034A9C;
-extern u32 gUnk_02034AA0;
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EEE6[];

@@ -43,7 +43,6 @@ typedef struct UnkStruct_02034AAC {
     u8 unk_A2[0x03];
     u8 unk_A5;
 } UnkStruct_02034AAC;
-extern UnkStruct_02034AAC* gUnk_02034A98;
 extern UnkStruct_02039B84* gUnk_02039B9C;
 extern u8 gUnk_02039DD8;
 extern u8 gUnk_0203A9E8;

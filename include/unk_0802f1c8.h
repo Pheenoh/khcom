@@ -35,10 +35,6 @@ typedef struct BtlMapWork {
 } BtlMapWork;
 
 extern BtlMapB84* gUnk_02039B84;
-
-extern u8 gUnk_0203492C;
-extern u16 gUnk_0203492E;
-extern s32 gUnk_02034930;
 extern const s8 gUnk_0813C7D8[];
 
 void func_0800592C(s32* p, s32 target, u16 steps);
