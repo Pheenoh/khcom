@@ -1,6 +1,12 @@
 #include "macros.h"
 #include "bos6.h"
 
+u8 gUnk_02036008;
+s16 gUnk_0203600A;
+s16 gUnk_0203600C;
+u8 gUnk_0203600E[2];
+s32 gUnk_02036010;
+
 void task_bos_pc_0(PcWork* work, s32 arg) {
     s32 x;
     s32 y;

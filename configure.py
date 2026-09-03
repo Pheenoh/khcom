@@ -69,6 +69,7 @@ UNIT_BSS = {
     "src/mode_jiminy.o": 0x02034934,
     "src/bos5.o": {"us": 0x02034FE8, "jp": 0x02034F48},
     "src/bos7.o": {"us": 0x02036020, "jp": 0x02035F90},
+    "src/bos6.o": {"us": 0x02036008, "jp": 0x02035F78},
     "src/mode_worldinspect.o": {"us": 0x02035118, "jp": 0x02035078, "eu": None},
     "src/mode_sio2.o": {"us": 0x02034CF4, "jp": 0x02034C54, "eu": None},
     "src/sio.o": 0x0203406C,
