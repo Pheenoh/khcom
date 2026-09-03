@@ -2,6 +2,9 @@
 #include "mode_chkeff.h"
 
 ChkEffWork* gChkEffWork;
+#ifdef VERSION_EU
+u32 gUnkEu_020348C4;
+#endif
 #include "gba/keys.h"
 
 const char gUnk_081309E0[8] = "PAUSE";

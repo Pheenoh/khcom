@@ -2537,7 +2537,7 @@ func_080AA450	0x080aa450	484	-	-
 func_080AA634	0x080aa634	76	-	-
 func_080AA680	0x080aa680	84	-	-
 func_080AA6D4	0x080aa6d4	144	-	-
-func_080AA764	0x080aa764	24	0x0808d518	global
+func_080AA764	0x080aa764	24	-	-
 func_080AA77C	0x080aa77c	700	-	-
 func_080AAA38	0x080aaa38	84	-	-
 func_080AAA8C	0x080aaa8c	124	-	-
@@ -2546,8 +2546,8 @@ func_080AAC40	0x080aac40	76	-	-
 func_080AAC8C	0x080aac8c	60	-	-
 func_080AACC8	0x080aacc8	100	-	-
 func_080AAD2C	0x080aad2c	88	-	-
-func_080AAD84	0x080aad84	80	0x0808df50	near
-func_080AADD4	0x080aadd4	220	0x0808dfa0	near
+func_080AAD84	0x080aad84	80	-	-
+func_080AADD4	0x080aadd4	220	-	-
 func_080AAEB0	0x080aaeb0	60	-	-
 func_080AAEEC	0x080aaeec	52	-	-
 func_080AAF20	0x080aaf20	88	-	-
@@ -2658,10 +2658,10 @@ func_080B1974	0x080b1974	176	-	-
 mode_sio_chg_connect_0	0x080b1a24	252	-	absent
 mode_sio_chg_connect_1	0x080b1b20	148	-	absent
 mode_sio_chg_connect_2	0x080b1bb4	44	-	absent
-func_080B1BE0	0x080b1be0	28	0x080ac81c	global
+func_080B1BE0	0x080b1be0	28	-	-
 func_080B1BFC	0x080b1bfc	24	-	-
 func_080B1C14	0x080b1c14	92	-	-
-func_080B1C70	0x080b1c70	96	0x080ac8a4	global
+func_080B1C70	0x080b1c70	96	-	-
 mode_sio_chg_card_0	0x080b1cd0	268	-	absent
 func_080B1DDC	0x080b1ddc	148	-	-
 func_080B1E70	0x080b1e70	1228	-	-
@@ -2697,7 +2697,7 @@ func_080B3C64	0x080b3c64	92	-	-
 func_080B3CC0	0x080b3cc0	104	-	-
 func_080B3D28	0x080b3d28	120	-	-
 func_080B3DA0	0x080b3da0	88	-	-
-func_080B3DF8	0x080b3df8	4	0x080ae658	body
+func_080B3DF8	0x080b3df8	4	-	-
 mode_sioError_0	0x080b3dfc	284	0x080b00e8	named
 mode_sioError_1	0x080b3f18	12	0x080b0244	named
 func_080B3F24	0x080b3f24	48	0x080b0250	near

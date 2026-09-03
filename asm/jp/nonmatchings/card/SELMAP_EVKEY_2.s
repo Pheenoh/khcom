@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global SELMAP_EVKEY_2
 	.thumb

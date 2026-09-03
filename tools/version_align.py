@@ -259,6 +259,37 @@ def main():
     search(near_identical, "near", False)
     fill()
 
+    def monotone():
+        by_obj = {}
+        for i, (a, e, nm) in enumerate(funcs):
+            if addr[i] is not None and how[i] != "absent":
+                by_obj.setdefault(owner.get(nm), []).append(i)
+        demoted = []
+        for o, idx in by_obj.items():
+            best = [None] * len(idx)
+            score = [0] * len(idx)
+            for k, i in enumerate(idx):
+                w = 1000 if how[i] == "named" else 1
+                score[k] = w
+                for j in range(k):
+                    if addr[idx[j]] < addr[i] and score[j] + w > score[k]:
+                        score[k] = score[j] + w
+                        best[k] = j
+            k = max(range(len(idx)), key=lambda k: score[k])
+            keep = set()
+            while k is not None:
+                keep.add(idx[k])
+                k = best[k]
+            for i in idx:
+                if i not in keep:
+                    demoted.append(funcs[i][2])
+                    addr[i] = None
+                    how[i] = "-"
+        if demoted:
+            print(f"  {len(demoted)} out-of-order placements demoted: " + " ".join(demoted))
+
+    monotone()
+
     out = Path(f"config/{args.version}/funcmap.txt")
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w") as f:

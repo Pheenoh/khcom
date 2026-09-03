@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global REV_COUNT_0
 	.thumb

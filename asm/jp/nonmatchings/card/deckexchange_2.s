@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global deckexchange_2
 	.thumb

@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global sub_0807E4C8
 	.thumb

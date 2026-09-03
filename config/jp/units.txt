@@ -20,6 +20,7 @@ mode_chkeff.c -O2 -fprologue-bugfix -fno-common
 mode_dummy.c -O2 -fprologue-bugfix -fno-common
 mode_debflag.c -O2 -fprologue-bugfix -fno-common
 mode_vsbattle.c
+unk_0800c778.c
 unk_0800eebc.c
 unk_0801007c.c -O2 -fprologue-bugfix -fno-common
 unk_08019050.c
@@ -38,10 +39,12 @@ smn.c
 frd.c
 pc.c
 hum.c
+unk_0805a484.c
 mode_jiminy.c -O2 -fprologue-bugfix -fno-common
 monsgage.c
 btl4.c
 tutorial.c
+unk_0805e848.c
 mode_movie.c -O2 -fprologue-bugfix -fno-common
 mode_test.c -O2 -fprologue-bugfix -fno-common
 msg.c -O2 -fprologue-bugfix -fno-common

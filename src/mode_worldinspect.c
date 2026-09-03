@@ -17,7 +17,13 @@ void* gUnk_02035168[12];
 void* gUnk_02035198[12];
 void* gUnk_020351C8[12];
 u8 gUnk_020351F8[0xC8];
+#ifdef VERSION_EU
+u8 gUnkEu_020354B0[0xC0];
+#endif
 u8 gUnk_020352C0[0x200];
+#ifdef VERSION_EU
+u8 gUnkEu_02035770[0x1E0];
+#endif
 s16 gUnk_020354C0;
 s16 gUnk_020354C2;
 s32 gUnk_020354C4;

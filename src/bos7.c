@@ -431,6 +431,10 @@ u8 func_08110938(LstWork* work) {
     return result;
 }
 
+#ifdef VERSION_EU
+INCLUDE_ASM("bos7/eu_0810F08C.s");
+#endif
+
 s16 func_0811095C(LstWork* work, u16 a) {
     LstState* s;
 

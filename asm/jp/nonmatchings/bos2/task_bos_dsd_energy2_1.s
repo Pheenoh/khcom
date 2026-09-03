@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global task_bos_dsd_energy2_1
 	.thumb

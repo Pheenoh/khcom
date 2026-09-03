@@ -12,6 +12,9 @@ u8 gActiveDeck;
 u8 gUnk_02034AB1[3];
 s16 gUnk_02034AB4;
 u8 gUnk_02034AB6[2];
+#ifdef VERSION_EU
+u8 gUnkEu_02034AD4[4];
+#endif
 u8 gUnk_02034AB8[20];
 u8 gUnk_02034ACC;
 u32 gUnk_02034AD0;
@@ -19,16 +22,27 @@ void* gUnk_02034AD4;
 u8 gUnk_02034AD8;
 u8 gUnk_02034AD9;
 u8 gUnk_02034ADA[6];
-u8 gUnk_02034AE0[24];
+u8 gUnk_02034AE0[20];
+#ifndef VERSION_EU
+u8 gUnk_02034AF4[4];
+#endif
 u8 gUnk_02034AF8;
 UnkStruct_02034AFC* gUnk_02034AFC;
 UnkStruct_02034AFC* gUnk_02034B00;
+#ifndef VERSION_EU
 u8 gUnk_02034B04[4];
 u8 gUnk_02034B08[20];
 u8 gUnk_02034B1C;
 u8 gUnk_02034B1D[3];
+#endif
 u8 gUnk_02034B20[20];
 void* gUnk_02034B34;
+#ifdef VERSION_EU
+u8 gUnk_02034B04[4];
+u8 gUnk_02034B08[20];
+u8 gUnk_02034B1C;
+u8 gUnk_02034B1D[3];
+#endif
 #include "game.h"
 
 void* TaskCreate(void* a, void* desc, void* args);

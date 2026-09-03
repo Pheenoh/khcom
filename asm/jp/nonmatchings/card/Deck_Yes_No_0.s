@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global Deck_Yes_No_0
 	.thumb

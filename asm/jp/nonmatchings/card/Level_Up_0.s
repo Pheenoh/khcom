@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global Level_Up_0
 	.thumb

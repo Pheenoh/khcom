@@ -1,4 +1,5 @@
 .syntax unified
+	.text
 	.align 2, 0
 	.global mode_sio_btl_connect_1
 	.thumb

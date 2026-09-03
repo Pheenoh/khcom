@@ -17,6 +17,9 @@ vu8 gModeFlags;
 u16 gUnk_0300749E;
 void (*gUnk_030074A0)(void);
 void (*gUnk_030074A4)(void);
+#ifdef VERSION_EU
+u32 gUnkEu_030074AC;
+#endif
 extern Mode gModeCopyright1;
 extern Mode* gDebugModes[];
 
@@ -282,6 +285,11 @@ void ModeRequestHeapReset(Mode* mode, s32 arg) {
     gPendingModeArg = arg;
     gModeFlags |= 0x10;
 }
+
+#ifdef VERSION_EU
+INCLUDE_ASM("taskpool/eu_0800115C.s");
+#endif
+
 void ModeUpdate(void) {
     u8 v;
 
