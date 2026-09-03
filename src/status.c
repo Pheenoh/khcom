@@ -1,11 +1,13 @@
 #include "macros.h"
 #include "status.h"
 
-StatusWork* gStatusWork;
-u8 gUnk_02034F00;
-s16 gUnk_02034F02;
-StatusStocklistWork* gStatusStocklistWork;
-BoogieWork* gBoogieWork;
+static StatusWork* gStatusWork;
+static u8 gUnk_02034F00;
+static s16 gUnk_02034F02;
+static StatusStocklistWork* gStatusStocklistWork;
+static BoogieWork* gBoogieWork;
+
+s32 gUnk_0203C550;
 #include "gba/keys.h"
 
 void task_status_0(StatusWork* work) {

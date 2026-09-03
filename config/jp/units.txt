@@ -8,7 +8,7 @@ key.c -O2 -fprologue-bugfix -fno-common
 sprite.c -O2 -fprologue-bugfix -fno-common
 engine.c -O2 -fprologue-bugfix -fno-common
 sio.c -O2 -fprologue-bugfix -fno-common
-pallet.c -O2 -fprologue-bugfix -fno-common
+pallet.c -O2 -fprologue-bugfix
 util.c -O2 -fprologue-bugfix -fno-common
 save.c -O2 -fprologue-bugfix -fno-common
 mode_battle.c
@@ -64,7 +64,7 @@ title.c -O2 -fprologue-bugfix -fno-common
 mode_copyright1.c -O2 -fprologue-bugfix -fno-common
 mode_copyright2.c -O2 -fprologue-bugfix -fno-common
 mode_status.c -O2 -fprologue-bugfix -fno-common
-status.c -O2 -fprologue-bugfix -fno-common
+status.c -O2 -fprologue-bugfix
 bos4.c -O2 -fprologue-bugfix -fno-common
 map.c -O2 -fprologue-bugfix -fno-common
 room.c

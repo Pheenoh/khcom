@@ -22,6 +22,8 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # is shifted down by 0x90..0xA4 above that; EU differs from 0x02034898 on and
 # in IWRAM from 0x03007484, so most units need the dict form.
 UNIT_COMMON = {
+    "src/pallet.o": {"us": 0X02039B70, "jp": 0x02039ae0, "eu": 0x0203a180},
+    "src/status.o": {"us": 0X0203C550, "jp": 0x0203c4c0, "eu": 0x0203cb40},
     "src/mode_debflag.o": {"us": 0X02039B94, "jp": 0x02039b04, "eu": 0x0203a1a4},
     "src/wlogo.o": {"us": 0X0203AB38, "jp": 0x0203aaa8, "eu": 0x0203b10c},
     "src/msg.o": {"us": 0x02039DD0, "jp": 0x02039D40, "eu": 0x0203A3E0},
