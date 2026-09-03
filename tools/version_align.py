@@ -64,6 +64,11 @@ def us_functions(mapfile):
              for i, (a, n) in enumerate(rows)], owner)
 
 
+def near_identical(a, b, share=64):
+    diff = sum(1 for k in range(0, len(a) - 1, 2) if a[k:k + 2] != b[k:k + 2])
+    return diff <= 8 and diff * share <= len(a)
+
+
 def mask(b):
     out = bytearray(b)
     for k in range(0, len(b) - 1, 2):
@@ -147,79 +152,112 @@ def main():
         mid = ref[len(ref) // 2]
         slack = max(2 * (d["hi"] - d["lo"]), 0x2000)
         ranges[o] = (mid - slack, mid + slack)
-    culled = 0
-    for i, (a, e, nm) in enumerate(funcs):
-        if how[i] != "global":
-            continue
-        r = ranges.get(owner.get(nm))
-        if r and not (r[0] <= addr[i] <= r[1]):
-            addr[i] = None
-            how[i] = "-"
-            culled += 1
-    if culled:
-        print(f"  culled {culled} anchors inconsistent with their unit")
+    outside = [funcs[i][2] for i in range(n) if how[i] == "global"
+               and (r := ranges.get(owner.get(funcs[i][2])))
+               and not (r[0] <= addr[i] <= r[1])]
+    if outside:
+        print(f"  {len(outside)} unique hits outside their unit's range, kept: "
+              + " ".join(outside))
 
     def guess(i):
-        slack = 0
-        for j in range(i - 1, -1, -1):
-            if addr[j] is not None:
-                return addr[j] + (funcs[j][1] - funcs[j][0]) + slack
-            slack += funcs[j][1] - funcs[j][0]
-        slack = 0
-        for j in range(i + 1, n):
-            if addr[j] is not None:
-                return addr[j] - slack - (funcs[i][1] - funcs[i][0])
-            slack += funcs[j][1] - funcs[j][0]
+        o = owner.get(funcs[i][2])
+        for same in (True, False):
+            slack = 0
+            for j in range(i - 1, -1, -1):
+                if same and owner.get(funcs[j][2]) != o:
+                    break
+                if addr[j] is not None:
+                    return addr[j] + (funcs[j][1] - funcs[j][0]) + slack
+                slack += funcs[j][1] - funcs[j][0]
+            slack = 0
+            for j in range(i + 1, n):
+                if same and owner.get(funcs[j][2]) != o:
+                    break
+                if addr[j] is not None:
+                    return addr[j] - slack - (funcs[i][1] - funcs[i][0])
+                slack += funcs[j][1] - funcs[j][0]
         return None
 
-    for _ in range(PASSES):
-        progress = False
-        for i, (a, e, nm) in enumerate(funcs):
-            if addr[i] is not None or how[i] == "absent":
-                continue
-            sz = e - a
-            if sz < 4 or sz > 16384:
-                continue
-            g = guess(i)
-            if g is None:
-                g = a
-            off = a - ROM_BASE
-            pat = mus[off:off + sz]
-            phase = off % 4
-            g -= (g - ROM_BASE - phase) % 4
-            for d in range(0, WINDOW, 4):
-                for cand in (g + d, g - d):
-                    o = cand - ROM_BASE
-                    if cand < CODE_LO or o + sz > len(mot):
-                        continue
-                    if mot[o:o + sz] == pat:
-                        addr[i] = cand
-                        how[i] = "body"
-                        progress = True
-                        break
-                if addr[i] is not None:
-                    break
-        if not progress:
-            break
+    def window(i, accept):
+        a, e, nm = funcs[i]
+        sz = e - a
+        g = guess(i)
+        if g is None:
+            g = a
+        off = a - ROM_BASE
+        pat = mus[off:off + sz]
+        g -= (g - ROM_BASE - (off % 4)) % 4
+        for d in range(0, WINDOW, 4):
+            for cand in (g + d, g - d):
+                o = cand - ROM_BASE
+                if cand < CODE_LO or o + sz > len(mot):
+                    continue
+                if accept(pat, mot[o:o + sz]):
+                    return cand
+        return None
 
-    i = 0
-    while i < n:
-        if addr[i] is not None or how[i] == "absent":
-            i += 1
-            continue
-        j = i
-        while j < n and addr[j] is None and how[j] != "absent":
-            j += 1
-        if i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
-            start = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
-            need = sum(funcs[k][1] - funcs[k][0] for k in range(i, j))
-            if start + need == addr[j]:
-                cur = start
-                for k in range(i, j):
-                    addr[k] = cur
-                    how[k] = "fill"
-                    cur += funcs[k][1] - funcs[k][0]
-        i = j
+    def in_range(i):
+        a, e, nm = funcs[i]
+        r = ranges.get(owner.get(nm))
+        if r is None:
+            return None
+        pat = mus[a - ROM_BASE:e - ROM_BASE]
+        lo, hi = max(r[0], CODE_LO) - ROM_BASE, min(r[1], CODE_HI) - ROM_BASE
+        j = mot.find(pat, lo, hi)
+        if j < 0 or j % 2 or mot.find(pat, j + 1, hi) >= 0:
+            return None
+        return ROM_BASE + j
+
+    def search(accept, label, use_range):
+        for _ in range(PASSES):
+            progress = False
+            for i, (a, e, nm) in enumerate(funcs):
+                if addr[i] is not None or how[i] == "absent":
+                    continue
+                sz = e - a
+                if sz < 4 or sz > 16384:
+                    continue
+                cand = window(i, accept)
+                if cand is None and use_range:
+                    cand = in_range(i)
+                if cand is not None:
+                    addr[i] = cand
+                    how[i] = label
+                    progress = True
+            if not progress:
+                break
+
+    def fill():
+        i = 0
+        while i < n:
+            if addr[i] is not None or how[i] == "absent":
+                i += 1
+                continue
+            j = i
+            while j < n and addr[j] is None and how[j] != "absent":
+                j += 1
+            if i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
+                start = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
+                need = sum(funcs[k][1] - funcs[k][0] for k in range(i, j))
+                if start + need == addr[j]:
+                    cur = start
+                    for k in range(i, j):
+                        a, e, nm = funcs[k]
+                        pat = mus[a - ROM_BASE:e - ROM_BASE]
+                        got = mot[cur - ROM_BASE:cur - ROM_BASE + (e - a)]
+                        if pat == got:
+                            addr[k] = cur
+                            how[k] = "fill"
+                        elif near_identical(pat, got, 16):
+                            addr[k] = cur
+                            how[k] = "near"
+                        cur += e - a
+            i = j
+
+    search(lambda pat, got: pat == got, "body", True)
+    fill()
+    search(near_identical, "near", False)
+    fill()
 
     out = Path(f"config/{args.version}/funcmap.txt")
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -227,7 +265,7 @@ def main():
         for i, (a, e, nm) in enumerate(funcs):
             va = "-" if addr[i] is None else f"{addr[i]:#010x}"
             f.write(f"{nm}\t{a:#010x}\t{e - a}\t{va}\t{how[i]}\n")
-    counts = {k: how.count(k) for k in ("named", "global", "body", "fill", "absent", "-")}
+    counts = {k: how.count(k) for k in ("named", "global", "body", "fill", "near", "absent", "-")}
     print(f"{out}: {n} functions -> "
           + ", ".join(f"{k} {v}" for k, v in counts.items()))
 
