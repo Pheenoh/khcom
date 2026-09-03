@@ -47,7 +47,7 @@ tutorial.c
 unk_0805e848.c
 mode_movie.c -O2 -fprologue-bugfix -fno-common
 mode_test.c -O2 -fprologue-bugfix -fno-common
-msg.c -O2 -fprologue-bugfix -fno-common
+msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 mode_sio.c -O2 -fprologue-bugfix -fno-common

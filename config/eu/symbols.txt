@@ -1765,7 +1765,6 @@ gUnk_0941DD38 = 0x094f4144
 gTaskDescEventSeq = 0x09f6f980
 gModeAllmap = 0x09f800cc
 gUnk_0905EEE6 = 0x090ebd06
-gUnk_02039DD0 = 0x0203a3e0
 gUnk_08F70990 = 0x08f81968
 gUnk_09033ED8 = 0x090cd1cc
 gUnk_09033EDC = 0x090cd1d0
