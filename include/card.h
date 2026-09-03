@@ -930,7 +930,7 @@ typedef struct UnkStruct_08099928 {
     u8 unk_00[0xD0];
     s16 unk_D0;
     s16 unk_D2;
-    u8 unk_D4[0x02];
+    s16 unk_D4;
     u16 unk_D6;
     u16 unk_D8;
     u8 unk_DA[0x08];
@@ -969,20 +969,35 @@ typedef struct UnkStruct_08090244 {
 
 typedef struct UnkStruct_08093838 {
     u8 unk_000[0x14];
-    u8 unk_014[0x1D8];
+    u8 unk_014[0x28];
+    void* unk_03C;
+    u8 unk_040[0x1AC];
     MapcardWork* unk_1EC;
     u8 unk_1F0[0x04];
     MapcardWork* unk_1F4;
     u8 unk_1F8[0x60];
     s32 unk_258;
-    u8 unk_25C[0x08];
+    s32 unk_25C;
+    u8 unk_260[0x04];
     s32 unk_264;
-    u8 unk_268[0x1C];
+    u8 unk_268[0x0C];
+    void* unk_274;
+    u8 unk_278[0x08];
+    s16 unk_280;
+    s16 unk_282;
     u8 unk_284;
-    u8 unk_285[0x07];
+    u8 unk_285[0x06];
+    u8 unk_28B;
     u8 unk_28C;
     u8 unk_28D[0x0B];
     u8 unk_298;
+    u8 unk_299;
+    u8 unk_29A;
+    u8 unk_29B;
+    u8 unk_29C;
+    u8 unk_29D;
+    u8 unk_29E[0x22];
+    u8 unk_2C0;
 } UnkStruct_08093838;
 
 typedef struct UnkStruct_08F7CBA8 {
@@ -1319,6 +1334,16 @@ extern CardBack gUnk_08F70A28[];
 extern s16 gUnk_0903595E[];
 extern s16 gUnk_09035964[];
 extern s32 gUnk_09033D28[];
+
+typedef struct UnkStruct_080A97D4 {
+    void* unk_00;
+    u16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    u8 unk_0A;
+    u8 unk_0B;
+    u32 unk_0C;
+} UnkStruct_080A97D4;
 
 typedef struct UnkStruct_08084D78 {
     u16 unk_00[0x0A];
