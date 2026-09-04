@@ -25,7 +25,7 @@ typedef struct Work0806180C {
     Ent0806E9BC* unk_000;
     void* tiles;
     void* palette;
-    u8 unk_00C[4];
+    void* unk_00C;
     TaskPool unk_010;
     u8 unk_024[2];
     u8 unk_026;
@@ -38,7 +38,8 @@ typedef struct Work0806180C {
     u16 unk_03E;
     u8 unk_040[0x13C];
     s32 unk_17C;
-    u8 unk_180[8];
+    s32 unk_180;
+    s32 unk_184;
     s32 unk_188;
     s32 unk_18C;
     s32 unk_190;
@@ -51,10 +52,14 @@ typedef struct Work0806180C {
     u8 unk_1A9;
     u8 unk_1AA;
     u8 unk_1AB;
-    u8 unk_1AC[6];
+    u8 unk_1AC[4];
+    u8 unk_1B0;
+    u8 unk_1B1;
     u8 unk_1B2;
     u8 unk_1B3;
-    u8 unk_1B4[8];
+    u8 unk_1B4[2];
+    u8 unk_1B6;
+    u8 unk_1B7[5];
 } Work0806180C;
 
 typedef struct MsgLine0806180C {
@@ -166,7 +171,8 @@ typedef struct MsgWinWork {
     u8 unk_2A;
     u8 unk_2B;
     Work08073E34 unk_2C;
-    u8 unk_34[4];
+    u8 unk_34;
+    u8 unk_35[3];
     u8 unk_38;
     u8 unk_39[3];
     MsgLine0806180C* unk_3C;
@@ -204,13 +210,27 @@ typedef struct EventSeqWork {
 } EventSeqWork;
 
 typedef struct BtlWork {
-    u8 unk_00[0x2C];
+    s32 unk_00;
+    s32 unk_04;
+    u8 unk_08[0x24];
     TaskPool unk_2C;
     TaskPool unk_40;
 } BtlWork;
 
+typedef struct Ent08074EC8 {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+} Ent08074EC8;
+
+typedef struct Ent09EE3CA0 {
+    u8 unk_00[0x24];
+    u8 unk_24;
+} Ent09EE3CA0;
+
 typedef struct UnkStruct_02039DC8 {
-    u8 unk_00[0x48];
+    Ent08074EC8* unk_00[18];
     s32 unk_48;
     s32 unk_4C;
     s32 unk_50;
@@ -222,7 +242,8 @@ typedef struct UnkStruct_02039DC8 {
     s16 unk_68;
     s16 unk_6A;
     u16 unk_6C;
-    u8 unk_6E[0xA];
+    u8 unk_6E[6];
+    s32 unk_74;
     u8 unk_78;
     u8 unk_79;
     u8 unk_7A;
@@ -262,7 +283,10 @@ typedef struct Actor0806180C {
 } Actor0806180C;
 
 typedef struct Obj0806180C {
-    u8 unk_00[0x10];
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
     u8 unk_10;
     u8 unk_11[3];
     u32 unk_14;
@@ -277,6 +301,14 @@ typedef struct Work08074DC4 {
     u8 unk_0A[2];
     Obj0806180C* unk_0C;
     u16 unk_10;
+    u16 unk_12;
+    u8 unk_14;
+    u8 unk_15;
+    u16 unk_16;
+    u8 unk_18[2];
+    u8 unk_1A;
+    u8 unk_1B;
+    u16 unk_1C[160];
 } Work08074DC4;
 
 typedef struct Handle0806180C {
@@ -298,18 +330,28 @@ typedef struct MsgWaitWork {
 } MsgWaitWork;
 
 typedef struct MsgWaitYesNoWork {
-    u8 unk_00[4];
+    void* unk_00;
     void* unk_04;
     void* unk_08;
     void* unk_0C;
     void* unk_10;
-    u8 unk_14[4];
+    void* unk_14;
     void* unk_18;
     TextSlot unk_1C[10];
     TextSlot unk_6C[10];
     void* gfx;
-    u8 unk_C0[0x1C];
-    u8 unk_DC[0x28];
+    void* unk_C0;
+    u8 unk_C4[0x18];
+    u8 unk_DC[0x18];
+    u8 unk_F4;
+    u8 unk_F5;
+    u8 unk_F6[2];
+    s32 unk_F8;
+    s32 unk_FC;
+    u8 unk_100;
+    u8 unk_101;
+    u8 unk_102;
+    u8 unk_103;
     u8 unk_104;
     u8 unk_105[3];
 } MsgWaitYesNoWork;
@@ -383,7 +425,7 @@ extern u8 gUnk_09614758[];
 extern u8 gUnk_09614778[];
 extern u8 gUnk_09614798[];
 extern u8 gUnk_096147B8[];
-extern void* gUnk_09EEB204;
+extern void* gUnk_09EEB204[];
 extern void* gUnk_09EEC538[];
 extern s32 gUnk_09033D08[][2];
 extern s16 gSineTable[];
@@ -395,6 +437,10 @@ extern void* gUnk_09EE3CA0[];
 extern u8 gUnk_094233B8[];
 extern u8 gUnk_096148D8[];
 extern u8 gUnk_08F69BE4[];
+extern u8 gUnk_090AB5B2[];
+extern s32 gUnk_09033D28[];
+extern s16 gUnk_0903380C[][6];
+extern void* gUnk_09EF126C[];
 
 void _08065994(void);
 u16 func_080659BC(u8 v, TextSlot* out);
@@ -454,6 +500,7 @@ void AnimStart(AnimState* a, u16 animId, u16 flags);
 void DisableBg(s32 bg);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 a, s32 b);
+void* AllocObjPalette(s32 a);
 void LoadObjPaletteBank(u16 a, void* b);
 void func_08002A10(void* a, void* b);
 void func_08003A70(void* a, void* b);
@@ -461,8 +508,11 @@ void* AnimGetGfx(AnimState* a);
 u8 func_08073DA4(MsgFaceWork* p, void* a);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void func_08005244(s32 a, u16 b, u16 c);
+void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_08073294(MsgWinWork* p, void* a);
 u8 func_08073318(MsgWinWork* p, void* a);
+u8 func_0807344C(MsgWinWork* p, void* a);
+void func_0807361C(MsgWinWork* p);
 void func_08073508(MsgWinWork* p);
 void func_080736F8(MsgWinWork* p);
 u8 func_08072EAC(MsgWinWork* p, void* a);
@@ -534,6 +584,8 @@ void func_08070008(Work0806180C* p);
 
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
+void* func_080038C8(u16 a);
+void func_080038E4(void* a, void* b, void* c);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 
