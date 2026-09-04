@@ -40,8 +40,10 @@ if m:
     print(t.lower())
 ' 2>/dev/null)
 fi
-printf '#!/bin/bash\nADDR=%s PERM_BSS=%s exec "$(dirname "$0")/../../tools/permuter_compile.sh" "$@"\n' \
-    "$START" "$BSS" > "$DIR/compile.sh"
+FLAGS=$(awk -v u="$U.c" '$1==u{$1=""; print; exit}' "$REPO/config/us/units.txt" 2>/dev/null)
+[ -z "$FLAGS" ] && FLAGS="-O2 -fprologue-bugfix"
+printf '#!/bin/bash\nADDR=%s PERM_BSS=%s PERM_FLAGS=%s exec "$(dirname "$0")/../../tools/permuter_compile.sh" "$@"\n' \
+    "$START" "$BSS" "\"$FLAGS\"" > "$DIR/compile.sh"
 [ -n "$BSS" ] && echo "  unit .bss placed at $BSS"
 chmod +x "$DIR/compile.sh"
 

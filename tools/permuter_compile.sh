@@ -14,8 +14,8 @@ MAP="$REPO/build/us/com_us.map"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
-BSSFLAG=""; [ -n "${PERM_BSS:-}" ] && BSSFLAG="-fno-common"
-"$REPO/tools/agbcc/bin/agbcc" -mthumb-interwork -O2 -fprologue-bugfix $BSSFLAG -o "$TMP/x.s" "$IN"
+UFLAGS="${PERM_FLAGS:--O2 -fprologue-bugfix}"
+"$REPO/tools/agbcc/bin/agbcc" -mthumb-interwork $UFLAGS -o "$TMP/x.s" "$IN"
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -I "$REPO/include" \
     -I "$REPO/asm/us/nonmatchings" -o "$TMP/x.o" "$TMP/x.s"
 

@@ -5,9 +5,13 @@
 # base ROM. Callees are resolved to their real addresses (as Thumb symbols,
 # read out of build/<ver>/com_<ver>.map) so bl encodings compare exactly.
 #
-# MATCH_BSS=<addr> builds with -fno-common and places the unit's own .bss and
-# COMMON at that address, which is what a unit defining its own globals needs;
-# without it the link dies on "defined in discarded section COMMON".
+# MATCH_BSS=<addr> places the unit's own .bss and COMMON at that address, which
+# is what a unit defining its own globals needs; without it the link dies on
+# "defined in discarded section COMMON". Compiler flags are taken from the
+# unit's own line in config/us/units.txt, so -fno-common and -O2-without-
+# -fprologue-bugfix are applied exactly where the real build applies them --
+# adding -fno-common to a unit that does not have it promotes a header-declared
+# common ahead of the file's statics and shifts every .bss symbol by 4.
 #
 # MATCH_BASE=<addr> links .text at that address instead of <start> and slices
 # <symbol> back out of the result, so a whole translation unit can be compiled
@@ -39,8 +43,9 @@ fi
 [ -n "${MATCH_BASE:-}" ] && export MATCH_BASE
 [ -n "${MATCH_BSS:-}" ] && export MATCH_BSS
 arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp ${EXTRA_INC:-} $C -o $FT/x.i
-BSSFLAG=""; [ -n "${MATCH_BSS:-}" ] && BSSFLAG="-fno-common"
-tools/agbcc/bin/agbcc -mthumb-interwork -O2 -fprologue-bugfix $BSSFLAG ${AGBCC_EXTRA:-} -o $FT/x.s $FT/x.i
+UFLAGS=$(awk -v u="$U.c" '$1==u{$1=""; print; exit}' config/us/units.txt 2>/dev/null)
+[ -z "$UFLAGS" ] && UFLAGS="-O2 -fprologue-bugfix"
+tools/agbcc/bin/agbcc -mthumb-interwork $UFLAGS ${AGBCC_EXTRA:-} -o $FT/x.s $FT/x.i
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -I include -I asm/us/nonmatchings -o $FT/x.o $FT/x.s
 grep -oE '^[A-Za-z_][A-Za-z0-9_]*' config/us/symbols.txt 2>/dev/null | sort -u > $FT/datasyms.txt || : > $FT/datasyms.txt
 awk -F= '/=/{gsub(/ /,"",$1); gsub(/ /,"",$2); printf "%s = %s;\n", $1, $2}' config/us/symbols.txt > $FT/defs.ld 2>/dev/null || : > $FT/defs.ld
