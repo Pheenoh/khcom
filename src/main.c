@@ -249,7 +249,6 @@ void VCountIntrDummy(void) {
 void SerialIntrDummy(void) {
 }
 
-#ifdef NON_MATCHING
 void InitIntrTable(void) {
     s32 i;
 
@@ -259,7 +258,7 @@ void InitIntrTable(void) {
     gIntrTableVBlank = &gIntrTable[1];
     gIntrTableVCount = &gIntrTable[3];
     gIntrTableHBlank = &gIntrTable[2];
-    gIntrTableSerial = &gIntrTable[0];
+    gIntrTableSerial = gIntrTable;
     gIntrTableTimer3 = &gIntrTable[7];
     ResetVBlankCallback();
     ResetVCountCallback();
@@ -267,9 +266,6 @@ void InitIntrTable(void) {
     ResetSerialCallback();
     ResetTimer3Callback();
 }
-#else
-INCLUDE_ASM("main/InitIntrTable.s");
-#endif
 
 void ApplyIntrCallbacks(void) {
     *gIntrTableVBlank = gVBlankCallback;

@@ -9827,17 +9827,19 @@ u16 func_08096D0C(u16 a) {
 INCLUDE_ASM("card/func_08096D0C.s");
 #endif
 
-#ifdef NON_MATCHING
 u16 func_08096D48(u16 a, s32 b) {
+    UnkStruct_08096C38* tiles;
     u16 base;
     u16 off;
 
     off = 0;
 
     if (gGameState.flags & 8) {
-        base = func_08096C38(gUnk_090360BC[a].unk_00, gUnk_090360BC[a].unk_04);
+        tiles = gUnk_090360BC[a].unk_00;
+        base = func_08096C38(tiles, gUnk_090360BC[a].unk_04);
     } else {
-        base = func_08096C38(gUnk_09035DCC[a].unk_00, gUnk_09035DCC[a].unk_04);
+        tiles = gUnk_09035DCC[a].unk_00;
+        base = func_08096C38(tiles, gUnk_09035DCC[a].unk_04);
     }
 
     if (base != 0xFFFF) {
@@ -9848,9 +9850,6 @@ u16 func_08096D48(u16 a, s32 b) {
 
     return base + off;
 }
-#else
-INCLUDE_ASM("card/func_08096D48.s");
-#endif
 
 void func_08096DB0(void* a, void* b) {
     TaskCreate(a, gTaskDescPrizeCardInit, b);
