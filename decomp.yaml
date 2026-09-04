@@ -85,6 +85,7 @@ tools:
           name: SDK
           paths:
             - src/m4a
+            - asm/m4a_1
             - src/agb_sram
             - src/libagbsyscall
             - src/movie

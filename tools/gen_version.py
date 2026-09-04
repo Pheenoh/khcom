@@ -456,6 +456,8 @@ def main():
             obj = f"build/us/lib/{arch}/{member}"
         elif name.endswith(".c"):
             obj = f"build/us/src/{name[:-2]}.o"
+        elif name.endswith(".s"):
+            obj = f"build/us/asm/{name[:-2]}.o"
         else:
             return None
         named = sorted(r[3] for r in rows
@@ -487,10 +489,15 @@ def main():
             size = TARGET_DATA_SIZE.get(ver, {}).get((nm, sec[:-1]), size)
             cdata.append((here, size, line))
             continue
-        if not t or t.startswith("#") or t.endswith(".s"):
+        if not t or t.startswith("#"):
             head.append(line)
             continue
-        body.append((unit_key(t.split()[0]), line))
+        key = unit_key(t.split()[0])
+
+        if key is None and t.endswith(".s"):
+            head.append(line)
+            continue
+        body.append((key, line))
     dropped = [l for k, l in body if k == "absent"]
     for l in dropped:
         print(f"  unit dropped: {l}")
