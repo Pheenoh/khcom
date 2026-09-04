@@ -1,7 +1,6 @@
 #include "macros.h"
 #include "romcri.h"
 
-#ifndef VERSION_EU
 void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     SetupBg(1, 0, 23, 12);
     work->angle = arg;
@@ -28,13 +27,14 @@ void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
         break;
     case 0x2D:
         LoadBgTiles(1, gUnk_08EDBB44, 0x7520);
+#ifdef VERSION_EU
+        SetBgScroll(1, -73, 5);
+#else
         SetBgScroll(1, -71, 3);
+#endif
         break;
     }
 }
-#else
-INCLUDE_ASM("romcri/task_romcri_eff_0.s");
-#endif
 
 u8 task_romcri_eff_1(RomcriEffWork* work) {
     switch (work->angle) {

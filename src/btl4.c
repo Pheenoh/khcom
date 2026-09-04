@@ -142,12 +142,15 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
     work->unk_24[5] = gUnk_08B25ED2;
 }
 
-#ifndef VERSION_EU
 void task_btl_exp_0(BtlExpWork* work) {
     s32 i;
 
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+#ifdef VERSION_EU
+    work->tiles = AllocObjTiles(0xC0, gUnk_08B25EF0);
+#else
     work->tiles = AllocObjTiles(0xA0, gUnk_08B25EF0);
+#endif
     work->unk_20 = 0;
 
     for (i = 0; i <= 5; i++) {
@@ -161,9 +164,6 @@ void task_btl_exp_0(BtlExpWork* work) {
     work->unk_48 = 0;
     work->unk_40 = 0;
 }
-#else
-INCLUDE_ASM("btl4/task_btl_exp_0.s");
-#endif
 
 #ifndef VERSION_EU
 s32 task_btl_exp_1(BtlExpWork* work) {

@@ -401,7 +401,6 @@ void func_080C774C(void) {
     }
 }
 
-#ifndef VERSION_EU
 void mode_pooh_0(s32 arg) {
     s32 i;
 
@@ -491,11 +490,12 @@ void mode_pooh_0(s32 arg) {
     func_08006120(0, 16);
     func_080C7568(0, 16);
     gUnk_02034D44 = 0;
-    gUnk_02034D4C = 180;
-}
+#ifdef VERSION_EU
+    gUnk_02034D4C = 179;
 #else
-INCLUDE_ASM("mode_sio2/mode_pooh_0.s");
+    gUnk_02034D4C = 180;
 #endif
+}
 
 #ifndef VERSION_EU
 void mode_pooh_1(void) {
