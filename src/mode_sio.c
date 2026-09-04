@@ -2439,7 +2439,6 @@ void mode_sioError_1(void) {
     func_080B3F24();
 }
 
-#ifndef VERSION_EU
 void func_080B3F24(void) {
 #ifdef VERSION_JP
     func_080664D8(58, 62, gSioErrorWork->unk_08, gSioErrorWork->unk_368, 20, gSioErrorWork->unk_06);
@@ -2447,19 +2446,12 @@ void func_080B3F24(void) {
     func_080664D8(36, 57, gSioErrorWork->unk_08, gSioErrorWork->unk_368, 20, gSioErrorWork->unk_06);
 #endif
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B3F24.s");
-#endif
 
-#ifndef VERSION_EU
 void mode_sioError_2(void) {
     ReleaseObjPalette(gSioErrorWork->unk_368);
     func_08065AE0(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
     EwramFree(gSioErrorWork);
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sioError_2.s");
-#endif
 
 void mode_wLogo_0(s32 arg) {
     gUnk_02034B59 = arg;

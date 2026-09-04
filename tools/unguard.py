@@ -22,12 +22,25 @@ def block(src, unit, sym):
 
     if k < 0:
         return None
+    depth = 0
     open_at = -1
+    neg = tag = None
 
-    for m in re.finditer(r"^#if(n?)def (VERSION_\w+)\n", src[:k + 1], re.M):
-        open_at = m.start()
-        neg, tag = m.group(1) == "n", m.group(2)
-    if open_at < 0:
+    for m in re.finditer(r"^#(ifn?def|if|else|endif)[ \t]*(\w*)", src[:k + 1], re.M):
+        kind = m.group(1)
+
+        if kind in ("ifdef", "ifndef", "if"):
+            depth += 1
+
+            if depth == 1:
+                open_at, neg, tag = m.start(), kind == "ifndef", m.group(2)
+        elif kind == "endif":
+            depth -= 1
+
+            if depth < 0:
+                return None
+
+    if depth != 1 or open_at < 0 or not tag.startswith("VERSION_"):
         return None
     body = src[src.find("\n", open_at) + 1:k + 1]
     return open_at, end, body, neg, tag
