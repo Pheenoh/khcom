@@ -436,6 +436,6 @@ void func_08070008(Work0806180C* p);
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 
 #endif /* GUARD_MSG_H */

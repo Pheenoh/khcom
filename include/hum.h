@@ -743,7 +743,7 @@ void TaskPoolDestroy(TaskPool* a);
 void* LoadObjTiles(void* src, s32 size);
 void* LoadObjPalette(void* src, s32 size);
 void ReleaseObjTiles(void* p);
-void ReleaseObjPalette(void* p);
+void ReleaseObjPalette(u8* p);
 void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 void func_0801C298(u8 a, u8 b);

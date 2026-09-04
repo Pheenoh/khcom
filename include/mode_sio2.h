@@ -180,7 +180,7 @@ u8 IsTaskActive(Task* t);
 u16 GetKeysRepeat(void);
 void func_08002A10(void* a, void* b);
 void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

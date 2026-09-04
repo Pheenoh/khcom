@@ -148,7 +148,7 @@ void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void UpdatePlayTime(void);

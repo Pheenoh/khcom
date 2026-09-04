@@ -277,7 +277,7 @@ typedef struct SmnKingWork {
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
 
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void TaskPoolDestroy(TaskPool* a);
 u16 GetRandom(void);
 void m4aSongNumStart(u16 n);

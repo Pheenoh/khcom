@@ -163,7 +163,7 @@ void ReleaseObjTiles(void* a);
 void* AllocObjTiles(s32 a, s32 b);
 void func_08002A10(void* a, void* b);
 void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);

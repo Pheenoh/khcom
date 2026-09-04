@@ -109,7 +109,7 @@ extern u32 gUnk_09EF69FC[];
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* a);
 void func_08012304(void* a);

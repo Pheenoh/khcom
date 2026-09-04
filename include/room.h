@@ -44,7 +44,7 @@ extern void* gUnk_09EF7048[];
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, u16 h);
 void func_08065ACC(void* a, s32 b);

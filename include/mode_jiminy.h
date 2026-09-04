@@ -146,7 +146,7 @@ void* LoadObjTiles(void* src, s32 size);
 void* LoadObjPalette(void* src, s32 size);
 void* AllocObjTiles(s32 size, void* src);
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimUpdate(AnimState* a);

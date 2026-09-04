@@ -81,7 +81,7 @@ extern BtlWork* gBtlWork;
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void LoadBgTiles(s32 bg, void* src, u16 size);

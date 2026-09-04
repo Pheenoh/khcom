@@ -15,7 +15,7 @@ extern u8 gUnk_02035618[];
 extern u8 gUnk_020356E0[];
 
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void func_08065AE0(void* a, s32 b);
 u16 func_08065B6C(void* a, void* b);
 void func_080FF8CC(void);

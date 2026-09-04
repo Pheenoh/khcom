@@ -503,7 +503,7 @@ void ModeRequestHeapReset(Mode* mode, s32 arg);
 void func_080C57A4(void);
 void func_08002A10(void* a, void* b);
 void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjPalette(void* p);
+void ReleaseObjPalette(u8* p);
 void ReleaseObjTiles(void* p);
 void SetBgMode0(void);
 void EnableBg(s32 bg);
