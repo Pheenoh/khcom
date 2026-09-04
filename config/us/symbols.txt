@@ -700,6 +700,7 @@ gUnk_09849AF8 = 0x09849AF8
 gUnk_09849B18 = 0x09849B18
 gUnk_09EDA2A0 = 0x09EDA2A0
 gTaskDescMonsgage = 0x09EDE440
+gTaskDescBtlPopCb = 0x09EDE458
 gTaskDescTutorial = 0x09EDE4B8
 gTaskDescBosTm = 0x09EF1D40
 gTaskDescBosJf = 0x09EF2744
