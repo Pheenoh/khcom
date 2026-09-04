@@ -16,7 +16,8 @@ DEFN = re.compile(r"^(" + TYPE + r")\s*([A-Za-z_]\w{2,})\s*\(([^;{)]*)\)\s*\{[ \
 
 def sources():
     return sorted(glob.glob(os.path.join(REPO, "include", "*.h"))) + \
-           sorted(glob.glob(os.path.join(REPO, "src", "*.c")))
+           [p for p in sorted(glob.glob(os.path.join(REPO, "src", "*.c")))
+            if not p.endswith("_data.c")]
 
 
 def scan():
