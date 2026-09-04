@@ -373,7 +373,7 @@ void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 size, void* src);
 void AnimInit(AnimState* a, s32 b, s32 c);
-void AnimStart(void* a, u16 animId, u16 flags);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void AnimChange(void* a, u16 animId, u16 flags);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0800592C(s32* value, s32 target, u16 steps);

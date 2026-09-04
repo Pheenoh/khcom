@@ -107,7 +107,7 @@ void m4aSongNumStart(u16 n);
 void TaskPoolDestroy(TaskPool* a);
 u8 func_08006314(void);
 void* AnimUpdate(AnimState* a);
-void AnimStart(void* a, u16 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_08000D20(void* a, void* b, void* c);
 void func_08000D28(void* a, void* b);
 void ApproachValue(s32* value, s32 target, u16 steps);

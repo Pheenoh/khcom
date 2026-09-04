@@ -562,7 +562,7 @@ extern u16 gWin0V;
 extern u16 gWinIn;
 extern u16 gWinOut;
 
-void AnimStart(void* a, s32 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void* LoadObjPalette(void* a, s32 b);
