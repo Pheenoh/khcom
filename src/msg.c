@@ -748,8 +748,244 @@ u16 func_08064D04(s32 a) {
 }
 
 INCLUDE_ASM("msg/func_08064DD4.s");
+#ifndef VERSION_EU
+u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
+    s32 cx;
+    s32 cy;
+    s32 f;
+
+    cx = 0;
+    cy = 0;
+    f = 0;
+
+    if (gUnk_02034A84 == NULL) {
+        return 0;
+    }
+
+    gUnk_02034A90 = 0;
+
+    while (*(u16*)s != 0) {
+        s32 v = 0;
+
+        gUnk_02034A84[gUnk_02034A90].unk_00 = x + cx;
+        gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
+        gUnk_02034A84[gUnk_02034A90].unk_15 = 1;
+
+        if (*(u16*)s == 0x4079) {
+            f = 1;
+            s += 2;
+        }
+
+        if (*(u16*)s == 0x4000) {
+            f = 0;
+            s += 2;
+        }
+
+        gUnk_02034A84[gUnk_02034A90].unk_14 = f;
+
+        if (*(u16*)s == 10) {
+            cx = 0;
+            cy += 0xC00;
+        } else {
+            if ((u16)(*(u16*)s - 32) <= 223) {
+                v = *(u16*)s;
+            } else {
+                switch (*(u16*)s) {
+                case 0xE000:
+                    v = 25;
+                    break;
+                case 0x2191:
+                    v = 10;
+                    break;
+                case 0x2193:
+                    v = 11;
+                    break;
+                case 0x2190:
+                    v = 12;
+                    break;
+                case 0x2192:
+                    v = 13;
+                    break;
+                case 0x300C:
+                    v = 1;
+                    break;
+                case 0x300D:
+                    v = 2;
+                    break;
+                case 0x300E:
+                    v = 3;
+                    break;
+                case 0x300F:
+                    v = 4;
+                    break;
+                case 0x203B:
+                    v = 6;
+                    break;
+                case 0x266A:
+                    v = 18;
+                    break;
+                case 0x2642:
+                    v = 8;
+                    break;
+                case 0x2640:
+                    v = 9;
+                    break;
+                case 0x2605:
+                    v = 21;
+                    break;
+                case 0x25A0:
+                    v = 17;
+                    break;
+                }
+            }
+
+            if (gUnk_02034A84[gUnk_02034A90].unk_08 != NULL) {
+                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].unk_08);
+                gUnk_02034A84[gUnk_02034A90].unk_08 = NULL;
+            }
+
+            cx += (s16)gUnk_08F7D438[v] << 8;
+
+            if (v != 32) {
+                v = ((u16*)gUnk_09EEC134[v])[3];
+                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+            }
+
+            gUnk_02034A90++;
+
+            if (cx > 0x9B00) {
+                cx = 0;
+                cy += 0xC00;
+            }
+        }
+        s += 2;
+
+        if (cy > 0x1800) {
+            *d = s;
+            return gUnk_02034A90;
+        }
+    }
+
+    *d = 0;
+    return gUnk_02034A90;
+}
+u8 func_08065170(s32 x, s32 y, u16* s) {
+    s32 cx;
+    s32 cy;
+    s32 f;
+
+    cx = 0;
+    cy = 0;
+    f = 0;
+
+    if (gUnk_02034A84 == NULL) {
+        return 0;
+    }
+
+    gUnk_02034A90 = 0;
+
+    while (*s != 0) {
+        s32 v = 0;
+
+        gUnk_02034A84[gUnk_02034A90].unk_00 = x + cx;
+        gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
+        gUnk_02034A84[gUnk_02034A90].unk_15 = 1;
+
+        if (*s == 0x4079) {
+            f = 1;
+            s++;
+        }
+
+        if (*s == 0x4000) {
+            f = 0;
+            s++;
+        }
+
+        gUnk_02034A84[gUnk_02034A90].unk_14 = f;
+
+        if (*s == 10) {
+            cx = 0;
+            cy += 0xC00;
+        } else {
+            if ((u16)(*s - 32) <= 223) {
+                v = *s;
+            } else {
+                switch (*s) {
+                case 0xE000:
+                    v = 25;
+                    break;
+                case 0x2191:
+                    v = 10;
+                    break;
+                case 0x2193:
+                    v = 11;
+                    break;
+                case 0x2190:
+                    v = 12;
+                    break;
+                case 0x2192:
+                    v = 13;
+                    break;
+                case 0x300C:
+                    v = 1;
+                    break;
+                case 0x300D:
+                    v = 2;
+                    break;
+                case 0x300E:
+                    v = 3;
+                    break;
+                case 0x300F:
+                    v = 4;
+                    break;
+                case 0x203B:
+                    v = 6;
+                    break;
+                case 0x266A:
+                    v = 18;
+                    break;
+                case 0x2642:
+                    v = 8;
+                    break;
+                case 0x2640:
+                    v = 9;
+                    break;
+                case 0x2605:
+                    v = 21;
+                    break;
+                case 0x25A0:
+                    v = 17;
+                    break;
+                }
+            }
+
+            if (gUnk_02034A84[gUnk_02034A90].unk_08 != NULL) {
+                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].unk_08);
+                gUnk_02034A84[gUnk_02034A90].unk_08 = NULL;
+            }
+
+            cx += (s16)gUnk_08F7D438[v] << 8;
+
+            if (v != 32) {
+                v = ((u16*)gUnk_09EEC134[v])[3];
+                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+            }
+
+            gUnk_02034A90++;
+
+            if (cx > 0x9B00) {
+                cx = 0;
+                cy += 0xC00;
+            }
+        }
+        s++;
+    }
+    return gUnk_02034A90;
+}
+#else
 INCLUDE_ASM("msg/func_08064EF4.s");
 INCLUDE_ASM("msg/func_08065170.s");
+#endif
 INCLUDE_ASM("msg/func_080653D4.s");
 
 void func_080658B8(u8 n) {
@@ -1458,7 +1694,133 @@ u16 func_0806BA74(s32 mode, s32 flag) {
     return gUnk_02034A88[0].unk_0C->unk_06;
 }
 
+#ifndef VERSION_EU
+u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
+    s32 cx;
+    s32 cy;
+    s32 f;
+
+    cx = 0;
+    cy = 0;
+    f = 0;
+
+    if (gUnk_02034A88 == NULL) {
+        return 0;
+    }
+
+    gUnk_02034A90 = 0;
+
+    while (*(u16*)s != 0) {
+        s32 v;
+
+        gUnk_02034A88[gUnk_02034A90].unk_00 = x + cx;
+        gUnk_02034A88[gUnk_02034A90].unk_04 = y + cy;
+        gUnk_02034A88[gUnk_02034A90].unk_15 = 1;
+
+        if (*(u16*)s == 0x4079) {
+            f = 1;
+            s += 2;
+        }
+
+        if (*(u16*)s == 0x4000) {
+            f = 0;
+            s += 2;
+        }
+
+        if (*(u16*)s == 10) {
+            cx = 0;
+            cy += 0xC00;
+        } else {
+            if ((u16)(*(u16*)s - 32) <= 223) {
+                v = *(u16*)s;
+            } else {
+                switch (*(u16*)s) {
+                case 0xE000:
+                    v = 25;
+                    break;
+                case 0x2191:
+                    v = 10;
+                    break;
+                case 0x2193:
+                    v = 11;
+                    break;
+                case 0x2190:
+                    v = 12;
+                    break;
+                case 0x2192:
+                    v = 13;
+                    break;
+                case 0x300C:
+                    v = 1;
+                    break;
+                case 0x300D:
+                    v = 2;
+                    break;
+                case 0x300E:
+                    v = 3;
+                    break;
+                case 0x300F:
+                    v = 4;
+                    break;
+                case 0x203B:
+                    v = 6;
+                    break;
+                case 0x266A:
+                    v = 18;
+                    break;
+                case 0x2642:
+                    v = 8;
+                    break;
+                case 0x2640:
+                    v = 9;
+                    break;
+                case 0x2605:
+                    v = 21;
+                    break;
+                case 0x25A0:
+                    v = 17;
+                    break;
+                default:
+                    v = 0;
+                    break;
+                }
+            }
+
+            gUnk_02034A88[gUnk_02034A90].unk_14 = f;
+
+            if (gUnk_02034A88[gUnk_02034A90].unk_08 != NULL) {
+                ReleaseObjTiles(gUnk_02034A88[gUnk_02034A90].unk_08);
+                gUnk_02034A88[gUnk_02034A90].unk_08 = NULL;
+            }
+
+            cx += (s16)gUnk_08F7D438[v] << 8;
+
+            if (v != 32) {
+                v = ((u16*)gUnk_09EEC134[v])[3];
+                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+            }
+
+            gUnk_02034A90++;
+
+            if (cx > 0x9B00) {
+                cx = 0;
+                cy += 0xC00;
+            }
+        }
+        s += 2;
+
+        if (cy > 0x1800) {
+            *d = s;
+            return gUnk_02034A90;
+        }
+    }
+
+    *d = 0;
+    return gUnk_02034A90;
+}
+#else
 INCLUDE_ASM("msg/func_0806BB44.s");
+#endif
 INCLUDE_ASM("msg/func_0806BDB8.s");
 
 void func_0806C2C0(u8 n) {
@@ -1921,7 +2283,100 @@ void event_seq_3(EventSeqWork* p) {
 INCLUDE_ASM("msg/event_seq_3.s");
 #endif
 INCLUDE_ASM("msg/event_chara_0.s");
-INCLUDE_ASM("msg/event_chara_1.s");
+u8 event_chara_1(Work0806180C* p, void* a) {
+    u8 t;
+    s32 v0;
+    s32 v1;
+
+    t = func_0806E570(p);
+
+    if (p->unk_1B4 != 0) {
+        func_0806E7A8(p);
+    }
+    func_08070AD4(p);
+
+    if (t != 0) {
+        if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
+            SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
+            ((void (*)(Work0806180C*, void*))p->unk_000[p->unk_1A0].unk_1C)(p, a);
+        }
+
+        if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
+            p->unk_000[p->unk_1A0].unk_20(p);
+            p->unk_1B2 = 1;
+        } else {
+            p->unk_1B2 = 0;
+        }
+    }
+
+    if (p->unk_000[p->unk_1A0].unk_18 & 0x100) {
+        p->unk_03C |= 4;
+    } else {
+        p->unk_03C &= ~4;
+    }
+
+    if (p->unk_000[p->unk_1A0].unk_18 & 0x200) {
+        gUnk_02039DC8->unk_64 |= 1;
+        gUnk_02039DC8->unk_64 |= 4;
+        p->unk_19C = 0;
+        SetTaskUpdate(a, (void*)func_080700D4);
+    }
+    TaskPoolUpdate(&p->unk_010);
+
+    if (p->unk_1B3 != 0) {
+        switch (p->unk_026) {
+        case 0x62:
+            gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48 = gBtlWork->unk_10;
+            gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C = gBtlWork->unk_14;
+            TaskPoolUpdate(&gBtlWork->unk_40);
+            break;
+        case 0x63:
+            gBtlWork->unk_04 = gBtlWork->unk_0C;
+            gBtlWork->unk_10 = gUnk_02039DC8->unk_48;
+            gBtlWork->unk_14 = gUnk_02039DC8->unk_4C;
+            gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48;
+            gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C;
+            TaskPoolUpdate(&gBtlWork->unk_2C);
+            TaskPoolUpdate(&gBtlWork->unk_40);
+            break;
+        case 0x65:
+            gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_00;
+            gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_04;
+            gUnk_02039DC8->unk_50 = gBtlWork->unk_08;
+            gUnk_02039DC8->unk_54 = gBtlWork->unk_0C;
+            gUnk_02039DC8->unk_58 = v0;
+            gUnk_02039DC8->unk_5C = v1;
+            break;
+        case 0x61:
+            gBtlWork->unk_10 = gUnk_02039DC8->unk_50;
+            gBtlWork->unk_14 = gUnk_02039DC8->unk_54;
+            break;
+        case 0x67:
+            break;
+        }
+    }
+
+    if (p->unk_026 == 0) {
+        if (gBtlWork != NULL) {
+            gBtlWork->unk_7C->unk_04 = p->unk_02C - 0x7800;
+            gBtlWork->unk_7C->unk_08 = p->unk_030 - 0x5000;
+            gBtlWork->unk_7C->unk_0C = 0;
+        }
+    }
+
+    if (p->unk_1B5 != 0) {
+        return 0;
+    }
+
+    if (p->unk_000[p->unk_1A0].unk_18 & 0x100000) {
+        if (gFrameCounter % 6 == 0) {
+            u16 v = GetRandom() % 7 + 4;
+
+            gBldAlpha = ((16 - v) << 8) | v;
+        }
+    }
+    return 1;
+}
 #ifdef NON_MATCHING
 void event_chara_2(Work0806180C* p) {
     Ent0806E9BC* e;
@@ -3261,7 +3716,141 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
     func_08073E0C(p, &p->unk_2C, p->unk_3C->unk_00, p->unk_3C->unk_04, p->unk_3C->unk_08);
 }
 
-INCLUDE_ASM("msg/func_08072EAC.s");
+u8 func_08072EAC(MsgWinWork* p, void* a) {
+    MsgLine0806180C* e;
+
+    if (p->unk_29 == 0) {
+        if (gUnk_02039DC8->unk_80 == 0) {
+            func_08073508(p);
+        }
+    } else {
+        func_080736F8(p);
+    }
+
+    if (p->unk_2A != 0) {
+        gUnk_02039DC8->unk_87 = p->unk_20;
+
+        if (gUnk_02039DC8->unk_7C != 0) {
+            if (gUnk_02039DC8->unk_89 != 0) {
+                gUnk_02039DC8->unk_89--;
+            } else {
+                e = &p->unk_3C[p->unk_27];
+
+                if (e->unk_00 == 62) {
+                    void* pal;
+
+                    pal = (void*)0x050001E0;
+                    LoadBgTiles(p->unk_38, gUnk_0950E2F8, 0x140);
+                    LoadBgMap(p->unk_38, gUnk_096112B8, 0x800);
+                    LoadPalette(gUnk_09611AB8, pal, 32);
+
+                    if ((e->unk_14 & 0x80) != 0) {
+                        func_080062F4(15, 1);
+                    }
+                    gUnk_02039DC8->unk_81 = 1;
+
+                    switch (e->unk_08) {
+                    case 0:
+                    case 2:
+                        SetBgScroll(p->unk_38, -0x28, 0);
+                        break;
+                    case 1:
+                    case 3:
+                        SetBgScroll(p->unk_38, -0x28, -0x60);
+                        break;
+                    }
+
+                    if (p->palette == NULL) {
+                        p->palette = LoadObjPalette(gUnk_09614718, 32);
+
+                        if ((e->unk_14 & 0x80) != 0) {
+                            func_080062F4(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
+                        }
+                    }
+                    _08073E6C(&p->unk_2C);
+                    SetTaskUpdate(a, (void*)func_08073294);
+                    gUnk_02039DC8->unk_8B = 1;
+                } else {
+                    LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
+                    LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
+                    func_0800516C(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
+                    func_080051C4(p->unk_38, p->unk_18, 0);
+                    SetTaskUpdate(a, (void*)func_08073294);
+                    _08073E6C(&p->unk_2C);
+                    gUnk_02039DC8->unk_81 = 1;
+
+                    if (p->palette != NULL) {
+                        ReleaseObjPalette(p->palette);
+                        p->palette = NULL;
+                    }
+                    gUnk_02039DC8->unk_8B = 0;
+                }
+            }
+        } else {
+        e = &p->unk_3C[p->unk_27];
+
+        if (e->unk_00 == 62) {
+            void* pal;
+
+            pal = (void*)0x050001E0;
+            LoadBgTiles(p->unk_38, gUnk_0950E2F8, 0x140);
+            LoadBgMap(p->unk_38, gUnk_096112B8, 0x800);
+            LoadPalette(gUnk_09611AB8, pal, 32);
+
+            if ((e->unk_14 & 0x80) != 0) {
+                func_080062F4(15, 1);
+            }
+            gUnk_02039DC8->unk_81 = 1;
+
+            switch (e->unk_08) {
+            case 0:
+            case 2:
+                SetBgScroll(p->unk_38, -0x18, 0);
+                break;
+            case 1:
+            case 3:
+                SetBgScroll(p->unk_38, -0x18, -0x60);
+                break;
+            }
+
+            if (p->palette == NULL) {
+                p->palette = LoadObjPalette(gUnk_09614718, 32);
+
+                if ((e->unk_14 & 0x80) != 0) {
+                func_080062F4(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
+                }
+            }
+            _08073E6C(&p->unk_2C);
+            SetTaskUpdate(a, (void*)func_08073294);
+            gUnk_02039DC8->unk_8B = 1;
+        } else {
+            LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
+            LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
+            func_0800516C(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
+            func_080051C4(p->unk_38, p->unk_18, 0);
+            SetTaskUpdate(a, (void*)func_08073294);
+            _08073E6C(&p->unk_2C);
+            gUnk_02039DC8->unk_81 = 1;
+
+            if (p->palette != NULL) {
+                ReleaseObjPalette(p->palette);
+                p->palette = NULL;
+            }
+            gUnk_02039DC8->unk_8B = 0;
+        }
+        }
+    }
+
+    if (gUnk_02039DC8->unk_82 == 1) {
+        func_080062F4(p->unk_1C + 16, 0);
+        func_080062F4(14, 0);
+    } else {
+        func_080062F4(p->unk_1C + 16, 1);
+        func_080062F4(14, 1);
+    }
+    TaskPoolUpdate(p);
+    return 1;
+}
 u8 func_08073170(MsgWinWork* p, void* a) {
     if (p->unk_29 == 0) {
         if (gUnk_02039DC8->unk_80 == 0) {
