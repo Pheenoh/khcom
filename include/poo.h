@@ -2,6 +2,7 @@
 #define GUARD_POO_H
 
 #include "types.h"
+#include "key.h"
 #include "taskpool.h"
 #include "main.h"
 #include "obj.h"
@@ -1399,7 +1400,6 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t);
 u8 func_080CB5A8(PooSoraWork* w, u8* t);
 void task_poo_trapballoon_2(PooBalloonWork* w);
 u8 func_080CA560(PooPos* p, s32 x, s32 y);
-u16 GetKeysHeld(void);
 u8 func_080CBA4C(void);
 u8 func_080CBA74(void);
 u8 task_poo_trap_1(PooTrapWork* w);

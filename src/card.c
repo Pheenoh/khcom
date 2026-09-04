@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "key.h"
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "card.h"
@@ -205,7 +206,6 @@ void* func_08066904(void);
 u8 func_0806692C(void* a, void* b);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_0809D160(u8* work);
-u16 GetKeysPressed(void);
 void func_080A25E0(void);
 void func_08006954(void);
 u8 func_0809C4B0(u8* work, void* a);

@@ -2,6 +2,7 @@
 #define GUARD_MODE_TEST_H
 
 #include "types.h"
+#include "key.h"
 #include "anim.h"
 #include "mode.h"
 #include "taskpool.h"
@@ -184,7 +185,6 @@ void func_080B0754(void);
 void func_080E052C(u8 a);
 void m4aMPlayAllStop(void);
 void m4aSongNumStart(u16 id);
-u16 GetKeysPressed(void);
 void func_0801CB0C(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);

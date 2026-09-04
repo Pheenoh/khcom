@@ -2,6 +2,7 @@
 #define GUARD_MSG_H
 
 #include "types.h"
+#include "key.h"
 #include "text_types.h"
 #include "malloc.h"
 #include "taskpool.h"
@@ -368,7 +369,6 @@ void func_08005244(s32 a, u16 b, u16 c);
 u8 func_08073318(MsgWinWork* p, void* a);
 u8 func_08073F78(MsgWaitWork* p);
 void LoadBgMap(s32 bg, void* src, u16 size);
-u16 GetKeysPressed(void);
 u8 msgface_1(MsgFaceWork* p, void* a);
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a);
 void _0806C3A0(u8 a, void* b);
