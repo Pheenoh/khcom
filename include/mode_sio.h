@@ -482,7 +482,7 @@ void* GetBgCharBase(s32 bg);
 void SetBgMode1(void);
 void TaskPoolInit(TaskPool* a, s32 count);
 void* TaskCreate(void* pool, TaskDesc* desc, void* arg);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 u8 func_080C5930(void);
 void SaveWriteFileLarge(u16 file);
 void LoadPalette(void* src, void* dst, u16 size);

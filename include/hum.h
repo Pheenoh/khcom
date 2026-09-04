@@ -737,7 +737,7 @@ void func_0800E380(HumWork* work);
 void func_0800EFE8(HumWork* work);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolDraw(TaskPool* a);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void* TaskCreate(TaskPool* pool, void* desc, void* arg);
 void TaskPoolDestroy(TaskPool* a);
 void* LoadObjTiles(void* src, s32 size);

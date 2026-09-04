@@ -83,7 +83,7 @@ void func_0807C39C(UnkStruct_02034AAC* p);
 void func_0807C33C(UnkStruct_02034AAC* p);
 UnkStruct_0808E890* ListPoolFirst(void* node);
 UnkStruct_0808E890* ListPoolNext(void* node);
-void TaskPoolUpdate(void* pool);
+void TaskPoolUpdate(TaskPool* a);
 void func_0808DE28(u8 a);
 s32 func_080609AC(u16 a);
 s32 func_0808C8D0(s32 a);

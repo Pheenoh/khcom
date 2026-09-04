@@ -281,7 +281,7 @@ void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void SetBgOverflow(s32 bg, u8 on);
 void TaskPoolInit(TaskPool* a, s32 count);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* a);
 void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);

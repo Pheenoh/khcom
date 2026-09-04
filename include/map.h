@@ -514,7 +514,7 @@ void SetBgScroll(s32 a, u16 b, u16 c);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void* TaskCreate(void* pool, void* desc, void* arg);
 void TaskPoolInit(TaskPool* a, s32 count);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 void func_08012304(void* a);

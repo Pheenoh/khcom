@@ -174,7 +174,7 @@ void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_080062F4(u16 a, s32 b);
 void TaskPoolInit(TaskPool* a, s32 count);
 void* TaskCreate(TaskPool* pool, void* desc, void* arg);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);

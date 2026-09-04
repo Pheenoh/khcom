@@ -597,7 +597,7 @@ extern u8 gTaskDescBosMdMap[];
 extern u8 gUnk_099920E8[];
 extern u8 gUnk_099D42FC[];
 extern u8 gUnk_099920D8[];
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 extern u8 gTaskDescBosMdDai[];
 void func_0801853C(s32 a, s32 b, s32 c, s32 d);
 void func_0802F1E8(void);

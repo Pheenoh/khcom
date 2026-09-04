@@ -310,7 +310,7 @@ void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_080128EC(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0802F284(s32 a, s32 b, s32 c);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void func_080147C8(s32 a, s32 b);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 struct BtlWork* ListPoolFirst(void* a);

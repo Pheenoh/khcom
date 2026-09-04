@@ -17,7 +17,7 @@ void ListPoolAddFree(ListNode* node, TaskPool* pool, void* owner);
 void ListPoolActivate(void* a, void* b);
 Task* TaskCreate(void* a, TaskDesc* desc, void* arg);
 void TaskPoolInit(TaskPool* a, s32 count);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* a);
 void func_08000F30(TaskPool* a);
