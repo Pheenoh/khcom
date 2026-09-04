@@ -28,7 +28,9 @@ typedef struct CardDef {
     u32 unk_24;
     u16 unk_28;
     u8 unk_2A;
-    u8 unk_2B[0x09];
+    u8 unk_2B;
+    u16 unk_2C;
+    u8 unk_2E[0x06];
 } CardDef;
 
 #endif
