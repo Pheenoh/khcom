@@ -7,7 +7,6 @@ u8 gUnk_02034E40[0x40];
 u8 gUnk_02034E80;
 u8 gUnk_02034E81;
 
-#ifndef VERSION_EU
 void mode_allmap_0(s32 a) {
     gUnk_02034E81 = 0;
 
@@ -19,7 +18,11 @@ void mode_allmap_0(s32 a) {
     SetBgMode0();
     SetupBg(3, 1, 28, 8);
     SetBgPriority(3, 3);
+#ifdef VERSION_EU
+    LoadBgTiles(3, gUnk_097B62B8, 0x1A40);
+#else
     LoadBgTiles(3, gUnk_097B62B8, 0xF60);
+#endif
     LoadBgPalette(3, gUnk_09849F78, 0x100);
     LoadBgMap(3, gUnk_0983AD98, 0x500);
     SetupBg(2, 1, 29, 8);
@@ -56,9 +59,6 @@ void mode_allmap_0(s32 a) {
     gUnk_02034E38 = 0;
     gUnk_02034E3A = 0;
 }
-#else
-INCLUDE_ASM("mode_allmap/mode_allmap_0.s");
-#endif
 
 void func_080D3370(void) {
     func_080062F4(10, 1);

@@ -100,7 +100,6 @@ void mode_worldinspect_1(void) {
 INCLUDE_ASM("mode_worldinspect/mode_worldinspect_1.s");
 #endif
 
-#ifndef VERSION_EU
 void mode_worldinspect_2(void) {
     s32 i;
 
@@ -121,13 +120,18 @@ void mode_worldinspect_2(void) {
         }
     }
 
+#ifdef VERSION_EU
+    func_08065AE0(gUnk_020351F8, 0x30);
+#else
     func_08065AE0(gUnk_020351F8, 0x18);
+#endif
+#ifdef VERSION_EU
+    func_08065AE0(gUnk_020352C0, 0x78);
+#else
     func_08065AE0(gUnk_020352C0, 0x3C);
+#endif
     EwramFree(gUnk_020354D4);
 }
-#else
-INCLUDE_ASM("mode_worldinspect/mode_worldinspect_2.s");
-#endif
 
 void func_081004EC(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y) {
     s16 i;
