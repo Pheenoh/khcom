@@ -2,6 +2,7 @@
 #define GUARD_MODE_JIMINY_H
 
 #include "types.h"
+#include "text_types.h"
 #include "jiminy_types.h"
 #include "main.h"
 #include "anim.h"
@@ -177,7 +178,7 @@ void func_0805A8D0(void);
 void func_08064B80(s32 a);
 s32 func_08065170(s32 a, s32 b, void* c);
 void func_08065940(void);
-void func_08065ACC(void* a, s32 b);
+void func_08065ACC(TextSlot* p, s32 n);
 void func_0805A95C(s32 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, s32 h);
 
 void func_0805BAE4(void);

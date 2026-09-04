@@ -178,7 +178,7 @@ void SetBgMode0(void);
 void EnableBg(s32 a);
 void DisableBg(s32 bg);
 void func_08006120(s32 a, s32 b);
-void func_08065ACC(void* a, s32 b);
+void func_08065ACC(TextSlot* p, s32 n);
 u8 func_080DF750(void);
 void func_0810057C(s32 a, s32 b, void* c, s32 d, s32 e, void* f, s32 g, s32 h);
 void func_081004EC(s32 a, s32 b, s32 c, void* d, s32 e, s32 f);

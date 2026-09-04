@@ -348,7 +348,7 @@ extern TaskDesc gTaskDescBosBoogieKaihuku;
 void* LoadObjTiles(void* src, s32 size);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
-void func_08065ACC(void* a, s32 b);
+void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
 u8 func_08065B6C(void* a, void* b);
 u8* func_080857BC(u8 index);

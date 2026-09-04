@@ -177,7 +177,7 @@ void EwramFree(void* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void TaskPoolDraw(TaskPool* a);
-void func_08065ACC(void* a, s32 b);
+void func_08065ACC(TextSlot* p, s32 n);
 void UpdatePlayTime(void);
 u8 func_08006314(void);
 void func_080061E8(s32 a, u16 b);
