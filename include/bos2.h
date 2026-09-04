@@ -840,7 +840,7 @@ u8 task_bos_dsd_main_1(DsdMainWork* work);
 void task_bos_dsd_main_2(DsdMainWork* work);
 u8 task_bos_dsd_ita_1(DsdItaWork* work);
 void task_bos_dsd_rock_0(DsdRockWork* work, DsdWork* arg);
-void TaskPoolInit(void* pool, s32 n);
+void TaskPoolInit(TaskPool* a, s32 count);
 void task_bos_jf_lamp_0(JfLampWork* work, JfWork* jf);
 void func_0801BDDC(s32 a, s32 b, s32 c, s32 d);
 void func_08006B4C(void);

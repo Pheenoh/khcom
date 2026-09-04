@@ -2,6 +2,7 @@
 #define GUARD_CHARA_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "gba/syscall.h"
 #include "key.h"
 #include "malloc.h"
@@ -230,7 +231,7 @@ void func_0800895C(u16 a);
 u16* func_08083C94(void);
 u16* func_08083D7C(void);
 void ModeRequest(Mode* mode, s32 arg);
-void TaskPoolInit(void* a, s32 count);
+void TaskPoolInit(TaskPool* a, s32 count);
 u16 GetRandom(void);
 void SeedRandom(u32 seed);
 void func_080078A4(void);

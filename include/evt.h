@@ -55,7 +55,7 @@ void AnimInit(void* a, s32 b, s32 c);
 void* AnimUpdate(void* a);
 void* AnimGetGfx(void* a);
 void TaskCreate(void* a, void* b, void* c);
-void TaskPoolInit(void* a, s32 b);
+void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void func_0801CE70(EvtObjWork* work);
 

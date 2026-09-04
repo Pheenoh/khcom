@@ -592,7 +592,7 @@ void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 extern void* gUnk_09EF8F24[];
 void* func_080038C8(u16 a);
-void TaskPoolInit(void* pool, s32 count);
+void TaskPoolInit(TaskPool* a, s32 count);
 extern u8 gTaskDescBosMdMap[];
 extern u8 gUnk_099920E8[];
 extern u8 gUnk_099D42FC[];
