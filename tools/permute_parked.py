@@ -99,6 +99,21 @@ def preamble(lines):
 
     while out and out[-1].strip() == "":
         out.pop()
+    open_at = []
+
+    for i, line in enumerate(out):
+        t = line.strip()
+
+        if re.match(r"#\s*if", t):
+            open_at.append(i)
+        elif re.match(r"#\s*endif", t) and open_at:
+            open_at.pop()
+
+    for i in reversed(open_at):
+        del out[i]
+
+    while out and out[-1].strip() == "":
+        out.pop()
     return "\n".join(out)
 
 
@@ -168,7 +183,9 @@ def match_size(cand, sym, start, end, tmp, uenv=None, extra=None):
         return (int(m.group(1)), int(m.group(2))), out.split("\n")[0]
 
     if r.returncode != 0:
-        return None, out.strip().split("\n")[-1][:200]
+        errs = [l for l in out.split("\n")
+                if re.search(r"error|undeclared|parse error|no member|conflicting", l, re.I)]
+        return None, (errs[0] if errs else out.strip().split("\n")[-1])[:200]
     return (None, "unparsed"), out.split("\n")[0]
 
 
