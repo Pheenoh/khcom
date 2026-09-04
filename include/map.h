@@ -607,7 +607,7 @@ void func_080E0820(void);
 u8 func_08006314(void);
 void func_0801CB0C(void);
 void UpdatePlayTime(void);
-u8 IsTaskActive(void* t);
+u8 IsTaskActive(Task* t);
 void* func_080D3A20(void* pool);
 void func_08006184(s32 a, u16 b);
 void func_080063A8(void);

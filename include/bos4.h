@@ -277,7 +277,7 @@ typedef struct UrsulaThunderWork {
 extern u16 gDispCnt;
 
 void TaskPoolInit(TaskPool* a, s32 count);
-u8 IsTaskActive(void* t);
+u8 IsTaskActive(Task* t);
 void func_08017390(s32 x, s32 y, s32 z);
 u8 func_080128EC(void);
 void func_080155BC(s32 a, s32 b, s32 c, s32 d);

@@ -801,7 +801,7 @@ void func_080BFFF8(JfMajinWork* work);
 void func_080C02AC(JfMajinWork* work);
 u8 task_bos_jf_majin_1(JfMajinWork* work);
 u8 func_080128EC(void);
-u8 IsTaskActive(void* t);
+u8 IsTaskActive(Task* t);
 void func_080C3754(DsdMainWork* work);
 void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src);
 void func_080C2BB0(DsdMainWork* work);
