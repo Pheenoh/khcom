@@ -239,6 +239,6 @@ void EnableBg(s32 a);
 void func_08065AE0(TextSlot* p, s32 n);
 void LoadPalette(void* src, void* dst, s32 size);
 void* func_08093C18(s32 a);
-u8 func_08065B6C(void* a, void* b);
+u16 func_08065B6C(u16* a, TextSlot* b);
 
 #endif /* GUARD_MODE_MS2_H */

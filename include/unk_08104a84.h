@@ -2,6 +2,7 @@
 #define GUARD_UNK_08104A84_H
 
 #include "types.h"
+#include "text_types.h"
 #include "key.h"
 #include "engine.h"
 
@@ -72,7 +73,7 @@ u16 GetKeysRepeat(void);
 void func_0805F1C0(s32* p, s32 v);
 u16 func_08060A2C(u16 a);
 s16 func_08065B08(void* a, u8 b);
-u8 func_08065B6C(void* a, void* b);
+u16 func_08065B6C(u16* a, TextSlot* b);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s16 func_08084BAC(void);
 s16 func_08084BF0(void);
