@@ -347,7 +347,7 @@ u16 func_0806692C(u8* s, u16* out);
 u16 func_08066AF8(s32 v, u16* out);
 void func_0801CD74(void* a, u16 b);
 void TaskPoolUpdate(TaskPool* a);
-void SetTaskUpdate(void* a, void* b);
+void SetTaskUpdate(u8* p, u32 v);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
 void* memcpy(void* dst, const void* src, unsigned long n);

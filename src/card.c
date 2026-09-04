@@ -112,7 +112,7 @@ void func_08000D20(void* a, void* b, void* c);
 void func_08000D28(void* a, void* b);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08006184(s32 a, s32 b);
-void SetTaskUpdate(void* a, void* b);
+void SetTaskUpdate(u8* p, u32 v);
 u8 func_080A8C20(u8* work);
 void AnimInit(AnimState* a, s32 b, s32 c);
 s32 func_0805F5A4(s32* a, s32* b);
