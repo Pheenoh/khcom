@@ -513,7 +513,7 @@ void* GetBgScreenBase(s32 bg);
 void SetBgScroll(s32 a, u16 b, u16 c);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void* TaskCreate(void* pool, void* desc, void* arg);
-void TaskPoolInit(void* pool, s32 count);
+void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);

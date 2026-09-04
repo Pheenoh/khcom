@@ -174,7 +174,7 @@ void* GetBgCharBase(s32 bg);
 void* GetBgScreenBase(s32 bg);
 void EnableBg(s32 bg);
 void LoadPalette(void* src, void* dst, s32 size);
-void TaskPoolInit(TaskPool* pool, s32 count);
+void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* pool);

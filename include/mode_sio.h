@@ -480,7 +480,7 @@ u8 IsTaskActive(void* t);
 void SetBgOverflow(s32 bg, u8 on);
 void* GetBgCharBase(s32 bg);
 void SetBgMode1(void);
-void TaskPoolInit(void* pool, s32 count);
+void TaskPoolInit(TaskPool* a, s32 count);
 void* TaskCreate(void* pool, TaskDesc* desc, void* arg);
 void TaskPoolUpdate(TaskPool* pool);
 u8 func_080C5930(void);

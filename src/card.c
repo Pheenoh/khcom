@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "taskpool.h"
 #include "key.h"
 #include "gba/syscall.h"
 #include "malloc.h"
@@ -128,7 +129,7 @@ void LoadPalette(void* src, void* dst, s32 size);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgSize(s32 a, s32 b);
 void LoadBgMap(s32 bg, void* src, u16 size);
-void TaskPoolInit(void* pool, s32 n);
+void TaskPoolInit(TaskPool* a, s32 count);
 void SetBgMode2(void);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_0809217C(u8* work, void* a);

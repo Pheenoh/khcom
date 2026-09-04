@@ -172,7 +172,7 @@ void func_08066918(void* a, void* b);
 u8 _080669DC(s32 a, void* b);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_080062F4(u16 a, s32 b);
-void TaskPoolInit(TaskPool* pool, s32 count);
+void TaskPoolInit(TaskPool* a, s32 count);
 void* TaskCreate(TaskPool* pool, void* desc, void* arg);
 void TaskPoolUpdate(TaskPool* pool);
 void AnimInit(AnimState* a, void* b, void* c);

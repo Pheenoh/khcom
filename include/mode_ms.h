@@ -200,7 +200,7 @@ void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* EwramAlloc(u32 size);
 void SpriteReset(void);
-void TaskPoolInit(TaskPool* pool, s32 a);
+void TaskPoolInit(TaskPool* a, s32 count);
 void func_081015E8(void);
 void func_08101654(void);
 void func_08101740(s16 a);

@@ -575,7 +575,7 @@ void TaskPoolDestroy(void* a);
 void func_0801B7D8(void* a);
 void func_0801C2DC(void* a, s32 b);
 void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-void TaskPoolInit(void* pool, s32 count);
+void TaskPoolInit(TaskPool* a, s32 count);
 void* EwramAlloc(s32 size);
 void EwramFree(void* p);
 void SetBackdropColor(s32 a, s32 b, s32 c);

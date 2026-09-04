@@ -53,7 +53,7 @@ extern TaskDesc gTaskDescSpotLight;
 struct Task;
 
 struct Task* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
-void TaskPoolInit(TaskPool* pool, s32 count);
+void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* pool);
