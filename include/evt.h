@@ -54,7 +54,7 @@ typedef struct EvtShadowWork {
 void* AllocObjTiles(u16 a, s32 b);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
-void* AnimGetGfx(void* a);
+void* AnimGetGfx(AnimState* a);
 void TaskCreate(void* a, void* b, void* c);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* a);

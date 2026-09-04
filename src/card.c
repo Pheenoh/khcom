@@ -168,7 +168,7 @@ void func_080A8430(void);
 void SetBgScroll(s32 a, u16 b, u16 c);
 void func_08090170(UnkStruct_0808E890* node);
 u8 func_08096390(PrizeCardWork* w);
-void* AnimGetGfx(void* a);
+void* AnimGetGfx(AnimState* a);
 void func_080A9968(u8* work);
 void ModeRequest(Mode* mode, s32 arg);
 void UpdatePlayTime(void);

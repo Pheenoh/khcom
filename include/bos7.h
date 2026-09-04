@@ -629,7 +629,7 @@ s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 a, void* b);
 void func_0800592C(s32* value, s32 target, u16 steps);
 void AnimReset(void* a);
-void* AnimGetGfx(void* a);
+void* AnimGetGfx(AnimState* a);
 u16 AnimGetId(void* a);
 u8 AnimIsFinished(void* a);
 void AnimInit(AnimState* a, s32 b, s32 c);

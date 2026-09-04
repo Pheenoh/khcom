@@ -1328,7 +1328,7 @@ u8 func_080CF114(void);
 u8 func_080CF12C(void);
 void* AllocObjTiles(s32 size, void* src);
 void AnimInit(AnimState* a, s32 b, s32 c);
-void* AnimGetGfx(void* a);
+void* AnimGetGfx(AnimState* a);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* LoadObjPalette(void* src, s32 size);
 void func_080C84E0(PooWork* w, u32 b);
