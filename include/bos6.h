@@ -653,7 +653,7 @@ void DisableBg(s32 bg);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void CpuFastSet(void* src, void* dst, s32 ctrl);
 u8 func_0810EBA0(BosLstWork* work);
-void func_0810FF64(void* p, s32 a);
+void func_0810FF64(Task* t, s32 a);
 void func_08014A34(s32 a, s32 b);
 void func_08006238(s32 a, s32 b, s32 c);
 void func_08006184(s32 a, u16 b);
