@@ -681,7 +681,7 @@ void func_08006238(s32 a, s32 b, s32 c);
 void func_08018B04(s32 x, s32 y, s32 z, s32 s);
 void m4aSongNumStart(u16 a);
 void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 a, s32 b);
-void func_080C6EB0(void* a, void* b, s32 c, s32 d);
+void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 void LoadObjPaletteBank(u16 bank, void* src);
 u8* AllocObjAffineAngle(u8 a, s32 b);
 u16 GetRandom(void);
