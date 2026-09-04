@@ -118,15 +118,11 @@ void mode_sio_btl_connect_1(void) {
 INCLUDE_ASM("mode_sio/mode_sio_btl_connect_1.s");
 #endif
 
-#ifndef VERSION_EU
 void mode_sio_btl_connect_2(void) {
     ReleaseObjPalette(gSioBtlConnectWork->unk_2D8);
-    func_08065AE0(gSioBtlConnectWork->unk_08, 0x5A);
+    func_08065AE0(gSioBtlConnectWork->unk_08, SIO_CONNECT_TEXT_SLOTS);
     EwramFree(gSioBtlConnectWork);
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sio_btl_connect_2.s");
-#endif
 
 void func_080AEE50(void) {
     m4aSongNumStart(0x6A);
@@ -2443,18 +2439,22 @@ void mode_sioError_1(void) {
     func_080B3F24();
 }
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080B3F24(void) {
+#ifdef VERSION_JP
+    func_080664D8(58, 62, gSioErrorWork->unk_08, gSioErrorWork->unk_368, 20, gSioErrorWork->unk_06);
+#else
     func_080664D8(36, 57, gSioErrorWork->unk_08, gSioErrorWork->unk_368, 20, gSioErrorWork->unk_06);
+#endif
 }
 #else
 INCLUDE_ASM("mode_sio/func_080B3F24.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void mode_sioError_2(void) {
     ReleaseObjPalette(gSioErrorWork->unk_368);
-    func_08065AE0(gSioErrorWork->unk_08, 0x6C);
+    func_08065AE0(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
     EwramFree(gSioErrorWork);
 }
 #else
