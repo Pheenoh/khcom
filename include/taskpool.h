@@ -24,5 +24,13 @@ typedef struct TaskDesc {
     s32 workSize;
 } TaskDesc;
 
+typedef struct Task {
+    TaskDesc* desc;
+    void* work;
+    u8 unk_08[0x04];
+    ListNode node;
+    u8 unk_1C[0x04];
+    u8 (*update)(void* work, struct Task* task);
+} Task;
 
 #endif

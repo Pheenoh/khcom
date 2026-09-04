@@ -2,6 +2,7 @@
 #define GUARD_MODE_SIO2_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "main.h"
 #include "mode.h"
 #include "obj.h"

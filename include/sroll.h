@@ -5,6 +5,7 @@
 #include "gba/syscall.h"
 #include "main.h"
 #include "types.h"
+#include "taskpool.h"
 
 typedef struct DmaStream {
     u8 unk_00;

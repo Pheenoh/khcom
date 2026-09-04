@@ -2,6 +2,7 @@
 #define GUARD_MODE_CHKBTL_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "main.h"
 #include "mode.h"
 

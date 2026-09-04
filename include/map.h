@@ -2,6 +2,7 @@
 #define GUARD_MAP_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "malloc.h"
 #include "fld_types.h"
 
@@ -512,7 +513,7 @@ void SetBgScroll(s32 a, u16 b, u16 c);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void* TaskCreate(void* pool, void* desc, void* arg);
 void TaskPoolInit(void* pool, s32 count);
-void TaskPoolUpdate(void* pool);
+void TaskPoolUpdate(TaskPool* pool);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void func_08012304(void* a);

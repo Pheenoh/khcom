@@ -2,6 +2,7 @@
 #define GUARD_UNK_080FB000_H
 
 #include "types.h"
+#include "taskpool.h"
 
 typedef struct AnimState {
     void** unk_00;
@@ -14,19 +15,6 @@ typedef struct AnimState {
     u16 unk_12;
     void* unk_14;
 } AnimState;
-
-typedef struct ListNode {
-    void* unk_00;
-    u8 unk_04[0x4];
-    struct ListNode* unk_08;
-    u16 unk_0C;
-    u8 unk_0E[0x2];
-} ListNode;
-
-typedef struct TaskPool {
-    ListNode head;
-    void* unk_10;
-} TaskPool;
 
 typedef struct GaEntryWork {
     s32 unk_000;
@@ -94,7 +82,7 @@ extern s16 gSineTable[];
 
 u16 GetRandom(void);
 void* AnimUpdate(AnimState* a);
-void TaskPoolUpdate(TaskPool* a);
+void TaskPoolUpdate(TaskPool* pool);
 void ApproachAngle(u16* a, s32 b, s32 c);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 u8 func_080128EC(void);

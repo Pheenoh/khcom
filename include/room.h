@@ -2,6 +2,7 @@
 #define GUARD_ROOM_H
 
 #include "types.h"
+#include "taskpool.h"
 
 typedef struct RoomNameWork {
     void* tiles;
@@ -74,19 +75,6 @@ typedef struct AnimState {
     u16 unk_12;
     AnimFrame* unk_14;
 } AnimState;
-
-typedef struct ListNode {
-    void* unk_00;
-    u8 unk_04[0x04];
-    struct ListNode* unk_08;
-    u16 unk_0C;
-    u8 unk_0E[0x02];
-} ListNode;
-
-typedef struct TaskPool {
-    ListNode head;
-    void* unk_10;
-} TaskPool;
 
 typedef struct GaEntryWork {
     s32 unk_000;

@@ -2,6 +2,7 @@
 #define GUARD_ACGTRANS_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "game.h"
 
 typedef struct AcgTransWork {
@@ -22,7 +23,6 @@ typedef struct AcgTransConfig {
 } AcgTransConfig;
 
 extern u8 gTaskDescAcgtrans[];
-
 void* TaskCreate(void* a, void* desc, void* args);
 s32 RequestDma3Copy(u32 src, u32 dst, u32 size);
 u32 GetBgCharBase(s32 bg);

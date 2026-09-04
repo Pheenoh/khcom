@@ -2,6 +2,7 @@
 #define GUARD_MODE_CHKSND_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "main.h"
 #include "mode.h"
 typedef struct ChkSndEntry {

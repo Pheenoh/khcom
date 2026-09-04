@@ -2,6 +2,7 @@
 #define GUARD_MODE_CHKOBJ_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "chkobj.h"
 #include "main.h"
 #include "engine.h"

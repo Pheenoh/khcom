@@ -2,6 +2,7 @@
 #define GUARD_BTL3_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "anim.h"
 typedef struct BtlWork {
     s32 unk_000;

@@ -2,6 +2,7 @@
 #define GUARD_BOS2_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "game.h"
 
 typedef struct CharaObjParam {
@@ -685,7 +686,7 @@ u8* AllocObjAffineAngle(u8 a, s32 b);
 u16 GetRandom(void);
 s32 __divsi3(s32 a, s32 b);
 void LoadPalette(void* src, void* dst, s32 size);
-void TaskPoolUpdate(void* pool);
+void TaskPoolUpdate(TaskPool* pool);
 void func_080BB924(TmArmWork* work);
 void func_080BC304(TmArmWork* work);
 s32 func_0802F268(void);
