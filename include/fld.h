@@ -104,7 +104,7 @@ void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_0803473C(FldWork* work, s32 index, u16 flags);
 u8 GetKeyReleaseTime(s32 a);
 void TaskPoolUpdate(TaskPool* a);
-void SetTaskUpdate(void* task, void* fn);
+void SetTaskUpdate(u8* p, u32 v);
 u8 AnimIsFinished(AnimState* a);
 void func_080062F4(u16 a, s32 b);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
