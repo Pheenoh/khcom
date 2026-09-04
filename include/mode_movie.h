@@ -2,6 +2,7 @@
 #define GUARD_MODE_MOVIE_H
 
 #include "types.h"
+#include "mode.h"
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "sprite.h"
@@ -62,7 +63,7 @@ void MosaicReset(void);
 void m4aSoundInit(void);
 void m4aSoundVSyncOn(void);
 void func_0806180C(s32 a);
-void ModeRequest(void* a, s32 b);
+void ModeRequest(Mode* mode, s32 arg);
 void func_0805EA90(void);
 void func_0805E93C(void);
 

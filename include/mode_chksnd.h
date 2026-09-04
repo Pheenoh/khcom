@@ -13,7 +13,7 @@ extern ChkSndEntry gChkSndEntries[];
 extern Mode gModeDebug;
 extern TaskDesc gTaskDescPrint;
 
-void ModeRequest(Mode* mode, s32 b);
+void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
 void SetBgMode0(void);
 void func_0809D2B0(u8 x, u8 y, u8 c, const char* s);

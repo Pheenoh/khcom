@@ -2,6 +2,7 @@
 #define GUARD_MSG_H
 
 #include "types.h"
+#include "mode.h"
 #include "key.h"
 #include "text_types.h"
 #include "malloc.h"
@@ -349,7 +350,7 @@ void SetTaskUpdate(void* a, void* b);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
 void* memcpy(void* dst, const void* src, unsigned long n);
-void ModeRequest(void* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void* TaskCreate(void* a, TaskDesc* desc, void* arg);
 void TaskPoolDestroy(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);

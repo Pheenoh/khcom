@@ -2,6 +2,7 @@
 #define GUARD_MAP_H
 
 #include "types.h"
+#include "mode.h"
 #include "key.h"
 #include "taskpool.h"
 #include "malloc.h"
@@ -524,7 +525,7 @@ void* AnimUpdate(void* a);
 void m4aMPlayVolumeControl(void* a, u16 b, u16 c);
 void m4aSongNumStart(u16 id);
 u16 CountCardsById(u16 cardId);
-void ModeRequest(void* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 s32 func_08003C9C(s32 a);
 void func_080038E4(void* a, void* b, void* c);
 void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);

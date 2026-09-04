@@ -2,6 +2,7 @@
 #define GUARD_BOS4_H
 
 #include "types.h"
+#include "mode.h"
 #include "key.h"
 #include "taskpool.h"
 
@@ -829,7 +830,7 @@ void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work);
 void func_080DB04C(BoogieKnifeWork* work);
 void Mode_MapChk_1(void);
 u16 GetKeysRepeat(void);
-void ModeRequest(void* mode, s32 arg);
+void ModeRequest(Mode* mode, s32 arg);
 void func_08085FB0(void);
 void func_08093BB4(void);
 void func_08060598(void);
