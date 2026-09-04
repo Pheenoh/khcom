@@ -206,7 +206,7 @@ u8 func_0800FCD8(s32 a, s32 b);
 u8 func_0800FC90(s32 a);
 void* func_080668F0(void);
 void* func_08066904(void);
-u8 func_0806692C(void* a, void* b);
+u16 func_0806692C(u8* s, u16* out);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_0809D160(u8* work);
 void func_080A25E0(void);
