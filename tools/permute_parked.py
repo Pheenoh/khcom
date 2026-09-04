@@ -148,17 +148,28 @@ def run(cmd, **kw):
     return subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, **kw)
 
 
-def match_size(cand, sym, start, end, tmp, uenv=None):
-    r = run(["tools/match.sh", cand, sym, "0x%08X" % start, "0x%08X" % end],
-            env={**os.environ, "MATCH_TMP": tmp, **(uenv or {})})
+def match_size(cand, sym, start, end, tmp, uenv=None, extra=None):
+    env = {**os.environ, "MATCH_TMP": tmp, **(uenv or {})}
+
+    if extra:
+        env["EXTRA_INC"] = extra
+    r = run(["tools/match.sh", cand, sym, "0x%08X" % start, "0x%08X" % end], env=env)
     out = r.stdout + r.stderr
 
-    if r.returncode != 0 and "EXACT MATCH" not in out:
-        return None, out.strip().split("\n")[-1][:200]
     if "EXACT MATCH" in out:
         return 0, "EXACT MATCH"
+    m = re.search(r"SIZE MISMATCH: candidate (\d+) bytes, rom (\d+)", out)
+
+    if m:
+        return (int(m.group(2)), int(m.group(1))), "size %s vs %s" % (m.group(1), m.group(2))
     m = re.search(r"diff \(rom (\d+)B, new (\d+)B\)", out)
-    return (int(m.group(1)), int(m.group(2))) if m else (None, "unparsed"), out.split("\n")[0]
+
+    if m:
+        return (int(m.group(1)), int(m.group(2))), out.split("\n")[0]
+
+    if r.returncode != 0:
+        return None, out.strip().split("\n")[-1][:200]
+    return (None, "unparsed"), out.split("\n")[0]
 
 
 def best_output(d):
@@ -241,11 +252,16 @@ def main():
             ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start, 0, 0, 0, "matches", cand])
             continue
 
-        if isinstance(size, tuple) and None not in size and abs(size[1] - size[0]) > 3:
-            print("%-28s STANDALONE SIZE %dB vs rom %dB; not equivalent, skipping"
-                  % (sym, size[1], size[0]))
+        inunit, _note2 = match_size(os.path.join("src", unit + ".c"), sym, start, end,
+                                    os.path.join(d, "mtu"), uenv,
+                                    "-DVERSION_US -DNON_MATCHING")
+
+        if isinstance(size, tuple) and isinstance(inunit, tuple) \
+                and None not in size and None not in inunit and size[1] != inunit[1]:
+            print("%-28s STANDALONE %dB vs in-unit %dB; not equivalent, skipping"
+                  % (sym, size[1], inunit[1]))
             ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start,
-                    "?", "?", 0, "standalone-size", "%d vs %d" % (size[1], size[0])])
+                    "?", "?", 0, "standalone-differs", "%d vs %d" % (size[1], inunit[1])])
             continue
         r = run(["tools/permuter_setup.sh", cand, sym, "0x%08X" % start, "0x%08X" % end],
                 env={**os.environ, **uenv})

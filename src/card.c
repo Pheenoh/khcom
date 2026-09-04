@@ -7051,7 +7051,6 @@ INCLUDE_ASM("card/func_0808E934.s");
 
 INCLUDE_ASM("card/func_0808EA0C.s");
 INCLUDE_ASM("card/func_0808EC24.s");
-#ifdef NON_MATCHING
 u8 func_0808EDA4(UnkStruct_0808DB04* w) {
     UnkStruct_0808E890* p;
     UnkStruct_0808E890* q;
@@ -7063,11 +7062,13 @@ u8 func_0808EDA4(UnkStruct_0808DB04* w) {
     s16 y;
     u16 u;
     u16 v;
+    s32 pos;
 
     p = ListPoolFirst(w->unk_7F0);
     q = ListPoolFirst(w->unk_7F0);
+    pos = *(s32*)&w->unk_884;
 
-    if (*(s32*)&w->unk_884 == *(s32*)&w->unk_874) {
+    if (pos == *(s32*)&w->unk_874) {
         return func_0808EC24((u8*)w);
     }
 
@@ -7138,9 +7139,6 @@ u8 func_0808EDA4(UnkStruct_0808DB04* w) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808EDA4.s");
-#endif
 
 u8 func_0808EF80(u8* work, u16 dir) {
     u16 row;
