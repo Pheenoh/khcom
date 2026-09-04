@@ -281,6 +281,23 @@ typedef struct UnkStruct_080E8374 {
     s16 unk_1A;
 } UnkStruct_080E8374;
 
+typedef struct UnkStruct_080E87EC {
+    s16 unk_00;
+    s16 unk_02;
+    u8 unk_04;
+    u8 unk_05;
+    u16 unk_06;
+    u16 unk_08;
+    u8 unk_0A[0x02];
+} UnkStruct_080E87EC;
+
+typedef struct UnkStruct_080E64D4 {
+    UnkStruct_080DFF1C unk_00;
+    u8 unk_10[0x2A];
+    u16 unk_3A;
+    s32 unk_3C;
+} UnkStruct_080E64D4;
+
 typedef struct UnkStruct_080E8864 {
     const u8* unk_00;
     u8 unk_04;
@@ -305,6 +322,14 @@ typedef struct UnkStruct_080E8E24 {
     u8 unk_00[0x02];
     u16 unk_02;
 } UnkStruct_080E8E24;
+
+typedef struct UnkStruct_080E8E74 {
+    u8 unk_00;
+    u8 unk_01;
+    u16 unk_02;
+    u16 unk_04;
+    u8 unk_06[0x02];
+} UnkStruct_080E8E74;
 
 typedef struct UnkStruct_080E8F50 {
     u8 unk_00;
@@ -344,7 +369,9 @@ typedef struct UnkStruct_080E590C {
     s32 unk_18;
     u8 unk_1C;
     u8 unk_1D[0x03];
-    u8 unk_20[0x28];
+    u8 unk_20[0x22];
+    u16 unk_42;
+    s32 unk_44;
     u8 unk_48[0x2C];
     u8 unk_74;
     u8 unk_75[0x0B];
@@ -362,8 +389,25 @@ typedef struct UnkStruct_080E590C {
     u8 unk_E4[0x14];
 } UnkStruct_080E590C;
 
+typedef struct UnkStruct_02034FE0 {
+    u8 unk_000[0x38];
+    UnkStruct_080E590C* unk_038;
+    u8 unk_03C[0x120];
+    u8 unk_15C;
+} UnkStruct_02034FE0;
+
 typedef struct UnkStruct_080F023C {
-    u8 unk_000[0xD4];
+    u8 unk_00[0x04];
+    u16 unk_04;
+    u16 unk_06;
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    s32 unk_14;
+    s32 unk_18;
+    u8 unk_1C[0xB4];
+    u16 unk_D0;
+    u8 unk_D2[0x02];
     s32 unk_D4;
     s32 unk_D8;
     s32 unk_DC;
@@ -371,6 +415,17 @@ typedef struct UnkStruct_080F023C {
     s32 unk_F8;
     s32 unk_FC;
 } UnkStruct_080F023C;
+typedef struct UnkStruct_080F4EE4 {
+    u8 unk_000[0xB4];
+    s16 unk_0B4;
+    s16 unk_0B6;
+    u8 unk_0B8[0x14];
+    s16 unk_0CC;
+    u8 unk_0CE;
+    u8 unk_0CF;
+    u8 unk_0D0;
+} UnkStruct_080F4EE4;
+
 typedef struct UnkStruct_080ECFE8 {
     u8 unk_000[0x20];
     FldRes* unk_020;
@@ -435,7 +490,7 @@ extern UnkStruct_0203C7B0 gUnk_0203C7B0;
 extern UnkStruct_0203C7B8* gUnk_0203C7B8;
 extern u16 gBldCnt;
 extern vu16 gDispCnt;
-extern u32 gFrameCounter;
+extern vu32 gFrameCounter;
 extern UnkStruct_0203C590 gUnk_0203C590;
 extern UnkStruct_02034F84 gUnk_0203C598[];
 extern void* gMPlayInfo_BGM;
@@ -456,6 +511,7 @@ extern const u8 gUnk_0984D314[][4];
 extern const u8 gUnk_0984D32C[][4];
 extern const u8 gUnk_0984D3F8[][4];
 extern const u16 gUnk_09858238[];
+extern UnkStruct_080E8E24 gUnk_0985814C[];
 extern const u8 gUnk_09961A64[][320];
 extern const u8 gUnk_09962BE4[][320];
 extern const u8 gUnk_09963D64[][320];
@@ -463,6 +519,7 @@ extern const u8 gUnk_09964EE4[][320];
 extern const u8 gUnk_099581A4[];
 extern const u8 gUnk_09966064[];
 extern s16 gSineTable[];
+extern u8 gUnk_099910C4[];
 extern void* gModeBattle;
 extern void* gModeRikuBtlTutorial;
 extern void* gModeRikuBtlTutorial;
@@ -551,7 +608,7 @@ UnkStruct_080DFB8C* func_080DFB8C(s32 x, s32 y);
 UnkStruct_080DFB8C* func_080E08BC(s16 x, s16 y);
 void func_080E0960(UnkStruct_080DFB8C* p, s32 n);
 void sub_080E0B00(UnkStruct_080DFB8C* p, s32 n);
-void func_080E2668(UnkStruct_02034F20* p, u8 a);
+void func_080E2668(UnkStruct_02034F20* p, s32 a);
 void func_080E4EB0(void* a, void* b, void* c, s16 d, s16 e);
 void func_080E507C(void* a, void* b, void* c, s16 d, s16 e);
 u8 func_080E524C(UnkStruct_080DFF1C* a, s32* b);
@@ -571,7 +628,7 @@ void func_080E83DC(s32 a, s32 b, s32 c);
 void func_080E55E4(const u8* src);
 void func_080E5800(void);
 void func_080E8864(UnkStruct_080E8864* p);
-u8 func_080E87EC(s16 x, s16 y, const u8* p);
+u8 func_080E87EC(s16 x, s16 y, const UnkStruct_080E87EC* p);
 void func_080E8724(s16 x, s16 y, const u8* p, u16* base);
 void func_080E893C(s16 x, s16 y, const u8* p, u16* base);
 void func_080E8A24(UnkStruct_080E8864* p);
@@ -773,7 +830,21 @@ void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a);
 void func_080ED06C(UnkStruct_080ED06C* p, u8 a);
 void func_080EE50C(UnkStruct_080EE50C* p, u8 a);
 void func_080EE580(UnkStruct_080EE580* p, u8 a);
+u32 func_080DF804(u8 a);
+u16 func_08065B6C(void* a, void* b);
 void func_080EE5E0(u8 a);
+void LoadObjPaletteBank(u16 bank, void* src);
+u8 func_0800FC5C(s32 a);
+void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
+void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f);
+void func_080E64D4(UnkStruct_080E590C* p);
+void func_080EBA58(u8 a);
+void func_080EFA7C(UnkStruct_080F023C* p, u8 a);
+void func_080F0108(UnkStruct_080F023C* p, u8 a);
+s32 func_080F01B0(UnkStruct_080F023C* p);
+void func_080F0660(UnkStruct_080F023C* p, u8 a);
+void func_080EE760(u8* work, u8 i);
+void func_080F4EE4(UnkStruct_080F4EE4* work);
 void func_080EE62C(u16 v);
 void func_080EE6AC(u32 t);
 s32 func_080EF3A0(UnkStruct_080E590C* p);

@@ -39,7 +39,7 @@ u8 gUnk_02034FBD[0x17];
 s32 gUnk_02034FD4;
 u8 gUnk_02034FD8;
 u32 gUnk_02034FDC;
-u32 gUnk_02034FE0;
+UnkStruct_02034FE0* gUnk_02034FE0;
 u32 gUnk_02034FE4;
 
 s32 func_080DFEBC(s32 x, s32 y, s32 z) {
@@ -590,7 +590,39 @@ u8 func_080E1CE0(s16 x, s16 y, u8 n) {
 
 INCLUDE_ASM("map/func_080E1D08.s");
 INCLUDE_ASM("map/func_080E2668.s");
-INCLUDE_ASM("map/func_080E2B08.s");
+s32 func_080E2B08(void) {
+    s32 r = 5;
+    UnkStruct_02034F20* p = &gUnk_02034F20[11];
+
+    while (p->unk_04 == 0x100000) {
+        p--;
+    }
+
+    switch (gUnk_0203C7AC->unk_00 & 0x6000000) {
+    case 0x2000000:
+        r = 1;
+        break;
+    case 0x4000000:
+        r = 2;
+        break;
+    case 0x6000000:
+        if (p->unk_02 == gUnk_02034F28) {
+            r = 2;
+        } else if (p->unk_00 == 0) {
+            r = 1;
+        } else {
+            s32 v = GetRandom() % 2 ? 2 : 1;
+
+            r = v;
+        }
+        break;
+    }
+
+    if (r != 5) {
+        func_080E2668(p, r);
+    }
+    return r;
+}
 
 u8 func_080E2BA0(u8 a) {
     UnkStruct_02034F20* p = gUnk_02034F20;
@@ -750,7 +782,37 @@ INCLUDE_ASM("map/func_080E309C.s");
 INCLUDE_ASM("map/func_080E3400.s");
 INCLUDE_ASM("map/func_080E3768.s");
 INCLUDE_ASM("map/func_080E3C1C.s");
+#ifdef NON_MATCHING
+void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f) {
+    s32 i;
+    s32 j;
+    s32 x;
+    u16 n;
+    UnkStruct_080DFB8C* q;
+
+    n = f - e;
+    x = e + GetRandom() % (f - e);
+
+    for (i = 0; i < n; i++) {
+        for (j = gUnk_02034F2A - 1; j >= 0; j--) {
+            q = func_080E08BC(x, j);
+
+            if (q->unk_02 == a) {
+                *px = x;
+                *py = j;
+                *pz = (q->unk_08 >> 8) / 16;
+                return;
+            }
+            if (q->unk_02 != 11) {
+                break;
+            }
+        }
+        x = x > e ? x - 1 : f - 1;
+    }
+}
+#else
 INCLUDE_ASM("map/func_080E3CD4.s");
+#endif
 INCLUDE_ASM("map/func_080E3D80.s");
 INCLUDE_ASM("map/func_080E3EFC.s");
 INCLUDE_ASM("map/func_080E3FD4.s");
@@ -1217,7 +1279,38 @@ void func_080E6264(void) {
     TaskCreate(gUnk_02039BA0->unk_B4, d->unk_10, &w);
 }
 INCLUDE_ASM("map/func_080E6394.s");
-INCLUDE_ASM("map/func_080E64D4.s");
+void func_080E64D4(UnkStruct_080E590C* p) {
+    UnkStruct_080E64D4* q = (UnkStruct_080E64D4*)&p->unk_08;
+    u16 flags;
+    u16 v;
+    s32 k;
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 t;
+
+    if (p->gfx == 0) {
+        return;
+    }
+
+    t = p->unk_04 & 1;
+    flags = 0x800;
+
+    if (t) {
+        flags = 0x801;
+    }
+
+    k = q->unk_00.x >> 8;
+    v = -0x1004 - k * 4;
+    q->unk_3C = q->unk_00.z;
+    q->unk_3A = v + 1;
+    z = 0;
+    x = (p->unk_08.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    t = flags;
+    y = k + (q->unk_00.y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    DrawSprite(x, y, p->gfx, p->tiles, p->palette, z, t, v);
+    TaskPoolDraw(p->unk_E4);
+}
 void func_080E657C(UnkStruct_080E590C* p) {
     UnkStruct_080E6034* q;
 
@@ -1332,6 +1425,7 @@ s32 func_080E6A80(s16 x, s16 y, u16 n) {
     u16 h;
     s32 j;
     UnkStruct_080DFB8C* q;
+    s32 mask;
 
     h = gUnk_0203C7AC->unk_06 - y;
 
@@ -1579,7 +1673,37 @@ void func_080E8724(s16 x, s16 y, const u8* p, u16* base) {
         }
     }
 }
-INCLUDE_ASM("map/func_080E87EC.s");
+u8 func_080E87EC(s16 x, s16 y, const UnkStruct_080E87EC* p) {
+    UnkStruct_080DFB8C* q;
+    s32 v;
+
+    while (p->unk_04 != 0xFF) {
+        q = func_080E548C(x + p->unk_00, y + p->unk_02);
+
+        if (q->unk_0C == 0x100000) {
+            return 0;
+        }
+        if (p->unk_04 != 7 && q->unk_03 != p->unk_04) {
+            return 0;
+        }
+        if (q->unk_04 != p->unk_05) {
+            return 0;
+        }
+        v = 0x520;
+
+        if ((q->unk_00 & v) != 0) {
+            return 0;
+        }
+        v = q->unk_00 & 12;
+        v = v & ~p->unk_08;
+
+        if (v != p->unk_06) {
+            return 0;
+        }
+        p++;
+    }
+    return 1;
+}
 INCLUDE_ASM("map/func_080E8864.s");
 
 void func_080E891C(UnkStruct_080E8864* p) {
@@ -1729,7 +1853,32 @@ s32 func_080E8E24(UnkStruct_080E8E24* p) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080E8E74.s");
+UnkStruct_080E8E24* func_080E8E74(u8 a) {
+    u16 v = GetRandom() % 10000;
+    UnkStruct_09EF8370** t = &gUnk_09EF8370[6];
+    UnkStruct_080E8E74* p = (UnkStruct_080E8E74*)t[gGameState.world];
+
+    while (p->unk_00 != 41) {
+        UnkStruct_080E8E24* q = &gUnk_0985814C[p->unk_00];
+        u16 n = a != 0 ? p->unk_04 : p->unk_02;
+
+        if (v < n) {
+            if (func_0800FC5C(q->unk_00[0])) {
+                return q;
+            }
+            if (p->unk_00 <= 16) {
+                return &gUnk_0985814C[0];
+            }
+            if (p->unk_00 <= 30) {
+                return &gUnk_0985814C[20];
+            }
+            return &gUnk_0985814C[31];
+        }
+        v -= n;
+        p++;
+    }
+    return 0;
+}
 
 u8 func_080E8F0C(void) {
     u16 acc = 0;
@@ -2854,7 +3003,23 @@ INCLUDE_ASM("map/func_080EB818.s");
 #endif
 
 INCLUDE_ASM("map/func_080EB898.s");
-INCLUDE_ASM("map/func_080EBA58.s");
+void func_080EBA58(u8 a) {
+    UnkStruct_02039D6C* e = &gUnk_02039D6C[a];
+
+    if (e->unk_02 != 0) {
+        func_080EB818(a, 1, e->unk_00);
+        gUnk_02034FE0->unk_15C = func_08065B6C((void*)func_080DF804(e->unk_01), &gUnk_02034FE0->unk_03C);
+
+        if (a <= 1) {
+            LoadObjPaletteBank(gUnk_02034FE0->unk_038->unk_06, &gUnk_099910C4[0xB40]);
+        } else {
+            LoadObjPaletteBank(gUnk_02034FE0->unk_038->unk_06, &gUnk_099910C4[0xB80]);
+        }
+    } else {
+        func_080EB818(a, 1, 13);
+        gUnk_02034FE0->unk_15C = 0;
+    }
+}
 INCLUDE_ASM("map/func_080EBAE0.s");
 
 void func_080ECA88(UnkStruct_080ECA88* p) {
@@ -2985,7 +3150,18 @@ void func_080EE6AC(u32 t) {
         q++;
     }
 }
-INCLUDE_ASM("map/func_080EE760.s");
+void func_080EE760(u8* work, u8 i) {
+    UnkStruct_02039D6C* e = &gUnk_02039D6C[i];
+
+    if (e->unk_02 == 0) {
+        work[0x164] = 0;
+    } else {
+        func_080EE5E0(e->unk_00);
+        func_080EE62C(e->unk_02);
+        func_080EE6AC(e->unk_04);
+        work[0x164] = func_08065B6C((void*)func_080DF804(e->unk_01), &work[0x44]);
+    }
+}
 INCLUDE_ASM("map/func_080EE7B0.s");
 
 s32 func_080EF3A0(UnkStruct_080E590C* p) {
@@ -3042,11 +3218,94 @@ s32 func_080EF4BC(UnkStruct_080E590C* p) {
 
 INCLUDE_ASM("map/func_080EF508.s");
 INCLUDE_ASM("map/func_080EF84C.s");
-INCLUDE_ASM("map/func_080EFA7C.s");
+void func_080EFA7C(UnkStruct_080F023C* p, u8 a) {
+    s32* q = &p->unk_08;
+    s32 t = q[2];
+    s32 v;
+
+    switch (a) {
+    case 1:
+        v = p->unk_DC + gSineTable[gFrameCounter & 0xFF] * 10;
+        break;
+    case 0:
+    default:
+        v = p->unk_DC + gSineTable[gFrameCounter * 2 & 0xFF] * 12;
+        break;
+    }
+
+    if (p->unk_04 & 16) {
+        q[2] += (v - q[2]) / 80;
+    } else {
+        q[2] += (v - q[2]) >> 4;
+    }
+    if (q[3] < q[2]) {
+        q[2] = t;
+        p->unk_DC = t - 0x1C00;
+    }
+}
 INCLUDE_ASM("map/func_080EFB24.s");
 INCLUDE_ASM("map/func_080EFC08.s");
-INCLUDE_ASM("map/func_080F0108.s");
-INCLUDE_ASM("map/func_080F01B0.s");
+void func_080F0108(UnkStruct_080F023C* p, u8 a) {
+    s32* q = &p->unk_08;
+    s32 t = q[2];
+    s32 v;
+
+    switch (a) {
+    case 1:
+        v = p->unk_DC + gSineTable[gFrameCounter & 0xFF] * 10;
+        break;
+    case 0:
+    default:
+        v = p->unk_DC + gSineTable[gFrameCounter * 2 & 0xFF] * 12;
+        break;
+    }
+
+    if (p->unk_04 & 16) {
+        q[2] += (v - q[2]) / 80;
+    } else {
+        q[2] += (v - q[2]) >> 4;
+    }
+    if (q[3] < q[2]) {
+        q[2] = t;
+        p->unk_DC = t - 0x1C00;
+    }
+}
+s32 func_080F01B0(UnkStruct_080F023C* p) {
+    s32* q = &p->unk_08;
+    s32 dx;
+    s32 dy;
+    s32 lim;
+
+    q[4] += 0x100;
+    if (q[4] > 0x500) {
+        q[4] = 0x500;
+    }
+
+    dx = (p->unk_D4 - p->unk_08) / 32;
+    lim = q[4];
+
+    if (dx > lim) {
+        dx = lim;
+    } else if (dx < -lim) {
+        dx = -lim;
+    }
+    q[0] += dx;
+
+    dy = (p->unk_D8 - q[1]) / 32;
+
+    if (dy > lim) {
+        dy = lim;
+    } else if (dy < -lim) {
+        dy = -lim;
+    }
+    q[1] += dy;
+
+    if (p->unk_D0 > 64) {
+        return 1;
+    }
+    p->unk_D0++;
+    return 0;
+}
 
 s32 func_080F023C(UnkStruct_080F023C* p, s32 lim) {
     s32 dx;
@@ -3068,7 +3327,31 @@ s32 func_080F023C(UnkStruct_080F023C* p, s32 lim) {
 }
 
 INCLUDE_ASM("map/func_080F02A0.s");
-INCLUDE_ASM("map/func_080F0660.s");
+void func_080F0660(UnkStruct_080F023C* p, u8 a) {
+    s32* q = &p->unk_08;
+    s32 t = q[2];
+    s32 v;
+
+    switch (a) {
+    case 1:
+        v = p->unk_DC + gSineTable[gFrameCounter & 0xFF] * 10;
+        break;
+    case 0:
+    default:
+        v = p->unk_DC + gSineTable[gFrameCounter * 2 & 0xFF] * 12;
+        break;
+    }
+
+    if (p->unk_04 & 16) {
+        q[2] += (v - q[2]) / 80;
+    } else {
+        q[2] += (v - q[2]) >> 4;
+    }
+    if (q[3] < q[2]) {
+        q[2] = t;
+        p->unk_DC = t - 0x1C00;
+    }
+}
 
 void func_080F0708(UnkStruct_080F023C* p, u8 flag) {
     if (flag) {
@@ -3129,7 +3412,17 @@ void func_080F3D58(UnkStruct_080DFF1C* p) {
 }
 
 INCLUDE_ASM("map/func_080F3E24.s");
-INCLUDE_ASM("map/func_080F4EE4.s");
+void func_080F4EE4(UnkStruct_080F4EE4* work) {
+    work->unk_0B4 = -gSineTable[((work->unk_0D0 + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
+    work->unk_0B6 = -gSineTable[((work->unk_0CF + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
+
+    if ((u16)(work->unk_0B4 + 2) <= 4) {
+        work->unk_0B4 = 2;
+    }
+    if ((u16)(work->unk_0B6 + 2) <= 4) {
+        work->unk_0B6 = 2;
+    }
+}
 INCLUDE_ASM("map/func_080F4F60.s");
 
 s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
