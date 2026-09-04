@@ -16,8 +16,78 @@ void func_08019068(AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
     func_08002A10(obj, e->unk_08);
 }
 
+#ifdef NON_MATCHING
+void WorldToScreen(s16* a, s16* b, s32 px, s32 py, s32 pz) {
+    s16 x;
+    s16 y;
+    u8 ang;
+    s32 c;
+    s32 u;
+    s32 v;
+
+    if (gBtlWork->unk_024 == 0x100) {
+        x = (px >> 8) - (gBtlWork->unk_000 >> 8);
+        y = ((py >> 8) + (pz >> 8)) - (gBtlWork->unk_004 >> 8);
+    } else {
+        x = (((px >> 8) - (gBtlWork->unk_000 >> 8)) * gBtlWork->unk_024) >> 8;
+        y = ((((py >> 8) + (pz >> 8)) - (gBtlWork->unk_004 >> 8)) * gBtlWork->unk_024) >> 8;
+    }
+
+    if (gBtlWork->unk_018 == 0) {
+        *a = x + 120;
+        *b = y + 80;
+    } else {
+        ang = -gBtlWork->unk_018;
+        c = (ang + 64) & 0xFF;
+        u = gSineTable[c] * x + gSineTable[ang] * y;
+        v = gSineTable[c + 64] * x + gSineTable[ang + 64] * y;
+        *a = (u >> 8) + 120;
+        *b = (v >> 8) + 80;
+    }
+}
+#else
 INCLUDE_ASM("unk_0800eebc/WorldToScreen.s");
-INCLUDE_ASM("unk_0800eebc/func_08019190.s");
+#endif
+void func_08019190(BtlObj* p, s16 b) {
+    UnkStruct_0801B8A8 a;
+    s16* t;
+
+    if (b != 9) {
+        if (p->unk_0D8 != 0) {
+            t = &((BtlObj*)p->unk_0D8)->unk_104;
+        } else {
+            t = &p->unk_104;
+        }
+
+        if (*t > 0) {
+            return;
+        }
+        *t = 50;
+    }
+    a.x = p->unk_004;
+    a.y = p->unk_008;
+    a.z = p->unk_00C - ((p->unk_09C / 2) << 8);
+    if (gGameState.flags & 8) {
+        if (b == 9) {
+            a.unk_12 = abs(gBtlWork->unk_1CA);
+            TaskCreate(&gBtlWork->unk_02C, gTaskDescBtlPopCb, &a);
+            return;
+        }
+        a.unk_12 = b;
+        TaskCreate(&gBtlWork->unk_02C, gTaskDescBtlPop, &a);
+        return;
+    }
+    a.unk_12 = b;
+
+    if (b == 9) {
+        if (p->unk_034 & 0x200000000000) {
+            return;
+        }
+        TaskCreate(&gBtlWork->unk_02C, gTaskDescBtlPop, &a);
+        return;
+    }
+    TaskCreate(&gBtlWork->unk_02C, gTaskDescBtlPop, &a);
+}
 
 void BtlWorkInit(void) {
     s32 zero = 0;
@@ -61,7 +131,30 @@ void func_080192E0(void) {
 
 INCLUDE_ASM("unk_0800eebc/func_08019350.s");
 INCLUDE_ASM("unk_0800eebc/func_080197AC.s");
-INCLUDE_ASM("unk_0800eebc/func_08019A30.s");
+void func_08019A30(void) {
+    BtlWork* w = gBtlWork;
+    BtlObj* p;
+
+    if (w->unk_068 & 0x4000) {
+        if (w->unk_068 & 0x20000000) {
+            p = (BtlObj*)gUnk_02039B9C->unk_07C;
+            p->unk_034 &= ~0x80;
+            return;
+        }
+    } else if (w->unk_068 & 0x20000000) {
+        p = ListPoolFirst(&w->unk_080);
+
+        while (p != 0) {
+            p->unk_034 &= ~0x80;
+            *(u16*)((u8*)p + 0xE2) = 0;
+            p = ListPoolNext(&p->unk_0B8);
+        }
+        return;
+    }
+    p = (BtlObj*)w->unk_07C;
+    p->unk_034 &= ~0x80;
+}
+
 INCLUDE_ASM("unk_0800eebc/func_08019ACC.s");
 
 void func_08019C5C(void) {
@@ -129,7 +222,57 @@ u8 func_0801AD68(BtlObj* p) {
 INCLUDE_ASM("unk_0800eebc/func_0801AD68.s");
 #endif
 
-INCLUDE_ASM("unk_0800eebc/func_0801ADAC.s");
+s32 func_0801ADAC(BtlObj* p) {
+    u16 t;
+    u16 u;
+    u16 v;
+
+    if (p->unk_0E8 == 2) {
+        if (p->unk_034 & 2) {
+            p->unk_034 &= ~0x40002;
+            p->unk_034 &= ~0x52000004800;
+            gBtlWork->unk_072 = gBtlWork->unk_076;
+            p->unk_0E2 = 30;
+            p->unk_0E0 += p->unk_020;
+        }
+    } else {
+        t = p->unk_0E0;
+
+        if ((s16)p->unk_0E0 > 0) {
+            p->unk_020 = t;
+            p->unk_0E0 = 0;
+            gBtlWork->unk_076 = 0;
+            p->unk_034 &= ~0x52000004800;
+            p->unk_034 |= 2;
+            p->unk_024 = 0;
+            p->unk_0A8 = 0;
+            p->unk_0AC = 0;
+        }
+    }
+    u = p->unk_0E2;
+
+    if (p->unk_0E2 > 0) {
+        p->unk_0E2 = u - 1;
+    }
+    v = p->unk_104;
+
+    if (p->unk_104 > 0) {
+        p->unk_104 = v - 1;
+    }
+
+    if (p->unk_034 & 0x10000) {
+        p->unk_034 &= ~0x10003;
+        func_0801AF08(p);
+        p->unk_034 |= 0x200;
+        func_08019190(p, 9);
+        gBtlWork->unk_072 = 12;
+        return 4;
+    }
+    if (func_0801AD68(p)) {
+        return 5;
+    }
+    return func_0801A978(p);
+}
 
 void func_0801AF08(BtlObj* p) {
     p->unk_034 &= ~0x2290;
@@ -142,7 +285,28 @@ u16 func_0801AF1C(s32 a) {
     return 0x400;
 }
 
+#ifdef NON_MATCHING
+void func_0801AF4C(void) {
+    BtlObj* p;
+
+    gBtlWork->unk_068 |= 0x80000;
+    gBtlWork->unk_068 |= 0x40000000;
+    gBtlWork->unk_068 |= 0x200000000;
+    func_0801C830();
+    m4aMPlayFadeOut(gMPlayTable[gSongTable[3].ms].info, 12);
+    func_08006120(2, 20);
+    func_080063A8();
+    p = ListPoolFirst(&gBtlWork->unk_080);
+
+    while (p != 0) {
+        p->unk_0B8.flags |= 2;
+        p = ListPoolNext(&p->unk_0B8);
+    }
+    gBtlWork->unk_0EE = 0;
+}
+#else
 INCLUDE_ASM("unk_0800eebc/func_0801AF4C.s");
+#endif
 
 void func_0801B008(void) {
     gBtlWork->unk_068 &= ~0x80000;
@@ -163,7 +327,24 @@ void func_0801B7D8(BtlObj* obj) {
     }
 }
 
-INCLUDE_ASM("unk_0800eebc/func_0801B818.s");
+u8 func_0801B818(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n, s16* cnt) {
+    s16 i;
+    s16 lim;
+
+    lim = *n / c;
+    p->unk_12 = b;
+
+    for (i = 0; i < lim; i++) {
+        TaskCreate(&gBtlWork->unk_02C, gTaskDescBtlPrize, p);
+
+        if (++(*cnt) > 2) {
+            return 1;
+        }
+    }
+    *n = *n % c;
+    return 0;
+}
+
 void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n) {
     s16 i;
     s16 lim;
@@ -192,7 +373,35 @@ void func_0801B918(BtlObj* p) {
     func_0801B8A8(&a, 3, 1, &n);
 }
 INCLUDE_ASM("unk_0800eebc/func_0801B994.s");
-INCLUDE_ASM("unk_0800eebc/func_0801BBF0.s");
+void func_0801BBF0(BtlObj* p) {
+    UnkStruct_0801B8A8 a;
+
+    if (gGameState.flags & 8) {
+        return;
+    }
+    if (func_08085BAC()) {
+        return;
+    }
+    if (gBtlWork->unk_068 & 0x400000000) {
+        return;
+    }
+    if (gBtlWork->unk_068 & 0x100000000) {
+        return;
+    }
+    if (!func_080856DC()) {
+        return;
+    }
+    if (func_08085B38(GetActiveDeckIndex()) <= 9) {
+        return;
+    }
+    gBtlWork->unk_068 |= 0x100000000;
+    a.x = p->unk_004;
+    a.y = p->unk_008;
+    a.z = p->unk_00C;
+    a.unk_14 = 0;
+    TaskCreate(&gBtlWork->unk_02C, gTaskDescBtlPremire, &a);
+}
+
 u8 func_0801BCA8(s32 a) {
     if (a == gBtlWork->unk_0F0) {
         return 1;
@@ -213,15 +422,93 @@ void func_0801BCD4(BtlObj* p) {
     }
 }
 
+#ifdef NON_MATCHING
+void func_0801BCF8(BtlObj* p) {
+    s32 x;
+    s32 y;
+    s32 cx;
+    s32 x0;
+    s32 x1;
+    s32 y0;
+    s32 y1;
+
+    if (p->unk_034 & 0x7202) {
+        return;
+    }
+    if (GetRandom() % (p->unk_0B2 * gBtlWork->unk_0EE) != 0) {
+        return;
+    }
+    func_0801C700(p, &x, &y, 0);
+
+    if (p->unk_0D0 == 0) {
+        gBtlWork->unk_0AC = p;
+        return;
+    }
+
+    if (p->unk_034 & 4) {
+        cx = p->unk_004 - (p->unk_0CE << 8);
+    } else {
+        cx = p->unk_004 + (p->unk_0CE << 8);
+    }
+    x0 = p->unk_0D0;
+    x0 = cx - ((x0 - 4) << 8);
+    y0 = p->unk_008 - (p->unk_0D2 << 8);
+    x1 = x0 + ((p->unk_0D0 + 4) << 9);
+    y1 = y0 + ((p->unk_0D2 + 4) << 9);
+
+    if (x0 > x) {
+        return;
+    }
+    if (x1 < x) {
+        return;
+    }
+    if (y0 > y) {
+        return;
+    }
+    if (y1 < y) {
+        return;
+    }
+    gBtlWork->unk_0AC = p;
+}
+#else
 INCLUDE_ASM("unk_0800eebc/func_0801BCF8.s");
+#endif
 
 void func_0801BDD4(BtlObj* p, s32 v) {
     p->unk_0D8 = v;
 }
 
 INCLUDE_ASM("unk_0800eebc/func_0801BDDC.s");
-INCLUDE_ASM("unk_0800eebc/func_0801C068.s");
-INCLUDE_ASM("unk_0800eebc/func_0801C104.s");
+void func_0801C068(void) {
+    if (gGameState.flags & 8) {
+        gBtlWork->unk_110 = AllocObjTiles(0x840, 0);
+    } else {
+        gBtlWork->unk_110 = AllocObjTiles(0xC80, 0);
+        gBtlWork->unk_114 = AllocObjTiles(0xA00, 0);
+
+        if (gBtlWork->unk_068 & 0x4000) {
+            gUnk_02039B9C->unk_110 = AllocObjTiles(0xC80, 0);
+        }
+    }
+    gBtlWork->unk_068 |= 0x1000000000000;
+}
+
+void func_0801C104(void) {
+    if (gBtlWork->unk_068 & 0x1000000000000) {
+        if (gGameState.flags & 8) {
+            ReleaseObjTiles(gBtlWork->unk_110);
+        } else {
+            ReleaseObjTiles(gBtlWork->unk_110);
+            ReleaseObjTiles(gBtlWork->unk_114);
+
+            if (gBtlWork->unk_068 & 0x4000) {
+                ReleaseObjTiles(gUnk_02039B9C->unk_110);
+            }
+        }
+        gBtlWork->unk_068 &= ~0x1000000000000;
+    }
+}
+
 void func_0801C1A0(u8 a) {
     if (a <= 4) {
         gBtlWork->unk_0FB |= 1 << a;
@@ -244,7 +531,30 @@ u8 func_0801C1C0(u8 a) {
 
 ALIGN_ZERO(2);
 
-INCLUDE_ASM("unk_0800eebc/_0801C1F8.s");
+void _0801C1F8(u8 a, s32 x, s32 y, s32 z) {
+    u16 id;
+
+    switch (a) {
+    case 0:
+        id = 0x28F;
+        break;
+    case 1:
+        id = 0x290;
+        break;
+    case 2:
+        id = 0x291;
+        break;
+    case 3:
+        id = 0x292;
+        break;
+    case 4:
+        id = 0x293;
+        break;
+    default:
+        return;
+    }
+    func_0809B710(&gBtlWork->unk_02C, x >> 8, y >> 8, z >> 8, id);
+}
 
 void func_0801C274(s32 a, s32 b, s32 c) {
     gBtlWork->unk_100 = a;
@@ -283,7 +593,44 @@ u8 func_0801C6D4(s32 a) {
 INCLUDE_ASM("unk_0800eebc/func_0801C6D4.s");
 #endif
 
-INCLUDE_ASM("unk_0800eebc/func_0801C700.s");
+void func_0801C700(void* a, s32* b, s32* c, s32* d) {
+    u16 n;
+
+    if (*(s32*)((u8*)a + 0xE8) == 3) {
+        if (b != 0) {
+            *b = *(s32*)((u8*)a + 0xF0);
+        }
+        if (c != 0) {
+            *c = *(s32*)((u8*)a + 0xF4);
+        }
+        if (d != 0) {
+            *d = *(s32*)((u8*)a + 0xF8);
+        }
+        n = GetRandom() % 6;
+
+        if (n == 0) {
+            if (b != 0) {
+                *b = (gBtlWork->unk_0DA + GetRandom() % (gBtlWork->unk_0DC - gBtlWork->unk_0DA + 1)) << 8;
+            }
+            if (c != 0) {
+                *c = (gBtlWork->unk_0DE + GetRandom() % (gBtlWork->unk_0E0 - gBtlWork->unk_0DE + 1)) << 8;
+            }
+            if (d != 0) {
+                *d = n;
+            }
+        }
+    } else {
+        if (b != 0) {
+            *b = gBtlWork->unk_130;
+        }
+        if (c != 0) {
+            *c = gBtlWork->unk_134;
+        }
+        if (d != 0) {
+            *d = gBtlWork->unk_138;
+        }
+    }
+}
 
 void func_0801C7FC(HitData* a, u16 b, s32 c) {
     const UnkStruct_08133E5C* e = func_0800FB14(b);
