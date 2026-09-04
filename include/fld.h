@@ -42,7 +42,9 @@ typedef struct GameState {
     u8 unk_00;
     u8 unk_01[0x0B];
     u8 unk_0C;
-    u8 unk_0D[0x07];
+    u8 unk_0D;
+    s8 unk_0E;
+    u8 unk_0F[0x05];
     FldPos unk_14;
     u8 unk_24;
     u8 unk_25[0x03];
@@ -73,7 +75,7 @@ typedef struct FldWork {
     u8 unk_65;
     u16 unk_66;
     u8 unk_68[0x04];
-    s32 unk_6C;
+    u32 unk_6C;
     s32 unk_70;
     s32 unk_74;
     s32 unk_78;
@@ -83,7 +85,7 @@ typedef struct FldWork {
     u8 unk_88[0x0C];
     u32 unk_94;
     s16 unk_98;
-    u8 unk_9A[0x02];
+    s16 unk_9A;
     u8 unk_9C;
     u8 unk_9D;
     u16 unk_9E;
@@ -139,6 +141,12 @@ void TaskPoolInit(TaskPool* a, s32 count);
 void* TaskCreate(void* a, void* desc, void* args);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_080DFF4C(FldPos* p);
+void ApproachValue(s32* value, s32 target, u16 steps);
+void func_080A5830(void* a, s32 x, s32 y, s32 z);
+void func_080DFC7C(void);
+s32 abs(s32 a);
+u16 AnimGetFrame(AnimState* a);
+void func_080E02C0(s32 x, s32 y, s32 z);
 
 extern TaskDesc gTaskDescFldShadow;
 extern u16 gUnk_0813CD4C[][8];
