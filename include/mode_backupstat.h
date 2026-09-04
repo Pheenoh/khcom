@@ -152,7 +152,7 @@ void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 u16 GetKeysRepeat(void);
-void ModeRequest(Mode* mode, s32 b);
+void ModeRequest(Mode* mode, s32 arg);
 void func_0805FA60(u8 a, void* b, s32 c, u8 d);
 void func_0805FA8C(u8 a, s16 b, s16 c);
 void func_0805FCB0(u8 a, u8 b, u32 c, const char* d);

@@ -19,7 +19,7 @@ typedef struct ChkEffWork {
     u16 alphaA;
     u16 alphaB;
 } ChkEffWork;
-void ModeRequest(Mode* mode, s32 b);
+void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
 void SetBgMode1(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
