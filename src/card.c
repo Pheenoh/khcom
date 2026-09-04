@@ -222,7 +222,7 @@ u8 func_08094A18(u8* work, void* a);
 void func_08094CE4(u8* work);
 extern u16 gBldCnt;
 s32 func_08097A80(u8* work);
-u8 AnimIsFinished(void* a);
+u8 AnimIsFinished(AnimState* a);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 u8 func_080A36B0(u8* work, void* a);
 s32 func_080A22A4(u8* work);

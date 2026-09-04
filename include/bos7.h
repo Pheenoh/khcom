@@ -631,7 +631,7 @@ void func_0800592C(s32* value, s32 target, u16 steps);
 void AnimReset(void* a);
 void* AnimGetGfx(AnimState* a);
 u16 AnimGetId(void* a);
-u8 AnimIsFinished(void* a);
+u8 AnimIsFinished(AnimState* a);
 void AnimInit(AnimState* a, s32 b, s32 c);
 u16 GetRandom(void);
 void m4aSongNumStart(u16 id);

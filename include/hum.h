@@ -749,7 +749,7 @@ void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 void func_0801C298(u8 a, u8 b);
 void func_08012304(void* p);
-u8 AnimIsFinished(void* a);
+u8 AnimIsFinished(AnimState* a);
 void* AnimUpdate(AnimState* a);
 void func_0800E314(HumWork* work, HumSub* sub, void* def);
 void AnimInit(AnimState* a, s32 b, s32 c);
