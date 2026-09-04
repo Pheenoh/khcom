@@ -2,6 +2,7 @@
 #define GUARD_MSG_H
 
 #include "types.h"
+#include "anim.h"
 #include "mode.h"
 #include "key.h"
 #include "text_types.h"
@@ -358,7 +359,7 @@ void LoadBgPalette(s32 bg, void* src, u16 size);
 void m4aMPlayAllStop(void);
 u8 func_08006314(void);
 void func_08074504(void);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 void AnimStart(void* a, s32 b, s32 c);
 void DisableBg(s32 bg);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);

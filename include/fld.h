@@ -2,6 +2,7 @@
 #define GUARD_FLD_H
 
 #include "types.h"
+#include "anim.h"
 #include "taskpool.h"
 #include "key.h"
 #include "game.h"
@@ -96,7 +97,7 @@ typedef struct FldShadowWork {
 
 void AnimInit(void* a, void* b, void* c);
 void AnimStart(void* a, s32 b, s32 c);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 s8 GetAngleDiff(u8 a, u8 b);
 void func_08002A10(void* a, void* b);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);

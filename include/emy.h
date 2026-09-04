@@ -2,6 +2,7 @@
 #define GUARD_EMY_H
 
 #include "types.h"
+#include "anim.h"
 #include "taskpool.h"
 typedef struct BtlWork {
     s32 unk_000;
@@ -377,7 +378,7 @@ void AnimChange(void* a, u16 animId, u16 flags);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0800592C(s32* value, s32 target, u16 steps);
 void* AnimGetGfx(void* a);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u16 func_0801AF1C(s32 a);

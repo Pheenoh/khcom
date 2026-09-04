@@ -2,6 +2,7 @@
 #define GUARD_EVT_H
 
 #include "types.h"
+#include "anim.h"
 #include "taskpool.h"
 #include "evt_types.h"
 #include "game.h"
@@ -52,7 +53,7 @@ typedef struct EvtShadowWork {
 
 void* AllocObjTiles(u16 a, s32 b);
 void AnimInit(void* a, s32 b, s32 c);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(void* a);
 void TaskCreate(void* a, void* b, void* c);
 void TaskPoolInit(TaskPool* a, s32 count);

@@ -620,7 +620,7 @@ void LoadPalette(void* src, s32 dst, s32 size);
 void func_0810FE94(void);
 s32 func_0801ADAC(void* a);
 void func_0801AF08(void* a);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 void AnimChange(void* a, u16 animId, u16 flags);
 void* TaskCreate(void* pool, void* desc, void* arg);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);

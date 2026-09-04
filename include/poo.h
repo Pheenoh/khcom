@@ -2,6 +2,7 @@
 #define GUARD_POO_H
 
 #include "types.h"
+#include "anim.h"
 #include "key.h"
 #include "taskpool.h"
 #include "main.h"
@@ -1505,7 +1506,7 @@ void task_poo_beeAfterEvent_3(PooBeeAfterEventWork* w);
 s32 func_080CFE34(PooPos* p);
 void func_08012304(void* a);
 void func_080DDDDC(void* p, void* q);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 u8 AnimIsFinished(void* a);
 void task_poo_map_2(PooMapWork* w);
 void task_poo_map_3(PooMapWork* w);

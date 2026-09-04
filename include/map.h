@@ -2,6 +2,7 @@
 #define GUARD_MAP_H
 
 #include "types.h"
+#include "anim.h"
 #include "m4a.h"
 #include "mode.h"
 #include "key.h"
@@ -522,7 +523,7 @@ void ReleaseObjPalette(u8* p);
 void func_08012304(void* a);
 void TaskPoolDestroy(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 void m4aSongNumStart(u16 id);
 u16 CountCardsById(u16 cardId);
