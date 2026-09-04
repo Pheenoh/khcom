@@ -7051,6 +7051,7 @@ INCLUDE_ASM("card/func_0808E934.s");
 
 INCLUDE_ASM("card/func_0808EA0C.s");
 INCLUDE_ASM("card/func_0808EC24.s");
+#ifndef VERSION_EU
 u8 func_0808EDA4(UnkStruct_0808DB04* w) {
     UnkStruct_0808E890* p;
     UnkStruct_0808E890* q;
@@ -7139,6 +7140,9 @@ u8 func_0808EDA4(UnkStruct_0808DB04* w) {
 
     return 1;
 }
+#else
+INCLUDE_ASM("card/func_0808EDA4.s");
+#endif
 
 u8 func_0808EF80(u8* work, u16 dir) {
     u16 row;
