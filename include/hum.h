@@ -805,7 +805,7 @@ void func_080E92F8(void* p);
 void func_080A32DC(void* p);
 void func_080A3398(void* p);
 void func_080C7024(void* p);
-void func_080DDEBC(void* p);
+void func_080DDEBC(s32 a);
 void func_08109638(void* p);
 void func_08065AE0(TextSlot* p, s32 n);
 void func_0805F1C0(s32* p, s32 v);
