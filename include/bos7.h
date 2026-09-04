@@ -615,7 +615,7 @@ void func_0810FEDC(void);
 void func_08116E8C(void);
 void func_08116E60(u8* src);
 void func_08116E80(void);
-void func_08116E00(s32 a, void* b, s32 c);
+void func_08116E00(vu16* dst, u8* src, u32 cnt);
 void LoadPalette(void* src, s32 dst, s32 size);
 void func_0810FE94(void);
 s32 func_0801ADAC(void* a);
