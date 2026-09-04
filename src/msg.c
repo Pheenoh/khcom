@@ -122,7 +122,21 @@ void func_08063658(void) {
 }
 INCLUDE_ASM("msg/func_08063678.s");
 INCLUDE_ASM("msg/func_08063744.s");
+#ifndef VERSION_EU
+void func_08063EE4(s32 a, s32 b, u8 v, u8 d, u8 e) {
+    u8 buf[4];
+
+    buf[0] = 0x78;
+    buf[1] = v / 10;
+    buf[2] = v - buf[1] * 10;
+    buf[3] = 0;
+    buf[1] += 0x30;
+    buf[2] += 0x30;
+    func_08063F60(a, b, buf, d, e);
+}
+#else
 INCLUDE_ASM("msg/func_08063EE4.s");
+#endif
 INCLUDE_ASM("msg/func_08063F60.s");
 INCLUDE_ASM("msg/func_080640E0.s");
 #ifndef VERSION_EU
@@ -139,7 +153,26 @@ void func_0806420C(void* a, void* b, u8 i) {
     gUnk_02034A80[i].unk_04 = b;
 }
 #endif
+#ifndef VERSION_EU
+void func_0806422C(void) {
+    u8 i;
+    u8 j;
+
+    for (i = 0; i < 24; i++) {
+        for (j = 0; j < 16; j++) {
+            if (gUnk_02034A80[i].unk_08[j] != 0) {
+                ReleaseObjTiles((void*)gUnk_02034A80[i].unk_08[j]);
+            }
+        }
+        func_080062F4(((Handle0806180C*)gUnk_02034A80[i].unk_48)->unk_06, 0);
+        ReleaseObjPalette((u8*)gUnk_02034A80[i].unk_48);
+    }
+    EwramFree(gUnk_02034A80);
+    gUnk_02034A80 = NULL;
+}
+#else
 INCLUDE_ASM("msg/func_0806422C.s");
+#endif
 INCLUDE_ASM("msg/func_080642A8.s");
 INCLUDE_ASM("msg/func_08064338.s");
 INCLUDE_ASM("msg/func_080643D4.s");
@@ -392,7 +425,22 @@ INCLUDE_ASM("msg/func_080664D8.s");
 INCLUDE_ASM("msg/func_08066588.s");
 INCLUDE_ASM("msg/func_0806662C.s");
 INCLUDE_ASM("msg/func_080666F0.s");
-INCLUDE_ASM("msg/func_080667D8.s");
+void func_080667D8(s16 x, s32 y, void** p, void* d, u16 h, u8 n) {
+    s16 cy = y;
+    s16 x0 = x;
+    u8 i;
+
+    for (i = 0; i < n; i++) {
+        if (*p == NULL) {
+            cy += 12;
+            x = x0;
+        } else {
+            DrawSprite(x, cy, gUnk_09EEB204, *p, d, 0, 0, h);
+            x += 10;
+        }
+        p++;
+    }
+}
 INCLUDE_ASM("msg/func_08066864.s");
 
 void* func_080668F0(void) {
@@ -502,7 +550,14 @@ u16 func_08066AF8(s32 v, u16* out) {
 }
 
 INCLUDE_ASM("msg/_08066B84.s");
-INCLUDE_ASM("msg/func_08066DC0.s");
+s32 func_08066DC0(s16 x, s16 y, u16* s, void* d, void* e, u16 h, u8 n) {
+    u8 i;
+
+    for (i = 0; i < n; i++) {
+        DrawSprite(x + i * 8, y, gUnk_09EEC538[*s], d, e, 0, 0, h);
+        s++;
+    }
+}
 INCLUDE_ASM("msg/func_08066E40.s");
 
 void func_0806BA0C(s16 v, u8* out) {
@@ -602,7 +657,27 @@ void func_0806C34C(void) {
     EwramFree(gUnk_02034A88);
 }
 
-INCLUDE_ASM("msg/_0806C3A0.s");
+void _0806C3A0(u8 n, void* a) {
+    u8 i;
+
+    for (i = 0; i < n; i++) {
+        Ent080658B8* b = gUnk_02034A84;
+
+        if (b[i].unk_15 == 1) {
+            s32 x = b[i].unk_00;
+            s32 y = b[i].unk_04;
+
+            if (b[i].unk_08 != NULL) {
+                if (b[i].unk_14 == 0) {
+                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204, b[i].unk_08, a, 0);
+                } else {
+                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204, b[i].unk_08,
+                                  b[i].unk_10, 0);
+                }
+            }
+        }
+    }
+}
 u16 func_0806C42C(s16 v, u16* out) {
     u8 buf[8];
     u8* p;
@@ -1473,7 +1548,34 @@ void func_08070008(Work0806180C* p) {
     }
 }
 
-INCLUDE_ASM("msg/func_08070058.s");
+void func_08070058(Work0806180C* p, s32 a) {
+    u16 f;
+
+    f = p->unk_03E;
+
+    switch (p->unk_1AB) {
+    case 0xD3:
+        f &= 0xFFFE;
+        break;
+    case 0x2D:
+    case 0x40:
+    case 0x53:
+        f |= 1;
+        break;
+    case 0x00:
+    case 0x80:
+    case 0xAD:
+    case 0xC0:
+        f &= 0xFFFE;
+        break;
+    }
+
+    if (a != p->unk_17C) {
+        func_0801CD74(p->unk_028, a);
+        p->unk_17C = a;
+    }
+    func_0801CE00(p->unk_028, f);
+}
 INCLUDE_ASM("msg/func_080700D4.s");
 INCLUDE_ASM("msg/func_0807048C.s");
 INCLUDE_ASM("msg/func_08070AD4.s");
@@ -1728,7 +1830,14 @@ u8 func_08073DA4(MsgFaceWork* p, void* a) {
     }
     return 1;
 }
-INCLUDE_ASM("msg/func_08073E0C.s");
+void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c) {
+    p->unk_00 = a;
+    p->unk_01 = b;
+    p->unk_04 = c;
+    p->unk_02 = 0;
+    p->unk_03 = 0;
+    TaskCreate(pool, gTaskDescMsgface, p);
+}
 
 void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c) {
     u8 v;
@@ -1795,8 +1904,23 @@ u8 func_08073F78(MsgWaitWork* p) {
     }
     return r;
 }
-INCLUDE_ASM("msg/msgwait_2.s");
-INCLUDE_ASM("msg/msgwait_3.s");
+void msgwait_2(MsgWaitWork* p) {
+    u8 v = gUnk_02039DC8->unk_8B;
+
+    if (v != 0) {
+        DrawSprite(120, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx,
+                   p->unk_00, p->unk_14, 0, 0, 0);
+    } else {
+        DrawSprite(gUnk_09033D08[gUnk_02039DC8->unk_87][0] >> 8,
+                   gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->unk_00,
+                   p->unk_14, 0, 0, 0);
+    }
+}
+void msgwait_3(MsgWaitWork* p) {
+    func_080062F4(p->unk_14->unk_06 + 16, 0);
+    ReleaseObjTiles(p->unk_00);
+    ReleaseObjPalette(p->unk_14);
+}
 INCLUDE_ASM("msg/msgwait_yesno_0.s");
 INCLUDE_ASM("msg/func_0807420C.s");
 u8 msgwait_yesno_1(MsgWaitYesNoWork* p, void* a) {
@@ -1820,7 +1944,19 @@ void msgwait_yesno_3(MsgWaitYesNoWork* p) {
     func_08065AE0(p->unk_1C, 10);
     func_08065AE0(p->unk_6C, 10);
 }
-INCLUDE_ASM("msg/func_08074504.s");
+void func_08074504(void) {
+    vu16 v;
+
+    v = *(vu16*)0x04000006;
+    v = (v + 1) % 228;
+
+    if (v < 160) {
+        if (gUnk_02039DCC->unk_02 == 1) {
+            *(vu16*)0x04000018 = gUnk_02039DCC->unk_04[v];
+            *(vu16*)0x0400001C = gUnk_02039DCC->unk_04[v];
+        }
+    }
+}
 void func_08074564(void) {
     gIntrCheck |= 2;
     func_08074504();
