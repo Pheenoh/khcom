@@ -715,7 +715,7 @@ u8 task_bos_pc_fld_1(PcFldWork* work);
 
 u8 func_0810C65C(BosLstWork* work, u16 a);
 u8 func_0810DB40(BosLstWork* work);
-void func_0810FF50(void* p, s32 a, s16 b);
+void func_0810FF50(Task* t, s32 a, s32 b);
 void func_0810CD00(BosLstWork* work);
 void func_0810CEC8(BosLstWork* work);
 void func_0810D4F8(BosLstWork* work);
