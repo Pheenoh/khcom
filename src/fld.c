@@ -5,7 +5,45 @@
 struct UnkStruct_0203C7AC* gUnk_0203C7AC;
 
 INCLUDE_ASM("fld/task_fld_sora_0.s");
-INCLUDE_ASM("fld/func_08032268.s");
+u8 func_08032268(FldWork* work, void* task) {
+    FldActor* act;
+    s16* p;
+    s32 flags;
+
+    act = &gUnk_02039BA0->unk_18;
+    flags = gUnk_02039BA0->unk_70;
+
+    if (flags & 0x100000) {
+        func_08031F98(work, 12, 0);
+    } else if (flags & 0x80000) {
+        func_08031F98(work, 1, 1);
+    } else {
+        func_08031F98(work, 0, 1);
+    }
+
+    if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
+        func_080062F4(work->palette->unk_06 + 16, 0);
+        work->unk_94 = 0;
+        work->unk_98 = 0;
+        SetTaskUpdate(task, (u32)task_fld_sora_1);
+        TaskPoolUpdate(work->unk_24);
+    } else {
+        p = &work->unk_98;
+
+        if (*p == 0) {
+            func_080062F4(work->palette->unk_06 + 16, 1);
+            act->unk_10 = 0;
+            work->unk_BC = 0;
+        }
+
+        TaskPoolUpdate(work->unk_24);
+        work->unk_20 = AnimUpdate(work->unk_08);
+        func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+        (*p)++;
+    }
+
+    return 1;
+}
 INCLUDE_ASM("fld/func_0803234C.s");
 INCLUDE_ASM("fld/func_080324DC.s");
 INCLUDE_ASM("fld/func_08032C3C.s");
@@ -314,7 +352,45 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
 }
 
 INCLUDE_ASM("fld/task_fld_riku_0.s");
-INCLUDE_ASM("fld/func_08034A0C.s");
+u8 func_08034A0C(FldWork* work, void* task) {
+    FldActor* act;
+    s16* p;
+    s32 flags;
+
+    act = &gUnk_02039BA0->unk_18;
+    flags = gUnk_02039BA0->unk_70;
+
+    if (flags & 0x100000) {
+        func_0803473C(work, 12, 0);
+    } else if (flags & 0x80000) {
+        func_0803473C(work, 1, 1);
+    } else {
+        func_0803473C(work, 0, 1);
+    }
+
+    if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
+        func_080062F4(work->palette->unk_06 + 16, 0);
+        work->unk_94 = 0;
+        work->unk_98 = 0;
+        SetTaskUpdate(task, (u32)task_fld_riku_1);
+        TaskPoolUpdate(work->unk_24);
+    } else {
+        p = &work->unk_98;
+
+        if (*p == 0) {
+            func_080062F4(work->palette->unk_06 + 16, 1);
+            act->unk_10 = 0;
+            work->unk_BC = 0;
+        }
+
+        TaskPoolUpdate(work->unk_24);
+        work->unk_20 = AnimUpdate(work->unk_08);
+        func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+        (*p)++;
+    }
+
+    return 1;
+}
 INCLUDE_ASM("fld/func_08034AF0.s");
 INCLUDE_ASM("fld/func_08034C88.s");
 INCLUDE_ASM("fld/func_080353DC.s");
