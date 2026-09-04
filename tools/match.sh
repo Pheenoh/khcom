@@ -5,7 +5,7 @@
 # base ROM. Callees are resolved to their real addresses (as Thumb symbols,
 # read out of build/<ver>/com_<ver>.map) so bl encodings compare exactly.
 set -e
-FT=${MATCH_TMP:-/tmp/mt}; mkdir -p $FT
+FT=${MATCH_TMP:-/tmp/mt-$(git rev-parse --show-toplevel 2>/dev/null | cksum | cut -d" " -f1)}; mkdir -p $FT; export MATCH_TMP=$FT
 C=$1; SYM=$2; START=$3; END=$4
 arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp ${EXTRA_INC:-} $C -o $FT/x.i
 tools/agbcc/bin/agbcc -mthumb-interwork -O2 -fprologue-bugfix ${AGBCC_EXTRA:-} -o $FT/x.s $FT/x.i
@@ -31,7 +31,7 @@ import sys
 s=int(sys.argv[1],16)-0x08000000; e=int(sys.argv[2],16)-0x08000000
 rom=open('roms/B8CE.gba','rb').read()[s:e]
 import os
-new=open(os.environ.get('MATCH_TMP','/tmp/mt')+'/x.bin','rb').read()
+new=open(os.environ['MATCH_TMP']+'/x.bin','rb').read()
 while len(new)>len(rom) and new[-2:] in (b'\xc0\x46', b'\x00\x00'):
     new=new[:-2]
 if len(new)==len(rom) and new[:-2]==rom[:-2] and new[-2:]==b'\xc0\x46' and rom[-2:]==b'\x00\x00':
