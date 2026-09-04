@@ -2,6 +2,7 @@
 #define GUARD_MODE_BATTLE_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "gba/syscall.h"
 #include "main.h"
 

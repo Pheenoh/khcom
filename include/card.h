@@ -2,6 +2,7 @@
 #define GUARD_CARD_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "card_types.h"
 #include "game.h"
 #include "mode.h"

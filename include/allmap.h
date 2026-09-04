@@ -2,6 +2,7 @@
 #define GUARD_ALLMAP_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "main.h"
 #include "m4a.h"
 #include "anim.h"

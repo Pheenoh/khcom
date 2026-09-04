@@ -2,6 +2,7 @@
 #define GUARD_WLOGO_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "intr.h"
 #include "main.h"
 #include "anim.h"

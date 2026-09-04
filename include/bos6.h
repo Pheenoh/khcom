@@ -616,7 +616,7 @@ void TaskPoolInit(void* pool, s32 count);
 void func_0800592C(s32* value, s32 target, u16 steps);
 void func_0810FF6C(void* p, s32 a);
 void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
-void TaskPoolUpdate(void* a);
+void TaskPoolUpdate(TaskPool* pool);
 u8 task_bos_lst_1(BosLstWork* work);
 
 typedef struct LstAnimDef {
@@ -761,9 +761,7 @@ typedef struct LstSpawn {
 } LstSpawn;
 
 extern u8 gTaskDescBosLstFal[];
-
 void* TaskCreate(void* pool, void* desc, void* arg);
-
 void func_08017F70(s32 a, s32 b, s32 c, s32 d);
 
 u8 func_0810ACB8(PcWork* work, s32 arg);

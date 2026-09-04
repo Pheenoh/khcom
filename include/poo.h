@@ -2,6 +2,7 @@
 #define GUARD_POO_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "main.h"
 #include "obj.h"
 typedef struct PooAim {

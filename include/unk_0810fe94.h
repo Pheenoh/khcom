@@ -2,6 +2,7 @@
 #define GUARD_UNK_0810FE94_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "main.h"
 
 typedef struct LstFldWork {

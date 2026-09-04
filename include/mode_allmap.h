@@ -2,6 +2,7 @@
 #define GUARD_MODE_ALLMAP_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "intr.h"
 #include "gba/syscall.h"
 #include "main.h"

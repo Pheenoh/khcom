@@ -2,6 +2,7 @@
 #define GUARD_STATUS_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "main.h"
 #include "engine.h"
 

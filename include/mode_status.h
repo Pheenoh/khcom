@@ -2,6 +2,7 @@
 #define GUARD_MODE_STATUS_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "main.h"
 
 typedef struct GameState {

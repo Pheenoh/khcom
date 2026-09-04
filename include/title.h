@@ -2,6 +2,7 @@
 #define GUARD_TITLE_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "title_types.h"
 #include "main.h"
 #include "anim.h"

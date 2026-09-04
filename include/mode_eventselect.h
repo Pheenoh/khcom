@@ -2,6 +2,7 @@
 #define GUARD_MODE_EVENTSELECT_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "m4a.h"

@@ -355,7 +355,7 @@ typedef struct Emy83sWork {
 
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolDraw(TaskPool* a);
-void TaskPoolUpdate(TaskPool* a);
+void TaskPoolUpdate(TaskPool* pool);
 void* TaskCreate(TaskPool* pool, void* desc, void* arg);
 u8 IsTaskActiveNamed(void* task, void* name);
 void TaskPoolDestroy(TaskPool* a);

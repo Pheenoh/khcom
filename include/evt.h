@@ -2,6 +2,7 @@
 #define GUARD_EVT_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "evt_types.h"
 #include "game.h"
 
@@ -55,7 +56,7 @@ void* AnimUpdate(void* a);
 void* AnimGetGfx(void* a);
 void TaskCreate(void* a, void* b, void* c);
 void TaskPoolInit(void* a, s32 b);
-void TaskPoolUpdate(void* a);
+void TaskPoolUpdate(TaskPool* pool);
 void func_0801CE70(EvtObjWork* work);
 
 extern u8 gUnk_08B22CBC[];

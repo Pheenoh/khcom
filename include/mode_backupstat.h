@@ -2,6 +2,7 @@
 #define GUARD_MODE_BACKUPSTAT_H
 
 #include "types.h"
+#include "taskpool.h"
 #include "evt_types.h"
 #include "main.h"
 #include "mode.h"
