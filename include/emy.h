@@ -366,7 +366,7 @@ u16 GetRandom(void);
 void* LoadObjTiles(void* src, s32 size);
 void* LoadObjPalette(void* src, s32 size);
 void ReleaseObjTiles(void* p);
-void ReleaseObjPalette(void* p);
+void ReleaseObjPalette(u8* p);
 void func_08012304(void* p);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);

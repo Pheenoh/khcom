@@ -147,7 +147,7 @@ u16 GetKeysRepeat(void);
 u16 GetRandom(void);
 void* GetBgScreenBase(s32 bg);
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void TaskPoolDestroy(TaskPool* a);
 void m4aSongNumStart(u16 n);
 u16 AnimGetFrame(AnimState* a);

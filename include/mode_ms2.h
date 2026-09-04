@@ -166,7 +166,7 @@ void DisableBg(s32 bg);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006184(s32 a, u16 b);
 void func_08107280(void);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void ReleaseObjTiles(void* a);
 void* LoadObjPalette(void* a, s32 b);
 void* LoadObjTiles(void* a, s32 b);

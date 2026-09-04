@@ -291,7 +291,7 @@ void* AnimGetGfx(void* a);
 void* AllocObjTiles(u16 size, void* src);
 void ReleaseObjTiles(void* p);
 void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjPalette(void* p);
+void ReleaseObjPalette(u8* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);

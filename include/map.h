@@ -516,7 +516,7 @@ void* TaskCreate(void* pool, void* desc, void* arg);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void func_08012304(void* a);
 void TaskPoolDestroy(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);

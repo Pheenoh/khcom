@@ -189,7 +189,7 @@ void LoadBgPalette(s32 bg, void* src, u16 size);
 void* LoadObjPalette(void* a, s32 b);
 void* LoadObjTiles(void* a, s32 b);
 void LoadPalette(void* src, void* dst, s32 size);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void ReleaseObjTiles(void* a);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 s32 abs(s32 x);

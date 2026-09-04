@@ -1535,7 +1535,7 @@ s32 func_080CD1F8(u32 a);
 void func_080C89B4(PooWork* w, PooSpot* b, u16 c);
 void func_08000D90(ListNode* node, void* pool);
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 u16 func_080CCB80(u16* p);
 void func_080CCB84(u16* p, u16 v);
 u16 func_080CCB88(u16* p);

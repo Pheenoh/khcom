@@ -240,7 +240,7 @@ extern u8 gUnk_0813ED4C[];
 extern u8 gUnk_09617E18[];
 extern u8 gUnk_0813ED90[];
 
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void TaskPoolDestroy(TaskPool* a);
 void* AnimGetGfx(AnimState* a);
 u16 func_0801AF1C(s32 a);

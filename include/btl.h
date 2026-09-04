@@ -323,7 +323,7 @@ void func_0802F284(s32 a, s32 b, s32 c);
 void* LoadObjTiles(void* src, s32 size);
 void* LoadObjPalette(void* src, s32 size);
 void ReleaseObjTiles(void* p);
-void ReleaseObjPalette(void* p);
+void ReleaseObjPalette(u8* p);
 
 typedef struct BtlMapWork {
     s32 unk_00;

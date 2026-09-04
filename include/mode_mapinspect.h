@@ -77,7 +77,7 @@ extern u8* gUnk_02035E28;
 extern u8 gUnk_09A3489C[];
 
 void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(void* a);
+void ReleaseObjPalette(u8* p);
 void func_08065AE0(void* a, s32 b);
 void UpdatePlayTime(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
