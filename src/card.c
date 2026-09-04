@@ -63,7 +63,7 @@ u8 func_08085290(u16 a);
 void func_080938F8(u16 a);
 u16 func_080857D4(u8 slot);
 u16 func_08065B6C(u16* a, TextSlot* b);
-s16 func_08065B08(void* a, u8 b);
+s16 func_08065B08(TextSlot* p, u8 n);
 u16 GetRandom(void);
 u16 func_08085770(u8 index);
 void func_08085788(u8 index, u16* src);
