@@ -2,6 +2,7 @@
 #define GUARD_UNK_0800EEBC_H
 
 #include "types.h"
+#include "m4a.h"
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "taskpool.h"
@@ -352,7 +353,7 @@ void func_08000D90(ListNode* node, void* pool);
 void* func_08012218(u32 type);
 void* ListPoolFirst(ListNode* pool);
 void* ListPoolNext(ListNode* node);
-void m4aMPlayFadeOut(void* info, u16 speed);
+void m4aMPlayFadeOut(MusicPlayerInfo* mplayInfo, u16 speed);
 void func_08006120(s32 a, s32 b);
 void func_080063A8(void);
 void func_0801C830(void);
