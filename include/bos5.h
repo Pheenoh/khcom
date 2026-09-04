@@ -366,7 +366,7 @@ void func_08012324();
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012614(void* a, s32 b);
 void func_080F83E0(void* a, void* b);
-void func_080F8374(void* a);
+void func_080F8374(GaEntryWork* e);
 
 extern u8 gUnk_09992114[];
 extern GaEntry gUnk_09992108[];
