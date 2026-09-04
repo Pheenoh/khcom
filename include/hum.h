@@ -799,7 +799,7 @@ void func_080E92B8(void* p);
 void func_080A324C(void* p);
 void func_080A3370(void* p);
 void func_080C700C(void* p);
-void func_080DDEB0(void* p);
+void func_080DDEB0(s32 a);
 void func_0810962C(void* p);
 void func_080E92F8(void* p);
 void func_080A32DC(void* p);
