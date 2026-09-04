@@ -498,7 +498,7 @@ extern void* gTaskDescMapNiseriku;
 extern void* gTaskDescMapMickey;
 
 void* memcpy(void* dst, const void* src, unsigned long n);
-void func_08000DE8(void* a, void* b);
+void func_08000DE8(TaskPool* a, Task* t);
 void ListPoolInit(void* pool);
 void ListPoolAddFree(void* a, void* pool, void* b);
 void* ListPoolActivate(void* node, void* pool);

@@ -1009,7 +1009,7 @@ extern u8 gUnk_0979D090[];
 extern u8 gUnk_0979D8B8[];
 u8 func_080DF750(void);
 const char* GetTaskName(void* t);
-void func_08000DE8(void* a, void* b);
+void func_08000DE8(TaskPool* a, Task* t);
 s32 strcmp(const char* a, const char* b);
 extern const char gUnk_096FE2F4[];
 extern u8 gTaskDescBosUrsulaThunder[];

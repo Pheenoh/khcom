@@ -414,7 +414,7 @@ u8 func_08110918(LstTask* t);
 u16 func_0811095C(LstTask* t, s16 a);
 void func_08110984(LstTask* t);
 void func_081109A8(LstTask* t);
-void func_08000DE8(void* pool, LstTask* t);
+void func_08000DE8(TaskPool* a, Task* t);
 
 extern u16 gUnk_09A4CABE[];
 extern s16 gUnk_09A4CAC4[];
