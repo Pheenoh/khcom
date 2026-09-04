@@ -102,7 +102,7 @@ s32 func_080A4D7C(u64* src);
 UnkStruct_080038C8* func_080038C8(s32 size);
 void func_080038E4(UnkStruct_080038C8* a, void* b, void* c);
 void m4aSongNumStart(u16 n);
-void TaskPoolDestroy(void* pool);
+void TaskPoolDestroy(TaskPool* a);
 u8 func_08006314(void);
 void* AnimUpdate(void* a);
 void AnimStart(void* a, u16 b, s32 c);

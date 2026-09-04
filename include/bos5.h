@@ -93,7 +93,7 @@ u16 func_0801AF1C(s32 a);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
-void TaskPoolDestroy(void* a);
+void TaskPoolDestroy(TaskPool* a);
 void DisableBg(s32 bg);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);

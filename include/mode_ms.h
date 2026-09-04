@@ -148,7 +148,7 @@ u16 GetRandom(void);
 void* GetBgScreenBase(s32 bg);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
-void TaskPoolDestroy(TaskPool* pool);
+void TaskPoolDestroy(TaskPool* a);
 void m4aSongNumStart(u16 n);
 u16 AnimGetFrame(AnimState* a);
 void SetBgScroll(s32 bg, s32 x, s32 y);

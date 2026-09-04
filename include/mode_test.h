@@ -177,7 +177,7 @@ void LoadPalette(void* src, void* dst, s32 size);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* a);
-void TaskPoolDestroy(TaskPool* pool);
+void TaskPoolDestroy(TaskPool* a);
 void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 void ModeRequest(Mode* mode, s32 arg);
 void UpdatePlayTime(void);

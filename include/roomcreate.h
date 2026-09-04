@@ -56,7 +56,7 @@ struct Task* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* a);
-void TaskPoolDestroy(TaskPool* pool);
+void TaskPoolDestroy(TaskPool* a);
 void SetBgPriority(s32 bg, u16 priority);
 void DisableBg(s32 bg);
 void ApproachValue(s32* value, s32 target, u16 steps);

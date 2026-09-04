@@ -493,7 +493,7 @@ void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimGetGfx(AnimState* a);
 void* AnimUpdate(AnimState* a);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void TaskPoolDestroy(void* pool);
+void TaskPoolDestroy(TaskPool* a);
 void FadePaletteToBlack(void* src, void* dst, u16 size, u16 amount);
 void LoadPaletteWithEffect(void* src, void* dst, u16 size);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
