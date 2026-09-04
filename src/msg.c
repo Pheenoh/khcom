@@ -5,9 +5,10 @@ static Ent02034A80* gUnk_02034A80;
 static Ent080658B8* gUnk_02034A84;
 static Ent080658B8* gUnk_02034A88;
 #ifndef VERSION_EU
-static void* gUnk_02034A8C;
+static Ent02034A8C* gUnk_02034A8C;
 #endif
 static u8 gUnk_02034A90;
+static u8 gUnk_02034A91;
 
 struct UnkStruct_02039DD0* gUnk_02039DD0;
 
@@ -111,7 +112,21 @@ INCLUDE_ASM("msg/func_08062DC8.s");
 INCLUDE_ASM("msg/func_08062F18.s");
 INCLUDE_ASM("msg/func_08063034.s");
 INCLUDE_ASM("msg/func_080634C4.s");
-INCLUDE_ASM("msg/func_080635C4.s");
+void func_080635C4(void) {
+    u8 i;
+    u8 j;
+
+    for (i = 0; i < gUnk_02034A90; i++) {
+        gUnk_02034A80[i].unk_00 = NULL;
+        gUnk_02034A80[i].unk_04 = NULL;
+        ReleaseObjPalette((u8*)gUnk_02034A80[i].unk_48);
+
+        for (j = 0; j < gUnk_02034A80[i].unk_50; j++) {
+            ReleaseObjTiles((void*)gUnk_02034A80[i].unk_08[j]);
+        }
+    }
+    gUnk_02034A90 = 0;
+}
 void func_08063658(void) {
     func_080635C4();
 
@@ -120,7 +135,43 @@ void func_08063658(void) {
     }
     gUnk_02034A80 = NULL;
 }
+#ifndef VERSION_EU
+void* func_08063678(s32 a) {
+    u8 i;
+    u8 j;
+
+    gUnk_02034A80 = EwramAlloc(0x840);
+    gUnk_02034A90 = 0;
+
+    for (i = 0; i < 24; i++) {
+        gUnk_02034A80[i].unk_00 = NULL;
+        gUnk_02034A80[i].unk_04 = NULL;
+        gUnk_02034A80[i].unk_48 = 0;
+        gUnk_02034A80[i].unk_50 = 0;
+        gUnk_02034A80[i].unk_52 = 0;
+        gUnk_02034A80[i].unk_53 = 0;
+
+        for (j = 0; j < 16; j++) {
+            gUnk_02034A80[i].unk_08[j] = 0;
+        }
+
+        switch (a) {
+        case 0:
+            gUnk_02034A80[i].unk_48 = (u32)LoadObjPalette(gUnk_09614718, 32);
+            break;
+        case 1:
+            gUnk_02034A80[i].unk_48 = (u32)LoadObjPalette(gUnk_09614738, 32);
+            break;
+        case 2:
+            gUnk_02034A80[i].unk_48 = (u32)LoadObjPalette(gUnk_09614758, 32);
+            break;
+        }
+    }
+    return (void*)gUnk_02034A80->unk_48;
+}
+#else
 INCLUDE_ASM("msg/func_08063678.s");
+#endif
 INCLUDE_ASM("msg/func_08063744.s");
 #ifndef VERSION_EU
 void func_08063EE4(s32 a, s32 b, u8 v, u8 d, u8 e) {
@@ -173,8 +224,49 @@ void func_0806422C(void) {
 #else
 INCLUDE_ASM("msg/func_0806422C.s");
 #endif
+#ifndef VERSION_EU
+void func_080642A8(u8 bg) {
+    u8 i;
+    u8 j;
+
+    GetBgCharBase(bg);
+    GetBgScreenBase(bg);
+    gUnk_02034A8C = EwramAlloc(400);
+
+    for (i = 0; i < 10; i++) {
+        gUnk_02034A8C[i].unk_00 = 0;
+        gUnk_02034A8C[i].unk_01 = 0;
+        gUnk_02034A8C[i].unk_22 = 0;
+        gUnk_02034A8C[i].unk_24 = bg;
+        gUnk_02034A8C[i].unk_23 = 16;
+        gUnk_02034A8C[i].unk_25 = 0;
+
+        for (j = 0; j < 16; j++) {
+            gUnk_02034A8C[i].unk_02[j] = 0;
+        }
+    }
+
+    gUnk_02034A91 = 0;
+}
+#else
 INCLUDE_ASM("msg/func_080642A8.s");
+#endif
+#ifndef VERSION_EU
+void func_08064338(u8 a, u8 b, u8 c, u8 d, u8 e, u8 f) {
+    u8 buf[5];
+
+    buf[1] = d / 10;
+    buf[3] = d - buf[1] * 10;
+    buf[0] = 0x82;
+    buf[1] += 0x4F;
+    buf[2] = 0x82;
+    buf[3] += 0x4F;
+    buf[4] = 0;
+    func_080643D4(a, b, c, buf, e, f);
+}
+#else
 INCLUDE_ASM("msg/func_08064338.s");
+#endif
 INCLUDE_ASM("msg/func_080643D4.s");
 INCLUDE_ASM("msg/func_08064624.s");
 #ifndef VERSION_EU
@@ -185,7 +277,38 @@ void func_08064B68(void) {
 #else
 INCLUDE_ASM("msg/func_08064B68.s");
 #endif
-INCLUDE_ASM("msg/func_08064B80.s");
+u16 func_08064B80(s32 a) {
+    s32 i;
+
+    gUnk_02034A84 = EwramAlloc(0xC00);
+
+    for (i = 0; i < 128; i++) {
+        gUnk_02034A84[i].unk_00 = 0;
+        gUnk_02034A84[i].unk_04 = 0;
+        gUnk_02034A84[i].unk_08 = NULL;
+        gUnk_02034A84[i].unk_0C = NULL;
+        gUnk_02034A84[i].unk_10 = NULL;
+        gUnk_02034A84[i].unk_15 = 0;
+        gUnk_02034A84[i].unk_14 = 0;
+
+        switch (a) {
+        case 0:
+            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614758, 32);
+            break;
+        case 1:
+            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614718, 32);
+            break;
+        case 2:
+            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614738, 32);
+            break;
+        }
+
+        func_080062F4(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
+    }
+
+    gUnk_02034A90 = 0;
+    return gUnk_02034A84->unk_0C->unk_06;
+}
 INCLUDE_ASM("msg/func_08064C34.s");
 INCLUDE_ASM("msg/func_08064D04.s");
 INCLUDE_ASM("msg/func_08064DD4.s");
@@ -421,8 +544,54 @@ void* _08066468(s32 a) {
     }
     return r;
 }
+#ifndef VERSION_JP
+void func_080664D8(s16 x, s32 y, Ent08066588* p, void* d, u16 h, u8 n) {
+    s16 x0 = x;
+    s16 cy = y;
+    u8 i;
+
+    cy -= 2;
+
+    for (i = 0; i < n; i++) {
+        if (p->unk_00 == NULL) {
+            cy += 12;
+            x = x0;
+        } else if (p->unk_05 != -1) {
+            DrawSprite(x, cy, gUnk_09EEB204, p->unk_00, d, 0, 0, h);
+            x += p->unk_05;
+        } else {
+            x += 3;
+        }
+        p++;
+    }
+}
+#else
 INCLUDE_ASM("msg/func_080664D8.s");
+#endif
+#ifndef VERSION_JP
+void func_08066588(s16 x, s32 y, Ent08066588* p, void* d, s32 e, u8 n) {
+    s16 x0 = x;
+    s16 cy = y;
+    u8 i;
+
+    cy -= 2;
+
+    for (i = 0; i < n; i++) {
+        if (p->unk_00 == NULL) {
+            cy += 12;
+            x = x0;
+        } else if (p->unk_05 != -1) {
+            func_08002488(x, cy, gUnk_09EEB204, p->unk_00, d, 0);
+            x += p->unk_05;
+        } else {
+            x += 3;
+        }
+        p++;
+    }
+}
+#else
 INCLUDE_ASM("msg/func_08066588.s");
+#endif
 INCLUDE_ASM("msg/func_0806662C.s");
 INCLUDE_ASM("msg/func_080666F0.s");
 void func_080667D8(s16 x, s32 y, void** p, void* d, u16 h, u8 n) {
@@ -441,7 +610,22 @@ void func_080667D8(s16 x, s32 y, void** p, void* d, u16 h, u8 n) {
         p++;
     }
 }
-INCLUDE_ASM("msg/func_08066864.s");
+void func_08066864(s16 x, s32 y, void** p, void* d, s32 e, u16 h, u8 n) {
+    s16 cy = y;
+    s16 x0 = x;
+    u8 i;
+
+    for (i = 0; i < n; i++) {
+        if (*p == NULL) {
+            cy += 12;
+            x = x0;
+        } else {
+            DrawSprite(x, cy, gUnk_09EEB204, *p, d, 0, 0, h);
+            x += 10;
+        }
+        p++;
+    }
+}
 
 void* func_080668F0(void) {
     return LoadObjTiles(gUnk_090D4180, 0x5A0);
@@ -1707,7 +1891,43 @@ INCLUDE_ASM("msg/func_08072B4C.s");
 INCLUDE_ASM("msg/func_08072C34.s");
 INCLUDE_ASM("msg/func_08072D98.s");
 INCLUDE_ASM("msg/func_08072EAC.s");
-INCLUDE_ASM("msg/func_08073170.s");
+u8 func_08073170(MsgWinWork* p, void* a) {
+    if (p->unk_29 == 0) {
+        if (gUnk_02039DC8->unk_80 == 0) {
+            func_08073508(p);
+        }
+    } else {
+        func_080736F8(p);
+    }
+
+    if (p->unk_2A != 0) {
+        gUnk_02039DC8->unk_87 = p->unk_20;
+
+        if (gUnk_02039DC8->unk_7C != 0) {
+            if (gUnk_02039DC8->unk_89 != 0) {
+                gUnk_02039DC8->unk_89--;
+            } else {
+                SetTaskUpdate(a, (void*)func_08073294);
+                _08073E6C(&p->unk_2C);
+                gUnk_02039DC8->unk_81 = 1;
+            }
+        } else {
+            SetTaskUpdate(a, (void*)func_08073294);
+            _08073E6C(&p->unk_2C);
+            gUnk_02039DC8->unk_81 = 1;
+        }
+    }
+
+    if (gUnk_02039DC8->unk_82 == 1) {
+        func_080062F4(p->unk_1C + 16, 0);
+        func_080062F4(14, 0);
+    } else {
+        func_080062F4(p->unk_1C + 16, 1);
+        func_080062F4(14, 1);
+    }
+    TaskPoolUpdate(p);
+    return 1;
+}
 void func_08073238(MsgWinWork* p) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
 
@@ -1748,7 +1968,37 @@ u8 func_08073294(MsgWinWork* p, void* a) {
     return 1;
 }
 INCLUDE_ASM("msg/func_08073318.s");
-INCLUDE_ASM("msg/func_0807344C.s");
+u8 func_0807344C(MsgWinWork* p, void* a) {
+    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+
+    ApproachValue(&p->unk_18, gUnk_09033C98[p->unk_20], p->unk_1E);
+
+    if (e->unk_00 != 62) {
+        func_08005244(p->unk_38, p->unk_18, 0);
+    } else {
+        DisableBg(p->unk_38);
+    }
+
+    if (p->unk_1E != 0) {
+        p->unk_1E--;
+    } else {
+        p->unk_1E = 0;
+
+        if ((gUnk_02039DC8->unk_64 & 4) == 0) {
+            gUnk_02039DC8->unk_64 &= ~1;
+        }
+        gUnk_02039DC8->unk_7C = 0;
+
+        if ((e->unk_14 & 0x8000) == 0) {
+            p->unk_2A = 0;
+            p->unk_29 = 0;
+            p->unk_27++;
+            SetTaskUpdate(a, (void*)func_08072EAC);
+        }
+    }
+    TaskPoolUpdate(p);
+    return 1;
+}
 INCLUDE_ASM("msg/func_08073508.s");
 INCLUDE_ASM("msg/func_0807361C.s");
 void func_080736F8(MsgWinWork* p) {

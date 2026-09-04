@@ -73,8 +73,26 @@ typedef struct Ent02034A80 {
     u8 unk_50;
     u8 unk_51;
     u8 unk_52;
-    u8 unk_53[5];
+    u8 unk_53;
+    u8 unk_54[4];
 } Ent02034A80;
+
+typedef struct Ent08066588 {
+    void* unk_00;
+    u8 unk_04;
+    s8 unk_05;
+    u8 unk_06[2];
+} Ent08066588;
+
+typedef struct Ent02034A8C {
+    u8 unk_00;
+    u8 unk_01;
+    u16 unk_02[16];
+    u8 unk_22;
+    u8 unk_23;
+    u8 unk_24;
+    u8 unk_25;
+} Ent02034A8C;
 
 typedef struct GameState {
     u8 unk_00[8];
@@ -107,20 +125,31 @@ typedef struct MsgFaceWork {
     MsgFaceCtl* unk_38;
 } MsgFaceWork;
 
+typedef struct Work08073E34 {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+    u32 unk_04;
+} Work08073E34;
+
 typedef struct MsgWinWork {
     u8 unk_00[0x14];
     void* palette;
     s32 unk_18;
-    u8 unk_1C[2];
+    u16 unk_1C;
     u8 unk_1E;
     u8 unk_1F;
     u32 unk_20;
     u8 unk_24;
     u8 unk_25[2];
     u8 unk_27;
-    u8 unk_28[2];
+    u8 unk_28;
+    u8 unk_29;
     u8 unk_2A;
-    u8 unk_2B[0xD];
+    u8 unk_2B;
+    Work08073E34 unk_2C;
+    u8 unk_34[4];
     u8 unk_38;
     u8 unk_39[3];
     MsgLine0806180C* unk_3C;
@@ -157,14 +186,6 @@ typedef struct BtlWork {
     TaskPool unk_40;
 } BtlWork;
 
-typedef struct Work08073E34 {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u32 unk_04;
-} Work08073E34;
-
 typedef struct UnkStruct_02039DC8 {
     u8 unk_00[0x48];
     s32 unk_48;
@@ -183,7 +204,12 @@ typedef struct UnkStruct_02039DC8 {
     u8 unk_7B;
     u8 unk_7C;
     u8 unk_7D;
-    u8 unk_7E[9];
+    u8 unk_7E;
+    u8 unk_7F;
+    u8 unk_80;
+    u8 unk_81;
+    u8 unk_82;
+    u8 unk_83[4];
     u8 unk_87;
     u8 unk_88;
     u8 unk_89;
@@ -310,6 +336,7 @@ extern u8 gUnk_09614618[];
 extern vu16 gIntrCheck;
 extern u32 gUnk_02034A78;
 extern GameState gGameState;
+extern u16 gUnk_09033C98[];
 extern u16 gUnk_09033CA0[];
 extern s32 gUnk_09033CD0[];
 extern s32 gUnk_09033CE0[];
@@ -353,6 +380,9 @@ void* func_08066904(void);
 void func_08066918(void* a, void* b);
 void func_08002488(s16 x, s16 y, void* a, void* b, void* c, u16 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
+void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f);
+void* GetBgCharBase(s32 bg);
+void* GetBgScreenBase(s32 bg);
 void* _08066468(s32 a);
 void func_080062F4(u16 a, s32 b);
 void m4aSongNumStart(u16 id);
@@ -383,7 +413,11 @@ void LoadObjPaletteBank(u16 a, void* b);
 void func_08002A10(void* a, void* b);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void func_08005244(s32 a, u16 b, u16 c);
+u8 func_08073294(MsgWinWork* p, void* a);
 u8 func_08073318(MsgWinWork* p, void* a);
+void func_08073508(MsgWinWork* p);
+void func_080736F8(MsgWinWork* p);
+u8 func_08072EAC(MsgWinWork* p, void* a);
 u8 func_08073F78(MsgWaitWork* p);
 void LoadBgMap(s32 bg, void* src, u16 size);
 u8 msgface_1(MsgFaceWork* p, void* a);
