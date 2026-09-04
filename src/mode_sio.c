@@ -1359,17 +1359,25 @@ void func_080B1848(void) {
 #endif
 }
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080B18C4(void) {
     LoadBgMap(2, gUnk_096F8C64, 0x800);
     gSioBtlCardgetWork->unk_08 = AllocObjTiles(0xC80, gUnk_088B6560);
     gSioBtlCardgetWork->unk_18 = gUnk_09EDE8CC[18];
     gSioBtlCardgetWork->unk_0C = AllocObjTiles(0xC80, gUnk_091CF5D4);
     gSioBtlCardgetWork->unk_1C = gUnk_09EEE4C8[6];
+#ifdef VERSION_JP
+    gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnk_0962CAFC, 0x500);
+#else
     gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnk_0962CAFC, 0x680);
+#endif
     gSioBtlCardgetWork->unk_30 = LoadObjPalette(gUnk_096FBDE4, 32);
     gSioBtlCardgetWork->unk_38 = gUnk_09EF38DC[0];
+#ifdef VERSION_JP
+    gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnk_0962D196, 0x480);
+#else
     gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnk_0962D196, 0x600);
+#endif
     gSioBtlCardgetWork->unk_34 = LoadObjPalette(gUnk_096FBE04, 32);
     gSioBtlCardgetWork->unk_3C = gUnk_09EF38E4[0];
 }
@@ -1377,17 +1385,25 @@ void func_080B18C4(void) {
 INCLUDE_ASM("mode_sio/func_080B18C4.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080B1974(void) {
     LoadBgMap(2, gUnk_096F8464, 0x800);
     gSioBtlCardgetWork->unk_08 = AllocObjTiles(0xC80, gUnk_091CF5D4);
     gSioBtlCardgetWork->unk_18 = gUnk_09EEE4C8[6];
     gSioBtlCardgetWork->unk_0C = AllocObjTiles(0xC80, gUnk_088B6560);
     gSioBtlCardgetWork->unk_1C = gUnk_09EDE8CC[18];
+#ifdef VERSION_JP
+    gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnk_0962D196, 0x480);
+#else
     gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnk_0962D196, 0x600);
+#endif
     gSioBtlCardgetWork->unk_30 = LoadObjPalette(gUnk_096FBE04, 32);
     gSioBtlCardgetWork->unk_38 = gUnk_09EF38E4[0];
+#ifdef VERSION_JP
+    gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnk_0962CAFC, 0x500);
+#else
     gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnk_0962CAFC, 0x680);
+#endif
     gSioBtlCardgetWork->unk_34 = LoadObjPalette(gUnk_096FBDE4, 32);
     gSioBtlCardgetWork->unk_3C = gUnk_09EF38DC[0];
 }
