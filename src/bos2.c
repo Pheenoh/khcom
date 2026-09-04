@@ -48,7 +48,20 @@ void func_080B9FC4(TmBodyWork* work) {
     }
 }
 
+#ifdef NON_MATCHING
+void func_080BA08C(BosSub* work, s16 x, s16 y, s16 z, u16 a, u16 b, s32 c, s16 d) {
+    work->x = x << 8;
+    work->y = y << 8;
+    work->z = z << 8;
+
+    if (d >= 6 && d <= 7) {
+        func_080122AC(&work->unk_040, 8, a, b);
+        func_08012324(&work->unk_040, work->x, work->y, work->z);
+    }
+}
+#else
 INCLUDE_ASM("bos2/func_080BA08C.s");
+#endif
 
 void func_080BA0E4(s32* p, s32 a, s32 b, s32 c) {
     p[1] = (s16)a << 8;
@@ -64,8 +77,76 @@ void func_080BA104(BosSub* work) {
     func_08012324(&work->unk_040, work->x, work->y, work->z);
 }
 
-INCLUDE_ASM("bos2/func_080BA11C.s");
-INCLUDE_ASM("bos2/func_080BA2B0.s");
+void func_080BA11C(TmFootWork* work) {
+    work->unk_002 = 0;
+    work->unk_000 = 0;
+    func_08002A10(work->unk_00C, gUnk_09654C04);
+    func_08002A10(work->unk_010, gUnk_09654C04);
+    work->unk_12C = gUnk_09EF39DC[2];
+    work->unk_244 = gUnk_09EF39DC[2];
+
+    if (work->unk_47C->unk_28 & 0x20) {
+        work->unk_020 = work->unk_47C->unk_08 + 0x100;
+        work->unk_138 = work->unk_47C->unk_08 - 0x600;
+        work->unk_250 = work->unk_47C->unk_08 + 0x600;
+        work->unk_368 = work->unk_47C->unk_08 - 0x200;
+        work->unk_024 = work->unk_47C->unk_0C + 0x200;
+        work->unk_13C = work->unk_47C->unk_0C - 0x200;
+        work->unk_254 = work->unk_47C->unk_0C + 0x500;
+        work->unk_36C = work->unk_47C->unk_0C - 0x200;
+        work->unk_028 = work->unk_47C->unk_10 - 0x400;
+        work->unk_140 = work->unk_47C->unk_10 - 0x400;
+        work->unk_258 = work->unk_47C->unk_10 + 0x2800;
+        work->unk_370 = work->unk_47C->unk_10 + 0x2B00;
+    } else {
+        work->unk_020 = work->unk_47C->unk_08 + 0x600;
+        work->unk_138 = work->unk_47C->unk_08 - 0x100;
+        work->unk_250 = work->unk_47C->unk_08 + 0x200;
+        work->unk_368 = work->unk_47C->unk_08 - 0x600;
+        work->unk_024 = work->unk_47C->unk_0C - 0x200;
+        work->unk_13C = work->unk_47C->unk_0C + 0x200;
+        work->unk_254 = work->unk_47C->unk_0C - 0x500;
+        work->unk_36C = work->unk_47C->unk_0C + 0x200;
+        work->unk_028 = work->unk_47C->unk_10 - 0x400;
+        work->unk_140 = work->unk_47C->unk_10 - 0x400;
+        work->unk_258 = work->unk_47C->unk_10 + 0x2800;
+        work->unk_370 = work->unk_47C->unk_10 + 0x2B00;
+    }
+}
+void func_080BA2B0(TmFootWork* work) {
+    func_08002A10(work->unk_00C, gUnk_09654C04);
+    func_08002A10(work->unk_010, gUnk_09654C04);
+    work->unk_12C = gUnk_09EF39DC[0];
+    work->unk_244 = gUnk_09EF39DC[0];
+
+    if (work->unk_47C->unk_28 & 0x20) {
+        work->unk_020 = work->unk_47C->unk_08 + 0x100;
+        work->unk_138 = work->unk_47C->unk_08 - 0x600;
+        work->unk_250 = work->unk_47C->unk_08 + 0x600;
+        work->unk_368 = work->unk_47C->unk_08 - 0x200;
+        work->unk_024 = work->unk_47C->unk_18 + 0x200;
+        work->unk_13C = work->unk_47C->unk_18 - 0x200;
+        work->unk_254 = work->unk_47C->unk_18 + 0x500;
+        work->unk_36C = work->unk_47C->unk_18 - 0x200;
+        work->unk_028 = work->unk_47C->unk_1C - 0x400;
+        work->unk_140 = work->unk_47C->unk_1C - 0x400;
+        work->unk_258 = work->unk_47C->unk_1C + 0x1900;
+        work->unk_370 = work->unk_47C->unk_1C + 0x1C00;
+    } else {
+        work->unk_020 = work->unk_47C->unk_08 + 0x600;
+        work->unk_138 = work->unk_47C->unk_08 - 0x100;
+        work->unk_250 = work->unk_47C->unk_08 + 0x200;
+        work->unk_368 = work->unk_47C->unk_08 - 0x600;
+        work->unk_024 = work->unk_47C->unk_18 - 0x200;
+        work->unk_13C = work->unk_47C->unk_18 + 0x200;
+        work->unk_254 = work->unk_47C->unk_18 - 0x500;
+        work->unk_36C = work->unk_47C->unk_18 + 0x200;
+        work->unk_028 = work->unk_47C->unk_1C - 0x400;
+        work->unk_140 = work->unk_47C->unk_1C - 0x400;
+        work->unk_258 = work->unk_47C->unk_1C + 0x1900;
+        work->unk_370 = work->unk_47C->unk_1C + 0x1C00;
+    }
+}
 
 void func_080BA43C(TmFootWork* work, s16 a) {
     work->unk_12C = gUnk_09EF39DC[gUnk_09EF2244[a].unk_06];
@@ -74,7 +155,42 @@ void func_080BA43C(TmFootWork* work, s16 a) {
     work->unk_140 += gUnk_09EF2244[a].unk_0A << 8;
 }
 
-INCLUDE_ASM("bos2/func_080BA49C.s");
+void func_080BA49C(TmFootWork* work) {
+    work->unk_002 = 0;
+    work->unk_000 = 0;
+    func_08002A10(work->unk_00C, gUnk_09658C04);
+    func_08002A10(work->unk_010, gUnk_09658C04);
+    work->unk_12C = gUnk_09EF3A1C[6];
+    work->unk_244 = gUnk_09EF3A1C[1];
+
+    if (work->unk_47C->unk_28 & 0x20) {
+        work->unk_020 = work->unk_47C->unk_14 + 0x500;
+        work->unk_138 = work->unk_47C->unk_14 - 0x600;
+        work->unk_250 = work->unk_47C->unk_14 + 0x600;
+        work->unk_368 = work->unk_47C->unk_14 - 0x200;
+        work->unk_024 = work->unk_47C->unk_18 + 0x200;
+        work->unk_13C = work->unk_47C->unk_18 - 0x200;
+        work->unk_254 = work->unk_47C->unk_18 + 0x500;
+        work->unk_36C = work->unk_47C->unk_18 - 0x200;
+        work->unk_028 = work->unk_47C->unk_1C - 0x400;
+        work->unk_140 = work->unk_47C->unk_1C - 0x400;
+        work->unk_258 = work->unk_47C->unk_1C + 0x1E00;
+        work->unk_370 = work->unk_47C->unk_1C + 0x3200;
+    } else {
+        work->unk_020 = work->unk_47C->unk_14 + 0x200;
+        work->unk_138 = work->unk_47C->unk_14 - 0x100;
+        work->unk_250 = work->unk_47C->unk_14 + 0x200;
+        work->unk_368 = work->unk_47C->unk_14 - 0x600;
+        work->unk_024 = work->unk_47C->unk_18 - 0x200;
+        work->unk_13C = work->unk_47C->unk_18 + 0x200;
+        work->unk_254 = work->unk_47C->unk_18 - 0x500;
+        work->unk_36C = work->unk_47C->unk_18 + 0x200;
+        work->unk_028 = work->unk_47C->unk_1C - 0x400;
+        work->unk_140 = work->unk_47C->unk_1C - 0x400;
+        work->unk_258 = work->unk_47C->unk_1C + 0x1E00;
+        work->unk_370 = work->unk_47C->unk_1C + 0x3200;
+    }
+}
 INCLUDE_ASM("bos2/func_080BA62C.s");
 
 void func_080BA8C8(TmFootWork* work, s16 a) {
@@ -86,7 +202,51 @@ void func_080BA8C8(TmFootWork* work, s16 a) {
 
 INCLUDE_ASM("bos2/task_bos_tm_foot_0.s");
 INCLUDE_ASM("bos2/task_bos_tm_foot_1.s");
+#ifdef NON_MATCHING
+void task_bos_tm_foot_2(TmFootWork* work) {
+    void* pal;
+    u16 mode;
+    s16 x;
+    s16 y;
+    TmFootSub* s0;
+    TmFootSub* s1;
+    TmFootSub* s2;
+    TmFootSub* s3;
+
+    mode = 0x801;
+
+    if (work->unk_47C->unk_28 & 0x20) {
+        mode = 0x800;
+    }
+
+    if (gBtlWork->unk_070 != 0) {
+        pal = work->unk_014;
+    } else if (work->unk_47C->unk_28 & 1) {
+        if (gFrameCounter & 1) {
+            pal = work->unk_018;
+        } else {
+            pal = work->unk_014;
+        }
+    } else {
+        pal = work->unk_014;
+    }
+
+    s0 = (TmFootSub*)&work->unk_01C;
+    s1 = s0 + 1;
+    s2 = s0 + 2;
+    s3 = s0 + 3;
+    WorldToScreen(&x, &y, s0->x, s0->y, s0->z);
+    DrawSprite(x, y, s0->gfx, work->unk_00C, pal, 0, mode, (u16)(-4100 - (s0->y >> 8) * 4));
+    WorldToScreen(&x, &y, s1->x, s1->y, s1->z);
+    DrawSprite(x, y, s1->gfx, work->unk_010, pal, 0, mode, (u16)(-4100 - (s1->y >> 8) * 4));
+    WorldToScreen(&x, &y, s2->x, s2->y, s2->z);
+    DrawSprite(x, y, s2->gfx, work->tiles, pal, 0, mode, (u16)(-4100 - (s2->y >> 8) * 4));
+    WorldToScreen(&x, &y, s3->x, s3->y, s3->z);
+    DrawSprite(x, y, s3->gfx, work->tiles, pal, 0, mode, (u16)(-4100 - (s3->y >> 8) * 4));
+}
+#else
 INCLUDE_ASM("bos2/task_bos_tm_foot_2.s");
+#endif
 
 void task_bos_tm_foot_3(TmFootWork* work) {
     if ((*(u16*)((u8*)*(void**)((u8*)work + 0x47C) + 40) & 8) == 0) {
@@ -266,8 +426,52 @@ void func_080BB4C0(TmArmWork* work) {
     d->unk_04 = work->unk_00C->unk_10;
 }
 
+#ifdef NON_MATCHING
+void func_080BB518(TmArmJoint* joints) {
+    s32 x;
+    s32 y;
+    u32 i;
+
+    x = 0;
+    y = 0;
+
+
+    for (i = 0; i < 3; i++) {
+        joints[i].unk_0C = x;
+        joints[i].unk_10 = y;
+        x += gSineTable[joints[i].unk_08] * gUnk_0961A63C[joints[i].unk_26];
+        y += -gSineTable[joints[i].unk_08 + 0x40] * gUnk_0961A63C[joints[i].unk_26];
+    }
+
+    joints[3].unk_0C = x;
+    joints[3].unk_10 = y;
+}
+#else
 INCLUDE_ASM("bos2/func_080BB518.s");
+#endif
+#ifdef NON_MATCHING
+void func_080BB588(u8* joints, u16 a) {
+    s32 i;
+
+    for (i = 0; i < 4; i++) {
+        u8* p = joints + i * 0x34;
+        u8* q = p + 8;
+
+        ApproachAngle(q, *(u16*)(q + 12), a);
+    }
+
+    func_080BB518(joints);
+
+    for (i = 0; i < 4; i++) {
+        u8* p = joints + i * 0x34;
+
+        *(s32*)p += (*(s32*)(p + 12) - *(s32*)p) >> 1;
+        *(s32*)(p + 4) += (*(s32*)(p + 16) - *(s32*)(p + 4)) >> 1;
+    }
+}
+#else
 INCLUDE_ASM("bos2/func_080BB588.s");
+#endif
 
 void func_080BB5E8(u8* joints, TmAnim* a) {
     if (a->unk_00 >= a->unk_08[a->unk_02].unk_00) {
@@ -544,7 +748,34 @@ s32 func_080BDB58(void) {
     return gUnk_0203B4E8;
 }
 
+#ifdef NON_MATCHING
+void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
+    work->unk_00 = arg;
+    work->unk_28 = 0x80;
+    work->unk_04 = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->unk_08 = gUnk_09EF3A48[12];
+    work->unk_0C = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->unk_10 = gUnk_09EF3A48[14];
+    work->unk_14 = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    work->unk_18 = LoadObjPalette(gUnk_08F69BC4, 32);
+    func_080062F4(*(u16*)((u8*)work->unk_14 + 6) + 16, 1);
+    work->unk_2E = 0;
+    work->unk_1C = 0;
+    work->unk_1E = 0;
+    work->unk_20 = GetRandom() % 0x79 + 0x1E0;
+    work->unk_22 = 0;
+    work->unk_24 = 1;
+    work->unk_2D = 1;
+    work->unk_32 = 0;
+    work->unk_34 = 0;
+    work->unk_38 = 0;
+    work->unk_42 = 0;
+    TaskPoolInit(&work->unk_44, 1);
+    TaskCreate(&work->unk_44, gTaskDescBtlShadow, &((BosSub*)work->unk_00)[1]);
+}
+#else
 INCLUDE_ASM("bos2/task_bos_jf_lamp_0.s");
+#endif
 INCLUDE_ASM("bos2/task_bos_jf_lamp_1.s");
 
 void task_bos_jf_lamp_2(JfLampWork* work) {
@@ -698,7 +929,63 @@ void func_080BE478(u8 a, JfMajinWork* work) {
     }
 }
 
+#ifdef NON_MATCHING
+void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
+    JfWork* arg = p;
+    s32 x;
+    s32 y;
+    s32 z;
+
+
+    work->unk_00 = arg;
+    x = arg->x;
+    y = arg->y;
+    z = arg->z;
+    work->unk_48 = 0;
+    work->unk_46 = 0;
+    work->unk_44 = 0;
+    work->unk_50 = x;
+    work->unk_54 = y;
+    work->unk_58 = z;
+    work->unk_5C = 0;
+    work->unk_5E = gUnk_0203ACC4;
+    work->unk_60 = gUnk_0203ACD4;
+    work->unk_62 = gUnk_0203ACC0;
+    work->unk_64 = gUnk_0203ACC4;
+    work->unk_66 = gUnk_0203ACD4;
+    work->unk_68 = gUnk_0203ACC0;
+    work->unk_49 = 0;
+    work->unk_4A = 0;
+    work->unk_4C = 0x133;
+    work->unk_6A = 0;
+    gUnk_0203B4F0[0] = gUnk_08125E24;
+    gUnk_0203B4F0[1] = gUnk_08125E24;
+    gUnk_0203B4F0[2] = gUnk_08125E24;
+    gUnk_0203B4F0[3] = gUnk_0203B510;
+    RequestDma3Copy(gUnk_096CAC64, gUnk_0203B510, 0x800);
+    gUnk_0203B500 = gUnk_0203B4F0;
+    LoadBgPalette(1, gUnk_096FB584, 32);
+    LoadBgTiles(1, gUnk_09665C04, 0x2700);
+    func_0800516C(1, gUnk_0203B500, 2, 2);
+    work->tiles = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->unk_08 = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    work->unk_0C = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->unk_2C = 1;
+    work->unk_30 = 0x2A200;
+    work->unk_34 = 0x12600;
+    work->unk_40 = 0;
+    work->unk_3C = 0;
+    AnimInit(&work->unk_14, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->unk_14, 1, 1);
+    work->gfx = AnimGetGfx(&work->unk_14);
+    func_08005244(1, ((gBtlWork->unk_000 - arg->x) >> 8) + 0x308,
+                  ((gBtlWork->unk_004 - (arg->y + arg->z)) >> 8) + 0x126);
+    TaskPoolInit(&work->unk_6C, 2);
+    TaskCreate(&work->unk_6C, gUnk_09EF2A74, work->unk_00);
+}
+#else
 INCLUDE_ASM("bos2/task_bos_jf_majin_0.s");
+#endif
 
 u8 task_bos_jf_majin_1(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
@@ -2343,7 +2630,7 @@ void task_bos_dsd_ita_0(DsdItaWork* work, void* arg) {
     work->unk_080 = 0;
     func_080122AC(&work->unk_004, 7, 0x20, 3);
     func_08012324(&work->unk_004, work->x, work->y, work->z);
-    work->unk_088 = (u32)gUnk_09EF3BF8;
+    work->unk_088 = (u32)gUnk_09EF3BF8[0];
     work->unk_08C = (u32)gUnk_09EF3C18;
 }
 
@@ -2537,7 +2824,44 @@ void func_080C43E4(s32* p, s32 target) {
     *p = cur + delta;
 }
 
-INCLUDE_ASM("bos2/task_bos_dsd_rock_0.s");
+void task_bos_dsd_rock_0(DsdRockWork* work, DsdWork* arg) {
+    s32 r;
+    u8 ang;
+
+    work->unk_00 = arg;
+    work->unk_20 = GetRandom() % 2;
+    work->unk_1C = gUnk_09EF3BF8[GetRandom() % 3 + 1];
+
+    if (work->unk_00->unk_35C > 0) {
+        if (work->unk_20 != 0) {
+            r = GetRandom() % 0x301 + 0x700;
+            ang = GetRandom() % 13 + 58;
+            work->x = gBtlWork->unk_000 - 0x8800;
+            work->y = (*(s16*)((u8*)gBtlWork + 0xE0) - 140) << 8;
+        } else {
+            r = GetRandom() % 0x201 + 0x400;
+            ang = -(GetRandom() % 13 + 58);
+            work->x = gBtlWork->unk_000 + 0x8800;
+            work->y = (*(s16*)((u8*)gBtlWork + 0xDE) - 140) << 8;
+        }
+    } else {
+        if (work->unk_20 != 0) {
+            r = GetRandom() % 0x301 + 0x700;
+            ang = -(GetRandom() % 13 + 58);
+            work->x = gBtlWork->unk_000 + 0x8800;
+            work->y = (*(s16*)((u8*)gBtlWork + 0xE0) - 140) << 8;
+        } else {
+            r = GetRandom() % 0x201 + 0x400;
+            ang = GetRandom() % 13 + 58;
+            work->x = gBtlWork->unk_000 - 0x8800;
+            work->y = (*(s16*)((u8*)gBtlWork + 0xDE) - 140) << 8;
+        }
+    }
+
+    work->z = (GetRandom() % 101) << 8;
+    work->unk_10 = gSineTable[ang] * r >> 8;
+    work->unk_18 = -gSineTable[ang + 0x40] * r >> 8;
+}
 
 u8 task_bos_dsd_rock_1(DsdRockWork* work) {
     if ((work->unk_00->unk_358 & 0x40) != 0) {

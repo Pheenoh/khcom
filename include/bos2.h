@@ -404,9 +404,10 @@ typedef struct JfMajinWork {
     s16 unk_40;
     u8 unk_42[0x2];
     s16 unk_44;
-    u8 unk_46[0x2];
+    s16 unk_46;
     u8 unk_48;
-    u8 unk_49[0x3];
+    u8 unk_49;
+    u16 unk_4A;
     u32 unk_4C;
     u32 unk_50;
     u32 unk_54;
@@ -452,7 +453,14 @@ typedef struct JfBorderlineWork {
 } JfBorderlineWork;
 
 typedef struct TmWork {
-    u8 unk_00[0x28];
+    u8 unk_00[0x8];
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    s32 unk_14;
+    s32 unk_18;
+    s32 unk_1C;
+    u8 unk_20[0x8];
     u16 unk_28;
     u8 unk_2A[0x2];
     u32 unk_2C;
@@ -563,6 +571,17 @@ typedef struct TmFootStep {
     u8 unk_10[0x10];
 } TmFootStep;
 
+typedef struct TmFootSub {
+    u32 unk_000;
+    s32 x;
+    s32 y;
+    s32 z;
+    u8 unk_010[0x100];
+    void* gfx;
+    u8 unk_114;
+    u8 unk_115[0x3];
+} TmFootSub;
+
 typedef struct TmFootWork {
     u16 unk_000;
     u8 unk_002;
@@ -599,22 +618,26 @@ typedef struct TmFootWork {
     u8 unk_360;
     u8 unk_361[0x3];
     u32 unk_364;
-    u8 unk_368[0x8];
+    u32 unk_368;
+    u32 unk_36C;
     u32 unk_370;
-    u8 unk_374[0x104];
+    u8 unk_374[0x100];
+    void* unk_474;
     u8 unk_478;
-    u8 unk_479[0x7];
+    u8 unk_479[0x3];
+    TmWork* unk_47C;
     u32 unk_480;
 } TmFootWork;
 
 extern s16 gSineTable[];
+extern u16 gUnk_0961A63C[];
 extern u8 gUnk_096874E4[];
 extern u8 gUnk_096FB744[];
 extern u8 gUnk_09EF2E68[];
 extern s16 gUnk_0961A89E[];
 extern s16 gUnk_0961A8B0[];
 extern void* gUnk_09EF3C50[];
-extern void* gUnk_09EF3BF8;
+extern void* gUnk_09EF3BF8[];
 extern void* gUnk_09EF3C18;
 extern void* gUnk_09EF280C[];
 extern void* gUnk_09EF28D0[];
@@ -631,6 +654,10 @@ extern void* gUnk_09EF275C[][15];
 extern void* gUnk_09EF2D94[];
 extern u8 gTaskDescBosTmClb[];
 extern u8 gUnk_09652E84[];
+extern u8 gUnk_09654C04[];
+extern u8 gUnk_09658C04[];
+extern u8 gUnk_09665C04[];
+extern u8 gUnk_096CAC64[];
 extern u8 gUnk_096FB2A4[];
 extern u8 gTaskDescBosDsdIta[];
 extern u8 gUnk_096983E4[];
@@ -665,9 +692,13 @@ extern u8 gTaskDescBosDsdEnergy2[];
 extern s16 gUnk_0961A6A8[];
 extern s8 gUnk_0961A70A[];
 extern void* gUnk_09EF39DC[];
+extern void* gUnk_09EF3A1C[];
+extern u8 gUnk_09EF2A74[];
+extern u8 gUnk_08125E24[];
 extern TmFootStep gUnk_09EF2244[];
 extern TmFootStep gUnk_09EF25A4[];
 
+void func_08002A10(void* a, void* b);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_08012614(void* a, s32 b);
@@ -774,7 +805,7 @@ u8 func_080C0258(u16* p, s16 b, u8 c, u8 d);
 void func_080BA43C(TmFootWork* work, s16 a);
 void func_080BA8C8(TmFootWork* work, s16 a);
 s32 func_080BE940(JfMajinWork* work);
-void func_080BB588(u8* joints, s32 a);
+void func_080BB588(u8* joints, u16 a);
 void func_080BB5E8(u8* joints, TmAnim* a);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_080C2F68(DsdMainWork* work);
