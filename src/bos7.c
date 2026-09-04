@@ -417,7 +417,6 @@ u8 func_08110918(LstWork* work) {
     return result;
 }
 
-#ifndef VERSION_EU
 u8 func_08110938(LstWork* work) {
     LstState* s;
     u8 result;
@@ -431,9 +430,6 @@ u8 func_08110938(LstWork* work) {
 
     return result;
 }
-#else
-INCLUDE_ASM("bos7/func_08110938.s");
-#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("bos7/eu_0810F08C.s");

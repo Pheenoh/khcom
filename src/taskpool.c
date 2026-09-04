@@ -284,15 +284,11 @@ void ModeRequest(Mode* mode, s32 arg) {
     gPendingModeArg = arg;
 }
 
-#ifndef VERSION_EU
 void ModeRequestHeapReset(Mode* mode, s32 arg) {
     gPendingMode = mode;
     gPendingModeArg = arg;
     gModeFlags |= 0x10;
 }
-#else
-INCLUDE_ASM("taskpool/ModeRequestHeapReset.s");
-#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("taskpool/eu_0800115C.s");

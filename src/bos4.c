@@ -2116,7 +2116,6 @@ void task_bos_ursula_bubble_3(UrsulaBubbleWork* work) {
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_3.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080DD9B0(UrsulaBubbleWork* work) {
     s32 i;
 
@@ -2126,9 +2125,6 @@ void func_080DD9B0(UrsulaBubbleWork* work) {
         }
     }
 }
-#else
-INCLUDE_ASM("bos4/func_080DD9B0.s");
-#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("bos4/eu_080DA80C.s");

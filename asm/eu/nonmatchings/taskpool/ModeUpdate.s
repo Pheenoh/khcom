@@ -6,5 +6,5 @@
 	.thumb_func
 	.type ModeUpdate, %function
 ModeUpdate:
-	.incbin "roms/B8CP.gba", 0x1178, 0x148
+	.incbin "roms/B8CP.gba", 0x115c, 0x164
 .syntax divided

@@ -1876,7 +1876,6 @@ void func_0810CEC8(BosLstWork* work) {
     }
 }
 
-#ifndef VERSION_EU
 u8 func_0810D304(BosLstWork* work, s32 idx) {
     s32 i;
     u8 r;
@@ -1896,9 +1895,6 @@ u8 func_0810D304(BosLstWork* work, s32 idx) {
     }
     return r;
 }
-#else
-INCLUDE_ASM("bos6/func_0810D304.s");
-#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("bos6/eu_0810BA1C.s");
