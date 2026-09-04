@@ -590,7 +590,7 @@ void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08116F08(void);
 void SetBgMode0(void);
 void SetBgMode1(void);
-void func_08000DE8(void* pool, void* task);
+void func_08000DE8(TaskPool* a, Task* t);
 void func_0801CD74(EvtObj* obj, s32 anim);
 void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c);
 void func_0801CE00(EvtObj* obj, u16 a);

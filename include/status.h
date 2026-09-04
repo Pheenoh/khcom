@@ -381,7 +381,7 @@ void func_080D8374(void);
 u16 func_080D8B84(void** a, void** b, void** c);
 void* func_080D8EB4(void* a, u16 b, u8 c, u16 d, s32 e);
 u8 func_080D8F04(void* a);
-void func_08000DE8(void* a, void* b);
+void func_08000DE8(TaskPool* a, Task* t);
 void func_0800FD68(s32 a);
 void func_0801BDDC(s32 a, s32 b, s32 c, s32 d);
 void func_08005974(AnimState* a, u16 b, u16 c, u32 d, u32 e);

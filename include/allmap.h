@@ -194,7 +194,7 @@ void ReleaseObjPalette(u8* p);
 void ReleaseObjTiles(void* a);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 s32 abs(s32 x);
-void func_08000DE8(void* a, Task* t);
+void func_08000DE8(TaskPool* a, Task* t);
 u8 IsTaskActive(Task* t);
 u16 func_08003524(void* a, s32 b);
 void EnableBg(s32 a);
