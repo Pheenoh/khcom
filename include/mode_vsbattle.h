@@ -287,7 +287,7 @@ void TaskPoolDestroy(TaskPool* a);
 void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
-void* AnimGetGfx(void* a);
+void* AnimGetGfx(AnimState* a);
 void* AllocObjTiles(u16 size, void* src);
 void ReleaseObjTiles(void* p);
 void* LoadObjPalette(void* src, s32 size);
