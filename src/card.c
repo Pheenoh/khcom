@@ -58,6 +58,7 @@ void func_0808DB04(void** p);
 void func_0808CDE8(u8* work, u8 b);
 u16 func_0806BA74(s32 mode, s32 flag);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
+void func_080DFF4C(void* p);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void* TaskCreate(void* a, void* desc, void* args);
 u8 func_08085290(u16 a);
@@ -8647,7 +8648,55 @@ void* func_08095C28(u8* w, u16 b, void* pool, u8 mode) {
     args.unk_0E = w[0xB8];
     return ((void**)TaskCreate(pool, gUnk_09EE7560, &args))[1];
 }
-INCLUDE_ASM("card/func_08095CA8.s");
+void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
+    PrizeCardTaskArgs args;
+    CardDef* def;
+    CardBack* back;
+    u8* q;
+
+    args = *p;
+    w->unk_C8 = args.unk_20;
+    def = &gCardDefs[args.unk_20];
+    w->unk_00 = LoadObjTiles(def->unk_04, 0x300);
+    w->unk_04 = LoadObjPalette(def->unk_08, 32);
+    *(UnkStruct_08099412*)&w->unk_20[0x14] = *(UnkStruct_08099412*)&def->unk_1C;
+
+    if (gCardDefs[w->unk_C8].unk_1E & 12) {
+        back = &gUnk_08F709B0[3];
+    } else {
+        back = &gUnk_08F709B0[w->unk_20[0x22]];
+    }
+
+    w->unk_08 = LoadObjTiles(back->unk_0C, 0x280);
+    w->unk_0C = LoadObjTiles(*(void**)back->unk_14, 0x600);
+    w->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->unk_14 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
+    w->unk_18 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    w->unk_1C = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->unk_A8 = args.unk_00;
+    w->unk_AC = args.unk_04;
+    *(s32*)&w->unk_B0[0] = args.unk_08;
+    *(s32*)&w->unk_B0[4] = 0;
+    w->unk_F6 = 24;
+    func_080DFF4C(&w->unk_A8);
+    w->unk_CC = -(GetRandom() % 129 + 0x300);
+    w->unk_D0 = GetRandom() % 129 + 0x80;
+    w->unk_F4 = GetRandom() % 256;
+    w->unk_E0 = 0x80;
+    w->unk_E2 = 0x80;
+    w->unk_F2 = 0x80;
+    w->unk_F7 = 0;
+    w->unk_F8 = 0;
+    q = &w->unk_4C[0];
+    func_080122AC(q, 5, 30, 10);
+    func_08012614(q, 1);
+    func_08012324(q, w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
+    w->unk_F9 = 0;
+    w->unk_FC[0] = 0;
+    w->unk_FA = 0;
+    w->unk_FB = 0;
+    TaskPoolInit((TaskPool*)w->unk_20, 1);
+}
 INCLUDE_ASM("card/func_08095E68.s");
 void func_080960D8(PrizeCardWork* w) {
     s32 cx = 0x7800;

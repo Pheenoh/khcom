@@ -680,6 +680,14 @@ typedef struct PrizeCardArgs {
     s32 unk_00[8];
 } PrizeCardArgs;
 
+typedef struct PrizeCardTaskArgs {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x14];
+    s32 unk_20;
+} PrizeCardTaskArgs;
+
 typedef struct PrizeCardInitWork {
     TaskPool unk_00;
     u8 unk_14;
