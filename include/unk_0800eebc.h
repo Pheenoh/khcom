@@ -514,6 +514,7 @@ void func_08014588(s32 x, s32 y, s32 z, s32 w, u16 a, u16 b);
 void func_0801440C(void);
 void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f);
 void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t);
+void func_080175BC(Collider* p, BtlObj* o, u8 a, u8 b);
 void func_080177EC(void);
 void func_080153C8(void);
 void func_080169A0(s32 x, s32 y, s32 z, u8 f);

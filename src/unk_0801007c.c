@@ -2057,7 +2057,33 @@ void func_08017514(s32 x, s32 y, s32 z, s32 w) {
     gUnk_02034928->unk_34 |= 8;
 }
 INCLUDE_ASM("unk_0800eebc/func_080175BC.s");
-INCLUDE_ASM("unk_0800eebc/func_08017728.s");
+void func_08017728(u8 a, u8 b) {
+    Collider* p;
+    BtlObj* o;
+
+    if (gBtlWork->unk_068 & 0x4000) {
+        if (gBtlWork->unk_068 & 0x20000000) {
+            p = gBtlWork->unk_07C;
+            o = (BtlObj*)gUnk_02039B9C->unk_07C;
+        } else {
+            p = gUnk_02039B9C->unk_07C;
+            o = (BtlObj*)gBtlWork->unk_07C;
+        }
+
+        func_080175BC(p, o, a, b);
+    } else {
+        p = gBtlWork->unk_07C;
+        o = ListPoolFirst(&gBtlWork->unk_080);
+
+        while (o != 0) {
+            if (!(o->unk_034 & 0x40000000) && o->unk_000 != 31) {
+                func_080175BC(p, o, a, b);
+            }
+
+            o = ListPoolNext(&o->unk_0B8);
+        }
+    }
+}
 INCLUDE_ASM("unk_0800eebc/func_080177EC.s");
 void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f) {
     s16 sx;
