@@ -59,22 +59,27 @@ typedef struct Work0806180C {
 
 typedef struct MsgLine0806180C {
     u32 unk_00;
-    u8 unk_04[0x10];
+    u32 unk_04;
+    u32 unk_08;
+    u8 unk_0C;
+    u8 unk_0D[3];
+    u32 unk_10;
     u16 unk_14;
     u16 unk_16;
 } MsgLine0806180C;
 
 typedef struct Ent02034A80 {
-    void* unk_00;
-    void* unk_04;
+    s32 unk_00;
+    s32 unk_04;
     u32 unk_08[16];
     u32 unk_48;
-    u8 unk_4C[4];
+    u32 unk_4C;
     u8 unk_50;
     u8 unk_51;
     u8 unk_52;
     u8 unk_53;
-    u8 unk_54[4];
+    u8 unk_54;
+    u8 unk_55[3];
 } Ent02034A80;
 
 typedef struct Ent08066588 {
@@ -102,11 +107,22 @@ typedef struct GameState {
 } GameState;
 
 typedef struct MsgFaceCtl {
-    u8 unk_00[2];
+    u8 unk_00;
+    u8 unk_01;
     u8 unk_02;
     u8 unk_03;
     u32 unk_04;
 } MsgFaceCtl;
+
+typedef struct MsgFaceAnim {
+    void* unk_00;
+    void* unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    u8 unk_10;
+    u8 unk_11;
+    u8 unk_12[2];
+} MsgFaceAnim;
 
 typedef struct MsgFaceWork {
     void* tiles;
@@ -142,7 +158,8 @@ typedef struct MsgWinWork {
     u8 unk_1F;
     u32 unk_20;
     u8 unk_24;
-    u8 unk_25[2];
+    u8 unk_25;
+    u8 unk_26;
     u8 unk_27;
     u8 unk_28;
     u8 unk_29;
@@ -153,7 +170,7 @@ typedef struct MsgWinWork {
     u8 unk_38;
     u8 unk_39[3];
     MsgLine0806180C* unk_3C;
-    u8 unk_40[4];
+    s32 unk_40;
 } MsgWinWork;
 
 typedef struct ContinueWork {
@@ -175,9 +192,15 @@ typedef struct EventSeqWork {
     TaskPool unk_00;
     TaskPool unk_14;
     u32 unk_28;
-    u8 unk_2C[6];
+    u16 unk_2C;
+    u8 unk_2E;
+    u8 unk_2F;
+    u8 unk_30;
+    u8 unk_31;
     u8 unk_32;
-    u8 unk_33[9];
+    u8 unk_33;
+    struct UnkStruct_09EE3FB4* unk_34;
+    u8 unk_38[4];
 } EventSeqWork;
 
 typedef struct BtlWork {
@@ -199,7 +222,9 @@ typedef struct UnkStruct_02039DC8 {
     s16 unk_68;
     s16 unk_6A;
     u16 unk_6C;
-    u8 unk_6E[0xC];
+    u8 unk_6E[0xA];
+    u8 unk_78;
+    u8 unk_79;
     u8 unk_7A;
     u8 unk_7B;
     u8 unk_7C;
@@ -209,7 +234,10 @@ typedef struct UnkStruct_02039DC8 {
     u8 unk_80;
     u8 unk_81;
     u8 unk_82;
-    u8 unk_83[4];
+    u8 unk_83;
+    u8 unk_84;
+    u8 unk_85;
+    u8 unk_86;
     u8 unk_87;
     u8 unk_88;
     u8 unk_89;
@@ -316,7 +344,9 @@ typedef struct UnkStruct_09EE3FB4 {
     u8 unk_00;
     u8 unk_01[3];
     AnimEntry0806180C* unk_04;
-    u8 unk_08[0x18];
+    Obj0806180C* unk_08;
+    MsgLine0806180C* unk_0C;
+    u8 unk_10[0x10];
     u16 unk_20;
 } UnkStruct_09EE3FB4;
 
@@ -338,8 +368,11 @@ extern u32 gUnk_02034A78;
 extern GameState gGameState;
 extern u16 gUnk_09033C98[];
 extern u16 gUnk_09033CA0[];
+extern s32 gUnk_09033CA8[];
+extern s32 gUnk_09033CB8[];
 extern s32 gUnk_09033CD0[];
 extern s32 gUnk_09033CE0[];
+extern s32 gUnk_09033CF0[];
 extern BtlWork* gBtlWork;
 extern u16 gBldCnt;
 extern vu16 gBldAlpha;
@@ -357,6 +390,10 @@ extern s16 gSineTable[];
 extern s16 gUnk_09033D50[];
 extern s16 gUnk_09033E76[];
 extern u8 gUnk_090D4180[];
+extern MsgFaceAnim* gUnk_09EE45DC[];
+extern void* gUnk_09EE3CA0[];
+extern u8 gUnk_094233B8[];
+extern u8 gUnk_096148D8[];
 extern u8 gUnk_08F69BE4[];
 
 void _08065994(void);
@@ -385,6 +422,9 @@ void* GetBgCharBase(s32 bg);
 void* GetBgScreenBase(s32 bg);
 void* _08066468(s32 a);
 void func_080062F4(u16 a, s32 b);
+u8 func_0800443C(void* a, u16 b);
+void SetBackdropColor(u16 r, u16 g, u16 b);
+void func_08006120(s32 a, s32 b);
 void m4aSongNumStart(u16 id);
 void func_08076110(s32 song, s16 x, s16 y);
 u8 func_0809D280(u8* s);
@@ -401,6 +441,11 @@ void* TaskCreate(void* a, TaskDesc* desc, void* arg);
 void TaskPoolDestroy(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
 void LoadBgPalette(s32 bg, void* src, u16 size);
+void LoadBgTiles(s32 bg, void* src, u16 size);
+void SetBgPriority(s32 bg, u16 priority);
+void TaskPoolInit(TaskPool* a, s32 count);
+void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c);
+u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void m4aMPlayAllStop(void);
 u8 func_08006314(void);
 void func_08074504(void);
@@ -411,6 +456,9 @@ s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 a, s32 b);
 void LoadObjPaletteBank(u16 a, void* b);
 void func_08002A10(void* a, void* b);
+void func_08003A70(void* a, void* b);
+void* AnimGetGfx(AnimState* a);
+u8 func_08073DA4(MsgFaceWork* p, void* a);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void func_08005244(s32 a, u16 b, u16 c);
 u8 func_08073294(MsgWinWork* p, void* a);

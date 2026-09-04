@@ -91,7 +91,7 @@ _0806E5A8:
 	movs r0, #0x01
 	strb r0, [r1, #0x00]
 	adds r0, r5, #0x0
-	bl _08072C34
+	bl func_08072C34
 _0806E61E:
 	ldr r1, [r6, #0x00]
 	ldr r2, [r5, #0x00]
