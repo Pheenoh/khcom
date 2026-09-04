@@ -341,8 +341,7 @@ typedef struct JfRockWork {
     void* unk_004;
     void* unk_008;
     void* unk_00C;
-    u32 unk_010;
-    u8 unk_014[0x14];
+    AnimState unk_010;
     u16 unk_028;
     u16 unk_02A;
     u32 unk_02C;
@@ -351,16 +350,18 @@ typedef struct JfRockWork {
     s32 unk_038;
     u32 unk_03C;
     u8 unk_040[0x20];
-    u32 unk_060;
-    u32 unk_064;
+    u64 unk_060;
     u8 unk_068[0x90];
     u16 unk_0F8;
     u8 unk_0FA[0x42];
     u32 unk_13C;
     u32 unk_140;
     u32 unk_144;
-    u8 unk_148[0x10];
-    u16 unk_158;
+    u32 unk_148;
+    u32 unk_14C;
+    u32 unk_150;
+    u32 unk_154;
+    s16 unk_158;
     u8 unk_15A;
     u8 unk_15B[0x1];
     u16 unk_15C;
@@ -374,7 +375,8 @@ typedef struct JfRockWork {
     s32 unk_174;
     s32 unk_178;
     u8 unk_17C;
-    u8 unk_17D[0x3];
+    u8 unk_17D;
+    s16 unk_17E;
     TaskPool unk_180;
     u8 unk_194;
     u8 unk_195[0x3];
@@ -453,7 +455,10 @@ typedef struct JfBorderlineWork {
 } JfBorderlineWork;
 
 typedef struct TmWork {
-    u8 unk_00[0x8];
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u8 unk_06[0x2];
     s32 unk_08;
     s32 unk_0C;
     s32 unk_10;
@@ -464,7 +469,11 @@ typedef struct TmWork {
     u16 unk_28;
     u8 unk_2A[0x2];
     u32 unk_2C;
-    u8 unk_30[0x34];
+    u8 unk_30[0x10];
+    u16 unk_40;
+    u16 unk_42;
+    u16 unk_44;
+    u8 unk_46[0x1E];
 } TmWork;
 
 typedef struct TmBodyWork {
@@ -472,15 +481,43 @@ typedef struct TmBodyWork {
     void* tiles;
     void* unk_008;
     void* unk_00C;
-    u8 unk_010[0x11C];
+    u8 unk_010[0x114];
+    void* unk_124;
+    u8 unk_128;
+    u8 unk_129[0x3];
     u8 unk_12C[0x2C];
     s16 unk_158;
     s16 unk_15A;
-    u8 unk_15C[0x338];
+    u8 unk_15C[0xE4];
+    void* unk_240;
+    u8 unk_244;
+    u8 unk_245[0x3];
+    u8 unk_248[0x114];
+    void* unk_35C;
+    u8 unk_360;
+    u8 unk_361[0x3];
+    u8 unk_364[0x114];
+    void* unk_478;
+    u8 unk_47C;
+    u8 unk_47D[0x3];
+    s16 unk_480;
+    s16 unk_482;
+    s16 unk_484;
+    s16 unk_486;
+    u8 unk_488;
+    u8 unk_489;
+    s16 unk_48A;
+    s16 unk_48C;
+    s16 unk_48E;
+    u8 unk_490;
+    u8 unk_491;
+    s16 unk_492;
 } TmBodyWork;
 
 typedef struct TmArmState {
-    u8 unk_00[0x2C];
+    u8 unk_00[0x28];
+    u16 unk_28;
+    u8 unk_2A[0x2];
     s32 unk_2C;
 } TmArmState;
 
@@ -518,7 +555,8 @@ typedef struct TmArmJoint {
     u16 unk_14;
     u8 unk_16[0x10];
     u16 unk_26;
-    u8 unk_28[0xC];
+    u8 unk_28[0x8];
+    void* unk_30;
 } TmArmJoint;
 
 typedef struct TmArmPos {
@@ -654,6 +692,11 @@ extern void* gUnk_09EF275C[][15];
 extern void* gUnk_09EF2D94[];
 extern u8 gTaskDescBosTmClb[];
 extern u8 gUnk_09652E84[];
+extern void* gUnk_09EF3950;
+extern void* gUnk_09EF3958;
+extern void* gUnk_09EF3960;
+extern void* gUnk_09EF397C;
+extern u8 gUnk_0203AB50[];
 extern u8 gUnk_09654C04[];
 extern u8 gUnk_09658C04[];
 extern u8 gUnk_09665C04[];
@@ -678,6 +721,9 @@ extern s8 gUnk_0961A894[];
 extern u8 gUnk_096FB904[];
 extern u8 gUnk_09682AA4[];
 extern void* gUnk_09EF3A48[];
+extern s8 gUnk_09EF2A38[];
+extern s16 gUnk_09EF2A42[];
+extern u8 gUnk_09EF34D8[];
 extern u8 gUnk_096FB5A4[];
 extern u8 gTaskDescBtlShadow[];
 extern u8 gUnk_096FB584[];
@@ -773,6 +819,9 @@ void task_bos_tm_clb_3(TmClbWork* work);
 void func_080BA0E4(s32* p, s32 a, s32 b, s32 c);
 void func_080BA0F8(u8* work);
 void func_080B83B8(void* a);
+void func_080B83A4(void* a, s16 x, s16 y, s16 z);
+void func_080B8334(void* a, s16 x, s16 y, s16 z);
+void* memcpy(void* dst, const void* src, unsigned long n);
 void func_08083900(u8 a);
 void func_080B9FC4(TmBodyWork* work);
 void task_bos_tm_body_3(TmBodyWork* work);
@@ -796,6 +845,7 @@ void task_bos_jf_lamp_3(JfLampWork* work);
 void task_bos_jf_majin_3(JfMajinWork* work);
 s32 func_080BE910(void);
 void func_080061E8(s32 a, u16 b);
+void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg);
 void task_bos_jf_rock_3(JfRockWork* work);
 void func_080C29F4(DsdMainWork* work);
 void func_080C2944(DsdMainWork* work);

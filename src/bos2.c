@@ -19,7 +19,54 @@ void* gUnk_0203B500;
 u8 gUnk_0203B504[12];
 u8 gUnk_0203B510[0x800];
 
-INCLUDE_ASM("bos2/task_bos_tm_body_0.s");
+void task_bos_tm_body_0(TmBodyWork* work, TmWork* arg) {
+    work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
+    work->unk_008 = LoadObjPalette(gUnk_096FB2A4, 0x60);
+    work->unk_00C = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->unk_124 = gUnk_09EF3950;
+    work->unk_240 = gUnk_09EF3958;
+    work->unk_35C = gUnk_09EF397C;
+    work->unk_478 = gUnk_09EF3960;
+    work->unk_000 = arg;
+    work->unk_000->unk_40 = ((u16*)work->tiles)[3];
+    work->unk_000->unk_42 += ((u16*)work->tiles)[4];
+    work->unk_000->unk_44 = ((u16*)work->unk_008)[3];
+    work->unk_480 = 0;
+    work->unk_482 = 0;
+    work->unk_484 = 0;
+    work->unk_486 = 0;
+    work->unk_128 = 0;
+    work->unk_244 = 0;
+    work->unk_360 = 0;
+    work->unk_47C = 0;
+    work->unk_488 = 0;
+    work->unk_48A = 1300;
+    work->unk_48C = 1300;
+    work->unk_48E = 0;
+    work->unk_490 = 10;
+    work->unk_492 = 0;
+
+    if (work->unk_000->unk_28 & 8) {
+        func_080B83A4(work->unk_010, work->unk_000->unk_00 + 4, work->unk_000->unk_02,
+                      work->unk_000->unk_04 - 34);
+        func_080B83A4(work->unk_12C, work->unk_000->unk_00, work->unk_000->unk_02,
+                      work->unk_000->unk_04 + 9);
+        func_080B83A4(work->unk_248, work->unk_000->unk_00 + 12, work->unk_000->unk_02 + 1,
+                      work->unk_000->unk_04 - 33);
+        func_080B83A4(work->unk_364, work->unk_000->unk_00 - 1, work->unk_000->unk_02 - 4,
+                      work->unk_000->unk_04 - 30);
+    } else {
+        func_080B83A4(work->unk_010, work->unk_000->unk_00 + 4, work->unk_000->unk_02,
+                      work->unk_000->unk_04 - 34);
+        func_080B8334(work->unk_12C, work->unk_000->unk_00, work->unk_000->unk_02,
+                      work->unk_000->unk_04 - 16);
+        func_080B83A4(work->unk_248, work->unk_000->unk_00 + 12, work->unk_000->unk_02 + 1,
+                      work->unk_000->unk_04 - 33);
+        func_080B83A4(work->unk_364, work->unk_000->unk_00 - 1, work->unk_000->unk_02 - 4,
+                      work->unk_000->unk_04 - 30);
+        memcpy(gUnk_0203AB50, work->unk_12C, 272);
+    }
+}
 INCLUDE_ASM("bos2/task_bos_tm_body_1.s");
 INCLUDE_ASM("bos2/task_bos_tm_body_2.s");
 
@@ -524,7 +571,62 @@ u8 task_bos_tm_arm_1(TmArmWork* work) {
     return 1;
 }
 
+#ifdef NON_MATCHING
+void task_bos_tm_arm_2(TmArmWork* work) {
+    void* pal;
+    s32 mode;
+    s32 affine;
+    s16 x;
+    s16 y;
+    s32 i;
+    TmArmJoint* j;
+
+    if (gBtlWork->unk_070 != 0) {
+        pal = work->unk_004;
+    } else if ((work->unk_00C->unk_18->unk_28 & 1) && (gFrameCounter & 1)) {
+        pal = (void*)work->unk_008;
+    } else {
+        pal = work->unk_004;
+    }
+
+    for (i = 0; i < 3; i++) {
+        j = &work->unk_010[i + 4];
+        affine = AllocObjAffine(j->unk_08, 256, 256, 0);
+        WorldToScreen(&x, &y, work->unk_00C->unk_00 + j->unk_00, work->unk_00C->unk_04,
+                      work->unk_00C->unk_08 + j->unk_04);
+        DrawSprite(x, y, j->unk_30, (void*)work->unk_000, pal, affine, 0x800,
+                   (u16)(-4100 - (work->unk_00C->unk_04 >> 8) * 4));
+        j = &work->unk_010[i];
+        affine = AllocObjAffine(j->unk_08, 256, 256, 0);
+        WorldToScreen(&x, &y, work->unk_00C->unk_0C + j->unk_00, work->unk_00C->unk_10,
+                      work->unk_00C->unk_14 + j->unk_04);
+        DrawSprite(x, y, j->unk_30, (void*)work->unk_000, pal, affine, 0x800,
+                   (u16)(-4100 - (work->unk_00C->unk_10 >> 8) * 4));
+    }
+
+    if (work->unk_00C->unk_18->unk_28 & 32) {
+        mode = 256;
+    } else {
+        mode = -256;
+    }
+
+    j = &work->unk_010[7];
+    affine = AllocObjAffine(j->unk_08, mode, 256, 0);
+    WorldToScreen(&x, &y, work->unk_00C->unk_00 + j->unk_00, work->unk_00C->unk_04,
+                  work->unk_00C->unk_08 + j->unk_04);
+    DrawSprite(x, y, j->unk_30, (void*)work->unk_000, pal, affine, 0x800,
+               (u16)(-4100 - (work->unk_00C->unk_04 >> 8) * 4));
+    j = &work->unk_010[3];
+    affine = AllocObjAffine(j->unk_08, mode, 256, 0);
+    WorldToScreen(&x, &y, work->unk_00C->unk_0C + j->unk_00, work->unk_00C->unk_10,
+                  work->unk_00C->unk_14 + j->unk_04);
+    DrawSprite(x, y, j->unk_30, (void*)work->unk_000, pal, affine, 0x800,
+               (u16)(-4100 - (work->unk_00C->unk_10 >> 8) * 4));
+    TaskPoolDraw(&work->unk_1B4);
+}
+#else
 INCLUDE_ASM("bos2/task_bos_tm_arm_2.s");
+#endif
 
 void task_bos_tm_arm_3(TmArmWork* work) {
     ReleaseObjTiles((void*)work->unk_000);
@@ -1428,7 +1530,55 @@ void func_080C0624(JfMajinWork* work) {
 }
 
 INCLUDE_ASM("bos2/func_080C0714.s");
-INCLUDE_ASM("bos2/task_bos_jf_rock_0.s");
+void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
+    work->unk_000 = arg;
+    work->unk_030 = arg->x;
+    work->unk_034 = arg->y + 0x500;
+    work->unk_038 = arg->z - 0x4800;
+    work->unk_03C = 0;
+    work->unk_0F8 = 0xFE00;
+    work->unk_060 = 0x20000;
+    work->unk_13C = 0;
+    work->unk_140 = 0;
+    work->unk_144 = 0;
+    work->unk_148 = 0;
+    work->unk_14C = 0;
+    work->unk_150 = 0;
+    work->unk_154 = 0;
+    work->unk_028 = 0;
+    work->unk_02A = 0;
+    work->unk_194 = 0;
+
+    if (arg->unk_034 & 4) {
+        work->unk_170 = arg->x + 0x2000;
+        work->unk_174 = arg->y + 0xA00;
+        work->unk_178 = arg->z - 0x1900;
+        work->unk_144 = -((gUnk_0203ACC0 + 1) << 11) - 0x2000;
+    } else {
+        work->unk_170 = arg->x - 0x2000;
+        work->unk_174 = arg->y + 0xA00;
+        work->unk_178 = arg->z - 0x1900;
+        work->unk_144 = -0x2000 - ((gUnk_0203ACC4 + 1) << 11);
+    }
+
+    work->unk_17C = 0;
+    work->unk_17E = 0;
+    work->unk_15A = 0;
+    work->unk_158 = 0;
+    work->unk_15C = 120;
+    work->unk_15E = 0;
+    work->unk_160 = 0;
+    work->unk_004 = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->unk_008 = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    AnimInit(&work->unk_010, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->unk_010, gUnk_09EF2A38[work->unk_158], 0);
+    work->unk_00C = AnimGetGfx(&work->unk_010);
+    work->unk_164 = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->unk_168 = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    work->unk_16C = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
+    TaskPoolInit(&work->unk_180, 1);
+    TaskCreate(&work->unk_180, gUnk_09EF34D8, &work->unk_02C);
+}
 INCLUDE_ASM("bos2/task_bos_jf_rock_1.s");
 
 void task_bos_jf_rock_2(JfRockWork* work) {
@@ -1621,7 +1771,92 @@ void func_080C1A48(JfBorderlineWork* work) {
 }
 
 INCLUDE_ASM("bos2/task_bos_dsd_0.s");
-INCLUDE_ASM("bos2/task_bos_dsd_1.s");
+u8 task_bos_dsd_1(DsdWork* work) {
+    BtlWork* q;
+    BosSub* a = work->unk_000;
+    BosSub* b = &work->unk_000[1];
+
+    if (work->unk_358 & 0x10) {
+        TaskPoolUpdate(&work->unk_37C);
+        return 1;
+    }
+
+    switch (func_0801ADAC(b)) {
+    case 5:
+        work->unk_334 = 2;
+        b->unk_034 |= 0x1000000;
+        work->unk_350 = 0;
+        break;
+    case 1:
+    case 6:
+    case 7:
+        work->unk_358 |= 1;
+        work->unk_34E = 20;
+        break;
+    case 3:
+    case 8:
+        work->unk_334 = 11;
+        work->unk_350 = 0;
+        break;
+    case 4:
+        work->unk_334 = 8;
+        work->unk_350 = 0;
+        break;
+    }
+
+    if (work->unk_358 & 1) {
+        work->unk_34E--;
+
+        if ((s16)work->unk_34E <= 0) {
+            work->unk_34C = 0;
+            work->unk_358 &= ~1;
+            LoadPaletteWithEffect(gUnk_096FB744, (void*)0x05000000, 32);
+            func_0801AF08(b);
+
+            if (b->unk_02C > 0) {
+                switch (work->unk_334) {
+                case 0:
+                case 1:
+                case 4:
+                case 5:
+                case 8:
+                    break;
+                default:
+                    work->unk_334 = 0;
+                    work->unk_350 = 0;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (func_0801C1C0(0)) {
+        work->unk_358 |= 8;
+        TaskCreate(&work->unk_37C, gTaskDescBosDsdIta, work);
+    }
+
+    if (work->unk_334 == 4) {
+        if (((BtlWork*)gBtlWork->unk_07C)->unk_00C <= -0x1000) {
+            gBtlWork->unk_0D8 = -30;
+        } else {
+            gBtlWork->unk_0D8 = 0;
+        }
+    } else {
+        gBtlWork->unk_0D8 = 0;
+    }
+
+    TaskPoolUpdate(&work->unk_37C);
+    q = gBtlWork;
+    *(s32*)&q->unk_0CC = a->x;
+    *(s32*)&q->unk_0D0 = a->y;
+    *(s32*)&q->unk_0D4 = a->z;
+
+    if (work->unk_358 & 2) {
+        return 0;
+    }
+
+    return 1;
+}
 
 void task_bos_dsd_2(DsdWork* work) {
     TaskPoolDraw(&work->unk_37C);
@@ -1649,7 +1884,52 @@ void func_080C213C(u8 index, u16 a) {
     LoadBgTiles(1, gUnk_09EF2D94[index], a * 32);
 }
 
+#ifdef NON_MATCHING
+void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg) {
+    BosSub* s = &work->unk_074;
+
+    work->unk_000 = arg;
+    SetBgPriority(1, 1);
+    SetBgPriority(0, 3);
+    work->unk_000->unk_334 = arg->unk_334;
+    work->unk_008 = 0;
+    work->unk_006 = 0;
+    work->unk_004 = 0;
+    work->unk_00A = 0;
+    work->unk_054 = 1;
+    work->unk_06C = 0;
+    work->unk_070 = gBtlWork->unk_1CA;
+    func_0800516C(1, gUnk_09EF2AA4, 2, 2);
+    work->unk_00C = LoadObjTiles(gUnk_096983E4, 0x12A0);
+    AnimInit(&work->unk_01C, gUnk_09EF3C34, gUnk_09EF3C20);
+    AnimStart(&work->unk_01C, 0, 1);
+    work->unk_014 = AnimGetGfx(&work->unk_01C);
+    work->unk_010 = LoadObjTiles(gUnk_096983E4, 0x12A0);
+    AnimInit(&work->unk_034, gUnk_09EF3C4C, gUnk_09EF3C38);
+    AnimStart(&work->unk_034, 0, 1);
+    work->unk_018 = AnimGetGfx(&work->unk_034);
+    work->unk_04C = LoadObjPalette(gUnk_096FB8C4, 32);
+    work->unk_050 = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->unk_000->unk_360 = AllocObjTiles(0x800, gUnk_096A2F04);
+    work->unk_000->unk_364 = LoadObjPalette(gUnk_096FB8E4, 32);
+    work->unk_000->unk_368 = LoadObjTiles(gUnk_096869A4, 0x740);
+    work->unk_000->unk_36C = LoadObjPalette(gUnk_096FB864, 32);
+    work->unk_000->unk_370 = LoadObjPalette(gUnk_096FB884, 32);
+    work->unk_000->unk_374 = LoadObjTiles(gUnk_08B22CE4, 0x200);
+    work->unk_000->unk_378 = LoadObjPalette(gUnk_08F69BA4, 32);
+    s->x = 0xDC00;
+    s->y = 0x16800;
+    s->z = 0;
+    func_080122AC(&s->unk_040, 8, 24, 100);
+    func_08012324(&s->unk_040, s->x, s->y, s->z);
+    func_08005244(1, ((gBtlWork->unk_000 - arg->unk_000[0].x) >> 8) + 100,
+                  ((gBtlWork->unk_004 - (arg->unk_000[0].y + arg->unk_000[0].z)) >> 8) + 280);
+    TaskPoolInit(&work->unk_058, 10);
+    func_080C2828(work);
+}
+#else
 INCLUDE_ASM("bos2/task_bos_dsd_main_0.s");
+#endif
 
 u8 task_bos_dsd_main_1(DsdMainWork* work) {
     DsdWork* d = work->unk_000;
@@ -2915,7 +3195,98 @@ void task_bos_dsd_circle_0(DsdCircleWork* work, void* arg) {
     work->unk_04 = gUnk_09EF3C50[0];
 }
 
+#ifdef NON_MATCHING
+u8 task_bos_dsd_circle_1(DsdCircleWork* work) {
+    DsdWork* d = work->unk_00;
+
+    if (d->unk_334 == 8 || d->unk_334 == 0) {
+        if (work->unk_18 > 66) {
+            return 0;
+        }
+
+        work->unk_18++;
+        return 1;
+    }
+
+    switch (d->unk_350) {
+    case 1:
+        work->unk_1A = work->unk_00->unk_354 - 21;
+        work->unk_04 = gUnk_09EF3C50[work->unk_1A];
+        work->x = (gUnk_0961A89E[work->unk_1A] << 8) + 0xDC00;
+        work->y = (gUnk_0961A8B0[work->unk_1A] << 8) + 0x16800;
+        break;
+    case 2:
+        break;
+    case 3:
+        work->unk_14++;
+
+        if (work->unk_14 >= gUnk_0961A894[work->unk_16]) {
+            work->unk_14 = 0;
+            work->unk_16++;
+
+            if (work->unk_16 > 7) {
+                work->unk_16 = 0;
+            }
+
+            LoadObjPaletteBank(((u16*)work->unk_00->unk_364)[3],
+                               &gUnk_096FB904[work->unk_16 * 32]);
+        }
+
+        if (work->unk_1C == 60 || work->unk_1C == 110) {
+            func_0801BDDC(0, work->x + (GetRandom() % 101 * 256 - 0x3200),
+                          work->y + (GetRandom() % 17 * 256 - 0x800), 0);
+        }
+
+        work->unk_1C++;
+        break;
+    case 4:
+        LoadObjPaletteBank(((u16*)work->unk_00->unk_364)[3], gUnk_096FB904);
+        work->unk_1A = work->unk_00->unk_354 - 21;
+        break;
+    case 5:
+        work->unk_1A = work->unk_00->unk_354 - 21;
+        work->unk_04 = gUnk_09EF3C50[work->unk_1A];
+        work->x = (gUnk_0961A89E[work->unk_1A] << 8) + 0xDC00;
+        work->y = (gUnk_0961A8B0[work->unk_1A] << 8) + 0x16800;
+        break;
+    case 6:
+        work->unk_1A = 0;
+        work->unk_04 = gUnk_09EF3C50[work->unk_1A];
+        work->x = (gUnk_0961A89E[work->unk_1A] << 8) + 0xDC00;
+        work->y = (gUnk_0961A8B0[work->unk_1A] << 8) + 0x16800;
+        break;
+    case 7:
+        return 0;
+    }
+
+    if (work->unk_00->unk_334 == 11) {
+        if (func_080128EC() == 1) {
+            func_08006B4C();
+        }
+
+        return 0;
+    }
+
+    return 1;
+}
+#else
 INCLUDE_ASM("bos2/task_bos_dsd_circle_1.s");
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void task_bos_dsd_circle_2(DsdCircleWork* work) {
     s16 x;
