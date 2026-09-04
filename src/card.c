@@ -122,7 +122,7 @@ void func_08012304(void* a);
 void func_0808E364(u8* work, u8 b);
 void func_08088F24(void);
 void func_08002A10(void* a, void* b);
-void func_0805F1C0(void* a, s32 b);
+void func_0805F1C0(s32* p, s32 v);
 void func_0808D6C4(u8* work);
 void func_0808CD48(u8* work);
 void func_08086A14(void);
