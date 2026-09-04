@@ -758,7 +758,7 @@ void func_080DEC44(void);
 u8* func_080DED98(u8 a);
 void func_080D2C78(s32 a);
 void func_080D2DB0(s32 a);
-void func_080D2DC4(s32 a);
+void func_080D2DC4(const void* p);
 s32 func_080E5590(u8 a);
 void func_080E04EC(void);
 
