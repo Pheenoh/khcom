@@ -72,7 +72,7 @@ void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 u16 GetKeysRepeat(void);
 void func_0805F1C0(s32* p, s32 v);
 u16 func_08060A2C(u16 a);
-s16 func_08065B08(void* a, u8 b);
+s16 func_08065B08(TextSlot* p, u8 n);
 u16 func_08065B6C(u16* a, TextSlot* b);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s16 func_08084BAC(void);

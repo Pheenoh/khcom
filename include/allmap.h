@@ -211,7 +211,7 @@ u8 func_08006314(void);
 void func_080063A8(void);
 void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
-s32 func_08065B08(void* a, u8 b);
+s16 func_08065B08(TextSlot* p, u8 n);
 u16 func_08065B6C(u16* a, TextSlot* b);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void* func_08093C18(u8 a);

@@ -228,7 +228,7 @@ void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void* AnimUpdate(AnimState* a);
 void func_0805F1C0(s32* p, s32 v);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
-s16 func_08065B08(void* a, u8 b);
+s16 func_08065B08(TextSlot* p, u8 n);
 extern s16 gUnk_02035C18;
 extern s16 gUnk_02035CE0;
 extern s16 gUnk_02035CE2;
