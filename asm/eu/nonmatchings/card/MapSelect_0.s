@@ -6,5 +6,5 @@
 	.thumb_func
 	.type MapSelect_0, %function
 MapSelect_0:
-	.incbin "roms/B8CP.gba", 0x91bf8, 0x4c4
+	.incbin "roms/B8CP.gba", 0x91bf8, 0x58c
 .syntax divided

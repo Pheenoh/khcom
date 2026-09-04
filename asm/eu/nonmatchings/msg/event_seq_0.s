@@ -6,5 +6,5 @@
 	.thumb_func
 	.type event_seq_0, %function
 event_seq_0:
-	.incbin "roms/B8CP.gba", 0x6c504, 0xd8
+	.incbin "roms/B8CP.gba", 0x6c504, 0x230
 .syntax divided
