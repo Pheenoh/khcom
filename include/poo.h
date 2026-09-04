@@ -1333,7 +1333,7 @@ void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* LoadObjPalette(void* src, s32 size);
 void func_080C84E0(PooWork* w, u32 b);
 u8 func_080C9910(void);
-u8 func_08005AC4(void* a);
+u8 func_08005AC4(AnimState* a);
 void task_poo_tanpopo_3(PooTanpopoWork* w);
 void task_poo_ti_board_0(PooBoardWork* w, PooPos* p);
 u8 task_poo_ti_board_1(PooBoardWork* w);

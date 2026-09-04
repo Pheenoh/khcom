@@ -820,7 +820,7 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg);
 u8 task_bos_ursula_tako_1(UrsulaTakoWork* work);
 void _0801C1F8(s32 a, s32 b, s32 c, s32 d);
 void AnimReset(AnimState* a);
-u8 func_08005AC4(void* a);
+u8 func_08005AC4(AnimState* a);
 void func_08012614(void* a, s32 b);
 void func_0801C7FC(void* a, s32 b, s32 c);
 void func_08083914(void);
