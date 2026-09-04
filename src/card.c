@@ -9304,14 +9304,15 @@ u8 func_080990CC(u8* work, void* a) {
         return 1;
     } while (0);
 }
-#ifndef VERSION_EU
 void REV_COUNT_2(u8* work) {
+#ifdef VERSION_EU
+    DrawSprite(*(s32*)&work[0x3C] >> 8, *(s32*)&work[0x40] >> 8, 0,
+               *(void**)&work[0x00], *(void**)&work[0x04], 0, 1040, 15);
+#else
     DrawSprite(*(s32*)&work[0x3C] >> 8, *(s32*)&work[0x40] >> 8, 0,
                *(void**)&work[0x00], *(void**)&work[0x04], 0, 1024, 15);
-}
-#else
-INCLUDE_ASM("card/REV_COUNT_2.s");
 #endif
+}
 void REV_COUNT_3(void** p) {
     ReleaseObjTiles(p[0]);
     ReleaseObjPalette(p[1]);

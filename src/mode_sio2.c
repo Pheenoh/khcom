@@ -497,13 +497,16 @@ void mode_pooh_0(s32 arg) {
 #endif
 }
 
-#ifndef VERSION_EU
 void mode_pooh_1(void) {
     UpdatePlayTime();
     func_080C7CB0(0);
 
     if (gUnk_02034D44 != 0 && !func_08006314()) {
+#ifdef VERSION_EU
+        if (gUnk_02034D48 == 195) {
+#else
         if (gUnk_02034D48 == 197) {
+#endif
             func_080DF814();
         } else {
             func_0806180C(gUnk_02034D48);
@@ -519,15 +522,31 @@ void mode_pooh_1(void) {
         } else if (func_080A42C8() == 0) {
             if (gUnk_02034D4C == 0xFFFE) {
                 if (func_080A42D4()) {
+#ifdef VERSION_EU
+                    func_080C7B84(195);
+#else
                     func_080C7B84(197);
+#endif
                 } else {
+#ifdef VERSION_EU
+                    gUnk_02034D4C = 179;
+#else
                     gUnk_02034D4C = 180;
+#endif
                 }
             } else if (gUnk_02034D4C == 0xFFFD) {
                 if (func_080A42D4()) {
+#ifdef VERSION_EU
+                    func_080C7B84(146);
+#else
                     func_080C7B84(148);
+#endif
                 } else {
+#ifdef VERSION_EU
+                    gUnk_02034D4C = 179;
+#else
                     gUnk_02034D4C = 180;
+#endif
                 }
             } else {
                 TaskPoolUpdate(&gUnk_02034D18);
@@ -543,9 +562,6 @@ void mode_pooh_1(void) {
     func_080125A4();
     func_080C73D8();
 }
-#else
-INCLUDE_ASM("mode_sio2/mode_pooh_1.s");
-#endif
 
 void mode_pooh_2(void) {
     TaskPoolDestroy(&gUnk_02034D18);

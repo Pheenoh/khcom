@@ -754,7 +754,6 @@ void func_080FC3FC(MdWork* work) {
         }
     }
 }
-#ifndef VERSION_EU
 void task_bos_md_0(MdWork* work, void* arg) {
     s16 i;
 
@@ -792,7 +791,11 @@ void task_bos_md_0(MdWork* work, void* arg) {
     for (i = 0; i < 1; i++) {
         func_0801B37C(&work->sub[i], gUnk_099920D8, gBtlWork->unk_0CC,
                       gBtlWork->unk_0D0, gBtlWork->unk_0D4);
+#ifdef VERSION_EU
+        func_080122AC(work->sub[i].unk_040, 8, 16, 24);
+#else
         func_080122AC(work->sub[i].unk_040, 8, 16, 16);
+#endif
 
         if (i == 0) {
             work->sub[i].unk_034 |= 0x400;
@@ -818,9 +821,6 @@ void task_bos_md_0(MdWork* work, void* arg) {
     func_08005244(1, (gBtlWork->unk_000 >> 8) + 72 - work->unk_178,
                   (gBtlWork->unk_004 >> 8) + 48 - work->unk_17A);
 }
-#else
-INCLUDE_ASM("bos5/task_bos_md_0.s");
-#endif
 
 s32 task_bos_md_1(MdWork* work) {
     void* args[2];

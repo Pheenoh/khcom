@@ -240,7 +240,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 INCLUDE_ASM("btl4/task_btl_exp_1.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_JP
 void task_btl_exp_2(BtlExpWork* work) {
     s32 i;
     s16 x;
@@ -252,7 +252,11 @@ void task_btl_exp_2(BtlExpWork* work) {
         DrawSprite(0, y, work->unk_20, work->tiles, work->palette, x, 0x410, x);
 
         if (work->unk_48 == 2) {
+#ifdef VERSION_EU
+            x = 48;
+#else
             x = 40;
+#endif
         } else {
             x = 32;
         }

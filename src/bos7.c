@@ -2190,12 +2190,17 @@ u8 func_08112C38(StaffRollWork* w) {
 #define STAFFROLL_SCROLL_SPEED 0x16000000
 #define STAFFROLL_SCRIPT_PERIOD 635
 #else
+#ifdef VERSION_EU
+#define STAFFROLL_SCROLL_FRAMES 0x431C
+#define STAFFROLL_SCROLL_SPEED 0x15800000
+#define STAFFROLL_SCRIPT_PERIOD 635
+#else
 #define STAFFROLL_SCROLL_FRAMES 0x431C
 #define STAFFROLL_SCROLL_SPEED 0x13C00000
 #define STAFFROLL_SCRIPT_PERIOD 627
 #endif
+#endif
 
-#ifndef VERSION_EU
 u8 func_08113180(StaffRollWork* w) {
     u8 buf[80];
     StaffRollLogoArg logo;
@@ -2442,9 +2447,6 @@ u8 func_08113180(StaffRollWork* w) {
 
     return result;
 }
-#else
-INCLUDE_ASM("bos7/func_08113180.s");
-#endif
 
 u8 func_0811394C(StaffRollWork* w) {
     u8 result;
