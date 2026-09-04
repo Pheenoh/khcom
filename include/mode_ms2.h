@@ -220,7 +220,7 @@ void func_08104FF8(void);
 void func_08105090(void);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void func_08065ACC(TextSlot* p, s32 n);
-u16 func_08065B54(void* a);
+s32 func_08065B54(u16* s);
 void func_08104BBC(void);
 void func_08104D18(void);
 void func_08108650(void);

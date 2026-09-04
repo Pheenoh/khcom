@@ -110,7 +110,7 @@ void* LoadObjPalette(void* a, s32 b);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_08065ACC(TextSlot* p, s32 n);
-u16 func_08065B54(void* a);
+s32 func_08065B54(u16* s);
 u16 func_08065B6C(u16* a, TextSlot* b);
 void func_08107280(void);
 void func_081073F0(void);

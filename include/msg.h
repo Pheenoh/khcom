@@ -330,7 +330,7 @@ void view_3(void);
 void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
 s16 func_08065B08(TextSlot* p, u8 n);
-s32 func_08065B54(u16* p);
+s32 func_08065B54(u16* s);
 u16 func_08065B6C(u16* a, TextSlot* b);
 s32 func_08065B7C(u16* a, TextSlot* b);
 void* func_080668F0(void);
