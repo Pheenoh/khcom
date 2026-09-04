@@ -172,6 +172,7 @@ def main():
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--header")
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--commit", action="store_true")
     args = ap.parse_args()
     sites, defs = scan()
     owner = type_headers()
@@ -269,6 +270,9 @@ def main():
 
         if not (args.apply and verdict == "unified"):
             revert()
+        elif args.commit:
+            subprocess.run(["git", "add", "-u", "include", "src"], cwd=REPO, capture_output=True)
+            subprocess.run(["git", "commit", "-q", "-m", "Unify the %s prototype" % name], cwd=REPO, capture_output=True)
         record(name, n, v, verdict, note)
         print("%-28s %2d sites %d variants -> %-13s %s" % (name, n, v, verdict, note))
 
