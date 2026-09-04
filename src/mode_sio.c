@@ -56,7 +56,7 @@ void mode_sio_btl_connect_0(s32 arg) {
 INCLUDE_ASM("mode_sio/mode_sio_btl_connect_0.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void mode_sio_btl_connect_1(void) {
     s32 i;
     s32 j;
@@ -108,7 +108,11 @@ void mode_sio_btl_connect_1(void) {
         }
         break;
     }
+#ifdef VERSION_JP
+    func_080664D8(0x3D, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->unk_2D8, 20, gSioBtlConnectWork->unk_05);
+#else
     func_080664D8(0x42, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->unk_2D8, 20, gSioBtlConnectWork->unk_05);
+#endif
 }
 #else
 INCLUDE_ASM("mode_sio/mode_sio_btl_connect_1.s");
@@ -207,7 +211,7 @@ void func_080AF0B0(void) {
 INCLUDE_ASM("mode_sio/func_080AF0B0.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080AF11C(void) {
     s32 i;
 
@@ -259,7 +263,11 @@ void func_080AF11C(void) {
     gSioBtlOptionWork->unk_228 = 0;
     func_08065ACC(gSioBtlOptionWork->unk_22C, 60);
     gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A20C, gSioBtlOptionWork->unk_22C);
+#ifdef VERSION_JP
+    gSioBtlOptionWork->unk_412 = 68;
+#else
     gSioBtlOptionWork->unk_412 = 65;
+#endif
     gSioBtlOptionWork->unk_414 = 124;
     gSioBtlOptionWork->unk_40C = LoadObjPalette(gUnk_096FBAA4, 32);
     gSioBtlOptionWork->unk_1E4 = LoadObjTiles(gUnk_0962D7C0, 0x120);
@@ -518,7 +526,7 @@ void func_080AFADC(void) {
 INCLUDE_ASM("mode_sio/func_080AFADC.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080AFCD4(void) {
     s8 v = 0;
     gUnk_02039B58[1] = 6;
@@ -576,7 +584,11 @@ void func_080AFCD4(void) {
             gSioBtlOptionWork->unk_1B4 = 0;
             gSioBtlOptionWork->unk_228 = 1;
             gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A20C, gSioBtlOptionWork->unk_22C);
+#ifdef VERSION_JP
+            gSioBtlOptionWork->unk_412 = 68;
+#else
             gSioBtlOptionWork->unk_412 = 65;
+#endif
             gSioBtlOptionWork->unk_414 = 124;
             gSioBtlOptionWork->unk_002 = 9;
             break;
@@ -705,7 +717,7 @@ void func_080B0010(void) {
 INCLUDE_ASM("mode_sio/func_080B0010.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080B01FC(void) {
     if (gSioPlayerId == 0) {
         gUnk_02039B58[1] = 0x2FCF;
@@ -716,7 +728,11 @@ void func_080B01FC(void) {
     if (gSioBtlOptionWork->unk_217 == 1 && gSioBtlOptionWork->unk_218 == 1) {
         gSioBtlOptionWork->unk_006 = 0;
         gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A23C, gSioBtlOptionWork->unk_22C);
+#ifdef VERSION_JP
+        gSioBtlOptionWork->unk_412 = 61;
+#else
         gSioBtlOptionWork->unk_412 = 68;
+#endif
         gSioBtlOptionWork->unk_414 = 119;
         gSioBtlOptionWork->unk_002++;
     }
@@ -729,7 +745,7 @@ void func_080B01FC(void) {
 INCLUDE_ASM("mode_sio/func_080B01FC.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080B02A4(void) {
     if (GetKeysPressed() & 1) {
         gUnk_02039B58[1] = 0xA926;
@@ -741,7 +757,11 @@ void func_080B02A4(void) {
         m4aSongNumStart(106);
         gSioBtlOptionWork->unk_006 = 0;
         gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815B3D4, gSioBtlOptionWork->unk_22C);
+#ifdef VERSION_JP
+        gSioBtlOptionWork->unk_412 = 74;
+#else
         gSioBtlOptionWork->unk_412 = 72;
+#endif
         gSioBtlOptionWork->unk_414 = 124;
         gSioBtlOptionWork->unk_002++;
     } else if (gUnk_02039810[1][0] == 0xDD42 || gUnk_02039810[1][1] == 0xDD42) {
@@ -1324,16 +1344,20 @@ INCLUDE_ASM("mode_sio/mode_sio_btl_cardget_1.s");
 void mode_sio_btl_cardget_2(void) {
 }
 
-#ifndef VERSION_JP
 void func_080B1848(void) {
     DrawSprite(60, 116, gSioBtlCardgetWork->unk_18, gSioBtlCardgetWork->unk_08, gSioBtlCardgetWork->unk_10, 0, 0, 0xFFF0);
     DrawSprite(180, 116, gSioBtlCardgetWork->unk_1C, gSioBtlCardgetWork->unk_0C, gSioBtlCardgetWork->unk_14, 0, 0, 0xFFF0);
-    DrawSprite(13, 36, gSioBtlCardgetWork->unk_38, gSioBtlCardgetWork->unk_28, gSioBtlCardgetWork->unk_30, 0, 0, 0xFF00);
-    DrawSprite(135, 36, gSioBtlCardgetWork->unk_3C, gSioBtlCardgetWork->unk_2C, gSioBtlCardgetWork->unk_34, 0, 0, 0xFF00);
-}
+#ifdef VERSION_JP
+    DrawSprite(28, 36, gSioBtlCardgetWork->unk_38, gSioBtlCardgetWork->unk_28, gSioBtlCardgetWork->unk_30, 0, 0, 0xFF00);
 #else
-INCLUDE_ASM("mode_sio/func_080B1848.s");
+    DrawSprite(13, 36, gSioBtlCardgetWork->unk_38, gSioBtlCardgetWork->unk_28, gSioBtlCardgetWork->unk_30, 0, 0, 0xFF00);
 #endif
+#ifdef VERSION_JP
+    DrawSprite(148, 36, gSioBtlCardgetWork->unk_3C, gSioBtlCardgetWork->unk_2C, gSioBtlCardgetWork->unk_34, 0, 0, 0xFF00);
+#else
+    DrawSprite(135, 36, gSioBtlCardgetWork->unk_3C, gSioBtlCardgetWork->unk_2C, gSioBtlCardgetWork->unk_34, 0, 0, 0xFF00);
+#endif
+}
 
 #ifdef VERSION_US
 void func_080B18C4(void) {
