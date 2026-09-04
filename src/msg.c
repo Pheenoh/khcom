@@ -344,7 +344,68 @@ void func_08063EE4(s32 a, s32 b, u8 v, u8 d, u8 e) {
 #else
 INCLUDE_ASM("msg/func_08063EE4.s");
 #endif
+#ifdef NON_MATCHING
+void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
+    u8 i;
+    u8 len;
+    u8 j;
+    u8 idx;
+
+    idx = 0;
+
+    if (slot > 23) {
+        return;
+    }
+
+    if (gUnk_02034A80 == NULL) {
+        return;
+    }
+
+    gUnk_02034A80[slot].unk_00 = x;
+    gUnk_02034A80[slot].unk_04 = y;
+    gUnk_02034A80[slot].unk_51 = 2;
+    gUnk_02034A80[slot].unk_52 = 1;
+    gUnk_02034A80[slot].unk_54 = a;
+    len = func_0809D280(s);
+
+    if (len > 15) {
+        len = 16;
+    }
+
+    for (i = 0, j = 0; i < len; i++) {
+        u8 c = s[i];
+
+        if ((u8)(c - 48) <= 9) {
+            idx = c - 47;
+        }
+
+        if ((u8)(c - 65) <= 25) {
+            idx = c - 54;
+        }
+
+        if ((u8)(c - 97) <= 25) {
+            idx = c - 60;
+        }
+
+        if (gUnk_02034A80[slot].unk_08[j] != 0) {
+            ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
+        }
+        idx = ((u8*)gUnk_09EEB204[idx])[6];
+        gUnk_02034A80[slot].unk_08[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[idx * 32], 128);
+        j++;
+    }
+
+    for (j = len; j < 16; j++) {
+        if (gUnk_02034A80[slot].unk_08[j] != 0) {
+            ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
+            gUnk_02034A80[slot].unk_08[j] = 0;
+        }
+    }
+    gUnk_02034A80[slot].unk_50 = len;
+}
+#else
 INCLUDE_ASM("msg/func_08063F60.s");
+#endif
 #ifndef VERSION_EU
 void func_080640E0(void) {
     s32 x;
@@ -777,7 +838,101 @@ u16 func_08065B6C(u16* a, TextSlot* b) {
 INCLUDE_ASM("msg/func_08065B6C.s");
 #endif
 
+#ifdef VERSION_US
+s32 func_08065B7C(u16* a, TextSlot* b) {
+    s32 n;
+
+    n = 0;
+    gUnk_02034A90 = n;
+
+    while (*a != 0) {
+        s32 v = 0;
+
+        if (*a == 10) {
+            if (b->tiles != NULL) {
+                ReleaseObjTiles(b->tiles);
+                b->tiles = NULL;
+            }
+            b->unk_05 = 0;
+        } else {
+            if ((u16)(*a - 32) <= 223) {
+                v = *a;
+            } else {
+                switch (*a) {
+                case 0xE000:
+                    v = 25;
+                    break;
+                case 0x2191:
+                    v = 10;
+                    break;
+                case 0x2193:
+                    v = 11;
+                    break;
+                case 0x2190:
+                    v = 12;
+                    break;
+                case 0x2192:
+                    v = 13;
+                    break;
+                case 0x300C:
+                    v = 1;
+                    break;
+                case 0x300D:
+                    v = 2;
+                    break;
+                case 0x300E:
+                    v = 3;
+                    break;
+                case 0x300F:
+                    v = 4;
+                    break;
+                case 0x203B:
+                    v = 6;
+                    break;
+                case 0x266A:
+                    v = 18;
+                    break;
+                case 0x2642:
+                    v = 8;
+                    break;
+                case 0x2640:
+                    v = 9;
+                    break;
+                case 0x2605:
+                    v = 21;
+                    break;
+                case 0x25A0:
+                    v = 17;
+                    break;
+                default:
+                    v = 0;
+                    break;
+                }
+            }
+
+            if (b->tiles != NULL) {
+                ReleaseObjTiles(b->tiles);
+                b->tiles = NULL;
+            }
+
+            if (v != 32) {
+                b->unk_05 = gUnk_08F7D438[v];
+            } else {
+                b->unk_05 = 255;
+            }
+            v = ((u16*)gUnk_09EEC134[v])[3];
+            b->tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+            b->unk_04 = n;
+        }
+        gUnk_02034A90++;
+        b++;
+        a++;
+    }
+    return gUnk_02034A90;
+}
+#else
 INCLUDE_ASM("msg/func_08065B7C.s");
+#endif
 INCLUDE_ASM("msg/func_08065D10.s");
 INCLUDE_ASM("msg/func_080660C0.s");
 void* _08066468(s32 a) {
@@ -1211,8 +1366,114 @@ void func_0806CD30(s32 a) {
         break;
     }
 }
+#ifdef VERSION_JP
+#define MSG_CONT_BG_TILES 0x1A40
+#define MSG_CONT_X 0xA400
+#else
+#define MSG_CONT_BG_TILES 0x1AA0
+#define MSG_CONT_X 0xBC00
+#endif
+
+#ifndef VERSION_EU
+void func_0806CD60(ContinueWork* p) {
+    u8 i;
+
+    SetBgMode1();
+    p->unk_60 = 0;
+    SetBackdropColor(0, 0, 0);
+    SetupBg(0, 0, 31, 0);
+    SetupBg(2, 2, 28, 10);
+    SetBgPriority(2, 0);
+    SetBgPriority(0, 1);
+    SetBgPriority(1, 2);
+    LoadBgTiles(0, gUnk_0941A418, MSG_CONT_BG_TILES);
+    LoadBgMap(0, gUnk_0951CAB8, 0x800);
+    func_080065FC(2, 0x8000, 128);
+    func_08006778(gUnk_09EDA7E0, 120, 46);
+    func_08006B34(0);
+    p->unk_10 = LoadObjTiles(gUnk_090A7D9A, 192);
+    p->unk_14 = LoadObjPalette(gUnk_096146F8, 32);
+    func_0806CD30(p->unk_60);
+    p->unk_00 = AllocObjTiles(512, 0);
+    PushPaletteEffect(0);
+    p->unk_04 = LoadObjPalette(gUnk_09614658, 160);
+    PopPaletteEffect();
+    func_08002A10(p->unk_00, gUnk_090A6B26);
+    AnimInit(&p->unk_20, (s32)gUnk_09EEB108, (s32)gUnk_09EEB0C4);
+    AnimStart(&p->unk_20, 0, 1);
+    p->unk_08 = AllocObjTiles(1024, 0);
+    p->unk_0C = LoadObjPalette(gUnk_08F683A4, 32);
+    func_08002A10(p->unk_08, gUnk_090A7F0A);
+    AnimInit(&p->unk_38, (s32)gUnk_09EEB14C, (s32)gUnk_09EEB11C);
+    AnimStart(&p->unk_38, 0, 1);
+    p->unk_58 = -2048;
+    p->unk_5C = 0xA000;
+    p->unk_6B = 16;
+    p->unk_50 = MSG_CONT_X;
+    p->unk_54 = 0x4000;
+    p->unk_64 = 0;
+    p->unk_66 = 0;
+    func_08006120(1, 24);
+
+    for (i = 0; i < 5; i++) {
+        func_080062F4(((Handle0806180C*)p->unk_04)->unk_06 + i, 0);
+    }
+    p->unk_66 = 0x1000;
+    p->unk_6A = 0;
+}
+#else
 INCLUDE_ASM("msg/func_0806CD60.s");
+#endif
+#ifndef VERSION_EU
+void func_0806CF04(ContinueWork* p) {
+    u8 i;
+
+    SetBgMode1();
+    p->unk_60 = 0;
+    SetBackdropColor(0, 0, 0);
+    SetupBg(0, 0, 31, 0);
+    SetupBg(2, 2, 28, 10);
+    SetBgPriority(2, 0);
+    SetBgPriority(0, 1);
+    SetBgPriority(1, 2);
+    LoadBgTiles(0, gUnk_0941A418, MSG_CONT_BG_TILES);
+    LoadBgMap(0, gUnk_0951CAB8, 0x800);
+    func_080065FC(2, 0x8000, 128);
+    func_08006778(gUnk_09EDA7E0, 120, 46);
+    func_08006B34(0);
+    p->unk_10 = LoadObjTiles(gUnk_090A7D9A, 192);
+    p->unk_14 = LoadObjPalette(gUnk_096146F8, 32);
+    func_0806CD30(p->unk_60);
+    p->unk_00 = AllocObjTiles(512, 0);
+    PushPaletteEffect(0);
+    p->unk_04 = LoadObjPalette(gUnk_09614658, 160);
+    PopPaletteEffect();
+    func_08002A10(p->unk_00, gUnk_090A6B26);
+    AnimInit(&p->unk_20, (s32)gUnk_09EEB108, (s32)gUnk_09EEB0C4);
+    AnimStart(&p->unk_20, 0, 1);
+    p->unk_08 = AllocObjTiles(1024, 0);
+    p->unk_0C = LoadObjPalette(gUnk_09618118, 32);
+    func_08002A10(p->unk_08, gUnk_090A8FC4);
+    AnimInit(&p->unk_38, (s32)gUnk_09EEB180, (s32)gUnk_09EEB150);
+    AnimStart(&p->unk_38, 0, 1);
+    p->unk_58 = -2048;
+    p->unk_5C = 0xA000;
+    p->unk_6B = 16;
+    p->unk_50 = MSG_CONT_X;
+    p->unk_54 = 0x4000;
+    p->unk_64 = 0;
+    p->unk_66 = 0;
+    func_08006120(1, 24);
+
+    for (i = 0; i < 5; i++) {
+        func_080062F4(((Handle0806180C*)p->unk_04)->unk_06 + i, 0);
+    }
+    p->unk_66 = 0x1000;
+    p->unk_6A = 0;
+}
+#else
 INCLUDE_ASM("msg/func_0806CF04.s");
+#endif
 INCLUDE_ASM("msg/func_0806D0A8.s");
 void func_0806D288(ContinueWork* p) {
     DrawSprite(p->unk_50 >> 8, p->unk_54 >> 8, p->unk_18, p->unk_00, p->unk_04, 0, 4, 100);
@@ -1284,7 +1545,87 @@ u8 func_0806D808(void) {
     }
     return v;
 }
-INCLUDE_ASM("msg/func_0806D830.s");
+u8 func_0806D830(EventSeqWork* p, void* a) {
+    UnkStruct_09EE3FB4* t;
+    u8 i;
+
+    if (gUnk_02039DC8 == NULL) {
+        return 0;
+    }
+
+    if ((GetKeysHeld() & 8) != 0) {
+        switch (p->unk_2C) {
+        case 68:
+        case 83:
+        case 84:
+            break;
+        default:
+            gUnk_02039DC8->unk_8A++;
+            break;
+        }
+    } else {
+        gUnk_02039DC8->unk_8A = 0;
+    }
+
+    if (gUnk_02039DC8->unk_8A > 64 || gUnk_02039DC8->unk_83 == 1) {
+        gUnk_02039DC8->unk_8A = 64;
+        p->unk_2F = 1;
+        gUnk_02039DC8->unk_82 = 1;
+        func_08006184(0, 64);
+        SetTaskUpdate(a, (u32)func_0806D808);
+
+        for (i = 0; i < 32; i++) {
+            func_080062F4(i, 0);
+        }
+        return 1;
+    }
+
+    if (p->unk_38 == p->unk_34->unk_24) {
+        gUnk_02039DC8->unk_64 |= 2;
+    } else {
+        s32 t = p->unk_34->unk_08->unk_14 & 0xFF0;
+
+        if (t == 0) {
+            func_08006120(0, 64);
+        } else if (t == 128) {
+            func_08006120(1, 120);
+        }
+        p->unk_38++;
+    }
+    TaskPoolUpdate(&p->unk_00);
+    TaskPoolUpdate(&p->unk_14);
+
+    if (p->unk_32 != 0) {
+        gBtlWork->unk_00 = gUnk_02039DC8->unk_48;
+        gBtlWork->unk_04 = gUnk_02039DC8->unk_4C;
+    }
+
+    if ((gUnk_02039DC8->unk_64 & 3) == 2) {
+        gUnk_02039DC8->unk_6C++;
+    }
+
+    t = gUnk_09EE3FB4[p->unk_2C];
+
+    if (gUnk_02039DC8->unk_6C >= t->unk_18 && p->unk_2F == 0 && func_08006314() == 0) {
+        if (gUnk_02039DC8->unk_7F == 0) {
+            func_08006184(0, 64);
+        }
+        p->unk_2F = 1;
+        gUnk_02039DC8->unk_82 = 1;
+    }
+
+    if (p->unk_2F == 1) {
+        for (i = 0; i < 32; i++) {
+            func_080062F4(i, 0);
+        }
+
+        if (func_08006314() == 0) {
+            gUnk_02039DC8->unk_7A = 0;
+            return 0;
+        }
+    }
+    return 1;
+}
 void event_seq_2(EventSeqWork* p) {
     TaskPoolDraw(&p->unk_14);
 
@@ -2158,7 +2499,60 @@ u8 func_0806FDB0(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-INCLUDE_ASM("msg/func_0806FE90.s");
+void func_0806FE90(Work0806180C* p) {
+    u16 keys = GetKeysHeld();
+
+    switch (keys & 0xF0) {
+    case 0x40:
+        if (GetKeyReleaseTime(0x20) <= 4) {
+            p->unk_1AB = 211;
+        } else if (GetKeyReleaseTime(0x10) <= 4) {
+            p->unk_1AB = 45;
+        } else {
+            p->unk_1AB = 0;
+        }
+        break;
+    case 0x80:
+        if (GetKeyReleaseTime(0x20) <= 4) {
+            p->unk_1AB = 173;
+        } else if (GetKeyReleaseTime(0x10) <= 4) {
+            p->unk_1AB = 83;
+        } else {
+            p->unk_1AB = 128;
+        }
+        break;
+    case 0x20:
+        if (GetKeyReleaseTime(0x40) <= 4) {
+            p->unk_1AB = 211;
+        } else if (GetKeyReleaseTime(0x80) <= 4) {
+            p->unk_1AB = 173;
+        } else {
+            p->unk_1AB = 192;
+        }
+        break;
+    case 0x10:
+        if (GetKeyReleaseTime(0x40) <= 4) {
+            p->unk_1AB = 45;
+        } else if (GetKeyReleaseTime(0x80) <= 4) {
+            p->unk_1AB = 83;
+        } else {
+            p->unk_1AB = 64;
+        }
+        break;
+    case 0x50:
+        p->unk_1AB = 45;
+        break;
+    case 0x60:
+        p->unk_1AB = 211;
+        break;
+    case 0x90:
+        p->unk_1AB = 83;
+        break;
+    case 0xA0:
+        p->unk_1AB = 173;
+        break;
+    }
+}
 
 void func_08070008(Work0806180C* p) {
     u8 old = p->unk_1AB;
@@ -2386,7 +2780,34 @@ void func_08072B4C(Actor0806180C* a, u8 kind, u8 flag) {
     }
 }
 
-INCLUDE_ASM("msg/func_08072C34.s");
+void func_08072C34(Work0806180C* p) {
+    switch (p->unk_026) {
+    case 6:
+    case 16:
+    case 20:
+    case 21:
+    case 22:
+    case 32:
+        p->unk_03C |= 8;
+        break;
+    case 37:
+        func_08075E60(p);
+    case 8:
+    case 10:
+    case 33:
+    case 38:
+    case 39:
+    case 70:
+    case 71:
+    case 72:
+    case 73:
+    case 74:
+        p->unk_03C |= 0x10;
+        break;
+    case 0:
+        break;
+    }
+}
 #ifdef VERSION_EU
 #define MSG_WIN_ID_A 0x84
 #define MSG_WIN_ID_B 0x9A
@@ -2960,7 +3381,45 @@ void msgwait_3(MsgWaitWork* p) {
     ReleaseObjTiles(p->unk_00);
     ReleaseObjPalette(p->unk_14);
 }
+#ifndef VERSION_EU
+void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
+    p->unk_103 = *a;
+    p->unk_00 = AllocObjTiles(64, 0);
+    p->unk_14 = LoadObjPalette(gUnk_08F69BA4, 32);
+    LoadObjPaletteBank(((Handle0806180C*)p->unk_14)->unk_06, gUnk_08F69BA4);
+    func_080062F4(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
+    func_08002A10(p->unk_00, gUnk_09320796);
+    AnimInit((AnimState*)p->unk_DC, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
+    AnimStart((AnimState*)p->unk_DC, 2, 1);
+    p->unk_102 = 0;
+    p->unk_04 = AllocObjTiles(288, 0);
+    p->unk_08 = LoadObjPalette(gUnk_09614418, 32);
+    LoadObjPaletteBank(((Handle0806180C*)p->unk_08)->unk_06, gUnk_09614418);
+    func_08002A10(p->unk_04, gUnk_090A4664);
+    AnimInit((AnimState*)p->unk_C4, (s32)gUnk_09EEB03C, (s32)gUnk_09EEB008);
+    AnimStart((AnimState*)p->unk_C4, 2, 1);
+    p->unk_C0 = AnimGetGfx((AnimState*)p->unk_C4);
+    p->unk_0C = LoadObjTiles(gUnk_093F7C9C, 4032);
+    p->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
+    LoadObjPaletteBank(((Handle0806180C*)p->unk_10)->unk_06, gUnk_09611AB8);
+    func_080062F4(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
+    func_08065ACC(p->unk_1C, 10);
+    func_08065ACC(p->unk_6C, 10);
+    p->unk_18 = _08066468(1);
+    p->unk_F4 = func_08065B6C(gUnk_08159E10, p->unk_1C);
+    p->unk_F5 = func_08065B6C(gUnk_08159E18, p->unk_6C);
+    p->unk_F8 = 0x5800;
+    p->unk_100 = 1;
+    p->unk_FC = gUnk_09033D28[1];
+    p->unk_102 = 0;
+    gUnk_02039DC8->unk_7D = 1;
+    gUnk_02039DC8->unk_85 = 1;
+    gUnk_02039DC8->unk_84 = 0;
+    p->unk_104 = 0;
+}
+#else
 INCLUDE_ASM("msg/msgwait_yesno_0.s");
+#endif
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
     switch (GetKeysPressed()) {
     case 64:
