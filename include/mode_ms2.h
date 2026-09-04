@@ -2,6 +2,7 @@
 #define GUARD_MODE_MS2_H
 
 #include "types.h"
+#include "text_types.h"
 #include "ms_types.h"
 #include "key.h"
 #include "malloc.h"
@@ -235,7 +236,7 @@ extern s16 gUnk_02035CE4;
 extern s16 gUnk_02035E0C;
 extern s16 gUnk_02035E0E;
 void EnableBg(s32 a);
-void func_08065AE0(void* a, s32 b);
+void func_08065AE0(TextSlot* p, s32 n);
 void LoadPalette(void* src, void* dst, s32 size);
 void* func_08093C18(s32 a);
 u8 func_08065B6C(void* a, void* b);

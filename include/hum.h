@@ -2,6 +2,7 @@
 #define GUARD_HUM_H
 
 #include "types.h"
+#include "text_types.h"
 #include "jiminy_types.h"
 #include "save_types.h"
 #include "key.h"
@@ -806,7 +807,7 @@ void func_080A3398(void* p);
 void func_080C7024(void* p);
 void func_080DDEBC(void* p);
 void func_08109638(void* p);
-void func_08065AE0(void* p, s32 n);
+void func_08065AE0(TextSlot* p, s32 n);
 void func_0805F1C0(s32* p, s32 v);
 u16 func_0805A55C(u16* p);
 void func_0805A638(s32 a, u16** b);

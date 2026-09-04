@@ -2,6 +2,7 @@
 #define GUARD_MODE_MS_H
 
 #include "types.h"
+#include "text_types.h"
 #include "key.h"
 #include "taskpool.h"
 #include "fld_types.h"
@@ -212,7 +213,7 @@ u8 func_08101538(u32 a);
 void func_08102AB4(s16 x, s16 y);
 void func_08103F94(s16 a, s16 b);
 void func_080062F4(u16 a, s32 b);
-void func_08065AE0(void* a, s32 b);
+void func_08065AE0(TextSlot* p, s32 n);
 void* GetBgCharBase(s32 bg);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
 void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
