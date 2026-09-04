@@ -36,7 +36,9 @@ typedef struct Work0806180C {
     s32 unk_034;
     u8 unk_038[6];
     u16 unk_03E;
-    u8 unk_040[0x148];
+    u8 unk_040[0x13C];
+    s32 unk_17C;
+    u8 unk_180[8];
     s32 unk_188;
     s32 unk_18C;
     s32 unk_190;
@@ -181,10 +183,20 @@ typedef struct UnkStruct_02039DC8 {
     u8 unk_7B;
     u8 unk_7C;
     u8 unk_7D;
-    u8 unk_7E[0xA];
+    u8 unk_7E[9];
+    u8 unk_87;
     u8 unk_88;
     u8 unk_89;
+    u8 unk_8A;
+    u8 unk_8B;
 } UnkStruct_02039DC8;
+
+typedef struct UnkStruct_02039DCC {
+    u8 unk_00[2];
+    u8 unk_02;
+    u8 unk_03;
+    u16 unk_04[160];
+} UnkStruct_02039DCC;
 
 typedef struct Actor0806180C {
     u8 unk_00[0x24];
@@ -283,6 +295,7 @@ typedef struct UnkStruct_09EE3FB4 {
 } UnkStruct_09EE3FB4;
 
 extern UnkStruct_02039DC8* gUnk_02039DC8;
+extern UnkStruct_02039DCC* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
 extern u8 gUnk_09EE274C[];
 extern u8 gModeBattle[];
@@ -311,6 +324,8 @@ extern u8 gUnk_09614778[];
 extern u8 gUnk_09614798[];
 extern u8 gUnk_096147B8[];
 extern void* gUnk_09EEB204;
+extern void* gUnk_09EEC538[];
+extern s32 gUnk_09033D08[][2];
 extern s16 gSineTable[];
 extern s16 gUnk_09033D50[];
 extern s16 gUnk_09033E76[];
@@ -345,7 +360,7 @@ void func_08076110(s32 song, s16 x, s16 y);
 u8 func_0809D280(u8* s);
 u16 func_0806692C(u8* s, u16* out);
 u16 func_08066AF8(s32 v, u16* out);
-void func_0801CD74(void* a, u16 b);
+void func_0801CD74(void* a, s32 b);
 void TaskPoolUpdate(TaskPool* a);
 void SetTaskUpdate(u8* p, u32 v);
 u8 _0806E9DC(Work0806180C* p, void* a);
