@@ -36,6 +36,15 @@ def unaligned(ver):
     return bad
 
 
+def handwritten():
+    path = os.path.join(REPO, "config", "handwritten.txt")
+
+    if not os.path.exists(path):
+        return set()
+    return {l.strip() for l in open(path)
+            if l.strip() and not l.startswith("#")}
+
+
 def attempted(ledger):
     seen = set()
 
@@ -62,6 +71,7 @@ def main():
     src = open(os.path.join(REPO, "src", args.unit + ".c")).read()
     syms = text_symbols()
     bad = unaligned("jp")
+    asm_only = handwritten()
     bad_eu = unaligned("eu")
     done = attempted(args.ledger)
     rows = []
@@ -90,7 +100,9 @@ def main():
         why = ""
         note = "needs-eu-guard" if sym in bad_eu else ""
 
-        if sym in bad:
+        if sym in asm_only:
+            why = "handwritten-asm"
+        elif sym in bad:
             why = "jp-unaligned"
         elif sym in done:
             why = "attempted"
