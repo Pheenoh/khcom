@@ -3916,8 +3916,8 @@ u16 func_08083DF8(u8 slot) {
     return count;
 }
 
-#ifdef NON_MATCHING
 u16 func_08083E54(u8 mode) {
+    u8 slot;
     u16* cards;
     u16 count;
     u16 i;
@@ -3929,7 +3929,9 @@ u16 func_08083E54(u8 mode) {
     case 0:
         for (i = 0; i < DECK_SIZE; i++) {
             if (cards[i] != 0xFFFF) {
-                if (gCardDefs[cards[i] & CARD_ID_MASK].unk_2A <= 2) {
+                slot = gCardDefs[cards[i] & CARD_ID_MASK].unk_2A;
+
+                if (slot <= 2) {
                     count++;
                 }
             }
@@ -3948,9 +3950,6 @@ u16 func_08083E54(u8 mode) {
 
     return count;
 }
-#else
-INCLUDE_ASM("card/func_08083E54.s");
-#endif
 
 Deck* sub_08083EFC(void) {
     return gUnk_0203A850;
@@ -4113,12 +4112,11 @@ void func_08084AC8(u16 a) {
     }
 }
 
-#ifdef NON_MATCHING
 u16 func_08084BAC(void) {
     u16 count;
     u16 i;
 
-    count = 0;
+    count = i = 0;
 
     for (i = 0; i < gCardCount; i++) {
         if (gCardCollection[i] != CARD_ID_MASK) {
@@ -4128,9 +4126,6 @@ u16 func_08084BAC(void) {
 
     return count;
 }
-#else
-INCLUDE_ASM("card/func_08084BAC.s");
-#endif
 
 u16 func_08084BF0(void) {
     u16 count;
@@ -9273,7 +9268,6 @@ u8 func_08099048(u8* work, void* a) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 u8 func_080990CC(u8* work, void* a) {
     u8 (*f)(u8*, void*);
 
@@ -9290,27 +9284,26 @@ u8 func_080990CC(u8* work, void* a) {
         work[0x28]--;
     }
 
-    if (work[0x24] == 0) {
-        if (**(s16**)&work[0x30] > 1) {
-            f = REV_COUNT_1;
-            SetTaskUpdate(a, (void*)f);
-            work[0x28] = 8;
-            return f(work, a);
+    do {
+        if (work[0x24] == 0) {
+            if (**(s16**)&work[0x30] > 1) {
+                f = REV_COUNT_1;
+                SetTaskUpdate(a, (void*)f);
+                work[0x28] = 8;
+                return f(work, a);
+            }
+        } else {
+            if (**(s16**)&work[0x30] > 0) {
+                f = REV_COUNT_1;
+                SetTaskUpdate(a, (void*)f);
+                work[0x28] = 8;
+                return f(work, a);
+            }
         }
-    } else {
-        if (**(s16**)&work[0x30] > 0) {
-            f = REV_COUNT_1;
-            SetTaskUpdate(a, (void*)f);
-            work[0x28] = 8;
-            return f(work, a);
-        }
-    }
 
-    return 1;
+        return 1;
+    } while (0);
 }
-#else
-INCLUDE_ASM("card/func_080990CC.s");
-#endif
 #ifndef VERSION_EU
 void REV_COUNT_2(u8* work) {
     DrawSprite(*(s32*)&work[0x3C] >> 8, *(s32*)&work[0x40] >> 8, 0,

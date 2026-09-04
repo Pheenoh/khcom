@@ -2163,17 +2163,21 @@ void func_080B8508(WlogoTtEffTop* p) {
     func_080B8418(p);
 }
 
-#ifdef NON_MATCHING
 void func_080B8554(WlogoTtEffTop* p) {
+    WlogoTtEffSrc* src;
+    s32 dz;
+
     p->unk_128 = 226;
     p->unk_244 = 226;
     p->unk_35C = gUnk_09EF397C[0];
     p->unk_478 = gUnk_09EF3960[0];
+    dz = 0xF00;
+    src = p->unk_000;
 
-    if (p->unk_000->unk_28 & 0x20) {
+    if (src->unk_28 & 0x20) {
         p->unk_000->unk_14 = p->unk_000->unk_08 - 0xA00;
         p->unk_000->unk_18 = p->unk_000->unk_0C;
-        p->unk_000->unk_1C = p->unk_000->unk_10 + 0xF00;
+        p->unk_000->unk_1C = p->unk_000->unk_10 + dz;
         p->unk_014 = p->unk_000->unk_08 - 0xF00;
         p->unk_130 = p->unk_000->unk_14 + 0x500;
         p->unk_24C = p->unk_000->unk_14 + 0x400;
@@ -2192,9 +2196,6 @@ void func_080B8554(WlogoTtEffTop* p) {
     p->unk_254 = p->unk_000->unk_1C - 0x1F00;
     p->unk_370 = p->unk_000->unk_1C - 0x1C00;
 }
-#else
-INCLUDE_ASM("wlogo/func_080B8554.s");
-#endif
 
 void func_080B8688(WlogoTtEffTop* p) {
     p->unk_128 = 30;
