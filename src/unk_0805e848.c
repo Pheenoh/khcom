@@ -1,7 +1,7 @@
 #include "macros.h"
 #include "tutorial.h"
 
-#ifdef VERSION_US
+#ifndef VERSION_JP
 s16 func_0805E848(u16* widths, u16 count) {
     s16 i;
     s16 total;

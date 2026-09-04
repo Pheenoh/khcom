@@ -43,15 +43,20 @@ u8 func_080629CC(void) {
     return 0;
 }
 INCLUDE_ASM("msg/func_080629F8.s");
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+#define MSG_SAVE_ID_LO 0x8D
+#else
+#define MSG_SAVE_ID_LO 0x8F
+#endif
+
 void func_08062CE4(void) {
     switch (gUnk_02034A78) {
-    case 0x8F:
-    case 0x90:
-    case 0x91:
-    case 0x92:
-    case 0x93:
-    case 0x94:
+    case MSG_SAVE_ID_LO + 0:
+    case MSG_SAVE_ID_LO + 1:
+    case MSG_SAVE_ID_LO + 2:
+    case MSG_SAVE_ID_LO + 3:
+    case MSG_SAVE_ID_LO + 4:
+    case MSG_SAVE_ID_LO + 5:
         if (gGameState.flags & 0x10) {
             SaveWriteFileLarge(1);
         } else {
@@ -61,25 +66,18 @@ void func_08062CE4(void) {
         break;
     }
 }
-#else
-INCLUDE_ASM("msg/func_08062CE4.s");
-#endif
-#ifndef VERSION_EU
 void func_08062D20(void) {
     switch (gUnk_02034A78) {
-    case 0x8F:
-    case 0x90:
-    case 0x91:
-    case 0x92:
-    case 0x93:
-    case 0x94:
+    case MSG_SAVE_ID_LO + 0:
+    case MSG_SAVE_ID_LO + 1:
+    case MSG_SAVE_ID_LO + 2:
+    case MSG_SAVE_ID_LO + 3:
+    case MSG_SAVE_ID_LO + 4:
+    case MSG_SAVE_ID_LO + 5:
         func_080DF828();
         break;
     }
 }
-#else
-INCLUDE_ASM("msg/func_08062D20.s");
-#endif
 void func_08062D3C(void) {
     switch (gUnk_02034A78) {
     case 0x43:

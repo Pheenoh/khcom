@@ -24,6 +24,12 @@ typedef struct Dma3Request {
     u16 size;
 } Dma3Request;
 
+#ifdef VERSION_EU
+#define BG_ENTRY_COUNT 5
+#else
+#define BG_ENTRY_COUNT 4
+#endif
+
 typedef struct BgEntry {
     u8 unk_00;
     u8 unk_01[3];
