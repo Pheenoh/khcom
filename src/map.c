@@ -2477,7 +2477,6 @@ void func_080EA2AC(void) {
         break;
     }
 }
-#ifndef VERSION_EU
 u8 func_080EA400(void) {
     if (gUnk_0203C590.unk_02 & 2) {
         return 0xFF;
@@ -2485,21 +2484,34 @@ u8 func_080EA400(void) {
     if (gGameState.flags & 8) {
         switch (gUnk_0203C590.unk_04) {
         case 8:
+#ifdef VERSION_EU
+            return 0x95;
+#else
             return 0x97;
+#endif
         case 9:
+#ifdef VERSION_EU
+            return 0xAF;
+#else
             return 0xB1;
+#endif
         case 11:
+#ifdef VERSION_EU
+            return 0xB8;
+#else
             return 0xBA;
+#endif
         case 12:
+#ifdef VERSION_EU
+            return 0xBE;
+#else
             return 0xC0;
+#endif
         }
         return 0xFF;
     }
     return gUnk_09EF6AB0[gUnk_0203C590.unk_04];
 }
-#else
-INCLUDE_ASM("map/func_080EA400.s");
-#endif
 u8 func_080EA45C(void) {
     if (gUnk_0203C590.unk_02 & 1) {
         return 0xFF;
@@ -2551,7 +2563,6 @@ void func_080EA5A8(void) {
         ModeRequest(&gModeMapFld, 0);
     }
 }
-#ifndef VERSION_EU
 void func_080EA5CC(void) {
     func_080E0820();
     if (func_08006314() != 0) {
@@ -2566,7 +2577,11 @@ void func_080EA5CC(void) {
             gUnk_0203C590.unk_07 = 0;
             ModeRequest(&gModeWorldselect, 0);
         } else if (gUnk_0203C590.unk_04 == 13) {
+#ifdef VERSION_EU
+            func_0806180C(0x85);
+#else
             func_0806180C(0x87);
+#endif
         } else if (func_080EA400() != 0xFF) {
             gUnk_02034FD8 = 60;
             func_080EA1F4((s32)func_080EA7D8);
@@ -2580,9 +2595,6 @@ void func_080EA5CC(void) {
         func_080E04EC();
     }
 }
-#else
-INCLUDE_ASM("map/func_080EA5CC.s");
-#endif
 void func_080EA694(void) {
     u8 v;
     u16 t;

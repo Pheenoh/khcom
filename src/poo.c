@@ -106,7 +106,6 @@ u32 func_080C8AD4(u32 a) {
     return a;
 }
 
-#ifndef VERSION_EU
 void func_080C8AE0(PooWork* w) {
     s32 t;
 
@@ -116,7 +115,11 @@ void func_080C8AE0(PooWork* w) {
         w->unk_F4++;
         if (w->unk_F4 > 3) {
             if (func_080D2D50(1) == 0) {
+#ifdef VERSION_EU
+                func_080C7B84(0x8B);
+#else
                 func_080C7B84(0x8D);
+#endif
                 func_080D2D3C(1);
                 func_0800FDD0(0x52);
             }
@@ -125,9 +128,6 @@ void func_080C8AE0(PooWork* w) {
         func_080C8AB8(w);
     }
 }
-#else
-INCLUDE_ASM("poo/func_080C8AE0.s");
-#endif
 
 s32 func_080C8B38(PooAim* w, PooPos* p, u8* c) {
     s32 v;
@@ -2010,7 +2010,6 @@ void task_poo_eeyore_0(PooEeyoreWork* w) {
     w->unk_AA = 0;
 }
 
-#ifndef VERSION_EU
 u8 task_poo_eeyore_1(PooEeyoreWork* w) {
     if (w->unk_AC != 0) {
         if (func_08012660(w->unk_34, 9) != 0) {
@@ -2030,7 +2029,11 @@ u8 task_poo_eeyore_1(PooEeyoreWork* w) {
         func_080C9FA8(w->unk_24, w->unk_28 + w->unk_2C);
         w->unk_AA--;
         if (w->unk_AA == 0) {
+#ifdef VERSION_EU
+            func_080C7B84(0x8A);
+#else
             func_080C7B84(0x8C);
+#endif
             func_080D2D3C(2);
             func_0800FDD0(0x51);
             w->unk_A4 = 1;
@@ -2039,9 +2042,6 @@ u8 task_poo_eeyore_1(PooEeyoreWork* w) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("poo/task_poo_eeyore_1.s");
-#endif
 
 void task_poo_eeyore_2(PooEeyoreWork* w) {
     u8* p;
@@ -2618,7 +2618,6 @@ void task_poo_roo_0(PooRooWork* w, PooPos* p) {
     }
 }
 
-#ifndef VERSION_EU
 u8 task_poo_roo_1(PooRooWork* w) {
     s32 t;
 
@@ -2657,7 +2656,11 @@ u8 task_poo_roo_1(PooRooWork* w) {
         }
 
         if (w->unk_38->unk_08 >= 0) {
+#ifdef VERSION_EU
+            func_080C7B84(0x89);
+#else
             func_080C7B84(0x8B);
+#endif
             func_080D2D3C(5);
             func_0800FDD0(80);
         }
@@ -2673,9 +2676,6 @@ u8 task_poo_roo_1(PooRooWork* w) {
     TaskPoolUpdate(&w->unk_98);
     return 1;
 }
-#else
-INCLUDE_ASM("poo/task_poo_roo_1.s");
-#endif
 
 void task_poo_roo_2(PooRooWork* w) {
     s16 x;
@@ -4687,7 +4687,6 @@ void func_080D2E98(void) {
     func_080D2F10(0);
 }
 
-#ifndef VERSION_EU
 u16 func_080D2EB8(void) {
     s32 i;
 
@@ -4705,11 +4704,12 @@ u16 func_080D2EB8(void) {
         }
         return gUnk_0203C4B4->unk_00[i].unk_04;
     }
-    return 0xB4;
-}
+#ifdef VERSION_EU
+    return 0xB3;
 #else
-INCLUDE_ASM("poo/func_080D2EB8.s");
+    return 0xB4;
 #endif
+}
 
 void func_080D2F10(u8 a) {
     gUnk_0203C4B4->unk_32 = a;
