@@ -6,5 +6,5 @@
 	.thumb_func
 	.type mode_sio_battle_1, %function
 mode_sio_battle_1:
-	.incbin "roms/B8CP.gba", 0xabe60, 0x5b4
+	.incbin "roms/B8CP.gba", 0xabcec, 0x728
 .syntax divided
