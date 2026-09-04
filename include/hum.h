@@ -802,7 +802,7 @@ void func_080C700C(u16* out);
 void func_080DDEB0(s32 a);
 void func_0810962C(void* p);
 void func_080E92F8(void* p);
-void func_080A32DC(void* p);
+void func_080A32DC(u8* p);
 void func_080A3398(void* p);
 void func_080C7024(u16* in);
 void func_080DDEBC(s32 a);
