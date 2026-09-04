@@ -842,7 +842,7 @@ void* EwramAlloc(s32 size);
 s32 SaveLoadHeader(void);
 void EnableBg(s32 bg);
 void func_0805FA8C(s32 a, s32 b, s32 c);
-void func_0805FA60(s32 a, const char* b, s32 c, s32 d);
+void func_0805FA60(s32 a, void* b, s32 c, u8 d);
 void SetBgMode0(void);
 void func_08006120(s32 a, s32 b);
 void m4aMPlayAllStop(void);
