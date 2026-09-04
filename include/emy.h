@@ -406,7 +406,7 @@ void func_0802F1E8(void);
 void func_08013480(s32 a, s32 b, s32 c);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 u8 func_0801CA00(EmyActor* a);
-u16 AnimGetFrame(void* a);
+u16 AnimGetFrame(AnimState* a);
 u16 AnimGetGfxIndex(void* a);
 void func_0801BCF8(EmyActor* a);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);

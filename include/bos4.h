@@ -534,7 +534,7 @@ extern u16 gUnk_0203C560;
 void func_0801C298(u8 a, u8 b);
 void TaskPoolUpdate(TaskPool* a);
 u16 AnimGetId(void* a);
-u16 AnimGetFrame(void* a);
+u16 AnimGetFrame(AnimState* a);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_0801C2DC(void* a, s32 b);
 u16 func_0801AF1C(s32 a);

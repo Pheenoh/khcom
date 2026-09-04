@@ -1604,7 +1604,7 @@ extern u8 gUnk_0203C3D8;
 u16 func_080CA67C(PooPos* p);
 u16 func_080CBAB0(PooPos* p);
 void func_080C7BCC(u16 a);
-u16 AnimGetFrame(void* a);
+u16 AnimGetFrame(AnimState* a);
 void* GetBgCharBase(s32 bg);
 void* GetBgScreenBase(s32 bg);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
