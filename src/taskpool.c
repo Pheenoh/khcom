@@ -398,14 +398,17 @@ const char* GetModeName(void) {
     return gCurrentMode->name;
 }
 
-#ifndef VERSION_EU
 void UpdateDebugModeSelect(void) {
     if (GetKeysHeld() & SELECT_BUTTON) {
         if (GetKeysPressed() & L_BUTTON) {
             gDebugModeIndex--;
 
             if ((s16)gDebugModeIndex < 0) {
+#ifdef VERSION_EU
+                gDebugModeIndex = 23;
+#else
                 gDebugModeIndex = 25;
+#endif
             }
 
             ModeRequest(gDebugModes[(s16)gDebugModeIndex], 0);
@@ -414,7 +417,11 @@ void UpdateDebugModeSelect(void) {
         if (GetKeysPressed() & R_BUTTON) {
             gDebugModeIndex++;
 
+#ifdef VERSION_EU
+            if (gDebugModeIndex > 23) {
+#else
             if (gDebugModeIndex > 25) {
+#endif
                 gDebugModeIndex = 0;
             }
 
@@ -422,6 +429,3 @@ void UpdateDebugModeSelect(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("taskpool/UpdateDebugModeSelect.s");
-#endif

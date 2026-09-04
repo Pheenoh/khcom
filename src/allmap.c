@@ -324,10 +324,13 @@ void func_080D3F10(AllmapBarWork* work) {
     work->unk_24 = -0x8000;
 }
 
-#ifndef VERSION_EU
 void task_allmap_bar_0(AllmapBarWork* work) {
     gStockMesDispWork = work;
+#ifdef VERSION_EU
+    work->unk_00 = LoadObjTiles(gUnk_0976D8A6, 0xDC0);
+#else
     work->unk_00 = LoadObjTiles(gUnk_0976D8A6, 0x2C0);
+#endif
     work->unk_04 = LoadObjTiles(gUnk_0976DBDA, 0xC0);
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->unk_0C = 16;
@@ -341,9 +344,6 @@ void task_allmap_bar_0(AllmapBarWork* work) {
     work->unk_2C = 0;
     work->unk_2D = 0;
 }
-#else
-INCLUDE_ASM("allmap/task_allmap_bar_0.s");
-#endif
 
 void func_080D3FD4(AllmapBarWork* work) {
     func_08006184(0, 16);

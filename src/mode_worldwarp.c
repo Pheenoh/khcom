@@ -227,7 +227,6 @@ void mode_worldwarp_1(void) {
     func_08100980();
 }
 
-#ifndef VERSION_EU
 void mode_worldwarp_2(void) {
     s32 i;
 
@@ -247,13 +246,18 @@ void mode_worldwarp_2(void) {
             ReleaseObjTiles(gUnk_02035570[i]);
         }
     }
+#ifdef VERSION_EU
+    func_08065AE0(gUnk_02035618, 48);
+#else
     func_08065AE0(gUnk_02035618, 24);
+#endif
+#ifdef VERSION_EU
+    func_08065AE0(gUnk_020356E0, 48);
+#else
     func_08065AE0(gUnk_020356E0, 24);
+#endif
     EwramFree(gUnk_0203550C);
 }
-#else
-INCLUDE_ASM("mode_worldwarp/mode_worldwarp_2.s");
-#endif
 
 u32 GetMooglePoints(void) {
     return gGameState.mooglePoints;

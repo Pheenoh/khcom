@@ -960,16 +960,23 @@ void func_080147D8(s32 x, s32 y) {
     gUnk_02034928->unk_34 |= 0x10;
 }
 
-#ifndef VERSION_EU
 void func_08014850(void) {
     switch (gUnk_02034928->unk_26) {
     case 0:
+#ifdef VERSION_EU
+        if (gUnk_02034928->unk_08 == 20) {
+#else
         if (gUnk_02034928->unk_08 == 21) {
+#endif
             func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 16, 16, 48);
         }
         break;
     case 1:
+#ifdef VERSION_EU
+        if (gUnk_02034928->unk_08 == 20) {
+#else
         if (gUnk_02034928->unk_08 == 25) {
+#endif
             func_08011F78(gUnk_02034928->unk_48, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 24, 24, 48);
         }
         break;
@@ -982,9 +989,6 @@ void func_08014850(void) {
     gUnk_02034928->unk_08++;
     func_08012908();
 }
-#else
-INCLUDE_ASM("unk_0801007c/func_08014850.s");
-#endif
 
 void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w) {
     s16 sx;
