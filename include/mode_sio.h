@@ -476,7 +476,7 @@ void SetBgSize(s32 a, s32 b);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 void SetBgBlend(s32 a, u16 b, u16 c);
 void TaskPoolDraw(TaskPool* a);
-u8 IsTaskActive(void* t);
+u8 IsTaskActive(Task* t);
 void SetBgOverflow(s32 bg, u8 on);
 void* GetBgCharBase(s32 bg);
 void SetBgMode1(void);
