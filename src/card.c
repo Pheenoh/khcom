@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "anim.h"
 #include "text_types.h"
 #include "taskpool.h"
 #include "key.h"
@@ -105,7 +106,7 @@ void func_080038E4(UnkStruct_080038C8* a, void* b, void* c);
 void m4aSongNumStart(u16 n);
 void TaskPoolDestroy(TaskPool* a);
 u8 func_08006314(void);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 void AnimStart(void* a, u16 b, s32 c);
 void func_08000D20(void* a, void* b, void* c);
 void func_08000D28(void* a, void* b);

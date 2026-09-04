@@ -2,6 +2,7 @@
 #define GUARD_BOS4_H
 
 #include "types.h"
+#include "anim.h"
 #include "mode.h"
 #include "key.h"
 #include "taskpool.h"
@@ -593,7 +594,7 @@ u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
 void task_bos_boogie_dice_3(BoogieDiceWork* work);
 void AnimInit(void* a, void* b, void* c);
 void SeedRandom(u32 seed);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 void func_080E5510(u8 a);
 extern u8 gUnk_0203C584;
 extern const u8 gUnk_0984D134[][8];

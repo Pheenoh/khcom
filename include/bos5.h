@@ -353,7 +353,7 @@ typedef struct MdWork {
 
 u16 GetRandom(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 
 extern s16 gSineTable[];
 extern u8 gUnk_09A3C9BC[];

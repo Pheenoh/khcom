@@ -504,7 +504,7 @@ void func_0810CC68(BosLstWork* work);
 
 s32 func_0810D70C(BosLstWork* work);
 
-void AnimUpdate(AnimState* a);
+void* AnimUpdate(AnimState* a);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void ColliderSetRadius(void* a, u16 b);
 void func_08110994(LstTask* t, s16 a);

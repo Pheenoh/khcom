@@ -2,6 +2,7 @@
 #define GUARD_TUTORIAL_H
 
 #include "types.h"
+#include "anim.h"
 #include "game.h"
 
 typedef struct TutorialWork {
@@ -35,7 +36,7 @@ void* AllocObjTiles(s32 a, void* b);
 void AnimInit(void* a, void* b, void* c);
 void AnimStart(void* a, s32 b, s32 c);
 void SeedRandom(s32 a);
-void* AnimUpdate(void* a);
+void* AnimUpdate(AnimState* a);
 
 extern u32 gFrameCounter;
 extern s16 gSineTable[];
