@@ -154,7 +154,14 @@ def record(name, sites, variants, verdict, note):
 def done():
     if not os.path.exists(LEDGER):
         return set()
-    return {l.split("\t")[0] for l in open(LEDGER) if not l.startswith("symbol")}
+    keep = set()
+
+    for l in open(LEDGER):
+        f = l.rstrip("\n").split("\t")
+
+        if len(f) > 3 and f[3] in ("unified", "load-bearing", "already-uniform"):
+            keep.add(f[0])
+    return keep
 
 
 def main():
