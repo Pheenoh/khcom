@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "text_types.h"
 #include "taskpool.h"
 #include "key.h"
 #include "gba/syscall.h"
@@ -148,7 +149,7 @@ void func_0808A218(void);
 void func_0808D828(u8* work);
 void func_0808C940(UnkStruct_0808C940* w, s16 n);
 void func_0808C974(UnkStruct_0808C940* w);
-void func_08065AE0(void* a, s32 b);
+void func_08065AE0(TextSlot* p, s32 n);
 void func_08096638(PrizeCardWork* w);
 void SetObjMosaicSize(s32 a, s32 b);
 void func_08006120(s32 a, s32 b);

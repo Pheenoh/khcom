@@ -2,6 +2,7 @@
 #define GUARD_MODE_WORLDWARP_H
 
 #include "types.h"
+#include "text_types.h"
 #include "taskpool.h"
 #include "main.h"
 #include "anim.h"
@@ -158,7 +159,7 @@ void func_080DF9E0(u8 a);
 void func_080E04EC(void);
 void func_08100980(void);
 void func_081006AC(void);
-void func_08065AE0(void* a, s32 b);
+void func_08065AE0(TextSlot* p, s32 n);
 void func_080063A8(void);
 u8 func_080A42C8(void);
 void func_080A42E0(void);

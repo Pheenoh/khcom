@@ -2,6 +2,7 @@
 #define GUARD_MODE_MAPINSPECT_H
 
 #include "types.h"
+#include "text_types.h"
 #include "ms_types.h"
 #include "main.h"
 #include "anim.h"
@@ -78,7 +79,7 @@ extern u8 gUnk_09A3489C[];
 
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
-void func_08065AE0(void* a, s32 b);
+void func_08065AE0(TextSlot* p, s32 n);
 void UpdatePlayTime(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void LoadBgMap(s32 bg, void* src, u16 size);

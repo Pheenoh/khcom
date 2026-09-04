@@ -2,6 +2,7 @@
 #define GUARD_ROOM_H
 
 #include "types.h"
+#include "text_types.h"
 #include "taskpool.h"
 
 typedef struct RoomNameWork {
@@ -48,7 +49,7 @@ void ReleaseObjPalette(u8* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, u16 h);
 void func_08065ACC(void* a, s32 b);
-void func_08065AE0(void* a, s32 b);
+void func_08065AE0(TextSlot* p, s32 n);
 u8 func_08065B6C(void* a, void* b);
 void* _08066468(s32 a);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
