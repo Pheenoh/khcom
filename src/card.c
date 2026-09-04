@@ -174,7 +174,7 @@ void ModeRequest(Mode* mode, s32 arg);
 void UpdatePlayTime(void);
 void func_080B31A0(void);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
-void func_0806BA0C(s16 a, void* b);
+void func_0806BA0C(s16 v, u8* out);
 u8 Mapcard_1(u8* work, void* a);
 extern u16 gBldAlpha;
 extern u8* gUnk_02039DC8;
