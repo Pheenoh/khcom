@@ -283,7 +283,7 @@ void SetBgOverflow(s32 bg, u8 on);
 void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* a);
-void TaskPoolDestroy(TaskPool* pool);
+void TaskPoolDestroy(TaskPool* a);
 void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 void AnimInit(void* a, void* b, void* c);
 void* AnimUpdate(void* a);

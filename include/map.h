@@ -518,7 +518,7 @@ void TaskPoolUpdate(TaskPool* pool);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(void* a);
 void func_08012304(void* a);
-void TaskPoolDestroy(void* pool);
+void TaskPoolDestroy(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
 void* AnimUpdate(void* a);
 void m4aMPlayVolumeControl(void* a, u16 b, u16 c);

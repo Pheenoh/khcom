@@ -739,7 +739,7 @@ void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolUpdate(TaskPool* pool);
 void* TaskCreate(TaskPool* pool, void* desc, void* arg);
-void TaskPoolDestroy(TaskPool* pool);
+void TaskPoolDestroy(TaskPool* a);
 void* LoadObjTiles(void* src, s32 size);
 void* LoadObjPalette(void* src, s32 size);
 void ReleaseObjTiles(void* p);
