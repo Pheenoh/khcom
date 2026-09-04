@@ -1327,7 +1327,7 @@ void task_poo_roo_3(PooRooWork* w);
 u8 func_080CF114(void);
 u8 func_080CF12C(void);
 void* AllocObjTiles(s32 size, void* src);
-void AnimInit(void* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimGetGfx(void* a);
 void AnimStart(void* a, u16 animId, u16 flags);
 void* LoadObjPalette(void* src, s32 size);

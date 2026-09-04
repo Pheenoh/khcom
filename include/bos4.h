@@ -592,7 +592,7 @@ extern u8 gUnk_0203C574;
 extern u8 gUnk_096FE0E8[];
 u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
 void task_bos_boogie_dice_3(BoogieDiceWork* work);
-void AnimInit(void* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void SeedRandom(u32 seed);
 void* AnimUpdate(AnimState* a);
 void func_080E5510(u8 a);

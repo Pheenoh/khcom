@@ -285,7 +285,7 @@ void TaskPoolUpdate(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* a);
 void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
-void AnimInit(void* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(void* a);
 void* AllocObjTiles(u16 size, void* src);

@@ -632,7 +632,7 @@ void AnimReset(void* a);
 void* AnimGetGfx(void* a);
 u16 AnimGetId(void* a);
 u8 AnimIsFinished(void* a);
-void AnimInit(void* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 u16 GetRandom(void);
 void m4aSongNumStart(u16 id);
 s32 AllocObjAffineAngle(s32 a, s32 b);

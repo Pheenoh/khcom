@@ -366,7 +366,7 @@ s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 a, s32 b);
 void LoadObjPaletteBank(u16 a, void* b);
 void func_08002A10(void* a, void* b);
-void AnimInit(void* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void func_08005244(s32 a, u16 b, u16 c);
 u8 func_08073318(MsgWinWork* p, void* a);
 u8 func_08073F78(MsgWaitWork* p);

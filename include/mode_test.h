@@ -165,7 +165,7 @@ void func_08002A10(void* a, void* b);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjPalette(u8* p);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimGetGfx(AnimState* a);
 void* AnimUpdate(AnimState* a);

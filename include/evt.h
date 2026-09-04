@@ -52,7 +52,7 @@ typedef struct EvtShadowWork {
 } EvtShadowWork;
 
 void* AllocObjTiles(u16 a, s32 b);
-void AnimInit(void* a, s32 b, s32 c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(void* a);
 void TaskCreate(void* a, void* b, void* c);

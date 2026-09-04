@@ -197,7 +197,7 @@ void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void* LoadObjPalette(void* a, s32 b);
 void* LoadObjTiles(void* a, s32 b);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* EwramAlloc(u32 size);
 void SpriteReset(void);

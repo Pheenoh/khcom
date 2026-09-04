@@ -95,7 +95,7 @@ typedef struct FldShadowWork {
     u8 unk_14[0x18];
 } FldShadowWork;
 
-void AnimInit(void* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(void* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 s8 GetAngleDiff(u8 a, u8 b);

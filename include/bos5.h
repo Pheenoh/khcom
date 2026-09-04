@@ -439,7 +439,7 @@ u8 func_080F7E0C(s32 a, s32 b, s32 c, s32 d);
 u8 func_08012660(void* a, s32 b);
 extern s16 gSineTable[];
 void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 extern MdFireDef gUnk_09992EF8[];
 extern u8 gUnk_09992F28[];
 extern u8 gUnk_09A3C99C[];

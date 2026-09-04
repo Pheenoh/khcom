@@ -20,7 +20,7 @@ void ModeRequestHeapReset(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 void* LoadObjTiles(void* a, s32 b);
 void func_08002A10(void* a, void* b);

@@ -179,7 +179,7 @@ void func_080AEB94(void);
 void func_080E04EC(void);
 u8 func_080987C0(u8 a);
 void* AnimGetGfx(AnimState* a);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimUpdate(AnimState* a);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);

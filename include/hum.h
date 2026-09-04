@@ -752,7 +752,7 @@ void func_08012304(void* p);
 u8 AnimIsFinished(void* a);
 void* AnimUpdate(AnimState* a);
 void func_0800E314(HumWork* work, HumSub* sub, void* def);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, s32 b, s32 c);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);

@@ -316,7 +316,7 @@ s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 struct BtlWork* ListPoolFirst(void* a);
 struct BtlWork* ListPoolNext(void* a);
 void* LoadObjPalette(void* src, s32 size);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimUpdate(AnimState* a);
 u8 AnimIsFinished(AnimState* a);
