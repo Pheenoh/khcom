@@ -2,6 +2,7 @@
 #define GUARD_BOS4_H
 
 #include "types.h"
+#include "key.h"
 #include "taskpool.h"
 
 typedef struct BtlWork {
@@ -828,7 +829,6 @@ void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work);
 void func_080DB04C(BoogieKnifeWork* work);
 void Mode_MapChk_1(void);
 u16 GetKeysRepeat(void);
-u16 GetKeysPressed(void);
 void ModeRequest(void* mode, s32 arg);
 void func_08085FB0(void);
 void func_08093BB4(void);

@@ -2,6 +2,7 @@
 #define GUARD_MAP_H
 
 #include "types.h"
+#include "key.h"
 #include "taskpool.h"
 #include "malloc.h"
 #include "fld_types.h"
@@ -610,12 +611,10 @@ void* func_080D3A20(void* pool);
 void func_08006184(s32 a, u16 b);
 void func_080063A8(void);
 void func_080125A4(void);
-u16 GetKeysPressed(void);
 void func_080DF730(u8 a, u8 b);
 void func_080DF814(void);
 void func_080DF828(void);
 void func_0806180C(u16 a);
-u16 GetKeysHeld(void);
 void func_080DFA3C(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);

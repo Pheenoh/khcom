@@ -2,6 +2,7 @@
 #define GUARD_BOS5_H
 
 #include "types.h"
+#include "key.h"
 #include "taskpool.h"
 #include "anim.h"
 
@@ -402,7 +403,6 @@ extern GameState gGameState;
 extern u8 gUnk_09A02EFC[];
 extern u8 gUnk_09A020FC[];
 
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void* GetBgCharBase(s32 bg);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);

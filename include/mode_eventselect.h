@@ -2,6 +2,7 @@
 #define GUARD_MODE_EVENTSELECT_H
 
 #include "types.h"
+#include "key.h"
 #include "taskpool.h"
 #include "gba/syscall.h"
 #include "malloc.h"
@@ -150,7 +151,6 @@ extern const char* gEventNames[];
 extern Mode gModeDebug;
 
 void ModeRequest(Mode* mode, s32 arg);
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 void SetBgMode0(void);
 void EnableBg(s32 a);

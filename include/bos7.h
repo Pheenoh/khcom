@@ -2,6 +2,7 @@
 #define GUARD_BOS7_H
 
 #include "types.h"
+#include "key.h"
 #include "taskpool.h"
 #include "anim.h"
 
@@ -585,7 +586,6 @@ void EnableBg(s32 bg);
 void DisableBg(s32 bg);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 void SetBgColorMode(s32 bg, s32 mode);
-u16 GetKeysPressed(void);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08116F08(void);
 void SetBgMode0(void);

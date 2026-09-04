@@ -2,6 +2,7 @@
 #define GUARD_MODE_MS_H
 
 #include "types.h"
+#include "key.h"
 #include "taskpool.h"
 #include "fld_types.h"
 #include "anim.h"
@@ -142,7 +143,6 @@ void func_08103D54(s16 a);
 void func_08103D7C(void);
 void func_08103DE8(void);
 
-u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
 u16 GetRandom(void);
 void* GetBgScreenBase(s32 bg);
