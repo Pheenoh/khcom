@@ -22,6 +22,20 @@ fi
 if [ -z "${MATCH_BSS:-}" ] && [ -f build/us/com_us.map ]; then
   MATCH_BSS=$(grep -A1 "^\.bss\.$U " build/us/com_us.map 2>/dev/null | head -1 | awk '{print $2}')
 fi
+if [ -z "${MATCH_BSS:-}" ] && [ -f configure.py ]; then
+  MATCH_BSS=$(U=$U python3 -c '
+import os, re
+u = os.environ["U"]
+src = open("configure.py").read()
+m = re.search(r"\"src/%s\.o\"\s*:\s*(\{[^}]*\}|0[xX][0-9a-fA-F]+)" % re.escape(u), src)
+if m:
+    t = m.group(1)
+    if t.startswith("{"):
+        v = re.search(r"\"us\"\s*:\s*(0[xX][0-9a-fA-F]+)", t)
+        t = v.group(1) if v else ""
+    print(t.lower())
+' 2>/dev/null)
+fi
 [ -n "${MATCH_BASE:-}" ] && export MATCH_BASE
 [ -n "${MATCH_BSS:-}" ] && export MATCH_BSS
 arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp ${EXTRA_INC:-} $C -o $FT/x.i

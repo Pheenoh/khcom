@@ -40,13 +40,16 @@ def parse_bytes(line):
 
 
 def patch_tu(tu_name, chunk, names):
-    tu = Path("src") / f"{tu_name}.c"
-    text = tu.read_text()
     anchor = f'INCLUDE_ASM("{tu_name}/{chunk}.s");\n'
-    if anchor not in text:
-        sys.exit(f"error: {anchor.strip()} not found in {tu}")
+    tu = next((p for p in sorted(Path("src").glob("*.c"))
+               if anchor in p.read_text()), None)
+
+    if tu is None:
+        sys.exit(f"error: {anchor.strip()} not found in any src/*.c")
+    text = tu.read_text()
     added = "".join(f'INCLUDE_ASM("{tu_name}/{n}.s");\n' for n in names)
     tu.write_text(text.replace(anchor, anchor + added, 1))
+    print(f"  patched {tu}")
 
 
 def main():
