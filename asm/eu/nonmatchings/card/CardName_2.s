@@ -6,5 +6,5 @@
 	.thumb_func
 	.type CardName_2, %function
 CardName_2:
-	.incbin "roms/B8CP.gba", 0x9d31c, 0x9c
+	.incbin "roms/B8CP.gba", 0x9d31c, 0xa8
 .syntax divided

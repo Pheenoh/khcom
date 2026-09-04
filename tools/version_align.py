@@ -14,6 +14,7 @@ to produce that it is committed rather than regenerated on every build.
 """
 
 import argparse
+import bisect
 import re
 import struct
 import subprocess
@@ -236,6 +237,19 @@ def main():
             if not progress:
                 break
 
+    def verify(k, cur):
+        a, e, nm = funcs[k]
+        if cur < CODE_LO or cur - ROM_BASE + (e - a) > len(mot):
+            return None
+        pat = mus[a - ROM_BASE:e - ROM_BASE]
+        got = mot[cur - ROM_BASE:cur - ROM_BASE + (e - a)]
+
+        if pat == got:
+            return "fill"
+        if near_identical(pat, got, 16):
+            return "near"
+        return None
+
     def fill():
         i = 0
         while i < n:
@@ -245,22 +259,32 @@ def main():
             j = i
             while j < n and addr[j] is None and how[j] != "absent":
                 j += 1
-            if i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
-                start = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
-                need = sum(funcs[k][1] - funcs[k][0] for k in range(i, j))
-                if start + need == addr[j]:
-                    cur = start
-                    for k in range(i, j):
-                        a, e, nm = funcs[k]
-                        pat = mus[a - ROM_BASE:e - ROM_BASE]
-                        got = mot[cur - ROM_BASE:cur - ROM_BASE + (e - a)]
-                        if pat == got:
-                            addr[k] = cur
-                            how[k] = "fill"
-                        elif near_identical(pat, got, 16):
-                            addr[k] = cur
-                            how[k] = "near"
-                        cur += e - a
+
+            if i > 0 and addr[i - 1] is not None:
+                cur = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
+
+                for k in range(i, j):
+                    label = verify(k, cur)
+
+                    if label is None:
+                        break
+                    addr[k] = cur
+                    how[k] = label
+                    cur += funcs[k][1] - funcs[k][0]
+
+            if j < n and addr[j] is not None:
+                cur = addr[j]
+
+                for k in range(j - 1, i - 1, -1):
+                    if addr[k] is not None:
+                        break
+                    cur -= funcs[k][1] - funcs[k][0]
+                    label = verify(k, cur)
+
+                    if label is None:
+                        break
+                    addr[k] = cur
+                    how[k] = label
             i = j
 
     start_of = {a: i for i, (a, e, nm) in enumerate(funcs)}
@@ -316,6 +340,73 @@ def main():
         fill()
         crossref()
 
+    def entry_candidates():
+        spans = sorted((addr[i], addr[i] + (funcs[i][1] - funcs[i][0]))
+                       for i in range(n) if addr[i] is not None and how[i] != "absent")
+        starts = [x[0] for x in spans]
+
+        def owner_span(p):
+            k = bisect.bisect_right(starts, p) - 1
+            return spans[k] if k >= 0 and spans[k][0] <= p < spans[k][1] else None
+        cands = set()
+
+        for k in range(CODE_LO - ROM_BASE, min(CODE_HI, len(ot)) - ROM_BASE - 3, 2):
+            o = blpair(ot, k)
+
+            if o is None:
+                continue
+            p = ROM_BASE + k
+            t = p + o
+
+            if not CODE_LO <= t < CODE_HI:
+                continue
+            sp = owner_span(p)
+
+            if sp and sp[0] <= t < sp[1]:
+                continue
+            cands.add(t)
+
+        for k in range(0, len(ot) - 3, 4):
+            w = struct.unpack_from("<I", ot, k)[0]
+
+            if w & 1 and CODE_LO <= (w & ~1) < CODE_HI:
+                cands.add(w & ~1)
+        return sorted(cands)
+
+    def entries():
+        cands = entry_candidates()
+        placed = 0
+        i = 0
+
+        while i < n:
+            if addr[i] is not None or how[i] == "absent":
+                i += 1
+                continue
+            j = i
+
+            while j < n and addr[j] is None and how[j] != "absent":
+                j += 1
+
+            if i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
+                lo = addr[i - 1] + 1
+                hi = addr[j]
+                a = bisect.bisect_left(cands, lo)
+                b = bisect.bisect_left(cands, hi)
+
+                if b - a == j - i:
+                    for k in range(i, j):
+                        cur = cands[a + k - i]
+                        addr[k] = cur
+                        how[k] = verify(k, cur) or "entry"
+                        placed += 1
+            i = j
+
+        if placed:
+            print(f"  {placed} rows placed from target call and pointer targets")
+        return placed
+
+    entries()
+
     def monotone():
         by_obj = {}
         for i, (a, e, nm) in enumerate(funcs):
@@ -354,7 +445,7 @@ def main():
             va = "-" if addr[i] is None else f"{addr[i]:#010x}"
             f.write(f"{nm}\t{a:#010x}\t{e - a}\t{va}\t{how[i]}\n")
     counts = {k: how.count(k) for k in
-              ("named", "xref", "global", "body", "fill", "near", "absent", "-")}
+              ("named", "xref", "global", "body", "fill", "near", "entry", "absent", "-")}
     print(f"{out}: {n} functions -> "
           + ", ".join(f"{k} {v}" for k, v in counts.items()))
 
