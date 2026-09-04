@@ -2501,3 +2501,4 @@ gUnk_09EF4448 = 0x09ecb834
 gUnk_09EF4688 = 0x09ecba74
 gTaskDescPooFreeballoon = 0x09ecbd5c
 gUnk_096FD86E = 0x096b604a
+gUnk_090AB5B2 = 0x09066ada
