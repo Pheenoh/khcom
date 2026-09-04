@@ -106,7 +106,6 @@ void func_08062D64(void) {
         }
     }
 }
-#ifdef NON_MATCHING
 void func_08062DC8(s32 x, s32 y, u8* s) {
     u8 i;
     u8 len;
@@ -133,7 +132,7 @@ void func_08062DC8(s32 x, s32 y, u8* s) {
     gUnk_02034A80[gUnk_02034A90].unk_50 = len;
 
     for (i = 0; i < len; i++) {
-        u8 c;
+        s16 c;
 
         gUnk_02034A80[gUnk_02034A90].unk_08[i] = (u32)func_080038C8(32);
         c = s[i];
@@ -186,9 +185,6 @@ void func_08062DC8(s32 x, s32 y, u8* s) {
     gUnk_02034A80[gUnk_02034A90].unk_48 = (u32)LoadObjPalette(gUnk_08F69BE4, 32);
     gUnk_02034A90++;
 }
-#else
-INCLUDE_ASM("msg/func_08062DC8.s");
-#endif
 #ifndef VERSION_EU
 void func_08062F18(s32 x, s32 y, u8* s) {
     u8 i;
