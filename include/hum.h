@@ -784,7 +784,7 @@ u8 func_0800F504(void* p, u16 a, u16 b, u16 c);
 void LoadObjPaletteBank(u16 bank, void* src);
 void func_0801AF08(HumActor* act);
 s32 _0800E434(void* work);
-u8 func_0800E5F0(void* work);
+s32 func_0800E5F0(HumWork* work);
 u8 func_080128EC(void);
 void SetBlendAlpha(u16 a, u16 b);
 void func_08002A10(void* a, u32 b);
