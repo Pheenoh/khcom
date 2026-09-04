@@ -33,6 +33,18 @@ def block(src, unit, sym):
     return open_at, end, body, neg, tag
 
 
+def rewrap(unit, sym, tag):
+    path = os.path.join(REPO, "src", unit + ".c")
+    src = open(path).read()
+    m = re.search(r"^[A-Za-z][^\n]*\b%s\s*\([^;\n]*\)[ \t]*\{\n.*?\n\}\n" % re.escape(sym),
+                  src, re.M | re.S)
+    if m is None:
+        return "no-body"
+    new = "#ifndef %s\n%s#else\nINCLUDE_ASM(\"%s/%s.s\");\n#endif\n" % (tag, m.group(0), unit, sym)
+    open(path, "w").write(src[:m.start()] + new + src[m.end():])
+    return "ok"
+
+
 def apply(unit, sym, to):
     path = os.path.join(REPO, "src", unit + ".c")
     src = open(path).read()
@@ -54,11 +66,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("targets", nargs="+", metavar="unit:symbol")
     ap.add_argument("--to", help="narrow the guard to this tag instead of removing it")
+    ap.add_argument("--wrap", help="wrap an unguarded function in a guard against this tag")
     args = ap.parse_args()
 
     for t in args.targets:
         unit, sym = t.split(":")
-        print("%-40s %s" % (t, apply(unit, sym, args.to)))
+
+        if args.wrap:
+            print("%-40s %s" % (t, rewrap(unit, sym, args.wrap)))
+        else:
+            print("%-40s %s" % (t, apply(unit, sym, args.to)))
 
 
 if __name__ == "__main__":
