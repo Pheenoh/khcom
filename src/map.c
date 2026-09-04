@@ -253,7 +253,30 @@ void func_080E0418(void) {
     gUnk_0203C7AC->unk_00 |= 1;
 }
 
-INCLUDE_ASM("map/func_080E042C.s");
+void func_080E042C(void) {
+    UnkStruct_09EF8370* p;
+    UnkStruct_09EF70D0* q;
+    s16 x;
+    s16 y;
+
+    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
+        p = gUnk_09EF8370[4];
+        LoadBgTiles(1, p->unk_10, p->unk_14);
+        LoadBgPalette(1, p->unk_00, p->unk_04);
+        func_0800516C(1, p->unk_20, p->unk_24, p->unk_25);
+        gUnk_0203C7AC->unk_00 &= ~1;
+    } else {
+        q = gUnk_09EF70D0[gUnk_0203C590.unk_04];
+        LoadBgTiles(1, q->unk_10, q->unk_14);
+        LoadBgPalette(1, q->unk_00, q->unk_04);
+        x = gUnk_02039BA0->unk_00 >> 8;
+        y = gUnk_02039BA0->unk_04 >> 8;
+        func_080E4D68(x / 8, y / 8);
+        SetBgScroll(1, x, y);
+        gUnk_0203C7AC->unk_00 &= ~1;
+    }
+}
+
 INCLUDE_ASM("map/func_080E04E0.s");
 
 void func_080E04EC(void) {
@@ -770,7 +793,7 @@ s32 func_080E300C(u8 d, s16 x, s16 y) {
     return 0xB;
 }
 
-void func_080E3060(u8 i, s16 a, s16 b, s16 c) {
+void func_080E3060(u8 i, u16 a, u16 b, s16 c) {
     if (gUnk_02034F20[i].unk_04 == 0x100000) {
         gUnk_02034F20[i].unk_00 = a;
         gUnk_02034F20[i].unk_02 = b;
@@ -781,7 +804,39 @@ void func_080E3060(u8 i, s16 a, s16 b, s16 c) {
 INCLUDE_ASM("map/func_080E309C.s");
 INCLUDE_ASM("map/func_080E3400.s");
 INCLUDE_ASM("map/func_080E3768.s");
+#ifdef NON_MATCHING
+void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi) {
+    s32 x = lo + GetRandom() % (hi - lo);
+    s32 n;
+
+    for (n = 0; n < hi - lo; n++) {
+        s32 j;
+
+        for (j = gUnk_02034F2A - 1; j >= 0; j--) {
+            UnkStruct_080DFB8C* p = func_080E08BC(x, j);
+
+            if (p->unk_02 == a) {
+                *px = x;
+                *py = j;
+                *pz = (p->unk_08 >> 11) / 2;
+                return;
+            }
+
+            if (p->unk_02 != 11) {
+                break;
+            }
+        }
+
+        x++;
+
+        if (x == hi) {
+            x = lo;
+        }
+    }
+}
+#else
 INCLUDE_ASM("map/func_080E3C1C.s");
+#endif
 #ifdef NON_MATCHING
 void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f) {
     s32 i;
@@ -814,7 +869,24 @@ void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f) {
 INCLUDE_ASM("map/func_080E3CD4.s");
 #endif
 INCLUDE_ASM("map/func_080E3D80.s");
-INCLUDE_ASM("map/func_080E3EFC.s");
+void func_080E3EFC(void) {
+    s16 a;
+    s16 b;
+    s16 c;
+    s16 d;
+    s16 v;
+
+    d = gUnk_02034F28 / 2;
+    b = gUnk_02034F2A / 4;
+    d = gUnk_02034F28 - d;
+    a = gUnk_02034F28;
+    func_080E3060(0, d, a, 0);
+    func_080E309C(0, d, a, b, 2);
+    func_080E3CD4(5, &a, &b, &c, 0, gUnk_02034F28);
+    v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+    func_080E3060(1, 0, a + 1, v + c);
+    func_080E3400(1, 0, a + 1, v + b, 0);
+}
 INCLUDE_ASM("map/func_080E3FD4.s");
 INCLUDE_ASM("map/func_080E4244.s");
 INCLUDE_ASM("map/func_080E47E8.s");
@@ -890,7 +962,42 @@ s32 func_080E55A4(s16 x, s16 y) {
     return (s32)(gUnk_02034F38 + (gUnk_0203C7AC->unk_04 * y + x) * 32);
 }
 
-INCLUDE_ASM("map/func_080E55E4.s");
+void func_080E55E4(const u8* src) {
+    s32 x;
+    s32 y;
+
+    for (y = 0; y < gUnk_0203C7AC->unk_06; y++) {
+        for (x = 0; x < gUnk_0203C7AC->unk_04; x++) {
+            UnkStruct_080DFB8C* e = (UnkStruct_080DFB8C*)func_080E55A4(x, y);
+
+            e->unk_02 = src[gUnk_0203C7AC->unk_04 * y + x];
+            e->unk_10 = func_080E8668(e->unk_02);
+
+            switch (e->unk_02) {
+            case 0:
+                e->unk_08 = 0;
+                e->unk_0C = 0;
+                break;
+            case 1:
+            case 3:
+            case 5:
+                e->unk_08 = 0;
+                e->unk_0C = 0x100000;
+                break;
+            case 2:
+            case 4:
+            case 6:
+                e->unk_08 = -0x100000;
+                e->unk_0C = 0;
+                break;
+            default:
+                e->unk_08 = -0x100000;
+                e->unk_0C = 0x100000;
+                break;
+            }
+        }
+    }
+}
 INCLUDE_ASM("map/func_080E56B4.s");
 INCLUDE_ASM("map/func_080E5800.s");
 
@@ -945,7 +1052,37 @@ s32 func_080E5968(UnkStruct_080E5B90* p) {
 }
 
 INCLUDE_ASM("map/func_080E59D8.s");
-INCLUDE_ASM("map/func_080E5AC8.s");
+u8 func_080E5AC8(UnkStruct_080E5B90* w) {
+    UnkStruct_080DFF1C* d = &w->unk_08;
+    UnkStruct_02034F20* q = func_080E54A0(0);
+    u16 wd = q->unk_02 - q->unk_00 - 2;
+    u16 ht = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 2;
+    s32 i;
+
+    for (i = 0; i < ht; i++) {
+        s16 y = gUnk_0203C7AC->unk_08 + i;
+        s32 j;
+
+        for (j = 0; j < wd; j++) {
+            s32 x = (s16)(q->unk_00 + j);
+
+            if (func_080E548C(x, y)->unk_00 & 0x80) {
+                s32 t;
+
+                d->unk_00 = x << 13;
+                d->x = y << 12;
+                d->y = 0;
+                t = func_080DFF30(d);
+                d->z = t;
+                d->x -= t;
+                d->y = t - 0x2000;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
 void func_080E5B90(UnkStruct_080E5B90* p, UnkStruct_0984BC9C* q) {
     if (q->unk_14 & 4) {
         func_080E5968(p);
@@ -1704,7 +1841,25 @@ u8 func_080E87EC(s16 x, s16 y, const UnkStruct_080E87EC* p) {
     }
     return 1;
 }
-INCLUDE_ASM("map/func_080E8864.s");
+void func_080E8864(UnkStruct_080E8864* p) {
+    u16 w = gUnk_0203C7AC->unk_04 - p->unk_04 + 1;
+    u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 + 7;
+    s16 y0 = gUnk_0203C7AC->unk_08 - 7;
+    s32 i;
+
+    for (i = 0; i < h; i++) {
+        s16 y = y0 + i;
+        s16 j;
+
+        for (j = 0; j < w; j++) {
+            if (func_080E87EC(j, y, (const UnkStruct_080E87EC*)p->unk_00)) {
+                if (GetRandom() % 100 < p->unk_06) {
+                    func_080E8724(j, y, p->unk_08, p->unk_0C);
+                }
+            }
+        }
+    }
+}
 
 void func_080E891C(UnkStruct_080E8864* p) {
     if (p != 0) {
@@ -1785,7 +1940,7 @@ void func_080E8AE8(void) {
 
 INCLUDE_ASM("map/func_080E8B1C.s");
 
-s32 func_080E8C38(u8 a, u8 b) {
+u8 func_080E8C38(u8 a, u8 b) {
     UnkStruct_080DEDD8* p;
 
     if ((s32)gUnk_0203C7AC->unk_00 < 0) {
@@ -1838,7 +1993,49 @@ UnkStruct_02034F80* func_080E8D1C(u8 a) {
     return &gUnk_02034F80;
 }
 
-INCLUDE_ASM("map/func_080E8D64.s");
+u8 func_080E8D64(UnkStruct_080E8D64* p) {
+    UnkStruct_02034F80* q;
+    u8 n;
+
+    if (func_080E8C38(gUnk_0203C7AC->unk_0F, gUnk_0203C7AC->unk_10) == 0) {
+        if (p->unk_00 > 21) {
+            return 0;
+        }
+
+        n = func_080DF548(gUnk_0203C590.unk_06);
+
+        if (p->unk_02 == 0) {
+            return 1;
+        }
+        return p->unk_02 > n;
+    }
+
+    q = func_080E8D1C(0);
+
+    if (q->unk_00 != 0xFF) {
+        if (q->unk_00 != p->unk_00) {
+            return 0;
+        }
+    } else if (p->unk_00 > 21) {
+        return 0;
+    }
+
+    if (q->unk_01 != 0 && q->unk_01 != p->unk_04) {
+        return 0;
+    }
+
+    switch (q->unk_02) {
+    case 1:
+        return p->unk_02 >= q->unk_03;
+    case 2:
+        return p->unk_02 <= q->unk_03;
+    case 3:
+        return p->unk_02 == q->unk_03;
+    case 4:
+        return p->unk_02 != 0;
+    }
+    return 1;
+}
 
 s32 func_080E8E24(UnkStruct_080E8E24* p) {
     if (func_080E8D1C(0)->unk_02 == 4) {
@@ -2961,7 +3158,34 @@ void func_080EABB8(u8 a, u16 v) {
         i++;
     }
 }
-INCLUDE_ASM("map/func_080EAC60.s");
+void func_080EAC60(u8 a, u32 b) {
+    u16 d[6];
+    s32 off;
+    u16* q;
+    s32 i;
+    u32 t;
+
+    a &= 1;
+    t = b / 3600;
+    d[0] = t / 10;
+    d[1] = t - d[0] * 10;
+    b -= t * 3600;
+    t = b / 60;
+    d[2] = t / 10;
+    d[3] = t - d[2] * 10;
+    b -= t * 60;
+    d[4] = b / 10;
+    d[5] = b - d[4] * 10;
+    i = 0;
+    off = a * 608 + 128;
+    q = &d[0];
+
+    while (i <= 5) {
+        RequestDma3Copy((void*)&gUnk_09966064[*q * 32], (u8*)GetBgCharBase(1) + off + i * 32, 0x20);
+        q++;
+        i++;
+    }
+}
 
 s32 func_080EAD3C(u8 i) {
     UnkStruct_02039D6C* p = &gUnk_02039D6C[i];
@@ -3067,7 +3291,31 @@ void func_080ED0B8(FldRes* p, u8 a, u16 v) {
 }
 
 INCLUDE_ASM("map/func_080ED14C.s");
+#ifndef VERSION_EU
+void func_080ED250(u8* work) {
+    u8* p1;
+    u8* p2;
+    u8* p3;
+
+    LoadBgTiles(0, gUnk_099597E4, 0x140);
+    LoadBgMap(0, gUnk_09985F44, 0x800);
+    LoadPalette(gUnk_09611AB8, &gUnk_050001C0[0x20], 0x20);
+    func_080062F4(15, 1);
+    SetBgScroll(0, 0, 0);
+    *(void**)&work[0x17C] = _08066468(1);
+    p1 = &work[0x180];
+    func_08065ACC(p1, 33);
+    p2 = &work[0x28C];
+    func_08065ACC(p2, 6);
+    p3 = &work[0x2C0];
+    func_08065ACC(p3, 9);
+    work[0x288] = func_08065B6C(gUnk_0815A03A, p1);
+    work[0x2BC] = func_08065B6C(gUnk_08159E10, p2);
+    work[0x308] = func_08065B6C(gUnk_08159E18, p3);
+}
+#else
 INCLUDE_ASM("map/func_080ED250.s");
+#endif
 INCLUDE_ASM("map/func_080ED314.s");
 
 void func_080EE50C(UnkStruct_080EE50C* p, u8 a) {
@@ -3243,7 +3491,39 @@ void func_080EFA7C(UnkStruct_080F023C* p, u8 a) {
         p->unk_DC = t - 0x1C00;
     }
 }
-INCLUDE_ASM("map/func_080EFB24.s");
+void func_080EFB24(UnkStruct_080F023C* w, u8 a) {
+    s32 t1;
+    s32 t2;
+    s32 t3;
+    s32 t4;
+
+    if (a != 0) {
+        w->unk_D4 = gUnk_02039BA0->unk_18;
+        w->unk_D8 = gUnk_02039BA0->unk_1C;
+        w->unk_DC = gUnk_02039BA0->unk_20 - 0x1000;
+    } else {
+        w->unk_D4 = gUnk_02039BA0->unk_18;
+        w->unk_D8 = gUnk_02039BA0->unk_1C;
+        w->unk_DC = gUnk_02039BA0->unk_20;
+
+        if (GetRandom() % 2) {
+            t1 = GetRandom() % 65 * 256;
+            t1 += 0x2000;
+            w->unk_D4 -= t1;
+        } else {
+            t2 = GetRandom() % 65 * 256;
+            t2 += 0x2000;
+            w->unk_D4 += t2;
+        }
+
+        t3 = GetRandom() % 121 * 256;
+        t3 -= 0x3C00;
+        w->unk_D8 += t3;
+        t4 = GetRandom() % 49 * 256;
+        t4 += 0x1000;
+        w->unk_DC -= t4;
+    }
+}
 INCLUDE_ASM("map/func_080EFC08.s");
 void func_080F0108(UnkStruct_080F023C* p, u8 a) {
     s32* q = &p->unk_08;
