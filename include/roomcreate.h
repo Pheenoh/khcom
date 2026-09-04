@@ -2,6 +2,7 @@
 #define GUARD_ROOMCREATE_H
 
 #include "types.h"
+#include "m4a.h"
 #include "taskpool.h"
 #include "fld_types.h"
 typedef struct FldActor {
@@ -69,7 +70,7 @@ void func_080E0298(s32 a, s32 b);
 void func_080E0418(void);
 void func_080E042C(void);
 void m4aSongNumStart(u16 song);
-void m4aMPlayVolumeControl(void* mplay, u16 trackBits, u16 volume);
+void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 
 void task_roomcreate_0(RoomCreateWork* work);
 u8 task_roomcreate_1(RoomCreateWork* work);

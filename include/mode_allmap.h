@@ -2,6 +2,7 @@
 #define GUARD_MODE_ALLMAP_H
 
 #include "types.h"
+#include "m4a.h"
 #include "taskpool.h"
 #include "intr.h"
 #include "gba/syscall.h"
@@ -86,7 +87,7 @@ void func_08006120(s32 a, u16 b);
 void func_080062F4(s32 a, s32 b);
 u8 func_08006314(void);
 void UpdatePlayTime(void);
-void m4aMPlayVolumeControl(void* a, u16 b, u16 c);
+void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 void func_080D2F20(void);
 void func_080D2F64(void);
 void func_080D3008(void);
