@@ -72,6 +72,44 @@ def needed_types(canon, owner):
     return {t for t in re.findall(r"\b([A-Z]\w+)\b", canon) if t in owner}
 
 
+EXTERN = re.compile(r"^[ \t]*extern\s+([A-Za-z_][\w \*]*?)\s+([A-Za-z_]\w+)\s*((?:\[[^\]]*\])*)\s*;[ \t]*$")
+
+
+def common_extern(name):
+    seen = collections.Counter()
+
+    for path in sources():
+        for line in open(path, errors="ignore"):
+            m = EXTERN.match(line)
+
+            if m and m.group(2) == name:
+                seen[line.strip()] += 1
+    return seen.most_common(1)[0][0] if seen else None
+
+
+def rewrite_extern(name, canon):
+    touched = []
+
+    for path in sources():
+        s = open(path).read()
+        out = []
+        hit = False
+
+        for line in s.split("\n"):
+            m = EXTERN.match(line)
+
+            if m and m.group(2) == name and line.strip() != canon:
+                out.append(line[:len(line) - len(line.lstrip())] + canon)
+                hit = True
+            else:
+                out.append(line)
+
+        if hit:
+            open(path, "w").write("\n".join(out))
+            touched.append(path)
+    return touched
+
+
 def common_decl(name):
     seen = collections.Counter()
 
@@ -276,9 +314,14 @@ def main():
             for n in batch:
                 c2 = "%s %s(%s);" % (defs[n][1], n, defs[n][2]) if n in defs else common_decl(n)
 
-                if not c2:
-                    continue
-                t = rewrite(n, c2)
+                if c2:
+                    t = rewrite(n, c2)
+                else:
+                    c2 = common_extern(n)
+
+                    if not c2:
+                        continue
+                    t = rewrite_extern(n, c2)
 
                 if t:
                     ensure_types(t, c2, owner)
