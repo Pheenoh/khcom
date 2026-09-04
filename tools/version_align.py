@@ -350,7 +350,7 @@ def main():
             return spans[k] if k >= 0 and spans[k][0] <= p < spans[k][1] else None
         cands = set()
 
-        for k in range(CODE_LO - ROM_BASE, min(CODE_HI, len(ot)) - ROM_BASE - 3, 2):
+        for k in range(CODE_LO - ROM_BASE, min(CODE_HI, ROM_BASE + len(ot)) - ROM_BASE - 3, 2):
             o = blpair(ot, k)
 
             if o is None:
