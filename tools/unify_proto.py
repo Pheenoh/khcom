@@ -72,6 +72,22 @@ def needed_types(canon, owner):
     return {t for t in re.findall(r"\b([A-Z]\w+)\b", canon) if t in owner}
 
 
+def common_decl(name):
+    seen = collections.Counter()
+
+    for path in sources():
+        depth = 0
+
+        for line in open(path, errors="ignore"):
+            if depth == 0:
+                m = DECL.match(line)
+
+                if m and m.group(2) == name:
+                    seen[line.strip()] += 1
+            depth += line.count("{") - line.count("}")
+    return seen.most_common(1)[0][0] if seen else None
+
+
 def rewrite(name, canon):
     touched = []
 
@@ -258,12 +274,14 @@ def main():
 
         for _ in range(args.closure):
             for n in batch:
-                if n in defs:
-                    p2, r2, a2 = defs[n]
-                    t = rewrite(n, "%s %s(%s);" % (r2, n, a2))
+                c2 = "%s %s(%s);" % (defs[n][1], n, defs[n][2]) if n in defs else common_decl(n)
 
-                    if t:
-                        ensure_types(t, "%s %s(%s);" % (r2, n, a2), owner)
+                if not c2:
+                    continue
+                t = rewrite(n, c2)
+
+                if t:
+                    ensure_types(t, c2, owner)
             verdict, note = build()
 
             if verdict == "unified":
@@ -280,7 +298,7 @@ def main():
             revert()
             m = re.search(r"conflicting types for .([A-Za-z_]\w*)", note)
 
-            if not m or m.group(1) in batch or m.group(1) not in defs:
+            if not m or m.group(1) in batch:
                 print("closure of %d -> %s %s" % (len(batch), verdict, note))
 
                 for n in batch:
