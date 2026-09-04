@@ -2362,12 +2362,8 @@ void func_080B3DA0(void) {
     }
 }
 
-#ifndef VERSION_JP
 void func_080B3DF8(void) {
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B3DF8.s");
-#endif
 #endif
 
 #ifdef VERSION_US
@@ -2403,13 +2399,9 @@ void mode_sioError_0(s32 arg) {
 INCLUDE_ASM("mode_sio/mode_sioError_0.s");
 #endif
 
-#ifndef VERSION_JP
 void mode_sioError_1(void) {
     func_080B3F24();
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sioError_1.s");
-#endif
 
 #ifdef VERSION_US
 void func_080B3F24(void) {
@@ -2429,16 +2421,12 @@ void mode_sioError_2(void) {
 INCLUDE_ASM("mode_sio/mode_sioError_2.s");
 #endif
 
-#ifndef VERSION_JP
 void mode_wLogo_0(s32 arg) {
     gUnk_02034B59 = arg;
     func_080B4154();
 }
-#else
-INCLUDE_ASM("mode_sio/mode_wLogo_0.s");
-#endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void mode_wLogo_1(void) {
     u8* p;
 
@@ -2498,7 +2486,6 @@ void mode_wLogo_1(void) {
 INCLUDE_ASM("mode_sio/mode_wLogo_1.s");
 #endif
 
-#ifndef VERSION_JP
 void mode_wLogo_2(void) {
     func_08065AE0(gUnk_02034B60, 20);
     ReleaseObjPalette(gUnk_02034C00);
@@ -2509,11 +2496,8 @@ void mode_wLogo_2(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("mode_sio/mode_wLogo_2.s");
-#endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080B4154(void) {
     u8* p;
     func_08006120(0, 16);
@@ -2536,7 +2520,7 @@ void func_080B4154(void) {
 INCLUDE_ASM("mode_sio/func_080B4154.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_080B4210(u8 a) {
     func_08006120(0, 16);
     SetBgMode1();
@@ -2636,7 +2620,6 @@ void func_080B4210(u8 a) {
 INCLUDE_ASM("mode_sio/func_080B4210.s");
 #endif
 
-#ifndef VERSION_JP
 void task_wLogo_0(WLogoTaskWork* work, u8 arg) {
     work->unk_00 = arg;
     work->unk_04 = -0x5A00;
@@ -2694,11 +2677,7 @@ void task_wLogo_0(WLogoTaskWork* work, u8 arg) {
         func_080E02A8(0, work->unk_04);
     }
 }
-#else
-INCLUDE_ASM("mode_sio/task_wLogo_0.s");
-#endif
 
-#ifndef VERSION_JP
 u8 task_wLogo_1(WLogoTaskWork* work) {
     if (work->unk_00 == 0) {
         work->unk_08++;
@@ -2719,22 +2698,11 @@ u8 task_wLogo_1(WLogoTaskWork* work) {
     }
     return 0;
 }
-#else
-INCLUDE_ASM("mode_sio/task_wLogo_1.s");
-#endif
 
-#ifndef VERSION_JP
 void task_wLogo_2(WLogoTaskWork* work) {
 }
-#else
-INCLUDE_ASM("mode_sio/task_wLogo_2.s");
-#endif
 
-#ifndef VERSION_JP
 void task_wLogo_3(WLogoTaskWork* work) {
     TaskPoolDestroy(gUnk_02034C20);
     SetBgBlend(0, 0, 16);
 }
-#else
-INCLUDE_ASM("mode_sio/task_wLogo_3.s");
-#endif

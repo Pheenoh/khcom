@@ -210,7 +210,7 @@ void _08065994(void) {
     }
 }
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 u16 func_080659BC(u8 v, TextSlot* out) {
     u8 buf[8];
     u8 q;
