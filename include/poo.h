@@ -37,7 +37,14 @@ typedef struct PooActor {
     PooPos unk_00;
     s32 unk_10;
     u8 unk_14;
-    u8 unk_15[0x2B];
+    u8 unk_15[0x05];
+    u16 unk_1A;
+    u8 unk_1C[0x14];
+    u16 unk_30;
+    u16 unk_32;
+    u8 unk_34[0x06];
+    u16 unk_3A;
+    s32 unk_3C;
 } PooActor;
 
 typedef struct PooState {
@@ -98,23 +105,45 @@ typedef struct PooWork {
     u8 unk_AE[0x02];
     TaskPool unk_B0;
     Task* unk_C4;
-    u8 unk_C8[0x0E];
+    s32 unk_C8;
+    u8 unk_CC;
+    u8 unk_CD[0x03];
+    struct PooNode* unk_D0;
+    u16 unk_D4;
     u8 unk_D6;
     u8 unk_D7[0x03];
     u16 unk_DA;
-    u8 unk_DC[0x0C];
+    u16 unk_DC;
+    u8 unk_DE[0x02];
+    u8 unk_E0[0x08];
     u8 unk_E8;
     u8 unk_E9[0x03];
     s32 unk_EC;
     s32 unk_F0;
     u16 unk_F4;
     u8 unk_F6;
-    u8 unk_F7[0x03];
+    u8 unk_F7;
+    u16 unk_F8;
     u8 unk_FA;
 } PooWork;
 
-typedef struct PooMapWork {
+typedef struct PooMapBgDesc {
     void* unk_00;
+    u16 unk_04;
+    u16 unk_06;
+    void* unk_08;
+    u16 unk_0C;
+    u16 unk_0E;
+    void* unk_10;
+    u16 unk_14;
+    u8 unk_16;
+    u8 unk_17;
+} PooMapBgDesc;
+
+typedef struct PooMapWork {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02[0x02];
     TaskPool unk_04;
 } PooMapWork;
 
@@ -137,7 +166,7 @@ typedef struct PooShadowArgs {
 
 typedef struct PooHitBox {
     void* unk_00;
-    s16 unk_04;
+    u16 unk_04;
     s16 unk_06;
     s16 unk_08;
     s16 unk_0A;
@@ -463,6 +492,15 @@ typedef struct PooOwlBalloonWork {
     u16 unk_CA;
 } PooOwlBalloonWork;
 
+typedef struct PoohPrizeArgs {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    u16 unk_14;
+} PoohPrizeArgs;
+
 typedef struct PooPrizeWork {
     s32 unk_00;
     s32 unk_04;
@@ -474,9 +512,10 @@ typedef struct PooPrizeWork {
     void* unk_74;
     void* unk_78;
     void (*unk_7C)(struct PooPrizeWork* w);
-    u8 unk_80[0x02];
+    u16 unk_80;
     u16 unk_82;
-    u8 unk_84[0x08];
+    s32 unk_84;
+    s32 unk_88;
     u8 unk_8C;
     u8 unk_8D;
     u16 unk_8E;
@@ -717,7 +756,8 @@ typedef struct PooMover {
 typedef struct PooBeeSub {
     s32 unk_00;
     s32 unk_04;
-    u8 unk_08[0x08];
+    s32 unk_08;
+    u8 unk_0C[0x04];
     s32 unk_10;
     s32 unk_14;
     u8 unk_18[0x08];
@@ -980,7 +1020,9 @@ typedef struct PooSoraWork {
     u8 unk_15[0x0B];
     void* gfx;
     TaskPool unk_24;
-    u8 unk_38[0x2C];
+    u8 unk_38[0x10];
+    s32 unk_48;
+    u8 unk_4C[0x18];
     u8 unk_64;
     u8 unk_65;
     u16 unk_66;
@@ -988,7 +1030,11 @@ typedef struct PooSoraWork {
     s32 unk_70;
     s32 unk_74;
     s32 unk_78;
-    u8 unk_7C[0x18];
+    s32 unk_7C;
+    s32 unk_80;
+    s32 unk_84;
+    s32* unk_88;
+    u8 unk_8C[0x08];
     s32 unk_94;
     s16 unk_98;
     s16 unk_9A;
@@ -996,8 +1042,7 @@ typedef struct PooSoraWork {
     u16 unk_A0;
     u16 unk_A2;
     s32 unk_A4;
-    u16 unk_A8;
-    u16 unk_AA;
+    const PooAnimDesc* unk_A8;
     u8 unk_AC;
     u8 unk_AD[0x03];
     PooNode unk_B0;
@@ -1081,8 +1126,12 @@ extern s32 gUnk_0203C400;
 extern s32 gUnk_0203C404;
 extern TaskDesc gTaskDescPooShadowscale;
 extern u16 gUnk_0203C40C;
+extern PooNode* gUnk_0203C410;
+extern void* gUnk_0203C414;
 extern u16 gUnk_0203C3F8;
 extern u16* gUnk_09EF4208[];
+extern u16* gUnk_09EF4448[];
+extern u16* gUnk_09EF4688[];
 extern PooPos* gUnk_02039BA0;
 extern s32 gUnk_0203C3FC;
 extern s32 gUnk_0203C408;
@@ -1408,7 +1457,7 @@ void task_poo_shadow_0(TaskPool* w, void* arg);
 u8 func_080CC284(s16 x, s16 y);
 s32 func_080CC488(u16 a);
 void task_poo_gauge_2(PooObjWork3* w);
-void func_080C9FBC(PooMapWork* w);
+void func_080C9FBC(void);
 void func_080CA270(PooMapWork* w);
 void func_08005244(s32 a, u16 b, u16 c);
 void func_080CA724(PooSoraWork* w);
@@ -1460,7 +1509,7 @@ void task_poo_owl_0(PooOwlWork* w);
 u8 task_poo_owl_1(PooOwlWork* w);
 void task_poo_rabbitAfterEvent_0(PooRabbitAfterEventWork* w);
 void task_poo_balloon_2(PooBalloonObjWork* w);
-void func_080122AC(void* p, s32 b, s32 c, s32 d);
+void func_080122AC(void* p, s32 b, u16 c, u16 d);
 void task_poo_mapbeeborn_2(PooMapBornWork* w);
 void task_poo_mapbutterflyborn_2(PooMapBornWork* w);
 void task_poo_mapbutterfly_2(PooMapButterflyWork* w);
@@ -1479,6 +1528,40 @@ u8 func_080C8BD4(void);
 void func_080C8AB8(PooWork* w);
 void task_poo_pitAndButterfly_0(PooTrapWork* w, PooPos* p);
 u8 func_080C887C(PooWork* w);
+void func_080C88C4(PooWork* w, PooNode* n);
+void task_poo_sora_0(PooSoraWork* w);
+u8 task_poo_pile_1(PooPileWork* w);
+u8 task_poo_freeballoon_1(PooFreeBalloonWork* w);
+void task_poo_prize_0(PooPrizeWork* w, PoohPrizeArgs* a);
+void func_080D19C4(PooPrizeWork* w);
+void func_080D0084(u32* a, u32* b, u16 c);
+void task_poo_bee_2(PooBeeWork* w);
+void task_poo_map_0(PooMapWork* w);
+u8 task_poo_trapballoon_1(PooBalloonWork* w);
+void task_poo_cabbage_2(PooCabbageWork* w);
+void task_poo_pooh_0(PooWork* w);
+void func_080C7CC8(PooWork* w);
+extern const u16 gUnk_096FD86E[];
+extern TaskDesc gTaskDescPooFreeballoon;
+void LoadBgTiles(s32 bg, void* src, u16 size);
+void LoadBgPalette(s32 bg, void* src, u16 size);
+void func_0800516C(s32 a, void* b, s32 c, s32 d);
+void func_080051C4(s32 a, u16 b, u16 c);
+void func_0802F1C8(void);
+extern TaskDesc gTaskDescPooMapanime;
+extern PooMapBgDesc gUnk_096FC6E0;
+void func_08012614(void* p, s32 b);
+extern u8 gUnk_098A5C90[];
+extern u8 gUnk_098A5C9A[];
+extern u8 gUnk_098A5CA4[];
+extern u8 gUnk_098A5CAE[];
+extern u8 gUnk_098A5CB8[];
+extern u8 gUnk_098A5CF4[];
+void ColliderSetHeight(void* p, u16 h);
+void func_08000DE8(TaskPool* a, Task* t);
+extern TaskDesc gTaskDescPooSpark;
+extern u8 gUnk_08F683A4[];
+extern TaskDesc gTaskDescFldShadow;
 void func_080C8AE0(PooWork* w);
 s32 func_080D01BC(s32 x, s32 y);
 u8 func_080C871C(PooWork* w);
