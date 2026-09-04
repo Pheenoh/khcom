@@ -96,7 +96,7 @@ typedef struct FldShadowWork {
 } FldShadowWork;
 
 void AnimInit(AnimState* a, s32 b, s32 c);
-void AnimStart(void* a, s32 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimUpdate(AnimState* a);
 s8 GetAngleDiff(u8 a, u8 b);
 void func_08002A10(void* a, void* b);

@@ -535,7 +535,7 @@ void func_0801C298(u8 a, u8 b);
 void TaskPoolUpdate(TaskPool* a);
 u16 AnimGetId(void* a);
 u16 AnimGetFrame(void* a);
-void AnimStart(void* a, s32 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_0801C2DC(void* a, s32 b);
 u16 func_0801AF1C(s32 a);
 UnkStruct_080DFB8C* func_080DFB8C(s32 x, s32 y);

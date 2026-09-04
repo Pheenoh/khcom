@@ -176,7 +176,7 @@ void TaskPoolInit(TaskPool* a, s32 count);
 void* TaskCreate(TaskPool* pool, void* desc, void* arg);
 void TaskPoolUpdate(TaskPool* a);
 void AnimInit(AnimState* a, s32 b, s32 c);
-void AnimStart(AnimState* a, s32 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(AnimState* a);
 void* AllocObjTiles(s32 a, void* b);

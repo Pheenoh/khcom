@@ -458,7 +458,7 @@ void func_080FB000(GaWork* work, GaEntryWork* p);
 void func_080F7F54(GaWork* work, s32 b);
 u8 func_0801C1C0(s32 a);
 u8 AnimIsFinished(AnimState* a);
-void AnimStart(AnimState* a, s32 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 u8 func_080F854C(GaWork* work);
 u8 func_080F8958(GaWork* work);
 u8 func_080F8AC8(GaWork* work);

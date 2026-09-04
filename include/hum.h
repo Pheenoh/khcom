@@ -753,7 +753,7 @@ u8 AnimIsFinished(void* a);
 void* AnimUpdate(AnimState* a);
 void func_0800E314(HumWork* work, HumSub* sub, void* def);
 void AnimInit(AnimState* a, s32 b, s32 c);
-void AnimStart(AnimState* a, s32 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);

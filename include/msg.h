@@ -360,7 +360,7 @@ void m4aMPlayAllStop(void);
 u8 func_08006314(void);
 void func_08074504(void);
 void* AnimUpdate(AnimState* a);
-void AnimStart(void* a, s32 b, s32 c);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void DisableBg(s32 bg);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 a, s32 b);
