@@ -2,6 +2,7 @@
 #define GUARD_BTL2_H
 
 #include "types.h"
+#include "m4a.h"
 #include "key.h"
 #include "anim.h"
 #include "fld_types.h"
@@ -271,7 +272,7 @@ void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void m4aSongNumStart(u16 n);
-void m4aMPlayVolumeControl(void* mplay, u16 trackBits, u16 volume);
+void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 void func_080063C4(u8 a);
 void ApproachValue(s32* value, s32 target, u16 steps);
 u8 GetKeyReleaseTime(s32 a);
