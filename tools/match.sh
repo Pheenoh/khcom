@@ -83,7 +83,9 @@ s=int(sys.argv[1],16)-0x08000000; e=int(sys.argv[2],16)-0x08000000
 rom=open('roms/B8CE.gba','rb').read()[s:e]
 new=open(os.environ['MATCH_TMP']+'/x.bin','rb').read()
 base=int(sys.argv[3],16)
-if base != int(sys.argv[1],16):
+whole = len(new) > (e - s)
+
+if whole or base != int(sys.argv[1],16):
     if not sys.argv[4]:
         sys.exit("MISSING SYMBOL %s in candidate" % os.environ.get('MATCH_SYM',''))
     off=int(sys.argv[4],16)-base
