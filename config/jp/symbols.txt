@@ -1419,6 +1419,7 @@ gUnk_09EF3904 = 0x09ecacf0
 gUnk_09EF390C = 0x09ecacf8
 gUnk_09EF3920 = 0x09ecad0c
 gUnk_09EF6A50 = 0x09ecde3c
+gUnk_09EF6A88 = 0x09ecde74
 gUnk_0203C7B8 = 0x0203c728
 gUnk_0984D32C = 0x09801e40
 gModeMapFix = 0x09ecdeac

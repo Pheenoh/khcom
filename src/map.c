@@ -918,7 +918,44 @@ void func_080E47E8(u8 a, u8 b) {
 INCLUDE_ASM("map/func_080E4900.s");
 INCLUDE_ASM("map/func_080E4B78.s");
 INCLUDE_ASM("map/func_080E4D68.s");
-INCLUDE_ASM("map/func_080E4EB0.s");
+void func_080E4EB0(u16* a, u16* b, u16* c, s16 d, s16 e) {
+    UnkStruct_080DFB8C* cell;
+    s16 hx;
+    s16 mx;
+    s16 hy;
+    s16 my;
+    s32 i;
+
+    hx = (d < 0) ? (d - 8) / 4 : d / 4;
+    mx = d % 4;
+
+    for (i = 0; i < 32; i++) {
+        hy = (e < 0) ? (e - 8) / 2 : e / 2;
+        my = e % 2;
+        cell = func_080E08BC(hx, hy);
+
+        if (cell != 0) {
+            a[i] = cell->unk_14[my * 32 + mx];
+
+            if (cell->unk_18 != 0) {
+                b[i] = cell->unk_18[my * 32 + mx];
+            } else {
+                b[i] = 0;
+            }
+
+            if (cell->unk_1C != 0) {
+                c[i] = cell->unk_1C[my * 32 + mx];
+            } else {
+                c[i] = 0;
+            }
+        } else {
+            a[i] = 0;
+            b[i] = gUnk_02034F34->unk_1C[0x340];
+            c[i] = gUnk_02034F34->unk_20[0x110];
+        }
+        e++;
+    }
+}
 
 void func_080E4FF0(void* p, s16 a, s16 b) {
     void* q = (u8*)p + 0x40;
@@ -930,7 +967,47 @@ void func_080E4FF0(void* p, s16 a, s16 b) {
     func_080045AC(r, GetBgScreenBase(1), a, b, 1);
 }
 
-INCLUDE_ASM("map/func_080E507C.s");
+void func_080E507C(u16* a, u16* b, u16* c, s16 d, s16 e) {
+    UnkStruct_080DFB8C* cell;
+    s16 hx;
+    s16 mx;
+    s16 hy;
+    s16 my;
+    s32 i;
+
+    hy = (e < 0) ? (e - 8) / 2 : e / 2;
+    my = e % 2;
+    for (i = 0; i < 32; i++) {
+        if (d < 0) {
+            hx = (d - 8) / 4;
+        } else {
+            hx = d / 4;
+        }
+        mx = d % 4;
+        cell = func_080E08BC(hx, hy);
+
+        if (cell != 0) {
+            a[i] = cell->unk_14[my * 32 + mx];
+
+            if (cell->unk_18 != 0) {
+                b[i] = cell->unk_18[my * 32 + mx];
+            } else {
+                b[i] = 0;
+            }
+
+            if (cell->unk_1C != 0) {
+                c[i] = cell->unk_1C[my * 32 + mx];
+            } else {
+                c[i] = 0;
+            }
+        } else {
+            a[i] = 0;
+            b[i] = gUnk_02034F34->unk_1C[0x340];
+            c[i] = gUnk_02034F34->unk_20[0x110];
+        }
+        d++;
+    }
+}
 
 void func_080E51C0(void* p, s16 a, s16 b) {
     void* q = (u8*)p + 0x40;
@@ -1112,8 +1189,28 @@ void func_080E5800(void) {
     func_080051C4(2, sx, sy);
     func_080051C4(1, sx, sy);
 }
-INCLUDE_ASM("map/func_080E5868.s");
-INCLUDE_ASM("map/func_080E58E4.s");
+void func_080E5868(UnkStruct_09EF70D0* p) {
+    s32 i;
+    s32 n;
+
+    gUnk_02034F38 = EwramAlloc(0x18000);
+    n = gUnk_0203C7AC->unk_04 * gUnk_0203C7AC->unk_06;
+
+    for (i = 0; i < n; i++) {
+        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_00 = 0;
+        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_02 = 11;
+        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_03 = 7;
+        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_04 = 0;
+        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_05 = 0;
+        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_14 = 0;
+        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_18 = 0;
+        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_1C = 0;
+    }
+    func_080E55E4((const u8*)p->unk_28);
+}
+void func_080E58E4(void) {
+    EwramFree(gUnk_02034F38);
+}
 
 s32 func_080E58F8(s16 a, s16 b) {
     return func_080E55A4(a, b);
@@ -1571,7 +1668,50 @@ void func_080E6264(void) {
     func_080E5B90(&w, d);
     TaskCreate(gUnk_02039BA0->unk_B4, d->unk_10, &w);
 }
-INCLUDE_ASM("map/func_080E6394.s");
+void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
+    UnkStruct_080E6394* e = (UnkStruct_080E6394*)&p->unk_08;
+    UnkStruct_0984BC9C* d = q->unk_00;
+
+    p->unk_00 = d;
+    p->unk_CC = q->unk_04;
+    p->unk_04 = 0;
+    *(u16*)&p->unk_D0[0x10] = 30;
+    e->unk_00 = q->unk_08;
+    e->unk_14 = q->unk_18;
+    e->unk_10 = q->unk_1C;
+    e->unk_1A = d->unk_0A;
+    e->unk_34 = 0;
+    e->unk_30 = 1;
+    p->unk_C8 = d->unk_0C;
+    p->unk_CA = d->unk_0A;
+    *(u16*)&p->unk_D0[0] = 0;
+    *(u16*)&p->unk_D0[2] = 0;
+    *(s32*)&p->unk_D0[4] = e->unk_00.unk_00;
+    *(s32*)&p->unk_D0[8] = e->unk_00.x;
+    *(s32*)&p->unk_D0[0xC] = e->unk_00.y;
+    gUnk_02034F40++;
+    gUnk_02034F41 += d->unk_08;
+    p->tiles = AllocObjTiles(d->unk_08 * 32, 0);
+    p->palette = LoadObjPalette(d->unk_04, 32);
+    p->gfx = 0;
+    AnimInit((AnimState*)&p->unk_A4, 0, 0);
+    TaskPoolInit((TaskPool*)&p->unk_E4, 2);
+
+    if ((d->unk_14 & 1) == 0) {
+        TaskCreate(&p->unk_E4, &gTaskDescFldShadow, e);
+    }
+
+    if (d->unk_14 & 8) {
+        p->unk_04 |= 2;
+        func_080122AC(&p->unk_48, 11, d->unk_0C, d->unk_0A);
+    } else {
+        func_080122AC(&p->unk_48, 3, d->unk_0C, d->unk_0A);
+    }
+    func_08012324(&p->unk_48, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    func_08012614(&p->unk_48, 1);
+    func_080E5CD4(p);
+}
+
 void func_080E64D4(UnkStruct_080E590C* p) {
     UnkStruct_080E64D4* q = (UnkStruct_080E64D4*)&p->unk_08;
     u16 flags;
@@ -2172,12 +2312,69 @@ void func_080E8B1C(UnkStruct_080E8B1C* p, UnkStruct_080E7D80* q) {
     p->unk_14 = q->unk_00;
     p->unk_18 = q->unk_00;
 }
-INCLUDE_ASM("map/func_080E8B40.s");
-INCLUDE_ASM("map/func_080E8B84.s");
-INCLUDE_ASM("map/func_080E8BA0.s");
-INCLUDE_ASM("map/func_080E8BB4.s");
+void func_080E8B40(UnkStruct_080E8B1C* p) {
+    s16* q;
+    u8 (*f)(UnkStruct_080E8B1C*);
+
+    if (p->unk_14 == 0) {
+        return;
+    }
+
+    do {
+        q = p->unk_18;
+
+        if (*q & 0x8000) {
+            f = gUnk_09EF6A88[*(u8*)q];
+        } else {
+            f = func_080E8BE4;
+        }
+    } while (f(p));
+}
+
+void func_080E8B84(UnkStruct_080E8B1C* p) {
+    if (p->unk_0C != 0) {
+        RequestDma3Copy(p->unk_0C, p->unk_08, p->unk_04);
+        p->unk_0C = 0;
+    }
+}
+
+void func_080E8BA0(UnkStruct_080E8B1C* p) {
+    func_080E8B40(p);
+    func_080E8B84(p);
+}
+
+void func_080E8BB4(UnkStruct_080E8B1C* p) {
+    p->unk_00 = 0;
+    p->unk_08 = (u8*)GetBgCharBase(2) + 0x7800;
+    p->unk_0C = 0;
+    p->unk_10 = 0;
+    p->unk_14 = 0;
+    p->unk_18 = 0;
+}
+
 INCLUDE_ASM("map/func_080E8BD8.s");
-INCLUDE_ASM("map/func_080E8BE4.s");
+u8 func_080E8BE4(UnkStruct_080E8B1C* p) {
+    UnkStruct_080E8B1C* w = p;
+    s16* q;
+    s16 n;
+
+    if (p->unk_10 == 0) {
+        p->unk_0C = (u8*)p->unk_00 + p->unk_04 * p->unk_18[1];
+    }
+
+    q = w->unk_18;
+    n = *(u16*)q & 0x7FFF;
+
+    if (n != 0) {
+        w->unk_10++;
+
+        if (w->unk_10 >= n) {
+            w->unk_10 = 0;
+            w->unk_18 = q + 2;
+        }
+    }
+    return 0;
+}
 INCLUDE_ASM("map/func_080E8C30.s");
 
 u8 func_080E8C38(u8 a, u8 b) {
