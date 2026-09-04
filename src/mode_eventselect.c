@@ -919,12 +919,12 @@ void func_08076458(void) {
     gUnk_02039DD4 = EwramAlloc(sizeof(UnkStruct_02039DD4));
     zero = 0;
     CpuSet(&zero, gUnk_02039DD4, 0x05000043);
-    gUnk_02039DD4->unk_000 = 0;
-    gUnk_02039DD4->unk_004 = 0;
-    gUnk_02039DD4->unk_008 = 0;
-    gUnk_02039DD4->unk_00C = 0;
-    gUnk_02039DD4->unk_010 = 0;
-    gUnk_02039DD4->unk_014 = 0;
+    gUnk_02039DD4->unk_000[0] = 0;
+    gUnk_02039DD4->unk_000[1] = 0;
+    gUnk_02039DD4->unk_000[2] = 0;
+    gUnk_02039DD4->unk_000[3] = 0;
+    gUnk_02039DD4->unk_000[4] = 0;
+    gUnk_02039DD4->unk_000[5] = 0;
     gUnk_02039DD4->unk_0B0 = 145;
     gUnk_02039DD4->unk_0B4 = 145;
     gUnk_02039DD4->unk_0B8 = 950;
