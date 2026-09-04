@@ -366,7 +366,7 @@ void LoadPalette(void* src, void* dst, s32 size);
 extern u8 gUnk_09D69374[];
 extern u8 gUnk_05000080[];
 
-void func_0810A018(void* a);
+void func_0810A018(PcWork* work);
 void func_0810A498(PcWork* work);
 void func_0801BCD4(void* a);
 
