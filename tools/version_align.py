@@ -373,8 +373,7 @@ def main():
                 cands.add(w & ~1)
         return sorted(cands)
 
-    def entries():
-        cands = entry_candidates()
+    def entries_once(cands):
         placed = 0
         i = 0
 
@@ -401,11 +400,51 @@ def main():
                         placed += 1
             i = j
 
-        if placed:
-            print(f"  {placed} rows placed from target call and pointer targets")
         return placed
 
+    def entries():
+        total = 0
+
+        for _ in range(PASSES):
+            got = entries_once(entry_candidates())
+
+            if not got:
+                break
+            total += got
+            fill()
+
+        if total:
+            print(f"  {total} rows placed from target call and pointer targets")
+        return total
+
     entries()
+
+    def mark_absent():
+        gone = []
+        i = 0
+
+        while i < n:
+            if addr[i] is not None or how[i] == "absent":
+                i += 1
+                continue
+            j = i
+
+            while j < n and addr[j] is None and how[j] != "absent":
+                j += 1
+
+            if i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
+                avail = addr[j] - (addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0]))
+
+                if avail <= 0:
+                    for k in range(i, j):
+                        how[k] = "absent"
+                        gone.append(funcs[k][2])
+            i = j
+
+        if gone:
+            print(f"  {len(gone)} rows with no room in the target marked absent: "
+                  + " ".join(gone[:6]) + (" ..." if len(gone) > 6 else ""))
+        return len(gone)
 
     def monotone():
         by_obj = {}
@@ -437,6 +476,17 @@ def main():
             print(f"  {len(demoted)} out-of-order placements demoted: " + " ".join(demoted))
 
     monotone()
+
+    for _ in range(PASSES):
+        got = entries()
+
+        if mark_absent():
+            fill()
+            got += entries()
+
+        if not got:
+            break
+        monotone()
 
     out = Path(f"config/{args.version}/funcmap.txt")
     out.parent.mkdir(parents=True, exist_ok=True)
