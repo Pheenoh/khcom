@@ -171,7 +171,7 @@ void func_080063A8(void);
 void mode_ms_top_1(void);
 s16 func_08084458(u16 a);
 u16 func_08060A2C(u16 a);
-u8 func_0800FC5C(void* a);
+u8 func_0800FC5C(s32 a);
 u8 func_0810155C(u32 a);
 void EwramFree(void* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
