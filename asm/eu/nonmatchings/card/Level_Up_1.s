@@ -6,5 +6,5 @@
 	.thumb_func
 	.type Level_Up_1, %function
 Level_Up_1:
-	.incbin "roms/B8CP.gba", 0x9ef44, 0xba8
+	.incbin "roms/B8CP.gba", 0x9ef54, 0xc44
 .syntax divided

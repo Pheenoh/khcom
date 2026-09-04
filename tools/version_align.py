@@ -25,6 +25,7 @@ ROM_BASE = 0x08000000
 CODE_LO = 0x08000240
 CODE_HI = 0x081213C4
 WINDOW = 0x600
+SNAP = 64
 PASSES = 4
 
 MAP_RE = re.compile(r"^\s+(0x08[0-9a-f]{6})\s+(\S+)$")
@@ -399,28 +400,36 @@ def main():
                         how[k] = verify(k, cur) or "entry"
                         placed += 1
                 else:
-                    seen = set(cands[a:b])
+                    win = cands[a:b]
+
+                    def snap(cur):
+                        lo2 = bisect.bisect_left(win, cur - SNAP)
+                        hi2 = bisect.bisect_right(win, cur + SNAP)
+                        return win[lo2] if hi2 - lo2 == 1 else None
                     cur = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
 
                     for k in range(i, j):
-                        if cur not in seen:
+                        at = snap(cur)
+
+                        if at is None:
                             break
-                        addr[k] = cur
-                        how[k] = verify(k, cur) or "entry"
+                        addr[k] = at
+                        how[k] = verify(k, at) or "entry"
                         placed += 1
-                        cur += funcs[k][1] - funcs[k][0]
+                        cur = at + (funcs[k][1] - funcs[k][0])
                     cur = addr[j]
 
                     for k in range(j - 1, i - 1, -1):
                         if addr[k] is not None:
                             break
-                        cur -= funcs[k][1] - funcs[k][0]
+                        at = snap(cur - (funcs[k][1] - funcs[k][0]))
 
-                        if cur not in seen:
+                        if at is None:
                             break
-                        addr[k] = cur
-                        how[k] = verify(k, cur) or "entry"
+                        addr[k] = at
+                        how[k] = verify(k, at) or "entry"
                         placed += 1
+                        cur = at
             i = j
 
         return placed
