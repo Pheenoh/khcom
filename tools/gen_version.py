@@ -28,6 +28,7 @@ from pathlib import Path
 ROM_BASE = 0x08000000
 CODE_HI = 0x081213C4
 ROM_END = 0x0A000000
+SIZE_SLACK = 64
 
 TARGET_ANCHORS = {
     "eu": {
@@ -208,9 +209,17 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None):
             size[id(r)] = max(0, nxt - pos)
             pos = nxt
         else:
+            nk = present[k + 1][4] if k + 1 < len(present) else None
+            tsz = r[2]
+
+            if (nxt > r[3] and nk in ("named", "xref", "global", "body")
+                    and r[4] in ("named", "xref", "global", "body")
+                    and abs(nxt - r[3] - r[2]) <= SIZE_SLACK
+                    and not clean(r)):
+                tsz = nxt - r[3]
             start[id(r)] = r[3]
-            size[id(r)] = r[2]
-            pos = r[3] + r[2]
+            size[id(r)] = tsz
+            pos = r[3] + tsz
     for r in rows:
         r[3] = start.get(id(r), r[3] if r[3] is not None else 0)
         r.append(size.get(id(r), 0))

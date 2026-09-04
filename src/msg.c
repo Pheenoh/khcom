@@ -544,13 +544,15 @@ void* _08066468(s32 a) {
     }
     return r;
 }
-#ifndef VERSION_JP
+
 void func_080664D8(s16 x, s32 y, Ent08066588* p, void* d, u16 h, u8 n) {
     s16 x0 = x;
     s16 cy = y;
     u8 i;
 
+#ifndef VERSION_JP
     cy -= 2;
+#endif
 
     for (i = 0; i < n; i++) {
         if (p->unk_00 == NULL) {
@@ -565,9 +567,7 @@ void func_080664D8(s16 x, s32 y, Ent08066588* p, void* d, u16 h, u8 n) {
         p++;
     }
 }
-#else
-INCLUDE_ASM("msg/func_080664D8.s");
-#endif
+
 #ifndef VERSION_JP
 void func_08066588(s16 x, s32 y, Ent08066588* p, void* d, s32 e, u8 n) {
     s16 x0 = x;
