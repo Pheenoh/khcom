@@ -203,8 +203,10 @@ def main():
             ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start, "?", "?", 0, "setup-failed", "permuter_setup"])
             continue
         log = open(os.path.join(d, "run.log"), "w")
+        env = dict(os.environ, TMPDIR=os.path.join(REPO, "permuter", "tmp"))
+        os.makedirs(env["TMPDIR"], exist_ok=True)
         p = subprocess.run(["timeout", str(args.budget), PYTHON, PERMUTER, d, "-j", str(args.j), "--stop-on-zero", "--better-only"],
-                           cwd=REPO, stdout=log, stderr=subprocess.STDOUT, text=True)
+                           cwd=REPO, env=env, stdout=log, stderr=subprocess.STDOUT, text=True)
         log.close()
         text = open(os.path.join(d, "run.log")).read()
         m = re.search(r"base score = (\d+)", text)

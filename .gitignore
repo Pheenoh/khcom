@@ -31,3 +31,4 @@ debug_source.c
 debug_compiled_object.o
 docs/
 CLAUDE.md
+permuter/tmp
