@@ -47,7 +47,7 @@ void SaveClearFileLarge(s32 a);
 void SaveClearFileSmall(s32 a);
 void func_0800FDD0(s32 a);
 void func_0801CB44(void);
-void func_0805FA60(s32 a, const char* b, s32 c, s32 d);
+void func_0805FA60(s32 a, void* b, s32 c, u8 d);
 void func_0805FA8C(s32 a, s32 b, s32 c);
 void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
 void func_08060598(void);

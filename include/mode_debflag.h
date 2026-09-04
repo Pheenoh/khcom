@@ -20,7 +20,7 @@ u16 GetKeysRepeat(void);
 void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void func_0805FA60(s32 a, void* b, s32 c, s32 d);
+void func_0805FA60(s32 a, void* b, s32 c, u8 d);
 void func_0805FA8C(s32 a, u16 b, u16 c);
 void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
 void func_08060598(void);

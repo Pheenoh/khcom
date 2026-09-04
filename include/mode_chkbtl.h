@@ -62,7 +62,7 @@ void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_08006120(s32 a, s32 b);
 void SeedRandom(u32 a);
-void func_0805FA60(s32 a, const char* b, s32 c, s32 d);
+void func_0805FA60(s32 a, void* b, s32 c, u8 d);
 void func_0805FA8C(s32 a, s32 b, s32 c);
 void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
 void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
