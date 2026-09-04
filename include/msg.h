@@ -13,7 +13,12 @@
 #define NULL ((void*)0)
 
 typedef struct Ent0806E9BC {
-    u8 unk_00[0x14];
+    u32 unk_00;
+    u16 unk_04;
+    u8 unk_06[2];
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
     u16 unk_14;
     u8 unk_16[2];
     u32 unk_18;
@@ -37,7 +42,9 @@ typedef struct Work0806180C {
     u8 unk_038[4];
     u16 unk_03C;
     u16 unk_03E;
-    u8 unk_040[0x13C];
+    u8 unk_040[4];
+    u16 unk_044;
+    u8 unk_046[0x136];
     s32 unk_17C;
     s32 unk_180;
     s32 unk_184;
@@ -48,7 +55,7 @@ typedef struct Work0806180C {
     s32 unk_198;
     s32 unk_19C;
     u32 unk_1A0;
-    u8 unk_1A4[4];
+    s32 unk_1A4;
     u8 unk_1A8;
     u8 unk_1A9;
     u8 unk_1AA;
@@ -58,9 +65,12 @@ typedef struct Work0806180C {
     u8 unk_1B1;
     u8 unk_1B2;
     u8 unk_1B3;
-    u8 unk_1B4[2];
+    u8 unk_1B4;
+    u8 unk_1B5;
     u8 unk_1B6;
-    u8 unk_1B7[5];
+    u8 unk_1B7;
+    u16 unk_1B8;
+    u8 unk_1BA[2];
 } Work0806180C;
 
 typedef struct MsgLine0806180C {
@@ -103,6 +113,7 @@ typedef struct Ent02034A8C {
     u8 unk_23;
     u8 unk_24;
     u8 unk_25;
+    u8 unk_26;
 } Ent02034A8C;
 
 typedef struct GameState {
@@ -118,6 +129,7 @@ typedef struct MsgFaceCtl {
     u8 unk_02;
     u8 unk_03;
     u32 unk_04;
+    u8 unk_08;
 } MsgFaceCtl;
 
 typedef struct MsgFaceAnim {
@@ -201,7 +213,7 @@ typedef struct ContinueWork {
     u16 unk_66;
     u8 unk_68[2];
     u8 unk_6A;
-    u8 unk_6B;
+    s8 unk_6B;
 } ContinueWork;
 
 typedef struct EventSeqWork {
@@ -226,7 +238,23 @@ typedef struct BtlWork {
     u8 unk_08[0x24];
     TaskPool unk_2C;
     TaskPool unk_40;
+    u8 unk_54[0x2C];
+    ListNode unk_80;
 } BtlWork;
+
+typedef struct Ent0903380C {
+    s16 unk_00;
+    s16 unk_02;
+    s16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    s16 unk_0A;
+} Ent0903380C;
+
+typedef struct Ent0806E7A8 {
+    u8 unk_00[0x34];
+    u64 unk_34;
+} Ent0806E7A8;
 
 typedef struct Ent08074EC8 {
     s32 unk_00;
@@ -413,6 +441,7 @@ extern u16 gUnk_09033C8C[];
 extern u8 gUnk_09EE274C[];
 extern u8 gModeBattle[];
 extern u8 gUnk_08125E24[];
+extern s32 gUnk_08F7DAC4[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_09EEFCAC[];
@@ -451,6 +480,7 @@ extern MsgFaceAnim* gUnk_09EE45DC[];
 extern void* gUnk_09EE3CA0[];
 extern u8 gUnk_094233B8[];
 extern u8 gUnk_096148D8[];
+extern void* gUnk_0813B09C[][4];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_090AB5B2[];
 extern u8 gUnk_09EDA7E0[];
@@ -482,7 +512,7 @@ extern u16 gUnk_08F7D438[];
 extern void* gUnk_09EEC134[];
 extern u8 gUnk_090CBFB2[];
 extern s32 gUnk_09033D28[];
-extern s16 gUnk_0903380C[][6];
+extern Ent0903380C gUnk_0903380C[];
 extern void* gUnk_09EF126C[];
 
 void _08065994(void);
@@ -507,6 +537,8 @@ void func_08066918(void* a, void* b);
 void func_08002488(s16 x, s16 y, void* a, void* b, void* c, u16 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f);
+void func_08064624(void);
+u8 func_08004678(void* a);
 void* GetBgCharBase(s32 bg);
 void* GetBgScreenBase(s32 bg);
 void* _08066468(s32 a);
@@ -562,6 +594,10 @@ u8 func_08072EAC(MsgWinWork* p, void* a);
 u8 func_08073F78(MsgWaitWork* p);
 void LoadBgMap(s32 bg, void* src, u16 size);
 u8 msgface_1(MsgFaceWork* p, void* a);
+u8 func_08073B04(MsgFaceWork* p, void* a);
+u8 func_08073B54(MsgFaceWork* p, void* a);
+u8 func_08073B9C(MsgFaceWork* p, void* a);
+u8 func_08073CA4(MsgFaceWork* p, void* a);
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a);
 void _0806C3A0(u8 a, void* b);
 void func_08065AE0(TextSlot* p, s32 n);
@@ -603,6 +639,13 @@ void func_08065940(void);
 void func_080658B8(u8 n);
 void func_0806C34C(void);
 void func_0806E9BC(Work0806180C* p);
+void func_0806F94C(Work0806180C* p);
+void LoadPalette(void* src, void* dst, s32 size);
+void func_0801CD98(void* pool, void* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
+s32 func_0810B350(void* p);
+void func_0810C2C4(void* p);
+Ent0806E7A8* ListPoolFirst(ListNode* node);
+void EvtObjSetPos(void* obj, s32 a, s32 b, s32 c);
 void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c);
 void func_080746D8(void);
 void func_08072918(Actor0806180C* a, u8 kind, u8 flag);
