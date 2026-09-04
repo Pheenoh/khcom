@@ -674,7 +674,6 @@ u32 func_08115E24(SrollBlit* w) {
     return r;
 }
 
-#ifdef NON_MATCHING
 u16 func_08115F34(u16 c, u8* font) {
     u16 result;
     s32 off;
@@ -691,16 +690,14 @@ u16 func_08115F34(u16 c, u8* font) {
     b = font[off + 2] | hi;
 
     if (a != 0xFFFF) {
-        v = font[(u16)(a + 0xFFC0 + (c & 0xFF))];
-        if (v != 0xFF) {
+
+        if (font[(u16)(a + 0xFFC0 + (c & 0xFF))] != 0xFF) {
+            v = font[(u16)(a + 0xFFC0 + (c & 0xFF))];
             result = b + v;
         }
     }
     return result;
 }
-#else
-INCLUDE_ASM("sroll/func_08115F34.s");
-#endif
 
 u8 func_08115F8C(u16 c, u8* font, u8* widths, u32 count) {
     u8 w;

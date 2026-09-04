@@ -8132,8 +8132,7 @@ void func_08095AD8(UnkStruct_08095A5C* p, u16 a) {
 
     p->unk_60 = gfx;
 }
-#ifdef NON_MATCHING
-void func_08095B04(u8* p, ReloadGageWork* w) {
+s32 func_08095B04(u8* p, ReloadGageWork* w) {
     if (w->unk_9C > 0 && w->unk_A2 == 1) {
         switch (w->unk_40) {
         case 1:
@@ -8147,9 +8146,6 @@ void func_08095B04(u8* p, ReloadGageWork* w) {
         *(u32*)&p[4] = 0;
     }
 }
-#else
-INCLUDE_ASM("card/func_08095B04.s");
-#endif
 void func_08095B50(UnkStruct_08095A5C* p, ReloadGageWork* w, u8 idx) {
     p->unk_0D = 2;
     AnimInit(&p->unk_28, gUnk_09EE75C8[idx], gUnk_09EE75B8[idx]);
