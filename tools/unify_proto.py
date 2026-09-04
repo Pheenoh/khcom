@@ -58,14 +58,14 @@ def signatures(name):
 
 
 def type_headers():
-    owner = {}
+    cand = collections.defaultdict(list)
 
     for path in glob.glob(os.path.join(REPO, "include", "*.h")):
         body = open(path, errors="ignore").read()
 
         for m in re.finditer(r"\}\s*([A-Z]\w+)\s*;", body):
-            owner.setdefault(m.group(1), os.path.basename(path))
-    return owner
+            cand[m.group(1)].append((len(body), os.path.basename(path)))
+    return {t: min(v)[1] for t, v in cand.items()}
 
 
 def needed_types(canon, owner):
