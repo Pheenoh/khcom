@@ -209,7 +209,7 @@ void func_08006238(s32 a, s32 b, s32 c);
 void func_080062F4(u16 a, s32 b);
 u8 func_08006314(void);
 void func_080063A8(void);
-void func_08065ACC(void* a, s32 b);
+void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
 s32 func_08065B08(void* a, u8 b);
 u8 func_08065B6C(void* a, void* b);

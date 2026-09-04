@@ -88,7 +88,7 @@ void TaskPoolUpdate(TaskPool* a);
 void func_0808DE28(u8 a);
 s32 func_080609AC(u16 a);
 s32 func_0808C8D0(s32 a);
-void func_08065ACC(void* a, s32 b);
+void func_08065ACC(TextSlot* p, s32 n);
 void func_080AB1F8(u8 a, u16 b);
 void func_080AB964(void);
 void func_080AB968(void);
