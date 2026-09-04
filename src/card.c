@@ -5279,7 +5279,7 @@ u8 func_0808B30C(u8* work, void* a) {
 INCLUDE_ASM("card/func_0808B30C.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void func_0808B398(u8* work) {
     func_08066588(*(s16*)&work[0x894], *(s16*)&work[0x896], &work[0x1E8],
                   *(void**)&work[0x14], 20, work[0x8C6]);
