@@ -180,7 +180,7 @@ void AnimStart(AnimState* a, u16 animId, u16 flags);
 void AnimChange(AnimState* a, u16 id, u16 flags);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(AnimState* a);
-void func_080A411C(void* a, s32 b, u16 c);
+void func_080A411C(void* pool, u32 a, u16 b);
 void func_080A41F0(void* a, u16 b);
 void func_080A42E0(void);
 
