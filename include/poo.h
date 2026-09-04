@@ -1280,7 +1280,7 @@ void task_poo_shadowscale_2(PooScaleWork* w);
 void task_poo_wagon_0(PooCamera* w);
 u8 task_poo_wagon_1(PooCamera* w);
 void task_poo_zzz_0(PooZzzWork* w, u8* arg);
-void AnimReset(void* a);
+void AnimReset(AnimState* a);
 s32 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 u8 func_080C9D84(void);

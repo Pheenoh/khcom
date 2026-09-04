@@ -305,7 +305,7 @@ void func_08006238(s32 a, s32 b, s32 c);
 u8 func_08006314(void);
 void func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
 void func_0800592C(s32* value, s32 target, u16 steps);
-void AnimReset(void* a);
+void AnimReset(AnimState* a);
 void func_08006120(s32 a, s32 b);
 void func_08010CC8(void);
 void func_0801071C(void);
