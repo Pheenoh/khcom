@@ -91,7 +91,6 @@ const u8 gUnkEu_08125144[0xFC] = {
 const char gModeNameLang[12] = "mode_lang";
 #endif
 
-#ifndef VERSION_EU
 void mode_battle_0(u32 mode) {
     void** p;
     vu32 zero;
@@ -301,7 +300,11 @@ void mode_battle_0(u32 mode) {
             gBtlWork->unk_0B3 = 5;
             break;
         case 0x99:
+#ifdef VERSION_EU
+            func_0801A920(0, 0xE0, 0x130, 0x180);
+#else
             func_0801A920(0, 0xE0, 0x118, 0x180);
+#endif
             TaskCreate(&gBtlWork->unk_02C, &gTaskDescBosMd, 0);
             gBtlWork->unk_0B3 = 5;
             break;
@@ -433,9 +436,6 @@ void mode_battle_0(u32 mode) {
     func_08006120(0, 60);
     gGameState.unk_010++;
 }
-#else
-INCLUDE_ASM("mode_battle/mode_battle_0.s");
-#endif
 
 void mode_battle_1(void) {
     TaskPoolUpdate(&gBtlWork->unk_054);
