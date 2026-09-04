@@ -4,7 +4,83 @@
 
 struct UnkStruct_0203C7AC* gUnk_0203C7AC;
 
-INCLUDE_ASM("fld/task_fld_sora_0.s");
+void task_fld_sora_0(FldWork* work) {
+    FldActor* act;
+
+    act = &gUnk_02039BA0->unk_18;
+    work->tiles = AllocObjTiles(0x500, 0);
+    work->palette = LoadObjPalette(gUnk_08F683A4, 32);
+    act->unk_1A = 16;
+    work->unk_BC = 0;
+    work->unk_9C = 0;
+    work->unk_9D = 0;
+    work->unk_9E = 0;
+    work->unk_98 = 0;
+    work->unk_A4 = 8;
+    work->unk_A8 = 16;
+    act->unk_32 = 0;
+    act->unk_30 = 0;
+
+    if (gGameState.unk_00 != 0) {
+        act->unk_00 = gGameState.unk_14;
+        act->angle = gGameState.unk_24;
+        act->unk_10 = gGameState.unk_28;
+        work->unk_94 = gGameState.unk_30;
+        work->unk_A0 = gGameState.unk_2C;
+        work->unk_B0 = gGameState.unk_34;
+        work->unk_B4 = gGameState.unk_38;
+        work->unk_B8 = gGameState.unk_3C;
+    } else {
+        act->unk_00.x = gUnk_02039BA0->unk_DC;
+        act->unk_00.y = gUnk_02039BA0->unk_E0;
+        act->unk_00.z = 0;
+        act->angle = gUnk_02039BA0->unk_E4;
+        func_080DFF4C(&act->unk_00);
+        act->unk_00.z = act->unk_00.unk_0C;
+        act->unk_00.y -= act->unk_00.unk_0C;
+        act->unk_10 = 0;
+        work->unk_94 = 0;
+        work->unk_A0 = 0;
+    }
+
+    AnimInit(work->unk_08, 0, 0);
+    func_08031F98(work, 0, 1);
+    work->unk_20 = AnimGetGfx(work->unk_08);
+
+    switch (gGameState.unk_0C) {
+    case 7:
+        work->unk_AC = gUnk_0813CD4C[1];
+        break;
+    case 2:
+        work->unk_AC = gUnk_0813CD4C[2];
+        break;
+    case 5:
+        work->unk_AC = gUnk_0813CD4C[3];
+        break;
+    case 4:
+        work->unk_AC = gUnk_0813CD4C[4];
+        break;
+    case 6:
+        work->unk_AC = gUnk_0813CD4C[5];
+        break;
+    case 0:
+    case 3:
+    case 12:
+        work->unk_AC = gUnk_0813CD4C[6];
+        break;
+    case 9:
+        work->unk_AC = gUnk_0813CD4C[7];
+        break;
+    default:
+        work->unk_AC = gUnk_0813CD4C[0];
+        break;
+    }
+
+    TaskPoolInit(work->unk_24, 2);
+    TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->unk_18);
+    func_080122AC(work->unk_38, 1, 4, 32);
+    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+}
 u8 func_08032268(FldWork* work, void* task) {
     FldActor* act;
     s16* p;
@@ -44,11 +120,171 @@ u8 func_08032268(FldWork* work, void* task) {
 
     return 1;
 }
-INCLUDE_ASM("fld/func_0803234C.s");
+u8 func_0803234C(FldWork* work, void* task) {
+    FldActor* act;
+    s32 x;
+    s32 y;
+    s32 z;
+
+    act = &gUnk_02039BA0->unk_18;
+    x = act->unk_00.x;
+    y = act->unk_00.y;
+    gUnk_02039BA0->unk_68 = 0;
+
+    switch (work->unk_94) {
+    case 13:
+        m4aSongNumStart(0x8B);
+        work->unk_94 = 14;
+        work->unk_A0 = -0x800;
+        work->unk_98 = 0;
+        act->unk_10 = 0;
+        work->unk_B0 = work->unk_7C;
+        work->unk_B4 = work->unk_80;
+    case 14:
+        if (work->unk_A0 > -0x300) {
+            func_08031F98(work, 11, 0);
+            act->unk_10 = 0x180;
+            act->unk_00.x += gSineTable[act->angle] * act->unk_10 >> 8;
+            act->unk_00.y += -gSineTable[act->angle + 64] * act->unk_10 >> 8;
+        } else {
+            func_08031F98(work, 4, 0);
+            act->unk_00.x += (work->unk_B0 - act->unk_00.x) >> 3;
+            act->unk_00.y += (work->unk_B4 - act->unk_00.y) >> 3;
+        }
+
+        work->unk_A0 = (work->unk_B8 - (z = act->unk_00.z + 0xF00)) >> 3;
+        act->unk_00.z += work->unk_A0;
+        work->unk_A0 += 0x42;
+
+        if (work->unk_A0 >= 0) {
+            work->unk_98 = 0;
+            work->unk_94 = 4;
+            work->unk_A4 |= 4;
+            SetTaskUpdate(task, (u32)func_080324DC);
+        } else {
+            work->unk_98++;
+        }
+
+        break;
+    }
+
+    if (func_08031D74(&act->unk_00) != 0) {
+        act->unk_00.x = x;
+        act->unk_00.y = y;
+    }
+
+    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
+    work->unk_20 = AnimUpdate(work->unk_08);
+    TaskPoolUpdate(work->unk_24);
+    return 1;
+}
 INCLUDE_ASM("fld/func_080324DC.s");
 INCLUDE_ASM("fld/func_08032C3C.s");
-INCLUDE_ASM("fld/func_08033054.s");
-INCLUDE_ASM("fld/func_08033150.s");
+u8 func_08033054(FldWork* work, void* task) {
+    FldActor* act;
+
+    act = &gUnk_02039BA0->unk_18;
+
+    if ((GetKeysPressed() & B_BUTTON) || (GetKeysPressed() & DPAD_DOWN) ||
+        (act->angle == 0xD3 && (GetKeysPressed() & DPAD_RIGHT)) ||
+        (act->angle == 0x2D && (GetKeysPressed() & DPAD_LEFT))) {
+        work->unk_98 = 0;
+        work->unk_94 = 4;
+        work->unk_A0 = 0;
+        act->angle += 0x80;
+        gUnk_02039BA0->unk_68 = 0;
+        SetTaskUpdate(task, (u32)func_080324DC);
+        return 1;
+    }
+
+    if ((GetKeysHeld() & DPAD_UP) ||
+        (act->angle == 0xD3 && (GetKeysHeld() & DPAD_LEFT)) ||
+        (act->angle == 0x2D && (GetKeysHeld() & DPAD_RIGHT))) {
+        work->unk_98 = 0;
+        work->unk_94 = 10;
+        act->unk_10 = 0x133;
+        work->unk_A0 = -0x5C0;
+        work->unk_A4 |= 4;
+        m4aSongNumStart(0x8E);
+        gUnk_02039BA0->unk_68 = 0;
+        return 1;
+    }
+
+    return 0;
+}
+u8 func_08033150(FldWork* work, void* task) {
+    FldActor* act;
+    FldPos p;
+    u8 ret;
+    s32 x;
+    s32 y;
+
+    act = &gUnk_02039BA0->unk_18;
+    ret = 0;
+    x = act->unk_00.x;
+    y = act->unk_00.y;
+    gUnk_02039BA0->unk_68 = 0;
+
+    switch (work->unk_94) {
+    case 8:
+        if (work->unk_98 == 0) {
+            p = act->unk_00;
+            p.y -= 0xA00;
+            act->unk_00.z = func_080DFF1C(&p) + 0x2B00;
+            m4aSongNumStart(0x8D);
+            act->angle = func_080DFF94(act->unk_00.x, act->unk_00.y, act->unk_00.z);
+            func_08031F98(work, 9, 0);
+        }
+
+        if (work->unk_98 > 15) {
+            ret = func_08033054(work, task);
+        }
+
+        act->unk_00.x += gSineTable[act->angle];
+        act->unk_00.y -= gSineTable[act->angle + 64];
+
+        if (AnimIsFinished(work->unk_08) != 0 && ret == 0) {
+            work->unk_94 = 9;
+        } else {
+            work->unk_98++;
+        }
+
+        break;
+    case 9:
+        func_08031F98(work, 10, 0);
+        func_08033054(work, task);
+        break;
+    case 10:
+        func_08031F98(work, 11, 0);
+        act->unk_00.x += gSineTable[act->angle] * act->unk_10 >> 8;
+        act->unk_00.y += -gSineTable[act->angle + 64] * act->unk_10 >> 8;
+        act->unk_00.z += work->unk_A0;
+        work->unk_A0 += 0x42;
+
+        if (work->unk_A0 > 0) {
+            work->unk_98 = 0;
+            work->unk_94 = 4;
+            SetTaskUpdate(task, (u32)func_080324DC);
+        } else {
+            work->unk_98++;
+        }
+
+        break;
+    }
+
+    work->unk_20 = AnimUpdate(work->unk_08);
+
+    if (func_08031D74(&act->unk_00) != 0) {
+        act->unk_00.x = x;
+        act->unk_00.y = y;
+    }
+
+    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
+    TaskPoolUpdate(work->unk_24);
+    return 1;
+}
 INCLUDE_ASM("fld/func_08033334.s");
 INCLUDE_ASM("fld/func_0803366C.s");
 INCLUDE_ASM("fld/task_fld_sora_1.s");
@@ -59,6 +295,7 @@ void task_fld_sora_2(FldWork* work) {
     s32 pri;
     s32 x;
     s32 y;
+    s32 z;
 
     act = &gUnk_02039BA0->unk_18;
     pri = (work->unk_A4 & 2) ? 0x801 : 0x800;
@@ -351,7 +588,83 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
     func_08002A10(work->tiles, def->unk_08);
 }
 
-INCLUDE_ASM("fld/task_fld_riku_0.s");
+void task_fld_riku_0(FldWork* work) {
+    FldActor* act;
+
+    act = &gUnk_02039BA0->unk_18;
+    work->tiles = AllocObjTiles(0xA00, 0);
+    work->palette = LoadObjPalette(gUnk_09618118, 32);
+    act->unk_1A = 16;
+    work->unk_BC = 0;
+    work->unk_9C = 0;
+    work->unk_9D = 0;
+    work->unk_9E = 0;
+    work->unk_98 = 0;
+    work->unk_A4 = 8;
+    work->unk_A8 = 16;
+    act->unk_32 = 0;
+    act->unk_30 = 0;
+
+    if (gGameState.unk_00 != 0) {
+        act->unk_00 = gGameState.unk_14;
+        act->angle = gGameState.unk_24;
+        act->unk_10 = gGameState.unk_28;
+        work->unk_94 = gGameState.unk_30;
+        work->unk_A0 = gGameState.unk_2C;
+        work->unk_B0 = gGameState.unk_34;
+        work->unk_B4 = gGameState.unk_38;
+        work->unk_B8 = gGameState.unk_3C;
+    } else {
+        act->unk_00.x = gUnk_02039BA0->unk_DC;
+        act->unk_00.y = gUnk_02039BA0->unk_E0;
+        act->unk_00.z = 0;
+        act->angle = gUnk_02039BA0->unk_E4;
+        func_080DFF4C(&act->unk_00);
+        act->unk_00.z = act->unk_00.unk_0C;
+        act->unk_00.y -= act->unk_00.unk_0C;
+        act->unk_10 = 0;
+        work->unk_94 = 0;
+        work->unk_A0 = 0;
+    }
+
+    AnimInit(work->unk_08, 0, 0);
+    func_0803473C(work, 0, 1);
+    work->unk_20 = AnimGetGfx(work->unk_08);
+
+    switch (gGameState.unk_0C) {
+    case 7:
+        work->unk_AC = gUnk_0813D28C[1];
+        break;
+    case 2:
+        work->unk_AC = gUnk_0813D28C[2];
+        break;
+    case 5:
+        work->unk_AC = gUnk_0813D28C[3];
+        break;
+    case 4:
+        work->unk_AC = gUnk_0813D28C[4];
+        break;
+    case 6:
+        work->unk_AC = gUnk_0813D28C[5];
+        break;
+    case 0:
+    case 3:
+    case 12:
+        work->unk_AC = gUnk_0813D28C[6];
+        break;
+    case 9:
+        work->unk_AC = gUnk_0813D28C[7];
+        break;
+    default:
+        work->unk_AC = gUnk_0813D28C[0];
+        break;
+    }
+
+    TaskPoolInit(work->unk_24, 2);
+    TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->unk_18);
+    func_080122AC(work->unk_38, 1, 4, 32);
+    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+}
 u8 func_08034A0C(FldWork* work, void* task) {
     FldActor* act;
     s16* p;
@@ -391,11 +704,172 @@ u8 func_08034A0C(FldWork* work, void* task) {
 
     return 1;
 }
-INCLUDE_ASM("fld/func_08034AF0.s");
+u8 func_08034AF0(FldWork* work, void* task) {
+    FldActor* act;
+    s32 x;
+    s32 y;
+    s32 z;
+
+    act = &gUnk_02039BA0->unk_18;
+    x = act->unk_00.x;
+    y = act->unk_00.y;
+    gUnk_02039BA0->unk_68 = 0;
+
+    switch (work->unk_94) {
+    case 13:
+        m4aSongNumStart(0x8B);
+        work->unk_94 = 14;
+        work->unk_A0 = -0x800;
+        work->unk_98 = 0;
+        act->unk_10 = 0;
+        work->unk_B0 = work->unk_7C;
+        work->unk_B4 = work->unk_80;
+        break;
+    case 14:
+        if (work->unk_A0 > -0x300) {
+            func_0803473C(work, 11, 0);
+            act->unk_10 = 0x180;
+            act->unk_00.x += gSineTable[act->angle] * act->unk_10 >> 8;
+            act->unk_00.y += -gSineTable[act->angle + 64] * act->unk_10 >> 8;
+        } else {
+            func_0803473C(work, 4, 0);
+            act->unk_00.x += (work->unk_B0 - act->unk_00.x) >> 3;
+            act->unk_00.y += (work->unk_B4 - act->unk_00.y) >> 3;
+        }
+
+        work->unk_A0 = (work->unk_B8 - (z = act->unk_00.z + 0xF00)) >> 3;
+        act->unk_00.z += work->unk_A0;
+        work->unk_A0 += 0x42;
+
+        if (work->unk_A0 >= 0) {
+            work->unk_98 = 0;
+            work->unk_94 = 4;
+            work->unk_A4 |= 4;
+            SetTaskUpdate(task, (u32)func_08034C88);
+        } else {
+            work->unk_98++;
+        }
+
+        break;
+    }
+
+    if (func_08034518(&act->unk_00) != 0) {
+        act->unk_00.x = x;
+        act->unk_00.y = y;
+    }
+
+    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
+    work->unk_20 = AnimUpdate(work->unk_08);
+    TaskPoolUpdate(work->unk_24);
+    return 1;
+}
 INCLUDE_ASM("fld/func_08034C88.s");
 INCLUDE_ASM("fld/func_080353DC.s");
-INCLUDE_ASM("fld/func_080357F4.s");
-INCLUDE_ASM("fld/func_080358F0.s");
+u8 func_080357F4(FldWork* work, void* task) {
+    FldActor* act;
+
+    act = &gUnk_02039BA0->unk_18;
+
+    if ((GetKeysPressed() & B_BUTTON) || (GetKeysPressed() & DPAD_DOWN) ||
+        (act->angle == 0xD3 && (GetKeysPressed() & DPAD_RIGHT)) ||
+        (act->angle == 0x2D && (GetKeysPressed() & DPAD_LEFT))) {
+        work->unk_98 = 0;
+        work->unk_94 = 4;
+        work->unk_A0 = 0;
+        act->angle += 0x80;
+        gUnk_02039BA0->unk_68 = 0;
+        SetTaskUpdate(task, (u32)func_08034C88);
+        return 1;
+    }
+
+    if ((GetKeysHeld() & DPAD_UP) ||
+        (act->angle == 0xD3 && (GetKeysHeld() & DPAD_LEFT)) ||
+        (act->angle == 0x2D && (GetKeysHeld() & DPAD_RIGHT))) {
+        work->unk_98 = 0;
+        work->unk_94 = 10;
+        act->unk_10 = 0x133;
+        work->unk_A0 = -0x5C0;
+        work->unk_A4 |= 4;
+        m4aSongNumStart(0x8E);
+        gUnk_02039BA0->unk_68 = 0;
+        return 1;
+    }
+
+    return 0;
+}
+u8 func_080358F0(FldWork* work, void* task) {
+    FldActor* act;
+    FldPos p;
+    u8 ret;
+    s32 x;
+    s32 y;
+
+    act = &gUnk_02039BA0->unk_18;
+    ret = 0;
+    x = act->unk_00.x;
+    y = act->unk_00.y;
+    gUnk_02039BA0->unk_68 = 0;
+
+    switch (work->unk_94) {
+    case 8:
+        if (work->unk_98 == 0) {
+            p = act->unk_00;
+            p.y -= 0xA00;
+            act->unk_00.z = func_080DFF1C(&p) + 0x2B00;
+            m4aSongNumStart(0x8D);
+            act->angle = func_080DFF94(act->unk_00.x, act->unk_00.y, act->unk_00.z);
+            func_0803473C(work, 9, 0);
+        }
+
+        if (work->unk_98 > 15) {
+            ret = func_080357F4(work, task);
+        }
+
+        act->unk_00.x += gSineTable[act->angle];
+        act->unk_00.y -= gSineTable[act->angle + 64];
+
+        if (AnimIsFinished(work->unk_08) != 0 && ret == 0) {
+            work->unk_94 = 9;
+        } else {
+            work->unk_98++;
+        }
+
+        break;
+    case 9:
+        func_0803473C(work, 10, 0);
+        func_080357F4(work, task);
+        break;
+    case 10:
+        func_0803473C(work, 11, 0);
+        act->unk_00.x += gSineTable[act->angle] * act->unk_10 >> 8;
+        act->unk_00.y += -gSineTable[act->angle + 64] * act->unk_10 >> 8;
+        act->unk_00.z += work->unk_A0;
+        work->unk_A0 += 0x42;
+
+        if (work->unk_A0 > 0) {
+            work->unk_98 = 0;
+            work->unk_94 = 4;
+            SetTaskUpdate(task, (u32)func_08034C88);
+        } else {
+            work->unk_98++;
+        }
+
+        break;
+    }
+
+    work->unk_20 = AnimUpdate(work->unk_08);
+
+    if (func_08034518(&act->unk_00) != 0) {
+        act->unk_00.x = x;
+        act->unk_00.y = y;
+    }
+
+    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
+    TaskPoolUpdate(work->unk_24);
+    return 1;
+}
 INCLUDE_ASM("fld/func_08035AD4.s");
 INCLUDE_ASM("fld/func_08035DFC.s");
 INCLUDE_ASM("fld/task_fld_riku_1.s");
@@ -406,6 +880,7 @@ void task_fld_riku_2(FldWork* work) {
     s32 pri;
     s32 x;
     s32 y;
+    s32 z;
 
     act = &gUnk_02039BA0->unk_18;
     pri = (work->unk_A4 & 2) ? 0x801 : 0x800;
