@@ -146,6 +146,8 @@ u8 func_08033150(FldWork* work, void* task);
 u8 func_08033334(FldWork* work, void* task);
 u8 func_0803366C(FldWork* work, void* task);
 u8 task_fld_sora_1(FldWork* work, void* task);
+u8 task_fld_riku_1(FldWork* work, void* task);
+u8 func_08034A0C(FldWork* work, void* task);
 void task_fld_sora_2(FldWork* work);
 void task_fld_sora_3(FldWork* work);
 void task_fld_riku_2(FldWork* work);
