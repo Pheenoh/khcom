@@ -6,5 +6,5 @@
 	.thumb_func
 	.type func_0808DED0, %function
 func_0808DED0:
-	.incbin "roms/B8CP.gba", 0x8d530, 0x2d0
+	.incbin "roms/B8CP.gba", 0x8d530, 0x2cc
 .syntax divided
