@@ -53,7 +53,8 @@ if m:
     print(t.lower())
 ' 2>/dev/null)
 fi
-FLAGS=$(awk -v u="$U.c" '$1==u{$1=""; print; exit}' "$REPO/config/us/units.txt" 2>/dev/null)
+FLAGS="${PERM_FLAGS_IN:-}"
+[ -z "$FLAGS" ] && FLAGS=$(awk -v u="$U.c" '$1==u{$1=""; print; exit}' "$REPO/config/us/units.txt" 2>/dev/null)
 [ -z "$FLAGS" ] && FLAGS="-O2 -fprologue-bugfix"
 printf '#!/bin/bash\nADDR=%s PERM_BSS=%s PERM_FLAGS=%s exec "$(dirname "$0")/../../tools/permuter_compile.sh" "$@"\n' \
     "$START" "$BSS" "\"$FLAGS\"" > "$DIR/compile.sh"

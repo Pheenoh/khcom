@@ -43,7 +43,8 @@ fi
 [ -n "${MATCH_BASE:-}" ] && export MATCH_BASE
 [ -n "${MATCH_BSS:-}" ] && export MATCH_BSS
 arm-none-eabi-cpp -nostdinc -undef -I include -I tools -I /tmp ${EXTRA_INC:-} $C -o $FT/x.i
-UFLAGS=$(awk -v u="$U.c" '$1==u{$1=""; print; exit}' config/us/units.txt 2>/dev/null)
+UFLAGS="${MATCH_FLAGS:-}"
+[ -z "$UFLAGS" ] && UFLAGS=$(awk -v u="$U.c" '$1==u{$1=""; print; exit}' config/us/units.txt 2>/dev/null)
 [ -z "$UFLAGS" ] && UFLAGS="-O2 -fprologue-bugfix"
 tools/agbcc/bin/agbcc -mthumb-interwork $UFLAGS ${AGBCC_EXTRA:-} -o $FT/x.s $FT/x.i
 arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -I include -I asm/us/nonmatchings -o $FT/x.o $FT/x.s

@@ -102,12 +102,55 @@ def preamble(lines):
     return "\n".join(out)
 
 
+def unit_env(unit):
+    env = {}
+    flags = ""
+
+    for line in open(os.path.join(REPO, "config", "us", "units.txt")):
+        f = line.split()
+
+        if f and f[0] == unit + ".c":
+            flags = " ".join(f[1:])
+            break
+
+    if flags:
+        env["MATCH_FLAGS"] = flags
+        env["PERM_FLAGS_IN"] = flags
+    bss = ""
+    mp = os.path.join(REPO, "build", "us", "com_us.map")
+
+    if os.path.exists(mp):
+        text = open(mp).read()
+        m = re.search(r"^\.bss\.%s\s+(0x[0-9a-f]+)" % re.escape(unit), text, re.M)
+
+        if m:
+            bss = m.group(1)
+
+    if not bss:
+        src = open(os.path.join(REPO, "configure.py")).read()
+        m = re.search(r'"src/%s\.o"\s*:\s*(\{[^}]*\}|0[xX][0-9a-fA-F]+)' % re.escape(unit), src)
+
+        if m:
+            t = m.group(1)
+
+            if t.startswith("{"):
+                v = re.search(r'"us"\s*:\s*(0[xX][0-9a-fA-F]+)', t)
+                t = v.group(1) if v else ""
+            bss = t.lower()
+
+    if bss:
+        env["MATCH_BSS"] = bss
+        env["PERM_BSS"] = bss
+    return env
+
+
 def run(cmd, **kw):
     return subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, **kw)
 
 
-def match_size(cand, sym, start, end, tmp):
-    r = run(["tools/match.sh", cand, sym, "0x%08X" % start, "0x%08X" % end], env={**os.environ, "MATCH_TMP": tmp})
+def match_size(cand, sym, start, end, tmp, uenv=None):
+    r = run(["tools/match.sh", cand, sym, "0x%08X" % start, "0x%08X" % end],
+            env={**os.environ, "MATCH_TMP": tmp, **(uenv or {})})
     out = r.stdout + r.stderr
 
     if r.returncode != 0 and "EXACT MATCH" not in out:
@@ -185,7 +228,8 @@ def main():
 
         with open(cand, "w") as f:
             f.write(preamble(head) + "\n\n" + body + "\n")
-        size, note = match_size(cand, sym, start, end, os.path.join(d, "mt"))
+        uenv = unit_env(unit)
+        size, note = match_size(cand, sym, start, end, os.path.join(d, "mt"), uenv)
 
         if size is None:
             print("%-28s SETUP FAILED: %s" % (sym, note))
@@ -196,7 +240,15 @@ def main():
             print("%-28s ALREADY MATCHES standalone; land it" % sym)
             ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start, 0, 0, 0, "matches", cand])
             continue
-        r = run(["tools/permuter_setup.sh", cand, sym, "0x%08X" % start, "0x%08X" % end])
+
+        if isinstance(size, tuple) and None not in size and abs(size[1] - size[0]) > 3:
+            print("%-28s STANDALONE SIZE %dB vs rom %dB; not equivalent, skipping"
+                  % (sym, size[1], size[0]))
+            ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start,
+                    "?", "?", 0, "standalone-size", "%d vs %d" % (size[1], size[0])])
+            continue
+        r = run(["tools/permuter_setup.sh", cand, sym, "0x%08X" % start, "0x%08X" % end],
+                env={**os.environ, **uenv})
 
         if r.returncode != 0:
             print("%-28s permuter_setup failed: %s" % (sym, (r.stderr or r.stdout).strip().split("\n")[-1][:200]))
@@ -211,6 +263,13 @@ def main():
         text = open(os.path.join(d, "run.log")).read()
         m = re.search(r"base score = (\d+)", text)
         base = int(m.group(1)) if m else "?"
+
+        if base == 0:
+            print("%-28s SCORER BLIND: base score 0 but match.sh reports a diff -- "
+                  "the scorer normalises this difference away, so no search can fix it" % sym)
+            ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start,
+                    0, 0, int(time.time() - t0), "scorer-blind", cand])
+            continue
         best = best_output(d)
         elapsed = int(time.time() - t0)
 
