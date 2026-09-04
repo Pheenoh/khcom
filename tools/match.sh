@@ -71,7 +71,8 @@ BASE=${MATCH_BASE:-$START}
 arm-none-eabi-ld $LDEXTRA -T $FT/l.ld -o $FT/x.elf $FT/x.o $FT/stub.o
 arm-none-eabi-objcopy -O binary --only-section=.text $FT/x.elf $FT/x.bin
 SYMA=$(arm-none-eabi-nm $FT/x.elf | awk -v s="$SYM" '$3==s{print "0x"$1}' | head -1)
-python3 - "$START" "$END" "$BASE" "${SYMA:-}" <<'PY'
+SYMSZ=$(arm-none-eabi-nm -S $FT/x.elf | awk -v s="$SYM" '$4==s{print "0x"$2}' | head -1)
+python3 - "$START" "$END" "$BASE" "${SYMA:-}" "${SYMSZ:-}" <<'PY'
 import sys, os
 s=int(sys.argv[1],16)-0x08000000; e=int(sys.argv[2],16)-0x08000000
 rom=open('roms/B8CE.gba','rb').read()[s:e]
@@ -82,6 +83,15 @@ if base != int(sys.argv[1],16):
         sys.exit("MISSING SYMBOL %s in candidate" % os.environ.get('MATCH_SYM',''))
     off=int(sys.argv[4],16)-base
     new=new[off:off+(e-s)]
+
+    if sys.argv[5]:
+        got=int(sys.argv[5],16)
+        want=e-s
+
+        if got > want:
+            print("SIZE MISMATCH: candidate %d bytes, rom %d -- the compared slice "
+                  "hides the excess and every later symbol shifts" % (got, want))
+            sys.exit(1)
 while len(new)>len(rom) and new[-2:] in (b'\xc0\x46', b'\x00\x00'):
     new=new[:-2]
 if len(new)==len(rom) and new[:-2]==rom[:-2] and new[-2:]==b'\xc0\x46' and rom[-2:]==b'\x00\x00':
