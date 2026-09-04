@@ -38,6 +38,11 @@ TARGET_ANCHORS = {
         0x0976D8A6: 0x097385B0,
         0x0976DBDA: 0x0973BA8A,
     },
+    "jp": {
+        0x09C8D47A: 0x09C678B4,
+        0x09C8F1FA: 0x09C68CC6,
+        0x09EFBAD4: 0x09ED304C,
+    },
 }
 
 TARGET_DATA_SIZE = {

@@ -40,7 +40,7 @@ void mode_movie_0(s32 a) {
 INCLUDE_ASM("mode_movie/func_0805E93C.s");
 INCLUDE_ASM("mode_movie/func_0805EA90.s");
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void mode_movie_1(void) {
     void* p;
 
@@ -88,12 +88,20 @@ void mode_movie_1(void) {
         case 4:
             p = gUnk_0855CCB4;
             gUnk_02034950 = gUnk_0886AB90;
+#ifdef VERSION_JP
+            gUnk_02034946 = 12;
+#else
             gUnk_02034946 = 14;
+#endif
             break;
         case 5:
             p = gUnk_086FBA14;
             gUnk_02034950 = gUnk_0886AC70;
+#ifdef VERSION_JP
+            gUnk_02034946 = 8;
+#else
             gUnk_02034946 = 10;
+#endif
             break;
         default:
             p = gUnk_0855CCB4;

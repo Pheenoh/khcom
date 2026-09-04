@@ -255,13 +255,17 @@ static s32 func_08115178(s32 x) {
     return x * x;
 }
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
     AnimState* p;
     s32 i;
 
     if (kind == 0) {
+#ifdef VERSION_JP
+        w->tiles = LoadObjTiles(gUnk_09C8D47A, 200 * 16);
+#else
         w->tiles = LoadObjTiles(gUnk_09C8D47A, 154 * 32);
+#endif
         w->unk_1C = LoadObjPalette(gUnk_09D6CF54, 224);
 
         for (i = 0, p = w->unk_20; i <= 4; i++) {
@@ -270,7 +274,11 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             p++;
         }
     } else {
+#ifdef VERSION_JP
+        w->tiles = LoadObjTiles(gUnk_09C8F1FA, 200 * 16);
+#else
         w->tiles = LoadObjTiles(gUnk_09C8F1FA, 146 * 32);
+#endif
         w->unk_1C = LoadObjPalette(gUnk_09D6D034, 224);
 
         for (i = 0, p = w->unk_20; i <= 4; i++) {

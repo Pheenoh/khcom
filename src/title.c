@@ -172,7 +172,7 @@ u8 func_080D6790(void) {
     return gUnk_02034ED0;
 }
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     s32 t;
     u8* pal;
@@ -195,12 +195,20 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     } else {
         work->unk_5C = 0;
     }
+#ifdef VERSION_JP
+    work->tiles = LoadObjTiles(gUnk_09773E1A, 0x2C00);
+#else
     work->tiles = LoadObjTiles(gUnk_09773E1A, 0x1600);
+#endif
     work->palette = LoadObjPalette(gUnk_0984A7F8, 0x20);
     func_080D5978(work->palette->unk_06 + 16, gUnk_0984A7F8, 0x20);
     work->unk_08[0] = LoadObjTiles(gUnk_09771DC0, 0x280);
     work->unk_08[1] = LoadObjTiles(gUnk_097720F2, 0xB20);
+#ifdef VERSION_JP
+    work->unk_08[2] = LoadObjTiles(gUnk_09772CC6, 0xE00);
+#else
     work->unk_08[2] = LoadObjTiles(gUnk_09772CC6, 0x700);
+#endif
     pal = &gUnk_0984A778[t];
     work->unk_14[0] = LoadObjPalette(pal, 0x20);
     work->unk_14[1] = LoadObjPalette(pal, 0x20);
