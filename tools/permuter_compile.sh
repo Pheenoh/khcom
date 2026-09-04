@@ -14,8 +14,10 @@ MAP="$REPO/build/us/com_us.map"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
-"$REPO/tools/agbcc/bin/agbcc" -mthumb-interwork -O2 -fprologue-bugfix -o "$TMP/x.s" "$IN"
-arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o "$TMP/x.o" "$TMP/x.s"
+BSSFLAG=""; [ -n "${PERM_BSS:-}" ] && BSSFLAG="-fno-common"
+"$REPO/tools/agbcc/bin/agbcc" -mthumb-interwork -O2 -fprologue-bugfix $BSSFLAG -o "$TMP/x.s" "$IN"
+arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -I "$REPO/include" \
+    -I "$REPO/asm/us/nonmatchings" -o "$TMP/x.o" "$TMP/x.s"
 
 : > "$TMP/stub.s"
 : > "$TMP/place.ld"
@@ -25,6 +27,11 @@ arm-none-eabi-nm -u "$TMP/x.o" | awk '{print $2}' | grep -vxF -f "$TMP/datasyms.
     [ -z "$s" ] && continue
     a=$(grep -E "^ +0x0[0-9a-f]{7} +$s\$" "$MAP" | head -1 | awk '{print $1}')
     [ -z "$a" ] && { echo "MISSING SYMBOL $s" >&2; exit 2; }
+    n=$((a))
+    if [ $n -lt $((0x08000240)) ] || [ $n -ge $((0x08121330)) ]; then
+        printf '%s = %s;\n' "$s" "$a" >> "$TMP/defs.ld"
+        continue
+    fi
     printf '\t.section .st_%s,"ax"\n\t.thumb\n\t.global %s\n\t.thumb_func\n%s:\n\tbx lr\n' "$s" "$s" "$s" >> "$TMP/stub.s"
     printf '  .st_%s %s : { *(.st_%s) }\n' "$s" "$a" "$s" >> "$TMP/place.ld"
 done
@@ -35,8 +42,10 @@ arm-none-eabi-as -mcpu=arm7tdmi -mthumb-interwork -o "$TMP/stub.o" "$TMP/stub.s"
     echo "SECTIONS {"
     echo "  .text $ADDR : SUBALIGN(4) { $TMP/x.o(.text) }"
     cat "$TMP/place.ld"
+    [ -n "${PERM_BSS:-}" ] && echo "  .bss $PERM_BSS (NOLOAD) : { $TMP/x.o(.bss COMMON) }"
     echo "  /DISCARD/ : { *(*) }"
     echo "}"
 } > "$TMP/l.ld"
-arm-none-eabi-ld -T "$TMP/l.ld" -o "$TMP/x.elf" "$TMP/x.o" "$TMP/stub.o"
+LDEXTRA=""; [ -n "${PERM_BSS:-}" ] && LDEXTRA="--no-check-sections"
+arm-none-eabi-ld $LDEXTRA -T "$TMP/l.ld" -o "$TMP/x.elf" "$TMP/x.o" "$TMP/stub.o"
 arm-none-eabi-objcopy --only-section=.text -N '$d' -N '$a' -N '$t' "$TMP/x.elf" "$OUT" 2>/dev/null
