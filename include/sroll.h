@@ -59,6 +59,17 @@ typedef struct SrollANameWork {
     AnimState unk_20;
 } SrollANameWork;
 
+typedef struct SrollANameArg {
+    s16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u8 unk_06[0x2];
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    s32 unk_14;
+} SrollANameArg;
+
 typedef struct SrollBCharGfx {
     void* unk_00;
     void* unk_04;
@@ -74,9 +85,30 @@ typedef struct SrollBCharDef {
 
 typedef struct SrollBCharSub {
     SrollBCharDef* unk_00;
-    u8 unk_04[0x10];
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    u8 unk_10[0x4];
     u16 unk_14;
+    u16 unk_16;
+    AnimState* unk_18;
+    u16 unk_1C;
+    u8 unk_1E[0x2];
+    s32 unk_20;
+    s32 unk_24;
+    u8 unk_28;
 } SrollBCharSub;
+
+typedef struct SrollBCharSet {
+    u16 unk_00;
+    u8 unk_02[0x6];
+    void* unk_08;
+} SrollBCharSet;
+
+typedef struct SrollBCharArg {
+    SrollBCharSet* unk_00;
+    SrollBCharSub* unk_04;
+} SrollBCharArg;
 
 typedef struct SrollBCharWork {
     s32 unk_00;
@@ -97,6 +129,14 @@ typedef struct SrollBLogoWork {
     SrollPal* unk_14;
     AnimState unk_18;
 } SrollBLogoWork;
+
+typedef struct SrollBLogoArg {
+    s32 unk_00;
+    s32 unk_04;
+    s32* unk_08;
+    s32 unk_0C;
+    u16 unk_10;
+} SrollBLogoArg;
 
 typedef struct SrollBSecnWork {
     s32 unk_00;
@@ -225,24 +265,34 @@ typedef struct SoundEntry {
     u32 unk_08;
 } SoundEntry;
 
+extern void* gUnk_09A54218[][2];
 extern SrollShift gUnk_09A54C78[];
 extern SrollMask gUnk_09A54918[][8];
 extern void (*gUnk_09A54CB8[])(u32*, u8*, u32*, s32);
 extern void (*gUnk_09A54CDC[])(u32*, u8*, u32*, s32);
 extern const SoundEntry gUnk_09EFAA7C[];
+extern u8 gUnk_05000220[];
 extern u8 gUnk_088A5D7A[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_09C5CC7C[];
+extern u8 gUnk_09C638BE[];
 extern u8 gUnk_09C8D47A[];
 extern u8 gUnk_09C8F1FA[];
 extern u8 gUnk_09C904B4[];
 extern u8 gUnk_09D6BE34[];
+extern u8 gUnk_09D6CD74[];
 extern u8 gUnk_09D6CF54[];
 extern u8 gUnk_09D6D034[];
 extern u8 gUnk_09D6D114[];
 extern u8 gUnk_09EFAF60[];
 extern u8 gUnk_09EFAF6C[];
+extern u8 gUnk_09EFB1F8[];
+extern u8 gUnk_09EFB200[];
+extern u8 gUnk_09EFB208[];
+extern u8 gUnk_09EFB244[];
+extern u8 gUnk_09EFB5B0[];
+extern u8 gUnk_09EFB5EC[];
 extern u8 gUnk_09EFB840[];
 extern u8 gUnk_09EFB9B8[];
 extern u8 gUnk_09EFB9CC[];
@@ -256,7 +306,10 @@ extern const SrollFont gUnk_09A5B440[];
 extern const u16 gUnk_09A5B470[];
 extern u32 gUnk_09A5B674[];
 
+void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a);
+void task_sroll_a_name_2(SrollANameWork* w);
 void task_sroll_a_name_3(SrollANameWork* w);
+void LoadPalette(void* src, void* dst, s32 size);
 void task_sroll_b_char_3(SrollBCharWork* w);
 void task_sroll_b_crtn_3(SrollBCrtnWork* w);
 void task_sroll_c_char_3(SrollCCharWork* w);
@@ -266,6 +319,10 @@ u8 task_sroll_b_crtn_1(SrollBCrtnWork* w);
 void task_sroll_b_crtn_2(SrollBCrtnWork* w);
 void task_sroll_b_logo_3(SrollBLogoWork* w);
 void func_081149B0(SrollBCharWork* w, s32 v);
+void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a);
+void task_sroll_b_char_2(SrollBCharWork* w);
+void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a);
+s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void func_081149B8(SrollBCharWork* w);
 void task_sroll_c_char_0(SrollCCharWork* w, s32 kind);
 void func_0811614C(SrollWork* w, SrollInit* a);
@@ -273,6 +330,7 @@ void func_081161C8(SrollWork* w);
 void func_08116268(SrollWork* w, u16 a, u16 b, u16 c, u16 d);
 void func_0811627C(SrollWork* w, u8 flush);
 void func_08116698(SrollWork* w, u8 flush);
+void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush);
 u8* func_081167F8(SrollWork* w, u8* s);
 u8 sub_0811683C(SrollWork* w);
 void func_08116AD8(SrollWork* w, u8 flush);
