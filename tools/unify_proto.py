@@ -173,6 +173,7 @@ def main():
     ap.add_argument("--header")
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--commit", action="store_true")
+    ap.add_argument("--closure", type=int, default=0)
     args = ap.parse_args()
     sites, defs = scan()
     owner = type_headers()
@@ -251,6 +252,43 @@ def main():
 
     if subprocess.run(["git", "diff", "--quiet"], cwd=REPO).returncode != 0:
         sys.exit("working tree is dirty; commit or stash first")
+
+    if args.closure:
+        batch = list(names)
+
+        for _ in range(args.closure):
+            for n in batch:
+                if n in defs:
+                    p2, r2, a2 = defs[n]
+                    t = rewrite(n, "%s %s(%s);" % (r2, n, a2))
+
+                    if t:
+                        ensure_types(t, "%s %s(%s);" % (r2, n, a2), owner)
+            verdict, note = build()
+
+            if verdict == "unified":
+                if not args.apply:
+                    revert()
+                elif args.commit:
+                    subprocess.run(["git", "add", "-u", "include", "src"], cwd=REPO, capture_output=True)
+                    subprocess.run(["git", "commit", "-q", "-m", "Unify %d duplicated prototypes" % len(batch)], cwd=REPO, capture_output=True)
+                print("closure of %d -> unified: %s" % (len(batch), " ".join(batch)))
+
+                for n in batch:
+                    record(n, len(sites[n]), len(signatures(n)), "unified", "closure")
+                return
+            revert()
+            m = re.search(r"conflicting types for .([A-Za-z_]\w*)", note)
+
+            if not m or m.group(1) in batch or m.group(1) not in defs:
+                print("closure of %d -> %s %s" % (len(batch), verdict, note))
+
+                for n in batch:
+                    record(n, len(sites[n]), len(signatures(n)), verdict, note)
+                return
+            batch.append(m.group(1))
+            print("  + %s" % m.group(1))
+        return
 
     for name in names:
         path, ret, params = defs[name]
