@@ -911,7 +911,7 @@ extern u8 gUnk_0979A426[];
 extern u8 gUnk_09EF6844[];
 u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
 u8 AnimIsFinished(AnimState* a);
-void AnimChange(void* a, u16 animId, u16 flags);
+void AnimChange(AnimState* a, u16 id, u16 flags);
 void func_0802F1E8(void);
 void func_0801A920(s32 a, s32 b, s32 c, s32 d);
 extern u16 gUnk_0203C554;

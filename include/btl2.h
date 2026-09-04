@@ -277,7 +277,7 @@ void func_080063C4(u8 a);
 void ApproachValue(s32* value, s32 target, u16 steps);
 u8 GetKeyReleaseTime(s32 a);
 void m4aSongNumStop(u16 n);
-void AnimChange(AnimState* a, u16 animId, u16 flags);
+void AnimChange(AnimState* a, u16 id, u16 flags);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(AnimState* a);
 u16 GetRandom(void);
