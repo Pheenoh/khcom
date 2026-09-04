@@ -396,7 +396,7 @@ s32 func_0810FE84(s32 x);
 s32 func_0810FE8C(s32 x);
 void func_0810B370(u8** p, u8 v);
 
-void func_08109EF8(void* work, s32 a);
+void func_08109EF8(PcWork* work, s32 a);
 s32 func_08109F20(void* work);
 u8 func_0801BCA8(void* a);
 u16 AnimGetGfxIndex(AnimState* a);
