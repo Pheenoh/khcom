@@ -492,19 +492,78 @@ def main():
     if moved:
         print(f"  units reordered: {len(moved)}")
 
+    usrom = Path("roms/B8CE.gba").read_bytes()
+    otrom = Path(f"roms/{code}.gba").read_bytes()
+    pad = len(otrom)
+
+    while pad > 0 and otrom[pad - 1] == 0xFF:
+        pad -= 1
+    found = []
+    incbin = re.compile(r'\.incbin\s+"[^"]+",\s*(0x[0-9a-fA-F]+),\s*(0x[0-9a-fA-F]+)')
+    for line in Path("config/us/units.txt").read_text().splitlines():
+        t = line.strip()
+        if not t.endswith(".s(.rodata)"):
+            continue
+        nm = t[:-len("(.rodata)")]
+        src = Path("asm/us") / nm
+        if not src.exists():
+            continue
+        m = incbin.search(src.read_text())
+        if not m:
+            continue
+        off = int(m.group(1), 16)
+        base = nm[:-2]
+
+        if base == "padding":
+            found.append((ROM_BASE + pad, base, "run"))
+            continue
+        pat = usrom[off:off + 64]
+        i = otrom.find(pat)
+        how = "content"
+
+        if i < 0 or otrom.find(pat, i + 1) >= 0:
+            i, how = tr(ROM_BASE + off)[0], "interp"
+
+            if i is None:
+                continue
+            i -= ROM_BASE
+        found.append((ROM_BASE + i, base, how))
+    regions = []
+
+    for here, base, how in sorted(found):
+        if regions and here <= regions[-1][0]:
+            print(f"  data region {base} dropped, not monotone ({how})")
+            continue
+        regions.append((here, base))
+
+    used = {}
+
+    def blob(lo, hi):
+        out = []
+        cuts = [a for a, _n in regions if lo < a < hi]
+        for a, b in zip([lo] + cuts, cuts + [hi]):
+            if a >= b:
+                continue
+            k = bisect.bisect_right([x[0] for x in regions], a) - 1
+            base = regions[k][1] if k >= 0 else "data"
+            used[base] = used.get(base, 0) + 1
+            nm = f"{base}.s" if used[base] == 1 else f"{base}{used[base]}.s"
+            out.append((nm, a, b))
+        return out
+
     tail, bounds = [], []
     pos = code_end
     for lo, size, line in sorted(cdata):
         if lo > pos:
-            nm = "data.s" if not bounds else f"data{len(bounds) + 1}.s"
-            bounds.append((nm, pos, lo))
-            tail.append(f"{nm}(.rodata)")
+            for nm, a, b in blob(pos, lo):
+                bounds.append((nm, a, b))
+                tail.append(f"{nm}(.rodata)")
             pos = lo
         tail.append(line)
         pos += size
-    nm = "data.s" if not bounds else f"data{len(bounds) + 1}.s"
-    bounds.append((nm, pos, ROM_END))
-    tail.append(f"{nm}(.rodata)")
+    for nm, a, b in blob(pos, ROM_END):
+        bounds.append((nm, a, b))
+        tail.append(f"{nm}(.rodata)")
     units = head + ordered + tail
 
     for nm, lo, hi in bounds:
@@ -512,8 +571,8 @@ def main():
             f'\t.section .rodata\n\t.global data_{lo:08X}\ndata_{lo:08X}:\n'
             f'\t.incbin "roms/{code}.gba", {lo - ROM_BASE:#x}, {hi - lo:#x}\n')
     fresh = {nm for nm, _lo, _hi in bounds}
-    for old in Path(f"asm/{ver}").glob("data*.s"):
-        if old.name not in fresh:
+    for old in Path(f"asm/{ver}").glob("*.s"):
+        if old.name not in fresh and ".global data_" in old.read_text():
             old.unlink()
     print("  " + "  ".join(f"{nm} {lo:#x}..{hi:#x}" for nm, lo, hi in bounds))
 
