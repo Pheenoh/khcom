@@ -95,9 +95,9 @@ if whole or base != int(sys.argv[1],16):
         got=int(sys.argv[5],16)
         want=e-s
 
-        if got > want:
+        if got > want or got < want - 3:
             print("SIZE MISMATCH: candidate %d bytes, rom %d -- the compared slice "
-                  "hides the excess and every later symbol shifts" % (got, want))
+                  "hides the difference and every later symbol shifts" % (got, want))
             sys.exit(1)
 while len(new)>len(rom) and new[-2:] in (b'\xc0\x46', b'\x00\x00'):
     new=new[:-2]
