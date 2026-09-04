@@ -25,7 +25,51 @@ s8 gUnk_02038368[0x2C0];
 
 #define SOUND_MASTER_ENABLE 0x0080
 
-INCLUDE_ASM("sroll/task_sroll_a_name_0.s");
+void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
+    AnimState* anim;
+
+    w->unk_02 = a->unk_00;
+    w->unk_08 = a->unk_08;
+    w->unk_0C = a->unk_0C;
+    w->unk_10 = a->unk_10;
+    w->unk_14 = a->unk_14;
+    w->unk_00 = 0;
+    w->unk_04 = 0;
+
+    switch (a->unk_00) {
+    case 0:
+#ifdef VERSION_JP
+        w->tiles = LoadObjTiles(gUnk_09C638BE, 45 * 32);
+#else
+        w->tiles = LoadObjTiles(gUnk_09C638BE, 35 * 32);
+#endif
+        anim = &w->unk_20;
+        AnimInit(anim, (s32)gUnk_09EFB200, (s32)gUnk_09EFB1F8);
+        AnimStart(anim, a->unk_02, 0);
+        break;
+    case 1:
+        w->tiles = LoadObjTiles(gUnk_09A54218[a->unk_04][0], *(u16*)&gUnk_09A54218[a->unk_04][1]);
+        anim = &w->unk_20;
+        AnimInit(anim, (s32)gUnk_09EFB244, (s32)gUnk_09EFB208);
+        AnimStart(anim, a->unk_02, 0);
+        break;
+    case 2:
+        w->tiles = LoadObjTiles(gUnk_09A54218[a->unk_04][0], *(u16*)&gUnk_09A54218[a->unk_04][1]);
+
+        if (a->unk_02 == 1) {
+            anim = &w->unk_20;
+            AnimInit(anim, (s32)gUnk_09EFB5EC, (s32)gUnk_09EFB5B0);
+        } else {
+            anim = &w->unk_20;
+            AnimInit(anim, (s32)gUnk_09EFB244, (s32)gUnk_09EFB208);
+        }
+        AnimStart(anim, 2, 0);
+        gBldCnt = 0x140;
+        gBldAlpha = 0;
+        break;
+    }
+    w->unk_1C = LoadObjPalette(gUnk_09D6CD74, 64);
+}
 
 u8 task_sroll_a_name_1(SrollANameWork* w) {
     w->unk_04++;
@@ -46,7 +90,34 @@ u8 task_sroll_a_name_1(SrollANameWork* w) {
     return 1;
 }
 
+#ifdef NON_MATCHING
+void task_sroll_a_name_2(SrollANameWork* w) {
+    s32 x;
+    s32 y;
+    s32 flags;
+    s32 ofs;
+
+    if (w->unk_04 <= 29) {
+        x = w->unk_08 + (w->unk_10 - w->unk_08) * w->unk_04 / 30;
+        y = w->unk_0C + (w->unk_14 - w->unk_0C) * w->unk_04 / 30;
+    } else {
+        x = w->unk_10;
+        y = w->unk_14;
+    }
+
+    flags = 0;
+
+    if (w->unk_02 == 2) {
+        flags = 4;
+        ofs = AnimGetFrame(&w->unk_20) * 32 + 32;
+        LoadPalette(&gUnk_09D6CD74[ofs], &gUnk_05000220[(w->unk_1C->unk_06 & 15) * 32], 32);
+    }
+    DrawSprite(x >> 8, y >> 8, AnimGetGfx(&w->unk_20), w->tiles, w->unk_1C, 0, flags,
+               0xFF0 - w->unk_02);
+}
+#else
 INCLUDE_ASM("sroll/task_sroll_a_name_2.s");
+#endif
 
 void task_sroll_a_name_3(SrollANameWork* w) {
     ReleaseObjTiles(w->tiles);
@@ -72,9 +143,42 @@ void func_081149B8(SrollBCharWork* w) {
     w->unk_08->unk_14 &= 0xFFFE;
 }
 
-INCLUDE_ASM("sroll/task_sroll_b_char_0.s");
+void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
+    SrollBCharSet* set;
+    AnimState* anim;
+
+    set = a->unk_00;
+    w->unk_00 = 0;
+    w->unk_04 = 0;
+    w->unk_08 = a->unk_04;
+    w->tiles = AllocObjTiles((u16)(set->unk_00 * 32), 0);
+    w->unk_10 = LoadObjPalette(set->unk_08, 32);
+    anim = &w->unk_14;
+    AnimInit(anim, 0, 0);
+    w->unk_08->unk_18 = anim;
+    w->unk_08->unk_1C = w->unk_10->unk_06;
+    func_081149B8(w);
+    TaskPoolInit(&w->unk_2C, 4);
+}
+
 INCLUDE_ASM("sroll/task_sroll_b_char_1.s");
-INCLUDE_ASM("sroll/task_sroll_b_char_2.s");
+void task_sroll_b_char_2(SrollBCharWork* w) {
+    SrollBCharSub* sub;
+    void* gfx;
+    u16 x;
+    u16 y;
+
+    sub = w->unk_08;
+
+    if ((sub->unk_14 & 2) == 0) {
+        x = sub->unk_04 >> 8;
+        y = (sub->unk_08 + sub->unk_0C) >> 8;
+        gfx = AnimGetGfx(&w->unk_14);
+        DrawSprite(x, y, gfx, w->tiles, w->unk_10,
+                   AllocObjAffine(sub->unk_28, sub->unk_20, sub->unk_24, 1), sub->unk_16, 0xFF0);
+        TaskPoolDraw(&w->unk_2C);
+    }
+}
 
 void task_sroll_b_char_3(SrollBCharWork* w) {
     ReleaseObjTiles(w->tiles);
@@ -86,7 +190,28 @@ static s32 func_08114C1C(s32 x) {
     return x * x;
 }
 
+#ifndef VERSION_EU
+void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
+    AnimState* anim;
+    u32 i;
+
+    w->unk_00 = a->unk_00;
+    w->unk_04 = a->unk_04;
+    w->unk_08 = a->unk_08;
+    w->unk_0C = a->unk_0C;
+    w->tiles = LoadObjTiles(gUnk_09C5CC7C, 94 * 32);
+    w->unk_14 = LoadObjPalette(gUnk_09D6BE34, 64);
+    anim = &w->unk_18;
+    AnimInit(anim, (s32)gUnk_09EFAF6C, (s32)gUnk_09EFAF60);
+    AnimStart(anim, a->unk_10, 0);
+
+    for (i = 0; i < 2; i++) {
+        func_080062F4((w->unk_14->unk_06 + i) % 16 + 16, 1);
+    }
+}
+#else
 INCLUDE_ASM("sroll/task_sroll_b_logo_0.s");
+#endif
 
 u8 task_sroll_b_logo_1(SrollBLogoWork* w) {
     u8 r;
@@ -494,7 +619,35 @@ void func_08115740(u32* dst, u8* src, u32* pal, s32 x) {
     }
 }
 
+#ifdef NON_MATCHING
+void func_081157E0(u32* dst, u8* src, u32* pal, s32 x) {
+    SrollShift* t;
+    u32* d;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+    d = dst;
+
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 24;
+        v = pal[(c >> 31) & 1];
+        v |= pal[(c >> 30) & 1] << 4;
+        v |= pal[(c >> 29) & 1] << 8;
+        v |= pal[(c >> 28) & 1] << 12;
+        v |= pal[(c >> 27) & 1] << 16;
+        v |= pal[(c >> 26) & 1] << 20;
+        v |= pal[(c >> 25) & 1] << 24;
+        v |= pal[src[i] & 1] << 28;
+        d[0] |= v << t->unk_00;
+        d[8] |= v >> t->unk_04;
+        d++;
+    }
+}
+#else
 INCLUDE_ASM("sroll/func_081157E0.s");
+#endif
 u32 func_0811589C(SrollBlit* w) {
     SrollMask* m;
     u32* d;
@@ -616,11 +769,126 @@ void func_08115A5C(u32* dst, u16* src, u32* pal, s32 x) {
     }
 }
 
+#ifdef NON_MATCHING
+void func_08115AD4(u32* dst, u16* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 16;
+        v = pal[(c >> 22) & 3];
+        v |= pal[(c >> 20) & 3] << 4;
+        v |= pal[(c >> 18) & 3] << 8;
+        v |= pal[src[i] & 3] << 12;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+#else
 INCLUDE_ASM("sroll/func_08115AD4.s");
+#endif
+#ifdef NON_MATCHING
+void func_08115B6C(u32* dst, u16* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 16;
+        v = pal[(c >> 22) & 3];
+        v |= pal[(c >> 20) & 3] << 4;
+        v |= pal[(c >> 18) & 3] << 8;
+        v |= pal[src[i] & 3] << 12;
+        v |= pal[(c >> 30) & 3] << 16;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+#else
 INCLUDE_ASM("sroll/func_08115B6C.s");
+#endif
+#ifdef NON_MATCHING
+void func_08115C04(u32* dst, u16* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 16;
+        v = pal[(c >> 22) & 3];
+        v |= pal[(c >> 20) & 3] << 4;
+        v |= pal[(c >> 18) & 3] << 8;
+        v |= pal[src[i] & 3] << 12;
+        v |= pal[(c >> 30) & 3] << 16;
+        v |= pal[(c >> 28) & 3] << 20;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+#else
 INCLUDE_ASM("sroll/func_08115C04.s");
+#endif
+#ifdef NON_MATCHING
+void func_08115CAC(u32* dst, u16* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 16;
+        v = pal[(c >> 22) & 3];
+        v |= pal[(c >> 20) & 3] << 4;
+        v |= pal[(c >> 18) & 3] << 8;
+        v |= pal[src[i] & 3] << 12;
+        v |= pal[(c >> 30) & 3] << 16;
+        v |= pal[(c >> 28) & 3] << 20;
+        v |= pal[(c >> 26) & 3] << 24;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+#else
 INCLUDE_ASM("sroll/func_08115CAC.s");
+#endif
+#ifdef NON_MATCHING
+void func_08115D60(u32* dst, u16* src, u32* pal, s32 x) {
+    SrollShift* t;
+    s32 i;
+    u32 v;
+    u32 c;
+
+    t = &gUnk_09A54C78[x];
+
+    for (i = 0; i <= 7; i++) {
+        c = src[i] << 16;
+        v = pal[(c >> 22) & 3];
+        v |= pal[(c >> 20) & 3] << 4;
+        v |= pal[(c >> 18) & 3] << 8;
+        v |= pal[src[i] & 3] << 12;
+        v |= pal[(c >> 30) & 3] << 16;
+        v |= pal[(c >> 28) & 3] << 20;
+        v |= pal[(c >> 26) & 3] << 24;
+        v |= pal[(c >> 24) & 3] << 28;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
+    }
+}
+#else
 INCLUDE_ASM("sroll/func_08115D60.s");
+#endif
 u32 func_08115E24(SrollBlit* w) {
     SrollMask* m;
     u32* d;
@@ -990,7 +1258,51 @@ void func_08116698(SrollWork* w, u8 flush) {
         w->unk_00 = t;
     }
 }
+#ifdef NON_MATCHING
+void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
+    u16 fill;
+    u16* p;
+    u16 i;
+    u16 t;
+    u16 v;
+
+    if (x >= w->unk_1C) {
+        return;
+    }
+
+    if (y >= w->unk_1E) {
+        return;
+    }
+
+    if (x + cw > w->unk_1C) {
+        cw = w->unk_1C - x;
+    }
+
+    if (y + ch > w->unk_1E) {
+        ch = w->unk_1E - y;
+    }
+
+    p = (u16*)((u8*)sub_08116B10(w) + (w->unk_1A + y) * w->unk_0A * 2 + (w->unk_18 + x) * 2);
+    v = w->unk_2E + 1;
+    i = 0;
+
+    while (i < ch) {
+        fill = v;
+        CpuSet(&fill, p, cw | CPU_SET_SRC_FIXED);
+        p += w->unk_0A;
+        i++;
+    }
+
+    if (flush == 1) {
+        func_08116B1C(w);
+    } else {
+        t = w->unk_00 | 1;
+        w->unk_00 = t;
+    }
+}
+#else
 INCLUDE_ASM("sroll/func_081166F8.s");
+#endif
 
 void func_081167CC(void) {
 }
