@@ -352,7 +352,7 @@ void* memcpy(void* dst, const void* src, unsigned long n);
 void ModeRequest(void* mode, s32 arg);
 void* TaskCreate(void* a, TaskDesc* desc, void* arg);
 void TaskPoolDestroy(void* pool);
-void TaskPoolDraw(void* pool);
+void TaskPoolDraw(TaskPool* a);
 void LoadBgPalette(s32 bg, void* src, u16 size);
 void m4aMPlayAllStop(void);
 u8 func_08006314(void);

@@ -570,7 +570,7 @@ void ReleaseObjPalette(void* a);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 u16 func_0801AF1C(s32 a);
-void TaskPoolDraw(void* a);
+void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(void* a);
 void func_0801B7D8(void* a);
 void func_0801C2DC(void* a, s32 b);

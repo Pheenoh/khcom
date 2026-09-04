@@ -175,7 +175,7 @@ u8 func_0810155C(u32 a);
 void EwramFree(void* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
-void TaskPoolDraw(TaskPool* pool);
+void TaskPoolDraw(TaskPool* a);
 void func_08065ACC(void* a, s32 b);
 void UpdatePlayTime(void);
 u8 func_08006314(void);
