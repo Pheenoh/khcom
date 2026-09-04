@@ -187,7 +187,7 @@ void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_08005974(void* a, u8 b, s32 c, void* d, void* e);
-void ApproachValue(u32* value, u32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08006120(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);
 void func_080062F4(u16 a, s32 b);

@@ -763,7 +763,7 @@ void func_08054100(AxcelWork* work, HumSub* sub);
 void* AllocObjTiles(s32 a, void* b);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012614(void* a, s32 b);
-void ApproachValue(s32* p, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 u8 func_080035CC(s16 a, s16 b, s32 c, s32 d, s32 e, s32 f);
 void func_0801C700(void* a, s32* b, s32* c, s32* d);
 void func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
