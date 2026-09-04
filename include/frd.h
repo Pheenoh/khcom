@@ -261,7 +261,7 @@ u16 AnimGetGfxIndex(AnimState* a);
 u16 AnimGetFrame(AnimState* a);
 u8 AnimIsFinished(AnimState* a);
 void* AnimUpdate(AnimState* a);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0802F1E8(void);
 void ApproachValue(s32* value, s32 target, u16 steps);

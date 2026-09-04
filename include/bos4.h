@@ -530,7 +530,7 @@ typedef struct UnkStruct_080DFB8C {
 extern u16 gUnk_0203C560;
 
 void func_0801C298(u8 a, u8 b);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 u16 AnimGetId(void* a);
 u16 AnimGetFrame(void* a);
 void AnimStart(void* a, s32 b, s32 c);

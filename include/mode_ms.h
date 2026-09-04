@@ -158,7 +158,7 @@ s32 func_08065B6C(void* a, void* b);
 void TaskCreate(TaskPool* pool, void* desc, void* arg);
 void LoadObjPaletteBank(u16 bank, void* src);
 void ApproachValue(s32* value, s32 target, u16 steps);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void func_0800FDD0(s32 a);
 u8 func_080A42C8(void);
 void func_080A4234(void* pool, u32 a, u16 b);

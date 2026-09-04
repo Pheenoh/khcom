@@ -56,7 +56,7 @@ void* AnimUpdate(void* a);
 void* AnimGetGfx(void* a);
 void TaskCreate(void* a, void* b, void* c);
 void TaskPoolInit(TaskPool* a, s32 count);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void func_0801CE70(EvtObjWork* work);
 
 extern u8 gUnk_08B22CBC[];

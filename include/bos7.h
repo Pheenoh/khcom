@@ -598,7 +598,7 @@ s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a,
 void func_081149B0(void* w, s32 v);
 void func_08116E98(void);
 void func_08116ECC(void);
-void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolUpdate(TaskPool* a);
 void SoftReset(s32 flags);
 u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);
