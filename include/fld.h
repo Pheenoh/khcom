@@ -11,7 +11,12 @@ typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
     u8 angle;
-    u8 unk_15[0x25];
+    u8 unk_15[0x05];
+    u16 unk_1A;
+    u8 unk_1C[0x14];
+    u16 unk_30;
+    u16 unk_32;
+    u8 unk_34[0x06];
     u16 unk_3A;
     s32 unk_3C;
     u8 unk_40[0x10];
@@ -25,13 +30,19 @@ typedef struct UnkStruct_02039BA0 {
     s32 unk_68;
     u8 unk_6C[0x04];
     u32 unk_70;
+    u8 unk_74[0x68];
+    s32 unk_DC;
+    s32 unk_E0;
+    u8 unk_E4;
 } UnkStruct_02039BA0;
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 
 typedef struct GameState {
     u8 unk_00;
-    u8 unk_01[0x13];
+    u8 unk_01[0x0B];
+    u8 unk_0C;
+    u8 unk_0D[0x07];
     FldPos unk_14;
     u8 unk_24;
     u8 unk_25[0x03];
@@ -70,9 +81,12 @@ typedef struct FldWork {
     s32 unk_80;
     s32 unk_84;
     u8 unk_88[0x0C];
-    s32 unk_94;
+    u32 unk_94;
     s16 unk_98;
-    u8 unk_9A[0x06];
+    u8 unk_9A[0x02];
+    u8 unk_9C;
+    u8 unk_9D;
+    u16 unk_9E;
     s32 unk_A0;
     u16 unk_A4;
     u8 unk_A6[0x02];
@@ -119,6 +133,18 @@ s32 func_08031F1C(FldWork* work);
 void func_08031F60(FldActor* act);
 void func_08031F98(FldWork* work, s32 a, s32 b);
 
+void* AllocObjTiles(s32 a, void* b);
+void* AnimGetGfx(AnimState* a);
+void TaskPoolInit(TaskPool* a, s32 count);
+void* TaskCreate(void* a, void* desc, void* args);
+void func_080122AC(void* a, s32 b, s32 c, s32 d);
+void func_080DFF4C(FldPos* p);
+
+extern TaskDesc gTaskDescFldShadow;
+extern u16 gUnk_0813CD4C[][8];
+extern u16 gUnk_0813D28C[][8];
+extern u8 gUnk_08F683A4[];
+extern u8 gUnk_09618118[];
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_09EE1380[];
@@ -126,6 +152,7 @@ extern u8 gUnk_09EE1384[];
 extern s16 gSineTable[];
 
 s32 func_080DFF1C(FldPos* p);
+u8 func_080DFF94(s32 x, s32 y, s32 z);
 u8 func_080DFCDC(FldPos* p);
 u8 func_080DFBDC(FldPos* p);
 u8 _080DFE1C(FldPos* p);
@@ -147,9 +174,18 @@ u8 func_08033334(FldWork* work, void* task);
 u8 func_0803366C(FldWork* work, void* task);
 u8 task_fld_sora_1(FldWork* work, void* task);
 u8 task_fld_riku_1(FldWork* work, void* task);
+u8 func_08034AF0(FldWork* work, void* task);
+u8 func_08034C88(FldWork* work, void* task);
+u8 func_080353DC(FldWork* work, void* task);
+u8 func_080357F4(FldWork* work, void* task);
+u8 func_080358F0(FldWork* work, void* task);
+u8 func_08035AD4(FldWork* work, void* task);
+u8 func_08035DFC(FldWork* work, void* task);
 u8 func_08034A0C(FldWork* work, void* task);
+void task_fld_sora_0(FldWork* work);
 void task_fld_sora_2(FldWork* work);
 void task_fld_sora_3(FldWork* work);
+void task_fld_riku_0(FldWork* work);
 void task_fld_riku_2(FldWork* work);
 void task_fld_riku_3(FldWork* work);
 void task_fld_shadow_0(FldShadowWork* work, FldActor* obj);
