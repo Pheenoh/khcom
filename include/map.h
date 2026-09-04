@@ -532,7 +532,7 @@ s32 func_08003C9C(s32 a);
 void func_080038E4(void* a, void* b, void* c);
 void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);
 void func_080062F4(u16 a, s32 b);
-u8 func_08005AC4(void* a);
+u8 func_08005AC4(AnimState* a);
 void func_08012614(void* a, s32 b);
 u8 func_08012660(void* a, s32 b);
 u8 func_080840E4(void);
