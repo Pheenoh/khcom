@@ -425,7 +425,7 @@ void func_0810B434(void);
 extern s8* gUnk_09EF9E04[];
 void func_0810B4B4(u8* p);
 
-void AnimChange(AnimState* a, u16 animId, u16 flags);
+void AnimChange(AnimState* a, u16 id, u16 flags);
 u8 AnimIsFinished(AnimState* a);
 void AnimReset(AnimState* a);
 
