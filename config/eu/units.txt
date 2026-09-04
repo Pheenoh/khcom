@@ -104,6 +104,7 @@ snd_stream.c -O2 -fprologue-bugfix -fno-common
 @libc.a:memcpy.o
 @libc.a:memset.o
 @libc.a:strcmp.o
+m4a_1.s
 m4a2.c -O2 -fno-common
 rodata_tables.s(.rodata)
 malloc_data.c(.rodata)
