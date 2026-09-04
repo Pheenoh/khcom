@@ -326,12 +326,23 @@ s16 func_08065B08(TextSlot* p, u8 n) {
 INCLUDE_ASM("msg/func_08065B08.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
+#ifdef VERSION_JP
+#define MSG_CHAR(p) (*(u8*)(p))
+#else
+#define MSG_CHAR(p) (*(p))
+#endif
+
 s32 func_08065B54(u16* s) {
+#ifdef VERSION_JP
+    u16* p = s;
+    u16 n = 0;
+#else
     u16 n = 0;
     u16* p = s;
+#endif
 
-    while (*p != 0) {
+    while (MSG_CHAR(p) != 0) {
         n++;
         p++;
     }

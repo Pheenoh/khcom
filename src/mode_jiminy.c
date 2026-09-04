@@ -98,7 +98,7 @@ void mode_jiminy_0(void) {
 INCLUDE_ASM("mode_jiminy/mode_jiminy_0.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void mode_jiminy_1(void) {
     s32 i;
     u16 c;
@@ -189,7 +189,11 @@ void mode_jiminy_1(void) {
     case 6:
         e = &gUnk_08155554[gJiminyWork->unk_D2C];
         p = &gJiminyWork->unk_CD8[gJiminyWork->unk_D2C];
+#ifdef VERSION_JP
+        gJiminyWork->unk_C71 = func_080653D4(0x400, 0x2600, gUnk_08159FE0);
+#else
         gJiminyWork->unk_C71 = func_08065170(0x200, 0x2400, gUnk_08159FE0);
+#endif
         DisableBg(3);
         DisableBg(0);
         gJiminyWork->unk_C72 = p->unk_00;
@@ -206,7 +210,11 @@ void mode_jiminy_1(void) {
         } else {
             LoadBgMap(1, e->unk_00, 0x800);
             LoadObjPaletteBank(gJiminyWork->unk_014->unk_06, gUnk_08F6DDC4);
+#ifdef VERSION_JP
+            func_0805A95C(8, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x70, 0x1A, 0x10);
+#else
             func_0805A95C(4, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x70, 0x3A, 0x10);
+#endif
         }
 
         gJiminyWork->unk_000 = 7;
