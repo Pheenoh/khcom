@@ -16,6 +16,19 @@ END="$4"
 DIR="$REPO/permuter/$SYM"
 mkdir -p "$DIR"
 
+if grep -qE "^$(basename "$C")([[:space:]]|$)" "$REPO/config/us/units.txt" 2>/dev/null \
+   && [ -z "${PERM_UNIT:-}" ]; then
+    echo "refusing: $C is a whole translation unit." >&2
+    echo "permuter_compile.sh links the entire unit at the target function's" >&2
+    echo "address while target.o holds one function, so the base score comes out" >&2
+    echo "in the millions and the search never converges. Build a standalone" >&2
+    echo "file (the one function plus its header) and confirm with tools/match.sh" >&2
+    echo "that it reproduces the same diff as the in-unit compile first." >&2
+    echo "A standalone cannot reach the unit's statics; if the function touches" >&2
+    echo "one, park it rather than permuting. Set PERM_UNIT=1 to override." >&2
+    exit 2
+fi
+
 cp "$C" "$DIR/src.c"
 arm-none-eabi-cpp -nostdinc -undef -P -I "$REPO/include" -I "$REPO/tools/agbcc/include" \
     -DVERSION_US "$DIR/src.c" -o "$DIR/base.c"
