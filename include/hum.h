@@ -736,7 +736,7 @@ void func_0800E168(HumWork* work, void* def);
 void func_0800E380(HumWork* work);
 void func_0800EFE8(HumWork* work);
 void TaskPoolInit(TaskPool* pool, s32 count);
-void TaskPoolDraw(TaskPool* pool);
+void TaskPoolDraw(TaskPool* a);
 void TaskPoolUpdate(TaskPool* pool);
 void* TaskCreate(TaskPool* pool, void* desc, void* arg);
 void TaskPoolDestroy(TaskPool* pool);

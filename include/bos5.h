@@ -607,7 +607,7 @@ void func_0801BCD4(MdSub* e);
 void func_080FBA4C(MdWork* work);
 u8 func_0801CA00(void* a);
 void LoadPalette(void* src, void* dst, s32 size);
-void TaskPoolDraw(void* a);
+void TaskPoolDraw(TaskPool* a);
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09A3C97C[];
 void task_bos_md_2(MdWork* work);

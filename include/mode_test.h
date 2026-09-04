@@ -176,7 +176,7 @@ void EnableBg(s32 bg);
 void LoadPalette(void* src, void* dst, s32 size);
 void TaskPoolInit(TaskPool* pool, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
-void TaskPoolDraw(TaskPool* pool);
+void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* pool);
 void* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 void ModeRequest(Mode* mode, s32 arg);

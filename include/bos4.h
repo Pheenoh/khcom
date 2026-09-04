@@ -110,7 +110,7 @@ void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjPalette(void* a);
-void TaskPoolDraw(void* a);
+void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(void* a);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);

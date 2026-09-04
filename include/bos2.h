@@ -829,7 +829,7 @@ void func_080C3188(DsdMainWork* work);
 void func_080C427C(DsdItaWork* work);
 void LoadPaletteWithEffect(void* src, void* dst, s32 size);
 u16 func_0801AF1C(s32 a);
-void TaskPoolDraw(void* pool);
+void TaskPoolDraw(TaskPool* a);
 void task_bos_jf_majin_2(JfMajinWork* work);
 void task_bos_jf_rock_2(JfRockWork* work);
 void task_bos_dsd_ita_2(DsdItaWork* work);
