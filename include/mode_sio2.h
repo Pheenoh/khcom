@@ -205,7 +205,7 @@ void func_080605A4(s32 a);
 void func_080609A0(void);
 void func_0806180C(u16 a);
 void func_08085CB0(void);
-u8 func_080A411C(TaskPool* a, s32 b, u16 c);
+void func_080A411C(void* pool, u32 a, u16 b);
 u8 func_080A42C8(void);
 u8 func_080A42D4(void);
 void func_080CCBE8(void);

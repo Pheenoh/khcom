@@ -163,7 +163,7 @@ void TaskPoolUpdate(TaskPool* a);
 void func_0800FDD0(s32 a);
 u8 func_080A42C8(void);
 void func_080A4234(void* pool, u32 a, u16 b);
-u8 func_080A411C(TaskPool* a, s32 b, u16 c);
+void func_080A411C(void* pool, u32 a, u16 b);
 void func_08101768(void);
 void func_081017A0(void);
 void func_08101970(void);

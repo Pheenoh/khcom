@@ -496,7 +496,7 @@ extern u8 gUnk_0999C3C8[];
 extern void* gUnk_09EF9770[];
 void mode_worldselect_1(void);
 void UpdatePlayTime(void);
-u8 func_080A411C(TaskPool* a, s32 b, u16 c);
+void func_080A411C(void* pool, u32 a, u16 b);
 u8 func_080A42C8(void);
 u8 func_08006B74(void);
 void func_080063A8(void);
