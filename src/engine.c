@@ -1025,18 +1025,14 @@ void CommitDisplayRegs(void) {
     *(vu16*)0x05000000 = gBackdropColor;
 }
 
-#ifndef VERSION_EU
 void VTransInit(void) {
     u32 zero;
 
     SetIwramHeapName(sVTransHeapName);
-    gDma3Requests = IwramAlloc(0x10B0);
+    gDma3Requests = IwramAlloc(sizeof(Dma3Queue));
     zero = 0;
-    CpuSet(&zero, gDma3Requests, 0x0500042C);
+    CpuSet(&zero, gDma3Requests, 0x05000000 | (sizeof(Dma3Queue) / 4));
 }
-#else
-INCLUDE_ASM("engine/VTransInit.s");
-#endif
 
 void VTransFree(void) {
     IwramFree(gDma3Requests);
@@ -1116,7 +1112,6 @@ u8 func_080045AC(void* a, void* b, u8 c, u8 d, u8 e) {
     return 1;
 }
 
-#ifndef VERSION_EU
 u8 func_08004678(void* a) {
     Dma3Queue* q = gDma3Requests;
 
@@ -1128,19 +1123,12 @@ u8 func_08004678(void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("engine/func_08004678.s");
-#endif
 
-#ifndef VERSION_EU
 u32 func_080046B4(void) {
     Dma3Queue* q = gDma3Requests;
 
     return q->unk_10AC;
 }
-#else
-INCLUDE_ASM("engine/func_080046B4.s");
-#endif
 
 INCLUDE_ASM("engine/FlushDma3Queue.s");
 INCLUDE_ASM("engine/func_08004938.s");
