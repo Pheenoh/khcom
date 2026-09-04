@@ -6,5 +6,5 @@
 	.thumb_func
 	.type mode_ms_shop_1, %function
 mode_ms_shop_1:
-	.incbin "roms/B8CP.gba", 0x102c90, 0x25c
+	.incbin "roms/B8CP.gba", 0x102c84, 0x268
 .syntax divided

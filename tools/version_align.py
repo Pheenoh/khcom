@@ -398,6 +398,29 @@ def main():
                         addr[k] = cur
                         how[k] = verify(k, cur) or "entry"
                         placed += 1
+                else:
+                    seen = set(cands[a:b])
+                    cur = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
+
+                    for k in range(i, j):
+                        if cur not in seen:
+                            break
+                        addr[k] = cur
+                        how[k] = verify(k, cur) or "entry"
+                        placed += 1
+                        cur += funcs[k][1] - funcs[k][0]
+                    cur = addr[j]
+
+                    for k in range(j - 1, i - 1, -1):
+                        if addr[k] is not None:
+                            break
+                        cur -= funcs[k][1] - funcs[k][0]
+
+                        if cur not in seen:
+                            break
+                        addr[k] = cur
+                        how[k] = verify(k, cur) or "entry"
+                        placed += 1
             i = j
 
         return placed

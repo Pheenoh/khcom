@@ -6,5 +6,5 @@
 	.thumb_func
 	.type HCEffectName_2, %function
 HCEffectName_2:
-	.incbin "roms/B8CP.gba", 0x9e5a0, 0x100
+	.incbin "roms/B8CP.gba", 0x9e5b8, 0xe8
 .syntax divided
