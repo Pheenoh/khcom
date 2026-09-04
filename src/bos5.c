@@ -1600,7 +1600,6 @@ void func_080FDB1C(s16 model, s16 n) {
 INCLUDE_ASM("bos5/func_080FDB1C.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080FDC04(void) {
     s16 i;
     s16 j;
@@ -1837,9 +1836,6 @@ void func_080FDC04(void) {
         break;
     }
 }
-#else
-INCLUDE_ASM("bos5/func_080FDC04.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080FE47C(void) {

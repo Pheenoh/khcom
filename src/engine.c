@@ -1133,20 +1133,16 @@ u32 func_080046B4(void) {
 INCLUDE_ASM("engine/FlushDma3Queue.s");
 INCLUDE_ASM("engine/func_08004938.s");
 
-#ifndef VERSION_EU
 void BgInit(void) {
     BgEntry** p;
     u32 zero;
 
     SetIwramHeapName(sBgHeapName);
     p = &gBgEntries;
-    *p = IwramAlloc(0x40);
+    *p = IwramAlloc(BG_ENTRY_COUNT * sizeof(BgEntry));
     zero = 0;
-    CpuSet(&zero, *p, 0x05000010);
+    CpuSet(&zero, *p, 0x05000000 | (BG_ENTRY_COUNT * sizeof(BgEntry) / 4));
 }
-#else
-INCLUDE_ASM("engine/BgInit.s");
-#endif
 
 void BgFree(void) {
     IwramFree(gBgEntries);
