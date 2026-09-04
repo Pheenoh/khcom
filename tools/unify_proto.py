@@ -259,7 +259,9 @@ def main():
             print("%-28s already uniform" % name)
             continue
         verdict, note = build()
-        revert()
+
+        if not (args.apply and verdict == "unified"):
+            revert()
         record(name, n, v, verdict, note)
         print("%-28s %2d sites %d variants -> %-13s %s" % (name, n, v, verdict, note))
 
