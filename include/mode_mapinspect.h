@@ -111,7 +111,7 @@ void AnimInit(AnimState* a, void* b, void* c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_08065ACC(TextSlot* p, s32 n);
 u16 func_08065B54(void* a);
-u8 func_08065B6C(void* a, void* b);
+u16 func_08065B6C(u16* a, TextSlot* b);
 void func_08107280(void);
 void func_081073F0(void);
 void EnableBg(s32 a);

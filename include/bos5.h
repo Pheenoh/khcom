@@ -2,6 +2,7 @@
 #define GUARD_BOS5_H
 
 #include "types.h"
+#include "text_types.h"
 #include "key.h"
 #include "taskpool.h"
 #include "anim.h"
@@ -632,7 +633,7 @@ extern MdMsg gUnk_09EF909C[];
 extern void* gUnk_09EE9138[];
 extern u8 gUnk_020351F8[];
 extern u8 gUnk_020352C0[];
-u8 func_08065B6C(void* a, void* b);
+u16 func_08065B6C(u16* a, TextSlot* b);
 u8 func_080FF228(s16 id);
 u8 func_080FF25C(s16 id);
 void func_080FC3FC(MdWork* work);

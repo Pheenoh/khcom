@@ -18,7 +18,7 @@ extern u8 gUnk_020356E0[];
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 void func_08065AE0(TextSlot* p, s32 n);
-u16 func_08065B6C(void* a, void* b);
+u16 func_08065B6C(u16* a, TextSlot* b);
 void func_080FF8CC(void);
 void UpdatePlayTime(void);
 void ApproachValue(s32* value, s32 target, u16 steps);

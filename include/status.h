@@ -350,7 +350,7 @@ void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
 void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
-u8 func_08065B6C(void* a, void* b);
+u16 func_08065B6C(u16* a, TextSlot* b);
 u8* func_080857BC(u8 index);
 u8 GetActiveDeckIndex(void);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);

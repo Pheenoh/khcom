@@ -62,7 +62,7 @@ void* TaskCreate(void* a, void* desc, void* args);
 u8 func_08085290(u16 a);
 void func_080938F8(u16 a);
 u16 func_080857D4(u8 slot);
-u8 func_08065B6C(void* a, void* b);
+u16 func_08065B6C(u16* a, TextSlot* b);
 s16 func_08065B08(void* a, u8 b);
 u16 GetRandom(void);
 u16 func_08085770(u8 index);

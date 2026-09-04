@@ -155,7 +155,7 @@ u16 AnimGetFrame(AnimState* a);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void LoadPalette(void* src, void* dst, s32 size);
-s32 func_08065B6C(void* a, void* b);
+u16 func_08065B6C(u16* a, TextSlot* b);
 void TaskCreate(TaskPool* pool, void* desc, void* arg);
 void LoadObjPaletteBank(u16 bank, void* src);
 void ApproachValue(s32* value, s32 target, u16 steps);
