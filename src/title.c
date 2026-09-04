@@ -142,20 +142,22 @@ u8 task_title_obj_1(TitleObjWork* work) {
     return 1;
 }
 
-#ifndef VERSION_JP
+#ifdef VERSION_JP
+#define TITLE_OBJ_DRAW_COUNT 3
+#else
+#define TITLE_OBJ_DRAW_COUNT 2
+#endif
+
 void task_title_obj_2(TitleObjWork* work) {
     s32 i;
 
     work->unk_00[1].unk_08 = AnimUpdate(&work->anim);
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < TITLE_OBJ_DRAW_COUNT; i++) {
         DrawSprite(work->unk_00[i].unk_10 >> 8, work->unk_00[i].unk_0C, work->unk_00[i].unk_08,
                    work->unk_00[i].unk_00, work->unk_00[i].unk_04, 0, 0, i);
     }
 }
-#else
-INCLUDE_ASM("title/task_title_obj_2.s");
-#endif
 
 void task_title_obj_3(TitleObjWork* work) {
     s32 i;
