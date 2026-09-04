@@ -22,9 +22,13 @@ def text_symbols():
 
 
 def jp_unaligned():
+    return unaligned("jp")
+
+
+def unaligned(ver):
     bad = set()
 
-    for line in open(os.path.join(REPO, "config", "jp", "funcmap.txt")):
+    for line in open(os.path.join(REPO, "config", ver, "funcmap.txt")):
         f = line.rstrip("\n").split("\t")
 
         if len(f) >= 4 and f[3] == "-":
@@ -57,7 +61,8 @@ def main():
         sys.exit("no build/us/com_us.map: run configure.py && ninja first")
     src = open(os.path.join(REPO, "src", args.unit + ".c")).read()
     syms = text_symbols()
-    bad = jp_unaligned()
+    bad = unaligned("jp")
+    bad_eu = unaligned("eu")
     done = attempted(args.ledger)
     rows = []
     guarded = False
@@ -83,6 +88,7 @@ def main():
         if size < 16:
             continue
         why = ""
+        note = "needs-eu-guard" if sym in bad_eu else ""
 
         if sym in bad:
             why = "jp-unaligned"
@@ -90,14 +96,14 @@ def main():
             why = "attempted"
         elif size > args.max_size:
             why = "large"
-        rows.append((size, sym, addr, why))
+        rows.append((size, sym, addr, why, note))
     rows.sort()
     n = 0
 
-    for size, sym, addr, why in rows:
+    for size, sym, addr, why, note in rows:
         if why and not args.all:
             continue
-        print("%-28s 0x%08X %5d %s" % (sym, addr, size, why))
+        print("%-28s 0x%08X %5d %s" % (sym, addr, size, why or note))
         n += 1
 
         if n >= args.n and not args.all:
