@@ -16,13 +16,29 @@ typedef struct SioAnimDef {
     u8 unk_0C;
 } SioAnimDef;
 
+#ifdef VERSION_JP
+#define SIO_ERROR_TEXT_SLOTS 98
+#else
+#ifdef VERSION_EU
+#define SIO_ERROR_TEXT_SLOTS 216
+#else
+#define SIO_ERROR_TEXT_SLOTS 108
+#endif
+#endif
+
+#ifdef VERSION_EU
+#define SIO_CONNECT_TEXT_SLOTS 180
+#else
+#define SIO_CONNECT_TEXT_SLOTS 0x5A
+#endif
+
 typedef struct SioBtlConnectWork {
     u16 unk_00;
     s16 unk_02;
     s8 unk_04;
     u8 unk_05;
     u8 unk_06[2];
-    TextSlot unk_08[0x5A];
+    TextSlot unk_08[SIO_CONNECT_TEXT_SLOTS];
     void* unk_2D8;
 } SioBtlConnectWork;
 
@@ -54,7 +70,7 @@ typedef struct SioErrorWork {
     u16 unk_04;
     u8 unk_06;
     u8 unk_07;
-    TextSlot unk_08[108];
+    TextSlot unk_08[SIO_ERROR_TEXT_SLOTS];
     void* unk_368;
 } SioErrorWork;
 
