@@ -1507,7 +1507,7 @@ s32 func_080CFE34(PooPos* p);
 void func_08012304(void* a);
 void func_080DDDDC(void* p, void* q);
 void* AnimUpdate(AnimState* a);
-u8 AnimIsFinished(void* a);
+u8 AnimIsFinished(AnimState* a);
 void task_poo_map_2(PooMapWork* w);
 void task_poo_map_3(PooMapWork* w);
 void func_080CA35C(void);

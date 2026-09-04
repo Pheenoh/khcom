@@ -411,7 +411,7 @@ u16 AnimGetGfxIndex(void* a);
 void func_0801BCF8(EmyActor* a);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_080128EC(void);
-u8 AnimIsFinished(void* a);
+u8 AnimIsFinished(AnimState* a);
 void func_0800CB4C(EmyWork* work);
 void func_08015834(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h);
 void func_0801C700(EmyActor* a, s32* b, s32* c, s32 d);
