@@ -144,7 +144,7 @@ extern u8 gUnk_09EF98B0[];
 extern u8 gUnk_09EF98A0[];
 
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);

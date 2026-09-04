@@ -488,7 +488,7 @@ void SaveWriteFileLarge(u16 file);
 void LoadPalette(void* src, void* dst, u16 size);
 void LoadObjPaletteBank(u16 bank, void* src);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimGetGfx(AnimState* a);
 void* AnimUpdate(AnimState* a);

@@ -655,7 +655,7 @@ void DisableBg(s32 bg);
 void SetBgBlend(s32 a, u16 b, u16 c);
 void LoadPalette(void* src, void* dst, s32 size);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);

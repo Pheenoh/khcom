@@ -295,7 +295,7 @@ extern u8 gUnk_09EE10EC[];
 extern u8 gUnk_09EE10F8[];
 extern u8 gUnk_08F69BA4[];
 
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void func_08002A10(void* a, void* b);
 void LoadObjPaletteBank(u16 bank, void* src);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);

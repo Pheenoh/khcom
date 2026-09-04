@@ -190,7 +190,7 @@ extern BtlWork* gBtlWork;
 u16 GetRandom(void);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimGetGfx(AnimState* a);
 void TaskPoolInit(TaskPool* a, s32 count);

@@ -33,7 +33,7 @@ u16 func_0805E89C(u16* str);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgScroll(s32 a, s32 b, s32 c);
 void* AllocObjTiles(s32 a, void* b);
-void AnimInit(void* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(void* a, s32 b, s32 c);
 void SeedRandom(s32 a);
 void* AnimUpdate(AnimState* a);

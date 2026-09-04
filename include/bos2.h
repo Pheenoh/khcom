@@ -2,6 +2,7 @@
 #define GUARD_BOS2_H
 
 #include "types.h"
+#include "anim.h"
 #include "taskpool.h"
 #include "game.h"
 
@@ -845,7 +846,7 @@ void task_bos_jf_lamp_0(JfLampWork* work, JfWork* jf);
 void func_0801BDDC(s32 a, s32 b, s32 c, s32 d);
 void func_08006B4C(void);
 u8 task_bos_dsd_circle_1(DsdCircleWork* work);
-void AnimInit(AnimState* a, void* b, void* c);
+void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimGetGfx(AnimState* a);
 void func_0801C298(u8 a, u8 b);
 void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg);
