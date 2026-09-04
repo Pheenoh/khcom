@@ -399,7 +399,7 @@ void func_0810B370(u8** p, u8 v);
 void func_08109EF8(void* work, s32 a);
 s32 func_08109F20(void* work);
 u8 func_0801BCA8(void* a);
-u16 AnimGetGfxIndex(void* a);
+u16 AnimGetGfxIndex(AnimState* a);
 s32 func_0810B350(void** p);
 u8 func_0810B800(void** p);
 u8 func_0810B824(void** p);
