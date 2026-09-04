@@ -578,7 +578,7 @@ typedef struct UnkStruct_080DAA28 {
 } UnkStruct_080DAA28;
 
 void task_bos_boogie_map_0(void* work, UnkStruct_080DAA28* arg);
-void ApproachValue(s32* p, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void* AnimGetGfx(void* a);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);

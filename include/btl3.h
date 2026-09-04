@@ -246,7 +246,7 @@ s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u8 CanAllocObjTiles(u16 a);
 u8 CanAllocObjPalette(s32 a);
-void ApproachValue(void* a, s32 b, u16 c);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void ApproachAngle(void* a, u8 b, s32 c);
 u16 AnimGetFrame(AnimState* a);
 void AnimInit(AnimState* a, s32 b, s32 c);

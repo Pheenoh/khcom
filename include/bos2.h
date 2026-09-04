@@ -806,7 +806,7 @@ void func_080C3754(DsdMainWork* work);
 void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src);
 void func_080C2BB0(DsdMainWork* work);
 void func_080C2A2C(DsdMainWork* work);
-void ApproachValue(s32* p, s32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0802F274(s32 a, s32 b);
 void func_080C2CC0(DsdMainWork* work);
 void func_0802F1E8(void);

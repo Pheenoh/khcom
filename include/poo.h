@@ -1294,7 +1294,7 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w);
 void task_poo_honeycomb_0(PooHoneycombWork* w);
 void task_poo_spark_2(PooSparkWork* w);
 s32 func_080CCBF8(PooNode* n);
-void ApproachValue(u32* value, u32 target, u16 steps);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void m4aSongNumStart(u16 n);
 u16 func_080C9EAC(void* pool, u16 b);
 u8 func_080CA3A0(PooPos* p);
