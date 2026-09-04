@@ -5,13 +5,10 @@
 #include "taskpool.h"
 #include "anim.h"
 
+struct UnkStruct_02034AAC;
+
 typedef struct UnkStruct_02039DD4 {
-    u32 unk_000;
-    u32 unk_004;
-    u32 unk_008;
-    u32 unk_00C;
-    u32 unk_010;
-    u32 unk_014;
+    struct UnkStruct_02034AAC* unk_000[6];
     u8 unk_018[0x18];
     void* unk_030;
     void* unk_034;
