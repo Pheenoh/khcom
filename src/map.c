@@ -40,7 +40,7 @@ s32 gUnk_02034FD4;
 u8 gUnk_02034FD8;
 UnkStruct_02034FDC* gUnk_02034FDC;
 UnkStruct_02034FE0* gUnk_02034FE0;
-u32 gUnk_02034FE4;
+UnkStruct_02034FE4* gUnk_02034FE4;
 
 s32 func_080DFEBC(s32 x, s32 y, s32 z) {
     UnkStruct_080DFB8C* p = func_080DFB8C(x, y);
@@ -3777,11 +3777,21 @@ INCLUDE_ASM("map/func_080EC500.s");
 INCLUDE_ASM("map/func_080EC544.s");
 INCLUDE_ASM("map/func_080EC57C.s");
 INCLUDE_ASM("map/func_080EC618.s");
-INCLUDE_ASM("map/func_080EC644.s");
+
+void func_080EC644(void) {
+    TaskPoolDestroy(&gUnk_02034FE4->unk_08);
+    EwramFree(gUnk_02034FE4);
+}
+
 INCLUDE_ASM("map/func_080EC660.s");
 INCLUDE_ASM("map/func_080EC720.s");
 INCLUDE_ASM("map/func_080EC744.s");
-INCLUDE_ASM("map/func_080EC750.s");
+
+void func_080EC750(TaskPool* pool) {
+    TaskPoolDestroy(pool);
+    func_080E4B34();
+}
+
 INCLUDE_ASM("map/func_080EC760.s");
 INCLUDE_ASM("map/func_080EC7AC.s");
 INCLUDE_ASM("map/func_080EC94C.s");
@@ -4316,9 +4326,22 @@ INCLUDE_ASM("map/func_080F1124.s");
 INCLUDE_ASM("map/func_080F117C.s");
 INCLUDE_ASM("map/func_080F1274.s");
 INCLUDE_ASM("map/func_080F131C.s");
-INCLUDE_ASM("map/func_080F138C.s");
+
+s32 func_080F138C(u8* work) {
+    (*(void (**)(u8*))&work[8])(work);
+    return 1;
+}
+
 INCLUDE_ASM("map/func_080F139C.s");
+
+#ifndef VERSION_EU
+void func_080F1450(u8* work) {
+    func_08066918(*(void**)&work[16], *(void**)&work[20]);
+}
+#else
 INCLUDE_ASM("map/func_080F1450.s");
+#endif
+
 INCLUDE_ASM("map/func_080F1460.s");
 INCLUDE_ASM("map/func_080F14C4.s");
 INCLUDE_ASM("map/func_080F1544.s");
@@ -4330,11 +4353,31 @@ INCLUDE_ASM("map/func_080F173C.s");
 INCLUDE_ASM("map/func_080F1798.s");
 INCLUDE_ASM("map/func_080F1880.s");
 INCLUDE_ASM("map/func_080F18AC.s");
-INCLUDE_ASM("map/func_080F1918.s");
-INCLUDE_ASM("map/func_080F1930.s");
-INCLUDE_ASM("map/func_080F194C.s");
+
+void func_080F1918(u8* work) {
+    ReleaseObjTiles(*(void**)&work[0x58]);
+    ReleaseObjPalette(*(u8**)&work[0x5C]);
+}
+
+void func_080F1930(u8* work) {
+    *(void**)work = AllocObjTiles(func_080E83C4() << 5, 0);
+}
+
+s32 func_080F194C(void) {
+    if ((u8)func_080E0390() != 0) {
+        return 0;
+    }
+    return 1;
+}
+
 INCLUDE_ASM("map/func_080F1964.s");
-INCLUDE_ASM("map/func_080F1968.s");
+
+void func_080F1968(u8* work) {
+    if (*(void**)work != 0) {
+        ReleaseObjTiles(*(void**)work);
+    }
+}
+
 INCLUDE_ASM("map/func_080F1978.s");
 INCLUDE_ASM("map/func_080F1A10.s");
 INCLUDE_ASM("map/func_080F1A84.s");
@@ -4501,7 +4544,13 @@ INCLUDE_ASM("map/func_080F5580.s");
 INCLUDE_ASM("map/func_080F55B0.s");
 INCLUDE_ASM("map/func_080F5780.s");
 INCLUDE_ASM("map/func_080F5800.s");
-INCLUDE_ASM("map/func_080F5820.s");
+
+void func_080F5820(u8* work) {
+    if (func_080A42C8((s32)work) == 0) {
+        *(s32*)&work[4] = 0;
+    }
+}
+
 INCLUDE_ASM("map/func_080F5838.s");
 INCLUDE_ASM("map/func_080F5868.s");
 INCLUDE_ASM("map/func_080F5890.s");
@@ -4514,11 +4563,21 @@ INCLUDE_ASM("map/func_080F59E4.s");
 INCLUDE_ASM("map/func_080F5A00.s");
 INCLUDE_ASM("map/func_080F5A64.s");
 INCLUDE_ASM("map/func_080F5A88.s");
-INCLUDE_ASM("map/func_080F5B00.s");
+
+void func_080F5B00(u8* work) {
+    ReleaseObjTiles(*(void**)&work[0x1C]);
+    ReleaseObjPalette(*(u8**)&work[0x20]);
+}
+
 INCLUDE_ASM("map/func_080F5B18.s");
 INCLUDE_ASM("map/func_080F5B68.s");
 INCLUDE_ASM("map/func_080F5BB8.s");
-INCLUDE_ASM("map/func_080F5C48.s");
+
+void func_080F5C48(u8* work) {
+    ReleaseObjTiles(*(void**)&work[0x1C]);
+    ReleaseObjPalette(*(u8**)&work[0x20]);
+}
+
 INCLUDE_ASM("map/func_080F5C60.s");
 INCLUDE_ASM("map/func_080F5CDC.s");
 INCLUDE_ASM("map/func_080F5D10.s");
@@ -4596,15 +4655,40 @@ INCLUDE_ASM("map/func_080F76D0.s");
 INCLUDE_ASM("map/func_080F76F0.s");
 INCLUDE_ASM("map/func_080F775C.s");
 INCLUDE_ASM("map/func_080F777C.s");
-INCLUDE_ASM("map/func_080F77C4.s");
+
+s32 func_080F77C4(u8* work) {
+    AnimUpdate((AnimState*)&work[4]);
+    return 1;
+}
+
 INCLUDE_ASM("map/func_080F77D4.s");
-INCLUDE_ASM("map/func_080F7860.s");
+
+void func_080F7860(u8* work) {
+    ReleaseObjTiles(*(void**)&work[0x1C]);
+    ReleaseObjPalette(*(u8**)&work[0x20]);
+}
+
 INCLUDE_ASM("map/func_080F7878.s");
 INCLUDE_ASM("map/func_080F78A8.s");
 INCLUDE_ASM("map/func_080F78EC.s");
-INCLUDE_ASM("map/func_080F7A9C.s");
+
+void func_080F7A9C(u8* work) {
+    ReleaseObjTiles(*(void**)&work[4]);
+    ReleaseObjPalette(*(u8**)&work[0]);
+}
+
 INCLUDE_ASM("map/func_080F7AB4.s");
 INCLUDE_ASM("map/func_080F7AE0.s");
-INCLUDE_ASM("map/func_080F7B64.s");
+
+s32 func_080F7B64(u8* work) {
+    u16* p = (u16*)&work[14];
+
+    if (*p != 0) {
+        (*p)--;
+        return 1;
+    }
+    return 0;
+}
+
 INCLUDE_ASM("map/func_080F7B78.s");
 INCLUDE_ASM("map/func_080F7BB8.s");
