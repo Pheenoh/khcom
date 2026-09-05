@@ -740,10 +740,10 @@ void func_080E0C1C(u16 x, u16 y) {
 
 #ifdef NON_MATCHING
 void func_080E0ED4(UnkStruct_02034F20* p) {
+    s32 go = 1;
     u16 x = p->unk_0A;
     u16 y = p->unk_0C;
     u16 ny;
-    s32 go = 1;
 
     while (go) {
         s16 cy = (s16)y;
@@ -768,8 +768,8 @@ void func_080E0ED4(UnkStruct_02034F20* p) {
             c->unk_00 |= 0x40;
             p->unk_0A = x;
             p->unk_0C = ny;
-            y = ny;
             go = 0;
+            y = ny;
             break;
         default:
             y++;
@@ -2628,8 +2628,7 @@ void func_080E470C(void) {
     d = a + t;
     b = gUnk_02034F2A / 4;
     func_080E3060(0, a, d, 0);
-    k = 3;
-    func_080E309C(0, a, d, b, k);
+    func_080E309C(0, a, d, b, k = 3);
     func_080E3C1C(3, &a, &b, &c, 0, gUnk_02034F28);
     v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
     func_080E3060(1, 0, gUnk_02034F28, v + c);
@@ -2780,7 +2779,7 @@ void func_080E4B78(s16 x, s16 y) {
     for (i = 0; i < 32; i++) {
         s16 v;
         s16 m;
-        s32 ya;
+        s16 ya;
         s16 xx;
         s32 j;
 
@@ -2798,7 +2797,7 @@ void func_080E4B78(s16 x, s16 y) {
             UnkStruct_080DFB8C* e;
             s16 c;
             s16 n;
-            s32 xa;
+            s16 xa;
 
             if (xx < 0) {
                 c = (xx - 8) / 4;
@@ -4585,32 +4584,43 @@ void func_080E7DF8(void) {
 void func_080E7E3C(void) {
     UnkStruct_080DFF1C w;
     UnkStruct_080DEE18* e;
-    UnkStruct_080E7D80* q = &gUnk_0984C158;
     s32 i;
 
     e = func_080DEE18(gUnk_0203C590.unk_06);
 
     if (gUnk_0203C7AC->unk_0D == 10) {
-        for (i = 1; i >= 0; i--) {
+        UnkStruct_080E7D80* q = &gUnk_0984C158;
+        u8* n = &gUnk_02034F78;
+
+        i = 1;
+
+    lab:
+        {
             func_080E7D64(&w, q->unk_15);
 
             if (e->unk_00 & 0x10) {
-                gUnk_0203C7B8[gUnk_02034F78].unk_00 = 10;
+                gUnk_0203C7B8[*n].unk_00 = 10;
             } else {
-                gUnk_0203C7B8[gUnk_02034F78].unk_00 = 8;
+                gUnk_0203C7B8[*n].unk_00 = 8;
             }
 
-            gUnk_0203C7B8[gUnk_02034F78].unk_14 = q;
-            gUnk_0203C7B8[gUnk_02034F78].unk_04 = w;
+            gUnk_0203C7B8[*n].unk_14 = q;
+            gUnk_0203C7B8[*n].unk_04 = w;
             gUnk_02034F7A += q->unk_08 >> 5;
             gUnk_02034F79++;
-            gUnk_02034F78++;
+            (*n)++;
+        }
+        i--;
+
+        if (i >= 0) {
+            goto lab;
         }
     }
 
     if (gUnk_0203C7AC->unk_0D == 3 || gUnk_0203C7AC->unk_0D == 9 || gUnk_0203C7AC->unk_0D == 10 ||
         gUnk_0203C7AC->unk_0D == 22) {
         UnkStruct_080DFB8C* p;
+        UnkStruct_080E7D80* q = &gUnk_0984C158;
         u16 v;
 
         func_080E7D64(&w, q->unk_15);
