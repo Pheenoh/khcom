@@ -91,9 +91,24 @@ def address_range(syms, sym):
 def preamble(lines):
     out = []
 
+    depth = 0
+
     for line in lines:
-        if FUNC_START.match(line) or "INCLUDE_ASM(" in line:
-            break
+        if depth:
+            depth += line.count("{") - line.count("}")
+            continue
+
+        if "INCLUDE_ASM(" in line:
+            continue
+
+        if FUNC_START.match(line):
+            sig = line.rstrip()
+
+            if sig.endswith("{"):
+                sig = sig[:-1].rstrip()
+            out.append(sig + ";")
+            depth = line.count("{") - line.count("}")
+            continue
         m = GLOBAL_DEF.match(line)
 
         if m:
