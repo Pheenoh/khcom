@@ -15,11 +15,12 @@ s32 gUnk_02035FDC;
 s32 gUnk_02035FE0;
 u8 gUnk_02035FE4;
 
-#ifdef NON_MATCHING
 
+#ifdef VERSION_US
 void mode_mapinspect_0(void) {
     s16 i;
     s16 j;
+    s16 v;
 
     gUnk_02035E28 = EwramAlloc(0x2F4);
     SpriteReset();
@@ -45,9 +46,9 @@ void mode_mapinspect_0(void) {
     gUnk_02035E9C = 0;
 
     if (gUnk_02035E48 > 0) {
-        gUnk_02035FDC = -0x200;
+        gUnk_02035FDC = (v = 0, -0x200);
         gUnk_02035FE0 = 0x1000;
-        gUnk_02035E2C = 0;
+        gUnk_02035E2C = v;
     } else {
         gUnk_02035FDC = gUnk_09EF9618[4].unk_04 * 7 * 512 - 0x100;
         gUnk_02035FE0 = 0;
@@ -110,25 +111,25 @@ void mode_mapinspect_0(void) {
     gUnk_02035F9C = EwramAlloc(0x2D0);
     func_08065ACC(gUnk_02035F9C, 0x5A);
 
-    gUnk_02035FAA = func_08065B54(gUnk_08159FBC);
-    gUnk_02035FA4 = EwramAlloc(gUnk_02035FAA * 8);
-    func_08065ACC(gUnk_02035FA4, gUnk_02035FAA);
+    gUnk_02035FAA[0] = func_08065B54(gUnk_08159FBC);
+    gUnk_02035FA4 = EwramAlloc(gUnk_02035FAA[0] * 8);
+    func_08065ACC(gUnk_02035FA4, gUnk_02035FAA[0]);
     gUnk_02035FA8 = func_08065B6C(gUnk_08159FBC, gUnk_02035FA4);
 
-    gUnk_02035FB2 = func_08065B54(gUnk_08159E10);
-    gUnk_02035FAC = EwramAlloc(gUnk_02035FB2 * 8);
-    func_08065ACC(gUnk_02035FAC, gUnk_02035FB2);
+    gUnk_02035FB2[0] = func_08065B54(gUnk_08159E10);
+    gUnk_02035FAC = EwramAlloc(gUnk_02035FB2[0] * 8);
+    func_08065ACC(gUnk_02035FAC, gUnk_02035FB2[0]);
     gUnk_02035FB0 = func_08065B6C(gUnk_08159E10, gUnk_02035FAC);
 
-    gUnk_02035FBA = func_08065B54(gUnk_08159E18);
-    gUnk_02035FB4 = EwramAlloc(gUnk_02035FBA * 8);
-    func_08065ACC(gUnk_02035FB4, gUnk_02035FBA);
+    gUnk_02035FBA[0] = func_08065B54(gUnk_08159E18);
+    gUnk_02035FB4 = EwramAlloc(gUnk_02035FBA[0] * 8);
+    func_08065ACC(gUnk_02035FB4, gUnk_02035FBA[0]);
     gUnk_02035FB8 = func_08065B6C(gUnk_08159E18, gUnk_02035FB4);
 
     gUnk_02035FC2[0] = func_08065B54(gUnk_0815C136);
     gUnk_02035FBC[0] = EwramAlloc(gUnk_02035FC2[0] * 8);
     func_08065ACC(gUnk_02035FBC[0], gUnk_02035FC2[0]);
-    gUnk_02035FC0 = func_08065B6C(gUnk_0815C136, gUnk_02035FBC[0]);
+    gUnk_02035FC0[0] = func_08065B6C(gUnk_0815C136, gUnk_02035FBC[0]);
 
     func_08107280();
     func_081073F0();
@@ -256,11 +257,11 @@ void mode_mapinspect_2(void) {
     EwramFree(gUnk_02035F94);
     func_08065AE0(gUnk_02035F9C, 0x5A);
     EwramFree(gUnk_02035F9C);
-    func_08065AE0(gUnk_02035FA4, gUnk_02035FAA);
+    func_08065AE0(gUnk_02035FA4, gUnk_02035FAA[0]);
     EwramFree(gUnk_02035FA4);
-    func_08065AE0(gUnk_02035FAC, gUnk_02035FB2);
+    func_08065AE0(gUnk_02035FAC, gUnk_02035FB2[0]);
     EwramFree(gUnk_02035FAC);
-    func_08065AE0(gUnk_02035FB4, gUnk_02035FBA);
+    func_08065AE0(gUnk_02035FB4, gUnk_02035FBA[0]);
     EwramFree(gUnk_02035FB4);
 
     for (i = 0; i < 1; i++) {
