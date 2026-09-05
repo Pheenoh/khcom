@@ -160,7 +160,7 @@ _080ABB98:
 	cmp r0, #0x2F
 	bne _080ABBEC
 	adds r0, r1, #0x0
-	bl _080AC140
+	bl func_080AC140
 	str r0, [r6, #0x04]
 	str r0, [r6, #0x00]
 	ldr r0, [r7, #0x00]
@@ -177,7 +177,7 @@ _080ABBC8:
 	cmp r0, #0x2F
 	bne _080ABBEC
 	adds r0, r1, #0x0
-	bl _080AC140
+	bl func_080AC140
 	str r0, [r6, #0x04]
 	str r0, [r6, #0x00]
 	ldr r0, [r7, #0x00]
@@ -188,7 +188,7 @@ _080ABBC8:
 _080ABBE8: .4byte 0x02039B9C
 _080ABBEC:
 	adds r0, r1, #0x0
-	bl _080AC140
+	bl func_080AC140
 	b _080ABC94
 _080ABBF4:
 	cmp r6, #0x00
