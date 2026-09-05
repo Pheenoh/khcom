@@ -10552,7 +10552,6 @@ s32 func_080F173C(MapGmkEnmWork* w) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void func_080F1798(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     UnkStruct_080DFF1C* e = &w->unk_000;
     AnimState* an;
@@ -10579,9 +10578,11 @@ void func_080F1798(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
         frames = gUnk_09EE00D0;
     }
 
-    AnimInit(an, anim, frames);
-    AnimStart(&w->unk_040, 0, 1);
-    w->unk_060 = AnimGetGfx(&w->unk_040);
+    do {
+        AnimInit(an, anim, frames);
+        AnimStart(an, 0, 1);
+    } while (0);
+    w->unk_060 = AnimGetGfx(an);
     w->unk_064 = func_080F173C;
     f = 0;
 
@@ -10592,9 +10593,6 @@ void func_080F1798(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     w->unk_070 = 8;
     w->unk_06C = e->y - 0x1000;
 }
-#else
-INCLUDE_ASM("map/func_080F1798.s");
-#endif
 
 u8 func_080F1880(u8* work) {
     if ((u8)func_080E0390() != 0) {
