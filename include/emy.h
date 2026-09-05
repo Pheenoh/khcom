@@ -219,7 +219,7 @@ typedef struct Emy16Work {
 typedef struct Emy16bWork {
     void* tiles;
     void* palette;
-    u8 unk_008[0x18];
+    u8 anim[0x18];
     s32 x;
     s32 y;
     s32 z;
@@ -242,7 +242,7 @@ typedef struct Emy16bWork {
 typedef struct Emy16pWork {
     void* tiles;
     void* palette;
-    u8 unk_008[0x18];
+    u8 anim[0x18];
     s32 x;
     s32 y;
     s32 z;

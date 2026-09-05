@@ -207,7 +207,7 @@ typedef struct RikuSpawn {
     s32 z;
     u16 unk_0C;
     u16 unk_0E;
-    AnimState unk_10;
+    AnimState anim;
     u32 unk_28;
     s32 unk_2C;
 } RikuSpawn;
@@ -427,7 +427,7 @@ typedef struct LexRockSub {
 typedef struct LexRockWork {
     void* unk_00[12];
     void* unk_30;
-    AnimState unk_34[12];
+    AnimState anim[12];
     s32 x;
     s32 y;
     s32 z;
@@ -440,7 +440,7 @@ typedef struct LexRockWork {
     LexRockSub unk_16C[11];
     u8 unk_2A0[0x18];
     void* tiles;
-    void* unk_2BC;
+    void* palette;
     u8 unk_2C0;
     u8 unk_2C1[0x03];
 } LexRockWork;

@@ -126,7 +126,7 @@ typedef struct BtlDrawInfo {
     s32 z;
     u16 unk_0C;
     u8 unk_0E[0x2];
-    AnimState unk_10;
+    AnimState anim;
     void* unk_28;
     s32 unk_2C;
 } BtlDrawInfo;
@@ -152,7 +152,7 @@ typedef struct BtlSoraWork {
     void* unk_000;
     void* palette;
     u32 unk_008;
-    AnimState unk_00C;
+    AnimState anim;
     u32 unk_024;
     u8 unk_028[0x10];
     u32 unk_038;
@@ -199,7 +199,7 @@ typedef struct BtlRikuWork {
     void* tiles;
     ObjPalette* palette;
     u32 unk_00C;
-    AnimState unk_010;
+    AnimState anim;
     u32 unk_028;
     u16 unk_02C;
     u8 unk_02E[0xE];

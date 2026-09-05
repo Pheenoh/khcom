@@ -758,8 +758,8 @@ void task_emy_16_b_0(Emy16bWork* work, EmySpawn* spawn) {
 
     work->palette = LoadObjPalette(gUnk_08F699C4, 0x20);
     work->tiles = AllocObjTiles(0x80, gUnk_08A23630);
-    AnimInit(work->unk_008, gUnk_09EE04F4, gUnk_09EE04E0);
-    AnimStart(work->unk_008, 0, 1);
+    AnimInit(work->anim, gUnk_09EE04F4, gUnk_09EE04E0);
+    AnimStart(work->anim, 0, 1);
     work->unk_038 = 0;
     work->x = spawn->x;
     work->y = spawn->y;
@@ -800,7 +800,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
     case 1:
         if (work->unk_03C == 0) {
             func_08012614(&work->unk_040, 0);
-            AnimStart(work->unk_008, 1, 1);
+            AnimStart(work->anim, 1, 1);
         }
 
         if (work->unk_06C != 0) {
@@ -822,7 +822,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
                 break;
             }
         } else {
-            AnimStart(work->unk_008, 2, 1);
+            AnimStart(work->anim, 2, 1);
             work->unk_030 = -0x3CC;
         }
 
@@ -855,7 +855,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
     }
 
     func_08012324(&work->unk_040, work->x, work->y, work->z);
-    AnimUpdate(work->unk_008);
+    AnimUpdate(work->anim);
     return 1;
 }
 
@@ -867,7 +867,7 @@ void task_emy_16_b_2(Emy16bWork* work) {
     s16 x;
     s16 y;
 
-    gfx = AnimGetGfx(work->unk_008);
+    gfx = AnimGetGfx(work->anim);
 
     if (work->unk_09C != 0) {
         pri = func_0801AF1C(work->y);
@@ -906,8 +906,8 @@ void task_emy_16_p_0(Emy16pWork* work, EmySpawn* spawn) {
 
     work->palette = LoadObjPalette(gUnk_08F699C4, 0x20);
     work->tiles = AllocObjTiles(0x80, gUnk_08A20BCE);
-    AnimInit(work->unk_008, gUnk_09EE04B4, gUnk_09EE04AC);
-    AnimStart(work->unk_008, 0, 1);
+    AnimInit(work->anim, gUnk_09EE04B4, gUnk_09EE04AC);
+    AnimStart(work->anim, 0, 1);
     work->x = spawn->x;
     work->y = spawn->y;
     work->z = spawn->z;
@@ -941,7 +941,7 @@ u8 task_emy_16_p_1(Emy16pWork* work) {
         work->z = 0;
     }
 
-    AnimUpdate(work->unk_008);
+    AnimUpdate(work->anim);
     return 1;
 }
 
@@ -951,7 +951,7 @@ void task_emy_16_p_2(Emy16pWork* work) {
     s16 x;
     s16 y;
 
-    gfx = AnimGetGfx(work->unk_008);
+    gfx = AnimGetGfx(work->anim);
     pri = func_0801AF1C(work->y);
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, gfx, work->tiles, work->palette, 0, pri,

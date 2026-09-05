@@ -148,7 +148,7 @@ u8 task_bos_ga_1(GaWork* work) {
         func_080F7F54(work, 10);
     }
 
-    anim = &work->entries[1].unk_180;
+    anim = &work->entries[1].anim;
 
     if (AnimIsFinished(anim) && GetRandom() % 100 == 0 && work->unk_000 != 11) {
         AnimStart(anim, 1, 0);

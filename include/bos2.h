@@ -340,8 +340,8 @@ typedef struct JfRockWork {
     JfWork* unk_000;
     void* unk_004;
     void* unk_008;
-    void* unk_00C;
-    AnimState unk_010;
+    void* gfx;
+    AnimState anim;
     u16 unk_028;
     u16 unk_02A;
     u32 unk_02C;
@@ -395,7 +395,7 @@ typedef struct JfMajinWork {
     void* unk_08;
     void* unk_0C;
     void* gfx;
-    AnimState unk_14;
+    AnimState anim;
     u8 unk_2C;
     u8 unk_2D[0x3];
     u32 unk_30;
@@ -592,7 +592,7 @@ typedef struct TmArmWork {
     u8 unk_231[0x3];
     u32 unk_234;
     u32 unk_238;
-    AnimState unk_23C;
+    AnimState anim;
     u8 unk_254;
     u8 unk_255[0x3];
 } TmArmWork;

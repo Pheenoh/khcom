@@ -556,7 +556,7 @@ u8 task_bos_tm_arm_1(TmArmWork* work) {
     }
 
     if (work->unk_00C->unk_18->unk_2C != 13) {
-        gfx = AnimUpdate(&work->unk_23C);
+        gfx = AnimUpdate(&work->anim);
         work->unk_1DC = (u32)gfx;
         work->unk_1F4 = (u32)gfx;
 
@@ -1077,9 +1077,9 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     work->unk_34 = 0x12600;
     work->unk_40 = 0;
     work->unk_3C = 0;
-    AnimInit(&work->unk_14, gUnk_09EF3B40, gUnk_09EF3A48);
-    AnimStart(&work->unk_14, 1, 1);
-    work->gfx = AnimGetGfx(&work->unk_14);
+    AnimInit(&work->anim, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->anim, 1, 1);
+    work->gfx = AnimGetGfx(&work->anim);
     func_08005244(1, ((gBtlWork->unk_000 - arg->x) >> 8) + 0x308,
                   ((gBtlWork->unk_004 - (arg->y + arg->z)) >> 8) + 0x126);
     TaskPoolInit(&work->unk_6C, 2);
@@ -1270,7 +1270,7 @@ void func_080BE9A0(JfMajinWork* work) {
         }
 
         work->unk_00->unk_24A++;
-        work->gfx = AnimUpdate(&work->unk_14);
+        work->gfx = AnimUpdate(&work->anim);
         work->unk_40 = gUnk_0961A70A[work->unk_3C];
 
         if (gBtlWork->unk_0A0 != 0) {
@@ -1524,7 +1524,7 @@ void func_080C0624(JfMajinWork* work) {
         }
 
         work->unk_00->unk_24A++;
-        work->gfx = AnimUpdate(&work->unk_14);
+        work->gfx = AnimUpdate(&work->anim);
         work->unk_40 = gUnk_0961A70A[work->unk_3C];
     }
 }
@@ -1570,9 +1570,9 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_160 = 0;
     work->unk_004 = LoadObjTiles(gUnk_09682AA4, 0x2800);
     work->unk_008 = LoadObjPalette(gUnk_096FB5A4, 0x60);
-    AnimInit(&work->unk_010, gUnk_09EF3B40, gUnk_09EF3A48);
-    AnimStart(&work->unk_010, gUnk_09EF2A38[work->unk_158], 0);
-    work->unk_00C = AnimGetGfx(&work->unk_010);
+    AnimInit(&work->anim, gUnk_09EF3B40, gUnk_09EF3A48);
+    AnimStart(&work->anim, gUnk_09EF2A38[work->unk_158], 0);
+    work->gfx = AnimGetGfx(&work->anim);
     work->unk_164 = LoadObjTiles(gUnk_09682AA4, 0x2800);
     work->unk_168 = LoadObjPalette(gUnk_096FB5A4, 0x60);
     work->unk_16C = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
@@ -1606,7 +1606,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
         }
 
         WorldToScreen(&x, &y, work->unk_030, work->unk_034, work->unk_038);
-        DrawSprite(x, y, work->unk_00C, work->unk_004, work->unk_008, 0, pal, prio);
+        DrawSprite(x, y, work->gfx, work->unk_004, work->unk_008, 0, pal, prio);
     }
 
     if (work->unk_17C == 1) {

@@ -191,7 +191,7 @@ void func_0801DDE4(BtlSoraWork* work, u16 a, u16 b) {
     FldAnimDef* e;
 
     e = &gUnk_0813BA2C[a];
-    func_08005974(&work->unk_00C, e->unk_0C, b, e->unk_04, e->unk_00);
+    func_08005974(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
     func_08002A10(work->unk_000, e->unk_08);
 }
 
@@ -222,7 +222,7 @@ void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
         break;
     }
     e = &gUnk_0813BEFC[a][idx];
-    func_08005974(&work->unk_00C, e->unk_0C, b, e->unk_04, e->unk_00);
+    func_08005974(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
     func_08002A10(work->unk_000, e->unk_08);
 }
 
@@ -276,8 +276,8 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
     if (a & 0xF0) {
         func_0801DE1C(work, 0, 1);
 
-        if (work->unk_00C.timer == 0) {
-            switch (work->unk_00C.frame) {
+        if (work->anim.timer == 0) {
+            switch (work->anim.frame) {
             case 3:
                 m4aSongNumStart(work->unk_184[0]);
                 break;
@@ -566,7 +566,7 @@ void func_08027570(BtlRikuWork* work, BtlDrawInfo* out) {
     } else {
         out->unk_0C &= 0xFFFE;
     }
-    out->unk_10 = work->unk_010;
+    out->anim = work->anim;
     out->unk_28 = *(void**)work->unk_000;
     out->unk_2C = gBtlWork->unk_024;
 }
@@ -583,7 +583,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
     s32 z;
     s32 v;
 
-    gfx = AnimGetGfx(&out->unk_10);
+    gfx = AnimGetGfx(&out->anim);
     a = &work->unk_044;
 
     if (func_080128EC() == 0) {
@@ -626,7 +626,7 @@ void func_080276D4(BtlRikuWork* work, u16 a, u16 b) {
     FldAnimDef* e;
 
     e = &gUnk_0813C2AC[a];
-    func_08005974(&work->unk_010, e->unk_0C, b, e->unk_04, e->unk_00);
+    func_08005974(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
     func_08002A10(work->unk_000, e->unk_08);
 }
 
@@ -657,7 +657,7 @@ void func_0802770C(BtlRikuWork* work, u16 a, u16 b) {
         break;
     }
     e = &gUnk_0813C4DC[a][idx];
-    func_08005974(&work->unk_010, e->unk_0C, b, e->unk_04, e->unk_00);
+    func_08005974(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
     func_08002A10(work->unk_000, e->unk_08);
 }
 
@@ -711,8 +711,8 @@ void func_08027A64(BtlRikuWork* work, u16 a) {
     if (a & 0xF0) {
         func_080276D4(work, 13, 1);
 
-        if (work->unk_010.timer == 0) {
-            switch (work->unk_010.frame) {
+        if (work->anim.timer == 0) {
+            switch (work->anim.frame) {
             case 3:
                 m4aSongNumStart(work->unk_188[0]);
                 break;
