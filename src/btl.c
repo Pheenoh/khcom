@@ -618,6 +618,7 @@ void task_btl_sora_1(BtlSoraWork* work) {
     u16 uv;
     s32 t;
     s32 t2;
+    s32 t3;
 
     p = &work->unk_040;
 
@@ -1870,6 +1871,51 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_038 = 67;
             work->unk_156 = 0;
             work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 67:
+        func_0801DDC4(work);
+        work->unk_150 = 0;
+        st = work->unk_154;
+
+        if (st == 0) {
+            func_0801DDE4(work, 66, 0);
+            m4aSongNumStart(590);
+
+            if (p->unk_34 & 4) {
+                func_08015B50(1, p->unk_04 - 9728, p->unk_08, p->unk_0C - 6656, 0, 99);
+            } else {
+                func_08015B50(1, p->unk_04 + 9728, p->unk_08, p->unk_0C - 6656, 1, 99);
+            }
+        }
+
+        t = p->unk_04;
+        t2 = p->unk_08;
+        t3 = p->unk_0C;
+        uv = work->unk_158;
+        work->unk_158 = uv + 1;
+        p->unk_0C += (*(s32*)&p->unk_14[8] + (gSineTable[(uv * 2) & 0xFF] << 3) - p->unk_0C) >> 3;
+
+        if (held & 0x40) {
+            p->unk_08 -= 128;
+        } else if (held & 0x80) {
+            p->unk_08 += 128;
+        }
+
+        if (held & 0x20) {
+            p->unk_04 -= 256;
+        } else if (held & 0x10) {
+            p->unk_04 += 256;
+        }
+
+        func_0801A8A4(&p->unk_04, &p->unk_08, -16, 0);
+        func_0801475C(p->unk_04 - t, p->unk_08 - t2, p->unk_0C - t3);
+
+        if (func_080128EC() == 0) {
+            m4aSongNumStop(590);
+            func_0801E4E4(work, 3);
         } else {
             work->unk_154++;
         }
