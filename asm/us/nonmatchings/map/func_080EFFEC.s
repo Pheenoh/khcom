@@ -1,9 +1,0 @@
-.syntax unified
-	.align 2, 0
-	.global func_080EFFEC
-	.thumb
-	.thumb_func
-	.type func_080EFFEC, %function
-func_080EFFEC: @ 080EFFEC
-	.byte 0x00, 0xB5, 0xF6, 0xF7, 0xC5, 0xFA, 0x01, 0xBC, 0x00, 0x47, 0x00, 0x00
-.syntax divided
