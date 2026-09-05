@@ -25,7 +25,7 @@ typedef struct UnkStruct_02034AAC {
     void* unk_08;
     void* unk_0C;
     u8 unk_10[0x04];
-    void* unk_14;
+    void* palette;
     void* unk_18;
     u8 unk_1C[0x04];
     void* unk_20;
@@ -111,7 +111,7 @@ extern u8 gTaskDescDispCardname[];
 extern u8 gTaskDescVersion[];
 extern u8 gUnk_09EE7650[];
 extern u8 gTaskDescEVBGEFFECT[];
-extern u8 gUnk_09EE8ED8[];
+extern u8 gTaskDescWorldSelBefore[];
 extern u8 gTaskDescREVCOUNT[];
 extern u8 gTaskDescScrollbar[];
 extern u8 gUnk_09EE77A4[];
@@ -439,10 +439,10 @@ typedef struct UnkStruct_080A6FAC {
     void* unk_3F0;
     void* unk_3F4;
     u8 unk_3F8[0x10];
-    void* unk_408;
+    void* gfx;
     u8 unk_40C[0x28];
     u8 unk_434[0x40];
-    AnimState unk_474;
+    AnimState anim;
     u8 unk_48C[0x3C];
     s16 unk_4C8;
     s16 unk_4CA;
@@ -466,11 +466,11 @@ typedef struct UnkStruct_0808DB04 {
     void* unk_4E0;
     void* unk_4E4;
     u8 unk_4E8[0x10];
-    void* unk_4F8;
+    void* gfx;
     u8 unk_4FC[0x2E0];
     u8 unk_7DC[0x14];
     u8 unk_7F0[0x40];
-    AnimState unk_830;
+    AnimState anim;
     u8 unk_848[0x2C];
     s16 unk_874;
     s16 unk_876;
@@ -524,8 +524,8 @@ typedef struct UnkStruct_0809DF7C {
     u8 unk_02[0x06];
     void* unk_08;
     void* unk_0C;
-    void* unk_10;
-    void* unk_14;
+    void* palette;
+    void* tiles;
     u8 unk_18;
     u8 unk_19;
     u16 unk_1A;
@@ -552,8 +552,8 @@ typedef struct UnkStruct_080988C0_Args {
 } UnkStruct_080988C0_Args;
 
 typedef struct UnkStruct_08098BE8 {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
     u8 unk_0C[0x04];
     s32* unk_10;
@@ -729,8 +729,8 @@ typedef struct UnkStruct_0809E0A4 {
 } UnkStruct_0809E0A4;
 
 typedef struct UnkWork_0809E0A4 {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     UnkStruct_0809E0A4 unk_08;
     s16 unk_24;
     s16 unk_26;
@@ -1096,10 +1096,10 @@ typedef struct UnkStruct_08097A14 {
 } UnkStruct_08097A14;
 
 typedef struct UnkStruct_08099E70 {
-    void* unk_00;
-    void* unk_04;
-    u8 unk_08[0x18];
-    void* unk_20;
+    void* tiles;
+    void* palette;
+    u8 anim[0x18];
+    void* gfx;
     s32 unk_24;
     s32 unk_28;
     s32 unk_2C;
@@ -1187,7 +1187,7 @@ typedef struct UnkStruct_08090244 {
 typedef struct UnkStruct_08093838 {
     u8 unk_000[0x14];
     u8 unk_014[0x28];
-    void* unk_03C;
+    void* tiles;
     u8 unk_040[0x1AC];
     MapcardWork* unk_1EC;
     u8 unk_1F0[0x04];
@@ -1198,7 +1198,7 @@ typedef struct UnkStruct_08093838 {
     u8 unk_260[0x04];
     s32 unk_264;
     u8 unk_268[0x0C];
-    void* unk_274;
+    void* gfx;
     u8 unk_278[0x08];
     s16 unk_280;
     s16 unk_282;
@@ -1231,7 +1231,7 @@ typedef struct UnkStruct_080A2F54 {
     u8 unk_000[0x280];
     u8 unk_280[0x280];
     u8 unk_500[0x280];
-    void* unk_780;
+    void* tiles;
     void* unk_784;
     void* unk_788;
     u8 unk_78C;
@@ -1298,8 +1298,8 @@ typedef struct UnkStruct_08099CDC_Args {
 } UnkStruct_08099CDC_Args;
 
 typedef struct UnkStruct_080A18F4 {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
     void* unk_0C;
     s32 unk_10[4];
@@ -1339,9 +1339,9 @@ typedef struct UnkStruct_0809A368_Args {
     s32 unk_0C;
 } UnkStruct_0809A368_Args;
 
-typedef struct UnkStruct_080A5490 {
+typedef struct WorldSelBeforeWork {
     void* unk_00;
-    void* unk_04;
+    void* palette;
     void* unk_08;
     UnkStruct_080038C8* unk_0C;
     s32 unk_10;
@@ -1356,7 +1356,7 @@ typedef struct UnkStruct_080A5490 {
     u8 unk_98[10];
     u8 unk_A2;
     u8 unk_A3;
-} UnkStruct_080A5490;
+} WorldSelBeforeWork;
 
 typedef struct UnkStruct_080A5490_Args {
     s32 unk_00;
@@ -1420,10 +1420,10 @@ typedef struct UnkStruct_080991F8_Args {
 } UnkStruct_080991F8_Args;
 
 typedef struct UnkStruct_080991F8 {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C[0x18];
+    void* tiles;
+    void* palette;
+    void* gfx;
+    u8 anim[0x18];
     s32 unk_24;
     s32 unk_28;
     u8 unk_2C;
@@ -1828,7 +1828,7 @@ u8 func_0808A7E4(u8* work, void* a);
 u8 func_080A5198(UnkStruct_080A3F5C* w, void* a);
 void func_080A52BC(UnkStruct_080A3F5C* w);
 void func_080A6D0C(void);
-void func_080A5490(UnkStruct_080A5490* w, UnkStruct_080A5490_Args* a);
+void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a);
 void func_0807BC24(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
 void func_08081A3C(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
 u8 RELOAD_CHILDREN_1(u8* work, void* a);
