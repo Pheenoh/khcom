@@ -1918,13 +1918,13 @@ void func_08045494(SmnBody* body, u8 a, s16 b, s16 c) {
 
     if (a != 0) {
         if (gBtlWork->unk_10C == 0x98) {
-            r = 0x30;
-            q = 0x20;
             p = 0x20;
+            q = 0x20;
+            r = 0x30;
         } else {
-            r = 0x0A;
-            q = 0x0A;
             p = 0x0A;
+            q = 0x0A;
+            r = 0x0A;
         }
 
         if (func_08011F78(0x84, x, y, z, p, q, r) != 0) {
