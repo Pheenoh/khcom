@@ -443,6 +443,11 @@ typedef struct UnkStruct_02034FE0 {
     u8 unk_15C;
 } UnkStruct_02034FE0;
 
+typedef struct UnkStruct_02034FE4 {
+    u8 unk_00[0x08];
+    TaskPool unk_08;
+} UnkStruct_02034FE4;
+
 typedef struct UnkStruct_02034FDC {
     u8 unk_000[0x3C];
     UnkStruct_080E590C* unk_03C;
@@ -662,6 +667,8 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 void func_08012304(void* a);
 void TaskPoolDestroy(TaskPool* a);
+void func_080E4B34(void);
+void func_08066918(void* a, void* b);
 void TaskPoolDraw(TaskPool* a);
 void* AnimUpdate(AnimState* a);
 void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
