@@ -42,7 +42,7 @@ void ModeUpdate(void);
 void SetModeUpdate(void (*fn)(void));
 void func_08001254(void);
 void func_080012A8(void);
-void func_080012E0(void);
+void ModeCallExit(void);
 const char* GetModeName(void);
 void UpdateDebugModeSelect(void);
 
@@ -384,7 +384,7 @@ void func_080012A8(void) {
     }
 }
 
-void func_080012E0(void) {
+void ModeCallExit(void) {
     if (gCurrentMode->exit != 0) {
         gCurrentMode->exit();
     }

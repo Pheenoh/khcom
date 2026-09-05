@@ -254,7 +254,7 @@ typedef struct MdFireDef {
 
 typedef struct GaEntryWork {
     u8 unk_000[0x180];
-    AnimState unk_180;
+    AnimState anim;
     u8 unk_198[0x10];
 } GaEntryWork;
 

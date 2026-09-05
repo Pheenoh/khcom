@@ -44,7 +44,7 @@ typedef struct GaEntryWork {
     s16 unk_15C;
     u8 unk_15E[0xE];
     TaskPool unk_16C;
-    AnimState unk_180;
+    AnimState anim;
     void* unk_198;
     void* gfx;
     u32 unk_1A0;

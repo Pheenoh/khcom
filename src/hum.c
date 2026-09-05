@@ -414,7 +414,7 @@ void func_0804FA70(MahluxiaWork* work, RikuSpawn* dst) {
     } else {
         dst->unk_0C &= 0xFFFE;
     }
-    dst->unk_10 = work->base.anim;
+    dst->anim = work->base.anim;
     dst->unk_28 = *(u32*)work->base.tiles;
     dst->unk_2C = gBtlWork->unk_024;
 }
@@ -432,7 +432,7 @@ void func_0804FAD4(MahluxiaWork* work, RikuSpawn* p) {
     u16 pri;
 
     sub = work->base.unk_00C;
-    gfx = AnimGetGfx(&p->unk_10);
+    gfx = AnimGetGfx(&p->anim);
     act = &work->base.unk_040;
 
     if (func_080128EC() == 0) {
@@ -1511,7 +1511,7 @@ void task_hum_lex_rock_0(LexRockWork* work, VixenNdlArgs* args) {
     work->unk_162 = 0;
     work->unk_164 = 0;
     work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
-    work->unk_2BC = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_2C0 = 0;
 }
 
@@ -1530,7 +1530,7 @@ void task_hum_lex_rock_2(LexRockWork* work) {
     }
 
     if (work->unk_164 == 1) {
-        gfx = AnimGetGfx(&work->unk_34[0]);
+        gfx = AnimGetGfx(&work->anim[0]);
 
         if (work->unk_160 != 0) {
             attr = func_0801AF1C(work->y);
@@ -1543,7 +1543,7 @@ void task_hum_lex_rock_2(LexRockWork* work) {
     } else if (work->unk_164 == 12) {
         for (i = 0; i < work->unk_164; i++) {
             e = &work->unk_16C[i];
-            gfx = AnimGetGfx(&work->unk_34[i]);
+            gfx = AnimGetGfx(&work->anim[i]);
 
             if (work->unk_160 != 0) {
                 attr = func_0801AF1C(e->unk_04);
@@ -1555,7 +1555,7 @@ void task_hum_lex_rock_2(LexRockWork* work) {
             DrawSprite(x, y, gfx, work->unk_00[i], work->unk_30, 0, attr,
                 -0x1006 - (e->unk_04 >> 8) * 4);
             WorldToScreen(&x, &y, e->unk_00, e->unk_04, 0);
-            DrawSprite(x, y, gUnk_08B22CBC, work->tiles, work->unk_2BC, 0, attr, 0xFFFE);
+            DrawSprite(x, y, gUnk_08B22CBC, work->tiles, work->palette, 0, attr, 0xFFFE);
         }
     }
 }
@@ -1564,7 +1564,7 @@ void task_hum_lex_rock_3(LexRockWork* work) {
     s32 i;
 
     ReleaseObjTiles(work->tiles);
-    ReleaseObjPalette(work->unk_2BC);
+    ReleaseObjPalette(work->palette);
 
     if (work->unk_164 != 0) {
         ReleaseObjPalette(work->unk_30);
@@ -1702,7 +1702,7 @@ void func_08057E2C(RikuWork* work, RikuSpawn* dst) {
     } else {
         dst->unk_0C &= 0xFFFE;
     }
-    dst->unk_10 = work->base.anim;
+    dst->anim = work->base.anim;
     dst->unk_28 = *(u32*)work->base.tiles;
     dst->unk_2C = gBtlWork->unk_024;
 }
@@ -1720,7 +1720,7 @@ void func_08057E90(RikuWork* work, RikuSpawn* p) {
     u16 pri;
 
     sub = work->base.unk_00C;
-    gfx = AnimGetGfx(&p->unk_10);
+    gfx = AnimGetGfx(&p->anim);
     act = &work->base.unk_040;
 
     if (func_080128EC() == 0) {

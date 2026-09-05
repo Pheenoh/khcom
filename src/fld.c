@@ -45,7 +45,7 @@ void task_fld_sora_0(FldWork* work) {
 
     AnimInit(work->unk_08, 0, 0);
     func_08031F98(work, 0, 1);
-    work->unk_20 = AnimGetGfx(work->unk_08);
+    work->gfx = AnimGetGfx(work->unk_08);
 
     switch (gGameState.unk_0C) {
     case 7:
@@ -113,7 +113,7 @@ u8 func_08032268(FldWork* work, void* task) {
         }
 
         TaskPoolUpdate(work->unk_24);
-        work->unk_20 = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->unk_08);
         func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
         (*p)++;
     }
@@ -175,7 +175,7 @@ u8 func_0803234C(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -467,7 +467,7 @@ u8 func_080324DC(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
@@ -515,7 +515,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
 
         func_08031F98(work, 8, 1);
         work->unk_16 = ((act->unk_00.z >> 8) + 4) & 31;
-        work->unk_20 = AnimGetGfx(work->unk_08);
+        work->gfx = AnimGetGfx(work->unk_08);
 
         if (work->unk_12 == 0) {
             switch (work->unk_16) {
@@ -561,7 +561,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
                 act->unk_00.x += gSineTable[act->angle] * 10;
                 act->unk_00.y += -gSineTable[act->angle + 64] * 10;
                 func_08031F98(work, 0, 1);
-                work->unk_20 = AnimGetGfx(work->unk_08);
+                work->gfx = AnimGetGfx(work->unk_08);
                 work->unk_94 = 0;
                 work->unk_98 = 0;
                 SetTaskUpdate(task, (u32)task_fld_sora_1);
@@ -586,7 +586,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
             act->unk_00.x += gSineTable[act->angle] * 10;
             act->unk_00.y += -gSineTable[act->angle + 64] * 10;
             func_08031F98(work, 6, 0);
-            work->unk_20 = AnimGetGfx(work->unk_08);
+            work->gfx = AnimGetGfx(work->unk_08);
             SetTaskUpdate(task, (u32)func_080324DC);
         }
 
@@ -606,7 +606,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
             work->unk_98++;
         }
 
-        work->unk_20 = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->unk_08);
         break;
     }
 
@@ -712,7 +712,7 @@ u8 func_08033150(FldWork* work, void* task) {
         break;
     }
 
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
 
     if (func_08031D74(&act->unk_00) != 0) {
         act->unk_00.x = x;
@@ -872,7 +872,7 @@ u8 func_08033334(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -1106,7 +1106,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -1168,7 +1168,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
 
         func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
         func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-        work->unk_20 = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->unk_08);
         TaskPoolUpdate(work->unk_24);
         return 1;
     } else if (func_080DFC24() != 0) {
@@ -1399,7 +1399,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -1443,7 +1443,7 @@ void task_fld_sora_2(FldWork* work) {
 
     x = (act->unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (act->unk_00.y >> 8) + (act->unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, work->unk_20, work->tiles, work->palette, 0, pri, depth);
+    DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, pri, depth);
     TaskPoolDraw(work->unk_24);
 }
 
@@ -1744,7 +1744,7 @@ void task_fld_riku_0(FldWork* work) {
 
     AnimInit(work->unk_08, 0, 0);
     func_0803473C(work, 0, 1);
-    work->unk_20 = AnimGetGfx(work->unk_08);
+    work->gfx = AnimGetGfx(work->unk_08);
 
     switch (gGameState.unk_0C) {
     case 7:
@@ -1812,7 +1812,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
         }
 
         TaskPoolUpdate(work->unk_24);
-        work->unk_20 = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->unk_08);
         func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
         (*p)++;
     }
@@ -1875,7 +1875,7 @@ u8 func_08034AF0(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -2166,7 +2166,7 @@ u8 func_08034C88(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
@@ -2213,7 +2213,7 @@ u8 func_080353DC(FldWork* work, void* task) {
 
         func_0803473C(work, 8, 1);
         work->unk_16 = ((act->unk_00.z >> 8) + 4) & 31;
-        work->unk_20 = AnimGetGfx(work->unk_08);
+        work->gfx = AnimGetGfx(work->unk_08);
 
         if (work->unk_12 == 0) {
             switch (work->unk_16) {
@@ -2259,7 +2259,7 @@ u8 func_080353DC(FldWork* work, void* task) {
                 act->unk_00.x += gSineTable[act->angle] * 10;
                 act->unk_00.y += -gSineTable[act->angle + 64] * 10;
                 func_0803473C(work, 0, 1);
-                work->unk_20 = AnimGetGfx(work->unk_08);
+                work->gfx = AnimGetGfx(work->unk_08);
                 work->unk_94 = 0;
                 work->unk_98 = 0;
                 SetTaskUpdate(task, (u32)task_fld_riku_1);
@@ -2284,7 +2284,7 @@ u8 func_080353DC(FldWork* work, void* task) {
             act->unk_00.x += gSineTable[act->angle] * 10;
             act->unk_00.y += -gSineTable[act->angle + 64] * 10;
             func_0803473C(work, 6, 0);
-            work->unk_20 = AnimGetGfx(work->unk_08);
+            work->gfx = AnimGetGfx(work->unk_08);
             SetTaskUpdate(task, (u32)func_08034C88);
         }
 
@@ -2304,7 +2304,7 @@ u8 func_080353DC(FldWork* work, void* task) {
             work->unk_98++;
         }
 
-        work->unk_20 = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->unk_08);
         break;
     }
 
@@ -2410,7 +2410,7 @@ u8 func_080358F0(FldWork* work, void* task) {
         break;
     }
 
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
 
     if (func_08034518(&act->unk_00) != 0) {
         act->unk_00.x = x;
@@ -2565,7 +2565,7 @@ u8 func_08035AD4(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -2799,7 +2799,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
@@ -2861,7 +2861,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
 
         func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
         func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-        work->unk_20 = AnimUpdate(work->unk_08);
+        work->gfx = AnimUpdate(work->unk_08);
         TaskPoolUpdate(work->unk_24);
         return 1;
     } else if (func_080DFC24() != 0) {
@@ -3092,7 +3092,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
 
     func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
-    work->unk_20 = AnimUpdate(work->unk_08);
+    work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
     return 1;
 }
@@ -3136,7 +3136,7 @@ void task_fld_riku_2(FldWork* work) {
 
     x = (act->unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = (act->unk_00.y >> 8) + (act->unk_00.z >> 8) - (gUnk_02039BA0->unk_04 >> 8);
-    DrawSprite(x, y, work->unk_20, work->tiles, work->palette, 0, pri, depth);
+    DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, pri, depth);
     TaskPoolDraw(work->unk_24);
 }
 
@@ -3170,8 +3170,8 @@ void task_fld_shadow_0(FldShadowWork* work, FldActor* obj) {
     work->unk_04 = obj->unk_00.y;
     work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
     work->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    AnimInit(work->unk_14, gUnk_09EE1384, gUnk_09EE1380);
-    AnimStart(work->unk_14, 0, 1);
+    AnimInit(work->anim, gUnk_09EE1384, gUnk_09EE1380);
+    AnimStart(work->anim, 0, 1);
 }
 
 s32 task_fld_shadow_1(FldShadowWork* work) {
@@ -3195,7 +3195,7 @@ void task_fld_shadow_2(FldShadowWork* work) {
         return;
     }
 
-    spr = AnimUpdate(work->unk_14);
+    spr = AnimUpdate(work->anim);
     z = obj->unk_3C;
 
     if (obj->unk_00.z >= z) {

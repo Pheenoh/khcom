@@ -188,7 +188,7 @@ typedef struct PcAcdWork {
     u8 unk_018;
     u8 unk_019[0x3];
     struct PcFltWork* unk_01C;
-    AnimState unk_020;
+    AnimState anim;
 } PcAcdWork;
 
 typedef struct PcFltWork {
@@ -217,7 +217,7 @@ typedef struct PcFltWork {
     PcPos* unk_03C;
     u32 unk_040;
     u8 unk_044[0x58];
-    AnimState unk_09C;
+    AnimState anim;
 } PcFltWork;
 
 typedef struct PcFldWork {
@@ -254,7 +254,7 @@ typedef struct LstSub {
     u8 unk_028[0x24];
     u64 unk_04C;
     u8 unk_054[0xD4];
-    AnimState unk_128;
+    AnimState anim;
 } LstSub;
 
 typedef struct BosLstWork {
@@ -282,7 +282,7 @@ typedef struct BosLstWork {
     u16 unk_024;
     s16 unk_026;
     u32 unk_028;
-    AnimState unk_02C;
+    AnimState anim;
     s32 unk_044;
     s32 unk_048;
     s32 unk_04C;

@@ -284,7 +284,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
             e->unk_1A6 = 0;
         }
     }
-    e->gfx = AnimUpdate(&e->unk_180);
+    e->gfx = AnimUpdate(&e->anim);
 
     if (e->unk_1A0 == 0) {
         work->gfx = AnimUpdate(&work->unk_A10);
