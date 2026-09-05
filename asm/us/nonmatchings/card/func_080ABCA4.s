@@ -162,7 +162,7 @@ _080ABDC0:
 	cmp r0, #0x2F
 	bne _080ABE14
 	adds r0, r1, #0x0
-	bl _080AC140
+	bl func_080AC140
 	str r0, [r6, #0x04]
 	str r0, [r6, #0x00]
 	ldr r0, [r7, #0x00]
@@ -179,7 +179,7 @@ _080ABDF0:
 	cmp r0, #0x2F
 	bne _080ABE14
 	adds r0, r1, #0x0
-	bl _080AC140
+	bl func_080AC140
 	str r0, [r6, #0x04]
 	str r0, [r6, #0x00]
 	ldr r0, [r7, #0x00]
@@ -190,7 +190,7 @@ _080ABDF0:
 _080ABE10: .4byte 0x02039B9C
 _080ABE14:
 	adds r0, r1, #0x0
-	bl _080AC140
+	bl func_080AC140
 	b _080ABEBC
 _080ABE1C:
 	cmp r6, #0x00
