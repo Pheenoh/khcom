@@ -6729,7 +6729,87 @@ void func_080EC04C(UnkStruct_02034FE0* work) {
 INCLUDE_ASM("map/func_080EC04C.s");
 #endif
 
+#ifndef VERSION_EU
+void func_080EC0D4(s32 arg) {
+    s32 i;
+
+    gUnk_02034FE0 = EwramAlloc(0x18C);
+    gUnk_02034FE0->unk_181 = arg != 0;
+
+    if (gUnk_02034FE0->unk_181 != 0) {
+        gUnk_02034FE0->unk_180 = 0;
+    } else {
+        gUnk_02034FE0->unk_180 = (gGameState.flags >> 5) & 1;
+    }
+
+    gUnk_02034FE0->unk_182 = 0;
+    gUnk_02034FE0->unk_183 = 0;
+
+    if (gUnk_02034FE0->unk_180 != 0) {
+        gUnk_02034FE0->unk_184 = 3;
+        gUnk_02034FE0->unk_15E = 17;
+        gUnk_02034FE0->unk_034 = gUnk_02034FE0->unk_15E << 8;
+    } else {
+        gUnk_02034FE0->unk_184 = 1;
+        gUnk_02034FE0->unk_15E = 43;
+        gUnk_02034FE0->unk_034 = gUnk_02034FE0->unk_15E << 8;
+    }
+
+    gUnk_02034FE0->unk_186 = 16;
+    gUnk_02034FE0->unk_188 = func_080EBE44;
+    SetBgMode0();
+    SetupBg(3, 0, 28, 0);
+    SetupBg(2, 0, 29, 0);
+    SetupBg(1, 0, 30, 0);
+    SetupBg(0, 3, 31, 0);
+    LoadBgTiles(3, gUnk_09959A64, 0x8000);
+    LoadBgPalette(3, gUnk_099919C4, 0x200);
+    LoadBgMap(3, gUnk_09986F44, 0x800);
+    LoadBgTiles(2, gUnk_09959A64, 0x8000);
+    LoadBgPalette(2, gUnk_099919C4, 0x200);
+    LoadBgMap(2, gUnk_09987744, 0x800);
+    LoadBgTiles(1, gUnk_09959A64, 0x8000);
+    LoadBgPalette(1, gUnk_099919C4, 0x200);
+
+    if (gUnk_02034FE0->unk_180 != 0) {
+        LoadBgMap(1, gUnk_09988F44, 0x800);
+        SetBgScroll(1, 0, 0xFFFF);
+    } else {
+        LoadBgMap(1, gUnk_09987F44, 0x800);
+        SetBgScroll(1, 0, 0xFFFD);
+    }
+
+    gUnk_02034FE0->unk_000 = LoadObjPalette(gUnk_09991BC4, 32);
+    gUnk_02034FE0->unk_004 = LoadObjTiles(gUnk_098A87AA, 0x2C0);
+    gUnk_02034FE0->unk_008 = -0x800;
+    gUnk_02034FE0->unk_00C = 0xA000;
+    gUnk_02034FE0->unk_010 = -0x8000;
+    gUnk_02034FE0->unk_164 = AllocObjTiles(0x340, gUnk_088B6560);
+    gUnk_02034FE0->unk_160 = LoadObjPalette(gUnk_08F683A4, 32);
+    gUnk_02034FE0->unk_16C = AllocObjTiles(0x280, gUnk_0919FDF8);
+    gUnk_02034FE0->unk_168 = LoadObjPalette(gUnk_09617C58, 32);
+    gUnk_02034FE0->unk_174 = AllocObjTiles(0x400, gUnk_091ABDB8);
+    gUnk_02034FE0->unk_170 = LoadObjPalette(gUnk_08F68384, 32);
+    gUnk_02034FE0->unk_17C = AllocObjTiles(0x400, gUnk_092EB78A);
+    gUnk_02034FE0->unk_178 = LoadObjPalette(gUnk_09618118, 32);
+    gUnk_02034FE0->unk_02C = LoadObjPalette(gUnk_09991BE4, 32);
+    gUnk_02034FE0->unk_030 = AllocObjTiles(0x120, gUnk_098A8AE2);
+    AnimInit((AnimState*)gUnk_02034FE0->unk_014, gUnk_09EF8D88, gUnk_09EF8D78);
+    AnimStart((AnimState*)gUnk_02034FE0->unk_014, 0, 1);
+    gUnk_02034FE0->unk_038 = LoadObjPalette(gUnk_09991C04, 32);
+    gUnk_02034FE0->unk_15C = 0;
+    func_08065ACC(gUnk_02034FE0->unk_03C, 36);
+
+    for (i = 0; i < 4; i++) {
+        func_080EBA14(i);
+    }
+
+    func_080EBA58(gUnk_02034FE0->unk_183);
+    func_08006120(0, 16);
+}
+#else
 INCLUDE_ASM("map/func_080EC0D4.s");
+#endif
 
 void func_080EC424(void) {
     if (gUnk_02034FE0->unk_188 != 0) {
@@ -7742,7 +7822,106 @@ s32 func_080EDE78(MapMenuWork* w) {
 INCLUDE_ASM("map/func_080EDE78.s");
 #endif
 
+#ifndef VERSION_EU
+void func_080EDECC(MapMenuWork* w) {
+    s32 i;
+    s32 k;
+
+    DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8E74[0], w->unk_004, w->unk_000, 0, 0x400, 90);
+    DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8E74[1], w->unk_004, w->unk_000, 0, 0x400, 90);
+
+    if (gUnk_0203C7AC->unk_00 & 0x1000) {
+        if (gGameState.flags & 8) {
+            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EEF89C[0], w->unk_13C, w->unk_138,
+                0, 0x400, 80);
+        } else {
+            DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, ((void**)gUnk_09EDE8CC)[0], w->unk_13C,
+                w->unk_138, 0, 0x400, 80);
+        }
+
+        DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EE1380[0], w->unk_144, w->unk_140, 0,
+            0x400, 81);
+    }
+
+    if (w->unk_30E != 0) {
+        DrawSprite(w->unk_014 >> 8, 0, gUnk_09EF8E6C[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+        DrawSprite(w->unk_01C >> 8, 14, gUnk_09EF8E64[0], w->unk_018, w->unk_000, 0, 0x400, 90);
+
+        if (gGameState.flags & 8) {
+            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+            DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E80[2], w->unk_024, w->unk_020, 0, 0x400,
+                81);
+
+            if (w->unk_164[0] != 0) {
+                DrawSprite((w->unk_02C >> 8) + 18, 124, w->unk_170[0], w->unk_164[0],
+                    w->unk_158[0], 0, 0x400, 80);
+            }
+        } else {
+            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+            DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+            DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E0C[2], w->unk_024, w->unk_020, 0, 0x400,
+                81);
+
+            for (i = 0; i < 3; i++) {
+                k = i * 20 + 14;
+
+                if (w->unk_164[i] != 0) {
+                    DrawSprite((w->unk_02C >> 8) + k, 124, w->unk_170[i], w->unk_164[i],
+                        w->unk_158[i], 0, 0x400, 80);
+                }
+            }
+        }
+
+        if (!(gGameState.flags & 8)) {
+            DrawSprite(w->unk_030 >> 8, 144, gUnk_09EF8E0C[3], w->unk_024, w->unk_020, 0, 0x400,
+                81);
+            func_080664D8((w->unk_030 >> 8) + 16, 145, &w->unk_074, w->unk_070, 50,
+                w->unk_074[0xC0]);
+        }
+
+        if (w->unk_034 != 0) {
+            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[w->unk_309], w->unk_040, w->unk_03C, 0,
+                0x400, 81);
+            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E44[w->unk_309], w->unk_040, w->unk_038, 0,
+                0x400, 81);
+        } else {
+            DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[7], w->unk_040, w->unk_03C, 0, 0x400,
+                80);
+        }
+
+        if (w->unk_034 != 0) {
+            switch (w->unk_30A) {
+            case 1:
+                func_0805F1C0(&w->unk_068, 0x4800);
+                DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
+                    1, 60);
+                break;
+            case 2:
+                func_0805F1C0(&w->unk_068, 0x8800);
+                DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
+                    1, 60);
+                break;
+            case 0:
+            default:
+                func_0805F1C0(&w->unk_06C, (w->unk_309 * 19 + 16) << 8);
+                DrawSprite(24, w->unk_06C >> 8, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
+                    0x401, 60);
+                break;
+            }
+        }
+
+        if (w->unk_30A != 0) {
+            func_080664D8((240 - func_08065B08(w->unk_180, w->unk_288)) / 2, 64, w->unk_180,
+                w->unk_17C, 70, w->unk_288);
+            func_080664D8(80, 84, w->unk_28C, w->unk_17C, 70, w->unk_2BC);
+            func_080664D8(144, 84, w->unk_2C0, w->unk_17C, 70, w->unk_308);
+        }
+    }
+}
+#else
 INCLUDE_ASM("map/func_080EDECC.s");
+#endif
 
 void func_080EE418(MapMenuWork* w) {
     s32 i;
@@ -7892,7 +8071,97 @@ s32 func_080EE7B0(MapSaveWork* w) {
 INCLUDE_ASM("map/func_080EE7B0.s");
 #endif
 
+#ifndef VERSION_EU
+s32 func_080EE824(MapSaveWork* w) {
+    u8* p1;
+    u8* p2;
+    u8* p3;
+
+    if (w->unk_2F6 != 0) {
+        ApproachValue(&w->unk_010, 0, w->unk_2F6);
+
+        if (gGameState.flags & 8) {
+            ApproachValue(&w->unk_170, 0x3800, w->unk_2F6);
+            ApproachValue(&w->unk_174, 0x7000, w->unk_2F6);
+        } else {
+            ApproachValue(&w->unk_170, 0x3800, w->unk_2F6);
+            ApproachValue(&w->unk_174, 0x7000, w->unk_2F6);
+        }
+        w->unk_2F6 -= 1;
+    } else {
+        if (!(gGameState.flags & 8)) {
+            w->unk_040 = LoadObjPalette(gUnk_09991C04, 32);
+        } else {
+            w->unk_040 = LoadObjPalette(gUnk_09991C44, 32);
+        }
+
+        w->unk_044[0x120] = 0;
+        func_08065ACC(w->unk_044, 36);
+        SetupBg(0, 3, 31, 11);
+        SetBgPriority(0, 0);
+        LoadBgPalette(0, gUnk_09991C84, 128);
+        LoadBgTiles(0, gUnk_099661A4, 0x1FA0);
+
+        if (gGameState.flags & 8) {
+            if (gGameState.flags & 0x10) {
+                LoadBgMap(0, gUnk_0998C744, 0x800);
+
+                if (SaveRepairFileSmall(1) == 2) {
+                    func_080EE760((u8*)w, 3);
+                }
+            } else {
+                LoadBgMap(0, gUnk_0998BF44, 0x800);
+
+                if (SaveRepairFileSmall(0) == 2) {
+                    func_080EE760((u8*)w, 2);
+                }
+            }
+        } else {
+            if (gGameState.flags & 0x10) {
+                LoadBgMap(0, gUnk_0998B744, 0x800);
+
+                if (SaveRepairFileLarge(1) == 2) {
+                    func_080EE760((u8*)w, 1);
+                }
+            } else {
+                LoadBgMap(0, gUnk_0998AF44, 0x800);
+
+                if (SaveRepairFileLarge(0) == 2) {
+                    func_080EE760((u8*)w, 0);
+                }
+            }
+        }
+
+        SetBgScroll(0, 0, 0xFFFB);
+        w->unk_184 = AllocObjTiles(0x280, gUnk_0919FDF8);
+        w->unk_18C = AllocObjTiles(0x400, gUnk_091ABDB8);
+        w->unk_014 = LoadObjPalette(gUnk_09991D24, 32);
+        w->unk_018 = LoadObjTiles(gUnk_098A8F8A, 0x4C0);
+        w->unk_034 = LoadObjPalette(gUnk_099919A4, 32);
+        w->unk_038 = AllocObjTiles(0x120, gUnk_098A8628);
+        AnimInit(&w->unk_01C, gUnk_09EF8D58, gUnk_09EF8D48);
+        AnimStart(&w->unk_01C, 2, 1);
+        w->unk_190 = _08066468(1);
+        p1 = w->unk_194;
+        func_08065ACC(p1, 27);
+        p2 = w->unk_270;
+        func_08065ACC(p2, 6);
+        p3 = w->unk_2A4;
+        func_08065ACC(p3, 9);
+        w->unk_26C = func_08065B6C(gUnk_08159DF0, p1);
+        w->unk_2A0 = func_08065B6C(gUnk_08159E10, p2);
+        w->unk_2EC = func_08065B6C(gUnk_08159E18, p3);
+        func_080EE50C((UnkStruct_080EE50C*)w, 1);
+        w->unk_2F8 = 1;
+        w->unk_2F4 = 2;
+        w->unk_03C = 0xB000;
+        w->unk_2F0 = func_080EEB00;
+    }
+    return 1;
+}
+#else
 INCLUDE_ASM("map/func_080EE824.s");
+#endif
 
 #ifndef VERSION_EU
 s32 func_080EEB00(MapSaveWork* w) {
@@ -8061,7 +8330,65 @@ s32 func_080EEF04(MapSaveWork* w) {
 INCLUDE_ASM("map/func_080EEF04.s");
 #endif
 
+#ifndef VERSION_EU
+void func_080EEF4C(MapSaveWork* w) {
+    TaskPoolDraw(&w->unk_2FC);
+    DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8D8C[1], w->unk_004, w->unk_000, 0, 0x400, 90);
+    DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8D8C[2], w->unk_004, w->unk_000, 0, 0x400, 90);
+    DrawSprite(w->unk_010 >> 8, 0, gUnk_09EF8D8C[0], w->unk_004, w->unk_000, 0, 0x400, 80);
+
+    if (gUnk_0203C7AC->unk_00 & 0x1000) {
+        if (gGameState.flags & 8) {
+            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, gUnk_09EEF89C[0], w->unk_16C, w->unk_168,
+                0, 0x400, 80);
+        } else {
+            DrawSprite(w->unk_170 >> 8, w->unk_174 >> 8, ((void**)gUnk_09EDE8CC)[0], w->unk_16C,
+                w->unk_168, 0, 0x400, 80);
+        }
+    }
+
+    if (w->unk_2F8 != 0) {
+        if (!(gGameState.flags & 8)) {
+            DrawSprite(72, 96, ((void**)gUnk_09EEE03C)[0], w->unk_184, w->unk_180, 0, 0x401, 81);
+            DrawSprite(40, 96, ((void**)gUnk_09EEE1C8)[0], w->unk_18C, w->unk_188, 0, 0x400, 81);
+        }
+
+        DrawSprite(0, 16, gUnk_098A8F28, w->unk_018, w->unk_014, 0, 0x400, 90);
+        func_080664D8(100, 59, w->unk_044, w->unk_040, 50, w->unk_044[0x120]);
+
+        if (w->unk_2F4 != 0) {
+#ifdef VERSION_JP
+            func_080664D8(129, 92, w->unk_194, w->unk_190, 50, w->unk_26C);
+#else
+            func_080664D8(124, 92, w->unk_194, w->unk_190, 50, w->unk_26C);
+#endif
+            func_080664D8(128, 114, w->unk_270, w->unk_190, 50, w->unk_2A0);
+            func_080664D8(184, 114, w->unk_2A4, w->unk_190, 50, w->unk_2EC);
+        } else {
+#ifdef VERSION_JP
+            func_080664D8(129, 103, w->unk_194, w->unk_190, 50, w->unk_26C);
+#else
+            func_080664D8(130, 102, w->unk_194, w->unk_190, 50, w->unk_26C);
+#endif
+        }
+
+        switch (w->unk_2F4) {
+        case 1:
+            func_0805F1C0(&w->unk_03C, 0x7800);
+            DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->unk_01C), w->unk_038, w->unk_034, 0, 1,
+                40);
+            break;
+        case 2:
+            func_0805F1C0(&w->unk_03C, 0xB000);
+            DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->unk_01C), w->unk_038, w->unk_034, 0, 1,
+                40);
+            break;
+        }
+    }
+}
+#else
 INCLUDE_ASM("map/func_080EEF4C.s");
+#endif
 
 #ifndef VERSION_EU
 void func_080EF234(MapSaveWork* w) {
