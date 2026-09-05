@@ -1904,7 +1904,7 @@ s16 func_080E1204(u8 a, u8 b, s16 c);
 u8 func_080E1CE0(s16 x, s16 y, u8 n);
 s16 func_080E1194(u8 a, u8 b, s16 c);
 void func_080E1C64(s16 x, s16 y, u8 n);
-s32 func_080E1CA8(s16 x, s16 y);
+u8 func_080E1CA8(s16 x, s16 y);
 void func_080E1D08(s16 x, s16 y);
 void func_080E1FA8(s16 x, s16 y);
 void func_080E2318(s16 y);
