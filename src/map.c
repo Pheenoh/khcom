@@ -3853,7 +3853,16 @@ void func_080EB1AC(UnkStruct_02034FDC* w) {
 
 INCLUDE_ASM("map/func_080EB1F4.s");
 
-INCLUDE_ASM("map/func_080EB27C.s");
+void func_080EB27C(UnkStruct_02034FDC* w) {
+    if (w->unk_340 != 0) {
+        ApproachValue(&w->unk_008, -0x800, w->unk_340);
+        ApproachValue(&w->unk_00C, 0xA000, w->unk_340);
+        w->unk_340--;
+    } else {
+        func_08006184(0, 90);
+        w->unk_344 = func_080EB2D0;
+    }
+}
 
 INCLUDE_ASM("map/func_080EB2D0.s");
 
@@ -3974,7 +3983,16 @@ void func_080EBFB8(UnkStruct_02034FE0* work) {
     }
 }
 
-INCLUDE_ASM("map/func_080EBFF8.s");
+void func_080EBFF8(UnkStruct_02034FE0* work) {
+    if (work->unk_186 != 0) {
+        ApproachValue(&work->unk_008, -0x800, work->unk_186);
+        ApproachValue(&work->unk_00C, 0xA000, work->unk_186);
+        work->unk_186--;
+    } else {
+        func_08006184(0, 16);
+        work->unk_188 = func_080EC04C;
+    }
+}
 
 INCLUDE_ASM("map/func_080EC04C.s");
 
@@ -4249,7 +4267,24 @@ INCLUDE_ASM("map/func_080EDD7C.s");
 
 INCLUDE_ASM("map/func_080EDDBC.s");
 
+#ifndef VERSION_EU
+s32 func_080EDE78(MapMenuWork* w) {
+    if (w->unk_30F != 0) {
+        func_08006120(0, 16);
+    }
+
+    if (w->unk_30E != 0) {
+        AnimUpdate(&w->unk_048);
+    }
+
+    if (w->unk_310 != 0 && (u8)w->unk_310(w) == 0) {
+        return 0;
+    }
+    return 1;
+}
+#else
 INCLUDE_ASM("map/func_080EDE78.s");
+#endif
 
 INCLUDE_ASM("map/func_080EDECC.s");
 
@@ -4767,7 +4802,15 @@ INCLUDE_ASM("map/func_080F0348.s");
 
 INCLUDE_ASM("map/func_080F0470.s");
 
-INCLUDE_ASM("map/func_080F0550.s");
+void func_080F0550(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
+    func_080E6394((UnkStruct_080E590C*)w, arg);
+    w->unk_CC = func_080F02A0;
+    func_080E5D6C((UnkStruct_080E590C*)w, 0, 1);
+    w->unk_C4 = AnimGetGfx(&w->unk_A4);
+    func_08012614(&w->unk_48, 0);
+    w->unk_D0 = 0;
+    *(UnkStruct_080DFF1C*)&w->unk_F8 = *(UnkStruct_080DFF1C*)&w->unk_08;
+}
 
 INCLUDE_ASM("map/func_080F05A4.s");
 
@@ -5122,7 +5165,22 @@ s32 func_080F1EA0(MapGmkGpWork* w) {
 
 INCLUDE_ASM("map/func_080F1ED4.s");
 
-INCLUDE_ASM("map/func_080F1F98.s");
+u8 func_080F1F98(MapGmkGpWork* w) {
+    if ((u8)func_080E0390() != 0) {
+        return 0;
+    }
+
+    if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
+        func_08012614(&w->unk_044, 1);
+    } else {
+        func_08012614(&w->unk_044, 0);
+    }
+
+    if (w->unk_0C8 != 0) {
+        return w->unk_0C8(w);
+    }
+    return 1;
+}
 
 INCLUDE_ASM("map/func_080F1FEC.s");
 
@@ -5174,7 +5232,22 @@ INCLUDE_ASM("map/func_080F238C.s");
 
 INCLUDE_ASM("map/func_080F23E8.s");
 
-INCLUDE_ASM("map/func_080F24B0.s");
+u8 func_080F24B0(MapGmkGpWork* w) {
+    if ((u8)func_080E0390() != 0) {
+        return 0;
+    }
+
+    if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
+        func_08012614(&w->unk_044, 1);
+    } else {
+        func_08012614(&w->unk_044, 0);
+    }
+
+    if (w->unk_0C8 != 0) {
+        return w->unk_0C8(w);
+    }
+    return 1;
+}
 
 INCLUDE_ASM("map/func_080F2504.s");
 
@@ -5192,7 +5265,22 @@ INCLUDE_ASM("map/func_080F2654.s");
 
 INCLUDE_ASM("map/func_080F26B0.s");
 
-INCLUDE_ASM("map/func_080F2778.s");
+u8 func_080F2778(MapGmkGpWork* w) {
+    if ((u8)func_080E0390() != 0) {
+        return 0;
+    }
+
+    if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
+        func_08012614(&w->unk_044, 1);
+    } else {
+        func_08012614(&w->unk_044, 0);
+    }
+
+    if (w->unk_0C8 != 0) {
+        return w->unk_0C8(w);
+    }
+    return 1;
+}
 
 INCLUDE_ASM("map/func_080F27CC.s");
 
@@ -5218,7 +5306,22 @@ s32 func_080F28F4(MapGmkGpWork* w) {
 
 INCLUDE_ASM("map/func_080F2934.s");
 
-INCLUDE_ASM("map/func_080F2A10.s");
+u8 func_080F2A10(MapGmkGpWork* w) {
+    if ((u8)func_080E0390() != 0) {
+        return 0;
+    }
+
+    if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
+        func_08012614(&w->unk_044, 1);
+    } else {
+        func_08012614(&w->unk_044, 0);
+    }
+
+    if (w->unk_0C8 != 0) {
+        return w->unk_0C8(w);
+    }
+    return 1;
+}
 
 INCLUDE_ASM("map/func_080F2A64.s");
 
@@ -5234,7 +5337,22 @@ INCLUDE_ASM("map/func_080F2B78.s");
 
 INCLUDE_ASM("map/func_080F2BD0.s");
 
-INCLUDE_ASM("map/func_080F2CAC.s");
+u8 func_080F2CAC(MapGmkGpWork* w) {
+    if ((u8)func_080E0390() != 0) {
+        return 0;
+    }
+
+    if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
+        func_08012614(&w->unk_044, 1);
+    } else {
+        func_08012614(&w->unk_044, 0);
+    }
+
+    if (w->unk_0C8 != 0) {
+        return w->unk_0C8(w);
+    }
+    return 1;
+}
 
 INCLUDE_ASM("map/func_080F2D00.s");
 
@@ -5260,7 +5378,22 @@ s32 func_080F2E4C(MapGmkGpWork* w) {
 
 INCLUDE_ASM("map/func_080F2E90.s");
 
-INCLUDE_ASM("map/func_080F2F6C.s");
+u8 func_080F2F6C(MapGmkGpWork* w) {
+    if ((u8)func_080E0390() != 0) {
+        return 0;
+    }
+
+    if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
+        func_08012614(&w->unk_044, 1);
+    } else {
+        func_08012614(&w->unk_044, 0);
+    }
+
+    if (w->unk_0C8 != 0) {
+        return w->unk_0C8(w);
+    }
+    return 1;
+}
 
 INCLUDE_ASM("map/func_080F2FC0.s");
 
@@ -5523,7 +5656,15 @@ void func_080F4428(MapGmk04Work* w) {
     func_080121FC(&w->unk_004);
 }
 
-INCLUDE_ASM("map/func_080F445C.s");
+void func_080F445C(MapGmk05Work* w) {
+    if (w->unk_0C8 != 0 && (GetKeysPressed() & 1)) {
+        gUnk_02039BA0->unk_70 |= 0x1000;
+        func_0801CB0C();
+        func_08006184(0, 16);
+        m4aSongNumStart(0xCF);
+        w->unk_0C4 = func_080F44AC;
+    }
+}
 
 INCLUDE_ASM("map/func_080F44AC.s");
 
@@ -5614,7 +5755,7 @@ void func_080F4EC4(MapPrizeWork* w) {
     func_08012304(w->unk_10);
 }
 
-void func_080F4EE4(UnkStruct_080F4EE4* work) {
+void func_080F4EE4(MapPrzCardWork* work) {
     work->unk_0B4 = -gSineTable[((work->unk_0D0 + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
     work->unk_0B6 = -gSineTable[((work->unk_0CF + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
 
@@ -5626,7 +5767,20 @@ void func_080F4EE4(UnkStruct_080F4EE4* work) {
     }
 }
 
-INCLUDE_ASM("map/func_080F4F60.s");
+void func_080F4F60(MapPrzCardWork* w) {
+    s32 dx;
+    s32 dy;
+
+    dx = 0x7800;
+    dy = 0x5000;
+    dx -= w->unk_000;
+    dy -= w->unk_004;
+    w->unk_0C8 = func_0805F5A4(&dx, &dy);
+    w->unk_0C0 = -dx;
+    w->unk_0C4 = -dy;
+    w->unk_0B0 = 0x300;
+    w->unk_0AC = 2;
+}
 
 INCLUDE_ASM("map/func_080F4FB0.s");
 
@@ -5643,12 +5797,12 @@ s32 func_080F5580(MapPrzCardWork* w) {
         return 0;
     }
 
-    if (w->unk_8C == 0) {
+    if (w->unk_08C == 0) {
         return 0;
     }
-    w->unk_8C(w);
+    w->unk_08C(w);
 
-    if (w->unk_8C == 0) {
+    if (w->unk_08C == 0) {
         return 0;
     }
     return 1;
@@ -5743,15 +5897,36 @@ void func_080F5B00(u8* work) {
     ReleaseObjPalette(*(u8**)&work[0x20]);
 }
 
-INCLUDE_ASM("map/func_080F5B18.s");
+void func_080F5B18(MapTalkWork* w, s32* arg) {
+    w->unk_00 = arg;
+    w->unk_1C = AllocObjTiles(0x200, &gUnk_098A4B68[0x1028]);
+    w->unk_20 = LoadObjPalette(gUnk_08F69BE4, 32);
+    AnimInit(&w->unk_04, (s32)gUnk_09EF8CD0, (s32)gUnk_09EF8CC8);
+    AnimStart(&w->unk_04, 0, 1);
+    w->unk_28 = 0;
+}
 
-INCLUDE_ASM("map/func_080F5B68.s");
+s32 func_080F5B68(MapTalkWork* w) {
+    s32* p = w->unk_00;
+    AnimState* anim = &w->unk_04;
+
+    AnimUpdate(anim);
+
+    if (gUnk_02039BA0->unk_18 < *p) {
+        w->unk_28 = 0;
+        AnimStart(anim, 0, 1);
+    } else {
+        w->unk_28 = 1;
+        AnimStart(anim, 1, 1);
+    }
+    return 1;
+}
 
 INCLUDE_ASM("map/func_080F5BB8.s");
 
-void func_080F5C48(u8* work) {
-    ReleaseObjTiles(*(void**)&work[0x1C]);
-    ReleaseObjPalette(*(u8**)&work[0x20]);
+void func_080F5C48(MapTalkWork* w) {
+    ReleaseObjTiles(w->unk_1C);
+    ReleaseObjPalette(w->unk_20);
 }
 
 INCLUDE_ASM("map/func_080F5C60.s");
@@ -6000,7 +6175,14 @@ INCLUDE_ASM("map/func_080F74E8.s");
 
 INCLUDE_ASM("map/func_080F753C.s");
 
-INCLUDE_ASM("map/func_080F7594.s");
+void func_080F7594(MapStairWork* w) {
+    if ((u8)func_080F7488((UnkStruct_080DFF1C*)w, 0x3000) != 0) {
+        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_0203C7AC->unk_00 |= 0x4000;
+        func_080A411C(&w->unk_50, 0, 0xA7);
+        w->unk_4C = func_080F75E4;
+    }
+}
 
 INCLUDE_ASM("map/func_080F75E4.s");
 
