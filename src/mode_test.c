@@ -96,8 +96,142 @@ void task_lockon_0(LockonWork* w) {
     w->unk_4C = 0;
 }
 
+#ifdef NON_MATCHING
+u8 task_lockon_1(LockonWork* w) {
+    FldObj* o;
+    s8 count;
+    s8 i;
+    s8 nsel;
+    s8 list[8];
+    s32 px;
+    s32 py;
+    s32 dx;
+    s32 dy;
+    s32 ox;
+    s32 oy;
+
+    i = 0;
+    o = ListPoolFirst(&gUnk_02039BA0->unk_58);
+
+    if (gUnk_02039BA0->unk_70 & 1) {
+        gUnk_02039BA0->unk_68 = 0;
+        return 1;
+    }
+
+    func_0805F66C(w);
+
+    if (w->unk_2E != w->unk_2D) {
+        w->unk_30 = 0;
+    }
+
+    px = gUnk_02039BA0->unk_18;
+    py = gUnk_02039BA0->unk_1C;
+    count = 0;
+
+    if ((gUnk_02039BA0->unk_70 & 2) == 0) {
+        while (o != 0) {
+            ox = o->unk_00;
+            oy = o->unk_04;
+            dx = px - ox;
+            dy = py - oy;
+
+            if (func_0805F588(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->unk_24) {
+                if (o->unk_30 == 3) {
+                    gUnk_02039DC4->unk_00 = o->unk_00;
+                    gUnk_02039DC4->unk_04 = o->unk_04;
+                    gUnk_02039DC4->unk_08 = o->unk_08;
+                }
+
+                w->unk_0C[count++] = o;
+                w->unk_2C++;
+            }
+
+            if (count > 6) {
+                break;
+            }
+
+            o = ListPoolNext(&o->unk_1C);
+        }
+
+        if (w->unk_2C != 0) {
+            nsel = 0;
+
+            for (i = 0; i < w->unk_2C; i++) {
+                if (func_0805F6B4(gUnk_02039BA0->unk_2C, px, py, w->unk_0C[i])) {
+                    w->unk_2D = i;
+                    list[nsel++] = i;
+                }
+            }
+
+            if (nsel > 1) {
+                w->unk_2D = func_0805F5D8(px, py, w, nsel, list);
+            }
+        }
+    }
+
+    if (w->unk_2D >= 0) {
+        gUnk_02039BA0->unk_68 = w->unk_0C[w->unk_2D];
+    } else {
+        gUnk_02039BA0->unk_68 = 0;
+        w->unk_30 = 0;
+    }
+
+    w->unk_2E = w->unk_2D;
+    w->gfx = AnimUpdate(&w->anim);
+    return 1;
+}
+#else
 INCLUDE_ASM("mode_test/task_lockon_1.s");
+#endif
+#ifdef NON_MATCHING
+void task_lockon_2(LockonWork* w) {
+    FldObj* obj;
+    s32 x;
+    s32 y;
+    s32 x2;
+    s32 y2;
+
+    if (gUnk_02039BA0->unk_70 & 0x40000) {
+        return;
+    }
+
+    obj = w->unk_0C[w->unk_2D];
+
+    if (obj->unk_30 == 2) {
+        return;
+    }
+
+    x = (obj->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    x2 = x + 12;
+    y = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - obj->unk_1A;
+    y2 = y - 8;
+
+    if (x + 60 > 240) {
+        x2 = 192;
+    }
+
+    if (y > 160) {
+        y2 = 152;
+    }
+
+    if (w->unk_2F++ > 10) {
+        w->unk_2F = 0;
+    }
+
+    if (gUnk_02039BA0->unk_68 == 0) {
+        return;
+    }
+
+    if (w->unk_2D < 0) {
+        return;
+    }
+
+    obj = w->unk_0C[w->unk_2D];
+    DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8), (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0, (u16)(-0x100E - ((w->unk_0C[w->unk_2D]->unk_04 >> 8) << 2)));
+}
+#else
 INCLUDE_ASM("mode_test/task_lockon_2.s");
+#endif
 
 void task_lockon_3(LockonWork* w) {
     ReleaseObjTiles(w->tiles);
@@ -272,7 +406,62 @@ void func_0805F904(void) {
     }
 }
 
-INCLUDE_ASM("mode_test/func_0805F93C.s");
+s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e) {
+    u8 i;
+    u8 j;
+    u8 r;
+    u8 k;
+    u16 col;
+    u32 p;
+    u32* dst;
+    u32* src;
+    u32 t;
+    u32 ko;
+    u32 ko4;
+    u32 co;
+    s32 n;
+
+    j = 0;
+    gUnk_02034A14 = (u32)GetBgCharBase(bg) + c * 0x400 + (b + 1) * 32;
+    b = ((b + d) >> 3) + 1;
+    n = (s8)d + b;
+    d = n;
+    e += (c + e) >> 3;
+    k = c & 7;
+    col = (c >> 3) << 3;
+
+    for (; j < e; j++) {
+        for (i = 0; i < d; i++) {
+            ko = k * 4;
+            co = col * 4;
+            ko4 = ko + 4;
+            p = gUnk_02034A14 + i * 32 + j * 1024;
+            dst = (u32*)(p + ko + co);
+            src = (u32*)(p + ko4 + co);
+
+            for (r = 0; r < 9; r++) {
+                t = ((u32)dst & 0xFF) + 4;
+
+                if (t == ((t >> 5) << 5)) {
+                    *dst++ = *(u32*)((u8*)src + 0x3E0);
+                    dst += 248;
+                    src += 249;
+                } else {
+                    *dst++ = *src++;
+                }
+            }
+        }
+
+        k++;
+
+        if (k == 8) {
+            col += 0x100;
+            k = 0;
+        }
+    }
+
+    return 1;
+}
 
 void func_0805FA60(s32 a, void* b, s32 c, u8 d) {
     if (b != 0) {
@@ -351,7 +540,38 @@ void func_0805FC04(u8 x, u8 y, u32 c, u16 v) {
 }
 
 INCLUDE_ASM("mode_test/func_0805FCB0.s");
-INCLUDE_ASM("mode_test/func_08060470.s");
+void func_08060470(u8 bg) {
+    u8 n;
+    u8 i;
+    u8 k;
+    u8 x;
+    u8 y;
+    u16* screen;
+    u32* tiles;
+    u32* src;
+
+    screen = GetBgScreenBase(bg);
+
+    for (n = 0; n < gUnk_02034A20; n++) {
+        tiles = (u32*)((u8*)GetBgCharBase(bg) + (n * 0x1000 + 0x2000));
+        x = gUnk_02034A1C[n].unk_7A;
+        y = gUnk_02034A1C[n].unk_7B;
+
+        for (i = 0; i < gUnk_02034A1C[n].unk_7D; i++) {
+            src = (u32*)&gUnk_0941DD38[gUnk_02034A1C[n].unk_00[i] * 32];
+
+            for (k = 0; k < 8; k++) {
+                tiles[k] = src[0];
+                tiles[k + 0x100] = src[0x100];
+                src++;
+            }
+
+            *(screen + x + i + (y << 5)) = (i + 0x100 + n * 128) | 0x1000;
+            *(screen + x + i + ((y + 1) << 5)) = (i + 0x120 + n * 128) | 0x1000;
+            tiles += 8;
+        }
+    }
+}
 
 void func_08060598(void) {
     gUnk_02034A20 = 0;
@@ -632,7 +852,15 @@ void menu_3(MenuWork* w) {
     gUnk_02039BA0->unk_70 &= ~0x2000;
 }
 
-INCLUDE_ASM("mode_test/func_08060ED8.s");
+void func_08060ED8(void) {
+    TaskPoolInit(&gUnk_02034A48, 2);
+
+    if ((gGameState.flags & 8) == 0) {
+        gUnk_02034A5C = TaskCreate(&gUnk_02034A48, &gUnk_09EE2834, 0);
+    } else {
+        gUnk_02034A5C = TaskCreate(&gUnk_02034A48, &gUnk_09EE284C, 0);
+    }
+}
 
 #ifndef VERSION_EU
 void func_08060F1C(void) {
