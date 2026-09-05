@@ -554,6 +554,9 @@ void func_080E0BF4(s16 x, s16 y, s32 a, s32 b) {
 }
 
 INCLUDE_ASM("map/func_080E0C1C.s");
+INCLUDE_ASM("map/func_080E0ED4.s");
+INCLUDE_ASM("map/func_080E0FD8.s");
+INCLUDE_ASM("map/func_080E1138.s");
 s16 func_080E1194(u8 a, u8 b, s16 c) {
     switch (a) {
     case 2:
@@ -582,6 +585,10 @@ s16 func_080E1194(u8 a, u8 b, s16 c) {
     return c;
 }
 INCLUDE_ASM("map/func_080E1204.s");
+INCLUDE_ASM("map/func_080E1274.s");
+INCLUDE_ASM("map/func_080E13B0.s");
+INCLUDE_ASM("map/func_080E14D0.s");
+INCLUDE_ASM("map/func_080E1670.s");
 
 void func_080E1C64(s16 x, s16 y, u8 n) {
     UnkStruct_080DFB8C* p = func_080E08BC(x, y);
@@ -612,6 +619,11 @@ u8 func_080E1CE0(s16 x, s16 y, u8 n) {
 }
 
 INCLUDE_ASM("map/func_080E1D08.s");
+INCLUDE_ASM("map/func_080E1FA8.s");
+INCLUDE_ASM("map/func_080E2318.s");
+INCLUDE_ASM("map/func_080E23CC.s");
+INCLUDE_ASM("map/func_080E249C.s");
+INCLUDE_ASM("map/func_080E2520.s");
 INCLUDE_ASM("map/func_080E2668.s");
 s32 func_080E2B08(void) {
     s32 r = 5;
@@ -688,6 +700,8 @@ void func_080E2C2C(u8 a) {
 }
 
 INCLUDE_ASM("map/func_080E2C50.s");
+INCLUDE_ASM("map/func_080E2C98.s");
+INCLUDE_ASM("map/func_080E2D80.s");
 
 s32 func_080E2E24(s16 a, s16 b, s16 c) {
     s32 ret;
@@ -889,6 +903,8 @@ void func_080E3EFC(void) {
 }
 INCLUDE_ASM("map/func_080E3FD4.s");
 INCLUDE_ASM("map/func_080E4244.s");
+INCLUDE_ASM("map/func_080E44A8.s");
+INCLUDE_ASM("map/func_080E470C.s");
 void func_080E47E8(u8 a, u8 b) {
     s32 i;
 
@@ -916,6 +932,8 @@ void func_080E47E8(u8 a, u8 b) {
     }
 }
 INCLUDE_ASM("map/func_080E4900.s");
+INCLUDE_ASM("map/func_080E49DC.s");
+INCLUDE_ASM("map/func_080E4B34.s");
 INCLUDE_ASM("map/func_080E4B78.s");
 INCLUDE_ASM("map/func_080E4D68.s");
 void func_080E4EB0(u16* a, u16* b, u16* c, s16 d, s16 e) {
@@ -1876,6 +1894,19 @@ s32 func_080E6A80(s16 x, s16 y, u16 n) {
     return 1;
 }
 INCLUDE_ASM("map/func_080E6B24.s");
+INCLUDE_ASM("map/func_080E6C2C.s");
+INCLUDE_ASM("map/func_080E6DB0.s");
+INCLUDE_ASM("map/func_080E6F04.s");
+INCLUDE_ASM("map/func_080E7088.s");
+INCLUDE_ASM("map/func_080E71F0.s");
+INCLUDE_ASM("map/func_080E7358.s");
+INCLUDE_ASM("map/func_080E74D8.s");
+INCLUDE_ASM("map/func_080E7620.s");
+INCLUDE_ASM("map/func_080E77A4.s");
+INCLUDE_ASM("map/func_080E7928.s");
+INCLUDE_ASM("map/func_080E7A30.s");
+INCLUDE_ASM("map/func_080E7B38.s");
+INCLUDE_ASM("map/func_080E7C40.s");
 
 u8 func_080E7D64(UnkStruct_080DFF1C* a, u8 b) {
     return gUnk_09EF6A50[b](a);
@@ -3676,6 +3707,16 @@ void func_080EAD84(u8 a) {
     }
 }
 INCLUDE_ASM("map/func_080EAEB0.s");
+INCLUDE_ASM("map/func_080EAF10.s");
+INCLUDE_ASM("map/func_080EB12C.s");
+INCLUDE_ASM("map/func_080EB1AC.s");
+INCLUDE_ASM("map/func_080EB1F4.s");
+INCLUDE_ASM("map/func_080EB27C.s");
+INCLUDE_ASM("map/func_080EB2D0.s");
+INCLUDE_ASM("map/func_080EB328.s");
+INCLUDE_ASM("map/func_080EB698.s");
+INCLUDE_ASM("map/func_080EB6BC.s");
+INCLUDE_ASM("map/func_080EB7A0.s");
 
 #ifndef VERSION_EU
 void func_080EB818(u8 a, u8 b, u8 c) {
@@ -3701,6 +3742,8 @@ INCLUDE_ASM("map/func_080EB818.s");
 #endif
 
 INCLUDE_ASM("map/func_080EB898.s");
+INCLUDE_ASM("map/func_080EB93C.s");
+INCLUDE_ASM("map/func_080EBA14.s");
 void func_080EBA58(u8 a) {
     UnkStruct_02039D6C* e = &gUnk_02039D6C[a];
 
@@ -3719,6 +3762,31 @@ void func_080EBA58(u8 a) {
     }
 }
 INCLUDE_ASM("map/func_080EBAE0.s");
+INCLUDE_ASM("map/func_080EBB24.s");
+INCLUDE_ASM("map/func_080EBD00.s");
+INCLUDE_ASM("map/func_080EBE44.s");
+INCLUDE_ASM("map/func_080EBE90.s");
+INCLUDE_ASM("map/func_080EBEC8.s");
+INCLUDE_ASM("map/func_080EBFB8.s");
+INCLUDE_ASM("map/func_080EBFF8.s");
+INCLUDE_ASM("map/func_080EC04C.s");
+INCLUDE_ASM("map/func_080EC0D4.s");
+INCLUDE_ASM("map/func_080EC424.s");
+INCLUDE_ASM("map/func_080EC448.s");
+INCLUDE_ASM("map/func_080EC500.s");
+INCLUDE_ASM("map/func_080EC544.s");
+INCLUDE_ASM("map/func_080EC57C.s");
+INCLUDE_ASM("map/func_080EC618.s");
+INCLUDE_ASM("map/func_080EC644.s");
+INCLUDE_ASM("map/func_080EC660.s");
+INCLUDE_ASM("map/func_080EC720.s");
+INCLUDE_ASM("map/func_080EC744.s");
+INCLUDE_ASM("map/func_080EC750.s");
+INCLUDE_ASM("map/func_080EC760.s");
+INCLUDE_ASM("map/func_080EC7AC.s");
+INCLUDE_ASM("map/func_080EC94C.s");
+INCLUDE_ASM("map/func_080EC9EC.s");
+INCLUDE_ASM("map/func_080ECA54.s");
 
 void func_080ECA88(UnkStruct_080ECA88* p) {
     func_080038E4(p->unk_44, p->unk_4C, p->unk_54);
@@ -3726,6 +3794,14 @@ void func_080ECA88(UnkStruct_080ECA88* p) {
 }
 
 INCLUDE_ASM("map/func_080ECAA8.s");
+INCLUDE_ASM("map/func_080ECAC8.s");
+INCLUDE_ASM("map/func_080ECBC8.s");
+INCLUDE_ASM("map/func_080ECC54.s");
+INCLUDE_ASM("map/func_080ECC8C.s");
+INCLUDE_ASM("map/func_080ECC90.s");
+INCLUDE_ASM("map/func_080ECE3C.s");
+INCLUDE_ASM("map/func_080ECE98.s");
+INCLUDE_ASM("map/func_080ECFBC.s");
 
 void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a) {
     s32 i;
@@ -3806,6 +3882,20 @@ void func_080ED250(u8* work) {
 INCLUDE_ASM("map/func_080ED250.s");
 #endif
 INCLUDE_ASM("map/func_080ED314.s");
+INCLUDE_ASM("map/func_080ED35C.s");
+INCLUDE_ASM("map/func_080ED498.s");
+INCLUDE_ASM("map/func_080ED6CC.s");
+INCLUDE_ASM("map/func_080ED7CC.s");
+INCLUDE_ASM("map/func_080ED91C.s");
+INCLUDE_ASM("map/func_080EDA90.s");
+INCLUDE_ASM("map/func_080EDB4C.s");
+INCLUDE_ASM("map/func_080EDC38.s");
+INCLUDE_ASM("map/func_080EDC94.s");
+INCLUDE_ASM("map/func_080EDD7C.s");
+INCLUDE_ASM("map/func_080EDDBC.s");
+INCLUDE_ASM("map/func_080EDE78.s");
+INCLUDE_ASM("map/func_080EDECC.s");
+INCLUDE_ASM("map/func_080EE418.s");
 
 void func_080EE50C(UnkStruct_080EE50C* p, u8 a) {
     func_080062F4(0x0B, a);
@@ -3900,6 +3990,19 @@ void func_080EE760(u8* work, u8 i) {
     }
 }
 INCLUDE_ASM("map/func_080EE7B0.s");
+INCLUDE_ASM("map/func_080EE824.s");
+INCLUDE_ASM("map/func_080EEB00.s");
+INCLUDE_ASM("map/func_080EEC5C.s");
+INCLUDE_ASM("map/func_080EEC9C.s");
+INCLUDE_ASM("map/func_080EED44.s");
+INCLUDE_ASM("map/func_080EED88.s");
+INCLUDE_ASM("map/func_080EEF04.s");
+INCLUDE_ASM("map/func_080EEF4C.s");
+INCLUDE_ASM("map/func_080EF234.s");
+INCLUDE_ASM("map/func_080EF32C.s");
+INCLUDE_ASM("map/func_080EF368.s");
+INCLUDE_ASM("map/func_080EF398.s");
+INCLUDE_ASM("map/func_080EF39C.s");
 
 s32 func_080EF3A0(UnkStruct_080E590C* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
@@ -3954,7 +4057,18 @@ s32 func_080EF4BC(UnkStruct_080E590C* p) {
 }
 
 INCLUDE_ASM("map/func_080EF508.s");
+INCLUDE_ASM("map/func_080EF58C.s");
+INCLUDE_ASM("map/func_080EF664.s");
+INCLUDE_ASM("map/func_080EF718.s");
+INCLUDE_ASM("map/func_080EF7B8.s");
 INCLUDE_ASM("map/func_080EF84C.s");
+INCLUDE_ASM("map/func_080EF88C.s");
+INCLUDE_ASM("map/func_080EF8CC.s");
+INCLUDE_ASM("map/func_080EF914.s");
+INCLUDE_ASM("map/func_080EF9A0.s");
+INCLUDE_ASM("map/func_080EFA18.s");
+INCLUDE_ASM("map/func_080EFA24.s");
+INCLUDE_ASM("map/func_080EFA30.s");
 void func_080EFA7C(UnkStruct_080F023C* p, u8 a) {
     s32* q = &p->unk_08;
     s32 t = q[2];
@@ -4014,6 +4128,18 @@ void func_080EFB24(UnkStruct_080F023C* w, u8 a) {
     }
 }
 INCLUDE_ASM("map/func_080EFC08.s");
+INCLUDE_ASM("map/func_080EFCF4.s");
+INCLUDE_ASM("map/func_080EFE54.s");
+INCLUDE_ASM("map/func_080EFE94.s");
+INCLUDE_ASM("map/func_080EFEDC.s");
+INCLUDE_ASM("map/func_080EFF64.s");
+INCLUDE_ASM("map/func_080EFFE0.s");
+INCLUDE_ASM("map/func_080EFFEC.s");
+INCLUDE_ASM("map/func_080EFFF8.s");
+INCLUDE_ASM("map/func_080F005C.s");
+INCLUDE_ASM("map/func_080F0098.s");
+INCLUDE_ASM("map/func_080F00F0.s");
+INCLUDE_ASM("map/func_080F00FC.s");
 void func_080F0108(UnkStruct_080F023C* p, u8 a) {
     s32* q = &p->unk_08;
     s32 t = q[2];
@@ -4096,6 +4222,13 @@ s32 func_080F023C(UnkStruct_080F023C* p, s32 lim) {
 }
 
 INCLUDE_ASM("map/func_080F02A0.s");
+INCLUDE_ASM("map/func_080F0348.s");
+INCLUDE_ASM("map/func_080F0470.s");
+INCLUDE_ASM("map/func_080F0550.s");
+INCLUDE_ASM("map/func_080F05A4.s");
+INCLUDE_ASM("map/func_080F05FC.s");
+INCLUDE_ASM("map/func_080F0608.s");
+INCLUDE_ASM("map/func_080F0614.s");
 void func_080F0660(UnkStruct_080F023C* p, u8 a) {
     s32* q = &p->unk_08;
     s32 t = q[2];
@@ -4155,6 +4288,140 @@ void func_080F0708(UnkStruct_080F023C* p, u8 flag) {
 }
 
 INCLUDE_ASM("map/func_080F07EC.s");
+INCLUDE_ASM("map/func_080F08E4.s");
+INCLUDE_ASM("map/func_080F0A44.s");
+INCLUDE_ASM("map/func_080F0A84.s");
+INCLUDE_ASM("map/func_080F0ACC.s");
+INCLUDE_ASM("map/func_080F0B54.s");
+INCLUDE_ASM("map/func_080F0BD0.s");
+INCLUDE_ASM("map/func_080F0BDC.s");
+INCLUDE_ASM("map/func_080F0BE8.s");
+INCLUDE_ASM("map/func_080F0C68.s");
+INCLUDE_ASM("map/func_080F0D00.s");
+INCLUDE_ASM("map/func_080F0D40.s");
+INCLUDE_ASM("map/func_080F0D80.s");
+INCLUDE_ASM("map/func_080F0DD8.s");
+INCLUDE_ASM("map/func_080F0E54.s");
+INCLUDE_ASM("map/func_080F0E60.s");
+INCLUDE_ASM("map/func_080F0E6C.s");
+INCLUDE_ASM("map/func_080F0EEC.s");
+INCLUDE_ASM("map/func_080F0F84.s");
+INCLUDE_ASM("map/func_080F0FC4.s");
+INCLUDE_ASM("map/func_080F1004.s");
+INCLUDE_ASM("map/func_080F105C.s");
+INCLUDE_ASM("map/func_080F10D8.s");
+INCLUDE_ASM("map/func_080F10E4.s");
+INCLUDE_ASM("map/func_080F10F0.s");
+INCLUDE_ASM("map/func_080F1124.s");
+INCLUDE_ASM("map/func_080F117C.s");
+INCLUDE_ASM("map/func_080F1274.s");
+INCLUDE_ASM("map/func_080F131C.s");
+INCLUDE_ASM("map/func_080F138C.s");
+INCLUDE_ASM("map/func_080F139C.s");
+INCLUDE_ASM("map/func_080F1450.s");
+INCLUDE_ASM("map/func_080F1460.s");
+INCLUDE_ASM("map/func_080F14C4.s");
+INCLUDE_ASM("map/func_080F1544.s");
+INCLUDE_ASM("map/func_080F1584.s");
+INCLUDE_ASM("map/func_080F1650.s");
+INCLUDE_ASM("map/func_080F169C.s");
+INCLUDE_ASM("map/func_080F1718.s");
+INCLUDE_ASM("map/func_080F173C.s");
+INCLUDE_ASM("map/func_080F1798.s");
+INCLUDE_ASM("map/func_080F1880.s");
+INCLUDE_ASM("map/func_080F18AC.s");
+INCLUDE_ASM("map/func_080F1918.s");
+INCLUDE_ASM("map/func_080F1930.s");
+INCLUDE_ASM("map/func_080F194C.s");
+INCLUDE_ASM("map/func_080F1964.s");
+INCLUDE_ASM("map/func_080F1968.s");
+INCLUDE_ASM("map/func_080F1978.s");
+INCLUDE_ASM("map/func_080F1A10.s");
+INCLUDE_ASM("map/func_080F1A84.s");
+INCLUDE_ASM("map/func_080F1ACC.s");
+INCLUDE_ASM("map/func_080F1AD0.s");
+INCLUDE_ASM("map/func_080F1B6C.s");
+INCLUDE_ASM("map/func_080F1BC8.s");
+INCLUDE_ASM("map/func_080F1C38.s");
+INCLUDE_ASM("map/func_080F1C64.s");
+INCLUDE_ASM("map/func_080F1CCC.s");
+INCLUDE_ASM("map/func_080F1D68.s");
+INCLUDE_ASM("map/func_080F1D98.s");
+INCLUDE_ASM("map/func_080F1E0C.s");
+INCLUDE_ASM("map/func_080F1E28.s");
+INCLUDE_ASM("map/func_080F1EA0.s");
+INCLUDE_ASM("map/func_080F1ED4.s");
+INCLUDE_ASM("map/func_080F1F98.s");
+INCLUDE_ASM("map/func_080F1FEC.s");
+INCLUDE_ASM("map/func_080F2058.s");
+INCLUDE_ASM("map/func_080F207C.s");
+INCLUDE_ASM("map/func_080F2130.s");
+INCLUDE_ASM("map/func_080F2178.s");
+INCLUDE_ASM("map/func_080F2244.s");
+INCLUDE_ASM("map/func_080F2274.s");
+INCLUDE_ASM("map/func_080F22E8.s");
+INCLUDE_ASM("map/func_080F230C.s");
+INCLUDE_ASM("map/func_080F238C.s");
+INCLUDE_ASM("map/func_080F23E8.s");
+INCLUDE_ASM("map/func_080F24B0.s");
+INCLUDE_ASM("map/func_080F2504.s");
+INCLUDE_ASM("map/func_080F2570.s");
+INCLUDE_ASM("map/func_080F2594.s");
+INCLUDE_ASM("map/func_080F25FC.s");
+INCLUDE_ASM("map/func_080F2654.s");
+INCLUDE_ASM("map/func_080F26B0.s");
+INCLUDE_ASM("map/func_080F2778.s");
+INCLUDE_ASM("map/func_080F27CC.s");
+INCLUDE_ASM("map/func_080F2838.s");
+INCLUDE_ASM("map/func_080F285C.s");
+INCLUDE_ASM("map/func_080F28F4.s");
+INCLUDE_ASM("map/func_080F2934.s");
+INCLUDE_ASM("map/func_080F2A10.s");
+INCLUDE_ASM("map/func_080F2A64.s");
+INCLUDE_ASM("map/func_080F2AD0.s");
+INCLUDE_ASM("map/func_080F2AF4.s");
+INCLUDE_ASM("map/func_080F2B78.s");
+INCLUDE_ASM("map/func_080F2BD0.s");
+INCLUDE_ASM("map/func_080F2CAC.s");
+INCLUDE_ASM("map/func_080F2D00.s");
+INCLUDE_ASM("map/func_080F2D6C.s");
+INCLUDE_ASM("map/func_080F2D90.s");
+INCLUDE_ASM("map/func_080F2E4C.s");
+INCLUDE_ASM("map/func_080F2E90.s");
+INCLUDE_ASM("map/func_080F2F6C.s");
+INCLUDE_ASM("map/func_080F2FC0.s");
+INCLUDE_ASM("map/func_080F302C.s");
+INCLUDE_ASM("map/func_080F3050.s");
+INCLUDE_ASM("map/func_080F30C4.s");
+INCLUDE_ASM("map/func_080F3108.s");
+INCLUDE_ASM("map/func_080F3150.s");
+INCLUDE_ASM("map/func_080F3210.s");
+INCLUDE_ASM("map/func_080F3264.s");
+INCLUDE_ASM("map/func_080F32D0.s");
+INCLUDE_ASM("map/func_080F32F4.s");
+INCLUDE_ASM("map/func_080F3384.s");
+INCLUDE_ASM("map/func_080F33D0.s");
+INCLUDE_ASM("map/func_080F3494.s");
+INCLUDE_ASM("map/func_080F34E8.s");
+INCLUDE_ASM("map/func_080F359C.s");
+INCLUDE_ASM("map/func_080F35C0.s");
+INCLUDE_ASM("map/func_080F3638.s");
+INCLUDE_ASM("map/func_080F3674.s");
+INCLUDE_ASM("map/func_080F369C.s");
+INCLUDE_ASM("map/func_080F375C.s");
+INCLUDE_ASM("map/func_080F37B0.s");
+INCLUDE_ASM("map/func_080F3864.s");
+INCLUDE_ASM("map/func_080F3888.s");
+INCLUDE_ASM("map/func_080F3958.s");
+INCLUDE_ASM("map/func_080F39DC.s");
+INCLUDE_ASM("map/func_080F3A50.s");
+INCLUDE_ASM("map/func_080F3A74.s");
+INCLUDE_ASM("map/func_080F3ADC.s");
+INCLUDE_ASM("map/func_080F3B84.s");
+INCLUDE_ASM("map/func_080F3BC4.s");
+INCLUDE_ASM("map/func_080F3C98.s");
+INCLUDE_ASM("map/func_080F3CC8.s");
+INCLUDE_ASM("map/func_080F3D34.s");
 
 void func_080F3D58(UnkStruct_080DFF1C* p) {
     u16 r;
@@ -4181,6 +4448,38 @@ void func_080F3D58(UnkStruct_080DFF1C* p) {
 }
 
 INCLUDE_ASM("map/func_080F3E24.s");
+INCLUDE_ASM("map/func_080F3F6C.s");
+INCLUDE_ASM("map/func_080F3FB4.s");
+INCLUDE_ASM("map/func_080F4078.s");
+INCLUDE_ASM("map/func_080F40A8.s");
+INCLUDE_ASM("map/func_080F411C.s");
+INCLUDE_ASM("map/func_080F4140.s");
+INCLUDE_ASM("map/func_080F41A4.s");
+INCLUDE_ASM("map/func_080F4224.s");
+INCLUDE_ASM("map/func_080F4258.s");
+INCLUDE_ASM("map/func_080F42B4.s");
+INCLUDE_ASM("map/func_080F4370.s");
+INCLUDE_ASM("map/func_080F43B4.s");
+INCLUDE_ASM("map/func_080F4428.s");
+INCLUDE_ASM("map/func_080F445C.s");
+INCLUDE_ASM("map/func_080F44AC.s");
+INCLUDE_ASM("map/func_080F4500.s");
+INCLUDE_ASM("map/func_080F45D4.s");
+INCLUDE_ASM("map/func_080F4630.s");
+INCLUDE_ASM("map/func_080F46C0.s");
+INCLUDE_ASM("map/func_080F46FC.s");
+INCLUDE_ASM("map/func_080F47B4.s");
+INCLUDE_ASM("map/func_080F47DC.s");
+INCLUDE_ASM("map/func_080F484C.s");
+INCLUDE_ASM("map/func_080F48E4.s");
+INCLUDE_ASM("map/func_080F4928.s");
+INCLUDE_ASM("map/func_080F499C.s");
+INCLUDE_ASM("map/func_080F49D0.s");
+INCLUDE_ASM("map/func_080F4BA0.s");
+INCLUDE_ASM("map/func_080F4C5C.s");
+INCLUDE_ASM("map/func_080F4DB0.s");
+INCLUDE_ASM("map/func_080F4DDC.s");
+INCLUDE_ASM("map/func_080F4EC4.s");
 void func_080F4EE4(UnkStruct_080F4EE4* work) {
     work->unk_0B4 = -gSineTable[((work->unk_0D0 + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
     work->unk_0B6 = -gSineTable[((work->unk_0CF + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
@@ -4193,6 +4492,81 @@ void func_080F4EE4(UnkStruct_080F4EE4* work) {
     }
 }
 INCLUDE_ASM("map/func_080F4F60.s");
+INCLUDE_ASM("map/func_080F4FB0.s");
+INCLUDE_ASM("map/func_080F51A0.s");
+INCLUDE_ASM("map/func_080F52D4.s");
+INCLUDE_ASM("map/func_080F534C.s");
+INCLUDE_ASM("map/func_080F53D0.s");
+INCLUDE_ASM("map/func_080F5580.s");
+INCLUDE_ASM("map/func_080F55B0.s");
+INCLUDE_ASM("map/func_080F5780.s");
+INCLUDE_ASM("map/func_080F5800.s");
+INCLUDE_ASM("map/func_080F5820.s");
+INCLUDE_ASM("map/func_080F5838.s");
+INCLUDE_ASM("map/func_080F5868.s");
+INCLUDE_ASM("map/func_080F5890.s");
+INCLUDE_ASM("map/func_080F589C.s");
+INCLUDE_ASM("map/func_080F58C4.s");
+INCLUDE_ASM("map/func_080F5968.s");
+INCLUDE_ASM("map/func_080F596C.s");
+INCLUDE_ASM("map/func_080F59A0.s");
+INCLUDE_ASM("map/func_080F59E4.s");
+INCLUDE_ASM("map/func_080F5A00.s");
+INCLUDE_ASM("map/func_080F5A64.s");
+INCLUDE_ASM("map/func_080F5A88.s");
+INCLUDE_ASM("map/func_080F5B00.s");
+INCLUDE_ASM("map/func_080F5B18.s");
+INCLUDE_ASM("map/func_080F5B68.s");
+INCLUDE_ASM("map/func_080F5BB8.s");
+INCLUDE_ASM("map/func_080F5C48.s");
+INCLUDE_ASM("map/func_080F5C60.s");
+INCLUDE_ASM("map/func_080F5CDC.s");
+INCLUDE_ASM("map/func_080F5D10.s");
+INCLUDE_ASM("map/func_080F5E4C.s");
+INCLUDE_ASM("map/func_080F5EA8.s");
+INCLUDE_ASM("map/func_080F5F4C.s");
+INCLUDE_ASM("map/func_080F5F88.s");
+INCLUDE_ASM("map/func_080F6004.s");
+INCLUDE_ASM("map/func_080F6038.s");
+INCLUDE_ASM("map/func_080F6174.s");
+INCLUDE_ASM("map/func_080F61D0.s");
+INCLUDE_ASM("map/func_080F6274.s");
+INCLUDE_ASM("map/func_080F62B0.s");
+INCLUDE_ASM("map/func_080F6314.s");
+INCLUDE_ASM("map/func_080F6348.s");
+INCLUDE_ASM("map/func_080F64A4.s");
+INCLUDE_ASM("map/func_080F6500.s");
+INCLUDE_ASM("map/func_080F65A8.s");
+INCLUDE_ASM("map/func_080F65EC.s");
+INCLUDE_ASM("map/func_080F6634.s");
+INCLUDE_ASM("map/func_080F6668.s");
+INCLUDE_ASM("map/func_080F66E0.s");
+INCLUDE_ASM("map/func_080F6704.s");
+INCLUDE_ASM("map/func_080F691C.s");
+INCLUDE_ASM("map/func_080F6978.s");
+INCLUDE_ASM("map/func_080F6A1C.s");
+INCLUDE_ASM("map/func_080F6A60.s");
+INCLUDE_ASM("map/func_080F6AD8.s");
+INCLUDE_ASM("map/func_080F6B0C.s");
+INCLUDE_ASM("map/func_080F6C00.s");
+INCLUDE_ASM("map/func_080F6C5C.s");
+INCLUDE_ASM("map/func_080F6D04.s");
+INCLUDE_ASM("map/func_080F6D40.s");
+INCLUDE_ASM("map/func_080F6D70.s");
+INCLUDE_ASM("map/func_080F6DE8.s");
+INCLUDE_ASM("map/func_080F6EBC.s");
+INCLUDE_ASM("map/func_080F6F1C.s");
+INCLUDE_ASM("map/func_080F6F90.s");
+INCLUDE_ASM("map/func_080F6FC4.s");
+INCLUDE_ASM("map/func_080F7024.s");
+INCLUDE_ASM("map/func_080F70F4.s");
+INCLUDE_ASM("map/func_080F7160.s");
+INCLUDE_ASM("map/func_080F71AC.s");
+INCLUDE_ASM("map/func_080F7284.s");
+INCLUDE_ASM("map/func_080F72CC.s");
+INCLUDE_ASM("map/func_080F7378.s");
+INCLUDE_ASM("map/func_080F73AC.s");
+INCLUDE_ASM("map/func_080F7458.s");
 
 s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
     s32 dx;
@@ -4214,3 +4588,23 @@ s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
 }
 
 INCLUDE_ASM("map/func_080F74E8.s");
+INCLUDE_ASM("map/func_080F753C.s");
+INCLUDE_ASM("map/func_080F7594.s");
+INCLUDE_ASM("map/func_080F75E4.s");
+INCLUDE_ASM("map/func_080F7640.s");
+INCLUDE_ASM("map/func_080F76D0.s");
+INCLUDE_ASM("map/func_080F76F0.s");
+INCLUDE_ASM("map/func_080F775C.s");
+INCLUDE_ASM("map/func_080F777C.s");
+INCLUDE_ASM("map/func_080F77C4.s");
+INCLUDE_ASM("map/func_080F77D4.s");
+INCLUDE_ASM("map/func_080F7860.s");
+INCLUDE_ASM("map/func_080F7878.s");
+INCLUDE_ASM("map/func_080F78A8.s");
+INCLUDE_ASM("map/func_080F78EC.s");
+INCLUDE_ASM("map/func_080F7A9C.s");
+INCLUDE_ASM("map/func_080F7AB4.s");
+INCLUDE_ASM("map/func_080F7AE0.s");
+INCLUDE_ASM("map/func_080F7B64.s");
+INCLUDE_ASM("map/func_080F7B78.s");
+INCLUDE_ASM("map/func_080F7BB8.s");

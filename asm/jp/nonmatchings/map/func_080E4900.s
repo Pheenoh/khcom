@@ -6,5 +6,5 @@
 	.thumb_func
 	.type func_080E4900, %function
 func_080E4900:
-	.incbin "roms/B8CJ.gba", 0xe4920, 0x278
+	.incbin "roms/B8CJ.gba", 0xe4920, 0xdc
 .syntax divided
