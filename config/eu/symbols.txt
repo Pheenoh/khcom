@@ -1544,6 +1544,7 @@ gUnk_0984C204 = 0x09828bd8
 gUnk_0984C2E4 = 0x09828cb8
 gUnk_0984C310 = 0x09828ce4
 gTaskDescMapGmkJump = 0x09f822c4
+gTaskDescMapGmkEnm = 0x09f822dc
 gTaskDescMapGmkDmy = 0x09f822f4
 gUnk_02039DD8 = 0x0203a3e8
 gUnk_0203A9E8 = 0x0203aff4
