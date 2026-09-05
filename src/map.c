@@ -2042,11 +2042,114 @@ void func_080E3EFC(void) {
     func_080E3400(1, 0, a + 1, v + b, 0);
 }
 
-INCLUDE_ASM("map/func_080E3FD4.s");
+void func_080E3FD4(void) {
+    s16 a;
+    s16 b;
+    s16 c;
+    s16 d;
+    s16 t;
+    s16 v;
+    s32 k;
 
-INCLUDE_ASM("map/func_080E4244.s");
+    t = GetRandom() % (gUnk_02034F28 - 7) + 4;
+    a = GetRandom() % (gUnk_02034F28 - t - 3) + 2;
+    d = a + t;
+    b = gUnk_02034F2A / 4;
+    func_080E3060(0, a, d, 0);
+    func_080E309C(0, a, d, b, k = 0);
 
-INCLUDE_ASM("map/func_080E44A8.s");
+    if (GetRandom() % 100 < 50) {
+        func_080E3C1C(3, &a, &b, &c, k, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(1, a, gUnk_02034F28, v + c);
+        func_080E309C(1, a, gUnk_02034F28, v + b, k);
+        func_080E3CD4(5, &d, &b, &c, k, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(2, 0, d + 1, v + c);
+        func_080E3400(2, 0, d + 1, v + b, k);
+    } else {
+        func_080E3CD4(5, &d, &b, &c, k, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(1, 0, d + 1, v + c);
+        func_080E3400(1, 0, d + 1, v + b, k);
+        func_080E3C1C(3, &a, &b, &c, k, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(2, a, gUnk_02034F28, v + c);
+        func_080E309C(2, a, gUnk_02034F28, v + b, k);
+    }
+}
+
+void func_080E4244(void) {
+    s16 a;
+    s16 b;
+    s16 c;
+    s16 d;
+    s16 t;
+    s16 v;
+
+    t = GetRandom() % (gUnk_02034F28 - 9) + 6;
+    a = (gUnk_02034F28 - t) / 2;
+    d = a + t;
+    b = gUnk_02034F2A / 4;
+    func_080E3060(0, a, d, 0);
+    func_080E309C(0, a, d, b, 2);
+
+    if (GetRandom() % 100 < 50) {
+        func_080E3C1C(3, &a, &b, &c, 0, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1) + 10;
+        func_080E3060(1, a, gUnk_02034F28, v + c);
+        func_080E309C(1, a, gUnk_02034F28, v + b, 2);
+        func_080E3CD4(5, &d, &b, &c, 0, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(2, 0, d + 1, v + c);
+        func_080E3400(2, 0, d + 1, v + b, 2);
+    } else {
+        func_080E3CD4(5, &d, &b, &c, 0, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1) + 10;
+        func_080E3060(1, 0, d + 1, v + c);
+        func_080E3400(1, 0, d + 1, v + b, 2);
+        func_080E3C1C(3, &a, &b, &c, 0, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(2, a, gUnk_02034F28, v + c);
+        func_080E309C(2, a, gUnk_02034F28, v + b, 2);
+    }
+}
+
+void func_080E44A8(void) {
+    s16 a;
+    s16 b;
+    s16 c;
+    s16 d;
+    s16 t;
+    s16 v;
+
+    t = GetRandom() % (gUnk_02034F28 - 9) + 6;
+    a = (gUnk_02034F28 - t) / 2;
+    d = a + t;
+    b = gUnk_02034F2A / 4;
+    func_080E3060(0, a, d, 0);
+    func_080E309C(0, a, d, b, 3);
+
+    if (GetRandom() % 100 < 50) {
+        func_080E3C1C(3, &a, &b, &c, 0, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(1, a, gUnk_02034F28, v + c);
+        func_080E309C(1, a, gUnk_02034F28, v + b, 3);
+        func_080E3CD4(5, &d, &b, &c, 0, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(2, 0, d + 1, v + c);
+        func_080E3400(2, 0, d + 1, v + b, 3);
+    } else {
+        func_080E3CD4(5, &d, &b, &c, 0, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(1, 0, d + 1, v + c);
+        func_080E3400(1, 0, d + 1, v + b, 3);
+        func_080E3C1C(3, &a, &b, &c, 0, gUnk_02034F28);
+        v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+        func_080E3060(2, a, gUnk_02034F28, v + c);
+        func_080E309C(2, a, gUnk_02034F28, v + b, 3);
+    }
+}
 
 #ifdef NON_MATCHING
 void func_080E470C(void) {
@@ -6186,7 +6289,79 @@ void func_080EB2D0(UnkStruct_02034FDC* w) {
     }
 }
 
+#ifndef VERSION_EU
+void func_080EB328(void) {
+    u8 v;
+    u8 u;
+
+    gUnk_02034FDC = EwramAlloc(0x348);
+    gUnk_02034FDC->unk_33C = 0;
+    gUnk_02034FDC->unk_33D = (gGameState.flags >> 3) & 1;
+    gUnk_02034FDC->unk_162 = 33;
+    gUnk_02034FDC->unk_340 = 16;
+    gUnk_02034FDC->unk_344 = func_080EB1AC;
+    SetBgMode0();
+    SetupBg(3, 0, 28, 0);
+    SetupBg(1, 0, 29, 0);
+    SetupBg(0, 0, 30, 0);
+    SetBgPriority(3, 3);
+    SetBgPriority(1, 0);
+    SetBgPriority(0, 0);
+    LoadBgTiles(3, &gUnk_09966064[0x140], 0x1FA0);
+    LoadBgPalette(3, gUnk_09991D44, 0x200);
+    LoadBgMap(3, gUnk_0998CF44, 0x800);
+    LoadBgTiles(1, &gUnk_09966064[0x140], 0x1FA0);
+    LoadBgPalette(1, gUnk_09991D44, 0x200);
+    LoadBgTiles(0, &gUnk_09966064[0x140], 0x1FA0);
+    LoadBgPalette(0, gUnk_09991D44, 0x200);
+    LoadBgMap(0, gUnk_0998F744, 0x800);
+    SetBgScroll(0, 0, 0xFFFC);
+    gUnk_02034FDC->unk_000 = LoadObjPalette(gUnk_09991D04, 32);
+    gUnk_02034FDC->unk_004 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
+    gUnk_02034FDC->unk_008 = -0x800;
+    gUnk_02034FDC->unk_00C = 0xA000;
+    gUnk_02034FDC->unk_320 = AllocObjTiles(0x340, gUnk_088B6560);
+    gUnk_02034FDC->unk_31C = LoadObjPalette(gUnk_08F683A4, 32);
+    gUnk_02034FDC->unk_328 = AllocObjTiles(0x280, gUnk_0932EDD8);
+    gUnk_02034FDC->unk_324 = LoadObjPalette(gUnk_096181D8, 32);
+    gUnk_02034FDC->unk_330 = AllocObjTiles(0x400, gUnk_09322F50);
+    gUnk_02034FDC->unk_32C = LoadObjPalette(gUnk_096181B8, 32);
+    gUnk_02034FDC->unk_338 = AllocObjTiles(0x400, gUnk_092EB78A);
+    gUnk_02034FDC->unk_334 = LoadObjPalette(gUnk_09618118, 32);
+    gUnk_02034FDC->unk_010 = LoadObjPalette(gUnk_09991D24, 32);
+    gUnk_02034FDC->unk_014 = LoadObjTiles(&gUnk_098A8F28[0x62], 0x4C0);
+    gUnk_02034FDC->unk_030 = LoadObjPalette(gUnk_09991BE4, 32);
+    gUnk_02034FDC->unk_034 = AllocObjTiles(0x120, &gUnk_098A8628[0x4BA]);
+    AnimInit(&gUnk_02034FDC->unk_018, gUnk_09EF8D88, gUnk_09EF8D78);
+    AnimStart(&gUnk_02034FDC->unk_018, 0, 1);
+    gUnk_02034FDC->unk_03C = LoadObjPalette(gUnk_09991C04, 32);
+    gUnk_02034FDC->unk_160 = 0;
+    func_08065ACC(&gUnk_02034FDC->unk_040, 36);
+    func_08065ACC(&gUnk_02034FDC->unk_168, 54);
+    gUnk_02034FDC->unk_164 = LoadObjPalette(gUnk_09991BE4, 32);
+    gUnk_02034FDC->unk_318 = func_08065B6C(gUnk_08159E1E, &gUnk_02034FDC->unk_168);
+
+    if (gUnk_02034FDC->unk_33D != 0) {
+        v = func_080EAD3C(2);
+        u = func_080EAD3C(3);
+    } else {
+        v = func_080EAD3C(0);
+        u = func_080EAD3C(1);
+    }
+
+    if (v != 0) {
+        gUnk_02034FDC->unk_33E = u == 0 ? 1 : 0;
+    } else {
+        gUnk_02034FDC->unk_33E = 0;
+    }
+
+    func_080EAD84(gUnk_02034FDC->unk_33E);
+    gUnk_02034FDC->unk_038 = (gUnk_02034FDC->unk_162 + gUnk_02034FDC->unk_33E * 45) << 8;
+    func_08006120(0, 8);
+}
+#else
 INCLUDE_ASM("map/func_080EB328.s");
+#endif
 
 void func_080EB698(void) {
     if (gUnk_02034FDC->unk_344 != 0) {
