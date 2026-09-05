@@ -6,6 +6,7 @@
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "taskpool.h"
+#include "obj.h"
 typedef struct Collider {
     s32 unk_00;
     s32 unk_04;
@@ -185,12 +186,45 @@ typedef struct AnimDef {
     u8 unk_0D[0x03];
 } AnimDef;
 
+typedef struct SprObj {
+    void* unk_00;
+    void* tiles;
+    void* unk_08;
+    void* palette;
+    u8 anim[0x18];
+    s32 x;
+    s32 y;
+    s32 z;
+    u16 flags;
+    u16 unk_36;
+    void* gfx;
+} SprObj;
+
 typedef struct Actor {
-    u8 unk_00[0x40];
+    void* unk_00;
+    void* tiles;
+    ObjPalette* palette;
+    SprObj* unk_0C;
+    SprObj* unk_10;
+    u8 unk_14[0x18];
+    TaskPool unk_2C;
     s32 unk_40;
     s32 unk_44;
     u8 unk_48[0x2C];
     u64 unk_74;
+    u8 unk_7C[0xD4];
+    u16 unk_150;
+    u16 unk_152;
+    u32 unk_154;
+    u8 unk_158[0x10];
+    s32 unk_168;
+    s32 unk_16C;
+    s32 unk_170;
+    u8 unk_174[0x04];
+    void* unk_178;
+    u16 unk_17C;
+    u16 unk_17E;
+    void* gfx;
 } Actor;
 
 typedef struct BtlWork {
@@ -269,7 +303,9 @@ typedef struct BtlWork {
     u8 unk_13C[0x88];
     u8 unk_1C4[0x06];
     s8 unk_1CA;
-    u8 unk_1CB[0x05];
+    u8 unk_1CB;
+    u16 unk_1CC;
+    u8 unk_1CE[0x02];
 } BtlWork;
 
 typedef struct UnkStruct_02039CA8 {
@@ -313,6 +349,9 @@ extern GameState gGameState;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern u32 gUnk_03006C10;
 extern const s16 gSineTable[];
+extern const u8 gUnk_08133E54[];
+extern u8 gUnk_08F6DA04[];
+extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09EDA5A0[];
 extern u8 gUnk_09EDA600[];
 extern u8 gUnk_09EDA648[];
@@ -474,6 +513,13 @@ u16 GetRandom(void);
 u8 func_08006B74(void);
 void SetBgPriority(s32 bg, u16 priority);
 
+void func_0800EEBC(Actor* p, SprObj* s);
+void func_0800EFE8(Actor* work);
+void func_0800F230(void);
+u8 func_0800F3BC(Collider* c, s32 x, s32 y, s32 spd);
+u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r);
+u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r);
+s32 _0800F84C(Actor* work);
 void func_0800F988(UnkStruct_02039CA8* p);
 void func_08012304(Collider* p);
 void func_080140C0(s32* a, s32* b, s32* c);
@@ -513,6 +559,7 @@ void func_080125A4(void);
 void func_0800F9A0(void);
 void func_0800FB2C(u32 a);
 u8 func_0800FF00(u32 a);
+void func_0800FFE0(u32 a);
 void func_080121D4(FldObj* p);
 void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 void func_080135EC(s32 x, s32 y, s32 z);
@@ -610,6 +657,20 @@ void func_08018B04(s32 x, s32 y, s32 z, s32 s);
 s32 func_08012188(BtlObj* p, s16 h, s32 c);
 void func_08012798(u16 a, u16 bg);
 u8 func_0801CA00(BtlObj* p);
+s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
+void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
+void LoadObjPaletteBank(u16 bank, void* src);
+void TaskPoolDraw(TaskPool* a);
+s32 func_080ABA80(s32* out);
+void func_0807E1F4(void);
+void func_0807E200(void);
+void func_0807E20C(void);
+void func_0807E218(void);
+void func_0807E224(void);
+void func_0807E260(void);
+u8 func_0807B3F8(void);
+u8 func_0807E34C(void);
+u8 func_08081838(void);
 u8 func_0801CA48(BtlObj* p);
 void func_080122AC(Collider* p, u32 type, u16 r, u16 h);
 void func_0800FD68(u32 a);

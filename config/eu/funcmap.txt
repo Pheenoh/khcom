@@ -2818,7 +2818,9 @@ func_080B7E68	0x080b7e68	140	0x080b416c	global
 task_bos_tm_0	0x080b7ef4	448	0x080b41f8	global
 task_bos_tm_1	0x080b80b4	512	0x080b43b8	global
 task_bos_tm_2	0x080b82b4	16	0x080b45b8	body
-task_bos_tm_3	0x080b82c4	112	0x080b45c8	global
+task_bos_tm_3	0x080b82c4	16	0x080b45c8	body
+func_080B82D4	0x080b82d4	80	0x080b45d8	global
+func_080B8324	0x080b8324	16	0x080b4628	body
 func_080B8334	0x080b8334	112	0x080b4638	global
 func_080B83A4	0x080b83a4	20	0x080b46a8	body
 func_080B83B8	0x080b83b8	12	0x080b46bc	body
@@ -2830,7 +2832,8 @@ func_080B8688	0x080b8688	312	0x080b498c	global
 func_080B87C0	0x080b87c0	412	0x080b4ac4	body
 func_080B895C	0x080b895c	84	0x080b4c60	global
 func_080B89B0	0x080b89b0	1604	0x080b4cb4	global
-func_080B8FF4	0x080b8ff4	1192	0x080b52f8	global
+func_080B8FF4	0x080b8ff4	432	0x080b52f8	global
+func_080B91A4	0x080b91a4	760	0x080b54a8	global
 _080B949C	0x080b949c	452	0x080b57a0	global
 task_bos_tm_body_0	0x080b9660	560	0x080b5964	named
 task_bos_tm_body_1	0x080b9890	1216	0x080b5b94	named
