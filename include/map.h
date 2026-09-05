@@ -437,11 +437,14 @@ typedef struct UnkStruct_080E590C {
 } UnkStruct_080E590C;
 
 typedef struct UnkStruct_02034FE0 {
-    u8 unk_000[0x38];
+    u8 unk_000[0x10];
+    s32 unk_010;
+    u8 unk_014[0x24];
     UnkStruct_080E590C* unk_038;
     u8 unk_03C[0x120];
     u8 unk_15C;
-    u8 unk_15D[0x2B];
+    u8 unk_15D[0x29];
+    u16 unk_186;
     void (*unk_188)(struct UnkStruct_02034FE0*);
 } UnkStruct_02034FE0;
 
@@ -467,6 +470,28 @@ typedef struct MapRndWork {
     TaskPool unk_00;
     u8 unk_10[0x04];
 } MapRndWork;
+
+typedef struct MapMenuWork {
+    u8 unk_000[0x310];
+    s32 (*unk_310)(struct MapMenuWork*);
+} MapMenuWork;
+
+typedef struct MapSaveWork {
+    u8 unk_000[0x2F0];
+    s32 (*unk_2F0)(struct MapSaveWork*);
+    u8 unk_2F4[0x02];
+    u16 unk_2F6;
+    u8 unk_2F8;
+    u8 unk_2F9[0x17];
+} MapSaveWork;
+
+typedef struct MapAnmEntry {
+    void* unk_00;
+    void* unk_04;
+    u16 unk_08;
+    u8 unk_0A;
+    u8 unk_0B;
+} MapAnmEntry;
 
 typedef struct MapAnmWork {
     UnkStruct_080E8B1C unk_00[8];
@@ -537,11 +562,15 @@ typedef struct MapPrizeWork {
 
 typedef struct MapGmkGp8Work {
     u8 unk_000[0x44];
-    u8 unk_044[0x74];
+    u8 unk_044[0x5C];
+    u8 unk_0A0[0x18];
     void* unk_0B8;
     u8* unk_0BC;
-    u8 unk_0C0[0x0C];
-    void (*unk_0CC)(struct MapGmkGp8Work*);
+    u8 unk_0C0[0x04];
+    void* unk_0C4;
+    u8 unk_0C8;
+    u8 unk_0C9[0x03];
+    s32 (*unk_0CC)(struct MapGmkGp8Work*);
 } MapGmkGp8Work;
 
 typedef struct MapGmk04Work {
@@ -553,6 +582,27 @@ typedef struct MapGmk04Work {
     u8 unk_0A8[0x20];
     TaskPool unk_0C8;
 } MapGmk04Work;
+
+typedef struct MapGmk05Work {
+    u8 unk_000[0x04];
+    u8 unk_004[0x40];
+    u8 unk_044[0x5C];
+    u8* unk_0A0;
+    void* unk_0A4;
+    u8 unk_0A8[0x24];
+    TaskPool unk_0CC;
+    TaskPool unk_0E0;
+} MapGmk05Work;
+
+typedef struct MapFrdWork {
+    u8 unk_000[0x40];
+    u8 unk_040[0x74];
+    void* unk_0B4;
+    u8* unk_0B8;
+    u8 unk_0BC[0x08];
+    TaskPool unk_0C4;
+    TaskPool unk_0D8;
+} MapFrdWork;
 
 typedef struct MapGmk06Work {
     u8 unk_000[0x04];
@@ -692,7 +742,8 @@ typedef struct UnkStruct_080ECFE8 {
 } UnkStruct_080ECFE8;
 
 typedef struct UnkStruct_080ECA88 {
-    u8 unk_00[0x44];
+    u16* unk_00;
+    u8 unk_04[0x40];
     void* unk_44;
     u8* unk_48;
     void* unk_4C;
@@ -703,7 +754,8 @@ typedef struct UnkStruct_080ECA88 {
     void* unk_60;
     void* unk_64;
     void* unk_68;
-    u8 unk_6C[0x08];
+    s32 (*unk_6C)(struct UnkStruct_080ECA88*);
+    u8 unk_70[0x04];
     TaskPool unk_74;
 } UnkStruct_080ECA88;
 
@@ -835,6 +887,9 @@ void LoadPalette(void* src, void* dst, s32 size);
 void func_08065ACC(void* p, s32 n);
 void* _08066468(s32 a);
 void func_080ED250(u8* work);
+void func_080EBEC8(UnkStruct_02034FE0* work);
+void func_080EBFF8(UnkStruct_02034FE0* work);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
@@ -876,6 +931,10 @@ void func_080F6A60(MapMickeyWork* w);
 void func_080F65EC(MapNiserikuWork* w);
 void func_080F6FC4(MapTutorialWork* w);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
+s32 func_080ED7CC(MapMenuWork* w);
+s32 func_080ED91C(MapMenuWork* w);
+s32 func_080EEC9C(MapSaveWork* w);
+void DisableBg(u8 bg);
 void TaskPoolDestroy(TaskPool* a);
 void func_080E4B34(void);
 void func_08066918(void* a, void* b);
@@ -886,12 +945,16 @@ void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume
 void m4aSongNumStart(u16 id);
 u16 CountCardsById(u16 cardId);
 void ModeRequest(Mode* mode, s32 arg);
+extern Mode gModeCopyright1;
+extern Mode gModeTitle;
 s32 func_08003C9C(s32 a);
 void func_080038E4(void* a, void* b, void* c);
 void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);
 void func_080062F4(u16 a, s32 b);
 u8 func_08005AC4(AnimState* a);
 void func_08012614(void* a, s32 b);
+void* AnimGetGfx(void* anim);
+void func_080EFFF8(UnkStruct_080E590C* p);
 u8 func_08012660(void* a, s32 b);
 u8 func_080840E4(void);
 u8 func_080A42C8(s32 a);
@@ -1144,6 +1207,7 @@ void func_080EB818(u8 a, u8 b, u8 c);
 void func_080ED0B8(FldRes* p, u8 a, u16 v);
 void func_080ED14C(FldRes* p, u8 a, u32 v);
 void func_080ECA88(UnkStruct_080ECA88* p);
+s32 func_080ECC8C(UnkStruct_080ECA88* p);
 void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a);
 void func_080ED06C(UnkStruct_080ED06C* p, u8 a);
 void func_080EE50C(UnkStruct_080EE50C* p, u8 a);
@@ -1197,7 +1261,7 @@ void func_080F3864(MapGmkGp8Work* w);
 void func_080F3A50(MapGmkGpWork* w);
 void func_080F3D34(MapGmkGpWork* w);
 void func_080F411C(MapGmkGpWork* w);
-void func_080F35C0(MapGmkGp8Work* w);
+s32 func_080F35C0(MapGmkGp8Work* w);
 s32 func_080F3674(MapGmkGp8Work* w);
 void func_080F47B4(MapGmk06Work* w);
 void func_080F66E0(MapNiserikuWork* w);
