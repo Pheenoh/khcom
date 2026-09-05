@@ -437,7 +437,9 @@ typedef struct UnkStruct_080E590C {
 } UnkStruct_080E590C;
 
 typedef struct UnkStruct_02034FE0 {
-    u8 unk_000[0x10];
+    u8 unk_000[0x08];
+    s32 unk_008;
+    s32 unk_00C;
     s32 unk_010;
     u8 unk_014[0x24];
     UnkStruct_080E590C* unk_038;
@@ -528,7 +530,10 @@ typedef struct MapGmkTutorialWork {
     u8 unk_040[0x5C];
     void* unk_09C;
     u8* unk_0A0;
-    u8 unk_0A4[0x0C];
+    u8 unk_0A4[0x04];
+    u8 unk_0A8;
+    u8 unk_0A9[0x03];
+    s32 (*unk_0AC)(struct MapGmkTutorialWork*);
     TaskPool unk_0B0;
     u8 unk_0C0[0x04];
 } MapGmkTutorialWork;
@@ -561,13 +566,28 @@ typedef struct MapGmkGpWork {
     u8 (*unk_0C8)(struct MapGmkGpWork*);
 } MapGmkGpWork;
 
-typedef struct MapGmkBarrelWork {
+typedef struct MapGmkGp1Work {
     u8 unk_000[0x44];
-    u8 unk_044[0x74];
+    u8 unk_044[0x5C];
+    AnimState unk_0A0;
     void* unk_0B8;
     u8* unk_0BC;
-    u8 unk_0C0[0x04];
-    void (*unk_0C4)(struct MapGmkBarrelWork*);
+    void* unk_0C0;
+    u16 unk_0C4;
+    u8 unk_0C6;
+    u8 unk_0C7;
+    u8 (*unk_0C8)(struct MapGmkGp1Work*);
+} MapGmkGp1Work;
+
+typedef struct MapGmkBarrelWork {
+    u8 unk_000[0x44];
+    u8 unk_044[0x5C];
+    AnimState unk_0A0;
+    void* unk_0B8;
+    u8* unk_0BC;
+    void* unk_0C0;
+    u8 unk_0C4;
+    u8 unk_0C5[0x03];
     u8 (*unk_0C8)(struct MapGmkBarrelWork*);
 } MapGmkBarrelWork;
 
@@ -590,7 +610,9 @@ typedef struct MapGmkGp8Work {
     void* unk_0C0;
     s32 (*unk_0C4)(struct MapGmkGp8Work*);
     u8 unk_0C8;
-    u8 unk_0C9[0x03];
+    u8 unk_0C9;
+    u8 unk_0CA;
+    u8 unk_0CB;
     s32 (*unk_0CC)(struct MapGmkGp8Work*);
 } MapGmkGp8Work;
 
@@ -659,6 +681,14 @@ typedef struct MapSparkWork {
     u8 unk_24[0x04];
 } MapSparkWork;
 
+typedef struct MapFaintWork {
+    void* unk_00;
+    AnimState unk_04;
+    void* unk_1C;
+    u8* unk_20;
+    u8 unk_24[0x04];
+} MapFaintWork;
+
 typedef struct MapDonaldWork {
     u8 unk_000[0xBC];
     void (*unk_0BC)(struct MapDonaldWork*);
@@ -691,7 +721,8 @@ typedef struct MapMickeyWork {
 } MapMickeyWork;
 
 typedef struct MapTutorialWork {
-    u8 unk_000[0x9C];
+    u8 unk_000[0x40];
+    u8 unk_040[0x5C];
     AnimState unk_09C;
     void* unk_0B4;
     u8* unk_0B8;
@@ -709,7 +740,9 @@ typedef struct MapNiserikuWork {
     u8* unk_0B8;
     void (*unk_0BC)(struct MapNiserikuWork*);
     u8 unk_0C0;
-    u8 unk_0C1[0x07];
+    u8 unk_0C1;
+    u8 unk_0C2[0x02];
+    u8 unk_0C4[0x04];
     TaskPool unk_0C8;
     TaskPool unk_0DC;
     u8 unk_0EC[0x04];
@@ -766,6 +799,29 @@ typedef struct UnkStruct_080F023C {
     s32 unk_F8;
     s32 unk_FC;
 } UnkStruct_080F023C;
+
+typedef struct UnkStruct_080EFA30 {
+    u8 unk_00[0x08];
+    s32 unk_08;
+    u8 unk_0C[0xC0];
+    void* unk_CC;
+    u8 unk_D0[0x28];
+    u8 unk_F8;
+    u8 unk_F9[0x03];
+} UnkStruct_080EFA30;
+
+typedef struct UnkStruct_080EC760Entry {
+    u16 unk_00;
+    u8 unk_02[0x02];
+    s32 unk_04;
+    s32 unk_08;
+} UnkStruct_080EC760Entry;
+
+typedef struct UnkStruct_080EC760 {
+    u8 unk_00;
+    u8 unk_01[0x03];
+    u8 unk_04[5][0x5C];
+} UnkStruct_080EC760;
 typedef struct UnkStruct_080F4EE4 {
     u8 unk_000[0xB4];
     s16 unk_0B4;
@@ -888,6 +944,11 @@ extern u8 gUnk_099597E4[];
 extern u8 gUnk_09985F44[];
 extern s16 gSineTable[];
 extern u8 gUnk_099910C4[];
+extern u8 gUnk_098A94A0[];
+extern u8 gUnk_0994C364[];
+extern u8 gUnk_08B21ACE[];
+extern u8 gUnk_09EE12D4[];
+extern u8 gUnk_09EE12E4[];
 extern void* gModeBattle;
 extern void* gModeRikuBtlTutorial;
 extern void* gModeRikuBtlTutorial;
@@ -937,6 +998,7 @@ void LoadPalette(void* src, void* dst, s32 size);
 void func_08065ACC(void* p, s32 n);
 void* _08066468(s32 a);
 void func_080ED250(u8* work);
+void func_080EBE90(UnkStruct_02034FE0* work);
 void func_080EBEC8(UnkStruct_02034FE0* work);
 void func_080EBFF8(UnkStruct_02034FE0* work);
 void ApproachValue(s32* value, s32 target, u16 steps);
@@ -964,7 +1026,7 @@ void* AllocObjTiles(u16 size, void* owner);
 void* LoadObjPalette(void* src, s32 size);
 void* LoadObjTiles(void* src, s32 size);
 void* LoadObjTiles(void* src, s32 size);
-void AnimInit(AnimState* a, s32 b, s32 c);
+void AnimInit(AnimState* a, void* b, void* c);
 void func_080122AC(void* a, s32 b, u16 c, u16 d);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 extern TaskDesc gTaskDescFldShadow;
@@ -1361,6 +1423,12 @@ void func_080EF404(UnkStruct_080E590C* p, s32 b, s32 c);
 void func_080EF478(UnkStruct_080E590C* p, s32 b, s32 c);
 s32 func_080EF4BC(UnkStruct_080E590C* p);
 void func_080EF84C(UnkStruct_080E590C* p);
+void func_080F0A44(UnkStruct_080E590C* p);
+s32 func_080F1ACC(MapGmkTutorialWork* w);
+s32 func_080F3050(MapGmkGp8Work* w);
+void func_080F6634(MapNiserikuWork* w);
+s32 func_080F32F4(MapGmkGp8Work* w);
+void func_080F71AC(MapTutorialWork* w);
 s32 func_080F023C(UnkStruct_080F023C* p, s32 lim);
 void func_080F0708(UnkStruct_080F023C* p, u8 flag);
 void func_080EFB24(UnkStruct_080F023C* p, u8 a);
