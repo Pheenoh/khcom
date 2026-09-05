@@ -15,7 +15,80 @@ void task_btl_lockon_0(BtlLockonWork* work) {
     gBtlWork->unk_078 = 0;
 }
 
-INCLUDE_ASM("btl/func_0801D288.s");
+void func_0801D288(void) {
+    BtlWork* p;
+    BtlWork* e;
+    s32 min;
+
+    p = gBtlWork->unk_07C;
+    min = 0x40000;
+    gBtlWork->unk_078 = 0;
+    e = ListPoolFirst(&gBtlWork->unk_080);
+
+    if (p->unk_034 & 4) {
+        for (; e != 0; e = ListPoolNext(&e->unk_0B8)) {
+            if (p->unk_004 < e->unk_004 || p->unk_004 - e->unk_004 > 0x9600 ||
+                (p->unk_008 - e->unk_008 >= 0 ? p->unk_008 - e->unk_008 > 0x1800
+                                              : e->unk_008 - p->unk_008 > 0x1800) ||
+                (p->unk_00C - e->unk_00C >= 0 ? p->unk_00C - e->unk_00C > 0x6400
+                                              : e->unk_00C - p->unk_00C > 0x6400) ||
+                (e->unk_034 & 0x1000000) || p->unk_004 - e->unk_004 >= min) {
+                continue;
+            }
+            gBtlWork->unk_078 = e;
+            min = p->unk_004 - e->unk_004;
+        }
+
+        if (gBtlWork->unk_078 == 0) {
+            min = 0x40000;
+            e = ListPoolFirst(&gBtlWork->unk_080);
+
+            for (; e != 0; e = ListPoolNext(&e->unk_0B8)) {
+                if (p->unk_004 > e->unk_004 || e->unk_004 - p->unk_004 > 0x5A00 ||
+                    (p->unk_008 - e->unk_008 >= 0 ? p->unk_008 - e->unk_008 > 0x1800
+                                                  : e->unk_008 - p->unk_008 > 0x1800) ||
+                    (p->unk_00C - e->unk_00C >= 0 ? p->unk_00C - e->unk_00C > 0x6400
+                                                  : e->unk_00C - p->unk_00C > 0x6400) ||
+                    (e->unk_034 & 0x1000000) || e->unk_004 - p->unk_004 >= min) {
+                    continue;
+                }
+                gBtlWork->unk_078 = e;
+                min = e->unk_004 - p->unk_004;
+            }
+        }
+    } else {
+        for (; e != 0; e = ListPoolNext(&e->unk_0B8)) {
+            if (p->unk_004 > e->unk_004 || e->unk_004 - p->unk_004 > 0x9600 ||
+                (p->unk_008 - e->unk_008 >= 0 ? p->unk_008 - e->unk_008 > 0x1800
+                                              : e->unk_008 - p->unk_008 > 0x1800) ||
+                (p->unk_00C - e->unk_00C >= 0 ? p->unk_00C - e->unk_00C > 0x6400
+                                              : e->unk_00C - p->unk_00C > 0x6400) ||
+                (e->unk_034 & 0x1000000) || e->unk_004 - p->unk_004 >= min) {
+                continue;
+            }
+            gBtlWork->unk_078 = e;
+            min = e->unk_004 - p->unk_004;
+        }
+
+        if (gBtlWork->unk_078 == 0) {
+            min = 0x40000;
+            e = ListPoolFirst(&gBtlWork->unk_080);
+
+            for (; e != 0; e = ListPoolNext(&e->unk_0B8)) {
+                if (p->unk_004 < e->unk_004 || p->unk_004 - e->unk_004 > 0x5A00 ||
+                    (p->unk_008 - e->unk_008 >= 0 ? p->unk_008 - e->unk_008 > 0x1800
+                                                  : e->unk_008 - p->unk_008 > 0x1800) ||
+                    (p->unk_00C - e->unk_00C >= 0 ? p->unk_00C - e->unk_00C > 0x6400
+                                                  : e->unk_00C - p->unk_00C > 0x6400) ||
+                    (e->unk_034 & 0x1000000) || p->unk_004 - e->unk_004 >= min) {
+                    continue;
+                }
+                gBtlWork->unk_078 = e;
+                min = p->unk_004 - e->unk_004;
+            }
+        }
+    }
+}
 
 u8 task_btl_lockon_1(BtlLockonWork* work) {
     if ((gBtlWork->unk_068 & 0x20000000) == 0) {
@@ -532,7 +605,107 @@ BtlWork* func_0801E7D4(BtlSoraWork* work) {
 }
 
 INCLUDE_ASM("btl/task_btl_sora_1.s");
+#ifndef VERSION_EU
+void task_btl_sora_2(BtlSoraWork* work) {
+    UnkStruct_0801AF08* p;
+    s32 affine;
+    s32 sx;
+    s32 sy;
+    u16 attr;
+    u16 attr2;
+    s16 x;
+    s16 y;
+
+    p = &work->unk_040;
+
+    if (work->unk_15A & 4) {
+        return;
+    }
+
+    if (work->unk_040.unk_E4->unk_0F4 == 19) {
+        if (work->unk_172 != 0) {
+            if (gFrameCounter & 1) {
+                return;
+            }
+        } else if (gFrameCounter % 120 <= 59) {
+            return;
+        }
+    }
+
+    attr = func_0801AF1C(p->unk_08);
+
+    if (work->unk_19C == 0x100 && work->unk_1A0 == 0x100) {
+        if (p->unk_34 & 4) {
+            sy = gBtlWork->unk_024;
+            sx = sy;
+        } else {
+            sy = gBtlWork->unk_024;
+
+            if (sy == 0x100) {
+                sx = sy;
+                attr |= 1;
+            } else {
+                sx = -sy;
+            }
+        }
+    } else {
+        if (p->unk_34 & 4) {
+            sx = gBtlWork->unk_024 * work->unk_19C >> 8;
+            sy = gBtlWork->unk_024 * work->unk_1A0 >> 8;
+        } else {
+            sx = -(gBtlWork->unk_024 * work->unk_19C >> 8);
+            sy = gBtlWork->unk_024 * work->unk_1A0 >> 8;
+        }
+    }
+
+    if (sy == 0x100 && sx == 0x100) {
+        affine = 0;
+    } else if (sy <= 255) {
+        affine = AllocObjAffine(0, sx, sy, 0);
+    } else {
+        affine = AllocObjAffine(0, sx, sy, 1);
+    }
+
+    if (work->unk_15A & 0x10) {
+        attr2 = work->unk_174 | 1;
+
+        if (p->unk_8C <= p->unk_50) {
+            if (p->unk_10 != 0) {
+                p->unk_CC = 0;
+            } else {
+                p->unk_CC = 0xEFFF;
+            }
+        } else {
+            p->unk_CC = work->unk_174 | 2;
+        }
+    } else {
+        attr2 = (-0x1004 - ((p->unk_08 >> 8) << 2)) | 1;
+        p->unk_CC = 0xEFFF;
+    }
+    WorldToScreen(&x, &y, p->unk_04, p->unk_08, p->unk_0C);
+
+    if (func_0801CA00(p) != 0) {
+        u16 t = work->unk_15A | 0x100;
+
+        work->unk_15A = t;
+        LoadObjPaletteBank(work->palette->unk_06, gUnk_08F69BC4);
+    } else if (work->unk_15A & 0x100) {
+        u16 t = work->unk_15A & 0xFEFF;
+
+        work->unk_15A = t;
+
+        if (work->unk_172 != 0) {
+            LoadObjPaletteBank(work->palette->unk_06, gUnk_08F683A4);
+        } else {
+            LoadObjPaletteBank(work->palette->unk_06, gUnk_096FAC64);
+        }
+    }
+    DrawSprite(x, y, work->unk_008, work->unk_000, work->palette, affine, attr, attr2);
+    TaskPoolDraw(&work->unk_024);
+}
+#else
 INCLUDE_ASM("btl/task_btl_sora_2.s");
+#endif
 
 void task_btl_sora_3(BtlSoraWork* work) {
     UnkStruct_0801AF08* p;
@@ -750,7 +923,98 @@ void func_080277E4(BtlRikuWork* work) {
     work->palette = 0;
 }
 
-INCLUDE_ASM("btl/func_080277FC.s");
+void func_080277FC(BtlRikuWork* work, u16 a) {
+    UnkStruct_0801AF08* p;
+
+    p = &work->unk_044;
+
+    if ((a & 0x10) && (a & 0x40)) {
+        work->unk_164 = 0x20;
+        p->unk_34 &= ~4;
+        *(s32*)((u8*)p + 0x108) += 25;
+        *(s32*)((u8*)p + 0x10C) -= 12;
+    } else if ((a & 0x10) && (a & 0x80)) {
+        work->unk_164 = 0x60;
+        p->unk_34 &= ~4;
+        *(s32*)((u8*)p + 0x108) += 25;
+        *(s32*)((u8*)p + 0x10C) += 12;
+    } else if ((a & 0x20) && (a & 0x80)) {
+        work->unk_164 = 0xA0;
+        p->unk_34 |= 4;
+        *(s32*)((u8*)p + 0x108) -= 25;
+        *(s32*)((u8*)p + 0x10C) += 12;
+    } else if ((a & 0x20) && (a & 0x40)) {
+        work->unk_164 = 0xE0;
+        p->unk_34 |= 4;
+        *(s32*)((u8*)p + 0x108) -= 25;
+        *(s32*)((u8*)p + 0x10C) -= 12;
+    } else if (a & 0x40) {
+        work->unk_164 = 0;
+        *(s32*)((u8*)p + 0x10C) -= 12;
+    } else if (a & 0x10) {
+        work->unk_164 = 0x40;
+        p->unk_34 &= ~4;
+        *(s32*)((u8*)p + 0x108) += 25;
+    } else if (a & 0x80) {
+        work->unk_164 = 0x80;
+        *(s32*)((u8*)p + 0x10C) += 12;
+    } else if (a & 0x20) {
+        work->unk_164 = 0xC0;
+        p->unk_34 |= 4;
+        *(s32*)((u8*)p + 0x108) -= 25;
+    }
+
+    if (*(s32*)((u8*)p + 0x108) > 512) {
+        *(s32*)((u8*)p + 0x108) = 512;
+    } else if (*(s32*)((u8*)p + 0x108) < -512) {
+        *(s32*)((u8*)p + 0x108) = -512;
+    }
+
+    if (*(s32*)((u8*)p + 0x10C) > 256) {
+        *(s32*)((u8*)p + 0x10C) = 256;
+    } else if (*(s32*)((u8*)p + 0x10C) < -256) {
+        *(s32*)((u8*)p + 0x10C) = -256;
+    }
+
+    if (a & 0xF0) {
+        func_0802770C(work, 0, 1);
+
+        if (work->anim.timer == 0) {
+            switch (work->anim.frame) {
+            case 3:
+                m4aSongNumStart(work->unk_188[0]);
+                break;
+            case 7:
+                m4aSongNumStart(work->unk_188[1]);
+                break;
+            }
+        }
+    } else {
+        func_080276D4(work, 0, 1);
+    }
+
+    if (a & 0xF0) {
+        if (p->unk_E4->unk_0F4 == 50) {
+            work->unk_160 += 256;
+
+            if (work->unk_160 > 768) {
+                work->unk_160 = 768;
+            }
+        } else {
+            work->unk_160 += 128;
+
+            if (work->unk_160 > 512) {
+                work->unk_160 = 512;
+            }
+        }
+    } else {
+        work->unk_160 -= 128;
+
+        if (work->unk_160 < 0) {
+            work->unk_160 = 0;
+        }
+    }
+}
 
 void func_08027A64(BtlRikuWork* work, u16 a) {
     UnkStruct_0801AF08* p;
@@ -1001,7 +1265,122 @@ void func_080284C8(s16 a) {
 }
 
 INCLUDE_ASM("btl/task_btl_riku_1.s");
-INCLUDE_ASM("btl/task_btl_riku_2.s");
+void task_btl_riku_2(BtlRikuWork* work) {
+    UnkStruct_0801AF08* p;
+    s32 affine;
+    s32 sx;
+    s32 sy;
+    u16 attr;
+    u16 attr2;
+    s16 x;
+    s16 y;
+
+    p = &work->unk_044;
+
+    if (work->unk_15E & 4) {
+        return;
+    }
+
+    if (work->unk_044.unk_E4->unk_0F4 == 19) {
+        if (work->unk_178 != 0) {
+            if (gFrameCounter & 1) {
+                return;
+            }
+        } else if (gFrameCounter % 120 <= 59) {
+            return;
+        }
+    }
+
+    attr = func_0801AF1C(p->unk_08);
+
+    if (work->unk_19C == 0x100 && work->unk_1A0 == 0x100) {
+        if (p->unk_34 & 4) {
+            sy = gBtlWork->unk_024;
+            sx = sy;
+        } else {
+            sy = gBtlWork->unk_024;
+
+            if (sy == 0x100) {
+                sx = sy;
+                attr |= 1;
+            } else {
+                sx = -sy;
+            }
+        }
+    } else {
+        if (p->unk_34 & 4) {
+            sx = gBtlWork->unk_024 * work->unk_19C >> 8;
+            sy = gBtlWork->unk_024 * work->unk_1A0 >> 8;
+        } else {
+            sx = -(gBtlWork->unk_024 * work->unk_19C >> 8);
+            sy = gBtlWork->unk_024 * work->unk_1A0 >> 8;
+        }
+    }
+
+    if (sy == 0x100 && sx == 0x100) {
+        affine = 0;
+    } else if (sy <= 255) {
+        affine = AllocObjAffine(0, sx, sy, 0);
+    } else {
+        affine = AllocObjAffine(0, sx, sy, 1);
+    }
+
+    if (work->unk_15E & 0x10) {
+        attr2 = work->unk_17A | 1;
+
+        if (p->unk_8C <= p->unk_50) {
+            if (p->unk_10 != 0) {
+                p->unk_CC = 0;
+            } else {
+                p->unk_CC = 0xEFFF;
+            }
+        } else {
+            p->unk_CC = work->unk_17A | 2;
+        }
+    } else {
+        attr2 = (-0x1004 - ((p->unk_08 >> 8) << 2)) | 1;
+        p->unk_CC = 0xEFFF;
+    }
+    WorldToScreen(&x, &y, p->unk_04, p->unk_08, p->unk_0C);
+
+    if (func_0801CA00(p) != 0) {
+        u16 t = work->unk_15E | 0x100;
+
+        work->unk_15E = t;
+        LoadObjPaletteBank(work->palette->unk_06, gUnk_08F69BC4);
+    } else if (work->unk_15E & 0x100) {
+        u16 t = work->unk_15E & 0xFEFF;
+
+        work->unk_15E = t;
+
+        if (work->unk_178 != 0) {
+            LoadObjPaletteBank(work->palette->unk_06, work->unk_1AC);
+        } else {
+            LoadObjPaletteBank(work->palette->unk_06, gUnk_096FAC64);
+        }
+    }
+    DrawSprite(x, y, work->unk_00C, work->unk_000, work->palette, affine, attr, attr2);
+
+    if (work->unk_15E & 0x800) {
+        switch (work->unk_1BC % 2) {
+        case 0:
+            func_080275D4(work, &work->unk_1C0[3]);
+            break;
+        case 1:
+            func_080275D4(work, &work->unk_1C0[6]);
+            break;
+        }
+        work->unk_1BC++;
+    }
+    work->unk_1C0[6] = work->unk_1C0[5];
+    work->unk_1C0[5] = work->unk_1C0[4];
+    work->unk_1C0[4] = work->unk_1C0[3];
+    work->unk_1C0[3] = work->unk_1C0[2];
+    work->unk_1C0[2] = work->unk_1C0[1];
+    work->unk_1C0[1] = work->unk_1C0[0];
+    func_08027570(work, &work->unk_1C0[0]);
+    TaskPoolDraw(&work->unk_028);
+}
 
 void task_btl_riku_3(BtlRikuWork* work) {
     UnkStruct_0801AF08* p;
