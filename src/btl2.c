@@ -1056,7 +1056,203 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     work->unk_48 = gBtlWork->unk_07C;
 }
 
-INCLUDE_ASM("btl2/task_btl_prize_1.s");
+#define DIST(a, b) ((a) - (b) >= 0 ? (a) - (b) : (b) - (a))
+
+s32 task_btl_prize_1(BtlPrizeWork* work) {
+    s32 hit;
+    s32 near;
+    s32 range;
+    s32 d1;
+    s32 d2;
+    s32 vz;
+    s32 tx;
+    s32 ty;
+    s32 tz;
+    u64 f;
+    u64 bit;
+
+    if (gBtlWork->unk_068 & 0x2000) {
+        return 0;
+    }
+
+    if (work->unk_30 == 0) {
+        if (!(work->unk_2C & 4)) {
+            if (gBtlWork->unk_128 != 0) {
+                gBtlWork->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
+            }
+
+            work->unk_08 += work->unk_20;
+            vz = work->unk_20 - 15;
+            work->unk_20 = vz + gBtlWork->unk_12C;
+
+            switch (func_0801A8A4(&work->unk_00, &work->unk_04, 0, 0)) {
+            case 1:
+            case 2:
+                work->unk_3C = -work->unk_3C;
+                break;
+            case 3:
+            case 4:
+                work->unk_40 = -work->unk_40;
+                break;
+            }
+
+            work->unk_00 += work->unk_3C;
+            work->unk_04 += work->unk_40;
+
+            if (work->unk_08 > work->unk_0C) {
+                work->unk_2C &= ~2;
+                work->unk_08 = work->unk_0C;
+                work->unk_20 = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
+            } else {
+                work->unk_2C |= 2;
+            }
+        }
+
+        if (work->unk_2C & 16) {
+            hit = 0;
+            f = gBtlWork->unk_068;
+
+            if (f & 0x4000) {
+                d1 = DIST(work->unk_00, gBtlWork->unk_07C->unk_004);
+                d2 = DIST(work->unk_00, gUnk_02039B9C->unk_07C->unk_004);
+
+                if (d1 == d2) {
+                    bit = f & 0x1000;
+                    near = bit != 0;
+                } else {
+                    near = 1;
+
+                    if (d1 < d2) {
+                        near = 0;
+                    }
+                }
+
+                if (near) {
+                    if (gUnk_02039B9C->unk_0F4 == 6) {
+                        range = 0x10000;
+                    } else {
+                        range = 0x2800;
+                    }
+
+                    if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->unk_00) < range &&
+                        DIST(gUnk_02039B9C->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                        DIST(gUnk_02039B9C->unk_07C->unk_00C, work->unk_08) < 12800) {
+                        work->unk_48 = gUnk_02039B9C->unk_07C;
+                        hit = 1;
+                    } else {
+                        if (gBtlWork->unk_0F4 == 6) {
+                            range = 0x10000;
+                        } else {
+                            range = 0x2800;
+                        }
+
+                        if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
+                            DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                            DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                            hit = 1;
+                        }
+                    }
+                } else {
+                    if (gBtlWork->unk_0F4 == 6) {
+                        range = 0x10000;
+                    } else {
+                        range = 0x2800;
+                    }
+
+                    if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
+                        DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                        DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                        hit = 1;
+                    } else {
+                        if (gUnk_02039B9C->unk_0F4 == 6) {
+                            range = 0x10000;
+                        } else {
+                            range = 0x2800;
+                        }
+
+                        if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->unk_00) < range &&
+                            DIST(gUnk_02039B9C->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                            DIST(gUnk_02039B9C->unk_07C->unk_00C, work->unk_08) < 12800) {
+                            work->unk_48 = gUnk_02039B9C->unk_07C;
+                            hit = 1;
+                        }
+                    }
+                }
+            } else {
+                if (gBtlWork->unk_0F4 == 6) {
+                    range = 0x10000;
+                } else {
+                    range = 0x2800;
+                }
+
+                if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
+                    DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                    DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                    hit = 1;
+                }
+            }
+
+            if (hit) {
+                m4aSongNumStart(0x6B);
+
+                if (gBtlWork->unk_068 & 0x4000) {
+                    work->unk_48->unk_02C += work->unk_3A;
+
+                    if (work->unk_48->unk_02C > work->unk_48->unk_02E) {
+                        work->unk_48->unk_02C = work->unk_48->unk_02E;
+                    }
+                } else {
+                    work->unk_48->unk_02C += work->unk_3A;
+
+                    if (work->unk_48->unk_02C > work->unk_48->unk_02E) {
+                        work->unk_48->unk_02C = work->unk_48->unk_02E;
+                    }
+                    gGameState.exp += work->unk_38;
+                }
+
+                work->unk_30 = 1;
+                work->unk_28 = 0;
+                work->unk_44 = GetAngle(work->unk_48->unk_004, work->unk_48->unk_008, work->unk_00, work->unk_04);
+                work->unk_2C &= ~2;
+                work->unk_2C |= 1;
+                work->unk_2A = GetRandom() % 6 + 5;
+                return 1;
+            }
+
+            if (!(work->unk_2C & 8)) {
+                if (work->unk_28 > 360 && (work->unk_28 & 3) == 0) {
+                    work->unk_2C ^= 1;
+                }
+
+                if (work->unk_28 > 420) {
+                    return 0;
+                }
+            }
+        } else {
+            if (work->unk_28 > 10) {
+                work->unk_2C |= 16;
+            }
+        }
+
+        work->unk_28++;
+    } else {
+        tx = work->unk_48->unk_004 + ((gSineTable[work->unk_44] * (work->unk_34 << 5)) >> 8);
+        ty = work->unk_48->unk_008 + ((-gSineTable[work->unk_44 + 64] * (work->unk_34 << 4)) >> 8);
+        tz = work->unk_48->unk_00C - ((work->unk_28 >> 1) << 8);
+        work->unk_44 += work->unk_2A;
+        work->unk_00 += (tx - work->unk_00) >> 2;
+        work->unk_04 += (ty - work->unk_04) >> 2;
+        work->unk_08 += (tz - work->unk_08) >> 2;
+        work->unk_34 -= 2;
+
+        if (work->unk_28 > 60) {
+            return 0;
+        }
+        work->unk_28++;
+    }
+
+    return 1;
+}
 
 void task_btl_prize_2(BtlPrizeWork* work) {
     s16 x;
@@ -1122,7 +1318,172 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     work->unk_44 = gBtlWork->unk_07C;
 }
 
-INCLUDE_ASM("btl2/task_btl_premire_1.s");
+s32 task_btl_premire_1(BtlPremireWork* work) {
+    s32 hit;
+    s32 range;
+    s32 vz;
+    s32 tx;
+    s32 ty;
+    s32 tz;
+    u64 f;
+
+    if (gBtlWork->unk_068 & 0x2000) {
+        return 0;
+    }
+
+    if (work->unk_30 == 0) {
+        if (!(work->unk_2C & 4)) {
+            if (gBtlWork->unk_128 != 0) {
+                gBtlWork->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
+            }
+
+            work->unk_08 += work->unk_20;
+            vz = work->unk_20 - 15;
+            work->unk_20 = vz + gBtlWork->unk_12C;
+
+            switch (func_0801A8A4(&work->unk_00, &work->unk_04, 0, 0)) {
+            case 1:
+            case 2:
+                work->unk_38 = -work->unk_38;
+                break;
+            case 3:
+            case 4:
+                work->unk_3C = -work->unk_3C;
+                break;
+            }
+
+            work->unk_00 += work->unk_38;
+            work->unk_04 += work->unk_3C;
+
+            if (work->unk_08 > work->unk_0C) {
+                work->unk_2C &= ~2;
+                work->unk_08 = work->unk_0C;
+                work->unk_20 = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
+            } else {
+                work->unk_2C |= 2;
+            }
+        }
+
+        if (work->unk_2C & 16) {
+            hit = 0;
+            f = gBtlWork->unk_068;
+
+            if (f & 0x4000) {
+                if (f & 0x1000) {
+                    if (gUnk_02039B9C->unk_0F4 == 6) {
+                        range = 0x10000;
+                    } else {
+                        range = 0x2000;
+                    }
+
+                    if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->unk_00) < range &&
+                        DIST(gUnk_02039B9C->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                        DIST(gUnk_02039B9C->unk_07C->unk_00C, work->unk_08) < 12800) {
+                        work->unk_44 = gUnk_02039B9C->unk_07C;
+                        hit = 1;
+                    } else {
+                        if (gBtlWork->unk_0F4 == 6) {
+                            range = 0x10000;
+                        } else {
+                            range = 0x2000;
+                        }
+
+                        if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
+                            DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                            DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                            hit = 1;
+                        }
+                    }
+                } else {
+                    if (gBtlWork->unk_0F4 == 6) {
+                        range = 0x10000;
+                    } else {
+                        range = 0x2000;
+                    }
+
+                    if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
+                        DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                        DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                        hit = 1;
+                    } else {
+                        if (gUnk_02039B9C->unk_0F4 == 6) {
+                            range = 0x10000;
+                        } else {
+                            range = 0x2000;
+                        }
+
+                        if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->unk_00) < range &&
+                            DIST(gUnk_02039B9C->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                            DIST(gUnk_02039B9C->unk_07C->unk_00C, work->unk_08) < 12800) {
+                            work->unk_44 = gUnk_02039B9C->unk_07C;
+                            hit = 1;
+                        }
+                    }
+                }
+            } else {
+                if (gBtlWork->unk_0F4 == 6) {
+                    range = 0x10000;
+                } else {
+                    range = 0x2000;
+                }
+
+                if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
+                    DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
+                    DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                    hit = 1;
+                }
+            }
+
+            if (hit) {
+                m4aSongNumStart(0x6B);
+                gBtlWork->unk_068 |= 0x0008000000000000;
+                work->unk_28 = 0;
+                work->unk_30 = 1;
+                work->unk_28 = 0;
+                work->unk_40 = GetAngle(work->unk_44->unk_004, work->unk_44->unk_008, work->unk_00, work->unk_04);
+                work->unk_2C &= ~2;
+                work->unk_2C |= 1;
+                work->unk_2A = GetRandom() % 6 + 5;
+                work->gfx = AnimUpdate(&work->anim);
+                return 1;
+            }
+
+            if (!(work->unk_2C & 8)) {
+                if (work->unk_28 > 360 && (work->unk_28 & 3) == 0) {
+                    work->unk_2C ^= 1;
+                }
+
+                if (work->unk_28 > 420) {
+                    return 0;
+                }
+            }
+        } else {
+            if (work->unk_28 > 10) {
+                work->unk_2C |= 16;
+            }
+        }
+
+        work->unk_28++;
+    } else {
+        tx = work->unk_44->unk_004 + ((gSineTable[work->unk_40] * (work->unk_34 << 5)) >> 8);
+        ty = work->unk_44->unk_008 + ((-gSineTable[work->unk_40 + 64] * (work->unk_34 << 4)) >> 8);
+        tz = work->unk_44->unk_00C - ((work->unk_28 >> 1) << 8);
+        work->unk_40 += work->unk_2A;
+        work->unk_00 += (tx - work->unk_00) >> 2;
+        work->unk_04 += (ty - work->unk_04) >> 2;
+        work->unk_08 += (tz - work->unk_08) >> 2;
+        work->unk_34 -= 2;
+
+        if (work->unk_28 > 60) {
+            return 0;
+        }
+
+        work->unk_28++;
+    }
+
+    work->gfx = AnimUpdate(&work->anim);
+    return 1;
+}
 
 void task_btl_premire_2(BtlPremireWork* work) {
     s16 x;
