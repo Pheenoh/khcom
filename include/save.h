@@ -6,10 +6,11 @@
 #include "malloc.h"
 #include "card.h"
 
+extern u8 gSramFileLarge[];
+
 #define SRAM_HEADER ((u8*)0x0E000010)
 #define SRAM_SYSTEM ((u8*)0x0E000090)
 #define SRAM_FILE_SMALL ((u8*)0x0E001EC0)
-#define SRAM_FILE_LARGE ((u8*)0x0E002F20)
 
 #define SAVE_HEADER_SIZE 0x40
 #define SAVE_SYSTEM_SIZE 0xF14

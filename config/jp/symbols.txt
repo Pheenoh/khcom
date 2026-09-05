@@ -2637,3 +2637,4 @@ gUnk_09EE00D0 = 0x09eb7b4c
 gUnk_093A5E10 = 0x09361338
 gUnk_09EF0824 = 0x09ec7c10
 gUnk_09EF0820 = 0x09ec7c0c
+gSramFileLarge = 0x0e002f20

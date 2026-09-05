@@ -266,7 +266,7 @@ def translator(res):
     keys = sorted(res)
 
     def tr(a):
-        if a < 0x02000000:
+        if a < 0x02000000 or a >= 0x0E000000:
             return a, "const"
         if a in res:
             return res[a], "exact"
