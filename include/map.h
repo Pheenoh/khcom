@@ -495,11 +495,6 @@ typedef struct MapGmk01Work {
     u8 (*unk_0C8)(struct MapGmk01Work*);
 } MapGmk01Work;
 
-typedef struct MapGmkBarrelWork {
-    u8 unk_000[0xC8];
-    u8 (*unk_0C8)(struct MapGmkBarrelWork*);
-} MapGmkBarrelWork;
-
 typedef struct MapGmkSpiderWork {
     u8 unk_000[0xB4];
     void* unk_0B4;
@@ -514,9 +509,21 @@ typedef struct MapGmkGpWork {
     u8 unk_044[0x74];
     void* unk_0B8;
     u8* unk_0BC;
-    u8 unk_0C0[0x08];
+    u8 unk_0C0[0x04];
+    u16 unk_0C4;
+    u16 unk_0C6;
     u8 (*unk_0C8)(struct MapGmkGpWork*);
 } MapGmkGpWork;
+
+typedef struct MapGmkBarrelWork {
+    u8 unk_000[0x44];
+    u8 unk_044[0x74];
+    void* unk_0B8;
+    u8* unk_0BC;
+    u8 unk_0C0[0x04];
+    void (*unk_0C4)(struct MapGmkBarrelWork*);
+    u8 (*unk_0C8)(struct MapGmkBarrelWork*);
+} MapGmkBarrelWork;
 
 typedef struct MapPrizeWork {
     u8 unk_00[0x10];
@@ -537,26 +544,31 @@ typedef struct MapGmkGp8Work {
     void (*unk_0CC)(struct MapGmkGp8Work*);
 } MapGmkGp8Work;
 
+typedef struct MapGmk04Work {
+    u8 unk_000[0x04];
+    u8 unk_004[0x40];
+    u8 unk_044[0x5C];
+    u8* unk_0A0;
+    void* unk_0A4;
+    u8 unk_0A8[0x20];
+    TaskPool unk_0C8;
+} MapGmk04Work;
+
 typedef struct MapGmk06Work {
-    u8 unk_000[0xC4];
+    u8 unk_000[0x04];
+    u8 unk_004[0x40];
+    u8 unk_044[0x74];
+    u8* unk_0B8;
+    void* unk_0BC;
+    u8 unk_0C0[0x04];
     u32 unk_0C4;
-    u8 unk_0C8[0x14];
+    TaskPool unk_0C8;
 } MapGmk06Work;
 typedef struct MapPrzCardWork {
     u8 unk_00[0x8C];
     void (*unk_8C)(struct MapPrzCardWork*);
     u8 unk_90[0x58];
 } MapPrzCardWork;
-
-typedef struct MapTutorialWork {
-    u8 unk_000[0xB4];
-    void* unk_0B4;
-    u8* unk_0B8;
-    u8 unk_0BC[0x0C];
-    TaskPool unk_0C8;
-    TaskPool unk_0DC;
-    u8 unk_0EC[0x04];
-} MapTutorialWork;
 
 typedef struct MapPrzStockWork {
     u16* unk_00;
@@ -573,14 +585,54 @@ typedef struct MapSparkWork {
     u8 unk_24[0x04];
 } MapSparkWork;
 
+typedef struct MapDonaldWork {
+    u8 unk_000[0xBC];
+    void (*unk_0BC)(struct MapDonaldWork*);
+    u8 unk_0C0[0x2C];
+} MapDonaldWork;
+
+typedef struct MapGoofyWork {
+    u8 unk_000[0xBC];
+    void (*unk_0BC)(struct MapGoofyWork*);
+    u8 unk_0C0[0x2C];
+} MapGoofyWork;
+
+typedef struct MapNamineWork {
+    u8 unk_000[0xBC];
+    void (*unk_0BC)(struct MapNamineWork*);
+    u8 unk_0C0[0x30];
+} MapNamineWork;
+
+typedef struct MapMickeyWork {
+    u8 unk_000[0xBC];
+    void (*unk_0BC)(struct MapMickeyWork*);
+    u8 unk_0C0[0x2C];
+} MapMickeyWork;
+
+typedef struct MapTutorialWork {
+    u8 unk_000[0x9C];
+    AnimState unk_09C;
+    void* unk_0B4;
+    u8* unk_0B8;
+    void* unk_0BC;
+    u8 unk_0C0[0x04];
+    void (*unk_0C4)(struct MapTutorialWork*);
+    TaskPool unk_0C8;
+    TaskPool unk_0DC;
+} MapTutorialWork;
+
 typedef struct MapNiserikuWork {
     u8 unk_000[0xBC];
-    u32 unk_0BC;
+    void (*unk_0BC)(struct MapNiserikuWork*);
     u8 unk_0C0[0x2C];
 } MapNiserikuWork;
 
 typedef struct MapMsgWork {
-    u8 unk_000[0x188];
+    void* unk_000;
+    u8 unk_004[0x180];
+    u8 unk_184;
+    u8 unk_185;
+    s16 unk_186;
     u16 unk_188;
     u8 unk_18A[0x02];
 } MapMsgWork;
@@ -725,6 +777,10 @@ extern u8 gUnk_050001C0[];
 extern u8 gUnk_08159E10[];
 extern u8 gUnk_08159E18[];
 extern u8 gUnk_0815A03A[];
+extern u8 gUnk_08B1EA00[];
+extern u8 gUnk_08F69BE4[];
+extern u8 gUnk_08B1EA00[];
+extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_099597E4[];
 extern u8 gUnk_09985F44[];
@@ -753,6 +809,7 @@ extern void* gTaskDescFldSora;
 extern void* gTaskDescFldRiku;
 extern void* gTaskDescMapFix;
 extern void* gTaskDescMapMenu;
+extern void* gTaskDescMapSave;
 extern void* gTaskDescMapAnm;
 extern void* gTaskDescMapDbg;
 extern void* gTaskDescMapGmkTutorial;
@@ -800,6 +857,8 @@ void* TaskCreate(void* pool, void* desc, void* arg);
 void TaskPoolInit(TaskPool* a, s32 count);
 void* AllocObjTiles(u16 size, void* owner);
 void* LoadObjPalette(void* src, s32 size);
+void* LoadObjTiles(void* src, s32 size);
+void* LoadObjTiles(void* src, s32 size);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void func_080122AC(void* a, s32 b, u16 c, u16 d);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
@@ -809,6 +868,14 @@ void TaskPoolUpdate(TaskPool* a);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 void func_08012304(void* a);
+void func_080121FC(void* a);
+void func_080F5C60(MapDonaldWork* w);
+void func_080F5F88(MapGoofyWork* w);
+void func_080F62B0(MapNamineWork* w);
+void func_080F6A60(MapMickeyWork* w);
+void func_080F65EC(MapNiserikuWork* w);
+void func_080F6FC4(MapTutorialWork* w);
+void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void TaskPoolDestroy(TaskPool* a);
 void func_080E4B34(void);
 void func_08066918(void* a, void* b);
@@ -1113,6 +1180,7 @@ void func_080F1718(MapGmkJumpWork* w);
 void func_080F1C38(MapGmkTutorialWork* w);
 u8 func_080F1D68(MapGmkSpiderWork* w);
 void func_080F1E0C(MapGmkSpiderWork* w);
+s32 func_080F1E28(MapGmkGpWork* w);
 void func_080F2058(MapGmkGpWork* w);
 u8 func_080F2244(MapGmkGpWork* w);
 u8 func_080F3C98(MapGmk01Work* w);

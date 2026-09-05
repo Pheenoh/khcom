@@ -161,6 +161,7 @@ gUnk_020358BE = 0x0203581e
 gUnk_09EE2704 = 0x09eba180
 gModeRikuBtlTutorial = 0x09ec07b4
 gTaskDescMapMenu = 0x09ecdf34
+gTaskDescMapSave = 0x09ecdf4c
 gUnk_0203BD10 = 0x0203bc80
 gUnk_0203BEA0 = 0x0203be10
 gUnk_0203BEA8 = 0x0203be18
