@@ -591,20 +591,20 @@ _0801EE78:
 	ldrb r0, [r0, #0x00]
 	cmp r0, #0x00
 	beq _0801EEB0
-	bl func_0800886C
+	bl SioKeyGetHeldA
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	str r0, [sp, #0x05C]
-	bl func_0800889C
+	bl SioKeyGetPressedA
 	b _0801EECE
 _0801EEA8: .4byte 0x02039B84
 _0801EEAC: .4byte 0x00000173
 _0801EEB0:
-	bl func_08008884
+	bl SioKeyGetHeldB
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	str r0, [sp, #0x05C]
-	bl func_080088B4
+	bl SioKeyGetPressedB
 	b _0801EECE
 _0801EEC0:
 	bl GetKeysHeld

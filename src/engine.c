@@ -7,7 +7,7 @@
 u32 gUnk_0203401C;
 u32 gUnk_02034020;
 u16 gUnk_02034024;
-u8 gUnk_02034026;
+u8 gMosaicActive;
 u32 gRandSeed;
 u8 gUnk_0203402C[4];
 u32 gRandomState[4];
@@ -2017,7 +2017,7 @@ void MosaicReset(void) {
     gUnk_0203401C = 0;
     gUnk_02034020 = 0;
     gUnk_02034024 = 0;
-    gUnk_02034026 = 0;
+    gMosaicActive = 0;
 }
 
 void MosaicUpdate(void) {
@@ -2030,8 +2030,8 @@ void MosaicUpdate(void) {
         v = t;
         SetBgMosaicSize(v, v);
         SetObjMosaicSize(v, v);
-    } else if (gUnk_02034026 != 0) {
-        gUnk_02034026 = 0;
+    } else if (gMosaicActive != 0) {
+        gMosaicActive = 0;
         func_080034D8(0);
     }
 }
@@ -2040,7 +2040,7 @@ void func_08006494(u16 a, u16 b) {
     gUnk_02034024 = a;
     gUnk_0203401C = b << 8;
     gUnk_02034020 = 0;
-    gUnk_02034026 = 1;
+    gMosaicActive = 1;
     SetBgMosaic(0, 1);
     SetBgMosaic(1, 1);
     SetBgMosaic(2, 1);
@@ -2052,7 +2052,7 @@ void func_080064E8(u16 a, u16 b) {
     gUnk_02034024 = a;
     gUnk_0203401C = 0;
     gUnk_02034020 = b << 8;
-    gUnk_02034026 = 1;
+    gMosaicActive = 1;
     SetBgMosaic(0, 1);
     SetBgMosaic(1, 1);
     SetBgMosaic(2, 1);
@@ -2060,8 +2060,8 @@ void func_080064E8(u16 a, u16 b) {
     func_080034D8(1);
 }
 
-u8 func_0800653C(void) {
-    return gUnk_02034026;
+u8 MosaicIsActive(void) {
+    return gMosaicActive;
 }
 
 void SeedRand(u32 seed) {

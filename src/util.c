@@ -1,7 +1,7 @@
 #include "util.h"
 
-KeyState* gUnk_0203407C;
-KeyState* gUnk_02034080;
+KeyState* gSioKeyStateA;
+KeyState* gSioKeyStateB;
 u16 gUnk_02034084;
 #include "malloc.h"
 #include "m4a.h"
@@ -330,56 +330,56 @@ void KeyStateUpdate(KeyState* k, u16 keys) {
 
 void SioKeyInit(void) {
     SetIwramHeapName(sSioKeyHeapName);
-    gUnk_0203407C = IwramAlloc(sizeof(KeyState));
-    gUnk_02034080 = IwramAlloc(sizeof(KeyState));
-    KeyStateClear(gUnk_0203407C);
-    KeyStateClear(gUnk_02034080);
+    gSioKeyStateA = IwramAlloc(sizeof(KeyState));
+    gSioKeyStateB = IwramAlloc(sizeof(KeyState));
+    KeyStateClear(gSioKeyStateA);
+    KeyStateClear(gSioKeyStateB);
     gUnk_02034084 = 0;
 }
 
 void SioKeyFree(void) {
-    IwramFree(gUnk_02034080);
-    IwramFree(gUnk_0203407C);
+    IwramFree(gSioKeyStateB);
+    IwramFree(gSioKeyStateA);
 }
 
-u16 func_0800886C(void) {
-    return KeyGetHeld(gUnk_0203407C);
+u16 SioKeyGetHeldA(void) {
+    return KeyGetHeld(gSioKeyStateA);
 }
 
-u16 func_08008884(void) {
-    return KeyGetHeld(gUnk_02034080);
+u16 SioKeyGetHeldB(void) {
+    return KeyGetHeld(gSioKeyStateB);
 }
 
-u16 func_0800889C(void) {
-    return KeyGetPressed(gUnk_0203407C);
+u16 SioKeyGetPressedA(void) {
+    return KeyGetPressed(gSioKeyStateA);
 }
 
-u16 func_080088B4(void) {
-    return KeyGetPressed(gUnk_02034080);
+u16 SioKeyGetPressedB(void) {
+    return KeyGetPressed(gSioKeyStateB);
 }
 
-u16 func_080088CC(void) {
-    return KeyGetRepeat(gUnk_0203407C);
+u16 SioKeyGetRepeatA(void) {
+    return KeyGetRepeat(gSioKeyStateA);
 }
 
-u16 func_080088E4(void) {
-    return KeyGetRepeat(gUnk_02034080);
+u16 SioKeyGetRepeatB(void) {
+    return KeyGetRepeat(gSioKeyStateB);
 }
 
 u16 func_080088FC(u16 a, u16 b) {
-    return func_0800846C(gUnk_0203407C, a, b);
+    return func_0800846C(gSioKeyStateA, a, b);
 }
 
 u16 func_08008920(u16 a, u16 b) {
-    return func_0800846C(gUnk_02034080, a, b);
+    return func_0800846C(gSioKeyStateB, a, b);
 }
 
-void func_08008944(u16 keys) {
-    KeyStateUpdate(gUnk_0203407C, keys);
+void SioKeyStateUpdateA(u16 keys) {
+    KeyStateUpdate(gSioKeyStateA, keys);
 }
 
-void func_0800895C(u16 keys) {
-    KeyStateUpdate(gUnk_02034080, keys);
+void SioKeyStateUpdateB(u16 keys) {
+    KeyStateUpdate(gSioKeyStateB, keys);
 }
 
 s32 IsSongPlaying(u16 songNum) {

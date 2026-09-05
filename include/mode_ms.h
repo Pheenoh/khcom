@@ -239,7 +239,7 @@ extern void* gUnk_0203585C;
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 extern s16 gUnk_020357C0;
-extern AnimState gUnk_020357D8;
+extern AnimState gWorldwarpAnim;
 extern AnimState gUnk_020357F8;
 extern AnimState gUnk_02035860;
 extern s16 gUnk_02035878;

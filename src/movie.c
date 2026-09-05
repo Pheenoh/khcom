@@ -72,22 +72,22 @@ void SndStreamClose(void);
 void SndStreamStart(void);
 void SndStreamUnlock(u32 ch);
 
-void func_081181BC(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
-s32 func_081181EC(void* a);
+void MovieSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
+s32 MovieStart(void* a);
 void func_08118344(s32 (*a)(s32), s32 b);
-void func_08118538(void);
-void func_08118564(void);
-void func_08118578(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
-void func_081185B0(void);
-u8* func_081185CC(void);
+void MovieClose(void);
+void MovieUpdate(void);
+void MovieSetHeapCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
+void MovieAdvanceTicks(void);
+u8* MovieGetTicks(void);
 float MovieTicksToSeconds(s32 a);
 void func_0811865C(MoviePlayer* p, void* a, void* b, void* c, u32 w, u32 h);
 void func_08118ADC(MoviePlayer* p, void* a, u32 b);
-MoviePlayer* func_08118C34(void* a);
+MoviePlayer* MovieOpen(void* a);
 void MovieFree(MoviePlayer* a);
 void func_08118F7C(MoviePlayer* a);
 s32 func_0811904C(MoviePlayer* a, void* dst);
-s32 func_08119224(MoviePlayer* a);
+s32 MovieAdvanceFrame(MoviePlayer* a);
 u32 func_081192B0(MoviePlayer* a);
 void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2);
 s32 func_08119480(MoviePlayer* a);
@@ -96,12 +96,12 @@ u32 MovieGetChannels(MoviePlayer* a);
 u32 MovieGetSampleRate(MoviePlayer* a);
 void MovieGetSize(MoviePlayer* a, s32* w, s32* h);
 
-void func_081181BC(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
-    func_08118578(a, b, c, d);
+void MovieSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
+    MovieSetHeapCallbacks(a, b, c, d);
     SndStreamSetCallbacks(a, b, c, d);
 }
 
-s32 func_081181EC(void* a) {
+s32 MovieStart(void* a) {
     void* dstA1;
     void* dstA2;
     void* dstB1;
@@ -113,7 +113,7 @@ s32 func_081181EC(void* a) {
     s32 i;
     u32 channels;
 
-    gUnk_0203C7C4 = func_08118C34(a);
+    gUnk_0203C7C4 = MovieOpen(a);
     if (gUnk_0203C7C4 == 0) {
         return 0;
     }
@@ -160,7 +160,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
     x = (240 - w) >> 1;
     y = (160 - h) >> 1;
     func_0811904C(gUnk_0203C7C4, (u16*)0x06000000 + (y * 240 + x));
-    func_08119224(gUnk_0203C7C4);
+    MovieAdvanceFrame(gUnk_0203C7C4);
     SndStreamStart();
     channels = MovieGetChannels(gUnk_0203C7C4);
     if (channels != 0) {
@@ -174,7 +174,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
         }
         func_0811904C(gUnk_0203C7C4, (u16*)0x06000000 + (y * 240 + x));
 
-        if (func_08119224(gUnk_0203C7C4) == 0) {
+        if (MovieAdvanceFrame(gUnk_0203C7C4) == 0) {
             break;
         }
 
@@ -206,19 +206,19 @@ void func_08118344(s32 (*a)(s32), s32 b) {
     }
 }
 
-void func_08118538(void) {
+void MovieClose(void) {
     if (MovieGetChannels(gUnk_0203C7C4)) {
         SndStreamClose();
     }
     MovieFree(gUnk_0203C7C4);
 }
 
-void func_08118564(void) {
+void MovieUpdate(void) {
     SndStreamUpdate();
-    func_081185B0();
+    MovieAdvanceTicks();
 }
 
-void func_08118578(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
+void MovieSetHeapCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
     gUnk_0203C7D0.unk_00 = a;
     gUnk_0203C7D0.unk_04 = b;
     gUnk_0203C7D0.unk_08 = c;
@@ -226,11 +226,11 @@ void func_08118578(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFre
     gUnk_0203C7D0.unk_10 = 0;
 }
 
-void func_081185B0(void) {
+void MovieAdvanceTicks(void) {
     gUnk_0203C7D0.unk_10 = gUnk_0203C7D0.unk_10 + MOVIE_TICKS_PER_FRAME;
 }
 
-u8* func_081185CC(void) {
+u8* MovieGetTicks(void) {
     u8* t;
     u16 vc;
 
@@ -252,7 +252,7 @@ float MovieTicksToSeconds(s32 a) {
 INCLUDE_ASM("movie/func_0811865C.s");
 INCLUDE_ASM("movie/func_08118ADC.s");
 
-MoviePlayer* func_08118C34(void* a) {
+MoviePlayer* MovieOpen(void* a) {
     u32* q;
     u32 len;
     u32 n;
@@ -424,7 +424,7 @@ u32 func_08119190(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 
     return p->unk_78;
 }
 
-s32 func_08119224(MoviePlayer* a) {
+s32 MovieAdvanceFrame(MoviePlayer* a) {
     MoviePlayer* p = a;
 
     p->frameIndex++;
@@ -435,7 +435,7 @@ s32 func_08119224(MoviePlayer* a) {
 
     if (p->unk_6C == 0) {
         p->unk_6C = 1;
-        p->unk_68 = func_081185CC();
+        p->unk_68 = MovieGetTicks();
     }
     p->unk_14 = p->unk_14 + *(p->unk_50 + p->frameIndex - 1);
     return 1;
@@ -524,16 +524,16 @@ s32 func_0811950C(MoviePlayer* a) {
         p->unk_14 = p->unk_10;
         p->unk_74 = 0;
         p->unk_6C = 1;
-        p->unk_68 = func_081185CC();
+        p->unk_68 = MovieGetTicks();
         return 1;
     }
 
     if (p->unk_6C == 0) {
         p->unk_74 = 0;
         p->unk_6C = 1;
-        p->unk_68 = func_081185CC();
+        p->unk_68 = MovieGetTicks();
     }
-    t = func_081185CC();
+    t = MovieGetTicks();
     now = MovieTicksToSeconds(t - p->unk_68);
     target = p->secondsPerFrame * (p->frameIndex + 1);
 

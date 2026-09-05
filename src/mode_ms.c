@@ -121,7 +121,7 @@ void mode_ms_top_0(u32 a) {
     gUnk_020357C8 = LoadObjTiles(gUnk_099A2B62, 0x400);
     gUnk_020357D4 = LoadObjPalette(gUnk_09A3D85C, 0x20);
     gUnk_020357D0 = LoadObjTiles(gUnk_099A36F8, 0x500);
-    AnimInit(&gUnk_020357D8, gUnk_09EF99D0, gUnk_09EF99A8);
+    AnimInit(&gWorldwarpAnim, gUnk_09EF99D0, gUnk_09EF99A8);
     gUnk_020357F4 = LoadObjPalette(gUnk_08F683A4, 0x20);
     gUnk_020357F0 = LoadObjTiles(gUnk_088C56C6, 0x300);
     AnimInit(&gUnk_020357F8, gUnk_09EDEA6C, gUnk_09EDEA68);

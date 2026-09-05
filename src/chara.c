@@ -654,16 +654,16 @@ s32 func_080C5ECC(void) {
         }
 
         if (gUnk_020397E0[0][0] == 0xACD) {
-            func_08008944(gUnk_020397E0[2][0]);
-            func_0800895C(gUnk_020397E0[3][0]);
+            SioKeyStateUpdateA(gUnk_020397E0[2][0]);
+            SioKeyStateUpdateB(gUnk_020397E0[3][0]);
             gSioStatus &= ~0x100;
         } else {
             gSioStatus |= 0x100;
         }
     } else {
         if (gUnk_020397E0[0][0] == 0xACD) {
-            func_08008944(gUnk_020397E0[2][0]);
-            func_0800895C(gUnk_020397E0[3][0]);
+            SioKeyStateUpdateA(gUnk_020397E0[2][0]);
+            SioKeyStateUpdateB(gUnk_020397E0[3][0]);
             gSioStatus &= ~0x100;
         } else {
             gSioStatus |= 0x100;
@@ -884,7 +884,7 @@ void func_080C640C(CharaObjParam2* param) {
 
 INCLUDE_ASM("chara/func_080C64A4.s");
 
-void func_080C6878(void) {
+void CharaObjFree(void) {
     EwramFree(gCharaObj);
     TaskPoolDestroy(gCharaTaskPool);
 }

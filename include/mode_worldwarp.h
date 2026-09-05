@@ -85,7 +85,7 @@ extern void* gUnk_0203585C;
 extern void* gUnk_02035818[];
 extern void* gUnk_02035820[];
 extern AnimState gUnk_02035828[];
-extern AnimState gUnk_020357D8;
+extern AnimState gWorldwarpAnim;
 extern s16 gUnk_020358BC;
 extern s16 gUnk_020358C2;
 extern u8 gUnk_09A3D77C[];
