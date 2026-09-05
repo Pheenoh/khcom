@@ -607,7 +607,34 @@ s16 func_080E1194(u8 a, u8 b, s16 c) {
     return c;
 }
 
-INCLUDE_ASM("map/func_080E1204.s");
+s16 func_080E1204(u8 a, u8 b, s16 c) {
+    switch (a) {
+    case 2:
+    case 4:
+        if (b == 4) {
+            c += 1;
+        }
+        break;
+    case 6:
+        if (b != 4) {
+            c -= 1;
+        }
+        break;
+    case 1:
+    case 5:
+        if (b == 5) {
+            c -= 1;
+        }
+        break;
+    case 3:
+        if (b != 5) {
+            c += 1;
+        }
+        break;
+    }
+
+    return c;
+}
 
 INCLUDE_ASM("map/func_080E1274.s");
 
@@ -4498,7 +4525,23 @@ void func_080EE760(u8* work, u8 i) {
     }
 }
 
+#ifndef VERSION_EU
+s32 func_080EE7B0(MapSaveWork* w) {
+    if (w->unk_2F6 != 0) {
+        ApproachValue(&w->unk_008, 0, w->unk_2F6);
+        ApproachValue(&w->unk_00C, 0x9800, w->unk_2F6);
+        w->unk_2F6 -= 1;
+    } else {
+        gUnk_0203C7AC->unk_00 |= 0x1000;
+        gUnk_02039BA0->unk_70 |= 0x100;
+        w->unk_2F6 = 16;
+        w->unk_2F0 = func_080EE824;
+    }
+    return 1;
+}
+#else
 INCLUDE_ASM("map/func_080EE7B0.s");
+#endif
 
 INCLUDE_ASM("map/func_080EE824.s");
 
@@ -5206,7 +5249,26 @@ INCLUDE_ASM("map/func_080F117C.s");
 
 INCLUDE_ASM("map/func_080F1274.s");
 
+#ifndef VERSION_EU
+void func_080F131C(MapDbgWork* w, u8* p) {
+    UnkStruct_080DEE18* d;
+
+    w->unk_00 = 0;
+    w->unk_04 = p;
+    *p = 0;
+    w->unk_08 = func_080F1124;
+    w->unk_0C = 0;
+    w->unk_0D = 0;
+    d = func_080DEE18(gUnk_0203C590.unk_06);
+    w->unk_10 = func_080668F0();
+    w->unk_14 = func_08066904();
+    w->unk_2C = func_08066AF8(d->unk_04, w->unk_18);
+    w->unk_42 = func_08066AF8(func_080F10F0((u8*)d), w->unk_2E);
+    w->unk_46 = func_0806692C(gUnk_09EF6C38, &w->unk_44);
+}
+#else
 INCLUDE_ASM("map/func_080F131C.s");
+#endif
 
 s32 func_080F138C(u8* work) {
     (*(void (**)(u8*))&work[8])(work);
@@ -5347,9 +5409,23 @@ void func_080F1968(u8* work) {
 
 INCLUDE_ASM("map/func_080F1978.s");
 
-INCLUDE_ASM("map/func_080F1A10.s");
+u8 func_080F1A10(MapGmkTutorialWork* w) {
+    void* p = func_08093BF8();
 
-s32 func_080F1A84(MapGmkTutorialWork* w) {
+    if (p != 0) {
+        func_080DF640(gUnk_0984C868[0], p);
+        w->unk_0AC = func_080F1A84;
+    }
+
+    if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
+        gUnk_0203C7AC->unk_00 &= ~0x80;
+        func_080062F4(*(u16*)&w->unk_0A0[6] + 16, 0);
+        w->unk_0AC = func_080F1978;
+    }
+    return 1;
+}
+
+u8 func_080F1A84(MapGmkTutorialWork* w) {
     if (gUnk_02039BA0->unk_70 & 0x200000) {
         func_080038E4(w->unk_09C, gUnk_098A94A0, gUnk_0994C364);
         w->unk_0A8 = 1;
@@ -5377,7 +5453,19 @@ s32 func_080F1B6C(MapGmkTutorialWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F1BC8.s");
+void func_080F1BC8(MapGmkTutorialWork* w) {
+    u16 v;
+    s32 k;
+    s32 x;
+    s32 y;
+
+    x = (w->unk_000 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004 >> 8;
+    y = k + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0xFE4 - k * 4;
+    DrawSprite(x, y, 0, w->unk_09C, w->unk_0A0, 0, 0x800, v);
+    TaskPoolDraw(&w->unk_0B0);
+}
 
 void func_080F1C38(MapGmkTutorialWork* w) {
     ReleaseObjTiles(w->unk_09C);
@@ -5413,7 +5501,27 @@ u8 func_080F1D68(MapGmkSpiderWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F1D98.s");
+void func_080F1D98(MapGmkSpiderWork* w) {
+    u16 flags;
+    u16 v;
+    s32 t;
+    s32 k;
+    s32 x;
+    s32 y;
+
+    t = w->unk_0C4;
+    flags = 0x800;
+
+    if (t) {
+        flags = 0x801;
+    }
+
+    x = (w->unk_000 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004 >> 8;
+    y = k + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0x1004 - k * 4;
+    DrawSprite(x, y, w->unk_0BC, w->unk_0B4, w->unk_0B8, 0, flags, v);
+}
 
 void func_080F1E0C(MapGmkSpiderWork* w) {
     ReleaseObjTiles(w->unk_0B4);
@@ -5622,7 +5730,18 @@ u8 func_080F2778(MapGmkGpWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F27CC.s");
+void func_080F27CC(MapGmkGpWork* w) {
+    u16 v;
+    s32 k;
+    s32 x;
+    s32 y;
+
+    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004.x >> 8;
+    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0x1004 - k * 4;
+    DrawSprite(x, y, w->unk_0C0, w->unk_0B8, w->unk_0BC, 0, 0x800, v);
+}
 
 void func_080F2838(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
@@ -5663,7 +5782,18 @@ u8 func_080F2A10(MapGmkGpWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F2A64.s");
+void func_080F2A64(MapGmkGpWork* w) {
+    u16 v;
+    s32 k;
+    s32 x;
+    s32 y;
+
+    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004.x >> 8;
+    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0x1004 - k * 4;
+    DrawSprite(x, y, w->unk_0C0, w->unk_0B8, w->unk_0BC, 0, 0x800, v);
+}
 
 void func_080F2AD0(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
@@ -5706,7 +5836,18 @@ u8 func_080F2CAC(MapGmkGpWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F2D00.s");
+void func_080F2D00(MapGmkGpWork* w) {
+    u16 v;
+    s32 k;
+    s32 x;
+    s32 y;
+
+    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004.x >> 8;
+    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0x1004 - k * 4;
+    DrawSprite(x, y, w->unk_0C0, w->unk_0B8, w->unk_0BC, 0, 0x800, v);
+}
 
 void func_080F2D6C(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
@@ -5747,7 +5888,18 @@ u8 func_080F2F6C(MapGmkGpWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F2FC0.s");
+void func_080F2FC0(MapGmkGpWork* w) {
+    u16 v;
+    s32 k;
+    s32 x;
+    s32 y;
+
+    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004.x >> 8;
+    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0x1004 - k * 4;
+    DrawSprite(x, y, w->unk_0C0, w->unk_0B8, w->unk_0BC, 0, 0x800, v);
+}
 
 void func_080F302C(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
@@ -5799,7 +5951,18 @@ u8 func_080F3210(MapGmkGp8Work* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F3264.s");
+void func_080F3264(MapGmkGpWork* w) {
+    u16 v;
+    s32 k;
+    s32 x;
+    s32 y;
+
+    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004.x >> 8;
+    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0x1004 - k * 4;
+    DrawSprite(x, y, w->unk_0C0, w->unk_0B8, w->unk_0BC, 0, 0x800, v);
+}
 
 void func_080F32D0(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
@@ -5954,7 +6117,18 @@ u8 func_080F3C98(MapGmk01Work* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F3CC8.s");
+void func_080F3CC8(MapGmkGpWork* w) {
+    u16 v;
+    s32 k;
+    s32 x;
+    s32 y;
+
+    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004.x >> 8;
+    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0x1004 - k * 4;
+    DrawSprite(x, y, w->unk_0C0, w->unk_0B8, w->unk_0BC, 0, 0x800, v);
+}
 
 void func_080F3D34(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
@@ -6149,7 +6323,16 @@ void func_080F47B4(MapGmk06Work* w) {
     }
 }
 
-INCLUDE_ASM("map/func_080F47DC.s");
+void func_080F47DC(MapGmk06Work* w) {
+    if (func_080A42C8((s32)w) == 0) {
+        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_0203C7AC->unk_00 &= ~0x4000;
+        gGameState.unk_17A |= 0x100;
+        w->unk_0C4 = func_080F46FC;
+    } else {
+        gUnk_02039BA0->unk_6C = 30;
+    }
+}
 
 INCLUDE_ASM("map/func_080F484C.s");
 
@@ -6683,7 +6866,18 @@ void func_080F6FC4(MapTutorialWork* w) {
 
 INCLUDE_ASM("map/func_080F7024.s");
 
-INCLUDE_ASM("map/func_080F70F4.s");
+void func_080F70F4(MapTutorialWork* w) {
+    AnimState* a = &w->unk_09C;
+
+    if (AnimIsFinished(a)) {
+        func_08005974(a, 0, 1, gUnk_09EDF85C, gUnk_09EDF834);
+        func_08002A10(w->unk_0B4, gUnk_08957290);
+        func_080A411C(&w->unk_0C8, 0, 0x6C);
+        w->unk_0C4 = func_080F7160;
+    } else {
+        w->unk_0BC = AnimUpdate(a);
+    }
+}
 
 void func_080F7160(MapTutorialWork* w) {
     w->unk_0BC = AnimUpdate(&w->unk_09C);
@@ -6810,7 +7004,18 @@ s32 func_080F76D0(MapStairWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F76F0.s");
+void func_080F76F0(MapStairWork* w) {
+    s32 x;
+    s32 y;
+
+    TaskPoolDraw(&w->unk_50);
+
+    if (w->unk_48 == 1) {
+        x = (w->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+        y = (w->unk_04 >> 8) + (w->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+        DrawSprite(x, y, gUnk_08B1E9A6, w->unk_44, w->unk_40, 0, 0x800, 0x101);
+    }
+}
 
 void func_080F775C(MapStairWork* w) {
     ReleaseObjTiles(w->unk_44);
