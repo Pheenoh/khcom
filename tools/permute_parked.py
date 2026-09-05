@@ -18,6 +18,7 @@ PYTHON = os.path.join(REPO, ".venv", "bin", "python3")
 
 FUNC_START = re.compile(r"^[A-Za-z_][\w\s\*]*\**\s*\w+\s*\([^;]*\)\s*\{\s*$")
 GLOBAL_DEF = re.compile(r"^(?!extern\b|typedef\b|static\b|#)[A-Za-z_][\w\s\*]*?\s+\**(g[A-Z]\w*)(\[[^;]*\])*\s*;\s*$")
+GLOBAL_INIT = re.compile(r"^(?!extern\b|typedef\b|static\b|#)([A-Za-z_][\w\s\*]*?\s+\**)(g[A-Z]\w*)((?:\[[^;=]*\])*)\s*=")
 MAP_LINE = re.compile(r"^ +(0x0[89][0-9a-f]{6}) +([A-Za-z_]\w*)$")
 
 
@@ -92,13 +93,24 @@ def preamble(lines):
     out = []
 
     depth = 0
+    skip = False
 
     for line in lines:
         if depth:
             depth += line.count("{") - line.count("}")
             continue
 
+        if skip:
+            skip = not line.rstrip().endswith(";")
+            continue
+
         if "INCLUDE_ASM(" in line:
+            continue
+        m = GLOBAL_INIT.match(line)
+
+        if m:
+            out.append("extern %s%s%s;" % (m.group(1), m.group(2), m.group(3)))
+            skip = not line.rstrip().endswith(";")
             continue
 
         if FUNC_START.match(line):
