@@ -878,18 +878,20 @@ void func_08108170(UnkStruct_0810718C* p, u16 row) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_08108208(void) {
     UnkStruct_0810718C* p;
     s16 a;
     s16 b;
     s16 i;
     u16 keys;
+    u16 trg;
 
     p = func_0810718C();
     a = gUnk_02035FC4;
     b = gUnk_02035FC6;
-    keys = func_08107D24();
+    trg = func_08107D24();
+    keys = trg;
+
     if (keys & 1) {
         if (func_08107268()) {
             gUnk_02035FC8 = 1;
@@ -946,9 +948,6 @@ void func_08108208(void) {
         m4aSongNumStart(0x65);
     }
 }
-#else
-INCLUDE_ASM("mode_ms2/func_08108208.s");
-#endif
 
 void func_081083EC(void) {
     UnkStruct_0810718C* p;
