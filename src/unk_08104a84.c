@@ -463,12 +463,9 @@ s32 func_081055E8(u16 id, u8 flag, s16 count) {
     return -1;
 }
 
-#ifdef NON_MATCHING
 void func_0810563C(void) {
     MsCard tmp;
     vu32* dma;
-    MsCardDef* def;
-    MsCard* e;
     u16* p;
     s16* q;
     s16 a;
@@ -480,8 +477,6 @@ void func_0810563C(void) {
     u16 kind;
     u16 flags;
     u32 sortKey;
-    u8 slot;
-    u8 k;
     u8 prem;
     s16 j;
     s16 idx;
@@ -504,10 +499,10 @@ void func_0810563C(void) {
     q = &gUnk_02035C38;
     *q = func_08084BF0();
 
-    for (i = 0; i < 4; i++) {
-        gUnk_02035C20[i] = 0;
-        gUnk_02035C30[i] = 0;
-        gUnk_02035C28[i] = 0;
+    for (j = 0; j < 4; j++) {
+        gUnk_02035C20[j] = 0;
+        gUnk_02035C30[j] = 0;
+        gUnk_02035C28[j] = 0;
     }
     gUnk_02035C3A = 0;
     n = 0;
@@ -516,58 +511,52 @@ void func_0810563C(void) {
         raw = gCardCollection[i];
         id = raw & CARD_ID_MASK;
         if (raw != CARD_ID_MASK && (raw & 0x7000) == 0 && id <= 0x21C) {
-            def = &gCardDefs[id];
-            slot = def->unk_2A;
-            kind = def->unk_1C;
+            j = gCardDefs[id].unk_2A;
+            kind = gCardDefs[id].unk_1C;
             flags = raw & 0x8000;
             prem = flags != 0;
-            gUnk_02035C30[slot]++;
+            gUnk_02035C30[j]++;
             gUnk_02035C3A++;
-            idx = func_081055E8(kind, prem, n);
-            if (idx >= 0) {
-                k = def->unk_20;
-                gUnk_02035C10[idx].unk_06[k][0]++;
-                gUnk_02035C10[idx].unk_06[k][1] = id;
+            if ((idx = func_081055E8(kind, prem, n)) >= 0) {
+                gUnk_02035C10[idx].unk_06[raw = gCardDefs[id].unk_20][0]++;
+                gUnk_02035C10[idx].unk_06[raw][1] = id;
             } else {
                 gUnk_02035C10[n].unk_00 = kind;
-                gUnk_02035C10[n].unk_02 = def->unk_28;
-                gUnk_02035C10[n].unk_04 = slot;
-                k = def->unk_20;
-                gUnk_02035C10[n].unk_06[k][0]++;
-                gUnk_02035C10[n].unk_06[k][1] = id;
+                gUnk_02035C10[n].unk_02 = gCardDefs[id].unk_28;
+                gUnk_02035C10[n].unk_04 = j;
+                raw = gCardDefs[id].unk_20;
+                gUnk_02035C10[n].unk_06[raw][0]++;
+                gUnk_02035C10[n].unk_06[raw][1] = id;
                 gUnk_02035C10[n].unk_2E = prem;
-                sortKey = 0x00100000;
+                sortKey = 0x01000000;
 
                 if (prem != 0) {
                     sortKey = 0x03000000;
                 }
                 gUnk_02035C10[n].unk_30 = (sortKey << (gUnk_02035C10[n].unk_04 * 2)) | gUnk_02035C10[n].unk_02;
-                gUnk_02035C28[slot]++;
+                gUnk_02035C28[j]++;
                 n++;
             }
         }
     }
 
-    for (i = 1; i < 4; i++) {
-        gUnk_02035C20[i] = gUnk_02035C28[i - 1] + gUnk_02035C20[i - 1];
+    for (j = 1; j < 4; j++) {
+        gUnk_02035C20[j] = gUnk_02035C20[j - 1] + gUnk_02035C28[j - 1];
     }
 
     for (i = 1; i < n; i++) {
-        memcpy(&tmp, &gUnk_02035C10[i], sizeof(MsCard));
+        tmp = gUnk_02035C10[i];
 
         for (j = i - 1; j >= 0; j--) {
-            e = &gUnk_02035C10[j];
-            if (e->unk_30 <= tmp.unk_30) {
+            if (gUnk_02035C10[j].unk_30 > tmp.unk_30) {
+                gUnk_02035C10[j + 1] = gUnk_02035C10[j];
+            } else {
                 break;
             }
-            memcpy(e + 1, e, sizeof(MsCard));
         }
-        memcpy(&gUnk_02035C10[j + 1], &tmp, sizeof(MsCard));
+        gUnk_02035C10[j + 1] = tmp;
     }
 }
-#else
-INCLUDE_ASM("unk_08104a84/func_0810563C.s");
-#endif
 
 s32 func_0810592C(void) {
     s32 keys;
