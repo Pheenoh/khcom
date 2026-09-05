@@ -64,19 +64,24 @@ HeapBlock* HeapFindFreeBlock(s32 size, Heap* heap) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 void HeapInit(void* addr, u32 size, Heap* heap) {
     HeapBlock* head;
     HeapBlock* tail;
     HeapBlock* first;
     void* name;
+    u32 last;
 
     size &= ~31;
     head = addr;
-    tail = (HeapBlock*)((u8*)addr + (size - 32));
+
+    do {
+        last = size - 32;
+    } while (0);
+
+    tail = (HeapBlock*)((u8*)addr + last);
     heap->start = head;
     heap->end = tail;
-    first = (HeapBlock*)((u8*)addr + 32);
+    first = head + 1;
     head->size = -32;
     head->prevFree = 0;
     head->nextFree = first;
@@ -101,9 +106,6 @@ void HeapInit(void* addr, u32 size, Heap* heap) {
     first->self = first;
     heap->unk_08 = 0;
 }
-#else
-INCLUDE_ASM("malloc/HeapInit.s");
-#endif
 
 void EwramHeapInit(void* addr, u32 size) {
     SetEwramHeapName(sEwramHeapName);
