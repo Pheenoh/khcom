@@ -10,6 +10,7 @@
 #include "malloc.h"
 #include "fld_types.h"
 #include "card_types.h"
+#include "text_types.h"
 
 typedef struct UnkStruct_080DFB8C {
     u16 unk_00;
@@ -612,7 +613,15 @@ typedef struct MapMenuWork {
     u8* unk_158[0x03];
     void* unk_164[0x03];
     s32 unk_170[0x03];
-    u8 unk_17C[0x18D];
+    u8* unk_17C;
+    TextSlot unk_180[0x21];
+    u8 unk_288;
+    u8 unk_289[0x03];
+    TextSlot unk_28C[0x06];
+    u8 unk_2BC;
+    u8 unk_2BD[0x03];
+    TextSlot unk_2C0[0x09];
+    u8 unk_308;
     u8 unk_309;
     u8 unk_30A;
     u8 unk_30B;
@@ -633,7 +642,7 @@ typedef struct MapSaveWork {
     AnimState unk_01C;
     FldRes* unk_034;
     void* unk_038;
-    u8 unk_03C[0x04];
+    s32 unk_03C;
     FldRes* unk_040;
     u8 unk_044[0x124];
     FldRes* unk_168;
@@ -1488,6 +1497,35 @@ extern u8 gUnk_09956724[];
 extern u8 gUnk_098A8628[];
 extern u8 gUnk_09EF8D48[];
 extern u8 gUnk_09EF8D58[];
+extern void* gUnk_09EF8D8C[];
+extern u8 gUnk_09991C44[];
+extern u8 gUnk_09991C84[];
+extern u8 gUnk_099661A4[];
+extern u8 gUnk_0998C744[];
+extern u8 gUnk_0998BF44[];
+extern u8 gUnk_0998B744[];
+extern u8 gUnk_0998AF44[];
+extern u8 gUnk_09991D24[];
+extern u8 gUnk_098A8F8A[];
+extern u8 gUnk_08159DF0[];
+extern void* gUnk_09EF8E74[];
+extern void* gUnk_09EF8E6C[];
+extern void* gUnk_09EF8E64[];
+extern void* gUnk_09EF8E80[];
+extern void* gUnk_09EF8E0C[];
+extern void* gUnk_09EF8E20[];
+extern void* gUnk_09EF8E44[];
+extern u8 gUnk_09959A64[];
+extern u8 gUnk_099919C4[];
+extern u8 gUnk_09986F44[];
+extern u8 gUnk_09987744[];
+extern u8 gUnk_09987F44[];
+extern u8 gUnk_09988F44[];
+extern u8 gUnk_09991BC4[];
+extern u8 gUnk_09991BE4[];
+extern u8 gUnk_09991C04[];
+extern u8 gUnk_098A87AA[];
+extern u8 gUnk_098A8AE2[];
 extern u8 gUnk_09957C24[];
 extern u8 gUnk_09957F24[];
 extern u8 gUnk_098A8F28[];
@@ -1700,6 +1738,7 @@ s32 func_080EDD7C(MapMenuWork* w);
 s32 func_080EDE78(MapMenuWork* w);
 s32 func_080ED35C(MapMenuWork* w);
 s32 func_080EE7B0(MapSaveWork* w);
+s32 func_080EEB00(MapSaveWork* w);
 s32 func_080EEC5C(MapSaveWork* w);
 s32 func_080EEC9C(MapSaveWork* w);
 s32 func_080EED44(MapSaveWork* w);
