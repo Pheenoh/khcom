@@ -449,7 +449,8 @@ typedef struct UnkStruct_02034FE0 {
 } UnkStruct_02034FE0;
 
 typedef struct UnkStruct_02034FE4 {
-    u8 unk_00[0x04];
+    u8 unk_00;
+    u8 unk_01[0x03];
     void (*unk_04)(struct UnkStruct_02034FE4*);
     TaskPool unk_08;
 } UnkStruct_02034FE4;
@@ -499,10 +500,14 @@ typedef struct MapAnmWork {
 
 typedef struct MapGmkJumpWork {
     u8 unk_000[0x40];
-    u8 unk_040[0x74];
+    u8 unk_040[0x5C];
+    AnimState unk_09C;
     void* unk_0B4;
     u8* unk_0B8;
-    u8 unk_0BC[0x10];
+    u8 unk_0BC[0x04];
+    u8 unk_0C0;
+    u8 unk_0C1[0x07];
+    s32 (*unk_0C8)(struct MapGmkJumpWork*);
 } MapGmkJumpWork;
 
 typedef struct MapGmkTutorialWork {
@@ -516,7 +521,9 @@ typedef struct MapGmkTutorialWork {
 } MapGmkTutorialWork;
 
 typedef struct MapGmk01Work {
-    u8 unk_000[0xC8];
+    u8 unk_000[0xC4];
+    u16 unk_0C4;
+    u16 unk_0C6;
     u8 (*unk_0C8)(struct MapGmk01Work*);
 } MapGmk01Work;
 
@@ -531,10 +538,11 @@ typedef struct MapGmkSpiderWork {
 
 typedef struct MapGmkGpWork {
     u8 unk_000[0x44];
-    u8 unk_044[0x74];
+    u8 unk_044[0x5C];
+    AnimState unk_0A0;
     void* unk_0B8;
     u8* unk_0BC;
-    u8 unk_0C0[0x04];
+    void* unk_0C0;
     u16 unk_0C4;
     u16 unk_0C6;
     u8 (*unk_0C8)(struct MapGmkGpWork*);
@@ -676,6 +684,18 @@ typedef struct MapNiserikuWork {
     void (*unk_0BC)(struct MapNiserikuWork*);
     u8 unk_0C0[0x2C];
 } MapNiserikuWork;
+
+typedef struct MapFloorWork {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    s16 unk_0C;
+    u16 unk_0E;
+    u8 unk_10;
+    u8 unk_11[0x03];
+    void* unk_14;
+    u8 unk_18[0x140];
+} MapFloorWork;
 
 typedef struct MapMsgWork {
     void* unk_000;
@@ -935,12 +955,14 @@ s32 func_080ED7CC(MapMenuWork* w);
 s32 func_080ED91C(MapMenuWork* w);
 s32 func_080EEC9C(MapSaveWork* w);
 void DisableBg(u8 bg);
+void func_08065AE0(void* p, s32 n);
 void TaskPoolDestroy(TaskPool* a);
 void func_080E4B34(void);
 void func_08066918(void* a, void* b);
 void TaskPoolDraw(TaskPool* a);
 void* AnimUpdate(AnimState* a);
 u8 AnimIsFinished(AnimState* a);
+void AnimStart(AnimState* a, u16 animId, u16 flags);
 void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 void m4aSongNumStart(u16 id);
 u16 CountCardsById(u16 cardId);
@@ -1034,6 +1056,8 @@ void UpdatePlayTime(void);
 u8 IsTaskActive(Task* t);
 void* func_080D3A20(void* pool);
 void func_08006184(s32 a, u16 b);
+void func_080C75A4(s32 a, u16 b);
+void func_080EC544(UnkStruct_02034FE4* w);
 void func_080063A8(void);
 void func_080125A4(void);
 void func_080DF730(u8 a, u8 b);
@@ -1204,6 +1228,8 @@ void func_080EA1E8(s32 a);
 void func_080EA1F4(s32 a);
 s32 func_080EAD3C(u8 i);
 void func_080EB818(u8 a, u8 b, u8 c);
+void func_080EB898(u8 a, u16 b);
+void func_080EB93C(u8 a, s32 b);
 void func_080ED0B8(FldRes* p, u8 a, u16 v);
 void func_080ED14C(FldRes* p, u8 a, u32 v);
 void func_080ECA88(UnkStruct_080ECA88* p);
@@ -1245,6 +1271,7 @@ void func_080F1C38(MapGmkTutorialWork* w);
 u8 func_080F1D68(MapGmkSpiderWork* w);
 void func_080F1E0C(MapGmkSpiderWork* w);
 s32 func_080F1E28(MapGmkGpWork* w);
+s32 func_080F1460(MapGmkJumpWork* w);
 void func_080F2058(MapGmkGpWork* w);
 u8 func_080F2244(MapGmkGpWork* w);
 u8 func_080F3C98(MapGmk01Work* w);
