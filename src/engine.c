@@ -78,6 +78,9 @@ u16 GetObjTileCount(u16 a, u16 b);
 s32 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
+void func_08003CD4(u8* p, s32* d, s32* xs, s32* e);
+void func_080051C4(s32 bg, u16 x, u16 y);
+s32 abs(s32 a);
 
 extern u16 gBldY;
 extern u16 gWin0H;
@@ -109,7 +112,69 @@ s32 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 
-INCLUDE_ASM("engine/func_0800216C.s");
+u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
+    u8* p;
+    u8* q0;
+    u8* q1;
+    u8* q2;
+    u8* q3;
+    u8* q4;
+    u8* w;
+    s32 ofs;
+    s32 ofs2;
+    u16 n;
+    s32 i;
+    u16 cnt;
+    u16 base;
+
+    if (e == 0 || c == 0) {
+        return 0;
+    }
+    p = gSpriteWork;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1AB8) = x;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABA) = y;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q0 = p + 0x1AA8;
+    *(void**)(q0 + ofs) = obj;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q1 = p + 0x1AAC;
+    *(void**)(q1 + ofs) = e;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q2 = p + 0x1AB0;
+    *(s32*)(q2 + ofs) = f;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABE) = g;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABC) = h;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q3 = p + 0x1AB4;
+    *(void**)(q3 + ofs) = c;
+
+    if (((ObjTiles*)obj)->unk_20 != (u32)c) {
+        ((ObjTiles*)obj)->unk_20 = (u32)c;
+        n = *(u16*)c;
+        c = (u16*)c + 1;
+        base = 0;
+
+        if (n != 0) {
+            i = n;
+            do {
+                cnt = GetObjTileCount(((u16*)c)[0], ((u16*)c)[1]);
+                RequestDma3Copy((u8*)((ObjTiles*)obj)->unk_00 + ((((u16*)c)[2] & 0x3FF) << 5), (void*)(((((ObjTiles*)obj)->unk_06 + base) << 5) + 0x06010000), cnt << 5);
+                base += cnt;
+                c = (u16*)c + 3;
+            } while (--i);
+        }
+    }
+    w = gSpriteWork;
+    ofs2 = *(u16*)(w + 0x28A8) * 4;
+    q4 = w + 0x26A8;
+    *(u32*)(q4 + ofs2) = (u32)(w + (*(u16*)(w + 0x28A8) * 24 + 0x1AA8));
+    *(u16*)(w + 0x28A8) += 1;
+    return 1;
+}
 u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
     u8* p;
     u8* q0;
@@ -210,7 +275,49 @@ void func_08002488(u16 a, u16 b, void* c, void* d, void* e, u16 f) {
     *(u16*)(p + 0x28AA) += 1;
 }
 
-INCLUDE_ASM("engine/func_08002594.s");
+void func_08002594(u16 a, u16 b, void* c, void* d, void* e, void* f, u16 g) {
+    u8* p;
+    u8* q0;
+    u8* q1;
+    u8* q2;
+    u8* q3;
+    u8* q4;
+    u8* q5;
+    s32 ofs;
+    u32 z;
+
+    p = gSpriteWork;
+    if (*(u16*)(p + 0x28A8) > 0x7F) {
+        return;
+    }
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q5 = p + ofs + 0x1AB8;
+    z = 0;
+    *(u16*)q5 = a;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABA) = b;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q0 = p + 0x1AA8;
+    *(void**)(q0 + ofs) = d;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q1 = p + 0x1AAC;
+    *(void**)(q1 + ofs) = e;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q2 = p + 0x1AB0;
+    *(void**)(q2 + ofs) = f;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABE) = g;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    *(u16*)(p + ofs + 0x1ABC) = z;
+    ofs = *(u16*)(p + 0x28A8) * 24;
+    q3 = p + 0x1AB4;
+    *(void**)(q3 + ofs) = c;
+    ofs = *(u16*)(p + 0x28A8) * 4;
+    q4 = p + 0x26A8;
+    *(u32*)(q4 + ofs) = (u32)(p + (*(u16*)(p + 0x28A8) * 24 + 0x1AA8));
+    *(u16*)(p + 0x28A8) += 1;
+    *(u16*)(p + 0x28AA) += 1;
+}
 
 ObjTiles* LoadObjTiles(void* src, u16 size) {
     ObjTiles* node;
@@ -393,7 +500,76 @@ void func_08002A10(void* a, void* b) {
     *(void**)a = b;
 }
 
-INCLUDE_ASM("engine/LoadObjPalette.s");
+ObjPaletteNode* LoadObjPalette(void* src, u16 size) {
+    ObjPaletteNode* node;
+    ObjPaletteNode* cur;
+    ObjPaletteNode* next;
+    s32 avail;
+    s16 end;
+
+    if (size == 0) {
+        return 0;
+    }
+
+    if (src == 0) {
+        return 0;
+    }
+
+    for (cur = ListPoolFirst(gSpriteWork + 0x1A94); cur != 0; cur = ListPoolNext(cur->unk_0C)) {
+        if (cur->unk_00 == src) {
+            cur->refCount++;
+            return cur;
+        }
+    }
+    node = ListPoolFirstFree(gSpriteWork + 0x1A94);
+    if (node == 0) {
+        return 0;
+    }
+    node->unk_20 = 0;
+    node->unk_08 = size / 32;
+    node->unk_00 = src;
+    node->refCount = 0;
+    node->self = node;
+    cur = ListPoolFirst(gSpriteWork + 0x1A94);
+    if (cur == 0) {
+        node->unk_06 = *(u16*)(gSpriteWork + 0x1AA4);
+        LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
+        ListPoolActivate(node->unk_0C, gSpriteWork + 0x1A94);
+        return node;
+    }
+    node->unk_06 = *(u16*)(gSpriteWork + 0x1AA4);
+    avail = cur->unk_06 - *(u16*)(gSpriteWork + 0x1AA4);
+    if (node->unk_08 <= (s16)avail) {
+        LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
+        ListPoolActivateBefore(node->unk_0C, gSpriteWork + 0x1A94, cur->unk_0C);
+        return node;
+    }
+
+    for (;;) {
+        if (cur == 0) {
+            break;
+        }
+        next = ListPoolNext(cur->unk_0C);
+        node->unk_06 = cur->unk_06 + cur->unk_08;
+        if (node->unk_06 + node->unk_08 > *(u16*)(gSpriteWork + 0x1AA6)) {
+            break;
+        }
+
+        if (next != 0) {
+            end = next->unk_06 - node->unk_06;
+        } else {
+            end = *(u16*)(gSpriteWork + 0x1AA6) - node->unk_06;
+        }
+
+        if (node->unk_08 <= end) {
+            LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
+            ListPoolActivateAfter(node->unk_0C, gSpriteWork + 0x1A94, cur->unk_0C);
+            return node;
+        }
+        cur = next;
+    }
+    return 0;
+}
 
 void LoadObjPaletteBank(u16 bank, void* src) {
     LoadPalette(src, (void*)((bank << 5) + 0x05000200), 32);
@@ -605,7 +781,108 @@ u8 func_080035CC(s16 x, u16 y, u16 a, u16 b, u16 c, s16 d) {
     return 0;
 }
 
-INCLUDE_ASM("engine/func_08003620.s");
+u8 func_08003620(u16* oam, s16 x, s16 y) {
+    u16 i;
+    u16 n;
+    u16 attr0;
+    u16 attr1;
+    s16 dx;
+    s16 dy;
+    s16 t;
+    s16 w;
+    s16 h;
+    s16* pw;
+    s16* ph;
+
+    n = *oam++;
+
+    for (i = 0; i < n; i++) {
+        attr0 = *oam++;
+        attr1 = *oam;
+        oam += 2;
+        dx = attr1 & 0x1FF;
+        t = dx;
+
+        if (t & 0x100) {
+            dx = t ^ 0x1FF;
+            dx = ~dx;
+        }
+        dy = attr0 & 0xFF;
+        t = dy;
+
+        if (t & 0x80) {
+            dy = t ^ 0xFF;
+            dy = ~dy;
+        }
+        x += dx;
+        y += dy;
+        pw = &w;
+        ph = &h;
+
+    switch (((attr1 << 16) | attr0) & 0xC000C000) {
+    case 0x00000000:
+        *pw = 8;
+        *ph = 8;
+        break;
+    case 0x40000000:
+        *pw = 16;
+        *ph = 16;
+        break;
+    case 0x80000000:
+        do {
+            *pw = 32;
+            *ph = 32;
+        } while (0);
+        break;
+    case 0xC0000000:
+        *pw = 64;
+        *ph = 64;
+        break;
+    case 0x00004000:
+        *pw = 16;
+        *ph = 8;
+        break;
+    case 0x40004000:
+        *pw = 32;
+        *ph = 8;
+        break;
+    case 0x80004000:
+        *pw = 32;
+        *ph = 16;
+        break;
+    case 0xC0004000:
+        *pw = 64;
+        *ph = 32;
+        break;
+    case 0x00008000:
+        *pw = 8;
+        *ph = 16;
+        break;
+    case 0x40008000:
+        *pw = 8;
+        *ph = 32;
+        break;
+    case 0x80008000:
+        *pw = 16;
+        *ph = 32;
+        break;
+    case 0xC0008000:
+        *pw = 32;
+        *ph = 64;
+        break;
+    default:
+        *pw = 0;
+        *ph = 0;
+        break;
+    }
+
+
+        if (x <= 239 && x > -w && y <= 159 && y > -h) {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size) {
     if (slot + (size >> 5) <= 0x400) {
@@ -895,7 +1172,37 @@ s32 func_08003C9C(s32 a) {
     return 0;
 }
 
-INCLUDE_ASM("engine/func_08003CD4.s");
+void func_08003CD4(u8* p, s32* d, s32* xs, s32* e) {
+    s32* a;
+    s32* b;
+    s32 n;
+    s32 i;
+    s32 q;
+
+    n = *(s16*)p;
+    a = *(s32**)(p + 0x04);
+    b = *(s32**)(p + 0x08);
+    e[0] = 0;
+    e[n - 1] = 0;
+
+    for (i = 0; i < n - 1; i++) {
+        a[i] = d[i + 1] - d[i];
+        b[i + 1] = ((xs[i + 1] - xs[i]) << 8) / a[i];
+    }
+    e[1] = (b[2] - b[1]) - ((a[0] * e[0]) >> 8);
+    b[1] = (d[2] - d[0]) << 1;
+
+    for (i = 1; i < n - 2; i++) {
+        q = (a[i] << 8) / b[i];
+        e[i + 1] = (b[i + 2] - b[i + 1]) - ((e[i] * q) >> 8);
+        b[i + 1] = ((d[i + 2] - d[i]) << 1) - ((q * a[i]) >> 8);
+    }
+    e[n - 2] -= (a[n - 2] * e[n - 1]) >> 8;
+
+    for (i = n - 2; i > 0; i--) {
+        e[i] = ((e[i] - ((a[i] * e[i + 1]) >> 8)) << 8) / b[i];
+    }
+}
 s32 func_08003E2C(s16* n, s32 v, s32* a, s32* c, s32* b) {
     s32 lo;
     s32 hi;
@@ -931,7 +1238,44 @@ s32 func_08003E2C(s16* n, s32 v, s32* a, s32* c, s32* b) {
     r += ((c[lo + 1] - c[lo]) << 8) / dx - ((dx * (y0 * 2 + y1)) >> 8);
     return ((t * r) >> 8) + c[lo];
 }
-INCLUDE_ASM("engine/func_08003ED4.s");
+void func_08003ED4(u8* p, s32* xs, s32* ys, s16 n) {
+    s32 i;
+    s32 len;
+    s32* d;
+    s32* e;
+    s32* f;
+    s32 dx;
+    s32 dy;
+    s32 size;
+
+    size = n * 4;
+    len = 0;
+    *(u16*)p = n;
+    *(void**)(p + 0x04) = EwramAlloc(size);
+    *(void**)(p + 0x08) = EwramAlloc(size);
+    *(void**)(p + 0x0C) = EwramAlloc(size);
+    *(void**)(p + 0x10) = EwramAlloc(size);
+    *(void**)(p + 0x14) = EwramAlloc(size);
+    *(s32**)(p + 0x18) = xs;
+    *(s32**)(p + 0x1C) = ys;
+    d = *(s32**)(p + 0x0C);
+    e = *(s32**)(p + 0x10);
+    f = *(s32**)(p + 0x14);
+    d[0] = len;
+
+    for (i = 1; i < n; i++) {
+        dx = xs[i] - xs[i - 1];
+        dy = ys[i] - ys[i - 1];
+        d[i] = d[i - 1] + func_08003C9C(((dx * dx) >> 8) + ((dy * dy) >> 8));
+    }
+
+    for (i = 1; i < n; i++) {
+        d[i] = (d[i] << 8) / d[n - 1];
+    }
+
+    func_08003CD4(p, d, xs, e);
+    func_08003CD4(p, d, ys, f);
+}
 
 void func_08003FCC(void* a, s32 v, s32* outX, s32* outY) {
     u8* p = a;
@@ -1096,7 +1440,25 @@ u8 func_0800443C(void* a, u16 b) {
 
     return 1;
 }
-INCLUDE_ASM("engine/func_0800448C.s");
+u8 func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh) {
+    if (gDma3Requests->unk_10A2 > 63) {
+        return 0;
+    }
+
+    if (sw <= 0 || sh <= 0) {
+        return 0;
+    }
+    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_00 = src;
+    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_04 = dst;
+    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_08 = x;
+    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_09 = y;
+    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_0A = w;
+    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_0B = h;
+    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_0C = sw;
+    gDma3Requests->unk_0C00[gDma3Requests->unk_10A2].unk_0D = sh;
+    gDma3Requests->unk_10A2 = gDma3Requests->unk_10A2 + 1;
+    return 1;
+}
 
 u8 func_080045AC(void* a, void* b, u8 c, u8 d, u8 e) {
     if (gDma3Requests->unk_10A4 > 7) {
@@ -1131,7 +1493,100 @@ u32 func_080046B4(void) {
 }
 
 INCLUDE_ASM("engine/FlushDma3Queue.s");
+#ifdef NON_MATCHING
+void func_08004938(void) {
+    Dma3Queue* q;
+    Dma3Request* req;
+    Dma3Blit* blits;
+    Dma3Fill* fills;
+    Dma3Fill* f;
+    s32 sy;
+    s32 dy;
+    Dma3Pending* pend;
+    void (**cb)(void);
+    void (**p)(void);
+    u16 n;
+    s32 i;
+    s32 j;
+    s32 row;
+    s32 col;
+    u16 zero;
+
+    q = gDma3Requests;
+    req = q->requests;
+    blits = q->unk_0C00;
+    fills = q->unk_1000;
+    cb = (void (**)(void))q->unk_1060;
+    pend = q->pending;
+    q->unk_10AC = 0;
+    n = q->unk_10A6;
+
+    if (n != 0) {
+        i = n;
+        p = cb;
+        do {
+            (*p++)();
+        } while (--i);
+    }
+    gDma3Requests->unk_10A6 = 0;
+    n = gDma3Requests->requestCount;
+
+    if (n != 0) {
+        i = n;
+        do {
+            CpuSet(req->src, req->dst, req->size >> 1);
+            gDma3Requests->unk_10AC += req->size;
+            req++;
+        } while (--i);
+    }
+    gDma3Requests->requestCount = 0;
+    n = gDma3Requests->unk_10A4;
+
+    for (i = 0; i < n; i++) {
+        if (fills[i].unk_0A != 0) {
+            f = &fills[i];
+
+            for (j = 0; j < 32; j++) {
+                ((u16*)f->unk_04)[(((f->unk_09 + j) & 31) << 5) + f->unk_08] = ((u16*)f->unk_00)[j];
+            }
+        } else {
+            f = &fills[i];
+
+            for (j = 0; j < 32; j++) {
+                ((u16*)f->unk_04)[(f->unk_09 << 5) + ((f->unk_08 + j) & 31)] = ((u16*)f->unk_00)[j];
+            }
+        }
+    }
+    gDma3Requests->unk_10A4 = 0;
+    n = gDma3Requests->unk_10A2;
+
+    for (i = 0; i < n; i++) {
+        for (row = 0; row < blits[i].unk_0D; row++) {
+            sy = ((blits[i].unk_09 + row) & 31) << 5;
+            dy = ((blits[i].unk_0B + row) & 31) << 5;
+
+            for (col = 0; col < blits[i].unk_0C; col++) {
+                ((u16*)blits[i].unk_04)[((blits[i].unk_0A + col) & 31) + dy] = ((u16*)blits[i].unk_00)[((blits[i].unk_08 + col) & 31) + sy];
+            }
+        }
+    }
+    gDma3Requests->unk_10A2 = 0;
+    n = gDma3Requests->count;
+
+    if (n != 0) {
+        i = n;
+        do {
+            zero = 0;
+            CpuSet(&zero, pend->unk_00, (pend->unk_04 >> 1) | 0x01000000);
+            gDma3Requests->unk_10AC += pend->unk_04;
+            pend++;
+        } while (--i);
+    }
+    gDma3Requests->count = 0;
+}
+#else
 INCLUDE_ASM("engine/func_08004938.s");
+#endif
 
 void BgInit(void) {
     BgEntry** p;
@@ -1155,7 +1610,45 @@ void* func_08004BD8(BgEntry* e, u16 x, u16 y) {
     return ((void**)e->unk_04)[e->unk_08 * row + col];
 }
 
-INCLUDE_ASM("engine/func_08004C20.s");
+void func_08004C20(u16 x, u16 y, BgEntry* e, void* dst, u8 sx, u8 sy, u8 w, u8 h) {
+    u8 tx;
+    u8 ty;
+    s8 w1;
+    s8 w2;
+    s8 h1;
+    s8 h2;
+    u16 x2;
+    u16 y2;
+    u8 sx2;
+    u8 sy2;
+    s32 ox;
+    s32 oy;
+
+    tx = (x & 0xFF) >> 3;
+    ty = (y & 0xFF) >> 3;
+    w1 = 32 - tx;
+
+    if (w1 >= w) {
+        w1 = w;
+        w2 = 0;
+    } else {
+        w2 = w - w1;
+    }
+    h1 = 32 - ty;
+
+    if (h1 >= h) {
+        h1 = h;
+        h2 = 0;
+    } else {
+        h2 = h - h1;
+    }
+    func_0800448C(func_08004BD8(e, x, y), dst, tx, ty, sx, sy, w1, h1);
+    x2 = x + 256;
+    func_0800448C(func_08004BD8(e, x2, y), dst, 0, ty, sx2 = sx - (ox = tx - 32), sy, w2, h1);
+    y2 = y + 256;
+    func_0800448C(func_08004BD8(e, x, y2), dst, tx, 0, sx, sy2 = sy - (oy = ty - 32), w1, h2);
+    func_0800448C(func_08004BD8(e, x2, y2), dst, 0, 0, sx2, sy2, w2, h2);
+}
 
 #ifndef VERSION_EU
 void BgReset(void) {
@@ -1365,7 +1858,80 @@ void func_080051C4(s32 bg, u16 x, u16 y) {
 #else
 INCLUDE_ASM("engine/func_080051C4.s");
 #endif
+#ifdef NON_MATCHING
+void func_08005244(s32 bg, u16 x, u16 y) {
+    BgEntry* e;
+    s8 dx;
+    s8 dy;
+    u32 sx;
+    u32 sy;
+    s32 tx;
+    s32 ty;
+    s32 cx;
+    s32 cy;
+    void* dst;
+
+    e = &gBgEntries[bg];
+    if (e->unk_04 == 0) {
+        return;
+    }
+
+    if (e->unk_00 != 0) {
+        func_080051C4(bg, x, y);
+        return;
+    }
+    dx = (x >> 3) - (e->unk_0A >> 3);
+    dy = (y >> 3) - (e->unk_0C >> 3);
+
+    if (abs(dx) > 29 || abs(dy) > 19) {
+        func_080051C4(bg, x, y);
+        return;
+    }
+    sx = GetBgScrollX(bg);
+    sy = GetBgScrollY(bg);
+    SetBgScroll(bg, (u16)(sx + (x - e->unk_0A)), (u16)(sy + (y - e->unk_0C)));
+
+    if (dx != 0 || dy != 0) {
+        dst = (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000);
+        tx = sx >> 3;
+        ty = sy >> 3;
+        cx = GetBgScrollX(bg) >> 3;
+        cy = GetBgScrollY(bg) >> 3;
+
+        if (dx > 0) {
+            if (dx > 31) {
+                dx = 31;
+            }
+            func_08004C20(e->unk_0A + 248, y, e, dst, tx + 31, cy, dx, 21);
+        } else if (dx < 0) {
+            dx = -dx;
+
+            if (dx > 31) {
+                dx = 31;
+            }
+            func_08004C20(e->unk_0A - (dx << 3), y, e, dst, tx - dx, cy, dx, 21);
+        }
+
+        if (dy > 0) {
+            if (dy > 21) {
+                dy = 21;
+            }
+            func_08004C20(x, e->unk_0C + 168, e, dst, cx, ty + 21, 31, dy);
+        } else if (dy < 0) {
+            dy = -dy;
+
+            if (dy > 21) {
+                dy = 21;
+            }
+            func_08004C20(x, e->unk_0C - (dy << 3), e, dst, cx, ty - dy, 31, dy);
+        }
+    }
+    e->unk_0A = x;
+    e->unk_0C = y;
+}
+#else
 INCLUDE_ASM("engine/func_08005244.s");
+#endif
 
 #ifndef VERSION_EU
 u16 func_08005458(s32 bg) {
@@ -2021,7 +2587,7 @@ void MosaicReset(void) {
 }
 
 void MosaicUpdate(void) {
-    u16 t;
+    s16 t;
     u8 v;
 
     if (gUnk_02034024 != 0) {
@@ -2229,7 +2795,70 @@ void func_0800685C(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
         break;
     }
 }
-INCLUDE_ASM("engine/func_08006954.s");
+void func_08006954(void) {
+    u8* src;
+    u16 q;
+    u16 off;
+    u16 len;
+    s16 over;
+    s32 vis;
+
+    if (gUnk_02034040 == 0) {
+        return;
+    }
+
+    if (gUnk_02034046 >= *(u16*)(gUnk_02034040 + 0x14)) {
+        if (gUnk_02034066 >= 0) {
+            gUnk_02034046 = gUnk_02034066;
+            gUnk_02034044 = 0;
+        } else {
+            func_08006B4C();
+        }
+        return;
+    }
+
+    if (gUnk_02034058 != 0) {
+        func_0800685C(gUnk_02034048, gUnk_02034064, gUnk_0203405C, gUnk_02034060, gUnk_02034050, gUnk_02034052);
+        vis = 1;
+    } else {
+        SetBgScroll(gUnk_02034048, (u16)gUnk_02034050, (u16)gUnk_02034052);
+        if (gUnk_02034050 > -256 && gUnk_02034050 < 128 && gUnk_02034052 < 128 && gUnk_02034052 > -256) {
+            vis = 1;
+        } else {
+            vis = 0;
+        }
+    }
+
+    if (vis != 0) {
+        EnableBg(gUnk_02034048);
+
+        if (gUnk_02034044 == 0) {
+            q = gUnk_02034046 / gUnk_0203404E;
+            off = gUnk_02034046 % gUnk_0203404E * gUnk_0203404C;
+            src = *(u8**)(*(u8**)gUnk_02034040 + q * 8) + off;
+            over = off + gUnk_0203404C - *(u16*)(*(u8**)gUnk_02034040 + q * 8 + 4);
+
+            if (over > 0) {
+                len = gUnk_0203404C - over;
+                RequestDma3Copy(src, GetBgCharBase(gUnk_02034048), len);
+                func_0800443C((u8*)GetBgCharBase(gUnk_02034048) + len, over);
+            } else {
+                RequestDma3Copy(src, GetBgCharBase(gUnk_02034048), gUnk_0203404C);
+            }
+        }
+    } else {
+        DisableBg(gUnk_02034048);
+    }
+    gUnk_02034044++;
+
+    if (gUnk_02034044 >= gUnk_0203406A) {
+        gUnk_02034044 = 0;
+
+        if (gUnk_02034046 != gUnk_02034068) {
+            gUnk_02034046++;
+        }
+    }
+}
 
 void func_08006B28(u16 a) {
     gUnk_0203406A = a;
