@@ -183,9 +183,12 @@ def match_size(cand, sym, start, end, tmp, uenv=None, extra=None):
         return (int(m.group(1)), int(m.group(2))), out.split("\n")[0]
 
     if r.returncode != 0:
-        errs = [l for l in out.split("\n")
-                if re.search(r"error|undeclared|parse error|no member|conflicting", l, re.I)]
-        return None, (errs[0] if errs else out.strip().split("\n")[-1])[:200]
+        lines = [l for l in out.strip().split("\n") if l.strip()]
+        keys = ("MISSING SYMBOL", "SIZE MISMATCH", "overlaps", "undefined reference")
+        pick = [l for l in lines if any(k in l for k in keys)] \
+            or [l for l in lines if re.search(r"error|undeclared|parse error|no member|conflicting", l, re.I)] \
+            or lines[-1:]
+        return None, pick[0][:200]
     return (None, "unparsed"), out.split("\n")[0]
 
 
@@ -257,7 +260,7 @@ def main():
         with open(cand, "w") as f:
             f.write(preamble(head) + "\n\n" + body + "\n")
         uenv = unit_env(unit)
-        size, note = match_size(cand, sym, start, end, os.path.join(d, "mt"), uenv)
+        size, note = match_size(cand, sym, start, end, os.path.join(d, "mt"), uenv, "-DVERSION_US")
 
         if size is None:
             print("%-28s SETUP FAILED: %s" % (sym, note))
@@ -266,7 +269,7 @@ def main():
 
         if size == 0:
             print("%-28s ALREADY MATCHES standalone; land it" % sym)
-            ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start, 0, 0, 0, "matches", cand])
+            ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start, 0, 0, 0, "matches", os.path.relpath(cand, REPO)])
             continue
 
         inunit, _note2 = match_size(os.path.join("src", unit + ".c"), sym, start, end,
@@ -301,7 +304,7 @@ def main():
             print("%-28s SCORER BLIND: base score 0 but match.sh reports a diff -- "
                   "the scorer normalises this difference away, so no search can fix it" % sym)
             ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start,
-                    0, 0, int(time.time() - t0), "scorer-blind", cand])
+                    0, 0, int(time.time() - t0), "scorer-blind", os.path.relpath(cand, REPO)])
             continue
         best = best_output(d)
         elapsed = int(time.time() - t0)
@@ -315,7 +318,7 @@ def main():
         else:
             status = "done"
         best_score = best[0] if best else base
-        best_src = os.path.join(best[1], "source.c") if best else ""
+        best_src = os.path.relpath(os.path.join(best[1], "source.c"), REPO) if best else ""
         print("%-28s rom %4dB new %4dB  base %-5s best %-5s %4ds  %s" % (sym, size[0], size[1], base, best_score, elapsed, status))
         ledger([time.strftime("%Y-%m-%d"), unit, sym, "0x%08X" % start, end - start, base, best_score, elapsed, status, best_src])
 

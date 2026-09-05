@@ -289,7 +289,7 @@ with out.open("w") as f:
     )
     n.rule(
         "check",
-        command=f'echo "{sha1}  {rom}" | sha1sum -c && touch $out',
+        command=f"python3 -c \"import hashlib,sys; sys.exit(hashlib.sha1(open('{rom}','rb').read()).hexdigest() != '{sha1}')\" && touch $out",
         description=f"CHECK {rom}",
     )
     n.newline()
