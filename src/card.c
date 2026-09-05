@@ -2046,7 +2046,7 @@ void func_0807BC24(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_0C = 0;
     *(void**)p->unk_10 = 0;
     p->unk_18 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     *(void**)p->unk_1C = 0;
     *(UnkStruct_08090244*)&p->unk_38 = *a;
     p->unk_78 = 0;
@@ -2216,7 +2216,7 @@ void func_0807C33C(UnkStruct_02034AAC* p) {
 
     if (f != 0) {
         p->unk_00 = 0;
-        p->unk_14 = 0;
+        p->palette = 0;
         p->unk_18 = 0;
         p->unk_04 = LoadObjTiles(gUnk_08F709B0[p->unk_46].unk_10, 640);
     } else {
@@ -2224,7 +2224,7 @@ void func_0807C33C(UnkStruct_02034AAC* p) {
         tiles = d->unk_04;
         pal = d->unk_08;
         p->unk_00 = LoadObjTiles(tiles, 512);
-        p->unk_14 = LoadObjPalette(pal, 32);
+        p->palette = LoadObjPalette(pal, 32);
         p->unk_04 = 0;
     }
 }
@@ -2234,8 +2234,8 @@ void func_0807C39C(UnkStruct_02034AAC* p) {
         ReleaseObjTiles(p->unk_00);
     }
 
-    if (p->unk_14 != 0) {
-        ReleaseObjPalette(p->unk_14);
+    if (p->palette != 0) {
+        ReleaseObjPalette(p->palette);
     }
 
     if (p->unk_04 != 0) {
@@ -2251,7 +2251,7 @@ void func_0807C39C(UnkStruct_02034AAC* p) {
     }
 
     p->unk_00 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     p->unk_18 = 0;
     p->unk_04 = 0;
     p->unk_08 = 0;
@@ -2732,7 +2732,7 @@ void func_0807D490(UnkStruct_02034AAC* p) {
     tiles = p->unk_48->unk_14;
     pal = p->unk_48->unk_18;
     p->unk_00 = LoadObjTiles(tiles, 256);
-    p->unk_14 = LoadObjPalette(pal, 32);
+    p->palette = LoadObjPalette(pal, 32);
 }
 
 void func_0807D4B8(UnkStruct_02034AAC* p) {
@@ -2740,12 +2740,12 @@ void func_0807D4B8(UnkStruct_02034AAC* p) {
         ReleaseObjTiles(p->unk_00);
     }
 
-    if (p->unk_14 != 0) {
-        ReleaseObjPalette(p->unk_14);
+    if (p->palette != 0) {
+        ReleaseObjPalette(p->palette);
     }
 
     p->unk_00 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     func_0807C33C(p);
 }
 
@@ -2866,7 +2866,7 @@ void card_reload_0(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_0C = 0;
     *(void**)p->unk_10 = 0;
     p->unk_18 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     *(void**)p->unk_1C = 0;
     p->unk_20 = EwramAlloc(0x68);
     zero2 = 0;
@@ -2985,7 +2985,7 @@ void func_0807DAD0(UnkStruct_02034AAC* p) {
     p->unk_00 = AllocObjTiles(0x80, 0);
     func_08002A10(p->unk_00, gUnk_0909A4E0);
     func_0807DA54(p->unk_20, p->unk_00, p->unk_46, gUnk_02039DD4->unk_0FC);
-    p->unk_14 = 0;
+    p->palette = 0;
     p->unk_04 = LoadObjTiles(gUnk_0909FDCA, 0x280);
     p->unk_18 = 0;
     p->unk_08 = AllocObjTiles(0x200, 0);
@@ -4134,7 +4134,7 @@ void func_08081A3C(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_0C = 0;
     *(void**)p->unk_10 = 0;
     p->unk_18 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     *(void**)p->unk_1C = 0;
     p->unk_20 = 0;
     *(UnkStruct_08090244*)&p->unk_38 = *a;
@@ -4748,7 +4748,7 @@ void func_08082EFC(UnkStruct_02034AAC* p) {
     tiles = p->unk_48->unk_14;
     pal = p->unk_48->unk_18;
     p->unk_00 = LoadObjTiles(tiles, 256);
-    p->unk_14 = LoadObjPalette(pal, 32);
+    p->palette = LoadObjPalette(pal, 32);
 }
 
 void func_08082F24(UnkStruct_02034AAC* p) {
@@ -4756,12 +4756,12 @@ void func_08082F24(UnkStruct_02034AAC* p) {
         ReleaseObjTiles(p->unk_00);
     }
 
-    if (p->unk_14 != 0) {
-        ReleaseObjPalette(p->unk_14);
+    if (p->palette != 0) {
+        ReleaseObjPalette(p->palette);
     }
 
     p->unk_00 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     func_0807C33C(p);
 }
 
@@ -4818,7 +4818,7 @@ void Reload_Card_0(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_0C = 0;
     *(void**)p->unk_10 = 0;
     p->unk_18 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     *(void**)p->unk_1C = 0;
     p->unk_20 = EwramAlloc(0x68);
     zero2 = 0;
@@ -7905,9 +7905,9 @@ void func_0808DB50(UnkStruct_0808DB04* w) {
         if (id & 0x8000) {
             w->unk_028 = AllocObjTiles(0x280, 0);
             func_08002A10(w->unk_028, gUnk_0908B1B4);
-            AnimInit(&w->unk_830, gUnk_09EEA164, gUnk_09EEA148);
-            AnimStart(&w->unk_830, 0, 1);
-            w->unk_4F8 = AnimGetGfx(&w->unk_830);
+            AnimInit(&w->anim, gUnk_09EEA164, gUnk_09EEA148);
+            AnimStart(&w->anim, 0, 1);
+            w->gfx = AnimGetGfx(&w->anim);
         }
 
         def = &gCardDefs[id & CARD_ID_MASK];
@@ -8904,7 +8904,7 @@ void card_enemy_0(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_00 = 0;
     p->unk_04 = 0;
     p->unk_08 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     p->unk_A1 = 0;
     *(UnkStruct_08090244*)&p->unk_38 = *a;
     p->unk_78 = 0;
@@ -8973,7 +8973,7 @@ void func_08090374(UnkStruct_02034AAC* p) {
                            gUnk_08F70A28[0].unk_00, (&gUnk_02039DD4->unk_030)[p->unk_48->unk_2A],
                            gUnk_02039DD4->unk_054, affine, 0x410, (u16)(p->unk_A0 - 1));
                 DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
-                           gfx, p->unk_00, p->unk_14, affine, 0x410, p->unk_A0);
+                           gfx, p->unk_00, p->palette, affine, 0x410, p->unk_A0);
 
                 if (p->unk_A7 != 0) {
                     DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
@@ -9338,7 +9338,7 @@ void func_08090EA0(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_0C = 0;
     *(s32*)&p->unk_10 = 0;
     p->unk_18 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     *(s32*)&p->unk_1C = 0;
     p->unk_A1 = 0;
     *(UnkStruct_08090244*)&p->unk_38 = *a;
@@ -9418,7 +9418,7 @@ void func_08091048(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_00 = 0;
     p->unk_04 = 0;
     p->unk_08 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     p->unk_A1 = 0;
     *(UnkStruct_08090244*)&p->unk_38 = *a;
     p->unk_78 = 0;
@@ -9460,7 +9460,7 @@ void func_08091138(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_00 = 0;
     p->unk_04 = 0;
     p->unk_08 = 0;
-    p->unk_14 = 0;
+    p->palette = 0;
     p->unk_A1 = 0;
     *(UnkStruct_08090244*)&p->unk_38 = *a;
     p->unk_78 = 0;
@@ -9746,12 +9746,12 @@ u8 func_080923E0(UnkStruct_08093838* w, void* a) {
         func_08093D28(w->unk_1EC->unk_20, (u8*)w);
         v = func_08093E34(w->unk_1EC->unk_20, (u8*)w);
         SetTaskUpdate(a, (void*)func_0809254C);
-        ReleaseObjTiles(w->unk_03C);
-        w->unk_03C = AllocObjTiles(0x1E0, 0);
-        func_08002A10(w->unk_03C, &gUnk_093F47E4[0xD88]);
+        ReleaseObjTiles(w->tiles);
+        w->tiles = AllocObjTiles(0x1E0, 0);
+        func_08002A10(w->tiles, &gUnk_093F47E4[0xD88]);
         AnimInit(w->unk_1F8, &gUnk_09EF1194[0x38], &gUnk_09EF1180[0x38]);
         AnimStart(w->unk_1F8, 0, 1);
-        w->unk_274 = AnimGetGfx(w->unk_1F8);
+        w->gfx = AnimGetGfx(w->unk_1F8);
         w->unk_280 = w->unk_258 >> 8;
         w->unk_282 = w->unk_25C >> 8;
 
@@ -10921,7 +10921,7 @@ void func_08095520(UnkStruct_02034AAC* p) {
 }
 void func_080956AC(UnkStruct_02034AAC* p) {
     TaskPoolDestroy(&p->unk_24[0]);
-    ReleaseObjPalette(p->unk_14);
+    ReleaseObjPalette(p->palette);
     ReleaseObjTiles(p->unk_00);
     ReleaseObjTiles(p->unk_04);
     ReleaseObjTiles(p->unk_08);
@@ -12559,8 +12559,8 @@ u8 func_080987C0(u16 n) {
 
 void RELOAD_CHILDREN_0(UnkStruct_08098BE8* w, UnkStruct_080988C0_Args* a) {
     *(UnkStruct_080988C0_Args*)&w->unk_0C = *a;
-    w->unk_00 = LoadObjTiles(gUnk_09EE7698[w->unk_19], 128);
-    w->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->tiles = LoadObjTiles(gUnk_09EE7698[w->unk_19], 128);
+    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_08 = 0;
 
     switch (w->unk_1A[0]) {
@@ -12689,14 +12689,14 @@ void RELOAD_CHILDREN_2(UnkStruct_08098BE8* w) {
     if (w->unk_18 <= 3) {
         x = (w->unk_20 + *w->unk_10) >> 8;
         y = (w->unk_24 + *w->unk_14) >> 8;
-        DrawSprite(x, y + (gSineTable[w->unk_45] >> 8), gUnk_09EEA344[0], w->unk_00, w->unk_04, 0, 0, 50);
+        DrawSprite(x, y + (gSineTable[w->unk_45] >> 8), gUnk_09EEA344[0], w->tiles, w->palette, 0, 0, 50);
     }
 
     if ((s8)w->unk_18 < 0) {
         x = (w->unk_20 + *w->unk_10) >> 8;
         y = (w->unk_24 + *w->unk_14) >> 8;
         aff = AllocObjAffine(0, w->unk_28, w->unk_28, 0);
-        DrawSprite(x, y + (gSineTable[w->unk_45] >> 8), gUnk_08F709B0[w->unk_19].unk_04, w->unk_08, w->unk_04, aff, 0, 49);
+        DrawSprite(x, y + (gSineTable[w->unk_45] >> 8), gUnk_08F709B0[w->unk_19].unk_04, w->unk_08, w->palette, aff, 0, 49);
     }
 }
 
@@ -12960,13 +12960,13 @@ void func_080991CC(void* pool, u8* a, void* b, u8* c, u8 d) {
 }
 
 void RELOAD_0(UnkStruct_080991F8* w, UnkStruct_080991F8_Args* a) {
-    w->unk_00 = AllocObjTiles(0xA0, 0);
-    w->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->tiles = AllocObjTiles(0xA0, 0);
+    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     *(UnkStruct_080991F8_Args*)&w->unk_2C = *a;
-    func_08002A10(w->unk_00, gUnk_09EE7708[w->unk_2C]);
-    AnimInit(&w->unk_0C, gUnk_09EE7714[w->unk_2C], gUnk_09EE7720[w->unk_2C]);
-    AnimStart(&w->unk_0C, 0, 1);
-    w->unk_08 = AnimGetGfx(&w->unk_0C);
+    func_08002A10(w->tiles, gUnk_09EE7708[w->unk_2C]);
+    AnimInit(&w->anim, gUnk_09EE7714[w->unk_2C], gUnk_09EE7720[w->unk_2C]);
+    AnimStart(&w->anim, 0, 1);
+    w->gfx = AnimGetGfx(&w->anim);
 
     switch (w->unk_2D) {
     case 1:
@@ -13389,17 +13389,17 @@ void Card_EFFECT_0(UnkStruct_08099E70* w, UnkStruct_08099CDC_Args* a) {
         w->unk_2C = 0;
     }
 
-    w->unk_00 = AllocObjTiles(0x80, 0);
-    w->unk_04 = LoadObjPalette(gUnk_09619158, 32);
-    func_08002A10(w->unk_00, gUnk_093F762E);
-    AnimInit(&w->unk_08, gUnk_09EF1260, gUnk_09EF1230);
-    AnimStart(&w->unk_08, GetRandom() % 3, 0);
-    w->unk_20 = AnimGetGfx(&w->unk_08);
+    w->tiles = AllocObjTiles(0x80, 0);
+    w->palette = LoadObjPalette(gUnk_09619158, 32);
+    func_08002A10(w->tiles, gUnk_093F762E);
+    AnimInit(&w->anim, gUnk_09EF1260, gUnk_09EF1230);
+    AnimStart(&w->anim, GetRandom() % 3, 0);
+    w->gfx = AnimGetGfx(&w->anim);
     (*w->unk_48)++;
 }
 
 u8 Card_EFFECT_1(UnkStruct_08099E70* w) {
-    w->unk_20 = AnimUpdate(&w->unk_08);
+    w->gfx = AnimUpdate(&w->anim);
 
     if (w->unk_44 == 0) {
         WorldToScreen(&w->unk_30, &w->unk_32, w->unk_24, w->unk_28, w->unk_2C);
@@ -13410,7 +13410,7 @@ u8 Card_EFFECT_1(UnkStruct_08099E70* w) {
         w->unk_28 -= 0x100;
     }
 
-    if (AnimIsFinished(&w->unk_08)) {
+    if (AnimIsFinished(&w->anim)) {
         return 0;
     }
 
@@ -15112,7 +15112,7 @@ void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a) {
     w->unk_19 = a[0];
     w->unk_1A = 0;
     w->unk_1C = 32;
-    w->unk_10 = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     w->unk_08 = func_080038C8(0x3C0);
     w->unk_0C = func_080038C8(32);
     w->unk_20 = 0;
@@ -15145,7 +15145,7 @@ void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a) {
         break;
     }
 
-    w->unk_14 = LoadObjTiles(gUnk_08B25ADE, 0x360);
+    w->tiles = LoadObjTiles(gUnk_08B25ADE, 0x360);
     w->unk_22 = 0;
     w->unk_23 = 0;
     w->unk_24 = 0;
@@ -15262,12 +15262,12 @@ INCLUDE_ASM("card/func_0809DE30.s");
 #ifndef VERSION_EU
 void HCEffectName_2(UnkStruct_0809DF7C* w) {
     if (w->unk_27 == 1) {
-        DrawSprite(w->unk_00, 0x90, 0, w->unk_08, w->unk_10, 0, 0x400, 10);
-        DrawSprite(w->unk_00, 0x8A, gUnk_09EE1538[15], w->unk_14, w->unk_10, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 8, 0x8A, gUnk_09EE1538[w->unk_24 + 4], w->unk_14, w->unk_10, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 16, 0x8A, gUnk_09EE1538[w->unk_25 + 4], w->unk_14, w->unk_10, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 24, 0x8A, 0, w->unk_0C, w->unk_10, 0, 0x400, 10);
-        DrawSprite(w->unk_00 + 32, 0x8A, gUnk_09EE1538[14], w->unk_14, w->unk_10, 0, 0x400, 10);
+        DrawSprite(w->unk_00, 0x90, 0, w->unk_08, w->palette, 0, 0x400, 10);
+        DrawSprite(w->unk_00, 0x8A, gUnk_09EE1538[15], w->tiles, w->palette, 0, 0x400, 10);
+        DrawSprite(w->unk_00 + 8, 0x8A, gUnk_09EE1538[w->unk_24 + 4], w->tiles, w->palette, 0, 0x400, 10);
+        DrawSprite(w->unk_00 + 16, 0x8A, gUnk_09EE1538[w->unk_25 + 4], w->tiles, w->palette, 0, 0x400, 10);
+        DrawSprite(w->unk_00 + 24, 0x8A, 0, w->unk_0C, w->palette, 0, 0x400, 10);
+        DrawSprite(w->unk_00 + 32, 0x8A, gUnk_09EE1538[14], w->tiles, w->palette, 0, 0x400, 10);
     }
 }
 #else
@@ -15286,8 +15286,8 @@ void HCEffectName_3(u8* work) {
 
 void NumberPlus_0(UnkWork_0809E0A4* w, UnkStruct_0809E0A4* args) {
     w->unk_08 = *args;
-    w->unk_00 = LoadObjTiles(gUnk_090451C0, 128);
-    w->unk_04 = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->tiles = LoadObjTiles(gUnk_090451C0, 128);
+    w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     w->unk_24 = w->unk_08.unk_04 >> 8;
     w->unk_26 = (w->unk_08.unk_08 >> 8) - 20;
     w->unk_28 = 16;
@@ -15615,8 +15615,8 @@ void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a) {
     w->unk_30 = 30;
     w->unk_97 = a->unk_08;
     func_080A1554((u8*)w);
-    w->unk_00 = LoadObjTiles(gUnk_0908C686, 0x3E0);
-    w->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->tiles = LoadObjTiles(gUnk_0908C686, 0x3E0);
+    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
 
     for (i = 0; i < 4; i++) {
         w->unk_10[i] = (w->unk_64 << 8) + gUnk_09037FFC[i];
@@ -15636,8 +15636,8 @@ void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a) {
         args.unk_00 = w->unk_34[0];
         args.unk_04 = w->unk_44[0];
         args.unk_0C = w->unk_0C;
-        args.unk_10 = w->unk_00;
-        args.unk_14 = w->unk_04;
+        args.unk_10 = w->tiles;
+        args.unk_14 = w->palette;
         TaskCreate(w->unk_98, gTaskDescLvupLogo, &args);
         gUnk_02034AF8 = 1;
     }
@@ -15739,7 +15739,7 @@ void LVUP_EFFECT_2(UnkStruct_080A18F4* w) {
 
     for (i = 0; i < 4; i++) {
         if (w->unk_94 <= 5) {
-            DrawSprite(w->unk_34[i] >> 8, w->unk_44[i] >> 8, gUnk_09EE7938[w->unk_94], w->unk_00, w->unk_04, 0, 0, 20);
+            DrawSprite(w->unk_34[i] >> 8, w->unk_44[i] >> 8, gUnk_09EE7938[w->unk_94], w->tiles, w->palette, 0, 0, 20);
         }
     }
 
@@ -15766,10 +15766,10 @@ void Lvup_Logo_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a) {
     w->unk_44[0] = a->unk_04;
     w->unk_68 = a->unk_04;
     w->unk_0C = a->unk_0C;
-    w->unk_00 = LoadObjTiles(gUnk_0908C686, 0x3E0);
+    w->tiles = LoadObjTiles(gUnk_0908C686, 0x3E0);
     LoadObjPalette(gUnk_09611AB8, 32);
-    w->unk_00 = a->unk_10;
-    w->unk_04 = a->unk_14;
+    w->tiles = a->unk_10;
+    w->palette = a->unk_14;
     func_080062F4(*(u16*)(a->unk_14 + 6) + 16, 1);
     w->unk_94 = 0;
     w->unk_95 = 0;
@@ -16266,7 +16266,7 @@ void Deck_Yes_No_0(UnkStruct_080A2F54* w, u8* a) {
     w->unk_78D = func_08065B6C(gUnk_08159E10, w->unk_280);
     w->unk_78E = func_08065B6C(gUnk_08159E18, w->unk_500);
     w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
-    w->unk_780 = LoadObjTiles(gUnk_093F8C8E, 0xC00);
+    w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
     w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_792 = (240 - func_08065B08(w, w->unk_78C)) / 2;
     w->unk_796 = 66;
@@ -16300,7 +16300,7 @@ void Deck_Clear_0(UnkStruct_080A2F54* w, u8* a) {
     w->unk_78D = func_08065B6C(gUnk_08159E10, w->unk_280);
     w->unk_78E = func_08065B6C(gUnk_08159E18, w->unk_500);
     w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
-    w->unk_780 = LoadObjTiles(gUnk_093F8C8E, 0xC00);
+    w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
     w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_792 = (240 - func_08065B08(w, w->unk_78C)) / 2;
     w->unk_794 = (240 - func_08065B08(w->unk_280, w->unk_78D)) / 2 - DECK_PROMPT_LEFT_DX;
@@ -17161,13 +17161,13 @@ void func_080A53E4(u8* work) {
     gUnk_02034B00 = 0;
 }
 
-void func_080A5490(UnkStruct_080A5490* w, UnkStruct_080A5490_Args* a) {
+void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a) {
     u8 i;
 
     func_08006238(0, 16, 8);
     *(UnkStruct_080A5490_Args*)&w->unk_10 = *a;
     w->unk_00 = LoadObjTiles(gUnk_093FB0CC, 0xC0);
-    w->unk_04 = LoadObjPalette(gUnk_09619378, 32);
+    w->palette = LoadObjPalette(gUnk_09619378, 32);
     w->unk_08 = LoadObjTiles(gUnk_093FB1AC, 0x4A0);
     w->unk_0C = AllocObjPalette(32);
     w->unk_A2 = 6;
@@ -17175,7 +17175,7 @@ void func_080A5490(UnkStruct_080A5490* w, UnkStruct_080A5490_Args* a) {
     w->unk_1D = 0;
     w->unk_A3 = 0;
     func_08003A70(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C * 4] << 5]);
-    func_080062F4(((UnkStruct_080038C8*)w->unk_04)->unk_06 + 16, 1);
+    func_080062F4(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
     func_080062F4(w->unk_0C->unk_06 + 16, 1);
 
     for (i = 0; i < w->unk_A2; i++) {
@@ -17187,16 +17187,16 @@ void func_080A5490(UnkStruct_080A5490* w, UnkStruct_080A5490_Args* a) {
 
     m4aSongNumStart(0xD4);
 }
-INCLUDE_ASM("card/func_080A55B8.s");
-INCLUDE_ASM("card/func_080A5704.s");
-void func_080A57F8(void** p) {
+INCLUDE_ASM("card/WorldSel_Before_1.s");
+INCLUDE_ASM("card/WorldSel_Before_2.s");
+void WorldSel_Before_3(void** p) {
     ReleaseObjTiles(p[0]);
     ReleaseObjTiles(p[2]);
     ReleaseObjPalette(p[1]);
     ReleaseObjPalette(p[3]);
 }
 void func_080A581C(u8* work) {
-    TaskCreate(&work[0x10], gUnk_09EE8ED8, work);
+    TaskCreate(&work[0x10], gTaskDescWorldSelBefore, work);
 }
 
 void func_080A5830(void* a, s32 b, s32 c, s32 d) {
@@ -17205,7 +17205,7 @@ void func_080A5830(void* a, s32 b, s32 c, s32 d) {
     args[0] = b;
     args[1] = c;
     args[2] = d;
-    TaskCreate(a, gUnk_09EE8ED8, args);
+    TaskCreate(a, gTaskDescWorldSelBefore, args);
 }
 INCLUDE_ASM("card/func_080A584C.s");
 void func_080A5C20(u8* work) {
@@ -17750,9 +17750,9 @@ void func_080A6FAC(UnkStruct_080A6FAC* w) {
         if (id & 0x8000) {
             w->unk_024 = AllocObjTiles(0x280, 0);
             func_08002A10(w->unk_024, gUnk_0908B1B4);
-            AnimInit(&w->unk_474, gUnk_09EEA164, gUnk_09EEA148);
-            AnimStart(&w->unk_474, 0, 1);
-            w->unk_408 = AnimGetGfx(&w->unk_474);
+            AnimInit(&w->anim, gUnk_09EEA164, gUnk_09EEA148);
+            AnimStart(&w->anim, 0, 1);
+            w->gfx = AnimGetGfx(&w->anim);
         }
 
         t = id & CARD_ID_MASK;
