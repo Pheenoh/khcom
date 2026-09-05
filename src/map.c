@@ -1802,7 +1802,7 @@ void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     p->unk_00 = d;
     p->unk_CC = q->unk_04;
     p->unk_04 = 0;
-    *(u16*)&p->unk_D0[0x10] = 30;
+    p->unk_E0 = 30;
     e->unk_00 = q->unk_08;
     e->unk_14 = q->unk_18;
     e->unk_10 = q->unk_1C;
@@ -1811,11 +1811,11 @@ void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     e->unk_30 = 1;
     p->unk_C8 = d->unk_0C;
     p->unk_CA = d->unk_0A;
-    *(u16*)&p->unk_D0[0] = 0;
-    *(u16*)&p->unk_D0[2] = 0;
-    *(s32*)&p->unk_D0[4] = e->unk_00.unk_00;
-    *(s32*)&p->unk_D0[8] = e->unk_00.x;
-    *(s32*)&p->unk_D0[0xC] = e->unk_00.y;
+    p->unk_D0 = 0;
+    p->unk_D2 = 0;
+    p->unk_D4 = e->unk_00.unk_00;
+    p->unk_D8 = e->unk_00.x;
+    p->unk_DC = e->unk_00.y;
     gUnk_02034F40++;
     gUnk_02034F41 += d->unk_08;
     p->tiles = AllocObjTiles(d->unk_08 * 32, 0);
@@ -3919,7 +3919,24 @@ void func_080EAEB0(u8 a) {
 
 INCLUDE_ASM("map/func_080EAF10.s");
 
-INCLUDE_ASM("map/func_080EB12C.s");
+void func_080EB12C(UnkStruct_02034FDC* w) {
+    u8 prev = w->unk_33E;
+
+    if (GetKeysRepeat() & 0x40) {
+        w->unk_33E = w->unk_33E != 0 ? w->unk_33E - 1 : 1;
+        m4aSongNumStart(0x65);
+    }
+
+    if (GetKeysRepeat() & 0x80) {
+        w->unk_33E = w->unk_33E == 0 ? w->unk_33E + 1 : 0;
+        m4aSongNumStart(0x65);
+    }
+
+    if (prev != w->unk_33E) {
+        func_080EAEB0(prev);
+        func_080EAD84(w->unk_33E);
+    }
+}
 
 void func_080EB1AC(UnkStruct_02034FDC* w) {
     if (w->unk_340 != 0) {
@@ -4900,7 +4917,30 @@ void func_080EFE94(UnkStruct_080E590C* p) {
 
 INCLUDE_ASM("map/func_080EFEDC.s");
 
-INCLUDE_ASM("map/func_080EFF64.s");
+s32 func_080EFF64(UnkStruct_080E590C* p) {
+    UnkStruct_080E590C* q = p;
+    UnkStruct_080DFF1C* pos = &p->unk_08;
+
+    if (gUnk_02039BA0->unk_70 & 0x40000) {
+        func_080E6034(p);
+        return 0;
+    }
+
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080EFE54) {
+        return 1;
+    }
+
+    if (p->unk_CC != 0) {
+        ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
+
+        if (p->unk_CC != 0) {
+            func_08012324(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            return 1;
+        }
+    }
+
+    return 0;
+}
 
 INCLUDE_ASM("map/func_080EFFE0.s");
 
@@ -5172,13 +5212,56 @@ void func_080F0A84(UnkStruct_080E590C* p) {
 
 INCLUDE_ASM("map/func_080F0ACC.s");
 
-INCLUDE_ASM("map/func_080F0B54.s");
+s32 func_080F0B54(UnkStruct_080E590C* p) {
+    UnkStruct_080E590C* q = p;
+    UnkStruct_080DFF1C* pos = &p->unk_08;
+
+    if (gUnk_02039BA0->unk_70 & 0x40000) {
+        func_080E6034(p);
+        return 0;
+    }
+
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080F0A44) {
+        return 1;
+    }
+
+    if (p->unk_CC != 0) {
+        ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
+
+        if (p->unk_CC != 0) {
+            func_08012324(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            return 1;
+        }
+    }
+
+    return 0;
+}
 
 INCLUDE_ASM("map/func_080F0BD0.s");
 
 INCLUDE_ASM("map/func_080F0BDC.s");
 
-INCLUDE_ASM("map/func_080F0BE8.s");
+void func_080F0BE8(UnkStruct_080E590C* p) {
+    UnkStruct_080E590C* q = p;
+
+    func_080E5D6C(p, 0, 0);
+    TaskPoolUpdate(p->unk_E4);
+
+    if (AnimIsFinished(p->anim)) {
+        func_08012614(p->unk_48, 0);
+        p->unk_D0 = GetRandom() % 121 + 60;
+        p->unk_CC = func_080F0C68;
+    } else {
+        func_080E5DEC(q);
+        if (q->unk_E0 > 0) {
+            q->unk_E0--;
+
+            if (q->unk_E0 <= 0) {
+                func_08012614(q->unk_48, 0);
+            }
+        }
+    }
+}
 
 INCLUDE_ASM("map/func_080F0C68.s");
 
@@ -5216,16 +5299,59 @@ void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     } else {
         func_08012614(p->unk_48, 0);
     }
-    *(u16*)&p->unk_D0[0] = 0;
+    p->unk_D0 = 0;
 }
 
-INCLUDE_ASM("map/func_080F0DD8.s");
+s32 func_080F0DD8(UnkStruct_080E590C* p) {
+    UnkStruct_080E590C* q = p;
+    UnkStruct_080DFF1C* pos = &p->unk_08;
+
+    if (gUnk_02039BA0->unk_70 & 0x40000) {
+        func_080E6034(p);
+        return 0;
+    }
+
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080F0D40) {
+        return 1;
+    }
+
+    if (p->unk_CC != 0) {
+        ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
+
+        if (p->unk_CC != 0) {
+            func_08012324(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            return 1;
+        }
+    }
+
+    return 0;
+}
 
 INCLUDE_ASM("map/func_080F0E54.s");
 
 INCLUDE_ASM("map/func_080F0E60.s");
 
-INCLUDE_ASM("map/func_080F0E6C.s");
+void func_080F0E6C(UnkStruct_080E590C* p) {
+    UnkStruct_080E590C* q = p;
+
+    func_080E5D6C(p, 0, 0);
+    TaskPoolUpdate(p->unk_E4);
+
+    if (AnimIsFinished(p->anim)) {
+        func_08012614(p->unk_48, 0);
+        p->unk_D0 = GetRandom() % 121 + 60;
+        p->unk_CC = func_080F0EEC;
+    } else {
+        func_080E5DEC(q);
+        if (q->unk_E0 > 0) {
+            q->unk_E0--;
+
+            if (q->unk_E0 <= 0) {
+                func_08012614(q->unk_48, 0);
+            }
+        }
+    }
+}
 
 INCLUDE_ASM("map/func_080F0EEC.s");
 
@@ -5263,10 +5389,33 @@ void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     } else {
         func_08012614(p->unk_48, 0);
     }
-    *(u16*)&p->unk_D0[0] = 0;
+    p->unk_D0 = 0;
 }
 
-INCLUDE_ASM("map/func_080F105C.s");
+s32 func_080F105C(UnkStruct_080E590C* p) {
+    UnkStruct_080E590C* q = p;
+    UnkStruct_080DFF1C* pos = &p->unk_08;
+
+    if (gUnk_02039BA0->unk_70 & 0x40000) {
+        func_080E6034(p);
+        return 0;
+    }
+
+    if ((gUnk_0203C7AC->unk_00 & 4) && p->unk_CC != func_080F0FC4) {
+        return 1;
+    }
+
+    if (p->unk_CC != 0) {
+        ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
+
+        if (p->unk_CC != 0) {
+            func_08012324(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            return 1;
+        }
+    }
+
+    return 0;
+}
 
 INCLUDE_ASM("map/func_080F10D8.s");
 
@@ -5348,7 +5497,20 @@ void func_080F1460(MapGmkJumpWork* w) {
     }
 }
 
-INCLUDE_ASM("map/func_080F14C4.s");
+void func_080F14C4(MapGmkJumpWork* w) {
+    if (func_08012660(&w->unk_040, 1)) {
+        gUnk_0203C7AC->unk_1C = w->unk_0C4;
+        gUnk_0203C7AC->unk_18 = w->unk_014;
+    } else if (gUnk_02039BA0->unk_20 != gUnk_02039BA0->unk_24) {
+        w->unk_0C8 = func_080F1544;
+        w->unk_0C0 = 2;
+        AnimStart(&w->unk_09C, 2, 1);
+    } else {
+        w->unk_0C8 = func_080F1460;
+        w->unk_0C0 = 0;
+        AnimStart(&w->unk_09C, 0, 1);
+    }
+}
 
 void func_080F1544(MapGmkJumpWork* w) {
     if (AnimIsFinished(&w->unk_09C)) {
@@ -5379,7 +5541,18 @@ s32 func_080F1650(MapGmkJumpWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F169C.s");
+void func_080F169C(MapGmkJumpWork* w) {
+    u16 v;
+    s32 k;
+    s16 x;
+    s16 y;
+
+    x = (w->unk_000 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    k = w->unk_004 >> 8;
+    y = k + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    v = -0x1004 - k * 4;
+    DrawSprite(x, y, AnimGetGfx(&w->unk_09C), w->unk_0B4, w->unk_0B8, 0, 0x800, v);
+}
 
 void func_080F1718(MapGmkJumpWork* w) {
     ReleaseObjTiles(w->unk_0B4);
@@ -5695,7 +5868,27 @@ void func_080F22E8(MapGmkGpWork* w) {
     func_08012304(w->unk_044);
 }
 
-INCLUDE_ASM("map/func_080F230C.s");
+u8 func_080F230C(MapGmkGpWork* w) {
+    UnkStruct_080DFF1C* q = &w->unk_004;
+
+    if (func_080E02E0(q, 8, 8)) {
+        UnkStruct_080DFB8C* e;
+
+        m4aSongNumStart(w->unk_0C4);
+        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
+        e = w->unk_000;
+
+        if ((e->unk_00 & 2) == 0) {
+            e->unk_00 |= 2;
+            func_080E84DC(q);
+        }
+
+        gUnk_0203C7AC->unk_00 |= 0x80;
+        AnimStart(&w->unk_0A0, 1, 0);
+        w->unk_0C8 = func_080F238C;
+    }
+    return 1;
+}
 
 u8 func_080F238C(MapGmkGpWork* w) {
     if (AnimIsFinished(&w->unk_0A0) == 0) {
@@ -6347,7 +6540,20 @@ void func_080F4140(MapGmk04Work* w) {
     }
 }
 
-INCLUDE_ASM("map/func_080F41A4.s");
+void func_080F41A4(MapGmk04Work* w) {
+    u32 state = gUnk_0203C7AC->unk_00;
+
+    if (state & 0x4000) {
+        gUnk_02039BA0->unk_70 |= 0x1000;
+        func_080A411C(&w->unk_0C8, 0, 0x69);
+        w->unk_0C4 = func_080F4258;
+    } else if (gUnk_02039BA0->unk_68 == (s32)&w->unk_004) {
+        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_0203C7AC->unk_00 = state | 0x4000;
+        func_080A411C(&w->unk_0C8, 0, 0x67);
+        w->unk_0C4 = func_080F4224;
+    }
+}
 
 void func_080F4224(MapGmk04Work* w) {
     if (func_080A42C8((s32)w) == 0) {
@@ -6645,7 +6851,20 @@ s32 func_080F5580(MapPrzCardWork* w) {
 
 INCLUDE_ASM("map/func_080F55B0.s");
 
-INCLUDE_ASM("map/func_080F5780.s");
+void func_080F5780(MapPrzCardWork* w) {
+    func_080062F4(w->unk_074->unk_06 + 0x10, 0);
+    func_080062F4(w->unk_06C->unk_06 + 0x10, 0);
+    func_08012304(w->unk_010);
+    ReleaseObjTiles(w->unk_070);
+    ReleaseObjTiles(w->unk_078);
+    ReleaseObjTiles(w->unk_07C);
+    ReleaseObjTiles(w->unk_080);
+    ReleaseObjPalette(w->unk_06C);
+    ReleaseObjPalette(w->unk_074);
+    ReleaseObjPalette(w->unk_084);
+    TaskPoolDestroy(&w->unk_0D4);
+    gUnk_0203C7AC->unk_00 &= ~0x10;
+}
 
 void func_080F5800(MapPrzStockWork* w) {
     func_080A411C(&w->unk_08, 0, w->unk_00[1]);
@@ -6793,7 +7012,19 @@ void func_080F5C48(MapTalkWork* w) {
     ReleaseObjPalette(w->unk_20);
 }
 
-INCLUDE_ASM("map/func_080F5C60.s");
+void func_080F5C60(MapDonaldWork* w) {
+    if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
+        gUnk_02039BA0->unk_70 |= 0x1000;
+
+        if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
+            func_080A411C(&w->unk_0C4, 0, 24);
+        } else {
+            func_080A411C(&w->unk_0C4, 0, gUnk_0984C2E4[gUnk_0203C590.unk_00]);
+        }
+
+        w->unk_0BC = func_080F5CDC;
+    }
+}
 
 void func_080F5CDC(MapDonaldWork* w) {
     if (func_080A42C8((s32)w) == 0) {
@@ -6833,7 +7064,19 @@ void func_080F5F4C(MapFrdWork* w) {
     TaskPoolDestroy(&w->unk_0D8);
 }
 
-INCLUDE_ASM("map/func_080F5F88.s");
+void func_080F5F88(MapGoofyWork* w) {
+    if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
+        gUnk_02039BA0->unk_70 |= 0x1000;
+
+        if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
+            func_080A411C(&w->unk_0C4, 0, 49);
+        } else {
+            func_080A411C(&w->unk_0C4, 0, gUnk_0984C310[gUnk_0203C590.unk_00]);
+        }
+
+        w->unk_0BC = func_080F6004;
+    }
+}
 
 void func_080F6004(MapGoofyWork* w) {
     if (func_080A42C8((s32)w) == 0) {
@@ -7076,7 +7319,20 @@ void func_080F6D40(void) {
     gUnk_0203C7AC->unk_00 |= 2;
 }
 
-INCLUDE_ASM("map/func_080F6D70.s");
+void func_080F6D70(MapTutorialWork* w) {
+    u32 flags;
+
+    if (gUnk_02039BA0->unk_68 == 0) {
+        flags = gUnk_02039BA0->unk_70;
+
+        if (!(flags & 0x2000) && !(gUnk_0203C7AC->unk_00 & 0x2000) && (gGameState.unk_17A & 0x10)) {
+            gUnk_0203C7AC->unk_00 |= 0x4000;
+            gUnk_02039BA0->unk_70 = flags | 0x1000;
+            func_080A411C(&w->unk_0C8, 0, 0x6A);
+            w->unk_0C4 = func_080F6DE8;
+        }
+    }
+}
 
 INCLUDE_ASM("map/func_080F6DE8.s");
 
