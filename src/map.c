@@ -696,7 +696,28 @@ void func_080E2318(s16 y) {
     }
 }
 
-INCLUDE_ASM("map/func_080E23CC.s");
+void func_080E23CC(s16 j) {
+    s16 x = gUnk_02034F28 - 1;
+    UnkStruct_080DFB8C* q = func_080E08BC(x, j);
+
+    switch (q->unk_05) {
+    case 12:
+        func_080E1C64(x, j, 17);
+        break;
+    case 8:
+        func_080E1C64(x, j, 15);
+        break;
+    case 0:
+    case 9:
+    case 13:
+    case 20:
+    case 21:
+    case 24:
+    case 25:
+        func_080E1C64(x, j, 3);
+        break;
+    }
+}
 
 void func_080E249C(void) {
     s32 i;
@@ -1047,7 +1068,31 @@ INCLUDE_ASM("map/func_080E4244.s");
 
 INCLUDE_ASM("map/func_080E44A8.s");
 
+#ifdef NON_MATCHING
+void func_080E470C(void) {
+    s16 a;
+    s16 b;
+    s16 c;
+    s16 t;
+    s16 d;
+    s16 v;
+    s32 k;
+
+    t = gUnk_02034F28 * 5 >> 3;
+    a = (gUnk_02034F28 - t) / 2;
+    d = a + t;
+    b = gUnk_02034F2A / 4;
+    func_080E3060(0, a, d, 0);
+    k = 3;
+    func_080E309C(0, a, d, b, k);
+    func_080E3C1C(3, &a, &b, &c, 0, gUnk_02034F28);
+    v = gUnk_0203C7B0.unk_03 + GetRandom() % (gUnk_0203C7B0.unk_04 - gUnk_0203C7B0.unk_03 + 1);
+    func_080E3060(1, 0, gUnk_02034F28, v + c);
+    func_080E3768(1, 0, gUnk_02034F28, a, v + b, k);
+}
+#else
 INCLUDE_ASM("map/func_080E470C.s");
+#endif
 
 void func_080E47E8(u8 a, u8 b) {
     s32 i;
@@ -4152,7 +4197,33 @@ void func_080EB898(u8 a, u16 v) {
     }
 }
 
-INCLUDE_ASM("map/func_080EB93C.s");
+void func_080EB93C(u8 a, u32 v) {
+    u16 d[6];
+    s32 off;
+    u16* q;
+    s32 i;
+    u32 t;
+
+    t = v / 3600;
+    d[0] = t / 10;
+    d[1] = t - d[0] * 10;
+    v -= t * 3600;
+    t = v / 60;
+    d[2] = t / 10;
+    d[3] = t - d[2] * 10;
+    v -= t * 60;
+    d[4] = v / 10;
+    d[5] = v - d[4] * 10;
+    i = 0;
+    off = a * 608 + 128;
+    q = d;
+
+    while (i <= 5) {
+        RequestDma3Copy((void*)&gUnk_09966064[*q * 32], (u8*)GetBgCharBase(1) + off + i * 32, 0x20);
+        q++;
+        i++;
+    }
+}
 
 void func_080EBA14(u8 a) {
     UnkStruct_02039D6C* e = &gUnk_02039D6C[a];
@@ -5095,7 +5166,51 @@ void func_080EF508(UnkStruct_080E590C* p) {
     }
 }
 
-INCLUDE_ASM("map/func_080EF58C.s");
+void func_080EF58C(UnkStruct_080E590C* p) {
+    UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
+    s32 x;
+    s32 y;
+    s32 v;
+
+    func_080E5D6C(p, 1, 1);
+    func_080E5DEC(p);
+    TaskPoolUpdate(p->unk_E4);
+    x = p->unk_08.unk_00;
+    y = q->unk_04;
+
+    if ((u8)func_080EF4BC(p) != 0) {
+        p->unk_D0 = 0;
+        p->unk_CC = func_080EF718;
+    } else if (GetRandom() % 80 == 0) {
+        switch (GetRandom() % 4) {
+        case 0:
+            v = 173;
+            break;
+        case 1:
+            v = 83;
+            break;
+        case 2:
+            v = 211;
+            break;
+        default:
+            v = 45;
+            break;
+        }
+        ((u8*)q)[0x14] = v;
+        p->unk_D0 = 0;
+        p->unk_CC = func_080EF664;
+    }
+
+    if ((u8)func_080E5FB4(p) != 0) {
+        p->unk_CC = func_080EF88C;
+    } else {
+        func_080E5F50(p);
+
+        if ((u8)func_080EF3A0(p) == 0) {
+            func_080EF478(p, x, y);
+        }
+    }
+}
 
 void func_080EF664(UnkStruct_080E590C* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
@@ -6116,7 +6231,41 @@ void func_080F1544(MapGmkJumpWork* w) {
     }
 }
 
-INCLUDE_ASM("map/func_080F1584.s");
+void func_080F1584(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
+    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
+    AnimState* a;
+    s32 v;
+
+    p->unk_00 = arg->unk_0A << 13;
+    p->x = arg->unk_0C << 12;
+    p->y = 0;
+    p->y = w->unk_00C = func_080DFF30(p);
+    p->x -= w->unk_00C;
+
+    switch (arg->unk_0E) {
+    case 3:
+        v = 211;
+        break;
+    case 5:
+        v = 45;
+        break;
+    case 0:
+    default:
+        v = 0;
+        break;
+    }
+    ((u8*)p)[0x14] = v;
+    w->unk_0C4 = arg->unk_14 - arg->unk_10;
+    w->unk_0B8 = LoadObjPalette(&gUnk_099910C4[0x240], 32);
+    w->unk_0B4 = LoadObjTiles(&gUnk_09858238[0x10D9], 0x980);
+    a = &w->unk_09C;
+    AnimInit(a, gUnk_09EF8488, gUnk_09EF8468);
+    w->unk_0C0 = 0;
+    AnimStart(a, 0, 1);
+    w->unk_0C8 = func_080F1460;
+    func_080122AC(&w->unk_040, 6, 16, 0);
+    func_08012324(&w->unk_040, p->unk_00, p->x, p->y);
+}
 
 s32 func_080F1650(MapGmkJumpWork* w) {
     if ((u8)func_080E0390() != 0) {
@@ -6523,7 +6672,30 @@ s32 func_080F2130(MapGmkGp1Work* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F2178.s");
+void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
+    UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
+    UnkStruct_080E7D80* d = arg->unk_14;
+    AnimState* a;
+
+    w->unk_000 = arg;
+    e->unk_00 = arg->unk_04;
+    w->unk_004.unk_00 += d->unk_16 << 8;
+    e->unk_00.x += d->unk_18 << 8;
+    e->unk_00.y += d->unk_1A << 8;
+    e->unk_1A = d->unk_1E;
+    w->unk_0B8 = AllocObjTiles(d->unk_08, d->unk_04);
+    w->unk_0BC = LoadObjPalette(d->unk_00, 32);
+    a = &w->unk_0A0;
+    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimStart(a, 0, 1);
+    w->unk_0C0 = AnimGetGfx(a);
+    func_08002A10(w->unk_0B8, d->unk_04);
+    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    w->unk_0C4 = d->unk_20;
+    w->unk_0C6 = 1;
+    w->unk_0C8 = func_080F207C;
+}
 
 u8 func_080F2244(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
@@ -6592,7 +6764,29 @@ u8 func_080F238C(MapGmkGpWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F23E8.s");
+void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
+    UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
+    UnkStruct_080E7D80* d = arg->unk_14;
+    AnimState* a;
+
+    w->unk_000 = arg;
+    e->unk_00 = arg->unk_04;
+    w->unk_004.unk_00 += d->unk_16 << 8;
+    e->unk_00.x += d->unk_18 << 8;
+    e->unk_00.y += d->unk_1A << 8;
+    e->unk_1A = d->unk_1E;
+    w->unk_0B8 = AllocObjTiles(d->unk_08, d->unk_04);
+    w->unk_0BC = LoadObjPalette(d->unk_00, 32);
+    a = &w->unk_0A0;
+    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimStart(a, 0, 1);
+    w->unk_0C0 = AnimGetGfx(a);
+    func_08002A10(w->unk_0B8, d->unk_04);
+    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    w->unk_0C4 = d->unk_20;
+    w->unk_0C8 = func_080F230C;
+}
 
 u8 func_080F24B0(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
@@ -6674,7 +6868,29 @@ u8 func_080F2654(MapGmkGpWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F26B0.s");
+void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
+    UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
+    UnkStruct_080E7D80* d = arg->unk_14;
+    AnimState* a;
+
+    w->unk_000 = arg;
+    e->unk_00 = arg->unk_04;
+    w->unk_004.unk_00 += d->unk_16 << 8;
+    e->unk_00.x += d->unk_18 << 8;
+    e->unk_00.y += d->unk_1A << 8;
+    e->unk_1A = d->unk_1E;
+    w->unk_0B8 = AllocObjTiles(d->unk_08, d->unk_04);
+    w->unk_0BC = LoadObjPalette(d->unk_00, 32);
+    a = &w->unk_0A0;
+    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimStart(a, 0, 1);
+    w->unk_0C0 = AnimGetGfx(a);
+    func_08002A10(w->unk_0B8, d->unk_04);
+    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    w->unk_0C4 = d->unk_20;
+    w->unk_0C8 = func_080F2594;
+}
 
 u8 func_080F2778(MapGmkGpWork* w) {
     if ((u8)func_080E0390() != 0) {
@@ -7225,7 +7441,34 @@ void func_080F3864(MapGmkGp8Work* w) {
     func_08012304(w->unk_044);
 }
 
-INCLUDE_ASM("map/func_080F3888.s");
+void func_080F3888(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
+    UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
+    UnkStruct_080E7D80* d = arg->unk_14;
+    AnimState* a;
+
+    w->unk_000 = arg;
+    e->unk_00 = arg->unk_04;
+    w->unk_004.unk_00 += d->unk_16 << 8;
+    e->unk_00.x += d->unk_18 << 8;
+    e->unk_00.y += d->unk_1A << 8;
+    e->unk_1A = d->unk_1E;
+    w->unk_0B8 = LoadObjTiles(d->unk_04, d->unk_08);
+    w->unk_0BC = LoadObjPalette(d->unk_00, 32);
+    a = &w->unk_0A0;
+    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimStart(a, 0, 1);
+    w->unk_0C0 = AnimGetGfx(a);
+    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+
+    if (func_080E8374((UnkStruct_080E8374*)e) != 0) {
+        func_08012614(&w->unk_044, 1);
+    }
+    w->unk_0C4 = d->unk_1C;
+    w->unk_0C9 = 0;
+    w->unk_0C8 = 1;
+    w->unk_0C6 = 0;
+}
 
 u8 func_080F3958(MapGmk00Work* w) {
     UnkStruct_080DFF1C* q = &w->unk_004;
@@ -7329,7 +7572,33 @@ s32 func_080F3B84(MapGmk01Work* w) {
 INCLUDE_ASM("map/func_080F3B84.s");
 #endif
 
-INCLUDE_ASM("map/func_080F3BC4.s");
+void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
+    UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
+    UnkStruct_080E7D80* d = arg->unk_14;
+    AnimState* a;
+
+    w->unk_000 = arg;
+    e->unk_00 = arg->unk_04;
+    e->unk_1A = d->unk_1E;
+    w->unk_0B8 = AllocObjTiles(0x320, &gUnk_09858238[0x74]);
+    w->unk_0BC = LoadObjPalette(d->unk_00, 32);
+    a = &w->unk_0A0;
+    AnimInit(a, d->unk_10, d->unk_0C);
+
+    if (w->unk_000->unk_00 & 2) {
+        AnimStart(a, 1, 1);
+        w->unk_0C0 = AnimGetGfx(a);
+        w->unk_0C8 = 0;
+    } else {
+        gUnk_0203C7AC->unk_00 |= 0x20;
+        AnimStart(a, 0, 1);
+        w->unk_0C0 = AnimGetGfx(a);
+        w->unk_0C8 = func_080F3A74;
+    }
+    func_08002A10(w->unk_0B8, &gUnk_09858238[0x74]);
+    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+}
 
 u8 func_080F3C98(MapGmk01Work* w) {
     if ((u8)func_080E0390() != 0) {
@@ -7400,7 +7669,29 @@ s32 func_080F3F6C(MapGmkBarrelWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F3FB4.s");
+void func_080F3FB4(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
+    UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
+    UnkStruct_080E7D80* d = arg->unk_14;
+    AnimState* a;
+
+    w->unk_000 = arg;
+    e->unk_00 = arg->unk_04;
+    w->unk_004.unk_00 += d->unk_16 << 8;
+    e->unk_00.x += d->unk_18 << 8;
+    e->unk_00.y += d->unk_1A << 8;
+    e->unk_1A = d->unk_1E;
+    w->unk_0B8 = AllocObjTiles(d->unk_08, d->unk_04);
+    w->unk_0BC = LoadObjPalette(d->unk_00, 32);
+    a = &w->unk_0A0;
+    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimStart(a, 0, 1);
+    w->unk_0C0 = AnimGetGfx(a);
+    func_08002A10(w->unk_0B8, d->unk_04);
+    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    w->unk_0C4 = 1;
+    w->unk_0C8 = func_080F3E24;
+}
 
 u8 func_080F4078(MapGmkBarrelWork* w) {
     if ((u8)func_080E0390() != 0) {
@@ -7569,7 +7860,30 @@ void func_080F44AC(MapGmk04Work* w) {
     w->unk_0C4 = 0;
 }
 
-INCLUDE_ASM("map/func_080F4500.s");
+void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
+    UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
+    UnkStruct_080E7D80* d = arg->unk_14;
+    AnimState* a;
+
+    e->unk_00 = arg->unk_04;
+    e->unk_1A = d->unk_1E;
+    e->unk_30 = 2;
+    w->unk_0C4 = func_080F445C;
+    w->unk_0A0 = LoadObjPalette(d->unk_00, 32);
+    w->unk_0A4 = AllocObjTiles(d->unk_08, d->unk_04);
+    a = &w->unk_0A8;
+    AnimInit(a, d->unk_10, d->unk_0C);
+    AnimStart(a, 0, 1);
+    w->unk_0C0 = AnimGetGfx(a);
+    func_080122AC(&w->unk_044, 4, 16, 24);
+    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    func_080121D4(e);
+    TaskPoolInit(&w->unk_0CC, 1);
+    TaskCreate(&w->unk_0CC, &gTaskDescFldShadow, e);
+    w->unk_0C8 = 0;
+    TaskPoolInit(&w->unk_0E0, 1);
+    TaskCreate(&w->unk_0E0, &gTaskDescMapTalk, e);
+}
 
 s32 func_080F45D4(MapGmk05Work* w) {
     if ((u8)func_080E0390() != 0) {
@@ -8478,7 +8792,31 @@ void func_080F6D70(MapTutorialWork* w) {
     }
 }
 
-INCLUDE_ASM("map/func_080F6DE8.s");
+void func_080F6DE8(MapTutorialWork* w) {
+    if (func_080A42C8((s32)w) == 0) {
+        AnimState* a;
+
+        func_080E5354((UnkStruct_080DFF1C*)w, &w->unk_004);
+        w->unk_008 = 0;
+        w->unk_00C = func_080DFF30((UnkStruct_080DFF1C*)w);
+        w->unk_004 -= w->unk_00C;
+        w->unk_008 = w->unk_00C - 0xA000;
+        *(u16*)&w->unk_014[6] = 24;
+        w->unk_010 = 2;
+        w->unk_0B4 = AllocObjTiles(0x400, &gUnk_09858238[0x482]);
+        w->unk_0B8 = LoadObjPalette(&gUnk_099910C4[0x220], 32);
+        a = &w->unk_09C;
+        AnimInit(a, gUnk_09EF8460, gUnk_09EF8424);
+        AnimStart(a, 0, 1);
+        w->unk_0BC = AnimGetGfx(a);
+        func_080122AC(w->unk_040, 6, 12, 24);
+        func_08012324(w->unk_040, w->unk_000, w->unk_004, w->unk_008);
+        w->unk_0C1 = 1;
+        TaskCreate(&w->unk_0DC, &gTaskDescFldShadow, w);
+        w->unk_0C0 = 1;
+        w->unk_0C4 = func_080F6EBC;
+    }
+}
 
 void func_080F6EBC(MapTutorialWork* w) {
     MapTutorialWork* p = w;
@@ -8526,7 +8864,35 @@ void func_080F6FC4(MapTutorialWork* w) {
     }
 }
 
-INCLUDE_ASM("map/func_080F7024.s");
+void func_080F7024(MapTutorialWork* w) {
+    if (func_080A42C8((s32)w) == 0) {
+        AnimState* a;
+        u8 v;
+
+        func_080E5354((UnkStruct_080DFF1C*)w, &w->unk_004);
+        w->unk_008 = 0;
+        w->unk_00C = func_080DFF30((UnkStruct_080DFF1C*)w);
+        w->unk_004 -= w->unk_00C;
+        w->unk_008 = w->unk_00C;
+        *(u16*)&w->unk_014[6] = 16;
+        v = 0;
+
+        if (gUnk_02039BA0->unk_18 > w->unk_000) {
+            v = 1;
+        }
+        w->unk_0C2 = v;
+        w->unk_0B4 = AllocObjTiles(0x400, gUnk_0895EECC);
+        w->unk_0B8 = LoadObjPalette(&gUnk_08F691E4[0x5C0], 32);
+        a = &w->unk_09C;
+        AnimInit(a, gUnk_09EDF940, gUnk_09EDF914);
+        AnimStart(a, 0, 1);
+        w->unk_0BC = AnimGetGfx(a);
+        func_080122AC(w->unk_040, 3, 8, 16);
+        func_08012324(w->unk_040, w->unk_000, w->unk_004, w->unk_008);
+        func_08012614(w->unk_040, 1);
+        w->unk_0C4 = func_080F70F4;
+    }
+}
 
 void func_080F70F4(MapTutorialWork* w) {
     AnimState* a = &w->unk_09C;
@@ -8551,7 +8917,29 @@ void func_080F7160(MapTutorialWork* w) {
     }
 }
 
-INCLUDE_ASM("map/func_080F71AC.s");
+void func_080F71AC(MapTutorialWork* w) {
+    AnimState* a = &w->unk_09C;
+
+    w->unk_0BC = AnimUpdate(a);
+
+    if (func_080E02E0((UnkStruct_080DFF1C*)w, 8, 16)) {
+        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->unk_00 |= 4;
+        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, w);
+        m4aSongNumStart(0x75);
+        func_08005974(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
+        func_08002A10(w->unk_0B4, gUnk_08963BAC);
+        w->unk_0C4 = func_080F7284;
+    } else if (w->unk_06C != 0) {
+        if (!(gUnk_0203C7AC->unk_00 & 4) && w->unk_074 == 1) {
+            func_08012614(w->unk_040, 1);
+            func_080F6D40();
+        } else {
+            w->unk_000 += w->unk_078;
+            w->unk_004 += w->unk_07C;
+        }
+    }
+}
 
 void func_080F7284(MapTutorialWork* w) {
     AnimState* a = &w->unk_09C;
