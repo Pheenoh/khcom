@@ -657,7 +657,6 @@ void func_080D4D44(void) {
     gStockMesDispWork = 0;
 }
 
-#ifdef NON_MATCHING
 void func_080D4D50(s16 a, s16 b, s32 c, u8 d) {
     AllmapCursorPos p;
     u16* map;
@@ -667,6 +666,7 @@ void func_080D4D50(s16 a, s16 b, s32 c, u8 d) {
     s32 j;
     u8 room;
     u16 tile;
+    s16 ofs;
 
     if ((a & 1) != 0) {
         map = gUnk_0203C530;
@@ -696,14 +696,12 @@ void func_080D4D50(s16 a, s16 b, s32 c, u8 d) {
 
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 4; j++) {
-            map[(y8 + i) / 32 * 2048 + (y8 + i) % 32 * 32 + (x8 + j) / 32 * 1024 + (x8 + j) % 32] = tile;
+            ofs = (y8 + i) / 32 * 2048 + (y8 + i) % 32 * 32 + (x8 + j) / 32 * 1024 + (x8 + j) % 32;
+            map[ofs] = tile;
             tile++;
         }
     }
 }
-#else
-INCLUDE_ASM("allmap/func_080D4D50.s");
-#endif
 INCLUDE_ASM("allmap/func_080D4EBC.s");
 #ifdef NON_MATCHING
 void func_080D510C(UnkStruct_0203C4B4* s) {

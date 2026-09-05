@@ -501,28 +501,23 @@ void task_hum_mahluxia_0(MahluxiaWork* work) {
     work->base.unk_184 = (u32)gUnk_0813F35C;
 }
 
-#ifdef NON_MATCHING
 void func_0804FD7C(MahluxiaWork* work) {
     HumActor* act = &work->base.unk_040;
     VixenNdlArgs args;
-    s32 t;
+    s32 range;
 
     if (gFrameCounter % 5 == 0) {
         args.unk_00 = act->unk_04;
         args.unk_04 = act->unk_08;
         args.unk_08 = act->unk_0C - ((s16)act->unk_A2 << 8);
-        t = ((GetRandom() % 65) << 8) - 0x2000;
-        args.unk_00 += t;
-        t = ((GetRandom() % 33) << 8) - 0x1000;
-        args.unk_04 += t;
-        t = ((GetRandom() % 41) << 8) - 0x1000;
-        args.unk_08 += t;
+        range = 0x2000;
+        args.unk_00 += ((GetRandom() % 65) << 8) - range;
+        range = 0x1000;
+        args.unk_04 += ((GetRandom() % 33) << 8) - range;
+        args.unk_08 += ((GetRandom() % 41) << 8) - range;
         TaskCreate(&work->unk_390, gTaskDescHumMahluxiaFlw, &args);
     }
 }
-#else
-INCLUDE_ASM("hum/func_0804FD7C.s");
-#endif
 
 INCLUDE_ASM("hum/task_hum_mahluxia_1.s");
 
