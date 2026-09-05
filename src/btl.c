@@ -994,6 +994,104 @@ void task_btl_sora_1(BtlSoraWork* work) {
         work->unk_156 = 0;
         work->unk_154 = 0;
         break;
+    case 20:
+        if (!(p->unk_E4->unk_068 & 0x200000)) {
+            func_0801E508(work, 3);
+        }
+    case 3:
+        func_0801DD08(work);
+        p->unk_E4->unk_068 |= 0x8000;
+
+        if (work->unk_150 < 0) {
+            if (work->unk_150 <= -512) {
+                func_0801DE1C(work, 2, 1);
+            } else {
+                func_0801DE1C(work, 3, 1);
+            }
+        } else if (work->unk_150 <= 511) {
+            func_0801DE1C(work, 3, 1);
+        } else {
+            func_0801DE1C(work, 4, 1);
+        }
+
+        if (work->unk_150 < 0 && !(held & 2)) {
+            work->unk_150 += 64;
+        }
+
+        if ((held & 0x50) == 0x50) {
+            if (work->unk_160 != 32) {
+                work->unk_160 = 32;
+                work->unk_15C = 0;
+            }
+
+            p->unk_34 &= ~4;
+        } else if ((held & 0x90) == 0x90) {
+            if (work->unk_160 != 96) {
+                work->unk_160 = 96;
+                work->unk_15C = 0;
+            }
+
+            p->unk_34 &= ~4;
+        } else if ((held & 0xA0) == 0xA0) {
+            if (work->unk_160 != 160) {
+                work->unk_160 = 160;
+                work->unk_15C = 0;
+            }
+
+            p->unk_34 |= 4;
+        } else if ((held & 0x60) == 0x60) {
+            if (work->unk_160 != 224) {
+                work->unk_160 = 224;
+                work->unk_15C = 0;
+            }
+
+            p->unk_34 |= 4;
+        } else if (held & 0x40) {
+            if (work->unk_160 != 0) {
+                work->unk_160 = 0;
+                work->unk_15C = 0;
+            }
+        } else if (held & 0x10) {
+            if (work->unk_160 != 64) {
+                work->unk_160 = 64;
+                work->unk_15C = 0;
+            }
+
+            p->unk_34 &= ~4;
+        } else if (held & 0x80) {
+            if (work->unk_160 != 128) {
+                work->unk_160 = 128;
+                work->unk_15C = 0;
+            }
+        } else if (held & 0x20) {
+            if (work->unk_160 != 192) {
+                work->unk_160 = 192;
+                work->unk_15C = 0;
+            }
+
+            p->unk_34 |= 4;
+        }
+
+        if (held & 0xF0) {
+            work->unk_15C += 17;
+
+            if (work->unk_15C > 614) {
+                work->unk_15C = 614;
+            }
+        } else {
+            work->unk_15C -= 38;
+
+            if (work->unk_15C < 0) {
+                work->unk_15C = 0;
+            }
+        }
+
+        work->unk_154++;
+        break;
+    case 21:
+        if (!(p->unk_E4->unk_068 & 0x200000)) {
+            func_0801E508(work, 4);
+        }
     case 4:
         func_0801DD08(work);
         st = work->unk_154;
@@ -1092,6 +1190,104 @@ void task_btl_sora_1(BtlSoraWork* work) {
 
         if (AnimIsFinished(&work->anim) != 0) {
             func_0801E4E4(work, 1);
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 29:
+        if (work->unk_15A & 4) {
+            break;
+        }
+
+        func_0801DD08(work);
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, work->unk_191[0] + 47, 0);
+        }
+
+        func_0801DD08(work);
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            func_0801AF08(p);
+            work->unk_038 = 1;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 22:
+        if (!(p->unk_E4->unk_068 & 0x200000)) {
+            func_0801E508(work, 30);
+        }
+    case 30:
+        func_0801DD08(work);
+
+        if ((s16)work->unk_154 == 0) {
+            work->unk_15C = 0;
+            *(s32*)&work->unk_191[3] = 1664;
+            func_0801DDE4(work, 53, 0);
+            work->unk_156 = 32;
+
+            if (work->unk_038 != 22) {
+                p->unk_34 |= 0x200;
+            }
+        }
+
+        if ((s16)work->unk_154 == 4) {
+            func_0801DC40(work);
+
+            if (work->unk_038 != 22) {
+                p->unk_34 |= 0x80;
+            }
+
+            work->unk_150 = -460;
+            m4aSongNumStart(183);
+        } else if ((s16)work->unk_154 > 4 && (s16)work->unk_156 != 0) {
+            if (p->unk_34 & 4) {
+                p->unk_04 -= *(s32*)&work->unk_191[3];
+            } else {
+                p->unk_04 += *(s32*)&work->unk_191[3];
+            }
+
+            ApproachValue((s32*)&work->unk_191[3], 0, work->unk_156);
+            work->unk_156--;
+
+            if (p->unk_0C < p->unk_10) {
+                if (held & 0x40) {
+                    p->unk_08 -= 384;
+                } else if (held & 0x80) {
+                    p->unk_08 += 384;
+                }
+            }
+        }
+
+        if (work->anim.timer == 0 && AnimGetFrame(&work->anim) == 5) {
+            m4aSongNumStart(work->unk_184[3]);
+        }
+
+        if ((s16)work->unk_156 == 8) {
+        } else if ((s16)work->unk_156 == 0) {
+            func_0801DC5C(work);
+
+            if (work->unk_038 != 22) {
+                p->unk_34 &= ~0x80;
+            }
+        }
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            if (work->unk_038 == 22) {
+                work->unk_038 = 18;
+                work->unk_156 = 0;
+                work->unk_154 = 0;
+            } else {
+                work->unk_038 = 1;
+                work->unk_156 = 0;
+                work->unk_154 = 0;
+                p->unk_34 &= ~0x200;
+            }
+
+            gBtlWork->unk_068 |= 0x0000040000000000LL;
         } else {
             work->unk_154++;
         }
@@ -1553,6 +1749,26 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154 = 0;
             *(s32*)&p->unk_14[8] = p->unk_0C;
             work->unk_158 = 0;
+        }
+        break;
+    case 47:
+        func_0801DDC4(work);
+        work->unk_150 = 0;
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 65, 0);
+        }
+
+        uv = work->unk_158;
+        work->unk_158 = uv + 1;
+        p->unk_0C += (*(s32*)&p->unk_14[8] + (gSineTable[(uv * 2) & 0xFF] << 3) - p->unk_0C) >> 3;
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            work->unk_038 = 48;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
         }
         break;
     case 48:
