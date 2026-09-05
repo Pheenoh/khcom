@@ -2592,6 +2592,7 @@ void func_080E9034(u8 a, u8 b, s32 c, s32 d, s32 e) {
 }
 
 INCLUDE_ASM("map/func_080E9078.s");
+INCLUDE_ASM("map/func_080E924C.s");
 
 void func_080E92B8(UnkStruct_080E92B8* p) {
     s32 i;

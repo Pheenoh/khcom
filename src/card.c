@@ -161,6 +161,13 @@ void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_0809217C(u8* work, void* a);
 void func_0808E344(void** p);
 void func_080889DC(void);
+u8 func_080897CC(u8* work, void* a);
+void func_08081740(UnkStruct_08080268* w, u16 n);
+void func_08081744(UnkStruct_08080268* w);
+void func_08085DA0(u8 a);
+void func_08080228(UnkStruct_08080268* w);
+u8 func_0800FC5C(s32 a);
+u8 func_080882DC(u8* work, void* a);
 void EnableBg(s32 bg);
 u8 func_080E8D00(void);
 void* func_080E8D1C(s32 a);
@@ -229,7 +236,12 @@ void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void func_080061E8(s32 a, u16 b);
 void func_080A1BB8(UnkStruct_080A1C48* w, void** t);
 void func_0809D124(u8* work);
+u16 func_08096D0C(u16 a, s32 b);
+u8 func_080DFBDC(FldPos* p);
+s32 func_080DFF1C(FldPos* p);
+u8 func_0809612C(PrizeCardWork* w, void* a);
 u16 func_08096D48(u16 a, s32 b);
+u8 func_080E924C(void);
 void func_0809D1B0(u8* work);
 MapcardWork* func_08000D90(void* a, void* b);
 void func_0809CAC8(void* work);
@@ -1251,7 +1263,101 @@ void func_0807A75C(UnkStruct_08080268* w) {
 
 INCLUDE_ASM("card/func_0807A80C.s");
 
+#ifdef NON_MATCHING
+void func_0807ABC8(UnkStruct_08080268* w) {
+    UnkStruct_02034AAC** q;
+    UnkStruct_02034AAC* p;
+    u64 flags;
+    u8 i;
+    u8 n;
+
+    for (i = 0, n = 0; i < w->unk_B9; i++) {
+        if (w->unk_28[i]->unk_78 & 0x40) {
+            n++;
+        }
+    }
+
+    if (n < w->unk_B9) {
+        return;
+    }
+
+    gUnk_02039DD4->unk_0C0 = 0;
+    gUnk_02039DD4->unk_0E3 = 0;
+    w->unk_C4[1] = 0;
+    flags = gBtlWork->unk_068;
+
+    if ((flags & 0x80) == 0) {
+        gUnk_02039DD4->unk_0D0 = w->unk_B9;
+
+        for (i = 0; i < w->unk_B9; i++) {
+            q = gUnk_02039DD4->unk_000;
+            q += i;
+            *q = w->unk_28[i];
+            w->unk_28[i]->unk_A0 = i * 4 + 50;
+
+            if (w->unk_28[i]->unk_48->unk_1E & 2) {
+                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+            }
+
+            w->unk_28[i]->unk_78 |= 0xA000;
+        }
+
+        gUnk_02039DD4->unk_0C2 = w->unk_BA;
+        gBtlWork->unk_0A4 = 1;
+        gBtlWork->unk_068 |= 0x80;
+        gBtlWork->unk_068 |= 0x400;
+        gBtlWork->unk_068 |= 0x8000000;
+        gUnk_02039DD4->unk_0E1 = 1;
+    } else {
+        if (gBtlWork->unk_0A4 == 1) {
+            return;
+        }
+
+        if ((flags & 0x20) == 0) {
+            func_0807A80C(w);
+            gBtlWork->unk_068 |= 0x8000000;
+        } else {
+            func_0807A80C(w);
+            gBtlWork->unk_068 |= 0x8000000;
+        }
+    }
+
+    for (i = 0; i < w->unk_B9; i++) {
+        (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_07 = 0;
+
+        if (w->unk_28[i]->unk_48->unk_1E & 2) {
+            (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+        } else if (i == 0 && gBtlWork->unk_0F4 != 15) {
+            (*(CardSlot**)w->unk_28[0]->unk_3C)->unk_0A = 1;
+        }
+    }
+
+    if (func_0807885C((UnkStruct_08078754*)w, 0) == 0) {
+        for (i = 0; i < w->unk_B9; i++) {
+            if (w->unk_28[i]->unk_46 == 0) {
+                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 0;
+                break;
+            }
+        }
+    }
+
+    for (i = 0; i < w->unk_B9; i++) {
+        w->unk_1C[i] = w->unk_28[i];
+        w->unk_28[i]->unk_A1 = 5;
+        w->unk_28[i] = 0;
+    }
+
+    func_0807BC08();
+    w->unk_B9 = 0;
+    gUnk_02039DD4->unk_0DE = 0;
+    w->unk_BA = 0;
+    func_0807AE78((UnkStruct_08078754*)w);
+    w->unk_C4[1] = 0;
+}
+
+#else
 INCLUDE_ASM("card/func_0807ABC8.s");
+#endif
 
 void func_0807AE78(UnkStruct_08078754* w) {
     CardSlot* c;
@@ -3477,7 +3583,7 @@ INCLUDE_ASM("card/func_0807FF48.s");
 #endif
 INCLUDE_ASM("card/func_080800B4.s");
 
-void func_08080228(void) {
+void func_08080228(UnkStruct_08080268* w) {
     if (gBtlWork->unk_0F4 == 0x30) {
         if (gUnk_02034AAC->unk_A5 != 0) {
             gUnk_02034AAC->unk_A5 -= gUnk_02039DD4->unk_0C2;
@@ -3517,7 +3623,113 @@ void func_08080268(UnkStruct_08080268* w) {
 INCLUDE_ASM("card/func_08080268.s");
 #endif
 
+#ifdef NON_MATCHING
+void func_080802D8(UnkStruct_08080268* w) {
+    s32 f;
+    s32 j;
+    s32 t;
+    u8 n;
+    u8 flag;
+
+    f = gUnk_02039B9C->unk_0F4;
+
+    if (f == 1) {
+        t = gUnk_02034AAC->unk_A5;
+        n = t + 1;
+
+        if (n > 9) {
+            n = 9;
+        }
+
+        if (t <= 8) {
+            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034AAC->unk_48);
+        }
+
+        gUnk_02034AAC->unk_A5 = n;
+        gUnk_02034AAC->unk_A7 = 1;
+    } else if (f == 21) {
+        if (gUnk_02034AAC->unk_A5 != 0) {
+            n = --gUnk_02034AAC->unk_A5;
+            gUnk_02034AAC->unk_A7 = 1;
+        } else {
+            n = 0;
+            gUnk_02034AAC->unk_A7 = 1;
+        }
+    } else {
+        n = gUnk_02034AAC->unk_A5;
+    }
+
+    if ((s16)gUnk_02039DD4->unk_0C2 > n && n != 0) {
+        return;
+    }
+
+    flag = 0;
+
+    if (gBtlWork->unk_0F4 == 2 && gUnk_02039DD4->unk_000[0]->unk_48->unk_2A == 0 && gUnk_02039DD4->unk_0E1 == 0) {
+        flag = 1;
+    }
+
+    if (gBtlWork->unk_0F4 == 20 && gUnk_02039DD4->unk_000[0]->unk_48->unk_24 == 22 && gUnk_02039DD4->unk_0E1 == 0) {
+        flag = 1;
+    }
+
+    if (gBtlWork->unk_0F4 == 29 && gUnk_02039DD4->unk_000[0]->unk_48->unk_2A == 2 && gUnk_02039DD4->unk_0E1 == 0) {
+        flag = 1;
+    }
+
+    if (flag) {
+        return;
+    }
+
+    for (j = 0; j < gUnk_02039DD4->unk_0D0; j++) {
+        gUnk_02039DD4->unk_000[j]->unk_78 |= 0x200000;
+    }
+
+    gBtlWork->unk_068 |= 0x800000;
+
+    if ((s16)gUnk_02039DD4->unk_0C2 != n) {
+        if (n == 0) {
+            if ((s16)gUnk_02039DD4->unk_0C2 > 9) {
+                gBtlWork->unk_1CA = 9;
+            } else {
+                gBtlWork->unk_1CA = gUnk_02039DD4->unk_0C2;
+            }
+        } else {
+            gBtlWork->unk_1CA = (u8)gUnk_02039DD4->unk_0C2 - n;
+
+            if ((s8)gBtlWork->unk_1CA < -9) {
+                gBtlWork->unk_1CA = -9;
+            }
+        }
+
+        m4aSongNumStart(0x213);
+        gBtlWork->unk_068 |= 0x400;
+        gBtlWork->unk_068 |= 0x80;
+        gBtlWork->unk_068 &= ~0x20;
+        gUnk_02034AAC->unk_78 |= 0x2000;
+        func_08080228(w);
+        gUnk_02039DD4->unk_000[0] = gUnk_02034AAC;
+        gUnk_02039DD4->unk_0D0 = 1;
+        gUnk_02039DD4->unk_0C2 = gUnk_02034AAC->unk_A5;
+        gBtlWork->unk_0A4 = 0;
+        func_0807BA54();
+    } else {
+        func_08080228(w);
+        gBtlWork->unk_1CA = 0;
+        gBtlWork->unk_068 &= ~0x80;
+        gBtlWork->unk_068 &= ~0x20;
+        gBtlWork->unk_068 &= ~0x400;
+        m4aSongNumStart(0xCC);
+        gBtlWork->unk_0A4 = 0;
+        gUnk_02039DD4->unk_000[0] = gUnk_02034AAC;
+        gUnk_02039DD4->unk_0D0 = 1;
+        gUnk_02039DD4->unk_0C2 = gUnk_02034AAC->unk_A5;
+    }
+}
+#else
 INCLUDE_ASM("card/func_080802D8.s");
+#endif
+
 INCLUDE_ASM("card/func_08080594.s");
 
 #ifdef NON_MATCHING
@@ -3673,15 +3885,103 @@ void func_08081210(UnkStruct_08080268* w) {
 #else
 INCLUDE_ASM("card/func_08081210.s");
 #endif
-INCLUDE_ASM("card/func_080814BC.s");
-void func_08081740(void) {
+#ifdef NON_MATCHING
+u8 func_080814BC(UnkStruct_08080268* w) {
+    UnkStruct_0807FD10_Args args;
+    UnkStruct_02034AAC* p;
+    UnkStruct_02034AAC* q;
+    CardSlot* c;
+    u16 v;
+
+    if ((gUnk_02034AAC->unk_78 & 2) == 0) {
+        if (gUnk_02039DD4->unk_0CE == 0) {
+            gUnk_02039DD4->unk_0CE = gUnk_02034AAC->unk_48->unk_24;
+            func_08081740(w, gUnk_02039DD4->unk_0CE);
+            func_08081760(w);
+        } else {
+            func_08081744(w);
+            gUnk_02039DD4->unk_0CE = gUnk_02034AAC->unk_48->unk_24;
+            func_08081740(w, gUnk_02039DD4->unk_0CE);
+            func_08081760(w);
+            gUnk_02039DD4->unk_0EC = 1;
+        }
+
+        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+        gUnk_02034AAC->unk_A1 = 10;
+        gUnk_02034AAC->unk_A0 = 50;
+        gUnk_02034AAC->unk_78 &= ~0x40;
+
+        if (w->unk_BA > 1) {
+            func_080038E4(w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8[w->unk_BA - 1]);
+            w->unk_C4[3] = 8;
+        }
+
+        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_08 = 1;
+        q = gUnk_02034AAC;
+        v = *(u16*)&q->unk_3C[8] + 1;
+
+        if ((s16)v >= (s16)w->unk_A8[w->unk_B8]) {
+            v = 0;
+        }
+
+        q->unk_78 &= ~0x40;
+        gUnk_02034AAC = 0;
+        w->unk_B0[w->unk_B8]--;
+        c = func_08076674(w, w->unk_B8, &v);
+
+        if (c != 0) {
+            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_0C = v;
+            args.unk_0E = w->unk_B8;
+            args.unk_04 = c;
+            args.unk_0F = w->unk_9C[w->unk_B8];
+
+            if (c->unk_00 == 0xFFFE) {
+                p = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+            } else {
+                p = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+            }
+
+            p->unk_98 = p->unk_94 = gUnk_090352E4[0];
+            p->unk_A4 = 0;
+            p->unk_A0 = 60;
+            p->unk_9C = 4;
+            p->unk_4C = p->unk_8C;
+            p->unk_50 = p->unk_90;
+            p->unk_78 |= 0x844;
+            gUnk_02034AAC = p;
+        } else {
+            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_0C = 0xFFFF;
+            args.unk_04 = (CardSlot*)w->unk_44[w->unk_B8];
+            args.unk_0E = w->unk_B8;
+            p = ((UnkStruct_02034AAC**)TaskCreate(w, &gUnk_09EE49CC[0x18], &args))[1];
+            p->unk_98 = p->unk_94 = gUnk_090352E4[0];
+            p->unk_A4 = 0;
+            p->unk_A0 = 50;
+            p->unk_9C = 4;
+            p->unk_78 |= 0x846;
+            gUnk_02034AAC = p;
+        }
+
+        if (gUnk_02034AAC == 0) {
+            w->unk_C0[w->unk_B8] = 1;
+        }
+    }
+
+    return 1;
 }
-void func_08081744(void) {
+#else
+INCLUDE_ASM("card/func_080814BC.s");
+#endif
+void func_08081740(UnkStruct_08080268* w, u16 n) {
+}
+void func_08081744(UnkStruct_08080268* w) {
     gUnk_02039B9C->unk_0F4 = gUnk_02039DD4->unk_0CE;
 }
 
 #ifndef VERSION_EU
-void func_08081760(UnkStruct_02034AAC* p) {
+void func_08081760(UnkStruct_08080268* w) {
     if (gBtlWork->unk_0F4 != 41) {
         gUnk_02039B9C->unk_0F4 = gUnk_02039DD4->unk_0CE;
     } else {
@@ -3700,8 +4000,8 @@ void func_08081760(UnkStruct_02034AAC* p) {
     }
 
     if (gUnk_02039B9C->unk_0F4 == 47) {
-        p->unk_9C = 2;
-        *(u16*)&p->unk_9E = 2;
+        w->unk_9C[0] = 2;
+        w->unk_9C[1] = 2;
     }
 
     if (gUnk_02039B9C->unk_0F4 == 41) {
@@ -5268,7 +5568,7 @@ u16 func_08084BF0(void) {
 
 INCLUDE_ASM("card/func_08084C40.s");
 
-void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode) {
+void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p) {
     u16 mask;
     u16 i;
     s32 x;
@@ -5312,7 +5612,7 @@ void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode) {
     }
 }
 
-u16 func_08084E50(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n) {
+u16 func_08084E50(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p) {
     u16 mask;
     u16 i;
     u16 count;
@@ -5912,7 +6212,141 @@ void func_08085CB0(void) {
 INCLUDE_ASM("card/func_08085CB0.s");
 #endif
 
-INCLUDE_ASM("card/_08085D04.s");
+void _08085D04(u8 a) {
+    u8 n = 0;
+
+    func_08083FE0();
+    func_08085160();
+    SetActiveDeckIndex(0);
+
+    switch (a) {
+    case 2:
+        n = 1;
+        break;
+    case 3:
+        n = 2;
+        break;
+    case 4:
+        n = 3;
+        break;
+    case 5:
+        n = 4;
+        break;
+    case 6:
+        n = 5;
+        break;
+    case 7:
+        n = 6;
+        break;
+    case 8:
+        n = 7;
+        break;
+    case 9:
+        n = 8;
+        break;
+    case 10:
+        n = 9;
+        break;
+    case 11:
+        n = 10;
+        break;
+    case 0:
+    case 12:
+        n = 11;
+        break;
+    case 1:
+    case 13:
+        n = 0;
+        break;
+    }
+
+    func_08085DA0(n);
+}
+void func_08085DA0(u8 a) {
+    s32 i;
+    s32 j;
+
+    for (i = 0, j = 0; i < gUnk_090356BA[a]; i++, j++) {
+        func_08084458(gUnk_09EE4A68[a][i]);
+        func_08085290(i);
+    }
+
+    for (i = 0; i < gUnk_090356D2[a]; j++, i++) {
+        func_08084458(gUnk_09EE4A98[a][i]);
+        func_08085290(j);
+    }
+
+    gCardCollection[200] = 0x21D;
+    gCardCollection[201] = 0x21E;
+    gCardCollection[202] = 0x21F;
+    gCardCollection[203] = 0x220;
+    gCardCollection[204] = 0x227;
+    gCardCollection[205] = 0x228;
+    gCardCollection[206] = 0x229;
+    gCardCollection[207] = 0x22A;
+    gCardCollection[208] = 0x22B;
+    gCardCollection[209] = 0x22C;
+    gCardCollection[210] = 0x22D;
+    gCardCollection[211] = 0x230;
+    gCardCollection[212] = 0x233;
+    gCardCollection[213] = 0x234;
+
+    if (func_0800FC5C(38) != 0) {
+        func_08085290(200);
+    }
+
+    if (func_0800FC5C(42) != 0) {
+        func_08085290(201);
+    }
+
+    if (func_0800FC5C(40) != 0) {
+        func_08085290(202);
+    }
+
+    if (func_0800FC5C(44) != 0) {
+        func_08085290(203);
+    }
+
+    if (func_0800FC5C(50) != 0) {
+        func_08085290(204);
+    }
+
+    if (func_0800FC5C(39) != 0) {
+        func_08085290(205);
+    }
+
+    if (func_0800FC5C(45) != 0) {
+        func_08085290(206);
+    }
+
+    if (func_0800FC5C(41) != 0) {
+        func_08085290(207);
+    }
+
+    if (func_0800FC5C(48) != 0) {
+        func_08085290(208);
+    }
+
+    if (func_0800FC5C(43) != 0) {
+        func_08085290(209);
+    }
+
+    if (func_0800FC5C(51) != 0) {
+        func_08085290(210);
+    }
+
+    if (func_0800FC5C(54) != 0) {
+        func_08085290(211);
+    }
+
+    if (func_0800FC5C(57) != 0) {
+        func_08085290(212);
+    }
+
+    if (func_0800FC5C(56) != 0) {
+        func_08085290(213);
+    }
+}
 
 u8 GetActiveDeckIndex(void) {
     return gActiveDeck;
@@ -6344,7 +6778,85 @@ u8 func_080892E8(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_080892E8.s");
 #endif
+#ifdef NON_MATCHING
+u8 func_08089558(u8* work, void* a) {
+    UnkStruct_08084D78* e;
+    u16 i;
+    u16 n;
+    vu32 zero;
+
+    func_08006120(0, 4);
+
+    switch (work[0x8D0]) {
+    case 0:
+        work[0x8B1] = 4;
+        *(u16*)&work[0x894] = 7;
+        *(u16*)&work[0x896] = 130;
+        func_0808E344((void**)work);
+        func_0808E364(work, 0);
+        func_0808C90C(work);
+        LoadBgMap(3, gUnk_095132B8 + 0x1000, 0x800);
+        n = 0x11E;
+        *(u16*)&work[0x898] = n;
+        *(void**)&work[0x4D8] = EwramAlloc(n * 32);
+        zero = 0;
+        CpuSet((void*)&zero, *(void**)&work[0x4D8], (*(u16*)&work[0x898] * 8) | 0x05000000);
+        *(s32*)&work[0x4D4] = 0;
+        break;
+    case 1:
+        func_08084D78(*(void**)&work[0x4D8], work[0x8C0], 1, *(u16*)&work[0x898], &work[0x4FC]);
+        break;
+    case 2:
+        *(u16*)&work[0x898] = func_08084E50(*(void**)&work[0x4D8], work[0x8C0], 1, *(u16*)&work[0x898], &work[0x4FC]);
+        break;
+    case 3:
+        if (*(u16*)&work[0x898] != 0) {
+            func_0808FA8C(work);
+        }
+        break;
+    case 4:
+        for (i = 0; i < 0x11E; i++) {
+            e = (UnkStruct_08084D78*)(*(u32*)&work[0x4D8] + i * 32);
+
+            if (e->unk_16 != 0) {
+                EwramFree(e->unk_1C);
+            }
+        }
+
+        EwramFree(*(void**)&work[0x4D8]);
+        break;
+    case 5:
+        work[0x8C1] = 5;
+        *(u16*)&work[0x8D4] = func_0808C60C(work, 5, 0);
+        func_0808CD48(work);
+        *(s32*)&work[0x848] = gUnk_0903595E[0] << 8;
+        *(s32*)&work[0x84C] = gUnk_09035964[0] << 8;
+        work[0x8C7] = 2;
+        *(u16*)&work[0x884] = 0;
+        *(u16*)&work[0x886] = 0;
+        func_0808D828(work);
+        func_0808DE28(0);
+
+        if (*(u16*)&work[0x8D4] != 0) {
+            work[0x8D0] = 4;
+            SetTaskUpdate(a, (void*)func_080897CC);
+        } else {
+            *(u16*)&work[0x884] = work[0x8C1];
+            work[0x8B7] = 1;
+            work[0x8B1] = 6;
+            SetTaskUpdate(a, (void*)func_080882DC);
+        }
+        break;
+    }
+
+    work[0x8D0]++;
+    TaskPoolUpdate(&work[0x7C8]);
+    TaskPoolUpdate(&work[0x7DC]);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_08089558.s");
+#endif
 INCLUDE_ASM("card/func_080897CC.s");
 
 #ifndef VERSION_EU
@@ -10598,7 +11110,80 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     w->unk_FB = 0;
     TaskPoolInit((TaskPool*)w->unk_20, 1);
 }
-INCLUDE_ASM("card/func_08095E68.s");
+u8 func_08095E68(PrizeCardWork* w, void* a) {
+    s32 k = 112;
+    s16 x;
+    s16 y;
+
+    *(FldPos*)&w->unk_B0[8] = *(FldPos*)&w->unk_A8;
+    w->unk_CC += 0x38;
+    *(s32*)&w->unk_B0[0] += w->unk_CC;
+    w->unk_A8 += (gSineTable[(u8)w->unk_F4] * w->unk_D0) >> 8;
+    w->unk_AC += (-gSineTable[(u8)w->unk_F4 + 0x40] * w->unk_D0) >> 8;
+
+    if (func_080DFBDC((FldPos*)&w->unk_A8) != 0) {
+        w->unk_F4 = w->unk_F4 + k + GetRandom() % 33;
+
+        do {
+            w->unk_A8 = *(s32*)&w->unk_B0[8];
+            w->unk_AC = *(s32*)&w->unk_B0[0xC];
+        } while (0);
+    } else {
+        *(s32*)&w->unk_B0[4] = func_080DFF1C((FldPos*)&w->unk_A8);
+    }
+
+    if (*(s32*)&w->unk_B0[0] - 0x800 > *(s32*)&w->unk_B0[4]) {
+        *(s32*)&w->unk_B0[0] = *(s32*)&w->unk_B0[4] - 0x800;
+        w->unk_CC = -((w->unk_CC * 217) >> 8);
+
+        if (w->unk_CC > -0x200) {
+            w->unk_CC = -0x200;
+        }
+    }
+
+    if (w->unk_4C[0x2C] != 0) {
+        w->unk_FC[0] = 1;
+        m4aSongNumStart(0x6A);
+
+        if (w->unk_C8 <= 0x1C1) {
+            func_08084458(w->unk_C8);
+        }
+
+        SetTaskUpdate(a, (void*)func_0809612C);
+        x = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+        y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+        w->unk_A8 = x << 8;
+        w->unk_AC = y << 8;
+        func_08012614(&w->unk_4C[0], 1);
+        w->unk_FA = 16;
+        w->unk_E4 = 50;
+        func_080960D8(w);
+        return 1;
+    }
+
+    func_08012324(&w->unk_4C[0], w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
+    w->unk_E6 = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    w->unk_E8 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    w->unk_EE = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    w->unk_F0 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[4] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+    w->unk_E4 = -0x1004 - (w->unk_AC >> 8) * 4;
+    func_08096638(w);
+    w->unk_F8 += 2;
+
+    if (w->unk_F9 == 20) {
+        func_08012614(&w->unk_4C[0], 0);
+    }
+
+    if (w->unk_F9 <= 59) {
+        w->unk_F9++;
+    }
+
+    if (gUnk_02039BA0->unk_70 & 0x40000) {
+        return 0;
+    }
+
+    return 1;
+}
 void func_080960D8(PrizeCardWork* w) {
     s32 cx = 0x7800;
     s32 cy = 0x5000;
@@ -10755,7 +11340,7 @@ void func_08096428(PrizeCardWork* w) {
             v = 2;
         }
 
-        DrawSprite(*(s16*)&w->unk_EE[0], *(s16*)&w->unk_EE[2], gUnk_09EE1380[0],
+        DrawSprite(w->unk_EE, w->unk_F0, gUnk_09EE1380[0],
                    w->unk_18, w->unk_1C, AllocObjAffine(0, v, v, 0), pal,
                    (u16)(w->unk_E4 + 2));
     }
@@ -10820,7 +11405,112 @@ void func_08096714(PrizeCardInitWork* w, PrizeCardArgs* args) {
     TaskPoolInit(w, 1);
 }
 
+#ifndef VERSION_EU
+s32 PrizeCardInit_1(PrizeCardInitWork* w) {
+    s32 args[9];
+    s32 v;
+
+    if (w->unk_14 == 0) {
+        if ((gGameState.unk_17A & 0x20) == 0) {
+            *(PrizeCardArgs*)args = w->unk_18;
+            args[8] = 2;
+            func_0809797C(w, args);
+            gGameState.unk_17A |= 0x20;
+        } else if ((s8)gGameState.unk_00C[2] == 0) {
+            if (func_08093B58() == 0) {
+                *(PrizeCardArgs*)args = w->unk_18;
+                args[8] = func_08096D0C(gGameState.unk_00C[0], 1);
+
+                if (args[8] != 0xFFFF) {
+                    func_0809797C(w, args);
+                } else {
+                    return 0;
+                }
+            } else {
+                *(PrizeCardArgs*)args = w->unk_18;
+                args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+
+                if (args[8] != 0xFFFF) {
+                    func_0809797C(w, args);
+                } else {
+                    return 0;
+                }
+            }
+        } else {
+            v = *(s32*)&gBtlWork->unk_100[0xC];
+
+            if (v >= 125 && v <= 127) {
+                if ((gGameState.flags & 8) == 0) {
+                    if (GetRandom() % 100 < 20) {
+                        *(PrizeCardArgs*)args = w->unk_18;
+                        args[8] = GetRandom() % 10 + 210;
+                    } else {
+                        *(PrizeCardArgs*)args = w->unk_18;
+                        args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                    }
+
+                    if (args[8] != 0xFFFF) {
+                        func_0809797C(w, args);
+                    } else {
+                        return 0;
+                    }
+                } else {
+                    *(PrizeCardArgs*)args = w->unk_18;
+                    args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+
+                    if (args[8] != 0xFFFF) {
+                        func_0809797C(w, args);
+                    } else {
+                        return 0;
+                    }
+                }
+            } else if (v >= 131 && v <= 133) {
+                *(PrizeCardArgs*)args = w->unk_18;
+                args[8] = GetRandom() % 10 + 160;
+                func_0809797C(w, args);
+            } else {
+                *(PrizeCardArgs*)args = w->unk_18;
+
+                if ((gGameState.flags & 8) == 0) {
+                    if (func_08093C28(0xFB) == 0) {
+                        if (func_080E924C() == 0) {
+                            if (gUnk_0903612C[gGameState.unk_00C[0]] != 0) {
+                                if (GetRandom() % 100 <= gUnk_0903612C[gGameState.unk_00C[0]]) {
+                                    args[8] = 0xFB;
+                                } else {
+                                    args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                                }
+                            } else {
+                                args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                            }
+                        } else {
+                            args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                        }
+                    } else {
+                        args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                    }
+                } else {
+                    args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                }
+
+                if (args[8] != 0xFFFF) {
+                    func_0809797C(w, args);
+                } else {
+                    return 0;
+                }
+            }
+        }
+
+        w->unk_14 = 1;
+    }
+
+    TaskPoolUpdate(w);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/PrizeCardInit_1.s");
+#endif
+
 s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
     PrizeCardTaskArgs args;
 
@@ -10926,6 +11616,7 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
     TaskPoolUpdate(w);
     return 1;
 }
+
 void func_08096C20(void* pool) {
     TaskPoolDraw(pool);
 }
@@ -10946,7 +11637,7 @@ u16 func_08096CCC(void) {
 }
 
 #ifdef NON_MATCHING
-u16 func_08096D0C(u16 a) {
+u16 func_08096D0C(u16 a, s32 b) {
     if (gGameState.flags & 8) {
         return func_08096C38(gUnk_090360BC[a].unk_00, gUnk_090360BC[a].unk_04);
     } else {
@@ -16688,7 +17379,55 @@ u8 func_080A6474(u8* work, void* a) {
     return 1;
 }
 
+#ifndef VERSION_EU
+void func_080A6500(u8* work) {
+    if (*(void**)&work[0x3CC] != 0) {
+        DrawSprite(*(s32*)&work[0x4AC] >> 8, 0, gUnk_09EEAFF8, *(void**)&work[0x3CC], *(void**)&work[0x3C8], 0, 0, 10);
+    }
+
+    if (*(void**)&work[0x3C4] != 0) {
+        DrawSprite(*(s32*)&work[0x49C] >> 8, *(s32*)&work[0x4A4] >> 8, gUnk_09EEB080[0], *(void**)&work[0x3C4],
+                   *(void**)&work[0x3C8], 0, 0xC00, 10000);
+        DrawSprite(*(s32*)&work[0x4A0] >> 8, *(s32*)&work[0x4A8] >> 8, gUnk_09EEB080[1], *(void**)&work[0x3C4],
+                   *(void**)&work[0x3C8], 0, 0xC00, 10000);
+    }
+
+    if (work[0x50A] != 0) {
+        DrawSprite((*(s32*)&work[0x48C] >> 8) - 16, (*(s32*)&work[0x490] >> 8) - 30, *(void**)&work[0x400],
+                   *(void**)&work[0x0], *(void**)&work[0x14], 0, *(u16*)&work[0x4C6], 3);
+        DrawSprite((*(s32*)&work[0x48C] >> 8) - 16, (*(s32*)&work[0x490] >> 8) - 20, *(void**)&work[0x404],
+                   *(void**)&work[0x4], *(void**)&work[0x3D8], 0, 0, 8);
+    }
+
+    DrawSprite(*(s32*)&work[0x494] >> 8, *(s32*)&work[0x498] >> 8, gUnk_09EEB000, *(void**)&work[0x10],
+               *(void**)&work[0x14], 0, 0x800, 10);
+
+    if (*(void**)&work[0x18] != 0) {
+        DrawSprite(168, 86, *(void**)&work[0x3EC], *(void**)&work[0x18], *(void**)&work[0x28], 0, 0, 20);
+    }
+
+    if (*(void**)&work[0x1C] != 0) {
+        DrawSprite(168, 86, *(void**)&work[0x3F0], *(void**)&work[0x1C], *(void**)&work[0x2C], 0, 0, 21);
+    }
+
+    if (*(void**)&work[0x20] != 0) {
+        DrawSprite(168, 86, *(void**)&work[0x3F4], *(void**)&work[0x20], *(void**)&work[0x28], 0, 0, 19);
+    }
+
+    if (work[0x50B] != 0) {
+        if (work[0x4FD] != 0) {
+            func_080664D8(100, 112, &work[0xF0], *(void**)&work[0x3D8], 20, work[0x4FD]);
+        }
+
+        func_080A5C20(work);
+    }
+
+    TaskPoolDraw(&work[0x40C]);
+    TaskPoolDraw(&work[0x420]);
+}
+#else
 INCLUDE_ASM("card/func_080A6500.s");
+#endif
 
 void func_080A676C(u8* work) {
     func_080A6968(work);
@@ -17366,7 +18105,43 @@ u8 func_080A8C20(u8* work) {
     return 1;
 }
 
+#ifndef VERSION_EU
+void func_080A8C58(u8* work, u8 b) {
+    if (b == 0) {
+        switch (work[0x700]) {
+        case 0:
+            func_080664D8(*(s16*)&work[0x6D4], *(s16*)&work[0x6DA], &work[0x28], *(void**)&work[0xC], 20, work[0x702]);
+            func_080664D8(*(s16*)&work[0x6D6], *(s16*)&work[0x6DC], &work[0x68], *(void**)&work[0x4BC], 20, work[0x703]);
+            func_080664D8(*(s16*)&work[0x6D8], *(s16*)&work[0x6DE], &work[0xA8], *(void**)&work[0x4BC], 20, work[0x704]);
+            break;
+        case 1:
+            func_080664D8(*(s16*)&work[0x6D4], *(s16*)&work[0x6DA], &work[0x28], *(void**)&work[0x4BC], 20, work[0x702]);
+            func_080664D8(*(s16*)&work[0x6D6], *(s16*)&work[0x6DC], &work[0x68], *(void**)&work[0xC], 20, work[0x703]);
+            func_080664D8(*(s16*)&work[0x6D8], *(s16*)&work[0x6DE], &work[0xA8], *(void**)&work[0x4BC], 20, work[0x704]);
+            break;
+        case 2:
+            func_080664D8(*(s16*)&work[0x6D4], *(s16*)&work[0x6DA], &work[0x28], *(void**)&work[0x4BC], 20, work[0x702]);
+            func_080664D8(*(s16*)&work[0x6D6], *(s16*)&work[0x6DC], &work[0x68], *(void**)&work[0x4BC], 20, work[0x703]);
+            func_080664D8(*(s16*)&work[0x6D8], *(s16*)&work[0x6DE], &work[0xA8], *(void**)&work[0xC], 20, work[0x704]);
+            break;
+        }
+    } else {
+        switch (work[0x700]) {
+        case 0:
+            func_080664D8(*(s16*)&work[0x6D4], *(s16*)&work[0x6DA], &work[0x28], *(void**)&work[0xC], 20, work[0x702]);
+            break;
+        case 1:
+            func_080664D8(*(s16*)&work[0x6D6], *(s16*)&work[0x6DC], &work[0x68], *(void**)&work[0xC], 20, work[0x703]);
+            break;
+        case 2:
+            func_080664D8(*(s16*)&work[0x6D8], *(s16*)&work[0x6DE], &work[0xA8], *(void**)&work[0xC], 20, work[0x704]);
+            break;
+        }
+    }
+}
+#else
 INCLUDE_ASM("card/func_080A8C58.s");
+#endif
 
 void func_080A8EE4(u8* work) {
     func_080664D8(*(s16*)&work[0x708], *(s16*)&work[0x70A], &work[0x1D8],
@@ -17594,7 +18369,76 @@ void func_080A9AE8(u8* work) {
     }
 }
 
+#ifndef VERSION_EU
+void func_080A9B84(u8* work, u8 b) {
+    u16* pal;
+
+    switch (b) {
+    case 0:
+        pal = (u16*)0x05000100;
+        LoadPalette(gUnk_096142F8, pal, 32);
+        pal = (u16*)0x05000120;
+        LoadPalette(gUnk_09614118 + 0x120, pal, 32);
+        pal = (u16*)0x05000140;
+        LoadPalette(gUnk_09614118 + 0x140, pal, 32);
+        LoadBgMap(0, gUnk_09519AB8 + 0x180, 0x180);
+        LoadBgMap(1, gUnk_0951A2B8, 0x180);
+        LoadBgMap(2, gUnk_0951AAB8, 0x180);
+        SetBgScroll(0, -76, -14);
+        SetBgScroll(1, -88, -64);
+        SetBgScroll(2, -88, -112);
+        *(u16*)&work[0x6D4] = 100;
+        *(u16*)&work[0x6DA] = 25;
+        *(u16*)&work[0x6D6] = 102;
+        *(u16*)&work[0x6DC] = 75;
+        *(u16*)&work[0x6D8] = 102;
+        *(u16*)&work[0x6DE] = 122;
+        break;
+    case 1:
+        pal = (u16*)0x05000120;
+        LoadPalette(gUnk_096142F8, pal, 32);
+        pal = (u16*)0x05000100;
+        LoadPalette(gUnk_09614118 + 0x100, pal, 32);
+        pal = (u16*)0x05000140;
+        LoadPalette(gUnk_09614118 + 0x140, pal, 32);
+        LoadBgMap(0, gUnk_09519AB8, 0x180);
+        LoadBgMap(1, gUnk_0951A2B8 + 0x180, 0x180);
+        LoadBgMap(2, gUnk_0951AAB8, 0x180);
+        SetBgScroll(0, -88, -16);
+        SetBgScroll(1, -76, -62);
+        SetBgScroll(2, -88, -112);
+        *(u16*)&work[0x6D4] = 102;
+        *(u16*)&work[0x6DA] = 27;
+        *(u16*)&work[0x6D6] = 100;
+        *(u16*)&work[0x6DC] = 73;
+        *(u16*)&work[0x6D8] = 102;
+        *(u16*)&work[0x6DE] = 122;
+        break;
+    case 2:
+        pal = (u16*)0x05000140;
+        LoadPalette(gUnk_096142F8, pal, 32);
+        pal = (u16*)0x05000100;
+        LoadPalette(gUnk_09614118 + 0x100, pal, 32);
+        pal = (u16*)0x05000120;
+        LoadPalette(gUnk_09614118 + 0x120, pal, 32);
+        LoadBgMap(0, gUnk_09519AB8, 0x180);
+        LoadBgMap(1, gUnk_0951A2B8, 0x180);
+        LoadBgMap(2, gUnk_0951AAB8 + 0x180, 0x180);
+        SetBgScroll(0, -88, -16);
+        SetBgScroll(1, -88, -64);
+        SetBgScroll(2, -76, -110);
+        *(u16*)&work[0x6D4] = 102;
+        *(u16*)&work[0x6DA] = 27;
+        *(u16*)&work[0x6D6] = 102;
+        *(u16*)&work[0x6DC] = 75;
+        *(u16*)&work[0x6D8] = 100;
+        *(u16*)&work[0x6DE] = 121;
+        break;
+    }
+}
+#else
 INCLUDE_ASM("card/func_080A9B84.s");
+#endif
 
 void func_080A9E40(u8 deck) {
     u8 d[2];

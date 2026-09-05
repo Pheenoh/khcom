@@ -4,6 +4,7 @@
 #include "types.h"
 #include "taskpool.h"
 #include "card_types.h"
+#include "fld_types.h"
 #include "game.h"
 #include "mode.h"
 
@@ -270,6 +271,7 @@ extern u8 gUnk_09EDA9A8[];
 extern void* gUnk_09EF1298[];
 extern u8 gUnk_08B25ADE[];
 extern u8 gUnk_093FB954[];
+extern u8 gUnk_093FBAB8[][0x80];
 extern void* gUnk_09EF12C8[];
 extern u8 gUnk_09EE4B28[];
 extern u8 gUnk_09619178[];
@@ -830,7 +832,8 @@ typedef struct PrizeCardWork {
     s16 unk_E8;
     s16 unk_EA;
     s16 unk_EC;
-    u8 unk_EE[0x04];
+    s16 unk_EE;
+    s16 unk_F0;
     s16 unk_F2;
     s16 unk_F4;
     u8 unk_F6;
@@ -903,6 +906,7 @@ typedef struct UnkStruct_09035DCC {
 
 extern UnkStruct_09035DCC gUnk_09035DCC[];
 extern UnkStruct_09035DCC gUnk_090360BC[];
+extern u16 gUnk_0903612C[];
 extern u16 gUnk_090359FC[];
 extern CardBack gUnk_08F709B0[];
 extern UnkStruct_09EE8008 gUnk_09EE8008[];
@@ -976,12 +980,19 @@ extern s8 gUnk_0203C374;
 extern s8 gUnk_0203A9E4;
 extern u8 gUnk_090451C0[];
 extern void* gUnk_09EE4A2C[];
+extern u16* gUnk_09EE4A68[];
+extern u16* gUnk_09EE4A98[];
+extern const u16 gUnk_090356BA[];
+extern const u16 gUnk_090356D2[];
 extern UnkStruct_09EE752C gUnk_09EE752C[];
 extern u8 gUnk_09EEA4E0[];
 extern u8 gUnk_09EEA494[];
 extern u8 gUnk_09EEB064[];
 extern u8 gUnk_09EEB050[];
 extern u8 gUnk_09EEB07C[];
+extern void* gUnk_09EEB080[];
+extern void* gUnk_09EEAFF8;
+extern void* gUnk_09EEB000;
 extern u8 gUnk_09EEB068[];
 extern s16 gUnk_09035950[];
 extern s16 gUnk_09035956[];
@@ -1718,7 +1729,7 @@ s16 func_080859A0(s32 mode, Deck* d);
 u8 func_080A3DD0(UnkStruct_080A3F5C* w);
 u8 func_08098AE4(u8* work, void* a);
 void DeckCard2_2(UnkStruct_0808E890* n);
-void func_08081760(UnkStruct_02034AAC* p);
+void func_08081760(UnkStruct_08080268* w);
 void func_08094CE4(u8* work);
 void func_0808D0A4(u8 deck);
 void func_080A9E40(u8 deck);
@@ -1737,7 +1748,7 @@ u8 func_0808E934(u8* work, s16 x, s16 y, u16 dir);
 void Mapcard_0(MapcardWork* w, MapcardArgs* a);
 Deck* func_08083C94(void);
 u8 func_08085374(u16 card, u8 deck);
-void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode);
+void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p);
 void func_080AB228(void);
 u16 func_08093384(u8* work);
 void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a);
