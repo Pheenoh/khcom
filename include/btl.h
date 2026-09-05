@@ -410,6 +410,7 @@ s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08015DC8(s32 x, s32 y, s32 z);
 u16 AnimGetFrame(AnimState* a);
+void func_08015D30(s32 x, s32 y, s32 z);
 void AnimReset(AnimState* a);
 u8 AnimIsFinished(AnimState* a);
 void func_08012304(void* a);
