@@ -67,7 +67,7 @@ void mode_movie_1(void) {
         SetIwramHeapName(sMovieHeapName);
         CpuSet(gUnk_08F69C04, (void*)0x05000200, 16);
         CpuSet(gUnk_09614718, (void*)0x05000220, 16);
-        func_081181BC(IwramAlloc, EwramAlloc, IwramFree, EwramFree);
+        MovieSetCallbacks(IwramAlloc, EwramAlloc, IwramFree, EwramFree);
 
         switch (gUnk_0203493C) {
         case 1:
@@ -110,13 +110,13 @@ void mode_movie_1(void) {
             break;
         }
 
-        if (func_081181EC(p)) {
+        if (MovieStart(p)) {
             gUnk_02034958 |= 8;
             func_08118344(func_0805E93C, 0);
             gUnk_02034958 &= 0xFFF7u;
         }
 
-        func_08118538();
+        MovieClose();
         IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
         EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
         VTransInit();

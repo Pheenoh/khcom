@@ -346,7 +346,7 @@ void func_08101654(void) {
 }
 
 void func_08101740(s16 a) {
-    AnimStart(&gUnk_020357D8, gUnk_09993118[a].unk_0E, 1);
+    AnimStart(&gWorldwarpAnim, gUnk_09993118[a].unk_0E, 1);
 }
 
 void func_08101768(void) {
@@ -444,7 +444,7 @@ void func_08101970(void) {
     DrawSprite(gUnk_09993118[0].unk_16 + ((gUnk_0203588C - gUnk_02035884) >> 8), gUnk_09993118[0].unk_18,
         AnimUpdate(&gUnk_02035860), gUnk_02035858, gUnk_0203585C, 0, flags, 0x834);
     DrawSprite((gUnk_02035888 >> 8) + gUnk_09993118[0].unk_0A, gUnk_09993118[0].unk_0C,
-        AnimUpdate(&gUnk_020357D8), gUnk_020357D0, gUnk_020357D4, 0, 0x800, 0x7D0);
+        AnimUpdate(&gWorldwarpAnim), gUnk_020357D0, gUnk_020357D4, 0, 0x800, 0x7D0);
 
     DrawSprite(gUnk_09993118[0].unk_10 + (gUnk_02035888 >> 8), gUnk_09993118[0].unk_12,
         AnimUpdate(&gUnk_020357F8), gUnk_020357F0, gUnk_020357F4, 0,

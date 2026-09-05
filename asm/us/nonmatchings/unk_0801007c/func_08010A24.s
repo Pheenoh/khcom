@@ -19,18 +19,18 @@ func_08010A24: @ 08010A24
 	orrs r0, r1
 	cmp r0, #0x00
 	beq _08010A54
-	bl func_0800886C
+	bl SioKeyGetHeldA
 	lsls r0, r0, #0x10
 	lsrs r4, r0, #0x10
-	bl func_0800889C
+	bl SioKeyGetPressedA
 	b _08010A60
 	.byte 0x00, 0x00
 _08010A50: .4byte 0x02039B84
 _08010A54:
-	bl func_08008884
+	bl SioKeyGetHeldB
 	lsls r0, r0, #0x10
 	lsrs r4, r0, #0x10
-	bl func_080088B4
+	bl SioKeyGetPressedB
 _08010A60:
 	lsls r0, r0, #0x10
 	lsrs r7, r0, #0x10

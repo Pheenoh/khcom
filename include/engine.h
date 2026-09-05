@@ -172,7 +172,7 @@ void* func_08004BD8(BgEntry* e, u16 x, u16 y);
 u8 func_08005AC4(AnimState* a);
 void func_08006494(u16 a, u16 b);
 void func_080064E8(u16 a, u16 b);
-u8 func_0800653C(void);
+u8 MosaicIsActive(void);
 void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size);
 s32 func_08003C9C(s32 a);
 void SetObjMosaicSize(u8 a, u8 b);
