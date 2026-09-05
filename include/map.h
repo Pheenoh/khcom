@@ -9,6 +9,7 @@
 #include "taskpool.h"
 #include "malloc.h"
 #include "fld_types.h"
+#include "card_types.h"
 
 typedef struct UnkStruct_080DFB8C {
     u16 unk_00;
@@ -181,7 +182,9 @@ typedef struct GameState {
     u8 unk_24;
     u8 unk_25[0x1B];
     UnkStruct_02039BF0 unk_40[3];
-    u8 unk_E8[0x92];
+    u8 unk_E8[0x10];
+    s16 unk_F8;
+    u8 unk_FA[0x80];
     u16 unk_17A;
     u16 unk_17C;
     u16 unk_17E;
@@ -288,6 +291,13 @@ typedef struct UnkStruct_080E8B1C {
     void* unk_14;
     s16* unk_18;
 } UnkStruct_080E8B1C;
+
+typedef struct UnkStruct_080E56B4 {
+    u8 unk_00;
+    u8 unk_01[0x03];
+    s32 unk_04;
+    s32 unk_08;
+} UnkStruct_080E56B4;
 
 typedef struct UnkStruct_0203C7B8 {
     u16 unk_00;
@@ -486,7 +496,9 @@ typedef struct UnkStruct_02034FE0 {
     u8 unk_180;
     u8 unk_181;
     u8 unk_182;
-    u8 unk_183[0x03];
+    u8 unk_183;
+    u8 unk_184;
+    u8 unk_185;
     u16 unk_186;
     void (*unk_188)(struct UnkStruct_02034FE0*);
 } UnkStruct_02034FE0;
@@ -560,7 +572,7 @@ typedef struct MapMenuWork {
     AnimState unk_048;
     u8* unk_060;
     void* unk_064;
-    u8 unk_068[0x04];
+    s32 unk_068;
     s32 unk_06C;
     u8* unk_070;
     u8 unk_074[0xC4];
@@ -826,14 +838,15 @@ typedef struct MapPrizeWork {
     u8* unk_74;
     u8* unk_78;
     void (*unk_7C)(struct MapPrizeWork*);
-    u8 unk_80[0x02];
+    u16 unk_80;
     u16 unk_82;
-    u8 unk_84[0x08];
+    s32 unk_84;
+    s32 unk_88;
     u8 unk_8C;
     u8 unk_8D;
     u8 unk_8E[0x02];
     s32 unk_90;
-    u8 unk_94[0x02];
+    u16 unk_94;
     u8 unk_96;
     u8 unk_97;
 } MapPrizeWork;
@@ -943,7 +956,9 @@ typedef struct MapPrzCardWork {
     u8 unk_088[0x02];
     u16 unk_08A;
     void (*unk_08C)(struct MapPrzCardWork*);
-    u8 unk_090[0x1C];
+    u8 unk_090[0x18];
+    u16 unk_0A8;
+    u8 unk_0AA[0x02];
     s32 unk_0AC;
     s32 unk_0B0;
     s16 unk_0B4;
@@ -997,7 +1012,10 @@ typedef struct MapTalkWork {
 } MapTalkWork;
 
 typedef struct MapDonaldWork {
-    u8 unk_000[0x9C];
+    s32 unk_000;
+    s32 unk_004;
+    u8 unk_008[0x38];
+    u8 unk_040[0x5C];
     AnimState unk_09C;
     void* unk_0B4;
     u8* unk_0B8;
@@ -1010,7 +1028,9 @@ typedef struct MapDonaldWork {
 } MapDonaldWork;
 
 typedef struct MapGoofyWork {
-    u8 unk_000[0x40];
+    s32 unk_000;
+    s32 unk_004;
+    u8 unk_008[0x38];
     u8 unk_040[0x5C];
     AnimState unk_09C;
     void* unk_0B4;
@@ -1305,6 +1325,7 @@ extern UnkStruct_0984BC9C* gUnk_09EF83F8[];
 extern UnkStruct_080E7D80 gUnk_0984C1CC;
 extern UnkStruct_080E7D80 gUnk_09856FB4[];
 extern UnkStruct_080E7D80 gUnk_0984C204;
+extern UnkStruct_080E7D80 gUnk_0984C23C;
 extern u8 gUnk_0984C2E4[];
 extern u8 gUnk_0984C310[];
 extern u8 gTaskDescMapGmkJump[];
@@ -1349,6 +1370,25 @@ extern u8 gUnk_09985F44[];
 extern s16 gSineTable[];
 extern u8 gUnk_0993AF64[];
 extern u8 gUnk_099910C4[];
+extern u8 gUnk_09991984[];
+extern u8 gUnk_09617C58[];
+extern u8 gUnk_091ABDB8[];
+extern u8 gUnk_09EEE1CC[];
+extern u8 gUnk_09EEE1C8[];
+extern u8 gUnk_08F68384[];
+extern u8 gUnk_098A5C90[];
+extern u8 gUnk_098A5C9A[];
+extern u8 gUnk_098A5CA4[];
+extern u8 gUnk_098A5CAE[];
+extern u8 gUnk_098A5CB8[];
+extern u8 gUnk_098A5CF4[];
+extern u8 gUnk_0919FDF8[];
+extern u8 gUnk_09EEE0A8[];
+extern u8 gUnk_09EEE03C[];
+extern u8 gUnk_09958124[];
+extern u8 gUnk_092EB78A[];
+extern u8 gUnk_088B6560[];
+extern u8 gUnk_08B22BBC[];
 extern void* gUnk_09EF8DA4[];
 extern u8 gUnk_098A94A0[];
 extern u8 gUnk_0994BF64[];
@@ -1385,13 +1425,17 @@ extern void* gTaskDescMapSave;
 extern void* gTaskDescMapAnm;
 extern void* gTaskDescMapDbg;
 extern void* gTaskDescMapGmkTutorial;
+extern void* gTaskDescMapGmkSpider;
+extern void* gTaskDescMapGmk00;
 extern void* gTaskDescMapDmg;
 extern void* gUnk_09EF6FCC[];
 extern void* gUnk_09EF7000[];
+extern CardDef gCardDefs[];
 extern void* gTaskDescMapFloor;
 extern void* gTaskDescMapTutorial;
 extern void* gTaskDescMapPrize;
 extern void* gTaskDescMapPrzCard;
+extern void* gTaskDescMapMsg;
 extern void* gTaskDescMapSpark;
 extern void* gTaskDescRoomcreate;
 extern void* gTaskDescMapDonald;
@@ -1492,6 +1536,10 @@ void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg);
 s32 func_080EE824(MapSaveWork* w);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s32 func_080ED7CC(MapMenuWork* w);
+s32 func_080EDA90(MapMenuWork* w);
+s32 func_080EDB4C(MapMenuWork* w);
+s32 func_080EDC94(MapMenuWork* w);
+s32 func_080ED498(MapMenuWork* w);
 s32 func_080ED91C(MapMenuWork* w);
 s32 func_080EDC38(MapMenuWork* w);
 s32 func_080EDD7C(MapMenuWork* w);
@@ -1537,6 +1585,7 @@ void AnimStart(AnimState* a, u16 animId, u16 flags);
 u8 AnimIsFinished(AnimState* a);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
+u16 GetKeysRepeat(void);
 void m4aSongNumStart(u16 id);
 u16 CountCardsById(u16 cardId);
 void ModeRequest(Mode* mode, s32 arg);
@@ -1889,6 +1938,7 @@ void func_080ECA88(UnkStruct_080ECA88* p);
 u8 func_080ECC8C(UnkStruct_080ECA88* p);
 void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a);
 void func_080ED06C(UnkStruct_080ED06C* p, u8 a);
+void func_08006238(s32 a, s32 b, s32 c);
 void func_080EE50C(UnkStruct_080EE50C* p, u8 a);
 void func_080EE580(UnkStruct_080EE580* p, u8 a);
 u32 func_080DF804(u8 a);
@@ -1911,6 +1961,7 @@ s32 func_080F01B0(UnkStruct_080F023C* p);
 void func_080F0660(UnkStruct_080F023C* p, u8 a);
 void func_080EE760(u8* work, u8 i);
 void func_080F4EE4(MapPrzCardWork* work);
+void func_080F52D4(MapPrzCardWork* w);
 void func_080F534C(MapPrzCardWork* w);
 void func_080A411C(void* pool, u32 a, u16 b);
 void func_080A4188(void* pool, u16 b);
@@ -1979,6 +2030,7 @@ u8 func_080F2594(MapGmkGpWork* w);
 u8 func_080F285C(MapGmkGpWork* w);
 s32 func_080F28F4(MapGmkGpWork* w);
 u8 func_080F3C98(MapGmk01Work* w);
+s32 func_080F3F6C(MapGmkBarrelWork* w);
 u8 func_080F3E24(MapGmkBarrelWork* w);
 u8 func_080F4078(MapGmkBarrelWork* w);
 void func_080F22E8(MapGmkGpWork* w);
@@ -2013,6 +2065,7 @@ void func_080F5C48(MapTalkWork* w);
 void func_080F4F60(MapPrzCardWork* w);
 s32 func_0805F5A4(s32* a, s32* b);
 void* func_080F7AB4(void);
+void func_080F49D0(MapPrizeWork* w);
 void func_080F4EC4(MapPrizeWork* w);
 void func_080F5800(MapPrzStockWork* w);
 void func_080F58C4(MapMsgWork* w, void* text);
