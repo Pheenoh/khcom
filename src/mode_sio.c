@@ -48,7 +48,7 @@ void mode_sio_btl_connect_0(s32 arg) {
     gSioBtlConnectWork->unk_05 = 0;
     func_08065ACC(gSioBtlConnectWork->unk_08, 0x5A);
     gSioBtlConnectWork->unk_05 = func_08065B6C(gUnk_08159E4A, gSioBtlConnectWork->unk_08);
-    gSioBtlConnectWork->unk_2D8 = LoadObjPalette(gUnk_096FBAA4, 32);
+    gSioBtlConnectWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
     func_08006E60();
     func_080C5A3C(func_080AEE50, func_080AEE6C, 0);
 }
@@ -109,9 +109,9 @@ void mode_sio_btl_connect_1(void) {
         break;
     }
 #ifdef VERSION_JP
-    func_080664D8(0x3D, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->unk_2D8, 20, gSioBtlConnectWork->unk_05);
+    func_080664D8(0x3D, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
 #else
-    func_080664D8(0x42, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->unk_2D8, 20, gSioBtlConnectWork->unk_05);
+    func_080664D8(0x42, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
 #endif
 }
 #else
@@ -119,7 +119,7 @@ INCLUDE_ASM("mode_sio/mode_sio_btl_connect_1.s");
 #endif
 
 void mode_sio_btl_connect_2(void) {
-    ReleaseObjPalette(gSioBtlConnectWork->unk_2D8);
+    ReleaseObjPalette(gSioBtlConnectWork->palette);
     func_08065AE0(gSioBtlConnectWork->unk_08, SIO_CONNECT_TEXT_SLOTS);
     EwramFree(gSioBtlConnectWork);
 }
@@ -1428,7 +1428,7 @@ void mode_sio_chg_connect_0(s32 arg) {
     gSioChgConnectWork->unk_05 = 0;
     func_08065ACC(gSioChgConnectWork->unk_08, 0x5A);
     gSioChgConnectWork->unk_05 = func_08065B6C(gUnk_08159EC4, gSioChgConnectWork->unk_08);
-    gSioChgConnectWork->unk_2D8 = LoadObjPalette(gUnk_096FBAA4, 32);
+    gSioChgConnectWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
     func_08006E60();
     func_080C5A3C(func_080B1BE0, func_080B1BFC, 1);
 }
@@ -1453,13 +1453,13 @@ void mode_sio_chg_connect_1(void) {
         }
         break;
     }
-    func_080664D8(61, 68, gSioChgConnectWork->unk_08, gSioChgConnectWork->unk_2D8, 20, gSioChgConnectWork->unk_05);
+    func_080664D8(61, 68, gSioChgConnectWork->unk_08, gSioChgConnectWork->palette, 20, gSioChgConnectWork->unk_05);
 }
 #endif
 
 #ifndef VERSION_EU
 void mode_sio_chg_connect_2(void) {
-    ReleaseObjPalette(gSioChgConnectWork->unk_2D8);
+    ReleaseObjPalette(gSioChgConnectWork->palette);
     func_08065AE0(gSioChgConnectWork->unk_08, 0x5A);
     EwramFree(gSioChgConnectWork);
 }
@@ -1573,8 +1573,8 @@ void func_080B1E70(void) {
     EnableBg(1);
     EnableBg(2);
     gSioChgCardWork->unk_076 = gUnk_0203AB10;
-    gSioChgCardWork->unk_07A = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_00;
-    gSioChgCardWork->unk_07C = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
+    gSioChgCardWork->x = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_00;
+    gSioChgCardWork->y = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
     gSioChgCardWork->unk_078 = gSioChgCardWork->unk_076;
     gSioChgCardWork->unk_074 = 1;
 
@@ -1998,8 +1998,8 @@ void func_080B2CD0(void) {
     DrawSprite(168, 72, gSioChgCardWork->unk_018[1], gSioChgCardWork->unk_008[1], gSioChgCardWork->unk_008[3], 0, 0x400, 0xFFFF);
 
     if (gSioChgCardWork->unk_074 == 1) {
-        DrawSprite(gSioChgCardWork->unk_07A, gSioChgCardWork->unk_07C, gSioChgCardWork->unk_058, gSioChgCardWork->unk_050, gSioChgCardWork->unk_054, 0, 0x400, 0xFFC0);
-        DrawSprite(gSioChgCardWork->unk_07A + 2, gSioChgCardWork->unk_07C - 8, gSioChgCardWork->unk_088, gSioChgCardWork->unk_080, gSioChgCardWork->unk_084, 0, 0x400, 0xFFA0);
+        DrawSprite(gSioChgCardWork->x, gSioChgCardWork->y, gSioChgCardWork->unk_058, gSioChgCardWork->unk_050, gSioChgCardWork->unk_054, 0, 0x400, 0xFFC0);
+        DrawSprite(gSioChgCardWork->x + 2, gSioChgCardWork->y - 8, gSioChgCardWork->unk_088, gSioChgCardWork->unk_080, gSioChgCardWork->unk_084, 0, 0x400, 0xFFA0);
     }
 
     for (i = 0; i < 10; i++) {
@@ -2139,8 +2139,8 @@ void func_080B3354(void) {
             gSioChgCardWork->unk_078 = 10;
             gSioChgCardWork->unk_076 = 10;
         }
-        gSioChgCardWork->unk_07A = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_00;
-        gSioChgCardWork->unk_07C = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
+        gSioChgCardWork->x = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_00;
+        gSioChgCardWork->y = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
         v = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_04;
 
         if (k1 & 1) {
@@ -2198,8 +2198,8 @@ void func_080B3354(void) {
             gSioChgCardWork->unk_078 = 11;
             gSioChgCardWork->unk_076 = 11;
         }
-        gSioChgCardWork->unk_07A = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_00;
-        gSioChgCardWork->unk_07C = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
+        gSioChgCardWork->x = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_00;
+        gSioChgCardWork->y = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
         v = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_04;
 
         if (k2 & 1) {
@@ -2429,7 +2429,7 @@ void mode_sioError_0(s32 arg) {
     SetBgScroll(0, 0xFFE9, 0xFFD0);
     func_08065ACC(gSioErrorWork->unk_08, 0x6C);
     gSioErrorWork->unk_06 = func_08065B6C(gUnk_0815A2BE, gSioErrorWork->unk_08);
-    gSioErrorWork->unk_368 = LoadObjPalette(gUnk_096FBAA4, 32);
+    gSioErrorWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
 }
 #else
 INCLUDE_ASM("mode_sio/mode_sioError_0.s");
@@ -2441,14 +2441,14 @@ void mode_sioError_1(void) {
 
 void func_080B3F24(void) {
 #ifdef VERSION_JP
-    func_080664D8(58, 62, gSioErrorWork->unk_08, gSioErrorWork->unk_368, 20, gSioErrorWork->unk_06);
+    func_080664D8(58, 62, gSioErrorWork->unk_08, gSioErrorWork->palette, 20, gSioErrorWork->unk_06);
 #else
-    func_080664D8(36, 57, gSioErrorWork->unk_08, gSioErrorWork->unk_368, 20, gSioErrorWork->unk_06);
+    func_080664D8(36, 57, gSioErrorWork->unk_08, gSioErrorWork->palette, 20, gSioErrorWork->unk_06);
 #endif
 }
 
 void mode_sioError_2(void) {
-    ReleaseObjPalette(gSioErrorWork->unk_368);
+    ReleaseObjPalette(gSioErrorWork->palette);
     func_08065AE0(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
     EwramFree(gSioErrorWork);
 }

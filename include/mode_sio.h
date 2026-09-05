@@ -39,7 +39,7 @@ typedef struct SioBtlConnectWork {
     u8 unk_05;
     u8 unk_06[2];
     TextSlot unk_08[SIO_CONNECT_TEXT_SLOTS];
-    void* unk_2D8;
+    void* palette;
 } SioBtlConnectWork;
 
 typedef struct CharaLinkData {
@@ -71,7 +71,7 @@ typedef struct SioErrorWork {
     u8 unk_06;
     u8 unk_07;
     TextSlot unk_08[SIO_ERROR_TEXT_SLOTS];
-    void* unk_368;
+    void* palette;
 } SioErrorWork;
 
 typedef struct SioCardTaskArg {
@@ -104,8 +104,8 @@ typedef struct SioChgCardWork {
     u8 unk_075;
     s16 unk_076;
     s16 unk_078;
-    s16 unk_07A;
-    s16 unk_07C;
+    s16 x;
+    s16 y;
     u8 unk_07E[2];
     void* unk_080;
     void* unk_084;

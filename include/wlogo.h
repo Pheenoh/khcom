@@ -113,7 +113,7 @@ typedef struct WlogoTtWork {
     void* unk_034;
     void* unk_038;
     u8 unk_03C[0x4];
-    AnimState unk_040[6];
+    AnimState anim[6];
     u8 unk_0D0[0x1C];
     u16 unk_0EC;
     u8 unk_0EE[0x12];
@@ -240,8 +240,8 @@ typedef struct WlogoPooObjWork {
 typedef struct WlogoTvtWork {
     void* tiles;
     void* palette;
-    s16 unk_008;
-    s16 unk_00A;
+    s16 x;
+    s16 y;
     void* gfx;
     AnimState anim;
     u8 unk_028;
@@ -286,8 +286,8 @@ typedef struct WlogoAgrFlashWork {
     void* palette;
     void* gfx;
     AnimState anim;
-    s16 unk_024;
-    s16 unk_026;
+    s16 x;
+    s16 y;
     u8 unk_028;
     u8 unk_029[0x3];
 } WlogoAgrFlashWork;
@@ -296,8 +296,8 @@ typedef struct WlogoAgrWork {
     void* tiles;
     void* palette;
     void* unk_008;
-    s16 unk_00C;
-    s16 unk_00E;
+    s16 x;
+    s16 y;
     u8 unk_010;
     u8 unk_011;
     s16 unk_012;
@@ -315,8 +315,8 @@ typedef struct WlogoDilWork {
     u16 unk_00E;
     u8 unk_010;
     u8 unk_011;
-    s16 unk_012;
-    s16 unk_014;
+    s16 x;
+    s16 y;
     u8 unk_016;
     u8 unk_017;
 } WlogoDilWork;
@@ -324,8 +324,8 @@ typedef struct WlogoDilWork {
 typedef struct WlogoColWork {
     void* tiles;
     void* palette;
-    s16 unk_008;
-    s16 unk_00A;
+    s16 x;
+    s16 y;
     void* gfx;
     AnimState anim;
     u8 unk_028;
@@ -367,8 +367,8 @@ typedef struct WlogoNvlMovWork {
     u16 unk_01E;
     u8 unk_020;
     u8 unk_021[0x3];
-    void* unk_024;
-    void* unk_028;
+    void* tiles;
+    void* palette;
     void* gfx;
     AnimState anim;
     u8 unk_048;
@@ -491,8 +491,8 @@ typedef struct WlogoHwtWork {
 typedef struct WlogoMonsWork {
     void* tiles;
     WlogoPal* palette;
-    s16 unk_008;
-    s16 unk_00A;
+    s16 x;
+    s16 y;
     void* gfx;
     AnimState anim;
     u16 unk_028;

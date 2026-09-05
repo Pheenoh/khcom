@@ -43,13 +43,13 @@ void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
 #else
         w->tiles = LoadObjTiles(gUnk_09C638BE, 35 * 32);
 #endif
-        anim = &w->unk_20;
+        anim = &w->anim;
         AnimInit(anim, (s32)gUnk_09EFB200, (s32)gUnk_09EFB1F8);
         AnimStart(anim, a->unk_02, 0);
         break;
     case 1:
         w->tiles = LoadObjTiles(gUnk_09A54218[a->unk_04][0], *(u16*)&gUnk_09A54218[a->unk_04][1]);
-        anim = &w->unk_20;
+        anim = &w->anim;
         AnimInit(anim, (s32)gUnk_09EFB244, (s32)gUnk_09EFB208);
         AnimStart(anim, a->unk_02, 0);
         break;
@@ -57,10 +57,10 @@ void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
         w->tiles = LoadObjTiles(gUnk_09A54218[a->unk_04][0], *(u16*)&gUnk_09A54218[a->unk_04][1]);
 
         if (a->unk_02 == 1) {
-            anim = &w->unk_20;
+            anim = &w->anim;
             AnimInit(anim, (s32)gUnk_09EFB5EC, (s32)gUnk_09EFB5B0);
         } else {
-            anim = &w->unk_20;
+            anim = &w->anim;
             AnimInit(anim, (s32)gUnk_09EFB244, (s32)gUnk_09EFB208);
         }
         AnimStart(anim, 2, 0);
@@ -68,7 +68,7 @@ void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
         gBldAlpha = 0;
         break;
     }
-    w->unk_1C = LoadObjPalette(gUnk_09D6CD74, 64);
+    w->palette = LoadObjPalette(gUnk_09D6CD74, 64);
 }
 
 u8 task_sroll_a_name_1(SrollANameWork* w) {
@@ -82,10 +82,10 @@ u8 task_sroll_a_name_1(SrollANameWork* w) {
                 gBldCnt = 0;
                 gBldAlpha = 0;
             }
-            AnimUpdate(&w->unk_20);
+            AnimUpdate(&w->anim);
         }
     } else {
-        AnimUpdate(&w->unk_20);
+        AnimUpdate(&w->anim);
     }
     return 1;
 }
@@ -109,10 +109,10 @@ void task_sroll_a_name_2(SrollANameWork* w) {
 
     if (w->unk_02 == 2) {
         flags = 4;
-        ofs = AnimGetFrame(&w->unk_20) * 32 + 32;
-        LoadPalette(&gUnk_09D6CD74[ofs], &gUnk_05000220[(w->unk_1C->unk_06 & 15) * 32], 32);
+        ofs = AnimGetFrame(&w->anim) * 32 + 32;
+        LoadPalette(&gUnk_09D6CD74[ofs], &gUnk_05000220[(w->palette->unk_06 & 15) * 32], 32);
     }
-    DrawSprite(x >> 8, y >> 8, AnimGetGfx(&w->unk_20), w->tiles, w->unk_1C, 0, flags,
+    DrawSprite(x >> 8, y >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, flags,
                0xFF0 - w->unk_02);
 }
 #else
@@ -121,7 +121,7 @@ INCLUDE_ASM("sroll/task_sroll_a_name_2.s");
 
 void task_sroll_a_name_3(SrollANameWork* w) {
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_1C);
+    ReleaseObjPalette((u8*)w->palette);
 }
 
 static s32 func_081149A8(s32 x) {
@@ -138,7 +138,7 @@ void func_081149B8(SrollBCharWork* w) {
 
     def = w->unk_08->unk_00;
     gfx = def->unk_00;
-    func_08005974(&w->unk_14, def->unk_0C, def->unk_0E, gfx->unk_04, gfx->unk_00);
+    func_08005974(&w->anim, def->unk_0C, def->unk_0E, gfx->unk_04, gfx->unk_00);
     func_08002A10(w->tiles, gfx->unk_08);
     w->unk_08->unk_14 &= 0xFFFE;
 }
@@ -152,11 +152,11 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
     w->unk_04 = 0;
     w->unk_08 = a->unk_04;
     w->tiles = AllocObjTiles((u16)(set->unk_00 * 32), 0);
-    w->unk_10 = LoadObjPalette(set->unk_08, 32);
-    anim = &w->unk_14;
+    w->palette = LoadObjPalette(set->unk_08, 32);
+    anim = &w->anim;
     AnimInit(anim, 0, 0);
     w->unk_08->unk_18 = anim;
-    w->unk_08->unk_1C = w->unk_10->unk_06;
+    w->unk_08->unk_1C = w->palette->unk_06;
     func_081149B8(w);
     TaskPoolInit(&w->unk_2C, 4);
 }
@@ -173,8 +173,8 @@ void task_sroll_b_char_2(SrollBCharWork* w) {
     if ((sub->unk_14 & 2) == 0) {
         x = sub->unk_04 >> 8;
         y = (sub->unk_08 + sub->unk_0C) >> 8;
-        gfx = AnimGetGfx(&w->unk_14);
-        DrawSprite(x, y, gfx, w->tiles, w->unk_10,
+        gfx = AnimGetGfx(&w->anim);
+        DrawSprite(x, y, gfx, w->tiles, w->palette,
                    AllocObjAffine(sub->unk_28, sub->unk_20, sub->unk_24, 1), sub->unk_16, 0xFF0);
         TaskPoolDraw(&w->unk_2C);
     }
@@ -182,7 +182,7 @@ void task_sroll_b_char_2(SrollBCharWork* w) {
 
 void task_sroll_b_char_3(SrollBCharWork* w) {
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_10);
+    ReleaseObjPalette((u8*)w->palette);
     TaskPoolDestroy(&w->unk_2C);
 }
 
@@ -200,13 +200,13 @@ void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
     w->unk_08 = a->unk_08;
     w->unk_0C = a->unk_0C;
     w->tiles = LoadObjTiles(gUnk_09C5CC7C, 94 * 32);
-    w->unk_14 = LoadObjPalette(gUnk_09D6BE34, 64);
-    anim = &w->unk_18;
+    w->palette = LoadObjPalette(gUnk_09D6BE34, 64);
+    anim = &w->anim;
     AnimInit(anim, (s32)gUnk_09EFAF6C, (s32)gUnk_09EFAF60);
     AnimStart(anim, a->unk_10, 0);
 
     for (i = 0; i < 2; i++) {
-        func_080062F4((w->unk_14->unk_06 + i) % 16 + 16, 1);
+        func_080062F4((w->palette->unk_06 + i) % 16 + 16, 1);
     }
 }
 #else
@@ -221,7 +221,7 @@ u8 task_sroll_b_logo_1(SrollBLogoWork* w) {
     if ((s16)((w->unk_04 >> 8) - (*w->unk_08 >> 8)) <= -32) {
         r = 0;
     }
-    AnimUpdate(&w->unk_18);
+    AnimUpdate(&w->anim);
     return r;
 }
 
@@ -229,12 +229,12 @@ void task_sroll_b_logo_2(SrollBLogoWork* w) {
     u16 y;
 
     y = (w->unk_04 >> 8) - (*w->unk_08 >> 8);
-    DrawSprite(w->unk_00 >> 8, y, AnimGetGfx(&w->unk_18), w->tiles, w->unk_14, 0, 0, 0xFF0);
+    DrawSprite(w->unk_00 >> 8, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0, 0xFF0);
 }
 
 void task_sroll_b_logo_3(SrollBLogoWork* w) {
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_14);
+    ReleaseObjPalette((u8*)w->palette);
 }
 
 static s32 func_08114D2C(s32 x) {
@@ -300,8 +300,8 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         w->unk_08 = a->unk_04;
         w->unk_0C = a->unk_08 + 0xFFFFE000;
         w->tiles = AllocObjTiles(128, gUnk_09320796);
-        w->unk_14 = LoadObjPalette(gUnk_08F69BE4, 32);
-        anim = &w->unk_18;
+        w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+        anim = &w->anim;
         AnimInit(anim, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
         AnimStart(anim, w->unk_04, 0);
         break;
@@ -309,8 +309,8 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         w->unk_08 = a->unk_04;
         w->unk_0C = a->unk_08 + 0xFFFFD000;
         w->tiles = AllocObjTiles(128, gUnk_09320796);
-        w->unk_14 = LoadObjPalette(gUnk_08F69BE4, 32);
-        anim = &w->unk_18;
+        w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+        anim = &w->anim;
         AnimInit(anim, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
         AnimStart(anim, 0, 0);
         break;
@@ -320,13 +320,13 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         t = (GetRandom() % 9) * 256 - 0x400;
         w->unk_0C = t + a->unk_08;
         w->tiles = AllocObjTiles(128, gUnk_088A5D7A);
-        w->unk_14 = LoadObjPalette(gUnk_08F69BE4, 32);
-        anim = &w->unk_18;
+        w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
+        anim = &w->anim;
         AnimInit(anim, (s32)gUnk_09EDE7E4, (s32)gUnk_09EDE7B4);
         AnimStart(anim, w->unk_04, 0);
         break;
     }
-    func_080062F4((w->unk_14->unk_06 & 15) + 16, 0);
+    func_080062F4((w->palette->unk_06 & 15) + 16, 0);
 }
 #else
 INCLUDE_ASM("sroll/task_sroll_b_crtn_0.s");
@@ -336,7 +336,7 @@ u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
     u8 r;
 
     r = 1;
-    AnimUpdate(&w->unk_18);
+    AnimUpdate(&w->anim);
     w->unk_00++;
 
     switch (w->unk_04) {
@@ -354,7 +354,7 @@ u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
         break;
     case 5:
         if (w->unk_00 == 12) {
-            AnimStart(&w->unk_18, 6, 1);
+            AnimStart(&w->anim, 6, 1);
         }
     case 0:
     case 3:
@@ -367,13 +367,13 @@ u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
 }
 
 void task_sroll_b_crtn_2(SrollBCrtnWork* w) {
-    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, AnimGetGfx(&w->unk_18), w->tiles, w->unk_14, 0, 0x400,
+    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400,
                0xFE0);
 }
 
 void task_sroll_b_crtn_3(SrollBCrtnWork* w) {
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_14);
+    ReleaseObjPalette((u8*)w->palette);
 }
 
 static s32 func_08115178(s32 x) {
@@ -391,7 +391,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
 #else
         w->tiles = LoadObjTiles(gUnk_09C8D47A, 154 * 32);
 #endif
-        w->unk_1C = LoadObjPalette(gUnk_09D6CF54, 224);
+        w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
 
         for (i = 0, p = w->unk_20; i <= 4; i++) {
             AnimInit(p, (s32)gUnk_09EFB9B8, (s32)gUnk_09EFB840);
@@ -404,7 +404,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
 #else
         w->tiles = LoadObjTiles(gUnk_09C8F1FA, 146 * 32);
 #endif
-        w->unk_1C = LoadObjPalette(gUnk_09D6D034, 224);
+        w->palette = LoadObjPalette(gUnk_09D6D034, 224);
 
         for (i = 0, p = w->unk_20; i <= 4; i++) {
             AnimInit(p, (s32)gUnk_09EFBAD4, (s32)gUnk_09EFB9CC);
@@ -439,14 +439,14 @@ void task_sroll_c_char_2(SrollCCharWork* w) {
     p = w->unk_20;
 
     for (i = 4; i >= 0; i--) {
-        DrawSprite(120, 80, AnimGetGfx(p), w->tiles, w->unk_1C, 0, flags, 0xFF0);
+        DrawSprite(120, 80, AnimGetGfx(p), w->tiles, w->palette, 0, flags, 0xFF0);
         p++;
     }
 }
 
 void task_sroll_c_char_3(SrollCCharWork* w) {
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_1C);
+    ReleaseObjPalette((u8*)w->palette);
 }
 
 static s32 func_0811529C(s32 x) {
@@ -457,7 +457,7 @@ void task_sroll_tmr_0(SrollTmrWork* w, void* arg) {
     w->unk_00 = 0;
     w->unk_04 = 0;
     w->tiles = LoadObjTiles(gUnk_09C904B4, 352);
-    w->unk_0C = LoadObjPalette(gUnk_09D6D114, 32);
+    w->palette = LoadObjPalette(gUnk_09D6D114, 32);
 }
 
 u8 task_sroll_tmr_1(SrollTmrWork* w) {
@@ -472,7 +472,7 @@ u8 task_sroll_tmr_1(SrollTmrWork* w) {
             w->unk_00 = r;
         }
     }
-    func_080062F4((w->unk_0C->unk_06 & 15) + 16, 1);
+    func_080062F4((w->palette->unk_06 & 15) + 16, 1);
     w->unk_04++;
     return r;
 }
@@ -480,7 +480,7 @@ u8 task_sroll_tmr_1(SrollTmrWork* w) {
 INCLUDE_ASM("sroll/task_sroll_tmr_2.s");
 void task_sroll_tmr_3(SrollTmrWork* w) {
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_0C);
+    ReleaseObjPalette((u8*)w->palette);
 }
 
 void func_0811549C(void) {

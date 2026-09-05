@@ -425,7 +425,7 @@ typedef struct UnkStruct_080E590C {
     s32 unk_80;
     s32 unk_84;
     u8 unk_88[0x1C];
-    u8 unk_A4[0x18];
+    u8 anim[0x18];
     void* tiles;
     void* palette;
     void* gfx;

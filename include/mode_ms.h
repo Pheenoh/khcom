@@ -82,7 +82,7 @@ typedef struct UnkStruct_020358C8 {
     FldRes* unk_0C;
     void* unk_10;
     s32 unk_14;
-    AnimState unk_18;
+    AnimState anim;
     u16 unk_30;
     u16 unk_32;
     s32 unk_34;

@@ -77,9 +77,9 @@ void task_allmap_room_2(AllmapRoomWork* work) {
     }
 
     for (i = 0; i < 4; i++) {
-        if (work->unk_01C[i] != 0) {
-            work->unk_01C[i] = AnimUpdate(&work->unk_02C[i]);
-            DrawSprite(x, y, work->unk_01C[i], work->unk_00C[i], work->palette, 0, g, i - 4 + h);
+        if (work->gfx[i] != 0) {
+            work->gfx[i] = AnimUpdate(&work->anim[i]);
+            DrawSprite(x, y, work->gfx[i], work->unk_00C[i], work->palette, 0, g, i - 4 + h);
         }
     }
 }

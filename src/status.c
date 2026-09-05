@@ -381,12 +381,12 @@ void task_status_cursor_0(StatusCursorWork* work, s16* arg) {
     work->unk_08 = LoadObjPalette(gUnk_0984B1D8, 0x20);
     AnimInit(&work->anim[0], (s32)gUnk_09EF6904, (s32)gUnk_09EF68F0);
     AnimStart(&work->anim[0], 0, 1);
-    work->unk_10[0] = AnimGetGfx(&work->anim[0]);
+    work->gfx[0] = AnimGetGfx(&work->anim[0]);
     work->unk_04 = AllocObjTiles(func_08003524(gUnk_09EF6908, 4), gUnk_097A2394);
     work->unk_0C = LoadObjPalette(gUnk_0984B1F8, 0x20);
     AnimInit(&work->anim[1], (s32)gUnk_09EF691C, (s32)gUnk_09EF6908);
     AnimStart(&work->anim[1], 0, 1);
-    work->unk_10[1] = AnimGetGfx(&work->anim[1]);
+    work->gfx[1] = AnimGetGfx(&work->anim[1]);
     work->unk_4C = *work->unk_48;
     if (work->unk_4C < 0) {
         work->unk_58 = gUnk_096FDD8C[~work->unk_4C];
@@ -421,7 +421,7 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
     func_0805F1C0(&work->unk_58, work->unk_5C);
 
     for (i = 0; i < 2; i++) {
-        work->unk_10[i] = AnimUpdate(&work->anim[i]);
+        work->gfx[i] = AnimUpdate(&work->anim[i]);
     }
     return 1;
 }
@@ -429,10 +429,10 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
 void task_status_cursor_2(StatusCursorWork* work) {
     if (func_08006314() == 0) {
         if (!(gGameState.flags & 8) || func_080D8340()) {
-            DrawSprite(work->unk_58 >> 8, (work->unk_50 >> 8) - 16, work->unk_10[1], work->unk_04, work->unk_0C, 0, 0, 0);
+            DrawSprite(work->unk_58 >> 8, (work->unk_50 >> 8) - 16, work->gfx[1], work->unk_04, work->unk_0C, 0, 0, 0);
 
             if (work->unk_4C >= 0) {
-                DrawSprite(1, (work->unk_50 >> 8) + 3, work->unk_10[0], work->unk_00, work->unk_08, 0, 0, 1);
+                DrawSprite(1, (work->unk_50 >> 8) + 3, work->gfx[0], work->unk_00, work->unk_08, 0, 0, 1);
             }
         }
     }
@@ -1225,8 +1225,8 @@ u8 func_080D9AC4(s32* a, s32* b, s16 c, u16 d) {
 u8 func_080D9B28(BoogieWork* work) {
     if (work->unk_000 == 3) {
         if (work->unk_16C->unk_00 == 9) {
-            if (AnimGetFrame(&work->unk_16C->unk_14) <= 2) {
-                if (!AnimIsFinished(&work->unk_16C->unk_14)) {
+            if (AnimGetFrame(&work->unk_16C->anim) <= 2) {
+                if (!AnimIsFinished(&work->unk_16C->anim)) {
                     return 1;
                 }
             }
