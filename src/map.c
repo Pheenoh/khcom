@@ -3714,7 +3714,14 @@ INCLUDE_ASM("map/func_080EB1F4.s");
 INCLUDE_ASM("map/func_080EB27C.s");
 INCLUDE_ASM("map/func_080EB2D0.s");
 INCLUDE_ASM("map/func_080EB328.s");
-INCLUDE_ASM("map/func_080EB698.s");
+
+void func_080EB698(void) {
+    if (gUnk_02034FDC->unk_344 != 0) {
+        gUnk_02034FDC->unk_344(gUnk_02034FDC);
+    }
+    func_080EAF10();
+}
+
 INCLUDE_ASM("map/func_080EB6BC.s");
 INCLUDE_ASM("map/func_080EB7A0.s");
 
@@ -3771,7 +3778,14 @@ INCLUDE_ASM("map/func_080EBFB8.s");
 INCLUDE_ASM("map/func_080EBFF8.s");
 INCLUDE_ASM("map/func_080EC04C.s");
 INCLUDE_ASM("map/func_080EC0D4.s");
-INCLUDE_ASM("map/func_080EC424.s");
+
+void func_080EC424(void) {
+    if (gUnk_02034FE0->unk_188 != 0) {
+        gUnk_02034FE0->unk_188(gUnk_02034FE0);
+    }
+    func_080EBB24();
+}
+
 INCLUDE_ASM("map/func_080EC448.s");
 INCLUDE_ASM("map/func_080EC500.s");
 INCLUDE_ASM("map/func_080EC544.s");
@@ -3784,7 +3798,13 @@ void func_080EC644(void) {
 }
 
 INCLUDE_ASM("map/func_080EC660.s");
-INCLUDE_ASM("map/func_080EC720.s");
+
+s32 func_080EC720(MapRndWork* w) {
+    func_080E00E4(gUnk_02039BA0->unk_08, gUnk_02039BA0->unk_0C);
+    TaskPoolUpdate(&w->unk_00);
+    return 1;
+}
+
 INCLUDE_ASM("map/func_080EC744.s");
 
 void func_080EC750(TaskPool* pool) {
@@ -3803,7 +3823,11 @@ void func_080ECA88(UnkStruct_080ECA88* p) {
     func_080038E4(p->unk_58, p->unk_60, p->unk_64);
 }
 
-INCLUDE_ASM("map/func_080ECAA8.s");
+void func_080ECAA8(UnkStruct_080ECA88* p) {
+    func_080038E4(p->unk_44, p->unk_4C, p->unk_50);
+    func_080038E4(p->unk_58, p->unk_60, p->unk_68);
+}
+
 INCLUDE_ASM("map/func_080ECAC8.s");
 INCLUDE_ASM("map/func_080ECBC8.s");
 INCLUDE_ASM("map/func_080ECC54.s");
@@ -4348,7 +4372,13 @@ INCLUDE_ASM("map/func_080F1544.s");
 INCLUDE_ASM("map/func_080F1584.s");
 INCLUDE_ASM("map/func_080F1650.s");
 INCLUDE_ASM("map/func_080F169C.s");
-INCLUDE_ASM("map/func_080F1718.s");
+
+void func_080F1718(MapGmkJumpWork* w) {
+    ReleaseObjTiles(w->unk_0B4);
+    ReleaseObjPalette(w->unk_0B8);
+    func_08012304(w->unk_040);
+}
+
 INCLUDE_ASM("map/func_080F173C.s");
 INCLUDE_ASM("map/func_080F1798.s");
 INCLUDE_ASM("map/func_080F1880.s");
@@ -4390,32 +4420,61 @@ INCLUDE_ASM("map/func_080F1C64.s");
 INCLUDE_ASM("map/func_080F1CCC.s");
 INCLUDE_ASM("map/func_080F1D68.s");
 INCLUDE_ASM("map/func_080F1D98.s");
-INCLUDE_ASM("map/func_080F1E0C.s");
+
+void func_080F1E0C(MapGmkSpiderWork* w) {
+    ReleaseObjTiles(w->unk_0B4);
+    ReleaseObjPalette(w->unk_0B8);
+}
+
 INCLUDE_ASM("map/func_080F1E28.s");
 INCLUDE_ASM("map/func_080F1EA0.s");
 INCLUDE_ASM("map/func_080F1ED4.s");
 INCLUDE_ASM("map/func_080F1F98.s");
 INCLUDE_ASM("map/func_080F1FEC.s");
-INCLUDE_ASM("map/func_080F2058.s");
+
+void func_080F2058(MapGmkGpWork* w) {
+    ReleaseObjTiles(w->unk_0B8);
+    ReleaseObjPalette(w->unk_0BC);
+    func_08012304(w->unk_044);
+}
+
 INCLUDE_ASM("map/func_080F207C.s");
 INCLUDE_ASM("map/func_080F2130.s");
 INCLUDE_ASM("map/func_080F2178.s");
 INCLUDE_ASM("map/func_080F2244.s");
 INCLUDE_ASM("map/func_080F2274.s");
-INCLUDE_ASM("map/func_080F22E8.s");
+
+void func_080F22E8(MapGmkGpWork* w) {
+    ReleaseObjTiles(w->unk_0B8);
+    ReleaseObjPalette(w->unk_0BC);
+    func_08012304(w->unk_044);
+}
+
 INCLUDE_ASM("map/func_080F230C.s");
 INCLUDE_ASM("map/func_080F238C.s");
 INCLUDE_ASM("map/func_080F23E8.s");
 INCLUDE_ASM("map/func_080F24B0.s");
 INCLUDE_ASM("map/func_080F2504.s");
-INCLUDE_ASM("map/func_080F2570.s");
+
+void func_080F2570(MapGmkGpWork* w) {
+    ReleaseObjTiles(w->unk_0B8);
+    ReleaseObjPalette(w->unk_0BC);
+    func_08012304(w->unk_044);
+}
+
 INCLUDE_ASM("map/func_080F2594.s");
 INCLUDE_ASM("map/func_080F25FC.s");
 INCLUDE_ASM("map/func_080F2654.s");
 INCLUDE_ASM("map/func_080F26B0.s");
 INCLUDE_ASM("map/func_080F2778.s");
 INCLUDE_ASM("map/func_080F27CC.s");
-INCLUDE_ASM("map/func_080F2838.s");
+
+void func_080F2838(MapGmkGpWork* w) {
+    ReleaseObjTiles(w->unk_0B8);
+    ReleaseObjPalette(w->unk_0BC);
+    func_08012304(w->unk_044);
+}
+
 INCLUDE_ASM("map/func_080F285C.s");
 INCLUDE_ASM("map/func_080F28F4.s");
 INCLUDE_ASM("map/func_080F2934.s");
@@ -4522,7 +4581,13 @@ INCLUDE_ASM("map/func_080F4BA0.s");
 INCLUDE_ASM("map/func_080F4C5C.s");
 INCLUDE_ASM("map/func_080F4DB0.s");
 INCLUDE_ASM("map/func_080F4DDC.s");
-INCLUDE_ASM("map/func_080F4EC4.s");
+
+void func_080F4EC4(MapPrizeWork* w) {
+    ReleaseObjTiles(w->unk_6C);
+    ReleaseObjPalette(w->unk_70);
+    func_08012304(w->unk_10);
+}
+
 void func_080F4EE4(UnkStruct_080F4EE4* work) {
     work->unk_0B4 = -gSineTable[((work->unk_0D0 + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
     work->unk_0B6 = -gSineTable[((work->unk_0CF + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
@@ -4543,11 +4608,14 @@ INCLUDE_ASM("map/func_080F53D0.s");
 INCLUDE_ASM("map/func_080F5580.s");
 INCLUDE_ASM("map/func_080F55B0.s");
 INCLUDE_ASM("map/func_080F5780.s");
-INCLUDE_ASM("map/func_080F5800.s");
+void func_080F5800(MapPrzStockWork* w) {
+    func_080A411C(w->unk_08, 0, w->unk_00[1]);
+    w->unk_04 = func_080F5820;
+}
 
-void func_080F5820(u8* work) {
-    if (func_080A42C8((s32)work) == 0) {
-        *(s32*)&work[4] = 0;
+void func_080F5820(MapPrzStockWork* w) {
+    if (func_080A42C8((s32)w) == 0) {
+        w->unk_04 = 0;
     }
 }
 
@@ -4559,7 +4627,16 @@ INCLUDE_ASM("map/func_080F58C4.s");
 INCLUDE_ASM("map/func_080F5968.s");
 INCLUDE_ASM("map/func_080F596C.s");
 INCLUDE_ASM("map/func_080F59A0.s");
-INCLUDE_ASM("map/func_080F59E4.s");
+
+s32 func_080F59E4(MapMsgWork* w) {
+    w->unk_188++;
+
+    if (w->unk_188 == 120) {
+        return 0;
+    }
+    return 1;
+}
+
 INCLUDE_ASM("map/func_080F5A00.s");
 INCLUDE_ASM("map/func_080F5A64.s");
 INCLUDE_ASM("map/func_080F5A88.s");
@@ -4651,9 +4728,24 @@ INCLUDE_ASM("map/func_080F753C.s");
 INCLUDE_ASM("map/func_080F7594.s");
 INCLUDE_ASM("map/func_080F75E4.s");
 INCLUDE_ASM("map/func_080F7640.s");
-INCLUDE_ASM("map/func_080F76D0.s");
+
+s32 func_080F76D0(MapStairWork* w) {
+    TaskPoolUpdate(&w->unk_50);
+
+    if (w->unk_4C != 0) {
+        w->unk_4C(w);
+    }
+    return 1;
+}
+
 INCLUDE_ASM("map/func_080F76F0.s");
-INCLUDE_ASM("map/func_080F775C.s");
+
+void func_080F775C(MapStairWork* w) {
+    ReleaseObjTiles(w->unk_44);
+    ReleaseObjPalette(w->unk_40);
+    TaskPoolDestroy(&w->unk_50);
+}
+
 INCLUDE_ASM("map/func_080F777C.s");
 
 s32 func_080F77C4(u8* work) {
