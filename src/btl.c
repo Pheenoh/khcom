@@ -604,7 +604,872 @@ BtlWork* func_0801E7D4(BtlSoraWork* work) {
     return 0;
 }
 
+#ifdef NON_MATCHING
+void task_btl_sora_1(BtlSoraWork* work) {
+    UnkStruct_0801AF08* p;
+    BtlWork* e;
+    u16 hp;
+    u16 max;
+    s16 n;
+    u16 held;
+    u16 pressed;
+    u64 f;
+    s16 st;
+    u16 uv;
+    s32 t;
+
+    p = &work->unk_040;
+
+    if (*(s32*)&gBtlWork->unk_0A0 == 4 && (p->unk_34 & 0x10)) {
+        switch (work->unk_038) {
+        case 23:
+        case 24:
+        case 25:
+        case 26:
+            p->unk_04 = *(s32*)&p->unk_14[0];
+            p->unk_08 = *(s32*)&p->unk_14[4];
+            p->unk_0C = *(s32*)&p->unk_14[8];
+
+            if (work->unk_15A & 4) {
+                work->unk_15A &= ~4;
+                func_0801DEB8(work);
+            }
+
+            func_0801E4E4(work, 3);
+            break;
+        case 67:
+            m4aSongNumStop(590);
+            func_0801E4E4(work, 82);
+            break;
+        case 79:
+            m4aSongNumStop(666);
+            func_0801E4E4(work, 82);
+            break;
+        default:
+            func_0801E4E4(work, 82);
+            break;
+        }
+
+        func_08012614(&p->unk_40, 0);
+        func_0801DC5C(work);
+        p->unk_34 &= ~0x0000200400800000LL;
+        gBtlWork->unk_068 |= 0x400000;
+        p->unk_E4->unk_068 |= 0x40000000;
+    }
+
+    if (CanLevelUp() != 0) {
+        if (LevelUp() != 0) {
+            func_080A1B4C(p, &work->unk_024);
+        }
+    }
+
+    if (work->unk_15A & 0x400) {
+        work->unk_15A &= ~0x400;
+        p->unk_34 &= 0xFC403FFFE38F7FFFLL;
+    }
+
+    switch (p->unk_E4->unk_0F4) {
+    case 26:
+        work->unk_15A |= 0x400;
+        p->unk_34 |= 0x0010400000000000LL;
+        break;
+    case 8:
+        work->unk_15A |= 0x400;
+        p->unk_34 |= 0x0004800000000000LL;
+        break;
+    case 18:
+        work->unk_15A |= 0x400;
+        p->unk_34 |= 0x0000800004000000LL;
+        break;
+    case 50:
+        work->unk_15A |= 0x400;
+        p->unk_34 |= 0x0080000010000000LL;
+        break;
+    case 27:
+        work->unk_15A |= 0x400;
+        p->unk_34 |= 0x0000400008000000LL;
+        break;
+    case 47:
+        work->unk_15A |= 0x400;
+        p->unk_34 |= 0x011E000000000000LL;
+        break;
+    case 49:
+        work->unk_15A |= 0x400;
+        p->unk_34 |= 0x00A0000008000000LL;
+        break;
+    case 15:
+    case 28:
+        work->unk_15A |= 0x400;
+        p->unk_34 |= 0x001C000000000000LL;
+        break;
+    }
+
+    p->unk_34 &= ~0x8000;
+
+    switch (p->unk_E4->unk_0F4) {
+    case 23:
+        hp = p->hp;
+
+        if ((s16)hp > 0) {
+            max = p->maxHp;
+
+            if ((s16)hp < (s16)max && work->unk_1A8 % 120 == 0) {
+                n = ((s16)p->maxHp - (s16)p->hp) << 13 >> 16;
+
+                if (n <= 0) {
+                    n = 1;
+                }
+
+                if (*(s32*)((u8*)p + 0xE8) != 2) {
+                    p->hp = n + hp;
+                }
+
+                if ((s16)p->hp > (s16)max) {
+                    p->hp = max;
+                }
+
+                p->unk_E4->unk_0F8--;
+            }
+        }
+        break;
+    case 24:
+        if (work->unk_1A8 % 20 == 0) {
+            if (gBtlWork->unk_068 & 0x4000) {
+                if (work->unk_172 != 0) {
+                    e = gUnk_02039B9C->unk_07C;
+                } else {
+                    e = gBtlWork->unk_07C;
+                }
+
+                hp = e->unk_02C;
+
+                if ((s16)hp > 1 && e->unk_000 != 2) {
+                    e->unk_02C = hp - 1;
+                }
+            } else {
+                e = ListPoolFirst(&gBtlWork->unk_080);
+
+                while (e != 0) {
+                    hp = e->unk_02C;
+
+                    if ((s16)hp > 1 && e->unk_000 != 2) {
+                        e->unk_02C = hp - 1;
+                    }
+
+                    e = ListPoolNext(&e->unk_0B8);
+                }
+            }
+        }
+        break;
+    }
+
+    if (gBtlWork->unk_068 & 0x4000) {
+        if (work->unk_173 != 0) {
+            held = SioKeyGetHeldA();
+            pressed = SioKeyGetPressedA();
+        } else {
+            held = SioKeyGetHeldB();
+            pressed = SioKeyGetPressedB();
+        }
+    } else {
+        held = GetKeysHeld();
+        pressed = GetKeysPressed();
+    }
+
+    f = gBtlWork->unk_068;
+
+    if (f & 0x800000000LL) {
+        if (f & 0x1000000000LL) {
+            held &= ~1;
+            held &= ~2;
+            held &= ~0x40;
+            held &= ~0x80;
+            held &= ~0x20;
+            held &= ~0x10;
+            pressed &= ~1;
+            pressed &= ~2;
+            pressed &= ~0x40;
+            pressed &= ~0x80;
+            pressed &= ~0x20;
+            pressed &= ~0x10;
+        }
+
+        if (f & 0x100000000000LL) {
+            pressed &= ~2;
+        }
+
+        if (f & 0x200000000000LL) {
+            pressed &= ~0x20;
+            pressed &= ~0x10;
+        }
+
+        if (f & 0x2000000000LL) {
+            pressed &= ~1;
+            held &= ~1;
+        }
+    }
+
+    if (*(s32*)((u8*)p + 0xE8) == 3) {
+        held = func_0801E794(held, 32, 16);
+        held = func_0801E794(held, 64, 128);
+        pressed = func_0801E794(pressed, 32, 16);
+        pressed = func_0801E794(pressed, 64, 128);
+    }
+
+    if (work->unk_038 != 15 && (p->unk_E4->unk_068 & 0x10)) {
+        p->unk_34 |= 0x800000;
+        work->unk_038 = 15;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        p->unk_34 |= 0x100;
+    } else {
+        p->unk_E4->unk_068 &= ~0x0010000000000000LL;
+    }
+
+    switch (func_0801ADAC(p)) {
+    case 7:
+        work->unk_15C = 0;
+        work->unk_038 = 87;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        break;
+    case 1:
+        work->unk_15C = 0;
+        work->unk_038 = 13;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        break;
+    case 3:
+    case 8:
+        work->unk_15C = 0;
+
+        if (p->unk_E4->unk_0F4 == 27) {
+            work->unk_038 = 84;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        }
+
+        work->unk_038 = 14;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        break;
+    case 2:
+        p->unk_34 &= ~0x2000;
+        work->unk_038 = 1;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        p->unk_34 &= ~1;
+        break;
+    case 9:
+        switch (work->unk_038) {
+        case 67:
+            m4aSongNumStop(590);
+            break;
+        case 79:
+            m4aSongNumStop(666);
+            break;
+        }
+
+        if (!(gBtlWork->unk_068 & 0x40)) {
+            gBtlWork->unk_068 |= 0x400000;
+        }
+
+        func_08019050(12, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
+        func_08012614(&p->unk_40, 0);
+        func_0801DC5C(work);
+        p->unk_34 &= 0xFFFFDFFBFF7FFFFFLL;
+        p->unk_E4->unk_068 |= 0x40000000LL;
+        work->unk_15C = 0;
+        work->unk_19C = 0x100;
+        work->unk_1A0 = 0x100;
+        work->unk_038 = 38;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        break;
+    case 4:
+        switch (work->unk_038) {
+        case 23:
+        case 24:
+        case 25:
+        case 26:
+            p->unk_04 = *(s32*)&p->unk_14[0];
+            p->unk_08 = *(s32*)&p->unk_14[4];
+            p->unk_0C = *(s32*)&p->unk_14[8];
+            p->unk_E4->unk_068 &= ~0x0002000000000000LL;
+            p->unk_34 &= ~0x0000200000000000LL;
+            func_08019190(p, 9);
+            break;
+        case 67:
+            m4aSongNumStop(590);
+            break;
+        case 79:
+            m4aSongNumStop(666);
+            break;
+        }
+
+        work->unk_19C = work->unk_1A0 = 0x100;
+        func_08012614(&p->unk_40, 0);
+        func_0801DC5C(work);
+        p->unk_34 &= 0xFFFFDFFBFF7FFFFFLL;
+        p->unk_E4->unk_068 |= 0x40000000LL;
+        work->unk_15C = 0;
+        work->unk_038 = 29;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        break;
+    case 11:
+        func_08006120(2, 20);
+        gBtlWork->unk_072 = 15;
+
+        if (*(s32*)((u8*)p + 0xE8) != 1) {
+            *(s32*)((u8*)p + 0xE8) = 1;
+            *(u16*)((u8*)p + 0xEC) = 360;
+        }
+
+        work->unk_15C = 0;
+        work->unk_038 = 34;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        break;
+    case 6:
+        func_0801E678(work);
+        work->unk_15C = 0;
+        work->unk_038 = 34;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        break;
+    case 10:
+        if (work->unk_038 != 43) {
+            work->unk_15A |= 0x80;
+            work->unk_15C = 0;
+            *(s32*)((u8*)p + 0x108) = *(s32*)((u8*)p + 0x10C) = 0;
+            work->unk_038 = 43;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        }
+        break;
+    }
+
+    if (p->unk_E4->unk_068 & 0x2000) {
+        work->unk_038 = 35;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+    } else if (p->unk_34 & 0x0000100000000000LL) {
+        p->unk_34 &= ~0x1000000000000000LL;
+        work->unk_038 = 83;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+    }
+
+    switch (work->unk_038) {
+    case 15:
+        func_0801DE1C(work, 0, 1);
+        work->unk_15C = 0;
+
+        if (p->unk_34 & 4) {
+            work->unk_160 = 192;
+            p->unk_04 -= 614;
+        } else {
+            work->unk_160 = 64;
+            p->unk_04 += 614;
+        }
+        break;
+    case 27:
+        st = work->unk_154;
+
+        if (st == 0) {
+            func_08012614(&p->unk_40, 0);
+            p->unk_34 &= 0xFFFFDFFFFF7FFFFFLL;
+            func_0801DE1C(work, 5, 0);
+        }
+
+        uv = work->unk_154;
+
+        if ((s16)uv > 6) {
+            p->unk_E4->unk_068 &= ~0x0002000000000000LL;
+            func_0801E4E4(work, 1);
+        } else {
+            work->unk_154 = uv + 1;
+        }
+        break;
+    case 38:
+        func_0801DD08(work);
+        st = work->unk_154;
+
+        if (st == 0) {
+            func_08006290(3, 4, 10);
+            AnimReset(&work->anim);
+            func_0801DDE4(work, 38, 0);
+            p->unk_34 |= 0x2000;
+            work->unk_15C = 0;
+            uv = p->hp;
+
+            if ((s16)uv > 1) {
+                p->hp = uv - 1;
+            }
+
+            switch (GetRandom() % 3) {
+            case 0:
+                m4aSongNumStart(159);
+                break;
+            case 1:
+                m4aSongNumStart(161);
+                break;
+            case 2:
+            default:
+                m4aSongNumStart(162);
+                break;
+            }
+        }
+
+        uv = work->unk_154;
+
+        if ((s16)uv > 24) {
+            p->unk_34 &= ~0x2000;
+            work->unk_038 = 1;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154 = uv + 1;
+        }
+        break;
+    case 85:
+        func_0801DDE4(work, 1, 0);
+        uv = work->unk_154;
+
+        if ((s16)uv > 60) {
+            gBtlWork->unk_068 |= 0x0002000000000000LL;
+            work->unk_038 = 1;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154 = uv + 1;
+        }
+        break;
+    case 88:
+        uv = work->unk_154;
+
+        if ((s16)uv > 44) {
+            if (p->hp > 0) {
+                work->unk_038 = 89;
+            } else {
+                work->unk_038 = 14;
+            }
+
+            work->unk_154 = 0;
+        } else {
+            work->unk_154 = uv + 1;
+        }
+        break;
+    case 89:
+        if ((s16)work->unk_154 == 0) {
+            func_08012614(&p->unk_40, 0);
+            work->unk_156 = 10;
+        }
+
+        uv = work->unk_156;
+        work->unk_156 = uv - 1;
+        func_0800592C((s32*)&work->unk_1A0, 256, uv);
+
+        if ((s16)work->unk_156 > 0) {
+            work->unk_154++;
+        } else {
+            p->unk_34 &= ~0x100;
+            func_0801AF08(p);
+            work->unk_038 = 1;
+            work->unk_154 = 0;
+        }
+        break;
+    case 50:
+        func_0801DD08(work);
+        st = work->unk_154;
+
+        if (st == 0) {
+            if (p->unk_0C < p->unk_10) {
+                switch (work->unk_161 % 3) {
+                case 0:
+                    func_0801DDE4(work, 23, 0);
+                    break;
+                case 1:
+                    func_0801DDE4(work, 28, 0);
+                    break;
+                case 2:
+                    func_0801DDE4(work, 33, 0);
+                    break;
+                }
+            } else {
+                switch (work->unk_161 % 3) {
+                case 0:
+                    func_0801DDE4(work, 3, 0);
+                    break;
+                case 1:
+                    func_0801DDE4(work, 8, 0);
+                    break;
+                case 2:
+                    func_0801DDE4(work, 13, 0);
+                    break;
+                }
+            }
+
+            e = p->unk_E4->unk_078;
+
+            if (e != 0) {
+                if (p->unk_34 & 4) {
+                    if (p->unk_04 < e->unk_004) {
+                        p->unk_34 &= ~4;
+                    }
+                } else {
+                    if (p->unk_04 > e->unk_004) {
+                        p->unk_34 |= 4;
+                    }
+                }
+            }
+        } else if (st == 5) {
+            m4aSongNumStart(GetRandom() % 4 + 150);
+        }
+
+        uv = work->unk_154;
+
+        if (uv >= 9 && uv <= 11) {
+            e = p->unk_E4->unk_078;
+
+            if (uv == 15) {
+                work->unk_150 = -1152;
+            }
+
+            if (e != 0) {
+                p->unk_04 += (e->unk_004 - p->unk_04) >> 3;
+                p->unk_08 += (e->unk_008 - p->unk_08) >> 3;
+            } else if (p->unk_34 & 4) {
+                t = p->unk_04 + 8192;
+                p->unk_04 += (*(s32*)&p->unk_14[0] - t) >> 3;
+            } else {
+                t = p->unk_04 - 8192;
+                p->unk_04 += (*(s32*)&p->unk_14[0] - t) >> 3;
+            }
+        }
+
+        if ((s16)work->unk_154 == 12) {
+            func_08019A30();
+
+            if (work->unk_161 == 1) {
+                if (p->unk_34 & 4) {
+                    if (func_08011F78(89, p->unk_04 - 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
+                        m4aSongNumStart(501);
+                    }
+                } else {
+                    if (func_08011F78(89, p->unk_04 + 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
+                        m4aSongNumStart(501);
+                    }
+                }
+            } else {
+                if (p->unk_34 & 4) {
+                    if (func_08011F78(88, p->unk_04 - 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
+                        m4aSongNumStart(500);
+                    }
+                } else {
+                    if (func_08011F78(88, p->unk_04 + 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
+                        m4aSongNumStart(500);
+                    }
+                }
+            }
+        }
+
+        uv = work->unk_154;
+
+        if ((s16)uv > 14) {
+            work->unk_161--;
+            *(s32*)&p->unk_14[0] = p->unk_04;
+            *(s32*)&p->unk_14[4] = p->unk_08;
+            *(s32*)&p->unk_14[8] = p->unk_0C;
+
+            if (work->unk_161 == 0) {
+                work->unk_038 = work->unk_03C;
+                work->unk_156 = 0;
+                work->unk_154 = 0;
+            } else {
+                work->unk_038 = 50;
+                work->unk_156 = 0;
+                work->unk_154 = 0;
+                work->unk_156 = 1;
+            }
+        } else {
+            work->unk_154 = uv + 1;
+        }
+        break;
+    case 48:
+        func_0801DDC4(work);
+        work->unk_150 = 0;
+
+        if ((s16)work->unk_154 == 0) {
+            func_08006238(0, gBtlWork->unk_0B3, 8);
+            func_0801DDE4(work, 66, 0);
+
+            if (p->unk_34 & 4) {
+                func_08016038(p->unk_04 - 10240, p->unk_08, p->unk_0C - 6144);
+            } else {
+                func_08016038(p->unk_04 + 10240, p->unk_08, p->unk_0C - 6144);
+            }
+
+            work->unk_156 = 120;
+        }
+
+        if (p->unk_34 & 4) {
+            func_08014780(p->unk_04 - 10240, p->unk_08, p->unk_0C - 6144);
+        } else {
+            func_08014780(p->unk_04 + 10240, p->unk_08, p->unk_0C - 6144);
+        }
+
+        if (held & 0x20) {
+            p->unk_04 -= 640;
+        } else if (held & 0x10) {
+            p->unk_04 += 640;
+        }
+
+        uv = work->unk_158;
+        work->unk_158 = uv + 1;
+        p->unk_0C += (*(s32*)&p->unk_14[8] + (gSineTable[(uv * 2) & 0xFF] << 3) - p->unk_0C) >> 3;
+
+        if (held & 0x40) {
+            p->unk_08 -= 320;
+        } else if (held & 0x80) {
+            p->unk_08 += 320;
+        }
+
+        uv = work->unk_154;
+        st = work->unk_154;
+
+        if ((st > 9 && (pressed & 1)) || st > 120) {
+            if (p->unk_34 & 4) {
+                func_080161F8(p->unk_04 - 10240, p->unk_08, p->unk_0C - 6144, 1);
+            } else {
+                func_080161F8(p->unk_04 + 10240, p->unk_08, p->unk_0C - 6144, 0);
+            }
+
+            work->unk_038 = 49;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(s32*)&p->unk_14[0] = p->unk_04;
+            *(s32*)&p->unk_14[4] = p->unk_08;
+        } else {
+            work->unk_154 = uv + 1;
+        }
+        break;
+    case 83:
+        st = work->unk_154;
+
+        if (st == 0) {
+            p->unk_34 |= 0x100;
+            p->unk_34 |= 0x200;
+            work->unk_15C = 0;
+            work->unk_15A |= 4;
+        }
+
+        if ((s16)work->unk_154 > 285) {
+            gBtlWork->unk_068 |= 0x100000;
+        } else {
+            if (pressed & 0xF0) {
+                *(s32*)((u8*)p + 0x108) = GetRandom() % 257 - 128;
+                *(s32*)((u8*)p + 0x10C) = GetRandom() % 257 - 128;
+                work->unk_154 += 2;
+            }
+
+            if (p->unk_0C >= p->unk_10 && (pressed & 2)) {
+                work->unk_150 = -256;
+                work->unk_154 += 2;
+            }
+
+            if ((work->unk_154 & 7) == 0) {
+                uv = p->hp;
+
+                if ((s16)uv > 1) {
+                    p->hp = uv - 1;
+                }
+            }
+        }
+
+        uv = work->unk_154;
+
+        if ((s16)uv > 300) {
+            p->unk_34 &= ~1;
+            p->unk_34 &= ~2;
+            work->unk_15A &= ~4;
+            work->unk_038 = 1;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154 = uv + 1;
+        }
+        break;
+    case 42:
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 63, 0);
+            func_08015F3C(0x10000, (gBtlWork->unk_0DE + gBtlWork->unk_0E0) << 7, -15872);
+        }
+
+        func_0801DDC4(work);
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            func_0801DDE4(work, 1, 1);
+        }
+
+        if (func_080128EC() == 0) {
+            func_0801AF08(p);
+            work->unk_038 = 1;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 32:
+        func_0801DD08(work);
+        func_0801DDE4(work, 57, 0);
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            func_080061E8(0, 8);
+            func_0801E4E4(work, 1);
+        }
+        break;
+    case 43:
+        func_0801DDC4(work);
+        work->unk_150 = 0;
+
+        if (*(s32*)((u8*)p + 0xE8) != 2) {
+            work->unk_038 = 1;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            func_0801AF08(p);
+            work->unk_15A &= ~0x80;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 34:
+        func_0801DDC4(work);
+        st = work->unk_154;
+
+        if (st == 0) {
+            AnimReset(&work->anim);
+            func_0801DDE4(work, 40, 0);
+            work->unk_154++;
+            p->unk_34 |= 0x200;
+            work->unk_15C = 0;
+        }
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            p->unk_34 &= ~0x80;
+        }
+
+        if (pressed & 0xF3) {
+            *(u16*)((u8*)p + 0xEC) -= 1;
+        }
+
+        if (*(s32*)((u8*)p + 0xE8) != 1) {
+            func_0801AF08(p);
+            work->unk_038 = 1;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        }
+        break;
+    case 36:
+        func_0801DD08(work);
+        st = work->unk_154;
+
+        if (st == 0) {
+            m4aSongNumStart(611);
+            *(s32*)((u8*)p + 0x108) = 0;
+            *(s32*)((u8*)p + 0x10C) = 0;
+            p->unk_34 |= 0x200;
+            func_0801DDE4(work, 58, 0);
+            work->unk_15C = 256;
+        } else {
+            p->unk_04 += (gSineTable[work->unk_160] * work->unk_15C) >> 8;
+        }
+
+        p->unk_08 += (-gSineTable[work->unk_160 + 64] * (work->unk_15C >> 1)) >> 8;
+        work->unk_15C -= 10;
+
+        if (work->unk_15C < 0) {
+            work->unk_15C = 0;
+        }
+
+        uv = work->unk_154;
+
+        if ((s16)uv > 40) {
+            work->unk_038 = 37;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154 = uv + 1;
+        }
+        break;
+    case 37:
+        func_0801DD08(work);
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 59, 0);
+            work->unk_15C = 256;
+        }
+
+        if (p->unk_34 & 4) {
+            p->unk_04 -= work->unk_15C;
+        } else {
+            p->unk_04 += work->unk_15C;
+        }
+
+        work->unk_15C -= 12;
+
+        if (work->unk_15C < 0) {
+            work->unk_15C = 0;
+        }
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            p->unk_34 &= ~0x200;
+            work->unk_15C = 0;
+            work->unk_038 = 1;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
+    }
+
+    if ((u16)(pressed & 0x20) != 0) {
+        work->unk_170[0] = 13;
+        work->unk_170[1] = 0;
+    } else if (pressed & 0x10) {
+        work->unk_170[1] = 13;
+        work->unk_170[0] = 0;
+    }
+
+    if (work->unk_170[1] != 0) {
+        work->unk_170[1]--;
+    }
+
+    if (work->unk_170[0] != 0) {
+        work->unk_170[0]--;
+    }
+
+    if (*(s32*)((u8*)p + 0xE8) == 5) {
+        work->unk_170[0] = 0;
+        work->unk_170[1] = 0;
+        work->unk_15C = 0;
+        *(s32*)((u8*)p + 0x108) = *(s32*)((u8*)p + 0x10C) = 0;
+
+        if (work->unk_150 < 0) {
+            work->unk_150 = 768;
+        }
+    } else {
+        p->unk_04 += (gSineTable[work->unk_160] * work->unk_15C) >> 8;
+        p->unk_08 += (-gSineTable[work->unk_160 + 64] * (work->unk_15C >> 1)) >> 8;
+    }
+}
+#else
 INCLUDE_ASM("btl/task_btl_sora_1.s");
+#endif
+
 #ifndef VERSION_EU
 void task_btl_sora_2(BtlSoraWork* work) {
     UnkStruct_0801AF08* p;
