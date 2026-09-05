@@ -1435,6 +1435,7 @@ gUnk_09EF6A88 = 0x09f820f8
 gUnk_0203C7B8 = 0x0203cda8
 gUnk_0984D32C = 0x09829d00
 gModeMapFix = 0x09f82130
+gModeWorldwarp = 0x09f84ed8
 gModeMapFld = 0x09f82110
 gTaskDescMapRnd = 0x09f82170
 gUnk_0984D314 = 0x09829ce8
