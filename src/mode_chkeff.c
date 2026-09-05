@@ -56,8 +56,8 @@ void mode_chkeff_0(void) {
 INCLUDE_ASM("mode_chkeff/mode_chkeff_0.s");
 #endif
 
-#ifdef NON_MATCHING
 void mode_chkeff_1(void) {
+    ChkEffWork** wp;
     void* obj;
     s16 prev;
     u16 a;
@@ -134,6 +134,7 @@ void mode_chkeff_1(void) {
             func_0809D2B0(0, 0, 0, gUnk_081309E8);
         }
 
+        wp = &gChkEffWork;
         func_0809D2B0(0, 14, 0, gUnk_081309F0);
         func_0809D2B0(0, 15, 0, gUnk_081309F0);
         func_0809D2B0(0, 16, 0, gUnk_081309F0);
@@ -142,23 +143,23 @@ void mode_chkeff_1(void) {
         func_0809D2B0(0, 19, 0, gUnk_081309F0);
         func_08006B80(&a, &b);
         func_0809D2B0(0, 14, 0, gUnk_08130A18);
-        func_0809D458(6, 14, 0, gChkEffWork->alphaA);
+        func_0809D458(6, 14, 0, (*wp)->alphaA);
         func_0809D2B0(0, 15, 0, gUnk_08130A20);
-        func_0809D458(6, 15, 0, gChkEffWork->alphaB);
+        func_0809D458(6, 15, 0, (*wp)->alphaB);
         func_0809D2B0(0, 16, 0, gUnk_08130A28);
-        func_0809D458(6, 16, 0, gChkEffWork->scale);
+        func_0809D458(6, 16, 0, (*wp)->scale);
         func_0809D2B0(0, 17, 0, gUnk_08130A30);
-        func_0809D458(6, 17, 0, gChkEffWork->unk_14);
+        func_0809D458(6, 17, 0, (*wp)->unk_14);
         func_0809D2B0(0, 18, 0, gUnk_08130A34);
         func_0809D458(6, 18, 0, a);
         func_0809D2B0(0, 19, 0, gUnk_08130A38);
         func_0809D458(6, 19, 0, b);
-        TaskPoolUpdate(&gChkEffWork->pool);
-        TaskPoolDraw(&gChkEffWork->pool);
-        func_0800675C(gChkEffWork->unk_1C, gChkEffWork->scale, gChkEffWork->scale);
-        SetBlendAlpha(gChkEffWork->alphaA, gChkEffWork->alphaB);
+        TaskPoolUpdate(&(*wp)->pool);
+        TaskPoolDraw(&(*wp)->pool);
+        func_0800675C((*wp)->unk_1C, (*wp)->scale, (*wp)->scale);
+        SetBlendAlpha((*wp)->alphaA, (*wp)->alphaB);
 
-        if (gChkEffWork->paused == 0 || (GetKeysRepeat() & 1)) {
+        if ((*wp)->paused == 0 || (GetKeysRepeat() & 1)) {
             func_08006954();
         }
 
@@ -169,9 +170,6 @@ void mode_chkeff_1(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("mode_chkeff/mode_chkeff_1.s");
-#endif
 
 void mode_chkeff_2(void) {
     TaskPoolDestroy(&gChkEffWork->pool);
