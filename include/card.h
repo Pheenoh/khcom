@@ -105,6 +105,7 @@ extern vu16 gSystemFlags;
 extern Mode gModeSioChgCard;
 extern Mode gModeBattle;
 extern u8 gTaskDescPrizeCardInitBoss[];
+extern u8 gTaskDescPrizeBoss[];
 extern u8 gTaskDescDispCardname[];
 extern u8 gTaskDescVersion[];
 extern u8 gUnk_09EE7650[];
@@ -119,6 +120,7 @@ extern u8 gTaskDescHCEffectName[];
 extern u8 gTaskDescLevelUp[];
 extern u8 gUnk_09402F78[];
 extern u8 gUnk_09614118[];
+extern u8 gUnk_096142F8[];
 extern u8 gUnk_05000160[];
 extern u8 gUnk_0951B2B8[];
 extern u8 gUnk_09406F78[];
@@ -192,7 +194,9 @@ typedef struct UnkStruct_0809A02C {
     s16 unk_1B8;
     s16 unk_1BA;
     s16 unk_1BC;
-    u8 unk_1BE[0x09];
+    u8 unk_1BE[0x04];
+    s16 unk_1C2;
+    u8 unk_1C4[0x03];
     u8 unk_1C7;
     u8 unk_1C8;
     u8 unk_1C9;
@@ -492,7 +496,7 @@ typedef struct UnkStruct_08080268 {
     u8 unk_00[0x14];
     void* unk_14;
     void* unk_18;
-    u8 unk_1C[0x0C];
+    UnkStruct_02034AAC* unk_1C[3];
     UnkStruct_02034AAC* unk_28[3];
     UnkStruct_02034AAC* unk_34[4];
     UnkStruct_02034AAC* unk_44[4];
@@ -680,6 +684,9 @@ typedef struct UnkStruct_08095A5C {
     void* unk_58;
     void* unk_5C;
     void* unk_60;
+    s8 unk_64;
+    u8 unk_65;
+    u8 unk_66[0x02];
 } UnkStruct_08095A5C;
 
 typedef struct MapcardArgs {
@@ -836,27 +843,45 @@ typedef struct PrizeCardWork {
 } PrizeCardWork;
 
 typedef struct ReloadGageWork {
-    u8 unk_00[0x20];
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    void* unk_10;
+    void* unk_14;
+    u8 unk_18[0x04];
+    void* unk_1C;
     UnkStruct_08095A5C* unk_20;
-    u8 unk_24[0x1C];
+    TaskPool unk_24;
+    void* unk_38;
+    void* unk_3C;
     u32 unk_40;
     u8 unk_44[0x02];
     u8 unk_46;
     u8 unk_47[0x05];
     s32 unk_4C;
     s32 unk_50;
-    u8 unk_54[0x24];
+    s32 unk_54;
+    s32 unk_58;
+    u8 unk_5C[0x08];
+    u8 unk_64[0x14];
     u32 unk_78;
     s32 unk_7C;
     s32 unk_80;
     s32 unk_84;
-    u8 unk_88[0x14];
+    s32 unk_88;
+    s32 unk_8C;
+    s32 unk_90;
+    s32 unk_94;
+    s32 unk_98;
     s16 unk_9C;
-    u8 unk_9E[0x02];
+    u8 unk_9E;
+    u8 unk_9F;
     u8 unk_A0;
     u8 unk_A1;
     u8 unk_A2;
-    u8 unk_A3[0x05];
+    u8 unk_A3;
+    u8 unk_A4[0x04];
 } ReloadGageWork;
 
 typedef struct UnkStruct_08096C38_Item {
@@ -918,6 +943,7 @@ extern void** gUnk_09EE75B8[];
 extern void* gUnk_09EE75C8[];
 extern void* gUnk_09EE7588[];
 extern void* gUnk_09EE7598[];
+extern void* gUnk_09EE75A8[];
 extern s32 gUnk_09033FF4[][2];
 extern s32 gUnk_09033FA8[];
 extern const s32 gUnk_09033FB8[];
@@ -961,6 +987,11 @@ extern s16 gUnk_09035950[];
 extern s16 gUnk_09035956[];
 extern s16 gUnk_090356EC[];
 extern s16 gUnk_090356F2[];
+typedef struct UnkStruct_09035730 {
+    s32 unk_00[2];
+} UnkStruct_09035730;
+
+extern UnkStruct_09035730 gUnk_09035730;
 extern u8 gUnk_093F7172[];
 extern u8 gUnk_09508098[];
 extern u8 gUnk_09618C58[];
@@ -970,6 +1001,9 @@ extern u8 gUnk_08F68A84[];
 extern u8 gUnk_08EF4384[];
 extern u8 gUnk_09EE7804[];
 extern u8 gUnk_09EE7560[];
+extern void* gUnk_09EE7578[];
+extern u8 gTaskDescReloadChildren[];
+extern u8 gUnk_0905F03C[];
 extern u8 gUnk_09EE4BB0[];
 extern u8 gTaskDescSELMAPEVKEY[];
 extern void* gUnk_09EE7698[];
