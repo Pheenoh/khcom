@@ -85,7 +85,80 @@ u8 task_btl_area_1(BtlAreaWork* work) {
     return 1;
 }
 
-INCLUDE_ASM("btl/task_btl_area_2.s");
+void task_btl_area_2(BtlAreaWork* work) {
+    BtlWork* e;
+    s16 x;
+    s16 y;
+
+    if (work->unk_008 == 0) {
+        return;
+    }
+
+    WorldToScreen(&x, &y, gBtlWork->unk_0B8 - (gBtlWork->unk_0C4 << 8),
+                  gBtlWork->unk_0BC - (gBtlWork->unk_0C6 << 8), gBtlWork->unk_0C0);
+    DrawSprite(x, y, gUnk_08B1E974, work->tiles, work->palette, 0, 0, 0x101);
+    WorldToScreen(&x, &y, gBtlWork->unk_0B8 + (gBtlWork->unk_0C4 << 8),
+                  gBtlWork->unk_0BC - (gBtlWork->unk_0C6 << 8), gBtlWork->unk_0C0);
+    DrawSprite(x, y, gUnk_08B1E97E, work->tiles, work->palette, 0, 0, 0x101);
+    WorldToScreen(&x, &y, gBtlWork->unk_0B8 - (gBtlWork->unk_0C4 << 8),
+                  gBtlWork->unk_0BC + (gBtlWork->unk_0C6 << 8), gBtlWork->unk_0C0);
+    DrawSprite(x, y, gUnk_08B1E992, work->tiles, work->palette, 0, 0, 0x101);
+    WorldToScreen(&x, &y, gBtlWork->unk_0B8 + (gBtlWork->unk_0C4 << 8),
+                  gBtlWork->unk_0BC + (gBtlWork->unk_0C6 << 8), gBtlWork->unk_0C0);
+    DrawSprite(x, y, gUnk_08B1E988, work->tiles, work->palette, 0, 0, 0x101);
+    WorldToScreen(&x, &y, gBtlWork->unk_0B8, gBtlWork->unk_0BC, gBtlWork->unk_0C0);
+    DrawSprite(x, y, gUnk_08B1E9A6, work->tiles, work->palette, 0, 0, 0x101);
+    WorldToScreen(&x, &y, gBtlWork->unk_0B8, gBtlWork->unk_0BC,
+                  gBtlWork->unk_0C0 - (gBtlWork->unk_0C8 << 8));
+    DrawSprite(x, y, gUnk_08B1E99C, work->tiles, work->palette, 0, 0, 0x101);
+    WorldToScreen(&x, &y, gBtlWork->unk_0B8, gBtlWork->unk_0BC,
+                  gBtlWork->unk_0C0 + (gBtlWork->unk_0C8 << 8));
+    DrawSprite(x, y, gUnk_08B1E99C, work->tiles, work->palette, 0, 2, 0x101);
+
+    if ((u8)gBtlWork->unk_0A4 != 0) {
+        e = ListPoolFirst(&gBtlWork->unk_080);
+
+        while (e != 0) {
+            WorldToScreen(&x, &y, e->unk_004 - (e->unk_09E << 8),
+                          e->unk_008 - (e->unk_0A0 << 8), e->unk_00C);
+            DrawSprite(x, y, gUnk_08B1E974, work->tiles, work->palette, 0, 0, 0x101);
+            WorldToScreen(&x, &y, e->unk_004 + (e->unk_09E << 8),
+                          e->unk_008 - (e->unk_0A0 << 8), e->unk_00C);
+            DrawSprite(x, y, gUnk_08B1E97E, work->tiles, work->palette, 0, 0, 0x101);
+            WorldToScreen(&x, &y, e->unk_004 - (e->unk_09E << 8),
+                          e->unk_008 + (e->unk_0A0 << 8), e->unk_00C);
+            DrawSprite(x, y, gUnk_08B1E992, work->tiles, work->palette, 0, 0, 0x101);
+            WorldToScreen(&x, &y, e->unk_004 + (e->unk_09E << 8),
+                          e->unk_008 + (e->unk_0A0 << 8), e->unk_00C);
+            DrawSprite(x, y, gUnk_08B1E988, work->tiles, work->palette, 0, 0, 0x101);
+            WorldToScreen(&x, &y, e->unk_004, e->unk_008, e->unk_00C);
+            DrawSprite(x, y, gUnk_08B1E9A6, work->tiles, work->palette, 0, 0, 0x101);
+            WorldToScreen(&x, &y, e->unk_004, e->unk_008,
+                          e->unk_00C - (e->unk_09C << 8));
+            DrawSprite(x, y, gUnk_08B1E99C, work->tiles, work->palette, 0, 0, 0x101);
+            e = ListPoolNext(&e->unk_0B8);
+        }
+    } else {
+        e = gBtlWork->unk_07C;
+        WorldToScreen(&x, &y, e->unk_004 - (e->unk_09E << 8),
+                      e->unk_008 - (e->unk_0A0 << 8), e->unk_00C);
+        DrawSprite(x, y, gUnk_08B1E974, work->tiles, work->palette, 0, 0, 0x101);
+        WorldToScreen(&x, &y, e->unk_004 + (e->unk_09E << 8),
+                      e->unk_008 - (e->unk_0A0 << 8), e->unk_00C);
+        DrawSprite(x, y, gUnk_08B1E97E, work->tiles, work->palette, 0, 0, 0x101);
+        WorldToScreen(&x, &y, e->unk_004 - (e->unk_09E << 8),
+                      e->unk_008 + (e->unk_0A0 << 8), e->unk_00C);
+        DrawSprite(x, y, gUnk_08B1E992, work->tiles, work->palette, 0, 0, 0x101);
+        WorldToScreen(&x, &y, e->unk_004 + (e->unk_09E << 8),
+                      e->unk_008 + (e->unk_0A0 << 8), e->unk_00C);
+        DrawSprite(x, y, gUnk_08B1E988, work->tiles, work->palette, 0, 0, 0x101);
+        WorldToScreen(&x, &y, e->unk_004, e->unk_008, e->unk_00C);
+        DrawSprite(x, y, gUnk_08B1E9A6, work->tiles, work->palette, 0, 0, 0x101);
+        WorldToScreen(&x, &y, e->unk_004, e->unk_008,
+                      e->unk_00C - (e->unk_09C << 8));
+        DrawSprite(x, y, gUnk_08B1E99C, work->tiles, work->palette, 0, 0, 0x101);
+    }
+}
 
 void task_btl_area_3(BtlAreaWork* work) {
     ReleaseObjTiles(work->tiles);
