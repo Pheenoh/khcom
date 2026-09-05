@@ -1,9 +1,0 @@
-.syntax unified
-	.align 2, 0
-	.global func_080EFA18
-	.thumb
-	.thumb_func
-	.type func_080EFA18, %function
-func_080EFA18: @ 080EFA18
-	.byte 0x00, 0xB5, 0xF6, 0xF7, 0x5B, 0xFD, 0x01, 0xBC, 0x00, 0x47, 0x00, 0x00
-.syntax divided

@@ -344,7 +344,9 @@ void func_080E042C(void) {
     }
 }
 
-INCLUDE_ASM("map/func_080E04E0.s");
+s32 func_080E04E0(void) {
+    return gUnk_0203C7AC->unk_14;
+}
 
 void func_080E04EC(void) {
     switch (gUnk_0203C590.unk_06) {
@@ -5130,7 +5132,11 @@ void func_080E8BB4(UnkStruct_080E8B1C* p) {
     p->unk_18 = 0;
 }
 
-INCLUDE_ASM("map/func_080E8BD8.s");
+u8 func_080E8BD8(UnkStruct_080E8B1C* p) {
+    p->unk_14 = 0;
+    p->unk_18 = 0;
+    return 0;
+}
 
 u8 func_080E8BE4(UnkStruct_080E8B1C* p) {
     UnkStruct_080E8B1C* w = p;
@@ -5155,7 +5161,10 @@ u8 func_080E8BE4(UnkStruct_080E8B1C* p) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080E8C30.s");
+u8 func_080E8C30(UnkStruct_080E8B1C* p) {
+    p->unk_18 = p->unk_14;
+    return 1;
+}
 
 u8 func_080E8C38(u8 a, u8 b) {
     UnkStruct_080DEDD8* p;
@@ -7393,7 +7402,9 @@ s32 func_080EC720(MapRndWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080EC744.s");
+void func_080EC744(TaskPool* pool) {
+    TaskPoolDraw(pool);
+}
 
 void func_080EC750(TaskPool* pool) {
     TaskPoolDestroy(pool);
@@ -7612,7 +7623,9 @@ s32 func_080ECC54(UnkStruct_080ECA88* p) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080ECC8C.s");
+u8 func_080ECC8C(UnkStruct_080ECA88* p) {
+    return 1;
+}
 
 void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB8C* p) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_04;
@@ -8919,9 +8932,11 @@ s32 func_080EF368(MapAnmWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080EF398.s");
+void func_080EF398(MapAnmWork* w) {
+}
 
-INCLUDE_ASM("map/func_080EF39C.s");
+void func_080EF39C(MapAnmWork* w) {
+}
 
 s32 func_080EF3A0(UnkStruct_080E590C* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
@@ -9216,9 +9231,13 @@ s32 func_080EF9A0(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080EFA18.s");
+void func_080EFA18(UnkStruct_080E590C* p) {
+    func_080E64D4(p);
+}
 
-INCLUDE_ASM("map/func_080EFA24.s");
+void func_080EFA24(UnkStruct_080E590C* p) {
+    func_080E657C(p);
+}
 
 void func_080EFA30(UnkStruct_080EFA30* p) {
     if (p->unk_08 < gUnk_02039BA0->unk_00 - 0x1800 || p->unk_08 > gUnk_02039BA0->unk_00 + 0x10800) {
@@ -9478,9 +9497,13 @@ s32 func_080EFF64(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080EFFE0.s");
+void func_080EFFE0(UnkStruct_080E590C* p) {
+    func_080E64D4(p);
+}
 
-INCLUDE_ASM("map/func_080EFFEC.s");
+void func_080EFFEC(UnkStruct_080E590C* p) {
+    func_080E657C(p);
+}
 
 void func_080EFFF8(UnkStruct_080E590C* p) {
     func_080E5D6C(p, 0, 1);
@@ -9524,9 +9547,13 @@ s32 func_080F0098(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080F00F0.s");
+void func_080F00F0(UnkStruct_080E590C* p) {
+    func_080E64D4(p);
+}
 
-INCLUDE_ASM("map/func_080F00FC.s");
+void func_080F00FC(UnkStruct_080E590C* p) {
+    func_080E657C(p);
+}
 
 void func_080F0108(UnkStruct_080F023C* p, u8 a) {
     s32* q = &p->unk_08;
@@ -9743,9 +9770,13 @@ s32 func_080F05A4(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080F05FC.s");
+void func_080F05FC(UnkStruct_080E590C* p) {
+    func_080E64D4(p);
+}
 
-INCLUDE_ASM("map/func_080F0608.s");
+void func_080F0608(UnkStruct_080E590C* p) {
+    func_080E657C(p);
+}
 
 void func_080F0614(UnkStruct_080EFA30* p) {
     if (p->unk_08 < gUnk_02039BA0->unk_00 - 0x1800 || p->unk_08 > gUnk_02039BA0->unk_00 + 0x10800) {
@@ -10006,9 +10037,13 @@ s32 func_080F0B54(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080F0BD0.s");
+void func_080F0BD0(UnkStruct_080E590C* p) {
+    func_080E64D4(p);
+}
 
-INCLUDE_ASM("map/func_080F0BDC.s");
+void func_080F0BDC(UnkStruct_080E590C* p) {
+    func_080E657C(p);
+}
 
 void func_080F0BE8(UnkStruct_080E590C* p) {
     UnkStruct_080E590C* q = p;
@@ -10120,9 +10155,13 @@ s32 func_080F0DD8(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080F0E54.s");
+void func_080F0E54(UnkStruct_080E590C* p) {
+    func_080E64D4(p);
+}
 
-INCLUDE_ASM("map/func_080F0E60.s");
+void func_080F0E60(UnkStruct_080E590C* p) {
+    func_080E657C(p);
+}
 
 void func_080F0E6C(UnkStruct_080E590C* p) {
     UnkStruct_080E590C* q = p;
@@ -10234,9 +10273,13 @@ s32 func_080F105C(UnkStruct_080E590C* p) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080F10D8.s");
+void func_080F10D8(UnkStruct_080E590C* p) {
+    func_080E64D4(p);
+}
 
-INCLUDE_ASM("map/func_080F10E4.s");
+void func_080F10E4(UnkStruct_080E590C* p) {
+    func_080E657C(p);
+}
 
 s32 func_080F10F0(u8* p) {
     return ((s8)gGameState.floor << 28) + (p[9] << 20) + (p[10] << 16) + (gUnk_0203C590.unk_06 << 8) + (gUnk_0203C590.unk_05 << 4) + gUnk_0203C590.unk_04;
@@ -10599,7 +10642,8 @@ s32 func_080F194C(void) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F1964.s");
+void func_080F1964(u8* work) {
+}
 
 void func_080F1968(u8* work) {
     if (*(void**)work != 0) {
@@ -10652,7 +10696,9 @@ u8 func_080F1A84(MapGmkTutorialWork* w) {
     return 1;
 }
 
-INCLUDE_ASM("map/func_080F1ACC.s");
+u8 func_080F1ACC(MapGmkTutorialWork* w) {
+    return 1;
+}
 
 void func_080F1AD0(MapGmkTutorialWork* w) {
     w->unk_000 = 0x19000;
@@ -12905,7 +12951,9 @@ s32 func_080F5868(MapPrzStockWork* w) {
     return 0;
 }
 
-INCLUDE_ASM("map/func_080F5890.s");
+void func_080F5890(MapPrzStockWork* w) {
+    TaskPoolDraw(&w->unk_08);
+}
 
 void func_080F589C(MapPrzStockWork* w) {
     TaskPoolDestroy(&w->unk_08);
@@ -12926,7 +12974,9 @@ void func_080F58C4(MapMsgWork* w, void* text) {
     w->unk_188 = 0;
 }
 
-INCLUDE_ASM("map/func_080F5968.s");
+s32 func_080F5968(MapMsgWork* w) {
+    return 1;
+}
 
 void func_080F596C(MapMsgWork* w) {
     func_080664D8(w->unk_186, 120, &w->unk_004, w->unk_000, 50, w->unk_184);
