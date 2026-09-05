@@ -296,7 +296,9 @@ typedef struct UnkStruct_080DEDD8 {
 
 typedef struct UnkStruct_080DEE18 {
     u16 unk_00;
-    u8 unk_02[0x09];
+    u8 unk_02[0x02];
+    s32 unk_04;
+    u8 unk_08[0x03];
     u8 unk_0B;
     u8 unk_0C;
 } UnkStruct_080DEE18;
@@ -531,7 +533,20 @@ typedef struct MapDbgWork {
     u8 unk_01[0x03];
     u8* unk_04;
     void (*unk_08)(struct MapDbgWork*);
-    u8 unk_0C[0x3C];
+    u8 unk_0C;
+    u8 unk_0D;
+    u8 unk_0E[0x02];
+    void* unk_10;
+    void* unk_14;
+    u16 unk_18[0x0A];
+    u8 unk_2C;
+    u8 unk_2D;
+    u16 unk_2E[0x0A];
+    u8 unk_42;
+    u8 unk_43;
+    u16 unk_44;
+    u8 unk_46;
+    u8 unk_47;
 } MapDbgWork;
 
 typedef struct MapGmkJumpWork {
@@ -560,7 +575,10 @@ typedef struct MapGmkJumpWork {
 } MapGmkJumpWork;
 
 typedef struct MapGmkTutorialWork {
-    u8 unk_000[0x40];
+    s32 unk_000;
+    s32 unk_004;
+    s32 unk_008;
+    u8 unk_00C[0x34];
     u8 unk_040[0x2E];
     u16 unk_06E;
     u8 unk_070[0x04];
@@ -590,13 +608,17 @@ typedef struct MapGmk01Work {
 } MapGmk01Work;
 
 typedef struct MapGmkSpiderWork {
-    u8 unk_000[0x9C];
+    s32 unk_000;
+    s32 unk_004;
+    s32 unk_008;
+    u8 unk_00C[0x90];
     AnimState unk_09C;
     void* unk_0B4;
     u8* unk_0B8;
     void* unk_0BC;
     u8 (*unk_0C0)(struct MapGmkSpiderWork*);
-    u8 unk_0C4[0x04];
+    u8 unk_0C4;
+    u8 unk_0C5[0x03];
 } MapGmkSpiderWork;
 
 typedef struct MapGmkGpWork {
@@ -880,10 +902,14 @@ typedef struct MapMsgWork {
 } MapMsgWork;
 
 typedef struct MapStairWork {
-    u8 unk_00[0x40];
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x34];
     u8* unk_40;
     void* unk_44;
-    u8 unk_48[0x04];
+    u8 unk_48;
+    u8 unk_49[0x03];
     void (*unk_4C)(struct MapStairWork*);
     TaskPool unk_50;
     u8 unk_60[0x04];
@@ -1004,6 +1030,12 @@ typedef struct UnkStruct_080EE580 {
 } UnkStruct_080EE580;
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
+extern u8 gUnk_09EDF834[];
+extern u8 gUnk_09EDF85C[];
+extern u8 gUnk_08957290[];
+extern u8 gUnk_08B1E9A6[];
+extern u8 gUnk_09EF6C38[];
+extern u8 gUnk_0984C868[];
 extern GameState gGameState;
 extern UnkStruct_02039D6C gUnk_02039D6C[];
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
@@ -1161,6 +1193,9 @@ void func_080F65EC(MapNamineWork* w);
 void func_080F6F1C(MapTutorialWork* w);
 void func_080F6FC4(MapTutorialWork* w);
 void func_080F7024(MapTutorialWork* w);
+void func_080F7160(MapTutorialWork* w);
+void func_080F46FC(MapGmk06Work* w);
+s32 func_080EE824(MapSaveWork* w);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s32 func_080ED7CC(MapMenuWork* w);
 s32 func_080ED91C(MapMenuWork* w);
@@ -1215,6 +1250,8 @@ s32 func_08003C9C(s32 a);
 void func_080038E4(void* a, void* b, void* c);
 void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);
 void func_080062F4(u16 a, s32 b);
+void* func_08093BF8(void);
+void func_080DF640(u8 a, void* p);
 void func_08065AE0(void* p, s32 n);
 u8 func_08005AC4(AnimState* a);
 void func_08012614(void* a, s32 b);
@@ -1344,6 +1381,7 @@ void func_080E0A38(UnkStruct_080DFB8C* p);
 void func_080E0A70(UnkStruct_080DFB8C* p, s32 n);
 void func_080E0B98(UnkStruct_080DFB8C* p, s32 n, u8 v);
 void func_080E0BF4(s16 x, s16 y, s32 a, s32 b);
+s16 func_080E1204(u8 a, u8 b, s16 c);
 u8 func_080E1CE0(s16 x, s16 y, u8 n);
 s16 func_080E1194(u8 a, u8 b, s16 c);
 void func_080E1C64(s16 x, s16 y, u8 n);
@@ -1513,6 +1551,12 @@ void func_080F0660(UnkStruct_080F023C* p, u8 a);
 void func_080EE760(u8* work, u8 i);
 void func_080F4EE4(MapPrzCardWork* work);
 void func_080A411C(void* pool, u32 a, u16 b);
+void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
+void func_08002A10(void* a, void* b);
+void* func_080668F0(void);
+void* func_08066904(void);
+u16 func_0806692C(u8* s, u16* out);
+u16 func_08066AF8(s32 v, u16* out);
 void func_080E00E4(s32 a, s32 b);
 void func_080EAF10(void);
 void func_080EBB24(void);
@@ -1589,6 +1633,8 @@ s32 func_080EF4BC(UnkStruct_080E590C* p);
 void func_080EF84C(UnkStruct_080E590C* p);
 void func_080F0A44(UnkStruct_080E590C* p);
 u8 func_080F1ACC(MapGmkTutorialWork* w);
+u8 func_080F1A84(MapGmkTutorialWork* w);
+u8 func_080F1978(MapGmkTutorialWork* w);
 s32 func_080F3050(MapGmkGp8Work* w);
 u8 func_080F3210(MapGmkGp8Work* w);
 u8 func_080F3494(MapGmkGp8Work* w);
