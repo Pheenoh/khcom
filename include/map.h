@@ -91,7 +91,10 @@ typedef struct UnkStruct_02034F20 {
     u16 unk_02;
     s32 unk_04;
     u8 unk_08;
-    u8 unk_09[0x0B];
+    u8 unk_09;
+    u16 unk_0A;
+    u16 unk_0C;
+    u8 unk_0E[0x06];
     s32 unk_14;
 } UnkStruct_02034F20;
 
@@ -292,7 +295,8 @@ typedef struct UnkStruct_080DEDD8 {
 } UnkStruct_080DEDD8;
 
 typedef struct UnkStruct_080DEE18 {
-    u8 unk_00[0x0B];
+    u16 unk_00;
+    u8 unk_02[0x09];
     u8 unk_0B;
     u8 unk_0C;
 } UnkStruct_080DEE18;
@@ -465,7 +469,8 @@ typedef struct UnkStruct_02034FDC {
     UnkStruct_080E590C* unk_03C;
     u8 unk_040[0x120];
     u8 unk_160;
-    u8 unk_161[0x1DC];
+    u8 unk_161[0x1DB];
+    u8 unk_33C;
     u8 unk_33D;
     u8 unk_33E;
     u8 unk_33F;
@@ -517,6 +522,14 @@ typedef struct MapAnmWork {
     UnkStruct_080E8B1C unk_00[8];
 } MapAnmWork;
 
+typedef struct MapDbgWork {
+    u8 unk_00;
+    u8 unk_01[0x03];
+    u8* unk_04;
+    void (*unk_08)(struct MapDbgWork*);
+    u8 unk_0C[0x3C];
+} MapDbgWork;
+
 typedef struct MapGmkJumpWork {
     u8 unk_000[0x40];
     u8 unk_040[0x5C];
@@ -559,8 +572,9 @@ typedef struct MapGmkSpiderWork {
 } MapGmkSpiderWork;
 
 typedef struct MapGmkGpWork {
-    u8 unk_000[0x04];
-    u8 unk_004[0x40];
+    UnkStruct_080DFB8C* unk_000;
+    UnkStruct_080DFF1C unk_004;
+    u8 unk_014[0x30];
     u8 unk_044[0x5C];
     AnimState unk_0A0;
     void* unk_0B8;
@@ -1119,7 +1133,13 @@ void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume
 void m4aSongNumStart(u16 id);
 u16 CountCardsById(u16 cardId);
 void ModeRequest(Mode* mode, s32 arg);
+void ModeRequestHeapReset(Mode* mode, s32 arg);
+void func_0801CCB4(void);
+void func_0801CD20(void);
 extern Mode gModeCopyright1;
+extern Mode gModeMsTop;
+extern Mode gModeMovie;
+extern Mode gModeDebflag;
 extern Mode gModeTitle;
 s32 func_08003C9C(s32 a);
 void func_080038E4(void* a, void* b, void* c);
@@ -1132,6 +1152,15 @@ void func_080F0550(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg);
 void func_080F02A0(UnkStruct_080F023C* w);
 void* AnimGetGfx(void* anim);
 void func_080EFFF8(UnkStruct_080E590C* p);
+void func_080F0BE8(UnkStruct_080E590C* p);
+void func_080F0E6C(UnkStruct_080E590C* p);
+void func_080F117C(MapDbgWork* w);
+void func_080F1124(MapDbgWork* w);
+u8 func_080F2654(MapGmkGpWork* w);
+s32 func_080F25FC(MapGmkGpWork* w);
+s32 func_080F2B78(MapGmkGpWork* w);
+void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
+void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 u8 func_08012660(void* a, s32 b);
 u8 func_080840E4(void);
 u8 func_080A42C8(s32 a);
@@ -1283,6 +1312,8 @@ u8 func_080E5E44(void);
 void func_080E5F50(UnkStruct_080E590C* p);
 s32 func_080E5FB4(UnkStruct_080E590C* p);
 void func_080E6034(UnkStruct_080E590C* p);
+s32 func_080F0098(UnkStruct_080E590C* p);
+s32 func_080F05A4(UnkStruct_080E590C* p);
 void func_080E607C(void);
 void func_080E6100(void);
 void func_080E6178(void);
@@ -1453,7 +1484,6 @@ s32 func_080F35C0(MapGmkGp8Work* w);
 s32 func_080F3674(MapGmkGp8Work* w);
 void func_080F47B4(MapGmk06Work* w);
 void func_080F445C(MapGmk05Work* w);
-void func_080F44AC(MapGmk05Work* w);
 void func_080F66E0(MapNiserikuWork* w);
 s32 func_080F5868(MapPrzStockWork* w);
 void func_080F589C(MapPrzStockWork* w);
@@ -1483,6 +1513,10 @@ void func_080EF84C(UnkStruct_080E590C* p);
 void func_080F0A44(UnkStruct_080E590C* p);
 s32 func_080F1ACC(MapGmkTutorialWork* w);
 s32 func_080F3050(MapGmkGp8Work* w);
+u8 func_080F3210(MapGmkGp8Work* w);
+u8 func_080F3494(MapGmkGp8Work* w);
+u8 func_080F375C(MapGmkGp8Work* w);
+void func_080F44AC(MapGmk04Work* w);
 void func_080F6634(MapNiserikuWork* w);
 s32 func_080F32F4(MapGmkGp8Work* w);
 void func_080F71AC(MapTutorialWork* w);
@@ -1491,5 +1525,11 @@ void func_080F0708(UnkStruct_080F023C* p, u8 flag);
 void func_080EFB24(UnkStruct_080F023C* p, u8 a);
 void func_080F3D58(UnkStruct_080DFF1C* p);
 s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim);
+void func_080F74E8(UnkStruct_080DFF1C* p);
+void func_080F753C(UnkStruct_080DFF1C* p);
+void func_080E0C1C(u16 a, u16 b);
+void func_080E0ED4(UnkStruct_02034F20* p);
+void func_080E0FD8(UnkStruct_02034F20* p);
+void func_080E1138(void);
 
 #endif /* GUARD_MAP_H */
