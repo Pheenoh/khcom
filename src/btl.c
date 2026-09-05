@@ -1342,6 +1342,41 @@ void task_btl_sora_1(BtlSoraWork* work) {
             func_0801E4E4(work, 1);
         }
         break;
+    case 24:
+        if ((s16)work->unk_154 == 0) {
+            work->unk_156 = 20;
+            func_08012614(&p->unk_40, 1);
+            p->unk_34 |= 0x800000;
+            p->unk_34 |= 0x0000200000000000LL;
+            *(s32*)&p->unk_14[8] = p->unk_0C;
+            m4aSongNumStart(171);
+        }
+
+        switch ((s16)work->unk_154) {
+        case 0:
+            func_0801DE1C(work, 2, 0);
+            break;
+        case 10:
+            func_0801DE1C(work, 3, 0);
+            break;
+        }
+
+        if (*(s32*)&p->unk_14[0] <= 65535) {
+            ApproachValue(&p->unk_04, -8192, work->unk_156);
+        } else {
+            ApproachValue(&p->unk_04, 139264, work->unk_156);
+        }
+
+        st = --work->unk_156;
+
+        if (st == 0) {
+            work->unk_038 = 25;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
     case 26:
         if ((s16)work->unk_154 == 0) {
             work->unk_156 = 20;
