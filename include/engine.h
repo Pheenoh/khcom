@@ -18,6 +18,17 @@ typedef struct ObjTiles {
     u32 unk_28;
     struct ObjTiles* self;
 } ObjTiles;
+typedef struct ObjPaletteNode {
+    void* unk_00;
+    u16 refCount;
+    u16 unk_06;
+    u16 unk_08;
+    u16 unk_0A;
+    u8 unk_0C[0x10];
+    u8 unk_1C[0x04];
+    u32 unk_20;
+    struct ObjPaletteNode* self;
+} ObjPaletteNode;
 typedef struct Dma3Request {
     void* src;
     void* dst;
