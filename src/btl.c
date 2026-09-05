@@ -975,6 +975,39 @@ void task_btl_sora_1(BtlSoraWork* work) {
             p->unk_04 += 614;
         }
         break;
+    case 75:
+        if ((s16)work->unk_154 == 0) {
+            e = func_0801E6DC(work);
+            work->unk_156 = 16;
+
+            if (e != 0) {
+                p->unk_08 = e->unk_008;
+                p->unk_0C = e->unk_010;
+                p->unk_10 = e->unk_010;
+
+                if (e->unk_004 > p->unk_04) {
+                    p->unk_04 = e->unk_004 + 8192;
+                    p->unk_34 |= 4;
+                } else {
+                    p->unk_04 = e->unk_004 - 8192;
+                    p->unk_34 &= ~4;
+                }
+
+                func_08011F78(109, e->unk_004, e->unk_008, e->unk_00C, 4, 4, 4);
+            }
+        }
+
+        ApproachValue((s32*)&work->unk_19C, 256, work->unk_156);
+        ApproachValue((s32*)&work->unk_1A0, 256, work->unk_156);
+
+        if ((s16)--work->unk_156 > 0) {
+            work->unk_154++;
+        } else {
+            func_08006120(6, 1);
+            func_08019A30();
+            func_0801E4E4(work, 1);
+        }
+        break;
     case 27:
         st = work->unk_154;
 
