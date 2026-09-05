@@ -1839,7 +1839,7 @@ void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 u8 func_08012660(void* a, s32 b);
 u8 func_080840E4(void);
-u8 func_080A42C8(s32 a);
+u8 func_080A42C8(void);
 s32 func_080DF548(s32 a);
 void func_080DF6D0(UnkStruct_0203C7AC* p, u8 a);
 u8 func_080DF750(void);
