@@ -407,8 +407,6 @@ s32 _0800CDF0(EmyWork* work) {
             s32 tx;
             s32 ty;
             s32 d;
-            s32 ax;
-            s32 ay;
 
             func_08019068(work->unk_15C->unk_04, &work->anim, 2, 1, work->tiles);
             func_0801BCF8(actor);
@@ -431,14 +429,16 @@ s32 _0800CDF0(EmyWork* work) {
                     work->unk_170 = ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
                 }
             } else {
-                ax = actor->x;
-                d = tx - ax;
+                d = tx - actor->x;
                 if (d < 0) {
-                    d = ax - tx;
+                    d = actor->x - tx;
                 }
-                ay = actor->y;
-                if (d > 0x400 || ((d = ty - ay) >= 0 ? d > 0x400 : ay - ty > 0x400)) {
-                    work->angle = GetAngle(ax, ay, tx, ty);
+                if (d > 0x400) {
+                    work->angle = GetAngle(actor->x, actor->y, tx, ty);
+                    actor->x += (gSineTable[work->angle] * work->unk_164) >> 8;
+                    actor->y += (-gSineTable[work->angle + 64] * work->unk_164) >> 8;
+                } else if ((d = ty - actor->y) >= 0 ? d > 0x400 : actor->y - ty > 0x400) {
+                    work->angle = GetAngle(actor->x, actor->y, tx, ty);
                     actor->x += (gSineTable[work->angle] * work->unk_164) >> 8;
                     actor->y += (-gSineTable[work->angle + 64] * work->unk_164) >> 8;
                 } else if (AnimIsFinished(&work->anim)) {
