@@ -593,8 +593,8 @@ void func_08102AB4(s16 x, s16 y) {
         func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 1);
         gUnk_020358C8[i].unk_10 = LoadObjTiles(gUnk_099A4B9A, 0x1D80);
         gUnk_020358C8[i].unk_14 = 0;
-        AnimInit(&gUnk_020358C8[i].unk_18, gUnk_09EF9A48, gUnk_09EF9A20);
-        AnimStart(&gUnk_020358C8[i].unk_18, 0, 1);
+        AnimInit(&gUnk_020358C8[i].anim, gUnk_09EF9A48, gUnk_09EF9A20);
+        AnimStart(&gUnk_020358C8[i].anim, 0, 1);
         gUnk_020358C8[i].unk_3C = x << 8;
         gUnk_020358C8[i].unk_40 = y << 8;
         gUnk_020358C8[i].unk_34 = 2;
@@ -680,7 +680,7 @@ void func_08102F30(void) {
         if (gUnk_020358C8[i].unk_47 == 0) {
             v = gUnk_020358C8[i].unk_34;
             affine = AllocObjAffine(0, v, v, 0);
-            obj = AnimUpdate(&gUnk_020358C8[i].unk_18);
+            obj = AnimUpdate(&gUnk_020358C8[i].anim);
         } else {
             v = gUnk_020358C8[i].unk_34 * -gSineTable[(gUnk_020358C8[i].unk_30 & 0xFF) + 0x40] >> 8;
             affine = AllocObjAffine(0, v, gUnk_020358C8[i].unk_34, 0);
@@ -773,7 +773,7 @@ u8 func_0810329C(u16 a) {
             break;
         case 2:
             if (gUnk_020358C8[i].unk_44 != 0) {
-                if (AnimGetFrame(&gUnk_020358C8[i].unk_18) == 3 || AnimGetFrame(&gUnk_020358C8[i].unk_18) == 8) {
+                if (AnimGetFrame(&gUnk_020358C8[i].anim) == 3 || AnimGetFrame(&gUnk_020358C8[i].anim) == 8) {
                     ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
                     ReleaseObjTiles(gUnk_020358C8[i].unk_10);
                     gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09611AB8, 0x20);
@@ -826,7 +826,7 @@ u8 func_0810329C(u16 a) {
             break;
         case 5:
             if (gUnk_020358C8[i].unk_44 != 0) {
-                if (AnimGetFrame(&gUnk_020358C8[i].unk_18) == 3 || AnimGetFrame(&gUnk_020358C8[i].unk_18) == 8) {
+                if (AnimGetFrame(&gUnk_020358C8[i].anim) == 3 || AnimGetFrame(&gUnk_020358C8[i].anim) == 8) {
                     ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
                     ReleaseObjTiles(gUnk_020358C8[i].unk_10);
                     gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09611AB8, 0x20);

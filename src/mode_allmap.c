@@ -168,7 +168,7 @@ s32 func_080D35B0(AllmapRoomWork* work) {
     u8 i;
 
     for (i = 0; i < 4; i++) {
-        work->unk_01C[i] = 0;
+        work->gfx[i] = 0;
         work->unk_00C[i] = 0;
     }
 
@@ -193,9 +193,9 @@ s32 func_080D35B0(AllmapRoomWork* work) {
         mask += 1 << i;
 
         if (func_080D3538(work->unk_098, i) != 0) {
-            AnimInit(&work->unk_02C[i], gUnk_09EF653C, gUnk_09EF64FC);
-            AnimStart(&work->unk_02C[i], dirs.unk_00[i], 1);
-            work->unk_01C[i] = AnimGetGfx(&work->unk_02C[i]);
+            AnimInit(&work->anim[i], gUnk_09EF653C, gUnk_09EF64FC);
+            AnimStart(&work->anim[i], dirs.unk_00[i], 1);
+            work->gfx[i] = AnimGetGfx(&work->anim[i]);
 
             if (work->unk_09C == 0) {
                 work->unk_00C[i] = LoadObjTiles(gUnk_0976DEDC, 0x500);
@@ -203,9 +203,9 @@ s32 func_080D35B0(AllmapRoomWork* work) {
                 work->unk_00C[i] = AllocObjTiles(func_08003524(gUnk_09EF64FC, 16), gUnk_0976DEDC);
             }
         } else if (func_080D358C(work->unk_098, i) == 0) {
-            AnimInit(&work->unk_02C[i], gUnk_09EF658C, gUnk_09EF654C);
-            AnimStart(&work->unk_02C[i], dirs.unk_00[i], 1);
-            work->unk_01C[i] = AnimGetGfx(&work->unk_02C[i]);
+            AnimInit(&work->anim[i], gUnk_09EF658C, gUnk_09EF654C);
+            AnimStart(&work->anim[i], dirs.unk_00[i], 1);
+            work->gfx[i] = AnimGetGfx(&work->anim[i]);
 
             if (work->unk_09C == 0) {
                 work->unk_00C[i] = LoadObjTiles(gUnk_0976E4D4, 0x500);

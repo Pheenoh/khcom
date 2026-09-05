@@ -71,7 +71,7 @@ typedef struct StatusCursorWork {
     void* unk_04;
     void* unk_08;
     void* unk_0C;
-    void* unk_10[2];
+    void* gfx[2];
     AnimState anim[2];
     s16* unk_48;
     s16 unk_4C;
@@ -158,7 +158,7 @@ typedef struct BtlWork {
 typedef struct StatusDialogSub {
     s32 unk_00;
     u8 unk_04[0x10];
-    AnimState unk_14;
+    AnimState anim;
 } StatusDialogSub;
 
 typedef struct BoogieWork {

@@ -1441,21 +1441,21 @@ void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a) {
         p->unk_04 &= ~1;
         break;
     }
-    func_08005974(p->unk_A4, q->unk_0C, a, q->unk_04, q->unk_00);
+    func_08005974(p->anim, q->unk_0C, a, q->unk_04, q->unk_00);
     func_08002A10(p->tiles, q->unk_08);
 }
 
 void func_080E5DEC(UnkStruct_080E590C* p) {
     if (gUnk_02039BA0->unk_70 & 0x10000) {
-        if (func_08005AC4(p->unk_A4)) {
+        if (func_08005AC4(p->anim)) {
             return;
         }
     } else {
-        if (func_08005AC4(p->unk_A4)) {
+        if (func_08005AC4(p->anim)) {
             gUnk_02039BA0->unk_70 |= 0x10000;
         }
     }
-    p->gfx = AnimUpdate(p->unk_A4);
+    p->gfx = AnimUpdate(p->anim);
 }
 
 u8 func_080E5E44(void) {
@@ -1694,7 +1694,7 @@ void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     p->tiles = AllocObjTiles(d->unk_08 * 32, 0);
     p->palette = LoadObjPalette(d->unk_04, 32);
     p->gfx = 0;
-    AnimInit((AnimState*)&p->unk_A4, 0, 0);
+    AnimInit((AnimState*)&p->anim, 0, 0);
     TaskPoolInit((TaskPool*)&p->unk_E4, 2);
 
     if ((d->unk_14 & 1) == 0) {

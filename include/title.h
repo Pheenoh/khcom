@@ -18,8 +18,8 @@ typedef struct TitlePal {
 } TitlePal;
 
 typedef struct TitleObjSprite {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
     s16 unk_0C;
     s32 unk_10;

@@ -4,8 +4,8 @@
 #include "types.h"
 
 typedef struct TitleSprite {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* palette;
     void* unk_08;
 } TitleSprite;
 

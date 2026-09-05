@@ -55,8 +55,8 @@ typedef struct SrollANameWork {
     s32 unk_10;
     s32 unk_14;
     void* tiles;
-    SrollPal* unk_1C;
-    AnimState unk_20;
+    SrollPal* palette;
+    AnimState anim;
 } SrollANameWork;
 
 typedef struct SrollANameArg {
@@ -115,8 +115,8 @@ typedef struct SrollBCharWork {
     s32* unk_04;
     SrollBCharSub* unk_08;
     void* tiles;
-    SrollPal* unk_10;
-    AnimState unk_14;
+    SrollPal* palette;
+    AnimState anim;
     TaskPool unk_2C;
 } SrollBCharWork;
 
@@ -126,8 +126,8 @@ typedef struct SrollBLogoWork {
     s32* unk_08;
     s32 unk_0C;
     void* tiles;
-    SrollPal* unk_14;
-    AnimState unk_18;
+    SrollPal* palette;
+    AnimState anim;
 } SrollBLogoWork;
 
 typedef struct SrollBLogoArg {
@@ -157,15 +157,15 @@ typedef struct SrollBCrtnWork {
     s32 unk_08;
     s32 unk_0C;
     void* tiles;
-    SrollPal* unk_14;
-    AnimState unk_18;
+    SrollPal* palette;
+    AnimState anim;
 } SrollBCrtnWork;
 
 typedef struct SrollCCharWork {
     s32 unk_00;
     u8 unk_04[0x14];
     void* tiles;
-    SrollPal* unk_1C;
+    SrollPal* palette;
     AnimState unk_20[5];
 } SrollCCharWork;
 
@@ -181,7 +181,7 @@ typedef struct SrollTmrWork {
     u8 unk_01[0x3];
     s32 unk_04;
     void* tiles;
-    SrollPal* unk_0C;
+    SrollPal* palette;
 } SrollTmrWork;
 
 typedef struct SrollInit {

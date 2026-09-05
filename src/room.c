@@ -4,7 +4,7 @@
 #ifndef VERSION_EU
 void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);
-    work->unk_04 = LoadObjPalette(gUnk_099910C4, 0x20);
+    work->palette = LoadObjPalette(gUnk_099910C4, 0x20);
     work->unk_08 = gUnk_09EF8DA4;
     work->unk_30 = arg;
     work->unk_0C = 0x5C00;
@@ -78,7 +78,7 @@ void task_room_name_2(RoomNameWork* work) {
 
     if (work->unk_28 != 0) {
         affine = AllocObjAffine(0, 0x100, work->unk_1C, 0);
-        DrawSprite(work->unk_14 >> 8, work->unk_18 >> 8, work->unk_08, work->tiles, work->unk_04, affine, 0, 0x3C);
+        DrawSprite(work->unk_14 >> 8, work->unk_18 >> 8, work->unk_08, work->tiles, work->palette, affine, 0, 0x3C);
         func_080664D8(work->unk_0C >> 8, work->unk_10 >> 8, work->unk_3C, work->unk_38, 0x32, work->unk_34);
     }
 }
@@ -86,7 +86,7 @@ void task_room_name_2(RoomNameWork* work) {
 void task_room_name_3(RoomNameWork* work) {
     ReleaseObjTiles(work->tiles);
     func_08065AE0(work->unk_3C, 0x24);
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->unk_38);
 }
 

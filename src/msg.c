@@ -4130,15 +4130,15 @@ void msgface_0(MsgFaceWork* p, MsgFaceCtl* ctl) {
     if (p->unk_38->unk_00 != 62) {
         func_08002A10(p->tiles, anim[p->unk_38->unk_01].unk_00);
         func_08003A70(p->palette, anim[p->unk_38->unk_01].unk_04);
-        AnimInit(p->unk_0C, anim[p->unk_38->unk_01].unk_0C, anim[p->unk_38->unk_01].unk_08);
-        AnimStart(p->unk_0C, 0, anim[p->unk_38->unk_01].unk_11);
-        p->unk_08 = AnimGetGfx(p->unk_0C);
+        AnimInit(p->anim, anim[p->unk_38->unk_01].unk_0C, anim[p->unk_38->unk_01].unk_08);
+        AnimStart(p->anim, 0, anim[p->unk_38->unk_01].unk_11);
+        p->gfx = AnimGetGfx(p->anim);
     } else {
         func_08002A10(p->tiles, anim->unk_00);
         func_08003A70(p->palette, anim->unk_04);
-        AnimInit(p->unk_0C, anim->unk_0C, anim->unk_08);
-        AnimStart(p->unk_0C, 0, anim->unk_11);
-        p->unk_08 = AnimGetGfx(p->unk_0C);
+        AnimInit(p->anim, anim->unk_0C, anim->unk_08);
+        AnimStart(p->anim, 0, anim->unk_11);
+        p->gfx = AnimGetGfx(p->anim);
     }
 }
 u8 msgface_1(MsgFaceWork* p, void* a) {
@@ -4195,7 +4195,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     if (gUnk_02039DC8->unk_7B == 1) {
         if (p->unk_32 == 0) {
             if (anim != NULL && anim[p->unk_38->unk_01].unk_10 > 1) {
-                AnimStart(p->unk_0C, 1, anim[p->unk_38->unk_01].unk_11);
+                AnimStart(p->anim, 1, anim[p->unk_38->unk_01].unk_11);
             }
 
             p->unk_32 = 1;
@@ -4203,7 +4203,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     } else {
         if (p->unk_32 == 1) {
             if (anim != NULL) {
-                AnimStart(p->unk_0C, 0, anim[p->unk_38->unk_01].unk_11);
+                AnimStart(p->anim, 0, anim[p->unk_38->unk_01].unk_11);
             }
 
             p->unk_32 = 0;
@@ -4216,7 +4216,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
         func_080062F4(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
     }
 
-    p->unk_08 = AnimUpdate(p->unk_0C);
+    p->gfx = AnimUpdate(p->anim);
     return 1;
 }
 void msgface_2(MsgFaceWork* p) {
@@ -4226,13 +4226,13 @@ void msgface_2(MsgFaceWork* p) {
     if (p->unk_34 != 0) {
         t = AllocObjAffine(0, p->unk_2C, 256, 0);
         if (t != 0) {
-            DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_08, p->tiles, p->palette, t, 0, 50);
+            DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->gfx, p->tiles, p->palette, t, 0, 50);
         } else {
             v = p->unk_33;
             if (v != 0) {
-                DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_08, p->tiles, p->palette, t, 1, 50);
+                DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->gfx, p->tiles, p->palette, t, 1, 50);
             } else {
-                DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->unk_08, p->tiles, p->palette, v, v, 50);
+                DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->gfx, p->tiles, p->palette, v, v, 50);
             }
         }
     }
@@ -4282,9 +4282,9 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
     if (t != NULL) {
         func_08002A10(p->tiles, t[p->unk_38->unk_01].unk_00);
         func_08003A70(p->palette, t[p->unk_38->unk_01].unk_04);
-        AnimInit(p->unk_0C, t[p->unk_38->unk_01].unk_0C, t[p->unk_38->unk_01].unk_08);
-        AnimStart(p->unk_0C, 0, t[p->unk_38->unk_01].unk_11);
-        p->unk_08 = AnimGetGfx(p->unk_0C);
+        AnimInit(p->anim, t[p->unk_38->unk_01].unk_0C, t[p->unk_38->unk_01].unk_08);
+        AnimStart(p->anim, 0, t[p->unk_38->unk_01].unk_11);
+        p->gfx = AnimGetGfx(p->anim);
         p->unk_31 = 0;
         p->unk_30 = 8;
         p->unk_38->unk_02 = 0;
@@ -4323,9 +4323,9 @@ u8 func_08073CA4(MsgFaceWork* p, void* a) {
         if (t != NULL) {
             func_08002A10(p->tiles, t[p->unk_38->unk_01].unk_00);
             func_08003A70(p->palette, t[p->unk_38->unk_01].unk_04);
-            AnimInit(p->unk_0C, t[p->unk_38->unk_01].unk_0C, t[p->unk_38->unk_01].unk_08);
-            AnimStart(p->unk_0C, 0, t[p->unk_38->unk_01].unk_11);
-            p->unk_08 = AnimGetGfx(p->unk_0C);
+            AnimInit(p->anim, t[p->unk_38->unk_01].unk_0C, t[p->unk_38->unk_01].unk_08);
+            AnimStart(p->anim, 0, t[p->unk_38->unk_01].unk_11);
+            p->gfx = AnimGetGfx(p->anim);
             p->unk_31 = 0;
             p->unk_30 = 8;
         }
@@ -4383,11 +4383,11 @@ void func_08073E74(Work08073E34* p) {
 }
 void msgwait_0(MsgWaitWork* p, u8* arg) {
     p->unk_103 = arg[0];
-    p->unk_00 = AllocObjTiles(64, 0);
-    p->unk_14 = LoadObjPalette(gUnk_08F69BA4, 32);
-    LoadObjPaletteBank(p->unk_14->unk_06, gUnk_08F69BA4);
-    func_080062F4(p->unk_14->unk_06 + 16, 1);
-    func_08002A10(p->unk_00, gUnk_09320796);
+    p->tiles = AllocObjTiles(64, 0);
+    p->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    LoadObjPaletteBank(p->palette->unk_06, gUnk_08F69BA4);
+    func_080062F4(p->palette->unk_06 + 16, 1);
+    func_08002A10(p->tiles, gUnk_09320796);
     AnimInit(p->unk_DC, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(p->unk_DC, 2, 1);
     p->unk_102 = 0;
@@ -4428,17 +4428,17 @@ void msgwait_2(MsgWaitWork* p) {
 
     if (v != 0) {
         DrawSprite(120, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx,
-                   p->unk_00, p->unk_14, 0, 0, 0);
+                   p->tiles, p->palette, 0, 0, 0);
     } else {
         DrawSprite(gUnk_09033D08[gUnk_02039DC8->unk_87][0] >> 8,
-                   gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->unk_00,
-                   p->unk_14, 0, 0, 0);
+                   gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->tiles,
+                   p->palette, 0, 0, 0);
     }
 }
 void msgwait_3(MsgWaitWork* p) {
-    func_080062F4(p->unk_14->unk_06 + 16, 0);
-    ReleaseObjTiles(p->unk_00);
-    ReleaseObjPalette(p->unk_14);
+    func_080062F4(p->palette->unk_06 + 16, 0);
+    ReleaseObjTiles(p->tiles);
+    ReleaseObjPalette(p->palette);
 }
 #ifndef VERSION_EU
 void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
@@ -4448,8 +4448,8 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     LoadObjPaletteBank(((Handle0806180C*)p->unk_14)->unk_06, gUnk_08F69BA4);
     func_080062F4(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
     func_08002A10(p->unk_00, gUnk_09320796);
-    AnimInit((AnimState*)p->unk_DC, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
-    AnimStart((AnimState*)p->unk_DC, 2, 1);
+    AnimInit((AnimState*)p->anim, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
+    AnimStart((AnimState*)p->anim, 2, 1);
     p->unk_102 = 0;
     p->unk_04 = AllocObjTiles(288, 0);
     p->unk_08 = LoadObjPalette(gUnk_09614418, 32);
@@ -4526,14 +4526,14 @@ u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
         ApproachValue(&p->unk_FC, gUnk_09033D28[p->unk_100], p->unk_102);
         p->unk_102--;
     }
-    p->gfx = AnimUpdate(p->unk_DC);
+    p->gfx = AnimUpdate(p->anim);
     return 1;
 }
 u8 msgwait_yesno_1(MsgWaitYesNoWork* p, void* a) {
-    p->gfx = AnimUpdate(p->unk_DC);
+    p->gfx = AnimUpdate(p->anim);
 
     if (GetKeysPressed() & 1) {
-        AnimStart(p->unk_DC, 3, 1);
+        AnimStart(p->anim, 3, 1);
         p->unk_104 = 1;
         m4aSongNumStart(0x67);
         SetTaskUpdate(a, (void*)func_0807420C);

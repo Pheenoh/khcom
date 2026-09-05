@@ -281,31 +281,31 @@ u8 func_080D6294(void) {
 }
 
 void func_080D62A8(TitleLogoWork* work) {
-    work->unk_00[0].unk_00 = LoadObjTiles(gUnk_0976E9F4, 0x240);
+    work->unk_00[0].tiles = LoadObjTiles(gUnk_0976E9F4, 0x240);
     work->unk_00[0].unk_08 = gUnk_09EF659C;
 
     if (gGameState.flags & 0x200) {
-        work->unk_00[1].unk_00 = LoadObjTiles(gUnk_09776076, 0x43C0);
+        work->unk_00[1].tiles = LoadObjTiles(gUnk_09776076, 0x43C0);
         work->unk_00[1].unk_08 = gUnk_09EF669C;
-        work->unk_00[1].unk_04 = LoadObjPalette(gUnk_0984AA18, 0x20);
+        work->unk_00[1].palette = LoadObjPalette(gUnk_0984AA18, 0x20);
     } else {
-        work->unk_00[1].unk_00 = LoadObjTiles(gUnk_0976EC54, 0xE0);
+        work->unk_00[1].tiles = LoadObjTiles(gUnk_0976EC54, 0xE0);
         work->unk_00[1].unk_08 = gUnk_09EF65A4;
-        work->unk_00[1].unk_04 = LoadObjPalette(gUnk_0984A6D8, 0x20);
+        work->unk_00[1].palette = LoadObjPalette(gUnk_0984A6D8, 0x20);
     }
-    work->unk_00[2].unk_00 = LoadObjTiles(gUnk_0976ED5A, 0x380);
+    work->unk_00[2].tiles = LoadObjTiles(gUnk_0976ED5A, 0x380);
     work->unk_00[2].unk_08 = gUnk_09EF65AC;
-    work->unk_00[3].unk_00 = LoadObjTiles(gUnk_0976F0F6, 0xC0);
+    work->unk_00[3].tiles = LoadObjTiles(gUnk_0976F0F6, 0xC0);
     work->unk_00[3].unk_08 = gUnk_09EF65B4;
-    work->unk_00[4].unk_00 = LoadObjTiles(gUnk_0976F1F0, 0xAC0);
+    work->unk_00[4].tiles = LoadObjTiles(gUnk_0976F1F0, 0xAC0);
     work->unk_00[4].unk_08 = gUnk_09EF65BC;
-    work->unk_00[5].unk_00 = LoadObjTiles(gUnk_0976FD96, 0x1140);
+    work->unk_00[5].tiles = LoadObjTiles(gUnk_0976FD96, 0x1140);
     work->unk_00[5].unk_08 = gUnk_09EF65C4;
-    work->unk_00[0].unk_04 = LoadObjPalette(gUnk_0984A6B8, 0x20);
-    work->unk_00[2].unk_04 = LoadObjPalette(gUnk_0984A6F8, 0x20);
-    work->unk_00[3].unk_04 = LoadObjPalette(gUnk_0984A6F8, 0x20);
-    work->unk_00[4].unk_04 = LoadObjPalette(gUnk_0984A718, 0x20);
-    work->unk_00[5].unk_04 = LoadObjPalette(gUnk_0984A738, 0x20);
+    work->unk_00[0].palette = LoadObjPalette(gUnk_0984A6B8, 0x20);
+    work->unk_00[2].palette = LoadObjPalette(gUnk_0984A6F8, 0x20);
+    work->unk_00[3].palette = LoadObjPalette(gUnk_0984A6F8, 0x20);
+    work->unk_00[4].palette = LoadObjPalette(gUnk_0984A718, 0x20);
+    work->unk_00[5].palette = LoadObjPalette(gUnk_0984A738, 0x20);
     work->unk_4C = 0;
     work->unk_48 = 0xC00;
     work->unk_50 = 0;

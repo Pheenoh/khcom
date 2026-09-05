@@ -145,8 +145,8 @@ typedef struct MsgFaceAnim {
 typedef struct MsgFaceWork {
     void* tiles;
     void* palette;
-    void* unk_08;
-    u8 unk_0C[0x18];
+    void* gfx;
+    u8 anim[0x18];
     s32 unk_24;
     s32 unk_28;
     s32 unk_2C;
@@ -361,9 +361,9 @@ typedef struct Handle0806180C {
 } Handle0806180C;
 
 typedef struct MsgWaitWork {
-    void* unk_00;
+    void* tiles;
     u8 unk_04[0x10];
-    Handle0806180C* unk_14;
+    Handle0806180C* palette;
     u8 unk_18[0xA4];
     void* gfx;
     u8 unk_C0[0x1C];
@@ -386,7 +386,7 @@ typedef struct MsgWaitYesNoWork {
     void* gfx;
     void* unk_C0;
     u8 unk_C4[0x18];
-    u8 unk_DC[0x18];
+    u8 anim[0x18];
     u8 unk_F4;
     u8 unk_F5;
     u8 unk_F6[2];

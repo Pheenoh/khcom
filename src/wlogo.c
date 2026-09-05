@@ -19,8 +19,8 @@ void task_wlogo_mons_0(WlogoMonsWork* work) {
     LoadBgMap(0, gUnk_096B6C64, 0x800);
     work->tiles = LoadObjTiles(gUnk_0961AA92, 0x500);
     work->palette = LoadObjPalette(gUnk_096FACA4, 0x20);
-    work->unk_008 = 64;
-    work->unk_00A = 64;
+    work->x = 64;
+    work->y = 64;
     work->unk_028 = 0;
     work->unk_02A = 0;
     work->unk_02C = 0;
@@ -112,7 +112,7 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work) {
 
 void task_wlogo_mons_2(WlogoMonsWork* work) {
     if (work->unk_02D == 1) {
-        DrawSprite(work->unk_008, work->unk_00A, work->gfx, work->tiles, work->palette, 0, 0, 0);
+        DrawSprite(work->x, work->y, work->gfx, work->tiles, work->palette, 0, 0, 0);
     }
 }
 
@@ -578,8 +578,8 @@ void task_wlogo_nvl_mov_0(WlogoNvlMovWork* work) {
     work->unk_020 = 1;
     work->unk_018 = 0;
     work->unk_049 = 1;
-    work->unk_024 = LoadObjTiles(gUnk_0961C062, 0x600);
-    work->unk_028 = LoadObjPalette(gUnk_096FADA4, 0x20);
+    work->tiles = LoadObjTiles(gUnk_0961C062, 0x600);
+    work->palette = LoadObjPalette(gUnk_096FADA4, 0x20);
     work->unk_048 = 3;
     AnimInit(&work->anim, gUnk_09EF35A4, gUnk_09EF3574);
     AnimStart(&work->anim, work->unk_048, 0);
@@ -644,7 +644,7 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
 
 void task_wlogo_nvl_mov_2(WlogoNvlMovWork* work) {
     if (work->unk_049 == 1) {
-        DrawSprite(work->unk_000 >> 8, work->unk_004 >> 8, work->gfx, work->unk_024, work->unk_028, 0, 0, 0);
+        DrawSprite(work->unk_000 >> 8, work->unk_004 >> 8, work->gfx, work->tiles, work->palette, 0, 0, 0);
     }
 }
 
@@ -687,8 +687,8 @@ void task_wlogo_col_0(WlogoColWork* work) {
     RequestDma3Copy(gUnk_096424E4, GetBgCharBase(0), 0x620);
     work->tiles = LoadObjTiles(gUnk_0961C7F4, 0x1140);
     work->palette = LoadObjPalette(gUnk_096FADC4, 0x20);
-    work->unk_008 = gUnk_0961C792[0];
-    work->unk_00A = gUnk_0961C792[1];
+    work->x = gUnk_0961C792[0];
+    work->y = gUnk_0961C792[1];
     work->unk_02A = 0;
     work->unk_028 = 0;
     work->unk_030 = 0;
@@ -772,7 +772,7 @@ INCLUDE_ASM("wlogo/task_wlogo_col_1.s");
 
 void task_wlogo_col_2(WlogoColWork* work) {
     if (work->unk_031 == 1) {
-        DrawSprite(work->unk_008, work->unk_00A, work->gfx, work->tiles, work->palette, 0, 0, 0);
+        DrawSprite(work->x, work->y, work->gfx, work->tiles, work->palette, 0, 0, 0);
     }
 }
 
@@ -850,8 +850,8 @@ void task_wlogo_dil_0(WlogoDilWork* work) {
     work->tiles = LoadObjTiles(gUnk_0961FA28, 0xE20);
     work->palette = LoadObjPalette(gUnk_096FAE24, 0x20);
     work->unk_008 = gUnk_09EF36D0[0];
-    work->unk_012 = 64;
-    work->unk_014 = 64;
+    work->x = 64;
+    work->y = 64;
     work->unk_016 = 0;
     work->unk_00E = 0;
     work->unk_00C = 0;
@@ -928,7 +928,7 @@ u8 task_wlogo_dil_1(WlogoDilWork* work) {
 
 void task_wlogo_dil_2(WlogoDilWork* work) {
     if (work->unk_016 == 1) {
-        DrawSprite(work->unk_012, work->unk_014, work->unk_008, work->tiles, work->palette, 0, 0x400, 0);
+        DrawSprite(work->x, work->y, work->unk_008, work->tiles, work->palette, 0, 0x400, 0);
     }
 }
 
@@ -945,8 +945,8 @@ void task_wlogo_agr_0(WlogoAgrWork* work, s32 arg) {
     work->tiles = LoadObjTiles(gUnk_0961DC0E, 0x1DE0);
     work->palette = LoadObjPalette(gUnk_096FADE4, 0x20);
     work->unk_008 = gUnk_09EF3614[11];
-    work->unk_00C = 64;
-    work->unk_00E = 64;
+    work->x = 64;
+    work->y = 64;
     work->unk_010 = 0;
     work->unk_012 = 0;
     work->unk_011 = 0;
@@ -1097,7 +1097,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
 
 void task_wlogo_agr_2(WlogoAgrWork* work) {
     if (work->unk_010 == 1) {
-        DrawSprite(work->unk_00C, work->unk_00E, work->unk_008, work->tiles, work->palette, 0, 0, 3);
+        DrawSprite(work->x, work->y, work->unk_008, work->tiles, work->palette, 0, 0, 3);
     }
 }
 
@@ -1141,8 +1141,8 @@ void task_wlogo_agr_smoke_3(WlogoAgrSmokeWork* work) {
 
 void task_wlogo_agr_flash0_0(WlogoAgrFlashWork* work) {
     work->unk_028 = 4;
-    work->unk_024 = 64;
-    work->unk_026 = 64;
+    work->x = 64;
+    work->y = 64;
     work->tiles = LoadObjTiles(gUnk_0961DC0E, 0x1DE0);
     work->palette = LoadObjPalette(gUnk_096FADE4, 0x20);
     AnimInit(&work->anim, gUnk_09EF36AC, gUnk_09EF3614);
@@ -1159,7 +1159,7 @@ u8 task_wlogo_agr_flash0_1(WlogoAgrFlashWork* work) {
 }
 
 void task_wlogo_agr_flash0_2(WlogoAgrFlashWork* work) {
-    DrawSprite(work->unk_024, work->unk_026, work->gfx, work->tiles, work->palette, 0, 0, 2);
+    DrawSprite(work->x, work->y, work->gfx, work->tiles, work->palette, 0, 0, 2);
 }
 
 void task_wlogo_agr_flash0_3(WlogoAgrFlashWork* work) {
@@ -1169,8 +1169,8 @@ void task_wlogo_agr_flash0_3(WlogoAgrFlashWork* work) {
 
 void task_wlogo_agr_flash1_0(WlogoAgrFlashWork* work, WlogoAgrEntry* arg) {
     work->unk_028 = arg->unk_0C;
-    work->unk_024 = arg->unk_08;
-    work->unk_026 = arg->unk_0A;
+    work->x = arg->unk_08;
+    work->y = arg->unk_0A;
     work->tiles = LoadObjTiles(gUnk_0961DC0E, 0x1DE0);
     work->palette = LoadObjPalette(gUnk_096FADE4, 0x20);
     AnimInit(&work->anim, gUnk_09EF36AC, gUnk_09EF3614);
@@ -1187,7 +1187,7 @@ u8 task_wlogo_agr_flash1_1(WlogoAgrFlashWork* work) {
 }
 
 void task_wlogo_agr_flash1_2(WlogoAgrFlashWork* work) {
-    DrawSprite(work->unk_024, work->unk_026, work->gfx, work->tiles, work->palette, 0, 0, 0);
+    DrawSprite(work->x, work->y, work->gfx, work->tiles, work->palette, 0, 0, 0);
 }
 
 void task_wlogo_agr_flash1_3(WlogoAgrFlashWork* work) {
@@ -1202,8 +1202,8 @@ void task_wlogo_tvt_0(WlogoTvtWork* work) {
     RequestDma3Copy(gUnk_096474A4, (u8*)GetBgCharBase(0) + 32, 0x300);
     work->tiles = AllocObjTiles(0x780, gUnk_09620B0E);
     work->palette = LoadObjPalette(gUnk_096FAE44, 0x20);
-    work->unk_008 = 64;
-    work->unk_00A = 64;
+    work->x = 64;
+    work->y = 64;
     work->unk_02A = 0;
     work->unk_029 = 0;
     work->unk_030 = 0;
@@ -1319,7 +1319,7 @@ INCLUDE_ASM("wlogo/task_wlogo_tvt_1.s");
 
 void task_wlogo_tvt_2(WlogoTvtWork* work) {
     if (work->unk_028 == 1) {
-        DrawSprite(work->unk_008, work->unk_00A, work->gfx, work->tiles, work->palette, 0, 0, 0);
+        DrawSprite(work->x, work->y, work->gfx, work->tiles, work->palette, 0, 0, 0);
     }
 }
 
@@ -1479,24 +1479,24 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
     work->unk_018 = LoadObjTiles(gUnk_0962848A, 0x7C0);
     work->palette = LoadObjPalette(gUnk_096FAE84, 0x20);
     LoadObjPaletteBank(work->palette->unk_06, &gUnk_096FAEA4[work->unk_007 * 32]);
-    AnimInit(&work->unk_040[0], gUnk_09EF37DC, gUnk_09EF377C);
-    AnimStart(&work->unk_040[0], 1, 0);
-    work->unk_020 = AnimGetGfx(&work->unk_040[0]);
-    AnimInit(&work->unk_040[1], gUnk_09EF37DC, gUnk_09EF377C);
-    AnimStart(&work->unk_040[1], 2, 0);
-    work->unk_024 = AnimGetGfx(&work->unk_040[1]);
-    AnimInit(&work->unk_040[2], gUnk_09EF37DC, gUnk_09EF377C);
-    AnimStart(&work->unk_040[2], 4, 0);
-    work->unk_028 = AnimGetGfx(&work->unk_040[2]);
-    AnimInit(&work->unk_040[3], gUnk_09EF37DC, gUnk_09EF377C);
-    AnimStart(&work->unk_040[3], 4, 0);
-    work->unk_02C = AnimGetGfx(&work->unk_040[3]);
-    AnimInit(&work->unk_040[4], gUnk_09EF37DC, gUnk_09EF377C);
-    AnimStart(&work->unk_040[4], 0, 0);
-    work->unk_030 = AnimGetGfx(&work->unk_040[4]);
-    AnimInit(&work->unk_040[5], gUnk_09EF37DC, gUnk_09EF377C);
-    AnimStart(&work->unk_040[5], 0, 0);
-    work->unk_034 = AnimGetGfx(&work->unk_040[5]);
+    AnimInit(&work->anim[0], gUnk_09EF37DC, gUnk_09EF377C);
+    AnimStart(&work->anim[0], 1, 0);
+    work->unk_020 = AnimGetGfx(&work->anim[0]);
+    AnimInit(&work->anim[1], gUnk_09EF37DC, gUnk_09EF377C);
+    AnimStart(&work->anim[1], 2, 0);
+    work->unk_024 = AnimGetGfx(&work->anim[1]);
+    AnimInit(&work->anim[2], gUnk_09EF37DC, gUnk_09EF377C);
+    AnimStart(&work->anim[2], 4, 0);
+    work->unk_028 = AnimGetGfx(&work->anim[2]);
+    AnimInit(&work->anim[3], gUnk_09EF37DC, gUnk_09EF377C);
+    AnimStart(&work->anim[3], 4, 0);
+    work->unk_02C = AnimGetGfx(&work->anim[3]);
+    AnimInit(&work->anim[4], gUnk_09EF37DC, gUnk_09EF377C);
+    AnimStart(&work->anim[4], 0, 0);
+    work->unk_030 = AnimGetGfx(&work->anim[4]);
+    AnimInit(&work->anim[5], gUnk_09EF37DC, gUnk_09EF377C);
+    AnimStart(&work->anim[5], 0, 0);
+    work->unk_034 = AnimGetGfx(&work->anim[5]);
     work->unk_038 = gUnk_09EF37F4[0];
 
     for (i = 0; i < 8; i++) {
@@ -1541,7 +1541,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         }
         break;
     case 3:
-        work->unk_028 = AnimUpdate(&work->unk_040[2]);
+        work->unk_028 = AnimUpdate(&work->anim[2]);
 
         if (work->unk_002 > 13) {
             work->unk_002 = 0;
@@ -1564,18 +1564,18 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         }
         work->unk_002++;
 
-        if (AnimIsFinished(&work->unk_040[2])) {
+        if (AnimIsFinished(&work->anim[2])) {
             work->unk_100[2] = 0;
             work->unk_100[3] = 1;
             work->unk_002 = 0;
             work->unk_000++;
         } else {
-            work->unk_020 = AnimUpdate(&work->unk_040[0]);
-            work->unk_028 = AnimUpdate(&work->unk_040[2]);
+            work->unk_020 = AnimUpdate(&work->anim[0]);
+            work->unk_028 = AnimUpdate(&work->anim[2]);
         }
         break;
     case 5:
-        work->unk_02C = AnimUpdate(&work->unk_040[3]);
+        work->unk_02C = AnimUpdate(&work->anim[3]);
 
         if (work->unk_002 > 13) {
             work->unk_002 = 0;
@@ -1598,7 +1598,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         }
         work->unk_002++;
 
-        if (AnimIsFinished(&work->unk_040[3])) {
+        if (AnimIsFinished(&work->anim[3])) {
             work->unk_100[3] = 0;
             work->unk_100[4] = 1;
             work->unk_100[5] = 1;
@@ -1608,8 +1608,8 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_004 = 0;
             work->unk_000++;
         } else {
-            work->unk_024 = AnimUpdate(&work->unk_040[1]);
-            work->unk_02C = AnimUpdate(&work->unk_040[3]);
+            work->unk_024 = AnimUpdate(&work->anim[1]);
+            work->unk_02C = AnimUpdate(&work->anim[3]);
         }
         break;
     case 7:
@@ -1632,8 +1632,8 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         } else {
             work->unk_004++;
         }
-        work->unk_030 = AnimUpdate(&work->unk_040[4]);
-        work->unk_034 = AnimUpdate(&work->unk_040[5]);
+        work->unk_030 = AnimUpdate(&work->anim[4]);
+        work->unk_034 = AnimUpdate(&work->anim[5]);
         break;
     case 8:
         if (work->unk_004 > 1) {
@@ -1647,8 +1647,8 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         } else {
             work->unk_004++;
         }
-        work->unk_030 = AnimUpdate(&work->unk_040[4]);
-        work->unk_034 = AnimUpdate(&work->unk_040[5]);
+        work->unk_030 = AnimUpdate(&work->anim[4]);
+        work->unk_034 = AnimUpdate(&work->anim[5]);
         break;
     case 9:
         work->unk_100[6] = 0;
@@ -1659,12 +1659,12 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         SetBgBlend(0, 0, 16);
         work->unk_100[0] = 0;
         work->unk_100[1] = 0;
-        work->unk_030 = AnimUpdate(&work->unk_040[4]);
-        work->unk_034 = AnimUpdate(&work->unk_040[5]);
+        work->unk_030 = AnimUpdate(&work->anim[4]);
+        work->unk_034 = AnimUpdate(&work->anim[5]);
         work->unk_000++;
         break;
     case 10:
-        if (AnimIsFinished(&work->unk_040[4])) {
+        if (AnimIsFinished(&work->anim[4])) {
             work->unk_100[4] = 0;
             work->unk_100[5] = 0;
             work->unk_004 = 0;
@@ -1672,8 +1672,8 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_007 = 8;
             work->unk_000++;
         } else {
-            work->unk_030 = AnimUpdate(&work->unk_040[4]);
-            work->unk_034 = AnimUpdate(&work->unk_040[5]);
+            work->unk_030 = AnimUpdate(&work->anim[4]);
+            work->unk_034 = AnimUpdate(&work->anim[5]);
         }
         break;
     case 11:

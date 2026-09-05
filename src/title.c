@@ -59,7 +59,7 @@ void task_title_logo_2(TitleLogoWork* work) {
         } else {
             affine = 0;
         }
-        DrawSprite(x, y, work->unk_00[i].unk_08, work->unk_00[i].unk_00, work->unk_00[i].unk_04, affine, 0, i + 20);
+        DrawSprite(x, y, work->unk_00[i].unk_08, work->unk_00[i].tiles, work->unk_00[i].palette, affine, 0, i + 20);
     }
 }
 #else
@@ -70,8 +70,8 @@ void task_title_logo_3(TitleLogoWork* work) {
     s32 i;
 
     for (i = 0; i < 6; i++) {
-        ReleaseObjTiles(work->unk_00[i].unk_00);
-        ReleaseObjPalette(work->unk_00[i].unk_04);
+        ReleaseObjTiles(work->unk_00[i].tiles);
+        ReleaseObjPalette(work->unk_00[i].palette);
     }
 }
 
@@ -93,8 +93,8 @@ void task_title_obj_0(TitleObjWork* work) {
     s32 t;
 
     t = (gGameState.flags & 0x200) ? 0x20 : 0;
-    work->unk_00[0].unk_00 = LoadObjTiles(gUnk_09771060, 0x3C0);
-    work->unk_00[0].unk_04 = LoadObjPalette(gUnk_0984A718, 0x20);
+    work->unk_00[0].tiles = LoadObjTiles(gUnk_09771060, 0x3C0);
+    work->unk_00[0].palette = LoadObjPalette(gUnk_0984A718, 0x20);
     work->unk_00[0].unk_08 = gUnk_09EF65E0[0];
 
     if (gGameState.flags & 0x200) {
@@ -104,16 +104,16 @@ void task_title_obj_0(TitleObjWork* work) {
         work->unk_00[0].unk_10 = 0x3D00;
         work->unk_00[0].unk_0C = 0x77;
     }
-    work->unk_00[1].unk_00 = LoadObjTiles(gUnk_09771666, 0x700);
-    work->unk_00[1].unk_04 = LoadObjPalette(&gUnk_0984A778[t], 0x20);
+    work->unk_00[1].tiles = LoadObjTiles(gUnk_09771666, 0x700);
+    work->unk_00[1].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
     work->unk_00[1].unk_10 = -0x7800;
     work->unk_00[1].unk_14 = 0x7C00;
     work->unk_00[1].unk_0C = 0xA0;
     AnimInit(&work->anim, gUnk_09EF6604, gUnk_09EF65F0);
     AnimStart(&work->anim, 0, 1);
     work->unk_00[1].unk_08 = AnimGetGfx(&work->anim);
-    work->unk_00[2].unk_00 = LoadObjTiles(gUnk_0977143A, 0x100);
-    work->unk_00[2].unk_04 = LoadObjPalette(&gUnk_0984A778[t], 0x20);
+    work->unk_00[2].tiles = LoadObjTiles(gUnk_0977143A, 0x100);
+    work->unk_00[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
     work->unk_00[2].unk_08 = gUnk_09EF65E8[0];
     work->unk_00[2].unk_10 = 0x15800;
     work->unk_00[2].unk_14 = 0xB800;
@@ -155,7 +155,7 @@ void task_title_obj_2(TitleObjWork* work) {
 
     for (i = 0; i < TITLE_OBJ_DRAW_COUNT; i++) {
         DrawSprite(work->unk_00[i].unk_10 >> 8, work->unk_00[i].unk_0C, work->unk_00[i].unk_08,
-                   work->unk_00[i].unk_00, work->unk_00[i].unk_04, 0, 0, i);
+                   work->unk_00[i].tiles, work->unk_00[i].palette, 0, 0, i);
     }
 }
 
@@ -163,8 +163,8 @@ void task_title_obj_3(TitleObjWork* work) {
     s32 i;
 
     for (i = 0; i < 3; i++) {
-        ReleaseObjTiles(work->unk_00[i].unk_00);
-        ReleaseObjPalette(work->unk_00[i].unk_04);
+        ReleaseObjTiles(work->unk_00[i].tiles);
+        ReleaseObjPalette(work->unk_00[i].palette);
     }
 }
 

@@ -7,7 +7,7 @@
 
 typedef struct RoomNameWork {
     void* tiles;
-    void* unk_04;
+    void* palette;
     void* unk_08;
     s32 unk_0C;
     s32 unk_10;
