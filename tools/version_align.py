@@ -27,6 +27,7 @@ CODE_HI = 0x081213C4
 WINDOW = 0x600
 SNAP = 64
 PASSES = 4
+TRUSTED = ("named", "xref", "global", "body")
 
 MAP_RE = re.compile(r"^\s+(0x08[0-9a-f]{6})\s+(\S+)$")
 
@@ -451,24 +452,37 @@ def main():
 
     entries()
 
+    def in_gap(k, lo, hi):
+        sz = funcs[k][1] - funcs[k][0]
+
+        for cur in range(lo, hi - sz + 1, 2):
+            if verify(k, cur) is not None:
+                return True
+        return False
+
     def mark_absent():
         gone = []
         i = 0
 
         while i < n:
-            if addr[i] is not None or how[i] == "absent":
+            if addr[i] is not None:
                 i += 1
                 continue
             j = i
 
-            while j < n and addr[j] is None and how[j] != "absent":
+            while j < n and addr[j] is None:
                 j += 1
+            run = [k for k in range(i, j) if how[k] != "absent"]
 
-            if i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
-                avail = addr[j] - (addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0]))
+            if run and i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
+                lo = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
+                avail = addr[j] - lo
+                need = sum(funcs[k][1] - funcs[k][0] for k in run)
+                trusted = how[i - 1] in TRUSTED and how[j] in TRUSTED
 
-                if avail <= 0:
-                    for k in range(i, j):
+                if avail <= 0 or (trusted and need > avail + SNAP
+                                  and not any(in_gap(k, lo, addr[j]) for k in run)):
+                    for k in run:
                         how[k] = "absent"
                         gone.append(funcs[k][2])
             i = j
