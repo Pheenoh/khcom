@@ -498,11 +498,41 @@ typedef struct MapPrizeWork {
     u8 unk_74[0x24];
 } MapPrizeWork;
 
+typedef struct MapGmkGp8Work {
+    u8 unk_000[0x44];
+    u8 unk_044[0x74];
+    void* unk_0B8;
+    u8* unk_0BC;
+    u8 unk_0C0[0x0C];
+    void (*unk_0CC)(struct MapGmkGp8Work*);
+} MapGmkGp8Work;
+
+typedef struct MapGmk06Work {
+    u8 unk_000[0xC4];
+    u32 unk_0C4;
+    u8 unk_0C8[0x14];
+} MapGmk06Work;
+
 typedef struct MapPrzStockWork {
     u16* unk_00;
     void (*unk_04)(struct MapPrzStockWork*);
-    u8 unk_08[0x14];
+    TaskPool unk_08;
+    u8 unk_18[0x04];
 } MapPrzStockWork;
+
+typedef struct MapSparkWork {
+    u8 unk_00[0x04];
+    AnimState unk_04;
+    void* unk_1C;
+    u8* unk_20;
+    u8 unk_24[0x04];
+} MapSparkWork;
+
+typedef struct MapNiserikuWork {
+    u8 unk_000[0xBC];
+    u32 unk_0BC;
+    u8 unk_0C0[0x2C];
+} MapNiserikuWork;
 
 typedef struct MapMsgWork {
     u8 unk_000[0x188];
@@ -670,6 +700,7 @@ extern const u8 gUnk_09EF6AB0[];
 extern void* gModeMapFld;
 extern void* gModeWorldselect;
 extern void* gModeMapFix;
+extern void* gModeWorldwarp;
 extern void* gTaskDescMapRnd;
 extern void* gTaskDescFldSora;
 extern void* gTaskDescFldRiku;
@@ -734,6 +765,7 @@ void func_080E4B34(void);
 void func_08066918(void* a, void* b);
 void TaskPoolDraw(TaskPool* a);
 void* AnimUpdate(AnimState* a);
+u8 AnimIsFinished(AnimState* a);
 void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 void m4aSongNumStart(u16 id);
 u16 CountCardsById(u16 cardId);
@@ -1029,6 +1061,22 @@ void func_080F2058(MapGmkGpWork* w);
 void func_080F22E8(MapGmkGpWork* w);
 void func_080F2570(MapGmkGpWork* w);
 void func_080F2838(MapGmkGpWork* w);
+void func_080F2AD0(MapGmkGpWork* w);
+void func_080F2D6C(MapGmkGpWork* w);
+void func_080F302C(MapGmkGpWork* w);
+void func_080F32D0(MapGmkGpWork* w);
+void func_080F359C(MapGmkGp8Work* w);
+void func_080F3864(MapGmkGp8Work* w);
+void func_080F3A50(MapGmkGpWork* w);
+void func_080F3D34(MapGmkGpWork* w);
+void func_080F411C(MapGmkGpWork* w);
+void func_080F35C0(MapGmkGp8Work* w);
+s32 func_080F3674(MapGmkGp8Work* w);
+void func_080F47B4(MapGmk06Work* w);
+void func_080F66E0(MapNiserikuWork* w);
+s32 func_080F5868(MapPrzStockWork* w);
+void func_080F589C(MapPrzStockWork* w);
+s32 func_080F5A64(MapSparkWork* w);
 void func_080F4EC4(MapPrizeWork* w);
 void func_080F5800(MapPrzStockWork* w);
 s32 func_080F59E4(MapMsgWork* w);
