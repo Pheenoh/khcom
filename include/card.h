@@ -998,6 +998,12 @@ extern u8 gUnk_09EF1260[];
 extern u8 gUnk_09EF1230[];
 extern u8 gUnk_095162B8[];
 extern u8 gUnk_095182B8[];
+extern u8 gUnk_09519AB8[];
+extern u8 gUnk_0951A2B8[];
+extern u8 gUnk_0951AAB8[];
+extern u8 gUnk_095172B8[];
+extern u8 gUnk_09517AB8[];
+extern u8 gUnk_09518AB8[];
 extern u8 gUnk_095192B8[];
 extern u8 gUnk_09514AB8[];
 extern u8 gUnk_09614458[];
@@ -1268,6 +1274,18 @@ typedef struct UnkStruct_080A18F4 {
     u8 unk_97;
     u8 unk_98[0x14];
 } UnkStruct_080A18F4;
+
+typedef struct UnkStruct_0809FBCC {
+    u8 unk_000[0x77A];
+    s16 unk_77A;
+    s16 unk_77C;
+} UnkStruct_0809FBCC;
+
+typedef struct UnkStruct_080ABA80 {
+    s32 unk_00[6];
+} UnkStruct_080ABA80;
+
+extern const UnkStruct_080ABA80 gUnk_09045188;
 
 typedef struct UnkStruct_0809A368_Args {
     s32 unk_00;
