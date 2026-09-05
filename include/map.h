@@ -537,13 +537,16 @@ typedef struct MapDbgWork {
 typedef struct MapGmkJumpWork {
     u8 unk_000[0x08];
     s32 unk_008;
-    u8 unk_00C[0x34];
+    u8 unk_00C[0x08];
+    u8 unk_014;
+    u8 unk_015[0x2B];
     AnimState unk_040;
     u8 unk_058[0x08];
     void* unk_060;
     s32 unk_064;
     u8 unk_068[0x04];
-    s32 unk_06C;
+    u16 unk_06C;
+    u16 unk_06E;
     u16 unk_070;
     u8 unk_072[0x2A];
     AnimState unk_09C;
@@ -551,8 +554,9 @@ typedef struct MapGmkJumpWork {
     u8* unk_0B8;
     u8 unk_0BC[0x04];
     u8 unk_0C0;
-    u8 unk_0C1[0x07];
-    s32 (*unk_0C8)(struct MapGmkJumpWork*);
+    u8 unk_0C1[0x03];
+    s32 unk_0C4;
+    void (*unk_0C8)(struct MapGmkJumpWork*);
 } MapGmkJumpWork;
 
 typedef struct MapGmkTutorialWork {
@@ -573,17 +577,24 @@ typedef struct MapGmkTutorialWork {
 } MapGmkTutorialWork;
 
 typedef struct MapGmk01Work {
-    u8 unk_000[0xC4];
+    u8 unk_000[0x04];
+    UnkStruct_080DFF1C unk_004;
+    u8 unk_014[0x8C];
+    AnimState unk_0A0;
+    void* unk_0B8;
+    u8* unk_0BC;
+    void* unk_0C0;
     u16 unk_0C4;
     u16 unk_0C6;
     u8 (*unk_0C8)(struct MapGmk01Work*);
 } MapGmk01Work;
 
 typedef struct MapGmkSpiderWork {
-    u8 unk_000[0xB4];
+    u8 unk_000[0x9C];
+    AnimState unk_09C;
     void* unk_0B4;
     u8* unk_0B8;
-    u8 unk_0BC[0x04];
+    void* unk_0BC;
     u8 (*unk_0C0)(struct MapGmkSpiderWork*);
     u8 unk_0C4[0x04];
 } MapGmkSpiderWork;
@@ -729,7 +740,7 @@ typedef struct MapPrzStockWork {
 } MapPrzStockWork;
 
 typedef struct MapSparkWork {
-    u8 unk_00[0x04];
+    void* unk_00;
     AnimState unk_04;
     void* unk_1C;
     u8* unk_20;
@@ -812,13 +823,20 @@ typedef struct MapMickeyWork {
 } MapMickeyWork;
 
 typedef struct MapTutorialWork {
-    u8 unk_000[0x40];
+    s32 unk_000;
+    s32 unk_004;
+    s32 unk_008;
+    s32 unk_00C;
+    s32 unk_010;
+    u8 unk_014[0x2C];
     u8 unk_040[0x5C];
     AnimState unk_09C;
     void* unk_0B4;
     u8* unk_0B8;
     void* unk_0BC;
-    u8 unk_0C0[0x04];
+    u8 unk_0C0;
+    u8 unk_0C1;
+    u8 unk_0C2[0x02];
     void (*unk_0C4)(struct MapTutorialWork*);
     TaskPool unk_0C8;
     TaskPool unk_0DC;
@@ -1029,6 +1047,8 @@ extern u8 gUnk_0815A03A[];
 extern u8 gUnk_08B1EA00[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_098A4B68[];
+extern u8 gUnk_09EF8CA0[];
+extern u8 gUnk_09EF8CC0[];
 extern u8 gUnk_09EF8CC8[];
 extern u8 gUnk_09EF8CD0[];
 extern u8 gUnk_08B1EA00[];
@@ -1135,9 +1155,12 @@ void func_080121FC(void* a);
 void func_080F5C60(MapDonaldWork* w);
 void func_080F5F88(MapGoofyWork* w);
 void func_080F62B0(MapNamineWork* w);
+void func_080F6314(MapNamineWork* w);
 void func_080F6A60(MapMickeyWork* w);
 void func_080F65EC(MapNamineWork* w);
+void func_080F6F1C(MapTutorialWork* w);
 void func_080F6FC4(MapTutorialWork* w);
+void func_080F7024(MapTutorialWork* w);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s32 func_080ED7CC(MapMenuWork* w);
 s32 func_080ED91C(MapMenuWork* w);
@@ -1171,6 +1194,7 @@ void TaskPoolDestroy(TaskPool* a);
 void func_080E4B34(void);
 void func_08066918(void* a, void* b);
 void TaskPoolDraw(TaskPool* a);
+void func_08005244(s32 bg, u16 x, u16 y);
 void* AnimUpdate(AnimState* a);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 u8 AnimIsFinished(AnimState* a);
@@ -1204,6 +1228,7 @@ void func_080F117C(MapDbgWork* w);
 void func_080F1124(MapDbgWork* w);
 u8 func_080F2654(MapGmkGpWork* w);
 s32 func_080F25FC(MapGmkGpWork* w);
+u8 func_080F3ADC(MapGmk01Work* w);
 s32 func_080F2B78(MapGmkGpWork* w);
 void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
@@ -1412,6 +1437,7 @@ u8 func_080E8FB8(u8 a, s32 b, s32 c, s32 d);
 void func_080E9338(s32 a);
 void func_080E9344(s32 a);
 void func_080E9034(u8 a, u8 b, s32 c, s32 d, s32 e);
+s32 func_080E924C(void);
 void func_080E92B8(UnkStruct_080E92B8* p);
 void func_080E92F8(UnkStruct_080E92B8* p);
 void func_080E935C(void);
@@ -1475,6 +1501,7 @@ u16 func_08065B6C(void* a, void* b);
 void func_080EE5E0(u8 a);
 void LoadObjPaletteBank(u16 bank, void* src);
 u8 func_0800FC5C(s32 a);
+u8 func_0800FBCC(s32 a);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f);
 void func_080E64D4(UnkStruct_080E590C* p);
@@ -1509,7 +1536,8 @@ u8 func_080F2CAC(MapGmkGpWork* w);
 u8 func_080F2F6C(MapGmkGpWork* w);
 void func_080F1E0C(MapGmkSpiderWork* w);
 s32 func_080F1E28(MapGmkGpWork* w);
-s32 func_080F1460(MapGmkJumpWork* w);
+void func_080F1460(MapGmkJumpWork* w);
+void func_080F14C4(MapGmkJumpWork* w);
 void func_080F2058(MapGmkGpWork* w);
 u8 func_080F2244(MapGmkGpWork* w);
 u8 func_080F230C(MapGmkGpWork* w);
@@ -1535,6 +1563,7 @@ void func_080F445C(MapGmk05Work* w);
 void func_080F66E0(MapNamineWork* w);
 s32 func_080F5868(MapPrzStockWork* w);
 void func_080F589C(MapPrzStockWork* w);
+void func_080F5A00(MapSparkWork* w, void* arg);
 s32 func_080F5A64(MapSparkWork* w);
 s32 func_080F4DB0(MapPrizeWork* w);
 s32 func_080F5580(MapPrzCardWork* w);
