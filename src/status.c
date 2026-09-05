@@ -973,7 +973,30 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     work->unk_1C = gUnk_09EF6948[1];
     work->unk_20 = 0;
 }
-INCLUDE_ASM("status/stock_mes_disp_1.s");
+u8 stock_mes_disp_1(StockMesDispWork* work) {
+    u8 changed = 0;
+
+    if (GetKeysPressed() & R_BUTTON) {
+        if (work->unk_40 < work->unk_44 - 1) {
+            work->unk_40++;
+            changed = 1;
+        }
+    } else if (GetKeysPressed() & L_BUTTON) {
+        if (work->unk_40 != 0) {
+            work->unk_40--;
+            changed = 1;
+        }
+    }
+
+    if (changed) {
+        m4aSongNumStart(0x67);
+        func_08000DE8(&work->unk_24, work->unk_38);
+        work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->unk_3C + 6, work->unk_3E + 16, func_080A2334(work->unk_42, work->unk_40));
+    }
+
+    TaskPoolUpdate(&work->unk_24);
+    return 1;
+}
 
 void stock_mes_disp_2(StockMesDispWork* work) {
     DrawSprite(work->unk_3C + 14, work->unk_3E - 4, 0, work->unk_00, work->unk_04, 0, 0, 5);

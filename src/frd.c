@@ -719,7 +719,63 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
 
 INCLUDE_ASM("frd/task_frd_jack_1.s");
 
+#ifdef NON_MATCHING
+void task_frd_jack_2(FrdJackWork* work) {
+    FrdBody* body;
+    void* gfx;
+    u16 flags;
+    s16 sx;
+    s16 sy;
+    s32 affine;
+    s32 sclX;
+    s32 sclY;
+    u8 angle;
+    s32 mask;
+
+    body = &work->unk_020;
+    gfx = AnimGetGfx(&work->anim);
+    flags = func_0801AF1C(body->y);
+    angle = work->unk_160;
+    mask = 0xFF;
+
+    if (body->flags & 4) {
+        sclY = gBtlWork->unk_024;
+        sclX = sclY;
+    } else if (angle == 0 && gBtlWork->unk_024 == 256) {
+        sclY = gBtlWork->unk_024;
+        sclX = sclY;
+        flags |= 1;
+    } else {
+        sclX = -gBtlWork->unk_024;
+        sclY = gBtlWork->unk_024;
+    }
+
+    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+
+    if (angle != 0) {
+        affine = AllocObjAffine(angle, sclX, sclY, 1);
+    } else if (gBtlWork->unk_024 == 256) {
+        affine = 0;
+    } else if (gBtlWork->unk_024 <= 255) {
+        affine = AllocObjAffine(0, sclX, sclY, 0);
+    } else {
+        affine = AllocObjAffine(0, sclX, sclY, 1);
+    }
+
+    if (body->flags & 4) {
+        sx = sx + (gSineTable[(angle + 128) & mask] * 5 >> 5);
+    } else {
+        sx = sx - (gSineTable[(angle + 128) & mask] * 5 >> 5);
+    }
+
+    sy = sy + (-gSineTable[((angle + 128) & mask) + 64] * 5 >> 5) - 40;
+    DrawSprite(sx, sy, gfx, work->unk_018, work->palette, affine, flags, -4100 - ((body->y >> 8) * 4));
+    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+    TaskPoolDraw(&work->unk_000);
+}
+#else
 INCLUDE_ASM("frd/task_frd_jack_2.s");
+#endif
 
 void task_frd_jack_3(FrdJackWork* work) {
     BtlWork* obj;
