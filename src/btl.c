@@ -1830,6 +1830,29 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154 = uv + 1;
         }
         break;
+    case 49:
+        func_0801DDC4(work);
+        func_0801DDE4(work, 67, 0);
+        work->unk_150 = 0;
+        uv = work->unk_158;
+        work->unk_158 = uv + 1;
+        p->unk_0C += (*(s32*)&p->unk_14[8] + (gSineTable[(uv * 2) & 0xFF] << 3) - p->unk_0C) >> 3;
+
+        if (p->unk_34 & 4) {
+            t = p->unk_04 - 8192;
+            p->unk_04 += (*(s32*)&p->unk_14[0] - t) >> 3;
+        } else {
+            t = p->unk_04 + 8192;
+            p->unk_04 += (*(s32*)&p->unk_14[0] - t) >> 3;
+        }
+
+        if (AnimIsFinished(&work->anim) != 0 && func_080128EC() == 0) {
+            func_080061E8(0, 8);
+            func_0801E4E4(work, 3);
+        } else {
+            work->unk_154++;
+        }
+        break;
     case 65:
         func_0801DDC4(work);
 
