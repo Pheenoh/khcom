@@ -469,7 +469,10 @@ typedef struct TmWork {
     u16 unk_28;
     u8 unk_2A[0x2];
     u32 unk_2C;
-    u8 unk_30[0x10];
+    u8 unk_30[0x4];
+    s16 unk_34;
+    s16 unk_36;
+    u8 unk_38[0x8];
     u16 unk_40;
     u16 unk_42;
     u16 unk_44;
@@ -515,10 +518,16 @@ typedef struct TmBodyWork {
 } TmBodyWork;
 
 typedef struct TmArmState {
-    u8 unk_00[0x28];
+    u8 unk_00[0x8];
+    s32 unk_08;
+    s32 unk_0C;
+    u8 unk_10[0x18];
     u16 unk_28;
     u8 unk_2A[0x2];
     s32 unk_2C;
+    u8 unk_30[0xA];
+    u8 unk_3A;
+    u8 unk_3B;
 } TmArmState;
 
 typedef struct TmAnimFrame {
@@ -606,7 +615,12 @@ typedef struct TmFootStep {
     s16 unk_0A;
     s16 unk_0C;
     s16 unk_0E;
-    u8 unk_10[0x10];
+    s16 unk_10;
+    s16 unk_12;
+    u8 unk_14[0x4];
+    s16 unk_18;
+    s16 unk_1A;
+    u8 unk_1C[0x4];
 } TmFootStep;
 
 typedef struct TmFootSub {
@@ -697,6 +711,11 @@ extern void* gUnk_09EF3958;
 extern void* gUnk_09EF3960;
 extern void* gUnk_09EF397C;
 extern u8 gUnk_0203AB50[];
+extern s16 gUnk_0203AC60;
+extern s32 gUnk_0203AC64;
+extern s16 gUnk_0203AC6C;
+extern u16 gUnk_0203AC74;
+extern s32 gUnk_0203AC78;
 extern u8 gUnk_09654C04[];
 extern u8 gUnk_09658C04[];
 extern u8 gUnk_09665C04[];
@@ -745,6 +764,8 @@ extern u8 gUnk_09EF2A74[];
 extern u8 gUnk_08125E24[];
 extern TmFootStep gUnk_09EF2244[];
 extern TmFootStep gUnk_09EF25A4[];
+extern TmFootStep gUnk_09EF2464[];
+extern u8 gUnk_09619C94[];
 
 void func_08002A10(void* a, void* b);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
@@ -855,6 +876,7 @@ void func_080C4398(DsdItaWork* work);
 void func_080C3C40(DsdMainWork* work);
 u8 func_080C0258(u16* p, s16 b, u8 c, u8 d);
 void func_080BA43C(TmFootWork* work, s16 a);
+void func_080BA62C(TmFootWork* work);
 void func_080BA8C8(TmFootWork* work, s16 a);
 s32 func_080BE940(JfMajinWork* work);
 void func_080BB588(u8* joints, u16 a);
@@ -912,6 +934,7 @@ void func_080147C8(s32 a, s32 b);
 void func_080147D8(s32 a, s32 b);
 void func_08014780(s32 a, s32 b, s32 c);
 void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a);
+void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a);
 void _0801C1F8(u8 a, s32 b, s32 c, s32 d);
 void func_080C3188(DsdMainWork* work);
 void func_080C427C(DsdItaWork* work);
