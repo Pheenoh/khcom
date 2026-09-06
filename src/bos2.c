@@ -68,7 +68,57 @@ void task_bos_tm_body_0(TmBodyWork* work, TmWork* arg) {
     }
 }
 INCLUDE_ASM("bos2/task_bos_tm_body_1.s");
-INCLUDE_ASM("bos2/task_bos_tm_body_2.s");
+void task_bos_tm_body_2(TmBodyWork* work) {
+    BosSub* s0;
+    BosSub* s1;
+    BosSub* s2;
+    BosSub* s3;
+    s32 a1;
+    s32 a2;
+    u16 mode;
+    void* pal;
+    s16 x;
+    s16 y;
+
+    if (work->unk_000->unk_28 & 0x20) {
+        a1 = AllocObjAffine(work->unk_128, 0x100, 0x100, 1);
+        a2 = AllocObjAffine(work->unk_244, 0x100, 0x100, 1);
+        mode = 0x800;
+    } else {
+        a1 = AllocObjAffine(work->unk_128, -0x100, 0x100, 1);
+        a2 = AllocObjAffine(work->unk_244, -0x100, 0x100, 1);
+        mode = 0x801;
+    }
+
+    if (gBtlWork->unk_070 != 0) {
+        pal = work->unk_008;
+    } else if (work->unk_000->unk_28 & 1) {
+        if (gFrameCounter & 1) {
+            pal = work->unk_00C;
+        } else {
+            pal = work->unk_008;
+        }
+    } else {
+        pal = work->unk_008;
+    }
+
+    s0 = (BosSub*)work->unk_010;
+    s1 = (BosSub*)work->unk_12C;
+    s2 = (BosSub*)work->unk_248;
+    s3 = (BosSub*)work->unk_364;
+    WorldToScreen(&x, &y, s0->x, s0->y, s0->z);
+    DrawSprite(x, y, work->unk_124, work->tiles, pal, a1, 0x800,
+               (u16)(-4101 - (s0->y >> 8) * 4));
+    WorldToScreen(&x, &y, s1->x, s1->y, s1->z - 0x1900);
+    DrawSprite(x, y, work->unk_240, work->tiles, pal, a2, 0x800,
+               (u16)(-4100 - (s1->y >> 8) * 4));
+    WorldToScreen(&x, &y, s2->x, s2->y, s2->z);
+    DrawSprite(x, y, work->unk_35C, work->tiles, pal, 0, mode,
+               (u16)(-4100 - (s2->y >> 8) * 4));
+    WorldToScreen(&x, &y, s3->x, s3->y, s3->z);
+    DrawSprite(x, y, work->unk_478, work->tiles, pal, 0, mode,
+               (u16)(-4100 - (s3->y >> 8) * 4));
+}
 
 void task_bos_tm_body_3(TmBodyWork* work) {
     if ((work->unk_000->unk_28 & 8) == 0) {
@@ -120,8 +170,8 @@ void func_080BA0F8(u8* work) {
     func_08012304(work + 0x40);
 }
 
-void func_080BA104(BosSub* work) {
-    func_08012324(&work->unk_040, work->x, work->y, work->z);
+void func_080BA104(BosSub* sub, TmFootWork* work) {
+    func_08012324(&sub->unk_040, sub->x, sub->y, sub->z);
 }
 
 void func_080BA11C(TmFootWork* work) {
@@ -294,8 +344,212 @@ void func_080BA8C8(TmFootWork* work, s16 a) {
     work->unk_140 += gUnk_09EF25A4[a].unk_0A << 8;
 }
 
-INCLUDE_ASM("bos2/task_bos_tm_foot_0.s");
+void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
+    u16 f;
+
+    work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
+    work->unk_00C = AllocObjTiles(0x440, gUnk_09654C04);
+    work->unk_010 = AllocObjTiles(0x440, gUnk_09654C04);
+    work->unk_014 = LoadObjPalette(gUnk_096FB2A4, 0x60);
+    work->unk_018 = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->unk_12C = gUnk_09EF39DC[2];
+    work->unk_244 = gUnk_09EF39DC[2];
+    work->unk_35C = gUnk_09EF39BC;
+    work->unk_474 = gUnk_09EF39C4;
+    work->unk_47C = arg;
+    work->unk_47C->unk_42 += ((u16*)work->unk_00C)[4] + ((u16*)work->unk_010)[4];
+    work->unk_003 = 0;
+    work->unk_004 = 0;
+    work->unk_000 = 0;
+    work->unk_480 = -0x100;
+    work->unk_002 = 0;
+    work->unk_130 = 0;
+    work->unk_248 = 0;
+    work->unk_360 = 0;
+    work->unk_478 = 0;
+    f = work->unk_47C->unk_28 & 8;
+
+    if (f != 0) {
+        func_080BA0E4((s32*)&work->unk_01C, (s16)(work->unk_47C->unk_00 + 1),
+                      (s16)(work->unk_47C->unk_02 + 2), (s16)(work->unk_47C->unk_04 - 4));
+        func_080BA0E4((s32*)&work->unk_134, (s16)(work->unk_47C->unk_00 - 6),
+                      (s16)(work->unk_47C->unk_02 - 2), (s16)(work->unk_47C->unk_04 - 4));
+        func_080BA0E4((s32*)&work->unk_24C, (s16)(work->unk_47C->unk_00 + 6),
+                      (s16)(work->unk_47C->unk_02 + 5), (s16)(work->unk_47C->unk_04 + 40));
+        func_080BA0E4((s32*)&work->unk_364, (s16)(work->unk_47C->unk_00 - 2),
+                      (s16)(work->unk_47C->unk_02 - 2), (s16)(work->unk_47C->unk_04 + 43));
+    } else {
+        func_080BA08C((BosSub*)&work->unk_01C, (s16)(work->unk_47C->unk_00 + 1),
+                      (s16)(work->unk_47C->unk_02 + 2), (s16)(work->unk_47C->unk_04 - 4), 4, 32, f,
+                      4);
+        func_080BA08C((BosSub*)&work->unk_134, (s16)(work->unk_47C->unk_00 - 6),
+                      (s16)(work->unk_47C->unk_02 - 2), (s16)(work->unk_47C->unk_04 - 4), 4, 32, f,
+                      5);
+        func_080BA08C((BosSub*)&work->unk_24C, (s16)(work->unk_47C->unk_00 + 6),
+                      (s16)(work->unk_47C->unk_02 + 5), (s16)(work->unk_47C->unk_04 + 40), 20, 140,
+                      f, 6);
+        func_080BA08C((BosSub*)&work->unk_364, (s16)(work->unk_47C->unk_00 - 2),
+                      (s16)(work->unk_47C->unk_02 - 2), (s16)(work->unk_47C->unk_04 + 43), 20, 140,
+                      f, 7);
+    }
+}
+#ifdef NON_MATCHING
+u8 task_bos_tm_foot_1(TmFootWork* work) {
+    u16 n;
+    TmFootStep* e;
+
+    func_080BA104((BosSub*)&work->unk_24C, work);
+    func_080BA104((BosSub*)&work->unk_364, work);
+
+    switch (work->unk_47C->unk_2C) {
+    case 0:
+    case 15:
+        if (work->unk_47C->unk_38 != 0) {
+            if (work->unk_47C->unk_36 != 0) {
+                break;
+            }
+
+            work->unk_003 = gUnk_09EF21B0[(s16)work->unk_47C->unk_34];
+            work->unk_004 = gUnk_09EF21B0[((s16)work->unk_47C->unk_34 + 4) & 7];
+            work->unk_12C = gUnk_09EF39DC[(s8)work->unk_003];
+            work->unk_244 = gUnk_09EF39DC[(s8)work->unk_004];
+            work->unk_258 =
+                work->unk_47C->unk_1C + ((gUnk_09EF21B8[(s8)work->unk_003] + 40) << 8);
+            work->unk_370 =
+                work->unk_47C->unk_1C + ((gUnk_09EF21B8[(s8)work->unk_004] + 43) << 8);
+            work->unk_028 = work->unk_47C->unk_1C - 0x400;
+            work->unk_140 = work->unk_47C->unk_1C - 0x400;
+        } else {
+            func_080BA11C(work);
+        }
+        break;
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+        if (work->unk_47C->unk_38 != 0) {
+            func_080BA62C(work);
+        } else {
+            func_080BA49C(work);
+        }
+        break;
+    case 1:
+    case 10:
+        if (work->unk_47C->unk_38 == 0) {
+            func_080BA11C(work);
+        }
+        break;
+    case 2:
+    case 3:
+        if (work->unk_47C->unk_38 != 0) {
+            n = work->unk_47C->unk_34;
+
+            if ((s16)n <= 3) {
+            } else if (n >= 66 && n <= 74) {
+                n -= 62;
+            } else if (n >= 98 && n <= 100) {
+                n -= 85;
+            } else {
+                break;
+            }
+
+            func_080BA43C(work, (s16)n);
+        } else {
+            func_080BA11C(work);
+        }
+        break;
+    case 11:
+        if (work->unk_47C->unk_38 != 0) {
+            n = work->unk_47C->unk_34;
+
+            if ((s16)n <= 3) {
+            } else if (n >= 96 && n <= 104) {
+                n -= 92;
+            } else if (n >= 128 && n <= 130) {
+                n -= 115;
+            } else {
+                break;
+            }
+
+            func_080BA43C(work, (s16)n);
+        } else {
+            func_080BA11C(work);
+        }
+        break;
+    case 9:
+        if (work->unk_47C->unk_38 != 0) {
+            n = work->unk_47C->unk_34;
+
+            if ((s16)n <= 2) {
+            } else if (n >= 41 && n <= 46) {
+                n -= 38;
+            } else {
+                break;
+            }
+
+            func_080BA8C8(work, (s16)n);
+        } else {
+            func_080BA11C(work);
+        }
+        break;
+    case 12:
+        if (work->unk_47C->unk_30 == 1) {
+            work->unk_002 = 0;
+            work->unk_000 = 0;
+            work->unk_12C = gUnk_09EF39DC[1];
+            work->unk_244 = gUnk_09EF39DC[1];
+            work->unk_028 = work->unk_47C->unk_10 +
+                            ((gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_02 - 4) << 8);
+            work->unk_140 = work->unk_47C->unk_10 +
+                            ((gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_0A - 4) << 8);
+            work->unk_258 = work->unk_47C->unk_10 + 0x2800;
+            work->unk_370 = work->unk_47C->unk_10 + 0x2800;
+            break;
+        }
+
+        if ((s16)work->unk_47C->unk_34 <= 2) {
+            work->unk_12C = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_06];
+            work->unk_244 = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_0E];
+            work->unk_028 += gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_02 << 8;
+            work->unk_140 += gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_0A << 8;
+        }
+
+        if (work->unk_47C->unk_32 <= 2) {
+            work->unk_12C =
+                gUnk_09EF39DC[(e = &gUnk_09EF21C4[work->unk_47C->unk_32])->unk_06 + 1];
+            work->unk_244 = gUnk_09EF39DC[e->unk_0E + 1];
+            work->unk_028 -= e->unk_02 << 8;
+            work->unk_140 -= e->unk_0A << 8;
+        }
+        break;
+    case 14:
+        if (work->unk_47C->unk_38 == 0) {
+            func_080BA2B0(work);
+        } else if (work->unk_47C->unk_38 > 59) {
+            if (work->unk_47C->unk_28 & 0x40) {
+                func_080BA49C(work);
+            } else {
+                func_080BA11C(work);
+            }
+        }
+        break;
+    case 13:
+        if ((s16)work->unk_47C->unk_34 == 0) {
+            func_080BA2B0(work);
+        }
+        break;
+    case 8:
+    case 16:
+    case 17:
+    default:
+        break;
+    }
+
+    return 1;
+}
+#else
 INCLUDE_ASM("bos2/task_bos_tm_foot_1.s");
+#endif
 #ifdef NON_MATCHING
 void task_bos_tm_foot_2(TmFootWork* work) {
     void* pal;
@@ -583,7 +837,89 @@ void func_080BB5E8(u8* joints, TmAnim* a) {
     func_080BB588(joints, 1);
 }
 
+#ifdef NON_MATCHING
+void task_bos_tm_arm_0(TmArmWork* work, TmArmSrc* arg) {
+    s32 i;
+    void* gfx;
+    TmArmJoint* a;
+    TmArmJoint* b;
+    TmArmJoint* p;
+    TmArmJoint* q;
+
+    work->unk_00C = arg;
+    work->unk_000 = LoadObjTiles(gUnk_09652E84, 0x1D80);
+    work->unk_004 = LoadObjPalette(gUnk_096FB2A4, 0x60);
+    work->unk_008 = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->unk_1B0 = 0;
+    work->unk_1B2 = 0;
+    work->unk_230 = 1;
+    work->unk_234 = 0;
+    work->unk_22C = 0;
+    work->unk_220 = 0;
+    func_080BB43C(work->unk_224, gUnk_09619CDC, 3, (u8*)work->unk_010);
+    func_080BB43C((u8*)&work->unk_218, gUnk_09619D18, 3, (u8*)&work->unk_010[4]);
+
+    for (i = 0; i < 4; i++) {
+        p = &work->unk_010[i];
+        q = &work->unk_010[i + 4];
+        *(u16*)&p->unk_08 = p->unk_14;
+        *(u16*)&q->unk_08 = q->unk_14;
+    }
+
+    a = work->unk_010;
+    b = &work->unk_010[4];
+    func_080BB518(a);
+    func_080BB518(b);
+
+    for (i = 0; i < 4; i++) {
+        work->unk_010[i].unk_00 = work->unk_010[i].unk_0C;
+        work->unk_010[i].unk_04 = work->unk_010[i].unk_10;
+        work->unk_010[i + 4].unk_00 = work->unk_010[i + 4].unk_0C;
+        work->unk_010[i + 4].unk_04 = work->unk_010[i + 4].unk_10;
+    }
+
+    func_080BB464(work);
+    func_080BB4C0(work);
+    work->unk_1F8[0].unk_0C = 272;
+    work->unk_1F8[1].unk_0C = 240;
+
+    for (i = 0; i < 3; i++) {
+        AnimInit((AnimState*)&work->unk_010[i].unk_16[2], gUnk_09EF39B4, gUnk_09EF39A0);
+        AnimStart((AnimState*)&work->unk_010[i].unk_16[2], 0, 1);
+        work->unk_010[i].unk_26 = i * 2;
+        work->unk_010[i].unk_30 = AnimGetGfx((AnimState*)&work->unk_010[i].unk_16[2]);
+        AnimInit((AnimState*)&work->unk_010[i + 4].unk_16[2], gUnk_09EF39B4, gUnk_09EF39A0);
+        AnimStart((AnimState*)&work->unk_010[i + 4].unk_16[2], 0, 1);
+        work->unk_010[i + 4].unk_26 = i * 2;
+        work->unk_010[i + 4].unk_30 = AnimGetGfx((AnimState*)&work->unk_010[i + 4].unk_16[2]);
+    }
+
+    work->unk_010[3].unk_30 = gUnk_0962E7A0;
+    work->unk_010[7].unk_30 = gUnk_0962E7A0;
+    work->unk_238 = AllocObjTiles(0x140, gUnk_09657C04);
+    *(u16*)((u8*)work->unk_00C->unk_18 + 66) += ((u16*)work->unk_238)[4];
+    AnimInit(&work->anim, gUnk_09EF3A18, gUnk_09EF39F8);
+    AnimStart(&work->anim, 0, 1);
+    work->unk_1D8 = work->unk_238;
+    work->unk_1F0 = work->unk_238;
+    gfx = AnimGetGfx(&work->anim);
+    work->unk_1DC = (u32)gfx;
+    work->unk_1F4 = (u32)gfx;
+    work->unk_254 = 0;
+    TaskPoolInit(&work->unk_1B4, 2);
+    func_080BB1B8(&work->unk_1B4, (TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0]);
+    func_080BB1B8(&work->unk_1B4, (TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1]);
+    gUnk_0203AC74 = 0;
+    gUnk_0203AC64 = 0;
+    gUnk_0203AC78 = 0;
+    gUnk_0203AC70 = 0;
+    gUnk_0203AC60 = 0;
+    gUnk_0203AC6C = 0;
+    gUnk_0203AC68 = 0;
+}
+#else
 INCLUDE_ASM("bos2/task_bos_tm_arm_0.s");
+#endif
 #ifdef NON_MATCHING
 void func_080BB924(TmArmWork* work) {
     TmArmJoint* j;
@@ -1229,7 +1565,120 @@ void task_bos_tm_tbl_0(TmTblWork* work, void* arg) {
     work->unk_060 = 0;
 }
 
-INCLUDE_ASM("bos2/task_bos_tm_tbl_1.s");
+u8 task_bos_tm_tbl_1(TmTblWork* work) {
+    s32 z;
+    u16 t;
+
+    switch (work->unk_068) {
+    case 1:
+        if ((s8)((u8*)work->unk_000)[58] == 1) {
+            work->unk_066 = 0;
+            work->unk_068 = 3;
+        }
+        break;
+    case 0:
+        if (work->unk_067 == 0) {
+            if (func_0801C1C0(0) != 0) {
+                work->unk_067 = 1;
+            }
+        } else {
+            work->unk_068 = 2;
+            ((u8*)work->unk_000)[58] = (z = 0, 1);
+            work->unk_067 = z;
+        }
+        break;
+    case 2:
+        switch (work->unk_066) {
+        case 0:
+            m4aSongNumStart(0x225);
+            EnableBg(1);
+            LoadBgMap(1, &gUnk_096BF464[0x5000], 0x800);
+            func_08012614(&work->unk_004, 0);
+            break;
+        case 2:
+            LoadBgMap(1, &gUnk_096BF464[0x4800], 0x800);
+            break;
+        case 4:
+            LoadBgMap(1, &gUnk_096BF464[0x4000], 0x800);
+            break;
+        case 6:
+            LoadBgMap(1, &gUnk_096BF464[0x3800], 0x800);
+            break;
+        case 8:
+            LoadBgMap(1, &gUnk_096BF464[0x3000], 0x800);
+            break;
+        case 10:
+            LoadBgMap(1, &gUnk_096BF464[0x2800], 0x800);
+            break;
+        case 12:
+            LoadBgMap(1, &gUnk_096BF464[0x2000], 0x800);
+            break;
+        case 14:
+            LoadBgMap(1, &gUnk_096BF464[0x1800], 0x800);
+            break;
+        case 16:
+            LoadBgMap(1, &gUnk_096BF464[0x1000], 0x800);
+            break;
+        }
+
+        if (work->unk_066 > 15) {
+            work->unk_066 = 0;
+            work->unk_068 = 1;
+            ((u8*)work->unk_000)[58] = 2;
+            t = *(u16*)((u8*)work->unk_000 + 40) | 0x10;
+            *(u16*)((u8*)work->unk_000 + 40) = t;
+        } else {
+            ColliderSetHeight(&work->unk_004, work->unk_060);
+            work->unk_060 += 3;
+            work->unk_066++;
+        }
+        break;
+    case 3:
+        switch (work->unk_066) {
+        case 0:
+            LoadBgMap(1, &gUnk_096BF464[0x1800], 0x800);
+            func_08012614(&work->unk_004, 1);
+            work->unk_060 = 0;
+            break;
+        case 1:
+            LoadBgMap(1, &gUnk_096BF464[0x2000], 0x800);
+            break;
+        case 2:
+            LoadBgMap(1, &gUnk_096BF464[0x2800], 0x800);
+            break;
+        case 3:
+            LoadBgMap(1, &gUnk_096BF464[0x3000], 0x800);
+            break;
+        case 4:
+            LoadBgMap(1, &gUnk_096BF464[0x3800], 0x800);
+            break;
+        case 5:
+            LoadBgMap(1, &gUnk_096BF464[0x4000], 0x800);
+            break;
+        case 6:
+            LoadBgMap(1, &gUnk_096BF464[0x4800], 0x800);
+            break;
+        case 7:
+            LoadBgMap(1, &gUnk_096BF464[0x5000], 0x800);
+            break;
+        case 8:
+            DisableBg(1);
+            break;
+        }
+
+        if (work->unk_066 > 7) {
+            work->unk_066 = 0;
+            work->unk_068 = 0;
+            ((u8*)work->unk_000)[58] = 0;
+        } else {
+            work->unk_066++;
+        }
+        break;
+    }
+
+    SetBgScroll(1, (u16)((gBtlWork->unk_000 >> 8) + 8), (u16)((gBtlWork->unk_004 >> 8) - 70));
+    return 1;
+}
 
 void task_bos_tm_tbl_3(TmTblWork* work) {
     func_08012304(&work->unk_004);
