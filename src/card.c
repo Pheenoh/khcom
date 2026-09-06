@@ -11318,7 +11318,6 @@ u8 func_0809423C(u8* work, void* a) {
     return 1;
 }
 
-#ifndef VERSION_EU
 u8 func_0809438C(u8* work, void* a) {
     u8 r;
 
@@ -11343,9 +11342,6 @@ u8 func_0809438C(u8* work, void* a) {
     TaskPoolUpdate(work);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809438C.s");
-#endif
 
 INCLUDE_ASM("card/func_08094404.s");
 
