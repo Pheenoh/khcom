@@ -12,6 +12,10 @@ extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
 extern void* gUnkEu_08892780[];
 extern void* gUnkEu_08892864[];
+extern void* gUnkEu_09F843D8[];
+extern void* gUnkEu_09F843E8[];
+extern void* gUnkEu_09F843F8[];
+extern void* gUnkEu_09F84408[];
 extern const u8 gUnkEu_0996D130[];
 extern const u8 gUnkEu_0996D930[];
 extern const u8 gUnkEu_0996E130[];
@@ -7238,17 +7242,61 @@ void func_080EBAE0(u8 a) {
     gUnk_02034FE0->unk_15C = 0;
 }
 
-#ifndef VERSION_EU
 void func_080EBB24(void) {
     s32 t;
     s32 u;
-
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        DrawSprite(128, gUnk_02034FE0->unk_008 >> 8, gUnk_09EF8D68[1], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(128, gUnk_02034FE0->unk_00C >> 8, gUnk_09EF8D68[2], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(gUnk_02034FE0->unk_010 >> 8, 0, gUnk_09EF8D68[0], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 80);
+        break;
+    case 1:
+        DrawSprite(128, gUnk_02034FE0->unk_008 >> 8, gUnkEu_09F843D8[1], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(128, gUnk_02034FE0->unk_00C >> 8, gUnkEu_09F843D8[2], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(gUnk_02034FE0->unk_010 >> 8, 0, gUnkEu_09F843D8[0], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 80);
+        break;
+    case 4:
+        DrawSprite(128, gUnk_02034FE0->unk_008 >> 8, gUnkEu_09F843E8[1], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(128, gUnk_02034FE0->unk_00C >> 8, gUnkEu_09F843E8[2], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(gUnk_02034FE0->unk_010 >> 8, 0, gUnkEu_09F843E8[0], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 80);
+        break;
+    case 3:
+        DrawSprite(128, gUnk_02034FE0->unk_008 >> 8, gUnkEu_09F843F8[1], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(128, gUnk_02034FE0->unk_00C >> 8, gUnkEu_09F843F8[2], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(gUnk_02034FE0->unk_010 >> 8, 0, gUnkEu_09F843F8[0], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 80);
+        break;
+    case 2:
+    default:
+        DrawSprite(128, gUnk_02034FE0->unk_008 >> 8, gUnkEu_09F84408[1], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(128, gUnk_02034FE0->unk_00C >> 8, gUnkEu_09F84408[2], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 90);
+        DrawSprite(gUnk_02034FE0->unk_010 >> 8, 0, gUnkEu_09F84408[0], gUnk_02034FE0->unk_004,
+            gUnk_02034FE0->unk_000, 0, 0xC00, 80);
+        break;
+    }
+#else
     DrawSprite(128, gUnk_02034FE0->unk_008 >> 8, gUnk_09EF8D68[1], gUnk_02034FE0->unk_004,
         gUnk_02034FE0->unk_000, 0, 0xC00, 90);
     DrawSprite(128, gUnk_02034FE0->unk_00C >> 8, gUnk_09EF8D68[2], gUnk_02034FE0->unk_004,
         gUnk_02034FE0->unk_000, 0, 0xC00, 90);
     DrawSprite(gUnk_02034FE0->unk_010 >> 8, 0, gUnk_09EF8D68[0], gUnk_02034FE0->unk_004,
         gUnk_02034FE0->unk_000, 0, 0xC00, 80);
+#endif
 
     if (gUnk_02034FE0->unk_183 <= 1) {
         DrawSprite(56, 112, ((void**)gUnk_09EDE8CC)[0], gUnk_02034FE0->unk_164,
@@ -7275,9 +7323,6 @@ void func_080EBB24(void) {
     func_080664D8(100, u + (gUnk_02034FE0->unk_15E + 22), &gUnk_02034FE0->unk_03C,
         gUnk_02034FE0->unk_038, 50, gUnk_02034FE0->unk_15C);
 }
-#else
-INCLUDE_ASM("map/func_080EBB24.s");
-#endif
 
 void func_080EBD00(UnkStruct_02034FE0* w) {
     u8 old = w->unk_183;
