@@ -2,6 +2,11 @@
 #include "unk_08104a84.h"
 #include "gba/keys.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern void* gUnkEu_09F84FBC[];
+#endif
+
 MsCard* gUnk_02035C10;
 s16 gUnk_02035C14;
 u16 gUnk_02035C16;
@@ -323,18 +328,18 @@ void func_08105090(void) {
 INCLUDE_ASM("unk_08104a84/func_08105090.s");
 #endif
 
-#ifndef VERSION_EU
 void func_081052C8(s16 a) {
     s16 t;
     void* base;
 
     t = 4 - a;
     base = GetBgScreenBase(0);
-    func_0800448C(gUnk_09A3B75C, base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
-}
+#ifdef VERSION_EU
+    func_0800448C(gUnkEu_09F84FBC[gLanguage], base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
 #else
-INCLUDE_ASM("unk_08104a84/func_081052C8.s");
+    func_0800448C(gUnk_09A3B75C, base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
 #endif
+}
 
 void func_08105334(void) {
     MsCard* card;
