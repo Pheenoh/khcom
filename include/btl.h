@@ -426,6 +426,7 @@ void func_080063A8(void);
 u8 func_08006314(void);
 void func_080165DC(s32 x, s32 y, s32 z);
 void func_08016684(s32 x, s32 y, s32 z);
+void func_08017008(s32 x, s32 y, s32 z);
 void func_0802F1E8(void);
 void func_08017B74(s32 x, s32 w);
 void func_08017514(s32 x, s32 y, s32 z, s32 w);
