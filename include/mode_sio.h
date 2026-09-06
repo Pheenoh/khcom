@@ -541,7 +541,7 @@ void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_08006120(s32 a, u16 b);
-void func_08006E60(void);
+void SioReset(void);
 void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
 u16 func_08065B6C(u16* a, TextSlot* b);

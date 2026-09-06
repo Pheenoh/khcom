@@ -84,7 +84,7 @@ s32 func_08006BA0(u8* p);
 u8* func_08006BA8(void);
 u16 IsVBlankIntrLive(void);
 void SioInit(void);
-void func_08006E60(void);
+void SioReset(void);
 void func_08006E70(void);
 void SioStop(void);
 u32 func_08006ED4(u8* a, u16* b, u16 (*c)[2]);

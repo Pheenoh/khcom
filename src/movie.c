@@ -88,7 +88,7 @@ void MovieFree(MoviePlayer* a);
 void func_08118F7C(MoviePlayer* a);
 s32 func_0811904C(MoviePlayer* a, void* dst);
 s32 MovieAdvanceFrame(MoviePlayer* a);
-u32 func_081192B0(MoviePlayer* a);
+u32 MovieGetAudioBlockSamples(MoviePlayer* a);
 void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2);
 s32 func_08119480(MoviePlayer* a);
 s32 func_0811950C(MoviePlayer* a);
@@ -123,13 +123,13 @@ s32 MovieStart(void* a) {
 
         for (i = 0; i < 4; i++) {
             if (channels == 1) {
-                SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(0, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
                 func_08119480(gUnk_0203C7C4);
             } else {
-                SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
-                SndStreamLock(1, func_081192B0(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
+                SndStreamLock(0, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(1, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
                 SndStreamUnlock(1);
@@ -180,7 +180,7 @@ void func_08118344(s32 (*a)(s32), s32 b) {
 
         if (ok != 0) {
             if (channels == 1) {
-                SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(0, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
 
@@ -188,8 +188,8 @@ void func_08118344(s32 (*a)(s32), s32 b) {
                     ok = 0;
                 }
             } else {
-                SndStreamLock(0, func_081192B0(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
-                SndStreamLock(1, func_081192B0(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
+                SndStreamLock(0, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(1, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
                 func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
                 SndStreamUnlock(1);
@@ -441,7 +441,7 @@ s32 MovieAdvanceFrame(MoviePlayer* a) {
     return 1;
 }
 
-u32 func_081192B0(MoviePlayer* a) {
+u32 MovieGetAudioBlockSamples(MoviePlayer* a) {
     MoviePlayer* p = a;
 
     if (p->channels == 1) {

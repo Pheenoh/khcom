@@ -154,7 +154,7 @@ void SioInit(void) {
     gUnk_020397F8 = 0;
 }
 
-void func_08006E60(void) {
+void SioReset(void) {
     SioInit();
     SioStop();
 }

@@ -66,11 +66,11 @@ void mode_sio_btl_connect_0(s32 arg) {
     gSioBtlConnectWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
 #ifdef VERSION_EU
     if (gUnk_0203A9E4 == 0) {
-        func_08006E60();
+        SioReset();
         func_080C5A3C(func_080AEE50, func_080AEE6C, 0);
     }
 #else
-    func_08006E60();
+    SioReset();
     func_080C5A3C(func_080AEE50, func_080AEE6C, 0);
 #endif
 }
@@ -1512,7 +1512,7 @@ void mode_sio_chg_connect_0(s32 arg) {
     func_08065ACC(gSioChgConnectWork->unk_08, 0x5A);
     gSioChgConnectWork->unk_05 = func_08065B6C(gUnk_08159EC4, gSioChgConnectWork->unk_08);
     gSioChgConnectWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
-    func_08006E60();
+    SioReset();
     func_080C5A3C(func_080B1BE0, func_080B1BFC, 1);
 }
 #endif
