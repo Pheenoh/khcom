@@ -621,6 +621,7 @@ void task_btl_sora_1(BtlSoraWork* work) {
     s32 t3;
     BtlTaskArgs args;
     BtlSpawnArgs spawn;
+    BtlSpawnArgs spawn2;
 
     p = &work->unk_040;
 
@@ -1381,6 +1382,74 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154 = uv + 1;
         }
         break;
+    case 86:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DDC4(work);
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 45, 0);
+            m4aSongNumStart(170);
+        }
+
+        if ((s16)work->unk_154 == 27) {
+            switch (work->unk_162[0]) {
+            case 0:
+                func_080188E4(0, p->unk_04, p->unk_08, p->unk_0C, 81);
+                break;
+            case 1:
+                func_080188E4(1, p->unk_04, p->unk_08, p->unk_0C, 82);
+                break;
+            case 2:
+                func_080188E4(2, p->unk_04, p->unk_08, p->unk_0C, 83);
+                break;
+            }
+
+            m4aSongNumStart(698);
+        } else if ((s16)work->unk_154 > 27 && func_080128EC() == 0) {
+            func_0801DDE4(work, 46, 0);
+            func_0801E4E4(work, 82);
+            break;
+        }
+
+        work->unk_154++;
+        break;
+    case 78:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DDC4(work);
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 45, 0);
+            m4aSongNumStart(171);
+        }
+
+        if ((s16)work->unk_154 == 27) {
+            e = p->unk_E4->unk_078;
+
+            if (e != 0) {
+                func_08017514(e->unk_004, e->unk_008, e->unk_010, 112);
+            } else if (p->unk_34 & 4) {
+                func_08017514(p->unk_04 - 6144, p->unk_08, p->unk_10, 112);
+            } else {
+                func_08017514(p->unk_04 + 6144, p->unk_08, p->unk_10, 112);
+            }
+
+            m4aSongNumStart(662);
+        } else if ((s16)work->unk_154 > 27 && func_080128EC() == 0) {
+            func_0801DDE4(work, 46, 0);
+            func_0801E4E4(work, 82);
+            break;
+        }
+
+        work->unk_154++;
+        break;
     case 80:
         if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
             func_0801DD08(work);
@@ -1549,6 +1618,85 @@ void task_btl_sora_1(BtlSoraWork* work) {
             func_08006120(6, 1);
             func_08019A30();
             func_0801E4E4(work, 1);
+        }
+        break;
+    case 62:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DD08(work);
+            func_0801DDE4(work, 42, 0);
+            m4aSongNumStart(164);
+        }
+
+        if ((s16)work->unk_154 == 27) {
+            if (p->unk_34 & 4) {
+                func_08016F2C(p->unk_04 - 18432, p->unk_08, p->unk_0C - 3584,
+                              *(s32*)&p->unk_14[0] - 51200, *(s32*)&p->unk_14[4],
+                              p->unk_0C - 3584, 1, 96);
+            } else {
+                func_08016F2C(p->unk_04 + 18432, p->unk_08, p->unk_0C - 3584,
+                              *(s32*)&p->unk_14[0] + 51200, *(s32*)&p->unk_14[4],
+                              p->unk_0C - 3584, 0, 96);
+            }
+        } else if ((s16)work->unk_154 > 27) {
+            func_0801DD90(work);
+
+            if (func_080128EC() == 0) {
+                func_0801E4E4(work, 1);
+            }
+        }
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            func_0801DDE4(work, 1, 1);
+        }
+
+        work->unk_154++;
+        break;
+    case 17:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DD08(work);
+
+        switch ((s16)work->unk_154) {
+        case 0:
+            work->unk_15A &= ~0x80;
+
+            if (p->unk_E4->unk_0F4 == 42
+                && *(TaskDesc**)&work->unk_18C != &gTaskDescSmnBambi
+                && *(TaskDesc**)&work->unk_18C != &gTaskDescSmnTink
+                && *(TaskDesc**)&work->unk_18C != &gTaskDescSmnMushu) {
+                func_08019190(p, 10);
+                uv = p->maxHp;
+                p->hp = ((s16)uv >> 2) + p->hp;
+
+                if ((s16)p->hp > (s16)uv) {
+                    p->hp = uv;
+                }
+            }
+
+            work->unk_154++;
+            break;
+        case 1:
+            work->unk_154++;
+            break;
+        case 2:
+            spawn2.unk_02 = work->unk_172;
+            spawn2.unk_00 = work->unk_162[0];
+            *(s32*)&p->unk_14[0] = p->unk_04;
+            *(s32*)&p->unk_14[4] = p->unk_08;
+            *(s32*)&p->unk_14[8] = p->unk_0C;
+            TaskCreate(&gBtlWork->unk_02C, *(TaskDesc**)&work->unk_18C, &spawn2);
+            work->unk_038 = 18;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
         }
         break;
     case 23:
