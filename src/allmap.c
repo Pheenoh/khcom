@@ -2,6 +2,12 @@
 #include "allmap.h"
 #include "gba/keys.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern void* gUnkEu_09F80124[];
+extern void* gUnkEu_09F80138[];
+#endif
+
 s32 gUnk_02034E84;
 s32 gUnk_02034E88;
 s32 gUnk_02034E8C;
@@ -346,7 +352,6 @@ void func_080D3FD4(AllmapBarWork* work) {
     func_080063A8();
 }
 
-#ifndef VERSION_EU
 s32 task_allmap_bar_1(AllmapBarWork* work) {
     s32 i;
 
@@ -364,7 +369,11 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         ApproachValue(&work->unk_20, work->unk_24, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
+#ifdef VERSION_EU
+            LoadBgMap(3, gUnkEu_09F80138[gLanguage], 0x500);
+#else
             LoadBgMap(3, gUnk_0983B298, 0x500);
+#endif
             work->unk_28 = 2;
             gUnk_0203C4E0 = 2;
         }
@@ -422,22 +431,20 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("allmap/task_allmap_bar_1.s");
-#endif
 
-#ifndef VERSION_EU
 void task_allmap_bar_2(AllmapBarWork* work) {
     if (work->unk_28 == 2) {
         return;
     }
+#ifdef VERSION_EU
+    DrawSprite(work->unk_20 >> 8, 0, gUnkEu_09F80124[gLanguage], work->unk_00, work->palette, 0,
+        0xC00, 1000);
+#else
     DrawSprite(work->unk_20 >> 8, 0, gUnk_0976D880, work->unk_00, work->palette, 0, 0xC00, 1000);
+#endif
     DrawSprite(128, work->unk_10 >> 8, gUnk_0976DB68, work->unk_04, work->palette, 0, 0xC00, 1001);
     DrawSprite(128, work->unk_18 >> 8, gUnk_0976DB9C, work->unk_04, work->palette, 0, 0xC00, 1002);
 }
-#else
-INCLUDE_ASM("allmap/task_allmap_bar_2.s");
-#endif
 
 void task_allmap_bar_3(AllmapBarWork* work) {
     ReleaseObjTiles(work->unk_00);

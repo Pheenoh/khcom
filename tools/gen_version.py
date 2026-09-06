@@ -34,6 +34,8 @@ TARGET_ANCHORS = {
     "eu": {
         0x02034890: 0x02034898,
         0x08F7CF18: 0x08F8DE14,
+        0x0976DB68: 0x0973BA18,
+        0x0976DB9C: 0x0973BA4C,
         0x09ED77D4: 0x09F476C8,
         0x09ED82D4: 0x09F481C8,
         0x08130E6C: 0x0887F340,
@@ -68,6 +70,8 @@ TARGET_ONLY_SYMBOLS = {
     "eu": {
         "gLanguage": 0x03007484,
         "gModeLang": 0x09F3EA64,
+        "gUnkEu_09F80124": 0x09F80124,
+        "gUnkEu_09F80138": 0x09F80138,
         "gUnkEu_09F84FBC": 0x09F84FBC,
         "gUnkEu_08890E1C": 0x08890E1C,
         "gUnkEu_08890E44": 0x08890E44,
