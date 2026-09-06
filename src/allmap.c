@@ -6,6 +6,8 @@
 extern u32 gLanguage;
 extern void* gUnkEu_09F80124[];
 extern void* gUnkEu_09F80138[];
+extern u8 gUnkEu_09814E40[];
+extern u8 gUnkEu_09815640[];
 #endif
 
 s32 gUnk_02034E84;
@@ -1214,16 +1216,28 @@ void func_080D5A4C(u16 a) {
     func_08006120(2, a);
 }
 
-#ifndef VERSION_EU
 void func_080D5B04(void) {
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+    case 1:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+        LoadBgMap(0, gUnkEu_09815640, 0x800);
+        break;
+    case 2:
+        LoadBgMap(0, gUnkEu_09814E40, 0x800);
+        break;
+    }
+#else
     LoadBgMap(0, gUnk_0983F398, 0x800);
+#endif
     SetBgBlend(0, 5, 16);
     EnableBg(1);
     m4aSongNumStart(6);
 }
-#else
-INCLUDE_ASM("allmap/func_080D5B04.s");
-#endif
 
 void func_080D5B30(void) {
     m4aMPlayFadeOut(gMPlayTable[gSongTable[6].ms].info, 5);
