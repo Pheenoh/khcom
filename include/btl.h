@@ -183,6 +183,17 @@ typedef struct BtlAreaWork {
     s16 unk_00A;
 } BtlAreaWork;
 
+typedef struct UnkStruct_08021C8A {
+    s32 unk_00;
+    s32* unk_04;
+    u16 unk_08;
+    u16 unk_0A;
+    s32 unk_0C;
+    u16 unk_10;
+    u16 unk_12;
+    struct UnkStruct_08021C8A* unk_14;
+} UnkStruct_08021C8A;
+
 typedef struct BtlSoraWork {
     void* unk_000;
     ObjPalette* palette;
@@ -310,6 +321,7 @@ extern GameState gGameState;
 
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
+extern u8 gUnk_0813C294[];
 
 extern s16 gSineTable[];
 
@@ -452,6 +464,7 @@ void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
 void func_08016750(s32 x, s32 y, s32 z, u8 f);
 void func_08014FDC(s32 x, s32 y, u8 f);
 void func_080137C8(s32 x, s32 y, s32 z, u8 f);
+void* memcpy(void* dst, const void* src, u32 n);
 s32 func_08011F68(s32 a, BtlWork* b);
 void func_0807E1E8(void);
 void func_0802F1E8(void);
