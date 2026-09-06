@@ -236,6 +236,9 @@ typedef struct UnkStruct_09EF8370 {
     s32 unk_44;
     s32 unk_48;
     s32 unk_4C;
+#ifdef VERSION_EU
+    u8 unk_50;
+#endif
 } UnkStruct_09EF8370;
 
 typedef struct UnkStruct_0984BB9C {
@@ -1277,6 +1280,11 @@ typedef struct UnkStruct_080EC760 {
     u8 unk_01[0x03];
     u8 unk_04[5][0x5C];
     TaskPool unk_1D0;
+#ifdef VERSION_EU
+    u8 unk_1E4;
+    u8 unk_1E5;
+    u8 unk_1E6;
+#endif
 } UnkStruct_080EC760;
 
 typedef struct UnkStruct_080ECFE8 {
