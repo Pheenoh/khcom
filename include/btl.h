@@ -8,6 +8,25 @@
 #include "fld_types.h"
 struct BtlWork;
 
+typedef struct BtlSpawnArgs {
+    u32 unk_00 : 16;
+    u32 unk_02 : 8;
+    u32 unk_03 : 8;
+} BtlSpawnArgs;
+
+typedef struct BtlTaskArgs {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x6];
+    s16 unk_12;
+    u16 unk_14;
+    u16 unk_16;
+    void* unk_18;
+    u16 unk_1C;
+    u8 unk_1E[0x2];
+} BtlTaskArgs;
+
 typedef struct UnkStruct_0801AF08 {
     u32 unk_00;
     s32 unk_04;
@@ -411,6 +430,9 @@ void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08015DC8(s32 x, s32 y, s32 z);
 u16 AnimGetFrame(AnimState* a);
 void func_08015D30(s32 x, s32 y, s32 z);
+s32 TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
+u8 IsTaskActiveNamed(s32 task, const char* name);
+extern TaskDesc gTaskDescBtlRaid;
 void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0801475C(s32 a, s32 b, s32 c);
 u32 func_0801A8A4(s32* x, s32* y, s32 a, s32 b);
