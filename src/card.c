@@ -17188,7 +17188,22 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a) {
     m4aSongNumStart(0xD4);
 }
 INCLUDE_ASM("card/WorldSel_Before_1.s");
-INCLUDE_ASM("card/WorldSel_Before_2.s");
+void WorldSel_Before_2(WorldSelBeforeWork* w) {
+    u8 i;
+
+    for (i = 0; i < w->unk_A2; i++) {
+        DrawSprite((w->unk_20[i] >> 8) - (gUnk_02039BA0->unk_00 >> 8),
+                   (w->unk_48[i] >> 8) + ((w->unk_18 + w->unk_70[i]) >> 8) - (gUnk_02039BA0->unk_04 >> 8),
+                   (&gUnk_09EF1278[4])[0], w->unk_00, w->palette, 0, 0x800,
+                   (u16)(-0x1004 - (w->unk_48[i] >> 8) * 4));
+    }
+
+    DrawSprite((w->unk_10 >> 8) - (gUnk_02039BA0->unk_00 >> 8) - 32,
+               (w->unk_14 >> 8) + (w->unk_18 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 16,
+               (&gUnk_09EF1278[6])[0], w->unk_08, w->unk_0C, 0, 0x800,
+               (u16)(-0x1004 - ((w->unk_14 - 512) >> 8) * 4));
+}
+
 void WorldSel_Before_3(void** p) {
     ReleaseObjTiles(p[0]);
     ReleaseObjTiles(p[2]);
