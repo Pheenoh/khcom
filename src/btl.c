@@ -1716,6 +1716,60 @@ void task_btl_sora_1(BtlSoraWork* work) {
             m4aSongNumStart(668);
         }
         break;
+    case 11:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DD08(work);
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 44, 0);
+            m4aSongNumStart(169);
+            func_08006184(6, 8);
+        } else if ((s16)work->unk_154 == 25) {
+            e = p->unk_E4->unk_078;
+
+            if (e != 0) {
+                t = e->unk_004;
+                t2 = e->unk_008;
+                t3 = e->unk_00C - (e->unk_0A2 << 8);
+            } else if (p->unk_34 & 4) {
+                t = p->unk_04 - 12800;
+                t2 = p->unk_08;
+                t3 = p->unk_0C - 4096;
+            } else {
+                t = p->unk_04 + 12800;
+                t2 = p->unk_08;
+                t3 = p->unk_0C - 4096;
+            }
+
+            switch (work->unk_162[0]) {
+            case 0:
+                func_080148E0(0, t, t2, t3, 78);
+                break;
+            case 1:
+                func_080148E0(1, t, t2, t3, 79);
+                break;
+            case 2:
+            default:
+                func_080148E0(work->unk_162[0], t, t2, t3, 80);
+                break;
+            }
+        }
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            func_0801DDE4(work, 1, 1);
+        }
+
+        if ((s16)work->unk_154 > 25 && func_080128EC() == 0) {
+            func_08006120(6, 8);
+            func_0801E4E4(work, 1);
+        } else {
+            work->unk_154++;
+        }
+        break;
     case 75:
         if ((s16)work->unk_154 == 0) {
             e = func_0801E6DC(work);
