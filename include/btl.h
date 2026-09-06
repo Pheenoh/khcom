@@ -424,7 +424,7 @@ void func_080A1B4C(UnkStruct_0801AF08* p, u32* a);
 void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);
 void func_08012614(void* p, s32 a);
-void task_btl_sora_1(BtlSoraWork* work);
+s32 task_btl_sora_1(BtlSoraWork* work);
 s32 func_0801ADAC(UnkStruct_0801AF08* p);
 void func_08019050(u16 a, s32 b, s32 c, s32 d);
 void func_08019190(UnkStruct_0801AF08* p, s16 b);
@@ -464,6 +464,9 @@ void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
 void func_08016750(s32 x, s32 y, s32 z, u8 f);
 void func_08014FDC(s32 x, s32 y, u8 f);
 void func_080137C8(s32 x, s32 y, s32 z, u8 f);
+u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
+void func_08000EA4(void* pool);
+void func_08012324(void* a, s32 x, s32 y, s32 z);
 void* memcpy(void* dst, const void* src, u32 n);
 s32 func_08011F68(s32 a, BtlWork* b);
 void func_0807E1E8(void);
