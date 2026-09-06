@@ -42,11 +42,31 @@ TARGET_ANCHORS = {
         0x09958124: 0x0994AFB0,
         0x09EE1538: 0x09F5C140,
         0x09035730: 0x090CEA44,
+        0x096B2664: 0x09677C0C,
+        0x09992F70: 0x099991EC,
+        0x09C5CC7C: 0x09CE23B0,
+        0x09EFAF60: 0x09F87494,
+        0x09EFAF6C: 0x09F874A0,
+        0x020354A8: 0x02035938,
+        0x020354B0: 0x02035940,
+        0x09A324DC: 0x09A854A0,
     },
     "jp": {
         0x09C8D47A: 0x09C678B4,
         0x09C8F1FA: 0x09C68CC6,
         0x09EFBAD4: 0x09ED304C,
+    },
+}
+
+TARGET_ONLY_SYMBOLS = {
+    "eu": {
+        "gModeLang": 0x09F3EA64,
+    },
+}
+
+TARGET_FUNC_SIZE = {
+    "jp": {
+        "func_08066588": 156,
     },
 }
 
@@ -164,9 +184,10 @@ def load_funcmap(path):
     return rows
 
 
-def complete(rows, code_end, flexible, unit_of=None, clean=None):
+def complete(rows, code_end, flexible, unit_of=None, clean=None, fixed=None):
     unit_of = unit_of or {}
     clean = clean or (lambda r: True)
+    fixed = fixed or {}
     n = len(rows)
     i = 0
     while i < n:
@@ -182,7 +203,7 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None):
         if prev is None:
             i = j
             continue
-        begin = prev[3] + prev[2]
+        begin = prev[3] + fixed.get(prev[0], prev[2])
         stop = nxt[3] if nxt is not None else code_end
         want = sum(rows[k][2] for k in range(i, j))
         span = max(0, stop - begin)
@@ -214,9 +235,10 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None):
             pos = nxt
         else:
             nk = present[k + 1][4] if k + 1 < len(present) else None
-            tsz = r[2]
+            tsz = fixed.get(r[0], r[2])
 
-            if (nxt > r[3] and nk in ("named", "xref", "global", "body")
+            if (r[0] not in fixed
+                    and nxt > r[3] and nk in ("named", "xref", "global", "body")
                     and r[4] in ("named", "xref", "global", "body")
                     and abs(nxt - r[3] - r[2]) <= SIZE_SLACK
                     and not clean(r)):
@@ -327,10 +349,11 @@ def main():
         return r[0] in flexible or identical(r)
 
     anchors = TARGET_ANCHORS.get(ver, {})
+    fixed = TARGET_FUNC_SIZE.get(ver, {})
 
     provisional = [r for r in rows if r[3] is not None]
     guess_end = provisional[-1][3] + (CODE_HI - provisional[-1][1])
-    rows = complete(rows, guess_end, flexible, owner, clean)
+    rows = complete(rows, guess_end, flexible, owner, clean, fixed)
     res = symbol_map(rows, us, ot)
     res.update(anchors)
     tr = translator(res)
@@ -338,7 +361,7 @@ def main():
     code_end, how_end = tr(CODE_HI)
     if code_end != guess_end:
         rows = load_funcmap(f"config/{ver}/funcmap.txt")
-        rows = complete(rows, code_end, flexible, owner, clean)
+        rows = complete(rows, code_end, flexible, owner, clean, fixed)
         res = symbol_map(rows, us, ot)
         res.update(anchors)
         tr = translator(res)
@@ -369,6 +392,8 @@ def main():
         if how in ("interp?", "unknown"):
             uncertain.append((nm, how))
         out.append(f"{nm} = {b:#010x}")
+    for nm, a in TARGET_ONLY_SYMBOLS.get(ver, {}).items():
+        out.append(f"{nm} = {a:#010x}")
     Path(f"config/{ver}/symbols.txt").write_text("\n".join(out) + "\n")
     print(f"  symbols.txt: {len(out)} lines, {len(uncertain)} uncertain")
 

@@ -3,7 +3,7 @@
 
 JiminyWork* gJiminyWork;
 
-#ifdef VERSION_US
+#ifndef VERSION_EU
 void mode_jiminy_0(void) {
     s32 i;
     s32 j;
@@ -19,7 +19,11 @@ void mode_jiminy_0(void) {
     SetBgPriority(1, 1);
     SetBgPriority(2, 0);
     SetBgPriority(3, 0);
+#ifdef VERSION_JP
+    LoadBgTiles(1, gUnk_08EE4A64, 0x2DA0);
+#else
     LoadBgTiles(1, gUnk_08EE4A64, 0x2E80);
+#endif
     LoadBgPalette(1, gUnk_08F6DE24, 0x200);
     LoadBgMap(1, gUnk_08F61B84, 0x800);
     LoadBgMap(2, gUnk_08F60B84, 0x800);
@@ -74,7 +78,11 @@ void mode_jiminy_0(void) {
     }
 
     func_08064B80(0);
+#ifdef VERSION_JP
+    gJiminyWork->unk_C71 = func_080653D4(0x400, 0x2600, gUnk_08159FE0);
+#else
     gJiminyWork->unk_C71 = func_08065170(0x200, 0x2400, gUnk_08159FE0);
+#endif
 
     for (j = 0; j <= 0x14; j++) {
         gJiminyWork->unk_CD8[j].unk_00 = 0;

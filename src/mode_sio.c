@@ -425,7 +425,6 @@ void func_080AF70C(void) {
 INCLUDE_ASM("mode_sio/func_080AF70C.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080AFA90(void) {
     if (gSioBtlOptionWork->unk_006 > 4) {
         gSioBtlOptionWork->unk_006 = 0;
@@ -443,9 +442,6 @@ void func_080AFA90(void) {
     func_080B06D4();
     func_080B0874();
 }
-#else
-INCLUDE_ASM("mode_sio/func_080AFA90.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080AFADC(void) {
@@ -1057,7 +1053,6 @@ void func_080B1064(void) {
 INCLUDE_ASM("mode_sio/func_080B1064.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080B1134(u16 a, u16 b) {
     switch (a) {
     case 1:
@@ -1103,11 +1098,7 @@ void func_080B1134(u16 a, u16 b) {
         break;
     }
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1134.s");
-#endif
 
-#ifndef VERSION_EU
 void func_080B1364(void) {
     gSioBtlOptionWork->unk_228 = 0;
     RequestDma3Copy(gUnk_096B2664, (void*)0x06000020, 0xC0);
@@ -1117,9 +1108,6 @@ void func_080B1364(void) {
     func_080AEED8(0, 0, 0);
     func_080AEED8(1, 0, 0);
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1364.s");
-#endif
 
 void func_080B13D0(void) {
     s8 i = gUnk_0203AAA0[gUnk_0203AA00];

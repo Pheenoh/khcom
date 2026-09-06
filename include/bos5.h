@@ -293,6 +293,9 @@ typedef struct MdModel {
     void* unk_0C;
     void* unk_10;
     void* unk_14;
+#ifdef VERSION_EU
+    void* unkEu_18;
+#endif
 } MdModel;
 
 typedef struct MdSlot {

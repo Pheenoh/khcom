@@ -3675,7 +3675,6 @@ void func_080BFEF0(JfMajinWork* work) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080BFFF8(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
     BosSub* q = (BosSub*)&jf->unk_110;
@@ -3756,7 +3755,11 @@ void func_080BFFF8(JfMajinWork* work) {
             fx.unk_04 = q->y;
             fx.unk_08 = -0x7800;
             func_08096DC4((u8*)gBtlWork + 44, &fx);
+#ifdef VERSION_EU
+            func_0801B918(q);
+#else
             func_0801B918((BosSub*)jf);
+#endif
             gUnk_0203ACC4 = 0;
             gUnk_0203ACD4 = 0;
             gUnk_0203ACC0 = 0;
@@ -3776,9 +3779,6 @@ void func_080BFFF8(JfMajinWork* work) {
         break;
     }
 }
-#else
-INCLUDE_ASM("bos2/func_080BFFF8.s");
-#endif
 
 u8 func_080C0258(u16* p, s16 b, u8 c, u8 d) {
     if ((s16)*p == b) {

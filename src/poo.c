@@ -2339,7 +2339,6 @@ u8 func_080CBA8C(void) {
     return 1;
 }
 
-#ifndef VERSION_EU
 u16 func_080CBAB0(PooPos* p) {
     u16 r;
 
@@ -2356,23 +2355,43 @@ u16 func_080CBAB0(PooPos* p) {
 
             if (func_080CBA8C() != 0) {
                 if (func_080D2D94(1) != 0) {
+#ifdef VERSION_EU
+                    func_080C7B84(0x91);
+#else
                     func_080C7B84(0x93);
+#endif
                 } else if (func_080D2D94(0) == 0) {
                     func_080D2D6C(0);
                     func_080D2D6C(1);
                     func_0800FDD0(77);
+#ifdef VERSION_EU
+                    func_080C7B84(0x8D);
+#else
                     func_080C7B84(0x8F);
+#endif
                 } else {
                     func_080D2D6C(1);
                     func_0800FDD0(77);
+#ifdef VERSION_EU
+                    func_080C7B84(0x8F);
+#else
                     func_080C7B84(0x91);
+#endif
                 }
             } else if (func_080D2D94(0) == 0) {
                 func_080D2D6C(0);
                 func_0800FDD0(77);
+#ifdef VERSION_EU
+                func_080C7B84(0x8E);
+#else
                 func_080C7B84(0x90);
+#endif
             } else {
+#ifdef VERSION_EU
+                func_080C7B84(0x90);
+#else
                 func_080C7B84(0x92);
+#endif
             }
         } else {
             func_080C7BCC(0xFFFD);
@@ -2380,9 +2399,6 @@ u16 func_080CBAB0(PooPos* p) {
     }
     return r;
 }
-#else
-INCLUDE_ASM("poo/func_080CBAB0.s");
-#endif
 
 u16 func_080CBB7C(void) {
     return gUnk_02034DEC - 1;

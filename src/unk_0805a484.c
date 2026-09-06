@@ -35,25 +35,28 @@ void func_0805A514(s16 a, s16 b, s16 c) {
     }
 }
 
-#ifdef VERSION_US
 u16 func_0805A55C(u16* p) {
     s32 n;
     u16* q;
 
-    n = 0;
     q = p;
+    n = 0;
 
     while (1) {
-        if (*q == 0) {
+#ifdef VERSION_US
+        if (q[n] == 0) {
+#else
+        if (((u8*)q)[n] == 0) {
+#endif
+#ifdef VERSION_JP
+            return n / 2;
+#else
             return n;
+#endif
         }
-        q++;
         n++;
     }
 }
-#else
-INCLUDE_ASM("unk_0805a484/func_0805A55C.s");
-#endif
 
 s32 func_0805A574(s32 idx) {
     JiminyEntry* e;

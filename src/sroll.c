@@ -190,7 +190,6 @@ static s32 func_08114C1C(s32 x) {
     return x * x;
 }
 
-#ifndef VERSION_EU
 void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
     AnimState* anim;
     u32 i;
@@ -199,8 +198,13 @@ void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
     w->unk_04 = a->unk_04;
     w->unk_08 = a->unk_08;
     w->unk_0C = a->unk_0C;
+#ifdef VERSION_EU
+    w->palette = LoadObjPalette(gUnk_09D6BE34, 64);
+    w->tiles = LoadObjTiles(gUnk_09C5CC7C, 94 * 32);
+#else
     w->tiles = LoadObjTiles(gUnk_09C5CC7C, 94 * 32);
     w->palette = LoadObjPalette(gUnk_09D6BE34, 64);
+#endif
     anim = &w->anim;
     AnimInit(anim, (s32)gUnk_09EFAF6C, (s32)gUnk_09EFAF60);
     AnimStart(anim, a->unk_10, 0);
@@ -209,9 +213,6 @@ void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
         func_080062F4((w->palette->unk_06 + i) % 16 + 16, 1);
     }
 }
-#else
-INCLUDE_ASM("sroll/task_sroll_b_logo_0.s");
-#endif
 
 u8 task_sroll_b_logo_1(SrollBLogoWork* w) {
     u8 r;

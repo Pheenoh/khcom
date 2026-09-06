@@ -39,6 +39,9 @@ extern u8 gUnk_08EEE384[];
 extern Mode gModeMovie;
 extern Mode gModeWorldselect;
 extern Mode gModeCopyright1;
+#ifdef VERSION_EU
+extern Mode gModeLang;
+#endif
 
 void SetModeUpdate(void (*fn)(void));
 void ModeRequest(Mode* mode, s32 arg);
