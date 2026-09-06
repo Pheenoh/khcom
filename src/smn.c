@@ -11,12 +11,12 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
         work->unk_163 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->unk_000 = gBtlWork->unk_110;
+        work->tiles = gBtlWork->unk_110;
     } else {
         work->unk_163 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->unk_000 = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->unk_110;
     }
 
     body->x = obj->unk_014;
@@ -34,7 +34,7 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     work->palette = LoadObjPalette(gUnk_08F6DC24, 32);
     work->unk_15C = 0;
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813E958, &work->anim, 0, 0, work->unk_000);
+    func_08019068(gUnk_0813E958, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14C = 0;
@@ -95,7 +95,7 @@ void task_smn_cloud_2(SmnCloudWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_000, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
@@ -132,12 +132,12 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
         work->unk_163 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->unk_000 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_163 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->unk_000 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     body->x = (gBtlWork->unk_0DA
@@ -159,7 +159,7 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     work->palette = LoadObjPalette(gUnk_09617FF8, 32);
     work->unk_15C = 0;
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813E9E8, &work->anim, 0, 0, work->unk_000);
+    func_08019068(gUnk_0813E9E8, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -439,7 +439,7 @@ void task_smn_bambi_2(SmnBambiWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_000, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
@@ -465,12 +465,12 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
         work->unk_153 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->unk_000 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_153 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->unk_000 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     body->x = obj->unk_014;
@@ -491,7 +491,7 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     work->unk_152 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618098, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EA08, &work->anim, 0, 1, work->unk_000);
+    func_08019068(gUnk_0813EA08, &work->anim, 0, 1, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -616,7 +616,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         func_080428E8(work);
 
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EA08, &work->anim, 0, 1, work->unk_000);
+            func_08019068(gUnk_0813EA08, &work->anim, 0, 1, work->tiles);
             work->unk_160 = body->z;
             work->unk_14A = 30;
         } else {
@@ -641,7 +641,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         func_080428E8(work);
 
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EA08, &work->anim, 1, 1, work->unk_000);
+            func_08019068(gUnk_0813EA08, &work->anim, 1, 1, work->tiles);
         }
 
         p = work->unk_17C;
@@ -701,7 +701,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         func_080428E8(work);
 
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EA08, &work->anim, 2, 0, work->unk_000);
+            func_08019068(gUnk_0813EA08, &work->anim, 2, 0, work->tiles);
 
             if (body->flags & 4) {
                 work->unk_16C = 0xC0;
@@ -720,7 +720,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         }
 
         if (AnimIsFinished(&work->anim)) {
-            func_08019068(gUnk_0813EA08, &work->anim, 1, 1, work->unk_000);
+            func_08019068(gUnk_0813EA08, &work->anim, 1, 1, work->tiles);
             work->unk_034 = 3;
             work->unk_148 = 1;
         } else {
@@ -780,7 +780,7 @@ void task_smn_tink_2(SmnTinkWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_000, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
@@ -859,12 +859,12 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
         work->unk_155 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->unk_000 = gBtlWork->unk_110;
+        work->tiles = gBtlWork->unk_110;
     } else {
         work->unk_155 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->unk_000 = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->unk_110;
     }
 
     body->x = obj->unk_014;
@@ -881,7 +881,7 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
     work->unk_154 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618018, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EA5C, &work->anim, 0, 0, work->unk_000);
+    func_08019068(gUnk_0813EA5C, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1071,7 +1071,7 @@ void task_smn_simba_2(SmnSimbaWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_000, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
@@ -1096,12 +1096,12 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
         work->unk_153 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->unk_000 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_153 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->unk_000 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     body->x = obj->unk_004;
@@ -1118,7 +1118,7 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
     work->unk_152 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618038, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EA7C, &work->anim, 0, 1, work->unk_000);
+    func_08019068(gUnk_0813EA7C, &work->anim, 0, 1, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1205,7 +1205,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         work->unk_14A--;
         break;
     case 3:
-        func_08019068(gUnk_0813EA7C, &work->anim, 2, 0, work->unk_000);
+        func_08019068(gUnk_0813EA7C, &work->anim, 2, 0, work->tiles);
 
         if (AnimIsFinished(&work->anim)) {
             work->unk_034 = 2;
@@ -1214,7 +1214,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         break;
     case 2:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EA7C, &work->anim, 3, 1, work->unk_000);
+            func_08019068(gUnk_0813EA7C, &work->anim, 3, 1, work->tiles);
 
             switch (work->unk_152) {
             case 0:
@@ -1325,7 +1325,7 @@ void task_smn_mushu_2(SmnMushuWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_000, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4101 - ((body->y >> 8) * 4));
     TaskPoolDraw(&work->unk_020);
 }
@@ -1349,12 +1349,12 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
         work->unk_155 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->unk_000 = gBtlWork->unk_110;
+        work->tiles = gBtlWork->unk_110;
     } else {
         work->unk_155 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->unk_000 = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->unk_110;
     }
 
     body->x = obj->unk_014;
@@ -1371,7 +1371,7 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
     work->unk_154 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09617F98, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EADC, &work->anim, 0, 0, work->unk_000);
+    func_08019068(gUnk_0813EADC, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1432,7 +1432,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         break;
     case 2:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EADC, &work->anim, 0, 0, work->unk_000);
+            func_08019068(gUnk_0813EADC, &work->anim, 0, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -1444,7 +1444,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         break;
     case 3:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EADC, &work->anim, 1, 1, work->unk_000);
+            func_08019068(gUnk_0813EADC, &work->anim, 1, 1, work->tiles);
 
             if (body->flags & 4) {
                 func_08015B50(work->unk_154, body->x - 0x1C00, body->y,
@@ -1466,7 +1466,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         break;
     case 4:
         if (work->unk_148 == 0) {
-            func_08019068(gUnk_0813EADC, &work->anim, 2, 0, work->unk_000);
+            func_08019068(gUnk_0813EADC, &work->anim, 2, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -1529,7 +1529,7 @@ void task_smn_dumbo_2(SmnDumboWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_000, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
@@ -1555,12 +1555,12 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
         work->unk_151 = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->unk_000 = gBtlWork->unk_110;
+        work->tiles = gBtlWork->unk_110;
     } else {
         work->unk_151 = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->unk_000 = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->unk_110;
     }
 
     if (obj->unk_034 & 4) {
@@ -1577,7 +1577,7 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
     work->unk_150 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618298, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->unk_000);
+    func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1745,7 +1745,7 @@ void task_smn_genie_2(SmnGenieWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_000, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
@@ -1774,12 +1774,12 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
         work->unk_15D = 1;
         gBtlWork->unk_068 |= 0x200000;
         obj = gBtlWork->unk_07C;
-        work->unk_000 = gBtlWork->unk_110;
+        work->tiles = gBtlWork->unk_110;
     } else {
         work->unk_15D = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         obj = gUnk_02039B9C->unk_07C;
-        work->unk_000 = gUnk_02039B9C->unk_110;
+        work->tiles = gUnk_02039B9C->unk_110;
     }
 
     body->x = obj->unk_014;
@@ -1791,7 +1791,7 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
     work->palette = LoadObjPalette(gUnk_096183F8, 32);
     work->unk_158 = 0;
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EB4C, &work->anim, 0, 0, work->unk_000);
+    func_08019068(gUnk_0813EB4C, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1858,7 +1858,7 @@ void task_smn_king_2(SmnKingWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_000, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);

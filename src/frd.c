@@ -14,12 +14,12 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
         work->unk_014 = gBtlWork->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         work->unk_014 = gUnk_02039B9C->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     work->unk_14D = args->unk_00;
@@ -43,7 +43,7 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     body->unk_10 = 0;
     work->palette = LoadObjPalette(gUnk_09617C58, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EB8C, &work->anim, 0, 0, work->unk_018);
+    func_08019068(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
 
     switch (args->unk_00) {
     case 0:
@@ -131,7 +131,7 @@ void task_frd_donald_2(FrdDonaldWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_018, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
@@ -181,12 +181,12 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
         work->unk_014 = gBtlWork->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         work->unk_014 = gUnk_02039B9C->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     work->unk_14D = args->unk_00;
@@ -210,7 +210,7 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     body->unk_10 = 0;
     work->palette = LoadObjPalette(gUnk_08F68384, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->unk_018);
+    func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
@@ -230,7 +230,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
     switch (work->unk_148) {
     case 0:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->unk_018);
+            func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
             work->unk_14E++;
         }
 
@@ -245,7 +245,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 1:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 1, 0, work->unk_018);
+            func_08019068(gUnk_0813EBFC, &work->anim, 1, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -266,7 +266,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 2:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 1, 0, work->unk_018);
+            func_08019068(gUnk_0813EBFC, &work->anim, 1, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -278,7 +278,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 3:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->unk_018);
+            func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
 
             if (body->flags & 4) {
                 work->unk_158 = (gBtlWork->unk_0DA - 0x40) << 8;
@@ -302,7 +302,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 4:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 2, 0, work->unk_018);
+            func_08019068(gUnk_0813EBFC, &work->anim, 2, 0, work->tiles);
 
             if (body->flags & 4) {
                 work->unk_158 = body->x - 0x8500;
@@ -339,7 +339,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 5:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 3, 0, work->unk_018);
+            func_08019068(gUnk_0813EBFC, &work->anim, 3, 0, work->tiles);
         }
 
         func_080465F0(work);
@@ -353,7 +353,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         break;
     case 6:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813EBFC, &work->anim, 4, 1, work->unk_018);
+            func_08019068(gUnk_0813EBFC, &work->anim, 4, 1, work->tiles);
             work->unk_160 = GetRandom();
         }
 
@@ -420,7 +420,7 @@ void task_frd_goofy_2(FrdGoofyWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_018, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
@@ -445,12 +445,12 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
         work->unk_014 = gBtlWork->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         work->unk_014 = gUnk_02039B9C->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     work->unk_14D = args->unk_00;
@@ -471,7 +471,7 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     body->z = -0x1000;
     work->palette = LoadObjPalette(gUnk_09617DF8, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EC5C, &work->anim, 1, 0, work->unk_018);
+    func_08019068(gUnk_0813EC5C, &work->anim, 1, 0, work->tiles);
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 
@@ -533,7 +533,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
         if (work->unk_14E == 0) {
             work->unk_160 = 0;
             work->unk_150 = 12;
-            func_08019068(gUnk_0813EC5C, &work->anim, 2, 0, work->unk_018);
+            func_08019068(gUnk_0813EC5C, &work->anim, 2, 0, work->tiles);
         }
 
         switch (AnimGetFrame(&work->anim)) {
@@ -564,7 +564,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
         }
         break;
     case 2:
-        func_08019068(gUnk_0813EC5C, &work->anim, 0, 1, work->unk_018);
+        func_08019068(gUnk_0813EC5C, &work->anim, 0, 1, work->tiles);
 
         if (body->flags & 4
                 ? func_08011F78(0x77, body->x, body->y, body->z, 0x10, 0x10, 0x10)
@@ -654,7 +654,7 @@ void task_frd_ariel_2(FrdArielWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_018, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
@@ -696,12 +696,12 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
         work->unk_014 = gBtlWork->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         work->unk_014 = gUnk_02039B9C->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     work->unk_14D = args->unk_00;
@@ -726,7 +726,7 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     work->unk_160 = 0;
     work->palette = LoadObjPalette(gUnk_09617DB8, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->unk_018);
+    func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
 
     switch (args->unk_00) {
     case 0:
@@ -797,7 +797,7 @@ void task_frd_jack_2(FrdJackWork* work) {
     }
 
     sy = sy + (-gSineTable[((angle + 128) & mask) + 64] * 5 >> 5) - 40;
-    DrawSprite(sx, sy, gfx, work->unk_018, work->palette, affine, flags, -4100 - ((body->y >> 8) * 4));
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags, -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
@@ -824,12 +824,12 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
         work->unk_014 = gBtlWork->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         work->unk_014 = gUnk_02039B9C->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     work->unk_14D = args->unk_00;
@@ -857,7 +857,7 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     body->z = -0x2000;
     work->palette = LoadObjPalette(gUnk_09617DD8, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->unk_018);
+    func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->unk_000, 15);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 
@@ -959,7 +959,7 @@ void task_frd_pan_2(FrdPanWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_018, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
@@ -1006,12 +1006,12 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
         work->unk_014 = gBtlWork->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         work->unk_014 = gUnk_02039B9C->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
     }
 
     work->unk_14D = args->unk_00;
@@ -1035,7 +1035,7 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     body->unk_10 = 0;
     work->palette = LoadObjPalette(gUnk_09617D98, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->unk_018);
+    func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 
@@ -1091,7 +1091,7 @@ void task_frd_aladdin_2(FrdAladdinWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_018, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
@@ -1142,13 +1142,13 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
         work->unk_14C = 1;
         gBtlWork->unk_068 |= 0x200000;
         work->unk_014 = gBtlWork->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
         obj = gBtlWork->unk_078;
     } else {
         work->unk_14C = args->unk_02;
         gUnk_02039B9C->unk_068 |= 0x200000;
         work->unk_014 = gUnk_02039B9C->unk_07C;
-        work->unk_018 = gBtlWork->unk_114;
+        work->tiles = gBtlWork->unk_114;
         obj = gUnk_02039B9C->unk_078;
     }
 
@@ -1194,7 +1194,7 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
 
     work->palette = LoadObjPalette(gUnk_09617E18, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813ED90, &work->anim, 0, 0, work->unk_018);
+    func_08019068(gUnk_0813ED90, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
@@ -1251,7 +1251,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
         break;
     case 1:
         if (work->unk_14E == 0) {
-            func_08019068(gUnk_0813ED90, &work->anim, 1, 1, work->unk_018);
+            func_08019068(gUnk_0813ED90, &work->anim, 1, 1, work->tiles);
 
             if (work->unk_14D != 2) {
                 m4aSongNumStart(0xBD);
@@ -1322,7 +1322,7 @@ void task_frd_beast_2(FrdBeastWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    DrawSprite(sx, sy, gfx, work->unk_018, work->palette, affine, flags,
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
                -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
