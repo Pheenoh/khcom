@@ -1282,11 +1282,643 @@ void func_080BE9A0(JfMajinWork* work) {
     }
 }
 
-INCLUDE_ASM("bos2/func_080BEAE8.s");
-INCLUDE_ASM("bos2/func_080BEDF4.s");
-INCLUDE_ASM("bos2/func_080BF160.s");
-INCLUDE_ASM("bos2/func_080BF4F4.s");
-INCLUDE_ASM("bos2/func_080BF8C4.s");
+void func_080BEAE8(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_248 = 0;
+        } else {
+            jf->unk_248 = 7;
+        }
+
+        work->unk_00->unk_24A = 0;
+        func_080BE380(work->unk_00->unk_248, 0xA0, work);
+        work->unk_48 = 0;
+        work->unk_46 = 0;
+        work->unk_2C = 0;
+        work->unk_00->unk_244++;
+    } else {
+        switch (work->unk_48) {
+        case 0:
+            if (jf->unk_24A >= gUnk_0961A6A8[jf->unk_248]) {
+                jf->unk_24A = 0;
+
+                if (jf->unk_034 & 4) {
+                    work->unk_00->unk_248++;
+
+                    if (work->unk_00->unk_248 > 7) {
+                        work->unk_00->unk_248 = 0;
+                    }
+                } else {
+                    work->unk_00->unk_248--;
+
+                    if (work->unk_00->unk_248 < 0) {
+                        work->unk_00->unk_248 = 7;
+                    }
+                }
+
+                func_080BE380(work->unk_00->unk_248, 0xA0, work);
+            }
+
+            work->unk_00->unk_24A++;
+            jf->z += 0x400;
+            work->unk_46++;
+
+            if (work->unk_46 > 40) {
+                work->unk_46 = 0;
+                work->unk_48++;
+            }
+
+            if (work->unk_46 == 21) {
+                jf->unk_034 |= 0x1000000;
+            }
+            break;
+        case 1:
+            work->unk_46++;
+
+            if (work->unk_46 > 60) {
+                work->unk_46 = 0;
+                work->unk_00->unk_24A = 0;
+
+                if (jf->unk_034 & 4) {
+                    jf->unk_034 &= ~4;
+                    jf->x = 0x16A00;
+                    work->unk_00->unk_248 = 3;
+                } else {
+                    jf->unk_034 |= 4;
+                    jf->x = 0x2A200;
+                    work->unk_00->unk_248 = 3;
+                }
+
+                func_080BE380(work->unk_00->unk_248, 0xA0, work);
+                m4aSongNumStart(0x277);
+                work->unk_48++;
+            }
+            break;
+        case 2:
+            if (jf->unk_24A >= gUnk_0961A6A8[jf->unk_248]) {
+                jf->unk_24A = 0;
+
+                if (jf->unk_034 & 4) {
+                    work->unk_00->unk_248++;
+
+                    if (work->unk_00->unk_248 > 7) {
+                        work->unk_00->unk_248 = 0;
+                    }
+                } else {
+                    work->unk_00->unk_248--;
+
+                    if (work->unk_00->unk_248 < 0) {
+                        work->unk_00->unk_248 = 7;
+                    }
+                }
+
+                func_080BE380(work->unk_00->unk_248, 0xA0, work);
+            }
+
+            work->unk_00->unk_24A++;
+            jf->z -= 0x400;
+            work->unk_46++;
+
+            if (work->unk_46 > 40) {
+                work->unk_46 = 0;
+                work->unk_48++;
+            }
+
+            if (work->unk_46 == 22) {
+                jf->unk_034 &= ~0x1000000;
+            }
+            break;
+        default:
+            work->unk_00->unk_244 = 0;
+            work->unk_00->unk_238 = 0;
+            break;
+        }
+    }
+}
+void func_080BEDF4(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    u32* q = &jf->unk_110;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_248 = 0;
+            work->unk_5C = 14;
+        } else {
+            jf->unk_248 = 7;
+            work->unk_5C = 34;
+        }
+
+        work->unk_00->unk_24A = 0;
+        func_080BE380(work->unk_00->unk_248, 0xA0, work);
+        work->unk_48 = 0;
+        work->unk_46 = 0;
+        work->unk_2C = 0;
+        work->unk_00->unk_244++;
+    } else {
+        switch (work->unk_48) {
+        case 0:
+            if (work->unk_00->unk_24A >= gUnk_0961A6A8[work->unk_00->unk_248]) {
+                work->unk_00->unk_24A = 0;
+
+                if (jf->unk_034 & 4) {
+                    work->unk_00->unk_248++;
+
+                    if (work->unk_00->unk_248 > 7) {
+                        work->unk_00->unk_248 = 0;
+                    }
+                } else {
+                    work->unk_00->unk_248--;
+
+                    if (work->unk_00->unk_248 < 0) {
+                        work->unk_00->unk_248 = 7;
+                    }
+                }
+
+                func_080BE380(work->unk_00->unk_248, 0xA0, work);
+            }
+
+            work->unk_00->unk_24A++;
+            jf->z += 0x400;
+            work->unk_46++;
+
+            if (work->unk_46 > 60) {
+                work->unk_46 = 0;
+                work->unk_48++;
+            }
+
+            if (work->unk_46 == 23) {
+                jf->unk_034 |= 0x1000000;
+            }
+            break;
+        case 1:
+            if (jf->unk_034 & 4) {
+                work->unk_00->unk_248 = 14;
+                work->unk_58 = -0x2000 - ((gUnk_0203ACC0 + 1) << 11);
+            } else {
+                work->unk_00->unk_248 = 34;
+                work->unk_58 = -0x2000 - ((gUnk_0203ACC4 + 1) << 11);
+            }
+
+            work->unk_00->unk_24A = 0;
+            work->unk_80 = TaskCreate(&work->unk_6C, gUnk_09EF2A5C, work->unk_00);
+            func_080BE380(work->unk_00->unk_248, 0xA0, work);
+            work->unk_44 = 120;
+            work->unk_48++;
+            break;
+        case 2:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                work->unk_44--;
+
+                if (work->unk_44 == 30) {
+                    jf->unk_034 &= ~0x1000000;
+                }
+            } else {
+                work->unk_48++;
+            }
+            break;
+        case 3:
+            if (work->unk_00->unk_24A >= gUnk_0961A6A8[work->unk_00->unk_248]) {
+                work->unk_00->unk_24A = 0;
+                work->unk_00->unk_248++;
+
+                if (work->unk_00->unk_248 > work->unk_5C + 4) {
+                    if (jf->unk_034 & 4) {
+                        work->unk_00->unk_248 = 8;
+                    } else {
+                        work->unk_00->unk_248 = 28;
+                    }
+
+                    work->unk_2C = 1;
+                    work->unk_48++;
+                }
+
+                func_080BE380(work->unk_00->unk_248, 0xA0, work);
+            }
+
+            work->unk_00->unk_24A++;
+            break;
+        case 4:
+            if (IsTaskActive(work->unk_80) == 0) {
+                work->unk_58 = -0x3800;
+                work->unk_44 = 10;
+                work->unk_48++;
+            }
+            break;
+        case 5:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                work->unk_44--;
+            } else {
+                work->unk_48++;
+            }
+            break;
+        default:
+            func_0801AF08(q);
+            work->unk_00->unk_244 = 0;
+            work->unk_00->unk_238 = 6;
+            break;
+        }
+    }
+}
+void func_080BF160(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    u32* q = &jf->unk_110;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_248 = 19;
+            work->unk_00->unk_24A = 0;
+            work->unk_5C = 19;
+            work->unk_50 = 0x27A00;
+            work->unk_58 = -0x5200 - ((gUnk_0203ACC0 + 1) << 11);
+        } else {
+            jf->unk_248 = 39;
+            work->unk_00->unk_24A = 0;
+            work->unk_5C = 39;
+            work->unk_50 = 0x19200;
+            work->unk_58 = -0x5200 - ((gUnk_0203ACC4 + 1) << 11);
+        }
+
+        func_080BE380(work->unk_00->unk_248, 0xA0, work);
+        work->unk_48 = 0;
+        work->unk_46 = 0;
+        work->unk_44 = 40;
+        work->unk_2C = 0;
+        work->unk_00->unk_244++;
+    } else {
+        switch (work->unk_48) {
+        case 0:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->x, work->unk_50, work->unk_44);
+                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                work->unk_44--;
+
+                if (work->unk_00->unk_24A >= gUnk_0961A6A8[work->unk_00->unk_248]) {
+                    work->unk_00->unk_24A = 0;
+                    work->unk_00->unk_248++;
+
+                    if (work->unk_00->unk_248 >= work->unk_5C + 1) {
+                        work->unk_00->unk_248 = work->unk_5C + 1;
+                    }
+
+                    func_080BE380(work->unk_00->unk_248, 0xA0, work);
+                }
+
+                work->unk_00->unk_24A++;
+            } else {
+                work->unk_48++;
+            }
+            break;
+        case 1:
+            work->unk_46++;
+
+            if (work->unk_46 > 20) {
+                work->unk_46 = 0;
+                work->unk_6A = 1;
+                work->unk_48++;
+            }
+            break;
+        case 2:
+            jf->z += 0xA00;
+
+            if (work->unk_00->unk_24A >= gUnk_0961A6A8[work->unk_00->unk_248]) {
+                work->unk_00->unk_24A = 0;
+                work->unk_00->unk_248++;
+
+                if (work->unk_00->unk_248 == work->unk_5C + 4) {
+                    work->unk_6A = 0;
+                    work->unk_48++;
+                }
+
+                func_080BE380(work->unk_00->unk_248, 0xA0, work);
+            }
+
+            work->unk_00->unk_24A++;
+            break;
+        case 3:
+            if (jf->unk_034 & 4) {
+                func_080147D8(jf->x - 0x3000, jf->y + jf->z + 0x1800);
+                func_08011F78(0xE8, jf->x - 0x3000, jf->y, jf->z + 0x1800, 30, 30, 30);
+            } else {
+                func_080147D8(jf->x + 0x3000, jf->y + jf->z + 0x1800);
+                func_08011F78(0xE8, jf->x + 0x3000, jf->y, jf->z + 0x1800, 30, 30, 30);
+            }
+
+            func_0802F1E8();
+            m4aSongNumStart(0x210);
+            work->unk_46 = 0;
+            work->unk_48++;
+            break;
+        case 4:
+            if (work->unk_46 == 10) {
+                work->unk_00->unk_248 = work->unk_5C + 5;
+                func_080BE380(work->unk_00->unk_248, 0xA0, work);
+            }
+
+            if (work->unk_46 > 20) {
+                work->unk_46 = 0;
+
+                if (jf->unk_034 & 4) {
+                    work->unk_50 = 0x2A200;
+                } else {
+                    work->unk_50 = 0x16A00;
+                }
+
+                work->unk_58 = -0x3800;
+                work->unk_44 = 10;
+                work->unk_48++;
+            }
+
+            work->unk_46++;
+            break;
+        case 5:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->x, work->unk_50, work->unk_44);
+                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                work->unk_44--;
+            } else {
+                work->unk_48++;
+            }
+            break;
+        default:
+            func_0801AF08(q);
+            work->unk_00->unk_244 = 0;
+            work->unk_00->unk_238 = 6;
+            break;
+        }
+    }
+}
+void func_080BF4F4(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    u32* q = &jf->unk_110;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_248 = 25;
+            work->unk_00->unk_24A = 0;
+            work->unk_5C = 25;
+            work->unk_50 = 0x2A200;
+            work->unk_58 = -0x2400 - ((gUnk_0203ACC0 + 1) << 11);
+        } else {
+            jf->unk_248 = 45;
+            work->unk_00->unk_24A = 0;
+            work->unk_5C = 45;
+            work->unk_50 = 0x16A00;
+            work->unk_58 = -0x2400 - ((gUnk_0203ACC4 + 1) << 11);
+        }
+
+        func_080BE380(work->unk_00->unk_248, 0x80, work);
+        work->unk_48 = 0;
+        work->unk_46 = 0;
+        work->unk_44 = 40;
+        work->unk_2C = 0;
+        work->unk_00->unk_244++;
+    } else {
+        switch (work->unk_48) {
+        case 0:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                work->unk_44--;
+            } else {
+                work->unk_48++;
+            }
+            break;
+        case 1:
+            if (jf->unk_034 & 4) {
+                jf->x += 0x100;
+            } else {
+                jf->x -= 0x100;
+            }
+
+            work->unk_46++;
+
+            if (work->unk_46 > 20) {
+                work->unk_46 = 0;
+                work->unk_00->unk_248 = work->unk_5C + 1;
+                func_080BE380(work->unk_00->unk_248, 0x80, work);
+                work->unk_44 = 2;
+                work->unk_48++;
+            }
+            break;
+        case 2:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->x, work->unk_50, work->unk_44);
+                work->unk_44--;
+            } else {
+                work->unk_48++;
+                work->unk_44 = 0;
+            }
+            break;
+        case 3:
+            if (jf->unk_034 & 4) {
+                func_08016C40(jf->x - 0x1A00, jf->y, jf->z - 0x3100, 0x133, 160, 45);
+            } else {
+                func_08016C40(jf->x + 0x1A00, jf->y, jf->z - 0x3100, 0x133, 96, 45);
+            }
+
+            m4aSongNumStart(0x27A);
+            jf->x = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
+            work->unk_46 = 0;
+            work->unk_48++;
+            break;
+        case 4:
+            jf->x = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
+
+            if (jf->unk_034 & 4) {
+                func_08014780(jf->x - 0x1A00, jf->y, jf->z - 0x3100);
+            } else {
+                func_08014780(jf->x + 0x1A00, jf->y, jf->z - 0x3100);
+            }
+
+            if (work->unk_46 > 10 && work->unk_46 % 10 == 9) {
+                if (jf->unk_034 & 4) {
+                    func_08011F78(0xE9, jf->x - 0x6400, jf->y + 0xA00, jf->z + 0x2000, 20, 20, 20);
+                } else {
+                    func_08011F78(0xE9, jf->x + 0x6400, jf->y + 0xA00, jf->z + 0x2000, 20, 20, 20);
+                }
+            }
+
+            if (work->unk_46 > 80) {
+                work->unk_46 = 0;
+                work->unk_58 = -0x3800;
+                work->unk_44 = 10;
+                work->unk_00->unk_248 = work->unk_5C + 2;
+                func_080BE380(work->unk_00->unk_248, 0x80, work);
+                work->unk_48++;
+            }
+
+            work->unk_46++;
+            break;
+        case 5:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->x, work->unk_50, work->unk_44);
+                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                work->unk_44--;
+            } else {
+                work->unk_48++;
+            }
+            break;
+        default:
+            func_0801AF08(q);
+            work->unk_00->unk_244 = 0;
+            work->unk_00->unk_238 = 6;
+            break;
+        }
+    }
+}
+void func_080BF8C4(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    u32* q = &jf->unk_110;
+
+    if (jf->unk_244 == 0) {
+        if (jf->unk_034 & 4) {
+            jf->unk_248 = 25;
+            work->unk_00->unk_24A = 0;
+            work->unk_5C = 25;
+            work->unk_50 = 0x2A200;
+            work->unk_54 = ((BtlWork*)gBtlWork->unk_07C)->unk_008 - 0x1400;
+            work->unk_58 = -0x2400 - ((gUnk_0203ACC0 + 1) << 11);
+        } else {
+            jf->unk_248 = 45;
+            work->unk_00->unk_24A = 0;
+            work->unk_5C = 45;
+            work->unk_50 = 0x16A00;
+            work->unk_54 = ((BtlWork*)gBtlWork->unk_07C)->unk_008 - 0x1400;
+            work->unk_58 = -0x2400 - ((gUnk_0203ACC4 + 1) << 11);
+        }
+
+        func_080BE380(work->unk_00->unk_248, 0x80, work);
+        work->unk_48 = 0;
+        work->unk_46 = 0;
+        work->unk_44 = 40;
+        work->unk_2C = 0;
+        work->unk_00->unk_244++;
+    } else {
+        switch (work->unk_48) {
+        case 0:
+            func_0802F274(jf->x, jf->y + jf->z);
+
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->y, work->unk_54, work->unk_44);
+                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                work->unk_44--;
+            } else {
+                work->unk_48++;
+            }
+            break;
+        case 1:
+            if (jf->unk_034 & 4) {
+                jf->x += 0x100;
+            } else {
+                jf->x -= 0x100;
+            }
+
+            work->unk_46++;
+
+            if (work->unk_46 > 20) {
+                work->unk_46 = 0;
+                work->unk_00->unk_248 = work->unk_5C + 1;
+                func_080BE380(work->unk_00->unk_248, 0x80, work);
+                work->unk_44 = 2;
+                work->unk_48++;
+            }
+            break;
+        case 2:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->x, work->unk_50, work->unk_44);
+                work->unk_44--;
+            } else {
+                work->unk_48++;
+                work->unk_44 = 0;
+            }
+            break;
+        case 3:
+            if (jf->unk_034 & 4) {
+                work->unk_49 = 148;
+                work->unk_4C = 0x100;
+                func_08016C40(jf->x - 0x1A00, jf->y, jf->z - 0x3100, 0x100, work->unk_49, 45);
+                func_080147C8(0x133, 0x100);
+            } else {
+                work->unk_49 = 108;
+                work->unk_4C = 0x133;
+                func_08016C40(jf->x + 0x1A00, jf->y, jf->z - 0x3100, 0x100, work->unk_49, 45);
+                func_080147C8(0x133, 0x100);
+            }
+
+            m4aSongNumStart(0x27A);
+            jf->x = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
+            work->unk_46 = 0;
+            work->unk_4A = 0;
+            work->unk_48++;
+            break;
+        case 4:
+            work->unk_44++;
+
+            if (jf->unk_034 & 4) {
+                jf->x = (work->unk_50 - 0x100) + (work->unk_44 % 2) * 0x200;
+                func_08014780(jf->x - 0x1A00, jf->y, jf->z - 0x3100);
+
+                if (work->unk_49 <= 173 && work->unk_44 % 2 == 0) {
+                    work->unk_49++;
+                    func_080147B8(work->unk_49);
+                    work->unk_4A++;
+                    work->unk_4C = gUnk_09EF2994[work->unk_4A];
+                    func_080147C8(0x133, work->unk_4C);
+                }
+            } else {
+                jf->x = (work->unk_50 - 0x100) + (work->unk_44 % 2) * 0x200;
+                func_08014780(jf->x + 0x1A00, jf->y, jf->z - 0x3100);
+
+                if (work->unk_49 > 82 && work->unk_44 % 2 == 0) {
+                    work->unk_49--;
+                    func_080147B8(work->unk_49);
+                    work->unk_4A++;
+                    work->unk_4C = gUnk_09EF2994[work->unk_4A];
+                    func_080147C8(0x133, work->unk_4C);
+                }
+            }
+
+            if (work->unk_46 >= 11 && work->unk_46 <= 50) {
+                if (jf->unk_034 & 4) {
+                    func_08011F78(0xEA, jf->x - 0x3200 - work->unk_4A * 3 * 512, jf->y + 0xA00, jf->z + 0x2C00, 20, 20, 20);
+                } else {
+                    func_08011F78(0xEA, jf->x + 0x3200 + work->unk_4A * 3 * 512, jf->y + 0xA00, jf->z + 0x2C00, 20, 20, 20);
+                }
+            }
+
+            if (work->unk_46 > 80) {
+                work->unk_46 = 0;
+                work->unk_54 = 0x15E00;
+                work->unk_58 = -0x3800;
+                work->unk_44 = 10;
+                work->unk_00->unk_248 = work->unk_5C + 2;
+                func_080BE380(work->unk_00->unk_248, 0x80, work);
+                work->unk_48++;
+            } else {
+                work->unk_46++;
+            }
+            break;
+        case 5:
+            if (work->unk_44 > 0) {
+                ApproachValue(&jf->x, work->unk_50, work->unk_44);
+                ApproachValue(&jf->y, work->unk_54, work->unk_44);
+                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                work->unk_44--;
+            } else {
+                work->unk_48++;
+            }
+            break;
+        default:
+            func_0801AF08(q);
+            work->unk_00->unk_244 = 0;
+            work->unk_00->unk_238 = 6;
+            break;
+        }
+    }
+}
 
 void func_080BFDD4(JfMajinWork* work) {
 }
