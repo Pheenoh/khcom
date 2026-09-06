@@ -117,7 +117,7 @@ void func_080AB968(void);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 u32 GetBgCharBase(s32 bg);
 void* memcpy(void* dst, const void* src, unsigned long n);
-u16 func_080858B8(s32 index);
+s16 func_080858B8(s32 index);
 void func_08085A58(s32 index, u16* dst);
 u8 func_080A42C8(void);
 s32 func_080A40EC(u64* src);
@@ -216,7 +216,7 @@ u8 func_08096288(PrizeCardWork* w, void* a);
 u16 func_08093384(u8* work);
 void* AllocObjTiles(s32 a, s32 b);
 void func_08092A34(void);
-void func_0808CC58(u16 a, s32 b);
+void func_0808CC58(u16 a, u8 b);
 void func_080AAA8C(u8* work, u8 b);
 void func_080A8430(void);
 void SetBgScroll(s32 a, u16 b, u16 c);
@@ -6195,7 +6195,37 @@ u16 func_08085844(u8 slot, u8 deckIndex) {
     return count;
 }
 
-INCLUDE_ASM("card/func_080858B8.s");
+s16 func_080858B8(s32 index) {
+    u16 count;
+    s16 i;
+    u16* cards;
+
+    count = 0;
+    cards = GetActiveDeck()->cards;
+
+    switch (index) {
+    case 0:
+        for (i = 0; i <= 98; i++) {
+            if (cards[i] != 0xFFFF) {
+                if ((u8)gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A <= 2) {
+                    count = ((count << 16) + 0x10000) >> 16;
+                }
+            }
+        }
+        break;
+    case 1:
+        for (i = 0; i <= 98; i++) {
+            if (cards[i] != 0xFFFF) {
+                if ((u8)gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A == 3) {
+                    count = ((count << 16) + 0x10000) >> 16;
+                }
+            }
+        }
+        break;
+    }
+
+    return count;
+}
 
 s16 func_080859A0(s32 mode, Deck* d) {
     s16 count;
@@ -7902,7 +7932,25 @@ void func_0808CBB4(u8 a, u8 b) {
     }
 }
 
-INCLUDE_ASM("card/func_0808CC58.s");
+void func_0808CC58(u16 a, u8 b) {
+    u8 d[3];
+    u8* base;
+
+    if (a == 0) {
+        base = (u8*)GetBgCharBase(3);
+        RequestDma3Copy(gUnk_0940F918, base + (b * 96 + 0x120), 32);
+        RequestDma3Copy(gUnk_0940F918, base + (b * 96 + 0x120) + 32, 32);
+        RequestDma3Copy(gUnk_0940F918, base + (b * 96 + 0x120) + 64, 32);
+    } else {
+        d[0] = a / 100;
+        d[1] = a / 10 - d[0] * 10;
+        d[2] = a - d[0] * 100 - d[1] * 10;
+        base = (u8*)GetBgCharBase(3);
+        RequestDma3Copy(&gUnk_0940F7B8[(d[0] + 1) * 32], base + (b * 96 + 0x120), 32);
+        RequestDma3Copy(&gUnk_0940F7B8[(d[1] + 1) * 32], base + (b * 96 + 0x120) + 32, 32);
+        RequestDma3Copy(&gUnk_0940F7B8[(d[2] + 1) * 32], base + (b * 96 + 0x120) + 64, 32);
+    }
+}
 
 void func_0808CD48(u8* work) {
     u16 t;
@@ -8027,7 +8075,37 @@ void func_0808D0A4(u8 deck) {
 INCLUDE_ASM("card/func_0808D0A4.s");
 #endif
 
+#ifndef VERSION_EU
+void func_0808D16C(u8 mode) {
+    u32 bg0;
+    u32 bg1;
+    u32 bg2;
+
+    bg0 = GetBgCharBase(0);
+    bg1 = GetBgCharBase(1);
+    bg2 = GetBgCharBase(2);
+
+    switch (mode) {
+    case 0:
+        RequestDma3Copy(gUnk_0940FC58, (u8*)bg0 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_0940FC58 + 0x400, (u8*)bg1 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_0940FC58 + 0x400, (u8*)bg2 + 0x1A0, 0x1E0);
+        break;
+    case 1:
+        RequestDma3Copy(gUnk_09410058, (u8*)bg0 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_09410058 - 0x400, (u8*)bg1 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_09410058, (u8*)bg2 + 0x1A0, 0x1E0);
+        break;
+    case 2:
+        RequestDma3Copy(gUnk_09410058, (u8*)bg0 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_09410058, (u8*)bg1 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_09410058 - 0x400, (u8*)bg2 + 0x1A0, 0x1E0);
+        break;
+    }
+}
+#else
 INCLUDE_ASM("card/func_0808D16C.s");
+#endif
 
 #ifndef VERSION_EU
 void func_0808D258(u8 mode) {
@@ -18333,7 +18411,63 @@ void func_080A4C1C(u8* work) {
     gUnk_02034B00 = 0;
 }
 
+#if !defined(VERSION_JP) && !defined(VERSION_EU)
+u8 func_080A4CC8(u8* work, void* a) {
+    s32* p;
+    u8 x;
+
+    if (work[0x146] == 0) {
+        return 0;
+    }
+
+    if (work[0x145] == 1) {
+        work[0x145] = 0;
+        *(UnkStruct_080A3F5C_Sel**)&work[0x114] =
+            (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&work[0x110]];
+        p = (s32*)&work[0x130];
+
+        if (*p != 0) {
+            work[0x13B] = func_0806BB44(
+                0x2E00,
+                gUnk_09041E80[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04] - 0x200,
+                *p, p);
+        } else {
+            work[0x13B] = func_0806BB44(
+                0x2E00,
+                gUnk_09041E80[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04] - 0x200,
+                (s32)LANGSTR(*(void**)((u8*)*(UnkStruct_080A3F5C_Sel**)&work[0x114] + 0x0C)),
+                p);
+        }
+
+        x = work[0x13B];
+        work[0x139] = x;
+    }
+
+    return 1;
+}
+#elif defined(VERSION_JP)
+u8 func_080A4CC8(u8* work, void* a) {
+    if (work[0x146] == 0) {
+        return 0;
+    }
+
+    if (work[0x145] == 1) {
+        work[0x145] = 0;
+        *(UnkStruct_080A3F5C_Sel**)&work[0x114] =
+            (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&work[0x110]];
+        work[0x13B] = func_0806BDB8(
+            0x2E00,
+            gUnk_09033CB8[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04],
+            (s32)(*(void**)((u8*)*(UnkStruct_080A3F5C_Sel**)&work[0x114] + 0x0C)),
+            (s32*)&work[0x130]);
+        work[0x139] = work[0x13B];
+    }
+
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_080A4CC8.s");
+#endif
 
 s32 func_080A4D7C(u64* src) {
     if (gUnk_02034B00 != 0) {
@@ -19886,7 +20020,33 @@ void func_080A9E40(u8 deck) {
     RequestDma3Copy(&gUnk_0940F938[(e[1] + 1) * 32], (u8*)base + 0x80, 32);
 }
 
-INCLUDE_ASM("card/func_080A9F08.s");
+void func_080A9F08(u8 mode) {
+    u32 bg0;
+    u32 bg1;
+    u32 bg2;
+
+    bg0 = GetBgCharBase(0);
+    bg1 = GetBgCharBase(1);
+    bg2 = GetBgCharBase(2);
+
+    switch (mode) {
+    case 0:
+        RequestDma3Copy(gUnk_0940FC58, (u8*)bg0 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_0940FC58 + 0x400, (u8*)bg1 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_0940FC58 + 0x400, (u8*)bg2 + 0x1A0, 0x1E0);
+        break;
+    case 1:
+        RequestDma3Copy(gUnk_09410058, (u8*)bg0 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_09410058 - 0x400, (u8*)bg1 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_09410058, (u8*)bg2 + 0x1A0, 0x1E0);
+        break;
+    case 2:
+        RequestDma3Copy(gUnk_09410058, (u8*)bg0 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_09410058, (u8*)bg1 + 0x1A0, 0x1E0);
+        RequestDma3Copy(gUnk_09410058 - 0x400, (u8*)bg2 + 0x1A0, 0x1E0);
+        break;
+    }
+}
 void func_080A9FF4(u8 kind) {
     u8 d[3];
     u8 e[3];
