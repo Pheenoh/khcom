@@ -230,6 +230,7 @@ void func_080F83E0(GaWork* work, GaEntryWork* e);
 u8 func_080FAA18(GaWork* work);
 u8 func_080F99C0(GaWork* work);
 u8 func_080F9C2C(GaWork* work);
+u8 func_080FA2B4(GaWork* work);
 u8 func_080F9744(GaWork* work);
 
 u16 func_080F7DD8(s32 a);
