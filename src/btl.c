@@ -6394,6 +6394,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     s16 dy;
     s16 dz;
     s32 mode;
+    s32 mode2;
     u16 fr;
     s32 ex;
     s32 ey;
@@ -6466,17 +6467,25 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     }
 
     switch (p->unk_E4->unk_0F4) {
+    case 26:
+        work->unk_15E |= 0x1000;
+        p->unk_34 |= 0x0010400000000000LL;
+        break;
     case 8:
         work->unk_15E |= 0x1000;
         p->unk_34 |= 0x0004800000000000LL;
+        break;
+    case 15:
+        work->unk_15E |= 0x1000;
+        p->unk_34 |= 0x001C000000000000LL;
         break;
     case 18:
         work->unk_15E |= 0x1000;
         p->unk_34 |= 0x0000800004000000LL;
         break;
-    case 26:
+    case 50:
         work->unk_15E |= 0x1000;
-        p->unk_34 |= 0x0010400000000000LL;
+        p->unk_34 |= 0x0080000010000000LL;
         break;
     case 27:
         work->unk_15E |= 0x1000;
@@ -6490,15 +6499,15 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         work->unk_15E |= 0x1000;
         p->unk_34 |= 0x00A0000008000000LL;
         break;
-    case 50:
+    case 28:
         work->unk_15E |= 0x1000;
-        p->unk_34 |= 0x0080000010000000LL;
+        p->unk_34 |= 0x001C000000000000LL;
         break;
     }
 
     p->unk_34 &= 0xFFFFFFFFFFFF7FFFLL;
 
-    switch (p->unk_E4->unk_0F4) {
+    switch ((u32)p->unk_E4->unk_0F4) {
     case 51:
         e = func_0802828C(work);
 
@@ -7166,7 +7175,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         case 1:
         case 2:
         case 3:
-            e = gBtlWork->unk_078;
+            e = p->unk_E4->unk_078;
 
             if (p->unk_34 & 4) {
                 if (e != 0) {
@@ -7294,13 +7303,13 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_154 = -384;
             work->unk_15E &= ~2;
 
-            switch (gBtlWork->unk_0F4) {
+            switch (p->unk_E4->unk_0F4) {
             case 8:
             case 34:
             case 43:
             case 44:
             case 49:
-                gBtlWork->unk_0F8--;
+                p->unk_E4->unk_0F8--;
                 break;
             }
         }
@@ -7359,7 +7368,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         fr = AnimGetFrame(&work->anim);
 
         if (fr >= 1 && fr <= 9) {
-            if (gBtlWork->unk_0F4 == 34) {
+            if (p->unk_E4->unk_0F4 == 34) {
                 if (func_08011F78(6, p->unk_04, p->unk_08, p->unk_0C - 5120, 65, 30, 12) != 0) {
                     m4aSongNumStart(656);
                     work->unk_15E |= 2;
@@ -7508,13 +7517,13 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             func_08019A30();
             work->unk_15E &= ~2;
 
-            switch (gBtlWork->unk_0F4) {
+            switch (p->unk_E4->unk_0F4) {
             case 8:
             case 34:
             case 43:
             case 44:
             case 49:
-                gBtlWork->unk_0F8--;
+                p->unk_E4->unk_0F8--;
                 break;
             }
         }
@@ -7564,7 +7573,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             }
 
             if (flag != 0) {
-                if (gBtlWork->unk_0F4 == 34) {
+                if (p->unk_E4->unk_0F4 == 34) {
                     if (p->unk_34 & 4) {
                         if (func_08011F78(mode, p->unk_04 - 8960, p->unk_08, p->unk_0C, 35, 25, 40) != 0) {
                             work->unk_15E |= 2;
@@ -7597,7 +7606,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         switch (AnimGetFrame(&work->anim)) {
         case 1:
         case 2:
-            e = gBtlWork->unk_078;
+            e = p->unk_E4->unk_078;
 
             if (e != 0) {
                 ex = e->unk_004 - p->unk_04;
@@ -7642,13 +7651,13 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             m4aSongNumStart(GetRandom() % 2 + 259);
             work->unk_15E &= ~2;
 
-            switch (gBtlWork->unk_0F4) {
+            switch (p->unk_E4->unk_0F4) {
             case 8:
             case 34:
             case 43:
             case 44:
             case 49:
-                gBtlWork->unk_0F8--;
+                p->unk_E4->unk_0F8--;
                 break;
             }
         }
@@ -7673,7 +7682,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if (work->anim.timer == 0) {
             dz = 0;
             flag = 0;
-            mode = 4;
+            mode2 = 4;
 
             switch (AnimGetGfxIndex(&work->anim)) {
             case 1:
@@ -7691,7 +7700,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             case 6:
                 dz = 20;
                 flag = 1;
-                mode = 5;
+                mode2 = 5;
                 break;
             case 7:
                 dz = -9;
@@ -7713,7 +7722,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             if (flag != 0) {
                 func_08019A30();
 
-                if (gBtlWork->unk_0F4 == 34) {
+                if (p->unk_E4->unk_0F4 == 34) {
                     oa = 35;
                     ob = 35;
                     oc = 25;
@@ -7726,7 +7735,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 }
 
                 if (p->unk_34 & 4) {
-                    if (func_08011F78(mode, p->unk_04 - (oa << 8), p->unk_08, p->unk_0C, ob, oc, od) != 0) {
+                    if (func_08011F78(mode2, p->unk_04 - (oa << 8), p->unk_08, p->unk_0C, ob, oc, od) != 0) {
                         work->unk_15E |= 2;
                         m4aSongNumStart(656);
 
@@ -7737,7 +7746,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                         }
                     }
                 } else {
-                    if (func_08011F78(mode, p->unk_04 + (oa << 8), p->unk_08, p->unk_0C, ob, oc, od) != 0) {
+                    if (func_08011F78(mode2, p->unk_04 + (oa << 8), p->unk_08, p->unk_0C, ob, oc, od) != 0) {
                         work->unk_15E |= 2;
                         m4aSongNumStart(656);
 
@@ -7936,7 +7945,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_15A = 0;
             work->unk_158 = 0;
             work->unk_154 = -1600;
-            gBtlWork->unk_068 |= 0x8000;
+            p->unk_E4->unk_068 |= 0x8000;
             work->unk_160 <<= 1;
             break;
         }
@@ -7945,7 +7954,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         break;
     case 38:
         func_080274F0(work);
-        gBtlWork->unk_068 |= 0x8000;
+        p->unk_E4->unk_068 |= 0x8000;
 
         if (work->unk_154 < 0) {
             if (work->unk_154 <= -512) {
@@ -8049,7 +8058,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             func_080276D4(work, 19, 0);
         } else if (pressed & 2) {
             m4aSongNumStart(work->unk_188[2]);
-            gBtlWork->unk_068 |= 0x8000;
+            p->unk_E4->unk_068 |= 0x8000;
             work->unk_03C = 37;
             work->unk_15A = 0;
             work->unk_158 = 0;
@@ -8210,7 +8219,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         }
         break;
     case 31:
-        if (gBtlWork->unk_068 & 0x8000) {
+        if (p->unk_E4->unk_068 & 0x8000) {
             func_080274F0(work);
             break;
         }
@@ -8303,7 +8312,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         work->unk_158 = 0;
         break;
     case 33:
-        if (gBtlWork->unk_068 & 0x8000) {
+        if (p->unk_E4->unk_068 & 0x8000) {
             func_080274F0(work);
             break;
         }
@@ -8469,7 +8478,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         work->unk_15A = 0;
         work->unk_158 = 0;
         work->unk_154 = -1664;
-        gBtlWork->unk_068 |= 0x8000;
+        p->unk_E4->unk_068 |= 0x8000;
         work->unk_160 <<= 1;
         break;
     case 30:
@@ -8527,7 +8536,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         break;
     case 3:
         func_080274F0(work);
-        gBtlWork->unk_068 |= 0x8000;
+        p->unk_E4->unk_068 |= 0x8000;
 
         if (work->unk_154 < 0) {
             if (work->unk_154 <= -512) {
@@ -8624,7 +8633,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             func_0802770C(work, 5, 0);
         } else if (pressed & 2) {
             m4aSongNumStart(work->unk_188[2]);
-            gBtlWork->unk_068 |= 0x8000;
+            p->unk_E4->unk_068 |= 0x8000;
             work->unk_03C = 2;
             work->unk_15A = 0;
             work->unk_158 = 0;
@@ -9461,7 +9470,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             break;
         case 18:
             func_08012614(&p->unk_40, 0);
-            p->unk_34 &= 0xFFFFFFFF7FFFFFFFLL;
+            p->unk_34 &= 0xFFFFFFFFFF7FFFFFLL;
             p->unk_34 &= 0xFFFFDFFFFFFFFFFFLL;
             break;
         }
@@ -9483,7 +9492,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     case 28:
         if ((s16)work->unk_158 == 0) {
             func_08012614(&p->unk_40, 0);
-            p->unk_34 &= 0xFFFFFFFF7FFFFFFFLL;
+            p->unk_34 &= 0xFFFFFFFFFF7FFFFFLL;
             p->unk_34 &= 0xFFFFDFFFFFFFFFFFLL;
 
             if (gBtlWork->unk_068 & 0x800000000000LL) {
