@@ -12,25 +12,25 @@ typedef void* (*MovieAllocFunc)(u32);
 typedef void (*MovieFreeFunc)(void*);
 
 typedef struct MovieHeap {
-    MovieAllocFunc unk_00;
-    MovieAllocFunc unk_04;
-    MovieFreeFunc unk_08;
-    MovieFreeFunc unk_0C;
-    u8* unk_10;
+    MovieAllocFunc iwramAlloc;
+    MovieAllocFunc ewramAlloc;
+    MovieFreeFunc iwramFree;
+    MovieFreeFunc ewramFree;
+    u8* ticks;
 } MovieHeap;
 
 typedef struct MoviePlayer {
     void* unk_00;
     void* unk_04;
     void* unk_08;
-    void* unk_0C;
-    u8* unk_10;
-    u8* unk_14;
-    u8* unk_18;
-    u8* unk_1C;
-    void* unk_20;
-    void* unk_24;
-    void* unk_28;
+    void* data;
+    u8* videoData;
+    u8* videoPos;
+    u8* audioData;
+    u8* audioPos;
+    void* frameBuf;
+    void* workBuf;
+    void* audioBuf;
     u32 width;
     u32 height;
     float frameRate;
@@ -38,24 +38,24 @@ typedef struct MoviePlayer {
     u32 audioBlockCount;
     u32 channels;
     u32 sampleRate;
-    u32 unk_48;
-    u8* unk_4C;
-    u16* unk_50;
+    u32 audioCodecId;
+    u8* frameTypes;
+    u16* frameSizes;
     u8* unk_54;
-    u16* unk_58;
-    void* unk_5C;
+    u16* audioBlockSizes;
+    void* decodeBuf;
     u32 frameIndex;
     u32 audioBlockIndex;
-    u8* unk_68;
-    u32 unk_6C;
+    u8* startTicks;
+    u32 timingStarted;
     float secondsPerFrame;
-    u32 unk_74;
-    u32 unk_78;
+    u32 frameDecoded;
+    u32 framePresent;
     void (*unk_7C)(void*, u32, u32, void*);
     void (*unk_80)(void*, u32, u32);
     void (*unk_84)(void*, void*, void*);
     void (*unk_88)(void*, void*, s32);
-    u8 unk_8C;
+    u8 videoDone;
     u8 unk_8D;
 } MoviePlayer;
 
@@ -81,8 +81,8 @@ void MovieSetHeapCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, 
 void MovieAdvanceTicks(void);
 u8* MovieGetTicks(void);
 float MovieTicksToSeconds(s32 a);
-void func_0811865C(MoviePlayer* p, void* a, void* b, void* c, u32 w, u32 h);
-void func_08118ADC(MoviePlayer* p, void* a, u32 b);
+void MovieSetupVideoCodec(MoviePlayer* p, void* a, void* b, void* c, u32 w, u32 h);
+void MovieSetupAudioCodec(MoviePlayer* p, void* a, u32 b);
 MoviePlayer* MovieOpen(void* a);
 void MovieFree(MoviePlayer* a);
 void MovieDecodeFrame(MoviePlayer* a);
@@ -91,7 +91,7 @@ s32 MovieAdvanceFrame(MoviePlayer* a);
 u32 MovieGetAudioBlockSamples(MoviePlayer* a);
 void MovieDecodeAudioBlock(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2);
 s32 MovieAdvanceAudioBlock(MoviePlayer* a);
-s32 func_0811950C(MoviePlayer* a);
+s32 MovieSyncFrame(MoviePlayer* a);
 u32 MovieGetChannels(MoviePlayer* a);
 u32 MovieGetSampleRate(MoviePlayer* a);
 void MovieGetSize(MoviePlayer* a, s32* w, s32* h);
@@ -170,7 +170,7 @@ void MoviePlay(s32 (*a)(s32), s32 b) {
     }
 
     while (1) {
-        while (func_0811950C(gMoviePlayer) == 0) {
+        while (MovieSyncFrame(gMoviePlayer) == 0) {
         }
         MovieDrawFrame(gMoviePlayer, (u16*)0x06000000 + (y * 240 + x));
 
@@ -219,15 +219,15 @@ void MovieUpdate(void) {
 }
 
 void MovieSetHeapCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
-    gMovieHeap.unk_00 = a;
-    gMovieHeap.unk_04 = b;
-    gMovieHeap.unk_08 = c;
-    gMovieHeap.unk_0C = d;
-    gMovieHeap.unk_10 = 0;
+    gMovieHeap.iwramAlloc = a;
+    gMovieHeap.ewramAlloc = b;
+    gMovieHeap.iwramFree = c;
+    gMovieHeap.ewramFree = d;
+    gMovieHeap.ticks = 0;
 }
 
 void MovieAdvanceTicks(void) {
-    gMovieHeap.unk_10 = gMovieHeap.unk_10 + MOVIE_TICKS_PER_FRAME;
+    gMovieHeap.ticks = gMovieHeap.ticks + MOVIE_TICKS_PER_FRAME;
 }
 
 u8* MovieGetTicks(void) {
@@ -237,9 +237,9 @@ u8* MovieGetTicks(void) {
     REG_IME = 0;
     vc = REG_VCNT;
     if (vc > 159) {
-        t = gMovieHeap.unk_10 + (vc - MOVIE_TICKS_PER_FRAME);
+        t = gMovieHeap.ticks + (vc - MOVIE_TICKS_PER_FRAME);
     } else {
-        t = gMovieHeap.unk_10 + vc;
+        t = gMovieHeap.ticks + vc;
     }
     REG_IME = 1;
     return t;
@@ -249,8 +249,8 @@ float MovieTicksToSeconds(s32 a) {
     return a * MOVIE_SECONDS_PER_TICK;
 }
 
-INCLUDE_ASM("movie/func_0811865C.s");
-INCLUDE_ASM("movie/func_08118ADC.s");
+INCLUDE_ASM("movie/MovieSetupVideoCodec.s");
+INCLUDE_ASM("movie/MovieSetupAudioCodec.s");
 
 MoviePlayer* MovieOpen(void* a) {
     u32* q;
@@ -260,9 +260,9 @@ MoviePlayer* MovieOpen(void* a) {
     u16 v2;
     MoviePlayer* p;
 
-    p = gMovieHeap.unk_00(sizeof(MoviePlayer));
-    p->unk_0C = a;
-    p->unk_8C = 0;
+    p = gMovieHeap.iwramAlloc(sizeof(MoviePlayer));
+    p->data = a;
+    p->videoDone = 0;
     p->unk_8D = 2;
     q = a;
     p->width = *q;
@@ -279,31 +279,31 @@ MoviePlayer* MovieOpen(void* a) {
     q++;
     p->sampleRate = *q;
     q++;
-    p->unk_48 = *q;
+    p->audioCodecId = *q;
     q++;
     p->secondsPerFrame = 1.0f / p->frameRate;
     len = *q;
     q++;
-    p->unk_4C = (u8*)q;
+    p->frameTypes = (u8*)q;
     q = (u32*)((u8*)q + len);
     len = *q;
     q++;
     n = *q;
     q++;
     v1 = *(u16*)q;
-    p->unk_50 = (u16*)((u8*)q + 2);
+    p->frameSizes = (u16*)((u8*)q + 2);
     q = (u32*)((u8*)q + len);
-    p->unk_10 = (u8*)q;
-    p->unk_14 = (u8*)q;
+    p->videoData = (u8*)q;
+    p->videoPos = (u8*)q;
     q = (u32*)((u8*)q + n);
 
     if ((p->width & 7) != 0 || p->width > 288 || (p->height & 7) != 0) {
-        gMovieHeap.unk_08(p);
+        gMovieHeap.iwramFree(p);
         return 0;
     }
-    func_0811865C(p, &p->unk_7C, &p->unk_80, &p->unk_84, p->width, p->height);
-    p->unk_20 = gMovieHeap.unk_04(p->width * p->height * 2);
-    p->unk_24 = gMovieHeap.unk_04(p->width * p->height * 2);
+    MovieSetupVideoCodec(p, &p->unk_7C, &p->unk_80, &p->unk_84, p->width, p->height);
+    p->frameBuf = gMovieHeap.ewramAlloc(p->width * p->height * 2);
+    p->workBuf = gMovieHeap.ewramAlloc(p->width * p->height * 2);
 
     if (p->channels != 0) {
         p->unk_8D = 0;
@@ -316,87 +316,87 @@ MoviePlayer* MovieOpen(void* a) {
         n = *q;
         q++;
         v2 = *(u16*)q;
-        p->unk_58 = (u16*)((u8*)q + 2);
+        p->audioBlockSizes = (u16*)((u8*)q + 2);
         q = (u32*)((u8*)q + len);
-        p->unk_18 = (u8*)q;
-        p->unk_1C = (u8*)q;
+        p->audioData = (u8*)q;
+        p->audioPos = (u8*)q;
         q = (u32*)((u8*)q + n);
-        p->unk_28 = gMovieHeap.unk_04(0x2000);
-        func_08118ADC(p, &p->unk_88, p->unk_48);
+        p->audioBuf = gMovieHeap.ewramAlloc(0x2000);
+        MovieSetupAudioCodec(p, &p->unk_88, p->audioCodecId);
     }
-    p->unk_5C = gMovieHeap.unk_00(v1 > v2 ? v1 : v2);
+    p->decodeBuf = gMovieHeap.iwramAlloc(v1 > v2 ? v1 : v2);
     p->frameIndex = 0;
     p->audioBlockIndex = 0;
-    p->unk_6C = 0;
-    p->unk_78 = 1;
+    p->timingStarted = 0;
+    p->framePresent = 1;
     return p;
 }
 
 void MovieFree(MoviePlayer* a) {
     MoviePlayer* p = a;
 
-    gMovieHeap.unk_08(p->unk_00);
-    gMovieHeap.unk_08(p->unk_04);
-    gMovieHeap.unk_08(p->unk_08);
-    gMovieHeap.unk_0C(p->unk_20);
-    gMovieHeap.unk_0C(p->unk_24);
+    gMovieHeap.iwramFree(p->unk_00);
+    gMovieHeap.iwramFree(p->unk_04);
+    gMovieHeap.iwramFree(p->unk_08);
+    gMovieHeap.ewramFree(p->frameBuf);
+    gMovieHeap.ewramFree(p->workBuf);
 
     if (p->channels != 0) {
-        gMovieHeap.unk_0C(p->unk_28);
+        gMovieHeap.ewramFree(p->audioBuf);
     }
-    gMovieHeap.unk_08(p->unk_5C);
-    gMovieHeap.unk_08(p);
+    gMovieHeap.iwramFree(p->decodeBuf);
+    gMovieHeap.iwramFree(p);
 }
 
 void MovieDecodeFrame(MoviePlayer* a) {
     void* t;
     MoviePlayer* p = a;
 
-    switch (p->unk_4C[p->frameIndex]) {
+    switch (p->frameTypes[p->frameIndex]) {
     case 0:
-        p->unk_7C(p->unk_24, p->width, p->height, p->unk_5C);
+        p->unk_7C(p->workBuf, p->width, p->height, p->decodeBuf);
         break;
     case 1:
-        p->unk_84(p->unk_20, p->unk_24, p->unk_5C);
+        p->unk_84(p->frameBuf, p->workBuf, p->decodeBuf);
         break;
     case 2:
-        p->unk_84(p->unk_20, p->unk_24, p->unk_5C);
-        p->unk_80(p->unk_24, p->width, p->height);
+        p->unk_84(p->frameBuf, p->workBuf, p->decodeBuf);
+        p->unk_80(p->workBuf, p->width, p->height);
         break;
     }
-    p->unk_74 = 1;
-    t = p->unk_20;
-    p->unk_20 = p->unk_24;
-    p->unk_24 = t;
+    p->frameDecoded = 1;
+    t = p->frameBuf;
+    p->frameBuf = p->workBuf;
+    p->workBuf = t;
 }
 
 s32 MovieDrawFrame(MoviePlayer* a, void* dst) {
     MoviePlayer* p = a;
 
-    if (p->unk_8C != 0) {
+    if (p->videoDone != 0) {
         return 0;
     }
-    CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->frameIndex) >> 2) & 0xFFFF);
+    CpuFastSet(p->videoPos, p->decodeBuf, (*(p->frameSizes + p->frameIndex) >> 2) & 0xFFFF);
     MovieDecodeFrame(p);
 
-    if (p->unk_78 != 0) {
-        CpuFastSet(p->unk_20, dst, (p->width * p->height / 2) & 0x1FFFFF);
+    if (p->framePresent != 0) {
+        CpuFastSet(p->frameBuf, dst, (p->width * p->height / 2) & 0x1FFFFF);
     }
-    return p->unk_78;
+    return p->framePresent;
 }
 
-u32 func_081190C8(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 dstStride) {
+u32 MovieDrawFrameRect(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 dstStride) {
     MoviePlayer* p = a;
     u16 i;
     u8* d;
     u8* s;
 
-    CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->frameIndex) >> 2) & 0xFFFF);
+    CpuFastSet(p->videoPos, p->decodeBuf, (*(p->frameSizes + p->frameIndex) >> 2) & 0xFFFF);
     MovieDecodeFrame(p);
 
-    if (p->unk_78 != 0) {
+    if (p->framePresent != 0) {
         d = dst;
-        s = (u8*)p->unk_20 + x * 2 + (p->width << 1) * y;
+        s = (u8*)p->frameBuf + x * 2 + (p->width << 1) * y;
 
         for (i = 0; i < rows; i++) {
             CpuFastSet(s, d, ((w << 1) >> 2) & 0x1FFFFF);
@@ -404,40 +404,40 @@ u32 func_081190C8(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 
             s = s + (p->width << 1);
         }
     }
-    return p->unk_78;
+    return p->framePresent;
 }
 
-u32 func_08119190(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 dstStride) {
+u32 MovieCopyFrameRect(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 dstStride) {
     MoviePlayer* p = a;
     u16 i;
     u8* d;
     u8* s;
 
     d = dst;
-    s = (u8*)p->unk_20 + x * 2 + (p->width << 1) * y;
+    s = (u8*)p->frameBuf + x * 2 + (p->width << 1) * y;
 
     for (i = 0; i < rows; i++) {
         CpuFastSet(s, d, ((w << 1) >> 2) & 0x1FFFFF);
         d = d + dstStride;
         s = s + (p->width << 1);
     }
-    return p->unk_78;
+    return p->framePresent;
 }
 
 s32 MovieAdvanceFrame(MoviePlayer* a) {
     MoviePlayer* p = a;
 
     p->frameIndex++;
-    if (p->unk_8C != 0 || p->frameIndex == p->frameCount) {
-        p->unk_8C = 1;
+    if (p->videoDone != 0 || p->frameIndex == p->frameCount) {
+        p->videoDone = 1;
         return 0;
     }
 
-    if (p->unk_6C == 0) {
-        p->unk_6C = 1;
-        p->unk_68 = MovieGetTicks();
+    if (p->timingStarted == 0) {
+        p->timingStarted = 1;
+        p->startTicks = MovieGetTicks();
     }
-    p->unk_14 = p->unk_14 + *(p->unk_50 + p->frameIndex - 1);
+    p->videoPos = p->videoPos + *(p->frameSizes + p->frameIndex - 1);
     return 1;
 }
 
@@ -445,9 +445,9 @@ u32 MovieGetAudioBlockSamples(MoviePlayer* a) {
     MoviePlayer* p = a;
 
     if (p->channels == 1) {
-        return *(u32*)p->unk_1C / 2;
+        return *(u32*)p->audioPos / 2;
     } else {
-        return *(u32*)p->unk_1C / 4;
+        return *(u32*)p->audioPos / 4;
     }
 }
 
@@ -459,32 +459,32 @@ void MovieDecodeAudioBlock(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, 
     if (p->unk_8D != 0) {
         return;
     }
-    CpuFastSet(p->unk_1C, p->unk_5C, (*(p->unk_58 + p->audioBlockIndex) >> 2) & 0xFFFF);
-    n = *(s32*)p->unk_5C;
+    CpuFastSet(p->audioPos, p->decodeBuf, (*(p->audioBlockSizes + p->audioBlockIndex) >> 2) & 0xFFFF);
+    n = *(s32*)p->decodeBuf;
 
     if (p->channels == 1) {
-        q = (u8*)p->unk_5C + 4;
-        p->unk_88(q, p->unk_28, n);
-        CpuFastSet(p->unk_28, dstA1, (lenA1 / 4) & 0x1FFFFF);
+        q = (u8*)p->decodeBuf + 4;
+        p->unk_88(q, p->audioBuf, n);
+        CpuFastSet(p->audioBuf, dstA1, (lenA1 / 4) & 0x1FFFFF);
 
         if (lenA2 != 0) {
-            CpuFastSet((u8*)p->unk_28 + lenA1, dstA2, (lenA2 / 4) & 0x1FFFFF);
+            CpuFastSet((u8*)p->audioBuf + lenA1, dstA2, (lenA2 / 4) & 0x1FFFFF);
         }
     } else {
         n >>= 1;
-        q = (u8*)p->unk_5C + 4;
-        p->unk_88(q, p->unk_28, n);
-        q = (u8*)q + ((*(p->unk_58 + p->audioBlockIndex) - 4) >> 1);
-        CpuFastSet(p->unk_28, dstA1, (lenA1 / 4) & 0x1FFFFF);
+        q = (u8*)p->decodeBuf + 4;
+        p->unk_88(q, p->audioBuf, n);
+        q = (u8*)q + ((*(p->audioBlockSizes + p->audioBlockIndex) - 4) >> 1);
+        CpuFastSet(p->audioBuf, dstA1, (lenA1 / 4) & 0x1FFFFF);
 
         if (lenA2 != 0) {
-            CpuFastSet((u8*)p->unk_28 + lenA1, dstA2, (lenA2 / 4) & 0x1FFFFF);
+            CpuFastSet((u8*)p->audioBuf + lenA1, dstA2, (lenA2 / 4) & 0x1FFFFF);
         }
-        p->unk_88(q, p->unk_28, n);
-        CpuFastSet(p->unk_28, dstB1, (lenB1 / 4) & 0x1FFFFF);
+        p->unk_88(q, p->audioBuf, n);
+        CpuFastSet(p->audioBuf, dstB1, (lenB1 / 4) & 0x1FFFFF);
 
         if (lenB2 != 0) {
-            CpuFastSet((u8*)p->unk_28 + lenB1, dstB2, (lenB2 / 4) & 0x1FFFFF);
+            CpuFastSet((u8*)p->audioBuf + lenB1, dstB2, (lenB2 / 4) & 0x1FFFFF);
         }
     }
 }
@@ -501,50 +501,50 @@ s32 MovieAdvanceAudioBlock(MoviePlayer* a) {
     }
 
     if (p->channels != 0) {
-        p->unk_1C = p->unk_1C + *(p->unk_58 + p->audioBlockIndex - 1);
+        p->audioPos = p->audioPos + *(p->audioBlockSizes + p->audioBlockIndex - 1);
     }
     return 1;
 }
 
-s32 func_0811950C(MoviePlayer* a) {
+s32 MovieSyncFrame(MoviePlayer* a) {
     u8* t;
     float now;
     float target;
     MoviePlayer* p = a;
 
-    if (p->unk_8C != 0 && p->unk_8D != 0) {
-        p->unk_8C = 0;
+    if (p->videoDone != 0 && p->unk_8D != 0) {
+        p->videoDone = 0;
 
         if (p->unk_8D != 2) {
             p->unk_8D = 0;
         }
         p->audioBlockIndex = 0;
-        p->unk_1C = p->unk_18;
+        p->audioPos = p->audioData;
         p->frameIndex = 0;
-        p->unk_14 = p->unk_10;
-        p->unk_74 = 0;
-        p->unk_6C = 1;
-        p->unk_68 = MovieGetTicks();
+        p->videoPos = p->videoData;
+        p->frameDecoded = 0;
+        p->timingStarted = 1;
+        p->startTicks = MovieGetTicks();
         return 1;
     }
 
-    if (p->unk_6C == 0) {
-        p->unk_74 = 0;
-        p->unk_6C = 1;
-        p->unk_68 = MovieGetTicks();
+    if (p->timingStarted == 0) {
+        p->frameDecoded = 0;
+        p->timingStarted = 1;
+        p->startTicks = MovieGetTicks();
     }
     t = MovieGetTicks();
-    now = MovieTicksToSeconds(t - p->unk_68);
+    now = MovieTicksToSeconds(t - p->startTicks);
     target = p->secondsPerFrame * (p->frameIndex + 1);
 
-    if (p->unk_74 != 0) {
-        p->unk_74 = 0;
+    if (p->frameDecoded != 0) {
+        p->frameDecoded = 0;
 
         if (now >= target + 0.01f) {
-            p->unk_78 = 0;
+            p->framePresent = 0;
             return 1;
         }
-        p->unk_78 = 1;
+        p->framePresent = 1;
     }
     return now >= target;
 }

@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08118ADC
+	.global MovieSetupAudioCodec
 	.thumb
 	.thumb_func
-	.type func_08118ADC, %function
-func_08118ADC: @ 08118ADC
+	.type MovieSetupAudioCodec, %function
+MovieSetupAudioCodec: @ 08118ADC
 	push {r4, r7, lr}
 	add sp, #-0x024
 	mov r7, sp

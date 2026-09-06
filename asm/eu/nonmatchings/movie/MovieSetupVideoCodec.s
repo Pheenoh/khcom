@@ -1,10 +1,10 @@
 .syntax unified
 	.text
 	.align 2, 0
-	.global func_0811865C
+	.global MovieSetupVideoCodec
 	.thumb
 	.thumb_func
-	.type func_0811865C, %function
-func_0811865C:
+	.type MovieSetupVideoCodec, %function
+MovieSetupVideoCodec:
 	.incbin "roms/B8CP.gba", 0x11717c, 0x480
 .syntax divided
