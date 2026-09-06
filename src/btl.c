@@ -605,7 +605,7 @@ BtlWork* func_0801E7D4(BtlSoraWork* work) {
 }
 
 #ifdef NON_MATCHING
-void task_btl_sora_1(BtlSoraWork* work) {
+s32 task_btl_sora_1(BtlSoraWork* work) {
     UnkStruct_0801AF08* p;
     BtlWork* e;
     u16 hp;
@@ -4656,6 +4656,183 @@ void task_btl_sora_1(BtlSoraWork* work) {
         p->unk_04 += (gSineTable[work->unk_160] * work->unk_15C) >> 8;
         p->unk_08 += (-gSineTable[work->unk_160 + 64] * (work->unk_15C >> 1)) >> 8;
     }
+
+    if ((u8)p->unk_6C != 0) {
+        if (*(s32*)&p->unk_74[0] == 12) {
+            if (work->unk_15C > 0 && work->unk_038 == 1) {
+                work->unk_038 = 36;
+                work->unk_156 = 0;
+                work->unk_154 = 0;
+            }
+        } else if ((work->unk_15A & 0x20) && *(s32*)&p->unk_74[0] == 7) {
+            p->unk_6E |= 1;
+        } else if ((work->unk_15A & 0x80) == 0 && *(s32*)&p->unk_74[0] != 5 &&
+                   (*(u16*)(*(u8**)&p->unk_90[0] + 0x30) & 2) == 0) {
+            p->unk_04 += *(s32*)&p->unk_74[4] >> 1;
+            p->unk_08 += *(s32*)&p->unk_74[8] >> 1;
+        }
+    }
+
+    p->unk_0C += work->unk_150;
+    work->unk_150 += gBtlWork->unk_12C;
+
+    if (p->unk_6E & 1) {
+        p->unk_10 = *(s32*)&p->unk_74[12];
+        work->unk_15A |= 0x10;
+        work->unk_174 = -4100 - (((*(s32*)&p->unk_74[20] + 1024) >> 8) * 4);
+    } else {
+        work->unk_15A &= ~0x10;
+        p->unk_10 = *(s32*)&p->unk_74[20];
+    }
+
+    if (work->unk_15A & 0x20) {
+        if (*(s32*)&gBtlWork->unk_0F0[0] == *(s32*)&p->unk_90[0]) {
+            p->unk_04 += *(s32*)&p->unk_74[16] - *(s32*)&work->unk_178;
+            p->unk_08 += *(s32*)&p->unk_74[20] - *(s32*)&work->unk_17A[2];
+            p->unk_0C += *(s32*)&p->unk_74[12] - *(s32*)&work->unk_17A[6];
+        }
+    }
+
+    if (p->unk_0C >= p->unk_10) {
+        if (p->unk_6E & 1) {
+            work->unk_15A |= 0x20;
+            *(s32*)&work->unk_178 = *(s32*)&p->unk_74[16];
+            *(s32*)&work->unk_17A[2] = *(s32*)&p->unk_74[20];
+            *(s32*)&work->unk_17A[6] = *(s32*)&p->unk_74[12];
+            *(s32*)&gBtlWork->unk_0F0[0] = *(s32*)&p->unk_90[0];
+        } else {
+            work->unk_15A &= ~0x20;
+            *(s32*)&gBtlWork->unk_0F0[0] = 0;
+        }
+
+        work->unk_150 = 0;
+        p->unk_0C = p->unk_10;
+        p->unk_E4->unk_068 &= ~0x8000;
+
+        if (work->unk_038 == 3) {
+            work->unk_038 = 4;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else if (work->unk_038 == 20) {
+            work->unk_038 = 21;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        }
+    } else {
+        if (work->unk_15A & 0x20) {
+            work->unk_15A &= ~0x20;
+
+            if (work->unk_038 == 1) {
+                work->unk_038 = 3;
+                work->unk_156 = 0;
+                work->unk_154 = 0;
+            } else if (work->unk_038 == 18) {
+                work->unk_038 = 20;
+                work->unk_156 = 0;
+                work->unk_154 = 0;
+            }
+        }
+
+        *(s32*)&gBtlWork->unk_0F0[0] = 0;
+    }
+
+    if (*(s32*)((u8*)p + 0x108) > 0) {
+        p->unk_04 += *(s32*)((u8*)p + 0x108);
+        *(s32*)((u8*)p + 0x108) -= 17;
+
+        if (*(s32*)((u8*)p + 0x108) < 0) {
+            *(s32*)((u8*)p + 0x108) = 0;
+        }
+    } else if (*(s32*)((u8*)p + 0x108) < 0) {
+        p->unk_04 += *(s32*)((u8*)p + 0x108);
+        *(s32*)((u8*)p + 0x108) += 17;
+
+        if (*(s32*)((u8*)p + 0x108) > 0) {
+            *(s32*)((u8*)p + 0x108) = 0;
+        }
+    }
+
+    if (*(s32*)((u8*)p + 0x10C) > 0) {
+        p->unk_08 += *(s32*)((u8*)p + 0x10C);
+        *(s32*)((u8*)p + 0x10C) -= 17;
+
+        if (*(s32*)((u8*)p + 0x10C) < 0) {
+            *(s32*)((u8*)p + 0x10C) = 0;
+        }
+    } else if (*(s32*)((u8*)p + 0x10C) < 0) {
+        p->unk_08 += *(s32*)((u8*)p + 0x10C);
+        *(s32*)((u8*)p + 0x10C) += 17;
+
+        if (*(s32*)((u8*)p + 0x10C) > 0) {
+            *(s32*)((u8*)p + 0x10C) = 0;
+        }
+    }
+
+    if ((p->unk_34 & 0x800000) == 0) {
+        switch (func_0801A8A4(&p->unk_04, &p->unk_08, -16, 0)) {
+        case 3:
+        case 4:
+            *(s32*)((u8*)p + 0x10C) = -(*(s32*)((u8*)p + 0x10C) >> 1);
+            p->unk_E4->unk_068 &= ~8;
+            break;
+        case 1:
+            *(s32*)((u8*)p + 0x108) = -(*(s32*)((u8*)p + 0x108) >> 1);
+
+            if (p->unk_0C == 0 && (held & 0x20)) {
+                p->unk_E4->unk_068 |= 8;
+            } else {
+                p->unk_E4->unk_068 &= ~8;
+            }
+
+            work->unk_15A |= 0x200;
+            break;
+        case 2:
+            *(s32*)((u8*)p + 0x108) = -(*(s32*)((u8*)p + 0x108) >> 1);
+
+            if (p->unk_0C == 0 && (held & 0x10)) {
+                p->unk_E4->unk_068 |= 8;
+            } else {
+                p->unk_E4->unk_068 &= ~8;
+            }
+
+            work->unk_15A |= 0x200;
+            break;
+        default:
+            p->unk_E4->unk_068 &= ~8;
+            work->unk_15A &= ~0x200;
+            break;
+        }
+
+        if (p->unk_E4->unk_068 & 0x200000) {
+            p->unk_E4->unk_068 &= ~8;
+        }
+    }
+
+    if (p->unk_E4->unk_068 & 8) {
+        if (work->unk_172 != 0) {
+            func_0801DDC4(work);
+        }
+    }
+
+    func_0801C6D4(&p->unk_04, &p->unk_08, &p->unk_0C, (s32*)((u8*)p + 0xD4));
+    func_08000EA4(&work->unk_024);
+
+    if (work->unk_038 == 29 && (work->unk_15A & 4)) {
+        work->unk_15A &= ~4;
+        func_0801DEB8(work);
+        func_0801DDE4(work, work->unk_191[0] + 47, 0);
+        p->unk_04 = *(s32*)&p->unk_14[0];
+        p->unk_08 = *(s32*)&p->unk_14[4];
+        p->unk_0C = *(s32*)&p->unk_14[8];
+    }
+
+    if (*(s32*)((u8*)p + 0xE8) != 2) {
+        work->unk_008 = (u32)AnimUpdate(&work->anim);
+    }
+
+    func_08012324(&p->unk_40, p->unk_04, p->unk_08, p->unk_0C);
+    work->unk_1A8++;
+    return 1;
 }
 #else
 INCLUDE_ASM("btl/task_btl_sora_1.s");
