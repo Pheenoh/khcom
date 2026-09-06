@@ -437,6 +437,7 @@ s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08015DC8(s32 x, s32 y, s32 z);
 u16 AnimGetFrame(AnimState* a);
+void AnimSetFrame(AnimState* a, u16 frame);
 void func_08015D30(s32 x, s32 y, s32 z);
 s32 TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 u8 IsTaskActiveNamed(s32 task, const char* name);

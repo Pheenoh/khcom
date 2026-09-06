@@ -998,6 +998,90 @@ void task_btl_sora_1(BtlSoraWork* work) {
         work->unk_156 = 0;
         work->unk_154 = 0;
         break;
+    case 18:
+        if (!(p->unk_E4->unk_068 & 0x200000)) {
+            func_0801E508(work, 1);
+        }
+    case 1:
+        func_0801DD08(work);
+        func_0801DC5C(work);
+
+        if (p->unk_0C < p->unk_10) {
+            if (work->unk_038 == 18) {
+                work->unk_038 = 20;
+            } else {
+                work->unk_038 = 3;
+            }
+
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        }
+
+        t2 = work->unk_038;
+
+        if (t2 != 18) {
+            p->unk_E4->unk_068 |= 0x0010000000000000LL;
+
+            if ((p->unk_E4->unk_068 & 0x1000000) && p->unk_E4->unk_0F4 != 30) {
+                func_0801DDE4(work, 51, 0);
+
+                if (AnimIsFinished(&work->anim) != 0) {
+                    AnimSetFrame(&work->anim, 3);
+                }
+
+                work->unk_15C = 0;
+                break;
+            }
+        }
+
+        if ((u16)(pressed & 0x20) != 0 && work->unk_170[0] != 0) {
+            p->unk_34 |= 4;
+            *(s32*)&p->unk_14[0] = p->unk_04;
+
+            if (t2 == 18) {
+                work->unk_038 = 22;
+            } else {
+                work->unk_038 = 30;
+            }
+
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        }
+
+        if ((pressed & 0x10) && work->unk_170[1] != 0) {
+            p->unk_34 &= ~4;
+            *(s32*)&p->unk_14[0] = p->unk_04;
+
+            if (t2 == 18) {
+                work->unk_038 = 22;
+            } else {
+                work->unk_038 = 30;
+            }
+
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        }
+
+        func_0801DF10(work, held);
+
+        if (!(pressed & 2)) {
+            break;
+        }
+
+        m4aSongNumStart(work->unk_184[2]);
+
+        if (work->unk_038 == 18) {
+            work->unk_038 = 19;
+        } else {
+            work->unk_038 = 2;
+        }
+
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        break;
     case 19:
         if (!(p->unk_E4->unk_068 & 0x200000)) {
             func_0801E508(work, 2);
