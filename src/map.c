@@ -6,6 +6,9 @@ extern void* gUnkEu_088927F4[];
 extern void* gUnkEu_088928E4[];
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
+#define LANGSEL(x) eu_0805E924(x)
+#else
+#define LANGSEL(x) (x)
 #endif
 
 UnkStruct_080DFB8C* gUnk_02034F1C;
@@ -7191,8 +7194,11 @@ void func_080EBFF8(UnkStruct_02034FE0* work) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080EC04C(UnkStruct_02034FE0* work) {
+#ifdef VERSION_EU
+    UnkStruct_02039D6C* e = &gUnk_02039D6C[work->unk_183];
+#endif
+
     if ((u8)func_08006314() != 0) {
         return;
     }
@@ -7204,7 +7210,11 @@ void func_080EC04C(UnkStruct_02034FE0* work) {
             ModeRequest(&gModeSioBattle, 0);
         }
     } else if (work->unk_182 != 0) {
+#ifdef VERSION_EU
+        if (e->unk_01 != 13) {
+#else
         if (gUnk_0203C590.unk_04 != 13) {
+#endif
             func_080E04EC();
         } else {
             ModeRequest(&gModePooh, 2);
@@ -7213,9 +7223,6 @@ void func_080EC04C(UnkStruct_02034FE0* work) {
         ModeRequest(&gModeTitle, 0);
     }
 }
-#else
-INCLUDE_ASM("map/func_080EC04C.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080EC0D4(s32 arg) {
@@ -10254,7 +10261,6 @@ s32 func_080F10F0(u8* p) {
     return ((s8)gGameState.floor << 28) + (p[9] << 20) + (p[10] << 16) + (gUnk_0203C590.unk_06 << 8) + (gUnk_0203C590.unk_05 << 4) + gUnk_0203C590.unk_04;
 }
 
-#ifndef VERSION_EU
 void func_080F1124(MapDbgWork* w) {
     if ((GetKeysHeld() & 0x300) == 0x300) {
         if (GetKeysPressed() & 4) {
@@ -10263,16 +10269,15 @@ void func_080F1124(MapDbgWork* w) {
             ModeRequest(&gModeDebflag, 1);
         }
 
+#ifndef VERSION_EU
         if (GetKeysPressed() & 8) {
             w->unk_00 = 1;
             *w->unk_04 = 1;
             w->unk_08 = func_080F117C;
         }
+#endif
     }
 }
-#else
-INCLUDE_ASM("map/func_080F1124.s");
-#endif
 
 void func_080F117C(MapDbgWork* w) {
     UnkStruct_080DEE18* d;
@@ -12668,7 +12673,6 @@ void func_080F4FB0(MapPrzCardWork* w) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080F51A0(MapPrzCardWork* w) {
     s32 dx;
     s32 dy;
@@ -12686,7 +12690,7 @@ void func_080F51A0(MapPrzCardWork* w) {
             w->unk_0CE = 0;
             w->unk_08A = 0;
             w->unk_08C = func_080F52D4;
-            TaskCreate(&w->unk_0D4, &gTaskDescMapMsg, gCardDefs[w->unk_0A8].unk_0C);
+            TaskCreate(&w->unk_0D4, &gTaskDescMapMsg, LANGSEL(gCardDefs[w->unk_0A8].unk_0C));
         }
     }
 
@@ -12710,9 +12714,6 @@ void func_080F51A0(MapPrzCardWork* w) {
     w->unk_0BC = y;
     func_080F4EE4(w);
 }
-#else
-INCLUDE_ASM("map/func_080F51A0.s");
-#endif
 
 void func_080F52D4(MapPrzCardWork* w) {
     s32 x;

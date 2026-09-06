@@ -1,11 +1,20 @@
 #include "macros.h"
 #include "mode_status.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern u8 gUnkEu_097D8300[];
+extern u8 gUnkEu_097D8F00[];
+extern u8 gUnkEu_097D9B00[];
+extern u8 gUnkEu_097DA700[];
+void* GetBgCharBase(s32 bg);
+u8 RequestDma3Copy(void* src, void* dst, u16 size);
+#endif
+
 TaskPool gUnk_02034EE0;
 Task* gUnk_02034EF4;
 u8 gUnk_02034EF8;
 
-#ifndef VERSION_EU
 void mode_status_0(void) {
     BgReset();
     SetBgMode0();
@@ -15,7 +24,29 @@ void mode_status_0(void) {
     SetBgPriority(0, 1);
     SetBgPriority(2, 2);
     SetBgPriority(3, 3);
+#ifdef VERSION_EU
+    LoadBgTiles(3, gUnk_097FFB98, 0x2060);
+
+    switch (gLanguage) {
+    case 1:
+        RequestDma3Copy(gUnkEu_097D8300, (u8*)GetBgCharBase(3) + 0x1800, 0xC00);
+        break;
+    case 2:
+        RequestDma3Copy(gUnkEu_097DA700, (u8*)GetBgCharBase(3) + 0x1800, 0xC00);
+        break;
+    case 3:
+        RequestDma3Copy(gUnkEu_097D9B00, (u8*)GetBgCharBase(3) + 0x1800, 0xC00);
+        break;
+    case 4:
+        RequestDma3Copy(gUnkEu_097D8F00, (u8*)GetBgCharBase(3) + 0x1800, 0xC00);
+        break;
+    case 0:
+    default:
+        break;
+    }
+#else
     LoadBgTiles(3, gUnk_097FFB98, 0x2100);
+#endif
     LoadBgPalette(3, gUnk_0984B118, 0xA0);
     LoadBgMap(3, gUnk_09848198, 0x500);
 
@@ -33,9 +64,6 @@ void mode_status_0(void) {
     TaskCreate(&gUnk_02034EE0, &gTaskDescStatus, 0);
     func_08006120(0, 0x10);
 }
-#else
-INCLUDE_ASM("mode_status/mode_status_0.s");
-#endif
 
 void mode_status_1(void) {
     UpdatePlayTime();

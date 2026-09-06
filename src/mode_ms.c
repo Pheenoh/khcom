@@ -1,6 +1,14 @@
 #include "macros.h"
 #include "mode_ms.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern void* gUnkEu_09F84EFC[];
+#define LANGSTR(x) (((void**)(x))[gLanguage])
+#else
+#define LANGSTR(x) (x)
+#endif
+
 UnkStruct_020358C8 gUnk_020358C8[5];
 void* gUnk_02035A30;
 void* gUnk_02035A34;
@@ -145,7 +153,6 @@ void mode_ms_top_0(u32 a) {
 INCLUDE_ASM("mode_ms/mode_ms_top_0.s");
 #endif
 
-#ifndef VERSION_EU
 void mode_ms_top_1(void) {
     UpdatePlayTime();
 
@@ -165,7 +172,11 @@ void mode_ms_top_1(void) {
 
         if (--gUnk_02035892 <= 0) {
             gUnk_020358A4 = 0;
+#ifdef VERSION_EU
+            LoadBgMap(2, gUnkEu_09F84EFC[gLanguage], 0x500);
+#else
             LoadBgMap(2, gUnk_09A37DDC, 0x500);
+#endif
             gUnk_02035890 = 2;
         }
         break;
@@ -340,9 +351,6 @@ void mode_ms_top_1(void) {
     TaskPoolUpdate(&gUnk_020358A8);
     func_08101970();
 }
-#else
-INCLUDE_ASM("mode_ms/mode_ms_top_1.s");
-#endif
 
 void mode_ms_top_2(void) {
     s32 i;
@@ -532,7 +540,6 @@ void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16
     }
 }
 
-#ifndef VERSION_EU
 void func_08102984(s16 a) {
     vu32* dma;
     vu16 zero;
@@ -549,7 +556,7 @@ void func_08102984(s16 a) {
         if (gUnk_02035B18[a][j][0] >= 0) {
             func_08101588(gUnk_09993760[gUnk_02035B08[a]][gUnk_02035B18[a][j][1]], gUnk_09A18EBC,
                 (u8*)GetBgCharBase(2) + (j * 0xC0 + 0xC0), 0x40, 3);
-            func_081028F8(12, 8, gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_00,
+            func_081028F8(12, 8, LANGSTR(gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_00),
                 gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_04,
                 gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_06, gUnk_02035C00,
                 gUnk_099931E4[j].unk_12, gUnk_099931E4[j].unk_14);
@@ -558,9 +565,6 @@ void func_08102984(s16 a) {
 
     LoadBgMap(2, gUnk_02035C00, 0x500);
 }
-#else
-INCLUDE_ASM("mode_ms/func_08102984.s");
-#endif
 
 s32 func_08102A94(void) {
     s32 k;

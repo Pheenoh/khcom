@@ -6,6 +6,8 @@
 extern void* eu_0805E924(void* strings);
 extern u32 gLanguage;
 extern void* gUnkEu_09F84FBC[];
+extern void* gUnkEu_09F84FD0[];
+extern void* gUnkEu_09F84FE4[];
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
 #define LANGSTR(x) (x)
@@ -276,7 +278,6 @@ void func_08104FF8(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_08105090(void) {
     MsCard* card;
     s16 i;
@@ -295,7 +296,11 @@ void func_08105090(void) {
         }
     } else if (card->unk_04 == 3) {
         if (func_08104AA4(gUnk_02035C18) > 0) {
+#ifdef VERSION_EU
+            LoadBgMap(1, gUnkEu_09F84FE4[gLanguage], 0x500);
+#else
             LoadBgMap(1, gUnk_09A3BD5C, 0x500);
+#endif
         }
 
         for (i = 0; i < 10; i++) {
@@ -313,7 +318,11 @@ void func_08105090(void) {
         }
     } else {
         if (func_08104AA4(gUnk_02035C18) > 0) {
+#ifdef VERSION_EU
+            LoadBgMap(1, gUnkEu_09F84FD0[gLanguage], 0x500);
+#else
             LoadBgMap(1, gUnk_09A3B85C, 0x500);
+#endif
         }
 
         for (i = 0; i < 10; i++) {
@@ -328,9 +337,6 @@ void func_08105090(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("unk_08104a84/func_08105090.s");
-#endif
 
 void func_081052C8(s16 a) {
     s16 t;
