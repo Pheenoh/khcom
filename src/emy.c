@@ -8,7 +8,169 @@ void task_emy_00_0(EmyWork* work, void* obj) {
     work->unk_14C = 0x16;
 }
 
-INCLUDE_ASM("emy/task_emy_00_1.s");
+u8 task_emy_00_1(EmyWork* work) {
+    EmyWork* w;
+    EmyActor* act;
+    u16 r;
+    s32 pos;
+    s32 pos2;
+    u8 ret;
+
+    w = work;
+    act = &work->unk_03C;
+
+    if (_0800CBDC(work)) {
+        r = GetRandom();
+
+        switch (r & 1) {
+        case 0:
+            work->unk_14C = 24;
+            break;
+        case 1:
+            work->unk_14C = 25;
+            break;
+        }
+    }
+
+    switch (w->unk_14C) {
+    case 24:
+        func_08019068(gUnk_0813D35C, &work->anim, 5, 0, work->tiles);
+        func_0800C980(w, 31, 18, 11, 165, 40, 0x211, 0, 0, 24);
+        break;
+    case 25:
+        func_08019068(gUnk_0813D35C, &work->anim, 6, 0, work->tiles);
+
+        if (w->unk_154 == 10) {
+            w->unk_168 = -0x400;
+        }
+
+        func_0800C980(w, 14, 35, 10, 166, 96, 0x211, 0, 0, 24);
+        break;
+    case 19:
+        func_08019068(gUnk_0813D35C, &work->anim, 0, 0, work->tiles);
+
+        if (AnimIsFinished(&w->anim)) {
+            w->unk_14C = 20;
+            func_08012614(&act->unk_40, 1);
+            act->flags |= 0x100;
+            act->unk_A2 = 0;
+        }
+        break;
+    case 20:
+        if (gBtlWork->unk_068 & 0x40000) {
+            func_0801C700(act, &pos, 0, 0);
+            func_08019068(gUnk_0813D35C, &work->anim, 1, 1, work->tiles);
+            act->x += gSineTable[w->angle] * w->unk_164 >> 8;
+            act->y += -gSineTable[w->angle + 64] * w->unk_164 >> 8;
+
+            if (w->unk_154 > 100) {
+                w->unk_14C = 21;
+                func_08012614(&act->unk_40, 0);
+                act->flags &= ~0x100;
+                act->unk_A2 = 16;
+                w->unk_154 = 0;
+            } else {
+                w->unk_154++;
+            }
+
+            if (act->x > pos) {
+                act->flags |= 4;
+            } else {
+                act->flags &= ~4;
+            }
+        }
+        break;
+    case 22:
+        func_08019068(gUnk_0813D35C, &work->anim, 3, 0, work->tiles);
+
+        if (w->unk_154 == 20) {
+            act->flags &= ~0x100;
+
+            if (gGameState.flags & 4) {
+                func_0800CD40(w);
+                break;
+            }
+        }
+
+        if (AnimIsFinished(&w->anim)) {
+            func_0800CD40(w);
+            break;
+        }
+
+        w->unk_154++;
+        break;
+    case 21:
+        func_08019068(gUnk_0813D35C, &work->anim, 2, 0, work->tiles);
+
+        if (w->unk_154 == 30) {
+            act->flags &= ~0x100;
+        }
+
+        if (AnimIsFinished(&w->anim)) {
+            act->flags &= ~0x300;
+            w->unk_14C = 18;
+
+#ifdef VERSION_EU
+            w->unk_154 = 0;
+#endif
+        } else {
+            w->unk_154++;
+        }
+        break;
+    case 18:
+        if (w->unk_154 == 0) {
+            func_08012614(&act->unk_40, 0);
+            act->flags &= ~0x300;
+            func_08019068(work->unk_15C->unk_04, &work->anim, 0, 3,
+                work->tiles);
+        }
+
+        func_0801BCF8(act);
+
+        if (GetRandom() % 120 == 0) {
+            w->unk_14C = 4;
+
+            if (GetRandom() % 2 == 0) {
+                w->unk_170 = -((act->unk_CE
+                    + (-act->unk_D0
+                        + GetRandom() % (act->unk_D0 - -act->unk_D0 + 1)))
+                    << 8);
+            } else {
+                w->unk_170 = (act->unk_CE
+                    + (-act->unk_D0
+                        + GetRandom() % (act->unk_D0 - -act->unk_D0 + 1)))
+                    << 8;
+            }
+        } else if (GetRandom() % 200 == 0) {
+            w->unk_14C = 19;
+            act->flags |= 0x200;
+            w->angle = GetRandom();
+            w->unk_154 = 0;
+            break;
+        }
+
+        if (GetRandom() % w->unk_15C->unk_0E == 0) {
+            func_0801C700(act, &pos2, 0, 0);
+
+            if (act->x > pos2) {
+                act->flags |= 4;
+            } else {
+                act->flags &= ~4;
+            }
+        }
+
+        w->unk_154++;
+        break;
+    }
+
+    ret = _0800CDF0(w);
+
+    if (w->unk_14C == 14) {
+        func_08019068(gUnk_0813D35C, &work->anim, 4, 1, work->tiles);
+    }
+
+    return ret;
+}
 
 #ifdef NON_MATCHING
 void task_emy_00_2(EmyWork* work) {
@@ -185,7 +347,89 @@ void task_emy_02_0(EmyWork* work, void* obj) {
     work->unk_150 = 7;
 }
 
-INCLUDE_ASM("emy/task_emy_02_1.s");
+u8 task_emy_02_1(EmyWork* work) {
+    EmyWork* w;
+    EmyActor* act;
+    u16 r;
+    s32 p;
+
+    w = work;
+    act = &work->unk_03C;
+
+    if (_0800CBDC(work)) {
+        r = GetRandom();
+
+        switch (r & 1) {
+        case 0:
+            work->unk_14C = 0x12;
+            break;
+        case 1:
+            work->unk_14C = 0x13;
+            break;
+        }
+    }
+
+    switch (work->unk_14C) {
+    case 0x12: {
+        s32 y;
+
+        func_08019068(gUnk_0813D4BC, &w->anim, 0, 0, w->tiles);
+        work->unk_168 = 0;
+
+        if (work->unk_154 == 0) {
+        } else if (work->unk_154 == 22) {
+            y = act->y;
+
+            if (act->flags & 4) {
+                p = act->x - 0x3C00;
+                func_08013308(0, act->x - 0x2800, y, act->z - 0x800, p, y, 0, 1,
+                    0xA9);
+            } else {
+                p = act->x + 0x3C00;
+                func_08013308(0, act->x + 0x2800, y, act->z - 0x800, p, y, 0, 0,
+                    0xA9);
+            }
+        }
+
+        if (work->unk_154 > 21 && !func_080128EC()) {
+            func_0800CB4C(work);
+        } else {
+            work->unk_154++;
+        }
+        break;
+    }
+    case 0x13: {
+        s32 y;
+
+        func_08019068(gUnk_0813D4BC, &w->anim, 1, 0, w->tiles);
+        work->unk_168 = 0;
+
+        if (work->unk_154 == 0) {
+        } else if (work->unk_154 == 3) {
+            y = act->y;
+
+            if (act->flags & 4) {
+                p = act->x - 0x3C00;
+                func_08013308(1, act->x - 0x2800, y, act->z - 0x800, p, y, 0, 1,
+                    0xAA);
+            } else {
+                p = act->x + 0x3C00;
+                func_08013308(1, act->x + 0x2800, y, act->z - 0x800, p, y, 0, 0,
+                    0xAA);
+            }
+        }
+
+        if (work->unk_154 > 2 && !func_080128EC()) {
+            func_0800CB4C(work);
+        } else {
+            work->unk_154++;
+        }
+        break;
+    }
+    }
+
+    return _0800CDF0(work);
+}
 
 void task_emy_02_2(EmyWork* work) {
     func_0800DF30(work);
@@ -479,7 +723,221 @@ void task_emy_07_0(Emy07Work* work, void* obj) {
     work->unk_187 = 0;
 }
 
-INCLUDE_ASM("emy/task_emy_07_1.s");
+u8 task_emy_07_1(Emy07Work* work) {
+    Emy07Work* w;
+    EmyActor* act;
+    EmySpawn spawn;
+    u32 state;
+    s32 pos;
+    s32 pos2;
+
+    w = work;
+    act = &work->base.unk_03C;
+    state = work->base.unk_14C;
+
+#ifdef VERSION_EU
+    act->hp = 0x7FFF;
+#endif
+
+    _0800CBDC(&work->base);
+
+#ifdef VERSION_EU
+    act->hp = act->maxHp;
+#endif
+
+
+    switch (work->base.unk_14C) {
+    case 1:
+    case 3:
+    case 15:
+        work->base.unk_14C = 26;
+
+        switch (state) {
+        case 21:
+            w->unk_186 = 0;
+
+            if (act->unk_24 & 0x10000000) {
+                func_0801AF08(act);
+                work->base.unk_14C = 20;
+                work->base.unk_154 = 0;
+            }
+            break;
+        case 22:
+            w->unk_186 = 0;
+
+            if (act->unk_24 & 0x20000000) {
+                func_0801AF08(act);
+                work->base.unk_14C = 20;
+                work->base.unk_154 = 0;
+            }
+            break;
+        case 23:
+            w->unk_186 = 1;
+
+            if (act->unk_24 & 0x40000000) {
+                func_0801AF08(act);
+                work->base.unk_14C = 20;
+                work->base.unk_154 = 0;
+            }
+            break;
+        }
+
+        act->hp = act->maxHp;
+        func_08012614(&act->unk_40, 0);
+        break;
+    }
+
+    switch (work->base.unk_14C) {
+    case 18:
+        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 3,
+            w->base.tiles);
+        func_0801C700(act, &pos, 0, 0);
+
+        if (act->x < pos) {
+            act->flags &= ~4;
+        } else {
+            act->flags |= 4;
+        }
+
+        if (GetRandom() % 60 == 0) {
+            work->base.unk_154 = 0;
+
+            switch (GetRandom() % 3) {
+            case 1:
+                work->base.unk_14C = 22;
+                break;
+            case 2:
+                work->base.unk_14C = 23;
+                break;
+            case 0:
+            default:
+                work->base.unk_14C = 21;
+                break;
+            }
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 21:
+        func_08019068(gUnk_0813D6CC, &w->base.anim, 3, 1, w->base.tiles);
+
+        if (work->base.unk_154 > 300) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 18;
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 22:
+        func_08019068(gUnk_0813D6CC, &w->base.anim, 4, 1, w->base.tiles);
+
+        if (work->base.unk_154 > 300) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 18;
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 23:
+        func_08019068(gUnk_0813D6CC, &w->base.anim, 5, 1, w->base.tiles);
+
+        if (work->base.unk_154 > 300) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 18;
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 20:
+        if (w->unk_186 != 0) {
+            func_08019068(gUnk_0813D6CC, &w->base.anim, 2, 0, w->base.tiles);
+        } else {
+            func_08019068(gUnk_0813D6CC, &w->base.anim, 1, 0, w->base.tiles);
+        }
+
+        if (work->base.unk_154 == 0) {
+            m4aSongNumStart(0x231);
+            work->base.unk_154 = 1;
+            act->flags |= 0x100;
+        }
+
+        if (w->unk_184 == 2 && gFrameCounter % 10 == 0) {
+            spawn.unk_12 = 1;
+            spawn.unk_14 = 0;
+            spawn.x = act->x;
+            spawn.y = act->y;
+            spawn.z = act->z - (act->unk_9C << 8);
+            TaskCreate((TaskPool*)&gBtlWork->unk_02C, gTaskDescBtlPrize,
+                &spawn);
+        }
+
+        if (AnimIsFinished(&work->base.anim)) {
+            w->unk_184++;
+
+            if (w->unk_184 > 2) {
+                work->base.unk_154 = 0;
+                work->base.unk_14C = 25;
+                w->unk_187 = 1;
+                func_0800FDD0(110);
+            } else {
+                work->base.unk_154 = 0;
+                work->base.unk_14C = 18;
+                act->flags &= ~0x100;
+            }
+        }
+        break;
+    case 26:
+        if (work->base.unk_154 == 0) {
+            func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 1, 0,
+                w->base.tiles);
+        }
+
+        func_0801C700(act, &pos2, 0, 0);
+
+        if (act->x < pos2) {
+            act->flags &= ~4;
+        } else {
+            act->flags |= 4;
+        }
+
+        if (AnimIsFinished(&work->base.anim)) {
+            func_0801AF08(act);
+            act->flags |= 0x100;
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 19;
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 19:
+        func_08019068(gUnk_0813D6CC, &w->base.anim, 0, 0, w->base.tiles);
+
+        if (work->base.unk_154 == 0) {
+            act->flags |= 0x100;
+            work->base.unk_154 = 1;
+        }
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 25;
+        }
+        break;
+    case 25:
+        func_08019068(gUnk_0813D6CC, &w->base.anim, 6, 0, w->base.tiles);
+
+        if (AnimIsFinished(&work->base.anim)) {
+            if (w->unk_187 != 0) {
+                func_0801B994(act);
+                func_0801BBF0(act);
+            }
+
+            return 0;
+        }
+        break;
+    }
+
+    return _0800CDF0(&work->base);
+}
 
 void task_emy_07_2(EmyWork* work) {
     func_0800DF30(work);
@@ -969,7 +1427,147 @@ void task_emy_18_0(EmyWork* work, void* obj) {
     work->unk_150 = 7;
 }
 
-INCLUDE_ASM("emy/task_emy_18_1.s");
+u8 task_emy_18_1(Emy18Work* work) {
+    Emy18Work* w;
+    EmyActor* act;
+    u16 r;
+
+    w = work;
+    act = &work->base.unk_03C;
+
+    if (_0800CBDC(&work->base)) {
+        r = GetRandom();
+
+        switch (r & 1) {
+        case 0:
+            work->base.unk_14C = 18;
+            break;
+        case 1:
+            work->base.unk_14C = 19;
+            break;
+        }
+
+        w->unk_184 = 0xEFFF;
+    }
+
+    if (work->base.unk_14C == 8) {
+        work->base.unk_14C = 20;
+        work->base.unk_154 = 0;
+    }
+
+    switch (work->base.unk_14C) {
+    case 20:
+        func_08019068(gUnk_0813DA54, &w->base.anim, 2, 0, w->base.tiles);
+        work->base.unk_168 = 0;
+
+        if (AnimGetFrame(&work->base.anim) == 5) {
+            work->base.angle = GetAngle(act->x, act->y, work->base.unk_170,
+                work->base.unk_174);
+            work->base.unk_164 = work->base.unk_15C->unk_08;
+            act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
+            act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164
+                >> 8;
+        }
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 22;
+        }
+        break;
+    case 22:
+        work->base.unk_168 = 0;
+        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 2, 3,
+            w->base.tiles);
+
+        if (gBtlWork->unk_068 & 0x40000) {
+            if (act->x > work->base.unk_170) {
+                act->flags |= 4;
+            } else {
+                act->flags &= ~4;
+            }
+
+            work->base.angle = GetAngle(act->x, act->y, work->base.unk_170,
+                work->base.unk_174);
+            work->base.unk_164 = work->base.unk_15C->unk_08;
+            act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
+            act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164
+                >> 8;
+            act->z += (work->base.unk_178 - act->z) >> 3;
+
+            if (work->base.unk_158 & 2) {
+                goto set;
+            }
+
+            if (act->x - work->base.unk_170 >= 0
+                    ? act->x - work->base.unk_170 <= 0xFFF
+                    : work->base.unk_170 - act->x <= 0xFFF) {
+                if (act->y - work->base.unk_174 >= 0
+                        ? act->y - work->base.unk_174 <= 0xFFF
+                        : work->base.unk_174 - act->y <= 0xFFF) {
+                set:
+                    work->base.unk_14C = 21;
+                    work->base.unk_154 = 0;
+                    break;
+                }
+            }
+
+            work->base.unk_154++;
+        }
+        break;
+    case 21:
+        func_08019068(gUnk_0813DA54, &w->base.anim, 3, 0, w->base.tiles);
+        work->base.unk_168 = 0;
+        act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
+        act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164 >> 8;
+        work->base.unk_164 -= 25;
+
+        if (work->base.unk_164 < 0) {
+            work->base.unk_164 = 0;
+        }
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 7;
+        }
+        break;
+    case 18:
+        func_08019068(gUnk_0813DA54, &w->base.anim, 0, 0, w->base.tiles);
+
+        if (work->base.unk_154 <= 29) {
+            work->base.unk_168 = 0;
+            act->z += (-0x3500 - act->z) >> 3;
+        } else if (work->base.unk_154 == 30) {
+            work->base.unk_168 = 0x300;
+        }
+
+        if (func_0800C980(&work->base, 30, 10, 6, 185, 32, 0x221, 24, -10, 16)
+                == 1) {
+            w->unk_184 = work->base.unk_154;
+        }
+        break;
+    case 19:
+        func_08019068(gUnk_0813DA54, &w->base.anim, 1, 0, w->base.tiles);
+
+        if (work->base.unk_01A == 0) {
+            switch (AnimGetFrame(&work->base.anim)) {
+            case 0:
+                work->base.unk_168 = 0x300;
+                break;
+            case 3:
+                work->base.unk_168 = -0x600;
+                break;
+            }
+        }
+
+        if (func_0800C980(&work->base, 21, 8, 7, 186, 32, 0x211, 16, -30, 16)
+                == 1) {
+            w->unk_184 = work->base.unk_154;
+        }
+        break;
+    }
+
+    return _0800CDF0(&work->base);
+}
 
 void task_emy_18_2(EmyWork* work) {
     func_0800DF30(work);
@@ -983,7 +1581,133 @@ void task_emy_19_0(EmyWork* work, void* obj) {
     func_0800C778(work, gUnk_0813DB4C, obj);
 }
 
-INCLUDE_ASM("emy/task_emy_19_1.s");
+u8 task_emy_19_1(Emy19Work* work) {
+    Emy19Work* w;
+    EmyActor* act;
+    s32 pos;
+    s32 d;
+
+    w = work;
+    act = &work->base.unk_03C;
+
+    if (_0800CBDC(&work->base)) {
+        func_0801C700(act, &pos, 0, 0);
+        d = act->x - pos;
+
+        if (d >= 0 ? d <= 0x3BFF : pos - act->x <= 0x3BFF) {
+            work->base.unk_14C = 0x17;
+        } else {
+            work->base.unk_14C = 0x12;
+        }
+
+        w->unk_184 = 0;
+    }
+
+    switch (work->base.unk_14C) {
+    case 0x12:
+        func_08019068(gUnk_0813DAFC, &w->base.anim, 0, 0, w->base.tiles);
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_14C = 0x13;
+            work->base.unk_154 = 0;
+        }
+        break;
+    case 0x13:
+        if (work->base.unk_154 == 0) {
+            func_08019068(gUnk_0813DAFC, &w->base.anim, 1, 0, w->base.tiles);
+            work->base.unk_168 = -0x500;
+            w->unk_184 = 0x500;
+        }
+
+        act->x = act->flags & 4 ? act->x - w->unk_184 : act->x + w->unk_184;
+        w->unk_184 = w->unk_184 * 248 >> 8;
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_14C = 0x14;
+            work->base.unk_154 = 0;
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 0x14:
+        func_08019068(gUnk_0813DAFC, &w->base.anim, 2, 1, w->base.tiles);
+        act->x = act->flags & 4 ? act->x - w->unk_184 : act->x + w->unk_184;
+        w->unk_184 = w->unk_184 * 248 >> 8;
+
+        if (act->z >= act->unk_10) {
+            work->base.unk_168 = -0x500;
+        }
+
+        if (func_08011F78(0xBB, act->x, act->y, act->z, 10, 10, 10) != 0) {
+            m4aSongNumStart(0x244);
+            w->unk_184 = -w->unk_184;
+            work->base.unk_168 = -0x500;
+        }
+
+        if (work->base.unk_154 > 55) {
+            work->base.unk_14C = 0x15;
+            work->base.unk_154 = 0;
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 0x15:
+        func_08019068(gUnk_0813DAFC, &w->base.anim, 3, 0, w->base.tiles);
+        act->x = act->flags & 4 ? act->x - w->unk_184 : act->x + w->unk_184;
+        w->unk_184 = w->unk_184 * 248 >> 8;
+
+        if (act->z >= act->unk_10) {
+            work->base.unk_14C = 0x16;
+            work->base.unk_154 = 0;
+        }
+        break;
+    case 0x16:
+        func_08019068(gUnk_0813DAFC, &w->base.anim, 0, 0, w->base.tiles);
+
+        if (AnimIsFinished(&work->base.anim)) {
+            func_0800CB4C(&work->base);
+        }
+        break;
+    case 0x17:
+        func_08019068(gUnk_0813DAFC, &w->base.anim, 4, 0, w->base.tiles);
+
+        switch (AnimGetFrame(&work->base.anim)) {
+        case 3:
+            if (work->base.unk_01A == 0) {
+                w->unk_184 = 0x400;
+            }
+            break;
+        case 4:
+            if (work->base.unk_01A == 0) {
+                w->unk_184 = 0;
+            }
+
+            if (act->flags & 4) {
+                if (func_08011F78(0xBC, act->x - 0x1000, act->y, act->z, 16, 16,
+                        32) != 0) {
+                    goto snd;
+                }
+            } else {
+                if (func_08011F78(0xBC, act->x + 0x1000, act->y, act->z, 16, 16,
+                        32) != 0) {
+                snd:
+                    m4aSongNumStart(0x230);
+                }
+            }
+            break;
+        }
+
+        act->x = act->flags & 4 ? act->x - w->unk_184 : act->x + w->unk_184;
+        w->unk_184 = w->unk_184 * 240 >> 8;
+
+        if (AnimIsFinished(&work->base.anim)) {
+            func_0800CB4C(&work->base);
+        }
+        break;
+    }
+
+    return _0800CDF0(&work->base);
+}
 
 void task_emy_19_2(EmyWork* work) {
     func_0800DF30(work);
@@ -998,7 +1722,162 @@ void task_emy_21_0(Emy21Work* work, void* obj) {
     work->unk_184 = 0;
 }
 
+#ifdef NON_MATCHING
+u8 task_emy_21_1(Emy21Work* work) {
+    Emy21Work* w;
+    EmyActor* act;
+    s32 pos;
+    s32 d;
+    s32 n;
+
+    w = work;
+    act = &work->base.unk_03C;
+
+    if (_0800CBDC(&work->base)) {
+        func_0801C700(act, &pos, 0, 0);
+        d = pos - act->x;
+
+        if (d >= 0 ? d <= 0x3FFF : act->x - pos <= 0x3FFF) {
+            work->base.unk_14C = 0x12;
+        } else {
+            work->base.unk_14C = 0x14;
+        }
+    } else if (work->base.unk_14C == 5 && work->base.unk_154 == 0) {
+        m4aSongNumStop(0x22C);
+    }
+
+    switch (work->base.unk_14C) {
+    case 0x12:
+        if (work->base.unk_154 == 0) {
+            func_08019068(gUnk_0813DBB4, &w->base.anim, 0, 1, w->base.tiles);
+        }
+
+        if (work->base.unk_154 > 29) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 0x13;
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 0x13: {
+        u16 t;
+
+        t = work->base.unk_154;
+
+        if (t >= 12 && t <= 39) {
+            if (act->flags & 4) {
+                func_08011F78(0xBD, act->x, act->y, act->z, 30, 30, 32);
+            } else {
+                func_08011F78(0xBD, act->x, act->y, act->z, 30, 30, 32);
+            }
+        }
+
+        switch (work->base.unk_154) {
+        case 2:
+            func_08019A30();
+            func_08014020(work->base.unk_03C.x, work->base.unk_03C.y,
+                work->base.unk_03C.z - 0x1000);
+            break;
+        case 40:
+            func_0801AF08(act);
+            return 0;
+        }
+
+        work->base.unk_154++;
+        break;
+    }
+    case 0x14:
+        func_08019068(gUnk_0813DBB4, &w->base.anim, 1, 0, w->base.tiles);
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 0x15;
+        }
+        break;
+    case 0x15:
+        if (work->base.unk_154 == 0) {
+            func_08019068(gUnk_0813DBB4, &w->base.anim, 2, 1, w->base.tiles);
+            w->unk_184 = 0;
+        }
+
+        act->x = act->flags & 4 ? act->x - w->unk_184 : act->x + w->unk_184;
+        w->unk_184 += 43;
+
+        if (act->flags & 4) {
+            n = func_08011F78(0xBE, act->x, act->y, act->z, 20, 32, 32);
+        } else {
+            n = func_08011F78(0xBE, act->x, act->y, act->z, 20, 32, 32);
+        }
+
+        if (n != 0) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 0x13;
+        } else if (work->base.unk_154 > 28) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 0x16;
+        } else {
+            work->base.unk_154++;
+        }
+        break;
+    case 0x16:
+        func_08019068(gUnk_0813DBB4, &w->base.anim, 3, 0, w->base.tiles);
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 0x13;
+            break;
+        }
+
+        if (work->base.unk_01A == 0) {
+            switch (AnimGetFrame(&work->base.anim)) {
+            case 0:
+            case 1:
+                act->x -= 0x380;
+                act->y += 0x80;
+                break;
+            case 2:
+                act->x -= 0x680;
+                act->y += 0x280;
+                break;
+            case 3:
+                act->x -= 0x500;
+                act->y += 0x280;
+                break;
+            case 4:
+                act->x -= 0x580;
+                act->y += 0xC0;
+                break;
+            case 5:
+                act->x -= 0x280;
+                act->y += 0x3C0;
+                break;
+            case 6:
+                act->x -= 0x180;
+                break;
+            case 7:
+                act->x += 0x80;
+                act->y += 0x40;
+                break;
+            }
+        }
+
+        act->x = act->flags & 4 ? act->x - w->unk_184 : act->x + w->unk_184;
+        w->unk_184 -= 46;
+
+        if (w->unk_184 < 0) {
+            w->unk_184 = 0;
+        }
+
+        work->base.unk_154++;
+        break;
+    }
+
+    return _0800CDF0(&work->base);
+}
+
+#else
 INCLUDE_ASM("emy/task_emy_21_1.s");
+#endif
 
 void task_emy_21_2(EmyWork* work) {
     func_0800DF30(work);
@@ -1014,7 +1893,142 @@ void task_emy_22_0(Emy22Work* work, void* obj) {
     work->unk_184 = 0;
 }
 
-INCLUDE_ASM("emy/task_emy_22_1.s");
+u8 task_emy_22_1(Emy22Work* work) {
+    Emy22Work* w;
+    EmyActor* act;
+    s32 pos;
+    s32 pos2;
+    s32 pos3;
+
+    w = work;
+    act = &work->base.unk_03C;
+
+    if (_0800CBDC(&work->base)) {
+        if (act->hp < act->maxHp) {
+            work->base.unk_14C = 20;
+        } else {
+            work->base.unk_14C = 21;
+        }
+    }
+
+    switch (work->base.unk_14C) {
+    case 1:
+        if (work->base.unk_154 == 0) {
+            w->unk_184 = 1;
+        }
+        break;
+    case 7:
+        if (w->unk_184 != 0 && work->base.unk_154 == 0) {
+            work->base.unk_14C = 18;
+            work->base.unk_154 = 0;
+            w->unk_184 = 0;
+        }
+        break;
+    case 18:
+        if (work->base.unk_154 == 0) {
+            func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 1,
+                w->base.tiles);
+            act->flags |= 0x300;
+            work->base.unk_156 = 20;
+            work->base.unk_154 = 1;
+        }
+
+        work->base.unk_168 = 0;
+
+        if (work->base.unk_156 > 0) {
+            ApproachValue(&work->base.unk_17C, 25, work->base.unk_156);
+
+            if (--work->base.unk_156 > 0) {
+                break;
+            }
+        }
+
+        work->base.unk_14C = 19;
+        work->base.unk_154 = 0;
+        break;
+    case 19:
+        if (work->base.unk_154 == 0) {
+            func_0801C700(act, &pos, 0, 0);
+            func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 1,
+                w->base.tiles);
+
+            if (act->x > pos) {
+                act->flags |= 4;
+            } else {
+                act->flags &= ~4;
+            }
+
+            act->x = (gBtlWork->unk_0DA
+                + GetRandom() % (gBtlWork->unk_0DC - gBtlWork->unk_0DA + 1))
+                << 8;
+            act->y = (gBtlWork->unk_0DE
+                + GetRandom() % (gBtlWork->unk_0E0 - gBtlWork->unk_0DE + 1))
+                << 8;
+            act->z = gBtlWork->unk_138;
+            work->base.unk_17C = 25;
+            work->base.unk_156 = 20;
+            work->base.unk_154 = 1;
+            m4aSongNumStart(0x23F);
+        }
+
+        work->base.unk_168 = 0;
+
+        if (work->base.unk_156 > 0) {
+            ApproachValue(&work->base.unk_17C, 0x100, work->base.unk_156);
+
+            if (--work->base.unk_156 > 0) {
+                break;
+            }
+        }
+
+        act->flags &= ~0x300;
+        work->base.unk_14C = work->base.unk_150;
+        work->base.unk_154 = 0;
+        break;
+    case 20:
+        if (work->base.unk_154 == 0) {
+            func_0801C700(act, &pos2, 0, 0);
+
+            if (act->x > pos2) {
+                act->flags |= 4;
+            } else {
+                act->flags &= ~4;
+            }
+        }
+
+        act->z += -act->z >> 4;
+        func_08019068(gUnk_0813DC5C, &w->base.anim, 0, 0, w->base.tiles);
+        func_0800C980(&work->base, 27, 14, 40, 191, 24, 0x211, 24, 0, 24);
+
+        if (gBtlWork->unk_07C->unk_034 & 2) {
+            act->hp += act->maxHp >> 3;
+
+            if (act->hp > act->maxHp) {
+                act->hp = act->maxHp;
+            }
+
+            func_08019190(act, 10);
+        }
+        break;
+    case 21:
+        if (work->base.unk_154 == 0) {
+            func_0801C700(act, &pos3, 0, 0);
+
+            if (act->x > pos3) {
+                act->flags |= 4;
+            } else {
+                act->flags &= ~4;
+            }
+        }
+
+        act->z += -act->z >> 4;
+        func_08019068(gUnk_0813DC5C, &w->base.anim, 1, 0, w->base.tiles);
+        func_0800C980(&work->base, 50, 19, 30, 192, 16, 0x211, 48, 0, 24);
+        break;
+    }
+
+    return _0800CDF0(&work->base);
+}
 
 void task_emy_22_2(EmyWork* work) {
     func_0800DF30(work);
@@ -1477,7 +2491,157 @@ void task_emy_28_0(EmyWork* work, void* obj) {
     work->unk_150 = 7;
 }
 
-INCLUDE_ASM("emy/task_emy_28_1.s");
+u8 task_emy_28_1(Emy28Work* work) {
+    Emy28Work* w;
+    EmyActor* act;
+    u16 r;
+
+    w = work;
+    act = &work->base.unk_03C;
+
+    if (_0800CBDC(&work->base)) {
+        r = GetRandom();
+
+        switch (r & 1) {
+        case 0:
+            work->base.unk_14C = 18;
+            break;
+        case 1:
+            work->base.unk_14C = 19;
+            break;
+        }
+
+        w->unk_184 = 0xEFFF;
+    }
+
+    if (work->base.unk_14C == 8) {
+        work->base.unk_14C = 20;
+        work->base.unk_154 = 0;
+    }
+
+    switch (work->base.unk_14C) {
+    case 20:
+        func_08019068(gUnk_0813DF04, &w->base.anim, 2, 0, w->base.tiles);
+        work->base.unk_168 = 0;
+
+        if (AnimGetFrame(&work->base.anim) == 1) {
+            work->base.angle = GetAngle(act->x, act->y, work->base.unk_170,
+                work->base.unk_174);
+            work->base.unk_164 = work->base.unk_15C->unk_08;
+            act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
+            act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164
+                >> 8;
+        }
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 22;
+        }
+        break;
+    case 22:
+        work->base.unk_168 = 0;
+        func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 2, 3,
+            w->base.tiles);
+
+        if (gBtlWork->unk_068 & 0x40000) {
+            if (act->x > work->base.unk_170) {
+                act->flags |= 4;
+            } else {
+                act->flags &= ~4;
+            }
+
+            work->base.angle = GetAngle(act->x, act->y, work->base.unk_170,
+                work->base.unk_174);
+            work->base.unk_164 = work->base.unk_15C->unk_08;
+            act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
+            act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164
+                >> 8;
+            act->z += (work->base.unk_178 - act->z) >> 3;
+
+            if (work->base.unk_158 & 2) {
+                goto set;
+            }
+
+            if (act->x - work->base.unk_170 >= 0
+                    ? act->x - work->base.unk_170 <= 0xFFF
+                    : work->base.unk_170 - act->x <= 0xFFF) {
+                if (act->y - work->base.unk_174 >= 0
+                        ? act->y - work->base.unk_174 <= 0xFFF
+                        : work->base.unk_174 - act->y <= 0xFFF) {
+                set:
+                    work->base.unk_14C = 21;
+                    work->base.unk_154 = 0;
+                    break;
+                }
+            }
+
+            work->base.unk_154++;
+        }
+        break;
+    case 21:
+        func_08019068(gUnk_0813DF04, &w->base.anim, 3, 0, w->base.tiles);
+        work->base.unk_168 = 0;
+        act->x += gSineTable[work->base.angle] * work->base.unk_164 >> 8;
+        act->y += -gSineTable[work->base.angle + 64] * work->base.unk_164 >> 8;
+        work->base.unk_164 -= 25;
+
+        if (work->base.unk_164 < 0) {
+            work->base.unk_164 = 0;
+        }
+
+        if (AnimIsFinished(&work->base.anim)) {
+            work->base.unk_154 = 0;
+            work->base.unk_14C = 7;
+        }
+        break;
+    case 18:
+        func_08019068(gUnk_0813DF04, &w->base.anim, 0, 0, w->base.tiles);
+
+        if (work->base.unk_01A == 0) {
+            switch (AnimGetFrame(&work->base.anim)) {
+            case 0:
+                work->base.unk_168 = 0x300;
+                break;
+            case 3:
+                work->base.unk_168 = -0x600;
+                break;
+            }
+        }
+
+        if (func_0800C980(&work->base, 22, 10, 20, 201, 32, 0x211, 16, -40, 32)
+                == 1) {
+            w->unk_184 = work->base.unk_154;
+        }
+        break;
+    case 19:
+        func_08019068(gUnk_0813DF04, &w->base.anim, 1, 0, w->base.tiles);
+
+        if (work->base.unk_154 <= 34) {
+            work->base.unk_168 = 0;
+            act->z += (-0x4000 - act->z) >> 3;
+        } else if (work->base.unk_154 == 35) {
+            work->base.unk_168 = 0x300;
+        }
+
+        if (work->base.unk_01A == 0 && AnimGetFrame(&work->base.anim) == 1) {
+            if (act->flags & 4) {
+                func_08013480(act->x + 0x1000, act->y, act->z - 0x3200);
+            } else {
+                func_08013480(act->x - 0x1000, act->y, act->z - 0x3200);
+            }
+
+            m4aSongNumStart(0x267);
+        }
+
+        if (func_0800C980(&work->base, 35, 10, 14, 202, 32, 0x249, 24, 32, 16)
+                == 1) {
+            w->unk_184 = work->base.unk_154;
+        }
+        break;
+    }
+
+    return _0800CDF0(&work->base);
+}
 
 void task_emy_28_2(EmyWork* work) {
     func_0800DF30(work);
