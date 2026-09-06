@@ -67,7 +67,7 @@ TARGET_ONLY_SYMBOLS = {
 
 TARGET_FILLER_LABELS = {
     "eu": {
-        0x080DA80C: [(0x54, "eu_080DA860")],
+        0x080DA80C: [(0x24, "eu_080DA830"), (0x54, "eu_080DA860")],
     },
 }
 
