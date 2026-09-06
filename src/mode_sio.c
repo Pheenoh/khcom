@@ -1081,7 +1081,43 @@ INCLUDE_ASM("mode_sio/func_080B0874.s");
 #endif
 
 INCLUDE_ASM("mode_sio/func_080B09C0.s");
-INCLUDE_ASM("mode_sio/func_080B0F18.s");
+void func_080B0F18(void) {
+    s8* base;
+    s8* p;
+    GameState* gs;
+    SioWorldEntry* table;
+    SioWorldEntry* entry;
+
+    base = gUnk_0203AAA0;
+    p = base + gUnk_0203AA00;
+    gs = &gGameState;
+    table = gUnk_09EF1318;
+    entry = &table[*p];
+
+    gs->unk_0D = entry->unk_1C;
+    gUnk_0203AAB0 = gs->world;
+    gs->world = entry->unk_1C;
+
+    if (gSioPlayerId == 0) {
+        gUnk_0203AAC0.unk_0A += gUnk_09EF14C4[gSioBtlOptionWork->unk_214[0]];
+        gUnk_0203AA10.unk_0A += gUnk_09EF14C4[gSioBtlOptionWork->unk_214[1]];
+    } else {
+        gUnk_0203AAC0.unk_0A += gUnk_09EF14C4[gSioBtlOptionWork->unk_214[1]];
+        gUnk_0203AA10.unk_0A += gUnk_09EF14C4[gSioBtlOptionWork->unk_214[0]];
+    }
+
+    gGameState.unk_1E0 = gUnk_0203AAC0.unk_02;
+    gGameState.unk_1E2 = gUnk_0203AAC0.unk_0A;
+    gGameState.unk_1E4 = gUnk_0203AAC0.unk_04;
+    gGameState.unk_1E8 = gUnk_0203AAC0.unk_0C;
+    gGameState.unk_1F0 = gUnk_0203AAC0.unk_14;
+    gGameState.unk_1F8 = gUnk_0203AA10.unk_02;
+    gGameState.unk_1FA = gUnk_0203AA10.unk_0A;
+    gGameState.unk_1FC = gUnk_0203AA10.unk_04;
+    gGameState.unk_200 = gUnk_0203AA10.unk_0C;
+    gGameState.unk_208 = gUnk_0203AA10.unk_14;
+}
+
 
 #ifndef VERSION_EU
 void func_080B1064(void) {
@@ -2145,7 +2181,51 @@ void func_080B31D8(u16 a) {
     }
 }
 
-INCLUDE_ASM("mode_sio/func_080B3204.s");
+void func_080B3204(void) {
+    u16 sum;
+    s32 lim;
+    s32 x;
+    s32 i;
+    s32 j;
+    s16 digits[3];
+    s32 v;
+
+    sum = 0;
+    lim = 0x800;
+    for (i = 0; i < 5; i++) {
+        x = gUnk_0203AB20[i];
+        if ((s16)x != lim) {
+            sum = func_08060A2C(x) - (0 - sum);
+        }
+    }
+    v = (s16)sum;
+    digits[0] = v / 100;
+    v = v % 100;
+    digits[1] = v / 10;
+    v = v % 10;
+    digits[2] = v;
+    RequestDma3Copy(&gUnk_096B5DA4[digits[0] * 32], (void*)0x060001A0, 32);
+    RequestDma3Copy(&gUnk_096B5DA4[digits[1] * 32], (void*)0x060001C0, 32);
+    RequestDma3Copy(&gUnk_096B5DA4[digits[2] * 32], (void*)0x060001E0, 32);
+
+    sum = 0;
+    for (j = 5; j < 10; j++) {
+        x = gUnk_0203AB20[j];
+        if ((s16)x != 0x800) {
+            sum = func_08060A2C(x) - (0 - sum);
+        }
+    }
+    v = (s16)sum;
+    digits[0] = v / 100;
+    v = v % 100;
+    digits[1] = v / 10;
+    v = v % 10;
+    digits[2] = v;
+    RequestDma3Copy(&gUnk_096B5DA4[digits[0] * 32], (void*)0x06000200, 32);
+    RequestDma3Copy(&gUnk_096B5DA4[digits[1] * 32], (void*)0x06000220, 32);
+    RequestDma3Copy(&gUnk_096B5DA4[digits[2] * 32], (void*)0x06000240, 32);
+}
+
 
 void func_080B3354(void) {
     u16 k1;
