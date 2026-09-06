@@ -1,6 +1,10 @@
 #include "macros.h"
 #include "status.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+#endif
+
 static StatusWork* gStatusWork;
 static u8 gUnk_02034F00;
 static s16 gUnk_02034F02;
@@ -616,19 +620,20 @@ s32 func_080D85A8(u32 a) {
     return 3;
 }
 
-#ifndef VERSION_EU
 void* func_080D85C0(u16 a) {
     UnkStruct_08F7CF18* d;
     void* t;
 
     d = &gUnk_08F7CF18[a];
     t = func_080038C8(d->unk_08);
+#ifdef VERSION_EU
+    func_080038E4(t, ((u32*)d->unk_04[gLanguage])[d->unk_0A],
+        ((u32*)d->unk_00)[gLanguage]);
+#else
     func_080038E4(t, d->unk_04[d->unk_0A], d->unk_00);
+#endif
     return t;
 }
-#else
-INCLUDE_ASM("status/func_080D85C0.s");
-#endif
 
 s32 func_080D85F8(s32 a) {
     switch (a) {
