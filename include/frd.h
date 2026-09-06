@@ -80,7 +80,7 @@ typedef struct FrdBody {
 typedef struct FrdDonaldWork {
     TaskPool unk_000;
     BtlWork* unk_014;
-    void* unk_018;
+    void* tiles;
     void* palette;
     FrdBody unk_020;
     AnimState anim;
@@ -100,7 +100,7 @@ typedef struct FrdDonaldWork {
 typedef struct FrdGoofyWork {
     TaskPool unk_000;
     BtlWork* unk_014;
-    void* unk_018;
+    void* tiles;
     void* palette;
     FrdBody unk_020;
     AnimState anim;
@@ -120,7 +120,7 @@ typedef struct FrdGoofyWork {
 typedef struct FrdArielWork {
     TaskPool unk_000;
     BtlWork* unk_014;
-    void* unk_018;
+    void* tiles;
     void* palette;
     FrdBody unk_020;
     AnimState anim;
@@ -140,7 +140,7 @@ typedef struct FrdArielWork {
 typedef struct FrdJackWork {
     TaskPool unk_000;
     BtlWork* unk_014;
-    void* unk_018;
+    void* tiles;
     void* palette;
     FrdBody unk_020;
     AnimState anim;
@@ -162,7 +162,7 @@ typedef struct FrdJackWork {
 typedef struct FrdPanWork {
     TaskPool unk_000;
     BtlWork* unk_014;
-    void* unk_018;
+    void* tiles;
     void* palette;
     FrdBody unk_020;
     AnimState anim;
@@ -186,7 +186,7 @@ typedef struct FrdPanWork {
 typedef struct FrdAladdinWork {
     TaskPool unk_000;
     BtlWork* unk_014;
-    void* unk_018;
+    void* tiles;
     void* palette;
     FrdBody unk_020;
     AnimState anim;
@@ -204,7 +204,7 @@ typedef struct FrdAladdinWork {
 typedef struct FrdBeastWork {
     TaskPool unk_000;
     BtlWork* unk_014;
-    void* unk_018;
+    void* tiles;
     void* palette;
     FrdBody unk_020;
     AnimState anim;
