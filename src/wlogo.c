@@ -2051,7 +2051,7 @@ void task_wlogo_bks_obj_0(WlogoBksObjWork* work, s32 arg) {
     work->unk_046 = 10;
     work->tiles = LoadObjTiles(gUnk_09628DC0, 0x800);
     work->palette = LoadObjPalette(gUnk_096FB0A4, 0x20);
-    work->unk_008 = gUnk_09EF380C[gUnk_09EF1C70[work->unk_029]];
+    work->gfx = gUnk_09EF380C[gUnk_09EF1C70[work->unk_029]];
     work->unk_048 = gUnk_09EF1D0A[work->unk_029];
     work->unk_044 = 0;
 }
@@ -2088,7 +2088,7 @@ void task_wlogo_bks_obj_2(WlogoBksObjWork* work) {
     s32 affine;
 
     affine = AllocObjAffine(0, work->unk_03C, work->unk_040, 1);
-    DrawSprite(work->unk_02C >> 8, work->unk_030 >> 8, work->unk_008, work->tiles, work->palette, affine, 0, work->unk_048);
+    DrawSprite(work->unk_02C >> 8, work->unk_030 >> 8, work->gfx, work->tiles, work->palette, affine, 0, work->unk_048);
 }
 
 void task_wlogo_bks_obj_3(WlogoBksObjWork* work) {

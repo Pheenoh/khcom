@@ -155,7 +155,7 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
     w->palette = LoadObjPalette(set->unk_08, 32);
     anim = &w->anim;
     AnimInit(anim, 0, 0);
-    w->unk_08->unk_18 = anim;
+    w->unk_08->anim = anim;
     w->unk_08->unk_1C = w->palette->unk_06;
     func_081149B8(w);
     TaskPoolInit(&w->unk_2C, 4);
@@ -322,13 +322,13 @@ void task_sroll_b_secn_2(SrollBSecnWork* w) {
     u16 y;
 
     y = (w->unk_08 >> 8) - (*w->unk_0C >> 8);
-    DrawSprite(120, y, AnimGetGfx(&w->unk_1C), w->tiles, w->unk_18, 0, 0, 0xEF0);
-    DrawSprite(120, y, AnimGetGfx(&w->unk_34), w->tiles, w->unk_18, 0, 0, 0xEE0);
+    DrawSprite(120, y, AnimGetGfx(&w->unk_1C), w->tiles, w->palette, 0, 0, 0xEF0);
+    DrawSprite(120, y, AnimGetGfx(&w->unk_34), w->tiles, w->palette, 0, 0, 0xEE0);
 }
 
 void task_sroll_b_secn_3(SrollBSecnWork* w) {
     ReleaseObjTiles(w->tiles);
-    ReleaseObjPalette((u8*)w->unk_18);
+    ReleaseObjPalette((u8*)w->palette);
 }
 
 static s32 func_08114F3C(s32 x) {
@@ -442,7 +442,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
 #endif
         w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
 
-        for (i = 0, p = w->unk_20; i <= 4; i++) {
+        for (i = 0, p = w->anim; i <= 4; i++) {
             AnimInit(p, (s32)gUnk_09EFB9B8, (s32)gUnk_09EFB840);
             AnimStart(p, i, 0);
             p++;
@@ -455,7 +455,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
 #endif
         w->palette = LoadObjPalette(gUnk_09D6D034, 224);
 
-        for (i = 0, p = w->unk_20; i <= 4; i++) {
+        for (i = 0, p = w->anim; i <= 4; i++) {
             AnimInit(p, (s32)gUnk_09EFBAD4, (s32)gUnk_09EFB9CC);
             AnimStart(p, i, 0);
             p++;
@@ -470,7 +470,7 @@ u8 task_sroll_c_char_1(SrollCCharWork* w) {
     AnimState* p;
     s32 i;
 
-    p = w->unk_20;
+    p = w->anim;
 
     for (i = 4; i >= 0; i--) {
         AnimUpdate(p);
@@ -485,7 +485,7 @@ void task_sroll_c_char_2(SrollCCharWork* w) {
     s32 flags;
 
     flags = 0;
-    p = w->unk_20;
+    p = w->anim;
 
     for (i = 4; i >= 0; i--) {
         DrawSprite(120, 80, AnimGetGfx(p), w->tiles, w->palette, 0, flags, 0xFF0);

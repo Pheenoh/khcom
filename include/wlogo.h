@@ -157,7 +157,7 @@ typedef struct WlogoTtWork {
 typedef struct WlogoBksObjWork {
     void* tiles;
     void* palette;
-    void* unk_008;
+    void* gfx;
     u8 unk_00C[0x18];
     s16 unk_024;
     s16 unk_026;

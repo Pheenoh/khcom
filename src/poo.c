@@ -2410,7 +2410,7 @@ void task_poo_trap_0(PooTrapWork* w, PooPos* p) {
     w->unk_14 = 0;
     w->tiles = LoadObjTiles(gUnk_0972BD8C, 0x100);
     w->palette = LoadObjPalette(gUnk_09849AB8, 0x20);
-    w->unk_08 = gUnk_0972BD78;
+    w->gfx = gUnk_0972BD78;
     func_08012324(w->unk_1C, w->unk_0C, w->unk_10, w->unk_14);
     w->unk_8C = 0;
 }
@@ -2442,7 +2442,7 @@ void task_poo_trap_2(PooTrapWork* w) {
             func_080122AC(w->unk_1C, 10, 8, 16);
             w->unk_8C = 1;
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, 0xFFEF);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, 0xFFEF);
     }
 }
 
@@ -3412,7 +3412,7 @@ void task_poo_tigerstump_0(PooStumpWork* w, PooPos* p) {
     w->unk_28 = p->unk_04 + 0x800;
     w->unk_2C = 0;
     w->palette = 0;
-    w->unk_08 = gUnk_097561D4;
+    w->gfx = gUnk_097561D4;
     func_08012324(w->unk_34, w->unk_24, w->unk_28, 0);
 }
 
@@ -3444,7 +3444,7 @@ void task_poo_tigerstump_2(PooStumpWork* w) {
             w->palette = LoadObjPalette(gUnk_09849D38, 0x20);
             func_080122AC(w->unk_34, 7, 15, 24);
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_28 - 0x700) >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_28 - 0x700) >> 8) * 4);
     }
 }
 
@@ -3461,7 +3461,7 @@ void task_poo_poohstump_0(PooStumpWork* w, PooPos* p) {
     w->unk_28 = p->unk_04;
     w->unk_2C = 0;
     w->palette = 0;
-    w->unk_08 = gUnk_09755F34;
+    w->gfx = gUnk_09755F34;
     func_08012324(w->unk_34, w->unk_24, w->unk_28, 0);
 }
 
@@ -3495,7 +3495,7 @@ void task_poo_poohstump_2(PooStumpWork* w) {
             w->palette = LoadObjPalette(gUnk_09849D38, 0x20);
             func_080122AC(w->unk_34, 7, 7, 14);
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_28 - 0x500) >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->unk_28 - 0x500) >> 8) * 4);
     }
 }
 
@@ -4523,9 +4523,9 @@ void task_poo_roo_footmark_0(PooFootmarkWork* w) {
     w->palette = 0;
 
     if (func_080D2D50(5) == 0) {
-        w->unk_08 = gUnk_097559F4;
+        w->gfx = gUnk_097559F4;
     } else {
-        w->unk_08 = gUnk_09755A04;
+        w->gfx = gUnk_09755A04;
     }
 }
 
@@ -4555,7 +4555,7 @@ void task_poo_roo_footmark_2(PooFootmarkWork* w) {
                 func_080CCB84(&n->unk_00, 0);
             }
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, 0xFFF1);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, 0xFFF1);
     }
 }
 
@@ -4725,7 +4725,7 @@ void task_poo_ti_board_0(PooBoardWork* w, PooPos* p) {
     w->unk_14 = 0;
     w->tiles = LoadObjTiles(gUnk_097565FC, 0x200);
     w->palette = 0;
-    w->unk_08 = gUnk_097565E8;
+    w->gfx = gUnk_097565E8;
     func_08012324(w->unk_1C, w->unk_0C, w->unk_10, w->unk_14);
 }
 
@@ -4755,7 +4755,7 @@ void task_poo_ti_board_2(PooBoardWork* w) {
             w->palette = LoadObjPalette(gUnk_09849D58, 0x20);
             func_080122AC(w->unk_1C, 7, 8, 16);
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
     }
 }
 
@@ -4775,7 +4775,7 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w) {
     w->unk_18 = 0;
     w->unk_1C = func_08003524(gUnk_09EF5D68, 0x10);
     w->palette = 0;
-    w->unk_08 = gUnk_09744842;
+    w->gfx = gUnk_09744842;
     TaskPoolInit(&w->unk_24, 1);
     func_080CC178(&w->unk_24, &w->unk_0C, 0x66);
     gUnk_02034E18 = 0x1E;
@@ -4823,7 +4823,7 @@ void task_poo_eeyoretail_2(PooEeyoreTailWork* w) {
             pr = 0x400;
             z = 10;
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, pr, z);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, pr, z);
         if (func_080C9D84() != 0) {
             TaskPoolDraw(&w->unk_24);
         }
@@ -4852,7 +4852,7 @@ void task_poo_honeycomb_0(PooHoneycombWork* w) {
     w->unk_30 = 0;
     w->unk_34 = func_08003524(gUnk_09EF5FF0, 1);
     w->palette = 0;
-    w->unk_08 = gUnk_097567FC;
+    w->gfx = gUnk_097567FC;
     func_08012324(w->unk_38, w->unk_24, w->unk_28, 0);
     w->unk_9C = 0;
     gUnk_02034E1C = 0;
@@ -4925,7 +4925,7 @@ void task_poo_honeycomb_2(PooHoneycombWork* w) {
             func_080122AC(w->unk_38, 6, 64, 0);
             *p = 1;
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0xC00, 0xFFF0);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0xC00, 0xFFF0);
     }
 }
 
@@ -4954,7 +4954,7 @@ void task_poo_vegetable_0(PooVegetableWork* w) {
     w->unk_30 = 0;
     w->unk_34 = func_08003524(gUnk_09EF602C, 1);
     w->palette = 0;
-    w->unk_08 = gUnk_09756C50;
+    w->gfx = gUnk_09756C50;
     func_08012324(w->unk_38, w->unk_24, w->unk_28, w->unk_2C);
 }
 
@@ -4986,7 +4986,7 @@ void task_poo_vegetable_2(PooVegetableWork* w) {
             w->palette = LoadObjPalette(gUnk_09849DB8, 0x20);
             func_080122AC(w->unk_38, 7, 0x26, 12);
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
     }
 }
 
@@ -6755,7 +6755,7 @@ void task_poo_cabbageAfterEvent_0(PooCabbageAfterEventWork* w) {
     w->unk_18 = 0;
     w->palette = 0;
     w->unk_1C = func_08003524(gUnk_09EF602C, 13);
-    w->unk_08 = gUnk_09756D16;
+    w->gfx = gUnk_09756D16;
 }
 
 u8 task_poo_cabbageAfterEvent_1(PooCabbageAfterEventWork* w) {
@@ -6780,7 +6780,7 @@ void task_poo_cabbageAfterEvent_2(PooCabbageAfterEventWork* w) {
             w->palette = LoadObjPalette(gUnk_09849DB8, 0x20);
             w->tiles = AllocObjTiles(w->unk_1C, gUnk_09756E28);
         }
-        DrawSprite(x, y, w->unk_08, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
+        DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
     }
 }
 
