@@ -17174,7 +17174,7 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a) {
     w->unk_1C = 0;
     w->unk_1D = 0;
     w->unk_A3 = 0;
-    func_08003A70(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C * 4] << 5]);
+    func_08003A70(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
     func_080062F4(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
     func_080062F4(w->unk_0C->unk_06 + 16, 1);
 
@@ -17187,7 +17187,34 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a) {
 
     m4aSongNumStart(0xD4);
 }
-INCLUDE_ASM("card/WorldSel_Before_1.s");
+s32 WorldSel_Before_1(WorldSelBeforeWork* w) {
+    u8 i;
+
+    if (w->unk_A3 < w->unk_A2) {
+        w->unk_70[w->unk_A3] -= (s32)(24.0f / (256.0f / (float)w->unk_A2 * 0.25f) * 256.0f);
+
+        if (w->unk_70[w->unk_A3] <= -6144) {
+            w->unk_A3++;
+        }
+    }
+
+    for (i = 0; i < w->unk_A3; i++) {
+        w->unk_20[i] = gSineTable[w->unk_98[i]] * 24 + w->unk_10;
+        w->unk_48[i] = -gSineTable[w->unk_98[i] + 64] * 12 + w->unk_14;
+        w->unk_98[i] += 4;
+    }
+
+    if (++w->unk_1D == gUnk_09EE8E60[w->unk_1C].unk_01) {
+        do {
+            w->unk_1C = w->unk_1C > 28 ? 0 : w->unk_1C + 1;
+        } while (0);
+
+        w->unk_1D = 0;
+        func_08003A70(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
+    }
+
+    return 1;
+}
 void WorldSel_Before_2(WorldSelBeforeWork* w) {
     u8 i;
 

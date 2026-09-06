@@ -275,7 +275,13 @@ extern u8 gUnk_093FBAB8[][0x80];
 extern void* gUnk_09EF12C8[];
 extern u8 gUnk_09EE4B28[];
 extern u8 gUnk_09619178[];
-extern u8 gUnk_09EE8E60[];
+typedef struct WorldSelAnim {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02[0x2];
+} WorldSelAnim;
+
+extern WorldSelAnim gUnk_09EE8E60[];
 extern u8 gUnk_093FB1AC[];
 extern u8 gUnk_09619378[];
 extern u8 gUnk_093FB0CC[];
