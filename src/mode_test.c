@@ -62,13 +62,9 @@ void mode_test_2(void) {
 }
 #endif
 
-#ifndef VERSION_EU
 void func_0805F1C0(s32* p, s32 v) {
     *p += (v - *p) >> 1;
 }
-#else
-INCLUDE_ASM("mode_test/func_0805F1C0.s");
-#endif
 
 #ifdef VERSION_EU
 INCLUDE_ASM("mode_test/eu_08060C44.s");
