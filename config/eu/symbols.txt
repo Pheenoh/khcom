@@ -720,6 +720,7 @@ gTaskDescPooPooh = 0x09f7f4cc
 gTaskDescPooGauge = 0x09f7fc7c
 gTaskDescWLogo = 0x09f7c854
 gTaskDescPooPrize = 0x09f7ff4c
+gTaskDescPooZzz = 0x09f7ff64
 gTaskDescPooBalloon = 0x09f7fc04
 gUnk_09849A98 = 0x0981e140
 gUnk_09849AD8 = 0x0981e180
