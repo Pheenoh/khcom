@@ -49,7 +49,6 @@ const char gUnkEu_0812F880[0x14] = "\x83\x47\x83\x89\x81\x5b\x81\x46\x96\xb3\x8c
 INCLUDE_ASM("mode_dummy/mode_dummy_0.s");
 #endif
 
-#ifndef VERSION_EU
 void func_0800C064(void) {
     const DummyEntry* entry;
 
@@ -88,7 +87,11 @@ void func_0800C064(void) {
             break;
         case 9:
         default:
+#ifdef VERSION_EU
+            ModeRequest(&gModeLang, 0);
+#else
             ModeRequest(&gModeCopyright1, 0);
+#endif
             break;
         }
     } else {
@@ -98,9 +101,6 @@ void func_0800C064(void) {
         UpdatePlayTime();
     }
 }
-#else
-INCLUDE_ASM("mode_dummy/func_0800C064.s");
-#endif
 
 void mode_dummy_1(void) {
     if (!func_08006314() && (GetKeysPressed() & 9)) {

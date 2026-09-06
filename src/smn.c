@@ -454,7 +454,6 @@ void task_smn_bambi_3(SmnBambiWork* work) {
     TaskPoolDestroy(&work->unk_020);
 }
 
-#ifndef VERSION_EU
 void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     SmnBody* body;
     BtlWork* obj;
@@ -477,7 +476,11 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     body->x = obj->unk_014;
     body->y = obj->unk_018;
     body->z = obj->unk_01C - 0x3000;
+#ifdef VERSION_EU
+    body->unk_10 = 0;
+#else
     body->unk_10 = obj->unk_01C;
+#endif
 
     if (obj->unk_034 & 4) {
         body->flags = 0x80004;
@@ -536,9 +539,6 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     TaskPoolInit(&work->unk_020, 15);
     TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
-#else
-INCLUDE_ASM("smn/task_smn_tink_0.s");
-#endif
 
 void func_080428E8(SmnTinkWork* work) {
     if (work->unk_170 % 3 == 0) {

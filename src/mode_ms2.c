@@ -50,8 +50,14 @@ u16 gUnk_02035FB2;
 u8* gUnk_02035FB4;
 u8 gUnk_02035FB8;
 u16 gUnk_02035FBA;
+#ifdef VERSION_JP
+u32 gUnkJp_02035F1C;
+#endif
 u8* gUnk_02035FBC;
 u8 gUnk_02035FC0;
+#ifdef VERSION_JP
+u16 gUnkJp_02035F26[3];
+#endif
 u16 gUnk_02035FC2[1];
 
 #ifdef NON_MATCHING

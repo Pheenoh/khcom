@@ -209,7 +209,6 @@ void mode_mapinspect_1(void) {
     func_08108650();
 }
 
-#ifndef VERSION_JP
 void mode_mapinspect_2(void) {
     s32 i;
     s32 j;
@@ -264,13 +263,14 @@ void mode_mapinspect_2(void) {
     func_08065AE0(gUnk_02035FB4, gUnk_02035FBA[0]);
     EwramFree(gUnk_02035FB4);
 
+#ifdef VERSION_JP
+    for (i = 0; i < 2; i++) {
+#else
     for (i = 0; i < 1; i++) {
+#endif
         func_08065AE0(gUnk_02035FBC[i], gUnk_02035FC2[i]);
         EwramFree(gUnk_02035FBC[i]);
     }
 
     EwramFree(gUnk_02035E28);
 }
-#else
-INCLUDE_ASM("mode_mapinspect/mode_mapinspect_2.s");
-#endif
