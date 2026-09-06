@@ -3,6 +3,8 @@
 
 void* gUrsulaWork;
 #ifdef VERSION_EU
+extern u16 eu_080DA830(void);
+extern void eu_080DA80C(s32 a, s32 b);
 extern void* eu_080DA860(void);
 #endif
 
@@ -2245,18 +2247,22 @@ void task_bos_ursula_bubble_single_3(UrsulaBubbleSingleWork* work) {
     ReleaseObjPalette((void*)work->unk_008);
 }
 
-#ifndef VERSION_EU
 void func_080DDD30(UrsulaBubbleSingleWork* work) {
+#ifdef VERSION_EU
+    if (eu_080DA830() == 0) {
+#else
     if (AnimGetId(&work->anim) == 0) {
+#endif
         work->unk_134 = 0;
+#ifdef VERSION_EU
+        eu_080DA80C(1, 0);
+#else
         AnimStart(&work->anim, 1, 0);
+#endif
         func_0801C2DC(&work->unk_024, 1);
         work->unk_138 = 2;
     }
 }
-#else
-INCLUDE_ASM("bos4/func_080DDD30.s");
-#endif
 
 void task_bos_ursula_thunder_0(UrsulaThunderWork* work) {
     u8* p = (u8*)gBtlWork->unk_07C;
