@@ -2,6 +2,8 @@
 #include "hum.h"
 #include "gba/keys.h"
 
+extern u32 gLanguage;
+
 void task_hum_cloud_0(CloudWork* work, void* obj) {
     func_0800E168(&work->base, gUnk_0813EF28);
     work->unk_188 = 0;
@@ -4531,7 +4533,6 @@ void MakeSaveFileSmall(SaveFileSmall* save) {
     }
 }
 
-#ifndef VERSION_EU
 void ApplySaveHeaderData(SaveHeaderData* data) {
     if (SaveRepairHeader() == SAVE_OK) {
         if (data->flags & 1) {
@@ -4545,6 +4546,10 @@ void ApplySaveHeaderData(SaveHeaderData* data) {
         if (data->flags & 2) {
             gGameState.flags |= 0x200;
         }
+
+#ifdef VERSION_EU
+        gLanguage = data->unk_02;
+#endif
     }
 
     if (SaveRepairFileLarge(0) == SAVE_OK) {
@@ -4595,9 +4600,6 @@ void ApplySaveHeaderData(SaveHeaderData* data) {
         gGameState.fileSummaries[3].unk_04 = 0;
     }
 }
-#else
-INCLUDE_ASM("hum/ApplySaveHeaderData.s");
-#endif
 
 void ApplySaveSystem(SaveFileLarge* save) {
     u32 t;

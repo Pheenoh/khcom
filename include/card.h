@@ -1239,7 +1239,9 @@ typedef struct UnkStruct_08093838 {
 
 typedef struct UnkStruct_08F7CBA8 {
     void* unk_00;
+#ifndef VERSION_EU
     u8 unk_04[0x04];
+#endif
     void** unk_08;
     u16 unk_0C;
     u16 unk_0E;
