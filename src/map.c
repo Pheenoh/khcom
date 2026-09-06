@@ -2,12 +2,20 @@
 #include "map.h"
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
+extern void eu_080059D4(s32 bg, void* tiles);
+extern void eu_08005A1C(s32 bg, void* src, u8 w, u8 h);
 extern void eu_08005ADC(s32 id);
 extern u32 gLanguage;
 extern void* gUnkEu_088927F4[];
 extern void* gUnkEu_088928E4[];
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
+extern void* gUnkEu_08892780[];
+extern void* gUnkEu_08892864[];
+extern const u8 gUnkEu_0996D130[];
+extern const u8 gUnkEu_0996D930[];
+extern const u8 gUnkEu_0996E130[];
+extern const u8 gUnkEu_0996E930[];
 extern const u8 gUnkEu_09955250[][320];
 extern const u8 gUnkEu_09957550[][320];
 extern const u8 gUnkEu_09959850[][320];
@@ -6879,7 +6887,6 @@ void func_080EB2D0(UnkStruct_02034FDC* w) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080EB328(void) {
     u8 v;
     u8 u;
@@ -6897,6 +6904,28 @@ void func_080EB328(void) {
     SetBgPriority(3, 3);
     SetBgPriority(1, 0);
     SetBgPriority(0, 0);
+#ifdef VERSION_EU
+    LoadBgTiles(0, &gUnk_09966064[0x140], 0x1FA0);
+    switch (gLanguage) {
+    case 1:
+        RequestDma3Copy((void*)gUnkEu_0996D130, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+        break;
+    case 4:
+        RequestDma3Copy((void*)gUnkEu_0996D930, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+        break;
+    case 3:
+        RequestDma3Copy((void*)gUnkEu_0996E130, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+        break;
+    case 2:
+        RequestDma3Copy((void*)gUnkEu_0996E930, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+        break;
+    }
+    LoadBgPalette(3, gUnk_09991D44, 0x200);
+    LoadBgMap(3, gUnk_0998CF44, 0x800);
+    LoadBgPalette(1, gUnk_09991D44, 0x200);
+    LoadBgPalette(0, gUnk_09991D44, 0x200);
+    LoadBgMap(0, gUnk_0998F744, 0x800);
+#else
     LoadBgTiles(3, &gUnk_09966064[0x140], 0x1FA0);
     LoadBgPalette(3, gUnk_09991D44, 0x200);
     LoadBgMap(3, gUnk_0998CF44, 0x800);
@@ -6905,6 +6934,7 @@ void func_080EB328(void) {
     LoadBgTiles(0, &gUnk_09966064[0x140], 0x1FA0);
     LoadBgPalette(0, gUnk_09991D44, 0x200);
     LoadBgMap(0, gUnk_0998F744, 0x800);
+#endif
     SetBgScroll(0, 0, 0xFFFC);
     gUnk_02034FDC->unk_000 = LoadObjPalette(gUnk_09991D04, 32);
     gUnk_02034FDC->unk_004 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
@@ -6921,7 +6951,11 @@ void func_080EB328(void) {
     gUnk_02034FDC->unk_010 = LoadObjPalette(gUnk_09991D24, 32);
     gUnk_02034FDC->unk_014 = LoadObjTiles(&gUnk_098A8F28[0x62], 0x4C0);
     gUnk_02034FDC->unk_030 = LoadObjPalette(gUnk_09991BE4, 32);
+#ifdef VERSION_EU
+    gUnk_02034FDC->unk_034 = AllocObjTiles(0x120, &gUnk_098A8628[0x120E]);
+#else
     gUnk_02034FDC->unk_034 = AllocObjTiles(0x120, &gUnk_098A8628[0x4BA]);
+#endif
     AnimInit(&gUnk_02034FDC->unk_018, gUnk_09EF8D88, gUnk_09EF8D78);
     AnimStart(&gUnk_02034FDC->unk_018, 0, 1);
     gUnk_02034FDC->unk_03C = LoadObjPalette(gUnk_09991C04, 32);
@@ -6929,7 +6963,11 @@ void func_080EB328(void) {
     func_08065ACC(&gUnk_02034FDC->unk_040, 36);
     func_08065ACC(&gUnk_02034FDC->unk_168, 54);
     gUnk_02034FDC->unk_164 = LoadObjPalette(gUnk_09991BE4, 32);
+#ifdef VERSION_EU
+    gUnk_02034FDC->unk_318 = func_08065B6C(eu_0805E924(gUnkEu_08892780), &gUnk_02034FDC->unk_168);
+#else
     gUnk_02034FDC->unk_318 = func_08065B6C(gUnk_08159E1E, &gUnk_02034FDC->unk_168);
+#endif
 
     if (gUnk_02034FDC->unk_33D != 0) {
         v = func_080EAD3C(2);
@@ -6949,9 +6987,6 @@ void func_080EB328(void) {
     gUnk_02034FDC->unk_038 = (gUnk_02034FDC->unk_162 + gUnk_02034FDC->unk_33E * 45) << 8;
     func_08006120(0, 8);
 }
-#else
-INCLUDE_ASM("map/func_080EB328.s");
-#endif
 
 void func_080EB698(void) {
     if (gUnk_02034FDC->unk_344 != 0) {
@@ -7635,7 +7670,6 @@ void func_080EC760(UnkStruct_080EC760* p, UnkStruct_080EC760Entry* q) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
     UnkStruct_080EF4BC v;
 
@@ -7657,22 +7691,65 @@ void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
         break;
     }
 
+#ifdef VERSION_EU
+    w->unk_1E6 = 0;
+    w->unk_1E5 = 0;
+    w->unk_1E4 = 0;
+
+    if (p->unk_50 == 0) {
+        eu_080059D4(3, p->unk_08);
+    } else {
+        LoadBgTiles(3, p->unk_08, p->unk_0C);
+    }
+#else
     LoadBgTiles(3, p->unk_08, p->unk_0C);
+#endif
     LoadBgPalette(3, p->unk_00, p->unk_04);
+#ifdef VERSION_EU
+    eu_08005A1C(3, p->unk_18, p->unk_24, p->unk_25);
+    w->unk_1E4 = 1;
+#else
     func_0800516C(3, p->unk_18, p->unk_24, p->unk_25);
+#endif
 
     if (p->unk_1C != 0) {
+#ifdef VERSION_EU
+        if (p->unk_50 == 0) {
+            eu_080059D4(2, p->unk_08);
+        } else {
+            LoadBgTiles(2, p->unk_08, p->unk_0C);
+        }
+#else
         LoadBgTiles(2, p->unk_08, p->unk_0C);
+#endif
         LoadBgPalette(2, p->unk_00, p->unk_04);
+#ifdef VERSION_EU
+        eu_08005A1C(2, p->unk_1C, p->unk_24, p->unk_25);
+        w->unk_1E5 = 1;
+#else
         func_0800516C(2, p->unk_1C, p->unk_24, p->unk_25);
+#endif
     } else {
         DisableBg(2);
     }
 
     if (p->unk_20 != 0) {
+#ifdef VERSION_EU
+        if (p->unk_50 == 0) {
+            eu_080059D4(1, p->unk_10);
+        } else {
+            LoadBgTiles(1, p->unk_10, p->unk_14);
+        }
+#else
         LoadBgTiles(1, p->unk_10, p->unk_14);
+#endif
         LoadBgPalette(1, p->unk_00, p->unk_04);
+#ifdef VERSION_EU
+        eu_08005A1C(1, p->unk_20, p->unk_24, p->unk_25);
+        w->unk_1E6 = 1;
+#else
         func_0800516C(1, p->unk_20, p->unk_24, p->unk_25);
+#endif
     } else {
         DisableBg(1);
     }
@@ -7697,9 +7774,6 @@ void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
 
     func_080EC760(w, p->unk_30);
 }
-#else
-INCLUDE_ASM("map/func_080EC7AC.s");
-#endif
 
 s32 func_080EC94C(u8* work) {
     s32 tx = gUnk_02039BA0->unk_08 - 0x7800;
@@ -8755,7 +8829,6 @@ s32 func_080EE7B0(MapSaveWork* w) {
     return 1;
 }
 
-#ifndef VERSION_EU
 s32 func_080EE824(MapSaveWork* w) {
     u8* p1;
     u8* p2;
@@ -8785,6 +8858,23 @@ s32 func_080EE824(MapSaveWork* w) {
         SetBgPriority(0, 0);
         LoadBgPalette(0, gUnk_09991C84, 128);
         LoadBgTiles(0, gUnk_099661A4, 0x1FA0);
+
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 1:
+            RequestDma3Copy((void*)gUnkEu_0996D130, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+            break;
+        case 4:
+            RequestDma3Copy((void*)gUnkEu_0996D930, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+            break;
+        case 3:
+            RequestDma3Copy((void*)gUnkEu_0996E130, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+            break;
+        case 2:
+            RequestDma3Copy((void*)gUnkEu_0996E930, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+            break;
+        }
+#endif
 
         if (gGameState.flags & 8) {
             if (gGameState.flags & 0x10) {
@@ -8827,14 +8917,24 @@ s32 func_080EE824(MapSaveWork* w) {
         AnimStart(&w->unk_01C, 2, 1);
         w->unk_190 = _08066468(1);
         p1 = w->unk_194;
+#ifdef VERSION_EU
+        func_08065ACC(p1, 54);
+#else
         func_08065ACC(p1, 27);
+#endif
         p2 = w->unk_270;
         func_08065ACC(p2, 6);
         p3 = w->unk_2A4;
         func_08065ACC(p3, 9);
+#ifdef VERSION_EU
+        w->unk_26C = func_08065B6C(eu_0805E924(gUnkEu_08892864), p1);
+        w->unk_2A0 = func_08065B6C(eu_0805E924(gUnkEu_08890E1C), p2);
+        w->unk_2EC = func_08065B6C(eu_0805E924(gUnkEu_08890E44), p3);
+#else
         w->unk_26C = func_08065B6C(gUnk_08159DF0, p1);
         w->unk_2A0 = func_08065B6C(gUnk_08159E10, p2);
         w->unk_2EC = func_08065B6C(gUnk_08159E18, p3);
+#endif
         func_080EE50C((UnkStruct_080EE50C*)w, 1);
         w->unk_2F8 = 1;
         w->unk_2F4 = 2;
@@ -8843,9 +8943,6 @@ s32 func_080EE824(MapSaveWork* w) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("map/func_080EE824.s");
-#endif
 
 s32 func_080EEB00(MapSaveWork* w) {
     if (GetKeysRepeat() & 0x20) {
