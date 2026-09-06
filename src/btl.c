@@ -2461,6 +2461,110 @@ void task_btl_sora_1(BtlSoraWork* work) {
 
         work->unk_154++;
         break;
+    case 5:
+        d = 0;
+        func_0801DD08(work);
+        uv = work->unk_154;
+
+        if ((s16)uv == 0) {
+            func_0801DC40(work);
+            AnimReset(&work->anim);
+            func_0801DDE4(work, 37, 0);
+
+            if (work->unk_161 == 0) {
+                m4aSongNumStart(158);
+            }
+
+            if (work->unk_161 > 5) {
+                m4aSongNumStart(157);
+
+                if (p->unk_34 & 4) {
+                    func_08019050(8, 384, p->unk_04 - 5120, (p->unk_08 - 5120) + p->unk_0C);
+                } else {
+                    func_08019050(8, 384, p->unk_04 + 5120, (p->unk_08 - 5120) + p->unk_0C);
+                }
+            }
+
+            if (p->unk_34 & 4) {
+                func_08013748(p->unk_04 + 3072, p->unk_08, p->unk_0C - 4096, 1);
+            } else {
+                func_08013748(p->unk_04 - 3072, p->unk_08, p->unk_0C - 4096, 0);
+            }
+
+            m4aSongNumStart(520);
+            func_08006238(0, gBtlWork->unk_0B3, 8);
+        } else if (uv >= 22 && uv <= 64) {
+            if (p->unk_34 & 4) {
+                p->unk_04 -= 1280;
+            } else {
+                p->unk_04 += 1280;
+            }
+
+            if (work->unk_161 > 5) {
+                if (p->unk_34 & 4) {
+                    d = func_08011F78(85, p->unk_04 - 8192, p->unk_08, p->unk_0C, 16, 16, 32);
+                } else {
+                    d = func_08011F78(85, p->unk_04 + 8192, p->unk_08, p->unk_0C, 16, 16, 32);
+                }
+            } else {
+                if (p->unk_34 & 4) {
+                    d = func_08011F78(84, p->unk_04 - 8192, p->unk_08, p->unk_0C, 16, 16, 32);
+                } else {
+                    d = func_08011F78(84, p->unk_04 + 8192, p->unk_08, p->unk_0C, 16, 16, 32);
+                }
+            }
+
+            if (d == 1) {
+                m4aSongNumStart(503);
+            }
+
+            if (held & 0x40) {
+                p->unk_08 -= 384;
+            } else if (held & 0x80) {
+                p->unk_08 += 384;
+            }
+        }
+
+        if ((s16)work->unk_154 == 22) {
+            if (work->unk_161 > 5) {
+                func_08019050(15, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+            }
+
+            if (p->unk_34 & 4) {
+                func_080137C8(p->unk_04 - 15360, p->unk_08, p->unk_0C, 0);
+            } else {
+                func_080137C8(p->unk_04 + 15360, p->unk_08, p->unk_0C, 1);
+            }
+        }
+
+        if (d == 2) {
+            func_080061E8(0, 8);
+            func_0801E4E4(work, 33);
+            p->unk_34 |= 0x200;
+            func_0801DC5C(work);
+            break;
+        }
+
+        if ((s16)work->unk_154 > 38 && (pressed & 1) && work->unk_161 <= 5) {
+            p->unk_34 ^= 4;
+            work->unk_161++;
+            func_08019A30();
+            func_0801D288();
+            work->unk_038 = 5;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        }
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            func_080061E8(0, 8);
+            func_0801E4E4(work, 1);
+            func_0801DC5C(work);
+            break;
+        }
+
+        work->unk_154++;
+        break;
     case 17:
         if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
             func_0801DD08(work);
