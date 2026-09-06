@@ -2365,7 +2365,33 @@ void func_080B3A48(void) {
     gSioChgCardWork->unk_360 = 0;
 }
 
-INCLUDE_ASM("mode_sio/func_080B3A68.s");
+void func_080B3A68(void) {
+    s8 v;
+
+    gSioChgCardWork->unk_0A4 = 0;
+
+    if (gSioPlayerId == 0) {
+        gUnk_0203AB10 = 0;
+    } else {
+        gUnk_0203AB10 = 5;
+    }
+
+    v = gUnk_0203AB10;
+    gSioChgCardWork->unk_076 = v;
+    gSioChgCardWork->unk_078 = v;
+    gSioChgCardWork->x = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_00;
+    gSioChgCardWork->y = gUnk_09EF150C[gSioChgCardWork->unk_076].unk_02;
+    gSioChgCardWork->unk_074 = 1;
+    gSioChgCardWork->unk_202 = gUnk_0203AB20[gSioChgCardWork->unk_076];
+    func_080B1C70(0, 0, 0);
+    func_080B1C70(1, 0, 0);
+    RequestDma3Copy(gUnk_096B5EE4, (void*)0x06000020, 0xC0);
+    RequestDma3Copy(gUnk_096B5EE4 + 0x400, (void*)0x060000E0, 0xC0);
+    gUnk_0203AB34[0] = 0;
+    gUnk_0203AB34[1] = 0;
+    gSioChgCardWork->unk_20C = 0;
+}
+
 
 void func_080B3B5C(void) {
     SioCardTaskArg arg;
