@@ -615,6 +615,9 @@ typedef struct MapMenuWork {
     s32 unk_170[0x03];
     u8* unk_17C;
     TextSlot unk_180[0x21];
+#ifdef VERSION_EU
+    u8 unkEu_288[0x108];
+#endif
     u8 unk_288;
     u8 unk_289[0x03];
     TextSlot unk_28C[0x06];
@@ -657,6 +660,9 @@ typedef struct MapSaveWork {
     void* unk_18C;
     FldRes* unk_190;
     u8 unk_194[0xD8];
+#ifdef VERSION_EU
+    u8 unkEu_26C[0xD8];
+#endif
     u8 unk_26C;
     u8 unk_26D[0x03];
     u8 unk_270[0x30];
