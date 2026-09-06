@@ -451,6 +451,7 @@ void func_08012AAC(s32 a, s32 b, s32 c, s32 d);
 void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 void func_08016750(s32 x, s32 y, s32 z, u8 f);
 void func_08014FDC(s32 x, s32 y, u8 f);
+void func_080137C8(s32 x, s32 y, s32 z, u8 f);
 s32 func_08011F68(s32 a, BtlWork* b);
 void func_0807E1E8(void);
 void func_0802F1E8(void);
