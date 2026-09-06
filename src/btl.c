@@ -997,6 +997,10 @@ void task_btl_sora_1(BtlSoraWork* work) {
         work->unk_156 = 0;
         work->unk_154 = 0;
         break;
+    case 19:
+        if (!(p->unk_E4->unk_068 & 0x200000)) {
+            func_0801E508(work, 2);
+        }
     case 2:
         func_0801DD08(work);
 
@@ -1377,6 +1381,33 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154 = uv + 1;
         }
         break;
+    case 80:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DDC4(work);
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 45, 0);
+            m4aSongNumStart(158);
+        }
+
+        if ((s16)work->unk_154 == 27) {
+            work->unk_158 = 20;
+            func_0802F1E8();
+            func_08011F78(114, p->unk_04, p->unk_08, p->unk_0C, 256, 256, 256);
+            func_08006290(4, 16, 20);
+            m4aSongNumStart(632);
+        } else if ((s16)work->unk_154 > 27 && (s16)--work->unk_158 <= 0) {
+            func_0801DDE4(work, 46, 0);
+            func_0801E4E4(work, 82);
+            break;
+        }
+
+        work->unk_154++;
+        break;
     case 81:
         if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
             func_0801DD08(work);
@@ -1519,6 +1550,39 @@ void task_btl_sora_1(BtlSoraWork* work) {
             func_08019A30();
             func_0801E4E4(work, 1);
         }
+        break;
+    case 23:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DD08(work);
+        st = work->unk_154;
+
+        if (st == 0) {
+            p->unk_E4->unk_068 |= 0x0002000000000000LL;
+            p->unk_E4->unk_078 = 0;
+            func_0801DE1C(work, 1, 0);
+
+            if (p->unk_34 & 4) {
+                work->unk_160 = 192;
+            } else {
+                work->unk_160 = 64;
+            }
+        }
+
+        uv = work->unk_154;
+
+        if ((s16)uv <= 3) {
+            work->unk_154 = uv + 1;
+            break;
+        }
+
+        work->unk_038 = 24;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
+        work->unk_150 = -1024;
         break;
     case 24:
         if ((s16)work->unk_154 == 0) {
