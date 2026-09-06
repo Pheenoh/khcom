@@ -19,7 +19,6 @@ u32 gUnkEu_02035104;
 MapChkWork* gMapChkWork;
 UnkStruct_02034F18* gUnk_02034F18;
 
-#ifndef VERSION_EU
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)(arg + 0x40);
     s32 c;
@@ -45,7 +44,11 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     func_0801B37C(&work->unk_040, &gUnk_096FDF54, c, d, e);
     func_080122AC(&work->unk_080, 3, gUnk_096FDF54.unk_08, gUnk_096FDF54.unk_06);
     work->unk_074 |= 0x400;
+#ifdef VERSION_EU
+    work->unk_074 |= 0x100;
+#else
     work->unk_074 |= 0x80;
+#endif
     work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6788, 4), gUnk_09796EAA);
     work->unk_00C = (u32)LoadObjPalette(gUnk_0984AF98, 32);
     work->unk_010 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
@@ -60,9 +63,6 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
         func_0801BCD4(&work->unk_040);
     }
 }
-#else
-INCLUDE_ASM("bos4/task_bos_boogie_dice_0.s");
-#endif
 #ifndef VERSION_EU
 u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
