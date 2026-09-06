@@ -1548,9 +1548,9 @@ void func_0801C2DC(BtlObj* p, u8 f) {
 INCLUDE_ASM("unk_08019050/func_0801C314.s");
 
 #ifdef NON_MATCHING
-u8 func_0801C6D4(s32 a) {
+u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d) {
     if (gBtlWork->unk_128 != 0) {
-        return gBtlWork->unk_128(a);
+        return gBtlWork->unk_128((s32)a);
     }
     return 0;
 }
