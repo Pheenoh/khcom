@@ -85,8 +85,8 @@ void func_0811865C(MoviePlayer* p, void* a, void* b, void* c, u32 w, u32 h);
 void func_08118ADC(MoviePlayer* p, void* a, u32 b);
 MoviePlayer* MovieOpen(void* a);
 void MovieFree(MoviePlayer* a);
-void func_08118F7C(MoviePlayer* a);
-s32 func_0811904C(MoviePlayer* a, void* dst);
+void MovieDecodeFrame(MoviePlayer* a);
+s32 MovieDrawFrame(MoviePlayer* a, void* dst);
 s32 MovieAdvanceFrame(MoviePlayer* a);
 u32 MovieGetAudioBlockSamples(MoviePlayer* a);
 void MovieDecodeAudioBlock(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2);
@@ -159,7 +159,7 @@ void MoviePlay(s32 (*a)(s32), s32 b) {
     MovieGetSize(gMoviePlayer, &w, &h);
     x = (240 - w) >> 1;
     y = (160 - h) >> 1;
-    func_0811904C(gMoviePlayer, (u16*)0x06000000 + (y * 240 + x));
+    MovieDrawFrame(gMoviePlayer, (u16*)0x06000000 + (y * 240 + x));
     MovieAdvanceFrame(gMoviePlayer);
     SndStreamStart();
     channels = MovieGetChannels(gMoviePlayer);
@@ -172,7 +172,7 @@ void MoviePlay(s32 (*a)(s32), s32 b) {
     while (1) {
         while (func_0811950C(gMoviePlayer) == 0) {
         }
-        func_0811904C(gMoviePlayer, (u16*)0x06000000 + (y * 240 + x));
+        MovieDrawFrame(gMoviePlayer, (u16*)0x06000000 + (y * 240 + x));
 
         if (MovieAdvanceFrame(gMoviePlayer) == 0) {
             break;
@@ -348,7 +348,7 @@ void MovieFree(MoviePlayer* a) {
     gMovieHeap.unk_08(p);
 }
 
-void func_08118F7C(MoviePlayer* a) {
+void MovieDecodeFrame(MoviePlayer* a) {
     void* t;
     MoviePlayer* p = a;
 
@@ -370,14 +370,14 @@ void func_08118F7C(MoviePlayer* a) {
     p->unk_24 = t;
 }
 
-s32 func_0811904C(MoviePlayer* a, void* dst) {
+s32 MovieDrawFrame(MoviePlayer* a, void* dst) {
     MoviePlayer* p = a;
 
     if (p->unk_8C != 0) {
         return 0;
     }
     CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->frameIndex) >> 2) & 0xFFFF);
-    func_08118F7C(p);
+    MovieDecodeFrame(p);
 
     if (p->unk_78 != 0) {
         CpuFastSet(p->unk_20, dst, (p->width * p->height / 2) & 0x1FFFFF);
@@ -392,7 +392,7 @@ u32 func_081190C8(MoviePlayer* a, u32 x, u32 y, u32 w, u32 rows, void* dst, u32 
     u8* s;
 
     CpuFastSet(p->unk_14, p->unk_5C, (*(p->unk_50 + p->frameIndex) >> 2) & 0xFFFF);
-    func_08118F7C(p);
+    MovieDecodeFrame(p);
 
     if (p->unk_78 != 0) {
         d = dst;
