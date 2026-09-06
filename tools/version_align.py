@@ -314,6 +314,20 @@ def main():
                     if j is None or how[j] == "absent":
                         continue
                     votes.setdefault(j, set()).add(addr[i] + k + o2)
+                for k in range(0, sz - 3, 2):
+                    if (a + k) % 4:
+                        continue
+                    w = struct.unpack_from("<I", x, k)[0]
+                    v = struct.unpack_from("<I", y, k)[0]
+                    if not (w & 1) or not (v & 1):
+                        continue
+                    t = w & ~1
+                    if a <= t < e or not CODE_LO <= t < CODE_HI:
+                        continue
+                    j = start_of.get(t)
+                    if j is None or how[j] == "absent":
+                        continue
+                    votes.setdefault(j, set()).add(v & ~1)
             progress = 0
             for j, cands in sorted(votes.items()):
                 if len(cands) != 1:
