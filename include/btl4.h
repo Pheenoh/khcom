@@ -42,7 +42,7 @@ typedef struct BtlEffect {
     u16 unk_12;
     u16 unk_14;
     u8 unk_16[0x0A];
-    AnimState unk_20;
+    AnimState anim;
 } BtlEffect;
 
 typedef struct BtlPopSrc {
@@ -56,7 +56,7 @@ typedef struct BtlPopSrc {
 typedef struct BtlPopCbWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     s32 x;
     s32 y;
     s32 z;

@@ -536,7 +536,7 @@ typedef struct PooPrizeWork {
 typedef struct PooEeyoreTailWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     u32 unk_0C;
     u32 unk_10;
     s32 unk_14;
@@ -660,7 +660,7 @@ typedef struct PooOwlWork {
 typedef struct PooStumpWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     u8 unk_0C[0x18];
     s32 unk_24;
     s32 unk_28;
@@ -672,7 +672,7 @@ typedef struct PooStumpWork {
 typedef struct PooFootmarkWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     s32 unk_0C;
     s32 unk_10;
     s32 unk_14;
@@ -684,7 +684,7 @@ typedef struct PooFootmarkWork {
 typedef struct PooBoardWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     s32 unk_0C;
     s32 unk_10;
     s32 unk_14;
@@ -695,7 +695,7 @@ typedef struct PooBoardWork {
 typedef struct PooVegetableWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     u8 unk_0C[0x18];
     s32 unk_24;
     s32 unk_28;
@@ -731,7 +731,7 @@ typedef struct PooTanpopoWork {
 typedef struct PooHoneycombWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     u8 unk_0C[0x18];
     s32 unk_24;
     s32 unk_28;
@@ -960,7 +960,7 @@ typedef struct PooStumpDesc {
 typedef struct PooCabbageAfterEventWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     s32 unk_0C;
     s32 unk_10;
     s32 unk_14;
@@ -1060,7 +1060,7 @@ typedef struct PooSoraWork {
 typedef struct PooTrapWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     s32 unk_0C;
     s32 unk_10;
     s32 unk_14;

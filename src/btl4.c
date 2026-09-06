@@ -8,35 +8,35 @@ void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
 
     switch (src->unk_12) {
     case 0:
-        work->unk_08 = gUnk_08B1FCBC;
+        work->gfx = gUnk_08B1FCBC;
         break;
     case 1:
-        work->unk_08 = gUnk_08B1FCCC;
+        work->gfx = gUnk_08B1FCCC;
         break;
     case 2:
-        work->unk_08 = gUnk_08B1FCDC;
+        work->gfx = gUnk_08B1FCDC;
         break;
     case 3:
-        work->unk_08 = gUnk_08B1FCEC;
+        work->gfx = gUnk_08B1FCEC;
         break;
     case 4:
-        work->unk_08 = gUnk_08B1FCFC;
+        work->gfx = gUnk_08B1FCFC;
         break;
     case 5:
-        work->unk_08 = gUnk_08B1FD0C;
+        work->gfx = gUnk_08B1FD0C;
         break;
     case 6:
-        work->unk_08 = gUnk_08B1FD1C;
+        work->gfx = gUnk_08B1FD1C;
         break;
     case 7:
-        work->unk_08 = gUnk_08B1FD2C;
+        work->gfx = gUnk_08B1FD2C;
         break;
     case 8:
-        work->unk_08 = gUnk_08B1FD3C;
+        work->gfx = gUnk_08B1FD3C;
         break;
     case 9:
     default:
-        work->unk_08 = gUnk_08B1FD4C;
+        work->gfx = gUnk_08B1FD4C;
         break;
     }
 
@@ -65,7 +65,7 @@ void task_btl_pop_cb_2(BtlPopCbWork* work) {
     s16 y;
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    DrawSprite(x, y, work->unk_08, work->tiles, work->palette, 0, 16, 5);
+    DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, 16, 5);
 }
 
 void task_btl_pop_cb_3(BtlPopCbWork* work) {
@@ -736,7 +736,7 @@ void func_0805DB04(BtlEffect* p, u16 b, u16 c, u16 d) {
     p->unk_00 |= 4;
     p->unk_12 = b;
     p->unk_14 = c;
-    AnimStart(&p->unk_20, d, 1);
+    AnimStart(&p->anim, d, 1);
 }
 
 void func_0805DB28(BtlEffect* p) {
