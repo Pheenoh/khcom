@@ -2544,6 +2544,57 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154++;
         }
         break;
+    case 59:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DD08(work);
+
+        if ((s16)work->unk_154 == 0) {
+            m4aSongNumStart(182);
+            func_0801DDE4(work, 74, 0);
+        }
+
+        switch (AnimGetFrame(&work->anim)) {
+        case 0:
+            if (work->anim.timer == 0) {
+                if (p->unk_34 & 4) {
+                    p->unk_04 += 768;
+                } else {
+                    p->unk_04 -= 768;
+                }
+            }
+            break;
+        case 2:
+        case 3:
+            if (work->anim.timer == 0) {
+                if (p->unk_34 & 4) {
+                    p->unk_04 += 512;
+                } else {
+                    p->unk_04 -= 512;
+                }
+            }
+            break;
+        case 4:
+            if (p->unk_34 & 4) {
+                t = p->unk_04 + 16384;
+                p->unk_04 += (*(s32*)&p->unk_14[0] - t) >> 4;
+            } else {
+                t = p->unk_04 - 16384;
+                p->unk_04 += (*(s32*)&p->unk_14[0] - t) >> 4;
+            }
+            break;
+        }
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            work->unk_038 = 60;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
+        }
+        break;
     case 61:
         func_0801DD08(work);
 
@@ -2812,6 +2863,46 @@ void task_btl_sora_1(BtlSoraWork* work) {
         if (func_080128EC() == 0) {
             m4aSongNumStop(590);
             func_0801E4E4(work, 3);
+        } else {
+            work->unk_154++;
+        }
+        break;
+    case 63:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DD08(work);
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 21, 0);
+            m4aSongNumStart(164);
+        }
+
+        if (work->anim.timer == 0) {
+            switch (AnimGetFrame(&work->anim)) {
+            case 3:
+                if (p->unk_34 & 4) {
+                    func_08017008(p->unk_04 - 12288, p->unk_08, p->unk_0C - 4096);
+                } else {
+                    func_08017008(p->unk_04 + 12288, p->unk_08, p->unk_0C - 4096);
+                }
+
+                m4aSongNumStart(507);
+                break;
+            case 5:
+                if (p->unk_34 & 4) {
+                    func_08011F78(97, p->unk_04 - 12288, p->unk_08, p->unk_0C, 40, 40, 50);
+                } else {
+                    func_08011F78(97, p->unk_04 + 12288, p->unk_08, p->unk_0C, 40, 40, 50);
+                }
+                break;
+            }
+        }
+
+        if (AnimIsFinished(&work->anim) != 0 && func_080128EC() == 0) {
+            func_0801E4E4(work, 1);
         } else {
             work->unk_154++;
         }
