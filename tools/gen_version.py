@@ -65,6 +65,12 @@ TARGET_ONLY_SYMBOLS = {
     },
 }
 
+TARGET_FILLER_LABELS = {
+    "eu": {
+        0x080DA80C: [(0x54, "eu_080DA860")],
+    },
+}
+
 TARGET_FUNC_SIZE = {
     "jp": {
         "func_08066588": 156,
@@ -125,6 +131,23 @@ EMPTY = """.syntax unified
 {name}:
 .syntax divided
 """
+
+
+def filler_with_labels(name, code, at, size, extra):
+    out = [".syntax unified", "\t.text"]
+    if at % 4 == 0:
+        out.append("\t.align 2, 0")
+    pos = 0
+    for off, nm in [(0, name)] + [(o, n) for o, n in extra]:
+        if off > pos:
+            out.append(f'\t.incbin "roms/{code}.gba", {at - ROM_BASE + pos:#x}, {off - pos:#x}')
+            pos = off
+        out += [f"\t.global {nm}", "\t.thumb", "\t.thumb_func",
+                f"\t.type {nm}, %function", f"{nm}:"]
+    if size > pos:
+        out.append(f'\t.incbin "roms/{code}.gba", {at - ROM_BASE + pos:#x}, {size - pos:#x}')
+    out.append(".syntax divided")
+    return "\n".join(out) + "\n"
 
 
 def mask(b):
@@ -427,9 +450,12 @@ def main():
                     (d / f"{name}.s").write_text(EMPTY.format(name=name))
                 else:
                     filled.add(at)
+                    extra = sorted(TARGET_FILLER_LABELS.get(ver, {}).get(at, []))
                     (d / f"{name}.s").write_text(
-                        THUMB.format(name=name, code=code, off=at - ROM_BASE, size=gap[0],
-                                     align="\t.align 2, 0\n" if at % 4 == 0 else ""))
+                        filler_with_labels(name, code, at, gap[0], extra) if extra
+                        else THUMB.format(name=name, code=code, off=at - ROM_BASE,
+                                          size=gap[0],
+                                          align="\t.align 2, 0\n" if at % 4 == 0 else ""))
                 kept.add(d / f"{name}.s")
                 wrote += 1
                 continue
@@ -470,9 +496,14 @@ def main():
         unit = owner.get(a[0], "?").rsplit("/", 1)[-1][:-2]
         if kind == "boundary":
             nm = f"{ver}_{at:08X}.s"
-            Path(f"asm/{ver}/{nm}").write_text(
-                THUMB.format(name=nm[:-2], code=code, off=at - ROM_BASE, size=size,
-                             align="\t.align 2, 0\n" if at % 4 == 0 else ""))
+            extra = sorted(TARGET_FILLER_LABELS.get(ver, {}).get(at, []))
+            if extra:
+                Path(f"asm/{ver}/{nm}").write_text(
+                    filler_with_labels(nm[:-2], code, at, size, extra))
+            else:
+                Path(f"asm/{ver}/{nm}").write_text(
+                    THUMB.format(name=nm[:-2], code=code, off=at - ROM_BASE, size=size,
+                                 align="\t.align 2, 0\n" if at % 4 == 0 else ""))
             fillers.append((at, nm))
             print(f"  filler {nm}: {size:#x} bytes after {a[0]} ({unit})")
         elif at in filled:
