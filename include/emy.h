@@ -125,9 +125,35 @@ typedef struct EmyActor {
     u8 unk_D4[0x3C];
 } EmyActor;
 
+typedef struct UnkStruct_02039D34 {
+    u16 unk_00;
+    u8 unk_02;
+    u8 unk_03;
+} UnkStruct_02039D34;
+
+typedef struct GameState {
+    u8 unk_000;
+    u8 unk_001[0x07];
+    u32 flags;
+    u8 world;
+    u8 unk_00D;
+    u8 floor;
+    u8 unk_00F;
+    u8 unk_010[0x16A];
+    u16 unk_17A;
+    u16 unk_17C;
+    u16 unk_17E;
+    u8 unk_180[0x04];
+    UnkStruct_02039D34 unk_184[13];
+    u32 unk_1B8;
+} GameState;
+
 typedef struct EmyDef {
     void* unk_00;
     void* unk_04;
+    s32 unk_08;
+    u8 unk_0C[0x02];
+    u16 unk_0E;
 } EmyDef;
 
 typedef struct EmySpawn {
@@ -159,7 +185,7 @@ typedef struct EmyWork {
     u32 unk_14C;
     u32 unk_150;
     s16 unk_154;
-    u16 unk_156;
+    s16 unk_156;
     u16 unk_158;
     u8 unk_15A;
     u8 unk_15B;
@@ -167,10 +193,12 @@ typedef struct EmyWork {
     u8 angle;
     u8 unk_161;
     u16 unk_162;
-    u8 unk_164[0x04];
+    s32 unk_164;
     s32 unk_168;
     u32 unk_16C;
-    u8 unk_170[0x0C];
+    s32 unk_170;
+    s32 unk_174;
+    s32 unk_178;
     s32 unk_17C;
     s32 unk_180;
 } EmyWork;
@@ -196,7 +224,7 @@ typedef struct Emy06Work {
 
 typedef struct Emy07Work {
     EmyWork base;
-    u16 unk_184;
+    s16 unk_184;
     u8 unk_186;
     u8 unk_187;
 } Emy07Work;
@@ -251,14 +279,19 @@ typedef struct Emy16pWork {
     s32 unk_030;
 } Emy16pWork;
 
+typedef struct Emy18Work {
+    EmyWork base;
+    u16 unk_184;
+} Emy18Work;
+
 typedef struct Emy19Work {
     EmyWork base;
-    u32 unk_184;
+    s32 unk_184;
 } Emy19Work;
 
 typedef struct Emy21Work {
     EmyWork base;
-    u32 unk_184;
+    s32 unk_184;
 } Emy21Work;
 
 typedef struct Emy22Work {
@@ -270,6 +303,11 @@ typedef struct Emy23Work {
     EmyWork base;
     s32 unk_184;
 } Emy23Work;
+
+typedef struct Emy28Work {
+    EmyWork base;
+    u16 unk_184;
+} Emy28Work;
 
 typedef struct Emy29Work {
     EmyWork base;
@@ -385,10 +423,12 @@ u16 func_0801AF1C(s32 a);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 s32 func_0801A8A4(void* a, void* b, s32 c, s32 d);
 void m4aSongNumStart(u16 n);
+void m4aSongNumStop(u16 n);
 void func_08012614(void* a, s32 b);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 
 extern BtlWork* gBtlWork;
+extern GameState gGameState;
 u8 _0800CBDC(EmyWork* work);
 u8 _0800CDF0(EmyWork* work);
 void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
@@ -413,8 +453,15 @@ u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_080128EC(void);
 u8 AnimIsFinished(AnimState* a);
 void func_0800CB4C(EmyWork* work);
+void func_0800CD40(EmyWork* work);
 void func_08015834(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h);
 void func_0801C700(EmyActor* a, s32* b, s32* c, s32 d);
+void func_08019A30(void);
+void func_08014020(s32 x, s32 y, s32 z);
+void func_0801AF08(void* a);
+void func_0800FDD0(s32 a);
+void func_0801BBF0(EmyActor* a);
+void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 
 extern s16 gSineTable[];
 extern u8 gUnk_08A20BCE[];
@@ -426,6 +473,8 @@ extern u8 gUnk_08B1B854[];
 extern u8 gUnk_08F698C4[];
 extern u8 gUnk_08F699C4[];
 extern u8 gUnk_08F69B84[];
+extern u32 gFrameCounter;
+extern u8 gTaskDescBtlPrize[];
 extern void* gTaskDescEmy16B;
 extern void* gTaskDescEmy16P;
 extern void* gTaskDescEmy83B;
@@ -436,9 +485,11 @@ extern u8 gUnk_09EE04F4[];
 extern u8 gUnk_09EE04B4[];
 extern u8 gUnk_09EE1090[];
 extern u8 gUnk_09EE10A4[];
+extern u8 gUnk_0813D35C[];
 extern u8 gUnk_0813D3CC[];
 extern u8 gUnk_0813D434[];
 extern u8 gUnk_0813D454[];
+extern u8 gUnk_0813D4BC[];
 extern u8 gUnk_0813D4DC[];
 extern u8 gUnk_0813D544[];
 extern u8 gUnk_0813D564[];
@@ -446,6 +497,7 @@ extern u8 gUnk_0813D5CC[];
 extern u8 gUnk_0813D5DC[];
 extern u8 gUnk_0813D644[];
 extern u8 gUnk_0813D664[];
+extern u8 gUnk_0813D6CC[];
 extern u8 gUnk_0813D73C[];
 extern u8 gUnk_0813D804[];
 extern u8 gUnk_0813D86C[];
@@ -454,9 +506,13 @@ extern u8 gUnk_0813D8F4[];
 extern u8 gUnk_0813D944[];
 extern u8 gUnk_0813D9AC[];
 extern u8 gUnk_0813D9CC[];
+extern u8 gUnk_0813DA54[];
 extern u8 gUnk_0813DA94[];
+extern u8 gUnk_0813DAFC[];
 extern u8 gUnk_0813DB4C[];
+extern u8 gUnk_0813DBB4[];
 extern u8 gUnk_0813DBF4[];
+extern u8 gUnk_0813DC5C[];
 extern u8 gUnk_0813DC7C[];
 extern u8 gUnk_0813DCE4[];
 extern u8 gUnk_0813DD04[];
@@ -466,6 +522,7 @@ extern u8 gUnk_0813DDF4[];
 extern u8 gUnk_0813DE14[];
 extern u8 gUnk_0813DE7C[];
 extern u8 gUnk_0813DE9C[];
+extern u8 gUnk_0813DF04[];
 extern u8 gUnk_0813DF44[];
 extern u8 gUnk_0813DFAC[];
 extern u8 gUnk_0813DFCC[];
@@ -491,6 +548,7 @@ extern u8 gUnk_0813E7C4[];
 extern u8 gUnk_0813E834[];
 
 void task_emy_00_0(EmyWork* work, void* obj);
+u8 task_emy_00_1(EmyWork* work);
 void task_emy_00_2(EmyWork* work);
 void task_emy_00_3(EmyWork* work);
 void task_emy_01_0(EmyWork* work, void* obj);
@@ -498,6 +556,7 @@ u8 task_emy_01_1(EmyWork* work);
 void task_emy_01_2(EmyWork* work);
 void task_emy_01_3(EmyWork* work);
 void task_emy_02_0(EmyWork* work, void* obj);
+u8 task_emy_02_1(EmyWork* work);
 void task_emy_02_2(EmyWork* work);
 void task_emy_02_3(EmyWork* work);
 void task_emy_03_0(EmyWork* work, void* obj);
@@ -513,6 +572,7 @@ u8 task_emy_06_1(Emy06Work* work);
 void task_emy_06_2(EmyWork* work);
 void task_emy_06_3(EmyWork* work);
 void task_emy_07_0(Emy07Work* work, void* obj);
+u8 task_emy_07_1(Emy07Work* work);
 void task_emy_07_2(EmyWork* work);
 void task_emy_07_3(EmyWork* work);
 void task_emy_08_0(Emy08Work* work, void* obj);
@@ -539,15 +599,19 @@ u8 task_emy_16_p_1(Emy16pWork* work);
 void task_emy_16_p_2(Emy16pWork* work);
 void task_emy_16_p_3(Emy16pWork* work);
 void task_emy_18_0(EmyWork* work, void* obj);
+u8 task_emy_18_1(Emy18Work* work);
 void task_emy_18_2(EmyWork* work);
 void task_emy_18_3(EmyWork* work);
 void task_emy_19_0(EmyWork* work, void* obj);
+u8 task_emy_19_1(Emy19Work* work);
 void task_emy_19_2(EmyWork* work);
 void task_emy_19_3(EmyWork* work);
 void task_emy_21_0(Emy21Work* work, void* obj);
+u8 task_emy_21_1(Emy21Work* work);
 void task_emy_21_2(EmyWork* work);
 void task_emy_21_3(EmyWork* work);
 void task_emy_22_0(Emy22Work* work, void* obj);
+u8 task_emy_22_1(Emy22Work* work);
 void task_emy_22_2(EmyWork* work);
 void task_emy_22_3(EmyWork* work);
 void task_emy_23_0(EmyWork* work, void* obj);
@@ -567,6 +631,7 @@ u8 task_emy_27_1(EmyWork* work);
 void task_emy_27_2(EmyWork* work);
 void task_emy_27_3(EmyWork* work);
 void task_emy_28_0(EmyWork* work, void* obj);
+u8 task_emy_28_1(Emy28Work* work);
 void task_emy_28_2(EmyWork* work);
 void task_emy_28_3(EmyWork* work);
 void task_emy_29_0(Emy29Work* work, void* obj);
