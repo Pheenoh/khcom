@@ -10,6 +10,12 @@
 
 #define CARD_ID_MASK 0xFFF
 
+#ifdef VERSION_EU
+#define CARDWORK(off) ((off) + 4)
+#else
+#define CARDWORK(off) (off)
+#endif
+
 extern CardDef gCardDefs[];
 extern u16 gCardCollection[];
 extern u16 gCardCount;
