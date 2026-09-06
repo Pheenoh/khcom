@@ -1533,6 +1533,8 @@ typedef struct UnkStruct_080A3F5C {
     u8 unk_14A[0x02];
     u8 unk_14C;
     u8 unk_14D;
+    u8 unk_14E;
+    u8 unk_14F;
 } UnkStruct_080A3F5C;
 extern u16 gUnk_09033C98[];
 extern u16 gUnk_09033CA0[];
