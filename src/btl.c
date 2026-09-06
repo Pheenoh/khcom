@@ -619,6 +619,8 @@ void task_btl_sora_1(BtlSoraWork* work) {
     s32 t;
     s32 t2;
     s32 t3;
+    BtlTaskArgs args;
+    BtlSpawnArgs spawn;
 
     p = &work->unk_040;
 
@@ -1376,6 +1378,42 @@ void task_btl_sora_1(BtlSoraWork* work) {
         } else {
             work->unk_154++;
         }
+        break;
+    case 25:
+        if ((s16)work->unk_154 == 0) {
+            work->unk_15A |= 4;
+            func_0801DEF4(work);
+            spawn.unk_02 = work->unk_172;
+            spawn.unk_00 = work->unk_162[0];
+            TaskCreate(&gBtlWork->unk_02C, *(TaskDesc**)&work->unk_18C, &spawn);
+            p->unk_04 = *(s32*)&p->unk_14[0];
+            p->unk_08 = *(s32*)&p->unk_14[4];
+            p->unk_0C = -65536;
+        }
+
+        work->unk_150 = 0;
+
+        if (p->unk_E4->unk_068 & 0x200000) {
+            work->unk_154++;
+            break;
+        }
+
+        work->unk_15A &= ~4;
+        func_0801DEB8(work);
+
+        if (*(s32*)&p->unk_14[0] > 65535) {
+            p->unk_04 = 139264;
+        } else {
+            p->unk_04 = -8192;
+        }
+
+        p->unk_0C = *(s32*)&p->unk_14[8] - 12800;
+        p->unk_E4->unk_068 |= 0x8000;
+        work->unk_150 = 0;
+        func_0801DDE4(work, 1, 1);
+        work->unk_038 = 26;
+        work->unk_156 = 0;
+        work->unk_154 = 0;
         break;
     case 26:
         if ((s16)work->unk_154 == 0) {
@@ -2188,6 +2226,61 @@ void task_btl_sora_1(BtlSoraWork* work) {
         } else {
             work->unk_154++;
         }
+        break;
+    case 31:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DD08(work);
+
+        switch ((s16)work->unk_154) {
+        case 0:
+            func_0801DDE4(work, 54, 0);
+
+            if (p->unk_34 & 4) {
+                func_08013748(p->unk_04 + 3072, p->unk_08, p->unk_0C - 4096, 1);
+            } else {
+                func_08013748(p->unk_04 - 3072, p->unk_08, p->unk_0C - 4096, 0);
+            }
+
+            m4aSongNumStart(520);
+            func_08006238(0, gBtlWork->unk_0B3, 8);
+            break;
+        case 25:
+            func_0801DDE4(work, 55, 0);
+            break;
+        case 37:
+            args.unk_14 = work->unk_172;
+            args.unk_1C = work->unk_162[0];
+            args.unk_04 = p->unk_08;
+            args.unk_08 = p->unk_0C - 8192;
+
+            if (p->unk_34 & 4) {
+                args.unk_12 = 1;
+                args.unk_00 = p->unk_04 - 8192;
+            } else {
+                args.unk_12 = 0;
+                args.unk_00 = p->unk_04 + 6144;
+            }
+
+            work->unk_188 = TaskCreate(&work->unk_024, &gTaskDescBtlRaid, &args);
+            m4aSongNumStart(182);
+            break;
+        case 67:
+            func_0801DDE4(work, 56, 0);
+            break;
+        }
+
+        if ((s16)work->unk_154 > 37 && IsTaskActiveNamed(work->unk_188, gTaskDescBtlRaid.name) == 0) {
+            work->unk_038 = 32;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        }
+
+        work->unk_154++;
         break;
     case 32:
         func_0801DD08(work);
