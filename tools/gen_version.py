@@ -42,6 +42,11 @@ TARGET_ANCHORS = {
         0x092EB78A: 0x093BAE12,
         0x09958124: 0x0994AFB0,
         0x09EE1538: 0x09F5C140,
+        0x0951B2B8: 0x09539B24,
+        0x090A4664: 0x09193560,
+        0x09EEB000: 0x09F77120,
+        0x09EEB008: 0x09F77128,
+        0x09EEB03C: 0x09F7715C,
         0x09035730: 0x090CEA44,
         0x096B2664: 0x09677C0C,
         0x09992F70: 0x099991EC,
@@ -61,16 +66,28 @@ TARGET_ANCHORS = {
 
 TARGET_ONLY_SYMBOLS = {
     "eu": {
-        "gModeLang": 0x09F3EA64,
         "gLanguage": 0x03007484,
+        "gModeLang": 0x09F3EA64,
         "gUnkEu_09F84FBC": 0x09F84FBC,
+        "gUnkEu_08890E1C": 0x08890E1C,
+        "gUnkEu_08890E44": 0x08890E44,
+        "gUnkEu_08891508": 0x08891508,
+        "gUnkEu_088927F4": 0x088927F4,
+        "gUnkEu_088928E4": 0x088928E4,
+        "gUnkEu_090CE9EA": 0x090CE9EA,
+        "gUnkEu_090D1DF4": 0x090D1DF4,
+        "gUnkEu_09F65FDC": 0x09F65FDC,
+        "gUnkEu_09F65FF0": 0x09F65FF0,
+        "gUnkEu_09F66004": 0x09F66004,
+        "gUnkEu_09F6FDB4": 0x09F6FDB4,
+        "gUnkEu_09F72BFC": 0x09F72BFC,
+        "gUnkEu_09F7434C": 0x09F7434C,
+        "gUnkEu_09F74360": 0x09F74360,
     },
 }
 
-TARGET_FILLER_LABELS = {
-    "eu": {
-        0x080DA80C: [(0x24, "eu_080DA830"), (0x54, "eu_080DA860")],
-    },
+TARGET_EXTRA_LABELS = {
+    "eu": [0x080059F4, 0x0805E968, 0x0805E9AC, 0x080DA830, 0x080DA860],
 }
 
 TARGET_FUNC_SIZE = {
@@ -78,16 +95,26 @@ TARGET_FUNC_SIZE = {
         "func_08066588": 156,
     },
     "eu": {
+        "func_08088EB4": 136,
         "func_0808CA78": 228,
         "func_0808CB60": 88,
         "func_0808CD48": 164,
+        "func_0808D73C": 180,
+        "func_0808D7EC": 76,
         "func_0808DB50": 468,
         "func_0808E3E0": 152,
         "func_0808E474": 276,
         "func_0808E890": 92,
         "func_0808E8E8": 80,
         "func_0808E934": 220,
+        "func_0809B76C": 252,
+        "func_0809B920": 252,
+        "func_080A5C60": 76,
         "func_080B4154": 192,
+        "func_080ED250": 208,
+        "func_080EEB00": 352,
+        "func_080F7AB4": 52,
+        "func_08100608": 56,
     },
 }
 
@@ -124,6 +151,14 @@ DATA = """.syntax unified
 .syntax divided
 """
 
+PART = """{align}	.global {name}
+	.thumb
+	.thumb_func
+	.type {name}, %function
+{name}:
+	.incbin "roms/{code}.gba", {off:#x}, {size:#x}
+"""
+
 EMPTY = """.syntax unified
 	.text
 \t.global {name}
@@ -133,23 +168,6 @@ EMPTY = """.syntax unified
 {name}:
 .syntax divided
 """
-
-
-def filler_with_labels(name, code, at, size, extra):
-    out = [".syntax unified", "\t.text"]
-    if at % 4 == 0:
-        out.append("\t.align 2, 0")
-    pos = 0
-    for off, nm in [(0, name)] + [(o, n) for o, n in extra]:
-        if off > pos:
-            out.append(f'\t.incbin "roms/{code}.gba", {at - ROM_BASE + pos:#x}, {off - pos:#x}')
-            pos = off
-        out += [f"\t.global {nm}", "\t.thumb", "\t.thumb_func",
-                f"\t.type {nm}, %function", f"{nm}:"]
-    if size > pos:
-        out.append(f'\t.incbin "roms/{code}.gba", {at - ROM_BASE + pos:#x}, {size - pos:#x}')
-    out.append(".syntax divided")
-    return "\n".join(out) + "\n"
 
 
 def mask(b):
@@ -452,12 +470,17 @@ def main():
                     (d / f"{name}.s").write_text(EMPTY.format(name=name))
                 else:
                     filled.add(at)
-                    extra = sorted(TARGET_FILLER_LABELS.get(ver, {}).get(at, []))
+                    cuts = ([at]
+                            + [x for x in TARGET_EXTRA_LABELS.get(ver, [])
+                               if at < x < at + gap[0]]
+                            + [at + gap[0]])
+                    body = "".join(
+                        PART.format(name=name if lo == at else f"{ver}_{lo:08X}",
+                                    code=code, off=lo - ROM_BASE, size=hi - lo,
+                                    align="\t.align 2, 0\n" if lo % 4 == 0 else "")
+                        for lo, hi in zip(cuts, cuts[1:]) if hi > lo)
                     (d / f"{name}.s").write_text(
-                        filler_with_labels(name, code, at, gap[0], extra) if extra
-                        else THUMB.format(name=name, code=code, off=at - ROM_BASE,
-                                          size=gap[0],
-                                          align="\t.align 2, 0\n" if at % 4 == 0 else ""))
+                        ".syntax unified\n\t.text\n" + body + ".syntax divided\n")
                 kept.add(d / f"{name}.s")
                 wrote += 1
                 continue
@@ -493,19 +516,20 @@ def main():
     Path(f"asm/{ver}").mkdir(parents=True, exist_ok=True)
 
     fillers = []
+    extra_labels = TARGET_EXTRA_LABELS.get(ver, [])
     slack = 0
     for at, (size, kind, a, b, clean) in sorted(gaps.items()):
         unit = owner.get(a[0], "?").rsplit("/", 1)[-1][:-2]
         if kind == "boundary":
             nm = f"{ver}_{at:08X}.s"
-            extra = sorted(TARGET_FILLER_LABELS.get(ver, {}).get(at, []))
-            if extra:
-                Path(f"asm/{ver}/{nm}").write_text(
-                    filler_with_labels(nm[:-2], code, at, size, extra))
-            else:
-                Path(f"asm/{ver}/{nm}").write_text(
-                    THUMB.format(name=nm[:-2], code=code, off=at - ROM_BASE, size=size,
-                                 align="\t.align 2, 0\n" if at % 4 == 0 else ""))
+            cuts = [at] + [x for x in extra_labels if at < x < at + size] + [at + size]
+            body = "".join(
+                PART.format(name=f"{ver}_{lo:08X}", code=code, off=lo - ROM_BASE,
+                            size=hi - lo,
+                            align="\t.align 2, 0\n" if lo % 4 == 0 else "")
+                for lo, hi in zip(cuts, cuts[1:]) if hi > lo)
+            Path(f"asm/{ver}/{nm}").write_text(
+                ".syntax unified\n\t.text\n" + body + ".syntax divided\n")
             fillers.append((at, nm))
             print(f"  filler {nm}: {size:#x} bytes after {a[0]} ({unit})")
         elif at in filled:

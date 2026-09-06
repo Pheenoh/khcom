@@ -1,6 +1,9 @@
 #include "macros.h"
 #include "mode_worldinspect.h"
 #include "gba/keys.h"
+#ifdef VERSION_EU
+extern void* eu_0805E924(void* strings);
+#endif
 
 s16 gUnk_02035118;
 u8 gUnk_0203511A;
@@ -170,27 +173,27 @@ void func_0810057C(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16
     }
 }
 
-#ifndef VERSION_EU
 u8 func_08100608(s16 a) {
     if (a <= 0) {
         return 0;
     }
-    return func_08065B6C(gUnk_09EF9488[a].unk_14, gUnk_02035618);
-}
+#ifdef VERSION_EU
+    return func_08065B6C(eu_0805E924(gUnk_09EF9488[a].unk_14), gUnk_02035618);
 #else
-INCLUDE_ASM("mode_worldinspect/func_08100608.s");
+    return func_08065B6C(gUnk_09EF9488[a].unk_14, gUnk_02035618);
 #endif
+}
 
-#ifndef VERSION_EU
 u8 func_0810063C(s16 a) {
     if (a <= 0) {
         return 0;
     }
-    return func_08065B6C(gUnk_09EF9488[a].unk_14, gUnk_020356E0);
-}
+#ifdef VERSION_EU
+    return func_08065B6C(eu_0805E924(gUnk_09EF9488[a].unk_14), gUnk_020356E0);
 #else
-INCLUDE_ASM("mode_worldinspect/func_0810063C.s");
+    return func_08065B6C(gUnk_09EF9488[a].unk_14, gUnk_020356E0);
 #endif
+}
 
 void func_08100670(s16 a, u8* b, void* c) {
     RequestDma3Copy(b + a * 256, c, 0x100);

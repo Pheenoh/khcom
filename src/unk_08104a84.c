@@ -3,8 +3,12 @@
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
+extern void* eu_0805E924(void* strings);
 extern u32 gLanguage;
 extern void* gUnkEu_09F84FBC[];
+#define LANGSTR(x) (((void**)(x))[gLanguage])
+#else
+#define LANGSTR(x) (x)
 #endif
 
 MsCard* gUnk_02035C10;
@@ -170,7 +174,6 @@ void func_08104BBC(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_08104D18(void) {
     MsCard* card;
     u8* p;
@@ -200,9 +203,13 @@ void func_08104D18(void) {
         gUnk_02035D98 = gUnk_08F709B0[card->unk_04].unk_00;
         gUnk_02035DD8 = card->unk_2E;
         p = &gUnk_02035DE0;
+#ifdef VERSION_EU
+        *p = func_08065B6C(eu_0805E924(gCardDefs[defIdx].unk_0C), gUnk_02035DDC);
+#else
         *p = func_08065B6C(gCardDefs[defIdx].unk_0C, gUnk_02035DDC);
+#endif
         q = &gUnk_02035DE8;
-        *q = func_08065B6C(gUnk_09EE8F48[card->unk_00], gUnk_02035DE4);
+        *q = func_08065B6C(LANGSTR(gUnk_09EE8F48[card->unk_00]), gUnk_02035DE4);
         LoadObjPaletteBank(gUnk_02035C44[3], gUnk_09A3DE7C + card->unk_04 * 0x20);
     } else {
         gUnk_02035D84 = 0;
@@ -215,9 +222,6 @@ void func_08104D18(void) {
         gUnk_02035DE8 = 0;
     }
 }
-#else
-INCLUDE_ASM("unk_08104a84/func_08104D18.s");
-#endif
 
 s16 func_08104E9C(s16 a, s16 b) {
     return b + a * 5;

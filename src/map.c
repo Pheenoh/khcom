@@ -1,5 +1,12 @@
 #include "macros.h"
 #include "map.h"
+#ifdef VERSION_EU
+extern void* eu_0805E924(void* strings);
+extern void* gUnkEu_088927F4[];
+extern void* gUnkEu_088928E4[];
+extern void* gUnkEu_08890E1C[];
+extern void* gUnkEu_08890E44[];
+#endif
 
 UnkStruct_080DFB8C* gUnk_02034F1C;
 UnkStruct_02034F20* gUnk_02034F20;
@@ -7849,7 +7856,6 @@ void func_080ED14C(FldRes* p, u8 a, u32 v) {
         q++;
     }
 }
-#ifndef VERSION_EU
 void func_080ED250(u8* work) {
     u8* p1;
     u8* p2;
@@ -7861,6 +7867,17 @@ void func_080ED250(u8* work) {
     func_080062F4(15, 1);
     SetBgScroll(0, 0, 0);
     *(void**)&work[0x17C] = _08066468(1);
+#ifdef VERSION_EU
+    p1 = &work[0x180];
+    func_08065ACC(p1, 66);
+    p2 = &work[0x394];
+    func_08065ACC(p2, 6);
+    p3 = &work[0x3C8];
+    func_08065ACC(p3, 9);
+    work[0x390] = func_08065B6C(eu_0805E924(gUnkEu_088927F4), p1);
+    work[0x3C4] = func_08065B6C(eu_0805E924(gUnkEu_08890E1C), p2);
+    work[0x410] = func_08065B6C(eu_0805E924(gUnkEu_08890E44), p3);
+#else
     p1 = &work[0x180];
     func_08065ACC(p1, 33);
     p2 = &work[0x28C];
@@ -7870,10 +7887,8 @@ void func_080ED250(u8* work) {
     work[0x288] = func_08065B6C(gUnk_0815A03A, p1);
     work[0x2BC] = func_08065B6C(gUnk_08159E10, p2);
     work[0x308] = func_08065B6C(gUnk_08159E18, p3);
-}
-#else
-INCLUDE_ASM("map/func_080ED250.s");
 #endif
+}
 void func_080ED314(u8* work) {
     func_080062F4(15, 0);
     DisableBg(0);
@@ -8602,7 +8617,6 @@ s32 func_080EE824(MapSaveWork* w) {
 INCLUDE_ASM("map/func_080EE824.s");
 #endif
 
-#ifndef VERSION_EU
 s32 func_080EEB00(MapSaveWork* w) {
     if (GetKeysRepeat() & 0x20) {
         if (w->unk_2F4 != 1) {
@@ -8646,7 +8660,11 @@ s32 func_080EEB00(MapSaveWork* w) {
             }
         }
 
+#ifdef VERSION_EU
+        w->unk_26C = func_08065B6C(eu_0805E924(gUnkEu_088928E4), w->unk_194);
+#else
         w->unk_26C = func_08065B6C(gUnk_0815B5A6, w->unk_194);
+#endif
         w->unk_2A0 = 0;
         w->unk_2EC = 0;
         w->unk_2F4 = 0;
@@ -8655,9 +8673,6 @@ s32 func_080EEB00(MapSaveWork* w) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("map/func_080EEB00.s");
-#endif
 
 s32 func_080EEC5C(MapSaveWork* w) {
     if (GetKeysPressed() & 3) {
@@ -14154,16 +14169,19 @@ void func_080F7A9C(u8* work) {
     ReleaseObjPalette(*(u8**)&work[0]);
 }
 
-#ifndef VERSION_EU
 void* func_080F7AB4(void) {
+#ifdef VERSION_EU
+    if (gGameState.flags & 8) {
+        return eu_0805E924(gUnk_09EF7000[(s8)gGameState.floor]);
+    }
+    return eu_0805E924(gUnk_09EF6FCC[(s8)gGameState.floor]);
+#else
     if (gGameState.flags & 8) {
         return gUnk_09EF7000[(s8)gGameState.floor];
     }
     return gUnk_09EF6FCC[(s8)gGameState.floor];
-}
-#else
-INCLUDE_ASM("map/func_080F7AB4.s");
 #endif
+}
 
 void func_080F7AE0(MapFloorWork* w) {
     gUnk_02039BA0->unk_70 |= 0x1000;
