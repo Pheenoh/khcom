@@ -4,6 +4,10 @@
 ChkEffWork* gChkEffWork;
 #ifdef VERSION_EU
 u32 gUnkEu_020348C4;
+extern void eu_080059D4(s32 bg, void* tiles);
+extern void eu_080059F4(s32 bg, void* map);
+extern u8 gUnkEu_08F6A73C[];
+extern u8 gUnkEu_08F79038[];
 #endif
 #include "gba/keys.h"
 
@@ -17,7 +21,6 @@ const char gUnk_08130A30[4] = "num";
 const char gUnk_08130A34[4] = "pic";
 const char gUnk_08130A38[8] = "frame";
 
-#ifndef VERSION_EU
 void mode_chkeff_0(void) {
     gChkEffWork = EwramAlloc(sizeof(ChkEffWork));
     SetBgMode1();
@@ -28,9 +31,15 @@ void mode_chkeff_0(void) {
     SetBgPriority(2, 0);
     SetBgPriority(0, 1);
     SetBgPriority(1, 2);
+#ifdef VERSION_EU
+    eu_080059D4(1, gUnkEu_08F6A73C);
+    eu_080059F4(1, gUnkEu_08F79038);
+    LoadBgPalette(1, gUnk_08F683C4, 0x20);
+#else
     LoadBgTiles(1, gUnk_08C6B0C4, 0x7C20);
     LoadBgPalette(1, gUnk_08F683C4, 0x20);
     LoadBgMap(1, gUnk_08EEE384, 0x800);
+#endif
     func_080062F4(8, 1);
     func_080062F4(9, 1);
     func_080062F4(10, 1);
@@ -52,9 +61,6 @@ void mode_chkeff_0(void) {
     gChkEffWork->alphaB = 16;
     func_08006778(gUnk_09ED9A1C[0], 0x78, 0x50);
 }
-#else
-INCLUDE_ASM("mode_chkeff/mode_chkeff_0.s");
-#endif
 
 void mode_chkeff_1(void) {
     ChkEffWork** wp;
