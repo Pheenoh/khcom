@@ -2082,11 +2082,13 @@ void task_bos_ursula_bubble_0(UrsulaBubbleWork* work) {
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_0.s");
 #endif
 
-#ifndef VERSION_EU
 u8 task_bos_ursula_bubble_1(UrsulaBubbleWork* work) {
     s32 i;
 
     TaskPoolUpdate(&work->unk_004);
+#ifdef VERSION_EU
+    AnimUpdate(&work->unkEu_044);
+#endif
 
     for (i = 0; i < work->unk_040; i++) {
         if (IsTaskActive(work->unk_018[i]) != 0) {
@@ -2100,9 +2102,6 @@ u8 task_bos_ursula_bubble_1(UrsulaBubbleWork* work) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("bos4/task_bos_ursula_bubble_1.s");
-#endif
 
 void task_bos_ursula_bubble_2(UrsulaBubbleWork* work) {
     TaskPoolDraw(&work->unk_004);
@@ -2234,16 +2233,14 @@ void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work) {
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_2.s");
 #endif
 
-#ifndef VERSION_EU
 void task_bos_ursula_bubble_single_3(UrsulaBubbleSingleWork* work) {
     func_0801B7D8(&work->unk_024);
+#ifndef VERSION_EU
     ReleaseObjTiles((void*)work->tiles);
+#endif
     ReleaseObjPalette((void*)work->unk_004);
     ReleaseObjPalette((void*)work->unk_008);
 }
-#else
-INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_3.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080DDD30(UrsulaBubbleSingleWork* work) {

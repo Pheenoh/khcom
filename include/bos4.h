@@ -338,8 +338,10 @@ typedef struct UrsulaBubbleSingleWork {
     void* tiles;
     void* unk_004;
     void* unk_008;
+#ifndef VERSION_EU
     u32 anim;
     u8 unk_010[0x14];
+#endif
     u32 unk_024;
     u32 unk_028;
     u32 unk_02C;
@@ -446,6 +448,9 @@ typedef struct UrsulaBubbleWork {
     void* unk_018[10];
     u16 unk_040;
     u8 unk_042[0x2];
+#ifdef VERSION_EU
+    AnimState unkEu_044;
+#endif
 } UrsulaBubbleWork;
 
 typedef struct UrsulaTakoWork {
