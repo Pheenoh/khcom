@@ -2339,7 +2339,26 @@ s8 func_080B3958(void) {
     return 1;
 }
 
-INCLUDE_ASM("mode_sio/func_080B397C.s");
+void func_080B397C(void) {
+    s16 n;
+    u32 off;
+    u16 nameId;
+    CardDef* defs;
+    CardDef* def;
+
+    n = gUnk_0203AB20[gSioChgCardWork->unk_076];
+    defs = gCardDefs;
+    def = &defs[n];
+    off = def->unk_2A << 5;
+    LoadPalette(gUnk_096FBF84 + off, (void*)0x050000A0, 32);
+    LoadObjPaletteBank(((ObjPalSlot*)gSioChgCardWork->unk_054)->unk_06, gUnk_096FBF04 + off);
+    nameId = def->unk_1C;
+    defs = (CardDef*)((u8*)defs + 12);
+    gSioChgCardWork->unk_361 = func_08065B6C(defs[n].unk_00, gSioChgCardWork->unk_364);
+    gSioChgCardWork->unk_20D = func_08065B6C(gUnk_09EE8F48[nameId], gSioChgCardWork->unk_210);
+    EnableBg(0);
+    gSioChgCardWork->unk_360 = 1;
+}
 
 void func_080B3A48(void) {
     DisableBg(0);
