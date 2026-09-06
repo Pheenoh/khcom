@@ -1311,6 +1311,32 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154++;
         }
         break;
+    case 74:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DD08(work);
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, 1, 0);
+            work->unk_156 = 16;
+            func_08006184(6, 1);
+        }
+
+        ApproachValue((s32*)&work->unk_19C, 10, work->unk_156);
+        ApproachValue((s32*)&work->unk_1A0, 512, work->unk_156);
+
+        if ((s16)--work->unk_156 > 0) {
+            work->unk_154++;
+        } else {
+            work->unk_038 = 75;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            m4aSongNumStart(668);
+        }
+        break;
     case 75:
         if ((s16)work->unk_154 == 0) {
             e = func_0801E6DC(work);
@@ -1860,6 +1886,21 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154++;
         }
         break;
+    case 45:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DDC4(work);
+        func_0801DDE4(work, 64, 0);
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            work->unk_038 = 46;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        }
+        break;
     case 46:
         func_0801DDC4(work);
 
@@ -1984,6 +2025,21 @@ void task_btl_sora_1(BtlSoraWork* work) {
             func_0801E4E4(work, 3);
         } else {
             work->unk_154++;
+        }
+        break;
+    case 64:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DDC4(work);
+        func_0801DDE4(work, 64, 0);
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            work->unk_038 = 65;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
         }
         break;
     case 65:
@@ -2120,6 +2176,34 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154 = 0;
         } else {
             work->unk_154 = uv + 1;
+        }
+        break;
+    case 39:
+        if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
+            func_0801DD08(work);
+            break;
+        }
+
+        func_0801DDC4(work);
+
+        switch ((s16)work->unk_154) {
+        case 0:
+            func_08006238(0, gBtlWork->unk_0B3, 8);
+            m4aSongNumStart(172);
+            func_0801DDE4(work, 60, 0);
+            break;
+        case 15:
+            func_08013748(p->unk_04, p->unk_08, p->unk_0C - 17920, 0);
+            m4aSongNumStart(520);
+            break;
+        }
+
+        if (AnimIsFinished(&work->anim) != 0) {
+            work->unk_038 = 40;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+        } else {
+            work->unk_154++;
         }
         break;
     case 40:
