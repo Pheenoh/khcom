@@ -129,7 +129,7 @@ static s32 func_081149A8(s32 x) {
 }
 
 void func_081149B0(SrollBCharWork* w, s32 v) {
-    *w->unk_04 = v;
+    *(s32*)w->unk_04 = v;
 }
 
 void func_081149B8(SrollBCharWork* w) {
@@ -161,7 +161,55 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a) {
     TaskPoolInit(&w->unk_2C, 4);
 }
 
-INCLUDE_ASM("sroll/task_sroll_b_char_1.s");
+s32 task_sroll_b_char_1(SrollBCharWork* w) {
+    SrollBCrtnArg a;
+
+    if (w->unk_08->unk_14 & 1) {
+        func_081149B8(w);
+    }
+
+    if ((w->unk_08->unk_16 & 4) == 0) {
+        func_080062F4((w->palette->unk_06 & 15) + 16, 0);
+    } else {
+        func_080062F4((w->palette->unk_06 & 15) + 16, 1);
+    }
+
+    AnimUpdate(&w->anim);
+    TaskPoolUpdate(&w->unk_2C);
+
+    switch (w->unk_00) {
+    case 1:
+        w->unk_08->unk_04 -= 128;
+        w->unk_08->unk_08 += 128;
+        break;
+    case 2:
+        w->unk_08->unk_0C = gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8;
+        w->unk_04++;
+        break;
+    case 3:
+        if ((w->unk_04 & 3) == 0) {
+            a.unk_00 = 2;
+            a.unk_04 = w->unk_08->unk_04;
+            a.unk_08 = w->unk_08->unk_08;
+            TaskCreate(&w->unk_2C, gTaskDescSrollBCrtn, &a);
+        }
+
+        w->unk_08->unk_0C = (gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8) >> 2;
+        w->unk_04++;
+        break;
+    case 4:
+        w->unk_08->unk_04 += 128;
+        w->unk_08->unk_08 -= 128;
+        break;
+    case 5:
+        w->unk_08->unk_04 += (gUnk_09A542CC[(w->unk_04 >> 2) & 15] << 8) >> 2;
+        w->unk_04++;
+        break;
+    }
+
+    return 1;
+}
+
 void task_sroll_b_char_2(SrollBCharWork* w) {
     SrollBCharSub* sub;
     void* gfx;
@@ -478,7 +526,31 @@ u8 task_sroll_tmr_1(SrollTmrWork* w) {
     return r;
 }
 
-INCLUDE_ASM("sroll/task_sroll_tmr_2.s");
+void task_sroll_tmr_2(SrollTmrWork* w) {
+    s32 t;
+    u16 h;
+    u16 m;
+    u16 s;
+    u16 z;
+
+    if (w->unk_00 == 0) {
+        return;
+    }
+
+    t = w->unk_04;
+    h = t / 3600;
+    m = t / 60 % 60;
+    s = t % 60;
+    z = 0;
+    DrawSprite(8, 8, gUnk_09EFBAE8[h / 10 % 10], w->tiles, w->palette, z, z, z);
+    DrawSprite(16, 8, gUnk_09EFBAE8[h % 10], w->tiles, w->palette, z, z, z);
+    DrawSprite(24, 8, gUnk_09EFBAE8[10], w->tiles, w->palette, z, z, z);
+    DrawSprite(32, 8, gUnk_09EFBAE8[m / 10], w->tiles, w->palette, z, z, z);
+    DrawSprite(40, 8, gUnk_09EFBAE8[m % 10], w->tiles, w->palette, z, z, z);
+    DrawSprite(48, 8, gUnk_09EFBAE8[10], w->tiles, w->palette, z, z, z);
+    DrawSprite(56, 8, gUnk_09EFBAE8[s / 10], w->tiles, w->palette, z, z, z);
+    DrawSprite(64, 8, gUnk_09EFBAE8[s % 10], w->tiles, w->palette, z, z, z);
+}
 void task_sroll_tmr_3(SrollTmrWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette((u8*)w->palette);
@@ -1216,8 +1288,85 @@ void func_081162E8(SrollWork* w) {
     p[0] = t + 6;
     p[w->unk_14 - 1] = t + 8;
 }
-INCLUDE_ASM("sroll/func_081163CC.s");
-INCLUDE_ASM("sroll/func_08116500.s");
+void func_081163CC(SrollWork* w) {
+    u16 a;
+    u16 b;
+    u16 c;
+    u16 d;
+    u16* p;
+    u16* q;
+    u16 i;
+    u16 t;
+
+    p = (u16*)((u8*)sub_08116B10(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
+    t = w->unk_2E + 1;
+    q = &a;
+    a = t + 2;
+    CpuSet(q, p + 2, (((u32)(w->unk_14 - 3) << 11) >> 11) | CPU_SET_SRC_FIXED);
+    p[1] = t + 1;
+    p[w->unk_14 - 1] = t + 3;
+    p += w->unk_0A;
+
+    for (i = 1; i < w->unk_16 - 2; i++) {
+        b = t;
+        CpuSet(&b, p + 2, (((u32)(w->unk_14 - 3) << 11) >> 11) | CPU_SET_SRC_FIXED);
+        p[1] = t + 4;
+        p[w->unk_14 - 1] = t + 5;
+        p += w->unk_0A;
+    }
+
+    c = t;
+    CpuSet(&c, p + 2, ((((u32)(w->unk_14 - 3) << 1) >> 1) & 0x1FFFFF) | CPU_SET_SRC_FIXED);
+    p[0] = t + 10;
+    p[1] = t + 11;
+    p[w->unk_14 - 1] = t + 5;
+    p += w->unk_0A;
+
+    d = t + 7;
+    CpuSet(&d, p + 2, ((((u32)(w->unk_14 - 3) << 1) >> 1) & 0x1FFFFF) | CPU_SET_SRC_FIXED);
+    p[1] = t + 6;
+    p[w->unk_14 - 1] = t + 8;
+}
+
+void func_08116500(SrollWork* w) {
+    u16 a;
+    u16 b;
+    u16 c;
+    u16 d;
+    u16* p;
+    u16* q;
+    u16 i;
+    u16 t;
+
+    p = (u16*)((u8*)sub_08116B10(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
+    t = w->unk_2E + 1;
+    q = &a;
+    a = t + 2;
+    CpuSet(q, p + 1, (((u32)(w->unk_14 - 3) << 11) >> 11) | CPU_SET_SRC_FIXED);
+    p[0] = t + 1;
+    p[w->unk_14 - 2] = t + 3;
+    p += w->unk_0A;
+
+    for (i = 1; i < w->unk_16 - 2; i++) {
+        b = t;
+        CpuSet(&b, p + 1, (((u32)(w->unk_14 - 3) << 11) >> 11) | CPU_SET_SRC_FIXED);
+        p[0] = t + 4;
+        p[w->unk_14 - 2] = t + 5;
+        p += w->unk_0A;
+    }
+
+    c = t;
+    CpuSet(&c, p + 1, ((((u32)(w->unk_14 - 3) << 1) >> 1) & 0x1FFFFF) | CPU_SET_SRC_FIXED);
+    p[0] = t + 4;
+    p[w->unk_14 - 2] = (t | 0x400) + 11;
+    p[w->unk_14 - 1] = (t | 0x400) + 10;
+    p += w->unk_0A;
+
+    d = t + 7;
+    CpuSet(&d, p + 1, ((((u32)(w->unk_14 - 3) << 1) >> 1) & 0x1FFFFF) | CPU_SET_SRC_FIXED);
+    p[0] = t + 6;
+    p[w->unk_14 - 2] = t + 8;
+}
 void func_08116644(SrollWork* w) {
     u16 fill;
     u16* p;
