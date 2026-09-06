@@ -944,7 +944,423 @@ void* func_08063678(s32 a) {
 #else
 INCLUDE_ASM("msg/func_08063678.s");
 #endif
+#ifndef VERSION_EU
+#ifndef VERSION_JP
+void func_08063744(s32 x, s32 y, u16* s, u8 slot, u8 a) {
+#else
+void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
+#endif
+    u16 g;
+    u16 lo;
+    u8 kind;
+    u8 i;
+    u8 j;
+
+    g = 0;
+    i = 0;
+    j = 0;
+
+    if (slot > 23) {
+        return;
+    }
+
+    if (gUnk_02034A80 == NULL) {
+        return;
+    }
+
+    gUnk_02034A80[slot].unk_00 = x;
+    gUnk_02034A80[slot].unk_04 = y;
+    gUnk_02034A80[slot].unk_51 = 1;
+    gUnk_02034A80[slot].unk_52 = 1;
+    gUnk_02034A80[slot].unk_53 = i;
+    gUnk_02034A80[slot].unk_54 = a;
+
+    while (*s != 0) {
+        u16 v;
+
+        v = *(u16*)s;
+        v = (v >> 8) | (v << 8);
+        s += 2;
+
+        switch (v & 0xFF00) {
+        case 0x8100:
+            v &= 0xFF;
+
+            switch (v) {
+            case 0x40:
+                g = 0;
+                break;
+            case 0x41:
+                g = 0xF5;
+                break;
+            case 0x42:
+                g = 0xF6;
+                break;
+            case 0x45:
+                g = 0xF9;
+                break;
+            case 0x48:
+                g = 0xF1;
+                break;
+            case 0x49:
+                g = 0xF0;
+                break;
+            case 0x5B:
+                g = 0xFD;
+                break;
+            case 0x5C:
+                g = 0xFC;
+                break;
+            case 0x60:
+                g = 0xFE;
+                break;
+            case 0x63:
+                g = 0xFB;
+                break;
+            case 0x75:
+                g = 0xE8;
+                break;
+            case 0x76:
+                g = 0xE9;
+                break;
+            case 0x77:
+                g = 0xEA;
+                break;
+            case 0x78:
+                g = 0xEB;
+                break;
+            case 0x69:
+                g = 0xEC;
+                break;
+            case 0x6A:
+                g = 0xED;
+                break;
+            case 0xA8:
+                g = 0xE7;
+                break;
+            case 0xA9:
+                g = 0xE6;
+                break;
+            }
+            kind = 0;
+            break;
+        case 0x8200:
+            lo = v & 0xFF;
+
+            if (lo >= 0x60 && lo <= 0x79) {
+                g = v + 0x7DAB;
+            }
+
+            if (lo >= 0x81 && lo <= 0x9A) {
+                g = v + 0x7DA4;
+            }
+
+            if (lo >= 0x4F && lo <= 0x58) {
+                g = v + 0x7DB2;
+            }
+
+            if (lo >= 0x9F && lo <= 0xF1) {
+                g = v + 0x7DA0;
+            }
+            kind = 0;
+            break;
+        case 0x8300:
+            lo = v & 0xFF;
+
+            if (lo >= 0x40 && lo <= 0x7E) {
+                g = v + 0x7D52;
+            }
+
+            if (lo >= 0x80 && lo <= 0x94) {
+                g = v + 0x7D51;
+            }
+            kind = 0;
+            break;
+        case 0x8800:
+            v &= 0xFF;
+
+            if (v == 0xC5) {
+                g = 9;
+            }
+            kind = 1;
+            break;
+        case 0x8900:
+            switch (v & 0xFF) {
+            case 0x9C:
+                g = 4;
+                break;
+            case 0xA4:
+                g = 0x31;
+                break;
+            case 0xAF:
+                g = 0x1A;
+                break;
+            case 0xBD:
+                g = 0x2F;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x8A00:
+            switch (v & 0xFF) {
+            case 0x4F:
+                g = 8;
+                break;
+            case 0x6D:
+                g = 0x11;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x8B00:
+            switch (v & 0xFF) {
+            case 0x41:
+                g = 0x1E;
+                break;
+            case 0x43:
+                g = 0x26;
+                break;
+            case 0x4C:
+                g = 0x19;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x8C00:
+            switch (v & 0xFF) {
+            case 0x4E:
+                g = 6;
+                break;
+            case 0x78:
+                g = 0x16;
+                break;
+            case 0xF5:
+                g = 0x0B;
+                break;
+            case 0xAB:
+                g = 0x37;
+                break;
+            case 0xA9:
+                g = 0x0C;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x8D00:
+            switch (v & 0xFF) {
+            case 0x73:
+                g = 0x1F;
+                break;
+            case 0x90:
+                g = 0x17;
+                break;
+            case 0xDF:
+                g = 0x2E;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x8E00:
+            switch (v & 0xFF) {
+            case 0xB8:
+                g = 0x0D;
+                break;
+            case 0x76:
+                g = 0x1C;
+                break;
+            case 0x84:
+                g = 0x2C;
+                break;
+            case 0x9E:
+                g = 0x1B;
+                break;
+            case 0xA1:
+                g = 0x36;
+                break;
+            case 0xA9:
+                g = 0x0F;
+                break;
+            case 0xD2:
+                g = 0x15;
+                break;
+            case 0xD7:
+                g = 0x12;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x8F00:
+            switch (v & 0xFF) {
+            case 0x6F:
+                g = 0x1D;
+                break;
+            case 0x8A:
+                g = 0x21;
+                break;
+            case 0x97:
+                g = 0x30;
+                break;
+            case 0xEA:
+                g = 0x20;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x9000:
+            switch (v & 0xFF) {
+            case 0x53:
+                g = 3;
+                break;
+            case 0xD8:
+                g = 1;
+                break;
+            case 0x6C:
+                g = 0x2B;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x9100:
+            switch (v & 0xFF) {
+            case 0xDE:
+                g = 0x35;
+                break;
+            case 0xE5:
+                g = 0;
+                break;
+            case 0x7A:
+                g = 2;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x9200:
+            switch (v & 0xFF) {
+            case 0x40:
+                g = 0x27;
+                break;
+            case 0x42:
+                g = 0x23;
+                break;
+            case 0x4E:
+                g = 0x28;
+                break;
+            case 0x6D:
+                g = 0x0E;
+                break;
+            case 0x86:
+                g = 0x0A;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x9300:
+            v &= 0xFF;
+
+            if (v == 0x90) {
+                g = 45;
+            }
+            kind = 1;
+            break;
+        case 0x9400:
+            switch (v & 0xFF) {
+            case 0xDE:
+                g = 0x29;
+                break;
+            case 0xC6:
+                g = 0x2A;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x9500:
+            switch (v & 0xFF) {
+            case 0x7C:
+                g = 0x25;
+                break;
+            case 0xAA:
+                g = 0x10;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x9600:
+            switch (v & 0xFF) {
+            case 0x59:
+                g = 5;
+                break;
+            case 0x6C:
+                g = 0x24;
+                break;
+            case 0x82:
+                g = 0x13;
+                break;
+            case 0xBD:
+                g = 0x33;
+                break;
+            case 0xB0:
+                g = 0x18;
+                break;
+            }
+            kind = 1;
+            break;
+        case 0x9700:
+            switch (v & 0xFF) {
+            case 0x45:
+                g = 0x14;
+                break;
+            case 0x46:
+                g = 0x22;
+                break;
+            case 0x6C:
+                g = 0x32;
+                break;
+            case 0x88:
+                g = 0x38;
+                break;
+            case 0xDF:
+                g = 0x34;
+                break;
+            case 0xE1:
+                g = 7;
+                break;
+            }
+            kind = 1;
+            break;
+        default:
+            g = 0;
+            kind = 0;
+            break;
+        }
+
+        if (gUnk_02034A80[slot].unk_08[j] != 0) {
+            ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
+        }
+        g = ((u16*)gUnk_09EEB204[g])[3];
+
+        switch (kind) {
+        case 0:
+            gUnk_02034A80[slot].unk_08[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[g * 32], 128);
+            break;
+        case 1:
+            gUnk_02034A80[slot].unk_08[j] = (u32)LoadObjTiles(&gUnk_090B3FBE[g * 32], 128);
+            break;
+        }
+        j++;
+        i++;
+    }
+
+    for (j = i; j < 16; j++) {
+        if (gUnk_02034A80[slot].unk_08[j] != 0) {
+            ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
+            gUnk_02034A80[slot].unk_08[j] = 0;
+        }
+    }
+    gUnk_02034A80[slot].unk_50 = i;
+}
+#else
 INCLUDE_ASM("msg/func_08063744.s");
+#endif
 #ifndef VERSION_EU
 void func_08063EE4(s32 a, s32 b, u8 v, u8 d, u8 e) {
     u8 buf[4];
@@ -1252,7 +1668,169 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
 #else
 INCLUDE_ASM("msg/func_080643D4.s");
 #endif
+#ifdef NON_MATCHING
+void func_08064624(void) {
+    u8 n;
+    u8 k;
+    u8 tx;
+    u8 ty;
+    u8 sx;
+    u8 sy;
+    u8 y;
+    u8 yy;
+    s32 glyph;
+    s32 h;
+    s32 pal;
+    u8* dst;
+    u8* screen;
+    u16* src;
+
+    for (n = 0; n < 10; n++) {
+        if (gUnk_02034A8C[n].unk_25 != 1) {
+            continue;
+        }
+        gUnk_02034A8C[n].unk_25 = 0;
+
+        for (k = 0; k < gUnk_02034A8C[n].unk_22; k++) {
+            glyph = gUnk_02034A8C[n].unk_02[k];
+            pal = gUnk_02034A8C[n].unk_26;
+            h = gUnk_02034A8C[n].unk_23;
+
+            if (h > 8) {
+                tx = (k * 12 + gUnk_02034A8C[n].unk_00) >> 3;
+                ty = gUnk_02034A8C[n].unk_01 >> 3;
+                sx = k * 12 + gUnk_02034A8C[n].unk_00 - tx * 8;
+                sy = gUnk_02034A8C[n].unk_01 - ty * 8;
+                dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].unk_24) + (tx + 1) * 32 + ty * 1024;
+                screen = GetBgScreenBase(gUnk_02034A8C[n].unk_24);
+                src = (u16*)&gUnk_090AB5B2[((u16*)gUnk_09EEB204[glyph])[3] * 32];
+
+                for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
+                    u32 cur;
+                    u32 pix;
+
+                    if (glyph == 0xFFFF) {
+                        cur = 0;
+                        pix = 0;
+                    } else {
+                        cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024);
+                        pix = src[(yy & 15) + (yy >> 4) * 32] |
+                              (src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
+                    }
+                    *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
+
+                    if (sx != 0) {
+                        *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = pix >> (32 - sx * 4);
+                    }
+                }
+
+                *(u16*)(screen + ty * 64 + tx * 2) = (tx + 1 + ty * 32) | (pal << 12);
+                *(u16*)(screen + (ty + 1) * 64 + tx * 2) = (tx + 1 + (ty + 1) * 32) | (pal << 12);
+
+                if (sy != 0) {
+                    *(u16*)(screen + (ty + 2) * 64 + tx * 2) = (tx + 1 + (ty + 2) * 32) | (pal << 12);
+                }
+
+                if (sx != 0) {
+                    *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tx + 2 + ty * 32) | (pal << 12);
+                    *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 1) * 32) | (pal << 12);
+
+                    if (sy != 0) {
+                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 2) * 32) | (pal << 12);
+                    }
+                }
+
+                for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
+                    u32 cur;
+                    u32 pix;
+
+                    if (glyph == 0xFFFF) {
+                        cur = 0;
+                        pix = 0;
+                    } else {
+                        cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32);
+                        pix = src[(yy & 15) + (yy >> 4) * 32 + 16] |
+                              (src[(yy & 15) + (yy >> 4) * 32 + 17] << 16);
+                    }
+                    *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = cur | (pix << (sx * 4));
+
+                    if (sy != 0) {
+                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 2) * 32) | (pal << 12);
+                    }
+
+                    if (sx != 0) {
+                        *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 64) = pix >> (32 - sx * 4);
+                        *(u16*)(screen + ty * 64 + tx * 2 + 4) = (tx + 3 + ty * 32) | (pal << 12);
+                        *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 4) = (tx + 3 + (ty + 1) * 32) | (pal << 12);
+
+                        if (sy != 0) {
+                            *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 4) = (tx + 3 + (ty + 2) * 32) | (pal << 12);
+                        }
+                    }
+                }
+
+                *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tx + 2 + ty * 32) | (pal << 12);
+                *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 1) * 32) | (pal << 12);
+
+                if (sx != 0) {
+                    *(u16*)(screen + ty * 64 + tx * 2 + 4) = (tx + 3 + ty * 32) | (pal << 12);
+                    *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 4) = (tx + 3 + (ty + 1) * 32) | (pal << 12);
+
+                    if (sy != 0) {
+                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 4) = (tx + 3 + (ty + 2) * 32) | (pal << 12);
+                    }
+                }
+            } else {
+                tx = (k * 8 + gUnk_02034A8C[n].unk_00) >> 3;
+                ty = gUnk_02034A8C[n].unk_01 >> 3;
+                sx = k * 8 + gUnk_02034A8C[n].unk_00 - tx * 8;
+                sy = gUnk_02034A8C[n].unk_01 - ty * 8;
+                dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].unk_24) + (tx + 1) * 32 + ty * 1024;
+                screen = GetBgScreenBase(gUnk_02034A8C[n].unk_24);
+                src = (u16*)&gUnk_090AA506[((u16*)gUnk_09EEB188[glyph])[3] * 32];
+
+                for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
+                    u32 cur;
+                    u32 pix;
+
+                    if (glyph == 0xFFFF) {
+                        cur = 0;
+                        pix = 0;
+                    } else {
+                        cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024);
+                        pix = src[(yy & 15) + (yy >> 4) * 32] |
+                              (src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
+                    }
+                    *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
+
+                    if (sx != 0) {
+                        *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = pix >> (32 - sx * 4);
+                    }
+                }
+
+                *(u16*)(screen + ty * 64 + tx * 2) = (tx + 1 + ty * 32) | (pal << 12);
+                *(u16*)(screen + (ty + 1) * 64 + tx * 2) = (tx + 1 + (ty + 1) * 32) | (pal << 12);
+
+                if (sy != 0) {
+                    *(u16*)(screen + (ty + 2) * 64 + tx * 2) = (tx + 1 + (ty + 2) * 32) | (pal << 12);
+                }
+
+                if (sx != 0) {
+                    *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tx + 2 + ty * 32) | (pal << 12);
+                    *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 1) * 32) | (pal << 12);
+
+                    if (sy != 0) {
+                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 2) * 32) | (pal << 12);
+                    }
+                }
+            }
+        }
+    }
+    gUnk_02034A91 = 0;
+}
+#else
 INCLUDE_ASM("msg/func_08064624.s");
+#endif
 #ifndef VERSION_EU
 void func_08064B68(void) {
     EwramFree(gUnk_02034A8C);
@@ -1602,7 +2180,226 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
 INCLUDE_ASM("msg/func_08064EF4.s");
 INCLUDE_ASM("msg/func_08065170.s");
 #endif
+#ifndef VERSION_EU
+u8 func_080653D4(s32 x, s32 y, u8* s) {
+    u16 w;
+    u8 t;
+    s32 cx;
+    s32 cy;
+    s32 px;
+
+    w = 0;
+    t = 0;
+    cx = 0;
+    cy = 0;
+    px = 0;
+
+    if (gUnk_02034A84 == NULL) {
+        return 0;
+    }
+
+    gUnk_02034A90 = 0;
+
+    while (*s != 0) {
+        u16 v;
+
+        w = 0;
+        gUnk_02034A84[gUnk_02034A90].unk_00 = x + cx;
+        do {
+            gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
+        } while (0);
+        gUnk_02034A84[gUnk_02034A90].unk_15 = 1;
+
+        if (*(u16*)s == 0x6E6E) {
+            cx = 0;
+            cy += 0xC00;
+            s += 2;
+        } else {
+            v = *(u16*)s;
+            v = (v / 256) | (v << 8);
+            s += 2;
+
+            if ((v & 0xFF00) == 0x8100) {
+                switch (v & 0xFF) {
+                case 0x40:
+                    w = 0;
+                    t = 0;
+                    break;
+                case 0x41:
+                    w = 0xF5;
+                    t = 0;
+                    break;
+                case 0x42:
+                    w = 0xF6;
+                    t = 0;
+                    break;
+                case 0x44:
+                    w = 0xF7;
+                    t = 0;
+                    break;
+                case 0x45:
+                    w = 0xF9;
+                    t = 0;
+                    break;
+                case 0x48:
+                    w = 0xF1;
+                    t = 0;
+                    break;
+                case 0x49:
+                    w = 0xF0;
+                    t = 0;
+                    break;
+                case 0x58:
+                    w = 20;
+                    t = 2;
+                    break;
+                case 0x5B:
+                    w = 0xFD;
+                    t = 0;
+                    break;
+                case 0x5C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0x60:
+                    w = 0xFE;
+                    t = 0;
+                    break;
+                case 0x63:
+                    w = 0xFB;
+                    t = 0;
+                    break;
+                case 0x75:
+                    w = 0xE8;
+                    t = 0;
+                    break;
+                case 0x76:
+                    w = 0xE9;
+                    t = 0;
+                    break;
+                case 0x77:
+                    w = 0xEA;
+                    t = 0;
+                    break;
+                case 0x78:
+                    w = 0xEB;
+                    t = 0;
+                    break;
+                case 0x66:
+                    w = 0xFF;
+                    t = 0;
+                    break;
+                case 0x69:
+                    w = 0xEC;
+                    t = 0;
+                    break;
+                case 0x6A:
+                    w = 0xED;
+                    t = 0;
+                    break;
+                case 0xA8:
+                    w = 0xE7;
+                    t = 0;
+                    break;
+                case 0xA9:
+                    w = 0xE6;
+                    t = 0;
+                    break;
+                case 0x7B:
+                    w = 0xDF;
+                    t = 0;
+                    break;
+                case 0x7C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0xA6:
+                    w = 0xEE;
+                    t = 0;
+                    break;
+                case 0x81:
+                    w = 0xEF;
+                    t = 0;
+                    break;
+                case 0x93:
+                    w = 0xF2;
+                    t = 0;
+                    break;
+                case 0x96:
+                    w = 0xF4;
+                    t = 0;
+                    break;
+                case 0x5E:
+                    w = 0xF3;
+                    t = 0;
+                    break;
+                case 0x43:
+                    w = 0xF8;
+                    t = 0;
+                    break;
+                case 0x9A:
+                    w = 0x8E;
+                    t = 0;
+                    break;
+                }
+
+                if (gUnk_02034A90 != 0 &&
+                    (v == 0x8141 || v == 0x8142 || v > 0x8177 || v == 0x8144 ||
+                     (v == 0x8148 || v == 0x8149)) &&
+                    cx == 0 && cy > 0) {
+                    cx = px + 0xA00;
+                    cy -= 0xC00;
+                    gUnk_02034A84[gUnk_02034A90].unk_00 = x + cx;
+                    gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
+                }
+            } else {
+                func_08066E40(v, &w, &t);
+            }
+
+            if (gUnk_02034A84[gUnk_02034A90].unk_08 != NULL) {
+                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].unk_08);
+            }
+            px = cx;
+
+            if ((u16)(v - 0x8260) <= 58) {
+                cx += 0xA00;
+            } else {
+                cx += 0xA00;
+            }
+
+            if (cx > 0x8C00) {
+                cx = 0;
+                cy += 0xC00;
+            }
+
+            switch (t) {
+            case 0:
+                w = ((u16*)gUnk_09EEB204[w])[3];
+                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090AB5B2[w * 32], 128);
+                break;
+            case 1:
+                w = ((u16*)gUnk_09EEB608[w])[3];
+                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090B3FBE[w * 32], 128);
+                break;
+            case 2:
+                w = ((u16*)gUnk_09EEBA0C[w])[3];
+                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090BC9CA[w * 32], 128);
+                break;
+            case 3:
+                w = ((u16*)gUnk_09EEBE10[w])[3];
+                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090C51A6[w * 32], 128);
+                break;
+            }
+
+            gUnk_02034A90++;
+        }
+    }
+
+    return gUnk_02034A90;
+}
+#else
 INCLUDE_ASM("msg/func_080653D4.s");
+#endif
 
 void func_080658B8(u8 n) {
     u8 i;
@@ -1900,7 +2697,206 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
 INCLUDE_ASM("msg/func_08065B7C.s");
 #endif
 INCLUDE_ASM("msg/func_08065D10.s");
+#ifndef VERSION_EU
+#ifndef VERSION_JP
+s32 func_080660C0(u16* a, void** p) {
+#else
+s32 func_080660C0(u8* a, void** p) {
+#endif
+    u8 buf[2];
+    u16* c;
+    u16 w;
+    u8 t;
+    u8 n;
+
+    w = 0;
+    t = 0;
+    n = 0;
+
+    while (*a != 0) {
+        u16 v;
+
+        buf[0] = a[0];
+        buf[1] = a[1];
+        c = (u16*)buf;
+
+        if (*c == 0x6E6E) {
+            a += 2;
+
+            if (*p != 0) {
+                ReleaseObjTiles(*p);
+            }
+
+            *p++ = 0;
+        } else {
+            v = *c;
+            v = (v / 256) | (v << 8);
+            a += 2;
+
+            if ((v & 0xFF00) == 0x8100) {
+                v &= 0xFF;
+
+                switch (v) {
+                case 0x40:
+                    w = 0;
+                    t = 0;
+                    break;
+                case 0x41:
+                    w = 0xF5;
+                    t = 0;
+                    break;
+                case 0x42:
+                    w = 0xF6;
+                    t = 0;
+                    break;
+                case 0x45:
+                    w = 0xF9;
+                    t = 0;
+                    break;
+                case 0x46:
+                    w = 0xFA;
+                    t = 0;
+                    break;
+                case 0x48:
+                    w = 0xF1;
+                    t = 0;
+                    break;
+                case 0x49:
+                    w = 0xF0;
+                    t = 0;
+                    break;
+                case 0x58:
+                    w = 20;
+                    t = 2;
+                    break;
+                case 0x5B:
+                    w = 0xFD;
+                    t = 0;
+                    break;
+                case 0x5C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0x60:
+                    w = 0xFE;
+                    t = 0;
+                    break;
+                case 0x63:
+                    w = 0xFB;
+                    t = 0;
+                    break;
+                case 0x75:
+                    w = 0xE8;
+                    t = 0;
+                    break;
+                case 0x76:
+                    w = 0xE9;
+                    t = 0;
+                    break;
+                case 0x77:
+                    w = 0xEA;
+                    t = 0;
+                    break;
+                case 0x78:
+                    w = 0xEB;
+                    t = 0;
+                    break;
+                case 0x66:
+                    w = 0xFF;
+                    t = 0;
+                    break;
+                case 0x69:
+                    w = 0xEC;
+                    t = 0;
+                    break;
+                case 0x6A:
+                    w = 0xED;
+                    t = 0;
+                    break;
+                case 0xA8:
+                    w = 0xE7;
+                    t = 0;
+                    break;
+                case 0xA9:
+                    w = 0xE6;
+                    t = 0;
+                    break;
+                case 0x7B:
+                    w = 0xDF;
+                    t = 0;
+                    break;
+                case 0x7C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0xA6:
+                    w = 0xEE;
+                    t = 0;
+                    break;
+                case 0x81:
+                    w = 0xEF;
+                    t = 0;
+                    break;
+                case 0x93:
+                    w = 0xF2;
+                    t = 0;
+                    break;
+                case 0x96:
+                    w = 0xF4;
+                    t = 0;
+                    break;
+                case 0x5E:
+                    w = 0xF3;
+                    t = 0;
+                    break;
+                case 0x43:
+                    w = 0xF8;
+                    t = 0;
+                    break;
+                case 0x9A:
+                    w = 0x8E;
+                    t = 0;
+                    break;
+                }
+            } else {
+                func_08066E40(v, &w, &t);
+            }
+
+            if (*p != 0) {
+                ReleaseObjTiles(*p);
+                *p = 0;
+            }
+
+            switch (t) {
+            case 0:
+                w = ((u16*)gUnk_09EEB204[w])[3];
+                *p = LoadObjTiles(&gUnk_090AB5B2[w * 32], 128);
+                break;
+            case 1:
+                w = ((u16*)gUnk_09EEB608[w])[3];
+                *p = LoadObjTiles(&gUnk_090B3FBE[w * 32], 128);
+                break;
+            case 2:
+                w = ((u16*)gUnk_09EEBA0C[w])[3];
+                *p = LoadObjTiles(&gUnk_090BC9CA[w * 32], 128);
+                break;
+            case 3:
+                w = ((u16*)gUnk_09EEBE10[w])[3];
+                *p = LoadObjTiles(&gUnk_090C51A6[w * 32], 128);
+                break;
+            }
+
+            p++;
+        }
+
+        n++;
+    }
+
+    return n;
+}
+#else
 INCLUDE_ASM("msg/func_080660C0.s");
+#endif
 void* _08066468(s32 a) {
     void* r = NULL;
 
@@ -2437,7 +3433,246 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
 #else
 INCLUDE_ASM("msg/func_0806BB44.s");
 #endif
+#ifndef VERSION_EU
+u8 func_0806BDB8(s32 x, s32 y, u8* s, u8** d) {
+    u16 w;
+    u8 t;
+    s32 cx;
+    s32 cy;
+    s32 px;
+
+    w = 0;
+    t = 0;
+    cx = 0;
+    cy = 0;
+    px = 0;
+
+    if (gUnk_02034A88 == NULL) {
+        return 0;
+    }
+
+    gUnk_02034A90 = 0;
+
+    if (*s == 0) {
+        goto done;
+    }
+
+loop:
+    {
+        u16 v;
+
+        w = 0;
+        gUnk_02034A88[gUnk_02034A90].unk_00 = x + cx;
+        gUnk_02034A88[gUnk_02034A90].unk_04 = y + cy;
+        gUnk_02034A88[gUnk_02034A90].unk_15 = 1;
+        gUnk_02034A88[gUnk_02034A90].unk_14 = 0;
+
+        if (*(u16*)s == 0x6E6E) {
+            cx = 0;
+            cy += 0xC00;
+            s += 2;
+        } else {
+            v = *(u16*)s;
+            v = (v / 256) | (v << 8);
+            s += 2;
+
+            if ((v & 0xFF00) == 0x8100) {
+                switch (v & 0xFF) {
+                case 0x40:
+                    w = 0;
+                    t = 0;
+                    break;
+                case 0x41:
+                    w = 0xF5;
+                    t = 0;
+                    break;
+                case 0x42:
+                    w = 0xF6;
+                    t = 0;
+                    break;
+                case 0x44:
+                    w = 0xF7;
+                    t = 0;
+                    break;
+                case 0x45:
+                    w = 0xF9;
+                    t = 0;
+                    break;
+                case 0x48:
+                    w = 0xF1;
+                    t = 0;
+                    break;
+                case 0x49:
+                    w = 0xF0;
+                    t = 0;
+                    break;
+                case 0x58:
+                    w = 20;
+                    t = 2;
+                    break;
+                case 0x5B:
+                    w = 0xFD;
+                    t = 0;
+                    break;
+                case 0x5C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0x60:
+                    w = 0xFE;
+                    t = 0;
+                    break;
+                case 0x63:
+                    w = 0xFB;
+                    t = 0;
+                    break;
+                case 0x75:
+                    w = 0xE8;
+                    t = 0;
+                    break;
+                case 0x76:
+                    w = 0xE9;
+                    t = 0;
+                    break;
+                case 0x77:
+                    w = 0xEA;
+                    t = 0;
+                    break;
+                case 0x78:
+                    w = 0xEB;
+                    t = 0;
+                    break;
+                case 0x66:
+                    w = 0xFF;
+                    t = 0;
+                    break;
+                case 0x69:
+                    w = 0xEC;
+                    t = 0;
+                    break;
+                case 0x6A:
+                    w = 0xED;
+                    t = 0;
+                    break;
+                case 0xA8:
+                    w = 0xE7;
+                    t = 0;
+                    break;
+                case 0xA9:
+                    w = 0xE6;
+                    t = 0;
+                    break;
+                case 0x7B:
+                    w = 0xDF;
+                    t = 0;
+                    break;
+                case 0x7C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0xA6:
+                    w = 0xEE;
+                    t = 0;
+                    break;
+                case 0x81:
+                    w = 0xEF;
+                    t = 0;
+                    break;
+                case 0x93:
+                    w = 0xF2;
+                    t = 0;
+                    break;
+                case 0x96:
+                    w = 0xF4;
+                    t = 0;
+                    break;
+                case 0x5E:
+                    w = 0xF3;
+                    t = 0;
+                    break;
+                case 0x43:
+                    w = 0xF8;
+                    t = 0;
+                    break;
+                case 0x9A:
+                    w = 0x8E;
+                    t = 0;
+                    break;
+                }
+
+                if (gUnk_02034A90 != 0 &&
+                    (v == 0x8141 || v == 0x8142 || v > 0x8177 || v == 0x8144 ||
+                     (v == 0x8148 || v == 0x8149)) &&
+                    cx == 0 && cy > 0) {
+                    cx = px + 0xA00;
+                    cy -= 0xC00;
+                    gUnk_02034A88[gUnk_02034A90].unk_00 = x + cx;
+                    gUnk_02034A88[gUnk_02034A90].unk_04 = y + cy;
+                }
+            } else {
+                func_08066E40(v, &w, &t);
+            }
+
+            if (gUnk_02034A88[gUnk_02034A90].unk_08 != NULL) {
+                ReleaseObjTiles(gUnk_02034A88[gUnk_02034A90].unk_08);
+            }
+            px = cx;
+            cx += 0xA00;
+
+            if (cx > 0x8C00) {
+                cx = 0;
+                cy += 0xC00;
+            }
+
+            switch (t) {
+            case 0:
+                w = ((u16*)gUnk_09EEB204[w])[3];
+                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090AB5B2[w * 32], 128);
+                break;
+            case 1:
+                w = ((u16*)gUnk_09EEB608[w])[3];
+                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090B3FBE[w * 32], 128);
+                break;
+            case 2:
+                w = ((u16*)gUnk_09EEBA0C[w])[3];
+                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090BC9CA[w * 32], 128);
+                break;
+            case 3:
+                w = ((u16*)gUnk_09EEBE10[w])[3];
+                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090C51A6[w * 32], 128);
+                break;
+            }
+
+            gUnk_02034A90++;
+        }
+
+        if (cy > 0x1800) {
+            if (*s != 0) {
+                v = *(u16*)s;
+
+                if ((u16)((v / 256) | (v << 8)) == 0x8142) {
+                    *d = 0;
+                } else {
+                    *d = s;
+                    return gUnk_02034A90;
+                }
+            } else {
+                *d = 0;
+            }
+        }
+    }
+
+    if (*s != 0) {
+        goto loop;
+    }
+
+done:
+    *d = 0;
+    return gUnk_02034A90;
+}
+#else
 INCLUDE_ASM("msg/func_0806BDB8.s");
+#endif
 
 void func_0806C2C0(u8 n) {
     u8 i;
@@ -2713,7 +3948,197 @@ s32 func_0806C490(u8* a) {
 #else
 INCLUDE_ASM("msg/func_0806C490.s");
 #endif
+#ifndef VERSION_EU
+#ifndef VERSION_JP
+s32 func_0806C81C(u16* a, u16 b) {
+#else
+s32 func_0806C81C(u8* a, u16 b) {
+#endif
+    u8 buf[2];
+    u16* c;
+    u16 w;
+    u8 t;
+    u8* dst;
+    u8 n;
+
+    w = 0;
+    dst = (u8*)0x06014000 + b * 32;
+    t = 0;
+    n = 0;
+
+    while (*a != 0) {
+        u16 v;
+
+        buf[0] = a[0];
+        buf[1] = a[1];
+        c = (u16*)buf;
+
+        if (*c == 0x6E6E) {
+            a += 2;
+        } else {
+            v = *c;
+            v = (v / 256) | (v << 8);
+            a += 2;
+
+            if ((v & 0xFF00) == 0x8100) {
+                v &= 0xFF;
+
+                switch (v) {
+                case 0x40:
+                    w = 0;
+                    t = 0;
+                    break;
+                case 0x41:
+                    w = 0xF5;
+                    t = 0;
+                    break;
+                case 0x42:
+                    w = 0xF6;
+                    t = 0;
+                    break;
+                case 0x45:
+                    w = 0xF9;
+                    t = 0;
+                    break;
+                case 0x46:
+                    w = 0xFA;
+                    t = 0;
+                    break;
+                case 0x48:
+                    w = 0xF1;
+                    t = 0;
+                    break;
+                case 0x49:
+                    w = 0xF0;
+                    t = 0;
+                    break;
+                case 0x58:
+                    w = 20;
+                    t = 2;
+                    break;
+                case 0x5B:
+                    w = 0xFD;
+                    t = 0;
+                    break;
+                case 0x5C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0x60:
+                    w = 0xFE;
+                    t = 0;
+                    break;
+                case 0x63:
+                    w = 0xFB;
+                    t = 0;
+                    break;
+                case 0x75:
+                    w = 0xE8;
+                    t = 0;
+                    break;
+                case 0x76:
+                    w = 0xE9;
+                    t = 0;
+                    break;
+                case 0x77:
+                    w = 0xEA;
+                    t = 0;
+                    break;
+                case 0x78:
+                    w = 0xEB;
+                    t = 0;
+                    break;
+                case 0x66:
+                    w = 0xFF;
+                    t = 0;
+                    break;
+                case 0x69:
+                    w = 0xEC;
+                    t = 0;
+                    break;
+                case 0x6A:
+                    w = 0xED;
+                    t = 0;
+                    break;
+                case 0xA8:
+                    w = 0xE7;
+                    t = 0;
+                    break;
+                case 0xA9:
+                    w = 0xE6;
+                    t = 0;
+                    break;
+                case 0x7B:
+                    w = 0xDF;
+                    t = 0;
+                    break;
+                case 0x7C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0xA6:
+                    w = 0xEE;
+                    t = 0;
+                    break;
+                case 0x81:
+                    w = 0xEF;
+                    t = 0;
+                    break;
+                case 0x93:
+                    w = 0xF2;
+                    t = 0;
+                    break;
+                case 0x96:
+                    w = 0xF4;
+                    t = 0;
+                    break;
+                case 0x5E:
+                    w = 0xF3;
+                    t = 0;
+                    break;
+                case 0x43:
+                    w = 0xF8;
+                    t = 0;
+                    break;
+                case 0x9A:
+                    w = 0x8E;
+                    t = 0;
+                    break;
+                }
+            } else {
+                func_08066E40(v, &w, &t);
+            }
+
+            switch (t) {
+            case 0:
+                w = ((u16*)gUnk_09EEB204[w])[3];
+                CpuSet(&gUnk_090AB5B2[w * 32], dst, 0x40);
+                break;
+            case 1:
+                w = ((u16*)gUnk_09EEB608[w])[3];
+                CpuSet(&gUnk_090B3FBE[w * 32], dst, 0x40);
+                break;
+            case 2:
+                w = ((u16*)gUnk_09EEBA0C[w])[3];
+                CpuSet(&gUnk_090BC9CA[w * 32], dst, 0x40);
+                break;
+            case 3:
+                w = ((u16*)gUnk_09EEBE10[w])[3];
+                CpuSet(&gUnk_090C51A6[w * 32], dst, 0x40);
+                break;
+            }
+
+            dst += 128;
+        }
+
+        n++;
+    }
+
+    return n;
+}
+#else
 INCLUDE_ASM("msg/func_0806C81C.s");
+#endif
 INCLUDE_ASM("msg/func_0806CBAC.s");
 void func_0806CD30(s32 a) {
     switch (a) {

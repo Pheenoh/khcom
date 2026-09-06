@@ -558,6 +558,8 @@ extern u8 gUnk_096112B8[];
 extern void* gUnk_09EE4724[];
 extern void* gUnk_0813B09C[][4];
 extern u8 gUnk_08F69BE4[];
+extern void* gUnk_09EEB188[];
+extern u8 gUnk_090AA506[];
 extern u8 gUnk_090AB5B2[];
 extern u8 gUnk_090B3FBE[];
 extern u8 gUnk_090BC9CA[];
@@ -599,7 +601,11 @@ u16 func_080659BC(u8 v, TextSlot* out);
 void func_08065A30(void** p, u8 n);
 void func_08065A44(void** p, u8 n);
 u16 func_08065A70(u8 v, TextSlot* out);
-u16 func_080660C0(u8* s, TextSlot* p);
+#ifndef VERSION_JP
+s32 func_080660C0(u16* a, void** p);
+#else
+s32 func_080660C0(u8* a, void** p);
+#endif
 void _08073E6C(Work08073E34* p);
 void func_08073E74(Work08073E34* p);
 void view_2(void);
