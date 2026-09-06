@@ -1382,7 +1382,6 @@ void VTransFree(void) {
     IwramFree(gDma3Requests);
 }
 
-#ifndef VERSION_EU
 void VTransReset(void) {
     Dma3Queue* q = gDma3Requests;
 
@@ -1391,11 +1390,11 @@ void VTransReset(void) {
     q->unk_10A4 = 0;
     q->unk_10A6 = 0;
     q->count = 0;
+#ifdef VERSION_EU
+    q->unk_10AA = 0;
+#endif
     q->unk_10AC = 0;
 }
-#else
-INCLUDE_ASM("engine/VTransReset.s");
-#endif
 
 u8 RequestDma3Copy(void* src, void* dst, u16 size) {
     Dma3Queue* q;
@@ -1650,8 +1649,13 @@ void func_08004C20(u16 x, u16 y, BgEntry* e, void* dst, u8 sx, u8 sy, u8 w, u8 h
     func_0800448C(func_08004BD8(e, x2, y2), dst, 0, 0, sx2, sy2, w2, h2);
 }
 
-#ifndef VERSION_EU
 void BgReset(void) {
+#ifdef VERSION_EU
+    u32 zero;
+
+    zero = 0;
+    CpuSet(&zero, gBgEntries, 0x05000000 | (BG_ENTRY_COUNT * sizeof(BgEntry) / 4));
+#endif
     gBackdropColor = 0;
     DisableBg(0);
     DisableBg(1);
@@ -1660,11 +1664,7 @@ void BgReset(void) {
     SetBgMosaicSize(0, 0);
     gBldCnt = 0;
 }
-#else
-INCLUDE_ASM("engine/BgReset.s");
-#endif
 
-#ifndef VERSION_EU
 void SetBgMode0(void) {
     s32 i;
 
@@ -1684,16 +1684,13 @@ void SetBgMode0(void) {
 
     for (i = 0; i <= 3; i++) {
         u8* p = (u8*)gBgEntries;
-        s32 o = i * 16;
+        s32 o = i * sizeof(BgEntry);
         p += 4;
         p += o;
         *(void**)p = 0;
     }
 }
-#else
-INCLUDE_ASM("engine/SetBgMode0.s");
-#endif
-#ifndef VERSION_EU
+
 void SetBgMode1(void) {
     s32 i;
 
@@ -1710,16 +1707,13 @@ void SetBgMode1(void) {
 
     for (i = 0; i <= 3; i++) {
         u8* p = (u8*)gBgEntries;
-        s32 o = i * 16;
+        s32 o = i * sizeof(BgEntry);
         p += 4;
         p += o;
         *(void**)p = 0;
     }
 }
-#else
-INCLUDE_ASM("engine/SetBgMode1.s");
-#endif
-#ifndef VERSION_EU
+
 void SetBgMode2(void) {
     s32 i;
 
@@ -1733,15 +1727,13 @@ void SetBgMode2(void) {
 
     for (i = 0; i <= 3; i++) {
         u8* p = (u8*)gBgEntries;
-        s32 o = i * 16;
+        s32 o = i * sizeof(BgEntry);
         p += 4;
         p += o;
         *(void**)p = 0;
     }
 }
-#else
-INCLUDE_ASM("engine/SetBgMode2.s");
-#endif
+
 void SetBgMode3(void) {
     gDispCnt = (gDispCnt & 0xFFF8) | 3;
     SetBgScroll(2, 0, 0);
@@ -1812,7 +1804,6 @@ void* GetBgScreenBase(s32 bg) {
     return (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000);
 }
 
-#ifndef VERSION_EU
 void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
     u8* p;
     u8* q;
@@ -1827,7 +1818,7 @@ void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
 
     EnableBg(bg);
     p = (u8*)gBgEntries;
-    ofs = bg * 16;
+    ofs = bg * sizeof(BgEntry);
     q = p + 4;
     *(void**)(q + ofs) = src;
     p += ofs;
@@ -1838,11 +1829,7 @@ void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
     ((BgEntry*)((u8*)gBgEntries + ofs))->unk_0C = z;
     ((BgEntry*)((u8*)gBgEntries + ofs))->unk_00 = 1;
 }
-#else
-INCLUDE_ASM("engine/func_0800516C.s");
-#endif
 
-#ifndef VERSION_EU
 void func_080051C4(s32 bg, u16 x, u16 y) {
     BgEntry* e = &gBgEntries[bg];
 
@@ -1855,9 +1842,6 @@ void func_080051C4(s32 bg, u16 x, u16 y) {
     SetBgScroll(bg, x & 7, y & 7);
     e->unk_00 = 0;
 }
-#else
-INCLUDE_ASM("engine/func_080051C4.s");
-#endif
 #ifdef NON_MATCHING
 void func_08005244(s32 bg, u16 x, u16 y) {
     BgEntry* e;

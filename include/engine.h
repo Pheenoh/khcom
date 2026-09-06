@@ -35,11 +35,7 @@ typedef struct Dma3Request {
     u16 size;
 } Dma3Request;
 
-#ifdef VERSION_EU
-#define BG_ENTRY_COUNT 5
-#else
 #define BG_ENTRY_COUNT 4
-#endif
 
 typedef struct BgEntry {
     u8 unk_00;
@@ -50,6 +46,9 @@ typedef struct BgEntry {
     u16 unk_0A;
     u16 unk_0C;
     u16 unk_0E;
+#ifdef VERSION_EU
+    u8 unkEu_10[4];
+#endif
 } BgEntry;
 
 typedef struct Dma3Pending {
@@ -91,7 +90,7 @@ typedef struct Dma3Queue {
     vu16 unk_10A4;
     vu16 unk_10A6;
     vu16 count;
-    u16 unk_10AA;
+    vu16 unk_10AA;
     u32 unk_10AC;
 } Dma3Queue;
 void AnimStart(AnimState* a, u16 animId, u16 flags);

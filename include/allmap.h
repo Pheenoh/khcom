@@ -28,6 +28,9 @@ typedef struct AllmapRoomWork {
 
 typedef struct AllmapRoomnameWork {
     u8 unk_000[0xC8];
+#ifdef VERSION_EU
+    u8 unkEu_0C8[0x60];
+#endif
     void* palette;
     u8 unk_0CC;
     u8 unk_0CD;
