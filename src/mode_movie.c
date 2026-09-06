@@ -112,7 +112,7 @@ void mode_movie_1(void) {
 
         if (MovieStart(p)) {
             gUnk_02034958 |= 8;
-            func_08118344(func_0805E93C, 0);
+            MoviePlay(func_0805E93C, 0);
             gUnk_02034958 &= 0xFFF7u;
         }
 

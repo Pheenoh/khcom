@@ -5046,7 +5046,7 @@ SetSramFastFunc	0x081180e0	156	0x08116c00	global
 WriteAndVerifySramFast	0x0811817c	64	0x08116c9c	global
 MovieSetCallbacks	0x081181bc	48	0x08116cdc	global
 MovieStart	0x081181ec	344	0x08116d0c	global
-func_08118344	0x08118344	500	0x08116e64	global
+MoviePlay	0x08118344	500	0x08116e64	global
 MovieClose	0x08118538	44	0x08117058	global
 MovieUpdate	0x08118564	20	0x08117084	body
 MovieSetHeapCallbacks	0x08118578	56	0x08117098	global
@@ -5063,8 +5063,8 @@ func_081190C8	0x081190c8	200	0x08117be8	global
 func_08119190	0x08119190	148	0x08117cb0	global
 MovieAdvanceFrame	0x08119224	140	0x08117d44	global
 MovieGetAudioBlockSamples	0x081192b0	56	0x08117dd0	global
-func_081192E8	0x081192e8	408	0x08117e08	global
-func_08119480	0x08119480	140	0x08117fa0	global
+MovieDecodeAudioBlock	0x081192e8	408	0x08117e08	global
+MovieAdvanceAudioBlock	0x08119480	140	0x08117fa0	global
 func_0811950C	0x0811950c	328	0x0811802c	global
 MovieGetChannels	0x08119654	28	0x08118174	global
 MovieGetSampleRate	0x08119670	28	0x08118190	global

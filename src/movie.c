@@ -59,9 +59,9 @@ typedef struct MoviePlayer {
     u8 unk_8D;
 } MoviePlayer;
 
-MoviePlayer* gUnk_0203C7C4;
+MoviePlayer* gMoviePlayer;
 u8 gUnk_0203C7C8[8];
-MovieHeap gUnk_0203C7D0;
+MovieHeap gMovieHeap;
 
 
 void SndStreamInit(u32 rate, u32 channels);
@@ -74,7 +74,7 @@ void SndStreamUnlock(u32 ch);
 
 void MovieSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
 s32 MovieStart(void* a);
-void func_08118344(s32 (*a)(s32), s32 b);
+void MoviePlay(s32 (*a)(s32), s32 b);
 void MovieClose(void);
 void MovieUpdate(void);
 void MovieSetHeapCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
@@ -89,8 +89,8 @@ void func_08118F7C(MoviePlayer* a);
 s32 func_0811904C(MoviePlayer* a, void* dst);
 s32 MovieAdvanceFrame(MoviePlayer* a);
 u32 MovieGetAudioBlockSamples(MoviePlayer* a);
-void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2);
-s32 func_08119480(MoviePlayer* a);
+void MovieDecodeAudioBlock(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2);
+s32 MovieAdvanceAudioBlock(MoviePlayer* a);
 s32 func_0811950C(MoviePlayer* a);
 u32 MovieGetChannels(MoviePlayer* a);
 u32 MovieGetSampleRate(MoviePlayer* a);
@@ -113,34 +113,34 @@ s32 MovieStart(void* a) {
     s32 i;
     u32 channels;
 
-    gUnk_0203C7C4 = MovieOpen(a);
-    if (gUnk_0203C7C4 == 0) {
+    gMoviePlayer = MovieOpen(a);
+    if (gMoviePlayer == 0) {
         return 0;
     }
-    channels = MovieGetChannels(gUnk_0203C7C4);
+    channels = MovieGetChannels(gMoviePlayer);
     if (channels != 0) {
-        SndStreamInit(MovieGetSampleRate(gUnk_0203C7C4), channels);
+        SndStreamInit(MovieGetSampleRate(gMoviePlayer), channels);
 
         for (i = 0; i < 4; i++) {
             if (channels == 1) {
-                SndStreamLock(0, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
-                func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
+                SndStreamLock(0, MovieGetAudioBlockSamples(gMoviePlayer), &dstA1, &lenA1, &dstA2, &lenA2);
+                MovieDecodeAudioBlock(gMoviePlayer, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
-                func_08119480(gUnk_0203C7C4);
+                MovieAdvanceAudioBlock(gMoviePlayer);
             } else {
-                SndStreamLock(0, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
-                SndStreamLock(1, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
-                func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
+                SndStreamLock(0, MovieGetAudioBlockSamples(gMoviePlayer), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(1, MovieGetAudioBlockSamples(gMoviePlayer), &dstB1, &lenB1, &dstB2, &lenB2);
+                MovieDecodeAudioBlock(gMoviePlayer, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
                 SndStreamUnlock(1);
-                func_08119480(gUnk_0203C7C4);
+                MovieAdvanceAudioBlock(gMoviePlayer);
             }
         }
     }
     return 1;
 }
 
-void func_08118344(s32 (*a)(s32), s32 b) {
+void MoviePlay(s32 (*a)(s32), s32 b) {
     void* dstA1;
     void* dstA2;
     void* dstB1;
@@ -156,13 +156,13 @@ void func_08118344(s32 (*a)(s32), s32 b) {
     s32 x;
     s32 y;
 
-    MovieGetSize(gUnk_0203C7C4, &w, &h);
+    MovieGetSize(gMoviePlayer, &w, &h);
     x = (240 - w) >> 1;
     y = (160 - h) >> 1;
-    func_0811904C(gUnk_0203C7C4, (u16*)0x06000000 + (y * 240 + x));
-    MovieAdvanceFrame(gUnk_0203C7C4);
+    func_0811904C(gMoviePlayer, (u16*)0x06000000 + (y * 240 + x));
+    MovieAdvanceFrame(gMoviePlayer);
     SndStreamStart();
-    channels = MovieGetChannels(gUnk_0203C7C4);
+    channels = MovieGetChannels(gMoviePlayer);
     if (channels != 0) {
         ok = 1;
     } else {
@@ -170,31 +170,31 @@ void func_08118344(s32 (*a)(s32), s32 b) {
     }
 
     while (1) {
-        while (func_0811950C(gUnk_0203C7C4) == 0) {
+        while (func_0811950C(gMoviePlayer) == 0) {
         }
-        func_0811904C(gUnk_0203C7C4, (u16*)0x06000000 + (y * 240 + x));
+        func_0811904C(gMoviePlayer, (u16*)0x06000000 + (y * 240 + x));
 
-        if (MovieAdvanceFrame(gUnk_0203C7C4) == 0) {
+        if (MovieAdvanceFrame(gMoviePlayer) == 0) {
             break;
         }
 
         if (ok != 0) {
             if (channels == 1) {
-                SndStreamLock(0, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
-                func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
+                SndStreamLock(0, MovieGetAudioBlockSamples(gMoviePlayer), &dstA1, &lenA1, &dstA2, &lenA2);
+                MovieDecodeAudioBlock(gMoviePlayer, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
 
-                if (func_08119480(gUnk_0203C7C4) == 0) {
+                if (MovieAdvanceAudioBlock(gMoviePlayer) == 0) {
                     ok = 0;
                 }
             } else {
-                SndStreamLock(0, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstA1, &lenA1, &dstA2, &lenA2);
-                SndStreamLock(1, MovieGetAudioBlockSamples(gUnk_0203C7C4), &dstB1, &lenB1, &dstB2, &lenB2);
-                func_081192E8(gUnk_0203C7C4, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
+                SndStreamLock(0, MovieGetAudioBlockSamples(gMoviePlayer), &dstA1, &lenA1, &dstA2, &lenA2);
+                SndStreamLock(1, MovieGetAudioBlockSamples(gMoviePlayer), &dstB1, &lenB1, &dstB2, &lenB2);
+                MovieDecodeAudioBlock(gMoviePlayer, dstA1, lenA1, dstA2, lenA2, dstB1, lenB1, dstB2, lenB2);
                 SndStreamUnlock(0);
                 SndStreamUnlock(1);
 
-                if (func_08119480(gUnk_0203C7C4) == 0) {
+                if (MovieAdvanceAudioBlock(gMoviePlayer) == 0) {
                     ok = 0;
                 }
             }
@@ -207,10 +207,10 @@ void func_08118344(s32 (*a)(s32), s32 b) {
 }
 
 void MovieClose(void) {
-    if (MovieGetChannels(gUnk_0203C7C4)) {
+    if (MovieGetChannels(gMoviePlayer)) {
         SndStreamClose();
     }
-    MovieFree(gUnk_0203C7C4);
+    MovieFree(gMoviePlayer);
 }
 
 void MovieUpdate(void) {
@@ -219,15 +219,15 @@ void MovieUpdate(void) {
 }
 
 void MovieSetHeapCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
-    gUnk_0203C7D0.unk_00 = a;
-    gUnk_0203C7D0.unk_04 = b;
-    gUnk_0203C7D0.unk_08 = c;
-    gUnk_0203C7D0.unk_0C = d;
-    gUnk_0203C7D0.unk_10 = 0;
+    gMovieHeap.unk_00 = a;
+    gMovieHeap.unk_04 = b;
+    gMovieHeap.unk_08 = c;
+    gMovieHeap.unk_0C = d;
+    gMovieHeap.unk_10 = 0;
 }
 
 void MovieAdvanceTicks(void) {
-    gUnk_0203C7D0.unk_10 = gUnk_0203C7D0.unk_10 + MOVIE_TICKS_PER_FRAME;
+    gMovieHeap.unk_10 = gMovieHeap.unk_10 + MOVIE_TICKS_PER_FRAME;
 }
 
 u8* MovieGetTicks(void) {
@@ -237,9 +237,9 @@ u8* MovieGetTicks(void) {
     REG_IME = 0;
     vc = REG_VCNT;
     if (vc > 159) {
-        t = gUnk_0203C7D0.unk_10 + (vc - MOVIE_TICKS_PER_FRAME);
+        t = gMovieHeap.unk_10 + (vc - MOVIE_TICKS_PER_FRAME);
     } else {
-        t = gUnk_0203C7D0.unk_10 + vc;
+        t = gMovieHeap.unk_10 + vc;
     }
     REG_IME = 1;
     return t;
@@ -260,7 +260,7 @@ MoviePlayer* MovieOpen(void* a) {
     u16 v2;
     MoviePlayer* p;
 
-    p = gUnk_0203C7D0.unk_00(sizeof(MoviePlayer));
+    p = gMovieHeap.unk_00(sizeof(MoviePlayer));
     p->unk_0C = a;
     p->unk_8C = 0;
     p->unk_8D = 2;
@@ -298,12 +298,12 @@ MoviePlayer* MovieOpen(void* a) {
     q = (u32*)((u8*)q + n);
 
     if ((p->width & 7) != 0 || p->width > 288 || (p->height & 7) != 0) {
-        gUnk_0203C7D0.unk_08(p);
+        gMovieHeap.unk_08(p);
         return 0;
     }
     func_0811865C(p, &p->unk_7C, &p->unk_80, &p->unk_84, p->width, p->height);
-    p->unk_20 = gUnk_0203C7D0.unk_04(p->width * p->height * 2);
-    p->unk_24 = gUnk_0203C7D0.unk_04(p->width * p->height * 2);
+    p->unk_20 = gMovieHeap.unk_04(p->width * p->height * 2);
+    p->unk_24 = gMovieHeap.unk_04(p->width * p->height * 2);
 
     if (p->channels != 0) {
         p->unk_8D = 0;
@@ -321,10 +321,10 @@ MoviePlayer* MovieOpen(void* a) {
         p->unk_18 = (u8*)q;
         p->unk_1C = (u8*)q;
         q = (u32*)((u8*)q + n);
-        p->unk_28 = gUnk_0203C7D0.unk_04(0x2000);
+        p->unk_28 = gMovieHeap.unk_04(0x2000);
         func_08118ADC(p, &p->unk_88, p->unk_48);
     }
-    p->unk_5C = gUnk_0203C7D0.unk_00(v1 > v2 ? v1 : v2);
+    p->unk_5C = gMovieHeap.unk_00(v1 > v2 ? v1 : v2);
     p->frameIndex = 0;
     p->audioBlockIndex = 0;
     p->unk_6C = 0;
@@ -335,17 +335,17 @@ MoviePlayer* MovieOpen(void* a) {
 void MovieFree(MoviePlayer* a) {
     MoviePlayer* p = a;
 
-    gUnk_0203C7D0.unk_08(p->unk_00);
-    gUnk_0203C7D0.unk_08(p->unk_04);
-    gUnk_0203C7D0.unk_08(p->unk_08);
-    gUnk_0203C7D0.unk_0C(p->unk_20);
-    gUnk_0203C7D0.unk_0C(p->unk_24);
+    gMovieHeap.unk_08(p->unk_00);
+    gMovieHeap.unk_08(p->unk_04);
+    gMovieHeap.unk_08(p->unk_08);
+    gMovieHeap.unk_0C(p->unk_20);
+    gMovieHeap.unk_0C(p->unk_24);
 
     if (p->channels != 0) {
-        gUnk_0203C7D0.unk_0C(p->unk_28);
+        gMovieHeap.unk_0C(p->unk_28);
     }
-    gUnk_0203C7D0.unk_08(p->unk_5C);
-    gUnk_0203C7D0.unk_08(p);
+    gMovieHeap.unk_08(p->unk_5C);
+    gMovieHeap.unk_08(p);
 }
 
 void func_08118F7C(MoviePlayer* a) {
@@ -451,7 +451,7 @@ u32 MovieGetAudioBlockSamples(MoviePlayer* a) {
     }
 }
 
-void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2) {
+void MovieDecodeAudioBlock(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA2, void* dstB1, s32 lenB1, void* dstB2, s32 lenB2) {
     s32 n;
     void* q;
     MoviePlayer* p = a;
@@ -489,7 +489,7 @@ void func_081192E8(MoviePlayer* a, void* dstA1, s32 lenA1, void* dstA2, s32 lenA
     }
 }
 
-s32 func_08119480(MoviePlayer* a) {
+s32 MovieAdvanceAudioBlock(MoviePlayer* a) {
     MoviePlayer* p = a;
 
     p->audioBlockIndex++;
