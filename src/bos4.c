@@ -2,6 +2,10 @@
 #include "bos4.h"
 
 void* gUrsulaWork;
+#ifdef VERSION_EU
+extern void* eu_080DA860(void);
+#endif
+
 UrsulaMapanimeWork* gUrsulaMapanimeWork;
 #ifdef VERSION_EU
 u32 gUnkEu_02035104;
@@ -2107,13 +2111,12 @@ void task_bos_ursula_bubble_2(UrsulaBubbleWork* work) {
     TaskPoolDraw(&work->unk_004);
 }
 
-#ifndef VERSION_EU
 void task_bos_ursula_bubble_3(UrsulaBubbleWork* work) {
     TaskPoolDestroy(&work->unk_004);
-}
-#else
-INCLUDE_ASM("bos4/task_bos_ursula_bubble_3.s");
+#ifdef VERSION_EU
+    ReleaseObjTiles(*(void**)((u8*)gBtlWork + 0x118));
 #endif
+}
 
 void func_080DD9B0(UrsulaBubbleWork* work) {
     s32 i;
@@ -2216,7 +2219,6 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
 INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_1.s");
 #endif
 
-#ifndef VERSION_EU
 void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
     void* pal;
@@ -2227,11 +2229,12 @@ void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work) {
     v = func_0801AF1C(p->y);
     pal = func_0801CA00(p) != 0 ? work->unk_008 : work->unk_004;
     WorldToScreen(&x, &y, p->x, p->y, p->z);
-    DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, v, -0x1004 - (p->y >> 8) * 4);
-}
+#ifdef VERSION_EU
+    DrawSprite(x, y, eu_080DA860(), work->tiles, pal, 0, v, -0x1004 - (p->y >> 8) * 4);
 #else
-INCLUDE_ASM("bos4/task_bos_ursula_bubble_single_2.s");
+    DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, v, -0x1004 - (p->y >> 8) * 4);
 #endif
+}
 
 void task_bos_ursula_bubble_single_3(UrsulaBubbleSingleWork* work) {
     func_0801B7D8(&work->unk_024);
