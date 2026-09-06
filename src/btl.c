@@ -621,6 +621,12 @@ void task_btl_sora_1(BtlSoraWork* work) {
     s32 t3;
     s32 d;
     s32 t4;
+    s32 t5;
+    void** q;
+    s32 ofs;
+    u8* base;
+    UnkStruct_08021C8A* a;
+    u8 buf[5];
     BtlWork* e2;
     BtlTaskArgs args;
     BtlSpawnArgs spawn;
@@ -1438,6 +1444,220 @@ void task_btl_sora_1(BtlSoraWork* work) {
         } else {
             work->unk_154++;
         }
+        break;
+    case 16:
+        d = 0;
+        func_0801DD08(work);
+        memcpy(buf, gUnk_0813C294, 5);
+
+        if (p->unk_E4->unk_0F4 == 3) {
+            if ((work->unk_15A & 0x40) == 0) {
+                if (work->unk_161 == 2) {
+                    work->unk_161 = 1;
+                    work->unk_15A |= 0x40;
+                    q = (void**)&work->unk_164;
+                } else {
+                    ofs = work->unk_161 * 4;
+                    base = (u8*)&work->unk_164;
+                    q = (void**)(base + ofs);
+                }
+            } else {
+                ofs = work->unk_161 * 4;
+                base = (u8*)&work->unk_164;
+                q = (void**)(base + ofs);
+            }
+        } else if (p->unk_E4->unk_0F4 == 5) {
+            work->unk_161 = 2;
+            q = (void**)&work->unk_16C;
+        } else {
+            ofs = work->unk_161 * 4;
+            base = (u8*)&work->unk_164;
+            q = (void**)(base + ofs);
+        }
+
+        a = *q;
+
+        if (work->unk_161 != 0) {
+            if (a->unk_10 & 1) {
+                if ((p->unk_E4->unk_068 & 0x8000) == 0) {
+                    a = a->unk_14;
+                }
+            }
+        }
+
+        if ((s16)work->unk_154 == 0) {
+            func_0801DDE4(work, a->unk_00 + work->unk_190, 0);
+            m4aSongNumStart(a->unk_08);
+            work->unk_150 = a->unk_0C;
+
+            switch (p->unk_E4->unk_0F4) {
+            case 8:
+            case 34:
+            case 43:
+            case 44:
+            case 49:
+                p->unk_E4->unk_0F8--;
+                break;
+            }
+        } else if ((s16)work->unk_154 == buf[work->unk_190]) {
+            func_08019A30();
+
+            if (p->unk_E4->unk_0F4 == 34) {
+                switch (a->unk_00) {
+                case 22:
+                    if (p->unk_34 & 4) {
+                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_04 - 5120, p->unk_08,
+                                          p->unk_0C - 7168, 40, 16, 44);
+                    } else {
+                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_04 + 5120, p->unk_08,
+                                          p->unk_0C - 7168, 40, 16, 44);
+                    }
+                    break;
+                case 12:
+                    if (p->unk_34 & 4) {
+                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_04 - 8192, p->unk_08,
+                                          p->unk_0C, 28, 20, 32);
+                    } else {
+                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_04 + 8192, p->unk_08,
+                                          p->unk_0C, 28, 20, 32);
+                    }
+                    break;
+                default:
+                    if (p->unk_34 & 4) {
+                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_04 - 9216, p->unk_08,
+                                          p->unk_0C, 32, 12, 32);
+                    } else {
+                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_04 + 9216, p->unk_08,
+                                          p->unk_0C, 32, 12, 32);
+                    }
+                    break;
+                }
+            } else {
+                if (p->unk_E4->unk_0F4 == 49 && work->unk_161 == 2) {
+                    if (GetRandom() % 3 != 0) {
+                        t = 164;
+                    } else {
+                        func_08019190(p, 2);
+                        t = a->unk_04[work->unk_191[1]];
+                    }
+                } else {
+                    t = a->unk_04[work->unk_191[1]];
+                }
+
+                switch (a->unk_00) {
+                case 22:
+                    if (p->unk_34 & 4) {
+                        d = func_08011F78(t, p->unk_04 - 5120, p->unk_08, p->unk_0C - 7168, 28, 16, 44);
+                    } else {
+                        d = func_08011F78(t, p->unk_04 + 5120, p->unk_08, p->unk_0C - 7168, 28, 16, 44);
+                    }
+                    break;
+                case 12:
+                    if (p->unk_34 & 4) {
+                        d = func_08011F78(t, p->unk_04 - 8192, p->unk_08, p->unk_0C, 16, 20, 32);
+                    } else {
+                        d = func_08011F78(t, p->unk_04 + 8192, p->unk_08, p->unk_0C, 16, 20, 32);
+                    }
+                    break;
+                default:
+                    if (p->unk_34 & 4) {
+                        d = func_08011F78(t, p->unk_04 - 9216, p->unk_08, p->unk_0C, 20, 12, 32);
+                    } else {
+                        d = func_08011F78(t, p->unk_04 + 9216, p->unk_08, p->unk_0C, 20, 12, 32);
+                    }
+                    break;
+                }
+            }
+
+            if (d == 1) {
+                m4aSongNumStart(a->unk_0A);
+
+                if (a->unk_10 & 2) {
+                    if (p->unk_34 & 4) {
+                        func_08019050(8, 384, p->unk_04 - 5120, (p->unk_08 - 5120) + p->unk_0C);
+                    } else {
+                        func_08019050(8, 384, p->unk_04 + 5120, (p->unk_08 - 5120) + p->unk_0C);
+                    }
+                }
+
+                work->unk_15A |= 2;
+            } else {
+                work->unk_15A &= ~2;
+            }
+        } else if ((s16)work->unk_154 == buf[work->unk_190] + 2) {
+            if (a->unk_10 & 2) {
+                func_08019050(15, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+            }
+
+            if (work->unk_161 <= 1) {
+                if (work->unk_15A & 2) {
+                    p->unk_34 &= ~16;
+                }
+            }
+        }
+
+        if (d == 2) {
+            func_08019050(8, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+            func_0801E4E4(work, 33);
+            p->unk_34 |= 0x200;
+            break;
+        }
+
+        if (AnimIsFinished(&work->anim) != 0 && (p->unk_E4->unk_068 & 0x8000) == 0) {
+            func_0801E4E4(work, 1);
+            break;
+        }
+
+        if (AnimGetFrame(&work->anim) <= 2) {
+            e = p->unk_E4->unk_078;
+
+            if (e != 0) {
+                if (AnimGetFrame(&work->anim) > 1) {
+                    t = e->unk_004 - p->unk_04;
+                    t2 = e->unk_008 - p->unk_08;
+
+                    if (p->unk_34 & 4) {
+                        if (t > 0) {
+                            t = 0;
+                        }
+
+                        t4 = *(s32*)&p->unk_14[0] + t;
+                        t5 = -4096;
+                    } else {
+                        if (t < 0) {
+                            t = 0;
+                        }
+
+                        t4 = *(s32*)&p->unk_14[0] + t;
+                        t5 = 4096;
+                    }
+
+                    p->unk_04 += (t4 - (p->unk_04 + t5)) >> 3;
+
+                    p->unk_08 += ((*(s32*)&p->unk_14[4] + t2) - p->unk_08) >> 4;
+                }
+
+                if (a->unk_10 & 1) {
+                    t3 = (e->unk_00C - (e->unk_0A2 << 8)) - p->unk_0C;
+
+                    if (t3 < 0) {
+                        p->unk_E4->unk_068 |= 0x8000;
+                        p->unk_0C += ((*(s32*)&p->unk_14[8] + t3) - p->unk_0C) >> 3;
+                        work->unk_150 = 0;
+                    }
+                }
+            } else {
+                if (p->unk_34 & 4) {
+                    t4 = *(s32*)&p->unk_14[0] - 10240;
+                    p->unk_04 += (t4 - p->unk_04) >> 3;
+                } else {
+                    t4 = *(s32*)&p->unk_14[0] + 10240;
+                    p->unk_04 += (t4 - p->unk_04) >> 3;
+                }
+            }
+        }
+
+        work->unk_154++;
         break;
     case 68:
         func_0801DDC4(work);
