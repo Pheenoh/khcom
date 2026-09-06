@@ -23,6 +23,46 @@ extern u8 gUnkEu_09746CA4[];
 extern u8 gUnkEu_097483B4[];
 extern u8 gUnkEu_09747C04[];
 extern u8 gUnkEu_09747454[];
+extern u8 gUnkEu_09748BA6[];
+extern u8 gUnkEu_0974A284[];
+extern u8 gUnkEu_0974D47A[];
+extern u8 gUnkEu_0974C504[];
+extern u8 gUnkEu_0974B306[];
+extern u8 gUnkEu_0973F058[];
+extern u8 gUnkEu_09741E9A[];
+extern u8 gUnkEu_09742A74[];
+extern u8 gUnkEu_0974507E[];
+extern u8 gUnkEu_097445AC[];
+extern u8 gUnkEu_09743812[];
+extern u8 gUnkEu_09745B92[];
+extern u8 gUnkEu_09F81A04[];
+extern TaskDesc gUnkEu_09F80228;
+extern u8 gUnkEu_09750AF8[];
+extern u8 gUnkEu_09750EE4[];
+extern u8 gUnkEu_09751ADE[];
+extern u8 gUnkEu_097516F8[];
+extern u8 gUnkEu_097512CA[];
+extern void* gUnkEu_09F81C54[];
+extern void* gUnkEu_09F81C5C[];
+extern void* gUnkEu_09F81C74[];
+extern void* gUnkEu_09F81C6C[];
+extern void* gUnkEu_09F81C64[];
+extern u8 gUnkEu_0973F402[];
+extern u8 gUnkEu_0973FC6A[];
+extern u8 gUnkEu_097415E8[];
+extern u8 gUnkEu_09740D62[];
+extern u8 gUnkEu_09740536[];
+extern u8 gUnkEu_09F81A1C[];
+extern u8 gUnkEu_09F81A08[];
+extern u8 gUnkEu_09F81A34[];
+extern u8 gUnkEu_09F81A20[];
+extern u8 gUnkEu_09F81A7C[];
+extern u8 gUnkEu_09F81A68[];
+extern u8 gUnkEu_09F81A64[];
+extern u8 gUnkEu_09F81A50[];
+extern u8 gUnkEu_09F81A4C[];
+extern u8 gUnkEu_09F81A38[];
+extern u8 gUnkEu_0973EEFE[];
 #endif
 
 u8 gUnk_02034ED0;
@@ -111,11 +151,99 @@ u8 func_080D6574(void) {
     return gUnk_02034ECC;
 }
 
-#ifndef VERSION_EU
 void task_title_obj_0(TitleObjWork* work) {
     s32 t;
 
     t = (gGameState.flags & 0x200) ? 0x20 : 0;
+#ifdef VERSION_EU
+    work->unk_00[0].palette = LoadObjPalette(gUnk_0984A718, 0x20);
+    switch (gLanguage) {
+    case 0:
+        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09750AF8, 0x3C0);
+        work->unk_00[0].unk_08 = gUnkEu_09F81C54[0];
+        break;
+    case 1:
+        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09750EE4, 0x3C0);
+        work->unk_00[0].unk_08 = gUnkEu_09F81C5C[0];
+        break;
+    case 2:
+        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09751ADE, 0x400);
+        work->unk_00[0].unk_08 = gUnkEu_09F81C74[0];
+        break;
+    case 3:
+        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_097516F8, 0x3C0);
+        work->unk_00[0].unk_08 = gUnkEu_09F81C6C[0];
+        break;
+    case 4:
+        work->unk_00[0].tiles = LoadObjTiles(gUnkEu_097512CA, 0x400);
+        work->unk_00[0].unk_08 = gUnkEu_09F81C64[0];
+        break;
+    case 5:
+    case 6:
+        break;
+    }
+
+    if (gGameState.flags & 0x200) {
+        if (gLanguage == 4 || gLanguage == 2) {
+            work->unk_00[0].unk_10 = 0xB500;
+        } else {
+            work->unk_00[0].unk_10 = 0xBA00;
+        }
+        work->unk_00[0].unk_0C = 0x76;
+    } else {
+        work->unk_00[0].unk_10 = 0x3D00;
+        work->unk_00[0].unk_0C = 0x77;
+    }
+    switch (gLanguage) {
+    case 0:
+        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_0973F402, 0x700);
+        break;
+    case 1:
+        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_0973FC6A, 0x7A0);
+        break;
+    case 2:
+        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_097415E8, 0x800);
+        break;
+    case 3:
+        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_09740D62, 0x700);
+        break;
+    case 4:
+        work->unk_00[1].tiles = LoadObjTiles(gUnkEu_09740536, 0x700);
+        break;
+    case 5:
+    case 6:
+        break;
+    }
+    work->unk_00[1].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
+    work->unk_00[1].unk_10 = -0x7800;
+    work->unk_00[1].unk_14 = 0x7C00;
+    work->unk_00[1].unk_0C = 0xA0;
+    switch (gLanguage) {
+    case 0:
+        AnimInit(&work->anim, gUnkEu_09F81A1C, gUnkEu_09F81A08);
+        break;
+    case 1:
+        AnimInit(&work->anim, gUnkEu_09F81A34, gUnkEu_09F81A20);
+        break;
+    case 2:
+        AnimInit(&work->anim, gUnkEu_09F81A7C, gUnkEu_09F81A68);
+        break;
+    case 3:
+        AnimInit(&work->anim, gUnkEu_09F81A64, gUnkEu_09F81A50);
+        break;
+    case 4:
+        AnimInit(&work->anim, gUnkEu_09F81A4C, gUnkEu_09F81A38);
+        break;
+    case 5:
+    case 6:
+        break;
+    }
+    AnimStart(&work->anim, 0, 1);
+    work->unk_00[1].unk_08 = AnimGetGfx(&work->anim);
+    work->unk_00[2].tiles = LoadObjTiles(gUnkEu_0973EEFE, 0x100);
+    work->unk_00[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
+    work->unk_00[2].unk_08 = gUnk_09EF65E0[0];
+#else
     work->unk_00[0].tiles = LoadObjTiles(gUnk_09771060, 0x3C0);
     work->unk_00[0].palette = LoadObjPalette(gUnk_0984A718, 0x20);
     work->unk_00[0].unk_08 = gUnk_09EF65E0[0];
@@ -138,6 +266,7 @@ void task_title_obj_0(TitleObjWork* work) {
     work->unk_00[2].tiles = LoadObjTiles(gUnk_0977143A, 0x100);
     work->unk_00[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
     work->unk_00[2].unk_08 = gUnk_09EF65E8[0];
+#endif
     work->unk_00[2].unk_10 = 0x15800;
     work->unk_00[2].unk_14 = 0xB800;
     work->unk_00[2].unk_0C = 0x91;
@@ -145,9 +274,6 @@ void task_title_obj_0(TitleObjWork* work) {
     gUnk_02034ED0 = 0;
     work->unk_62 = 0;
 }
-#else
-INCLUDE_ASM("title/task_title_obj_0.s");
-#endif
 
 u8 task_title_obj_1(TitleObjWork* work) {
     if (func_080D6294()) {
@@ -195,7 +321,6 @@ u8 func_080D6790(void) {
     return gUnk_02034ED0;
 }
 
-#ifndef VERSION_EU
 void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     s32 t;
     u8* pal;
@@ -218,19 +343,67 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     } else {
         work->unk_5C = 0;
     }
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        work->tiles = LoadObjTiles(gUnkEu_09748BA6, 0x1600);
+        break;
+    case 1:
+        work->tiles = LoadObjTiles(gUnkEu_0974A284, 0xFA0);
+        break;
+    case 2:
+        work->tiles = LoadObjTiles(gUnkEu_0974D47A, 0xEE0);
+        break;
+    case 3:
+        work->tiles = LoadObjTiles(gUnkEu_0974C504, 0xEA0);
+        break;
+    case 4:
+        work->tiles = LoadObjTiles(gUnkEu_0974B306, 0x1120);
+        break;
+    case 5:
+    case 6:
+        break;
+    }
+#else
 #ifdef VERSION_JP
     work->tiles = LoadObjTiles(gUnk_09773E1A, 0x2C00);
 #else
     work->tiles = LoadObjTiles(gUnk_09773E1A, 0x1600);
 #endif
+#endif
     work->palette = LoadObjPalette(gUnk_0984A7F8, 0x20);
     func_080D5978(work->palette->unk_06 + 16, gUnk_0984A7F8, 0x20);
+#ifdef VERSION_EU
+    work->unk_08[0] = LoadObjTiles(gUnkEu_0973F058, 0x280);
+    switch (gLanguage) {
+    case 0:
+        work->unk_08[1] = LoadObjTiles(gUnkEu_09741E9A, 0xB20);
+        break;
+    case 1:
+        work->unk_08[1] = LoadObjTiles(gUnkEu_09742A74, 0xCE0);
+        break;
+    case 2:
+        work->unk_08[1] = LoadObjTiles(gUnkEu_0974507E, 0xA60);
+        break;
+    case 3:
+        work->unk_08[1] = LoadObjTiles(gUnkEu_097445AC, 0xA20);
+        break;
+    case 4:
+        work->unk_08[1] = LoadObjTiles(gUnkEu_09743812, 0xCE0);
+        break;
+    case 5:
+    case 6:
+        break;
+    }
+    work->unk_08[2] = LoadObjTiles(gUnkEu_09745B92, 0x700);
+#else
     work->unk_08[0] = LoadObjTiles(gUnk_09771DC0, 0x280);
     work->unk_08[1] = LoadObjTiles(gUnk_097720F2, 0xB20);
 #ifdef VERSION_JP
     work->unk_08[2] = LoadObjTiles(gUnk_09772CC6, 0xE00);
 #else
     work->unk_08[2] = LoadObjTiles(gUnk_09772CC6, 0x700);
+#endif
 #endif
     pal = &gUnk_0984A778[t];
     work->unk_14[0] = LoadObjPalette(pal, 0x20);
@@ -239,17 +412,46 @@ void task_title_menu_0(TitleMenuWork* work, s16* arg) {
     work->unk_14[2] = LoadObjPalette(pal2, 0x20);
     func_080D5978(work->unk_14[0]->unk_06 + 16, pal, 0x20);
     func_080D5978(work->unk_14[2]->unk_06 + 16, pal2, 0x20);
+#ifdef VERSION_EU
+    AnimInit(&work->anim, gUnkEu_09F81A04, gUnk_09EF65E8);
+#else
     AnimInit(&work->anim, gUnk_09EF661C, gUnk_09EF6608);
+#endif
     AnimStart(&work->anim, 0, 1);
     work->unk_20[0] = AnimGetGfx(&work->anim);
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        work->unk_20[1] = gUnkEu_09F81A80[work->unk_44[0]];
+        break;
+    case 1:
+        work->unk_20[1] = gUnkEu_09F81A9C[work->unk_44[0]];
+        break;
+    case 2:
+        work->unk_20[1] = gUnkEu_09F81AF0[work->unk_44[0]];
+        break;
+    case 3:
+        work->unk_20[1] = gUnkEu_09F81AD4[work->unk_44[0]];
+        break;
+    case 4:
+        work->unk_20[1] = gUnkEu_09F81AB8[work->unk_44[0]];
+        break;
+    case 5:
+    case 6:
+        break;
+    }
+    work->unk_20[2] = gUnkEu_09F81B0C[work->unk_44[0]];
+#else
     work->unk_20[1] = gUnk_09EF6620[work->unk_44[0]];
     work->unk_20[2] = gUnk_09EF663C[work->unk_44[0]];
-    TaskPoolInit(&work->unk_48, 1);
-    TaskCreate(&work->unk_48, &gTaskDescTitleLumichange, 0);
-}
-#else
-INCLUDE_ASM("title/task_title_menu_0.s");
 #endif
+    TaskPoolInit(&work->unk_48, 1);
+#ifdef VERSION_EU
+    TaskCreate(&work->unk_48, &gUnkEu_09F80228, 0);
+#else
+    TaskCreate(&work->unk_48, &gTaskDescTitleLumichange, 0);
+#endif
+}
 
 s16 func_080D6908(s16 a) {
     s16 i;
