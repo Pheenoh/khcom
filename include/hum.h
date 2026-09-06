@@ -104,6 +104,19 @@ typedef struct CloudWork {
     u8 unk_192[0x02];
 } CloudWork;
 
+typedef struct HookWork {
+    HumWork base;
+    u32 unk_188;
+    u32 unk_18C;
+    u32 unk_190;
+    u16 unk_194;
+    u16 unk_196;
+    u16 unk_198;
+    u8 unk_19A[0x02];
+    TaskPool unk_19C;
+    u8 unk_1B0[0x0C];
+} HookWork;
+
 typedef struct HookMoonWork {
     void* tiles;
     u8* palette;
@@ -144,7 +157,7 @@ typedef struct VixenFrzWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_2C;
+    u32 unk_2C;
     s16 unk_30;
     u16 unk_32;
     u16 unk_34;
@@ -405,23 +418,27 @@ typedef struct HookBombWork {
     u8 unk_34;
     u8 unk_35[0x03];
     s32 unk_38;
-    u16 unk_3C;
+    s16 unk_3C;
     u16 unk_3E;
     void* unk_40;
     void* unk_44;
     u8 unk_48;
     u8 unk_49;
-    u16 unk_4A;
-    u16 unk_4C;
+    s16 unk_4A;
+    s16 unk_4C;
     u16 unk_4E;
     s32 unk_50;
 } HookBombWork;
 
 typedef struct LexRockSub {
-    s32 unk_00;
+    u8 unk_00;
+    u8 unk_01[0x03];
     s32 unk_04;
     s32 unk_08;
-    u8 unk_0C[0x10];
+    s32 unk_0C;
+    s32 unk_10;
+    s32 unk_14;
+    s32 unk_18;
 } LexRockSub;
 
 typedef struct LexRockWork {
@@ -435,10 +452,8 @@ typedef struct LexRockWork {
     u8 unk_161;
     u16 unk_162;
     u16 unk_164;
-    u16 unk_166;
-    u8 unk_168[0x04];
-    LexRockSub unk_16C[11];
-    u8 unk_2A0[0x18];
+    s16 unk_166;
+    LexRockSub unk_168[12];
     void* tiles;
     void* palette;
     u8 unk_2C0;
@@ -461,7 +476,9 @@ typedef struct BtlWork {
     u8 unk_018;
     u8 unk_019[0x0B];
     s32 unk_024;
-    u8 unk_028[0x40];
+    u8 unk_028[0x04];
+    TaskPool unk_02C;
+    u8 unk_040[0x28];
     u64 unk_068;
     u8 unk_070[0x0C];
     Collider* unk_07C;
@@ -686,9 +703,21 @@ extern u8 gUnk_0813F91C[];
 extern s16 gSineTable[];
 extern u32 gFrameCounter;
 extern u8 gUnk_08F6DCA4[];
+extern u8 gUnk_08F6DCC4[];
+extern u8 gUnk_08F6DCE4[];
+extern u8 gUnk_08C42BBE[];
+extern u8 gUnk_08C46790[];
+extern u8 gUnk_09EE230C[];
+extern u8 gUnk_09EE2338[];
+extern u8 gUnk_09EE233C[];
+extern u8 gUnk_09EE239C[];
 extern u8 gUnk_09EE2690[];
 extern u8 gUnk_09EE26B0[];
 extern u8 gUnk_0813EF28[];
+extern u8 gUnk_0813EF54[];
+extern u8 gUnk_0813EF60[];
+extern u8 gUnk_0813F05C[];
+extern u8 gTaskDescHumHookMoon[];
 extern u8 gUnk_0813EDD0[];
 extern u8 gUnk_0813F768[];
 extern u8 gUnk_0813F760[];
@@ -701,6 +730,7 @@ extern u8 gUnk_08BF73C6[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gTaskDescHumAxcelPtc[];
 extern u8 gTaskDescHumVixenIce[];
+extern u8 gTaskDescHumVixenFrg[];
 extern u8 gUnk_09EE1F90[];
 extern u8 gUnk_09EE1FC0[];
 extern u8 gUnk_0813F450[];
@@ -767,7 +797,10 @@ void func_08012614(void* a, s32 b);
 void ApproachValue(s32* value, s32 target, u16 steps);
 u8 func_080035CC(s16 a, s16 b, s32 c, s32 d, s32 e, s32 f);
 void func_0801C700(void* a, s32* b, s32* c, s32* d);
-void func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
+u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
+u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
+void func_08014020(s32 x, s32 y, s32 z);
+void func_08019A30(void);
 void func_0800380C(void* work, u16 a, void* b, s32 c);
 void func_08013994(s32 a, s32 b, s32 c);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
