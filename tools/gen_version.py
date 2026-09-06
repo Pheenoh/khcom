@@ -70,6 +70,8 @@ TARGET_ONLY_SYMBOLS = {
     "eu": {
         "gLanguage": 0x03007484,
         "gModeLang": 0x09F3EA64,
+        "gUnkEu_09814E40": 0x09814E40,
+        "gUnkEu_09815640": 0x09815640,
         "gUnkEu_09F80124": 0x09F80124,
         "gUnkEu_09F80138": 0x09F80138,
         "gUnkEu_09F84FBC": 0x09F84FBC,
