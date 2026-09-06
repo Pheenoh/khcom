@@ -465,7 +465,7 @@ void func_08016750(s32 x, s32 y, s32 z, u8 f);
 void func_08014FDC(s32 x, s32 y, u8 f);
 void func_080137C8(s32 x, s32 y, s32 z, u8 f);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
-void func_08000EA4(void* pool);
+void TaskPoolUpdate(void* pool);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void* memcpy(void* dst, const void* src, u32 n);
 s32 func_08011F68(s32 a, BtlWork* b);
