@@ -293,6 +293,7 @@ typedef struct BtlRikuWork {
     u8 unk_310[0x64];
 } BtlRikuWork;
 
+extern u8 gUnk_08F6DD04[];
 extern u8 gUnk_0813C1D4[];
 extern u8 gUnk_0813C6E8[];
 extern u8 gUnk_0813C704[];
