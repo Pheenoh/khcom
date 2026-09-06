@@ -19493,7 +19493,6 @@ u8 func_080A8C20(u8* work) {
     return 1;
 }
 
-#ifndef VERSION_EU
 void func_080A8C58(u8* work, u8 b) {
     if (b == 0) {
         switch (work[0x700]) {
@@ -19527,9 +19526,6 @@ void func_080A8C58(u8* work, u8 b) {
         }
     }
 }
-#else
-INCLUDE_ASM("card/func_080A8C58.s");
-#endif
 
 void func_080A8EE4(u8* work) {
     func_080664D8(*(s16*)&work[0x708], *(s16*)&work[0x70A], &work[0x1D8],
@@ -19757,7 +19753,6 @@ void func_080A9AE8(u8* work) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080A9B84(u8* work, u8 b) {
     u16* pal;
 
@@ -19824,9 +19819,6 @@ void func_080A9B84(u8* work, u8 b) {
         break;
     }
 }
-#else
-INCLUDE_ASM("card/func_080A9B84.s");
-#endif
 
 void func_080A9E40(u8 deck) {
     u8 d[2];
@@ -19997,7 +19989,6 @@ void func_080AA3A0(u8* work, s32 id) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080AA450(u8* work) {
     UnkStruct_0808E890* node;
     CardDef* def;
@@ -20061,9 +20052,6 @@ void func_080AA450(u8* work) {
         func_080AA6D4(0);
     }
 }
-#else
-INCLUDE_ASM("card/func_080AA450.s");
-#endif
 
 void func_080AA634(void** p) {
     if (p[7] != 0) {
@@ -20129,7 +20117,6 @@ u32 func_080AA764(u16* data) {
     return sum;
 }
 
-#ifndef VERSION_EU
 #ifdef NON_MATCHING
 s32 func_080AA77C(u8* work, u16 key) {
     u8* tbl;
@@ -20295,9 +20282,6 @@ down_retry:
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_080AA77C.s");
-#endif
 #else
 INCLUDE_ASM("card/func_080AA77C.s");
 #endif
