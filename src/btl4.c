@@ -240,7 +240,6 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 INCLUDE_ASM("btl4/task_btl_exp_1.s");
 #endif
 
-#ifndef VERSION_JP
 void task_btl_exp_2(BtlExpWork* work) {
     s32 i;
     s16 x;
@@ -251,6 +250,9 @@ void task_btl_exp_2(BtlExpWork* work) {
         x = 0;
         DrawSprite(0, y, work->unk_20, work->tiles, work->palette, x, 0x410, x);
 
+#ifdef VERSION_JP
+        x = 32;
+#else
         if (work->unk_48 == 2) {
 #ifdef VERSION_EU
             x = 48;
@@ -260,6 +262,7 @@ void task_btl_exp_2(BtlExpWork* work) {
         } else {
             x = 32;
         }
+#endif
 
         for (i = 0; i <= 5; i++) {
             if (work->unk_24[i] != 0) {
@@ -269,9 +272,6 @@ void task_btl_exp_2(BtlExpWork* work) {
         }
     }
 }
-#else
-INCLUDE_ASM("btl4/task_btl_exp_2.s");
-#endif
 
 void task_btl_exp_3(BtlExpWork* work) {
     s32 i;
