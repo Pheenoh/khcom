@@ -64,7 +64,10 @@ typedef struct HumActor {
     s16 unk_CE;
     s16 unk_D0;
     u16 unk_D2;
-    u8 unk_D4[0x3C];
+    u8 unk_D4[0x10];
+    void* unk_E4;
+    s32 unk_E8;
+    u8 unk_EC[0x24];
 } HumActor;
 
 typedef struct HumWork {
@@ -107,14 +110,16 @@ typedef struct CloudWork {
 typedef struct HookWork {
     HumWork base;
     u32 unk_188;
-    u32 unk_18C;
-    u32 unk_190;
+    s32 unk_18C;
+    s32 unk_190;
     u16 unk_194;
     u16 unk_196;
     u16 unk_198;
     u8 unk_19A[0x02];
     TaskPool unk_19C;
-    u8 unk_1B0[0x0C];
+    void* unk_1B0;
+    void* unk_1B4;
+    void* unk_1B8;
 } HookWork;
 
 typedef struct HookMoonWork {
@@ -284,10 +289,16 @@ typedef struct LaxeneWork {
 typedef struct VixenWork {
     HumWork base;
     s32 unk_188;
-    u8 unk_18C[0x16];
+    u8 unk_18C[0x0C];
+    s32 unk_198;
+    s32 unk_19C;
+    u16 unk_1A0;
     u16 unk_1A2;
     TaskPool unk_1A4;
-    u8 unk_1B8[0x0C];
+    void* unk_1B8;
+    u8 unk_1BC;
+    u8 unk_1BD[0x03];
+    s32 unk_1C0;
     VixenSub unk_1C4[3];
     u8 unk_1E8[0x30];
 } VixenWork;
@@ -465,7 +476,10 @@ typedef struct Collider {
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    u8 radius[0x24];
+    u8 radius[0x1C];
+    u16 unk_2C;
+    u16 unk_2E;
+    u8 unk_30[0x04];
     u64 unk_34;
 } Collider;
 
@@ -730,6 +744,16 @@ extern u8 gUnk_08BF73C6[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gTaskDescHumAxcelPtc[];
 extern u8 gTaskDescHumVixenIce[];
+extern u8 gTaskDescHumVixenNdl[];
+extern u8 gTaskDescHumHookBomb[];
+extern u8 gUnk_0813EF6C[];
+extern u8 gUnk_0813F078[];
+extern u8 gTaskDescHumVixenFrz[];
+extern u8 gUnk_0813F7D8[];
+extern u8 gUnk_0813F7B4[];
+extern u8 gUnk_0813F7C0[];
+extern u8 gUnk_0813F7CC[];
+extern u8 gUnk_08EE3A84[];
 extern u8 gTaskDescHumVixenFrg[];
 extern u8 gUnk_09EE1F90[];
 extern u8 gUnk_09EE1FC0[];
@@ -859,5 +883,21 @@ s32 func_0805A574(s32 idx);
 s32 SaveRepairHeader(void);
 s32 SaveRepairFileLarge(u16 file);
 s32 SaveRepairFileSmall(u16 file);
+u32 _0800F84C(void* work);
+u8 func_0800F3BC(void* work, s32 a, s32 b, s32 c);
+u8 func_0800F4C8(void* work, u16 b);
+void func_0802F284(s32 a, s32 b, s32 c);
+u8 func_0800F5A4(void* work, s32 b, s32 c, s32 d, s32 e);
+u8 func_08081828(void);
+u8 IsTaskActiveNamed(void* task, void* name);
+void func_08006238(s32 a, s32 b, s32 c);
+void func_080061E8(s32 a, s32 b);
+void func_08006120(s32 a, s32 b);
+void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
+void ApproachAngle(u16* p, u8 target, s32 step);
+void AnimReset(AnimState* a);
+void func_08019190(void* a, s32 b);
+void func_080171FC(u16 a);
+s32 abs(s32 x);
 
 #endif /* GUARD_HUM_H */
