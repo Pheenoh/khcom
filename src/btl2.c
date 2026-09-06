@@ -2,6 +2,12 @@
 #include "btl2.h"
 #include "gba/keys.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern u8 gUnkEu_08B51BA8[];
+extern void* gUnkEu_09F5C1FC[];
+#endif
+
 void task_btl_shadow_0(BtlShadowWork* work, BtlWork* actor) {
     work->actor = actor;
 
@@ -655,20 +661,32 @@ void task_btl_hpenm_3(BtlHpenmWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
-#ifndef VERSION_EU
 void task_btl_pause_0(BtlPauseWork* work) {
+#ifdef VERSION_EU
+    void** p;
+
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+
+    if (gLanguage <= 2) {
+        work->tiles = LoadObjTiles(gUnk_08B1E7F4, 0x180);
+        p = gUnk_09EE115C;
+    } else {
+        work->tiles = LoadObjTiles(gUnkEu_08B51BA8, 0x180);
+        p = gUnkEu_09F5C1FC;
+    }
+    work->unk_08 = p[0];
+    work->unk_0C = p[1];
+#else
     work->tiles = LoadObjTiles(gUnk_08B1E7F4, 0x180);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_08 = gUnk_09EE115C[0];
     work->unk_0C = gUnk_09EE115C[1];
+#endif
     work->unk_10 = 0;
     work->unk_24 = 0;
     work->unk_26 = 0;
     gBtlWork->unk_068 |= 0x04000000;
 }
-#else
-INCLUDE_ASM("btl2/task_btl_pause_0.s");
-#endif
 
 s32 task_btl_pause_1(BtlPauseWork* work) {
     s32 paused;

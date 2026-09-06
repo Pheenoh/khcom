@@ -1,7 +1,10 @@
 #include "frd.h"
 #include "macros.h"
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+extern u32 gLanguage;
+#endif
+
 void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     FrdBody* body;
 
@@ -45,15 +48,39 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     switch (args->unk_00) {
     case 0:
         work->unk_160 = 1;
+#ifdef VERSION_EU
+        if (gLanguage == 3) {
+            m4aSongNumStart(0xAB);
+        } else {
+            m4aSongNumStart(0xB4);
+        }
+#else
         m4aSongNumStart(0xB4);
+#endif
         break;
     case 1:
         work->unk_160 = 1;
+#ifdef VERSION_EU
+        if (gLanguage == 3) {
+            m4aSongNumStart(0xAB);
+        } else {
+            m4aSongNumStart(0xB4);
+        }
+#else
         m4aSongNumStart(0xB4);
+#endif
         break;
     case 2:
         work->unk_160 = 1;
+#ifdef VERSION_EU
+        if (gLanguage == 3) {
+            m4aSongNumStart(0xAB);
+        } else {
+            m4aSongNumStart(0xB4);
+        }
+#else
         m4aSongNumStart(0xB4);
+#endif
         break;
     default:
         m4aSongNumStart(0xB3);
@@ -65,9 +92,6 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
-#else
-INCLUDE_ASM("frd/task_frd_donald_0.s");
-#endif
 
 INCLUDE_ASM("frd/task_frd_donald_1.s");
 
@@ -139,12 +163,19 @@ u8 func_080465F0(FrdGoofyWork* work) {
     return 0;
 }
 
-#ifndef VERSION_EU
 void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     FrdBody* body;
 
     body = &work->unk_020;
+#ifdef VERSION_EU
+    if (gLanguage == 1 || gLanguage == 3) {
+        m4aSongNumStart(0xAB);
+    } else {
+        m4aSongNumStart(0xAE);
+    }
+#else
     m4aSongNumStart(0xAE);
+#endif
 
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
@@ -183,9 +214,6 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
-#else
-INCLUDE_ASM("frd/task_frd_goofy_0.s");
-#endif
 
 u8 task_frd_goofy_1(FrdGoofyWork* work) {
     FrdBody* body;
@@ -1095,13 +1123,20 @@ u8 func_080497E8(FrdBeastWork* work) {
     return 0;
 }
 
-#ifndef VERSION_EU
 void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     FrdBody* body;
     BtlWork* obj;
 
     body = &work->unk_020;
+#ifdef VERSION_EU
+    if (gLanguage == 0) {
+        m4aSongNumStart(0xBA);
+    } else {
+        m4aSongNumStart(0xAB);
+    }
+#else
     m4aSongNumStart(0xBA);
+#endif
 
     if (args->unk_02 != 0) {
         work->unk_14C = 1;
@@ -1163,9 +1198,6 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     TaskPoolInit(&work->unk_000, 1);
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
-#else
-INCLUDE_ASM("frd/task_frd_beast_0.s");
-#endif
 
 u8 task_frd_beast_1(FrdBeastWork* work) {
     FrdBody* body;

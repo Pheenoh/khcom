@@ -1,6 +1,10 @@
 #include "macros.h"
 #include "bos6.h"
 
+#ifdef VERSION_EU
+extern u8 eu_0810BA1C(BosLstWork* work, s32 idx);
+#endif
+
 u8 gUnk_02036008;
 s16 gUnk_0203600A;
 s16 gUnk_0203600C;
@@ -1966,7 +1970,6 @@ void func_0810D4B0(BosLstWork* work) {
     }
 }
 
-#ifndef VERSION_EU
 void func_0810D4F8(BosLstWork* work) {
     LstSpawn4 s;
     PcPos* obj;
@@ -2031,6 +2034,11 @@ void func_0810D4F8(BosLstWork* work) {
             }
             if (work->unk_07C <= 0) {
                 work->unk_07C = 0x400;
+#ifdef VERSION_EU
+                if (eu_0810BA1C(work, -1) != 0) {
+                    break;
+                }
+#endif
                 if ((gBtlWork->unk_068 & 0x20000000) == 0) {
                     func_0810C2E0(work);
                     work->unk_0C0 = 0;
@@ -2039,12 +2047,14 @@ void func_0810D4F8(BosLstWork* work) {
                 func_0810D3A8(work);
             }
             break;
+#ifdef VERSION_EU
+        default:
+            func_0810D478(work);
+            break;
+#endif
         }
     }
 }
-#else
-INCLUDE_ASM("bos6/func_0810D4F8.s");
-#endif
 
 s32 func_0810D70C(BosLstWork* work) {
     s32 base;
