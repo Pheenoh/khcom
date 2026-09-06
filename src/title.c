@@ -2,6 +2,13 @@
 #include "title.h"
 #include "gba/keys.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern void* gUnkEu_09F801D4[];
+extern void* gUnkEu_09F80200[];
+extern void* gUnkEu_09F80214[];
+#endif
+
 u8 gUnk_02034ED0;
 
 void task_title_logo_0(TitleLogoWork* work) {
@@ -356,7 +363,6 @@ void func_080D6B7C(TitleMenuWork* work) {
 INCLUDE_ASM("title/func_080D6B7C.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080D6C54(TitleMenuWork* work) {
     s32 i;
     s16 y;
@@ -364,7 +370,13 @@ void func_080D6C54(TitleMenuWork* work) {
     y = 48;
 
     for (i = 0; i < 2; i++) {
+#ifdef VERSION_EU
+        void** spr = (void**)gUnkEu_09F801D4[gLanguage];
+
+        DrawSprite(work->unk_60, y, spr[gUnk_096FDCC8[i]], work->tiles, work->palette, 0, 0x400, i + 100);
+#else
         DrawSprite(work->unk_60, y, gUnk_09EF6668[gUnk_096FDCC8[i]], work->tiles, work->palette, 0, 0x400, i + 100);
+#endif
         y += 24;
     }
     y = func_080D6908(work->unk_44[0]) * 24 + 48;
@@ -373,25 +385,26 @@ void func_080D6C54(TitleMenuWork* work) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
 }
-#else
-INCLUDE_ASM("title/func_080D6C54.s");
-#endif
 
-#ifndef VERSION_EU
 void func_080D6D2C(TitleMenuWork* work) {
     s32 i;
     s16 y;
 
     y = 56;
+#ifdef VERSION_EU
+    {
+        void** spr = (void**)gUnkEu_09F801D4[gLanguage];
+
+        DrawSprite(work->unk_60, y, spr[work->unk_44[0]], work->tiles, work->palette, 0, 0x400, 100);
+    }
+#else
     DrawSprite(work->unk_60, y, gUnk_09EF6668[work->unk_44[0]], work->tiles, work->palette, 0, 0x400, 100);
+#endif
 
     for (i = 0; i < 3; i++) {
         DrawSprite(work->unk_60, y, work->unk_20[i], work->unk_08[i], work->unk_14[i], 0, 0, i);
     }
 }
-#else
-INCLUDE_ASM("title/func_080D6D2C.s");
-#endif
 
 #ifndef VERSION_EU
 void task_title_menu_2(TitleMenuWork* work) {
@@ -484,14 +497,22 @@ u8 task_title_lumichange_1(TitleLumiChangeWork* work) {
     return 1;
 }
 
-#ifndef VERSION_EU
 void task_title_lumichange_2(TitleLumiChangeWork* work) {
     s16 v;
     void** tbl;
     s16 x;
 
     v = GetPaletteEffect();
+#ifdef VERSION_EU
+    {
+        void** a = (void**)gUnkEu_09F80200[gLanguage];
+        void** b = (void**)gUnkEu_09F80214[gLanguage];
+
+        tbl = (gGameState.flags & 0x200) ? b : a;
+    }
+#else
     tbl = (gGameState.flags & 0x200) ? gUnk_09EF6684 : gUnk_09EF6658;
+#endif
 
     if (v < 0) {
         work->unk_08 = tbl[0];
@@ -503,9 +524,6 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
     x = (gGameState.flags & 0x200) ? 240 : 0;
     DrawSprite(x, 0x8F, work->unk_08, work->tiles, work->palette, 0, 0x400, 100);
 }
-#else
-INCLUDE_ASM("title/task_title_lumichange_2.s");
-#endif
 
 void task_title_lumichange_3(TitleLumiChangeWork* work) {
     ReleaseObjTiles(work->tiles);
