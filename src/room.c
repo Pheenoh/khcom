@@ -1,7 +1,10 @@
 #include "macros.h"
 #include "room.h"
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+extern void* eu_0805E924(void* strings);
+#endif
+
 void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);
     work->palette = LoadObjPalette(gUnk_099910C4, 0x20);
@@ -19,11 +22,12 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->unk_1C = 0x19;
     func_08065ACC(work->unk_3C, 0x24);
     work->unk_38 = _08066468(1);
-    work->unk_34 = func_08065B6C(gUnk_09EF7048[work->unk_30], work->unk_3C);
-}
+#ifdef VERSION_EU
+    work->unk_34 = func_08065B6C(eu_0805E924(gUnk_09EF7048[work->unk_30]), work->unk_3C);
 #else
-INCLUDE_ASM("room/task_room_name_0.s");
+    work->unk_34 = func_08065B6C(gUnk_09EF7048[work->unk_30], work->unk_3C);
 #endif
+}
 
 u8 task_room_name_1(RoomNameWork* work) {
     if (gUnk_02039BA0->unk_70 & 0x42000) {

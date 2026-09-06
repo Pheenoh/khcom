@@ -1,6 +1,12 @@
 #include "macros.h"
 #include "msg.h"
 
+#ifdef VERSION_EU
+extern void* eu_0805E924(void* strings);
+extern void* gUnkEu_08890E1C[];
+extern void* gUnkEu_08890E44[];
+#endif
+
 static Ent02034A80* gUnk_02034A80;
 static Ent080658B8* gUnk_02034A84;
 static Ent080658B8* gUnk_02034A88;
@@ -7476,7 +7482,6 @@ void msgwait_3(MsgWaitWork* p) {
     ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->palette);
 }
-#ifndef VERSION_EU
 void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_103 = *a;
     p->unk_00 = AllocObjTiles(64, 0);
@@ -7501,8 +7506,13 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     func_08065ACC(p->unk_1C, 10);
     func_08065ACC(p->unk_6C, 10);
     p->unk_18 = _08066468(1);
+#ifdef VERSION_EU
+    p->unk_F4 = func_08065B6C(eu_0805E924(gUnkEu_08890E1C), p->unk_1C);
+    p->unk_F5 = func_08065B6C(eu_0805E924(gUnkEu_08890E44), p->unk_6C);
+#else
     p->unk_F4 = func_08065B6C(gUnk_08159E10, p->unk_1C);
     p->unk_F5 = func_08065B6C(gUnk_08159E18, p->unk_6C);
+#endif
     p->unk_F8 = 0x5800;
     p->unk_100 = 1;
     p->unk_FC = gUnk_09033D28[1];
@@ -7512,9 +7522,6 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     gUnk_02039DC8->unk_84 = 0;
     p->unk_104 = 0;
 }
-#else
-INCLUDE_ASM("msg/msgwait_yesno_0.s");
-#endif
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
     switch (GetKeysPressed()) {
     case 64:

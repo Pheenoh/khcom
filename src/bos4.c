@@ -1,6 +1,10 @@
 #include "macros.h"
 #include "bos4.h"
 
+#ifdef VERSION_EU
+extern void* eu_0805E924(void* strings);
+#endif
+
 void* gUrsulaWork;
 #ifdef VERSION_EU
 extern u16 eu_080DA830(void);
@@ -3593,13 +3597,13 @@ u8 func_080DF750(void) {
     return 1;
 }
 
-#ifndef VERSION_EU
 u32 func_080DF804(u8 index) {
-    return gUnk_09EF69FC[index];
-}
+#ifdef VERSION_EU
+    return (u32)eu_0805E924((void*)gUnk_09EF69FC[index]);
 #else
-INCLUDE_ASM("bos4/func_080DF804.s");
+    return gUnk_09EF69FC[index];
 #endif
+}
 
 void func_080DF814(void) {
     func_080DF730(0xFE, 1);

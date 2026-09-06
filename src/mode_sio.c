@@ -4,6 +4,8 @@
 
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
+extern void eu_080059F4(s32 bg, void* map);
+extern void* gUnkEu_08891508[];
 #endif
 
 SioBtlConnectWork* gSioBtlConnectWork;
@@ -31,7 +33,6 @@ void* gUnk_02034C1C;
 u8 gUnk_02034C20[20];
 void* gUnk_02034C34;
 
-#ifndef VERSION_EU
 void mode_sio_btl_connect_0(s32 arg) {
     gSioBtlConnectWork = EwramAlloc(sizeof(SioBtlConnectWork));
     func_08006120(0, 16);
@@ -50,15 +51,23 @@ void mode_sio_btl_connect_0(s32 arg) {
     gSioBtlConnectWork->unk_02 = 0;
     gSioBtlConnectWork->unk_04 = 0;
     gSioBtlConnectWork->unk_05 = 0;
-    func_08065ACC(gSioBtlConnectWork->unk_08, 0x5A);
+    func_08065ACC(gSioBtlConnectWork->unk_08, SIO_CONNECT_TEXT_SLOTS);
+#ifdef VERSION_EU
+    gSioBtlConnectWork->unk_05 = func_08065B6C(eu_0805E924(gUnkEu_08891508), gSioBtlConnectWork->unk_08);
+#else
     gSioBtlConnectWork->unk_05 = func_08065B6C(gUnk_08159E4A, gSioBtlConnectWork->unk_08);
+#endif
     gSioBtlConnectWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+        func_08006E60();
+        func_080C5A3C(func_080AEE50, func_080AEE6C, 0);
+    }
+#else
     func_08006E60();
     func_080C5A3C(func_080AEE50, func_080AEE6C, 0);
-}
-#else
-INCLUDE_ASM("mode_sio/mode_sio_btl_connect_0.s");
 #endif
+}
 
 #ifndef VERSION_EU
 void mode_sio_btl_connect_1(void) {
@@ -297,19 +306,20 @@ void func_080AF11C(void) {
 INCLUDE_ASM("mode_sio/func_080AF11C.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080AF4F8(void) {
     s8 i = gUnk_0203AAA0[gUnk_0203AA00];
     RequestDma3Copy(gUnk_09EF1318[i].unk_00, GetBgCharBase(2), 0x2000);
     LoadBgPalette(2, gUnk_09EF1318[i].unk_10, gUnk_09EF1318[i].unk_14);
+#ifdef VERSION_EU
+    eu_080059F4(2, gUnk_09EF1318[i].unk_08);
+    gSioBtlOptionWork->unk_050 = func_08065B6C(eu_0805E924(gUnk_09EF1318[i].unk_18), gSioBtlOptionWork->unk_054);
+#else
     LoadBgMap(2, gUnk_09EF1318[i].unk_08, gUnk_09EF1318[i].unk_0C);
     gSioBtlOptionWork->unk_050 = func_08065B6C(gUnk_09EF1318[i].unk_18, gSioBtlOptionWork->unk_054);
+#endif
     DisableBg(2);
     gSioBtlOptionWork->unk_002++;
 }
-#else
-INCLUDE_ASM("mode_sio/func_080AF4F8.s");
-#endif
 
 void func_080AF58C(void) {
     s8 i = gUnk_0203AAA0[gUnk_0203AA00];
@@ -650,7 +660,6 @@ void func_080AFEFC(void) {
 INCLUDE_ASM("mode_sio/func_080AFEFC.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080B0010(void) {
     s8 a = gUnk_0203AAA0[gUnk_0203AA90];
     s8 b = gUnk_0203AAA0[gUnk_0203AA00];
@@ -672,13 +681,21 @@ void func_080B0010(void) {
         break;
     case 1:
         FadePaletteToBlack(gUnk_09EF1318[b].unk_10, (u16*)0x05000000, gUnk_09EF1318[b].unk_14, 32);
+#ifdef VERSION_EU
+        eu_080059F4(2, gUnk_09EF1318[b].unk_08);
+#else
         LoadBgMap(2, gUnk_09EF1318[b].unk_08, gUnk_09EF1318[b].unk_0C);
+#endif
         RequestDma3Copy(gUnk_09EF1318[b].unk_00, GetBgCharBase(2), 0x2000);
         gSioBtlOptionWork->unk_410++;
         break;
     case 2:
         RequestDma3Copy((u8*)gUnk_09EF1318[b].unk_00 + 0x2000, (u8*)GetBgCharBase(2) + 0x2000, gUnk_09EF1318[b].unk_04 - 0x2000);
+#ifdef VERSION_EU
+        gSioBtlOptionWork->unk_050 = func_08065B6C(eu_0805E924(gUnk_09EF1318[b].unk_18), gSioBtlOptionWork->unk_054);
+#else
         gSioBtlOptionWork->unk_050 = func_08065B6C(gUnk_09EF1318[b].unk_18, gSioBtlOptionWork->unk_054);
+#endif
         gSioBtlOptionWork->unk_417 = b;
         gSioBtlOptionWork->unk_410++;
         break;
@@ -709,9 +726,6 @@ void func_080B0010(void) {
     func_080B1064();
     func_080B0874();
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B0010.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080B01FC(void) {
@@ -2450,7 +2464,6 @@ void mode_wLogo_0(s32 arg) {
     func_080B4154();
 }
 
-#ifndef VERSION_EU
 void mode_wLogo_1(void) {
     u8* p;
 
@@ -2463,7 +2476,11 @@ void mode_wLogo_1(void) {
             if (gUnk_02034B59 < 0) {
                 gUnk_02034B59 = 12;
             }
+#ifdef VERSION_EU
+            gUnk_02034B5B = func_08065B6C(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
+#else
             gUnk_02034B5B = func_08065B6C(gWorldNames[gUnk_02034B59], gUnk_02034B60);
+#endif
         }
 
         if (GetKeysPressed() & DPAD_RIGHT) {
@@ -2472,7 +2489,11 @@ void mode_wLogo_1(void) {
                 gUnk_02034B59 = 0;
             }
             p = &gUnk_02034B5B;
+#ifdef VERSION_EU
+            *p = func_08065B6C(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
+#else
             *p = func_08065B6C(gWorldNames[gUnk_02034B59], gUnk_02034B60);
+#endif
         }
 
         if (GetKeysPressed() & 1) {
@@ -2506,9 +2527,6 @@ void mode_wLogo_1(void) {
         break;
     }
 }
-#else
-INCLUDE_ASM("mode_sio/mode_wLogo_1.s");
-#endif
 
 void mode_wLogo_2(void) {
     func_08065AE0(gUnk_02034B60, 20);
