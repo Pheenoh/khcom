@@ -333,7 +333,7 @@ s32 func_080C5930(void) {
 }
 
 void func_080C594C(void) {
-    func_08006E60();
+    SioReset();
     func_080C5A3C(func_080C5A30, 0, 0);
     gUnk_0203BEB8 = 0;
     gUnk_0203BEA8 = 0;

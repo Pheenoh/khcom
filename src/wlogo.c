@@ -1509,7 +1509,7 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
         work->unk_100[i] = 0;
     }
     TaskPoolInit(&work->unk_114, 1);
-    func_080B75E8();
+    WlogoEnableHBlank();
     gUnk_0203AB38 = -0x299;
     work->unk_110 = 25;
 }
@@ -1626,7 +1626,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             }
             SetBgBlend(0, 16 - work->unk_006, work->unk_006);
         } else if (work->unk_002 == 0) {
-            func_080B7664();
+            WlogoDisableHBlank();
             work->unk_002++;
         } else if (work->unk_004 > 1) {
             work->unk_004 = 0;
@@ -1759,7 +1759,7 @@ void task_wlogo_tt_2(WlogoTtWork* work) {
 }
 
 void task_wlogo_tt_3(WlogoTtWork* work) {
-    func_080B7664();
+    WlogoDisableHBlank();
     TaskPoolDestroy(&work->unk_114);
     ReleaseObjTiles(work->unk_008);
     ReleaseObjTiles(work->unk_00C);
@@ -1768,7 +1768,7 @@ void task_wlogo_tt_3(WlogoTtWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
-void func_080B75E8(void) {
+void WlogoEnableHBlank(void) {
     SetHBlankCallback(func_080B75FC);
     EnableHBlankIntr();
 }
@@ -1786,7 +1786,7 @@ void func_080B75FC(void) {
     }
 }
 
-void func_080B7664(void) {
+void WlogoDisableHBlank(void) {
     ResetHBlankCallback();
     DisableHBlankIntr();
 }

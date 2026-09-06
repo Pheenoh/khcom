@@ -296,7 +296,7 @@ void func_08075780(EffectWork* w) {
                w->gfx, w->tiles, w->palette, 0, pr, 50);
 }
 
-void func_080757F4(EffectWork* w) {
+void EffectReleaseObj(EffectWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
 }
@@ -599,11 +599,11 @@ void func_08075EC4(EventTaskHost* h) {
 }
 
 void func_08075ED8(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE4864, h);
+    TaskCreate(&h->unk_10, &gTaskDescGlowNose, h);
 }
 
 void func_08075EEC(EventTaskHost* h) {
-    TaskCreate(&h->unk_10, &gUnk_09EE487C, h);
+    TaskCreate(&h->unk_10, &gTaskDescGlowNose2, h);
 }
 
 void func_08075F00(EventTaskHost* h) {

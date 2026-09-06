@@ -282,7 +282,7 @@ ResetSerialCallback	0x08006cd4	20	0x08006fd4	body
 SetTimer3Callback	0x08006ce8	12	0x08006fe8	body
 ResetTimer3Callback	0x08006cf4	20	0x08006ff4	body
 SioInit	0x08006d08	344	0x08007008	global
-func_08006E60	0x08006e60	16	0x08007160	body
+SioReset	0x08006e60	16	0x08007160	body
 func_08006E70	0x08006e70	4	0x08007170	body
 SioStop	0x08006e74	96	0x08007174	global
 func_08006ED4	0x08006ed4	344	0x080071d4	global
@@ -1597,7 +1597,7 @@ balloon_0	0x080756b0	112	0x08074a70	global
 func_08075720	0x08075720	40	0x08074ae0	global
 Exclamation_1	0x08075748	56	0x08074b08	global
 func_08075780	0x08075780	116	0x08074b40	global
-func_080757F4	0x080757f4	24	0x08074bb4	body
+EffectReleaseObj	0x080757f4	24	0x08074bb4	body
 Question_0	0x0807580c	116	0x08074bcc	global
 Question_1	0x08075880	80	0x08074c40	global
 func_080758D0	0x080758d0	224	0x08074c90	global
@@ -2795,9 +2795,9 @@ task_wlogo_tt_0	0x080b6dfc	500	0x080b3100	named
 task_wlogo_tt_1	0x080b6ff0	1108	0x080b32f4	named
 task_wlogo_tt_2	0x080b7444	364	0x080b3748	named
 task_wlogo_tt_3	0x080b75b0	56	0x080b38b4	named
-func_080B75E8	0x080b75e8	20	0x080b38ec	body
+WlogoEnableHBlank	0x080b75e8	20	0x080b38ec	body
 func_080B75FC	0x080b75fc	104	0x080b3900	global
-func_080B7664	0x080b7664	16	0x080b3968	body
+WlogoDisableHBlank	0x080b7664	16	0x080b3968	body
 task_wlogo_tt_obj_0	0x080b7674	96	0x080b3978	named
 task_wlogo_tt_obj_1	0x080b76d4	52	0x080b39d8	named
 task_wlogo_tt_obj_2	0x080b7708	48	0x080b3a0c	named
@@ -5062,7 +5062,7 @@ func_0811904C	0x0811904c	124	0x08117b6c	global
 func_081190C8	0x081190c8	200	0x08117be8	global
 func_08119190	0x08119190	148	0x08117cb0	global
 MovieAdvanceFrame	0x08119224	140	0x08117d44	global
-func_081192B0	0x081192b0	56	0x08117dd0	global
+MovieGetAudioBlockSamples	0x081192b0	56	0x08117dd0	global
 func_081192E8	0x081192e8	408	0x08117e08	global
 func_08119480	0x08119480	140	0x08117fa0	global
 func_0811950C	0x0811950c	328	0x0811802c	global

@@ -235,7 +235,7 @@ void TaskPoolInit(TaskPool* a, s32 count);
 u16 GetRandom(void);
 void SeedRandom(u32 seed);
 void func_080078A4(void);
-void func_08006E60(void);
+void SioReset(void);
 void func_08083D68(void);
 void func_08083DD4(void);
 
