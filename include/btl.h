@@ -194,6 +194,19 @@ typedef struct UnkStruct_08021C8A {
     struct UnkStruct_08021C8A* unk_14;
 } UnkStruct_08021C8A;
 
+typedef struct UnkStruct_0802CD54 {
+    s32 unk_00;
+    s16 unk_04;
+    u16 unk_06;
+    s32* unk_08;
+    u16 unk_0C;
+    u16 unk_0E;
+    s32 unk_10;
+    u16 unk_14;
+    u16 unk_16;
+    struct UnkStruct_0802CD54* unk_18;
+} UnkStruct_0802CD54;
+
 typedef struct BtlSoraWork {
     void* unk_000;
     ObjPalette* palette;
@@ -481,11 +494,15 @@ void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w);
 void func_08014780(s32 a, s32 b, s32 c);
 void func_08016038(s32 x, s32 y, s32 z);
 void func_080161F8(s32 x, s32 y, s32 z, u8 f);
+void func_08018F28(s32 x, s32 y, s32 z);
+void func_08018FE4(s32 x, s32 y, s32 z);
+void func_080184C4(s32 x, s32 y, s32 z, u8 f);
 void func_08019A30(void);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08015DC8(s32 x, s32 y, s32 z);
 u16 AnimGetFrame(AnimState* a);
+u16 AnimGetGfxIndex(AnimState* a);
 void AnimSetFrame(AnimState* a, u16 frame);
 void func_08015D30(s32 x, s32 y, s32 z);
 s32 TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
