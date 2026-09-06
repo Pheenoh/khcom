@@ -106,6 +106,9 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09F84FE4": 0x09F84FE4,
         "gUnkEu_08890E1C": 0x08890E1C,
         "gUnkEu_08890E44": 0x08890E44,
+        "gUnkEu_08895AF4": 0x08895AF4,
+        "gUnkEu_08895CF8": 0x08895CF8,
+        "gUnkEu_08895DBC": 0x08895DBC,
         "gUnkEu_08891508": 0x08891508,
         "gUnkEu_088927F4": 0x088927F4,
         "gUnkEu_088928E4": 0x088928E4,
@@ -176,6 +179,11 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_0994AAB0": 0x0994AAB0,
         "gUnkEu_0994ACB0": 0x0994ACB0,
     },
+    "jp": {
+        "gUnk_0814FBB0": 0x0814FBB0,
+        "gUnk_0814FBBC": 0x0814FBBC,
+        "gUnk_0814FBD4": 0x0814FBD4,
+    },
 }
 
 TARGET_EXTRA_LABELS = {
@@ -186,8 +194,10 @@ TARGET_EXTRA_LABELS = {
 TARGET_FUNC_SIZE = {
     "jp": {
         "func_08066588": 156,
+        "func_080A2980": 260,
     },
     "eu": {
+        "func_080A2980": 260,
         "func_08088EB4": 136,
         "func_0808CA78": 228,
         "func_0808CB60": 88,
