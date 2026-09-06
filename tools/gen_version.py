@@ -87,6 +87,9 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09815640": 0x09815640,
         "gUnkEu_09F80124": 0x09F80124,
         "gUnkEu_09F80138": 0x09F80138,
+        "gUnkEu_09F801D4": 0x09F801D4,
+        "gUnkEu_09F80200": 0x09F80200,
+        "gUnkEu_09F80214": 0x09F80214,
         "gUnkEu_09F84EFC": 0x09F84EFC,
         "gUnkEu_08B51BA8": 0x08B51BA8,
         "gUnkEu_09F5C1FC": 0x09F5C1FC,
@@ -221,6 +224,9 @@ TARGET_FUNC_SIZE = {
         "func_080F7AB4": 52,
         "func_08100608": 56,
         "func_081017A0": 492,
+        "func_080D6C54": 232,
+        "func_080D6D2C": 148,
+        "task_title_lumichange_2": 152,
     },
 }
 
