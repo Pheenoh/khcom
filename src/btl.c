@@ -2166,6 +2166,43 @@ void task_btl_sora_1(BtlSoraWork* work) {
             work->unk_154 = 0;
         }
         break;
+    case 14:
+        func_0801DD08(work);
+        st = work->unk_154;
+
+        if (st == 0) {
+            gBtlWork->unk_068 |= 0x0000400000000000LL;
+            func_0801E678(work);
+            work->unk_15A |= 0x80;
+            func_0801DDE4(work, 41, 0);
+            m4aSongNumStart(163);
+            work->unk_15C = 0;
+
+            if (gBtlWork->unk_068 & 0x4000) {
+                func_08006120(2, 20);
+                func_080063A8();
+            } else {
+                func_08006290(3, 16, 60);
+            }
+
+            work->unk_154++;
+            gBtlWork->unk_072 = 30;
+            p->unk_34 &= ~0x2000;
+
+            if (*(s32*)((u8*)p + 0x108) > 0) {
+                p->unk_34 |= 4;
+            } else if (*(s32*)((u8*)p + 0x108) < 0) {
+                p->unk_34 &= ~4;
+            }
+            break;
+        }
+
+        gBtlWork->unk_072 = 3;
+
+        if (work->unk_150 > 0) {
+            work->unk_150 = 0;
+        }
+        break;
     case 50:
         func_0801DD08(work);
         st = work->unk_154;
