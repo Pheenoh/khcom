@@ -68,6 +68,9 @@ TARGET_FUNC_SIZE = {
     "jp": {
         "func_08066588": 156,
     },
+    "eu": {
+        "func_080B4154": 192,
+    },
 }
 
 TARGET_DATA_SIZE = {

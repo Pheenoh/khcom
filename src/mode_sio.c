@@ -2,6 +2,10 @@
 #include "mode_sio.h"
 #include "gba/keys.h"
 
+#ifdef VERSION_EU
+extern void* eu_0805E924(void* strings);
+#endif
+
 SioBtlConnectWork* gSioBtlConnectWork;
 SioBtlOptionWork* gSioBtlOptionWork;
 SioBtlCardgetWork* gSioBtlCardgetWork;
@@ -2517,7 +2521,6 @@ void mode_wLogo_2(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080B4154(void) {
     u8* p;
     func_08006120(0, 16);
@@ -2533,12 +2536,13 @@ void func_080B4154(void) {
     gUnk_02034B5A = 0;
     func_08065ACC(gUnk_02034B60, 20);
     p = &gUnk_02034B5B;
+#ifdef VERSION_EU
+    *p = func_08065B6C(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
+#else
     *p = func_08065B6C(gWorldNames[gUnk_02034B59], gUnk_02034B60);
+#endif
     gUnk_02034C00 = LoadObjPalette(gUnk_096FBCC4, 32);
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B4154.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080B4210(u8 a) {
