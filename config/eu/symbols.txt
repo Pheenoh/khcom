@@ -2834,3 +2834,7 @@ gTaskDescView = 0x09f6fa40
 gTaskDescEvSound = 0x09f6fb70
 gTaskDescMapAnim = 0x09f6fcfc
 gTaskDescEvMapObj = 0x09f72e54
+gUnk_096FD850 = 0x096cab98
+gUnk_09756C78 = 0x09723fd8
+gUnk_09756D86 = 0x097240e6
+gUnk_09756D90 = 0x097240f0
