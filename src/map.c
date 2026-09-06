@@ -7988,7 +7988,6 @@ s32 func_080ED498(MapMenuWork* w) {
 INCLUDE_ASM("map/func_080ED498.s");
 #endif
 
-#ifndef VERSION_EU
 s32 func_080ED6CC(MapMenuWork* w) {
     if (w->unk_30C != 0) {
         ApproachValue(&w->unk_014, 0, w->unk_30C);
@@ -8015,9 +8014,6 @@ s32 func_080ED6CC(MapMenuWork* w) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("map/func_080ED6CC.s");
-#endif
 
 s32 func_080ED7CC(MapMenuWork* w) {
     if (GetKeysRepeat() & 0x40) {
@@ -8157,7 +8153,6 @@ s32 func_080EDA90(MapMenuWork* w) {
     return 1;
 }
 
-#ifndef VERSION_EU
 s32 func_080EDB4C(MapMenuWork* w) {
     if (w->unk_30C != 0) {
         ApproachValue(&w->unk_014, -0x8000, w->unk_30C);
@@ -8179,9 +8174,6 @@ s32 func_080EDB4C(MapMenuWork* w) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("map/func_080EDB4C.s");
-#endif
 
 s32 func_080EDC38(MapMenuWork* w) {
     if (w->unk_30C != 0) {

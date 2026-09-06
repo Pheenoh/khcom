@@ -253,41 +253,37 @@ s32 func_080D3DCC(u8 a) {
     }
 }
 
-#ifndef VERSION_EU
 void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
     u16 pal;
 
+#ifdef VERSION_EU
+    func_08065ACC(work, 36);
+#else
     func_08065ACC(work, 24);
+#endif
     work->unk_0CC = func_08065B6C(func_08093C18(arg[0]), work);
     pal = func_080D3DCC(arg[0]);
     work->palette = LoadObjPalette(gUnk_0984A1F8 + pal, 32);
     LoadPalette(gUnk_0984A078 + pal, gUnk_05000160, 32);
     work->unk_0CE = func_080D3D40(func_08065B08(work, work->unk_0CC));
 }
-#else
-INCLUDE_ASM("allmap/task_allmap_roomname_0.s");
-#endif
 
 s32 task_allmap_roomname_1(void) {
     return 1;
 }
 
-#ifndef VERSION_EU
 void task_allmap_roomname_2(AllmapRoomnameWork* work) {
     func_080664D8(work->unk_0CE + 117, 3, work, work->palette, 50, work->unk_0CC);
 }
-#else
-INCLUDE_ASM("allmap/task_allmap_roomname_2.s");
-#endif
 
-#ifndef VERSION_EU
 void task_allmap_roomname_3(AllmapRoomnameWork* work) {
+#ifdef VERSION_EU
+    func_08065AE0(work, 36);
+#else
     func_08065AE0(work, 24);
+#endif
     ReleaseObjPalette(work->palette);
 }
-#else
-INCLUDE_ASM("allmap/task_allmap_roomname_3.s");
-#endif
 
 void func_080D3ED0(void) {
     u8* base;
