@@ -844,7 +844,7 @@ void task_wlogo_atl_2(WlogoAtlWork* work);
 void task_wlogo_atl_3(WlogoAtlWork* work);
 void func_080B5444(void);
 void WlogoEnableHBlank(void);
-void func_080B75FC(void);
+void WlogoHBlankIntr(void);
 void WlogoDisableHBlank(void);
 void func_080B8334(WlogoTtEff* p, s16 a, s16 b, s16 c);
 void func_080B83A4(WlogoTtEff* p, s16 a, s16 b, s16 c);

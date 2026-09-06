@@ -1769,11 +1769,11 @@ void task_wlogo_tt_3(WlogoTtWork* work) {
 }
 
 void WlogoEnableHBlank(void) {
-    SetHBlankCallback(func_080B75FC);
+    SetHBlankCallback(WlogoHBlankIntr);
     EnableHBlankIntr();
 }
 
-void func_080B75FC(void) {
+void WlogoHBlankIntr(void) {
     vu16 line;
 
     gIntrCheck |= 2;

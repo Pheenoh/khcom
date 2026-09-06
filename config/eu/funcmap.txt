@@ -1596,7 +1596,7 @@ Exclamation_0	0x08075624	140	0x080749e4	global
 balloon_0	0x080756b0	112	0x08074a70	global
 func_08075720	0x08075720	40	0x08074ae0	global
 Exclamation_1	0x08075748	56	0x08074b08	global
-func_08075780	0x08075780	116	0x08074b40	global
+EffectDrawObj	0x08075780	116	0x08074b40	global
 EffectReleaseObj	0x080757f4	24	0x08074bb4	body
 Question_0	0x0807580c	116	0x08074bcc	global
 Question_1	0x08075880	80	0x08074c40	global
@@ -1604,10 +1604,10 @@ func_080758D0	0x080758d0	224	0x08074c90	global
 func_080759B0	0x080759b0	48	0x08074d70	global
 func_080759E0	0x080759e0	116	0x08074da0	global
 func_08075A54	0x08075a54	40	0x08074e14	global
-func_08075A7C	0x08075a7c	128	0x08074e3c	global
-func_08075AFC	0x08075afc	40	0x08074ebc	global
-func_08075B24	0x08075b24	160	0x08074ee4	global
-func_08075BC4	0x08075bc4	40	0x08074f84	global
+GlowNose_0	0x08075a7c	128	0x08074e3c	global
+GlowNose_1	0x08075afc	40	0x08074ebc	global
+GlowNose2_0	0x08075b24	160	0x08074ee4	global
+GlowNose2_1	0x08075bc4	40	0x08074f84	global
 down_0	0x08075bec	192	0x08074fac	global
 down_1	0x08075cac	172	0x0807506c	global
 down_2	0x08075d58	100	0x08075118	global
@@ -2796,7 +2796,7 @@ task_wlogo_tt_1	0x080b6ff0	1108	0x080b32f4	named
 task_wlogo_tt_2	0x080b7444	364	0x080b3748	named
 task_wlogo_tt_3	0x080b75b0	56	0x080b38b4	named
 WlogoEnableHBlank	0x080b75e8	20	0x080b38ec	body
-func_080B75FC	0x080b75fc	104	0x080b3900	global
+WlogoHBlankIntr	0x080b75fc	104	0x080b3900	global
 WlogoDisableHBlank	0x080b7664	16	0x080b3968	body
 task_wlogo_tt_obj_0	0x080b7674	96	0x080b3978	named
 task_wlogo_tt_obj_1	0x080b76d4	52	0x080b39d8	named
