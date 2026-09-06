@@ -2,6 +2,7 @@
 #include "map.h"
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
+extern void eu_08005ADC(s32 id);
 extern void* gUnkEu_088927F4[];
 extern void* gUnkEu_088928E4[];
 extern void* gUnkEu_08890E1C[];
@@ -7561,7 +7562,6 @@ void func_080EC9EC(u8* work) {
     TaskPoolDraw((TaskPool*)&work[0x1D0]);
 }
 
-#ifndef VERSION_EU
 void func_080ECA54(u8* work) {
     s32 i;
 
@@ -7569,12 +7569,23 @@ void func_080ECA54(u8* work) {
         func_08012304(&work[4 + i * 92]);
     }
 
+#ifdef VERSION_EU
+    if (work[0x1E4] != 0) {
+        eu_08005ADC(3);
+    }
+
+    if (work[0x1E5] != 0) {
+        eu_08005ADC(2);
+    }
+
+    if (work[0x1E6] != 0) {
+        eu_08005ADC(1);
+    }
+#endif
+
     TaskPoolDestroy((TaskPool*)&work[0x1D0]);
     func_080E58E4();
 }
-#else
-INCLUDE_ASM("map/func_080ECA54.s");
-#endif
 
 void func_080ECA88(UnkStruct_080ECA88* p) {
     func_080038E4(p->unk_44, p->unk_4C, p->unk_54);
@@ -10349,9 +10360,10 @@ void func_080F1274(MapDbgWork* w) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080F131C(MapDbgWork* w, u8* p) {
+#ifndef VERSION_EU
     UnkStruct_080DEE18* d;
+#endif
 
     w->unk_00 = 0;
     w->unk_04 = p;
@@ -10359,24 +10371,25 @@ void func_080F131C(MapDbgWork* w, u8* p) {
     w->unk_08 = func_080F1124;
     w->unk_0C = 0;
     w->unk_0D = 0;
+#ifdef VERSION_EU
+    func_080DEE18(gUnk_0203C590.unk_06);
+#else
     d = func_080DEE18(gUnk_0203C590.unk_06);
     w->unk_10 = func_080668F0();
     w->unk_14 = func_08066904();
     w->unk_2C = func_08066AF8(d->unk_04, w->unk_18);
     w->unk_42 = func_08066AF8(func_080F10F0((u8*)d), w->unk_2E);
     w->unk_46 = func_0806692C(gUnk_09EF6C38, &w->unk_44);
-}
-#else
-INCLUDE_ASM("map/func_080F131C.s");
 #endif
+}
 
 s32 func_080F138C(u8* work) {
     (*(void (**)(u8*))&work[8])(work);
     return 1;
 }
 
-#ifndef VERSION_EU
 void func_080F139C(MapDbgWork* w) {
+#ifndef VERSION_EU
     if (w->unk_00 != 0) {
         func_08066DC0(240 - w->unk_2C * 8, 0x8E, w->unk_18, w->unk_10, w->unk_14, 0, w->unk_2C);
         func_08066DC0(240 - w->unk_42 * 8, 0x96, w->unk_2E, w->unk_10, w->unk_14, 0, w->unk_42);
@@ -10389,18 +10402,14 @@ void func_080F139C(MapDbgWork* w) {
             }
         }
     }
-}
-#else
-INCLUDE_ASM("map/func_080F139C.s");
 #endif
+}
 
-#ifndef VERSION_EU
 void func_080F1450(u8* work) {
+#ifndef VERSION_EU
     func_08066918(*(void**)&work[16], *(void**)&work[20]);
-}
-#else
-INCLUDE_ASM("map/func_080F1450.s");
 #endif
+}
 
 void func_080F1460(MapGmkJumpWork* w) {
     if (func_08012660(&w->unk_040, 1) && (w->unk_06E & 2)) {
