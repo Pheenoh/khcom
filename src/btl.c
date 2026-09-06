@@ -622,12 +622,15 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
     s32 d;
     s32 t4;
     s32 t5;
+    u32 id;
     void** q;
     s32 ofs;
     u8* base;
     UnkStruct_08021C8A* a;
+    s32 sel[6];
     u8 buf[5];
     BtlWork* e2;
+    BtlWork* e3;
     BtlTaskArgs args;
     BtlSpawnArgs spawn;
     BtlSpawnArgs spawn2;
@@ -874,6 +877,857 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         work->unk_156 = 0;
         work->unk_154 = 0;
         p->unk_34 &= ~1;
+        break;
+    case 5:
+        p->unk_E4->unk_068 &= ~0x40000000;
+        p->unk_E4->unk_068 &= ~8;
+        work->unk_15A |= 0x80;
+
+        if (gBtlWork->unk_068 & 0x4000) {
+            if (work->unk_172 != 0) {
+                id = func_080ABCA4(sel, 0);
+            } else {
+                id = func_080ABCA4(sel, 1);
+            }
+        } else {
+            id = func_080ABA80(sel);
+        }
+
+        if (id == 145) {
+            if (!(p->unk_E4->unk_068 & 2)) {
+                p->unk_E4->unk_068 |= 2;
+                p->unk_E4->unk_0B0[2] = 0;
+            }
+
+            id = sel[*(s8*)&p->unk_E4->unk_0B0[2]];
+            p->unk_E4->unk_0B0[2]++;
+        }
+
+        work->unk_191[0] = 2;
+
+        switch (id) {
+        case 0:
+            work->unk_191[1] = 0;
+            work->unk_190 = 2;
+            work->unk_191[0] = 2;
+            func_0801E518(work);
+            break;
+        case 1:
+            work->unk_191[1] = 1;
+            work->unk_190 = 0;
+            work->unk_191[0] = 3;
+            func_0801E518(work);
+            break;
+        case 2:
+            work->unk_191[1] = 2;
+            work->unk_190 = 3;
+            work->unk_191[0] = 1;
+            func_0801E518(work);
+            break;
+        case 3:
+            work->unk_191[1] = 3;
+            work->unk_190 = 1;
+            work->unk_191[0] = 2;
+            func_0801E518(work);
+            break;
+        case 4:
+            work->unk_191[1] = 4;
+            work->unk_190 = 2;
+            work->unk_191[0] = 0;
+            func_0801E518(work);
+            break;
+        case 5:
+            work->unk_191[1] = 5;
+            work->unk_190 = 2;
+            work->unk_191[0] = 1;
+            func_0801E518(work);
+            break;
+        case 6:
+            work->unk_191[1] = 6;
+            work->unk_190 = 0;
+            work->unk_191[0] = 2;
+            func_0801E518(work);
+            break;
+        case 7:
+            work->unk_191[1] = 7;
+            work->unk_190 = 1;
+            work->unk_191[0] = 1;
+            func_0801E518(work);
+            break;
+        case 8:
+            work->unk_191[1] = 8;
+            work->unk_190 = 3;
+            work->unk_191[0] = 1;
+            func_0801E518(work);
+            break;
+        case 9:
+            work->unk_191[1] = 9;
+            work->unk_190 = 3;
+            work->unk_191[0] = 2;
+            func_0801E518(work);
+            break;
+        case 10:
+            work->unk_191[1] = 10;
+            work->unk_190 = 4;
+            work->unk_191[0] = 1;
+            func_0801E518(work);
+            break;
+        case 11:
+            work->unk_191[1] = 11;
+            work->unk_190 = 1;
+            work->unk_191[0] = 2;
+            func_0801E518(work);
+            break;
+        case 12:
+            work->unk_191[1] = 12;
+            work->unk_190 = 1;
+            work->unk_191[0] = 3;
+            func_0801E518(work);
+            break;
+        case 13:
+            work->unk_191[1] = 13;
+            work->unk_190 = 2;
+            work->unk_191[0] = 2;
+            func_0801E518(work);
+            break;
+        case 14:
+            work->unk_191[1] = 14;
+            work->unk_190 = 3;
+            work->unk_191[0] = 1;
+            func_0801E518(work);
+            break;
+        case 15:
+            work->unk_191[1] = 15;
+            work->unk_190 = 2;
+            work->unk_191[0] = 2;
+            func_0801E518(work);
+            break;
+        case 16:
+            work->unk_191[1] = 16;
+            work->unk_190 = 0;
+            work->unk_191[0] = 0;
+            func_0801E518(work);
+            break;
+        case 17:
+            work->unk_191[1] = 17;
+            work->unk_190 = 1;
+            work->unk_191[0] = 3;
+            func_0801E518(work);
+            break;
+        case 19:
+            work->unk_038 = 6;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 0;
+            work->unk_191[0] = 1;
+            break;
+        case 0x8002ACAB:
+            work->unk_038 = 6;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 1;
+            work->unk_191[0] = 2;
+            break;
+        case 0xCAB2ACAB:
+            work->unk_038 = 6;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 2;
+            work->unk_191[0] = 3;
+            break;
+        case 20:
+            work->unk_038 = 7;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 0;
+            work->unk_191[0] = 1;
+            break;
+        case 0x8002D4B5:
+            work->unk_038 = 7;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 1;
+            work->unk_191[0] = 2;
+            break;
+        case 0xCB52D4B5:
+            work->unk_038 = 7;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 2;
+            work->unk_191[0] = 3;
+            break;
+        case 21:
+            work->unk_038 = 8;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 0;
+            work->unk_191[0] = 1;
+            break;
+        case 0x8002FCBF:
+            work->unk_038 = 8;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 1;
+            work->unk_191[0] = 2;
+            break;
+        case 0xCBF2FCBF:
+            work->unk_038 = 8;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 2;
+            work->unk_191[0] = 3;
+            break;
+        case 22:
+            work->unk_038 = 10;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 0;
+            work->unk_191[0] = 0;
+            break;
+        case 0x800324C9:
+            work->unk_038 = 10;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 1;
+            work->unk_191[0] = 0;
+            break;
+        case 0xCC9324C9:
+            work->unk_038 = 10;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 2;
+            work->unk_191[0] = 0;
+            break;
+        case 24:
+            work->unk_038 = 11;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 0;
+            work->unk_191[0] = 1;
+            break;
+        case 0x800374DD:
+            work->unk_038 = 11;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 1;
+            work->unk_191[0] = 2;
+            break;
+        case 0xCDD374DD:
+            work->unk_038 = 11;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 2;
+            work->unk_191[0] = 3;
+            break;
+        case 23:
+            work->unk_038 = 9;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 0;
+            work->unk_191[0] = 1;
+            break;
+        case 0x80034CD3:
+            work->unk_038 = 9;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 1;
+            work->unk_191[0] = 2;
+            break;
+        case 0xCD334CD3:
+            work->unk_038 = 9;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 2;
+            work->unk_191[0] = 3;
+            break;
+        case 27:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdGoofy;
+            work->unk_162[0] = 0;
+            break;
+        case 0x8003ECFB:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdGoofy;
+            work->unk_162[0] = 1;
+            break;
+        case 0xCFB3ECFB:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdGoofy;
+            work->unk_162[0] = 2;
+            break;
+        case 28:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdDonald;
+            work->unk_162[0] = 0;
+            break;
+        case 0x8003C4F1:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdDonald;
+            work->unk_162[0] = 1;
+            break;
+        case 0xCF13C4F1:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdDonald;
+            work->unk_162[0] = 2;
+            break;
+        case 33:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnTink;
+            work->unk_162[0] = 0;
+            work->unk_191[0] = 1;
+            break;
+        case 0x8004B52D:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnTink;
+            work->unk_162[0] = 1;
+            work->unk_191[0] = 1;
+            break;
+        case 0xD2D4B52D:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnTink;
+            work->unk_162[0] = 2;
+            work->unk_191[0] = 1;
+            break;
+        case 41:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdAriel;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80055555:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdAriel;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD5555555:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdAriel;
+            work->unk_162[0] = 2;
+            break;
+        case 34:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnMushu;
+            work->unk_162[0] = 0;
+            break;
+        case 0x8004DD37:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnMushu;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD374DD37:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnMushu;
+            work->unk_162[0] = 2;
+            break;
+        case 29:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnSimba;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80041505:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnSimba;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD0541505:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnSimba;
+            work->unk_162[0] = 2;
+            break;
+        case 35:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnCloud;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80050541:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnCloud;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD4150541:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnCloud;
+            work->unk_162[0] = 2;
+            break;
+        case 31:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnBambi;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80046519:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnBambi;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD1946519:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnBambi;
+            work->unk_162[0] = 2;
+            break;
+        case 42:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdJack;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80057D5F:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdJack;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD5F57D5F:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdJack;
+            work->unk_162[0] = 2;
+            break;
+        case 40:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdAladdin;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80052D4B:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdAladdin;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD4B52D4B:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdAladdin;
+            work->unk_162[0] = 2;
+            break;
+        case 43:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdPan;
+            work->unk_162[0] = 0;
+            break;
+        case 0x8005A569:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdPan;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD695A569:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdPan;
+            work->unk_162[0] = 2;
+            break;
+        case 32:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnDumbo;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80048D23:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnDumbo;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD2348D23:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnDumbo;
+            work->unk_162[0] = 2;
+            break;
+        case 30:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnGenie;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80043D0F:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnGenie;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD0F43D0F:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnGenie;
+            work->unk_162[0] = 2;
+            break;
+        case 44:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdBeast;
+            work->unk_162[0] = 0;
+            break;
+        case 0x8005CD73:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdBeast;
+            work->unk_162[0] = 1;
+            break;
+        case 0xD735CD73:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdBeast;
+            work->unk_162[0] = 2;
+            break;
+        case 47:
+            work->unk_038 = 12;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 0;
+            work->unk_162[0] = 0;
+            break;
+        case 48:
+            work->unk_038 = 12;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 0;
+            work->unk_162[0] = 1;
+            break;
+        case 49:
+            work->unk_038 = 12;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 0;
+            work->unk_162[0] = 2;
+            break;
+        case 50:
+            work->unk_038 = 12;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 0;
+            work->unk_162[0] = 3;
+            break;
+        case 51:
+            work->unk_038 = 12;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 0;
+            work->unk_162[0] = 4;
+            break;
+        case 52:
+            work->unk_038 = 12;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 0;
+            work->unk_162[0] = 5;
+            break;
+        case 53:
+            work->unk_038 = 12;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 0;
+            work->unk_162[0] = 6;
+            break;
+        case 25:
+            work->unk_038 = 86;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 0;
+            break;
+        case 0x80039CE7:
+            work->unk_038 = 86;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 1;
+            break;
+        case 0xCE739CE7:
+            work->unk_038 = 86;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 2;
+            break;
+        case 0xC0100401:
+            work->unk_038 = 5;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_161 = 0;
+            break;
+        case 100:
+            work->unk_038 = 31;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 0;
+            break;
+        case 101:
+            work->unk_038 = 52;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_161 = 2;
+            break;
+        case 104:
+            work->unk_038 = 39;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 3;
+            break;
+        case 102:
+            work->unk_038 = 50;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_03C = 51;
+            work->unk_161 = 8;
+            break;
+        case 103:
+            work->unk_038 = 45;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_191[0] = 3;
+            break;
+        case 105:
+            work->unk_038 = 56;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 106:
+            work->unk_038 = 55;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 107:
+            work->unk_038 = 59;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 126:
+            work->unk_038 = 63;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 124:
+            work->unk_038 = 68;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 130:
+            work->unk_038 = 69;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 131:
+            work->unk_038 = 70;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 108:
+            work->unk_038 = 44;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 109:
+            work->unk_038 = 76;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 116:
+            work->unk_038 = 31;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 2;
+            break;
+        case 113:
+            work->unk_038 = 31;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 1;
+            break;
+        case 117:
+            work->unk_038 = 31;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 3;
+            break;
+        case 118:
+            work->unk_038 = 31;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 4;
+            break;
+        case 119:
+            work->unk_038 = 31;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 5;
+            break;
+        case 115:
+            work->unk_038 = 31;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 6;
+            break;
+        case 122:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescFrdDonald;
+            work->unk_162[0] = 3;
+            break;
+        case 135:
+            work->unk_038 = 71;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 128:
+            work->unk_038 = 17;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnBambi;
+            work->unk_162[0] = 3;
+            break;
+        case 129:
+            work->unk_038 = 23;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            *(TaskDesc**)&work->unk_18C = &gTaskDescSmnCloud;
+            work->unk_162[0] = 3;
+            break;
+        case 120:
+            work->unk_038 = 64;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 121:
+            work->unk_038 = 78;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 132:
+            work->unk_038 = 72;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 125:
+            work->unk_038 = 62;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 127:
+            work->unk_038 = 73;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 136:
+            work->unk_038 = 74;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 110:
+            work->unk_038 = 77;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 114:
+            work->unk_038 = 31;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            work->unk_162[0] = 7;
+            break;
+        case 134:
+            work->unk_038 = 79;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 133:
+            work->unk_038 = 81;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 111:
+            work->unk_038 = 80;
+            work->unk_156 = 0;
+            work->unk_154 = 0;
+            break;
+        case 112:
+        case 123:
+        default:
+            func_0801E4E4(work, 1);
+            break;
+        }
+
+        e3 = p->unk_E4->unk_078;
+
+        if (e3 != 0) {
+            if (p->unk_34 & 4) {
+                if (p->unk_04 < e3->unk_004) {
+                    p->unk_34 &= ~4;
+                }
+            } else {
+                if (p->unk_04 > e3->unk_004) {
+                    p->unk_34 |= 4;
+                }
+            }
+        }
+
+        AnimReset(&work->anim);
+        work->unk_15C = 0;
+        *(s32*)((u8*)p + 0x108) = *(s32*)((u8*)p + 0x10C) = 0;
         break;
     case 9:
         switch (work->unk_038) {
