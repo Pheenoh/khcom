@@ -4815,7 +4815,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
     }
 
     func_0801C6D4(&p->unk_04, &p->unk_08, &p->unk_0C, (s32*)((u8*)p + 0xD4));
-    func_08000EA4(&work->unk_024);
+    TaskPoolUpdate(&work->unk_024);
 
     if (work->unk_038 == 29 && (work->unk_15A & 4)) {
         work->unk_15A &= ~4;
