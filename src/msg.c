@@ -15,15 +15,20 @@ struct UnkStruct_02039DD0* gUnk_02039DD0;
 void func_0806180C(u16 a) {
     ModeRequest(gUnk_09EE274C, a);
 }
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+#define MSG_CODE(n) ((n) - 2)
+#else
+#define MSG_CODE(n) (n)
+#endif
+
 void func_08061824(void) {
     SetBackdropColor(0, 0, 0);
 
     switch (gUnk_02034A78 & 0x7FFF) {
     case 41:
     case 49:
-    case 176:
-    case 185:
+    case MSG_CODE(176):
+    case MSG_CODE(185):
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -50,7 +55,7 @@ void func_08061824(void) {
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 134);
         break;
-    case 136:
+    case MSG_CODE(136):
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -59,7 +64,7 @@ void func_08061824(void) {
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 139);
         break;
-    case 137:
+    case MSG_CODE(137):
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -68,7 +73,7 @@ void func_08061824(void) {
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 160);
         break;
-    case 139:
+    case MSG_CODE(139):
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -77,7 +82,7 @@ void func_08061824(void) {
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 159);
         break;
-    case 140:
+    case MSG_CODE(140):
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -86,7 +91,7 @@ void func_08061824(void) {
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 136);
         break;
-    case 141:
+    case MSG_CODE(141):
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -95,7 +100,7 @@ void func_08061824(void) {
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 137);
         break;
-    case 142:
+    case MSG_CODE(142):
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -140,8 +145,8 @@ void func_08061824(void) {
         func_08006120(0, 1);
         func_080A4188(&gUnk_02034A60, 163);
         break;
-    case 143:
-    case 144:
+    case MSG_CODE(143):
+    case MSG_CODE(144):
         m4aSongNumStart(106);
         DisableBg(0);
         DisableBg(1);
@@ -150,10 +155,10 @@ void func_08061824(void) {
         func_08006120(0, 1);
         func_080A4188(&gUnk_02034A60, 165);
         break;
-    case 145:
-    case 146:
-    case 147:
-    case 148:
+    case MSG_CODE(145):
+    case MSG_CODE(146):
+    case MSG_CODE(147):
+    case MSG_CODE(148):
         DisableBg(0);
         DisableBg(1);
         DisableBg(2);
@@ -170,11 +175,11 @@ void func_08061824(void) {
     case 108:
     case 115:
     case 120:
-    case 129:
-    case 151:
-    case 177:
-    case 186:
-    case 192:
+    case MSG_CODE(129):
+    case MSG_CODE(151):
+    case MSG_CODE(177):
+    case MSG_CODE(186):
+    case MSG_CODE(192):
         m4aSongNumStart(106);
         DisableBg(0);
         DisableBg(1);
@@ -191,9 +196,9 @@ void func_08061824(void) {
     case 109:
     case 116:
     case 121:
-    case 130:
-    case 152:
-    case 188:
+    case MSG_CODE(130):
+    case MSG_CODE(152):
+    case MSG_CODE(188):
         m4aSongNumStart(106);
         DisableBg(0);
         DisableBg(1);
@@ -219,8 +224,8 @@ void func_08061824(void) {
     case 111:
     case 117:
     case 123:
-    case 131:
-    case 153:
+    case MSG_CODE(131):
+    case MSG_CODE(153):
         m4aSongNumStart(106);
         DisableBg(0);
         DisableBg(1);
@@ -248,8 +253,8 @@ void func_08061824(void) {
         func_080A4188(&gUnk_02034A60, 164);
         break;
     case 27:
-    case 156:
-    case 166:
+    case MSG_CODE(156):
+    case MSG_CODE(166):
         m4aSongNumStart(106);
         DisableBg(0);
         DisableBg(1);
@@ -260,10 +265,6 @@ void func_08061824(void) {
         break;
     }
 }
-#else
-INCLUDE_ASM("msg/func_08061824.s");
-#endif
-#ifndef VERSION_EU
 void func_08061FC8(void) {
     switch (gUnk_02034A78) {
     case 0:
@@ -323,14 +324,14 @@ void func_08061FC8(void) {
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
-    case 131:
+    case MSG_CODE(131):
         gGameState.unk_17C = 67;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         func_0800FB2C(65);
         break;
-    case 133:
+    case MSG_CODE(133):
         gGameState.unk_17C = 3;
         func_0800FB2C(57);
         func_0800FB2C(59);
@@ -375,25 +376,25 @@ void func_08061FC8(void) {
         func_0800FB2C(60);
         break;
     case 52:
-    case 149:
+    case MSG_CODE(149):
         gGameState.unk_17C = 0;
         func_0800FB2C(57);
         func_0800FB2C(59);
         func_0800FB2C(60);
         break;
-    case 155:
+    case MSG_CODE(155):
         gGameState.unk_17C = 128;
         func_0800FB2C(69);
         break;
-    case 174:
-    case 186:
+    case MSG_CODE(174):
+    case MSG_CODE(186):
         gGameState.unk_17C = 0;
         break;
-    case 185:
-    case 190:
+    case MSG_CODE(185):
+    case MSG_CODE(190):
         gGameState.unk_17C = 128;
         break;
-    case 156:
+    case MSG_CODE(156):
         gGameState.flags &= ~0x100;
         func_0800FB2C(66);
         func_0800FB2C(67);
@@ -401,10 +402,6 @@ void func_08061FC8(void) {
         break;
     }
 }
-#else
-INCLUDE_ASM("msg/func_08061FC8.s");
-#endif
-#ifndef VERSION_EU
 void func_0806250C(void) {
     switch (gUnk_02034A78) {
     case 0:
@@ -443,11 +440,11 @@ void func_0806250C(void) {
     case 108:
     case 115:
     case 120:
-    case 129:
-    case 151:
-    case 177:
-    case 186:
-    case 192:
+    case MSG_CODE(129):
+    case MSG_CODE(151):
+    case MSG_CODE(177):
+    case MSG_CODE(186):
+    case MSG_CODE(192):
         func_080938F8(221);
         break;
     case 4:
@@ -459,9 +456,9 @@ void func_0806250C(void) {
     case 109:
     case 116:
     case 121:
-    case 130:
-    case 152:
-    case 188:
+    case MSG_CODE(130):
+    case MSG_CODE(152):
+    case MSG_CODE(188):
         func_080938F8(231);
         break;
     case 6:
@@ -472,8 +469,8 @@ void func_0806250C(void) {
     case 111:
     case 117:
     case 123:
-    case 131:
-    case 153:
+    case MSG_CODE(131):
+    case MSG_CODE(153):
         func_080938F8(241);
         break;
     case 114:
@@ -485,39 +482,36 @@ void func_0806250C(void) {
     case 126:
         func_08084458(324);
         break;
-    case 137:
+    case MSG_CODE(137):
         func_08084458(64);
         break;
-    case 139:
+    case MSG_CODE(139):
         func_08084458(431);
         break;
-    case 143:
-    case 144:
+    case MSG_CODE(143):
+    case MSG_CODE(144):
         func_08084458(285);
         break;
-    case 149:
+    case MSG_CODE(149):
         gGameState.unk_180 = 128;
         break;
-    case 156:
+    case MSG_CODE(156):
         gGameState.unk_180 = 593;
         break;
-    case 166:
+    case MSG_CODE(166):
         gGameState.unk_180 = 46;
         break;
-    case 176:
+    case MSG_CODE(176):
         gGameState.unk_180 = 256;
         break;
-    case 185:
+    case MSG_CODE(185):
         gGameState.unk_180 = 0x800;
         break;
-    case 191:
+    case MSG_CODE(191):
         gGameState.unk_180 = 0x1000;
         break;
     }
 }
-#else
-INCLUDE_ASM("msg/func_0806250C.s");
-#endif
 void func_0806297C(void) {
     UnkStruct_09EE3FB4* m = gUnk_09EE3FB4[gUnk_02034A78];
 
@@ -542,22 +536,21 @@ u8 func_080629CC(void) {
     }
     return 0;
 }
-#ifndef VERSION_EU
 void func_080629F8(void) {
     switch (gUnk_02034A78) {
     case 2:
         func_0800FC14(0);
         break;
-    case 136:
+    case MSG_CODE(136):
         func_0800FB2C(41);
         break;
-    case 140:
+    case MSG_CODE(140):
         func_0800FB2C(40);
         break;
-    case 141:
+    case MSG_CODE(141):
         func_0800FB2C(50);
         break;
-    case 142:
+    case MSG_CODE(142):
         func_0800FB2C(43);
         break;
     case 34:
@@ -584,7 +577,7 @@ void func_080629F8(void) {
     case 115:
         func_0800FC14(4);
         break;
-    case 129:
+    case MSG_CODE(129):
         func_0800FC14(11);
         break;
     case 87:
@@ -602,9 +595,6 @@ void func_080629F8(void) {
         break;
     }
 }
-#else
-INCLUDE_ASM("msg/func_080629F8.s");
-#endif
 #ifdef VERSION_EU
 #define MSG_SAVE_ID_LO 0x8D
 #else
