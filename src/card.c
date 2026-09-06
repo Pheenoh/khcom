@@ -175,6 +175,7 @@ void func_08002A10(void* a, void* b);
 void func_0805F1C0(s32* p, s32 v);
 void func_0808D6C4(u8* work);
 void func_0808CD48(u8* work);
+u8 func_0800FF00(u16 n);
 void func_08086A14(void);
 void LoadPalette(void* src, void* dst, s32 size);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
@@ -5763,7 +5764,303 @@ s32 func_080840E4(void) {
     return 1;
 }
 
-INCLUDE_ASM("card/func_08084124.s");
+void func_08084124(u16 cardId) {
+    u16 v;
+    u8 n;
+
+    v = gCardDefs[cardId & CARD_ID_MASK].unk_1C;
+
+    if (v <= 0x61) {
+        switch (v) {
+        case 0:
+            n = 119;
+            goto call;
+        case 8:
+            n = 127;
+            goto call;
+        case 1:
+            n = 120;
+            goto call;
+        case 2:
+            n = 121;
+            goto call;
+        case 3:
+            n = 122;
+            goto call;
+        case 4:
+            n = 123;
+            goto call;
+        case 5:
+            n = 124;
+            goto call;
+        case 6:
+            n = 125;
+            goto call;
+        case 7:
+            n = 126;
+            goto call;
+        case 9:
+            n = 128;
+            goto call;
+        case 10:
+            n = 129;
+            goto call;
+        case 11:
+            n = 130;
+            goto call;
+        case 12:
+            n = 131;
+            goto call;
+        case 13:
+            n = 132;
+            goto call;
+        case 16:
+            n = 133;
+            goto call;
+        case 14:
+            n = 134;
+            goto call;
+        case 15:
+            n = 135;
+            goto call;
+        case 18:
+            n = 136;
+            goto call;
+        case 19:
+            n = 137;
+            goto call;
+        case 20:
+            n = 138;
+            goto call;
+        case 21:
+            n = 139;
+            goto call;
+        case 22:
+            n = 140;
+            goto call;
+        case 23:
+            n = 141;
+            goto call;
+        case 24:
+            n = 142;
+            goto call;
+        case 25:
+            n = 143;
+            goto call;
+        case 26:
+            n = 144;
+            goto call;
+        case 27:
+            n = 145;
+            goto call;
+        case 28:
+            n = 146;
+            goto call;
+        case 29:
+            n = 147;
+            goto call;
+        case 30:
+            n = 148;
+            goto call;
+        case 31:
+            n = 149;
+            goto call;
+        case 32:
+            n = 150;
+            goto call;
+        case 33:
+            n = 151;
+            goto call;
+        case 34:
+            n = 152;
+            goto call;
+        case 35:
+            n = 153;
+            goto call;
+        case 36:
+            n = 154;
+            goto call;
+        case 37:
+            n = 155;
+            goto call;
+        case 38:
+            n = 156;
+            goto call;
+        case 47:
+            n = 164;
+            goto call;
+        case 50:
+            n = 165;
+            goto call;
+        case 51:
+            n = 166;
+            goto call;
+        case 52:
+            n = 167;
+            goto call;
+        case 53:
+            n = 168;
+            goto call;
+        case 61:
+            n = 169;
+            goto call;
+        case 73:
+            n = 170;
+            goto call;
+        case 74:
+            n = 171;
+            goto call;
+        case 48:
+            n = 172;
+            goto call;
+        case 54:
+            n = 173;
+            goto call;
+        case 55:
+            n = 174;
+            goto call;
+        case 56:
+            n = 175;
+            goto call;
+        case 57:
+            n = 176;
+            goto call;
+        case 59:
+            n = 177;
+            goto call;
+        case 60:
+            n = 178;
+            goto call;
+        case 62:
+            n = 179;
+            goto call;
+        case 64:
+            n = 180;
+            goto call;
+        case 65:
+            n = 181;
+            goto call;
+        case 66:
+            n = 182;
+            goto call;
+        case 67:
+            n = 183;
+            goto call;
+        case 68:
+            n = 184;
+            goto call;
+        case 70:
+            n = 185;
+            goto call;
+        case 71:
+            n = 186;
+            goto call;
+        case 72:
+            n = 187;
+            goto call;
+        case 49:
+            n = 188;
+            goto call;
+        case 58:
+            n = 189;
+            goto call;
+        case 63:
+            n = 190;
+            goto call;
+        case 69:
+            n = 191;
+            goto call;
+        case 76:
+            n = 192;
+            goto call;
+        case 77:
+            n = 193;
+            goto call;
+        case 75:
+            n = 194;
+            goto call;
+        case 81:
+            n = 204;
+            goto call;
+        case 78:
+            n = 195;
+            goto call;
+        case 86:
+            n = 200;
+            goto call;
+        case 80:
+            n = 197;
+            goto call;
+        case 79:
+            n = 201;
+            goto call;
+        case 85:
+            n = 198;
+            goto call;
+        case 87:
+            n = 199;
+            goto call;
+        case 89:
+            n = 203;
+            goto call;
+        case 88:
+            n = 202;
+            goto call;
+        case 84:
+            n = 196;
+            goto call;
+        case 90:
+            n = 247;
+            goto call;
+        case 91:
+            n = 206;
+            goto call;
+        case 92:
+            n = 205;
+            goto call;
+        case 93:
+            n = 207;
+            goto call;
+        case 94:
+            n = 208;
+            goto call;
+        case 82:
+        case 83:
+            n = 246;
+            goto call;
+        case 96:
+            n = 248;
+            goto call;
+        case 97:
+            n = 249;
+            goto call;
+        case 17:
+        case 39:
+        case 40:
+        case 41:
+        case 42:
+        case 43:
+        case 44:
+        case 45:
+        case 46:
+        case 95:
+            break;
+        }
+    }
+
+    goto done;
+
+call:
+    if (func_0800FF00(n) == 0) {
+        gCardCount++;
+    }
+
+done:
+    if (gCardCount > 999) {
+        gCardCount = 999;
+    }
+}
+
 
 INCLUDE_ASM("card/func_08084458.s");
 
