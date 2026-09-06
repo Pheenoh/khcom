@@ -473,21 +473,23 @@ void func_08110994(LstWork* work, u16 a) {
     s->unk_012 = a;
 }
 
-#ifndef VERSION_EU
 void func_081109A8(LstWork* work) {
     LstState* s;
     u16 zero;
 
     s = work->unk_04;
-    zero = 0;
-    s->unk_002 = 5;
-    s->unk_004 = zero;
-    s->unk_006 = zero;
-    s->unk_008 = zero;
-}
-#else
-INCLUDE_ASM("bos7/func_081109A8.s");
+#ifdef VERSION_EU
+    if ((u16)(s->unk_002 - 5) > 1) {
 #endif
+        zero = 0;
+        s->unk_002 = 5;
+        s->unk_004 = zero;
+        s->unk_006 = zero;
+        s->unk_008 = zero;
+#ifdef VERSION_EU
+    }
+#endif
+}
 
 #ifndef VERSION_EU
 u8 func_081109B8(LstWork* work, u8 a) {
