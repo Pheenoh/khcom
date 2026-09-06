@@ -15,8 +15,395 @@ struct UnkStruct_02039DD0* gUnk_02039DD0;
 void func_0806180C(u16 a) {
     ModeRequest(gUnk_09EE274C, a);
 }
+#ifndef VERSION_EU
+void func_08061824(void) {
+    SetBackdropColor(0, 0, 0);
+
+    switch (gUnk_02034A78 & 0x7FFF) {
+    case 41:
+    case 49:
+    case 176:
+    case 185:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 173);
+        break;
+    case 34:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 133);
+        break;
+    case 88:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 134);
+        break;
+    case 136:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 139);
+        break;
+    case 137:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 160);
+        break;
+    case 139:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 159);
+        break;
+    case 140:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 136);
+        break;
+    case 141:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 137);
+        break;
+    case 142:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 135);
+        break;
+    case 61:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        m4aSongNumStart(106);
+        func_080A4188(&gUnk_02034A60, 138);
+        break;
+    case 126:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 162);
+        break;
+    case 114:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 161);
+        break;
+    case 57:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 163);
+        break;
+    case 143:
+    case 144:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 165);
+        break;
+    case 145:
+    case 146:
+    case 147:
+    case 148:
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 166);
+        break;
+    case 3:
+    case 44:
+    case 53:
+    case 74:
+    case 94:
+    case 101:
+    case 108:
+    case 115:
+    case 120:
+    case 129:
+    case 151:
+    case 177:
+    case 186:
+    case 192:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 168);
+        break;
+    case 54:
+    case 75:
+    case 89:
+    case 96:
+    case 102:
+    case 109:
+    case 116:
+    case 121:
+    case 130:
+    case 152:
+    case 188:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 169);
+        break;
+    case 5:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 175);
+        break;
+    case 6:
+    case 80:
+    case 90:
+    case 97:
+    case 103:
+    case 111:
+    case 117:
+    case 123:
+    case 131:
+    case 153:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 170);
+        break;
+    case 119:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 172);
+        break;
+    case 60:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 164);
+        break;
+    case 27:
+    case 156:
+    case 166:
+        m4aSongNumStart(106);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+        DisableBg(3);
+        func_08006120(0, 1);
+        func_080A4188(&gUnk_02034A60, 174);
+        break;
+    }
+}
+#else
 INCLUDE_ASM("msg/func_08061824.s");
+#endif
+#ifndef VERSION_EU
+void func_08061FC8(void) {
+    switch (gUnk_02034A78) {
+    case 0:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 94:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 74:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 88:
+        gGameState.unk_17C = 19;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        func_0800FB2C(62);
+        break;
+    case 93:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 107:
+        gGameState.unk_17C = 7;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        func_0800FB2C(61);
+        break;
+    case 114:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 103:
+        gGameState.unk_17C = 11;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        func_0800FB2C(63);
+        break;
+    case 106:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 131:
+        gGameState.unk_17C = 67;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        func_0800FB2C(65);
+        break;
+    case 133:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 117:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 116:
+    case 118:
+        gGameState.unk_17C = 35;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        func_0800FB2C(64);
+        break;
+    case 119:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 120:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 44:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 59:
+        gGameState.unk_17C = 3;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 52:
+    case 149:
+        gGameState.unk_17C = 0;
+        func_0800FB2C(57);
+        func_0800FB2C(59);
+        func_0800FB2C(60);
+        break;
+    case 155:
+        gGameState.unk_17C = 128;
+        func_0800FB2C(69);
+        break;
+    case 174:
+    case 186:
+        gGameState.unk_17C = 0;
+        break;
+    case 185:
+    case 190:
+        gGameState.unk_17C = 128;
+        break;
+    case 156:
+        gGameState.flags &= ~0x100;
+        func_0800FB2C(66);
+        func_0800FB2C(67);
+        func_0800FB2C(68);
+        break;
+    }
+}
+#else
 INCLUDE_ASM("msg/func_08061FC8.s");
+#endif
 #ifndef VERSION_EU
 void func_0806250C(void) {
     switch (gUnk_02034A78) {
@@ -2862,7 +3249,242 @@ void event_seq_3(EventSeqWork* p) {
 #else
 INCLUDE_ASM("msg/event_seq_3.s");
 #endif
-INCLUDE_ASM("msg/event_chara_0.s");
+void event_chara_0(Work0806180C* p, u32* a) {
+    s32 v0;
+    s32 v1;
+
+    TaskPoolInit(&p->unk_010, 8);
+    *(s32*)&p->unk_024 = *a;
+    p->unk_000 = gUnk_09EE3FB4[p->unk_024]->unk_04[p->unk_027].unk_00;
+    p->unk_1A0 = 0;
+    p->unk_1A4 = p->unk_000->unk_04;
+    p->unk_188 = 0;
+    p->unk_18C = 0;
+    p->unk_198 = 0;
+    p->unk_1A9 = 0;
+    p->unk_1AA = 0;
+    p->unk_180 = 0;
+    p->unk_184 = 0;
+    p->tiles = NULL;
+    p->palette = NULL;
+    p->unk_00C = NULL;
+    p->unk_1B1 = 0;
+    p->unk_1B2 = 0;
+    p->unk_1B3 = 0;
+    p->unk_1B5 = 0;
+    p->unk_1B0 = 0;
+    p->unk_1B6 = 1;
+    p->unk_1B8 = 0;
+    gUnk_02039DC8->unk_00[p->unk_027] = (Ent08074EC8*)p->unk_028;
+
+    switch (p->unk_026) {
+    case 95:
+        gBtlWork = EwramAlloc(464);
+        BtlWorkInit();
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_68 = 0;
+        p->unk_1B3 = 1;
+        gBtlWork->unk_00 = gUnk_02039DC8->unk_48;
+        gBtlWork->unk_04 = gUnk_02039DC8->unk_4C;
+        gBtlWork->unk_24 = 0x100;
+        gBtlWork->unk_18 = 0;
+        gBtlWork->unk_28 = 0x100;
+        gBtlWork->unk_08 = gUnk_02039DC8->unk_48;
+        gBtlWork->unk_0C = gUnk_02039DC8->unk_4C;
+        gBtlWork->unk_10 = 0x10000;
+        gBtlWork->unk_14 = 0x14000;
+        gBtlWork->unk_1C = 0x10000;
+        gBtlWork->unk_20 = 0x14000;
+        gBtlWork->unk_1A = 15;
+        p->unk_02C = p->unk_000->unk_08;
+        p->unk_030 = p->unk_000->unk_0C;
+        p->unk_034 = p->unk_000->unk_10;
+        TaskCreate(&p->unk_010, gTaskDescBosTm, p->unk_028);
+        break;
+    case 96:
+        gBtlWork = EwramAlloc(464);
+        SetBgPriority(0, 2);
+        SetBgPriority(1, 1);
+        SetBgPriority(2, 0);
+        BtlWorkInit();
+        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
+        gBtlWork->unk_68 = 4;
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        p->unk_1B3 = 1;
+        gBtlWork->unk_04 = 0x5400;
+        gBtlWork->unk_24 = 0x100;
+        gBtlWork->unk_18 = 0;
+        func_0801A920(128, 424, 294, 384);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosPc, NULL);
+        break;
+    case 97:
+        gBtlWork = EwramAlloc(464);
+        SetBgPriority(0, 2);
+        SetBgPriority(1, 1);
+        SetBgPriority(2, 0);
+        BtlWorkInit();
+        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
+        gBtlWork->unk_68 = 4;
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        p->unk_1B3 = 1;
+        gBtlWork->unk_04 = 0x5400;
+        gBtlWork->unk_24 = 0x100;
+        gBtlWork->unk_18 = 0;
+        func_0801A920(128, 424, 294, 384);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosPc, &p->unk_010);
+        p->unk_1B4 = 0;
+        gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_00;
+        gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_04;
+        gUnk_02039DC8->unk_50 = gBtlWork->unk_08;
+        gUnk_02039DC8->unk_54 = gBtlWork->unk_0C;
+        gUnk_02039DC8->unk_58 = v0;
+        gUnk_02039DC8->unk_5C = v1;
+        break;
+    case 100:
+        SetBgSize(1, 0x4000);
+        SetBgPriority(0, 2);
+        SetBgPriority(1, 1);
+        SetBgPriority(2, 0);
+        gBtlWork = EwramAlloc(464);
+        BtlWorkInit();
+        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
+        gBtlWork->unk_68 = 4;
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        p->unk_1B3 = 1;
+        gBtlWork->unk_04 = 0x5400;
+        gBtlWork->unk_24 = 0x100;
+        gBtlWork->unk_18 = 0;
+        func_0801A920(128, 368, 480, 512);
+        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosLst, &p->unk_010);
+        break;
+    case 101:
+        SetupBg(0, 0, 24, 0);
+        SetupBg(1, 0, 26, 0);
+        SetupBg(2, 2, 28, 14);
+        SetBgPriority(0, 2);
+        SetBgPriority(1, 1);
+        SetBgPriority(2, 0);
+        gBtlWork = EwramAlloc(464);
+        BtlWorkInit();
+        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
+        gBtlWork->unk_68 = 4;
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        p->unk_1B3 = 1;
+        gBtlWork->unk_08 = 0x26600;
+        gBtlWork->unk_0C = 0x12800;
+        gBtlWork->unk_00 = 0x26600;
+        gBtlWork->unk_04 = 0x12800;
+        gBtlWork->unk_10 = 0x26600;
+        gBtlWork->unk_14 = 0x12800;
+        p->unk_02C = 0x2A200;
+        p->unk_030 = 0x15E00;
+        p->unk_034 = -0x3800;
+        func_0801A920(420, 612, 328, 384);
+        TaskCreate(&p->unk_010, gTaskDescBosJf, p->unk_028);
+        break;
+    case 103:
+        SetupBg(0, 0, 24, 0);
+        SetupBg(1, 0, 26, 0);
+        SetupBg(2, 2, 28, 14);
+        SetBgPriority(0, 2);
+        SetBgPriority(1, 1);
+        SetBgPriority(2, 0);
+        gBtlWork = EwramAlloc(464);
+        BtlWorkInit();
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_68 = 0;
+        p->unk_1B3 = 1;
+        gBtlWork->unk_08 = 0x12C00;
+        gBtlWork->unk_0C = 0x16800;
+        gBtlWork->unk_00 = 0x12C00;
+        gBtlWork->unk_04 = 0x16800;
+        gBtlWork->unk_10 = 0x12C00;
+        gBtlWork->unk_14 = 0x16800;
+        gUnk_02039DC8->unk_48 = gBtlWork->unk_08 - 0x7800;
+        gUnk_02039DC8->unk_4C = gBtlWork->unk_0C - 0x5000;
+        gUnk_02039DC8->unk_50 = gBtlWork->unk_08;
+        gUnk_02039DC8->unk_54 = gBtlWork->unk_0C;
+        gUnk_02039DC8->unk_68 = 0;
+        gUnk_02039DC8->unk_6A = 0;
+        p->unk_02C = p->unk_000->unk_08;
+        p->unk_030 = p->unk_000->unk_0C;
+        p->unk_034 = p->unk_000->unk_10;
+        func_0801A920(0, 256, 328, 424);
+        TaskCreate(&p->unk_010, gTaskDescBosDsd, p->unk_028);
+        break;
+    case 98:
+        SetupBg(0, 0, 24, 0);
+        SetupBg(1, 0, 26, 0);
+        SetupBg(2, 2, 28, 10);
+        SetBgPriority(0, 3);
+        SetBgPriority(1, 2);
+        SetBgPriority(2, 1);
+        gBtlWork = EwramAlloc(464);
+        BtlWorkInit();
+        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
+        gBtlWork->unk_68 = 4;
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        p->unk_1B3 = 1;
+        TaskCreate(&p->unk_010, gTaskDescBosBoogie, NULL);
+        gBtlWork->unk_B3 = 5;
+        break;
+    case 99:
+        SetupBg(0, 0, 24, 0);
+        SetupBg(1, 0, 26, 0);
+        SetupBg(2, 2, 28, 10);
+        SetBgPriority(0, 3);
+        SetBgPriority(1, 2);
+        SetBgPriority(2, 1);
+        gBtlWork = EwramAlloc(464);
+        BtlWorkInit();
+        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
+        gBtlWork->unk_68 = 4;
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        p->unk_1B3 = 1;
+        TaskCreate(&p->unk_010, gTaskDescBosUrsula, NULL);
+        gBtlWork->unk_B3 = 5;
+        break;
+    case 104:
+        SetupBg(0, 0, 24, 0);
+        SetupBg(1, 0, 26, 0);
+        SetupBg(2, 2, 28, 10);
+        SetBgPriority(0, 3);
+        SetBgPriority(1, 2);
+        SetBgPriority(2, 1);
+        gBtlWork = EwramAlloc(464);
+        BtlWorkInit();
+        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
+        gBtlWork->unk_68 = 4;
+        TaskPoolInit(&gBtlWork->unk_2C, 32);
+        TaskPoolInit(&gBtlWork->unk_40, 1);
+        p->unk_1B3 = 1;
+        TaskCreate(&p->unk_010, gTaskDescBosGa, (void*)1);
+        gBtlWork->unk_B3 = 5;
+        break;
+    default:
+        if ((p->unk_000->unk_18 & 0x2000) == 0) {
+            func_0801CD98(&p->unk_010, p->unk_028, p->unk_026, p->unk_000->unk_00, p->unk_000->unk_08, p->unk_000->unk_0C, p->unk_000->unk_10);
+            p->unk_1B4 = 1;
+        } else {
+            p->unk_1B4 = 0;
+        }
+
+        func_08072C34(p);
+        break;
+    }
+
+    if (p->unk_1B4 != 0) {
+        func_0806F94C(p);
+    }
+}
 u8 event_chara_1(Work0806180C* p, void* a) {
     u8 t;
     s32 v0;
@@ -4184,7 +4806,268 @@ u8 func_080700D4(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-INCLUDE_ASM("msg/func_0807048C.s");
+u8 func_0807048C(Work0806180C* p, void* a) {
+    u16 keys = GetKeysHeld();
+
+    if ((keys & 0xF0) != 0) {
+        p->unk_19C += 5;
+    }
+
+    switch (p->unk_1AF) {
+    case 0:
+        switch (p->unk_1AB) {
+        case 0x00:
+            func_08070058(p, 38);
+            break;
+        case 0x80:
+            func_08070058(p, 44);
+            break;
+        case 0xC0:
+            func_08070058(p, 56);
+            break;
+        case 0x40:
+            func_08070058(p, 56);
+            break;
+        case 0xAD:
+            func_08070058(p, 50);
+            break;
+        case 0x53:
+            func_08070058(p, 50);
+            break;
+        case 0xD3:
+            func_08070058(p, 62);
+            break;
+        case 0x2D:
+            func_08070058(p, 62);
+            break;
+        }
+
+        p->unk_02C += gSineTable[p->unk_1AB] * (p->unk_19C >> 2) >> 8;
+        p->unk_030 += -gSineTable[p->unk_1AB + 64] * (p->unk_19C >> 2) >> 8;
+
+        if (p->unk_1A8 > 3) {
+            p->unk_1AF = 1;
+            p->unk_18C = -0x540;
+            p->unk_198 = p->unk_034;
+            p->unk_1A8 = 0;
+        } else {
+            p->unk_1A8++;
+        }
+        break;
+    case 1:
+        func_08070008(p);
+
+        switch (p->unk_1AB) {
+        case 0x00:
+            func_08070058(p, 39);
+            break;
+        case 0x80:
+            func_08070058(p, 45);
+            break;
+        case 0xC0:
+            func_08070058(p, 57);
+            break;
+        case 0x40:
+            func_08070058(p, 57);
+            break;
+        case 0xAD:
+            func_08070058(p, 51);
+            break;
+        case 0x53:
+            func_08070058(p, 51);
+            break;
+        case 0xD3:
+            func_08070058(p, 63);
+            break;
+        case 0x2D:
+            func_08070058(p, 63);
+            break;
+        }
+
+        p->unk_02C += gSineTable[p->unk_1AB] * p->unk_19C >> 8;
+        p->unk_030 += p->unk_19C * -gSineTable[p->unk_1AB + 64] >> 8;
+        p->unk_18C += 51;
+        p->unk_034 += p->unk_18C;
+
+        if ((GetKeysHeld() & 2) == 0) {
+            p->unk_18C += 64;
+        }
+
+        if (p->unk_18C > -0x200) {
+            p->unk_1AF = 2;
+            p->unk_1A8 = 0;
+        }
+        break;
+    case 2:
+        func_08070008(p);
+
+        switch (p->unk_1AB) {
+        case 0x00:
+            func_08070058(p, 40);
+            break;
+        case 0x80:
+            func_08070058(p, 46);
+            break;
+        case 0xC0:
+            func_08070058(p, 58);
+            break;
+        case 0x40:
+            func_08070058(p, 58);
+            break;
+        case 0xAD:
+            func_08070058(p, 52);
+            break;
+        case 0x53:
+            func_08070058(p, 52);
+            break;
+        case 0xD3:
+            func_08070058(p, 64);
+            break;
+        case 0x2D:
+            func_08070058(p, 64);
+            break;
+        }
+
+        p->unk_02C += gSineTable[p->unk_1AB] * p->unk_19C >> 8;
+        p->unk_030 += p->unk_19C * -gSineTable[p->unk_1AB + 64] >> 8;
+        p->unk_18C += 51;
+        p->unk_034 += p->unk_18C;
+
+        if ((GetKeysHeld() & 2) == 0) {
+            p->unk_18C += 64;
+        }
+
+        if (p->unk_18C > 0) {
+            p->unk_1AF = 3;
+            p->unk_1A8 = 0;
+        }
+        break;
+    case 3:
+        func_08070008(p);
+
+        switch (p->unk_1AB) {
+        case 0x00:
+            func_08070058(p, 40);
+            break;
+        case 0x80:
+            func_08070058(p, 46);
+            break;
+        case 0xC0:
+            func_08070058(p, 58);
+            break;
+        case 0x40:
+            func_08070058(p, 58);
+            break;
+        case 0xAD:
+            func_08070058(p, 52);
+            break;
+        case 0x53:
+            func_08070058(p, 52);
+            break;
+        case 0xD3:
+            func_08070058(p, 64);
+            break;
+        case 0x2D:
+            func_08070058(p, 64);
+            break;
+        }
+
+        p->unk_02C += gSineTable[p->unk_1AB] * p->unk_19C >> 8;
+        p->unk_030 += p->unk_19C * -gSineTable[p->unk_1AB + 64] >> 8;
+        p->unk_034 += p->unk_18C;
+        p->unk_18C += 51;
+
+        if (p->unk_18C > 0x1FF) {
+            p->unk_1AF = 4;
+            p->unk_1A8 = 0;
+        }
+        break;
+    case 4:
+        func_08070008(p);
+
+        switch (p->unk_1AB) {
+        case 0x00:
+            func_08070058(p, 41);
+            break;
+        case 0x80:
+            func_08070058(p, 47);
+            break;
+        case 0xC0:
+            func_08070058(p, 59);
+            break;
+        case 0x40:
+            func_08070058(p, 59);
+            break;
+        case 0xAD:
+            func_08070058(p, 53);
+            break;
+        case 0x53:
+            func_08070058(p, 53);
+            break;
+        case 0xD3:
+            func_08070058(p, 65);
+            break;
+        case 0x2D:
+            func_08070058(p, 65);
+            break;
+        }
+
+        p->unk_02C += gSineTable[p->unk_1AB] * p->unk_19C >> 8;
+        p->unk_030 += p->unk_19C * -gSineTable[p->unk_1AB + 64] >> 8;
+        p->unk_034 += p->unk_18C;
+        p->unk_18C += 51;
+
+        if (p->unk_034 > p->unk_198) {
+            p->unk_034 = p->unk_198;
+            p->unk_1AF = 5;
+            p->unk_1A8 = 0;
+        }
+        break;
+    case 5:
+        switch (p->unk_1AB) {
+        case 0x00:
+            func_08070058(p, 42);
+            break;
+        case 0x80:
+            func_08070058(p, 48);
+            break;
+        case 0xC0:
+            func_08070058(p, 60);
+            break;
+        case 0x40:
+            func_08070058(p, 60);
+            break;
+        case 0xAD:
+            func_08070058(p, 54);
+            break;
+        case 0x53:
+            func_08070058(p, 54);
+            break;
+        case 0xD3:
+            func_08070058(p, 66);
+            break;
+        case 0x2D:
+            func_08070058(p, 66);
+            break;
+        }
+
+        p->unk_19C = 204 * p->unk_19C >> 8;
+
+        if ((GetKeysPressed() & 2) != 0) {
+            p->unk_1AF = 1;
+            p->unk_18C = -0x540;
+        } else if (p->unk_1A8 > 10) {
+            p->unk_1AC = 255;
+            SetTaskUpdate(a, (void*)func_080700D4);
+        } else {
+            p->unk_1A8++;
+        }
+        break;
+    }
+
+    TaskPoolUpdate(&p->unk_010);
+    return 1;
+}
 INCLUDE_ASM("msg/func_08070AD4.s");
 INCLUDE_ASM("msg/func_08072914.s");
 
@@ -5388,7 +6271,279 @@ void func_080746D8(void) {
     }
 }
 
-INCLUDE_ASM("msg/view_1.s");
+#ifdef VERSION_EU
+#define MSG_VIEW_ID_B4 0xB2
+#else
+#define MSG_VIEW_ID_B4 0xB4
+#endif
+
+u8 view_1(Work08074DC4* p, u8* task) {
+    Ent09EE3CA0* u = gUnk_09EE3CA0[p->unk_08];
+    Obj0806180C* e;
+    Ent08074EC8* q;
+    u8 n;
+
+    if (gUnk_02039DC8->unk_60 == 98) {
+        return 1;
+    }
+
+    if (gUnk_02039DC8->unk_60 == 101) {
+        return 1;
+    }
+
+    if (gUnk_02039DC8->unk_7C == 0) {
+        e = &p->unk_0C[p->unk_09];
+
+        if (gUnk_02039DC8->unk_6C >= *(u16*)&e->unk_00 && !(e->unk_14 & 0x8000)) {
+            p->unk_09++;
+            e = &p->unk_0C[p->unk_09];
+            p->unk_15 = 0;
+
+            if (e->unk_1C != NULL) {
+                ((void (*)(Work08074DC4*))e->unk_1C)(p);
+            }
+
+            switch (e->unk_14 & 15) {
+            case 0:
+                p->unk_14 = 0;
+                break;
+            case 1:
+                p->unk_14 = 1;
+                p->unk_10 = e->unk_18;
+                break;
+            }
+        }
+
+        if ((e->unk_14 & 15) != 2) {
+            if (e->unk_10 == 255) {
+                p->unk_00 = e->unk_04;
+                p->unk_04 = e->unk_08;
+            } else {
+                n = func_08074E40(p);
+                q = gUnk_02039DC8->unk_00[n];
+                p->unk_00 = q->unk_04;
+                p->unk_04 = q->unk_08 + q->unk_0C + e->unk_0C;
+            }
+        }
+
+        if (e->unk_14 & 0x10) {
+            if (p->unk_15 == 0) {
+                func_080746D8();
+                func_08006120(2, e->unk_18);
+
+                if (!(e->unk_14 & 0x10000)) {
+                    m4aSongNumStart(0x14F);
+                }
+
+                gUnk_02039DC8->unk_7F = 0;
+                p->unk_15 = 1;
+            }
+        }
+
+        if (e->unk_14 & 0x20) {
+            if (p->unk_15 == 0) {
+                func_080746D8();
+                func_08006184(1, e->unk_18);
+                gUnk_02039DC8->unk_7F = 1;
+                p->unk_15 = 1;
+
+                if (e->unk_14 & 0x8000) {
+                    m4aSongNumStart(0x159);
+                }
+            }
+        }
+
+        if (e->unk_14 & 0x40) {
+            if (p->unk_15 == 0) {
+                func_080746D8();
+                func_08006184(0, e->unk_18);
+                gUnk_02039DC8->unk_7F = 1;
+                p->unk_15 = 1;
+            }
+        }
+
+        if (e->unk_14 & 0x80) {
+            if (p->unk_15 == 0) {
+                func_08006120(1, e->unk_18);
+                gUnk_02039DC8->unk_7F = 0;
+                p->unk_15 = 1;
+            }
+        }
+
+        if (e->unk_14 & 0x100) {
+            if (p->unk_15 == 0) {
+                func_080746D8();
+                func_08006120(0, e->unk_18);
+                gUnk_02039DC8->unk_7F = 0;
+                p->unk_15 = 1;
+            }
+        }
+
+        if (e->unk_14 & 0x200) {
+            if (p->unk_15 == 0) {
+                func_080746D8();
+                func_08006290(2, 16, e->unk_18);
+
+                if (!(e->unk_14 & 0x10000)) {
+                    m4aSongNumStart(332);
+                }
+
+                p->unk_15 = 1;
+            }
+        }
+
+        if (e->unk_14 & 0x20000) {
+            StartBgWave(func_08074564);
+            p->unk_1A = 1;
+        }
+
+        if (e->unk_14 & 0x40000) {
+            p->unk_1A = 0;
+            ResetHBlankCallback();
+            DisableHBlankIntr();
+        }
+
+        if (e->unk_14 & 0x4000) {
+            if (p->unk_15 == 0) {
+                func_08006120(7, e->unk_18);
+            }
+
+            p->unk_15 = 1;
+        }
+
+        if (e->unk_14 & 0x2000) {
+            gUnk_02039DC8->unk_68 = GetRandom() % 4;
+            gUnk_02039DC8->unk_6A = GetRandom() % 4;
+        } else if (e->unk_14 & 0x400) {
+            gUnk_02039DC8->unk_68 = GetRandom() % 8;
+            gUnk_02039DC8->unk_6A = GetRandom() % 8;
+        } else if (e->unk_14 & 0x800) {
+            gUnk_02039DC8->unk_68 = GetRandom() % 16;
+            gUnk_02039DC8->unk_6A = GetRandom() % 16;
+        } else if (e->unk_14 & 0x1000) {
+            gUnk_02039DC8->unk_68 = 0;
+            gUnk_02039DC8->unk_6A = gSineTable[(p->unk_12 >> 3) & 0xFF] >> 5;
+            p->unk_12 += 4;
+        } else {
+            gUnk_02039DC8->unk_68 = 0;
+            gUnk_02039DC8->unk_6A = 0;
+        }
+
+        if (p->unk_14 != 0) {
+            func_08074DC4(p);
+        } else {
+            func_08074D14(p);
+        }
+
+        if (u != NULL) {
+            if (u->unk_24 != 0) {
+                SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
+            } else {
+                if (p->unk_08 == 77) {
+                    func_08005244(3, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+                } else {
+                    func_08005244(3, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                }
+
+                if (gUnk_02039DC8->unk_78 != 0) {
+                    func_08005244(2, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                }
+
+                if (gUnk_02039DC8->unk_79 != 0) {
+                    func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                }
+            }
+        } else {
+            switch (p->unk_08) {
+            case 77:
+            case 78:
+                gBtlWork->unk_00 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_04 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_08 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_0C = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_10 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_14 = gUnk_02039DC8->unk_5C;
+                func_08005244(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+                func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                break;
+            case 105:
+                gBtlWork->unk_00 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_04 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_08 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_0C = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_10 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_14 = gUnk_02039DC8->unk_5C;
+                func_08005244(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                break;
+            case MSG_VIEW_ID_B4:
+                break;
+            default:
+                gBtlWork->unk_00 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_04 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_08 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_0C = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_10 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_14 = gUnk_02039DC8->unk_5C;
+                func_08005244(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                break;
+            }
+        }
+    } else {
+        n = func_08074E88(p, gUnk_02039DC8->unk_88);
+        p->unk_00 = gUnk_02039DC8->unk_00[n]->unk_04;
+
+        switch (gUnk_02039DC8->unk_87) {
+        case 0:
+        case 2:
+            p->unk_04 = gUnk_02039DC8->unk_00[n]->unk_08 + gUnk_02039DC8->unk_00[n]->unk_0C + gUnk_09033758[n];
+            break;
+        case 1:
+        case 3:
+            p->unk_04 = gUnk_02039DC8->unk_00[n]->unk_08 + gUnk_02039DC8->unk_00[n]->unk_0C;
+            break;
+        }
+
+        p->unk_10 = gUnk_02039DC8->unk_89;
+        func_08074DC4(p);
+
+        if (u != NULL) {
+            if (u->unk_24 != 0) {
+                SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
+            } else {
+                if (p->unk_08 == 77) {
+                    func_08005244(3, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+                } else {
+                    func_08005244(3, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                }
+
+                if (gUnk_02039DC8->unk_78 != 0) {
+                    func_08005244(2, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                }
+
+                if (gUnk_02039DC8->unk_79 != 0) {
+                    func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                }
+            }
+        } else {
+            gBtlWork->unk_00 = gUnk_02039DC8->unk_58;
+            gBtlWork->unk_04 = gUnk_02039DC8->unk_5C;
+            func_08005244(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+            func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+        }
+    }
+
+    if (gUnk_02039DC8->unk_64 & 4) {
+        SetTaskUpdate(task, (u32)_08074EC8);
+    }
+
+    if (u != NULL && (u->unk_2D & 1)) {
+        func_080CA368(3, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
+    }
+
+    func_08075010((Work08075010*)p);
+    return 1;
+}
 void view_2(void) {
 }
 void view_3(void) {
