@@ -2857,3 +2857,4 @@ gUnk_09EE4BB8 = 0x09f6ff60
 gUnk_09EE4BC2 = 0x09f6ff6a
 gModeLang = 0x09f3ea64
 gLanguage = 0x03007484
+gUnkEu_09F84FBC = 0x09f84fbc
