@@ -6410,6 +6410,8 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     u8* base;
     UnkStruct_0802CD54* a;
     BtlSpawnArgs spawn;
+    u32 id;
+    s32 sel[6];
 
     p = &work->unk_044;
 
@@ -6626,6 +6628,187 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_158 = 0;
             p->unk_34 &= 0xFFFFFFFFFFFFFFFELL;
             break;
+        case 5:
+            func_08027444(work);
+            work->unk_158 = 0;
+            p->unk_E4->unk_068 &= ~0x40000000;
+            p->unk_E4->unk_068 &= ~8LL;
+            work->unk_15E |= 0x80;
+            id = func_080ABA80(sel);
+
+            if (id == 145) {
+                if (!(p->unk_E4->unk_068 & 2)) {
+                    p->unk_E4->unk_068 |= 2;
+                    p->unk_E4->unk_0B0[2] = 0;
+                }
+
+                id = sel[*(s8*)&p->unk_E4->unk_0B0[2]];
+                p->unk_E4->unk_0B0[2]++;
+            }
+
+            switch (id) {
+            case 48:
+                work->unk_03C = 5;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                work->unk_166[0] = 1;
+                break;
+            case 47:
+                work->unk_03C = 5;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                work->unk_166[0] = 0;
+                break;
+            case 49:
+                work->unk_03C = 5;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                work->unk_166[0] = 2;
+                break;
+            case 50:
+                work->unk_03C = 5;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                work->unk_166[0] = 3;
+                break;
+            case 51:
+                work->unk_03C = 5;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                work->unk_166[0] = 4;
+                break;
+            case 52:
+                work->unk_03C = 5;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                work->unk_166[0] = 5;
+                break;
+            case 53:
+                work->unk_03C = 5;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                work->unk_166[0] = 6;
+                break;
+            case 45:
+                work->unk_03C = 24;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                *(TaskDesc**)&work->unk_190 = &gTaskDescSmnKing;
+                work->unk_166[0] = 0;
+                break;
+            case 0x800A7E9F:
+                work->unk_03C = 24;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                *(TaskDesc**)&work->unk_190 = &gTaskDescSmnKing;
+                work->unk_166[0] = 1;
+                break;
+            case 0xE9FA7E9F:
+                work->unk_03C = 24;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+                *(TaskDesc**)&work->unk_190 = &gTaskDescSmnKing;
+                work->unk_166[0] = 2;
+                break;
+            case 137:
+                work->unk_03C = 43;
+                break;
+            case 138:
+                work->unk_03C = 48;
+                break;
+            case 139:
+                work->unk_03C = 49;
+                break;
+            case 46:
+                work->unk_03C = 31;
+                break;
+            case 18:
+                if (gBtlWork->unk_068 & 0x0000800000000000LL) {
+                    switch (work->unk_03C) {
+                    case 37:
+                    case 38:
+                        work->unk_165 = 0;
+                        work->unk_03C = 41;
+                        work->unk_15A = 0;
+                        work->unk_158 = 0;
+                        break;
+                    case 41:
+                        work->unk_165++;
+                        work->unk_03C = 41;
+                        work->unk_15A = 0;
+                        work->unk_158 = 0;
+                        break;
+                    case 60:
+                        work->unk_03C = 61;
+                        work->unk_15A = 0;
+                        work->unk_158 = 0;
+                        break;
+                    case 56:
+                    case 61:
+                        work->unk_03C = 42;
+                        work->unk_15A = 0;
+                        work->unk_158 = 0;
+                        break;
+                    default:
+                        work->unk_03C = 60;
+                        work->unk_15A = 0;
+                        work->unk_158 = 0;
+                        break;
+                    }
+                } else {
+                    func_080280E0(work);
+                }
+                break;
+            default:
+                if (gBtlWork->unk_068 & 0x0000800000000000LL) {
+                    func_080280BC(work, 35);
+                } else {
+                    func_080280BC(work, 1);
+                }
+                break;
+            }
+
+            e = p->unk_E4->unk_078;
+
+            if (e != 0) {
+                if (p->unk_34 & 4) {
+                    if (p->unk_04 < e->unk_004) {
+                        p->unk_34 &= ~4LL;
+                    }
+                } else {
+                    if (p->unk_04 > e->unk_004) {
+                        p->unk_34 |= 4;
+                    }
+                }
+            }
+
+            AnimReset(&work->anim);
+            work->unk_160 = 0;
+            *(s32*)((u8*)p + 0x108) = *(s32*)((u8*)p + 0x10C) = 0;
+            break;
+        case 9:
+            if ((gBtlWork->unk_068 & 0x40) == 0) {
+                gBtlWork->unk_068 |= 0x400000;
+            }
+
+            func_08019050(12, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+            func_08012614(&p->unk_40, 0);
+            p->unk_34 &= 0xFFFFDFFBFF7FFFFFLL;
+            func_08027444(work);
+            p->unk_E4->unk_068 |= 0x40000000;
+            work->unk_160 = 0;
+            work->unk_19C = work->unk_1A0 = 256;
+
+            if (gBtlWork->unk_068 & 0x800000000000LL) {
+                work->unk_03C = 16;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+            } else {
+                work->unk_03C = 15;
+                work->unk_15A = 0;
+                work->unk_158 = 0;
+            }
+            break;
         case 4:
             switch (work->unk_03C) {
             case 24:
@@ -6674,29 +6857,6 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             } else {
                 func_080284C8(1);
                 work->unk_03C = 13;
-                work->unk_15A = 0;
-                work->unk_158 = 0;
-            }
-            break;
-        case 9:
-            if ((gBtlWork->unk_068 & 0x40) == 0) {
-                gBtlWork->unk_068 |= 0x400000;
-            }
-
-            func_08019050(12, 256, gBtlWork->unk_010, gBtlWork->unk_014);
-            func_08012614(&p->unk_40, 0);
-            p->unk_34 &= 0xFFFFDFFBFF7FFFFFLL;
-            func_08027444(work);
-            p->unk_E4->unk_068 |= 0x40000000;
-            work->unk_160 = 0;
-            work->unk_19C = work->unk_1A0 = 256;
-
-            if (gBtlWork->unk_068 & 0x800000000000LL) {
-                work->unk_03C = 16;
-                work->unk_15A = 0;
-                work->unk_158 = 0;
-            } else {
-                work->unk_03C = 15;
                 work->unk_15A = 0;
                 work->unk_158 = 0;
             }

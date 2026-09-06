@@ -503,6 +503,7 @@ void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08015DC8(s32 x, s32 y, s32 z);
 u16 AnimGetFrame(AnimState* a);
 u16 AnimGetGfxIndex(AnimState* a);
+extern TaskDesc gTaskDescSmnKing;
 void AnimSetFrame(AnimState* a, u16 frame);
 void func_08015D30(s32 x, s32 y, s32 z);
 s32 TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
