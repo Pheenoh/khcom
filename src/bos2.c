@@ -2709,7 +2709,141 @@ u8 func_080C0258(u16* p, s16 b, u8 c, u8 d) {
     return 0;
 }
 
+#ifdef NON_MATCHING
+void func_080C02AC(JfMajinWork* work) {
+    JfWork* jf = work->unk_00;
+    BosSub* s = (BosSub*)&work->unk_00->unk_110;
+    s16 n;
+    s16 m;
+    u8 v;
+
+    if (jf->unk_250 > 0) {
+        jf->unk_244 = 0;
+        work->unk_00->unk_238 = 0;
+        return;
+    }
+
+    switch (jf->unk_244) {
+    default:
+        work->unk_46++;
+
+        if (work->unk_46 <= 1) {
+            return;
+        }
+
+        work->unk_46 = 0;
+        v = func_080BE910();
+        n = (s8)func_080C0258(&work->unk_5E, work->unk_64, v, 0);
+        n += (s8)func_080C0258(&work->unk_60, work->unk_66, v, 1);
+        n += (s8)func_080C0258(&work->unk_62, work->unk_68, v, 2);
+        break;
+    case 0:
+        if (jf->unk_034 & 4) {
+            jf->unk_248 = 8;
+            work->unk_5C = 8;
+        } else {
+            jf->unk_248 = 28;
+            work->unk_5C = 28;
+        }
+
+        work->unk_00->unk_24A = 0;
+        func_080BE380(work->unk_00->unk_248, 0x80, work);
+        work->unk_3C = 0;
+        work->unk_2C = 1;
+
+        if (work->unk_00->unk_24C & 4) {
+            work->unk_00->unk_24C &= ~4;
+            work->unk_00->unk_24E = 2;
+            m = 14;
+        } else if (s->unk_02C < s->unk_02E / 2) {
+            switch (work->unk_00->unk_24E) {
+            case 0:
+                m = GetRandom() & 1;
+                break;
+            case 1:
+            case 2:
+                m = GetRandom() % 6 + 2;
+                break;
+            case 3:
+                m = GetRandom() % 6 + 8;
+                break;
+            default:
+                m = 0;
+                break;
+            }
+        } else if (work->unk_00->unk_24E == 0) {
+            m = GetRandom() % 6 + 8;
+        } else {
+            m = GetRandom() % 8;
+        }
+
+        work->unk_5E = gUnk_0203ACC4;
+        work->unk_60 = gUnk_0203ACD4;
+        work->unk_62 = gUnk_0203ACC0;
+        work->unk_64 = gUnk_0961A710[m][0];
+        work->unk_66 = gUnk_0961A710[m][1];
+        work->unk_68 = gUnk_0961A710[m][2];
+        work->unk_48 = 0;
+        work->unk_46 = 0;
+        work->unk_44 = 0;
+        func_080BDB28(60);
+        work->unk_00->unk_244++;
+        return;
+    case 1:
+        work->unk_46++;
+
+        if (work->unk_46 > 80) {
+            work->unk_46 = 0;
+            m4aSongNumStart(0x26A);
+            work->unk_00->unk_244++;
+        }
+        return;
+    }
+
+    if (n == 3) {
+        if (s->unk_02C < s->unk_02E / 2) {
+            switch (work->unk_00->unk_24E) {
+            case 0:
+                work->unk_00->unk_24E = 3;
+                break;
+            case 1:
+                work->unk_00->unk_24E = 0;
+                break;
+            case 2:
+                work->unk_00->unk_24E = 0;
+                work->unk_00->unk_250 = 300;
+                break;
+            case 3:
+                work->unk_00->unk_24E = 1;
+                break;
+            }
+        } else {
+            switch (work->unk_00->unk_24E) {
+            case 0:
+                work->unk_00->unk_24E = 1;
+                break;
+            case 1:
+                work->unk_00->unk_24E = 0;
+                break;
+            case 2:
+                work->unk_00->unk_24E = 0;
+                work->unk_00->unk_250 = 300;
+                break;
+            }
+        }
+
+        work->unk_00->unk_244 = 0;
+        work->unk_00->unk_238 = 0;
+    } else {
+        gUnk_0203ACC4 = work->unk_5E;
+        gUnk_0203ACD4 = work->unk_60;
+        gUnk_0203ACC0 = work->unk_62;
+        func_080BDAAC();
+    }
+}
+#else
 INCLUDE_ASM("bos2/func_080C02AC.s");
+#endif
 
 void func_080C0624(JfMajinWork* work) {
     if (work->unk_00->unk_244 == 0) {
@@ -2740,7 +2874,102 @@ void func_080C0624(JfMajinWork* work) {
     }
 }
 
-INCLUDE_ASM("bos2/func_080C0714.s");
+void func_080C0714(JfMajinWork* work) {
+    BosSub* s = (BosSub*)&work->unk_00->unk_110;
+    u8 v;
+    s32 r;
+
+    if (s->unk_02C < s->unk_02E / 2) {
+        if (GetRandom() % 100 <= 9) {
+            func_08083900(1);
+        } else if (GetRandom() % 90 <= 19) {
+            func_08083900(GetRandom() % 2 + 7);
+        } else {
+            func_08083900(GetRandom() % 4 + 3);
+        }
+
+        if (gUnk_0203ACC4 == gUnk_0203ACD4 && gUnk_0203ACC4 == gUnk_0203ACC0 && GetRandom() % 100 <= 79) {
+            func_0801BCD4(s);
+            work->unk_00->unk_23C = 5;
+        } else {
+            v = func_080BE940(work);
+
+            switch (v) {
+            case 0:
+                func_0801BCD4(s);
+                r = (s16)(GetRandom() % 100);
+
+                if (r <= 39) {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 3;
+                } else if (r <= 79) {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 4;
+                } else {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 2;
+                }
+                break;
+            case 1:
+                func_0801BCD4(s);
+                work->unk_00->unk_23C = 2;
+                break;
+            case 2:
+                if (GetRandom() % 100 <= 49) {
+                    work->unk_00->unk_238 = 1;
+                } else {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 2;
+                }
+                break;
+            }
+        }
+    } else {
+        if (GetRandom() % 100 <= 29) {
+            func_08083900(GetRandom() % 3 + 6);
+        } else {
+            func_08083900(GetRandom() % 6 + 1);
+        }
+
+        if (gUnk_0203ACC4 == gUnk_0203ACD4 && gUnk_0203ACC4 == gUnk_0203ACC0 && GetRandom() % 100 <= 19) {
+            func_0801BCD4(s);
+            work->unk_00->unk_23C = 5;
+        } else {
+            v = func_080BE940(work);
+
+            switch (v) {
+            case 0:
+                func_0801BCD4(s);
+
+                if (GetRandom() % 100 <= 59) {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 3;
+                } else {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 4;
+                }
+                break;
+            case 1:
+                if (GetRandom() % 100 <= 79) {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 2;
+                } else {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 4;
+                }
+                break;
+            case 2:
+                if (GetRandom() % 100 <= 69) {
+                    work->unk_00->unk_238 = 1;
+                } else {
+                    func_0801BCD4(s);
+                    work->unk_00->unk_23C = 2;
+                }
+                break;
+            }
+        }
+    }
+}
 void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_000 = arg;
     work->unk_030 = arg->x;
@@ -2981,7 +3210,100 @@ void func_080C1A48(JfBorderlineWork* work) {
     work->unk_0B5 = 0;
 }
 
+#ifdef NON_MATCHING
+void task_bos_dsd_0(DsdWork* work, void* arg) {
+    s32 v;
+    DsdWork* w;
+    BosSub* p1;
+    BosSub* p2;
+
+    work->unk_358 = 0;
+
+    if (arg != 0) {
+        work->unk_358 = 16;
+    }
+
+    TaskPoolInit(&work->unk_37C, 4);
+
+    if (work->unk_358 & 16) {
+        TaskCreate(&work->unk_37C, gTaskDescBosDsdMap, 0);
+    } else {
+        TaskCreate((u8*)gBtlWork + 64, gTaskDescBosDsdMap, work);
+    }
+
+    work->unk_390 = 0;
+    work->unk_392 = 0;
+
+    if (work->unk_358 & 16) {
+        work->unk_334 = 9;
+    } else {
+        work->unk_334 = 1;
+    }
+
+    work->unk_338 = 1;
+    work->unk_330 = 1;
+    work->unk_33C = 0;
+    work->unk_34C = 0;
+    work->unk_34E = 0;
+    work->unk_350 = 0;
+    work->unk_352 = 0;
+    work->unk_354 = 0;
+    work->unk_356 = 0;
+    work->unk_35A = 0;
+    work->unk_35C = -51;
+    v = (s16)(work->unk_358 & 16);
+
+    if (v != 0) {
+        work->unk_340 = 0xDC00;
+        work->unk_344 = 0x16800;
+        work->unk_348 = -0x6400;
+        w = work;
+        func_0801B37C(w, gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
+        p1 = &w->unk_000[1];
+        func_0801B37C(p1, gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
+        p2 = &w->unk_000[2];
+        func_0801B37C(p2, gUnk_0961A7B0, 0x9000, 0x16800, 0);
+        TaskCreate(&w->unk_37C, gTaskDescBosDsdMain, w);
+    } else {
+        work->unk_340 = 0xDC00;
+        work->unk_344 = 0x16800;
+        work->unk_348 = -0x6400;
+        w = work;
+        func_0801B37C(w, gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
+        w->unk_000[0].unk_034 |= 0x1000000;
+        w->unk_000[0].unk_034 |= 4;
+        p1 = &w->unk_000[1];
+        func_0801B37C(p1, gUnk_0961A7B0, work->unk_340, work->unk_344, -0x8C00);
+        p1->unk_034 |= 4;
+        p1->unk_034 |= 0x400;
+        p1->unk_0A2 = v;
+        p1->unk_09E = 16;
+        p1->unk_0A0 = 16;
+        p1->unk_09C = 16;
+        p2 = &w->unk_000[2];
+        func_0801B37C(p2, gUnk_0961A7B0, 0x9000, 0x16800, v);
+        p2->unk_034 |= 0x003C000001000004ULL;
+        p2->unk_0A2 = v;
+        p2->unk_09E = 16;
+        p2->unk_0A0 = 16;
+        p2->unk_09C = 32;
+        func_080122AC(&p2->unk_040, 7, 16, 32);
+        func_08012324(&p2->unk_040, p2->x, p2->y, p2->z);
+        func_08012614(&p2->unk_040, 1);
+        func_0801BDD4(p2, p1);
+        gBtlWork->unk_0D8 = v;
+        func_0801C298(0, 1);
+        func_0801BCC0(0x6400, 0x16800, 0);
+        func_0801C274(0x2800, 0x16800, 0);
+        TaskCreate(&w->unk_37C, gTaskDescBosDsdMain, w);
+        *(s32*)&gBtlWork->unk_0CC = w->unk_000[0].x;
+        gBtlWork->unk_0D0 = w->unk_000[0].y;
+        gBtlWork->unk_0D4 = w->unk_000[0].z;
+    }
+}
+#else
 INCLUDE_ASM("bos2/task_bos_dsd_0.s");
+#endif
 u8 task_bos_dsd_1(DsdWork* work) {
     BtlWork* q;
     BosSub* a = work->unk_000;
@@ -3688,7 +4010,117 @@ void func_080C2FD8(DsdMainWork* work) {
     }
 }
 
-INCLUDE_ASM("bos2/func_080C3188.s");
+void func_080C3188(DsdMainWork* work) {
+    DsdWork* d = work->unk_000;
+    BosSub* a = &d->unk_000[1];
+    BosSub* b = &d->unk_000[2];
+    BtlWork* e;
+
+    switch (d->unk_350) {
+    case 0:
+        work->unk_000->unk_354 = 21;
+        work->unk_00A = 21;
+        work->unk_000->unk_356 = 0;
+        func_080C213C(work->unk_000->unk_354, 0x80);
+        TaskCreate(&work->unk_058, gTaskDescBosDsdCircle, work->unk_000);
+        func_080147D8(0x8000, 0x15400);
+        func_08011F78(0x101, 0x8000, 0x16800, -0x1400, 16, 16, 16);
+        m4aSongNumStart(0x2BC);
+        work->unk_000->unk_350++;
+        break;
+    case 1:
+        if (++work->unk_000->unk_356 >= gUnk_0961A7D0[work->unk_000->unk_354]) {
+            work->unk_000->unk_356 = 0;
+            work->unk_000->unk_354++;
+            a->z += 0x600;
+
+            if (work->unk_000->unk_354 > work->unk_00A + 6) {
+                work->unk_000->unk_354 = work->unk_00A + 6;
+                work->unk_000->unk_350++;
+            }
+
+            func_080C213C(work->unk_000->unk_354, 0x80);
+        }
+        break;
+    case 2:
+        work->unk_000->unk_354 = 28;
+        work->unk_00A = 28;
+        work->unk_000->unk_356 = 0;
+        work->unk_006 = 0;
+        func_0801AF08(a);
+        b->x = 0x9000;
+        b->y = 0x16800;
+        b->z = 0;
+        b->unk_034 &= ~0x1000000;
+        work->unk_000->unk_350++;
+        break;
+    case 3:
+        if (++work->unk_000->unk_356 >= gUnk_0961A7D0[work->unk_000->unk_354]) {
+            work->unk_000->unk_356 = 0;
+            work->unk_000->unk_354++;
+
+            if (work->unk_000->unk_354 > work->unk_00A + 6) {
+                work->unk_000->unk_354 = work->unk_00A;
+            }
+
+            func_080C213C(work->unk_000->unk_354, 0x80);
+        }
+
+        work->unk_006++;
+
+        if (work->unk_006 > 299) {
+            work->unk_000->unk_350++;
+        }
+        break;
+    case 4:
+        work->unk_000->unk_354 = 27;
+        work->unk_00A = 27;
+        work->unk_000->unk_356 = 0;
+        work->unk_006 = 0;
+        b->unk_034 |= 0x1000000;
+        work->unk_000->unk_350++;
+        break;
+    case 5:
+        if (++work->unk_000->unk_356 >= gUnk_0961A7D0[work->unk_000->unk_354]) {
+            work->unk_000->unk_356 = 0;
+            work->unk_000->unk_354--;
+            a->z -= 0x600;
+
+            if (work->unk_000->unk_354 < work->unk_00A - 6) {
+                work->unk_000->unk_354 = work->unk_00A - 6;
+
+                if (gBtlWork->unk_0EC <= 0 && (work->unk_000->unk_358 & 8) == 0) {
+                    _0801C1F8(0, d->unk_000[0].x, d->unk_000[0].y, d->unk_000[0].z);
+                }
+
+                work->unk_000->unk_350++;
+            }
+
+            func_080C213C(work->unk_000->unk_354, 0x80);
+        }
+        break;
+    case 6:
+        work->unk_006 = 0;
+        func_080C213C(8, 0x80);
+        e = ListPoolFirst(gBtlWork->unk_080);
+
+        while (e != 0) {
+            if (e->unk_000 == 0) {
+                e->unk_034 |= 0x40;
+                m4aSongNumStart(0x227);
+            }
+
+            e = ListPoolNext((u8*)e + 0xB8);
+        }
+
+        work->unk_000->unk_350++;
+        break;
+    default:
+        d->unk_350 = 0;
+        work->unk_000->unk_334 = 0;
+        break;
+    }
+}
 
 void func_080C3504(DsdMainWork* work) {
     if (work->unk_000->unk_356 >= gUnk_0961A7D0[work->unk_000->unk_354]) {
@@ -4711,7 +5143,120 @@ void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
     }
 }
 
-INCLUDE_ASM("bos2/task_bos_dsd_energy2_1.s");
+u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
+    BtlWork* p;
+
+    switch (work->unk_2C) {
+    case 0:
+        func_080147C8(work->unk_10, work->unk_14);
+        work->unk_10 += 25;
+        work->unk_14 += 25;
+
+        if (work->unk_30 >= work->unk_32) {
+            func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
+            work->unk_2C++;
+        } else {
+            work->unk_30++;
+        }
+        break;
+    case 1:
+        func_0801475C(work->unk_20, work->unk_24, work->unk_28);
+        work->unk_04 += work->unk_20;
+        work->unk_08 += work->unk_24;
+        work->unk_0C += work->unk_28;
+        func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
+
+        if (work->unk_0C <= -0xF000) {
+            work->unk_2C++;
+        }
+        break;
+    case 2:
+        func_08017F70(work->unk_04, work->unk_08, work->unk_0C, 0x103);
+        m4aSongNumStart(0x2C1);
+        func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
+        work->unk_2C++;
+        break;
+    case 3:
+        func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
+
+        if (func_080128EC() == 0) {
+            work->unk_2C++;
+        }
+        break;
+    case 4:
+        func_08006238(0, gBtlWork->unk_0B3, 8);
+        work->unk_2C++;
+        break;
+    case 5:
+        work->unk_04 = (p = (BtlWork*)gBtlWork->unk_07C)->unk_004 + (-0x4000 + GetRandom() % 0x8001);
+
+        if (work->unk_04 < -0xFFF || work->unk_04 > 0x10FFF) {
+            work->unk_04 = p->unk_004;
+        }
+
+        work->unk_08 = ((BtlWork*)gBtlWork->unk_07C)->unk_008 - 0x2400 + GetRandom() % 0x4001;
+        work->unk_0C = -0xF000;
+        work->unk_28 = 0x600;
+        func_08014588(work->unk_04, work->unk_08, work->unk_0C, 0x100, work->unk_32, 0);
+        work->unk_3C = 1;
+        work->unk_30 = 0;
+        work->unk_2C++;
+        break;
+    case 6:
+        func_0801475C(0, 0, work->unk_28);
+        work->unk_0C += work->unk_28;
+
+        if (func_08011F78(0x104, work->unk_04, work->unk_08, work->unk_0C, 16, 16, 16) == 1) {
+            m4aSongNumStart(0x29E);
+            func_08014790(0);
+            work->unk_3C = 0;
+            work->unk_2C = 7;
+        }
+
+        if (work->unk_0C >= -0x800) {
+            func_08014790(0);
+            m4aSongNumStart(0x2BF);
+            work->unk_3C = 0;
+            work->unk_2C = 7;
+        }
+
+        work->unk_30++;
+        break;
+    case 7:
+        if (work->unk_34 >= (s8)work->unk_35 - 1) {
+            if (func_080128EC() == 0) {
+                func_08006B4C();
+                func_080061E8(0, 8);
+                work->unk_2C++;
+            }
+
+            return 1;
+        }
+
+        if (work->unk_30 > 49) {
+            work->unk_30 = 0;
+            work->unk_34++;
+            work->unk_2C = 5;
+        } else {
+            work->unk_30++;
+        }
+        break;
+    default:
+        return 0;
+    }
+
+    if (work->unk_00->unk_334 == 8 || work->unk_00->unk_334 == 11) {
+        if (func_080128EC() == 1) {
+            func_08006B4C();
+            func_080061E8(0, 8);
+        }
+
+        work->unk_3C = 0;
+        return 0;
+    }
+
+    return 1;
+}
 
 void task_bos_dsd_energy2_2(DsdEnergy2Work* work) {
     s32 affine;
