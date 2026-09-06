@@ -112,7 +112,7 @@ typedef struct SrollBCharArg {
 
 typedef struct SrollBCharWork {
     s32 unk_00;
-    s32* unk_04;
+    s32 unk_04;
     SrollBCharSub* unk_08;
     void* tiles;
     SrollPal* palette;
@@ -266,6 +266,9 @@ typedef struct SoundEntry {
 } SoundEntry;
 
 extern void* gUnk_09A54218[][2];
+extern s32 gUnk_09A542CC[];
+extern s32 gUnk_09A5430C[];
+extern u8 gTaskDescSrollBCrtn[];
 extern SrollShift gUnk_09A54C78[];
 extern SrollMask gUnk_09A54918[][8];
 extern void (*gUnk_09A54CB8[])(u32*, u8*, u32*, s32);
@@ -320,6 +323,7 @@ void task_sroll_b_crtn_2(SrollBCrtnWork* w);
 void task_sroll_b_logo_3(SrollBLogoWork* w);
 void func_081149B0(SrollBCharWork* w, s32 v);
 void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a);
+s32 task_sroll_b_char_1(SrollBCharWork* w);
 void task_sroll_b_char_2(SrollBCharWork* w);
 void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
@@ -368,6 +372,7 @@ void func_081159FC(u32* dst, u16* src, u32* pal, s32 x);
 void func_08115A5C(u32* dst, u16* src, u32* pal, s32 x);
 u32 func_0811589C(SrollBlit* w);
 u32 func_08115E24(SrollBlit* w);
+void task_sroll_tmr_2(SrollTmrWork* w);
 void task_sroll_tmr_3(SrollTmrWork* w);
 u16 func_081167D0(u16 c);
 void func_08116A98(SrollWork* w, u8 flush);
@@ -375,6 +380,8 @@ void func_08116644(SrollWork* w);
 u32 func_08116034(SrollWork* w, u32* dst, u8* src, s32 width);
 void func_08116BEC(SrollWork* w, u16 x, u16 y, u8* s, u8 flush);
 void func_081162E8(SrollWork* w);
+void func_081163CC(SrollWork* w);
+void func_08116500(SrollWork* w);
 u16 func_08115F34(u16 c, u8* font);
 u8 func_08115F8C(u16 c, u8* font, u8* widths, u32 count);
 s32 func_08115FBC(SrollWork* w, u8* s);
