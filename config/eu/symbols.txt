@@ -120,6 +120,7 @@ gUnk_09EF9C34 = 0x09f858a0
 gUnk_09EF9DB4 = 0x09f85a20
 gModeMovie = 0x09f49aac
 gModeWorldselect = 0x09f8489c
+gUnk_0813C294 = 0x0888a768
 gUnk_0813CD4C = 0x0888b220
 gUnk_0813CDDC = 0x0888b2b0
 gUnk_09A4C9EC = 0x09aaa4b0
