@@ -280,7 +280,7 @@ s32 Exclamation_1(EffectWork* w) {
     return 1;
 }
 
-void func_08075780(EffectWork* w) {
+void EffectDrawObj(EffectWork* w) {
     u16 pr;
     s32 y;
 
@@ -395,7 +395,7 @@ void func_08075A54(EffectWork* w) {
     gUnk_02039DC8->unk_86--;
 }
 
-void func_08075A7C(EffectWork* w, EventActor* arg) {
+void GlowNose_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->unk_00 = arg;
@@ -412,7 +412,7 @@ void func_08075A7C(EffectWork* w, EventActor* arg) {
     w->unk_46 = 0;
 }
 
-s32 func_08075AFC(EffectWork* w) {
+s32 GlowNose_1(EffectWork* w) {
     w->gfx = AnimUpdate(&w->anim);
     w->unk_46++;
 
@@ -423,7 +423,7 @@ s32 func_08075AFC(EffectWork* w) {
     return 1;
 }
 
-void func_08075B24(EffectWork* w, EventActor* arg) {
+void GlowNose2_0(EffectWork* w, EventActor* arg) {
     EventBody* b;
 
     w->unk_00 = arg;
@@ -450,7 +450,7 @@ void func_08075B24(EffectWork* w, EventActor* arg) {
     w->unk_46 = 0;
 }
 
-s32 func_08075BC4(EffectWork* w) {
+s32 GlowNose2_1(EffectWork* w) {
     w->gfx = AnimUpdate(&w->anim);
     w->unk_46++;
 
