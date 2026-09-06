@@ -6552,7 +6552,6 @@ u8 task_poo_mapbeeborn_1(PooMapBornWork* w) {
     return 1;
 }
 
-#ifndef VERSION_EU
 void task_poo_mapbeeborn_2(PooMapBornWork* w) {
     s16 x;
     s16 y;
@@ -6564,6 +6563,11 @@ void task_poo_mapbeeborn_2(PooMapBornWork* w) {
             w->unk_98 = 0;
             func_08012304(w->unk_20);
             w->unk_99 = 0;
+#ifdef VERSION_EU
+            if (IsTaskActive(w->unk_94)) {
+                func_08000DE8(&w->unk_80, w->unk_94);
+            }
+#endif
         }
     } else {
         if (w->unk_98 == 0) {
@@ -6575,9 +6579,6 @@ void task_poo_mapbeeborn_2(PooMapBornWork* w) {
         TaskPoolDraw(&w->unk_80);
     }
 }
-#else
-INCLUDE_ASM("poo/task_poo_mapbeeborn_2.s");
-#endif
 
 void task_poo_mapbeeborn_3(PooMapBornWork* w) {
     if (w->unk_98 != 0) {

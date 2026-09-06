@@ -1,6 +1,13 @@
 #include "macros.h"
 #include "mode_dummy.h"
 
+#ifdef VERSION_EU
+extern void eu_080059D4(s32 bg, void* tiles);
+extern void eu_080059F4(s32 bg, void* map);
+extern void* gUnkEu_08F6A73C;
+extern void* gUnkEu_08F79038;
+#endif
+
 u16 gUnk_020348BC;
 
 const DummyEntry gDummyEntries[10] = {
@@ -16,7 +23,6 @@ const DummyEntry gDummyEntries[10] = {
     { "\x83\x58\x83\x5e\x83\x62\x83\x74\x83\x8d\x81\x5b\x83\x8b", "\x82\x73\x82\x67\x82\x64\x81\x40\x82\x64\x82\x6d\x82\x63", 9 },
 };
 
-#ifndef VERSION_EU
 void mode_dummy_0(u32 arg) {
     const DummyEntry* entry;
 
@@ -27,9 +33,15 @@ void mode_dummy_0(u32 arg) {
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
     SetupBg(1, 1, 0x0C, 8);
+#ifdef VERSION_EU
+    eu_080059D4(1, &gUnkEu_08F6A73C);
+    eu_080059F4(1, &gUnkEu_08F79038);
+    LoadBgPalette(1, gUnk_08F683C4, 0x20);
+#else
     LoadBgTiles(1, gUnk_08C6B0C4, 0x7C20);
     LoadBgPalette(1, gUnk_08F683C4, 0x20);
     LoadBgMap(1, gUnk_08EEE384, 0x800);
+#endif
     EnableBg(1);
     gUnk_020348BC = arg;
 
@@ -43,11 +55,6 @@ void mode_dummy_0(u32 arg) {
         func_0805FCB0(0x10, 0x18, 2, entry->desc);
     }
 }
-#else
-const char gUnkEu_0812F880[0x14] = "\x83\x47\x83\x89\x81\x5b\x81\x46\x96\xb3\x8c\xf8\x82\xc8\x88\xf8\x90\x94";
-
-INCLUDE_ASM("mode_dummy/mode_dummy_0.s");
-#endif
 
 void func_0800C064(void) {
     const DummyEntry* entry;

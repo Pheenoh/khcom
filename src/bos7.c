@@ -1,6 +1,10 @@
 #include "macros.h"
 #include "bos7.h"
 
+#ifdef VERSION_EU
+extern void eu_0800115C(void);
+#endif
+
 StaffRollWork* gUnk_02036020;
 
 void task_bos_lst_fld_0(LstFldWork* work, LstFldArg* arg) {
@@ -491,7 +495,6 @@ void func_081109A8(LstWork* work) {
 #endif
 }
 
-#ifndef VERSION_EU
 u8 func_081109B8(LstWork* work, u8 a) {
     LstState* s;
     u8 result;
@@ -515,16 +518,31 @@ u8 func_081109B8(LstWork* work, u8 a) {
         result = 1;
     }
 
+#ifdef VERSION_EU
+    AnimReset(&s->anim);
+    AnimChange(&s->anim, gUnk_09EF9EA4[s->unk_000].unk_00, 1);
+
+    if (s->unk_002 != 0 && s->unk_002 != 5) {
+        s->unk_002 = 7;
+        s->unk_004 = 0;
+        s->unk_006 = 0;
+        s->unk_008 = 0;
+
+        if (gBtlWork->unk_07C->unk_0C > -0xC000) {
+            s->unk_058 = -0x6000;
+        } else {
+            s->unk_058 = gBtlWork->unk_0D4 - 0x5000;
+        }
+    }
+#else
     s->unk_002 = 7;
     s->unk_004 = 0;
     s->unk_006 = 0;
     s->unk_008 = 0;
+#endif
 
     return result;
 }
-#else
-INCLUDE_ASM("bos7/func_081109B8.s");
-#endif
 
 s32 func_08110A38(s32 a, s32 b) {
     s32 v;
@@ -687,7 +705,6 @@ void func_08110C9C(LstState* work) {
     }
 }
 
-#ifndef VERSION_EU
 u8 task_bos_lst_bit_1(LstState* work) {
     Vec3 a;
     Vec3 b;
@@ -731,7 +748,9 @@ u8 task_bos_lst_bit_1(LstState* work) {
         if (work->unk_006 == 0) {
             if (gBtlWork->unk_068 & 0x2000000000000) {
                 work->unk_050 = (GetRandom() % 113 << 8) + 0xC000;
+#ifndef VERSION_EU
                 work->unk_054 = gBtlWork->unk_07C->unk_08;
+#endif
             } else if (work->unk_00E == 0) {
                 work->unk_050 = (GetRandom() % 113 << 8) + 0xC000;
                 work->unk_054 = gBtlWork->unk_07C->unk_08 + (gUnk_09A4FDDC[work->unk_010] << 8);
@@ -961,9 +980,6 @@ u8 task_bos_lst_bit_1(LstState* work) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("bos7/task_bos_lst_bit_1.s");
-#endif
 
 void task_bos_lst_bit_2(LstState* work) {
     s16 x;
@@ -2922,7 +2938,6 @@ u8 func_081141F8(StaffRollWork* w) {
 INCLUDE_ASM("bos7/func_081141F8.s");
 #endif
 
-#ifndef VERSION_EU
 void mode_StaffRoll_1(void) {
     StaffRollWork* w;
     u16 tmp;
@@ -3296,7 +3311,11 @@ void mode_StaffRoll_1(void) {
         }
         w->unk_00C++;
         if (w->unk_00C > 120) {
+#ifdef VERSION_EU
+            eu_0800115C();
+#else
             SoftReset(0xFF);
+#endif
         }
         break;
     }
@@ -3306,9 +3325,6 @@ void mode_StaffRoll_1(void) {
     func_08116ECC();
     w->unk_010++;
 }
-#else
-INCLUDE_ASM("bos7/mode_StaffRoll_1.s");
-#endif
 
 void mode_StaffRoll_2(void) {
     StaffRollWork* w;

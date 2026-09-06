@@ -5,6 +5,10 @@
 extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
+extern u32 gLanguage;
+#define LANGSTR(x) (((void**)(x))[gLanguage])
+#else
+#define LANGSTR(x) (x)
 #endif
 
 static Ent02034A80* gUnk_02034A80;
@@ -7044,7 +7048,7 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
     TaskPoolUpdate(p);
     return 1;
 }
-#ifdef VERSION_US
+#ifndef VERSION_JP
 void func_08073508(MsgWinWork* p) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
     s32 n;
@@ -7067,13 +7071,13 @@ void func_08073508(MsgWinWork* p) {
         if (p->unk_40 != 0) {
             p->unk_26 = func_08064EF4(0x2E00, gUnk_09033CB8[p->unk_20] - 0x200, p->unk_40, &p->unk_40);
         } else {
-            p->unk_26 = func_08064EF4(0x2E00, gUnk_09033CB8[p->unk_20] - 0x200, e->unk_10, &p->unk_40);
+            p->unk_26 = func_08064EF4(0x2E00, gUnk_09033CB8[p->unk_20] - 0x200, LANGSTR(e->unk_10), &p->unk_40);
         }
     } else {
         if (p->unk_40 != 0) {
             p->unk_26 = func_08064EF4(gUnk_09033CA8[p->unk_20], gUnk_09033CB8[p->unk_20] - 0x200, p->unk_40, &p->unk_40);
         } else {
-            p->unk_26 = func_08064EF4(gUnk_09033CA8[p->unk_20], gUnk_09033CB8[p->unk_20] - 0x200, e->unk_10, &p->unk_40);
+            p->unk_26 = func_08064EF4(gUnk_09033CA8[p->unk_20], gUnk_09033CB8[p->unk_20] - 0x200, LANGSTR(e->unk_10), &p->unk_40);
         }
     }
     p->unk_25 = 0;

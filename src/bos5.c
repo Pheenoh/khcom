@@ -1,6 +1,13 @@
 #include "macros.h"
 #include "bos5.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern void* gUnkEu_09F847D4[];
+extern void* gUnkEu_09F84810[];
+extern u16 gUnkEu_099991E0[];
+#endif
+
 GaWork* gGaWork;
 u32 gUnk_02034FEC;
 s16 gUnk_02034FF0;
@@ -1970,7 +1977,6 @@ void func_080FE900(void) {
     }
 }
 
-#ifndef VERSION_EU
 void mode_worldselect_0(void) {
     s16 i;
     s16 j;
@@ -2033,7 +2039,11 @@ void mode_worldselect_0(void) {
     gUnk_020350C8[1] = 0xA800;
     gUnk_020350D0 = -32768;
     LoadBgPalette(0, gUnk_09A3C9DC, 96);
+#ifdef VERSION_EU
+    LoadBgTiles(0, gUnk_099F1E7C, 16000);
+#else
     LoadBgTiles(0, gUnk_099F1E7C, 11968);
+#endif
     func_080FDB1C(gUnk_020350BA, gUnk_020350B8);
     LoadBgMap(0, gUnk_09A310DC, 0x500);
     LoadBgMap(1, gUnk_09A31ADC, 0x500);
@@ -2050,7 +2060,11 @@ void mode_worldselect_0(void) {
     gUnk_020350A0[1] = LoadObjPalette(gUnk_09A3CC5C, 32);
     gUnk_02035098[1] = LoadObjTiles(gUnk_0999B052, 0x1340);
     gUnk_020350AC = LoadObjPalette(gUnk_09A3CC7C, 32);
+#ifdef VERSION_EU
+    gUnk_020350A8 = LoadObjTiles(gUnkEu_09F84810[gLanguage], gUnkEu_099991E0[gLanguage]);
+#else
     gUnk_020350A8 = LoadObjTiles(gUnk_0999CBB6, 0x380);
+#endif
     gUnk_020350B0 = LoadObjTiles(gUnk_0999C410, 0x780);
     TaskPoolInit(&gUnk_020350D8, 1);
     EnableBg(0);
@@ -2062,11 +2076,7 @@ void mode_worldselect_0(void) {
         EnableBg(2);
     }
 }
-#else
-INCLUDE_ASM("bos5/mode_worldselect_0.s");
-#endif
 
-#ifndef VERSION_EU
 void mode_worldselect_1(void) {
     s16 a;
     s16 b;
@@ -2099,7 +2109,11 @@ void mode_worldselect_1(void) {
             }
 
             LoadBgMap(0, gUnk_09A315DC, 0x500);
+#ifdef VERSION_EU
+            LoadBgMap(1, gUnkEu_09F847D4[gLanguage], 0x500);
+#else
             LoadBgMap(1, gUnk_09A31FDC, 0x500);
+#endif
         }
         break;
     case 2:
@@ -2207,9 +2221,7 @@ void mode_worldselect_1(void) {
     TaskPoolUpdate(&gUnk_020350D8);
     func_080FE47C();
 }
-#else
-INCLUDE_ASM("bos5/mode_worldselect_1.s");
-#endif
+
 void mode_worldselect_2(void) {
     s16 i;
 
