@@ -418,7 +418,11 @@ typedef struct UnkStruct_0809C9A4 {
 typedef struct UnkStruct_0808C940 {
     u8 unk_000[0x6EE];
     s16 unk_6EE;
+#ifdef VERSION_EU
+    u8 unk_6F0[0x168];
+#else
     u8 unk_6F0[0x164];
+#endif
     s32 unk_854;
     u8 unk_858[0x54];
     s16 unk_8AC;
@@ -473,7 +477,11 @@ typedef struct UnkStruct_0808DB04 {
     void* unk_4E4;
     u8 unk_4E8[0x10];
     void* gfx;
+#ifdef VERSION_EU
+    u8 unk_4FC[0x2E4];
+#else
     u8 unk_4FC[0x2E0];
+#endif
     u8 unk_7DC[0x14];
     u8 unk_7F0[0x40];
     AnimState anim;
