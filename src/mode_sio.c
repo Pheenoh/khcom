@@ -5,6 +5,12 @@
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
 extern void eu_080059F4(s32 bg, void* map);
+extern void eu_080C24D8(void);
+extern s32 eu_080C273C(void);
+extern s32 eu_080C2740(void);
+extern u16 gUnkEu_0203C964;
+extern u16 gUnkEu_0203C970;
+extern u16 gUnkEu_0203C97C;
 extern void* gUnkEu_08891508[];
 #endif
 
@@ -786,29 +792,61 @@ void func_080B02A4(void) {
 INCLUDE_ASM("mode_sio/func_080B02A4.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080B0380(void) {
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+        gSioBtlOptionWork->unk_006++;
+        if (gSioBtlOptionWork->unk_006 > 9) {
+            func_080C5DC0(func_080C6008, func_080C60D8);
+            func_080C5F94();
+            gSioBtlOptionWork->unk_002++;
+        }
+    } else {
+        gSioBtlOptionWork->unk_006++;
+        if (gSioBtlOptionWork->unk_006 > 9) {
+            func_080C5F94();
+            eu_080C24D8();
+            gSioBtlOptionWork->unk_006 = 0;
+            gSioBtlOptionWork->unk_002++;
+        }
+    }
+#else
     gSioBtlOptionWork->unk_006++;
     if (gSioBtlOptionWork->unk_006 > 9) {
         func_080C5DC0(func_080C6008, func_080C60D8);
         func_080C5F94();
         gSioBtlOptionWork->unk_002++;
     }
-}
-#else
-INCLUDE_ASM("mode_sio/func_080B0380.s");
 #endif
+}
 
-#ifndef VERSION_EU
 void func_080B03BC(void) {
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+        if (gUnk_02039B60 == 2) {
+            gSioBtlOptionWork->unk_006 = 0;
+            gSioBtlOptionWork->unk_002++;
+        }
+    } else {
+        gSioBtlOptionWork->unk_006++;
+        if (gSioBtlOptionWork->unk_006 > 59) {
+            gSioBtlOptionWork->unk_006 = 0;
+            gSystemFlags |= 1;
+            func_080C5DC0(eu_080C273C, eu_080C2740);
+            func_080B0F18();
+            gUnkEu_0203C970 = 180;
+            gUnkEu_0203C97C = 0;
+            gUnkEu_0203C964 = 120;
+            ModeRequest(&gModeVsbattle, 0);
+        }
+    }
+#else
     if (gUnk_02039B60 == 2) {
         gSioBtlOptionWork->unk_006 = 0;
         gSioBtlOptionWork->unk_002++;
     }
-}
-#else
-INCLUDE_ASM("mode_sio/func_080B03BC.s");
 #endif
+}
 
 void func_080B03DC(void) {
     gSioBtlOptionWork->unk_006++;
@@ -940,12 +978,16 @@ void func_080B06D4(void) {
 INCLUDE_ASM("mode_sio/func_080B06D4.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080B0754(void) {
     u8 buf[2];
     s8 x;
     s8 y;
     s32 i;
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 != 0) {
+        return;
+    }
+#endif
     buf[0] = (gUnk_02039810[2][0] & 0xF0) >> 4;
     buf[1] = (gUnk_02039810[2][1] & 0xF0) >> 4;
 
@@ -994,9 +1036,6 @@ void func_080B0754(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B0754.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080B0874(void) {
@@ -1169,9 +1208,14 @@ void func_080B13D0(void) {
     }
 }
 
-#ifndef VERSION_EU
 void mode_sio_btl_cardget_0(s32 arg) {
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+        gSystemFlags |= 0x10;
+    }
+#else
     gSystemFlags |= 0x10;
+#endif
 
     if (gUnk_0203C374 == 1) {
         func_080C57A4();
@@ -1192,9 +1236,6 @@ void mode_sio_btl_cardget_0(s32 arg) {
     RequestDma3Copy(gUnk_096AD744, GetBgCharBase(1), 0x2000);
     gSioBtlCardgetWork->unk_00 = 0;
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sio_btl_cardget_0.s");
-#endif
 
 void func_080B1534(void) {
     RequestDma3Copy(gUnk_096AF744, (u8*)GetBgCharBase(1) + 0x2000, 0x2000);
