@@ -48,7 +48,7 @@ s32 GetEwramHeapStart(void);
 s32 GetEwramHeapSize(void);
 void MovieSetCallbacks(void* a, void* b, void* c, void* d);
 s32 MovieStart(void* a);
-void func_08118344(void* a, s32 b);
+void MoviePlay(void* a, s32 b);
 void MovieClose(void);
 void VTransInit(void);
 void BgInit(void);
