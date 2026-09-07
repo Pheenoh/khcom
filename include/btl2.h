@@ -162,14 +162,14 @@ typedef struct BtlHpenmWork {
 typedef struct BtlPauseWork {
     void* tiles;
     void* palette;
-    void* unk_08;
-    void* unk_0C;
+    void* gfx;
+    void* gfx2;
     u8 unk_10;
     u8 unk_11[0x03];
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
-    s32 unk_20;
+    s32 x;
+    s32 y;
+    s32 x2;
+    s32 y2;
     s16 unk_24;
     s16 unk_26;
 } BtlPauseWork;
