@@ -501,17 +501,17 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
         work->unk_490[i] = 0;
     }
     func_080D8474(0);
-    work->unk_4B0 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
 #ifdef VERSION_EU
     work->tiles = LoadObjTiles(gUnkEu_09F80350[gLanguage], gUnkEu_096CB104[gLanguage]);
 #else
     work->tiles = LoadObjTiles(gUnk_097A2E16, 0xC0);
 #endif
-    work->unk_4B8 = LoadObjPalette(gUnk_0984B278, 0x20);
+    work->palette2 = LoadObjPalette(gUnk_0984B278, 0x20);
 #ifdef VERSION_EU
-    work->unk_4BC = gUnkEu_09F80364[gLanguage];
+    work->gfx = gUnkEu_09F80364[gLanguage];
 #else
-    work->unk_4BC = gUnk_097A2DF8;
+    work->gfx = gUnk_097A2DF8;
 #endif
     work->unk_4C6 = 0;
     work->unk_4C8 = 0;
@@ -536,10 +536,10 @@ void task_status_stocklist_2(StatusStocklistWork* work) {
         if (work->unk_490[i] != 0) {
             if (work->unk_4C8 != 0) {
                 if (func_0800FD20(func_080D855C(func_080D78A8() + i))) {
-                    DrawSprite(0, y, work->unk_4BC, work->tiles, work->unk_4B8, 0, 0x800, i + 13);
+                    DrawSprite(0, y, work->gfx, work->tiles, work->palette2, 0, 0x800, i + 13);
                 }
             }
-            DrawSprite(1, y, 0, work->unk_490[i], work->unk_4B0, 0, 0x800, i + 21);
+            DrawSprite(1, y, 0, work->unk_490[i], work->palette, 0, 0x800, i + 21);
         }
         y += 12;
     }
@@ -553,9 +553,9 @@ void task_status_stocklist_3(StatusStocklistWork* work) {
             ReleaseObjTiles(work->unk_490[i]);
         }
     }
-    ReleaseObjPalette(work->unk_4B0);
+    ReleaseObjPalette(work->palette);
     ReleaseObjTiles(work->tiles);
-    ReleaseObjPalette(work->unk_4B8);
+    ReleaseObjPalette(work->palette2);
 }
 
 u16 func_080D82D4(void) {
@@ -916,7 +916,7 @@ s32 func_080D8AA4(void* pool, s16 x, s16 y, void* p) {
 }
 
 void task_status_friend_0(StatusFriendWork* work) {
-    work->unk_24 = func_080D8B84(work->unk_00, work->unk_0C, work->unk_18);
+    work->unk_24 = func_080D8B84(work->tiles, work->palette, work->gfx);
 }
 
 u8 task_status_friend_1(StatusFriendWork* work) {
@@ -930,7 +930,7 @@ void task_status_friend_2(StatusFriendWork* work) {
     x = (gGameState.flags & 8) ? 216 : 186;
 
     for (i = 0; i < work->unk_24; i++) {
-        DrawSprite(x, 45, work->unk_18[i], work->unk_00[i], work->unk_0C[i], 0, 0x800, i + 7);
+        DrawSprite(x, 45, work->gfx[i], work->tiles[i], work->palette[i], 0, 0x800, i + 7);
         x += 20;
     }
 }
@@ -939,8 +939,8 @@ void task_status_friend_3(StatusFriendWork* work) {
     s32 i;
 
     for (i = 0; i < work->unk_24; i++) {
-        ReleaseObjTiles(work->unk_00[i]);
-        ReleaseObjPalette(work->unk_0C[i]);
+        ReleaseObjTiles(work->tiles[i]);
+        ReleaseObjPalette(work->palette[i]);
     }
 }
 
@@ -1156,8 +1156,8 @@ void task_bos_boogie_0(BoogieWork* work) {
     work->unk_150 = 0;
     work->unk_154 = 0;
     work->unk_158 = 0;
-    work->unk_00C = LoadObjPalette(gUnk_0984AF78, 0x20);
-    work->unk_010 = LoadObjPalette(gUnk_08F69BC4, 0x20);
+    work->palette = LoadObjPalette(gUnk_0984AF78, 0x20);
+    work->palette2 = LoadObjPalette(gUnk_08F69BC4, 0x20);
     sz = 0;
 
     for (i = 0; i <= 5; i++) {
@@ -1200,9 +1200,9 @@ void task_bos_boogie_2(BoogieWork* work) {
     }
 
     if (func_0801CA00(a) && work->unk_000 != 4) {
-        pal = work->unk_010;
+        pal = work->palette2;
     } else {
-        pal = work->unk_00C;
+        pal = work->palette;
     }
     WorldToScreen(&x, &y, a->x, a->y, a->z);
     DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, f, -4100 - (a->y >> 8) * 4);
@@ -1212,8 +1212,8 @@ void task_bos_boogie_2(BoogieWork* work) {
 void task_bos_boogie_3(BoogieWork* work) {
     func_0801B7D8(&work->unk_040);
     ReleaseObjTiles(work->tiles);
-    ReleaseObjPalette(work->unk_00C);
-    ReleaseObjPalette(work->unk_010);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjPalette(work->palette2);
     TaskPoolDestroy(&work->unk_02C);
 }
 

@@ -115,9 +115,9 @@ typedef struct StatusMessageWork {
 } StatusMessageWork;
 
 typedef struct StatusFriendWork {
-    void* unk_00[3];
-    void* unk_0C[3];
-    void* unk_18[3];
+    void* tiles[3];
+    void* palette[3];
+    void* gfx[3];
     u16 unk_24;
     u16 unk_26;
 } StatusFriendWork;
@@ -166,8 +166,8 @@ typedef struct BoogieWork {
     u16 unk_004;
     u16 unk_006;
     void* tiles;
-    void* unk_00C;
-    void* unk_010;
+    void* palette;
+    void* palette2;
     AnimState anim;
     TaskPool unk_02C;
     UnkStruct_0203C55C unk_040;
@@ -255,10 +255,10 @@ typedef struct StatusWork {
 typedef struct StatusStocklistWork {
     StatusEntry entries[4];
     void* unk_490[8];
-    void* unk_4B0;
+    void* palette;
     void* tiles;
-    void* unk_4B8;
-    void* unk_4BC;
+    void* palette2;
+    void* gfx;
     s32* unk_4C0;
     u16 unk_4C4;
     u16 unk_4C6;
