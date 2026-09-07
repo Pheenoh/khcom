@@ -1788,14 +1788,13 @@ void func_0801CB18(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_0801CB44(void) {
     SeedRandom(gFrameCounter);
     func_0801CA88();
     func_0801CB00();
     func_0800ABD8();
     gUnk_02039DC0 = 0;
-}
-#else
-INCLUDE_ASM("unk_08019050/func_0801CB44.s");
+#ifdef VERSION_EU
+    gUnk_03006C10 &= 0xFFFF7FFF;
 #endif
+}
