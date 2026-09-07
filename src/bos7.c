@@ -3,6 +3,15 @@
 
 #ifdef VERSION_EU
 extern void eu_0800115C(void);
+extern u32 gLanguage;
+extern u8 gUnkEu_09DD51A0[];
+extern u8 gUnkEu_09DD59A0[];
+extern u8 gUnkEu_09DD61A0[];
+extern u8 gUnkEu_09DD69A0[];
+extern u8 gUnkEu_09DD71A0[];
+extern u8 gUnkEu_09DD79A0[];
+extern u8 gUnkEu_09DD81A0[];
+extern u8 gUnkEu_09DD89A0[];
 #endif
 
 StaffRollWork* gUnk_02036020;
@@ -2877,7 +2886,6 @@ u8 func_0811411C(StaffRollWork* w) {
     return result;
 }
 
-#ifndef VERSION_EU
 u8 func_081141F8(StaffRollWork* w) {
     u8 result;
     u8 t;
@@ -2894,13 +2902,59 @@ u8 func_081141F8(StaffRollWork* w) {
         SetBgColorMode(1, 0x80);
 
         if ((gGameState.flags & 8) != 0) {
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                LoadBgMap(1, gUnkEu_09DD69A0, 0x800);
+                break;
+            case 1:
+                LoadBgMap(1, gUnkEu_09DD71A0, 0x800);
+                break;
+            case 4:
+                LoadBgMap(1, gUnkEu_09DD79A0, 0x800);
+                break;
+            case 3:
+                LoadBgMap(1, gUnkEu_09DD81A0, 0x800);
+                break;
+            case 2:
+            default:
+                LoadBgMap(1, gUnkEu_09DD89A0, 0x800);
+                break;
+            }
+            LoadBgTiles(1, gUnk_09D2B334, 0x45C0);
+            LoadBgPalette(1, gUnk_09D6CB74, 0x200);
+#else
             LoadBgTiles(1, gUnk_09D2B334, 0x7F40);
             LoadBgMap(1, gUnk_09D68A74, 0x800);
             LoadBgPalette(1, gUnk_09D6CB74, 0x200);
+#endif
         } else {
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                LoadBgMap(1, gUnk_09D68274, 0x800);
+                break;
+            case 1:
+                LoadBgMap(1, gUnk_09D68A74, 0x800);
+                break;
+            case 4:
+                LoadBgMap(1, gUnkEu_09DD51A0, 0x800);
+                break;
+            case 3:
+                LoadBgMap(1, gUnkEu_09DD59A0, 0x800);
+                break;
+            case 2:
+            default:
+                LoadBgMap(1, gUnkEu_09DD61A0, 0x800);
+                break;
+            }
+            LoadBgTiles(1, gUnk_09D25774, 0x5140);
+            LoadBgPalette(1, gUnk_09D6C974, 0x200);
+#else
             LoadBgTiles(1, gUnk_09D25774, 0x5BC0);
             LoadBgMap(1, gUnk_09D68274, 0x800);
             LoadBgPalette(1, gUnk_09D6C974, 0x200);
+#endif
         }
 
         m4aSongNumStart(6);
@@ -2934,9 +2988,6 @@ u8 func_081141F8(StaffRollWork* w) {
 
     return result;
 }
-#else
-INCLUDE_ASM("bos7/func_081141F8.s");
-#endif
 
 void mode_StaffRoll_1(void) {
     StaffRollWork* w;
