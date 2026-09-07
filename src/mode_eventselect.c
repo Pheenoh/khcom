@@ -1002,16 +1002,16 @@ void func_08076458(void) {
     gUnk_02039DD4->unk_108[0] = 0;
     gUnk_02039DD4->unk_108[1] = 0;
     TaskPoolInit(&gUnk_02039DD4->unk_09C, 6);
-    gUnk_02039DD4->unk_030 = LoadObjTiles(gUnk_08F709B0[0].unk_0C, 640);
-    gUnk_02039DD4->unk_034 = LoadObjTiles(gUnk_08F709B0[1].unk_0C, 640);
-    gUnk_02039DD4->unk_038 = LoadObjTiles(gUnk_08F709B0[2].unk_0C, 640);
-    gUnk_02039DD4->unk_03C = LoadObjTiles(gUnk_08F709B0[3].unk_0C, 640);
-    gUnk_02039DD4->unk_044 = LoadObjTiles(gUnk_0905EAE8, 320);
-    gUnk_02039DD4->unk_048 = LoadObjTiles(gUnk_0905ED36, 320);
-    gUnk_02039DD4->unk_04C = LoadObjTiles(gUnk_0905EEE6, 320);
-    gUnk_02039DD4->unk_054 = LoadObjPalette(gUnk_09611AB8, 32);
-    gUnk_02039DD4->unk_058 = LoadObjPalette(gUnk_08F69BA4, 32);
-    func_080062F4(((UnkStruct_080038C8*)gUnk_02039DD4->unk_054)->unk_06 + 16, 1);
+    gUnk_02039DD4->tiles = LoadObjTiles(gUnk_08F709B0[0].unk_0C, 640);
+    gUnk_02039DD4->tiles2 = LoadObjTiles(gUnk_08F709B0[1].unk_0C, 640);
+    gUnk_02039DD4->tiles3 = LoadObjTiles(gUnk_08F709B0[2].unk_0C, 640);
+    gUnk_02039DD4->tiles4 = LoadObjTiles(gUnk_08F709B0[3].unk_0C, 640);
+    gUnk_02039DD4->tiles5 = LoadObjTiles(gUnk_0905EAE8, 320);
+    gUnk_02039DD4->tiles6 = LoadObjTiles(gUnk_0905ED36, 320);
+    gUnk_02039DD4->tiles7 = LoadObjTiles(gUnk_0905EEE6, 320);
+    gUnk_02039DD4->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    gUnk_02039DD4->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
+    func_080062F4(((UnkStruct_080038C8*)gUnk_02039DD4->palette)->unk_06 + 16, 1);
     func_0807B668(gUnk_02039DD4);
 }
 
@@ -1149,17 +1149,17 @@ void func_08077E98(CardBattleWork* w) {
         }
     }
 
-    ReleaseObjTiles(gUnk_02039DD4->unk_04C);
-    ReleaseObjTiles(gUnk_02039DD4->unk_048);
-    ReleaseObjTiles(gUnk_02039DD4->unk_044);
-    ReleaseObjPalette(gUnk_02039DD4->unk_054);
-    ReleaseObjPalette(gUnk_02039DD4->unk_058);
+    ReleaseObjTiles(gUnk_02039DD4->tiles7);
+    ReleaseObjTiles(gUnk_02039DD4->tiles6);
+    ReleaseObjTiles(gUnk_02039DD4->tiles5);
+    ReleaseObjPalette(gUnk_02039DD4->palette);
+    ReleaseObjPalette(gUnk_02039DD4->palette2);
     ReleaseObjTiles(gUnk_02039DD4->unk_040);
     ReleaseObjTiles(gUnk_02039DD4->unk_050);
-    ReleaseObjTiles(gUnk_02039DD4->unk_030);
-    ReleaseObjTiles(gUnk_02039DD4->unk_034);
-    ReleaseObjTiles(gUnk_02039DD4->unk_038);
-    ReleaseObjTiles(gUnk_02039DD4->unk_03C);
+    ReleaseObjTiles(gUnk_02039DD4->tiles);
+    ReleaseObjTiles(gUnk_02039DD4->tiles2);
+    ReleaseObjTiles(gUnk_02039DD4->tiles3);
+    ReleaseObjTiles(gUnk_02039DD4->tiles4);
     EwramFree(gUnk_02039DD4);
     gUnk_02039DD4 = 0;
     ReleaseObjTiles(w->tiles);
