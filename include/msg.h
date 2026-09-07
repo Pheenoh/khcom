@@ -155,8 +155,8 @@ typedef struct MsgFaceWork {
     void* palette;
     void* gfx;
     u8 anim[0x18];
-    s32 unk_24;
-    s32 unk_28;
+    s32 x;
+    s32 y;
     s32 unk_2C;
     u8 unk_30;
     u8 unk_31;

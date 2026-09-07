@@ -214,8 +214,8 @@ typedef struct WlogoTtObjWork {
     void* palette;
     void* gfx;
     AnimState anim;
-    s32 unk_024;
-    s32 unk_028;
+    s32 x;
+    s32 y;
     u16 unk_02C;
     u16 unk_02E;
 } WlogoTtObjWork;
@@ -301,8 +301,8 @@ typedef struct WlogoAgrSmokeWork {
     void* palette;
     void* gfx;
     AnimState anim;
-    s32 unk_024;
-    s32 unk_028;
+    s32 x;
+    s32 y;
     s32 unk_02C;
     u8 unk_030;
     u8 unk_031;
@@ -384,8 +384,8 @@ typedef struct WlogoNvlObjArg {
 } WlogoNvlObjArg;
 
 typedef struct WlogoNvlMovWork {
-    s32 unk_000;
-    s32 unk_004;
+    s32 x;
+    s32 y;
     s32 unk_008;
     s32 unk_00C;
     s32 unk_010;
@@ -411,8 +411,8 @@ typedef struct WlogoNvlObjWork {
     void* palette;
     void* gfx;
     AnimState anim;
-    s32 unk_024;
-    s32 unk_028;
+    s32 x;
+    s32 y;
     u8 unk_02C;
     u8 unk_02D[0x3];
 } WlogoNvlObjWork;
