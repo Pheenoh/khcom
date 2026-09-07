@@ -459,8 +459,8 @@ typedef struct LexRockSub {
 } LexRockSub;
 
 typedef struct LexRockWork {
-    void* unk_00[12];
-    void* unk_30;
+    void* tiles2[12];
+    void* palette2;
     AnimState anim[12];
     s32 x;
     s32 y;

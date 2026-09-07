@@ -498,7 +498,7 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
     }
 
     for (i = 0; i < 8; i++) {
-        work->unk_490[i] = 0;
+        work->tiles2[i] = 0;
     }
     func_080D8474(0);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
@@ -533,13 +533,13 @@ void task_status_stocklist_2(StatusStocklistWork* work) {
     y = 36;
 
     for (i = 0; i < 8; i++) {
-        if (work->unk_490[i] != 0) {
+        if (work->tiles2[i] != 0) {
             if (work->unk_4C8 != 0) {
                 if (func_0800FD20(func_080D855C(func_080D78A8() + i))) {
                     DrawSprite(0, y, work->gfx, work->tiles, work->palette2, 0, 0x800, i + 13);
                 }
             }
-            DrawSprite(1, y, 0, work->unk_490[i], work->palette, 0, 0x800, i + 21);
+            DrawSprite(1, y, 0, work->tiles2[i], work->palette, 0, 0x800, i + 21);
         }
         y += 12;
     }
@@ -549,8 +549,8 @@ void task_status_stocklist_3(StatusStocklistWork* work) {
     s32 i;
 
     for (i = 0; i < 8; i++) {
-        if (work->unk_490[i] != 0) {
-            ReleaseObjTiles(work->unk_490[i]);
+        if (work->tiles2[i] != 0) {
+            ReleaseObjTiles(work->tiles2[i]);
         }
     }
     ReleaseObjPalette(work->palette);
@@ -583,40 +583,40 @@ u8 func_080D8340(void) {
 void func_080D8374(void) {
     s32 i;
 
-    ReleaseObjTiles(gStatusStocklistWork->unk_490[0]);
+    ReleaseObjTiles(gStatusStocklistWork->tiles2[0]);
 
     for (i = 0; i < 7; i++) {
-        gStatusStocklistWork->unk_490[i] = gStatusStocklistWork->unk_490[i + 1];
+        gStatusStocklistWork->tiles2[i] = gStatusStocklistWork->tiles2[i + 1];
     }
     gStatusStocklistWork->unk_4C4++;
-    gStatusStocklistWork->unk_490[7] = func_080D85C0(func_080D85F8(gStatusStocklistWork->entries[*gStatusStocklistWork->unk_4C0].unk_000[gStatusStocklistWork->unk_4C4 + 7]));
+    gStatusStocklistWork->tiles2[7] = func_080D85C0(func_080D85F8(gStatusStocklistWork->entries[*gStatusStocklistWork->unk_4C0].unk_000[gStatusStocklistWork->unk_4C4 + 7]));
 }
 
 void func_080D83F4(void) {
     s32 i;
 
-    ReleaseObjTiles(gStatusStocklistWork->unk_490[7]);
+    ReleaseObjTiles(gStatusStocklistWork->tiles2[7]);
 
     for (i = 7; i > 0; i--) {
-        gStatusStocklistWork->unk_490[i] = gStatusStocklistWork->unk_490[i - 1];
+        gStatusStocklistWork->tiles2[i] = gStatusStocklistWork->tiles2[i - 1];
     }
     gStatusStocklistWork->unk_4C4--;
-    gStatusStocklistWork->unk_490[0] = func_080D85C0(func_080D85F8(gStatusStocklistWork->entries[*gStatusStocklistWork->unk_4C0].unk_000[gStatusStocklistWork->unk_4C4]));
+    gStatusStocklistWork->tiles2[0] = func_080D85C0(func_080D85F8(gStatusStocklistWork->entries[*gStatusStocklistWork->unk_4C0].unk_000[gStatusStocklistWork->unk_4C4]));
 }
 
 void func_080D8474(u16 a) {
     s32 i;
 
     for (i = 0; i <= 7; i++) {
-        if (gStatusStocklistWork->unk_490[i] != 0) {
-            ReleaseObjTiles(gStatusStocklistWork->unk_490[i]);
-            gStatusStocklistWork->unk_490[i] = 0;
+        if (gStatusStocklistWork->tiles2[i] != 0) {
+            ReleaseObjTiles(gStatusStocklistWork->tiles2[i]);
+            gStatusStocklistWork->tiles2[i] = 0;
         }
     }
     gStatusStocklistWork->unk_4C4 = a;
 
     for (i = 0; i < gStatusStocklistWork->entries[*gStatusStocklistWork->unk_4C0].count - a && i <= 7; i++) {
-        gStatusStocklistWork->unk_490[i] = func_080D85C0(func_080D85F8(gStatusStocklistWork->entries[*gStatusStocklistWork->unk_4C0].unk_000[a + i]));
+        gStatusStocklistWork->tiles2[i] = func_080D85C0(func_080D85F8(gStatusStocklistWork->entries[*gStatusStocklistWork->unk_4C0].unk_000[a + i]));
     }
 }
 

@@ -269,17 +269,17 @@ typedef struct SioBtlOptionWork {
     s32 unk_1DC;
     s8 unk_1E0;
     u8 unk_1E1[3];
-    void* unk_1E4;
-    void* unk_1E8;
-    void* unk_1EC;
+    void* tiles4;
+    void* palette4;
+    void* gfx4;
     void* unk_1F0;
     void* unk_1F4;
     s8 unk_1F8;
     u8 unk_1F9;
     u16 unk_1FA;
-    void* unk_1FC[2];
-    void* unk_204[2];
-    void* unk_20C[2];
+    void* tiles5[2];
+    void* gfx5[2];
+    void* palette5[2];
     s8 unk_214[2];
     s8 unk_216;
     s8 unk_217;
@@ -296,7 +296,7 @@ typedef struct SioBtlOptionWork {
 #ifdef VERSION_EU
     TextSlot unkEu_54C[60];
 #endif
-    void* unk_40C;
+    void* palette6;
     s8 unk_410;
     u8 unk_411;
     s16 unk_412;
