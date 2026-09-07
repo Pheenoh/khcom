@@ -2358,13 +2358,13 @@ s32 func_080BDB58(void) {
 void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
     work->unk_00 = arg;
     work->unk_28 = 0x80;
-    work->unk_04 = LoadObjTiles(gUnk_09682AA4, 0x2800);
-    work->unk_08 = gUnk_09EF3A48[12];
-    work->unk_0C = LoadObjTiles(gUnk_09682AA4, 0x2800);
-    work->unk_10 = gUnk_09EF3A48[14];
-    work->unk_14 = LoadObjPalette(gUnk_096FB5A4, 0x60);
-    work->unk_18 = LoadObjPalette(gUnk_08F69BC4, 32);
-    func_080062F4(*(u16*)((u8*)work->unk_14 + 6) + 16, 1);
+    work->tiles = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->gfx = gUnk_09EF3A48[12];
+    work->tiles2 = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->gfx2 = gUnk_09EF3A48[14];
+    work->palette = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
+    func_080062F4(*(u16*)((u8*)work->palette + 6) + 16, 1);
     work->unk_2E = 0;
     work->unk_1C = 0;
     work->unk_1E = 0;
@@ -2544,7 +2544,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             work->unk_1C = 0;
         }
 
-        p = work->unk_0C;
+        p = work->tiles2;
         RequestDma3Copy(gUnk_09685DA4 + (work->unk_1C << 9), gUnk_06010000 + (p[3] << 5), 512);
     }
 
@@ -2572,14 +2572,14 @@ void task_bos_jf_lamp_2(JfLampWork* work) {
     }
 
     if (gBtlWork->unk_070 == 0 && (work->unk_00->unk_24C & 1) && (gFrameCounter & 1)) {
-        pal = work->unk_18;
+        pal = work->palette2;
     } else {
-        pal = work->unk_14;
+        pal = work->palette;
     }
 
     WorldToScreen(&x, &y, sub->x, sub->y, sub->z);
-    DrawSprite(x, y, work->unk_08, work->unk_04, pal, 0, mode, (u16)(-4100 - (sub->y >> 8) * 4));
-    DrawSprite(x, y - 14, work->unk_10, work->unk_0C, work->unk_14, 0, mode,
+    DrawSprite(x, y, work->gfx, work->tiles, pal, 0, mode, (u16)(-4100 - (sub->y >> 8) * 4));
+    DrawSprite(x, y - 14, work->gfx2, work->tiles2, work->palette, 0, mode,
                (u16)(-4101 - (sub->y >> 8) * 4));
 
     if (work->unk_2D == 1) {
@@ -2588,10 +2588,10 @@ void task_bos_jf_lamp_2(JfLampWork* work) {
 }
 
 void task_bos_jf_lamp_3(JfLampWork* work) {
-    ReleaseObjTiles(work->unk_0C);
-    ReleaseObjTiles(work->unk_04);
-    ReleaseObjPalette(work->unk_14);
-    ReleaseObjPalette(work->unk_18);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjPalette(work->palette2);
     TaskPoolDestroy(&work->unk_44);
 }
 
@@ -2746,8 +2746,8 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     LoadBgTiles(1, gUnk_09665C04, 0x2700);
     func_0800516C(1, gUnk_0203B500, 2, 2);
     work->tiles = LoadObjTiles(gUnk_09682AA4, 0x2800);
-    work->unk_08 = LoadObjPalette(gUnk_096FB5A4, 0x60);
-    work->unk_0C = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->unk_2C = 1;
     work->unk_30 = 0x2A200;
     work->unk_34 = 0x12600;
@@ -2832,17 +2832,17 @@ void task_bos_jf_majin_2(JfMajinWork* work) {
         if (jf->unk_24C & 1) {
             if (gFrameCounter & 1) {
                 LoadPaletteWithEffect(gUnk_08F69BC4, (void*)0x05000000, 32);
-                gfx = work->unk_0C;
+                gfx = work->palette2;
             } else {
                 LoadPaletteWithEffect(gUnk_096FB584, (void*)0x05000000, 32);
-                gfx = work->unk_08;
+                gfx = work->palette;
             }
         } else {
-            gfx = work->unk_08;
+            gfx = work->palette;
         }
     } else {
         LoadPaletteWithEffect(gUnk_096FB584, (void*)0x05000000, 32);
-        gfx = work->unk_08;
+        gfx = work->palette;
     }
 
     func_08005244(1, ((gBtlWork->unk_000 - jf->x) >> 8) + 776,
@@ -2866,8 +2866,8 @@ void task_bos_jf_majin_2(JfMajinWork* work) {
 
 void task_bos_jf_majin_3(JfMajinWork* work) {
     ReleaseObjTiles(work->tiles);
-    ReleaseObjPalette(work->unk_08);
-    ReleaseObjPalette(work->unk_0C);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjPalette(work->palette2);
     TaskPoolDestroy(&work->unk_6C);
 }
 s32 func_080BE910(void) {
@@ -4105,14 +4105,14 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_15C = 120;
     work->unk_15E = 0;
     work->unk_160 = 0;
-    work->unk_004 = LoadObjTiles(gUnk_09682AA4, 0x2800);
-    work->unk_008 = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    work->tiles = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->palette = LoadObjPalette(gUnk_096FB5A4, 0x60);
     AnimInit(&work->anim, gUnk_09EF3B40, gUnk_09EF3A48);
     AnimStart(&work->anim, gUnk_09EF2A38[work->unk_158], 0);
     work->gfx = AnimGetGfx(&work->anim);
-    work->unk_164 = LoadObjTiles(gUnk_09682AA4, 0x2800);
-    work->unk_168 = LoadObjPalette(gUnk_096FB5A4, 0x60);
-    work->unk_16C = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
+    work->tiles2 = LoadObjTiles(gUnk_09682AA4, 0x2800);
+    work->palette2 = LoadObjPalette(gUnk_096FB5A4, 0x60);
+    work->gfx2 = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
     TaskPoolInit(&work->unk_180, 1);
     TaskCreate(&work->unk_180, gUnk_09EF34D8, &work->unk_02C);
 }
@@ -4137,7 +4137,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
                 work->unk_028 = 0;
             }
 
-            LoadObjPaletteBank(((u16*)work->unk_008)[3] + 2, gUnk_096FB604 + (work->unk_028 << 5));
+            LoadObjPaletteBank(((u16*)work->palette)[3] + 2, gUnk_096FB604 + (work->unk_028 << 5));
         }
 
         if (work->unk_15C > 0) {
@@ -4178,7 +4178,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
                 }
             }
 
-            work->unk_16C = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
+            work->gfx2 = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
         } else {
             work->unk_13C = (b = (BtlWork*)gBtlWork->unk_07C)->unk_004;
             work->unk_140 = b->unk_008;
@@ -4208,7 +4208,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
                 work->unk_028 = 0;
             }
 
-            LoadObjPaletteBank(((u16*)work->unk_008)[3] + 2, gUnk_096FB604 + (work->unk_028 << 5));
+            LoadObjPaletteBank(((u16*)work->palette)[3] + 2, gUnk_096FB604 + (work->unk_028 << 5));
         }
 
         work->unk_15E++;
@@ -4226,7 +4226,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
                 work->unk_178 = jf->z - 0x1000;
             }
 
-            work->unk_16C = gUnk_09EF3A48[15];
+            work->gfx2 = gUnk_09EF3A48[15];
             m4aSongNumStart(632);
             work->unk_194 = 1;
             work->unk_160++;
@@ -4251,7 +4251,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
                 work->unk_028 = 0;
             }
 
-            LoadObjPaletteBank(((u16*)work->unk_008)[3] + 2, gUnk_096FB604 + (work->unk_028 << 5));
+            LoadObjPaletteBank(((u16*)work->palette)[3] + 2, gUnk_096FB604 + (work->unk_028 << 5));
         }
 
         work->unk_030 += work->unk_148;
@@ -4349,7 +4349,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
         }
 
         WorldToScreen(&x, &y, work->unk_030, work->unk_034, work->unk_038);
-        DrawSprite(x, y, work->gfx, work->unk_004, work->unk_008, 0, pal, prio);
+        DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, pal, prio);
     }
 
     if (work->unk_17C == 1) {
@@ -4361,7 +4361,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
         }
 
         WorldToScreen(&x, &y, work->unk_170, work->unk_174, work->unk_178);
-        DrawSprite(x, y, work->unk_16C, work->unk_164, work->unk_168, 0, pal, 0xFFF2);
+        DrawSprite(x, y, work->gfx2, work->tiles2, work->palette2, 0, pal, 0xFFF2);
     }
 
     if (work->unk_194 == 1) {
@@ -4370,10 +4370,10 @@ void task_bos_jf_rock_2(JfRockWork* work) {
 }
 
 void task_bos_jf_rock_3(JfRockWork* work) {
-    ReleaseObjTiles(work->unk_004);
-    ReleaseObjPalette(work->unk_008);
-    ReleaseObjTiles(work->unk_164);
-    ReleaseObjPalette(work->unk_168);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjPalette(work->palette2);
     TaskPoolDestroy(&work->unk_180);
 }
 
