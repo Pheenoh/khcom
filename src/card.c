@@ -222,7 +222,7 @@ u8 func_080E8D00(void);
 void* func_080E8D1C(s32 a);
 void func_08093C44(u16 a, u8* work);
 u8 func_0808B30C(u8* work, void* a);
-u8 func_08092234(u8* work, void* a);
+u8 func_08092234(UnkStruct_08093838* w, void* a);
 void func_0808C90C(u8* work);
 void func_0808C3DC(u8* work, u8 b);
 void func_0808DB50(UnkStruct_0808DB04* w);
