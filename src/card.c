@@ -21,6 +21,8 @@ extern void* gUnkEu_09F7434C[];
 extern u16 gUnkEu_090D1DF4[];
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
+extern void* gUnkEu_08890EC0[];
+extern void* gUnkEu_08895E94[];
 extern void* gUnkEu_08895AF4[];
 extern void* gUnkEu_08895CF8[];
 extern void* gUnkEu_08895DBC[];
@@ -18166,16 +18168,21 @@ void func_080A2EF8(u8* work) {
 #define DECK_CLEAR_TEXT_Y 61
 #endif
 
-#ifndef VERSION_EU
 void Deck_Yes_No_0(UnkStruct_080A2F54* w, u8* a) {
     w->unk_78C = 0;
     w->unk_78D = 0;
     func_08065ACC(w, 0x50);
     func_08065ACC(w->unk_280, 0x50);
     func_08065ACC(w->unk_500, 0x50);
+#ifdef VERSION_EU
+    w->unk_78C = func_08065B6C(eu_0805E924(gUnkEu_08890EC0), w);
+    w->unk_78D = func_08065B6C(eu_0805E924(gUnkEu_08890E1C), w->unk_280);
+    w->unk_78E = func_08065B6C(eu_0805E924(gUnkEu_08890E44), w->unk_500);
+#else
     w->unk_78C = func_08065B6C(gUnk_08159FBC, w);
     w->unk_78D = func_08065B6C(gUnk_08159E10, w->unk_280);
     w->unk_78E = func_08065B6C(gUnk_08159E18, w->unk_500);
+#endif
     w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
     w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
@@ -18190,9 +18197,6 @@ void Deck_Yes_No_0(UnkStruct_080A2F54* w, u8* a) {
     w->unk_7A0 = a;
     a[0] = 1;
 }
-#else
-INCLUDE_ASM("card/Deck_Yes_No_0.s");
-#endif
 s32 func_080A30C0(void) {
     if ((GetKeysPressed() & 1) || (GetKeysPressed() & 2)) {
         return 0;
@@ -18200,16 +18204,21 @@ s32 func_080A30C0(void) {
 
     return 1;
 }
-#ifndef VERSION_EU
 void Deck_Clear_0(UnkStruct_080A2F54* w, u8* a) {
     w->unk_78C = 0;
     w->unk_78D = 0;
     func_08065ACC(w, 0x50);
     func_08065ACC(w->unk_280, 0x50);
     func_08065ACC(w->unk_500, 0x50);
+#ifdef VERSION_EU
+    w->unk_78C = func_08065B6C(eu_0805E924(gUnkEu_08895E94), w);
+    w->unk_78D = func_08065B6C(eu_0805E924(gUnkEu_08890E1C), w->unk_280);
+    w->unk_78E = func_08065B6C(eu_0805E924(gUnkEu_08890E44), w->unk_500);
+#else
     w->unk_78C = func_08065B6C(gUnk_0815C1C2, w);
     w->unk_78D = func_08065B6C(gUnk_08159E10, w->unk_280);
     w->unk_78E = func_08065B6C(gUnk_08159E18, w->unk_500);
+#endif
     w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
     w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
@@ -18224,9 +18233,6 @@ void Deck_Clear_0(UnkStruct_080A2F54* w, u8* a) {
     w->unk_7A0 = a;
     a[0] = 1;
 }
-#else
-INCLUDE_ASM("card/Deck_Clear_0.s");
-#endif
 
 void func_080A324C(UnkStruct_080A324C* p) {
     s32 i;
