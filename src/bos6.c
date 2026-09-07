@@ -577,12 +577,12 @@ void func_0810B378(void** p, u8 a) {
     }
     func_08012614(&work->unk_010, a);
     if (a == 0) {
-        if (work->unk_008 == 0) {
-            work->unk_008 = (u32)LoadObjTiles(gUnk_09CC4E54, 0x200);
+        if (work->tiles == 0) {
+            work->tiles = (u32)LoadObjTiles(gUnk_09CC4E54, 0x200);
         }
-        if (work->unk_00C == 0) {
+        if (work->palette == 0) {
             pal = (UnkStruct_080038C8*)LoadObjPalette(gUnk_09D693D4, 0x60);
-            work->unk_00C = (u32)pal;
+            work->palette = (u32)pal;
             LoadPalette(gUnk_09D69434, gUnk_05000220 + pal->unk_06 * 32, 32);
         }
     }
@@ -677,8 +677,8 @@ void task_bos_pc_fld_0(PcFldWork* work, FldInit* arg) {
     func_08005244(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
     func_0810B4A8((u8*)work);
     func_0810B4B4((u8*)work);
-    work->unk_008 = 0;
-    work->unk_00C = 0;
+    work->tiles = 0;
+    work->palette = 0;
     p = &work->unk_010;
     func_080122AC(p, 6, 40, 8);
     func_08012324(p, 0x17400, 0x15400, 0);
@@ -741,14 +741,14 @@ void task_bos_pc_fld_2(PcFldWork* work) {
     pos = (PcPos*)gBtlWork->unk_07C;
     if (pos->unk_0C >= -0x100) {
         if ((pos->unk_34 & 0x80) == 0) {
-            if (work->unk_008 != 0) {
-                if (work->unk_00C != 0) {
+            if (work->tiles != 0) {
+                if (work->palette != 0) {
                     x = 0x17000;
                     y = 0x14800;
                     z = -0x800;
                     WorldToScreen(&sx, &sy, x, y, z);
-                    DrawSprite(sx, sy, gUnk_09EFBEB8, (void*)work->unk_008,
-                        (void*)work->unk_00C, 0, func_0801AF1C(y),
+                    DrawSprite(sx, sy, gUnk_09EFBEB8, (void*)work->tiles,
+                        (void*)work->palette, 0, func_0801AF1C(y),
                         (u16)(-0x1004 - (s32)(y >> 6)));
                 }
             }
@@ -760,12 +760,12 @@ void task_bos_pc_fld_3(PcFldWork* work) {
     func_0810B51C((u8*)work);
     func_08012304(&work->unk_010);
 
-    if (work->unk_008 != 0) {
-        ReleaseObjTiles((void*)work->unk_008);
+    if (work->tiles != 0) {
+        ReleaseObjTiles((void*)work->tiles);
     }
 
-    if (work->unk_00C != 0) {
-        ReleaseObjPalette((void*)work->unk_00C);
+    if (work->palette != 0) {
+        ReleaseObjPalette((void*)work->palette);
     }
 }
 
@@ -1054,8 +1054,8 @@ void func_0810BCD4(PcFltWork* work) {
 void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg) {
     AnimState* anim;
 
-    work->unk_034 = (u32)LoadObjTiles(gUnk_09CB8F54, 0xDC0);
-    work->unk_038 = (u32)LoadObjPalette(gUnk_09D693D4, 0x60);
+    work->tiles = (u32)LoadObjTiles(gUnk_09CB8F54, 0xDC0);
+    work->palette = (u32)LoadObjPalette(gUnk_09D693D4, 0x60);
     anim = &work->anim;
     AnimInit(anim, gUnk_09EFBBEC, gUnk_09EFBBBC);
     AnimStart(anim, 1, 0);
@@ -1117,15 +1117,15 @@ void task_bos_pc_flt_2(PcFltWork* work) {
             g = func_0801AF1C(work->unk_02C);
             h = -0x1004 - ((work->unk_02C >> 8) << 2);
         }
-        DrawSprite(sx, sy, AnimGetGfx(&work->anim), (void*)work->unk_034,
-                   (void*)work->unk_038, 0, g, h);
+        DrawSprite(sx, sy, AnimGetGfx(&work->anim), (void*)work->tiles,
+                   (void*)work->palette, 0, g, h);
     }
 }
 
 void task_bos_pc_flt_3(PcFltWork* work) {
     func_08012304(&work->unk_040);
-    ReleaseObjTiles((void*)work->unk_034);
-    ReleaseObjPalette((void*)work->unk_038);
+    ReleaseObjTiles((void*)work->tiles);
+    ReleaseObjPalette((void*)work->palette);
 }
 
 s32 func_0810BF14(s32 x) {
@@ -1144,8 +1144,8 @@ void task_bos_pc_acd_0(PcAcdWork* work, void* arg) {
     AnimState* anim;
 
     work->unk_000 = 0;
-    work->unk_004 = (u32)AllocObjTiles(0x300, gUnk_09C489E4);
-    work->unk_008 = (u32)LoadObjPalette(gUnk_09D693D4, 0x60);
+    work->tiles = (u32)AllocObjTiles(0x300, gUnk_09C489E4);
+    work->palette = (u32)LoadObjPalette(gUnk_09D693D4, 0x60);
     work->unk_00C = -1;
     work->unk_010 = -1;
     work->unk_014 = -1;
@@ -1165,8 +1165,8 @@ u8 task_bos_pc_acd_1(PcAcdWork* work) {
     AnimState* anim;
     s32 v;
 
-    func_080062F4(((UnkStruct_080038C8*)work->unk_008)->unk_06 + 17, 0);
-    func_080062F4(((UnkStruct_080038C8*)work->unk_008)->unk_06 + 18, 0);
+    func_080062F4(((UnkStruct_080038C8*)work->palette)->unk_06 + 17, 0);
+    func_080062F4(((UnkStruct_080038C8*)work->palette)->unk_06 + 18, 0);
     anim = &work->anim;
     AnimUpdate(anim);
     if (((PcPos*)gBtlWork->unk_07C)->unk_0C >= 0) {
@@ -1220,7 +1220,7 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
         }
-        DrawSprite(sx, sy, gfx, (void*)work->unk_004, (void*)work->unk_008, 0, func_0801AF1C(work->unk_010),
+        DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C(work->unk_010),
                    (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
     } else if (pos->unk_0C >= 0) {
         if (((*gp)->unk_068 & 0x20000000) && ((*gp)->unk_068 & 0x200000)) {
@@ -1240,19 +1240,19 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
             } else {
                 WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
             }
-            DrawSprite(sx, sy, gfx, (void*)work->unk_004, (void*)work->unk_008, 0, func_0801AF1C(work->unk_010),
+            DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C(work->unk_010),
                        (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox, work->unk_010 - oy, 0);
-            DrawSprite(sx, sy, AnimGetGfx(anim), (void*)work->unk_004, (void*)work->unk_008, 0, func_0801AF1C(((PcPos*)(*gp)->unk_07C)->unk_08),
+            DrawSprite(sx, sy, AnimGetGfx(anim), (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C(((PcPos*)(*gp)->unk_07C)->unk_08),
                        (u16)(-0x1004 - ((((PcPos*)(*gp)->unk_07C)->unk_08 >> 8) << 2)));
         }
     }
 }
 
 void task_bos_pc_acd_3(PcAcdWork* work) {
-    ReleaseObjTiles((void*)work->unk_004);
-    ReleaseObjPalette((void*)work->unk_008);
+    ReleaseObjTiles((void*)work->tiles);
+    ReleaseObjPalette((void*)work->palette);
 }
 
 s32 func_0810C2B4(s32 x) {
