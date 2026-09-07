@@ -7,6 +7,7 @@
 #include "mode.h"
 #include "engine.h"
 #include "key.h"
+#include "m4a.h"
 typedef struct ChkSndEntry {
     const char* name;
     u16 songNum;
@@ -16,8 +17,6 @@ extern TaskDesc gTaskDescPrint;
 
 void func_0809D2B0(u8 x, u8 y, u8 c, const char* s);
 void func_0809D458(u16 x, u16 y, u16 c, s32 v);
-void m4aSongNumStart(u16 id);
-void m4aMPlayAllStop(void);
 
 void mode_chksnd_0(void);
 void mode_chksnd_1(void);

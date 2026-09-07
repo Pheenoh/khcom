@@ -8,6 +8,7 @@
 #include "fld_types.h"
 #include "anim.h"
 #include "mode.h"
+#include "malloc.h"
 
 typedef struct CardBack {
     void* unk_00;
@@ -172,7 +173,6 @@ s16 func_08084458(u16 a);
 u16 func_08060A2C(u16 a);
 u8 func_0800FC5C(s32 a);
 u8 func_0810155C(u32 a);
-void EwramFree(void* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void TaskPoolDraw(TaskPool* a);
@@ -197,7 +197,6 @@ void* LoadObjPalette(void* a, s32 b);
 void* LoadObjTiles(void* a, s32 b);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
-void* EwramAlloc(u32 size);
 void SpriteReset(void);
 void TaskPoolInit(TaskPool* a, s32 count);
 void func_081015E8(void);
