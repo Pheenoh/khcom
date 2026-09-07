@@ -340,7 +340,7 @@ void func_080D62A8(TitleLogoWork* work) {
     work->unk_00[3].palette = LoadObjPalette(gUnk_0984A6F8, 0x20);
     work->unk_00[4].palette = LoadObjPalette(gUnk_0984A718, 0x20);
     work->unk_00[5].palette = LoadObjPalette(gUnk_0984A738, 0x20);
-    work->unk_4C = 0;
+    work->scale = 0;
     work->unk_48 = 0xC00;
     work->unk_50 = 0;
     gUnk_02034ECC = 0;
