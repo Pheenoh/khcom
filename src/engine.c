@@ -192,90 +192,52 @@ u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
 
 void func_08002488(u16 a, u16 b, void* c, void* d, void* e, u16 f) {
     SpriteWork* p;
-    u8* q0;
-    u8* q1;
-    u8* q2;
-    u8* q3;
-    u8* q4;
-    u8* q5;
-    s32 ofs;
+    u16* q5;
     u32 z;
 
     p = gSpriteWork;
     if (p->entryCount > 0x7F) {
         return;
     }
-    ofs = p->entryCount * 24;
-    q5 = (u8*)p + ofs + 0x1AB8;
+    q5 = (u16*)((u32)p + p->entryCount * 24 + ((u32)&p->entries[0].unk_10 - (u32)p));
     z = 0;
-    *(u16*)q5 = a;
-    ofs = p->entryCount * 24;
-    *(u16*)((u8*)p + ofs + 0x1ABA) = b;
-    ofs = p->entryCount * 24;
-    q0 = (u8*)p + 0x1AA8;
-    *(void**)(q0 + ofs) = d;
-    ofs = p->entryCount * 24;
-    q1 = (u8*)p + 0x1AAC;
-    *(void**)(q1 + ofs) = e;
-    ofs = p->entryCount * 24;
-    q2 = (u8*)p + 0x1AB0;
-    *(u32*)(q2 + ofs) = z;
-    ofs = p->entryCount * 24;
-    *(u16*)((u8*)p + ofs + 0x1ABE) = f;
-    ofs = p->entryCount * 24;
-    *(u16*)((u8*)p + ofs + 0x1ABC) = z;
-    ofs = p->entryCount * 24;
-    q3 = (u8*)p + 0x1AB4;
-    *(void**)(q3 + ofs) = c;
-    ofs = p->entryCount * 4;
-    q4 = (u8*)p + 0x26A8;
-    *(u32*)(q4 + ofs) = (u32)((u8*)p + (p->entryCount * 24 + 0x1AA8));
+    *q5 = a;
+    p->entries[p->entryCount].unk_12 = b;
+    p->entries[p->entryCount].unk_00 = d;
+    p->entries[p->entryCount].unk_04 = e;
+    p->entries[p->entryCount].unk_08 = z;
+    p->entries[p->entryCount].unk_16 = f;
+    p->entries[p->entryCount].unk_14 = z;
+    p->entries[p->entryCount].unk_0C = c;
+    p->sortPtrs[p->entryCount] = &p->entries[p->entryCount];
     p->entryCount += 1;
     p->sortLo += 1;
 }
+
 void func_08002594(u16 a, u16 b, void* c, void* d, void* e, void* f, u16 g) {
     SpriteWork* p;
-    u8* q0;
-    u8* q1;
-    u8* q2;
-    u8* q3;
-    u8* q4;
-    u8* q5;
-    s32 ofs;
+    u16* q5;
     u32 z;
 
     p = gSpriteWork;
     if (p->entryCount > 0x7F) {
         return;
     }
-    ofs = p->entryCount * 24;
-    q5 = (u8*)p + ofs + 0x1AB8;
+    q5 = (u16*)((u32)p + p->entryCount * 24 + ((u32)&p->entries[0].unk_10 - (u32)p));
     z = 0;
-    *(u16*)q5 = a;
-    ofs = p->entryCount * 24;
-    *(u16*)((u8*)p + ofs + 0x1ABA) = b;
-    ofs = p->entryCount * 24;
-    q0 = (u8*)p + 0x1AA8;
-    *(void**)(q0 + ofs) = d;
-    ofs = p->entryCount * 24;
-    q1 = (u8*)p + 0x1AAC;
-    *(void**)(q1 + ofs) = e;
-    ofs = p->entryCount * 24;
-    q2 = (u8*)p + 0x1AB0;
-    *(void**)(q2 + ofs) = f;
-    ofs = p->entryCount * 24;
-    *(u16*)((u8*)p + ofs + 0x1ABE) = g;
-    ofs = p->entryCount * 24;
-    *(u16*)((u8*)p + ofs + 0x1ABC) = z;
-    ofs = p->entryCount * 24;
-    q3 = (u8*)p + 0x1AB4;
-    *(void**)(q3 + ofs) = c;
-    ofs = p->entryCount * 4;
-    q4 = (u8*)p + 0x26A8;
-    *(u32*)(q4 + ofs) = (u32)((u8*)p + (p->entryCount * 24 + 0x1AA8));
+    *q5 = a;
+    p->entries[p->entryCount].unk_12 = b;
+    p->entries[p->entryCount].unk_00 = d;
+    p->entries[p->entryCount].unk_04 = e;
+    p->entries[p->entryCount].unk_08 = f;
+    p->entries[p->entryCount].unk_16 = g;
+    p->entries[p->entryCount].unk_14 = z;
+    p->entries[p->entryCount].unk_0C = c;
+    p->sortPtrs[p->entryCount] = &p->entries[p->entryCount];
     p->entryCount += 1;
     p->sortLo += 1;
 }
+
 ObjTiles* LoadObjTiles(void* src, u16 size) {
     ObjTiles* node;
     ObjTiles* cur;
