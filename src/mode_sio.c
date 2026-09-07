@@ -1581,8 +1581,6 @@ void func_080B1C14(void) {
     }
     ModeRequest(&gModeSioChgCard, 0x800);
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1C14.s");
 #endif
 
 #ifndef VERSION_EU
@@ -1591,8 +1589,6 @@ void func_080B1C70(u16 a, u16 b, u16 c) {
     func_08005974(&gSioChgCardWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
     func_08002A10(gSioChgCardWork->unk_008[a], def->unk_08);
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1C70.s");
 #endif
 
 #ifndef VERSION_EU
@@ -1637,8 +1633,6 @@ void func_080B1DDC(void) {
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
     gSioChgCardWork->unk_001++;
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1DDC.s");
 #endif
 
 #ifndef VERSION_EU
@@ -1729,8 +1723,6 @@ void func_080B1E70(void) {
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
     gSioChgCardWork->unk_001++;
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1E70.s");
 #endif
 
 #ifndef VERSION_EU
