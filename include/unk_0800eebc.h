@@ -518,7 +518,6 @@ void func_08000D90(ListNode* node, void* pool);
 void* func_08012218(u32 type);
 void* ListPoolFirst(ListNode* pool);
 void* ListPoolNext(ListNode* node);
-void m4aMPlayFadeOut(MusicPlayerInfo* mplayInfo, u16 speed);
 void func_08006120(s32 a, s32 b);
 void func_0801C830();
 u16 func_080015F8(u16 a, u16 b);
@@ -619,7 +618,6 @@ void func_080DDEA4(void);
 void func_080DFB2C(void);
 void func_08109620(void);
 void func_08006238(s32 a, s32 b, s32 c);
-void m4aSongNumStart(u16 id);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 u8 func_08006B74(void);
 

@@ -7,6 +7,7 @@
 #include "main.h"
 #include "engine.h"
 #include "key.h"
+#include "m4a.h"
 
 typedef struct GameState {
     u8 unk_000[0x08];
@@ -387,7 +388,6 @@ void func_0800FD68(s32 a);
 void func_0801BDDC(s32 a, s32 b, s32 c, s32 d);
 void func_08005974(AnimState* a, u16 b, u16 c, u32 d, u32 e);
 void func_080D9A14(void);
-void m4aSongNumStart(u16 a);
 void func_08006184(s32 a, u16 b);
 void func_080D7568(u8 a);
 void func_080D78B8(StatusBarWork* work);

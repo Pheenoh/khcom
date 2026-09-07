@@ -6,6 +6,7 @@
 #include "gba/syscall.h"
 #include "main.h"
 #include "engine.h"
+#include "m4a.h"
 
 typedef struct BtlWork {
     u8 unk_000[0x2C];
@@ -81,7 +82,6 @@ extern TaskDesc gTaskDescBosLst;
 void SetBgSize(s32 a, s32 b);
 void func_08006120(s32 a, s32 b);
 void func_0800AB8C(void);
-void m4aSongNumStart(u16 id);
 void func_0801227C(void);
 void func_080125A4(void);
 void func_08012798(s32 a, u16 b);

@@ -5,6 +5,7 @@
 #include "text_types.h"
 #include "key.h"
 #include "engine.h"
+#include "m4a.h"
 
 #define CARD_ID_MASK 0xFFF
 
@@ -80,7 +81,6 @@ void func_080850B0(u16* p);
 u32 GetMooglePoints(void);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
 u8 func_0810155C(u32 a);
-void m4aSongNumStart(u16 song);
 
 s16 func_08104A84(s16 a);
 s16 func_08104AA4(s16 a);

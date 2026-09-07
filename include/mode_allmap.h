@@ -75,7 +75,6 @@ void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08006120(s32 a, u16 b);
 void func_080062F4(s32 a, s32 b);
 void UpdatePlayTime(void);
-void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 void func_080D2F20(void);
 void func_080D2F64(void);
 void func_080D3008(void);

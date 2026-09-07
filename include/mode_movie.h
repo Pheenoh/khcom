@@ -9,6 +9,7 @@
 #include "main.h"
 #include "engine.h"
 #include "util.h"
+#include "m4a.h"
 
 extern vu16 gUnk_02034938;
 extern s32 gUnk_0203493C;
@@ -40,7 +41,6 @@ extern u8 gUnk_08F69C04[];
 extern u8 gUnk_09614718[];
 extern u8 gModeStaffRoll[];
 
-void m4aSoundVSyncOff(void);
 s32 GetIwramHeapStart(void);
 s32 GetIwramHeapSize(void);
 s32 GetEwramHeapStart(void);
@@ -53,8 +53,6 @@ void PalletInit(void);
 void VTransReset(void);
 void BgReset(void);
 void SpriteReset(void);
-void m4aSoundInit(void);
-void m4aSoundVSyncOn(void);
 void func_0806180C(s32 a);
 void func_0805EA90(void);
 void func_0805E93C(void);

@@ -4,6 +4,7 @@
 #include "types.h"
 #include "anim.h"
 #include "taskpool.h"
+#include "malloc.h"
 
 typedef struct VsActorSub {
     u8 unk_00[0x30];
@@ -274,8 +275,6 @@ extern TaskDesc gTaskDescBtlMap;
 extern TaskDesc gTaskDescBtlShadow;
 extern TaskDesc gTaskDescBtlBadstatus;
 
-void* EwramAlloc(u32 size);
-void EwramFree(void* p);
 void SeedRandom(u32 seed);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);

@@ -67,8 +67,6 @@ u8 func_080DFD84(FldPos* p);
 void func_080E0298(s32 a, s32 b);
 void func_080E0418(void);
 void func_080E042C(void);
-void m4aSongNumStart(u16 song);
-void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 
 void task_roomcreate_0(RoomCreateWork* work);
 u8 task_roomcreate_1(RoomCreateWork* work);

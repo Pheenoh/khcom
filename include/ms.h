@@ -2,6 +2,7 @@
 #define GUARD_MS_H
 
 #include "types.h"
+#include "engine.h"
 
 typedef struct MsShopHosiArg {
     s16 x;
@@ -25,9 +26,7 @@ typedef struct MsShopHosiWork {
     void* tiles;
 } MsShopHosiWork;
 
-u16 GetRandom(void);
 void* LoadObjTiles(void* a, s32 b);
-void ReleaseObjTiles(void* a);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_081025AC(void);
 void func_081025D4(void* a);

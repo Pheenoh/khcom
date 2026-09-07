@@ -7,6 +7,7 @@
 #include "intr.h"
 #include "main.h"
 #include "engine.h"
+#include "m4a.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_IE (*(vu16*)0x04000200)
@@ -63,7 +64,6 @@ void func_080C73A4(s32 a, s32 b, s32 c);
 void SetBgSize(s32 a, s32 b);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08006120(s32 a, s32 b);
-void m4aSongNumStart(u16 id);
 void func_080C73D8(void);
 void func_080D5A4C(s32 a);
 void func_080D5B04(void);
