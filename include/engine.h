@@ -262,4 +262,11 @@ void BgInit(void);
 void FadeInit(void);
 void InitDisplayRegs(void);
 
+#ifdef VERSION_EU
+void eu_080059D4(s32 bg, void* tiles);
+void eu_080059F4(s32 bg, void* map);
+void eu_08005A1C(s32 bg, void* src, u8 w, u8 h);
+void eu_08005ADC(s32 id);
+#endif
+
 #endif /* GUARD_ENGINE_H */

@@ -7,8 +7,6 @@ extern u8 gUnkEu_097D8300[];
 extern u8 gUnkEu_097D8F00[];
 extern u8 gUnkEu_097D9B00[];
 extern u8 gUnkEu_097DA700[];
-void* GetBgCharBase(s32 bg);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
 #endif
 
 TaskPool gUnk_02034EE0;

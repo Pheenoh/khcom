@@ -3,6 +3,7 @@
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "types.h"
+#include "engine.h"
 
 extern u32 gFrameCounter;
 static PaletteBuffer* gPaletteBuffer;
@@ -11,7 +12,6 @@ static s16 gPaletteEffectSaved;
 
 PaletteWave gBgWaves[5];
 
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
 
 u16* FadePaletteToBlack(u16* src, u16* dst, u16 size, u16 amount) {
     s32 base = ((s32)dst - 0x05000000) >> 1;

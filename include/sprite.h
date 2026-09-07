@@ -60,5 +60,6 @@ typedef char ObjAffine_size[(sizeof(ObjAffine) == 0x18) ? 1 : -1];
 
 void SpriteInit(void);
 void SpriteFree(void);
+void SortSpriteEntries(SpriteEntry** arr, s32 lo, s32 hi);
 
 #endif
