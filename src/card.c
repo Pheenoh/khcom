@@ -18181,21 +18181,21 @@ s32 func_080A2DE4(void) {
     return 1;
 }
 
-void func_080A2E14(u8* work) {
-    func_080664D8(*(s16*)&work[0x792], *(s16*)&work[0x796], work, *(void**)&work[0x784], 1, work[0x78C]);
-    func_080664D8(*(s16*)&work[0x794], *(s16*)&work[0x798], &work[0x280], *(void**)&work[0x784], 1, work[0x78D]);
-    func_080664D8(*(s16*)&work[0x79A], *(s16*)&work[0x79C], &work[0x500], *(void**)&work[0x784], 1, work[0x78E]);
-    DrawSprite(120, 80, gUnk_09EF1278[0], *(void**)&work[0x780], *(void**)&work[0x788], 0, 0, 2);
+void func_080A2E14(UnkStruct_080A2F54* w) {
+    func_080664D8(w->unk_792, w->unk_796, w, w->unk_784, 1, w->unk_78C);
+    func_080664D8(w->unk_794, w->unk_798, w->unk_280, w->unk_784, 1, w->unk_78D);
+    func_080664D8(w->unk_79A, w->unk_79C, w->unk_500, w->unk_784, 1, w->unk_78E);
+    DrawSprite(120, 80, gUnk_09EF1278[0], w->tiles, w->unk_788, 0, 0, 2);
 }
 
-void func_080A2EF8(u8* work) {
-    func_08065AE0(work, 80);
-    func_08065AE0(&work[0x280], 80);
-    func_08065AE0(&work[0x500], 80);
-    ReleaseObjPalette(*(void**)&work[0x784]);
-    ReleaseObjTiles(*(void**)&work[0x780]);
-    ReleaseObjPalette(*(void**)&work[0x788]);
-    (*(u8**)&work[0x7A0])[0] = 0;
+void func_080A2EF8(UnkStruct_080A2F54* w) {
+    func_08065AE0(w, 80);
+    func_08065AE0(w->unk_280, 80);
+    func_08065AE0(w->unk_500, 80);
+    ReleaseObjPalette(w->unk_784);
+    ReleaseObjTiles(w->tiles);
+    ReleaseObjPalette(w->unk_788);
+    w->unk_7A0[0] = 0;
 }
 
 #ifdef VERSION_JP
