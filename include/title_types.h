@@ -6,7 +6,7 @@
 typedef struct TitleSprite {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
 } TitleSprite;
 
 typedef struct TitleLogoWork {

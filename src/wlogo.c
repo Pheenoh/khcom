@@ -855,7 +855,7 @@ void task_wlogo_dil_0(WlogoDilWork* work) {
     LoadBgMap(0, gUnk_096BB464, 0x800);
     work->tiles = LoadObjTiles(gUnk_0961FA28, 0xE20);
     work->palette = LoadObjPalette(gUnk_096FAE24, 0x20);
-    work->unk_008 = gUnk_09EF36D0[0];
+    work->gfx = gUnk_09EF36D0[0];
     work->x = 64;
     work->y = 64;
     work->unk_016 = 0;
@@ -934,7 +934,7 @@ u8 task_wlogo_dil_1(WlogoDilWork* work) {
 
 void task_wlogo_dil_2(WlogoDilWork* work) {
     if (work->unk_016 == 1) {
-        DrawSprite(work->x, work->y, work->unk_008, work->tiles, work->palette, 0, 0x400, 0);
+        DrawSprite(work->x, work->y, work->gfx, work->tiles, work->palette, 0, 0x400, 0);
     }
 }
 
@@ -950,7 +950,7 @@ void task_wlogo_agr_0(WlogoAgrWork* work, s32 arg) {
     LoadBgTiles(0, gUnk_09642CE4, 0xC00);
     work->tiles = LoadObjTiles(gUnk_0961DC0E, 0x1DE0);
     work->palette = LoadObjPalette(gUnk_096FADE4, 0x20);
-    work->unk_008 = gUnk_09EF3614[11];
+    work->gfx = gUnk_09EF3614[11];
     work->x = 64;
     work->y = 64;
     work->unk_010 = 0;
@@ -1103,7 +1103,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
 
 void task_wlogo_agr_2(WlogoAgrWork* work) {
     if (work->unk_010 == 1) {
-        DrawSprite(work->x, work->y, work->unk_008, work->tiles, work->palette, 0, 0, 3);
+        DrawSprite(work->x, work->y, work->gfx, work->tiles, work->palette, 0, 0, 3);
     }
 }
 

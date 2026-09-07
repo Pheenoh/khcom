@@ -123,7 +123,7 @@ void task_title_logo_2(TitleLogoWork* work) {
         } else {
             affine = 0;
         }
-        DrawSprite(x, y, work->unk_00[i].unk_08, work->unk_00[i].tiles, work->unk_00[i].palette, affine, 0, i + 20);
+        DrawSprite(x, y, work->unk_00[i].gfx, work->unk_00[i].tiles, work->unk_00[i].palette, affine, 0, i + 20);
     }
 }
 
@@ -158,23 +158,23 @@ void task_title_obj_0(TitleObjWork* work) {
     switch (gLanguage) {
     case 0:
         work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09750AF8, 0x3C0);
-        work->unk_00[0].unk_08 = gUnkEu_09F81C54[0];
+        work->unk_00[0].gfx = gUnkEu_09F81C54[0];
         break;
     case 1:
         work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09750EE4, 0x3C0);
-        work->unk_00[0].unk_08 = gUnkEu_09F81C5C[0];
+        work->unk_00[0].gfx = gUnkEu_09F81C5C[0];
         break;
     case 2:
         work->unk_00[0].tiles = LoadObjTiles(gUnkEu_09751ADE, 0x400);
-        work->unk_00[0].unk_08 = gUnkEu_09F81C74[0];
+        work->unk_00[0].gfx = gUnkEu_09F81C74[0];
         break;
     case 3:
         work->unk_00[0].tiles = LoadObjTiles(gUnkEu_097516F8, 0x3C0);
-        work->unk_00[0].unk_08 = gUnkEu_09F81C6C[0];
+        work->unk_00[0].gfx = gUnkEu_09F81C6C[0];
         break;
     case 4:
         work->unk_00[0].tiles = LoadObjTiles(gUnkEu_097512CA, 0x400);
-        work->unk_00[0].unk_08 = gUnkEu_09F81C64[0];
+        work->unk_00[0].gfx = gUnkEu_09F81C64[0];
         break;
     case 5:
     case 6:
@@ -237,14 +237,14 @@ void task_title_obj_0(TitleObjWork* work) {
         break;
     }
     AnimStart(&work->anim, 0, 1);
-    work->unk_00[1].unk_08 = AnimGetGfx(&work->anim);
+    work->unk_00[1].gfx = AnimGetGfx(&work->anim);
     work->unk_00[2].tiles = LoadObjTiles(gUnkEu_0973EEFE, 0x100);
     work->unk_00[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
-    work->unk_00[2].unk_08 = gUnk_09EF65E0[0];
+    work->unk_00[2].gfx = gUnk_09EF65E0[0];
 #else
     work->unk_00[0].tiles = LoadObjTiles(gUnk_09771060, 0x3C0);
     work->unk_00[0].palette = LoadObjPalette(gUnk_0984A718, 0x20);
-    work->unk_00[0].unk_08 = gUnk_09EF65E0[0];
+    work->unk_00[0].gfx = gUnk_09EF65E0[0];
 
     if (gGameState.flags & 0x200) {
         work->unk_00[0].unk_10 = 0xBA00;
@@ -260,10 +260,10 @@ void task_title_obj_0(TitleObjWork* work) {
     work->unk_00[1].unk_0C = 0xA0;
     AnimInit(&work->anim, gUnk_09EF6604, gUnk_09EF65F0);
     AnimStart(&work->anim, 0, 1);
-    work->unk_00[1].unk_08 = AnimGetGfx(&work->anim);
+    work->unk_00[1].gfx = AnimGetGfx(&work->anim);
     work->unk_00[2].tiles = LoadObjTiles(gUnk_0977143A, 0x100);
     work->unk_00[2].palette = LoadObjPalette(&gUnk_0984A778[t], 0x20);
-    work->unk_00[2].unk_08 = gUnk_09EF65E8[0];
+    work->unk_00[2].gfx = gUnk_09EF65E8[0];
 #endif
     work->unk_00[2].unk_10 = 0x15800;
     work->unk_00[2].unk_14 = 0xB800;
@@ -298,10 +298,10 @@ u8 task_title_obj_1(TitleObjWork* work) {
 void task_title_obj_2(TitleObjWork* work) {
     s32 i;
 
-    work->unk_00[1].unk_08 = AnimUpdate(&work->anim);
+    work->unk_00[1].gfx = AnimUpdate(&work->anim);
 
     for (i = 0; i < TITLE_OBJ_DRAW_COUNT; i++) {
-        DrawSprite(work->unk_00[i].unk_10 >> 8, work->unk_00[i].unk_0C, work->unk_00[i].unk_08,
+        DrawSprite(work->unk_00[i].unk_10 >> 8, work->unk_00[i].unk_0C, work->unk_00[i].gfx,
                    work->unk_00[i].tiles, work->unk_00[i].palette, 0, 0, i);
     }
 }
@@ -797,14 +797,14 @@ void task_title_lumichange_2(TitleLumiChangeWork* work) {
 #endif
 
     if (v < 0) {
-        work->unk_08 = tbl[0];
+        work->gfx = tbl[0];
     } else if (v == 0) {
-        work->unk_08 = tbl[1];
+        work->gfx = tbl[1];
     } else if (v > 0) {
-        work->unk_08 = tbl[2];
+        work->gfx = tbl[2];
     }
     x = (gGameState.flags & 0x200) ? 240 : 0;
-    DrawSprite(x, 0x8F, work->unk_08, work->tiles, work->palette, 0, 0x400, 100);
+    DrawSprite(x, 0x8F, work->gfx, work->tiles, work->palette, 0, 0x400, 100);
 }
 
 void task_title_lumichange_3(TitleLumiChangeWork* work) {

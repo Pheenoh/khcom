@@ -20,7 +20,7 @@ typedef struct TitlePal {
 typedef struct TitleObjSprite {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     s16 unk_0C;
     s32 unk_10;
     s32 unk_14;
@@ -50,7 +50,7 @@ typedef struct TitleMenuWork {
 typedef struct TitleLumiChangeWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
 } TitleLumiChangeWork;
 
 extern GameState gGameState;
