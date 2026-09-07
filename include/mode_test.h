@@ -214,7 +214,6 @@ void func_0805F7BC(void);
 void func_0805F7C8(u8 a);
 u8 func_0805F8F0(u8 a);
 void func_0805F904(void);
-void func_0805FA60(s32 a, void* b, s32 c, u8 d);
 void func_0805FA8C(u8 bg, u16 b, u16 c);
 void func_0805FB78(s32 a);
 void func_0805FB84(u8 x, u8 y, u32 c, u8 v);
@@ -243,9 +242,7 @@ void task_lockon_2(LockonWork* w);
 void task_lockon_3(LockonWork* w);
 void func_0805F7E8(u8 x, u8 y, u16* s);
 void func_08060470(u8 bg);
-void func_08060598(void);
 void func_0806098C(void);
-void func_080609A0(void);
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern UnkStruct_02039DC4* gUnk_02039DC4;

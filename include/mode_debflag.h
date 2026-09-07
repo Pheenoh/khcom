@@ -14,14 +14,10 @@ extern u32 gUnk_03006C10;
 extern u8 gWhitePalette[];
 extern const DebugFlag gUnk_08130BE8[];
 extern const DebugFlag gUnk_08130DE0[];
-extern Mode gModeDebug;
 
-void func_0805FA60(s32 a, void* b, s32 c, u8 d);
 void func_0805FA8C(s32 a, u16 b, u16 c);
 void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
-void func_08060598(void);
 void func_080605A4(s32 a);
-void func_080609A0(void);
 void func_080E04EC(void);
 
 void mode_debflag_0(s32 arg);
