@@ -263,18 +263,18 @@ void func_080AF11C(void) {
         gSioBtlOptionWork->unk_008[2] = LoadObjPalette(gUnk_096FAC64, 32);
         gSioBtlOptionWork->unk_008[3] = LoadObjPalette(gUnk_08F683A4, 32);
     }
-    gSioBtlOptionWork->unk_1A8 = LoadObjTiles(gUnk_0962BEDA, 0xC00);
-    gSioBtlOptionWork->unk_1AC = LoadObjPalette(gUnk_096FBD24, 32);
-    gSioBtlOptionWork->unk_1B0 = gUnk_09EF38D4[0];
-    gSioBtlOptionWork->unk_1B8 = LoadObjTiles(gUnk_0962B090, 0x1C0);
-    gSioBtlOptionWork->unk_1BC = LoadObjPalette(gUnk_096FBAA4, 32);
-    AnimInit(&gSioBtlOptionWork->unk_1C4, gUnk_09EF38B4, gUnk_09EF3894);
-    AnimStart(&gSioBtlOptionWork->unk_1C4, 1, 1);
-    gSioBtlOptionWork->unk_1C0 = AnimGetGfx(&gSioBtlOptionWork->unk_1C4);
+    gSioBtlOptionWork->tiles = LoadObjTiles(gUnk_0962BEDA, 0xC00);
+    gSioBtlOptionWork->palette = LoadObjPalette(gUnk_096FBD24, 32);
+    gSioBtlOptionWork->gfx = gUnk_09EF38D4[0];
+    gSioBtlOptionWork->tiles2 = LoadObjTiles(gUnk_0962B090, 0x1C0);
+    gSioBtlOptionWork->palette2 = LoadObjPalette(gUnk_096FBAA4, 32);
+    AnimInit(&gSioBtlOptionWork->anim, gUnk_09EF38B4, gUnk_09EF3894);
+    AnimStart(&gSioBtlOptionWork->anim, 1, 1);
+    gSioBtlOptionWork->gfx2 = AnimGetGfx(&gSioBtlOptionWork->anim);
     gSioBtlOptionWork->unk_1E0 = 1;
-    gSioBtlOptionWork->unk_21C = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-    gSioBtlOptionWork->unk_220 = LoadObjPalette(gUnk_09611AB8, 32);
-    gSioBtlOptionWork->unk_224 = gUnk_09EF1278[0];
+    gSioBtlOptionWork->tiles3 = LoadObjTiles(gUnk_093F8C8E, 0xC00);
+    gSioBtlOptionWork->palette3 = LoadObjPalette(gUnk_09611AB8, 32);
+    gSioBtlOptionWork->gfx3 = gUnk_09EF1278[0];
     gSioBtlOptionWork->unk_228 = 0;
     func_08065ACC(gSioBtlOptionWork->unk_22C, 60);
     gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A20C, gSioBtlOptionWork->unk_22C);
@@ -411,7 +411,7 @@ void mode_sio_btl_option_1(void) {
 void func_080AF70C(void) {
     gSioBtlOptionWork->unk_018[0] = AnimUpdate(&gSioBtlOptionWork->unk_020[0]);
     gSioBtlOptionWork->unk_018[1] = AnimUpdate(&gSioBtlOptionWork->unk_020[1]);
-    gSioBtlOptionWork->unk_1C0 = AnimUpdate(&gSioBtlOptionWork->unk_1C4);
+    gSioBtlOptionWork->gfx2 = AnimUpdate(&gSioBtlOptionWork->anim);
     DrawSprite(60, 88, gSioBtlOptionWork->unk_018[0], gSioBtlOptionWork->unk_008[0], gSioBtlOptionWork->unk_008[2], 0, 1, 0xFFF0);
     DrawSprite(180, 88, gSioBtlOptionWork->unk_018[1], gSioBtlOptionWork->unk_008[1], gSioBtlOptionWork->unk_008[3], 0, 0, 0xFFF0);
     func_080664D8(gUnk_09EF1318[gSioBtlOptionWork->unk_417].unk_1E + 108, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
@@ -421,16 +421,16 @@ void func_080AF70C(void) {
     DrawSprite(224 + ((gSioBtlOptionWork->unk_1FA >> 3) % 4), 2, gSioBtlOptionWork->unk_1F0, gSioBtlOptionWork->unk_1E4, gSioBtlOptionWork->unk_1E8, 0, 0, 0xFF00);
 
     if (gSioBtlOptionWork->unk_1B4 == 1) {
-        DrawSprite(72, 38, gSioBtlOptionWork->unk_1B0, gSioBtlOptionWork->unk_1A8, gSioBtlOptionWork->unk_1AC, 0, 0, 0x200);
+        DrawSprite(72, 38, gSioBtlOptionWork->gfx, gSioBtlOptionWork->tiles, gSioBtlOptionWork->palette, 0, 0, 0x200);
 
         if (gSioBtlOptionWork->unk_1E0 == 1) {
             func_0805F1C0(&gSioBtlOptionWork->unk_1DC, gSioBtlOptionWork->unk_000 * 4608 + 10752);
-            DrawSprite(64, gSioBtlOptionWork->unk_1DC >> 8, gSioBtlOptionWork->unk_1C0, gSioBtlOptionWork->unk_1B8, gSioBtlOptionWork->unk_1BC, 0, 0, 0x100);
+            DrawSprite(64, gSioBtlOptionWork->unk_1DC >> 8, gSioBtlOptionWork->gfx2, gSioBtlOptionWork->tiles2, gSioBtlOptionWork->palette2, 0, 0, 0x100);
         }
     }
 
     if (gSioBtlOptionWork->unk_228 == 1) {
-        DrawSprite(120, 131, gSioBtlOptionWork->unk_224, gSioBtlOptionWork->unk_21C, gSioBtlOptionWork->unk_220, 0, 0, 0xF000);
+        DrawSprite(120, 131, gSioBtlOptionWork->gfx3, gSioBtlOptionWork->tiles3, gSioBtlOptionWork->palette3, 0, 0, 0xF000);
         func_080664D8(gSioBtlOptionWork->unk_412, gSioBtlOptionWork->unk_414, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->unk_40C, 20, gSioBtlOptionWork->unk_229);
     }
     DrawSprite(32, 24, gSioBtlOptionWork->unk_204[0], gSioBtlOptionWork->unk_1FC[0], gSioBtlOptionWork->unk_20C[0], 0, 0, 0xF100);
@@ -908,12 +908,12 @@ void mode_sio_btl_option_2(void) {
     func_08065AE0(gSioBtlOptionWork->unk_0FC, 10);
     func_08065AE0(gSioBtlOptionWork->unk_154, 10);
     func_08065AE0(gSioBtlOptionWork->unk_22C, 60);
-    ReleaseObjTiles(gSioBtlOptionWork->unk_1A8);
-    ReleaseObjPalette(gSioBtlOptionWork->unk_1AC);
-    ReleaseObjTiles(gSioBtlOptionWork->unk_1B8);
-    ReleaseObjPalette(gSioBtlOptionWork->unk_1BC);
-    ReleaseObjTiles(gSioBtlOptionWork->unk_21C);
-    ReleaseObjPalette(gSioBtlOptionWork->unk_220);
+    ReleaseObjTiles(gSioBtlOptionWork->tiles);
+    ReleaseObjPalette(gSioBtlOptionWork->palette);
+    ReleaseObjTiles(gSioBtlOptionWork->tiles2);
+    ReleaseObjPalette(gSioBtlOptionWork->palette2);
+    ReleaseObjTiles(gSioBtlOptionWork->tiles3);
+    ReleaseObjPalette(gSioBtlOptionWork->palette3);
     ReleaseObjTiles(gSioBtlOptionWork->unk_1E4);
     ReleaseObjPalette(gSioBtlOptionWork->unk_1E8);
     ReleaseObjTiles(gSioBtlOptionWork->unk_1FC[0]);
