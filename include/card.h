@@ -1657,6 +1657,7 @@ typedef struct UnkStruct_080ABA80 {
 } UnkStruct_080ABA80;
 
 extern const UnkStruct_080ABA80 gUnk_09045188;
+extern const UnkStruct_080ABA80 gUnk_09033FD0;
 
 typedef struct UnkStruct_0809A368_Args {
     s32 unk_00;
