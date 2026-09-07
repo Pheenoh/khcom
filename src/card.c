@@ -13252,7 +13252,6 @@ void func_08096DB0(void* a, void* b) {
 void func_08096DC4(void* a, void* b) {
     TaskCreate(a, gTaskDescPrizeCardInitBoss, b);
 }
-#ifndef VERSION_JP
 void DispCardname_0(u8* work, u16* a) {
     UnkStruct_080038C8* p;
     s32 v;
@@ -13264,12 +13263,13 @@ void DispCardname_0(u8* work, u16* a) {
     work[0x10E] = func_08065B6C(a, (TextSlot*)work);
     *(void**)&work[0x100] = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
     *(void**)&work[0x108] = LoadObjPalette(gUnk_09611AB8, 32);
+#ifdef VERSION_JP
+    v = (240 - work[0x10E] * 10) / 2;
+#else
     v = (240 - func_08065B08((TextSlot*)work, work[0x10E])) / 2;
+#endif
     *(s16*)&work[0x10C] = v;
 }
-#else
-INCLUDE_ASM("card/DispCardname_0.s");
-#endif
 s32 DispCardname_1(void) {
     return 1;
 }
