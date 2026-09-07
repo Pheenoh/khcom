@@ -87,7 +87,8 @@ tools:
             - src/m4a
             - asm/m4a_1
             - src/agb_sram
-            - src/libagbsyscall
+            - asm/libagbsyscall
+            - asm/movie_codec
             - src/movie
             - src/snd_stream
             - src/lib

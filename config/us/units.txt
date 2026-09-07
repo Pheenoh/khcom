@@ -83,9 +83,10 @@ unk_0810fe94.c -O2 -fprologue-bugfix -fno-common
 bos7.c -O2 -fprologue-bugfix -fno-common
 sroll.c -O2 -fprologue-bugfix -fno-common
 lib.c -O2 -fprologue-bugfix -fno-common
-libagbsyscall.c
+libagbsyscall.s
 agb_sram.c -O1 -fno-common
 movie.c -O0 -fno-common
+movie_codec.s
 snd_stream.c -O2 -fprologue-bugfix -fno-common
 @libgcc.a:_ashldi3.o
 @libgcc.a:_call_via_rX.o
