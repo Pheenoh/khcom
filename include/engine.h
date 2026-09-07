@@ -18,6 +18,13 @@ typedef struct ObjTiles {
     u32 unk_28;
     struct ObjTiles* self;
 } ObjTiles;
+
+typedef struct ObjTileListEntry {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+} ObjTileListEntry;
+
 typedef struct ObjPaletteNode {
     void* unk_00;
     u16 refCount;
