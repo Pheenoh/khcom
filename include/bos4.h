@@ -207,8 +207,8 @@ typedef struct BoogieDiskWork {
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;
-    u32 unk_00C;
-    u32 unk_010;
+    u32 palette;
+    u32 palette2;
     u32 anim;
     u8 unk_018[0x14];
     u32 unk_02C;
@@ -336,8 +336,8 @@ extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 
 typedef struct UrsulaBubbleSingleWork {
     void* tiles;
-    void* unk_004;
-    void* unk_008;
+    void* palette;
+    void* palette2;
 #ifndef VERSION_EU
     u32 anim;
     u8 unk_010[0x14];
@@ -455,8 +455,8 @@ typedef struct UrsulaBubbleWork {
 
 typedef struct UrsulaTakoWork {
     void* tiles;
-    void* unk_004;
-    void* unk_008;
+    void* palette;
+    void* palette2;
     u32 anim;
     u8 unk_010[0x14];
     u16 unk_024;
@@ -696,8 +696,8 @@ typedef struct BoogieKnifeWork {
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;
-    u32 unk_00C;
-    u32 unk_010;
+    u32 palette;
+    u32 palette2;
     u32 anim;
     u8 unk_018[0x14];
     u32 unk_02C;
@@ -743,8 +743,8 @@ typedef struct BoogieKaihukuWork {
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;
-    u32 unk_00C;
-    u32 unk_010;
+    u32 palette;
+    u32 palette2;
     u32 anim;
     u8 unk_018[0x28];
     u32 unk_040;

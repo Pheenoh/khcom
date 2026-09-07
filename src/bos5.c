@@ -93,10 +93,10 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
 
     func_0801C2DC(p, 1);
     func_0801C2DC(&work->entries[1], 1);
-    work->unk_A30 = LoadObjPalette(gUnk_09A3C89C, 32);
-    work->unk_A34 = LoadObjPalette(gUnk_08F69BC4, 32);
-    func_0801C298(work->unk_A30[6] + 16, 1);
-    func_0801C298(work->unk_A34[6] + 16, 1);
+    work->palette = LoadObjPalette(gUnk_09A3C89C, 32);
+    work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
+    func_0801C298(work->palette[6] + 16, 1);
+    func_0801C298(work->palette2[6] + 16, 1);
     func_08083900(GetRandom() % 4 + 1);
 }
 u8 task_bos_ga_1(GaWork* work) {
@@ -203,8 +203,8 @@ void task_bos_ga_3(GaWork* work) {
     } while (i <= 5);
 
     ReleaseObjTiles((void*)work->tiles);
-    ReleaseObjPalette(work->unk_A30);
-    ReleaseObjPalette(work->unk_A34);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjPalette(work->palette2);
 }
 
 void func_080FB8DC(MdWork* work, s32 state) {
@@ -829,10 +829,10 @@ void task_bos_md_0(MdWork* work, void* arg) {
     LoadPalette(gUnk_09A3C97C, (void*)0x05000000, 32);
     func_0801C298(0, 1);
     work->unk_028 = gUnk_09A3C97C;
-    work->unk_020 = LoadObjPalette(gUnk_09A3C97C, 32);
-    func_0801C298(work->unk_020[6] + 16, 1);
-    work->unk_024 = LoadObjPalette(gUnk_08F69BC4, 32);
-    func_0801C298(work->unk_024[6] + 16, 1);
+    work->palette = LoadObjPalette(gUnk_09A3C97C, 32);
+    func_0801C298(work->palette[6] + 16, 1);
+    work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
+    func_0801C298(work->palette2[6] + 16, 1);
     TaskPoolInit(&work->unk_02C, 6);
     TaskPoolInit(&work->unk_040, 1);
     TaskPoolInit(&work->unk_054, 8);
@@ -919,14 +919,14 @@ void task_bos_md_2(MdWork* work) {
             work->unk_028 = gUnk_08F69BC4;
         }
 
-        pal = work->unk_024;
+        pal = work->palette2;
     } else {
         if (work->unk_028 != gUnk_09A3C97C) {
             LoadPalette(gUnk_09A3C97C, (void*)0x05000000, 32);
             work->unk_028 = gUnk_09A3C97C;
         }
 
-        pal = work->unk_020;
+        pal = work->palette;
     }
 
     x = (gBtlWork->unk_000 >> 8) - (work->unk_178 - 72);
@@ -977,8 +977,8 @@ void task_bos_md_3(MdWork* work) {
         }
     }
 
-    ReleaseObjPalette((void*)work->unk_020);
-    ReleaseObjPalette((void*)work->unk_024);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
     TaskPoolDestroy(q);
     TaskPoolDestroy(r);
     TaskPoolDestroy(t);
@@ -1231,8 +1231,8 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
     work->unk_038.unk_02C = 20;
     work->unk_038.unk_02E = 20;
     func_0801C2DC(&work->unk_038, 1);
-    work->unk_00C = (u32)LoadObjPalette(gUnk_09A3C99C, 32);
-    work->unk_010 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = (u32)LoadObjPalette(gUnk_09A3C99C, 32);
+    work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     work->tiles = (u32)LoadObjTiles(gUnk_099E367C, 0x800);
     AnimInit(&work->anim, gUnk_09EF9BC0, gUnk_09EF9BB0);
     AnimStart(&work->anim, 0, 1);
@@ -1280,9 +1280,9 @@ void task_bos_md_fire_2(MdFireWork* work) {
     u16 frame;
 
     if (work->unk_006 > 0 && (gFrameCounter & 1)) {
-        gfx = (void*)work->unk_010;
+        gfx = (void*)work->palette2;
     } else {
-        gfx = (void*)work->unk_00C;
+        gfx = (void*)work->palette;
     }
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
@@ -1305,8 +1305,8 @@ void task_bos_md_fire_2(MdFireWork* work) {
 void task_bos_md_fire_3(MdFireWork* work) {
     func_08012304(work->unk_038.unk_040);
     func_0801B7D8(&work->unk_038);
-    ReleaseObjPalette((void*)work->unk_00C);
-    ReleaseObjPalette((void*)work->unk_010);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
     ReleaseObjTiles((void*)work->tiles);
 }
 

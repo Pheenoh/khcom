@@ -764,8 +764,8 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg) {
     func_0801B37C(&work->unk_040, gUnk_096FE098, x, d, e);
     work->unk_074 |= 0x400;
     work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6824, 8), gUnk_0979A426);
-    work->unk_00C = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
-    work->unk_010 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
+    work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF6844, gUnk_09EF6824);
     AnimStart(&work->anim, 0, 1);
     TaskPoolInit(&work->unk_02C, 1);
@@ -864,7 +864,7 @@ void task_bos_boogie_disk_2(BoogieDiskWork* work) {
     s16 x;
     s16 y;
     u16 c = func_0801AF1C(p->y);
-    void* pal = (void*)work->unk_00C;
+    void* pal = (void*)work->palette;
     u8* obj = AllocObjAffineAngle(work->unk_15C, 1);
 
     WorldToScreen(&x, &y, p->x, p->y, p->z);
@@ -876,8 +876,8 @@ void task_bos_boogie_disk_2(BoogieDiskWork* work) {
 void task_bos_boogie_disk_3(BoogieDiskWork* work) {
     func_0801B7D8(&work->unk_040);
     ReleaseObjTiles((void*)work->tiles);
-    ReleaseObjPalette((void*)work->unk_00C);
-    ReleaseObjPalette((void*)work->unk_010);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
     TaskPoolDestroy(&work->unk_02C);
 }
 
@@ -932,8 +932,8 @@ void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
     work->unk_030 = *arg;
     func_080122AC(&work->unk_06C, 8, gUnk_096FE0C0.unk_08, gUnk_096FE0C0.unk_06);
     work->tiles = (u32)LoadObjTiles(gUnk_0979C44E, 0xC40);
-    work->unk_00C = (u32)LoadObjPalette(gUnk_0984AFD8, 32);
-    work->unk_010 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = (u32)LoadObjPalette(gUnk_0984AFD8, 32);
+    work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF684C, gUnk_09EF6848);
     AnimStart(&work->anim, 0, 1);
 }
@@ -1010,9 +1010,9 @@ void task_bos_boogie_knife_2(BoogieKnifeWork* work) {
     c = func_0801AF1C(p->y);
 
     if (gUnk_0203C574 != 0 && (gFrameCounter & 1) != 0 && gBtlWork->unk_070 == 0) {
-        pal = (void*)work->unk_010;
+        pal = (void*)work->palette2;
     } else {
-        pal = (void*)work->unk_00C;
+        pal = (void*)work->palette;
     }
 
     aff = AllocObjAffine(0, work->unk_148, 0x100, 0);
@@ -1023,8 +1023,8 @@ void task_bos_boogie_knife_2(BoogieKnifeWork* work) {
 void task_bos_boogie_knife_3(BoogieKnifeWork* work) {
     func_08012304(&work->unk_06C);
     ReleaseObjTiles((void*)work->tiles);
-    ReleaseObjPalette((void*)work->unk_00C);
-    ReleaseObjPalette((void*)work->unk_010);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
 }
 
 u8 func_080DB428(u8* p) {
@@ -1192,8 +1192,8 @@ void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg) {
     func_0801B37C(&work->unk_040, gUnk_096FE114, c, d, e);
     work->unk_074 |= 0x400;
     work->tiles = (u32)LoadObjTiles(gUnk_09799FB0, 0x400);
-    work->unk_00C = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
-    work->unk_010 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
+    work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF6820, gUnk_09EF681C);
     AnimStart(&work->anim, 0, 1);
     func_0801BCD4(&work->unk_040);
@@ -1295,7 +1295,7 @@ void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work) {
 
     if (work->unk_000 != 2) {
         v = func_0801AF1C(p->y);
-        d = (void*)work->unk_00C;
+        d = (void*)work->palette;
         WorldToScreen(&x, &y, p->x, p->y, p->z);
         DrawSprite(x, y, AnimGetGfx(&work->anim), (void*)work->tiles, d, 0, v, -0x1004 - (p->y >> 8) * 4);
     }
@@ -1304,8 +1304,8 @@ void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work) {
 void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work) {
     func_0801B7D8(&work->unk_040);
     ReleaseObjTiles((void*)work->tiles);
-    ReleaseObjPalette((void*)work->unk_00C);
-    ReleaseObjPalette((void*)work->unk_010);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
 }
 
 void func_080DB978(UrsulaWork* work) {
@@ -1768,8 +1768,8 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
     }
 
     work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6860, 6), gUnk_0979E344);
-    work->unk_004 = LoadObjPalette(gUnk_0984B0F8, 32);
-    work->unk_008 = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = LoadObjPalette(gUnk_0984B0F8, 32);
+    work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF68A0, gUnk_09EF6860);
     AnimStart(&work->anim, (u16)(work->unk_024 + 4), 1);
     work->unk_138 = 0;
@@ -1786,7 +1786,7 @@ void task_bos_ursula_tako_2(UrsulaTakoWork* work) {
     s16 y;
 
     if (work->unk_138 != 4 && func_080DC528() == 0) {
-        pal = func_0801CA00(p) != 0 ? work->unk_008 : work->unk_004;
+        pal = func_0801CA00(p) != 0 ? work->palette2 : work->palette;
         WorldToScreen(&x, &y, p->x, p->y, p->z);
         DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, 0x800, 0xFC00);
     }
@@ -1797,8 +1797,8 @@ void task_bos_ursula_tako_3(UrsulaTakoWork* work) {
     func_08012304(&work->unk_19C);
     func_08012304(&work->unk_140);
     ReleaseObjTiles(work->tiles);
-    ReleaseObjPalette(work->unk_004);
-    ReleaseObjPalette(work->unk_008);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjPalette(work->palette2);
 }
 
 u8 func_080DD1FC(UrsulaTakoWork* work) {
@@ -2158,8 +2158,8 @@ void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
 #else
     work->tiles = LoadObjTiles(gUnk_097A0DE4, 0xA80);
 #endif
-    work->unk_004 = LoadObjPalette(gUnk_0984B0F8, 32);
-    work->unk_008 = LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = LoadObjPalette(gUnk_0984B0F8, 32);
+    work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
 #ifdef VERSION_EU
     eu_080DA80C(0, 1);
 #else
@@ -2257,7 +2257,7 @@ void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work) {
     s16 y;
 
     v = func_0801AF1C(p->y);
-    pal = func_0801CA00(p) != 0 ? work->unk_008 : work->unk_004;
+    pal = func_0801CA00(p) != 0 ? work->palette2 : work->palette;
     WorldToScreen(&x, &y, p->x, p->y, p->z);
 #ifdef VERSION_EU
     DrawSprite(x, y, eu_080DA860(), work->tiles, pal, 0, v, -0x1004 - (p->y >> 8) * 4);
@@ -2271,8 +2271,8 @@ void task_bos_ursula_bubble_single_3(UrsulaBubbleSingleWork* work) {
 #ifndef VERSION_EU
     ReleaseObjTiles((void*)work->tiles);
 #endif
-    ReleaseObjPalette((void*)work->unk_004);
-    ReleaseObjPalette((void*)work->unk_008);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
 }
 
 void func_080DDD30(UrsulaBubbleSingleWork* work) {
