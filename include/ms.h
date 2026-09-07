@@ -6,7 +6,7 @@
 typedef struct MsShopHosiArg {
     s16 x;
     s16 y;
-    void* unk_04;
+    void* palette;
     u8 unk_08;
     u8 unk_09[0x3];
     s32 unk_0C;
@@ -21,7 +21,7 @@ typedef struct MsShopHosiWork {
     s16 unk_12;
     s16 unk_14;
     u8 unk_16[0x2];
-    void* unk_18;
+    void* palette;
     void* tiles;
 } MsShopHosiWork;
 

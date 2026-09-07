@@ -589,18 +589,18 @@ void func_08102AB4(s16 x, s16 y) {
 
         gUnk_020358C8[i].unk_47 = 0;
         id &= 0xFFF;
-        gUnk_020358C8[i].unk_00 = LoadObjPalette(gCardDefs[id].unk_08, 0x20);
-        func_080062F4(gUnk_020358C8[i].unk_00->unk_06 + 0x10, 1);
-        gUnk_020358C8[i].unk_04 = LoadObjTiles(gCardDefs[id].unk_04, 0x200);
-        gUnk_020358C8[i].unk_08 = gCardDefs[id].unk_00;
-        gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09A3DB1C + gCardDefs[id].unk_2A * 32, 0x20);
-        func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 1);
-        gUnk_020358C8[i].unk_10 = LoadObjTiles(gUnk_099A4B9A, 0x1D80);
+        gUnk_020358C8[i].palette = LoadObjPalette(gCardDefs[id].unk_08, 0x20);
+        func_080062F4(gUnk_020358C8[i].palette->unk_06 + 0x10, 1);
+        gUnk_020358C8[i].tiles = LoadObjTiles(gCardDefs[id].unk_04, 0x200);
+        gUnk_020358C8[i].gfx = gCardDefs[id].unk_00;
+        gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09A3DB1C + gCardDefs[id].unk_2A * 32, 0x20);
+        func_080062F4(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
+        gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_099A4B9A, 0x1D80);
         gUnk_020358C8[i].unk_14 = 0;
         AnimInit(&gUnk_020358C8[i].anim, gUnk_09EF9A48, gUnk_09EF9A20);
         AnimStart(&gUnk_020358C8[i].anim, 0, 1);
-        gUnk_020358C8[i].unk_3C = x << 8;
-        gUnk_020358C8[i].unk_40 = y << 8;
+        gUnk_020358C8[i].x = x << 8;
+        gUnk_020358C8[i].y = y << 8;
         gUnk_020358C8[i].unk_34 = 2;
         gUnk_020358C8[i].unk_30 = 0;
         gUnk_020358C8[i].unk_38 = 0;
@@ -641,12 +641,12 @@ void func_08102DC8(void) {
     s16 i;
 
     for (i = 0; i < 5; i++) {
-        func_080062F4(gUnk_020358C8[i].unk_00->unk_06 + 0x10, 0);
-        ReleaseObjPalette(gUnk_020358C8[i].unk_00);
-        ReleaseObjTiles(gUnk_020358C8[i].unk_04);
-        func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 0);
-        ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
-        ReleaseObjTiles(gUnk_020358C8[i].unk_10);
+        func_080062F4(gUnk_020358C8[i].palette->unk_06 + 0x10, 0);
+        ReleaseObjPalette(gUnk_020358C8[i].palette);
+        ReleaseObjTiles(gUnk_020358C8[i].tiles);
+        func_080062F4(gUnk_020358C8[i].palette2->unk_06 + 0x10, 0);
+        ReleaseObjPalette(gUnk_020358C8[i].palette2);
+        ReleaseObjTiles(gUnk_020358C8[i].tiles2);
     }
 
     func_080062F4(((FldRes*)gUnk_02035AE0)->unk_06 + 0x10, 0);
@@ -692,16 +692,16 @@ void func_08102F30(void) {
         }
 
         if (v != 0) {
-            DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, obj, gUnk_020358C8[i].unk_10, gUnk_020358C8[i].unk_0C, affine, 0, 0x50);
+            DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, obj, gUnk_020358C8[i].tiles2, gUnk_020358C8[i].palette2, affine, 0, 0x50);
 
             if (gUnk_020358C8[i].unk_47 != 0) {
-                DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, gUnk_020358C8[i].unk_08, gUnk_020358C8[i].unk_04, gUnk_020358C8[i].unk_00, affine, 0, 0x58);
+                DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, gUnk_020358C8[i].gfx, gUnk_020358C8[i].tiles, gUnk_020358C8[i].palette, affine, 0, 0x58);
 
                 if (gUnk_020358C8[i].unk_46 != 0) {
-                    DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, gUnk_09EE9894[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_20], gUnk_02035A3C, gUnk_02035A38, affine, 0, 0x48);
-                    DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, anim, gUnk_02035A54, gUnk_02035A30, affine, 0, 0x40);
+                    DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, gUnk_09EE9894[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_20], gUnk_02035A3C, gUnk_02035A38, affine, 0, 0x48);
+                    DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, anim, gUnk_02035A54, gUnk_02035A30, affine, 0, 0x40);
                 } else {
-                    DrawSprite(gUnk_020358C8[i].unk_3C >> 8, gUnk_020358C8[i].unk_40 >> 8, gUnk_09EE981C[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_20], gUnk_02035A34, gUnk_02035A30, affine, 0, 0x48);
+                    DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, gUnk_09EE981C[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_20], gUnk_02035A34, gUnk_02035A30, affine, 0, 0x48);
                 }
             }
         }
@@ -709,8 +709,8 @@ void func_08102F30(void) {
         if (gUnk_020358C8[i].unk_38 == 9) {
             func_080664D8(0x30, 0x63, gUnk_02035A44, gUnk_02035A40, 0, gUnk_02035A48);
             func_080664D8(0x31, 0x72, gUnk_02035A4C, gUnk_02035AE0, 0, gUnk_02035A50);
-            func_0805F1C0(&gUnk_02035AD4, gUnk_020358C8[gUnk_02035B62].unk_3C - 0x1000);
-            func_0805F1C0(&gUnk_02035AD8, gUnk_020358C8[gUnk_02035B62].unk_40 - 0x2000);
+            func_0805F1C0(&gUnk_02035AD4, gUnk_020358C8[gUnk_02035B62].x - 0x1000);
+            func_0805F1C0(&gUnk_02035AD8, gUnk_020358C8[gUnk_02035B62].y - 0x2000);
             DrawSprite(gUnk_02035AD4 >> 8, gUnk_02035AD8 >> 8, AnimUpdate(&gUnk_02035AE8), gUnk_02035ADC, gUnk_02035AE0, 0, 0, 0);
         }
     }
@@ -749,8 +749,8 @@ u8 func_0810329C(u16 a) {
 
             break;
         case 1:
-            ApproachValue(&gUnk_020358C8[i].unk_3C, i * 10240 + 0x2800, gUnk_020358C8[i].unk_44);
-            ApproachValue(&gUnk_020358C8[i].unk_40, 0x6400, gUnk_020358C8[i].unk_44);
+            ApproachValue(&gUnk_020358C8[i].x, i * 10240 + 0x2800, gUnk_020358C8[i].unk_44);
+            ApproachValue(&gUnk_020358C8[i].y, 0x6400, gUnk_020358C8[i].unk_44);
             ApproachValue(&gUnk_020358C8[i].unk_34, 0x100, gUnk_020358C8[i].unk_44);
 
             if (--gUnk_020358C8[i].unk_44 == 0) {
@@ -778,11 +778,11 @@ u8 func_0810329C(u16 a) {
         case 2:
             if (gUnk_020358C8[i].unk_44 != 0) {
                 if (AnimGetFrame(&gUnk_020358C8[i].anim) == 3 || AnimGetFrame(&gUnk_020358C8[i].anim) == 8) {
-                    ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
-                    ReleaseObjTiles(gUnk_020358C8[i].unk_10);
-                    gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09611AB8, 0x20);
-                    func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 1);
-                    gUnk_020358C8[i].unk_10 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
+                    ReleaseObjPalette(gUnk_020358C8[i].palette2);
+                    ReleaseObjTiles(gUnk_020358C8[i].tiles2);
+                    gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09611AB8, 0x20);
+                    func_080062F4(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
+                    gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
                     gUnk_020358C8[i].unk_14 = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_00;
                     gUnk_020358C8[i].unk_30 = 0x40;
                     gUnk_020358C8[i].unk_38 = 3;
@@ -801,7 +801,7 @@ u8 func_0810329C(u16 a) {
 
             break;
         case 4:
-            ApproachValue(&gUnk_020358C8[i].unk_40, 0x4600, gUnk_020358C8[i].unk_44);
+            ApproachValue(&gUnk_020358C8[i].y, 0x4600, gUnk_020358C8[i].unk_44);
 
             if (--gUnk_020358C8[i].unk_44 == 0) {
                 m4aSongNumStart(0xD2);
@@ -831,11 +831,11 @@ u8 func_0810329C(u16 a) {
         case 5:
             if (gUnk_020358C8[i].unk_44 != 0) {
                 if (AnimGetFrame(&gUnk_020358C8[i].anim) == 3 || AnimGetFrame(&gUnk_020358C8[i].anim) == 8) {
-                    ReleaseObjPalette(gUnk_020358C8[i].unk_0C);
-                    ReleaseObjTiles(gUnk_020358C8[i].unk_10);
-                    gUnk_020358C8[i].unk_0C = LoadObjPalette(gUnk_09611AB8, 0x20);
-                    func_080062F4(gUnk_020358C8[i].unk_0C->unk_06 + 0x10, 1);
-                    gUnk_020358C8[i].unk_10 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
+                    ReleaseObjPalette(gUnk_020358C8[i].palette2);
+                    ReleaseObjTiles(gUnk_020358C8[i].tiles2);
+                    gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09611AB8, 0x20);
+                    func_080062F4(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
+                    gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
                     gUnk_020358C8[i].unk_14 = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_00;
                     gUnk_020358C8[i].unk_30 = 0x40;
                     gUnk_020358C8[i].unk_38 = 6;
@@ -853,9 +853,9 @@ u8 func_0810329C(u16 a) {
                 gUnk_020358C8[i].unk_38 = 7;
 
                 for (k = 0; k < 8; k++) {
-                    arg0.x = gUnk_020358C8[i].unk_3C >> 8;
-                    arg0.y = gUnk_020358C8[i].unk_40 >> 8;
-                    arg0.unk_04 = gUnk_02035A40;
+                    arg0.x = gUnk_020358C8[i].x >> 8;
+                    arg0.y = gUnk_020358C8[i].y >> 8;
+                    arg0.palette = gUnk_02035A40;
                     arg0.unk_08 = GetRandom() % 96 - 48;
                     arg0.unk_0C = GetRandom() % 256 + 0x1C0;
                     TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg0);
@@ -864,12 +864,12 @@ u8 func_0810329C(u16 a) {
 
             break;
         case 7:
-            ApproachValue(&gUnk_020358C8[i].unk_40, 0x4600, gUnk_020358C8[i].unk_44);
+            ApproachValue(&gUnk_020358C8[i].y, 0x4600, gUnk_020358C8[i].unk_44);
             f = gFrameCounter & 0x1F;
             if (f == 0) {
-                arg0.x = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
-                arg0.y = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
-                arg0.unk_04 = gUnk_02035A40;
+                arg0.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
+                arg0.y = (gUnk_020358C8[i].y >> 8) + GetRandom() % 32 - 16;
+                arg0.palette = gUnk_02035A40;
                 arg0.unk_08 = 0x80;
                 arg0.unk_0C = f;
                 TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg0);
@@ -895,9 +895,9 @@ u8 func_0810329C(u16 a) {
             if (gUnk_020358C8[i].unk_46 != 0) {
                 g = gFrameCounter & 0x1F;
                 if (g == 0) {
-                    arg1.x = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
-                    arg1.y = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
-                    arg1.unk_04 = gUnk_02035A40;
+                    arg1.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
+                    arg1.y = (gUnk_020358C8[i].y >> 8) + GetRandom() % 32 - 16;
+                    arg1.palette = gUnk_02035A40;
                     arg1.unk_08 = 0x80;
                     arg1.unk_0C = g;
                     TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg1);
@@ -914,8 +914,8 @@ u8 func_0810329C(u16 a) {
                     }
 
                     gUnk_02035B62 = 0;
-                    gUnk_02035AD4 = gUnk_020358C8[0].unk_3C - 0x1000;
-                    gUnk_02035AD8 = gUnk_020358C8[0].unk_40 - 0x2000;
+                    gUnk_02035AD4 = gUnk_020358C8[0].x - 0x1000;
+                    gUnk_02035AD8 = gUnk_020358C8[0].y - 0x2000;
                     LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
                     gUnk_02035A48 = func_08065B6C(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C, gUnk_02035A44);
                     gUnk_02035A50 = func_08065B6C(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C], gUnk_02035A4C);
@@ -930,9 +930,9 @@ u8 func_0810329C(u16 a) {
             if (gUnk_020358C8[i].unk_46 != 0) {
                 h = gFrameCounter & 0x1F;
                 if (h == 0) {
-                    arg2.x = (gUnk_020358C8[i].unk_3C >> 8) + GetRandom() % 32 - 16;
-                    arg2.y = (gUnk_020358C8[i].unk_40 >> 8) + GetRandom() % 32 - 16;
-                    arg2.unk_04 = gUnk_02035A40;
+                    arg2.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
+                    arg2.y = (gUnk_020358C8[i].y >> 8) + GetRandom() % 32 - 16;
+                    arg2.palette = gUnk_02035A40;
                     arg2.unk_08 = 0x80;
                     arg2.unk_0C = h;
                     TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg2);

@@ -19,7 +19,7 @@ typedef struct CardBack {
 typedef struct MsShopHosiArg {
     s16 x;
     s16 y;
-    void* unk_04;
+    void* palette;
     u8 unk_08;
     u8 unk_09[0x3];
     s32 unk_0C;
@@ -76,11 +76,11 @@ typedef struct GameState {
 } GameState;
 
 typedef struct UnkStruct_020358C8 {
-    FldRes* unk_00;
-    void* unk_04;
-    void* unk_08;
-    FldRes* unk_0C;
-    void* unk_10;
+    FldRes* palette;
+    void* tiles;
+    void* gfx;
+    FldRes* palette2;
+    void* tiles2;
     s32 unk_14;
     AnimState anim;
     u16 unk_30;
@@ -88,8 +88,8 @@ typedef struct UnkStruct_020358C8 {
     s32 unk_34;
     u16 unk_38;
     u16 unk_3A;
-    s32 unk_3C;
-    s32 unk_40;
+    s32 x;
+    s32 y;
     u16 unk_44;
     u8 unk_46;
     u8 unk_47;
