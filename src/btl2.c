@@ -968,13 +968,13 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     u8 angle;
     s32 spd;
 
-    work->unk_00 = src->x;
-    work->unk_04 = src->y;
-    work->unk_08 = src->z;
+    work->x = src->x;
+    work->y = src->y;
+    work->z = src->z;
     work->unk_0C = 0;
 
     if (gBtlWork->unk_128 != 0) {
-        gBtlWork->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
+        gBtlWork->unk_128(&work->x, &work->y, &work->z, &work->unk_0C);
     }
 
     work->unk_20 = -(GetRandom() % 897 + 768);
@@ -983,7 +983,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     work->tiles = LoadObjTiles(gUnk_08B209E0, 0x340);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_28 = 0;
-    work->unk_1C = gUnk_08B208E8;
+    work->gfx2 = gUnk_08B208E8;
     work->unk_2C = 3;
 
     if (src->unk_14 != 0) {
@@ -992,56 +992,56 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
 
     switch (src->unk_12) {
     case 0:
-        work->unk_18 = gUnk_08B208F2;
+        work->gfx = gUnk_08B208F2;
         work->unk_3A = 0;
         work->unk_38 = 1400;
         work->unk_24 = 1280;
         spd = 384;
         break;
     case 1:
-        work->unk_18 = gUnk_08B208FC;
+        work->gfx = gUnk_08B208FC;
         work->unk_3A = 3;
         work->unk_38 = 0;
         work->unk_24 = 0x300;
         spd = 76;
         break;
     case 2:
-        work->unk_18 = gUnk_08B20906;
+        work->gfx = gUnk_08B20906;
         work->unk_3A = 10;
         work->unk_38 = 0;
         work->unk_24 = 0x300;
         spd = 76;
         break;
     case 3:
-        work->unk_18 = gUnk_08B20910;
+        work->gfx = gUnk_08B20910;
         work->unk_3A = 0;
         work->unk_38 = 1;
         work->unk_24 = 0x400;
         spd = 128;
         break;
     case 4:
-        work->unk_18 = gUnk_08B2091A;
+        work->gfx = gUnk_08B2091A;
         work->unk_3A = 0;
         work->unk_38 = 10;
         work->unk_24 = 0x400;
         spd = 128;
         break;
     case 5:
-        work->unk_18 = gUnk_08B20924;
+        work->gfx = gUnk_08B20924;
         work->unk_3A = 0;
         work->unk_38 = 60;
         work->unk_24 = 0x400;
         spd = 128;
         break;
     case 6:
-        work->unk_18 = gUnk_08B2092E;
+        work->gfx = gUnk_08B2092E;
         work->unk_3A = 0;
         work->unk_38 = 5;
         work->unk_24 = 0x400;
         spd = 179;
         break;
     case 7:
-        work->unk_18 = gUnk_08B20938;
+        work->gfx = gUnk_08B20938;
         work->unk_3A = 0;
         work->unk_38 = 30;
         work->unk_24 = 0x400;
@@ -1049,7 +1049,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
         break;
     case 8:
     default:
-        work->unk_18 = gUnk_08B20942;
+        work->gfx = gUnk_08B20942;
         work->unk_3A = 0;
         work->unk_38 = 199;
         work->unk_24 = 0x400;
@@ -1096,14 +1096,14 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
     if (work->unk_30 == 0) {
         if (!(work->unk_2C & 4)) {
             if (gBtlWork->unk_128 != 0) {
-                gBtlWork->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
+                gBtlWork->unk_128(&work->x, &work->y, &work->z, &work->unk_0C);
             }
 
-            work->unk_08 += work->unk_20;
+            work->z += work->unk_20;
             vz = work->unk_20 - 15;
             work->unk_20 = vz + gBtlWork->unk_12C;
 
-            switch (func_0801A8A4(&work->unk_00, &work->unk_04, 0, 0)) {
+            switch (func_0801A8A4(&work->x, &work->y, 0, 0)) {
             case 1:
             case 2:
                 work->unk_3C = -work->unk_3C;
@@ -1114,12 +1114,12 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                 break;
             }
 
-            work->unk_00 += work->unk_3C;
-            work->unk_04 += work->unk_40;
+            work->x += work->unk_3C;
+            work->y += work->unk_40;
 
-            if (work->unk_08 > work->unk_0C) {
+            if (work->z > work->unk_0C) {
                 work->unk_2C &= ~2;
-                work->unk_08 = work->unk_0C;
+                work->z = work->unk_0C;
                 work->unk_20 = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
             } else {
                 work->unk_2C |= 2;
@@ -1131,8 +1131,8 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
             f = gBtlWork->unk_068;
 
             if (f & 0x4000) {
-                d1 = DIST(work->unk_00, gBtlWork->unk_07C->unk_004);
-                d2 = DIST(work->unk_00, gUnk_02039B9C->unk_07C->unk_004);
+                d1 = DIST(work->x, gBtlWork->unk_07C->unk_004);
+                d2 = DIST(work->x, gUnk_02039B9C->unk_07C->unk_004);
 
                 if (d1 == d2) {
                     bit = f & 0x1000;
@@ -1152,9 +1152,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                         range = 0x2800;
                     }
 
-                    if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->unk_00) < range &&
-                        DIST(gUnk_02039B9C->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                        DIST(gUnk_02039B9C->unk_07C->unk_00C, work->unk_08) < 12800) {
+                    if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
+                        DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
+                        DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
                         work->unk_48 = gUnk_02039B9C->unk_07C;
                         hit = 1;
                     } else {
@@ -1164,9 +1164,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                             range = 0x2800;
                         }
 
-                        if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
-                            DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                            DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                        if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
+                            DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
+                            DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
                             hit = 1;
                         }
                     }
@@ -1177,9 +1177,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                         range = 0x2800;
                     }
 
-                    if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
-                        DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                        DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                    if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
+                        DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
+                        DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
                         hit = 1;
                     } else {
                         if (gUnk_02039B9C->unk_0F4 == 6) {
@@ -1188,9 +1188,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                             range = 0x2800;
                         }
 
-                        if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->unk_00) < range &&
-                            DIST(gUnk_02039B9C->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                            DIST(gUnk_02039B9C->unk_07C->unk_00C, work->unk_08) < 12800) {
+                        if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
+                            DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
+                            DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
                             work->unk_48 = gUnk_02039B9C->unk_07C;
                             hit = 1;
                         }
@@ -1203,9 +1203,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                     range = 0x2800;
                 }
 
-                if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
-                    DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                    DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
+                    DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
+                    DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
                     hit = 1;
                 }
             }
@@ -1230,7 +1230,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
 
                 work->unk_30 = 1;
                 work->unk_28 = 0;
-                work->unk_44 = GetAngle(work->unk_48->unk_004, work->unk_48->unk_008, work->unk_00, work->unk_04);
+                work->unk_44 = GetAngle(work->unk_48->unk_004, work->unk_48->unk_008, work->x, work->y);
                 work->unk_2C &= ~2;
                 work->unk_2C |= 1;
                 work->unk_2A = GetRandom() % 6 + 5;
@@ -1258,9 +1258,9 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
         ty = work->unk_48->unk_008 + ((-gSineTable[work->unk_44 + 64] * (work->unk_34 << 4)) >> 8);
         tz = work->unk_48->unk_00C - ((work->unk_28 >> 1) << 8);
         work->unk_44 += work->unk_2A;
-        work->unk_00 += (tx - work->unk_00) >> 2;
-        work->unk_04 += (ty - work->unk_04) >> 2;
-        work->unk_08 += (tz - work->unk_08) >> 2;
+        work->x += (tx - work->x) >> 2;
+        work->y += (ty - work->y) >> 2;
+        work->z += (tz - work->z) >> 2;
         work->unk_34 -= 2;
 
         if (work->unk_28 > 60) {
@@ -1280,14 +1280,14 @@ void task_btl_prize_2(BtlPrizeWork* work) {
     if (work->unk_2C & 1) {
         s32 pri = 0x800;
 
-        WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_08);
+        WorldToScreen(&x, &y, work->x, work->y, work->z);
         aff = AllocObjAffine(0, gBtlWork->unk_024, gBtlWork->unk_024, 1);
-        DrawSprite(x, y, work->unk_18, work->tiles, work->palette, aff, pri,
-                   (u16)(-4100 - (work->unk_04 >> 8) * 4));
+        DrawSprite(x, y, work->gfx, work->tiles, work->palette, aff, pri,
+                   (u16)(-4100 - (work->y >> 8) * 4));
 
         if (work->unk_2C & 2) {
-            WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_0C);
-            DrawSprite(x, y, work->unk_1C, work->tiles, work->palette, aff, pri, 0xFFFF);
+            WorldToScreen(&x, &y, work->x, work->y, work->unk_0C);
+            DrawSprite(x, y, work->gfx2, work->tiles, work->palette, aff, pri, 0xFFFF);
         }
     }
 }
@@ -1302,13 +1302,13 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     u8 angle;
     s32 spd;
 
-    work->unk_00 = src->x;
-    work->unk_04 = src->y;
-    work->unk_08 = src->z;
+    work->x = src->x;
+    work->y = src->y;
+    work->z = src->z;
     work->unk_0C = 0;
 
     if (gBtlWork->unk_128 != 0) {
-        gBtlWork->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
+        gBtlWork->unk_128(&work->x, &work->y, &work->z, &work->unk_0C);
     }
 
     work->unk_20 = -(GetRandom() % 897 + 768);
@@ -1320,7 +1320,7 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     AnimStart(&work->anim, 10, 1);
     work->gfx = AnimGetGfx(&work->anim);
     work->unk_28 = 0;
-    work->unk_1C = gUnk_08B208E8;
+    work->gfx2 = gUnk_08B208E8;
     work->unk_2C = 3;
 
     if (src->unk_14 != 0) {
@@ -1352,14 +1352,14 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
     if (work->unk_30 == 0) {
         if (!(work->unk_2C & 4)) {
             if (gBtlWork->unk_128 != 0) {
-                gBtlWork->unk_128(&work->unk_00, &work->unk_04, &work->unk_08, &work->unk_0C);
+                gBtlWork->unk_128(&work->x, &work->y, &work->z, &work->unk_0C);
             }
 
-            work->unk_08 += work->unk_20;
+            work->z += work->unk_20;
             vz = work->unk_20 - 15;
             work->unk_20 = vz + gBtlWork->unk_12C;
 
-            switch (func_0801A8A4(&work->unk_00, &work->unk_04, 0, 0)) {
+            switch (func_0801A8A4(&work->x, &work->y, 0, 0)) {
             case 1:
             case 2:
                 work->unk_38 = -work->unk_38;
@@ -1370,12 +1370,12 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                 break;
             }
 
-            work->unk_00 += work->unk_38;
-            work->unk_04 += work->unk_3C;
+            work->x += work->unk_38;
+            work->y += work->unk_3C;
 
-            if (work->unk_08 > work->unk_0C) {
+            if (work->z > work->unk_0C) {
                 work->unk_2C &= ~2;
-                work->unk_08 = work->unk_0C;
+                work->z = work->unk_0C;
                 work->unk_20 = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
             } else {
                 work->unk_2C |= 2;
@@ -1394,9 +1394,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                         range = 0x2000;
                     }
 
-                    if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->unk_00) < range &&
-                        DIST(gUnk_02039B9C->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                        DIST(gUnk_02039B9C->unk_07C->unk_00C, work->unk_08) < 12800) {
+                    if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
+                        DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
+                        DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
                         work->unk_44 = gUnk_02039B9C->unk_07C;
                         hit = 1;
                     } else {
@@ -1406,9 +1406,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                             range = 0x2000;
                         }
 
-                        if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
-                            DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                            DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                        if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
+                            DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
+                            DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
                             hit = 1;
                         }
                     }
@@ -1419,9 +1419,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                         range = 0x2000;
                     }
 
-                    if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
-                        DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                        DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                    if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
+                        DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
+                        DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
                         hit = 1;
                     } else {
                         if (gUnk_02039B9C->unk_0F4 == 6) {
@@ -1430,9 +1430,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                             range = 0x2000;
                         }
 
-                        if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->unk_00) < range &&
-                            DIST(gUnk_02039B9C->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                            DIST(gUnk_02039B9C->unk_07C->unk_00C, work->unk_08) < 12800) {
+                        if (DIST(gUnk_02039B9C->unk_07C->unk_004, work->x) < range &&
+                            DIST(gUnk_02039B9C->unk_07C->unk_008, work->y) < (range >> 1) &&
+                            DIST(gUnk_02039B9C->unk_07C->unk_00C, work->z) < 12800) {
                             work->unk_44 = gUnk_02039B9C->unk_07C;
                             hit = 1;
                         }
@@ -1445,9 +1445,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                     range = 0x2000;
                 }
 
-                if (DIST(gBtlWork->unk_07C->unk_004, work->unk_00) < range &&
-                    DIST(gBtlWork->unk_07C->unk_008, work->unk_04) < (range >> 1) &&
-                    DIST(gBtlWork->unk_07C->unk_00C, work->unk_08) < 12800) {
+                if (DIST(gBtlWork->unk_07C->unk_004, work->x) < range &&
+                    DIST(gBtlWork->unk_07C->unk_008, work->y) < (range >> 1) &&
+                    DIST(gBtlWork->unk_07C->unk_00C, work->z) < 12800) {
                     hit = 1;
                 }
             }
@@ -1458,7 +1458,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                 work->unk_28 = 0;
                 work->unk_30 = 1;
                 work->unk_28 = 0;
-                work->unk_40 = GetAngle(work->unk_44->unk_004, work->unk_44->unk_008, work->unk_00, work->unk_04);
+                work->unk_40 = GetAngle(work->unk_44->unk_004, work->unk_44->unk_008, work->x, work->y);
                 work->unk_2C &= ~2;
                 work->unk_2C |= 1;
                 work->unk_2A = GetRandom() % 6 + 5;
@@ -1487,9 +1487,9 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
         ty = work->unk_44->unk_008 + ((-gSineTable[work->unk_40 + 64] * (work->unk_34 << 4)) >> 8);
         tz = work->unk_44->unk_00C - ((work->unk_28 >> 1) << 8);
         work->unk_40 += work->unk_2A;
-        work->unk_00 += (tx - work->unk_00) >> 2;
-        work->unk_04 += (ty - work->unk_04) >> 2;
-        work->unk_08 += (tz - work->unk_08) >> 2;
+        work->x += (tx - work->x) >> 2;
+        work->y += (ty - work->y) >> 2;
+        work->z += (tz - work->z) >> 2;
         work->unk_34 -= 2;
 
         if (work->unk_28 > 60) {
@@ -1509,16 +1509,16 @@ void task_btl_premire_2(BtlPremireWork* work) {
     s32 aff;
 
     if (work->unk_2C & 1) {
-        u16 anim = func_0801AF1C(work->unk_04);
+        u16 anim = func_0801AF1C(work->y);
 
-        WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_08);
+        WorldToScreen(&x, &y, work->x, work->y, work->z);
         aff = AllocObjAffine(0, gBtlWork->unk_024, gBtlWork->unk_024, 1);
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, aff, anim,
-                   (u16)(-4100 - (work->unk_04 >> 8) * 4));
+                   (u16)(-4100 - (work->y >> 8) * 4));
 
         if (work->unk_2C & 2) {
-            WorldToScreen(&x, &y, work->unk_00, work->unk_04, work->unk_0C);
-            DrawSprite(x, y, work->unk_1C, work->tiles, work->palette, aff, anim, 0xFFFF);
+            WorldToScreen(&x, &y, work->x, work->y, work->unk_0C);
+            DrawSprite(x, y, work->gfx2, work->tiles, work->palette, aff, anim, 0xFFFF);
         }
     }
 }
