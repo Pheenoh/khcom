@@ -950,10 +950,16 @@ void func_080B0634(void) {
 INCLUDE_ASM("mode_sio/func_080B0634.s");
 #endif
 
-#ifndef VERSION_EU
 void func_080B06D4(void) {
-    s8 x = gUnk_02039810[2][0] & 15;
-    s8 y = gUnk_02039810[2][1] & 15;
+    s8 x;
+    s8 y;
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 != 0) {
+        return;
+    }
+#endif
+    x = gUnk_02039810[2][0] & 15;
+    y = gUnk_02039810[2][1] & 15;
     if (x != 0 || y != 0) {
         if (x <= 12 && y <= 12) {
             gUnk_0203AA90 = gUnk_0203AA00;
@@ -974,9 +980,6 @@ void func_080B06D4(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B06D4.s");
-#endif
 
 void func_080B0754(void) {
     u8 buf[2];
