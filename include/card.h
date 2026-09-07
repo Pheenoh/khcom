@@ -1182,6 +1182,7 @@ extern u32 gUnk_09036210[];
 extern s16 gUnk_09036278[];
 extern u8 gUnk_0903628A[];
 extern void* gUnk_09EE9894[];
+extern void* gUnk_09EE98C0[];
 extern u8 gUnk_09036380[];
 extern u8 gUnk_09036300[];
 extern void* gUnk_09EE4724[];
