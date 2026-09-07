@@ -395,10 +395,10 @@ typedef struct StaffRollTaskArg {
     u16 unk_02;
     u16 unk_04;
     u16 unk_06;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
+    s32 x;
+    s32 y;
+    s32 targetX;
+    s32 targetY;
 } StaffRollTaskArg;
 
 typedef struct StaffRollLogoArg {

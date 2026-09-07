@@ -110,8 +110,8 @@ typedef struct GameState {
 typedef struct MenuWork {
     void* tiles;
     void* palette;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
     u8 unk_10;
     u8 unk_11;
     u8 unk_12[0x02];

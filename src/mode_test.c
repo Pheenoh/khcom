@@ -675,8 +675,8 @@ void menu_0(MenuWork* w) {
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
     gUnk_02039BA0->unk_70 |= 0x2000;
-    w->unk_08 = 0xF000;
-    w->unk_0C = 0x4800;
+    w->x = 0xF000;
+    w->y = 0x4800;
     w->unk_11 = 0;
     w->unk_10 = 0;
     w->tiles = LoadObjTiles(gUnk_090D4DD0, 0x2E80);
@@ -687,9 +687,9 @@ void menu_0(MenuWork* w) {
 u8 menu_1(MenuWork* w) {
     switch (w->unk_10) {
     case 0:
-        w->unk_08 += (0xBC00 - w->unk_08) >> 1;
+        w->x += (0xBC00 - w->x) >> 1;
 
-        if ((w->unk_08 >> 8) == 0xBC) {
+        if ((w->x >> 8) == 0xBC) {
             w->unk_10 = 1;
         }
 
@@ -804,9 +804,9 @@ u8 menu_1(MenuWork* w) {
 
         break;
     case 4:
-        w->unk_08 += (0x11800 - w->unk_08) >> 1;
+        w->x += (0x11800 - w->x) >> 1;
 
-        if ((w->unk_08 >> 8) > 274) {
+        if ((w->x >> 8) > 274) {
             if (func_08006314() == 0) {
                 if (w->unk_11 != 2) {
                     if (w->unk_11 == 9) {
@@ -822,9 +822,9 @@ u8 menu_1(MenuWork* w) {
 
         break;
     case 5:
-        w->unk_08 += (0x11800 - w->unk_08) >> 1;
+        w->x += (0x11800 - w->x) >> 1;
 
-        if ((w->unk_08 >> 8) > 274) {
+        if ((w->x >> 8) > 274) {
             return 0;
         }
 
@@ -838,7 +838,7 @@ u8 menu_1(MenuWork* w) {
 }
 
 void menu_2(MenuWork* w) {
-    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, gUnk_09EEC600[w->unk_11], w->tiles, w->palette, 0, 0, 80);
+    DrawSprite(w->x >> 8, w->y >> 8, gUnk_09EEC600[w->unk_11], w->tiles, w->palette, 0, 0, 80);
 }
 
 void menu_3(MenuWork* w) {

@@ -88,7 +88,7 @@ typedef struct StatusScrollcursorWork {
     void* gfx;
     u16* unk_0C;
     u16 unk_10;
-    s16 unk_12;
+    s16 y;
 } StatusScrollcursorWork;
 
 typedef struct StatusMeswindowWork {
@@ -229,8 +229,8 @@ typedef struct StockMesDispWork {
     u16 unk_22;
     TaskPool unk_24;
     void* unk_38;
-    u16 unk_3C;
-    u16 unk_3E;
+    u16 x;
+    u16 y;
     u8 unk_40;
     u8 unk_41;
     u16 unk_42;
