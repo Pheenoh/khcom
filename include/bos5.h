@@ -294,7 +294,8 @@ typedef struct MdModel {
     void* unk_10;
     void* unk_14;
 #ifdef VERSION_EU
-    void* unkEu_18;
+    u16 unkEu_18;
+    u16 unkEu_1A;
 #endif
 } MdModel;
 

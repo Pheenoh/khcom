@@ -1548,7 +1548,6 @@ s16 func_080FDA98(s16 model, s16 slot) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080FDB1C(s16 model, s16 n) {
     vu32* dma;
     u16 zero;
@@ -1567,7 +1566,12 @@ void func_080FDB1C(s16 model, s16 n) {
     dma[2];
 
     if (n > 0) {
+#ifdef VERSION_EU
+        src = ((u8**)gUnk_09992F70[model].unk_14)[gLanguage];
+        src += gUnk_09992F70[model].unkEu_18;
+#else
         src = gUnk_09992F70[model].unk_14;
+#endif
         dma[0] = (vu32)src;
         dst = (u8*)gUnk_020350BC + (9 - n) * 32;
         dma[1] = (vu32)dst;
@@ -1602,9 +1606,6 @@ void func_080FDB1C(s16 model, s16 n) {
 
     RequestDma3Copy(gUnk_020350BC, (u8*)GetBgCharBase(0) + 1024, 0x6C0);
 }
-#else
-INCLUDE_ASM("bos5/func_080FDB1C.s");
-#endif
 
 void func_080FDC04(void) {
     s16 i;

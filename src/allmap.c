@@ -128,24 +128,31 @@ u8 func_080D3A70(u8 a, u8 b) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 u8 func_080D3AB8(u8 a, u8 b) {
     if (func_080DF51C(a) != 0) {
-        if (func_080D5944(a, 8) != 0) {
-            return 0;
-        }
+        goto loc_080D3ADE;
     }
 
+loc_080D3ACE:
     if (func_080D5944(a, 2) != 0) {
-        if (func_080D3564(a, b) != 0) {
-            return func_080D358C(a, b) == 0;
-        }
+        goto loc_080D3AEE;
     }
+    goto loc_080D3B12;
+
+loc_080D3ADE:
+    if (func_080D5944(a, 8) != 0) {
+        goto loc_080D3B12;
+    }
+    goto loc_080D3ACE;
+
+loc_080D3AEE:
+    if (func_080D3564(a, b) != 0) {
+        return func_080D358C(a, b) == 0;
+    }
+
+loc_080D3B12:
     return 0;
 }
-#else
-INCLUDE_ASM("allmap/func_080D3AB8.s");
-#endif
 
 void task_allmap_cursor_0(AllmapCursorWork* work, AllmapCursorPos* arg) {
     work->unk_30 = *arg;
