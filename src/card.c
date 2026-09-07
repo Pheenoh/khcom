@@ -7737,46 +7737,47 @@ INCLUDE_ASM("card/func_0808A114.s");
 #endif
 INCLUDE_ASM("card/func_0808A218.s");
 
-#ifndef VERSION_EU
 u8 func_0808A650(u8* work, void* a) {
     func_08006120(0, 4);
     ((UnkStruct_0808DB04*)work)->unk_878 = 95;
     func_0808DB04((void**)work);
     SetupBg(3, 0, 30, 0);
+#ifdef VERSION_EU
+    SetupBg(2, 0, 28, 0);
+    SetupBg(1, 0, 29, 0);
+    SetupBg(0, 0, 31, 0);
+#else
     SetupBg(2, 1, 15, 0);
     SetupBg(1, 2, 23, 0);
     SetupBg(0, 3, 31, 0);
+#endif
     LoadBgMap(0, gUnk_08125E24, 0x800);
     LoadBgMap(1, gUnk_08125E24, 0x800);
     LoadBgMap(2, gUnk_08125E24, 0x800);
-    func_0808CDE8(work, work[0x8C0]);
+    func_0808CDE8(work, work[CARDWORK(0x8C0)]);
     LoadBgMap(3, gUnk_09512AB8, 0x800);
     func_0808E2F0((UnkStruct_0808DB04*)work);
     func_0808C90C(work);
-    work[0x8C1] = 0;
-    *(s16*)&work[0x884] = 0;
-    ((UnkStruct_0808DB04*)work)->unk_886 = work[0x8C0];
-    func_0808C3DC(work, work[0x8C1]);
-    work[0x8C7] = 0;
-    work[0x8B1] = 1;
+    work[CARDWORK(0x8C1)] = 0;
+    *(s16*)&work[CARDWORK(0x884)] = 0;
+    ((UnkStruct_0808DB04*)work)->unk_886 = work[CARDWORK(0x8C0)];
+    func_0808C3DC(work, work[CARDWORK(0x8C1)]);
+    work[CARDWORK(0x8C7)] = 0;
+    work[CARDWORK(0x8B1)] = 1;
     func_0808CD48(work);
-    func_0805F1C0(&work[0x848], gUnk_090356EC[*(s16*)&work[0x884]] << 8);
-    func_0805F1C0(&work[0x84C], gUnk_090356F2[*(s16*)&work[0x886]] << 8);
+    func_0805F1C0(&work[CARDWORK(0x848)], gUnk_090356EC[*(s16*)&work[CARDWORK(0x884)]] << 8);
+    func_0805F1C0(&work[CARDWORK(0x84C)], gUnk_090356F2[*(s16*)&work[CARDWORK(0x886)]] << 8);
     SetTaskUpdate(a, (void*)func_080889DC);
     LoadPalette(&gUnk_09614418[32],
                 (void*)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_06 * 32 +
                         0x05000200),
                 (u16)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_08 << 5));
-    TaskPoolUpdate(&work[0x7C8]);
-    work += 0x7DC;
+    TaskPoolUpdate(&work[CARDWORK(0x7C8)]);
+    work += CARDWORK(0x7DC);
     TaskPoolUpdate(work);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808A650.s");
-#endif
 
-#ifndef VERSION_EU
 u8 func_0808A7E4(u8* work, void* a) {
     u8 z;
     u8* q;
@@ -7793,72 +7794,71 @@ u8 func_0808A7E4(u8* work, void* a) {
     LoadBgMap(2, gUnk_095182B8, 0x800);
     LoadBgMap(1, gUnk_09514AB8, 0x800);
     DisableBg(0);
-    func_0808500C(3, (u16*)&work[0x89A]);
-    func_0808CC58(*(u16*)&work[0x89A], 0);
-    func_0808CC58(*(u16*)&work[0x89C], 1);
-    func_0808CC58(*(u16*)&work[0x89E], 2);
-    func_0808CC58(*(u16*)&work[0x8A0], 3);
-    q = &work[0x8B1];
+    func_0808500C(3, (u16*)&work[CARDWORK(0x89A)]);
+    func_0808CC58(*(u16*)&work[CARDWORK(0x89A)], 0);
+    func_0808CC58(*(u16*)&work[CARDWORK(0x89C)], 1);
+    func_0808CC58(*(u16*)&work[CARDWORK(0x89E)], 2);
+    func_0808CC58(*(u16*)&work[CARDWORK(0x8A0)], 3);
+    q = &work[CARDWORK(0x8B1)];
     z = 0;
     *q = 9;
     func_0808E344((void**)work);
     func_0808E364(work, 0);
     func_0808C90C(work);
-    work[0x8D0] = z;
+    work[CARDWORK(0x8D0)] = z;
     SetTaskUpdate(a, (void*)func_0808A910);
-    TaskPoolUpdate(&work[0x7C8]);
-    work += 0x7DC;
+    TaskPoolUpdate(&work[CARDWORK(0x7C8)]);
+    work += CARDWORK(0x7DC);
     TaskPoolUpdate(work);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808A7E4.s");
-#endif
 INCLUDE_ASM("card/func_0808A910.s");
 INCLUDE_ASM("card/func_0808AB48.s");
 
-#ifndef VERSION_EU
 u8 func_0808B068(u8* work, void* a) {
     u8* q;
 
     func_08006120(0, 4);
-    q = &work[0x8B1];
+    q = &work[CARDWORK(0x8B1)];
     *q = 9;
     ((UnkStruct_0808DB04*)work)->unk_878 = 95;
     func_0808DB04((void**)work);
     SetupBg(3, 0, 30, 0);
+#ifdef VERSION_EU
+    SetupBg(2, 0, 28, 0);
+    SetupBg(1, 0, 29, 0);
+    SetupBg(0, 0, 31, 0);
+#else
     SetupBg(2, 1, 15, 0);
     SetupBg(1, 2, 23, 0);
     SetupBg(0, 3, 31, 0);
+#endif
     LoadBgMap(0, gUnk_08125E24, 0x800);
     LoadBgMap(1, gUnk_08125E24, 0x800);
     LoadBgMap(2, gUnk_08125E24, 0x800);
-    func_0808CDE8(work, work[0x8C0]);
+    func_0808CDE8(work, work[CARDWORK(0x8C0)]);
     LoadBgMap(3, gUnk_09512AB8, 0x800);
     func_0808E2F0((UnkStruct_0808DB04*)work);
     func_0808C90C(work);
-    work[0x8C1] = 0;
-    *(s16*)&work[0x884] = 0;
-    ((UnkStruct_0808DB04*)work)->unk_886 = work[0x8C0];
-    func_0808C3DC(work, work[0x8C1]);
-    work[0x8C7] = 0;
+    work[CARDWORK(0x8C1)] = 0;
+    *(s16*)&work[CARDWORK(0x884)] = 0;
+    ((UnkStruct_0808DB04*)work)->unk_886 = work[CARDWORK(0x8C0)];
+    func_0808C3DC(work, work[CARDWORK(0x8C1)]);
+    work[CARDWORK(0x8C7)] = 0;
     *q = 1;
     func_0808CD48(work);
-    func_0805F1C0(&work[0x848], gUnk_090356EC[*(s16*)&work[0x884]] << 8);
-    func_0805F1C0(&work[0x84C], gUnk_090356F2[*(s16*)&work[0x886]] << 8);
+    func_0805F1C0(&work[CARDWORK(0x848)], gUnk_090356EC[*(s16*)&work[CARDWORK(0x884)]] << 8);
+    func_0805F1C0(&work[CARDWORK(0x84C)], gUnk_090356F2[*(s16*)&work[CARDWORK(0x886)]] << 8);
     SetTaskUpdate(a, (void*)func_080889DC);
     LoadPalette(&gUnk_09614418[32],
                 (void*)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_06 * 32 +
                         0x05000200),
                 (u16)((*(UnkStruct_080038C8**)&work[0x4C4])->unk_08 << 5));
-    TaskPoolUpdate(&work[0x7C8]);
-    work += 0x7DC;
+    TaskPoolUpdate(&work[CARDWORK(0x7C8)]);
+    work += CARDWORK(0x7DC);
     TaskPoolUpdate(work);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808B068.s");
-#endif
 
 #ifndef VERSION_EU
 u8 func_0808B208(u8* work) {
@@ -7968,7 +7968,6 @@ INCLUDE_ASM("card/func_0808B3DC.s");
 #endif
 INCLUDE_ASM("card/func_0808B66C.s");
 
-#ifndef VERSION_EU
 void func_0808C2F0(u8* work) {
     func_0808C90C(work);
     ReleaseObjTiles(*(void**)&work[0x00]);
@@ -7995,17 +7994,14 @@ void func_0808C2F0(u8* work) {
     func_08065AE0(&work[0xF8], 30);
     func_08065AE0(&work[0x1E8], 90);
     ReleaseObjPalette(*(void**)&work[0x4C4]);
-    TaskPoolDestroy(&work[0x7C8]);
-    TaskPoolDestroy(&work[0x7DC]);
+    TaskPoolDestroy(&work[CARDWORK(0x7C8)]);
+    TaskPoolDestroy(&work[CARDWORK(0x7DC)]);
     func_0808E2F0((UnkStruct_0808DB04*)work);
-    **(u8**)&work[0x8BC] = work[0x8D2];
+    **(u8**)&work[CARDWORK(0x8BC)] = work[CARDWORK(0x8D2)];
     ReleaseObjTiles(*(void**)&work[0x4B8]);
     ReleaseObjTiles(gUnk_0203A860[0]);
     ReleaseObjPalette(gUnk_0203A860[1]);
 }
-#else
-INCLUDE_ASM("card/func_0808C2F0.s");
-#endif
 
 #ifdef NON_MATCHING
 void func_0808C3DC(u8* work, u8 kind) {
