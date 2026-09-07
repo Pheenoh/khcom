@@ -51,8 +51,8 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     work->unk_074 |= 0x80;
 #endif
     work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6788, 4), gUnk_09796EAA);
-    work->unk_00C = (u32)LoadObjPalette(gUnk_0984AF98, 32);
-    work->unk_010 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = (u32)LoadObjPalette(gUnk_0984AF98, 32);
+    work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF6798, gUnk_09EF6788);
     AnimStart(&work->anim, 0, 1);
     r = GetRandom();
@@ -348,9 +348,9 @@ void task_bos_boogie_dice_2(BoogieDiceWork* work) {
     c = func_0801AF1C(p->y);
 
     if (func_0801CA00(p) != 0) {
-        pal = (void*)work->unk_010;
+        pal = (void*)work->palette2;
     } else {
-        pal = (void*)work->unk_00C;
+        pal = (void*)work->palette;
     }
 
     a = work->unk_15C;
@@ -380,8 +380,8 @@ void task_bos_boogie_dice_3(BoogieDiceWork* work) {
     func_08012304(&work->unk_080);
     func_0801B7D8(&work->unk_040);
     ReleaseObjTiles((void*)work->tiles);
-    ReleaseObjPalette((void*)work->unk_00C);
-    ReleaseObjPalette((void*)work->unk_010);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
     TaskPoolDestroy(&work->unk_02C);
 }
 
@@ -449,8 +449,8 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     work->unk_04C = -0xA000;
     func_080122AC(&work->unk_080, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
     work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6774, 4), gUnk_0979666A);
-    work->unk_00C = (u32)LoadObjPalette(gUnk_0984AF98, 32);
-    work->unk_010 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
+    work->palette = (u32)LoadObjPalette(gUnk_0984AF98, 32);
+    work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF6784, gUnk_09EF6774);
     AnimStart(&work->anim, 0, 1);
     TaskPoolInit(&work->unk_02C, 1);
@@ -503,7 +503,7 @@ void task_bos_boogie_explosiondice_2(BoogieExplosiondiceWork* work) {
     }
 
     c = func_0801AF1C(p->y);
-    pal = (void*)work->unk_00C;
+    pal = (void*)work->palette;
     WorldToScreen(&x, &y, p->x, p->y, p->z);
     DrawSprite(x, y, AnimGetGfx(&work->anim), (void*)work->tiles, pal, f, c,
         -0x1004 - (p->y >> 8) * 4);
@@ -513,8 +513,8 @@ void task_bos_boogie_explosiondice_2(BoogieExplosiondiceWork* work) {
 void task_bos_boogie_explosiondice_3(BoogieExplosiondiceWork* work) {
     func_08012304(&work->unk_080);
     ReleaseObjTiles((void*)work->tiles);
-    ReleaseObjPalette((void*)work->unk_00C);
-    ReleaseObjPalette((void*)work->unk_010);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
     TaskPoolDestroy(&work->unk_02C);
 }
 

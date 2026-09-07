@@ -65,9 +65,9 @@ typedef struct LstState {
     u32 unk_078;
     u32 anim;
     u8 unk_080[0x14];
-    u32 unk_094;
-    u32 unk_098;
-    u32 unk_09C;
+    u32 tiles;
+    u32 palette;
+    u32 palette2;
     LstObj unk_0A0;
     u32 unk_1B0;
     u8 unk_1B4[0x10];

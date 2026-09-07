@@ -245,7 +245,7 @@ typedef struct LstSub {
     s16 unk_00A;
     s16 unk_00C;
     u8 unk_00E[0x2];
-    u32 unk_010;
+    u32 tiles;
     u8 unk_014[0x4];
     u8 unk_018[0x4];
     s32 unk_01C;
@@ -281,7 +281,7 @@ typedef struct BosLstWork {
     u16 unk_022;
     u16 unk_024;
     s16 unk_026;
-    u32 unk_028;
+    u32 tiles;
     AnimState anim;
     s32 unk_044;
     s32 unk_048;
@@ -333,7 +333,7 @@ typedef struct BosLstWork {
     s16 unk_0D6;
     u8 unk_0D8[0x4];
     s32 unk_0DC;
-    u32 unk_0E0;
+    u32 palette;
     u16 unk_0E4;
     u16 unk_0E6;
     u32 unk_0E8;

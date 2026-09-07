@@ -659,9 +659,9 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     work->unk_016 = arg->unk_04 << 7;
     work->unk_074 = 2;
     work->unk_078 = 2;
-    work->unk_094 = (u32)LoadObjTiles(gUnk_09CD0334, 0x900);
-    work->unk_098 = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
-    work->unk_09C = (u32)LoadObjPalette(gUnk_08F69BC4, 0x20);
+    work->tiles = (u32)LoadObjTiles(gUnk_09CD0334, 0x900);
+    work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
+    work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 0x20);
     AnimInit(&work->anim, gUnk_09EFBF18, gUnk_09EFBEC4);
     AnimStart(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
     func_0801B37C(&work->unk_0A0, gUnk_09A4FD4C, work->unk_028, work->unk_02C, work->unk_030);
@@ -994,9 +994,9 @@ void task_bos_lst_bit_2(LstState* work) {
         return;
     }
 
-    pal = (void*)work->unk_098;
+    pal = (void*)work->palette;
     if ((work->unk_00A & 1) != 0) {
-        pal = (void*)work->unk_09C;
+        pal = (void*)work->palette2;
     }
 
     if (work->unk_00A > 0) {
@@ -1009,15 +1009,15 @@ void task_bos_lst_bit_2(LstState* work) {
     z = -0x1004 - (work->unk_02C >> 8) * 4;
     affine = AllocObjAffine(work->unk_01B, work->unk_074, work->unk_078, 0);
     gfx = AnimGetGfx(&work->anim);
-    DrawSprite(x, y, gfx, (void*)work->unk_094, pal, affine, prio, z);
+    DrawSprite(x, y, gfx, (void*)work->tiles, pal, affine, prio, z);
     TaskPoolDraw(&work->unk_1B0);
 }
 
 void task_bos_lst_bit_3(LstBitWork* work) {
     func_0801B7D8(&work->unk_0A0);
-    ReleaseObjTiles((void*)work->unk_094);
-    ReleaseObjPalette((void*)work->unk_098);
-    ReleaseObjPalette((void*)work->unk_09C);
+    ReleaseObjTiles((void*)work->tiles);
+    ReleaseObjPalette((void*)work->palette);
+    ReleaseObjPalette((void*)work->palette2);
     TaskPoolDestroy(&work->unk_1B0);
 }
 
