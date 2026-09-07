@@ -12792,8 +12792,8 @@ void func_080F4630(MapGmk05Work* w) {
     x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
     DrawSprite(x, y, w->unk_0C0, w->unk_0A4, w->unk_0A0, 0, 0x800, v);
-    *(s32*)((u8*)p + 0x3C) = p->z;
-    *(u16*)((u8*)p + 0x3A) = v + 1;
+    ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+    ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
     TaskPoolDraw(&w->unk_0CC);
 
     if (w->unk_0C8 != 0) {
@@ -13659,8 +13659,8 @@ void func_080F5EA8(MapDonaldWork* w) {
         y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->unk_09C), w->unk_0B4, w->unk_0B8, 0, 0x800, v);
-        *(s32*)((u8*)p + 0x3C) = p->z;
-        *(u16*)((u8*)p + 0x3A) = v + 1;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->unk_0C4);
 
         if (w->unk_0C0 != 0) {
@@ -13774,8 +13774,8 @@ void func_080F61D0(MapGoofyWork* w) {
         y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->unk_09C), w->unk_0B4, w->unk_0B8, 0, 0x800, v);
-        *(s32*)((u8*)p + 0x3C) = p->z;
-        *(u16*)((u8*)p + 0x3A) = v + 1;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->unk_0C4);
 
         if (w->unk_0C0 != 0) {
@@ -13895,8 +13895,8 @@ void func_080F6500(MapNamineWork* w) {
         y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->unk_09C), w->unk_0B4, w->unk_0B8, 0, w->unk_0C4, v);
-        *(s32*)((u8*)p + 0x3C) = p->z;
-        *(u16*)((u8*)p + 0x3A) = v + 1;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->unk_0C8);
 
         if (w->unk_0C1 != 0) {
@@ -14079,8 +14079,8 @@ void func_080F6978(MapNiserikuWork* w) {
         y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->unk_09C), w->unk_0B4, w->unk_0B8, 0, 0x800, v);
-        *(s32*)((u8*)p + 0x3C) = p->z;
-        *(u16*)((u8*)p + 0x3A) = v + 1;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->unk_0C4);
 
         if (w->unk_0C1 != 0) {
@@ -14190,8 +14190,8 @@ void func_080F6C5C(MapMickeyWork* w) {
         y = k + (p->y >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->unk_09C), w->unk_0B4, w->unk_0B8, 0, w->unk_0C2, v);
-        *(s32*)((u8*)p + 0x3C) = p->z;
-        *(u16*)((u8*)p + 0x3A) = v + 1;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->unk_0C4);
 
         if (w->unk_0C0 != 0) {
@@ -14454,8 +14454,8 @@ void func_080F73AC(MapTutorialWork* w) {
         DrawSprite(x, y, w->unk_0BC, w->unk_0B4, w->unk_0B8, 0, flags, v);
 
         if (w->unk_0C1 != 0) {
-            *(s32*)((u8*)w + 0x3C) = w->unk_00C;
-            *(u16*)((u8*)w + 0x3A) = v + 1;
+            ((UnkStruct_080E64D4*)w)->unk_3C = w->unk_00C;
+            ((UnkStruct_080E64D4*)w)->unk_3A = v + 1;
             TaskPoolDraw(&w->unk_0DC);
         }
     }
