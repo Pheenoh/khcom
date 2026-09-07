@@ -729,13 +729,12 @@ u8 func_080F99C0(GaWork* work) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 u8 func_080F9C2C(GaWork* work) {
     GaEntryWork* e;
     u32 i;
     s32 t;
 
-    t = 0;
+    e = 0;
 
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
@@ -815,7 +814,7 @@ u8 func_080F9C2C(GaWork* work) {
         }
         break;
     case 2:
-        gBtlWork->unk_0D4 = t;
+        gBtlWork->unk_0D4 = (s32)e;
 
         for (i = 0; i <= 5; i++) {
             e = &work->entries[i];
@@ -848,9 +847,6 @@ u8 func_080F9C2C(GaWork* work) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("room/func_080F9C2C.s");
-#endif
 
 u8 func_080F9EDC(GaWork* work) {
     GaEntryWork* e;
@@ -1354,13 +1350,12 @@ u8 func_080FA644(GaWork* work) {
 }
 
 
-#ifdef NON_MATCHING
 u8 func_080FAA18(GaWork* work) {
     GaEntryWork* e;
     u32 i;
     s32 t;
 
-    t = 0;
+    e = 0;
 
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
@@ -1395,7 +1390,7 @@ u8 func_080FAA18(GaWork* work) {
         func_080F7F54(work, 1);
         break;
     case 2:
-        gBtlWork->unk_0D4 = t;
+        gBtlWork->unk_0D4 = (s32)e;
 
         for (i = 0; i <= 5; i++) {
             e = &work->entries[i];
@@ -1423,8 +1418,5 @@ u8 func_080FAA18(GaWork* work) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("room/func_080FAA18.s");
-#endif
 
 INCLUDE_ASM("room/func_080FABE4.s");
