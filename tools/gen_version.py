@@ -281,6 +281,8 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09DD89A0": 0x09DD89A0,
         "gUnkEu_095DA860": 0x095DA860,
         "gUnkEu_095DA867": 0x095DA867,
+        "gUnkEu_08890EC0": 0x08890EC0,
+        "gUnkEu_08895E94": 0x08895E94,
     },
     "jp": {
         "gUnk_0814FBB0": 0x0814FBB0,
@@ -324,6 +326,8 @@ TARGET_FUNC_SIZE = {
         "func_080A5C60": 76,
         "func_080B0754": 308,
         "mode_sio_btl_option_0": 0x1c4,
+        "Deck_Yes_No_0": 0x178,
+        "Deck_Clear_0": 0x174,
         "mode_sio_btl_option_2": 0x14c,
         "func_080B0874": 0x164,
         "func_080B06D4": 0x90,
