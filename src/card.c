@@ -360,6 +360,13 @@ void func_0809D2B0(u8 a, u8 b, u8 c, u8* s);
 void func_080A6BB4(u8* work);
 void func_080A6FAC(UnkStruct_080A6FAC* w);
 u8 func_080A5FF4(u8* work, void* a);
+s32 func_080A6388(u8* work);
+u8 func_080A63B8(u8* work, void* a);
+u8 func_080A7300(u8* work);
+u8 func_080A734C(u8* work);
+u8 func_080A6A38(u8* work);
+void func_080A69A0(u8* work);
+UnkStruct_0808E890* func_080A6AE8(u8* work);
 u8 func_08099330(u8* work);
 void func_08078E34(UnkStruct_08080268* w, u8 b, u8 c);
 void func_08078D98(u8* work, u8 b, u8 c);
@@ -19656,7 +19663,127 @@ u8 func_080A5F70(u8* work, void* a) {
     return 1;
 }
 
+#ifdef NON_MATCHING
+u8 func_080A5FF4(u8* work, void* a) {
+    *(void**)&work[0x400] = AnimUpdate((AnimState*)&work[0x444]);
+    *(void**)&work[0x404] = AnimUpdate((AnimState*)&work[0x45C]);
+
+    if (func_08006314() != 0) {
+        TaskPoolUpdate((TaskPool*)&work[0x40C]);
+        return 1;
+    }
+
+    if (work[0x501] != 0) {
+        ApproachValue((s32*)&work[0x48C], gUnk_09035950[*(s16*)&work[0x4C8]] << 8, work[0x4EC]);
+        ApproachValue((s32*)&work[0x490], gUnk_09035956[*(s16*)&work[0x4CA]] << 8, work[0x4EC]);
+
+        if (work[0x4EC] != 0) {
+            work[0x4EC]--;
+        }
+
+        TaskPoolUpdate((TaskPool*)&work[0x40C]);
+        TaskPoolUpdate((TaskPool*)&work[0x420]);
+
+        if (GetKeysPressed() & 8) {
+            work[0x504] = 1;
+        }
+        work[0x507] = 4;
+        return 1;
+    }
+
+    if (*(s8*)&work[0x507] > 0) {
+        TaskPoolUpdate((TaskPool*)&work[0x40C]);
+        TaskPoolUpdate((TaskPool*)&work[0x420]);
+        work[0x507]--;
+        return 1;
+    }
+
+    if (work[0x504] != 0) {
+        if (func_080A7300(work) != 0 && func_080A734C(work) != 0) {
+            SetTaskUpdate(a, (void*)func_080A6388);
+            func_08006184(0, 4);
+            m4aSongNumStart(103);
+            return 1;
+        }
+        work[0x504] = 0;
+    }
+
+    switch (GetKeysRepeat()) {
+    case 64:
+        if (*(s16*)&work[0x4CA] > 0) {
+            (*(s16*)&work[0x4CA])--;
+            work[0x4EC] = 4;
+            m4aSongNumStart(121);
+        } else {
+            func_080A6A38(work);
+        }
+        func_080A6FAC((UnkStruct_080A6FAC*)work);
+        break;
+    case 128:
+        if (*(s16*)&work[0x4CA] <= 2) {
+            (*(s16*)&work[0x4CA])++;
+            work[0x4EC] = 4;
+            m4aSongNumStart(121);
+        } else {
+            func_080A69A0(work);
+
+            if (work[0x508] != 0) {
+                if (*(u16*)&work[0x4BA] <= 3) {
+                    *(s32*)&work[0x4B4] = gUnk_09035956[*(s16*)&work[0x4BA]] << 8;
+                } else {
+                    *(s32*)&work[0x4B4] = 0xFFFF0000;
+                }
+            }
+        }
+        func_080A6FAC((UnkStruct_080A6FAC*)work);
+        break;
+    case 32:
+        if (*(s16*)&work[0x4C8] > 0) {
+            (*(s16*)&work[0x4C8])--;
+            work[0x4EC] = 4;
+            m4aSongNumStart(121);
+        }
+        func_080A6FAC((UnkStruct_080A6FAC*)work);
+        break;
+    case 16:
+        if (*(s16*)&work[0x4C8] <= 1) {
+            (*(s16*)&work[0x4C8])++;
+            work[0x4EC] = 4;
+            m4aSongNumStart(121);
+        }
+        func_080A6FAC((UnkStruct_080A6FAC*)work);
+        break;
+    case 8:
+        work[0x50C] = 7;
+        m4aSongNumStart(103);
+        func_08006184(0, 4);
+        SetTaskUpdate(a, (void*)func_080A6388);
+        return 1;
+    case 2:
+        work[0x50C] = 8;
+        m4aSongNumStart(103);
+        SetTaskUpdate(a, (void*)func_080A63B8);
+        return 1;
+    }
+
+    *(s32*)&work[0x3DC] = (s32)func_080A6AE8(work);
+    ApproachValue((s32*)&work[0x48C], gUnk_09035950[*(s16*)&work[0x4C8]] << 8, work[0x4EC]);
+    ApproachValue((s32*)&work[0x490], gUnk_09035956[*(s16*)&work[0x4CA]] << 8, work[0x4EC]);
+
+    if (work[0x4EC] != 0) {
+        work[0x4EC]--;
+    }
+
+    *(s32*)&work[0x3E0] = *(s32*)&work[0x3DC];
+    work[0x4E8] = *(u16*)&work[0x4C8];
+    work[0x4E9] = *(u16*)&work[0x4CA];
+    TaskPoolUpdate((TaskPool*)&work[0x40C]);
+    TaskPoolUpdate((TaskPool*)&work[0x420]);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_080A5FF4.s");
+#endif
 s32 func_080A6388(u8* work) {
     if (func_08006314() == 0) {
         return 0;
