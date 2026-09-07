@@ -23,10 +23,10 @@ void task_bos_tm_body_0(TmBodyWork* work, TmWork* arg) {
     work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
     work->palette = LoadObjPalette(gUnk_096FB2A4, 0x60);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
-    work->unk_124 = gUnk_09EF3950;
-    work->unk_240 = gUnk_09EF3958;
-    work->unk_35C = gUnk_09EF397C;
-    work->unk_478 = gUnk_09EF3960;
+    work->gfx = gUnk_09EF3950;
+    work->gfx2 = gUnk_09EF3958;
+    work->gfx3 = gUnk_09EF397C;
+    work->gfx4 = gUnk_09EF3960;
     work->unk_000 = arg;
     work->unk_000->unk_40 = ((u16*)work->tiles)[3];
     work->unk_000->unk_42 += ((u16*)work->tiles)[4];
@@ -107,16 +107,16 @@ void task_bos_tm_body_2(TmBodyWork* work) {
     s2 = (BosSub*)work->unk_248;
     s3 = (BosSub*)work->unk_364;
     WorldToScreen(&x, &y, s0->x, s0->y, s0->z);
-    DrawSprite(x, y, work->unk_124, work->tiles, pal, a1, 0x800,
+    DrawSprite(x, y, work->gfx, work->tiles, pal, a1, 0x800,
                (u16)(-4101 - (s0->y >> 8) * 4));
     WorldToScreen(&x, &y, s1->x, s1->y, s1->z - 0x1900);
-    DrawSprite(x, y, work->unk_240, work->tiles, pal, a2, 0x800,
+    DrawSprite(x, y, work->gfx2, work->tiles, pal, a2, 0x800,
                (u16)(-4100 - (s1->y >> 8) * 4));
     WorldToScreen(&x, &y, s2->x, s2->y, s2->z);
-    DrawSprite(x, y, work->unk_35C, work->tiles, pal, 0, mode,
+    DrawSprite(x, y, work->gfx3, work->tiles, pal, 0, mode,
                (u16)(-4100 - (s2->y >> 8) * 4));
     WorldToScreen(&x, &y, s3->x, s3->y, s3->z);
-    DrawSprite(x, y, work->unk_478, work->tiles, pal, 0, mode,
+    DrawSprite(x, y, work->gfx4, work->tiles, pal, 0, mode,
                (u16)(-4100 - (s3->y >> 8) * 4));
 }
 
@@ -5922,8 +5922,8 @@ void task_bos_dsd_ita_0(DsdItaWork* work, void* arg) {
     work->unk_080 = 0;
     func_080122AC(&work->unk_004, 7, 0x20, 3);
     func_08012324(&work->unk_004, work->x, work->y, work->z);
-    work->unk_088 = (u32)gUnk_09EF3BF8[0];
-    work->unk_08C = (u32)gUnk_09EF3C18;
+    work->gfx = (u32)gUnk_09EF3BF8[0];
+    work->gfx2 = (u32)gUnk_09EF3C18;
 }
 
 u8 task_bos_dsd_ita_1(DsdItaWork* work) {
@@ -6013,7 +6013,7 @@ void task_bos_dsd_ita_2(DsdItaWork* work) {
     }
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    DrawSprite(x, y, work->unk_088, work->unk_000->tiles2, work->unk_000->palette2, 0, pal, prio);
+    DrawSprite(x, y, work->gfx, work->unk_000->tiles2, work->unk_000->palette2, 0, pal, prio);
 
     if (work->z >= 0 && gBtlWork->unk_024 == 0x100) {
         affine = 0;
@@ -6034,7 +6034,7 @@ void task_bos_dsd_ita_2(DsdItaWork* work) {
     }
 
     WorldToScreen(&x, &y, work->x, work->y, 0);
-    DrawSprite(x, y, work->unk_08C, work->unk_000->tiles2, work->unk_000->palette3, affine, 0xC00, 0xFFF0);
+    DrawSprite(x, y, work->gfx2, work->unk_000->tiles2, work->unk_000->palette3, affine, 0xC00, 0xFFF0);
 }
 
 void task_bos_dsd_ita_3(DsdItaWork* work) {
@@ -6122,7 +6122,7 @@ void task_bos_dsd_rock_0(DsdRockWork* work, DsdWork* arg) {
 
     work->unk_00 = arg;
     work->unk_20 = GetRandom() % 2;
-    work->unk_1C = gUnk_09EF3BF8[GetRandom() % 3 + 1];
+    work->gfx = gUnk_09EF3BF8[GetRandom() % 3 + 1];
 
     if (work->unk_00->unk_35C > 0) {
         if (work->unk_20 != 0) {
@@ -6188,7 +6188,7 @@ void task_bos_dsd_rock_2(DsdRockWork* work) {
     }
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    DrawSprite(x, y, work->unk_1C, work->unk_00->tiles2, work->unk_00->palette2, affine, prio, h);
+    DrawSprite(x, y, work->gfx, work->unk_00->tiles2, work->unk_00->palette2, affine, prio, h);
 }
 
 void task_bos_dsd_rock_3(void) {
@@ -6204,7 +6204,7 @@ void task_bos_dsd_circle_0(DsdCircleWork* work, void* arg) {
     work->unk_1A = 0;
     work->unk_1C = 0;
     work->unk_18 = 0;
-    work->unk_04 = gUnk_09EF3C50[0];
+    work->gfx = gUnk_09EF3C50[0];
 }
 
 #ifdef NON_MATCHING
@@ -6223,7 +6223,7 @@ u8 task_bos_dsd_circle_1(DsdCircleWork* work) {
     switch (d->unk_350) {
     case 1:
         work->unk_1A = work->unk_00->unk_354 - 21;
-        work->unk_04 = gUnk_09EF3C50[work->unk_1A];
+        work->gfx = gUnk_09EF3C50[work->unk_1A];
         work->x = (gUnk_0961A89E[work->unk_1A] << 8) + 0xDC00;
         work->y = (gUnk_0961A8B0[work->unk_1A] << 8) + 0x16800;
         break;
@@ -6257,13 +6257,13 @@ u8 task_bos_dsd_circle_1(DsdCircleWork* work) {
         break;
     case 5:
         work->unk_1A = work->unk_00->unk_354 - 21;
-        work->unk_04 = gUnk_09EF3C50[work->unk_1A];
+        work->gfx = gUnk_09EF3C50[work->unk_1A];
         work->x = (gUnk_0961A89E[work->unk_1A] << 8) + 0xDC00;
         work->y = (gUnk_0961A8B0[work->unk_1A] << 8) + 0x16800;
         break;
     case 6:
         work->unk_1A = 0;
-        work->unk_04 = gUnk_09EF3C50[work->unk_1A];
+        work->gfx = gUnk_09EF3C50[work->unk_1A];
         work->x = (gUnk_0961A89E[work->unk_1A] << 8) + 0xDC00;
         work->y = (gUnk_0961A8B0[work->unk_1A] << 8) + 0x16800;
         break;
@@ -6305,7 +6305,7 @@ void task_bos_dsd_circle_2(DsdCircleWork* work) {
     s16 y;
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    DrawSprite(x, y, work->unk_04, work->unk_00->tiles, work->unk_00->palette, 0, 0xC00, 0xFFFF);
+    DrawSprite(x, y, work->gfx, work->unk_00->tiles, work->unk_00->palette, 0, 0xC00, 0xFFFF);
 }
 
 void task_bos_dsd_circle_3(void) {
@@ -6332,7 +6332,7 @@ void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
     work->unk_1C = gSineTable[work->unk_28] * work->unk_2C >> 8;
     work->unk_20 = 0;
     work->unk_24 = -gSineTable[work->unk_28 + 0x40] * work->unk_2C >> 8;
-    work->unk_44 = gUnk_08B22CBC;
+    work->gfx = gUnk_08B22CBC;
 }
 
 u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
@@ -6419,7 +6419,7 @@ void task_bos_dsd_energy1_2(DsdEnergy1Work* work) {
         }
 
         WorldToScreen(&x, &y, work->unk_04, work->unk_08, 0);
-        DrawSprite(x, y, work->unk_44, work->unk_00->tiles3, work->unk_00->palette4, affine, 0xC00, 0xFFF0);
+        DrawSprite(x, y, work->gfx, work->unk_00->tiles3, work->unk_00->palette4, affine, 0xC00, 0xFFF0);
     }
 }
 
@@ -6494,7 +6494,7 @@ void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
     work->unk_28 = -0x500;
     work->unk_34 = 0;
     work->unk_3C = 0;
-    work->unk_38 = gUnk_08B22CBC;
+    work->gfx = gUnk_08B22CBC;
     func_08014588(work->unk_04, work->unk_08, work->unk_0C, work->unk_10, work->unk_32, 0);
     m4aSongNumStart(0x2C0);
 
@@ -6654,7 +6654,7 @@ void task_bos_dsd_energy2_2(DsdEnergy2Work* work) {
         }
 
         WorldToScreen(&x, &y, work->unk_04 + 0x100, work->unk_08, 0);
-        DrawSprite(x, y, work->unk_38, work->unk_00->tiles3, work->unk_00->palette4, affine, 0xC00, 0xFFF0);
+        DrawSprite(x, y, work->gfx, work->unk_00->tiles3, work->unk_00->palette4, affine, 0xC00, 0xFFF0);
     }
 }
 
