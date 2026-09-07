@@ -22257,7 +22257,6 @@ u8 func_080AE274(s32 a, s32 b) {
 
     return r;
 }
-#ifndef VERSION_EU
 s32 func_080AE28C(u32* p) {
     u32 v[6];
 
@@ -22361,8 +22360,8 @@ s32 func_080AE28C(u32* p) {
 
     return 106;
 }
-#else
-INCLUDE_ASM("card/func_080AE28C.s");
+#ifdef VERSION_EU
+INCLUDE_ASM("card/eu_080AB9FC.s");
 #endif
 void task_print_0(void) {
     func_0809D1FC(0);

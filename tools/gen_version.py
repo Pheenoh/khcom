@@ -225,6 +225,9 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09F6FDB4": 0x09F6FDB4,
         "gUnkEu_09F6FDDC": 0x09F6FDDC,
         "gUnkEu_090CE9F4": 0x090CE9F4,
+        "eu_080AB9FC": 0x080AB9FC,
+        "eu_080ABA38": 0x080ABA38,
+        "eu_080ABA7C": 0x080ABA7C,
         "gUnkEu_09F72BFC": 0x09F72BFC,
         "gUnkEu_09F7434C": 0x09F7434C,
         "gUnkEu_09F74360": 0x09F74360,
@@ -351,7 +354,7 @@ TARGET_ONLY_SYMBOLS = {
 
 TARGET_EXTRA_LABELS = {
     "eu": [0x080059F4, 0x08005A1C, 0x08005ADC, 0x0805E968, 0x0805E9AC, 0x080C2740, 0x080DA830,
-           0x080DA848, 0x080DA860],
+           0x080DA848, 0x080DA860, 0x080ABA38, 0x080ABA7C],
 }
 
 TARGET_FUNC_SIZE = {
@@ -409,6 +412,7 @@ TARGET_FUNC_SIZE = {
         "func_0808B398": 0x44,
         "func_0808B3DC": 0x290,
         "func_0808B238": 0xd4,
+        "func_080AE28C": 0x2e0,
         "mode_sioError_0": 0x15c,
         "mode_jiminy_0": 0x4a8,
         "func_08064EF4": 0x174,
