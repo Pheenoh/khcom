@@ -44,8 +44,6 @@ extern Mode gModeLang;
 #endif
 
 void SetModeUpdate(void (*fn)(void));
-void ModeRequest(Mode* mode, s32 arg);
-void ModeRequestHeapReset(Mode* mode, s32 arg);
 void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

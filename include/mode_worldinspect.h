@@ -4,6 +4,7 @@
 #include "types.h"
 #include "text_types.h"
 #include "main.h"
+#include "key.h"
 
 typedef struct UnkStruct_09EF9488 {
     u8 unk_00[0x14];
@@ -29,6 +30,5 @@ void func_080E052C(u8 a);
 void func_080FF330(void);
 void func_080FF794(void);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-u16 GetKeysRepeat(void);
 
 #endif /* GUARD_MODE_WORLDINSPECT_H */

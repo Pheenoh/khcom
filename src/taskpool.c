@@ -39,8 +39,6 @@ void func_08001080(void);
 void func_0800109C(void (*fn)(void));
 void func_080010A8(void);
 u8 IsModeStarted(void);
-void ModeRequest(Mode* mode, s32 arg);
-void ModeRequestHeapReset(Mode* mode, s32 arg);
 void ModeUpdate(void);
 void SetModeUpdate(void (*fn)(void));
 void func_08001254(void);

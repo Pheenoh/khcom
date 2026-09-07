@@ -230,7 +230,6 @@ void SioKeyStateUpdateA(u16 a);
 void SioKeyStateUpdateB(u16 a);
 u16* func_08083C94(void);
 u16* func_08083D7C(void);
-void ModeRequest(Mode* mode, s32 arg);
 void TaskPoolInit(TaskPool* a, s32 count);
 u16 GetRandom(void);
 void SeedRandom(u32 seed);

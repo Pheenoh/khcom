@@ -157,7 +157,6 @@ typedef struct LockonWork {
 
 void* EwramAlloc(s32 size);
 void EwramFree(void* p);
-u16 GetKeysRepeat(void);
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void* AllocObjTiles(s32 a, s32 b);
@@ -180,7 +179,6 @@ void TaskPoolUpdate(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* a);
 UnkStruct_02034A5C* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
-void ModeRequest(Mode* mode, s32 arg);
 void UpdatePlayTime(void);
 void func_080B0754(void);
 void func_080E052C(u8 a);
