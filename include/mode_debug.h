@@ -7,6 +7,7 @@
 #include "anim.h"
 #include "mode.h"
 #include "key.h"
+#include "m4a.h"
 typedef struct DebugWork {
     s8 unk_00;
     s8 unk_01;
@@ -50,8 +51,6 @@ void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
 void func_080605A4(s32 a);
 void func_08085C3C(void);
 void func_08085FB0(void);
-void m4aSongNumStart(u16 id);
-void m4aMPlayAllStop(void);
 
 void mode_debug_0(void);
 void mode_debug_1(void);

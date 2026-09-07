@@ -9,6 +9,7 @@
 #include "anim.h"
 #include "mode.h"
 #include "malloc.h"
+#include "m4a.h"
 
 typedef struct CardBack {
     void* unk_00;
@@ -150,7 +151,6 @@ void* GetBgScreenBase(s32 bg);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 void TaskPoolDestroy(TaskPool* a);
-void m4aSongNumStart(u16 n);
 u16 AnimGetFrame(AnimState* a);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);

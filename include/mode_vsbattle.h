@@ -5,6 +5,7 @@
 #include "anim.h"
 #include "taskpool.h"
 #include "malloc.h"
+#include "m4a.h"
 
 typedef struct VsActorSub {
     u8 unk_00[0x30];
@@ -294,7 +295,6 @@ void ReleaseObjPalette(u8* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-void m4aSongNumStart(u16 id);
 u8 AnimIsFinished(AnimState* a);
 void ApproachValue(s32* value, s32 target, u16 steps);
 u16 GetRandom(void);

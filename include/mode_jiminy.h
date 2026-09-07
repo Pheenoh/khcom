@@ -7,6 +7,7 @@
 #include "main.h"
 #include "anim.h"
 #include "obj.h"
+#include "m4a.h"
 #ifdef VERSION_EU
 extern u32 gLanguage;
 extern void* eu_0805E924(void* strings);
@@ -150,7 +151,6 @@ extern u8 gUnk_09EED2BC[];
 extern u8 gUnk_09EED320[];
 extern GameState gGameState;
 
-void* EwramAlloc(u32 size);
 void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
@@ -174,7 +174,6 @@ void DrawSprite(s16 x, s16 y, void* sprite, void* tiles, void* pal, s32 f, s32 g
 void LoadObjPaletteBank(u16 bank, void* src);
 void SetBlendAlpha(u16 a, u16 b);
 void UpdatePlayTime(void);
-void m4aSongNumStart(u16 id);
 s32 abs(s32 x);
 void SetModeUpdate(void (*fn)(void));
 void ApproachValue(s32* value, s32 target, u16 steps);

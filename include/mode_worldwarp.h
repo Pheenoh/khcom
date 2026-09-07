@@ -6,6 +6,7 @@
 #include "taskpool.h"
 #include "main.h"
 #include "anim.h"
+#include "m4a.h"
 typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
@@ -163,7 +164,6 @@ void func_08065AE0(TextSlot* p, s32 n);
 void func_080063A8(void);
 u8 func_080A42C8(void);
 void func_080A42E0(void);
-void m4aSongNumStart(u16 id);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void* AnimUpdate(AnimState* a);
 void SetBgScroll(s32 a, u16 b, u16 c);

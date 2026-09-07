@@ -8,6 +8,7 @@
 #include "malloc.h"
 #include "anim.h"
 #include "mode.h"
+#include "m4a.h"
 typedef struct UnkStruct_09EE4C80 {
     void* unk_00;
     void* unk_04;
@@ -161,7 +162,6 @@ void func_081075FC(void);
 void func_0810764C(void);
 u16 func_08107D24(void);
 void func_081085E8(void);
-void m4aSongNumStart(u16 n);
 void DisableBg(s32 bg);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006184(s32 a, u16 b);

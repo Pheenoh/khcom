@@ -9,6 +9,7 @@
 #include "anim.h"
 #include "mode.h"
 #include "taskpool.h"
+#include "m4a.h"
 typedef struct SioAnimDef {
     void* unk_00;
     void* unk_04;
@@ -552,8 +553,6 @@ void func_080C5DC0(s32 (*a)(void), s32 (*b)(void));
 s32 func_080C6008(void);
 s32 func_080C60D8(void);
 void func_080C61D4(void);
-void m4aSongNumStart(u16 id);
-void m4aMPlayAllStop(void);
 u8 GetActiveDeckIndex(void);
 void func_080C57B4(void);
 s32 func_080C5E58(void);
