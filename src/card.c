@@ -7137,35 +7137,34 @@ INCLUDE_ASM("card/func_080864A4.s");
 #endif
 INCLUDE_ASM("card/func_08086650.s");
 INCLUDE_ASM("card/func_08086860.s");
-#ifndef VERSION_EU
 u8 func_0808686C(u8* work, void* a) {
-    *(void**)&work[0x4F0] = AnimUpdate(&work[0x800]);
-    *(void**)&work[0x4F4] = AnimUpdate(&work[0x818]);
+    *(void**)&work[0x4F0] = AnimUpdate(&work[CARDWORK(0x800)]);
+    *(void**)&work[0x4F4] = AnimUpdate(&work[CARDWORK(0x818)]);
 
     if (!func_08006314()) {
-        switch (work[0x8D0]) {
+        switch (work[CARDWORK(0x8D0)]) {
         case 0:
-            ApproachValue(&work[0x860], 0, work[0x8B7]);
-            ApproachValue(&work[0x864], 0x9800, work[0x8B7]);
-            work[0x8B7]--;
+            ApproachValue(&work[CARDWORK(0x860)], 0, work[CARDWORK(0x8B7)]);
+            ApproachValue(&work[CARDWORK(0x864)], 0x9800, work[CARDWORK(0x8B7)]);
+            work[CARDWORK(0x8B7)]--;
 
-            if (work[0x8B7] == 0) {
-                work[0x8B7] = 16;
-                work[0x8D0]++;
+            if (work[CARDWORK(0x8B7)] == 0) {
+                work[CARDWORK(0x8B7)] = 16;
+                work[CARDWORK(0x8D0)]++;
             }
             break;
         case 1:
-            ApproachValue(&work[0x868], 0, work[0x8B7]);
-            work[0x8B7]--;
+            ApproachValue(&work[CARDWORK(0x868)], 0, work[CARDWORK(0x8B7)]);
+            work[CARDWORK(0x8B7)]--;
 
-            if (work[0x8B7] == 0) {
+            if (work[CARDWORK(0x8B7)] == 0) {
                 ReleaseObjTiles(*(void**)&work[0x4BC]);
                 ReleaseObjTiles(*(void**)&work[0x18]);
                 ReleaseObjPalette(*(void**)&work[0x4C0]);
                 *(void**)&work[0x4BC] = 0;
                 *(void**)&work[0x18] = 0;
                 *(void**)&work[0x4C0] = 0;
-                work[0x8B0] = 1;
+                work[CARDWORK(0x8B0)] = 1;
                 LoadBgMap(3, gUnk_09512AB8, 0x800);
                 SetTaskUpdate(a, (void*)func_080889DC);
             }
@@ -7175,9 +7174,6 @@ u8 func_0808686C(u8* work, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808686C.s");
-#endif
 u8 func_08086984(u8* work, void* a) {
     func_0808D6C4(work);
 #ifdef VERSION_EU
@@ -19823,7 +19819,6 @@ void func_080A6BB4(u8* work) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080A6C50(u8 deck) {
     u8 d[2];
     u8 e[2];
@@ -19849,14 +19844,18 @@ void func_080A6C50(u8 deck) {
         break;
     }
 
+#ifdef VERSION_EU
+    RequestDma3Copy(&gUnk_0940F938[(d[0] + 1) * 32], (u8*)base + 0x2C00, 32);
+    RequestDma3Copy(&gUnk_0940F938[(d[1] + 1) * 32], (u8*)base + 0x2C20, 32);
+    RequestDma3Copy(&gUnk_0940F938[(e[0] + 1) * 32], (u8*)base + 0x2C40, 32);
+    RequestDma3Copy(&gUnk_0940F938[(e[1] + 1) * 32], (u8*)base + 0x2C60, 32);
+#else
     RequestDma3Copy(&gUnk_0940F938[(d[0] + 1) * 32], (u8*)base + 0x20, 32);
     RequestDma3Copy(&gUnk_0940F938[(d[1] + 1) * 32], (u8*)base + 0x40, 32);
     RequestDma3Copy(&gUnk_0940F938[(e[0] + 1) * 32], (u8*)base + 0x60, 32);
     RequestDma3Copy(&gUnk_0940F938[(e[1] + 1) * 32], (u8*)base + 0x80, 32);
-}
-#else
-INCLUDE_ASM("card/func_080A6C50.s");
 #endif
+}
 
 void func_080A6D0C(void) {
     u8 d[3];
