@@ -350,9 +350,9 @@ typedef struct HadesWork {
     u16 unk_1C8;
     u16 unk_1CA;
     u8 unk_1CC[0x08];
-    void* unk_1D4;
-    void* unk_1D8;
-    void* unk_1DC;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
     AnimState unk_1E0;
     AnimState unk_1F8;
     AnimState unk_210;
