@@ -118,7 +118,7 @@ typedef struct DsdEnergy1Work {
     u8 unk_3E[0x2];
     s16 unk_40;
     u8 unk_42[0x2];
-    void* unk_44;
+    void* gfx;
     s8 unk_48;
     u8 unk_49[0x3];
 } DsdEnergy1Work;
@@ -142,7 +142,7 @@ typedef struct DsdEnergy2Work {
     s8 unk_34;
     u8 unk_35;
     u8 unk_36[0x2];
-    void* unk_38;
+    void* gfx;
     s8 unk_3C;
     u8 unk_3D[0x3];
 } DsdEnergy2Work;
@@ -155,14 +155,14 @@ typedef struct DsdRockWork {
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
-    void* unk_1C;
+    void* gfx;
     u8 unk_20;
     u8 unk_21[0x3];
 } DsdRockWork;
 
 typedef struct DsdCircleWork {
     DsdWork* unk_00;
-    void* unk_04;
+    void* gfx;
     s32 x;
     s32 y;
     s32 z;
@@ -220,8 +220,8 @@ typedef struct DsdItaWork {
     s16 unk_07E;
     s32 unk_080;
     u8 unk_084[0x4];
-    void* unk_088;
-    void* unk_08C;
+    void* gfx;
+    void* gfx2;
 } DsdItaWork;
 
 typedef struct TmTblWork {
@@ -509,22 +509,22 @@ typedef struct TmBodyWork {
     void* palette;
     void* palette2;
     u8 unk_010[0x114];
-    void* unk_124;
+    void* gfx;
     u8 unk_128;
     u8 unk_129[0x3];
     u8 unk_12C[0x2C];
     s16 unk_158;
     s16 unk_15A;
     u8 unk_15C[0xE4];
-    void* unk_240;
+    void* gfx2;
     u8 unk_244;
     u8 unk_245[0x3];
     u8 unk_248[0x114];
-    void* unk_35C;
+    void* gfx3;
     u8 unk_360;
     u8 unk_361[0x3];
     u8 unk_364[0x114];
-    void* unk_478;
+    void* gfx4;
     u8 unk_47C;
     u8 unk_47D[0x3];
     s16 unk_480;
