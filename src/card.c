@@ -304,7 +304,7 @@ void* func_08066904(void);
 u16 func_0806692C(u8* s, u16* out);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_0809D160(UnkStruct_0809CE88* w);
-void func_080A25E0(void);
+u8 func_080A25E0(u8* work, void* a);
 void func_08006954(void);
 u8 func_0809C4B0(u8* work, void* a);
 void func_0807CC2C(UnkStruct_02034AAC* p);
@@ -9886,7 +9886,42 @@ void func_0808F304(u8* work) {
 INCLUDE_ASM("card/func_0808F304.s");
 #endif
 
+#ifdef VERSION_US
+s32 func_0808F358(UnkStruct_0808F358* work) {
+    u8* src;
+    u8* dst;
+    s32 offset;
+    s32 zero;
+    s32 offset2;
+    u8 value;
+    u8* out;
+
+    if (work->unk_7C4 <= 7) {
+        m4aSongNumStart(102);
+        src = gUnk_09EE4B0C[work->unk_7C2];
+        offset = work->unk_7C4 * 2;
+        dst = work->unk_784;
+        out = &dst[offset];
+        value = src[work->unk_7C0 * 2];
+        zero = 0;
+        *out = value;
+        offset2 = work->unk_7C4 * 2;
+        offset2++;
+        dst[offset2] = src[work->unk_7C0 * 2 + 1];
+        offset = (work->unk_7C4 + 1) * 2;
+        dst[offset] = zero;
+        offset = (work->unk_7C4 + 1) * 2;
+        offset++;
+        dst[offset] = zero;
+        return 1;
+    } else {
+        m4aSongNumStart(105);
+        return 0;
+    }
+}
+#else
 INCLUDE_ASM("card/func_0808F358.s");
+#endif
 INCLUDE_ASM("card/func_0808F3E8.s");
 INCLUDE_ASM("card/func_0808F660.s");
 
@@ -18042,7 +18077,29 @@ s32 func_080A25B8(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_080A25B8.s");
 #endif
+#ifdef VERSION_US
+u8 func_080A25E0(u8* work, void* a) {
+    s8* counter = (s8*)&work[0x2AC];
+
+    if (*counter > 0) {
+        ApproachValue((s32*)&work[0x290], 0x6C00, *counter);
+        ApproachValue((s32*)&work[0x2A0], 0x6600, *counter);
+        ApproachValue((s32*)&work[0x2A4], 0x6600, *counter);
+        ApproachValue((s32*)&work[0x2A8], 0x6600, *counter);
+        (*counter)--;
+    } else if (*counter == 0) {
+        m4aSongNumStart(202);
+        work[0x2AC] = -1;
+    }
+
+    if (**(u8**)&work[0x2B4] == 0) {
+        return 0;
+    }
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_080A25E0.s");
+#endif
 INCLUDE_ASM("card/func_080A2678.s");
 #ifndef VERSION_JP
 void func_080A27EC(u8* work) {
