@@ -78,7 +78,6 @@ extern TaskDesc gTaskDescBosMd;
 extern TaskDesc gTaskDescBosPc;
 extern TaskDesc gTaskDescBosLst;
 
-void SetBgOverflow(s32 bg, u8 on);
 void SetBgSize(s32 a, s32 b);
 void func_08006120(s32 a, s32 b);
 void func_0800AB8C(void);

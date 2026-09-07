@@ -18,8 +18,6 @@ typedef struct GameState {
 } GameState;
 
 extern GameState gGameState;
-extern u16 gBldCnt;
-extern u16 gBldAlpha;
 extern s32 gTitleBgScale;
 extern s32 gTitleBgX;
 extern s32 gTitleBgY;
@@ -71,7 +69,6 @@ void func_080D5A4C(s32 a);
 void func_080D5B04(void);
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_080C75A4(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);
 void func_08000DE8(TaskPool* a, Task* t);
