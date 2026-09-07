@@ -74,7 +74,6 @@ def main():
     syms = text_symbols()
     bad = unaligned("jp")
     asm_only = handwritten()
-    bad_eu = unaligned("eu")
     done = attempted(args.ledger)
     rows = []
     guarded = False
@@ -100,7 +99,6 @@ def main():
         if size < 16:
             continue
         why = ""
-        note = "needs-eu-guard" if sym in bad_eu else ""
 
         if sym in asm_only:
             why = "handwritten-asm"
@@ -110,14 +108,14 @@ def main():
             why = "attempted"
         elif size > args.max_size:
             why = "large"
-        rows.append((size, sym, addr, why, note))
+        rows.append((size, sym, addr, why))
     rows.sort()
     n = 0
 
-    for size, sym, addr, why, note in rows:
+    for size, sym, addr, why in rows:
         if why and not args.all:
             continue
-        print("%-28s 0x%08X %5d %s" % (sym, addr, size, why or note))
+        print("%-28s 0x%08X %5d %s" % (sym, addr, size, why))
         n += 1
 
         if n >= args.n and not args.all:
