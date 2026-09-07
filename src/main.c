@@ -59,7 +59,11 @@ extern u16 gIntrCheck;
 extern const IntrFunc gIntrTableTemplate[14];
 
 void func_080C55DC(void);
+#ifdef VERSION_EU
+void ModeInit(u32 a);
+#else
 void ModeInit(void);
+#endif
 void ModeUpdate(void);
 void func_08001254(void);
 void func_080012A8(void);
@@ -113,7 +117,20 @@ void DisableHBlankIntr(void) {
 }
 
 #ifdef VERSION_EU
-INCLUDE_ASM("main/eu_08000334.s");
+void eu_08000334(void) {
+    u32 a;
+    u32 b;
+    u32 c;
+
+    RegisterRamReset(0xFF);
+    REG_WAITCNT = 0x45B6;
+    a = 0;
+    CpuSet(&a, (void*)0x02000000, 0x05010000);
+    b = 0;
+    CpuSet(&b, (void*)0x03000000, 0x05001F80);
+    c = 0;
+    CpuSet(&c, (void*)0x06000000, 0x05006000);
+}
 #endif
 
 #ifndef VERSION_EU
@@ -166,7 +183,50 @@ void InitSystem(void) {
     ModeInit();
 }
 #else
-INCLUDE_ASM("main/InitSystem.s");
+void InitSystem(void) {
+    vu32* dma;
+    u32 flag;
+
+    if (gUnk_03006C18[0] == 0xFEDCBA98) {
+        eu_08000334();
+        flag = 1;
+    } else {
+        eu_08000334();
+        flag = 0;
+    }
+    gVBlankEndVCount = 0;
+    gFrameSyncFlags = 0;
+    gVBlankHandlerOverride = 0;
+    gUnkEu_03007484 = 0;
+    REG_IME = 0;
+    dma = (vu32*)0x040000D4;
+    dma[0] = (vu32)IrqHandler;
+    dma[1] = (vu32)gIntrHandler;
+    dma[2] = 0x84000200;
+    dma[2];
+    INTR_VECTOR = gIntrHandler;
+    REG_IE = 0x2000;
+    REG_IF = 0x2000;
+    REG_IME = 1;
+    InitIntrTable();
+    m4aSoundInit();
+    m4aSoundVSyncOff();
+    IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
+    EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
+    VTransInit();
+    SpriteInit();
+    BgInit();
+    FadeInit();
+    PalletInit();
+    SioKeyInit();
+    ResetPaletteEffect();
+    ResetKeyState();
+    SeedRandom(0x12D687);
+    InitDisplayRegs();
+    SaveInitSram();
+    func_08116CEC();
+    ModeInit(flag);
+}
 #endif
 
 void AgbMain(void) {
