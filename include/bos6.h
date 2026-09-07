@@ -138,11 +138,11 @@ typedef struct PcWork {
     u8 unk_032[0x2];
     u16 unk_034;
     u8 unk_036[0xA];
-    u32 unk_040;
-    u32 unk_044;
-    u32 unk_048;
-    u32 unk_04C;
-    u32 unk_050;
+    u32 tiles;
+    u32 tiles2;
+    u32 tiles3;
+    u32 palette;
+    u32 palette2;
     u32 unk_054;
     u32 unk_058;
     u32 unk_05C;

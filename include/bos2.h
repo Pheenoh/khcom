@@ -601,7 +601,7 @@ typedef struct TmArmPos {
 } TmArmPos;
 
 typedef struct TmArmWork {
-    u32 unk_000;
+    u32 tiles;
     u16* palette;
     u32 palette2;
     TmArmSrc* unk_00C;
@@ -627,7 +627,7 @@ typedef struct TmArmWork {
     u8 unk_230;
     u8 unk_231[0x3];
     u32 unk_234;
-    u32 unk_238;
+    u32 tiles2;
     AnimState anim;
     u8 unk_254;
     u8 unk_255[0x3];
@@ -668,8 +668,8 @@ typedef struct TmFootWork {
     u8 unk_004;
     u8 unk_005[0x3];
     u32 tiles;
-    u32 unk_00C;
-    u32 unk_010;
+    u32 tiles2;
+    u32 tiles3;
     u32 palette;
     u32 palette2;
     u32 unk_01C;
