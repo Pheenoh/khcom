@@ -182,31 +182,38 @@ void AgbMain(void) {
     InitSystem();
     EnableVBlankIntr();
     bit = 4;
-loop:
-    UpdateKeyState();
-    if (gSystemFlags & 1) {
-        func_080C55DC();
-        if (gSioStatus & 0x100) {
-            goto next;
-        }
-    }
-    {
-        u16 flags = gFrameSyncFlags;
-        set = 4;
-        if ((flags & bit) == 0) {
-            ModeUpdate();
-            {
-                u16 v = *(u16 *)&gFrameSyncFlags;
-                v |= set;
-                *(u16 *)&gFrameSyncFlags = v;
+    for (;;) {
+        UpdateKeyState();
+        if (gSystemFlags & 1) {
+            func_080C55DC();
+            if (!(gSioStatus & 0x100)) {
+                u16 flags = gFrameSyncFlags;
+                set = 4;
+                if ((flags & bit) == 0) {
+                    ModeUpdate();
+                    {
+                        u16 v = *(u16 *)&gFrameSyncFlags;
+                        v |= set;
+                        *(u16 *)&gFrameSyncFlags = v;
+                    }
+                }
+            }
+        } else {
+            u16 flags = gFrameSyncFlags;
+            set = 4;
+            if ((flags & bit) == 0) {
+                ModeUpdate();
+                {
+                    u16 v = *(u16 *)&gFrameSyncFlags;
+                    v |= set;
+                    *(u16 *)&gFrameSyncFlags = v;
+                }
             }
         }
+        ApplyIntrCallbacks();
+        VBlankIntrWait();
+        gFrameCounter++;
     }
-next:
-    ApplyIntrCallbacks();
-    VBlankIntrWait();
-    gFrameCounter++;
-    goto loop;
 }
 
 
