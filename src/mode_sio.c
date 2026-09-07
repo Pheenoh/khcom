@@ -894,7 +894,6 @@ void func_080B0494(void) {
     }
 }
 
-#ifndef VERSION_EU
 void mode_sio_btl_option_2(void) {
     ReleaseObjTiles(gSioBtlOptionWork->unk_008[0]);
     ReleaseObjPalette(gSioBtlOptionWork->unk_008[2]);
@@ -904,10 +903,17 @@ void mode_sio_btl_option_2(void) {
     ReleaseObjPalette(gSioBtlOptionWork->unk_14C);
     ReleaseObjPalette(gSioBtlOptionWork->unk_1A4);
     ReleaseObjPalette(gSioBtlOptionWork->palette6);
+#ifdef VERSION_EU
+    func_08065AE0(gSioBtlOptionWork->unk_054, 40);
+    func_08065AE0(gSioBtlOptionWork->unk_0FC, 20);
+    func_08065AE0(gSioBtlOptionWork->unk_154, 20);
+    func_08065AE0(gSioBtlOptionWork->unk_22C, 120);
+#else
     func_08065AE0(gSioBtlOptionWork->unk_054, 20);
     func_08065AE0(gSioBtlOptionWork->unk_0FC, 10);
     func_08065AE0(gSioBtlOptionWork->unk_154, 10);
     func_08065AE0(gSioBtlOptionWork->unk_22C, 60);
+#endif
     ReleaseObjTiles(gSioBtlOptionWork->tiles);
     ReleaseObjPalette(gSioBtlOptionWork->palette);
     ReleaseObjTiles(gSioBtlOptionWork->tiles2);
@@ -922,9 +928,6 @@ void mode_sio_btl_option_2(void) {
     ReleaseObjPalette(gSioBtlOptionWork->palette5[1]);
     EwramFree(gSioBtlOptionWork);
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sio_btl_option_2.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080B0634(void) {
