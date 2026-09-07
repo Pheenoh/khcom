@@ -4,6 +4,7 @@
 #include "types.h"
 #include "taskpool.h"
 #include "main.h"
+#include "engine.h"
 
 typedef struct GameState {
     u8 unk_000[0x08];
@@ -35,7 +36,6 @@ extern TaskDesc gTaskDescStatusBar;
 extern TaskDesc gTaskDescStatus;
 
 void BgReset(void);
-void SetBgMode0(void);
 void DisableBg(s32 bg);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgTiles(s32 bg, void* src, u16 size);

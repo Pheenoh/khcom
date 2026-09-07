@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "mode.h"
+#include "engine.h"
 typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
@@ -30,7 +31,6 @@ extern u8 gUnk_09801C98[];
 extern Mode gModeTitle;
 
 void ModeRequest(Mode* mode, s32 arg);
-void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);
