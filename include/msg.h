@@ -660,6 +660,9 @@ void LoadBgTiles(s32 bg, void* src, u16 size);
 void SetBgPriority(s32 bg, u16 priority);
 void TaskPoolInit(TaskPool* a, s32 count);
 void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c);
+#ifdef VERSION_US
+s32 func_08064DD4(u16* a);
+#endif
 u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void m4aMPlayAllStop(void);
 u8 func_08006314(void);
