@@ -1917,7 +1917,6 @@ void func_08005244(s32 bg, u16 x, u16 y) {
 INCLUDE_ASM("engine/func_08005244.s");
 #endif
 
-#ifndef VERSION_EU
 u16 func_08005458(s32 bg) {
     BgEntry* e = &gBgEntries[bg];
 
@@ -1926,11 +1925,7 @@ u16 func_08005458(s32 bg) {
     }
     return e->unk_0A;
 }
-#else
-INCLUDE_ASM("engine/func_08005458.s");
-#endif
 
-#ifndef VERSION_EU
 u16 func_08005474(s32 bg) {
     BgEntry* e = &gBgEntries[bg];
 
@@ -1939,9 +1934,6 @@ u16 func_08005474(s32 bg) {
     }
     return e->unk_0C;
 }
-#else
-INCLUDE_ASM("engine/func_08005474.s");
-#endif
 
 void SetBgMosaic(s32 bg, u8 on) {
     if (on) {

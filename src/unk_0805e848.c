@@ -1,7 +1,20 @@
 #include "macros.h"
 #include "tutorial.h"
 
-#ifndef VERSION_JP
+#ifdef VERSION_JP
+u16 func_0805E848(u8* str) {
+    s32 i;
+
+    i = 0;
+loop:
+    if (str[i] == 0) {
+        return i / 2;
+    }
+    i++;
+    goto loop;
+}
+ALIGN_ZERO(2);
+#else
 s16 func_0805E848(u16* widths, u16 count) {
     s16 i;
     s16 total;
@@ -18,11 +31,28 @@ s16 func_0805E848(u16* widths, u16 count) {
     }
     return 120 - total / 2;
 }
-#else
-INCLUDE_ASM("unk_0805e848/func_0805E848.s");
-#endif
 
-#ifdef VERSION_US
+#ifdef VERSION_EU
+u16 func_0805E89C(u8* str) {
+    s32 i;
+    s32 n;
+    u8 c;
+
+    i = 0;
+    n = 0;
+    for (;;) {
+        c = str[i];
+        if (c == 0) {
+            return n;
+        }
+        if (c != 0x20) {
+            n++;
+        }
+        i++;
+    }
+}
+ALIGN_ZERO(2);
+#else
 u16 func_0805E89C(u16* str) {
     s32 n;
     u16 c;
@@ -41,6 +71,5 @@ u16 func_0805E89C(u16* str) {
         str++;
     }
 }
-#else
-INCLUDE_ASM("unk_0805e848/func_0805E89C.s");
+#endif
 #endif

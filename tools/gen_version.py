@@ -276,6 +276,8 @@ TARGET_FUNC_SIZE = {
         "task_title_logo_2": 196,
     },
     "eu": {
+        "func_0805E89C": 32,
+        "func_0801CB44": 60,
         "func_080A2980": 260,
         "func_08088EB4": 136,
         "func_0808CA78": 228,
@@ -309,6 +311,14 @@ TARGET_FUNC_SIZE = {
         "task_title_lumichange_0": 264,
         "task_title_menu_0": 672,
         "task_title_obj_0": 700,
+    },
+}
+
+TARGET_FUNC_ADDR = {
+    "eu": {
+        "func_08005458": 0x08005600,
+        "func_08005474": 0x08005620,
+        "func_0801CB44": 0x08020A14,
     },
 }
 
@@ -571,6 +581,12 @@ def main():
     us = Path("roms/B8CE.gba").read_bytes()
     ot = Path(f"roms/{code}.gba").read_bytes()
     rows = load_funcmap(f"config/{ver}/funcmap.txt")
+    for r in rows:
+        at = TARGET_FUNC_ADDR.get(ver, {}).get(r[0])
+        if at is not None:
+            r[3] = at
+            if r[4] == "absent":
+                r[4] = "entry"
 
     owner = {}
     cur = None
@@ -611,6 +627,12 @@ def main():
     code_end, how_end = tr(CODE_HI)
     if code_end != guess_end:
         rows = load_funcmap(f"config/{ver}/funcmap.txt")
+        for r in rows:
+            at = TARGET_FUNC_ADDR.get(ver, {}).get(r[0])
+            if at is not None:
+                r[3] = at
+                if r[4] == "absent":
+                    r[4] = "entry"
         rows = complete(rows, code_end, flexible, owner, clean, fixed)
         res = symbol_map(rows, us, ot)
         res.update(anchors)
