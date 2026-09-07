@@ -1942,7 +1942,78 @@ u16 func_08064D04(s32 a) {
     return gUnk_02034A84->unk_0C->unk_06;
 }
 
+#ifdef VERSION_US
+s32 func_08064DD4(u16* a) {
+    u16 sum;
+    s32 v;
+
+    sum = 0;
+
+    while (*a != 0) {
+        v = 0;
+
+        if (*a != 10) {
+            if ((u16)(*a - 32) <= 223) {
+                v = *a;
+            } else {
+                switch (*a) {
+                case 0xE000:
+                    v = 25;
+                    break;
+                case 0x2191:
+                    v = 10;
+                    break;
+                case 0x2193:
+                    v = 11;
+                    break;
+                case 0x2190:
+                    v = 12;
+                    break;
+                case 0x2192:
+                    v = 13;
+                    break;
+                case 0x300C:
+                    v = 1;
+                    break;
+                case 0x300D:
+                    v = 2;
+                    break;
+                case 0x300E:
+                    v = 3;
+                    break;
+                case 0x300F:
+                    v = 4;
+                    break;
+                case 0x203B:
+                    v = 6;
+                    break;
+                case 0x266A:
+                    v = 18;
+                    break;
+                case 0x2642:
+                    v = 8;
+                    break;
+                case 0x2640:
+                    v = 9;
+                    break;
+                case 0x2605:
+                    v = 21;
+                    break;
+                }
+            }
+
+            sum = (u16)(gUnk_08F7D438[v] + ((s32)(sum << 16) >> 16));
+        }
+
+        a++;
+    }
+
+    return (s16)sum;
+}
+#else
 INCLUDE_ASM("msg/func_08064DD4.s");
+#endif
+
 #ifndef VERSION_EU
 u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
     s32 cx;
