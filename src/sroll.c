@@ -290,7 +290,39 @@ static s32 func_08114D2C(s32 x) {
     return x * x;
 }
 
-INCLUDE_ASM("sroll/task_sroll_b_secn_0.s");
+void task_sroll_b_secn_0(SrollBSecnWork* w, SrollBSecnArg* a) {
+    u32 i;
+
+    w->unk_00 = 0;
+    w->unk_04 = a->unk_04;
+    w->unk_08 = a->unk_08;
+    w->unk_0C = a->unk_0C;
+    w->unk_10 = a->unk_10;
+
+    if (a->unk_00 < 0) {
+#ifdef VERSION_JP
+        w->tiles = LoadObjTiles(gUnk_09C87A10, 590 * 32);
+#else
+        w->tiles = LoadObjTiles(gUnk_09C87A10, 606 * 32);
+#endif
+        w->palette = LoadObjPalette(gUnk_09D6CF34, 32);
+        AnimInit(&w->unk_1C, (s32)gUnk_09EFB834, (s32)gUnk_09EFB828);
+        AnimStart(&w->unk_1C, 0, 0);
+        AnimInit(&w->unk_34, (s32)gUnk_09EFB834, (s32)gUnk_09EFB828);
+        AnimStart(&w->unk_34, 0, 0);
+    } else {
+        w->tiles = LoadObjTiles(gUnk_09A54374[a->unk_00][0], *(u16*)&gUnk_09A54374[a->unk_00][1]);
+        w->palette = LoadObjPalette(gUnk_09D6BE74, 256);
+        AnimInit(&w->unk_1C, (s32)gUnk_09A54374[a->unk_00][2], (s32)gUnk_09A54374[a->unk_00][3]);
+        AnimStart(&w->unk_1C, 0, 0);
+        AnimInit(&w->unk_34, (s32)gUnk_09A54374[a->unk_00][2], (s32)gUnk_09A54374[a->unk_00][3]);
+        AnimStart(&w->unk_34, 1, 0);
+    }
+
+    for (i = 0; i < 8; i++) {
+        func_080062F4((w->palette->unk_06 + i) % 16 + 16, 1);
+    }
+}
 
 u8 task_sroll_b_secn_1(SrollBSecnWork* w) {
     u8 r;
@@ -1945,6 +1977,311 @@ void func_08117194(void) {
     }
 }
 
+#ifdef NON_MATCHING
+extern u8* gUnk_02038628;
+extern s32 gUnk_0203862C;
+extern s32 gUnk_02038630;
+extern s32* gUnk_02038634;
+extern s32 gUnk_02038638[];
+extern s32 gUnk_02038658[];
+extern u8 gUnk_09C43688[];
+extern u8 gUnk_09C436A8[];
+
+void func_081213C4(s32* a, s32* b, u8* c);
+void func_081213CC(s32* a, s32* b);
+void func_081213D4(s32* a, s32* b);
+
+static inline void ShiftInByte(void) {
+    gUnk_0203862C <<= 8;
+    gUnk_0203862C |= *gUnk_02038628++;
+}
+
+static inline s32 ReadBits(s32 n) {
+    if (gUnk_02038630 < n) {
+        ShiftInByte();
+        ShiftInByte();
+        gUnk_02038630 += 16;
+    }
+    gUnk_02038630 -= n;
+    return (gUnk_0203862C >> gUnk_02038630) & ((1 << n) - 1);
+}
+
+static inline s32 PeekByte(void) {
+    if (gUnk_02038630 < 8) {
+        ShiftInByte();
+        gUnk_02038630 += 8;
+    }
+    return (gUnk_0203862C >> (gUnk_02038630 - 8)) & 0xFF;
+}
+
+void _08117284(s32 p) {
+    s32 n;
+    s32 up;
+    s32 left;
+    s32 c;
+    s32 v;
+    s32 t;
+    s32 i;
+
+    n = ReadBits(6);
+    gUnk_02038638[1] = 0;
+    gUnk_02038638[2] = 0;
+    gUnk_02038638[3] = 0;
+    gUnk_02038638[4] = 0;
+    gUnk_02038638[5] = 0;
+    gUnk_02038638[6] = 0;
+    gUnk_02038638[7] = 0;
+    v = PeekByte();
+
+    if (v & 0x80) {
+        gUnk_02038630 -= 1;
+        c = 0;
+    } else {
+        gUnk_02038630 -= 3;
+        c = ((v >> 5) & 3) + 1;
+    }
+
+    gUnk_02038638[0] = (ReadBits(4) << 28) >> 28;
+
+    if (c > 0) {
+        if (ReadBits(1)) {
+            t = (ReadBits(4) << 28) >> 28;
+            gUnk_02038638[1] = t;
+
+            if (t >= 0) {
+                gUnk_02038638[1] = t + 1;
+            }
+        }
+
+        if (c > 1) {
+            if (ReadBits(1)) {
+                t = (ReadBits(3) << 29) >> 29;
+                gUnk_02038638[2] = t;
+
+                if (t >= 0) {
+                    gUnk_02038638[2] = t + 1;
+                }
+            }
+
+            if (c > 2) {
+                if (ReadBits(1)) {
+                    t = (ReadBits(3) << 29) >> 29;
+                    gUnk_02038638[3] = t;
+
+                    if (t >= 0) {
+                        gUnk_02038638[3] = t + 1;
+                    }
+                }
+
+                if (c > 3) {
+                    if (ReadBits(1)) {
+                        t = (ReadBits(3) << 29) >> 29;
+                        gUnk_02038638[4] = t;
+
+                        if (t >= 0) {
+                            gUnk_02038638[4] = t + 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    func_081213C4(gUnk_02038638, gUnk_02038638, gUnk_09C43688);
+
+    up = p - 72 + n;
+    left = p - 1;
+
+    for (i = 0; i <= 7; i++) {
+        gUnk_02038634[p + i] = gUnk_02038638[i] + gUnk_02038634[(up + i) & 0x7FF] +
+                               gUnk_02038634[left & 0x7FF] - gUnk_02038634[(up - 1) & 0x7FF];
+    }
+
+    if (p <= 15) {
+        for (i = 0; i <= 7; i++) {
+            gUnk_02038634[p + i + 0x800] = gUnk_02038634[p + i];
+        }
+    }
+}
+
+void _08117674(s32 p) {
+    s32 n;
+    s32 v;
+    s32 t;
+    s32 i;
+
+    n = ReadBits(6);
+    gUnk_02038638[1] = 0;
+    gUnk_02038638[2] = 0;
+    gUnk_02038638[3] = 0;
+    gUnk_02038638[4] = 0;
+    gUnk_02038638[5] = 0;
+    gUnk_02038638[6] = 0;
+    gUnk_02038638[7] = 0;
+    v = PeekByte();
+
+    if (v & 0x80) {
+        gUnk_02038630 -= 1;
+        v = 0;
+    } else {
+        gUnk_02038630 -= 3;
+        v = ((v >> 5) & 3) + 1;
+    }
+
+    gUnk_02038638[0] = (ReadBits(4) << 28) >> 28;
+
+    if (v > 0) {
+        if (ReadBits(1)) {
+            t = (ReadBits(4) << 28) >> 28;
+            gUnk_02038638[1] = t;
+
+            if (t >= 0) {
+                gUnk_02038638[1] = t + 1;
+            }
+        }
+
+        if (v > 1) {
+            if (ReadBits(1)) {
+                t = (ReadBits(3) << 29) >> 29;
+                gUnk_02038638[2] = t;
+
+                if (t >= 0) {
+                    gUnk_02038638[2] = t + 1;
+                }
+            }
+
+            if (v > 2) {
+                if (ReadBits(1)) {
+                    t = (ReadBits(3) << 29) >> 29;
+                    gUnk_02038638[3] = t;
+
+                    if (t >= 0) {
+                        gUnk_02038638[3] = t + 1;
+                    }
+                }
+
+                if (v > 3) {
+                    if (ReadBits(1)) {
+                        t = (ReadBits(3) << 29) >> 29;
+                        gUnk_02038638[4] = t;
+
+                        if (t >= 0) {
+                            gUnk_02038638[4] = t + 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    n = (n - 72 + p) & 0x7FF;
+    func_081213CC(&gUnk_02038634[n], gUnk_02038658);
+    gUnk_02038658[0] += gUnk_02038638[0];
+    gUnk_02038658[1] += gUnk_02038638[1];
+    gUnk_02038658[2] += gUnk_02038638[2];
+    gUnk_02038658[3] += gUnk_02038638[3];
+    gUnk_02038658[4] += gUnk_02038638[4];
+    gUnk_02038658[5] += gUnk_02038638[5];
+    func_081213D4(gUnk_02038658, &gUnk_02038634[p]);
+
+    if (p <= 15) {
+        for (i = 0; i <= 7; i++) {
+            gUnk_02038634[p + i + 0x800] = gUnk_02038634[p + i];
+        }
+    }
+}
+
+void _08117A4C(s32 p) {
+    s32 n;
+    s32 v;
+    s32 c;
+    s32 t;
+    s32 i;
+    s32 up;
+    s32 left;
+
+    n = ReadBits(10);
+    gUnk_02038638[1] = 0;
+    gUnk_02038638[2] = 0;
+    gUnk_02038638[3] = 0;
+    gUnk_02038638[4] = 0;
+    gUnk_02038638[5] = 0;
+    gUnk_02038638[6] = 0;
+    gUnk_02038638[7] = 0;
+    v = PeekByte();
+
+    if (v & 0x80) {
+        gUnk_02038630 -= 1;
+        c = 0;
+    } else {
+        gUnk_02038630 -= 3;
+        c = ((v >> 5) & 3) + 1;
+    }
+
+    gUnk_02038638[0] = (ReadBits(4) << 28) >> 28;
+
+    if (c > 0) {
+        if (ReadBits(1)) {
+            t = (ReadBits(4) << 28) >> 28;
+            gUnk_02038638[1] = t;
+
+            if (t >= 0) {
+                gUnk_02038638[1] = t + 1;
+            }
+        }
+
+        if (c > 1) {
+            if (ReadBits(1)) {
+                t = (ReadBits(4) << 28) >> 28;
+                gUnk_02038638[2] = t;
+
+                if (t >= 0) {
+                    gUnk_02038638[2] = t + 1;
+                }
+            }
+
+            if (c > 2) {
+                if (ReadBits(1)) {
+                    t = (ReadBits(4) << 28) >> 28;
+                    gUnk_02038638[3] = t;
+
+                    if (t >= 0) {
+                        gUnk_02038638[3] = t + 1;
+                    }
+                }
+
+                if (c > 3) {
+                    if (ReadBits(1)) {
+                        t = (ReadBits(4) << 28) >> 28;
+                        gUnk_02038638[4] = t;
+
+                        if (t >= 0) {
+                            gUnk_02038638[4] = t + 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    func_081213C4(gUnk_02038638, gUnk_02038638, gUnk_09C436A8);
+    up = n - 1040 + p;
+    left = p - 1;
+
+    for (i = 0; i <= 15; i++) {
+        gUnk_02038634[p + i] = gUnk_02038634[(up + i) & 0x7FF] + gUnk_02038634[left & 0x7FF] -
+                               gUnk_02038634[(up - 1) & 0x7FF] + gUnk_02038638[i >> 1];
+    }
+
+    if (p <= 15) {
+        for (i = 0; i <= 15; i++) {
+            gUnk_02038634[p + i + 0x800] = gUnk_02038634[p + i];
+        }
+    }
+}
+
+#else
 INCLUDE_ASM("sroll/_08117284.s");
 INCLUDE_ASM("sroll/_08117674.s");
 INCLUDE_ASM("sroll/_08117A4C.s");
+#endif
