@@ -33,6 +33,8 @@ def unaligned(ver):
 
         if len(f) >= 4 and f[3] == "-":
             bad.add(f[0])
+        elif len(f) >= 5 and f[4] == "entry":
+            bad.add(f[0])
     return bad
 
 
