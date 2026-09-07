@@ -322,6 +322,7 @@ TARGET_FUNC_SIZE = {
         "func_080A5C60": 76,
         "func_080B0754": 308,
         "mode_sio_btl_option_2": 0x14c,
+        "func_080B0874": 0x164,
         "func_080B06D4": 0x90,
         "func_080B4154": 192,
         "func_080EC04C": 148,

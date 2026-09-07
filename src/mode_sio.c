@@ -1043,10 +1043,15 @@ void func_080B0754(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080B0874(void) {
-    s32 deck = GetActiveDeckIndex();
+    s32 deck;
     s32 i;
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 != 0) {
+        return;
+    }
+#endif
+    deck = GetActiveDeckIndex();
     gUnk_02039B58[2] |= (gUnk_0203AA8C & 15) << 12;
     gUnk_02039B58[3] = gDecks[deck].unk_C6[(gUnk_0203AA8C - 1) * 2] | (gDecks[deck].unk_C6[(gUnk_0203AA8C - 1) * 2 + 1] << 8);
     gUnk_0203AA8C++;
@@ -1082,9 +1087,6 @@ void func_080B0874(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B0874.s");
-#endif
 
 INCLUDE_ASM("mode_sio/func_080B09C0.s");
 void func_080B0F18(void) {
