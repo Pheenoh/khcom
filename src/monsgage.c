@@ -2,13 +2,13 @@
 #include "monsgage.h"
 
 void task_monsgage_0(MonsgageWork* work) {
-    work->unk_00 = AllocObjTiles(0x200, gUnk_08B255B4);
-    work->unk_04 = AllocObjTiles(0x80, gUnk_08B255B4);
+    work->tiles = AllocObjTiles(0x200, gUnk_08B255B4);
+    work->tiles2 = AllocObjTiles(0x80, gUnk_08B255B4);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     work->unk_10 = 0;
     work->unk_0C = 0;
-    work->unk_14 = gUnk_08B2556C;
-    work->unk_18 = gUnk_08B2557C;
+    work->gfx = gUnk_08B2556C;
+    work->gfx2 = gUnk_08B2557C;
     work->unk_1C = 0;
     work->unk_20 = 0;
     work->unk_24 = 1;
@@ -24,7 +24,7 @@ s32 task_monsgage_1(MonsgageWork* work) {
         case 0:
             if (work->unk_1C == 0) {
                 work->unk_24 = 1;
-                work->unk_18 = gUnk_08B2557C;
+                work->gfx2 = gUnk_08B2557C;
             }
 
             if (work->unk_1C > 120) {
@@ -36,7 +36,7 @@ s32 task_monsgage_1(MonsgageWork* work) {
             break;
         case 1:
             if (work->unk_1C == 0) {
-                work->unk_18 = gUnk_08B25586;
+                work->gfx2 = gUnk_08B25586;
             }
 
             if (work->unk_1C % 8 < 4) {
@@ -68,8 +68,8 @@ s32 task_monsgage_1(MonsgageWork* work) {
             break;
         case 2:
             if (work->unk_1C == 0) {
-                work->unk_18 = gUnk_08B25590;
-                work->unk_14 = gUnk_08B2559A;
+                work->gfx2 = gUnk_08B25590;
+                work->gfx = gUnk_08B2559A;
                 gBtlWork->unk_068 |= 0x0100000000000000;
                 gBtlWork->unk_068 |= 0x100000;
             }
@@ -95,7 +95,7 @@ void task_monsgage_2(MonsgageWork* work) {
     s32 affine;
 
     if (gBtlWork->unk_0A0 != 0) {
-        DrawSprite(172, 12, work->unk_14, work->unk_00, work->palette, 0, 0x410, 3);
+        DrawSprite(172, 12, work->gfx, work->tiles, work->palette, 0, 0x410, 3);
 
         if (work->unk_24 != 0) {
             if (work->unk_10 * 2 > 4) {
@@ -104,14 +104,14 @@ void task_monsgage_2(MonsgageWork* work) {
                 } else {
                     affine = AllocObjAffine(0, work->unk_10 * 2, 256, 0);
                 }
-                DrawSprite(174, 16, work->unk_18, work->unk_04, work->palette, affine, 0x410, 2);
+                DrawSprite(174, 16, work->gfx2, work->tiles2, work->palette, affine, 0x410, 2);
             }
         }
     }
 }
 
 void task_monsgage_3(MonsgageWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjTiles(work->unk_04);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjTiles(work->tiles2);
     ReleaseObjPalette(work->palette);
 }

@@ -189,9 +189,9 @@ typedef struct BtlPopWork {
 typedef struct BtlEscapeWork {
     void* tiles;
     void* palette;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
+    void* gfx;
+    void* gfx2;
+    void* gfx3;
     s32 unk_14;
     s32 unk_18;
     s32 unk_1C;

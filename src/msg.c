@@ -4691,7 +4691,7 @@ void event_chara_0(Work0806180C* p, u32* a) {
     p->unk_184 = 0;
     p->tiles = NULL;
     p->palette = NULL;
-    p->unk_00C = NULL;
+    p->gfx = NULL;
     p->unk_1B1 = 0;
     p->unk_1B2 = 0;
     p->unk_1B3 = 0;
@@ -5038,7 +5038,7 @@ void event_chara_2(Work0806180C* p) {
         }
         x = (p->unk_180 >> 8) - (gUnk_02039DC8->unk_58 >> 8);
         y = (p->unk_184 >> 8) + gUnk_0903380C[p->unk_026].unk_00 - (gUnk_02039DC8->unk_5C >> 8);
-        DrawSprite(x, y, p->unk_00C, p->tiles, p->palette, 0, h, 50);
+        DrawSprite(x, y, p->gfx, p->tiles, p->palette, 0, h, 50);
     }
     p->unk_034 = save;
 }

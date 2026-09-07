@@ -5,13 +5,13 @@
 #include "game.h"
 
 typedef struct MonsgageWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* tiles2;
     void* palette;
     s32 unk_0C;
     s32 unk_10;
-    void* unk_14;
-    void* unk_18;
+    void* gfx;
+    void* gfx2;
     s16 unk_1C;
     u8 unk_1E[0x2];
     u32 unk_20;
