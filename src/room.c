@@ -354,14 +354,12 @@ void func_080F83BC(void) {
     func_080F8374(&gGaWork->entries[0]);
 }
 
-#ifdef NON_MATCHING
 void func_080F83E0(GaWork* work, GaEntryWork* e) {
     s32 f;
-    s32 g;
+    u16 g;
     void* pal;
     u16 sx;
     u16 sy;
-    s32 v;
     GaEntryWork* q;
 
     if (e->unk_15A & 0x10) {
@@ -381,18 +379,15 @@ void func_080F83E0(GaWork* work, GaEntryWork* e) {
         pal = work->unk_A30;
     }
     WorldToScreen(&sx, &sy, q->x, q->y, q->z);
-    v = q->y >> 8;
-    DrawSprite(e->unk_15E + sx, e->unk_160 + sy, e->gfx, e->tiles, pal, f, g, 0xFFFFEFFC - (v << 2));
+    DrawSprite((s16)(sx + e->unk_15E), (s16)(sy + e->unk_160), e->gfx, e->tiles, pal, f, g,
+               0xEFFC - ((q->y >> 8) << 2));
 
     if (e->unk_1A0 == 0 && work->unk_000 != 7 && work->unk_000 != 8 && work->unk_000 != 9) {
-        DrawSprite(e->unk_15E + sx, e->unk_160 + sy, work->gfx, work->unk_A28, pal, f, g,
-                   0xFFFFEFFC - ((q->y >> 8) << 2));
+        DrawSprite((s16)(sx + e->unk_15E), (s16)(sy + e->unk_160), work->gfx, work->unk_A28, pal, f, g,
+                   0xEFFC - ((q->y >> 8) << 2));
     }
     TaskPoolDraw(&e->unk_16C);
 }
-#else
-INCLUDE_ASM("room/func_080F83E0.s");
-#endif
 
 INCLUDE_ASM("room/func_080F854C.s");
 
