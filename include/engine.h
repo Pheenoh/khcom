@@ -106,7 +106,23 @@ extern u16 gDispCnt;
 typedef struct SpriteWork SpriteWork;
 extern SpriteWork* gSpriteWork;
 extern Dma3Queue* gDma3Requests;
-extern u8* gFadeWork;
+
+typedef struct FadeWork {
+    PaletteSlot slots[32];
+    u32 unk_580;
+    u32 unk_584;
+    u32 unk_588;
+    u16 unk_58C;
+    u16 unk_58E;
+    u32 unk_590;
+    u16 unk_594;
+    u16 unk_596;
+} FadeWork;
+
+typedef char FadeWork_size[(sizeof(FadeWork) == 0x598) ? 1 : -1];
+typedef char PaletteSlot_size[(sizeof(PaletteSlot) == 0x2C) ? 1 : -1];
+
+extern FadeWork* gFadeWork;
 extern u16 gBg0HOfs;
 extern u16 gBg0VOfs;
 extern u16 gBg1HOfs;
