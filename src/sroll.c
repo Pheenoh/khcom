@@ -29,10 +29,10 @@ void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
     AnimState* anim;
 
     w->unk_02 = a->unk_00;
-    w->unk_08 = a->unk_08;
-    w->unk_0C = a->unk_0C;
-    w->unk_10 = a->unk_10;
-    w->unk_14 = a->unk_14;
+    w->x = a->x;
+    w->y = a->y;
+    w->targetX = a->targetX;
+    w->targetY = a->targetY;
     w->unk_00 = 0;
     w->unk_04 = 0;
 
@@ -98,11 +98,11 @@ void task_sroll_a_name_2(SrollANameWork* w) {
     s32 ofs;
 
     if (w->unk_04 <= 29) {
-        x = w->unk_08 + (w->unk_10 - w->unk_08) * w->unk_04 / 30;
-        y = w->unk_0C + (w->unk_14 - w->unk_0C) * w->unk_04 / 30;
+        x = w->x + (w->targetX - w->x) * w->unk_04 / 30;
+        y = w->y + (w->targetY - w->y) * w->unk_04 / 30;
     } else {
-        x = w->unk_10;
-        y = w->unk_14;
+        x = w->targetX;
+        y = w->targetY;
     }
 
     flags = 0;

@@ -50,10 +50,10 @@ typedef struct SrollANameWork {
     s16 unk_02;
     s16 unk_04;
     u8 unk_06[0x2];
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
+    s32 x;
+    s32 y;
+    s32 targetX;
+    s32 targetY;
     void* tiles;
     SrollPal* palette;
     AnimState anim;
@@ -64,10 +64,10 @@ typedef struct SrollANameArg {
     u16 unk_02;
     u16 unk_04;
     u8 unk_06[0x2];
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
+    s32 x;
+    s32 y;
+    s32 targetX;
+    s32 targetY;
 } SrollANameArg;
 
 typedef struct SrollBCharGfx {

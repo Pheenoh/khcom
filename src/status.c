@@ -822,17 +822,17 @@ void task_status_scrollcursor_0(StatusScrollcursorWork* work, u16* arg) {
     work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6908, 4), gUnk_097A2394);
     work->palette = LoadObjPalette(gUnk_0984B1F8, 0x20);
     work->gfx = gUnk_09EF6908[4];
-    work->unk_12 = func_080D885C(work);
+    work->y = func_080D885C(work);
 }
 
 u8 task_status_scrollcursor_1(StatusScrollcursorWork* work) {
-    work->unk_12 = func_080D885C(work);
+    work->y = func_080D885C(work);
     return 1;
 }
 
 void task_status_scrollcursor_2(StatusScrollcursorWork* work) {
     if (func_080D8340()) {
-        DrawSprite(84, work->unk_12, work->gfx, work->tiles, work->palette, 0, 0x800, 6);
+        DrawSprite(84, work->y, work->gfx, work->tiles, work->palette, 0, 0x800, 6);
     }
 }
 
@@ -983,7 +983,7 @@ INCLUDE_ASM("status/func_080D8B84.s");
 
 void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     gStockMesDispWork = (u8*)work;
-    *(StockMesDispParam*)&work->unk_3C = *arg;
+    *(StockMesDispParam*)&work->x = *arg;
     work->unk_44 = func_080A235C(work->unk_42);
 
     if (work->unk_40 >= work->unk_44 - 1) {
@@ -992,7 +992,7 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     work->tiles = func_080D85C0(work->unk_42);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     TaskPoolInit(&work->unk_24, 1);
-    work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->unk_3C + 6, work->unk_3E + 16,
+    work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->x + 6, work->y + 16,
                                         func_080A2334(work->unk_42, work->unk_40));
     work->tiles2 = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
     work->palette2 = LoadObjPalette(gUnk_0984B258, 0x20);
@@ -1020,7 +1020,7 @@ u8 stock_mes_disp_1(StockMesDispWork* work) {
     if (changed) {
         m4aSongNumStart(0x67);
         func_08000DE8(&work->unk_24, work->unk_38);
-        work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->unk_3C + 6, work->unk_3E + 16, func_080A2334(work->unk_42, work->unk_40));
+        work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
     }
 
     TaskPoolUpdate(&work->unk_24);
@@ -1028,14 +1028,14 @@ u8 stock_mes_disp_1(StockMesDispWork* work) {
 }
 
 void stock_mes_disp_2(StockMesDispWork* work) {
-    DrawSprite(work->unk_3C + 14, work->unk_3E - 4, 0, work->tiles, work->palette, 0, 0, 5);
+    DrawSprite(work->x + 14, work->y - 4, 0, work->tiles, work->palette, 0, 0, 5);
 
     if (work->unk_40 != 0) {
-        DrawSprite(work->unk_3C - (work->unk_20 / 8) % 4, work->unk_3E, work->gfx, work->tiles2, work->palette2, 0, 0, 2);
+        DrawSprite(work->x - (work->unk_20 / 8) % 4, work->y, work->gfx, work->tiles2, work->palette2, 0, 0, 2);
     }
 
     if (work->unk_40 < work->unk_44 - 1) {
-        DrawSprite(work->unk_3C + ((work->unk_20 / 8) % 4 + 136), work->unk_3E, work->gfx2, work->tiles3, work->palette3, 0, 0, 3);
+        DrawSprite(work->x + ((work->unk_20 / 8) % 4 + 136), work->y, work->gfx2, work->tiles3, work->palette3, 0, 0, 3);
     }
     TaskPoolDraw(&work->unk_24);
     work->unk_20++;
