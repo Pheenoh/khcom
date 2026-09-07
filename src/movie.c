@@ -82,7 +82,7 @@ void MovieAdvanceTicks(void);
 u8* MovieGetTicks(void);
 float MovieTicksToSeconds(s32 a);
 void MovieSetupVideoCodec(MoviePlayer* p, void* a, void* b, void* c, u32 w, u32 h);
-void MovieSetupAudioCodec(MoviePlayer* p, void* a, u32 b);
+void MovieSetupAudioCodec(MoviePlayer* p, void* a, s32 b);
 MoviePlayer* MovieOpen(void* a);
 void MovieFree(MoviePlayer* a);
 void MovieDecodeFrame(MoviePlayer* a);
@@ -95,6 +95,17 @@ s32 MovieSyncFrame(MoviePlayer* a);
 u32 MovieGetChannels(MoviePlayer* a);
 u32 MovieGetSampleRate(MoviePlayer* a);
 void MovieGetSize(MoviePlayer* a, s32* w, s32* h);
+
+
+extern u8 gUnk_0811CE44[];
+extern u8 gUnk_0811CE48[];
+extern u8 gUnk_0811D10C[];
+extern u8 gUnk_0811D184[];
+extern u8 gUnk_0811D1A4[];
+extern u8 gUnk_0811D1B0[];
+extern u16 gUnk_09D6D1E4[];
+
+void* memcpy(void* dst, const void* src, unsigned long n);
 
 void MovieSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d) {
     MovieSetHeapCallbacks(a, b, c, d);
@@ -250,7 +261,43 @@ float MovieTicksToSeconds(s32 a) {
 }
 
 INCLUDE_ASM("movie/MovieSetupVideoCodec.s");
-INCLUDE_ASM("movie/MovieSetupAudioCodec.s");
+
+void MovieSetupAudioCodec(MoviePlayer* p, void* a, s32 b) {
+    u32 size;
+    s32 j;
+    s32 i;
+    s32 v;
+    s16* dest;
+    u32 pad;
+
+    size = gUnk_0811D1B0 - gUnk_0811CE44;
+    p->unk_08 = gMovieHeap.iwramAlloc(size);
+    memcpy(p->unk_08, gUnk_0811CE44, size);
+    switch (b) {
+    case 0:
+        *(void**)a = (u8*)p->unk_08 - (gUnk_0811CE44 - gUnk_0811D184);
+        break;
+    case 1:
+        *(void**)a = (u8*)p->unk_08 - (gUnk_0811CE44 - gUnk_0811D1A4);
+        break;
+    case 2:
+        *(void**)a = (u8*)p->unk_08 - (gUnk_0811CE44 - gUnk_0811D10C);
+        dest = (s16*)((u8*)p->unk_08 - (gUnk_0811CE44 - gUnk_0811CE48));
+        for (i = 0; i <= 0x58; i++) {
+            v = gUnk_09D6D1E4[i];
+            for (j = 0; j <= 3; j++) {
+                if (j <= 1) {
+                    dest[(i << 2) + j] = j * v + v / 2;
+                } else {
+                    dest[(i << 2) + j] = -((j & 1) * v + v / 2);
+                }
+            }
+        }
+        break;
+    }
+}
+
+ALIGN_ZERO(2);
 
 MoviePlayer* MovieOpen(void* a) {
     u32* q;
