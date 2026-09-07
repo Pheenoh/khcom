@@ -27,6 +27,14 @@ typedef struct UnkStruct_080DFB8C {
     u16* unk_1C;
 } UnkStruct_080DFB8C;
 
+typedef struct UnkStruct_080DFB7C {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u8 unk_06;
+    u8 unk_07;
+} UnkStruct_080DFB7C;
+
 typedef struct UnkStruct_080DFF1C {
     s32 unk_00;
     s32 x;

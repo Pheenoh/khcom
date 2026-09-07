@@ -471,14 +471,14 @@ void func_080E05E4(void) {
 }
 
 void func_080E062C(void) {
-    UnkStruct_080DFB8C* e;
+    UnkStruct_080DFB7C* e;
     s32 x;
     s32 y;
 
     if (gUnk_0203C590.unk_07 <= 3) {
-        e = func_080DFB7C(gUnk_0203C590.unk_07);
-        x = (*(u16*)((u8*)e + 2) << 5) + 16;
-        y = (*(u16*)((u8*)e + 4) << 4) + 10;
+        e = (UnkStruct_080DFB7C*)func_080DFB7C(gUnk_0203C590.unk_07);
+        x = (e->unk_02 << 5) + 16;
+        y = (e->unk_04 << 4) + 10;
 
         switch (gUnk_0203C590.unk_07) {
         case 0:
@@ -8022,7 +8022,7 @@ u8 func_080ECC8C(UnkStruct_080ECA88* p) {
     return 1;
 }
 
-void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB8C* p) {
+void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_04;
     UnkStruct_080DFF1C* v = &e->unk_00;
     UnkStruct_0984B968* q = &gUnk_0984B968[gUnk_0203C590.unk_04];
@@ -8031,38 +8031,38 @@ void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB8C* p) {
     w->unk_71 = 0;
     w->unk_70 = 1;
 
-    switch (p->unk_06[0]) {
+    switch (p->unk_06) {
     case 0:
         w->unk_4C = gUnk_098A94A0;
         w->unk_54 = q->unk_08;
         w->unk_50 = q->unk_04;
         e->unk_14 = 173;
-        w->unk_04 = (*(u16*)((u8*)p + 2) << 5) + 16;
-        e->unk_00.x = (*(u16*)((u8*)p + 4) << 4) + 10;
+        w->unk_04 = (p->unk_02 << 5) + 16;
+        e->unk_00.x = (p->unk_04 << 4) + 10;
         break;
     case 1:
         w->unk_4C = gUnk_098A94B4;
         w->unk_54 = q->unk_20;
         w->unk_50 = q->unk_1C;
         e->unk_14 = 45;
-        w->unk_04 = (*(u16*)((u8*)p + 2) << 5) + 16;
-        e->unk_00.x = (*(u16*)((u8*)p + 4) << 4) + 6;
+        w->unk_04 = (p->unk_02 << 5) + 16;
+        e->unk_00.x = (p->unk_04 << 4) + 6;
         break;
     case 2:
         w->unk_4C = gUnk_098A94C8;
         w->unk_54 = q->unk_18;
         w->unk_50 = q->unk_14;
         e->unk_14 = 211;
-        w->unk_04 = (*(u16*)((u8*)p + 2) << 5) + 16;
-        e->unk_00.x = (*(u16*)((u8*)p + 4) << 4) + 6;
+        w->unk_04 = (p->unk_02 << 5) + 16;
+        e->unk_00.x = (p->unk_04 << 4) + 6;
         break;
     case 3:
         w->unk_4C = gUnk_098A948C;
         w->unk_54 = q->unk_10;
         w->unk_50 = q->unk_0C;
         e->unk_14 = 83;
-        w->unk_04 = (*(u16*)((u8*)p + 2) << 5) + 16;
-        e->unk_00.x = (*(u16*)((u8*)p + 4) << 4) + 10;
+        w->unk_04 = (p->unk_02 << 5) + 16;
+        e->unk_00.x = (p->unk_04 << 4) + 10;
         break;
     }
 
@@ -8078,7 +8078,7 @@ void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB8C* p) {
     w->unk_5C = LoadObjPalette(gUnk_09991284, 32);
     w->unk_58 = func_080038C8(0x100);
 
-    switch (p->unk_06[0]) {
+    switch (p->unk_06) {
     case 0:
     case 1:
         w->unk_60 = gUnk_098A94DC;
