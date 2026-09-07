@@ -180,8 +180,8 @@ typedef struct PcWork {
 
 typedef struct PcAcdWork {
     u32 unk_000;
-    u32 unk_004;
-    u32 unk_008;
+    u32 tiles;
+    u32 palette;
     s32 unk_00C;
     s32 unk_010;
     s32 unk_014;
@@ -212,8 +212,8 @@ typedef struct PcFltWork {
     s32 unk_028;
     s32 unk_02C;
     s32 unk_030;
-    u32 unk_034;
-    u32 unk_038;
+    u32 tiles;
+    u32 palette;
     PcPos* unk_03C;
     u32 unk_040;
     u8 unk_044[0x58];
@@ -223,8 +223,8 @@ typedef struct PcFltWork {
 typedef struct PcFldWork {
     u32 unk_000;
     u8 unk_004[0x4];
-    u32 unk_008;
-    u32 unk_00C;
+    u32 tiles;
+    u32 palette;
     u32 unk_010;
     u8 unk_014[0x58];
 } PcFldWork;
