@@ -1670,11 +1670,11 @@ void func_080E2668(UnkStruct_02034F20* p, s32 a) {
     u16 x;
     u16 y;
     u16 w;
-    UnkStruct_080DFB8C* e;
+    UnkStruct_080DFB7C* e;
     UnkStruct_080DFB8C* q;
 
     d = a;
-    e = func_080DFB7C(d);
+    e = (UnkStruct_080DFB7C*)func_080DFB7C(d);
 
     if (!(e->unk_00 & 1)) {
         return;
@@ -1690,8 +1690,8 @@ void func_080E2668(UnkStruct_02034F20* p, s32 a) {
                 q = func_080E08BC(x, y);
 
                 if (q->unk_02 == 6 && q->unk_0C == p->unk_04 && q->unk_08 == -0x100000 && (q->unk_00 & 0x20) == 0) {
-                    *(u16*)&e->unk_02 = x;
-                    *(u16*)&e->unk_04 = y;
+                    e->unk_02 = x;
+                    e->unk_04 = y;
                     q->unk_00 |= 0x800;
                     q->unk_00 |= 0x400;
                     func_080E08BC(x, y + 1)->unk_00 |= 0x800;
@@ -1716,8 +1716,8 @@ void func_080E2668(UnkStruct_02034F20* p, s32 a) {
                 q = func_080E08BC(x, y);
 
                 if (q->unk_02 == 3 && q->unk_08 == p->unk_04 && q->unk_0C == 0x100000 && (q->unk_00 & 0x20) == 0) {
-                    *(u16*)&e->unk_02 = x;
-                    *(u16*)&e->unk_04 = y;
+                    e->unk_02 = x;
+                    e->unk_04 = y;
                     func_080E08BC(x, y)->unk_00 |= 0x800;
                     func_080E08BC(x, y - 1)->unk_00 |= 0x800;
                     func_080E08BC(x - 1, y)->unk_00 |= 0x800;
@@ -1738,8 +1738,8 @@ void func_080E2668(UnkStruct_02034F20* p, s32 a) {
                 q = func_080E08BC(x, y);
 
                 if (q->unk_02 == 5 && q->unk_08 == p->unk_04 && q->unk_0C == 0x100000 && (q->unk_00 & 0x20) == 0) {
-                    *(u16*)&e->unk_02 = x;
-                    *(u16*)&e->unk_04 = y;
+                    e->unk_02 = x;
+                    e->unk_04 = y;
                     func_080E08BC(x, y)->unk_00 |= 0x800;
                     func_080E08BC(x, y - 1)->unk_00 |= 0x800;
                     func_080E08BC(x + 1, y)->unk_00 |= 0x800;
@@ -1760,8 +1760,8 @@ void func_080E2668(UnkStruct_02034F20* p, s32 a) {
                 q = func_080E08BC(x, y);
 
                 if (q->unk_02 == 4 && q->unk_0C == p->unk_04 && q->unk_08 == -0x100000 && (q->unk_00 & 0x20) == 0) {
-                    *(u16*)&e->unk_02 = x;
-                    *(u16*)&e->unk_04 = y;
+                    e->unk_02 = x;
+                    e->unk_04 = y;
                     q->unk_00 |= 0x800;
                     q->unk_00 |= 0x400;
                     func_080E08BC(x, y + 1)->unk_00 |= 0x800;
@@ -7956,11 +7956,11 @@ void func_080ECAA8(UnkStruct_080ECA88* p) {
 }
 
 s32 func_080ECAC8(UnkStruct_080ECA88* p) {
-    u16* flags = p->unk_00;
+    UnkStruct_080DFB7C* flags = p->unk_00;
     UnkStruct_080DFF1C* e = (UnkStruct_080DFF1C*)&p->unk_04;
 
     if (!(gUnk_02039BA0->unk_70 & 0x2000) && !(gUnk_0203C7AC->unk_00 & 0x4004) &&
-        (u8)(((u8*)flags)[7] + 3) > 1 && (*flags & 0x12) != 0x12 &&
+        (u8)(flags->unk_07 + 3) > 1 && (flags->unk_00 & 0x12) != 0x12 &&
         func_080E02E0(e, 0, 8) != 0 && !(gUnk_02039BA0->unk_70 & 0x800000) &&
         gUnk_02039BA0->unk_20 == gUnk_02039BA0->unk_24) {
         TaskPool* pool;
@@ -7973,8 +7973,8 @@ s32 func_080ECAC8(UnkStruct_080ECA88* p) {
         gUnk_0203C7AC->unk_14 = (s32)e;
         p->unk_71 = 1;
         p->unk_6C = func_080ECBC8;
-        gUnk_0203C7AC->unk_0F = ((u8*)flags)[7];
-        gUnk_0203C7AC->unk_10 = ((u8*)flags)[6];
+        gUnk_0203C7AC->unk_0F = flags->unk_07;
+        gUnk_0203C7AC->unk_10 = flags->unk_06;
         func_080062F4(*(u16*)&p->unk_48[6] + 16, 1);
         func_080062F4(*(u16*)&p->unk_5C[6] + 16, 1);
         TaskCreate(pool, &gTaskDescRoomcreate, 0);
@@ -7983,14 +7983,14 @@ s32 func_080ECAC8(UnkStruct_080ECA88* p) {
 }
 
 s32 func_080ECBC8(UnkStruct_080ECA88* p) {
-    u16* flags = p->unk_00;
+    UnkStruct_080DFB7C* flags = p->unk_00;
     void* t = func_08093BF8();
 
     if (t != 0) {
-        if (*flags & 0x10) {
-            func_080DF640(((u8*)flags)[7], 0);
+        if (flags->unk_00 & 0x10) {
+            func_080DF640(flags->unk_07, 0);
         } else {
-            func_080DF640(((u8*)flags)[7], t);
+            func_080DF640(flags->unk_07, t);
         }
         p->unk_6C = func_080ECC54;
     }
@@ -8005,13 +8005,13 @@ s32 func_080ECBC8(UnkStruct_080ECA88* p) {
 }
 
 s32 func_080ECC54(UnkStruct_080ECA88* p) {
-    u16* flags = p->unk_00;
+    UnkStruct_080DFB7C* flags = p->unk_00;
     u16 v;
 
     if (gUnk_02039BA0->unk_70 & 0x200000) {
         func_080ECA88(p);
-        v = *flags | 2;
-        *flags = v;
+        v = flags->unk_00 | 2;
+        flags->unk_00 = v;
         p->unk_6C = func_080ECC8C;
     }
 
@@ -8027,7 +8027,7 @@ void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     UnkStruct_080DFF1C* v = &e->unk_00;
     UnkStruct_0984B968* q = &gUnk_0984B968[gUnk_0203C590.unk_04];
 
-    w->unk_00 = (u16*)p;
+    w->unk_00 = p;
     w->unk_71 = 0;
     w->unk_70 = 1;
 
@@ -8125,7 +8125,7 @@ s32 func_080ECE3C(UnkStruct_080ECA88* w) {
 }
 
 void func_080ECE98(UnkStruct_080ECA88* p) {
-    u16* f = p->unk_00;
+    UnkStruct_080DFB7C* f = p->unk_00;
     u16 sx;
     u16 sy;
     u16 v;
@@ -8137,7 +8137,7 @@ void func_080ECE98(UnkStruct_080ECA88* p) {
         k = p->unk_08 >> 8;
         sy = k + (p->unk_0C >> 8) - (gUnk_02039BA0->unk_04 >> 8);
 
-        switch (((u8*)f)[6]) {
+        switch (f->unk_06) {
         case 0:
         case 3:
             v = -0xFE4 - (p->unk_08 >> 8) * 4;
@@ -8154,8 +8154,8 @@ void func_080ECE98(UnkStruct_080ECA88* p) {
         t = 0x800;
         DrawSprite(sx, sy, 0, p->unk_44, p->unk_48, 0, t, v);
 
-        if (*f & 0x10) {
-            switch (((u8*)f)[6]) {
+        if (f->unk_00 & 0x10) {
+            switch (f->unk_06) {
             case 0:
             case 2:
                 DrawSprite(sx, sy, 0, p->unk_58, p->unk_5C, 0, t, v - 1);
