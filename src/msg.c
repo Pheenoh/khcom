@@ -1508,8 +1508,6 @@ void func_0806422C(void) {
     EwramFree(gUnk_02034A80);
     gUnk_02034A80 = NULL;
 }
-#else
-INCLUDE_ASM("msg/func_0806422C.s");
 #endif
 #ifndef VERSION_EU
 void func_080642A8(u8 bg) {
@@ -1535,8 +1533,6 @@ void func_080642A8(u8 bg) {
 
     gUnk_02034A91 = 0;
 }
-#else
-INCLUDE_ASM("msg/func_080642A8.s");
 #endif
 #ifndef VERSION_EU
 void func_08064338(u8 a, u8 b, u8 c, u8 d, u8 e, u8 f) {
@@ -1551,8 +1547,6 @@ void func_08064338(u8 a, u8 b, u8 c, u8 d, u8 e, u8 f) {
     buf[4] = 0;
     func_080643D4(a, b, c, buf, e, f);
 }
-#else
-INCLUDE_ASM("msg/func_08064338.s");
 #endif
 #ifndef VERSION_EU
 void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
@@ -2542,8 +2536,6 @@ u16 func_080659BC(u8 v, TextSlot* out) {
     }
     return func_080660C0(buf, out);
 }
-#else
-INCLUDE_ASM("msg/func_080659BC.s");
 #endif
 void func_08065A30(void** p, u8 n) {
     s32 i;
