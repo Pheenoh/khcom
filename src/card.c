@@ -186,7 +186,8 @@ u8 func_080A8C20(u8* work);
 void AnimInit(AnimState* a, s32 b, s32 c);
 s32 func_0805F5A4(s32* a, s32* b);
 s32* func_080E04E0(void);
-void func_0809511C(void);
+u8 func_0809511C(ReloadGageWork* w, void* a);
+u8 func_080954C4(ReloadGageWork* w, void* a);
 u8 func_08089558(u8* work, void* a);
 s32 func_0809AD98(UnkStruct_0809A02C* w, void* a);
 void func_080062F4(u16 a, s32 b);
@@ -12640,7 +12641,205 @@ void func_08094EB0(ReloadGageWork* w, ReloadGageArgs* a) {
         TaskPoolInit(&w->unk_24, 1);
     }
 }
+#ifdef NON_MATCHING
+u8 func_0809511C(ReloadGageWork* w, void* a) {
+    UnkStruct_080988C0_Args args;
+    UnkStruct_08095A5C* p;
+    UnkStruct_08098BE8* node;
+    u8 v;
+
+    p = w->unk_20;
+    v = 0;
+
+    switch (w->unk_40) {
+    case 1:
+        if (gUnk_02039DD4->unk_0D2 == w->unk_46) {
+            v = gUnk_02039DD4->unk_0E7;
+            gUnk_02039DD4->unk_0E7 = 0;
+        }
+        break;
+    case 2:
+        if (gUnk_02039DD4->unk_0D4 == w->unk_46) {
+            v = gUnk_02039DD4->unk_0E8;
+            gUnk_02039DD4->unk_0E8 = 0;
+        }
+        break;
+    }
+
+    if ((w->unk_78 & 0x44) == 0x44) {
+        if (v == 1) {
+            if ((s8)p->unk_65 == 2) {
+                switch (w->unk_40) {
+                case 1:
+                    if ((gBtlWork->unk_068 & 0x1000000) == 0) {
+                        m4aSongNumStart(200);
+                        gBtlWork->unk_068 |= 0x1000000;
+                    }
+                    break;
+                case 2:
+                    if ((gUnk_02039B9C->unk_068 & 0x1000000) == 0) {
+                        m4aSongNumStart(200);
+                        gUnk_02039B9C->unk_068 |= 0x1000000;
+                    }
+                    break;
+                }
+
+                node = (UnkStruct_08098BE8*)ListPoolFirst(w->unk_1C);
+
+                while (node != 0) {
+                    node->unk_1C &= 0xFFFD;
+                    node = (UnkStruct_08098BE8*)ListPoolNext(node->unk_30);
+                }
+
+                if (w->unk_9F == 0) {
+                    w->unk_58 += 25;
+
+                    if (w->unk_58 > 0x100) {
+                        w->unk_58 = 0x100;
+                        w->unk_9F = 1;
+                    }
+                } else {
+                    w->unk_A0 += 3;
+                    func_08095C00(w->unk_20, w);
+
+                    if (w->unk_A0 == 10) {
+                        w->unk_A0 = 4;
+                        w->unk_58 = 0;
+                        w->unk_9F = 0;
+                        node = (UnkStruct_08098BE8*)ListPoolFirst(w->unk_1C);
+
+                        while (node != 0) {
+                            node->unk_1C |= 1;
+                            node->unk_18--;
+                            node = (UnkStruct_08098BE8*)ListPoolNext(node->unk_30);
+                        }
+
+                        p->unk_64--;
+
+                        if (p->unk_64 > 2) {
+                            args.unk_00 = w->unk_1C;
+                            args.unk_0C = 3;
+                            args.unk_04 = &w->unk_4C;
+                            args.unk_08 = &w->unk_50;
+                            *(u16*)args.unk_10 = 0;
+                            args.unk_0D = w->unk_46;
+                            args.unk_0E = w->unk_40;
+                            node = ((UnkStruct_08098BE8**)TaskCreate(&w->unk_24, gTaskDescReloadChildren, &args))[1];
+                            node->unk_1C = (1 | node->unk_1C) & 0xFFFD;
+                            node->unk_18--;
+                        }
+
+                        w->unk_9C = 8;
+                        w->unk_A2 = 1;
+                        func_08095C20(w->unk_20);
+                        m4aSongNumStart(201);
+                    }
+                }
+
+                switch (w->unk_40) {
+                case 1:
+                    switch (gBtlWork->unk_0F4) {
+                    case 9:
+                        p->unk_65 = 1;
+                        break;
+                    case 43:
+                        p->unk_65 = 254;
+                        break;
+                    default:
+                        p->unk_65 = 0;
+                        break;
+                    }
+                    break;
+                case 2:
+                    switch (gUnk_02039B9C->unk_0F4) {
+                    case 9:
+                        p->unk_65 = 1;
+                        break;
+                    case 43:
+                        p->unk_65 = 254;
+                        break;
+                    default:
+                        p->unk_65 = 0;
+                        break;
+                    }
+                    break;
+                }
+            }
+
+            func_08095BAC(w->unk_20, w);
+            p->unk_65++;
+        } else {
+            func_08095BC8(w->unk_20, w);
+            p->unk_65 = 0;
+            w->unk_78 |= 0x8000000;
+            m4aSongNumStop(200);
+
+            switch (w->unk_40) {
+            case 1:
+                gBtlWork->unk_068 &= ~0x1000000;
+                break;
+            case 2:
+                gUnk_02039B9C->unk_068 &= ~0x1000000;
+                break;
+            }
+
+            node = (UnkStruct_08098BE8*)ListPoolFirst(w->unk_1C);
+
+            while (node != 0) {
+                node->unk_1C |= 2;
+                node = (UnkStruct_08098BE8*)ListPoolNext(node->unk_30);
+            }
+        }
+    }
+
+    if (p->unk_64 < 0) {
+        if ((w->unk_78 & 0x4000000) == 0) {
+            w->unk_78 |= 0x4000000;
+            m4aSongNumStart(202);
+        }
+
+        if (func_08006390() == 0) {
+            func_08006290(2, 16, 20);
+        }
+
+        return 0;
+    }
+
+    func_08095B04(w->unk_20, w);
+
+    if (w->unk_A2 == 1 && w->unk_9C == 1) {
+        func_08095AD8(w->unk_20, p->unk_64);
+    }
+
+    func_080958E0(w);
+
+    if (w->unk_78 & 0x4000) {
+        return 0;
+    }
+
+    func_08095A5C(w->unk_20);
+    w->unk_5C[3] += 4;
+
+    if ((w->unk_78 & 0x20) == 0) {
+        SetTaskUpdate(a, (void*)func_080954C4);
+        m4aSongNumStop(200);
+
+        switch (w->unk_40) {
+        case 1:
+            gBtlWork->unk_068 &= ~0x1000000;
+            break;
+        case 2:
+            gUnk_02039B9C->unk_068 &= ~0x1000000;
+            break;
+        }
+    }
+
+    TaskPoolUpdate(&w->unk_24);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_0809511C.s");
+#endif
 u8 func_080954C4(ReloadGageWork* w, void* a) {
     if (w->unk_A1 == 7) {
         return 0;
