@@ -45,6 +45,7 @@ TARGET_ANCHORS = {
         0x09958124: 0x0994AFB0,
         0x09EE1538: 0x09F5C140,
         0x0951B2B8: 0x09539B24,
+        0x09512AB8: 0x09532B24,
         0x090A4664: 0x09193560,
         0x09EEB000: 0x09F77120,
         0x09EEB008: 0x09F77128,
@@ -388,6 +389,9 @@ TARGET_FUNC_SIZE = {
         "func_0808FA0C": 0x8c,
         "func_0808D0A4": 0xe0,
         "func_0808D258": 0x1fc,
+        "func_080A6C50": 0xc8,
+        "func_0808686C": 0x11c,
+        "func_08086860": 0,
         "mode_sioError_0": 0x15c,
         "mode_jiminy_0": 0x4a8,
         "func_08064EF4": 0x174,
@@ -434,6 +438,7 @@ TARGET_FUNC_ADDR = {
         "mode_chksnd_1": 0x0800C214,
         "ModeUpdate": 0x08001178,
         "task_bos_lst_0": 0x0810AEB8,
+        "func_0808686C": 0x08085db4,
     },
 }
 
