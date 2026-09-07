@@ -491,11 +491,9 @@ u8 func_080F8958(GaWork* work) {
 INCLUDE_ASM("room/func_080F8AC8.s");
 INCLUDE_ASM("room/func_080F8F9C.s");
 
-#ifdef NON_MATCHING
 u8 func_080F9744(GaWork* work) {
     GaEntryWork* e;
     u32 i;
-    s32 t;
 
     if (work->unk_00E & 1) {
         work->unk_008 = 2;
@@ -521,8 +519,7 @@ u8 func_080F9744(GaWork* work) {
             switch (work->unk_00C) {
             case 0:
                 if (e->unk_1A0 == 3) {
-                    t = e->unk_124;
-                    e->unk_124 = work->unk_018 == 0 ? t + 0x80 : t - 0x80;
+                    e->unk_124 = e->unk_124 + (work->unk_018 == 0 ? 0x80 : -0x80);
                     work->unk_010++;
                     if (work->unk_010 > 30) {
                         work->unk_010 = 0;
@@ -534,8 +531,7 @@ u8 func_080F9744(GaWork* work) {
                 break;
             case 1:
                 if (e->unk_1A0 == 3) {
-                    t = e->unk_124;
-                    e->unk_124 = work->unk_018 == 0 ? t - 0x300 : t + 0x300;
+                    e->unk_124 = e->unk_124 + (work->unk_018 == 0 ? -0x300 : 0x300);
                     e->unk_128 += 0x133;
 
                     if (!(e->unk_15A & 4)) {
@@ -554,8 +550,7 @@ u8 func_080F9744(GaWork* work) {
                 break;
             case 2:
                 if (e->unk_1A0 == 2) {
-                    t = e->unk_124;
-                    e->unk_124 = work->unk_018 == 0 ? t + 0x80 : t - 0x80;
+                    e->unk_124 = e->unk_124 + (work->unk_018 == 0 ? 0x80 : -0x80);
                     work->unk_010++;
                     if (work->unk_010 > 30) {
                         work->unk_010 = 0;
@@ -567,8 +562,7 @@ u8 func_080F9744(GaWork* work) {
                 break;
             case 3:
                 if (e->unk_1A0 == 2) {
-                    t = e->unk_124;
-                    e->unk_124 = work->unk_018 == 0 ? t - 0x300 : t + 0x300;
+                    e->unk_124 = e->unk_124 + (work->unk_018 == 0 ? -0x300 : 0x300);
                     e->unk_128 -= 0x133;
 
                     if (!(e->unk_15A & 4)) {
@@ -612,9 +606,7 @@ u8 func_080F9744(GaWork* work) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("room/func_080F9744.s");
-#endif
+
 
 u8 func_080F99C0(GaWork* work) {
     GaEntryWork* e;
