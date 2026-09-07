@@ -2,6 +2,7 @@
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "engine.h"
+#include "sprite.h"
 #include "types.h"
 
 u32 gUnk_0203401C;
@@ -37,7 +38,7 @@ void* ListPoolNext(void* node);
 void* ListPoolFirstFree(void* pool);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
 void ListPoolRelease(void* node, void* pool);
-void SortSpriteEntries(void* arr, s32 lo, s32 hi);
+void SortSpriteEntries(SpriteEntry** arr, s32 lo, s32 hi);
 extern s16 gSineTable[];
 extern u16 gBg0Cnt;
 extern u16 gBg1Cnt;
@@ -113,15 +114,8 @@ s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 
 u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
-    u8* p;
-    u8* q0;
-    u8* q1;
-    u8* q2;
-    u8* q3;
-    u8* q4;
-    u8* w;
-    s32 ofs;
-    s32 ofs2;
+    SpriteWork* p;
+    SpriteWork* w;
     u16 n;
     s32 i;
     u16 cnt;
@@ -130,27 +124,15 @@ u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h)
     if (e == 0 || c == 0) {
         return 0;
     }
-    p = (u8*)gSpriteWork;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1AB8) = x;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABA) = y;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q0 = p + 0x1AA8;
-    *(void**)(q0 + ofs) = obj;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q1 = p + 0x1AAC;
-    *(void**)(q1 + ofs) = e;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q2 = p + 0x1AB0;
-    *(s32*)(q2 + ofs) = f;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABE) = g;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABC) = h;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q3 = p + 0x1AB4;
-    *(void**)(q3 + ofs) = c;
+    p = gSpriteWork;
+    p->entries[p->entryCount].unk_10 = x;
+    p->entries[p->entryCount].unk_12 = y;
+    p->entries[p->entryCount].unk_00 = obj;
+    p->entries[p->entryCount].unk_04 = e;
+    p->entries[p->entryCount].unk_08 = f;
+    p->entries[p->entryCount].unk_16 = g;
+    p->entries[p->entryCount].unk_14 = h;
+    p->entries[p->entryCount].unk_0C = c;
 
     if (((ObjTiles*)obj)->unk_20 != (u32)c) {
         ((ObjTiles*)obj)->unk_20 = (u32)c;
@@ -168,57 +150,34 @@ u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h)
             } while (--i);
         }
     }
-    w = (u8*)gSpriteWork;
-    ofs2 = *(u16*)(w + 0x28A8) * 4;
-    q4 = w + 0x26A8;
-    *(u32*)(q4 + ofs2) = (u32)(w + (*(u16*)(w + 0x28A8) * 24 + 0x1AA8));
-    *(u16*)(w + 0x28A8) += 1;
+    w = gSpriteWork;
+    w->sortPtrs[w->entryCount] = &w->entries[w->entryCount];
+    w->entryCount += 1;
     return 1;
 }
 u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
-    u8* p;
-    u8* q0;
-    u8* q1;
-    u8* q2;
-    u8* q3;
-    u8* q4;
-    s32 ofs;
+    SpriteWork* p;
 
     if (e == 0 || ((ObjTiles*)obj)->unk_00 == 0) {
         return 0;
     }
     {
-        p = (u8*)gSpriteWork;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        *(u16*)(p + ofs + 0x1AB8) = x;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        *(u16*)(p + ofs + 0x1ABA) = y;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        q0 = p + 0x1AA8;
-        *(void**)(q0 + ofs) = obj;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        q1 = p + 0x1AAC;
-        *(void**)(q1 + ofs) = e;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        q2 = p + 0x1AB0;
-        *(s32*)(q2 + ofs) = f;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        *(u16*)(p + ofs + 0x1ABE) = g;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        *(u16*)(p + ofs + 0x1ABC) = h;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        q3 = p + 0x1AB4;
-        *(void**)(q3 + ofs) = ((ObjTiles*)obj)->unk_20;
-        ofs = *(u16*)(p + 0x28A8) * 4;
-        q4 = p + 0x26A8;
-        *(u32*)(q4 + ofs) = (u32)(p + (*(u16*)(p + 0x28A8) * 24 + 0x1AA8));
-        *(u16*)(p + 0x28A8) += 1;
+        p = gSpriteWork;
+        p->entries[p->entryCount].unk_10 = x;
+        p->entries[p->entryCount].unk_12 = y;
+        p->entries[p->entryCount].unk_00 = obj;
+        p->entries[p->entryCount].unk_04 = e;
+        p->entries[p->entryCount].unk_08 = f;
+        p->entries[p->entryCount].unk_16 = g;
+        p->entries[p->entryCount].unk_14 = h;
+        p->entries[p->entryCount].unk_0C = (void*)((ObjTiles*)obj)->unk_20;
+        p->sortPtrs[p->entryCount] = &p->entries[p->entryCount];
+        p->entryCount += 1;
     }
     return 1;
 }
-
 u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
-    if (*(u16*)((u8*)gSpriteWork + 0x28A8) <= 127 && obj != 0) {
+    if (gSpriteWork->entryCount <= 127 && obj != 0) {
         switch (*(u32*)((u8*)obj + 0x28)) {
         case 0:
             return func_08002060((s16)x, (s16)y, c, obj, e, f, g, h);
@@ -232,7 +191,7 @@ u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
 }
 
 void func_08002488(u16 a, u16 b, void* c, void* d, void* e, u16 f) {
-    u8* p;
+    SpriteWork* p;
     u8* q0;
     u8* q1;
     u8* q2;
@@ -242,41 +201,40 @@ void func_08002488(u16 a, u16 b, void* c, void* d, void* e, u16 f) {
     s32 ofs;
     u32 z;
 
-    p = (u8*)gSpriteWork;
-    if (*(u16*)(p + 0x28A8) > 0x7F) {
+    p = gSpriteWork;
+    if (p->entryCount > 0x7F) {
         return;
     }
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q5 = p + ofs + 0x1AB8;
+    ofs = p->entryCount * 24;
+    q5 = (u8*)p + ofs + 0x1AB8;
     z = 0;
     *(u16*)q5 = a;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABA) = b;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q0 = p + 0x1AA8;
+    ofs = p->entryCount * 24;
+    *(u16*)((u8*)p + ofs + 0x1ABA) = b;
+    ofs = p->entryCount * 24;
+    q0 = (u8*)p + 0x1AA8;
     *(void**)(q0 + ofs) = d;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q1 = p + 0x1AAC;
+    ofs = p->entryCount * 24;
+    q1 = (u8*)p + 0x1AAC;
     *(void**)(q1 + ofs) = e;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q2 = p + 0x1AB0;
+    ofs = p->entryCount * 24;
+    q2 = (u8*)p + 0x1AB0;
     *(u32*)(q2 + ofs) = z;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABE) = f;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABC) = z;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q3 = p + 0x1AB4;
+    ofs = p->entryCount * 24;
+    *(u16*)((u8*)p + ofs + 0x1ABE) = f;
+    ofs = p->entryCount * 24;
+    *(u16*)((u8*)p + ofs + 0x1ABC) = z;
+    ofs = p->entryCount * 24;
+    q3 = (u8*)p + 0x1AB4;
     *(void**)(q3 + ofs) = c;
-    ofs = *(u16*)(p + 0x28A8) * 4;
-    q4 = p + 0x26A8;
-    *(u32*)(q4 + ofs) = (u32)(p + (*(u16*)(p + 0x28A8) * 24 + 0x1AA8));
-    *(u16*)(p + 0x28A8) += 1;
-    *(u16*)(p + 0x28AA) += 1;
+    ofs = p->entryCount * 4;
+    q4 = (u8*)p + 0x26A8;
+    *(u32*)(q4 + ofs) = (u32)((u8*)p + (p->entryCount * 24 + 0x1AA8));
+    p->entryCount += 1;
+    p->sortLo += 1;
 }
-
 void func_08002594(u16 a, u16 b, void* c, void* d, void* e, void* f, u16 g) {
-    u8* p;
+    SpriteWork* p;
     u8* q0;
     u8* q1;
     u8* q2;
@@ -286,39 +244,38 @@ void func_08002594(u16 a, u16 b, void* c, void* d, void* e, void* f, u16 g) {
     s32 ofs;
     u32 z;
 
-    p = (u8*)gSpriteWork;
-    if (*(u16*)(p + 0x28A8) > 0x7F) {
+    p = gSpriteWork;
+    if (p->entryCount > 0x7F) {
         return;
     }
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q5 = p + ofs + 0x1AB8;
+    ofs = p->entryCount * 24;
+    q5 = (u8*)p + ofs + 0x1AB8;
     z = 0;
     *(u16*)q5 = a;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABA) = b;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q0 = p + 0x1AA8;
+    ofs = p->entryCount * 24;
+    *(u16*)((u8*)p + ofs + 0x1ABA) = b;
+    ofs = p->entryCount * 24;
+    q0 = (u8*)p + 0x1AA8;
     *(void**)(q0 + ofs) = d;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q1 = p + 0x1AAC;
+    ofs = p->entryCount * 24;
+    q1 = (u8*)p + 0x1AAC;
     *(void**)(q1 + ofs) = e;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q2 = p + 0x1AB0;
+    ofs = p->entryCount * 24;
+    q2 = (u8*)p + 0x1AB0;
     *(void**)(q2 + ofs) = f;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABE) = g;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    *(u16*)(p + ofs + 0x1ABC) = z;
-    ofs = *(u16*)(p + 0x28A8) * 24;
-    q3 = p + 0x1AB4;
+    ofs = p->entryCount * 24;
+    *(u16*)((u8*)p + ofs + 0x1ABE) = g;
+    ofs = p->entryCount * 24;
+    *(u16*)((u8*)p + ofs + 0x1ABC) = z;
+    ofs = p->entryCount * 24;
+    q3 = (u8*)p + 0x1AB4;
     *(void**)(q3 + ofs) = c;
-    ofs = *(u16*)(p + 0x28A8) * 4;
-    q4 = p + 0x26A8;
-    *(u32*)(q4 + ofs) = (u32)(p + (*(u16*)(p + 0x28A8) * 24 + 0x1AA8));
-    *(u16*)(p + 0x28A8) += 1;
-    *(u16*)(p + 0x28AA) += 1;
+    ofs = p->entryCount * 4;
+    q4 = (u8*)p + 0x26A8;
+    *(u32*)(q4 + ofs) = (u32)((u8*)p + (p->entryCount * 24 + 0x1AA8));
+    p->entryCount += 1;
+    p->sortLo += 1;
 }
-
 ObjTiles* LoadObjTiles(void* src, u16 size) {
     ObjTiles* node;
     ObjTiles* cur;
@@ -333,7 +290,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     if (src == 0) {
         return 0;
     }
-    cur = ListPoolFirst((u8*)gSpriteWork + 0x1800);
+    cur = ListPoolFirst(&gSpriteWork->tilePool);
     while (cur != 0) {
         if (cur->unk_00 == src && cur->unk_24 == 0) {
             cur->refCount++;
@@ -341,7 +298,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
         }
         cur = ListPoolNext(cur->unk_0C);
     }
-    node = ListPoolFirstFree((u8*)gSpriteWork + 0x1800);
+    node = ListPoolFirstFree(&gSpriteWork->tilePool);
     if (node == 0) {
         return 0;
     }
@@ -352,18 +309,18 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     node->unk_20 = 0;
     node->unk_24 = 0;
     node->self = node;
-    cur = ListPoolFirst((u8*)gSpriteWork + 0x1800);
+    cur = ListPoolFirst(&gSpriteWork->tilePool);
     if (cur == 0) {
-        node->unk_06 = *(u16*)((u8*)gSpriteWork + 0x1810);
+        node->unk_06 = gSpriteWork->tilePool.rangeStart;
         RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
-        ListPoolActivate(node->unk_0C, (u8*)gSpriteWork + 0x1800);
+        ListPoolActivate(node->unk_0C, &gSpriteWork->tilePool);
         return node;
     }
-    node->unk_06 = *(u16*)((u8*)gSpriteWork + 0x1810);
-    avail = cur->unk_06 - *(u16*)((u8*)gSpriteWork + 0x1810);
+    node->unk_06 = gSpriteWork->tilePool.rangeStart;
+    avail = cur->unk_06 - gSpriteWork->tilePool.rangeStart;
     if (node->unk_08 <= (s16)avail) {
         RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
-        ListPoolActivateBefore(node->unk_0C, (u8*)gSpriteWork + 0x1800, cur->unk_0C);
+        ListPoolActivateBefore(node->unk_0C, &gSpriteWork->tilePool, cur->unk_0C);
         return node;
     }
 
@@ -373,19 +330,19 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
         }
         next = ListPoolNext(cur->unk_0C);
         node->unk_06 = cur->unk_06 + cur->unk_08;
-        if (node->unk_06 + node->unk_08 > *(u16*)((u8*)gSpriteWork + 0x1812)) {
+        if (node->unk_06 + node->unk_08 > gSpriteWork->tilePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
             end = next->unk_06 - node->unk_06;
         } else {
-            end = *(u16*)((u8*)gSpriteWork + 0x1812) - node->unk_06;
+            end = gSpriteWork->tilePool.rangeEnd - node->unk_06;
         }
 
         if (node->unk_08 <= end) {
             RequestDma3Copy(src, (void*)((node->unk_06 << 5) + 0x06010000), size);
-            ListPoolActivateAfter(node->unk_0C, (u8*)gSpriteWork + 0x1800, cur->unk_0C);
+            ListPoolActivateAfter(node->unk_0C, &gSpriteWork->tilePool, cur->unk_0C);
             return node;
         }
         cur = next;
@@ -393,38 +350,35 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     return 0;
 }
 
-void func_0800284C(u8* p) {
-    if ((s16)*(u16*)(p + 4) > 0) {
-        *(u16*)(p + 4) -= 1;
+void func_0800284C(ObjTiles* p) {
+    if ((s16)p->refCount > 0) {
+        p->refCount -= 1;
     } else {
-        *(void**)(p + 0x2C) = 0;
-        ListPoolRelease(p + 0x0C, (u8*)gSpriteWork + 0x1800);
+        p->self = 0;
+        ListPoolRelease(p->unk_0C, &gSpriteWork->tilePool);
     }
 }
-
-void func_08002880(u8* p) {
-    *(void**)(p + 0x2C) = 0;
-    ListPoolRelease(p + 0x0C, (u8*)gSpriteWork + 0x1800);
+void func_08002880(ObjTiles* p) {
+    p->self = 0;
+    ListPoolRelease(p->unk_0C, &gSpriteWork->tilePool);
 }
-
-void func_080028A0(u8* p) {
-    *(void**)(p + 0x2C) = 0;
-    ListPoolRelease(p + 0x0C, (u8*)gSpriteWork + 0x1800);
+void func_080028A0(ObjTiles* p) {
+    p->self = 0;
+    ListPoolRelease(p->unk_0C, &gSpriteWork->tilePool);
 }
-
 void ReleaseObjTiles(void* a) {
-    u8* p = a;
-    u8* q;
+    ObjTiles* p = a;
+    ObjTiles* q;
 
     if (p == 0) {
         return;
     }
-    q = *(u8**)(p + 0x2C);
+    q = p->self;
     if (q != p) {
         return;
     }
 
-    switch (*(u32*)(q + 0x28)) {
+    switch (q->unk_28) {
     case 0:
         func_0800284C(q);
         break;
@@ -436,7 +390,6 @@ void ReleaseObjTiles(void* a) {
         break;
     }
 }
-
 ObjTiles* AllocObjTiles(u16 size, void* owner) {
     ObjTiles* node;
     ObjTiles* cur;
@@ -447,7 +400,7 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
     if (size == 0) {
         return 0;
     }
-    node = ListPoolFirstFree((u8*)gSpriteWork + 0x1800);
+    node = ListPoolFirstFree(&gSpriteWork->tilePool);
     if (node == 0) {
         return 0;
     }
@@ -458,16 +411,16 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
     node->unk_20 = 0;
     node->unk_24 = 1;
     node->self = node;
-    cur = ListPoolFirst((u8*)gSpriteWork + 0x1800);
+    cur = ListPoolFirst(&gSpriteWork->tilePool);
     if (cur == 0) {
-        node->unk_06 = *(u16*)((u8*)gSpriteWork + 0x1810);
-        ListPoolActivate(node->unk_0C, (u8*)gSpriteWork + 0x1800);
+        node->unk_06 = gSpriteWork->tilePool.rangeStart;
+        ListPoolActivate(node->unk_0C, &gSpriteWork->tilePool);
         return node;
     }
-    node->unk_06 = *(u16*)((u8*)gSpriteWork + 0x1810);
-    avail = cur->unk_06 - *(u16*)((u8*)gSpriteWork + 0x1810);
+    node->unk_06 = gSpriteWork->tilePool.rangeStart;
+    avail = cur->unk_06 - gSpriteWork->tilePool.rangeStart;
     if (node->unk_08 <= (s16)avail) {
-        ListPoolActivateBefore(node->unk_0C, (u8*)gSpriteWork + 0x1800, cur->unk_0C);
+        ListPoolActivateBefore(node->unk_0C, &gSpriteWork->tilePool, cur->unk_0C);
         return node;
     }
 
@@ -477,18 +430,18 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
         }
         next = ListPoolNext(cur->unk_0C);
         node->unk_06 = cur->unk_06 + cur->unk_08;
-        if (node->unk_06 + node->unk_08 > *(u16*)((u8*)gSpriteWork + 0x1812)) {
+        if (node->unk_06 + node->unk_08 > gSpriteWork->tilePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
             end = next->unk_06 - node->unk_06;
         } else {
-            end = *(u16*)((u8*)gSpriteWork + 0x1812) - node->unk_06;
+            end = gSpriteWork->tilePool.rangeEnd - node->unk_06;
         }
 
         if (node->unk_08 <= end) {
-            ListPoolActivateAfter(node->unk_0C, (u8*)gSpriteWork + 0x1800, cur->unk_0C);
+            ListPoolActivateAfter(node->unk_0C, &gSpriteWork->tilePool, cur->unk_0C);
             return node;
         }
         cur = next;
@@ -515,13 +468,13 @@ ObjPaletteNode* LoadObjPalette(void* src, u16 size) {
         return 0;
     }
 
-    for (cur = ListPoolFirst((u8*)gSpriteWork + 0x1A94); cur != 0; cur = ListPoolNext(cur->unk_0C)) {
+    for (cur = ListPoolFirst(&gSpriteWork->palettePool); cur != 0; cur = ListPoolNext(cur->unk_0C)) {
         if (cur->unk_00 == src) {
             cur->refCount++;
             return cur;
         }
     }
-    node = ListPoolFirstFree((u8*)gSpriteWork + 0x1A94);
+    node = ListPoolFirstFree(&gSpriteWork->palettePool);
     if (node == 0) {
         return 0;
     }
@@ -530,18 +483,18 @@ ObjPaletteNode* LoadObjPalette(void* src, u16 size) {
     node->unk_00 = src;
     node->refCount = 0;
     node->self = node;
-    cur = ListPoolFirst((u8*)gSpriteWork + 0x1A94);
+    cur = ListPoolFirst(&gSpriteWork->palettePool);
     if (cur == 0) {
-        node->unk_06 = *(u16*)((u8*)gSpriteWork + 0x1AA4);
+        node->unk_06 = gSpriteWork->palettePool.rangeStart;
         LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
-        ListPoolActivate(node->unk_0C, (u8*)gSpriteWork + 0x1A94);
+        ListPoolActivate(node->unk_0C, &gSpriteWork->palettePool);
         return node;
     }
-    node->unk_06 = *(u16*)((u8*)gSpriteWork + 0x1AA4);
-    avail = cur->unk_06 - *(u16*)((u8*)gSpriteWork + 0x1AA4);
+    node->unk_06 = gSpriteWork->palettePool.rangeStart;
+    avail = cur->unk_06 - gSpriteWork->palettePool.rangeStart;
     if (node->unk_08 <= (s16)avail) {
         LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
-        ListPoolActivateBefore(node->unk_0C, (u8*)gSpriteWork + 0x1A94, cur->unk_0C);
+        ListPoolActivateBefore(node->unk_0C, &gSpriteWork->palettePool, cur->unk_0C);
         return node;
     }
 
@@ -551,19 +504,19 @@ ObjPaletteNode* LoadObjPalette(void* src, u16 size) {
         }
         next = ListPoolNext(cur->unk_0C);
         node->unk_06 = cur->unk_06 + cur->unk_08;
-        if (node->unk_06 + node->unk_08 > *(u16*)((u8*)gSpriteWork + 0x1AA6)) {
+        if (node->unk_06 + node->unk_08 > gSpriteWork->palettePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
             end = next->unk_06 - node->unk_06;
         } else {
-            end = *(u16*)((u8*)gSpriteWork + 0x1AA6) - node->unk_06;
+            end = gSpriteWork->palettePool.rangeEnd - node->unk_06;
         }
 
         if (node->unk_08 <= end) {
             LoadPalette(src, (void*)((node->unk_06 << 5) + 0x05000200), size);
-            ListPoolActivateAfter(node->unk_0C, (u8*)gSpriteWork + 0x1A94, cur->unk_0C);
+            ListPoolActivateAfter(node->unk_0C, &gSpriteWork->palettePool, cur->unk_0C);
             return node;
         }
         cur = next;
@@ -575,141 +528,125 @@ void LoadObjPaletteBank(u16 bank, void* src) {
     LoadPalette(src, (void*)((bank << 5) + 0x05000200), 32);
 }
 
-void func_08002BCC(void* a) {
-    u8* p = a;
-
-    if ((s16)*(u16*)(p + 4) > 0) {
-        *(u16*)(p + 4) -= 1;
+void func_08002BCC(ObjPaletteNode* p) {
+    if ((s16)p->refCount > 0) {
+        p->refCount -= 1;
     } else {
-        *(u32*)(p + 0x24) = 0;
-        func_08005C60(*(u16*)(p + 6) + 0x10);
-        ListPoolRelease(p + 0x0C, (u8*)gSpriteWork + 0x1A94);
+        p->self = 0;
+        func_08005C60(p->unk_06 + 0x10);
+        ListPoolRelease(p->unk_0C, &gSpriteWork->palettePool);
     }
 }
-
-void ReleaseObjPalette(u8* p) {
-    if (p != 0 && *(u8**)(p + 36) == p) {
+void ReleaseObjPalette(ObjPaletteNode* p) {
+    if (p != 0 && p->self == p) {
         func_08002BCC(p);
     }
 }
-
 u8* AllocObjAffineAngle(u8 a, u8 b) {
-    u8* base;
-    u8* e;
+    ObjAffine* e;
     s32 sin;
     s32 cos;
 
-    if (*(u16*)((u8*)gSpriteWork + 0x2BAC) <= 0x1F && a != 0) {
-        base = (u8*)gSpriteWork;
+    if (gSpriteWork->affineCount <= 0x1F && a != 0) {
         sin = gSineTable[a];
         cos = gSineTable[a + 0x40];
-        e = base + 0x28AC + *(u16*)(base + 0x2BAC) * 24;
-        *(u16*)(e + 0x00) = cos;
-        *(u16*)(e + 0x02) = sin;
-        *(u16*)(e + 0x04) = -sin;
-        *(u16*)(e + 0x06) = cos;
-        *(u16*)(e + 0x08) = *(u16*)(base + 0x2BAC);
-        *(u8*)(e + 0x0A) = b;
-        *(u32*)(e + 0x0C) = 0x100;
-        *(u32*)(e + 0x10) = 0x100;
-        *(u8*)(e + 0x14) = a;
-        *(u16*)((u8*)gSpriteWork + 0x2BAC) += 1;
-        return e;
+        e = &gSpriteWork->affine[gSpriteWork->affineCount];
+        e->pa = cos;
+        e->pb = sin;
+        e->pc = -sin;
+        e->pd = cos;
+        e->index = gSpriteWork->affineCount;
+        e->unk_0A = b;
+        e->sx = 0x100;
+        e->sy = 0x100;
+        e->angle = a;
+        gSpriteWork->affineCount += 1;
+        return (u8*)e;
     }
     return 0;
 }
-
 u8* AllocObjAffine(u8 a, s32 sx, s32 sy, u8 f) {
-    u8* base;
-    u8* e;
+    ObjAffine* e;
     s32 sin;
     s32 cos;
 
-    if (*(u16*)((u8*)gSpriteWork + 0x2BAC) > 0x1F || (a == 0 && sx == 0x100 && sy == sx)) {
+    if (gSpriteWork->affineCount > 0x1F || (a == 0 && sx == 0x100 && sy == sx)) {
         return 0;
     }
     sin = gSineTable[a];
     cos = gSineTable[a + 0x40];
-    base = (u8*)gSpriteWork;
-    e = base + 0x28AC + *(u16*)(base + 0x2BAC) * 24;
-    *(u16*)(e + 0x00) = (cos << 8) / sx;
-    *(u16*)(e + 0x02) = (sin << 8) / sy;
-    *(u16*)(e + 0x04) = (-sin << 8) / sx;
-    *(u16*)(e + 0x06) = (cos << 8) / sy;
-    *(u16*)(e + 0x08) = *(u16*)(base + 0x2BAC);
-    *(u8*)(e + 0x0A) = f;
-    *(u32*)(e + 0x0C) = sx;
-    *(u32*)(e + 0x10) = sy;
-    *(u8*)(e + 0x14) = a;
-    *(u16*)((u8*)gSpriteWork + 0x2BAC) += 1;
+    e = &gSpriteWork->affine[gSpriteWork->affineCount];
+    e->pa = (cos << 8) / sx;
+    e->pb = (sin << 8) / sy;
+    e->pc = (-sin << 8) / sx;
+    e->pd = (cos << 8) / sy;
+    e->index = gSpriteWork->affineCount;
+    e->unk_0A = f;
+    e->sx = sx;
+    e->sy = sy;
+    e->angle = a;
+    gSpriteWork->affineCount += 1;
 
-    return e;
+    return (u8*)e;
 }
-
 u8* func_08002DA0(u8 a, s32 sx, s32 sy, u8 f) {
-    u8* base;
-    u8* e;
+    ObjAffine* e;
     s32 sin;
     s32 cos;
 
-    if (*(u16*)((u8*)gSpriteWork + 0x2BAC) > 0x1F || (a == 0 && sx == 0x100 && sy == sx)) {
+    if (gSpriteWork->affineCount > 0x1F || (a == 0 && sx == 0x100 && sy == sx)) {
         return 0;
     }
     sin = gSineTable[a];
     cos = gSineTable[a + 0x40];
-    base = (u8*)gSpriteWork;
-    e = base + 0x28AC + *(u16*)(base + 0x2BAC) * 24;
-    *(u16*)(e + 0x00) = (cos << 8) / sx;
-    *(u16*)(e + 0x02) = (sin << 8) / sx;
-    *(u16*)(e + 0x04) = (-sin << 8) / sy;
-    *(u16*)(e + 0x06) = (cos << 8) / sy;
-    *(u16*)(e + 0x08) = *(u16*)(base + 0x2BAC);
-    *(u8*)(e + 0x0A) = f;
-    *(u32*)(e + 0x0C) = sx;
-    *(u32*)(e + 0x10) = sy;
-    *(u8*)(e + 0x14) = a;
-    *(u16*)((u8*)gSpriteWork + 0x2BAC) += 1;
+    e = &gSpriteWork->affine[gSpriteWork->affineCount];
+    e->pa = (cos << 8) / sx;
+    e->pb = (sin << 8) / sx;
+    e->pc = (-sin << 8) / sy;
+    e->pd = (cos << 8) / sy;
+    e->index = gSpriteWork->affineCount;
+    e->unk_0A = f;
+    e->sx = sx;
+    e->sy = sy;
+    e->angle = a;
+    gSpriteWork->affineCount += 1;
 
-    return e;
+    return (u8*)e;
 }
-
 u8* AllocObjAffineMatrix(u16 a, u16 b, u16 c, u16 d, u8 f) {
-    u8* base;
-    u8* e;
+    ObjAffine* e;
     u32 z;
 
-    if (*(u16*)((u8*)gSpriteWork + 0x2BAC) > 0x1F) {
+    if (gSpriteWork->affineCount > 0x1F) {
         return 0;
     }
-    base = (u8*)gSpriteWork;
-    e = base + 0x28AC + *(u16*)(base + 0x2BAC) * 24;
+    e = &gSpriteWork->affine[gSpriteWork->affineCount];
     z = 0;
-    *(u16*)(e + 0x00) = a;
-    *(u16*)(e + 0x02) = b;
-    *(u16*)(e + 0x04) = c;
-    *(u16*)(e + 0x06) = d;
-    *(u16*)(e + 0x08) = *(u16*)(base + 0x2BAC);
-    *(u8*)(e + 0x0A) = f;
-    *(u32*)(e + 0x0C) = 0x100;
-    *(u32*)(e + 0x10) = 0x100;
-    *(u8*)(e + 0x14) = z;
-    *(u16*)((u8*)gSpriteWork + 0x2BAC) += 1;
+    e->pa = a;
+    e->pb = b;
+    e->pc = c;
+    e->pd = d;
+    e->index = gSpriteWork->affineCount;
+    e->unk_0A = f;
+    e->sx = 0x100;
+    e->sy = 0x100;
+    e->angle = z;
+    gSpriteWork->affineCount += 1;
 
-    return e;
+    return (u8*)e;
 }
-
 void SortSprites(void) {
-    if (*(u16*)((u8*)gSpriteWork + 0x28A8) > 1) {
-        SortSpriteEntries((u8*)gSpriteWork + 0x26A8, *(u16*)((u8*)gSpriteWork + 0x28AA),
-                      *(u16*)((u8*)gSpriteWork + 0x28A8) - 1);
+    if (gSpriteWork->entryCount > 1) {
+        SortSpriteEntries(gSpriteWork->sortPtrs, gSpriteWork->sortLo,
+                      gSpriteWork->entryCount - 1);
     }
-    *(u16*)((u8*)gSpriteWork + 0x28AA) = 0;
+    gSpriteWork->sortLo = 0;
 }
 
 INCLUDE_ASM("engine/func_08002F50.s");
 
 void func_080034D8(u8 a) {
-    ((u8*)gSpriteWork)[0x2BAF] = a;
+    gSpriteWork->unk_2BAF = a;
 }
 
 void SetObjMosaicSize(u8 a, u8 b) {
@@ -719,7 +656,7 @@ void SetObjMosaicSize(u8 a, u8 b) {
 }
 
 void func_08003510(u8 a) {
-    ((u8*)gSpriteWork)[0x2BAE] = a;
+    gSpriteWork->unk_2BAE = a;
 }
 
 u16 func_08003524(u16** a, u16 n) {
@@ -959,14 +896,14 @@ u8 func_080038E4(ObjTiles* a, u16* b, void* c) {
     }
     return 0;
 }
-ObjTiles* AllocObjPalette(u16 size) {
-    ObjTiles* node;
-    ObjTiles* cur;
-    ObjTiles* next;
+ObjPaletteNode* AllocObjPalette(u16 size) {
+    ObjPaletteNode* node;
+    ObjPaletteNode* cur;
+    ObjPaletteNode* next;
     s32 avail;
     s16 end;
 
-    node = ListPoolFirstFree((u8*)gSpriteWork + 0x1A94);
+    node = ListPoolFirstFree(&gSpriteWork->palettePool);
     if (node == 0) {
         return 0;
     }
@@ -974,17 +911,17 @@ ObjTiles* AllocObjPalette(u16 size) {
     node->unk_08 = size / 32;
     node->unk_00 = 0;
     node->refCount = 0;
-    *(ObjTiles**)((u8*)node + 0x24) = node;
-    cur = ListPoolFirst((u8*)gSpriteWork + 0x1A94);
+    node->self = node;
+    cur = ListPoolFirst(&gSpriteWork->palettePool);
     if (cur == 0) {
-        node->unk_06 = *(u16*)((u8*)gSpriteWork + 0x1AA4);
-        ListPoolActivate(node->unk_0C, (u8*)gSpriteWork + 0x1A94);
+        node->unk_06 = gSpriteWork->palettePool.rangeStart;
+        ListPoolActivate(node->unk_0C, &gSpriteWork->palettePool);
         return node;
     }
-    node->unk_06 = *(u16*)((u8*)gSpriteWork + 0x1AA4);
-    avail = cur->unk_06 - *(u16*)((u8*)gSpriteWork + 0x1AA4);
+    node->unk_06 = gSpriteWork->palettePool.rangeStart;
+    avail = cur->unk_06 - gSpriteWork->palettePool.rangeStart;
     if (node->unk_08 <= (s16)avail) {
-        ListPoolActivateBefore(node->unk_0C, (u8*)gSpriteWork + 0x1A94, cur->unk_0C);
+        ListPoolActivateBefore(node->unk_0C, &gSpriteWork->palettePool, cur->unk_0C);
         return node;
     }
 
@@ -994,18 +931,18 @@ ObjTiles* AllocObjPalette(u16 size) {
         }
         next = ListPoolNext(cur->unk_0C);
         node->unk_06 = cur->unk_06 + cur->unk_08;
-        if (node->unk_06 + node->unk_08 > *(u16*)((u8*)gSpriteWork + 0x1AA6)) {
+        if (node->unk_06 + node->unk_08 > gSpriteWork->palettePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
             end = next->unk_06 - node->unk_06;
         } else {
-            end = *(u16*)((u8*)gSpriteWork + 0x1AA6) - node->unk_06;
+            end = gSpriteWork->palettePool.rangeEnd - node->unk_06;
         }
 
         if (node->unk_08 <= end) {
-            ListPoolActivateAfter(node->unk_0C, (u8*)gSpriteWork + 0x1A94, cur->unk_0C);
+            ListPoolActivateAfter(node->unk_0C, &gSpriteWork->palettePool, cur->unk_0C);
             return node;
         }
         cur = next;
@@ -1025,11 +962,11 @@ u8 CanAllocObjTiles(u16 n) {
     u16 pos;
     s16 end;
 
-    cur = ListPoolFirst((u8*)gSpriteWork + 0x1800);
+    cur = ListPoolFirst(&gSpriteWork->tilePool);
     if (cur == 0) {
         return 1;
     }
-    pos = *(u16*)((u8*)gSpriteWork + 0x1810);
+    pos = gSpriteWork->tilePool.rangeStart;
     if (n <= (s16)(cur->unk_06 - pos)) {
         return 1;
     }
@@ -1040,14 +977,14 @@ u8 CanAllocObjTiles(u16 n) {
         }
         next = ListPoolNext(cur->unk_0C);
         pos = cur->unk_06 + cur->unk_08;
-        if ((s16)pos + n > *(u16*)((u8*)gSpriteWork + 0x1812)) {
+        if ((s16)pos + n > gSpriteWork->tilePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
             end = next->unk_06 - pos;
         } else {
-            end = *(u16*)((u8*)gSpriteWork + 0x1812) - pos;
+            end = gSpriteWork->tilePool.rangeEnd - pos;
         }
 
         if (n <= end) {
@@ -1058,16 +995,16 @@ u8 CanAllocObjTiles(u16 n) {
     return 0;
 }
 u8 CanAllocObjPalette(u16 n) {
-    ObjTiles* cur;
-    ObjTiles* next;
+    ObjPaletteNode* cur;
+    ObjPaletteNode* next;
     u16 pos;
     s16 end;
 
-    cur = ListPoolFirst((u8*)gSpriteWork + 0x1A94);
+    cur = ListPoolFirst(&gSpriteWork->palettePool);
     if (cur == 0) {
         return 1;
     }
-    pos = *(u16*)((u8*)gSpriteWork + 0x1AA4);
+    pos = gSpriteWork->palettePool.rangeStart;
     if (n <= (s16)(cur->unk_06 - pos)) {
         return 1;
     }
@@ -1078,14 +1015,14 @@ u8 CanAllocObjPalette(u16 n) {
         }
         next = ListPoolNext(cur->unk_0C);
         pos = cur->unk_06 + cur->unk_08;
-        if ((s16)pos + n > *(u16*)((u8*)gSpriteWork + 0x1AA6)) {
+        if ((s16)pos + n > gSpriteWork->palettePool.rangeEnd) {
             break;
         }
 
         if (next != 0) {
             end = next->unk_06 - pos;
         } else {
-            end = *(u16*)((u8*)gSpriteWork + 0x1AA6) - pos;
+            end = gSpriteWork->palettePool.rangeEnd - pos;
         }
 
         if (n <= end) {
