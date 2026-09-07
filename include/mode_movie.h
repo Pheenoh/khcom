@@ -11,22 +11,32 @@
 #include "util.h"
 #include "m4a.h"
 
+typedef struct MovieSub {
+    s16 unk_00;
+    u8 unk_02[2];
+    u16* unk_04;
+    u8 unk_08;
+    u8 unk_09;
+    u16 unk_0A;
+    u8 unk_0C[4];
+} MovieSub;
+
 extern vu16 gUnk_02034938;
 extern s32 gUnk_0203493C;
-extern s16 gUnk_02034940;
-extern s16 gUnk_02034942;
-extern s16 gUnk_02034944;
-extern s16 gUnk_02034946;
-extern s32 gUnk_02034948;
-extern s32 gUnk_0203494C;
+extern u16 gUnk_02034940;
+extern volatile s16 gUnk_02034942;
+extern volatile s16 gUnk_02034944;
+extern volatile u16 gUnk_02034946;
+extern MovieSub* volatile gUnk_02034948;
+extern MovieSub* gUnk_0203494C;
 extern void* gUnk_02034950;
-extern s16 gUnk_02034954;
-extern s16 gUnk_02034956;
-extern s16 gUnk_02034958;
-extern s16 gUnk_0203495A;
-extern s16 gUnk_0203495C;
-extern s16 gUnk_0203495E;
-extern s16 gUnk_02034960;
+extern volatile s16 gUnk_02034954;
+extern volatile u16 gUnk_02034956;
+extern u16 gUnk_02034958;
+extern u16 gUnk_0203495A;
+extern volatile s16 gUnk_0203495C;
+extern volatile u16 gUnk_0203495E;
+extern u16 gUnk_02034960;
 extern void* gVBlankHandlerOverride;
 extern u8 gUnk_0815C3EC[];
 extern u8 gUnk_084E0F34[];
@@ -55,6 +65,7 @@ void BgReset(void);
 void SpriteReset(void);
 void func_0806180C(s32 a);
 void func_0805EA90(void);
-void func_0805E93C(void);
+s32 func_0805E93C(void);
+u16 func_0805E89C(u16* str);
 
 #endif /* GUARD_MODE_MOVIE_H */

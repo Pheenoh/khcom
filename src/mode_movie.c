@@ -3,20 +3,20 @@
 
 vu16 gUnk_02034938;
 s32 gUnk_0203493C;
-s16 gUnk_02034940;
-s16 gUnk_02034942;
-s16 gUnk_02034944;
-s16 gUnk_02034946;
-s32 gUnk_02034948;
-s32 gUnk_0203494C;
+u16 gUnk_02034940;
+volatile s16 gUnk_02034942;
+volatile s16 gUnk_02034944;
+volatile u16 gUnk_02034946;
+MovieSub* volatile gUnk_02034948;
+MovieSub* gUnk_0203494C;
 void* gUnk_02034950;
-s16 gUnk_02034954;
-s16 gUnk_02034956;
-s16 gUnk_02034958;
-s16 gUnk_0203495A;
-s16 gUnk_0203495C;
-s16 gUnk_0203495E;
-s16 gUnk_02034960;
+volatile s16 gUnk_02034954;
+volatile u16 gUnk_02034956;
+u16 gUnk_02034958;
+u16 gUnk_0203495A;
+volatile s16 gUnk_0203495C;
+volatile u16 gUnk_0203495E;
+u16 gUnk_02034960;
 
 void mode_movie_0(s32 a) {
     gUnk_02034938 = 0;
@@ -37,7 +37,70 @@ void mode_movie_0(s32 a) {
     gUnk_0203494C = 0;
 }
 
+#ifdef NON_MATCHING
+s32 func_0805E93C(void) {
+    MovieSub* e;
+    s32 i;
+    u16 keys;
+
+    keys = ~*(vu16*)0x04000130;
+
+    if ((keys & 0xF) == 0xF) {
+        gUnk_02034958 |= 4;
+        return 1;
+    }
+
+    if (gUnk_02034950 != 0) {
+        for (i = 1; i >= 0; i--) {
+            if (((MovieSub*)gUnk_02034950)[gUnk_02034944].unk_00 == gUnk_02034942) {
+                if (((MovieSub*)gUnk_02034950)[gUnk_02034944].unk_08 == 0) {
+                    e = &((MovieSub*)gUnk_02034950)[gUnk_02034944];
+                    gUnk_02034948 = e;
+                    gUnk_02034958 |= 1;
+                    gUnk_02034954 = e->unk_0A;
+
+                    if (gUnk_02034944 < gUnk_02034946 - 1) {
+                        gUnk_02034944++;
+                    }
+
+                    gUnk_02034956 = func_0805E89C(gUnk_02034948->unk_04);
+
+                    if (gUnk_02034956 > 40) {
+                        gUnk_02034956 = 40;
+                    }
+                } else {
+                    e = &((MovieSub*)gUnk_02034950)[gUnk_02034944];
+                    gUnk_0203494C = e;
+                    gUnk_02034958 |= 2;
+                    gUnk_0203495C = e->unk_0A;
+
+                    if (gUnk_02034944 < gUnk_02034946 - 1) {
+                        gUnk_02034944++;
+                    }
+
+                    gUnk_0203495E = func_0805E89C(e->unk_04);
+
+                    if (gUnk_0203495E > 40) {
+                        gUnk_0203495E = 40;
+                    }
+                }
+            }
+        }
+
+        if (gUnk_02034954 > 0) {
+            gUnk_02034954--;
+        }
+
+        if (gUnk_0203495C > 0) {
+            gUnk_0203495C--;
+        }
+    }
+    gUnk_02034942++;
+    return 0;
+}
+#else
 INCLUDE_ASM("mode_movie/func_0805E93C.s");
+#endif
 INCLUDE_ASM("mode_movie/func_0805EA90.s");
 
 #ifndef VERSION_EU
