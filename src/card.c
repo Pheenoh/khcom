@@ -27,6 +27,11 @@ extern u8 gUnkEu_08CB0D3C[];
 extern u8 gUnkEu_08F7ADFC[];
 extern u8 gUnkEu_09F72C10[];
 extern u8 gUnkEu_09F72D80[];
+extern void** gUnkEu_09F72E10[];
+extern u8 gUnkEu_0916F992[];
+extern u8 gUnkEu_0917063A[];
+extern u8 gUnkEu_09170202[];
+extern u8 gUnkEu_0916FDCA[];
 extern void* gUnkEu_08895AF4[];
 extern void* gUnkEu_08895CF8[];
 extern void* gUnkEu_08895DBC[];
@@ -17418,7 +17423,6 @@ void func_080A1554(u8* work) {
         *(s32*)&work[0x68] = y - 16;
     }
 }
-#ifndef VERSION_EU
 void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a) {
     s32 i;
     UnkStruct_080A1A44_Args args;
@@ -17429,7 +17433,30 @@ void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a) {
     w->unk_30 = 30;
     w->unk_97 = a->unk_08;
     func_080A1554((u8*)w);
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        w->tiles = LoadObjTiles(gUnk_0908C686, 0x3E0);
+        break;
+    case 1:
+        w->tiles = LoadObjTiles(gUnkEu_0916F992, 0x3E0);
+        break;
+    case 2:
+        w->tiles = LoadObjTiles(gUnkEu_0917063A, 0x3E0);
+        break;
+    case 3:
+        w->tiles = LoadObjTiles(gUnkEu_09170202, 0x3E0);
+        break;
+    case 4:
+        w->tiles = LoadObjTiles(gUnkEu_0916FDCA, 0x3E0);
+        break;
+    default:
+        w->tiles = LoadObjTiles(gUnk_0908C686, 0x3E0);
+        break;
+    }
+#else
     w->tiles = LoadObjTiles(gUnk_0908C686, 0x3E0);
+#endif
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
 
     for (i = 0; i < 4; i++) {
@@ -17456,9 +17483,6 @@ void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a) {
         gUnk_02034AF8 = 1;
     }
 }
-#else
-INCLUDE_ASM("card/LVUP_EFFECT_0.s");
-#endif
 u8 LVUP_EFFECT_1(UnkStruct_080A18F4* w, void* a) {
     s32 i;
 
@@ -17547,21 +17571,21 @@ u8 func_080A18F4(UnkStruct_080A18F4* w) {
     return 1;
 }
 
-#ifndef VERSION_EU
 void LVUP_EFFECT_2(UnkStruct_080A18F4* w) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
         if (w->unk_94 <= 5) {
+#ifdef VERSION_EU
+            DrawSprite(w->unk_34[i] >> 8, w->unk_44[i] >> 8, gUnkEu_09F72E10[gLanguage][w->unk_94], w->tiles, w->palette, 0, 0, 20);
+#else
             DrawSprite(w->unk_34[i] >> 8, w->unk_44[i] >> 8, gUnk_09EE7938[w->unk_94], w->tiles, w->palette, 0, 0, 20);
+#endif
         }
     }
 
     TaskPoolDraw(w->unk_98);
 }
-#else
-INCLUDE_ASM("card/LVUP_EFFECT_2.s");
-#endif
 
 void LVUP_EFFECT_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[0x00]);
