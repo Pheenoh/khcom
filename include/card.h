@@ -764,6 +764,28 @@ typedef struct UnkStruct_080038C8 {
     u16 unk_08;
 } UnkStruct_080038C8;
 
+
+typedef struct UnkStruct_0809CE88 {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    AnimState unk_0C;
+    s32 unk_24;
+    s32 unk_28;
+    s32 unk_2C;
+    s32 unk_30;
+    s32 unk_34;
+    s32 unk_38;
+    s32 unk_3C;
+    s32 unk_40;
+    s32 unk_44;
+    s32 unk_48;
+    s32 unk_4C;
+    s32 unk_50;
+} UnkStruct_0809CE88;
+
+typedef char UnkStruct_0809CE88_sizechk[(sizeof(struct UnkStruct_0809CE88) == 0x54) ? 1 : -1];
+
 typedef struct UnkStruct_0809CC80 {
     void* unk_00;
     UnkStruct_080038C8* unk_04;
@@ -2071,8 +2093,8 @@ void func_080A53E4(u8* work);
 void func_08090864(UnkStruct_02034AAC* p);
 void func_08099CDC(UnkStruct_08099928* w);
 void func_0809C110(u8* work);
-void func_0809CE88(u8* work, s16* a);
-void func_0809CF64(u8* work, s16* a);
+void func_0809CE88(UnkStruct_0809CE88* w, s16* a);
+void func_0809CF64(UnkStruct_0809CE88* w, s16* a);
 void RELOAD_CHILDREN_2(UnkStruct_08098BE8* w);
 u8 func_080AADD4(u8* work, s16 x, s16 y, u16 dir);
 u8 func_08090550(UnkStruct_02034AAC* p, void* a);
