@@ -30,7 +30,6 @@ extern u8 gUnk_09841F98[];
 extern u8 gUnk_09801C98[];
 extern Mode gModeTitle;
 
-void ModeRequest(Mode* mode, s32 arg);
 void func_08006120(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);
 

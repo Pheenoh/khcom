@@ -6,6 +6,7 @@
 #include "main.h"
 #include "mode.h"
 #include "engine.h"
+#include "key.h"
 
 typedef struct ChkBtlWork {
     s8 unk_00;
@@ -56,8 +57,6 @@ typedef struct GameState {
     u8 unk_FC[0x80];
     u16 unk_17C;
 } GameState;
-void ModeRequest(Mode* mode, s32 arg);
-u16 GetKeysRepeat(void);
 void func_08006120(s32 a, s32 b);
 void func_0805FA60(s32 a, void* b, s32 c, u8 d);
 void func_0805FA8C(s32 a, s32 b, s32 c);

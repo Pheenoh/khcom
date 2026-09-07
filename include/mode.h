@@ -10,4 +10,7 @@ typedef struct Mode {
     void (*exit)(void);
 } Mode;
 
+void ModeRequest(Mode* mode, s32 arg);
+void ModeRequestHeapReset(Mode* mode, s32 arg);
+
 #endif

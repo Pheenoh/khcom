@@ -6,6 +6,7 @@
 #include "taskpool.h"
 #include "main.h"
 #include "engine.h"
+#include "key.h"
 
 typedef struct GameState {
     u8 unk_000[0x08];
@@ -391,7 +392,6 @@ void func_08006184(s32 a, u16 b);
 void func_080D7568(u8 a);
 void func_080D78B8(StatusBarWork* work);
 u8 func_080D7890(void);
-u16 GetKeysRepeat(void);
 u16 func_0801AF1C(s32 a);
 u8 func_0801CA00(void* a);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);

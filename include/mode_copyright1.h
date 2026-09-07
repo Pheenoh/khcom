@@ -15,7 +15,6 @@ extern Mode gModeCopyright1;
 extern Mode gModeCopyright2;
 
 int SaveRepairHeader(void);
-void ModeRequest(Mode* mode, s32 arg);
 void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgMap(s32 bg, void* src, u16 size);

@@ -57,7 +57,6 @@ void SpriteReset(void);
 void m4aSoundInit(void);
 void m4aSoundVSyncOn(void);
 void func_0806180C(s32 a);
-void ModeRequest(Mode* mode, s32 arg);
 void func_0805EA90(void);
 void func_0805E93C(void);
 

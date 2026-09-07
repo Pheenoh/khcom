@@ -8,6 +8,7 @@
 #include "m4a.h"
 #include "anim.h"
 #include "mode.h"
+#include "key.h"
 typedef struct AllmapRoomWork {
     void* tiles;
     void* palette;
@@ -176,7 +177,6 @@ typedef struct AllmapPushaWork {
 void* AllocObjTiles(s32 a, void* b);
 void SaveClearSystem(void);
 int SaveLoadSystem(void);
-void ModeRequest(Mode* mode, s32 arg);
 void func_0801CCB4(void);
 void func_0801CD20(void);
 void func_080AEB94(void);
@@ -188,7 +188,6 @@ void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimUpdate(AnimState* a);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void* GetBgScreenBase(s32 bg);
-u16 GetKeysRepeat(void);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);
 void* LoadObjPalette(void* a, s32 b);

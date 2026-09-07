@@ -6,6 +6,7 @@
 #include "main.h"
 #include "anim.h"
 #include "mode.h"
+#include "key.h"
 typedef struct DebugWork {
     s8 unk_00;
     s8 unk_01;
@@ -15,9 +16,6 @@ typedef struct DebugWork {
     AnimState anim;
 } DebugWork;
 
-void ModeRequest(Mode* mode, s32 arg);
-void ModeRequestHeapReset(Mode* mode, s32 arg);
-u16 GetKeysRepeat(void);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 void AnimInit(AnimState* a, s32 b, s32 c);

@@ -151,8 +151,6 @@ extern s16 gUnk_09033E76[];
 extern const char* gEventNames[];
 extern Mode gModeDebug;
 
-void ModeRequest(Mode* mode, s32 arg);
-u16 GetKeysRepeat(void);
 void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

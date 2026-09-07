@@ -144,7 +144,6 @@ void func_08103D54(s16 a);
 void func_08103D7C(void);
 void func_08103DE8(void);
 
-u16 GetKeysRepeat(void);
 u16 GetRandom(void);
 void* GetBgScreenBase(s32 bg);
 void ReleaseObjTiles(void* a);
@@ -181,7 +180,6 @@ void func_08065ACC(TextSlot* p, s32 n);
 void UpdatePlayTime(void);
 u8 func_08006314(void);
 void func_080061E8(s32 a, u16 b);
-void ModeRequest(Mode* mode, s32 arg);
 void func_080E04EC(void);
 void func_0810264C(u16 a, u16 b, u16 c);
 u8 func_0810329C(u16 a);

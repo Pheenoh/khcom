@@ -44,7 +44,6 @@ u8 gKeyReleaseSelect;
 void func_080C55DC(void);
 void ModeUpdate(void);
 
-u16 GetKeysRepeat(void);
 void ResetKeyState(void);
 u8 GetKeyHoldTime(u16 key);
 u8 GetKeyReleaseTime(u16 key);

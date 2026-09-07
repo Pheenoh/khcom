@@ -911,7 +911,6 @@ void func_0805A7D0(void);
 void func_0805A514(s16 a, s16 b, s16 c);
 u8 func_08006314(void);
 void AnimChange(AnimState* a, u16 id, u16 flags);
-u16 GetKeysRepeat(void);
 void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h);
 u16 func_08065B6C(u16* a, TextSlot* b);
 u8 func_0800FF70(u16 a);

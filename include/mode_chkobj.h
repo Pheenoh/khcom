@@ -7,6 +7,7 @@
 #include "main.h"
 #include "engine.h"
 #include "mode.h"
+#include "key.h"
 
 typedef struct ChkObjEntry {
     ObjDef* unk_00;
@@ -16,8 +17,6 @@ typedef struct ChkObjEntry {
 } ChkObjEntry;
 
 
-void ModeRequest(Mode* mode, s32 arg);
-u16 GetKeysRepeat(void);
 void* AllocObjTiles(s32 a, void* b);
 void* LoadObjPalette(void* a, s32 b);
 u16 func_08003598(void* a);

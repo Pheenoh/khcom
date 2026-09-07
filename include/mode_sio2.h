@@ -6,6 +6,7 @@
 #include "main.h"
 #include "mode.h"
 #include "obj.h"
+#include "key.h"
 
 typedef struct PoohAnim {
     void* unk_00;
@@ -175,9 +176,7 @@ extern TaskDesc gTaskDescPooPrize;
 extern TaskDesc gTaskDescPooRabbitAfterEvent;
 extern TaskDesc gTaskDescPooCabbageAfterEvent;
 
-void ModeRequest(Mode* mode, s32 arg);
 u8 IsTaskActive(Task* t);
-u16 GetKeysRepeat(void);
 void func_08002A10(void* a, void* b);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjPalette(u8* p);

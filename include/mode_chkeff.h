@@ -5,6 +5,7 @@
 #include "taskpool.h"
 #include "main.h"
 #include "mode.h"
+#include "key.h"
 
 typedef struct ChkEffWork {
     TaskPool pool;
@@ -19,8 +20,6 @@ typedef struct ChkEffWork {
     u16 alphaA;
     u16 alphaB;
 } ChkEffWork;
-void ModeRequest(Mode* mode, s32 arg);
-u16 GetKeysRepeat(void);
 void SetBgMode1(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void LoadBgTiles(s32 bg, void* src, u16 size);
