@@ -183,6 +183,8 @@ void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08006184(s32 a, s32 b);
 void SetTaskUpdate(u8* p, u32 v);
 u8 func_080A8C20(u8* work);
+u8 func_080A86F4(u8* work, void* a);
+u8 func_080A8BD8(u8* work, void* a);
 void AnimInit(AnimState* a, s32 b, s32 c);
 s32 func_0805F5A4(s32* a, s32* b);
 s32* func_080E04E0(void);
@@ -21139,7 +21141,145 @@ u8 func_080A7ABC(UnkStruct_0808C940* w, void* a) {
     w->unk_715++;
     return 1;
 }
+#ifdef NON_MATCHING
+u8 func_080A7C80(u8* work, void* a) {
+    u8 n;
+
+    if (work[0x70D] != 0) {
+        TaskPoolUpdate((TaskPool*)&work[0x614]);
+        TaskPoolUpdate((TaskPool*)&work[0x628]);
+
+        if (GetKeysPressed() & 8) {
+            work[0x710] = 1;
+        }
+
+        return 1;
+    }
+
+    if (work[0x710] != 0) {
+        if ((u8)func_080AAC40(work) != 0 && (u8)func_080AAC8C(work) != 0) {
+            SetTaskUpdate(a, (void*)func_080A8C20);
+            func_08006184(0, 4);
+            m4aSongNumStart(103);
+            return 1;
+        }
+
+        work[0x710] = 0;
+    }
+
+    *(void**)&work[0x4E8] = AnimUpdate((AnimState*)&work[0x64C]);
+    *(void**)&work[0x4EC] = AnimUpdate((AnimState*)&work[0x664]);
+
+    switch (GetKeysRepeat()) {
+    case 32:
+        if (*(s16*)&work[0x6D0] > 0) {
+            (*(s16*)&work[0x6D0])--;
+            work[0x6F6] = 4;
+
+            if ((u8)func_080AA77C(work, 32) != 0) {
+                m4aSongNumStart(101);
+            }
+        }
+
+        func_080AA680(work);
+        break;
+    case 16:
+        if (*(s16*)&work[0x6D0] <= 0) {
+            (*(s16*)&work[0x6D0])++;
+            work[0x6F6] = 4;
+
+            if ((u8)func_080AA77C(work, 16) != 0) {
+                m4aSongNumStart(101);
+            }
+        }
+
+        func_080AA680(work);
+        break;
+    case 64:
+        n = work[0x6D2];
+
+        if (*(s16*)&work[0x6D2] > 0) {
+            (*(s16*)&work[0x6D2])--;
+        }
+
+        work[0x6F6] = 4;
+        func_080AA77C(work, 64);
+
+        if ((s8)n != *(s16*)&work[0x6D2]) {
+            m4aSongNumStart(101);
+        }
+
+        func_080AA680(work);
+        break;
+    case 128:
+        n = work[0x6D2];
+
+        if (*(s16*)&work[0x6D2] <= 3) {
+            (*(s16*)&work[0x6D2])++;
+        }
+
+        work[0x6F6] = 4;
+        func_080AA77C(work, 128);
+
+        if ((s8)n != *(s16*)&work[0x6D2]) {
+            m4aSongNumStart(101);
+        }
+
+        func_080AA680(work);
+        break;
+    }
+
+    switch (GetKeysPressed()) {
+    case 2:
+        func_080AAA8C(work, 0);
+        n = work[0x6F4];
+        *(s16*)&work[0x6D0] = (s8)n;
+        n = work[0x6F5];
+        *(s16*)&work[0x6D2] = (s8)n;
+        *(s32*)&work[0x694] = gUnk_0903595E[*(s16*)&work[0x6D0]] << 8;
+        *(s32*)&work[0x698] = gUnk_09035964[*(s16*)&work[0x6D2]] << 8;
+        func_080AA450(work);
+        work[0x6F0] = 9;
+        SetTaskUpdate(a, (void*)func_080A86F4);
+        return 1;
+    case 1:
+        if ((u8)func_080AAB08(work) == 0) {
+            return 1;
+        }
+
+        func_080AA1F8();
+        func_0808500C(3, (u16*)&work[0x6E2]);
+        func_0808CC58(*(u16*)&work[0x6E2], 0);
+        func_0808CC58(*(u16*)&work[0x6E4], 1);
+        func_0808CC58(*(u16*)&work[0x6E6], 2);
+        func_0808CC58(*(u16*)&work[0x6E8], 3);
+        SetTaskUpdate(a, (void*)func_080A8BD8);
+        func_080AA680(work);
+        work[0x6F6] = 4;
+        break;
+    case 8:
+        if ((u8)func_080AAC40(work) != 0 && (u8)func_080AAC8C(work) != 0) {
+            SetTaskUpdate(a, (void*)func_080A8C20);
+            func_08006184(0, 4);
+            m4aSongNumStart(103);
+        }
+
+        return 1;
+    }
+
+    if (work[0x6F6] != 0) {
+        ApproachValue((s32*)&work[0x694], gUnk_09041F30[*(s16*)&work[0x6D0]] << 8, work[0x6F6]);
+        ApproachValue((s32*)&work[0x698], (gUnk_09041F34[*(s16*)&work[0x6D2]] - 16) << 8, work[0x6F6]);
+        work[0x6F6]--;
+    }
+
+    TaskPoolUpdate((TaskPool*)&work[0x614]);
+    TaskPoolUpdate((TaskPool*)&work[0x628]);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_080A7C80.s");
+#endif
 INCLUDE_ASM("card/func_080A8020.s");
 #ifdef NON_MATCHING
 u8 func_080A82E0(u8* work, void* a) {
