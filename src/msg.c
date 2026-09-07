@@ -2697,7 +2697,204 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
 #else
 INCLUDE_ASM("msg/func_08065B7C.s");
 #endif
+#ifdef VERSION_US
+s32 func_08065D10(u16* a, TextSlot* b) {
+    u8 buf[2];
+    u16* c;
+    u16 w;
+    u8 t;
+    u8 n;
+
+    w = 0;
+    t = 0;
+    n = 0;
+
+    while (*a != 0) {
+        u16 v;
+
+        buf[0] = a[0];
+        buf[1] = a[1];
+        c = (u16*)buf;
+
+        if (*c == 0x6E6E) {
+            a += 2;
+
+            if (b->tiles != 0) {
+                ReleaseObjTiles(b->tiles);
+            }
+
+            b->tiles = 0;
+            b->unk_05 = 0;
+        } else {
+            v = *c;
+            v = (v / 256) | (v << 8);
+            a += 2;
+
+            if ((v & 0xFF00) == 0x8100) {
+                v &= 0xFF;
+
+                switch (v) {
+                case 0x40:
+                    w = 0;
+                    t = 0;
+                    break;
+                case 0x41:
+                    w = 0xF5;
+                    t = 0;
+                    break;
+                case 0x42:
+                    w = 0xF6;
+                    t = 0;
+                    break;
+                case 0x45:
+                    w = 0xF9;
+                    t = 0;
+                    break;
+                case 0x46:
+                    w = 0xFA;
+                    t = 0;
+                    break;
+                case 0x48:
+                    w = 0xF1;
+                    t = 0;
+                    break;
+                case 0x49:
+                    w = 0xF0;
+                    t = 0;
+                    break;
+                case 0x58:
+                    w = 20;
+                    t = 2;
+                    break;
+                case 0x5B:
+                    w = 0xFD;
+                    t = 0;
+                    break;
+                case 0x5C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0x60:
+                    w = 0xFE;
+                    t = 0;
+                    break;
+                case 0x63:
+                    w = 0xFB;
+                    t = 0;
+                    break;
+                case 0x75:
+                    w = 0xE8;
+                    t = 0;
+                    break;
+                case 0x76:
+                    w = 0xE9;
+                    t = 0;
+                    break;
+                case 0x77:
+                    w = 0xEA;
+                    t = 0;
+                    break;
+                case 0x78:
+                    w = 0xEB;
+                    t = 0;
+                    break;
+                case 0x66:
+                    w = 0xFF;
+                    t = 0;
+                    break;
+                case 0x69:
+                    w = 0xEC;
+                    t = 0;
+                    break;
+                case 0x6A:
+                    w = 0xED;
+                    t = 0;
+                    break;
+                case 0xA8:
+                    w = 0xE7;
+                    t = 0;
+                    break;
+                case 0xA9:
+                    w = 0xE6;
+                    t = 0;
+                    break;
+                case 0x7B:
+                    w = 0xDF;
+                    t = 0;
+                    break;
+                case 0x7C:
+                    w = 0xFC;
+                    t = 0;
+                    break;
+                case 0xA6:
+                    w = 0xEE;
+                    t = 0;
+                    break;
+                case 0x81:
+                    w = 0xEF;
+                    t = 0;
+                    break;
+                case 0x93:
+                    w = 0xF2;
+                    t = 0;
+                    break;
+                case 0x96:
+                    w = 0xF4;
+                    t = 0;
+                    break;
+                case 0x5E:
+                    w = 0xF3;
+                    t = 0;
+                    break;
+                case 0x43:
+                    w = 0xF8;
+                    t = 0;
+                    break;
+                case 0x9A:
+                    w = 0x8E;
+                    t = 0;
+                    break;
+                }
+            } else {
+                func_08066E40(v, &w, &t);
+            }
+
+            if (b->tiles != 0) {
+                ReleaseObjTiles(b->tiles);
+                b->tiles = 0;
+            }
+
+            switch (t) {
+            case 0:
+                w = ((u16*)gUnk_09EEB204[w])[3];
+                b->tiles = LoadObjTiles(&gUnk_090AB5B2[w * 32], 128);
+                break;
+            case 1:
+                w = ((u16*)gUnk_09EEB608[w])[3];
+                b->tiles = LoadObjTiles(&gUnk_090B3FBE[w * 32], 128);
+                break;
+            case 2:
+                w = ((u16*)gUnk_09EEBA0C[w])[3];
+                b->tiles = LoadObjTiles(&gUnk_090BC9CA[w * 32], 128);
+                break;
+            case 3:
+                w = ((u16*)gUnk_09EEBE10[w])[3];
+                b->tiles = LoadObjTiles(&gUnk_090C51A6[w * 32], 128);
+                break;
+            }
+
+            b->unk_05 = 10;
+        }
+
+        b++;
+        n++;
+    }
+
+    return n;
+}
+#else
 INCLUDE_ASM("msg/func_08065D10.s");
+#endif
 #ifndef VERSION_EU
 #ifndef VERSION_JP
 s32 func_080660C0(u16* a, void** p) {
