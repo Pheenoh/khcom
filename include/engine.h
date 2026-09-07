@@ -144,6 +144,20 @@ typedef struct UnkBgAnim {
 
 typedef char UnkBgAnim_size[(sizeof(UnkBgAnim) == 0x18) ? 1 : -1];
 typedef char UnkBgAnimFrame_size[(sizeof(UnkBgAnimFrame) == 0x08) ? 1 : -1];
+
+typedef struct UnkSpline {
+    s16 unk_00;
+    u16 unk_02;
+    s32* unk_04;
+    s32* unk_08;
+    s32* unk_0C;
+    s32* unk_10;
+    s32* unk_14;
+    s32* unk_18;
+    s32* unk_1C;
+} UnkSpline;
+
+typedef char UnkSpline_size[(sizeof(UnkSpline) == 0x20) ? 1 : -1];
 extern u16 gBg0HOfs;
 extern u16 gBg0VOfs;
 extern u16 gBg1HOfs;

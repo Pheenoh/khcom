@@ -79,7 +79,7 @@ u16 GetObjTileCount(u16 a, u16 b);
 s16 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
-void func_08003CD4(u8* p, s32* d, s32* xs, s32* e);
+void func_08003CD4(UnkSpline* p, s32* d, s32* xs, s32* e);
 void func_080051C4(s32 bg, u16 x, u16 y);
 s32 abs(s32 a);
 
@@ -1071,16 +1071,16 @@ s32 func_08003C9C(s32 a) {
     return 0;
 }
 
-void func_08003CD4(u8* p, s32* d, s32* xs, s32* e) {
+void func_08003CD4(UnkSpline* p, s32* d, s32* xs, s32* e) {
     s32* a;
     s32* b;
     s32 n;
     s32 i;
     s32 q;
 
-    n = *(s16*)p;
-    a = *(s32**)(p + 0x04);
-    b = *(s32**)(p + 0x08);
+    n = p->unk_00;
+    a = p->unk_04;
+    b = p->unk_08;
     e[0] = 0;
     e[n - 1] = 0;
 
@@ -1137,7 +1137,7 @@ s32 func_08003E2C(s16* n, s32 v, s32* a, s32* c, s32* b) {
     r += ((c[lo + 1] - c[lo]) << 8) / dx - ((dx * (y0 * 2 + y1)) >> 8);
     return ((t * r) >> 8) + c[lo];
 }
-void func_08003ED4(u8* p, s32* xs, s32* ys, s16 n) {
+void func_08003ED4(UnkSpline* p, s32* xs, s32* ys, s16 n) {
     s32 i;
     s32 len;
     s32* d;
@@ -1149,17 +1149,17 @@ void func_08003ED4(u8* p, s32* xs, s32* ys, s16 n) {
 
     size = n * 4;
     len = 0;
-    *(u16*)p = n;
-    *(void**)(p + 0x04) = EwramAlloc(size);
-    *(void**)(p + 0x08) = EwramAlloc(size);
-    *(void**)(p + 0x0C) = EwramAlloc(size);
-    *(void**)(p + 0x10) = EwramAlloc(size);
-    *(void**)(p + 0x14) = EwramAlloc(size);
-    *(s32**)(p + 0x18) = xs;
-    *(s32**)(p + 0x1C) = ys;
-    d = *(s32**)(p + 0x0C);
-    e = *(s32**)(p + 0x10);
-    f = *(s32**)(p + 0x14);
+    p->unk_00 = n;
+    p->unk_04 = EwramAlloc(size);
+    p->unk_08 = EwramAlloc(size);
+    p->unk_0C = EwramAlloc(size);
+    p->unk_10 = EwramAlloc(size);
+    p->unk_14 = EwramAlloc(size);
+    p->unk_18 = xs;
+    p->unk_1C = ys;
+    d = p->unk_0C;
+    e = p->unk_10;
+    f = p->unk_14;
     d[0] = len;
 
     for (i = 1; i < n; i++) {
@@ -1176,21 +1176,17 @@ void func_08003ED4(u8* p, s32* xs, s32* ys, s16 n) {
     func_08003CD4(p, d, ys, f);
 }
 
-void func_08003FCC(void* a, s32 v, s32* outX, s32* outY) {
-    u8* p = a;
-
-    *outX = func_08003E2C((s16*)p, v, *(s32**)(p + 0x0C), *(s32**)(p + 0x18), *(s32**)(p + 0x10));
-    *outY = func_08003E2C((s16*)p, v, *(s32**)(p + 0x0C), *(s32**)(p + 0x1C), *(s32**)(p + 0x14));
+void func_08003FCC(UnkSpline* p, s32 v, s32* outX, s32* outY) {
+    *outX = func_08003E2C(&p->unk_00, v, p->unk_0C, p->unk_18, p->unk_10);
+    *outY = func_08003E2C(&p->unk_00, v, p->unk_0C, p->unk_1C, p->unk_14);
 }
 
-void func_0800400C(void* a) {
-    u8* p = a;
-
-    EwramFree(*(void**)(p + 0x04));
-    EwramFree(*(void**)(p + 0x08));
-    EwramFree(*(void**)(p + 0x0C));
-    EwramFree(*(void**)(p + 0x10));
-    EwramFree(*(void**)(p + 0x14));
+void func_0800400C(UnkSpline* p) {
+    EwramFree(p->unk_04);
+    EwramFree(p->unk_08);
+    EwramFree(p->unk_0C);
+    EwramFree(p->unk_10);
+    EwramFree(p->unk_14);
 }
 void InitDisplayRegs(void) {
     gDispCnt = 0x40;
