@@ -792,8 +792,6 @@ void func_08062F18(s32 x, s32 y, u8* s) {
     gUnk_02034A80[gUnk_02034A90].unk_48 = (u32)LoadObjPalette(&gUnk_096147B8[0x40], 32);
     gUnk_02034A90++;
 }
-#else
-INCLUDE_ASM("msg/func_08062F18.s");
 #endif
 void func_08063034(s32 x, s32 y, s32 n) {
     u8 buf[20];
@@ -942,8 +940,6 @@ void* func_08063678(s32 a) {
     }
     return (void*)gUnk_02034A80->unk_48;
 }
-#else
-INCLUDE_ASM("msg/func_08063678.s");
 #endif
 #ifndef VERSION_EU
 #ifndef VERSION_JP
@@ -1374,8 +1370,6 @@ void func_08063EE4(s32 a, s32 b, u8 v, u8 d, u8 e) {
     buf[2] += 0x30;
     func_08063F60(a, b, buf, d, e);
 }
-#else
-INCLUDE_ASM("msg/func_08063EE4.s");
 #endif
 #ifdef NON_MATCHING
 void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
@@ -1473,8 +1467,6 @@ void func_080640E0(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("msg/func_080640E0.s");
 #endif
 
 #ifndef VERSION_EU
