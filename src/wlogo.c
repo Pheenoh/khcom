@@ -574,8 +574,8 @@ void task_wlogo_nvl_3(WlogoNvlWork* work) {
 void task_wlogo_nvl_mov_0(WlogoNvlMovWork* work) {
     work->unk_01A = 0;
     work->unk_01C = 0;
-    work->unk_000 = 0x4E00;
-    work->unk_004 = 0x5D00;
+    work->x = 0x4E00;
+    work->y = 0x5D00;
     work->unk_008 = gUnk_096198D4[0].unk_04;
     work->unk_00C = gUnk_096198D4[0].unk_08;
     work->unk_010 = gUnk_096198D4[0].unk_0C;
@@ -597,8 +597,8 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
     WlogoNvlObjArg arg;
 
     if (work->unk_018 == 0) {
-        work->unk_000 += work->unk_008;
-        work->unk_004 += work->unk_00C;
+        work->x += work->unk_008;
+        work->y += work->unk_00C;
         work->unk_008 += work->unk_010;
         work->unk_00C += work->unk_014;
 
@@ -617,8 +617,8 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
         }
 
         if (work->unk_01E % 5 == 0) {
-            arg.unk_00 = work->unk_000;
-            arg.unk_04 = work->unk_004;
+            arg.unk_00 = work->x;
+            arg.unk_04 = work->y;
             arg.unk_08 = work->unk_020;
             TaskCreate(&gWlogoNvlMovTaskPool, &gTaskDescWlogoNvlObj, &arg);
             work->unk_020 = 1 - work->unk_020;
@@ -650,7 +650,7 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
 
 void task_wlogo_nvl_mov_2(WlogoNvlMovWork* work) {
     if (work->unk_049 == 1) {
-        DrawSprite(work->unk_000 >> 8, work->unk_004 >> 8, work->gfx, work->tiles, work->palette, 0, 0, 0);
+        DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, 0, 0, 0);
     }
 }
 
@@ -659,8 +659,8 @@ void task_wlogo_nvl_mov_3(WlogoNvlMovWork* work) {
 }
 
 void task_wlogo_nvl_obj_0(WlogoNvlObjWork* work, WlogoNvlObjArg* arg) {
-    work->unk_024 = arg->unk_00;
-    work->unk_028 = arg->unk_04;
+    work->x = arg->unk_00;
+    work->y = arg->unk_04;
     work->unk_02C = arg->unk_08;
     work->tiles = LoadObjTiles(gUnk_0961C062, 0x600);
     work->palette = LoadObjPalette(gUnk_096FADA4, 0x20);
@@ -678,7 +678,7 @@ u8 task_wlogo_nvl_obj_1(WlogoNvlObjWork* work) {
 }
 
 void task_wlogo_nvl_obj_2(WlogoNvlObjWork* work) {
-    DrawSprite(work->unk_024 >> 8, work->unk_028 >> 8, work->gfx, work->tiles, work->palette, 0, 0, 1);
+    DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, 0, 0, 1);
 }
 
 void task_wlogo_nvl_obj_3(WlogoNvlObjWork* work) {
@@ -1114,8 +1114,8 @@ void task_wlogo_agr_3(WlogoAgrWork* work) {
 }
 
 void task_wlogo_agr_smoke_0(WlogoAgrSmokeWork* work, WlogoAgrEntry* arg) {
-    work->unk_024 = arg->unk_00 << 8;
-    work->unk_028 = arg->unk_02 << 8;
+    work->x = arg->unk_00 << 8;
+    work->y = arg->unk_02 << 8;
     work->unk_030 = arg->unk_06;
     work->unk_031 = arg->unk_07;
     work->unk_02C = 0x100;
@@ -1137,7 +1137,7 @@ u8 task_wlogo_agr_smoke_1(WlogoAgrSmokeWork* work) {
 }
 
 void task_wlogo_agr_smoke_2(WlogoAgrSmokeWork* work) {
-    DrawSprite(work->unk_024 >> 8, work->unk_028 >> 8, work->gfx, work->tiles, work->palette, 0, 0, 1);
+    DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, 0, 0, 1);
 }
 
 void task_wlogo_agr_smoke_3(WlogoAgrSmokeWork* work) {
@@ -1792,8 +1792,8 @@ void WlogoDisableHBlank(void) {
 }
 
 void task_wlogo_tt_obj_0(WlogoTtObjWork* work, WlogoTtObjArg* arg) {
-    work->unk_024 = arg->unk_00;
-    work->unk_028 = arg->unk_04;
+    work->x = arg->unk_00;
+    work->y = arg->unk_04;
     work->unk_02C = 0;
     work->unk_02E = 0;
     work->tiles = LoadObjTiles(gUnk_0962848A, 0x7C0);
@@ -1804,7 +1804,7 @@ void task_wlogo_tt_obj_0(WlogoTtObjWork* work, WlogoTtObjArg* arg) {
 }
 
 u8 task_wlogo_tt_obj_1(WlogoTtObjWork* work) {
-    work->unk_024 += 0x100;
+    work->x += 0x100;
 
     if (AnimIsFinished(&work->anim)) {
         return 0;
@@ -1814,7 +1814,7 @@ u8 task_wlogo_tt_obj_1(WlogoTtObjWork* work) {
 }
 
 void task_wlogo_tt_obj_2(WlogoTtObjWork* work) {
-    DrawSprite(work->unk_024 >> 8, work->unk_028 >> 8, work->gfx, work->tiles, work->palette, 0, 0, 16);
+    DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, 0, 0, 16);
 }
 
 void task_wlogo_tt_obj_3(WlogoTtObjWork* work) {

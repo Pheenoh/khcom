@@ -7154,8 +7154,8 @@ void msgface_0(MsgFaceWork* p, MsgFaceCtl* ctl) {
     p->palette = AllocObjPalette(32);
     p->unk_38 = ctl;
     p->unk_30 = 0;
-    p->unk_24 = gUnk_09033CD0[n = p->unk_38->unk_04];
-    p->unk_28 = gUnk_09033CF0[n];
+    p->x = gUnk_09033CD0[n = p->unk_38->unk_04];
+    p->y = gUnk_09033CF0[n];
     p->unk_2C = 0x100;
     p->unk_31 = 0;
     p->unk_32 = 0;
@@ -7201,8 +7201,8 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     switch (p->unk_38->unk_02) {
     case 1:
         if (p->unk_38->unk_08 == 0) {
-            p->unk_24 = gUnk_09033CD0[n = p->unk_38->unk_04];
-            p->unk_28 = gUnk_09033CF0[n];
+            p->x = gUnk_09033CD0[n = p->unk_38->unk_04];
+            p->y = gUnk_09033CF0[n];
         }
         p->unk_30 = 8;
 
@@ -7230,7 +7230,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
             p->unk_2C = 256;
         }
 
-        p->unk_28 = gUnk_09033CF0[p->unk_38->unk_04];
+        p->y = gUnk_09033CF0[p->unk_38->unk_04];
         SetTaskUpdate(a, (void*)func_08073CA4);
         break;
     case 3:
@@ -7272,13 +7272,13 @@ void msgface_2(MsgFaceWork* p) {
     if (p->unk_34 != 0) {
         t = AllocObjAffine(0, p->unk_2C, 256, 0);
         if (t != 0) {
-            DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->gfx, p->tiles, p->palette, t, 0, 50);
+            DrawSprite(p->x >> 8, p->y >> 8, p->gfx, p->tiles, p->palette, t, 0, 50);
         } else {
             v = p->unk_33;
             if (v != 0) {
-                DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->gfx, p->tiles, p->palette, t, 1, 50);
+                DrawSprite(p->x >> 8, p->y >> 8, p->gfx, p->tiles, p->palette, t, 1, 50);
             } else {
-                DrawSprite(p->unk_24 >> 8, p->unk_28 >> 8, p->gfx, p->tiles, p->palette, v, v, 50);
+                DrawSprite(p->x >> 8, p->y >> 8, p->gfx, p->tiles, p->palette, v, v, 50);
             }
         }
     }
@@ -7288,7 +7288,7 @@ void msgface_3(MsgFaceWork* p) {
     ReleaseObjPalette(p->palette);
 }
 u8 func_08073B04(MsgFaceWork* p, void* a) {
-    ApproachValue(&p->unk_24, gUnk_09033CE0[p->unk_38->unk_04], p->unk_30);
+    ApproachValue(&p->x, gUnk_09033CE0[p->unk_38->unk_04], p->unk_30);
     p->unk_30--;
     if (p->unk_30 == 0) {
         p->unk_38->unk_02 = 0;
@@ -7298,7 +7298,7 @@ u8 func_08073B04(MsgFaceWork* p, void* a) {
     return 1;
 }
 u8 func_08073B54(MsgFaceWork* p, void* a) {
-    ApproachValue(&p->unk_24, gUnk_09033CD0[p->unk_38->unk_04], p->unk_30);
+    ApproachValue(&p->x, gUnk_09033CD0[p->unk_38->unk_04], p->unk_30);
     p->unk_30--;
     if (p->unk_30 == 0) {
         p->unk_38->unk_02 = 0;
@@ -7335,8 +7335,8 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
         p->unk_30 = 8;
         p->unk_38->unk_02 = 0;
     }
-    p->unk_24 = gUnk_09033CD0[n = p->unk_38->unk_04];
-    p->unk_28 = gUnk_09033CF0[n];
+    p->x = gUnk_09033CD0[n = p->unk_38->unk_04];
+    p->y = gUnk_09033CF0[n];
     p->unk_2C = 256;
     p->unk_30 = 8;
     SetTaskUpdate(a, (void*)msgface_1);
