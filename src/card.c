@@ -23,6 +23,10 @@ extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
 extern void* gUnkEu_08890EC0[];
 extern void* gUnkEu_08895E94[];
+extern u8 gUnkEu_08CB0D3C[];
+extern u8 gUnkEu_08F7ADFC[];
+extern u8 gUnkEu_09F72C10[];
+extern u8 gUnkEu_09F72D80[];
 extern void* gUnkEu_08895AF4[];
 extern void* gUnkEu_08895CF8[];
 extern void* gUnkEu_08895DBC[];
@@ -183,6 +187,7 @@ void LoadPalette(void* src, void* dst, s32 size);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgSize(s32 a, s32 b);
 void LoadBgMap(s32 bg, void* src, u16 size);
+void eu_080059F4(s32 bg, void* map);
 void TaskPoolInit(TaskPool* a, s32 count);
 void SetBgMode2(void);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
@@ -10792,22 +10797,28 @@ u16 func_08091B44(void) {
 
     return gUnk_02039DD4->unk_0D7;
 }
-#ifndef VERSION_EU
 void WORLDSELECT_0(void) {
     SetBgMode2();
     SetupBg(3, 0, 12, 0);
     SetupBg(2, 2, 28, 10);
     SetBgSize(3, 0x8000);
+#ifdef VERSION_EU
+    LoadBgTiles(3, gUnkEu_08CB0D3C, 0x4000);
+    LoadBgPalette(3, gUnk_08F68A84, 0x100);
+    eu_080059F4(3, gUnkEu_08F7ADFC);
+#else
     LoadBgTiles(3, gUnk_08C8C824, 0x4000);
     LoadBgPalette(3, gUnk_08F68A84, 0x100);
     LoadBgMap(3, gUnk_08EF4384, 0x1000);
+#endif
     SetBgAffine(3, 0, 0x100, 0x100, 0x10000, 0x16800);
     TaskPoolInit(gUnk_02034AB8, 1);
-    TaskCreate(gUnk_02034AB8, gUnk_09EE7804, 0);
-}
+#ifdef VERSION_EU
+    TaskCreate(gUnk_02034AB8, gUnkEu_09F72C10, 0);
 #else
-INCLUDE_ASM("card/WORLDSELECT_0.s");
+    TaskCreate(gUnk_02034AB8, gUnk_09EE7804, 0);
 #endif
+}
 void WORLDSELECT_1(void) {
     TaskPoolUpdate(gUnk_02034AB8);
     TaskPoolDraw(gUnk_02034AB8);
@@ -16810,7 +16821,6 @@ void func_0809D900(u16 a, u16 b, u16 c, u32 v) {
     func_0809D2B0(a, b, c, s);
 }
 
-#ifndef VERSION_EU
 void Mode_Premire_0(void) {
     func_08085FB0();
     func_08085C3C();
@@ -16818,16 +16828,23 @@ void Mode_Premire_0(void) {
     SetupBg(3, 0, 12, 0);
     SetupBg(2, 2, 28, 10);
     SetBgSize(3, 0x8000);
+#ifdef VERSION_EU
+    LoadBgTiles(3, gUnkEu_08CB0D3C, 0x4000);
+    LoadBgPalette(3, gUnk_08F68A84, 0x100);
+    eu_080059F4(3, gUnkEu_08F7ADFC);
+#else
     LoadBgTiles(3, gUnk_08C8C824, 0x4000);
     LoadBgPalette(3, gUnk_08F68A84, 0x100);
     LoadBgMap(3, gUnk_08EF4384, 0x1000);
+#endif
     SetBgAffine(3, 0, 0x100, 0x100, 0x10000, 0x16800);
     TaskPoolInit(gUnk_02034AE0, 1);
-    TaskCreate(gUnk_02034AE0, gTaskDescLevelUp, 0);
-}
+#ifdef VERSION_EU
+    TaskCreate(gUnk_02034AE0, gUnkEu_09F72D80, 0);
 #else
-INCLUDE_ASM("card/Mode_Premire_0.s");
+    TaskCreate(gUnk_02034AE0, gTaskDescLevelUp, 0);
 #endif
+}
 
 void Mode_Premire_1(void) {
     TaskPoolUpdate(gUnk_02034AE0);
