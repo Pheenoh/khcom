@@ -3,6 +3,7 @@
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
+extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_09F847D4[];
 extern void* gUnkEu_09F84810[];
 extern u16 gUnkEu_099991E0[];
@@ -2277,17 +2278,22 @@ void func_080FF19C(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16
         dst += 32 - n;
     }
 }
-#ifndef VERSION_EU
 u8 func_080FF228(s16 id) {
+#ifdef VERSION_EU
+    u8 ret = 0;
+
+    if (id != 0) {
+        ret = func_08065B6C(eu_0805E924(gUnk_09EF909C[id].unk_2C), gUnk_020351F8);
+    }
+    return ret;
+#else
     if (id == 0) {
         return 0;
     }
 
     return func_08065B6C(gUnk_09EF909C[id].unk_2C, gUnk_020351F8);
-}
-#else
-INCLUDE_ASM("bos5/func_080FF228.s");
 #endif
+}
 #ifndef VERSION_EU
 u8 func_080FF25C(s16 id) {
     void** tbl;

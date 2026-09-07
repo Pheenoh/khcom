@@ -15,7 +15,20 @@ u8 gUnk_02034ECA;
 u8 gUnk_02034ECB;
 u8 gUnk_02034ECC;
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+extern void eu_080059D4(s32 bg, void* tiles);
+extern void eu_080059F4(s32 bg, void* map);
+extern u8 gUnkEu_09827920[];
+extern u8 gUnkEu_098272D0[];
+extern u8 gUnkEu_09823D9C[];
+extern u8 gUnkEu_09827C34[];
+extern u8 gUnkEu_0981F960[];
+extern u8 gUnkEu_0982761C[];
+extern u8 gUnkEu_097ADE00[];
+extern u8 gUnkEu_0981ECC0[];
+extern u8 gUnkEu_09814A40[];
+#endif
+
 void mode_title_0(void) {
     gUnk_02034ECA = 0;
     func_0801CB44();
@@ -29,20 +42,38 @@ void mode_title_0(void) {
     SetBgPriority(0, 3);
 
     if (gGameState.flags & 0x200) {
+#ifdef VERSION_EU
+        eu_080059F4(0, gUnkEu_09827920);
+#else
         LoadBgMap(0, gUnk_09840798, 0x800);
+#endif
     } else {
+#ifdef VERSION_EU
+        eu_080059F4(0, gUnkEu_098272D0);
+#else
         LoadBgMap(0, gUnk_0983E398, 0x800);
+#endif
     }
     DisableBg(0);
     SetupBg(1, 0, 0x1E, 0);
     SetBgPriority(1, 3);
 
     if (gGameState.flags & 0x200) {
+#ifdef VERSION_EU
+        eu_080059D4(1, gUnkEu_09823D9C);
+        eu_080059F4(1, gUnkEu_09827C34);
+#else
         LoadBgTiles(1, gUnk_097D3658, 0x7FA0);
         LoadBgMap(1, gUnk_09840F98, 0x800);
+#endif
     } else {
+#ifdef VERSION_EU
+        eu_080059D4(1, gUnkEu_0981F960);
+        eu_080059F4(1, gUnkEu_0982761C);
+#else
         LoadBgTiles(1, gUnk_097C77B8, 0x7FA0);
         LoadBgMap(1, gUnk_0983EB98, 0x800);
+#endif
     }
     DisableBg(1);
     func_080C736C();
@@ -50,9 +81,15 @@ void mode_title_0(void) {
     SetupBg(2, 2, 0x1F, 0xB);
     SetBgSize(2, 0x4000);
     SetBgPriority(2, 2);
+#ifdef VERSION_EU
+    LoadBgTiles(2, gUnkEu_097ADE00, 0x3F00);
+    LoadBgPalette(2, gUnkEu_0981ECC0, 0xA0);
+    LoadBgMap(2, gUnkEu_09814A40, 0x400);
+#else
     LoadBgTiles(2, gUnk_097CF758, 0x3F00);
     LoadBgPalette(2, gUnk_0984A618, 0xA0);
     LoadBgMap(2, gUnk_0983FB98, 0x400);
+#endif
     gTitleBgX = 0x7800;
     gTitleBgY = 0x5A00;
     gTitleBgScale = 0x1000;
@@ -65,9 +102,6 @@ void mode_title_0(void) {
     m4aSongNumStart(0);
     gUnk_02034EC0 = 0x1E;
 }
-#else
-INCLUDE_ASM("mode_title/mode_title_0.s");
-#endif
 
 void mode_title_1(void) {
     switch (gUnk_02034E98) {
