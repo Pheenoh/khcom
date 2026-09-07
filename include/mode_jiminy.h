@@ -7,6 +7,19 @@
 #include "main.h"
 #include "anim.h"
 #include "obj.h"
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern void* eu_0805E924(void* strings);
+extern u8 gUnkEu_08C9A5E2[];
+extern u8 gUnkEu_08892334[];
+extern u8 gUnkEu_08EF3EDC[];
+extern u8 gUnkEu_08EF4EDC[];
+extern u8 gUnkEu_08EF5EDC[];
+extern u8 gUnkEu_08EF6EDC[];
+extern u8 gUnk_09A3CDDC[];
+u8 RequestDma3Copy(void* src, void* dst, u16 size);
+void* GetBgCharBase(s32 bg);
+#endif
 typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
@@ -137,6 +150,7 @@ extern u8 gUnk_09EED2BC[];
 extern u8 gUnk_09EED320[];
 extern GameState gGameState;
 
+void* EwramAlloc(u32 size);
 void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);

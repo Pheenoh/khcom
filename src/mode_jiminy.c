@@ -3,13 +3,16 @@
 
 JiminyWork* gJiminyWork;
 
-#ifndef VERSION_EU
 void mode_jiminy_0(void) {
     s32 i;
     s32 j;
     JiminyEntry* e;
 
+#ifdef VERSION_EU
+    gJiminyWork = EwramAlloc(0xED0);
+#else
     gJiminyWork = EwramAlloc(0xD40);
+#endif
     SetBgMode0();
     SetupBg(0, 0, 0x1D, 0);
     SetupBg(1, 0, 0x1E, 0);
@@ -21,13 +24,37 @@ void mode_jiminy_0(void) {
     SetBgPriority(3, 0);
 #ifdef VERSION_JP
     LoadBgTiles(1, gUnk_08EE4A64, 0x2DA0);
+#elif defined(VERSION_EU)
+    LoadBgTiles(1, gUnk_08EE4A64, 0x2F60);
+    switch (gLanguage) {
+    case 1:
+        RequestDma3Copy(gUnkEu_08EF3EDC, (u8*)GetBgCharBase(1) + 0x2000, 0x1000);
+        break;
+    case 4:
+        RequestDma3Copy(gUnkEu_08EF4EDC, (u8*)GetBgCharBase(1) + 0x2000, 0x1000);
+        break;
+    case 3:
+        RequestDma3Copy(gUnkEu_08EF5EDC, (u8*)GetBgCharBase(1) + 0x2000, 0x1000);
+        break;
+    case 2:
+        RequestDma3Copy(gUnkEu_08EF6EDC, (u8*)GetBgCharBase(1) + 0x2000, 0x1000);
+        break;
+    }
 #else
     LoadBgTiles(1, gUnk_08EE4A64, 0x2E80);
 #endif
     LoadBgPalette(1, gUnk_08F6DE24, 0x200);
     LoadBgMap(1, gUnk_08F61B84, 0x800);
     LoadBgMap(2, gUnk_08F60B84, 0x800);
+#ifdef VERSION_EU
+    if (gLanguage == 0) {
+        gJiminyWork->tiles = LoadObjTiles(gUnk_08C69C9C, 0x880);
+    } else {
+        gJiminyWork->tiles = LoadObjTiles(gUnkEu_08C9A5E2, 0x1780);
+    }
+#else
     gJiminyWork->tiles = LoadObjTiles(gUnk_08C69C9C, 0x880);
+#endif
     gJiminyWork->palette = LoadObjPalette(gUnk_08F6DD64, 0x20);
     func_080062F4(gJiminyWork->palette->unk_06 + 0x10, 1);
     gJiminyWork->tiles2 = LoadObjTiles(gUnk_08C6A88C, 0x40);
@@ -35,7 +62,11 @@ void mode_jiminy_0(void) {
     gJiminyWork->palette3 = LoadObjPalette(gUnk_08F6DD84, 0x20);
     gJiminyWork->tiles5 = LoadObjTiles(gUnk_08C6A54E, 0x140);
     gJiminyWork->palette6 = LoadObjPalette(gUnk_08F6DDA4, 0x20);
+#ifdef VERSION_EU
+    gJiminyWork->tiles6 = LoadObjTiles(gUnk_08C6A6B8, 0x340);
+#else
     gJiminyWork->tiles6 = LoadObjTiles(gUnk_08C6A6B8, 0x1C0);
+#endif
     gJiminyWork->palette7 = LoadObjPalette(gUnk_08F6DDC4, 0x20);
     gJiminyWork->unk_04C = -0x8000;
     gJiminyWork->unk_050 = -0x800;
@@ -66,7 +97,11 @@ void mode_jiminy_0(void) {
     }
 
     gJiminyWork->tiles7 = AllocObjTiles(0x2000, 0);
+#ifdef VERSION_EU
+    gJiminyWork->palette8 = LoadObjPalette(gUnk_09A3CDDC, 0x40);
+#else
     gJiminyWork->palette8 = LoadObjPalette(gUnk_09A3CC9C, 0x20);
+#endif
     gJiminyWork->tiles8 = AllocObjTiles(0x800, 0);
     gJiminyWork->palette9 = LoadObjPalette(gUnk_09611AB8, 0x20);
     gJiminyWork->unk_D3C = 0;
@@ -80,6 +115,8 @@ void mode_jiminy_0(void) {
     func_08064B80(0);
 #ifdef VERSION_JP
     gJiminyWork->unk_C71 = func_080653D4(0x400, 0x2600, gUnk_08159FE0);
+#elif defined(VERSION_EU)
+    gJiminyWork->unk_C71 = func_08065170(0x200, 0x2400, eu_0805E924(gUnkEu_08892334));
 #else
     gJiminyWork->unk_C71 = func_08065170(0x200, 0x2400, gUnk_08159FE0);
 #endif
@@ -102,9 +139,6 @@ void mode_jiminy_0(void) {
         gJiminyWork->unk_CAC = 3;
     }
 }
-#else
-INCLUDE_ASM("mode_jiminy/mode_jiminy_0.s");
-#endif
 
 #ifndef VERSION_EU
 void mode_jiminy_1(void) {
