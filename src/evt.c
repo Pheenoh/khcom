@@ -58,9 +58,9 @@ void task_evt_obj_3(EvtObjWork* work) {
 
 void task_evt_shadow_0(EvtShadowWork* work, EvtObj* obj) {
     work->obj = obj;
-    work->unk_08 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    work->unk_10 = LoadObjTiles(gUnk_08B22CE4, 0x200);
-    work->unk_0C = LoadObjTiles(gUnk_08B22EFE, 0x140);
+    work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    work->tiles3 = LoadObjTiles(gUnk_08B22CE4, 0x200);
+    work->tiles2 = LoadObjTiles(gUnk_08B22EFE, 0x140);
     work->palette = LoadObjPalette(gUnk_08F69BE4, 32);
 }
 
@@ -85,13 +85,13 @@ void task_evt_shadow_2(EvtShadowWork* work) {
 
     if (obj->flags & 8) {
         gfx = gUnk_08B22EE4;
-        vram = work->unk_0C;
+        vram = work->tiles2;
     } else if (obj->flags & 0x10) {
         gfx = gUnk_08B22CBC;
-        vram = work->unk_10;
+        vram = work->tiles3;
     } else {
         gfx = gUnk_08B22BA8;
-        vram = work->unk_08;
+        vram = work->tiles;
     }
 
     if (obj->z >= obj->unk_10) {
@@ -112,9 +112,9 @@ void task_evt_shadow_2(EvtShadowWork* work) {
 }
 
 void task_evt_shadow_3(EvtShadowWork* work) {
-    ReleaseObjTiles(work->unk_08);
-    ReleaseObjTiles(work->unk_0C);
-    ReleaseObjTiles(work->unk_10);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjTiles(work->tiles3);
     ReleaseObjPalette(work->palette);
 }
 

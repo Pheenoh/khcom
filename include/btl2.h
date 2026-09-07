@@ -146,10 +146,10 @@ typedef struct BtlHpplyWork {
 } BtlHpplyWork;
 
 typedef struct BtlHpenmWork {
-    void* unk_00;
-    void* unk_04;
+    void* tiles;
+    void* tiles2;
     void* palette;
-    void* unk_0C;
+    void* tiles3;
     s32 unk_10;
     u8 unk_14;
     u8 unk_15[0x03];
