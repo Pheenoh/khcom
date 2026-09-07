@@ -7,6 +7,16 @@ extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_09F847D4[];
 extern void* gUnkEu_09F84810[];
 extern u16 gUnkEu_099991E0[];
+extern u8 gUnkEu_09A2B040[];
+extern u8 gUnkEu_09A2BE40[];
+extern u8 gUnkEu_09A30C00[];
+extern u8 gUnkEu_09A34400[];
+extern u8 gUnkEu_09A31A00[];
+extern u8 gUnkEu_09A35200[];
+extern u8 gUnkEu_09A32800[];
+extern u8 gUnkEu_09A38C00[];
+extern u8 gUnkEu_09A33600[];
+extern u8 gUnkEu_09A39A00[];
 #endif
 
 GaWork* gGaWork;
@@ -2294,7 +2304,6 @@ u8 func_080FF228(s16 id) {
     return func_08065B6C(gUnk_09EF909C[id].unk_2C, gUnk_020351F8);
 #endif
 }
-#ifndef VERSION_EU
 u8 func_080FF25C(s16 id) {
     void** tbl;
     void** p;
@@ -2310,24 +2319,69 @@ u8 func_080FF25C(s16 id) {
         }
 
         p = &tbl[i];
+#ifdef VERSION_EU
+        {
+            void** langs = *p;
+
+            return func_08065B6C(langs[gLanguage], gUnk_020352C0);
+        }
+#else
         return func_08065B6C(*p, gUnk_020352C0);
+#endif
     }
 
     return 0;
 }
-#else
-INCLUDE_ASM("bos5/func_080FF25C.s");
-#endif
 
-#ifndef VERSION_EU
 void func_080FF2B8(s16 index) {
     u8* src;
 
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        if ((gGameState.flags & 8) == 0) {
+            src = gUnkEu_09A2B040;
+        } else {
+            src = gUnkEu_09A2BE40;
+        }
+        break;
+    case 1:
+        if ((gGameState.flags & 8) == 0) {
+            src = gUnkEu_09A30C00;
+        } else {
+            src = gUnkEu_09A34400;
+        }
+        break;
+    case 4:
+        if ((gGameState.flags & 8) == 0) {
+            src = gUnkEu_09A31A00;
+        } else {
+            src = gUnkEu_09A35200;
+        }
+        break;
+    case 3:
+        if ((gGameState.flags & 8) == 0) {
+            src = gUnkEu_09A32800;
+        } else {
+            src = gUnkEu_09A38C00;
+        }
+        break;
+    case 2:
+    default:
+        if ((gGameState.flags & 8) == 0) {
+            src = gUnkEu_09A33600;
+        } else {
+            src = gUnkEu_09A39A00;
+        }
+        break;
+    }
+#else
     if ((gGameState.flags & 8) == 0) {
         src = gUnk_09A020FC;
     } else {
         src = gUnk_09A02EFC;
     }
+#endif
 
     if (index < gUnk_020350FA) {
         src += index * 256;
@@ -2337,9 +2391,6 @@ void func_080FF2B8(s16 index) {
 
     RequestDma3Copy(src, (u8*)GetBgCharBase(0) + 32, 0x100);
 }
-#else
-INCLUDE_ASM("bos5/func_080FF2B8.s");
-#endif
 s32 func_080FF310(void) {
     s32 keys;
 
