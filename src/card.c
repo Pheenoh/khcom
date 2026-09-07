@@ -15840,15 +15840,17 @@ u8 func_0809B840(u8* work) {
 INCLUDE_ASM("card/func_0809B840.s");
 #endif
 
-#ifndef VERSION_EU
 void func_0809B8F0(u8* work) {
     if (work[0x31] != 0) {
-        DrawSprite(64, 14, 0, *(void**)&work[0x08], *(void**)&work[0x0C], 0, 0, 10);
+        DrawSprite(64, 14, 0, *(void**)&work[0x08], *(void**)&work[0x0C], 0,
+#ifdef VERSION_EU
+                   0x410,
+#else
+                   0,
+#endif
+                   10);
     }
 }
-#else
-INCLUDE_ASM("card/func_0809B8F0.s");
-#endif
 void func_0809B920(u8* work, void** src) {
     u8 i;
     void** dst;
