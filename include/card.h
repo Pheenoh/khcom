@@ -548,7 +548,14 @@ typedef struct UnkStruct_0808C940 {
     TextSlot unk_A8[8];
     u8 unk_E8[0x3D4];
     void* unk_4BC;
-    u8 unk_4C0[0x214];
+    u8 unk_4C0[0x1D4];
+    s32 unk_694;
+    s32 unk_698;
+    s32 unk_69C;
+    s32 unk_6A0;
+    u8 unk_6A4[0x2C];
+    s16 unk_6D0;
+    s16 unk_6D2;
     s16 unk_6D4;
     s16 unk_6D6;
     s16 unk_6D8;
@@ -560,13 +567,22 @@ typedef struct UnkStruct_0808C940 {
 #ifdef VERSION_EU
     u8 unk_6F0[0x168];
 #else
-    u8 unk_6F0[0x10];
+    u8 unk_6F0;
+    u8 unk_6F1[5];
+    u8 unk_6F6;
+    u8 unk_6F7;
+    u8 unk_6F8;
+    u8 unk_6F9;
+    u8 unk_6FA;
+    u8 unk_6FB[5];
     u8 unk_700;
     u8 unk_701;
     u8 unk_702;
     u8 unk_703;
     u8 unk_704;
-    u8 unk_705[0x14F];
+    u8 unk_705[0x10];
+    u8 unk_715;
+    u8 unk_716[0x13E];
 #endif
     s32 unk_854;
     u8 unk_858[0x54];
@@ -1549,12 +1565,21 @@ typedef struct UnkStruct_080A2F54 {
 } UnkStruct_080A2F54;
 
 typedef struct UnkStruct_080A5D3C {
-    u8 unk_000[0x48C];
+    u8 unk_000[0x3C4];
+    void* unk_3C4;
+    void* unk_3C8;
+    void* unk_3CC;
+    u8 unk_3D0[0xBC];
     s32 unk_48C;
     s32 unk_490;
     s32 unk_494;
     s32 unk_498;
-    u8 unk_49C[0x2C];
+    s32 unk_49C;
+    s32 unk_4A0;
+    s32 unk_4A4;
+    s32 unk_4A8;
+    s32 unk_4AC;
+    u8 unk_4B0[0x18];
     s16 unk_4C8[2];
     u8 unk_4CC[0x1A];
     u8 unk_4E6;
@@ -1570,6 +1595,8 @@ typedef struct UnkStruct_080A5D3C {
     u8 unk_4F9[0x10];
     u8 unk_509;
 } UnkStruct_080A5D3C;
+
+typedef char UnkStruct_080A5D3C_sizechk[(sizeof(struct UnkStruct_080A5D3C) == 0x50C) ? 1 : -1];
 
 typedef struct UnkStruct_080A1A44_Args {
     s32 unk_00;
@@ -2087,7 +2114,7 @@ void func_080A32DC(u8* p);
 void func_0807F99C(UnkStruct_08080268* w);
 u8 func_080A1B4C(UnkStruct_080A1B4C* p, void* pool);
 u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a);
-u8 func_080A5EA0(u8* work, void* a);
+u8 func_080A5EA0(UnkStruct_080A5D3C* w, void* a);
 void func_080A4C1C(UnkStruct_080A3F5C* w);
 void func_080A53E4(UnkStruct_080A3F5C* w);
 void func_08090864(UnkStruct_02034AAC* p);
@@ -2178,6 +2205,10 @@ void DarkPoint_3(void** p);
 void func_080A33C4(UnkStruct_080A3F5C* w, void* a);
 #ifndef VERSION_EU
 void func_080A8C58(UnkStruct_0808C940* w, u8 b);
+#ifndef VERSION_EU
+u8 func_080A7ABC(UnkStruct_0808C940* w, void* a);
+void func_080A9B84(UnkStruct_0808C940* w, u8 b);
+#endif
 #endif
 
 

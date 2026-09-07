@@ -404,7 +404,7 @@ void func_0808DD20(u8 a, u16 b);
 u8 func_08082FF0(u8* work);
 void func_08082F24(UnkStruct_02034AAC* p);
 void func_0808CBB4(u8 a, u8 b);
-void func_080A9B84(u8* work, u8 b);
+void func_080A9B84(UnkStruct_0808C940* w, u8 b);
 void func_080A9F08(u8 a);
 void func_080AA1F8(void);
 u8 func_080A82E0(u8* work, void* a);
@@ -19485,33 +19485,33 @@ u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a) {
     return 1;
 }
 
-u8 func_080A5EA0(u8* work, void* a) {
+u8 func_080A5EA0(UnkStruct_080A5D3C* w, void* a) {
     u8 n;
 
     if (func_08006314() == 0) {
-        switch (work[0x509]) {
+        switch (w->unk_509) {
         case 0:
-            ApproachValue(&work[0x4A4], 0, work[0x4EC]);
-            ApproachValue(&work[0x4A8], 0x9800, work[0x4EC]);
-            work[0x4EC]--;
+            ApproachValue(&w->unk_4A4, 0, w->unk_4EC);
+            ApproachValue(&w->unk_4A8, 0x9800, w->unk_4EC);
+            w->unk_4EC--;
 
-            if (work[0x4EC] == 0) {
-                work[0x4EC] = 16;
-                work[0x509]++;
+            if (w->unk_4EC == 0) {
+                w->unk_4EC = 16;
+                w->unk_509++;
             }
             break;
         case 1:
-            ApproachValue(&work[0x4AC], 0, work[0x4EC]);
-            n = --work[0x4EC];
+            ApproachValue(&w->unk_4AC, 0, w->unk_4EC);
+            n = --w->unk_4EC;
 
             if (n == 0) {
                 LoadBgMap(3, gUnk_095162B8, 0x800);
-                ReleaseObjTiles(*(void**)&work[0x3CC]);
-                *(void**)&work[0x3CC] = 0;
-                ReleaseObjTiles(*(void**)&work[0x3C4]);
-                *(void**)&work[0x3C4] = 0;
-                ReleaseObjPalette(*(void**)&work[0x3C8]);
-                *(void**)&work[0x3C8] = 0;
+                ReleaseObjTiles(w->unk_3CC);
+                w->unk_3CC = 0;
+                ReleaseObjTiles(w->unk_3C4);
+                w->unk_3C4 = 0;
+                ReleaseObjPalette(w->unk_3C8);
+                w->unk_3C8 = 0;
                 SetTaskUpdate(a, (void*)func_080A5F70);
             }
             break;
@@ -20160,7 +20160,7 @@ u8 deckexchange_1(u8* work, void* a) {
 
     work[0x715]++;
 }
-u8 func_080A7ABC(u8* work, void* a);
+u8 func_080A7ABC(UnkStruct_0808C940* w, void* a);
 
 u8 func_080A7914(u8* work, void* a) {
     func_08006120(0, 16);
@@ -20214,12 +20214,12 @@ u8 func_080A7914(u8* work, void* a) {
     SetBgScroll(2, -88, -112);
     return 1;
 }
-u8 func_080A7ABC(u8* work, void* a) {
+u8 func_080A7ABC(UnkStruct_0808C940* w, void* a) {
     s32 v;
 
     func_08006120(0, 16);
 
-    switch (work[0x715]) {
+    switch (w->unk_715) {
     case 1:
         LoadBgMap(0, &gUnk_095192B8[0x800], 0x180);
         break;
@@ -20230,19 +20230,19 @@ u8 func_080A7ABC(u8* work, void* a) {
         LoadBgMap(2, &gUnk_095192B8[0x1800], 0x180);
         break;
     case 4:
-        func_0808CBB4(work[0x6F7], 0);
+        func_0808CBB4(w->unk_6F7, 0);
         break;
     case 5:
-        func_0808CBB4(work[0x6F8], 1);
+        func_0808CBB4(w->unk_6F8, 1);
         break;
     case 6:
-        func_0808CBB4(work[0x6F9], 2);
+        func_0808CBB4(w->unk_6F9, 2);
         break;
     case 7:
-        func_0808CBB4(work[0x6FA], 3);
+        func_0808CBB4(w->unk_6FA, 3);
         break;
     case 8:
-        func_080A9B84(work, work[0x700]);
+        func_080A9B84(w, w->unk_700);
         break;
     case 9:
         func_080A9E40(0);
@@ -20252,20 +20252,20 @@ u8 func_080A7ABC(u8* work, void* a) {
     case 10:
         func_080A9F08(GetActiveDeckIndex());
         func_080AA1F8();
-        *(s32*)&work[0x69C] = 0x4800;
-        *(s32*)&work[0x6A0] = 0x2800;
-        v = work[0x700];
-        *(u16*)&work[0x6D2] = v;
-        ApproachValue(&work[0x694], gUnk_09041F04[*(s16*)&work[0x6D0]] << 8, work[0x6F6]);
-        ApproachValue(&work[0x698], gUnk_09041F0A[*(s16*)&work[0x6D2]] << 8, work[0x6F6]);
+        w->unk_69C = 0x4800;
+        w->unk_6A0 = 0x2800;
+        v = w->unk_700;
+        w->unk_6D2 = v;
+        ApproachValue(&w->unk_694, gUnk_09041F04[w->unk_6D0] << 8, w->unk_6F6);
+        ApproachValue(&w->unk_698, gUnk_09041F0A[w->unk_6D2] << 8, w->unk_6F6);
         SetTaskUpdate(a, (void*)func_080A82E0);
-        work[0x6F0] = 1;
-        func_080A9AE8(work);
-        func_080AA328(work);
+        w->unk_6F0 = 1;
+        func_080A9AE8((u8*)w);
+        func_080AA328((u8*)w);
         break;
     }
 
-    work[0x715]++;
+    w->unk_715++;
     return 1;
 }
 INCLUDE_ASM("card/func_080A7C80.s");
@@ -20586,7 +20586,7 @@ void func_080A9AE8(u8* work) {
     }
 }
 
-void func_080A9B84(u8* work, u8 b) {
+void func_080A9B84(UnkStruct_0808C940* w, u8 b) {
     u16* pal;
 
     switch (b) {
@@ -20603,12 +20603,12 @@ void func_080A9B84(u8* work, u8 b) {
         SetBgScroll(0, -76, -14);
         SetBgScroll(1, -88, -64);
         SetBgScroll(2, -88, -112);
-        *(u16*)&work[0x6D4] = 100;
-        *(u16*)&work[0x6DA] = 25;
-        *(u16*)&work[0x6D6] = 102;
-        *(u16*)&work[0x6DC] = 75;
-        *(u16*)&work[0x6D8] = 102;
-        *(u16*)&work[0x6DE] = 122;
+        w->unk_6D4 = 100;
+        w->unk_6DA = 25;
+        w->unk_6D6 = 102;
+        w->unk_6DC = 75;
+        w->unk_6D8 = 102;
+        w->unk_6DE = 122;
         break;
     case 1:
         pal = (u16*)0x05000120;
@@ -20623,12 +20623,12 @@ void func_080A9B84(u8* work, u8 b) {
         SetBgScroll(0, -88, -16);
         SetBgScroll(1, -76, -62);
         SetBgScroll(2, -88, -112);
-        *(u16*)&work[0x6D4] = 102;
-        *(u16*)&work[0x6DA] = 27;
-        *(u16*)&work[0x6D6] = 100;
-        *(u16*)&work[0x6DC] = 73;
-        *(u16*)&work[0x6D8] = 102;
-        *(u16*)&work[0x6DE] = 122;
+        w->unk_6D4 = 102;
+        w->unk_6DA = 27;
+        w->unk_6D6 = 100;
+        w->unk_6DC = 73;
+        w->unk_6D8 = 102;
+        w->unk_6DE = 122;
         break;
     case 2:
         pal = (u16*)0x05000140;
@@ -20643,12 +20643,12 @@ void func_080A9B84(u8* work, u8 b) {
         SetBgScroll(0, -88, -16);
         SetBgScroll(1, -88, -64);
         SetBgScroll(2, -76, -110);
-        *(u16*)&work[0x6D4] = 102;
-        *(u16*)&work[0x6DA] = 27;
-        *(u16*)&work[0x6D6] = 102;
-        *(u16*)&work[0x6DC] = 75;
-        *(u16*)&work[0x6D8] = 100;
-        *(u16*)&work[0x6DE] = 121;
+        w->unk_6D4 = 102;
+        w->unk_6DA = 27;
+        w->unk_6D6 = 102;
+        w->unk_6DC = 75;
+        w->unk_6D8 = 100;
+        w->unk_6DE = 121;
         break;
     }
 }
