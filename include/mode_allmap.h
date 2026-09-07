@@ -71,8 +71,6 @@ void SetObjPaletteRange(s32 a, s32 b);
 void* LoadObjTiles(void* a, s32 b);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
-void EnableBg(s32 a);
-void DisableBg(s32 bg);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void SetBgPriority(s32 bg, u16 priority);
