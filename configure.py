@@ -342,6 +342,7 @@ with out.open("w") as f:
         deps = [baserom]
         if rule == "as":
             deps += asm_includes
+            deps.extend(asm_file_deps(src))
         if rule == "cc":
             deps += headers
             for m in INCLUDE_ASM_RE.finditer(src.read_text()):
@@ -349,8 +350,6 @@ with out.open("w") as f:
                 if Path(dep).exists():
                     deps.append(dep)
                     deps.extend(asm_file_deps(dep))
-            if str(src) == "src/movie.c":
-                deps.extend(["asm/movie_codec.inc", "asm/movie_codec.bin"])
         n.build(obj, rule, str(src), implicit=deps, variables=variables)
         objs.append(obj)
     n.newline()
