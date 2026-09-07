@@ -1,10 +1,79 @@
 #include "macros.h"
 #include "mode_worldinspect.h"
 #include "gba/keys.h"
+#include "anim.h"
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
 extern u8 gUnkEu_09A86E60[];
+extern u32 gLanguage;
+extern u8 gUnkEu_099AABA4[];
+extern u8 gUnkEu_099AABBA[];
+extern u8 gUnkEu_099AABEE[];
+extern u8 gUnkEu_099AB990[];
+extern u8 gUnkEu_099AB9A6[];
+extern u8 gUnkEu_099AB9DA[];
+extern u8 gUnkEu_099ABF18[];
+extern u8 gUnkEu_099ABF2E[];
+extern u8 gUnkEu_099ABF62[];
+extern u8 gUnkEu_099AC3E0[];
+extern u8 gUnkEu_099AC3F6[];
+extern u8 gUnkEu_099AC42A[];
+extern u8 gUnkEu_099AC968[];
+extern u8 gUnkEu_099AC97E[];
+extern u8 gUnkEu_099AC9B2[];
 #endif
+
+typedef struct {
+    u8 unk_000[0x08];
+    u32 flags;
+    u8 unk_00C[0x02];
+    s8 floor;
+} WorldinspectGameState;
+
+typedef struct {
+    s16 unk_00;
+    s16 unk_02;
+    s16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    s16 unk_0A;
+    s16 unk_0C;
+    s16 unk_0E;
+    s16 unk_10;
+    u8 unk_12[0x02];
+} WorldinspectWarpIcon;
+
+extern WorldinspectGameState gGameState;
+extern s16 gUnk_020354E8;
+extern s16 gUnk_020357A2;
+extern s32 gUnk_020357A8[2];
+extern s32 gUnk_020357B0;
+extern s32 gUnk_020357B4;
+extern s32 gUnk_020357B8;
+extern void* gUnk_02035510;
+extern void* gUnk_02035514;
+extern void* gUnk_02035518;
+extern void* gUnk_0203551C;
+extern AnimState gUnk_02035520;
+extern AnimState gUnk_02035538;
+extern void* gUnk_02035550;
+extern void* gUnk_02035554;
+extern AnimState gUnk_02035558;
+extern void* gUnk_02035570[];
+extern void* gUnk_020355A8[];
+extern void* gUnk_020355E0[];
+extern u8 gUnk_02035618[];
+extern u8 gUnk_020356D8;
+extern u8 gUnk_020356E0[];
+extern u8 gUnk_020357A0;
+extern WorldinspectWarpIcon gUnk_09EF9384[];
+extern u8 gUnk_0999F400[];
+extern u8 gUnk_0999F416[];
+extern u8 gUnk_0999F44A[];
+void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
+void* AnimUpdate(AnimState* a);
+void func_0805F1C0(s32* p, s32 v);
+void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 
 s16 gUnk_02035118;
 u8 gUnk_0203511A;
@@ -209,4 +278,108 @@ u16 func_0810068C(void) {
 }
 
 INCLUDE_ASM("mode_worldinspect/func_081006AC.s");
-INCLUDE_ASM("mode_worldinspect/func_08100980.s");
+
+void func_08100980(void) {
+    s32 i;
+#ifdef VERSION_EU
+    u8* tile0;
+    u8* tile1;
+    u8* tile2;
+
+    switch (gLanguage) {
+    case 0:
+        tile0 = gUnkEu_099AABA4;
+        tile1 = gUnkEu_099AABBA;
+        tile2 = gUnkEu_099AABEE;
+        break;
+    case 1:
+        tile0 = gUnkEu_099AB990;
+        tile1 = gUnkEu_099AB9A6;
+        tile2 = gUnkEu_099AB9DA;
+        break;
+    case 4:
+        tile0 = gUnkEu_099ABF18;
+        tile1 = gUnkEu_099ABF2E;
+        tile2 = gUnkEu_099ABF62;
+        break;
+    case 3:
+        tile0 = gUnkEu_099AC3E0;
+        tile1 = gUnkEu_099AC3F6;
+        tile2 = gUnkEu_099AC42A;
+        break;
+    case 2:
+    default:
+        tile0 = gUnkEu_099AC968;
+        tile1 = gUnkEu_099AC97E;
+        tile2 = gUnkEu_099AC9B2;
+        break;
+    }
+
+    DrawSprite(gUnk_020357B0 >> 8, 0, tile0, gUnk_02035510, gUnk_02035514, 0, 0xC00, 0xBB8);
+    if (gUnk_020357A2 != 2) {
+        DrawSprite(0x80, gUnk_020357A8[0] >> 8, tile1, gUnk_02035510, gUnk_02035514, 0, 0xC00, 0xBB9);
+        DrawSprite(0x80, gUnk_020357A8[1] >> 8, tile2, gUnk_02035510, gUnk_02035514, 0, 0xC00, 0xBB9);
+    }
+#else
+    if (gUnk_020357A2 != 2) {
+        DrawSprite(gUnk_020357B0 >> 8, 0, gUnk_0999F400, gUnk_02035510, gUnk_02035514, 0, 0xC00, 0xBB8);
+        DrawSprite(0x80, gUnk_020357A8[0] >> 8, gUnk_0999F416, gUnk_02035510, gUnk_02035514, 0, 0xC00, 0xBB9);
+        DrawSprite(0x80, gUnk_020357A8[1] >> 8, gUnk_0999F44A, gUnk_02035510, gUnk_02035514, 0, 0xC00, 0xBB9);
+    }
+#endif
+
+    if (gUnk_020357A2 == 2) {
+        DrawSprite((s16)(gUnk_09EF9384[gUnk_020354E8].unk_08 * 8 + 22),
+            (s16)(gUnk_09EF9384[gUnk_020354E8].unk_0A * 8 + 12),
+            AnimUpdate(&gUnk_02035520), gUnk_02035518, gUnk_0203551C, 0, 0x800, 0x898);
+        func_0805F1C0(&gUnk_020357B4, (gUnk_09EF9384[gUnk_020354E8].unk_08 << 11) + 0x2000);
+        func_0805F1C0(&gUnk_020357B8, (gUnk_09EF9384[gUnk_020354E8].unk_0A << 11) + 0xFFFFFA00);
+        DrawSprite(gUnk_020357B4 >> 8, gUnk_020357B8 >> 8, AnimUpdate(&gUnk_02035558),
+            gUnk_02035550, gUnk_02035554, 0, 0x800, 0x7D0);
+    }
+
+    for (i = 0; i <= 12; i++) {
+        if (gUnk_020355E0[i] != 0) {
+            DrawSprite((s16)(gUnk_09EF9384[i].unk_08 * 8 + 16), (s16)(gUnk_09EF9384[i].unk_0A * 8 + 16),
+                gUnk_020355E0[i], gUnk_02035570[i], gUnk_020355A8[i], 0, 0x800, (u16)(i + 0x834));
+        }
+    }
+
+    if (gUnk_020355E0[gGameState.floor] != 0) {
+#ifdef VERSION_EU
+        DrawSprite(0x66, 0x10, gUnk_020355E0[gGameState.floor], gUnk_02035570[gGameState.floor],
+            gUnk_020355A8[gGameState.floor], 0, 0, 2);
+#else
+        DrawSprite(0x70, 0x10, gUnk_020355E0[gGameState.floor], gUnk_02035570[gGameState.floor],
+            gUnk_020355A8[gGameState.floor], 0, 0, 2);
+#endif
+    }
+
+    if (gUnk_020356D8 != 0) {
+#ifdef VERSION_EU
+        func_080664D8(0x78, 0x0C, gUnk_02035618, gUnk_0203551C, 0, gUnk_020356D8);
+#else
+        func_080664D8(0x80, 0x0C, gUnk_02035618, gUnk_0203551C, 0, gUnk_020356D8);
+#endif
+    }
+
+    DrawSprite(0xB0, 0x1A, AnimUpdate(&gUnk_02035538), gUnk_02035518, gUnk_0203551C, 0, 0, 2);
+
+    if (gUnk_020355E0[gUnk_020354E8] != 0) {
+#ifdef VERSION_EU
+        DrawSprite(0x66, 0x30, gUnk_020355E0[gUnk_020354E8], gUnk_02035570[gUnk_020354E8],
+            gUnk_020355A8[gUnk_020354E8], 0, 0, 2);
+#else
+        DrawSprite(0x70, 0x30, gUnk_020355E0[gUnk_020354E8], gUnk_02035570[gUnk_020354E8],
+            gUnk_020355A8[gUnk_020354E8], 0, 0, 2);
+#endif
+    }
+
+    if (gUnk_020357A0 != 0) {
+#ifdef VERSION_EU
+        func_080664D8(0x78, 0x2C, gUnk_020356E0, gUnk_02035554, 0, gUnk_020357A0);
+#else
+        func_080664D8(0x80, 0x2C, gUnk_020356E0, gUnk_02035554, 0, gUnk_020357A0);
+#endif
+    }
+}
