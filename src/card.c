@@ -4529,7 +4529,92 @@ u8 func_08081B70(UnkStruct_02034AAC* p, void* a) {
 
     return func_08082C98(p, a);
 }
+#ifdef NON_MATCHING
+void func_08081C98(UnkStruct_02034AAC* p) {
+    void* gfx;
+    s32 aff;
+    u16 y;
+    u8 j;
+
+    gfx = p->unk_48->unk_00;
+
+    if (func_080A42C8() == 1) {
+        y = p->unk_50 >> 8;
+    } else {
+        y = (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8);
+    }
+
+    if (!(p->unk_78 & 0x20)) {
+        return;
+    }
+
+    if (!(p->unk_78 & 0x80)) {
+        return;
+    }
+
+    if (p->unk_54 == 0) {
+        return;
+    }
+
+    if (!(p->unk_78 & 0x200)) {
+        if (gUnk_02039B9C->unk_0F4 == 7) {
+            return;
+        }
+
+        aff = AllocObjAffine(p->unk_5E, p->unk_54, p->unk_58, 0);
+        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, (&gUnk_02039DD4->tiles)[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 1));
+        DrawSprite(p->unk_4C >> 8, y, gfx, p->unk_00, p->palette, aff, 0x410, p->unk_A0);
+        j = p->unk_A5;
+
+        if (p->unk_48->unk_2A == 3) {
+            return;
+        }
+
+        if (p->unk_A7 != 0) {
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE98C0[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 2));
+        } else if (p->unk_A6 != 0) {
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE9894[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 2));
+        } else {
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 2));
+        }
+
+        if (p->unk_A6 != 0) {
+            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_094, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 3));
+        }
+
+        return;
+    }
+
+    if (gUnk_02039B9C->unk_0F4 == 28) {
+        return;
+    }
+
+    aff = AllocObjAffine(0, p->unk_54, p->unk_58, 0);
+    DrawSprite(p->unk_4C >> 8, y, p->unk_48->unk_10, p->unk_00, p->palette, aff, 0x410, p->unk_A0);
+    j = p->unk_A5;
+
+    if (p->unk_48->unk_2A == 3) {
+        return;
+    }
+
+    if (p->unk_A7 != 0) {
+        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 10));
+
+        if (p->unk_A6 == 0) {
+            return;
+        }
+    } else if (p->unk_A6 != 0) {
+        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 10));
+    } else {
+        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 10));
+        return;
+    }
+
+    DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 11));
+}
+#else
 INCLUDE_ASM("card/func_08081C98.s");
+#endif
 
 void NO_Card_2(UnkStruct_02034AAC* p) {
     void* gfx;
@@ -10235,11 +10320,11 @@ void func_08090374(UnkStruct_02034AAC* p) {
 
                 if (p->unk_A7 != 0) {
                     DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
-                               gUnk_09EE981C[p->unk_A5], gUnk_02039DD4->tiles7,
+                               gUnk_09EE981C[j], gUnk_02039DD4->tiles7,
                                gUnk_02039DD4->palette2, affine, 0x410, (u16)(p->unk_A0 - 2));
                 } else {
                     DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
-                               gUnk_09EE981C[p->unk_A5], gUnk_02039DD4->tiles5,
+                               gUnk_09EE981C[j], gUnk_02039DD4->tiles5,
                                gUnk_02039DD4->palette, affine, 0x410, (u16)(p->unk_A0 - 2));
                 }
             }
