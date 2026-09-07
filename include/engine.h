@@ -123,6 +123,27 @@ typedef char FadeWork_size[(sizeof(FadeWork) == 0x598) ? 1 : -1];
 typedef char PaletteSlot_size[(sizeof(PaletteSlot) == 0x2C) ? 1 : -1];
 
 extern FadeWork* gFadeWork;
+
+typedef struct UnkBgAnimFrame {
+    void* unk_00;
+    u16 unk_04;
+    u16 unk_06;
+} UnkBgAnimFrame;
+
+typedef struct UnkBgAnim {
+    UnkBgAnimFrame* unk_00;
+    void* unk_04;
+    void* unk_08;
+    u16 unk_0C;
+    u16 unk_0E;
+    u16 unk_10;
+    u16 unk_12;
+    u16 unk_14;
+    u16 unk_16;
+} UnkBgAnim;
+
+typedef char UnkBgAnim_size[(sizeof(UnkBgAnim) == 0x18) ? 1 : -1];
+typedef char UnkBgAnimFrame_size[(sizeof(UnkBgAnimFrame) == 0x08) ? 1 : -1];
 extern u16 gBg0HOfs;
 extern u16 gBg0VOfs;
 extern u16 gBg1HOfs;
