@@ -209,8 +209,8 @@ typedef struct MdFireWork {
     s16 unk_006;
     s16 unk_008;
     u8 unk_00A[0x2];
-    u32 unk_00C;
-    u32 unk_010;
+    u32 palette;
+    u32 palette2;
     u32 tiles;
     AnimState anim;
     u32 unk_030;
@@ -275,8 +275,8 @@ typedef struct GaWork {
     u8 unk_A10[0x18];
     u32 tiles;
     u8 gfx[0x4];
-    u8* unk_A30;
-    u8* unk_A34;
+    u8* palette;
+    u8* palette2;
     u8 unk_A38[0x14];
     u32 unk_A4C;
     s16 unk_A50;
@@ -339,8 +339,8 @@ typedef struct MdWork {
     s16 unk_01A;
     u8 unk_01C;
     u8 unk_01D[0x3];
-    u8* unk_020;
-    u8* unk_024;
+    u8* palette;
+    u8* palette2;
     void* unk_028;
     TaskPool unk_02C;
     TaskPool unk_040;
