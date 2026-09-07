@@ -32,15 +32,11 @@ extern Mode gModeTitle;
 
 void ModeRequest(Mode* mode, s32 arg);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void* GetBgCharBase(s32 bg);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void SetBgPriority(s32 bg, u16 priority);
 void func_08006120(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);
-u8 func_08006314(void);
 
 void mode_copyright2_0(s32 arg);
 void mode_copyright2_1(void);
