@@ -42,12 +42,12 @@ typedef struct StatusBarWork {
 } StatusBarWork;
 
 typedef struct StatusTabWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
+    void* tiles;
+    void* tiles2;
+    void* palette;
+    void* palette2;
+    void* gfx;
+    void* gfx2;
     s32* unk_18;
 } StatusTabWork;
 
@@ -67,10 +67,10 @@ typedef struct StatusDecknameWork {
 } StatusDecknameWork;
 
 typedef struct StatusCursorWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
+    void* tiles;
+    void* tiles2;
+    void* palette;
+    void* palette2;
     void* gfx[2];
     AnimState anim[2];
     s16* unk_48;

@@ -299,42 +299,42 @@ u8 func_080D7B94(void) {
 void task_status_tab_0(StatusTabWork* work, s32* arg) {
     work->unk_18 = arg;
 #ifdef VERSION_EU
-    work->unk_00 = AllocObjTiles(func_08003524(gUnkEu_09F802DC[gLanguage], 4),
+    work->tiles = AllocObjTiles(func_08003524(gUnkEu_09F802DC[gLanguage], 4),
         gUnkEu_09F802C8[gLanguage]);
 #else
-    work->unk_00 = AllocObjTiles(func_08003524(gUnk_09EF6920, 4), gUnk_097A24A6);
+    work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6920, 4), gUnk_097A24A6);
 #endif
-    work->unk_08 = LoadObjPalette(gUnk_0984B218, 0x20);
+    work->palette = LoadObjPalette(gUnk_0984B218, 0x20);
 #ifdef VERSION_EU
-    work->unk_10 = ((void**)gUnkEu_09F802DC[gLanguage])[*work->unk_18];
+    work->gfx = ((void**)gUnkEu_09F802DC[gLanguage])[*work->unk_18];
 #else
-    work->unk_10 = gUnk_09EF6920[*work->unk_18];
+    work->gfx = gUnk_09EF6920[*work->unk_18];
 #endif
-    work->unk_04 = AllocObjTiles(func_08003524(gUnk_09EF6934, 4), gUnk_097A28DA);
-    work->unk_0C = LoadObjPalette(gUnk_0984B238, 0x20);
-    work->unk_14 = gUnk_09EF6934[*work->unk_18];
+    work->tiles2 = AllocObjTiles(func_08003524(gUnk_09EF6934, 4), gUnk_097A28DA);
+    work->palette2 = LoadObjPalette(gUnk_0984B238, 0x20);
+    work->gfx2 = gUnk_09EF6934[*work->unk_18];
 }
 
 u8 task_status_tab_1(StatusTabWork* work) {
 #ifdef VERSION_EU
-    work->unk_10 = ((void**)gUnkEu_09F802DC[gLanguage])[*work->unk_18];
+    work->gfx = ((void**)gUnkEu_09F802DC[gLanguage])[*work->unk_18];
 #else
-    work->unk_10 = gUnk_09EF6920[*work->unk_18];
+    work->gfx = gUnk_09EF6920[*work->unk_18];
 #endif
-    work->unk_14 = gUnk_09EF6934[*work->unk_18];
+    work->gfx2 = gUnk_09EF6934[*work->unk_18];
     return 1;
 }
 
 void task_status_tab_2(StatusTabWork* work) {
-    DrawSprite(0, 16, work->unk_10, work->unk_00, work->unk_08, 0, 0x800, 10);
-    DrawSprite(0, 16, work->unk_14, work->unk_04, work->unk_0C, 0, 0x800, 11);
+    DrawSprite(0, 16, work->gfx, work->tiles, work->palette, 0, 0x800, 10);
+    DrawSprite(0, 16, work->gfx2, work->tiles2, work->palette2, 0, 0x800, 11);
 }
 
 void task_status_tab_3(StatusTabWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_08);
-    ReleaseObjTiles(work->unk_04);
-    ReleaseObjPalette(work->unk_0C);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjPalette(work->palette2);
 }
 
 void task_status_sora_0(StatusSoraWork* work) {
@@ -401,13 +401,13 @@ void task_status_deckname_3(StatusDecknameWork* work) {
 
 void task_status_cursor_0(StatusCursorWork* work, s16* arg) {
     work->unk_48 = arg;
-    work->unk_00 = AllocObjTiles(func_08003524(gUnk_09EF68F0, 5), gUnk_097A1C54);
-    work->unk_08 = LoadObjPalette(gUnk_0984B1D8, 0x20);
+    work->tiles = AllocObjTiles(func_08003524(gUnk_09EF68F0, 5), gUnk_097A1C54);
+    work->palette = LoadObjPalette(gUnk_0984B1D8, 0x20);
     AnimInit(&work->anim[0], (s32)gUnk_09EF6904, (s32)gUnk_09EF68F0);
     AnimStart(&work->anim[0], 0, 1);
     work->gfx[0] = AnimGetGfx(&work->anim[0]);
-    work->unk_04 = AllocObjTiles(func_08003524(gUnk_09EF6908, 4), gUnk_097A2394);
-    work->unk_0C = LoadObjPalette(gUnk_0984B1F8, 0x20);
+    work->tiles2 = AllocObjTiles(func_08003524(gUnk_09EF6908, 4), gUnk_097A2394);
+    work->palette2 = LoadObjPalette(gUnk_0984B1F8, 0x20);
     AnimInit(&work->anim[1], (s32)gUnk_09EF691C, (s32)gUnk_09EF6908);
     AnimStart(&work->anim[1], 0, 1);
     work->gfx[1] = AnimGetGfx(&work->anim[1]);
@@ -453,20 +453,20 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
 void task_status_cursor_2(StatusCursorWork* work) {
     if (func_08006314() == 0) {
         if (!(gGameState.flags & 8) || func_080D8340()) {
-            DrawSprite(work->unk_58 >> 8, (work->unk_50 >> 8) - 16, work->gfx[1], work->unk_04, work->unk_0C, 0, 0, 0);
+            DrawSprite(work->unk_58 >> 8, (work->unk_50 >> 8) - 16, work->gfx[1], work->tiles2, work->palette2, 0, 0, 0);
 
             if (work->unk_4C >= 0) {
-                DrawSprite(1, (work->unk_50 >> 8) + 3, work->gfx[0], work->unk_00, work->unk_08, 0, 0, 1);
+                DrawSprite(1, (work->unk_50 >> 8) + 3, work->gfx[0], work->tiles, work->palette, 0, 0, 1);
             }
         }
     }
 }
 
 void task_status_cursor_3(StatusCursorWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_08);
-    ReleaseObjTiles(work->unk_04);
-    ReleaseObjPalette(work->unk_0C);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjPalette(work->palette2);
 }
 
 void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
