@@ -12,6 +12,8 @@ extern u16 gUnkEu_0203C964;
 extern u16 gUnkEu_0203C970;
 extern u16 gUnkEu_0203C97C;
 extern void* gUnkEu_08891508[];
+extern u16 gUnkEu_095DA860[];
+extern u16 gUnkEu_095DA867[];
 #endif
 
 SioBtlConnectWork* gSioBtlConnectWork;
@@ -177,7 +179,6 @@ void func_080AEED8(u16 a, u16 b, u16 c) {
     func_08002A10(gSioBtlOptionWork->unk_008[a], def->unk_08);
 }
 
-#ifndef VERSION_EU
 void mode_sio_btl_option_0(s32 arg) {
     gSioBtlOptionWork = EwramAlloc(sizeof(SioBtlOptionWork));
     SetBgMode1();
@@ -194,11 +195,24 @@ void mode_sio_btl_option_0(s32 arg) {
     SetBgOverflow(2, 1);
     SetBgSize(2, 0x8000);
     RequestDma3Copy(gUnk_096AD744, GetBgCharBase(0), 0x2000);
+#ifdef VERSION_EU
+    func_08065ACC(gSioBtlOptionWork->unk_054, 40);
+    func_08065ACC(gSioBtlOptionWork->unk_0FC, 20);
+    func_08065ACC(gSioBtlOptionWork->unk_154, 20);
+    if (gUnk_0203A9E4 == 0) {
+        gSioBtlOptionWork->unk_0F8 = func_08065B6C(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
+        gSioBtlOptionWork->unk_150 = func_08065B6C(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
+    } else {
+        gSioBtlOptionWork->unk_0F8 = func_08065B6C(gUnkEu_095DA860, gSioBtlOptionWork->unk_0FC);
+        gSioBtlOptionWork->unk_150 = func_08065B6C(gUnkEu_095DA867, gSioBtlOptionWork->unk_154);
+    }
+#else
     func_08065ACC(gSioBtlOptionWork->unk_054, 20);
     func_08065ACC(gSioBtlOptionWork->unk_0FC, 10);
     func_08065ACC(gSioBtlOptionWork->unk_154, 10);
     gSioBtlOptionWork->unk_0F8 = func_08065B6C(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
     gSioBtlOptionWork->unk_150 = func_08065B6C(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
+#endif
     gSioBtlOptionWork->unk_0F4 = LoadObjPalette(gUnk_096FBCC4, 32);
     gSioBtlOptionWork->unk_14C = LoadObjPalette(gUnk_096FBCC4 + 64, 32);
     gSioBtlOptionWork->unk_1A4 = LoadObjPalette(gUnk_096FBCC4 + 32, 32);
@@ -208,9 +222,6 @@ void mode_sio_btl_option_0(s32 arg) {
     gSioBtlOptionWork->unk_21A = arg;
     gSioBtlOptionWork->unk_002 = 0;
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sio_btl_option_0.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080AF0B0(void) {
