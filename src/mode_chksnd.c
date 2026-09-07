@@ -646,7 +646,12 @@ void mode_chksnd_0(void) {
     TaskCreate(&gChkSndPool, &gTaskDescPrint, 0);
 }
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+const char gUnkEu_0812F5E4[0x20] = "                              ";
+
+const char gUnkEu_0812F604[4] = ": ";
+#endif
+
 void mode_chksnd_1(void) {
     u16 keys;
 
@@ -663,6 +668,23 @@ void mode_chksnd_1(void) {
             gUnk_020348B4++;
         }
 
+#ifdef VERSION_EU
+        if (gUnk_020348B4 < 0) {
+            gUnk_020348B4 = 632;
+        }
+
+        if ((u16)gUnk_020348B4 > 632) {
+            gUnk_020348B4 = 0;
+        }
+
+        if (GetKeysPressed() & 1) {
+            m4aSongNumStart(gChkSndEntries[gUnk_020348B4].songNum);
+        }
+
+        func_0809D2B0(0, 0, 0, gUnkEu_0812F5E4);
+        func_0809D458(0, 0, 0, gChkSndEntries[gUnk_020348B4].songNum);
+        func_0809D2B0(5, 0, 0, gUnkEu_0812F604);
+#else
         if (GetKeysPressed() & 1) {
             m4aSongNumStart(gChkSndEntries[gUnk_020348B4].songNum);
         }
@@ -678,18 +700,12 @@ void mode_chksnd_1(void) {
         func_0809D2B0(0, 0, 0, "                              ");
         func_0809D458(0, 0, 0, gChkSndEntries[gUnk_020348B4].songNum);
         func_0809D2B0(5, 0, 0, ": ");
+#endif
         func_0809D2B0(7, 0, 0, gChkSndEntries[gUnk_020348B4].name);
         TaskPoolUpdate(&gChkSndPool);
         TaskPoolDraw(&gChkSndPool);
     }
 }
-#else
-const char gUnkEu_0812F5E4[0x20] = "                              ";
-
-const char gUnkEu_0812F604[4] = ": ";
-
-INCLUDE_ASM("mode_chksnd/mode_chksnd_1.s");
-#endif
 
 void mode_chksnd_2(void) {
     m4aMPlayAllStop();

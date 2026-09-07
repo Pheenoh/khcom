@@ -344,6 +344,7 @@ TARGET_FUNC_ADDR = {
         "func_081017A0": 0x080FFB9C,
         "func_08101970": 0x080FFD88,
         "mode_worldinspect_1": 0x080FE19C,
+        "mode_chksnd_1": 0x0800C214,
     },
 }
 
