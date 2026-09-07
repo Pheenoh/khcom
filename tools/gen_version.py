@@ -28,6 +28,38 @@ from pathlib import Path
 ROM_BASE = 0x08000000
 CODE_HI = 0x081213C4
 ROM_END = 0x0A000000
+
+VENEER_STUB = bytes((0x78, 0x47, 0xC0, 0x46))
+VENEER_SIZE = 8
+VENEER_NAMES = ("func_081213C4", "func_081213CC", "func_081213D4")
+
+
+def veneer_labels(data):
+    if len(data) != VENEER_SIZE * len(VENEER_NAMES):
+        return None
+
+    for i in range(len(VENEER_NAMES)):
+        piece = data[i * VENEER_SIZE:(i + 1) * VENEER_SIZE]
+
+        if piece[:4] != VENEER_STUB or piece[7] != 0xEA:
+            return None
+    return VENEER_NAMES
+
+
+def blob_source(code, lo, hi, data):
+    head = f'\t.section .rodata\n\t.global data_{lo:08X}\ndata_{lo:08X}:\n'
+    names = veneer_labels(data)
+
+    if not names:
+        return head + f'\t.incbin "roms/{code}.gba", {lo - ROM_BASE:#x}, {hi - lo:#x}\n'
+    body = ""
+
+    for i, name in enumerate(names):
+        at = lo + i * VENEER_SIZE
+        body += (f'\t.thumb_func\n\t.global {name}\n{name}:\n'
+                 f'\t.incbin "roms/{code}.gba", {at - ROM_BASE:#x}, {VENEER_SIZE:#x}\n')
+    return head + body
+
 SIZE_SLACK = 64
 
 TARGET_ANCHORS = {
@@ -1053,8 +1085,7 @@ def main():
 
     for nm, lo, hi in bounds:
         Path(f"asm/{ver}/{nm}").write_text(
-            f'\t.section .rodata\n\t.global data_{lo:08X}\ndata_{lo:08X}:\n'
-            f'\t.incbin "roms/{code}.gba", {lo - ROM_BASE:#x}, {hi - lo:#x}\n')
+            blob_source(code, lo, hi, otrom[lo - ROM_BASE:hi - ROM_BASE]))
     fresh = {nm for nm, _lo, _hi in bounds}
     for old in Path(f"asm/{ver}").glob("*.s"):
         if old.name not in fresh and ".global data_" in old.read_text():
