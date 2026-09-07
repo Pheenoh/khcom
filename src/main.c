@@ -117,7 +117,7 @@ void DisableHBlankIntr(void) {
 }
 
 #ifdef VERSION_EU
-void eu_08000334(void) {
+void ClearSystemMemory(void) {
     u32 a;
     u32 b;
     u32 c;
@@ -133,9 +133,19 @@ void eu_08000334(void) {
 }
 #endif
 
-#ifndef VERSION_EU
 void InitSystem(void) {
     vu32* dma;
+#ifdef VERSION_EU
+    u32 flag;
+
+    if (gUnk_03006C18[0] == 0xFEDCBA98) {
+        ClearSystemMemory();
+        flag = 1;
+    } else {
+        ClearSystemMemory();
+        flag = 0;
+    }
+#else
     u32 zero;
 
     RegisterRamReset(0xFF);
@@ -151,83 +161,48 @@ void InitSystem(void) {
     dma[1] = 0x03000000;
     dma[2] = 0x85001F80;
     dma[2];
-    gVBlankEndVCount = 0;
-    gFrameSyncFlags = 0;
-    gVBlankHandlerOverride = 0;
-    REG_IME = 0;
-    dma[0] = (vu32)IrqHandler;
-    dma[1] = (vu32)gIntrHandler;
-    dma[2] = 0x84000200;
-    dma[2];
-    INTR_VECTOR = gIntrHandler;
-    REG_IE = 0x2000;
-    REG_IF = 0x2000;
-    REG_IME = 1;
-    InitIntrTable();
-    m4aSoundInit();
-    m4aSoundVSyncOff();
-    IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
-    EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
-    VTransInit();
-    SpriteInit();
-    BgInit();
-    FadeInit();
-    PalletInit();
-    SioKeyInit();
-    ResetPaletteEffect();
-    ResetKeyState();
-    SeedRandom(0x12D687);
-    InitDisplayRegs();
-    SaveInitSram();
-    func_08116CEC();
-    ModeInit();
-}
-#else
-void InitSystem(void) {
-    vu32* dma;
-    u32 flag;
-
-    if (gUnk_03006C18[0] == 0xFEDCBA98) {
-        eu_08000334();
-        flag = 1;
-    } else {
-        eu_08000334();
-        flag = 0;
-    }
-    gVBlankEndVCount = 0;
-    gFrameSyncFlags = 0;
-    gVBlankHandlerOverride = 0;
-    gUnkEu_03007484 = 0;
-    REG_IME = 0;
-    dma = (vu32*)0x040000D4;
-    dma[0] = (vu32)IrqHandler;
-    dma[1] = (vu32)gIntrHandler;
-    dma[2] = 0x84000200;
-    dma[2];
-    INTR_VECTOR = gIntrHandler;
-    REG_IE = 0x2000;
-    REG_IF = 0x2000;
-    REG_IME = 1;
-    InitIntrTable();
-    m4aSoundInit();
-    m4aSoundVSyncOff();
-    IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
-    EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
-    VTransInit();
-    SpriteInit();
-    BgInit();
-    FadeInit();
-    PalletInit();
-    SioKeyInit();
-    ResetPaletteEffect();
-    ResetKeyState();
-    SeedRandom(0x12D687);
-    InitDisplayRegs();
-    SaveInitSram();
-    func_08116CEC();
-    ModeInit(flag);
-}
 #endif
+    gVBlankEndVCount = 0;
+    gFrameSyncFlags = 0;
+    gVBlankHandlerOverride = 0;
+#ifdef VERSION_EU
+    gUnkEu_03007484 = 0;
+#endif
+    REG_IME = 0;
+#ifdef VERSION_EU
+    dma = (vu32*)0x040000D4;
+#endif
+    dma[0] = (vu32)IrqHandler;
+    dma[1] = (vu32)gIntrHandler;
+    dma[2] = 0x84000200;
+    dma[2];
+    INTR_VECTOR = gIntrHandler;
+    REG_IE = 0x2000;
+    REG_IF = 0x2000;
+    REG_IME = 1;
+    InitIntrTable();
+    m4aSoundInit();
+    m4aSoundVSyncOff();
+    IwramHeapInit(GetIwramHeapStart(), GetIwramHeapSize());
+    EwramHeapInit(GetEwramHeapStart(), GetEwramHeapSize());
+    VTransInit();
+    SpriteInit();
+    BgInit();
+    FadeInit();
+    PalletInit();
+    SioKeyInit();
+    ResetPaletteEffect();
+    ResetKeyState();
+    SeedRandom(0x12D687);
+    InitDisplayRegs();
+    SaveInitSram();
+    func_08116CEC();
+#ifdef VERSION_EU
+    ModeInit(flag);
+#else
+    ModeInit();
+#endif
+}
 
 void AgbMain(void) {
     s32 bit;
