@@ -107,7 +107,7 @@ typedef struct BtlWork {
     s16 unk_0C8;
     u8 unk_0CA[0x06];
     s32 unk_0D0;
-    u8 unk_0D4[0x04];
+    s32 unk_0D4;
     s16 unk_0D8;
     s16 unk_0DA;
     s16 unk_0DC;
@@ -118,7 +118,7 @@ typedef struct BtlWork {
     u16 unk_0E4;
     u8 unk_0E6[0x02];
     s32 unk_0E8;
-    u8 unk_0EC[0x02];
+    u16 unk_0EC;
     u8 unk_0EE;
     u8 unk_0EF;
     u8 unk_0F0[0x4];
