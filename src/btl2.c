@@ -674,13 +674,13 @@ void task_btl_pause_0(BtlPauseWork* work) {
         work->tiles = LoadObjTiles(gUnkEu_08B51BA8, 0x180);
         p = gUnkEu_09F5C1FC;
     }
-    work->unk_08 = p[0];
-    work->unk_0C = p[1];
+    work->gfx = p[0];
+    work->gfx2 = p[1];
 #else
     work->tiles = LoadObjTiles(gUnk_08B1E7F4, 0x180);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    work->unk_08 = gUnk_09EE115C[0];
-    work->unk_0C = gUnk_09EE115C[1];
+    work->gfx = gUnk_09EE115C[0];
+    work->gfx2 = gUnk_09EE115C[1];
 #endif
     work->unk_10 = 0;
     work->unk_24 = 0;
@@ -702,10 +702,10 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
         if (work->unk_10 == 0) {
             func_080063C4(1);
             work->unk_10 = 1;
-            work->unk_14 = -0x4000;
-            work->unk_18 = 0x5000;
-            work->unk_1C = 0x13000;
-            work->unk_20 = 0x5000;
+            work->x = -0x4000;
+            work->y = 0x5000;
+            work->x2 = 0x13000;
+            work->y2 = 0x5000;
             work->unk_24 = 14;
         m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x80);
         m4aMPlayVolumeControl(gUnk_0203DC90, 0xFF, 0);
@@ -731,8 +731,8 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
         m4aMPlayVolumeControl(gUnk_0203DB90, 0xFF, 0);
         m4aMPlayVolumeControl(gUnk_0203DD50, 0xFF, 0);
         } else {
-            ApproachValue(&work->unk_14, 0x7800, work->unk_24);
-            ApproachValue(&work->unk_1C, 0x7800, work->unk_24);
+            ApproachValue(&work->x, 0x7800, work->unk_24);
+            ApproachValue(&work->x2, 0x7800, work->unk_24);
 
             if (work->unk_24 > 1) {
                 work->unk_24--;
@@ -771,8 +771,8 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
 
 void task_btl_pause_2(BtlPauseWork* work) {
     if (work->unk_10 != 0) {
-        DrawSprite(work->unk_14 >> 8, work->unk_18 >> 8, work->unk_08, work->tiles, work->palette, 0, 0, 0);
-        DrawSprite(work->unk_1C >> 8, work->unk_20 >> 8, work->unk_0C, work->tiles, work->palette, 0, 0, 0);
+        DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, 0, 0, 0);
+        DrawSprite(work->x2 >> 8, work->y2 >> 8, work->gfx2, work->tiles, work->palette, 0, 0, 0);
     }
 }
 

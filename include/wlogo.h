@@ -164,10 +164,10 @@ typedef struct WlogoBksObjWork {
     s8 unk_028;
     s8 unk_029;
     u8 unk_02A[0x2];
-    s32 unk_02C;
-    s32 unk_030;
-    s32 unk_034;
-    s32 unk_038;
+    s32 x;
+    s32 y;
+    s32 targetX;
+    s32 targetY;
     s32 unk_03C;
     s32 unk_040;
     u8 unk_044;
@@ -253,8 +253,8 @@ typedef struct WlogoPooObjWork {
     void* palette;
     void* gfx;
     AnimState anim;
-    s32 unk_024;
-    s32 unk_028;
+    s32 x;
+    s32 y;
     s32 unk_02C;
     s32 unk_030;
     s32 unk_034;
@@ -457,8 +457,8 @@ typedef struct WlogoWonWork {
     u16 unk_008;
     u8 unk_00A;
     u8 unk_00B;
-    s32 unk_00C[10];
-    s32 unk_034[10];
+    s32 x[10];
+    s32 y[10];
     s32 unk_05C[10];
     void* unk_084[10];
     u16 unk_0AC[10];
@@ -471,8 +471,8 @@ typedef struct WlogoWonWork {
 } WlogoWonWork;
 
 typedef struct WlogoHwtObjA {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     s32 unk_08;
     u8 unk_0C;
     u8 unk_0D[0x3];
@@ -494,8 +494,8 @@ typedef struct WlogoHwtObjWork {
     void* palette;
     void* gfx;
     AnimState anim;
-    s32 unk_024;
-    s32 unk_028;
+    s32 x;
+    s32 y;
     s32 unk_02C;
     s32 unk_030;
     s32 unk_034;
