@@ -223,6 +223,8 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09F65FF0": 0x09F65FF0,
         "gUnkEu_09F66004": 0x09F66004,
         "gUnkEu_09F6FDB4": 0x09F6FDB4,
+        "gUnkEu_09F6FDDC": 0x09F6FDDC,
+        "gUnkEu_090CE9F4": 0x090CE9F4,
         "gUnkEu_09F72BFC": 0x09F72BFC,
         "gUnkEu_09F7434C": 0x09F7434C,
         "gUnkEu_09F74360": 0x09F74360,
@@ -354,6 +356,7 @@ TARGET_EXTRA_LABELS = {
 
 TARGET_FUNC_SIZE = {
     "jp": {
+        "func_0808B238": 0xbc,
         "mode_sioError_0": 0x10c,
         "func_08066588": 156,
         "func_080A2980": 260,
@@ -405,6 +408,7 @@ TARGET_FUNC_SIZE = {
         "func_0808B30C": 0x8c,
         "func_0808B398": 0x44,
         "func_0808B3DC": 0x290,
+        "func_0808B238": 0xd4,
         "mode_sioError_0": 0x15c,
         "mode_jiminy_0": 0x4a8,
         "func_08064EF4": 0x174,
@@ -460,6 +464,7 @@ TARGET_FUNC_ADDR = {
         "func_0808B30C": 0x0808a950,
         "func_0808B398": 0x0808a9dc,
         "func_0808B3DC": 0x0808aa20,
+        "func_0808B238": 0x0808a87c,
     },
 }
 

@@ -15,6 +15,8 @@ extern u16* gUnkEu_09F65FF0[];
 extern u16* gUnkEu_09F66004[];
 extern void* gUnkEu_09F6FDB4[];
 extern u16 gUnkEu_090CE9EA[];
+extern void* gUnkEu_09F6FDDC[];
+extern u16 gUnkEu_090CE9F4[];
 extern void** gUnkEu_09F72BFC[];
 extern void** gUnkEu_09F74360[];
 extern void* gUnkEu_09F7434C[];
@@ -7869,32 +7871,38 @@ u8 func_0808B208(u8* work) {
     TaskPoolUpdate(&work[CARDWORK(0x7DC)]);
     return 1;
 }
-#ifdef VERSION_US
 u8 func_0808B238(u8* work, void* a) {
     *(void**)&work[0x4BC] = LoadObjTiles(gUnk_090A583E, 0x620);
 
+#ifdef VERSION_EU
+    *(void**)&work[0x18] = LoadObjTiles(gUnkEu_09F6FDDC[gLanguage], gUnkEu_090CE9F4[gLanguage]);
+#elif defined(VERSION_US)
     if (gGameState.flags & 8) {
         *(void**)&work[0x18] = LoadObjTiles(gUnk_090A418E, 0x320);
     } else {
         *(void**)&work[0x18] = LoadObjTiles(gUnk_090A3E46, 0x320);
     }
+#else
+    *(void**)&work[0x18] = LoadObjTiles(gUnk_090A418E, 0x320);
+#endif
 
     *(void**)&work[0x4C0] = LoadObjPalette(gUnk_096144F8, 32);
+#ifdef VERSION_EU
+    LoadBgMap(3, gUnk_095132B8, 0x800);
+#else
     LoadBgMap(3, gUnk_09516AB8, 0x800);
-    *(s32*)&work[0x858] = 0x7800;
-    *(s32*)&work[0x860] = 0;
-    *(s32*)&work[0x85C] = 0xA400;
-    *(s32*)&work[0x864] = 0x9800;
-    *(s32*)&work[0x868] = 0;
-    work[0x8CC] = 16;
-    work[0x8CD] = 16;
-    work[0x8B0] = 0;
+#endif
+    *(s32*)&work[CARDWORK(0x858)] = 0x7800;
+    *(s32*)&work[CARDWORK(0x860)] = 0;
+    *(s32*)&work[CARDWORK(0x85C)] = 0xA400;
+    *(s32*)&work[CARDWORK(0x864)] = 0x9800;
+    *(s32*)&work[CARDWORK(0x868)] = 0;
+    work[CARDWORK(0x8CC)] = 16;
+    work[CARDWORK(0x8CD)] = 16;
+    work[CARDWORK(0x8B0)] = 0;
     SetTaskUpdate(a, (void*)func_0808B30C);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808B238.s");
-#endif
 
 u8 func_0808B30C(u8* work, void* a) {
     if ((s8)work[CARDWORK(0x8CD)] > 0) {
