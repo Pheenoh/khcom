@@ -312,7 +312,6 @@ extern u32 gUnk_09A5B674[];
 void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a);
 void task_sroll_a_name_2(SrollANameWork* w);
 void task_sroll_a_name_3(SrollANameWork* w);
-void LoadPalette(void* src, void* dst, s32 size);
 void task_sroll_b_char_3(SrollBCharWork* w);
 void task_sroll_b_crtn_3(SrollBCrtnWork* w);
 void task_sroll_c_char_3(SrollCCharWork* w);
