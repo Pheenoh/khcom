@@ -7,6 +7,7 @@
 #include "mode.h"
 #include "taskpool.h"
 #include "gba/syscall.h"
+#include "m4a.h"
 
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
@@ -182,8 +183,6 @@ UnkStruct_02034A5C* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 void UpdatePlayTime(void);
 void func_080B0754(void);
 void func_080E052C(u8 a);
-void m4aMPlayAllStop(void);
-void m4aSongNumStart(u16 id);
 void func_0801CB0C(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);

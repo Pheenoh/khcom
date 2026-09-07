@@ -7,6 +7,7 @@
 #include "mode.h"
 #include "obj.h"
 #include "key.h"
+#include "m4a.h"
 
 typedef struct PoohAnim {
     void* unk_00;
@@ -216,8 +217,6 @@ u8 func_080D2D94(s32 a);
 
 
 void func_080DF814(void);
-void m4aSongNumStart(u16 n);
-void m4aSongNumStop(u16 n);
 void* memcpy(void* dst, const void* src, unsigned long n);
 
 void mode_sio_dbg_flg_0(s32 arg);

@@ -4,6 +4,7 @@
 #include "types.h"
 #include "save.h"
 #include "mode.h"
+#include "m4a.h"
 extern u8 gUnk_09801DD8[];
 extern u8 gUnk_0984B298[];
 extern u8 gUnk_09849098[];
@@ -22,7 +23,6 @@ void SetBgPriority(s32 bg, u16 priority);
 void func_08006120(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
-void m4aSongNumStart(u16 id);
 
 void mode_copyright1_0(s32 arg);
 void mode_copyright1_1(void);
