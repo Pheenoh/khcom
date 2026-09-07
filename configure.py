@@ -269,7 +269,7 @@ with out.open("w") as f:
     n.variable("agbcc", "tools/agbcc/bin/agbcc")
     n.variable(
         "asflags",
-        f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I include -I asm/{version}/nonmatchings",
+        f"-mcpu=arm7tdmi -march=armv4t -mthumb-interwork -I . -I include -I asm/{version}/nonmatchings",
     )
     defines = f"-DVERSION_{version.upper()}"
     if args.non_matching:
@@ -349,6 +349,8 @@ with out.open("w") as f:
                 if Path(dep).exists():
                     deps.append(dep)
                     deps.extend(asm_file_deps(dep))
+            if str(src) == "src/movie.c":
+                deps.extend(["asm/movie_codec.inc", "asm/movie_codec.bin"])
         n.build(obj, rule, str(src), implicit=deps, variables=variables)
         objs.append(obj)
     n.newline()

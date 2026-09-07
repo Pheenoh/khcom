@@ -568,4 +568,4 @@ void MovieGetSize(MoviePlayer* a, s32* w, s32* h) {
     *h = p->height;
 }
 
-INCLUDE_ASM("movie/func_081196B4.s");
+asm(".include \"asm/movie_codec.inc\"");

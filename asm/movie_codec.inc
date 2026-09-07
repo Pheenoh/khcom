@@ -36,4 +36,5 @@ func_081196B4:
 .LgUnk_0811D1A4:
 	.incbin "asm/movie_codec.bin", 0x3AF0, 0xC
 
+	.size func_081196B4, . - func_081196B4
 .syntax divided
