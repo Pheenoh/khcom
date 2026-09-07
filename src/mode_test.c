@@ -2,8 +2,6 @@
 #include "mode_test.h"
 #include "gba/keys.h"
 
-void ModeUpdate(void);
-
 #ifndef VERSION_EU
 void* gUnk_02034A08;
 void* gUnk_02034A0C;
@@ -69,6 +67,7 @@ void func_0805F1C0(s32* p, s32 v) {
 }
 
 #ifdef VERSION_EU
+void eu_0800115C(void);
 INCLUDE_ASM("mode_test/eu_08060C44.s");
 #endif
 
@@ -874,7 +873,7 @@ void func_08060F1C(void) {
             break;
         case 1:
 #ifdef VERSION_EU
-            ModeUpdate();
+            eu_0800115C();
 #else
             SoftReset(255);
 #endif

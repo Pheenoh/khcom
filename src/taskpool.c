@@ -20,6 +20,9 @@ void (*gUnk_030074A4)(void);
 #ifdef VERSION_EU
 u32 gUnkEu_030074AC;
 #endif
+#ifdef VERSION_EU
+void eu_0800115C(void);
+#endif
 extern Mode gModeCopyright1;
 extern Mode* gDebugModes[];
 
@@ -294,7 +297,6 @@ void ModeRequestHeapReset(Mode* mode, s32 arg) {
 INCLUDE_ASM("taskpool/eu_0800115C.s");
 #endif
 
-#ifndef VERSION_EU
 void ModeUpdate(void) {
     u8 v;
 
@@ -308,8 +310,13 @@ void ModeUpdate(void) {
         }
 
         m4aMPlayAllStop();
+#ifdef VERSION_EU
+        func_08116CEC();
+        eu_0800115C();
+#else
         SoftReset(0xFF);
         func_08116CEC();
+#endif
     } else {
         if (gModeFlags & 4) {
             return;
@@ -349,9 +356,6 @@ void ModeUpdate(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("taskpool/ModeUpdate.s");
-#endif
 void SetModeUpdate(void (*fn)(void)) {
     gCurrentModeUpdate = fn;
 }
