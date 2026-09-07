@@ -2,6 +2,7 @@
 #define GUARD_CARD_H
 
 #include "types.h"
+#include "text_types.h"
 #include "taskpool.h"
 #include "card_types.h"
 #include "fld_types.h"
@@ -537,18 +538,49 @@ typedef struct UnkStruct_0809C9A4 {
 } UnkStruct_0809C9A4;
 
 typedef struct UnkStruct_0808C940 {
-    u8 unk_000[0x6EE];
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    void* unk_0C;
+    u8 unk_10[0x18];
+    TextSlot unk_28[8];
+    TextSlot unk_68[8];
+    TextSlot unk_A8[8];
+    u8 unk_E8[0x3D4];
+    void* unk_4BC;
+    u8 unk_4C0[0x214];
+    s16 unk_6D4;
+    s16 unk_6D6;
+    s16 unk_6D8;
+    s16 unk_6DA;
+    s16 unk_6DC;
+    s16 unk_6DE;
+    u8 unk_6E0[0x0E];
     s16 unk_6EE;
 #ifdef VERSION_EU
     u8 unk_6F0[0x168];
 #else
-    u8 unk_6F0[0x164];
+    u8 unk_6F0[0x10];
+    u8 unk_700;
+    u8 unk_701;
+    u8 unk_702;
+    u8 unk_703;
+    u8 unk_704;
+    u8 unk_705[0x14F];
 #endif
     s32 unk_854;
     u8 unk_858[0x54];
     s16 unk_8AC;
     s16 unk_8AE;
 } UnkStruct_0808C940;
+
+typedef char UnkStruct_0808C940_sizechk[(sizeof(struct UnkStruct_0808C940) ==
+#ifdef VERSION_EU
+    0x8B4
+#else
+    0x8B0
+#endif
+) ? 1 : -1];
 
 typedef struct UnkStruct_0808E2F0 {
     u16 unk_00[0x0B];
@@ -731,6 +763,37 @@ typedef struct UnkStruct_080038C8 {
     u16 unk_06;
     u16 unk_08;
 } UnkStruct_080038C8;
+
+typedef struct UnkStruct_0809CC80 {
+    void* unk_00;
+    UnkStruct_080038C8* unk_04;
+    TextSlot unk_08[32];
+    TextSlot unk_108[32];
+    TextSlot unk_208[2];
+    void* unk_218;
+    void* unk_21C;
+    s16 unk_220;
+    s16 unk_222;
+    s16 unk_224;
+    u8 unk_226;
+    u8 unk_227;
+} UnkStruct_0809CC80;
+
+typedef char UnkStruct_0809CC80_sizechk[(sizeof(struct UnkStruct_0809CC80) == 0x228) ? 1 : -1];
+
+typedef struct UnkStruct_080AB018 {
+    void* unk_00;
+    s32 unk_04;
+    u8 unk_08[0x02];
+    s8 unk_0A;
+    u8 unk_0B;
+    u8 unk_0C;
+    u8 unk_0D;
+    u8 unk_0E;
+} UnkStruct_080AB018;
+
+typedef char UnkStruct_080AB018_sizechk[(sizeof(struct UnkStruct_080AB018) == 0x10) ? 1 : -1];
+
 
 typedef struct CardSlot {
     u32 unk_00;
@@ -1729,6 +1792,9 @@ typedef struct UnkStruct_080A3F5C {
     u8 unk_14E;
     u8 unk_14F;
 } UnkStruct_080A3F5C;
+
+typedef char UnkStruct_080A3F5C_sizechk[(sizeof(struct UnkStruct_080A3F5C) == 0x150) ? 1 : -1];
+
 extern u16 gUnk_09033C98[];
 extern u16 gUnk_09033CA0[];
 extern s32 gUnk_09033CE0[];
@@ -2079,5 +2145,17 @@ void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a);
 u8 func_08082348(UnkStruct_02034AAC* p, void* a);
 u8 func_0809C2D0(u8* work, void* a);
 u8 func_08090C3C(UnkStruct_02034AAC* p, void* a);
+
+
+void CardName_0(UnkStruct_0809CC80* w);
+void DarkPoint_0(UnkStruct_080AB018* w);
+s32 DarkPoint_1(UnkStruct_080AB018* w);
+void DarkPoint_2(UnkStruct_080AB018* w);
+void DarkPoint_3(void** p);
+void func_080A33C4(UnkStruct_080A3F5C* w, void* a);
+#ifndef VERSION_EU
+void func_080A8C58(UnkStruct_0808C940* w, u8 b);
+#endif
+
 
 #endif /* GUARD_CARD_H */

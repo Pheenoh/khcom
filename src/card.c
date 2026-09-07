@@ -16529,30 +16529,30 @@ u8 func_0809CBF8(u8* work, void* a) {
 }
 
 #ifdef VERSION_US
-void CardName_0(u8* work) {
+void CardName_0(UnkStruct_0809CC80* w) {
     u8* q = *(u8**)&gUnk_0203A9D0[0x10];
     UnkStruct_080038C8* pal;
     s32 v;
     s16 t;
 
-    func_08065ACC((TextSlot*)&work[0x08], 32);
-    func_08065ACC((TextSlot*)&work[0x108], 32);
-    func_08065ACC((TextSlot*)&work[0x208], 2);
-    *(void**)&work[0x218] = _08066468(1);
-    work[0x226] = func_08065B6C(*(u16**)(*(u8**)q + 12), (TextSlot*)&work[0x08]);
-    work[0x227] = func_08065B6C((u16*)&gUnk_09036278[22], (TextSlot*)&work[0x108]);
-    *(void**)&work[0x21C] = LoadObjPalette(gUnk_09614798, 32);
-    v = (230 - func_08065B08((TextSlot*)&work[0x08], work[0x226])) / 2;
-    *(s16*)&work[0x220] = v;
-    t = *(u16*)&work[0x220] + func_08065B08((TextSlot*)&work[0x08], work[0x226]);
-    *(s16*)&work[0x224] = t;
-    v = (240 - func_08065B08((TextSlot*)&work[0x108], work[0x227])) / 2;
-    *(s16*)&work[0x222] = v;
-    *(void**)&work[0x00] = LoadObjTiles(&gUnk_093F8C8E[0xC1E], 0x1800);
+    func_08065ACC(w->unk_08, 32);
+    func_08065ACC(w->unk_108, 32);
+    func_08065ACC(w->unk_208, 2);
+    w->unk_218 = _08066468(1);
+    w->unk_226 = func_08065B6C(*(u16**)(*(u8**)q + 12), w->unk_08);
+    w->unk_227 = func_08065B6C((u16*)&gUnk_09036278[22], w->unk_108);
+    w->unk_21C = LoadObjPalette(gUnk_09614798, 32);
+    v = (230 - func_08065B08(w->unk_08, w->unk_226)) / 2;
+    w->unk_220 = v;
+    t = (u16)w->unk_220 + func_08065B08(w->unk_08, w->unk_226);
+    w->unk_224 = t;
+    v = (240 - func_08065B08(w->unk_108, w->unk_227)) / 2;
+    w->unk_222 = v;
+    w->unk_00 = LoadObjTiles(&gUnk_093F8C8E[0xC1E], 0x1800);
     pal = LoadObjPalette(gUnk_09611AB8, 32);
-    *(void**)&work[0x04] = pal;
+    w->unk_04 = pal;
     func_080062F4(pal->unk_06 + 16, 1);
-    func_080062F4(((UnkStruct_080038C8*)*(void**)&work[0x218])->unk_06 + 16, 1);
+    func_080062F4(((UnkStruct_080038C8*)w->unk_218)->unk_06 + 16, 1);
 }
 #else
 INCLUDE_ASM("card/CardName_0.s");
@@ -18355,79 +18355,77 @@ void func_080A3398(u8* p) {
     }
 }
 
-void func_080A33C4(u8* work, void* a) {
+void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
     vu32 zero;
 
     zero = 0;
-    CpuSet((void*)&zero, work, 0x05000054);
-    ((UnkStruct_02034AFC*)work)->unk_13C = func_0806BA74(0, 0);
-    *(u64*)&work[0x10C] = *(u64*)a;
-    *(UnkStruct_080A3F5C_Sel**)&work[0x114] =
-        (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&work[0x110]];
-    *(s32*)&work[0x00] = 0;
-    *(s32*)&work[0x04] = 0;
-    *(s32*)&work[0x08] = 0;
-    *(s32*)&work[0x0C] = 0;
-    *(s32*)&work[0x10] = 0;
-    *(s32*)&work[0x14] = 0;
-    *(s32*)&work[0x18] = 0;
-    *(s32*)&work[0x1C] = 0;
-    *(s32*)&work[0xC0] = 0;
-    *(s32*)&work[0x118] =
-        gUnk_09033C98[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04];
-    *(s32*)&work[0x11C] = 0;
-    *(s32*)&work[0x120] = 0;
-    *(s32*)&work[0x124] = 0;
-    *(s32*)&work[0x128] = 0;
-    *(s32*)&work[0x12C] = 0;
-    *(s32*)&work[0x130] = 0;
-    *(s32*)&work[0x134] = 0;
-    *(s32*)&work[0x138] = 0;
-    *(u16*)&work[0x13C] = 0;
-    *(u16*)&work[0x13E] = 0;
-    work[0x140] = 8;
-    work[0x141] = 0;
-    work[0x142] = 0;
-    work[0x143] = 0;
-    work[0x144] = 0;
-    work[0x145] = 0;
-    work[0x146] = 0;
-    work[0x147] = 0;
-    work[0x148] = 1;
-    work[0x149] = 0;
-    work[0x14A] = 0;
-    work[0x14B] = 0;
-    work[0x14C] = 0;
-    work[0x14D] = 0;
-    work[0x14E] = 0;
-    work[0x14F] = 1;
+    CpuSet((void*)&zero, w, 0x05000054);
+    ((UnkStruct_02034AFC*)w)->unk_13C = func_0806BA74(0, 0);
+    *(u64*)&w->unk_10C = *(u64*)a;
+    w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+    w->unk_000 = 0;
+    w->unk_004 = 0;
+    w->unk_008 = 0;
+    w->unk_00C = 0;
+    w->unk_010 = 0;
+    w->unk_014 = 0;
+    w->unk_018 = 0;
+    w->unk_01C = 0;
+    w->unk_0C0 = 0;
+    w->unk_118 = gUnk_09033C98[w->unk_114->unk_04];
+    w->unk_11C = 0;
+    w->unk_120 = 0;
+    w->unk_124 = 0;
+    w->unk_128 = 0;
+    w->unk_12C = 0;
+    w->unk_130 = 0;
+    w->unk_134 = 0;
+    *(s32*)&w->unk_138 = 0;
+    ((UnkStruct_02034AFC*)w)->unk_13C = 0;
+    w->unk_13E = 0;
+    w->unk_140 = 8;
+    w->unk_141 = 0;
+    w->unk_142 = 0;
+    w->unk_143 = 0;
+    w->unk_144 = 0;
+    w->unk_145 = 0;
+    w->unk_146[0] = 0;
+    w->unk_146[1] = 0;
+    w->unk_148 = 1;
+    w->unk_149 = 0;
+    w->unk_14A[0] = 0;
+    w->unk_14A[1] = 0;
+    w->unk_14C = 0;
+    w->unk_14D = 0;
+    w->unk_14E = 0;
+    w->unk_14F = 1;
 
-    switch ((u32)(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04) {
+    switch ((u32)w->unk_114->unk_04) {
     case 0:
     case 1:
-        work[0x14D] = 1;
+        w->unk_14D = 1;
         break;
     case 2:
     case 3:
-        work[0x14D] = 0;
+        w->unk_14D = 0;
         break;
     }
 
     gUnk_0203A9D4 = 1;
     gUnk_0203A9D8 = 0;
-    SetBgScroll(*(s32*)&work[0x10C], 0, 0);
+    SetBgScroll(w->unk_10C, 0, 0);
 
-    switch (work[0x113]) {
+    switch (w->unk_113) {
     case 0:
     case 1:
-        SetBgPriority(*(s32*)&work[0x10C], 0);
+        SetBgPriority(w->unk_10C, 0);
         break;
     case 2:
     case 3:
         break;
     }
 
-    gUnk_02034AFC = (UnkStruct_02034AFC*)work;
+    gUnk_02034AFC = (UnkStruct_02034AFC*)w;
 }
 
 u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
@@ -20345,35 +20343,35 @@ u8 func_080A8C20(u8* work) {
     return 1;
 }
 
-void func_080A8C58(u8* work, u8 b) {
+void func_080A8C58(UnkStruct_0808C940* w, u8 b) {
     if (b == 0) {
-        switch (work[0x700]) {
+        switch (w->unk_700) {
         case 0:
-            func_080664D8(*(s16*)&work[0x6D4], *(s16*)&work[0x6DA], &work[0x28], *(void**)&work[0xC], 20, work[0x702]);
-            func_080664D8(*(s16*)&work[0x6D6], *(s16*)&work[0x6DC], &work[0x68], *(void**)&work[0x4BC], 20, work[0x703]);
-            func_080664D8(*(s16*)&work[0x6D8], *(s16*)&work[0x6DE], &work[0xA8], *(void**)&work[0x4BC], 20, work[0x704]);
+            func_080664D8(w->unk_6D4, w->unk_6DA, w->unk_28, w->unk_0C, 20, w->unk_702);
+            func_080664D8(w->unk_6D6, w->unk_6DC, w->unk_68, w->unk_4BC, 20, w->unk_703);
+            func_080664D8(w->unk_6D8, w->unk_6DE, w->unk_A8, w->unk_4BC, 20, w->unk_704);
             break;
         case 1:
-            func_080664D8(*(s16*)&work[0x6D4], *(s16*)&work[0x6DA], &work[0x28], *(void**)&work[0x4BC], 20, work[0x702]);
-            func_080664D8(*(s16*)&work[0x6D6], *(s16*)&work[0x6DC], &work[0x68], *(void**)&work[0xC], 20, work[0x703]);
-            func_080664D8(*(s16*)&work[0x6D8], *(s16*)&work[0x6DE], &work[0xA8], *(void**)&work[0x4BC], 20, work[0x704]);
+            func_080664D8(w->unk_6D4, w->unk_6DA, w->unk_28, w->unk_4BC, 20, w->unk_702);
+            func_080664D8(w->unk_6D6, w->unk_6DC, w->unk_68, w->unk_0C, 20, w->unk_703);
+            func_080664D8(w->unk_6D8, w->unk_6DE, w->unk_A8, w->unk_4BC, 20, w->unk_704);
             break;
         case 2:
-            func_080664D8(*(s16*)&work[0x6D4], *(s16*)&work[0x6DA], &work[0x28], *(void**)&work[0x4BC], 20, work[0x702]);
-            func_080664D8(*(s16*)&work[0x6D6], *(s16*)&work[0x6DC], &work[0x68], *(void**)&work[0x4BC], 20, work[0x703]);
-            func_080664D8(*(s16*)&work[0x6D8], *(s16*)&work[0x6DE], &work[0xA8], *(void**)&work[0xC], 20, work[0x704]);
+            func_080664D8(w->unk_6D4, w->unk_6DA, w->unk_28, w->unk_4BC, 20, w->unk_702);
+            func_080664D8(w->unk_6D6, w->unk_6DC, w->unk_68, w->unk_4BC, 20, w->unk_703);
+            func_080664D8(w->unk_6D8, w->unk_6DE, w->unk_A8, w->unk_0C, 20, w->unk_704);
             break;
         }
     } else {
-        switch (work[0x700]) {
+        switch (w->unk_700) {
         case 0:
-            func_080664D8(*(s16*)&work[0x6D4], *(s16*)&work[0x6DA], &work[0x28], *(void**)&work[0xC], 20, work[0x702]);
+            func_080664D8(w->unk_6D4, w->unk_6DA, w->unk_28, w->unk_0C, 20, w->unk_702);
             break;
         case 1:
-            func_080664D8(*(s16*)&work[0x6D6], *(s16*)&work[0x6DC], &work[0x68], *(void**)&work[0xC], 20, work[0x703]);
+            func_080664D8(w->unk_6D6, w->unk_6DC, w->unk_68, w->unk_0C, 20, w->unk_703);
             break;
         case 2:
-            func_080664D8(*(s16*)&work[0x6D8], *(s16*)&work[0x6DE], &work[0xA8], *(void**)&work[0xC], 20, work[0x704]);
+            func_080664D8(w->unk_6D8, w->unk_6DE, w->unk_A8, w->unk_0C, 20, w->unk_704);
             break;
         }
     }
@@ -21353,34 +21351,34 @@ void func_080AB008(void) {
     TaskPoolDestroy(gUnk_02034B08);
 }
 #endif
-void DarkPoint_0(u8* work) {
-    *(void**)&work[0x00] = LoadObjTiles(gUnk_093FB6C4, 576);
-    work[0x0A] = 8;
-    *(s32*)&work[0x04] = -0x2000;
-    func_0806BA0C(gBtlWork->unk_1C8, &work[0x0B]);
+void DarkPoint_0(UnkStruct_080AB018* w) {
+    w->unk_00 = LoadObjTiles(gUnk_093FB6C4, 576);
+    w->unk_0A = 8;
+    w->unk_04 = -0x2000;
+    func_0806BA0C(gBtlWork->unk_1C8, &w->unk_0B);
 }
-s32 DarkPoint_1(u8* work) {
-    func_0806BA0C(gBtlWork->unk_1C8, &work[0x0B]);
+s32 DarkPoint_1(UnkStruct_080AB018* w) {
+    func_0806BA0C(gBtlWork->unk_1C8, &w->unk_0B);
 
-    if (((s8*)work)[0x0A] > 0) {
-        ApproachValue(&work[0x04], 0, (u16)((s8*)work)[0x0A]);
-        work[0x0A]--;
+    if (w->unk_0A > 0) {
+        ApproachValue(&w->unk_04, 0, (u16)w->unk_0A);
+        w->unk_0A--;
     }
 
     return 1;
 }
-void DarkPoint_2(u8* work) {
-    DrawSprite(*(s32*)&work[0x04] >> 8, 27, gUnk_09EF1298[0], *(void**)&work[0x00], gUnk_02039DD4->palette, 0, 0, 30);
+void DarkPoint_2(UnkStruct_080AB018* w) {
+    DrawSprite(w->unk_04 >> 8, 27, gUnk_09EF1298[0], w->unk_00, gUnk_02039DD4->palette, 0, 0, 30);
 
-    if (work[0x0C] != 0) {
-        DrawSprite((*(s32*)&work[0x04] >> 8) + 11, 30, gUnk_09EF1298[work[0x0C] + 1], *(void**)&work[0x00], gUnk_02039DD4->palette, 0, 0, 29);
-        DrawSprite((*(s32*)&work[0x04] >> 8) + 17, 30, gUnk_09EF1298[work[0x0D] + 1], *(void**)&work[0x00], gUnk_02039DD4->palette, 0, 0, 29);
-        DrawSprite((*(s32*)&work[0x04] >> 8) + 23, 30, gUnk_09EF1298[work[0x0E] + 1], *(void**)&work[0x00], gUnk_02039DD4->palette, 0, 0, 29);
-    } else if (work[0x0D] != 0) {
-        DrawSprite((*(s32*)&work[0x04] >> 8) + 15, 30, gUnk_09EF1298[work[0x0D] + 1], *(void**)&work[0x00], gUnk_02039DD4->palette, 0, 0, 29);
-        DrawSprite((*(s32*)&work[0x04] >> 8) + 21, 30, gUnk_09EF1298[work[0x0E] + 1], *(void**)&work[0x00], gUnk_02039DD4->palette, 0, 0, 29);
+    if (w->unk_0C != 0) {
+        DrawSprite((w->unk_04 >> 8) + 11, 30, gUnk_09EF1298[w->unk_0C + 1], w->unk_00, gUnk_02039DD4->palette, 0, 0, 29);
+        DrawSprite((w->unk_04 >> 8) + 17, 30, gUnk_09EF1298[w->unk_0D + 1], w->unk_00, gUnk_02039DD4->palette, 0, 0, 29);
+        DrawSprite((w->unk_04 >> 8) + 23, 30, gUnk_09EF1298[w->unk_0E + 1], w->unk_00, gUnk_02039DD4->palette, 0, 0, 29);
+    } else if (w->unk_0D != 0) {
+        DrawSprite((w->unk_04 >> 8) + 15, 30, gUnk_09EF1298[w->unk_0D + 1], w->unk_00, gUnk_02039DD4->palette, 0, 0, 29);
+        DrawSprite((w->unk_04 >> 8) + 21, 30, gUnk_09EF1298[w->unk_0E + 1], w->unk_00, gUnk_02039DD4->palette, 0, 0, 29);
     } else {
-        DrawSprite((*(s32*)&work[0x04] >> 8) + 17, 30, gUnk_09EF1298[work[0x0E] + 1], *(void**)&work[0x00], gUnk_02039DD4->palette, 0, 0, 29);
+        DrawSprite((w->unk_04 >> 8) + 17, 30, gUnk_09EF1298[w->unk_0E + 1], w->unk_00, gUnk_02039DD4->palette, 0, 0, 29);
     }
 }
 void DarkPoint_3(void** p) {
