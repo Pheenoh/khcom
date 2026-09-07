@@ -2,6 +2,8 @@
 #include "mode_test.h"
 #include "gba/keys.h"
 
+void ModeUpdate(void);
+
 #ifndef VERSION_EU
 void* gUnk_02034A08;
 void* gUnk_02034A0C;
@@ -858,7 +860,6 @@ void func_08060ED8(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_08060F1C(void) {
     ContinueWork* w;
 
@@ -872,14 +873,15 @@ void func_08060F1C(void) {
             func_080E04EC();
             break;
         case 1:
+#ifdef VERSION_EU
+            ModeUpdate();
+#else
             SoftReset(255);
+#endif
             break;
         }
     }
 }
-#else
-INCLUDE_ASM("mode_test/func_08060F1C.s");
-#endif
 
 void func_08060F64(void) {
     TaskPoolDestroy(&gUnk_02034A48);
