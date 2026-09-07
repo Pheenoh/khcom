@@ -1369,6 +1369,7 @@ void func_08063EE4(s32 a, s32 b, u8 v, u8 d, u8 e) {
     func_08063F60(a, b, buf, d, e);
 }
 #endif
+#ifndef VERSION_EU
 #ifdef NON_MATCHING
 void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
     u8 i;
@@ -1430,6 +1431,7 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
 }
 #else
 INCLUDE_ASM("msg/func_08063F60.s");
+#endif
 #endif
 #ifndef VERSION_EU
 void func_080640E0(void) {
@@ -2941,7 +2943,7 @@ s32 func_08065D10(u16* a, TextSlot* b) {
 
     return n;
 }
-#else
+#elif !defined(VERSION_EU)
 INCLUDE_ASM("msg/func_08065D10.s");
 #endif
 #ifndef VERSION_EU
@@ -4427,7 +4429,9 @@ s32 func_0806C81C(u8* a, u16 b) {
     return n;
 }
 #endif
+#ifndef VERSION_EU
 INCLUDE_ASM("msg/func_0806CBAC.s");
+#endif
 void func_0806CD30(s32 a) {
     switch (a) {
     case 0:
