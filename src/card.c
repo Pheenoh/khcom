@@ -95,7 +95,7 @@ void LoadBgTiles(s32 bg, void* src, u16 size);
 extern u8 gUnk_0950E2F8[];
 extern u8 gUnk_096112B8[];
 u8 func_080A470C(u8* work, void* a);
-u8 func_080A4CC8(u8* work, void* a);
+u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a);
 void func_0808DB04(void** p);
 void func_0808CDE8(u8* work, u8 b);
 u16 func_0806BA74(s32 mode, s32 flag);
@@ -317,7 +317,7 @@ extern u16 gBldCnt;
 s32 func_08097A80(u8* work);
 u8 AnimIsFinished(AnimState* a);
 void SetBackdropColor(u16 r, u16 g, u16 b);
-u8 func_080A36B0(u8* work, void* a);
+u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a);
 s32 func_080A22A4(u8* work);
 void func_0807CD48(UnkStruct_02034AAC* p);
 u8 func_0809254C(u8* work, void* a);
@@ -344,7 +344,7 @@ UnkStruct_080038C8* AllocObjPalette(s32 a);
 void func_08003A70(void* a, void* b);
 MapcardWork* ListPoolPrev(void* node);
 s32 func_08093838(UnkStruct_08093838* w);
-s32 func_080A5150(u8* work);
+s32 func_080A5150(UnkStruct_080A3F5C* w);
 s32 func_08098BA4(UnkStruct_08098BE8* w);
 u8 func_08082348(UnkStruct_02034AAC* p, void* a);
 u8 HCEffectName_1(UnkStruct_0809DF7C* w, void* a);
@@ -18444,39 +18444,39 @@ u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
     return 1;
 }
 
-u8 func_080A3640(u8* work, void* a) {
-    LoadBgTiles(*(s32*)&work[0x10C], gUnk_094233B8, 1280);
-    LoadBgPalette(*(s32*)&work[0x10C], gUnk_096148D8, 32);
-    func_0800516C(*(s32*)&work[0x10C], gUnk_09EE4724[(*(UnkStruct_0809E0A4**)&work[0x114])->unk_04], 2, 1);
-    func_08005244(*(s32*)&work[0x10C], *(u16*)&work[0x118], 0);
+u8 func_080A3640(UnkStruct_080A3F5C* w, void* a) {
+    LoadBgTiles(w->unk_10C, gUnk_094233B8, 1280);
+    LoadBgPalette(w->unk_10C, gUnk_096148D8, 32);
+    func_0800516C(w->unk_10C, gUnk_09EE4724[((UnkStruct_0809E0A4*)w->unk_114)->unk_04], 2, 1);
+    func_08005244(w->unk_10C, *(u16*)&w->unk_118, 0);
     SetTaskUpdate(a, (void*)func_080A36B0);
     return 1;
 }
 
-u8 func_080A36B0(u8* work, void* a) {
+u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
 #ifdef VERSION_JP
-    work[0x143] = func_0806BDB8(gUnk_09033CA8[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04],
-                                gUnk_09033CB8[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04],
-                                *(s32*)((u8*)*(UnkStruct_080A3F5C_Sel**)&work[0x114] + 0x0C),
-                                (s32*)&work[0x138]);
+    w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->unk_114->unk_04],
+                               gUnk_09033CB8[w->unk_114->unk_04],
+                               *(s32*)((u8*)w->unk_114 + 0x0C),
+                               (s32*)&w->unk_138);
 #else
     s32* p;
 
-    p = (s32*)&work[0x138];
+    p = (s32*)&w->unk_138;
 
     if (*p != 0) {
-        work[0x143] = func_0806BB44(gUnk_09033CA8[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04],
-                                    gUnk_09033CB8[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04] - 0x200,
-                                    *p, p);
+        w->unk_143 = func_0806BB44(gUnk_09033CA8[w->unk_114->unk_04],
+                                   gUnk_09033CB8[w->unk_114->unk_04] - 0x200,
+                                   *p, p);
     } else {
-        work[0x143] = func_0806BB44(gUnk_09033CA8[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04],
-                                    gUnk_09033CB8[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04] - 0x200,
-                                    (s32)LANGSTR(*(void**)((u8*)*(UnkStruct_080A3F5C_Sel**)&work[0x114] + 0x0C)), p);
+        w->unk_143 = func_0806BB44(gUnk_09033CA8[w->unk_114->unk_04],
+                                   gUnk_09033CB8[w->unk_114->unk_04] - 0x200,
+                                   (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), p);
     }
 #endif
 
-    func_08065ACC((TextSlot*)&work[32], 10);
-    func_08065ACC((TextSlot*)&work[112], 10);
+    func_08065ACC((TextSlot*)w->unk_020, 10);
+    func_08065ACC((TextSlot*)w->unk_070, 10);
     SetTaskUpdate(a, (void*)func_080A3754);
 
     return 1;
@@ -18538,47 +18538,47 @@ void func_080A3848(UnkStruct_080A3F5C* w) {
     }
 }
 
-void func_080A3A04(u8* work) {
+void func_080A3A04(UnkStruct_080A3F5C* w) {
     func_0806C34C();
 
-    if (*(void**)&work[0x00] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x00]);
+    if (w->unk_000 != 0) {
+        ReleaseObjTiles(w->unk_000);
     }
 
-    if (*(void**)&work[0x04] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x04]);
+    if (w->unk_004 != 0) {
+        ReleaseObjPalette(w->unk_004);
     }
 
-    if (*(void**)&work[0x08] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x08]);
+    if (w->unk_008 != 0) {
+        ReleaseObjTiles(w->unk_008);
     }
 
-    if (*(void**)&work[0x0C] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x0C]);
+    if (w->unk_00C != 0) {
+        ReleaseObjPalette(w->unk_00C);
     }
 
-    if (*(void**)&work[0x10] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x10]);
+    if (w->unk_010 != 0) {
+        ReleaseObjTiles(w->unk_010);
     }
 
-    if (*(void**)&work[0x14] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x14]);
+    if (w->unk_014 != 0) {
+        ReleaseObjPalette(w->unk_014);
     }
 
-    if (*(void**)&work[0x18] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x18]);
+    if (w->unk_018 != 0) {
+        ReleaseObjTiles(w->unk_018);
     }
 
-    if (*(void**)&work[0x1C] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x1C]);
+    if (w->unk_01C != 0) {
+        ReleaseObjPalette(w->unk_01C);
     }
 
-    if (*(void**)&work[0xC0] != 0) {
-        ReleaseObjPalette(*(void**)&work[0xC0]);
+    if (w->unk_0C0 != 0) {
+        ReleaseObjPalette((u8*)w->unk_0C0);
     }
 
-    func_08065AE0(&work[0x20], 10);
-    func_08065AE0(&work[0x70], 10);
+    func_08065AE0((TextSlot*)w->unk_020, 10);
+    func_08065AE0((TextSlot*)w->unk_070, 10);
     gUnk_0203A9D4 = 0;
     gUnk_02034AFC = 0;
 }
@@ -18836,61 +18836,61 @@ u8 func_080A42E0(void) {
 }
 INCLUDE_ASM("card/func_080A430C.s");
 
-u8 func_080A4578(u8* work, void* a) {
+u8 func_080A4578(UnkStruct_080A3F5C* w, void* a) {
     void* pal;
 
-    switch (work[0x113]) {
+    switch (w->unk_113) {
     case 0:
     case 1:
         pal = &gUnk_050001C0[0x20];
-        LoadBgTiles(*(s32*)&work[0x10C], gUnk_0950E2F8, 0x140);
-        LoadBgMap(*(s32*)&work[0x10C], gUnk_096112B8, 0x800);
+        LoadBgTiles(w->unk_10C, gUnk_0950E2F8, 0x140);
+        LoadBgMap(w->unk_10C, gUnk_096112B8, 0x800);
         LoadPalette(gUnk_09611AB8, pal, 32);
 
-        switch ((u32)(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04) {
+        switch ((u32)w->unk_114->unk_04) {
         case 0:
         case 2:
-            SetBgScroll(*(s32*)&work[0x10C], -24, 0);
+            SetBgScroll(w->unk_10C, -24, 0);
             break;
         case 1:
         case 3:
-            SetBgScroll(*(s32*)&work[0x10C], -24, -94);
+            SetBgScroll(w->unk_10C, -24, -94);
             break;
         default:
-            SetBgScroll(*(s32*)&work[0x10C], -24, -94);
+            SetBgScroll(w->unk_10C, -24, -94);
             break;
         }
         break;
     case 2:
     case 3:
-        switch ((u32)(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04) {
+        switch ((u32)w->unk_114->unk_04) {
         case 0:
         case 2:
-            *(s32*)&work[0x120] = 0x7800;
-            *(s32*)&work[0x124] = 0x2200;
+            w->unk_120 = 0x7800;
+            w->unk_124 = 0x2200;
             break;
         case 1:
         default:
-            *(s32*)&work[0x120] = 0x7800;
-            *(s32*)&work[0x124] = 0x7E00;
+            w->unk_120 = 0x7800;
+            w->unk_124 = 0x7E00;
             break;
         }
 
-        *(void**)&work[0x18] = LoadObjTiles(&gUnk_093F8C8E[0xC1E], 0x1800);
+        w->unk_018 = LoadObjTiles(&gUnk_093F8C8E[0xC1E], 0x1800);
 
-        if (*(void**)&work[0x18] == 0) {
-            work[0x147] = 1;
-            *(void**)&work[0x18] = LoadObjTiles(&gUnk_0950E2F8[0x140], 0x680);
+        if (w->unk_018 == 0) {
+            w->unk_146[1] = 1;
+            w->unk_018 = LoadObjTiles(&gUnk_0950E2F8[0x140], 0x680);
         } else {
-            work[0x147] = 0;
+            w->unk_146[1] = 0;
         }
 
-        *(void**)&work[0x1C] = LoadObjPalette(gUnk_09611AB8, 32);
-        func_080062F4((*(UnkStruct_080038C8**)&work[0x1C])->unk_06 + 16, 1);
+        w->unk_01C = LoadObjPalette(gUnk_09611AB8, 32);
+        func_080062F4(w->unk_01C->unk_06 + 16, 1);
         break;
     }
 
-    switch (work[0x113]) {
+    switch (w->unk_113) {
     case 0:
     case 2:
         SetTaskUpdate(a, (void*)func_080A470C);
@@ -18905,15 +18905,15 @@ u8 func_080A4578(u8* work, void* a) {
 }
 
 INCLUDE_ASM("card/func_080A470C.s");
-s32 func_080A4910(u8* work) {
-    if (*(void**)&work[0x00] != 0) {
-        *(void**)&work[0x128] = AnimUpdate(&work[0xDC]);
+s32 func_080A4910(UnkStruct_080A3F5C* w) {
+    if (w->unk_000 != 0) {
+        *(void**)&w->unk_128 = AnimUpdate(w->unk_0DC);
     }
 
-    *(s16*)&work[0x136] += 1;
+    ((s16*)&w->unk_134)[1] += 1;
 
-    if (*(s16*)&work[0x136] > 15) {
-        work[0x141] = 0;
+    if (((s16*)&w->unk_134)[1] > 15) {
+        ((u8*)w)[0x141] = 0;
         return 0;
     }
 
@@ -18962,144 +18962,142 @@ u8 func_080A4958(UnkStruct_080A3F5C* w, void* a) {
     return 1;
 }
 
-void func_080A4A50(u8* work) {
-    func_0806C2C0(work[0x139]);
+void func_080A4A50(UnkStruct_080A3F5C* w) {
+    func_0806C2C0(w->unk_138[1]);
 
-    switch (work[0x113]) {
+    switch (w->unk_113) {
     case 2:
     case 3:
-        if (*(void**)&work[0x18] != 0) {
-            if (work[0x147] != 0) {
-                DrawSprite(*(s32*)&work[0x120] >> 8, *(s32*)&work[0x124] >> 8, (&gUnk_09EF12E8[2])[0],
-                           *(void**)&work[0x18], *(void**)&work[0x1C], 0, 0, 10);
+        if (w->unk_018 != 0) {
+            if (w->unk_146[1] != 0) {
+                DrawSprite(w->unk_120 >> 8, w->unk_124 >> 8, (&gUnk_09EF12E8[2])[0],
+                           w->unk_018, w->unk_01C, 0, 0, 10);
             } else {
-                DrawSprite(*(s32*)&work[0x120] >> 8, *(s32*)&work[0x124] >> 8, (&gUnk_09EF1278[2])[0],
-                           *(void**)&work[0x18], *(void**)&work[0x1C], 0, 0, 10);
+                DrawSprite(w->unk_120 >> 8, w->unk_124 >> 8, (&gUnk_09EF1278[2])[0],
+                           w->unk_018, w->unk_01C, 0, 0, 10);
             }
         }
         break;
     }
 
-    if (*(void**)&work[0x00] != 0) {
-        if (work[0x141] != 0) {
-            DrawSprite(120, gUnk_09033D08[(*(s32**)&work[0x114])[1]][1] >> 8, *(void**)&work[0x128],
-                       *(void**)&work[0x00], *(void**)&work[0x04], 0, 0, 5);
+    if (w->unk_000 != 0) {
+        if (w->unk_141 != 0) {
+            DrawSprite(120, gUnk_09033D08[w->unk_114->unk_04][1] >> 8, *(void**)&w->unk_128,
+                       w->unk_000, w->unk_004, 0, 0, 5);
         }
     }
 
-    if (*(void**)&work[0x08] != 0) {
-        DrawSprite(*(s32*)&work[0x118] >> 8, *(s32*)&work[0x11C] >> 8, *(void**)&work[0x12C],
-                   *(void**)&work[0x08], *(void**)&work[0x0C], 0, 1, 5);
+    if (w->unk_008 != 0) {
+        DrawSprite(w->unk_118 >> 8, w->unk_11C >> 8, w->unk_12C,
+                   w->unk_008, w->unk_00C, 0, 1, 5);
     }
 
-    if (work[0x144] != 0) {
-        DrawSprite(120, 75, gUnk_09EF126C[1], *(void**)&work[0x10], *(void**)&work[0x14], 0, 0, 10);
-        func_080664D8((240 - func_08065B08((TextSlot*)&work[0x20], work[0x13F])) >> 1, 62, &work[0x20],
-                      *(void**)&work[0xC0], 0, work[0x13F]);
-        func_080664D8((240 - func_08065B08((TextSlot*)&work[0x70], work[0x140])) >> 1, 77, &work[0x70],
-                      *(void**)&work[0xC0], 0, work[0x140]);
+    if (w->unk_144 != 0) {
+        DrawSprite(120, 75, gUnk_09EF126C[1], w->unk_010, w->unk_014, 0, 0, 10);
+        func_080664D8((240 - func_08065B08((TextSlot*)w->unk_020, ((u8*)&w->unk_13E)[1])) >> 1, 62, w->unk_020,
+                      (void*)w->unk_0C0, 0, ((u8*)&w->unk_13E)[1]);
+        func_080664D8((240 - func_08065B08((TextSlot*)w->unk_070, w->unk_140)) >> 1, 77, w->unk_070,
+                      (void*)w->unk_0C0, 0, w->unk_140);
     }
 }
 
-void func_080A4C1C(u8* work) {
-    if (work[0x113] <= 1) {
-        DisableBg(*(s32*)&work[0x10C]);
+void func_080A4C1C(UnkStruct_080A3F5C* w) {
+    if (w->unk_113 <= 1) {
+        DisableBg(w->unk_10C);
     }
 
     func_0806C34C();
 
-    if (*(void**)&work[0x00] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x00]);
+    if (w->unk_000 != 0) {
+        ReleaseObjTiles(w->unk_000);
     }
 
-    if (*(void**)&work[0x04] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x04]);
+    if (w->unk_004 != 0) {
+        ReleaseObjPalette(w->unk_004);
     }
 
-    if (*(void**)&work[0x08] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x08]);
+    if (w->unk_008 != 0) {
+        ReleaseObjTiles(w->unk_008);
     }
 
-    if (*(void**)&work[0x0C] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x0C]);
+    if (w->unk_00C != 0) {
+        ReleaseObjPalette(w->unk_00C);
     }
 
-    if (*(void**)&work[0x10] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x10]);
+    if (w->unk_010 != 0) {
+        ReleaseObjTiles(w->unk_010);
     }
 
-    if (*(void**)&work[0x18] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x18]);
+    if (w->unk_018 != 0) {
+        ReleaseObjTiles(w->unk_018);
     }
 
-    if (*(void**)&work[0x1C] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x1C]);
+    if (w->unk_01C != 0) {
+        ReleaseObjPalette(w->unk_01C);
     }
 
-    if (*(void**)&work[0x14] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x14]);
+    if (w->unk_014 != 0) {
+        ReleaseObjPalette(w->unk_014);
     }
 
-    if (*(void**)&work[0xC0] != 0) {
-        ReleaseObjPalette(*(void**)&work[0xC0]);
+    if (w->unk_0C0 != 0) {
+        ReleaseObjPalette((u8*)w->unk_0C0);
     }
 
-    func_08065AE0(&work[0x20], 10);
-    func_08065AE0(&work[0x70], 10);
+    func_08065AE0((TextSlot*)w->unk_020, 10);
+    func_08065AE0((TextSlot*)w->unk_070, 10);
     gUnk_0203A9D4 = 0;
     gUnk_02034B00 = 0;
 }
 
 #if !defined(VERSION_JP) && !defined(VERSION_EU)
-u8 func_080A4CC8(u8* work, void* a) {
+u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
     s32* p;
     u8 x;
 
-    if (work[0x146] == 0) {
+    if (w->unk_146[0] == 0) {
         return 0;
     }
 
-    if (work[0x145] == 1) {
-        work[0x145] = 0;
-        *(UnkStruct_080A3F5C_Sel**)&work[0x114] =
-            (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&work[0x110]];
-        p = (s32*)&work[0x130];
+    if (w->unk_145 == 1) {
+        w->unk_145 = 0;
+        w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+        p = (s32*)&w->unk_130;
 
         if (*p != 0) {
-            work[0x13B] = func_0806BB44(
+            w->unk_138[3] = func_0806BB44(
                 0x2E00,
-                gUnk_09041E80[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04] - 0x200,
+                gUnk_09041E80[w->unk_114->unk_04] - 0x200,
                 *p, p);
         } else {
-            work[0x13B] = func_0806BB44(
+            w->unk_138[3] = func_0806BB44(
                 0x2E00,
-                gUnk_09041E80[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04] - 0x200,
-                (s32)LANGSTR(*(void**)((u8*)*(UnkStruct_080A3F5C_Sel**)&work[0x114] + 0x0C)),
+                gUnk_09041E80[w->unk_114->unk_04] - 0x200,
+                (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)),
                 p);
         }
 
-        x = work[0x13B];
-        work[0x139] = x;
+        x = w->unk_138[3];
+        w->unk_138[1] = x;
     }
 
     return 1;
 }
 #elif defined(VERSION_JP)
-u8 func_080A4CC8(u8* work, void* a) {
-    if (work[0x146] == 0) {
+u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
+    if (w->unk_146[0] == 0) {
         return 0;
     }
 
-    if (work[0x145] == 1) {
-        work[0x145] = 0;
-        *(UnkStruct_080A3F5C_Sel**)&work[0x114] =
-            (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&work[0x110]];
-        work[0x13B] = func_0806BDB8(
+    if (w->unk_145 == 1) {
+        w->unk_145 = 0;
+        w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+        w->unk_138[3] = func_0806BDB8(
             0x2E00,
-            gUnk_09033CB8[(*(UnkStruct_080A3F5C_Sel**)&work[0x114])->unk_04],
-            (s32)(*(void**)((u8*)*(UnkStruct_080A3F5C_Sel**)&work[0x114] + 0x0C)),
-            (s32*)&work[0x130]);
-        work[0x139] = work[0x13B];
+            gUnk_09033CB8[w->unk_114->unk_04],
+            (s32)(*(void**)((u8*)w->unk_114 + 0x0C)),
+            (s32*)&w->unk_130);
+        w->unk_138[1] = w->unk_138[3];
     }
 
     return 1;
@@ -19167,15 +19165,15 @@ u8 func_080A5034(UnkStruct_080A3F5C* w, void* a) {
     SetTaskUpdate(a, (void*)func_080A5198);
     return 1;
 }
-s32 func_080A5150(u8* work) {
-    if (*(void**)&work[0x00] != 0) {
-        *(void**)&work[0x128] = AnimUpdate(&work[0xDC]);
+s32 func_080A5150(UnkStruct_080A3F5C* w) {
+    if (w->unk_000 != 0) {
+        *(void**)&w->unk_128 = AnimUpdate(w->unk_0DC);
     }
 
-    *(s16*)&work[0x136] += 1;
+    ((s16*)&w->unk_134)[1] += 1;
 
-    if (*(s16*)&work[0x136] > 15) {
-        work[0x141] = 0;
+    if (((s16*)&w->unk_134)[1] > 15) {
+        ((u8*)w)[0x141] = 0;
         return 0;
     }
 
@@ -19259,51 +19257,51 @@ void func_080A52BC(UnkStruct_080A3F5C* w) {
     func_080664D8(135, 86, w->unk_070, w->unk_0C0, 0, w->unk_140);
 }
 
-void func_080A53E4(u8* work) {
-    if (work[0x113] <= 1) {
-        DisableBg(*(s32*)&work[0x10C]);
+void func_080A53E4(UnkStruct_080A3F5C* w) {
+    if (w->unk_113 <= 1) {
+        DisableBg(w->unk_10C);
     }
 
     func_0806C34C();
 
-    if (*(void**)&work[0x00] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x00]);
+    if (w->unk_000 != 0) {
+        ReleaseObjTiles(w->unk_000);
     }
 
-    if (*(void**)&work[0x04] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x04]);
+    if (w->unk_004 != 0) {
+        ReleaseObjPalette(w->unk_004);
     }
 
-    if (*(void**)&work[0x08] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x08]);
+    if (w->unk_008 != 0) {
+        ReleaseObjTiles(w->unk_008);
     }
 
-    if (*(void**)&work[0x0C] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x0C]);
+    if (w->unk_00C != 0) {
+        ReleaseObjPalette(w->unk_00C);
     }
 
-    if (*(void**)&work[0x10] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x10]);
+    if (w->unk_010 != 0) {
+        ReleaseObjTiles(w->unk_010);
     }
 
-    if (*(void**)&work[0x18] != 0) {
-        ReleaseObjTiles(*(void**)&work[0x18]);
+    if (w->unk_018 != 0) {
+        ReleaseObjTiles(w->unk_018);
     }
 
-    if (*(void**)&work[0x1C] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x1C]);
+    if (w->unk_01C != 0) {
+        ReleaseObjPalette(w->unk_01C);
     }
 
-    if (*(void**)&work[0x14] != 0) {
-        ReleaseObjPalette(*(void**)&work[0x14]);
+    if (w->unk_014 != 0) {
+        ReleaseObjPalette(w->unk_014);
     }
 
-    if (*(void**)&work[0xC0] != 0) {
-        ReleaseObjPalette(*(void**)&work[0xC0]);
+    if (w->unk_0C0 != 0) {
+        ReleaseObjPalette((u8*)w->unk_0C0);
     }
 
-    func_08065AE0(&work[0x20], 10);
-    func_08065AE0(&work[0x70], 10);
+    func_08065AE0((TextSlot*)w->unk_020, 10);
+    func_08065AE0((TextSlot*)w->unk_070, 10);
     gUnk_0203A9D4 = 0;
     gUnk_02034B00 = 0;
 }
