@@ -1322,7 +1322,7 @@ typedef struct UnkStruct_0984B968 {
 } UnkStruct_0984B968;
 
 typedef struct UnkStruct_080ECA88 {
-    u16* unk_00;
+    UnkStruct_080DFB7C* unk_00;
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
