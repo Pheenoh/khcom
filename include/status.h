@@ -217,14 +217,14 @@ typedef struct StatusCardDef {
 } StatusCardDef;
 
 typedef struct StockMesDispWork {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
-    void* unk_1C;
+    void* tiles;
+    void* palette;
+    void* tiles2;
+    void* tiles3;
+    void* palette2;
+    void* palette3;
+    void* gfx;
+    void* gfx2;
     u16 unk_20;
     u16 unk_22;
     TaskPool unk_24;

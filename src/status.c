@@ -989,17 +989,17 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     if (work->unk_40 >= work->unk_44 - 1) {
         work->unk_40 = work->unk_44 - 1;
     }
-    work->unk_00 = func_080D85C0(work->unk_42);
-    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->tiles = func_080D85C0(work->unk_42);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     TaskPoolInit(&work->unk_24, 1);
     work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->unk_3C + 6, work->unk_3E + 16,
                                         func_080A2334(work->unk_42, work->unk_40));
-    work->unk_08 = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
-    work->unk_10 = LoadObjPalette(gUnk_0984B258, 0x20);
-    work->unk_18 = gUnk_09EF6948[0];
-    work->unk_0C = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
-    work->unk_14 = LoadObjPalette(gUnk_0984B258, 0x20);
-    work->unk_1C = gUnk_09EF6948[1];
+    work->tiles2 = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
+    work->palette2 = LoadObjPalette(gUnk_0984B258, 0x20);
+    work->gfx = gUnk_09EF6948[0];
+    work->tiles3 = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
+    work->palette3 = LoadObjPalette(gUnk_0984B258, 0x20);
+    work->gfx2 = gUnk_09EF6948[1];
     work->unk_20 = 0;
 }
 u8 stock_mes_disp_1(StockMesDispWork* work) {
@@ -1028,26 +1028,26 @@ u8 stock_mes_disp_1(StockMesDispWork* work) {
 }
 
 void stock_mes_disp_2(StockMesDispWork* work) {
-    DrawSprite(work->unk_3C + 14, work->unk_3E - 4, 0, work->unk_00, work->unk_04, 0, 0, 5);
+    DrawSprite(work->unk_3C + 14, work->unk_3E - 4, 0, work->tiles, work->palette, 0, 0, 5);
 
     if (work->unk_40 != 0) {
-        DrawSprite(work->unk_3C - (work->unk_20 / 8) % 4, work->unk_3E, work->unk_18, work->unk_08, work->unk_10, 0, 0, 2);
+        DrawSprite(work->unk_3C - (work->unk_20 / 8) % 4, work->unk_3E, work->gfx, work->tiles2, work->palette2, 0, 0, 2);
     }
 
     if (work->unk_40 < work->unk_44 - 1) {
-        DrawSprite(work->unk_3C + ((work->unk_20 / 8) % 4 + 136), work->unk_3E, work->unk_1C, work->unk_0C, work->unk_14, 0, 0, 3);
+        DrawSprite(work->unk_3C + ((work->unk_20 / 8) % 4 + 136), work->unk_3E, work->gfx2, work->tiles3, work->palette3, 0, 0, 3);
     }
     TaskPoolDraw(&work->unk_24);
     work->unk_20++;
 }
 
 void stock_mes_disp_3(StockMesDispWork* work) {
-    ReleaseObjTiles(work->unk_00);
-    ReleaseObjPalette(work->unk_04);
-    ReleaseObjTiles(work->unk_08);
-    ReleaseObjPalette(work->unk_10);
-    ReleaseObjTiles(work->unk_0C);
-    ReleaseObjPalette(work->unk_14);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjPalette(work->palette2);
+    ReleaseObjTiles(work->tiles3);
+    ReleaseObjPalette(work->palette3);
     TaskPoolDestroy(&work->unk_24);
 }
 
