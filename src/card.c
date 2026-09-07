@@ -13182,17 +13182,20 @@ u16 func_08096CCC(void) {
     return i;
 }
 
-#ifdef NON_MATCHING
 u16 func_08096D0C(u16 a, s32 b) {
+    UnkStruct_08096C38* tiles;
+    u16 n;
+
     if (gGameState.flags & 8) {
-        return func_08096C38(gUnk_090360BC[a].unk_00, gUnk_090360BC[a].unk_04);
+        tiles = gUnk_090360BC[a].unk_00;
+        n = gUnk_090360BC[a].unk_04;
     } else {
-        return func_08096C38(gUnk_09035DCC[a].unk_00, gUnk_09035DCC[a].unk_04);
+        tiles = gUnk_09035DCC[a].unk_00;
+        n = gUnk_09035DCC[a].unk_04;
     }
+
+    return func_08096C38(tiles, n);
 }
-#else
-INCLUDE_ASM("card/func_08096D0C.s");
-#endif
 
 u16 func_08096D48(u16 a, s32 b) {
     UnkStruct_08096C38* tiles;
