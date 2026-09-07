@@ -2460,9 +2460,200 @@ void func_080B895C(WlogoTtEffTop* p) {
     func_080B8418(p);
 }
 
-INCLUDE_ASM("wlogo/func_080B89B0.s");
-INCLUDE_ASM("wlogo/func_080B8FF4.s");
+void func_080B89B0(WlogoTtEffTop* p) {
+    if ((s16)p->unk_000->unk_36 == 0) {
+        p->unk_000->unk_08 += p->unk_000->unk_20;
+        p->unk_000->unk_0C += p->unk_000->unk_24;
+        p->unk_000->unk_14 = p->unk_000->unk_08;
+        p->unk_000->unk_18 = p->unk_000->unk_0C;
+        p->unk_000->unk_1C += gUnk_09EF1D74[(s16)p->unk_000->unk_34] << 8;
+        func_080B8418(p);
+    }
+    func_080B83C4(p);
+}
+INCLUDE_ASM("wlogo/func_080B8A00.s");
+void func_080B8FF4(WlogoTtEffTop* p, s16 a) {
+    if (p->unk_000->unk_28 & 0x20) {
+        p->unk_128 += gUnk_09EF2034[a].unk_04;
+        p->unk_244 += gUnk_09EF2034[a].unk_0C;
+        p->unk_014 += gUnk_09EF2034[a].unk_00 << 8;
+        p->unk_130 += gUnk_09EF2034[a].unk_08 << 8;
+        p->unk_24C += gUnk_09EF2034[a].unk_10 << 8;
+        p->unk_368 += gUnk_09EF2034[a].unk_18 << 8;
+        p->unk_000->unk_14 += gUnk_09EF2034[a].unk_10 << 8;
+    } else {
+        p->unk_128 += gUnk_09EF2034[a].unk_04;
+        p->unk_244 += gUnk_09EF2034[a].unk_0C;
+        p->unk_014 -= gUnk_09EF2034[a].unk_00 << 8;
+        p->unk_130 -= gUnk_09EF2034[a].unk_08 << 8;
+        p->unk_24C -= gUnk_09EF2034[a].unk_10 << 8;
+        p->unk_368 -= gUnk_09EF2034[a].unk_18 << 8;
+        p->unk_000->unk_14 -= gUnk_09EF2034[a].unk_10 << 8;
+    }
+    p->unk_01C += gUnk_09EF2034[a].unk_02 << 8;
+    p->unk_138 += gUnk_09EF2034[a].unk_0A << 8;
+    p->unk_254 += gUnk_09EF2034[a].unk_12 << 8;
+    p->unk_370 += gUnk_09EF2034[a].unk_1A << 8;
+    p->unk_000->unk_1C += gUnk_09EF2034[a].unk_0A << 8;
+    p->unk_35C = gUnk_09EF397C[gUnk_09EF2034[a].unk_16];
+    p->unk_478 = gUnk_09EF3960[gUnk_09EF2034[a].unk_1E];
+}
+INCLUDE_ASM("wlogo/func_080B9190.s");
+#ifdef NON_MATCHING
+void func_080B91A4(WlogoTtEffTop* p) {
+    s32 st;
+    s32 v;
+    u16 rnd;
+
+    if (p->unk_000->unk_28 & 0x40) {
+        p->unk_000->unk_2C = p->unk_000->unk_3C;
+        return;
+    }
+
+    if (p->unk_158 < p->unk_15A / 2) {
+        st = p->unk_000->unk_3A;
+
+        if (st == 2) {
+            if (p->unk_000->unk_28 & 0x10) {
+                p->unk_000->unk_2C = 1;
+                p->unk_000->unk_28 = p->unk_000->unk_28 & ~0x10;
+            } else if (func_080B9190(gBtlWork->unk_07C->unk_04, p->unk_000->unk_08) <= 0x1DFF) {
+                rnd = GetRandom() % 100;
+
+                if (rnd > 20) {
+                    p->unk_000->unk_2C = 9;
+                } else {
+                    p->unk_000->unk_2C = 1;
+                }
+            } else {
+                v = gUnk_09EF2194[GetRandom() % 4];
+                p->unk_000->unk_2C = v;
+
+                if (v == 3) {
+                    p->unk_000->unk_2C = st;
+                }
+
+                if (p->unk_000->unk_2C == 4) {
+                    p->unk_000->unk_2C = 1;
+                }
+            }
+        } else if (st == 0) {
+            if (func_080B9190(gBtlWork->unk_07C->unk_04, p->unk_000->unk_08) <= 0x1DFF) {
+                rnd = GetRandom() % 100;
+
+                if (rnd > 30) {
+                    p->unk_000->unk_2C = 9;
+                } else {
+                    p->unk_000->unk_2C = 1;
+                }
+            } else {
+                v = gUnk_09EF2194[GetRandom() % 4];
+                p->unk_000->unk_2C = v;
+
+                if (v == 4) {
+                    if (p->unk_000->unk_28 & 0x20) {
+                        p->unk_000->unk_28 |= 0x40;
+                        p->unk_000->unk_2C = v;
+                        p->unk_000->unk_3C = v;
+                    } else {
+                        p->unk_000->unk_28 |= 0x40;
+                        p->unk_000->unk_2C = 6;
+                        p->unk_000->unk_3C = 6;
+                    }
+                    st = p->unk_000->unk_2C;
+
+                    if (st == 3) {
+                        rnd = GetRandom() % 100;
+
+                        if (rnd <= 49) {
+                            p->unk_000->unk_2C = 11;
+                        } else {
+                            p->unk_000->unk_2C = st;
+                        }
+                    }
+                }
+            }
+        } else {
+            rnd = GetRandom() % 100;
+
+            if (rnd <= 59) {
+                p->unk_000->unk_2C = 9;
+            } else {
+                p->unk_000->unk_2C = 10;
+            }
+        }
+        st = p->unk_000->unk_2C;
+
+        if (st == 1) {
+            rnd = GetRandom() % 100;
+
+            if (rnd <= 59) {
+                p->unk_000->unk_2C = st;
+            } else {
+                p->unk_000->unk_2C = 10;
+            }
+        }
+    } else {
+        st = p->unk_000->unk_3A;
+
+        if (st == 2) {
+            if (p->unk_000->unk_28 & 0x10) {
+                p->unk_000->unk_2C = 1;
+                p->unk_000->unk_28 = p->unk_000->unk_28 & ~0x10;
+            } else if (func_080B9190(gBtlWork->unk_07C->unk_04, p->unk_000->unk_08) <= 0x1DFF) {
+                rnd = GetRandom() % 100;
+
+                if (rnd > 20) {
+                    p->unk_000->unk_2C = 9;
+                } else {
+                    p->unk_000->unk_2C = 1;
+                }
+            } else {
+                v = gUnk_09EF2194[GetRandom() % 4];
+                p->unk_000->unk_2C = v;
+
+                if (v == 3) {
+                    p->unk_000->unk_2C = st;
+                }
+
+                if (p->unk_000->unk_2C == 4) {
+                    p->unk_000->unk_2C = 1;
+                }
+            }
+        } else if (st == 0) {
+            if (func_080B9190(gBtlWork->unk_07C->unk_04, p->unk_000->unk_08) <= 0x1DFF) {
+                rnd = GetRandom() % 100;
+
+                if (rnd > 30) {
+                    p->unk_000->unk_2C = 9;
+                } else {
+                    p->unk_000->unk_2C = 1;
+                }
+            } else {
+                v = gUnk_09EF2194[GetRandom() % 4];
+                p->unk_000->unk_2C = v;
+
+                if (v == 4) {
+                    if (p->unk_000->unk_28 & 0x20) {
+                        p->unk_000->unk_28 |= 0x40;
+                        p->unk_000->unk_2C = v;
+                        p->unk_000->unk_3C = v;
+                    } else {
+                        p->unk_000->unk_28 |= 0x40;
+                        p->unk_000->unk_2C = 6;
+                        p->unk_000->unk_3C = 6;
+                    }
+                }
+            }
+        } else {
+            p->unk_000->unk_2C = 9;
+        }
+    }
+}
+#else
 INCLUDE_ASM("wlogo/func_080B91A4.s");
+#endif
+
 void _080B949C(WlogoBtlObj* a, WlogoTtEffTop* b) {
     u16 t;
 
