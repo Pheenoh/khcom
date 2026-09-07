@@ -14587,99 +14587,96 @@ void RELOAD_3(void** p) {
     ReleaseObjTiles(p[0]);
     ReleaseObjPalette(p[1]);
 }
-void PrizeBoss_0(u8* work, s32* args) {
+void PrizeBoss_0(UnkStruct_08099928* w, s32* args) {
     CardDef* def;
     CardBack* back;
     u8* p;
 
-    *(s32*)&work[0xB8] = args[8];
+    w->unk_B8 = args[8];
     def = &gCardDefs[args[8]];
-    *(void**)&work[0x00] = LoadObjTiles(def->unk_04, 0x300);
-    *(void**)&work[0x04] = LoadObjPalette(def->unk_08, 32);
-    *(UnkStruct_08099412*)&work[0x34] = *(UnkStruct_08099412*)&def->unk_1C;
+    w->unk_00 = LoadObjTiles(def->unk_04, 0x300);
+    w->unk_04 = LoadObjPalette(def->unk_08, 32);
+    w->unk_34 = *(UnkStruct_08099412*)&def->unk_1C;
     back = &gUnk_08F709B0[def->unk_2A];
-    *(void**)&work[0x08] = LoadObjTiles(back->unk_0C, 0x280);
-    *(void**)&work[0x0C] = LoadObjTiles(*(void**)back->unk_14, 0x600);
-    *(void**)&work[0x10] = LoadObjPalette(gUnk_09611AB8, 32);
-    *(void**)&work[0x14] = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
-    *(void**)&work[0x18] = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    *(void**)&work[0x1C] = LoadObjPalette(gUnk_08F69BA4, 32);
-    *(s32*)&work[0xA8] = args[0];
-    *(s32*)&work[0xAC] = args[1];
-    *(s32*)&work[0xB0] = args[2];
-    *(s32*)&work[0xB4] = 0;
-    work[0xE6] = 24;
-    *(s32*)&work[0xBC] = -(GetRandom() % 129 + 0x300);
-    *(s32*)&work[0xC0] = GetRandom() % 129 + 0x80;
-    ((UnkStruct_080993D4*)work)->unk_0E4 = GetRandom() % 256;
-    *(u16*)&work[0xD0] = 0x80;
-    *(u16*)&work[0xD2] = 0x80;
-    *(u16*)&work[0xE2] = 0x80;
-    work[0xE8] = 0;
-    work[0xE9] = 0;
-    p = &work[0x4C];
+    w->unk_08 = LoadObjTiles(back->unk_0C, 0x280);
+    w->unk_0C = LoadObjTiles(*(void**)back->unk_14, 0x600);
+    w->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->unk_14 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
+    w->unk_18 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    w->unk_1C = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->unk_A8 = args[0];
+    w->unk_AC = args[1];
+    w->unk_B0 = args[2];
+    w->unk_B4 = 0;
+    w->unk_E6 = 24;
+    w->unk_BC = -(GetRandom() % 129 + 0x300);
+    w->unk_C0 = GetRandom() % 129 + 0x80;
+    w->unk_E4 = GetRandom() % 256;
+    w->unk_D0 = 0x80;
+    w->unk_D2 = 0x80;
+    w->unk_E2 = 0x80;
+    w->unk_E8 = 0;
+    w->unk_E9 = 0;
+    p = &w->unk_4C[0];
     func_080122AC(p, 5, 8, 10);
     func_08012614(p, 1);
-    func_08012324(p, *(s32*)&work[0xA8], *(s32*)&work[0xAC], *(s32*)&work[0xB0]);
-    work[0xEA] = 0;
-    work[0xED] = 0;
-    work[0xEB] = 0;
-    work[0xEC] = 0;
-    work[0xEE] = 0;
-    work[0xEF] = 0;
+    func_08012324(p, w->unk_A8, w->unk_AC, w->unk_B0);
+    w->unk_EA = 0;
+    w->unk_ED = 0;
+    w->unk_EB = 0;
+    w->unk_EC = 0;
+    w->unk_EE = 0;
+    w->unk_EF = 0;
     m4aSongNumStart(0x22B);
-    TaskPoolInit((TaskPool*)&work[0x20], 10);
+    TaskPoolInit(&w->unk_20, 10);
     gBtlWork->unk_0B0++;
 }
-u8 PrizeBoss_1(u8* work, void* a) {
+u8 PrizeBoss_1(UnkStruct_08099928* w, void* a) {
     s16 x;
     s16 y;
-    if (*(s32*)&work[0xB0] < 0) {
-        *(s32*)&work[0xB0] += 51;
-        func_08099CDC(work);
+    if (w->unk_B0 < 0) {
+        w->unk_B0 += 51;
+        func_08099CDC(w);
     }
     if (gBtlWork->unk_0F4 == 6) {
-        ColliderSetRadius(&work[0x4C], 30);
+        ColliderSetRadius(&w->unk_4C[0], 30);
     } else {
-        ColliderSetRadius(&work[0x4C], 10);
+        ColliderSetRadius(&w->unk_4C[0], 10);
     }
-    func_08012324(&work[0x4C], *(s32*)&work[0xA8], *(s32*)&work[0xAC],
-                  *(s32*)&work[0xB0]);
-    WorldToScreen((s16*)&work[0xD6], (s16*)&work[0xD8], *(s32*)&work[0xA8],
-                  *(s32*)&work[0xAC], *(s32*)&work[0xB0]);
-    WorldToScreen((s16*)&work[0xDE], (s16*)&work[0xE0], *(s32*)&work[0xA8],
-                  *(s32*)&work[0xAC], *(s32*)&work[0xB4]);
-    ((UnkStruct_08099928*)work)->unk_D4 = -0x1004 - (*(s32*)&work[0xAC] >> 8) * 4;
-    func_08099928((UnkStruct_08099928*)work);
-    work[0xE9] += 2;
-    if (work[0xEA] == 60) {
-        func_08012614(&work[0x4C], 0);
+    func_08012324(&w->unk_4C[0], w->unk_A8, w->unk_AC, w->unk_B0);
+    WorldToScreen((s16*)&w->unk_D6, (s16*)&w->unk_D8, w->unk_A8, w->unk_AC, w->unk_B0);
+    WorldToScreen(&w->unk_DE, &w->unk_E0, w->unk_A8, w->unk_AC, w->unk_B4);
+    w->unk_D4 = -0x1004 - (w->unk_AC >> 8) * 4;
+    func_08099928(w);
+    w->unk_E9 += 2;
+    if (w->unk_EA == 60) {
+        func_08012614(&w->unk_4C[0], 0);
     }
-    if (work[0xEA] <= 59) {
-        work[0xEA]++;
+    if (w->unk_EA <= 59) {
+        w->unk_EA++;
     }
-    if (work[0x78] != 0) {
-        work[0xED] = 1;
+    if (w->unk_4C[0x2C] != 0) {
+        w->unk_ED = 1;
         m4aSongNumStart(106);
-        func_08084458(*(u16*)&work[0xB8]);
+        func_08084458(*(u16*)&w->unk_B8);
         if (gGameState.flags & 8) {
             _08085D04(gGameState.unk_00C[0]);
         }
         SetTaskUpdate(a, (void*)func_08099A18);
-        WorldToScreen(&x, &y, *(s32*)&work[0xA8], *(s32*)&work[0xAC],
-                      *(s32*)&work[0xB0]);
-        *(s32*)&work[0xA8] = x << 8;
-        *(s32*)&work[0xAC] = y << 8;
-        func_08012614(&work[0x4C], 1);
-        work[0xEB] = 16;
-        ((UnkStruct_08099928*)work)->unk_D4 = 50;
-        func_080999A4(work);
+        WorldToScreen(&x, &y, w->unk_A8, w->unk_AC, w->unk_B0);
+        w->unk_A8 = x << 8;
+        w->unk_AC = y << 8;
+        func_08012614(&w->unk_4C[0], 1);
+        w->unk_EB = 16;
+        w->unk_D4 = 50;
+        func_080999A4(w);
     }
-    TaskPoolUpdate(&work[0x20]);
+    TaskPoolUpdate(&w->unk_20);
     return 1;
 }
 
-void PrizeBoss_2(u8* work) {
+void PrizeBoss_2(UnkStruct_08099928* w) {
+    u8* work = (u8*)w;
     u16 pal;
     s32 affine;
     void* gfx;
@@ -14721,19 +14718,19 @@ void PrizeBoss_2(u8* work) {
     TaskPoolDraw(&work[0x20]);
 }
 
-void PrizeBoss_3(u8* work) {
-    func_080062F4((*(UnkStruct_080038C8**)&work[0x10])->unk_06 + 16, 0);
-    func_080062F4((*(UnkStruct_080038C8**)&work[0x04])->unk_06 + 16, 0);
-    func_08012304(&work[0x4C]);
-    ReleaseObjTiles(*(void**)&work[0x00]);
-    ReleaseObjTiles(*(void**)&work[0x08]);
-    ReleaseObjTiles(*(void**)&work[0x14]);
-    ReleaseObjTiles(*(void**)&work[0x0C]);
-    ReleaseObjTiles(*(void**)&work[0x18]);
-    ReleaseObjPalette(*(void**)&work[0x04]);
-    ReleaseObjPalette(*(void**)&work[0x10]);
-    ReleaseObjPalette(*(void**)&work[0x1C]);
-    TaskPoolDestroy(&work[0x20]);
+void PrizeBoss_3(UnkStruct_08099928* w) {
+    func_080062F4(w->unk_10->unk_06 + 16, 0);
+    func_080062F4(w->unk_04->unk_06 + 16, 0);
+    func_08012304(&w->unk_4C[0]);
+    ReleaseObjTiles(w->unk_00);
+    ReleaseObjTiles(w->unk_08);
+    ReleaseObjTiles(w->unk_14);
+    ReleaseObjTiles(w->unk_0C);
+    ReleaseObjTiles(w->unk_18);
+    ReleaseObjPalette(w->unk_04);
+    ReleaseObjPalette(w->unk_10);
+    ReleaseObjPalette(w->unk_1C);
+    TaskPoolDestroy(&w->unk_20);
     gBtlWork->unk_0B0--;
 }
 
@@ -14750,7 +14747,7 @@ void func_08099928(UnkStruct_08099928* w) {
     }
 }
 
-void func_080999A4(u8* work) {
+void func_080999A4(UnkStruct_08099928* w) {
     s16 x;
     s16 y;
     s32 dx;
@@ -14761,16 +14758,16 @@ void func_080999A4(u8* work) {
     WorldToScreen(&x, &y, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
     tx = 0x7800;
     ty = 0x5000;
-    dx = tx - *(s32*)&work[0xA8];
-    dy = ty - *(s32*)&work[0xAC];
-    *(s32*)&work[0xCC] = func_0805F5A4(&dx, &dy);
-    *(s32*)&work[0xC4] = -dx;
-    *(s32*)&work[0xC8] = -dy;
-    *(s32*)&work[0xC0] = 0x300;
-    *(s32*)&work[0xBC] = 2;
+    dx = tx - w->unk_A8;
+    dy = ty - w->unk_AC;
+    w->unk_CC = func_0805F5A4(&dx, &dy);
+    w->unk_C4 = -dx;
+    w->unk_C8 = -dy;
+    w->unk_C0 = 0x300;
+    w->unk_BC = 2;
 }
 
-u8 func_08099A18(u8* work, void* a) {
+u8 func_08099A18(UnkStruct_08099928* w, void* a) {
     s32 dx;
     s32 dy;
     u8 z;
@@ -14780,114 +14777,115 @@ u8 func_08099A18(u8* work, void* a) {
     s16* q1;
     s16* q2;
 
-    if (*(s32*)&work[0xC0] < 0) {
-        dx = 0x7800 - *(s32*)&work[0xA8];
-        dy = 0x5000 - *(s32*)&work[0xAC];
+    if (w->unk_C0 < 0) {
+        dx = 0x7800 - w->unk_A8;
+        dy = 0x5000 - w->unk_AC;
         func_0805F5A4(&dx, &dy);
-        *(s32*)&work[0xC4] = -dx;
-        *(s32*)&work[0xC8] = -dy;
+        w->unk_C4 = -dx;
+        w->unk_C8 = -dy;
 
-        if (*(s32*)&work[0xCC] <= 0x7FF) {
-            work[0xEB] = 0;
-            work[0xE6] = 0;
+        if (w->unk_CC <= 0x7FF) {
+            w->unk_EB = 0;
+            w->unk_E6 = 0;
             SetTaskUpdate(a, (void*)func_08099B60);
 #ifdef VERSION_EU
-            func_08096F08(&work[0x20], eu_0805E924(gCardDefs[*(s32*)&work[0xB8]].unk_0C));
+            func_08096F08(&w->unk_20, eu_0805E924(gCardDefs[w->unk_B8].unk_0C));
 #else
-            func_08096F08(&work[0x20], gCardDefs[*(s32*)&work[0xB8]].unk_0C);
+            func_08096F08(&w->unk_20, gCardDefs[w->unk_B8].unk_0C);
 #endif
         }
     }
 
-    *(s32*)&work[0xA8] += (*(s32*)&work[0xC4] * *(s32*)&work[0xC0]) >> 8;
-    *(s32*)&work[0xAC] += (*(s32*)&work[0xC8] * *(s32*)&work[0xC0]) >> 8;
-    t = work[0xE6] + 32;
+    w->unk_A8 += (w->unk_C4 * w->unk_C0) >> 8;
+    w->unk_AC += (w->unk_C8 * w->unk_C0) >> 8;
+    t = w->unk_E6 + 32;
     z = 0;
-    work[0xE6] = t;
-    work[0xE8] += (64 - work[0xE8]) >> 4;
-    work[0xE9] = z;
-    *(s32*)&work[0xCC] = func_0805F588(0x7800 - *(s32*)&work[0xA8], 0x5000 - *(s32*)&work[0xAC]);
-    *(s32*)&work[0xC0] -= *(s32*)&work[0xBC];
-    *(s32*)&work[0xBC] += 2;
+    w->unk_E6 = t;
+    w->unk_E8 += (64 - w->unk_E8) >> 4;
+    w->unk_E9 = z;
+    w->unk_CC = func_0805F588(0x7800 - w->unk_A8, 0x5000 - w->unk_AC);
+    w->unk_C0 -= w->unk_BC;
+    w->unk_BC += 2;
 
-    if (*(s16*)&work[0xE2] <= 0xFF) {
-        *(s16*)&work[0xE2] += 3;
+    if (w->unk_E2 <= 0xFF) {
+        w->unk_E2 += 3;
     }
 
-    x = *(s32*)&work[0xA8] >> 8;
-    q1 = (s16*)&work[0xD6];
+    x = w->unk_A8 >> 8;
+    q1 = (s16*)&w->unk_D6;
     *q1 = x;
-    y = *(s32*)&work[0xAC] >> 8;
-    q2 = (s16*)&work[0xD8];
+    y = w->unk_AC >> 8;
+    q2 = (s16*)&w->unk_D8;
     *q2 = y;
-    func_08099928((UnkStruct_08099928*)work);
-    TaskPoolUpdate(&work[0x20]);
+    func_08099928(w);
+    TaskPoolUpdate(&w->unk_20);
     return 1;
 }
 
-u8 func_08099B60(u8* work, void* a) {
+u8 func_08099B60(UnkStruct_08099928* w, void* a) {
     s32 v;
     u16 t;
     s32 c;
 
-    v = work[0xE6] << 8;
-    ApproachValue(&work[0xE8], 0, work[0xEB]);
-    ApproachValue(&v, 0, work[0xEB]);
-    ApproachValue(&work[0xA8], 0x7800, work[0xEB]);
-    ApproachValue(&work[0xAC], 0x5800, work[0xEB]);
-    work[0xE6] = v >> 8;
+    v = w->unk_E6 << 8;
+    ApproachValue((s32*)&w->unk_E8, 0, w->unk_EB);
+    ApproachValue(&v, 0, w->unk_EB);
+    ApproachValue(&w->unk_A8, 0x7800, w->unk_EB);
+    ApproachValue(&w->unk_AC, 0x5800, w->unk_EB);
+    w->unk_E6 = v >> 8;
 
-    if (work[0xEB] != 0) {
-        work[0xEB]--;
+    if (w->unk_EB != 0) {
+        w->unk_EB--;
     }
 
-    t = *(u16*)&work[0xE2];
+    t = w->unk_E2;
 
     if ((s16)t <= 0xFF) {
-        *(u16*)&work[0xE2] = t + 2;
+        w->unk_E2 = t + 2;
     } else {
         c = 0x100;
-        *(u16*)&work[0xE2] = c;
+        w->unk_E2 = c;
     }
 
-    ((UnkStruct_08099928*)work)->unk_D6 = *(s32*)&work[0xA8] >> 8;
-    ((UnkStruct_08099928*)work)->unk_D8 = *(s32*)&work[0xAC] >> 8;
-    func_08099928((UnkStruct_08099928*)work);
-    work[0xEC]++;
+    w->unk_D6 = w->unk_A8 >> 8;
+    w->unk_D8 = w->unk_AC >> 8;
+    func_08099928(w);
+    w->unk_EC++;
 
-    if (*(u32*)&work[0xB8] > 0x1C2) {
-        if (work[0xEC] == 120) {
-            work[0xEC] = 0;
+    if ((u32)w->unk_B8 > 0x1C2) {
+        if (w->unk_EC == 120) {
+            w->unk_EC = 0;
             SetTaskUpdate(a, (void*)func_08099C4C);
         }
     } else {
-        if (work[0xEC] == 30) {
-            work[0xEC] = 0;
+        if (w->unk_EC == 30) {
+            w->unk_EC = 0;
             SetTaskUpdate(a, (void*)func_08099C4C);
         }
     }
 
-    TaskPoolUpdate(&work[0x20]);
+    TaskPoolUpdate(&w->unk_20);
     return 1;
 }
 
-u8 func_08099C4C(u8* work) {
-    work[0xE6] += 32;
-    WorldToScreen((s16*)&work[0xDA], (s16*)&work[0xDC], ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
-    *(s16*)&work[0xD6] += (*(s16*)&work[0xDA] - *(s16*)&work[0xD6]) >> 3;
-    *(s16*)&work[0xD8] += (*(s16*)&work[0xDC] - *(s16*)&work[0xD8]) >> 3;
-    *(s16*)&work[0xD0] -= 10;
-    *(s16*)&work[0xD2] -= 10;
+u8 func_08099C4C(UnkStruct_08099928* w) {
+    w->unk_E6 += 32;
+    WorldToScreen(&w->unk_DA, &w->unk_DC, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+    *(s16*)&w->unk_D6 += (w->unk_DA - *(s16*)&w->unk_D6) >> 3;
+    *(s16*)&w->unk_D8 += (w->unk_DC - *(s16*)&w->unk_D8) >> 3;
+    w->unk_D0 -= 10;
+    w->unk_D2 -= 10;
 
-    if (*(s16*)&work[0xD0] <= 10) {
+    if (w->unk_D0 <= 10) {
         return 0;
     }
 
-    TaskPoolUpdate(&work[0x20]);
+    TaskPoolUpdate(&w->unk_20);
     return 1;
 }
 
-void func_08099CDC(u8* work) {
+void func_08099CDC(UnkStruct_08099928* w) {
+    u8* work = (u8*)w;
     UnkStruct_08099CDC_Args args;
 
     if (work[0xED] == 0) {
