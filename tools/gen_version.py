@@ -386,6 +386,8 @@ TARGET_FUNC_SIZE = {
         "func_080A5C9C": 0x104,
         "func_080A5D3C": 0x174,
         "func_0808FA0C": 0x8c,
+        "func_0808D0A4": 0xe0,
+        "func_0808D258": 0x1fc,
         "mode_sioError_0": 0x15c,
         "mode_jiminy_0": 0x4a8,
         "func_08064EF4": 0x174,
