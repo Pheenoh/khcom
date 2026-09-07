@@ -1915,6 +1915,18 @@ typedef struct UnkStruct_08084D78 {
     u16* unk_1C;
 } UnkStruct_08084D78;
 
+typedef struct UnkStruct_0808F358 {
+    u8 unk_000[0x784];
+    u8 unk_784[20];
+    u8 unk_798[0x28];
+    s16 unk_7C0;
+    s16 unk_7C2;
+    u8 unk_7C4;
+} UnkStruct_0808F358;
+
+s32 func_0808F358(UnkStruct_0808F358* work);
+extern u8* gUnk_09EE4B0C[];
+
 typedef struct UnkStruct_02039BA0 {
     s32 unk_00;
     s32 unk_04;
