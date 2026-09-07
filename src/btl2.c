@@ -5,7 +5,15 @@
 #ifdef VERSION_EU
 extern u32 gLanguage;
 extern u8 gUnkEu_08B51BA8[];
+extern u8 gUnkEu_08B51D50[];
+extern u8 gUnkEu_08B51FB8[];
+extern u8 gUnkEu_08B52220[];
+extern u8 gUnkEu_08B52488[];
 extern void* gUnkEu_09F5C1FC[];
+extern void* gUnkEu_09F5C20C[];
+extern void* gUnkEu_09F5C21C[];
+extern void* gUnkEu_09F5C22C[];
+extern void* gUnkEu_09F5C23C[];
 #endif
 
 void task_btl_shadow_0(BtlShadowWork* work, BtlWork* actor) {
@@ -878,22 +886,52 @@ void task_btl_pop_3(BtlPopWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
-#ifndef VERSION_EU
 void task_btl_escape_0(BtlEscapeWork* work) {
+#ifdef VERSION_EU
+    void** p;
+
+    work->unk_18 = 0x5A00;
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+
+    switch (gLanguage) {
+    case 0:
+        work->tiles = LoadObjTiles(gUnk_08B1EB1C, 0x240);
+        p = gUnk_09EE11A4;
+        break;
+    case 1:
+        work->tiles = LoadObjTiles(gUnkEu_08B51D50, 0x240);
+        p = gUnkEu_09F5C20C;
+        break;
+    case 4:
+        work->tiles = LoadObjTiles(gUnkEu_08B51FB8, 0x240);
+        p = gUnkEu_09F5C21C;
+        break;
+    case 3:
+        work->tiles = LoadObjTiles(gUnkEu_08B52220, 0x240);
+        p = gUnkEu_09F5C22C;
+        break;
+    case 2:
+    default:
+        work->tiles = LoadObjTiles(gUnkEu_08B52488, 0x240);
+        p = gUnkEu_09F5C23C;
+        break;
+    }
+    work->gfx = p[0];
+    work->gfx2 = p[2];
+    work->gfx3 = p[1];
+#else
     work->unk_18 = 0x5A00;
     work->tiles = LoadObjTiles(gUnk_08B1EB1C, 0x240);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->gfx = gUnk_09EE11A4[0];
     work->gfx2 = gUnk_09EE11A4[2];
     work->gfx3 = gUnk_09EE11A4[1];
+#endif
     work->unk_14 = 0;
     work->unk_1C = 0;
     work->unk_22 = 0;
     work->unk_20 = 0;
 }
-#else
-INCLUDE_ASM("btl2/task_btl_escape_0.s");
-#endif
 
 s32 task_btl_escape_1(BtlEscapeWork* work) {
     if (gBtlWork->unk_068 & 0x0100000000000000) {
