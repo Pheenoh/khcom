@@ -1362,12 +1362,12 @@ void func_0810C494(BosLstWork* work, u16 a, u16 b, u8 c) {
     }
     switch (gUnk_09A4D14C[a]) {
     case 0:
-        func_08002A10(work->unk_028, gUnk_09C4B012);
+        func_08002A10(work->tiles, gUnk_09C4B012);
         func_08005974(&work->anim, v, b, gUnk_09EFAD3C, gUnk_09EFABB0);
         break;
     case 1:
         v -= 14;
-        func_08002A10(work->unk_028, gUnk_09C51CBC);
+        func_08002A10(work->tiles, gUnk_09C51CBC);
         func_08005974(&work->anim, v, b, gUnk_09EFADBC, gUnk_09EFAD74);
         break;
     }
@@ -1561,10 +1561,10 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     work->unk_1F4[1].unk_008 = 0;
     work->unk_1F4[1].unk_00A = 0;
     work->unk_1F4[1].unk_00C = -1;
-    work->unk_1F4[0].unk_010 = (u32)AllocObjTiles(func_08003524(gUnk_09EFADC4, 16), gUnk_09C53724);
-    work->unk_1F4[1].unk_010 = (u32)AllocObjTiles(func_08003524(gUnk_09EFAE54, 16), gUnk_09C58590);
-    work->unk_028 = (u32)AllocObjTiles(func_08003524(gUnk_09EFABB0, 0x62), gUnk_09C4B012);
-    work->unk_0E0 = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
+    work->unk_1F4[0].tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EFADC4, 16), gUnk_09C53724);
+    work->unk_1F4[1].tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EFAE54, 16), gUnk_09C58590);
+    work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EFABB0, 0x62), gUnk_09C4B012);
+    work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     i = 0;
     obj = &work->unk_0E4;
     anim = &work->anim;
@@ -3426,14 +3426,14 @@ void task_bos_lst_2(BosLstWork* work) {
     if ((s16)work->unk_014 != (s16)work->unk_016) {
         if ((s16)work->unk_014 == 0) {
             LoadPalette(gUnk_09D69454, (void*)0x05000000, 0x60);
-            LoadPalette(gUnk_09D69594, (void*)(0x05000200 + ((((UnkStruct_080038C8*)work->unk_0E0)->unk_06 & 15) << 5)), 0x60);
+            LoadPalette(gUnk_09D69594, (void*)(0x05000200 + ((((UnkStruct_080038C8*)work->palette)->unk_06 & 15) << 5)), 0x60);
         } else {
             LoadPalette(gUnk_08F69BC4, (void*)0x05000000, 32);
             LoadPalette(gUnk_08F69BC4, (void*)0x05000020, 32);
             LoadPalette(gUnk_08F69BC4, (void*)0x05000040, 32);
-            LoadPalette(gUnk_08F69BC4, (void*)(0x05000200 + ((((UnkStruct_080038C8*)work->unk_0E0)->unk_06 & 15) << 5)), 32);
-            LoadPalette(gUnk_08F69BC4, (void*)(0x05000220 + ((((UnkStruct_080038C8*)work->unk_0E0)->unk_06 & 15) << 5)), 32);
-            LoadPalette(gUnk_08F69BC4, (void*)(0x05000240 + ((((UnkStruct_080038C8*)work->unk_0E0)->unk_06 & 15) << 5)), 32);
+            LoadPalette(gUnk_08F69BC4, (void*)(0x05000200 + ((((UnkStruct_080038C8*)work->palette)->unk_06 & 15) << 5)), 32);
+            LoadPalette(gUnk_08F69BC4, (void*)(0x05000220 + ((((UnkStruct_080038C8*)work->palette)->unk_06 & 15) << 5)), 32);
+            LoadPalette(gUnk_08F69BC4, (void*)(0x05000240 + ((((UnkStruct_080038C8*)work->palette)->unk_06 & 15) << 5)), 32);
         }
         work->unk_016 = work->unk_014;
     }
@@ -3518,7 +3518,7 @@ void task_bos_lst_2(BosLstWork* work) {
         LoadBgMap(1, work->unk_8A4, 0x800);
     }
     WorldToScreen(&sx, &sy, work->unk_044 + work->unk_050, work->unk_048 + work->unk_054, work->unk_04C + work->unk_058);
-    DrawSprite(sx + gUnk_09A4CF8C[anim].unk_04, sy + gUnk_09A4CF8C[anim].unk_06, AnimGetGfx(&work->anim), (void*)work->unk_028, (void*)work->unk_0E0, 0,
+    DrawSprite(sx + gUnk_09A4CF8C[anim].unk_04, sy + gUnk_09A4CF8C[anim].unk_06, AnimGetGfx(&work->anim), (void*)work->tiles, (void*)work->palette, 0,
                func_0801AF1C(work->unk_048 + work->unk_054 + ((s16)gBtlWork->unk_0D8 << 8)),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054 + ((s16)gBtlWork->unk_0D8 << 8)) >> 8) << 2)));
     WorldToScreen(&sx, &sy, work->unk_044 + work->unk_050, work->unk_048 + work->unk_054, work->unk_04C + work->unk_058);
@@ -3528,7 +3528,7 @@ void task_bos_lst_2(BosLstWork* work) {
         work->unk_1F4[k].unk_008 = v - 1;
     }
     sub = &work->unk_1F4[k];
-    DrawSprite(sx + gUnk_09A4CF8C[anim].unk_0C, sy + gUnk_09A4CF8C[anim].unk_0E, AnimGetGfx(&sub->anim), (void*)work->unk_1F4[0].unk_010, (void*)work->unk_0E0, 0,
+    DrawSprite(sx + gUnk_09A4CF8C[anim].unk_0C, sy + gUnk_09A4CF8C[anim].unk_0E, AnimGetGfx(&sub->anim), (void*)work->unk_1F4[0].tiles, (void*)work->palette, 0,
                func_0801AF1C(work->unk_048 + work->unk_054),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054) >> 8) << 2)));
     j = idx ^ 1;
@@ -3537,7 +3537,7 @@ void task_bos_lst_2(BosLstWork* work) {
         work->unk_1F4[j].unk_008 = w - 1;
     }
     sub = &work->unk_1F4[j];
-    DrawSprite(sx + gUnk_09A4CF8C[anim].unk_18, sy + gUnk_09A4CF8C[anim].unk_1A, AnimGetGfx(&sub->anim), (void*)work->unk_1F4[1].unk_010, (void*)work->unk_0E0, 0,
+    DrawSprite(sx + gUnk_09A4CF8C[anim].unk_18, sy + gUnk_09A4CF8C[anim].unk_1A, AnimGetGfx(&sub->anim), (void*)work->unk_1F4[1].tiles, (void*)work->palette, 0,
                func_0801AF1C(work->unk_048 + work->unk_054 - 0x1100),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054 - 0x1100) >> 8) << 2)));
 }
@@ -3554,10 +3554,10 @@ void task_bos_lst_3(BosLstWork* work) {
         func_08012304(work->unk_52C[i]);
     }
     func_0810C2F8(work);
-    ReleaseObjTiles((void*)work->unk_1F4[0].unk_010);
-    ReleaseObjTiles((void*)work->unk_1F4[1].unk_010);
-    ReleaseObjTiles((void*)work->unk_028);
-    ReleaseObjPalette((void*)work->unk_0E0);
+    ReleaseObjTiles((void*)work->unk_1F4[0].tiles);
+    ReleaseObjTiles((void*)work->unk_1F4[1].tiles);
+    ReleaseObjTiles((void*)work->tiles);
+    ReleaseObjPalette((void*)work->palette);
     TaskPoolDestroy(&work->unk_890);
 }
 

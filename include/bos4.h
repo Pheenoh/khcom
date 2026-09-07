@@ -180,8 +180,8 @@ typedef struct BoogieExplosiondiceWork {
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;
-    u32 unk_00C;
-    u32 unk_010;
+    u32 palette;
+    u32 palette2;
     u32 anim;
     u8 unk_018[0x14];
     u32 unk_02C;
@@ -409,8 +409,8 @@ typedef struct BoogieDiceWork {
     u16 unk_004;
     u8 unk_006[0x2];
     u32 tiles;
-    u32 unk_00C;
-    u32 unk_010;
+    u32 palette;
+    u32 palette2;
     u32 anim;
     u8 unk_018[0x14];
     u32 unk_02C;
