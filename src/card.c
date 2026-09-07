@@ -11264,7 +11264,7 @@ INCLUDE_ASM("card/func_080923E0.s");
 #ifdef NON_MATCHING
 u8 func_0809254C(UnkStruct_08093838* w, void* a) {
     u16 keys;
-    u16 sel;
+    s16 sel;
     u8 n;
 
     keys = GetKeysPressed();
