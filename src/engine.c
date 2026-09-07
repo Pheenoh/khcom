@@ -12,7 +12,7 @@ u8 gMosaicActive;
 u32 gRandSeed;
 u8 gUnk_0203402C[4];
 u32 gRandomState[4];
-u8* gUnk_02034040;
+UnkBgAnim* gUnk_02034040;
 u16 gUnk_02034044;
 u16 gUnk_02034046;
 s32 gUnk_02034048;
@@ -178,7 +178,7 @@ u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
 }
 u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     if (gSpriteWork->entryCount <= 127 && obj != 0) {
-        switch (*(u32*)((u8*)obj + 0x28)) {
+        switch (((ObjTiles*)obj)->unk_28) {
         case 0:
             return func_08002060((s16)x, (s16)y, c, obj, e, f, g, h);
         case 1:
@@ -2597,8 +2597,8 @@ void func_080066F4(s16 x, s16 y) {
         gUnk_02034050 = -x;
         gUnk_02034052 = -y;
     } else {
-        gUnk_02034050 = (*(u16*)(gUnk_02034040 + 0x10) << 2) - x;
-        gUnk_02034052 = (*(u16*)(gUnk_02034040 + 0x12) << 2) - y;
+        gUnk_02034050 = (gUnk_02034040->unk_10 << 2) - x;
+        gUnk_02034052 = (gUnk_02034040->unk_12 << 2) - y;
     }
 }
 
@@ -2608,14 +2608,14 @@ void func_0800675C(u8 a, s32 b, s32 c) {
     gUnk_02034060 = c;
 }
 
-void func_08006778(u8* a, s32 x, s32 y) {
+void func_08006778(UnkBgAnim* a, s32 x, s32 y) {
     gUnk_02034040 = a;
     func_080066F4((s16)x, (s16)y);
 
     if (gUnk_02034058 != 0) {
-        gUnk_0203404C = *(u16*)(a + 0x0E) << 6;
+        gUnk_0203404C = a->unk_0E << 6;
     } else {
-        gUnk_0203404C = *(u16*)(a + 0x0E) << 5;
+        gUnk_0203404C = a->unk_0E << 5;
     }
     gUnk_0203404E = 0x8000 / gUnk_0203404C;
     gUnk_02034066 = -1;
@@ -2623,7 +2623,7 @@ void func_08006778(u8* a, s32 x, s32 y) {
     gUnk_02034044 = 0;
     gUnk_02034046 = 0;
     gUnk_02034054 = 0;
-    gUnk_0203406A = *(u16*)(a + 0x16);
+    gUnk_0203406A = a->unk_16;
 
     if (gUnk_02034058 != 0) {
         gUnk_0203405C = 0x100;
@@ -2631,16 +2631,16 @@ void func_08006778(u8* a, s32 x, s32 y) {
         gUnk_02034064 = 0;
     }
     PushPaletteEffect(0);
-    LoadBgPalette(gUnk_02034048, *(void**)(a + 0x08), *(u16*)(a + 0x0C));
+    LoadBgPalette(gUnk_02034048, a->unk_08, a->unk_0C);
     PopPaletteEffect();
-    LoadBgMap(gUnk_02034048, *(void**)(a + 0x04), gUnk_02034056);
+    LoadBgMap(gUnk_02034048, a->unk_04, gUnk_02034056);
 }
 void func_0800685C(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
     BgAffineSrcData src;
     BgAffineDstData dst;
 
-    src.texX = *(u16*)(gUnk_02034040 + 0x10) << 10;
-    src.texY = *(u16*)(gUnk_02034040 + 0x12) << 10;
+    src.texX = gUnk_02034040->unk_10 << 10;
+    src.texY = gUnk_02034040->unk_12 << 10;
     src.scrX = -cx;
     src.scrY = -cy;
     src.sx = 0x10000 / sx;
@@ -2679,7 +2679,7 @@ void func_08006954(void) {
         return;
     }
 
-    if (gUnk_02034046 >= *(u16*)(gUnk_02034040 + 0x14)) {
+    if (gUnk_02034046 >= gUnk_02034040->unk_14) {
         if (gUnk_02034066 >= 0) {
             gUnk_02034046 = gUnk_02034066;
             gUnk_02034044 = 0;
@@ -2707,8 +2707,8 @@ void func_08006954(void) {
         if (gUnk_02034044 == 0) {
             q = gUnk_02034046 / gUnk_0203404E;
             off = gUnk_02034046 % gUnk_0203404E * gUnk_0203404C;
-            src = *(u8**)(*(u8**)gUnk_02034040 + q * 8) + off;
-            over = off + gUnk_0203404C - *(u16*)(*(u8**)gUnk_02034040 + q * 8 + 4);
+            src = (u8*)gUnk_02034040->unk_00[q].unk_00 + off;
+            over = off + gUnk_0203404C - gUnk_02034040->unk_00[q].unk_04;
 
             if (over > 0) {
                 len = gUnk_0203404C - over;

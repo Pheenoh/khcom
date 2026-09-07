@@ -4,6 +4,7 @@
 #include "types.h"
 #include "gba/syscall.h"
 #include "intr.h"
+#include "engine.h"
 
 #define REG_DISPCNT (*(vu16*)0x04000000)
 #define REG_DISPSTAT (*(vu16*)0x04000004)
@@ -56,7 +57,7 @@ typedef struct {
     u8 recvCount;
 } SioWork;
 
-extern u8* gUnk_02034040;
+extern UnkBgAnim* gUnk_02034040;
 extern u16 gUnk_02034044;
 extern u16 gUnk_02034046;
 extern u8 gUnk_02034054;
@@ -80,8 +81,8 @@ extern u8 gUnk_02039B60;
 
 u8 func_08006B74(void);
 void func_08006B80(u16* a, u16* b);
-s32 func_08006BA0(u8* p);
-u8* func_08006BA8(void);
+s32 func_08006BA0(UnkBgAnim* p);
+UnkBgAnim* func_08006BA8(void);
 u16 IsVBlankIntrLive(void);
 void SioInit(void);
 void SioReset(void);
