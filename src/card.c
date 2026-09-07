@@ -328,6 +328,8 @@ s32 func_080A22A4(u8* work);
 void func_0807CD48(UnkStruct_02034AAC* p);
 s32 func_08093AC8(u16 a);
 u8 func_0809254C(UnkStruct_08093838* w, void* a);
+u8 func_080A11CC(u8* work, void* a);
+u8 func_080A0A44(u8* work, void* a);
 u8 func_080928E4(UnkStruct_08093838* w, void* a);
 u8 func_08092E2C(UnkStruct_08093838* w);
 u8 func_0809438C(UnkStruct_08093838* w, void* a);
@@ -18040,7 +18042,127 @@ void func_080A09C0(u16 n, u16* out) {
 }
 
 INCLUDE_ASM("card/func_080A0A44.s");
+#ifdef NON_MATCHING
+u8 func_080A11CC(u8* work, void* a) {
+    s32 x;
+    s32 y;
+    s16* px;
+    s16* py;
+    u8* pn;
+    px = (s16*)&work[0x750];
+    py = (s16*)&work[0x75C];
+    pn = &work[0x7B2];
+    x = px[(s8)work[0x7B0]] << 8;
+    y = py[(s8)work[0x7B0]] << 8;
+    ApproachValue(&x, -0x8000, (s8)pn[(s8)work[0x7B0]]);
+    ApproachValue(&y, -0xF800, (s8)pn[(s8)work[0x7B0]]);
+    px[(s8)work[0x7B0]] = x >> 8;
+    py[(s8)work[0x7B0]] = y >> 8;
+    pn[(s8)work[0x7B0]]--;
+
+    if ((s8)work[0x7B5] > 0) {
+        work[0x7B5]--;
+    }
+
+    if ((s8)work[0x7B5] == 0) {
+        if (work[0x7BF] != 0) {
+            ApproachValue((s32*)&work[0x76C], 0, work[0x7BF]);
+            ApproachValue((s32*)&work[0x770], 0x9800, work[0x7BF]);
+            work[0x7BF]--;
+        } else {
+            if (*(void**)&work[0x00] != 0) {
+                ReleaseObjTiles(*(void**)&work[0x00]);
+            }
+
+            if (*(void**)&work[0x04] != 0) {
+                ReleaseObjTiles(*(void**)&work[0x04]);
+            }
+
+            if (*(void**)&work[0x08] != 0) {
+                ReleaseObjTiles(*(void**)&work[0x08]);
+            }
+
+            if (*(void**)&work[0x10] != 0) {
+                ReleaseObjPalette(*(void**)&work[0x10]);
+            }
+
+            if (*(void**)&work[0x14] != 0) {
+                ReleaseObjPalette(*(void**)&work[0x14]);
+            }
+
+            if (*(void**)&work[0x6E0] != 0) {
+                ReleaseObjPalette(*(void**)&work[0x6E0]);
+            }
+
+            if (*(void**)&work[0x6E4] != 0) {
+                ReleaseObjPalette(*(void**)&work[0x6E4]);
+            }
+
+            if (*(void**)&work[0x6E8] != 0) {
+                ReleaseObjTiles(*(void**)&work[0x6E8]);
+            }
+
+            if (*(void**)&work[0x6EC] != 0) {
+                ReleaseObjPalette(*(void**)&work[0x6EC]);
+            }
+
+            if (*(void**)&work[0x6F4] != 0) {
+                ReleaseObjTiles(*(void**)&work[0x6F4]);
+            }
+
+            if (*(void**)&work[0x6F8] != 0) {
+                ReleaseObjPalette(*(void**)&work[0x6F8]);
+            }
+
+            *(u16*)&work[0x750] = 0xFF80;
+            *(u16*)&work[0x752] = 0xFF80;
+            *(u16*)&work[0x754] = 0xFF80;
+            *(u16*)&work[0x756] = 16;
+            *(u16*)&work[0x758] = 64;
+            *(u16*)&work[0x75A] = 112;
+            work[0x7B5] = 24;
+            work[0x7B1] = 16;
+            work[0x7B2] = 16;
+            work[0x7B3] = 16;
+            work[0x7B4] = 16;
+            *(u16*)&work[0x75C] = 8;
+            *(u16*)&work[0x75E] = 8;
+            *(u16*)&work[0x760] = 8;
+            *(u16*)&work[0x762] = 31;
+            *(u16*)&work[0x764] = 79;
+            *(u16*)&work[0x766] = 127;
+            *(u16*)&work[0x774] = 132;
+            *(u16*)&work[0x776] = *(u16*)&gUnk_09036380[0x1C34];
+
+            if (gGameState.flags & 8) {
+                func_08002A10(*(void**)&work[0x728], gUnk_0891ED26);
+                AnimInit((AnimState*)&work[0x734], gUnk_09EDF38C, gUnk_09EDF374);
+                AnimStart((AnimState*)&work[0x734], 0, 1);
+            } else {
+                func_08002A10(*(void**)&work[0x728], gUnk_088E33C2);
+                AnimInit((AnimState*)&work[0x734], gUnk_09EDEE14, gUnk_09EDEE08);
+                AnimStart((AnimState*)&work[0x734], 0, 1);
+            }
+
+            work[0x7C2] = 0;
+            work[0x7BD] = 0;
+            work[0x7C5] = 0;
+            *(u16*)&work[0x7A4] = 0;
+            work[0x7C7] = 0;
+            SetTaskUpdate(a, (void*)func_080A0A44);
+        }
+    }
+
+    work[0x7C8] = 1;
+    work[0x7C9] = 1;
+    work[0x7CA] = 1;
+    *(void**)&work[0x730] = AnimUpdate((AnimState*)&work[0x734]);
+    TaskPoolUpdate((TaskPool*)&work[0x6FC]);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_080A11CC.s");
+#endif
 
 s32 func_080A151C(void) {
     if (gGameState.level >= gUnk_09037FBA[gGameState.unk_178]) {
