@@ -169,9 +169,9 @@ void InitSystem(void) {
 INCLUDE_ASM("main/InitSystem.s");
 #endif
 
-#ifdef NON_MATCHING
 void AgbMain(void) {
     s32 bit;
+    register s32 set asm("r5");
 
     gFrameCounter = 0;
     gVBlankCounter = 0;
@@ -182,31 +182,33 @@ void AgbMain(void) {
     InitSystem();
     EnableVBlankIntr();
     bit = 4;
-
-    for (;;) {
-        UpdateKeyState();
-
-        if (gSystemFlags & 1) {
-            func_080C55DC();
-
-            if (gSioStatus & 0x100) {
-                goto next;
+loop:
+    UpdateKeyState();
+    if (gSystemFlags & 1) {
+        func_080C55DC();
+        if (gSioStatus & 0x100) {
+            goto next;
+        }
+    }
+    {
+        u16 flags = gFrameSyncFlags;
+        set = 4;
+        if ((flags & bit) == 0) {
+            ModeUpdate();
+            {
+                u16 v = *(u16 *)&gFrameSyncFlags;
+                v |= set;
+                *(u16 *)&gFrameSyncFlags = v;
             }
         }
-
-        if ((gFrameSyncFlags & bit) == 0) {
-            ModeUpdate();
-            gFrameSyncFlags |= 4;
-        }
-    next:
-        ApplyIntrCallbacks();
-        VBlankIntrWait();
-        gFrameCounter++;
     }
+next:
+    ApplyIntrCallbacks();
+    VBlankIntrWait();
+    gFrameCounter++;
+    goto loop;
 }
-#else
-INCLUDE_ASM("main/AgbMain.s");
-#endif
+
 
 void VBlankIntr(void) {
     if (gVBlankHandlerOverride != 0) {
