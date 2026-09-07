@@ -1553,8 +1553,6 @@ void func_080B1BE0(void) {
     m4aSongNumStart(0x6A);
     gSioChgConnectWork->unk_04++;
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1BE0.s");
 #endif
 
 #ifndef VERSION_EU
@@ -1562,8 +1560,6 @@ void func_080B1BFC(void) {
     m4aSongNumStart(0x68);
     ModeRequest(&gModeSioBattle, 3);
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1BFC.s");
 #endif
 
 #ifndef VERSION_EU

@@ -1837,8 +1837,6 @@ void func_08064B68(void) {
     EwramFree(gUnk_02034A8C);
     gUnk_02034A8C = NULL;
 }
-#else
-INCLUDE_ASM("msg/func_08064B68.s");
 #endif
 u16 func_08064B80(s32 a) {
     s32 i;
