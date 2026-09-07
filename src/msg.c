@@ -4174,19 +4174,19 @@ void func_0806CD60(ContinueWork* p) {
     func_080065FC(2, 0x8000, 128);
     func_08006778(gUnk_09EDA7E0, 120, 46);
     func_08006B34(0);
-    p->unk_10 = LoadObjTiles(gUnk_090A7D9A, 192);
-    p->unk_14 = LoadObjPalette(gUnk_096146F8, 32);
+    p->tiles3 = LoadObjTiles(gUnk_090A7D9A, 192);
+    p->palette3 = LoadObjPalette(gUnk_096146F8, 32);
     func_0806CD30(p->unk_60);
-    p->unk_00 = AllocObjTiles(512, 0);
+    p->tiles = AllocObjTiles(512, 0);
     PushPaletteEffect(0);
-    p->unk_04 = LoadObjPalette(gUnk_09614658, 160);
+    p->palette = LoadObjPalette(gUnk_09614658, 160);
     PopPaletteEffect();
-    func_08002A10(p->unk_00, gUnk_090A6B26);
+    func_08002A10(p->tiles, gUnk_090A6B26);
     AnimInit(&p->unk_20, (s32)gUnk_09EEB108, (s32)gUnk_09EEB0C4);
     AnimStart(&p->unk_20, 0, 1);
-    p->unk_08 = AllocObjTiles(1024, 0);
-    p->unk_0C = LoadObjPalette(gUnk_08F683A4, 32);
-    func_08002A10(p->unk_08, gUnk_090A7F0A);
+    p->tiles2 = AllocObjTiles(1024, 0);
+    p->palette2 = LoadObjPalette(gUnk_08F683A4, 32);
+    func_08002A10(p->tiles2, gUnk_090A7F0A);
     AnimInit(&p->unk_38, (s32)gUnk_09EEB14C, (s32)gUnk_09EEB11C);
     AnimStart(&p->unk_38, 0, 1);
     p->unk_58 = -2048;
@@ -4199,7 +4199,7 @@ void func_0806CD60(ContinueWork* p) {
     func_08006120(1, 24);
 
     for (i = 0; i < 5; i++) {
-        func_080062F4(((Handle0806180C*)p->unk_04)->unk_06 + i, 0);
+        func_080062F4(((Handle0806180C*)p->palette)->unk_06 + i, 0);
     }
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
@@ -4224,19 +4224,19 @@ void func_0806CF04(ContinueWork* p) {
     func_080065FC(2, 0x8000, 128);
     func_08006778(gUnk_09EDA7E0, 120, 46);
     func_08006B34(0);
-    p->unk_10 = LoadObjTiles(gUnk_090A7D9A, 192);
-    p->unk_14 = LoadObjPalette(gUnk_096146F8, 32);
+    p->tiles3 = LoadObjTiles(gUnk_090A7D9A, 192);
+    p->palette3 = LoadObjPalette(gUnk_096146F8, 32);
     func_0806CD30(p->unk_60);
-    p->unk_00 = AllocObjTiles(512, 0);
+    p->tiles = AllocObjTiles(512, 0);
     PushPaletteEffect(0);
-    p->unk_04 = LoadObjPalette(gUnk_09614658, 160);
+    p->palette = LoadObjPalette(gUnk_09614658, 160);
     PopPaletteEffect();
-    func_08002A10(p->unk_00, gUnk_090A6B26);
+    func_08002A10(p->tiles, gUnk_090A6B26);
     AnimInit(&p->unk_20, (s32)gUnk_09EEB108, (s32)gUnk_09EEB0C4);
     AnimStart(&p->unk_20, 0, 1);
-    p->unk_08 = AllocObjTiles(1024, 0);
-    p->unk_0C = LoadObjPalette(gUnk_09618118, 32);
-    func_08002A10(p->unk_08, gUnk_090A8FC4);
+    p->tiles2 = AllocObjTiles(1024, 0);
+    p->palette2 = LoadObjPalette(gUnk_09618118, 32);
+    func_08002A10(p->tiles2, gUnk_090A8FC4);
     AnimInit(&p->unk_38, (s32)gUnk_09EEB180, (s32)gUnk_09EEB150);
     AnimStart(&p->unk_38, 0, 1);
     p->unk_58 = -2048;
@@ -4249,7 +4249,7 @@ void func_0806CF04(ContinueWork* p) {
     func_08006120(1, 24);
 
     for (i = 0; i < 5; i++) {
-        func_080062F4(((Handle0806180C*)p->unk_04)->unk_06 + i, 0);
+        func_080062F4(((Handle0806180C*)p->palette)->unk_06 + i, 0);
     }
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
@@ -4261,8 +4261,8 @@ s32 func_0806D0A8(ContinueWork* p) {
     s32* t;
 
     func_08006954();
-    p->unk_18 = AnimUpdate(&p->unk_20);
-    p->unk_1C = AnimUpdate(&p->unk_38);
+    p->gfx = AnimUpdate(&p->unk_20);
+    p->gfx2 = AnimUpdate(&p->unk_38);
     gBldCnt = 0xB54;
     gBldAlpha = p->unk_66;
 
@@ -4343,20 +4343,20 @@ s32 func_0806D0A8(ContinueWork* p) {
     p->unk_64 += 4;
 }
 void func_0806D288(ContinueWork* p) {
-    DrawSprite(p->unk_50 >> 8, p->unk_54 >> 8, p->unk_18, p->unk_00, p->unk_04, 0, 4, 100);
-    DrawSprite(120, 120, p->unk_1C, p->unk_08, p->unk_0C, 0, 0, 100);
+    DrawSprite(p->unk_50 >> 8, p->unk_54 >> 8, p->gfx, p->tiles, p->palette, 0, 4, 100);
+    DrawSprite(120, 120, p->gfx2, p->tiles2, p->palette2, 0, 0, 100);
 }
 void Continue_3(ContinueWork* p) {
     DisableBg(0);
     DisableBg(2);
     LoadBgMap(0, gUnk_08125E24, 0x800);
     LoadBgMap(2, gUnk_08125E24, 0x800);
-    ReleaseObjTiles(p->unk_08);
-    ReleaseObjPalette(p->unk_0C);
-    ReleaseObjPalette(p->unk_04);
-    ReleaseObjTiles(p->unk_00);
-    ReleaseObjTiles(p->unk_10);
-    ReleaseObjPalette(p->unk_14);
+    ReleaseObjTiles(p->tiles2);
+    ReleaseObjPalette(p->palette2);
+    ReleaseObjPalette(p->palette);
+    ReleaseObjTiles(p->tiles);
+    ReleaseObjTiles(p->tiles3);
+    ReleaseObjPalette(p->palette3);
     gBldCnt = 0;
 }
 #ifndef VERSION_EU
