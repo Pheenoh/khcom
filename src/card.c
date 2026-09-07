@@ -236,7 +236,7 @@ void UpdatePlayTime(void);
 void func_080B31A0(void);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void func_0806BA0C(s16 v, u8* out);
-u8 Mapcard_1(u8* work, void* a);
+u8 Mapcard_1(MapcardWork* w, void* a);
 extern u16 gBldAlpha;
 extern u8* gUnk_02039DC8;
 extern u8 gUnk_0908B1B4[];
@@ -290,9 +290,9 @@ u8 func_0807D194(UnkStruct_02034AAC* p, void* a);
 u8 func_0807CBC0(UnkStruct_02034AAC* p, void* a);
 u8 func_0807BD64(UnkStruct_02034AAC* p, void* a);
 u8 card_reload_1(UnkStruct_02034AAC* p, void* a);
-void func_080949A0(u8* work);
-u8 func_08094A18(u8* work, void* a);
-void func_08094CE4(u8* work);
+void func_080949A0(MapcardWork* w);
+u8 func_08094A18(MapcardWork* w, void* a);
+void func_08094CE4(MapcardWork* w);
 extern u16 gBldCnt;
 s32 func_08097A80(u8* work);
 u8 AnimIsFinished(AnimState* a);
@@ -11962,149 +11962,145 @@ void Mapcard_0(MapcardWork* w, MapcardArgs* a) {
     w->unk_1C = &gUnk_09EE4BF4[w->unk_18->unk_1E];
     func_08094E90(w);
     func_08094DA8(w);
-    func_08094CE4((u8*)w);
+    func_08094CE4(w);
 }
 
-u8 func_080947B4(u8* work, void* a);
-s32 func_080948F0(u8* work, void* a);
+u8 func_080947B4(MapcardWork* w, void* a);
+s32 func_080948F0(MapcardWork* w, void* a);
 
-u8 Mapcard_1(u8* work, void* a) {
-    if (*(u16*)&work[0x6C] & 0xC) {
-        work[0x6F] = 12;
-        func_08094DEC((MapcardWork*)work);
+u8 Mapcard_1(MapcardWork* w, void* a) {
+    if (w->unk_6C & 0xC) {
+        w->unk_6F = 12;
+        func_08094DEC(w);
         SetTaskUpdate(a, (void*)func_080948F0);
     }
 
-    if (*(u16*)&work[0x6C] & 0x200) {
-        work[0x6E] = 0;
-        work[0x6F] = 8;
+    if (w->unk_6C & 0x200) {
+        w->unk_6E = 0;
+        w->unk_6F = 8;
         SetTaskUpdate(a, (void*)func_080947B4);
     }
 
-    if (*(u16*)&work[0x6C] & 0x40) {
-        work[0x6E] = 0;
-        work[0x6F] = 8;
+    if (w->unk_6C & 0x40) {
+        w->unk_6E = 0;
+        w->unk_6F = 8;
         SetTaskUpdate(a, (void*)func_08094934);
     }
 
-    if (*(u16*)&work[0x6C] & 0x400) {
+    if (w->unk_6C & 0x400) {
         return 0;
     }
 
-    work[0x6E] = 0;
-    func_08094DA8((MapcardWork*)work);
-    func_08094CE4(work);
+    w->unk_6E = 0;
+    func_08094DA8(w);
+    func_08094CE4(w);
     return 1;
 }
 
-u8 func_080947B4(u8* work, void* a) {
-    ApproachValue(&work[0x4C], gUnk_09EE7520[0] << 8, work[0x6F]);
-    work[0x6F]--;
+u8 func_080947B4(MapcardWork* w, void* a) {
+    ApproachValue(&w->unk_4C, gUnk_09EE7520[0] << 8, w->unk_6F);
+    w->unk_6F--;
 
-    if (!(*(u16*)&work[0x6C] & 0x200)) {
-        work[0x6F] = 8;
+    if (!(w->unk_6C & 0x200)) {
+        w->unk_6F = 8;
         SetTaskUpdate(a, (void*)func_0809486C);
     }
 
-    if (*(u16*)&work[0x6C] & 0x100) {
-        work[0x6E] += 8;
+    if (w->unk_6C & 0x100) {
+        w->unk_6E += 8;
     } else {
-        work[0x6E] = 0;
+        w->unk_6E = 0;
     }
 
-    if (*(u16*)&work[0x6C] & 0x40) {
-        work[0x6E] = 0;
-        work[0x6F] = 8;
+    if (w->unk_6C & 0x40) {
+        w->unk_6E = 0;
+        w->unk_6F = 8;
         SetTaskUpdate(a, (void*)func_08094934);
     }
 
-    if (*(u16*)&work[0x6C] & 0x400) {
+    if (w->unk_6C & 0x400) {
         return 0;
     }
 
-    func_08094DA8((MapcardWork*)work);
-    func_08094CE4(work);
+    func_08094DA8(w);
+    func_08094CE4(w);
     return 1;
 }
 
-u8 func_0809486C(u8* work, void* a) {
-    ApproachValue(&work[0x4C], gUnk_09EE7520[work[0x21] % 6] << 8, work[0x6F]);
-    work[0x6F]--;
+u8 func_0809486C(MapcardWork* w, void* a) {
+    ApproachValue(&w->unk_4C, gUnk_09EE7520[w->unk_21 % 6] << 8, w->unk_6F);
+    w->unk_6F--;
 
-    if (work[0x6F] == 0) {
+    if (w->unk_6F == 0) {
         SetTaskUpdate(a, Mapcard_1);
     }
 
-    if (*(u16*)&work[0x6C] & 0x100) {
-        work[0x6E] += 8;
+    if (w->unk_6C & 0x100) {
+        w->unk_6E += 8;
     } else {
-        work[0x6E] = 0;
+        w->unk_6E = 0;
     }
 
-    func_08094DA8((MapcardWork*)work);
-    func_08094CE4(work);
+    func_08094DA8(w);
+    func_08094CE4(w);
     return 1;
 }
 
-s32 func_080948F0(u8* work, void* a) {
+s32 func_080948F0(MapcardWork* w, void* a) {
     u8 t;
 
-    t = func_08094E4C(work);
-    func_08094DA8(work);
-    func_08094CE4(work);
+    t = func_08094E4C(w);
+    func_08094DA8(w);
+    func_08094CE4(w);
 
     if (t == 0) {
-        *(u16*)&work[0x6C] &= 0xFFF3;
+        w->unk_6C &= 0xFFF3;
         SetTaskUpdate(a, Mapcard_1);
     }
 
     return 1;
 }
 
-u8 func_08094934(u8* work, void* a) {
-    work[0x6E] = 0;
-    ApproachValue(&work[0x4C], 0x7800, work[0x6F]);
-    ApproachValue(&work[0x50], 0x3800, work[0x6F]);
+u8 func_08094934(MapcardWork* w, void* a) {
+    w->unk_6E = 0;
+    ApproachValue(&w->unk_4C, 0x7800, w->unk_6F);
+    ApproachValue(&w->unk_50, 0x3800, w->unk_6F);
 
-    if (work[0x6F] != 0) {
-        work[0x6F]--;
+    if (w->unk_6F != 0) {
+        w->unk_6F--;
     } else {
-        work[0x70]++;
+        w->unk_70++;
 
-        if (work[0x70] > 15) {
-            func_080949A0(work);
+        if (w->unk_70 > 15) {
+            func_080949A0(w);
             SetTaskUpdate(a, (void*)func_08094A18);
         }
     }
 
-    func_08094CE4(work);
+    func_08094CE4(w);
     return 1;
 }
 
-void func_080949A0(u8* work) {
+void func_080949A0(MapcardWork* w) {
     s32 v[2];
     s32 dx;
     s32 dy;
-    s32 k;
-    u16* q;
     s32* p = func_080E04E0();
 
     dx = (p[0] >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
-    v[0] = dx * 256 - *(s32*)&work[0x4C];
-    v[1] = dy * 256 - *(s32*)&work[0x50];
-    *(s32*)&work[0x64] = func_0805F5A4(&v[0], &v[1]);
-    *(s32*)&work[0x54] = -v[0];
-    *(s32*)&work[0x58] = -v[1];
-    *(s32*)&work[0x60] = 0x300;
-    *(s32*)&work[0x5C] = 25;
-    work[0x6E] = 0;
-    q = (u16*)&work[0x68];
-    k = 0x100;
-    *q = k;
+    v[0] = dx * 256 - w->unk_4C;
+    v[1] = dy * 256 - w->unk_50;
+    w->unk_64 = func_0805F5A4(&v[0], &v[1]);
+    w->unk_54 = -v[0];
+    w->unk_58 = -v[1];
+    w->unk_60 = 0x300;
+    w->unk_5C = 25;
+    w->unk_6E = 0;
+    w->unk_68 = 0x100;
 }
 
-u8 func_08094A18(u8* work, void* a) {
+u8 func_08094A18(MapcardWork* w, void* a) {
     s32* p;
     s32 dx;
     s32 dy;
@@ -12118,37 +12114,40 @@ u8 func_08094A18(u8* work, void* a) {
     dx = (p[0] >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
 
-    if (*(s32*)&work[0x60] < 0) {
-        x = (dx << 8) - *(s32*)&work[0x4C];
-        y = (dy << 8) - *(s32*)&work[0x50];
+    if (w->unk_60 < 0) {
+        x = (dx << 8) - w->unk_4C;
+        y = (dy << 8) - w->unk_50;
         func_0805F5A4(&x, &y);
-        *(s32*)&work[0x54] = -x;
-        *(s32*)&work[0x58] = -y;
+        w->unk_54 = -x;
+        w->unk_58 = -y;
     }
 
-    work[0x6E] += 24;
-    t = *(u16*)&work[0x68];
-    *(u16*)&work[0x68] = (s16)t > 25 ? t - 12 : 25;
-    *(s32*)&work[0x4C] += (*(s32*)&work[0x54] * *(s32*)&work[0x60]) >> 8;
-    *(s32*)&work[0x50] += (*(s32*)&work[0x58] * *(s32*)&work[0x60]) >> 8;
-    d = func_0805F588((dx << 8) - *(s32*)&work[0x4C], (dy << 8) - *(s32*)&work[0x50]);
-    *(s32*)&work[0x64] = d;
-    *(s32*)&work[0x60] -= *(s32*)&work[0x5C];
-    *(s32*)&work[0x5C] += 2;
+    {
+        u8* q = &w->unk_6E;
+        *q += 24;
+        t = *(u16*)(q - 6);
+        *(u16*)(q - 6) = (s16)t > 25 ? t - 12 : 25;
+    }
+    w->unk_4C += (w->unk_54 * w->unk_60) >> 8;
+    w->unk_50 += (w->unk_58 * w->unk_60) >> 8;
+    d = func_0805F588((dx << 8) - w->unk_4C, (dy << 8) - w->unk_50);
+    w->unk_64 = d;
+    w->unk_60 -= w->unk_5C;
+    w->unk_5C += 2;
 
-    if ((*(u8**)&work[0x24])[0x2BE] != 1) {
+    if ((*(u8**)((u8*)w + 0x24))[0x2BE] != 1) {
         if (d <= 0x7FF) {
             func_08093BE0();
-            f = *(u16*)&work[0x6C] | 0x80;
-            *(u16*)&work[0x6C] = f;
-            func_08093BEC((u32)&gUnk_09EE4C80[work[0x20] + work[0x74]] + 0x20);
+            f = w->unk_6C | 0x80;
+            w->unk_6C = f;
+            func_08093BEC((u32)&gUnk_09EE4C80[w->unk_20 + w->unk_74] + 0x20);
         }
     } else {
-        if (d <= 0x7FF && (*(u8**)&work[0x24])[0x2DA] == 0) {
+        if (d <= 0x7FF && (*(u8**)((u8*)w + 0x24))[0x2DA] == 0) {
             func_08093BE0();
-            f = *(u16*)&work[0x6C] | 0x80;
-            *(u16*)&work[0x6C] = f;
-            func_08093BEC((u32)&gUnk_09EE4C80[work[0x20] + work[0x74]] + 0x20);
+            f = w->unk_6C | 0x80;
+            w->unk_6C = f;
+            func_08093BEC((u32)&gUnk_09EE4C80[w->unk_20 + w->unk_74] + 0x20);
         }
     }
 
@@ -12187,12 +12186,12 @@ void Mapcard_2(MapcardWork* w) {
 #else
 INCLUDE_ASM("card/Mapcard_2.s");
 #endif
-void Mapcard_3(u8* work) {
-    if (*(u16*)&work[0x6C] & 1) {
-        ReleaseObjTiles(*(void**)&work[0x08]);
-        ReleaseObjPalette(*(void**)&work[0x0C]);
-        ReleaseObjTiles(*(void**)&work[0x10]);
-        ReleaseObjPalette(*(void**)&work[0x14]);
+void Mapcard_3(MapcardWork* w) {
+    if (w->unk_6C & 1) {
+        ReleaseObjTiles(w->unk_08);
+        ReleaseObjPalette(w->unk_0C);
+        ReleaseObjTiles(*(void**)&w->unk_10[0]);
+        ReleaseObjPalette(*(void**)&w->unk_10[4]);
     }
 }
 
@@ -12210,32 +12209,32 @@ u8 func_08094CB0(s32* p) {
     return 0;
 }
 
-void func_08094CE4(u8* work) {
+void func_08094CE4(MapcardWork* w) {
     UnkStruct_08094CE4_A* a;
     UnkStruct_08094CE4_B* b;
     u16 t;
 
-    if (func_08094CB0((s32*)work)) {
-        if (!(*(u16*)&work[0x6C] & 1)) {
-            a = *(UnkStruct_08094CE4_A**)&work[0x18];
-            b = *(UnkStruct_08094CE4_B**)&work[0x1C];
-            *(void**)&work[0x08] = LoadObjTiles(a->unk_00, a->unk_18);
-            *(void**)&work[0x0C] = LoadObjPalette(a->unk_04, 32);
-            *(void**)&work[0x10] = LoadObjTiles(b->unk_00, b->unk_14);
-            *(void**)&work[0x14] = LoadObjPalette(b->unk_04, 32);
-            *(void**)&work[0x00] = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
-            func_080062F4((*(UnkStruct_080038C8**)&work[0x0C])->unk_06 + 16, 1);
-            func_080062F4((*(UnkStruct_080038C8**)&work[0x14])->unk_06 + 16, 1);
-            t = *(u16*)&work[0x6C] | 1;
-            *(u16*)&work[0x6C] = t;
+    if (func_08094CB0((s32*)w)) {
+        if (!(w->unk_6C & 1)) {
+            a = (UnkStruct_08094CE4_A*)w->unk_18;
+            b = (UnkStruct_08094CE4_B*)w->unk_1C;
+            w->unk_08 = LoadObjTiles(a->unk_00, a->unk_18);
+            w->unk_0C = LoadObjPalette(a->unk_04, 32);
+            *(void**)&w->unk_10[0] = LoadObjTiles(b->unk_00, b->unk_14);
+            *(void**)&w->unk_10[4] = LoadObjPalette(b->unk_04, 32);
+            w->unk_00 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
+            func_080062F4(((UnkStruct_080038C8*)w->unk_0C)->unk_06 + 16, 1);
+            func_080062F4(((UnkStruct_080038C8*)*(void**)&w->unk_10[4])->unk_06 + 16, 1);
+            t = w->unk_6C | 1;
+            w->unk_6C = t;
         }
-    } else if (*(u16*)&work[0x6C] & 1) {
-        ReleaseObjTiles(*(void**)&work[0x00]);
-        ReleaseObjTiles(*(void**)&work[0x08]);
-        ReleaseObjPalette(*(void**)&work[0x0C]);
-        ReleaseObjTiles(*(void**)&work[0x10]);
-        ReleaseObjPalette(*(void**)&work[0x14]);
-        *(u16*)&work[0x6C] &= ~1;
+    } else if (w->unk_6C & 1) {
+        ReleaseObjTiles(w->unk_00);
+        ReleaseObjTiles(w->unk_08);
+        ReleaseObjPalette(w->unk_0C);
+        ReleaseObjTiles(*(void**)&w->unk_10[0]);
+        ReleaseObjPalette(*(void**)&w->unk_10[4]);
+        w->unk_6C &= ~1;
     }
 }
 
@@ -15180,7 +15179,7 @@ s32 func_0809A54C(u8* work, void* a) {
         return 0;
     }
 
-    *(s32*)&work[0x1A4] += *(s32*)((u8*)gBtlWork + 0x12C);
+    *(s32*)&work[0x1A4] += *(s32*)&gBtlWork->unk_100[0x2C];
     *(s32*)&work[0x40] += *(s32*)&work[0x1A4];
     *(s32*)&work[0x38] += (gSineTable[work[0x1C6]] * *(s32*)&work[0x1A8]) >> 8;
     *(s32*)&work[0x3C] += (-gSineTable[work[0x1C6] + 64] * *(s32*)&work[0x1A8]) >> 8;
