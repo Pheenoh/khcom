@@ -379,7 +379,12 @@ typedef struct AnsemWork {
     u16 unk_1C8;
     u16 unk_1CA;
     s16 unk_1CC;
-    u8 unk_1CE[0x0E];
+    u8 unk_1CE[0x02];
+    s32 unk_1D0;
+    u8 unk_1D4[0x02];
+    s16 unk_1D6;
+    s16 unk_1D8;
+    u8 unk_1DA[0x02];
 } AnsemWork;
 
 typedef struct VixenFrgDef {
@@ -512,7 +517,9 @@ typedef struct BtlWork {
     u16 unk_072;
     u8 unk_074[0x08];
     Collider* unk_07C;
-    u8 unk_080[0x5A];
+    u8 unk_080[0x33];
+    u8 unk_0B3;
+    u8 unk_0B4[0x26];
     s16 unk_0DA;
     s16 unk_0DC;
     s16 unk_0DE;
@@ -710,6 +717,9 @@ extern u8 gUnk_09618458[];
 extern u8 gUnk_09EE1DA4[];
 extern u8 gUnk_09EE1DB4[];
 extern u8 gUnk_0813F0B8[];
+extern u8 gUnk_0813F0C4[];
+extern u8 gUnk_0813F0D0[];
+extern u8 gUnk_0813F140[];
 extern u8 gUnk_0813F1E0[];
 extern u8 gUnk_0813F1E8[];
 extern u8 gUnk_0813FA8C[];
@@ -884,6 +894,10 @@ void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
 void func_08018184(s32 a, s32 b, s32 c, s32 d);
 void func_08017F70(s32 a, s32 b, s32 c, s32 d);
 void func_08006120(s32 a, s32 b);
+void func_08006184(s32 a, s32 b);
+void func_0801475C(s32 a, s32 b, s32 c);
+void func_080169A0(s32 x, s32 y, s32 z, u8 f);
+void func_08016AF4(s32 x, s32 y, s32 z, u8 f, s32 w);
 void func_080063A8(void);
 u8 func_0800F3BC(HumWork* work, s32 x, s32 y, s32 spd);
 u8 func_08081828(void);
