@@ -60,8 +60,6 @@ void func_0801CB44(void);
 s32 SaveLoadHeader(void);
 void func_08093BB4(void);
 void func_08093C04(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
 void func_080C736C(void);
 void func_080C73A4(s32 a, s32 b, s32 c);
 void SetBgSize(s32 a, s32 b);
