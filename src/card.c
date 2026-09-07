@@ -327,7 +327,7 @@ void func_08003A70(void* a, void* b);
 MapcardWork* ListPoolPrev(void* node);
 s32 func_08093838(UnkStruct_08093838* w);
 s32 func_080A5150(u8* work);
-s32 func_08098BA4(u8* work);
+s32 func_08098BA4(UnkStruct_08098BE8* w);
 u8 func_08082348(UnkStruct_02034AAC* p, void* a);
 u8 HCEffectName_1(UnkStruct_0809DF7C* w, void* a);
 void func_080AAEEC(UnkStruct_0808C940* w, s16 n);
@@ -360,7 +360,7 @@ u32 GetBgScreenBase(s32 bg);
 void func_0807DAD0(UnkStruct_02034AAC* p);
 void func_0807DE10(UnkStruct_02034AAC* p);
 u8 func_080A6474(u8* work, void* a);
-u8 RELOAD_CHILDREN_1(u8* work, void* a);
+u8 RELOAD_CHILDREN_1(UnkStruct_08098BE8* w, void* a);
 u8 func_080901B8(u8* p);
 void func_080A6968(u8* work);
 void func_080A7264(void** p);
@@ -14110,7 +14110,7 @@ void RELOAD_CHILDREN_0(UnkStruct_08098BE8* w, UnkStruct_080988C0_Args* a) {
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_08 = 0;
 
-    switch (w->unk_1A[0]) {
+    switch (w->unk_1A) {
     case 1:
         if ((s8)w->unk_18 <= 3) {
             w->unk_20 = gUnk_090361B0[(s8)w->unk_18] << 8;
@@ -14136,92 +14136,92 @@ void RELOAD_CHILDREN_0(UnkStruct_08098BE8* w, UnkStruct_080988C0_Args* a) {
     w->unk_46 = 0;
 }
 
-u8 RELOAD_CHILDREN_1(u8* work, void* a) {
-    u8 (*fn)(u8*, void*);
+u8 RELOAD_CHILDREN_1(UnkStruct_08098BE8* w, void* a) {
+    u8 (*fn)(UnkStruct_08098BE8*, void*);
 
-    if (*(u16*)&work[0x1C] & 2) {
-        work[0x46]++;
+    if (w->unk_1C & 2) {
+        w->unk_46++;
 
-        if (work[0x46] == 30) {
-            work[0x44] = 8;
+        if (w->unk_46 == 30) {
+            w->unk_44 = 8;
             fn = func_08098AE4;
             SetTaskUpdate(a, fn);
-            return fn(work, a);
+            return fn(w, a);
         }
     }
 
-    if (*(u16*)&work[0x1C] & 1) {
-        work[0x44] = 8;
-        *(u16*)&work[0x1C] &= ~1;
+    if (w->unk_1C & 1) {
+        w->unk_44 = 8;
+        w->unk_1C &= ~1;
     }
 
-    if (work[0x18] <= 3) {
-        switch (work[0x1A]) {
+    if (w->unk_18 <= 3) {
+        switch (w->unk_1A) {
         case 1:
-            ApproachValue(&work[0x20], gUnk_090361B0[*(s8*)&work[0x18]] << 8, work[0x44]);
+            ApproachValue(&w->unk_20, gUnk_090361B0[(s8)w->unk_18] << 8, w->unk_44);
             break;
         case 2:
-            ApproachValue(&work[0x20], gUnk_090361B8[*(s8*)&work[0x18]] << 8, work[0x44]);
+            ApproachValue(&w->unk_20, gUnk_090361B8[(s8)w->unk_18] << 8, w->unk_44);
             break;
         }
 
-        ApproachValue(&work[0x24], gUnk_090361C0[*(s8*)&work[0x18]] << 8, work[0x44]);
-    } else if ((s8)work[0x18] < 0) {
-        func_08000D90(&work[0x30], *(void**)&work[0xC]);
-        *(void**)&work[8] = LoadObjTiles(gUnk_08F709B0[work[0x19]].unk_10, 0xD00);
-        work[0x44] = 8;
-        *(s32*)&work[0x28] = 0x66;
+        ApproachValue(&w->unk_24, gUnk_090361C0[(s8)w->unk_18] << 8, w->unk_44);
+    } else if ((s8)w->unk_18 < 0) {
+        func_08000D90(w->unk_30, *(void**)w->unk_0C);
+        w->unk_08 = LoadObjTiles(gUnk_08F709B0[w->unk_19].unk_10, 0xD00);
+        w->unk_44 = 8;
+        w->unk_28 = 0x66;
         SetTaskUpdate(a, (void*)func_08098BA4);
         return 1;
     }
 
-    if (work[0x44] != 0) {
-        work[0x44]--;
+    if (w->unk_44 != 0) {
+        w->unk_44--;
     }
 
-    work[0x45] += 8;
+    w->unk_45 += 8;
     return 1;
 }
 
-u8 func_08098AE4(u8* work, void* a) {
-    u8 (*f)(u8*, void*);
+u8 func_08098AE4(UnkStruct_08098BE8* w, void* a) {
+    u8 (*f)(UnkStruct_08098BE8*, void*);
     u16 v;
 
-    v = *(u16*)&work[0x1C] & 2;
+    v = w->unk_1C & 2;
 
     if (v == 0) {
-        work[0x44] = 8;
+        w->unk_44 = 8;
         f = RELOAD_CHILDREN_1;
         SetTaskUpdate(a, (void*)f);
-        work[0x46] = 0;
-        return f(work, a);
+        w->unk_46 = 0;
+        return f(w, a);
     }
 
-    switch (work[0x1A]) {
+    switch (w->unk_1A) {
     case 1:
-        ApproachValue(&work[0x20], gUnk_090361B0[(s8)work[0x18]] << 8, work[0x44]);
+        ApproachValue(&w->unk_20, gUnk_090361B0[(s8)w->unk_18] << 8, w->unk_44);
         break;
     case 2:
-        ApproachValue(&work[0x20], gUnk_090361B8[(s8)work[0x18]] << 8, work[0x44]);
+        ApproachValue(&w->unk_20, gUnk_090361B8[(s8)w->unk_18] << 8, w->unk_44);
         break;
     }
 
-    ApproachValue(&work[0x24], gUnk_090361C0[3] << 8, work[0x44]);
+    ApproachValue(&w->unk_24, gUnk_090361C0[3] << 8, w->unk_44);
 
-    if (work[0x44] != 0) {
-        work[0x44]--;
+    if (w->unk_44 != 0) {
+        w->unk_44--;
     }
 
     return 1;
 }
 
-s32 func_08098BA4(u8* work) {
-    ApproachValue(&work[0x20], 0, work[0x44]);
-    ApproachValue(&work[0x24], 0, work[0x44]);
-    ApproachValue(&work[0x28], 256, work[0x44]);
+s32 func_08098BA4(UnkStruct_08098BE8* w) {
+    ApproachValue(&w->unk_20, 0, w->unk_44);
+    ApproachValue(&w->unk_24, 0, w->unk_44);
+    ApproachValue(&w->unk_28, 256, w->unk_44);
 
-    if (work[0x44] != 0) {
-        work[0x44]--;
+    if (w->unk_44 != 0) {
+        w->unk_44--;
         return 1;
     }
 
@@ -14993,54 +14993,54 @@ void scrollbar_0(ScrollBarWork* w, u16* args) {
     w->unk_17 = 0;
 }
 
-u8 scrollbar_1(u8* p) {
-    return p[22];
+u8 scrollbar_1(ScrollBarWork* w) {
+    return w->unk_16;
 }
 void scrollbar_2(void) {
 }
 void scrollbar_3(void) {
 }
-void func_08099F74(u8* p) {
-    if (p != 0) {
-        p[22] = 0;
+void func_08099F74(ScrollBarWork* w) {
+    if (w != 0) {
+        w->unk_16 = 0;
     }
 }
-void func_08099F80(u16* p) {
-    if (p != 0) {
-        if (p[9] != 0) {
-            p[8]++;
-            p[9]--;
+void func_08099F80(ScrollBarWork* w) {
+    if (w != 0) {
+        if (w->unk_12 != 0) {
+            w->unk_10++;
+            w->unk_12--;
         } else {
-            p[9] = p[10] - 1;
-            p[8] = 0;
+            w->unk_12 = w->unk_14 - 1;
+            w->unk_10 = 0;
         }
     }
 }
-void func_08099FA4(u16* p) {
-    if (p != 0) {
-        if (p[8] != 0) {
-            p[8]--;
-            p[9]++;
+void func_08099FA4(ScrollBarWork* w) {
+    if (w != 0) {
+        if (w->unk_10 != 0) {
+            w->unk_10--;
+            w->unk_12++;
         } else {
-            p[8] = p[10] - 1;
-            p[9] = 0;
+            w->unk_10 = w->unk_14 - 1;
+            w->unk_12 = 0;
         }
     }
 }
-void func_08099FC8(u16* p) {
-    if (p != 0) {
-        p[10]--;
+void func_08099FC8(ScrollBarWork* w) {
+    if (w != 0) {
+        w->unk_14--;
     }
 }
-void func_08099FD8(u16* p) {
-    if (p != 0) {
-        p[10]++;
+void func_08099FD8(ScrollBarWork* w) {
+    if (w != 0) {
+        w->unk_14++;
     }
 }
-void func_08099FE8(u8* p, u16 b, u8 c) {
-    if (p != 0) {
-        *(u16*)&p[14] = b;
-        p[23] = c;
+void func_08099FE8(ScrollBarWork* w, u16 b, u8 c) {
+    if (w != 0) {
+        w->unk_0E = b;
+        w->unk_17 = c;
     }
 }
 s32 func_08099FFC(void* pool, u16 a, u16 b, u16 c, u16 d, u16 e) {

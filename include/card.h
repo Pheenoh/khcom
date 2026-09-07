@@ -583,15 +583,21 @@ typedef struct UnkStruct_08098BE8 {
     s32* unk_14;
     u8 unk_18;
     u8 unk_19;
-    u8 unk_1A[0x06];
+    u8 unk_1A;
+    u8 unk_1B;
+    u16 unk_1C;
+    u8 unk_1E[0x02];
     s32 unk_20;
     s32 unk_24;
     s32 unk_28;
     u8 unk_2C[0x04];
-    u8 unk_30[0x15];
+    u8 unk_30[0x14];
+    u8 unk_44;
     u8 unk_45;
     u8 unk_46;
 } UnkStruct_08098BE8;
+
+typedef char UnkStruct_08098BE8_sizechk[(sizeof(struct UnkStruct_08098BE8) == 0x48) ? 1 : -1];
 
 typedef struct UnkStruct_08098670 {
     void* unk_00;
@@ -823,10 +829,12 @@ typedef struct ScrollBarWork {
     u16 unk_0E;
     u16 unk_10;
     u16 unk_12;
-    u8 unk_14[0x02];
+    u16 unk_14;
     u8 unk_16;
     u8 unk_17;
 } ScrollBarWork;
+
+typedef char ScrollBarWork_sizechk[(sizeof(struct ScrollBarWork) == 0x18) ? 1 : -1];
 
 typedef struct PrizeCardWork {
     UnkStruct_080038C8* unk_00;
@@ -1787,7 +1795,7 @@ u8 func_080947B4(MapcardWork* w, void* a);
 u8 func_080A63B8(u8* work, void* a);
 s16 func_080859A0(s32 mode, Deck* d);
 u8 func_080A3DD0(UnkStruct_080A3F5C* w);
-u8 func_08098AE4(u8* work, void* a);
+u8 func_08098AE4(UnkStruct_08098BE8* w, void* a);
 void DeckCard2_2(UnkStruct_0808E890* n);
 void func_08081760(UnkStruct_08080268* w);
 void func_08094CE4(MapcardWork* w);
@@ -1891,7 +1899,7 @@ void func_080A6D0C(void);
 void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a);
 void func_0807BC24(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
 void func_08081A3C(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
-u8 RELOAD_CHILDREN_1(u8* work, void* a);
+u8 RELOAD_CHILDREN_1(UnkStruct_08098BE8* w, void* a);
 u8 func_0807CFA8(UnkStruct_02034AAC* p, void* a);
 u8 func_08097404(u8* work, void* a);
 u8 func_080824C8(UnkStruct_02034AAC* p, void* a);
