@@ -150,6 +150,14 @@ typedef struct SrollBSecnWork {
     AnimState unk_34;
 } SrollBSecnWork;
 
+typedef struct SrollBSecnArg {
+    s32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32* unk_0C;
+    s32 unk_10;
+} SrollBSecnArg;
+
 typedef struct SrollBCrtnWork {
     s32 unk_00;
     u16 unk_04;
@@ -266,6 +274,7 @@ typedef struct SoundEntry {
 } SoundEntry;
 
 extern void* gUnk_09A54218[][2];
+extern void* gUnk_09A54374[][4];
 extern s32 gUnk_09A542CC[];
 extern s32 gUnk_09A5430C[];
 extern u8 gTaskDescSrollBCrtn[];
@@ -280,11 +289,14 @@ extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_09C5CC7C[];
 extern u8 gUnk_09C638BE[];
+extern u8 gUnk_09C87A10[];
 extern u8 gUnk_09C8D47A[];
 extern u8 gUnk_09C8F1FA[];
 extern u8 gUnk_09C904B4[];
 extern u8 gUnk_09D6BE34[];
+extern u8 gUnk_09D6BE74[];
 extern u8 gUnk_09D6CD74[];
+extern u8 gUnk_09D6CF34[];
 extern u8 gUnk_09D6CF54[];
 extern u8 gUnk_09D6D034[];
 extern u8 gUnk_09D6D114[];
@@ -296,6 +308,8 @@ extern u8 gUnk_09EFB208[];
 extern u8 gUnk_09EFB244[];
 extern u8 gUnk_09EFB5B0[];
 extern u8 gUnk_09EFB5EC[];
+extern u8 gUnk_09EFB828[];
+extern u8 gUnk_09EFB834[];
 extern u8 gUnk_09EFB840[];
 extern u8 gUnk_09EFB9B8[];
 extern u8 gUnk_09EFB9CC[];
@@ -343,6 +357,7 @@ void func_08116B90(SrollWork* w, u16 x, u16 y, u8* s, u8 flush);
 u32 sub_08116B10(SrollWork* w);
 u8 task_sroll_b_logo_1(SrollBLogoWork* w);
 void task_sroll_b_logo_2(SrollBLogoWork* w);
+void task_sroll_b_secn_0(SrollBSecnWork* w, SrollBSecnArg* a);
 u8 task_sroll_b_secn_1(SrollBSecnWork* w);
 void task_sroll_b_secn_2(SrollBSecnWork* w);
 void task_sroll_b_secn_3(SrollBSecnWork* w);
