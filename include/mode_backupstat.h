@@ -72,10 +72,10 @@ typedef struct PcWork {
     s16 unk_03A;
     s16 unk_03C;
     u8 unk_03E[0x02];
-    void* unk_040;
-    void* unk_044[2];
-    void* unk_04C;
-    void* unk_050;
+    void* tiles;
+    void* tiles2[2];
+    void* palette;
+    void* palette2;
     u8 unk_054[0x280];
     Task* unk_2D4[4];
     Task* unk_2E4;

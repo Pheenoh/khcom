@@ -177,8 +177,8 @@ void func_080BA104(BosSub* sub, TmFootWork* work) {
 void func_080BA11C(TmFootWork* work) {
     work->unk_002 = 0;
     work->unk_000 = 0;
-    func_08002A10(work->unk_00C, gUnk_09654C04);
-    func_08002A10(work->unk_010, gUnk_09654C04);
+    func_08002A10(work->tiles2, gUnk_09654C04);
+    func_08002A10(work->tiles3, gUnk_09654C04);
     work->unk_12C = gUnk_09EF39DC[2];
     work->unk_244 = gUnk_09EF39DC[2];
 
@@ -211,8 +211,8 @@ void func_080BA11C(TmFootWork* work) {
     }
 }
 void func_080BA2B0(TmFootWork* work) {
-    func_08002A10(work->unk_00C, gUnk_09654C04);
-    func_08002A10(work->unk_010, gUnk_09654C04);
+    func_08002A10(work->tiles2, gUnk_09654C04);
+    func_08002A10(work->tiles3, gUnk_09654C04);
     work->unk_12C = gUnk_09EF39DC[0];
     work->unk_244 = gUnk_09EF39DC[0];
 
@@ -255,8 +255,8 @@ void func_080BA43C(TmFootWork* work, s16 a) {
 void func_080BA49C(TmFootWork* work) {
     work->unk_002 = 0;
     work->unk_000 = 0;
-    func_08002A10(work->unk_00C, gUnk_09658C04);
-    func_08002A10(work->unk_010, gUnk_09658C04);
+    func_08002A10(work->tiles2, gUnk_09658C04);
+    func_08002A10(work->tiles3, gUnk_09658C04);
     work->unk_12C = gUnk_09EF3A1C[6];
     work->unk_244 = gUnk_09EF3A1C[1];
 
@@ -348,8 +348,8 @@ void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
     u16 f;
 
     work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
-    work->unk_00C = AllocObjTiles(0x440, gUnk_09654C04);
-    work->unk_010 = AllocObjTiles(0x440, gUnk_09654C04);
+    work->tiles2 = AllocObjTiles(0x440, gUnk_09654C04);
+    work->tiles3 = AllocObjTiles(0x440, gUnk_09654C04);
     work->palette = LoadObjPalette(gUnk_096FB2A4, 0x60);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->unk_12C = gUnk_09EF39DC[2];
@@ -357,7 +357,7 @@ void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
     work->unk_35C = gUnk_09EF39BC;
     work->unk_474 = gUnk_09EF39C4;
     work->unk_47C = arg;
-    work->unk_47C->unk_42 += ((u16*)work->unk_00C)[4] + ((u16*)work->unk_010)[4];
+    work->unk_47C->unk_42 += ((u16*)work->tiles2)[4] + ((u16*)work->tiles3)[4];
     work->unk_003 = 0;
     work->unk_004 = 0;
     work->unk_000 = 0;
@@ -584,9 +584,9 @@ void task_bos_tm_foot_2(TmFootWork* work) {
     s2 = s0 + 2;
     s3 = s0 + 3;
     WorldToScreen(&x, &y, s0->x, s0->y, s0->z);
-    DrawSprite(x, y, s0->gfx, work->unk_00C, pal, 0, mode, (u16)(-4100 - (s0->y >> 8) * 4));
+    DrawSprite(x, y, s0->gfx, work->tiles2, pal, 0, mode, (u16)(-4100 - (s0->y >> 8) * 4));
     WorldToScreen(&x, &y, s1->x, s1->y, s1->z);
-    DrawSprite(x, y, s1->gfx, work->unk_010, pal, 0, mode, (u16)(-4100 - (s1->y >> 8) * 4));
+    DrawSprite(x, y, s1->gfx, work->tiles3, pal, 0, mode, (u16)(-4100 - (s1->y >> 8) * 4));
     WorldToScreen(&x, &y, s2->x, s2->y, s2->z);
     DrawSprite(x, y, s2->gfx, work->tiles, pal, 0, mode, (u16)(-4100 - (s2->y >> 8) * 4));
     WorldToScreen(&x, &y, s3->x, s3->y, s3->z);
@@ -847,7 +847,7 @@ void task_bos_tm_arm_0(TmArmWork* work, TmArmSrc* arg) {
     TmArmJoint* q;
 
     work->unk_00C = arg;
-    work->unk_000 = LoadObjTiles(gUnk_09652E84, 0x1D80);
+    work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
     work->palette = LoadObjPalette(gUnk_096FB2A4, 0x60);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->unk_1B0 = 0;
@@ -896,12 +896,12 @@ void task_bos_tm_arm_0(TmArmWork* work, TmArmSrc* arg) {
 
     work->unk_010[3].unk_30 = gUnk_0962E7A0;
     work->unk_010[7].unk_30 = gUnk_0962E7A0;
-    work->unk_238 = AllocObjTiles(0x140, gUnk_09657C04);
-    *(u16*)((u8*)work->unk_00C->unk_18 + 66) += ((u16*)work->unk_238)[4];
+    work->tiles2 = AllocObjTiles(0x140, gUnk_09657C04);
+    *(u16*)((u8*)work->unk_00C->unk_18 + 66) += ((u16*)work->tiles2)[4];
     AnimInit(&work->anim, gUnk_09EF3A18, gUnk_09EF39F8);
     AnimStart(&work->anim, 0, 1);
-    work->unk_1D8 = work->unk_238;
-    work->unk_1F0 = work->unk_238;
+    work->unk_1D8 = work->tiles2;
+    work->unk_1F0 = work->tiles2;
     gfx = AnimGetGfx(&work->anim);
     work->unk_1DC = (u32)gfx;
     work->unk_1F4 = (u32)gfx;
@@ -1509,13 +1509,13 @@ void task_bos_tm_arm_2(TmArmWork* work) {
         affine = AllocObjAffine(j->unk_08, 256, 256, 0);
         WorldToScreen(&x, &y, work->unk_00C->unk_00 + j->unk_00, work->unk_00C->unk_04,
                       work->unk_00C->unk_08 + j->unk_04);
-        DrawSprite(x, y, j->unk_30, (void*)work->unk_000, pal, affine, 0x800,
+        DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
                    (u16)(-4100 - (work->unk_00C->unk_04 >> 8) * 4));
         j = &work->unk_010[i];
         affine = AllocObjAffine(j->unk_08, 256, 256, 0);
         WorldToScreen(&x, &y, work->unk_00C->unk_0C + j->unk_00, work->unk_00C->unk_10,
                       work->unk_00C->unk_14 + j->unk_04);
-        DrawSprite(x, y, j->unk_30, (void*)work->unk_000, pal, affine, 0x800,
+        DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
                    (u16)(-4100 - (work->unk_00C->unk_10 >> 8) * 4));
     }
 
@@ -1529,13 +1529,13 @@ void task_bos_tm_arm_2(TmArmWork* work) {
     affine = AllocObjAffine(j->unk_08, mode, 256, 0);
     WorldToScreen(&x, &y, work->unk_00C->unk_00 + j->unk_00, work->unk_00C->unk_04,
                   work->unk_00C->unk_08 + j->unk_04);
-    DrawSprite(x, y, j->unk_30, (void*)work->unk_000, pal, affine, 0x800,
+    DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
                (u16)(-4100 - (work->unk_00C->unk_04 >> 8) * 4));
     j = &work->unk_010[3];
     affine = AllocObjAffine(j->unk_08, mode, 256, 0);
     WorldToScreen(&x, &y, work->unk_00C->unk_0C + j->unk_00, work->unk_00C->unk_10,
                   work->unk_00C->unk_14 + j->unk_04);
-    DrawSprite(x, y, j->unk_30, (void*)work->unk_000, pal, affine, 0x800,
+    DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
                (u16)(-4100 - (work->unk_00C->unk_10 >> 8) * 4));
     TaskPoolDraw(&work->unk_1B4);
 }
@@ -1544,8 +1544,8 @@ INCLUDE_ASM("bos2/task_bos_tm_arm_2.s");
 #endif
 
 void task_bos_tm_arm_3(TmArmWork* work) {
-    ReleaseObjTiles((void*)work->unk_000);
-    ReleaseObjTiles((void*)work->unk_238);
+    ReleaseObjTiles((void*)work->tiles);
+    ReleaseObjTiles((void*)work->tiles2);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette((void*)work->palette2);
     TaskPoolDestroy(&work->unk_1B4);

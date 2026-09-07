@@ -247,11 +247,11 @@ void func_0810A018(PcWork* work) {
         ox = gUnk_02039DC8->unk_68;
         oy = gUnk_02039DC8->unk_6A;
     }
-    gfx = work->unk_04C;
+    gfx = work->palette;
 
     if (work->unk_018 == 0) {
         if (func_0801CA00(&work->unk_054)) {
-            gfx = work->unk_050;
+            gfx = work->palette2;
             work->unk_00A = 1;
         } else {
             work->unk_00A = 0;
@@ -280,7 +280,7 @@ void func_0810A018(PcWork* work) {
     while (!(cmd->unk_00 & 0x80)) {
         if (cmd->unk_00 & 1) {
             DrawSprite(cmd->unk_04 + sx, cmd->unk_06 + sy, gUnk_09EFAB18[cmd->unk_01],
-                work->unk_044[j], gfx, 0,
+                work->tiles2[j], gfx, 0,
                 func_08109FF0(work, work->unk_024 + (cmd->unk_02 << 10) - 0x3300),
                 func_0810A000(work, work->unk_024 + (cmd->unk_02 << 10) - 0x3300, 1));
         } else {
@@ -305,7 +305,7 @@ void func_0810A018(PcWork* work) {
     for (i = 23; i >= 0; i--) {
         if (work->unk_2FC[i].count != 0) {
             work->unk_2FC[i].attr[0] = work->unk_2FC[i].count;
-            DrawSprite(sx, sy - 0x40, work->unk_2FC[i].attr, work->unk_040, gfx, 0,
+            DrawSprite(sx, sy - 0x40, work->unk_2FC[i].attr, work->tiles, gfx, 0,
                 func_08109FF0(work, work->unk_024 + i * 0x400 - 0x3400),
                 func_0810A000(work, work->unk_024 + i * 0x400 - 0x3400, 1));
         }

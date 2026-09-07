@@ -56,11 +56,11 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     func_0801BDD4(q, p);
     func_080122AC(&work->unk_274, 8, 32, 56);
     LoadBgMap(1, gUnk_09D34A74, 0x1000);
-    work->unk_040 = (u32)LoadObjTiles(gUnk_09CB84B4, 0xAA0);
-    work->unk_044 = (u32)AllocObjTiles(0x400, gUnk_09C448D2);
-    work->unk_048 = (u32)AllocObjTiles(0x400, gUnk_09C448D2);
-    work->unk_04C = (u32)LoadObjPalette(gUnk_09D693D4, 0x60);
-    work->unk_050 = (u32)LoadObjPalette(gUnk_08F69BC4, 0x20);
+    work->tiles = (u32)LoadObjTiles(gUnk_09CB84B4, 0xAA0);
+    work->tiles2 = (u32)AllocObjTiles(0x400, gUnk_09C448D2);
+    work->tiles3 = (u32)AllocObjTiles(0x400, gUnk_09C448D2);
+    work->palette = (u32)LoadObjPalette(gUnk_09D693D4, 0x60);
+    work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 0x20);
     func_0801C298(0, 1);
     work->unk_2D4[0] = 0;
     work->unk_2D4[1] = 0;
@@ -386,8 +386,8 @@ u8 func_0810AF44(PcWork* work, s32 arg) {
     switch (s) {
     case 0:
         func_0801AF4C(p);
-        ReleaseObjPalette((void*)work->unk_050);
-        work->unk_050 = 0;
+        ReleaseObjPalette((void*)work->palette2);
+        work->palette2 = 0;
         func_0801C2DC(p, 1);
         func_0801C2DC(&work->unk_164, 1);
         gBtlWork->unk_068 |= 0x100000;
@@ -535,12 +535,12 @@ void task_bos_pc_3(PcWork* work) {
     func_0801B7D8(&work->unk_054);
     func_0801B7D8(&work->unk_164);
     func_08012304(&work->unk_274);
-    ReleaseObjTiles((void*)work->unk_040);
-    ReleaseObjTiles((void*)work->unk_044);
-    ReleaseObjTiles((void*)work->unk_048);
-    ReleaseObjPalette((void*)work->unk_04C);
-    if (work->unk_050 != 0) {
-        ReleaseObjPalette((void*)work->unk_050);
+    ReleaseObjTiles((void*)work->tiles);
+    ReleaseObjTiles((void*)work->tiles2);
+    ReleaseObjTiles((void*)work->tiles3);
+    ReleaseObjPalette((void*)work->palette);
+    if (work->palette2 != 0) {
+        ReleaseObjPalette((void*)work->palette2);
     }
     func_0810A4C4(work);
 }
