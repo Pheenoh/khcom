@@ -12,7 +12,6 @@ typedef struct ChkSndEntry {
     u16 songNum;
 } ChkSndEntry;
 extern ChkSndEntry gChkSndEntries[];
-extern Mode gModeDebug;
 extern TaskDesc gTaskDescPrint;
 
 void func_0809D2B0(u8 x, u8 y, u8 c, const char* s);

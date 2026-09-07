@@ -2869,7 +2869,7 @@ void Mode_MapChk_1(void) {
             break;
         }
     } else if ((GetKeysPressed() & 6) != 0) {
-        ModeRequest(gModeDebug, 0);
+        ModeRequest(&gModeDebug, 0);
     } else {
         func_080605A4(0);
         func_08060598();

@@ -895,7 +895,6 @@ extern const char gUnk_0984B834[];
 extern void (*const gUnk_09EF69A8[])(MapChkWork* p);
 extern const u8 gUnk_0984B458[][8];
 extern u8 gModeMapDbg[];
-extern u8 gModeDebug[];
 void func_080DF048(void);
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
 extern s16 gSineTable[];

@@ -162,7 +162,7 @@ void mode_movie_1(void) {
                 ModeRequest(gModeStaffRoll, 0);
                 break;
             default:
-                ModeRequest(gModeDebug, 0);
+                ModeRequest(&gModeDebug, 0);
                 break;
             }
         }
