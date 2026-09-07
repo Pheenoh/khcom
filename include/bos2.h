@@ -331,12 +331,12 @@ typedef struct JfMapWork {
 
 typedef struct JfLampWork {
     JfWork* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
+    void* tiles;
+    void* gfx;
+    void* tiles2;
+    void* gfx2;
+    void* palette;
+    void* palette2;
     s16 unk_1C;
     s16 unk_1E;
     s16 unk_20;
@@ -360,8 +360,8 @@ typedef struct JfLampWork {
 
 typedef struct JfRockWork {
     JfWork* unk_000;
-    void* unk_004;
-    void* unk_008;
+    void* tiles;
+    void* palette;
     void* gfx;
     AnimState anim;
     s16 unk_028;
@@ -390,9 +390,9 @@ typedef struct JfRockWork {
     s16 unk_15E;
     u8 unk_160;
     u8 unk_161[0x3];
-    void* unk_164;
-    void* unk_168;
-    void* unk_16C;
+    void* tiles2;
+    void* palette2;
+    void* gfx2;
     s32 unk_170;
     s32 unk_174;
     s32 unk_178;
@@ -414,8 +414,8 @@ typedef struct JfMajinFx {
 typedef struct JfMajinWork {
     JfWork* unk_00;
     void* tiles;
-    void* unk_08;
-    void* unk_0C;
+    void* palette;
+    void* palette2;
     void* gfx;
     AnimState anim;
     u8 unk_2C;
