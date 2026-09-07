@@ -365,7 +365,7 @@ void func_08019A30(void) {
 
         while (p != 0) {
             p->unk_034 &= ~0x80;
-            *(u16*)((u8*)p + 0xE2) = 0;
+            p->unk_0E2 = 0;
             p = ListPoolNext(&p->unk_0B8);
         }
         return;
@@ -1558,18 +1558,18 @@ u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d) {
 INCLUDE_ASM("unk_08019050/func_0801C6D4.s");
 #endif
 
-void func_0801C700(void* a, s32* b, s32* c, s32* d) {
+void func_0801C700(BtlObj* a, s32* b, s32* c, s32* d) {
     u16 n;
 
-    if (*(s32*)((u8*)a + 0xE8) == 3) {
+    if (a->unk_0E8 == 3) {
         if (b != 0) {
-            *b = *(s32*)((u8*)a + 0xF0);
+            *b = a->unk_0F0;
         }
         if (c != 0) {
-            *c = *(s32*)((u8*)a + 0xF4);
+            *c = a->unk_0F4;
         }
         if (d != 0) {
-            *d = *(s32*)((u8*)a + 0xF8);
+            *d = a->unk_0F8;
         }
         n = GetRandom() % 6;
 

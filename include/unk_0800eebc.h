@@ -545,7 +545,7 @@ u16 func_08093B38(void);
 void func_0809B6D0(void* p, s16 x, s16 y, s16 z, u16 n);
 void func_08096DB0(void* p, UnkStruct_0801B8A8* v);
 void func_0801B994(BtlObj* p);
-void func_0801C700(void* a, s32* b, s32* c, s32* d);
+void func_0801C700(BtlObj* a, s32* b, s32* c, s32* d);
 void func_08005974(void* a, u8 b, u16 c, s32 d, void* e);
 void func_08002A10(void* a, void* b);
 void func_08006778(void* a, s32 x, s32 y);
