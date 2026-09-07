@@ -36,7 +36,6 @@ extern TaskDesc gTaskDescStatusBar;
 extern TaskDesc gTaskDescStatus;
 
 void BgReset(void);
-void DisableBg(s32 bg);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void func_08006120(s32 a, u16 b);
