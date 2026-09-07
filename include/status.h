@@ -30,12 +30,12 @@ typedef struct StatusBarWork {
     void* palette;
     u16 unk_08;
     u16 unk_0A;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
-    s32 unk_20;
+    s32 y;
+    s32 targetY;
+    s32 y2;
+    s32 targetY2;
+    s32 x;
+    s32 targetX;
     u8 unk_24;
     u8 unk_25;
     u8 unk_26[0x6];
@@ -76,10 +76,10 @@ typedef struct StatusCursorWork {
     s16* unk_48;
     s16 unk_4C;
     u16 unk_4E;
-    s32 unk_50;
-    s32 unk_54;
-    s32 unk_58;
-    s32 unk_5C;
+    s32 y;
+    s32 targetY;
+    s32 x;
+    s32 targetX;
 } StatusCursorWork;
 
 typedef struct StatusScrollcursorWork {

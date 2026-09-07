@@ -175,9 +175,9 @@ void func_080D78B8(StatusBarWork* work) {
         work->unk_08 = 16;
     }
     LoadBgMap(3, gUnk_09848198, 0x500);
-    work->unk_10 = -0x800;
-    work->unk_18 = 0xA000;
-    work->unk_20 = -0x8000;
+    work->targetY = -0x800;
+    work->targetY2 = 0xA000;
+    work->targetX = -0x8000;
 }
 
 void task_status_bar_0(StatusBarWork* work) {
@@ -189,12 +189,12 @@ void task_status_bar_0(StatusBarWork* work) {
     work->palette = LoadObjPalette(gUnk_0984B1B8, 0x20);
     work->unk_08 = 16;
     gUnk_0203C550 = 0;
-    work->unk_0C = -0x800;
-    work->unk_14 = 0xA000;
-    work->unk_1C = -0x8000;
-    work->unk_10 = 0;
-    work->unk_18 = 0x9800;
-    work->unk_20 = 0;
+    work->y = -0x800;
+    work->y2 = 0xA000;
+    work->x = -0x8000;
+    work->targetY = 0;
+    work->targetY2 = 0x9800;
+    work->targetX = 0;
     work->unk_24 = 0;
     work->unk_25 = 0;
 }
@@ -202,8 +202,8 @@ void task_status_bar_0(StatusBarWork* work) {
 u8 task_status_bar_1(StatusBarWork* work) {
     switch (gUnk_0203C550) {
     case 0:
-        ApproachValue(&work->unk_0C, work->unk_10, work->unk_08);
-        ApproachValue(&work->unk_14, work->unk_18, work->unk_08);
+        ApproachValue(&work->y, work->targetY, work->unk_08);
+        ApproachValue(&work->y2, work->targetY2, work->unk_08);
         work->unk_08--;
         if (work->unk_08 == 0) {
             work->unk_08 = 16;
@@ -211,7 +211,7 @@ u8 task_status_bar_1(StatusBarWork* work) {
         }
         break;
     case 1:
-        ApproachValue(&work->unk_1C, work->unk_20, work->unk_08);
+        ApproachValue(&work->x, work->targetX, work->unk_08);
         work->unk_08--;
         if (work->unk_08 == 0) {
             LoadBgMap(3, gUnk_09848698, 0x500);
@@ -219,7 +219,7 @@ u8 task_status_bar_1(StatusBarWork* work) {
         }
         break;
     case 3:
-        ApproachValue(&work->unk_1C, work->unk_20, work->unk_08);
+        ApproachValue(&work->x, work->targetX, work->unk_08);
         work->unk_08--;
         if (work->unk_08 == 0) {
             work->unk_08 = 16;
@@ -231,8 +231,8 @@ u8 task_status_bar_1(StatusBarWork* work) {
             func_08006184(0, 16);
             work->unk_25 = 1;
         }
-        ApproachValue(&work->unk_0C, work->unk_10, work->unk_08);
-        ApproachValue(&work->unk_14, work->unk_18, work->unk_08);
+        ApproachValue(&work->y, work->targetY, work->unk_08);
+        ApproachValue(&work->y2, work->targetY2, work->unk_08);
         work->unk_08--;
         if (work->unk_08 == 0) {
             return 0;
@@ -265,21 +265,21 @@ u8 task_status_bar_1(StatusBarWork* work) {
 
 void task_status_bar_2(StatusBarWork* work) {
 #ifdef VERSION_EU
-    DrawSprite(work->unk_1C >> 8, 0, ((void**)gUnkEu_09F8029C[gLanguage])[2], work->tiles,
+    DrawSprite(work->x >> 8, 0, ((void**)gUnkEu_09F8029C[gLanguage])[2], work->tiles,
         work->palette, 0, 0xC00, 29);
 #else
-    DrawSprite(work->unk_1C >> 8, 0, gUnk_097A18CC, work->tiles, work->palette, 0, 0xC00, 29);
+    DrawSprite(work->x >> 8, 0, gUnk_097A18CC, work->tiles, work->palette, 0, 0xC00, 29);
 #endif
 
     if (gUnk_0203C550 != 2) {
 #ifdef VERSION_EU
-        DrawSprite(128, work->unk_0C >> 8, ((void**)gUnkEu_09F8029C[gLanguage])[0], work->tiles,
+        DrawSprite(128, work->y >> 8, ((void**)gUnkEu_09F8029C[gLanguage])[0], work->tiles,
             work->palette, 0, 0xC00, 30);
-        DrawSprite(128, work->unk_14 >> 8, ((void**)gUnkEu_09F8029C[gLanguage])[1], work->tiles,
+        DrawSprite(128, work->y2 >> 8, ((void**)gUnkEu_09F8029C[gLanguage])[1], work->tiles,
             work->palette, 0, 0xC00, 31);
 #else
-        DrawSprite(128, work->unk_0C >> 8, gUnk_097A1864, work->tiles, work->palette, 0, 0xC00, 30);
-        DrawSprite(128, work->unk_14 >> 8, gUnk_097A1898, work->tiles, work->palette, 0, 0xC00, 31);
+        DrawSprite(128, work->y >> 8, gUnk_097A1864, work->tiles, work->palette, 0, 0xC00, 30);
+        DrawSprite(128, work->y2 >> 8, gUnk_097A1898, work->tiles, work->palette, 0, 0xC00, 31);
 #endif
     }
 }
@@ -413,15 +413,15 @@ void task_status_cursor_0(StatusCursorWork* work, s16* arg) {
     work->gfx[1] = AnimGetGfx(&work->anim[1]);
     work->unk_4C = *work->unk_48;
     if (work->unk_4C < 0) {
-        work->unk_58 = gUnk_096FDD8C[~work->unk_4C];
-        work->unk_5C = work->unk_58;
-        work->unk_50 = 0x1000;
-        work->unk_54 = 0x1000;
+        work->x = gUnk_096FDD8C[~work->unk_4C];
+        work->targetX = work->x;
+        work->y = 0x1000;
+        work->targetY = 0x1000;
     } else {
-        work->unk_58 = 0x1800;
-        work->unk_5C = 0x1800;
-        work->unk_50 = *work->unk_48 * 3072 + 0x2400;
-        work->unk_54 = work->unk_50;
+        work->x = 0x1800;
+        work->targetX = 0x1800;
+        work->y = *work->unk_48 * 3072 + 0x2400;
+        work->targetY = work->y;
     }
     work->unk_4E = 0;
 }
@@ -434,15 +434,15 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
         work->unk_4E = 4;
 
         if (work->unk_4C < 0) {
-            work->unk_5C = gUnk_096FDD8C[~work->unk_4C];
-            work->unk_54 = 0x1000;
+            work->targetX = gUnk_096FDD8C[~work->unk_4C];
+            work->targetY = 0x1000;
         } else {
-            work->unk_5C = 0x1800;
-            work->unk_54 = *work->unk_48 * 3072 + 0x2400;
+            work->targetX = 0x1800;
+            work->targetY = *work->unk_48 * 3072 + 0x2400;
         }
     }
-    func_0805F1C0(&work->unk_50, work->unk_54);
-    func_0805F1C0(&work->unk_58, work->unk_5C);
+    func_0805F1C0(&work->y, work->targetY);
+    func_0805F1C0(&work->x, work->targetX);
 
     for (i = 0; i < 2; i++) {
         work->gfx[i] = AnimUpdate(&work->anim[i]);
@@ -453,10 +453,10 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
 void task_status_cursor_2(StatusCursorWork* work) {
     if (func_08006314() == 0) {
         if (!(gGameState.flags & 8) || func_080D8340()) {
-            DrawSprite(work->unk_58 >> 8, (work->unk_50 >> 8) - 16, work->gfx[1], work->tiles2, work->palette2, 0, 0, 0);
+            DrawSprite(work->x >> 8, (work->y >> 8) - 16, work->gfx[1], work->tiles2, work->palette2, 0, 0, 0);
 
             if (work->unk_4C >= 0) {
-                DrawSprite(1, (work->unk_50 >> 8) + 3, work->gfx[0], work->tiles, work->palette, 0, 0, 1);
+                DrawSprite(1, (work->y >> 8) + 3, work->gfx[0], work->tiles, work->palette, 0, 0, 1);
             }
         }
     }
