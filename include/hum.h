@@ -205,7 +205,7 @@ typedef struct LexTmh0Work {
 
 typedef struct LexTmhWork {
     void* tiles;
-    void* unk_04;
+    void* palette;
     AnimState anim;
     s32 x;
     s32 y;
@@ -218,7 +218,7 @@ typedef struct LexTmhWork {
     s32 unk_38;
     s32 unk_3C;
     void* tiles2;
-    void* unk_44;
+    void* palette2;
     u8 unk_48;
     u8 unk_49;
     s16 unk_4A;
@@ -424,7 +424,7 @@ typedef struct RikuWork {
 
 typedef struct HookBombWork {
     void* tiles;
-    void* unk_04;
+    void* palette;
     AnimState anim;
     s32 x;
     s32 y;
@@ -438,7 +438,7 @@ typedef struct HookBombWork {
     s16 unk_3C;
     u16 unk_3E;
     void* tiles2;
-    void* unk_44;
+    void* palette2;
     u8 unk_48;
     u8 unk_49;
     s16 unk_4A;

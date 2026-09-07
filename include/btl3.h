@@ -155,7 +155,7 @@ typedef struct BtlBornArgs {
 
 typedef struct BtlRaidWork {
     void* unk_00;
-    void* unk_04;
+    void* palette;
     void* gfx;
     AnimState anim;
     s32 x;
@@ -180,7 +180,7 @@ typedef struct BtlRaidWork {
     u16 unk_5A;
     BtlWork* unk_5C;
     void* tiles;
-    void* unk_64;
+    void* palette2;
     u16 unk_68;
     u8 unk_6A[0x02];
 } BtlRaidWork;
@@ -199,8 +199,8 @@ typedef struct BtlRaidArgs {
 
 typedef struct BtlBadStatusWork {
     void* tiles;
-    void* unk_04;
-    void* unk_08;
+    void* palette;
+    void* palette2;
     AnimState anim;
     BtlWork* unk_24;
     u32 unk_28;

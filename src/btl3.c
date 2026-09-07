@@ -214,12 +214,12 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
         work->unk_3D = 1;
         work->unk_00 = gBtlWork->unk_114;
         work->unk_5C = gBtlWork->unk_07C;
-        work->unk_04 = LoadObjPalette(gUnk_08F683A4, 32);
+        work->palette = LoadObjPalette(gUnk_08F683A4, 32);
     } else {
         work->unk_3D = 0;
         work->unk_00 = gBtlWork->unk_114;
         work->unk_5C = gUnk_02039B9C->unk_07C;
-        work->unk_04 = LoadObjPalette(gUnk_096FAC64, 32);
+        work->palette = LoadObjPalette(gUnk_096FAC64, 32);
     }
 
     AnimInit(&work->anim, 0, 0);
@@ -294,7 +294,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     }
 
     work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
-    work->unk_64 = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
     m4aSongNumStart(0x237);
 }
 
@@ -553,26 +553,26 @@ void task_btl_raid_2(BtlRaidWork* work) {
             }
         }
 
-        DrawSprite(sx, sy, work->gfx, work->unk_00, work->unk_04, affine, flags,
+        DrawSprite(sx, sy, work->gfx, work->unk_00, work->palette, affine, flags,
                    -4100 - (((work->y + 0x1000) >> 8) * 4));
         WorldToScreen(&sx, &sy, work->x, work->y, 0);
-        DrawSprite(sx, sy, gUnk_08B22CBC, work->tiles, work->unk_64, 0, flags, 0xFFFE);
+        DrawSprite(sx, sy, gUnk_08B22CBC, work->tiles, work->palette2, 0, flags, 0xFFFE);
     }
 }
 
 void task_btl_raid_3(BtlRaidWork* work) {
-    ReleaseObjPalette(work->unk_04);
+    ReleaseObjPalette(work->palette);
     ReleaseObjTiles(work->tiles);
-    ReleaseObjPalette(work->unk_64);
+    ReleaseObjPalette(work->palette2);
 }
 
 void task_btl_badstatus_0(BtlBadStatusWork* work, BtlWork* obj) {
     work->unk_28 = 0;
     work->unk_24 = obj;
     work->tiles = AllocObjTiles(128, 0);
-    work->unk_04 = LoadObjPalette(gUnk_08F69BA4, 32);
-    work->unk_08 = LoadObjPalette(gUnk_09611AB8, 32);
-    work->unk_2C = work->unk_04;
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
+    work->unk_2C = work->palette;
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
 }
@@ -594,24 +594,24 @@ u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
         switch (state) {
         case 2:
             func_08019068(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
-            work->unk_2C = work->unk_04;
+            work->unk_2C = work->palette;
             break;
         case 5:
             func_08019068(gUnk_0813E8F4, &work->anim, 2, 1, work->tiles);
-            work->unk_2C = work->unk_08;
+            work->unk_2C = work->palette2;
             break;
         case 3:
             func_08019068(gUnk_0813E8F4, &work->anim, 3, 1, work->tiles);
-            work->unk_2C = work->unk_04;
+            work->unk_2C = work->palette;
             break;
         case 4:
             func_08019068(gUnk_0813E8F4, &work->anim, 4, 1, work->tiles);
-            work->unk_2C = work->unk_08;
+            work->unk_2C = work->palette2;
             break;
         case 1:
         default:
             func_08019068(gUnk_0813E8F4, &work->anim, 1, 1, work->tiles);
-            work->unk_2C = work->unk_04;
+            work->unk_2C = work->palette;
             break;
         }
     }
@@ -653,8 +653,8 @@ void task_btl_badstatus_2(BtlBadStatusWork* work) {
 
 void task_btl_badstatus_3(BtlBadStatusWork* work) {
     ReleaseObjTiles(work->tiles);
-    ReleaseObjPalette(work->unk_04);
-    ReleaseObjPalette(work->unk_08);
+    ReleaseObjPalette(work->palette);
+    ReleaseObjPalette(work->palette2);
 }
 
 BtlWork* func_08040C8C(BtlAiWork* work) {
