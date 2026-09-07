@@ -84,7 +84,6 @@ u8 task_title_logo_1(TitleLogoWork* work) {
     return 1;
 }
 
-#ifndef VERSION_JP
 void task_title_logo_2(TitleLogoWork* work) {
     s32 i;
     s32 affine;
@@ -92,9 +91,11 @@ void task_title_logo_2(TitleLogoWork* work) {
     s16 y;
 
     for (i = 0; i < 6; i++) {
+#ifndef VERSION_JP
         if (i == 1 && !(gGameState.flags & 0x200)) {
             continue;
         }
+#endif
 
         if (gGameState.flags & 0x200) {
             x = 0xA4;
@@ -125,9 +126,6 @@ void task_title_logo_2(TitleLogoWork* work) {
         DrawSprite(x, y, work->unk_00[i].unk_08, work->unk_00[i].tiles, work->unk_00[i].palette, affine, 0, i + 20);
     }
 }
-#else
-INCLUDE_ASM("title/task_title_logo_2.s");
-#endif
 
 void task_title_logo_3(TitleLogoWork* work) {
     s32 i;

@@ -254,6 +254,7 @@ TARGET_FUNC_SIZE = {
     "jp": {
         "func_08066588": 156,
         "func_080A2980": 260,
+        "task_title_logo_2": 196,
     },
     "eu": {
         "func_080A2980": 260,
