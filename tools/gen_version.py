@@ -401,6 +401,10 @@ TARGET_FUNC_SIZE = {
         "func_0808A7E4": 0x130,
         "func_0808B068": 0x1a0,
         "func_0808C2F0": 0xe8,
+        "func_0808B208": 0x30,
+        "func_0808B30C": 0x8c,
+        "func_0808B398": 0x44,
+        "func_0808B3DC": 0x290,
         "mode_sioError_0": 0x15c,
         "mode_jiminy_0": 0x4a8,
         "func_08064EF4": 0x174,
@@ -452,6 +456,10 @@ TARGET_FUNC_ADDR = {
         "func_0808A7E4": 0x08089e1c,
         "func_0808B068": 0x0808a6ac,
         "func_0808C2F0": 0x0808b914,
+        "func_0808B208": 0x0808a84c,
+        "func_0808B30C": 0x0808a950,
+        "func_0808B398": 0x0808a9dc,
+        "func_0808B3DC": 0x0808aa20,
     },
 }
 
