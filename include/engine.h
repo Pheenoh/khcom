@@ -103,7 +103,8 @@ extern vu16* const gBgControl[];
 extern u8 gBgPaletteBank[];
 extern u16 gDispCnt;
 
-extern u8* gSpriteWork;
+typedef struct SpriteWork SpriteWork;
+extern SpriteWork* gSpriteWork;
 extern Dma3Queue* gDma3Requests;
 extern u8* gFadeWork;
 extern u16 gBg0HOfs;
