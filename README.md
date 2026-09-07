@@ -1,5 +1,15 @@
 # Kingdom Hearts: Chain of Memories
 
+[![Build Status]][actions] [![us]][progress] [![jp]][progress] [![eu]][progress]
+
+[Build Status]: https://github.com/pheenoh/khcom/actions/workflows/build.yml/badge.svg
+[actions]: https://github.com/pheenoh/khcom/actions/workflows/build.yml
+
+[us]: https://decomp.dev/pheenoh/khcom/us.svg?mode=shield&label=us
+[jp]: https://decomp.dev/pheenoh/khcom/jp.svg?mode=shield&label=jp
+[eu]: https://decomp.dev/pheenoh/khcom/eu.svg?mode=shield&label=eu
+[progress]: https://decomp.dev/pheenoh/khcom
+
 A work-in-progress matching decompilation of *Kingdom Hearts: Chain of Memories*
 for the Game Boy Advance.
 
