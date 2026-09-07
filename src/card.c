@@ -9892,24 +9892,32 @@ INCLUDE_ASM("card/func_0808F358.s");
 INCLUDE_ASM("card/func_0808F3E8.s");
 INCLUDE_ASM("card/func_0808F660.s");
 
-#ifndef VERSION_EU
 u8 func_0808FA0C(u8* work, void* a) {
     func_08006120(0, 16);
-    work[0x8B1] = 0;
+    work[CARDWORK(0x8B1)] = 0;
     func_0808E364(work, 0);
     func_0808CD48(work);
     func_08065AE0(&work[0x744], 8);
     ReleaseObjTiles(*(void**)&work[0x738]);
     ReleaseObjTiles(*(void**)&work[0x73C]);
     ReleaseObjPalette(*(void**)&work[0x740]);
-    work[0x8D0] = 0;
+    work[CARDWORK(0x8D0)] = 0;
     SetTaskUpdate(a, (void*)func_080864A4);
     func_0808C3DC(work, 0);
-    return 1;
-}
+#ifdef VERSION_EU
+    {
+        u8* p;
+        u8 n;
+
+        p = &work[CARDWORK(0x8B0)];
+        n = 1;
+        *p = n;
+        return n;
+    }
 #else
-INCLUDE_ASM("card/func_0808FA0C.s");
+    return 1;
 #endif
+}
 
 INCLUDE_ASM("card/func_0808FA8C.s");
 void DeckCard2_0(UnkStruct_0808E890* n, UnkStruct_080A6838_Args* a) {

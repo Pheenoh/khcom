@@ -385,6 +385,7 @@ TARGET_FUNC_SIZE = {
         "LVUP_EFFECT_0": 0x1cc,
         "func_080A5C9C": 0x104,
         "func_080A5D3C": 0x174,
+        "func_0808FA0C": 0x8c,
         "mode_sioError_0": 0x15c,
         "mode_jiminy_0": 0x4a8,
         "func_08064EF4": 0x174,
