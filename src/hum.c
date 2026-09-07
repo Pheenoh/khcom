@@ -3842,8 +3842,8 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
     switch (work->unk_162) {
     case 0:
         work->unk_164 = 1;
-        work->unk_30 = LoadObjPalette(gUnk_08F6DCC4, 0x20);
-        work->unk_00[0] = AllocObjTiles(0xDC0, gUnk_08C42BBE);
+        work->palette2 = LoadObjPalette(gUnk_08F6DCC4, 0x20);
+        work->tiles2[0] = AllocObjTiles(0xDC0, gUnk_08C42BBE);
         AnimInit(&work->anim[0], gUnk_09EE2338, gUnk_09EE230C);
         AnimStart(&work->anim[0], 0, 0);
         work->unk_162++;
@@ -3855,11 +3855,11 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
         work->unk_162++;
         break;
     case 2:
-        ReleaseObjTiles(work->unk_00[0]);
-        ReleaseObjPalette(work->unk_30);
+        ReleaseObjTiles(work->tiles2[0]);
+        ReleaseObjPalette(work->palette2);
         work->unk_164 = 1;
-        work->unk_30 = LoadObjPalette(gUnk_08F6DCE4, 0x20);
-        work->unk_00[0] = AllocObjTiles(0xDC0, gUnk_08C46790);
+        work->palette2 = LoadObjPalette(gUnk_08F6DCE4, 0x20);
+        work->tiles2[0] = AllocObjTiles(0xDC0, gUnk_08C46790);
         AnimInit(&work->anim[0], gUnk_09EE239C, gUnk_09EE233C);
         AnimStart(&work->anim[0], 0, 0);
         work->z -= 0x4000;
@@ -3879,11 +3879,11 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
         break;
     case 5:
         work->unk_164 = 12;
-        ReleaseObjTiles(work->unk_00[0]);
+        ReleaseObjTiles(work->tiles2[0]);
 
         for (i = 0; i < 12; i++) {
             e = &work->unk_168[i];
-            work->unk_00[i] = AllocObjTiles(0xC0, gUnk_08C46790);
+            work->tiles2[i] = AllocObjTiles(0xC0, gUnk_08C46790);
             AnimInit(&work->anim[i], gUnk_09EE239C, gUnk_09EE233C);
             AnimStart(&work->anim[i], GetRandom() % 5 + 2, 3);
 
@@ -3982,7 +3982,7 @@ void task_hum_lex_rock_2(LexRockWork* work) {
             attr = func_0801AF1C(work->y) | 1;
         }
         WorldToScreen(&x, &y, work->x, work->y, work->z);
-        DrawSprite(x, y, gfx, work->unk_00[0], work->unk_30, 0, attr,
+        DrawSprite(x, y, gfx, work->tiles2[0], work->palette2, 0, attr,
             -0x1006 - (work->y >> 8) * 4);
     } else if (work->unk_164 == 12) {
         for (i = 0; i < work->unk_164; i++) {
@@ -3996,7 +3996,7 @@ void task_hum_lex_rock_2(LexRockWork* work) {
             }
             WorldToScreen(&x, &y, e->unk_04, e->unk_08,
                 e->unk_0C);
-            DrawSprite(x, y, gfx, work->unk_00[i], work->unk_30, 0, attr,
+            DrawSprite(x, y, gfx, work->tiles2[i], work->palette2, 0, attr,
                 -0x1006 - (e->unk_08 >> 8) * 4);
             WorldToScreen(&x, &y, e->unk_04, e->unk_08, 0);
             DrawSprite(x, y, gUnk_08B22CBC, work->tiles, work->palette, 0, attr, 0xFFFE);
@@ -4011,10 +4011,10 @@ void task_hum_lex_rock_3(LexRockWork* work) {
     ReleaseObjPalette(work->palette);
 
     if (work->unk_164 != 0) {
-        ReleaseObjPalette(work->unk_30);
+        ReleaseObjPalette(work->palette2);
 
         for (i = 0; i < work->unk_164; i++) {
-            ReleaseObjTiles(work->unk_00[i]);
+            ReleaseObjTiles(work->tiles2[i]);
         }
     }
 }

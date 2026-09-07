@@ -254,7 +254,7 @@ typedef struct StatusWork {
 
 typedef struct StatusStocklistWork {
     StatusEntry entries[4];
-    void* unk_490[8];
+    void* tiles2[8];
     void* palette;
     void* tiles;
     void* palette2;
