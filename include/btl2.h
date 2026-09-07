@@ -201,14 +201,14 @@ typedef struct BtlEscapeWork {
 } BtlEscapeWork;
 
 typedef struct BtlPrizeWork {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_0C;
     void* tiles;
     void* palette;
-    void* unk_18;
-    void* unk_1C;
+    void* gfx;
+    void* gfx2;
     s32 unk_20;
     s32 unk_24;
     s16 unk_28;
@@ -228,14 +228,14 @@ typedef struct BtlPrizeWork {
 } BtlPrizeWork;
 
 typedef struct BtlPremireWork {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_0C;
     void* tiles;
     void* palette;
     void* gfx;
-    void* unk_1C;
+    void* gfx2;
     s32 unk_20;
     s32 unk_24;
     s16 unk_28;
