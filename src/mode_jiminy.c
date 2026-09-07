@@ -34,9 +34,9 @@ void mode_jiminy_0(void) {
     gJiminyWork->palette2 = LoadObjPalette(gUnk_08F6DDE4, 0x20);
     gJiminyWork->palette3 = LoadObjPalette(gUnk_08F6DD84, 0x20);
     gJiminyWork->tiles5 = LoadObjTiles(gUnk_08C6A54E, 0x140);
-    gJiminyWork->unk_02C = LoadObjPalette(gUnk_08F6DDA4, 0x20);
-    gJiminyWork->unk_030 = LoadObjTiles(gUnk_08C6A6B8, 0x1C0);
-    gJiminyWork->unk_034 = LoadObjPalette(gUnk_08F6DDC4, 0x20);
+    gJiminyWork->palette6 = LoadObjPalette(gUnk_08F6DDA4, 0x20);
+    gJiminyWork->tiles6 = LoadObjTiles(gUnk_08C6A6B8, 0x1C0);
+    gJiminyWork->palette7 = LoadObjPalette(gUnk_08F6DDC4, 0x20);
     gJiminyWork->unk_04C = -0x8000;
     gJiminyWork->unk_050 = -0x800;
     gJiminyWork->unk_054 = 0xA000;
@@ -65,10 +65,10 @@ void mode_jiminy_0(void) {
         AnimStart(&gJiminyWork->unk_C94, 2, 1);
     }
 
-    gJiminyWork->unk_038 = AllocObjTiles(0x2000, 0);
-    gJiminyWork->unk_03C = LoadObjPalette(gUnk_09A3CC9C, 0x20);
-    gJiminyWork->unk_040 = AllocObjTiles(0x800, 0);
-    gJiminyWork->unk_044 = LoadObjPalette(gUnk_09611AB8, 0x20);
+    gJiminyWork->tiles7 = AllocObjTiles(0x2000, 0);
+    gJiminyWork->palette8 = LoadObjPalette(gUnk_09A3CC9C, 0x20);
+    gJiminyWork->tiles8 = AllocObjTiles(0x800, 0);
+    gJiminyWork->palette9 = LoadObjPalette(gUnk_09611AB8, 0x20);
     gJiminyWork->unk_D3C = 0;
     gJiminyWork->unk_D38 = 0x100;
     func_08006120(0, 0x10);
@@ -316,11 +316,11 @@ void mode_jiminy_1(void) {
             switch (gJiminyWork->unk_C68[i]) {
             case 1:
                 DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i, gUnk_08C6A6A4,
-                    gJiminyWork->unk_030, gJiminyWork->unk_034, 0, 4, 0);
+                    gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0);
                 break;
             case 2:
                 DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i - 2, gUnk_08C6A69A,
-                    gJiminyWork->unk_030, gJiminyWork->unk_034, 0, 4, 0);
+                    gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0);
                 break;
             }
         }
@@ -344,12 +344,12 @@ void mode_jiminy_1(void) {
     if (gJiminyWork->unk_000 == 7) {
         if (gJiminyWork->unk_CAC & 8) {
             DrawSprite(gJiminyWork->unk_CC2, gJiminyWork->unk_CC4 - ((gJiminyWork->unk_D3E >> 3) & 3),
-                gUnk_08C6A51C, gJiminyWork->tiles5, gJiminyWork->unk_02C, 0, 0, 0);
+                gUnk_08C6A51C, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
         }
 
         if (gJiminyWork->unk_CAC & 0x10) {
             DrawSprite(gJiminyWork->unk_CC6, gJiminyWork->unk_CC8 + ((gJiminyWork->unk_D3E >> 3) & 3),
-                gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->unk_02C, 0, 0, 0);
+                gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
         }
 
         if (func_08006314() == 0) {
@@ -415,13 +415,13 @@ void mode_jiminy_2(void) {
     ReleaseObjTiles(gJiminyWork->tiles4);
     ReleaseObjPalette(gJiminyWork->palette5);
     ReleaseObjTiles(gJiminyWork->tiles5);
-    ReleaseObjPalette(gJiminyWork->unk_02C);
-    ReleaseObjTiles(gJiminyWork->unk_030);
-    ReleaseObjPalette(gJiminyWork->unk_034);
-    ReleaseObjTiles(gJiminyWork->unk_038);
-    ReleaseObjPalette(gJiminyWork->unk_03C);
-    ReleaseObjTiles(gJiminyWork->unk_040);
-    ReleaseObjPalette(gJiminyWork->unk_044);
+    ReleaseObjPalette(gJiminyWork->palette6);
+    ReleaseObjTiles(gJiminyWork->tiles6);
+    ReleaseObjPalette(gJiminyWork->palette7);
+    ReleaseObjTiles(gJiminyWork->tiles7);
+    ReleaseObjPalette(gJiminyWork->palette8);
+    ReleaseObjTiles(gJiminyWork->tiles8);
+    ReleaseObjPalette(gJiminyWork->palette9);
     func_0805A484();
     EwramFree(gJiminyWork);
 }
