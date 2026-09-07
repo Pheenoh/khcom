@@ -8507,7 +8507,6 @@ void func_0808CDE8(u8* work, u8 b) {
 INCLUDE_ASM("card/func_0808CDE8.s");
 #endif
 
-#ifndef VERSION_EU
 void func_0808D0A4(u8 deck) {
     u8 d[2];
     u8 e[2];
@@ -8523,13 +8522,25 @@ void func_0808D0A4(u8 deck) {
 
     switch (deck) {
     case 0:
+#ifdef VERSION_EU
+        base = GetBgCharBase(0) + 0x2BE0;
+#else
         base = GetBgCharBase(0);
+#endif
         break;
     case 1:
+#ifdef VERSION_EU
+        base = GetBgCharBase(1) + 0x2F40;
+#else
         base = GetBgCharBase(1);
+#endif
         break;
     case 2:
+#ifdef VERSION_EU
+        base = GetBgCharBase(2) + 0x32A0;
+#else
         base = GetBgCharBase(2);
+#endif
         break;
     }
 
@@ -8538,9 +8549,6 @@ void func_0808D0A4(u8 deck) {
     RequestDma3Copy(&gUnk_0940F938[(e[0] + 1) * 32], (u8*)base + 0x60, 32);
     RequestDma3Copy(&gUnk_0940F938[(e[1] + 1) * 32], (u8*)base + 0x80, 32);
 }
-#else
-INCLUDE_ASM("card/func_0808D0A4.s");
-#endif
 
 #ifndef VERSION_EU
 void func_0808D16C(u8 mode) {
@@ -8574,7 +8582,6 @@ void func_0808D16C(u8 mode) {
 INCLUDE_ASM("card/func_0808D16C.s");
 #endif
 
-#ifndef VERSION_EU
 void func_0808D258(u8 mode) {
     u8 d1[4];
     u8 d2[4];
@@ -8596,13 +8603,25 @@ void func_0808D258(u8 mode) {
 
     switch (mode) {
     case 0:
+#ifdef VERSION_EU
+        base = GetBgCharBase(0) + 0x2BE0;
+#else
         base = GetBgCharBase(0);
+#endif
         break;
     case 1:
+#ifdef VERSION_EU
+        base = GetBgCharBase(1) + 0x2F40;
+#else
         base = GetBgCharBase(1);
+#endif
         break;
     case 2:
+#ifdef VERSION_EU
+        base = GetBgCharBase(2) + 0x32A0;
+#else
         base = GetBgCharBase(2);
+#endif
         break;
     }
 
@@ -8615,9 +8634,6 @@ void func_0808D258(u8 mode) {
     RequestDma3Copy(&gUnk_0940F938[(d2[2] + 1) * 32], (void*)(base + 0x160), 32);
     RequestDma3Copy(&gUnk_0940F938[(d2[3] + 1) * 32], (void*)(base + 0x180), 32);
 }
-#else
-INCLUDE_ASM("card/func_0808D258.s");
-#endif
 
 #ifndef VERSION_EU
 void func_0808D438(u8 kind, u8 slot) {
