@@ -1,6 +1,14 @@
 #include "macros.h"
 #include "mode_worldwarp.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern void* gUnkEu_09F84EE8[];
+extern void* gUnkEu_09F84F10[];
+extern void* gUnkEu_09F84F24[];
+extern void* gUnkEu_09F84F38[];
+#endif
+
 s16 gUnk_020354E8;
 s16 gUnk_020354EA;
 u8 gUnk_020354EC[4];
@@ -358,7 +366,6 @@ void func_08101768(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_081017A0(void) {
     s16 prev;
     u16 keys;
@@ -378,14 +385,22 @@ void func_081017A0(void) {
         gUnk_020357C4 = 0;
         m4aSongNumStart(0x68);
         gUnk_020358A4 = 1;
+#ifdef VERSION_EU
+        LoadBgMap(2, gUnkEu_09F84EE8[gLanguage], 0x500);
+#else
         LoadBgMap(2, gUnk_09A378DC, 0x500);
+#endif
         gUnk_02035892 = 16;
         gUnk_02035890 = 9;
     } else if (keys & 8) {
         gUnk_020357C4 = 0;
         m4aSongNumStart(0x68);
         gUnk_020358A4 = 1;
+#ifdef VERSION_EU
+        LoadBgMap(2, gUnkEu_09F84EE8[gLanguage], 0x500);
+#else
         LoadBgMap(2, gUnk_09A378DC, 0x500);
+#endif
         func_08006184(0, 16);
         func_080063A8();
         gUnk_02035890 = 11;
@@ -412,19 +427,21 @@ void func_081017A0(void) {
         m4aSongNumStart(0x65);
     }
 }
-#else
-INCLUDE_ASM("mode_worldwarp/func_081017A0.s");
-#endif
 
-#ifndef VERSION_EU
 void func_08101970(void) {
     s32 i;
     u16 flags;
 
     if (gUnk_020358A4 != 0) {
+#ifdef VERSION_EU
+        DrawSprite(gUnk_020358A0 >> 8, 0, gUnkEu_09F84F10[gLanguage], gUnk_020357C8, gUnk_020357CC, 0, 0x800, 0x7D0);
+        DrawSprite(0x80, gUnk_02035898[0] >> 8, gUnkEu_09F84F24[gLanguage], gUnk_020357C8, gUnk_020357CC, 0, 0x800, 0x7D1);
+        DrawSprite(0x80, gUnk_02035898[1] >> 8, gUnkEu_09F84F38[gLanguage], gUnk_020357C8, gUnk_020357CC, 0, 0x800, 0x7D1);
+#else
         DrawSprite(gUnk_020358A0 >> 8, 0, gUnk_099A2AD4, gUnk_020357C8, gUnk_020357CC, 0, 0x800, 0x7D0);
         DrawSprite(0x80, gUnk_02035898[0] >> 8, gUnk_099A2AF0, gUnk_020357C8, gUnk_020357CC, 0, 0x800, 0x7D1);
         DrawSprite(0x80, gUnk_02035898[1] >> 8, gUnk_099A2B24, gUnk_020357C8, gUnk_020357CC, 0, 0x800, 0x7D1);
+#endif
     }
 
     flags = 0x800;
@@ -465,6 +482,3 @@ void func_08101970(void) {
     SetBgScroll(0, gUnk_02035884 >> 8, 0);
     SetBgScroll(1, gUnk_02035880 >> 8, 0);
 }
-#else
-INCLUDE_ASM("mode_worldwarp/func_08101970.s");
-#endif
