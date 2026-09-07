@@ -3,6 +3,7 @@
 #include "gba/keys.h"
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
+extern u8 gUnkEu_09A86E60[];
 #endif
 
 s16 gUnk_02035118;
@@ -39,7 +40,6 @@ u8 gUnk_020354E0;
 
 INCLUDE_ASM("mode_worldinspect/mode_worldinspect_0.s");
 
-#ifndef VERSION_EU
 void mode_worldinspect_1(void) {
     UpdatePlayTime();
     gUnk_0203511A += 2;
@@ -58,8 +58,12 @@ void mode_worldinspect_1(void) {
         ApproachValue(&gUnk_020354D0, 0, gUnk_020354C2);
         gUnk_020354C2--;
         if (gUnk_020354C2 <= 0) {
+#ifdef VERSION_EU
+            LoadBgMap(0, gUnkEu_09A86E60, 0x500);
+#else
             LoadBgMap(0, gUnk_09A329DC, 0x500);
             ReleaseObjPalette(gUnk_0203511C);
+#endif
             gUnk_020354C0 = 2;
         }
         break;
@@ -99,9 +103,6 @@ void mode_worldinspect_1(void) {
 
     func_080FF8CC();
 }
-#else
-INCLUDE_ASM("mode_worldinspect/mode_worldinspect_1.s");
-#endif
 
 void mode_worldinspect_2(void) {
     s32 i;
