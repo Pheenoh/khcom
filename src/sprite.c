@@ -2,18 +2,7 @@
 #include "malloc.h"
 #include "sprite.h"
 
-u8* gSpriteWork;
-
-typedef struct SpriteEntry {
-    void* unk_00;
-    void* unk_04;
-    s32 unk_08;
-    void* unk_0C;
-    u16 unk_10;
-    u16 unk_12;
-    u16 unk_14;
-    u16 unk_16;
-} SpriteEntry;
+SpriteWork* gSpriteWork;
 
 extern u8 sSpriteHeapName[];
 
@@ -33,9 +22,9 @@ void SpriteInit(void) {
     u32 zero;
 
     SetIwramHeapName(sSpriteHeapName);
-    gSpriteWork = IwramAlloc(0x2BB0);
+    gSpriteWork = IwramAlloc(sizeof(SpriteWork));
     zero = 0;
-    CpuSet(&zero, gSpriteWork, 0x05000AEC);
+    CpuSet(&zero, gSpriteWork, 0x05000000 | (sizeof(SpriteWork) / 4));
 }
 
 void SpriteFree(void) {
@@ -110,93 +99,69 @@ void DisableObj(void) {
 }
 
 void SetObjTileRange(u16 a, u16 b) {
-    u8* p = gSpriteWork;
     s32 v;
 
-    *(u16*)(p + 0x1810) = a;
+    gSpriteWork->tilePool.rangeStart = a;
     v = a + b;
-    *(u16*)(p + 0x1812) = v;
+    gSpriteWork->tilePool.rangeEnd = v;
 
     if ((u16)v > 0x400) {
-        *(u16*)(p + 0x1812) = 0x400;
+        gSpriteWork->tilePool.rangeEnd = 0x400;
     }
 }
 
 void SetObjPaletteRange(u16 a, u16 b) {
-    u8* p = gSpriteWork;
     s32 v;
 
-    *(u16*)(p + 0x1AA4) = a;
+    gSpriteWork->palettePool.rangeStart = a;
     v = a + b;
-    *(u16*)(p + 0x1AA6) = v;
+    gSpriteWork->palettePool.rangeEnd = v;
 
     if ((u16)v > 0x10) {
-        *(u16*)(p + 0x1AA6) = 0x10;
+        gSpriteWork->palettePool.rangeEnd = 0x10;
     }
 }
 
 void SpriteReset(void) {
-    u8* p;
     s32 i;
 
     EnableObj();
-    ListPoolInit(gSpriteWork + 0x1800);
+    ListPoolInit(&gSpriteWork->tilePool);
 
     for (i = 0; i < 128; i++) {
-        ListPoolAddFree(gSpriteWork + i * 0x30 + 0x0C, gSpriteWork + 0x1800, gSpriteWork + i * 0x30);
+        ListPoolAddFree(gSpriteWork->tiles[i].unk_0C, &gSpriteWork->tilePool, &gSpriteWork->tiles[i]);
     }
-    ListPoolInit(gSpriteWork + 0x1A94);
+    ListPoolInit(&gSpriteWork->palettePool);
 
     for (i = 0; i < 16; i++) {
-        ListPoolAddFree(gSpriteWork + 0x1814 + i * 0x28 + 0x0C, gSpriteWork + 0x1A94,
-                      gSpriteWork + 0x1814 + i * 0x28);
+        ListPoolAddFree(gSpriteWork->palettes[i].unk_0C, &gSpriteWork->palettePool,
+                      &gSpriteWork->palettes[i]);
     }
-    p = gSpriteWork;
-    *(u16*)(p + 0x28A8) = 0;
-    *(u16*)(p + 0x2BAC) = 0;
-    *(u16*)(p + 0x28AA) = 0;
+    gSpriteWork->entryCount = 0;
+    gSpriteWork->affineCount = 0;
+    gSpriteWork->sortLo = 0;
     SetObjMosaicSize(0, 0);
-    gSpriteWork[0x2BAE] = 0;
-    gSpriteWork[0x2BAF] = 0;
+    gSpriteWork->unk_2BAE = 0;
+    gSpriteWork->unk_2BAF = 0;
     SetObjTileRange(0, 0x400);
     SetObjPaletteRange(0, 0x10);
 }
 
-u8 func_08002060(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
-    u8* p;
-    u8* q0;
-    u8* q1;
-    u8* q2;
-    u8* q3;
-    u8* q4;
-    s32 ofs;
+u8 func_08002060(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
+    SpriteWork* p;
 
     if (e != 0 && c != 0) {
         p = gSpriteWork;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        *(u16*)(p + ofs + 0x1AB8) = x;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        *(u16*)(p + ofs + 0x1ABA) = y;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        q0 = p + 0x1AA8;
-        *(void**)(q0 + ofs) = obj;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        q1 = p + 0x1AAC;
-        *(void**)(q1 + ofs) = e;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        q2 = p + 0x1AB0;
-        *(s32*)(q2 + ofs) = f;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        *(u16*)(p + ofs + 0x1ABE) = g;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        *(u16*)(p + ofs + 0x1ABC) = h;
-        ofs = *(u16*)(p + 0x28A8) * 24;
-        q3 = p + 0x1AB4;
-        *(void**)(q3 + ofs) = c;
-        ofs = *(u16*)(p + 0x28A8) * 4;
-        q4 = p + 0x26A8;
-        *(u32*)(q4 + ofs) = (u32)(p + (*(u16*)(p + 0x28A8) * 24 + 0x1AA8));
-        *(u16*)(p + 0x28A8) += 1;
+        p->entries[p->entryCount].unk_10 = x;
+        p->entries[p->entryCount].unk_12 = y;
+        p->entries[p->entryCount].unk_00 = obj;
+        p->entries[p->entryCount].unk_04 = e;
+        p->entries[p->entryCount].unk_08 = f;
+        p->entries[p->entryCount].unk_16 = g;
+        p->entries[p->entryCount].unk_14 = h;
+        p->entries[p->entryCount].unk_0C = c;
+        p->sortPtrs[p->entryCount] = &p->entries[p->entryCount];
+        p->entryCount += 1;
         return 1;
     }
     return 0;
