@@ -179,8 +179,8 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
 
     switch (w->unk_00) {
     case 1:
-        w->unk_08->unk_04 -= 128;
-        w->unk_08->unk_08 += 128;
+        w->unk_08->x -= 128;
+        w->unk_08->y += 128;
         break;
     case 2:
         w->unk_08->unk_0C = gUnk_09A5430C[(w->unk_04 >> 2) & 15] << 8;
@@ -189,8 +189,8 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
     case 3:
         if ((w->unk_04 & 3) == 0) {
             a.unk_00 = 2;
-            a.unk_04 = w->unk_08->unk_04;
-            a.unk_08 = w->unk_08->unk_08;
+            a.x = w->unk_08->x;
+            a.y = w->unk_08->y;
             TaskCreate(&w->unk_2C, gTaskDescSrollBCrtn, &a);
         }
 
@@ -198,11 +198,11 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
         w->unk_04++;
         break;
     case 4:
-        w->unk_08->unk_04 += 128;
-        w->unk_08->unk_08 -= 128;
+        w->unk_08->x += 128;
+        w->unk_08->y -= 128;
         break;
     case 5:
-        w->unk_08->unk_04 += (gUnk_09A542CC[(w->unk_04 >> 2) & 15] << 8) >> 2;
+        w->unk_08->x += (gUnk_09A542CC[(w->unk_04 >> 2) & 15] << 8) >> 2;
         w->unk_04++;
         break;
     }
@@ -219,8 +219,8 @@ void task_sroll_b_char_2(SrollBCharWork* w) {
     sub = w->unk_08;
 
     if ((sub->unk_14 & 2) == 0) {
-        x = sub->unk_04 >> 8;
-        y = (sub->unk_08 + sub->unk_0C) >> 8;
+        x = sub->x >> 8;
+        y = (sub->y + sub->unk_0C) >> 8;
         gfx = AnimGetGfx(&w->anim);
         DrawSprite(x, y, gfx, w->tiles, w->palette,
                    AllocObjAffine(sub->unk_28, sub->unk_20, sub->unk_24, 1), sub->unk_16, 0xFF0);
@@ -242,8 +242,8 @@ void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
     AnimState* anim;
     u32 i;
 
-    w->unk_00 = a->unk_00;
-    w->unk_04 = a->unk_04;
+    w->x = a->x;
+    w->y = a->y;
     w->unk_08 = a->unk_08;
     w->unk_0C = a->unk_0C;
 #ifdef VERSION_EU
@@ -267,7 +267,7 @@ u8 task_sroll_b_logo_1(SrollBLogoWork* w) {
 
     r = 1;
 
-    if ((s16)((w->unk_04 >> 8) - (*w->unk_08 >> 8)) <= -32) {
+    if ((s16)((w->y >> 8) - (*w->unk_08 >> 8)) <= -32) {
         r = 0;
     }
     AnimUpdate(&w->anim);
@@ -277,8 +277,8 @@ u8 task_sroll_b_logo_1(SrollBLogoWork* w) {
 void task_sroll_b_logo_2(SrollBLogoWork* w) {
     u16 y;
 
-    y = (w->unk_04 >> 8) - (*w->unk_08 >> 8);
-    DrawSprite(w->unk_00 >> 8, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0, 0xFF0);
+    y = (w->y >> 8) - (*w->unk_08 >> 8);
+    DrawSprite(w->x >> 8, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0, 0xFF0);
 }
 
 void task_sroll_b_logo_3(SrollBLogoWork* w) {
@@ -346,8 +346,8 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
     case 0:
     case 1:
     case 5:
-        w->unk_08 = a->unk_04;
-        w->unk_0C = a->unk_08 + 0xFFFFE000;
+        w->x = a->x;
+        w->y = a->y + 0xFFFFE000;
         w->tiles = AllocObjTiles(128, gUnk_09320796);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
@@ -355,8 +355,8 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         AnimStart(anim, w->unk_04, 0);
         break;
     case 3:
-        w->unk_08 = a->unk_04;
-        w->unk_0C = a->unk_08 + 0xFFFFD000;
+        w->x = a->x;
+        w->y = a->y + 0xFFFFD000;
         w->tiles = AllocObjTiles(128, gUnk_09320796);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
@@ -365,9 +365,9 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         break;
     case 2:
         t = (GetRandom() % 9) * 256 - 0x400;
-        w->unk_08 = t + a->unk_04;
+        w->x = t + a->x;
         t = (GetRandom() % 9) * 256 - 0x400;
-        w->unk_0C = t + a->unk_08;
+        w->y = t + a->y;
         w->tiles = AllocObjTiles(128, gUnk_088A5D7A);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
@@ -395,7 +395,7 @@ u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
         }
         break;
     case 2:
-        w->unk_0C += 0x100;
+        w->y += 0x100;
 
         if (w->unk_00 > 20) {
             r = 0;
@@ -416,7 +416,7 @@ u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
 }
 
 void task_sroll_b_crtn_2(SrollBCrtnWork* w) {
-    DrawSprite(w->unk_08 >> 8, w->unk_0C >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400,
+    DrawSprite(w->x >> 8, w->y >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400,
                0xFE0);
 }
 

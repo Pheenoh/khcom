@@ -85,8 +85,8 @@ typedef struct SrollBCharDef {
 
 typedef struct SrollBCharSub {
     SrollBCharDef* unk_00;
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
     s32 unk_0C;
     u8 unk_10[0x4];
     u16 unk_14;
@@ -121,8 +121,8 @@ typedef struct SrollBCharWork {
 } SrollBCharWork;
 
 typedef struct SrollBLogoWork {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     s32* unk_08;
     s32 unk_0C;
     void* tiles;
@@ -131,8 +131,8 @@ typedef struct SrollBLogoWork {
 } SrollBLogoWork;
 
 typedef struct SrollBLogoArg {
-    s32 unk_00;
-    s32 unk_04;
+    s32 x;
+    s32 y;
     s32* unk_08;
     s32 unk_0C;
     u16 unk_10;
@@ -154,8 +154,8 @@ typedef struct SrollBCrtnWork {
     s32 unk_00;
     u16 unk_04;
     u8 unk_06[0x2];
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
     void* tiles;
     SrollPal* palette;
     AnimState anim;
@@ -172,8 +172,8 @@ typedef struct SrollCCharWork {
 typedef struct SrollBCrtnArg {
     u16 unk_00;
     u8 unk_02[0x2];
-    s32 unk_04;
-    s32 unk_08;
+    s32 x;
+    s32 y;
 } SrollBCrtnArg;
 
 typedef struct SrollTmrWork {
