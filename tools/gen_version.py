@@ -667,14 +667,18 @@ def main():
             if r[5] == 0:
                 absent += 1
             usasm = Path(f"asm/us/nonmatchings/{tu}/{name}.s")
-            tmpl = DATA if usasm.exists() and ".thumb_func" not in usasm.read_text() else THUMB
-            if r[5] == 0:
-                tmpl = EMPTY
             d = asm_root / tu
             d.mkdir(parents=True, exist_ok=True)
-            (d / f"{name}.s").write_text(
-                tmpl.format(name=name, code=code, off=r[3] - ROM_BASE, size=r[5],
-                            align="\t.align 2, 0\n" if r[3] % 4 == 0 and r[5] else ""))
+            if (usasm.exists() and r[5] != 0
+                    and ".include \"asm/" in usasm.read_text()):
+                (d / f"{name}.s").write_text(usasm.read_text())
+            else:
+                tmpl = DATA if usasm.exists() and ".thumb_func" not in usasm.read_text() else THUMB
+                if r[5] == 0:
+                    tmpl = EMPTY
+                (d / f"{name}.s").write_text(
+                    tmpl.format(name=name, code=code, off=r[3] - ROM_BASE, size=r[5],
+                                align="\t.align 2, 0\n" if r[3] % 4 == 0 and r[5] else ""))
             kept.add(d / f"{name}.s")
             wrote += 1
     stale = 0

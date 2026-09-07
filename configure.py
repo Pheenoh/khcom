@@ -11,6 +11,37 @@ import ninja_syntax
 
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)"\)')
 
+ASM_FILE_REF_RE = re.compile(r'\.(?:include|incbin)\s+"([^"]+)"')
+
+
+def asm_file_deps(path):
+    seen = set()
+    queued = set()
+    out = []
+    stack = [Path(path)]
+    queued.add(str(Path(path)))
+    while stack:
+        cur = stack.pop()
+        key = str(cur)
+        if key in seen or not cur.exists() or cur.suffix not in {".s", ".inc", ".asm"}:
+            continue
+        seen.add(key)
+        try:
+            body = cur.read_text()
+        except OSError:
+            continue
+        for m in ASM_FILE_REF_RE.finditer(body):
+            ref = Path(m.group(1))
+            rkey = str(ref)
+            if not ref.exists() or rkey in queued:
+                continue
+            queued.add(rkey)
+            out.append(rkey)
+            if ref.suffix in {".s", ".inc", ".asm"}:
+                stack.append(ref)
+    return out
+
+
 ARCHIVE_BSS = {"us": 0x020387B8, "jp": 0x02038728, "eu": 0x02038DC8}
 BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 
@@ -317,6 +348,7 @@ with out.open("w") as f:
                 dep = f"asm/{version}/nonmatchings/{m.group(1)}"
                 if Path(dep).exists():
                     deps.append(dep)
+                    deps.extend(asm_file_deps(dep))
         n.build(obj, rule, str(src), implicit=deps, variables=variables)
         objs.append(obj)
     n.newline()
