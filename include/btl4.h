@@ -67,9 +67,9 @@ typedef struct BtlPopCbWork {
 typedef struct BtlExpWork {
     void* palette;
     void* tiles;
-    void* unk_08[6];
+    void* tiles2[6];
     void* gfx;
-    void* unk_24[6];
+    void* gfx2[6];
     s16 unk_3C;
     u8 unk_3E;
     u8 unk_3F;
@@ -90,15 +90,15 @@ typedef struct BtlHpothWork {
     s32 unk_00;
     u8 unk_04;
     u8 unk_05[0x03];
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
-    void* unk_1C;
-    void* unk_20;
-    void* unk_24;
-    void* unk_28;
+    void* palette2;
+    void* palette;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
+    void* tiles4;
+    void* gfx;
+    void* gfx2;
+    void* gfx3;
     AnimState unk_2C;
     AnimState unk_44;
     u8 unk_5C;

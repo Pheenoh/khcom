@@ -110,12 +110,12 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
     u8 flag;
 
     d0 = func_0805CDC8(value / 10000, 0);
-    work->unk_24[0] = d0;
+    work->gfx2[0] = d0;
     value %= 10000;
     flag = d0 != 0;
 
     d1 = func_0805CDC8(value / 1000, flag);
-    work->unk_24[1] = d1;
+    work->gfx2[1] = d1;
     value %= 1000;
 
     if (d1 != 0) {
@@ -123,7 +123,7 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
     }
 
     d2 = func_0805CDC8(value / 100, flag);
-    work->unk_24[2] = d2;
+    work->gfx2[2] = d2;
     value %= 100;
 
     if (d2 != 0) {
@@ -131,15 +131,15 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
     }
 
     d3 = func_0805CDC8(value / 10, flag);
-    work->unk_24[3] = d3;
+    work->gfx2[3] = d3;
     value %= 10;
 
     if (d3 != 0) {
         flag = 1;
     }
 
-    work->unk_24[4] = gUnk_09EE157C[value + 4];
-    work->unk_24[5] = gUnk_08B25ED2;
+    work->gfx2[4] = gUnk_09EE157C[value + 4];
+    work->gfx2[5] = gUnk_08B25ED2;
 }
 
 void task_btl_exp_0(BtlExpWork* work) {
@@ -154,8 +154,8 @@ void task_btl_exp_0(BtlExpWork* work) {
     work->gfx = 0;
 
     for (i = 0; i <= 5; i++) {
-        work->unk_08[i] = AllocObjTiles(32, gUnk_08B25EF0);
-        work->unk_24[i] = 0;
+        work->tiles2[i] = AllocObjTiles(32, gUnk_08B25EF0);
+        work->gfx2[i] = 0;
     }
 
     work->unk_3C = 0;
@@ -265,8 +265,8 @@ void task_btl_exp_2(BtlExpWork* work) {
 #endif
 
         for (i = 0; i <= 5; i++) {
-            if (work->unk_24[i] != 0) {
-                DrawSprite(x, y, work->unk_24[i], work->unk_08[i], work->palette, 0, 0x410, 0);
+            if (work->gfx2[i] != 0) {
+                DrawSprite(x, y, work->gfx2[i], work->tiles2[i], work->palette, 0, 0x410, 0);
                 x += 8;
             }
         }
@@ -277,7 +277,7 @@ void task_btl_exp_3(BtlExpWork* work) {
     s32 i;
 
     for (i = 0; i < 6; i++) {
-        ReleaseObjTiles(work->unk_08[i]);
+        ReleaseObjTiles(work->tiles2[i]);
     }
 
     ReleaseObjTiles(work->tiles);
@@ -329,15 +329,15 @@ void task_btl_vslockon_3(BtlVslockonWork* work) {
 }
 
 void task_btl_hpoth_0(BtlHpothWork* work) {
-    work->unk_0C = LoadObjPalette(gUnk_096FAC64, 32);
-    work->unk_10 = AllocObjTiles(0x280, gUnk_08B20D6E);
-    work->unk_20 = gUnk_08B20D20;
+    work->palette = LoadObjPalette(gUnk_096FAC64, 32);
+    work->tiles = AllocObjTiles(0x280, gUnk_08B20D6E);
+    work->gfx = gUnk_08B20D20;
     AnimInit(&work->unk_44, gUnk_09EE12B0, gUnk_09EE12A4);
-    work->unk_08 = LoadObjPalette(gUnk_08F69BA4, 32);
-    work->unk_14 = AllocObjTiles(0x280, gUnk_08B24016);
-    work->unk_18 = AllocObjTiles(0x120, gUnk_08B24016);
-    work->unk_1C = AllocObjTiles(0x80, gUnk_08B24016);
-    work->unk_24 = gUnk_08B23CBA;
+    work->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->tiles2 = AllocObjTiles(0x280, gUnk_08B24016);
+    work->tiles3 = AllocObjTiles(0x120, gUnk_08B24016);
+    work->tiles4 = AllocObjTiles(0x80, gUnk_08B24016);
+    work->gfx2 = gUnk_08B23CBA;
     AnimInit(&work->unk_2C, gUnk_09EE1498, gUnk_09EE1420);
     AnimStart(&work->unk_44, 0, 1);
 
@@ -413,32 +413,32 @@ void task_btl_hpoth_0(BtlHpothWork* work) {
             AnimStart(&work->unk_2C, 11, 1);
             break;
         }
-        work->unk_28 = 0;
+        work->gfx3 = 0;
     } else {
         AnimStart(&work->unk_2C, 11, 1);
 
         switch (work->unk_64) {
         case 0:
-            work->unk_28 = gUnk_08B23E7C;
+            work->gfx3 = gUnk_08B23E7C;
             break;
         case 1:
-            work->unk_28 = gUnk_08B23E8C;
+            work->gfx3 = gUnk_08B23E8C;
             break;
         case 2:
-            work->unk_28 = gUnk_08B23E9C;
+            work->gfx3 = gUnk_08B23E9C;
             break;
         case 3:
-            work->unk_28 = gUnk_08B23EAC;
+            work->gfx3 = gUnk_08B23EAC;
             break;
         case 4:
-            work->unk_28 = gUnk_08B23EBC;
+            work->gfx3 = gUnk_08B23EBC;
             break;
         case 5:
-            work->unk_28 = gUnk_08B23ED2;
+            work->gfx3 = gUnk_08B23ED2;
             break;
         case 6:
         default:
-            work->unk_28 = gUnk_08B23EE8;
+            work->gfx3 = gUnk_08B23EE8;
             break;
         }
     }
@@ -581,8 +581,8 @@ s32 task_btl_hpoth_1(BtlHpothWork* work) {
         }
     }
 
-    work->unk_20 = AnimUpdate(&work->unk_44);
-    work->unk_24 = AnimUpdate(&work->unk_2C);
+    work->gfx = AnimUpdate(&work->unk_44);
+    work->gfx2 = AnimUpdate(&work->unk_2C);
     work->unk_60 = actor->unk_02C;
     return 1;
 }
@@ -591,19 +591,19 @@ void task_btl_hpoth_2(BtlHpothWork* work) {
     s32 scale;
     s32 affine;
 
-    DrawSprite(236, 2, work->unk_20, work->unk_10, work->unk_0C, 0, 0x411, 1);
+    DrawSprite(236, 2, work->gfx, work->tiles, work->palette, 0, 0x411, 1);
 
     switch (work->unk_68) {
     case 0:
-        DrawSprite(236, 2, work->unk_24, work->unk_14, work->unk_08, 0, 0x411, 4);
+        DrawSprite(236, 2, work->gfx2, work->tiles2, work->palette2, 0, 0x411, 4);
         break;
     case 1:
-        DrawSprite(236, 2, gUnk_08B23F08, work->unk_14, work->unk_08, 0, 0x411, 4);
-        DrawSprite(236, 2, work->unk_28, work->unk_18, work->unk_08, 0, 0x411, 3);
+        DrawSprite(236, 2, gUnk_08B23F08, work->tiles2, work->palette2, 0, 0x411, 4);
+        DrawSprite(236, 2, work->gfx3, work->tiles3, work->palette2, 0, 0x411, 3);
         break;
     case 2:
-        DrawSprite(236, 2, work->unk_24, work->unk_14, work->unk_08, 0, 0x411, 4);
-        DrawSprite(236, 2, work->unk_28, work->unk_18, work->unk_08, 0, 0x411, 5);
+        DrawSprite(236, 2, work->gfx2, work->tiles2, work->palette2, 0, 0x411, 4);
+        DrawSprite(236, 2, work->gfx3, work->tiles3, work->palette2, 0, 0x411, 5);
         break;
     }
 
@@ -678,20 +678,20 @@ void task_btl_hpoth_2(BtlHpothWork* work) {
         }
 
         if (work->unk_68 == 1) {
-            DrawSprite(209, 9, gUnk_08B23F2E, work->unk_1C, work->unk_08, affine, 0x410, 2);
+            DrawSprite(209, 9, gUnk_08B23F2E, work->tiles4, work->palette2, affine, 0x410, 2);
         } else {
-            DrawSprite(209, 6, gUnk_08B23F24, work->unk_1C, work->unk_08, affine, 0x410, 2);
+            DrawSprite(209, 6, gUnk_08B23F24, work->tiles4, work->palette2, affine, 0x410, 2);
         }
     }
 }
 
 void task_btl_hpoth_3(BtlHpothWork* work) {
-    ReleaseObjTiles(work->unk_10);
-    ReleaseObjTiles(work->unk_14);
-    ReleaseObjTiles(work->unk_18);
-    ReleaseObjTiles(work->unk_1C);
-    ReleaseObjPalette(work->unk_08);
-    ReleaseObjPalette(work->unk_0C);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjTiles(work->tiles3);
+    ReleaseObjTiles(work->tiles4);
+    ReleaseObjPalette(work->palette2);
+    ReleaseObjPalette(work->palette);
 }
 
 void func_0805DA64(u16 a) {
