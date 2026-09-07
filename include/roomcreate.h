@@ -5,6 +5,7 @@
 #include "m4a.h"
 #include "taskpool.h"
 #include "fld_types.h"
+#include "engine.h"
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
@@ -58,9 +59,6 @@ void TaskPoolInit(TaskPool* a, s32 count);
 void TaskPoolUpdate(TaskPool* a);
 void TaskPoolDraw(TaskPool* a);
 void TaskPoolDestroy(TaskPool* a);
-void SetBgPriority(s32 bg, u16 priority);
-void DisableBg(s32 bg);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08006120(s32 a, s32 b);
 void func_080062F4(u16 a, s32 b);
 void func_08093B78(TaskPool* pool, u8* p);
