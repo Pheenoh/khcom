@@ -27,13 +27,13 @@ void mode_jiminy_0(void) {
     LoadBgPalette(1, gUnk_08F6DE24, 0x200);
     LoadBgMap(1, gUnk_08F61B84, 0x800);
     LoadBgMap(2, gUnk_08F60B84, 0x800);
-    gJiminyWork->unk_004 = LoadObjTiles(gUnk_08C69C9C, 0x880);
-    gJiminyWork->unk_008 = LoadObjPalette(gUnk_08F6DD64, 0x20);
-    func_080062F4(gJiminyWork->unk_008->unk_06 + 0x10, 1);
-    gJiminyWork->unk_00C = LoadObjTiles(gUnk_08C6A88C, 0x40);
-    gJiminyWork->unk_010 = LoadObjPalette(gUnk_08F6DDE4, 0x20);
-    gJiminyWork->unk_014 = LoadObjPalette(gUnk_08F6DD84, 0x20);
-    gJiminyWork->unk_028 = LoadObjTiles(gUnk_08C6A54E, 0x140);
+    gJiminyWork->tiles = LoadObjTiles(gUnk_08C69C9C, 0x880);
+    gJiminyWork->palette = LoadObjPalette(gUnk_08F6DD64, 0x20);
+    func_080062F4(gJiminyWork->palette->unk_06 + 0x10, 1);
+    gJiminyWork->tiles2 = LoadObjTiles(gUnk_08C6A88C, 0x40);
+    gJiminyWork->palette2 = LoadObjPalette(gUnk_08F6DDE4, 0x20);
+    gJiminyWork->palette3 = LoadObjPalette(gUnk_08F6DD84, 0x20);
+    gJiminyWork->tiles5 = LoadObjTiles(gUnk_08C6A54E, 0x140);
     gJiminyWork->unk_02C = LoadObjPalette(gUnk_08F6DDA4, 0x20);
     gJiminyWork->unk_030 = LoadObjTiles(gUnk_08C6A6B8, 0x1C0);
     gJiminyWork->unk_034 = LoadObjPalette(gUnk_08F6DDC4, 0x20);
@@ -47,20 +47,20 @@ void mode_jiminy_0(void) {
     gJiminyWork->unk_C74 = 0;
 
     if (gGameState.flags & 8) {
-        gJiminyWork->unk_018 = AllocObjTiles(0x1000, gUnk_0913F0C2);
-        gJiminyWork->unk_01C = LoadObjPalette(gUnk_09614D58, 0x20);
+        gJiminyWork->tiles3 = AllocObjTiles(0x1000, gUnk_0913F0C2);
+        gJiminyWork->palette4 = LoadObjPalette(gUnk_09614D58, 0x20);
         AnimInit(&gJiminyWork->unk_C7C, gUnk_09EED320, gUnk_09EED2BC);
         AnimStart(&gJiminyWork->unk_C7C, 0, 1);
     } else {
-        gJiminyWork->unk_018 = AllocObjTiles(0x1000, gUnk_090FDBF4);
-        gJiminyWork->unk_01C = LoadObjPalette(gUnk_09614AB8, 0x20);
+        gJiminyWork->tiles3 = AllocObjTiles(0x1000, gUnk_090FDBF4);
+        gJiminyWork->palette4 = LoadObjPalette(gUnk_09614AB8, 0x20);
         AnimInit(&gJiminyWork->unk_C7C, gUnk_09EECAA0, gUnk_09EECA44);
         AnimStart(&gJiminyWork->unk_C7C, 0, 1);
     }
 
     if (func_08006314() == 0) {
-        gJiminyWork->unk_020 = AllocObjTiles(0x200, gUnk_08C6A958);
-        gJiminyWork->unk_024 = LoadObjPalette(gUnk_08F6DE04, 0x20);
+        gJiminyWork->tiles4 = AllocObjTiles(0x200, gUnk_08C6A958);
+        gJiminyWork->palette5 = LoadObjPalette(gUnk_08F6DE04, 0x20);
         AnimInit(&gJiminyWork->unk_C94, gUnk_09EE2678, gUnk_09EE2668);
         AnimStart(&gJiminyWork->unk_C94, 2, 1);
     }
@@ -213,11 +213,11 @@ void mode_jiminy_1(void) {
             } else {
                 LoadBgMap(1, e->unk_00, 0x800);
             }
-            LoadObjPaletteBank(gJiminyWork->unk_014->unk_06, gUnk_08F6DD84);
+            LoadObjPaletteBank(gJiminyWork->palette3->unk_06, gUnk_08F6DD84);
             func_0805A95C(3, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x80, 0x40, 0x18);
         } else {
             LoadBgMap(1, e->unk_00, 0x800);
-            LoadObjPaletteBank(gJiminyWork->unk_014->unk_06, gUnk_08F6DDC4);
+            LoadObjPaletteBank(gJiminyWork->palette3->unk_06, gUnk_08F6DDC4);
 #ifdef VERSION_JP
             func_0805A95C(8, e->unk_08, e->unk_04, e->unk_10, e->unk_0C, 0x70, 0x1A, 0x10);
 #else
@@ -299,8 +299,8 @@ void mode_jiminy_1(void) {
     if (gJiminyWork->unk_CAC & 1) {
         EnableBg(2);
         func_080658B8(gJiminyWork->unk_C70);
-        DrawSprite(0x23, 0x76, AnimUpdate(&gJiminyWork->unk_C7C), gJiminyWork->unk_018,
-            gJiminyWork->unk_01C, 0, 0, 0);
+        DrawSprite(0x23, 0x76, AnimUpdate(&gJiminyWork->unk_C7C), gJiminyWork->tiles3,
+            gJiminyWork->palette4, 0, 0, 0);
     } else {
         DisableBg(2);
     }
@@ -310,7 +310,7 @@ void mode_jiminy_1(void) {
             break;
         }
         func_080664D8(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
-            &gJiminyWork->unk_060[i], gJiminyWork->unk_014, 0, gJiminyWork->unk_C60[i]);
+            &gJiminyWork->unk_060[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
 
         if (gJiminyWork->unk_000 == 7) {
             switch (gJiminyWork->unk_C68[i]) {
@@ -328,39 +328,39 @@ void mode_jiminy_1(void) {
 
     if (gJiminyWork->unk_CAC & 2) {
         if (gGameState.flags & 8) {
-            DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C76, gJiminyWork->unk_004,
-                gJiminyWork->unk_008, 0, 0, 0);
+            DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C76, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 0);
         } else {
-            DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C04, gJiminyWork->unk_004,
-                gJiminyWork->unk_008, 0, 0, 0);
+            DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C04, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 0);
         }
-        DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->unk_00C, gJiminyWork->unk_010, 0, 0, 0);
-        DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnk_08C69C20, gJiminyWork->unk_004,
-            gJiminyWork->unk_008, 0, 0, 1);
-        DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnk_08C69C54, gJiminyWork->unk_004,
-            gJiminyWork->unk_008, 0, 0, 1);
+        DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
+        DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnk_08C69C20, gJiminyWork->tiles,
+            gJiminyWork->palette, 0, 0, 1);
+        DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnk_08C69C54, gJiminyWork->tiles,
+            gJiminyWork->palette, 0, 0, 1);
     }
 
     if (gJiminyWork->unk_000 == 7) {
         if (gJiminyWork->unk_CAC & 8) {
             DrawSprite(gJiminyWork->unk_CC2, gJiminyWork->unk_CC4 - ((gJiminyWork->unk_D3E >> 3) & 3),
-                gUnk_08C6A51C, gJiminyWork->unk_028, gJiminyWork->unk_02C, 0, 0, 0);
+                gUnk_08C6A51C, gJiminyWork->tiles5, gJiminyWork->unk_02C, 0, 0, 0);
         }
 
         if (gJiminyWork->unk_CAC & 0x10) {
             DrawSprite(gJiminyWork->unk_CC6, gJiminyWork->unk_CC8 + ((gJiminyWork->unk_D3E >> 3) & 3),
-                gUnk_08C6A526, gJiminyWork->unk_028, gJiminyWork->unk_02C, 0, 0, 0);
+                gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->unk_02C, 0, 0, 0);
         }
 
         if (func_08006314() == 0) {
             if (gJiminyWork->unk_CAC & 4) {
                 if (gJiminyWork->unk_CC0 <= 0) {
                     DrawSprite(gJiminyWork->unk_058 >> 8, gJiminyWork->unk_05C >> 8,
-                        AnimUpdate(&gJiminyWork->unk_C94), gJiminyWork->unk_020,
-                        gJiminyWork->unk_024, 0, 0, 0);
+                        AnimUpdate(&gJiminyWork->unk_C94), gJiminyWork->tiles4,
+                        gJiminyWork->palette5, 0, 0, 0);
                 } else {
                     DrawSprite(gJiminyWork->unk_058 >> 8, gJiminyWork->unk_05C >> 8, gUnk_08C6A8F8,
-                        gJiminyWork->unk_020, gJiminyWork->unk_024, 0, 0, 0);
+                        gJiminyWork->tiles4, gJiminyWork->palette5, 0, 0, 0);
 
                     if (gJiminyWork->unk_CC0 == 1) {
                         AnimReset(&gJiminyWork->unk_C94);
@@ -405,16 +405,16 @@ INCLUDE_ASM("mode_jiminy/func_0805BAE4.s");
 
 void mode_jiminy_2(void) {
     func_08065940();
-    ReleaseObjTiles(gJiminyWork->unk_004);
-    ReleaseObjPalette(gJiminyWork->unk_008);
-    ReleaseObjTiles(gJiminyWork->unk_00C);
-    ReleaseObjPalette(gJiminyWork->unk_010);
-    ReleaseObjPalette(gJiminyWork->unk_014);
-    ReleaseObjTiles(gJiminyWork->unk_018);
-    ReleaseObjPalette(gJiminyWork->unk_01C);
-    ReleaseObjTiles(gJiminyWork->unk_020);
-    ReleaseObjPalette(gJiminyWork->unk_024);
-    ReleaseObjTiles(gJiminyWork->unk_028);
+    ReleaseObjTiles(gJiminyWork->tiles);
+    ReleaseObjPalette(gJiminyWork->palette);
+    ReleaseObjTiles(gJiminyWork->tiles2);
+    ReleaseObjPalette(gJiminyWork->palette2);
+    ReleaseObjPalette(gJiminyWork->palette3);
+    ReleaseObjTiles(gJiminyWork->tiles3);
+    ReleaseObjPalette(gJiminyWork->palette4);
+    ReleaseObjTiles(gJiminyWork->tiles4);
+    ReleaseObjPalette(gJiminyWork->palette5);
+    ReleaseObjTiles(gJiminyWork->tiles5);
     ReleaseObjPalette(gJiminyWork->unk_02C);
     ReleaseObjTiles(gJiminyWork->unk_030);
     ReleaseObjPalette(gJiminyWork->unk_034);

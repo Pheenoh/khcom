@@ -30,16 +30,16 @@ typedef struct JiminyEntry {
 
 typedef struct JiminyWork {
     s32 unk_000;
-    void* unk_004;
-    ObjPalette* unk_008;
-    void* unk_00C;
-    ObjPalette* unk_010;
-    ObjPalette* unk_014;
-    void* unk_018;
-    ObjPalette* unk_01C;
-    void* unk_020;
-    ObjPalette* unk_024;
-    void* unk_028;
+    void* tiles;
+    ObjPalette* palette;
+    void* tiles2;
+    ObjPalette* palette2;
+    ObjPalette* palette3;
+    void* tiles3;
+    ObjPalette* palette4;
+    void* tiles4;
+    ObjPalette* palette5;
+    void* tiles5;
     ObjPalette* unk_02C;
     void* unk_030;
     ObjPalette* unk_034;

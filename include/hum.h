@@ -548,16 +548,16 @@ typedef struct JiminyLine {
 
 typedef struct JiminyWork {
     s32 unk_000;
-    void* unk_004;
-    void* unk_008;
-    void* unk_00C;
-    void* unk_010;
-    void* unk_014;
-    void* unk_018;
-    void* unk_01C;
-    void* unk_020;
-    void* unk_024;
-    void* unk_028;
+    void* tiles;
+    void* palette;
+    void* tiles2;
+    void* palette2;
+    void* palette3;
+    void* tiles3;
+    void* palette4;
+    void* tiles4;
+    void* palette5;
+    void* tiles5;
     void* unk_02C;
     void* unk_030;
     void* unk_034;
