@@ -883,9 +883,9 @@ void task_btl_escape_0(BtlEscapeWork* work) {
     work->unk_18 = 0x5A00;
     work->tiles = LoadObjTiles(gUnk_08B1EB1C, 0x240);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    work->unk_08 = gUnk_09EE11A4[0];
-    work->unk_0C = gUnk_09EE11A4[2];
-    work->unk_10 = gUnk_09EE11A4[1];
+    work->gfx = gUnk_09EE11A4[0];
+    work->gfx2 = gUnk_09EE11A4[2];
+    work->gfx3 = gUnk_09EE11A4[1];
     work->unk_14 = 0;
     work->unk_1C = 0;
     work->unk_22 = 0;
@@ -942,10 +942,10 @@ void task_btl_escape_2(BtlEscapeWork* work) {
     actor = gBtlWork->unk_07C;
     if (actor->unk_034 & 4) {
         WorldToScreen(&x, &y, actor->unk_004 - 768, actor->unk_008, actor->unk_00C - 10240);
-        DrawSprite(x, y, work->unk_08, work->tiles, work->palette, 0, 0, 2);
+        DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, 0, 2);
     } else {
         WorldToScreen(&x, &y, actor->unk_004 - 3072, actor->unk_008, actor->unk_00C - 10240);
-        DrawSprite(x, y, work->unk_0C, work->tiles, work->palette, 0, 0, 2);
+        DrawSprite(x, y, work->gfx2, work->tiles, work->palette, 0, 0, 2);
     }
 
     if (work->unk_14 > 0) {
@@ -955,7 +955,7 @@ void task_btl_escape_2(BtlEscapeWork* work) {
         } else {
             aff = AllocObjAffine(0, v, 256, 0);
         }
-        DrawSprite(x, y, work->unk_10, work->tiles, work->palette, aff, 0, 1);
+        DrawSprite(x, y, work->gfx3, work->tiles, work->palette, aff, 0, 1);
     }
 }
 

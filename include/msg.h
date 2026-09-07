@@ -30,7 +30,7 @@ typedef struct Work0806180C {
     Ent0806E9BC* unk_000;
     void* tiles;
     void* palette;
-    void* unk_00C;
+    void* gfx;
     TaskPool unk_010;
     u16 unk_024;
     u8 unk_026;
