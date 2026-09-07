@@ -978,9 +978,9 @@ void task_hum_hades_0(HadesWork* work) {
     work->unk_1CA = 0;
     work->unk_1C4 = -0xA00;
     work->unk_188.unk_34 |= 3;
-    work->unk_1D4 = AllocObjTiles(0x80, gUnk_08BAFB62);
-    work->unk_1D8 = AllocObjTiles(0x280, gUnk_08BAFB62);
-    work->unk_1DC = AllocObjTiles(0x3A0, gUnk_08BAFB62);
+    work->tiles = AllocObjTiles(0x80, gUnk_08BAFB62);
+    work->tiles2 = AllocObjTiles(0x280, gUnk_08BAFB62);
+    work->tiles3 = AllocObjTiles(0x3A0, gUnk_08BAFB62);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     AnimInit(&work->unk_1E0, gUnk_09EE1B78, gUnk_09EE1B38);
     AnimStart(&work->unk_1E0, 2, 1);
@@ -1030,23 +1030,23 @@ void task_hum_hades_2(HadesWork* work) {
         affine = AllocObjAffine(0, sx, work->unk_27C, 0);
         gfx = AnimGetGfx(&work->unk_1E0);
         WorldToScreen(&x, &y, e->unk_04, e->unk_08, e->unk_0C);
-        DrawSprite(x, y, gfx, work->unk_1D4, work->palette, affine, attr,
+        DrawSprite(x, y, gfx, work->tiles, work->palette, affine, attr,
             -0x1005 - (e->unk_00 >> 8) * 4);
         gfx = AnimGetGfx(&work->unk_1F8);
         WorldToScreen(&x, &y, e->unk_10, e->unk_14, e->unk_18);
-        DrawSprite(x, y, gfx, work->unk_1D8, work->palette, affine, attr,
+        DrawSprite(x, y, gfx, work->tiles2, work->palette, affine, attr,
             -0x1006 - (e->unk_00 >> 8) * 4);
         gfx = AnimGetGfx(&work->unk_210);
         WorldToScreen(&x, &y, e->unk_1C, e->unk_20, e->unk_24);
-        DrawSprite(x, y, gfx, work->unk_1DC, work->palette, affine, attr,
+        DrawSprite(x, y, gfx, work->tiles3, work->palette, affine, attr,
             -0x1007 - (e->unk_00 >> 8) * 4);
     }
 }
 
 void task_hum_hades_3(HadesWork* work) {
-    ReleaseObjTiles(work->unk_1D4);
-    ReleaseObjTiles(work->unk_1D8);
-    ReleaseObjTiles(work->unk_1DC);
+    ReleaseObjTiles(work->tiles);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjTiles(work->tiles3);
     ReleaseObjPalette(work->palette);
     func_0800E380(&work->base);
 }
