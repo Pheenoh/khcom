@@ -157,7 +157,11 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09F81A4C": 0x09F81A4C,
         "gUnkEu_09F81A38": 0x09F81A38,
         "gUnkEu_0973EEFE": 0x0973EEFE,
+        "gUnkEu_09F84EE8": 0x09F84EE8,
         "gUnkEu_09F84EFC": 0x09F84EFC,
+        "gUnkEu_09F84F10": 0x09F84F10,
+        "gUnkEu_09F84F24": 0x09F84F24,
+        "gUnkEu_09F84F38": 0x09F84F38,
         "gUnkEu_08B51BA8": 0x08B51BA8,
         "gUnkEu_08B51D50": 0x08B51D50,
         "gUnkEu_08B51FB8": 0x08B51FB8,
@@ -314,6 +318,7 @@ TARGET_FUNC_SIZE = {
         "func_080F7AB4": 52,
         "func_08100608": 56,
         "func_081017A0": 492,
+        "func_08101970": 760,
         "func_080D6C54": 232,
         "func_080D6D2C": 148,
         "task_title_lumichange_2": 152,
@@ -334,6 +339,8 @@ TARGET_FUNC_ADDR = {
         "task_btl_escape_0": 0x08034CA8,
         "event_seq_3": 0x0806CD78,
         "func_08060F1C": 0x08063430,
+        "func_081017A0": 0x080FFB9C,
+        "func_08101970": 0x080FFD88,
     },
 }
 
