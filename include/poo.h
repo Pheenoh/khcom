@@ -707,12 +707,12 @@ typedef struct PooVegetableWork {
 } PooVegetableWork;
 
 typedef struct PooTanpopoWork {
-    void* unk_00;
+    void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     u8 unk_0C[0x18];
-    void* unk_24;
-    void* unk_28;
+    void* tiles2;
+    void* gfx2;
     u8 unk_2C[0x18];
     s32 unk_44;
     s32 unk_48;

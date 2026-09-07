@@ -4421,19 +4421,19 @@ void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg) {
     work->palette = LoadObjPalette(gUnk_096FB5A4, 0x60);
     AnimInit(&work->unk_01C, gUnk_09EF3B40, gUnk_09EF3A48);
     AnimStart(&work->unk_01C, 27, 1);
-    work->unk_00C = AnimGetGfx(&work->unk_01C);
+    work->gfx = AnimGetGfx(&work->unk_01C);
     AnimInit(&work->unk_034, gUnk_09EF3B40, gUnk_09EF3A48);
     AnimStart(&work->unk_034, 8, 1);
-    work->unk_010 = AnimGetGfx(&work->unk_034);
+    work->gfx2 = AnimGetGfx(&work->unk_034);
     AnimInit(&work->unk_04C, gUnk_09EF3B40, gUnk_09EF3A48);
     AnimStart(&work->unk_04C, 7, 1);
-    work->unk_014 = AnimGetGfx(&work->unk_04C);
+    work->gfx3 = AnimGetGfx(&work->unk_04C);
     AnimInit(&work->unk_064, gUnk_09EF3B40, gUnk_09EF3A48);
     AnimStart(&work->unk_064, 28, 1);
-    work->unk_018 = AnimGetGfx(&work->unk_064);
+    work->gfx4 = AnimGetGfx(&work->unk_064);
     AnimInit(&work->unk_080, gUnk_09EF3B40, gUnk_09EF3A48);
     AnimStart(&work->unk_080, 6, 1);
-    work->unk_07C = AnimGetGfx(&work->unk_080);
+    work->gfx5 = AnimGetGfx(&work->unk_080);
     func_0801C298(*(u8*)((u8*)work->palette + 6) + 16, 0);
 }
 
@@ -4443,11 +4443,11 @@ u8 task_bos_jf_borderline_1(JfBorderlineWork* work) {
     func_080C1A48(work);
     work->unk_098 = p->unk_04 + work->unk_0A4;
     work->unk_09C = p->unk_08 + work->unk_0A8;
-    work->unk_00C = AnimUpdate(&work->unk_01C);
-    work->unk_010 = AnimUpdate(&work->unk_034);
-    work->unk_014 = AnimUpdate(&work->unk_04C);
-    work->unk_018 = AnimUpdate(&work->unk_064);
-    work->unk_07C = AnimUpdate(&work->unk_080);
+    work->gfx = AnimUpdate(&work->unk_01C);
+    work->gfx2 = AnimUpdate(&work->unk_034);
+    work->gfx3 = AnimUpdate(&work->unk_04C);
+    work->gfx4 = AnimUpdate(&work->unk_064);
+    work->gfx5 = AnimUpdate(&work->unk_080);
 
     return 1;
 }
@@ -4461,60 +4461,60 @@ void task_bos_jf_borderline_2(JfBorderlineWork* work) {
 
     switch (work->unk_0B5) {
     case 0:
-        DrawSprite(sx - 16, sy - 1, work->unk_00C, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 16, sy - 1, work->gfx, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx - 16, sy - 1, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 16, sy - 1, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx, sy + 1, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx, sy + 1, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx + 16, sy - 1, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 16, sy - 1, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx + 16, sy - 1, work->unk_010, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 16, sy - 1, work->gfx2, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx - 8, sy + 4, work->unk_00C, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 8, sy + 4, work->gfx, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx - 8, sy + 4, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 8, sy + 4, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFF60);
-        DrawSprite(sx + 8, sy + 4, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 8, sy + 4, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFF60);
-        DrawSprite(sx + 8, sy + 4, work->unk_010, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 8, sy + 4, work->gfx2, work->tiles, work->palette, 0, 0x400,
             0xFF60);
         break;
     case 1:
-        DrawSprite(sx - 40, sy - 1, work->unk_00C, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 40, sy - 1, work->gfx, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx - 40, sy - 1, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 40, sy - 1, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx - 24, sy + 1, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 24, sy + 1, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx - 8, sy + 2, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 8, sy + 2, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx + 8, sy + 2, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 8, sy + 2, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx + 24, sy + 1, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 24, sy + 1, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx + 40, sy - 1, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 40, sy - 1, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx + 40, sy - 1, work->unk_010, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 40, sy - 1, work->gfx2, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx - 32, sy + 4, work->unk_00C, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 32, sy + 4, work->gfx, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
-        DrawSprite(sx - 32, sy + 4, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 32, sy + 4, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFF60);
-        DrawSprite(sx - 16, sy + 6, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx - 16, sy + 6, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFF60);
-        DrawSprite(sx, sy + 7, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx, sy + 7, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFF60);
-        DrawSprite(sx + 16, sy + 6, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 16, sy + 6, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFF60);
-        DrawSprite(sx + 32, sy + 4, work->unk_014, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 32, sy + 4, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFF60);
-        DrawSprite(sx + 32, sy - 4, work->unk_010, work->tiles, work->palette, 0, 0x400,
+        DrawSprite(sx + 32, sy - 4, work->gfx2, work->tiles, work->palette, 0, 0x400,
             0xFFF0);
         break;
     }
 
-    DrawSprite(sx, sy - 8, work->unk_07C, work->tiles, work->palette, 0, 0x400, 0xFF00);
+    DrawSprite(sx, sy - 8, work->gfx5, work->tiles, work->palette, 0, 0x400, 0xFF00);
 }
 #else
 INCLUDE_ASM("bos2/task_bos_jf_borderline_2.s");

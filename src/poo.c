@@ -4649,10 +4649,10 @@ void task_poo_tanpopo_0(PooTanpopoWork* w, PooLeafArgs* a) {
     w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF6138, gUnk_09EF6130);
     AnimStart(w->unk_0C, 0, 0);
-    w->unk_08 = AnimGetGfx(w->unk_0C);
+    w->gfx = AnimGetGfx(w->unk_0C);
     AnimInit(w->unk_2C, gUnk_09EF6154, gUnk_09EF613C);
     AnimStart(w->unk_2C, 0, 0);
-    w->unk_28 = AnimGetGfx(w->unk_2C);
+    w->gfx2 = AnimGetGfx(w->unk_2C);
     func_08012324(w->unk_54, w->unk_44 + 0x1800, w->unk_48 + 0x1000, w->unk_4C);
     w->unk_B0 = 0;
 }
@@ -4681,8 +4681,8 @@ void task_poo_tanpopo_2(PooTanpopoWork* w) {
     y = (w->unk_48 >> 8) - gUnk_0203C3F8;
     if (func_080035CC(x, y, 0, 32, 0, 48) != 0) {
         if (w->palette != 0) {
-            ReleaseObjTiles(w->unk_00);
-            ReleaseObjTiles(w->unk_24);
+            ReleaseObjTiles(w->tiles);
+            ReleaseObjTiles(w->tiles2);
             ReleaseObjPalette(w->palette);
             w->palette = 0;
             func_08012304(w->unk_54);
@@ -4690,19 +4690,19 @@ void task_poo_tanpopo_2(PooTanpopoWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->unk_00 = LoadObjTiles(gUnk_0975E40E, 0x800);
-            w->unk_24 = LoadObjTiles(gUnk_0975EC8E, 0x1800);
+            w->tiles = LoadObjTiles(gUnk_0975E40E, 0x800);
+            w->tiles2 = LoadObjTiles(gUnk_0975EC8E, 0x1800);
             w->palette = LoadObjPalette(gUnk_09849E18, 0x20);
             func_080122AC(w->unk_54, 6, 24, 0);
         }
         p = &w->unk_B0;
         if (*p != 0) {
-            w->unk_08 = AnimUpdate(w->unk_0C);
-            w->unk_28 = AnimUpdate(w->unk_2C);
-            DrawSprite(x, y, w->unk_08, w->unk_00, w->palette, 0, 0x800, 0xFFF1);
+            w->gfx = AnimUpdate(w->unk_0C);
+            w->gfx2 = AnimUpdate(w->unk_2C);
+            DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, 0xFFF1);
 
             if (AnimIsFinished(w->unk_2C) == 0) {
-                DrawSprite(x, y, w->unk_28, w->unk_24, w->palette, 0, 0x800, 100);
+                DrawSprite(x, y, w->gfx2, w->tiles2, w->palette, 0, 0x800, 100);
             } else if ((w->unk_82 & 2) == 0) {
                 *p = 0;
             }
@@ -4713,8 +4713,8 @@ void task_poo_tanpopo_2(PooTanpopoWork* w) {
 void task_poo_tanpopo_3(PooTanpopoWork* w) {
     if (w->palette != 0) {
         ReleaseObjPalette(w->palette);
-        ReleaseObjTiles(w->unk_00);
-        ReleaseObjTiles(w->unk_24);
+        ReleaseObjTiles(w->tiles);
+        ReleaseObjTiles(w->tiles2);
         func_08012304(w->unk_54);
     }
 }
