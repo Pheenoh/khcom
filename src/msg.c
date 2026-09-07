@@ -2943,7 +2943,7 @@ s32 func_08065D10(u16* a, TextSlot* b) {
 
     return n;
 }
-#elif !defined(VERSION_EU)
+#elif defined(VERSION_JP)
 INCLUDE_ASM("msg/func_08065D10.s");
 #endif
 #ifndef VERSION_EU
