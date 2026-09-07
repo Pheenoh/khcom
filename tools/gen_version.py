@@ -71,6 +71,14 @@ TARGET_ANCHORS = {
         0x09EF6934: 0x09F81FB0,
         0x098A8C66: 0x0988740A,
         0x08B1EB1C: 0x08B4A42C,
+        0x08F61B84: 0x08F5C0DC,
+        0x08F60B84: 0x08F5B8DC,
+        0x08C6A88C: 0x08C9C288,
+        0x08C6A54E: 0x08C9C132,
+        0x08C6A6B8: 0x08C9BDC0,
+        0x08C6A958: 0x08C9C354,
+        0x09EE2678: 0x09F5D4C0,
+        0x09EE2668: 0x09F5D4B0,
     },
     "jp": {
         0x09C8D47A: 0x09C678B4,
@@ -283,6 +291,12 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_095DA867": 0x095DA867,
         "gUnkEu_08890EC0": 0x08890EC0,
         "gUnkEu_08895E94": 0x08895E94,
+        "gUnkEu_08C9A5E2": 0x08C9A5E2,
+        "gUnkEu_08892334": 0x08892334,
+        "gUnkEu_08EF3EDC": 0x08EF3EDC,
+        "gUnkEu_08EF4EDC": 0x08EF4EDC,
+        "gUnkEu_08EF5EDC": 0x08EF5EDC,
+        "gUnkEu_08EF6EDC": 0x08EF6EDC,
     },
     "jp": {
         "gUnk_0814FBB0": 0x0814FBB0,
@@ -328,6 +342,9 @@ TARGET_FUNC_SIZE = {
         "mode_sio_btl_option_0": 0x1c4,
         "Deck_Yes_No_0": 0x178,
         "Deck_Clear_0": 0x174,
+        "mode_jiminy_0": 0x4a8,
+        "func_08064EF4": 0x174,
+        "func_08065170": 0x150,
         "mode_sio_btl_option_2": 0x14c,
         "func_080B0874": 0x164,
         "func_080B06D4": 0x90,
@@ -356,6 +373,7 @@ TARGET_FUNC_SIZE = {
 
 TARGET_FUNC_ADDR = {
     "eu": {
+        "func_08065170": 0x08065F24,
         "func_08005458": 0x08005600,
         "func_08005474": 0x08005620,
         "func_0801CB44": 0x08020A14,
