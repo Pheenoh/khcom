@@ -5,6 +5,7 @@
 #include "taskpool.h"
 #include "main.h"
 #include "mode.h"
+#include "engine.h"
 
 typedef struct ChkBtlWork {
     s8 unk_00;
@@ -57,11 +58,7 @@ typedef struct GameState {
 } GameState;
 void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
-void SetBgMode0(void);
-void EnableBg(s32 a);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_08006120(s32 a, s32 b);
-void SeedRandom(u32 a);
 void func_0805FA60(s32 a, void* b, s32 c, u8 d);
 void func_0805FA8C(s32 a, s32 b, s32 c);
 void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
