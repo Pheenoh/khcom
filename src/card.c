@@ -353,7 +353,7 @@ void func_080AAEEC(UnkStruct_0808C940* w, s16 n);
 u8 func_0807CF4C(u8* work, void* a);
 u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a);
 void func_080A1E4C(u8* work);
-u8 REV_COUNT_1(u8* work, void* a);
+u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a);
 void func_0809D2B0(u8 a, u8 b, u8 c, u8* s);
 void func_080A6BB4(u8* work);
 void func_080A6FAC(UnkStruct_080A6FAC* w);
@@ -14265,7 +14265,7 @@ void RELOAD_CHILDREN_3(void** p) {
         ReleaseObjTiles(p[2]);
     }
 }
-void REV_COUNT_0(u8* work, UnkStruct_080991CC* a) {
+void REV_COUNT_0(UnkStruct_08098CE4* w, UnkStruct_080991CC* a) {
     vu32 zero;
     s16* count;
     s16* count2;
@@ -14273,129 +14273,129 @@ void REV_COUNT_0(u8* work, UnkStruct_080991CC* a) {
     u8 idx;
 
     zero = 0;
-    CpuSet((void*)&zero, work, 0x05000011);
-    *(UnkStruct_080991CC*)&work[0x2C] = *a;
-    idx = work[0x38];
-    work[0x24] = idx;
-    *(void**)&work[0x00] = func_080038C8(320);
-    *(void**)&work[0x04] = LoadObjPalette(gUnk_09611AB8, 32);
+    CpuSet((void*)&zero, w, 0x05000011);
+    w->unk_2C = *a;
+    idx = w->unk_2C.unk_0C;
+    w->unk_24 = idx;
+    w->unk_00 = func_080038C8(320);
+    w->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
 
-    if (work[0x24] == 0) {
-        count = *(s16**)&work[0x30];
+    if (w->unk_24 == 0) {
+        count = (s16*)w->unk_2C.unk_04;
 
         if (*count >= 2 && *count <= 100) {
-            row = gUnk_09EE76D0[work[0x24]];
-            func_080038E4(*(void**)&work[0x00], row[*count - 2], gUnk_09EE76C0[work[0x24]]);
+            row = gUnk_09EE76D0[w->unk_24];
+            func_080038E4(w->unk_00, row[*count - 2], gUnk_09EE76C0[w->unk_24]);
         } else if (*count > 100) {
-            row = gUnk_09EE76D0[work[0x24]];
-            func_080038E4(*(void**)&work[0x00], row[98], gUnk_09EE76C0[work[0x24]]);
+            row = gUnk_09EE76D0[w->unk_24];
+            func_080038E4(w->unk_00, row[98], gUnk_09EE76C0[w->unk_24]);
         } else {
-            row = gUnk_09EE76D0[work[0x24]];
-            func_080038E4(*(void**)&work[0x00], row[0], gUnk_09EE76C0[work[0x24]]);
+            row = gUnk_09EE76D0[w->unk_24];
+            func_080038E4(w->unk_00, row[0], gUnk_09EE76C0[w->unk_24]);
         }
     } else {
-        count2 = *(s16**)&work[0x30];
+        count2 = (s16*)w->unk_2C.unk_04;
 
         if (*count2 >= 1 && *count2 <= 99) {
-            row = gUnk_09EE76D0[work[0x24]];
-            func_080038E4(*(void**)&work[0x00], row[*count2 - 1], gUnk_09EE76C0[work[0x24]]);
+            row = gUnk_09EE76D0[w->unk_24];
+            func_080038E4(w->unk_00, row[*count2 - 1], gUnk_09EE76C0[w->unk_24]);
         } else {
-            row = gUnk_09EE76D0[work[0x24]];
-            func_080038E4(*(void**)&work[0x00], row[0], gUnk_09EE76C0[work[0x24]]);
+            row = gUnk_09EE76D0[w->unk_24];
+            func_080038E4(w->unk_00, row[0], gUnk_09EE76C0[w->unk_24]);
         }
     }
 
-    *(void**)&work[0x08] = AnimGetGfx(&work[0x0C]);
-    *(u16*)&work[0x26] = **(u16**)&work[0x30];
+    w->unk_08 = AnimGetGfx(&w->unk_0C);
+    w->unk_26 = *(u16*)w->unk_2C.unk_04;
 
-    switch (work[0x39]) {
+    switch (w->unk_2C.unk_0D) {
     case 1:
-        *(s32*)&work[0x3C] = -0x2000;
-        *(s32*)&work[0x40] = 0x9800;
+        w->unk_3C = -0x2000;
+        w->unk_40 = 0x9800;
         break;
     case 2:
-        *(s32*)&work[0x3C] = 0x11000;
-        *(s32*)&work[0x40] = 0x9800;
+        w->unk_3C = 0x11000;
+        w->unk_40 = 0x9800;
         break;
     }
 
-    work[0x28] = 8;
+    w->unk_28 = 8;
 }
-u8 func_08098FDC(u8* work);
-u8 func_08099048(u8* work, void* a);
-u8 func_080990CC(u8* work, void* a);
+u8 func_08098FDC(UnkStruct_08098CE4* w);
+u8 func_08099048(UnkStruct_08098CE4* w, void* a);
+u8 func_080990CC(UnkStruct_08098CE4* w, void* a);
 
 #ifdef NON_MATCHING
-u8 REV_COUNT_1(u8* work, void* a) {
-    u8 (*f)(u8*, void*);
+u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
+    u8 (*f)(UnkStruct_08098CE4*, void*);
     s16* count;
     void** row;
 
-    count = *(s16**)&work[0x30];
+    count = (s16*)w->unk_2C.unk_04;
 
-    if (*count != *(s16*)&work[0x26]) {
-        if (work[0x24] == 0) {
+    if (*count != (s16)w->unk_26) {
+        if (w->unk_24 == 0) {
             if (*count >= 2 && *count <= 100) {
-                row = gUnk_09EE76D0[work[0x24]];
-                func_080038E4(*(void**)&work[0x00], row[*count - 2],
-                              gUnk_09EE76C0[work[0x24]]);
+                row = gUnk_09EE76D0[w->unk_24];
+                func_080038E4(w->unk_00, row[*count - 2],
+                              gUnk_09EE76C0[w->unk_24]);
             } else {
-                work[0x28] = 8;
+                w->unk_28 = 8;
                 f = func_080990CC;
                 SetTaskUpdate(a, (u32)f);
-                *(u16*)&work[0x26] = **(u16**)&work[0x30];
-                return f(work, a);
+                w->unk_26 = *(u16*)w->unk_2C.unk_04;
+                return f(w, a);
             }
         } else {
             if (*count >= 1 && *count <= 99) {
-                row = gUnk_09EE76D0[work[0x24]];
-                func_080038E4(*(void**)&work[0x00], row[*count - 1],
-                              gUnk_09EE76C0[work[0x24]]);
+                row = gUnk_09EE76D0[w->unk_24];
+                func_080038E4(w->unk_00, row[*count - 1],
+                              gUnk_09EE76C0[w->unk_24]);
             } else {
-                work[0x28] = 8;
+                w->unk_28 = 8;
                 f = func_080990CC;
                 SetTaskUpdate(a, (u32)f);
-                *(u16*)&work[0x26] = **(u16**)&work[0x30];
-                return f(work, a);
+                w->unk_26 = *(u16*)w->unk_2C.unk_04;
+                return f(w, a);
             }
         }
 
-        *(u16*)&work[0x26] = **(u16**)&work[0x30];
+        w->unk_26 = *(u16*)w->unk_2C.unk_04;
     } else if (*count <= 0) {
-        work[0x28] = 8;
+        w->unk_28 = 8;
         f = func_080990CC;
         SetTaskUpdate(a, (u32)f);
-        *(u16*)&work[0x26] = **(u16**)&work[0x30];
-        return f(work, a);
+        w->unk_26 = *(u16*)w->unk_2C.unk_04;
+        return f(w, a);
     }
 
-    switch (work[0x39]) {
+    switch (w->unk_2C.unk_0D) {
     case 1:
-        ApproachValue(&work[0x3C], 0, work[0x28]);
+        ApproachValue(&w->unk_3C, 0, w->unk_28);
         break;
     case 2:
-        ApproachValue(&work[0x3C], 0xD800, work[0x28]);
+        ApproachValue(&w->unk_3C, 0xD800, w->unk_28);
         break;
     }
 
-    if (work[0x28] != 0) {
-        work[0x28]--;
+    if (w->unk_28 != 0) {
+        w->unk_28--;
     }
 
-    if (work[0x38] != **(u8**)&work[0x2C]) {
-        f = (u8 (*)(u8*, void*))func_08098FDC;
+    if (w->unk_2C.unk_0C != *(u8*)w->unk_2C.unk_00) {
+        f = (u8 (*)(UnkStruct_08098CE4*, void*))func_08098FDC;
         SetTaskUpdate(a, (u32)f);
-        work[0x28] = 8;
-        return f(work, a);
+        w->unk_28 = 8;
+        return f(w, a);
     }
 
     if (gBtlWork->unk_0A0 == 4) {
-        work[0x28] = 8;
+        w->unk_28 = 8;
         SetTaskUpdate(a, (u32)func_08099048);
     }
 
-    if (**(u8**)&work[0x34] == 0) {
-        work[0x28] = 8;
+    if (*(u8*)w->unk_2C.unk_08 == 0) {
+        w->unk_28 = 8;
         SetTaskUpdate(a, (u32)func_08099048);
     }
 
@@ -14405,103 +14405,103 @@ u8 REV_COUNT_1(u8* work, void* a) {
 INCLUDE_ASM("card/REV_COUNT_1.s");
 #endif
 
-u8 func_08098FDC(u8* work) {
-    switch (work[0x39]) {
+u8 func_08098FDC(UnkStruct_08098CE4* w) {
+    switch (w->unk_2C.unk_0D) {
     case 1:
-        ApproachValue(&work[0x3C], -0x2000, work[0x28]);
+        ApproachValue(&w->unk_3C, -0x2000, w->unk_28);
         break;
     case 2:
-        ApproachValue(&work[0x3C], 0x11000, work[0x28]);
+        ApproachValue(&w->unk_3C, 0x11000, w->unk_28);
         break;
     }
 
-    if (work[0x28] != 0) {
-        work[0x28]--;
+    if (w->unk_28 != 0) {
+        w->unk_28--;
     }
 
-    if (work[0x38] == **(u8**)&work[0x2C] && **(s16**)&work[0x30] > 0) {
+    if (w->unk_2C.unk_0C == *(u8*)w->unk_2C.unk_00 && *(s16*)w->unk_2C.unk_04 > 0) {
         return 0;
     }
 
     return 1;
 }
 
-u8 func_08099048(u8* work, void* a) {
-    u8 (*f)(u8*, void*);
+u8 func_08099048(UnkStruct_08098CE4* w, void* a) {
+    u8 (*f)(UnkStruct_08098CE4*, void*);
 
-    switch (work[0x39]) {
+    switch (w->unk_2C.unk_0D) {
     case 1:
-        ApproachValue(&work[0x3C], -0x2000, work[0x28]);
+        ApproachValue(&w->unk_3C, -0x2000, w->unk_28);
         break;
     case 2:
-        ApproachValue(&work[0x3C], 0x11000, work[0x28]);
+        ApproachValue(&w->unk_3C, 0x11000, w->unk_28);
         break;
     }
 
-    if (work[0x28] == 0) {
+    if (w->unk_28 == 0) {
         return 0;
     }
 
-    work[0x28]--;
+    w->unk_28--;
 
-    if (**(u8**)&work[0x34] == 1) {
-        work[0x28] = 8;
+    if (*(u8*)w->unk_2C.unk_08 == 1) {
+        w->unk_28 = 8;
         f = REV_COUNT_1;
         SetTaskUpdate(a, (void*)f);
-        return f(work, a);
+        return f(w, a);
     }
 
     return 1;
 }
 
-u8 func_080990CC(u8* work, void* a) {
-    u8 (*f)(u8*, void*);
+u8 func_080990CC(UnkStruct_08098CE4* w, void* a) {
+    u8 (*f)(UnkStruct_08098CE4*, void*);
 
-    switch (work[0x39]) {
+    switch (w->unk_2C.unk_0D) {
     case 1:
-        ApproachValue(&work[0x3C], -0x2000, work[0x28]);
+        ApproachValue(&w->unk_3C, -0x2000, w->unk_28);
         break;
     case 2:
-        ApproachValue(&work[0x3C], 0x11000, work[0x28]);
+        ApproachValue(&w->unk_3C, 0x11000, w->unk_28);
         break;
     }
 
-    if (work[0x28] != 0) {
-        work[0x28]--;
+    if (w->unk_28 != 0) {
+        w->unk_28--;
     }
 
     do {
-        if (work[0x24] == 0) {
-            if (**(s16**)&work[0x30] > 1) {
+        if (w->unk_24 == 0) {
+            if (*(s16*)w->unk_2C.unk_04 > 1) {
                 f = REV_COUNT_1;
                 SetTaskUpdate(a, (void*)f);
-                work[0x28] = 8;
-                return f(work, a);
+                w->unk_28 = 8;
+                return f(w, a);
             }
         } else {
-            if (**(s16**)&work[0x30] > 0) {
+            if (*(s16*)w->unk_2C.unk_04 > 0) {
                 f = REV_COUNT_1;
                 SetTaskUpdate(a, (void*)f);
-                work[0x28] = 8;
-                return f(work, a);
+                w->unk_28 = 8;
+                return f(w, a);
             }
         }
 
         return 1;
     } while (0);
 }
-void REV_COUNT_2(u8* work) {
+void REV_COUNT_2(UnkStruct_08098CE4* w) {
 #ifdef VERSION_EU
-    DrawSprite(*(s32*)&work[0x3C] >> 8, *(s32*)&work[0x40] >> 8, 0,
-               *(void**)&work[0x00], *(void**)&work[0x04], 0, 1040, 15);
+    DrawSprite(w->unk_3C >> 8, w->unk_40 >> 8, 0,
+               w->unk_00, w->unk_04, 0, 1040, 15);
 #else
-    DrawSprite(*(s32*)&work[0x3C] >> 8, *(s32*)&work[0x40] >> 8, 0,
-               *(void**)&work[0x00], *(void**)&work[0x04], 0, 1024, 15);
+    DrawSprite(w->unk_3C >> 8, w->unk_40 >> 8, 0,
+               w->unk_00, w->unk_04, 0, 1024, 15);
 #endif
 }
-void REV_COUNT_3(void** p) {
-    ReleaseObjTiles(p[0]);
-    ReleaseObjPalette(p[1]);
+void REV_COUNT_3(UnkStruct_08098CE4* w) {
+    ReleaseObjTiles(w->unk_00);
+    ReleaseObjPalette(w->unk_04);
 }
 
 void func_080991CC(void* pool, u8* a, void* b, u8* c, u8 d) {

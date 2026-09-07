@@ -324,6 +324,23 @@ typedef struct UnkStruct_080991CC {
     u8 unk_0E[0x02];
 } UnkStruct_080991CC;
 
+typedef struct UnkStruct_08098CE4 {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    AnimState unk_0C;
+    u8 unk_24;
+    u8 unk_25;
+    u16 unk_26;
+    u8 unk_28;
+    u8 unk_29[0x03];
+    UnkStruct_080991CC unk_2C;
+    s32 unk_3C;
+    s32 unk_40;
+} UnkStruct_08098CE4;
+
+typedef char UnkStruct_08098CE4_sizechk[(sizeof(struct UnkStruct_08098CE4) == 0x44) ? 1 : -1];
+
 typedef struct UnkStruct_09EE7D84 {
     void** unk_00;
     u8 unk_04;
@@ -1832,7 +1849,12 @@ u8 func_0807CBC0(UnkStruct_02034AAC* p, void* a);
 u8 func_0807D930(UnkStruct_02034AAC* p, void* a);
 u8 func_08094934(MapcardWork* w, void* a);
 u8 SpotLight_1(UnkStruct_08097A14* w, void* a);
-u8 func_08098FDC(u8* work);
+u8 func_08098FDC(UnkStruct_08098CE4* w);
+void REV_COUNT_0(UnkStruct_08098CE4* w, UnkStruct_080991CC* a);
+u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a);
+void REV_COUNT_2(UnkStruct_08098CE4* w);
+void REV_COUNT_3(UnkStruct_08098CE4* w);
+u8 func_080990CC(UnkStruct_08098CE4* w, void* a);
 void func_0809A4E0(UnkStruct_0809A02C* w, u8 kind);
 void func_0809A02C(UnkStruct_0809A02C* w, s32* args);
 void func_0809A1B8(UnkStruct_0809A02C* w, s32* args);
@@ -1879,7 +1901,7 @@ void func_08085160(void);
 void func_08090ACC(UnkStruct_02034AAC* p, void* a);
 u8 func_0809486C(MapcardWork* w, void* a);
 void SpotLight_0(UnkStruct_08097A14* w, u8* src);
-u8 func_08099048(u8* work, void* a);
+u8 func_08099048(UnkStruct_08098CE4* w, void* a);
 u8 func_0809ACDC(UnkStruct_0809A02C* w);
 u8 func_0809C4B0(u8* work, void* a);
 void func_0809D87C(u16 a, u16 b, u16 c, u16 bits);
