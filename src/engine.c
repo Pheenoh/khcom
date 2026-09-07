@@ -143,8 +143,8 @@ u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h)
         if (n != 0) {
             i = n;
             do {
-                cnt = GetObjTileCount(((u16*)c)[0], ((u16*)c)[1]);
-                RequestDma3Copy((u8*)((ObjTiles*)obj)->unk_00 + ((((u16*)c)[2] & 0x3FF) << 5), (void*)(((((ObjTiles*)obj)->unk_06 + base) << 5) + 0x06010000), cnt << 5);
+                cnt = GetObjTileCount(((ObjTileListEntry*)c)->unk_00, ((ObjTileListEntry*)c)->unk_02);
+                RequestDma3Copy((u8*)((ObjTiles*)obj)->unk_00 + ((((ObjTileListEntry*)c)->unk_04 & 0x3FF) << 5), (void*)(((((ObjTiles*)obj)->unk_06 + base) << 5) + 0x06010000), cnt << 5);
                 base += cnt;
                 c = (u16*)c + 3;
             } while (--i);
