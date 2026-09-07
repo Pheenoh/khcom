@@ -1977,7 +1977,6 @@ void func_08117194(void) {
     }
 }
 
-#ifdef NON_MATCHING
 extern u8* gUnk_02038628;
 extern s32 gUnk_0203862C;
 extern s32 gUnk_02038630;
@@ -2014,6 +2013,8 @@ static inline s32 PeekByte(void) {
     return (gUnk_0203862C >> (gUnk_02038630 - 8)) & 0xFF;
 }
 
+
+#ifdef NON_MATCHING
 void _08117284(s32 p) {
     s32 n;
     s32 up;
@@ -2103,6 +2104,9 @@ void _08117284(s32 p) {
         }
     }
 }
+#else
+INCLUDE_ASM("sroll/_08117284.s");
+#endif
 
 void _08117674(s32 p) {
     s32 n;
@@ -2191,6 +2195,7 @@ void _08117674(s32 p) {
     }
 }
 
+#ifdef NON_MATCHING
 void _08117A4C(s32 p) {
     s32 n;
     s32 v;
@@ -2279,9 +2284,6 @@ void _08117A4C(s32 p) {
         }
     }
 }
-
 #else
-INCLUDE_ASM("sroll/_08117284.s");
-INCLUDE_ASM("sroll/_08117674.s");
 INCLUDE_ASM("sroll/_08117A4C.s");
 #endif
