@@ -75,7 +75,7 @@ void PopPaletteEffect(void);
 extern u16 gSystemFlags;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 GetObjTileCount(u16 a, u16 b);
-s32 GetAngleDiff(s32 a, s32 b);
+s16 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 void func_08003CD4(u8* p, s32* d, s32* xs, s32* e);
@@ -108,7 +108,7 @@ void PopPaletteEffect(void);
 extern u16 gSystemFlags;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 GetObjTileCount(u16 a, u16 b);
-s32 GetAngleDiff(s32 a, s32 b);
+s16 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 
@@ -2120,24 +2120,21 @@ void SetBlendAlpha(u16 a, u16 b) {
 INCLUDE_ASM("engine/eu_080059D4.s");
 #endif
 
-#ifdef NON_MATCHING
-s32 GetAngleDiff(s32 a, s32 b) {
+s16 GetAngleDiff(s32 a, s32 b) {
     s32 x = a & 0xFF;
     s32 y = b & 0xFF;
     s32 d = x - y;
 
     if (d <= -0x80) {
-        return d + 0x100;
+        return (x + 0x100) - y;
     }
 
     if (d > 0x7F) {
-        return (x - 0x100) - y;
+        return (x + 0xFFFFFF00) - y;
     }
     return d;
 }
-#else
-INCLUDE_ASM("engine/GetAngleDiff.s");
-#endif
+
 
 s32 GetAngleDiff16(s32 a, s32 b) {
     s32 x = a & 0xFFFF;
