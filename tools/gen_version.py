@@ -69,6 +69,7 @@ TARGET_ANCHORS = {
         0x097A28DA: 0x09780322,
         0x09EF6934: 0x09F81FB0,
         0x098A8C66: 0x0988740A,
+        0x08B1EB1C: 0x08B4A42C,
     },
     "jp": {
         0x09C8D47A: 0x09C678B4,
@@ -158,7 +159,15 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_0973EEFE": 0x0973EEFE,
         "gUnkEu_09F84EFC": 0x09F84EFC,
         "gUnkEu_08B51BA8": 0x08B51BA8,
+        "gUnkEu_08B51D50": 0x08B51D50,
+        "gUnkEu_08B51FB8": 0x08B51FB8,
+        "gUnkEu_08B52220": 0x08B52220,
+        "gUnkEu_08B52488": 0x08B52488,
         "gUnkEu_09F5C1FC": 0x09F5C1FC,
+        "gUnkEu_09F5C20C": 0x09F5C20C,
+        "gUnkEu_09F5C21C": 0x09F5C21C,
+        "gUnkEu_09F5C22C": 0x09F5C22C,
+        "gUnkEu_09F5C23C": 0x09F5C23C,
         "gUnkEu_0203C964": 0x0203C964,
         "gUnkEu_0203C970": 0x0203C970,
         "gUnkEu_0203C97C": 0x0203C97C,
@@ -278,6 +287,7 @@ TARGET_FUNC_SIZE = {
     "eu": {
         "func_0805E89C": 32,
         "func_0801CB44": 60,
+        "task_btl_escape_0": 224,
         "func_080A2980": 260,
         "func_08088EB4": 136,
         "func_0808CA78": 228,
@@ -319,6 +329,7 @@ TARGET_FUNC_ADDR = {
         "func_08005458": 0x08005600,
         "func_08005474": 0x08005620,
         "func_0801CB44": 0x08020A14,
+        "task_btl_escape_0": 0x08034CA8,
     },
 }
 
