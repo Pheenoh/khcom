@@ -5766,7 +5766,6 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 INCLUDE_ASM("btl/task_btl_sora_1.s");
 #endif
 
-#ifndef VERSION_EU
 void task_btl_sora_2(BtlSoraWork* work) {
     UnkStruct_0801AF08* p;
     s32 affine;
@@ -5783,6 +5782,7 @@ void task_btl_sora_2(BtlSoraWork* work) {
         return;
     }
 
+#ifndef VERSION_EU
     if (work->unk_040.unk_E4->unk_0F4 == 19) {
         if (work->unk_172 != 0) {
             if (gFrameCounter & 1) {
@@ -5792,6 +5792,7 @@ void task_btl_sora_2(BtlSoraWork* work) {
             return;
         }
     }
+#endif
 
     attr = func_0801AF1C(p->unk_08);
 
@@ -5861,12 +5862,20 @@ void task_btl_sora_2(BtlSoraWork* work) {
             LoadObjPaletteBank(work->palette->unk_06, gUnk_096FAC64);
         }
     }
+#ifdef VERSION_EU
+    if (p->unk_E4->unk_0F4 == 19) {
+        if (work->unk_172 != 0) {
+            if (gFrameCounter & 1) {
+                return;
+            }
+        } else if (gFrameCounter % 120 <= 59) {
+            return;
+        }
+    }
+#endif
     DrawSprite(x, y, work->unk_008, work->unk_000, work->palette, affine, attr, attr2);
     TaskPoolDraw(&work->unk_024);
 }
-#else
-INCLUDE_ASM("btl/task_btl_sora_2.s");
-#endif
 
 void task_btl_sora_3(BtlSoraWork* work) {
     UnkStruct_0801AF08* p;
