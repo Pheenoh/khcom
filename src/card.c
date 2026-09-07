@@ -4209,7 +4209,143 @@ void func_08080994(UnkStruct_08080268* w) {
 #else
 INCLUDE_ASM("card/func_08080994.s");
 #endif
+#ifdef NON_MATCHING
+u8 func_08080B44(UnkStruct_08080268* w, void* a) {
+    UnkStruct_0807FD10_Args args;
+    u16 t;
+    u8 n;
+    CardSlot* c;
+    UnkStruct_02034AAC* p;
+    u16 v;
+
+    if (!(gUnk_02034AAC->unk_78 & 0x40)) {
+        return 1;
+    }
+
+    if (gUnk_02034AAC->unk_78 & 2) {
+        return 1;
+    }
+
+    if (gUnk_02039DD4->unk_0B0 == 112) {
+        return 1;
+    }
+
+    if (gUnk_02039DD4->unk_0B0 == 109) {
+        return 1;
+    }
+
+    w->unk_C4[1] = 0;
+    gUnk_02039DD4->unk_0E4 = 0;
+    m4aSongNumStart(140);
+    gUnk_02034AAC->unk_78 = (gUnk_02034AAC->unk_78 & ~0x40) | 0x200;
+    gUnk_02034AAC->unk_A1 = 6;
+    gUnk_02034AAC->unk_9F = w->unk_B9;
+    gUnk_02034AAC->unk_A0 = (3 - w->unk_B9) * 4 + 50;
+    w->unk_28[w->unk_B9] = gUnk_02034AAC;
+    ((UnkStruct_02034AAC**)&gUnk_02039DD4->unk_018[0x0C])[gUnk_02039DD4->unk_0DF] = gUnk_02034AAC;
+    (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_07 = 1;
+
+    if (gUnk_02039B9C->unk_0F4 == 1) {
+        n = gUnk_02034AAC->unk_A5 + 1;
+
+        if (n > 9) {
+            n = 9;
+        }
+
+        gUnk_02034AAC->unk_A5 = n;
+        gUnk_02034AAC->unk_A7 = 1;
+        TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034AAC->unk_48);
+    } else if (gUnk_02039B9C->unk_0F4 == 21) {
+        if (gUnk_02034AAC->unk_A5 != 0) {
+            n = gUnk_02034AAC->unk_A5 - 1;
+            gUnk_02034AAC->unk_A5 = n;
+        } else {
+            n = 0;
+        }
+
+        gUnk_02034AAC->unk_A7 = 1;
+    } else {
+        n = gUnk_02034AAC->unk_A5;
+    }
+
+    w->unk_BA += n;
+    w->unk_B9++;
+    gUnk_02039DD4->unk_0DF++;
+
+    if (w->unk_BA != 0) {
+        func_080038E4((UnkStruct_080038C8*)w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8[w->unk_BA - 1]);
+        w->unk_C4[3] = 8;
+    }
+
+    w->unk_B0[w->unk_B8]--;
+
+    if (gUnk_02034AAC->unk_48->unk_1E & 8) {
+        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+    }
+
+    (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_08 = 1;
+    v = *(u16*)&gUnk_02034AAC->unk_3C[8] + 1;
+
+    if ((s16)v >= (s16)w->unk_A8[w->unk_B8]) {
+        v = 0;
+    }
+
+    gUnk_02034AAC->unk_78 &= ~0x40;
+    gUnk_02034AAC = 0;
+
+    if (gUnk_02039B9C->unk_0F4 == 37) {
+        t = func_080792AC();
+        func_08081744(w);
+        gUnk_02039DD4->unk_0CE = t;
+        func_08081740(w, gUnk_02039DD4->unk_0CE);
+        func_08081760(w);
+        gUnk_02039B9C->unk_0F8 = gUnk_08F7CBA8[gUnk_02039B9C->unk_0F4].unk_0E;
+    }
+
+    c = func_08076674(w, w->unk_B8, &v);
+
+    if (c != 0) {
+        args.unk_00 = &w->unk_54[w->unk_B8];
+        args.unk_0C = v;
+        args.unk_0E = w->unk_B8;
+        args.unk_04 = c;
+        args.unk_0F = w->unk_9C[w->unk_B8];
+
+        if (*(s32*)c == 0xFFFE) {
+            p = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+        } else {
+            p = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+        }
+
+        p->unk_94 = p->unk_98 = gUnk_090352E4[0];
+        p->unk_A4 = 0;
+        p->unk_A0 = 60;
+        p->unk_9C = 4;
+        p->unk_4C = p->unk_8C;
+        p->unk_50 = p->unk_90;
+        p->unk_78 |= 0x804;
+        gUnk_02034AAC = p;
+    }
+
+    if (gUnk_02039B9C->unk_0F4 == 40 && (gUnk_02034AAC->unk_78 & 0x100000) &&
+        w->unk_B0[w->unk_B8] == 1) {
+        w->unk_B0[w->unk_B8] = 0;
+        gUnk_02034AAC->unk_A1 = 7;
+        w->unk_34[w->unk_B8] = 0;
+        gUnk_02034AAC = 0;
+        w->unk_C0[0] = 1;
+        m4aSongNumStart(202);
+
+        if (func_08006390() == 0) {
+            func_08006290(2, 16, 20);
+        }
+    }
+
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_08080B44.s");
+#endif
 
 INCLUDE_ASM("card/func_08080EB4.s");
 #ifdef NON_MATCHING
