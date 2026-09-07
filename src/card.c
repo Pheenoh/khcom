@@ -384,15 +384,15 @@ void func_080A6968(u8* work);
 void func_080A7264(void** p);
 void func_080A7210(u8* work);
 void func_080838CC(void);
-u8 func_08082AE4(u8* work);
+u8 func_08082AE4(UnkStruct_02034AAC* p);
 u8 func_08082E0C(UnkStruct_02034AAC* p, void* a);
 void func_0807E184(void);
-u8 func_0807CE04(u8* work);
+u8 func_0807CE04(UnkStruct_02034AAC* p);
 u8 func_0807D3A0(UnkStruct_02034AAC* p, void* a);
 void func_08094E90(MapcardWork* w);
 u8 func_0809CB78(u8* work, void* a);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-u8 func_08090940(u8* work);
+u8 func_08090940(UnkStruct_02034AAC* p);
 u8 func_08090DB0(UnkStruct_02034AAC* p, void* a);
 void func_0800FC14(s32 a);
 void func_0808E2F0(UnkStruct_0808DB04* w);
@@ -2672,22 +2672,22 @@ void func_0807CD48(UnkStruct_02034AAC* p) {
     }
 }
 
-u8 func_0807CE04(u8* work) {
-    ApproachValue(&work[0x50], 0x8200, *(u16*)&work[0x9C]);
-    *(u16*)&work[0x9C] =
-        *(s16*)&work[0x9C] > 0 ? *(u16*)&work[0x9C] - 1 : 0;
+u8 func_0807CE04(UnkStruct_02034AAC* p) {
+    ApproachValue(&p->unk_50, 0x8200, p->unk_9C);
+    *(u16*)&p->unk_9C =
+        *(s16*)&p->unk_9C > 0 ? p->unk_9C - 1 : 0;
 
-    if (*(s16*)&work[0x9C] == 0) {
-        *(u16*)&work[0x9C] = 0;
-        work[0x5E] += work[0x9E];
-        work[0x9E]++;
+    if (*(s16*)&p->unk_9C == 0) {
+        *(u16*)&p->unk_9C = 0;
+        p->unk_5E += p->unk_9E;
+        p->unk_9E++;
 
-        if (*(s32*)&work[0x54] <= 25) {
+        if (p->unk_54 <= 25) {
             return 0;
         }
 
-        *(s32*)&work[0x54] -= 25;
-        *(s32*)&work[0x58] -= 25;
+        p->unk_54 -= 25;
+        p->unk_58 -= 25;
     }
 
     return 1;
@@ -4870,22 +4870,22 @@ u8 func_08082A64(UnkStruct_02034AAC* p, void* a) {
     return 1;
 }
 
-u8 func_08082AE4(u8* work) {
-    ApproachValue(&work[0x50], 0x8200, *(u16*)&work[0x9C]);
-    *(u16*)&work[0x9C] =
-        *(s16*)&work[0x9C] > 0 ? *(u16*)&work[0x9C] - 1 : 0;
+u8 func_08082AE4(UnkStruct_02034AAC* p) {
+    ApproachValue(&p->unk_50, 0x8200, p->unk_9C);
+    *(u16*)&p->unk_9C =
+        *(s16*)&p->unk_9C > 0 ? p->unk_9C - 1 : 0;
 
-    if (*(s16*)&work[0x9C] == 0) {
-        *(u16*)&work[0x9C] = 0;
-        work[0x5E] += work[0x9E];
-        work[0x9E]++;
+    if (*(s16*)&p->unk_9C == 0) {
+        *(u16*)&p->unk_9C = 0;
+        p->unk_5E += p->unk_9E;
+        p->unk_9E++;
 
-        if (*(s32*)&work[0x54] <= 25) {
+        if (p->unk_54 <= 25) {
             return 0;
         }
 
-        *(s32*)&work[0x54] -= 25;
-        *(s32*)&work[0x58] -= 25;
+        p->unk_54 -= 25;
+        p->unk_58 -= 25;
     }
 
     return 1;
@@ -10323,22 +10323,22 @@ void func_08090864(UnkStruct_02034AAC* p) {
     p->unk_50 = -gSineTable[(((p->unk_7C >> 8) - 32) & 0xFF) + 64] * (p->unk_84 >> 8) + p->unk_90;
 }
 
-u8 func_08090940(u8* work) {
-    ApproachValue(&work[0x50], 0x8200, *(u16*)&work[0x9C]);
-    *(u16*)&work[0x9C] =
-        *(s16*)&work[0x9C] > 0 ? *(u16*)&work[0x9C] - 1 : 0;
+u8 func_08090940(UnkStruct_02034AAC* p) {
+    ApproachValue(&p->unk_50, 0x8200, p->unk_9C);
+    *(u16*)&p->unk_9C =
+        *(s16*)&p->unk_9C > 0 ? p->unk_9C - 1 : 0;
 
-    if (*(s16*)&work[0x9C] == 0) {
-        *(u16*)&work[0x9C] = 0;
-        work[0x5E] += work[0x9E];
-        work[0x9E]++;
+    if (*(s16*)&p->unk_9C == 0) {
+        *(u16*)&p->unk_9C = 0;
+        p->unk_5E += p->unk_9E;
+        p->unk_9E++;
 
-        if (*(s32*)&work[0x54] <= 25) {
+        if (p->unk_54 <= 25) {
             return 0;
         }
 
-        *(s32*)&work[0x54] -= 25;
-        *(s32*)&work[0x58] -= 25;
+        p->unk_54 -= 25;
+        p->unk_58 -= 25;
     }
 
     return 1;
