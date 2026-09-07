@@ -2268,9 +2268,9 @@ void FadeInit(void) {
     u32 zero;
 
     SetIwramHeapName(sFadeHeapName);
-    gFadeWork = IwramAlloc(0x598);
+    gFadeWork = IwramAlloc(sizeof(FadeWork));
     zero = 0;
-    CpuSet(&zero, gFadeWork, 0x05000166);
+    CpuSet(&zero, gFadeWork, 0x05000000 | (sizeof(FadeWork) / 4));
 }
 
 void FadeFree(void) {
@@ -2280,7 +2280,7 @@ void FadeFree(void) {
 void FadeReset(void) {
     u32 zero = 0;
 
-    CpuSet(&zero, gFadeWork, 0x05000166);
+    CpuSet(&zero, gFadeWork, 0x05000000 | (sizeof(FadeWork) / 4));
 }
 
 #ifdef NON_MATCHING
@@ -2291,7 +2291,7 @@ void LoadPalette(void* src, void* dst, s32 size) {
     s32 i;
     void* p;
 
-    base = (PaletteSlot*)gFadeWork;
+    base = gFadeWork->slots;
     count = (u16)size / 32;
     idx = ((s32)dst - 0x05000000) / 32;
     p = LoadPaletteWithEffect(src, dst, size);
@@ -2307,7 +2307,7 @@ INCLUDE_ASM("engine/LoadPalette.s");
 #endif
 
 void func_08005C60(u16 a) {
-    PaletteSlot* p = (PaletteSlot*)gFadeWork;
+    PaletteSlot* p = gFadeWork->slots;
 
     p += a;
     p->unk_00 = 0;
@@ -2315,85 +2315,85 @@ void func_08005C60(u16 a) {
 
 INCLUDE_ASM("engine/func_08005C78.s");
 void func_08006120(s32 a, u16 b) {
-    u8* base = gFadeWork;
+    FadeWork* base = gFadeWork;
     u32 z;
 
-    if (*(u16*)(base + 0x594) & 2) {
-        if (*(u16*)(base + 0x594) & 1) {
+    if (base->unk_594 & 2) {
+        if (base->unk_594 & 1) {
             return;
         }
     }
     z = 0;
-    *(u16*)(base + 0x594) = 1;
-    *(u16*)(base + 0x58C) = b;
-    *(u32*)(base + 0x580) = 0x1F00;
-    *(u32*)(base + 0x584) = z;
-    *(u32*)(base + 0x588) = z;
-    *(u32*)(base + 0x590) = a;
+    base->unk_594 = 1;
+    base->unk_58C = b;
+    base->unk_580 = 0x1F00;
+    base->unk_584 = z;
+    base->unk_588 = z;
+    base->unk_590 = a;
 }
 void func_08006184(s32 a, u16 b) {
-    u8* base = gFadeWork;
+    FadeWork* base = gFadeWork;
     u32 z;
 
-    if (*(u16*)(base + 0x594) & 2) {
-        if (*(u16*)(base + 0x594) & 1) {
+    if (base->unk_594 & 2) {
+        if (base->unk_594 & 1) {
             return;
         }
     }
     z = 0;
-    *(u16*)(base + 0x594) = 1;
-    *(u16*)(base + 0x58C) = b;
-    *(u32*)(base + 0x580) = z;
-    *(u32*)(base + 0x584) = 0x1F00;
-    *(u32*)(base + 0x588) = z;
-    *(u32*)(base + 0x590) = a;
+    base->unk_594 = 1;
+    base->unk_58C = b;
+    base->unk_580 = z;
+    base->unk_584 = 0x1F00;
+    base->unk_588 = z;
+    base->unk_590 = a;
 }
 void func_080061E8(s32 a, u16 b) {
-    u8* base = gFadeWork;
+    FadeWork* base = gFadeWork;
     u32 z;
 
-    if (*(u16*)(base + 0x594) & 2) {
-        if (*(u16*)(base + 0x594) & 1) {
+    if (base->unk_594 & 2) {
+        if (base->unk_594 & 1) {
             return;
         }
     }
     z = 0;
-    *(u16*)(base + 0x594) = 1;
-    *(u16*)(base + 0x58C) = b;
-    *(u32*)(base + 0x584) = z;
-    *(u32*)(base + 0x590) = a;
+    base->unk_594 = 1;
+    base->unk_58C = b;
+    base->unk_584 = z;
+    base->unk_590 = a;
 }
 
 void func_08006238(s32 a, u16 b, u16 c) {
-    u8* base = gFadeWork;
+    FadeWork* base = gFadeWork;
 
-    if (*(u16*)(base + 0x594) & 2) {
-        if (*(u16*)(base + 0x594) & 1) {
+    if (base->unk_594 & 2) {
+        if (base->unk_594 & 1) {
             return;
         }
     }
-    *(u16*)(base + 0x594) = 1;
-    *(u16*)(base + 0x58C) = c;
-    *(u32*)(base + 0x584) = b << 8;
-    *(u32*)(base + 0x590) = a;
+    base->unk_594 = 1;
+    base->unk_58C = c;
+    base->unk_584 = b << 8;
+    base->unk_590 = a;
 }
 
 void func_08006290(s32 a, u16 b, u16 c) {
-    u8* base = gFadeWork;
+    FadeWork* base = gFadeWork;
     u32 z;
 
-    if (*(u16*)(base + 0x594) & 2) {
-        if (*(u16*)(base + 0x594) & 1) {
+    if (base->unk_594 & 2) {
+        if (base->unk_594 & 1) {
             return;
         }
     }
     z = 0;
-    *(u16*)(base + 0x594) = 1;
-    *(u16*)(base + 0x58C) = c;
-    *(u32*)(base + 0x580) = b << 8;
-    *(u32*)(base + 0x588) = z;
-    *(u32*)(base + 0x584) = z;
-    *(u32*)(base + 0x590) = a;
+    base->unk_594 = 1;
+    base->unk_58C = c;
+    base->unk_580 = b << 8;
+    base->unk_588 = z;
+    base->unk_584 = z;
+    base->unk_590 = a;
 }
 
 void func_080062F4(u16 slot, u8 value) {
@@ -2402,20 +2402,20 @@ void func_080062F4(u16 slot, u8 value) {
     if (slot > 0x1F) {
         return;
     }
-    p = (PaletteSlot*)gFadeWork;
+    p = gFadeWork->slots;
     p += slot;
     p->unk_28 = value;
 }
 
 u8 func_08006314(void) {
-    if (*(u16*)(gFadeWork + 0x594) & 1) {
+    if (gFadeWork->unk_594 & 1) {
         return 1;
     }
     return 0;
 }
 
 u16 _08006338(void) {
-    switch (*(u32*)(gFadeWork + 0x590)) {
+    switch (gFadeWork->unk_590) {
     case 1:
     case 2:
         return 0x7FFF;
@@ -2432,22 +2432,22 @@ u16 _08006338(void) {
 }
 
 u16 func_08006390(void) {
-    return *(u32*)(gFadeWork + 0x580) >> 8;
+    return gFadeWork->unk_580 >> 8;
 }
 
 void func_080063A8(void) {
-    u16 v = *(u16*)(gFadeWork + 0x594) | 2;
+    u16 v = gFadeWork->unk_594 | 2;
 
-    *(u16*)(gFadeWork + 0x594) = v;
+    gFadeWork->unk_594 = v;
 }
 
 void func_080063C4(u8 on) {
     if (on) {
-        u16 v = *(u16*)(gFadeWork + 0x594) | 4;
+        u16 v = gFadeWork->unk_594 | 4;
 
-        *(u16*)(gFadeWork + 0x594) = v;
+        gFadeWork->unk_594 = v;
     } else {
-        *(u16*)(gFadeWork + 0x594) &= 0xFFFB;
+        gFadeWork->unk_594 &= 0xFFFB;
     }
 }
 
