@@ -5,6 +5,7 @@
 #include "taskpool.h"
 #include "main.h"
 #include "mode.h"
+#include "engine.h"
 typedef struct ChkSndEntry {
     const char* name;
     u16 songNum;
@@ -15,7 +16,6 @@ extern TaskDesc gTaskDescPrint;
 
 void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
-void SetBgMode0(void);
 void func_0809D2B0(u8 x, u8 y, u8 c, const char* s);
 void func_0809D458(u16 x, u16 y, u16 c, s32 v);
 void m4aSongNumStart(u16 id);

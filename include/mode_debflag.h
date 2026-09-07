@@ -4,6 +4,7 @@
 #include "types.h"
 #include "key.h"
 #include "mode.h"
+#include "engine.h"
 typedef struct DebugFlag {
     const char* name;
     u32 mask;
@@ -17,7 +18,6 @@ extern Mode gModeDebug;
 
 void ModeRequest(Mode* mode, s32 arg);
 u16 GetKeysRepeat(void);
-void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_0805FA60(s32 a, void* b, s32 c, u8 d);

@@ -8,6 +8,7 @@
 #include "gba/syscall.h"
 #include "main.h"
 #include "anim.h"
+#include "engine.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_IE (*(vu16*)0x04000200)
@@ -70,7 +71,6 @@ void SetObjPaletteRange(s32 a, s32 b);
 void* LoadObjTiles(void* a, s32 b);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
-void SetBgMode0(void);
 void EnableBg(s32 a);
 void DisableBg(s32 bg);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

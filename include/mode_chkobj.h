@@ -21,7 +21,6 @@ u16 GetKeysRepeat(void);
 void* AllocObjTiles(s32 a, void* b);
 void* LoadObjPalette(void* a, s32 b);
 u16 func_08003598(void* a);
-void SetBgMode0(void);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 s32 abs(s32 n);
 void func_08005974(void* a, u16 b, s32 c, void* d, void* e);

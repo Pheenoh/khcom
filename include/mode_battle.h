@@ -5,6 +5,7 @@
 #include "taskpool.h"
 #include "gba/syscall.h"
 #include "main.h"
+#include "engine.h"
 
 typedef struct BtlWork {
     u8 unk_000[0x2C];
@@ -79,8 +80,6 @@ extern TaskDesc gTaskDescBosLst;
 
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
-void SetBgMode1(void);
-void SetBgMode2(void);
 void SetBgOverflow(s32 bg, u8 on);
 void SetBgSize(s32 a, s32 b);
 void func_08006120(s32 a, s32 b);

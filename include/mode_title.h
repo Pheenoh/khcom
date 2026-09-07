@@ -6,6 +6,7 @@
 #include "title_types.h"
 #include "intr.h"
 #include "main.h"
+#include "engine.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_IE (*(vu16*)0x04000200)
@@ -59,7 +60,6 @@ void func_0801CB44(void);
 s32 SaveLoadHeader(void);
 void func_08093BB4(void);
 void func_08093C04(void);
-void SetBgMode1(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void LoadBgTiles(s32 bg, void* src, u16 size);
