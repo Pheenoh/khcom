@@ -7,7 +7,7 @@
 typedef struct JfShadowWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     BtlWork* unk_0C;
 } JfShadowWork;
 

@@ -2641,7 +2641,7 @@ void task_hum_vixen_3(VixenWork* work) {
 
 void task_hum_vixen_ndl_0(VixenNdlWork* work, VixenNdlArgs* args) {
     work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
-    work->unk_00 = args->unk_18;
+    work->tiles = args->unk_18;
     AnimInit(&work->anim, gUnk_09EE26B0, gUnk_09EE2690);
     AnimStart(&work->anim, 0, 0);
     work->unk_2C = args->unk_12;
@@ -2698,7 +2698,7 @@ void task_hum_vixen_ndl_2(VixenNdlWork* work) {
         attr |= 1;
     }
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    DrawSprite(x, y, gfx, work->unk_00, work->palette, 0, attr,
+    DrawSprite(x, y, gfx, work->tiles, work->palette, 0, attr,
         -0x1004 - (work->y >> 8) * 4);
 }
 
@@ -2831,7 +2831,7 @@ void task_hum_vixen_ice_3(VixenIceWork* work) {
 
 void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
     work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
-    work->unk_00 = gBtlWork->unk_114;
+    work->tiles = gBtlWork->unk_114;
 
     if (gGameState.flags & 8) {
         if (gBtlWork->unk_068 & 0x800000000000) {
@@ -2843,7 +2843,7 @@ void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
         work->unk_32 = 0;
     }
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813F91C, &work->anim, 0, 0, work->unk_00);
+    func_08019068(gUnk_0813F91C, &work->anim, 0, 0, work->tiles);
     work->unk_2C = 0;
 
     if (gBtlWork->unk_07C->unk_34 & 4) {
@@ -2870,13 +2870,13 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         if (work->unk_30 == 0) {
             switch (work->unk_32) {
             case 0:
-                func_08019068(gUnk_0813F91C, &work->anim, 2, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 2, 0, work->tiles);
                 break;
             case 1:
-                func_08019068(gUnk_0813F91C, &work->anim, 7, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 7, 0, work->tiles);
                 break;
             case 2:
-                func_08019068(gUnk_0813F91C, &work->anim, 10, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 10, 0, work->tiles);
                 break;
             }
         }
@@ -2895,13 +2895,13 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         if (work->unk_30 == 0) {
             switch (work->unk_32) {
             case 0:
-                func_08019068(gUnk_0813F91C, &work->anim, 4, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 4, 0, work->tiles);
                 break;
             case 1:
-                func_08019068(gUnk_0813F91C, &work->anim, 8, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 8, 0, work->tiles);
                 break;
             case 2:
-                func_08019068(gUnk_0813F91C, &work->anim, 11, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 11, 0, work->tiles);
                 break;
             }
         }
@@ -2920,13 +2920,13 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         if (work->unk_30 == 0) {
             switch (work->unk_32) {
             case 0:
-                func_08019068(gUnk_0813F91C, &work->anim, 6, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 6, 0, work->tiles);
                 break;
             case 1:
-                func_08019068(gUnk_0813F91C, &work->anim, 9, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 9, 0, work->tiles);
                 break;
             case 2:
-                func_08019068(gUnk_0813F91C, &work->anim, 12, 0, work->unk_00);
+                func_08019068(gUnk_0813F91C, &work->anim, 12, 0, work->tiles);
                 break;
             }
         }
@@ -2965,7 +2965,7 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         break;
     case 4:
         if (work->unk_30 == 0) {
-            func_08019068(gUnk_0813F91C, &work->anim, 1, 0, work->unk_00);
+            func_08019068(gUnk_0813F91C, &work->anim, 1, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -2977,7 +2977,7 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         break;
     case 5:
         if (work->unk_30 == 0) {
-            func_08019068(gUnk_0813F91C, &work->anim, 5, 0, work->unk_00);
+            func_08019068(gUnk_0813F91C, &work->anim, 5, 0, work->tiles);
         }
 
         if (AnimIsFinished(&work->anim)) {
@@ -3012,7 +3012,7 @@ void task_hum_vixen_frz_2(VixenFrzWork* work) {
         gfx = AnimGetGfx(&work->anim);
         attr = func_0801AF1C(work->y) | work->unk_34;
         WorldToScreen(&x, &y, work->x, work->y, work->z);
-        DrawSprite(x, y, gfx, work->unk_00, work->palette, 0, attr,
+        DrawSprite(x, y, gfx, work->tiles, work->palette, 0, attr,
             -0x1004 - (work->y >> 8) * 4);
     }
 }

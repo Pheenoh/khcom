@@ -148,7 +148,7 @@ typedef struct VixenNdlArgs {
 } VixenNdlArgs;
 
 typedef struct VixenNdlWork {
-    void* unk_00;
+    void* tiles;
     void* palette;
     AnimState anim;
     s32 x;
@@ -161,7 +161,7 @@ typedef struct VixenNdlWork {
 } VixenNdlWork;
 
 typedef struct VixenFrzWork {
-    void* unk_00;
+    void* tiles;
     void* palette;
     AnimState anim;
     s32 x;

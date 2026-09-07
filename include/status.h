@@ -85,7 +85,7 @@ typedef struct StatusCursorWork {
 typedef struct StatusScrollcursorWork {
     void* tiles;
     void* palette;
-    void* unk_08;
+    void* gfx;
     u16* unk_0C;
     u16 unk_10;
     s16 unk_12;

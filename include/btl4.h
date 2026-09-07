@@ -68,7 +68,7 @@ typedef struct BtlExpWork {
     void* palette;
     void* tiles;
     void* unk_08[6];
-    void* unk_20;
+    void* gfx;
     void* unk_24[6];
     s16 unk_3C;
     u8 unk_3E;

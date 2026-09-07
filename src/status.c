@@ -821,7 +821,7 @@ void task_status_scrollcursor_0(StatusScrollcursorWork* work, u16* arg) {
     work->unk_0C = arg;
     work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6908, 4), gUnk_097A2394);
     work->palette = LoadObjPalette(gUnk_0984B1F8, 0x20);
-    work->unk_08 = gUnk_09EF6908[4];
+    work->gfx = gUnk_09EF6908[4];
     work->unk_12 = func_080D885C(work);
 }
 
@@ -832,7 +832,7 @@ u8 task_status_scrollcursor_1(StatusScrollcursorWork* work) {
 
 void task_status_scrollcursor_2(StatusScrollcursorWork* work) {
     if (func_080D8340()) {
-        DrawSprite(84, work->unk_12, work->unk_08, work->tiles, work->palette, 0, 0x800, 6);
+        DrawSprite(84, work->unk_12, work->gfx, work->tiles, work->palette, 0, 0x800, 6);
     }
 }
 

@@ -325,7 +325,7 @@ typedef struct WlogoAgrFlashWork {
 typedef struct WlogoAgrWork {
     void* tiles;
     void* palette;
-    void* unk_008;
+    void* gfx;
     s16 x;
     s16 y;
     u8 unk_010;
@@ -339,7 +339,7 @@ typedef struct WlogoAgrWork {
 typedef struct WlogoDilWork {
     void* tiles;
     void* palette;
-    void* unk_008;
+    void* gfx;
     u8 unk_00C;
     u8 unk_00D;
     u16 unk_00E;

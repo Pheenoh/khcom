@@ -151,7 +151,7 @@ void task_btl_exp_0(BtlExpWork* work) {
 #else
     work->tiles = AllocObjTiles(0xA0, gUnk_08B25EF0);
 #endif
-    work->unk_20 = 0;
+    work->gfx = 0;
 
     for (i = 0; i <= 5; i++) {
         work->unk_08[i] = AllocObjTiles(32, gUnk_08B25EF0);
@@ -173,7 +173,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 
     if (work->unk_3E < gGameState.level) {
         func_0805CE60(work, gGameState.level);
-        work->unk_20 = gUnk_08B25E40;
+        work->gfx = gUnk_08B25E40;
         work->unk_3C = 0;
         work->unk_48 = 3;
         work->unk_3E = gGameState.level;
@@ -184,7 +184,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
         if (work->unk_44 < gGameState.exp) {
             work->unk_40 += gGameState.exp - work->unk_44;
             func_0805CE60(work, work->unk_40);
-            work->unk_20 = gUnk_08B25E54;
+            work->gfx = gUnk_08B25E54;
             work->unk_3C = 0;
             work->unk_48 = 1;
             work->unk_44 = gGameState.exp;
@@ -201,7 +201,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
             } else {
                 work->unk_48 = 2;
                 func_0805CE60(work, gGameState.nextExp - gGameState.exp);
-                work->unk_20 = gUnk_08B25E5E;
+                work->gfx = gUnk_08B25E5E;
             }
             work->unk_3C = 0;
             work->unk_40 = 0;
@@ -216,7 +216,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
             } else {
                 work->unk_48 = 2;
                 func_0805CE60(work, gGameState.nextExp - gGameState.exp);
-                work->unk_20 = gUnk_08B25E5E;
+                work->gfx = gUnk_08B25E5E;
             }
             work->unk_3C = 0;
             work->unk_40 = 0;
@@ -248,7 +248,7 @@ void task_btl_exp_2(BtlExpWork* work) {
     if (work->unk_48 != 0) {
         y = 40;
         x = 0;
-        DrawSprite(0, y, work->unk_20, work->tiles, work->palette, x, 0x410, x);
+        DrawSprite(0, y, work->gfx, work->tiles, work->palette, x, 0x410, x);
 
 #ifdef VERSION_JP
         x = 32;

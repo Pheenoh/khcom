@@ -13,13 +13,13 @@ void task_btl_shadow_0(BtlShadowWork* work, BtlWork* actor) {
 
     if (actor->unk_034 & 0x80000) {
         work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
-        work->unk_0C = gUnk_08B22CBC;
+        work->gfx = gUnk_08B22CBC;
     } else if (actor->unk_034 & 0x20000) {
         work->tiles = LoadObjTiles(gUnk_08B22EFE, 0x140);
-        work->unk_0C = gUnk_08B22EE4;
+        work->gfx = gUnk_08B22EE4;
     } else {
         work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
-        work->unk_0C = gUnk_08B22BA8;
+        work->gfx = gUnk_08B22BA8;
     }
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
 }
@@ -50,7 +50,7 @@ void task_btl_shadow_2(BtlShadowWork* work) {
                 aff = AllocObjAffine(0, sc, sc, sc > 0x100);
             }
             WorldToScreen(&x, &y, actor->unk_004, actor->unk_008, actor->unk_010);
-            DrawSprite(x, y, work->unk_0C, work->tiles, work->palette, aff, anim, actor->unk_0CC);
+            DrawSprite(x, y, work->gfx, work->tiles, work->palette, aff, anim, actor->unk_0CC);
         }
     }
 }

@@ -117,7 +117,7 @@ typedef struct BtlShadowWork {
     void* tiles;
     void* palette;
     BtlWork* actor;
-    void* unk_0C;
+    void* gfx;
 } BtlShadowWork;
 
 typedef struct BtlHpplyWork {
