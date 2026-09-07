@@ -7,6 +7,9 @@
 #include "malloc.h"
 #include "taskpool.h"
 #include "obj.h"
+#include "engine.h"
+#include "key.h"
+#include "util.h"
 typedef struct Collider {
     s32 unk_00;
     s32 unk_04;
@@ -510,7 +513,6 @@ extern u8 gUnk_09EDA828[];
 extern const UnkStruct_08133E5C gUnk_08133E5C[];
 extern const UnkStruct_0813400C gUnk_0813400C[];
 
-void SeedRandom(u32 seed);
 void func_0800ABD8(void);
 void func_08000D90(ListNode* node, void* pool);
 void* func_08012218(u32 type);
@@ -518,10 +520,7 @@ void* ListPoolFirst(ListNode* pool);
 void* ListPoolNext(ListNode* node);
 void m4aMPlayFadeOut(MusicPlayerInfo* mplayInfo, u16 speed);
 void func_08006120(s32 a, s32 b);
-void func_080063A8(void);
 void func_0801C830();
-u16 GetKeysHeld(void);
-u16 GetKeysPressed(void);
 u16 func_080015F8(u16 a, u16 b);
 void func_080763F0(void);
 void func_08076318(void);
@@ -547,9 +546,7 @@ void func_08096DB0(void* p, UnkStruct_0801B8A8* v);
 void func_0801B994(BtlObj* p);
 void func_0801C700(BtlObj* a, s32* b, s32* c, s32* d);
 void func_08005974(void* a, u8 b, u16 c, s32 d, void* e);
-void func_08002A10(void* a, void* b);
 void func_08006778(void* a, s32 x, s32 y);
-void func_0800675C(u8 a, s32 b, s32 c);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void func_08012674(void);
 void func_08006B80(u16* a, u16* b);
@@ -558,10 +555,6 @@ u8* func_08006BA8(void);
 void func_080061E8(s32 a, u16 b);
 void func_08012908(void);
 void func_0801007C(void);
-u16 SioKeyGetHeldA(void);
-u16 SioKeyGetPressedA(void);
-u16 SioKeyGetHeldB(void);
-u16 SioKeyGetPressedB(void);
 void func_08076318(void);
 void func_08076324(void);
 void func_08076330(void);
@@ -616,13 +609,9 @@ void func_08000D28(ListNode* node, void* pool);
 void SetBgBlend(s32 a, s32 b, s32 c);
 void func_080062F4(u16 a, s32 b);
 void func_080065FC(s32 a, s32 b, s32 c);
-void SetBlendAlpha(u16 a, u16 b);
-void func_08006B4C(void);
 void func_080066F4(s16 x, s16 y);
 u8 func_080ABED0(void);
 void func_08006954(void);
-void func_0800592C(s32* p, s32 target, u16 steps);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void ApproachAngle(u16* p, u16 target, u16 step);
 void* memcpy(void* dst, const void* src, unsigned long n);
 void func_080C6FF8(void);
@@ -630,12 +619,9 @@ void func_080DDEA4(void);
 void func_080DFB2C(void);
 void func_08109620(void);
 void func_08006238(s32 a, s32 b, s32 c);
-void func_08006B34(u16 a);
 void m4aSongNumStart(u16 id);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
-u16 GetRandom(void);
 u8 func_08006B74(void);
-void SetBgPriority(s32 bg, u16 priority);
 
 void func_0800EEBC(Actor* p, SprObj* s);
 void func_0800EFE8(Actor* work);
@@ -723,7 +709,6 @@ void func_08018240(void);
 void func_08015F3C(s32 x, s32 y, s32 z);
 void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
 void func_08006184(s32 a, u16 b);
-u8 func_08006314(void);
 void func_08015E3C(void);
 void func_080160C0(void);
 void func_08015698(void);
@@ -785,7 +770,6 @@ void func_08012798(u16 a, u16 bg);
 u8 func_0801CA00(BtlObj* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-void LoadObjPaletteBank(u16 bank, void* src);
 void TaskPoolDraw(TaskPool* a);
 s32 func_080ABA80(s32* out);
 void func_0807E1F4(void);
@@ -844,7 +828,6 @@ void func_0801B008(void);
 void func_0801BCC0(s32 a, s32 b, s32 c);
 void func_0801BDD4(BtlObj* p, s32 v);
 void* AllocObjTiles(s32 a, void* b);
-void ReleaseObjTiles(void* a);
 u8 func_08085BAC(void);
 u8 func_080856DC(void);
 u8 GetActiveDeckIndex(void);

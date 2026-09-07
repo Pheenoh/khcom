@@ -8,6 +8,7 @@
 #include "sprite.h"
 #include "main.h"
 #include "engine.h"
+#include "util.h"
 
 extern vu16 gUnk_02034938;
 extern s32 gUnk_0203493C;
@@ -49,7 +50,6 @@ s32 MovieStart(void* a);
 void MoviePlay(void* a, s32 b);
 void MovieClose(void);
 void PalletInit(void);
-void SioKeyInit(void);
 void VTransReset(void);
 void BgReset(void);
 void SpriteReset(void);
