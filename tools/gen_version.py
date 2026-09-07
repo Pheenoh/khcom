@@ -288,6 +288,7 @@ TARGET_FUNC_SIZE = {
         "func_0805E89C": 32,
         "func_0801CB44": 60,
         "task_btl_escape_0": 224,
+        "event_seq_3": 76,
         "func_080A2980": 260,
         "func_08088EB4": 136,
         "func_0808CA78": 228,
@@ -330,6 +331,7 @@ TARGET_FUNC_ADDR = {
         "func_08005474": 0x08005620,
         "func_0801CB44": 0x08020A14,
         "task_btl_escape_0": 0x08034CA8,
+        "event_seq_3": 0x0806CD78,
     },
 }
 

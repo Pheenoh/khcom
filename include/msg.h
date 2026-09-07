@@ -237,7 +237,9 @@ typedef struct EventSeqWork {
     u8 unk_33;
     struct UnkStruct_09EE3FB4* unk_34;
     u16 unk_38;
-    u8 unk_3A[2];
+    u8 unk_3A;
+    u8 unk_3B;
+    u8 unk_3C;
 } EventSeqWork;
 
 typedef struct BtlWork {

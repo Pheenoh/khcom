@@ -6,6 +6,7 @@ extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
 extern u32 gLanguage;
+extern void eu_08005ADC(s32 id);
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
 #define LANGSTR(x) (x)
@@ -4662,17 +4663,26 @@ void event_seq_2(EventSeqWork* p) {
     }
     TaskPoolDraw(&p->unk_00);
 }
-#ifndef VERSION_EU
 void event_seq_3(EventSeqWork* p) {
     TaskPoolDestroy(&p->unk_00);
 
     if (p->unk_28 != 0) {
         TaskPoolDestroy(&p->unk_14);
     }
-}
-#else
-INCLUDE_ASM("msg/event_seq_3.s");
+#ifdef VERSION_EU
+    if (p->unk_3A != 0) {
+        eu_08005ADC(3);
+    }
+
+    if (p->unk_3B != 0) {
+        eu_08005ADC(2);
+    }
+
+    if (p->unk_3C != 0) {
+        eu_08005ADC(1);
+    }
 #endif
+}
 void event_chara_0(Work0806180C* p, u32* a) {
     s32 v0;
     s32 v1;
