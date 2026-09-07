@@ -330,6 +330,7 @@ TARGET_FUNC_SIZE = {
         "task_title_lumichange_0": 264,
         "task_title_menu_0": 672,
         "task_title_obj_0": 700,
+        "ModeUpdate": 328,
     },
 }
 
@@ -345,6 +346,7 @@ TARGET_FUNC_ADDR = {
         "func_08101970": 0x080FFD88,
         "mode_worldinspect_1": 0x080FE19C,
         "mode_chksnd_1": 0x0800C214,
+        "ModeUpdate": 0x08001178,
     },
 }
 
