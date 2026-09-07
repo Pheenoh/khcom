@@ -760,7 +760,7 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
         work->unk_2C = 0;
     }
     work->unk_04 = LoadObjPalette(gUnk_08F6DC44, 0x20);
-    work->unk_00 = AllocObjTiles(0x280, gUnk_08B59E52);
+    work->tiles = AllocObjTiles(0x280, gUnk_08B59E52);
     AnimInit(&work->anim, gUnk_09EE17AC, gUnk_09EE1798);
     AnimStart(&work->anim, 0, 1);
     work->x = args->unk_00;
@@ -792,7 +792,7 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
         work->unk_38 = 0;
         break;
     }
-    work->unk_40 = LoadObjTiles(gUnk_08B22CE4, 0x200);
+    work->tiles2 = LoadObjTiles(gUnk_08B22CE4, 0x200);
     work->unk_44 = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_48 = 1;
 }
@@ -888,16 +888,16 @@ void task_hum_hook_bomb_2(HookBombWork* work) {
         attr |= 1;
     }
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    DrawSprite(x, y, gfx, work->unk_00, work->unk_04, 0, attr,
+    DrawSprite(x, y, gfx, work->tiles, work->unk_04, 0, attr,
         -0x1004 - ((work->y + 0x800) >> 8) * 4);
     WorldToScreen(&x, &y, work->x, work->y, 0);
-    DrawSprite(x, y, gUnk_08B22CBC, work->unk_40, work->unk_44, 0, attr, 0xFFF0);
+    DrawSprite(x, y, gUnk_08B22CBC, work->tiles2, work->unk_44, 0, attr, 0xFFF0);
 }
 
 void task_hum_hook_bomb_3(HookBombWork* work) {
-    ReleaseObjTiles(work->unk_40);
+    ReleaseObjTiles(work->tiles2);
     ReleaseObjPalette(work->unk_44);
-    ReleaseObjTiles(work->unk_00);
+    ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->unk_04);
 }
 
@@ -3616,7 +3616,7 @@ void task_hum_lexceus_3(LexceusWork* work) {
 
 void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
     work->unk_04 = LoadObjPalette(gUnk_09618478, 0x20);
-    work->unk_00 = AllocObjTiles(0x400, gUnk_08C3724C);
+    work->tiles = AllocObjTiles(0x400, gUnk_08C3724C);
     AnimInit(&work->anim, gUnk_09EE22B0, gUnk_09EE2298);
     AnimStart(&work->anim, 0, 1);
 
@@ -3634,7 +3634,7 @@ void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
     work->unk_4A = 0;
     work->unk_2D = 0;
     work->unk_3C = -0x980;
-    work->unk_40 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    work->tiles2 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     work->unk_44 = LoadObjPalette(gUnk_08F69BA4, 0x20);
     m4aSongNumStart(0x2B1);
 }
@@ -3724,7 +3724,7 @@ void task_hum_lex_tmh_2(LexTmhWork* work) {
         attr = func_0801AF1C(work->y) | 1;
     }
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    DrawSprite(x, y, gfx, work->unk_00, work->unk_04, 0, attr,
+    DrawSprite(x, y, gfx, work->tiles, work->unk_04, 0, attr,
         -0x1004 - (work->y >> 8) * 4);
 
     if (work->z >= 0) {
@@ -3737,13 +3737,13 @@ void task_hum_lex_tmh_2(LexTmhWork* work) {
         affine = AllocObjAffine(0, scale, scale, 0);
     }
     WorldToScreen(&x, &y, work->x, work->y, 0);
-    DrawSprite(x, y, gUnk_08B22BA8, work->unk_40, work->unk_44, affine, attr, 0xFFF0);
+    DrawSprite(x, y, gUnk_08B22BA8, work->tiles2, work->unk_44, affine, attr, 0xFFF0);
 }
 
 void task_hum_lex_tmh_3(LexTmhWork* work) {
-    ReleaseObjTiles(work->unk_40);
+    ReleaseObjTiles(work->tiles2);
     ReleaseObjPalette(work->unk_44);
-    ReleaseObjTiles(work->unk_00);
+    ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->unk_04);
 }
 

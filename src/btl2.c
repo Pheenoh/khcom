@@ -452,9 +452,9 @@ void task_btl_hpply_3(BtlHpplyWork* work) {
 }
 
 void task_btl_hpenm_0(BtlHpenmWork* work) {
-    work->unk_00 = AllocObjTiles(0x140, gUnk_08B24DAA);
-    work->unk_04 = AllocObjTiles(0x80, gUnk_08B24DAA);
-    work->unk_0C = AllocObjTiles(0x20, gUnk_08B24DAA);
+    work->tiles = AllocObjTiles(0x140, gUnk_08B24DAA);
+    work->tiles2 = AllocObjTiles(0x80, gUnk_08B24DAA);
+    work->tiles3 = AllocObjTiles(0x20, gUnk_08B24DAA);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     work->unk_14 = 0;
     work->unk_10 = 0x100;
@@ -607,8 +607,8 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         break;
     }
 
-    DrawSprite(236, 2, gfx, work->unk_00, work->palette, 0, 0x410, 3);
-    DrawSprite(236, 2, gUnk_08B24D6E, work->unk_0C, work->palette, 0, 0x410, 1);
+    DrawSprite(236, 2, gfx, work->tiles, work->palette, 0, 0x410, 3);
+    DrawSprite(236, 2, gUnk_08B24D6E, work->tiles3, work->palette, 0, 0x410, 1);
 
     switch (work->unk_1C) {
     case 0:
@@ -647,7 +647,7 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         } else {
             aff = AllocObjAffine(0, v, 0x100, 0);
         }
-        DrawSprite(217, 6, bar, work->unk_04, work->palette, aff, 0x410, 2);
+        DrawSprite(217, 6, bar, work->tiles2, work->palette, aff, 0x410, 2);
     }
 }
 #else
@@ -655,9 +655,9 @@ INCLUDE_ASM("btl2/task_btl_hpenm_2.s");
 #endif
 
 void task_btl_hpenm_3(BtlHpenmWork* work) {
-    ReleaseObjTiles(work->unk_0C);
-    ReleaseObjTiles(work->unk_04);
-    ReleaseObjTiles(work->unk_00);
+    ReleaseObjTiles(work->tiles3);
+    ReleaseObjTiles(work->tiles2);
+    ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }
 

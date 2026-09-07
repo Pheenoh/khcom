@@ -46,9 +46,9 @@ typedef struct EvtObjWork {
 typedef struct EvtShadowWork {
     void* palette;
     EvtObj* obj;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
+    void* tiles;
+    void* tiles2;
+    void* tiles3;
 } EvtShadowWork;
 
 void* AllocObjTiles(u16 a, s32 b);
