@@ -182,14 +182,14 @@ typedef struct DsdMainWork {
     u8 unk_008;
     u8 unk_009[0x1];
     s16 unk_00A;
-    void* unk_00C;
-    void* unk_010;
-    void* unk_014;
-    void* unk_018;
+    void* tiles;
+    void* tiles2;
+    void* gfx;
+    void* gfx2;
     AnimState unk_01C;
     AnimState unk_034;
-    void* unk_04C;
-    void* unk_050;
+    void* palette;
+    void* palette2;
     s8 unk_054;
     u8 unk_055[0x3];
     TaskPool unk_058;
@@ -506,8 +506,8 @@ typedef struct TmWork {
 typedef struct TmBodyWork {
     TmWork* unk_000;
     void* tiles;
-    void* unk_008;
-    void* unk_00C;
+    void* palette;
+    void* palette2;
     u8 unk_010[0x114];
     void* unk_124;
     u8 unk_128;
@@ -602,8 +602,8 @@ typedef struct TmArmPos {
 
 typedef struct TmArmWork {
     u32 unk_000;
-    u16* unk_004;
-    u32 unk_008;
+    u16* palette;
+    u32 palette2;
     TmArmSrc* unk_00C;
     TmArmJoint unk_010[8];
     u16 unk_1B0;
@@ -670,8 +670,8 @@ typedef struct TmFootWork {
     u32 tiles;
     u32 unk_00C;
     u32 unk_010;
-    u32 unk_014;
-    u32 unk_018;
+    u32 palette;
+    u32 palette2;
     u32 unk_01C;
     u32 unk_020;
     u32 unk_024;
