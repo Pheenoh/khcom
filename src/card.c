@@ -10320,11 +10320,11 @@ void func_08090374(UnkStruct_02034AAC* p) {
 
                 if (p->unk_A7 != 0) {
                     DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
-                               gUnk_09EE981C[j], gUnk_02039DD4->tiles7,
+                               gUnk_09EE981C[p->unk_A5], gUnk_02039DD4->tiles7,
                                gUnk_02039DD4->palette2, affine, 0x410, (u16)(p->unk_A0 - 2));
                 } else {
                     DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
-                               gUnk_09EE981C[j], gUnk_02039DD4->tiles5,
+                               gUnk_09EE981C[p->unk_A5], gUnk_02039DD4->tiles5,
                                gUnk_02039DD4->palette, affine, 0x410, (u16)(p->unk_A0 - 2));
                 }
             }
