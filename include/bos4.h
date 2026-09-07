@@ -240,7 +240,10 @@ typedef struct UrsulaWork {
     u32 unk_02C;
     u32 unk_030;
     u32 unk_034;
-    u8 unk_038[0x20];
+    u8 unk_038[0x18];
+    s16 unk_050;
+    s16 unk_052;
+    u8 unk_054[0x4];
     u64 unk_058;
     u8 unk_060[0x4];
     u32 unk_064;
