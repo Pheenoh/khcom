@@ -2970,8 +2970,56 @@ void func_08066588(s16 x, s32 y, Ent08066588* p, void* d, s32 e, u8 n) {
     }
 }
 
-INCLUDE_ASM("msg/func_0806662C.s");
-INCLUDE_ASM("msg/func_080666F0.s");
+void func_0806662C(s16 x, s32 y, Ent08066588* p, void* d, u16 g, u16 h, u8 n) {
+    s16 x0 = x;
+    s16 cy = y;
+    u8 i;
+
+#ifndef VERSION_JP
+    cy -= 2;
+#endif
+
+    for (i = 0; i < n; i++) {
+        if (p->unk_00 == NULL) {
+            cy += 12;
+            x = x0;
+        } else if (p->unk_05 != -1) {
+            DrawSprite(x, cy, gUnk_09EEB204[0], p->unk_00, d, 0, g, h);
+            x += p->unk_05;
+        } else {
+            x += 3;
+        }
+        p++;
+    }
+}
+
+void func_080666F0(s16 x, s32 y, Ent08066588* p, void* d, void* e, u16 h, u8 n) {
+    s16 x0 = x;
+    s16 cy = y;
+    u8 i;
+
+#ifndef VERSION_JP
+    cy -= 2;
+#endif
+
+    for (i = 0; i < n; i++) {
+        if (p->unk_00 == NULL) {
+            cy += 12;
+            x = x0;
+        } else if (p->unk_05 != -1) {
+            if (p->unk_04 == 0) {
+                DrawSprite(x, cy, gUnk_09EEB204[0], p->unk_00, d, 0, 0, h);
+            } else {
+                DrawSprite(x, cy, gUnk_09EEB204[0], p->unk_00, e, 0, 0, h);
+            }
+            x += p->unk_05;
+        } else {
+            x += 3;
+        }
+        p++;
+    }
+}
+
 void func_080667D8(s16 x, s32 y, void** p, void* d, u16 h, u8 n) {
     s16 cy = y;
     s16 x0 = x;
