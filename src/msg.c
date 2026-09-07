@@ -4426,8 +4426,6 @@ s32 func_0806C81C(u8* a, u16 b) {
 
     return n;
 }
-#else
-INCLUDE_ASM("msg/func_0806C81C.s");
 #endif
 INCLUDE_ASM("msg/func_0806CBAC.s");
 void func_0806CD30(s32 a) {
