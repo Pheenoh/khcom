@@ -293,12 +293,15 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_08895E94": 0x08895E94,
         "gUnkEu_08C9A5E2": 0x08C9A5E2,
         "gUnkEu_08892334": 0x08892334,
+        "gUnkEu_088920BC": 0x088920BC,
+        "gUnkEu_096C798C": 0x096C798C,
         "gUnkEu_08EF3EDC": 0x08EF3EDC,
         "gUnkEu_08EF4EDC": 0x08EF4EDC,
         "gUnkEu_08EF5EDC": 0x08EF5EDC,
         "gUnkEu_08EF6EDC": 0x08EF6EDC,
     },
     "jp": {
+        "gUnk_0814F180": 0x0814F180,
         "gUnk_0814FBB0": 0x0814FBB0,
         "gUnk_0814FBBC": 0x0814FBBC,
         "gUnk_0814FBD4": 0x0814FBD4,
@@ -312,6 +315,7 @@ TARGET_EXTRA_LABELS = {
 
 TARGET_FUNC_SIZE = {
     "jp": {
+        "mode_sioError_0": 0x10c,
         "func_08066588": 156,
         "func_080A2980": 260,
         "task_title_logo_2": 196,
@@ -342,6 +346,7 @@ TARGET_FUNC_SIZE = {
         "mode_sio_btl_option_0": 0x1c4,
         "Deck_Yes_No_0": 0x178,
         "Deck_Clear_0": 0x174,
+        "mode_sioError_0": 0x15c,
         "mode_jiminy_0": 0x4a8,
         "func_08064EF4": 0x174,
         "func_08065170": 0x150,

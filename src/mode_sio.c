@@ -8,12 +8,19 @@ extern void eu_080059F4(s32 bg, void* map);
 extern void eu_080C24D8(void);
 extern s32 eu_080C273C(void);
 extern s32 eu_080C2740(void);
+extern u32 gLanguage;
 extern u16 gUnkEu_0203C964;
 extern u16 gUnkEu_0203C970;
 extern u16 gUnkEu_0203C97C;
 extern void* gUnkEu_08891508[];
+extern void* gUnkEu_088920BC[];
+extern u8 gUnkEu_096C798C[];
 extern u16 gUnkEu_095DA860[];
 extern u16 gUnkEu_095DA867[];
+#endif
+
+#ifdef VERSION_JP
+extern u8 gUnk_0814F180[];
 #endif
 
 SioBtlConnectWork* gSioBtlConnectWork;
@@ -2581,7 +2588,6 @@ void func_080B3DF8(void) {
 }
 #endif
 
-#ifdef VERSION_US
 void mode_sioError_0(s32 arg) {
     gSystemFlags |= 0x20;
     gSioErrorWork = EwramAlloc(sizeof(SioErrorWork));
@@ -2602,17 +2608,36 @@ void mode_sioError_0(s32 arg) {
     gSioErrorWork->unk_00 = 0;
     gSioErrorWork->unk_02 = 0;
     gSioErrorWork->unk_04 = 0;
+#ifdef VERSION_EU
+    LoadBgPalette(0, gUnk_09611AB8, 32);
+    LoadBgTiles(0, gUnk_0950E2F8, 0x140);
+    if (gLanguage == 1 || gLanguage == 4) {
+        LoadBgMap(0, gUnkEu_096C798C, 0x800);
+        SetBgScroll(0, 0xFFE9, 0xFFCD);
+    } else {
+        LoadBgMap(0, gUnk_096112B8, 0x800);
+        SetBgScroll(0, 0xFFE9, 0xFFD0);
+    }
+#elif defined(VERSION_JP)
+    LoadBgTiles(0, gUnk_096AD604, 0x140);
+    LoadBgMap(0, gUnk_096F6464, 0x800);
+    LoadBgPalette(0, gUnk_09611AB8, 32);
+#else
     LoadBgTiles(0, gUnk_0950E2F8, 0x140);
     LoadBgMap(0, gUnk_096112B8, 0x800);
     LoadBgPalette(0, gUnk_09611AB8, 32);
     SetBgScroll(0, 0xFFE9, 0xFFD0);
-    func_08065ACC(gSioErrorWork->unk_08, 0x6C);
+#endif
+    func_08065ACC(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
+#ifdef VERSION_EU
+    gSioErrorWork->unk_06 = func_08065B6C(eu_0805E924(gUnkEu_088920BC), gSioErrorWork->unk_08);
+#elif defined(VERSION_JP)
+    gSioErrorWork->unk_06 = func_08065B6C(gUnk_0814F180, gSioErrorWork->unk_08);
+#else
     gSioErrorWork->unk_06 = func_08065B6C(gUnk_0815A2BE, gSioErrorWork->unk_08);
+#endif
     gSioErrorWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sioError_0.s");
-#endif
 
 void mode_sioError_1(void) {
     func_080B3F24();
