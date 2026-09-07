@@ -7860,19 +7860,15 @@ u8 func_0808B068(u8* work, void* a) {
     return 1;
 }
 
-#ifndef VERSION_EU
 u8 func_0808B208(u8* work) {
     if (func_08006314() == 0) {
         return 0;
     }
 
-    TaskPoolUpdate(&work[0x7C8]);
-    TaskPoolUpdate(&work[0x7DC]);
+    TaskPoolUpdate(&work[CARDWORK(0x7C8)]);
+    TaskPoolUpdate(&work[CARDWORK(0x7DC)]);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808B208.s");
-#endif
 #ifdef VERSION_US
 u8 func_0808B238(u8* work, void* a) {
     *(void**)&work[0x4BC] = LoadObjTiles(gUnk_090A583E, 0x620);
@@ -7900,15 +7896,14 @@ u8 func_0808B238(u8* work, void* a) {
 INCLUDE_ASM("card/func_0808B238.s");
 #endif
 
-#ifndef VERSION_EU
 u8 func_0808B30C(u8* work, void* a) {
-    if ((s8)work[0x8CD] > 0) {
-        ApproachValue(&work[0x868], -0x8000, (u16)(s8)work[0x8CD]);
-        work[0x8CD]--;
-    } else if ((s8)work[0x8CC] > 0) {
-        ApproachValue(&work[0x860], -0x800, (u16)(s8)work[0x8CC]);
-        ApproachValue(&work[0x864], 0xA000, (u16)(s8)work[0x8CC]);
-        work[0x8CC]--;
+    if ((s8)work[CARDWORK(0x8CD)] > 0) {
+        ApproachValue(&work[CARDWORK(0x868)], -0x8000, (u16)(s8)work[CARDWORK(0x8CD)]);
+        work[CARDWORK(0x8CD)]--;
+    } else if ((s8)work[CARDWORK(0x8CC)] > 0) {
+        ApproachValue(&work[CARDWORK(0x860)], -0x800, (u16)(s8)work[CARDWORK(0x8CC)]);
+        ApproachValue(&work[CARDWORK(0x864)], 0xA000, (u16)(s8)work[CARDWORK(0x8CC)]);
+        work[CARDWORK(0x8CC)]--;
     } else {
         func_08006184(0, 4);
         SetTaskUpdate(a, (void*)func_0808B208);
@@ -7916,56 +7911,45 @@ u8 func_0808B30C(u8* work, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808B30C.s");
-#endif
 
-#ifndef VERSION_EU
 void func_0808B398(u8* work) {
-    func_08066588(*(s16*)&work[0x894], *(s16*)&work[0x896], &work[0x1E8],
-                  *(void**)&work[0x14], 20, work[0x8C6]);
+    func_08066588(*(s16*)&work[CARDWORK(0x894)], *(s16*)&work[CARDWORK(0x896)], &work[0x1E8],
+                  *(void**)&work[0x14], 20, work[CARDWORK(0x8C6)]);
 }
-#else
-INCLUDE_ASM("card/func_0808B398.s");
-#endif
 
-#ifndef VERSION_EU
 void func_0808B3DC(u8* work, u8 flag) {
     if (flag == 0) {
-        switch (work[0x8C0]) {
+        switch (work[CARDWORK(0x8C0)]) {
         case 0:
-            func_080664D8(*(s16*)&work[0x888], *(s16*)&work[0x88E], &work[0x38], *(void**)&work[0x14], 20, work[0x8C2]);
-            func_080664D8(*(s16*)&work[0x88A], *(s16*)&work[0x890], &work[0x78], *(void**)&work[0x4C4], 20, work[0x8C3]);
-            func_080664D8(*(s16*)&work[0x88C], *(s16*)&work[0x892], &work[0xB8], *(void**)&work[0x4C4], 20, work[0x8C4]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x888)], *(s16*)&work[CARDWORK(0x88E)], &work[0x38], *(void**)&work[0x14], 20, work[CARDWORK(0x8C2)]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x88A)], *(s16*)&work[CARDWORK(0x890)], &work[0x78], *(void**)&work[0x4C4], 20, work[CARDWORK(0x8C3)]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x88C)], *(s16*)&work[CARDWORK(0x892)], &work[0xB8], *(void**)&work[0x4C4], 20, work[CARDWORK(0x8C4)]);
             break;
         case 1:
-            func_080664D8(*(s16*)&work[0x888], *(s16*)&work[0x88E], &work[0x38], *(void**)&work[0x4C4], 20, work[0x8C2]);
-            func_080664D8(*(s16*)&work[0x88A], *(s16*)&work[0x890], &work[0x78], *(void**)&work[0x14], 20, work[0x8C3]);
-            func_080664D8(*(s16*)&work[0x88C], *(s16*)&work[0x892], &work[0xB8], *(void**)&work[0x4C4], 20, work[0x8C4]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x888)], *(s16*)&work[CARDWORK(0x88E)], &work[0x38], *(void**)&work[0x4C4], 20, work[CARDWORK(0x8C2)]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x88A)], *(s16*)&work[CARDWORK(0x890)], &work[0x78], *(void**)&work[0x14], 20, work[CARDWORK(0x8C3)]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x88C)], *(s16*)&work[CARDWORK(0x892)], &work[0xB8], *(void**)&work[0x4C4], 20, work[CARDWORK(0x8C4)]);
             break;
         case 2:
-            func_080664D8(*(s16*)&work[0x888], *(s16*)&work[0x88E], &work[0x38], *(void**)&work[0x4C4], 20, work[0x8C2]);
-            func_080664D8(*(s16*)&work[0x88A], *(s16*)&work[0x890], &work[0x78], *(void**)&work[0x4C4], 20, work[0x8C3]);
-            func_080664D8(*(s16*)&work[0x88C], *(s16*)&work[0x892], &work[0xB8], *(void**)&work[0x14], 20, work[0x8C4]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x888)], *(s16*)&work[CARDWORK(0x88E)], &work[0x38], *(void**)&work[0x4C4], 20, work[CARDWORK(0x8C2)]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x88A)], *(s16*)&work[CARDWORK(0x890)], &work[0x78], *(void**)&work[0x4C4], 20, work[CARDWORK(0x8C3)]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x88C)], *(s16*)&work[CARDWORK(0x892)], &work[0xB8], *(void**)&work[0x14], 20, work[CARDWORK(0x8C4)]);
             break;
         }
     } else {
-        switch (work[0x8C0]) {
+        switch (work[CARDWORK(0x8C0)]) {
         case 0:
-            func_080664D8(*(s16*)&work[0x888], *(s16*)&work[0x88E], &work[0x38], *(void**)&work[0x14], 20, work[0x8C2]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x888)], *(s16*)&work[CARDWORK(0x88E)], &work[0x38], *(void**)&work[0x14], 20, work[CARDWORK(0x8C2)]);
             break;
         case 1:
-            func_080664D8(*(s16*)&work[0x88A], *(s16*)&work[0x890], &work[0x78], *(void**)&work[0x14], 20, work[0x8C3]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x88A)], *(s16*)&work[CARDWORK(0x890)], &work[0x78], *(void**)&work[0x14], 20, work[CARDWORK(0x8C3)]);
             break;
         case 2:
-            func_080664D8(*(s16*)&work[0x88C], *(s16*)&work[0x892], &work[0xB8], *(void**)&work[0x14], 20, work[0x8C4]);
+            func_080664D8(*(s16*)&work[CARDWORK(0x88C)], *(s16*)&work[CARDWORK(0x892)], &work[0xB8], *(void**)&work[0x14], 20, work[CARDWORK(0x8C4)]);
             break;
         }
     }
 }
-#else
-INCLUDE_ASM("card/func_0808B3DC.s");
-#endif
 INCLUDE_ASM("card/func_0808B66C.s");
 
 void func_0808C2F0(u8* work) {
