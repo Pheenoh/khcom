@@ -1355,8 +1355,6 @@ void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
     }
     gUnk_02034A80[slot].unk_50 = i;
 }
-#else
-INCLUDE_ASM("msg/func_08063744.s");
 #endif
 #ifndef VERSION_EU
 void func_08063EE4(s32 a, s32 b, u8 v, u8 d, u8 e) {
@@ -1652,8 +1650,6 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
         gUnk_02034A91 = 1;
     }
 }
-#else
-INCLUDE_ASM("msg/func_080643D4.s");
 #endif
 #ifdef NON_MATCHING
 void func_08064624(void) {
@@ -3145,8 +3141,6 @@ s32 func_080660C0(u8* a, void** p) {
 
     return n;
 }
-#else
-INCLUDE_ASM("msg/func_080660C0.s");
 #endif
 void* _08066468(s32 a) {
     void* r = NULL;
@@ -3968,8 +3962,6 @@ done:
     *d = 0;
     return gUnk_02034A90;
 }
-#else
-INCLUDE_ASM("msg/func_0806BDB8.s");
 #endif
 
 void func_0806C2C0(u8 n) {
