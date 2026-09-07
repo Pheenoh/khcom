@@ -653,9 +653,21 @@ typedef struct UnkStruct_0807FD10_Args {
 
 typedef struct UnkStruct_08078754 {
     u8 unk_00[0x44];
-    CardSlot* unk_44[25];
-    s16 unk_A8[25];
+    CardSlot* unk_44[4];
+    u8 unk_54[0x54];
+    s16 unk_A8[4];
+    s16 unk_B0[4];
+    s8 unk_B8;
+    u8 unk_B9;
+    u8 unk_BA;
+    u8 unk_BB;
+    u8 unk_BC[4];
+    u8 unk_C0[4];
+    u8 unk_C4[5];
+    u8 unk_C9;
 } UnkStruct_08078754;
+
+typedef char UnkStruct_08078754_sizechk[(sizeof(struct UnkStruct_08078754) == 0xCC) ? 1 : -1];
 
 typedef struct UnkStruct_09EE4C80 {
     void* unk_00;

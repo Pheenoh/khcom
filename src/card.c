@@ -671,8 +671,6 @@ u16 func_080787B8(UnkStruct_08078754* w, u8 n) {
     u16 count;
     u16 i;
     u16 max;
-    s32 ofs;
-    u8* q;
 
     max = w->unk_A8[n];
     count = 0;
@@ -684,10 +682,7 @@ u16 func_080787B8(UnkStruct_08078754* w, u8 n) {
     }
 
     if (gUnk_02034A98->unk_78 & 0x100000) {
-        ofs = *(s8*)((u8*)w + 0xB8) * 2;
-        q = (u8*)w + 0xB0;
-
-        if (*(s16*)(q + ofs) == 1) {
+        if (w->unk_B0[w->unk_B8] == 1) {
             count = 0;
         }
     }
