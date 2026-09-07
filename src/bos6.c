@@ -1488,7 +1488,6 @@ void func_0810C7C4(BosLstWork* work) {
     }
 }
 
-#ifndef VERSION_EU
 void task_bos_lst_0(BosLstWork* work, void* pool) {
     PcPos* pos;
     void* obj;
@@ -1529,6 +1528,9 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     work->unk_05C = pos->unk_04;
     work->unk_060 = pos->unk_08;
     work->unk_064 = pos->unk_0C;
+#ifdef VERSION_EU
+    work->unk_004 = 0;
+#endif
     work->unk_068 = 0;
     work->unk_06A = 0;
     work->unk_06C = 0;
@@ -1618,10 +1620,6 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     g->unk_0D4 = work->unk_04C;
     g->unk_0D8 = -16;
 }
-#else
-INCLUDE_ASM("bos6/task_bos_lst_0.s");
-#endif
-
 s32 func_0810CC14(s32 a, s32 b, s32 c, s32 d, s32 e) {
     if (c == 0) {
         c = func_08003C9C((abs(a - b) << 8) / 768);
