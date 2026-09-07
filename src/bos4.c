@@ -143,9 +143,9 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         }
 
 #ifdef VERSION_EU
-        *(u64*)((u8*)p + 0x34) &= ~0x100;
+        ((BtlWork*)p)->unk_034 &= ~0x100;
 #else
-        *(u64*)((u8*)p + 0x34) &= ~0x80;
+        ((BtlWork*)p)->unk_034 &= ~0x80;
 #endif
         func_080D9B6C(work);
         work->unk_150 += 51;
@@ -172,7 +172,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             if (work->unk_150 >= -25) {
                 func_080DA42C(work);
                 work->unk_000 = 4;
-                *(u64*)((u8*)p + 0x34) |= 0x100;
+                ((BtlWork*)p)->unk_034 |= 0x100;
 
                 if (work->unk_170 == 0) {
                     func_0801AF08(p);
@@ -183,9 +183,9 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         break;
     case 0:
 #ifdef VERSION_EU
-        *(u64*)((u8*)p + 0x34) &= ~0x100;
+        ((BtlWork*)p)->unk_034 &= ~0x100;
 #else
-        *(u64*)((u8*)p + 0x34) &= ~0x80;
+        ((BtlWork*)p)->unk_034 &= ~0x80;
 #endif
 
         if ((s16)work->unk_004 == 0 && work->unk_170 == 0) {
@@ -444,8 +444,8 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     work->unk_154 = GetRandom() % 437 + 76;
     work->unk_158 = GetRandom() % 128 + 0x40;
     p = (u8*)gBtlWork->unk_07C;
-    work->unk_044 = *(s32*)(p + 4);
-    work->unk_048 = *(s32*)(p + 8);
+    work->unk_044 = ((BtlWork*)p)->unk_004;
+    work->unk_048 = ((BtlWork*)p)->unk_008;
     work->unk_04C = -0xA000;
     func_080122AC(&work->unk_080, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
     work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6774, 4), gUnk_0979666A);
@@ -519,7 +519,7 @@ void task_bos_boogie_explosiondice_3(BoogieExplosiondiceWork* work) {
 }
 
 u8 func_080DA73C(void) {
-    if (*(s32*)((u8*)gBtlWork->unk_07C + 8) <= 0x23EFF) {
+    if (((BtlWork*)gBtlWork->unk_07C)->unk_008 <= 0x23EFF) {
         return 1;
     }
 
@@ -740,11 +740,11 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg) {
     work->unk_15C = 0;
     work->unk_150 = -0x200;
 
-    if (*(s32*)((u8*)gBtlWork->unk_07C + 4) < 0xF800) {
-        x = *(s32*)((u8*)gBtlWork->unk_07C + 4) + 0xF000;
+    if (((BtlWork*)gBtlWork->unk_07C)->unk_004 < 0xF800) {
+        x = ((BtlWork*)gBtlWork->unk_07C)->unk_004 + 0xF000;
         work->unk_154 = -0x266;
     } else {
-        x = *(s32*)((u8*)gBtlWork->unk_07C + 4) - 0xF000;
+        x = ((BtlWork*)gBtlWork->unk_07C)->unk_004 - 0xF000;
         work->unk_154 = 0x266;
     }
 
@@ -759,7 +759,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg) {
         work->unk_158 *= 2;
     }
 
-    d = *(s32*)((u8*)gBtlWork->unk_07C + 8);
+    d = ((BtlWork*)gBtlWork->unk_07C)->unk_008;
     e = -0x1000;
     func_0801B37C(&work->unk_040, gUnk_096FE098, x, d, e);
     work->unk_074 |= 0x400;
@@ -1028,7 +1028,7 @@ void task_bos_boogie_knife_3(BoogieKnifeWork* work) {
 }
 
 u8 func_080DB428(u8* p) {
-    if (*(s32*)(p + 0x38) >= 0) {
+    if ((s32)((BoogieKnifeWork*)p)->unk_038 >= 0) {
         return 1;
     }
 
@@ -1310,7 +1310,7 @@ void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work) {
 
 void func_080DB978(UrsulaWork* work) {
     if (work->unk_000 >= 3 && work->unk_000 <= 4) {
-        if (work->unk_028 > *(s32*)((u8*)gBtlWork->unk_07C + 4)) {
+        if (work->unk_028 > ((BtlWork*)gBtlWork->unk_07C)->unk_004) {
             if (work->unk_134 != (u32)gUnk_09EF5130) {
                 work->unk_134 = (u32)gUnk_09EF5130;
                 func_0800516C(0, gUnk_09EF5130, 4, 3);
@@ -1431,9 +1431,9 @@ u8 func_080DBC68(UrsulaWork* work) {
 }
 
 s32 func_080DBCC0(UrsulaWork* work) {
-    s32* p = (s32*)gBtlWork->unk_07C;
+    BtlWork* p = (BtlWork*)gBtlWork->unk_07C;
 
-    if (p[1] < work->unk_028 - 0x5000 || work->unk_028 + 0x5000 < p[1]) {
+    if (p->unk_004 < work->unk_028 - 0x5000 || work->unk_028 + 0x5000 < p->unk_004) {
         return 1;
     }
 
@@ -1441,11 +1441,11 @@ s32 func_080DBCC0(UrsulaWork* work) {
 }
 
 s32 func_080DBCEC(UrsulaWork* work) {
-    if (work->unk_028 - 0x3800 < *(s32*)((u8*)gBtlWork->unk_07C + 4) && *(s32*)((u8*)gBtlWork->unk_07C + 4) < work->unk_028 + 0x3800) {
+    if (work->unk_028 - 0x3800 < ((BtlWork*)gBtlWork->unk_07C)->unk_004 && ((BtlWork*)gBtlWork->unk_07C)->unk_004 < work->unk_028 + 0x3800) {
         return 3;
     }
 
-    if (work->unk_028 - 0x6800 < *(s32*)((u8*)gBtlWork->unk_07C + 4) && *(s32*)((u8*)gBtlWork->unk_07C + 4) < work->unk_028 + 0x6800) {
+    if (work->unk_028 - 0x6800 < ((BtlWork*)gBtlWork->unk_07C)->unk_004 && ((BtlWork*)gBtlWork->unk_07C)->unk_004 < work->unk_028 + 0x6800) {
         return 2;
     }
 
@@ -1518,11 +1518,11 @@ void task_bos_ursula_3(UrsulaWork* work) {
 }
 
 u8 func_080DC510(void) {
-    return *(u64*)((u8*)gUrsulaWork + 0x58) & 4;
+    return ((UrsulaWork*)gUrsulaWork)->unk_058 & 4;
 }
 
 u8 func_080DC528(void) {
-    if (*(u16*)((u8*)gUrsulaWork + 0x142) == 0) {
+    if (((UrsulaWork*)gUrsulaWork)->unk_142 == 0) {
         return 0;
     }
 
@@ -1544,7 +1544,7 @@ u8 func_080DC544(void) {
 }
 
 u8 func_080DC578(void) {
-    if (func_080DC544() != 0 || func_080DC528() == 0 || *(u16*)((u8*)gUrsulaWork + 0x15E) == 0) {
+    if (func_080DC544() != 0 || func_080DC528() == 0 || ((UrsulaWork*)gUrsulaWork)->unk_15E == 0) {
         return 0;
     }
 
@@ -1552,7 +1552,7 @@ u8 func_080DC578(void) {
 }
 
 u8 func_080DC5B0(void) {
-    if (func_080DC528() != 0 && (*(u32*)((u8*)gUrsulaWork + 0x158) != 0 || *(u16*)((u8*)gUrsulaWork + 0x15C) != 0)) {
+    if (func_080DC528() != 0 && (*(u32*)&((UrsulaWork*)gUrsulaWork)->unk_158 != 0 || ((UrsulaWork*)gUrsulaWork)->unk_15C != 0)) {
         return 1;
     }
 
@@ -1560,13 +1560,13 @@ u8 func_080DC5B0(void) {
 }
 
 u32 func_080DC5E8(void) {
-    s16* p = (s16*)((u8*)gUrsulaWork + 0x50);
+    UrsulaWork* work = (UrsulaWork*)gUrsulaWork;
 
-    if (*p > (s16)(*(s16*)((u8*)gUrsulaWork + 0x52) / 3) * 2) {
+    if (work->unk_050 > (s16)(work->unk_052 / 3) * 2) {
         return 0;
     }
 
-    if (*p > (s16)(*(s16*)((u8*)gUrsulaWork + 0x52) / 3)) {
+    if (work->unk_050 > (s16)(work->unk_052 / 3)) {
         return 1;
     }
 
@@ -1574,7 +1574,7 @@ u32 func_080DC5E8(void) {
 }
 
 u8 func_080DC628(void) {
-    if (**(u32**)&gUrsulaWork == 4) {
+    if (((UrsulaWork*)gUrsulaWork)->unk_000 == 4) {
         return 1;
     }
 
@@ -2196,13 +2196,13 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
 
     if (work->unk_138 == 1 && work->unk_134 != 0) {
         work->unk_13E = (u8)GetAngle(p->x, p->z,
-            *(s32*)((u8*)gBtlWork->unk_07C + 4), *(s32*)((u8*)gBtlWork->unk_07C + 12));
+            ((BtlWork*)gBtlWork->unk_07C)->unk_004, ((BtlWork*)gBtlWork->unk_07C)->unk_00C);
         ApproachAngle(&work->unk_13C, work->unk_13E, 4);
         p->x += gSineTable[(u8)work->unk_13C] * work->unk_140 >> 8;
         p->z += -gSineTable[(u8)work->unk_13C + 0x40] * work->unk_140 >> 8;
 
         if (work->unk_134 <= 169) {
-            ApproachValue(&p->y, *(s32*)((u8*)gBtlWork->unk_07C + 8), 30);
+            ApproachValue(&p->y, ((BtlWork*)gBtlWork->unk_07C)->unk_008, 30);
         }
 
         if ((u32)p->x > 0x20800 || p->y > 0x20800) {
@@ -2293,11 +2293,11 @@ void func_080DDD30(UrsulaBubbleSingleWork* work) {
 }
 
 void task_bos_ursula_thunder_0(UrsulaThunderWork* work) {
-    u8* p = (u8*)gBtlWork->unk_07C;
+    BtlWork* p = (BtlWork*)gBtlWork->unk_07C;
 
-    work->unk_004 = *(s32*)(p + 4);
-    work->unk_008 = *(s32*)(p + 8);
-    work->unk_00C = *(s32*)(p + 12) - 0x6000;
+    work->unk_004 = p->unk_004;
+    work->unk_008 = p->unk_008;
+    work->unk_00C = p->unk_00C - 0x6000;
     func_08017390(work->unk_004, work->unk_008, work->unk_00C);
     work->unk_000 = 0;
 }
