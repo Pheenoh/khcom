@@ -29,11 +29,7 @@ extern u32 gFrameCounter;
 extern u32 gVBlankCounter;
 extern u16 gSystemFlags;
 extern u32 gUnk_03006C10;
-extern u32 gSioPlayerId;
-extern u32 gSioStatus;
 
-void func_080C55DC(void);
-void ModeUpdate(void);
 void* ListPoolNext(Node* node);
 void* ListPoolPrev(Node* node);
 

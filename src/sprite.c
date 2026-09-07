@@ -12,7 +12,6 @@ void ListPoolInit(void* pool);
 void ListPoolAddFree(void* node, void* pool, void* owner);
 void SetObjMosaicSize(u8 a, u8 b);
 
-void SortSpriteEntries(SpriteEntry** arr, s32 lo, s32 hi);
 void EnableObj(void);
 void DisableObj(void);
 void SetObjTileRange(u16 a, u16 b);

@@ -11,6 +11,7 @@
 #include "sio.h"
 #include "engine.h"
 #include "main.h"
+#include "mode.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_VCOUNT (*(vu16*)0x04000006)
@@ -51,8 +52,6 @@ extern u8 gEwramHeapStart[];
 extern u8 gIwramHeapStart[];
 extern u8 IrqHandler[];
 
-extern u32 gSioPlayerId;
-extern u32 gSioStatus;
 extern u16 gIntrCheck;
 
 
@@ -64,10 +63,8 @@ void ModeInit(u32 a);
 #else
 void ModeInit(void);
 #endif
-void ModeUpdate(void);
 void func_08001254(void);
 void func_080012A8(void);
-void ResetKeyState(void);
 void SaveInitSram(void);
 
 void* GetEwramHeapStart(void) {

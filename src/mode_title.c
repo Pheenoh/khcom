@@ -16,8 +16,6 @@ u8 gUnk_02034ECB;
 u8 gUnk_02034ECC;
 
 #ifdef VERSION_EU
-extern void eu_080059D4(s32 bg, void* tiles);
-extern void eu_080059F4(s32 bg, void* map);
 extern u8 gUnkEu_09827920[];
 extern u8 gUnkEu_098272D0[];
 extern u8 gUnkEu_09823D9C[];

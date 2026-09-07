@@ -13,8 +13,6 @@ extern u32 gFrameCounter;
 extern u32 gVBlankCounter;
 extern u16 gSystemFlags;
 extern u32 gUnk_03006C10;
-extern u32 gSioPlayerId;
-extern u32 gSioStatus;
 
 u16 gKeysHeld;
 u16 gKeysPressed;
@@ -41,10 +39,7 @@ u8 gKeyReleaseR;
 u8 gKeyReleaseStart;
 u8 gKeyReleaseSelect;
 
-void func_080C55DC(void);
-void ModeUpdate(void);
 
-void ResetKeyState(void);
 u8 GetKeyHoldTime(u16 key);
 u8 GetKeyReleaseTime(u16 key);
 u16 func_080015F8(u16 a, u16 b);

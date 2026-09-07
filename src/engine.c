@@ -38,7 +38,6 @@ void* ListPoolNext(void* node);
 void* ListPoolFirstFree(void* pool);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
 void ListPoolRelease(void* node, void* pool);
-void SortSpriteEntries(SpriteEntry** arr, s32 lo, s32 hi);
 extern s16 gSineTable[];
 extern u16 gBg0Cnt;
 extern u16 gBg1Cnt;
