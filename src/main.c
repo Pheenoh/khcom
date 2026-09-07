@@ -191,11 +191,7 @@ void AgbMain(void) {
                 set = 4;
                 if ((flags & bit) == 0) {
                     ModeUpdate();
-                    {
-                        u16 v = *(u16 *)&gFrameSyncFlags;
-                        v |= set;
-                        *(u16 *)&gFrameSyncFlags = v;
-                    }
+                    gFrameSyncFlags |= set;
                 }
             }
         } else {
@@ -203,11 +199,7 @@ void AgbMain(void) {
             set = 4;
             if ((flags & bit) == 0) {
                 ModeUpdate();
-                {
-                    u16 v = *(u16 *)&gFrameSyncFlags;
-                    v |= set;
-                    *(u16 *)&gFrameSyncFlags = v;
-                }
+                gFrameSyncFlags |= set;
             }
         }
         ApplyIntrCallbacks();
@@ -215,7 +207,6 @@ void AgbMain(void) {
         gFrameCounter++;
     }
 }
-
 
 void VBlankIntr(void) {
     if (gVBlankHandlerOverride != 0) {
