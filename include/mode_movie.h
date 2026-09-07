@@ -7,6 +7,7 @@
 #include "malloc.h"
 #include "sprite.h"
 #include "main.h"
+#include "engine.h"
 
 extern vu16 gUnk_02034938;
 extern s32 gUnk_0203493C;
@@ -25,7 +26,6 @@ extern s16 gUnk_0203495C;
 extern s16 gUnk_0203495E;
 extern s16 gUnk_02034960;
 extern void* gVBlankHandlerOverride;
-extern u16 gDispCnt;
 extern u8 gUnk_0815C3EC[];
 extern u8 gUnk_084E0F34[];
 extern u8 gUnk_084F4660[];
@@ -40,7 +40,6 @@ extern u8 gUnk_09614718[];
 extern u8 gModeDebug[];
 extern u8 gModeStaffRoll[];
 
-void InitDisplayRegs(void);
 void m4aSoundVSyncOff(void);
 s32 GetIwramHeapStart(void);
 s32 GetIwramHeapSize(void);
@@ -50,16 +49,11 @@ void MovieSetCallbacks(void* a, void* b, void* c, void* d);
 s32 MovieStart(void* a);
 void MoviePlay(void* a, s32 b);
 void MovieClose(void);
-void VTransInit(void);
-void BgInit(void);
-void FadeInit(void);
 void PalletInit(void);
 void SioKeyInit(void);
 void VTransReset(void);
 void BgReset(void);
 void SpriteReset(void);
-void FadeReset(void);
-void MosaicReset(void);
 void m4aSoundInit(void);
 void m4aSoundVSyncOn(void);
 void func_0806180C(s32 a);
