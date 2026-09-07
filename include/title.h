@@ -21,9 +21,9 @@ typedef struct TitleObjSprite {
     void* tiles;
     void* palette;
     void* gfx;
-    s16 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
+    s16 y;
+    s32 x;
+    s32 targetX;
 } TitleObjSprite;
 
 typedef struct TitleObjWork {
@@ -36,14 +36,14 @@ typedef struct TitleObjWork {
 typedef struct TitleMenuWork {
     void* tiles;
     TitlePal* palette;
-    void* unk_08[3];
-    TitlePal* unk_14[3];
-    void* unk_20[3];
+    void* tiles2[3];
+    TitlePal* palette2[3];
+    void* gfx[3];
     AnimState anim;
     s16* unk_44;
     TaskPool unk_48;
     s32 unk_5C;
-    s16 unk_60;
+    s16 x;
     u16 unk_62;
 } TitleMenuWork;
 
