@@ -7041,7 +7041,11 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
         work->unk_158++;
         break;
-    case 52:
+    case 52: {
+        s32 tx;
+        s32 ty;
+        s32 tz;
+
         func_0802F284(p->unk_04, p->unk_08, p->unk_0C);
 
         if ((s16)work->unk_158 == 0) {
@@ -7121,6 +7125,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
         work->unk_158++;
         break;
+    }
     case 53:
         func_0802F284(p->unk_04, p->unk_08, p->unk_0C);
 
@@ -7236,7 +7241,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         switch (AnimGetFrame(&work->anim)) {
         case 1:
         case 2:
-        case 3:
+        case 3: {
+            s32 tx;
+            s32 ty;
+
             e = p->unk_E4->unk_078;
 
             if (p->unk_34 & 4) {
@@ -7260,6 +7268,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             p->unk_04 += (tx - p->unk_04) >> 3;
             p->unk_08 += (ty - p->unk_08) >> 3;
             break;
+        }
         }
 
         if (AnimIsFinished(&work->anim) != 0) {
@@ -7918,7 +7927,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         work->unk_03C = 46;
         work->unk_15A++;
         break;
-    case 46:
+    case 46: {
+        BtlWork* e;
+
         if ((s16)work->unk_158 == 0) {
             *(BtlWork**)&work->unk_1A4 = func_0802830C(work);
             func_080276D4(work, 24, 0);
@@ -7941,6 +7952,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         work->unk_03C = 45;
         work->unk_158 = 0;
         break;
+    }
     case 47:
         func_0802F284(p->unk_04, p->unk_08, p->unk_0C);
 
@@ -8347,21 +8359,21 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_15A--;
 
             if ((s16)work->unk_15A > 0) {
-                work->unk_158++;
-                break;
+                goto riku_transform_tick;
             }
         }
 
-        if (p->unk_0C < p->unk_10) {
-            work->unk_158++;
+        if (p->unk_0C >= p->unk_10) {
+            func_080061E8(9, 10);
+            func_0801AF08(p);
+            work->unk_03C = 35;
+            work->unk_15A = 0;
+            work->unk_158 = 0;
             break;
         }
 
-        func_080061E8(9, 10);
-        func_0801AF08(p);
-        work->unk_03C = 35;
-        work->unk_15A = 0;
-        work->unk_158 = 0;
+    riku_transform_tick:
+        work->unk_158++;
         break;
     case 33:
         if (p->unk_E4->unk_068 & 0x8000) {
@@ -8981,20 +8993,20 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             }
 
             if ((s16)work->unk_15A != 0) {
-                work->unk_158++;
-                break;
+                goto riku_dark_dash_tick;
             }
         }
 
-        if (p->unk_0C < p->unk_10) {
-            work->unk_158++;
+        if (p->unk_0C >= p->unk_10) {
+            func_08027444(work);
+            work->unk_03C = 59;
+            work->unk_15A = 0;
+            work->unk_158 = 0;
             break;
         }
 
-        func_08027444(work);
-        work->unk_03C = 59;
-        work->unk_15A = 0;
-        work->unk_158 = 0;
+    riku_dark_dash_tick:
+        work->unk_158++;
         break;
     case 59:
         if ((s16)work->unk_158 == 0) {
@@ -9090,6 +9102,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         }
 
         work->unk_158++;
+        break;
     case 5:
         if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
             func_080274F0(work);
@@ -9165,7 +9178,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
         work->unk_158++;
         break;
-    case 9:
+    case 9: {
+        s32 t;
+        s32 t2;
+        s32 ofs;
         d = 0;
         func_080274F0(work);
 
@@ -9380,6 +9396,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
         work->unk_158++;
         break;
+    }
     case 24:
         if ((p->unk_E4->unk_068 & 0x8000) || p->unk_0C < p->unk_10) {
             func_080274F0(work);
