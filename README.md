@@ -17,6 +17,10 @@ for the Game Boy Advance.
 > This repository does **not** contain any game assets or ROMs. An existing
 > copy of the game is required to build.
 
+<!-- markdownlint-disable MD033 -->
+[<img src="https://decomp.dev/pheenoh/khcom/us.svg?w=512&h=256" width="512" height="256" alt="Progress graph for the us version">][progress]
+<!-- markdownlint-enable MD033 -->
+
 The project can target the following versions:
 
 | Version | Code | SHA-1 |
