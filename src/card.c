@@ -15423,7 +15423,253 @@ void SELMAP_EVKEY_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[0x00]);
 }
 
+#ifdef NON_MATCHING
+void func_08098014(u8* work, u8* a) {
+    s32 zero;
+    UnkStruct_09EE4C80* c;
+    UnkStruct_09EE4BF4* b;
+    UnkStruct_080038C8* g;
+    u8 n;
+
+    zero = 0;
+    CpuSet((void*)&zero, work, 0x0500000D);
+
+    if (a[0] != 255) {
+        c = &gUnk_09EE4C80[a[0] * 10];
+        b = &gUnk_09EE4BF4[c->unk_1E];
+        *(void**)&work[0x00] = LoadObjTiles(c->unk_00, *(u16*)&c->unk_08[0x10]);
+        *(void**)&work[0x0C] = LoadObjPalette(c->unk_04, *(u16*)&c->unk_08[0x12]);
+        *(void**)&work[0x18] = *(void**)&c->unk_08[0];
+        *(void**)&work[0x04] = LoadObjTiles(b->unk_00, b->unk_14);
+        *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
+        *(void**)&work[0x1C] = *(void**)&b->unk_08[0];
+        *(s32*)&work[0x08] = 0;
+        *(s32*)&work[0x14] = 0;
+        return;
+    }
+
+    *(s32*)&work[0x00] = 0;
+    *(s32*)&work[0x0C] = 0;
+    *(s32*)&work[0x18] = 0;
+    *(s32*)&work[0x08] = 0;
+    *(s32*)&work[0x14] = 0;
+
+    if (a[1] == 0) {
+        *(s32*)&work[0x04] = 0;
+        *(s32*)&work[0x10] = 0;
+        *(s32*)&work[0x1C] = 0;
+        n = a[1];
+    } else {
+        b = &gUnk_09EE4BF4[a[1]];
+        *(void**)&work[0x04] = LoadObjTiles(*(void**)&b->unk_08[4], *(u16*)&b->unk_18[0]);
+        *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
+        *(void**)&work[0x1C] = *(void**)*(void**)&b->unk_08[8];
+        *(s32*)&work[0x08] = 0;
+        *(s32*)&work[0x00] = 0;
+        *(s32*)&work[0x0C] = 0;
+        *(s32*)&work[0x18] = 0;
+        *(s32*)&work[0x14] = 0;
+
+        switch (a[1]) {
+        case 1:
+            n = 1;
+            break;
+        case 2:
+            n = 2;
+            break;
+        case 3:
+            n = 3;
+            break;
+        default:
+            n = a[1];
+            break;
+        }
+    }
+
+    work[0x32] = n;
+
+    if (a[2] == 0) {
+        return;
+    }
+
+    switch (a[2]) {
+    case 1:
+        if (a[3] <= 9) {
+            g = func_080038C8(0x100);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[1], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
+        } else {
+            g = func_080038C8(0x180);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[3], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 8) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
+        }
+        break;
+    case 2:
+        if (a[3] <= 9) {
+            g = func_080038C8(0x100);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[1], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + 0x580, &gUnk_06010000[g->unk_06 * 32], 128);
+        } else {
+            g = func_080038C8(0x180);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[3], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 8) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + 0x580, &gUnk_06010000[g->unk_06 * 32], 128);
+        }
+        break;
+    case 3:
+        if (a[3] <= 9) {
+            g = func_080038C8(0x100);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[1], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + 0x600, &gUnk_06010000[g->unk_06 * 32], 128);
+        } else {
+            g = func_080038C8(0x180);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[3], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 8) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + 0x600, &gUnk_06010000[g->unk_06 * 32], 128);
+        }
+        break;
+    case 4:
+        if (a[3] <= 9) {
+            g = func_080038C8(0x80);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[0], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[g->unk_06 * 32], 128);
+        } else {
+            g = func_080038C8(0x100);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[2], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[g->unk_06 * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (u8)(a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+        }
+
+        *(u16*)&work[0x2E] = a[3];
+        *(u16*)&work[0x30] = a[3];
+        break;
+    }
+
+    *(s32*)&work[0x00] = 0;
+    *(s32*)&work[0x0C] = 0;
+    *(s32*)&work[0x18] = 0;
+    *(s32*)&work[0x08] = 0;
+    *(s32*)&work[0x14] = 0;
+
+    if (a[1] == 0) {
+        *(s32*)&work[0x04] = 0;
+        *(s32*)&work[0x10] = 0;
+        *(s32*)&work[0x1C] = 0;
+        n = a[1];
+    } else {
+        b = &gUnk_09EE4BF4[a[1]];
+        *(void**)&work[0x04] = LoadObjTiles(*(void**)&b->unk_08[4], *(u16*)&b->unk_18[0]);
+        *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
+        *(void**)&work[0x1C] = *(void**)*(void**)&b->unk_08[8];
+        *(s32*)&work[0x08] = 0;
+        *(s32*)&work[0x00] = 0;
+        *(s32*)&work[0x0C] = 0;
+        *(s32*)&work[0x18] = 0;
+        *(s32*)&work[0x14] = 0;
+
+        switch (a[1]) {
+        case 1:
+            n = 1;
+            break;
+        case 2:
+            n = 2;
+            break;
+        case 3:
+            n = 3;
+            break;
+        default:
+            n = a[1];
+            break;
+        }
+    }
+
+    work[0x32] = n;
+
+    if (a[2] == 0) {
+        return;
+    }
+
+    switch (a[2]) {
+    case 1:
+        if (a[3] <= 9) {
+            g = func_080038C8(0x100);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[1], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
+        } else {
+            g = func_080038C8(0x180);
+            *(void**)&work[0x08] = g;
+            func_080038E4(g, gUnk_09EF1198[3], gUnk_0950C478);
+            *(s32*)&work[0x20] = 0;
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + (a[3] - (a[3] / 10) * 10) * 128, &gUnk_06010000[(g->unk_06 + 8) * 32], 128);
+            g = *(UnkStruct_080038C8**)&work[0x08];
+            RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
+        }
+        break;
+    }
+
+    *(s32*)&work[0x00] = 0;
+    *(s32*)&work[0x0C] = 0;
+    *(s32*)&work[0x18] = 0;
+    *(void**)&work[0x14] = LoadObjPalette(gUnk_09618D38, 32);
+
+    if (*(void**)&work[0x04] == 0) {
+        *(void**)&work[0x04] = LoadObjTiles(gUnk_08F709B0[4].unk_10, 0x300);
+        *(void**)&work[0x10] = LoadObjPalette(gUnk_09618D38, 32);
+        *(void**)&work[0x1C] = gUnk_08F709B0[4].unk_04;
+    }
+}
+#else
 INCLUDE_ASM("card/func_08098014.s");
+#endif
 
 void func_080984E4(UnkStruct_080984E4* w) {
     s32 z;
