@@ -733,18 +733,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         e = func_0801E7D4(work);
 
         if (e != 0) {
-            if (e->unk_004 < p->unk_04) {
-                f = p->unk_34;
-
-                if (f & 4) {
-                    p->unk_34 = f | 0x8000;
-                }
-            } else if (e->unk_004 > p->unk_04) {
-                f = p->unk_34;
-
-                if ((f & 4) == 0) {
-                    p->unk_34 = f | 0x8000;
-                }
+            if ((e->unk_004 < p->unk_04 && (p->unk_34 & 4)) ||
+                (e->unk_004 > p->unk_04 && !(p->unk_34 & 4))) {
+                p->unk_34 |= 0x8000;
             }
         }
         break;
@@ -4393,6 +4384,8 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         if (AnimGetFrame(&work->anim) > 4) {
+            s32 hit;
+
             *(s32*)&work->unk_191[3] += 128;
 
             if (p->unk_34 & 4) {
@@ -4402,13 +4395,13 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             }
 
             if (p->unk_34 & 4) {
-                if (func_08011F78(94, p->unk_04 - 6400, p->unk_08, p->unk_0C, 10, 12, 32) != 0) {
-                    m4aSongNumStart(503);
-                }
+                hit = func_08011F78(94, p->unk_04 - 6400, p->unk_08, p->unk_0C, 10, 12, 32);
             } else {
-                if (func_08011F78(94, p->unk_04 + 6400, p->unk_08, p->unk_0C, 10, 12, 32) != 0) {
-                    m4aSongNumStart(503);
-                }
+                hit = func_08011F78(94, p->unk_04 + 6400, p->unk_08, p->unk_0C, 10, 12, 32);
+            }
+
+            if (hit != 0) {
+                m4aSongNumStart(503);
             }
         }
 
@@ -5610,7 +5603,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         work->unk_174 = -4100 - (((*(s32*)&p->unk_74[20] + 1024) >> 8) * 4);
     } else {
         work->unk_15A &= ~0x10;
-        p->unk_10 = *(s32*)&p->unk_74[20];
+        p->unk_10 = ((BtlWork*)p)->unk_0D4;
     }
 
     if (work->unk_15A & 0x20) {
