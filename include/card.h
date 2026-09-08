@@ -1269,6 +1269,7 @@ extern s16 gUnk_09035950[];
 extern s16 gUnk_09035956[];
 extern s16 gUnk_090356EC[];
 extern s16 gUnk_090356F2[];
+extern s16 gUnk_09035702[];
 extern s16 gUnk_0903571A[];
 extern s16 gUnk_0903571E[];
 typedef struct UnkStruct_09035730 {

@@ -73,6 +73,7 @@ def main():
     src = open(os.path.join(REPO, "src", args.unit + ".c")).read()
     syms = text_symbols()
     bad = unaligned("jp")
+    bad_eu = unaligned("eu")
     asm_only = handwritten()
     done = attempted(args.ledger)
     rows = []
@@ -104,6 +105,8 @@ def main():
             why = "handwritten-asm"
         elif sym in bad:
             why = "jp-unaligned"
+        elif sym in bad_eu:
+            why = "eu-unaligned"
         elif sym in done:
             why = "attempted"
         elif size > args.max_size:
