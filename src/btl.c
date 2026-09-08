@@ -2954,10 +2954,8 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
             if (e != 0) {
                 func_08017514(e->unk_004, e->unk_008, e->unk_010, 112);
-            } else if (p->unk_34 & 4) {
-                func_08017514(p->unk_04 - 6144, p->unk_08, p->unk_10, 112);
             } else {
-                func_08017514(p->unk_04 + 6144, p->unk_08, p->unk_10, 112);
+                func_08017514(p->unk_34 & 4 ? p->unk_04 - 6144 : p->unk_04 + 6144, p->unk_08, p->unk_10, 112);
             }
 
             m4aSongNumStart(662);
