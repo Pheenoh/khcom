@@ -25924,7 +25924,371 @@ s32 func_080AC5E8(UnkStruct_02039DD4* g, u8 count, u8 kind, UnkStruct_080ABA80* 
     return 107;
 }
 
-INCLUDE_ASM("card/func_080AD144.s");
+s32 func_080AD144(UnkStruct_02039DD4* g, u8 count, u8 kind, UnkStruct_080ABA80* arr, u8* flag, void* b) {
+    s32 v[3];
+    u32 key;
+    u8 ret;
+    u8 i;
+
+    memset(v, 0, 12);
+    ret = 0;
+
+    for (i = 0; i < count; i++) {
+        v[i] = (*(i + g->unk_000))->unk_48->unk_28;
+    }
+
+    if ((gGameState.flags & 8) && gBtlWork->unk_0A4 != 0 && !(gBtlWork->unk_068 & 0x800000000000)) {
+        if (gUnk_02039DD4->unk_0EE == 1 || (s16)gBtlWork->unk_1C8 > 29) {
+            gUnk_02039DD4->unk_0EE = 0;
+            return 108;
+        }
+    }
+
+    key = v[0] | (v[1] << 10) | (v[2] << 20) | (count << 30);
+
+    switch (key) {
+    case 0x8002ACAB:
+        return 0;
+    case 0x8002FCBF:
+        return 2;
+    case 0x8002D4B5:
+        return 1;
+    case 0x800324C9:
+        return 3;
+    case 0x80034CD3:
+        return 11;
+    case 0x800374DD:
+        return 4;
+    case 0x80039CE7:
+        return 44;
+    case 0x8003ECFB:
+        return 15;
+    case 0x8003C4F1:
+        return 17;
+    case 0x80041505:
+        return 19;
+    case 0x80043D0F:
+        return 21;
+    case 0x80046519:
+        return 23;
+    case 0x80048D23:
+        return 25;
+    case 0x8004B52D:
+        return 27;
+    case 0x8004DD37:
+        return 29;
+    case 0x80050541:
+        return 31;
+    case 0x80052D4B:
+        return 33;
+    case 0x80055555:
+        return 35;
+    case 0x80057D5F:
+        return 37;
+    case 0x8005A569:
+        return 39;
+    case 0x8005CD73:
+        return 41;
+    case 0x800A7E9F:
+        return 43;
+    case 0xC0100401:
+    case 0xC0B02C0B:
+    case 0xC1505415:
+    case 0xC1F07C1F:
+    case 0xC290A429:
+    case 0xC330CC33:
+    case 0xC3D0F43D:
+    case 0xC4711C47:
+    case 0xC5114451:
+    case 0xC5B16C5B:
+    case 0xC6519465:
+    case 0xC6F1BC6F:
+    case 0xC791E479:
+    case 0xC8320C83:
+    case 0xC8D2348D:
+    case 0xC9725C97:
+    case 0xCA1284A1:
+        if ((u16)(kind - 10) <= 5 && (u8)func_080AE274(0, b) != 0) {
+            arr->unk_00[0] = 50;
+            return 50;
+        }
+
+        if ((u16)(kind - 20) <= 3 && (u8)func_080AE274(2, b) != 0) {
+            arr->unk_00[0] = 51;
+            return 51;
+        }
+        break;
+    case 0xCAB2ACAB:
+        return 7;
+    case 0xCB52D4B5:
+        return 8;
+    case 0xCBF2FCBF:
+        return 9;
+    case 0xCC9324C9:
+        return 10;
+    case 0xCD334CD3:
+        return 12;
+    case 0xCDD374DD:
+        return 13;
+    case 0xCE739CE7:
+        return 45;
+    case 0xCFB3ECFB:
+        return 14;
+    case 0xCF13C4F1:
+        return 16;
+    case 0xD0541505:
+        return 18;
+    case 0xD0F43D0F:
+        return 20;
+    case 0xD1946519:
+        return 22;
+    case 0xD2348D23:
+        return 24;
+    case 0xD2D4B52D:
+        return 26;
+    case 0xD374DD37:
+        return 28;
+    case 0xD4150541:
+        return 30;
+    case 0xD4B52D4B:
+        return 32;
+    case 0xD5555555:
+        return 34;
+    case 0xD5F57D5F:
+        return 36;
+    case 0xD695A569:
+        return 38;
+    case 0xD735CD73:
+        return 40;
+    case 0xE9FA7E9F:
+        return 42;
+    case 0xCE739CDD:
+        if ((u8)func_080AE274(39, b) != 0) {
+            return 53;
+        }
+        break;
+    case 0xCE734CDD:
+        if ((u8)func_080AE274(38, b) != 0) {
+            return 54;
+        }
+        break;
+    case 0xCE72ACB5:
+        if ((u8)func_080AE274(34, b) != 0) {
+            return 65;
+        }
+        break;
+    case 0xCAB2AD37:
+        if ((u8)func_080AE274(32, b) != 0) {
+            return 70;
+        }
+        break;
+    case 0xCE734CC9:
+        if ((u8)func_080AE274(43, b) != 0) {
+            return 77;
+        }
+        break;
+    case 0xE95A5695:
+        if (gBtlWork->unk_068 & 0x800000000000) {
+            if ((u16)(kind - 5) <= 10) {
+                return 82;
+            }
+
+            if ((u16)(kind - 16) <= 9) {
+                return 83;
+            }
+
+            if (kind > 26) {
+                return 84;
+            }
+        }
+        break;
+    case 0xF21C8721:
+        return 85;
+    case 0xEB3ACEB3:
+        return 86;
+    case 0xEB3AA6B3:
+        return 87;
+    case 0xEE5B96E5:
+        return 88;
+    case 0xEEFB96EF:
+        return 89;
+    case 0xF49D2735:
+        return 90;
+    case 0xED1AF6BD:
+        return 91;
+    case 0xED1B1EC7:
+        return 92;
+    case 0xF0DBE6F9:
+        return 93;
+    case 0xF53D7753:
+        return 94;
+    case 0xF53D4F5D:
+        return 95;
+    case 0xF5DD4F53:
+        return 96;
+    case 0xF17C0F03:
+        return 97;
+    case 0xF35CFF3F:
+        return 98;
+    case 0xF21CAF21:
+        return 99;
+    case 0xF71D9F71:
+        return 100;
+    case 0xF7BDC767:
+        return 101;
+    case 0xFADEB7A3:
+        return 102;
+    case 0xFA3EB7A3:
+        return 103;
+    case 0xF85E3F85:
+        return 104;
+    case 0xF53D4F53:
+        return 105;
+    }
+
+    if ((u8)func_080ADF94(g, count, 43) != 0 || (u8)func_080ADFD4(g, count) != 0) {
+        if ((u8)func_080AE274(42, b) != 0) {
+            return 55;
+        }
+    }
+
+    if ((u8)func_080AE080(g, count) != 0 && (u8)func_080AE274(41, b) != 0) {
+        return 56;
+    }
+
+    if ((u8)func_080ADEAC(g, 23, count) != 0 && (u8)func_080AE274(27, b) != 0) {
+        return 58;
+    }
+
+    if ((u8)func_080ADEAC(g, 24, count) != 0 && (u8)func_080AE274(28, b) != 0) {
+        return 59;
+    }
+
+    if ((u8)func_080ADEAC(g, 31, count) != 0 && (u8)func_080AE274(29, b) != 0) {
+        return 60;
+    }
+
+    if ((u8)func_080ADEAC(g, 18, count) != 0 && (u8)func_080AE274(23, b) != 0) {
+        return 61;
+    }
+
+    if ((u8)func_080ADEAC(g, 19, count) != 0 && (u8)func_080AE274(24, b) != 0) {
+        return 62;
+    }
+
+    if ((u8)func_080ADEAC(g, 20, count) != 0 && (u8)func_080AE274(25, b) != 0) {
+        return 63;
+    }
+
+    if ((u8)func_080ADEAC(g, 22, count) != 0 && (u8)func_080AE274(26, b) != 0) {
+        return 64;
+    }
+
+    if ((u8)func_080AE0B4(g, count) != 0 && (u8)func_080AE274(46, b) != 0) {
+        return 66;
+    }
+
+    if ((u8)func_080AE0F4(g, count) != 0 && (u8)func_080AE274(58, b) != 0) {
+        return 67;
+    }
+
+    if ((u8)func_080AE014(g, count) != 0 && (u8)func_080AE274(44, b) != 0) {
+        return 69;
+    }
+
+    if ((u8)func_080ADF60(g, count) != 0 && (u8)func_080AE274(31, b) != 0) {
+        return 71;
+    }
+
+    if ((u8)func_080ADEEC(g, 25, 0, count) != 0 && (u8)func_080AE274(35, b) != 0) {
+        return 72;
+    }
+
+    if ((u8)func_080ADEEC(g, 27, 0, count) != 0 && (u8)func_080AE274(50, b) != 0) {
+        return 73;
+    }
+
+    if ((u8)func_080AE134(g, count) != 0 && (u8)func_080AE274(56, b) != 0) {
+        return 74;
+    }
+
+    if ((u8)func_080AE168(g, count) != 0 && (u8)func_080AE274(30, b) != 0) {
+        return 75;
+    }
+
+    if ((u8)func_080AE1A8(g, count) != 0 && (u8)func_080AE274(33, b) != 0) {
+        return 76;
+    }
+
+    if ((u8)func_080ADE2C(g, count, 22, 23, 1) != 0 && (u8)func_080AE274(40, b) != 0) {
+        return 78;
+    }
+
+    if ((u8)func_080ADE78(g, count, 24, 22) != 0 && (u8)func_080AE274(36, b) != 0) {
+        return 79;
+    }
+
+    if ((u8)func_080ADE2C(g, count, 22, 25, 1) != 0 && (u8)func_080AE274(37, b) != 0) {
+        return 80;
+    }
+
+    if ((u8)func_080AE1E8(g, count) != 0 && (u8)func_080AE274(45, b) != 0) {
+        return 81;
+    }
+
+    if ((u8)func_080ADD04(g, count) != 0) {
+        if ((u16)(kind - 10) <= 5 && (u8)func_080AE274(1, b) != 0) {
+            arr->unk_00[0] = 46;
+            return 46;
+        }
+
+        if ((u16)(kind - 20) <= 3 && (u8)func_080AE274(5, b) != 0) {
+            arr->unk_00[0] = 5;
+            return 5;
+        }
+    }
+
+    if ((u8)func_080ADD58(g, count) != 0) {
+        if ((u16)(kind - 1) <= 5 && (u8)func_080AE274(6, b) != 0) {
+            arr->unk_00[0] = 47;
+            return 47;
+        }
+
+        if ((u16)(kind - 24) <= 2 && (u8)func_080AE274(4, b) != 0) {
+            arr->unk_00[0] = 6;
+            return 6;
+        }
+
+        if ((u16)(kind - 7) <= 2 && (u8)func_080AE274(7, b) != 0) {
+            arr->unk_00[0] = 48;
+            return 48;
+        }
+
+        if (kind == 0 || kind == 27) {
+            if ((u8)func_080AE274(3, b) != 0) {
+                arr->unk_00[0] = 52;
+                return 52;
+            }
+        }
+    }
+
+    if ((u8)func_080ADDA8(g, count) != 0 && (u8)func_080AE274(8, b) != 0) {
+        arr->unk_00[0] = 49;
+        return 49;
+    }
+
+    *flag = ret;
+
+    if (ret == 0) {
+        return 106;
+    }
+
+    if (ret == 1) {
+        return arr->unk_00[0];
+    }
+
+    return 107;
+}
 
 s32 func_080ADD04(UnkStruct_02034AAC** p, u8 b) {
     CardDef* d0;
