@@ -4975,7 +4975,7 @@ u8 func_08080594(UnkStruct_08080268* w) {
             p = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
         }
 
-        p->unk_94 = p->unk_98 = gUnk_090352E4[0];
+        p->unk_98 = p->unk_94 = gUnk_090352E4[0];
         p->unk_A4 = 0;
         p->unk_A0 = 60;
         p->unk_9C = 4;
