@@ -23927,7 +23927,134 @@ void mode_sio_battle_0(s32 a) {
 #else
 INCLUDE_ASM("card/mode_sio_battle_0.s");
 #endif
+#ifdef NON_MATCHING
+void mode_sio_battle_1(void) {
+    switch ((s8)((UnkStruct_02034B38*)gUnk_02034B38)->unk_01) {
+    case 0:
+        if ((s16)((UnkStruct_02034B38*)gUnk_02034B38)->unk_04 == 0) {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02 = 16;
+        }
+
+        ApproachValue(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_0C, 0, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02);
+        ApproachValue(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_10, 0x9800, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02--;
+
+        if ((s16)((UnkStruct_02034B38*)gUnk_02034B38)->unk_02 > 0) {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_04++;
+        } else {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_01 = 1;
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_04 = 0;
+        }
+        break;
+    case 1:
+        if ((s16)((UnkStruct_02034B38*)gUnk_02034B38)->unk_04 == 0) {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02 = 16;
+        }
+
+        ApproachValue(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_08, 0, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02--;
+
+        if ((s16)((UnkStruct_02034B38*)gUnk_02034B38)->unk_02 > 0) {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_04++;
+        } else {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_01 = 5;
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_04 = 0;
+        }
+        break;
+    case 5:
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_01 = 6;
+        break;
+    case 6:
+        if (gUnk_0203A9E8 == 1) {
+            if (GetKeysPressed() & 0x40) {
+                m4aSongNumStart(101);
+                ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00--;
+
+                if (((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 < 0) {
+                    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 = 1;
+                }
+            }
+
+            if (GetKeysPressed() & 0x80) {
+                m4aSongNumStart(101);
+                ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00++;
+
+                if (((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 > 1) {
+                    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 = 0;
+                }
+            }
+        } else {
+            if (GetKeysPressed() & 0xC0) {
+                m4aSongNumStart(105);
+            }
+        }
+
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnk_09EF38BC[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnk_09EF38C8[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+
+        if (GetKeysPressed() & 9) {
+            m4aSongNumStart(102);
+
+            switch (((UnkStruct_02034B38*)gUnk_02034B38)->unk_00) {
+            case 0:
+                ModeRequest(&gModeSioBtlConnect, 0);
+                break;
+            case 1:
+                ModeRequest(&gModeMenuLoad, 1);
+                break;
+            }
+        }
+
+        if (GetKeysPressed() & 2) {
+            m4aSongNumStart(104);
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_01 = 2;
+        }
+        break;
+    case 2:
+        if ((s16)((UnkStruct_02034B38*)gUnk_02034B38)->unk_04 == 0) {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02 = 16;
+        }
+
+        ApproachValue(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_08, -0x8000, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02--;
+
+        if ((s16)((UnkStruct_02034B38*)gUnk_02034B38)->unk_02 > 0) {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_04++;
+        } else {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_01 = 3;
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_04 = 0;
+        }
+        break;
+    case 3:
+        if ((s16)((UnkStruct_02034B38*)gUnk_02034B38)->unk_04 == 0) {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02 = 16;
+        }
+
+        ApproachValue(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_0C, -0x800, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02);
+        ApproachValue(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_10, 0xA000, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_02--;
+
+        if ((s16)((UnkStruct_02034B38*)gUnk_02034B38)->unk_02 > 0) {
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_04++;
+        } else {
+            ModeRequest(&gModeTitle, 0);
+            return;
+        }
+        break;
+    }
+
+    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_48 = AnimUpdate(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C);
+    DrawSprite(((UnkStruct_02034B38*)gUnk_02034B38)->unk_08 >> 8, 0, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[0], ((UnkStruct_02034B38*)gUnk_02034B38)->unk_14, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_18, 0, 0x400, -16);
+    DrawSprite(128, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_0C >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_14, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_18, 0, 0x400, -1);
+    DrawSprite(128, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_10 >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_2C, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_14, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_18, 0, 0x400, -1);
+    DrawSprite(72, 48, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[1], ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[2], 0, 0x400, -32);
+    DrawSprite(72, 48, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_38, 0, 0x400, -32);
+    func_0805F1C0(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_64, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 * 7 * 1024 + 0x3300);
+    DrawSprite(64, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 >> 8, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_48, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_40, ((UnkStruct_02034B38*)gUnk_02034B38)->unk_44, 0, 0x400, -48);
+}
+#else
 INCLUDE_ASM("card/mode_sio_battle_1.s");
+#endif
 
 void mode_sio_battle_2(void) {
     ReleaseObjTiles(gUnk_02034B38[5]);
