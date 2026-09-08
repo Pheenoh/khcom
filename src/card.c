@@ -4148,7 +4148,150 @@ void func_080802D8(UnkStruct_08080268* w) {
 INCLUDE_ASM("card/func_080802D8.s");
 #endif
 
+#ifdef NON_MATCHING
+u8 func_08080594(UnkStruct_08080268* w) {
+    UnkStruct_0807FD10_Args args;
+    UnkStruct_02034AAC* p;
+    CardSlot* c;
+    u16 v;
+    u16 t;
+
+    if ((gBtlWork->unk_068 & 0x80) == 0) {
+        gUnk_02039DD4->unk_000[0] = gUnk_02034AAC;
+
+        if (gUnk_02039B9C->unk_0F4 == 1) {
+            gUnk_02039DD4->unk_0C2 = gUnk_02034AAC->unk_A5 + 1;
+            gUnk_02034AAC->unk_A5++;
+            gUnk_02034AAC->unk_A7 = 1;
+
+            if (gUnk_02034AAC->unk_A5 > 9) {
+                gUnk_02034AAC->unk_A5 = 9;
+            }
+
+            if ((s16)gUnk_02039DD4->unk_0C2 > 9) {
+                gUnk_02039DD4->unk_0C2 = 9;
+            }
+
+            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034AAC->unk_48);
+        } else if (gUnk_02039B9C->unk_0F4 == 21) {
+            if (gUnk_02034AAC->unk_A5 != 0) {
+                gUnk_02039DD4->unk_0C2 = gUnk_02034AAC->unk_A5 - 1;
+                gUnk_02034AAC->unk_A5--;
+                gUnk_02034AAC->unk_A7 = 1;
+            } else {
+                gUnk_02039DD4->unk_0C2 = 0;
+                gUnk_02034AAC->unk_A7 = 1;
+            }
+        } else {
+            gUnk_02039DD4->unk_0C2 = gUnk_02034AAC->unk_A5;
+        }
+
+        gUnk_02039DD4->unk_0D0 = 1;
+        gUnk_02034AAC->unk_78 |= 0x2000;
+        gBtlWork->unk_0A4 = 0;
+        gBtlWork->unk_068 |= 0x400;
+        gBtlWork->unk_068 |= 0x80;
+        gBtlWork->unk_068 |= 0x10000000;
+    } else {
+        if (gBtlWork->unk_0A4 == 0) {
+            gUnk_02034AAC->unk_A1 = 0;
+            return 1;
+        }
+
+        if ((gBtlWork->unk_068 & 0x20) == 0) {
+            func_080802D8(w);
+        } else {
+            func_080802D8(w);
+        }
+
+        gBtlWork->unk_068 |= 0x10000000;
+    }
+
+    w->unk_B0[w->unk_B8]--;
+
+    if ((gUnk_02034AAC->unk_48->unk_1E & 2) && (gUnk_02034AAC->unk_78 & 0x2000)) {
+        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+    }
+
+    if (gUnk_02034AAC->unk_48->unk_1E & 8) {
+        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+    }
+
+    if (gUnk_02034AAC->unk_A6 == 1) {
+        (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 1;
+
+        if ((u16)func_0807885C(w, 0) == 0) {
+            (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_0A = 0;
+        }
+    }
+
+    w->unk_1C[0] = gUnk_02034AAC;
+    gUnk_02034AAC->unk_A1 = 5;
+    gUnk_02034AAC->unk_A0 = 50;
+    (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_08 = 1;
+    v = *(u16*)&gUnk_02034AAC->unk_3C[8] + 1;
+
+    if ((s16)v >= (s16)w->unk_A8[w->unk_B8]) {
+        v = 0;
+    }
+
+    func_080819E8();
+
+    if (gUnk_02039B9C->unk_0F4 == 37) {
+        t = func_080792AC();
+        func_08081744(w);
+        gUnk_02039DD4->unk_0CE = t;
+        func_08081740(w, gUnk_02039DD4->unk_0CE);
+        func_08081760(w);
+        gUnk_02039B9C->unk_0F8 = gUnk_08F7CBA8[gUnk_02039B9C->unk_0F4].unk_0E;
+    }
+
+    gUnk_02034AAC->unk_78 &= ~0x40;
+    gUnk_02034AAC = 0;
+    c = func_08076674(w, w->unk_B8, &v);
+
+    if (c != 0) {
+        args.unk_00 = &w->unk_54[w->unk_B8];
+        args.unk_0C = v;
+        args.unk_0E = w->unk_B8;
+        args.unk_04 = c;
+        args.unk_0F = w->unk_9C[w->unk_B8];
+
+        if (*(s32*)c == 0xFFFE) {
+            p = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+        } else {
+            p = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+        }
+
+        p->unk_94 = p->unk_98 = gUnk_090352E4[0];
+        p->unk_A4 = 0;
+        p->unk_A0 = 60;
+        p->unk_9C = 4;
+        p->unk_4C = p->unk_8C;
+        p->unk_50 = p->unk_90;
+        p->unk_78 |= 0x804;
+        gUnk_02034AAC = p;
+    }
+
+    if (gUnk_02039B9C->unk_0F4 == 40 && (gUnk_02034AAC->unk_78 & 0x100000) &&
+        w->unk_B0[w->unk_B8] == 1) {
+        w->unk_B0[w->unk_B8] = 0;
+        gUnk_02034AAC->unk_A1 = 7;
+        w->unk_34[w->unk_B8] = 0;
+        gUnk_02034AAC = 0;
+        w->unk_C0[0] = 1;
+        m4aSongNumStart(202);
+
+        if (func_08006390() == 0) {
+            func_08006290(2, 16, 20);
+        }
+    }
+
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_08080594.s");
+#endif
 
 #ifdef NON_MATCHING
 void func_08080994(UnkStruct_08080268* w) {
