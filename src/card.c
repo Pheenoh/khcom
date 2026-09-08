@@ -7490,7 +7490,106 @@ u8 GetActiveDeckIndex(void) {
 
 void func_08085FB0(void) {
 }
+#ifdef NON_MATCHING
+void func_08085FB4(u8* work, void* a) {
+    *(void**)&work[0x8BC] = a;
+    SetBgMode0();
+    SetBackdropColor(0, 0, 0);
+    SetupBg(0, 3, 31, 0);
+    SetupBg(1, 2, 23, 0);
+    SetupBg(2, 1, 15, 0);
+    SetupBg(3, 0, 30, 0);
+    SetBgPriority(0, 0);
+    SetBgPriority(1, 1);
+    SetBgPriority(2, 2);
+    SetBgPriority(3, 3);
+    func_08006120(0, 16);
+    ListPoolInit(&work[0x7F0]);
+    TaskPoolInit((TaskPool*)&work[0x7C8], 286);
+    TaskPoolInit((TaskPool*)&work[0x7DC], 1);
+    work[0x8C0] = GetActiveDeckIndex();
+    func_0808C3DC(work, 0);
+    *(void**)&work[0x00] = AllocObjTiles(0x120, 0);
+    func_08002A10(*(void**)&work[0x00], gUnk_090A4664);
+    AnimInit((AnimState*)&work[0x800], gUnk_09EEB03C, gUnk_09EEB008);
+    AnimStart((AnimState*)&work[0x800], 0, 1);
+    *(void**)&work[0x4F0] = AnimGetGfx((AnimState*)&work[0x800]);
+    *(s32*)&work[0x848] = gUnk_090356EC[0] << 8;
+    *(s32*)&work[0x84C] = gUnk_090356F2[0] << 8;
+    *(u16*)&work[0x882] = 0;
+    *(void**)&work[0x10] = LoadObjTiles(gUnk_090A44C4, 32);
+    *(void**)&work[0x14] = LoadObjPalette(gUnk_09614418, 32);
+    *(void**)&work[0x4B8] = LoadObjTiles(&gUnk_090A0C86[0x132C], 0x280);
+    *(void**)&work[0x4E8] = *(void**)&gUnk_09EEAFB0[0x24];
+    *(void**)&work[0x4EC] = *(void**)&gUnk_09EEAFB0[0x28];
+    *(void**)&work[0x04] = AllocObjTiles(0x280, 0);
+    func_0808E364(work, 0);
+    *(void**)&work[0x4C4] = LoadObjPalette(gUnk_09614438, 32);
+    gUnk_0203A860[0] = AllocObjTiles(0x100, 0);
+    gUnk_0203A860[1] = LoadObjPalette(gUnk_09611AB8, 32);
+    func_08002A10(gUnk_0203A860[0], gUnk_0908C3CE);
+    AnimInit((AnimState*)&gUnk_0203A860[2], gUnk_09EEA198, gUnk_09EEA180);
+    AnimStart((AnimState*)&gUnk_0203A860[2], 0, 1);
+    gUnk_0203A860[8] = AnimUpdate((AnimState*)&gUnk_0203A860[2]);
+    *(s32*)&work[0x28] = 0;
+    *(s32*)&work[0x1C] = 0;
+    *(s32*)&work[0x20] = 0;
+    *(s32*)&work[0x24] = 0;
+    *(s32*)&work[0x30] = 0;
+    *(s32*)&work[0x34] = 0;
+    *(s32*)&work[0x08] = 0;
+    *(s32*)&work[0x0C] = 0;
+    *(s32*)&work[0x18] = 0;
+    *(s32*)&work[0x4BC] = 0;
+    *(s32*)&work[0x4C0] = 0;
+    *(u16*)&work[0x884] = 0;
+    *(u16*)&work[0x886] = 0;
+    work[0x8B3] = 0;
+    work[0x8B4] = 0;
+    work[0x8B7] = 16;
+    work[0x8C8] = 0;
+    *(s32*)&work[0x4C8] = 0;
+    *(s32*)&work[0x4CC] = 0;
+    work[0x8C7] = 0;
+    work[0x8B1] = 0;
+    *(u16*)&work[0x8A2] = func_080857D4(0);
+    *(u16*)&work[0x8A4] = func_080857D4(1);
+    *(u16*)&work[0x8A6] = func_080857D4(2);
+    *(u16*)&work[0x8A8] = func_080857D4(3);
+    work[0x8C1] = 0;
+    *(u16*)&work[0x898] = 0;
+    *(s32*)&work[0x4D4] = 0;
+    work[0x8C9] = 0;
+    work[0x8CB] = 0;
+    work[0x8CC] = 16;
+    work[0x8CD] = 16;
+    *(s32*)&work[0x858] = 0x7800;
+    *(s32*)&work[0x860] = -0x800;
+    *(s32*)&work[0x85C] = 0xA400;
+    *(s32*)&work[0x864] = 0xA000;
+    *(s32*)&work[0x868] = -0x8000;
+    work[0x8CF] = 0;
+    work[0x8B0] = 0;
+    *(u16*)&work[0x878] = 95;
+    *(u16*)&work[0x87A] = 0xFFFE;
+    *(u16*)&work[0x87C] = 135;
+    *(u16*)&work[0x87E] = 0xFFFE;
+    work[0x8CE] = 0;
+    work[0x8C2] = 0;
+    work[0x8C3] = 0;
+    work[0x8C4] = 0;
+    work[0x8C5] = 0;
+    func_08065ACC((TextSlot*)&work[0x38], 8);
+    func_08065ACC((TextSlot*)&work[0x78], 8);
+    func_08065ACC((TextSlot*)&work[0xB8], 8);
+    func_08065ACC((TextSlot*)&work[0xF8], 30);
+    func_08065ACC((TextSlot*)&work[0x1E8], 90);
+    work[0x8D0] = 0;
+    work[0x8D2] = 0;
+}
+#else
 INCLUDE_ASM("card/func_08085FB4.s");
+#endif
 u8 func_080863C0(u8* work, void* a) {
 #ifdef VERSION_EU
     func_08006120(0, 16);
