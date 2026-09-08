@@ -329,6 +329,7 @@ void func_0807CD48(UnkStruct_02034AAC* p);
 s32 func_08093AC8(u16 a);
 u8 func_0809254C(UnkStruct_08093838* w, void* a);
 u8 func_080A11CC(u8* work, void* a);
+u8 func_0809F730(u8* work, void* a);
 u8 func_080A0A44(u8* work, void* a);
 u8 func_080928E4(UnkStruct_08093838* w, void* a);
 u8 func_08092E2C(UnkStruct_08093838* w);
@@ -17943,7 +17944,124 @@ void func_0809E7A4(void) {
 INCLUDE_ASM("card/func_0809E7A4.s");
 #endif
 INCLUDE_ASM("card/Level_Up_1.s");
+#ifdef NON_MATCHING
+u8 func_0809F390(u8* work, void* a) {
+    s32 x;
+    s8 i;
+    u8* q;
+
+    if (GetKeysRepeat() & 0x80) {
+        i = work[0x7B0];
+        q = &work[0x7C8];
+
+        do {
+            i++;
+
+            if (i > 2) {
+                i = 0;
+            }
+        } while (q[i] == 0);
+
+        if (i != (s8)work[0x7B0]) {
+            m4aSongNumStart(101);
+        }
+
+        work[0x7B0] = i;
+
+        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+            LoadBgMap(0, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
+        } else {
+            LoadBgMap(1, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
+        }
+
+        work[0x7B6] = 8;
+    }
+
+    if (GetKeysRepeat() & 0x40) {
+        i = work[0x7B0];
+        q = &work[0x7C8];
+
+        do {
+            i--;
+
+            if (i < 0) {
+                i = 2;
+            }
+        } while (q[i] == 0);
+
+        if (i != (s8)work[0x7B0]) {
+            m4aSongNumStart(101);
+        }
+
+        work[0x7B0] = i;
+
+        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+            LoadBgMap(0, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
+        } else {
+            LoadBgMap(1, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
+        }
+
+        work[0x7B6] = 8;
+    }
+
+    if (GetKeysRepeat() & 1) {
+        work[0x7BD] = 2;
+
+        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+            LoadBgMap(0, &gUnk_0950E2F8[0x7C0], 0x800);
+        } else {
+            LoadBgMap(1, &gUnk_0950E2F8[0x7C0], 0x800);
+        }
+
+        work[0x7B2] = 16;
+        work[0x7B3] = 16;
+        work[0x7B4] = 16;
+        m4aSongNumStart(102);
+        ReleaseObjTiles(*(void**)&work[0x6E8]);
+        ReleaseObjPalette(*(void**)&work[0x6EC]);
+        *(void**)&work[0x6E8] = AllocObjTiles(128, 0);
+        *(void**)&work[0x6EC] = LoadObjPalette(&gUnk_09611AB8[0x24A0], 32);
+        func_080062F4(*(u16*)((u8*)*(void**)&work[0x6EC] + 6) + 16, 1);
+        func_08002A10(*(void**)&work[0x6E8], &gUnk_0908C686[0x2B0A]);
+        AnimInit((AnimState*)&work[0x710], &gUnk_09EEA19C[0x39], &gUnk_09EEA19C[0x34]);
+        AnimStart((AnimState*)&work[0x710], 0, 1);
+        *(void**)&work[0x74C] = AnimGetGfx((AnimState*)&work[0x710]);
+        work[0x7B6] = 16;
+        *(u16*)&work[0x774] = 136;
+
+        if (gGameState.flags & 8) {
+            func_08002A10(*(void**)&work[0x728], gUnk_092EB78A);
+            AnimInit((AnimState*)&work[0x734], &gUnk_09EEF89C[0x24], gUnk_09EEF89C);
+            AnimStart((AnimState*)&work[0x734], 1, 0);
+        } else {
+            func_08002A10(*(void**)&work[0x728], gUnk_088B6560);
+            AnimInit((AnimState*)&work[0x734], &gUnk_09EDE8CC[0x4C], gUnk_09EDE8CC);
+            AnimStart((AnimState*)&work[0x734], 1, 0);
+        }
+
+        SetTaskUpdate(a, (void*)func_0809F730);
+        return 1;
+    }
+
+    x = *(s16*)&work[0x776] << 8;
+    ApproachValue(&x, ((s16*)&gUnk_09036380[0x1C34])[(s8)work[0x7B0]] << 8, (s8)work[0x7B6]);
+    work[0x7B6]--;
+    *(s16*)&work[0x776] = x >> 8;
+    *(void**)&work[0x74C] = AnimUpdate((AnimState*)&work[0x710]);
+    work[0x7BE]++;
+
+    if (work[0x7BE] == 32) {
+        work[0x7BE] = 0;
+        work[0x7C1] ^= 1;
+    }
+
+    *(void**)&work[0x730] = AnimUpdate((AnimState*)&work[0x734]);
+    TaskPoolUpdate((TaskPool*)&work[0x6FC]);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_0809F390.s");
+#endif
 INCLUDE_ASM("card/func_0809F730.s");
 #ifdef NON_MATCHING
 u8 func_0809FBCC(u8* work, void* a) {
