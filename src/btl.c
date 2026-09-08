@@ -6562,14 +6562,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         e = func_0802828C(work);
 
         if (e != 0) {
-            if (e->unk_004 < p->unk_04) {
-                if (p->unk_34 & 4) {
-                    p->unk_34 |= 0x8000;
-                }
-            } else if (e->unk_004 > p->unk_04) {
-                if ((p->unk_34 & 4) == 0) {
-                    p->unk_34 |= 0x8000;
-                }
+            if ((e->unk_004 < p->unk_04 && (p->unk_34 & 4)) ||
+                (e->unk_004 > p->unk_04 && !(p->unk_34 & 4))) {
+                p->unk_34 |= 0x8000;
             }
         }
         break;
@@ -7298,6 +7293,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         }
 
         if ((work->unk_15E & 0x400) == 0 && work->anim.timer == 0) {
+            s16 dx;
+            s32 flag;
+
             dx = 0;
             flag = 0;
 
@@ -7475,6 +7473,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         }
 
         if (work->anim.timer == 0) {
+            s16 dz;
+            s32 flag;
+            s32 mode;
+
             dz = 0;
             flag = 0;
             mode = 4;
@@ -7520,31 +7522,21 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 func_08019A30();
 
                 if (p->unk_34 & 4) {
-                    if (func_08011F78(mode, p->unk_04 - 5120, p->unk_08, p->unk_0C, 20, 8, 16) != 0) {
-                        m4aSongNumStart(656);
-
-                        if (mode == 5) {
-                            func_08006120(2, 45);
-
-                            if (p->unk_34 & 4) {
-                                func_08019050(6, 332, p->unk_04 - 8192, p->unk_08 - 6144 + p->unk_0C);
-                            } else {
-                                func_08019050(6, 332, p->unk_04 + 8192, p->unk_08 - 6144 + p->unk_0C);
-                            }
-                        }
-                    }
+                    flag = func_08011F78(mode, p->unk_04 - 5120, p->unk_08, p->unk_0C, 20, 8, 16);
                 } else {
-                    if (func_08011F78(mode, p->unk_04 + 5120, p->unk_08, p->unk_0C, 20, 8, 16) != 0) {
-                        m4aSongNumStart(656);
+                    flag = func_08011F78(mode, p->unk_04 + 5120, p->unk_08, p->unk_0C, 20, 8, 16);
+                }
 
-                        if (mode == 5) {
-                            func_08006120(2, 45);
+                if (flag != 0) {
+                    m4aSongNumStart(656);
 
-                            if (p->unk_34 & 4) {
-                                func_08019050(6, 332, p->unk_04 - 8192, p->unk_08 - 6144 + p->unk_0C);
-                            } else {
-                                func_08019050(6, 332, p->unk_04 + 8192, p->unk_08 - 6144 + p->unk_0C);
-                            }
+                    if (mode == 5) {
+                        func_08006120(2, 45);
+
+                        if (p->unk_34 & 4) {
+                            func_08019050(6, 332, p->unk_04 - 8192, p->unk_08 - 6144 + p->unk_0C);
+                        } else {
+                            func_08019050(6, 332, p->unk_04 + 8192, p->unk_08 - 6144 + p->unk_0C);
                         }
                     }
                 }
@@ -7589,6 +7581,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         }
 
         if (work->anim.timer == 0) {
+            s16 dz;
+            s32 flag;
+            s32 mode;
+
             dz = 0;
             flag = 0;
             mode = 4;
