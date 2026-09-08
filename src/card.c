@@ -3751,7 +3751,157 @@ void func_0807E724(UnkStruct_08080268* w, s8 idx) {
         *q = k;
     }
 }
+#ifdef NON_MATCHING
+void func_0807E8F4(UnkStruct_08080268* w) {
+    s32 zero;
+    u8 i;
+
+    zero = 0;
+    CpuSet((void*)&zero, w, 0x05000033);
+    gUnk_02039DD4->unk_060 = (u32)w;
+    w->unk_14 = func_080038C8(0x80);
+    w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
+    func_080038E4((UnkStruct_080038C8*)w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8);
+    TaskPoolInit((TaskPool*)w, 30);
+    w->unk_B9 = 0;
+    w->unk_B8 = 0;
+    w->unk_C0[0] = 0;
+    w->unk_C0[1] = 0;
+    w->unk_C0[2] = 0;
+    w->unk_C0[3] = 0;
+    w->unk_BC[0] = 1;
+    w->unk_BC[1] = 0;
+    w->unk_BC[2] = 0;
+    w->unk_BC[3] = 0;
+    w->unk_BA = 0;
+    w->unk_C4[3] = 0;
+    w->unk_A4 = *(u16*)&gUnk_090352E4[4];
+
+    for (i = 0; i <= 2; i++) {
+        w->unk_1C[i] = 0;
+        w->unk_28[i] = 0;
+    }
+
+    for (i = 0; i <= 3; i++) {
+        w->unk_34[i] = 0;
+        w->unk_44[i] = 0;
+    }
+
+    w->unk_C4[1] = 0;
+    ListPoolInit(&w->unk_54[0]);
+    ListPoolInit(&w->unk_54[1]);
+    ListPoolInit(&w->unk_54[2]);
+    ListPoolInit(&w->unk_54[3]);
+
+    switch (*(s32*)&gBtlWork->unk_100[0xC]) {
+    case 162:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[0]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[0]);
+        break;
+    case 159:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[1]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[1]);
+        break;
+    case 160:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[2]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[2]);
+        break;
+    case 163:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[3]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[3]);
+        break;
+    case 158:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[4]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[4]);
+        break;
+    case 161:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[5]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[5]);
+        break;
+    case 168:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[6]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[6]);
+        break;
+    case 164:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[7]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[7]);
+        break;
+    case 175:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[8]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[8]);
+        break;
+    case 169:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[9]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[9]);
+        break;
+    case 170:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[10]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[10]);
+        break;
+    case 174:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[11]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[11]);
+        break;
+    case 173:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[12]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[12]);
+        break;
+    case 165:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[13]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[13]);
+        break;
+    case 166:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[14]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[14]);
+        break;
+    case 176:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[15]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[15]);
+        break;
+    case 171:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[16]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[16]);
+        break;
+    case 167:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[17]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[17]);
+        break;
+    case 172:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[18]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[18]);
+        break;
+    case 177:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[19]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[19]);
+        break;
+    case 157:
+    case 179:
+        w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[20]) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[20]);
+        break;
+    default:
+        w->unk_B0[0] = w->unk_A8[0] = func_08083E54(0) + 1;
+        w->unk_B0[3] = w->unk_A8[3] = func_08083E54(3);
+        break;
+    }
+
+    func_0807E724(w, 0);
+    func_0807E724(w, 3);
+    w->unk_94[0] = 0;
+    w->unk_94[1] = 0;
+    w->unk_94[2] = 0;
+    w->unk_94[3] = 0;
+    w->unk_9C[0] = 0;
+    w->unk_9C[1] = 0;
+    w->unk_9C[2] = 0;
+    gUnk_02034AAC = 0;
+    func_0807E368(w, w->unk_B8);
+    gUnk_02034AA4 = 0;
+    gUnk_02039DD4->unk_0D4 = w->unk_B8;
+}
+#else
 INCLUDE_ASM("card/func_0807E8F4.s");
+#endif
 INCLUDE_ASM("card/func_0807EDEC.s");
 
 void func_0807F99C(UnkStruct_08080268* w) {

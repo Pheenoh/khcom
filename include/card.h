@@ -1333,6 +1333,7 @@ extern u8 gUnk_09614498[];
 extern u8 gUnk_096144B8[];
 extern u8 gUnk_09614406[];
 extern u8 gUnk_08F69BA4[];
+extern Deck gUnk_09034084[];
 extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_09611AB8[];
