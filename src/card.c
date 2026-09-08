@@ -168,11 +168,9 @@ void func_08012614(void* a, s32 b);
 u16 func_08006390(void);
 void func_08006290(s32 a, u16 b, u16 c);
 u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
-#ifdef NON_MATCHING
 u8 func_0807FB5C(UnkStruct_08080268* w, void* a);
 void func_0807FD10(UnkStruct_08080268* w, u8 n);
 void func_0807FE30(UnkStruct_08080268* w, u8 n);
-#endif
 void sub_0807E4C8(UnkStruct_08080268* w, CardSlot* slots, s32 idx, s32 n);
 void func_080A6F60(void** p);
 void func_080A7180(u8 a);
