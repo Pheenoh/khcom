@@ -410,6 +410,7 @@ extern s32 gUnk_09041E9C[];
 extern s16 gUnk_09041EB4[];
 extern s16 gUnk_09041F30[];
 extern s16 gUnk_09041F34[];
+extern u16 gUnk_09041F3E[];
 extern s16 gUnk_09041EBA[];
 extern u16 gUnk_09041EEE[];
 extern s16 gUnk_09041F04[];
