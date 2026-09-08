@@ -7871,11 +7871,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         work->unk_15E |= 0x800;
 
         if (work->unk_154 < 0) {
-            if (work->unk_154 > -512) {
-                func_080276D4(work, 17, 0);
-            } else {
-                func_080276D4(work, 16, 0);
-            }
+            func_080276D4(work, work->unk_154 > -512 ? 17 : 16, 0);
 
             work->unk_158++;
             break;
