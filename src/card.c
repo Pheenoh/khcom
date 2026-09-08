@@ -40,6 +40,12 @@ extern u8 gUnkEu_094E74E4[];
 extern u8 gUnkEu_094E58E4[];
 extern u8 gUnkEu_094E3CE4[];
 extern u8* gUnkEu_09F74374[];
+extern u8 gUnkEu_09529A04[];
+extern u8 gUnkEu_0952DDE4[];
+extern u8 gUnkEu_0952E0E4[];
+extern u8 gUnkEu_0952DFE4[];
+extern u8 gUnkEu_0952DEE4[];
+extern u8 gUnkEu_09543324[];
 extern u8 gUnkEu_09534324[];
 extern s16 gUnkEu_090D1DFE[];
 extern s16 gUnkEu_090D1E04[];
@@ -12110,7 +12116,6 @@ u8 func_080923E0(UnkStruct_08093838* w, void* a) {
 #else
 INCLUDE_ASM("card/func_080923E0.s");
 #endif
-#ifdef NON_MATCHING
 u8 func_0809254C(UnkStruct_08093838* w, void* a) {
     u16 keys;
     s16 sel;
@@ -12130,8 +12135,31 @@ u8 func_0809254C(UnkStruct_08093838* w, void* a) {
 
     switch (keys & 0x30F) {
     case 2:
+#ifdef VERSION_EU
+        LoadBgTiles(1, gUnkEu_09529A04, 0x2020);
+
+        switch (gLanguage) {
+        case 0:
+            break;
+        case 1:
+            RequestDma3Copy(gUnkEu_0952DDE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+            break;
+        case 2:
+            RequestDma3Copy(gUnkEu_0952E0E4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+            break;
+        case 3:
+            RequestDma3Copy(gUnkEu_0952DFE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+            break;
+        case 4:
+            RequestDma3Copy(gUnkEu_0952DEE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+            break;
+        }
+
+        LoadBgMap(1, gUnkEu_09543324, 0x800);
+#else
         LoadBgTiles(1, gUnk_09508098, 0x2020);
         LoadBgMap(1, &gUnk_0960F2B8[0x1000], 0x800);
+#endif
         w->unk_1EC->unk_6C &= 0xFDFF;
         SetTaskUpdate(a, (void*)func_080928E4);
         m4aSongNumStart(104);
@@ -12174,8 +12202,31 @@ u8 func_0809254C(UnkStruct_08093838* w, void* a) {
                     func_08093D28(w->unk_1EC->unk_20, w);
 
                     if ((s8)func_08093E34(w->unk_1EC->unk_20, w) == -1) {
+#ifdef VERSION_EU
+                        LoadBgTiles(1, gUnkEu_09529A04, 0x2020);
+
+                        switch (gLanguage) {
+                        case 0:
+                            break;
+                        case 1:
+                            RequestDma3Copy(gUnkEu_0952DDE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+                            break;
+                        case 2:
+                            RequestDma3Copy(gUnkEu_0952E0E4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+                            break;
+                        case 3:
+                            RequestDma3Copy(gUnkEu_0952DFE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+                            break;
+                        case 4:
+                            RequestDma3Copy(gUnkEu_0952DEE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+                            break;
+                        }
+
+                        LoadBgMap(1, gUnkEu_09543324, 0x800);
+#else
                         LoadBgTiles(1, gUnk_09508098, 0x2020);
                         LoadBgMap(1, &gUnk_0960F2B8[0x1000], 0x800);
+#endif
                         w->unk_1EC->unk_6C &= 0xFDFF;
                         func_08094548(w);
                         SetTaskUpdate(a, (void*)func_080928E4);
@@ -12224,9 +12275,6 @@ u8 func_0809254C(UnkStruct_08093838* w, void* a) {
     TaskPoolUpdate(w);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809254C.s");
-#endif
 u8 func_080928E4(UnkStruct_08093838* w, void* a) {
     MapcardWork* node;
 
