@@ -230,7 +230,10 @@ u8 func_08092234(UnkStruct_08093838* w, void* a);
 void func_0808C90C(u8* work);
 void func_0808C3DC(u8* work, u8 b);
 void func_0808DB50(UnkStruct_0808DB04* w);
-void func_0808A218(void);
+u8 func_0808A218(u8* work, void* a);
+u8 func_0808A650(u8* work, void* a);
+u8 func_080870FC(u8* work, void* a);
+void func_0808E7D8(u8* work);
 s32 func_0808D828(u8* work);
 u8 func_0809AB2C(UnkStruct_0809A02C* w);
 extern u8 gUnk_09614318[];
@@ -8494,7 +8497,154 @@ u8 func_0808A114(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_0808A114.s");
 #endif
+#ifdef NON_MATCHING
+u8 func_0808A218(u8* work, void* a) {
+    *(void**)&work[0x4F0] = AnimUpdate((AnimState*)&work[0x800]);
+    *(void**)&work[0x4F4] = AnimUpdate((AnimState*)&work[0x818]);
+
+    if (work[0x8C9] != 0) {
+        TaskPoolUpdate((TaskPool*)&work[0x7C8]);
+        TaskPoolUpdate((TaskPool*)&work[0x7DC]);
+
+        if (GetKeysPressed() & 8) {
+            work[0x8D2] = 7;
+            work[0x8CB] = 1;
+        }
+
+        return 1;
+    }
+
+    if (work[0x8CB] != 0) {
+        if ((u8)func_0808E750(work) != 0 && (u8)func_0808E79C(work) != 0) {
+            SetTaskUpdate(a, (void*)func_0808B208);
+            func_08006184(0, 4);
+            m4aSongNumStart(103);
+            return 1;
+        }
+
+        work[0x8CB] = 0;
+    }
+
+    switch (GetKeysRepeat()) {
+    case 32:
+        if (*(s16*)&work[0x884] > 0) {
+            (*(s16*)&work[0x884])--;
+            work[0x8B7] = 1;
+            m4aSongNumStart(121);
+        }
+
+        func_0808DB50((UnkStruct_0808DB04*)work);
+        break;
+    case 16:
+        if (*(s16*)&work[0x884] <= 1) {
+            (*(s16*)&work[0x884])++;
+            work[0x8B7] = 1;
+            m4aSongNumStart(121);
+        }
+
+        func_0808DB50((UnkStruct_0808DB04*)work);
+        break;
+    case 64:
+        if (*(s16*)&work[0x886] > 0) {
+            (*(s16*)&work[0x886])--;
+            work[0x8B7] = 1;
+            m4aSongNumStart(121);
+        } else if ((u8)func_0808CA78(work, 1) == 0) {
+            *(s16*)&work[0x884] = work[0x8C1];
+            work[0x8B7] = 1;
+            m4aSongNumStart(121);
+            work[0x8B1] = 8;
+            SetTaskUpdate(a, (void*)func_080870FC);
+            func_0808DE28(0);
+            return 1;
+        }
+
+        func_0808DB50((UnkStruct_0808DB04*)work);
+        break;
+    case 128:
+        if (*(s16*)&work[0x886] <= 2) {
+            (*(s16*)&work[0x886])++;
+            work[0x8B7] = 1;
+            m4aSongNumStart(121);
+        } else {
+            func_0808C9CC(work);
+        }
+
+        func_0808DB50((UnkStruct_0808DB04*)work);
+        break;
+    }
+
+    switch (GetKeysPressed()) {
+    case 1:
+        func_0808E3E0(work);
+        func_0808DB50((UnkStruct_0808DB04*)work);
+        func_0808D0A4(work[0x8C0]);
+        func_0808D258(work[0x8C0]);
+        *(u16*)&work[0x8A2] = func_08085844(0, work[0x8C0]);
+        *(u16*)&work[0x8A4] = func_08085844(1, work[0x8C0]);
+        *(u16*)&work[0x8A6] = func_08085844(2, work[0x8C0]);
+        *(u16*)&work[0x8A8] = func_08085844(3, work[0x8C0]);
+        func_0808CBB4(work[0x8A2], 0);
+        func_0808CBB4(work[0x8A4], 1);
+        func_0808CBB4(work[0x8A6], 2);
+        func_0808CBB4(work[0x8A8], 3);
+        func_0808D594();
+        break;
+    case 2:
+        work[0x8CA] = 0;
+        func_08006120(0, 1);
+        SetTaskUpdate(a, (void*)func_0808A650);
+        m4aSongNumStart(103);
+        return 1;
+    case 256:
+        work[0x8CA] = 1;
+        func_0808E2F0((UnkStruct_0808DB04*)work);
+        func_08006120(0, 1);
+        SetTaskUpdate(a, (void*)func_080892E8);
+        m4aSongNumStart(103);
+        return 1;
+    case 8:
+        if ((u8)func_0808E750(work) == 0) {
+            return 1;
+        }
+
+        if ((u8)func_0808E79C(work) == 0) {
+            return 1;
+        }
+
+        SetTaskUpdate(a, (void*)func_0808B208);
+        func_08006184(0, 4);
+        m4aSongNumStart(104);
+        work[0x8D2] = 7;
+        return 1;
+    }
+
+    if ((GetKeysPressed() & 4) == 0) {
+        func_0805F1C0((s32*)&work[0x848], gUnk_09035950[*(s16*)&work[0x884]] << 8);
+        func_0805F1C0((s32*)&work[0x84C], gUnk_09035956[*(s16*)&work[0x886]] << 8);
+        TaskPoolUpdate((TaskPool*)&work[0x7C8]);
+        TaskPoolUpdate((TaskPool*)&work[0x7DC]);
+        return 1;
+    }
+
+    *(s16*)&work[0x886] = 0;
+    func_0808E7D8(work);
+    *(s16*)&work[0x884] = work[0x8C1];
+    work[0x8B7] = 1;
+    *(s32*)&work[0x850] = 0x4800;
+    *(s32*)&work[0x854] = 0x2800;
+    *(u16*)&work[0x8AC] = 4;
+    m4aSongNumStart(121);
+    work[0x8B1] = 8;
+    TaskPoolUpdate((TaskPool*)&work[0x7C8]);
+    TaskPoolUpdate((TaskPool*)&work[0x7DC]);
+    SetTaskUpdate(a, (void*)func_080870FC);
+    func_0808DE28(0);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_0808A218.s");
+#endif
 
 u8 func_0808A650(u8* work, void* a) {
     func_08006120(0, 4);
