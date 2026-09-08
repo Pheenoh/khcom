@@ -6425,7 +6425,7 @@ void func_080284C8(s16 a) {
     }
 }
 
-#ifdef NON_MATCHING
+#ifndef VERSION_EU
 s32 task_btl_riku_1(BtlRikuWork* work) {
     UnkStruct_0801AF08* p;
     BtlWork* e;
@@ -6795,6 +6795,11 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             case 18:
                 if (gBtlWork->unk_068 & 0x0000800000000000LL) {
                     switch (work->unk_03C) {
+                    case 56:
+                        work->unk_03C = 42;
+                        work->unk_15A = 0;
+                        work->unk_158 = 0;
+                        break;
                     case 37:
                     case 38:
                         work->unk_165 = 0;
@@ -6813,7 +6818,6 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                         work->unk_15A = 0;
                         work->unk_158 = 0;
                         break;
-                    case 56:
                     case 61:
                         work->unk_03C = 42;
                         work->unk_15A = 0;
@@ -9215,12 +9219,14 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                     work->unk_15E |= 0x40;
                     q = (void**)&work->unk_168;
                 } else {
-                    ofs = work->unk_165 * 4;
+                    ofs = work->unk_165;
+                    ofs *= 4;
                     base = (u8*)&work->unk_168;
                     q = (void**)(base + ofs);
                 }
             } else {
-                ofs = work->unk_165 * 4;
+                ofs = work->unk_165;
+                ofs *= 4;
                 base = (u8*)&work->unk_168;
                 q = (void**)(base + ofs);
             }
@@ -9228,7 +9234,8 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_165 = 2;
             q = (void**)&work->unk_170;
         } else {
-            ofs = work->unk_165 * 4;
+            ofs = work->unk_165;
+            ofs *= 4;
             base = (u8*)&work->unk_168;
             q = (void**)(base + ofs);
         }
@@ -10146,6 +10153,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 #else
 INCLUDE_ASM("btl/task_btl_riku_1.s");
 #endif
+
 void task_btl_riku_2(BtlRikuWork* work) {
     UnkStruct_0801AF08* p;
     s32 affine;
