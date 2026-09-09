@@ -797,7 +797,8 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
         return 0;
     }
 
-    if (work->unk_38 == 0) {
+    switch (work->unk_38) {
+    case 0:
         work->x += gSineTable[work->unk_34] * work->unk_50 >> 8;
         work->y += -gSineTable[work->unk_34 + 64] * work->unk_50 >> 8;
         work->z += work->unk_30;
@@ -809,7 +810,7 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
             if (work->unk_4A >= work->unk_4C) {
                 work->unk_3C = 0;
                 work->unk_38 = 1;
-                goto anim;
+                break;
             }
             work->unk_30 = -(GetRandom() % 0x301 + 0x200);
 
@@ -825,9 +826,11 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
         if (func_08011E3C(work->x, work->y, work->z, 2, 2, 2)) {
             work->unk_3C = 0;
             work->unk_38 = 1;
-            goto anim;
+            break;
         }
-    } else {
+        work->unk_3C++;
+        break;
+    default:
         if (work->unk_3C == 0) {
             AnimStart(&work->anim, 1, 0);
         }
@@ -857,9 +860,9 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
         if (work->unk_3C > 17 && func_080128EC() == 0) {
             return 0;
         }
+        work->unk_3C++;
+        break;
     }
-    work->unk_3C++;
-anim:
     if (func_0801A8A4(&work->x, &work->y, 0, 0)) {
         work->unk_34 = (u8)(work->unk_34 + 118) + GetRandom() % 21;
     }
