@@ -1838,16 +1838,12 @@ void func_0801C314(void) {
 }
 
 
-#ifdef NON_MATCHING
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d) {
     if (gBtlWork->unk_128 != 0) {
-        return gBtlWork->unk_128((s32)a);
+        return gBtlWork->unk_128(a, b, c, d);
     }
     return 0;
 }
-#else
-INCLUDE_ASM("unk_08019050/func_0801C6D4.s");
-#endif
 
 void func_0801C700(BtlObj* a, s32* b, s32* c, s32* d) {
     u16 n;
