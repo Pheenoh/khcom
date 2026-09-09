@@ -774,26 +774,21 @@ void func_080BB518(TmArmJoint* joints) {
     s32 x;
     s32 y;
     s32 i;
+    s32 n;
     TmArmJoint* p;
 
     x = 0;
     y = 0;
 
-    i = 0;
-loop:
-    {
+    for (i = 0; i < 3; i++) {
         p = &joints[i];
         p->unk_0C = x;
         p->unk_10 = y;
-        x += gSineTable[p->unk_08] * gUnk_0961A63C[p->unk_26];
-        y += -gSineTable[p->unk_08 + 0x40] * gUnk_0961A63C[p->unk_26];
-    }
-    i++;
-    if (i < 3) {
-        goto loop;
+        x += gSineTable[p->unk_08] * gUnk_0961A63C[n = p->unk_26];
+        y += -gSineTable[p->unk_08 + 0x40] * gUnk_0961A63C[n = p->unk_26];
     }
 
-    p = &joints[3];
+    p = &joints[n = 3];
     p->unk_0C = x;
     p->unk_10 = y;
 }
