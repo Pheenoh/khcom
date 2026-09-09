@@ -6,6 +6,10 @@ extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
 extern u8 gUnkEu_0919B63A[];
+extern void* gUnkEu_09F5D7E4[];
+extern u8 gUnkEu_095A3D74[];
+void eu_080059D4(s32 bg, void* tiles);
+void eu_080059F4(s32 bg, void* map);
 extern u32 gLanguage;
 extern void eu_08005ADC(s32 id);
 #define LANGSTR(x) (((void**)(x))[gLanguage])
@@ -4623,7 +4627,6 @@ void func_0806CD30(s32 a) {
 #define MSG_CONT_X 0xBC00
 #endif
 
-#ifndef VERSION_EU
 void func_0806CD60(ContinueWork* p) {
     u8 i;
 
@@ -4635,8 +4638,13 @@ void func_0806CD60(ContinueWork* p) {
     SetBgPriority(2, 0);
     SetBgPriority(0, 1);
     SetBgPriority(1, 2);
+#ifdef VERSION_EU
+    eu_080059D4(0, gUnkEu_09F5D7E4[gLanguage]);
+    eu_080059F4(0, gUnkEu_095A3D74);
+#else
     LoadBgTiles(0, gUnk_0941A418, MSG_CONT_BG_TILES);
     LoadBgMap(0, gUnk_0951CAB8, 0x800);
+#endif
     func_080065FC(2, 0x8000, 128);
     func_08006778(gUnk_09EDA7E0, 120, 46);
     func_08006B34(0);
@@ -4658,7 +4666,23 @@ void func_0806CD60(ContinueWork* p) {
     p->unk_58 = -2048;
     p->unk_5C = 0xA000;
     p->unk_6B = 16;
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+    case 1:
+    case 4:
+    case 5:
+    case 6:
+        p->unk_50 = 0xBC00;
+        break;
+    case 2:
+    case 3:
+        p->unk_50 = 0xC000;
+        break;
+    }
+#else
     p->unk_50 = MSG_CONT_X;
+#endif
     p->unk_54 = 0x4000;
     p->unk_64 = 0;
     p->unk_66 = 0;
@@ -4670,9 +4694,6 @@ void func_0806CD60(ContinueWork* p) {
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
 }
-#else
-INCLUDE_ASM("msg/func_0806CD60.s");
-#endif
 #ifndef VERSION_EU
 void func_0806CF04(ContinueWork* p) {
     u8 i;
