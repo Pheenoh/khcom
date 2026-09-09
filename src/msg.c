@@ -5,6 +5,7 @@
 extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
+extern u8 gUnkEu_0919B63A[];
 extern u32 gLanguage;
 extern void eu_08005ADC(s32 id);
 #define LANGSTR(x) (((void**)(x))[gLanguage])
@@ -2710,27 +2711,34 @@ u16 func_08065B6C(u16* a, TextSlot* b) {
 INCLUDE_ASM("msg/func_08065B6C.s");
 #endif
 
-#ifdef VERSION_US
+#ifndef VERSION_JP
 s32 func_08065B7C(u16* a, TextSlot* b) {
     s32 n;
 
     n = 0;
     gUnk_02034A90 = n;
 
-    while (*a != 0) {
+    while (MSG_CHAR(a) != 0) {
         s32 v = 0;
 
-        if (*a == 10) {
+#ifdef VERSION_EU
+        if (MSG_CHAR(a) == 31) {
+#else
+        if (MSG_CHAR(a) == 10) {
+#endif
             if (b->tiles != NULL) {
                 ReleaseObjTiles(b->tiles);
                 b->tiles = NULL;
             }
             b->unk_05 = 0;
         } else {
-            if ((u16)(*a - 32) <= 223) {
-                v = *a;
+#ifdef VERSION_EU
+            v = MSG_CHAR(a);
+#else
+            if ((u16)(MSG_CHAR(a) - 32) <= 223) {
+                v = MSG_CHAR(a);
             } else {
-                switch (*a) {
+                switch (MSG_CHAR(a)) {
                 case 0xE000:
                     v = 25;
                     break;
@@ -2782,6 +2790,7 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
                 }
             }
 
+#endif
             if (b->tiles != NULL) {
                 ReleaseObjTiles(b->tiles);
                 b->tiles = NULL;
@@ -2792,13 +2801,22 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
             } else {
                 b->unk_05 = 255;
             }
+#ifdef VERSION_EU
+            v = ((u16*)gUnk_09EEB204[v])[3];
+            b->tiles = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+#else
             v = ((u16*)gUnk_09EEC134[v])[3];
             b->tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+#endif
             b->unk_04 = n;
         }
         gUnk_02034A90++;
         b++;
+#ifdef VERSION_EU
+        a = (u16*)((u8*)a + 1);
+#else
         a++;
+#endif
     }
     return gUnk_02034A90;
 }
