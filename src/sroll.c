@@ -90,7 +90,6 @@ u8 task_sroll_a_name_1(SrollANameWork* w) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void task_sroll_a_name_2(SrollANameWork* w) {
     s32 x;
     s32 y;
@@ -110,14 +109,11 @@ void task_sroll_a_name_2(SrollANameWork* w) {
     if (w->unk_02 == 2) {
         flags = 4;
         ofs = AnimGetFrame(&w->anim) * 32 + 32;
-        LoadPalette(&gUnk_09D6CD74[ofs], &gUnk_05000220[(w->palette->unk_06 & 15) * 32], 32);
+        LoadPalette(&gUnk_09D6CD74[ofs], (u8*)0x05000220 + ((w->palette->unk_06 & 15) * 32), 32);
     }
     DrawSprite(x >> 8, y >> 8, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, flags,
                0xFF0 - w->unk_02);
 }
-#else
-INCLUDE_ASM("sroll/task_sroll_a_name_2.s");
-#endif
 
 void task_sroll_a_name_3(SrollANameWork* w) {
     ReleaseObjTiles(w->tiles);
