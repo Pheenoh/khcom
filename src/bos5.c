@@ -6,6 +6,21 @@ extern u32 gLanguage;
 extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_09F847D4[];
 extern void* gUnkEu_09F847FC[];
+extern u8 gUnkEu_099A421C[];
+extern u8 gUnkEu_099A4238[];
+extern u8 gUnkEu_099A426C[];
+extern u8 gUnkEu_099A4C4C[];
+extern u8 gUnkEu_099A4C68[];
+extern u8 gUnkEu_099A4C9C[];
+extern u8 gUnkEu_099A511C[];
+extern u8 gUnkEu_099A5138[];
+extern u8 gUnkEu_099A516C[];
+extern u8 gUnkEu_099A55AC[];
+extern u8 gUnkEu_099A55C8[];
+extern u8 gUnkEu_099A55FC[];
+extern u8 gUnkEu_099A5A3C[];
+extern u8 gUnkEu_099A5A58[];
+extern u8 gUnkEu_099A5A8C[];
 extern void* gUnkEu_09F84810[];
 extern u16 gUnkEu_099991E0[];
 extern u8 gUnkEu_09A2B040[];
@@ -2579,17 +2594,78 @@ void func_080FF794(void) {
         }
     }
 }
-#ifndef VERSION_EU
 void func_080FF8CC(void) {
     s32 i;
     u16 prio;
+#ifdef VERSION_EU
+    void* first;
+    void* second;
+    void* third;
+
+    switch (gLanguage) {
+    case 0:
+        first = gUnkEu_099A421C;
+        second = gUnkEu_099A4238;
+        third = gUnkEu_099A426C;
+        break;
+    case 1:
+        first = gUnkEu_099A4C4C;
+        second = gUnkEu_099A4C68;
+        third = gUnkEu_099A4C9C;
+        break;
+    case 4:
+        first = gUnkEu_099A511C;
+        second = gUnkEu_099A5138;
+        third = gUnkEu_099A516C;
+        break;
+    case 3:
+        first = gUnkEu_099A55AC;
+        second = gUnkEu_099A55C8;
+        third = gUnkEu_099A55FC;
+        break;
+    case 2:
+    default:
+        first = gUnkEu_099A5A3C;
+        second = gUnkEu_099A5A58;
+        third = gUnkEu_099A5A8C;
+        break;
+    }
+
+#endif
+
+#ifdef VERSION_EU
+    if (gUnk_0203511C != 0) {
+#else
+    if (gUnk_020354C0 != 2) {
+#endif
+        DrawSprite(gUnk_020354D0 >> 8, 0,
+#ifdef VERSION_EU
+                      first,
+#else
+                      gUnk_0999CF38,
+#endif
+                      gUnk_02035120, gUnk_0203511C, 0,
+                      0xC00, 3000);
+#ifdef VERSION_EU
+    }
 
     if (gUnk_020354C0 != 2) {
-        DrawSprite(gUnk_020354D0 >> 8, 0, gUnk_0999CF38, gUnk_02035120, gUnk_0203511C, 0,
-                      0xC00, 3000);
-        DrawSprite(112, gUnk_020354C8[0] >> 8, gUnk_0999CF54, gUnk_02035120, gUnk_0203511C, 0,
+#endif
+        DrawSprite(112, gUnk_020354C8[0] >> 8,
+#ifdef VERSION_EU
+                      second,
+#else
+                      gUnk_0999CF54,
+#endif
+                      gUnk_02035120, gUnk_0203511C, 0,
                       0xC00, 3001);
-        DrawSprite(112, gUnk_020354C8[1] >> 8, gUnk_0999CF88, gUnk_02035120, gUnk_0203511C, 0,
+        DrawSprite(112, gUnk_020354C8[1] >> 8,
+#ifdef VERSION_EU
+                      third,
+#else
+                      gUnk_0999CF88,
+#endif
+                      gUnk_02035120, gUnk_0203511C, 0,
                       0xC00, 3001);
     }
 
@@ -2620,12 +2696,24 @@ void func_080FF8CC(void) {
     }
 
     if (gUnk_020351C8[gUnk_020350F8] != 0) {
-        DrawSprite(112, 32, gUnk_020351C8[gUnk_020350F8], gUnk_02035198[gUnk_020350F8],
+        DrawSprite(
+#ifdef VERSION_EU
+                      102,
+#else
+                      112,
+#endif
+                      32, gUnk_020351C8[gUnk_020350F8], gUnk_02035198[gUnk_020350F8],
                       gUnk_02035168[gUnk_020350F8], 0, 0, 0);
     }
 
     if (gUnk_020352B8 != 0) {
-        func_080664D8(128, 28, gUnk_020351F8, gUnk_02035148, 1, gUnk_020352B8);
+        func_080664D8(
+#ifdef VERSION_EU
+                      120,
+#else
+                      128,
+#endif
+                      28, gUnk_020351F8, gUnk_02035148, 1, gUnk_020352B8);
     }
 
     if (gUnk_02035118 == 1) {
@@ -2639,6 +2727,3 @@ void func_080FF8CC(void) {
                       gUnk_020354B0[1], gUnk_020354A8[1], 0, 0, 0);
     }
 }
-#else
-INCLUDE_ASM("bos5/func_080FF8CC.s");
-#endif
