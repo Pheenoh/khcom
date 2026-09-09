@@ -1737,8 +1737,6 @@ void func_08004938(void) {
     Dma3Blit* blits;
     Dma3Fill* fills;
     Dma3Fill* f;
-    s32 sy;
-    s32 dy;
     Dma3Pending* pend;
     void (**cb)(void);
     void (**p)(void);
@@ -1746,8 +1744,6 @@ void func_08004938(void) {
     s32 i;
     s32 row;
     s32 col;
-    s32 sourceIndex;
-    u16 zero;
 #ifdef VERSION_EU
     Dma3Request* compressed;
 #endif
@@ -1785,12 +1781,8 @@ void func_08004938(void) {
     gDma3Requests->requestCount = 0;
 #ifdef VERSION_EU
     n = gDma3Requests->unk_10AA;
-    if (n != 0) {
-        i = n;
-        do {
-            LZ77UnCompVram(compressed->src, compressed->dst);
-            compressed++;
-        } while (--i);
+    for (i = 0; i < n; i++) {
+        LZ77UnCompVram(compressed[i].src, compressed[i].dst);
     }
     gDma3Requests->unk_10AA = 0;
 #endif
@@ -1799,17 +1791,17 @@ void func_08004938(void) {
     for (i = 0; i < n; i++) {
         if (fills[i].unk_0A != 0) {
             row = 0;
-            f = &fills[i];
-
             for (; row < 32; row++) {
+                f = &fills[i];
                 ((u16*)f->unk_04)[(((f->unk_09 + row) & 31) << 5) + f->unk_08] = ((u16*)f->unk_00)[row];
             }
         } else {
             col = 0;
-            f = &fills[i];
-
             for (; col < 32; col++) {
-                ((u16*)f->unk_04)[((f->unk_08 + col) & 31) + (f->unk_09 << 5)] = ((u16*)f->unk_00)[col];
+                s32 destIndex;
+                f = &fills[i];
+                destIndex = (f->unk_08 + col) & 31;
+                ((u16*)f->unk_04)[(f->unk_09 << 5) + destIndex] = ((u16*)f->unk_00)[col];
             }
         }
     }
@@ -1818,26 +1810,23 @@ void func_08004938(void) {
 
     for (i = 0; i < n; i++) {
         for (row = 0; row < blits[i].unk_0D; row++) {
-            sy = ((blits[i].unk_09 + row) & 31) << 5;
-            dy = ((blits[i].unk_0B + row) & 31) << 5;
+            s32 sy = ((blits[i].unk_09 + row) & 31) << 5;
+            s32 dy = ((blits[i].unk_0B + row) & 31) << 5;
 
             for (col = 0; col < blits[i].unk_0C; col++) {
-                sourceIndex = (blits[i].unk_08 + col) & 31;
-                ((u16*)blits[i].unk_04)[((blits[i].unk_0A + col) & 31) + dy] = ((u16*)blits[i].unk_00)[sourceIndex + sy];
+                s32 sourceIndex = (blits[i].unk_08 + col) & 31;
+                s32 destIndex = (blits[i].unk_0A + col) & 31;
+                ((u16*)blits[i].unk_04)[destIndex + dy] = ((u16*)blits[i].unk_00)[sourceIndex + sy];
             }
         }
     }
     gDma3Requests->unk_10A2 = 0;
     n = gDma3Requests->count;
 
-    if (n != 0) {
-        i = n;
-        do {
-            zero = 0;
-            CpuSet(&zero, pend->unk_00, (pend->unk_04 >> 1) | 0x01000000);
-            gDma3Requests->unk_10AC += pend->unk_04;
-            pend++;
-        } while (--i);
+    for (i = 0; i < n; i++) {
+        vu16 zero = 0;
+        CpuSet(&zero, pend[i].unk_00, (pend[i].unk_04 >> 1) | 0x01000000);
+        gDma3Requests->unk_10AC += pend[i].unk_04;
     }
     gDma3Requests->count = 0;
 }
