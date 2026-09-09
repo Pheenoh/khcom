@@ -389,7 +389,150 @@ void func_080F83E0(GaWork* work, GaEntryWork* e) {
     TaskPoolDraw(&e->unk_16C);
 }
 
-INCLUDE_ASM("room/func_080F854C.s");
+u8 func_080F854C(GaWork* work) {
+    u32 i = 0;
+    GaEntryWork* e;
+
+    if (work->unk_00E & 1) {
+        work->unk_008 = 2;
+    }
+    switch (work->unk_008) {
+    case 0:
+        work->unk_010 = 60;
+        work->unk_00C = i;
+        work->unk_008 = 1;
+        break;
+    case 1:
+        switch (work->unk_00C) {
+        case 0:
+            work->unk_010--;
+            if (work->unk_010 <= 0) {
+                work->unk_00C = 1;
+            }
+            break;
+        case 1:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                e->unk_148 = 0;
+                e->unk_14C = 0;
+                e->unk_150 = 1;
+                e->unk_15C = i * 8;
+                if (i == 1) {
+                    e->unk_112 = 0;
+                } else {
+                    e->unk_112 = GetRandom() % 100;
+                }
+            }
+            gBtlWork->unk_0D4 = -0x2000;
+            work->unk_010 = 5;
+            work->unk_00C = 2;
+            break;
+        case 2:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                if (i != 1) {
+                    if ((s16)e->unk_15C > 0) {
+                        e->unk_15C--;
+                    } else if ((s16)e->unk_15C == 0) {
+                        e->unk_124 += e->unk_148;
+                        e->unk_128 += e->unk_14C;
+                        e->unk_12C += e->unk_150;
+                        if (e->unk_150 > 0) {
+                            e->unk_150 += 76;
+                            if (e->unk_12C > -0x800) {
+                                s32 t = func_080F7FE4(work, i);
+                                e->unk_150 = (t - e->unk_12C) / 15;
+                                e->unk_154 = -((t - e->unk_12C) * 2) / 900;
+                                e->unk_148 = (func_080F7FAC(work, i) - e->unk_124) / 30;
+                                e->unk_14C = (func_080F7FC8(work, i) - e->unk_128) / 30;
+                                e->unk_118 = e->unk_112 << 8;
+                                e->unk_114 = 30;
+                                m4aSongNumStart(388);
+                            }
+                        } else {
+                            ApproachValue(&e->unk_118, 0x10000, e->unk_114);
+                            e->unk_112 = e->unk_118 >> 8;
+                            e->unk_150 += e->unk_154;
+                            e->unk_114--;
+                            if ((s16)e->unk_114 <= 0) {
+                                func_080F800C(work, i);
+                                e->unk_112 = 0;
+                                e->unk_150 = 0;
+                                e->unk_15C = -1;
+                                work->unk_010--;
+                                if (work->unk_010 <= 0) {
+                                    work->unk_010 = 60;
+                                    work->unk_00C = 3;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            break;
+        case 3:
+            ApproachValue(&gBtlWork->unk_0D4, 0, work->unk_010);
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                if (i != 1) {
+                    ApproachValue(&e->unk_12C, func_080F7FE4(work, i), work->unk_010);
+                }
+            }
+            work->unk_010--;
+            if (work->unk_010 <= 0) {
+                work->unk_010 = 0;
+                work->unk_A40 = 256;
+                work->unk_00C = 4;
+            }
+            break;
+        case 4:
+            for (i = 0; i <= 5; i++) {
+                switch (i) {
+                case 0:
+                case 2:
+                case 3:
+                    work->entries[i].unk_12C += work->unk_A40;
+                    break;
+                }
+            }
+            work->unk_A40 -= 10;
+            if (work->unk_A40 > 0) {
+                work->unk_010++;
+            } else {
+                work->unk_010--;
+                if (work->unk_010 <= 0) {
+                    work->unk_010 = 60;
+                    work->unk_00C = 5;
+                }
+            }
+            break;
+        case 5:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                if (i == 1) {
+                    ApproachValue(&e->unk_12C, func_080F7FE4(work, i), work->unk_010);
+                }
+            }
+            work->unk_010--;
+            if (work->unk_010 <= 0) {
+                work->unk_00C = 6;
+            }
+            break;
+        }
+        break;
+    case 2:
+        break;
+    }
+    if (work->unk_008 == 0) {
+        work->unk_008 = 1;
+    }
+    if (work->unk_008 == 2) {
+        work->unk_000 = work->unk_004;
+        work->unk_008 = 0;
+        work->unk_00E &= 0xFFFE;
+    }
+    return 1;
+}
 
 u8 func_080F8958(GaWork* work) {
     s32 d;
