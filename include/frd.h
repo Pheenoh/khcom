@@ -17,6 +17,11 @@ typedef struct FrdArgs {
     u8 unk_03;
 } FrdArgs;
 
+typedef struct FrdActorState {
+    u8 unk_000[0xF4];
+    s32 unk_0F4;
+} FrdActorState;
+
 typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
@@ -40,7 +45,9 @@ typedef struct BtlWork {
     struct BtlWork* unk_078;
     struct BtlWork* unk_07C;
     u8 unk_080[0x1C];
-    u8 unk_09C[0x17];
+    u8 unk_09C[6];
+    s16 unk_0A2;
+    u8 unk_0A4[15];
     u8 unk_0B3;
     u8 unk_0B4[0x04];
     u8 unk_0B8[0x14];
@@ -54,7 +61,7 @@ typedef struct BtlWork {
     s16 unk_0DE;
     s16 unk_0E0;
     u8 unk_0E2[0x02];
-    u8* unk_0E4;
+    FrdActorState* unk_0E4;
     u8 unk_0E8[0x24];
     s32 unk_10C;
     void* unk_110;
@@ -259,6 +266,20 @@ void TaskPoolInit(TaskPool* a, s32 count);
 void TaskCreate(TaskPool* pool, void* desc, void* arg);
 u16 AnimGetGfxIndex(AnimState* a);
 u16 AnimGetFrame(AnimState* a);
+u8 func_0804544C(FrdDonaldWork* work);
+void AnimReset(AnimState* anim);
+void func_08006B4C(void);
+u8 func_080128EC(void);
+void func_08012E44(s32 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,s32 h,s32 i);
+void func_08013308(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,u8 h,s32 i);
+void func_08015834(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,s32 h);
+void func_08013CB4(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f);
+void func_080147A8(s32 x,s32 y,s32 z);
+void func_08014780(s32 x,s32 y,s32 z);
+void func_08012AAC(u16 a,s32 x,s32 y,s32 z);
+void func_08019050(s32 a,s32 b,s32 c,s32 d);
+void func_08019190(BtlWork* a,s16 b);
+u8 task_frd_donald_1(FrdDonaldWork* work);
 u8 AnimIsFinished(AnimState* a);
 void* AnimUpdate(AnimState* a);
 void TaskPoolUpdate(TaskPool* a);
