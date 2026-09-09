@@ -2840,14 +2840,19 @@ void func_080E4B34(void) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_080E4B78(s16 x, s16 y) {
-    u16* p0 = gUnk_02034F30;
-    u16* p1 = (u16*)((u8*)gUnk_02034F30 + 0x800);
-    u16* p2 = (u16*)((u8*)gUnk_02034F30 + 0x1000);
-    s16 x0 = x - 1;
-    s16 yy = y - 1;
+    s16 x0;
+    u16* p0;
+    u16* p1;
+    u16* p2;
+    s16 yy;
     s32 i;
+
+    p0 = gUnk_02034F30;
+    p1 = (u16*)((u8*)gUnk_02034F30 + 0x800);
+    p2 = (u16*)((u8*)gUnk_02034F30 + 0x1000);
+    x0 = x - 1;
+    yy = y - 1;
 
     for (i = 0; i < 32; i++) {
         s16 v;
@@ -2856,17 +2861,13 @@ void func_080E4B78(s16 x, s16 y) {
         s16 xx;
         s32 j;
 
-        if (yy < 0) {
-            v = (yy - 8) / 2;
-        } else {
-            v = yy / 2;
-        }
+        v = (yy < 0) ? (yy - 8) / 2 : yy / 2;
 
         m = yy % 2;
         ya = yy & 31;
         xx = x0;
 
-        for (j = 31; j >= 0; j--) {
+        for (j = 0; j < 32; j++) {
             UnkStruct_080DFB8C* e;
             s16 c;
             s16 n;
@@ -2912,9 +2913,6 @@ void func_080E4B78(s16 x, s16 y) {
     RequestDma3Copy(p1, GetBgScreenBase(2), 0x800);
     RequestDma3Copy(p2, GetBgScreenBase(1), 0x800);
 }
-#else
-INCLUDE_ASM("map/func_080E4B78.s");
-#endif
 
 #ifdef NON_MATCHING
 void func_080E4D68(s32 a, s32 b) {
