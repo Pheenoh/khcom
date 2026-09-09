@@ -25459,7 +25459,201 @@ u8 func_0809FE14(void) {
     }
     return 1;
 }
-INCLUDE_ASM("card/Level_Up_2.s");
+#ifdef VERSION_EU
+extern void** gUnk_09EEA1BC[];
+#else
+extern void* gUnk_09EEA1BC[];
+#endif
+extern void* gUnk_09EEA1EC[];
+extern void* gUnk_09EEA2BC[];
+extern void* gUnk_09EEA2D8[];
+#ifdef VERSION_EU
+extern void* gUnkEu_09F7626C[];
+#endif
+void func_080A0734(s16 x, s16 y, void* tiles, void* pal, void** gfx, u16* digits, u8 kind);
+
+void Level_Up_2(UnkStruct_0809F730* w) {
+    u8 i = 0;
+
+    if (w->unk_7C2[0] != 0) {
+        switch (w->unk_7BD) {
+        case 0:
+            DrawSprite(w->unk_778, 0,
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage][10],
+#else
+                       gUnk_09EEA1BC[10],
+#endif
+                       w->unk_000[6], w->unk_000[7], 0, 0, 50);
+            if (w->unk_000[0] != 0) {
+#ifdef VERSION_EU
+                if (gLanguage != 3) {
+#endif
+                    DrawSprite(w->unk_750[0], w->unk_756[0], gUnk_09EEA2BC[0], w->unk_000[0], w->unk_000[4], 0, 0, 50);
+#ifdef VERSION_EU
+                } else {
+                    DrawSprite(w->unk_750[0], w->unk_756[0], gUnkEu_09F7626C[0], w->unk_000[0], w->unk_000[4], 0, 0, 50);
+                }
+#endif
+            }
+            if (w->unk_000[1] != 0) {
+#ifdef VERSION_EU
+                if (gLanguage != 3) {
+#endif
+                    DrawSprite(w->unk_750[1], w->unk_756[1], gUnk_09EEA2BC[1], w->unk_000[1], w->unk_000[4], 0, 0, 50);
+#ifdef VERSION_EU
+                } else {
+                    DrawSprite(w->unk_750[1], w->unk_756[1], gUnkEu_09F7626C[1], w->unk_000[1], w->unk_000[4], 0, 0, 50);
+                }
+#endif
+            }
+            if (w->unk_000[2] != 0) {
+#ifdef VERSION_EU
+                if (gLanguage != 3) {
+#endif
+                    DrawSprite(w->unk_750[2], w->unk_756[2], gUnk_09EEA2BC[2], w->unk_000[2], w->unk_000[4], 0, 0, 50);
+#ifdef VERSION_EU
+                } else {
+                    DrawSprite(w->unk_750[2], w->unk_756[2], gUnkEu_09F7626C[2], w->unk_000[2], w->unk_000[4], 0, 0, 50);
+                }
+#endif
+            }
+            DrawSprite(w->unk_768, w->unk_76C >> 8, gUnk_09EEA1EC[0], w->unk_6F0, w->unk_000[7], 0, 0x400, 51);
+            DrawSprite(w->unk_76A, w->unk_770 >> 8, gUnk_09EEA1EC[1], w->unk_6F0, w->unk_000[7], 0, 0x400, 51);
+            break;
+        case 1:
+            for (; i < 3; i++) {
+                if (i == w->unk_7B0) {
+#ifdef VERSION_EU
+                    DrawSprite(w->unk_75C[i] + 5, w->unk_762[i] - 4, 0, w->unk_020[i], w->unk_6E0, 0, 0, 40);
+#else
+                    func_080664D8(w->unk_75C[i] + 22, w->unk_762[i] - 5, w->text[i], w->unk_6E0, 40, w->unk_7B7[i]);
+                    func_080664D8(w->unk_75C[i] + 4, w->unk_762[i] + 13, w->text[i + 3], w->unk_6E0, 40, w->unk_7B7[i + 3]);
+#endif
+                } else {
+#ifdef VERSION_EU
+                    DrawSprite(w->unk_75C[i] + 3, w->unk_762[i] - 2, 0, w->unk_020[i], w->unk_6E4, 0, 0, 40);
+#else
+                    func_080664D8(w->unk_75C[i] + 20, w->unk_762[i] - 3, w->text[i], w->unk_6E4, 40, w->unk_7B7[i]);
+                    func_080664D8(w->unk_75C[i] + 2, w->unk_762[i] + 15, w->text[i + 3], w->unk_6E4, 40, w->unk_7B7[i + 3]);
+#endif
+                }
+            }
+            DrawSprite(w->unk_774, w->unk_776, w->unk_74C, w->unk_6E8, w->unk_6EC, 0, 0, 40);
+            break;
+        case 2:
+            for (; i < 3; i++) {
+                if (i == w->unk_7B0) {
+#ifdef VERSION_EU
+                    DrawSprite(w->unk_75C[i] + 4, w->unk_762[i] - 3, 0, w->unk_020[i], w->unk_6E0, 0, 0, 40);
+#else
+                    func_080664D8(w->unk_75C[i] + 22, w->unk_762[i] - 5, w->text[i], w->unk_6E0, 40, w->unk_7B7[i]);
+                    func_080664D8(w->unk_75C[i] + 4, w->unk_762[i] + 13, w->text[i + 3], w->unk_6E0, 40, w->unk_7B7[i + 3]);
+#endif
+                    DrawSprite(w->unk_750[i], w->unk_756[i], gUnk_09EEA2D8[i], w->unk_000[i], w->unk_000[5], 0, 0, 50);
+                } else {
+                    if (w->unk_000[i] != 0) {
+#ifdef VERSION_EU
+                        DrawSprite(w->unk_75C[i] + 2, w->unk_762[i] - 1, 0, w->unk_020[i], w->unk_6E4, 0, 0, 40);
+#else
+                        func_080664D8(w->unk_75C[i] + 20, w->unk_762[i] - 3, w->text[i], w->unk_6E4, 40, w->unk_7B7[i]);
+                        func_080664D8(w->unk_75C[i] + 2, w->unk_762[i] + 15, w->text[i + 3], w->unk_6E4, 40, w->unk_7B7[i + 3]);
+#endif
+#ifdef VERSION_EU
+                        if (gLanguage != 3) {
+#endif
+                            DrawSprite(w->unk_750[i], w->unk_756[i], gUnk_09EEA2BC[i], w->unk_000[i], w->unk_000[4], 0, 0, 50);
+#ifdef VERSION_EU
+                        } else {
+                            DrawSprite(w->unk_750[i], w->unk_756[i], gUnkEu_09F7626C[i], w->unk_000[i], w->unk_000[4], 0, 0, 50);
+                        }
+#endif
+                    }
+                }
+            }
+            DrawSprite(w->unk_774, w->unk_776, w->unk_74C, w->unk_6E8, w->unk_6EC, 0, 0, 40);
+            break;
+        case 3:
+#ifdef VERSION_EU
+            DrawSprite(w->unk_75C[w->unk_7B0] + 2, w->unk_762[w->unk_7B0] - 1, 0, w->unk_020[w->unk_7B0], w->unk_6E0, 0, 0, 40);
+#else
+            func_080664D8(w->unk_75C[w->unk_7B0] + 22, w->unk_762[w->unk_7B0] - 5, w->text[w->unk_7B0], w->unk_6E0, 40, w->unk_7B7[w->unk_7B0]);
+            func_080664D8(w->unk_75C[w->unk_7B0] + 4, w->unk_762[w->unk_7B0] + 13, w->text[w->unk_7B0 + 3], w->unk_6E0, 40, w->unk_7B7[w->unk_7B0 + 3]);
+#endif
+            DrawSprite(w->unk_750[w->unk_7B0], w->unk_756[w->unk_7B0], 0, w->unk_000[w->unk_7B0], w->unk_000[5], 0, 0, 50);
+            DrawSprite(w->unk_778, 0,
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage][10],
+#else
+                       gUnk_09EEA1BC[10],
+#endif
+                       w->unk_000[6], w->unk_000[7], 0, 0, 50);
+            DrawSprite(w->unk_768, w->unk_76C >> 8, gUnk_09EEA1EC[0], w->unk_6F0, w->unk_000[7], 0, 0x400, 51);
+            DrawSprite(w->unk_76A, w->unk_770 >> 8, gUnk_09EEA1EC[1], w->unk_6F0, w->unk_000[7], 0, 0x400, 51);
+            break;
+        }
+#ifdef VERSION_JP
+        if (w->unk_7C1 != 0) {
+            DrawSprite(192, 82, gUnk_09EEA19C[0], w->unk_6F4, w->unk_6F8, 0, 0, 10);
+        }
+#endif
+        if (!(gGameState.flags & 8)) {
+            func_080A0734(w->unk_77C + 214, 17, w->unk_000[6], w->unk_000[7],
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage],
+#else
+                       gUnk_09EEA1BC,
+#endif
+                       w->unk_77E, 0);
+            func_080A0734(w->unk_77C + 214, 111, w->unk_000[6], w->unk_000[7],
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage],
+#else
+                       gUnk_09EEA1BC,
+#endif
+                       w->unk_784, 1);
+            func_080A0734(w->unk_77C + 206, 132, w->unk_000[6], w->unk_000[7],
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage],
+#else
+                       gUnk_09EEA1BC,
+#endif
+                       w->unk_78C, 2);
+        } else {
+            func_080A0734(w->unk_77C + 214, 17, w->unk_000[6], w->unk_000[7],
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage],
+#else
+                       gUnk_09EEA1BC,
+#endif
+                       w->unk_77E, 0);
+            func_080A0734(w->unk_77C + 214, 106, w->unk_000[6], w->unk_000[7],
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage],
+#else
+                       gUnk_09EEA1BC,
+#endif
+                       w->unk_784, 1);
+            func_080A0734(w->unk_77C + 214, 122, w->unk_000[6], w->unk_000[7],
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage],
+#else
+                       gUnk_09EEA1BC,
+#endif
+                       w->unk_79C, 4);
+            func_080A0734(w->unk_77C + 214, 137, w->unk_000[6], w->unk_000[7],
+#ifdef VERSION_EU
+                       gUnk_09EEA1BC[gLanguage],
+#else
+                       gUnk_09EEA1BC,
+#endif
+                       w->unk_794, 3);
+        }
+    }
+    DrawSprite(w->unk_7A8 >> 8, w->unk_7AC >> 8, w->unk_730, w->unk_728, w->unk_72C, 0, 0x400, 40);
+    TaskPoolDraw(&w->pool);
+}
+
 #ifndef VERSION_EU
 void Level_Up_3(u8* work) {
     func_08065AE0(&work[0x20], 36);
