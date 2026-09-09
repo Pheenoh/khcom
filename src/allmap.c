@@ -1069,10 +1069,10 @@ void func_080D55E4(void) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_080D576C(u8 a, u16 b, u16 c) {
     AllmapRoomArg arg;
     u8* d;
+    u8 room;
 
     d = func_080DED98(a);
 
@@ -1101,25 +1101,26 @@ void func_080D576C(u8 a, u16 b, u16 c) {
     arg.unk_06 = 0;
     gUnk_0203C4B4->unk_14[a] = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapRoom, &arg);
 
-    if ((u8)(d[0] + 3) > 2) {
-        func_080D576C(d[0], b + 1, c - 1);
+    room = d[0];
+    if ((u8)(room + 3) > 2) {
+        func_080D576C(room, b + 1, c - 1);
     }
 
-    if ((u8)(d[1] + 3) > 2) {
-        func_080D576C(d[1], b - 1, c + 1);
+    room = d[1];
+    if ((u8)(room + 3) > 2) {
+        func_080D576C(room, b - 1, c + 1);
     }
 
-    if ((u8)(d[2] + 3) > 2) {
-        func_080D576C(d[2], b + 1, c + 1);
+    room = d[2];
+    if ((u8)(room + 3) > 2) {
+        func_080D576C(room, b + 1, c + 1);
     }
 
-    if ((u8)(d[3] + 3) > 2) {
-        func_080D576C(d[3], b - 1, c - 1);
+    room = d[3];
+    if ((u8)(room + 3) > 2) {
+        func_080D576C(room, b - 1, c - 1);
     }
 }
-#else
-INCLUDE_ASM("allmap/func_080D576C.s");
-#endif
 
 void func_080D58AC(u16 a, u16 b, u16 c, u16 d) {
     u16 dx;
