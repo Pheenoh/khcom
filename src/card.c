@@ -305,6 +305,11 @@ u8 func_08096288(PrizeCardWork* w, void* a);
 u16 func_08093384(u8* work);
 void* AllocObjTiles(s32 a, s32 b);
 void func_08092A34(void);
+extern void* gUnk_09EF1228[];
+extern void* gUnk_09EF11AC[];
+#ifdef VERSION_EU
+extern void** gUnkEu_09F6FF70[];
+#endif
 void func_0808CC58(u16 a, u8 b);
 void func_080AAA8C(u8* work, u8 b);
 u8 func_080A8430(UnkStruct_0808C940* w, void* a);
@@ -14952,7 +14957,55 @@ u8 func_08092E2C(UnkStruct_08093838* w) {
     TaskPoolUpdate(w);
     return 1;
 }
-INCLUDE_ASM("card/MapSelect_2.s");
+void MapSelect_2(UnkStruct_08093838* w) {
+    if (*(void**)&w->unk_014[0x24] != 0 && *(void**)&w->unk_040[8] != 0) {
+        DrawSprite((s16)(w->unk_248 >> 8), (s16)(*(s32*)w->unk_24C >> 8),
+#ifdef VERSION_EU
+                   gUnkEu_09F6FF70[gLanguage][0],
+#else
+                   gUnk_09EF1228[0],
+#endif
+                   *(void**)&w->unk_014[0x24], *(void**)&w->unk_040[8], 0, 0, 80);
+    }
+    if (w->unk_2BE == 1) {
+        switch (gUnk_09EE4C80[w->unk_1EC->unk_20].unk_1E) {
+        case 0:
+            break;
+        case 2:
+            DrawSprite((s16)((w->unk_1EC->unk_4C >> 8) + 4), (s16)((w->unk_1EC->unk_50 >> 8) - 32), ((void**)gUnk_0203A890[5])[3], gUnk_0203A890[1], gUnk_0203A890[3], 0, 0, 20);
+            break;
+        case 3:
+            DrawSprite((s16)((w->unk_1EC->unk_4C >> 8) + 4), (s16)((w->unk_1EC->unk_50 >> 8) - 32), ((void**)gUnk_0203A890[5])[7], gUnk_0203A890[1], gUnk_0203A890[3], 0, 0, 20);
+            break;
+        case 1:
+            DrawSprite((s16)((w->unk_1EC->unk_4C >> 8) + 4), (s16)((w->unk_1EC->unk_50 >> 8) - 32), ((void**)gUnk_0203A890[5])[5], gUnk_0203A890[1], gUnk_0203A890[3], 0, 0, 20);
+            break;
+        case 4:
+            break;
+        }
+    }
+    if ((u8)func_080A42C8() == 0) {
+        DrawSprite((s16)((w->unk_250 >> 8) - 23), (s16)((w->unk_254 >> 8) - 27), w->gfx, w->tiles, *(void**)&w->unk_040[0], 0, 0, 41);
+        DrawSprite((s16)((w->unk_258 >> 8) - 16), (s16)((w->unk_25C >> 8) - 12), *(void**)w->unk_278, *(void**)&w->unk_040[4], *(void**)&w->unk_040[8], 0, 0, 40);
+    }
+    if (w->unk_2C0 != 0) {
+        DrawSprite(224,
+#ifdef VERSION_EU
+                   (s16)((18 / w->unk_285) * w->unk_284 + 108),
+#else
+                   (s16)((17 / w->unk_285) * w->unk_284 + 108),
+#endif
+                   gUnk_09EEB000, *(void**)&w->unk_040[0x1A0], *(void**)&w->unk_014[0x1C], 0, 0, 40);
+    }
+    if (w->unk_2BE == 0 && w->unk_299 != 9 && w->unk_29A != 9) {
+        DrawSprite(120, 56, 0, *(void**)&w->unk_014[0x18], *(void**)&w->unk_014[0x1C], 0, 8, 60);
+        DrawSprite(120, 56, gUnk_08F709B0[4].unk_04, *(void**)&w->unk_014[0x20], *(void**)&w->unk_014[0x1C], 0, 8, 60);
+    }
+    DrawSprite(128, (s16)(w->unk_26C >> 8), gUnk_09EF11AC[0], *(void**)&w->unk_040[0x1A8], *(void**)&w->unk_040[8], 0, 0x800, 80);
+    DrawSprite(128, (s16)(w->unk_270 >> 8), gUnk_09EF11AC[1], *(void**)&w->unk_040[0x1A8], *(void**)&w->unk_040[8], 0, 0x800, 80);
+    func_080664D8(16, (s16)(w->unk_244 >> 8), &w->unk_040[12], *(void**)&w->unk_040[0x18C], 50, w->unk_287[0]);
+    TaskPoolDraw(w);
+}
 void MapSelect_3(UnkStruct_08093838* w) {
     TaskPoolDestroy(w);
 
