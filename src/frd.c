@@ -921,7 +921,160 @@ void func_08048A68(FrdPanWork* work) {
     body->z += ((work->unk_164 + (gSineTable[((u16)work->unk_14E * 2) & 0xFF] << 4)) - body->z) >> 2;
 }
 
-INCLUDE_ASM("frd/task_frd_pan_1.s");
+u8 task_frd_pan_1(FrdPanWork* work) {
+    FrdBody* body = &work->unk_020;
+    BtlWork* owner;
+    BtlWork* target;
+    s32 ground;
+    s32 y;
+    s32 z;
+    if (gGameState.world != 7) {
+        return 0;
+    }
+    owner = work->unk_14C != 0 ? gBtlWork : gUnk_02039B9C;
+    target = owner->unk_078;
+    if (owner->unk_068 & 0x40000000) {
+        return 0;
+    }
+    if (gBtlWork->unk_128 != 0) {
+        ground = body->unk_10;
+        gBtlWork->unk_128(&body->x, &body->y, &body->z, &ground);
+        if (ground != body->unk_10) {
+            work->unk_164 = body->unk_10 - 0x1000;
+            body->unk_10 = ground;
+        }
+    }
+    switch (work->unk_148) {
+    case 0:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
+            work->unk_150 = 30;
+        }
+        func_0800592C(&body->x, work->unk_15C, work->unk_150);
+        func_08048A68(work);
+        if (work->unk_150 <= 0) {
+            work->unk_148 = 3;
+            work->unk_14E = 0;
+        } else {
+            work->unk_14E++;
+            work->unk_150--;
+        }
+        break;
+    case 1:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
+        }
+        func_08048A68(work);
+        if (AnimIsFinished(&work->anim)) {
+            work->unk_14E = 0;
+            work->unk_148 = 2;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 2:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
+            if (!(body->flags & 4)) {
+                work->unk_15C = (gBtlWork->unk_0DA - 64) * 256;
+            } else {
+                work->unk_15C = (gBtlWork->unk_0DC + 64) * 256;
+            }
+            work->unk_150 = 30;
+        }
+        work->unk_164 -= 0x400;
+        ApproachValue(&body->x, work->unk_15C, work->unk_150);
+        func_08048A68(work);
+        if (work->unk_150 <= 0) {
+            return 0;
+        }
+        work->unk_14E++;
+        work->unk_150--;
+        break;
+    case 3:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ECFC, &work->anim, 1, 0, work->tiles);
+        }
+        func_08048A68(work);
+        if (AnimIsFinished(&work->anim)) {
+            work->unk_14E = 0;
+            work->unk_148 = 4;
+            m4aSongNumStart(0xBF);
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 4:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ECFC, &work->anim, 2, 1, work->tiles);
+            work->unk_150 = 70;
+            func_08006238(0, gBtlWork->unk_0B3, 8);
+        }
+        func_0801D288();
+        if (gBtlWork->unk_068 & 0x4000) {
+            BtlWork* other = work->unk_14C != 0 ? gUnk_02039B9C->unk_07C : gBtlWork->unk_07C;
+            y = other->unk_008;
+            z = other->unk_00C;
+        } else if (target != 0) {
+            y = target->unk_008;
+            z = target->unk_00C;
+        } else {
+            y = work->unk_014->unk_008;
+            z = work->unk_014->unk_00C;
+        }
+        body->y += (y - body->y) >> 5;
+        work->unk_164 += (z - work->unk_164) >> 5;
+        func_08048A68(work);
+        if (work->unk_16C != 0) {
+            ApproachValue(&work->unk_168, -0x800, work->unk_150);
+        } else {
+            ApproachValue(&work->unk_168, 0x800, work->unk_150);
+        }
+        body->x += work->unk_168;
+        if (--work->unk_150 <= 0) {
+            work->unk_150 = 70;
+            work->unk_16C = !work->unk_16C;
+        }
+        if (work->unk_168 < 0) {
+            body->flags |= 4;
+        } else {
+            body->flags &= ~4ULL;
+        }
+        if (body->flags & 4) {
+            if (func_08011F78(150, body->x - 0x1C00, body->y, body->z - 0x1400, 20, 20, 20)) {
+                m4aSongNumStart(0x252);
+            }
+        } else {
+            if (func_08011F78(150, body->x + 0x1C00, body->y, body->z - 0x1400, 20, 20, 20)) {
+                m4aSongNumStart(0x252);
+            }
+        }
+        if (work->unk_14E > work->unk_152) {
+            work->unk_14E = 0;
+            work->unk_148 = 5;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 5:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ECFC, &work->anim, 3, 0, work->tiles);
+        }
+        func_08048A68(work);
+        if (AnimIsFinished(&work->anim)) {
+            work->unk_14E = 0;
+            work->unk_148 = 1;
+            func_080061E8(0, 8);
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    }
+    func_08048980(work);
+    AnimUpdate(&work->anim);
+    TaskPoolUpdate(&work->unk_000);
+    return 1;
+}
 
 void task_frd_pan_2(FrdPanWork* work) {
     FrdBody* body;

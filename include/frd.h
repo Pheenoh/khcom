@@ -270,6 +270,8 @@ void func_0800592C(s32* a, s32 b, u16 c);
 void func_08006238(s32 a, s32 b, s32 c);
 void func_080061E8(s32 a, u16 b);
 void func_08048A68(FrdPanWork* work);
+u8 task_frd_pan_1(FrdPanWork* work);
+void func_08048980(FrdPanWork* work);
 void func_0801D288(void);
 u16 GetRandom(void);
 u8 func_080465F0(FrdGoofyWork* work);
