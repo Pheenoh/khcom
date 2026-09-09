@@ -29231,7 +29231,18 @@ void eu_080AB9FC(void) {
     TaskPoolInit(&gUnkEu_02034B38, 1);
     func_080A411C(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
 }
-INCLUDE_ASM("card/eu_080ABA38.s");
+void eu_080ABA38(void) {
+    if (func_080A42C8() == 0) {
+        gUnkEu_02034B4C++;
+        if (gUnkEu_02034B4C == 179) {
+            gUnkEu_02034B4C = 0;
+        }
+        func_080A411C(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
+    }
+    TaskPoolUpdate(&gUnkEu_02034B38);
+    TaskPoolDraw(&gUnkEu_02034B38);
+}
+INCLUDE_ASM("card/eu_080ABA7C.s");
 #endif
 void task_print_0(void) {
     func_0809D1FC(0);
