@@ -19407,10 +19407,8 @@ void func_0809D26C(void) {
     EwramFree(gUnk_02034AD4);
 }
 
-#ifdef NON_MATCHING
 u8 func_0809D280(u8* p) {
     u8 n;
-    u8 c;
 
     n = 0;
 
@@ -19418,24 +19416,14 @@ u8 func_0809D280(u8* p) {
         return 0;
     }
 
-    c = *p;
-    p++;
-
-    while (c != 0) {
-        c = *p;
-
-        if (c != 0) {
+    while (*p++ != 0) {
+        if (*p != 0) {
             n++;
         }
-
-        p++;
     }
 
     return n + 1;
 }
-#else
-INCLUDE_ASM("card/func_0809D280.s");
-#endif
 
 void func_0809D2B0(u8 a, u8 b, u8 c, u8* s) {
     u8 n;
