@@ -516,7 +516,147 @@ void func_08010C70(void) {
     gBtlWork->unk_068 &= ~0x20000000;
 }
 
-INCLUDE_ASM("unk_0801007c/func_08010CC8.s");
+void func_08010CC8(void) {
+    BtlObj* player = (BtlObj*)gBtlWork->unk_07C;
+    BtlObj* other = (BtlObj*)gUnk_02039B9C->unk_07C;
+    s32 entered;
+    s32 i;
+    s32 busy;
+    u8 rank;
+    if (gBtlWork->unk_0F4 == 53 || gUnk_02039B9C->unk_0F4 == 53) {
+        gBtlWork->unk_12C = 38;
+    } else {
+        gBtlWork->unk_12C = 66;
+    }
+    switch ((u32)gBtlWork->unk_0A0) {
+    case 1:
+    case 2:
+        if (gBtlWork->unk_068 & 0x1000) {
+            func_08010A24();
+            func_080107D4();
+        } else {
+            func_080107D4();
+            func_08010A24();
+        }
+        break;
+    }
+    TaskPoolUpdate(&gBtlWork->unk_02C[1]);
+    if (gBtlWork->unk_068 & 0x800000) {
+        gBtlWork->unk_068 |= 0x400000;
+        gBtlWork->unk_068 &= ~2ULL;
+        gUnk_02039B9C->unk_068 &= ~2ULL;
+        gBtlWork->unk_0A0 = 1;
+        if (gBtlWork->unk_0A4 != 0) {
+            gBtlWork->unk_068 &= ~0x40ULL;
+            other->unk_034 |= 0x10000;
+            func_08006290(2, 10, 4);
+        } else {
+            gBtlWork->unk_068 &= ~0x20000000ULL;
+            player->unk_034 |= 0x10000;
+            func_08006290(3, 10, 4);
+        }
+        func_08006494(16, 15);
+        func_08019050(1, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+        gBtlWork->unk_0E4 = 0;
+    }
+    if (gBtlWork->unk_068 & 0x400) {
+        entered = 1;
+        gBtlWork->unk_068 &= ~0x400ULL;
+        if (gBtlWork->unk_0A4 != 0) {
+            gBtlWork->unk_068 |= 0x20000000;
+            player->unk_034 |= 1;
+        } else {
+            gBtlWork->unk_068 |= 0x40;
+            other->unk_034 |= 1;
+        }
+        gBtlWork->unk_0A0 = 2;
+        gBtlWork->unk_0E4 = 0;
+    } else {
+        entered = 0;
+    }
+    if ((gBtlWork->unk_068 & 0x400000000000ULL) && gBtlWork->unk_0A0 != 4) {
+        gBtlWork->unk_0A0 = 4;
+        gBtlWork->unk_0E4 = 0;
+    }
+    switch ((u32)gBtlWork->unk_0A0) {
+    case 1:
+        break;
+    case 0:
+        if (gBtlWork->unk_0E4 == 0) {
+            gBtlWork->unk_0E8 = 0;
+            gBtlWork->unk_0E4 = 1;
+        }
+        if (func_08006314()) return;
+        if (gBtlWork->unk_0E4 == 1) {
+            for (i = 0; i < 32; i++) {
+                if (gBtlWork->unk_0FC & (s32)(1U << i)) func_080062F4(i, 1);
+            }
+            gBtlWork->unk_0E4 = 2;
+        }
+        if (IsTaskActive((Task*)gBtlWork->unk_0E8)) return;
+        if (gBtlWork->unk_0E4 == 2) {
+            TaskCreate(&gBtlWork->unk_02C[0], &gTaskDescBtlVslockon, 0);
+            TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescBtlHpply, 0);
+            TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescBtlHpoth, 0);
+            if (gBtlWork->unk_068 & 0x1000) {
+                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleSora, 0);
+                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleRiku, 0);
+            } else {
+                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleRiku, 0);
+                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleSora, 0);
+            }
+            func_08076360();
+            func_080838E8();
+            gBtlWork->unk_0E4 = 3;
+        } else if (gBtlWork->unk_0E4 == 3) {
+            gBtlWork->unk_0A0 = 1;
+            gBtlWork->unk_0E4 = 0;
+        }
+        break;
+    case 4:
+        if (gBtlWork->unk_0E4 == 0) {
+            func_08076374();
+            func_080838EC();
+            gBtlWork->unk_068 |= 0x20;
+            gUnk_02039B9C->unk_068 |= 0x40000000;
+            gBtlWork->unk_068 |= 0x40000000;
+            func_08019050(8, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+            gBtlWork->unk_0F4 = 0;
+            gUnk_02039B9C->unk_0F4 = 0;
+        }
+        if (gBtlWork->unk_0E4 == 140) {
+            func_08006184(1, 100);
+            func_080063A8();
+            gBtlWork->unk_068 |= 0x400000;
+            gBtlWork->unk_072 = 100;
+        } else if (gBtlWork->unk_0E4 > 140 && !func_08006314()) {
+            m4aMPlayAllStop();
+            if (player->unk_02C <= 0) ModeRequest(&gModeSioBtlCardget, 1);
+            else ModeRequest(&gModeSioBtlCardget, 0);
+            return;
+        }
+        gBtlWork->unk_0E4++;
+        break;
+    case 2:
+        if (entered) return;
+        busy = 0;
+        if (player->unk_034 & 0x10) busy = 1;
+        if (other->unk_034 & 0x10) busy = 1;
+        if (busy) return;
+        rank = func_080ABED0();
+        gBtlWork->unk_0E4 = 0;
+        if (gBtlWork->unk_068 & 0x20000000) {
+            if (gBtlWork->unk_0B2 >= (s8)rank) gBtlWork->unk_068 &= ~2ULL;
+            if (gBtlWork->unk_068 & 2) player->unk_034 |= 1;
+            else func_08010C70();
+        } else {
+            if (gUnk_02039B9C->unk_0B2 >= (s8)rank) gUnk_02039B9C->unk_068 &= ~2ULL;
+            if (gUnk_02039B9C->unk_068 & 2) other->unk_034 |= 1;
+            else func_08010C70();
+        }
+        break;
+    }
+}
 
 u8 func_08011270(BtlObj* p, s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
     BtlObj* q = (BtlObj*)p->unk_0D8;
