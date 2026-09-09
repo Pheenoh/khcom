@@ -866,7 +866,67 @@ s32 eu_080C273C(void) {
     return 0;
 }
 
-INCLUDE_ASM("chara/eu_080C2740.s");
+s32 eu_080C2740(void) {
+    u16 held;
+    u16 keys;
+    u16 r;
+
+    held = GetKeysHeld() & 0x3FF;
+    keys = 0;
+
+    if (gUnkEu_0203C970 != 0) {
+        keys = gUnkEu_0203C97C;
+        gUnkEu_0203C970--;
+    } else {
+        gUnkEu_0203C970 = GetRandom() % 91 + 30;
+
+        r = GetRandom();
+        switch (r & 7) {
+        case 0:
+            gUnkEu_0203C97C = 0x10;
+            break;
+        case 1:
+            gUnkEu_0203C97C = 0x20;
+            break;
+        case 2:
+            gUnkEu_0203C97C = 0x40;
+            break;
+        case 3:
+            gUnkEu_0203C97C = 0x80;
+            break;
+        case 4:
+            gUnkEu_0203C97C = 0x50;
+            break;
+        case 5:
+            gUnkEu_0203C97C = 0x90;
+            break;
+        case 6:
+            gUnkEu_0203C97C = 0x60;
+            break;
+        case 7:
+            gUnkEu_0203C97C = 0xA0;
+            break;
+        }
+    }
+
+    if (gUnkEu_0203C964 != 0) {
+        keys |= 1;
+        gUnkEu_0203C964--;
+    } else {
+        gUnkEu_0203C964 = GetRandom() % 61 + 60;
+    }
+
+    if ((u16)(GetRandom() % 30) == 0) {
+        keys |= 0x200;
+    }
+
+    if ((u16)(GetRandom() % 50) == 0) {
+        keys |= 0x300;
+    }
+    SioKeyStateUpdateA(held);
+    SioKeyStateUpdateB(keys);
+    return 0;
+}
 #endif
 
 void func_080C640C(CharaObjParam2* param) {

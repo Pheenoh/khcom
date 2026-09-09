@@ -294,4 +294,10 @@ extern u32 gVBlankCounter;
 extern vu16 gSystemFlags;
 extern void (*gUnk_0203BEAC)(void);
 
+#ifdef VERSION_EU
+extern u16 gUnkEu_0203C964;
+extern u16 gUnkEu_0203C970;
+extern u16 gUnkEu_0203C97C;
+#endif
+
 #endif /* GUARD_CHARA_H */
