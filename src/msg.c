@@ -8139,18 +8139,24 @@ u8 eu_0806C974(EventSeqWork* work) {
     return 1;
 }
 #endif
-#ifndef VERSION_EU
 u8 event_seq_1(EventSeqWork* work, void* a) {
     EventSeqArg arg;
+#ifndef VERSION_EU
     s32 flag;
+#endif
     Ent09EE3CA0* u;
     UnkStruct_09EE3FB4* t;
+#ifndef VERSION_EU
     Obj0806180C* q;
     u16 i;
+#endif
     u8 j;
 
+#ifndef VERSION_EU
     flag = 0;
+#endif
     u = gUnk_09EE3CA0[work->unk_2C];
+#ifndef VERSION_EU
 
     if (u != NULL) {
         if (u->unk_04 != NULL) {
@@ -8251,6 +8257,10 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
         i++;
     }
 
+#else
+    t = work->unk_34;
+#endif
+
     TaskPoolInit(&work->unk_00, t->unk_00 + 8);
     TaskPoolInit(&work->unk_14, 1);
     work->unk_28 = (u32)TaskCreate(&work->unk_14, gTaskDescMsgwin, &work->unk_2C);
@@ -8272,10 +8282,15 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     TaskCreate(&work->unk_00, gTaskDescEvSound, &work->unk_2C);
     TaskCreate(&work->unk_00, gTaskDescEVBGEFFECT, &work->unk_2C);
 
+#ifdef VERSION_EU
+    if (work->unk_3D != 0) {
+#else
     if (flag != 0) {
+#endif
         TaskCreate(&work->unk_00, gTaskDescMapAnim, NULL);
     }
 
+#ifndef VERSION_EU
     if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0) {
         func_08006120(0, 64);
     } else if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0x80) {
@@ -8283,6 +8298,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     }
 
     work->unk_38 = 0;
+#endif
 
     if (u != NULL) {
         if (u->unk_28 != 0) {
@@ -8298,9 +8314,6 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     SetTaskUpdate(a, (void*)func_0806D830);
     return 1;
 }
-#else
-INCLUDE_ASM("msg/event_seq_1.s");
-#endif
 u8 func_0806D808(void) {
     u8 r = func_08006314();
     u8 v;
