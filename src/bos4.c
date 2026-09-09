@@ -2176,7 +2176,9 @@ u8 eu_080DA848(void) {
     return AnimIsFinished(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044);
 }
 
-INCLUDE_ASM("bos4/eu_080DA80C.s");
+void* eu_080DA860(void) {
+    return AnimGetGfx(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044);
+}
 #endif
 
 void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
