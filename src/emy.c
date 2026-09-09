@@ -172,7 +172,6 @@ u8 task_emy_00_1(EmyWork* work) {
     return ret;
 }
 
-#ifdef NON_MATCHING
 void task_emy_00_2(EmyWork* work) {
     EmyActor* act;
     u16 pri;
@@ -203,11 +202,11 @@ void task_emy_00_2(EmyWork* work) {
             }
         } else {
             if (act->flags & 4) {
+                rot = gBtlWork->unk_024 * work->unk_17C >> 8;
                 scale = gBtlWork->unk_024;
-                rot = work->unk_17C * scale >> 8;
             } else {
+                rot = -(gBtlWork->unk_024 * work->unk_17C >> 8);
                 scale = gBtlWork->unk_024;
-                rot = -(work->unk_17C * scale >> 8);
             }
 
             scale = scale * zoom >> 8;
@@ -234,10 +233,6 @@ void task_emy_00_2(EmyWork* work) {
         TaskPoolDraw(&work->unk_028);
     }
 }
-
-#else
-INCLUDE_ASM("emy/task_emy_00_2.s");
-#endif
 
 void task_emy_00_3(EmyWork* work) {
     func_0800E0D0(work);
