@@ -1318,7 +1318,25 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size) {
 }
 
 #ifdef VERSION_EU
-INCLUDE_ASM("engine/eu_080044C0.s");
+void LZ77UnCompVram(void* src, void* dst);
+
+u8 eu_080044C0(void* src, void* dst) {
+    Dma3Queue* q = gDma3Requests;
+    u16 flags;
+    if (q->unk_10AA > 31) {
+        return 0;
+    }
+    flags = gSystemFlags & 8;
+    if (flags == 0) {
+        q->unkEu_10A0[q->unk_10AA].src = src;
+        q->unkEu_10A0[q->unk_10AA].dst = dst;
+        q->unkEu_10A0[q->unk_10AA].size = flags;
+        q->unk_10AA++;
+    } else {
+        LZ77UnCompVram(src, dst);
+    }
+    return 1;
+}
 #endif
 
 u8 func_0800443C(void* a, u16 b) {
