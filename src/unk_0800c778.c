@@ -520,14 +520,14 @@ s32 _0800CDF0(EmyWork* work) {
                 if (actor->flags & 4) {
                     if (GetRandom() % 5 == 0) {
                         actor->flags &= ~4;
-                        goto turned;
+                        ok = 1;
                     }
                 } else {
-                    goto turned;
+                    ok = 1;
                 }
             } else {
                 if (actor->flags & 4) {
-                    goto turned;
+                    ok = 1;
                 } else {
                     if (GetRandom() % 5 == 0) {
                         actor->flags |= 4;
@@ -538,7 +538,6 @@ s32 _0800CDF0(EmyWork* work) {
             if (ok == 0) {
                 break;
             }
-turned:
             if (GetRandom() % 4 == 0) {
                 func_0801BCD4(actor);
             }
