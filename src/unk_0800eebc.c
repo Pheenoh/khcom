@@ -358,7 +358,102 @@ u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r) {
     return 1;
 }
 
-INCLUDE_ASM("unk_0800eebc/func_0800F5A4.s");
+s32 func_0800F5A4(Actor* work, u16 interval, u16 offset, u16 width, u16 depth) {
+    u32 value;
+    u32 cards;
+    u32 id;
+    s32 count;
+    s32 n;
+
+    if (gBtlWork->unk_068 & 0x40) {
+        return 0;
+    }
+    if ((s16)gUnk_02039B9C->unk_1CC > 0) {
+        return 0;
+    }
+    if ((u16)((u32)GetRandom() % interval) != 0) {
+        return 0;
+    }
+    value = func_08081870();
+    cards = func_0807B3F8();
+    id = func_0807E2BC();
+    count = func_0807E33C();
+    switch (id) {
+    case 47:
+    case 48:
+    case 49:
+    case 50:
+    case 51:
+    case 52:
+    case 53:
+        n = count >> 1;
+        if (n <= 0) {
+            n = 1;
+        }
+        if (GetRandom() % n == 0) {
+            gBtlWork->unk_0EF |= 0x20;
+        } else {
+            gBtlWork->unk_0EF |= 1;
+        }
+        return 0;
+    }
+    if (func_0807E29C()) {
+        if (count > 1 && (u16)(GetRandom() % 20U) == 0) {
+            gBtlWork->unk_0EF |= 1;
+        }
+        return 0;
+    }
+    if (func_08081838() == 3) {
+        if ((GetRandom() & 3) == 0) {
+            if (count <= 0) {
+                work->unk_154 |= 0x10;
+                gBtlWork->unk_0EF |= 4;
+            } else {
+                gBtlWork->unk_0EF |= 0x20;
+                if (count == 1) {
+                    work->unk_154 |= 0x10;
+                }
+            }
+        } else if (count > 1) {
+            gBtlWork->unk_0EF |= 1;
+        }
+        return 0;
+    }
+    if (!(work->unk_154 & 0x10) && gUnk_02039B9C->unk_0F4 == 0
+        && (u16)(GetRandom() % 60U) == 0) {
+        gBtlWork->unk_0EF |= 4;
+        return 0;
+    }
+    if (cards > 2) {
+        if ((u16)(GetRandom() % 6U) == 0) {
+            gBtlWork->unk_0EF |= 0x10;
+            return 1;
+        }
+    } else if ((u16)GetRandom() % 2 == 0) {
+        if (count <= 1 && cards != 0) {
+            gBtlWork->unk_0EF |= 0x10;
+            return 1;
+        }
+        if (value == 0 || work->unk_184[cards] != id) {
+            gBtlWork->unk_0EF |= 1;
+        } else {
+            gBtlWork->unk_0EF |= 0x10;
+        }
+        return 0;
+    }
+    if (gBtlWork->unk_068 & 0x20000000) {
+        if (func_0800F440(work, (s16)offset, width, depth)) {
+            if (func_08081848() <= value || value == 0) {
+                gBtlWork->unk_0EF |= 0x20;
+            }
+        } else if (func_08081848() == value) {
+            gBtlWork->unk_0EF |= 0x20;
+        }
+    } else if (func_0800F440(work, (s16)offset, width, depth)) {
+        gBtlWork->unk_0EF |= 0x20;
+    }
+    return 0;
+}
 s32 _0800F84C(Actor* work) {
     s32 buf[6];
     s32 id = func_080ABA80(buf);
