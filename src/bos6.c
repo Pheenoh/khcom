@@ -1899,7 +1899,26 @@ u8 func_0810D304(BosLstWork* work, s32 idx) {
 }
 
 #ifdef VERSION_EU
-INCLUDE_ASM("bos6/eu_0810BA1C.s");
+extern u8 eu_0810F08C(LstTask* work);
+u8 eu_0810BA1C(BosLstWork* work, s32 idx) {
+    s32 i;
+    u8 r;
+
+    r = 0;
+    if (idx < 0) {
+        for (i = 0; i < work->unk_0C4; i++) {
+            if (eu_0810F08C(work->unk_810[i]) == 1) {
+                r = 1;
+                break;
+            }
+        }
+    } else if (idx < work->unk_0C4) {
+        if (eu_0810F08C(work->unk_810[idx]) == 1) {
+            r = 1;
+        }
+    }
+    return r;
+}
 #endif
 
 u8 func_0810D364(BosLstWork* work) {
