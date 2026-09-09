@@ -2694,7 +2694,6 @@ void func_080E44A8(void) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_080E470C(void) {
     s16 a;
     s16 b;
@@ -2704,7 +2703,7 @@ void func_080E470C(void) {
     s16 v;
     s32 k;
 
-    t = gUnk_02034F28 * 5 >> 3;
+    t = (gUnk_02034F28 * 5) / 8;
     a = (gUnk_02034F28 - t) / 2;
     d = a + t;
     b = gUnk_02034F2A / 4;
@@ -2715,9 +2714,6 @@ void func_080E470C(void) {
     func_080E3060(1, 0, gUnk_02034F28, v + c);
     func_080E3768(1, 0, gUnk_02034F28, a, v + b, k);
 }
-#else
-INCLUDE_ASM("map/func_080E470C.s");
-#endif
 
 void func_080E47E8(u8 a, u8 b) {
     s32 i;
