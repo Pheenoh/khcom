@@ -2139,8 +2139,11 @@ u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
     *d = 0;
     return gUnk_02034A90;
 }
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+u8 func_08065170(s32 x, s32 y, u8* s) {
+#else
 u8 func_08065170(s32 x, s32 y, u16* s) {
+#endif
     s32 cx;
     s32 cy;
     s32 f;
@@ -2162,22 +2165,25 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
         gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
         gUnk_02034A84[gUnk_02034A90].unk_15 = 1;
 
-        if (*s == 0x4079) {
+        if (*s == MSG_LATIN_CODE(0x4079, 29)) {
             f = 1;
             s++;
         }
 
-        if (*s == 0x4000) {
+        if (*s == MSG_LATIN_CODE(0x4000, 30)) {
             f = 0;
             s++;
         }
 
         gUnk_02034A84[gUnk_02034A90].unk_14 = f;
 
-        if (*s == 10) {
+        if (*s == MSG_LATIN_CODE(10, 31)) {
             cx = 0;
             cy += 0xC00;
         } else {
+#ifdef VERSION_EU
+            v = *s;
+#else
             if ((u16)(*s - 32) <= 223) {
                 v = *s;
             } else {
@@ -2230,6 +2236,7 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
                 }
             }
 
+#endif
             if (gUnk_02034A84[gUnk_02034A90].unk_08 != NULL) {
                 ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].unk_08);
                 gUnk_02034A84[gUnk_02034A90].unk_08 = NULL;
@@ -2238,8 +2245,13 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
             cx += (s16)gUnk_08F7D438[v] << 8;
 
             if (v != 32) {
+#ifdef VERSION_EU
+                v = ((u16*)gUnk_09EEB204[v])[3];
+                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+#else
                 v = ((u16*)gUnk_09EEC134[v])[3];
                 gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+#endif
             }
 
             gUnk_02034A90++;
@@ -2253,9 +2265,6 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
     }
     return gUnk_02034A90;
 }
-#else
-INCLUDE_ASM("msg/func_08065170.s");
-#endif
 #ifndef VERSION_EU
 u8 func_080653D4(s32 x, s32 y, u8* s) {
     u16 w;
