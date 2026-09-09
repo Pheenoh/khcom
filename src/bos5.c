@@ -2398,7 +2398,6 @@ s32 func_080FF310(void) {
     keys |= GetKeysRepeat() & 0x3F0;
     return keys;
 }
-#ifndef VERSION_EU
 void func_080FF330(void) {
     u16 keys;
     s16 old;
@@ -2409,6 +2408,10 @@ void func_080FF330(void) {
 
     if (keys & 1) {
         if (gUnk_02035100[gUnk_020350F8] != 0) {
+#ifdef VERSION_EU
+            ReleaseObjPalette(gUnk_0203511C);
+            gUnk_0203511C = 0;
+#endif
             gUnk_020354A8[0] = LoadObjPalette(gUnk_09A3CC3C, 32);
             gUnk_020354B0[0] = LoadObjTiles(gUnk_0999A394, 0xC40);
             gUnk_020354B8[0] = gUnk_0999A350;
@@ -2454,14 +2457,18 @@ void func_080FF330(void) {
     } else if (keys & 2) {
         m4aSongNumStart(104);
         LoadBgMap(0, gUnk_09A324DC, 0x500);
+#ifndef VERSION_EU
         gUnk_0203511C = LoadObjPalette(gUnk_09A3D07C, 32);
+#endif
         gUnk_020354E0 = 1;
         gUnk_020354C2 = 16;
         gUnk_020354C0 = 3;
     } else if (keys & 8) {
         m4aSongNumStart(104);
         LoadBgMap(0, gUnk_09A324DC, 0x500);
+#ifndef VERSION_EU
         gUnk_0203511C = LoadObjPalette(gUnk_09A3D07C, 32);
+#endif
         gUnk_020354E0 = 0;
         func_08006184(0, 16);
         gUnk_020354C0 = 5;
@@ -2521,9 +2528,6 @@ void func_080FF330(void) {
         m4aSongNumStart(101);
     }
 }
-#else
-INCLUDE_ASM("bos5/func_080FF330.s");
-#endif
 void func_080FF794(void) {
     u16 keys;
     s32 i;
