@@ -877,8 +877,10 @@ void func_080AFCD4(void) {
 #endif
 }
 
-#ifndef VERSION_EU
 void func_080AFEFC(void) {
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+#endif
     if (GetKeysPressed() & DPAD_LEFT) {
         if (gSioBtlOptionWork->unk_216 > 1) {
             m4aSongNumStart(101);
@@ -911,10 +913,53 @@ void func_080AFEFC(void) {
     func_080B1064();
     func_080B06D4();
     func_080B0874();
-}
-#else
-INCLUDE_ASM("mode_sio/func_080AFEFC.s");
+#ifdef VERSION_EU
+    } else {
+        if (GetKeysPressed() & DPAD_LEFT) {
+            if (gSioBtlOptionWork->unk_216 > 1) {
+                m4aSongNumStart(101);
+                gSioBtlOptionWork->unk_216--;
+                gUnk_0203AA58[0] = gSioBtlOptionWork->unk_216;
+            } else {
+                m4aSongNumStart(105);
+            }
+        } else if (GetKeysPressed() & DPAD_RIGHT) {
+            if (gSioBtlOptionWork->unk_216 <= 10) {
+                m4aSongNumStart(101);
+                gSioBtlOptionWork->unk_216++;
+                gUnk_0203AA58[0] = gSioBtlOptionWork->unk_216;
+            } else {
+                m4aSongNumStart(105);
+            }
+        }
+        if (GetKeysPressed() & L_BUTTON) {
+            if ((s8)gUnk_0203AA58[1] > 1) {
+                m4aSongNumStart(101);
+                gUnk_0203AA58[1]--;
+            } else {
+                m4aSongNumStart(105);
+            }
+        } else if (GetKeysPressed() & R_BUTTON) {
+            if ((s8)gUnk_0203AA58[1] <= 10) {
+                m4aSongNumStart(101);
+                gUnk_0203AA58[1]++;
+            } else {
+                m4aSongNumStart(105);
+            }
+        }
+        if (GetKeysPressed() & 3) {
+            m4aSongNumStart(104);
+            gSioBtlOptionWork->unk_1E0 = 1;
+            gSioBtlOptionWork->unk_1F8 = 0;
+            gSioBtlOptionWork->unk_002 = 6;
+        }
+        func_080B0634();
+        func_080B1064();
+        func_080B06D4();
+        func_080B0874();
+    }
 #endif
+}
 
 void func_080B0010(void) {
     s8 a = gUnk_0203AAA0[gUnk_0203AA90];
