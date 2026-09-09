@@ -12876,7 +12876,284 @@ void func_0808B3DC(u8* work, u8 flag) {
         }
     }
 }
-INCLUDE_ASM("card/func_0808B66C.s");
+typedef struct {
+    void* unk_000;
+    void* unk_004;
+    void* unk_008;
+    void* unk_00C;
+    void* unk_010;
+    void* unk_014;
+    void* unk_018;
+    void* unk_01C;
+    void* unk_020;
+    void* unk_024;
+    void* unk_028;
+    void* unk_02C;
+    void* unk_030;
+    void* unk_034;
+    TextSlot unk_038[8];
+    TextSlot unk_078[8];
+    TextSlot unk_0B8[8];
+    TextSlot unk_0F8[30];
+    TextSlot unk_1E8[90];
+    void* unk_4B8;
+    void* unk_4BC;
+    void* unk_4C0;
+    void* unk_4C4;
+    void* unk_4C8;
+    void* unk_4CC;
+    void* unk_4D0;
+    void* unk_4D4;
+    void* unk_4D8;
+    void* unk_4DC;
+    void* unk_4E0;
+    void* unk_4E4;
+    void* unk_4E8;
+    void* unk_4EC;
+    void* unk_4F0;
+    void* unk_4F4;
+    void* unk_4F8;
+    u8 unk_4FC[0x23C];
+    void* unk_738;
+    void* unk_73C;
+    void* unk_740;
+    u8 unk_744[108];
+    void* unk_7B0;
+    s32 unk_7B4;
+    s32 unk_7B8;
+    s32 unk_7BC;
+    u8 unk_7C0[0x4];
+    u8 unk_7C4;
+    u8 unk_7C5[3];
+#ifdef VERSION_EU
+    u8 unk_eu_7C8[4];
+#endif
+    TaskPool taskpool;
+    TaskPool cardpool;
+    u8 unk_7F0[0x40];
+    AnimState unk_830;
+    s32 unk_848;
+    s32 unk_84C;
+    s32 unk_850;
+    s32 unk_854;
+    s32 unk_858;
+    s32 unk_85C;
+    s32 unk_860;
+    s32 unk_864;
+    s32 unk_868;
+    s32 unk_86C;
+    s32 unk_870;
+    u8 unk_874[0x4];
+    s16 unk_878;
+    s16 unk_87A;
+    s16 unk_87C;
+    s16 unk_87E;
+    u8 unk_880[0x2];
+    u16 unk_882;
+    u8 unk_884[0x2C];
+    u8 unk_8B0;
+    u8 unk_8B1;
+    u8 unk_8B2[0x13];
+    u8 unk_8C5;
+    u8 unk_8C6[0x3];
+    u8 unk_8C9;
+    u8 unk_8CA[0x5];
+    u8 unk_8CF;
+} UnkStruct_0808B66C;
+
+#ifdef VERSION_EU
+extern void** gUnkEu_09F6FDF0[];
+extern void** gUnkEu_09F6FDC8[];
+#else
+extern void* gUnk_09EEAFF0;
+extern void* gUnk_09EEAFE8;
+#endif
+
+void func_0808B66C(UnkStruct_0808B66C* w) {
+    gUnk_0203A860[8] = AnimUpdate((AnimState*)&gUnk_0203A860[2]);
+    if (w->unk_8C9 == 0) {
+        if (w->unk_8B0 != 0) {
+            DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->unk_4F0, w->unk_000, w->unk_014, 0, w->unk_882, 3);
+        }
+    }
+    if (w->unk_8B1 != 13) {
+        DrawSprite(w->unk_850 >> 8, w->unk_854 >> 8, gUnk_09EEB000, w->unk_010, w->unk_014, 0, 0x800, 10);
+    }
+    if (w->unk_4BC != 0) {
+        DrawSprite(w->unk_858 >> 8, w->unk_860 >> 8, gUnk_09EEB080[0], w->unk_4BC, w->unk_4C0, 0, 0xC00, 10000);
+        DrawSprite(w->unk_85C >> 8, w->unk_864 >> 8, gUnk_09EEB080[1], w->unk_4BC, w->unk_4C0, 0, 0xC00, 10000);
+    }
+    if (w->unk_018 != 0) {
+        DrawSprite(w->unk_868 >> 8, 0,
+#ifdef VERSION_EU
+                   gUnkEu_09F6FDF0[gLanguage][0],
+#else
+                   gUnk_09EEAFF0,
+#endif
+                   w->unk_018, w->unk_4C0, 0, 0, 10);
+    }
+    switch (w->unk_8B1) {
+    case 0:
+        if (w->unk_8CF != 0) {
+            DrawSprite((w->unk_86C >> 8) - 16, (w->unk_870 >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        }
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        func_0808B3DC((u8*)w, 0);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        break;
+    case 3:
+#ifdef VERSION_EU
+        if (w->unk_008 != 0) {
+            DrawSprite(120, 80, gUnkEu_09F6FDC8[gLanguage][0], w->unk_008, w->unk_00C, 0, 0, 8);
+        }
+#else
+        DrawSprite(120, 80, gUnk_09EEAFE8, w->unk_008, w->unk_00C, 0, 0, 8);
+#endif
+        func_0808B3DC((u8*)w, 0);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        break;
+    case 2:
+        func_0808B3DC((u8*)w, 0);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        break;
+    case 1:
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        func_0808B3DC((u8*)w, 0);
+        break;
+    case 4:
+        func_0808B3DC((u8*)w, 1);
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        if (w->unk_01C != 0) {
+            if (w->unk_8C9 == 0) {
+                DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+            }
+            DrawSprite(24, 82, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
+            DrawSprite(24, 82, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
+            func_080664D8(10, 116, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
+            if (w->unk_028 != 0) {
+                w->unk_4F8 = AnimUpdate(&w->unk_830);
+                DrawSprite(24, 82, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+            }
+        }
+        if (w->unk_8C9 == 0) {
+            func_0808B398((u8*)w);
+        }
+        break;
+    case 7:
+        func_0808B3DC((u8*)w, 1);
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        if (w->unk_01C != 0) {
+            DrawSprite(164, 82, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
+            DrawSprite(164, 82, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
+            if (w->unk_028 != 0) {
+                w->unk_4F8 = AnimUpdate(&w->unk_830);
+                DrawSprite(164, 82, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+            }
+            if (w->unk_024 != 0) {
+                DrawSprite(164, 82, w->unk_4E4, w->unk_024, w->unk_030, 0, 0, 19);
+            }
+            func_080664D8(100, 116, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
+            if (w->unk_8C9 == 0) {
+                func_0808B398((u8*)w);
+            }
+        }
+        break;
+    case 5:
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
+        DrawSprite((w->unk_848 >> 8) - 26, (w->unk_84C >> 8) - 13, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        func_0808B3DC((u8*)w, 1);
+        if (w->unk_01C != 0) {
+            DrawSprite(24, 82, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
+            DrawSprite(24, 82, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
+            if (w->unk_028 != 0) {
+                w->unk_4F8 = AnimUpdate(&w->unk_830);
+                DrawSprite(24, 82, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+            }
+            func_080664D8(10, 116, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
+        }
+        if (w->unk_8C9 == 0) {
+            func_0808B398((u8*)w);
+        }
+        break;
+    case 6:
+        DrawSprite(w->unk_878, w->unk_87A, w->unk_4E8, w->unk_4B8, w->unk_014, 0, 0, 10);
+        func_0808B3DC((u8*)w, 1);
+        break;
+    case 8:
+        DrawSprite(w->unk_87C, w->unk_87E, w->unk_4EC, w->unk_4B8, w->unk_014, 0, 0, 10);
+        func_0808B3DC((u8*)w, 1);
+        break;
+    case 9:
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 20, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        if (w->unk_01C != 0) {
+            DrawSprite(24, 66, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
+            DrawSprite(24, 66, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
+            if (w->unk_028 != 0) {
+                w->unk_4F8 = AnimUpdate(&w->unk_830);
+                DrawSprite(24, 66, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+            }
+            func_080664D8(10, 100, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
+        }
+        if (w->unk_8C9 == 0) {
+            func_0808B398((u8*)w);
+        }
+        break;
+    case 11:
+        DrawSprite((w->unk_848 >> 8) - 26, (w->unk_84C >> 8) - 13, w->unk_4F4, w->unk_004, w->unk_4C4, 0, 0, 8);
+        if (w->unk_01C != 0) {
+            DrawSprite(24, 66, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
+            DrawSprite(24, 66, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
+            if (w->unk_028 != 0) {
+                w->unk_4F8 = AnimUpdate(&w->unk_830);
+                DrawSprite(24, 66, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+            }
+            func_080664D8(10, 100, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
+        }
+        if (w->unk_8C9 == 0) {
+            func_0808B398((u8*)w);
+        }
+        break;
+    case 13:
+        DrawSprite(w->unk_7B4 >> 8, w->unk_7B8 >> 8, w->unk_7B0, w->unk_738, w->unk_740, 0, 0, 20);
+        DrawSprite(w->unk_7BC >> 8, 18, 0, w->unk_73C, w->unk_740, 0, 0, 21);
+        func_080664D8(138, 16, w->unk_744, w->unk_014, 20, w->unk_7C4);
+        break;
+    case 12:
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->unk_4F0, w->unk_000, w->unk_014, 0, w->unk_882, 0);
+        if (w->unk_01C != 0) {
+            DrawSprite(24, 66, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
+            DrawSprite(24, 66, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
+            if (w->unk_028 != 0) {
+                w->unk_4F8 = AnimUpdate(&w->unk_830);
+                DrawSprite(24, 66, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+            }
+            func_080664D8(10, 100, w->unk_0F8, w->unk_4C4, 20, w->unk_8C5);
+        }
+        if (w->unk_8C9 == 0) {
+            func_0808B398((u8*)w);
+        }
+        break;
+    case 15:
+        DrawSprite((w->unk_848 >> 8) - 16, (w->unk_84C >> 8) - 30, w->unk_4F0, w->unk_000, w->unk_014, 0, w->unk_882, 0);
+        if (w->unk_01C != 0) {
+            DrawSprite(24, 66, w->unk_4DC, w->unk_01C, w->unk_030, 0, 0x400, 100);
+            DrawSprite(24, 66, w->unk_4E0, w->unk_020, w->unk_034, 0, 0x400, 101);
+            if (w->unk_028 != 0) {
+                w->unk_4F8 = AnimUpdate(&w->unk_830);
+                DrawSprite(24, 66, w->unk_4F8, w->unk_028, w->unk_030, 0, 0, 1);
+            }
+        }
+        break;
+    }
+    TaskPoolDraw(&w->taskpool);
+    TaskPoolDraw(&w->cardpool);
+}
 
 void func_0808C2F0(u8* work) {
     func_0808C90C(work);
