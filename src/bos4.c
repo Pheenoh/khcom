@@ -8,7 +8,7 @@ extern void* eu_0805E924(void* strings);
 void* gUrsulaWork;
 #ifdef VERSION_EU
 extern u16 eu_080DA830(void);
-extern void eu_080DA80C(s32 a, s32 b);
+extern void eu_080DA80C(u16 a, u16 b);
 extern u8 eu_080DA848(void);
 extern void* eu_080DA860(void);
 #endif
@@ -2164,6 +2164,10 @@ void func_080DD9B0(UrsulaBubbleWork* work) {
 }
 
 #ifdef VERSION_EU
+void eu_080DA80C(u16 a, u16 b) {
+    AnimChange(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044, a, b);
+}
+
 INCLUDE_ASM("bos4/eu_080DA80C.s");
 #endif
 
