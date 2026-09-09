@@ -13620,6 +13620,10 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
 #else
 INCLUDE_ASM("card/func_0808F358.s");
 #endif
+#ifdef VERSION_JP
+INCLUDE_ASM("card/func_jp_0808F240.s");
+INCLUDE_ASM("card/func_jp_0808F34C.s");
+#endif
 #ifdef VERSION_EU
 void func_eu_0808EC78(UnkStruct_0808F0C0* w) {
     switch (w->unk_7C7) {
@@ -13845,7 +13849,42 @@ u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
     return 1;
 }
 #ifdef VERSION_JP
-INCLUDE_ASM("card/func_jp_0808F638.s");
+void func_jp_0808F34C(UnkStruct_0808F0C0* w);
+extern s16 gUnkJp_09008DEC[];
+u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
+    switch ((u16)GetKeysRepeat()) {
+    case 16:
+        if (w->unk_7C7 <= 1) {
+            w->unk_7C7++;
+            func_jp_0808F34C(w);
+            m4aSongNumStart(103);
+            w->unk_7C6 = 1;
+        }
+        break;
+    case 32:
+        if (w->unk_7C7 != 0) {
+            w->unk_7C7--;
+            func_jp_0808F34C(w);
+            m4aSongNumStart(103);
+            w->unk_7C6 = 1;
+        }
+        break;
+    case 4:
+    case 128:
+        w->unk_7C6 = 1;
+        SetTaskUpdate(a, (void*)func_0808F660);
+        w->unk_8B1 = 13;
+        m4aSongNumStart(121);
+        return 1;
+    }
+    func_0805F1C0((s32*)&w->unk_7F0[0x58], (gUnkJp_09008DEC[w->unk_7C7] + 8) << 8);
+    func_0805F1C0((s32*)&w->unk_7F0[0x5C], 0x1A00);
+    w->unk_7B0 = AnimUpdate(&w->unk_798);
+    *(void**)&w->unk_1E8[0x308] = AnimUpdate((AnimState*)&w->unk_7F0[0x10]);
+    TaskPoolUpdate(w->taskpool);
+    TaskPoolUpdate(w->cardpool);
+    return 1;
+}
 #elif defined(VERSION_EU)
 INCLUDE_ASM("card/func_eu_0808F190.s");
 #endif
