@@ -2,6 +2,8 @@
 #include "mode_ms2.h"
 #include "gba/keys.h"
 
+extern u8 gUnk_09A3D23C[];
+
 UnkStruct_0810718C* gUnk_02035E28;
 s16 gUnk_02035E2C;
 s16 gUnk_02035E2E;
@@ -501,22 +503,21 @@ void func_0810764C(void) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_081076D4(void) {
     UnkStruct_0810718C* p;
     s16 i;
-    s16 v;
+    s32 v;
 
     p = func_0810718C();
 
     if (func_08107220(gUnk_02035E2E) > 0) {
-        LoadPalette(gUnk_09A3D2FC + p->unk_04 * 32, (void*)0x05000000, 12);
+        LoadPalette(gUnk_09A3D23C + p->unk_04 * 32, (void*)0x05000000, 12);
     }
 
     if (gUnk_02035E2C == 1) {
         for (i = 0; i <= 9; i++) {
             func_08101588(0, gUnk_09A067DC, (u8*)GetBgCharBase(0) + (i * 64 + 0x40), 32, 1);
-            LoadPalette(gUnk_09A3D2C8, (void*)(0x0500000C + i * 2), 2);
+            LoadPalette(gUnk_09A3D2C8, (void*)(0x05000000 + (i + 6) * 2), 2);
         }
     } else if (p->unk_04 == 3) {
         if (func_08107220(gUnk_02035E2E) > 0) {
@@ -545,17 +546,14 @@ void func_081076D4(void) {
             v = p->unk_06[i];
             if (v != 0 && func_08107220(gUnk_02035E2E) > 0) {
                 func_08101588(v, gUnk_09A067FC, (u8*)GetBgCharBase(0) + (i * 64 + 0x40), 32, 1);
-                LoadPalette(gUnk_09A3D248, (void*)(0x0500000C + i * 2), 2);
+                LoadPalette(gUnk_09A3D248, (void*)(0x05000000 + (i + 6) * 2), 2);
             } else {
                 func_08101588(0, gUnk_09A067DC, (u8*)GetBgCharBase(0) + (i * 64 + 0x40), 32, 1);
-                LoadPalette(gUnk_09A3D2C8, (void*)(0x0500000C + i * 2), 2);
+                LoadPalette(gUnk_09A3D2C8, (void*)(0x05000000 + (i + 6) * 2), 2);
             }
         }
     }
 }
-#else
-INCLUDE_ASM("mode_ms2/func_081076D4.s");
-#endif
 
 void func_081078F0(s16 a) {
     func_0800448C(gUnk_09A34D9C, GetBgScreenBase(0), 0, gUnk_09EF9618[a].unk_04 * 2, 0, 2, 11, 2);
