@@ -641,7 +641,45 @@ void func_0800FD68(u32 a) {
     }
 }
 
-INCLUDE_ASM("unk_0800eebc/func_0800FDD0.s");
+void func_0800FDD0(u32 a) {
+    GameState* state;
+
+    if (a == 250) {
+        GameState* state = &gGameState;
+        state->unk_134[0] = -1;
+        state->unk_134[1] = -1;
+        state->unk_134[2] = -1;
+        state->unk_134[3] = -1;
+        state->unk_134[4] = -1;
+        state->unk_134[5] = -1;
+        state->unk_134[6] = -1;
+        state->unk_134[7] = -1;
+        return;
+    }
+    if (func_0800FF00(a)) {
+        return;
+    }
+    if (a <= 0x3F) {
+        state = &gGameState;
+        state->unk_134[0] |= 1ULL << a;
+        state->unk_134[4] |= 1ULL << a;
+    } else if (a <= 0x7F) {
+        a -= 0x40;
+        state = &gGameState;
+        state->unk_134[1] |= 1ULL << a;
+        state->unk_134[5] |= 1ULL << a;
+    } else if (a <= 0xBF) {
+        a -= 0x80;
+        state = &gGameState;
+        state->unk_134[2] |= 1ULL << a;
+        state->unk_134[6] |= 1ULL << a;
+    } else {
+        a -= 0xC0;
+        state = &gGameState;
+        state->unk_134[3] |= 1ULL << a;
+        state->unk_134[7] |= 1ULL << a;
+    }
+}
 
 u8 func_0800FF00(u32 a) {
     u64* p;
