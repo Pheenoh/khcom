@@ -1,13 +1,6 @@
 .syntax unified
 	.text
 	.align 2, 0
-	.global eu_080DA830
-	.thumb
-	.thumb_func
-	.type eu_080DA830, %function
-eu_080DA830:
-	.incbin "roms/B8CP.gba", 0xda830, 0x18
-	.align 2, 0
 	.global eu_080DA848
 	.thumb
 	.thumb_func
