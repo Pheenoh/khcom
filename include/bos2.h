@@ -949,7 +949,7 @@ void func_080BA43C(TmFootWork* work, s16 a);
 void func_080BA62C(TmFootWork* work);
 void func_080BA8C8(TmFootWork* work, s16 a);
 s32 func_080BE940(JfMajinWork* work);
-void func_080BB588(u8* joints, u16 a);
+void func_080BB588(TmArmJoint* joints, u16 a);
 void func_080BB5E8(u8* joints, TmAnim* a);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_080C2F68(DsdMainWork* work);
