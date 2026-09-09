@@ -204,7 +204,31 @@ void func_0800F230(void) {
 }
 
 #ifdef VERSION_EU
-INCLUDE_ASM("unk_0800eebc/eu_08013190.s");
+void eu_08013190(void) {
+    BtlObj* c = (BtlObj*)gUnk_02039B9C->unk_07C;
+    u8 keys;
+
+    keys = gBtlWork->unk_0EF;
+    gBtlWork->unk_0EF = 0;
+    if (c->unk_034 & 0x200) {
+        return;
+    }
+    if (gBtlWork->unk_068 & 0x40) {
+        return;
+    }
+    if (gBtlWork->unk_068 & 0x10000000) {
+        return;
+    }
+    if (gBtlWork->unk_068 & 0x800000) {
+        return;
+    }
+    if (c->unk_034 & 2) {
+        return;
+    }
+    if (keys & 0x20) {
+        func_0807E20C();
+    }
+}
 #endif
 
 void func_0800F368(Actor* p, u16 n) {
