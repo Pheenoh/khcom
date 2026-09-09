@@ -13954,7 +13954,66 @@ u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
     return 1;
 }
 #elif defined(VERSION_EU)
-INCLUDE_ASM("card/func_eu_0808F190.s");
+extern s16 gUnkEu_090CECE8[];
+u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
+    u8* mode = &w->unk_7C7;
+
+    w->unk_8B0 = 1;
+    switch ((u16)GetKeysRepeat()) {
+    case 16:
+        w->unk_7C6 = 1;
+        if (*mode <= 2) {
+            (*mode)++;
+            func_eu_0808EE08(w);
+            m4aSongNumStart(103);
+            w->unk_7C6 = 1;
+        }
+        break;
+    case 32:
+        w->unk_7C6 = 1;
+        if (*mode > 2) {
+            (*mode)--;
+            func_eu_0808EE08(w);
+            m4aSongNumStart(103);
+            w->unk_7C6 = 1;
+        }
+        break;
+    case 4:
+    case 128:
+        w->unk_7C6 = 1;
+        SetTaskUpdate(a, (void*)func_0808F660);
+        w->unk_8B1 = 13;
+        m4aSongNumStart(121);
+        w->unk_8B0 = 0;
+        return 1;
+    }
+    if (w->unk_7C6 != 0) {
+        if (w->unk_7C8 == 1) {
+            if (gLanguage == 2) {
+                w->unk_7B4 = 0xC800;
+            } else if (gLanguage == 3) {
+                w->unk_7B4 = 0xD100;
+            } else {
+                w->unk_7B4 = 0xD300;
+            }
+            w->unk_7B8 = 0x8C00;
+        } else if (w->unk_7C7 == 2) {
+            ApproachValue(&w->unk_7B4, gUnk_09035898[w->unk_7C2].unk_00[w->unk_7C0] << 8, w->unk_7C6);
+            ApproachValue(&w->unk_7B8, gUnk_090358D0[w->unk_7C0].unk_00[w->unk_7C2] << 8, w->unk_7C6);
+        } else {
+            ApproachValue(&w->unk_7B4, gUnkEu_090CEC30[w->unk_7C2].unk_00[w->unk_7C0] << 8, w->unk_7C6);
+            ApproachValue(&w->unk_7B8, gUnkEu_090CEC70[w->unk_7C0].unk_00[w->unk_7C2] << 8, w->unk_7C6);
+        }
+        w->unk_7C6--;
+    }
+    func_0805F1C0((s32*)&w->unk_7F0[0x58], (gUnkEu_090CECE8[w->unk_7C7 - 2] + 8) << 8);
+    func_0805F1C0((s32*)&w->unk_7F0[0x5C], 0x1A00);
+    w->unk_7B0 = AnimUpdate(&w->unk_798);
+    *(void**)&w->unk_1E8[0x308] = AnimUpdate((AnimState*)&w->unk_7F0[0x10]);
+    TaskPoolUpdate(w->taskpool);
+    TaskPoolUpdate(w->cardpool);
+    return 1;
+}
 #endif
 INCLUDE_ASM("card/func_0808F660.s");
 
