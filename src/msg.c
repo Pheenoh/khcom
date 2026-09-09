@@ -7981,6 +7981,12 @@ void event_seq_0(EventSeqWork* work, u8* a) {
 INCLUDE_ASM("msg/event_seq_0.s");
 #endif
 
+#ifdef VERSION_EU
+INCLUDE_ASM("msg/eu_0806C734.s");
+INCLUDE_ASM("msg/eu_0806C7C8.s");
+INCLUDE_ASM("msg/eu_0806C848.s");
+INCLUDE_ASM("msg/eu_0806C974.s");
+#endif
 #ifndef VERSION_EU
 u8 event_seq_1(EventSeqWork* work, void* a) {
     EventSeqArg arg;
