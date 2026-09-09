@@ -1091,6 +1091,7 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
     s32 i;
     void* e = &work->unk_01C;
     void* pool;
+    s32 checkKnives;
 
     switch (func_0801ADAC(e)) {
     case 5:
@@ -1125,26 +1126,30 @@ u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work) {
         }
 
         work->unk_004++;
+        checkKnives = 0;
         break;
     case 1:
         gUnk_0203C574 = 1;
-        goto rest;
+        checkKnives = 1;
+        break;
     case 0:
         if ((s16)work->unk_004 == 0) {
             work->unk_004++;
             func_080DB468(work);
+            checkKnives = 0;
             break;
         }
     default:
-        goto rest;
+        checkKnives = 1;
+        break;
     }
 
-    pool = &work->unk_008;
-    TaskPoolUpdate(pool);
+    if (checkKnives == 0) {
+        pool = &work->unk_008;
+        TaskPoolUpdate(pool);
+        return 1;
+    }
 
-    return 1;
-
-rest:
     if (func_080DB438(work) == 0) {
         func_0801AF08(e);
 
