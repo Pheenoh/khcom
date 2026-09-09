@@ -1744,10 +1744,13 @@ void func_08004938(void) {
     void (**p)(void);
     u16 n;
     s32 i;
-    s32 j;
     s32 row;
     s32 col;
+    s32 sourceIndex;
     u16 zero;
+#ifdef VERSION_EU
+    Dma3Request* compressed;
+#endif
 
     q = gDma3Requests;
     req = q->requests;
@@ -1755,12 +1758,15 @@ void func_08004938(void) {
     fills = q->unk_1000;
     cb = (void (**)(void))q->unk_1060;
     pend = q->pending;
+#ifdef VERSION_EU
+    compressed = q->unkEu_10A0;
+#endif
     q->unk_10AC = 0;
     n = q->unk_10A6;
 
     if (n != 0) {
-        i = n;
         p = cb;
+        i = n;
         do {
             (*p++)();
         } while (--i);
@@ -1777,20 +1783,33 @@ void func_08004938(void) {
         } while (--i);
     }
     gDma3Requests->requestCount = 0;
+#ifdef VERSION_EU
+    n = gDma3Requests->unk_10AA;
+    if (n != 0) {
+        i = n;
+        do {
+            LZ77UnCompVram(compressed->src, compressed->dst);
+            compressed++;
+        } while (--i);
+    }
+    gDma3Requests->unk_10AA = 0;
+#endif
     n = gDma3Requests->unk_10A4;
 
     for (i = 0; i < n; i++) {
         if (fills[i].unk_0A != 0) {
+            row = 0;
             f = &fills[i];
 
-            for (j = 0; j < 32; j++) {
-                ((u16*)f->unk_04)[(((f->unk_09 + j) & 31) << 5) + f->unk_08] = ((u16*)f->unk_00)[j];
+            for (; row < 32; row++) {
+                ((u16*)f->unk_04)[(((f->unk_09 + row) & 31) << 5) + f->unk_08] = ((u16*)f->unk_00)[row];
             }
         } else {
+            col = 0;
             f = &fills[i];
 
-            for (j = 0; j < 32; j++) {
-                ((u16*)f->unk_04)[(f->unk_09 << 5) + ((f->unk_08 + j) & 31)] = ((u16*)f->unk_00)[j];
+            for (; col < 32; col++) {
+                ((u16*)f->unk_04)[((f->unk_08 + col) & 31) + (f->unk_09 << 5)] = ((u16*)f->unk_00)[col];
             }
         }
     }
@@ -1803,7 +1822,8 @@ void func_08004938(void) {
             dy = ((blits[i].unk_0B + row) & 31) << 5;
 
             for (col = 0; col < blits[i].unk_0C; col++) {
-                ((u16*)blits[i].unk_04)[((blits[i].unk_0A + col) & 31) + dy] = ((u16*)blits[i].unk_00)[((blits[i].unk_08 + col) & 31) + sy];
+                sourceIndex = (blits[i].unk_08 + col) & 31;
+                ((u16*)blits[i].unk_04)[((blits[i].unk_0A + col) & 31) + dy] = ((u16*)blits[i].unk_00)[sourceIndex + sy];
             }
         }
     }
