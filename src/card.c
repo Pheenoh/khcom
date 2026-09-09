@@ -5030,7 +5030,61 @@ void func_0807FF48(UnkStruct_08080268* w) {
 #else
 INCLUDE_ASM("card/func_0807FF48.s");
 #endif
-INCLUDE_ASM("card/func_080800B4.s");
+void func_080800B4(UnkStruct_08080268* w) {
+#ifndef VERSION_EU
+    m4aSongNumStart(103);
+#endif
+
+    if (gUnk_02039B9C->unk_068 & 0x1000000) {
+        gUnk_02039B9C->unk_068 &= ~0x1000000;
+    }
+
+    w->unk_BC[w->unk_B8] = 0;
+
+    if (w->unk_C0[w->unk_B8] == 0) {
+        w->unk_94[w->unk_B8] = *(u16*)&gUnk_02034AAC->unk_3C[8];
+        gUnk_02034AAC->unk_8C = 0xC800;
+        gUnk_02034AAC->unk_90 = 0xB400;
+        gUnk_02034AAC->unk_9C = 12;
+        gUnk_02034AAC->unk_78 &= ~4;
+    } else {
+        w->unk_34[w->unk_B8] = gUnk_02034AAC;
+        gUnk_02034AAC->unk_98 = gUnk_090352E4[3];
+        gUnk_02034AAC->unk_A3 = 12;
+        gUnk_02034AAC->unk_78 &= ~4;
+    }
+
+    switch (w->unk_B8) {
+    case 0:
+        w->unk_B8 = 3;
+        break;
+    case 1:
+        w->unk_B8 = 0;
+        break;
+    case 2:
+        w->unk_B8 = 3;
+        break;
+    case 3:
+        w->unk_B8 = 0;
+        break;
+    }
+
+    if (w->unk_C0[w->unk_B8] == 0) {
+        func_0807E368(w, (u8)w->unk_B8);
+        gUnk_02034AAC->unk_4C = 0x10400;
+        gUnk_02034AAC->unk_50 = 0x8C00;
+        gUnk_02034AAC->unk_9C = 12;
+    } else {
+        gUnk_02034AAC = w->unk_34[w->unk_B8];
+        gUnk_02034AAC->unk_98 = gUnk_090352E4[0];
+        gUnk_02034AAC->unk_94 = gUnk_090352E4[1];
+        gUnk_02034AAC->unk_A3 = 12;
+        gUnk_02034AAC->unk_9C = 12;
+        gUnk_02034AAC->unk_78 |= 4;
+    }
+
+    gUnk_02039DD4->unk_0D4 = w->unk_B8;
+}
 
 void func_08080228(UnkStruct_08080268* w) {
     if (gBtlWork->unk_0F4 == 0x30) {
