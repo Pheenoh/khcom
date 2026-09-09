@@ -11,6 +11,10 @@ extern u8 gUnkEu_095A3D74[];
 void eu_080059D4(s32 bg, void* tiles);
 void eu_080059F4(s32 bg, void* map);
 void eu_08005A1C(s32 bg, void* map, s32 x, s32 y);
+u8 eu_0806C734(EventSeqWork* work);
+u8 eu_0806C7C8(EventSeqWork* work);
+u8 eu_0806C848(EventSeqWork* work);
+u8 eu_0806C974(EventSeqWork* work);
 extern u32 gLanguage;
 extern void eu_08005ADC(s32 id);
 #define LANGSTR(x) (((void**)(x))[gLanguage])
@@ -7933,8 +7937,11 @@ void Continue_3(ContinueWork* p) {
     ReleaseObjPalette(p->palette3);
     gBldCnt = 0;
 }
-#ifndef VERSION_EU
 void event_seq_0(EventSeqWork* work, u8* a) {
+#ifdef VERSION_EU
+    Ent09EE3CA0* u;
+#endif
+
     gUnk_02039DD0 = NULL;
     gBtlWork = NULL;
     work->unk_28 = 0;
@@ -7946,6 +7953,12 @@ void event_seq_0(EventSeqWork* work, u8* a) {
     gUnk_02039DC8->unk_8A = 0;
     work->unk_2F = 0;
     work->unk_32 = 0;
+#ifdef VERSION_EU
+    work->unk_3D = 0;
+    work->unk_3A = 0;
+    work->unk_3B = 0;
+    work->unk_3C = 0;
+#endif
 
     if (gUnk_02039DC8 != NULL) {
         gUnk_02039DC8->unk_7A = 1;
@@ -7960,17 +7973,61 @@ void event_seq_0(EventSeqWork* work, u8* a) {
         gUnk_02039DC8->unk_84 = 0;
         gUnk_02039DC8->unk_85 = 0;
         gUnk_02039DC8->unk_83 = 0;
+#ifndef VERSION_EU
         func_0800443C(GetBgCharBase(1), 0x8000);
+#endif
 
         if (work->unk_34->unk_08->unk_14 & 0x80) {
             SetBackdropColor(31, 31, 31);
             func_08006120(1, 0x40);
         }
+#ifdef VERSION_EU
+        u = gUnk_09EE3CA0[work->unk_2C];
+        if (u != NULL) {
+            if (u->unk_04 != NULL) {
+                if ((u->unk_2D & 1) != 0) {
+                    SetupBg(0, 3, 31, 14);
+                    SetupBg(1, 0, 29, 0);
+                    SetupBg(2, 2, 30, 0);
+                    SetupBg(3, 0, 28, 0);
+                } else {
+                    SetupBg(0, 3, 31, 14);
+                    SetupBg(1, 2, 30, 0);
+                    SetupBg(2, 0, 22, 0);
+                    SetupBg(3, 0, 23, 0);
+                }
+            }
+            if (u->unk_24 != 0) {
+                if (u->unk_2E[0] == 1 || u->unk_2E[0] == 3) {
+                    eu_080059D4(2, u->unk_00);
+                } else {
+                    LoadBgTiles(2, u->unk_00, u->unk_18);
+                }
+                LoadBgPalette(2, u->unk_08, u->unk_1C);
+                SetBgColorMode(2, 128);
+                SetBgSize(2, 0x8000);
+                if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
+                    eu_080059F4(2, *u->unk_0C);
+                } else {
+                    LoadBgMap(2, *u->unk_0C, 0x1000);
+                }
+                SetBgAffine(2, 0, 256, 256, 0, 0);
+            } else {
+                eu_0806C734(work);
+                eu_0806C7C8(work);
+                eu_0806C848(work);
+            }
+        }
+        if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0) {
+            func_08006120(0, 64);
+        } else if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0x80) {
+            func_08006120(1, 120);
+        }
+        work->unk_38 = 0;
+        eu_0806C974(work);
+#endif
     }
 }
-#else
-INCLUDE_ASM("msg/event_seq_0.s");
-#endif
 
 #ifdef VERSION_EU
 u8 eu_0806C734(EventSeqWork* work) {
