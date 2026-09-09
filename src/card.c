@@ -13673,7 +13673,24 @@ void func_jp_0808F240(UnkStruct_0808F0C0* w) {
         break;
     }
 }
-INCLUDE_ASM("card/func_jp_0808F34C.s");
+void func_jp_0808F240(UnkStruct_0808F0C0* w);
+extern u8 gUnk_0951C2B8[];
+extern u8 gUnkJp_094D4594[];
+extern u8 gUnkJp_094D4D94[];
+void func_jp_0808F34C(UnkStruct_0808F0C0* w) {
+    switch (w->unk_7C7) {
+    case 0:
+        LoadBgMap(3, gUnk_0951C2B8, 0x800);
+        break;
+    case 1:
+        LoadBgMap(3, gUnkJp_094D4594, 0x800);
+        break;
+    case 2:
+        LoadBgMap(3, gUnkJp_094D4D94, 0x800);
+        break;
+    }
+    func_jp_0808F240(w);
+}
 #endif
 #ifdef VERSION_EU
 void func_eu_0808EC78(UnkStruct_0808F0C0* w) {
