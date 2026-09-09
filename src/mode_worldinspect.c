@@ -560,10 +560,13 @@ void func_081006AC(void) {
                 m4aSongNumStart(0x69);
             }
         } else {
-            goto cancel;
+            gUnk_0203550A = -1;
+            LoadBgMap(0, gUnk_09A35A1C, 0x500);
+            gUnk_020357A4 = 16;
+            gUnk_020357A2 = 3;
+            m4aSongNumStart(0x68);
         }
     } else if (keys & B_BUTTON) {
-    cancel:
         gUnk_0203550A = -1;
         LoadBgMap(0, gUnk_09A35A1C, 0x500);
         gUnk_020357A4 = 16;
