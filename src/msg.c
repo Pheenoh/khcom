@@ -1931,6 +1931,9 @@ u16 func_08064D04(s32 a) {
 
 #ifdef VERSION_US
 s32 func_08064DD4(u16* a) {
+#else
+s32 func_08064DD4(u8* a) {
+#endif
     u16 sum;
     s32 v;
 
@@ -1940,7 +1943,11 @@ s32 func_08064DD4(u16* a) {
         v = 0;
 
         if (*a != 10) {
+#ifdef VERSION_US
             if ((u16)(*a - 32) <= 223) {
+#else
+            if (*a > 31) {
+#endif
                 v = *a;
             } else {
                 switch (*a) {
@@ -1997,9 +2004,6 @@ s32 func_08064DD4(u16* a) {
 
     return (s16)sum;
 }
-#else
-INCLUDE_ASM("msg/func_08064DD4.s");
-#endif
 
 #ifdef VERSION_EU
 #define MSG_LATIN_CHAR(p) (*(u8*)(p))
