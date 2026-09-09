@@ -440,6 +440,7 @@ u8 func_080A3F5C(UnkStruct_080A3F5C* w, void* a);
 u8 EnemyUsecard_1(UnkStruct_02034AAC* p, void* a);
 u8 func_080A7914(u8* work, void* a);
 void func_0808DD20(u8 a, u16 b);
+s32 func_080AAB08(UnkStruct_080AAB08* w);
 u8 func_08082FF0(u8* work);
 void func_08082F24(UnkStruct_02034AAC* p);
 void func_0808CBB4(u8 a, u8 b);
@@ -23699,7 +23700,7 @@ u8 func_080A7C80(u8* work, void* a) {
         SetTaskUpdate(a, (void*)func_080A86F4);
         return 1;
     case 1:
-        if ((u8)func_080AAB08(work) == 0) {
+        if ((u8)func_080AAB08((UnkStruct_080AAB08*)work) == 0) {
             return 1;
         }
 
@@ -24642,7 +24643,53 @@ void func_080AAA8C(u8* work, u8 kind) {
     }
 }
 
-INCLUDE_ASM("card/func_080AAB08.s");
+s32 func_080AAB08(UnkStruct_080AAB08* w) {
+    u16 idx;
+    UnkStruct_0808E2F0* e;
+    u16 i;
+    s32 card;
+    u16 id;
+    CardDef* def;
+    u16 kind;
+
+    idx = w->unk_6D0 * 5 + w->unk_6D2;
+    e = &w->unk_4CC[w->unk_6CC];
+    if (e->unk_00[idx] == 0) {
+        m4aSongNumStart(0x69);
+        return 1;
+    }
+    for (i = 0; i < e->unk_16; i++) {
+        card = e->unk_1C[i];
+        if (card != 0xFFFF) {
+            id = gCardCollection[card] & CARD_ID_MASK;
+            def = &gCardDefs[id];
+            if (id > 0x1C1) {
+                if (idx == 0) {
+                    gUnk_0203A9DC = gCardCollection[card] & CARD_ID_MASK;
+                    func_080850B0(&gCardCollection[card]);
+                    e->unk_1C[i] = 0xFFFF;
+                    e->unk_00[0]--;
+                    func_0808DD20(e->unk_00[0], 0);
+                    m4aSongNumStart(0x66);
+                    return 1;
+                }
+            } else {
+                kind = def->unk_20;
+                if (kind == idx) {
+                    gUnk_0203A9DC = gCardCollection[card] & CARD_ID_MASK;
+                    func_080850B0(&gCardCollection[card]);
+                    e->unk_1C[i] = 0xFFFF;
+                    e->unk_00[kind]--;
+                    func_0808DD20(e->unk_00[kind], kind);
+                    m4aSongNumStart(0x66);
+                    return 1;
+                }
+            }
+        }
+    }
+    m4aSongNumStart(0x69);
+    return 1;
+}
 
 s32 func_080AAC40(u8* work) {
     if (func_08085770(GetActiveDeckIndex()) > gGameState.cp) {
