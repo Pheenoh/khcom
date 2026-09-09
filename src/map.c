@@ -2436,7 +2436,6 @@ void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi) {
         }
     }
 }
-#ifdef NON_MATCHING
 void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f) {
     s32 i;
     s32 j;
@@ -2445,7 +2444,7 @@ void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f) {
     UnkStruct_080DFB8C* q;
 
     n = f - e;
-    x = e + GetRandom() % (f - e);
+    x = e + GetRandom() % (-e + f);
 
     for (i = 0; i < n; i++) {
         for (j = gUnk_02034F2A - 1; j >= 0; j--) {
@@ -2464,9 +2463,6 @@ void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f) {
         x = x > e ? x - 1 : f - 1;
     }
 }
-#else
-INCLUDE_ASM("map/func_080E3CD4.s");
-#endif
 
 u8 func_080E3D80(s16* a, s16* b, s16* c, s16* d) {
     u16 x1 = 0;
