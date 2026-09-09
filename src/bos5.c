@@ -2583,7 +2583,7 @@ void func_080FF10C(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y) {
         map += 32 - n;
     }
 }
-void func_080FF19C(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy) {
+void func_080FF19C(s16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy) {
     s16 i;
     s16 j;
     s16 n;
