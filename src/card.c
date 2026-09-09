@@ -13621,7 +13621,78 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
 INCLUDE_ASM("card/func_0808F358.s");
 #endif
 #ifdef VERSION_EU
-INCLUDE_ASM("card/func_eu_0808EC78.s");
+void func_eu_0808EC78(UnkStruct_0808F0C0* w) {
+    switch (w->unk_7C7) {
+    case 2:
+        switch (w->unk_7C2) {
+        case 0:
+            break;
+        case 1:
+        case 3:
+            if (w->unk_7C0 > 10) {
+                w->unk_7C0 = 10;
+            }
+            break;
+        case 2:
+        case 4:
+            break;
+        case 5:
+            if (w->unk_7C0 > 9) {
+                w->unk_7C0 = 9;
+            }
+            break;
+        case 6:
+            if (w->unk_7C8 == 1) {
+                w->unk_7C0 = 14;
+                w->unk_7C2 = 7;
+            }
+            break;
+        case 7:
+            if (w->unk_7C0 >= 10 && w->unk_7C0 <= 13) {
+                w->unk_7C0 = 9;
+            }
+            break;
+        }
+        break;
+    case 3:
+        switch (w->unk_7C2) {
+        case 0:
+            break;
+        case 1:
+            if (w->unk_7C0 > 5) {
+                w->unk_7C0 = 5;
+            }
+            break;
+        case 2:
+        case 3:
+            break;
+        case 4:
+            if (w->unk_7C0 > 2) {
+                w->unk_7C0 = 2;
+            }
+            break;
+        case 5:
+            break;
+        case 6:
+            if (w->unk_7C8 == 1) {
+                w->unk_7C2 = 6;
+                w->unk_7C0 = 14;
+            } else if (w->unk_7C0 > 1) {
+                w->unk_7C0 = 1;
+            }
+            break;
+        case 7:
+            if (w->unk_7C0 == 14) {
+                w->unk_7C2 = 6;
+            } else {
+                w->unk_7C2 = 6;
+                w->unk_7C0 = 0;
+            }
+            break;
+        }
+        break;
+    }
+}
 void func_eu_0808EC78(UnkStruct_0808F0C0* w);
 extern u8 gUnk_0951C2B8[];
 extern u8 gUnkEu_0953C324[];
