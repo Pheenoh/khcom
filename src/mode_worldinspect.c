@@ -7,6 +7,18 @@
 extern void* eu_0805E924(void* strings);
 extern u8 gUnkEu_09A86E60[];
 extern u32 gLanguage;
+extern u8 gUnkEu_09A2D440[];
+extern u8 gUnkEu_09A2E440[];
+extern u8 gUnkEu_09A2F440[];
+extern u8 gUnkEu_09A30440[];
+extern u8 gUnkEu_09A2CC40[];
+extern u8 gUnkEu_09A2DC40[];
+extern u8 gUnkEu_09A2EC40[];
+extern u8 gUnkEu_09A2FC40[];
+extern u8 gUnkEu_099A4CDA[];
+extern u8 gUnkEu_099A51AA[];
+extern u8 gUnkEu_099A563A[];
+extern u8 gUnkEu_099A5ACA[];
 extern u8 gUnkEu_099AABA4[];
 extern u8 gUnkEu_099AABBA[];
 extern u8 gUnkEu_099AABEE[];
@@ -25,6 +37,12 @@ extern u8 gUnkEu_099AC9B2[];
 #endif
 
 typedef struct {
+    u16 world : 8;
+    u16 unk_01 : 8;
+    u16 unk_02;
+} __attribute__((packed, aligned(2))) WorldinspectFloor;
+
+typedef struct {
     u8 unk_000[0x08];
     u32 flags;
     u8 unk_00C[0x02];
@@ -32,7 +50,7 @@ typedef struct {
     u8 unk_00F[0x165];
     u32 mooglePoints;
     u8 unk_178[0x0E];
-    u8 unk_186[12][4];
+    WorldinspectFloor unk_186[12];
 } WorldinspectGameState;
 
 typedef struct {
@@ -173,7 +191,7 @@ void LoadBgTiles(s32 bg, void* src, u16 size);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, s32 b, s32 c);
 void func_08065ACC(void* a, s32 b);
-void func_080FF19C(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
+void func_080FF19C(s16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 void func_080FF10C(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y);
 void func_080FF2B8(s16 index);
 u8 func_080FF228(s16 id);
@@ -212,15 +230,14 @@ s32 gUnk_020354D8;
 s32 gUnk_020354DC;
 u8 gUnk_020354E0;
 
-#ifdef NON_MATCHING
 void mode_worldinspect_0(void) {
     s16 i;
     s32 floor;
     s16 id;
     void** p;
     u32 floorKeep;
-    WorldinspectGameState* gs;
     s16 fa;
+    vu32* dma;
 
     p = &gUnk_020354D4;
     *p = EwramAlloc(0x500);
@@ -235,26 +252,23 @@ void mode_worldinspect_0(void) {
     SetBgPriority(1, 2);
     SetBgPriority(2, 1);
     SetBgPriority(3, 0);
-    gs = &gGameState;
-    floor = gs->floor;
+    floor = gGameState.floor;
     floorKeep = (u16)floor;
-    gUnk_020350F8 = gs->floor > 11 ? 11 : floor;
+    gUnk_020350F8 = gGameState.floor > 11 ? 11 : floor;
 
     gUnk_020350FA = 0;
 
     for (i = 0; i <= 11; i++) {
-        gUnk_02035100[i] = ((u8*)gs)[i * 4 + 0x186];
+        gUnk_02035100[i] = gGameState.unk_186[i].world;
 
         if (gUnk_02035100[i] != 0) {
             gUnk_020350FA = i + 1;
         }
     }
 
-    fa = gUnk_020350FA;
-    for (i = 0; i <= 13; i++) {
+    for (i = 0, fa = gUnk_020350FA; i <= 13; i++) {
         if ((gUnk_02039D30 & gUnk_09EF909C[i].unk_00) != 0) {
-            gUnk_02035100[fa] = gUnk_09EF909C[i].unk_02;
-            fa++;
+            gUnk_02035100[fa++] = gUnk_09EF909C[i].unk_02;
 
             if (fa > 11) {
                 break;
@@ -274,27 +288,61 @@ void mode_worldinspect_0(void) {
     LoadBgPalette(0, gUnk_09A3CE7C, 0x200);
 
     for (i = 0; i <= 11; i++) {
-        id = gUnk_02035100[i];
-
-        if (id != 0) {
+        if (gUnk_02035100[i] != 0) {
+            id = gUnk_02035100[i];
             gUnk_02035168[i] = LoadObjPalette(gUnk_09EF909C[id].unk_04, gUnk_09EF909C[id].unk_08);
             id = gUnk_02035100[i];
             gUnk_02035198[i] = LoadObjTiles(gUnk_09EF909C[id].unk_0C, gUnk_09EF909C[id].unk_10);
             id = gUnk_02035100[i];
             gUnk_020351C8[i] = gUnk_09EF909C[id].unk_14;
         } else {
-            gUnk_02035168[i] = (void*)id;
-            gUnk_02035198[i] = (void*)id;
-            gUnk_020351C8[i] = (void*)id;
+            gUnk_02035168[i] = 0;
+            gUnk_02035198[i] = 0;
+            gUnk_020351C8[i] = 0;
         }
     }
 
     LoadBgTiles(0, gUnk_099FB53C, 0x6BC0);
+#ifdef VERSION_EU
+    if (gGameState.flags & 8) {
+        switch (gLanguage) {
+        case 1:
+            RequestDma3Copy(gUnkEu_09A2D440, (u8*)GetBgCharBase(0) + 0x6400, 0x800);
+            break;
+        case 4:
+            RequestDma3Copy(gUnkEu_09A2E440, (u8*)GetBgCharBase(0) + 0x6400, 0x800);
+            break;
+        case 3:
+            RequestDma3Copy(gUnkEu_09A2F440, (u8*)GetBgCharBase(0) + 0x6400, 0x800);
+            break;
+        case 2:
+            RequestDma3Copy(gUnkEu_09A30440, (u8*)GetBgCharBase(0) + 0x6400, 0x800);
+            break;
+        }
+    } else {
+        switch (gLanguage) {
+        case 1:
+            RequestDma3Copy(gUnkEu_09A2CC40, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+            break;
+        case 4:
+            RequestDma3Copy(gUnkEu_09A2DC40, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+            break;
+        case 3:
+            RequestDma3Copy(gUnkEu_09A2EC40, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+            break;
+        case 2:
+            RequestDma3Copy(gUnkEu_09A2FC40, (u8*)GetBgCharBase(0) + 0x800, 0x800);
+            break;
+        }
+    }
+#endif
+
     LoadBgMap(0, gUnk_09A324DC, 0x500);
-    *(vu32*)0x040000D4 = (u32)gUnk_09A32EDC;
-    *(vu32*)0x040000D8 = (u32)gUnk_020354D4;
-    *(vu32*)0x040000DC = 0x80000280;
-    *(vu32*)0x040000DC;
+    dma = (vu32*)0x040000D4;
+    dma[0] = (u32)gUnk_09A32EDC;
+    dma[1] = (u32)gUnk_020354D4;
+    dma[2] = 0x80000280;
+    dma[2];
 
     for (i = 0; i <= 11; i++) {
         if (gUnk_02035100[i] != 0) {
@@ -304,8 +352,9 @@ void mode_worldinspect_0(void) {
 
     for (i = 0; i < gUnk_020350FA - 1; i++) {
         if (gUnk_02035100[i] != 0 && gUnk_02035100[i + 1] != 0) {
+            WorldinspectConn* conn = gUnk_099930BC;
             id = gUnk_09EF8FAC[i].unk_0C;
-            func_080FF19C(gUnk_099930BC[id].unk_00, gUnk_099930BC[id].unk_02, gUnk_09A333DC, gUnk_099930BC[id].unk_04, gUnk_099930BC[id].unk_06, gUnk_020354D4, gUnk_09EF8FAC[i].unk_0E, gUnk_09EF8FAC[i].unk_10);
+            func_080FF19C(conn[id].unk_00, conn[id].unk_02, gUnk_09A333DC, conn[id].unk_04, conn[id].unk_06, gUnk_020354D4, gUnk_09EF8FAC[i].unk_0E, gUnk_09EF8FAC[i].unk_10);
         }
     }
 
@@ -359,15 +408,35 @@ void mode_worldinspect_0(void) {
     func_08065ACC(gUnk_020352C0, 0x3C);
 #endif
     gUnk_0203511C = LoadObjPalette(gUnk_09A3D07C, 0x20);
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        gUnk_02035120 = LoadObjTiles(gUnk_0999CFC6, 0x400);
+        break;
+    case 1:
+        gUnk_02035120 = LoadObjTiles(gUnkEu_099A4CDA, 0x440);
+        break;
+    case 4:
+        gUnk_02035120 = LoadObjTiles(gUnkEu_099A51AA, 0x400);
+        break;
+    case 3:
+        gUnk_02035120 = LoadObjTiles(gUnkEu_099A563A, 0x400);
+        break;
+    case 2:
+    default:
+        gUnk_02035120 = LoadObjTiles(gUnkEu_099A5ACA, 0x440);
+        break;
+    }
+#elif defined(VERSION_JP)
+    gUnk_02035120 = LoadObjTiles(gUnk_0999CFC6, 0x3C0);
+#else
     gUnk_02035120 = LoadObjTiles(gUnk_0999CFC6, 0x400);
+#endif
     EnableBg(0);
     EnableBg(1);
     DisableBg(2);
     DisableBg(3);
 }
-#else
-INCLUDE_ASM("mode_worldinspect/mode_worldinspect_0.s");
-#endif
 
 void mode_worldinspect_1(void) {
     UpdatePlayTime();
