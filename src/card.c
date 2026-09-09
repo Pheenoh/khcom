@@ -377,7 +377,7 @@ void LoadObjPaletteBank(u16 bank, void* src);
 void* _08066468(s32 a);
 u8 func_080A5198(UnkStruct_080A3F5C* w, void* a);
 u8 func_080A5034(UnkStruct_080A3F5C* w, void* a);
-u8 func_0808A910(u8* work, void* a);
+u8 func_0808A910(UnkStruct_0808DB04* w, void* a);
 u8 func_0807D7B0(UnkStruct_02034AAC* p);
 void func_0806C2C0(u8 a);
 UnkStruct_080038C8* AllocObjPalette(s32 a);
@@ -10166,7 +10166,69 @@ u8 func_0808A7E4(u8* work, void* a) {
     TaskPoolUpdate(work);
     return 1;
 }
-INCLUDE_ASM("card/func_0808A910.s");
+u8 func_0808A910(UnkStruct_0808DB04* w, void* a) {
+    u16 i;
+    u32 zero;
+
+    func_08006120(0, 4);
+
+    switch (w->unk_8D0) {
+    case 0:
+        w->unk_898 = 286;
+        w->unk_4D8 = EwramAlloc(w->unk_898 * sizeof(UnkStruct_0808E2F0));
+        zero = 0;
+        CpuSet(&zero, w->unk_4D8, 0x05000000 | (w->unk_898 * 8));
+        w->unk_4D4 = 0;
+        w->unk_894 = 7;
+        w->unk_896 = 113;
+        break;
+    case 1:
+        func_08084D78((UnkStruct_08084D78*)w->unk_4D8, w->unk_8C0, 0, w->unk_898, w->unk_4FC);
+        break;
+    case 2:
+        w->unk_898 = func_08084E50((UnkStruct_08084D78*)w->unk_4D8, w->unk_8C0, 0, w->unk_898, w->unk_4FC);
+        break;
+    case 3:
+        if (w->unk_898 != 0) {
+            func_0808FA8C(w);
+        }
+        break;
+    case 4:
+        for (i = 0; i < 286; i++) {
+            if (w->unk_4D8[i].unk_16 != 0) {
+                EwramFree(w->unk_4D8[i].unk_1C);
+            }
+        }
+
+        EwramFree(w->unk_4D8);
+        break;
+    case 5:
+        w->unk_8C1 = 5;
+        w->unk_8D4 = func_0808C60C((u8*)w, 5, 1);
+        func_0808CD48((u8*)w);
+        w->unk_848 = gUnk_0903595E[0] << 8;
+        w->unk_84C = gUnk_09035964[0] << 8;
+        w->unk_8C7 = 3;
+        w->unk_884 = 0;
+        w->unk_886 = 0;
+        func_0808D828((u8*)w);
+
+        if (w->unk_8D4 != 0) {
+            SetTaskUpdate(a, func_0808AB48);
+        } else {
+            w->unk_8B1 = 10;
+            SetTaskUpdate(a, func_080882DC);
+            w->unk_884 = w->unk_8C1;
+            w->unk_8B7 = 1;
+        }
+        break;
+    }
+
+    w->unk_8D0++;
+    TaskPoolUpdate(w->unk_7C8);
+    TaskPoolUpdate(w->unk_7DC);
+    return 1;
+}
 INCLUDE_ASM("card/func_0808AB48.s");
 
 u8 func_0808B068(u8* work, void* a) {
