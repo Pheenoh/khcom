@@ -1053,7 +1053,114 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     }
 }
 
-INCLUDE_ASM("frd/task_frd_aladdin_1.s");
+u8 task_frd_aladdin_1(FrdAladdinWork* work) {
+    FrdBody* body;
+    s32 x;
+    s32 y;
+    s32 delta;
+
+    body = &work->unk_020;
+    if (gGameState.world != 1) {
+        return 0;
+    }
+    if ((work->unk_14C ? gBtlWork->unk_068 : gUnk_02039B9C->unk_068) & 0x40000000) return 0;
+    switch (work->unk_148) {
+    case 0:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
+            work->unk_14E++;
+        }
+        body->x += (work->unk_158 - body->x) >> 4;
+        func_0801A8A4(&body->x, &body->y, -16, 0);
+        if (func_080490FC(work)) {
+            work->unk_148 = 1;
+            work->unk_14E = 0;
+            m4aSongNumStart(0xC0);
+        }
+        break;
+    case 1:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ED4C, &work->anim, 1, 0, work->tiles);
+        }
+        if (AnimIsFinished(&work->anim)) {
+            work->unk_148 = 3;
+            work->unk_14E = 0;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    case 2:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
+            if (!(body->flags & 4)) {
+                work->unk_158 = (gBtlWork->unk_0DA - 64) << 8;
+            } else {
+                work->unk_158 = (gBtlWork->unk_0DC + 64) << 8;
+            }
+            work->unk_154 = -0x500;
+            work->unk_150 = 30;
+        }
+        ApproachValue(&body->x, work->unk_158, work->unk_150);
+        func_080490FC(work);
+        if (work->unk_150 <= 0) {
+            return 0;
+        }
+        work->unk_14E++;
+        work->unk_150--;
+        break;
+    case 3:
+        if (work->unk_14E == 0) {
+            func_08019068(gUnk_0813ED4C, &work->anim, 2, 1, work->tiles);
+        }
+        func_0801D288();
+        if (work->unk_014->unk_034 & 4) {
+            body->flags |= 4;
+            x = work->unk_014->unk_004 - 0x2800;
+        } else {
+            body->flags &= ~4ULL;
+            x = work->unk_014->unk_004 + 0x2800;
+        }
+        y = work->unk_014->unk_008;
+        delta = (x - body->x) >> 3;
+        if (delta < -0x400) {
+            delta = -0x400;
+        } else if (delta > 0x400) {
+            delta = 0x400;
+        }
+        body->x += delta;
+        delta = (y - body->y) >> 5;
+        if (delta < -0x200) {
+            delta = -0x200;
+        } else if (delta > 0x200) {
+            delta = 0x200;
+        }
+        body->y += delta;
+        if (work->anim.timer == 0) {
+            switch (AnimGetFrame(&work->anim)) {
+            case 0:
+            case 1:
+            case 5:
+            case 6:
+                if ((body->flags & 4) ? func_08011F78(0x95, body->x - 0x1E00, body->y, body->z, 20, 20, 50) : func_08011F78(0x95, body->x + 0x1E00, body->y, body->z, 20, 20, 50)) {
+                    m4aSongNumStart(0x251);
+                }
+                break;
+            }
+        }
+        func_080490FC(work);
+        func_0801A8A4(&body->x, &body->y, -16, 0);
+        if (work->unk_14E > work->unk_152) {
+            work->unk_14E = 0;
+            work->unk_148 = 2;
+        } else {
+            work->unk_14E++;
+        }
+        break;
+    }
+    AnimUpdate(&work->anim);
+    TaskPoolUpdate(&work->unk_000);
+    return 1;
+}
 
 void task_frd_aladdin_2(FrdAladdinWork* work) {
     FrdBody* body;
