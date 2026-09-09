@@ -1,6 +1,12 @@
 #include "poo.h"
 #include "macros.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern u8* gUnkEu_09F800A4[];
+extern u8* gUnkEu_09F800B8[];
+#endif
+
 PooWork* gPooWork;
 u32 gUnk_02034DAC;
 PooSpawnArgs gUnk_02034DB0;
@@ -7047,7 +7053,6 @@ void func_080D30C8(void) {
     LoadPalette(gUnk_096FDA8C[gGameState.world].unk_08, (void*)0x05000140, 0x20);
 }
 
-#ifndef VERSION_EU
 void func_080D313C(void) {
     u8* src;
     void* dst;
@@ -7055,9 +7060,17 @@ void func_080D313C(void) {
     dst = (u8*)GetBgCharBase(2) + 0x20;
 
     if ((gGameState.flags & 8) != 0) {
+#ifdef VERSION_EU
+        src = gUnkEu_09F800B8[gLanguage] + gGameState.floor * 0x140;
+#else
         src = &gUnk_097B8258[gGameState.floor * 0x140];
+#endif
     } else {
+#ifdef VERSION_EU
+        src = gUnkEu_09F800A4[gLanguage] + gGameState.floor * 0x140;
+#else
         src = &gUnk_097B7218[gGameState.floor * 0x140];
+#endif
     }
     RequestDma3Copy(src, dst, 0x140);
     dst = (u8*)GetBgScreenBase(2) + 0x480;
@@ -7067,6 +7080,3 @@ void func_080D313C(void) {
     src += 0x40;
     RequestDma3Copy(src, dst, 10);
 }
-#else
-INCLUDE_ASM("poo/func_080D313C.s");
-#endif
