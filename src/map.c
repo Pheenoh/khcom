@@ -2287,7 +2287,6 @@ void func_080E3400(u8 i, s16 a, s16 b, s16 c, u8 e) {
     EwramFree(buf);
 }
 
-#ifdef NON_MATCHING
 void func_080E3768(u8 i, s16 a, s16 b, s16 c, s16 d, u8 e) {
     s16 x;
     s16 yn;
@@ -2313,21 +2312,21 @@ void func_080E3768(u8 i, s16 a, s16 b, s16 c, s16 d, u8 e) {
     *w++ = y;
 
     for (x = c + 1; x < b - 1; x++) {
-        t = func_080E300C(i, x, y);
+        s32 t = (u8)func_080E300C(i, x, y);
 
         if (t == 11) {
             if (y <= 3) {
                 t = 6;
             } else if (i == 0) {
                 if (e == 2) {
-                    t = func_080E2F48(a, b, x, 1);
+                    t = (u8)func_080E2F48(a, b, x, 1);
                 } else if (e == 3) {
-                    t = func_080E2F98(a, b, x, 1);
+                    t = (u8)func_080E2F98(a, b, x, 1);
                 } else {
-                    t = func_080E2E24(a, b, x);
+                    t = (u8)func_080E2E24(a, b, x);
                 }
             } else {
-                t = func_080E2E24(a, b, x);
+                t = (u8)func_080E2E24(a, b, x);
             }
         }
 
@@ -2350,21 +2349,21 @@ void func_080E3768(u8 i, s16 a, s16 b, s16 c, s16 d, u8 e) {
     w--;
 
     for (x = c - 1; x > a; x--) {
-        t = func_080E300C(i, x, y);
+        s32 t = (u8)func_080E300C(i, x, y);
 
         if (t == 11) {
             if (y <= 3) {
                 t = 4;
             } else if (i == 0) {
                 if (e == 2) {
-                    t = func_080E2F48(a, b, x, 1);
+                    t = (u8)func_080E2F48(a, b, x, 1);
                 } else if (e == 3) {
-                    t = func_080E2F98(a, b, x, 1);
+                    t = (u8)func_080E2F98(a, b, x, 1);
                 } else {
-                    t = func_080E2E24(a, b, x);
+                    t = (u8)func_080E2E24(a, b, x);
                 }
             } else {
-                t = func_080E2E24(a, b, x);
+                t = (u8)func_080E2E24(a, b, x);
             }
         }
 
@@ -2379,7 +2378,7 @@ void func_080E3768(u8 i, s16 a, s16 b, s16 c, s16 d, u8 e) {
     q = func_080E08BC(x, n);
     func_080E0900(q, 4, v);
     q->unk_00 |= 0x10;
-    yb = b - a + *(buf + b - a - 1);
+    yb = *(buf + b - a - 1) + (b - a);
     y = n + 1;
     q = func_080E08BC(a, y);
     k = 5;
@@ -2428,9 +2427,6 @@ void func_080E3768(u8 i, s16 a, s16 b, s16 c, s16 d, u8 e) {
     q->unk_00 |= 0x10;
     EwramFree(buf);
 }
-#else
-INCLUDE_ASM("map/func_080E3768.s");
-#endif
 
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi) {
     s32 x = lo + GetRandom() % (hi - lo);
