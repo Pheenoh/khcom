@@ -188,7 +188,8 @@ u8 func_0807D810(u8* work);
 void func_0807D4B8(UnkStruct_02034AAC* p);
 void func_08000D6C(void* a, void* b, void* c);
 void func_08000D48(void* a, void* b, void* c);
-u8 func_0808EC24(u8* work);
+u8 func_0808EC24(UnkStruct_0808DB04* w);
+void func_0808EA0C(UnkStruct_0808DB04* w, u8 mode);
 void TaskPoolDestroy(TaskPool* a);
 u8 func_08006314(void);
 void* AnimUpdate(AnimState* a);
@@ -11996,7 +11997,84 @@ u8 func_0808E934(u8* work, s16 x, s16 y, u16 dir) {
 }
 
 INCLUDE_ASM("card/func_0808EA0C.s");
-INCLUDE_ASM("card/func_0808EC24.s");
+u8 func_0808EC24(UnkStruct_0808DB04* w) {
+    UnkStruct_0808E890* p;
+    UnkStruct_0808E890* q;
+    UnkStruct_0808E890* last;
+    UnkStruct_0808E890* n;
+
+    p = ListPoolFirst(w->unk_7F0);
+    last = ListPoolLast(w->unk_7F0);
+    q = 0;
+
+    while (p != 0) {
+        if (w->unk_884 == p->unk_22 && (s16)w->unk_886 == p->unk_24) {
+            q = p;
+            break;
+        }
+
+        p = ListPoolNext(&p->unk_2C);
+    }
+
+    if (p->unk_20 != 0xFFFF) {
+        while (q != 0) {
+            if (q->unk_20 == 0xFFFF) {
+                break;
+            }
+
+            q = ListPoolNext(&q->unk_2C);
+        }
+
+        if (q != 0) {
+            while (p != q) {
+                n = (UnkStruct_0808E890*)ListPoolPrev(&q->unk_2C);
+
+                if (n != 0) {
+                    *(u16*)q->unk_28 = *(u16*)n->unk_28;
+                }
+
+                q = (UnkStruct_0808E890*)ListPoolPrev(&q->unk_2C);
+            }
+
+            *(u16*)p->unk_28 = 0xFFFF;
+            func_0808C90C((u8*)w);
+            TaskPoolUpdate(w->unk_7C8);
+            func_0808EA0C(w, w->unk_8C1);
+            w->unk_884++;
+
+            if (w->unk_884 > 2) {
+                w->unk_884 = 0;
+
+                if ((s16)w->unk_886 <= 2) {
+                    w->unk_886++;
+                } else {
+                    func_0808C9CC((u8*)w);
+                }
+            }
+
+            w->unk_8B7 = 1;
+            return 1;
+        }
+    } else {
+        while (p != 0) {
+            n = ListPoolNext(&p->unk_2C);
+
+            if (n != 0) {
+                *(u16*)p->unk_28 = *(u16*)n->unk_28;
+            }
+
+            p = ListPoolNext(&p->unk_2C);
+        }
+
+        *(u16*)last->unk_28 = 0xFFFF;
+        func_0808C90C((u8*)w);
+        TaskPoolUpdate(w->unk_7C8);
+        func_0808EA0C(w, w->unk_8C1);
+        return 1;
+    }
+
+    return 0;
+}
 u8 func_0808EDA4(UnkStruct_0808DB04* w) {
     UnkStruct_0808E890* p;
     UnkStruct_0808E890* q;
@@ -12015,7 +12093,7 @@ u8 func_0808EDA4(UnkStruct_0808DB04* w) {
     pos = *(s32*)&w->unk_884;
 
     if (pos == *(s32*)&w->unk_874) {
-        return func_0808EC24((u8*)w);
+        return func_0808EC24(w);
     }
 
     while (p != 0) {
