@@ -2711,7 +2711,6 @@ u16 func_08065B6C(u16* a, TextSlot* b) {
 #endif
 }
 
-#ifndef VERSION_JP
 s32 func_08065B7C(u16* a, TextSlot* b) {
     s32 n;
 
@@ -2735,7 +2734,11 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
 #ifdef VERSION_EU
             v = MSG_CHAR(a);
 #else
+#ifdef VERSION_JP
+            if (MSG_CHAR(a) > 31) {
+#else
             if ((u16)(MSG_CHAR(a) - 32) <= 223) {
+#endif
                 v = MSG_CHAR(a);
             } else {
                 switch (MSG_CHAR(a)) {
@@ -2812,7 +2815,7 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
         }
         gUnk_02034A90++;
         b++;
-#ifdef VERSION_EU
+#if defined(VERSION_EU) || defined(VERSION_JP)
         a = (u16*)((u8*)a + 1);
 #else
         a++;
@@ -2820,9 +2823,6 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
     }
     return gUnk_02034A90;
 }
-#else
-INCLUDE_ASM("msg/func_08065B7C.s");
-#endif
 #ifdef VERSION_US
 s32 func_08065D10(u16* a, TextSlot* b) {
     u8 buf[2];
