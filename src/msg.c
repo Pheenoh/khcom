@@ -1663,7 +1663,7 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
     }
 }
 #endif
-#ifdef NON_MATCHING
+#if defined(NON_MATCHING) && !defined(VERSION_EU)
 void func_08064624(void) {
     u8 n;
     u8 k;
