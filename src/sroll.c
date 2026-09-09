@@ -874,28 +874,22 @@ void func_08115A5C(u32* dst, u16* src, u32* pal, s32 x) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_08115AD4(u32* dst, u16* src, u32* pal, s32 x) {
     SrollShift* t;
     s32 i;
     u32 v;
-    u32 c;
 
     t = &gUnk_09A54C78[x];
 
     for (i = 0; i <= 7; i++) {
-        c = src[i] << 16;
-        v = pal[(c >> 22) & 3];
-        v |= pal[(c >> 20) & 3] << 4;
-        v |= pal[(c >> 18) & 3] << 8;
+        v = pal[(src[i] >> 6) & 3];
+        v |= pal[(src[i] >> 4) & 3] << 4;
+        v |= pal[(src[i] >> 2) & 3] << 8;
         v |= pal[src[i] & 3] << 12;
         dst[i] |= v << t->unk_00;
         dst[i + 8] |= v >> t->unk_04;
     }
 }
-#else
-INCLUDE_ASM("sroll/func_08115AD4.s");
-#endif
 #ifdef NON_MATCHING
 void func_08115B6C(u32* dst, u16* src, u32* pal, s32 x) {
     SrollShift* t;
