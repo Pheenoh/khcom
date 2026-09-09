@@ -461,11 +461,14 @@ static s32 func_08115178(s32 x) {
     return x * x;
 }
 
-#ifndef VERSION_EU
 void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
     AnimState* p;
     s32 i;
 
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+#endif
     if (kind == 0) {
 #ifdef VERSION_JP
         w->tiles = LoadObjTiles(gUnk_09C8D47A, 200 * 16);
@@ -493,10 +496,96 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             p++;
         }
     }
-}
-#else
-INCLUDE_ASM("sroll/task_sroll_c_char_0.s");
+#ifdef VERSION_EU
+        break;
+    case 1:
+        if (kind == 0) {
+            w->tiles = LoadObjTiles(gUnkEu_09CEF9E8, 168 * 32);
+            w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
+
+            for (i = 0, p = w->anim; i <= 4; i++) {
+                AnimInit(p, (s32)gUnkEu_09F879D4, (s32)gUnkEu_09F8785C);
+                AnimStart(p, i, 0);
+                p++;
+            }
+        } else {
+            w->tiles = LoadObjTiles(gUnkEu_09CF1B7E, 158 * 32);
+            w->palette = LoadObjPalette(gUnk_09D6D034, 224);
+
+            for (i = 0, p = w->anim; i <= 4; i++) {
+                AnimInit(p, (s32)gUnkEu_09F87AF0, (s32)gUnkEu_09F879E8);
+                AnimStart(p, i, 0);
+                p++;
+            }
+        }
+        break;
+    case 4:
+        if (kind == 0) {
+            w->tiles = LoadObjTiles(gUnkEu_09CF3FEE, 167 * 32);
+            w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
+
+            for (i = 0, p = w->anim; i <= 4; i++) {
+                AnimInit(p, (s32)gUnkEu_09F87C7C, (s32)gUnkEu_09F87B04);
+                AnimStart(p, i, 0);
+                p++;
+            }
+        } else {
+            w->tiles = LoadObjTiles(gUnkEu_09CF6334, 186 * 32);
+            w->palette = LoadObjPalette(gUnk_09D6D034, 224);
+
+            for (i = 0, p = w->anim; i <= 4; i++) {
+                AnimInit(p, (s32)gUnkEu_09F87D98, (s32)gUnkEu_09F87C90);
+                AnimStart(p, i, 0);
+                p++;
+            }
+        }
+        break;
+    case 3:
+        if (kind == 0) {
+            w->tiles = LoadObjTiles(gUnkEu_09CF86A2, 142 * 32);
+            w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
+
+            for (i = 0, p = w->anim; i <= 4; i++) {
+                AnimInit(p, (s32)gUnkEu_09F87F24, (s32)gUnkEu_09F87DAC);
+                AnimStart(p, i, 0);
+                p++;
+            }
+        } else {
+            w->tiles = LoadObjTiles(gUnkEu_09CFA56C, 162 * 32);
+            w->palette = LoadObjPalette(gUnk_09D6D034, 224);
+
+            for (i = 0, p = w->anim; i <= 4; i++) {
+                AnimInit(p, (s32)gUnkEu_09F88040, (s32)gUnkEu_09F87F38);
+                AnimStart(p, i, 0);
+                p++;
+            }
+        }
+        break;
+    case 2:
+    default:
+        if (kind == 0) {
+            w->tiles = LoadObjTiles(gUnkEu_09CFCB38, 188 * 32);
+            w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
+
+            for (i = 0, p = w->anim; i <= 4; i++) {
+                AnimInit(p, (s32)gUnkEu_09F881CC, (s32)gUnkEu_09F88054);
+                AnimStart(p, i, 0);
+                p++;
+            }
+        } else {
+            w->tiles = LoadObjTiles(gUnkEu_09CFEFA8, 190 * 32);
+            w->palette = LoadObjPalette(gUnk_09D6D034, 224);
+
+            for (i = 0, p = w->anim; i <= 4; i++) {
+                AnimInit(p, (s32)gUnkEu_09F882E8, (s32)gUnkEu_09F881E0);
+                AnimStart(p, i, 0);
+                p++;
+            }
+        }
+        break;
+    }
 #endif
+}
 
 u8 task_sroll_c_char_1(SrollCCharWork* w) {
     AnimState* p;
