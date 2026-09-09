@@ -424,7 +424,8 @@ typedef struct RikuWork {
     s16 unk_1CC;
     u16 unk_1CE;
     RikuSpawn unk_1D0[9];
-    u8 unk_380[0x04];
+    u16 unk_380;
+    u8 unk_382[0x02];
 } RikuWork;
 
 typedef struct HookBombWork {
