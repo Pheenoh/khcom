@@ -17,6 +17,11 @@ extern void* gUnkEu_088920BC[];
 extern u8 gUnkEu_096C798C[];
 extern u16 gUnkEu_095DA860[];
 extern u16 gUnkEu_095DA867[];
+extern u8 gUnkEu_096BF18C[];
+extern u8 gUnkEu_096C698C[];
+extern u8 gUnkEu_096C598C[];
+extern u8 gUnkEu_096C618C[];
+extern u8 gUnkEu_096C718C[];
 #endif
 
 #ifdef VERSION_JP
@@ -1303,16 +1308,37 @@ void func_080B1534(void) {
     RequestDma3Copy(gUnk_096AF744, (u8*)GetBgCharBase(1) + 0x2000, 0x2000);
 }
 
-#ifndef VERSION_EU
 void func_080B1558(void) {
+#ifdef VERSION_EU
+    RequestDma3Copy(gUnk_096B1744, (u8*)GetBgCharBase(1) + 0x4000, 0x2000);
+#else
     RequestDma3Copy(gUnk_096B1744, (u8*)GetBgCharBase(1) + 0x4000, 0x9E0);
+#endif
     LoadBgPalette(1, gUnk_096FBAC4, 0x200);
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        LoadBgMap(1, gUnkEu_096BF18C, 0x800);
+        break;
+    case 3:
+        LoadBgMap(1, gUnkEu_096C698C, 0x800);
+        break;
+    case 1:
+        LoadBgMap(1, gUnkEu_096C598C, 0x800);
+        break;
+    case 4:
+        LoadBgMap(1, gUnkEu_096C618C, 0x800);
+        break;
+    case 2:
+    default:
+        LoadBgMap(1, gUnkEu_096C718C, 0x800);
+        break;
+    }
+#else
     LoadBgMap(1, gUnk_096F7C64, 0x800);
+#endif
     DisableBg(1);
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B1558.s");
-#endif
 
 void func_080B15A4(void) {
     func_08006120(0, 16);
