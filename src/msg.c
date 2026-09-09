@@ -11719,7 +11719,6 @@ void func_08073508(MsgWinWork* p) {
     p->unk_29 = 1;
 }
 
-#ifdef NON_MATCHING
 void func_0807361C(MsgWinWork* p) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
     u8 v;
@@ -11734,9 +11733,9 @@ void func_0807361C(MsgWinWork* p) {
             if (p->unk_2B == 0) {
                 if ((p->unk_3C[p->unk_27].unk_14 & 0x8000) == 0) {
                     if ((p->unk_3C[p->unk_27].unk_14 & 0x40) == 0) {
-                        TaskCreate(p, &gTaskDescMsgface[1], (u8*)&p->unk_3C[p->unk_27] + 32);
+                        TaskCreate(p, &gTaskDescMsgface[1], &p->unk_3C[p->unk_27 + 1].unk_08);
                     } else {
-                        TaskCreate(p, &gTaskDescMsgface[2], (u8*)&p->unk_3C[p->unk_27] + 32);
+                        TaskCreate(p, &gTaskDescMsgface[2], &p->unk_3C[p->unk_27 + 1].unk_08);
                     }
                 } else {
                     v = 0;
@@ -11755,9 +11754,6 @@ void func_0807361C(MsgWinWork* p) {
         p->unk_25++;
     }
 }
-#else
-INCLUDE_ASM("msg/func_0807361C.s");
-#endif
 void func_080736F8(MsgWinWork* p) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
 
