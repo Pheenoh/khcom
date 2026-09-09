@@ -335,7 +335,7 @@ void* func_08066904(void);
 u16 func_0806692C(u8* s, u16* out);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_0809D160(UnkStruct_0809CE88* w);
-u8 func_080A25E0(u8* work, void* a);
+u8 func_080A25E0(UnkStruct_080A2678* w, void* a);
 void func_08006954(void);
 u8 func_0809C4B0(u8* work, void* a);
 void func_0807CC2C(UnkStruct_02034AAC* p);
@@ -22299,33 +22299,115 @@ u8 func_080A2370(void) {
 
     return 0;
 }
-INCLUDE_ASM("card/func_080A23A0.s");
+extern u8 gUnk_0815A09A[];
+extern u8 gUnk_0815A198[];
+extern u8 gUnk_0815A0EE[];
+extern u8 gUnk_0815A152[];
+extern u8 gUnk_0815A0A0[];
+#ifdef VERSION_EU
+extern u8 gUnkEu_08895EDC[];
+#endif
 
+#ifdef NON_MATCHING
+void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
+    UnkStruct_080A23A0_Args args = *a;
+    void* text;
+
+    func_08065ACC(w->unk_000, 20);
+    func_08065ACC(w->unk_0A0, 20);
+    func_08065ACC(w->unk_140, 20);
 #ifndef VERSION_JP
-s32 func_080A25B8(u8* work, void* a) {
-    SetTaskUpdate(a, func_080A25E0);
-    work[0x2B1]++;
-    return 1;
+    func_08065ACC(w->unk_1E0, 20);
+    w->unk_2B0 = func_08065B6C((u8*)gUnk_0903BFD4 + 0x24, w->unk_1E0);
+#endif
+    w->unk_28C = a->unk_04 >> 16;
+    w->unk_2B4 = a->unk_00;
+    if (args.unk_04 & 0x8000) {
+#ifdef VERSION_EU
+        w->unk_2AD = func_08065B6C(eu_0805E924(gUnk_0815A09A), w->unk_000);
+#else
+        w->unk_2AD = func_08065B6C(gUnk_0815A09A, w->unk_000);
+#endif
+    } else if (args.unk_04 & 0x4000) {
+#ifdef VERSION_EU
+        w->unk_2AD = func_08065B6C(eu_0805E924(gUnk_0815A198), w->unk_000);
+#else
+        w->unk_2AD = func_08065B6C(gUnk_0815A198, w->unk_000);
+#endif
+    } else if (!(gGameState.flags & 8)) {
+#ifdef VERSION_EU
+        w->unk_2AD = func_08065B6C(eu_0805E924(gUnk_0815A0EE), w->unk_000);
+#else
+        w->unk_2AD = func_08065B6C(gUnk_0815A0EE, w->unk_000);
+#endif
+    } else {
+#ifdef VERSION_EU
+        w->unk_2AD = func_08065B6C(eu_0805E924(gUnk_0815A152), w->unk_000);
+#else
+        w->unk_2AD = func_08065B6C(gUnk_0815A152, w->unk_000);
+#endif
+    }
+    w->unk_2AE = func_08065A70((u8)w->unk_28C, w->unk_0A0);
+#ifdef VERSION_EU
+    if ((args.unk_04 & 0x8000) && gLanguage == 4) {
+        text = gUnkEu_08895EDC;
+    } else {
+        text = gUnk_0815A0A0;
+    }
+    w->unk_2AF = func_08065B6C(eu_0805E924(text), w->unk_140);
+#else
+    w->unk_2AF = func_08065B6C(gUnk_0815A0A0, w->unk_140);
+#endif
+    w->unk_280 = _08066468(1);
+    func_080062F4(((u16*)w->unk_280)[3] + 16, 1);
+    w->unk_294 = 0x1000;
+    w->unk_298 = 0x3000;
+    w->unk_29C = 0x4200;
+    w->unk_2A0 = 0xC800;
+    w->unk_2A4 = 0xC800;
+    w->unk_2A8 = 0xC800;
+    w->unk_290 = 0xCE00;
+    w->unk_2AC = 14;
+    w->unk_2B1 = 0;
+    w->unk_294 = ((144 - (func_08065B08(w->unk_000, w->unk_2AD)
+#ifndef VERSION_JP
+                         + func_08065B08(w->unk_1E0, w->unk_2B0)
+#endif
+                         + func_08065B08(w->unk_0A0, w->unk_2AE)
+                         + func_08065B08(w->unk_140, w->unk_2AF))) / 2) << 8;
+#ifdef VERSION_EU
+    w->unk_284 = func_080038C8(0x780);
+    func_080038E4(w->unk_284, gUnk_09EF126C[0], gUnk_093F7C9C);
+#else
+    w->unk_284 = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
+#endif
+    w->unk_288 = LoadObjPalette(gUnk_09611AB8, 32);
 }
 #else
-INCLUDE_ASM("card/func_080A25B8.s");
+INCLUDE_ASM("card/func_080A23A0.s");
 #endif
-#ifdef VERSION_US
-u8 func_080A25E0(u8* work, void* a) {
-    s8* counter = (s8*)&work[0x2AC];
+
+s32 func_080A25B8(UnkStruct_080A2678* w, void* a) {
+    SetTaskUpdate(a, func_080A25E0);
+    w->unk_2B1++;
+    return 1;
+}
+#ifndef VERSION_EU
+u8 func_080A25E0(UnkStruct_080A2678* w, void* a) {
+    s8* counter = &w->unk_2AC;
 
     if (*counter > 0) {
-        ApproachValue((s32*)&work[0x290], 0x6C00, *counter);
-        ApproachValue((s32*)&work[0x2A0], 0x6600, *counter);
-        ApproachValue((s32*)&work[0x2A4], 0x6600, *counter);
-        ApproachValue((s32*)&work[0x2A8], 0x6600, *counter);
+        ApproachValue(&w->unk_290, 0x6C00, *counter);
+        ApproachValue(&w->unk_2A0, 0x6600, *counter);
+        ApproachValue(&w->unk_2A4, 0x6600, *counter);
+        ApproachValue(&w->unk_2A8, 0x6600, *counter);
         (*counter)--;
     } else if (*counter == 0) {
         m4aSongNumStart(202);
-        work[0x2AC] = -1;
+        w->unk_2AC = -1;
     }
 
-    if (**(u8**)&work[0x2B4] == 0) {
+    if (*w->unk_2B4 == 0) {
         return 0;
     }
     return 1;
