@@ -1494,7 +1494,6 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
     work->unk_110 = 25;
 }
 
-#ifdef NON_MATCHING
 u8 task_wlogo_tt_1(WlogoTtWork* work) {
     switch (work->unk_000) {
     case 0:
@@ -1532,7 +1531,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         if (work->unk_002 > 13) {
             work->unk_002 = 0;
             work->unk_004 = 0;
-            work->unk_108 = gUnk_09EF1B08[0];
+            work->unk_108 = gUnk_09EF1B08.first[0];
             work->unk_100[0] = 1;
             work->unk_000++;
         } else {
@@ -1546,7 +1545,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             if (work->unk_004 > 4) {
                 work->unk_004 = 4;
             }
-            work->unk_108 = gUnk_09EF1B08[work->unk_004];
+            work->unk_108 = gUnk_09EF1B08.first[work->unk_004];
         }
         work->unk_002++;
 
@@ -1566,7 +1565,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         if (work->unk_002 > 13) {
             work->unk_002 = 0;
             work->unk_004 = 0;
-            work->unk_10C = gUnk_09EF1B08[6];
+            work->unk_10C = gUnk_09EF1B08.second[0];
             work->unk_100[1] = 1;
             work->unk_000++;
         } else {
@@ -1580,7 +1579,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             if (work->unk_004 > 2) {
                 work->unk_004 = 2;
             }
-            work->unk_10C = gUnk_09EF1B08[work->unk_004 + 6];
+            work->unk_10C = gUnk_09EF1B08.second[work->unk_004];
         }
         work->unk_002++;
 
@@ -1695,13 +1694,13 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             SetBgBlend(0, 16 - work->unk_006, work->unk_006);
         }
         break;
+    default:
+        return 0;
     }
     TaskPoolUpdate(&work->unk_114);
     return 1;
 }
-#else
-INCLUDE_ASM("wlogo/task_wlogo_tt_1.s");
-#endif
+
 
 void task_wlogo_tt_2(WlogoTtWork* work) {
     s32 affine;

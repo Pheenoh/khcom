@@ -687,7 +687,12 @@ extern TaskDesc gTaskDescWlogoAgrFlash0;
 extern TaskDesc gTaskDescWlogoAgrFlash1;
 extern u8 gUnk_09EF1AEC[];
 extern TaskDesc gTaskDescWlogoPooObj;
-extern s32 gUnk_09EF1B08[];
+typedef struct WlogoTtMotion {
+    s32 first[6];
+    s32 second[6];
+} WlogoTtMotion;
+
+extern WlogoTtMotion gUnk_09EF1B08;
 extern TaskDesc gTaskDescWlogoTtObj;
 extern s16 gUnk_09EF1B68[][3];
 extern TaskDesc gTaskDescWlogoTtLine;
