@@ -8766,7 +8766,10 @@ u8 event_chara_1(Work0806180C* p, void* a) {
     }
     return 1;
 }
-#ifdef NON_MATCHING
+static inline s16 GetEventCharaScreenX(Work0806180C* p) {
+    return (p->unk_180 >> 8) - (gUnk_02039DC8->unk_58 >> 8);
+}
+
 void event_chara_2(Work0806180C* p) {
     Ent0806E9BC* e;
     s32 save;
@@ -8799,15 +8802,12 @@ void event_chara_2(Work0806180C* p) {
         } else {
             h |= 1;
         }
-        x = (p->unk_180 >> 8) - (gUnk_02039DC8->unk_58 >> 8);
+        x = GetEventCharaScreenX(p);
         y = (p->unk_184 >> 8) + gUnk_0903380C[p->unk_026].unk_00 - (gUnk_02039DC8->unk_5C >> 8);
         DrawSprite(x, y, p->gfx, p->tiles, p->palette, 0, h, 50);
     }
     p->unk_034 = save;
 }
-#else
-INCLUDE_ASM("msg/event_chara_2.s");
-#endif
 void event_chara_3(Work0806180C* p) {
     TaskPoolDestroy(&p->unk_010);
 
