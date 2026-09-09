@@ -243,12 +243,10 @@ void task_emy_01_0(EmyWork* work, void* obj) {
     work->unk_150 = 7;
 }
 
-#ifdef NON_MATCHING
 u8 task_emy_01_1(EmyWork* work) {
     EmyWork* w;
     EmyActor* act;
     u16 r;
-    s32 z;
     s32 x;
 
     w = work;
@@ -268,7 +266,8 @@ u8 task_emy_01_1(EmyWork* work) {
     }
 
     switch (work->unk_14C) {
-    case 0x12:
+    case 0x12: {
+        s32 z;
         func_08019068(gUnk_0813D434, &w->anim, 0, 0, w->tiles);
         work->unk_168 = 0;
 
@@ -294,7 +293,9 @@ u8 task_emy_01_1(EmyWork* work) {
             work->unk_154++;
         }
         break;
-    case 0x13:
+    }
+    case 0x13: {
+        s32 z;
         func_08019068(gUnk_0813D434, &w->anim, 1, 0, w->tiles);
         work->unk_168 = 0;
 
@@ -321,13 +322,10 @@ u8 task_emy_01_1(EmyWork* work) {
         }
         break;
     }
+    }
 
     return _0800CDF0(work);
 }
-
-#else
-INCLUDE_ASM("emy/task_emy_01_1.s");
-#endif
 
 void task_emy_01_2(EmyWork* work) {
     func_0800DF30(work);
