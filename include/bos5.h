@@ -478,7 +478,7 @@ extern u8 gTaskDescBosMap[];
 extern u8 gUnk_0999202C[];
 extern u8 gUnk_09A3C89C[];
 void func_080FB930(MdWork* work, u16 id);
-void func_080038E4(void* a, void* b);
+void func_080038E4(void* a, void* b, void* c);
 void func_080FB8DC(MdWork* work, s32 state);
 void func_080FBA14(MdWork* work, s16 id);
 u8 func_080FBA9C(MdWork* work);
