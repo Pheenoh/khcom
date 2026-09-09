@@ -8024,7 +8024,44 @@ u8 eu_0806C7C8(EventSeqWork* work) {
     }
     return 1;
 }
-INCLUDE_ASM("msg/eu_0806C848.s");
+u8 eu_0806C848(EventSeqWork* work) {
+    Ent09EE3CA0* u = gUnk_09EE3CA0[work->unk_2C];
+    if (u != NULL) {
+        if (u->unk_04 != NULL) {
+            if ((u->unk_2D & 1) != 0) {
+                LoadBgTiles(2, u->unk_04, u->unk_1A);
+            } else if (u->unk_2E[0] == 1 || u->unk_2E[0] == 3) {
+                eu_080059D4(1, u->unk_04);
+            } else {
+                LoadBgTiles(1, u->unk_04, u->unk_1A);
+            }
+        }
+        if (u->unk_14 != NULL) {
+            if ((u->unk_2D & 2) != 0) {
+                gBldCnt = 0x1844;
+                gBldAlpha = 0x050E;
+                SetBgPriority(2, 1);
+                gUnk_02039DC8->unk_6E = 0x1D42;
+                gUnk_02039DC8->unk_70 = 0x050E;
+            } else {
+                gUnk_02039DC8->unk_6E = 0;
+                gUnk_02039DC8->unk_70 = 0;
+            }
+            if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
+                work->unk_3C = 1;
+                eu_08005A1C(1, u->unk_14, u->unk_1E, u->unk_1F);
+            } else {
+                work->unk_3C = 0;
+                func_0800516C(1, u->unk_14, u->unk_1E, u->unk_1F);
+            }
+            func_080051C4(1, 0, 0);
+            gUnk_02039DC8->unk_79 = 1;
+        } else {
+            DisableBg(1);
+        }
+    }
+    return 1;
+}
 INCLUDE_ASM("msg/eu_0806C974.s");
 #endif
 #ifndef VERSION_EU
