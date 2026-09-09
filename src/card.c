@@ -240,7 +240,9 @@ void func_08012304(void* a);
 void func_0808E364(u8* work, u8 b);
 u8 func_08088F24(UnkStruct_0808DB04* w, void* a);
 u8 func_08089220(u8* work, void* a);
-void func_0808F3E8(void);
+struct UnkStruct_0808F0C0;
+u8 func_0808F3E8(struct UnkStruct_0808F0C0* w, void* a);
+u8 func_0808F660(struct UnkStruct_0808F0C0* w, void* a);
 extern u8 gUnk_09EE7F60[];
 extern u8 gUnk_09EE7F90[];
 extern s16 gUnk_0903570E[];
@@ -13278,13 +13280,41 @@ u8 func_0808EF80(u8* work, u16 dir) {
 }
 
 typedef struct UnkStruct_0808F0C0 {
-    u8 unk_000[0x798];
+    u8 unk_000[0x38];
+    u8 unk_038[0x40];
+    u8 unk_078[0x40];
+    u8 unk_0B8[0x40];
+    u8 unk_0F8[0xF0];
+    u8 unk_1E8[0x550];
+    void* unk_738;
+    UnkStruct_080038C8* unk_73C;
+    void* unk_740;
+    u8 unk_744[0x40];
+    u8 unk_784[0x14];
     AnimState unk_798;
-    u8 unk_7B0[0x10];
+    void* unk_7B0;
+    s32 unk_7B4;
+    s32 unk_7B8;
+    s32 unk_7BC;
     s16 unk_7C0;
     s16 unk_7C2;
-    u8 unk_7C4[4];
+    u8 unk_7C4;
+    u8 unk_7C5;
+    u8 unk_7C6;
+    u8 unk_7C7;
+#ifdef VERSION_EU
     u8 unk_7C8;
+    u8 unk_7C9[3];
+#endif
+    u8 taskpool[0x14];
+    u8 cardpool[0x14];
+    u8 unk_7F0[0xC0];
+    u8 unk_8B0;
+    u8 unk_8B1;
+    u8 unk_8B2[0xE];
+    u8 unk_8C0;
+    u8 unk_8C1[0xF];
+    u8 unk_8D0;
 } UnkStruct_0808F0C0;
 
 typedef struct UnkStruct_09035898 {
@@ -13590,7 +13620,151 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
 #else
 INCLUDE_ASM("card/func_0808F358.s");
 #endif
-INCLUDE_ASM("card/func_0808F3E8.s");
+#ifdef VERSION_EU
+INCLUDE_ASM("card/func_eu_0808EC78.s");
+INCLUDE_ASM("card/func_eu_0808EE08.s");
+#endif
+extern u8 gUnk_096145B8[];
+extern u8 gUnk_090A5F1E[];
+extern u8 gUnk_09EEB0B8[];
+extern void* gUnk_09EEB08C[];
+extern u8 gUnk_09417438[];
+extern u8 gUnk_09418438[];
+extern u8 gUnk_09419438[];
+extern u8 gUnk_0951C2B8[];
+extern u8 gUnk_09614518[];
+extern s16 gUnk_09035808[];
+extern s16 gUnk_09035874[];
+#ifdef VERSION_JP
+extern u8 gUnkJp_093D1694[];
+#endif
+#ifdef VERSION_EU
+extern void* gUnkEu_09F6FE30[];
+extern void* gUnkEu_09F6FE58[];
+extern void** gUnkEu_09F6FE44[];
+extern u8 gUnkEu_094F03A4[];
+extern u8 gUnkEu_094F1BA4[];
+extern u8 gUnkEu_094F13A4[];
+extern u8 gUnkEu_094F0BA4[];
+#endif
+u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
+    func_08006120(0, 16);
+#ifdef VERSION_EU
+    w->unk_8B0 = 0;
+    w->unk_7C8 = 0;
+#endif
+    switch (w->unk_8D0) {
+    case 0:
+        w->unk_8B1 = 13;
+        func_0808CD48(w);
+        DisableBg(0);
+        DisableBg(1);
+        DisableBg(2);
+#ifdef VERSION_EU
+        w->unk_738 = AllocObjTiles(0x400, 0);
+#else
+        w->unk_738 = AllocObjTiles(0x200, 0);
+#endif
+        w->unk_740 = LoadObjPalette(gUnk_096145B8, 32);
+        w->unk_73C = func_080038C8(0x80);
+#ifdef VERSION_EU
+        func_08002A10(w->unk_738, gUnkEu_09F6FE30[gLanguage]);
+        AnimInit(&w->unk_798, gUnkEu_09F6FE58[gLanguage], gUnkEu_09F6FE44[gLanguage]);
+#else
+        func_08002A10(w->unk_738, gUnk_090A5F1E);
+        AnimInit(&w->unk_798, gUnk_09EEB0B8, gUnk_09EEB08C);
+#endif
+        AnimStart(&w->unk_798, 0, 1);
+        w->unk_7B0 = AnimGetGfx(&w->unk_798);
+#ifdef VERSION_EU
+        func_080038E4(w->unk_73C, gUnkEu_09F6FE44[gLanguage][10], gUnkEu_09F6FE30[gLanguage]);
+#else
+        func_080038E4(w->unk_73C, gUnk_09EEB08C[10], gUnk_090A5F1E);
+#endif
+        func_08065AE0(w->unk_038, 8);
+        func_08065AE0(w->unk_078, 8);
+        func_08065AE0(w->unk_0B8, 8);
+        func_08065AE0(w->unk_0F8, 30);
+        func_08065AE0(w->unk_1E8, 90);
+        func_08065ACC(w->unk_744, 8);
+        func_0808F284((u8*)w);
+        w->unk_7C4 = func_08065B6C(w->unk_784, w->unk_744);
+        w->unk_7BC = ((s16)func_08065B08((TextSlot*)w->unk_744, w->unk_7C4) << 8) + 0x8300;
+        break;
+    case 1:
+#ifdef VERSION_JP
+        LoadBgTiles(3, gUnk_09417438, 0x2000);
+#else
+        LoadBgTiles(3, gUnk_09417438, 0x1000);
+#endif
+        break;
+    case 2:
+#ifdef VERSION_JP
+        RequestDma3Copy(gUnk_09418438, (u8*)GetBgCharBase(3) + 0x2000, 0x2000);
+#else
+        RequestDma3Copy(gUnk_09418438, (u8*)GetBgCharBase(3) + 0x1000, 0x1000);
+#endif
+        break;
+    case 3:
+#ifdef VERSION_JP
+        RequestDma3Copy(gUnk_09419438, (u8*)GetBgCharBase(3) + 0x4000, 0x2000);
+#elif defined(VERSION_EU)
+        RequestDma3Copy(gUnk_09419438, (u8*)GetBgCharBase(3) + 0x2000, 0x2E40);
+#else
+        RequestDma3Copy(gUnk_09419438, (u8*)GetBgCharBase(3) + 0x2000, 0xFE0);
+#endif
+        break;
+    case 4:
+#ifdef VERSION_JP
+        RequestDma3Copy(gUnkJp_093D1694, (u8*)GetBgCharBase(3) + 0x6000, 0x1000);
+#elif defined(VERSION_EU)
+        switch (gLanguage) {
+        case 0:
+            break;
+        case 1:
+            RequestDma3Copy(gUnkEu_094F03A4, (u8*)GetBgCharBase(3) + 0x4800, 0x800);
+            break;
+        case 2:
+            RequestDma3Copy(gUnkEu_094F1BA4, (u8*)GetBgCharBase(3) + 0x4800, 0x800);
+            break;
+        case 3:
+            RequestDma3Copy(gUnkEu_094F13A4, (u8*)GetBgCharBase(3) + 0x4800, 0x800);
+            break;
+        case 4:
+            RequestDma3Copy(gUnkEu_094F0BA4, (u8*)GetBgCharBase(3) + 0x4800, 0x800);
+            break;
+        }
+#endif
+        break;
+    case 5:
+        LoadBgMap(3, gUnk_0951C2B8, 0x800);
+        LoadBgPalette(3, gUnk_09614518, 0xA0);
+        break;
+    case 6:
+        SetTaskUpdate(a, (void*)func_0808F660);
+        w->unk_7B4 = gUnk_09035808[0] << 8;
+        w->unk_7B8 = gUnk_09035874[0] << 8;
+        w->unk_7C6 = 4;
+        w->unk_7C0 = 0;
+        w->unk_7C2 = 0;
+#ifdef VERSION_JP
+        w->unk_7C7 = 0;
+#else
+        w->unk_7C7 = 2;
+#endif
+        func_0808F258(w->unk_8C0);
+        break;
+    }
+    w->unk_8D0++;
+    TaskPoolUpdate(w->taskpool);
+    TaskPoolUpdate(w->cardpool);
+    return 1;
+}
+#ifdef VERSION_JP
+INCLUDE_ASM("card/func_jp_0808F638.s");
+#elif defined(VERSION_EU)
+INCLUDE_ASM("card/func_eu_0808F190.s");
+#endif
 INCLUDE_ASM("card/func_0808F660.s");
 
 u8 func_0808FA0C(u8* work, void* a) {
