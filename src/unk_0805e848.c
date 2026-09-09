@@ -6,12 +6,12 @@ u16 func_0805E848(u8* str) {
     s32 i;
 
     i = 0;
-loop:
-    if (str[i] == 0) {
-        return i / 2;
+    for (;;) {
+        if (str[i] == 0) {
+            return i / 2;
+        }
+        i++;
     }
-    i++;
-    goto loop;
 }
 ALIGN_ZERO(2);
 #else
