@@ -397,11 +397,7 @@ void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c) {
 
 #ifdef NON_MATCHING
 s32 func_080C5AA4(void) {
-    u16* base;
-    u16* p;
-    u16 v;
-    u16* base2;
-    u16* p2;
+    s32 i;
 
     if (gUnk_0203C3A8 == 0) {
         if (gUnk_0203C3A0 == 0) {
@@ -410,26 +406,18 @@ s32 func_080C5AA4(void) {
             } else if (GetKeysPressed() & 2) {
                 gUnk_02039B68[0] = 0xAFAF;
             } else {
-                base = gUnk_02039B68;
-                v = 0;
-                p = &gUnk_02039B68[3];
-                do {
-                    *p = v;
-                    p--;
-                } while ((s32)p >= (s32)base);
+                for (i = 0; i < 4; i++) {
+                    gUnk_02039B68[3 - i] = 0;
+                }
             }
             gUnk_02039B68[1] = gUnk_0203C3B0;
         } else {
             gUnk_02039B68[0] = 0xECEC;
         }
     } else {
-        base2 = gUnk_02039B68;
-        v = 0;
-        p2 = base2 + 3;
-        do {
-            *p2 = v;
-            p2--;
-        } while ((s32)p2 >= (s32)base2);
+        for (i = 0; i < 4; i++) {
+            gUnk_02039B68[3 - i] = 0;
+        }
     }
     return 0;
 }
