@@ -1706,7 +1706,218 @@ void func_08044518(SmnGenieWork* work) {
     body->y += v;
     body->z += (zt - gSineTable[(work->unk_148 * 2) & 0xFF] * 8 - body->z) >> 3;
 }
+#ifdef NON_MATCHING
+u8 task_smn_genie_1(SmnGenieWork* work) {
+    SmnBody* body = &work->unk_038;
+    BtlWork* owner;
+    s32 x;
+    s32 y;
+    s32 z;
+    owner = work->unk_151 != 0 ? gBtlWork : gUnk_02039B9C;
+    if (owner->unk_068 & 0x40000000) {
+        return 0;
+    }
+    func_0802F284(body->x, body->y, body->z);
+    if (gBtlWork->unk_128 != 0) {
+        gBtlWork->unk_128(&body->x, &body->y, &body->z, &body->unk_10);
+        if (body->z > body->unk_10) {
+            body->z = body->unk_10;
+        }
+    }
+    switch (work->unk_034) {
+    case 0:
+        if ((s16)work->unk_148 == 0) {
+            work->unk_14A = 30;
+            func_080140E0(body->x, body->y, body->z);
+            m4aSongNumStart(0x235);
+        }
+        ApproachValue(&work->unk_14C, 256, work->unk_14A);
+        if (work->unk_14A <= 0) {
+            work->unk_034 = 2;
+            work->unk_148 = 0;
+            work->unk_152 = 1;
+        } else {
+            work->unk_148++;
+            work->unk_14A--;
+        }
+        break;
+    case 1:
+        if ((s16)work->unk_148 == 0) {
+            func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
+            work->unk_14A = 30;
+            func_080140E0(body->x, body->y, body->z);
+            m4aSongNumStart(0x239);
+        }
+        ApproachValue(&work->unk_14C, 25, work->unk_14A);
+        if (work->unk_14A <= 0) {
+            return 0;
+        }
+        work->unk_148++;
+        work->unk_14A--;
+        break;
+    case 2:
+        if ((s16)work->unk_148 == 0) {
+            gBtlWork->unk_068 |= 0x40000;
+            func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
+        }
+        x = ((u32)gSineTable[(work->unk_148 * 2) & 255] << 3) + 0xC00;
+        body->z += (body->unk_10 - x - body->z) >> 3;
+        if ((s16)work->unk_148 > 10) {
+            work->unk_154 = func_08044450(work);
+            if (work->unk_154 == 0 || (s16)work->unk_15A-- <= 0) {
+                work->unk_034 = 1;
+            } else {
+                work->unk_034 = 3;
+            }
+            work->unk_148 = 0;
+        } else {
+            work->unk_148++;
+        }
+        break;
+    case 3:
+        func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
+        func_08044518(work);
+        if ((s16)work->unk_148 > 40) {
+            work->unk_15C = 0;
+            switch ((u16)(GetRandom() % 3)) {
+            case 0:
+                work->unk_034 = 4;
+                break;
+            case 1:
+                work->unk_034 = 5;
+                break;
+            case 2:
+            default:
+                work->unk_034 = 6;
+                break;
+            }
+            gBtlWork->unk_068 &= ~0x40000ULL;
+            work->unk_148 = 0;
+        } else {
+            work->unk_148++;
+        }
+        break;
+    case 4:
+        if ((s16)work->unk_148 == 0) {
+            m4aSongNumStart(0xC3);
+            func_08019068(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
+        }
+        if (work->unk_15C == 0) {
+            func_08044518(work);
+            if (AnimGetFrame(&work->anim) == 6 && work->anim.timer == 0) {
+                if (work->unk_154 != 0) {
+                    x = work->unk_154->unk_004;
+                    y = work->unk_154->unk_008;
+                    z = 0;
+                } else {
+                    if (body->flags & 4) {
+                        x = body->x - 0x5000;
+                    } else {
+                        x = body->x + 0x5000;
+                    }
+                    y = body->y;
+                    z = 0;
+                }
+                if (body->flags & 4) {
+                    func_08015834(1, body->x - 0xD00, body->y, body->z - 0x6E00, x, y, z, 146);
+                } else {
+                    func_08015834(1, body->x + 0xD00, body->y, body->z - 0x6E00, x, y, z, 146);
+                }
+                work->unk_15C = 1;
+            }
+        } else {
+            func_08006B74();
+        }
+        if (work->unk_15C != 0 && !func_080128EC()) {
+            work->unk_034 = 2;
+            work->unk_148 = 0;
+        } else {
+            work->unk_148++;
+        }
+        break;
+    case 5:
+        if ((s16)work->unk_148 == 0) {
+            m4aSongNumStart(0xC4);
+            func_08019068(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
+        }
+        if (work->unk_15C == 0) {
+            func_08044518(work);
+            if (AnimGetFrame(&work->anim) == 6 && work->anim.timer == 0) {
+                if (work->unk_154 != 0) {
+                    x = work->unk_154->unk_004;
+                    y = work->unk_154->unk_008;
+                    z = 0;
+                } else {
+                    if (body->flags & 4) {
+                        x = body->x - 0x5000;
+                    } else {
+                        x = body->x + 0x5000;
+                    }
+                    y = body->y;
+                    z = 0;
+                }
+                if (body->flags & 4) {
+                    func_08014D78(1, body->x - 0xD00, body->y, body->z - 0x6E00, x, y, z, 1, 148);
+                } else {
+                    func_08014D78(1, body->x + 0xD00, body->y, body->z - 0x6E00, x, y, z, 1, 148);
+                }
+                work->unk_15C = 1;
+                func_08006184(6, 8);
+            }
+        } else {
+            func_08006B74();
+        }
+        if (work->unk_15C != 0 && !func_080128EC()) {
+            func_08006120(6, 8);
+            work->unk_034 = 2;
+            work->unk_148 = 0;
+        } else {
+            work->unk_148++;
+        }
+        break;
+    case 6:
+        if ((s16)work->unk_148 == 0) {
+            func_08019068(gUnk_0813EB1C, &work->anim, 1, 0, work->tiles);
+            m4aSongNumStart(0xC5);
+        }
+        if (work->unk_15C == 0) {
+            func_08044518(work);
+            if (AnimIsFinished(&work->anim)) {
+                if (work->unk_154 != 0) {
+                    x = work->unk_154->unk_004;
+                    y = work->unk_154->unk_008;
+                    z = work->unk_154->unk_00C - work->unk_154->unk_0A2 * 256;
+                } else {
+                    if (body->flags & 4) {
+                        x = body->x - 0x5000;
+                    } else {
+                        x = body->x + 0x5000;
+                    }
+                    y = body->y;
+                    z = -0x1000;
+                }
+                func_080148E0(1, x, y, z, 147);
+                work->unk_15C = 1;
+            }
+        }
+        if (work->unk_15C != 0 && !func_080128EC()) {
+            work->unk_034 = 2;
+            work->unk_148 = 0;
+        } else {
+            work->unk_148++;
+        }
+        break;
+    }
+    func_0801A8A4(&body->x, &body->y, 0, -10);
+    if (work->unk_152 != 0) {
+        AnimUpdate(&work->anim);
+    }
+    TaskPoolUpdate(&work->unk_020);
+    return 1;
+}
+#else
 INCLUDE_ASM("smn/task_smn_genie_1.s");
+#endif
 
 void task_smn_genie_2(SmnGenieWork* work) {
     SmnBody* body;
