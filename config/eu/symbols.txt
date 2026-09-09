@@ -3358,3 +3358,5 @@ gTaskDescCardBattleRiku = 0x09F6FC60
 gModeSioBtlCardget = 0x09F7C7E0
 gTaskDescBtlExp = 0x09F590D0
 gModeContinue = 0x09F5D6DC
+gUnkEu_09F72CC4 = 0x09F72CC4
+gUnkEu_09F72CB0 = 0x09F72CB0
