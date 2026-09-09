@@ -8005,7 +8005,25 @@ u8 eu_0806C734(EventSeqWork* work) {
     }
     return 1;
 }
-INCLUDE_ASM("msg/eu_0806C7C8.s");
+u8 eu_0806C7C8(EventSeqWork* work) {
+    Ent09EE3CA0* u = gUnk_09EE3CA0[work->unk_2C];
+    if (u != NULL) {
+        if (u->unk_10 != NULL) {
+            if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
+                work->unk_3B = 1;
+                eu_08005A1C(2, u->unk_10, u->unk_1E, u->unk_1F);
+            } else {
+                work->unk_3B = 0;
+                func_0800516C(2, u->unk_10, u->unk_1E, u->unk_1F);
+            }
+            func_080051C4(2, 0, 0);
+            gUnk_02039DC8->unk_78 = 1;
+        } else {
+            DisableBg(2);
+        }
+    }
+    return 1;
+}
 INCLUDE_ASM("msg/eu_0806C848.s");
 INCLUDE_ASM("msg/eu_0806C974.s");
 #endif
