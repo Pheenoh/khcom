@@ -2407,12 +2407,11 @@ void func_080E3768(u8 i, s16 a, s16 b, s16 c, s16 d, u8 e) {
 INCLUDE_ASM("map/func_080E3768.s");
 #endif
 
-#ifdef NON_MATCHING
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi) {
     s32 x = lo + GetRandom() % (hi - lo);
     s32 n;
 
-    for (n = 0; n < hi - lo; n++) {
+    for (n = 0; n < -lo + hi; n++) {
         s32 j;
 
         for (j = gUnk_02034F2A - 1; j >= 0; j--) {
@@ -2437,9 +2436,6 @@ void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi) {
         }
     }
 }
-#else
-INCLUDE_ASM("map/func_080E3C1C.s");
-#endif
 #ifdef NON_MATCHING
 void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f) {
     s32 i;
@@ -14736,4 +14732,3 @@ void func_080F7BB8(MapFloorWork* w) {
     gUnk_02039BA0->unk_70 &= ~0x80;
     gUnk_02039BA0->unk_70 &= ~0x1000;
 }
-
