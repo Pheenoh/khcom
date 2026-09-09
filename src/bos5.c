@@ -224,7 +224,6 @@ void func_080FB908(MdWork* work, u16 index) {
     LoadBgTiles(1, gUnk_09992108[index].unk_04, gUnk_09992108[index].unk_08);
 }
 
-#ifdef NON_MATCHING
 void func_080FB930(MdWork* work, u16 id) {
     s32 n;
 
@@ -242,7 +241,7 @@ void func_080FB930(MdWork* work, u16 id) {
 
         if (work->unk_17C[n].unk_04 != gUnk_09992108[id].unk_1C[n].unk_08 && n == 0) {
             work->unk_17C[n].unk_04 = gUnk_09992108[id].unk_1C[n].unk_08;
-            func_080038E4(work->unk_17C[n].unk_00, work->unk_17C[n].unk_08);
+            func_080038E4(work->unk_17C[n].unk_00, work->unk_17C[n].unk_08, work->unk_17C[n].unk_04);
         }
 
         work->unk_17C[n].unk_0C = gUnk_09992108[id].unk_1C[n].unk_00;
@@ -250,9 +249,6 @@ void func_080FB930(MdWork* work, u16 id) {
         work->unk_17C[n].unk_10 = gUnk_09992108[id].unk_1C[n].unk_04;
     }
 }
-#else
-INCLUDE_ASM("bos5/func_080FB930.s");
-#endif
 
 void func_080FBA14(MdWork* work, s16 id) {
     MdAnim* a;
