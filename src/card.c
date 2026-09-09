@@ -12958,7 +12958,7 @@ u8 func_0809217C(UnkStruct_08093838* w, void* a) {
     return 1;
 }
 void func_080A42B4(void);
-u8 func_08094404(u8* work, void* a);
+u8 func_08094404(UnkStruct_08093838* w, void* a);
 
 #ifdef NON_MATCHING
 u8 func_08092234(UnkStruct_08093838* w, void* a) {
@@ -14252,7 +14252,55 @@ u8 func_0809438C(UnkStruct_08093838* w, void* a) {
     return 1;
 }
 
-INCLUDE_ASM("card/func_08094404.s");
+u8 func_08094404(UnkStruct_08093838* w, void* a) {
+    MapcardWork* node;
+    u32 pages;
+
+    SetObjMosaicSize(w->unk_299, w->unk_29A);
+    if (w->unk_29B == 2) {
+        if (w->unk_299 != 0) {
+            w->unk_299--;
+        }
+        if (w->unk_29A != 0) {
+            w->unk_29A--;
+        }
+        w->unk_29B = 0;
+    }
+    w->unk_29B++;
+
+    if (!func_080A42C8()) {
+        if (w->unk_286 == 8) {
+            w->unk_286 = 0;
+            if (w->unk_2C2 <= 0x71) {
+                func_080A4188((u8*)w, w->unk_2C2);
+                w->unk_2C2++;
+            } else {
+                node = ListPoolFirst(w->unk_014);
+                func_0800516C(1, gUnk_09EE4BB0, 1, 2);
+                while (node != 0) {
+                    node->unk_6C |= 2;
+                    node = ListPoolNext(node->unk_38);
+                }
+                if (w->unk_27C <= 6) {
+                    w->unk_285 = 0;
+                } else {
+                    pages = w->unk_27C / 6;
+                    w->unk_285 = pages;
+                }
+                w->unk_25C = 0x6400;
+                w->unk_254 = 0x7A00;
+                w->unk_244 = 0x9100;
+                SetTaskUpdate(a, (void*)func_08092A34);
+                w->unk_2C0 = 1;
+                return 1;
+            }
+        } else {
+            w->unk_286++;
+        }
+    }
+    TaskPoolUpdate(w);
+    return 1;
+}
 
 MapcardWork* ListPoolLast(void* a);
 
