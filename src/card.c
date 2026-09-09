@@ -265,7 +265,8 @@ void func_0808E344(void** p);
 struct UnkStruct_080889DC;
 u8 func_080889DC(struct UnkStruct_080889DC* w, void* a);
 u8 func_0808B238(u8* work, void* a);
-u8 func_080897CC(u8* work, void* a);
+u8 func_080897CC(struct UnkStruct_080889DC* w, void* a);
+u8 func_08087CD4(struct UnkStruct_080889DC* w, void* a);
 void func_08081740(UnkStruct_08080268* w, u16 n);
 void func_08081744(UnkStruct_08080268* w);
 void func_08085DA0(u8 a);
@@ -11094,7 +11095,9 @@ typedef struct UnkStruct_080889DC {
     AnimState unk_830;
     s32 unk_848;
     s32 unk_84C;
-    u8 unk_850[0x34];
+    s32 unk_850;
+    s32 unk_854;
+    u8 unk_858[0x2C];
     s16 unk_884;
     s16 unk_886;
     u8 unk_888[0x1A];
@@ -11107,7 +11110,9 @@ typedef struct UnkStruct_080889DC {
     u8 unk_8AE[3];
     u8 unk_8B1;
     u8 unk_8B2;
-    u8 unk_8B3[4];
+    u8 unk_8B3[2];
+    s8 unk_8B5;
+    s8 unk_8B6;
     u8 unk_8B7;
     u8 unk_8B8[8];
     u8 unk_8C0;
@@ -11118,7 +11123,9 @@ typedef struct UnkStruct_080889DC {
     u8 unk_8CB;
     u8 unk_8CC[2];
     s8 unk_8CE;
-    u8 unk_8CF[3];
+    u8 unk_8CF;
+    u8 unk_8D0;
+    u8 unk_8D1;
     u8 unk_8D2;
 } UnkStruct_080889DC;
 
@@ -11587,7 +11594,170 @@ u8 func_08089558(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_08089558.s");
 #endif
-INCLUDE_ASM("card/func_080897CC.s");
+u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
+    u16 i;
+
+#ifdef VERSION_EU
+    if ((u8)func_08006314() != 0) {
+        return 1;
+    }
+#endif
+    w->unk_4F0 = AnimUpdate(&w->unk_800);
+    w->unk_4F4 = AnimUpdate(&w->unk_818);
+    if (w->unk_8C9 != 0) {
+        TaskPoolUpdate(w->taskpool);
+        TaskPoolUpdate(w->cardpool);
+        if (GetKeysPressed() & 8) {
+            w->unk_8D2 = 7;
+            w->unk_8CB = 1;
+        }
+        return 1;
+    }
+    if (w->unk_8CB != 0) {
+        if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
+            SetTaskUpdate(a, (void*)func_0808B208);
+            func_08006184(0, 4);
+            m4aSongNumStart(103);
+            return 1;
+        } else {
+            w->unk_8CB = 0;
+        }
+    }
+    if (w->unk_8D0 == 0) {
+        switch ((u16)GetKeysRepeat()) {
+        case 64:
+            if (w->unk_886 > 0) {
+                if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 - 1)) != 0) {
+                    w->unk_886--;
+                    w->unk_8B7 = 1;
+                    m4aSongNumStart(121);
+                }
+            } else {
+                if ((u8)func_0808CA78((u8*)w, 1) == 0) {
+                    w->unk_884 = w->unk_8C1;
+                    w->unk_8B7 = 1;
+                    m4aSongNumStart(121);
+                    w->unk_8B1 = 6;
+                    for (i = 0; i < 10; i++) {
+                        func_0808DD20(0, i);
+                    }
+                    SetTaskUpdate(a, (void*)func_080882DC);
+                    return 1;
+                }
+            }
+            func_0808D828((u8*)w);
+            break;
+        case 128:
+            if (w->unk_886 <= 2) {
+                if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 + 1)) != 0) {
+                    w->unk_886++;
+                    w->unk_8B7 = 1;
+                    m4aSongNumStart(121);
+                }
+            } else {
+                if ((u8)func_0808E8E8((u8*)w, w->unk_884, (s16)(w->unk_886 + 1)) != 0) {
+                    func_0808C9CC((u8*)w);
+                }
+            }
+            func_0808D828((u8*)w);
+            break;
+        case 32:
+            if (w->unk_884 > 0) {
+                if ((u8)func_0808E8E8((u8*)w, (s16)(w->unk_884 - 1), w->unk_886) != 0) {
+                    w->unk_884--;
+                    w->unk_8B7 = 1;
+                    m4aSongNumStart(121);
+                }
+            }
+            func_0808D828((u8*)w);
+            break;
+        case 16:
+            if (w->unk_884 > 1) {
+                w->unk_8B7 = 1;
+                return 1;
+            }
+            if ((u8)func_0808E8E8((u8*)w, (s16)(w->unk_884 + 1), w->unk_886) != 0) {
+                w->unk_884++;
+                w->unk_8B7 = 1;
+                m4aSongNumStart(121);
+            }
+            func_0808D828((u8*)w);
+            break;
+        }
+        switch ((u16)GetKeysPressed()) {
+        case 1:
+            if ((u8)func_0808E890((u8*)w) != 0) {
+                w->unk_8B5 = w->unk_884;
+                w->unk_8B6 = w->unk_886;
+                w->unk_884 = 0;
+                w->unk_886 = 0;
+                if ((u8)func_0808DED0((u8*)w) != 0) {
+                    m4aSongNumStart(102);
+                    func_0808DDD0((u8*)w);
+                    func_0808E364((u8*)w, 1);
+                    w->unk_8B1 = 5;
+                    w->unk_848 = gUnk_0903571A[w->unk_884] << 8;
+                    w->unk_84C = gUnk_0903571E[w->unk_886] << 8;
+                    SetTaskUpdate(a, (void*)func_08087CD4);
+                    return 1;
+                } else {
+                    w->unk_884 = w->unk_8B5;
+                    w->unk_886 = w->unk_8B6;
+                    m4aSongNumStart(105);
+                    return 1;
+                }
+            } else {
+                m4aSongNumStart(105);
+                return 1;
+            }
+        case 2:
+            func_08006120(0, 1);
+            SetTaskUpdate(a, (void*)func_08089D20);
+            m4aSongNumStart(103);
+            return 1;
+        case 512:
+            func_08006120(0, 1);
+            func_0808E2F0((UnkStruct_0808DB04*)w);
+            SetTaskUpdate(a, (void*)func_08089EC0);
+            m4aSongNumStart(103);
+            return 1;
+        case 8:
+            if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
+                SetTaskUpdate(a, (void*)func_0808B208);
+                func_08006184(0, 4);
+                m4aSongNumStart(104);
+                w->unk_8D2 = 7;
+            }
+            return 1;
+        }
+        if (GetKeysPressed() & 4) {
+            w->unk_886 = 0;
+            func_0808E7D8((u8*)w);
+            w->unk_884 = w->unk_8C1;
+            w->unk_8B7 = 1;
+            w->unk_850 = 0xA000;
+            w->unk_854 = 0x2800;
+            w->unk_8AC = 4;
+            m4aSongNumStart(121);
+            w->unk_8B1 = 6;
+            for (i = 0; i < 10; i++) {
+                func_0808DD20(0, i);
+            }
+            TaskPoolUpdate(w->taskpool);
+            TaskPoolUpdate(w->cardpool);
+            SetTaskUpdate(a, (void*)func_080882DC);
+            return 1;
+        }
+    } else {
+        w->unk_8D0--;
+    }
+    func_0805F1C0(&w->unk_848, gUnk_0903595E[w->unk_884] << 8);
+    func_0805F1C0(&w->unk_84C, gUnk_09035964[w->unk_886] << 8);
+    TaskPoolUpdate(w->taskpool);
+    TaskPoolUpdate(w->cardpool);
+    return 1;
+}
+
 
 #ifndef VERSION_EU
 u8 func_08089D20(u8* work, void* a) {
