@@ -661,7 +661,7 @@ typedef struct UnkStruct_0808DB04 {
     void* unk_034;
     u8 unk_038[0x49C];
     UnkStruct_0808E2F0* unk_4D4;
-    u8 unk_4D8[0x04];
+    UnkStruct_0808E2F0* unk_4D8;
     void* unk_4DC;
     void* unk_4E0;
     void* unk_4E4;
@@ -676,7 +676,9 @@ typedef struct UnkStruct_0808DB04 {
     u8 unk_7DC[0x14];
     u8 unk_7F0[0x40];
     AnimState anim;
-    u8 unk_848[0x2C];
+    s32 unk_848;
+    s32 unk_84C;
+    u8 unk_850[0x24];
     s16 unk_874;
     s16 unk_876;
     s16 unk_878;
@@ -685,15 +687,25 @@ typedef struct UnkStruct_0808DB04 {
     u8 unk_882[0x02];
     s16 unk_884;
     u16 unk_886;
-    u8 unk_888[0x10];
+    u8 unk_888[0x0C];
+    s16 unk_894;
+    s16 unk_896;
     u16 unk_898;
     u8 unk_89A[0x12];
     u8 unk_8AC;
-    u8 unk_8AD[0x0A];
+    u8 unk_8AD[0x04];
+    u8 unk_8B1;
+    u8 unk_8B2[0x05];
     u8 unk_8B7;
     u8 unk_8B8[0x08];
     u8 unk_8C0;
     u8 unk_8C1;
+    u8 unk_8C2[0x05];
+    u8 unk_8C7;
+    u8 unk_8C8[0x08];
+    u8 unk_8D0;
+    u8 unk_8D1[0x03];
+    u16 unk_8D4;
 } UnkStruct_0808DB04;
 
 typedef struct UnkStruct_080A324C {
