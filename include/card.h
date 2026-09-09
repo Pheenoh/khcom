@@ -1607,7 +1607,10 @@ typedef struct UnkStruct_080A5D3C {
     void* unk_3C4;
     void* unk_3C8;
     void* unk_3CC;
-    u8 unk_3D0[0xBC];
+    u8 unk_3D0[0x3C];
+    TaskPool unk_40C;
+    TaskPool unk_420;
+    u8 unk_434[0x58];
     s32 unk_48C;
     s32 unk_490;
     s32 unk_494;
