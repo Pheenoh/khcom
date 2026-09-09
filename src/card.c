@@ -13412,17 +13412,13 @@ void func_08093434(u8* work) {
             a = (MapcardWork*)ListPoolNext(a->unk_38);
         }
 
-counting:
-        if (b != 0) {
-            if (b->unk_6C & 1) {
-                cnt++;
-                b = (MapcardWork*)ListPoolNext(b->unk_38);
-                goto counting;
-            }
+        while (b != 0 && (b->unk_6C & 1)) {
+            cnt++;
+            b = (MapcardWork*)ListPoolNext(b->unk_38);
+        }
 
-            if (cnt == 6) {
-                found = b;
-            }
+        if (b != 0 && cnt == 6) {
+            found = b;
         }
 
         if (found != 0) {
