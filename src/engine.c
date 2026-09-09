@@ -2508,7 +2508,157 @@ void func_08005C60(u16 a) {
     p->unk_00 = 0;
 }
 
-INCLUDE_ASM("engine/func_08005C78.s");
+
+void func_08005C78(void) {
+    s32 i;
+    s32 j;
+    s32 changed;
+    u16 amount;
+    PaletteSlot* slot;
+    u16* src;
+    u16* dst;
+    s16 r;
+    s16 g;
+    s16 b;
+    s16 gray;
+    s16 red;
+    s16 green;
+    s16 blue;
+    u16 color;
+
+    if (gFadeWork->unk_584 != 0 || gFadeWork->unk_580 != 0) {
+        changed = gFadeWork->unk_580 != gFadeWork->unk_588;
+        amount = gFadeWork->unk_580 >> 8;
+        for (i = 0; i < 32; i++) {
+            slot = &gFadeWork->slots[i];
+            src = slot->unk_00;
+            if (src == 0) {
+                continue;
+            }
+            if (slot->unk_28 != 0 && (gFadeWork->unk_594 & 2) == 0) {
+                continue;
+            }
+            if (slot->unk_29 != 0) {
+                slot->unk_29 = 0;
+            } else if (!changed) {
+                continue;
+            }
+            dst = (u16*)slot->unk_08;
+            for (j = 0; j < 16; j++) {
+                color = *src++;
+                r = color & 31;
+                g = (color >> 5) & 31;
+                b = (color >> 10) & 31;
+                switch (gFadeWork->unk_590) {
+                case 0:
+                    r -= amount;
+                    g -= amount;
+                    b -= amount;
+                    if (r < 0) r = 0;
+                    if (g < 0) g = 0;
+                    if (b < 0) b = 0;
+                    break;
+                case 1:
+                    if (r < amount) r = amount;
+                    if (g < amount) g = amount;
+                    if (b < amount) b = amount;
+                    break;
+                case 3:
+                    r += amount;
+                    g -= amount;
+                    b -= amount;
+                    if (r > 31) r = 31;
+                    if (g < 0) g = 0;
+                    if (b < 0) b = 0;
+                    break;
+                case 5:
+                    r -= amount;
+                    g += amount;
+                    b -= amount;
+                    if (r < 0) r = 0;
+                    if (g > 31) g = 31;
+                    if (b < 0) b = 0;
+                    break;
+                case 4:
+                    r -= amount;
+                    g -= amount;
+                    b += amount;
+                    if (r < 0) r = 0;
+                    if (g < 0) g = 0;
+                    if (b > 31) b = 31;
+                    break;
+                case 2:
+                    r += amount;
+                    g += amount;
+                    b += amount;
+                    if (r > 31) r = 31;
+                    if (g > 31) g = 31;
+                    if (b > 31) b = 31;
+                    break;
+                case 6:
+                    gray = ((r + g + b) >> 2) * amount;
+                    r = (gray + r * (31 - amount)) >> 5;
+                    g = (gray + g * (31 - amount)) >> 5;
+                    b = (gray + b * (31 - amount)) >> 5;
+                    break;
+                case 7:
+                    red = (31 - r) * amount;
+                    green = (31 - g) * amount;
+                    blue = (31 - b) * amount;
+                    r = (red + r * (31 - amount)) / 31;
+                    g = (green + g * (31 - amount)) / 31;
+                    b = (blue + b * (31 - amount)) / 31;
+                    break;
+                case 8:
+                    gray = 31 * amount;
+                    if ((r + g + b) / 3 > 12) {
+                        r = (gray + r * (31 - amount)) / 31;
+                        g = (gray + g * (31 - amount)) / 31;
+                        b = (gray + b * (31 - amount)) / 31;
+                    } else {
+                        r = r * (31 - amount) / 31;
+                        g = g * (31 - amount) / 31;
+                        b = b * (31 - amount) / 31;
+                    }
+                    break;
+                case 9:
+                    r -= amount;
+                    g -= amount * 2;
+                    b -= amount;
+                    if (r < 0) r = 0;
+                    if (g < 0) g = 0;
+                    if (b < 0) b = 0;
+                    break;
+                case 10:
+                    r -= amount;
+                    g -= amount * 2;
+                    b -= amount * 2;
+                    if (r < 0) r = 0;
+                    if (g < 0) g = 0;
+                    if (b < 0) b = 0;
+                    break;
+                }
+                *dst++ = b * 1024 | g * 32 | r;
+            }
+            RequestDma3Copy(slot->unk_08, slot->unk_04, 32);
+        }
+    }
+    gFadeWork->unk_588 = gFadeWork->unk_580;
+    if (gFadeWork->unk_58C != 0) {
+        if ((gFadeWork->unk_594 & 4) == 0) {
+            ApproachValue((s32*)&gFadeWork->unk_580, gFadeWork->unk_584, gFadeWork->unk_58C);
+            gFadeWork->unk_58C--;
+        }
+        if (gFadeWork->unk_58C == 0 && gFadeWork->unk_580 == 0) {
+            for (i = 0; i < 32; i++) {
+                slot = &gFadeWork->slots[i];
+                RequestDma3Copy(slot->unk_00, slot->unk_04, 32);
+            }
+        }
+    } else {
+        gFadeWork->unk_594 = 0;
+    }
+}
 void func_08006120(s32 a, u16 b) {
     FadeWork* base = gFadeWork;
     u32 z;
