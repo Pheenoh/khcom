@@ -4694,7 +4694,6 @@ void func_0806CD60(ContinueWork* p) {
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
 }
-#ifndef VERSION_EU
 void func_0806CF04(ContinueWork* p) {
     u8 i;
 
@@ -4706,8 +4705,13 @@ void func_0806CF04(ContinueWork* p) {
     SetBgPriority(2, 0);
     SetBgPriority(0, 1);
     SetBgPriority(1, 2);
+#ifdef VERSION_EU
+    eu_080059D4(0, gUnkEu_09F5D7E4[gLanguage]);
+    eu_080059F4(0, gUnkEu_095A3D74);
+#else
     LoadBgTiles(0, gUnk_0941A418, MSG_CONT_BG_TILES);
     LoadBgMap(0, gUnk_0951CAB8, 0x800);
+#endif
     func_080065FC(2, 0x8000, 128);
     func_08006778(gUnk_09EDA7E0, 120, 46);
     func_08006B34(0);
@@ -4729,7 +4733,23 @@ void func_0806CF04(ContinueWork* p) {
     p->unk_58 = -2048;
     p->unk_5C = 0xA000;
     p->unk_6B = 16;
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+    case 1:
+    case 4:
+    case 5:
+    case 6:
+        p->unk_50 = 0xBC00;
+        break;
+    case 2:
+    case 3:
+        p->unk_50 = 0xC000;
+        break;
+    }
+#else
     p->unk_50 = MSG_CONT_X;
+#endif
     p->unk_54 = 0x4000;
     p->unk_64 = 0;
     p->unk_66 = 0;
@@ -4741,9 +4761,6 @@ void func_0806CF04(ContinueWork* p) {
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
 }
-#else
-INCLUDE_ASM("msg/func_0806CF04.s");
-#endif
 s32 func_0806D0A8(ContinueWork* p) {
     s32* t;
 
