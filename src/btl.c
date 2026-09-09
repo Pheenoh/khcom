@@ -6581,7 +6581,6 @@ void func_08027A64(BtlRikuWork* work, u16 a) {
     }
 }
 
-#ifdef NON_MATCHING
 void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
     BtlActorWork* e;
 
@@ -6598,7 +6597,6 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
             e->unk_34 = 4;
             work->unk_179 = 0;
         }
-
 
         if (arg->unk_04 != 0) {
             work->unk_178 = 1;
@@ -6693,6 +6691,14 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
 
     if (gBtlWork->unk_068 & 0x804) {
         switch (gBtlWork->unk_10C) {
+        case 149:
+        case 151:
+        case 153:
+        case 154:
+        case 156:
+        case 157:
+            work->unk_188 = gUnk_0813C6BC[0];
+            break;
         case 148:
         case 150:
         case 155:
@@ -6743,9 +6749,6 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
     work->unk_1C0[7] = work->unk_1C0[0];
     work->unk_1C0[8] = work->unk_1C0[0];
 }
-#else
-INCLUDE_ASM("btl/task_btl_riku_0.s");
-#endif
 
 void func_080280BC(BtlRikuWork* work, u32 a) {
     work->unk_03C = a;
