@@ -1862,7 +1862,8 @@ void func_08112768(StaffRollWork* w) {
 
         switch (w->unk_0CC[w->unk_0D0]) {
         case 0:
-            goto done;
+            run = 0;
+            continue;
         case 1:
             w->unk_0D0 = 0;
             w->unk_0D4 = 0;
@@ -1943,7 +1944,6 @@ void func_08112768(StaffRollWork* w) {
         w->unk_0D0 += w->unk_0CC[w->unk_0D0 + 1];
     }
 
-done:
     w->unk_0D4++;
 }
 
