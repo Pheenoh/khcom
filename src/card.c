@@ -10577,9 +10577,9 @@ u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
                 m4aSongNumStart(140);
                 w->unk_8CF = 0;
                 AnimStart(&w->unk_800, 0, 1);
-                } else {
+            } else {
                 m4aSongNumStart(105);
-                }
+            }
         }
         return 1;
     case 8:
@@ -24824,7 +24824,264 @@ void NumberPlus_3(void** p) {
     ReleaseObjTiles(p[0]);
     ReleaseObjPalette(p[1]);
 }
-INCLUDE_ASM("card/Level_Up_0.s");
+typedef struct UnkStruct_0809F730 {
+    void* unk_000[8];
+#ifdef VERSION_EU
+    void* unk_020[3];
+    u8 unk_02C[0xC];
+#else
+    TextSlot text[6][36];
+#endif
+    void* unk_6E0;
+    void* unk_6E4;
+    void* unk_6E8;
+    void* unk_6EC;
+    void* unk_6F0;
+    void* unk_6F4;
+    void* unk_6F8;
+    TaskPool pool;
+    AnimState unk_710;
+    void* unk_728;
+    void* unk_72C;
+    void* unk_730;
+    AnimState unk_734;
+    void* unk_74C;
+    s16 unk_750[3];
+    s16 unk_756[3];
+    s16 unk_75C[3];
+    s16 unk_762[3];
+    s16 unk_768;
+    s16 unk_76A;
+    s32 unk_76C;
+    s32 unk_770;
+    s16 unk_774;
+    s16 unk_776;
+    s16 unk_778;
+    s16 unk_77A;
+    s16 unk_77C;
+    u16 unk_77E[3];
+    u16 unk_784[4];
+    u16 unk_78C[4];
+    u16 unk_794[4];
+    u16 unk_79C[4];
+    s16 unk_7A4;
+    s16 unk_7A6;
+    s32 unk_7A8;
+    s32 unk_7AC;
+    s8 unk_7B0;
+    s8 unk_7B1;
+    s8 unk_7B2[3];
+    s8 unk_7B5;
+    s8 unk_7B6;
+    u8 unk_7B7[6];
+    u8 unk_7BD;
+    u8 unk_7BE;
+    u8 unk_7BF;
+    u8 unk_7C0;
+    u8 unk_7C1;
+    u8 unk_7C2[2];
+    u8 unk_7C4;
+    u8 unk_7C5;
+    u8 unk_7C6;
+    u8 unk_7C7;
+    u8 unk_7C8[3];
+} UnkStruct_0809F730;
+
+extern u8 gUnk_0908CAEC[];
+extern u8 gUnk_0908D05E[];
+extern s16 gUnk_09037FB4[];
+extern u8 gUnk_08F683A4[];
+extern u8 gUnk_09618118[];
+extern u16 gDispCnt;
+extern u16 gBg1Cnt;
+extern u16 gBg2Cnt;
+extern u16 gBg3Cnt;
+extern u16 gBg2PA;
+extern u16 gBg2PB;
+extern u16 gBg2PC;
+extern u16 gBg2PD;
+extern u16 gBg3PA;
+extern u16 gBg3PB;
+extern u16 gBg3PC;
+extern u16 gBg3PD;
+extern u32 gBg2X;
+extern u32 gBg2Y;
+extern u32 gBg3X;
+extern u32 gBg3Y;
+#ifdef VERSION_EU
+extern void* gUnkEu_09F72D1C[];
+extern u16 gUnkEu_090D1328[];
+#endif
+
+void Level_Up_0(UnkStruct_0809F730* w) {
+    s16 x;
+    s16 y;
+
+    w->unk_728 = 0;
+    w->unk_72C = 0;
+    w->unk_000[0] = 0;
+    w->unk_000[1] = 0;
+    w->unk_000[2] = 0;
+    w->unk_000[3] = 0;
+    w->unk_000[4] = 0;
+    w->unk_000[5] = 0;
+    w->unk_000[6] = 0;
+    w->unk_000[7] = 0;
+    w->unk_6E0 = 0;
+    w->unk_6E4 = 0;
+    w->unk_6E8 = 0;
+    w->unk_6EC = 0;
+    w->unk_6F0 = 0;
+    w->unk_6F4 = 0;
+    w->unk_6F8 = 0;
+    w->unk_7C8[0] = 1;
+    w->unk_7C8[1] = 1;
+    w->unk_7C8[2] = 1;
+    if (gUnk_02039DD4 != 0) {
+        gUnk_02039DD4->unk_0E9 = 1;
+    }
+#ifndef VERSION_EU
+    func_08065ACC(w->text[0], 36);
+    func_08065ACC(w->text[1], 36);
+    func_08065ACC(w->text[2], 36);
+    func_08065ACC(w->text[3], 36);
+    func_08065ACC(w->text[4], 36);
+    func_08065ACC(w->text[5], 36);
+    w->unk_000[6] = LoadObjTiles(gUnk_0908CAEC, 0x500);
+#else
+    w->unk_000[6] = LoadObjTiles(gUnkEu_09F72D1C[gLanguage], gUnkEu_090D1328[gLanguage]);
+    w->unk_020[0] = func_080038C8(0x500);
+    w->unk_020[1] = func_080038C8(0x500);
+    w->unk_020[2] = func_080038C8(0x500);
+#endif
+    w->unk_000[7] = LoadObjPalette(gUnk_09613E98 + 0x60, 32);
+    func_080062F4(((ObjPalette*)w->unk_000[7])->unk_06 + 16, 1);
+    w->unk_6F0 = LoadObjTiles(gUnk_0908D05E, 0x3C0);
+    TaskPoolInit(&w->pool, 10);
+    if (!(gGameState.flags & 8)) {
+        w->unk_728 = AllocObjTiles(0x500, 0);
+        w->unk_72C = AllocObjPalette(32);
+        func_08003A70(w->unk_72C, gUnk_08F683A4);
+        func_080062F4(((ObjPalette*)w->unk_72C)->unk_06 + 16, 1);
+        WorldToScreen(&x, &y, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04,
+                      ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08,
+                      ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+        func_08002A10(w->unk_728, gUnk_088E33C2);
+        AnimInit(&w->unk_734, gUnk_09EDEE14, gUnk_09EDEE08);
+        AnimStart(&w->unk_734, 0, 1);
+    } else {
+        w->unk_728 = AllocObjTiles(0x800, 0);
+        w->unk_72C = AllocObjPalette(32);
+        func_08003A70(w->unk_72C, gUnk_09618118);
+        func_080062F4(((ObjPalette*)w->unk_72C)->unk_06 + 16, 1);
+        WorldToScreen(&x, &y, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04,
+                      ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08,
+                      ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+        func_08002A10(w->unk_728, gUnk_0891ED26);
+        AnimInit(&w->unk_734, gUnk_09EDF38C, gUnk_09EDF374);
+        AnimStart(&w->unk_734, 0, 1);
+    }
+    if (gBtlWork->unk_068 & 0x2000) {
+        w->unk_7A8 = 0x1C400;
+        w->unk_7AC = 0x5000;
+    } else {
+        w->unk_7A8 = x << 8;
+        w->unk_7AC = y << 8;
+    }
+    w->unk_730 = AnimGetGfx(&w->unk_734);
+    if (!(gBtlWork->unk_068 & 4)) {
+        w->unk_7C6 = 0;
+        gDispCnt = (gDispCnt & 0xFFF8) | 1;
+        gBg1Cnt &= 0xFF7F;
+        SetBgSize(1, 0);
+        SetupBg(2, 0, 12, 0);
+        SetupBg(1, 2, 24, 0);
+        SetupBg(0, 2, 25, 0);
+        LoadBgMap(1, gUnk_08125E24, 0x800);
+        LoadBgMap(0, gUnk_08125E24, 0x800);
+        EnableBg(2);
+        DisableBg(1);
+        DisableBg(0);
+        gBg2Cnt = gBg3Cnt;
+        gBg2PA = gBg3PA;
+        gBg2PB = gBg3PB;
+        gBg2PC = gBg3PC;
+        gBg2PD = gBg3PD;
+        gBg2X = gBg3X;
+        gBg2Y = gBg3Y;
+    } else {
+        w->unk_7C6 = 1;
+        switch (*(u32*)&gBtlWork->unk_100[0xC]) {
+        case 151:
+            SetBgSize(0, 0);
+            SetupBg(0, 0, 26, 0);
+            LoadBgMap(0, gUnk_08125E24, 0x800);
+            DisableBg(0);
+            break;
+        case 152:
+            SetBgSize(1, 0);
+            SetupBg(1, 1, 24, 0);
+            LoadBgMap(1, gUnk_08125E24, 0x800);
+            DisableBg(1);
+            break;
+        case 148:
+            SetBgSize(1, 0);
+            SetupBg(1, 2, 26, 0);
+            LoadBgMap(1, gUnk_08125E24, 0x800);
+            DisableBg(1);
+            break;
+        default:
+            SetBgSize(1, 0);
+            LoadBgMap(1, gUnk_08125E24, 0x800);
+            DisableBg(1);
+            break;
+        }
+    }
+    gBldCnt &= 0xFFBF;
+    w->unk_778 = -128;
+    w->unk_750[0] = -128;
+    w->unk_750[1] = -128;
+    w->unk_750[2] = -128;
+    w->unk_756[0] = 16;
+    w->unk_756[1] = 64;
+    w->unk_756[2] = 112;
+    w->unk_7B5 = 24;
+    w->unk_7B1 = 16;
+    w->unk_7B2[0] = 16;
+    w->unk_7B2[1] = 16;
+    w->unk_7B2[2] = 16;
+    w->unk_75C[0] = 8;
+    w->unk_75C[1] = 8;
+    w->unk_75C[2] = 8;
+    w->unk_762[0] = 31;
+    w->unk_762[1] = 79;
+    w->unk_762[2] = 127;
+    w->unk_768 = 128;
+    w->unk_76A = 128;
+    w->unk_76C = -0x800;
+    w->unk_770 = 0xA000;
+    w->unk_7BF = 16;
+    w->unk_77A = 0;
+    w->unk_77C = 256;
+    w->unk_774 = 132;
+    w->unk_776 = gUnk_09037FB4[0];
+    w->unk_7BD = 0;
+    w->unk_7B0 = 0;
+    w->unk_7C7 = 0;
+    func_080A096C(gGameState.level, w->unk_77E);
+    func_080A096C(gGameState.unk_0F8, w->unk_784);
+    func_080A09C0((u16)gGameState.cp, w->unk_78C);
+    func_080A096C(gGameState.unk_0FC, w->unk_794);
+    func_080A0944(gGameState.unk_0FE, w->unk_79C);
+    w->unk_7A4 = 0;
+    w->unk_7C2[1] = 0;
+    w->unk_7C2[0] = 0;
+    w->unk_7BE = 0;
+    w->unk_7C1 = 0;
+    w->unk_7C0 = 16;
+    w->unk_7C5 = 0;
+}
+
 
 #ifndef VERSION_EU
 void func_0809E7A4(void) {
@@ -24977,58 +25234,7 @@ extern u8 gUnk_09EE7F30[];
 extern u8 gUnk_09EE790C[];
 u8 func_0809FBCC(u8* work, void* a);
 
-typedef struct UnkStruct_0809F730 {
-    void* unk_000[8];
-#ifdef VERSION_EU
-    u8 unk_020[0x34 - 0x20];
-#else
-    u8 unk_020[0x6DC - 0x20];
-#endif
-    void* unk_6DC;
-    void* unk_6E0;
-    void* unk_6E4;
-    void* unk_6E8;
-    void* unk_6EC;
-    void* unk_6F0;
-    void* unk_6F4;
-    void* unk_6F8;
-    TaskPool pool;
-    AnimState unk_710;
-    void* unk_728;
-    void* unk_72C;
-    void* unk_730;
-    AnimState unk_734;
-    void* unk_74C;
-    s16 unk_750[3];
-    s16 unk_756[3];
-    s16 unk_75C[3];
-    s16 unk_762[3];
-    u8 unk_768[0xE];
-    s16 unk_776;
-    u8 unk_778[0xC];
-    u16 unk_784[4];
-    u16 unk_78C[4];
-    u16 unk_794[4];
-    u16 unk_79C[4];
-    s16 unk_7A4;
-    u8 unk_7A6[0xA];
-    s8 unk_7B0;
-    s8 unk_7B1;
-    s8 unk_7B2[3];
-    s8 unk_7B5;
-    s8 unk_7B6;
-    u8 unk_7B7[6];
-    u8 unk_7BD;
-    u8 unk_7BE;
-    u8 unk_7BF;
-    u8 unk_7C0;
-    u8 unk_7C1;
-    u8 unk_7C2[2];
-    u8 unk_7C4;
-    u8 unk_7C5;
-    u8 unk_7C6;
-    u8 unk_7C7;
-} UnkStruct_0809F730;
+
 
 typedef struct UnkStruct_0809F730_Args {
     u8* done;
