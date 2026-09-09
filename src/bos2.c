@@ -3806,11 +3806,10 @@ u8 func_080C0258(u16* p, s16 b, u8 c, u8 d) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 void func_080C02AC(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
     BosSub* s = (BosSub*)&work->unk_00->unk_110;
-    s16 n;
+    s16 n = 0;
     s16 m;
     u8 v;
 
@@ -3821,19 +3820,6 @@ void func_080C02AC(JfMajinWork* work) {
     }
 
     switch (jf->unk_244) {
-    default:
-        work->unk_46++;
-
-        if (work->unk_46 <= 1) {
-            return;
-        }
-
-        work->unk_46 = 0;
-        v = func_080BE910();
-        n = (s8)func_080C0258(&work->unk_5E, work->unk_64, v, 0);
-        n += (s8)func_080C0258(&work->unk_60, work->unk_66, v, 1);
-        n += (s8)func_080C0258(&work->unk_62, work->unk_68, v, 2);
-        break;
     case 0:
         if (jf->unk_034 & 4) {
             jf->unk_248 = 8;
@@ -3885,7 +3871,7 @@ void func_080C02AC(JfMajinWork* work) {
         work->unk_44 = 0;
         func_080BDB28(60);
         work->unk_00->unk_244++;
-        return;
+        break;
     case 1:
         work->unk_46++;
 
@@ -3894,53 +3880,63 @@ void func_080C02AC(JfMajinWork* work) {
             m4aSongNumStart(0x26A);
             work->unk_00->unk_244++;
         }
-        return;
-    }
+        break;
+    default:
+        work->unk_46++;
 
-    if (n == 3) {
-        if (s->unk_02C < s->unk_02E / 2) {
-            switch (work->unk_00->unk_24E) {
-            case 0:
-                work->unk_00->unk_24E = 3;
-                break;
-            case 1:
-                work->unk_00->unk_24E = 0;
-                break;
-            case 2:
-                work->unk_00->unk_24E = 0;
-                work->unk_00->unk_250 = 300;
-                break;
-            case 3:
-                work->unk_00->unk_24E = 1;
-                break;
-            }
-        } else {
-            switch (work->unk_00->unk_24E) {
-            case 0:
-                work->unk_00->unk_24E = 1;
-                break;
-            case 1:
-                work->unk_00->unk_24E = 0;
-                break;
-            case 2:
-                work->unk_00->unk_24E = 0;
-                work->unk_00->unk_250 = 300;
-                break;
-            }
+        if (work->unk_46 <= 1) {
+            return;
         }
 
-        work->unk_00->unk_244 = 0;
-        work->unk_00->unk_238 = 0;
-    } else {
-        gUnk_0203ACC4 = work->unk_5E;
-        gUnk_0203ACD4 = work->unk_60;
-        gUnk_0203ACC0 = work->unk_62;
-        func_080BDAAC();
+        work->unk_46 = 0;
+        v = func_080BE910();
+        n += (s8)func_080C0258(&work->unk_5E, work->unk_64, v, 0);
+        n += (s8)func_080C0258(&work->unk_60, work->unk_66, v, 1);
+        n += (s8)func_080C0258(&work->unk_62, work->unk_68, v, 2);
+
+        if (n == 3) {
+            if (s->unk_02C < s->unk_02E / 2) {
+                switch (work->unk_00->unk_24E) {
+                case 0:
+                    work->unk_00->unk_24E = 3;
+                    break;
+                case 1:
+                    work->unk_00->unk_24E = 0;
+                    break;
+                case 2:
+                    work->unk_00->unk_24E = 0;
+                    work->unk_00->unk_250 = 300;
+                    break;
+                case 3:
+                    work->unk_00->unk_24E = 1;
+                    break;
+                }
+            } else {
+                switch (work->unk_00->unk_24E) {
+                case 0:
+                    work->unk_00->unk_24E = 1;
+                    break;
+                case 1:
+                    work->unk_00->unk_24E = 0;
+                    break;
+                case 2:
+                    work->unk_00->unk_24E = 0;
+                    work->unk_00->unk_250 = 300;
+                    break;
+                }
+            }
+
+            work->unk_00->unk_244 = 0;
+            work->unk_00->unk_238 = 0;
+        } else {
+            gUnk_0203ACC4 = work->unk_5E;
+            gUnk_0203ACD4 = work->unk_60;
+            gUnk_0203ACC0 = work->unk_62;
+            func_080BDAAC();
+        }
+        break;
     }
 }
-#else
-INCLUDE_ASM("bos2/func_080C02AC.s");
-#endif
 
 void func_080C0624(JfMajinWork* work) {
     if (work->unk_00->unk_244 == 0) {
