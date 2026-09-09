@@ -297,7 +297,6 @@ void task_wlogo_won_0(WlogoWonWork* work) {
     SetBgBlend(0, 16, 0);
 }
 
-#ifdef NON_MATCHING
 u8 task_wlogo_won_1(WlogoWonWork* work) {
     s32 i;
 
@@ -316,7 +315,10 @@ u8 task_wlogo_won_1(WlogoWonWork* work) {
                     work->unk_0C0[i]++;
                     work->unk_0AC[i] = 0;
                 }
-            } else if (work->unk_0AC[i] > gUnk_09EF1744[i].unk_0E) {
+                work->unk_0AC[i]++;
+                continue;
+            }
+            if (work->unk_0AC[i] > gUnk_09EF1744[i].unk_0E) {
                 work->unk_0C0[i]++;
             } else {
                 work->x[i] -= work->unk_05C[i];
@@ -350,15 +352,13 @@ u8 task_wlogo_won_1(WlogoWonWork* work) {
                 DisableBg(0);
                 return 0;
             }
-            SetBgBlend(0, 16 - work->unk_0F3, work->unk_0F3);
         }
+        SetBgBlend(0, 16 - work->unk_0F3, work->unk_0F3);
         break;
     }
     return 1;
 }
-#else
-INCLUDE_ASM("wlogo/task_wlogo_won_1.s");
-#endif
+
 
 void task_wlogo_won_2(WlogoWonWork* work) {
     s32 i;
