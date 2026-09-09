@@ -2168,6 +2168,10 @@ void eu_080DA80C(u16 a, u16 b) {
     AnimChange(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044, a, b);
 }
 
+u16 eu_080DA830(void) {
+    return AnimGetId(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044);
+}
+
 INCLUDE_ASM("bos4/eu_080DA80C.s");
 #endif
 
