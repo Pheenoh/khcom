@@ -944,42 +944,42 @@ void task_status_friend_3(StatusFriendWork* work) {
     }
 }
 
-#ifdef NON_MATCHING
 u16 func_080D8B84(void** a, void** b, void** c) {
-    StatusFriendTable t;
-    StatusCardDef* d;
-    StatusFriendEntry* e;
-    u16 n;
-    u16 i;
-    u16 lim;
+    StatusFriendTable table;
+    StatusCardDef* card;
+    const void* data;
+    u16 count;
+    u16 index;
+    u16 limit;
+    const void* source;
 
-    t = gUnk_096FDE24;
+    source = &gUnk_096FDE24;
+    table = *(const StatusFriendTable*)source;
 
-    if (gGameState.flags & 8) {
-        lim = 1;
+    data = &gGameState;
+    if (((const GameState*)data)->flags & 8) {
+        limit = 1;
     } else {
-        lim = 3;
+        limit = 3;
     }
-    n = 0;
+    count = 0;
 
-    for (i = 0; i <= 7; i++) {
-        e = &t.unk_00[i];
-        if (gUnk_02039D2C & e->unk_00) {
-            d = &gCardDefs[e->unk_02];
-            a[n] = LoadObjTiles(d->unk_14, 0x100);
-            b[n] = LoadObjPalette(d->unk_18, 0x20);
-            c[n] = d->unk_10;
-            n++;
-            if (n >= lim) {
+    for (index = 0; index <= 7; index++) {
+        data = &table.unk_00[index];
+        source = &gUnk_02039D2C;
+        if (*(const u16*)source & ((const StatusFriendEntry*)data)->unk_00) {
+            card = &gCardDefs[((const StatusFriendEntry*)data)->unk_02];
+            a[count] = LoadObjTiles(card->unk_14, 0x100);
+            b[count] = LoadObjPalette(card->unk_18, 0x20);
+            c[count] = card->unk_10;
+            count++;
+            if (count >= limit) {
                 break;
             }
         }
     }
-    return n;
+    return count;
 }
-#else
-INCLUDE_ASM("status/func_080D8B84.s");
-#endif
 
 void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     gStockMesDispWork = (u8*)work;
