@@ -6211,7 +6211,6 @@ void task_bos_dsd_circle_0(DsdCircleWork* work, void* arg) {
     work->gfx = gUnk_09EF3C50[0];
 }
 
-#ifdef NON_MATCHING
 u8 task_bos_dsd_circle_1(DsdCircleWork* work) {
     DsdWork* d = work->unk_00;
 
@@ -6249,8 +6248,8 @@ u8 task_bos_dsd_circle_1(DsdCircleWork* work) {
         }
 
         if (work->unk_1C == 60 || work->unk_1C == 110) {
-            func_0801BDDC(0, work->x + (GetRandom() % 101 * 256 - 0x3200),
-                          work->y + (GetRandom() % 17 * 256 - 0x800), 0);
+            func_0801BDDC(0, work->x + ((GetRandom() % 101 - 50) << 8),
+                          work->y + ((GetRandom() % 17 - 8) << 8), 0);
         }
 
         work->unk_1C++;
@@ -6285,9 +6284,6 @@ u8 task_bos_dsd_circle_1(DsdCircleWork* work) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("bos2/task_bos_dsd_circle_1.s");
-#endif
 
 
 
