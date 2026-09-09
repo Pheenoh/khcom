@@ -2298,7 +2298,7 @@ Deck* func_08083C94(void);
 u8 func_08085374(u16 card, u8 deck);
 void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p);
 void func_080AB228(void);
-u16 func_08093384(u8* work);
+u16 func_08093384();
 void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a);
 void Deck_Clear_0(UnkStruct_080A2F54* w, u8* a);
 void Deck_Yes_No_0(UnkStruct_080A2F54* w, u8* a);

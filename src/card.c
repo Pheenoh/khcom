@@ -302,7 +302,7 @@ u8 func_080864A4(u8* work, void* a);
 s32 func_0805F588(s32 a, s32 b);
 void func_08096F08(void* a, void* b);
 u8 func_08096288(PrizeCardWork* w, void* a);
-u16 func_08093384(u8* work);
+u16 func_08093384();
 void* AllocObjTiles(s32 a, s32 b);
 u8 func_08092A34(UnkStruct_08093838* w, void* a);
 u8 func_080923E0(UnkStruct_08093838* w, void* a);
@@ -14556,7 +14556,146 @@ void WORLDSELECT_1(void) {
 void WORLDSELECT_2(void) {
     TaskPoolDestroy(gUnk_02034AB8);
 }
-INCLUDE_ASM("card/MapSelect_0.s");
+extern u8 gUnk_093F5422[];
+extern u8 gUnk_093F6734[];
+extern u8 gUnk_09EF11F8[];
+extern u8 gUnk_093F5C40[];
+#ifdef VERSION_EU
+extern void* gUnkEu_09F6FF30[];
+extern u16 gUnkEu_090CED64[];
+extern void* gUnkEu_09F6FF44[];
+#endif
+void func_0809332C(UnkStruct_08093838* w);
+void func_080933D8(UnkStruct_080933D8* p);
+void MapSelect_0(UnkStruct_08093838* w, u8* a) {
+    u32 zero;
+    s32 n;
+
+    func_080A42B4();
+    zero = 0;
+    CpuSet(&zero, w, 0x050000B9);
+    w->unk_294 = a;
+    *a = 0;
+    w->unk_286 = 0;
+    w->unk_2BF = 0;
+    w->unk_298 = 0;
+    w->unk_1F4 = 0;
+    gUnk_02034ACC = 0;
+    w->unk_29C = 0;
+    w->unk_29D = 0;
+    w->unk_2C0 = 0;
+    w->unk_2BE = func_080DF500();
+    n = (u8)func_080E0378() + 1;
+    *(u16*)w->unk_27E = n;
+    if (n == 10) {
+        *(u16*)w->unk_27E = 0;
+    }
+    *(void**)&w->unk_014[0x24] = 0;
+    if (w->unk_2BE == 0) {
+        if (*(u16*)w->unk_27E == 0) {
+            *(UnkStruct_080038C8**)&w->unk_014[0x18] = func_080038C8(0x80);
+            func_080038E4(*(void**)&w->unk_014[0x18], gUnk_09EF1198[0], gUnk_0950C478);
+        } else {
+            *(UnkStruct_080038C8**)&w->unk_014[0x18] = func_080038C8(0x180);
+            func_080038E4(*(void**)&w->unk_014[0x18], gUnk_09EF1198[1], gUnk_0950C478);
+            RequestDma3Copy((u8*)(*(UnkStruct_080038C8**)&w->unk_014[0x18])->unk_00 + (*(u16*)w->unk_27E << 7),
+                           (void*)(0x06010000 + (((*(UnkStruct_080038C8**)&w->unk_014[0x18])->unk_06 + 4) << 5)), 0x80);
+            RequestDma3Copy((u8*)(*(UnkStruct_080038C8**)&w->unk_014[0x18])->unk_00 + 0x500,
+                           (void*)(0x06010000 + ((*(UnkStruct_080038C8**)&w->unk_014[0x18])->unk_06 << 5)), 0x80);
+        }
+        *(void**)&w->unk_014[0x20] = LoadObjTiles(gUnk_08F709B0[4].unk_10, 0x300);
+        *(void**)&w->unk_014[0x1C] = LoadObjPalette(gUnk_09618D38, 32);
+        func_080062F4((u16)((*(ObjPalette**)&w->unk_014[0x1C])->unk_06 + 16), 1);
+    } else {
+        *(void**)&w->unk_014[0x18] = 0;
+        *(void**)&w->unk_014[0x20] = 0;
+        *(void**)&w->unk_014[0x1C] = LoadObjPalette(gUnk_09618D38, 32);
+        func_080062F4((u16)((*(ObjPalette**)&w->unk_014[0x1C])->unk_06 + 16), 1);
+    }
+    gUnk_0203A890[0] = AllocObjTiles(0x280, 0);
+    func_08002A10(gUnk_0203A890[0], gUnk_0908B1B4);
+    AnimInit((AnimState*)&gUnk_0203A890[6], gUnk_09EEA164, gUnk_09EEA148);
+    AnimStart((AnimState*)&gUnk_0203A890[6], 0, 1);
+    gUnk_0203A890[4] = AnimGetGfx((AnimState*)&gUnk_0203A890[6]);
+    w->tiles = AllocObjTiles(0x3C0, 0);
+    *(void**)w->unk_040 = LoadObjPalette(gUnk_09618D18, 32);
+    func_08002A10(w->tiles, gUnk_093F47E4);
+    AnimInit((AnimState*)w->unk_1F8, gUnk_09EF1194, gUnk_09EF1180);
+    AnimStart((AnimState*)w->unk_1F8, 0, 1);
+    w->gfx = AnimGetGfx((AnimState*)w->unk_1F8);
+    *(void**)&w->unk_040[4] = AllocObjTiles(0x120, 0);
+    *(void**)&w->unk_040[8] = LoadObjPalette(gUnk_09618CD8, 32);
+    func_08002A10(*(void**)&w->unk_040[4], gUnk_093F4578);
+    AnimInit((AnimState*)&w->unk_1F8[0x18], gUnk_09EF1170, gUnk_09EF1150);
+    AnimStart((AnimState*)&w->unk_1F8[0x18], 0, 1);
+    *(void**)w->unk_278 = AnimGetGfx((AnimState*)&w->unk_1F8[0x18]);
+    *(void**)&w->unk_040[0x1A8] = LoadObjTiles(gUnk_093F5422, 0xC0);
+    w->unk_26C = -0x800;
+    w->unk_270 = 0xA000;
+    w->unk_290 = 16;
+    w->unk_28F = 16;
+    w->unk_27C = func_08093384();
+    TaskPoolInit(w, w->unk_27C + 10);
+    ListPoolInit(w->unk_014);
+    w->unk_2E0 = EwramAlloc(w->unk_27C * 4);
+    func_080933D8(w->unk_2E0);
+    func_0809332C(w);
+#ifdef VERSION_EU
+    gUnk_0203A890[1] = LoadObjTiles(gUnkEu_09F6FF30[gLanguage], gUnkEu_090CED64[gLanguage]);
+#else
+    gUnk_0203A890[1] = LoadObjTiles(gUnk_093F6734, 0x360);
+#endif
+    gUnk_0203A890[3] = *(void**)&w->unk_040[8];
+#ifdef VERSION_EU
+    gUnk_0203A890[5] = gUnkEu_09F6FF44[gLanguage];
+#else
+    gUnk_0203A890[5] = gUnk_09EF11F8;
+#endif
+    *(void**)&w->unk_040[0x1A0] = LoadObjTiles(gUnk_093F5C40, 32);
+    w->unk_284 = 0;
+    w->unk_285 = 0;
+    w->unk_1EC = ListPoolFirst(w->unk_014);
+    *(MapcardWork**)w->unk_1F0 = 0;
+    m4aSongNumStart(118);
+    gUnk_02034AD0 = 0;
+    w->unk_258 = 0x1600;
+    w->unk_25C = 0x16400;
+    w->unk_28D[0] = 0;
+    *(s32*)w->unk_260 = 0;
+    w->unk_264 = 0x1600;
+    *(s32*)w->unk_268 = 0x6400;
+    w->unk_28D[1] = 0;
+    w->unk_28B = 0;
+    if (w->unk_1EC != 0) {
+        w->unk_250 = w->unk_1EC->unk_4C;
+        w->unk_254 = w->unk_1EC->unk_50;
+        w->unk_1EC->unk_6C |= 0x100;
+    } else {
+        w->unk_250 = -0x6400;
+        w->unk_254 = -0x6400;
+    }
+    w->unk_248 = -0xA000;
+    *(s32*)w->unk_24C = 0;
+    *(void**)&w->unk_040[0x18C] = _08066468(1);
+    w->unk_287[0] = 0;
+    w->unk_287[1] = 0;
+    w->unk_287[2] = 0;
+    func_08065ACC(&w->unk_040[12], 48);
+    if (w->unk_1EC != 0) {
+        *(MapcardWork**)w->unk_1F0 = w->unk_1EC;
+        w->unk_287[0] = func_08065B6C(func_08093C18(gUnk_09EE4C80[w->unk_1EC->unk_20].unk_20), &w->unk_040[12]);
+    }
+    w->unk_244 = 0x19100;
+    func_080062F4((u16)((*(ObjPalette**)&w->unk_040[8])->unk_06 + 16), 1);
+    func_080062F4((u16)((*(ObjPalette**)w->unk_040)->unk_06 + 16), 1);
+    func_080062F4(15, 1);
+    func_080062F4((u16)((*(ObjPalette**)&w->unk_040[0x18C])->unk_06 + 16), 1);
+    *(void**)&w->unk_040[0x1A4] = 0;
+    w->unk_299 = 9;
+    w->unk_29A = 9;
+    w->unk_29B = 0;
+    w->unk_2C1 = 0;
+}
 #ifndef VERSION_EU
 u8 MapSelect_1(UnkStruct_08093838* w, void* a) {
     *(void**)&w->unk_014[0x24] = LoadObjTiles(gUnk_093F7172, 0x400);
