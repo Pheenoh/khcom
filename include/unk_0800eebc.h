@@ -152,7 +152,7 @@ typedef struct GameState {
     u64 unk_11C;
     u64 unk_124;
     u64 unk_12C;
-    u8 unk_134[0x48];
+    u64 unk_134[9];
     u16 unk_17C;
     u8 unk_17E[0x02];
     u16 unk_180;
@@ -655,7 +655,7 @@ void func_08014780(s32 a, s32 b, s32 c);
 void func_08014790(u8 bit);
 void func_080147C8(s32 a, s32 b);
 void func_08019050(u16 a, s32 b, s32 c, s32 d);
-void func_0800FDD0(s32 a);
+void func_0800FDD0(u32 a);
 u8 func_0807E29C(void);
 void func_0809B644(void* p, s16 x, s16 y, s16 z, u8 n);
 void func_0800F368(Actor* p, u16 n);
