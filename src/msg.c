@@ -4327,8 +4327,6 @@ s32 func_0806C490(u8* a) {
 
     return n;
 }
-#else
-INCLUDE_ASM("msg/func_0806C490.s");
 #endif
 #ifndef VERSION_EU
 #ifndef VERSION_JP
@@ -4519,8 +4517,7 @@ s32 func_0806C81C(u8* a, u16 b) {
     return n;
 }
 #endif
-#ifndef VERSION_EU
-#ifdef VERSION_JP
+#if defined(VERSION_JP) || defined(VERSION_EU)
 u8 func_0806CBAC(u8* a, u16* b, u16 tile) {
 #else
 u8 func_0806CBAC(u16* a, u16* b, u16 tile) {
@@ -4531,9 +4528,16 @@ u8 func_0806CBAC(u16* a, u16* b, u16 tile) {
     *b = 0;
     while (*a != 0) {
         s32 v = 0;
+#ifdef VERSION_EU
+        if (*a == 31) {
+#else
         if (*a == 10) {
+#endif
             *b = 0;
         } else {
+#ifdef VERSION_EU
+            v = *a;
+#else
 #ifdef VERSION_JP
             if (*a > 31) {
 #else
@@ -4592,10 +4596,16 @@ u8 func_0806CBAC(u16* a, u16* b, u16 tile) {
                     break;
                 }
             }
+#endif
             if (v != 32) {
                 *b = gUnk_08F7D438[v];
+#ifdef VERSION_EU
+                v = ((u16*)gUnk_09EEB204[v])[3];
+                CpuSet(&gUnkEu_0919B63A[v * 32], dst, 0x40);
+#else
                 v = ((u16*)gUnk_09EEC134[v])[3];
                 CpuSet(&gUnk_090CBFB2[v * 32], dst, 0x40);
+#endif
                 dst += 128;
                 gUnk_02034A90++;
                 b++;
@@ -4608,7 +4618,6 @@ u8 func_0806CBAC(u16* a, u16* b, u16 tile) {
     }
     return gUnk_02034A90;
 }
-#endif
 void func_0806CD30(s32 a) {
     switch (a) {
     case 0:
