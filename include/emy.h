@@ -152,7 +152,7 @@ typedef struct EmyDef {
     void* unk_00;
     void* unk_04;
     s32 unk_08;
-    u8 unk_0C[0x02];
+    u16 unk_0C;
     u16 unk_0E;
 } EmyDef;
 
@@ -548,6 +548,7 @@ extern u8 gUnk_0813E484[];
 extern u8 gUnk_0813E4EC[];
 extern u8 gUnk_0813E53C[];
 extern u8 gUnk_0813E604[];
+extern u8 gUnk_0813E5A4[];
 extern u8 gUnk_0813E6AC[];
 extern u8 gUnk_0813E734[];
 extern u8 gUnk_0813E66C[];
@@ -682,6 +683,8 @@ u8 task_emy_81_1(Emy81Work* work);
 void task_emy_81_2(EmyWork* work);
 void task_emy_81_3(EmyWork* work);
 void task_emy_82_0(Emy82Work* work, void* obj);
+u8 task_emy_82_1(Emy82Work* work);
+u8 func_0801BDDC(s32 id, s32 x, s32 y, s32 z);
 u8 func_0803DD44(EmyWork* work);
 void task_emy_82_2(EmyWork* work);
 void task_emy_82_3(EmyWork* work);
