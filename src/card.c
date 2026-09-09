@@ -251,7 +251,8 @@ void func_0805F1C0(s32* p, s32 v);
 void func_0808D6C4(u8* work);
 void func_0808CD48(u8* work);
 u8 func_0800FF00(u16 n);
-void func_08086A14(void);
+struct UnkStruct_080889DC;
+u8 func_08086A14(struct UnkStruct_080889DC* w, void* a);
 void LoadPalette(void* src, void* dst, s32 size);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgSize(s32 a, s32 b);
@@ -10368,7 +10369,273 @@ u8 func_08086984(u8* work, void* a) {
 
     return 1;
 }
-INCLUDE_ASM("card/func_08086A14.s");
+typedef struct UnkStruct_080889DC {
+    u8 unk_000[0x4C8];
+    void* unk_4C8;
+    void* unk_4CC;
+    u8 unk_4D0[0x20];
+    void* unk_4F0;
+    void* unk_4F4;
+    u8 unk_4F8[0x2D0];
+#ifdef VERSION_EU
+    u8 unk_7C8[4];
+#endif
+    u8 taskpool[0x14];
+    u8 cardpool[0x14];
+    u8 unk_7F0[0x10];
+    AnimState unk_800;
+    AnimState unk_818;
+    AnimState unk_830;
+    s32 unk_848;
+    s32 unk_84C;
+    s32 unk_850;
+    s32 unk_854;
+    u8 unk_858[0x14];
+    s32 unk_86C;
+    s32 unk_870;
+    s16 unk_874;
+    s16 unk_876;
+    u8 unk_878[0xC];
+    s16 unk_884;
+    s16 unk_886;
+    u8 unk_888[0x12];
+    u16 unk_89A[4];
+    u16 unk_8A2;
+    u16 unk_8A4;
+    u16 unk_8A6;
+    u16 unk_8A8;
+    u8 unk_8AA[2];
+    u16 unk_8AC;
+    u8 unk_8AE[3];
+    u8 unk_8B1;
+    u8 unk_8B2;
+    u8 unk_8B3[2];
+    s8 unk_8B5;
+    s8 unk_8B6;
+    u8 unk_8B7;
+    u8 unk_8B8[8];
+    u8 unk_8C0;
+    u8 unk_8C1;
+    u8 unk_8C2[7];
+    u8 unk_8C9;
+    u8 unk_8CA;
+    u8 unk_8CB;
+    u8 unk_8CC[2];
+    s8 unk_8CE;
+    u8 unk_8CF;
+    u8 unk_8D0;
+    u8 unk_8D1;
+    u8 unk_8D2;
+    u8 unk_8D3;
+    u16 unk_8D4;
+} UnkStruct_080889DC;
+
+u8 func_08086A14(UnkStruct_080889DC* w, void* a) {
+    w->unk_4F0 = AnimUpdate(&w->unk_800);
+    w->unk_4F4 = AnimUpdate(&w->unk_818);
+    if ((u8)func_08006314() != 0) {
+        TaskPoolUpdate(w->taskpool);
+        return 1;
+    }
+    if (w->unk_8C9 != 0) {
+        func_0805F1C0(&w->unk_848, gUnk_09035950[w->unk_884] << 8);
+        func_0805F1C0(&w->unk_84C, gUnk_09035956[w->unk_886] << 8);
+        if (w->unk_8B7 != 0) {
+            w->unk_8B7--;
+        }
+        TaskPoolUpdate(w->taskpool);
+        TaskPoolUpdate(w->cardpool);
+        if (GetKeysPressed() & 8) {
+            w->unk_8CB = 1;
+            w->unk_8D2 = 7;
+        }
+        w->unk_8CE = 4;
+        return 1;
+    }
+    if (w->unk_8CE > 0) {
+        TaskPoolUpdate(w->taskpool);
+        TaskPoolUpdate(w->cardpool);
+        w->unk_8CE--;
+        return 1;
+    }
+    if (w->unk_8CB != 0) {
+        if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
+            SetTaskUpdate(a, (void*)func_0808B208);
+            func_08006184(0, 4);
+            m4aSongNumStart(103);
+            return 1;
+        } else {
+            w->unk_8CB = 0;
+        }
+    }
+    switch ((u16)GetKeysRepeat()) {
+    case 64:
+        if (w->unk_886 > 0) {
+            w->unk_886--;
+            w->unk_8B7 = 1;
+            m4aSongNumStart(121);
+        } else {
+            if ((u8)func_0808CA78((u8*)w, 1) == 0) {
+                if (w->unk_8CF == 0) {
+                    w->unk_884 = w->unk_8C1;
+                    w->unk_8B7 = 1;
+                    m4aSongNumStart(121);
+                    w->unk_8B2 = w->unk_8B1;
+                    w->unk_8B1 = 2;
+                    AnimStart(&w->unk_800, 0, 1);
+                    SetTaskUpdate(a, (void*)func_080870FC);
+                    func_0808DE28(0);
+                    return 1;
+                }
+            } else {
+                if (w->unk_8CF != 0) {
+                    w->unk_876++;
+                    if ((u16)w->unk_876 <= 3) {
+                        w->unk_870 = gUnk_09035956[w->unk_876] << 8;
+                    } else {
+                        w->unk_870 = -0x10000;
+                    }
+                }
+            }
+        }
+        break;
+    case 128:
+        if (w->unk_886 <= 2) {
+            w->unk_886++;
+            w->unk_8B7 = 1;
+            m4aSongNumStart(121);
+        } else {
+            func_0808C9CC((u8*)w);
+            if (w->unk_8CF != 0) {
+                if ((u16)w->unk_876 <= 3) {
+                    w->unk_870 = gUnk_09035956[w->unk_876] << 8;
+                } else {
+                    w->unk_870 = -0x10000;
+                }
+            }
+        }
+        break;
+    case 32:
+        if (w->unk_884 > 0) {
+            w->unk_884--;
+            w->unk_8B7 = 1;
+            m4aSongNumStart(121);
+        }
+        break;
+    case 16:
+        if (w->unk_884 > 1) {
+            if (w->unk_8CF == 0) {
+                w->unk_884 = 0;
+                w->unk_886 = w->unk_8C0;
+                w->unk_8B7 = 1;
+                w->unk_8B2 = w->unk_8B1;
+                w->unk_8B1 = 1;
+                func_0808CD48((u8*)w);
+                m4aSongNumStart(101);
+                SetTaskUpdate(a, (void*)func_080889DC);
+                return 1;
+            }
+        } else {
+            w->unk_884++;
+            w->unk_8B7 = 1;
+            m4aSongNumStart(121);
+        }
+        break;
+    }
+    switch ((u16)GetKeysPressed()) {
+    case 2:
+        if (w->unk_8CF == 0) {
+            w->unk_884 = 0;
+            w->unk_886 = w->unk_8C0;
+            w->unk_8B7 = 1;
+            w->unk_8B2 = w->unk_8B1;
+            w->unk_8B1 = 1;
+            func_0808CD48((u8*)w);
+            m4aSongNumStart(101);
+            SetTaskUpdate(a, (void*)func_080889DC);
+            return 1;
+        } else {
+            m4aSongNumStart(104);
+            w->unk_8CF = 0;
+            AnimStart(&w->unk_800, 0, 1);
+            return 1;
+        }
+    case 1:
+        if (w->unk_8C1 != 0) {
+            return 1;
+        }
+        if (w->unk_8CF == 0) {
+            m4aSongNumStart(140);
+            w->unk_8CF = 1;
+            w->unk_874 = w->unk_884;
+            w->unk_876 = w->unk_886;
+            w->unk_86C = gUnk_09035950[w->unk_874] << 8;
+            w->unk_870 = gUnk_09035956[w->unk_876] << 8;
+            AnimStart(&w->unk_800, 4, 1);
+        } else {
+            if ((u8)func_0808EDA4((u8*)w) != 0) {
+                m4aSongNumStart(140);
+                w->unk_8CF = 0;
+                AnimStart(&w->unk_800, 0, 1);
+                } else {
+                m4aSongNumStart(105);
+                }
+        }
+        return 1;
+    case 8:
+        if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
+            SetTaskUpdate(a, (void*)func_0808B208);
+            func_08006184(0, 4);
+            m4aSongNumStart(104);
+            w->unk_8D2 = 7;
+        }
+        return 1;
+    case 512:
+        m4aSongNumStart(103);
+        w->unk_8CF = 0;
+        AnimStart(&w->unk_800, 0, 1);
+        SetTaskUpdate(a, (void*)func_08089EC0);
+        return 1;
+    case 256:
+        func_0808E2F0((UnkStruct_0808DB04*)w);
+        m4aSongNumStart(103);
+        w->unk_8CF = 0;
+        AnimStart(&w->unk_800, 0, 1);
+        SetTaskUpdate(a, (void*)func_080892E8);
+        return 1;
+    }
+    if (GetKeysPressed() & 4) {
+        w->unk_8CF = 0;
+        w->unk_886 = 0;
+        w->unk_8AC = 4;
+        func_0808E7D8((u8*)w);
+        w->unk_850 = 0x4800;
+        w->unk_854 = 0x2800;
+        w->unk_884 = w->unk_8C1;
+        w->unk_8B7 = 1;
+        m4aSongNumStart(121);
+        w->unk_8B1 = 2;
+        AnimStart(&w->unk_800, 0, 1);
+        TaskPoolUpdate(w->taskpool);
+        TaskPoolUpdate(w->cardpool);
+        SetTaskUpdate(a, (void*)func_080870FC);
+        func_0808DE28(0);
+        return 1;
+    }
+    w->unk_4C8 = func_0808CB60((u8*)w);
+    func_0805F1C0(&w->unk_848, gUnk_09035950[w->unk_884] << 8);
+    func_0805F1C0(&w->unk_84C, gUnk_09035956[w->unk_886] << 8);
+    if (w->unk_8B7 != 0) {
+        w->unk_8B7--;
+    }
+    w->unk_4CC = w->unk_4C8;
+    w->unk_8B3[0] = w->unk_884;
+    w->unk_8B3[1] = w->unk_886;
+    TaskPoolUpdate(w->taskpool);
+    TaskPoolUpdate(w->cardpool);
+    return 1;
+}
+
 u8 func_080870FC(UnkStruct_0808DB04* w, void* a) {
     *(void**)&w->unk_4E8[8] = AnimUpdate((AnimState*)&w->unk_7F0[0x10]);
     if (w->unk_8C8[1] != 0) {
@@ -10764,58 +11031,7 @@ void func_08087B98(u8* work, u8 mode) {
 #else
 INCLUDE_ASM("card/func_08087B98.s");
 #endif
-typedef struct UnkStruct_080889DC {
-    u8 unk_000[0x4F0];
-    void* unk_4F0;
-    void* unk_4F4;
-    u8 unk_4F8[0x2D0];
-#ifdef VERSION_EU
-    u8 unk_7C8[4];
-#endif
-    u8 taskpool[0x14];
-    u8 cardpool[0x14];
-    u8 unk_7F0[0x10];
-    AnimState unk_800;
-    AnimState unk_818;
-    AnimState unk_830;
-    s32 unk_848;
-    s32 unk_84C;
-    s32 unk_850;
-    s32 unk_854;
-    u8 unk_858[0x2C];
-    s16 unk_884;
-    s16 unk_886;
-    u8 unk_888[0x12];
-    u16 unk_89A[4];
-    u16 unk_8A2;
-    u16 unk_8A4;
-    u16 unk_8A6;
-    u16 unk_8A8;
-    u8 unk_8AA[2];
-    u16 unk_8AC;
-    u8 unk_8AE[3];
-    u8 unk_8B1;
-    u8 unk_8B2;
-    u8 unk_8B3[2];
-    s8 unk_8B5;
-    s8 unk_8B6;
-    u8 unk_8B7;
-    u8 unk_8B8[8];
-    u8 unk_8C0;
-    u8 unk_8C1;
-    u8 unk_8C2[7];
-    u8 unk_8C9;
-    u8 unk_8CA;
-    u8 unk_8CB;
-    u8 unk_8CC[2];
-    s8 unk_8CE;
-    u8 unk_8CF;
-    u8 unk_8D0;
-    u8 unk_8D1;
-    u8 unk_8D2;
-    u8 unk_8D3;
-    u16 unk_8D4;
-} UnkStruct_080889DC;
+
 
 u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
     u8 n;
