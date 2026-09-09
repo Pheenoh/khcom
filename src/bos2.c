@@ -1894,7 +1894,6 @@ void task_bos_jf_3(JfWork* work) {
     TaskPoolDestroy(&work->unk_254);
 }
 
-#ifdef NON_MATCHING
 u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
     s32 v1;
     s32 v2;
@@ -1902,7 +1901,6 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
     s32 lo;
     s32 hi;
     s32 x;
-    u8 setFlag = 0;
 
     v1 = -((gUnk_0203ACC4 + 1) << 11);
     v2 = -((gUnk_0203ACD4 + 1) << 11);
@@ -1925,7 +1923,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             if (x > lo) {
                 if (*a <= v2) {
                     *out = v2;
-                    setFlag = x > hi - 0x1000;
+                    if (x > hi - 0x1000)
+                        ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
                 } else {
                     *out = v3;
                     *p = hi;
@@ -1934,7 +1933,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             } else {
                 if (*a <= v1) {
                     *out = v1;
-                    setFlag = x > lo - 0x1000;
+                    if (x > lo - 0x1000)
+                        ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
                 } else {
                     *out = v2;
                     *p = lo;
@@ -1949,7 +1949,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             if (x <= lo) {
                 if (*a <= v1) {
                     *out = v1;
-                    setFlag = x > lo - 0x1000;
+                    if (x > lo - 0x1000)
+                        ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
                 } else {
                     *out = v2;
                     *p = lo;
@@ -1963,7 +1964,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
                 if (*a <= v3) {
                     *out = v3;
-                    setFlag = x < hi + 0x1000;
+                    if (x < hi + 0x1000)
+                        ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
                 } else {
                     *out = v2;
                     *p = hi;
@@ -1981,7 +1983,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v1) {
                 *out = v1;
-                setFlag = x > lo - 0x1000;
+                if (x > lo - 0x1000)
+                    ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
             } else {
                 *out = v2;
                 *p = lo;
@@ -2008,7 +2011,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v2) {
                 *out = v2;
-                setFlag = (x < lo + 0x1000) || (x > hi - 0x1000);
+                if ((x < lo + 0x1000) || (x > hi - 0x1000))
+                    ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
             } else {
                 if (x <= 0x205FF) {
                     *out = v1;
@@ -2033,7 +2037,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             if (x < hi) {
                 if (*a <= v2) {
                     *out = v2;
-                    setFlag = x < lo + 0x1000;
+                    if (x < lo + 0x1000)
+                        ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
                 } else {
                     *out = v1;
                     *p = lo;
@@ -2042,7 +2047,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             } else {
                 if (*a <= v3) {
                     *out = v3;
-                    setFlag = x < hi + 0x1000;
+                    if (x < hi + 0x1000)
+                        ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
                 } else {
                     *out = v2;
                     *p = hi;
@@ -2060,7 +2066,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v2) {
                 *out = v2;
-                setFlag = x < lo + 0x1000;
+                if (x < lo + 0x1000)
+                    ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
             } else {
                 *out = v1;
                 *p = lo;
@@ -2080,7 +2087,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v2) {
                 *out = v2;
-                setFlag = x > hi - 0x1000;
+                if (x > hi - 0x1000)
+                    ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
             } else {
                 *out = v3;
                 *p = hi;
@@ -2098,7 +2106,8 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v3) {
                 *out = v3;
-                setFlag = x < hi + 0x1000;
+                if (x < hi + 0x1000)
+                    ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
             } else {
                 *out = v2;
                 *p = hi;
@@ -2106,19 +2115,14 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             }
         } else {
             gUnk_0203B4E4 = 8;
-            *out = v2;
+            v1 = v2;
+            *out = v1;
             return 0;
         }
     }
 
-    if (setFlag) {
-        ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
-    }
     return 0;
 }
-#else
-INCLUDE_ASM("bos2/func_080BD4A8.s");
-#endif
 
 u8 func_080BD7F8(s32* p, s32* a, s32 b, s32* out) {
     s32 v1;
