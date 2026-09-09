@@ -610,6 +610,16 @@ typedef struct UnkStruct_0808E2F0 {
     u16* unk_1C;
 } UnkStruct_0808E2F0;
 
+typedef struct UnkStruct_080AAB08 {
+    u8 unk_000[0x4CC];
+    UnkStruct_0808E2F0* unk_4CC;
+    u8 unk_4D0[0x1FC];
+    u16 unk_6CC;
+    u8 unk_6CE[2];
+    s16 unk_6D0;
+    u16 unk_6D2;
+} UnkStruct_080AAB08;
+
 typedef struct UnkStruct_080A6FAC {
     u8 unk_000[0x18];
     void* unk_018;
