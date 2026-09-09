@@ -1896,22 +1896,19 @@ void func_08117058(s32 pos) {
     gUnk_02038098 = pos;
 }
 
-#ifdef NON_MATCHING
 u8 func_08117064(u32 id, u16* rate, u32* count) {
-    s32 i;
+    s32 i = 0;
 
-    for (i = 0; gUnk_09EFAA7C[i].unk_00 != id; i++) {
-        if (gUnk_09EFAA7C[i + 1].unk_00 == 0) {
-            return 0;
+    do {
+        if (gUnk_09EFAA7C[i].unk_00 == id) {
+            *rate = gUnk_09EFAA7C[i].unk_08;
+            *count = gUnk_09EFAA7C[i].unk_04;
+            return 1;
         }
-    }
-    *rate = gUnk_09EFAA7C[i].unk_08;
-    *count = gUnk_09EFAA7C[i].unk_04;
-    return 1;
+        i++;
+    } while (gUnk_09EFAA7C[i].unk_00 != 0);
+    return 0;
 }
-#else
-INCLUDE_ASM("sroll/func_08117064.s");
-#endif
 
 u8 func_081170C0(u32 id) {
     u16 rate;
