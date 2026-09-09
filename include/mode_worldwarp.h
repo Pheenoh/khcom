@@ -7,6 +7,12 @@
 #include "main.h"
 #include "anim.h"
 #include "m4a.h"
+typedef struct {
+    u16 world : 8;
+    u16 unk_01 : 8;
+    u16 unk_02;
+} __attribute__((packed, aligned(2))) WorldwarpFloor;
+
 typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
@@ -15,7 +21,7 @@ typedef struct GameState {
     u8 unk_00F[0x165];
     u32 mooglePoints;
     u8 unk_178[0x0E];
-    u8 unk_186[13][4];
+    WorldwarpFloor unk_186[13];
 } GameState;
 
 typedef struct WarpIcon {
