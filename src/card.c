@@ -13296,8 +13296,13 @@ typedef struct UnkStruct_0808F0C0 {
     s32 unk_7B4;
     s32 unk_7B8;
     s32 unk_7BC;
-    s16 unk_7C0;
-    s16 unk_7C2;
+    union {
+        struct {
+            s16 x;
+            s16 y;
+        } parts;
+        u32 packed;
+    } cursor;
     u8 unk_7C4;
     u8 unk_7C5;
     u8 unk_7C6;
@@ -13323,117 +13328,115 @@ typedef struct UnkStruct_09035898 {
     u8 unk_06[2];
 } UnkStruct_09035898;
 
-#ifndef VERSION_JP
 extern UnkStruct_09035898 gUnk_09035898[];
 extern UnkStruct_09035898 gUnk_090358D0[];
-#endif
 
 u8 func_0808F0C0(UnkStruct_0808F0C0* w, u16 keys) {
-    if (w->unk_7C2 == 1 && (u16)w->unk_7C0 > 10) {
+    if (w->cursor.parts.y == 1 && (u16)w->cursor.parts.x > 10) {
         switch (keys) {
         case 64:
-            w->unk_7C2--;
+            w->cursor.parts.y--;
             break;
         case 128:
-            w->unk_7C2++;
+            w->cursor.parts.y++;
             break;
         case 32:
-            w->unk_7C0 = 10;
+            w->cursor.parts.x = 10;
             break;
         case 16:
-            w->unk_7C0 = 0;
+            w->cursor.parts.x = 0;
             break;
         }
     }
-    if (w->unk_7C2 == 3 && (u16)w->unk_7C0 > 10) {
+    if (w->cursor.parts.y == 3 && (u16)w->cursor.parts.x > 10) {
         switch (keys) {
         case 64:
-            w->unk_7C2--;
+            w->cursor.parts.y--;
             break;
         case 128:
-            w->unk_7C2++;
+            w->cursor.parts.y++;
             break;
         case 32:
-            w->unk_7C0 = 10;
+            w->cursor.parts.x = 10;
             break;
         case 16:
-            w->unk_7C0 = 0;
+            w->cursor.parts.x = 0;
             break;
         }
     }
 #if defined(VERSION_JP) || defined(VERSION_EU)
 #ifdef VERSION_JP
-    if (w->unk_7C2 == 4 && (u16)w->unk_7C0 > 9) {
+    if (w->cursor.parts.y == 4 && (u16)w->cursor.parts.x > 9) {
 #else
-    if (w->unk_7C2 == 5 && (u16)w->unk_7C0 > 9) {
+    if (w->cursor.parts.y == 5 && (u16)w->cursor.parts.x > 9) {
 #endif
         switch (keys) {
         case 64:
 #ifdef VERSION_JP
-            w->unk_7C2 -= 2;
+            w->cursor.parts.y -= 2;
 #else
-            w->unk_7C2--;
+            w->cursor.parts.y--;
 #endif
             break;
         case 128:
-            w->unk_7C2++;
+            w->cursor.parts.y++;
             break;
         case 32:
-            w->unk_7C0 = 9;
+            w->cursor.parts.x = 9;
             break;
         case 16:
-            w->unk_7C0 = 0;
+            w->cursor.parts.x = 0;
             break;
         }
     }
 #endif
-    if (w->unk_7C0 > 14) {
-        w->unk_7C0 = 0;
+    if (w->cursor.parts.x > 14) {
+        w->cursor.parts.x = 0;
     }
-    if (w->unk_7C0 < 0) {
-        w->unk_7C0 = 14;
+    if (w->cursor.parts.x < 0) {
+        w->cursor.parts.x = 14;
     }
 #ifdef VERSION_EU
-    if (w->unk_7C2 > 7) {
+    if (w->cursor.parts.y > 7) {
 #else
-    if (w->unk_7C2 > 6) {
+    if (w->cursor.parts.y > 6) {
 #endif
-        w->unk_7C2 = 0;
+        w->cursor.parts.y = 0;
     }
-    if (w->unk_7C2 < 0) {
+    if (w->cursor.parts.y < 0) {
 #ifdef VERSION_EU
-        w->unk_7C2 = 7;
+        w->cursor.parts.y = 7;
 #else
-        w->unk_7C2 = 6;
+        w->cursor.parts.y = 6;
 #endif
     }
 #ifndef VERSION_JP
-    if (w->unk_7C0 > gUnk_09035898[w->unk_7C2].unk_04 - 1) {
-        w->unk_7C0 = 0;
+    if (w->cursor.parts.x > gUnk_09035898[w->cursor.parts.y].unk_04 - 1) {
+        w->cursor.parts.x = 0;
     }
-    if (w->unk_7C0 < 0) {
-        w->unk_7C0 = gUnk_09035898[w->unk_7C2].unk_04 - 1;
+    if (w->cursor.parts.x < 0) {
+        w->cursor.parts.x = gUnk_09035898[w->cursor.parts.y].unk_04 - 1;
     }
-    if (w->unk_7C2 > gUnk_090358D0[w->unk_7C0].unk_04 - 1) {
-        w->unk_7C2 = 0;
+    if (w->cursor.parts.y > gUnk_090358D0[w->cursor.parts.x].unk_04 - 1) {
+        w->cursor.parts.y = 0;
     }
-    if (w->unk_7C2 < 0) {
-        w->unk_7C2 = gUnk_090358D0[w->unk_7C0].unk_04 - 1;
+    if (w->cursor.parts.y < 0) {
+        w->cursor.parts.y = gUnk_090358D0[w->cursor.parts.x].unk_04 - 1;
     }
 #endif
 #ifdef VERSION_EU
-    if (w->unk_7C2 == 7 && w->unk_7C0 > 9) {
+    if (w->cursor.parts.y == 7 && w->cursor.parts.x > 9) {
 #else
-    if (w->unk_7C2 == 6 && w->unk_7C0 > 9) {
+    if (w->cursor.parts.y == 6 && w->cursor.parts.x > 9) {
 #endif
-        if (w->unk_7C0 == 13 && keys == 32) {
-            w->unk_7C0 = 9;
+        if (w->cursor.parts.x == 13 && keys == 32) {
+            w->cursor.parts.x = 9;
             AnimStart(&w->unk_798, 0, 1);
 #ifdef VERSION_EU
             w->unk_7C8 = 0;
 #endif
         } else {
-            w->unk_7C0 = 14;
+            w->cursor.parts.x = 14;
             AnimStart(&w->unk_798, 1, 1);
 #ifdef VERSION_EU
             w->unk_7C8 = 1;
@@ -13447,69 +13450,69 @@ u8 func_0808F0C0(UnkStruct_0808F0C0* w, u16 keys) {
 extern UnkStruct_09035898 gUnkEu_090CEC30[];
 extern UnkStruct_09035898 gUnkEu_090CEC70[];
 u8 func_eu_0808E94C(UnkStruct_0808F0C0* w, u16 keys) {
-    if (w->unk_7C2 == 1 && (u16)w->unk_7C0 > 5) {
+    if (w->cursor.parts.y == 1 && (u16)w->cursor.parts.x > 5) {
         switch (keys) {
         case 64:
-            w->unk_7C2--;
+            w->cursor.parts.y--;
             break;
         case 128:
-            w->unk_7C2++;
+            w->cursor.parts.y++;
             break;
         case 32:
-            w->unk_7C0 = 5;
+            w->cursor.parts.x = 5;
             break;
         case 16:
-            w->unk_7C0 = 0;
+            w->cursor.parts.x = 0;
             break;
         }
     }
-    if (w->unk_7C2 == 4 && (u16)w->unk_7C0 > 2) {
+    if (w->cursor.parts.y == 4 && (u16)w->cursor.parts.x > 2) {
         switch (keys) {
         case 64:
-            w->unk_7C2--;
+            w->cursor.parts.y--;
             break;
         case 128:
-            w->unk_7C2++;
+            w->cursor.parts.y++;
             break;
         case 32:
-            w->unk_7C0 = 2;
+            w->cursor.parts.x = 2;
             break;
         case 16:
-            w->unk_7C0 = 0;
+            w->cursor.parts.x = 0;
             break;
         }
     }
-    if (w->unk_7C0 > 14) {
-        w->unk_7C0 = 0;
+    if (w->cursor.parts.x > 14) {
+        w->cursor.parts.x = 0;
     }
-    if (w->unk_7C0 < 0) {
-        w->unk_7C0 = 14;
+    if (w->cursor.parts.x < 0) {
+        w->cursor.parts.x = 14;
     }
-    if (w->unk_7C2 > 6) {
-        w->unk_7C2 = 0;
+    if (w->cursor.parts.y > 6) {
+        w->cursor.parts.y = 0;
     }
-    if (w->unk_7C2 < 0) {
-        w->unk_7C2 = 6;
+    if (w->cursor.parts.y < 0) {
+        w->cursor.parts.y = 6;
     }
-    if (w->unk_7C0 > gUnkEu_090CEC30[w->unk_7C2].unk_04 - 1) {
-        w->unk_7C0 = 0;
+    if (w->cursor.parts.x > gUnkEu_090CEC30[w->cursor.parts.y].unk_04 - 1) {
+        w->cursor.parts.x = 0;
     }
-    if (w->unk_7C0 < 0) {
-        w->unk_7C0 = gUnkEu_090CEC30[w->unk_7C2].unk_04 - 1;
+    if (w->cursor.parts.x < 0) {
+        w->cursor.parts.x = gUnkEu_090CEC30[w->cursor.parts.y].unk_04 - 1;
     }
-    if (w->unk_7C2 > gUnkEu_090CEC70[w->unk_7C0].unk_04 - 1) {
-        w->unk_7C2 = 0;
+    if (w->cursor.parts.y > gUnkEu_090CEC70[w->cursor.parts.x].unk_04 - 1) {
+        w->cursor.parts.y = 0;
     }
-    if (w->unk_7C2 < 0) {
-        w->unk_7C2 = gUnkEu_090CEC70[w->unk_7C0].unk_04 - 1;
+    if (w->cursor.parts.y < 0) {
+        w->cursor.parts.y = gUnkEu_090CEC70[w->cursor.parts.x].unk_04 - 1;
     }
-    if (w->unk_7C2 == 6 && w->unk_7C0 > 1) {
-        if (w->unk_7C0 == 13 && keys == 32) {
-            w->unk_7C0 = 1;
+    if (w->cursor.parts.y == 6 && w->cursor.parts.x > 1) {
+        if (w->cursor.parts.x == 13 && keys == 32) {
+            w->cursor.parts.x = 1;
             AnimStart(&w->unk_798, 0, 1);
             w->unk_7C8 = 0;
         } else {
-            w->unk_7C0 = 14;
+            w->cursor.parts.x = 14;
             AnimStart(&w->unk_798, 1, 1);
             w->unk_7C8 = 1;
         }
@@ -13624,19 +13627,19 @@ INCLUDE_ASM("card/func_0808F358.s");
 void func_jp_0808F240(UnkStruct_0808F0C0* w) {
     switch (w->unk_7C7) {
     case 0:
-        if (w->unk_7C2 == 5 && (u16)(w->unk_7C0 - 5) <= 4) {
-            w->unk_7C0 = 4;
+        if (w->cursor.parts.y == 5 && (u16)(w->cursor.parts.x - 5) <= 4) {
+            w->cursor.parts.x = 4;
         }
         break;
     case 1:
-        switch (w->unk_7C2) {
+        switch (w->cursor.parts.y) {
         case 0:
         case 1:
         case 2:
             break;
         case 3:
-            if (w->unk_7C0 > 9) {
-                w->unk_7C0 = 9;
+            if (w->cursor.parts.x > 9) {
+                w->cursor.parts.x = 9;
             }
             break;
         case 4:
@@ -13646,27 +13649,27 @@ void func_jp_0808F240(UnkStruct_0808F0C0* w) {
         }
         break;
     case 2:
-        switch (w->unk_7C2) {
+        switch (w->cursor.parts.y) {
         case 0:
             break;
         case 1:
-            if (w->unk_7C0 > 10) {
-                w->unk_7C0 = 10;
+            if (w->cursor.parts.x > 10) {
+                w->cursor.parts.x = 10;
             }
             break;
         case 2:
         case 3:
             break;
         case 4:
-            if (w->unk_7C0 > 9) {
-                w->unk_7C0 = 9;
+            if (w->cursor.parts.x > 9) {
+                w->cursor.parts.x = 9;
             }
             break;
         case 5:
             break;
         case 6:
-            if (w->unk_7C0 >= 10 && w->unk_7C0 <= 13) {
-                w->unk_7C0 = 9;
+            if (w->cursor.parts.x >= 10 && w->cursor.parts.x <= 13) {
+                w->cursor.parts.x = 9;
             }
             break;
         }
@@ -13696,69 +13699,69 @@ void func_jp_0808F34C(UnkStruct_0808F0C0* w) {
 void func_eu_0808EC78(UnkStruct_0808F0C0* w) {
     switch (w->unk_7C7) {
     case 2:
-        switch (w->unk_7C2) {
+        switch (w->cursor.parts.y) {
         case 0:
             break;
         case 1:
         case 3:
-            if (w->unk_7C0 > 10) {
-                w->unk_7C0 = 10;
+            if (w->cursor.parts.x > 10) {
+                w->cursor.parts.x = 10;
             }
             break;
         case 2:
         case 4:
             break;
         case 5:
-            if (w->unk_7C0 > 9) {
-                w->unk_7C0 = 9;
+            if (w->cursor.parts.x > 9) {
+                w->cursor.parts.x = 9;
             }
             break;
         case 6:
             if (w->unk_7C8 == 1) {
-                w->unk_7C0 = 14;
-                w->unk_7C2 = 7;
+                w->cursor.parts.x = 14;
+                w->cursor.parts.y = 7;
             }
             break;
         case 7:
-            if (w->unk_7C0 >= 10 && w->unk_7C0 <= 13) {
-                w->unk_7C0 = 9;
+            if (w->cursor.parts.x >= 10 && w->cursor.parts.x <= 13) {
+                w->cursor.parts.x = 9;
             }
             break;
         }
         break;
     case 3:
-        switch (w->unk_7C2) {
+        switch (w->cursor.parts.y) {
         case 0:
             break;
         case 1:
-            if (w->unk_7C0 > 5) {
-                w->unk_7C0 = 5;
+            if (w->cursor.parts.x > 5) {
+                w->cursor.parts.x = 5;
             }
             break;
         case 2:
         case 3:
             break;
         case 4:
-            if (w->unk_7C0 > 2) {
-                w->unk_7C0 = 2;
+            if (w->cursor.parts.x > 2) {
+                w->cursor.parts.x = 2;
             }
             break;
         case 5:
             break;
         case 6:
             if (w->unk_7C8 == 1) {
-                w->unk_7C2 = 6;
-                w->unk_7C0 = 14;
-            } else if (w->unk_7C0 > 1) {
-                w->unk_7C0 = 1;
+                w->cursor.parts.y = 6;
+                w->cursor.parts.x = 14;
+            } else if (w->cursor.parts.x > 1) {
+                w->cursor.parts.x = 1;
             }
             break;
         case 7:
-            if (w->unk_7C0 == 14) {
-                w->unk_7C2 = 6;
+            if (w->cursor.parts.x == 14) {
+                w->cursor.parts.y = 6;
             } else {
-                w->unk_7C2 = 6;
-                w->unk_7C0 = 0;
+                w->cursor.parts.y = 6;
+                w->cursor.parts.x = 0;
             }
             break;
         }
@@ -13901,8 +13904,8 @@ u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
         w->unk_7B4 = gUnk_09035808[0] << 8;
         w->unk_7B8 = gUnk_09035874[0] << 8;
         w->unk_7C6 = 4;
-        w->unk_7C0 = 0;
-        w->unk_7C2 = 0;
+        w->cursor.parts.x = 0;
+        w->cursor.parts.y = 0;
 #ifdef VERSION_JP
         w->unk_7C7 = 0;
 #else
@@ -13998,11 +14001,11 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
             }
             w->unk_7B8 = 0x8C00;
         } else if (w->unk_7C7 == 2) {
-            ApproachValue(&w->unk_7B4, gUnk_09035898[w->unk_7C2].unk_00[w->unk_7C0] << 8, w->unk_7C6);
-            ApproachValue(&w->unk_7B8, gUnk_090358D0[w->unk_7C0].unk_00[w->unk_7C2] << 8, w->unk_7C6);
+            ApproachValue(&w->unk_7B4, gUnk_09035898[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
+            ApproachValue(&w->unk_7B8, gUnk_090358D0[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
         } else {
-            ApproachValue(&w->unk_7B4, gUnkEu_090CEC30[w->unk_7C2].unk_00[w->unk_7C0] << 8, w->unk_7C6);
-            ApproachValue(&w->unk_7B8, gUnkEu_090CEC70[w->unk_7C0].unk_00[w->unk_7C2] << 8, w->unk_7C6);
+            ApproachValue(&w->unk_7B4, gUnkEu_090CEC30[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
+            ApproachValue(&w->unk_7B8, gUnkEu_090CEC70[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
         }
         w->unk_7C6--;
     }
@@ -14015,7 +14018,283 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
     return 1;
 }
 #endif
-INCLUDE_ASM("card/func_0808F660.s");
+u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
+#ifdef VERSION_EU
+    u8 mode = w->unk_7C7;
+    s32 bottom = 6;
+    if (mode == 2) {
+        bottom = 7;
+    }
+#endif
+    w->unk_7B0 = AnimUpdate(&w->unk_798);
+    *(void**)&w->unk_1E8[0x308] = AnimUpdate((AnimState*)&w->unk_7F0[0x10]);
+    switch ((u16)GetKeysRepeat()) {
+    case 32:
+        w->unk_7C6 = 1;
+        w->cursor.parts.x--;
+        switch (w->unk_7C7) {
+        case 0:
+        case 1:
+            if ((u8)func_0808EF80((u8*)w, 32) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+            }
+            break;
+        case 2:
+            if ((u8)func_0808F0C0(w, 32) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+#ifdef VERSION_EU
+                w->unk_7C8 = 0;
+#endif
+            }
+            break;
+#ifdef VERSION_EU
+        case 3:
+            if ((u8)func_eu_0808E94C(w, 32) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+                w->unk_7C8 = 0;
+            }
+            break;
+#endif
+        }
+        m4aSongNumStart(121);
+        break;
+    case 16:
+        w->unk_7C6 = 1;
+        w->cursor.parts.x++;
+        switch (w->unk_7C7) {
+        case 0:
+        case 1:
+            if ((u8)func_0808EF80((u8*)w, 16) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+            }
+            break;
+        case 2:
+            if ((u8)func_0808F0C0(w, 16) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+#ifdef VERSION_EU
+                w->unk_7C8 = 0;
+#endif
+            }
+            break;
+#ifdef VERSION_EU
+        case 3:
+            if ((u8)func_eu_0808E94C(w, 16) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+                w->unk_7C8 = 0;
+            }
+            break;
+#endif
+        }
+        m4aSongNumStart(121);
+        break;
+    case 64:
+        w->unk_7C6 = 1;
+        w->cursor.parts.y--;
+#if defined(VERSION_JP) || defined(VERSION_EU)
+        if (w->cursor.parts.y < 0) {
+            w->unk_7C6 = 1;
+            w->cursor.parts.y = 0;
+#ifdef VERSION_JP
+            SetTaskUpdate(a, (void*)func_jp_0808F638);
+#else
+            SetTaskUpdate(a, (void*)func_eu_0808F190);
+#endif
+            m4aSongNumStart(121);
+            return 1;
+        }
+#endif
+        switch (w->unk_7C7) {
+        case 0:
+        case 1:
+            if ((u8)func_0808EF80((u8*)w, 64) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+            }
+            break;
+        case 2:
+            if ((u8)func_0808F0C0(w, 64) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+#ifdef VERSION_EU
+                w->unk_7C8 = 0;
+#endif
+            }
+            break;
+#ifdef VERSION_EU
+        case 3:
+            if ((u8)func_eu_0808E94C(w, 64) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+                w->unk_7C8 = 0;
+            }
+            break;
+#endif
+        }
+        m4aSongNumStart(121);
+        break;
+    case 128:
+        w->unk_7C6 = 1;
+        w->cursor.parts.y++;
+        switch (w->unk_7C7) {
+        case 0:
+        case 1:
+            if ((u8)func_0808EF80((u8*)w, 128) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+            }
+            break;
+        case 2:
+            if ((u8)func_0808F0C0(w, 128) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+#ifdef VERSION_EU
+                w->unk_7C8 = 0;
+#endif
+            }
+            break;
+#ifdef VERSION_EU
+        case 3:
+            if ((u8)func_eu_0808E94C(w, 128) != 0) {
+                AnimStart(&w->unk_798, 0, 1);
+                w->unk_7C8 = 0;
+            }
+            break;
+#endif
+        }
+        m4aSongNumStart(121);
+        break;
+    }
+    switch ((u16)GetKeysPressed()) {
+    case 2:
+        func_0808F304((u8*)w);
+        w->unk_7C4 = func_08065B6C(w->unk_784, w->unk_744);
+        w->unk_7BC = ((s16)func_08065B08((TextSlot*)w->unk_744, w->unk_7C4) << 8) + 0x8300;
+        break;
+    case 1:
+#ifdef VERSION_EU
+        if (w->cursor.parts.x == 14 && w->cursor.parts.y == bottom) {
+#else
+        if (w->cursor.packed == 0x6000E) {
+#endif
+            func_0808F2CC((u8*)w);
+            SetTaskUpdate(a, (void*)func_0808FA0C);
+            m4aSongNumStart(102);
+            func_08006120(0, 16);
+        } else {
+            if ((u8)func_0808F358((UnkStruct_0808F358*)w) != 0) {
+                w->unk_7C4 = func_08065B6C(w->unk_784, w->unk_744);
+                w->unk_7BC = ((s16)func_08065B08((TextSlot*)w->unk_744, w->unk_7C4) << 8) + 0x8300;
+            } else {
+                w->cursor.parts.x = 14;
+#ifdef VERSION_EU
+                w->cursor.parts.y = bottom;
+#else
+                w->cursor.parts.y = 6;
+#endif
+                AnimStart(&w->unk_798, 1, 1);
+#ifdef VERSION_EU
+                w->unk_7C8 = 1;
+#endif
+            }
+        }
+        break;
+    case 8:
+        w->cursor.parts.x = 14;
+#ifdef VERSION_EU
+        w->cursor.parts.y = bottom;
+        if (gLanguage == 2) {
+            w->unk_7B4 = 0xC800;
+        } else if (gLanguage == 3) {
+            w->unk_7B4 = 0xD100;
+        } else {
+            w->unk_7B4 = 0xD300;
+        }
+        w->unk_7B8 = 0x8C00;
+#else
+        w->cursor.parts.y = 6;
+#endif
+        AnimStart(&w->unk_798, 1, 1);
+        m4aSongNumStart(121);
+#ifdef VERSION_EU
+        w->unk_7C8 = 1;
+#endif
+        break;
+#if defined(VERSION_JP) || defined(VERSION_EU)
+    case 256:
+#ifdef VERSION_JP
+        if (w->unk_7C7 <= 1) {
+#else
+        if (w->unk_7C7 <= 2) {
+#endif
+            w->unk_7C7++;
+#ifdef VERSION_JP
+            func_jp_0808F34C(w);
+#else
+            func_eu_0808EE08(w);
+#endif
+            m4aSongNumStart(103);
+        }
+        break;
+    case 512:
+#ifdef VERSION_JP
+        if (w->unk_7C7 != 0) {
+#else
+        if (w->unk_7C7 > 2) {
+#endif
+            w->unk_7C7--;
+#ifdef VERSION_JP
+            func_jp_0808F34C(w);
+#else
+            func_eu_0808EE08(w);
+#endif
+            m4aSongNumStart(103);
+        }
+        break;
+    case 4:
+        w->unk_7C6 = 1;
+        m4aSongNumStart(121);
+#ifdef VERSION_JP
+        SetTaskUpdate(a, (void*)func_jp_0808F638);
+        return 1;
+#else
+        *(s32*)&w->unk_7F0[0x58] = (gUnkEu_090CECE8[w->unk_7C7] + 8) << 8;
+        *(s32*)&w->unk_7F0[0x5C] = 0x1A00;
+        SetTaskUpdate(a, (void*)func_eu_0808F190);
+        break;
+#endif
+#endif
+    }
+    if (w->unk_7C6 != 0) {
+#ifdef VERSION_EU
+        if (w->cursor.parts.x == 14 && w->cursor.parts.y == bottom) {
+            if (gLanguage == 2) {
+                ApproachValue(&w->unk_7B4, 0xC800, w->unk_7C6);
+            } else if (gLanguage == 3) {
+                ApproachValue(&w->unk_7B4, 0xD100, w->unk_7C6);
+            } else {
+                ApproachValue(&w->unk_7B4, 0xD300, w->unk_7C6);
+            }
+#else
+        if (w->cursor.packed == 0x6000E) {
+            ApproachValue(&w->unk_7B4, 0xD300, w->unk_7C6);
+#endif
+            ApproachValue(&w->unk_7B8, 0x8C00, w->unk_7C6);
+#ifdef VERSION_EU
+        } else if (w->unk_7C7 == 2) {
+#else
+        } else {
+#endif
+            ApproachValue(&w->unk_7B4, gUnk_09035898[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
+            ApproachValue(&w->unk_7B8, gUnk_090358D0[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
+#ifdef VERSION_EU
+        } else {
+            ApproachValue(&w->unk_7B4, gUnkEu_090CEC30[w->cursor.parts.y].unk_00[w->cursor.parts.x] << 8, w->unk_7C6);
+            ApproachValue(&w->unk_7B8, gUnkEu_090CEC70[w->cursor.parts.x].unk_00[w->cursor.parts.y] << 8, w->unk_7C6);
+#endif
+        }
+    }
+    *(s32*)&w->unk_7F0[0x58] = w->unk_7B4 + 0x800;
+    *(s32*)&w->unk_7F0[0x5C] = w->unk_7B8 + 0x800;
+    TaskPoolUpdate(w->taskpool);
+    TaskPoolUpdate(w->cardpool);
+    return 1;
+}
+
 
 u8 func_0808FA0C(u8* work, void* a) {
     func_08006120(0, 16);
