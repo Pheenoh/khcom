@@ -2703,13 +2703,13 @@ s32 func_08065B54(u16* s) {
     return n;
 }
 
-#ifndef VERSION_JP
 u16 func_08065B6C(u16* a, TextSlot* b) {
-    return func_08065B7C(a, b);
-}
+#ifdef VERSION_JP
+    return func_08065D10(a, b);
 #else
-INCLUDE_ASM("msg/func_08065B6C.s");
+    return func_08065B7C(a, b);
 #endif
+}
 
 #ifndef VERSION_JP
 s32 func_08065B7C(u16* a, TextSlot* b) {
