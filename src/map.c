@@ -4649,22 +4649,23 @@ void func_080E7DF8(void) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_080E7E3C(void) {
     UnkStruct_080DFF1C w;
     UnkStruct_080DEE18* e;
+    UnkStruct_080E7D80* q;
     s32 i;
 
     e = func_080DEE18(gUnk_0203C590.unk_06);
 
     if (gUnk_0203C7AC->unk_0D == 10) {
-        UnkStruct_080E7D80* q = &gUnk_0984C158;
-        u8* n = &gUnk_02034F78;
+        u8* n;
 
-        i = 1;
+        q = &gUnk_0984C158;
+        n = &gUnk_02034F78;
 
-    lab:
-        {
+        for (i = 1; i >= 0; i--) {
+            s32 size;
+
             func_080E7D64(&w, q->unk_15);
 
             if (e->unk_00 & 0x10) {
@@ -4675,23 +4676,18 @@ void func_080E7E3C(void) {
 
             gUnk_0203C7B8[*n].unk_14 = q;
             gUnk_0203C7B8[*n].unk_04 = w;
-            gUnk_02034F7A += q->unk_08 >> 5;
+            gUnk_02034F7A += (size = q->unk_08) / 32;
             gUnk_02034F79++;
             (*n)++;
-        }
-        i--;
-
-        if (i >= 0) {
-            goto lab;
         }
     }
 
     if (gUnk_0203C7AC->unk_0D == 3 || gUnk_0203C7AC->unk_0D == 9 || gUnk_0203C7AC->unk_0D == 10 ||
         gUnk_0203C7AC->unk_0D == 22) {
         UnkStruct_080DFB8C* p;
-        UnkStruct_080E7D80* q = &gUnk_0984C158;
         u16 v;
 
+        q = &gUnk_0984C158;
         func_080E7D64(&w, q->unk_15);
         v = e->unk_00 & 0x10;
 
@@ -4710,9 +4706,6 @@ void func_080E7E3C(void) {
         p->unk_00 |= 0x80;
     }
 }
-#else
-INCLUDE_ASM("map/func_080E7E3C.s");
-#endif
 
 void func_080E7FCC(void) {
     UnkStruct_080DFF1C w;
