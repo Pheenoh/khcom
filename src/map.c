@@ -60,6 +60,10 @@ extern const u8 gUnkEu_099635D0[][320];
 extern const u8 gUnkEu_099658D0[][320];
 extern const u8 gUnkEu_09967BD0[][320];
 extern const u8 gUnkEu_09969ED0[][320];
+extern u8 gUnkEu_098863B2[];
+extern u8 gUnkEu_0988683C[];
+extern u8 gUnkEu_09886C7E[];
+extern u8 gUnkEu_09886FC8[];
 #define LANGSEL(x) eu_0805E924(x)
 #else
 #define LANGSEL(x) (x)
@@ -9223,14 +9227,35 @@ s32 func_080EED44(MapSaveWork* w) {
     return 0;
 }
 
-#ifndef VERSION_EU
 void func_080EED88(MapSaveWork* w) {
     gUnk_02039BA0->unk_70 |= 0x1000;
     gUnk_02039BA0->unk_70 |= 0x80;
     gUnk_0203C7AC->unk_00 |= 0x2000;
     gGameState.unk_32 = gGameState.unk_F8;
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        w->unk_004 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
+        break;
+    case 1:
+        w->unk_004 = LoadObjTiles(gUnkEu_098863B2, 0x400);
+        break;
+    case 4:
+        w->unk_004 = LoadObjTiles(gUnkEu_0988683C, 0x3C0);
+        break;
+    case 3:
+        w->unk_004 = LoadObjTiles(gUnkEu_09886C7E, 0x2C0);
+        break;
+    case 2:
+    default:
+        w->unk_004 = LoadObjTiles(gUnkEu_09886FC8, 0x3C0);
+        break;
+    }
+    w->unk_000 = LoadObjPalette(gUnk_09991D04, 32);
+#else
     w->unk_000 = LoadObjPalette(gUnk_09991D04, 32);
     w->unk_004 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
+#endif
     w->unk_008 = -0x800;
     w->unk_00C = 0xA000;
     w->unk_010 = -0x8000;
@@ -9258,9 +9283,6 @@ void func_080EED88(MapSaveWork* w) {
     func_08006238(0, 16, 16);
     m4aSongNumStart(103);
 }
-#else
-INCLUDE_ASM("map/func_080EED88.s");
-#endif
 
 s32 func_080EEF04(MapSaveWork* w) {
     TaskPoolUpdate(&w->unk_2FC);
