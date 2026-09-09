@@ -4531,26 +4531,16 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             func_08019A30();
 
             if (work->unk_161 == 1) {
-                if (p->unk_34 & 4) {
-                    if (func_08011F78(89, p->unk_04 - 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
-                        goto sora_50_final_hit;
-                    }
-                } else {
-                    if (func_08011F78(89, p->unk_04 + 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
-sora_50_final_hit:
-                        m4aSongNumStart(501);
-                    }
+                if ((p->unk_34 & 4)
+                    ? func_08011F78(89, p->unk_04 - 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0
+                    : func_08011F78(89, p->unk_04 + 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
+                    m4aSongNumStart(501);
                 }
             } else {
-                if (p->unk_34 & 4) {
-                    if (func_08011F78(88, p->unk_04 - 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
-                        goto sora_50_hit;
-                    }
-                } else {
-                    if (func_08011F78(88, p->unk_04 + 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
-sora_50_hit:
-                        m4aSongNumStart(500);
-                    }
+                if ((p->unk_34 & 4)
+                    ? func_08011F78(88, p->unk_04 - 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0
+                    : func_08011F78(88, p->unk_04 + 5120, p->unk_08, p->unk_0C, 16, 16, 48) != 0) {
+                    m4aSongNumStart(500);
                 }
             }
         }
@@ -4701,15 +4691,10 @@ sora_50_hit:
                 p->unk_04 += *(s32*)&work->unk_191[3];
             }
 
-            if (p->unk_34 & 4) {
-                if (func_08011F78(94, p->unk_04 - 6400, p->unk_08, p->unk_0C, 10, 12, 32) != 0) {
-                    goto sora_56_hit;
-                }
-            } else {
-                if (func_08011F78(94, p->unk_04 + 6400, p->unk_08, p->unk_0C, 10, 12, 32) != 0) {
-sora_56_hit:
-                    m4aSongNumStart(503);
-                }
+            if ((p->unk_34 & 4)
+                ? func_08011F78(94, p->unk_04 - 6400, p->unk_08, p->unk_0C, 10, 12, 32) != 0
+                : func_08011F78(94, p->unk_04 + 6400, p->unk_08, p->unk_0C, 10, 12, 32) != 0) {
+                m4aSongNumStart(503);
             }
         }
 
@@ -4749,15 +4734,10 @@ sora_56_hit:
             p->unk_08 += 384;
         }
 
-        if (p->unk_34 & 4) {
-            if (func_08011F78(94, p->unk_04 - 6400, p->unk_08, p->unk_0C, 10, 12, 12) != 0) {
-                goto sora_57_hit;
-            }
-        } else {
-            if (func_08011F78(94, p->unk_04 + 6400, p->unk_08, p->unk_0C, 10, 12, 12) != 0) {
-sora_57_hit:
-                m4aSongNumStart(503);
-            }
+        if ((p->unk_34 & 4)
+            ? func_08011F78(94, p->unk_04 - 6400, p->unk_08, p->unk_0C, 10, 12, 12) != 0
+            : func_08011F78(94, p->unk_04 + 6400, p->unk_08, p->unk_0C, 10, 12, 12) != 0) {
+            m4aSongNumStart(503);
         }
 
         uv = work->unk_154;
@@ -4884,19 +4864,14 @@ sora_57_hit:
 
             func_08006120(3, 10);
 
-            if (p->unk_34 & 4) {
-                if (func_08011F78(95, p->unk_04 - 6400, p->unk_08, p->unk_0C, 10, 12, 12) != 0) {
-                    goto sora_60_hit;
-                }
-            } else {
-                if (func_08011F78(95, p->unk_04 + 6400, p->unk_08, p->unk_0C, 10, 12, 12) != 0) {
-sora_60_hit:
-                    m4aSongNumStart(644);
-                    func_0801DDE4(work, 76, 0);
-                    work->unk_038 = 61;
-                    work->unk_154 = 0;
-                    break;
-                }
+            if ((p->unk_34 & 4)
+                ? func_08011F78(95, p->unk_04 - 6400, p->unk_08, p->unk_0C, 10, 12, 12) != 0
+                : func_08011F78(95, p->unk_04 + 6400, p->unk_08, p->unk_0C, 10, 12, 12) != 0) {
+                m4aSongNumStart(644);
+                func_0801DDE4(work, 76, 0);
+                work->unk_038 = 61;
+                work->unk_154 = 0;
+                break;
             }
         }
 
@@ -5085,23 +5060,18 @@ sora_60_hit:
             if ((s16)work->unk_154 == 38) {
                 func_08019A30();
 
-                if (p->unk_34 & 4) {
-                    if (func_08011F78(90, p->unk_04 - 1024, p->unk_08, p->unk_0C, 32, 24, 32) != 0) {
-                        goto sora_51_hit;
-                    }
-                } else {
-                    if (func_08011F78(90, p->unk_04 + 1024, p->unk_08, p->unk_0C, 32, 24, 32) != 0) {
-sora_51_hit:
-                        m4aSongNumStart(502);
+                if ((p->unk_34 & 4)
+                    ? func_08011F78(90, p->unk_04 - 1024, p->unk_08, p->unk_0C, 32, 24, 32) != 0
+                    : func_08011F78(90, p->unk_04 + 1024, p->unk_08, p->unk_0C, 32, 24, 32) != 0) {
+                    m4aSongNumStart(502);
 
-                        if (p->unk_34 & 4) {
-                            func_08019050(8, 384, p->unk_04 - 2048, p->unk_08 + p->unk_0C);
-                        } else {
-                            func_08019050(8, 384, p->unk_04 + 2048, p->unk_08 + p->unk_0C);
-                        }
-
-                        func_08006120(2, 20);
+                    if (p->unk_34 & 4) {
+                        func_08019050(8, 384, p->unk_04 - 2048, p->unk_08 + p->unk_0C);
+                    } else {
+                        func_08019050(8, 384, p->unk_04 + 2048, p->unk_08 + p->unk_0C);
                     }
+
+                    func_08006120(2, 20);
                 }
             } else if ((s16)work->unk_154 == 39) {
                 func_08019050(5, 256, gBtlWork->unk_010, gBtlWork->unk_014);
