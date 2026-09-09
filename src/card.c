@@ -22061,7 +22061,55 @@ s32 func_080A4DAC(void) {
     return 0;
 }
 INCLUDE_ASM("card/func_080A4DCC.s");
-INCLUDE_ASM("card/func_080A4F14.s");
+
+u8 func_080A4F14(UnkStruct_080A3F5C* w, void* a) {
+    void* pal;
+    switch (w->unk_113) {
+    case 0:
+    case 1:
+        pal = (void*)0x050001E0;
+        LoadBgTiles(w->unk_10C, gUnk_099597E4, 0x140);
+        LoadBgMap(w->unk_10C, gUnk_09985F44, 0x800);
+        LoadPalette(gUnk_09611AB8, pal, 32);
+        switch ((u32)w->unk_114->unk_04) {
+        case 0:
+        case 2:
+            SetBgScroll(w->unk_10C, 0, 0);
+            break;
+        case 1:
+        case 3:
+            SetBgScroll(w->unk_10C, 0, 0);
+            break;
+        default:
+            SetBgScroll(w->unk_10C, 0, 0);
+            break;
+        }
+        break;
+    case 2:
+    case 3:
+        switch ((u32)w->unk_114->unk_04) {
+        case 0:
+        case 2:
+            w->unk_120 = 0x7800;
+            w->unk_124 = 0x2000;
+            break;
+        case 1:
+        default:
+            w->unk_120 = 0x7800;
+            w->unk_124 = 0x8200;
+            break;
+        }
+        w->unk_018 = LoadObjTiles(gUnk_093F8C8E, 0xC00);
+        w->unk_01C = (UnkStruct_080038C8*)LoadObjPalette(gUnk_09611AB8, 32);
+        func_080062F4(w->unk_01C->unk_06 + 16, 1);
+        break;
+    }
+    if (w->unk_113 == 0 || w->unk_113 == 2) {
+        SetTaskUpdate(a, (void*)func_080A5034);
+    }
+    return 1;
+}
+
 u8 func_080A5034(UnkStruct_080A3F5C* w, void* a) {
     u8* pal;
 
