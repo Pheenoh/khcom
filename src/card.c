@@ -6401,7 +6401,80 @@ u8 func_08082618(UnkStruct_02034AAC* p, void* a) {
     p->unk_5F += 4;
     return 1;
 }
-INCLUDE_ASM("card/func_080827E0.s");
+u8 func_080827E0(UnkStruct_02034AAC* p, void* a) {
+    u8 (*fn)(UnkStruct_02034AAC*, void*);
+    u16 t;
+
+    if (gBtlWork->unk_070 == 1) {
+        return 1;
+    }
+
+    func_0807C2EC(p);
+
+    if (p->unk_78 & 0x20) {
+        ApproachValue(&p->unk_4C, gUnk_0903401C[3 - p->unk_9F][0], p->unk_9C);
+        ApproachValue(&p->unk_58, 179, p->unk_9C);
+        ApproachValue(&p->unk_50, gUnk_0903401C[3 - p->unk_9F][1], p->unk_9C);
+        ApproachValue(&p->unk_54, 179, p->unk_9C);
+    } else {
+        ApproachValue(&p->unk_4C, gUnk_0903401C[4][0], p->unk_9C);
+        ApproachValue(&p->unk_50, gUnk_0903401C[4][1], p->unk_9C);
+    }
+
+    t = p->unk_9C;
+
+    if ((s16)t > 0) {
+        p->unk_9C = t - 1;
+        p->unk_78 &= ~0x40;
+    } else {
+        p->unk_9C = 0;
+        p->unk_54 = 0x100;
+        p->unk_58 = 0x100;
+        p->unk_78 |= 0x40;
+
+        if (p->unk_78 & 0x10000000) {
+            p->unk_9C = p->unk_9F * 8;
+            fn = func_08082618;
+            SetTaskUpdate(a, fn);
+            return fn(p, a);
+        }
+    }
+
+    if (p->unk_78 & 0x40000000) {
+        SetTaskUpdate(a, func_08082FF0);
+        return 1;
+    }
+
+    if (p->unk_A1 == 5) {
+        if (p->unk_78 & 0x8000) {
+            p->unk_9C = 15;
+            p->unk_88 = 0x800;
+            p->unk_84 = 0;
+            p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
+            p->unk_7C = 0;
+            p->unk_8C = p->unk_4C;
+            p->unk_90 = p->unk_50;
+            fn = func_08082348;
+        } else {
+            p->unk_9C = 15;
+            p->unk_88 = 0x800;
+            p->unk_84 = 0;
+            p->unk_80 = gUnk_09034054[p->unk_9F] * 2;
+            p->unk_7C = 0;
+            p->unk_8C = p->unk_4C;
+            p->unk_90 = p->unk_50;
+            fn = func_080824C8;
+        }
+
+        SetTaskUpdate(a, fn);
+        p->unk_78 &= ~0x200;
+        func_08082F24(p);
+        return fn(p, a);
+    }
+
+    p->unk_5F += 4;
+    return 1;
+}
 
 u8 func_080829D0(UnkStruct_02034AAC* p, void* a) {
     u8 (*f)(UnkStruct_02034AAC*, void*);
