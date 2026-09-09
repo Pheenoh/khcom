@@ -9262,7 +9262,6 @@ void func_080EED88(MapSaveWork* w) {
 INCLUDE_ASM("map/func_080EED88.s");
 #endif
 
-#ifndef VERSION_EU
 s32 func_080EEF04(MapSaveWork* w) {
     TaskPoolUpdate(&w->unk_2FC);
 
@@ -9277,9 +9276,6 @@ s32 func_080EEF04(MapSaveWork* w) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("map/func_080EEF04.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080EEF4C(MapSaveWork* w) {
