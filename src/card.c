@@ -7000,292 +7000,287 @@ void func_08084124(u16 cardId) {
 
     v = gCardDefs[cardId & CARD_ID_MASK].unk_1C;
 
-    if (v <= 0x61) {
-        switch (v) {
-        case 0:
-            n = 119;
-            goto call;
-        case 8:
-            n = 127;
-            goto call;
-        case 1:
-            n = 120;
-            goto call;
-        case 2:
-            n = 121;
-            goto call;
-        case 3:
-            n = 122;
-            goto call;
-        case 4:
-            n = 123;
-            goto call;
-        case 5:
-            n = 124;
-            goto call;
-        case 6:
-            n = 125;
-            goto call;
-        case 7:
-            n = 126;
-            goto call;
-        case 9:
-            n = 128;
-            goto call;
-        case 10:
-            n = 129;
-            goto call;
-        case 11:
-            n = 130;
-            goto call;
-        case 12:
-            n = 131;
-            goto call;
-        case 13:
-            n = 132;
-            goto call;
-        case 16:
-            n = 133;
-            goto call;
-        case 14:
-            n = 134;
-            goto call;
-        case 15:
-            n = 135;
-            goto call;
-        case 18:
-            n = 136;
-            goto call;
-        case 19:
-            n = 137;
-            goto call;
-        case 20:
-            n = 138;
-            goto call;
-        case 21:
-            n = 139;
-            goto call;
-        case 22:
-            n = 140;
-            goto call;
-        case 23:
-            n = 141;
-            goto call;
-        case 24:
-            n = 142;
-            goto call;
-        case 25:
-            n = 143;
-            goto call;
-        case 26:
-            n = 144;
-            goto call;
-        case 27:
-            n = 145;
-            goto call;
-        case 28:
-            n = 146;
-            goto call;
-        case 29:
-            n = 147;
-            goto call;
-        case 30:
-            n = 148;
-            goto call;
-        case 31:
-            n = 149;
-            goto call;
-        case 32:
-            n = 150;
-            goto call;
-        case 33:
-            n = 151;
-            goto call;
-        case 34:
-            n = 152;
-            goto call;
-        case 35:
-            n = 153;
-            goto call;
-        case 36:
-            n = 154;
-            goto call;
-        case 37:
-            n = 155;
-            goto call;
-        case 38:
-            n = 156;
-            goto call;
-        case 47:
-            n = 164;
-            goto call;
-        case 50:
-            n = 165;
-            goto call;
-        case 51:
-            n = 166;
-            goto call;
-        case 52:
-            n = 167;
-            goto call;
-        case 53:
-            n = 168;
-            goto call;
-        case 61:
-            n = 169;
-            goto call;
-        case 73:
-            n = 170;
-            goto call;
-        case 74:
-            n = 171;
-            goto call;
-        case 48:
-            n = 172;
-            goto call;
-        case 54:
-            n = 173;
-            goto call;
-        case 55:
-            n = 174;
-            goto call;
-        case 56:
-            n = 175;
-            goto call;
-        case 57:
-            n = 176;
-            goto call;
-        case 59:
-            n = 177;
-            goto call;
-        case 60:
-            n = 178;
-            goto call;
-        case 62:
-            n = 179;
-            goto call;
-        case 64:
-            n = 180;
-            goto call;
-        case 65:
-            n = 181;
-            goto call;
-        case 66:
-            n = 182;
-            goto call;
-        case 67:
-            n = 183;
-            goto call;
-        case 68:
-            n = 184;
-            goto call;
-        case 70:
-            n = 185;
-            goto call;
-        case 71:
-            n = 186;
-            goto call;
-        case 72:
-            n = 187;
-            goto call;
-        case 49:
-            n = 188;
-            goto call;
-        case 58:
-            n = 189;
-            goto call;
-        case 63:
-            n = 190;
-            goto call;
-        case 69:
-            n = 191;
-            goto call;
-        case 76:
-            n = 192;
-            goto call;
-        case 77:
-            n = 193;
-            goto call;
-        case 75:
-            n = 194;
-            goto call;
-        case 81:
-            n = 204;
-            goto call;
-        case 78:
-            n = 195;
-            goto call;
-        case 86:
-            n = 200;
-            goto call;
-        case 80:
-            n = 197;
-            goto call;
-        case 79:
-            n = 201;
-            goto call;
-        case 85:
-            n = 198;
-            goto call;
-        case 87:
-            n = 199;
-            goto call;
-        case 89:
-            n = 203;
-            goto call;
-        case 88:
-            n = 202;
-            goto call;
-        case 84:
-            n = 196;
-            goto call;
-        case 90:
-            n = 247;
-            goto call;
-        case 91:
-            n = 206;
-            goto call;
-        case 92:
-            n = 205;
-            goto call;
-        case 93:
-            n = 207;
-            goto call;
-        case 94:
-            n = 208;
-            goto call;
-        case 82:
-        case 83:
-            n = 246;
-            goto call;
-        case 96:
-            n = 248;
-            goto call;
-        case 97:
-            n = 249;
-            goto call;
-        case 17:
-        case 39:
-        case 40:
-        case 41:
-        case 42:
-        case 43:
-        case 44:
-        case 45:
-        case 46:
-        case 95:
-            break;
+    if (v > 0x61) {
+        if (gCardCount > 999) {
+            gCardCount = 999;
         }
+        return;
     }
 
-    goto done;
+    switch (v) {
+    case 0:
+        n = 119;
+        break;
+    case 8:
+        n = 127;
+        break;
+    case 1:
+        n = 120;
+        break;
+    case 2:
+        n = 121;
+        break;
+    case 3:
+        n = 122;
+        break;
+    case 4:
+        n = 123;
+        break;
+    case 5:
+        n = 124;
+        break;
+    case 6:
+        n = 125;
+        break;
+    case 7:
+        n = 126;
+        break;
+    case 9:
+        n = 128;
+        break;
+    case 10:
+        n = 129;
+        break;
+    case 11:
+        n = 130;
+        break;
+    case 12:
+        n = 131;
+        break;
+    case 13:
+        n = 132;
+        break;
+    case 16:
+        n = 133;
+        break;
+    case 14:
+        n = 134;
+        break;
+    case 15:
+        n = 135;
+        break;
+    case 18:
+        n = 136;
+        break;
+    case 19:
+        n = 137;
+        break;
+    case 20:
+        n = 138;
+        break;
+    case 21:
+        n = 139;
+        break;
+    case 22:
+        n = 140;
+        break;
+    case 23:
+        n = 141;
+        break;
+    case 24:
+        n = 142;
+        break;
+    case 25:
+        n = 143;
+        break;
+    case 26:
+        n = 144;
+        break;
+    case 27:
+        n = 145;
+        break;
+    case 28:
+        n = 146;
+        break;
+    case 29:
+        n = 147;
+        break;
+    case 30:
+        n = 148;
+        break;
+    case 31:
+        n = 149;
+        break;
+    case 32:
+        n = 150;
+        break;
+    case 33:
+        n = 151;
+        break;
+    case 34:
+        n = 152;
+        break;
+    case 35:
+        n = 153;
+        break;
+    case 36:
+        n = 154;
+        break;
+    case 37:
+        n = 155;
+        break;
+    case 38:
+        n = 156;
+        break;
+    case 47:
+        n = 164;
+        break;
+    case 50:
+        n = 165;
+        break;
+    case 51:
+        n = 166;
+        break;
+    case 52:
+        n = 167;
+        break;
+    case 53:
+        n = 168;
+        break;
+    case 61:
+        n = 169;
+        break;
+    case 73:
+        n = 170;
+        break;
+    case 74:
+        n = 171;
+        break;
+    case 48:
+        n = 172;
+        break;
+    case 54:
+        n = 173;
+        break;
+    case 55:
+        n = 174;
+        break;
+    case 56:
+        n = 175;
+        break;
+    case 57:
+        n = 176;
+        break;
+    case 59:
+        n = 177;
+        break;
+    case 60:
+        n = 178;
+        break;
+    case 62:
+        n = 179;
+        break;
+    case 64:
+        n = 180;
+        break;
+    case 65:
+        n = 181;
+        break;
+    case 66:
+        n = 182;
+        break;
+    case 67:
+        n = 183;
+        break;
+    case 68:
+        n = 184;
+        break;
+    case 70:
+        n = 185;
+        break;
+    case 71:
+        n = 186;
+        break;
+    case 72:
+        n = 187;
+        break;
+    case 49:
+        n = 188;
+        break;
+    case 58:
+        n = 189;
+        break;
+    case 63:
+        n = 190;
+        break;
+    case 69:
+        n = 191;
+        break;
+    case 76:
+        n = 192;
+        break;
+    case 77:
+        n = 193;
+        break;
+    case 75:
+        n = 194;
+        break;
+    case 81:
+        n = 204;
+        break;
+    case 78:
+        n = 195;
+        break;
+    case 86:
+        n = 200;
+        break;
+    case 80:
+        n = 197;
+        break;
+    case 79:
+        n = 201;
+        break;
+    case 85:
+        n = 198;
+        break;
+    case 87:
+        n = 199;
+        break;
+    case 89:
+        n = 203;
+        break;
+    case 88:
+        n = 202;
+        break;
+    case 84:
+        n = 196;
+        break;
+    case 90:
+        n = 247;
+        break;
+    case 91:
+        n = 206;
+        break;
+    case 92:
+        n = 205;
+        break;
+    case 93:
+        n = 207;
+        break;
+    case 94:
+        n = 208;
+        break;
+    case 82:
+    case 83:
+        n = 246;
+        break;
+    case 96:
+        n = 248;
+        break;
+    case 97:
+        n = 249;
+        break;
+    default:
+        if (gCardCount > 999) {
+            gCardCount = 999;
+        }
+        return;
+    }
 
-call:
     if (func_0800FF00(n) == 0) {
         gCardCount++;
     }
 
-done:
     if (gCardCount > 999) {
         gCardCount = 999;
     }
