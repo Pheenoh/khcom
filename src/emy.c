@@ -2720,21 +2720,16 @@ u8 task_emy_28_1(Emy28Work* work) {
                 >> 8;
             act->z += (work->base.unk_178 - act->z) >> 3;
 
-            if (work->base.unk_158 & 2) {
-                goto set;
-            }
-
-            if (act->x - work->base.unk_170 >= 0
+            if ((work->base.unk_158 & 2) ||
+                    ((act->x - work->base.unk_170 >= 0
                     ? act->x - work->base.unk_170 <= 0xFFF
-                    : work->base.unk_170 - act->x <= 0xFFF) {
-                if (act->y - work->base.unk_174 >= 0
+                    : work->base.unk_170 - act->x <= 0xFFF) &&
+                    (act->y - work->base.unk_174 >= 0
                         ? act->y - work->base.unk_174 <= 0xFFF
-                        : work->base.unk_174 - act->y <= 0xFFF) {
-                set:
-                    work->base.unk_14C = 21;
-                    work->base.unk_154 = 0;
-                    break;
-                }
+                        : work->base.unk_174 - act->y <= 0xFFF))) {
+                work->base.unk_14C = 21;
+                work->base.unk_154 = 0;
+                break;
             }
 
             work->base.unk_154++;
