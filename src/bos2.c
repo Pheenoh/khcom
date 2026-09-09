@@ -145,8 +145,7 @@ void func_080B9FC4(TmBodyWork* work) {
     }
 }
 
-#ifdef NON_MATCHING
-void func_080BA08C(BosSub* work, s16 x, s16 y, s16 z, u16 a, u16 b, s32 c, s16 d) {
+void func_080BA08C(BosSub* work, s16 x, s16 y, s16 z, s16 a, s16 b, s32 c, s16 d) {
     work->x = x << 8;
     work->y = y << 8;
     work->z = z << 8;
@@ -156,9 +155,6 @@ void func_080BA08C(BosSub* work, s16 x, s16 y, s16 z, u16 a, u16 b, s32 c, s16 d
         func_08012324(&work->unk_040, work->x, work->y, work->z);
     }
 }
-#else
-INCLUDE_ASM("bos2/func_080BA08C.s");
-#endif
 
 void func_080BA0E4(s32* p, s32 a, s32 b, s32 c) {
     p[1] = (s16)a << 8;
