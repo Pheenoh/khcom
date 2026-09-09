@@ -748,7 +748,7 @@ extern BtlWork* gBtlWork;
 extern GameState gGameState;
 extern u8 gUnk_0813F91C[];
 extern s16 gSineTable[];
-extern u32 gFrameCounter;
+extern vu32 gFrameCounter;
 extern u8 gUnk_08F6DCA4[];
 extern u8 gUnk_08F6DCC4[];
 extern u8 gUnk_08F6DCE4[];
@@ -957,5 +957,10 @@ void AnimReset(AnimState* a);
 void func_08019190(void* a, s32 b);
 void func_080171FC(u16 a);
 s32 abs(s32 x);
+struct PcCharaWork;
+void func_08049EE4(struct PcCharaWork* work, s32 a, s32 b);
+void func_08049F24(struct PcCharaWork* work, s32 a, s32 b);
+s32 func_08049F50(struct PcCharaWork* work);
+void func_08019050(u16 a, s32 b, s32 c, s32 d);
 
 #endif /* GUARD_HUM_H */
