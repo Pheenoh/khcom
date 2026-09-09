@@ -304,7 +304,8 @@ void func_08096F08(void* a, void* b);
 u8 func_08096288(PrizeCardWork* w, void* a);
 u16 func_08093384(u8* work);
 void* AllocObjTiles(s32 a, s32 b);
-void func_08092A34(void);
+u8 func_08092A34(UnkStruct_08093838* w, void* a);
+u8 func_080923E0(UnkStruct_08093838* w, void* a);
 extern void* gUnk_09EF1228[];
 extern void* gUnk_09EF11AC[];
 #ifdef VERSION_EU
@@ -14922,7 +14923,120 @@ u8 func_080928E4(UnkStruct_08093838* w, void* a) {
     TaskPoolUpdate(w);
     return 1;
 }
-INCLUDE_ASM("card/func_08092A34.s");
+u8 func_08092A34(UnkStruct_08093838* w, void* a) {
+    u16 keys = GetKeysPressed();
+    MapcardWork* p;
+
+    func_08093708(w);
+    SetObjMosaicSize(w->unk_299, w->unk_29A);
+    if (w->unk_29B == 2) {
+        if (w->unk_299 != 0) {
+            w->unk_299--;
+        }
+        if (w->unk_29A != 0) {
+            w->unk_29A--;
+        }
+        w->unk_29B = 0;
+    }
+    w->unk_29B++;
+    switch (keys & 0x30F) {
+    case 1:
+        if (w->unk_1EC != 0) {
+            if (w->unk_1EC->unk_20 >= 220) {
+                if ((u8)func_080E8D64((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20] + 0x48) == 1) {
+                    if (gUnk_0203A8C0[w->unk_1EC->unk_20 + 1] != 0) {
+                        m4aSongNumStart(140);
+                        func_08093AC8(w->unk_1EC->unk_20 + 1);
+                        if ((u8)func_080E8E24((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20] + 0x48) == 1) {
+                            w->unk_2DA = func_080E8D00();
+                            ((u8*)w->unk_238)[0x122]++;
+                            ((u8*)w->unk_238)[0x11A] = 8;
+                            if (w->unk_2DA == 0) {
+                                w->unk_1EC->unk_74 = 1;
+                                w->unk_1EC->unk_6C |= 0x40;
+                                for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(p->unk_38)) {
+                                    if (w->unk_1EC != p) {
+                                        p->unk_6C &= 0xFFFD;
+                                    }
+                                }
+                                *w->unk_294 = 2;
+                                w->unk_28F = 16;
+                                w->unk_290 = 16;
+                                w->unk_285 = 0;
+                                w->unk_284 = 0;
+                                w->unk_2CC = 1;
+                                SetTaskUpdate(a, (u32)func_08092E2C);
+                                return 1;
+                            }
+                        }
+                        break;
+                    }
+                }
+            } else {
+                if (func_08093B08(w->unk_1EC->unk_20) != 0) {
+                    for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(p->unk_38)) {
+                        if (w->unk_1EC != p) {
+                            p->unk_6C &= 0xFFFD;
+                        }
+                    }
+                    if (w->unk_1EC != 0) {
+                        w->unk_23C = w->unk_1EC->unk_4C;
+                        w->unk_1EC->unk_6C |= 0x200;
+                    }
+                    m4aSongNumStart(102);
+                    SetTaskUpdate(a, (u32)func_080923E0);
+                    return 1;
+                }
+            }
+        }
+        m4aSongNumStart(105);
+        break;
+    case 2:
+        if (w->unk_2C1 == 0) {
+            for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(p->unk_38)) {
+                p->unk_6C &= 0xFFFD;
+            }
+            w->unk_2BF = 1;
+            w->unk_28F = 16;
+            w->unk_290 = 16;
+            SetTaskUpdate(a, (u32)func_08092E2C);
+            m4aSongNumStart(103);
+            gUnk_02034AD0 = 0;
+            w->unk_285 = 0;
+            w->unk_284 = 0;
+            w->unk_2CC = 2;
+        } else {
+            m4aSongNumStart(105);
+        }
+        break;
+    }
+    func_08093434((u8*)w);
+    if (w->unk_298 == 0) {
+        if (w->unk_1EC != *(MapcardWork**)w->unk_1F0) {
+            if (w->unk_1EC != 0) {
+                w->unk_287[0] = func_08065B6C(func_08093C18(gUnk_09EE4C80[w->unk_1EC->unk_20].unk_20), &w->unk_040[12]);
+                func_08093C44(w->unk_1EC->unk_20, w);
+            } else {
+                w->unk_287[0] = 0;
+                w->unk_287[1] = 0;
+                w->unk_287[2] = 0;
+            }
+            *(MapcardWork**)w->unk_1F0 = w->unk_1EC;
+            w->unk_28B = 4;
+        } else if (w->unk_1EC != 0) {
+            ApproachValue(&w->unk_250, w->unk_1EC->unk_4C, w->unk_28B);
+            ApproachValue(&w->unk_254, w->unk_1EC->unk_50, w->unk_28B);
+            if (w->unk_28B != 0) {
+                w->unk_28B--;
+            }
+        }
+    }
+    *(void**)w->unk_278 = AnimUpdate((AnimState*)&w->unk_1F8[0x18]);
+    w->gfx = AnimUpdate((AnimState*)w->unk_1F8);
+    gUnk_0203A890[4] = AnimUpdate((AnimState*)&gUnk_0203A890[6]);
+    TaskPoolUpdate(w);
+    return 1;
+}
 u8 func_08092E2C(UnkStruct_08093838* w) {
     ApproachValue(&w->unk_240, 0, w->unk_28F);
     ApproachValue(&w->unk_248, -0xA000, w->unk_28F);
