@@ -21,6 +21,12 @@ typedef struct MaskFadeWork {
     s8 unk_04C[0x1F4];
 } MaskFadeWork;
 
+typedef struct CharaLinkCard {
+    u16 unk_00 : 8;
+    u16 unk_01 : 8;
+    u16 unk_02;
+} __attribute__((packed, aligned(2))) CharaLinkCard;
+
 typedef struct GameState {
     u8 unk_000[0x32];
     u16 hp;
@@ -34,7 +40,7 @@ typedef struct GameState {
     u64 unk_10C;
     u64 unk_114;
     u8 unk_11C[0x6A];
-    u8 unk_186[0x34];
+    CharaLinkCard unk_186[13];
 } GameState;
 
 typedef struct CharaLinkData {
