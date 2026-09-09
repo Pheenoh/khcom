@@ -1721,4 +1721,161 @@ u8 func_080FAA18(GaWork* work) {
     return 1;
 }
 
-INCLUDE_ASM("room/func_080FABE4.s");
+u8 func_080FABE4(GaWork* work) {
+    CharaObjParam param;
+    u32 i;
+    GaEntryWork* e;
+    u8 result = 1;
+
+    if (work->unk_00E & 1) {
+        work->unk_008 = 2;
+    }
+    switch (work->unk_008) {
+    case 0:
+        for (i = 0; i <= 5; i++) {
+            e = &work->entries[i];
+            e->unk_15A |= 1;
+            switch (i) {
+            case 0:
+                AnimStart(&work->anim, 1, 0);
+                AnimStart(&e->anim, 2, 0);
+                e->unk_150 = 0;
+                break;
+            case 1:
+                e->unk_150 = 0;
+                break;
+            }
+        }
+        work->unk_010 = 3;
+        work->unk_00C = 0;
+        break;
+    case 1:
+        switch (work->unk_00C) {
+        case 0:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                switch (i) {
+                case 0:
+                    e->unk_12C += e->unk_150;
+                    e->unk_150 += 128;
+                    if (e->unk_12C > -0x1800) {
+                        m4aSongNumStart(389);
+                        e->unk_12C = -0x1800;
+                        e->unk_150 = -(e->unk_150 / 2);
+                        work->entries[1].unk_150 = -(work->entries[1].unk_150 / 2);
+                        work->unk_010--;
+                        if (work->unk_010 <= 0) {
+                            work->unk_00C = 1;
+                        }
+                    }
+                    break;
+                case 1:
+                    e->unk_12C += e->unk_150;
+                    e->unk_150 += 128;
+                    break;
+                }
+            }
+            break;
+        case 1:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                if (i == 1) {
+                    work->unk_010 = 20;
+                    e->unk_148 = (work->unk_018 == 0 ? -0xA00 : 0xA00) / work->unk_010;
+                    e->unk_14C = 0x600 / work->unk_010;
+                    work->unk_00C = 2;
+                }
+            }
+            break;
+        case 2:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                if (i == 1) {
+                    e->unk_124 += e->unk_148;
+                    e->unk_128 += e->unk_14C;
+                    work->unk_010--;
+                    if (work->unk_010 <= 0) {
+                        work->unk_00C = 3;
+                    }
+                }
+            }
+            break;
+        case 3:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                if (i == 1) {
+                    e->unk_150 = 0;
+                    work->unk_010 = 3;
+                    work->unk_00C = 4;
+                }
+            }
+            break;
+        case 4:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                if (i == 1) {
+                    e->unk_12C += e->unk_150;
+                    e->unk_150 += 128;
+                    if (e->unk_12C > -0x800) {
+                        m4aSongNumStart(601);
+                        e->unk_12C = -0x800;
+                        e->unk_150 = -(e->unk_150 / 2);
+                        work->unk_010--;
+                        if (work->unk_010 <= 0) {
+                            work->unk_00C = 5;
+                        }
+                    }
+                }
+            }
+            break;
+        case 5:
+            for (i = 0; i <= 5; i++) {
+                e = &work->entries[i];
+                switch (i) {
+                case 0:
+                    param.unk_00 = 0x06010000 + (((RoomObjResource*)e->tiles)->unk_06 << 5);
+                    param.unk_04 = ((RoomObjResource*)e->tiles)->unk_08;
+                    param.unk_08 = 0x06010000 + (((RoomObjResource*)work->unk_A28)->unk_06 << 5);
+                    param.unk_0C = ((RoomObjResource*)work->unk_A28)->unk_08;
+                    param.unk_30 = e->unk_124 + (work->unk_018 == 0 ? -0x700 : 0x700);
+                    param.unk_34 = e->unk_128;
+                    param.unk_38 = e->unk_12C + 0x1000;
+                    param.unk_40 = (u32)e;
+                    break;
+                case 1:
+                    param.unk_10 = 0x06010000 + (((RoomObjResource*)e->tiles)->unk_06 << 5);
+                    param.unk_14 = ((RoomObjResource*)e->tiles)->unk_08;
+                    break;
+                }
+            }
+            param.unk_18 = 0x05000200 + (((RoomObjResource*)work->unk_A30)->unk_06 << 5);
+            param.unk_1C = ((RoomObjResource*)work->unk_A30)->unk_08 << 5;
+            param.unk_20 = 0;
+            param.unk_24 = 0;
+            param.unk_28 = 0;
+            param.unk_2C = 0;
+            param.unk_3C = (u32)func_080F83BC;
+            func_080C6894(&param);
+            work->unk_00C = 6;
+            break;
+        case 6:
+            if (func_080C69B4() == 0) {
+                func_0801B008();
+                result = 0;
+            }
+            break;
+        }
+        break;
+    case 2:
+        break;
+    }
+    if (work->unk_008 == 0) {
+        work->unk_008 = 1;
+    }
+    if (work->unk_008 == 2) {
+        work->unk_000 = work->unk_004;
+        work->unk_008 = 0;
+        work->unk_00E &= 0xFFFE;
+    }
+    return result;
+}
