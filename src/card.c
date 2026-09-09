@@ -238,7 +238,12 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a);
 void func_080062F4(u16 a, s32 b);
 void func_08012304(void* a);
 void func_0808E364(u8* work, u8 b);
-void func_08088F24(void);
+u8 func_08088F24(UnkStruct_0808DB04* w, void* a);
+u8 func_08089220(u8* work, void* a);
+void func_0808F3E8(void);
+extern u8 gUnk_09EE7F60[];
+extern u8 gUnk_09EE7F90[];
+extern s16 gUnk_0903570E[];
 void func_08002A10(void* a, void* b);
 void func_0805F1C0(s32* p, s32 v);
 void func_0808D6C4(u8* work);
@@ -10201,7 +10206,141 @@ u8 func_08088EB4(u8* work, void* a) {
     TaskPoolUpdate(&work[CARDWORK(0x7DC)]);
     return 1;
 }
+#if !defined(VERSION_EU) || defined(NON_MATCHING)
+u8 func_08088F24(UnkStruct_0808DB04* w, void* a) {
+    *(void**)&w->unk_4E8[8] = AnimUpdate((AnimState*)&w->unk_7F0[0x10]);
+    *(void**)&w->unk_4E8[12] = AnimUpdate((AnimState*)&w->unk_7F0[0x28]);
+    if (w->unk_8C8[1] != 0) {
+        w->unk_8B1 = 1;
+        func_0808CD48((u8*)w);
+        SetTaskUpdate(a, (u32)func_08089220);
+    }
+    switch (GetKeysRepeat()) {
+    case 64:
+        if (w->unk_8C8[0] != 0) {
+            w->unk_8C8[0]--;
+        } else {
+            w->unk_8C8[0] = 5;
+        }
+        m4aSongNumStart(101);
+        w->unk_8B7 = 1;
+        break;
+    case 128:
+        if (w->unk_8C8[0] < 5) {
+            w->unk_8C8[0]++;
+        } else {
+            w->unk_8C8[0] = 0;
+        }
+        w->unk_8B7 = 1;
+        m4aSongNumStart(101);
+        break;
+    }
+    switch (GetKeysPressed()) {
+    case 2:
+        w->unk_8B7 = 1;
+        if (w->unk_8B2[0] == 0) {
+            w->unk_8B1 = 0;
+            func_0808CD48((u8*)w);
+            func_0808E364((u8*)w, 0);
+            m4aSongNumStart(104);
+            SetTaskUpdate(a, (u32)func_08086A14);
+            func_0808E344((void**)w);
+        } else {
+            w->unk_8B1 = 1;
+            func_0808CD48((u8*)w);
+            m4aSongNumStart(104);
+            SetTaskUpdate(a, (u32)func_08089220);
+        }
+        break;
+    case 8:
+        w->unk_8C8[3] = 1;
+        w->unk_8B7 = 1;
+        if (w->unk_8B2[0] == 0) {
+            w->unk_8B1 = 0;
+            func_0808CD48((u8*)w);
+            func_0808E364((u8*)w, 0);
+            m4aSongNumStart(104);
+            SetTaskUpdate(a, (u32)func_08086A14);
+            func_0808E344((void**)w);
+        } else {
+            m4aSongNumStart(104);
+            SetTaskUpdate(a, (u32)func_08089220);
+            w->unk_8D1[1] = 7;
+        }
+        break;
+    case 1:
+        switch (w->unk_8C8[0]) {
+        case 0:
+            SetActiveDeckIndex(w->unk_8C0);
+            func_0808D16C(w->unk_8C0);
+            TaskCreate(w->unk_7DC, gUnk_09EE7F60, &w->unk_8C8[1]);
+            m4aSongNumStart(137);
+            SetTaskUpdate(a, (u32)func_08089220);
+            return 1;
+        case 1:
+            m4aSongNumStart(102);
+            func_0808C90C((u8*)w);
+            w->unk_8D0 = 0;
+            func_0808E344((void**)w);
+#ifdef VERSION_EU
+            func_08006120(0, 16);
+#endif
+            SetTaskUpdate(a, (u32)func_0808F3E8);
+            break;
+        case 2:
+            m4aSongNumStart(102);
+            w->unk_8B1 = 15;
+            TaskCreate(w->unk_7DC, gUnk_09EE7F90, &w->unk_8C8[1]);
+            w->unk_8D1[0] = 1;
+            SetTaskUpdate(a, (u32)func_08088768);
+            return 1;
+        case 3:
+            m4aSongNumStart(102);
+            SetTaskUpdate(a, (u32)func_080892E8);
+            break;
+        case 4:
+            m4aSongNumStart(102);
+            SetTaskUpdate(a, (u32)func_08089EC0);
+            break;
+        case 5:
+            m4aSongNumStart(102);
+            SetTaskUpdate(a, (u32)func_0808A7E4);
+            break;
+        }
+        break;
+    }
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        func_0805F1C0(&w->unk_848, 0x6600);
+        break;
+    case 1:
+        func_0805F1C0(&w->unk_848, 0x6200);
+        break;
+    case 2:
+        func_0805F1C0(&w->unk_848, 0x5E00);
+        break;
+    case 3:
+        func_0805F1C0(&w->unk_848, 0x6200);
+        break;
+    case 4:
+        func_0805F1C0(&w->unk_848, 0x5E00);
+        break;
+    default:
+        func_0805F1C0(&w->unk_848, 0x6600);
+        break;
+    }
+#else
+    func_0805F1C0(&w->unk_848, 0x6600);
+#endif
+    func_0805F1C0(&w->unk_84C, gUnk_0903570E[w->unk_8C8[0]] << 8);
+    TaskPoolUpdate(w->unk_7C8);
+    TaskPoolUpdate(w->unk_7DC);
+    return 1;
+}
+#else
 INCLUDE_ASM("card/func_08088F24.s");
+#endif
 #ifndef VERSION_EU
 u8 func_08089220(u8* work, void* a) {
     *(void**)&work[0x4F0] = AnimUpdate(&work[0x800]);
