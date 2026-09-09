@@ -1819,7 +1819,104 @@ u8 func_08044F98(SmnKingWork* work) {
     return 0;
 }
 
-INCLUDE_ASM("smn/task_smn_king_1.s");
+u8 task_smn_king_1(SmnKingWork* work) {
+    SmnBody* body = &work->unk_038;
+    BtlWork* obj;
+    obj = work->unk_15D != 0 ? gBtlWork : gUnk_02039B9C;
+    if (obj->unk_068 & 0x40000000) {
+        return 0;
+    }
+    func_0802F284(body->x, body->y, body->z);
+    switch (work->unk_034) {
+    case 0:
+        if (work->unk_148 == 0) {
+            work->unk_14A = 30;
+            func_080140E0(body->x, body->y, body->z);
+            m4aSongNumStart(0x235);
+        }
+        ApproachValue(&work->unk_154, 256, work->unk_14A);
+        if (work->unk_14A <= 0) {
+            work->unk_034 = 2;
+            work->unk_148 = 0;
+            work->unk_15E = 1;
+        } else {
+            work->unk_148++;
+            work->unk_14A--;
+        }
+        break;
+    case 1:
+        if (work->unk_148 == 0) {
+            work->unk_14A = 30;
+            func_080140E0(body->x, body->y, body->z);
+            m4aSongNumStart(0x239);
+        }
+        ApproachValue(&work->unk_154, 25, work->unk_14A);
+        if (work->unk_14A <= 0) {
+            return 0;
+        }
+        work->unk_148++;
+        work->unk_14A--;
+        break;
+    case 2:
+        func_08019068(gUnk_0813EB4C, &work->anim, 1, 0, work->tiles);
+        if (func_08044F98(work)) {
+            work->unk_034 = 4;
+            work->unk_148 = 0;
+            func_08006238(0, gBtlWork->unk_0B3, 8);
+        }
+        break;
+    case 4:
+        func_08019068(gUnk_0813EB4C, &work->anim, 2, 0, work->tiles);
+        if (AnimGetFrame(&work->anim) == 5 && work->anim.timer == 3) {
+            func_08013480(body->x, body->y, body->z - 0x1300);
+            func_08011F78(3, body->x, body->y, body->z, 256, 256, 256);
+            m4aSongNumStart(0x273);
+            switch (work->unk_15C) {
+            case 0:
+                gBtlWork->unk_07C->unk_02C += gBtlWork->unk_07C->unk_02E / 5;
+                func_08076284();
+                break;
+            case 1:
+                gBtlWork->unk_07C->unk_02C += gBtlWork->unk_07C->unk_02E / 2;
+                func_08076290();
+                break;
+            case 2:
+            default:
+                gBtlWork->unk_07C->unk_02C += gBtlWork->unk_07C->unk_02E;
+                func_0807629C();
+                break;
+            }
+            func_08019190(gBtlWork->unk_07C, 10);
+            if (gBtlWork->unk_07C->unk_02C > gBtlWork->unk_07C->unk_02E) {
+                gBtlWork->unk_07C->unk_02C = gBtlWork->unk_07C->unk_02E;
+            }
+        }
+        func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
+        if (AnimIsFinished(&work->anim)) {
+            work->unk_034 = 5;
+            work->unk_148 = 0;
+        }
+        break;
+    case 5:
+        func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
+        if (work->unk_148 > 60) {
+            func_080061E8(0, 8);
+            work->unk_034 = 1;
+            work->unk_148 = 0;
+        } else {
+            work->unk_148++;
+        }
+        break;
+    }
+    if (body->z > body->unk_10) {
+        body->z = body->unk_10;
+    }
+    if (work->unk_15E != 0) {
+        AnimUpdate(&work->anim);
+    }
+    TaskPoolUpdate(&work->unk_020);
+    return 1;
+}
 
 void task_smn_king_2(SmnKingWork* work) {
     SmnBody* body;
