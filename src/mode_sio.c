@@ -17,6 +17,8 @@ extern void* gUnkEu_088920BC[];
 extern u8 gUnkEu_096C798C[];
 extern u16 gUnkEu_095DA860[];
 extern u16 gUnkEu_095DA867[];
+extern u8 gUnkEu_0203B108[];
+extern void* gUnkEu_08891670[];
 extern u8 gUnkEu_095ECDD8[];
 extern u8 gUnkEu_095ED472[];
 extern void* gUnkEu_09F7EB28[];
@@ -810,17 +812,28 @@ void func_080B0010(void) {
     func_080B0874();
 }
 
-#ifndef VERSION_EU
 void func_080B01FC(void) {
-    if (gSioPlayerId == 0) {
-        gUnk_02039B58[1] = 0x2FCF;
-    } else {
-        gUnk_02039B58[1] = 0x6AD6;
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+#endif
+        if (gSioPlayerId == 0) {
+            gUnk_02039B58[1] = 0x2FCF;
+        } else {
+            gUnk_02039B58[1] = 0x6AD6;
+        }
+#ifdef VERSION_EU
+    } else if (GetKeysPressed() & A_BUTTON) {
+        gUnkEu_0203B108[1] = 1;
     }
+#endif
 
     if (gSioBtlOptionWork->unk_217 == 1 && gSioBtlOptionWork->unk_218 == 1) {
         gSioBtlOptionWork->unk_006 = 0;
+#ifdef VERSION_EU
+        gSioBtlOptionWork->unk_229 = func_08065B6C(eu_0805E924(gUnkEu_08891670), gSioBtlOptionWork->unk_22C);
+#else
         gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A23C, gSioBtlOptionWork->unk_22C);
+#endif
 #ifdef VERSION_JP
         gSioBtlOptionWork->unk_412 = 61;
 #else
@@ -834,9 +847,6 @@ void func_080B01FC(void) {
     func_080B06D4();
     func_080B0874();
 }
-#else
-INCLUDE_ASM("mode_sio/func_080B01FC.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080B02A4(void) {
