@@ -838,7 +838,7 @@ extern TmFootStep gUnk_09EF2464[];
 extern u8 gUnk_09619C94[];
 
 void func_08002A10(void* a, void* b);
-void func_080122AC(void* a, s32 b, s32 c, s32 d);
+void func_080122AC(void* a, u32 b, u16 c, u16 d);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_08012614(void* a, s32 b);
 void ApproachAngle(void* a, u16 b, u16 c);
