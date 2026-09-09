@@ -22333,7 +22333,58 @@ u8 func_080A25E0(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_080A25E0.s");
 #endif
-INCLUDE_ASM("card/func_080A2678.s");
+void func_080A2678(UnkStruct_080A2678* w) {
+#ifdef VERSION_JP
+    w->unk_298 = w->unk_294 + w->unk_2AD * 0xA00;
+    w->unk_29C = w->unk_298 + w->unk_2AE * 0xA00;
+#elif defined(VERSION_EU)
+    switch (gLanguage) {
+    case 0:
+        w->unk_29C = w->unk_294 + ((func_08065B08(w->unk_000, w->unk_2AD) + 3) << 8);
+        w->unk_298 = w->unk_29C + ((func_08065B08(w->unk_140, w->unk_2AF) + 3) << 8);
+        func_080664D8((w->unk_298 >> 8) + func_08065B08(w->unk_0A0, w->unk_2AE), w->unk_2A4 >> 8,
+                      w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+        break;
+    case 1:
+        w->unk_29C = w->unk_294 + ((func_08065B08(w->unk_000, w->unk_2AD) + 3) << 8);
+        w->unk_298 = w->unk_29C + ((func_08065B08(w->unk_140, w->unk_2AF) + 3) << 8);
+        func_080664D8((w->unk_298 >> 8) + func_08065B08(w->unk_0A0, w->unk_2AE), w->unk_2A4 >> 8,
+                      w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+        break;
+    case 2:
+        w->unk_298 = w->unk_294 + ((func_08065B08(w->unk_000, w->unk_2AD) + 3) << 8);
+        w->unk_29C = w->unk_298 + ((func_08065B08(w->unk_0A0, w->unk_2AE) + 3) << 8);
+        break;
+    case 3:
+        w->unk_29C = w->unk_294 + ((func_08065B08(w->unk_000, w->unk_2AD) + 3) << 8);
+        w->unk_298 = w->unk_29C + ((func_08065B08(w->unk_140, w->unk_2AF) + 3) << 8);
+        func_080664D8((w->unk_298 >> 8) + func_08065B08(w->unk_0A0, w->unk_2AE), w->unk_2A4 >> 8,
+                      w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+        break;
+    case 4:
+        w->unk_29C = w->unk_294 + ((func_08065B08(w->unk_000, w->unk_2AD) + 3) << 8);
+        w->unk_298 = w->unk_29C + ((func_08065B08(w->unk_140, w->unk_2AF) + 3) << 8);
+        func_080664D8((w->unk_298 >> 8) + func_08065B08(w->unk_0A0, w->unk_2AE), w->unk_2A4 >> 8,
+                      w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+        break;
+    }
+#else
+    w->unk_29C = w->unk_294 + ((func_08065B08(w->unk_000, w->unk_2AD) + 3) << 8);
+    w->unk_298 = w->unk_29C + ((func_08065B08(w->unk_140, w->unk_2AF) + 3) << 8);
+#endif
+#ifdef VERSION_EU
+    DrawSprite(72, w->unk_290 >> 8, 0, w->unk_284, w->unk_288, 0, 0, 41);
+#else
+    DrawSprite(72, w->unk_290 >> 8, gUnk_09EF126C[0], w->unk_284, w->unk_288, 0, 0, 41);
+#endif
+    func_080664D8(w->unk_294 >> 8, w->unk_2A0 >> 8, w->unk_000, w->unk_280, 40, w->unk_2AD);
+    func_080664D8(w->unk_298 >> 8, w->unk_2A4 >> 8, w->unk_0A0, w->unk_280, 40, w->unk_2AE);
+    func_080664D8(w->unk_29C >> 8, w->unk_2A8 >> 8, w->unk_140, w->unk_280, 40, w->unk_2AF);
+#ifdef VERSION_US
+    func_080664D8((w->unk_298 >> 8) + func_08065B08(w->unk_0A0, w->unk_2AE), w->unk_2A4 >> 8,
+                  w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+#endif
+}
 void func_080A27EC(u8* work) {
     func_08065AE0((TextSlot*)work, 20);
     func_08065AE0((TextSlot*)&work[0xA0], 20);
