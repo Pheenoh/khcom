@@ -3867,7 +3867,6 @@ void task_emy_82_0(Emy82Work* work, void* obj) {
     work->unk_184 = 0;
 }
 
-#ifdef NON_MATCHING
 u8 func_0803DD44(EmyWork* work) {
     EmyActor* act;
     s32 x;
@@ -3875,6 +3874,9 @@ u8 func_0803DD44(EmyWork* work) {
     s32 d;
     s32 t;
     s32 lo;
+    s32 actorX;
+    s32 actorY;
+    s32 targetY;
 
     act = &work->unk_03C;
     func_0801C700(act, &x, &y, 0);
@@ -3894,12 +3896,11 @@ u8 func_0803DD44(EmyWork* work) {
         }
     }
 
-    return GetAngle(act->x, act->y, d, y);
+    targetY = y;
+    actorX = act->x;
+    actorY = act->y;
+    return GetAngle(actorX, actorY, d, targetY);
 }
-
-#else
-INCLUDE_ASM("emy/func_0803DD44.s");
-#endif
 
 INCLUDE_ASM("emy/task_emy_82_1.s");
 
