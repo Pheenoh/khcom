@@ -2666,7 +2666,6 @@ void func_08065AE0(TextSlot* p, s32 n) {
     }
 }
 
-#ifdef NON_MATCHING
 s16 func_08065B08(TextSlot* p, u8 n) {
     s16 x;
     s32 i;
@@ -2674,21 +2673,18 @@ s16 func_08065B08(TextSlot* p, u8 n) {
     x = 0;
 
     for (i = 0; i < n; i++) {
-        if (p[i].tiles == NULL) {
-            return x;
-        }
-
-        if (p[i].unk_05 == -1) {
-            x += 3;
+        if (p[i].tiles != NULL) {
+            if (p[i].unk_05 != -1) {
+                x += p[i].unk_05;
+            } else {
+                x += 3;
+            }
         } else {
-            x += p[i].unk_05;
+            return x;
         }
     }
     return x;
 }
-#else
-INCLUDE_ASM("msg/func_08065B08.s");
-#endif
 
 #ifdef VERSION_EU
 s16 eu_0806629C(TextSlot* p, u8 n) {
