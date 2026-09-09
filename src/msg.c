@@ -4487,7 +4487,94 @@ s32 func_0806C81C(u8* a, u16 b) {
 }
 #endif
 #ifndef VERSION_EU
-INCLUDE_ASM("msg/func_0806CBAC.s");
+#ifdef VERSION_JP
+u8 func_0806CBAC(u8* a, u16* b, u16 tile) {
+#else
+u8 func_0806CBAC(u16* a, u16* b, u16 tile) {
+#endif
+    u8* dst = (u8*)0x06014000 + tile * 32;
+    s32 flag = 0;
+    gUnk_02034A90 = 0;
+    *b = 0;
+    while (*a != 0) {
+        s32 v = 0;
+        if (*a == 10) {
+            *b = 0;
+        } else {
+#ifdef VERSION_JP
+            if (*a > 31) {
+#else
+            if ((u16)(*a - 32) <= 223) {
+#endif
+                v = *a;
+            } else {
+                switch (*a) {
+                case 0xE000:
+                    v = 25;
+                    break;
+                case 0x2191:
+                    v = 10;
+                    break;
+                case 0x2193:
+                    v = 11;
+                    break;
+                case 0x2190:
+                    v = 12;
+                    break;
+                case 0x2192:
+                    v = 13;
+                    break;
+                case 0x300C:
+                    v = 1;
+                    break;
+                case 0x300D:
+                    v = 2;
+                    break;
+                case 0x300E:
+                    v = 3;
+                    break;
+                case 0x300F:
+                    v = 4;
+                    break;
+                case 0x203B:
+                    v = 6;
+                    break;
+                case 0x266A:
+                    v = 18;
+                    break;
+                case 0x2642:
+                    v = 8;
+                    break;
+                case 0x2640:
+                    v = 9;
+                    break;
+                case 0x2605:
+                    v = 21;
+                    break;
+                case 0x25A0:
+                    v = 17;
+                    break;
+                default:
+                    v = 0;
+                    break;
+                }
+            }
+            if (v != 32) {
+                *b = gUnk_08F7D438[v];
+                v = ((u16*)gUnk_09EEC134[v])[3];
+                CpuSet(&gUnk_090CBFB2[v * 32], dst, 0x40);
+                dst += 128;
+                gUnk_02034A90++;
+                b++;
+                flag = 1;
+            } else if (flag != 0) {
+                b[-1] += 3;
+            }
+        }
+        a++;
+    }
+    return gUnk_02034A90;
+}
 #endif
 void func_0806CD30(s32 a) {
     switch (a) {
