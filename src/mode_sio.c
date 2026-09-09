@@ -3,6 +3,23 @@
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
+extern u8 gUnkEu_0967CB6C[];
+extern u8 gUnkEu_095F18BE[];
+extern u8 gUnkEu_095F3D12[];
+extern u8 gUnkEu_095F24DA[];
+extern u8 gUnkEu_095F30F6[];
+extern u8 gUnkEu_095F492E[];
+extern u8 gUnkEu_095EC758[];
+extern u8 gUnkEu_095EC898[];
+extern u8 gUnkEu_095ECB38[];
+extern void* gUnkEu_09F7EBB0[];
+extern void* gUnkEu_09F7EBC8[];
+extern void* gUnkEu_09F7EBB8[];
+extern void* gUnkEu_09F7EBC0[];
+extern void* gUnkEu_09F7EBD0[];
+extern void* gUnkEu_09F7EB08[];
+extern void* gUnkEu_09F7EB18[];
+extern void* gUnkEu_09F7EB20[];
 extern u8 gUnkEu_08F7A224[];
 extern u8 gUnkEu_08F7ADFC[];
 extern u8 gUnkEu_08F7B958[];
@@ -332,9 +349,12 @@ void func_080AF0B0(void) {
     gSioBtlOptionWork->unk_002 = 1;
 }
 
-#ifndef VERSION_EU
 void func_080AF11C(void) {
     s32 i;
+
+#ifdef VERSION_EU
+    RequestDma3Copy(gUnkEu_0967CB6C, (u8*)GetBgCharBase(0) + 0x49E0, 0x1620);
+#endif
 
     if (gSioBtlOptionWork->unk_21A == 1) {
         gSioBtlOptionWork->unk_1B4 = 1;
@@ -369,9 +389,36 @@ void func_080AF11C(void) {
         gSioBtlOptionWork->unk_008[2] = LoadObjPalette(gUnk_096FAC64, 32);
         gSioBtlOptionWork->unk_008[3] = LoadObjPalette(gUnk_08F683A4, 32);
     }
+#ifdef VERSION_EU
+    gSioBtlOptionWork->palette = LoadObjPalette(gUnk_096FBD24, 32);
+    switch (gLanguage) {
+    case 0:
+        gSioBtlOptionWork->tiles = LoadObjTiles(gUnkEu_095F18BE, 0xC00);
+        gSioBtlOptionWork->gfx = gUnkEu_09F7EBB0[0];
+        break;
+    case 3:
+        gSioBtlOptionWork->tiles = LoadObjTiles(gUnkEu_095F3D12, 0xC00);
+        gSioBtlOptionWork->gfx = gUnkEu_09F7EBC8[0];
+        break;
+    case 1:
+        gSioBtlOptionWork->tiles = LoadObjTiles(gUnkEu_095F24DA, 0xC00);
+        gSioBtlOptionWork->gfx = gUnkEu_09F7EBB8[0];
+        break;
+    case 4:
+        gSioBtlOptionWork->tiles = LoadObjTiles(gUnkEu_095F30F6, 0xC00);
+        gSioBtlOptionWork->gfx = gUnkEu_09F7EBC0[0];
+        break;
+    case 2:
+    default:
+        gSioBtlOptionWork->tiles = LoadObjTiles(gUnkEu_095F492E, 0xC00);
+        gSioBtlOptionWork->gfx = gUnkEu_09F7EBD0[0];
+        break;
+    }
+#else
     gSioBtlOptionWork->tiles = LoadObjTiles(gUnk_0962BEDA, 0xC00);
     gSioBtlOptionWork->palette = LoadObjPalette(gUnk_096FBD24, 32);
     gSioBtlOptionWork->gfx = gUnk_09EF38D4[0];
+#endif
     gSioBtlOptionWork->tiles2 = LoadObjTiles(gUnk_0962B090, 0x1C0);
     gSioBtlOptionWork->palette2 = LoadObjPalette(gUnk_096FBAA4, 32);
     AnimInit(&gSioBtlOptionWork->anim, gUnk_09EF38B4, gUnk_09EF3894);
@@ -382,8 +429,13 @@ void func_080AF11C(void) {
     gSioBtlOptionWork->palette3 = LoadObjPalette(gUnk_09611AB8, 32);
     gSioBtlOptionWork->gfx3 = gUnk_09EF1278[0];
     gSioBtlOptionWork->unk_228 = 0;
+#ifdef VERSION_EU
+    func_08065ACC(gSioBtlOptionWork->unk_22C, 120);
+    gSioBtlOptionWork->unk_229 = func_08065B6C(eu_0805E924(gUnkEu_08891580), gSioBtlOptionWork->unk_22C);
+#else
     func_08065ACC(gSioBtlOptionWork->unk_22C, 60);
     gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A20C, gSioBtlOptionWork->unk_22C);
+#endif
 #ifdef VERSION_JP
     gSioBtlOptionWork->unk_412 = 68;
 #else
@@ -391,19 +443,45 @@ void func_080AF11C(void) {
 #endif
     gSioBtlOptionWork->unk_414 = 124;
     gSioBtlOptionWork->palette6 = LoadObjPalette(gUnk_096FBAA4, 32);
+#ifdef VERSION_EU
+    gSioBtlOptionWork->tiles4 = LoadObjTiles(gUnkEu_095EC758, 0x120);
+#else
     gSioBtlOptionWork->tiles4 = LoadObjTiles(gUnk_0962D7C0, 0x120);
+#endif
     gSioBtlOptionWork->palette4 = LoadObjPalette(gUnk_096FBD44, 32);
+#ifdef VERSION_EU
+    gSioBtlOptionWork->gfx4 = gUnkEu_09F7EB08[0];
+    gSioBtlOptionWork->unk_1F0 = gUnkEu_09F7EB08[1];
+    gSioBtlOptionWork->unk_1F4 = gUnkEu_09F7EB08[2];
+#else
     gSioBtlOptionWork->gfx4 = gUnk_09EF38EC[0];
     gSioBtlOptionWork->unk_1F0 = gUnk_09EF38EC[1];
     gSioBtlOptionWork->unk_1F4 = gUnk_09EF38EC[2];
+#endif
     gSioBtlOptionWork->unk_1F8 = 0;
+#ifdef VERSION_EU
+    gSioBtlOptionWork->tiles5[0] = LoadObjTiles(gUnkEu_095EC898, 0x280);
+#else
     gSioBtlOptionWork->tiles5[0] = LoadObjTiles(gUnk_0962D900, 0x280);
+#endif
     gSioBtlOptionWork->palette5[0] = LoadObjPalette(gUnk_096FBD64, 32);
+#ifdef VERSION_EU
+    gSioBtlOptionWork->gfx5[0] = gUnkEu_09F7EB18[0];
+#else
     gSioBtlOptionWork->gfx5[0] = gUnk_09EF38FC[0];
+#endif
     gSioBtlOptionWork->unk_214[0] = gUnk_0203AA58[0];
+#ifdef VERSION_EU
+    gSioBtlOptionWork->tiles5[1] = LoadObjTiles(gUnkEu_095ECB38, 0x280);
+#else
     gSioBtlOptionWork->tiles5[1] = LoadObjTiles(gUnk_0962DBA0, 0x280);
+#endif
     gSioBtlOptionWork->palette5[1] = LoadObjPalette(gUnk_096FBDA4, 32);
+#ifdef VERSION_EU
+    gSioBtlOptionWork->gfx5[1] = gUnkEu_09F7EB20[0];
+#else
     gSioBtlOptionWork->gfx5[1] = gUnk_09EF3904[0];
+#endif
     gSioBtlOptionWork->unk_214[1] = gUnk_0203AA58[1];
 
     if (gSioPlayerId == 0) {
@@ -414,9 +492,6 @@ void func_080AF11C(void) {
     func_080B09C0();
     gSioBtlOptionWork->unk_002 = 2;
 }
-#else
-INCLUDE_ASM("mode_sio/func_080AF11C.s");
-#endif
 
 void func_080AF4F8(void) {
     s8 i = gUnk_0203AAA0[gUnk_0203AA00];
