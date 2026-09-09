@@ -158,7 +158,8 @@ typedef struct UnkStruct_02034A1C {
     u8 unk_7B;
     u8 unk_7C;
     u8 unk_7D;
-    u8 unk_7E[6];
+    u8 unk_7E[2];
+    u32 unk_80;
 } UnkStruct_02034A1C;
 
 typedef struct LockonWork {

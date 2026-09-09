@@ -536,7 +536,185 @@ void func_0805FC04(u8 x, u8 y, u32 c, u16 v) {
     func_0805FCB0(x, y, c, buf);
 }
 
-INCLUDE_ASM("mode_test/func_0805FCB0.s");
+void func_0805FCB0(u8 x, u8 y, u32 c, const char* s) {
+    u8 i = 0;
+    s32 shift = 0;
+    u16 character;
+
+    switch (c) {
+    case 0:
+        shift = 1;
+        break;
+    case 1:
+        shift = 0;
+        break;
+    case 2:
+        gUnk_02034A1C[gUnk_02034A20].unk_80 = c;
+        func_0805F7E8(x, y, (u16*)s);
+        return;
+    }
+    if (gUnk_02034A20 > 19) {
+        return;
+    }
+    while (*s != 0) {
+        character = *(const u16*)s;
+        character = (character >> 8) | (character << 8);
+        switch (character & 0xFF00) {
+        case 0x8100:
+            if (character > 0x8146) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x8146 + (0x42 >> shift);
+            }
+            switch (character) {
+            case 0x8140:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 0;
+                break;
+            case 0x815E:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 1;
+                break;
+            case 0x815B:
+            case 0x815C:
+            case 0x815D:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 2;
+                break;
+            case 0x8151:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 3;
+                break;
+            case 0x8144:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 4;
+                break;
+            case 0x817B:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 5;
+                break;
+            case 0x8149:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 6;
+                break;
+            case 0x8148:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 7;
+                break;
+            case 0x8194:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 8;
+                break;
+            case 0x8193:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 9;
+                break;
+            case 0x818D:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 10;
+                break;
+            case 0x818B:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 11;
+                break;
+            case 0x8196:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 12;
+                break;
+            case 0x8168:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 13;
+                break;
+            case 0x8190:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 14;
+                break;
+            case 0x8195:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 15;
+                break;
+            case 0x8166:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 16;
+                break;
+            case 0x8169:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 17;
+                break;
+            case 0x816A:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 18;
+                break;
+            case 0x8181:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 19;
+                break;
+            case 0x8160:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 20;
+                break;
+            case 0x8162:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 21;
+                break;
+            case 0x8197:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 22;
+                break;
+            case 0x8165:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 23;
+                break;
+            case 0x8175:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 24;
+                break;
+            case 0x8176:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 25;
+                break;
+            case 0x816F:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 26;
+                break;
+            case 0x8170:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 27;
+                break;
+            case 0x8141:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 28;
+                break;
+            case 0x8142:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 29;
+                break;
+            case 0x8183:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 30;
+                break;
+            case 0x8184:
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = 31;
+                break;
+            }
+            break;
+        case 0x8200:
+            if ((u16)(character - 0x824F) <= 9) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x824F + (0x80 >> shift);
+            }
+            if ((u16)(character - 0x8260) <= 25) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x8260 + (0xC0 >> shift);
+            }
+            if ((u16)(character - 0x8281) <= 25) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x8281 + (0x100 >> shift);
+            }
+            if ((u16)(character - 0x829F) <= 31) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x829F + (0x140 >> shift);
+            }
+            if ((u16)(character - 0x82BF) <= 31) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x82BF + (0x180 >> shift);
+            }
+            if ((u16)(character - 0x82DF) <= 31) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x82DF + (0x1C0 >> shift);
+            }
+            break;
+        case 0x8300:
+            if ((u16)(character - 0x8340) <= 31) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x8340 + ((0x200 - shift * 192) >> shift);
+            }
+            if ((u16)(character - 0x8360) <= 30) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x8360 + ((0x240 - shift * 192) >> shift);
+            }
+            if (character == 0x8380) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = ((0x25F - shift * 192) >> shift);
+            }
+            if ((u16)(character - 0x8381) <= 21) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x8381 + ((0x280 - shift * 192) >> shift);
+            }
+            if ((u16)(character - 0x83BF) <= 1) {
+                gUnk_02034A1C[gUnk_02034A20].unk_00[i] = character - 0x83BF + (0x40 >> shift);
+            }
+            break;
+        }
+        i++;
+        s += 2;
+        if (i > 59) {
+            break;
+        }
+    }
+    gUnk_02034A1C[gUnk_02034A20].unk_7A = x;
+    gUnk_02034A1C[gUnk_02034A20].unk_7B = y;
+    gUnk_02034A1C[gUnk_02034A20].unk_7D = i;
+    gUnk_02034A1C[gUnk_02034A20].unk_80 = c;
+    gUnk_02034A20++;
+}
 void func_08060470(u8 bg) {
     u8 n;
     u8 i;
