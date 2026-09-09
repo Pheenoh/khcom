@@ -48,7 +48,10 @@ typedef struct UnkStruct_02039DC8 {
     u8 unk_78[0x02];
     u8 unk_7A;
     u8 unk_7B;
-    u8 unk_7C[0x10];
+    u8 unk_7C[0x08];
+    u8 unk_84;
+    u8 unk_85;
+    u8 unk_86[0x06];
 } UnkStruct_02039DC8;
 
 typedef struct UnkStruct_09EE3CA0 {
@@ -65,6 +68,20 @@ typedef struct UnkStruct_09EE3FB4_08 {
 typedef struct UnkStruct_09EE3FB4 {
     u8 unk_00[0x08];
     UnkStruct_09EE3FB4_08* unk_08;
+    u8 unk_0C[0x0E];
+    u8 unk_1A;
+    u8 unk_1B;
+    u8 unk_1C;
+    u8 unk_1D;
+    u8 unk_1E;
+    u8 unk_1F;
+    u16 unk_20;
+    u16 unk_22;
+    u8 unk_24[0x04];
+    u16 unk_28;
+    u8 unk_2A;
+    u8 unk_2B;
+    u8 unk_2C;
 } UnkStruct_09EE3FB4;
 
 typedef struct EvtArg {
@@ -106,6 +123,10 @@ typedef struct CardDef {
 typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
+    u8 unk_00C;
+    u8 unk_00D;
+    u8 unk_00E[0x172];
+    u16 unk_180;
 } GameState;
 
 typedef struct MenuWork {
@@ -236,6 +257,18 @@ u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d);
 void Event_0(s32 arg);
 void func_0806119C(void);
 void Event_2(void);
+void func_08061248(void);
+void func_08062D3C(void);
+u8 func_080A42D4(void);
+void func_0806250C(void);
+void func_08062CE4(void);
+void func_08061FC8(void);
+void func_080629F8(void);
+void func_08062D20(void);
+u8 func_080629CC(void);
+void func_0806297C(void);
+void func_080DF480(void);
+void func_080DF380(void);
 u8 task_lockon_1(LockonWork* w);
 void task_lockon_2(LockonWork* w);
 void task_lockon_3(LockonWork* w);
@@ -252,6 +285,15 @@ extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
 extern UnkStruct_09EE3FB4* gUnk_09EE3FB4[];
 extern TaskDesc gTaskDescEventSeq;
 extern Mode gModeEventselect;
+extern Mode gModeBattle;
+extern Mode gModeDummy;
+extern Mode gModeWorldselect;
+extern Mode gModeTitle;
+extern Mode gModeCopyright1;
+extern Mode gModeMapFld;
+extern Mode gModeMovie;
+extern Mode gModePooh;
+extern Mode gUnk_09EE274C;
 extern const s16 gSineTable[];
 extern u32 gUnk_03006C10;
 extern vu16 gSystemFlags;
