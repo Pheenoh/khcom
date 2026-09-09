@@ -761,10 +761,9 @@ void eu_080C24D8(void) {
 }
 #endif
 
-#ifdef NON_MATCHING
 void func_080C61D4(void) {
     s32 i;
-    u8* q;
+    CharaLinkCard* q;
     CharaLinkData* send;
     u16* recv;
 
@@ -781,9 +780,9 @@ void func_080C61D4(void) {
     gUnk_0203AAC0.unk_1C = 0;
 
     for (i = 0; i < 13; i++) {
-        q = &gGameState.unk_186[i * 4];
-        if ((u8)(*q - 1) <= 11) {
-            gUnk_0203AAC0.unk_1C |= 1 << *q;
+        q = &gGameState.unk_186[i];
+        if ((u8)(q->unk_00 - 1) <= 11) {
+            gUnk_0203AAC0.unk_1C |= 1 << q->unk_00;
         }
     }
 
@@ -801,9 +800,6 @@ void func_080C61D4(void) {
     gUnk_0203C390 = (u16*)send;
     gUnk_0203C39C = recv;
 }
-#else
-INCLUDE_ASM("chara/func_080C61D4.s");
-#endif
 
 void func_080C62F0(void (*a)(void)) {
     gUnk_0203C3A4 = 0;
