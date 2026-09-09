@@ -1,5 +1,5 @@
 #include "macros.h"
-#include "unk_0800eebc.h"
+#include "battle.h"
 
 s32 gUnk_02039DC0;
 
@@ -46,7 +46,7 @@ void WorldToScreen(s16* a, s16* b, s32 px, s32 py, s32 pz) {
     }
 }
 #else
-INCLUDE_ASM("unk_08019050/WorldToScreen.s");
+INCLUDE_ASM("battle_runtime/WorldToScreen.s");
 #endif
 void func_08019190(BtlObj* p, s16 b) {
     UnkStruct_0801B8A8 a;
@@ -1118,7 +1118,7 @@ u8 func_0801AD68(BtlObj* p) {
     return 1;
 }
 #else
-INCLUDE_ASM("unk_08019050/func_0801AD68.s");
+INCLUDE_ASM("battle_runtime/func_0801AD68.s");
 #endif
 
 s32 func_0801ADAC(BtlObj* p) {
@@ -1204,7 +1204,7 @@ void func_0801AF4C(void) {
     gBtlWork->unk_0EE = 0;
 }
 #else
-INCLUDE_ASM("unk_08019050/func_0801AF4C.s");
+INCLUDE_ASM("battle_runtime/func_0801AF4C.s");
 #endif
 
 void func_0801B008(void) {
@@ -1503,7 +1503,7 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     gBtlWork->unk_0EE++;
 }
 #else
-INCLUDE_ASM("unk_08019050/func_0801B37C.s");
+INCLUDE_ASM("battle_runtime/func_0801B37C.s");
 #endif
 
 void func_0801B7D8(BtlObj* obj) {
@@ -1785,7 +1785,7 @@ void func_0801BCF8(BtlObj* p) {
     gBtlWork->unk_0AC = p;
 }
 #else
-INCLUDE_ASM("unk_08019050/func_0801BCF8.s");
+INCLUDE_ASM("battle_runtime/func_0801BCF8.s");
 #endif
 
 void func_0801BDD4(BtlObj* p, s32 v) {

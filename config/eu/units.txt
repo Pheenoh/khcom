@@ -27,9 +27,13 @@ mode_movie.c -O2 -fprologue-bugfix -fno-common
 unk_0805a484.c
 mode_jiminy.c -O2 -fprologue-bugfix -fno-common
 unk_0800c778.c
-unk_0800eebc.c -O2 -fprologue-bugfix -fno-common
-unk_0801007c.c -O2 -fprologue-bugfix -fno-common
-unk_08019050.c -O2 -fprologue-bugfix -fno-common
+btl_actor.c -O2 -fprologue-bugfix -fno-common
+player_progression.c -O2 -fprologue-bugfix -fno-common
+field_transition.c -O2 -fprologue-bugfix -fno-common
+btl_vs.c -O2 -fprologue-bugfix -fno-common
+btl_collision.c -O2 -fprologue-bugfix -fno-common
+btl_effect.c -O2 -fprologue-bugfix -fno-common
+battle_runtime.c -O2 -fprologue-bugfix -fno-common
 task.c
 evt.c -O2 -fprologue-bugfix -fno-common
 acgtrans.c
