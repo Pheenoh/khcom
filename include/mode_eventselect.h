@@ -34,6 +34,13 @@ typedef struct CardBattleWork {
     u8 unk_BB[0x11];
 } CardBattleWork;
 
+typedef struct EventCardLink {
+    u8 unk_00[0x3C];
+    CardSlot* slot;
+    u8 unk_40[0x24];
+    u8 node[0x14];
+} EventCardLink;
+
 typedef struct DownWork {
     s32 unk_00[8];
     s32 unk_20[8];
@@ -153,6 +160,8 @@ extern const char* gEventNames[];
 extern Mode gUnkEu_09F5D6EC;
 #endif
 
+extern TaskDesc gUnk_09EE4984[];
+
 void SetBgMode0(void);
 void EnableBg(s32 a);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
@@ -192,6 +201,7 @@ UnkStruct_02034AAC* ListPoolFirst(void* p);
 UnkStruct_02034AAC* ListPoolNext(void* p);
 s32 func_08076F80(void);
 s32 func_08077F44(UnkStruct_08080268* w, u8* task);
+void func_0807682C(UnkStruct_08080268* w, u8 slot);
 void func_0807E248(void);
 
 void mode_eventselect_0(void);
