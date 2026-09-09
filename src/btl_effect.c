@@ -367,7 +367,6 @@ void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
     func_08006238(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
-#ifdef NON_MATCHING
 void func_08013070(void) {
     u16 a;
     u16 b;
@@ -375,7 +374,6 @@ void func_08013070(void) {
     s16 sx;
     s16 sy;
     s32 dx;
-    s32 t;
 
     func_08006B80(&a, &b);
     dx = 0;
@@ -407,10 +405,10 @@ void func_08013070(void) {
             }
         } else if (a > 2) {
             if (gUnk_02034928->unk_34 & 1) {
-                t = (7 - a) << 8;
-                dx = t * 7;
+                dx = ((7 - a) << 8) * 7;
             } else {
-                t = (7 - a) << 8;
+                s32 t = 7 - a;
+                t *= 256;
                 dx = t * -7;
             }
 
@@ -474,9 +472,6 @@ void func_08013070(void) {
     }
     func_08012908();
 }
-#else
-INCLUDE_ASM("btl_effect/func_08013070.s");
-#endif
 void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w) {
     s16 sx;
     s16 sy;
