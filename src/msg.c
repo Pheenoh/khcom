@@ -7561,7 +7561,6 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
     TaskPoolUpdate(p);
     return 1;
 }
-#ifndef VERSION_JP
 void func_08073508(MsgWinWork* p) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
     s32 n;
@@ -7580,6 +7579,13 @@ void func_08073508(MsgWinWork* p) {
     }
     func_08073E34(&p->unk_2C, e->unk_00, e->unk_04, p->unk_20);
 
+#ifdef VERSION_JP
+    if (e->unk_00 == 62) {
+        p->unk_26 = func_080653D4(0x2E00, gUnk_09033CB8[p->unk_20], (u8*)e->unk_10);
+    } else {
+        p->unk_26 = func_080653D4(gUnk_09033CA8[p->unk_20], gUnk_09033CB8[p->unk_20], (u8*)e->unk_10);
+    }
+#else
     if (e->unk_00 == 62) {
         if (p->unk_40 != 0) {
             p->unk_26 = func_08064EF4(0x2E00, gUnk_09033CB8[p->unk_20] - 0x200, p->unk_40, &p->unk_40);
@@ -7593,13 +7599,11 @@ void func_08073508(MsgWinWork* p) {
             p->unk_26 = func_08064EF4(gUnk_09033CA8[p->unk_20], gUnk_09033CB8[p->unk_20] - 0x200, LANGSTR(e->unk_10), &p->unk_40);
         }
     }
+#endif
     p->unk_25 = 0;
     p->unk_24 = 0;
     p->unk_29 = 1;
 }
-#else
-INCLUDE_ASM("msg/func_08073508.s");
-#endif
 
 #ifdef NON_MATCHING
 void func_0807361C(MsgWinWork* p) {
