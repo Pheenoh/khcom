@@ -2111,22 +2111,24 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 u8 func_080CB5A8(PooSoraWork* w, u8* t) {
+    PooActor* a = &gUnk_0203C420;
     s32 x;
     s32 y;
+    u16 keys;
 
-    x = gUnk_0203C420.unk_00.unk_00;
-    y = gUnk_0203C420.unk_00.unk_04;
+    x = a->unk_00.unk_00;
+    y = a->unk_00.unk_04;
 
     if (w->unk_94 == 8) {
         if (w->unk_98 == 0) {
             func_080CAA50(w, 8, 1);
-            gUnk_0203C420.unk_00.unk_0C = 0;
+            a->unk_10 = 0;
         }
 
         if (w->unk_98 > 29) {
-            if ((GetKeysHeld() & 0x100) != 0) {
+            keys = GetKeysHeld() & 0x100;
+            if (keys != 0) {
                 w->unk_98 = 0;
             } else {
                 w->unk_98 = 0;
@@ -2137,23 +2139,20 @@ u8 func_080CB5A8(PooSoraWork* w, u8* t) {
             w->unk_98++;
         }
     }
-    func_080CA8D4(w, &gUnk_0203C420.unk_00);
-    func_080CA560(&gUnk_0203C420.unk_00, x, y);
+    func_080CA8D4(w, &a->unk_00);
+    func_080CA560(&a->unk_00, x, y);
 
-    if (func_080CFE34(&gUnk_0203C420.unk_00) != 0) {
-        gUnk_0203C420.unk_00.unk_00 = x;
-        gUnk_0203C420.unk_00.unk_04 = y;
-        gUnk_0203C420.unk_00.unk_0C = 0;
+    if ((u8)func_080CFE34(&a->unk_00) != 0) {
+        a->unk_00.unk_00 = x;
+        a->unk_00.unk_04 = y;
+        a->unk_10 = 0;
     }
-    func_08012324(w->unk_38, gUnk_0203C420.unk_00.unk_00, gUnk_0203C420.unk_00.unk_04, gUnk_0203C420.unk_00.unk_08);
-    func_080C9FA8(gUnk_0203C420.unk_00.unk_00, gUnk_0203C420.unk_00.unk_04 + gUnk_0203C420.unk_00.unk_08);
-    w->gfx = AnimUpdate(w->unk_08);
+    func_08012324(w->unk_38, a->unk_00.unk_00, a->unk_00.unk_04, a->unk_00.unk_08);
+    func_080C9FA8(a->unk_00.unk_00, a->unk_00.unk_04 + a->unk_00.unk_08);
+    w->gfx = AnimUpdate((AnimState*)w->unk_08);
     TaskPoolUpdate(&w->unk_24);
     return 1;
 }
-#else
-INCLUDE_ASM("poo/func_080CB5A8.s");
-#endif
 
 u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
     PooActor* a = &gUnk_0203C420;
