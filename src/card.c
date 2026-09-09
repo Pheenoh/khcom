@@ -15086,7 +15086,35 @@ void func_080956AC(UnkStruct_02034AAC* p) {
 
     func_08000D90(&p->unk_64[0], p->unk_38);
 }
-INCLUDE_ASM("card/func_080958E0.s");
+void func_080958E0(ReloadGageWork* w) {
+    ApproachValue(&w->unk_94, w->unk_98, w->unk_A3);
+    if (w->unk_A3 != 0) {
+        w->unk_A3--;
+    }
+    w->unk_84 += (w->unk_88 - w->unk_84) >> 1;
+    if (w->unk_9C > 0) {
+        w->unk_9C--;
+        w->unk_78 &= ~0x40;
+    } else {
+        w->unk_9C = 0;
+        w->unk_78 |= 0x40;
+    }
+
+    switch (w->unk_40) {
+    case 1:
+        w->unk_8C = gSineTable[(w->unk_94 >> 8) & 0xFF] * 80 + gUnk_09033FF4[0][0];
+        w->unk_90 = -gSineTable[((w->unk_94 >> 8) & 0xFF) + 0x40] * 80 + gUnk_09033FF4[0][1];
+        w->unk_4C = gSineTable[0x20] * (w->unk_84 >> 8) + w->unk_8C;
+        w->unk_50 = -gSineTable[0x60] * (w->unk_84 >> 8) + w->unk_90;
+        break;
+    case 2:
+        w->unk_8C = gSineTable[(w->unk_94 >> 8) & 0xFF] * 80 + gUnk_0903401C[0][0];
+        w->unk_90 = -gSineTable[((w->unk_94 >> 8) & 0xFF) + 0x40] * 80 + gUnk_0903401C[0][1];
+        w->unk_4C = gSineTable[0xE0] * (w->unk_84 >> 8) + w->unk_8C;
+        w->unk_50 = -gSineTable[0x120] * (w->unk_84 >> 8) + w->unk_90;
+        break;
+    }
+}
 void func_08095A5C(UnkStruct_08095A5C* p) {
     p->unk_00 = gSineTable[(u8)p->unk_02] >> 8;
     p->unk_02 += 16;
