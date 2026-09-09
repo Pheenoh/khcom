@@ -2269,7 +2269,6 @@ void func_0804FD7C(MahluxiaWork* work) {
     }
 }
 
-#ifdef NON_MATCHING
 u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     MahluxiaWork* w;
     HumActor* act;
@@ -2335,10 +2334,10 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         }
 
         if (act->unk_04 - x >= 0 ? act->unk_04 - x <= 0x4FFF : x - act->unk_04 <= 0x4FFF) {
-            if (x > 0xFFFF) {
-                func_0804F9A0(w, (gBtlWork->unk_0DA + 60) << 8, 48);
-            } else {
+            if (x <= 0xFFFF) {
                 func_0804F9A0(w, (gBtlWork->unk_0DC - 60) << 8, 48);
+            } else {
+                func_0804F9A0(w, (gBtlWork->unk_0DA + 60) << 8, 48);
             }
         }
         break;
@@ -2510,14 +2509,10 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             break;
         case 2:
             if (work->base.anim.timer == 0) {
-                if (act->unk_34 & 4) {
-                    if (func_08011F78(0x13B, act->unk_04 - 0x2800, act->unk_08, act->unk_0C, 40, 12, 64)) {
-                        m4aSongNumStart(0x20D);
-                    }
-                } else {
-                    if (func_08011F78(0x13B, act->unk_04 + 0x2800, act->unk_08, act->unk_0C, 40, 12, 64)) {
-                        m4aSongNumStart(0x20D);
-                    }
+                if ((act->unk_34 & 4)
+                    ? func_08011F78(0x13B, act->unk_04 - 0x2800, act->unk_08, act->unk_0C, 40, 12, 64)
+                    : func_08011F78(0x13B, act->unk_04 + 0x2800, act->unk_08, act->unk_0C, 40, 12, 64)) {
+                    m4aSongNumStart(0x20D);
                 }
             }
             break;
@@ -2690,17 +2685,13 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
                 w->unk_188.unk_34 &= ~2;
                 m4aSongNumStart(0x224);
 
-                if (act->unk_34 & 4) {
-                    if (func_08011F78(0x13B, act->unk_04 - 0x2800, act->unk_08, act->unk_0C, 40, 12, 64)) {
-                        m4aSongNumStart(0x20D);
-                    }
-                } else {
-                    if (func_08011F78(0x13B, act->unk_04 + 0x2800, act->unk_08, act->unk_0C, 40, 12, 64)) {
-                        m4aSongNumStart(0x20D);
-                    }
+                if ((act->unk_34 & 4)
+                    ? func_08011F78(0x13B, act->unk_04 - 0x2800, act->unk_08, act->unk_0C, 40, 12, 64)
+                    : func_08011F78(0x13B, act->unk_04 + 0x2800, act->unk_08, act->unk_0C, 40, 12, 64)) {
+                    m4aSongNumStart(0x20D);
                 }
-                func_0804FD7C(w);
             }
+            func_0804FD7C(w);
             break;
         case 5:
         case 6:
@@ -2709,8 +2700,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         }
 
         if ((w->unk_1D0 & 4) == 0) {
-            work->base.unk_150++;
-            break;
+            goto next27;
         }
         w->unk_38C += 25;
 
@@ -2745,6 +2735,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             w->unk_188.unk_34 |= 2;
             break;
         }
+    next27:
         work->base.unk_150++;
         break;
     }
@@ -2757,9 +2748,6 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     TaskPoolUpdate(&w->unk_390);
     return func_0800E5F0(&work->base);
 }
-#else
-INCLUDE_ASM("hum/task_hum_mahluxia_1.s");
-#endif
 
 void task_hum_mahluxia_2(MahluxiaWork* work) {
     func_0800EFE8(&work->base);
