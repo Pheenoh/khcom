@@ -99,8 +99,8 @@ u8 gUnk_02034B1D[3];
 u8 gUnk_02034B20[20];
 void* gUnk_02034B34;
 #ifdef VERSION_EU
-u8 gUnk_02034B04[4];
-u8 gUnk_02034B08[20];
+TaskPool gUnkEu_02034B38;
+u32 gUnkEu_02034B4C;
 u8 gUnk_02034B1C;
 u8 gUnk_02034B1D[3];
 #endif
@@ -29224,7 +29224,14 @@ s32 func_080AE28C(u32* p) {
     return 106;
 }
 #ifdef VERSION_EU
-INCLUDE_ASM("card/eu_080AB9FC.s");
+void eu_080AB9FC(void) {
+    gUnkEu_02034B4C = 0;
+    SetBgMode0();
+    SetupBg(0, 0, 28, 14);
+    TaskPoolInit(&gUnkEu_02034B38, 1);
+    func_080A411C(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
+}
+INCLUDE_ASM("card/eu_080ABA38.s");
 #endif
 void task_print_0(void) {
     func_0809D1FC(0);
