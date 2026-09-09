@@ -398,6 +398,8 @@ u8 HCEffectName_1(UnkStruct_0809DF7C* w, void* a);
 void func_080AAEEC(UnkStruct_0808C940* w, s16 n);
 u8 func_0807CF4C(u8* work, void* a);
 u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a);
+u8 func_080A3DD0(UnkStruct_080A3F5C* w);
+u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a);
 void func_080A1E4C(u8* work);
 u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a);
 void func_0809D2B0(u8 a, u8 b, u8 c, u8* s);
@@ -23118,7 +23120,73 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
 
     return 1;
 }
+#ifdef NON_MATCHING
+u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
+    UnkStruct_080A3F5C_Entry* e;
+    u8* pal;
+
+    w->unk_130 = AnimUpdate(w->unk_0DC);
+    w->unk_12C = AnimUpdate(w->unk_0C4);
+    if (GetKeysPressed() & 1) {
+        m4aSongNumStart(102);
+        if (*(s32*)w->unk_138 != 0) {
+#ifdef VERSION_JP
+            w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->unk_114->unk_04],
+                                      gUnk_09033CB8[w->unk_114->unk_04],
+                                      *(s32*)w->unk_138, (s32*)w->unk_138);
+#else
+            w->unk_143 = func_0806BB44(gUnk_09033CA8[w->unk_114->unk_04],
+                                      gUnk_09033CB8[w->unk_114->unk_04] - 0x200,
+                                      *(s32*)w->unk_138, (s32*)w->unk_138);
+#endif
+            w->unk_142 = 0;
+            w->unk_141 = 0;
+            e = gUnk_09EE45DC[w->unk_114->unk_00];
+            if (e[w->unk_114->unk_08].unk_10 > 1) {
+                AnimStart(w->unk_0C4, 1, e[w->unk_114->unk_08].unk_11);
+            }
+            w->unk_148 = 0;
+            SetTaskUpdate(a, func_080A3A98);
+        } else if (!(((UnkStruct_09EE8008*)w->unk_114)->unk_10 & 1)) {
+            AnimStart(w->unk_0DC, 3, 1);
+            SetTaskUpdate(a, func_080A3DD0);
+            w->unk_13E = 0;
+            w->unk_140 = 8;
+        } else {
+            ReleaseObjTiles(w->unk_008);
+            ReleaseObjPalette(w->unk_00C);
+            w->unk_008 = 0;
+            w->unk_00C = 0;
+            w->unk_010 = AllocObjTiles(0x120, 0);
+            pal = gUnk_09614418;
+            w->unk_014 = LoadObjPalette(pal, 32);
+            LoadObjPaletteBank(((UnkStruct_080038C8*)w->unk_014)->unk_06, pal);
+            func_08002A10(w->unk_010, gUnk_090A4664);
+            AnimInit(w->unk_0F4, gUnk_09EEB03C, gUnk_09EEB008);
+            AnimStart(w->unk_0F4, 2, 1);
+            w->unk_134 = AnimGetGfx(w->unk_0F4);
+            w->unk_018 = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
+            w->unk_01C = LoadObjPalette(gUnk_09611AB8, 32);
+            w->unk_144 = 0;
+            w->unk_124 = 0x5800;
+            w->unk_128 = gUnk_09033D28[w->unk_144];
+#ifdef VERSION_EU
+            w->unk_146[0] = func_08065B6C(eu_0805E924(gUnkEu_08890E1C), w->unk_020);
+            w->unk_146[1] = func_08065B6C(eu_0805E924(gUnkEu_08890E44), w->unk_070);
+#else
+            w->unk_146[0] = func_08065B6C(gUnk_08159E10, w->unk_020);
+            w->unk_146[1] = func_08065B6C(gUnk_08159E18, w->unk_070);
+#endif
+            w->unk_0C0 = (s32)_08066468(1);
+            SetTaskUpdate(a, func_080A3E8C);
+        }
+    }
+    return 1;
+}
+
+#else
 INCLUDE_ASM("card/func_080A3BB0.s");
+#endif
 
 u8 func_080A3DD0(UnkStruct_080A3F5C* w) {
     if (w->unk_008 != 0) {
