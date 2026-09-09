@@ -5465,7 +5465,6 @@ void func_080E9034(u8 a, u8 b, s32 c, s32 d, s32 e) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_080E9078(s32 x, s32 y, s32 z) {
     UnkStruct_080E8E24* p = gUnk_09EF83C0[gGameState.world];
     UnkStruct_080E8E24* e;
@@ -5535,33 +5534,35 @@ void func_080E9078(s32 x, s32 y, s32 z) {
     if ((gGameState.flags & 0x800) && gGameState.world == 12 && func_0800FC5C(16) != 0) {
         e = gUnk_09858184;
 
-        if (func_0800FC5C(e->unk_00[0]) == 1) {
-            e += 24;
-
-            if (func_0800FC5C(e->unk_00[0]) == 1) {
-                e++;
-
-                if (func_0800FC5C(e->unk_00[0]) == 1) {
-                    goto other;
-                }
-            }
+        if (func_0800FC5C(e->unk_00[0]) != 1) {
+            func_0800FC14(e->unk_00[0]);
+            func_080E8F50(e, 1, x, y, z);
+            return;
         }
 
-        func_0800FC14(e->unk_00[0]);
-        func_080E8F50(e, 1, x, y, z);
-        return;
+        e += 24;
+
+        if (func_0800FC5C(e->unk_00[0]) != 1) {
+            func_0800FC14(e->unk_00[0]);
+            func_080E8F50(e, 1, x, y, z);
+            return;
+        }
+
+        e++;
+
+        if (func_0800FC5C(e->unk_00[0]) != 1) {
+            func_0800FC14(e->unk_00[0]);
+            func_080E8F50(e, 1, x, y, z);
+            return;
+        }
     }
 
-other:
     e = func_080E8E74(1);
 
     if (e != 0) {
         func_080E8F50(e, 1, x, y, z);
     }
 }
-#else
-INCLUDE_ASM("map/func_080E9078.s");
-#endif
 
 s32 func_080E924C(void) {
     s32 i;
