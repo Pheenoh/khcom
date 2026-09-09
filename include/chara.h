@@ -125,7 +125,7 @@ typedef struct CharaObj {
     u8 unk_32[0x02];
     u32 unk_34;
     u16 unk_38;
-    u16 unk_3A;
+    s16 unk_3A;
     s32 unk_3C;
     s16 unk_40;
     s16 unk_42;
@@ -176,8 +176,8 @@ typedef struct CharaObjParam {
 
 typedef struct MaskFadeArgs {
     u8* unk_00;
-    u16 unk_04;
-    u16 unk_06;
+    u32 unk_04 : 16;
+    u32 unk_06 : 16;
 } MaskFadeArgs;
 
 void task_chara_mask_fade_0(MaskFadeWork* work, MaskFadeArgs* args);

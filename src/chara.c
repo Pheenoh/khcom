@@ -1168,7 +1168,208 @@ void func_080C6990(u16 a, u8 b) {
     }
 }
 
-INCLUDE_ASM("chara/func_080C69B4.s");
+u8 func_080C69B4(void) {
+    s32 i;
+    CharaPrizeArgs prize;
+    MaskFadeArgs fade0;
+    MaskFadeArgs fade1;
+    MaskFadeArgs fade2;
+    MaskFadeArgs fade3;
+
+    switch (gCharaObj->unk_44) {
+    case 0:
+        if (!func_080128EC()) {
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 1:
+        if (++gCharaObj->unk_42 > 59) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 2:
+        func_080149BC(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
+        m4aSongNumStart(0x228);
+        for (i = 0; i < 32; i++) {
+            func_08007F20(i, gCharaObj->unk_1050[i]);
+        }
+        gCharaObj->unk_44++;
+        break;
+    case 3:
+        CpuSet((void*)0x05000000, gCharaObj->unk_46, 0x200);
+        gCharaObj->unk_44++;
+        break;
+    case 4:
+        gCharaObj->unk_3A++;
+        FadeAllPalettesToBlack(gCharaObj->unk_46, gCharaObj->unk_3A);
+        if (++gCharaObj->unk_42 > 9) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 5:
+        gCharaObj->unk_3A = 0;
+        gCharaObj->unk_44++;
+        break;
+    case 6:
+        if (++gCharaObj->unk_42 > 89) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 7:
+        if (gCharaObj->unk_40 > 1) {
+            gCharaObj->unk_40 = 0;
+            gCharaObj->unk_3A++;
+        }
+        gCharaObj->unk_40++;
+        if (gCharaObj->unk_42 == 20) {
+            func_08006B4C();
+            m4aSongNumStart(0x229);
+            fade0.unk_00 = (u8*)gCharaObj->unk_0C;
+            fade0.unk_04 = gCharaObj->unk_10;
+            fade0.unk_06 = 1;
+            if (fade0.unk_04 != 0) {
+                TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade0);
+            }
+            fade1.unk_00 = (u8*)gCharaObj->unk_14;
+            fade1.unk_04 = gCharaObj->unk_18;
+            fade1.unk_06 = 1;
+            if (fade1.unk_04 != 0) {
+                TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade1);
+            }
+            fade2.unk_00 = (u8*)gCharaObj->unk_1C;
+            fade2.unk_04 = gCharaObj->unk_20;
+            fade2.unk_06 = 1;
+            if (fade2.unk_04 != 0) {
+                TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade2);
+            }
+            fade3.unk_00 = (u8*)gCharaObj->unk_2C;
+            fade3.unk_04 = gCharaObj->unk_30;
+            fade3.unk_06 = 1;
+            if (fade3.unk_04 != 0) {
+                TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade3);
+            }
+        }
+        if (gCharaObj->unk_28 != 0) {
+            FadePaletteToWhite((u16*)gCharaObj->unk_24, (u16*)gCharaObj->unk_24, gCharaObj->unk_28, gCharaObj->unk_3A);
+        }
+        if (gCharaObj->unk_38 != 0) {
+            FadePaletteToWhite((u16*)gCharaObj->unk_34, (u16*)gCharaObj->unk_34, gCharaObj->unk_38, gCharaObj->unk_3A);
+        }
+        if (++gCharaObj->unk_42 > 39) {
+            gCharaObj->unk_42 = 0;
+            m4aSongNumStop(0x229);
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 8:
+        gCharaObj->unk_3A = 0;
+        gCharaObj->unk_40 = 0;
+        m4aSongNumStart(0x22A);
+        func_08006184(2, 20);
+        func_080063A8();
+        gCharaObj->unk_44++;
+        break;
+    case 9:
+        if (gCharaObj->unk_40 > 1) {
+            gCharaObj->unk_40 = 0;
+            gCharaObj->unk_3A++;
+        }
+        gCharaObj->unk_40++;
+        if (++gCharaObj->unk_42 > 37) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 10:
+        if (++gCharaObj->unk_42 > 20) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 11:
+        gCharaObj->unk_40 = 0;
+        if (gCharaObj->unk_1048 != 0) {
+            ((void (*)(void))gCharaObj->unk_1048)();
+        }
+        gCharaObj->unk_3A = 32;
+        gCharaObj->unk_44++;
+        break;
+    case 12:
+        FadeAllPalettesToWhite(gCharaObj->unk_46, gCharaObj->unk_3A);
+        if ((gCharaObj->unk_3A -= 2) <= 0) {
+            gCharaObj->unk_3A = 0;
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 13:
+        FadeAllPalettesToBlack(gCharaObj->unk_46, gCharaObj->unk_3A);
+        if ((gCharaObj->unk_3A += 2) > 11) {
+            gCharaObj->unk_3A = 12;
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 14:
+        prize.x = gCharaObj->unk_00;
+        prize.y = gCharaObj->unk_04;
+        prize.z = gCharaObj->unk_08;
+        func_08096DC4((TaskPool*)gBtlWork->unk_02C, &prize);
+        func_0801B918((void*)gCharaObj->unk_104C);
+        if ((gCharaObj->unk_1090 & 1) == 0) {
+            func_08014B30(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        } else {
+            gCharaObj->unk_3A = 12;
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44 = 19;
+        }
+        break;
+    case 15:
+        func_0801475C(76, 0, gCharaObj->unk_3C);
+        if (++gCharaObj->unk_42 > 79) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 16:
+        gCharaObj->unk_3C = 0;
+        gCharaObj->unk_44++;
+        break;
+    case 17:
+        func_0801475C(0, 0, gCharaObj->unk_3C);
+        gCharaObj->unk_3C -= 25;
+        if (++gCharaObj->unk_42 > 39) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 18:
+        func_08006B4C();
+        gCharaObj->unk_3A = 12;
+        gCharaObj->unk_44++;
+        break;
+    case 19:
+        gCharaObj->unk_3A--;
+        FadeAllPalettesToBlack(gCharaObj->unk_46, gCharaObj->unk_3A);
+        if (gCharaObj->unk_3A <= 0) {
+            gCharaObj->unk_3A = 0;
+            gCharaObj->unk_42 = 0;
+            CharaObjFree();
+            gCharaObj->unk_44++;
+        }
+        break;
+    default:
+        return 0;
+    }
+    TaskPoolUpdate(&gCharaTaskPool);
+    TaskPoolDraw(&gCharaTaskPool);
+    return 1;
+}
 
 void func_080C6E7C(u8* src, u8* dst, u16 size, s16 count) {
     s32 i;
