@@ -2062,7 +2062,19 @@ u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h) {
     return 1;
 }
 
-INCLUDE_ASM("engine/eu_080059D4.s");
+void eu_08005ADC(s32 bg) {
+    BgEntry* e = &gBgEntries[bg];
+    s32 count;
+    s32 i;
+    if (e->unkEu_10 != 0) {
+        count = e->unk_08 * e->unk_09;
+        for (i = 0; i < count; i++) {
+            EwramFree(e->unkEu_10[i]);
+        }
+        EwramFree(e->unkEu_10);
+        e->unkEu_10 = 0;
+    }
+}
 #endif
 
 s16 GetAngleDiff(s32 a, s32 b) {
