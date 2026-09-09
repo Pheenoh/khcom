@@ -4,6 +4,10 @@
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
+extern void* gUnkEu_09F85044[];
+extern void* gUnkEu_09F85030[];
+extern void* gUnkEu_09F8501C[];
+extern void* gUnkEu_09F85008[];
 #endif
 
 extern u8 gUnk_09A3D23C[];
@@ -59,12 +63,16 @@ u16 gUnk_02035FBA;
 #ifdef VERSION_JP
 u32 gUnkJp_02035F1C;
 #endif
-u8* gUnk_02035FBC;
-u8 gUnk_02035FC0;
 #ifdef VERSION_JP
-u16 gUnkJp_02035F26[3];
-#endif
+u8* gUnk_02035FBC[2];
+u8 gUnk_02035FC0[2];
+u16 gUnkJp_02035F2A;
+u16 gUnk_02035FC2[2];
+#else
+u8* gUnk_02035FBC[1];
+u8 gUnk_02035FC0[1];
 u16 gUnk_02035FC2[1];
+#endif
 
 #ifdef NON_MATCHING
 void mode_ms_charge_0(void) {
@@ -1057,7 +1065,6 @@ void func_081085E8(void) {
     }
 }
 
-#ifdef VERSION_US
 void func_08108650(void) {
     s32 i;
     s32 j;
@@ -1066,9 +1073,27 @@ void func_08108650(void) {
     void* anim;
 
     if (gUnk_02035FCA != 2) {
-        DrawSprite(gUnk_02035FD8 >> 8, 0, gUnk_0999D9CA, gUnk_02035E50, gUnk_02035E4C, 0, 0xC00, 0xBB8);
-        DrawSprite(128, gUnk_02035FD0[0] >> 8, gUnk_0999D9E6, gUnk_02035E50, gUnk_02035E4C, 0, 0xC00, 0xBB9);
-        DrawSprite(128, gUnk_02035FD0[1] >> 8, gUnk_0999DA1A, gUnk_02035E50, gUnk_02035E4C, 0, 0xC00, 0xBB9);
+        DrawSprite(gUnk_02035FD8 >> 8, 0,
+#ifdef VERSION_EU
+            gUnkEu_09F8501C[gLanguage],
+#else
+            gUnk_0999D9CA,
+#endif
+            gUnk_02035E50, gUnk_02035E4C, 0, 0xC00, 0xBB8);
+        DrawSprite(128, gUnk_02035FD0[0] >> 8,
+#ifdef VERSION_EU
+            gUnkEu_09F85030[gLanguage],
+#else
+            gUnk_0999D9E6,
+#endif
+            gUnk_02035E50, gUnk_02035E4C, 0, 0xC00, 0xBB9);
+        DrawSprite(128, gUnk_02035FD0[1] >> 8,
+#ifdef VERSION_EU
+            gUnkEu_09F85044[gLanguage],
+#else
+            gUnk_0999DA1A,
+#endif
+            gUnk_02035E50, gUnk_02035E4C, 0, 0xC00, 0xBB9);
     }
     n = (func_08107220(gUnk_02035E2E) + 2) / 3 - 4;
     if (gUnk_02035E9C <= n) {
@@ -1076,7 +1101,13 @@ void func_08108650(void) {
     } else {
         t = 0;
     }
-    DrawSprite(72, t + 40, gUnk_0999D9C0, gUnk_02035E50, gUnk_02035E4C, 0, 0x800, 0x898);
+    DrawSprite(72, t + 40,
+#ifdef VERSION_EU
+            gUnkEu_09F85008[gLanguage],
+#else
+            gUnk_0999D9C0,
+#endif
+            gUnk_02035E50, gUnk_02035E4C, 0, 0x800, 0x898);
 
     if (gUnk_02035FCA == 2) {
         switch (gUnk_02035E2C) {
@@ -1116,8 +1147,11 @@ void func_08108650(void) {
             }
             break;
         case 4:
-            if (gUnk_02035FC0 != 0) {
-                func_080664D8(120 - func_08065B08(gUnk_02035FBC, gUnk_02035FC0) / 2, 68, gUnk_02035FBC, gUnk_02035E4C, 1, gUnk_02035FC0);
+            if (gUnk_02035FC0[0] != 0) {
+                func_080664D8(120 - func_08065B08(gUnk_02035FBC[0], gUnk_02035FC0[0]) / 2, 68, gUnk_02035FBC[0], gUnk_02035E4C, 1, gUnk_02035FC0[0]);
+#ifdef VERSION_JP
+                func_080664D8(120 - func_08065B08(gUnk_02035FBC[1], gUnk_02035FC0[1]) / 2, 80, gUnk_02035FBC[1], gUnk_02035E4C, 1, gUnk_02035FC0[1]);
+#endif
             }
             break;
         }
@@ -1162,6 +1196,3 @@ void func_08108650(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("mode_ms2/func_08108650.s");
-#endif
