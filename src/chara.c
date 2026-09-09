@@ -781,25 +781,26 @@ INCLUDE_ASM("chara/eu_080C24D8.s");
 void func_080C61D4(void) {
     s32 i;
     u8* q;
+    CharaLinkData* send;
+    u16* recv;
 
-    gUnk_0203AAC0.unk_00 = gGameState.hp;
+    send = &gUnk_0203AAC0;
+    recv = gUnk_0203AA10;
+    send->unk_00 = gGameState.hp;
     gUnk_0203AAC0.unk_02 = gGameState.maxHp;
     gUnk_0203AAC0.unk_04 = gGameState.level;
     gUnk_0203AAC0.unk_06 = gUnk_0203A9EC;
     gUnk_0203AAC0.unk_08 = gUnk_0203A9F0;
     gUnk_0203AAC0.unk_0A = gGameState.ap;
     gUnk_0203AAC0.unk_0C = gGameState.unk_10C;
-    gUnk_0203AAC0.unk_10 = gGameState.unk_110;
     gUnk_0203AAC0.unk_14 = gGameState.unk_114;
-    gUnk_0203AAC0.unk_18 = gGameState.unk_118;
     gUnk_0203AAC0.unk_1C = 0;
-    q = gGameState.unk_186;
 
-    for (i = 12; i >= 0; i--) {
+    for (i = 0; i < 13; i++) {
+        q = &gGameState.unk_186[i * 4];
         if ((u8)(*q - 1) <= 11) {
             gUnk_0203AAC0.unk_1C |= 1 << *q;
         }
-        q += 4;
     }
 
     if (gSioPlayerId == 0) {
@@ -813,8 +814,8 @@ void func_080C61D4(void) {
     gUnk_0203C3A4 = 0;
     gUnk_0203C380 = 0;
     gUnk_0203C384 = 0;
-    gUnk_0203C390 = (u16*)&gUnk_0203AAC0;
-    gUnk_0203C39C = gUnk_0203AA10;
+    gUnk_0203C390 = (u16*)send;
+    gUnk_0203C39C = recv;
 }
 #else
 INCLUDE_ASM("chara/func_080C61D4.s");
