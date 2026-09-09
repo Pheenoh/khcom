@@ -89,7 +89,10 @@ typedef struct GaEntryWork {
     u16 unk_0A0;
     u8 unk_0A2[0x70];
     u8 unk_112;
-    u8 unk_113[0x09];
+    u8 unk_113;
+    u16 unk_114;
+    u8 unk_116[0x02];
+    s32 unk_118;
     s32 unk_11C;
     s32 unk_120;
     s32 unk_124;
@@ -101,7 +104,10 @@ typedef struct GaEntryWork {
     s32 unk_13C;
     s32 unk_140;
     s32 unk_144;
-    u8 unk_148[0x10];
+    s32 unk_148;
+    s32 unk_14C;
+    s32 unk_150;
+    s32 unk_154;
     u8 unk_158;
     u8 unk_159;
     u16 unk_15A;
@@ -188,6 +194,7 @@ typedef struct BtlWork {
 extern BtlWork* gBtlWork;
 
 u16 GetRandom(void);
+void ApproachValue(s32* value, s32 target, u16 steps);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
 void AnimInit(AnimState* a, s32 b, s32 c);
