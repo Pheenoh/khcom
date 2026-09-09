@@ -29242,7 +29242,9 @@ void eu_080ABA38(void) {
     TaskPoolUpdate(&gUnkEu_02034B38);
     TaskPoolDraw(&gUnkEu_02034B38);
 }
-INCLUDE_ASM("card/eu_080ABA7C.s");
+void eu_080ABA7C(void) {
+    TaskPoolDestroy(&gUnkEu_02034B38);
+}
 #endif
 void task_print_0(void) {
     func_0809D1FC(0);
