@@ -1248,10 +1248,12 @@ void func_080B0F18(void) {
 }
 
 
-#ifndef VERSION_EU
 void func_080B1064(void) {
     u8 buf[2];
 
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+#endif
     if (gSioPlayerId == 0) {
         gUnk_02039B58[2] |= (gUnk_0203AA58[0] & 15) << 4;
     } else {
@@ -1270,10 +1272,22 @@ void func_080B1064(void) {
         gUnk_0203AA58[1] = gSioBtlOptionWork->unk_214[1];
     }
     func_080B1134(gSioBtlOptionWork->unk_214[0], gSioBtlOptionWork->unk_214[1]);
-}
-#else
-INCLUDE_ASM("mode_sio/func_080B1064.s");
+#ifdef VERSION_EU
+    } else {
+    buf[0] = gUnk_0203AA58[0];
+    buf[1] = gUnk_0203AA58[1];
+
+    if (buf[0] >= 1 && buf[0] <= 11) {
+        gSioBtlOptionWork->unk_214[0] = buf[0];
+    }
+
+    if (buf[1] >= 1 && buf[1] <= 11) {
+        gSioBtlOptionWork->unk_214[1] = buf[1];
+    }
+    func_080B1134(gSioBtlOptionWork->unk_214[0], gSioBtlOptionWork->unk_214[1]);
+    }
 #endif
+}
 
 void func_080B1134(u16 a, u16 b) {
     switch (a) {
