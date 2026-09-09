@@ -852,7 +852,6 @@ void func_080D4EBC(void) {
     gUnk_0203C4B4->unk_94 = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapCursor, &arg);
     func_080D53F8();
 }
-#ifdef NON_MATCHING
 void func_080D510C(UnkStruct_0203C4B4* s) {
     s32 tx;
     s32 ty;
@@ -882,19 +881,16 @@ void func_080D510C(UnkStruct_0203C4B4* s) {
     gUnk_02034E8C += dx;
     gUnk_02034E90 += dy;
 
-    if (abs(px - gUnk_02034E8C) <= 7) {
+    if ((px - gUnk_02034E8C >= 0 ? px - gUnk_02034E8C : gUnk_02034E8C - px) <= 7) {
         gUnk_02034E8C = tx;
     }
 
-    if (abs(py - gUnk_02034E90) <= 7) {
+    if ((py - gUnk_02034E90 >= 0 ? py - gUnk_02034E90 : gUnk_02034E90 - py) <= 7) {
         gUnk_02034E90 = ty;
     }
     gUnk_0203C540 = gUnk_02034E8C >> 8;
     gUnk_0203C53C = gUnk_02034E90 >> 8;
 }
-#else
-INCLUDE_ASM("allmap/func_080D510C.s");
-#endif
 void func_080D51D8(void) {
     s16 x;
     s16 y;
