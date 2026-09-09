@@ -796,17 +796,20 @@ void task_smn_tink_3(SmnTinkWork* work) {
     TaskPoolDestroy(&work->unk_020);
 }
 
-#ifdef NON_MATCHING
+static inline s32 GetTinkEffectOffset(void) {
+    return ((u16)(GetRandom() % 9) << 8) - 0x400;
+}
+
 void task_smn_tinkeff_0(SmnTinkeffWork* work, SmnBody* args) {
-    work->x = args->x + ((GetRandom() % 9) << 8) - 0x400;
-    work->y = args->y + ((GetRandom() % 9) << 8) - 0x400;
+    work->x = args->x + GetTinkEffectOffset();
+    work->y = args->y + GetTinkEffectOffset();
     work->z = args->z;
-    work->unk_2C = GetRandom() % 0xE8 + 0x4C;
+    work->unk_2C = (u16)(GetRandom() % 0xE8) + 0x4C;
     work->tiles = LoadObjTiles(gUnk_088A5D7A, 0x200);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
-    AnimInit(&work->anim, gUnk_09EDE7E4, gUnk_09EDE7B4);
+    AnimInit(&work->anim, (s32)gUnk_09EDE7E4, (s32)gUnk_09EDE7B4);
 
-    switch (GetRandom() % 3) {
+    switch ((u16)(GetRandom() % 3)) {
     case 0:
         AnimStart(&work->anim, 0, 1);
         break;
@@ -818,9 +821,6 @@ void task_smn_tinkeff_0(SmnTinkeffWork* work, SmnBody* args) {
         break;
     }
 }
-#else
-INCLUDE_ASM("smn/task_smn_tinkeff_0.s");
-#endif
 
 u8 task_smn_tinkeff_1(SmnTinkeffWork* work) {
     work->z += work->unk_2C;
