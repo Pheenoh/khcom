@@ -300,7 +300,7 @@ s32 func_080AD144(UnkStruct_02039DD4* g, u8 count, u8 kind, UnkStruct_080ABA80* 
 s32 func_080AC140(s32 a);
 void func_080AAEB0(u8* work, u16 index);
 u8 func_080A207C(UnkStruct_080A1DAC* w);
-u8 func_0807C5D8(u8* work, void* a);
+u8 func_0807C5D8(UnkStruct_02034AAC* w, void* a);
 u8 card_enemy_1(UnkStruct_02034AAC* p, void* a);
 extern s32 gUnk_09034054[];
 extern void* gUnk_09EF126C[];
@@ -2547,7 +2547,54 @@ u8 func_0807C4BC(UnkStruct_02034AAC* p, void* a) {
 
     return 1;
 }
-INCLUDE_ASM("card/func_0807C5D8.s");
+u8 func_0807C5D8(UnkStruct_02034AAC* w, void* a) {
+    ApproachValue(&w->unk_8C, gUnk_0903404C[0], w->unk_9C);
+    ApproachValue(&w->unk_90, gUnk_0903404C[1], w->unk_9C);
+    ApproachValue(&w->unk_84, w->unk_88, w->unk_9C);
+    ApproachValue(&w->unk_54, 0x100, w->unk_9C);
+    ApproachValue(&w->unk_58, 0x100, w->unk_9C);
+    if ((s16)w->unk_9C > 0) {
+        w->unk_9C--;
+    } else {
+        w->unk_9C = 0;
+    }
+    func_0807D0F4(w);
+    switch (w->unk_9F) {
+    case 0:
+        w->unk_A0 = 50;
+        break;
+    case 1:
+        w->unk_A0 = 40;
+        break;
+    case 2:
+        w->unk_A0 = 60;
+        break;
+    }
+    if (w->unk_78 & 0x200000) {
+        w->unk_A0 -= 4;
+        w->unk_84 = 0x500;
+        w->unk_9C = 0x100;
+        w->unk_7C = -16;
+        w->unk_9E = 0xFF;
+        gUnk_02039DD4->unk_0E1 = 0;
+        SetTaskUpdate(a, (void*)func_0807D3A0);
+    }
+    if (gBtlWork->unk_068 & 0x20) {
+        w->unk_9C = 8;
+        w->unk_9E = 8;
+        gUnk_02039DD4->unk_0D0--;
+        gUnk_02039DD4->unk_0C2 = 0;
+        if (gUnk_02039DD4->unk_0D0 == 0) {
+            gBtlWork->unk_068 &= ~0x20;
+            gBtlWork->unk_068 &= ~0x80;
+            func_0807E158();
+        }
+        gUnk_02039DD4->unk_0E1 = 0;
+        gBtlWork->unk_068 &= ~0x8000000;
+        SetTaskUpdate(a, (void*)func_0807CE04);
+    }
+    return 1;
+}
 u8 func_0807C75C(UnkStruct_02034AAC* p, void* a) {
     u8 (*fn)(UnkStruct_02034AAC*, void*);
 
