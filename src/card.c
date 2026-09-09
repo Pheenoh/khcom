@@ -7,6 +7,8 @@
 #include "malloc.h"
 #include "card.h"
 
+u8 func_080892E8(u8* work, void* a);
+
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
 extern u32 gLanguage;
@@ -13554,7 +13556,51 @@ void func_08093434(u8* work) {
 #else
 INCLUDE_ASM("card/func_08093434.s");
 #endif
-INCLUDE_ASM("card/func_08093708.s");
+void func_08093708(UnkStruct_08093838* w) {
+    MapcardWork* node;
+    s8 i;
+
+    switch (w->unk_298) {
+    case 0:
+        break;
+    case 1:
+        node = w->unk_1F4;
+        i = 0;
+        while (node != 0) {
+            node->unk_4C = gUnk_09EE7520[i++] << 8;
+            if (i == 6) {
+                break;
+            }
+            node = ListPoolNext(node->unk_38);
+        }
+        w->unk_298 = 0;
+        func_08093838(w);
+        if (w->unk_1EC != 0) {
+            w->unk_264 = w->unk_1EC->unk_4C;
+            w->unk_28C = 4;
+        }
+        w->unk_284++;
+        break;
+    case 2:
+        node = w->unk_1F4;
+        i = 5;
+        while (node != 0) {
+            node->unk_4C = gUnk_09EE7520[i--] << 8;
+            if (i < 0) {
+                break;
+            }
+            node = ListPoolPrev(node->unk_38);
+        }
+        w->unk_298 = 0;
+        func_08093838(w);
+        if (w->unk_1EC != 0) {
+            w->unk_264 = w->unk_1EC->unk_4C;
+            w->unk_28C = 4;
+        }
+        w->unk_284--;
+        break;
+    }
+}
 
 s32 func_08093838(UnkStruct_08093838* w) {
     UnkStruct_02034AAC* node;
