@@ -89,6 +89,7 @@ lib.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.s
 agb_sram.c -O1 -fno-common
 movie.c -O0 -fno-common
+movie_player.c -O0 -g -fno-common
 movie_codec.s
 snd_stream.c -O2 -fprologue-bugfix -fno-common
 @libgcc.a:_ashldi3.o
@@ -132,6 +133,8 @@ rodata_script.s(.rodata)
 asset_gfx.s(.rodata)
 asset_fmv.s(.rodata)
 asset_misc1.s(.rodata)
+movie_player.c(.rodata)
+asset_misc1_tail.s(.rodata)
 m4a_tables.c(.rodata)
 asset_misc2.s(.rodata)
 mode_battle_data.c(.data)
