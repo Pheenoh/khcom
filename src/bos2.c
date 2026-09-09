@@ -389,10 +389,10 @@ void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
                       f, 7);
     }
 }
-#ifdef NON_MATCHING
 u8 task_bos_tm_foot_1(TmFootWork* work) {
     u16 n;
     TmFootStep* e;
+    TmFootStep* table;
 
     func_080BA104((BosSub*)&work->unk_24C, work);
     func_080BA104((BosSub*)&work->unk_364, work);
@@ -440,16 +440,18 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
         if (work->unk_47C->unk_38 != 0) {
             n = work->unk_47C->unk_34;
 
-            if ((s16)n <= 3) {
+            if ((s16)work->unk_47C->unk_34 <= 3) {
+                func_080BA43C(work, (s16)work->unk_47C->unk_34);
             } else if (n >= 66 && n <= 74) {
                 n -= 62;
+                func_080BA43C(work, (s16)n);
             } else if (n >= 98 && n <= 100) {
                 n -= 85;
+                func_080BA43C(work, (s16)n);
             } else {
                 break;
             }
 
-            func_080BA43C(work, (s16)n);
         } else {
             func_080BA11C(work);
         }
@@ -458,16 +460,18 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
         if (work->unk_47C->unk_38 != 0) {
             n = work->unk_47C->unk_34;
 
-            if ((s16)n <= 3) {
+            if ((s16)work->unk_47C->unk_34 <= 3) {
+                func_080BA43C(work, (s16)work->unk_47C->unk_34);
             } else if (n >= 96 && n <= 104) {
                 n -= 92;
+                func_080BA43C(work, (s16)n);
             } else if (n >= 128 && n <= 130) {
                 n -= 115;
+                func_080BA43C(work, (s16)n);
             } else {
                 break;
             }
 
-            func_080BA43C(work, (s16)n);
         } else {
             func_080BA11C(work);
         }
@@ -476,14 +480,15 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
         if (work->unk_47C->unk_38 != 0) {
             n = work->unk_47C->unk_34;
 
-            if ((s16)n <= 2) {
+            if ((s16)work->unk_47C->unk_34 <= 2) {
+                func_080BA8C8(work, (s16)work->unk_47C->unk_34);
             } else if (n >= 41 && n <= 46) {
                 n -= 38;
+                func_080BA8C8(work, (s16)n);
             } else {
                 break;
             }
 
-            func_080BA8C8(work, (s16)n);
         } else {
             func_080BA11C(work);
         }
@@ -512,7 +517,7 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
 
         if (work->unk_47C->unk_32 <= 2) {
             work->unk_12C =
-                gUnk_09EF39DC[(e = &gUnk_09EF21C4[work->unk_47C->unk_32])->unk_06 + 1];
+                gUnk_09EF39DC[(table = gUnk_09EF21C4, e = &table[work->unk_47C->unk_32])->unk_06 + 1];
             work->unk_244 = gUnk_09EF39DC[e->unk_0E + 1];
             work->unk_028 -= e->unk_02 << 8;
             work->unk_140 -= e->unk_0A << 8;
@@ -543,9 +548,6 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("bos2/task_bos_tm_foot_1.s");
-#endif
 void task_bos_tm_foot_2(TmFootWork* work) {
     void* pal;
     s32 flag;
