@@ -3706,11 +3706,11 @@ void task_emy_37_2(Emy37Work* work) {
             }
         } else {
             if (act->flags & 4) {
+                rot = gBtlWork->unk_024 * work->base.unk_17C >> 8;
                 scale = gBtlWork->unk_024;
-                rot = work->base.unk_17C * scale >> 8;
             } else {
+                rot = -(gBtlWork->unk_024 * work->base.unk_17C >> 8);
                 scale = gBtlWork->unk_024;
-                rot = -(work->base.unk_17C * scale >> 8);
             }
 
             scale = scale * zoom >> 8;
