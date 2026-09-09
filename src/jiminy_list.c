@@ -227,7 +227,7 @@ void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
     gJiminyWork->unk_D3E = 0;
 }
 #else
-INCLUDE_ASM("unk_0805a484/func_0805A95C.s");
+INCLUDE_ASM("jiminy_list/func_0805A95C.s");
 #endif
 
 u8 func_0805AA9C(void) {

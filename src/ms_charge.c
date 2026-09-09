@@ -1,5 +1,5 @@
 #include "macros.h"
-#include "unk_08104a84.h"
+#include "ms_charge.h"
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
