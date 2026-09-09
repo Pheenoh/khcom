@@ -891,7 +891,13 @@ void CgbSound(void) {
                     *nrx0ptr = channels->sweep;
                 case 2:
                     *nrx1ptr = ((u32)channels->wavePointer << 6) + channels->length;
-                    goto init_env_step_time_dir;
+                    envelopeStepTimeAndDir = channels->attack + CGB_NRx2_ENV_DIR_INC;
+
+                    if (channels->length)
+                        channels->n4 = 0x40;
+                    else
+                        channels->n4 = 0x00;
+                    break;
                 case 3:
                     if (channels->wavePointer != channels->currentPointer) {
                         *nrx0ptr = 0x40;
@@ -912,7 +918,6 @@ void CgbSound(void) {
                 default:
                     *nrx1ptr = channels->length;
                     *nrx3ptr = (u32)channels->wavePointer << 3;
-                init_env_step_time_dir:
                     envelopeStepTimeAndDir = channels->attack + CGB_NRx2_ENV_DIR_INC;
 
                     if (channels->length)
