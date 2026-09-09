@@ -19,7 +19,6 @@ void mode_eventselect_0(void) {
     func_0805FA60(0, gUnk_08F70990, 0x20, 0);
 }
 
-#ifndef VERSION_EU
 void mode_eventselect_1(void) {
     if (GetKeysRepeat() & DPAD_UP) {
         if (gUnk_02034A96 != 0) {
@@ -83,10 +82,18 @@ void mode_eventselect_1(void) {
     if (GetKeysPressed() & A_BUTTON) {
         switch (gUnk_02034A96) {
         case 0:
+#ifdef VERSION_EU
+            ModeRequest(&gUnkEu_09F5D6EC, gUnk_09033D50[gUnk_02034A94] | 0x8000);
+#else
             func_0806180C(gUnk_09033D50[gUnk_02034A94]);
+#endif
             break;
         case 1:
+#ifdef VERSION_EU
+            ModeRequest(&gUnkEu_09F5D6EC, gUnk_09033E76[gUnk_02034A94] | 0x8000);
+#else
             func_0806180C(gUnk_09033E76[gUnk_02034A94]);
+#endif
             break;
         }
     }
@@ -98,9 +105,6 @@ void mode_eventselect_1(void) {
     func_080605A4(0);
     func_08060598();
 }
-#else
-INCLUDE_ASM("mode_eventselect/mode_eventselect_1.s");
-#endif
 
 void mode_eventselect_2(void) {
     func_080609A0();
