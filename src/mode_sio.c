@@ -18,7 +18,7 @@ extern u8 gUnkEu_096C798C[];
 extern u16 gUnkEu_095DA860[];
 extern u16 gUnkEu_095DA867[];
 extern void* gUnkEu_08891714[];
-extern u8 gUnkEu_0203B108[];
+extern s8 gUnkEu_0203B108[];
 extern void* gUnkEu_08891670[];
 extern u8 gUnkEu_095ECDD8[];
 extern u8 gUnkEu_095ED472[];
@@ -1030,8 +1030,10 @@ void mode_sio_btl_option_2(void) {
     EwramFree(gSioBtlOptionWork);
 }
 
-#ifndef VERSION_EU
 void func_080B0634(void) {
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+#endif
     if (gUnk_02039810[1][0] == 0x2FCF) {
         RequestDma3Copy(gUnk_096B2724, (void*)0x06000020, 0xC0);
 
@@ -1049,10 +1051,28 @@ void func_080B0634(void) {
         }
         gSioBtlOptionWork->unk_218 = 1;
     }
-}
-#else
-INCLUDE_ASM("mode_sio/func_080B0634.s");
+#ifdef VERSION_EU
+    } else {
+    if (gUnkEu_0203B108[0] == 1) {
+        RequestDma3Copy(gUnk_096B2724, (void*)0x06000020, 0xC0);
+
+        if (gSioBtlOptionWork->unk_217 == 0) {
+            func_080AEED8(0, 1, 1);
+        }
+        gSioBtlOptionWork->unk_217 = 1;
+    }
+
+    if (gUnkEu_0203B108[1] == 1) {
+        RequestDma3Copy(gUnk_096B2B24, (void*)0x06000300, 0xC0);
+
+        if (gSioBtlOptionWork->unk_218 == 0) {
+            func_080AEED8(1, 1, 1);
+        }
+        gSioBtlOptionWork->unk_218 = 1;
+    }
+    }
 #endif
+}
 
 void func_080B06D4(void) {
     s8 x;
