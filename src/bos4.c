@@ -1457,7 +1457,22 @@ s32 func_080DBCEC(UrsulaWork* work) {
     return 1;
 }
 
-INCLUDE_ASM("bos4/func_080DBD44.s");
+s32 func_080DBD44(UrsulaWork* work) {
+    if (((BtlWork*)gBtlWork->unk_07C)->unk_00C <= -0x5000) {
+        return 3;
+    } else {
+        if (work->unk_028 - 0x3800 < ((BtlWork*)gBtlWork->unk_07C)->unk_004 && ((BtlWork*)gBtlWork->unk_07C)->unk_004 < work->unk_028 + 0x3800) {
+            if ((u16)(GetRandom() % 100) < 50) {
+                return 3;
+            }
+            return 1;
+        }
+    }
+    if (work->unk_028 - 0x8000 < ((BtlWork*)gBtlWork->unk_07C)->unk_004 && ((BtlWork*)gBtlWork->unk_07C)->unk_004 < work->unk_028 + 0x8000) {
+        return 2;
+    }
+    return 1;
+}
 
 s32 func_080DBDC0(UrsulaWork* work) {
     switch (func_080DC5E8()) {
