@@ -2677,8 +2677,7 @@ s16 eu_0806629C(TextSlot* p, u8 n) {
 }
 #endif
 
-#ifndef VERSION_EU
-#ifdef VERSION_JP
+#if defined(VERSION_JP) || defined(VERSION_EU)
 #define MSG_CHAR(p) (*(u8*)(p))
 #else
 #define MSG_CHAR(p) (*(p))
@@ -2688,6 +2687,9 @@ s32 func_08065B54(u16* s) {
 #ifdef VERSION_JP
     u16* p = s;
     u16 n = 0;
+#elif defined(VERSION_EU)
+    u16 n = 0;
+    u8* p = (u8*)s;
 #else
     u16 n = 0;
     u16* p = s;
@@ -2699,9 +2701,6 @@ s32 func_08065B54(u16* s) {
     }
     return n;
 }
-#else
-INCLUDE_ASM("msg/func_08065B54.s");
-#endif
 
 #ifndef VERSION_JP
 u16 func_08065B6C(u16* a, TextSlot* b) {
