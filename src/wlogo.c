@@ -1216,25 +1216,21 @@ void task_wlogo_tvt_0(WlogoTvtWork* work) {
     work->gfx = AnimGetGfx(&work->anim);
 }
 
-#ifdef NON_MATCHING
 u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
     switch (work->unk_029) {
     case 0:
-        work->unk_02A++;
-        if (work->unk_02A > 29) {
+        if (++work->unk_02A > 29) {
             work->unk_02A = 0;
             work->unk_029++;
         }
         break;
     case 1:
-        work->unk_02E++;
-        if (work->unk_02E > 44) {
+        if (++work->unk_02E > 44) {
             work->unk_02E = 0;
             work->unk_02C = 1 - work->unk_02C;
             RequestDma3Copy(&gUnk_096474A4[work->unk_02C * 1024], (u8*)GetBgCharBase(0) + 32, 0x320);
         }
-        work->unk_02A++;
-        if (work->unk_02A > 3) {
+        if (++work->unk_02A > 3) {
             work->unk_02A = 0;
             work->unk_030++;
             if (work->unk_030 > 15) {
@@ -1245,22 +1241,19 @@ u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
         }
         break;
     case 2:
-        work->unk_02E++;
-        if (work->unk_02E > 44) {
+        if (++work->unk_02E > 44) {
             work->unk_02E = 0;
             work->unk_02C = 1 - work->unk_02C;
             RequestDma3Copy(&gUnk_096474A4[work->unk_02C * 1024], (u8*)GetBgCharBase(0) + 32, 0x320);
         }
-        work->unk_02A++;
-        if (work->unk_02A > 89) {
+        if (++work->unk_02A > 89) {
             work->unk_02A = 0;
             work->unk_028 = 1;
             work->unk_029++;
         }
         break;
     case 3:
-        work->unk_02E++;
-        if (work->unk_02E > 44) {
+        if (++work->unk_02E > 44) {
             work->unk_02E = 0;
             work->unk_02C = 1 - work->unk_02C;
             RequestDma3Copy(&gUnk_096474A4[work->unk_02C * 1024], (u8*)GetBgCharBase(0) + 32, 0x320);
@@ -1277,28 +1270,24 @@ u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
         }
         break;
     case 4:
-        work->unk_02E++;
-        if (work->unk_02E > 44) {
+        if (++work->unk_02E > 44) {
             work->unk_02E = 0;
             work->unk_02C = 5 - work->unk_02C;
             RequestDma3Copy(&gUnk_096474A4[work->unk_02C * 1024], (u8*)GetBgCharBase(0) + 32, 0x320);
         }
-        work->unk_02A++;
-        if (work->unk_02A > 113) {
+        if (++work->unk_02A > 113) {
             work->unk_02A = 0;
             work->unk_02C = 2;
             work->unk_029++;
         }
         break;
     case 5:
-        work->unk_02E++;
-        if (work->unk_02E > 44) {
+        if (++work->unk_02E > 44) {
             work->unk_02E = 0;
             work->unk_02C = 5 - work->unk_02C;
             RequestDma3Copy(&gUnk_096474A4[work->unk_02C * 1024], (u8*)GetBgCharBase(0) + 32, 0x320);
         }
-        work->unk_02A++;
-        if (work->unk_02A > 4) {
+        if (++work->unk_02A > 4) {
             work->unk_02A = 0;
             work->unk_030--;
             if (work->unk_030 == 0) {
@@ -1313,9 +1302,6 @@ u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("wlogo/task_wlogo_tvt_1.s");
-#endif
 
 void task_wlogo_tvt_2(WlogoTvtWork* work) {
     if (work->unk_028 == 1) {
