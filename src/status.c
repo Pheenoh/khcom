@@ -1183,7 +1183,281 @@ void task_bos_boogie_0(BoogieWork* work) {
     gBtlWork->unk_D4 = work->unk_040.z;
 }
 
-INCLUDE_ASM("status/task_bos_boogie_1.s");
+u8 task_bos_boogie_1(BoogieWork* work) {
+    UnkStruct_0203C55C* a = &work->unk_040;
+    BoogieFx fx;
+    u16 random;
+
+    switch (func_0801ADAC(a)) {
+    case 5:
+        work->unk_000 = 1;
+        work->unk_004 = 0;
+        break;
+    case 1:
+    case 6:
+    case 7:
+        work->unk_000 = 3;
+        work->unk_004 = 0;
+        break;
+    case 3:
+    case 8:
+        if (work->unk_000 != 4) {
+            work->unk_000 = 4;
+            work->unk_170 = 0;
+            work->unk_004 = 0;
+        }
+        break;
+    case 4:
+        work->unk_000 = 2;
+        work->unk_004 = 0;
+        break;
+    default:
+        if (gUnk_0203C564 != 0 && work->unk_000 != 4) {
+            work->unk_000 = 5;
+            work->unk_004 = 0;
+        }
+        break;
+    }
+
+    switch (work->unk_000) {
+    case 3:
+        if (work->unk_004 == 0) {
+            AnimReset(&work->anim);
+            func_080D900C(work, 4, 1);
+            work->unk_158 = -((a->unk_AC << 9) >> 8);
+            work->unk_150 = ((gSineTable[a->unk_B0] * 375) >> 8) * a->unk_A8 >> 8;
+            work->unk_154 = ((-gSineTable[a->unk_B0 + 64] * 375) >> 8) * a->unk_A8 >> 8;
+            work->unk_004++;
+        }
+        if (AnimIsFinished(&work->anim)) {
+            func_0801AF08(a);
+            work->unk_000 = 0;
+            work->unk_004 = 0;
+        }
+        break;
+    case 4:
+        func_080D900C(work, 8, 0);
+        switch (work->unk_170) {
+        case 0:
+            if (work->unk_004 <= 1) {
+                work->unk_004++;
+            } else {
+                work->unk_170 = 1;
+            }
+            break;
+        case 1:
+            func_0801AF4C(a);
+            work->unk_170 = 2;
+            break;
+        case 2:
+            if (func_08006314() == 0) {
+                func_08014AAC(a->x, a->y + a->z - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
+                func_0801C298(((BoogiePalette*)work->palette)->unk_06 + 16, 0);
+                func_08006238(0, gBtlWork->unk_B3, 8);
+                work->unk_170 = 3;
+                work->unk_004 = 0;
+            }
+            break;
+        case 3:
+            if (work->unk_004 <= 119) {
+                work->unk_004++;
+            } else {
+                work->unk_170 = 4;
+                func_0801536C();
+            }
+            break;
+        case 4:
+            if (func_080128EC() == 0) {
+                fx.x = a->x;
+                fx.y = 0x24000;
+                fx.z = -0x6400;
+                func_08096DC4(&gBtlWork->unk_2C, &fx);
+                func_0801B008();
+                func_0801B918(a);
+                return 0;
+            }
+            break;
+        }
+        break;
+    case 0:
+        func_080D900C(work, 0, 1);
+        if (AnimIsFinished(&work->anim)) {
+            random = GetRandom();
+            if ((random & 15) <= 7 && func_08006314() == 0) {
+                work->unk_000 = 11;
+                if (work->unk_174 != 0) {
+                    func_08083914();
+                    work->unk_174 = 0;
+                }
+                work->unk_004 = 0;
+                func_080D900C(work, 1, 1);
+            } else {
+                AnimReset(&work->anim);
+            }
+        }
+        break;
+    case 11:
+        func_080D900C(work, 1, 1);
+        work->unk_004++;
+        if (gUnk_0203C560 <= 2 && !IsTaskActive((Task*)work->unk_160) &&
+            !IsTaskActive((Task*)work->unk_168) && !IsTaskActive((Task*)work->unk_16C) &&
+            !IsTaskActive((Task*)work->unk_164) && gBtlWork->unk_EC <= 0 && work->unk_174 == 0) {
+            random = GetRandom() % 100;
+            if (random == 0) {
+                func_08083900(8);
+                work->unk_174 = 1;
+                work->unk_004 = 0;
+            }
+        }
+        if (func_08083920() == 8) {
+            if (work->unk_174 != 0) {
+#ifdef VERSION_EU
+                if (func_0801C1C0(0)) {
+                    func_080D9A58();
+                    break;
+                }
+#endif
+                func_08083914();
+                work->unk_174 = 0;
+                work->unk_175 = 0;
+                work->unk_160 = (s32)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
+                work->unk_175 = 1;
+                work->unk_168 = (s32)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
+                work->unk_16C = (StatusDialogSub*)TaskCreate(&work->unk_02C, &gTaskDescBosBoogieDice, work);
+                func_080D900C(work, 2, 1);
+                m4aSongNumStart(272);
+                work->unk_000 = 9;
+                work->unk_004 = 0;
+#ifndef VERSION_EU
+                if (func_0801C1C0(0)) {
+                    gUnk_0203C568 = 0;
+                }
+#endif
+                break;
+            }
+        } else if (work->unk_174 != 0 && work->unk_004 > 10) {
+            func_08083914();
+            work->unk_174 = 0;
+        }
+        random = GetRandom();
+        if ((random & 255) == 0 && work->unk_174 == 0) {
+            work->unk_000 = 0;
+            work->unk_004 = 0;
+        } else if (a->unk_34 & 4) {
+            a->x -= 256;
+            if (a->x <= 0xA000) {
+                a->x = 0xA000;
+                a->unk_34 &= ~4ULL;
+            }
+        } else {
+            a->x += 256;
+            if (a->x >= 0x15000) {
+                a->x = 0x15000;
+                a->unk_34 |= 4;
+            }
+        }
+        break;
+    case 5:
+        gUnk_0203C564 = 0;
+        func_080D900C(work, 6, 0);
+        if (func_0801C1C0(0)) {
+            func_080D9A58();
+            work->unk_000 = 0;
+            work->unk_004 = 0;
+        } else if (AnimIsFinished(&work->anim)) {
+            func_080D8F14(work);
+        }
+        break;
+    case 6:
+        if (work->unk_004 > 29) {
+            work->unk_000 = 7;
+        } else {
+            work->unk_004++;
+        }
+        break;
+    case 8:
+        if (gUnk_0203C56C != 0) {
+            work->unk_000 = 10;
+            work->unk_004 = 0;
+        } else if (gUnk_0203C570 != 0) {
+            work->unk_000 = 0;
+            work->unk_004 = 0;
+        } else if (!IsTaskActive((Task*)work->unk_164)) {
+            work->unk_000 = 7;
+            work->unk_004 = 0;
+        }
+        break;
+    case 7:
+        func_080D900C(work, 7, 0);
+        if (AnimIsFinished(&work->anim)) {
+            work->unk_000 = 0;
+            work->unk_004 = 0;
+        }
+        break;
+    case 9:
+        func_080D900C(work, 2, 1);
+        if (work->unk_004 == 0) {
+            m4aSongNumStart(599);
+        }
+        work->unk_004++;
+        if (AnimIsFinished(&work->anim)) {
+            work->unk_000 = 0;
+            work->unk_004 = 0;
+        }
+        break;
+    case 10:
+        gUnk_0203C56C = 0;
+        func_080D900C(work, 5, 1);
+        if (AnimIsFinished(&work->anim)) {
+            work->unk_000 = 0;
+            work->unk_004 = 0;
+        }
+        break;
+    }
+    AnimUpdate(&work->anim);
+    a->z += work->unk_158;
+    work->unk_158 += 66;
+    if (a->z > -0x2000) {
+        a->z = -0x2000;
+        work->unk_158 = 0;
+    }
+    if (work->unk_150 > 0) {
+        a->x += work->unk_150;
+        work->unk_150 -= 17;
+        if (work->unk_150 < 0) {
+            work->unk_150 = 0;
+        }
+    } else if (work->unk_150 < 0) {
+        a->x += work->unk_150;
+        work->unk_150 += 17;
+        if (work->unk_150 > 0) {
+            work->unk_150 = 0;
+        }
+    }
+    if (work->unk_154 > 0) {
+        a->y += work->unk_154 / 2;
+        work->unk_154 -= 17;
+        if (work->unk_154 < 0) {
+            work->unk_154 = 0;
+        }
+    } else if (work->unk_154 < 0) {
+        a->y += work->unk_154 / 2;
+        work->unk_154 += 17;
+        if (work->unk_154 > 0) {
+            work->unk_154 = 0;
+        }
+    }
+    func_080D9058(&a->x, &a->y);
+    func_08012324(a->unk_40, a->x, a->y, a->z);
+    TaskPoolUpdate(&work->unk_02C);
+    if (func_0801C1C0(0)) {
+        func_080D9A58();
+    }
+    gBtlWork->unk_CC = a->x;
+    gBtlWork->unk_D0 = a->y;
+    gBtlWork->unk_D4 = a->z;
+    return 1;
+}
 
 void task_bos_boogie_2(BoogieWork* work) {
     UnkStruct_0203C55C* a;

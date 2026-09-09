@@ -142,19 +142,29 @@ typedef struct UnkStruct_0203C55C {
     s32 unk_24;
     u8 unk_28[0x0C];
     u64 unk_34;
-    u8 unk_3C[0x7C];
+    u8 unk_3C[4];
+    u8 unk_40[0x68];
+    s32 unk_A8;
+    s32 unk_AC;
+    u8 unk_B0;
+    u8 unk_B1[7];
     ListNode unk_B8;
 } UnkStruct_0203C55C;
 
 typedef struct BtlWork {
-    u8 unk_00[0x40];
+    u8 unk_00[0x2C];
+    TaskPool unk_2C;
     TaskPool unk_40;
     u8 unk_54[0x2C];
     ListNode unk_80;
-    u8 unk_90[0x3C];
+    u8 unk_90[0x23];
+    u8 unk_B3;
+    u8 unk_B4[0x18];
     s32 unk_CC;
     s32 unk_D0;
     s32 unk_D4;
+    u8 unk_D8[0x14];
+    s16 unk_EC;
 } BtlWork;
 
 typedef struct StatusDialogSub {
@@ -165,7 +175,7 @@ typedef struct StatusDialogSub {
 
 typedef struct BoogieWork {
     s32 unk_000;
-    u16 unk_004;
+    s16 unk_004;
     u16 unk_006;
     void* tiles;
     void* palette;
@@ -182,9 +192,10 @@ typedef struct BoogieWork {
     void* unk_164;
     s32 unk_168;
     StatusDialogSub* unk_16C;
-    u8 unk_170[0x04];
+    u32 unk_170;
     u8 unk_174;
-    u8 unk_175[0x03];
+    u8 unk_175;
+    u8 unk_176[2];
 } BoogieWork;
 
 typedef struct StatusObjDef {
@@ -402,5 +413,44 @@ void func_0801C2DC(void* a, s32 b);
 void func_080D900C(BoogieWork* work, s32 a, u16 b);
 u8 IsTaskActive(Task* t);
 void func_080D83F4(void);
+
+typedef struct BoogieFx {
+    s32 x;
+    s32 y;
+    s32 z;
+    u8 unk_0C[0x14];
+} BoogieFx;
+
+typedef struct BoogieResource {
+    u8 unk_00[10];
+    s16 unk_0A;
+} BoogieResource;
+
+typedef struct BoogiePalette {
+    u8 unk_00[6];
+    u8 unk_06;
+} BoogiePalette;
+
+extern s16 gSineTable[];
+extern TaskDesc gTaskDescBosBoogieDice;
+s32 func_0801ADAC(UnkStruct_0203C55C* a);
+void func_0801AF08(UnkStruct_0203C55C* a);
+void func_0801AF4C(UnkStruct_0203C55C* a);
+void func_08014AAC(s32 x, s32 y);
+void func_0801C298(u8 a, u8 b);
+void func_08006238(s32 a, s32 b, s32 c);
+void func_0801536C(void);
+u8 func_080128EC(void);
+void func_08096DC4(TaskPool* pool, BoogieFx* p);
+void func_0801B008(void);
+void func_0801B918(UnkStruct_0203C55C* a);
+void func_08083914(void);
+void func_08083900(u8 a);
+u8 func_08083920(void);
+u8 func_0801C1C0(s32 a);
+void func_080D9A58(void);
+void func_080D8F14(BoogieWork* work);
+u8 func_080D9058(s32* x, s32* y);
+void func_08012324(void* a, s32 x, s32 y, s32 z);
 
 #endif /* GUARD_STATUS_H */
