@@ -930,7 +930,6 @@ void CgbSound(void) {
 
                 if ((s8)(channels->attack & mask)) {
                     channels->envelopeVolume = 0;
-                    goto envelope_step_complete;
                 } else {
                     goto envelope_decay_start;
                 }
@@ -955,7 +954,6 @@ void CgbSound(void) {
 
                 if (ch != 3)
                     envelopeStepTimeAndDir = channels->release | CGB_NRx2_ENV_DIR_DEC;
-                goto envelope_step_complete;
             } else {
                 goto envelope_pseudoecho_start;
             }
@@ -1031,7 +1029,6 @@ void CgbSound(void) {
             }
         }
 
-    envelope_step_complete:
         channels->envelopeCounter--;
 
         if (prevC15 == 0) {
