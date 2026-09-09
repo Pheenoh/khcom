@@ -367,7 +367,10 @@ static s32 func_08114F3C(s32 x) {
     return x * x;
 }
 
-#ifdef NON_MATCHING
+static inline s32 GetSrollCurtainOffset(void) {
+    return (GetRandom() % 9) * 256 - 0x400;
+}
+
 void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
     AnimState* anim;
     s32 t;
@@ -396,10 +399,10 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         AnimStart(anim, 0, 0);
         break;
     case 2:
-        t = (GetRandom() % 9) * 256 - 0x400;
-        w->x = t + a->x;
-        t = (GetRandom() % 9) * 256 - 0x400;
-        w->y = t + a->y;
+        t = GetSrollCurtainOffset();
+        w->x = a->x + t;
+        t = GetSrollCurtainOffset();
+        w->y = a->y + t;
         w->tiles = AllocObjTiles(128, gUnk_088A5D7A);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
@@ -409,9 +412,6 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
     }
     func_080062F4((w->palette->unk_06 & 15) + 16, 0);
 }
-#else
-INCLUDE_ASM("sroll/task_sroll_b_crtn_0.s");
-#endif
 
 u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
     u8 r;
