@@ -2361,7 +2361,7 @@ NumberPlus_2	0x0809e13c	52	0x0809e778	global
 NumberPlus_3	0x0809e170	24	0x0809e7ac	body
 Level_Up_0	0x0809e188	1564	0x0809e7c4	entry
 func_0809E7A4	0x0809e7a4	324	0x0809ed38	entry
-Level_Up_1	0x0809e8e8	2728	-	-
+Level_Up_1	0x0809e8e8	2728	0x0809ee94	entry
 func_0809F390	0x0809f390	928	0x0809fc64	entry
 func_0809F730	0x0809f730	1180	0x0809ffc4	entry
 func_0809FBCC	0x0809fbcc	584	0x080a0448	entry
