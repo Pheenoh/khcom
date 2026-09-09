@@ -1116,7 +1116,145 @@ CardSlot* func_08076750(UnkStruct_08078754* w, u8 slot, u16* n) {
 #else
 INCLUDE_ASM("mode_eventselect/func_08076750.s");
 #endif
-INCLUDE_ASM("mode_eventselect/func_0807682C.s");
+void func_0807682C(UnkStruct_08080268* w, u8 slot) {
+    UnkStruct_0807FD10_Args arg;
+    u16 n;
+    s16 count = 0;
+    u16 old;
+    CardSlot* c;
+    UnkStruct_02034AAC* e;
+    EventCardLink* p;
+    if (w->unk_94[slot] != 0xFFFF) {
+        u32 index = w->unk_94[slot];
+        n = index;
+        old = index;
+        c = func_08076674((UnkStruct_08078754*)w, slot, &n);
+        if (c != 0) {
+            arg.unk_00 = &w->unk_54[slot];
+            arg.unk_0C = n;
+            arg.unk_0E = slot;
+            arg.unk_04 = c;
+            arg.unk_0F = w->unk_9C[slot];
+            if (c->unk_00 == 0xFFFE) {
+                TaskCreate((TaskPool*)w, gUnk_09EE499C, &arg);
+            } else {
+                TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg);
+            }
+            c->unk_06 = 1;
+            old = n;
+            n = old + 1;
+            count++;
+        }
+        if ((s16)n >= (s16)w->unk_A8[slot]) {
+            n = 0;
+        }
+        c = func_08076674((UnkStruct_08078754*)w, slot, &n);
+        if (c != 0 && (s16)n != w->unk_94[slot]) {
+            arg.unk_00 = &w->unk_54[slot];
+            arg.unk_0C = n;
+            arg.unk_0E = slot;
+            arg.unk_04 = c;
+            arg.unk_0F = w->unk_9C[slot];
+            if (c->unk_00 == 0xFFFE) {
+                TaskCreate((TaskPool*)w, gUnk_09EE499C, &arg);
+            } else {
+                TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg);
+            }
+            c->unk_06 = 1;
+            old = n;
+            count++;
+        }
+        n = w->unk_94[slot] - 1;
+        if ((s16)n < 0) {
+            n = w->unk_A8[slot] - 1;
+        }
+        c = func_08076750((UnkStruct_08078754*)w, slot, &n);
+        if (c != 0 && (s16)n != w->unk_94[slot] && (s16)n != (s16)old) {
+            arg.unk_00 = &w->unk_54[slot];
+            arg.unk_0C = n;
+            arg.unk_0E = slot;
+            arg.unk_04 = c;
+            arg.unk_0F = w->unk_9C[slot];
+            if (c->unk_00 == 0xFFFE) {
+                TaskCreate((TaskPool*)w, gUnk_09EE499C, &arg);
+            } else {
+                TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg);
+            }
+            c->unk_06 = 1;
+            count++;
+        }
+    }
+    switch (count) {
+        case 0:
+            arg.unk_00 = &w->unk_54[slot];
+            arg.unk_0C = 0xFFFF;
+            arg.unk_04 = (CardSlot*)w->unk_44[slot];
+            arg.unk_0E = slot;
+            TaskCreate((TaskPool*)w, gUnk_09EE4984, &arg);
+            e = ListPoolFirst(&w->unk_54[slot]);
+            e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
+            e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
+            e->unk_A4 = 1;
+            e->unk_A0 = 50;
+            e->unk_78 |= 0x802;
+            break;
+        case 1:
+            e = ListPoolFirst(&w->unk_54[slot]);
+            e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
+            e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
+            e->unk_A4 = 1;
+            e->unk_A0 = 50;
+            e->unk_78 |= 0x800;
+            break;
+        case 2:
+            e = ListPoolFirst(&w->unk_54[slot]);
+            e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
+            e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
+            e->unk_A0 = 50;
+            e->unk_A4 = 1;
+            e->unk_78 |= 0x800;
+            e = ListPoolNext(&e->unk_64);
+            e->unk_80 = e->unk_7C = gUnk_09033FA8[0];
+            e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
+            e->unk_A0 = 60;
+            e->unk_A4 = 0;
+            e->unk_78 |= 0x800;
+            break;
+        case 3:
+            e = ListPoolFirst(&w->unk_54[slot]);
+            e->unk_80 = e->unk_7C = gUnk_09033FA8[1];
+            e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
+            e->unk_A0 = 50;
+            e->unk_A4 = 1;
+            e->unk_78 |= 0x800;
+            e = ListPoolNext(&e->unk_64);
+            e->unk_80 = e->unk_7C = gUnk_09033FA8[2];
+            e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
+            e->unk_A0 = 60;
+            e->unk_A4 = 2;
+            e->unk_78 |= 0x800;
+            e = ListPoolNext(&e->unk_64);
+            e->unk_80 = e->unk_7C = gUnk_09033FA8[0];
+            e->unk_98 = e->unk_94 = gUnk_09033FB8[0];
+            e->unk_A0 = 60;
+            e->unk_A4 = 0;
+            e->unk_78 |= 0x800;
+            break;
+    }
+    p = (EventCardLink*)ListPoolFirst(&w->unk_54[slot]);
+    while (p != 0) {
+        p->slot->unk_06 = 0;
+        p = (EventCardLink*)ListPoolNext(&p->node);
+    }
+    w->unk_34[slot] = ListPoolFirst(&w->unk_54[slot]);
+    {
+        UnkStruct_02034AAC** active = &gUnk_02034A98;
+        *active = ListPoolFirst(&w->unk_54[slot]);
+    }
+    gUnk_02034A98->unk_78 |= 0x804;
+}
+
+INCLUDE_ASM("mode_eventselect/func_08076CB4.s");
 
 s32 func_08076F4C(CardBattleWork* w) {
     if (func_080787B8(w, 0) == 0 && w->unk_B0 <= 1 && w->unk_B9 != 0) {
