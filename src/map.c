@@ -3234,11 +3234,12 @@ void func_080E55E4(const u8* src) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_080E56B4(void* a) {
     UnkStruct_080E56B4* q = a;
     UnkStruct_0203C7B8* e;
     UnkStruct_080DFF1C v;
+    s32 x;
+    s32 n;
 
     if (q == 0) {
         return;
@@ -3247,11 +3248,12 @@ void func_080E56B4(void* a) {
 
     while (q->unk_00 != 0xFF) {
         v.unk_00 = q->unk_04;
-        v.z = 0;
-        v.x = q->unk_08;
-        v.y = 0;
+        x = q->unk_08;
+        v.x = v.y = v.z = 0;
+        v.x = x;
         e->unk_00 = 2;
-        e->unk_14 = &gUnk_09856FB4[q->unk_00];
+        n = q->unk_00;
+        e->unk_14 = &gUnk_09856FB4[n];
         e->unk_04 = v;
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapGmk00, e);
         q++;
@@ -3264,15 +3266,17 @@ void func_080E56B4(void* a) {
 
     if ((gGameState.flags & 8) || (s8)gGameState.floor != 0) {
         v.unk_00 = 0x18000;
-        v.x = 0x11000;
+        x = 0x11000;
     } else {
         v.unk_00 = 0x26000;
-        v.x = 0x12000;
+        x = 0x12000;
     }
 
-    v.z = 0;
-    v.y = 0;
-    e->unk_00 = 0;
+    v.x = x;
+    n = 0;
+    v.z = n;
+    v.y = n;
+    e->unk_00 = n;
     e->unk_14 = &gUnk_0984C1CC;
     e->unk_04 = v;
     TaskCreate(gUnk_02039BA0->unk_78, gUnk_0984C1CC.unk_24, e);
@@ -3281,23 +3285,22 @@ void func_080E56B4(void* a) {
     if (func_080DF750() != 0) {
         if ((gGameState.flags & 8) || (s8)gGameState.floor != 0) {
             v.unk_00 = 0x1F000;
-            v.x = 0x14000;
+            x = 0x14000;
         } else {
             v.unk_00 = 0x2D000;
-            v.x = 0x15000;
+            x = 0x15000;
         }
 
-        v.z = 0;
-        v.y = 0;
-        e->unk_00 = 0;
+        v.x = x;
+        n = 0;
+        v.z = n;
+        v.y = n;
+        e->unk_00 = n;
         e->unk_14 = &gUnk_0984C23C;
         e->unk_04 = v;
         TaskCreate(gUnk_02039BA0->unk_78, gUnk_0984C23C.unk_24, e);
     }
 }
-#else
-INCLUDE_ASM("map/func_080E56B4.s");
-#endif
 
 void func_080E5800(void) {
     u16 sx;
