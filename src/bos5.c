@@ -5,6 +5,7 @@
 extern u32 gLanguage;
 extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_09F847D4[];
+extern void* gUnkEu_09F847FC[];
 extern void* gUnkEu_09F84810[];
 extern u16 gUnkEu_099991E0[];
 extern u8 gUnkEu_09A2B040[];
@@ -1844,7 +1845,6 @@ void func_080FDC04(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080FE47C(void) {
     s16 i;
     s32 sprite;
@@ -1863,7 +1863,13 @@ void func_080FE47C(void) {
     void* pal;
 
     if (gUnk_020350C0 < 2 || gUnk_020350C0 > 4) {
-        DrawSprite(gUnk_020350D0 >> 8, 0, gUnk_0999CB90, gUnk_020350A8, gUnk_020350AC, 0, 0x400,
+        DrawSprite(gUnk_020350D0 >> 8, 0,
+#ifdef VERSION_EU
+                      gUnkEu_09F847FC[gLanguage],
+#else
+                      gUnk_0999CB90,
+#endif
+                      gUnk_020350A8, gUnk_020350AC, 0, 0x400,
                       0x3E8);
         DrawSprite(120, gUnk_020350C8[0] >> 8, gUnk_0999C394, gUnk_020350B0, gUnk_020350AC, 0,
                       0x400, 0x3E9);
@@ -1950,9 +1956,6 @@ void func_080FE47C(void) {
 
     TaskPoolDraw(&gUnk_020350D8);
 }
-#else
-INCLUDE_ASM("bos5/func_080FE47C.s");
-#endif
 
 void func_080FE854(void) {
     SetBgMode0();
