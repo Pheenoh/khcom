@@ -21458,7 +21458,65 @@ void func_0809D3FC(void) {
     gUnk_02034AD8 = 0;
 }
 
+#ifdef NON_MATCHING
+void func_0809D458(u16 x, u16 y, u16 color, s32 value) {
+    s32 digits[8];
+    u8 text[10];
+    s32 i;
+
+    if (value >= 0) {
+        digits[0] = value / 10000000;
+        digits[1] = value / 1000000 - 10 * digits[0];
+        digits[2] = value / 100000 - 100 * digits[0] - 10 * digits[1];
+        digits[3] = value / 10000 - 1000 * digits[0] - 100 * digits[1] - 10 * digits[2];
+        digits[4] = value / 1000 - 10000 * digits[0] - 1000 * digits[1] - 100 * digits[2] - 10 * digits[3];
+        digits[5] = value / 100 - 100000 * digits[0] - 10000 * digits[1] - 1000 * digits[2] - 100 * digits[3] - 10 * digits[4];
+        digits[6] = value / 10 - 1000000 * digits[0] - 100000 * digits[1] - 10000 * digits[2] - 1000 * digits[3] - 100 * digits[4] - 10 * digits[5];
+        digits[7] = value - (10000000 * digits[0] + 1000000 * digits[1] + 100000 * digits[2] + 10000 * digits[3] + 1000 * digits[4] + 100 * digits[5] + 10 * digits[6]);
+        text[0] = digits[0] + '0';
+        text[1] = digits[1] + '0';
+        text[2] = digits[2] + '0';
+        text[3] = digits[3] + '0';
+        text[4] = digits[4] + '0';
+        text[5] = digits[5] + '0';
+        text[6] = digits[6] + '0';
+        text[7] = digits[7] + '0';
+        text[8] = 0;
+        i = 0;
+        while (text[i] <= '0' && i < 7) {
+            i++;
+        }
+        func_0809D2B0(x, y, color, &text[i]);
+    } else {
+        digits[0] = value / -10000000;
+        digits[1] = value / -1000000 - 10 * digits[0];
+        digits[2] = value / -100000 - 100 * digits[0] - 10 * digits[1];
+        digits[3] = value / -10000 - 1000 * digits[0] - 100 * digits[1] - 10 * digits[2];
+        digits[4] = value / -1000 - 10000 * digits[0] - 1000 * digits[1] - 100 * digits[2] - 10 * digits[3];
+        digits[5] = value / -100 - 100000 * digits[0] - 10000 * digits[1] - 1000 * digits[2] - 100 * digits[3] - 10 * digits[4];
+        digits[6] = value / -10 - 1000000 * digits[0] - 100000 * digits[1] - 10000 * digits[2] - 1000 * digits[3] - 100 * digits[4] - 10 * digits[5];
+        digits[7] = -value - (10000000 * digits[0] + 1000000 * digits[1] + 100000 * digits[2] + 10000 * digits[3] + 1000 * digits[4] + 100 * digits[5] + 10 * digits[6]);
+        text[0] = '-';
+        text[1] = digits[0] + '0';
+        text[2] = digits[1] + '0';
+        text[3] = digits[2] + '0';
+        text[4] = digits[3] + '0';
+        text[5] = digits[4] + '0';
+        text[6] = digits[5] + '0';
+        text[7] = digits[6] + '0';
+        text[8] = digits[7] + '0';
+        text[9] = 0;
+        i = 1;
+        while (text[i] <= '0' && i < 8) {
+            i++;
+        }
+        text[--i] = '-';
+        func_0809D2B0(x, y, color, &text[i]);
+    }
+}
+#else
 INCLUDE_ASM("card/func_0809D458.s");
+#endif
 
 void func_0809D87C(u16 a, u16 b, u16 c, u16 bits) {
     u16 v[16];
