@@ -1663,7 +1663,8 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
     }
 }
 #endif
-#if defined(NON_MATCHING) && !defined(VERSION_EU)
+#ifndef VERSION_EU
+#ifdef NON_MATCHING
 void func_08064624(void) {
     u8 n;
     u8 k;
@@ -1825,6 +1826,7 @@ void func_08064624(void) {
 }
 #else
 INCLUDE_ASM("msg/func_08064624.s");
+#endif
 #endif
 #ifndef VERSION_EU
 void func_08064B68(void) {
@@ -2491,8 +2493,6 @@ u8 func_080653D4(s32 x, s32 y, u8* s) {
 
     return gUnk_02034A90;
 }
-#else
-INCLUDE_ASM("msg/func_080653D4.s");
 #endif
 
 void func_080658B8(u8 n) {
