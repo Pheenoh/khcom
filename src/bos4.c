@@ -1503,7 +1503,7 @@ void func_080DBE18(UrsulaWork* work) {
     }
 }
 
-u8 func_080DBE64(void) {
+u16 func_080DBE64(void) {
     switch (func_080DC5E8()) {
     case 0:
         return 150;
@@ -1515,7 +1515,221 @@ u8 func_080DBE64(void) {
     }
 }
 
-INCLUDE_ASM("bos4/task_bos_ursula_1.s");
+u8 task_bos_ursula_1(UrsulaWork* work) {
+    BtlWork* p = (BtlWork*)&work->unk_024;
+    UrsulaPrizeArg pos;
+    s32 x;
+    u16 chance;
+
+    switch (func_0801ADAC(p)) {
+    case 5:
+        work->unk_000 = 1;
+        work->unk_004 = 0;
+        break;
+    case 1:
+    case 6:
+    case 7:
+        func_080DBE18(work);
+        work->unk_000 = 3;
+        work->unk_004 = 0;
+        break;
+    case 3:
+    case 8:
+        work->unk_000 = 4;
+        work->unk_004 = 0;
+        break;
+    case 4:
+        work->unk_000 = 2;
+        break;
+    }
+
+    if (func_0801C1C0(0)) {
+        if (work->unk_142 == 0) {
+            work->unk_148 = gBtlWork->unk_000;
+            work->unk_14C = gBtlWork->unk_004;
+            work->unk_154 = gBtlWork->unk_004;
+            work->unk_158 = 40;
+            work->unk_15A = 40;
+            work->unk_15C = 20;
+            work->unk_150 = 0;
+            work->unk_15E = 9;
+        }
+        work->unk_142 = 300;
+        if (work->unk_000 == 1) {
+            work->unk_000 = 2;
+        }
+    }
+
+    if (work->unk_142 == 0) {
+        gUnk_0203C580 = -0x5000;
+    } else if (work->unk_15E == 0) {
+        if (work->unk_158 != 0) {
+            ApproachValue((s32*)&work->unk_150, 0x3800, work->unk_158);
+            ApproachValue((s32*)&work->unk_154, work->unk_14C + 0x3800, work->unk_158 >> 1);
+            func_0802F274(work->unk_148, work->unk_154);
+            work->unk_158--;
+        } else {
+            if (work->unk_142 == 300) {
+                func_0802F1E8();
+            }
+            work->unk_142--;
+            if (work->unk_142 == 0 && work->unk_000 == 4) {
+                work->unk_142 = 1;
+            }
+            if (work->unk_142 > 280) {
+                func_0802F274(work->unk_148, work->unk_154);
+            }
+        }
+        if (work->unk_142 == 0 && work->unk_15A != 0) {
+            work->unk_142++;
+            ApproachValue((s32*)&work->unk_150, 0, work->unk_15A);
+            work->unk_15A--;
+        }
+        gUnk_0203C580 = work->unk_150 - 0x5000;
+    } else {
+        work->unk_15E--;
+    }
+
+    if (func_080DBA14(work)) {
+        func_0801C2DC(&work->unk_024, 1);
+    } else {
+        func_0801C2DC(&work->unk_024, 0);
+    }
+
+    switch (work->unk_000) {
+    case 1:
+        if ((s16)work->unk_004 == 0) {
+            func_080DD69C(func_080DBDC0(work));
+            work->unk_004 = 1;
+        } else {
+            if (func_080DD794()) {
+                func_080DBC68(work);
+            }
+            if (!func_080DD754()) {
+                func_0801AF08(p);
+                work->unk_000 = 0;
+            }
+        }
+        break;
+    case 2:
+        func_0801AF08(p);
+        work->unk_000 = 0;
+        func_080DD69C(0);
+        break;
+    case 3:
+        if ((s16)work->unk_004 > 20) {
+            func_0801AF08(p);
+            if (func_080DC5E8() == 1 && !func_080DC528()) {
+                work->unk_000 = 5;
+            } else {
+                work->unk_000 = 0;
+            }
+            work->unk_004 = 0;
+        } else {
+            work->unk_004++;
+        }
+        break;
+    case 4:
+        if ((s16)work->unk_004 == 0) {
+            func_0801AF4C(p);
+            func_080DB978(work);
+            work->unk_004++;
+        } else if ((s16)work->unk_004 == 1) {
+            work->unk_004++;
+        } else if ((s16)work->unk_004 == 2) {
+            if (func_080DC510()) {
+                x = p->unk_004 + 0x1400;
+            } else {
+                x = p->unk_004 - 0x1C00;
+            }
+            func_08014AAC(x, p->unk_008 + p->unk_00C + 0x1C00);
+            func_08006238(0, gBtlWork->unk_0B3, 8);
+            work->unk_004++;
+        } else if ((s16)work->unk_004 == 3) {
+            if (!func_08006314()) {
+                work->unk_004++;
+            }
+        } else if ((s16)work->unk_004 < 124) {
+            work->unk_004++;
+            if ((s16)work->unk_004 == 124) {
+                func_0801536C();
+            }
+        } else if (!func_080128EC()) {
+            pos.x = p->unk_004;
+            if (pos.x < 0x2000) {
+                pos.x = 0x2000;
+            }
+            if (pos.x > 0x1E000) {
+                pos.x = 0x1E000;
+            }
+            pos.y = 0x1A800;
+            pos.z = p->unk_00C;
+            func_08096DC4(&gBtlWork->unk_02C, &pos);
+            func_0801B008();
+            func_0801B918(p);
+            DisableBg(0);
+            gUnk_0203C57C = 0;
+            return 0;
+        }
+        break;
+    case 0:
+        if (work->unk_028 > ((BtlWork*)gBtlWork->unk_07C)->unk_004) {
+            p->unk_034 |= 4;
+        } else {
+            p->unk_034 &= ~4ULL;
+        }
+        if (!func_080DC528()) {
+            if (func_080DBA14(work)) {
+                chance = func_080DBE64();
+                if ((u16)(GetRandom() % chance) == 0) {
+                    func_0801BCD4(&work->unk_024);
+                }
+            }
+            if ((u32)p->unk_004 > 0x20000) {
+                work->unk_000 = 5;
+            }
+            if (func_080DC5E8() == 2) {
+                if (((p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004) >= 0 ? p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004 : -(p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004)) > 0x6800) {
+                    work->unk_000 = 5;
+                }
+            }
+        }
+        func_080DBC00(work);
+        break;
+    case 5:
+        if (func_080DC528()) {
+            func_080DBC00(work);
+        } else {
+            if (!func_080DBC68(work)) {
+                p->unk_034 ^= 4;
+            }
+            if (func_080DC5E8() == 2 && p->unk_004 > 0x6800 && p->unk_004 < 0x19800) {
+                if (((p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004) >= 0 ? p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004 : -(p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004)) < 0x6800 && func_080DBA14(work)) {
+                    func_0801BCD4(&work->unk_024);
+                    work->unk_000 = 0;
+                }
+            }
+            if ((!(p->unk_034 & 4) && p->unk_004 == 0x6800) || ((p->unk_034 & 4) && p->unk_004 == 0x19800)) {
+                work->unk_000 = 0;
+            }
+        }
+        break;
+    }
+
+    if (work->unk_000 != 4) {
+        func_080DB978(work);
+    }
+    if (func_080DBA14(work)) {
+        func_08012324(&p->unk_03C[4], p->unk_004, p->unk_008, p->unk_00C);
+    } else {
+        func_08012324(&p->unk_03C[4], p->unk_004, p->unk_008 + 0x1000, p->unk_00C - 0x1000);
+    }
+    gBtlWork->unk_0CC = p->unk_004;
+    gBtlWork->unk_0D0 = p->unk_008;
+    gBtlWork->unk_0D4 = p->unk_00C;
+    TaskPoolUpdate(&work->unk_008);
+    return 1;
+}
 void task_bos_ursula_2(UrsulaWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
     s32 d = 0;

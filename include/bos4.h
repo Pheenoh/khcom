@@ -266,6 +266,13 @@ typedef struct UrsulaWork {
     u8 unk_161[0x3];
 } UrsulaWork;
 
+typedef struct UrsulaPrizeArg {
+    s32 x;
+    s32 y;
+    s32 z;
+    u8 unk_0C[0x14];
+} UrsulaPrizeArg;
+
 typedef struct BoogieMapanimeWork {
     UnkStruct_080DDDDC unk_000[3];
 } BoogieMapanimeWork;
@@ -313,7 +320,8 @@ void func_080DFC7C(void);
 void func_080DF480(void);
 u8 func_080DF500(void);
 u8 func_080DF4D8(void);
-u8 func_080DBE64(void);
+u16 func_080DBE64(void);
+u8 func_08006314(void);
 u8 func_080DA4DC(u8* p);
 u8 func_080DDE74(UnkStruct_080DDDDC* p);
 void task_bos_boogie_explosiondice_3(BoogieExplosiondiceWork* work);
