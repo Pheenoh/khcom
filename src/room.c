@@ -626,7 +626,179 @@ u8 func_080F8958(GaWork* work) {
     return 1;
 }
 
-INCLUDE_ASM("room/func_080F8AC8.s");
+u8 func_080F8AC8(GaWork* work) {
+    u32 i;
+    GaEntryWork* e;
+    s32 x, y;
+
+    if (work->unk_00E & 1) {
+        work->unk_008 = 2;
+    }
+    for (i = 0; i <= 5; i++) {
+        e = &work->entries[i];
+        switch (work->unk_008) {
+        case 0: {
+            s32 d;
+            if (e->unk_1A0 != 0) {
+                break;
+            }
+            x = gBtlWork->unk_07C[1];
+            y = gBtlWork->unk_07C[2];
+            if (work->unk_A4C == 0) {
+                if (x > e->unk_124) {
+                    x -= 0x2800;
+                    if (x < 0) {
+                        x += 0x5000;
+                    }
+                } else {
+                    x += 0x2800;
+                    if (x > 0x10000) {
+                        x -= 0x5000;
+                    }
+                }
+            } else {
+                if (x > e->unk_124) {
+                    x -= 0x6400;
+                    if (x < 0) {
+                        x += 0xC800;
+                    }
+                } else {
+                    x += 0x6400;
+                    if (x > 0x10000) {
+                        x -= 0xC800;
+                    }
+                }
+                y = ((GetRandom() & 80) + 296) << 8;
+            }
+            work->unk_A38 = ((x - e->unk_124) * (x - e->unk_124)) >> 8;
+            work->unk_A3C = ((y - e->unk_128) * (y - e->unk_128)) >> 8;
+            d = (work->unk_A38 + work->unk_A3C) >> 8;
+            work->unk_010 = 15;
+            work->unk_012 = d / 4900 + 2;
+            work->unk_A40 = 768;
+            work->unk_A44 = work->unk_A40 * 2 / work->unk_010;
+            work->unk_01C = func_080F7E0C(e->unk_124, e->unk_128, x, y);
+            work->unk_A38 = (x - e->unk_124) / ((work->unk_012 - 1) * work->unk_010 * 2);
+            if (work->unk_A38 > 640) {
+                work->unk_A38 = 640;
+            } else if (work->unk_A38 < -640) {
+                work->unk_A38 = -640;
+            }
+            work->unk_A3C = (y - e->unk_128) / ((work->unk_012 - 1) * work->unk_010 * 2);
+            if (work->unk_A3C > 640) {
+                work->unk_A3C = 640;
+            } else if (work->unk_A3C < -640) {
+                work->unk_A3C = -640;
+            }
+            if (work->unk_A3C >= 0) {
+                work->entries[4].unk_15A |= 8;
+                work->entries[5].unk_15A &= 0xFFF7;
+            } else {
+                work->entries[4].unk_15A &= 0xFFF7;
+                work->entries[5].unk_15A |= 8;
+            }
+            func_080F80C0(work);
+            break;
+        }
+        case 1:
+            switch (e->unk_1A0) {
+            case 4:
+            case 5: {
+                s32 velocity;
+                if (!(e->unk_15A & 8)) {
+                    break;
+                }
+                velocity = work->unk_A38;
+                e->unk_124 += velocity;
+                if (velocity < 0) {
+                    if (e->unk_124 < 0) {
+                        e->unk_124 = 0;
+                    }
+                } else if (velocity > 0) {
+                    if (e->unk_124 > 0x10000) {
+                        e->unk_124 = 0x10000;
+                    }
+                }
+                velocity = work->unk_A3C;
+                e->unk_128 += velocity;
+                if (velocity < 0) {
+                    if (e->unk_128 < 0x12800) {
+                        e->unk_128 = 0x12800;
+                    }
+                } else if (velocity > 0) {
+                    if (e->unk_128 > 0x17800) {
+                        e->unk_128 = 0x17800;
+                    }
+                }
+                e->unk_12C -= work->unk_A40;
+                work->unk_A40 -= work->unk_A44;
+                work->unk_010--;
+                if (work->unk_010 <= 0) {
+                    if (!(e->unk_15A & 4)) {
+                        if (e->unk_1A0 == 4) {
+                            m4aSongNumStart(600);
+                        } else if (e->unk_1A0 == 5) {
+                            m4aSongNumStart(601);
+                        }
+                    }
+                    work->unk_012--;
+                    e->unk_12C = func_080F7FE4(work, i);
+                    if (work->unk_012 > 0) {
+                        if (work->unk_012 == 1) {
+                            work->unk_010 = 15;
+                        } else {
+                            work->unk_010 = 30;
+                        }
+                        work->unk_A40 = 768;
+                        work->unk_A44 = work->unk_A40 * 2 / work->unk_010;
+                        work->entries[5].unk_15A ^= 8;
+                        work->entries[4].unk_15A ^= 8;
+                    } else {
+                        func_080F7F54(work, 1);
+                    }
+                }
+                break;
+            }
+            case 0: {
+                s32 a, b, d;
+                a = work->entries[4].unk_124 - work->entries[4].unk_140;
+                b = work->entries[5].unk_124 - work->entries[5].unk_140;
+                d = a - b >= 0 ? a - b : b - a;
+                e->unk_124 = (a < b ? d + 1 : d) ? a : b;
+                gBtlWork->unk_0CC = e->unk_124;
+                a = work->entries[4].unk_128 - work->entries[4].unk_144;
+                b = work->entries[5].unk_128 - work->entries[5].unk_144;
+                d = a - b >= 0 ? a - b : b - a;
+                e->unk_128 = (a < b ? d + 1 : d) ? a : b;
+                gBtlWork->unk_0D0 = e->unk_128;
+                break;
+            }
+            default:
+                func_080F800C(work, i);
+                break;
+            }
+            break;
+        case 2:
+            switch (e->unk_1A0) {
+            case 4:
+            case 5:
+                e->unk_15A &= 0xFFF7;
+                break;
+            }
+            func_080F800C(work, i);
+            break;
+        }
+    }
+    if (work->unk_008 == 0) {
+        work->unk_008 = 1;
+    }
+    if (work->unk_008 == 2) {
+        work->unk_000 = work->unk_004;
+        work->unk_008 = 0;
+        work->unk_00E &= 0xFFFE;
+    }
+    return 1;
+}
 INCLUDE_ASM("room/func_080F8F9C.s");
 
 u8 func_080F9744(GaWork* work) {
