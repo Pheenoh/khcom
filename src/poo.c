@@ -2257,11 +2257,11 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void task_poo_sora_2(PooSoraWork* w) {
     PooActor* a = &gUnk_0203C420;
     s32 prio;
     s32 c;
+    s32 ac;
     s16 x;
     s16 y;
 
@@ -2272,32 +2272,29 @@ void task_poo_sora_2(PooSoraWork* w) {
         prio = 0x801;
     }
 
-    if (w->unk_AC != 0) {
-        s32 z;
-
-        gUnk_02034DEC = z = -0x1008 - (w->unk_80 >> 8) * 4;
+    ac = w->unk_AC;
+    if (ac != 0) {
+        gUnk_02034DEC = -0x1008 - (w->unk_80 >> 8) * 4;
 
         if (w->unk_84 <= w->unk_48 || w->unk_88[4] == 0x400) {
             if (w->unk_78 != 0) {
                 a->unk_3A = 0;
             } else {
-                a->unk_3A = z + 1;
+                a->unk_3A = gUnk_02034DEC + 1;
             }
             a->unk_3C = 0;
         } else {
             a->unk_3C = w->unk_78;
-            a->unk_3A = z + 1;
+            a->unk_3A = gUnk_02034DEC + 1;
         }
     } else {
-        s32 z;
-
-        gUnk_02034DEC = z = -0x1008 - (a->unk_00.unk_04 >> 8) * 4;
+        gUnk_02034DEC = -0x1008 - (a->unk_00.unk_04 >> 8) * 4;
         a->unk_3C = 0;
 
-        if (a->unk_00.unk_0C != w->unk_AC) {
+        if (ac != a->unk_00.unk_0C) {
             a->unk_3A = 0;
         } else {
-            a->unk_3A = z + 1;
+            a->unk_3A = gUnk_02034DEC + 1;
         }
     }
     x = (a->unk_00.unk_00 >> 8) - gUnk_0203C40C;
@@ -2305,9 +2302,6 @@ void task_poo_sora_2(PooSoraWork* w) {
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, prio, gUnk_02034DEC - 1);
     TaskPoolDraw(&w->unk_24);
 }
-#else
-INCLUDE_ASM("poo/task_poo_sora_2.s");
-#endif
 
 void task_poo_sora_3(PooSoraWork* w) {
     func_080D2D0C(&gUnk_0203C420.unk_00);
