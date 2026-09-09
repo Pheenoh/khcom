@@ -37,10 +37,7 @@ typedef struct HumActor {
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
-    u8 unk_1C;
-    u8 unk_1D;
-    u8 unk_1E;
-    u8 unk_1F;
+    s32 unk_1C;
     u16 unk_20;
     u8 unk_22[0x02];
     s32 unk_24;
@@ -537,6 +534,7 @@ typedef struct BtlWork {
     s32 unk_12C;
     s32 unk_130;
     s32 unk_134;
+    s32 unk_138;
 } BtlWork;
 
 typedef struct JiminyEntry {
@@ -679,11 +677,12 @@ typedef struct AxcelWork {
     u16 unk_20A;
     s32 unk_20C;
     s32 unk_210;
-    u8 unk_214[0x04];
+    s32 unk_214;
     void* tiles;
     void* palette;
     TaskPool unk_220;
-    u8 unk_234[0x04];
+    u16 unk_234;
+    u16 unk_236;
 } AxcelWork;
 
 typedef struct AxcelPtcWork {
@@ -769,6 +768,8 @@ extern u8 gUnk_0813EDD0[];
 extern u8 gUnk_0813F768[];
 extern u8 gUnk_0813F760[];
 extern u8 gUnk_0813F5C8[];
+extern u8 gUnk_0813F5E0[];
+extern u8 gUnk_0813F6C0[];
 extern u8 gUnk_0813FDF4[];
 extern u8 gUnk_0813FDD4[];
 extern u8 gUnk_08B22BA8[];
