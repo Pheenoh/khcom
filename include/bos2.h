@@ -555,6 +555,8 @@ typedef struct TmArmState {
     u8 unk_30[0xA];
     u8 unk_3A;
     u8 unk_3B;
+    u8 unk_3C[6];
+    u16 tileCount;
 } TmArmState;
 
 typedef struct TmAnimFrame {
@@ -603,12 +605,20 @@ typedef struct TmArmPos {
     u16 unk_0E;
 } TmArmPos;
 
+typedef struct TmArmTileHeader {
+    u16 unk_00[4];
+    u16 tileCount;
+} TmArmTileHeader;
+
 typedef struct TmArmWork {
     u32 tiles;
     u16* palette;
     u32 palette2;
     TmArmSrc* unk_00C;
-    TmArmJoint unk_010[8];
+    union {
+        TmArmJoint all[8];
+        TmArmJoint arms[2][4];
+    } joints;
     u16 unk_1B0;
     u16 unk_1B2;
     u32 unk_1B4;
