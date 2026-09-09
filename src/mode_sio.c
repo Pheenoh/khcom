@@ -45,6 +45,7 @@ extern u8 gUnkEu_08C9CD3C[];
 extern u8 gUnkEu_08CC8BFC[];
 extern u8 gUnkEu_08CCCBFC[];
 extern void* eu_0805E924(void* strings);
+extern void func_080C7350(void);
 extern void* gUnkEu_08891580[];
 extern s16 eu_0806629C(TextSlot* text, u8 count);
 extern void eu_080059F4(s32 bg, void* map);
@@ -165,11 +166,15 @@ void mode_sio_btl_connect_0(s32 arg) {
 #endif
 }
 
-#ifndef VERSION_EU
 void mode_sio_btl_connect_1(void) {
     s32 i;
     s32 j;
 
+#ifdef VERSION_EU
+    s16 width;
+    s16 x;
+    if (gUnk_0203A9E4 == 0) {
+#endif
     switch (gSioBtlConnectWork->unk_04) {
     case 0:
         func_080C54B4();
@@ -217,15 +222,39 @@ void mode_sio_btl_connect_1(void) {
         }
         break;
     }
-#ifdef VERSION_JP
+#ifdef VERSION_EU
+    } else if (GetKeysPressed() & (A_BUTTON | START_BUTTON)) {
+        gUnk_0203AA00 = 1;
+        gUnk_0203AA90 = 1;
+        gUnk_0203AA8C = 1;
+        gUnk_0203AA58[0] = 6;
+        gUnk_0203AA58[1] = 6;
+
+        for (i = 0; i < 2; i++) {
+            for (j = 0; j < 20; j++) {
+                gUnk_0203AA60[i][j] = 0;
+                gUnk_0203AAE0[i][j] = 0;
+                gUnk_0203AA30[i][j] = 0;
+            }
+        }
+        func_080C7350();
+        func_080AEE84();
+        ModeRequest(&gModeSioBtlOption, 0);
+    }
+    width = eu_0806629C(gSioBtlConnectWork->unk_08, gSioBtlConnectWork->unk_05);
+    if (gLanguage == 1) {
+        x = 120 - (width >> 1);
+        func_080664D8(x, 68, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
+    } else {
+        x = 120 - (width >> 1);
+        func_080664D8(x, 63, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
+    }
+#elif defined(VERSION_JP)
     func_080664D8(0x3D, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
 #else
     func_080664D8(0x42, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
 #endif
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sio_btl_connect_1.s");
-#endif
 
 void mode_sio_btl_connect_2(void) {
     ReleaseObjPalette(gSioBtlConnectWork->palette);
