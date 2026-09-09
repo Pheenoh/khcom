@@ -556,7 +556,398 @@ void func_08019C5C(void) {
     gBtlWork->unk_068 &= ~0x20000000;
 }
 
-INCLUDE_ASM("unk_08019050/_08019CB4.s");
+void _08019CB4(void) {
+    BtlObj* player;
+    s32 i;
+    s32 changed;
+    s32 busy;
+    u8 count;
+    typedef struct BtlPrizeArgs {
+        s32 x;
+        s32 y;
+        s32 z;
+        u8 unk_0C[0x14];
+    } BtlPrizeArgs;
+    BtlPrizeArgs pos;
+
+    player = (BtlObj*)gBtlWork->unk_07C;
+    if (gBtlWork->unk_0F4 == 53) {
+        gBtlWork->unk_12C = 38;
+    } else {
+        gBtlWork->unk_12C = 66;
+    }
+    if (gBtlWork->unk_0F4 == 19) {
+        if (!(gBtlWork->unk_068 & 0x40) && gFrameCounter % 30 == 0) {
+            gBtlWork->unk_130 = (gBtlWork->unk_0DA + GetRandom() % (gBtlWork->unk_0DC - gBtlWork->unk_0DA + 1)) * 256;
+            gBtlWork->unk_134 = (gBtlWork->unk_0DE + GetRandom() % (gBtlWork->unk_0E0 - gBtlWork->unk_0DE + 1)) * 256;
+            gBtlWork->unk_138 = 0;
+        }
+    } else {
+        gBtlWork->unk_130 = ((BtlObj*)gBtlWork->unk_07C)->unk_004;
+        gBtlWork->unk_134 = ((BtlObj*)gBtlWork->unk_07C)->unk_008;
+        gBtlWork->unk_138 = ((BtlObj*)gBtlWork->unk_07C)->unk_00C;
+    }
+    gBtlWork->unk_068 &= ~1ULL;
+    switch ((u32)gBtlWork->unk_0A0) {
+    case 1:
+    case 2:
+        if (gBtlWork->unk_068 & 0x800000000ULL) {
+            func_080197AC();
+#ifdef VERSION_EU
+            eu_08013190();
+#else
+            func_0800F230();
+#endif
+        } else if (gBtlWork->unk_068 & 0x800) {
+            func_08019350();
+            func_0800F230();
+        } else {
+            func_080192E0();
+            func_08019350();
+        }
+        break;
+    }
+    gBtlWork->unk_0AC = 0;
+    TaskPoolUpdate(&gBtlWork->unk_02C[1]);
+    if (gBtlWork->unk_068 & 0x800000) {
+        gBtlWork->unk_068 |= 0x400000ULL;
+        gBtlWork->unk_068 &= ~2ULL;
+        if (gBtlWork->unk_068 & 0x800) {
+            gUnk_02039B9C->unk_068 &= ~2ULL;
+        }
+        gBtlWork->unk_0A0 = 1;
+        if (gBtlWork->unk_0A4) {
+            BtlObj* obj;
+            gBtlWork->unk_068 &= ~0x40ULL;
+            obj = gBtlWork->unk_0A8;
+            if (obj != 0) {
+                obj->unk_034 |= 0x10000ULL;
+            }
+            func_08006290(2, 10, 4);
+        } else {
+            gBtlWork->unk_068 &= ~0x20000000ULL;
+            player->unk_034 |= 0x10000ULL;
+            func_08006290(3, 10, 4);
+        }
+        func_08006494(16, 15);
+        func_08019050(1, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+        gBtlWork->unk_0E4 = 0;
+    }
+    if (gBtlWork->unk_068 & 0x400) {
+        changed = 1;
+        gBtlWork->unk_068 &= ~0x400ULL;
+        if (gBtlWork->unk_0A4) {
+            gBtlWork->unk_068 |= 0x20000000ULL;
+            player->unk_034 |= 1;
+        } else {
+            BtlObj* obj;
+            gBtlWork->unk_068 |= 0x40;
+            obj = gBtlWork->unk_0A8;
+            if (obj != 0) {
+                obj->unk_034 |= 1;
+            }
+        }
+        gBtlWork->unk_0A0 = 2;
+        gBtlWork->unk_0E4 = 0;
+    } else {
+        changed = 0;
+    }
+    if (gBtlWork->unk_068 & 0x400000000000ULL) {
+        if (gBtlWork->unk_0A0 != 3) {
+            gBtlWork->unk_0A0 = 3;
+            gBtlWork->unk_0E4 = 0;
+        }
+    } else if (gBtlWork->unk_068 & 0x200000000ULL) {
+        if (gBtlWork->unk_0A0 != 4) {
+            gBtlWork->unk_0A0 = 4;
+            gBtlWork->unk_0E4 = 0;
+            switch ((u32)gBtlWork->unk_10C) {
+            case 120:
+            case 124:
+                pos.x = 0x10000;
+                pos.y = (gBtlWork->unk_0DE + gBtlWork->unk_0E0) * 128;
+                pos.z = -0x4600;
+                func_08096DC4(gBtlWork->unk_02C, &pos);
+                break;
+            case 121:
+                if (gBtlWork->unk_068 & 0x100000) {
+                    pos.x = 0x10000;
+                    pos.y = (gBtlWork->unk_0DE + gBtlWork->unk_0E0) * 128;
+                    pos.z = -0x4600;
+                    func_08096DC4(gBtlWork->unk_02C, &pos);
+                }
+                break;
+            }
+        }
+    }
+    switch ((u32)gBtlWork->unk_0A0) {
+    case 0:
+        if ((s16)gBtlWork->unk_0E4 == 0) {
+            if (!(gBtlWork->unk_068 & 0x800000000ULL)) {
+                gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescBtlStart, 0);
+            }
+            gBtlWork->unk_0E4 = 1;
+        }
+        if (func_08006314()) {
+            break;
+        }
+        if ((s16)gBtlWork->unk_0E4 == 1) {
+            for (i = 0; i < 32; i++) {
+                if (gBtlWork->unk_0FC & (s32)(1U << i)) {
+                    func_080062F4(i, 1);
+                }
+            }
+            gBtlWork->unk_0E4 = 2;
+        }
+        if (IsTaskActiveNamed(gBtlWork->unk_0E8, gTaskDescBtlStart.name)) {
+            break;
+        }
+        if ((s16)gBtlWork->unk_0E4 == 2) {
+            gBtlWork->unk_068 |= 0x40000ULL;
+            gBtlWork->unk_068 &= ~0x4000000ULL;
+            TaskCreate(gBtlWork->unk_02C, &gTaskDescBtlLockon, 0);
+            TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescBtlHpply, 0);
+            if (!(gBtlWork->unk_068 & 0x800000000ULL)) {
+                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescBtlHpenm, 0);
+            }
+            TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescBtlExp, 0);
+            if (!(gBtlWork->unk_068 & 4) && !(gBtlWork->unk_068 & 0x800)) {
+                switch ((u32)gBtlWork->unk_10C) {
+                case 120:
+                case 122:
+                case 123:
+                case 124:
+                case 178:
+                case 179:
+                case 180:
+                case 181:
+                case 182:
+                case 183:
+                case 184:
+                    break;
+                default:
+                    if (gUnk_03006C10 & 1) {
+                        TaskCreate(gBtlWork->unk_02C, &gTaskDescBtlEscape, 0);
+                    } else if (gGameState.unk_17A & 0x20) {
+                        TaskCreate(gBtlWork->unk_02C, &gTaskDescBtlEscape, 0);
+                    }
+                    break;
+                }
+            }
+            TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleSora, 0);
+            if (gBtlWork->unk_068 & 0x800000000ULL) {
+                if (gBtlWork->unk_10C == 179) {
+                    TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleRiku, 0);
+                }
+            } else if (gBtlWork->unk_068 & 0x800) {
+                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleRiku, 0);
+            }
+            func_08076360();
+            func_080838E8();
+            gBtlWork->unk_0E4 = 3;
+        } else if ((s16)gBtlWork->unk_0E4 == 3) {
+            gBtlWork->unk_0A0 = 1;
+            gBtlWork->unk_0E4 = 0;
+            if (gGameState.unk_1B8 == 5) {
+                func_08019ACC(0x10000, ((BtlObj*)gBtlWork->unk_07C)->unk_008, ((BtlObj*)gBtlWork->unk_07C)->unk_00C - 0x7800);
+            }
+        }
+        break;
+    case 1:
+        break;
+    case 4:
+        if ((s16)gBtlWork->unk_0E4 == 0) {
+            func_08076374();
+            func_080838EC();
+            gBtlWork->unk_068 &= ~0x40000ULL;
+            if (gBtlWork->unk_068 & 0x200000) {
+                gBtlWork->unk_068 |= 0x40000000ULL;
+                func_080061E8(0, 8);
+            }
+            func_08019050(8, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+            gBtlWork->unk_068 |= 0x20;
+            gBtlWork->unk_078 = 0;
+            gBtlWork->unk_0E4 = 1;
+            gBtlWork->unk_0F4 = 0;
+            gBtlWork->unk_068 |= 0x100000000000000ULL;
+        } else if ((s16)gBtlWork->unk_0E4 == 1) {
+            gBtlWork->unk_0E4 = 2;
+        } else {
+            if (func_080128EC()) {
+                break;
+            }
+            if (gBtlWork->unk_068 & 0x80000) {
+                break;
+            }
+            if (gBtlWork->unk_0B0 != 0 && !(gBtlWork->unk_068 & 0x10)) {
+                break;
+            }
+            if (gBtlWork->unk_068 & 0x8000000000000ULL) {
+                if ((s16)gBtlWork->unk_0E4 == 2) {
+                    func_0801C104();
+#ifdef VERSION_EU
+                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->unk_02C[1], gUnkEu_09F72C10, 0);
+#else
+                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->unk_02C[1], gUnk_09EE7804, 0);
+#endif
+                    gBtlWork->unk_068 |= 0x4000000ULL;
+                    gBtlWork->unk_068 |= 0x2000ULL;
+                    gBtlWork->unk_0E4 = -1;
+                } else {
+#ifdef VERSION_EU
+                    if (IsTaskActiveNamed(gBtlWork->unk_0E8, *(const char**)gUnkEu_09F72C10)) {
+#else
+                    if (IsTaskActiveNamed(gBtlWork->unk_0E8, *(const char**)gUnk_09EE7804)) {
+#endif
+                        break;
+                    }
+                    gBtlWork->unk_068 &= ~0x8000000000000ULL;
+                    gBtlWork->unk_0E4 = 2;
+                }
+                break;
+            }
+            if (gBtlWork->unk_0FA != 0) {
+                if ((s16)gBtlWork->unk_0E4 == 2) {
+                    func_0801C104();
+#ifdef VERSION_EU
+                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->unk_02C[1], gUnkEu_09F72D80, 0);
+#else
+                    gBtlWork->unk_0E8 = TaskCreate(&gBtlWork->unk_02C[1], gTaskDescLevelUp, 0);
+#endif
+                    gBtlWork->unk_068 |= 0x4000000ULL;
+                    gBtlWork->unk_068 |= 0x2000ULL;
+                    gBtlWork->unk_0E4 = -1;
+                }
+                break;
+            }
+            if ((s16)gBtlWork->unk_0E4 == -1) {
+                if (!IsTaskActive(gBtlWork->unk_0E8)) {
+                    BtlObj* healed;
+                    gBtlWork->unk_0E4 = 2;
+                    healed = (BtlObj*)gBtlWork->unk_07C;
+                    healed->unk_02C = gGameState.maxHp;
+                    healed->unk_02E = gGameState.maxHp;
+                }
+                break;
+            }
+            if ((s16)gBtlWork->unk_0E4 == 2 && !func_08006314()) {
+                gBtlWork->unk_068 |= 0x4000000ULL;
+                gBtlWork->unk_072 = 99;
+                gBtlWork->unk_0E4 = 3;
+            } else if ((s16)gBtlWork->unk_0E4 == 3) {
+                SetBackdropColor(0, 0, 0);
+                func_08006184(0, 15);
+                func_080063A8();
+                gBtlWork->unk_0E4 = 4;
+            } else if (!func_08006314()) {
+                func_0801C314();
+            }
+        }
+        break;
+    case 3:
+        if ((s16)gBtlWork->unk_0E4 == 0) {
+            func_08076374();
+            func_080838EC();
+            gBtlWork->unk_068 &= ~0x40000ULL;
+            gBtlWork->unk_068 |= 0x20;
+            gBtlWork->unk_078 = 0;
+            gBtlWork->unk_120 = 0;
+        }
+        if ((s16)gBtlWork->unk_0E4 == 140) {
+            func_08006184(1, 100);
+            func_080063A8();
+            gBtlWork->unk_068 |= 0x4000000ULL;
+            gBtlWork->unk_068 |= 0x400000ULL;
+            gBtlWork->unk_072 = 100;
+        } else if ((s16)gBtlWork->unk_0E4 > 140 && !func_08006314()) {
+            m4aMPlayAllStop();
+            if (gUnk_03006C10 & 1) {
+                ModeRequest(&gModeChkbtl, 0);
+            } else {
+                GameState* state = &gGameState;
+                memcpy(&state->maxHp, gBtlWork->unk_13C, 0x88);
+                state->flags |= 0x40;
+                switch ((u32)gBtlWork->unk_10C) {
+                case 166:
+                    state->unk_17C = 0;
+                    break;
+                case 174:
+                    state->unk_17C &= ~3;
+                    break;
+#ifdef VERSION_EU
+                case 158:
+                    state->unk_17C &= ~0x20;
+                    break;
+#endif
+                }
+                ModeRequest(&gModeContinue, 0);
+            }
+            break;
+        }
+        gBtlWork->unk_0E4++;
+        break;
+    case 2: {
+        BtlObj* obj;
+        if (changed) {
+            break;
+        }
+        busy = 0;
+        if (player->unk_034 & 0x10) {
+            busy = 1;
+        }
+        if (busy) {
+            break;
+        }
+        obj = ListPoolFirst(&gBtlWork->unk_080);
+        while (obj != 0) {
+            if (obj->unk_034 & 0x10) {
+                busy = 1;
+                break;
+            }
+            obj = ListPoolNext(&obj->unk_0B8);
+        }
+        if (busy) {
+            break;
+        }
+        count = func_080ABED0();
+        gBtlWork->unk_0E4 = 0;
+        if (gBtlWork->unk_068 & 0x800) {
+            if (gBtlWork->unk_068 & 0x20000000) {
+                if (gBtlWork->unk_0B2 >= (s8)count) {
+                    gBtlWork->unk_068 &= ~2ULL;
+                }
+                if (gBtlWork->unk_068 & 2) {
+                    player->unk_034 |= 1;
+                } else {
+                    func_08019C5C();
+                }
+            } else {
+                if (gUnk_02039B9C->unk_0B2 >= (s8)count) {
+                    gUnk_02039B9C->unk_068 &= ~2ULL;
+                }
+                if (gUnk_02039B9C->unk_068 & 2) {
+                    ((BtlObj*)gUnk_02039B9C->unk_07C)->unk_034 |= 1;
+                } else {
+                    func_08019C5C();
+                }
+            }
+        } else {
+            if (gBtlWork->unk_0B2 >= (s8)count) {
+                gBtlWork->unk_068 &= ~2ULL;
+            }
+            if (gBtlWork->unk_068 & 2) {
+                player->unk_034 |= 1;
+            } else {
+                func_08019C5C();
+            }
+        }
+        break;
+    }
+    }
+}
+
+ALIGN_ZERO(2);
+
 
 u8 func_0801A8A4(s32* px, s32* py, u16 rx, u16 ry) {
     u8 r = 0;
