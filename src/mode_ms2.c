@@ -561,7 +561,22 @@ void func_081078F0(s16 a) {
     func_0800448C(gUnk_09A34D9C, GetBgScreenBase(0), 0, gUnk_09EF9618[a].unk_04 * 2, 0, 2, 11, 2);
 }
 
-INCLUDE_ASM("mode_ms2/func_08107938.s");
+void func_08107938(void) {
+    UnkStruct_0810718C* p;
+    u16 card;
+
+    p = func_0810718C();
+    if (p->unk_06[func_081075D8()] > 0) {
+        card = func_081075D8() + p->unk_02;
+        gUnk_02035E40[p->unk_04]--;
+        gUnk_02035E48--;
+        p->unk_06[func_081075D8()]--;
+        func_08093AC8(card);
+        func_081075FC();
+        func_081076D4();
+        func_0810764C();
+    }
+}
 
 u8 func_081079A8(UnkStruct_0810718C* p) {
     s16 i;
