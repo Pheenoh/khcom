@@ -13414,7 +13414,79 @@ u8 func_0808F0C0(UnkStruct_0808F0C0* w, u16 keys) {
     return 1;
 }
 #ifdef VERSION_EU
-INCLUDE_ASM("card/func_eu_0808E94C.s");
+extern UnkStruct_09035898 gUnkEu_090CEC30[];
+extern UnkStruct_09035898 gUnkEu_090CEC70[];
+u8 func_eu_0808E94C(UnkStruct_0808F0C0* w, u16 keys) {
+    if (w->unk_7C2 == 1 && (u16)w->unk_7C0 > 5) {
+        switch (keys) {
+        case 64:
+            w->unk_7C2--;
+            break;
+        case 128:
+            w->unk_7C2++;
+            break;
+        case 32:
+            w->unk_7C0 = 5;
+            break;
+        case 16:
+            w->unk_7C0 = 0;
+            break;
+        }
+    }
+    if (w->unk_7C2 == 4 && (u16)w->unk_7C0 > 2) {
+        switch (keys) {
+        case 64:
+            w->unk_7C2--;
+            break;
+        case 128:
+            w->unk_7C2++;
+            break;
+        case 32:
+            w->unk_7C0 = 2;
+            break;
+        case 16:
+            w->unk_7C0 = 0;
+            break;
+        }
+    }
+    if (w->unk_7C0 > 14) {
+        w->unk_7C0 = 0;
+    }
+    if (w->unk_7C0 < 0) {
+        w->unk_7C0 = 14;
+    }
+    if (w->unk_7C2 > 6) {
+        w->unk_7C2 = 0;
+    }
+    if (w->unk_7C2 < 0) {
+        w->unk_7C2 = 6;
+    }
+    if (w->unk_7C0 > gUnkEu_090CEC30[w->unk_7C2].unk_04 - 1) {
+        w->unk_7C0 = 0;
+    }
+    if (w->unk_7C0 < 0) {
+        w->unk_7C0 = gUnkEu_090CEC30[w->unk_7C2].unk_04 - 1;
+    }
+    if (w->unk_7C2 > gUnkEu_090CEC70[w->unk_7C0].unk_04 - 1) {
+        w->unk_7C2 = 0;
+    }
+    if (w->unk_7C2 < 0) {
+        w->unk_7C2 = gUnkEu_090CEC70[w->unk_7C0].unk_04 - 1;
+    }
+    if (w->unk_7C2 == 6 && w->unk_7C0 > 1) {
+        if (w->unk_7C0 == 13 && keys == 32) {
+            w->unk_7C0 = 1;
+            AnimStart(&w->unk_798, 0, 1);
+            w->unk_7C8 = 0;
+        } else {
+            w->unk_7C0 = 14;
+            AnimStart(&w->unk_798, 1, 1);
+            w->unk_7C8 = 1;
+        }
+        return 0;
+    }
+    return 1;
+}
 #endif
 void func_0808F258(u8 a) {
     u32 base;
