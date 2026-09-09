@@ -9782,16 +9782,8 @@ void func_0808C3DC(u8* work, u8 kind) {
             p = &deck->cards[i];
 
             if (*p != 0xFFFF) {
-                if (kind == 0) {
-                    args.unk_00 = &work[0x7F0];
-                    args.unk_04 = gCardCollection[*p] & 0x8FFF;
-                } else if (gCardDefs[gCardCollection[*p] & 0xFFF].unk_2A == kind - 1) {
-                    args.unk_00 = &work[0x7F0];
-                    args.unk_04 = gCardCollection[*p] & 0x8FFF;
-                } else {
-                    goto next;
-                }
-
+                args.unk_00 = &work[0x7F0];
+                args.unk_04 = gCardCollection[*p] & 0x8FFF;
                 args.unk_06 = x;
                 args.unk_08 = y;
                 args.unk_0A = 0;
@@ -9807,7 +9799,6 @@ void func_0808C3DC(u8* work, u8 kind) {
                 TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
             }
 
-next:
             x++;
 
             if (x > 2) {
