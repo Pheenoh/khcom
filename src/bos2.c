@@ -920,11 +920,13 @@ void task_bos_tm_arm_0(TmArmWork* work, TmArmSrc* arg) {
 #else
 INCLUDE_ASM("bos2/task_bos_tm_arm_0.s");
 #endif
-#ifdef NON_MATCHING
 void func_080BB924(TmArmWork* work) {
     TmArmJoint* j;
     TmArmJoint* j2;
     s32 i;
+    s32 offset;
+    void* gfx;
+    void** dst;
     s32 r;
     s32 x;
     s32 y;
@@ -1079,7 +1081,8 @@ void func_080BB924(TmArmWork* work) {
                 work->unk_00C->unk_18->unk_28 |= 2;
             }
         } else if (work->unk_1B0 > 50) {
-            if (func_080128EC() == 0) {
+            v = func_080128EC();
+            if (v == 0) {
                 j2 = &work->unk_010[3];
                 y2 = work->unk_00C->unk_10;
                 z2 = work->unk_00C->unk_14 + j2->unk_04 - 0x2300;
@@ -1254,12 +1257,12 @@ void func_080BB924(TmArmWork* work) {
     func_080BB464(work);
 
     for (i = 0; i < 3; i++) {
-        work->unk_010[i + 4].unk_30 = AnimUpdate((AnimState*)((u8*)&work->unk_010[i + 4] + 0x18));
+        offset = i * sizeof(TmArmJoint);
+        gfx = AnimUpdate((AnimState*)((u8*)work->unk_010 + offset + 0xE8));
+        dst = &work->unk_010[4].unk_30;
+        *(void**)((u8*)dst + offset) = gfx;
     }
 }
-#else
-INCLUDE_ASM("bos2/func_080BB924.s");
-#endif
 
 void func_080BC304(TmArmWork* work) {
     s32 i;
