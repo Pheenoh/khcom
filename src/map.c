@@ -835,12 +835,10 @@ void func_080E0C1C(u16 x, u16 y) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_080E0ED4(UnkStruct_02034F20* p) {
     s32 go = 1;
     u16 x = p->unk_0A;
     u16 y = p->unk_0C;
-    u16 ny;
 
     while (go) {
         s16 cy = (s16)y;
@@ -848,35 +846,29 @@ void func_080E0ED4(UnkStruct_02034F20* p) {
 
         switch (c->unk_02) {
         case 4:
-            y++;
-            func_080E08BC((s16)x, (s16)y)->unk_00 |= 0x40;
+            func_080E08BC((s16)x, (s16)(y + 1))->unk_00 |= 0x40;
             func_080E08BC((s16)(x + 1), cy)->unk_00 |= 0x40;
-            func_080E08BC((s16)(x + 1), (s16)y)->unk_00 |= 0x40;
+            func_080E08BC((s16)(x + 1), (s16)(y + 1))->unk_00 |= 0x40;
             c->unk_00 |= 0x40;
             p->unk_0A = x + 1;
-            p->unk_0C = y;
+            p->unk_0C = y + 1;
             go = 0;
             break;
         case 6:
-            ny = y + 1;
-            func_080E08BC((s16)x, (s16)ny)->unk_00 |= 0x40;
+            func_080E08BC((s16)x, (s16)(y + 1))->unk_00 |= 0x40;
             func_080E08BC((s16)(x - 1), cy)->unk_00 |= 0x40;
-            func_080E08BC((s16)(x - 1), (s16)ny)->unk_00 |= 0x40;
+            func_080E08BC((s16)(x - 1), (s16)(y + 1))->unk_00 |= 0x40;
             c->unk_00 |= 0x40;
             p->unk_0A = x;
-            p->unk_0C = ny;
+            p->unk_0C = y + 1;
             go = 0;
-            y = ny;
             break;
         default:
-            y++;
             break;
         }
+        y++;
     }
 }
-#else
-INCLUDE_ASM("map/func_080E0ED4.s");
-#endif
 
 void func_080E0FD8(UnkStruct_02034F20* p) {
     u16 x;
