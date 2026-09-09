@@ -2038,7 +2038,7 @@ void func_081213CC(s32* a, s32* b);
 void func_081213D4(s32* a, s32* b);
 
 static inline void ShiftInByte(void) {
-    gUnk_0203862C <<= 8;
+    gUnk_0203862C = (u32)gUnk_0203862C << 8;
     gUnk_0203862C |= *gUnk_02038628++;
 }
 
@@ -2242,10 +2242,8 @@ void _08117674(s32 p) {
     }
 }
 
-#ifdef NON_MATCHING
 void _08117A4C(s32 p) {
     s32 n;
-    s32 v;
     s32 c;
     s32 t;
     s32 i;
@@ -2260,21 +2258,21 @@ void _08117A4C(s32 p) {
     gUnk_02038638[5] = 0;
     gUnk_02038638[6] = 0;
     gUnk_02038638[7] = 0;
-    v = PeekByte();
+    c = PeekByte();
 
-    if (v & 0x80) {
+    if (c & 0x80) {
         gUnk_02038630 -= 1;
         c = 0;
     } else {
         gUnk_02038630 -= 3;
-        c = ((v >> 5) & 3) + 1;
+        c = ((c >> 5) & 3) + 1;
     }
 
-    gUnk_02038638[0] = (ReadBits(4) << 28) >> 28;
+    gUnk_02038638[0] = (s32)((u32)ReadBits(4) << 28) >> 28;
 
     if (c > 0) {
         if (ReadBits(1)) {
-            t = (ReadBits(4) << 28) >> 28;
+            t = (s32)((u32)ReadBits(4) << 28) >> 28;
             gUnk_02038638[1] = t;
 
             if (t >= 0) {
@@ -2284,7 +2282,7 @@ void _08117A4C(s32 p) {
 
         if (c > 1) {
             if (ReadBits(1)) {
-                t = (ReadBits(4) << 28) >> 28;
+                t = (s32)((u32)ReadBits(4) << 28) >> 28;
                 gUnk_02038638[2] = t;
 
                 if (t >= 0) {
@@ -2294,7 +2292,7 @@ void _08117A4C(s32 p) {
 
             if (c > 2) {
                 if (ReadBits(1)) {
-                    t = (ReadBits(4) << 28) >> 28;
+                    t = (s32)((u32)ReadBits(4) << 28) >> 28;
                     gUnk_02038638[3] = t;
 
                     if (t >= 0) {
@@ -2304,7 +2302,7 @@ void _08117A4C(s32 p) {
 
                 if (c > 3) {
                     if (ReadBits(1)) {
-                        t = (ReadBits(4) << 28) >> 28;
+                        t = (s32)((u32)ReadBits(4) << 28) >> 28;
                         gUnk_02038638[4] = t;
 
                         if (t >= 0) {
@@ -2317,12 +2315,22 @@ void _08117A4C(s32 p) {
     }
 
     func_081213C4(gUnk_02038638, gUnk_02038638, gUnk_09C436A8);
-    up = n - 1040 + p;
+    i = 0;
+    t = p - 1040;
     left = p - 1;
+    up = t + n;
 
-    for (i = 0; i <= 15; i++) {
-        gUnk_02038634[p + i] = gUnk_02038634[(up + i) & 0x7FF] + gUnk_02038634[left & 0x7FF] -
-                               gUnk_02038634[(up - 1) & 0x7FF] + gUnk_02038638[i >> 1];
+    for (; i <= 15; i++) {
+        s32 a;
+        s32 d;
+        a = up + i;
+        c = left;
+        d = up - 1;
+        a &= 0x7FF;
+        c &= 0x7FF;
+        d &= 0x7FF;
+        gUnk_02038634[p + i] = gUnk_02038634[a] + gUnk_02038634[c] -
+                               gUnk_02038634[d] + gUnk_02038638[i >> 1];
     }
 
     if (p <= 15) {
@@ -2331,6 +2339,3 @@ void _08117A4C(s32 p) {
         }
     }
 }
-#else
-INCLUDE_ASM("sroll/_08117A4C.s");
-#endif
