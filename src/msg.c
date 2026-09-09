@@ -11393,7 +11393,6 @@ void func_08074564(void) {
     gIntrCheck |= 2;
     func_08074504();
 }
-#ifdef NON_MATCHING
 void view_0(Work08074DC4* p, u8* arg) {
     UnkStruct_09EE3FB4* t;
     Ent09EE3CA0* u;
@@ -11417,9 +11416,12 @@ void view_0(Work08074DC4* p, u8* arg) {
     if (q->unk_10 != 255) {
         n = func_08074E40(p);
         q = (Obj0806180C*)gUnk_02039DC8->unk_00[n];
+        p->unk_00 = q->unk_04;
+        p->unk_04 = q->unk_08;
+    } else {
+        p->unk_00 = q->unk_04;
+        p->unk_04 = q->unk_08;
     }
-    p->unk_00 = q->unk_04;
-    p->unk_04 = q->unk_08;
     gUnk_02039DC8->unk_48 = p->unk_00 - 0x7800;
     gUnk_02039DC8->unk_4C = p->unk_04 - 0x5000;
     gUnk_02039DC8->unk_50 = p->unk_00;
@@ -11447,9 +11449,6 @@ void view_0(Work08074DC4* p, u8* arg) {
         }
     }
 }
-#else
-INCLUDE_ASM("msg/view_0.s");
-#endif
 
 void func_080746D8(void) {
     u8 i;
