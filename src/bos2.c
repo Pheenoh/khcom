@@ -1902,6 +1902,7 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
     s32 lo;
     s32 hi;
     s32 x;
+    u8 setFlag = 0;
 
     v1 = -((gUnk_0203ACC4 + 1) << 11);
     v2 = -((gUnk_0203ACD4 + 1) << 11);
@@ -1924,31 +1925,21 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             if (x > lo) {
                 if (*a <= v2) {
                     *out = v2;
-
-                    if (x > hi - 0x1000) {
-                        goto setbit;
-                    }
-
-                    return 0;
+                    setFlag = x > hi - 0x1000;
+                } else {
+                    *out = v3;
+                    *p = hi;
+                    return 1;
                 }
-
-                *out = v3;
-                *p = hi;
-                return 1;
             } else {
                 if (*a <= v1) {
                     *out = v1;
-
-                    if (x > lo - 0x1000) {
-                        goto setbit;
-                    }
-
-                    return 0;
+                    setFlag = x > lo - 0x1000;
+                } else {
+                    *out = v2;
+                    *p = lo;
+                    return 1;
                 }
-
-                *out = v2;
-                *p = lo;
-                return 1;
             }
         } else if (gUnk_0203ACD4 < gUnk_0203ACC0) {
             hi = 0x21200;
@@ -1958,17 +1949,12 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             if (x <= lo) {
                 if (*a <= v1) {
                     *out = v1;
-
-                    if (x > lo - 0x1000) {
-                        goto setbit;
-                    }
-
-                    return 0;
+                    setFlag = x > lo - 0x1000;
+                } else {
+                    *out = v2;
+                    *p = lo;
+                    return 1;
                 }
-
-                *out = v2;
-                *p = lo;
-                return 1;
             } else {
                 if (x < hi) {
                     *out = v2;
@@ -1977,17 +1963,12 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
                 if (*a <= v3) {
                     *out = v3;
-
-                    if (x < hi + 0x1000) {
-                        goto setbit;
-                    }
-
-                    return 0;
+                    setFlag = x < hi + 0x1000;
+                } else {
+                    *out = v2;
+                    *p = hi;
+                    return 1;
                 }
-
-                *out = v2;
-                *p = hi;
-                return 1;
             }
         } else {
             gUnk_0203B4E4 = 2;
@@ -2000,17 +1981,12 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v1) {
                 *out = v1;
-
-                if (x > lo - 0x1000) {
-                    goto setbit;
-                }
-
-                return 0;
+                setFlag = x > lo - 0x1000;
+            } else {
+                *out = v2;
+                *p = lo;
+                return 1;
             }
-
-            *out = v2;
-            *p = lo;
-            return 1;
         }
     } else if (gUnk_0203ACC4 < gUnk_0203ACD4) {
         lo = 0x1DA00;
@@ -2032,27 +2008,18 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v2) {
                 *out = v2;
-
-                if (x < lo + 0x1000) {
-                    goto setbit;
+                setFlag = (x < lo + 0x1000) || (x > hi - 0x1000);
+            } else {
+                if (x <= 0x205FF) {
+                    *out = v1;
+                    *p = lo;
+                    return 1;
                 }
 
-                if (x > hi - 0x1000) {
-                    goto setbit;
-                }
-
-                return 0;
-            }
-
-            if (x <= 0x205FF) {
-                *out = v1;
-                *p = lo;
+                *out = v3;
+                *p = hi;
                 return 1;
             }
-
-            *out = v3;
-            *p = hi;
-            return 1;
         } else if (gUnk_0203ACD4 < gUnk_0203ACC0) {
             hi = 0x21200;
             gUnk_0203B4E4 = 4;
@@ -2066,31 +2033,21 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
             if (x < hi) {
                 if (*a <= v2) {
                     *out = v2;
-
-                    if (x < lo + 0x1000) {
-                        goto setbit;
-                    }
-
-                    return 0;
+                    setFlag = x < lo + 0x1000;
+                } else {
+                    *out = v1;
+                    *p = lo;
+                    return 1;
                 }
-
-                *out = v1;
-                *p = lo;
-                return 1;
             } else {
                 if (*a <= v3) {
                     *out = v3;
-
-                    if (x < hi + 0x1000) {
-                        goto setbit;
-                    }
-
-                    return 0;
+                    setFlag = x < hi + 0x1000;
+                } else {
+                    *out = v2;
+                    *p = hi;
+                    return 1;
                 }
-
-                *out = v2;
-                *p = hi;
-                return 1;
             }
         } else {
             gUnk_0203B4E4 = 5;
@@ -2103,17 +2060,12 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v2) {
                 *out = v2;
-
-                if (x < lo + 0x1000) {
-                    goto setbit;
-                }
-
-                return 0;
+                setFlag = x < lo + 0x1000;
+            } else {
+                *out = v1;
+                *p = lo;
+                return 1;
             }
-
-            *out = v1;
-            *p = lo;
-            return 1;
         }
     } else {
         if (gUnk_0203ACD4 > gUnk_0203ACC0) {
@@ -2128,17 +2080,12 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v2) {
                 *out = v2;
-
-                if (x > hi - 0x1000) {
-                    goto setbit;
-                }
-
-                return 0;
+                setFlag = x > hi - 0x1000;
+            } else {
+                *out = v3;
+                *p = hi;
+                return 1;
             }
-
-            *out = v3;
-            *p = hi;
-            return 1;
         } else if (gUnk_0203ACD4 < gUnk_0203ACC0) {
             hi = 0x21200;
             gUnk_0203B4E4 = 7;
@@ -2151,17 +2098,12 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
 
             if (*a <= v3) {
                 *out = v3;
-
-                if (x < hi + 0x1000) {
-                    goto setbit;
-                }
-
-                return 0;
+                setFlag = x < hi + 0x1000;
+            } else {
+                *out = v2;
+                *p = hi;
+                return 1;
             }
-
-            *out = v2;
-            *p = hi;
-            return 1;
         } else {
             gUnk_0203B4E4 = 8;
             *out = v2;
@@ -2169,8 +2111,9 @@ u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
         }
     }
 
-setbit:
-    ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
+    if (setFlag) {
+        ((BtlWork*)gBtlWork->unk_07C)->unk_034 |= 0x2000000;
+    }
     return 0;
 }
 #else
