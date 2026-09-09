@@ -13277,7 +13277,145 @@ u8 func_0808EF80(u8* work, u16 dir) {
     return 1;
 }
 
-INCLUDE_ASM("card/func_0808F0C0.s");
+typedef struct UnkStruct_0808F0C0 {
+    u8 unk_000[0x798];
+    AnimState unk_798;
+    u8 unk_7B0[0x10];
+    s16 unk_7C0;
+    s16 unk_7C2;
+    u8 unk_7C4[4];
+    u8 unk_7C8;
+} UnkStruct_0808F0C0;
+
+typedef struct UnkStruct_09035898 {
+    s16* unk_00;
+    s16 unk_04;
+    u8 unk_06[2];
+} UnkStruct_09035898;
+
+#ifndef VERSION_JP
+extern UnkStruct_09035898 gUnk_09035898[];
+extern UnkStruct_09035898 gUnk_090358D0[];
+#endif
+
+u8 func_0808F0C0(UnkStruct_0808F0C0* w, u16 keys) {
+    if (w->unk_7C2 == 1 && (u16)w->unk_7C0 > 10) {
+        switch (keys) {
+        case 64:
+            w->unk_7C2--;
+            break;
+        case 128:
+            w->unk_7C2++;
+            break;
+        case 32:
+            w->unk_7C0 = 10;
+            break;
+        case 16:
+            w->unk_7C0 = 0;
+            break;
+        }
+    }
+    if (w->unk_7C2 == 3 && (u16)w->unk_7C0 > 10) {
+        switch (keys) {
+        case 64:
+            w->unk_7C2--;
+            break;
+        case 128:
+            w->unk_7C2++;
+            break;
+        case 32:
+            w->unk_7C0 = 10;
+            break;
+        case 16:
+            w->unk_7C0 = 0;
+            break;
+        }
+    }
+#if defined(VERSION_JP) || defined(VERSION_EU)
+#ifdef VERSION_JP
+    if (w->unk_7C2 == 4 && (u16)w->unk_7C0 > 9) {
+#else
+    if (w->unk_7C2 == 5 && (u16)w->unk_7C0 > 9) {
+#endif
+        switch (keys) {
+        case 64:
+#ifdef VERSION_JP
+            w->unk_7C2 -= 2;
+#else
+            w->unk_7C2--;
+#endif
+            break;
+        case 128:
+            w->unk_7C2++;
+            break;
+        case 32:
+            w->unk_7C0 = 9;
+            break;
+        case 16:
+            w->unk_7C0 = 0;
+            break;
+        }
+    }
+#endif
+    if (w->unk_7C0 > 14) {
+        w->unk_7C0 = 0;
+    }
+    if (w->unk_7C0 < 0) {
+        w->unk_7C0 = 14;
+    }
+#ifdef VERSION_EU
+    if (w->unk_7C2 > 7) {
+#else
+    if (w->unk_7C2 > 6) {
+#endif
+        w->unk_7C2 = 0;
+    }
+    if (w->unk_7C2 < 0) {
+#ifdef VERSION_EU
+        w->unk_7C2 = 7;
+#else
+        w->unk_7C2 = 6;
+#endif
+    }
+#ifndef VERSION_JP
+    if (w->unk_7C0 > gUnk_09035898[w->unk_7C2].unk_04 - 1) {
+        w->unk_7C0 = 0;
+    }
+    if (w->unk_7C0 < 0) {
+        w->unk_7C0 = gUnk_09035898[w->unk_7C2].unk_04 - 1;
+    }
+    if (w->unk_7C2 > gUnk_090358D0[w->unk_7C0].unk_04 - 1) {
+        w->unk_7C2 = 0;
+    }
+    if (w->unk_7C2 < 0) {
+        w->unk_7C2 = gUnk_090358D0[w->unk_7C0].unk_04 - 1;
+    }
+#endif
+#ifdef VERSION_EU
+    if (w->unk_7C2 == 7 && w->unk_7C0 > 9) {
+#else
+    if (w->unk_7C2 == 6 && w->unk_7C0 > 9) {
+#endif
+        if (w->unk_7C0 == 13 && keys == 32) {
+            w->unk_7C0 = 9;
+            AnimStart(&w->unk_798, 0, 1);
+#ifdef VERSION_EU
+            w->unk_7C8 = 0;
+#endif
+        } else {
+            w->unk_7C0 = 14;
+            AnimStart(&w->unk_798, 1, 1);
+#ifdef VERSION_EU
+            w->unk_7C8 = 1;
+#endif
+        }
+        return 0;
+    }
+    return 1;
+}
+#ifdef VERSION_EU
+INCLUDE_ASM("card/func_eu_0808E94C.s");
+#endif
 void func_0808F258(u8 a) {
     u32 base;
 
