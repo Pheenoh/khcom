@@ -22,6 +22,9 @@ extern u16* gUnkEu_09F66004[];
 extern void* gUnkEu_09F6FDB4[];
 extern u16 gUnkEu_090CE9EA[];
 extern void* gUnkEu_09F6FDDC[];
+extern u8 gUnkEu_09538324[];
+extern u8 gUnkEu_09538B24[];
+extern u8 gUnkEu_09539324[];
 extern u16 gUnkEu_090CE9F4[];
 extern void** gUnkEu_09F72BFC[];
 extern void** gUnkEu_09F74360[];
@@ -9311,7 +9314,7 @@ u8 func_080863C0(u8* work, void* a) {
     return 1;
 #endif
 }
-u8 func_08086650(u8* work, void* a);
+u8 func_08086650(UnkStruct_0808DB04* w, void* a);
 
 #ifndef VERSION_EU
 u8 func_080864A4(u8* work, void* a) {
@@ -9370,8 +9373,72 @@ u8 func_080864A4(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_080864A4.s");
 #endif
-INCLUDE_ASM("card/func_08086650.s");
-INCLUDE_ASM("card/func_08086860.s");
+u8 func_08086650(UnkStruct_0808DB04* w, void* a) {
+    func_08006120(0, 16);
+    switch (w->unk_8D0) {
+    case 0:
+#ifdef VERSION_EU
+        LoadBgMap(0, gUnkEu_09538324, 0x180);
+        LoadBgMap(1, gUnkEu_09538B24, 0x180);
+        LoadBgMap(2, gUnkEu_09539324, 0x180);
+#else
+        LoadBgMap(0, gUnk_09519AB8, 0x180);
+        LoadBgMap(1, gUnk_0951A2B8, 0x180);
+        LoadBgMap(2, gUnk_0951AAB8, 0x180);
+#endif
+        w->unk_8D0++;
+        break;
+    case 1:
+        func_0808CBB4(w->unk_8A2, 0);
+        func_0808CBB4(w->unk_8A4, 1);
+        func_0808CBB4(w->unk_8A6, 2);
+        func_0808CBB4(w->unk_8A8, 3);
+        func_0808CDE8((u8*)w, w->unk_8C0);
+        w->unk_8D0++;
+        break;
+    case 2:
+        func_0808D0A4(0);
+        func_0808D0A4(1);
+        func_0808D0A4(2);
+        w->unk_8D0++;
+        break;
+    case 3:
+        func_0808D258(0);
+        func_0808D258(1);
+        func_0808D258(2);
+        w->unk_8D0++;
+        break;
+    case 4:
+        func_0808D16C((u8)GetActiveDeckIndex());
+        func_0808D594();
+        w->unk_850 = 0x4800;
+        w->unk_854 = 0x2800;
+        w->unk_886 = w->unk_8C0;
+        SetTaskUpdate(a, func_0808686C);
+        w->unk_8B1 = 1;
+        func_0808CD48((u8*)w);
+        func_0808D6C4((u8*)w);
+        w->unk_848 = gUnk_090356EC[w->unk_884] << 8;
+        w->unk_84C = gUnk_090356F2[(s16)w->unk_886] << 8;
+        w->unk_4BC = LoadObjTiles(gUnk_090A583E, 0x620);
+#ifdef VERSION_EU
+        w->unk_018 = LoadObjTiles(gUnkEu_09F6FDDC[gLanguage], gUnkEu_090CE9F4[gLanguage]);
+#elif defined(VERSION_US)
+        if (gGameState.flags & 8) {
+            w->unk_018 = LoadObjTiles(gUnk_090A418E, 0x320);
+        } else {
+            w->unk_018 = LoadObjTiles(gUnk_090A3E46, 0x320);
+        }
+#else
+        w->unk_018 = LoadObjTiles(gUnk_090A418E, 0x320);
+#endif
+        w->unk_4C0 = LoadObjPalette(gUnk_096144F8, 32);
+        w->unk_8D0 = 0;
+        w->unk_8B7 = 16;
+        return 1;
+    }
+    return 1;
+}
 u8 func_0808686C(u8* work, void* a) {
     *(void**)&work[0x4F0] = AnimUpdate(&work[CARDWORK(0x800)]);
     *(void**)&work[0x4F4] = AnimUpdate(&work[CARDWORK(0x818)]);

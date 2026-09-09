@@ -440,7 +440,6 @@ TARGET_FUNC_SIZE = {
         "func_0808D258": 0x1fc,
         "func_080A6C50": 0xc8,
         "func_0808686C": 0x11c,
-        "func_08086860": 0,
         "func_0808A650": 0x194,
         "func_0808A7E4": 0x130,
         "func_0808B068": 0x1a0,
