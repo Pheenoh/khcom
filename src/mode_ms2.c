@@ -2,6 +2,10 @@
 #include "mode_ms2.h"
 #include "gba/keys.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+#endif
+
 extern u8 gUnk_09A3D23C[];
 
 UnkStruct_0810718C* gUnk_02035E28;
@@ -415,7 +419,6 @@ void func_08107280(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_081073F0(void) {
     UnkStruct_0810718C* p;
     u16 idx;
@@ -457,8 +460,16 @@ void func_081073F0(void) {
         gUnk_02035E74 = LoadObjPalette(gUnk_09A3D2FC + p->unk_04 * 32, 32);
         q = &gUnk_02035F98;
         *q = func_08065B6C(func_08093C18(p->unk_00), gUnk_02035F94);
+#ifdef VERSION_EU
+        {
+            void** strings = gUnk_09EE90D0[p->unk_00];
+            q = &gUnk_02035FA0;
+            *q = func_08065B6C(strings[gLanguage], gUnk_02035F9C);
+        }
+#else
         q = &gUnk_02035FA0;
         *q = func_08065B6C(gUnk_09EE90D0[p->unk_00], gUnk_02035F9C);
+#endif
     } else {
         gUnk_02035F3C = 0;
         gUnk_02035F40 = 0;
@@ -472,9 +483,6 @@ void func_081073F0(void) {
         gUnk_02035FA0 = 0;
     }
 }
-#else
-INCLUDE_ASM("mode_ms2/func_081073F0.s");
-#endif
 
 s16 func_081075C0(s16 a, s16 b) {
     return b + a * 5;
