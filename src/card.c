@@ -396,7 +396,8 @@ void func_0807CD48(UnkStruct_02034AAC* p);
 s32 func_08093AC8(u16 a);
 u8 func_0809254C(UnkStruct_08093838* w, void* a);
 u8 func_080A11CC(u8* work, void* a);
-u8 func_0809F730(u8* work, void* a);
+struct UnkStruct_0809F730;
+u8 func_0809F730(struct UnkStruct_0809F730* w, void* a);
 u8 func_0808B208(u8* work);
 u8 func_0808AB48(struct UnkStruct_080889DC* w, void* a);
 u8 func_08087438(UnkStruct_0808DB04* w, void* a);
@@ -24559,7 +24560,207 @@ u8 func_0809F390(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_0809F390.s");
 #endif
-INCLUDE_ASM("card/func_0809F730.s");
+extern u8 gUnk_09EE7F48[];
+extern u8 gUnk_09EE7F30[];
+extern u8 gUnk_09EE790C[];
+u8 func_0809FBCC(u8* work, void* a);
+
+typedef struct UnkStruct_0809F730 {
+    void* unk_000[8];
+#ifdef VERSION_EU
+    u8 unk_020[0x34 - 0x20];
+#else
+    u8 unk_020[0x6DC - 0x20];
+#endif
+    void* unk_6DC;
+    void* unk_6E0;
+    void* unk_6E4;
+    void* unk_6E8;
+    void* unk_6EC;
+    void* unk_6F0;
+    void* unk_6F4;
+    void* unk_6F8;
+    TaskPool pool;
+    AnimState unk_710;
+    void* unk_728;
+    void* unk_72C;
+    void* unk_730;
+    AnimState unk_734;
+    void* unk_74C;
+    s16 unk_750[3];
+    s16 unk_756[3];
+    s16 unk_75C[3];
+    s16 unk_762[3];
+    u8 unk_768[0xE];
+    s16 unk_776;
+    u8 unk_778[0xC];
+    u16 unk_784[4];
+    u16 unk_78C[4];
+    u16 unk_794[4];
+    u16 unk_79C[4];
+    s16 unk_7A4;
+    u8 unk_7A6[0xA];
+    s8 unk_7B0;
+    s8 unk_7B1;
+    s8 unk_7B2[3];
+    s8 unk_7B5;
+    s8 unk_7B6;
+    u8 unk_7B7[6];
+    u8 unk_7BD;
+    u8 unk_7BE;
+    u8 unk_7BF;
+    u8 unk_7C0;
+    u8 unk_7C1;
+    u8 unk_7C2[2];
+    u8 unk_7C4;
+    u8 unk_7C5;
+    u8 unk_7C6;
+    u8 unk_7C7;
+} UnkStruct_0809F730;
+
+typedef struct UnkStruct_0809F730_Args {
+    u8* done;
+    u32 flags : 16;
+    u32 amount : 16;
+} UnkStruct_0809F730_Args;
+
+u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
+    u8 i;
+
+    if (w->unk_7C5 == 0) {
+#ifndef VERSION_US
+        UnkStruct_080A1A44_Args args;
+        args.unk_00 = 192;
+        args.unk_04 = 60;
+        args.unk_08 = 0;
+        args.unk_0C = 0;
+        TaskCreate(&w->pool, gTaskDescLVUPEFFECT, &args);
+        m4aSongNumStart(148);
+#endif
+        w->unk_7C5++;
+    }
+    for (i = 0; i < 3; i++) {
+        if (i != w->unk_7B0) {
+            s32 x = w->unk_750[i] << 8;
+            s32 y = w->unk_75C[i] << 8;
+            ApproachValue(&x, -0x10000, w->unk_7B2[i]);
+            ApproachValue(&y, -0xF800, w->unk_7B2[i]);
+            w->unk_750[i] = x >> 8;
+            w->unk_75C[i] = y >> 8;
+        } else {
+            s32 x = w->unk_756[i] << 8;
+            s32 y = w->unk_762[i] << 8;
+            ApproachValue(&x, 0x2000, w->unk_7B2[i]);
+            ApproachValue(&y, 0x3100, w->unk_7B2[i]);
+            w->unk_756[i] = x >> 8;
+            w->unk_762[i] = y >> 8;
+        }
+        if (w->unk_7B2[i] > 0) {
+            w->unk_7B2[i]--;
+        }
+    }
+    if (w->unk_7B2[0] == 0) {
+        for (i = 0; i < 3; i++) {
+            if (i != w->unk_7B0 && w->unk_000[i] != 0) {
+                ReleaseObjTiles(w->unk_000[i]);
+                w->unk_000[i] = 0;
+            }
+        }
+        if (w->unk_7C7 == 0) {
+            switch (w->unk_7B0) {
+            case 0: {
+                s32 amount = func_0800FA58();
+                UnkStruct_0809F730_Args args;
+                w->unk_7C4 = 1;
+                args.amount = amount;
+                args.done = &w->unk_7C4;
+                args.flags = 0x8000;
+                TaskCreate(&w->pool, gUnk_09EE7F48, &args);
+                break;
+            }
+            case 1:
+                if (!(gGameState.flags & 8)) {
+                    s32 amount = func_0800FA7C();
+                    UnkStruct_0809F730_Args args;
+                    w->unk_7C4 = 1;
+                    args.amount = amount;
+                    args.done = &w->unk_7C4;
+                    args.flags = 0;
+                    TaskCreate(&w->pool, gUnk_09EE7F48, &args);
+                } else {
+                    s32 amount = func_0800FAC4();
+                    UnkStruct_0809F730_Args args;
+                    w->unk_7C4 = 1;
+                    args.amount = amount;
+                    args.done = &w->unk_7C4;
+                    args.flags = 0;
+                    gGameState.unk_178++;
+                    TaskCreate(&w->pool, gUnk_09EE7F48, &args);
+                }
+                break;
+            case 2:
+                if (!(gGameState.flags & 8)) {
+                    w->unk_7C4 = 1;
+                    TaskCreate(&w->pool, gUnk_09EE7F30, &w->unk_7C4);
+                } else {
+                    s32 amount = func_0800FAA0();
+                    UnkStruct_0809F730_Args args;
+                    w->unk_7C4 = 1;
+                    args.amount = amount;
+                    args.done = &w->unk_7C4;
+                    args.flags = 0x4000;
+                    TaskCreate(&w->pool, gUnk_09EE7F48, &args);
+                }
+                break;
+            }
+            func_080A096C(gGameState.unk_0F8, w->unk_784);
+            func_080A09C0((u16)gGameState.cp, w->unk_78C);
+            func_080A096C(gGameState.unk_0FC, w->unk_794);
+            func_080A0944(gGameState.unk_0FE, w->unk_79C);
+            w->unk_7C7 = 1;
+        }
+    }
+    {
+        s32 y = w->unk_776 << 8;
+        ApproachValue(&y, 0x3000, w->unk_7B6);
+        w->unk_7B6--;
+        w->unk_776 = y >> 8;
+    }
+    TaskPoolUpdate(&w->pool);
+    w->unk_7BE++;
+    if (w->unk_7BE == 32) {
+        w->unk_7BE = 0;
+        w->unk_7C1 ^= 1;
+    }
+    if (w->unk_7A4 == 180) {
+        if (GetKeysPressed() & 1) {
+            if (*(u32*)&gBtlWork->unk_100[0xC] == 151) {
+                func_0800516C(0, gUnk_09EE790C, 2, 1);
+            } else {
+                func_0800516C(1, gUnk_09EE790C, 2, 1);
+            }
+            w->unk_7B1 = 16;
+            w->unk_7B5 = 16;
+            w->unk_7B2[w->unk_7B0] = 16;
+            w->unk_7BF = 16;
+            w->unk_7BD = 3;
+            w->unk_7C1 = 0;
+            w->unk_7C4 = 0;
+            gBtlWork->unk_0FA--;
+            if (gBtlWork->unk_0FA == 0) {
+                SetTaskUpdate(a, (void*)func_0809FBCC);
+            } else {
+                SetTaskUpdate(a, (void*)func_080A11CC);
+            }
+            m4aSongNumStart(102);
+        }
+    } else {
+        w->unk_7A4++;
+    }
+    w->unk_74C = AnimUpdate(&w->unk_710);
+    w->unk_730 = AnimUpdate(&w->unk_734);
+    return 1;
+}
 #ifdef NON_MATCHING
 u8 func_0809FBCC(u8* work, void* a) {
     s32 v1;
