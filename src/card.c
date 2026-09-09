@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "anim.h"
+#include "obj.h"
 #include "text_types.h"
 #include "taskpool.h"
 #include "key.h"
@@ -8,6 +9,20 @@
 #include "card.h"
 
 u8 func_080892E8(u8* work, void* a);
+extern u8 gUnk_09618CD8[];
+extern u8 gUnk_093F4578[];
+extern u8 gUnk_09EF1170[];
+extern u8 gUnk_09EF1150[];
+extern u8 gUnk_0908BB80[];
+extern u8 gUnk_09613E98[];
+extern u8 gUnk_0908BFB2[];
+extern u8 gUnk_09618D18[];
+#ifdef VERSION_EU
+extern u8 gUnkEu_0916292A[];
+extern u8 gUnkEu_091633A4[];
+extern u8 gUnkEu_09162FB8[];
+extern u8 gUnkEu_09162C8C[];
+#endif
 
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
@@ -20159,7 +20174,163 @@ void func_0809BB18(u8* work) {
     work[0x31] = 0;
     gUnk_02039DD4->unk_0C8 = 256;
 }
+#ifdef NON_MATCHING
+typedef struct UnkStruct_0809BB4C {
+    void* unk_00;
+    ObjPalette* unk_04;
+    void* unk_08;
+    ObjPalette* unk_0C;
+    void* unk_10;
+    ObjPalette* unk_14;
+    void* unk_18;
+    ObjPalette* unk_1C;
+    void* unk_20;
+    CardSlot* unk_24;
+    void* unk_28;
+    void* unk_2C;
+    u16 unk_30;
+    u8 unk_32[2];
+    s32 unk_34;
+    s32 unk_38;
+    TaskPool unk_3C;
+    u8 unk_50;
+    u8 unk_51;
+    u8 unk_52;
+    u8 unk_53;
+    AnimState unk_54;
+    AnimState unk_6C;
+    u8 unk_84;
+    u8 unk_85;
+    u8 unk_86;
+    u8 unk_87;
+    u8 unk_88;
+    u8 unk_89;
+    u8 unk_8A;
+    u8 unk_8B;
+    u8 unk_8C;
+    u8 unk_8D[3];
+} UnkStruct_0809BB4C;
+
+void func_0809BB4C(UnkStruct_0809BB4C* w) {
+    u8 n = 0;
+    u8 i;
+    s32 j;
+    Deck* deck;
+    u32 zero0 = 0;
+    u32 zero1;
+    u32 zero2;
+
+    CpuSet(&zero0, w, 0x05000024);
+    gUnk_0203A9D0 = EwramAlloc(0x2C);
+    w->unk_24 = EwramAlloc(0x4B0);
+    zero1 = 0;
+    CpuSet(&zero1, gUnk_0203A9D0, 0x0500000B);
+    zero2 = 0;
+    CpuSet(&zero2, w->unk_24, 0x0500012C);
+    deck = GetActiveDeck();
+    w->unk_08 = AllocObjTiles(0x120, 0);
+    w->unk_0C = LoadObjPalette(gUnk_09618CD8, 32);
+    func_08002A10(w->unk_08, gUnk_093F4578);
+    AnimInit(&w->unk_54, gUnk_09EF1170, gUnk_09EF1150);
+    AnimStart(&w->unk_54, 0, 1);
+    w->unk_28 = AnimGetGfx(&w->unk_54);
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 1:
+        w->unk_00 = LoadObjTiles(gUnkEu_0916292A, 0x340);
+        break;
+    case 2:
+        w->unk_00 = LoadObjTiles(gUnkEu_091633A4, 0x3C0);
+        break;
+    case 3:
+        w->unk_00 = LoadObjTiles(gUnkEu_09162FB8, 0x3C0);
+        break;
+    case 4:
+        w->unk_00 = LoadObjTiles(gUnkEu_09162C8C, 0x300);
+        break;
+    default:
+        w->unk_00 = LoadObjTiles(gUnk_0908BB80, 0x3C0);
+        break;
+    }
+#else
+    w->unk_00 = LoadObjTiles(gUnk_0908BB80, 0x3C0);
+#endif
+    w->unk_04 = LoadObjPalette(gUnk_09613E98, 32);
+    w->unk_20 = LoadObjTiles(gUnk_0908BFB2, 0x3C0);
+    w->unk_10 = AllocObjTiles(0x3C0, 0);
+    w->unk_14 = LoadObjPalette(gUnk_09618D18, 32);
+    func_08002A10(w->unk_10, gUnk_093F47E4);
+    AnimInit(&w->unk_6C, gUnk_09EF1194, gUnk_09EF1180);
+    AnimStart(&w->unk_6C, 0, 1);
+    w->unk_2C = AnimGetGfx(&w->unk_6C);
+    w->unk_18 = LoadObjTiles(gUnk_0905F03C, 0x80);
+    w->unk_1C = LoadObjPalette(gUnk_08F69BA4, 32);
+    func_08006238(0, 16, 16);
+    func_080062F4((u16)(w->unk_04->unk_06 + 16), 1);
+    func_080062F4((u16)(w->unk_14->unk_06 + 16), 1);
+    func_080062F4((u16)(w->unk_0C->unk_06 + 16), 1);
+    func_080062F4((u16)(w->unk_1C->unk_06 + 16), 1);
+    for (i = 0; i < 99; i++) {
+        if (deck->cards[i] != 0xFFFF) {
+            u32 card = gCardCollection[deck->cards[i]];
+            if (!(0x8000 & card)) {
+                u32 id = card & 0xFFF;
+                if (gCardDefs[id].unk_2A != 3) {
+                    if (gCardDefs[id].unk_2A != 2) {
+                        w->unk_24[n].unk_00 = id;
+                        w->unk_24[n].unk_04 = i;
+                        w->unk_24[n].unk_06 = n;
+                        w->unk_24[n].unk_07 = 0;
+                        n++;
+                    }
+                }
+            }
+        }
+    }
+    for (j = 0; n < 10;) {
+        if (deck->cards[j] != 0xFFFF) {
+            u32 card = gCardCollection[deck->cards[j]];
+            if (!(0x8000 & card)) {
+                u32 id = card & 0xFFF;
+                if (gCardDefs[id].unk_2A != 3) {
+                    if (gCardDefs[id].unk_2A != 2) {
+                        w->unk_24[n].unk_00 = id;
+                        w->unk_24[n].unk_04 = j;
+                        w->unk_24[n].unk_06 = n;
+                        w->unk_24[n].unk_07 = 0;
+                        n++;
+                    }
+                }
+            }
+        }
+        j++;
+        if (j > 98) {
+            j = 0;
+        }
+    }
+    w->unk_50 = n;
+    TaskPoolInit(&w->unk_3C, w->unk_50 + 1);
+    ListPoolInit(gUnk_0203A9D0);
+    *(void**)&gUnk_0203A9D0[0x10] = 0;
+    gUnk_0203A9D0[0x28] = 0;
+    TaskPoolInit(gUnk_0203A9D0 + 0x14, 24);
+    func_0809C294((u8*)w);
+    w->unk_51 = 10;
+    w->unk_52 = 0;
+    w->unk_84 = 0;
+    w->unk_85 = 1;
+    w->unk_86 = 1;
+    w->unk_87 = 0;
+    w->unk_8A = 0;
+    w->unk_8B = 16;
+    w->unk_8C = 16;
+    w->unk_30 = 0xFF80;
+    w->unk_34 = -0x800;
+    w->unk_38 = 0xA000;
+}
+#else
 INCLUDE_ASM("card/func_0809BB4C.s");
+#endif
 u8 func_0809BE80(u8* work, void* a) {
     UnkStruct_0809C534* n;
     s32 t;
