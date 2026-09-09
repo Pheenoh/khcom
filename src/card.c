@@ -10716,7 +10716,7 @@ INCLUDE_ASM("card/func_0808778C.s");
 #endif
 
 #ifdef NON_MATCHING
-void func_08087B98(u8* work) {
+void func_08087B98(u8* work, u8 mode) {
     UnkStruct_0808E890* node;
     UnkStruct_0808E890* p;
     s32 i;
@@ -10764,7 +10764,251 @@ void func_08087B98(u8* work) {
 #else
 INCLUDE_ASM("card/func_08087B98.s");
 #endif
-INCLUDE_ASM("card/func_08087CD4.s");
+typedef struct UnkStruct_080889DC {
+    u8 unk_000[0x4F0];
+    void* unk_4F0;
+    void* unk_4F4;
+    u8 unk_4F8[0x2D0];
+#ifdef VERSION_EU
+    u8 unk_7C8[4];
+#endif
+    u8 taskpool[0x14];
+    u8 cardpool[0x14];
+    u8 unk_7F0[0x10];
+    AnimState unk_800;
+    AnimState unk_818;
+    AnimState unk_830;
+    s32 unk_848;
+    s32 unk_84C;
+    s32 unk_850;
+    s32 unk_854;
+    u8 unk_858[0x2C];
+    s16 unk_884;
+    s16 unk_886;
+    u8 unk_888[0x12];
+    u16 unk_89A[4];
+    u16 unk_8A2;
+    u16 unk_8A4;
+    u16 unk_8A6;
+    u16 unk_8A8;
+    u8 unk_8AA[2];
+    u16 unk_8AC;
+    u8 unk_8AE[3];
+    u8 unk_8B1;
+    u8 unk_8B2;
+    u8 unk_8B3[2];
+    s8 unk_8B5;
+    s8 unk_8B6;
+    u8 unk_8B7;
+    u8 unk_8B8[8];
+    u8 unk_8C0;
+    u8 unk_8C1;
+    u8 unk_8C2[7];
+    u8 unk_8C9;
+    u8 unk_8CA;
+    u8 unk_8CB;
+    u8 unk_8CC[2];
+    s8 unk_8CE;
+    u8 unk_8CF;
+    u8 unk_8D0;
+    u8 unk_8D1;
+    u8 unk_8D2;
+    u8 unk_8D3;
+    u16 unk_8D4;
+} UnkStruct_080889DC;
+
+u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
+    u8 n;
+
+    if (w->unk_8C9 != 0) {
+        TaskPoolUpdate(w->taskpool);
+        TaskPoolUpdate(w->cardpool);
+
+        if (GetKeysPressed() & 8) {
+            w->unk_8D2 = 7;
+            w->unk_8CB = 1;
+        }
+
+        return 1;
+    }
+
+    if (w->unk_8CB != 0) {
+        if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
+            SetTaskUpdate(a, (void*)func_0808B208);
+            func_08006184(0, 4);
+            m4aSongNumStart(103);
+            return 1;
+        }
+
+        w->unk_8CB = 0;
+    }
+
+    w->unk_4F0 = AnimUpdate(&w->unk_800);
+    w->unk_4F4 = AnimUpdate(&w->unk_818);
+
+    switch ((u16)GetKeysRepeat()) {
+    case 32:
+    case 96:
+    case 160:
+        if (w->unk_884 > 0) {
+            (w->unk_884)--;
+            w->unk_8B7 = 1;
+
+            if ((u8)func_0808DED0((u8*)w, 32) != 0) {
+                m4aSongNumStart(101);
+            }
+        }
+
+        func_0808DDD0((u8*)w);
+        break;
+    case 16:
+    case 80:
+    case 144:
+        if (w->unk_884 <= 0) {
+            (w->unk_884)++;
+            w->unk_8B7 = 1;
+
+            if ((u8)func_0808DED0((u8*)w, 16) != 0) {
+                m4aSongNumStart(101);
+            }
+        }
+
+        func_0808DDD0((u8*)w);
+        break;
+    case 64:
+        n = w->unk_886;
+
+        if (w->unk_886 > 0) {
+            w->unk_886 = w->unk_886 - 1;
+        } else {
+            w->unk_886 = 4;
+        }
+
+        w->unk_8B7 = 1;
+        func_0808DED0((u8*)w, 64);
+
+        if ((s8)n != w->unk_886) {
+            m4aSongNumStart(101);
+        }
+
+        func_0808DDD0((u8*)w);
+        break;
+    case 128:
+        n = w->unk_886;
+
+        if (w->unk_886 <= 3) {
+            w->unk_886 = w->unk_886 + 1;
+        } else {
+            w->unk_886 = 0;
+        }
+
+        w->unk_8B7 = 1;
+        func_0808DED0((u8*)w, 128);
+
+        if ((s8)n != w->unk_886) {
+            m4aSongNumStart(101);
+        }
+
+        func_0808DDD0((u8*)w);
+        break;
+    }
+
+    switch ((u16)GetKeysPressed()) {
+    case 2:
+        func_0808E364((u8*)w, 0);
+        n = w->unk_8B5;
+        w->unk_884 = (s8)n;
+        n = w->unk_8B6;
+        w->unk_886 = (s8)n;
+        w->unk_848 = gUnk_0903595E[w->unk_884] << 8;
+        w->unk_84C = gUnk_09035964[w->unk_886] << 8;
+        func_0808D828((u8*)w);
+        func_0808DE28(0);
+        w->unk_8B1 = 4;
+        SetTaskUpdate(a, (void*)func_080897CC);
+        m4aSongNumStart(104);
+        return 1;
+    case 1:
+        if ((u16)func_08085B38(w->unk_8C0) <= 98) {
+            func_0808E19C((u8*)w);
+            func_0808D0A4(w->unk_8C0);
+            func_0808D258(w->unk_8C0);
+            w->unk_8A2 = func_08085844(0, w->unk_8C0);
+            w->unk_8A4 = func_08085844(1, w->unk_8C0);
+            w->unk_8A6 = func_08085844(2, w->unk_8C0);
+            w->unk_8A8 = func_08085844(3, w->unk_8C0);
+            func_0808CBB4((u8)w->unk_8A2, 0);
+            func_0808CBB4((u8)w->unk_8A4, 1);
+            func_0808CBB4((u8)w->unk_8A6, 2);
+            func_0808CBB4((u8)w->unk_8A8, 3);
+            func_0808D594();
+            func_0808500C(w->unk_8C0, w->unk_89A);
+            func_0808CC58(w->unk_89A[0], 0);
+            func_0808CC58(w->unk_89A[1], 1);
+            func_0808CC58(w->unk_89A[2], 2);
+            func_0808CC58(w->unk_89A[3], 3);
+            w->unk_8B7 = 1;
+            if ((u8)func_0808DED0((u8*)w, 0) == 0) {
+                func_08087B98((u8*)w, 0);
+                if (w->unk_8D4 != 0) {
+                    u8 ready;
+                    func_0808E364((u8*)w, 0);
+                    w->unk_884 = w->unk_8B5;
+                    w->unk_886 = w->unk_8B6;
+                    while ((ready = func_0808E890((u8*)w)) == 0) {
+                        if (--w->unk_884 < 0) {
+                            if (--w->unk_886 < 0) {
+                                func_0808CA78((u8*)w, 0);
+                                w->unk_886 = ready;
+                            }
+                            w->unk_884 = 2;
+                        }
+                    }
+                    w->unk_848 = gUnk_0903595E[w->unk_884] << 8;
+                    w->unk_84C = gUnk_09035964[w->unk_886] << 8;
+                    func_0808D828((u8*)w);
+                    w->unk_8B1 = 4;
+                    SetTaskUpdate(a, (void*)func_080897CC);
+                    return 1;
+                } else {
+                    func_0808E364((u8*)w, 0);
+                    w->unk_884 = w->unk_8C1;
+                    w->unk_8B7 = 1;
+                    w->unk_8B1 = 6;
+                    SetTaskUpdate(a, (void*)func_080882DC);
+                    w->unk_8D4 = 0;
+                    return 1;
+                }
+            } else {
+                func_0808DDD0((u8*)w);
+            }
+        } else {
+            m4aSongNumStart(105);
+            TaskCreate(w->cardpool, gUnk_09EE7FD8 + 24, &w->unk_8C9);
+            return 1;
+        }
+        break;
+    case 512:
+        func_0808E2F0((UnkStruct_0808DB04*)w);
+        SetTaskUpdate(a, (void*)func_08089EC0);
+        m4aSongNumStart(103);
+        return 1;
+    case 8:
+        if ((u8)func_0808E750((u8*)w) != 0 && (u8)func_0808E79C((u8*)w) != 0) {
+            SetTaskUpdate(a, (void*)func_0808B208);
+            func_08006184(0, 4);
+            m4aSongNumStart(104);
+            w->unk_8D2 = 7;
+        }
+        return 1;
+    }
+    func_0805F1C0(&w->unk_848, gUnk_0903571A[w->unk_884] << 8);
+    func_0805F1C0(&w->unk_84C, gUnk_0903571E[w->unk_886] << 8);
+    TaskPoolUpdate(w->taskpool);
+    TaskPoolUpdate(w->cardpool);
+    return 1;
+}
+
 #ifdef NON_MATCHING
 u8 func_080882DC(u8* work, void* a) {
     u16 i;
@@ -11080,55 +11324,7 @@ u8 func_08088768(u8* work, void* a) {
     return 1;
 #endif
 }
-typedef struct UnkStruct_080889DC {
-    u8 unk_000[0x4F0];
-    void* unk_4F0;
-    void* unk_4F4;
-    u8 unk_4F8[0x2D0];
-#ifdef VERSION_EU
-    u8 unk_7C8[4];
-#endif
-    u8 taskpool[0x14];
-    u8 cardpool[0x14];
-    u8 unk_7F0[0x10];
-    AnimState unk_800;
-    AnimState unk_818;
-    AnimState unk_830;
-    s32 unk_848;
-    s32 unk_84C;
-    s32 unk_850;
-    s32 unk_854;
-    u8 unk_858[0x2C];
-    s16 unk_884;
-    s16 unk_886;
-    u8 unk_888[0x1A];
-    u16 unk_8A2;
-    u16 unk_8A4;
-    u16 unk_8A6;
-    u16 unk_8A8;
-    u8 unk_8AA[2];
-    u16 unk_8AC;
-    u8 unk_8AE[3];
-    u8 unk_8B1;
-    u8 unk_8B2;
-    u8 unk_8B3[2];
-    s8 unk_8B5;
-    s8 unk_8B6;
-    u8 unk_8B7;
-    u8 unk_8B8[8];
-    u8 unk_8C0;
-    u8 unk_8C1;
-    u8 unk_8C2[7];
-    u8 unk_8C9;
-    u8 unk_8CA;
-    u8 unk_8CB;
-    u8 unk_8CC[2];
-    s8 unk_8CE;
-    u8 unk_8CF;
-    u8 unk_8D0;
-    u8 unk_8D1;
-    u8 unk_8D2;
-} UnkStruct_080889DC;
+
 
 u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
     w->unk_4F0 = AnimUpdate(&w->unk_800);
