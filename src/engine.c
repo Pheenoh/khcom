@@ -2705,28 +2705,24 @@ void FadeReset(void) {
     CpuSet(&zero, gFadeWork, 0x05000000 | (sizeof(FadeWork) / 4));
 }
 
-#ifdef NON_MATCHING
-void LoadPalette(void* src, void* dst, s32 size) {
+void LoadPalette(void* src, void* dst, u16 size) {
     PaletteSlot* base;
     s32 idx;
     s32 count;
     s32 i;
-    void* p;
 
     base = gFadeWork->slots;
     count = (u16)size / 32;
     idx = ((s32)dst - 0x05000000) / 32;
-    p = LoadPaletteWithEffect(src, dst, size);
+    src = LoadPaletteWithEffect(src, dst, size);
 
     for (i = 0; i < count; i++) {
-        base[idx + i].unk_00 = (u8*)p + i * 32;
+        base[idx + i].unk_00 = (u8*)src + i * 32;
         base[idx + i].unk_04 = (u8*)dst + i * 32;
         base[idx + i].unk_29 = 1;
     }
 }
-#else
-INCLUDE_ASM("engine/LoadPalette.s");
-#endif
+
 
 void func_08005C60(u16 a) {
     PaletteSlot* p = gFadeWork->slots;

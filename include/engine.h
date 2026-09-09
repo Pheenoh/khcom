@@ -212,7 +212,7 @@ void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(AnimState* a);
 u8 AnimIsFinished(AnimState* a);
 u16 AnimGetFrame(AnimState* a);
-void LoadPalette(void* src, void* dst, s32 size);
+void LoadPalette(void* src, void* dst, u16 size);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 u8 func_08006314(void);
 void LoadObjPaletteBank(u16 bank, void* src);
