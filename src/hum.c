@@ -935,7 +935,6 @@ void task_hum_ansem_0(AnsemWork* work) {
     work->base.unk_184 = (u32)gUnk_0813F0B8;
 }
 
-#ifdef NON_MATCHING
 u8 task_hum_ansem_1(AnsemWork* work) {
     AnsemWork* w;
     HumActor* act;
@@ -945,6 +944,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
     s32 b;
     s32 c;
     s32 d;
+
 
     w = work;
     act = &work->base.unk_040;
@@ -1094,11 +1094,11 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         }
 
         if (act->unk_34 & 4) {
-            d = act->unk_04 - 0x2800;
-            act->unk_04 += (x - d) >> 4;
+            s32 d = act->unk_04 - 0x2800;
+            act->unk_04 = act->unk_04 + ((x - d) >> 4);
         } else {
-            d = act->unk_04 + 0x2800;
-            act->unk_04 += (x - d) >> 4;
+            s32 d = act->unk_04 + 0x2800;
+            act->unk_04 = act->unk_04 + ((x - d) >> 4);
         }
         act->unk_08 += (y - act->unk_08) >> 4;
 
@@ -1116,26 +1116,22 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         case 4:
             w->unk_188.unk_34 |= 1;
 
-            if (act->unk_34 & 4) {
-                if (func_08011F78(0x140, act->unk_04 - 0x2000, act->unk_08, act->unk_0C, 20, 12, 24)) {
-                    m4aSongNumStart(0x261);
-                }
-            } else {
-                if (func_08011F78(0x140, act->unk_04 + 0x2000, act->unk_08, act->unk_0C, 20, 12, 24)) {
-                    m4aSongNumStart(0x261);
-                }
+            if ((act->unk_34 & 4)
+                ? func_08011F78(0x140, act->unk_04 - 0x2000, act->unk_08, act->unk_0C, 20, 12, 24)
+                : func_08011F78(0x140, act->unk_04 + 0x2000, act->unk_08, act->unk_0C, 20, 12, 24)) {
+                m4aSongNumStart(0x261);
             }
             break;
         }
 
-        if (!AnimIsFinished(&w->unk_188.anim)) {
+        if (AnimIsFinished(&w->unk_188.anim)) {
+            w->unk_188.unk_34 &= ~1;
+            func_0801AF08(act);
+            work->base.unk_170 = 0;
+            work->base.unk_150 = 0;
+        } else {
             work->base.unk_150++;
-            break;
         }
-        w->unk_188.unk_34 &= ~1;
-        func_0801AF08(act);
-        work->base.unk_170 = 0;
-        work->base.unk_150 = 0;
         break;
     case 21:
         if ((s16)work->base.unk_150 == 0) {
@@ -1163,12 +1159,12 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             break;
         }
 
-        if (!AnimIsFinished(&w->unk_188.anim)) {
+        if (AnimIsFinished(&w->unk_188.anim)) {
+            work->base.unk_170 = 22;
+            work->base.unk_150 = 0;
+        } else {
             work->base.unk_150++;
-            break;
         }
-        work->base.unk_170 = 22;
-        work->base.unk_150 = 0;
         break;
     case 22:
         if ((s16)work->base.unk_150 == 0) {
@@ -1191,7 +1187,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
             func_08019068(gUnk_0813F140, &w->base.unk_00C->anim, 4, 0, w->base.unk_00C->tiles);
             w->unk_1D0 = 0x800;
-            w->unk_188.unk_28 = (((u16)(GetRandom() % 65) << 8) - 0x2000) + x;
+            w->unk_188.unk_28 = x + (d = ((u16)(GetRandom() % 65) << 8) - 0x2000);
             w->unk_188.unk_2C = y;
             w->unk_188.unk_30 = 0;
             w->unk_188.unk_34 |= 4;
@@ -1271,14 +1267,14 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         func_0800592C(&w->unk_188.unk_30, act->unk_0C, w->unk_1D6);
         w->unk_1D6--;
 
-        if (w->unk_1D6 > 0) {
+        if (w->unk_1D6 <= 0) {
+            func_08006120(0, 30);
+            func_0801AF08(act);
+            work->base.unk_170 = 0;
+            work->base.unk_150 = 0;
+        } else {
             work->base.unk_150++;
-            break;
         }
-        func_08006120(0, 30);
-        func_0801AF08(act);
-        work->base.unk_170 = 0;
-        work->base.unk_150 = 0;
         break;
     case 29:
         if ((s16)work->base.unk_150 == 0) {
@@ -1294,11 +1290,11 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             act->unk_34 |= 0x100008000;
 
             if (act->unk_34 & 4) {
-                d = act->unk_04 - 0x1000;
-                act->unk_04 += (act->unk_14 - d) >> 2;
+                s32 d = act->unk_04 - 0x1000;
+                act->unk_04 = act->unk_04 + ((act->unk_14 - d) >> 2);
             } else {
-                d = act->unk_04 + 0x1000;
-                act->unk_04 += (act->unk_14 - d) >> 2;
+                s32 d = act->unk_04 + 0x1000;
+                act->unk_04 = act->unk_04 + ((act->unk_14 - d) >> 2);
             }
             *(s32*)&w->unk_1C8 += (0 - *(s32*)&w->unk_1C8) >> 2;
             *(s32*)&w->unk_1CC += (0 - *(s32*)&w->unk_1CC) >> 2;
@@ -1386,19 +1382,19 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         }
         func_0801475C(w->unk_188.unk_28 - a, w->unk_188.unk_2C - b, w->unk_188.unk_30 - c);
 
-        if (w->unk_1D6 > 0) {
-            work->base.unk_150++;
-            break;
-        }
-        w->unk_188.unk_34 &= ~1;
-        work->base.unk_150 = 0;
+        if (w->unk_1D6 <= 0) {
+            w->unk_188.unk_34 &= ~1;
+            work->base.unk_150 = 0;
 
-        if (w->unk_1D8 > 3) {
-            work->base.unk_170 = 28;
-            break;
+            if (w->unk_1D8 > 3) {
+                work->base.unk_170 = 28;
+                break;
+            }
+            work->base.unk_170 = 27;
+            w->unk_1D8++;
+        } else {
+            work->base.unk_150++;
         }
-        work->base.unk_170 = 27;
-        w->unk_1D8++;
         break;
     case 28:
         if ((s16)work->base.unk_150 == 0) {
@@ -1491,9 +1487,6 @@ u8 task_hum_ansem_1(AnsemWork* work) {
     }
     return func_0800E5F0(&work->base);
 }
-#else
-INCLUDE_ASM("hum/task_hum_ansem_1.s");
-#endif
 
 void task_hum_ansem_2(HumWork* work) {
     func_0800EFE8(work);
