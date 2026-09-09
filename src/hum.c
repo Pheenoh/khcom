@@ -2823,7 +2823,6 @@ void task_hum_laxene_0(LaxeneWork* work) {
     TaskPoolInit(&work->unk_194, 12);
 }
 
-#ifdef NON_MATCHING
 u8 task_hum_laxene_1(LaxeneWork* work) {
     LaxeneWork* w;
     HumActor* act;
@@ -2831,10 +2830,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
     s32 y;
     s32 z;
     s16 d;
-    s32 v;
-    s32 t;
     s32 u;
-    s32 r;
 
     w = work;
     act = &work->base.unk_040;
@@ -2939,7 +2935,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         }
         work->base.unk_158 = 0;
 
-        if (act->unk_04 < work->base.unk_15C) {
+        if (act->unk_04 < (s32)work->base.unk_15C) {
             act->unk_34 &= ~4;
         } else {
             act->unk_34 |= 4;
@@ -3167,24 +3163,21 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         }
 
         if (act->unk_34 & 4) {
-            v = act->unk_04 - 0x1000;
+            s32 v = act->unk_04 - 0x1000;
+            act->unk_04 += (x - v) >> 4;
         } else {
-            v = act->unk_04 + 0x1000;
+            s32 v = act->unk_04 + 0x1000;
+            act->unk_04 += (x - v) >> 4;
         }
-        act->unk_04 += (x - v) >> 4;
 
         if (work->base.anim.timer == 0) {
             switch (AnimGetGfxIndex(&work->base.anim)) {
             case 2:
                 func_08019A30();
 
-                if (act->unk_34 & 4) {
-                    r = func_08011F78(0x131, act->unk_04 - 0x1800, act->unk_08, act->unk_0C, 8, 24, 50);
-                } else {
-                    r = func_08011F78(0x131, act->unk_04 + 0x1800, act->unk_08, act->unk_0C, 8, 24, 50);
-                }
-
-                if (r) {
+                if ((act->unk_34 & 4)
+                    ? func_08011F78(0x131, act->unk_04 - 0x1800, act->unk_08, act->unk_0C, 8, 24, 50)
+                    : func_08011F78(0x131, act->unk_04 + 0x1800, act->unk_08, act->unk_0C, 8, 24, 50)) {
                     m4aSongNumStart(0x2A3);
                     w->unk_18E |= 1;
                 }
@@ -3192,13 +3185,9 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             case 8:
                 func_08019A30();
 
-                if (act->unk_34 & 4) {
-                    r = func_08011F78(0x132, act->unk_04 - 0x1000, act->unk_08, act->unk_0C, 16, 24, 50);
-                } else {
-                    r = func_08011F78(0x132, act->unk_04 + 0x1000, act->unk_08, act->unk_0C, 16, 24, 50);
-                }
-
-                if (r) {
+                if ((act->unk_34 & 4)
+                    ? func_08011F78(0x132, act->unk_04 - 0x1000, act->unk_08, act->unk_0C, 16, 24, 50)
+                    : func_08011F78(0x132, act->unk_04 + 0x1000, act->unk_08, act->unk_0C, 16, 24, 50)) {
                     m4aSongNumStart(0x2A3);
                     w->unk_18E |= 1;
                 }
@@ -3224,10 +3213,10 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             AnimReset(&work->base.anim);
 
-            if (work->base.unk_152 & 1) {
-                func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 14, 0, w->base.tiles);
-            } else {
+            if ((work->base.unk_152 & 1) == 0) {
                 func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 13, 0, w->base.tiles);
+            } else {
+                func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 14, 0, w->base.tiles);
             }
             w->unk_188 = 0;
             w->unk_18E &= ~1;
@@ -3268,24 +3257,21 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         }
 
         if (act->unk_34 & 4) {
-            v = act->unk_04 - 0x1000;
+            s32 v = act->unk_04 - 0x1000;
+            act->unk_04 += (x - v) >> 3;
         } else {
-            v = act->unk_04 + 0x1000;
+            s32 v = act->unk_04 + 0x1000;
+            act->unk_04 += (x - v) >> 3;
         }
-        act->unk_04 += (x - v) >> 3;
 
         if (work->base.anim.timer == 0) {
             switch (AnimGetGfxIndex(&work->base.anim)) {
             case 2:
                 func_08019A30();
 
-                if (act->unk_34 & 4) {
-                    r = func_08011F78(0x131, act->unk_04 - 0x1800, act->unk_08, act->unk_0C, 8, 24, 50);
-                } else {
-                    r = func_08011F78(0x131, act->unk_04 + 0x1800, act->unk_08, act->unk_0C, 8, 24, 50);
-                }
-
-                if (r) {
+                if ((act->unk_34 & 4)
+                    ? func_08011F78(0x131, act->unk_04 - 0x1800, act->unk_08, act->unk_0C, 8, 24, 50)
+                    : func_08011F78(0x131, act->unk_04 + 0x1800, act->unk_08, act->unk_0C, 8, 24, 50)) {
                     m4aSongNumStart(0x2A3);
                     w->unk_18E |= 1;
 
@@ -3298,13 +3284,9 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             case 8:
                 func_08019A30();
 
-                if (act->unk_34 & 4) {
-                    r = func_08011F78(0x132, act->unk_04 - 0x1000, act->unk_08, act->unk_0C, 16, 24, 50);
-                } else {
-                    r = func_08011F78(0x132, act->unk_04 + 0x1000, act->unk_08, act->unk_0C, 16, 24, 50);
-                }
-
-                if (r) {
+                if ((act->unk_34 & 4)
+                    ? func_08011F78(0x132, act->unk_04 - 0x1000, act->unk_08, act->unk_0C, 16, 24, 50)
+                    : func_08011F78(0x132, act->unk_04 + 0x1000, act->unk_08, act->unk_0C, 16, 24, 50)) {
                     m4aSongNumStart(0x2A3);
                     w->unk_18E |= 1;
 
@@ -3321,12 +3303,12 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             work->base.unk_150 = 0;
 
             if (w->unk_18E & 1) {
-                if ((s16)work->base.unk_152 <= 3) {
-                    work->base.unk_170 = 31;
-                    work->base.unk_152++;
-                } else {
+                if ((s16)work->base.unk_152 > 3) {
                     func_0801AF08(act);
                     work->base.unk_170 = 0;
+                } else {
+                    work->base.unk_170 = 31;
+                    work->base.unk_152++;
                 }
             } else {
                 func_0801AF08(act);
@@ -3341,21 +3323,23 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             act->unk_34 ^= 4;
 
             if (act->unk_34 & 4) {
-                t = ((GetRandom() % 57) << 8) + 0x1800;
+                s32 t = ((GetRandom() % 57) << 8) + 0x1800;
                 act->unk_04 = x + t;
             } else {
-                t = ((GetRandom() % 57) << 8) + 0x1800;
+                s32 t = ((GetRandom() % 57) << 8) + 0x1800;
                 act->unk_04 = x - t;
             }
-            t = ((GetRandom() % 27) << 8) - 0xD00;
-            act->unk_08 = y + t;
+            {
+                s32 t = ((GetRandom() % 27) << 8) - 0xD00;
+                act->unk_08 = y + t;
+            }
             act->unk_0C = 0;
             AnimReset(&work->base.anim);
 
-            if (GetRandom() & 1) {
-                func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 14, 0, w->base.tiles);
-            } else {
+            if ((GetRandom() & 1) == 0) {
                 func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 13, 0, w->base.tiles);
+            } else {
+                func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 14, 0, w->base.tiles);
             }
             w->unk_188 = 0;
             w->unk_18E &= ~1;
@@ -3397,24 +3381,21 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         }
 
         if (act->unk_34 & 4) {
-            v = act->unk_04 - 0x1000;
+            s32 v = act->unk_04 - 0x1000;
+            act->unk_04 += (x - v) >> 3;
         } else {
-            v = act->unk_04 + 0x1000;
+            s32 v = act->unk_04 + 0x1000;
+            act->unk_04 += (x - v) >> 3;
         }
-        act->unk_04 += (x - v) >> 3;
 
         if (work->base.anim.timer == 0) {
             switch (AnimGetGfxIndex(&work->base.anim)) {
             case 2:
                 func_08019A30();
 
-                if (act->unk_34 & 4) {
-                    r = func_08011F78(0x131, act->unk_04 - 0x1800, act->unk_08, act->unk_0C, 8, 24, 50);
-                } else {
-                    r = func_08011F78(0x131, act->unk_04 + 0x1800, act->unk_08, act->unk_0C, 8, 24, 50);
-                }
-
-                if (r) {
+                if ((act->unk_34 & 4)
+                    ? func_08011F78(0x131, act->unk_04 - 0x1800, act->unk_08, act->unk_0C, 8, 24, 50)
+                    : func_08011F78(0x131, act->unk_04 + 0x1800, act->unk_08, act->unk_0C, 8, 24, 50)) {
                     m4aSongNumStart(0x2A3);
                     w->unk_18E |= 1;
                 }
@@ -3422,13 +3403,9 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             case 8:
                 func_08019A30();
 
-                if (act->unk_34 & 4) {
-                    r = func_08011F78(0x132, act->unk_04 - 0x1000, act->unk_08, act->unk_0C, 16, 24, 50);
-                } else {
-                    r = func_08011F78(0x132, act->unk_04 + 0x1000, act->unk_08, act->unk_0C, 16, 24, 50);
-                }
-
-                if (r) {
+                if ((act->unk_34 & 4)
+                    ? func_08011F78(0x132, act->unk_04 - 0x1000, act->unk_08, act->unk_0C, 16, 24, 50)
+                    : func_08011F78(0x132, act->unk_04 + 0x1000, act->unk_08, act->unk_0C, 16, 24, 50)) {
                     m4aSongNumStart(0x2A3);
                     w->unk_18E |= 1;
                 }
@@ -3441,10 +3418,10 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             work->base.unk_152--;
 
             if ((s16)work->base.unk_152 > 0) {
-                if (GetRandom() % 6 == 0) {
-                    work->base.unk_170 = 33;
-                } else {
+                if (GetRandom() % 6 != 0) {
                     work->base.unk_170 = 32;
+                } else {
+                    work->base.unk_170 = 33;
                 }
             } else {
                 func_0801AF08(act);
@@ -3460,14 +3437,16 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             act->unk_34 ^= 4;
 
             if (act->unk_34 & 4) {
-                t = ((GetRandom() % 41) << 8) + 0x5000;
+                s32 t = ((GetRandom() % 41) << 8) + 0x5000;
                 act->unk_04 = x + t;
             } else {
-                t = ((GetRandom() % 41) << 8) + 0x5000;
+                s32 t = ((GetRandom() % 41) << 8) + 0x5000;
                 act->unk_04 = x - t;
             }
-            t = ((GetRandom() % 49) << 8) - 0x1800;
-            act->unk_08 = y + t;
+            {
+                s32 t = ((GetRandom() % 49) << 8) - 0x1800;
+                act->unk_08 = y + t;
+            }
             act->unk_0C = 0;
             AnimReset(&work->base.anim);
             func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 12, 0, w->base.tiles);
@@ -3524,9 +3503,6 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
 
     return func_0800E5F0(&work->base);
 }
-#else
-INCLUDE_ASM("hum/task_hum_laxene_1.s");
-#endif
 
 void task_hum_laxene_2(LaxeneWork* work) {
     func_0800EFE8(&work->base);
