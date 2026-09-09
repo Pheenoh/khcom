@@ -10,6 +10,7 @@ extern void* gUnkEu_09F5D7E4[];
 extern u8 gUnkEu_095A3D74[];
 void eu_080059D4(s32 bg, void* tiles);
 void eu_080059F4(s32 bg, void* map);
+void eu_08005A1C(s32 bg, void* map, s32 x, s32 y);
 extern u32 gLanguage;
 extern void eu_08005ADC(s32 id);
 #define LANGSTR(x) (((void**)(x))[gLanguage])
@@ -7982,7 +7983,28 @@ INCLUDE_ASM("msg/event_seq_0.s");
 #endif
 
 #ifdef VERSION_EU
-INCLUDE_ASM("msg/eu_0806C734.s");
+u8 eu_0806C734(EventSeqWork* work) {
+    Ent09EE3CA0* u = gUnk_09EE3CA0[work->unk_2C];
+    if (u != NULL) {
+        if (u->unk_2E[0] == 1 || u->unk_2E[0] == 3) {
+            eu_080059D4(3, u->unk_00);
+        } else {
+            LoadBgTiles(3, u->unk_00, u->unk_18);
+        }
+        LoadBgPalette(3, u->unk_08, u->unk_1C);
+        if (u->unk_0C != NULL) {
+            if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
+                work->unk_3A = 1;
+                eu_08005A1C(3, u->unk_0C, u->unk_1E, u->unk_1F);
+            } else {
+                work->unk_3A = 0;
+                func_0800516C(3, u->unk_0C, u->unk_1E, u->unk_1F);
+            }
+            func_080051C4(3, 0, 0);
+        }
+    }
+    return 1;
+}
 INCLUDE_ASM("msg/eu_0806C7C8.s");
 INCLUDE_ASM("msg/eu_0806C848.s");
 INCLUDE_ASM("msg/eu_0806C974.s");
