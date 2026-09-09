@@ -218,10 +218,19 @@ u16 func_0810A000(PcWork* work, s32 a, s32 b) {
     return (0xEFFC - ((a >> 8) << 2)) | b;
 }
 
-#ifdef NON_MATCHING
+static inline u16* PcOamGfx(PcOam* oam) {
+    oam->attr[0] = oam->count;
+    return oam->attr;
+}
+
+static inline s32 PcLayerDepth(s32 index) {
+    return index * 1024 - 0x3300;
+}
+
 void func_0810A018(PcWork* work) {
     PcAnimStep* step;
     PcSpriteCmd* cmd;
+    PcSpriteCmd* cmds;
     PcSpriteDef* def;
     PcOam* oam;
     void* gfx;
@@ -231,7 +240,11 @@ void func_0810A018(PcWork* work) {
     s16 oy;
     s32 i;
     s32 j;
-    u16 t;
+    s16 t;
+    u16 mask;
+    s16 y;
+    s32 layer;
+    u16* attributes;
 
     if (work->unk_02C == 0) {
         return;
@@ -262,72 +275,72 @@ void func_0810A018(PcWork* work) {
 
     if (work->unk_00A != work->unk_00C) {
         if (work->unk_00A == 0) {
-            LoadPalette(gUnk_09D69274, gUnk_05000000, 32);
+            LoadPalette(gUnk_09D69274, (void*)0x05000000, 32);
         } else {
-            LoadPalette(gUnk_08F69BC4, gUnk_05000000, 32);
+            LoadPalette(gUnk_08F69BC4, (void*)0x05000000, 32);
         }
         work->unk_00C = work->unk_00A;
     }
     WorldToScreen(&sx, &sy, work->unk_020 - ox * 256, work->unk_024 - oy * 256, work->unk_028);
-    cmd = gUnk_09EF9C34[step->unk_20];
+    cmds = gUnk_09EF9C34[step->unk_20];
 
-    for (i = 23; i >= 0; i--) {
-        work->unk_2FC[i].count = 0;
+    for (j = 0; j < 24; j++) {
+        work->unk_2FC[j].count = 0;
     }
 
-    j = 0;
-
-    while (!(cmd->unk_00 & 0x80)) {
+    for (j = 0; !(cmds[j].unk_00 & 0x80); j++) {
+        cmd = &cmds[j];
         if (cmd->unk_00 & 1) {
-            DrawSprite(cmd->unk_04 + sx, cmd->unk_06 + sy, gUnk_09EFAB18[cmd->unk_01],
+            DrawSprite(sx + cmd->unk_04, sy + cmd->unk_06, gUnk_09EFAB18[cmd->unk_01],
                 work->tiles2[j], gfx, 0,
-                func_08109FF0(work, work->unk_024 + (cmd->unk_02 << 10) - 0x3300),
-                func_0810A000(work, work->unk_024 + (cmd->unk_02 << 10) - 0x3300, 1));
+                func_08109FF0(work, work->unk_024 + PcLayerDepth(cmd->unk_02)),
+                func_0810A000(work, work->unk_024 + PcLayerDepth(cmd->unk_02), 1));
         } else {
             def = gUnk_09EFBB18[cmd->unk_01];
             oam = &work->unk_2FC[cmd->unk_02];
+            mask = 0xFF;
             t = (u8)def->unk_02;
             if (t & 0x80) {
-                t |= 0xFF00;
+                t |= -256;
             }
 
-            if ((u16)((s16)((s16)t + cmd->unk_06) + sy + 7) <= 0xAE) {
-                oam->attr[oam->count * 3 + 1] = (def->unk_02 & 0xFF00) | ((cmd->unk_06 + def->unk_02 + 0x40) & 0xFF);
+            y = (s16)t;
+            y = (s16)(y + cmd->unk_06);
+            y = (s16)(y + sy);
+            if ((u16)(y + 7) <= 0xAE) {
+                oam->attr[oam->count * 3 + 1] = (def->unk_02 & 0xFF00) | (((u16)(def->unk_02 + 0x40) + cmd->unk_06) & mask);
                 oam->attr[oam->count * 3 + 2] = (def->unk_04 & 0xFE00) | ((def->unk_04 + cmd->unk_04) & 0x1FF);
                 oam->attr[oam->count * 3 + 3] = def->unk_06;
                 oam->count++;
             }
         }
-        cmd++;
-        j++;
+
     }
 
-    for (i = 23; i >= 0; i--) {
+    for (i = 0; i < 24; i++) {
         if (work->unk_2FC[i].count != 0) {
-            work->unk_2FC[i].attr[0] = work->unk_2FC[i].count;
-            DrawSprite(sx, sy - 0x40, work->unk_2FC[i].attr, work->tiles, gfx, 0,
-                func_08109FF0(work, work->unk_024 + i * 0x400 - 0x3400),
-                func_0810A000(work, work->unk_024 + i * 0x400 - 0x3400, 1));
+            layer = i * 0x400 - 0x3400;
+            attributes = PcOamGfx(&work->unk_2FC[i]);
+            DrawSprite(sx, sy - 0x40, attributes, work->tiles, gfx, 0,
+                func_08109FF0(work, work->unk_024 + layer),
+                func_0810A000(work, work->unk_024 + layer, 1));
         }
     }
 
     if (work->unk_02C == gUnk_09A4C278) {
-        gBtlWork->unk_0D8 = 24;
+        gBtlWork->unk_0D8 = i;
     } else {
         gBtlWork->unk_0D8 = 0xFFF6;
     }
-    WorldToScreen(&sx, &sy, work->unk_020 + ((-0x70 - ox) << 8), work->unk_024 + ((-0x64 - oy) << 8), work->unk_028);
+    WorldToScreen(&sx, &sy, work->unk_020 + ((-0x70 - ox) * 256), work->unk_024 + ((-0x64 - oy) * 256), work->unk_028);
 
     if (work->unk_032 != work->unk_036) {
         LoadBgTiles(1, gUnk_09A4AC84[step->unk_1E].unk_00, gUnk_09A4AC84[step->unk_1E].unk_04);
         LoadBgMap(1, gUnk_09A4AC84[step->unk_1E].unk_08, gUnk_09A4AC84[step->unk_1E].unk_0C);
         work->unk_036 = work->unk_032;
     }
-    SetBgScroll(1, 0x50 - sx, 8 - sy);
+    SetBgScroll(1, -sx + 0x50, -sy + 8);
 }
-#else
-INCLUDE_ASM("mode_backupstat/func_0810A018.s");
-#endif
 
 u8 func_0810A424(PcWork* work) {
     PcAnimStep* step;
