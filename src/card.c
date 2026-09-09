@@ -50,6 +50,7 @@ extern u8 gUnkEu_09534324[];
 extern s16 gUnkEu_090D1DFE[];
 extern s16 gUnkEu_090D1E04[];
 extern void* gUnkEu_08895AF4[];
+extern void* gUnkEu_08895C30[];
 extern void* gUnkEu_08895CF8[];
 extern void* gUnkEu_08895DBC[];
 #define LANGSTR(x) (((void**)(x))[gLanguage])
@@ -21039,7 +21040,39 @@ void func_080A2980(UnkStruct_080A2F54* w, u8* a) {
     a[0] = 1;
 }
 
-INCLUDE_ASM("card/func_080A2A80.s");
+void func_080A2A80(UnkStruct_080A2F54* w, u8* a) {
+    w->unk_78C = 0;
+    w->unk_78D = 0;
+    func_08065ACC(w, 0x50);
+    func_08065ACC(w->unk_280, 0x50);
+    func_08065ACC(w->unk_500, 0x50);
+#ifdef VERSION_JP
+    w->unk_78C = 0;
+    w->unk_78D = func_08065B6C(&gUnk_0815C204[0x80], w->unk_280);
+#elif defined(VERSION_EU)
+    w->unk_78D = func_08065B6C(eu_0805E924(gUnkEu_08895C30), w->unk_280);
+#else
+    w->unk_78D = func_08065B6C(&gUnk_0815C204[0xEA], w->unk_280);
+#endif
+    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
+    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->unk_792 = (250 - func_08065B08(w, w->unk_78C)) / 2;
+    w->unk_796 = 64;
+#ifdef VERSION_JP
+    w->unk_794 = (219 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
+#elif defined(VERSION_EU)
+    w->unk_794 = (240 - func_08065B54(w->unk_280, w->unk_78D)) / 2;
+#else
+    w->unk_794 = (240 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
+#endif
+    w->unk_798 = 62;
+    w->unk_790 = 0;
+    w->unk_7A4 = 0;
+    w->unk_7A0 = a;
+    a[0] = 1;
+}
+
 #ifdef VERSION_JP
 extern u8 gUnk_0814FBB0[];
 extern u8 gUnk_0814FBBC[];
