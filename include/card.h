@@ -555,7 +555,10 @@ typedef struct UnkStruct_0808C940 {
     TextSlot unk_A8[8];
     u8 unk_E8[0x3D4];
     void* unk_4BC;
-    u8 unk_4C0[0x1D4];
+    u8 unk_4C0[0x154];
+    TaskPool unk_614;
+    TaskPool unk_628;
+    u8 unk_63C[0x58];
     s32 unk_694;
     s32 unk_698;
     s32 unk_69C;
@@ -569,7 +572,8 @@ typedef struct UnkStruct_0808C940 {
     s16 unk_6DA;
     s16 unk_6DC;
     s16 unk_6DE;
-    u8 unk_6E0[0x0E];
+    u8 unk_6E0[0x0C];
+    s16 unk_6EC;
     s16 unk_6EE;
 #ifdef VERSION_EU
     u8 unk_6F0[0x168];
