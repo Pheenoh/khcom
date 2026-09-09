@@ -395,35 +395,52 @@ void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c) {
     gUnk_02039B68[1] = 0xDDDD;
 }
 
-#ifdef NON_MATCHING
 s32 func_080C5AA4(void) {
-    s32 i;
+    u16* param;
+    u16* send;
+    s32 firstAddress;
+    s32 address;
+    s32 value;
+    s32 clearValue;
+    u16* words;
+    s32 clearAddress;
 
     if (gUnk_0203C3A8 == 0) {
         if (gUnk_0203C3A0 == 0) {
             if (GetKeysPressed() & 1) {
                 gUnk_02039B68[0] = 0xFEFE;
+                send = gUnk_02039B68;
+                param = &gUnk_0203C3B0;
             } else if (GetKeysPressed() & 2) {
                 gUnk_02039B68[0] = 0xAFAF;
+                send = gUnk_02039B68;
+                param = &gUnk_0203C3B0;
             } else {
-                for (i = 0; i < 4; i++) {
-                    gUnk_02039B68[3 - i] = 0;
-                }
+                send = gUnk_02039B68;
+                param = &gUnk_0203C3B0;
+                firstAddress = (s32)send;
+                value = 0;
+                address = (s32)(send + 3);
+                do {
+                    *(u16*)address = value;
+                    address -= sizeof(u16);
+                } while (address >= firstAddress);
             }
-            gUnk_02039B68[1] = gUnk_0203C3B0;
+            send[1] = *param;
         } else {
             gUnk_02039B68[0] = 0xECEC;
         }
     } else {
-        for (i = 0; i < 4; i++) {
-            gUnk_02039B68[3 - i] = 0;
-        }
+        words = gUnk_02039B68;
+        clearValue = 0;
+        clearAddress = (s32)(words + 3);
+        do {
+            *(u16*)clearAddress = clearValue;
+            clearAddress -= sizeof(u16);
+        } while (clearAddress >= (s32)words);
     }
     return 0;
 }
-#else
-INCLUDE_ASM("chara/func_080C5AA4.s");
-#endif
 s32 func_080C5B50(void) {
     u16 c;
     u16 v;
