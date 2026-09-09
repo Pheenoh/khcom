@@ -1,6 +1,7 @@
 #include "macros.h"
 #include "mode_ms2.h"
 #include "gba/keys.h"
+extern u8 gUnk_0203A8C0[];
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
@@ -823,16 +824,14 @@ void func_08107A74(UnkStruct_0810718C* p) {
     func_081076D4();
 }
 
-#ifdef NON_MATCHING
 void func_08107B84(void) {
     s16* pd;
     vu32* dma;
     vu16 zero;
-    s16 i;
     s32 w;
     s16 k;
     s16 j;
-    s16 m;
+    s16 i;
     s16 a;
     u16 u;
     u16 n;
@@ -860,17 +859,22 @@ void func_08107B84(void) {
             if (t == gUnk_099937A0[j]) {
                 u = gUnk_09EE4C80[k * 10].unk_20;
 
-                for (m = 0; m <= 9; m++) {
-                    n = gUnk_0203C0A8[(u16)(k * 10 + m)];
+                for (i = 0; i <= 9; i++) {
+                    n = gUnk_0203A8C0[(u16)(k * 10 + i)];
                     if (n != 0) {
                         if (t != 4) {
                             gUnk_02035E48 += n;
                         }
-                        gUnk_02035E40[j] += n;
-                        gUnk_02035E28[a].unk_00 = u;
-                        gUnk_02035E28[a].unk_02 = k * 10;
-                        gUnk_02035E28[a].unk_04 = j;
-                        gUnk_02035E28[a].unk_06[m] = n;
+                        {
+                            s16* counts = gUnk_02035E40;
+                            s32 index = a;
+
+                            counts[j] += n;
+                            gUnk_02035E28[index].unk_00 = u;
+                            gUnk_02035E28[index].unk_02 = k * 10;
+                            gUnk_02035E28[index].unk_04 = j;
+                            gUnk_02035E28[index].unk_06[i] = n;
+                        }
                     }
                 }
             }
@@ -884,9 +888,6 @@ void func_08107B84(void) {
         *pd = a - w;
     }
 }
-#else
-INCLUDE_ASM("mode_ms2/func_08107B84.s");
-#endif
 
 u16 func_08107D24(void) {
     u16 keys;
