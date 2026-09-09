@@ -176,7 +176,9 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
 u8 func_0807FB5C(UnkStruct_08080268* w, void* a);
 void func_0807FD10(UnkStruct_08080268* w, u8 n);
 void func_0807FE30(UnkStruct_08080268* w, u8 n);
-void sub_0807E4C8(UnkStruct_08080268* w, CardSlot* slots, s32 idx, s32 n);
+void sub_0807E4C8(UnkStruct_08080268* w, CardSlot* slots, s8 kind, s32 n);
+u16 sub_0807E66C(CardSlot* out, u16* ids, u16 n, u8 kind);
+Deck* sub_08083EFC(void);
 void func_080A6F60(void** p);
 void func_080A7180(u8 a);
 void func_080A6EB4(u8* work, s32 id);
@@ -3752,7 +3754,119 @@ void func_0807E368(UnkStruct_08080268* w, u8 slot) {
     }
 }
 
+#ifdef NON_MATCHING
+void sub_0807E4C8(UnkStruct_08080268* w, CardSlot* slots, s8 kind, s32 n) {
+    Deck* deck;
+    u16 count;
+
+    switch (*(s32*)&gBtlWork->unk_100[0xC]) {
+    case 157:
+    case 179:
+        deck = &gUnk_09034084[20];
+        n = deck->unk_DC;
+        break;
+    case 158:
+        deck = &gUnk_09034084[4];
+        n = deck->unk_DC;
+        break;
+    case 159:
+        deck = &gUnk_09034084[1];
+        n = deck->unk_DC;
+        break;
+    case 160:
+        deck = &gUnk_09034084[2];
+        n = deck->unk_DC;
+        break;
+    case 161:
+        deck = &gUnk_09034084[5];
+        n = deck->unk_DC;
+        break;
+    case 162:
+        deck = &gUnk_09034084[0];
+        n = deck->unk_DC;
+        break;
+    case 163:
+        deck = &gUnk_09034084[3];
+        n = deck->unk_DC;
+        break;
+    case 164:
+        deck = &gUnk_09034084[7];
+        n = deck->unk_DC;
+        break;
+    case 165:
+        deck = &gUnk_09034084[13];
+        n = deck->unk_DC;
+        break;
+    case 166:
+        deck = &gUnk_09034084[14];
+        n = deck->unk_DC;
+        break;
+    case 177:
+        deck = &gUnk_09034084[19];
+        n = deck->unk_DC;
+        break;
+    case 167:
+        deck = &gUnk_09034084[17];
+        n = deck->unk_DC;
+        break;
+    case 168:
+        deck = &gUnk_09034084[6];
+        n = deck->unk_DC;
+        break;
+    case 169:
+        deck = &gUnk_09034084[9];
+        n = deck->unk_DC;
+        break;
+    case 170:
+        deck = &gUnk_09034084[10];
+        n = deck->unk_DC;
+        break;
+    case 171:
+        deck = &gUnk_09034084[16];
+        n = deck->unk_DC;
+        break;
+    case 172:
+        deck = &gUnk_09034084[18];
+        n = deck->unk_DC;
+        break;
+    case 173:
+        deck = &gUnk_09034084[12];
+        n = deck->unk_DC;
+        break;
+    case 174:
+        deck = &gUnk_09034084[11];
+        n = deck->unk_DC;
+        break;
+    case 175:
+        deck = &gUnk_09034084[8];
+        n = deck->unk_DC;
+        break;
+    case 176:
+        deck = &gUnk_09034084[15];
+        n = deck->unk_DC;
+        break;
+    default:
+        deck = sub_08083EFC();
+        n = 99;
+        break;
+    }
+
+    count = sub_0807E66C(slots, deck->cards, n, (u8)kind);
+    if (gBtlWork->unk_068 & 0x800) {
+        sub_0807842C((CardSlot*)w->unk_44[kind], count);
+    }
+    if (kind == 0) {
+        slots[count].unk_06 = 0;
+        slots[count].unk_07 = 0;
+        slots[count].unk_0A = 0;
+        slots[count].unk_00 = 0xFFFE;
+        slots[count].unk_04 = count;
+    }
+}
+
+#else
 INCLUDE_ASM("card/sub_0807E4C8.s");
+#endif
 
 u16 sub_0807E66C(CardSlot* out, u16* ids, u16 n, u8 kind) {
     u16 count = 0;
