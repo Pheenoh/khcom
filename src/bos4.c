@@ -2172,6 +2172,10 @@ u16 eu_080DA830(void) {
     return AnimGetId(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044);
 }
 
+u8 eu_080DA848(void) {
+    return AnimIsFinished(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044);
+}
+
 INCLUDE_ASM("bos4/eu_080DA80C.s");
 #endif
 
