@@ -1490,7 +1490,6 @@ void func_08116698(SrollWork* w, u8 flush) {
         w->unk_00 = t;
     }
 }
-#ifdef NON_MATCHING
 void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
     u16 fill;
     u16* p;
@@ -1520,7 +1519,7 @@ void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
 
     while (i < ch) {
         fill = v;
-        CpuSet(&fill, p, cw | CPU_SET_SRC_FIXED);
+        CpuSet(&fill, p, (((u32)(cw * 2) >> 1) & 0x1FFFFF) | CPU_SET_SRC_FIXED);
         p += w->unk_0A;
         i++;
     }
@@ -1532,9 +1531,6 @@ void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
         w->unk_00 = t;
     }
 }
-#else
-INCLUDE_ASM("sroll/func_081166F8.s");
-#endif
 
 void func_081167CC(void) {
 }
