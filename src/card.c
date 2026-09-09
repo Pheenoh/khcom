@@ -12,6 +12,8 @@ u8 func_080892E8(u8* work, void* a);
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
 extern u32 gLanguage;
+extern void** gUnkEu_09F72CC4[];
+extern void* gUnkEu_09F72CB0[];
 extern u16* gUnkEu_09F65FDC[];
 extern u16* gUnkEu_09F65FF0[];
 extern u16* gUnkEu_09F66004[];
@@ -19909,7 +19911,77 @@ u8 func_0809DE18(u8* p) {
 
     return 1;
 }
+#ifdef NON_MATCHING
+u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a) {
+    u16 id;
+    void** tiles;
+
+    switch (w->unk_19) {
+    case 1:
+        if (gUnk_02039DD4->unk_0CC != 37) {
+            w->unk_1E = gUnk_02039DD4->unk_0CC;
+            if (gUnk_02039DD4->unk_0CC == 0) {
+                gUnk_02039DD4->unk_0EB = 0;
+                return 0;
+            }
+#ifdef VERSION_EU
+            w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
+#endif
+            tiles = LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_08);
+            func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C],
+                         LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_00));
+#ifdef VERSION_EU
+            func_080038E4(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26],
+                         gUnkEu_09F72CB0[gLanguage]);
+#else
+            w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
+            func_080038E4(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+#endif
+            SetTaskUpdate(a, (void*)HCEffectName_1);
+        } else {
+            id = func_080792D0(&w->unk_20);
+            w->unk_1E = id;
+            tiles = LANGSTR(gUnk_08F7CBA8[id].unk_08);
+            func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
+                         LANGSTR(gUnk_08F7CBA8[id].unk_00));
+        }
+        break;
+    case 2:
+        if (gUnk_02039DD4->unk_0CE != 37) {
+            w->unk_1E = gUnk_02039DD4->unk_0CE;
+            if (gUnk_02039DD4->unk_0CE == 0) {
+                gUnk_02039DD4->unk_0EB = 0;
+                return 0;
+            }
+#ifdef VERSION_EU
+            w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
+#endif
+            tiles = LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_08);
+            func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C],
+                         LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_00));
+#ifdef VERSION_EU
+            func_080038E4(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26],
+                         gUnkEu_09F72CB0[gLanguage]);
+#else
+            w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
+            func_080038E4(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+#endif
+            SetTaskUpdate(a, (void*)HCEffectName_1);
+        } else {
+            id = func_080792D0(&w->unk_20);
+            w->unk_1E = id;
+            tiles = LANGSTR(gUnk_08F7CBA8[id].unk_08);
+            func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
+                         LANGSTR(gUnk_08F7CBA8[id].unk_00));
+        }
+        break;
+    }
+    return 1;
+}
+
+#else
 INCLUDE_ASM("card/func_0809DE30.s");
+#endif
 
 void HCEffectName_2(UnkStruct_0809DF7C* w) {
 #ifdef VERSION_EU
