@@ -21,7 +21,7 @@ typedef struct PcSpriteCmd {
     u8 unk_01;
     s16 unk_02;
     u16 unk_04;
-    u16 unk_06;
+    s16 unk_06;
     u8 unk_08[0x04];
 } PcSpriteCmd;
 
