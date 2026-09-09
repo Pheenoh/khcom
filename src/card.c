@@ -23618,7 +23618,95 @@ s32 func_080A4DAC(void) {
 
     return 0;
 }
-INCLUDE_ASM("card/func_080A4DCC.s");
+void func_080A4DCC(UnkStruct_080A4DCC* w, void* a) {
+    vu32 zero = 0;
+
+    CpuSet((void*)&zero, w, 0x05000052);
+    *(u64*)&w->unk_10C = *(u64*)a;
+    w->unk_114 = (UnkStruct_080A3F5C_Sel*)&gUnk_09EE8008[*(u16*)&w->unk_110];
+    w->unk_134 = func_0806BA74(1, 0);
+    func_080062F4(w->unk_134 + 16, 1);
+    w->unk_138[4] = 0;
+    w->unk_138[0] = 8;
+    w->unk_138[1] = 0;
+    w->unk_138[2] = 0;
+    w->unk_138[3] = 0;
+    w->unk_143 = 0;
+    w->unk_130 = 0;
+    w->unk_000 = 0;
+    w->unk_004 = 0;
+    w->unk_008 = 0;
+    w->unk_00C = 0;
+    w->unk_018 = 0;
+    w->unk_01C = 0;
+    w->unk_010 = 0;
+    w->unk_014 = 0;
+    w->unk_0C0 = 0;
+    w->unk_142 = 1;
+    w->unk_141 = 1;
+    w->unk_144 = 0;
+    ((u8*)&w->unk_13E)[1] = 0;
+    w->unk_140 = 0;
+    w->unk_145 = 0;
+    w->unk_146[0] = 1;
+#ifdef VERSION_JP
+    w->unk_138[3] = func_0806BDB8(0x4000, 0x4000, *(s32*)((u8*)w->unk_114 + 0x0C), (s32*)&w->unk_130);
+#else
+    if (w->unk_130 != 0) {
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+        case 1:
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        case 2:
+            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        case 4:
+            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        case 3:
+            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        default:
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        }
+#else
+        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+#endif
+    } else {
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+        case 1:
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        case 2:
+            w->unk_138[3] = func_0806BB44(0x4100, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        case 4:
+            w->unk_138[3] = func_0806BB44(0x4400, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        case 3:
+            w->unk_138[3] = func_0806BB44(0x4600, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        default:
+            w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+            break;
+        }
+#else
+        w->unk_138[3] = func_0806BB44(0x4D00, 0x4000, (s32)LANGSTR(*(void**)((u8*)w->unk_114 + 0x0C)), (s32*)&w->unk_130);
+#endif
+    }
+#endif
+    func_08065ACC(w->unk_020, 10);
+    func_08065ACC(w->unk_070, 10);
+    gUnk_0203A9D4 = 1;
+    gUnk_0203A9D8 = 0;
+    w->unk_138[1] = w->unk_138[3];
+    gUnk_02034B00 = (UnkStruct_02034AFC*)w;
+}
 
 u8 func_080A4F14(UnkStruct_080A3F5C* w, void* a) {
     void* pal;

@@ -1895,6 +1895,46 @@ typedef struct UnkStruct_080A3F5C_Entry {
 
 extern UnkStruct_080A3F5C_Entry* gUnk_09EE45DC[];
 
+typedef struct UnkStruct_080A4DCC {
+    void* unk_000;
+    void* unk_004;
+    void* unk_008;
+    void* unk_00C;
+    void* unk_010;
+    void* unk_014;
+    void* unk_018;
+    UnkStruct_080038C8* unk_01C;
+    u8 unk_020[0x50];
+    u8 unk_070[0x50];
+    s32 unk_0C0;
+    u8 unk_0C4[0x18];
+    u8 unk_0DC[0x18];
+    u8 unk_0F4[0x18];
+    s32 unk_10C;
+    u8 unk_110[0x03];
+    u8 unk_113;
+    UnkStruct_080A3F5C_Sel* unk_114;
+    s32 unk_118;
+    s32 unk_11C;
+    s32 unk_120;
+    s32 unk_124;
+    s32 unk_128;
+    void* unk_12C;
+    void* unk_130;
+    u16 unk_134;
+    u16 unk_136;
+    u8 unk_138[0x05];
+    u8 unk_13D;
+    s16 unk_13E;
+    u8 unk_140;
+    u8 unk_141;
+    u8 unk_142;
+    u8 unk_143;
+    u8 unk_144;
+    u8 unk_145;
+    u8 unk_146[0x02];
+} UnkStruct_080A4DCC;
+
 typedef struct UnkStruct_080A3F5C {
     void* unk_000;
     void* unk_004;
