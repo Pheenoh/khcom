@@ -42,7 +42,7 @@ typedef struct Work0806180C {
     u8 unk_038[4];
     u16 unk_03C;
     u16 unk_03E;
-    u8 unk_040[4];
+    AnimState* unk_040;
     u16 unk_044;
     u8 unk_046[0xE];
     u8 unk_054[0x128];
@@ -720,7 +720,7 @@ u8 func_0806FAB8(Work0806180C* p, void* a);
 u16 GetRandom(void);
 u8 func_0806E570(Work0806180C* p);
 void func_0806E7A8(Work0806180C* p);
-void func_08070AD4(Work0806180C* p);
+s32 func_08070AD4(Work0806180C* p);
 u8 func_0806EA28(Work0806180C* p, void* a);
 u8 func_0806EB94(Work0806180C* p, void* a);
 u8 func_0806EBE0(Work0806180C* p, void* a);

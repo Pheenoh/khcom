@@ -10251,8 +10251,876 @@ u8 func_0807048C(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-INCLUDE_ASM("msg/func_08070AD4.s");
-INCLUDE_ASM("msg/func_08072914.s");
+#ifdef VERSION_EU
+#define MSG_SOUND_ID_9E 0x9C
+#define MSG_SOUND_ID_B1 0xAF
+#else
+#define MSG_SOUND_ID_9E 0x9E
+#define MSG_SOUND_ID_B1 0xB1
+#endif
+
+s32 func_08070AD4(Work0806180C* p) {
+    u16 x;
+    u16 y;
+
+    x = (p->unk_02C >> 8) - (gUnk_02039DC8->unk_58 >> 8);
+    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gUnk_02039DC8->unk_5C >> 8);
+
+    switch (p->unk_000[p->unk_1A0].unk_00) {
+    case 0x2EB:
+    case 0x2F1:
+    case 0x2F2:
+        if (p->unk_024 != MSG_SOUND_ID_9E) {
+            if (p->unk_040->timer == 0) {
+                if (p->unk_040->frame == 2) {
+                    m4aSongNumStart(0x3BE);
+                    func_08076110(0x3BE, x, y);
+                }
+                if (p->unk_040->frame == 6) {
+                    m4aSongNumStart(0x3BF);
+                    func_08076110(0x3BF, x, y);
+                }
+            }
+        }
+        break;
+    case 0x2E6:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3AC);
+                func_08076110(0x3AC, x, y);
+            }
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3AD);
+                func_08076110(0x3AD, x, y);
+            }
+        }
+        break;
+    case 0x375:
+        if (p->unk_040->timer == 1) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x3B4);
+                func_08076110(0x3B4, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3B5);
+                func_08076110(0x3B5, x, y);
+            }
+        }
+        break;
+    case 0x398:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x175);
+                func_08076110(0x175, x, y);
+            }
+        }
+        break;
+    case 0x399:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x176);
+                func_08076110(0x176, x, y);
+            }
+        }
+        break;
+    case 0x5E:
+        if (p->unk_040->timer == 9) {
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0x12E);
+            }
+        }
+        break;
+    case 0x1C2:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3AC);
+                func_08076110(0x3AC, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x3AD);
+                func_08076110(0x3AD, x, y);
+            }
+        }
+        break;
+    case 0x1C0:
+    case 0x1C1:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3AC);
+                func_08076110(0x3AC, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x3AD);
+                func_08076110(0x3AD, x, y);
+            }
+        }
+        break;
+    case 0x34B:
+    case 0x34C:
+        if (p->unk_040->timer == 1) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x3B4);
+                func_08076110(0x3B4, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3B5);
+                func_08076110(0x3B5, x, y);
+            }
+        }
+        break;
+    case 0x2B2:
+        if (p->unk_040->timer == 1) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x3B4);
+                func_08076110(0x3B4, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3B5);
+                func_08076110(0x3B5, x, y);
+            }
+        }
+        break;
+    case 0x204:
+    case 0x206:
+    case 0x207:
+    case 0x208:
+    case 0x209:
+    case 0x20A:
+    case 0x20B:
+    case 0x2C7:
+    case 0x2C8:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 3) {
+                if ((u16)(p->unk_024 - MSG_SOUND_ID_B1) <= 1) {
+                    m4aSongNumStart(0x384);
+                    func_08076110(0x384, x, y);
+                } else {
+                    m4aSongNumStart(0x3B2);
+                    func_08076110(0x3B2, x, y);
+                }
+            }
+            if (p->unk_040->frame == 7) {
+                if ((u16)(p->unk_024 - MSG_SOUND_ID_B1) <= 1) {
+                    m4aSongNumStart(0x385);
+                    func_08076110(0x385, x, y);
+                } else {
+                    m4aSongNumStart(0x3B3);
+                    func_08076110(0x3B3, x, y);
+                }
+            }
+        }
+        break;
+    case 0x2C5:
+    case 0x2C6:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                if ((u16)(p->unk_024 - MSG_SOUND_ID_B1) <= 1) {
+                    m4aSongNumStart(0x384);
+                    func_08076110(0x384, x, y);
+                } else {
+                    m4aSongNumStart(0x3B2);
+                    func_08076110(0x3B2, x, y);
+                }
+            }
+            if (p->unk_040->frame == 5) {
+                if ((u16)(p->unk_024 - MSG_SOUND_ID_B1) <= 1) {
+                    m4aSongNumStart(0x385);
+                    func_08076110(0x385, x, y);
+                } else {
+                    m4aSongNumStart(0x3B3);
+                    func_08076110(0x3B3, x, y);
+                }
+            }
+        }
+        break;
+    case 0x371:
+    case 0x372:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0x3B0);
+                func_08076110(0x3B0, x, y);
+            }
+            if (p->unk_040->frame == 7) {
+                m4aSongNumStart(0x3B1);
+                func_08076110(0x3B1, x, y);
+            }
+        }
+        break;
+    case 0x1EE:
+    case 0x1F6:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3A2);
+                func_08076110(0x3A2, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3A3);
+                func_08076110(0x3A3, x, y);
+            }
+        }
+        break;
+    case 0x345:
+        if (p->unk_040->timer == 1) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x39E);
+                func_08076110(0x39E, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x39F);
+                func_08076110(0x39F, x, y);
+            }
+        }
+        break;
+    case 0x344:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x39E);
+                func_08076110(0x39E, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x39F);
+                func_08076110(0x39F, x, y);
+            }
+        }
+        break;
+    case 0x341:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0x39E);
+                func_08076110(0x39E, x, y);
+            }
+            if (p->unk_040->frame == 9) {
+                m4aSongNumStart(0x39F);
+                func_08076110(0x39F, x, y);
+            }
+        }
+        break;
+    case 0x30C:
+    case 0x30D:
+    case 0x30E:
+    case 0x30F:
+    case 0x310:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0x39E);
+                func_08076110(0x39E, x, y);
+            }
+            if (p->unk_040->frame == 9) {
+                m4aSongNumStart(0x39F);
+                func_08076110(0x39F, x, y);
+            }
+        }
+        break;
+    case 0x275:
+    case 0x276:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3AE);
+                func_08076110(0x3AE, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x3AF);
+                func_08076110(0x3AF, x, y);
+            }
+        }
+        break;
+    case 0x277:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0x3AE);
+                func_08076110(0x3AE, x, y);
+            }
+            if (p->unk_040->frame == 7) {
+                m4aSongNumStart(0x3AF);
+                func_08076110(0x3AF, x, y);
+            }
+        }
+        break;
+    case 0x2A5:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0x3AA);
+                func_08076110(0x3AA, x, y);
+            }
+            if (p->unk_040->frame == 7) {
+                m4aSongNumStart(0x3AB);
+                func_08076110(0x3AB, x, y);
+            }
+        }
+        break;
+    case 0x2A8:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3A0);
+                func_08076110(0x3A0, x, y);
+            }
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3A1);
+                func_08076110(0x3A1, x, y);
+            }
+        }
+        break;
+    case 0x271:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3A2);
+                func_08076110(0x3A2, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x3A3);
+                func_08076110(0x3A3, x, y);
+            }
+        }
+        break;
+    case 0x241:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3A8);
+                func_08076110(0x3A8, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3A9);
+                func_08076110(0x3A9, x, y);
+            }
+        }
+        break;
+    case 0x17A:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3B0);
+                func_08076110(0x3B0, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x3B1);
+                func_08076110(0x3B1, x, y);
+            }
+        }
+        break;
+    case 0x178:
+    case 0x179:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3B0);
+                func_08076110(0x3B0, x, y);
+            }
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3B1);
+                func_08076110(0x3B1, x, y);
+            }
+        }
+        break;
+    case 0x19C:
+    case 0x19D:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3B4);
+                func_08076110(0x3B4, x, y);
+            }
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3B5);
+                func_08076110(0x3B5, x, y);
+            }
+        }
+        break;
+    case 0x14A:
+    case 0x14B:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x3B6);
+                func_08076110(0x3B6, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3B7);
+                func_08076110(0x3B7, x, y);
+            }
+        }
+        break;
+    case 0x157:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x3A6);
+                func_08076110(0x3A6, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3A7);
+                func_08076110(0x3A7, x, y);
+            }
+        }
+        break;
+    case 0x23E:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3B2);
+                func_08076110(0x3B2, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x3B3);
+                func_08076110(0x3B3, x, y);
+            }
+        }
+        break;
+    case 0x16C:
+    case 0x16E:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3A0);
+                func_08076110(0x3A0, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x3A1);
+                func_08076110(0x3A1, x, y);
+            }
+        }
+        break;
+    case 0x122:
+    case 0x123:
+    case 0x128:
+    case 0x129:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3A2);
+                func_08076110(0x3A2, x, y);
+            }
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3A3);
+                func_08076110(0x3A3, x, y);
+            }
+        }
+        break;
+    case 0xDF:
+    case 0xE0:
+    case 0xE1:
+    case 0xE2:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                if (p->unk_024 == 0x61) {
+                    m4aSongNumStart(0x3AE);
+                    func_08076110(0x3AE, x, y);
+                } else {
+                    m4aSongNumStart(0x3B2);
+                    func_08076110(0x3B2, x, y);
+                }
+            }
+            if (p->unk_040->frame == 5) {
+                if (p->unk_024 == 0x61) {
+                    m4aSongNumStart(0x3AF);
+                    func_08076110(0x3AF, x, y);
+                } else {
+                    m4aSongNumStart(0x3B3);
+                    func_08076110(0x3B3, x, y);
+                }
+            }
+        }
+        break;
+    case 0xD6:
+    case 0xD9:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3B0);
+                func_08076110(0x3B0, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x3B1);
+                func_08076110(0x3B1, x, y);
+            }
+        }
+        break;
+    case 0xCA:
+    case 0xCB:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3BA);
+                func_08076110(0x3BA, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3BB);
+                func_08076110(0x3BB, x, y);
+            }
+        }
+        break;
+    case 0xD3:
+    case 0xD4:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x3BC);
+                func_08076110(0x3BC, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x3BD);
+                func_08076110(0x3BD, x, y);
+            }
+        }
+        break;
+    case 0x10A:
+    case 0x10B:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x39E);
+                func_08076110(0x39E, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x39F);
+                func_08076110(0x39F, x, y);
+            }
+        }
+        break;
+    case 0x83:
+    case 0x88:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0x130);
+                func_08076110(0x130, x, y);
+            }
+        }
+        break;
+    case 0x12:
+    case 0x13:
+    case 0x66:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x12E);
+                func_08076110(0x12E, x, y);
+            }
+        }
+        break;
+    case 0x5:
+    case 0x6:
+    case 0x7:
+    case 0x8:
+    case 0x9:
+        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+            if (p->unk_040->timer == 0) {
+                if (p->unk_040->frame == 1) {
+                    func_08072918((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                }
+                if (p->unk_040->frame == 5) {
+                    func_08072918((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                }
+            }
+        }
+        break;
+    case 0x75:
+    case 0x77:
+    case 0x288:
+    case 0x28C:
+        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+            if (p->unk_040->timer == 0) {
+                if (p->unk_040->frame == 2) {
+                    func_08072A64((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                }
+                if (p->unk_040->frame == 6) {
+                    func_08072A64((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                }
+            }
+        }
+        break;
+    case 0x78:
+    case 0x79:
+    case 0x289:
+    case 0x28D:
+        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+            if (p->unk_040->timer == 0) {
+                if (p->unk_040->frame == 3) {
+                    func_08072A64((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                }
+                if (p->unk_040->frame == 7) {
+                    func_08072A64((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                }
+            }
+        }
+        break;
+    case 0x95:
+    case 0x97:
+    case 0x98:
+    case 0x99:
+    case 0x265:
+    case 0x266:
+    case 0x267:
+        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+            if (p->unk_040->timer == 0) {
+                if (p->unk_040->frame == 3) {
+                    func_08072B4C((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                }
+                if (p->unk_040->frame == 7) {
+                    func_08072B4C((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                }
+            }
+        }
+        break;
+    case 0xA:
+    case 0xB:
+    case 0xC:
+    case 0xD:
+    case 0xE:
+        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+            if (p->unk_040->timer == 0) {
+                if (p->unk_040->frame == 3) {
+                    func_08072918((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                }
+                if (p->unk_040->frame == 7) {
+                    func_08072918((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                }
+            }
+        }
+        break;
+    case 0xB8:
+    case 0xBA:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3B4);
+                func_08076110(0x3B4, x, y);
+            }
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3B5);
+                func_08076110(0x3B5, x, y);
+            }
+        }
+        break;
+    case 0xBB:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x140);
+                func_08076110(0x140, x, y);
+            }
+        }
+        break;
+    case 0xC1:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x14E);
+                func_08076110(0x14E, x, y);
+            }
+        }
+        break;
+    case 0xE9:
+    case 0xEA:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x144);
+                func_08076110(0x144, x, y);
+            }
+        }
+        break;
+    case 0xF2:
+    case 0xF3:
+    case 0xF4:
+    case 0xF8:
+    case 0xF9:
+    case 0xFA:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x39D);
+                func_08076110(0x39D, x, y);
+            }
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x39C);
+                func_08076110(0x39C, x, y);
+            }
+        }
+        break;
+    case 0xF5:
+    case 0xF6:
+    case 0xF7:
+    case 0xFB:
+    case 0xFC:
+    case 0xFD:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x39C);
+                func_08076110(0x39C, x, y);
+            }
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x39D);
+                func_08076110(0x39D, x, y);
+            }
+        }
+        break;
+    case 0x280:
+    case 0x281:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 7) {
+                m4aSongNumStart(0x3B0);
+                func_08076110(0x3B0, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3B1);
+                func_08076110(0x3B1, x, y);
+            }
+        }
+        break;
+    case 0x18D:
+    case 0x18E:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3A2);
+                func_08076110(0x3A2, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3A3);
+                func_08076110(0x3A3, x, y);
+            }
+        }
+        break;
+    case 0x18F:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 4) {
+                m4aSongNumStart(0x26B);
+            }
+        }
+        break;
+    case 0x159:
+    case 0x15D:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3B0);
+                func_08076110(0x3B0, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3B1);
+                func_08076110(0x3B1, x, y);
+            }
+        }
+        break;
+    case 0x15E:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x14E);
+                func_08076110(0x14E, x, y);
+            }
+        }
+        break;
+    case 0x185:
+    case 0x186:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3A2);
+                func_08076110(0x3A2, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3A3);
+                func_08076110(0x3A3, x, y);
+            }
+        }
+        break;
+    case 0x187:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 7) {
+                m4aSongNumStart(0x3A2);
+                func_08076110(0x3A2, x, y);
+            }
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0x3A3);
+                func_08076110(0x3A3, x, y);
+            }
+        }
+        break;
+    case 0x2E7:
+    case 0x2E8:
+        if (p->unk_040->timer == 1) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x155);
+                func_08076110(0x155, x, y);
+            }
+        }
+        break;
+    case 0x2AE:
+    case 0x2AF:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3AC);
+                func_08076110(0x3AC, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3AD);
+                func_08076110(0x3AD, x, y);
+            }
+        }
+        break;
+    case 0x1C5:
+    case 0x1C6:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3AC);
+                func_08076110(0x3AC, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3AD);
+                func_08076110(0x3AD, x, y);
+            }
+        }
+        break;
+    case 0x27A:
+    case 0x27D:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x3B4);
+                func_08076110(0x3B4, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x3B5);
+                func_08076110(0x3B5, x, y);
+            }
+        }
+        break;
+    case 0x10F:
+    case 0x11B:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 6) {
+                m4aSongNumStart(0x39E);
+                func_08076110(0x39E, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x39F);
+                func_08076110(0x39F, x, y);
+            }
+        }
+        break;
+    case 0x110:
+    case 0x11C:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 5) {
+                m4aSongNumStart(0x39E);
+                func_08076110(0x39E, x, y);
+            }
+            if (p->unk_040->frame == 2) {
+                m4aSongNumStart(0x39F);
+                func_08076110(0x39F, x, y);
+            }
+        }
+        break;
+    case 0x118:
+        if (p->unk_040->timer == 1) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x156);
+                func_08076110(0x156, x, y);
+            }
+        }
+        break;
+    case 0x29E:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 3) {
+                m4aSongNumStart(0xC5);
+                func_08076110(0xC5, x, y);
+            }
+        }
+        break;
+    case 0x2A2:
+        if (p->unk_040->timer == 0) {
+            if (p->unk_040->frame == 1) {
+                m4aSongNumStart(0x157);
+            }
+        }
+        break;
+    case 0x1DE:
+        if (p->unk_040->timer == 1) {
+            if (p->unk_040->frame == 0) {
+                m4aSongNumStart(0x227);
+                func_08076110(0x227, x, y);
+            }
+        }
+        break;
+    }
+}
 
 void func_08072918(Actor0806180C* a, u8 kind, u8 flag) {
     u16 x;
