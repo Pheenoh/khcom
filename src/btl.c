@@ -461,7 +461,225 @@ void func_0801DF10(BtlSoraWork* work, u16 a) {
     }
 }
 
-INCLUDE_ASM("btl/task_btl_sora_0.s");
+typedef struct BtlActorWork {
+    u32 unk_00;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    s32 unk_10;
+    u8 unk_14[0xC];
+    u16 unk_20;
+    u8 unk_22[0xA];
+    u16 hp;
+    u16 maxHp;
+    u16 unk_30;
+    u8 unk_32[0x2];
+    u64 unk_34;
+    u8 unk_3C[0x4];
+    u32 unk_40;
+    u8 unk_44[0x28];
+    u16 unk_6C;
+    u16 unk_6E;
+    u16 unk_70;
+    u16 unk_72;
+    u8 unk_74[0x28];
+    u16 unk_9C;
+    u16 unk_9E;
+    u16 unk_A0;
+    u16 unk_A2;
+    u8 unk_A4[0x4];
+    s32 unk_A8;
+    s32 unk_AC;
+    u8 unk_B0;
+    u8 unk_B1[0x23];
+    s32 unk_D4;
+    s32 unk_D8;
+    u8 unk_DC[0x4];
+    u16 unk_E0;
+    u16 unk_E2;
+    struct BtlWork* unk_E4;
+    u32 unk_E8;
+    u16 unk_EC;
+    u8 unk_EE[0x16];
+    u16 unk_104;
+    u8 unk_106[0x2];
+    s32 unk_108;
+    s32 unk_10C;
+} BtlActorWork;
+
+typedef struct BtlTaskArg {
+    s32 unk_00;
+    u8 unk_04;
+} BtlTaskArg;
+extern u16 gUnk_0813C0DC[][4];
+extern u16 gUnk_0813C6BC[][4];
+void* AllocObjTiles(s32 size, void* src);
+extern TaskDesc gTaskDescBtlShadow, gTaskDescBtlBadstatus;
+void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
+    BtlActorWork* e;
+
+    e = (BtlActorWork*)&work->unk_040;
+    work->unk_15A = 0;
+
+    if (arg != 0) {
+        if (arg->unk_00 == 0) {
+            e->unk_04 = 0xC000;
+            e->unk_34 = 0;
+            work->unk_173 = 1;
+        } else {
+            e->unk_04 = 0x14000;
+            e->unk_34 = 4;
+            work->unk_173 = 0;
+        }
+
+
+        if (arg->unk_04 != 0) {
+            work->unk_172 = 1;
+            e->unk_E4 = gBtlWork;
+            e->maxHp = gGameState.unk_1E0;
+            e->hp = gGameState.unk_1E0;
+            e->unk_30 = gGameState.unk_1E2;
+        } else {
+            work->unk_172 = 0;
+            e->unk_E4 = gUnk_02039B9C;
+            e->maxHp = gGameState.unk_1F8;
+            e->hp = gGameState.unk_1F8;
+            e->unk_30 = gGameState.unk_1FA;
+        }
+    } else {
+        work->unk_172 = 1;
+        work->unk_173 = 1;
+        e->unk_E4 = gBtlWork;
+
+        if ((e->unk_E4->unk_068 & 0x800) || (e->unk_E4->unk_068 & 0x800000000LL)) {
+            e->unk_04 = 0xC000;
+        } else {
+            e->unk_04 = 0x10000;
+        }
+
+        e->unk_34 = 0;
+        e->unk_30 = gGameState.unk_0FE;
+        e->maxHp = gGameState.maxHp;
+        e->hp = gGameState.hp;
+
+        if ((s16)e->hp > (s16)e->maxHp) {
+            e->hp = e->maxHp;
+        }
+    }
+
+    e->unk_34 |= 0x4000000000LL;
+    e->unk_34 |= 0x400000000000000LL;
+    e->unk_34 |= 0x300;
+
+    if (gBtlWork->unk_068 & 4) {
+        e->unk_08 = 0x16000;
+    } else {
+        e->unk_08 = 0x18100;
+    }
+
+    e->unk_E2 = 0;
+    e->unk_E0 = 0;
+    e->unk_0C = 0;
+    e->unk_10 = 0;
+    e->unk_20 = 0;
+    e->unk_9C = 32;
+    e->unk_9E = 12;
+    e->unk_A0 = 6;
+    e->unk_A2 = 12;
+    e->unk_00 = 55;
+    e->unk_EC = 0;
+    e->unk_D4 = 0;
+    e->unk_D8 = 0;
+    e->unk_E8 = 0;
+    e->unk_104 = 0;
+    e->unk_108 = e->unk_10C = 0;
+
+    if (arg->unk_04 != 0) {
+        func_080122AC(&e->unk_40, 1, e->unk_9E, e->unk_9C);
+    } else {
+        func_080122AC(&e->unk_40, 2, e->unk_9E, e->unk_9C);
+    }
+
+    gBtlWork->unk_130 = e->unk_04;
+    gBtlWork->unk_134 = e->unk_08;
+    gBtlWork->unk_138 = e->unk_0C;
+    func_0801DEB8(work);
+    e->unk_E4->unk_07C = (BtlWork*)e;
+    AnimInit(&work->anim, 0, 0);
+    func_0801DDE4(work, 1, 1);
+    work->unk_008 = AnimGetGfx(&work->anim);
+    work->unk_038 = 0;
+    work->unk_03C = 0;
+    work->unk_150 = 0;
+    e->unk_108 = 0;
+    e->unk_10C = 0;
+    work->unk_154 = 0;
+    work->unk_156 = 0;
+    work->unk_15C = 0;
+    work->unk_160 = 0;
+    work->unk_161 = 0;
+    work->unk_170[0] = 0;
+    work->unk_170[1] = 0;
+    work->unk_188 = 0;
+    work->unk_191[0] = 2;
+    work->unk_19C = work->unk_1A0 = 0x100;
+    work->unk_1A8 = 0;
+
+    if (gBtlWork->unk_068 & 0x804) {
+        switch (gBtlWork->unk_10C) {
+        case 148:
+        case 150:
+        case 155:
+        case 161:
+        case 162:
+        case 163:
+        case 164:
+        case 165:
+        case 167:
+        case 168:
+        case 169:
+        case 170:
+        case 171:
+        case 172:
+        case 173:
+        case 174:
+            work->unk_184 = gUnk_0813C0DC[1];
+            break;
+        case 152:
+            work->unk_184 = gUnk_0813C0DC[2];
+            break;
+        case 158:
+            work->unk_184 = gUnk_0813C0DC[3];
+            break;
+        default:
+            work->unk_184 = gUnk_0813C0DC[0];
+            break;
+        }
+    } else {
+        switch (gGameState.unk_00D) {
+        case 1:
+        case 2:
+            work->unk_184 = gUnk_0813C0DC[0];
+            break;
+        case 3:
+        case 6:
+        case 7:
+            work->unk_184 = gUnk_0813C0DC[1];
+            break;
+        case 4:
+        case 5:
+            work->unk_184 = gUnk_0813C0DC[2];
+            break;
+        default:
+            work->unk_184 = gUnk_0813C0DC[0];
+            break;
+        }
+    }
+
+    TaskPoolInit(&work->unk_024, 7);
+    TaskCreate(&work->unk_024, &gTaskDescBtlShadow, e);
+    TaskCreate(&work->unk_024, &gTaskDescBtlBadstatus, e);
+}
 
 void func_0801E4E4(BtlSoraWork* work, u32 a) {
     work->unk_038 = a;
@@ -609,7 +827,6 @@ BtlWork* func_0801E7D4(BtlSoraWork* work) {
     return 0;
 }
 
-#ifndef VERSION_EU
 s32 task_btl_sora_1(BtlSoraWork* work) {
     UnkStruct_0801AF08* p;
     BtlWork* e;
@@ -1752,6 +1969,14 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         case 79:
             m4aSongNumStop(666);
             break;
+#ifdef VERSION_EU
+        case 78:
+            m4aSongNumStop(662);
+            break;
+        case 68:
+            m4aSongNumStop(660);
+            break;
+#endif
         }
 
         if (!(gBtlWork->unk_068 & 0x40)) {
@@ -1779,7 +2004,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             p->unk_04 = *(s32*)&p->unk_14[0];
             p->unk_08 = *(s32*)&p->unk_14[4];
             p->unk_0C = *(s32*)&p->unk_14[8];
+#ifndef VERSION_EU
             p->unk_E4->unk_068 &= ~0x0002000000000000LL;
+#endif
             p->unk_34 &= ~0x0000200000000000LL;
             func_08019190(p, 9);
             break;
@@ -1789,8 +2016,19 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         case 79:
             m4aSongNumStop(666);
             break;
+#ifdef VERSION_EU
+        case 78:
+            m4aSongNumStop(662);
+            break;
+        case 68:
+            m4aSongNumStop(660);
+            break;
+#endif
         }
 
+#ifdef VERSION_EU
+        p->unk_E4->unk_068 &= ~0x0002000000000000LL;
+#endif
         work->unk_19C = work->unk_1A0 = 0x100;
         func_08012614(&p->unk_40, 0);
         func_0801DC5C(work);
@@ -2281,8 +2519,11 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 m4aSongNumStart(work->unk_184[3]);
             }
 
+#ifndef VERSION_EU
             if ((s16)work->unk_156 == 8) {
-            } else if ((s16)work->unk_156 == 0) {
+            } else
+#endif
+            if ((s16)work->unk_156 == 0) {
                 func_0801DC5C(work);
 
                 if (work->unk_038 != 22) {
@@ -2586,7 +2827,11 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         if ((s16)work->unk_154 == 0) {
+#ifdef VERSION_EU
+            func_0801DDE4(work, (u16)(a->unk_00 + work->unk_190), 0);
+#else
             func_0801DDE4(work, a->unk_00 + work->unk_190, 0);
+#endif
             m4aSongNumStart(a->unk_08);
             work->unk_150 = a->unk_0C;
 
@@ -5122,6 +5367,13 @@ sora_51_hit:
             }
         }
 
+#ifdef VERSION_EU
+        if (p->unk_34 & 4) {
+            func_08014780(p->unk_04 - 9728, p->unk_08, p->unk_0C - 6656);
+        } else {
+            func_08014780(p->unk_04 + 9728, p->unk_08, p->unk_0C - 6656);
+        }
+#else
         t = p->unk_04;
         t2 = p->unk_08;
         t3 = p->unk_0C;
@@ -5146,6 +5398,8 @@ sora_51_hit:
 
         func_0801A8A4(&p->unk_04, &p->unk_08, -16, 0);
         func_0801475C(p->unk_04 - t, p->unk_08 - t2, p->unk_0C - t3);
+
+#endif
 
         if (func_080128EC() == 0) {
             m4aSongNumStop(590);
@@ -5840,9 +6094,6 @@ sora_51_hit:
     work->unk_1A8++;
     return 1;
 }
-#else
-INCLUDE_ASM("btl/task_btl_sora_1.s");
-#endif
 
 void task_btl_sora_2(BtlSoraWork* work) {
     UnkStruct_0801AF08* p;
@@ -6330,7 +6581,171 @@ void func_08027A64(BtlRikuWork* work, u16 a) {
     }
 }
 
+#ifdef NON_MATCHING
+void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
+    BtlActorWork* e;
+
+    e = (BtlActorWork*)&work->unk_044;
+    work->unk_15E = 0;
+
+    if (arg != 0) {
+        if (arg->unk_00 == 0) {
+            e->unk_04 = 0xC000;
+            e->unk_34 = 0;
+            work->unk_179 = 1;
+        } else {
+            e->unk_04 = 0x14000;
+            e->unk_34 = 4;
+            work->unk_179 = 0;
+        }
+
+
+        if (arg->unk_04 != 0) {
+            work->unk_178 = 1;
+            e->unk_E4 = gBtlWork;
+        } else {
+            work->unk_178 = 0;
+            e->unk_E4 = gUnk_02039B9C;
+        }
+
+        e->maxHp = 1000;
+        e->hp = 1000;
+        e->unk_30 = 10;
+    } else {
+        work->unk_178 = 1;
+        work->unk_179 = 1;
+        e->unk_E4 = gBtlWork;
+
+        if (e->unk_E4->unk_068 & 0x800) {
+            e->unk_04 = 0xC000;
+        } else {
+            e->unk_04 = 0x10000;
+        }
+
+        e->unk_34 = 0;
+        e->unk_30 = gGameState.unk_0FE;
+        e->maxHp = gGameState.maxHp;
+        e->hp = gGameState.hp;
+
+        if ((s16)e->hp > (s16)e->maxHp) {
+            e->hp = e->maxHp;
+        }
+    }
+
+    e->unk_34 |= 0x8200000000LL;
+    e->unk_34 |= 0x400000000000000LL;
+    e->unk_34 |= 0x300;
+
+    if (gBtlWork->unk_068 & 4) {
+        e->unk_08 = 0x16000;
+    } else {
+        e->unk_08 = 0x18100;
+    }
+
+    e->unk_E2 = 0;
+    e->unk_E0 = 0;
+    e->unk_0C = 0;
+    e->unk_10 = 0;
+    e->unk_20 = 0;
+    e->unk_9C = 40;
+    e->unk_9E = 12;
+    e->unk_A0 = 6;
+    e->unk_A2 = 12;
+    e->unk_00 = 55;
+    e->unk_EC = 0;
+    e->unk_D4 = 0;
+    e->unk_D8 = 0;
+    e->unk_E8 = 0;
+    e->unk_104 = 0;
+    e->unk_108 = e->unk_10C = 0;
+
+    if (arg->unk_04 != 0) {
+        func_080122AC(&e->unk_40, 1, e->unk_9E, e->unk_9C);
+    } else {
+        func_080122AC(&e->unk_40, 2, e->unk_9E, e->unk_9C);
+    }
+
+    gBtlWork->unk_130 = e->unk_04;
+    gBtlWork->unk_134 = e->unk_08;
+    gBtlWork->unk_138 = e->unk_0C;
+    work->unk_1AC = gUnk_09618118;
+    work->tiles = AllocObjTiles(0x640, 0);
+    func_080277A8(work);
+    e->unk_E4->unk_07C = (BtlWork*)e;
+    AnimInit(&work->anim, 0, 0);
+    func_080276D4(work, 0, 1);
+    work->unk_00C = AnimGetGfx(&work->anim);
+    work->unk_03C = 0;
+    work->unk_040 = 0;
+    work->unk_154 = 0;
+    e->unk_108 = 0;
+    e->unk_10C = 0;
+    work->unk_158 = 0;
+    work->unk_15A = 0;
+    work->unk_160 = 0;
+    work->unk_164 = 0;
+    work->unk_165 = 0;
+    work->unk_174[0] = 0;
+    work->unk_174[1] = 0;
+    work->unk_18C = 0;
+    work->unk_19C = work->unk_1A0 = 0x100;
+    work->unk_1A8 = 0;
+
+    if (gBtlWork->unk_068 & 0x804) {
+        switch (gBtlWork->unk_10C) {
+        case 148:
+        case 150:
+        case 155:
+            work->unk_188 = gUnk_0813C6BC[1];
+            break;
+        case 152:
+            work->unk_188 = gUnk_0813C6BC[2];
+            break;
+        case 158:
+            work->unk_188 = gUnk_0813C6BC[3];
+            break;
+        default:
+            work->unk_188 = gUnk_0813C6BC[0];
+            break;
+        }
+    } else {
+        switch (gGameState.unk_00D) {
+        case 1:
+        case 2:
+            work->unk_188 = gUnk_0813C6BC[0];
+            break;
+        case 3:
+        case 6:
+        case 7:
+            work->unk_188 = gUnk_0813C6BC[1];
+            break;
+        case 4:
+        case 5:
+            work->unk_188 = gUnk_0813C6BC[2];
+            break;
+        default:
+            work->unk_188 = gUnk_0813C6BC[0];
+            break;
+        }
+    }
+
+    TaskPoolInit(&work->unk_028, 7);
+    TaskCreate(&work->unk_028, &gTaskDescBtlShadow, e);
+    TaskCreate(&work->unk_028, &gTaskDescBtlBadstatus, e);
+    work->unk_1BC = 0;
+    func_08027570(work, &work->unk_1C0[0]);
+    work->unk_1C0[1] = work->unk_1C0[0];
+    work->unk_1C0[2] = work->unk_1C0[0];
+    work->unk_1C0[3] = work->unk_1C0[0];
+    work->unk_1C0[4] = work->unk_1C0[0];
+    work->unk_1C0[5] = work->unk_1C0[0];
+    work->unk_1C0[6] = work->unk_1C0[0];
+    work->unk_1C0[7] = work->unk_1C0[0];
+    work->unk_1C0[8] = work->unk_1C0[0];
+}
+#else
 INCLUDE_ASM("btl/task_btl_riku_0.s");
+#endif
 
 void func_080280BC(BtlRikuWork* work, u32 a) {
     work->unk_03C = a;
@@ -6512,7 +6927,6 @@ void func_080284C8(s16 a) {
     }
 }
 
-#ifndef VERSION_EU
 s32 task_btl_riku_1(BtlRikuWork* work) {
     UnkStruct_0801AF08* p;
     BtlWork* e;
@@ -6544,7 +6958,11 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     s32 d;
     s32 t4;
     s32 t5;
+#ifdef VERSION_EU
+    UnkStruct_0802CD54** q;
+#else
     void** q;
+#endif
     u8* base;
     UnkStruct_0802CD54* a;
     BtlSpawnArgs spawn;
@@ -6562,8 +6980,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             p->unk_04 = *(s32*)&p->unk_14[0];
             p->unk_08 = *(s32*)&p->unk_14[4];
             p->unk_0C = *(s32*)&p->unk_14[8];
+#ifndef VERSION_EU
             p->unk_34 &= 0xFFFFDFFFFFFFFFFFLL;
             func_08019190(p, 9);
+#endif
 
             if (work->unk_15E & 4) {
                 work->unk_15E &= ~4;
@@ -6980,6 +7400,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 p->unk_04 = *(s32*)&p->unk_14[0];
                 p->unk_08 = *(s32*)&p->unk_14[4];
                 p->unk_0C = *(s32*)&p->unk_14[8];
+#ifdef VERSION_EU
+                p->unk_34 &= 0xFFFFDFFFFFFFFFFFLL;
+                func_08019190(p, 9);
+#endif
                 break;
             }
 
@@ -8920,10 +9344,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         func_080274F0(work);
 
         if ((s16)work->unk_158 == 0) {
-            *(BtlWork**)&work->unk_310[0x60] = func_08028370(work);
+            work->unk_370 = func_08028370(work);
             func_080276D4(work, 24, 0);
             func_08027428(work);
-            e = *(BtlWork**)&work->unk_310[0x60];
+            e = work->unk_370;
 
             if (e != 0) {
                 if (p->unk_04 < e->unk_004) {
@@ -9225,6 +9649,13 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
         func_080274F0(work);
 
+#ifdef VERSION_EU
+        if (gBtlWork->unk_068 & 0x800000000000LL) {
+            func_080280BC(work, 35);
+            break;
+        }
+#endif
+
         if ((s16)work->unk_158 == 0) {
             func_080276D4(work, 10, 0);
         }
@@ -9304,27 +9735,27 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 if (work->unk_165 == 2) {
                     work->unk_165 = 1;
                     work->unk_15E |= 0x40;
-                    q = (void**)&work->unk_168;
+                    q = (void*)&work->unk_168;
                 } else {
                     ofs = work->unk_165;
                     ofs *= 4;
                     base = (u8*)&work->unk_168;
-                    q = (void**)(base + ofs);
+                    q = (void*)(base + ofs);
                 }
             } else {
                 ofs = work->unk_165;
                 ofs *= 4;
                 base = (u8*)&work->unk_168;
-                q = (void**)(base + ofs);
+                q = (void*)(base + ofs);
             }
         } else if (p->unk_E4->unk_0F4 == 5) {
             work->unk_165 = 2;
-            q = (void**)&work->unk_170;
+            q = (void*)&work->unk_170;
         } else {
             ofs = work->unk_165;
             ofs *= 4;
             base = (u8*)&work->unk_168;
-            q = (void**)(base + ofs);
+            q = (void*)(base + ofs);
         }
 
         a = *q;
@@ -9339,7 +9770,11 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
         if ((s16)work->unk_158 == 0) {
             func_08019A30();
+#ifdef VERSION_EU
+            func_080276D4(work, *(u16*)&a->unk_00, 0);
+#else
             func_080276D4(work, a->unk_00, 0);
+#endif
 
             if (work->unk_165 == 2) {
                 m4aSongNumStart(GetRandom() % 2 + 257);
@@ -10018,6 +10453,10 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         break;
     case 14:
         p->unk_34 &= 0xFFFFFFFFFFFFDFFFLL;
+#ifdef VERSION_EU
+        ((BtlWork*)p)->unk_108 = ((BtlWork*)p)->unk_10C = 0;
+        work->unk_160 = 0;
+#endif
         break;
     }
 
@@ -10237,9 +10676,6 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("btl/task_btl_riku_1.s");
-#endif
 
 void task_btl_riku_2(BtlRikuWork* work) {
     UnkStruct_0801AF08* p;
@@ -10374,7 +10810,49 @@ void task_btl_riku_3(BtlRikuWork* work) {
     TaskPoolDestroy(&work->unk_028);
 }
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+void eu_080059D4(s32 bg, void* tiles);
+void eu_080059F4(s32 bg, void* map);
+extern u8 gUnkEu_08C9CD3C[];
+extern u8 gUnkEu_08F79520[];
+extern u8 gUnkEu_08F74484[];
+extern u8 gUnkEu_08F7E498[];
+extern u8 gUnkEu_08F7042C[];
+extern u8 gUnkEu_08F7D724[];
+extern u8 gUnkEu_08F6EF3C[];
+extern u8 gUnkEu_08F7D318[];
+extern u8 gUnkEu_08CA0D3C[];
+extern u8 gUnkEu_08F79960[];
+extern u8 gUnkEu_08F728C0[];
+extern u8 gUnkEu_08F7DED0[];
+extern u8 gUnkEu_08F756FC[];
+extern u8 gUnkEu_08F7E83C[];
+extern u8 gUnkEu_08F71C40[];
+extern u8 gUnkEu_08F7DB78[];
+extern u8 gUnkEu_08CA4D3C[];
+extern u8 gUnkEu_08F79DEC[];
+extern u8 gUnkEu_08CA8D3C[];
+extern u8 gUnkEu_08F7A224[];
+extern u8 gUnkEu_08CB4D3C[];
+extern u8 gUnkEu_08F7B498[];
+extern u8 gUnkEu_08CACD3C[];
+extern u8 gUnkEu_08F7A7A8[];
+extern u8 gUnkEu_08CB0D3C[];
+extern u8 gUnkEu_08F7ADFC[];
+extern u8 gUnkEu_08CB8D3C[];
+extern u8 gUnkEu_08F7B958[];
+extern u8 gUnkEu_08CBCD3C[];
+extern u8 gUnkEu_08F7BE78[];
+extern u8 gUnkEu_08CC0BFC[];
+extern u8 gUnkEu_08F7C274[];
+extern u8 gUnkEu_08CC4BFC[];
+extern u8 gUnkEu_08F7C6CC[];
+extern u8 gUnkEu_08CCCBFC[];
+extern u8 gUnkEu_08F7CFB4[];
+extern u8 gUnkEu_08CC8BFC[];
+extern u8 gUnkEu_08F7CB08[];
+#endif
+
 void task_btl_map_0(BtlMapWork* work) {
     SetBgSize(gBtlWork->unk_1C6, 0x8000);
 
@@ -10382,138 +10860,314 @@ void task_btl_map_0(BtlMapWork* work) {
         switch (gBtlWork->unk_10C) {
         case 0xB2:
         case 0xB3:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08C9CD3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C78824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68624, 0xC0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79520);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EEF384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 5;
             break;
         case 0xB1:
+#ifdef VERSION_EU
+            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F74484);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CBC6E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69604, 0x120);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7E498);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08F00384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 5;
             break;
         case 0xA0:
+#ifdef VERSION_EU
+            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F7042C);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CB06E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69404, 0xC0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7D724);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFD384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 0x9E:
+#ifdef VERSION_EU
+            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F6EF3C);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CAC6E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F692C4, 0x140);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7D318);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFC384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 9;
             break;
         case 0x9F:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA0D3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C7C824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F686E4, 0xE0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79960);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF0384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 0xAC:
         case 0xAF:
+#ifdef VERSION_EU
+            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F728C0);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CB86E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69544, 0xC0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7DED0);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFF384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 0xA5:
+#ifdef VERSION_EU
+            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F756FC);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CC06E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F69724, 0x80);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7E83C);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08F01384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 20;
             break;
         default:
+#ifdef VERSION_EU
+            eu_080059D4(gBtlWork->unk_1C6, gUnkEu_08F71C40);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CB46E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F694C4, 0x80);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7DB78);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFE384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 20;
             break;
         }
     } else if (gBtlWork->unk_10C == 0x78) {
+#ifdef VERSION_EU
+        LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA4D3C, 0x4000);
+#else
         LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C80824, 0x4000);
+#endif
         LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F687C4, 0x140);
+#ifdef VERSION_EU
+        eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79DEC);
+#else
         LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF1384, 0x1000);
+#endif
         gBtlWork->unk_0B3 = 10;
     } else {
         switch (gGameState.unk_00D) {
         case 1:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA8D3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C84824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68904, 0xC0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7A224);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF2384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 2:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA4D3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C80824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F687C4, 0x140);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79DEC);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF1384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 3:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB4D3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C90824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68B84, 0x100);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7B498);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF5384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 4:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CACD3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C88824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F689C4, 0xC0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7A7A8);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF3384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 5:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB0D3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C8C824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68A84, 0x100);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7ADFC);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF4384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 7:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CB8D3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C94824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68C84, 0xE0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7B958);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF6384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 5;
             break;
         case 8:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CBCD3C, 0x3EC0);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C98824, 0x3EC0);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68D64, 0x140);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7BE78);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF7384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 5;
             break;
         case 9:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC0BFC, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C9C6E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68EA4, 0x120);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7C274);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF8384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 10:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC4BFC, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA06E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68FC4, 0xE0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7C6CC);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF9384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         case 11:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08C9CD3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C78824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F68624, 0xC0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79520);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EEF384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 5;
             break;
         case 12:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CCCBFC, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA86E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F691E4, 0xE0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7CFB4);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFB384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 20;
             break;
         case 13:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CC8BFC, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA46E4, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F690A4, 0x140);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F7CB08);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFA384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 10;
             break;
         default:
+#ifdef VERSION_EU
+            LoadBgTiles(gBtlWork->unk_1C6, gUnkEu_08CA0D3C, 0x4000);
+#else
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C7C824, 0x4000);
+#endif
             LoadBgPalette(gBtlWork->unk_1C6, gUnk_08F686E4, 0xE0);
+#ifdef VERSION_EU
+            eu_080059F4(gBtlWork->unk_1C6, gUnkEu_08F79960);
+#else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF0384, 0x1000);
+#endif
             gBtlWork->unk_0B3 = 11;
             break;
         }
@@ -10539,9 +11193,6 @@ void task_btl_map_0(BtlMapWork* work) {
                 gBtlWork->unk_024, gBtlWork->unk_000,
                 gBtlWork->unk_004 + 0x2800);
 }
-#else
-INCLUDE_ASM("btl/task_btl_map_0.s");
-#endif
 
 void func_0802F1C8(void) {
     gUnk_0203492C = 0;

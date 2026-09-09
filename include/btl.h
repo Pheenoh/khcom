@@ -135,7 +135,9 @@ typedef struct BtlWork {
     u8 unk_114[0x14];
     u8 (*unk_128)(s32 a);
     s32 unk_12C;
-    u8 unk_130[0x0C];
+    s32 unk_130;
+    s32 unk_134;
+    s32 unk_138;
     u8 unk_13C[0x88];
     u16 unk_1C4;
     u16 unk_1C6;
@@ -152,7 +154,15 @@ typedef struct GameState {
     u16 hp;
     u8 unk_034[0xC4];
     u16 maxHp;
-    u8 unk_0FA[0x116];
+    u8 unk_0FA[4];
+    u16 unk_0FE;
+    u8 unk_100[0xE0];
+    u16 unk_1E0;
+    u16 unk_1E2;
+    u8 unk_1E4[0x14];
+    u16 unk_1F8;
+    u16 unk_1FA;
+    u8 unk_1FC[0x14];
 } GameState;
 
 typedef struct BtlDrawInfo {
@@ -302,8 +312,8 @@ typedef struct BtlRikuWork {
     u8 unk_1B0[0xC];
     s16 unk_1BC;
     u8 unk_1BE[0x2];
-    BtlDrawInfo unk_1C0[7];
-    u8 unk_310[0x64];
+    BtlDrawInfo unk_1C0[9];
+    BtlWork* unk_370;
 } BtlRikuWork;
 
 extern u8 gUnk_08F6DD04[];
