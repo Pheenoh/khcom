@@ -3502,7 +3502,61 @@ void func_0807DE10(UnkStruct_02034AAC* p) {
     }
 }
 
-INCLUDE_ASM("card/func_0807E018.s");
+void func_0807E018(UnkStruct_02034AAC* w) {
+    if (gBtlWork->unk_0F4 == 16) {
+        if (w->unk_78 & 4) {
+            w->unk_A7 = 1;
+            w->unk_A5 = GetRandom() % 10;
+        } else {
+            w->unk_A7 = 0;
+            w->unk_A5 = w->unk_48->unk_20;
+        }
+    } else if (gBtlWork->unk_0F4 == 17) {
+        w->unk_A7 = 1;
+        w->unk_A5 = 0;
+    } else if (gBtlWork->unk_0F4 == 31) {
+        w->unk_A7 = 1;
+        w->unk_A5 = 10 - w->unk_48->unk_20;
+        if (w->unk_A5 == 10) {
+            w->unk_A5 = 0;
+        }
+    } else {
+        w->unk_A5 = w->unk_48->unk_20;
+        switch (gGameState.unk_1B8) {
+        case 7:
+            if (w->unk_48->unk_2A == 1) {
+                w->unk_A5 += 2;
+                if (w->unk_A5 > 9) {
+                    w->unk_A5 = 9;
+                }
+                w->unk_A7 = 1;
+            }
+            break;
+        case 8:
+            if (w->unk_48->unk_2A == 2 && (w->unk_48->unk_1E & 2)) {
+                w->unk_A5 += 2;
+                if (w->unk_A5 > 9) {
+                    w->unk_A5 = 9;
+                }
+                w->unk_A7 = 1;
+            }
+            break;
+        case 9:
+            if (w->unk_48->unk_2A == 0) {
+                w->unk_A5 += 2;
+                if (w->unk_A5 > 9) {
+                    w->unk_A5 = 9;
+                }
+                w->unk_A7 = 1;
+            }
+            break;
+        default:
+            w->unk_A7 = 0;
+            w->unk_A5 = w->unk_48->unk_20;
+            break;
+        }
+    }
+}
 void func_0807E158(void) {
     BtlWork* p;
 

@@ -370,6 +370,8 @@ typedef struct GameState {
     u8 unk_109[0x6F];
     u16 unk_178;
     u16 unk_17A;
+    u8 unk_17C[0x3C];
+    u32 unk_1B8;
 } GameState;
 
 extern GameState gGameState;
