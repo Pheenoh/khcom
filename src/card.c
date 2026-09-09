@@ -5922,7 +5922,147 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
 INCLUDE_ASM("card/func_08080B44.s");
 #endif
 
+#ifdef NON_MATCHING
+void func_08080EB4(UnkStruct_08080268* w) {
+    u8 n = w->unk_BA;
+    u16 total = 0;
+#ifdef VERSION_EU
+    UnkStruct_02034AAC* previous[3];
+#endif
+    UnkStruct_080ABA80 arr = *(UnkStruct_080ABA80*)&gUnk_090352E4[6];
+    u8 flag;
+    u8 skip;
+    u8 i;
+    u16 result;
+#ifdef VERSION_EU
+    u8 previousCount;
+    s32 j;
+#endif
+
+    if ((s16)gUnk_02039DD4->unk_0C2 > n && n != 0) {
+        return;
+    }
+    skip = 0;
+    if (gBtlWork->unk_0F4 == 2 && gUnk_02039DD4->unk_000[0]->unk_48->unk_2A == 0 &&
+        gUnk_02039DD4->unk_0E1 == 0) {
+        skip = 1;
+    }
+#ifdef VERSION_EU
+    if (gBtlWork->unk_0F4 == 20) {
+        for (j = 0; j < gUnk_02039DD4->unk_0D0; j++) {
+            if (gUnk_02039DD4->unk_000[j]->unk_48->unk_24 == 22) {
+                skip = 1;
+            }
+        }
+    }
+    if (gBtlWork->unk_0F4 == 29) {
+        for (j = 0; j < gUnk_02039DD4->unk_0D0; j++) {
+            if (gUnk_02039DD4->unk_000[j]->unk_48->unk_2A == 2 &&
+                !(gUnk_02039DD4->unk_000[j]->unk_48->unk_1E & 8)) {
+                skip = 1;
+            }
+        }
+    }
+#else
+    if (gBtlWork->unk_0F4 == 20 && gUnk_02039DD4->unk_000[0]->unk_48->unk_24 == 22 &&
+        gUnk_02039DD4->unk_0E1 == 0) {
+        skip = 1;
+    }
+    if (gBtlWork->unk_0F4 == 29 && gUnk_02039DD4->unk_000[0]->unk_48->unk_2A == 2 &&
+        gUnk_02039DD4->unk_0E1 == 0) {
+        skip = 1;
+    }
+#endif
+    if (skip != 0) {
+        return;
+    }
+    for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+        gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
+    }
+    gBtlWork->unk_068 |= 0x800000;
+    if ((s16)gUnk_02039DD4->unk_0C2 != n) {
+        if (n == 0) {
+            gBtlWork->unk_1CA = -(u8)gUnk_02039DD4->unk_0C2;
+            if ((s8)gBtlWork->unk_1CA < -9) {
+                gBtlWork->unk_1CA = -9;
+            }
+        } else {
+            gBtlWork->unk_1CA = (u8)gUnk_02039DD4->unk_0C2 - n;
+            if ((s8)gBtlWork->unk_1CA < -9) {
+                gBtlWork->unk_1CA = -9;
+            }
+        }
+        func_0807BA54();
+        gBtlWork->unk_068 |= 0x400;
+        gBtlWork->unk_068 |= 0x10000000;
+        gBtlWork->unk_068 |= 0x80;
+        gBtlWork->unk_068 &= ~0x20ULL;
+        func_08080268(w);
+#ifndef VERSION_EU
+        if (!(gBtlWork->unk_068 & 0x4000)) {
+            result = func_080AC5E8((UnkStruct_02039DD4*)w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag);
+        } else {
+            result = func_080AD144((UnkStruct_02039DD4*)w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag, (void*)1);
+        }
+        if (result == 52) {
+            for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                if ((*(CardSlot**)gUnk_02039DD4->unk_000[i]->unk_3C)->unk_08 == 1) {
+                    (*(CardSlot**)gUnk_02039DD4->unk_000[i]->unk_3C)->unk_0A = 1;
+                    gUnk_02039DD4->unk_000[i]->unk_78 |= 0x80000000;
+                }
+            }
+        }
+#endif
+        for (i = 0; i < w->unk_B9; i++) {
+            total += w->unk_28[i]->unk_A5;
+        }
+        gUnk_02039DD4->unk_0C2 = total;
+#ifdef VERSION_EU
+        previousCount = gUnk_02039DD4->unk_0D0;
+#endif
+        gUnk_02039DD4->unk_0D0 = w->unk_B9;
+        for (i = 0; i < w->unk_B9; i++) {
+#ifdef VERSION_EU
+            previous[i] = gUnk_02039DD4->unk_000[i];
+#endif
+            gUnk_02039DD4->unk_000[i] = w->unk_28[i];
+            w->unk_28[i]->unk_78 |= 0x2000;
+            if (w->unk_28[i]->unk_48->unk_1E & 2) {
+                (*(CardSlot**)w->unk_28[i]->unk_3C)->unk_0A = 1;
+            }
+        }
+        *(u8*)&gBtlWork->unk_0A4 = 0;
+        gUnk_02039DD4->unk_0E2 = 1;
+        m4aSongNumStart(531);
+#ifdef VERSION_EU
+        if (!(gBtlWork->unk_068 & 0x4000)) {
+            result = func_080AC5E8((UnkStruct_02039DD4*)w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag);
+        } else {
+            result = func_080AD144((UnkStruct_02039DD4*)w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag, (void*)1);
+        }
+        if (result == 52) {
+            for (i = 0; i < previousCount; i++) {
+                if ((*(CardSlot**)previous[i]->unk_3C)->unk_08 == 1) {
+                    (*(CardSlot**)previous[i]->unk_3C)->unk_0A = 1;
+                    previous[i]->unk_78 |= 0x80000000;
+                }
+            }
+        }
+#endif
+    } else {
+        gBtlWork->unk_1CA = 0;
+        func_08080268(w);
+        m4aSongNumStart(204);
+        gBtlWork->unk_068 &= ~0x400ULL;
+        gBtlWork->unk_068 &= ~0x20ULL;
+        gBtlWork->unk_068 &= ~0x80ULL;
+        gUnk_02039DD4->unk_0E2 = 0;
+        *(u8*)&gBtlWork->unk_0A4 = 0;
+    }
+}
+#else
 INCLUDE_ASM("card/func_08080EB4.s");
+#endif
 #ifdef NON_MATCHING
 void func_08081210(UnkStruct_08080268* w) {
     u8 i;
