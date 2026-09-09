@@ -1951,8 +1951,10 @@ void func_080B15A4(void) {
     gGameState.world = gUnk_0203AAB0;
 }
 
-#ifndef VERSION_EU
 void mode_sio_btl_cardget_1(void) {
+#ifdef VERSION_EU
+    SioBtlCardgetWork* work;
+#endif
     switch (gSioBtlCardgetWork->unk_00) {
     case 0:
         func_080B1534();
@@ -1970,8 +1972,14 @@ void mode_sio_btl_cardget_1(void) {
         gSioBtlCardgetWork->unk_04++;
         if (gSioBtlCardgetWork->unk_04 > 4) {
             gSioBtlCardgetWork->unk_04 = 0;
+#ifdef VERSION_EU
+            if (gUnk_0203A9E4 == 0) {
+#endif
             func_080C5DC0(func_080C5D50, func_080C5D80);
             func_080C5D00();
+#ifdef VERSION_EU
+            }
+#endif
             gSioBtlCardgetWork->unk_00++;
         }
         func_080B1848();
@@ -1985,6 +1993,9 @@ void mode_sio_btl_cardget_1(void) {
         func_080B1848();
         break;
     case 5:
+#ifdef VERSION_EU
+        if (gUnk_0203A9E4 == 0) {
+#endif
         if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
             gUnk_02039B58[1] = 0x45FC;
         }
@@ -1994,30 +2005,66 @@ void mode_sio_btl_cardget_1(void) {
             gSioBtlCardgetWork->unk_04 = 0;
             gSioBtlCardgetWork->unk_00++;
         }
+#ifdef VERSION_EU
+        } else if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
+            m4aSongNumStart(106);
+            gSioBtlCardgetWork->unk_04 = 0;
+            gSioBtlCardgetWork->unk_00++;
+        }
+#endif
         func_080B1848();
         break;
     case 6:
         gSioBtlCardgetWork->unk_04++;
         if (gSioBtlCardgetWork->unk_04 > 4) {
+#ifdef VERSION_EU
+            work = gSioBtlCardgetWork;
+            if (gUnk_0203A9E4 == 0) {
+#endif
             func_080C5DC0(func_080C6008, func_080C60D8);
             func_080C61D4();
+#ifdef VERSION_EU
+                work = gSioBtlCardgetWork;
+            }
+            work->unk_00++;
+#else
             gSioBtlCardgetWork->unk_00++;
+#endif
         }
         func_080B1848();
         break;
     case 7:
+#ifdef VERSION_EU
+        if (gUnk_0203A9E4 == 0) {
+#endif
         if (gUnk_02039B60 == 2) {
             gSioBtlCardgetWork->unk_04 = 0;
             gSioBtlCardgetWork->unk_00++;
         }
+#ifdef VERSION_EU
+        } else {
+            gSioBtlCardgetWork->unk_04 = 0;
+            gSioBtlCardgetWork->unk_00++;
+        }
+#endif
         func_080B1848();
         break;
     case 8:
         gSioBtlCardgetWork->unk_04++;
         if (gSioBtlCardgetWork->unk_04 > 4) {
+#ifdef VERSION_EU
+            work = gSioBtlCardgetWork;
+            if (gUnk_0203A9E4 == 0) {
+#endif
             func_080C5DC0(func_080C5D50, func_080C5D80);
             func_080C5D00();
+#ifdef VERSION_EU
+                work = gSioBtlCardgetWork;
+            }
+            work->unk_00++;
+#else
             gSioBtlCardgetWork->unk_00++;
+#endif
         }
         func_080B1848();
         break;
@@ -2027,9 +2074,6 @@ void mode_sio_btl_cardget_1(void) {
         break;
     }
 }
-#else
-INCLUDE_ASM("mode_sio/mode_sio_btl_cardget_1.s");
-#endif
 
 void mode_sio_btl_cardget_2(void) {
 }
