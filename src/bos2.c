@@ -774,29 +774,33 @@ void func_080BB4C0(TmArmWork* work) {
     d->unk_04 = work->unk_00C->unk_10;
 }
 
-#ifdef NON_MATCHING
 void func_080BB518(TmArmJoint* joints) {
     s32 x;
     s32 y;
-    u32 i;
+    s32 i;
+    TmArmJoint* p;
 
     x = 0;
     y = 0;
 
-
-    for (i = 0; i < 3; i++) {
-        joints[i].unk_0C = x;
-        joints[i].unk_10 = y;
-        x += gSineTable[joints[i].unk_08] * gUnk_0961A63C[joints[i].unk_26];
-        y += -gSineTable[joints[i].unk_08 + 0x40] * gUnk_0961A63C[joints[i].unk_26];
+    i = 0;
+loop:
+    {
+        p = &joints[i];
+        p->unk_0C = x;
+        p->unk_10 = y;
+        x += gSineTable[p->unk_08] * gUnk_0961A63C[p->unk_26];
+        y += -gSineTable[p->unk_08 + 0x40] * gUnk_0961A63C[p->unk_26];
+    }
+    i++;
+    if (i < 3) {
+        goto loop;
     }
 
-    joints[3].unk_0C = x;
-    joints[3].unk_10 = y;
+    p = &joints[3];
+    p->unk_0C = x;
+    p->unk_10 = y;
 }
-#else
-INCLUDE_ASM("bos2/func_080BB518.s");
-#endif
 #ifdef NON_MATCHING
 void func_080BB588(u8* joints, u16 a) {
     s32 i;
