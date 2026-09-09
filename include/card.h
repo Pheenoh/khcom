@@ -416,6 +416,7 @@ extern u16 gUnk_09041F3E[];
 extern s16 gUnk_09041EBA[];
 extern u16 gUnk_09041EEE[];
 extern s16 gUnk_09041F04[];
+extern s16 gUnk_09041F1A[];
 extern s16 gUnk_09041F0A[];
 extern u8 gUnk_093F7C9C[];
 extern u8 gUnk_08159E18[];
@@ -555,10 +556,13 @@ typedef struct UnkStruct_0808C940 {
     TextSlot unk_A8[8];
     u8 unk_E8[0x3D4];
     void* unk_4BC;
-    u8 unk_4C0[0x154];
+    u8 unk_4C0[0x28];
+    void* unk_4E8;
+    u8 unk_4EC[0x128];
     TaskPool unk_614;
     TaskPool unk_628;
-    u8 unk_63C[0x58];
+    u8 unk_63C[0x10];
+    u8 unk_64C[0x48];
     s32 unk_694;
     s32 unk_698;
     s32 unk_69C;
@@ -591,9 +595,12 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_702;
     u8 unk_703;
     u8 unk_704;
-    u8 unk_705[0x10];
+    u8 unk_705;
+    u8 unk_706;
+    u8 unk_707[0xE];
     u8 unk_715;
-    u8 unk_716[0x13E];
+    u16 unk_716;
+    u8 unk_718[0x13C];
 #endif
     s32 unk_854;
     u8 unk_858[0x54];
