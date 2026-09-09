@@ -1,5 +1,5 @@
-#ifndef GUARD_UNK_08104A84_H
-#define GUARD_UNK_08104A84_H
+#ifndef GUARD_MS_CHARGE_H
+#define GUARD_MS_CHARGE_H
 
 #include "types.h"
 #include "text_types.h"
@@ -113,4 +113,4 @@ void func_0810601C(void);
 void func_081061DC(void);
 void func_08106234(void);
 
-#endif /* GUARD_UNK_08104A84_H */
+#endif

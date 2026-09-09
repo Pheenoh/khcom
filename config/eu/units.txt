@@ -22,11 +22,12 @@ eu_0800C76C.s
 mode_dummy.c -O2 -fprologue-bugfix -fno-common
 mode_debflag.c -O2 -fprologue-bugfix
 mode_vsbattle.c -O2 -fprologue-bugfix -fno-common
-unk_0805e848.c
+movie_text.c
 mode_movie.c -O2 -fprologue-bugfix -fno-common
-unk_0805a484.c
+jiminy_list.c
 mode_jiminy.c -O2 -fprologue-bugfix -fno-common
-unk_0800c778.c
+emy_common.c
+hum_common.c
 btl_actor.c -O2 -fprologue-bugfix -fno-common
 player_progression.c -O2 -fprologue-bugfix -fno-common
 field_transition.c -O2 -fprologue-bugfix -fno-common
@@ -74,18 +75,16 @@ status.c -O2 -fprologue-bugfix
 bos4.c -O2 -fprologue-bugfix -fno-common
 map.c -O2 -fprologue-bugfix -fno-common
 room.c
-unk_080fb000.c
 bos5.c -O2 -fprologue-bugfix -fno-common
 mode_worldinspect.c -O2 -fprologue-bugfix -fno-common
 mode_worldwarp.c -O2 -fprologue-bugfix -fno-common
 mode_ms.c -O2 -fprologue-bugfix -fno-common
-unk_08104a84.c -O2 -fprologue-bugfix -fno-common
+ms_charge.c -O2 -fprologue-bugfix -fno-common
 mode_ms2.c -O2 -fprologue-bugfix -fno-common
 mode_mapinspect.c -O2 -fprologue-bugfix -fno-common
 ms.c
 mode_backupstat.c -O2 -fprologue-bugfix -fno-common
 bos6.c -O2 -fprologue-bugfix -fno-common
-unk_0810fe94.c -O2 -fprologue-bugfix -fno-common
 bos7.c -O2 -fprologue-bugfix -fno-common
 sroll.c -O2 -fprologue-bugfix -fno-common
 lib.c -O2 -fprologue-bugfix -fno-common
@@ -130,7 +129,7 @@ mode_debflag.c(.rodata)
 mode_vsbattle_data.c(.rodata)
 rodata_tables3.s(.rodata)
 asset_gfx.s(.rodata)
-unk_0800c778_data.c(.rodata)
+formation_data.c(.rodata)
 asset_gfx2.s(.rodata)
 rodata_strings4.s(.rodata)
 rodata_tasknames.s(.rodata)
@@ -145,7 +144,7 @@ mode_debug_data.c(.data)
 rodata_regtables.s(.rodata)
 mode_chksnd_data.c(.data)
 rodata_regtables2.s(.rodata)
-unk_0800c778_data.c(.data)
+formation_data.c(.data)
 rodata_regtables22.s(.rodata)
 rodata_regtables2b.s(.rodata)
 task_desc_data.c(.data)
