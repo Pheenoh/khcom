@@ -13621,7 +13621,58 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
 INCLUDE_ASM("card/func_0808F358.s");
 #endif
 #ifdef VERSION_JP
-INCLUDE_ASM("card/func_jp_0808F240.s");
+void func_jp_0808F240(UnkStruct_0808F0C0* w) {
+    switch (w->unk_7C7) {
+    case 0:
+        if (w->unk_7C2 == 5 && (u16)(w->unk_7C0 - 5) <= 4) {
+            w->unk_7C0 = 4;
+        }
+        break;
+    case 1:
+        switch (w->unk_7C2) {
+        case 0:
+        case 1:
+        case 2:
+            break;
+        case 3:
+            if (w->unk_7C0 > 9) {
+                w->unk_7C0 = 9;
+            }
+            break;
+        case 4:
+        case 5:
+        case 6:
+            break;
+        }
+        break;
+    case 2:
+        switch (w->unk_7C2) {
+        case 0:
+            break;
+        case 1:
+            if (w->unk_7C0 > 10) {
+                w->unk_7C0 = 10;
+            }
+            break;
+        case 2:
+        case 3:
+            break;
+        case 4:
+            if (w->unk_7C0 > 9) {
+                w->unk_7C0 = 9;
+            }
+            break;
+        case 5:
+            break;
+        case 6:
+            if (w->unk_7C0 >= 10 && w->unk_7C0 <= 13) {
+                w->unk_7C0 = 9;
+            }
+            break;
+        }
+        break;
+    }
+}
 INCLUDE_ASM("card/func_jp_0808F34C.s");
 #endif
 #ifdef VERSION_EU
