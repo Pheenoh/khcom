@@ -241,7 +241,105 @@ void func_08019350(void) {
     }
 }
 
-INCLUDE_ASM("unk_08019050/func_080195A8.s");
+void func_080195A8(void) {
+    BtlObj* p;
+    u16 t;
+    u16 a;
+
+    if (gUnk_02039B9C->unk_068 & 0x1000000) {
+        return;
+    }
+    t = gUnk_02039B9C->unk_1CC;
+
+    if ((s16)t > 0) {
+        gUnk_02039B9C->unk_1CC = t - 1;
+
+        if (gUnk_02039B9C->unk_1CC == 0) {
+            func_0807E260();
+        }
+        return;
+    }
+
+    a = func_080015F8(0x200, 0x100);
+
+    switch (a) {
+    case 0x200:
+        func_0807E1F4();
+        break;
+    case 0x100:
+        func_0807E200();
+        break;
+    }
+
+    if (GetKeysPressed() & 4) {
+        func_0807E260();
+    }
+
+    if (func_0807E29C() != 0) {
+        gBtlWork->unk_0E2 = 0;
+        gBtlWork->unk_0E3 = 0;
+    } else {
+        if ((GetKeysHeld() & 0x200) && !(GetKeysHeld() & 0x100)) {
+            if (gBtlWork->unk_0E2 < 255) {
+                gBtlWork->unk_0E2++;
+            }
+        } else {
+            gBtlWork->unk_0E2 = 0;
+        }
+
+        if ((GetKeysHeld() & 0x100) && !(GetKeysHeld() & 0x200)) {
+            if (gBtlWork->unk_0E3 < 255) {
+                gBtlWork->unk_0E3++;
+            }
+        } else {
+            gBtlWork->unk_0E3 = 0;
+        }
+    }
+
+    if (gBtlWork->unk_0E2 > 32) {
+        func_0807E1F4();
+    }
+
+    if (gBtlWork->unk_0E3 > 32) {
+        func_0807E200();
+    }
+    p = (BtlObj*)gUnk_02039B9C->unk_07C;
+
+    if (p->unk_034 & 0x200) {
+        return;
+    }
+    if (gBtlWork->unk_068 & 0x40) {
+        return;
+    }
+    if (gBtlWork->unk_068 & 0x10000000) {
+        return;
+    }
+    if (gBtlWork->unk_068 & 0x800000) {
+        return;
+    }
+    if (p->unk_034 & 2) {
+        return;
+    }
+
+    if (a == 0x300) {
+        if (func_0807B3F8() > 2) {
+            func_0807E224();
+        } else {
+            func_0807E218();
+        }
+    }
+
+    if (GetKeysPressed() & 1) {
+        func_0807E20C();
+
+        if (func_08081838() == 3) {
+            if (func_0807E34C() == 0) {
+                gUnk_02039B9C->unk_1CC = 15;
+            }
+        }
+    }
+}
+
 void func_080197AC(void) {
     BtlObj* p;
     u16 a;
