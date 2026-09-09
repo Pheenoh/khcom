@@ -2699,43 +2699,41 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             break;
         }
 
-        if ((w->unk_1D0 & 4) == 0) {
-            goto next27;
-        }
-        w->unk_38C += 25;
+        if (w->unk_1D0 & 4) {
+            w->unk_38C += 25;
 
-        if (act->unk_34 & 4) {
-            w->unk_188.unk_28 = w->unk_188.unk_28 - w->unk_38C;
-        } else {
-            w->unk_188.unk_28 = w->unk_188.unk_28 + w->unk_38C;
-        }
-
-        switch (AnimGetFrame(&w->unk_188.anim)) {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-            if (func_08011F78(0x13B, w->unk_188.unk_28, w->unk_188.unk_2C, w->unk_188.unk_30, 8, 4, 64)) {
-                m4aSongNumStart(0x28C);
+            if (act->unk_34 & 4) {
+                w->unk_188.unk_28 = w->unk_188.unk_28 - w->unk_38C;
+            } else {
+                w->unk_188.unk_28 = w->unk_188.unk_28 + w->unk_38C;
             }
-            break;
-        default:
-            if (func_08011F78(0x13B, w->unk_188.unk_28, w->unk_188.unk_2C, w->unk_188.unk_30, 16, 4, 20)) {
-                m4aSongNumStart(0x28C);
-            }
-            break;
-        }
 
-        if (w->unk_188.unk_28 < (gBtlWork->unk_0DA - 32) << 8 ||
-            w->unk_188.unk_28 > (gBtlWork->unk_0DC + 32) << 8) {
-            func_0801AF08(act);
-            work->base.unk_170 = 0;
-            work->base.unk_150 = 0;
-            w->unk_188.unk_34 |= 2;
-            break;
+            switch (AnimGetFrame(&w->unk_188.anim)) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                if (func_08011F78(0x13B, w->unk_188.unk_28, w->unk_188.unk_2C, w->unk_188.unk_30, 8, 4, 64)) {
+                    m4aSongNumStart(0x28C);
+                }
+                break;
+            default:
+                if (func_08011F78(0x13B, w->unk_188.unk_28, w->unk_188.unk_2C, w->unk_188.unk_30, 16, 4, 20)) {
+                    m4aSongNumStart(0x28C);
+                }
+                break;
+            }
+
+            if (w->unk_188.unk_28 < (gBtlWork->unk_0DA - 32) << 8 ||
+                w->unk_188.unk_28 > (gBtlWork->unk_0DC + 32) << 8) {
+                func_0801AF08(act);
+                work->base.unk_170 = 0;
+                work->base.unk_150 = 0;
+                w->unk_188.unk_34 |= 2;
+                break;
+            }
         }
-    next27:
         work->base.unk_150++;
         break;
     }
