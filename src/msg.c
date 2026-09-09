@@ -3664,7 +3664,3042 @@ s32 func_08066DC0(s16 x, s16 y, u16* s, void* d, void* e, u16 h, u8 n) {
         s++;
     }
 }
-INCLUDE_ASM("msg/func_08066E40.s");
+void func_08066E40(u16 a, u16* b, u8* c) {
+    switch (a & 0xFF00) {
+    case 0x8200: {
+        u16 v = a & 0xFF;
+        if ((u16)(v - 96) <= 25) {
+            *b = a + 0x7DAB;
+        }
+        if ((u16)(v - 129) <= 25) {
+            *b = a + 0x7DA4;
+        }
+        if ((u16)(v - 79) <= 9) {
+            *b = a + 0x7DB2;
+        }
+        if ((u16)(v - 159) <= 82) {
+            *b = a + 0x7DA0;
+        }
+        *c = 0;
+        break;
+    }
+    case 0x8300: {
+        u16 v = a & 0xFF;
+        if ((u16)(v - 64) <= 62) {
+            *b = a + 0x7D52;
+        }
+        if ((u16)(v - 128) <= 20) {
+            *b = a + 0x7D51;
+        }
+        *c = 0;
+        break;
+    }
+    case 0x8700:
+        switch (a & 0xFF) {
+        case 0x56:
+            *b = 143;
+            *c = 0;
+            break;
+        case 0x5D:
+            *b = 142;
+            *c = 0;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x8800:
+        switch (a & 0xFF) {
+        case 0xC5:
+            *b = 9;
+            *c = 1;
+            break;
+        case 0xC3:
+            *b = 84;
+            *c = 1;
+            break;
+        case 0xF3:
+            *b = 86;
+            *c = 1;
+            break;
+        case 0xEA:
+            *b = 104;
+            *c = 1;
+            break;
+        case 0xF9:
+            *b = 153;
+            *c = 1;
+            break;
+        case 0xE1:
+            *b = 179;
+            *c = 1;
+            break;
+        case 0xC8:
+            *b = 182;
+            *c = 1;
+            break;
+        case 0xAB:
+            *b = 208;
+            *c = 1;
+            break;
+        case 0xF6:
+            *b = 247;
+            *c = 1;
+            break;
+        case 0xB5:
+            *b = 250;
+            *c = 1;
+            break;
+        case 0xD3:
+            *b = 3;
+            *c = 2;
+            break;
+        case 0xC0:
+            *b = 17;
+            *c = 2;
+            break;
+        case 0xCD:
+            *b = 57;
+            *c = 2;
+            break;
+        case 0xE7:
+            *b = 105;
+            *c = 2;
+            break;
+        case 0xF8:
+            *b = 164;
+            *c = 2;
+            break;
+        case 0xF5:
+            *b = 184;
+            *c = 2;
+            break;
+        case 0xA4:
+            *b = 192;
+            *c = 2;
+            break;
+        case 0xA3:
+            *b = 207;
+            *c = 2;
+            break;
+        case 0xC4:
+            *b = 63;
+            *c = 3;
+            break;
+        case 0xAC:
+            *b = 78;
+            *c = 3;
+            break;
+        case 0xDF:
+            *b = 102;
+            *c = 3;
+            break;
+        case 0xDA:
+            *b = 118;
+            *c = 3;
+            break;
+        case 0xD9:
+            *b = 135;
+            *c = 3;
+            break;
+        case 0xCA:
+            *b = 136;
+            *c = 3;
+            break;
+        case 0xD0:
+            *b = 187;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x8900:
+        switch (a & 0xFF) {
+        case 0x9C:
+            *b = 4;
+            *c = 1;
+            break;
+        case 0xAF:
+            *b = 26;
+            *c = 1;
+            break;
+        case 0xBD:
+            *b = 47;
+            *c = 1;
+            break;
+        case 0xA4:
+            *b = 49;
+            *c = 1;
+            break;
+        case 0x69:
+            *b = 74;
+            *c = 1;
+            break;
+        case 0x93:
+            *b = 75;
+            *c = 1;
+            break;
+        case 0xF6:
+            *b = 95;
+            *c = 1;
+            break;
+        case 0xEF:
+            *b = 98;
+            *c = 1;
+            break;
+        case 0x52:
+            *b = 103;
+            *c = 1;
+            break;
+        case 0xB4:
+            *b = 107;
+            *c = 1;
+            break;
+        case 0xC6:
+            *b = 121;
+            *c = 1;
+            break;
+        case 0x5E:
+            *b = 124;
+            *c = 1;
+            break;
+        case 0x42:
+            *b = 160;
+            *c = 1;
+            break;
+        case 0xBB:
+            *b = 198;
+            *c = 1;
+            break;
+        case 0xEE:
+            *b = 205;
+            *c = 1;
+            break;
+        case 0xBA:
+            *b = 1;
+            *c = 2;
+            break;
+        case 0x98:
+            *b = 8;
+            *c = 2;
+            break;
+        case 0xBC:
+            *b = 15;
+            *c = 2;
+            break;
+        case 0xF0:
+            *b = 61;
+            *c = 2;
+            break;
+        case 0xF1:
+            *b = 65;
+            *c = 2;
+            break;
+        case 0xCA:
+            *b = 89;
+            *c = 2;
+            break;
+        case 0x6A:
+            *b = 101;
+            *c = 2;
+            break;
+        case 0xE4:
+            *b = 104;
+            *c = 2;
+            break;
+        case 0xB9:
+            *b = 120;
+            *c = 2;
+            break;
+        case 0xAE:
+            *b = 124;
+            *c = 2;
+            break;
+        case 0xC1:
+            *b = 152;
+            *c = 2;
+            break;
+        case 0x70:
+            *b = 155;
+            *c = 2;
+            break;
+        case 0xF7:
+            *b = 177;
+            *c = 2;
+            break;
+        case 0xDF:
+            *b = 200;
+            *c = 2;
+            break;
+        case 0xE6:
+            *b = 201;
+            *c = 2;
+            break;
+        case 0xBF:
+            *b = 218;
+            *c = 2;
+            break;
+        case 0x65:
+            *b = 240;
+            *c = 2;
+            break;
+        case 0x7A:
+            *b = 244;
+            *c = 2;
+            break;
+        case 0xC8:
+            *b = 13;
+            *c = 3;
+            break;
+        case 0x41:
+            *b = 51;
+            *c = 3;
+            break;
+        case 0x8F:
+            *b = 55;
+            *c = 3;
+            break;
+        case 0x9E:
+            *b = 80;
+            *c = 3;
+            break;
+        case 0x45:
+            *b = 113;
+            *c = 3;
+            break;
+        case 0xCE:
+            *b = 129;
+            *c = 3;
+            break;
+        case 0x9F:
+            *b = 142;
+            *c = 3;
+            break;
+        case 0xD7:
+            *b = 148;
+            *c = 3;
+            break;
+        case 0xC2:
+            *b = 150;
+            *c = 3;
+            break;
+        case 0x8A:
+            *b = 154;
+            *c = 3;
+            break;
+        case 0xD4:
+            *b = 181;
+            *c = 3;
+            break;
+        case 0xFC:
+            *b = 188;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x8A00:
+        switch (a & 0xFF) {
+        case 0x4F:
+            *b = 8;
+            *c = 1;
+            break;
+        case 0x6D:
+            *b = 17;
+            *c = 1;
+            break;
+        case 0xB5:
+            *b = 61;
+            *c = 1;
+            break;
+        case 0x4B:
+            *b = 76;
+            *c = 1;
+            break;
+        case 0xA3:
+            *b = 81;
+            *c = 1;
+            break;
+        case 0x45:
+            *b = 83;
+            *c = 1;
+            break;
+        case 0xD4:
+            *b = 101;
+            *c = 1;
+            break;
+        case 0x43:
+            *b = 123;
+            *c = 1;
+            break;
+        case 0xEB:
+            *b = 139;
+            *c = 1;
+            break;
+        case 0xB4:
+            *b = 167;
+            *c = 1;
+            break;
+        case 0x79:
+            *b = 188;
+            *c = 1;
+            break;
+        case 0x58:
+            *b = 199;
+            *c = 1;
+            break;
+        case 0xAA:
+            *b = 252;
+            *c = 1;
+            break;
+        case 0xB1:
+            *b = 9;
+            *c = 2;
+            break;
+        case 0xEF:
+            *b = 13;
+            *c = 2;
+            break;
+        case 0xE7:
+            *b = 54;
+            *c = 2;
+            break;
+        case 0xE8:
+            *b = 59;
+            *c = 2;
+            break;
+        case 0xC3:
+            *b = 64;
+            *c = 2;
+            break;
+        case 0xC8:
+            *b = 84;
+            *c = 2;
+            break;
+        case 0xF1:
+            *b = 140;
+            *c = 2;
+            break;
+        case 0x6F:
+            *b = 143;
+            *c = 2;
+            break;
+        case 0x4A:
+            *b = 146;
+            *c = 2;
+            break;
+        case 0x51:
+            *b = 149;
+            *c = 2;
+            break;
+        case 0xD6:
+            *b = 178;
+            *c = 2;
+            break;
+        case 0x69:
+            *b = 248;
+            *c = 2;
+            break;
+        case 0x47:
+            *b = 3;
+            *c = 3;
+            break;
+        case 0x77:
+            *b = 14;
+            *c = 3;
+            break;
+        case 0xEC:
+            *b = 46;
+            *c = 3;
+            break;
+        case 0xAE:
+            *b = 56;
+            *c = 3;
+            break;
+        case 0xED:
+            *b = 76;
+            *c = 3;
+            break;
+        case 0xB7:
+            *b = 85;
+            *c = 3;
+            break;
+        case 0x88:
+            *b = 88;
+            *c = 3;
+            break;
+        case 0xA5:
+            *b = 145;
+            *c = 3;
+            break;
+        case 0xFA:
+            *b = 162;
+            *c = 3;
+            break;
+        case 0xAB:
+            *b = 166;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x8B00:
+        switch (a & 0xFF) {
+        case 0x4C:
+            *b = 25;
+            *c = 1;
+            break;
+        case 0x41:
+            *b = 30;
+            *c = 1;
+            break;
+        case 0x43:
+            *b = 38;
+            *c = 1;
+            break;
+        case 0x5E:
+            *b = 62;
+            *c = 1;
+            break;
+        case 0xB3:
+            *b = 70;
+            *c = 1;
+            break;
+        case 0xFC:
+            *b = 72;
+            *c = 1;
+            break;
+        case 0xAD:
+            *b = 73;
+            *c = 1;
+            break;
+        case 0x63:
+            *b = 89;
+            *c = 1;
+            break;
+        case 0x9F:
+            *b = 129;
+            *c = 1;
+            break;
+        case 0xDF:
+            *b = 134;
+            *c = 1;
+            break;
+        case 0xA6:
+            *b = 158;
+            *c = 1;
+            break;
+        case 0xEA:
+            *b = 173;
+            *c = 1;
+            break;
+        case 0xE6:
+            *b = 180;
+            *c = 1;
+            break;
+        case 0xBB:
+            *b = 189;
+            *c = 1;
+            break;
+        case 0xC1:
+            *b = 200;
+            *c = 1;
+            break;
+        case 0xB0:
+            *b = 207;
+            *c = 1;
+            break;
+        case 0x4E:
+            *b = 214;
+            *c = 1;
+            break;
+        case 0x86:
+            *b = 221;
+            *c = 1;
+            break;
+        case 0x74:
+            *b = 239;
+            *c = 1;
+            break;
+        case 0x7E:
+            *b = 253;
+            *c = 1;
+            break;
+        case 0xB9:
+            *b = 7;
+            *c = 2;
+            break;
+        case 0x46:
+            *b = 19;
+            *c = 2;
+            break;
+        case 0x5A:
+            *b = 24;
+            *c = 2;
+            break;
+        case 0x7D:
+            *b = 27;
+            *c = 2;
+            break;
+        case 0x92:
+            *b = 40;
+            *c = 2;
+            break;
+        case 0x96:
+            *b = 43;
+            *c = 2;
+            break;
+        case 0x7B:
+            *b = 66;
+            *c = 2;
+            break;
+        case 0xB6:
+            *b = 88;
+            *c = 2;
+            break;
+        case 0xF3:
+            *b = 99;
+            *c = 2;
+            break;
+        case 0x5D:
+            *b = 108;
+            *c = 2;
+            break;
+        case 0xC8:
+            *b = 126;
+            *c = 2;
+            break;
+        case 0xA3:
+            *b = 153;
+            *c = 2;
+            break;
+        case 0x81:
+            *b = 195;
+            *c = 2;
+            break;
+        case 0xEC:
+            *b = 198;
+            *c = 2;
+            break;
+        case 0x91:
+            *b = 203;
+            *c = 2;
+            break;
+        case 0x50:
+            *b = 204;
+            *c = 2;
+            break;
+        case 0xF0:
+            *b = 208;
+            *c = 2;
+            break;
+        case 0x8E:
+            *b = 213;
+            *c = 2;
+            break;
+        case 0x70:
+            *b = 214;
+            *c = 2;
+            break;
+        case 0xBF:
+            *b = 220;
+            *c = 2;
+            break;
+        case 0xB5:
+            *b = 235;
+            *c = 2;
+            break;
+        case 0x76:
+            *b = 237;
+            *c = 2;
+            break;
+        case 0xF4:
+            *b = 239;
+            *c = 2;
+            break;
+        case 0x40:
+            *b = 254;
+            *c = 2;
+            break;
+        case 0x60:
+            *b = 255;
+            *c = 2;
+            break;
+        case 0x83:
+            *b = 5;
+            *c = 3;
+            break;
+        case 0x95:
+            *b = 43;
+            *c = 3;
+            break;
+        case 0xEF:
+            *b = 45;
+            *c = 3;
+            break;
+        case 0x4D:
+            *b = 66;
+            *c = 3;
+            break;
+        case 0xBD:
+            *b = 71;
+            *c = 3;
+            break;
+        case 0x90:
+            *b = 99;
+            *c = 3;
+            break;
+        case 0x7A:
+            *b = 123;
+            *c = 3;
+            break;
+        case 0x9B:
+            *b = 131;
+            *c = 3;
+            break;
+        case 0xA5:
+            *b = 158;
+            *c = 3;
+            break;
+        case 0x78:
+            *b = 167;
+            *c = 3;
+            break;
+        case 0xE0:
+            *b = 169;
+            *c = 3;
+            break;
+        case 0xC9:
+            *b = 179;
+            *c = 3;
+            break;
+        case 0xCA:
+            *b = 184;
+            *c = 3;
+            break;
+        case 0xCF:
+            *b = 186;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x8C00:
+        switch (a & 0xFF) {
+        case 0x4E:
+            *b = 6;
+            *c = 1;
+            break;
+        case 0xF5:
+            *b = 11;
+            *c = 1;
+            break;
+        case 0xA9:
+            *b = 12;
+            *c = 1;
+            break;
+        case 0x78:
+            *b = 22;
+            *c = 1;
+            break;
+        case 0xAB:
+            *b = 55;
+            *c = 1;
+            break;
+        case 0xBE:
+            *b = 67;
+            *c = 1;
+            break;
+        case 0xAE:
+            *b = 80;
+            *c = 1;
+            break;
+        case 0xB3:
+            *b = 91;
+            *c = 1;
+            break;
+        case 0x76:
+            *b = 116;
+            *c = 1;
+            break;
+        case 0x60:
+            *b = 128;
+            *c = 1;
+            break;
+        case 0x9F:
+            *b = 138;
+            *c = 1;
+            break;
+        case 0xFB:
+            *b = 152;
+            *c = 1;
+            break;
+        case 0xC8:
+            *b = 203;
+            *c = 1;
+            break;
+        case 0xC4:
+            *b = 215;
+            *c = 1;
+            break;
+        case 0xBB:
+            *b = 216;
+            *c = 1;
+            break;
+        case 0xA4:
+            *b = 220;
+            *c = 1;
+            break;
+        case 0xC0:
+            *b = 233;
+            *c = 1;
+            break;
+        case 0xB4:
+            *b = 246;
+            *c = 1;
+            break;
+        case 0xB1:
+            *b = 12;
+            *c = 2;
+            break;
+        case 0x69:
+            *b = 33;
+            *c = 2;
+            break;
+        case 0x88:
+            *b = 46;
+            *c = 2;
+            break;
+        case 0x59:
+            *b = 49;
+            *c = 2;
+            break;
+        case 0xE4:
+            *b = 60;
+            *c = 2;
+            break;
+        case 0x41:
+            *b = 73;
+            *c = 2;
+            break;
+        case 0xE3:
+            *b = 76;
+            *c = 2;
+            break;
+        case 0x8B:
+            *b = 90;
+            *c = 2;
+            break;
+        case 0xFC:
+            *b = 96;
+            *c = 2;
+            break;
+        case 0xDD:
+            *b = 97;
+            *c = 2;
+            break;
+        case 0x57:
+            *b = 106;
+            *c = 2;
+            break;
+        case 0xAF:
+            *b = 111;
+            *c = 2;
+            break;
+        case 0x99:
+            *b = 117;
+            *c = 2;
+            break;
+        case 0xB5:
+            *b = 129;
+            *c = 2;
+            break;
+        case 0xB8:
+            *b = 175;
+            *c = 2;
+            break;
+        case 0xE5:
+            *b = 183;
+            *c = 2;
+            break;
+        case 0x8F:
+            *b = 211;
+            *c = 2;
+            break;
+        case 0xB6:
+            *b = 226;
+            *c = 2;
+            break;
+        case 0x8A:
+            *b = 238;
+            *c = 2;
+            break;
+        case 0xC3:
+            *b = 251;
+            *c = 2;
+            break;
+        case 0x79:
+            *b = 9;
+            *c = 3;
+            break;
+        case 0xEB:
+            *b = 19;
+            *c = 3;
+            break;
+        case 0x8C:
+            *b = 31;
+            *c = 3;
+            break;
+        case 0x95:
+            *b = 37;
+            *c = 3;
+            break;
+        case 0xF0:
+            *b = 57;
+            *c = 3;
+            break;
+        case 0xCC:
+            *b = 70;
+            *c = 3;
+            break;
+        case 0xF8:
+            *b = 98;
+            *c = 3;
+            break;
+        case 0xEA:
+            *b = 100;
+            *c = 3;
+            break;
+        case 0x82:
+            *b = 122;
+            *c = 3;
+            break;
+        case 0xB9:
+            *b = 171;
+            *c = 3;
+            break;
+        case 0x6E:
+            *b = 172;
+            *c = 3;
+            break;
+        case 0x87:
+            *b = 189;
+            *c = 3;
+            break;
+        case 0x5E:
+            *b = 191;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x8D00:
+        switch (a & 0xFF) {
+        case 0x90:
+            *b = 23;
+            *c = 1;
+            break;
+        case 0x73:
+            *b = 31;
+            *c = 1;
+            break;
+        case 0xDF:
+            *b = 46;
+            *c = 1;
+            break;
+        case 0x9E:
+            *b = 127;
+            *c = 1;
+            break;
+        case 0xC5:
+            *b = 133;
+            *c = 1;
+            break;
+        case 0xA2:
+            *b = 143;
+            *c = 1;
+            break;
+        case 0x6C:
+            *b = 157;
+            *c = 1;
+            break;
+        case 0xA1:
+            *b = 164;
+            *c = 1;
+            break;
+        case 0xC4:
+            *b = 187;
+            *c = 1;
+            break;
+        case 0xCB:
+            *b = 228;
+            *c = 1;
+            break;
+        case 0xEC:
+            *b = 230;
+            *c = 1;
+            break;
+        case 0x87:
+            *b = 23;
+            *c = 2;
+            break;
+        case 0x8F:
+            *b = 26;
+            *c = 2;
+            break;
+        case 0xD9:
+            *b = 29;
+            *c = 2;
+            break;
+        case 0x91:
+            *b = 38;
+            *c = 2;
+            break;
+        case 0x44:
+            *b = 81;
+            *c = 2;
+            break;
+        case 0xA5:
+            *b = 91;
+            *c = 2;
+            break;
+        case 0x72:
+            *b = 134;
+            *c = 2;
+            break;
+        case 0x52:
+            *b = 139;
+            *c = 2;
+            break;
+        case 0xB6:
+            *b = 141;
+            *c = 2;
+            break;
+        case 0xC3:
+            *b = 147;
+            *c = 2;
+            break;
+        case 0xCF:
+            *b = 179;
+            *c = 2;
+            break;
+        case 0x58:
+            *b = 202;
+            *c = 2;
+            break;
+        case 0x82:
+            *b = 215;
+            *c = 2;
+            break;
+        case 0xDD:
+            *b = 224;
+            *c = 2;
+            break;
+        case 0xD7:
+            *b = 230;
+            *c = 2;
+            break;
+        case 0x48:
+            *b = 231;
+            *c = 2;
+            break;
+        case 0x4C:
+            *b = 243;
+            *c = 2;
+            break;
+        case 0xFB:
+            *b = 250;
+            *c = 2;
+            break;
+        case 0x5C:
+            *b = 15;
+            *c = 3;
+            break;
+        case 0x93:
+            *b = 39;
+            *c = 3;
+            break;
+        case 0xBD:
+            *b = 40;
+            *c = 3;
+            break;
+        case 0xAC:
+            *b = 92;
+            *c = 3;
+            break;
+        case 0xDB:
+            *b = 108;
+            *c = 3;
+            break;
+        case 0x55:
+            *b = 121;
+            *c = 3;
+            break;
+        case 0xBB:
+            *b = 128;
+            *c = 3;
+            break;
+        case 0xAA:
+            *b = 185;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x8E00:
+        switch (a & 0xFF) {
+        case 0xB8:
+            *b = 13;
+            *c = 1;
+            break;
+        case 0xA9:
+            *b = 15;
+            *c = 1;
+            break;
+        case 0xD7:
+            *b = 18;
+            *c = 1;
+            break;
+        case 0xD2:
+            *b = 21;
+            *c = 1;
+            break;
+        case 0x9E:
+            *b = 27;
+            *c = 1;
+            break;
+        case 0x76:
+            *b = 28;
+            *c = 1;
+            break;
+        case 0x84:
+            *b = 44;
+            *c = 1;
+            break;
+        case 0xA1:
+            *b = 54;
+            *c = 1;
+            break;
+        case 0xA6:
+            *b = 87;
+            *c = 1;
+            break;
+        case 0x71:
+            *b = 102;
+            *c = 1;
+            break;
+        case 0xC0:
+            *b = 111;
+            *c = 1;
+            break;
+        case 0x9F:
+            *b = 155;
+            *c = 1;
+            break;
+        case 0x9D:
+            *b = 156;
+            *c = 1;
+            break;
+        case 0x96:
+            *b = 161;
+            *c = 1;
+            break;
+        case 0x8E:
+            *b = 191;
+            *c = 1;
+            break;
+        case 0xE8:
+            *b = 197;
+            *c = 1;
+            break;
+        case 0x6D:
+            *b = 219;
+            *c = 1;
+            break;
+        case 0x70:
+            *b = 232;
+            *c = 1;
+            break;
+        case 0xE6:
+            *b = 241;
+            *c = 1;
+            break;
+        case 0xE3:
+            *b = 249;
+            *c = 1;
+            break;
+        case 0x63:
+            *b = 10;
+            *c = 2;
+            break;
+        case 0x64:
+            *b = 22;
+            *c = 2;
+            break;
+        case 0xB6:
+            *b = 28;
+            *c = 2;
+            break;
+        case 0xF1:
+            *b = 31;
+            *c = 2;
+            break;
+        case 0x80:
+            *b = 48;
+            *c = 2;
+            break;
+        case 0xE5:
+            *b = 75;
+            *c = 2;
+            break;
+        case 0x4F:
+            *b = 78;
+            *c = 2;
+            break;
+        case 0xD3:
+            *b = 80;
+            *c = 2;
+            break;
+        case 0x67:
+            *b = 86;
+            *c = 2;
+            break;
+        case 0x5A:
+            *b = 87;
+            *c = 2;
+            break;
+        case 0xE7:
+            *b = 102;
+            *c = 2;
+            break;
+        case 0xD8:
+            *b = 112;
+            *c = 2;
+            break;
+        case 0x97:
+            *b = 122;
+            *c = 2;
+            break;
+        case 0x8B:
+            *b = 136;
+            *c = 2;
+            break;
+        case 0x51:
+            *b = 151;
+            *c = 2;
+            break;
+        case 0x6E:
+            *b = 166;
+            *c = 2;
+            break;
+        case 0x7E:
+            *b = 169;
+            *c = 2;
+            break;
+        case 0xF3:
+            *b = 194;
+            *c = 2;
+            break;
+        case 0xF4:
+            *b = 199;
+            *c = 2;
+            break;
+        case 0x78:
+            *b = 227;
+            *c = 2;
+            break;
+        case 0x55:
+            *b = 242;
+            *c = 2;
+            break;
+        case 0xED:
+            *b = 246;
+            *c = 2;
+            break;
+        case 0x40:
+            *b = 16;
+            *c = 3;
+            break;
+        case 0x77:
+            *b = 25;
+            *c = 3;
+            break;
+        case 0xCC:
+            *b = 42;
+            *c = 3;
+            break;
+        case 0x91:
+            *b = 50;
+            *c = 3;
+            break;
+        case 0xA8:
+            *b = 81;
+            *c = 3;
+            break;
+        case 0xFB:
+            *b = 124;
+            *c = 3;
+            break;
+        case 0xD4:
+            *b = 125;
+            *c = 3;
+            break;
+        case 0x9A:
+            *b = 140;
+            *c = 3;
+            break;
+        case 0xEA:
+            *b = 146;
+            *c = 3;
+            break;
+        case 0x61:
+            *b = 159;
+            *c = 3;
+            break;
+        case 0xCB:
+            *b = 164;
+            *c = 3;
+            break;
+        case 0xBF:
+            *b = 196;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x8F00:
+        switch (a & 0xFF) {
+        case 0x6F:
+            *b = 29;
+            *c = 1;
+            break;
+        case 0xEA:
+            *b = 32;
+            *c = 1;
+            break;
+        case 0x8A:
+            *b = 33;
+            *c = 1;
+            break;
+        case 0x97:
+            *b = 48;
+            *c = 1;
+            break;
+        case 0x95:
+            *b = 68;
+            *c = 1;
+            break;
+        case 0xE3:
+            *b = 183;
+            *c = 1;
+            break;
+        case 0xE4:
+            *b = 185;
+            *c = 1;
+            break;
+        case 0x80:
+            *b = 194;
+            *c = 1;
+            break;
+        case 0xD0:
+            *b = 204;
+            *c = 1;
+            break;
+        case 0x50:
+            *b = 217;
+            *c = 1;
+            break;
+        case 0xE7:
+            *b = 224;
+            *c = 1;
+            break;
+        case 0x94:
+            *b = 226;
+            *c = 1;
+            break;
+        case 0x64:
+            *b = 236;
+            *c = 1;
+            break;
+        case 0xAD:
+            *b = 21;
+            *c = 2;
+            break;
+        case 0x57:
+            *b = 35;
+            *c = 2;
+            break;
+        case 0xD8:
+            *b = 39;
+            *c = 2;
+            break;
+        case 0x9F:
+            *b = 45;
+            *c = 2;
+            break;
+        case 0x89:
+            *b = 63;
+            *c = 2;
+            break;
+        case 0x8F:
+            *b = 70;
+            *c = 2;
+            break;
+        case 0x5D:
+            *b = 83;
+            *c = 2;
+            break;
+        case 0xC1:
+            *b = 142;
+            *c = 2;
+            break;
+        case 0xC4:
+            *b = 144;
+            *c = 2;
+            break;
+        case 0x91:
+            *b = 145;
+            *c = 2;
+            break;
+        case 0xE1:
+            *b = 148;
+            *c = 2;
+            break;
+        case 0xF3:
+            *b = 186;
+            *c = 2;
+            break;
+        case 0xE9:
+            *b = 189;
+            *c = 2;
+            break;
+        case 0x49:
+            *b = 190;
+            *c = 2;
+            break;
+        case 0xEE:
+            *b = 191;
+            *c = 2;
+            break;
+        case 0xE6:
+            *b = 196;
+            *c = 2;
+            break;
+        case 0x5B:
+            *b = 206;
+            *c = 2;
+            break;
+        case 0x75:
+            *b = 209;
+            *c = 2;
+            break;
+        case 0x68:
+            *b = 225;
+            *c = 2;
+            break;
+        case 0xAC:
+            *b = 229;
+            *c = 2;
+            break;
+        case 0x9D:
+            *b = 233;
+            *c = 2;
+            break;
+        case 0x5A:
+            *b = 0;
+            *c = 3;
+            break;
+        case 0xCE:
+            *b = 2;
+            *c = 3;
+            break;
+        case 0x83:
+            *b = 22;
+            *c = 3;
+            break;
+        case 0xF0:
+            *b = 28;
+            *c = 3;
+            break;
+        case 0x70:
+            *b = 84;
+            *c = 3;
+            break;
+        case 0xC6:
+            *b = 130;
+            *c = 3;
+            break;
+        case 0x5C:
+            *b = 139;
+            *c = 3;
+            break;
+        case 0xA2:
+            *b = 165;
+            *c = 3;
+            break;
+        case 0xED:
+            *b = 175;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9000:
+        switch (a & 0xFF) {
+        case 0xD8:
+            *b = 1;
+            *c = 1;
+            break;
+        case 0x53:
+            *b = 3;
+            *c = 1;
+            break;
+        case 0x6C:
+            *b = 43;
+            *c = 1;
+            break;
+        case 0xB0:
+            *b = 65;
+            *c = 1;
+            break;
+        case 0xED:
+            *b = 66;
+            *c = 1;
+            break;
+        case 0x5B:
+            *b = 69;
+            *c = 1;
+            break;
+        case 0xA2:
+            *b = 82;
+            *c = 1;
+            break;
+        case 0x51:
+            *b = 94;
+            *c = 1;
+            break;
+        case 0xBA:
+            *b = 97;
+            *c = 1;
+            break;
+        case 0xE0:
+            *b = 112;
+            *c = 1;
+            break;
+        case 0x45:
+            *b = 117;
+            *c = 1;
+            break;
+        case 0xB6:
+            *b = 130;
+            *c = 1;
+            break;
+        case 0xB3:
+            *b = 149;
+            *c = 1;
+            break;
+        case 0x4D:
+            *b = 151;
+            *c = 1;
+            break;
+        case 0x48:
+            *b = 169;
+            *c = 1;
+            break;
+        case 0xA8:
+            *b = 175;
+            *c = 1;
+            break;
+        case 0xAC:
+            *b = 184;
+            *c = 1;
+            break;
+        case 0x5E:
+            *b = 231;
+            *c = 1;
+            break;
+        case 0x65:
+            *b = 251;
+            *c = 1;
+            break;
+        case 0xE2:
+            *b = 255;
+            *c = 1;
+            break;
+        case 0x56:
+            *b = 4;
+            *c = 2;
+            break;
+        case 0x46:
+            *b = 34;
+            *c = 2;
+            break;
+        case 0xD3:
+            *b = 41;
+            *c = 2;
+            break;
+        case 0x67:
+            *b = 44;
+            *c = 2;
+            break;
+        case 0xE6:
+            *b = 68;
+            *c = 2;
+            break;
+        case 0x69:
+            *b = 69;
+            *c = 2;
+            break;
+        case 0x62:
+            *b = 71;
+            *c = 2;
+            break;
+        case 0x85:
+            *b = 100;
+            *c = 2;
+            break;
+        case 0xB5:
+            *b = 109;
+            *c = 2;
+            break;
+        case 0x94:
+            *b = 173;
+            *c = 2;
+            break;
+        case 0x58:
+            *b = 210;
+            *c = 2;
+            break;
+        case 0x84:
+            *b = 20;
+            *c = 3;
+            break;
+        case 0xCC:
+            *b = 21;
+            *c = 3;
+            break;
+        case 0x7D:
+            *b = 23;
+            *c = 3;
+            break;
+        case 0xAF:
+            *b = 35;
+            *c = 3;
+            break;
+        case 0xD4:
+            *b = 49;
+            *c = 3;
+            break;
+        case 0xF5:
+            *b = 73;
+            *c = 3;
+            break;
+        case 0x41:
+            *b = 83;
+            *c = 3;
+            break;
+        case 0xC2:
+            *b = 95;
+            *c = 3;
+            break;
+        case 0xB8:
+            *b = 97;
+            *c = 3;
+            break;
+        case 0x5F:
+            *b = 104;
+            *c = 3;
+            break;
+        case 0xC3:
+            *b = 105;
+            *c = 3;
+            break;
+        case 0xAB:
+            *b = 106;
+            *c = 3;
+            break;
+        case 0x44:
+            *b = 109;
+            *c = 3;
+            break;
+        case 0xDA:
+            *b = 127;
+            *c = 3;
+            break;
+        case 0x55:
+            *b = 132;
+            *c = 3;
+            break;
+        case 0xA7:
+            *b = 163;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9100:
+        switch (a & 0xFF) {
+        case 0xE5:
+            *b = 0;
+            *c = 1;
+            break;
+        case 0x7A:
+            *b = 2;
+            *c = 1;
+            break;
+        case 0xDE:
+            *b = 53;
+            *c = 1;
+            break;
+        case 0xD2:
+            *b = 59;
+            *c = 1;
+            break;
+        case 0x52:
+            *b = 64;
+            *c = 1;
+            break;
+        case 0xAB:
+            *b = 90;
+            *c = 1;
+            break;
+        case 0xCC:
+            *b = 135;
+            *c = 1;
+            break;
+        case 0x81:
+            *b = 137;
+            *c = 1;
+            break;
+        case 0x7B:
+            *b = 145;
+            *c = 1;
+            break;
+        case 0xA9:
+            *b = 163;
+            *c = 1;
+            break;
+        case 0x9C:
+            *b = 181;
+            *c = 1;
+            break;
+        case 0x8A:
+            *b = 196;
+            *c = 1;
+            break;
+        case 0x66:
+            *b = 201;
+            *c = 1;
+            break;
+        case 0xE8:
+            *b = 212;
+            *c = 1;
+            break;
+        case 0x95:
+            *b = 235;
+            *c = 1;
+            break;
+        case 0x4E:
+            *b = 5;
+            *c = 2;
+            break;
+        case 0x4F:
+            *b = 50;
+            *c = 2;
+            break;
+        case 0x9B:
+            *b = 51;
+            *c = 2;
+            break;
+        case 0xA7:
+            *b = 98;
+            *c = 2;
+            break;
+        case 0x84:
+            *b = 103;
+            *c = 2;
+            break;
+        case 0xBD:
+            *b = 107;
+            *c = 2;
+            break;
+        case 0xDD:
+            *b = 113;
+            *c = 2;
+            break;
+        case 0xAE:
+            *b = 115;
+            *c = 2;
+            break;
+        case 0x44:
+            *b = 121;
+            *c = 2;
+            break;
+        case 0xAF:
+            *b = 127;
+            *c = 2;
+            break;
+        case 0xCA:
+            *b = 137;
+            *c = 2;
+            break;
+        case 0xBC:
+            *b = 150;
+            *c = 2;
+            break;
+        case 0x88:
+            *b = 154;
+            *c = 2;
+            break;
+        case 0x49:
+            *b = 158;
+            *c = 2;
+            break;
+        case 0xC5:
+            *b = 165;
+            *c = 2;
+            break;
+        case 0x67:
+            *b = 170;
+            *c = 2;
+            break;
+        case 0x53:
+            *b = 171;
+            *c = 2;
+            break;
+        case 0x5F:
+            *b = 176;
+            *c = 2;
+            break;
+        case 0xD4:
+            *b = 187;
+            *c = 2;
+            break;
+        case 0xCE:
+            *b = 212;
+            *c = 2;
+            break;
+        case 0xB6:
+            *b = 223;
+            *c = 2;
+            break;
+        case 0xB1:
+            *b = 6;
+            *c = 3;
+            break;
+        case 0xA4:
+            *b = 32;
+            *c = 3;
+            break;
+        case 0xE4:
+            *b = 48;
+            *c = 3;
+            break;
+        case 0xE3:
+            *b = 72;
+            *c = 3;
+            break;
+        case 0xB0:
+            *b = 74;
+            *c = 3;
+            break;
+        case 0x97:
+            *b = 86;
+            *c = 3;
+            break;
+        case 0x50:
+            *b = 103;
+            *c = 3;
+            break;
+        case 0xBE:
+            *b = 119;
+            *c = 3;
+            break;
+        case 0xF0:
+            *b = 137;
+            *c = 3;
+            break;
+        case 0x77:
+            *b = 149;
+            *c = 3;
+            break;
+        case 0x96:
+            *b = 161;
+            *c = 3;
+            break;
+        case 0xAC:
+            *b = 173;
+            *c = 3;
+            break;
+        case 0xE6:
+            *b = 192;
+            *c = 3;
+            break;
+        case 0x9D:
+            *b = 195;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9200:
+        switch (a & 0xFF) {
+        case 0x86:
+            *b = 10;
+            *c = 1;
+            break;
+        case 0x6D:
+            *b = 14;
+            *c = 1;
+            break;
+        case 0x42:
+            *b = 35;
+            *c = 1;
+            break;
+        case 0x40:
+            *b = 39;
+            *c = 1;
+            break;
+        case 0x4E:
+            *b = 40;
+            *c = 1;
+            break;
+        case 0x69:
+            *b = 77;
+            *c = 1;
+            break;
+        case 0x6E:
+            *b = 79;
+            *c = 1;
+            break;
+        case 0x8B:
+            *b = 93;
+            *c = 1;
+            break;
+        case 0xB7:
+            *b = 120;
+            *c = 1;
+            break;
+        case 0x54:
+            *b = 122;
+            *c = 1;
+            break;
+        case 0xBC:
+            *b = 132;
+            *c = 1;
+            break;
+        case 0x45:
+            *b = 177;
+            *c = 1;
+            break;
+        case 0x75:
+            *b = 178;
+            *c = 1;
+            break;
+        case 0xEA:
+            *b = 206;
+            *c = 1;
+            break;
+        case 0xCA:
+            *b = 222;
+            *c = 1;
+            break;
+        case 0x6B:
+            *b = 225;
+            *c = 1;
+            break;
+        case 0xB2:
+            *b = 245;
+            *c = 1;
+            break;
+        case 0xC9:
+            *b = 254;
+            *c = 1;
+            break;
+        case 0xC7:
+            *b = 6;
+            *c = 2;
+            break;
+        case 0x78:
+            *b = 25;
+            *c = 2;
+            break;
+        case 0x50:
+            *b = 85;
+            *c = 2;
+            break;
+        case 0x44:
+            *b = 92;
+            *c = 2;
+            break;
+        case 0x8D:
+            *b = 133;
+            *c = 2;
+            break;
+        case 0x87:
+            *b = 135;
+            *c = 2;
+            break;
+        case 0xEF:
+            *b = 138;
+            *c = 2;
+            break;
+        case 0x6C:
+            *b = 219;
+            *c = 2;
+            break;
+        case 0x85:
+            *b = 221;
+            *c = 2;
+            break;
+        case 0x6A:
+            *b = 222;
+            *c = 2;
+            break;
+        case 0xF6:
+            *b = 12;
+            *c = 3;
+            break;
+        case 0xBE:
+            *b = 58;
+            *c = 3;
+            break;
+        case 0x66:
+            *b = 69;
+            *c = 3;
+            break;
+        case 0x63:
+            *b = 77;
+            *c = 3;
+            break;
+        case 0xA7:
+            *b = 94;
+            *c = 3;
+            break;
+        case 0x5A:
+            *b = 101;
+            *c = 3;
+            break;
+        case 0x8E:
+            *b = 107;
+            *c = 3;
+            break;
+        case 0xE8:
+            *b = 138;
+            *c = 3;
+            break;
+        case 0x65:
+            *b = 153;
+            *c = 3;
+            break;
+        case 0xB4:
+            *b = 157;
+            *c = 3;
+            break;
+        case 0xE1:
+            *b = 178;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9300:
+        switch (a & 0xFF) {
+        case 0x90:
+            *b = 45;
+            *c = 1;
+            break;
+        case 0x9A:
+            *b = 57;
+            *c = 1;
+            break;
+        case 0x96:
+            *b = 63;
+            *c = 1;
+            break;
+        case 0xAE:
+            *b = 100;
+            *c = 1;
+            break;
+        case 0x78:
+            *b = 105;
+            *c = 1;
+            break;
+        case 0xFC:
+            *b = 106;
+            *c = 1;
+            break;
+        case 0xC1:
+            *b = 108;
+            *c = 1;
+            break;
+        case 0xE0:
+            *b = 136;
+            *c = 1;
+            break;
+        case 0x7B:
+            *b = 148;
+            *c = 1;
+            break;
+        case 0x60:
+            *b = 150;
+            *c = 1;
+            break;
+        case 0xA6:
+            *b = 168;
+            *c = 1;
+            break;
+        case 0x66:
+            *b = 172;
+            *c = 1;
+            break;
+        case 0x47:
+            *b = 202;
+            *c = 1;
+            break;
+        case 0x56:
+            *b = 227;
+            *c = 1;
+            break;
+        case 0x6E:
+            *b = 47;
+            *c = 2;
+            break;
+        case 0xAF:
+            *b = 55;
+            *c = 2;
+            break;
+        case 0xAA:
+            *b = 58;
+            *c = 2;
+            break;
+        case 0x61:
+            *b = 67;
+            *c = 2;
+            break;
+        case 0xB4:
+            *b = 72;
+            *c = 2;
+            break;
+        case 0xEF:
+            *b = 82;
+            *c = 2;
+            break;
+        case 0xFA:
+            *b = 131;
+            *c = 2;
+            break;
+        case 0xCB:
+            *b = 159;
+            *c = 2;
+            break;
+        case 0xF1:
+            *b = 168;
+            *c = 2;
+            break;
+        case 0x73:
+            *b = 180;
+            *c = 2;
+            break;
+        case 0x7C:
+            *b = 182;
+            *c = 2;
+            break;
+        case 0xC5:
+            *b = 232;
+            *c = 2;
+            break;
+        case 0xCD:
+            *b = 245;
+            *c = 2;
+            break;
+        case 0x49:
+            *b = 252;
+            *c = 2;
+            break;
+        case 0x87:
+            *b = 1;
+            *c = 3;
+            break;
+        case 0xB1:
+            *b = 26;
+            *c = 3;
+            break;
+        case 0xB9:
+            *b = 44;
+            *c = 3;
+            break;
+        case 0x5D:
+            *b = 47;
+            *c = 3;
+            break;
+        case 0x54:
+            *b = 61;
+            *c = 3;
+            break;
+        case 0x72:
+            *b = 65;
+            *c = 3;
+            break;
+        case 0xE4:
+            *b = 89;
+            *c = 3;
+            break;
+        case 0x79:
+            *b = 90;
+            *c = 3;
+            break;
+        case 0xBE:
+            *b = 93;
+            *c = 3;
+            break;
+        case 0xAC:
+            *b = 126;
+            *c = 3;
+            break;
+        case 0xC7:
+            *b = 134;
+            *c = 3;
+            break;
+        case 0x58:
+            *b = 147;
+            *c = 3;
+            break;
+        case 0x8A:
+            *b = 152;
+            *c = 3;
+            break;
+        case 0x64:
+            *b = 170;
+            *c = 3;
+            break;
+        case 0x5F:
+            *b = 190;
+            *c = 3;
+            break;
+        case 0xF7:
+            *b = 197;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9400:
+        switch (a & 0xFF) {
+        case 0xDE:
+            *b = 41;
+            *c = 1;
+            break;
+        case 0xC6:
+            *b = 42;
+            *c = 1;
+            break;
+        case 0x7A:
+            *b = 144;
+            *c = 1;
+            break;
+        case 0xF5:
+            *b = 195;
+            *c = 1;
+            break;
+        case 0x8E:
+            *b = 218;
+            *c = 1;
+            break;
+        case 0x6A:
+            *b = 223;
+            *c = 1;
+            break;
+        case 0xAD:
+            *b = 229;
+            *c = 1;
+            break;
+        case 0xFC:
+            *b = 240;
+            *c = 1;
+            break;
+        case 0x73:
+            *b = 244;
+            *c = 1;
+            break;
+        case 0xDF:
+            *b = 18;
+            *c = 2;
+            break;
+        case 0xBB:
+            *b = 30;
+            *c = 2;
+            break;
+        case 0xF2:
+            *b = 32;
+            *c = 2;
+            break;
+        case 0x92:
+            *b = 36;
+            *c = 2;
+            break;
+        case 0xED:
+            *b = 37;
+            *c = 2;
+            break;
+        case 0x43:
+            *b = 42;
+            *c = 2;
+            break;
+        case 0x4F:
+            *b = 52;
+            *c = 2;
+            break;
+        case 0x4C:
+            *b = 53;
+            *c = 2;
+            break;
+        case 0x59:
+            *b = 62;
+            *c = 2;
+            break;
+        case 0xB2:
+            *b = 74;
+            *c = 2;
+            break;
+        case 0x97:
+            *b = 114;
+            *c = 2;
+            break;
+        case 0x67:
+            *b = 119;
+            *c = 2;
+            break;
+        case 0x46:
+            *b = 160;
+            *c = 2;
+            break;
+        case 0xE9:
+            *b = 205;
+            *c = 2;
+            break;
+        case 0x83:
+            *b = 216;
+            *c = 2;
+            break;
+        case 0xE0:
+            *b = 228;
+            *c = 2;
+            break;
+        case 0x5C:
+            *b = 236;
+            *c = 2;
+            break;
+        case 0xD4:
+            *b = 7;
+            *c = 3;
+            break;
+        case 0xBC:
+            *b = 8;
+            *c = 3;
+            break;
+        case 0x96:
+            *b = 10;
+            *c = 3;
+            break;
+        case 0xB1:
+            *b = 11;
+            *c = 3;
+            break;
+        case 0xBD:
+            *b = 24;
+            *c = 3;
+            break;
+        case 0x9B:
+            *b = 41;
+            *c = 3;
+            break;
+        case 0x77:
+            *b = 67;
+            *c = 3;
+            break;
+        case 0x9A:
+            *b = 68;
+            *c = 3;
+            break;
+        case 0x4D:
+            *b = 82;
+            *c = 3;
+            break;
+        case 0x4E:
+            *b = 96;
+            *c = 3;
+            break;
+        case 0xF1:
+            *b = 110;
+            *c = 3;
+            break;
+        case 0x7B:
+            *b = 151;
+            *c = 3;
+            break;
+        case 0xA0:
+            *b = 176;
+            *c = 3;
+            break;
+        case 0xE7:
+            *b = 183;
+            *c = 3;
+            break;
+        case 0x65:
+            *b = 193;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9500:
+        switch (a & 0xFF) {
+        case 0xAA:
+            *b = 16;
+            *c = 1;
+            break;
+        case 0x7C:
+            *b = 37;
+            *c = 1;
+            break;
+        case 0x95:
+            *b = 85;
+            *c = 1;
+            break;
+        case 0x73:
+            *b = 88;
+            *c = 1;
+            break;
+        case 0xCF:
+            *b = 92;
+            *c = 1;
+            break;
+        case 0xA8:
+            *b = 96;
+            *c = 1;
+            break;
+        case 0xCA:
+            *b = 109;
+            *c = 1;
+            break;
+        case 0xFB:
+            *b = 110;
+            *c = 1;
+            break;
+        case 0x83:
+            *b = 114;
+            *c = 1;
+            break;
+        case 0xB7:
+            *b = 115;
+            *c = 1;
+            break;
+        case 0xA0:
+            *b = 118;
+            *c = 1;
+            break;
+        case 0xC2:
+            *b = 126;
+            *c = 1;
+            break;
+        case 0xE0:
+            *b = 146;
+            *c = 1;
+            break;
+        case 0xF3:
+            *b = 147;
+            *c = 1;
+            break;
+        case 0x40:
+            *b = 165;
+            *c = 1;
+            break;
+        case 0xBD:
+            *b = 171;
+            *c = 1;
+            break;
+        case 0x76:
+            *b = 186;
+            *c = 1;
+            break;
+        case 0xF8:
+            *b = 213;
+            *c = 1;
+            break;
+        case 0xD4:
+            *b = 248;
+            *c = 1;
+            break;
+        case 0x69:
+            *b = 2;
+            *c = 2;
+            break;
+        case 0x4B:
+            *b = 16;
+            *c = 2;
+            break;
+        case 0xB5:
+            *b = 56;
+            *c = 2;
+            break;
+        case 0xFA:
+            *b = 110;
+            *c = 2;
+            break;
+        case 0x9A:
+            *b = 116;
+            *c = 2;
+            break;
+        case 0x94:
+            *b = 123;
+            *c = 2;
+            break;
+        case 0x89:
+            *b = 157;
+            *c = 2;
+            break;
+        case 0xA1:
+            *b = 172;
+            *c = 2;
+            break;
+        case 0xD6:
+            *b = 234;
+            *c = 2;
+            break;
+        case 0x60:
+            *b = 4;
+            *c = 3;
+            break;
+        case 0xF1:
+            *b = 27;
+            *c = 3;
+            break;
+        case 0x82:
+            *b = 38;
+            *c = 3;
+            break;
+        case 0xD0:
+            *b = 59;
+            *c = 3;
+            break;
+        case 0x97:
+            *b = 62;
+            *c = 3;
+            break;
+        case 0x90:
+            *b = 75;
+            *c = 3;
+            break;
+        case 0x9C:
+            *b = 87;
+            *c = 3;
+            break;
+        case 0xBA:
+            *b = 111;
+            *c = 3;
+            break;
+        case 0x5C:
+            *b = 116;
+            *c = 3;
+            break;
+        case 0x58:
+            *b = 155;
+            *c = 3;
+            break;
+        case 0xB6:
+            *b = 160;
+            *c = 3;
+            break;
+        case 0xD2:
+            *b = 194;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9600:
+        switch (a & 0xFF) {
+        case 0x59:
+            *b = 5;
+            *c = 1;
+            break;
+        case 0x82:
+            *b = 19;
+            *c = 1;
+            break;
+        case 0xB0:
+            *b = 24;
+            *c = 1;
+            break;
+        case 0x6C:
+            *b = 36;
+            *c = 1;
+            break;
+        case 0xBD:
+            *b = 51;
+            *c = 1;
+            break;
+        case 0x7B:
+            *b = 71;
+            *c = 1;
+            break;
+        case 0xBE:
+            *b = 113;
+            *c = 1;
+            break;
+        case 0x40:
+            *b = 125;
+            *c = 1;
+            break;
+        case 0x9E:
+            *b = 131;
+            *c = 1;
+            break;
+        case 0xD9:
+            *b = 142;
+            *c = 1;
+            break;
+        case 0xF1:
+            *b = 162;
+            *c = 1;
+            break;
+        case 0x5C:
+            *b = 170;
+            *c = 1;
+            break;
+        case 0xB3:
+            *b = 176;
+            *c = 1;
+            break;
+        case 0xA1:
+            *b = 190;
+            *c = 1;
+            break;
+        case 0xBC:
+            *b = 193;
+            *c = 1;
+            break;
+        case 0xB2:
+            *b = 209;
+            *c = 1;
+            break;
+        case 0xE2:
+            *b = 211;
+            *c = 1;
+            break;
+        case 0xDF:
+            *b = 242;
+            *c = 1;
+            break;
+        case 0xF2:
+            *b = 243;
+            *c = 1;
+            break;
+        case 0x5D:
+            *b = 0;
+            *c = 2;
+            break;
+        case 0xAD:
+            *b = 14;
+            *c = 2;
+            break;
+        case 0xDA:
+            *b = 79;
+            *c = 2;
+            break;
+        case 0xCA:
+            *b = 94;
+            *c = 2;
+            break;
+        case 0xC0:
+            *b = 125;
+            *c = 2;
+            break;
+        case 0x88:
+            *b = 130;
+            *c = 2;
+            break;
+        case 0xEC:
+            *b = 161;
+            *c = 2;
+            break;
+        case 0xBB:
+            *b = 163;
+            *c = 2;
+            break;
+        case 0x96:
+            *b = 167;
+            *c = 2;
+            break;
+        case 0x57:
+            *b = 174;
+            *c = 2;
+            break;
+        case 0x9C:
+            *b = 185;
+            *c = 2;
+            break;
+        case 0xC2:
+            *b = 197;
+            *c = 2;
+            break;
+        case 0xF0:
+            *b = 217;
+            *c = 2;
+            break;
+        case 0xA7:
+            *b = 253;
+            *c = 2;
+            break;
+        case 0xF3:
+            *b = 18;
+            *c = 3;
+            break;
+        case 0xA2:
+            *b = 29;
+            *c = 3;
+            break;
+        case 0x4B:
+            *b = 33;
+            *c = 3;
+            break;
+        case 0xE9:
+            *b = 36;
+            *c = 3;
+            break;
+        case 0x64:
+            *b = 52;
+            *c = 3;
+            break;
+        case 0xC5:
+            *b = 53;
+            *c = 3;
+            break;
+        case 0xBA:
+            *b = 54;
+            *c = 3;
+            break;
+        case 0x60:
+            *b = 91;
+            *c = 3;
+            break;
+        case 0xD8:
+            *b = 117;
+            *c = 3;
+            break;
+        case 0xFB:
+            *b = 120;
+            *c = 3;
+            break;
+        case 0x87:
+            *b = 143;
+            *c = 3;
+            break;
+        case 0x68:
+            *b = 199;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9700:
+        switch (a & 0xFF) {
+        case 0xE1:
+            *b = 7;
+            *c = 1;
+            break;
+        case 0x45:
+            *b = 20;
+            *c = 1;
+            break;
+        case 0x46:
+            *b = 34;
+            *c = 1;
+            break;
+        case 0x6C:
+            *b = 50;
+            *c = 1;
+            break;
+        case 0xDF:
+            *b = 52;
+            *c = 1;
+            break;
+        case 0x88:
+            *b = 56;
+            *c = 1;
+            break;
+        case 0x70:
+            *b = 60;
+            *c = 1;
+            break;
+        case 0x79:
+            *b = 78;
+            *c = 1;
+            break;
+        case 0xC7:
+            *b = 99;
+            *c = 1;
+            break;
+        case 0x9D:
+            *b = 140;
+            *c = 1;
+            break;
+        case 0x52:
+            *b = 141;
+            *c = 1;
+            break;
+        case 0x44:
+            *b = 154;
+            *c = 1;
+            break;
+        case 0xCD:
+            *b = 159;
+            *c = 1;
+            break;
+        case 0x5C:
+            *b = 166;
+            *c = 1;
+            break;
+        case 0xA3:
+            *b = 174;
+            *c = 1;
+            break;
+        case 0x98:
+            *b = 192;
+            *c = 1;
+            break;
+        case 0x76:
+            *b = 237;
+            *c = 1;
+            break;
+        case 0x8A:
+            *b = 11;
+            *c = 2;
+            break;
+        case 0x74:
+            *b = 77;
+            *c = 2;
+            break;
+        case 0x8E:
+            *b = 93;
+            *c = 2;
+            break;
+        case 0xA7:
+            *b = 95;
+            *c = 2;
+            break;
+        case 0x68:
+            *b = 118;
+            *c = 2;
+            break;
+        case 0xE7:
+            *b = 128;
+            *c = 2;
+            break;
+        case 0x56:
+            *b = 132;
+            *c = 2;
+            break;
+        case 0x59:
+            *b = 156;
+            *c = 2;
+            break;
+        case 0x90:
+            *b = 181;
+            *c = 2;
+            break;
+        case 0xE2:
+            *b = 193;
+            *c = 2;
+            break;
+        case 0x4C:
+            *b = 241;
+            *c = 2;
+            break;
+        case 0xDE:
+            *b = 247;
+            *c = 2;
+            break;
+        case 0xB7:
+            *b = 249;
+            *c = 2;
+            break;
+        case 0x63:
+            *b = 17;
+            *c = 3;
+            break;
+        case 0xA0:
+            *b = 30;
+            *c = 3;
+            break;
+        case 0xAC:
+            *b = 34;
+            *c = 3;
+            break;
+        case 0x83:
+            *b = 60;
+            *c = 3;
+            break;
+        case 0x5E:
+            *b = 64;
+            *c = 3;
+            break;
+        case 0xBC:
+            *b = 79;
+            *c = 3;
+            break;
+        case 0x7A:
+            *b = 112;
+            *c = 3;
+            break;
+        case 0x64:
+            *b = 115;
+            *c = 3;
+            break;
+        case 0xB9:
+            *b = 144;
+            *c = 3;
+            break;
+        case 0x8B:
+            *b = 156;
+            *c = 3;
+            break;
+        case 0xAA:
+            *b = 174;
+            *c = 3;
+            break;
+        case 0xCA:
+            *b = 180;
+            *c = 3;
+            break;
+        case 0xA6:
+            *b = 182;
+            *c = 3;
+            break;
+        case 0x6E:
+            *b = 198;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9800:
+        switch (a & 0xFF) {
+        case 0x41:
+            *b = 58;
+            *c = 1;
+            break;
+        case 0x62:
+            *b = 119;
+            *c = 1;
+            break;
+        case 0x5E:
+            *b = 234;
+            *c = 1;
+            break;
+        case 0x63:
+            *b = 238;
+            *c = 1;
+            break;
+        case 0x59:
+            *b = 162;
+            *c = 2;
+            break;
+        case 0x66:
+            *b = 188;
+            *c = 2;
+            break;
+        case 0x72:
+            *b = 133;
+            *c = 3;
+            break;
+        case 0x48:
+            *b = 141;
+            *c = 3;
+            break;
+        case 0x42:
+            *b = 168;
+            *c = 3;
+            break;
+        case 0x61:
+            *b = 177;
+            *c = 3;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    case 0x9C00:
+        switch (a & 0xFF) {
+        case 0xC9:
+            *b = 210;
+            *c = 1;
+            break;
+        default:
+            *b = 0;
+            *c = 0;
+            break;
+        }
+        break;
+    default:
+        *b = 0;
+        *c = 0;
+        break;
+    }
+}
 
 void func_0806BA0C(s16 v, u8* out) {
     s16 acc = 0;
