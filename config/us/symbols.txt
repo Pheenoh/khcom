@@ -2947,3 +2947,5 @@ gTaskDescBtlHpoth = 0x09EDE4A0
 gTaskDescCardBattleSora = 0x09EE4954
 gTaskDescCardBattleRiku = 0x09EE49B4
 gModeSioBtlCardget = 0x09EF14EC
+gTaskDescBtlExp = 0x09EDE470
+gModeContinue = 0x09EE272C
