@@ -2546,31 +2546,62 @@ void func_08065A44(void** p, u8 n) {
     }
 }
 
-#ifdef VERSION_US
 u16 func_08065A70(u8 v, TextSlot* out) {
+#ifdef VERSION_JP
+    u8 buf[8];
+    s32 q;
+
+    q = v / 10;
+    if ((u8)q != 0) {
+        buf[1] = v / 10;
+        buf[3] = v - buf[1] * 10;
+        buf[0] = 0x82;
+        buf[1] += 0x4F;
+        buf[2] = 0x82;
+        buf[3] += 0x4F;
+        buf[4] = 0;
+    } else {
+        buf[1] = v + 0x4F;
+        buf[0] = 0x82;
+        buf[2] = 0;
+    }
+#else
+#ifdef VERSION_EU
+    u8 buf[4];
+    u8* p;
+    u8 c;
+    u8 end;
+#else
     u16 buf[4];
     u16* p;
     u8 q;
     u16 c;
     u16 end;
+#endif
 
     if (v > 9) {
         p = buf;
+#ifdef VERSION_EU
+        c = v / 10 + '0';
+#else
         q = v / 10;
         c = q + '0';
+#endif
         end = 0;
         p[0] = c;
+#ifdef VERSION_EU
+        buf[1] = v - (u8)(v / 10) * 10 + '0';
+#else
         buf[1] = v - q * 10 + '0';
+#endif
         buf[2] = end;
     } else {
         buf[0] = v + '0';
         buf[1] = 0;
     }
-    return func_08065B6C(buf, out);
-}
-#else
-INCLUDE_ASM("msg/func_08065A70.s");
 #endif
+    return func_08065B6C((u16*)buf, out);
+}
 
 void func_08065ACC(TextSlot* p, s32 n) {
     s32 i;
