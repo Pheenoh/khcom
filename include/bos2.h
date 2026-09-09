@@ -487,7 +487,8 @@ typedef struct TmWork {
     s32 unk_14;
     s32 unk_18;
     s32 unk_1C;
-    u8 unk_20[0x8];
+    s32 unk_20;
+    s32 unk_24;
     u16 unk_28;
     u8 unk_2A[0x2];
     u32 unk_2C;
@@ -496,7 +497,9 @@ typedef struct TmWork {
     s16 unk_34;
     s16 unk_36;
     s16 unk_38;
-    u8 unk_3A[0x6];
+    s8 unk_3A;
+    u8 unk_3B;
+    s32 unk_3C;
     u16 unk_40;
     u16 unk_42;
     u16 unk_44;
@@ -1053,5 +1056,21 @@ void func_0801B918(BosSub* a);
 s32 func_0801ADAC(BosSub* a);
 u8 func_0801C1C0(s32 a);
 u8 task_bos_dsd_1(DsdWork* work);
+
+struct WlogoBtlObj;
+struct WlogoTtEff;
+struct WlogoTtEffTop;
+extern u8 gUnk_09EF1D58[];
+void _080B949C(struct WlogoBtlObj*, struct WlogoTtEffTop*);
+void func_080B83C4(struct WlogoTtEff*);
+void func_080B8508(struct WlogoTtEffTop*);
+void func_080B895C(struct WlogoTtEffTop*);
+void func_080B89B0(struct WlogoTtEffTop*);
+void func_080B8324(struct WlogoTtEffTop*);
+void func_080B8688(struct WlogoTtEffTop*);
+void func_080B8A00(struct WlogoTtEffTop*);
+void func_080B8554(struct WlogoTtEffTop*);
+void func_080B87C0(struct WlogoTtEffTop*,s16);
+void func_080B8FF4(struct WlogoTtEffTop*,s16);
 
 #endif /* GUARD_BOS2_H */

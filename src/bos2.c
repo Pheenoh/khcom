@@ -67,7 +67,225 @@ void task_bos_tm_body_0(TmBodyWork* work, TmWork* arg) {
         memcpy(gUnk_0203AB50, work->unk_12C, 272);
     }
 }
-INCLUDE_ASM("bos2/task_bos_tm_body_1.s");
+u8 task_bos_tm_body_1(TmBodyWork* work) {
+    s16* table;
+    u16 n;
+    u16 flags;
+
+    if (!(work->unk_000->unk_28 & 8)) {
+        _080B949C((struct WlogoBtlObj*)work->unk_12C, (struct WlogoTtEffTop*)work);
+    }
+    switch (work->unk_000->unk_2C) {
+    case 0:
+    case 15:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B8508((struct WlogoTtEffTop*)work);
+        } else {
+            if (gBtlWork->unk_0A0 && (u16)(GetRandom() % 80) == 0) {
+                func_0801BCD4((BosSub*)work->unk_12C);
+            }
+            if ((s16)work->unk_000->unk_36 == 0) {
+                table = (s16*)(gUnk_09EF1D58 + 12);
+                work->unk_000->unk_1C += table[(s16)work->unk_000->unk_34] << 8;
+                *(s32*)&work->unk_010[12] = work->unk_000->unk_1C - 0x2200;
+                *(s32*)&work->unk_12C[12] = work->unk_000->unk_1C + 0x900;
+                *(s32*)&work->unk_248[12] = work->unk_000->unk_1C - 0x2100;
+                *(s32*)&work->unk_364[12] = work->unk_000->unk_1C - 0x1E00;
+            }
+            func_080B83C4((struct WlogoTtEff*)work);
+        }
+        break;
+    case 4:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B895C((struct WlogoTtEffTop*)work);
+            work->unk_000->unk_20 = -0x900;
+            work->unk_000->unk_24 = 0;
+        } else {
+            func_080B89B0((struct WlogoTtEffTop*)work);
+            if (work->unk_000->unk_08 <= 0x8E00) {
+                work->unk_000->unk_28 &= ~0x20;
+                *(u64*)&work->unk_12C[0x34] &= ~4;
+                work->unk_000->unk_2C = 5;
+                work->unk_000->unk_3C = 5;
+                func_080B8324((struct WlogoTtEffTop*)work);
+                func_080B895C((struct WlogoTtEffTop*)work);
+                work->unk_000->unk_20 = 0x900;
+                work->unk_000->unk_24 = 0;
+            }
+        }
+        break;
+    case 5:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B895C((struct WlogoTtEffTop*)work);
+            work->unk_000->unk_20 = 0x900;
+            work->unk_000->unk_24 = 0;
+        } else {
+            func_080B89B0((struct WlogoTtEffTop*)work);
+            if (work->unk_000->unk_08 > 0x9FFF) {
+                func_0801AF08(work->unk_12C);
+                work->unk_000->unk_28 &= ~0x40;
+                work->unk_000->unk_2C = 0;
+                work->unk_000->unk_3C = 16;
+                func_080B8324((struct WlogoTtEffTop*)work);
+                func_080B8508((struct WlogoTtEffTop*)work);
+            }
+        }
+        break;
+    case 6:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B895C((struct WlogoTtEffTop*)work);
+            work->unk_000->unk_20 = 0x900;
+            work->unk_000->unk_24 = 0;
+        } else {
+            func_080B89B0((struct WlogoTtEffTop*)work);
+            if (work->unk_000->unk_08 > 0x16EFF) {
+                work->unk_000->unk_28 |= 0x20;
+                *(u64*)&work->unk_12C[0x34] |= 4;
+                work->unk_000->unk_2C = 7;
+                work->unk_000->unk_3C = 7;
+                func_080B8324((struct WlogoTtEffTop*)work);
+                func_080B895C((struct WlogoTtEffTop*)work);
+                work->unk_000->unk_20 = -0x900;
+                work->unk_000->unk_24 = 0;
+            }
+        }
+        break;
+    case 7:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B895C((struct WlogoTtEffTop*)work);
+            work->unk_000->unk_20 = -0x900;
+            work->unk_000->unk_24 = 0;
+        } else {
+            func_080B89B0((struct WlogoTtEffTop*)work);
+            if (work->unk_000->unk_08 <= 0x15D00) {
+                func_0801AF08(work->unk_12C);
+                work->unk_000->unk_28 &= ~0x40;
+                work->unk_000->unk_2C = 0;
+                work->unk_000->unk_3C = 16;
+                func_080B8324((struct WlogoTtEffTop*)work);
+                func_080B8508((struct WlogoTtEffTop*)work);
+            }
+        }
+        break;
+    case 1:
+    case 10:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B8508((struct WlogoTtEffTop*)work);
+        } else if (work->unk_000->unk_28 & 2) {
+            work->unk_000->unk_28 &= ~2;
+            func_0801AF08(work->unk_12C);
+            work->unk_000->unk_2C = 0;
+            func_080B8324((struct WlogoTtEffTop*)work);
+            work->unk_000->unk_1C = (s16)work->unk_000->unk_04 << 8;
+        }
+        break;
+    case 2:
+    case 3:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B8508((struct WlogoTtEffTop*)work);
+        } else {
+            n = work->unk_000->unk_34;
+            if ((s16)work->unk_000->unk_34 <= 3) {
+                func_080B87C0((struct WlogoTtEffTop*)work, (s16)work->unk_000->unk_34);
+            } else if (n >= 66 && n <= 74) {
+                func_080B87C0((struct WlogoTtEffTop*)work, n - 62);
+            } else if (n >= 98 && n <= 100) {
+                func_080B87C0((struct WlogoTtEffTop*)work, n - 85);
+            }
+            if (work->unk_000->unk_28 & 2) {
+                work->unk_000->unk_28 &= ~2;
+                func_0801AF08(work->unk_12C);
+                work->unk_000->unk_2C = 0;
+                func_080B8324((struct WlogoTtEffTop*)work);
+                func_080B8508((struct WlogoTtEffTop*)work);
+            }
+        }
+        break;
+    case 11:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B8508((struct WlogoTtEffTop*)work);
+        } else {
+            n = work->unk_000->unk_34;
+            if ((s16)work->unk_000->unk_34 <= 3) {
+                func_080B87C0((struct WlogoTtEffTop*)work, (s16)work->unk_000->unk_34);
+            } else if (n >= 96 && n <= 104) {
+                func_080B87C0((struct WlogoTtEffTop*)work, n - 92);
+            } else if (n >= 128 && n <= 130) {
+                func_080B87C0((struct WlogoTtEffTop*)work, n - 115);
+            }
+            if (work->unk_000->unk_28 & 2) {
+                work->unk_000->unk_28 &= ~2;
+                func_0801AF08(work->unk_12C);
+                work->unk_000->unk_2C = 0;
+                func_080B8324((struct WlogoTtEffTop*)work);
+                func_080B8508((struct WlogoTtEffTop*)work);
+            }
+        }
+        break;
+    case 9:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B8508((struct WlogoTtEffTop*)work);
+        } else {
+            n = work->unk_000->unk_34;
+            if ((s16)work->unk_000->unk_34 <= 2) {
+                func_080B8FF4((struct WlogoTtEffTop*)work, (s16)work->unk_000->unk_34);
+            } else if (n >= 41 && n <= 46) {
+                func_080B8FF4((struct WlogoTtEffTop*)work, n - 38);
+            }
+            if (work->unk_000->unk_28 & 2) {
+                work->unk_000->unk_28 &= ~2;
+                func_0801AF08(work->unk_12C);
+                work->unk_000->unk_2C = 0;
+                func_080B8324((struct WlogoTtEffTop*)work);
+                func_080B8508((struct WlogoTtEffTop*)work);
+            }
+        }
+        break;
+    case 12:
+        func_080B8A00((struct WlogoTtEffTop*)work);
+        break;
+    case 14:
+        if ((s16)work->unk_000->unk_38 == 0) {
+            func_080B8688((struct WlogoTtEffTop*)work);
+            if (work->unk_000->unk_28 & 0x40) {
+                func_08083900(9);
+            }
+        } else if ((s16)work->unk_000->unk_38 > 59) {
+            func_080B8324((struct WlogoTtEffTop*)work);
+            work->unk_000->unk_28 &= ~0x80;
+            flags = work->unk_000->unk_28 & 0x40;
+            if (flags) {
+                func_0801AF08(work->unk_12C);
+                func_080B8688((struct WlogoTtEffTop*)work);
+                work->unk_000->unk_2C = 8;
+            } else {
+                func_0801AF08(work->unk_12C);
+                func_080B8508((struct WlogoTtEffTop*)work);
+                work->unk_000->unk_2C = 0;
+            }
+        } else if (!(work->unk_000->unk_28 & 0x80) && work->unk_000->unk_3A == 0 && (work->unk_000->unk_28 & 1)) {
+            if ((u16)(GetRandom() % 100) <= 30) {
+                _0801C1F8(0, work->unk_000->unk_08, work->unk_000->unk_0C, work->unk_000->unk_10);
+                work->unk_000->unk_28 |= 0x80;
+            } else {
+                work->unk_000->unk_28 |= 0x80;
+            }
+        }
+        break;
+    case 8:
+        func_0801BCD4((BosSub*)work->unk_12C);
+        break;
+    case 13:
+        if ((s16)work->unk_000->unk_34 == 0) {
+            func_080B8554((struct WlogoTtEffTop*)work);
+        }
+        break;
+    case 16:
+    case 17:
+        break;
+    }
+    return 1;
+}
 void task_bos_tm_body_2(TmBodyWork* work) {
     BosSub* s0;
     BosSub* s1;
