@@ -1851,17 +1851,10 @@ u8 task_emy_19_1(Emy19Work* work) {
                 w->unk_184 = 0;
             }
 
-            if (act->flags & 4) {
-                if (func_08011F78(0xBC, act->x - 0x1000, act->y, act->z, 16, 16,
-                        32) != 0) {
-                    goto snd;
-                }
-            } else {
-                if (func_08011F78(0xBC, act->x + 0x1000, act->y, act->z, 16, 16,
-                        32) != 0) {
-                snd:
-                    m4aSongNumStart(0x230);
-                }
+            if ((act->flags & 4)
+                    ? func_08011F78(0xBC, act->x - 0x1000, act->y, act->z, 16, 16, 32) != 0
+                    : func_08011F78(0xBC, act->x + 0x1000, act->y, act->z, 16, 16, 32) != 0) {
+                m4aSongNumStart(0x230);
             }
             break;
         }
