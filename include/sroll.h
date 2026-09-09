@@ -7,6 +7,34 @@
 #include "types.h"
 #include "taskpool.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern u8 gUnkEu_09CEF9E8[];
+extern void* gUnkEu_09F879D4[];
+extern void* gUnkEu_09F8785C[];
+extern u8 gUnkEu_09CF1B7E[];
+extern void* gUnkEu_09F87AF0[];
+extern void* gUnkEu_09F879E8[];
+extern u8 gUnkEu_09CF3FEE[];
+extern void* gUnkEu_09F87C7C[];
+extern void* gUnkEu_09F87B04[];
+extern u8 gUnkEu_09CF6334[];
+extern void* gUnkEu_09F87D98[];
+extern void* gUnkEu_09F87C90[];
+extern u8 gUnkEu_09CF86A2[];
+extern void* gUnkEu_09F87F24[];
+extern void* gUnkEu_09F87DAC[];
+extern u8 gUnkEu_09CFA56C[];
+extern void* gUnkEu_09F88040[];
+extern void* gUnkEu_09F87F38[];
+extern u8 gUnkEu_09CFCB38[];
+extern void* gUnkEu_09F881CC[];
+extern void* gUnkEu_09F88054[];
+extern u8 gUnkEu_09CFEFA8[];
+extern void* gUnkEu_09F882E8[];
+extern void* gUnkEu_09F881E0[];
+#endif
+
 typedef struct DmaStream {
     u8 unk_00;
     u8 unk_01;
