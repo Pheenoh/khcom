@@ -9,7 +9,7 @@ struct UnkStruct_02034AAC;
 
 typedef struct UnkStruct_02039DD4 {
     struct UnkStruct_02034AAC* unk_000[6];
-    u8 unk_018[0x18];
+    struct UnkStruct_02034AAC* unk_018[6];
     void* tiles;
     void* tiles2;
     void* tiles3;
