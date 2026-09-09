@@ -6908,12 +6908,7 @@ u8 func_0806BDB8(s32 x, s32 y, u8* s, u8** d) {
 
     gUnk_02034A90 = 0;
 
-    if (*s == 0) {
-        goto done;
-    }
-
-loop:
-    {
+    while (*s != 0) {
         u16 v;
 
         w = 0;
@@ -7117,11 +7112,6 @@ loop:
         }
     }
 
-    if (*s != 0) {
-        goto loop;
-    }
-
-done:
     *d = 0;
     return gUnk_02034A90;
 }
