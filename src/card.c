@@ -13622,7 +13622,20 @@ INCLUDE_ASM("card/func_0808F358.s");
 #endif
 #ifdef VERSION_EU
 INCLUDE_ASM("card/func_eu_0808EC78.s");
-INCLUDE_ASM("card/func_eu_0808EE08.s");
+void func_eu_0808EC78(UnkStruct_0808F0C0* w);
+extern u8 gUnk_0951C2B8[];
+extern u8 gUnkEu_0953C324[];
+void func_eu_0808EE08(UnkStruct_0808F0C0* w) {
+    switch (w->unk_7C7) {
+    case 2:
+        LoadBgMap(3, gUnk_0951C2B8, 0x800);
+        break;
+    case 3:
+        LoadBgMap(3, gUnkEu_0953C324, 0x800);
+        break;
+    }
+    func_eu_0808EC78(w);
+}
 #endif
 extern u8 gUnk_096145B8[];
 extern u8 gUnk_090A5F1E[];
