@@ -25615,7 +25615,89 @@ u8 func_080A7C80(u8* work, void* a) {
 #else
 INCLUDE_ASM("card/func_080A7C80.s");
 #endif
-INCLUDE_ASM("card/func_080A8020.s");
+u8 func_080A8020(UnkStruct_0808C940* w, void* a) {
+    s32 i;
+
+    w->unk_4E8 = AnimUpdate(w->unk_64C);
+    switch (GetKeysRepeat()) {
+    case 32:
+        if (w->unk_6D0 > 1) {
+            w->unk_6D0--;
+            w->unk_6F6 = 4;
+            m4aSongNumStart(101);
+            w->unk_701 = w->unk_6D0;
+            func_080AA148(w->unk_701, w->unk_706);
+            func_080A9968((u8*)w);
+            w->unk_716 = func_080A97D4(w, w->unk_701, 1);
+        }
+        for (i = 0; i < 10; i++) {
+            func_0808DD20(0, i);
+        }
+        break;
+    case 16:
+        if (w->unk_6D0 < 5) {
+            w->unk_6D0++;
+            w->unk_6F6 = 4;
+            m4aSongNumStart(101);
+            w->unk_701 = w->unk_6D0;
+            func_080AA148(w->unk_701, w->unk_706);
+            func_080A9968((u8*)w);
+            w->unk_716 = func_080A97D4(w, w->unk_701, 1);
+        }
+        for (i = 0; i < 10; i++) {
+            func_0808DD20(0, i);
+        }
+        break;
+    case 128:
+        if (w->unk_716 != 0) {
+            w->unk_6D0 = 0;
+            w->unk_6D2 = 0;
+            w->unk_6F6 = 4;
+            m4aSongNumStart(121);
+            func_080AA450((u8*)w);
+            w->unk_6F0 = 9;
+            SetTaskUpdate(a, func_080A86F4);
+            w->unk_69C = 0xA000;
+            w->unk_6A0 = 0x2800;
+            w->unk_6EC = 4;
+            return 1;
+        }
+        m4aSongNumStart(105);
+        break;
+    case 2:
+        if (w->unk_716 != 0) {
+            w->unk_6D0 = 0;
+            w->unk_6D2 = 0;
+            w->unk_6F6 = 4;
+            m4aSongNumStart(121);
+            func_080AA450((u8*)w);
+            w->unk_6F0 = 9;
+            SetTaskUpdate(a, func_080A86F4);
+            w->unk_69C = 0xA000;
+            w->unk_6A0 = 0x2800;
+            w->unk_6EC = 4;
+            return 1;
+        }
+        SetTaskUpdate(a, func_080A8BD8);
+        m4aSongNumStart(104);
+        return 1;
+    case 8:
+        if ((u8)func_080AAC40((u8*)w) != 0 && (u8)func_080AAC8C((u8*)w) != 0) {
+            SetTaskUpdate(a, func_080A8C20);
+            func_08006184(0, 4);
+            m4aSongNumStart(103);
+        }
+        return 1;
+    }
+    if (w->unk_6F6 != 0) {
+        ApproachValue(&w->unk_694, gUnk_09041F1A[w->unk_6D0] << 8, w->unk_6F6);
+        ApproachValue(&w->unk_698, 0x1E00, w->unk_6F6);
+        w->unk_6F6--;
+    }
+    TaskPoolUpdate(&w->unk_614);
+    TaskPoolUpdate(&w->unk_628);
+    return 1;
+}
 #ifdef NON_MATCHING
 u8 func_080A82E0(u8* work, void* a) {
     func_08006120(0, 4);
