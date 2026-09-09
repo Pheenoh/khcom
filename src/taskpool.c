@@ -291,7 +291,12 @@ void ModeRequestHeapReset(Mode* mode, s32 arg) {
 }
 
 #ifdef VERSION_EU
-INCLUDE_ASM("taskpool/eu_0800115C.s");
+void eu_0800115C(void) {
+    extern u32 gUnk_03006C18[2];
+
+    gUnk_03006C18[0] = 0xFEDCBA98;
+    SoftReset(0xFD);
+}
 #endif
 
 void ModeUpdate(void) {
