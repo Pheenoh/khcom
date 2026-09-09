@@ -1111,7 +1111,7 @@ void func_08078FFC(UnkStruct_08080268* w, u8 b) {
     gUnk_02034A98->unk_A0 = 50;
 }
 
-void func_080791C0(void) {
+void func_080791C0(UnkStruct_08080268* w) {
     if (gBtlWork->unk_068 & 0x4800) {
         if (gUnk_02039B9C->unk_0F4 == 0x30) {
             if (gUnk_02034A98->unk_A5 != 0) {
@@ -1173,7 +1173,135 @@ u16 func_080792D0(u16* p) {
     return v;
 }
 
+#ifdef NON_MATCHING
+void func_080792F4(UnkStruct_08080268* w) {
+    s8 n;
+    u8 skip;
+    u8 i;
+#ifdef VERSION_EU
+    s32 j;
+#endif
+
+    if (gBtlWork->unk_0F4 == 1) {
+        n = gUnk_02034A98->unk_A5 + 1;
+
+        if (n > 9) {
+            n = 9;
+        }
+
+        if (gUnk_02034A98->unk_A5 < 9) {
+            TaskCreate(&gUnk_02039DD4->unk_09C, &gTaskDescHCEffectName[0x18], &gUnk_02034A98->unk_48);
+        }
+
+        gUnk_02034A98->unk_A5 = n;
+        gUnk_02034A98->unk_A7 = 1;
+    } else if (gBtlWork->unk_0F4 == 21) {
+        if (gUnk_02034A98->unk_A5 != 0) {
+            n = --gUnk_02034A98->unk_A5;
+            gUnk_02034A98->unk_A7 = 1;
+        } else {
+            n = 0;
+            gUnk_02034A98->unk_A7 = 1;
+        }
+    } else {
+        n = gUnk_02034A98->unk_A5;
+    }
+
+    if ((s16)gUnk_02039DD4->unk_0C2 > n && n != 0) {
+        return;
+    }
+
+    skip = 0;
+
+    if (gBtlWork->unk_068 & 0x4800) {
+        if (gUnk_02039B9C->unk_0F4 == 2 && gUnk_02039DD4->unk_000[0]->unk_48->unk_2A == 0 &&
+            gUnk_02039DD4->unk_0E2 == 0) {
+            skip = 1;
+        }
+
+#ifdef VERSION_EU
+        if (gUnk_02039B9C->unk_0F4 == 20) {
+            for (j = 0; j < gUnk_02039DD4->unk_0D0; j++) {
+                if (gUnk_02039DD4->unk_000[j]->unk_48->unk_24 == 22) {
+                    skip = 1;
+                }
+            }
+        }
+
+        if (gUnk_02039B9C->unk_0F4 == 29) {
+            for (j = 0; j < gUnk_02039DD4->unk_0D0; j++) {
+                if (gUnk_02039DD4->unk_000[j]->unk_48->unk_2A == 2 &&
+                    !(gUnk_02039DD4->unk_000[j]->unk_48->unk_1E & 8)) {
+                    skip = 1;
+                }
+            }
+        }
+#else
+        if (gUnk_02039B9C->unk_0F4 == 20 && gUnk_02039DD4->unk_000[0]->unk_48->unk_24 == 22 &&
+            gUnk_02039DD4->unk_0E2 == 0) {
+            skip = 1;
+        }
+
+        if (gUnk_02039B9C->unk_0F4 == 29 && gUnk_02039DD4->unk_000[0]->unk_48->unk_2A == 2 &&
+            gUnk_02039DD4->unk_0E2 == 0) {
+            skip = 1;
+        }
+#endif
+    }
+
+    if (skip != 0) {
+        return;
+    }
+
+    for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+        gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
+    }
+
+    gBtlWork->unk_068 |= 0x800000;
+
+    if ((s16)gUnk_02039DD4->unk_0C2 != n) {
+        if (n == 0) {
+            if ((s16)gUnk_02039DD4->unk_0C2 > 9) {
+                gBtlWork->unk_1CA = 9;
+            } else {
+                gBtlWork->unk_1CA = gUnk_02039DD4->unk_0C2;
+            }
+        } else if (n - (s16)gUnk_02039DD4->unk_0C2 > 9) {
+            gBtlWork->unk_1CA = 9;
+        } else {
+            gBtlWork->unk_1CA = n - (s16)gUnk_02039DD4->unk_0C2;
+        }
+
+        m4aSongNumStart(0x213);
+        gBtlWork->unk_068 |= 0x400;
+        gBtlWork->unk_068 |= 0x80;
+        gBtlWork->unk_068 &= ~0x20;
+        gUnk_02034A98->unk_78 |= 0x2000;
+        func_080791C0(w);
+        gUnk_02039DD4->unk_000[0] = gUnk_02034A98;
+        gUnk_02039DD4->unk_0D0 = 1;
+        gUnk_02039DD4->unk_0C2 = gUnk_02034A98->unk_A5;
+        gBtlWork->unk_0A4 = 1;
+
+        if (!(gGameState.flags & 0x100) && func_0807BA54() != 0 && !(gBtlWork->unk_068 & 0x800000000000)) {
+            gUnk_02039DD4->unk_0EE = 1;
+        }
+    } else {
+        func_080791C0(w);
+        gBtlWork->unk_1CA = 0;
+        gBtlWork->unk_068 &= ~0x80;
+        gBtlWork->unk_068 &= ~0x20;
+        gBtlWork->unk_068 &= ~0x400;
+        m4aSongNumStart(204);
+        gBtlWork->unk_0A4 = 1;
+        gUnk_02039DD4->unk_000[0] = gUnk_02034A98;
+        gUnk_02039DD4->unk_0D0 = 1;
+        gUnk_02039DD4->unk_0C2 = gUnk_02034A98->unk_A5;
+    }
+}
+#else
 INCLUDE_ASM("card/func_080792F4.s");
+#endif
 INCLUDE_ASM("card/func_08079600.s");
 INCLUDE_ASM("card/func_08079B3C.s");
 s32 func_08079ECC(UnkStruct_08080268* w) {
