@@ -3716,7 +3716,6 @@ u16 func_0806BA74(s32 mode, s32 flag) {
     return gUnk_02034A88[0].unk_0C->unk_06;
 }
 
-#ifndef VERSION_EU
 u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
     s32 cx;
     s32 cy;
@@ -3732,31 +3731,34 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
 
     gUnk_02034A90 = 0;
 
-    while (*(u16*)s != 0) {
+    while (MSG_LATIN_CHAR(s) != 0) {
         s32 v;
 
         gUnk_02034A88[gUnk_02034A90].unk_00 = x + cx;
         gUnk_02034A88[gUnk_02034A90].unk_04 = y + cy;
         gUnk_02034A88[gUnk_02034A90].unk_15 = 1;
 
-        if (*(u16*)s == 0x4079) {
+        if (MSG_LATIN_CHAR(s) == MSG_LATIN_CODE(0x4079, 29)) {
             f = 1;
-            s += 2;
+            s += MSG_LATIN_STEP;
         }
 
-        if (*(u16*)s == 0x4000) {
+        if (MSG_LATIN_CHAR(s) == MSG_LATIN_CODE(0x4000, 30)) {
             f = 0;
-            s += 2;
+            s += MSG_LATIN_STEP;
         }
 
-        if (*(u16*)s == 10) {
+        if (MSG_LATIN_CHAR(s) == MSG_LATIN_CODE(10, 31)) {
             cx = 0;
             cy += 0xC00;
         } else {
-            if ((u16)(*(u16*)s - 32) <= 223) {
-                v = *(u16*)s;
+#ifdef VERSION_EU
+            v = MSG_LATIN_CHAR(s);
+#else
+            if ((u16)(MSG_LATIN_CHAR(s) - 32) <= 223) {
+                v = MSG_LATIN_CHAR(s);
             } else {
-                switch (*(u16*)s) {
+                switch (MSG_LATIN_CHAR(s)) {
                 case 0xE000:
                     v = 25;
                     break;
@@ -3808,6 +3810,7 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
                 }
             }
 
+#endif
             gUnk_02034A88[gUnk_02034A90].unk_14 = f;
 
             if (gUnk_02034A88[gUnk_02034A90].unk_08 != NULL) {
@@ -3818,8 +3821,13 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
             cx += (s16)gUnk_08F7D438[v] << 8;
 
             if (v != 32) {
+#ifdef VERSION_EU
+                v = ((u16*)gUnk_09EEB204[v])[3];
+                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+#else
                 v = ((u16*)gUnk_09EEC134[v])[3];
                 gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+#endif
             }
 
             gUnk_02034A90++;
@@ -3829,7 +3837,7 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
                 cy += 0xC00;
             }
         }
-        s += 2;
+        s += MSG_LATIN_STEP;
 
         if (cy > 0x1800) {
             *d = s;
@@ -3840,9 +3848,6 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
     *d = 0;
     return gUnk_02034A90;
 }
-#else
-INCLUDE_ASM("msg/func_0806BB44.s");
-#endif
 #ifndef VERSION_EU
 u8 func_0806BDB8(s32 x, s32 y, u8* s, u8** d) {
     u16 w;
