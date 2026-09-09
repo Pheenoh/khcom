@@ -1209,7 +1209,140 @@ void func_080B0874(void) {
     }
 }
 
-INCLUDE_ASM("mode_sio/func_080B09C0.s");
+void func_080B09C0(void) {
+    s16 digits[4];
+    s16 a, b, c, d, e, f, g, h;
+
+#ifdef VERSION_EU
+    if ((gUnk_0203A9E4 == 0 ? gSioPlayerId : 0) != 0) {
+        a = gUnk_0203AA10.unk_04;
+        b = gUnk_0203AAC0.unk_04;
+        c = gUnk_0203AA10.unk_02;
+        d = gUnk_0203AAC0.unk_02;
+        e = gUnk_0203AA10.unk_06;
+        f = gUnk_0203AAC0.unk_06;
+        g = gUnk_0203AA10.unk_08;
+        h = gUnk_0203AAC0.unk_08;
+    } else {
+        a = gUnk_0203AAC0.unk_04;
+        b = gUnk_0203AA10.unk_04;
+        c = gUnk_0203AAC0.unk_02;
+        d = gUnk_0203AA10.unk_02;
+        e = gUnk_0203AAC0.unk_06;
+        f = gUnk_0203AA10.unk_06;
+        g = gUnk_0203AAC0.unk_08;
+        h = gUnk_0203AA10.unk_08;
+    }
+#else
+    if (gSioPlayerId == 0) {
+        a = gUnk_0203AAC0.unk_04;
+        b = gUnk_0203AA10.unk_04;
+        c = gUnk_0203AAC0.unk_02;
+        d = gUnk_0203AA10.unk_02;
+        e = gUnk_0203AAC0.unk_06;
+        f = gUnk_0203AA10.unk_06;
+        g = gUnk_0203AAC0.unk_08;
+        h = gUnk_0203AA10.unk_08;
+    } else {
+        a = gUnk_0203AA10.unk_04;
+        b = gUnk_0203AAC0.unk_04;
+        c = gUnk_0203AA10.unk_02;
+        d = gUnk_0203AAC0.unk_02;
+        e = gUnk_0203AA10.unk_06;
+        f = gUnk_0203AAC0.unk_06;
+        g = gUnk_0203AA10.unk_08;
+        h = gUnk_0203AAC0.unk_08;
+    }
+#endif
+
+    digits[0] = a / 100;
+    a %= 100;
+    digits[1] = a / 10;
+    a %= 10;
+    digits[2] = a;
+    RequestDma3Copy(gUnk_096B2124 + digits[1] * 32, (void*)0x06000100, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[2] * 32, (void*)0x06000120, 32);
+
+    digits[0] = c / 100;
+    c %= 100;
+    digits[1] = c / 10;
+    c %= 10;
+    digits[2] = c;
+    RequestDma3Copy(gUnk_096B2124 + digits[0] * 32, (void*)0x06000140, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[1] * 32, (void*)0x06000160, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[2] * 32, (void*)0x06000180, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[0] * 32, (void*)0x060001A0, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[1] * 32, (void*)0x060001C0, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[2] * 32, (void*)0x060001E0, 32);
+
+    digits[0] = e / 1000;
+    e %= 1000;
+    digits[1] = e / 100;
+    e %= 100;
+    digits[2] = e / 10;
+    e %= 10;
+    digits[3] = e;
+    RequestDma3Copy(gUnk_096B2124 + digits[0] * 32, (void*)0x06000200, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[1] * 32, (void*)0x06000220, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[2] * 32, (void*)0x06000240, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[3] * 32, (void*)0x06000260, 32);
+
+    digits[0] = g / 1000;
+    g %= 1000;
+    digits[1] = g / 100;
+    g %= 100;
+    digits[2] = g / 10;
+    g %= 10;
+    digits[3] = g;
+    RequestDma3Copy(gUnk_096B2124 + digits[0] * 32, (void*)0x06000280, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[1] * 32, (void*)0x060002A0, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[2] * 32, (void*)0x060002C0, 32);
+    RequestDma3Copy(gUnk_096B2124 + digits[3] * 32, (void*)0x060002E0, 32);
+
+    digits[0] = b / 100;
+    b %= 100;
+    digits[1] = b / 10;
+    b %= 10;
+    digits[2] = b;
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[1] * 32, (void*)0x060003E0, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[2] * 32, (void*)0x06000400, 32);
+
+    digits[0] = d / 100;
+    d %= 100;
+    digits[1] = d / 10;
+    d %= 10;
+    digits[2] = d;
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[0] * 32, (void*)0x06000420, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[1] * 32, (void*)0x06000440, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[2] * 32, (void*)0x06000460, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[0] * 32, (void*)0x06000480, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[1] * 32, (void*)0x060004A0, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[2] * 32, (void*)0x060004C0, 32);
+
+    digits[0] = f / 1000;
+    f %= 1000;
+    digits[1] = f / 100;
+    f %= 100;
+    digits[2] = f / 10;
+    f %= 10;
+    digits[3] = f;
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[0] * 32, (void*)0x060004E0, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[1] * 32, (void*)0x06000500, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[2] * 32, (void*)0x06000520, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[3] * 32, (void*)0x06000540, 32);
+
+    digits[0] = h / 1000;
+    h %= 1000;
+    digits[1] = h / 100;
+    h %= 100;
+    digits[2] = h / 10;
+    h %= 10;
+    digits[3] = h;
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[0] * 32, (void*)0x06000560, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[1] * 32, (void*)0x06000580, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[2] * 32, (void*)0x060005A0, 32);
+    RequestDma3Copy(gUnk_096B2124 + 0x400 + digits[3] * 32, (void*)0x060005C0, 32);
+}
 void func_080B0F18(void) {
     s8* base;
     s8* p;
