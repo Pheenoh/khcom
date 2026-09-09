@@ -81,7 +81,7 @@ typedef struct BtlObj {
     s16 unk_020;
     u8 unk_022[0x02];
     s32 unk_024;
-    u8 unk_028[0x04];
+    s32 unk_028;
     s16 unk_02C;
     s16 unk_02E;
     s16 unk_030;
@@ -114,7 +114,7 @@ typedef struct BtlObj {
     struct BtlObj* unk_0DC;
     u16 unk_0E0;
     s16 unk_0E2;
-    s32 unk_0E4;
+    struct BtlCardWork* unk_0E4;
     s32 unk_0E8;
     u16 unk_0EC;
     u8 unk_0EE[0x02];
@@ -127,6 +127,13 @@ typedef struct BtlObj {
     s32 unk_108;
     s32 unk_10C;
 } BtlObj;
+
+typedef struct BtlCardWork {
+    u8 unk_000[0xF4];
+    s32 unk_0F4;
+    u16 unk_0F8;
+    u8 unk_0FA[0x02];
+} BtlCardWork;
 
 typedef struct GameState {
     u8 unk_000;
@@ -335,7 +342,8 @@ typedef struct BtlWork {
     void* unk_114;
     u8 unk_118[0x08];
     s16 unk_120;
-    u8 unk_122[0x06];
+    u8 unk_122[0x02];
+    s32 unk_124;
     u8 (*unk_128)(s32* a, s32* b, s32* c, s32* d);
     s32 unk_12C;
     s32 unk_130;
@@ -647,7 +655,7 @@ void func_0801CB00(void);
 void func_0801CB44(void);
 u8 CanLevelUp(void);
 const UnkStruct_08133E5C* func_0800FB14(u16 i);
-s32 func_08011398(s32 a, s32 b);
+s32 func_08011398(BtlObj* a, s32 b);
 s32 func_08011F68(s32 a, s32 b);
 void func_08012324(Collider* p, s32 a, s32 b, s32 c);
 void ColliderSetRadius(Collider* p, u16 r);
@@ -728,7 +736,7 @@ u8 func_0800FCD8(u32 a);
 u8 func_0800FD20(u32 a);
 u8 func_0801AD68(BtlObj* p);
 void func_08010C70(void);
-void func_08011364(BtlObj* a, HitData* b, s32* c);
+void func_08011364(BtlObj* a, BtlObj* b, const UnkStruct_0813400C* c);
 void func_080125A4(void);
 void func_0800F9A0(void);
 void func_0800FB2C(u32 a);
