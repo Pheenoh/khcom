@@ -3836,7 +3836,6 @@ void task_hum_vixen_0(VixenWork* work) {
     }
 }
 
-#ifdef NON_MATCHING
 u8 task_hum_vixen_1(VixenWork* work) {
     VixenWork* w;
     HumActor* act;
@@ -3857,7 +3856,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
     act = &work->base.unk_040;
     func_0801C700(act, &x, &y, &z);
 
-    switch (_0800E434(work)) {
+    switch ((u32)_0800E434(work)) {
     case 5:
         work->base.unk_150 = 0;
 
@@ -3889,7 +3888,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         break;
     case 3:
     case 8:
-        if (*(s32*)((u8*)act->unk_E4 + 0xF4) == 27) {
+        if (act->unk_E4->unk_F4 == 27) {
             w->base.unk_170 = 37;
             w->base.unk_150 = 0;
         }
@@ -3917,6 +3916,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
             }
         }
         break;
+    case 176:
     default:
         if (func_0800F5A4(w, 30, 40, 40, 24)) {
             switch (GetRandom() % 3) {
@@ -3932,7 +3932,6 @@ u8 task_hum_vixen_1(VixenWork* work) {
             }
         }
         break;
-    case 176:
     }
 
     switch (w->base.unk_170) {
@@ -3997,14 +3996,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         }
         d = act->unk_04 - (s32)w->base.unk_15C;
 
-        if (d >= 0) {
-            if (d <= 0xBFF) {
-                w->base.unk_170 = 0;
-                w->base.unk_150 = 0;
-            } else {
-                w->base.unk_150++;
-            }
-        } else if ((s32)w->base.unk_15C - act->unk_04 <= 0xBFF) {
+        if ((d >= 0) ? d <= 0xBFF : (s32)w->base.unk_15C - act->unk_04 <= 0xBFF) {
             w->base.unk_170 = 0;
             w->base.unk_150 = 0;
         } else {
@@ -4026,19 +4018,17 @@ u8 task_hum_vixen_1(VixenWork* work) {
 
         if (AnimGetFrame(&w->base.anim) == 3) {
             if (act->unk_34 & 4) {
-                act->unk_04 += (act->unk_14 - (act->unk_04 + 0x3200)) >> 2;
+                s32 d = act->unk_04 + 0x3200;
+                act->unk_04 += (act->unk_14 - d) >> 2;
             } else {
-                act->unk_04 += (act->unk_14 - (act->unk_04 - 0x3200)) >> 2;
+                s32 d = act->unk_04 - 0x3200;
+                act->unk_04 += (act->unk_14 - d) >> 2;
             }
 
-            if (act->unk_34 & 4) {
-                if (func_08011F78(312, act->unk_04 - 0x2000, act->unk_08, act->unk_0C, 12, 12, 48)) {
-                    m4aSongNumStart(0x285);
-                }
-            } else {
-                if (func_08011F78(312, act->unk_04 + 0x2000, act->unk_08, act->unk_0C, 12, 12, 48)) {
-                    m4aSongNumStart(0x285);
-                }
+            if ((act->unk_34 & 4)
+                ? func_08011F78(312, act->unk_04 - 0x2000, act->unk_08, act->unk_0C, 12, 12, 48)
+                : func_08011F78(312, act->unk_04 + 0x2000, act->unk_08, act->unk_0C, 12, 12, 48)) {
+                m4aSongNumStart(0x285);
             }
         }
 
@@ -4058,8 +4048,8 @@ u8 task_hum_vixen_1(VixenWork* work) {
 
         if (AnimIsFinished(&w->base.anim)) {
             w->base.unk_154 &= ~4;
+            act->unk_E4->unk_F8--;
             v = 0;
-            *(u16*)((u8*)act->unk_E4 + 0xF8) -= 1;
             act->unk_2C = act->unk_2E / 4;
             act->unk_34 &= ~0x100;
             func_0801AF08(act);
@@ -4162,7 +4152,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
                 args.unk_00 = work->unk_198;
                 args.unk_04 = work->unk_19C;
                 args.unk_08 = 0;
-                args.unk_12 = work->unk_1BC & 7;
+                args.unk_12 = work->unk_1BC % 8;
                 args.unk_18 = &work->unk_1E8;
                 work->unk_1BC++;
                 TaskCreate(&work->unk_1A4, gTaskDescHumVixenNdl, &args);
@@ -4350,9 +4340,6 @@ u8 task_hum_vixen_1(VixenWork* work) {
     TaskPoolUpdate(&work->unk_1A4);
     return r;
 }
-#else
-INCLUDE_ASM("hum/task_hum_vixen_1.s");
-#endif
 
 void task_hum_vixen_2(VixenWork* work) {
     func_0800EFE8(&work->base);
