@@ -4452,7 +4452,6 @@ u8 task_bos_jf_borderline_1(JfBorderlineWork* work) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void task_bos_jf_borderline_2(JfBorderlineWork* work) {
     s16 sx;
     s16 sy;
@@ -4478,7 +4477,7 @@ void task_bos_jf_borderline_2(JfBorderlineWork* work) {
         DrawSprite(sx + 8, sy + 4, work->gfx3, work->tiles, work->palette, 0, 0x400,
             0xFF60);
         DrawSprite(sx + 8, sy + 4, work->gfx2, work->tiles, work->palette, 0, 0x400,
-            0xFF60);
+            0xFFF0);
         break;
     case 1:
         DrawSprite(sx - 40, sy - 1, work->gfx, work->tiles, work->palette, 0, 0x400,
@@ -4516,9 +4515,6 @@ void task_bos_jf_borderline_2(JfBorderlineWork* work) {
 
     DrawSprite(sx, sy - 8, work->gfx5, work->tiles, work->palette, 0, 0x400, 0xFF00);
 }
-#else
-INCLUDE_ASM("bos2/task_bos_jf_borderline_2.s");
-#endif
 
 void task_bos_jf_borderline_3(JfBorderlineWork* work) {
     ReleaseObjTiles((void*)work->tiles);
