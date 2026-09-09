@@ -2018,6 +2018,11 @@ void eu_080059D4(s32 bg, void* src) {
     eu_080044C0(src, GetBgCharBase(bg));
 }
 
+void eu_080059F4(s32 bg, void* src) {
+    EnableBg(bg);
+    eu_080044C0(src, GetBgScreenBase(bg));
+}
+
 INCLUDE_ASM("engine/eu_080059D4.s");
 #endif
 
