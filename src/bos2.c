@@ -4571,12 +4571,12 @@ void func_080C1A48(JfBorderlineWork* work) {
     work->unk_0B5 = 0;
 }
 
-#ifdef NON_MATCHING
 void task_bos_dsd_0(DsdWork* work, void* arg) {
     s32 v;
     DsdWork* w;
     BosSub* p1;
     BosSub* p2;
+    BtlWork* btl;
 
     work->unk_358 = 0;
 
@@ -4634,7 +4634,7 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         w->unk_000[0].unk_034 |= 0x1000000;
         w->unk_000[0].unk_034 |= 4;
         p1 = &w->unk_000[1];
-        func_0801B37C(p1, gUnk_0961A7B0, work->unk_340, work->unk_344, -0x8C00);
+        func_0801B37C(p1, gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
         p1->unk_034 |= 4;
         p1->unk_034 |= 0x400;
         p1->unk_0A2 = v;
@@ -4657,14 +4657,12 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         func_0801BCC0(0x6400, 0x16800, 0);
         func_0801C274(0x2800, 0x16800, 0);
         TaskCreate(&w->unk_37C, gTaskDescBosDsdMain, w);
-        *(s32*)&gBtlWork->unk_0CC = w->unk_000[0].x;
-        gBtlWork->unk_0D0 = w->unk_000[0].y;
-        gBtlWork->unk_0D4 = w->unk_000[0].z;
+        btl = gBtlWork;
+        *(s32*)&btl->unk_0CC = w->unk_000[0].x;
+        btl->unk_0D0 = w->unk_000[0].y;
+        btl->unk_0D4 = w->unk_000[0].z;
     }
 }
-#else
-INCLUDE_ASM("bos2/task_bos_dsd_0.s");
-#endif
 u8 task_bos_dsd_1(DsdWork* work) {
     BtlWork* q;
     BosSub* a = work->unk_000;
