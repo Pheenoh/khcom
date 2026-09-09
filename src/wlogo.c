@@ -2572,10 +2572,9 @@ s32 func_080B9190(s32 a, s32 b) {
     }
     return 0;
 }
-#ifdef NON_MATCHING
 void func_080B91A4(WlogoTtEffTop* p) {
     s32 st;
-    s32 v;
+    s32 next;
     u16 rnd;
 
     if (p->unk_000->unk_28 & 0x40) {
@@ -2599,10 +2598,9 @@ void func_080B91A4(WlogoTtEffTop* p) {
                     p->unk_000->unk_2C = 1;
                 }
             } else {
-                v = gUnk_09EF2194[GetRandom() % 4];
-                p->unk_000->unk_2C = v;
+                p->unk_000->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
-                if (v == 3) {
+                if (p->unk_000->unk_2C == 3) {
                     p->unk_000->unk_2C = st;
                 }
 
@@ -2620,28 +2618,27 @@ void func_080B91A4(WlogoTtEffTop* p) {
                     p->unk_000->unk_2C = 1;
                 }
             } else {
-                v = gUnk_09EF2194[GetRandom() % 4];
-                p->unk_000->unk_2C = v;
+                p->unk_000->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
-                if (v == 4) {
+                if (p->unk_000->unk_2C == 4) {
                     if (p->unk_000->unk_28 & 0x20) {
                         p->unk_000->unk_28 |= 0x40;
-                        p->unk_000->unk_2C = v;
-                        p->unk_000->unk_3C = v;
+                        p->unk_000->unk_2C = 4;
+                        p->unk_000->unk_3C = 4;
                     } else {
                         p->unk_000->unk_28 |= 0x40;
                         p->unk_000->unk_2C = 6;
                         p->unk_000->unk_3C = 6;
                     }
-                    st = p->unk_000->unk_2C;
+                    next = p->unk_000->unk_2C;
 
-                    if (st == 3) {
+                    if (next == 3) {
                         rnd = GetRandom() % 100;
 
                         if (rnd <= 49) {
                             p->unk_000->unk_2C = 11;
                         } else {
-                            p->unk_000->unk_2C = st;
+                            p->unk_000->unk_2C = next;
                         }
                     }
                 }
@@ -2682,10 +2679,9 @@ void func_080B91A4(WlogoTtEffTop* p) {
                     p->unk_000->unk_2C = 1;
                 }
             } else {
-                v = gUnk_09EF2194[GetRandom() % 4];
-                p->unk_000->unk_2C = v;
+                p->unk_000->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
-                if (v == 3) {
+                if (p->unk_000->unk_2C == 3) {
                     p->unk_000->unk_2C = st;
                 }
 
@@ -2703,14 +2699,13 @@ void func_080B91A4(WlogoTtEffTop* p) {
                     p->unk_000->unk_2C = 1;
                 }
             } else {
-                v = gUnk_09EF2194[GetRandom() % 4];
-                p->unk_000->unk_2C = v;
+                p->unk_000->unk_2C = gUnk_09EF2194[GetRandom() % 4];
 
-                if (v == 4) {
+                if (p->unk_000->unk_2C == 4) {
                     if (p->unk_000->unk_28 & 0x20) {
                         p->unk_000->unk_28 |= 0x40;
-                        p->unk_000->unk_2C = v;
-                        p->unk_000->unk_3C = v;
+                        p->unk_000->unk_2C = 4;
+                        p->unk_000->unk_3C = 4;
                     } else {
                         p->unk_000->unk_28 |= 0x40;
                         p->unk_000->unk_2C = 6;
@@ -2723,9 +2718,7 @@ void func_080B91A4(WlogoTtEffTop* p) {
         }
     }
 }
-#else
-INCLUDE_ASM("wlogo/func_080B91A4.s");
-#endif
+
 
 void _080B949C(WlogoBtlObj* a, WlogoTtEffTop* b) {
     u16 t;
