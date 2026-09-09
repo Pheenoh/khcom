@@ -335,6 +335,7 @@ void func_08006954(void);
 u8 func_0809C4B0(u8* work, void* a);
 void func_0807CC2C(UnkStruct_02034AAC* p);
 u8 func_0807D194(UnkStruct_02034AAC* p, void* a);
+u8 func_0807D584(UnkStruct_02034AAC* p, void* a);
 u8 func_0807CBC0(UnkStruct_02034AAC* p, void* a);
 u8 func_0807BD64(UnkStruct_02034AAC* p, void* a);
 u8 card_reload_1(UnkStruct_02034AAC* p, void* a);
@@ -3026,7 +3027,61 @@ void func_0807D0F4(UnkStruct_02034AAC* p) {
     p->unk_4C = gSineTable[(p->unk_7C >> 8) & 0xFF] * (p->unk_84 >> 8) + p->unk_8C;
     p->unk_50 = -gSineTable[((p->unk_7C >> 8) & 0xFF) + 64] * (p->unk_84 >> 8) + p->unk_90;
 }
-INCLUDE_ASM("card/func_0807D194.s");
+u8 func_0807D194(UnkStruct_02034AAC* w, void* a) {
+    switch (w->unk_A1) {
+    case 5:
+        if (!(w->unk_78 & 0x80)) {
+            func_0807C33C(w);
+            w->unk_78 |= 0x80;
+        }
+        func_0807CC2C(w);
+        w->unk_9C = 10;
+        w->unk_A0 -= 4;
+        func_08000D90(w->unk_64, w->unk_38);
+        SetTaskUpdate(a, (void*)func_0807C4BC);
+        return 1;
+    case 6:
+        if (!(w->unk_78 & 0x80)) {
+            func_0807C33C(w);
+            w->unk_78 |= 0x80;
+        }
+        w->unk_9C = 8;
+        w->unk_A0 -= 4;
+        func_0807D490(w);
+        w->unk_78 |= 0x200;
+        w->unk_78 |= 0x80;
+        func_08000D90(w->unk_64, w->unk_38);
+        SetTaskUpdate(a, (void*)func_0807C934);
+        return 1;
+    case 8:
+        w->unk_A0 -= 4;
+        w->unk_84 = 0x500;
+        w->unk_9C = 0x100;
+        w->unk_7C = -16;
+        w->unk_9E = 0xFF;
+        SetTaskUpdate(a, (void*)func_0807CE9C);
+        break;
+    case 7:
+        w->unk_84 = 0x500;
+        w->unk_9C = 0x100;
+        func_08000D90(w->unk_64, w->unk_38);
+        return 0;
+    case 10:
+        w->unk_9C = 10;
+        w->unk_A0 -= 4;
+        func_08000D90(w->unk_64, w->unk_38);
+        SetTaskUpdate(a, (void*)func_0807D4E4);
+        return 1;
+    case 11:
+        w->unk_9C = 10;
+        w->unk_A0 -= 4;
+        func_08000D90(w->unk_64, w->unk_38);
+        SetTaskUpdate(a, (void*)func_0807D584);
+        return 1;
+    }
+    func_0807E018(w);
+    return 1;
+}
 
 void func_0807D318(UnkStruct_02034AAC* p, CardDef** out) {
     u32* q;
