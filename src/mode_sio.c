@@ -4,6 +4,7 @@
 
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
+extern s16 eu_0806629C(TextSlot* text, u8 count);
 extern void eu_080059F4(s32 bg, void* map);
 extern void eu_080C24D8(void);
 extern s32 eu_080C273C(void);
@@ -487,14 +488,23 @@ void mode_sio_btl_option_1(void) {
     }
 }
 
-#ifndef VERSION_EU
 void func_080AF70C(void) {
+#ifdef VERSION_EU
+    s16 width;
+    s32 multiline;
+    s32 i;
+#endif
     gSioBtlOptionWork->unk_018[0] = AnimUpdate(&gSioBtlOptionWork->unk_020[0]);
     gSioBtlOptionWork->unk_018[1] = AnimUpdate(&gSioBtlOptionWork->unk_020[1]);
     gSioBtlOptionWork->gfx2 = AnimUpdate(&gSioBtlOptionWork->anim);
     DrawSprite(60, 88, gSioBtlOptionWork->unk_018[0], gSioBtlOptionWork->unk_008[0], gSioBtlOptionWork->unk_008[2], 0, 1, 0xFFF0);
     DrawSprite(180, 88, gSioBtlOptionWork->unk_018[1], gSioBtlOptionWork->unk_008[1], gSioBtlOptionWork->unk_008[3], 0, 0, 0xFFF0);
+#ifdef VERSION_EU
+    width = func_08065B08(gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_050);
+    func_080664D8(162 - width / 2, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
+#else
     func_080664D8(gUnk_09EF1318[gSioBtlOptionWork->unk_417].unk_1E + 108, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
+#endif
     func_080664D8(16, 144, gSioBtlOptionWork->unk_0FC, gSioBtlOptionWork->unk_14C, 0xF200, gSioBtlOptionWork->unk_0F8);
     func_080664D8(136, 144, gSioBtlOptionWork->unk_154, gSioBtlOptionWork->unk_1A4, 0xF200, gSioBtlOptionWork->unk_150);
     DrawSprite(-((gSioBtlOptionWork->unk_1FA >> 3) % 4) + 88, 2, gSioBtlOptionWork->gfx4, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xFF00);
@@ -511,7 +521,23 @@ void func_080AF70C(void) {
 
     if (gSioBtlOptionWork->unk_228 == 1) {
         DrawSprite(120, 131, gSioBtlOptionWork->gfx3, gSioBtlOptionWork->tiles3, gSioBtlOptionWork->palette3, 0, 0, 0xF000);
+#ifdef VERSION_EU
+        width = eu_0806629C(gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->unk_229);
+        multiline = 0;
+        for (i = 0; i < gSioBtlOptionWork->unk_229; i++) {
+            if (gSioBtlOptionWork->unk_22C[i].tiles == 0) {
+                multiline = 1;
+                break;
+            }
+        }
+        if (multiline != 0) {
+            func_080664D8(120 - (width >> 1), 119, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
+        } else {
+            func_080664D8(120 - (width >> 1), 124, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
+        }
+#else
         func_080664D8(gSioBtlOptionWork->unk_412, gSioBtlOptionWork->unk_414, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
+#endif
     }
     DrawSprite(32, 24, gSioBtlOptionWork->gfx5[0], gSioBtlOptionWork->tiles5[0], gSioBtlOptionWork->palette5[0], 0, 0, 0xF100);
     DrawSprite(132, 24, gSioBtlOptionWork->gfx5[1], gSioBtlOptionWork->tiles5[1], gSioBtlOptionWork->palette5[1], 0, 0, 0xF100);
@@ -521,9 +547,6 @@ void func_080AF70C(void) {
     }
     gSioBtlOptionWork->unk_1FA++;
 }
-#else
-INCLUDE_ASM("mode_sio/func_080AF70C.s");
-#endif
 
 void func_080AFA90(void) {
     if (gSioBtlOptionWork->unk_006 > 4) {
