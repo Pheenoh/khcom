@@ -537,21 +537,23 @@ u16 func_0810068C(void) {
     return keys;
 }
 
-#ifdef NON_MATCHING
 void func_081006AC(void) {
     s16 prev;
     u16 keys;
-    void* tiles;
 
     prev = gUnk_020354E8;
     keys = func_0810068C();
 
     if (keys & A_BUTTON) {
-        u16 unk = gUnk_020354E8;
-        if (gUnk_020354E8 != gGameState.floor) {
-            asm("" ::: "memory");
+        if (gUnk_020354E8 == gGameState.floor) {
+            gUnk_0203550A = -1;
+            LoadBgMap(0, gUnk_09A35A1C, 0x500);
+            gUnk_020357A4 = 16;
+            gUnk_020357A2 = 3;
+            m4aSongNumStart(0x68);
+        } else {
             if (gUnk_020354F0[gUnk_020354E8] >= 0) {
-                gUnk_0203550A = unk;
+                gUnk_0203550A = gUnk_020354E8;
                 LoadBgMap(0, gUnk_09A35A1C, 0x500);
                 gUnk_020357A4 = 16;
                 gUnk_020357A2 = 3;
@@ -559,12 +561,6 @@ void func_081006AC(void) {
             } else {
                 m4aSongNumStart(0x69);
             }
-        } else {
-            gUnk_0203550A = -1;
-            LoadBgMap(0, gUnk_09A35A1C, 0x500);
-            gUnk_020357A4 = 16;
-            gUnk_020357A2 = 3;
-            m4aSongNumStart(0x68);
         }
     } else if (keys & B_BUTTON) {
         gUnk_0203550A = -1;
@@ -573,57 +569,33 @@ void func_081006AC(void) {
         gUnk_020357A2 = 3;
         m4aSongNumStart(0x68);
     } else if (keys & DPAD_UP) {
-        gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_00;
-        if (gUnk_020354E8 != prev) {
-            for (;;) {
-                if (gUnk_020354F0[gUnk_020354E8] != -1) {
-                    break;
-                }
-                gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_00;
-                if (gUnk_020354E8 == prev) {
-                    break;
-                }
+        do {
+            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_00;
+            if (gUnk_020354E8 == prev) {
+                break;
             }
-        }
+        } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_DOWN) {
-        gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_02;
-        if (gUnk_020354E8 != prev) {
-            for (;;) {
-                if (gUnk_020354F0[gUnk_020354E8] != -1) {
-                    break;
-                }
-                gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_02;
-                if (gUnk_020354E8 == prev) {
-                    break;
-                }
+        do {
+            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_02;
+            if (gUnk_020354E8 == prev) {
+                break;
             }
-        }
+        } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_LEFT) {
-        gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_04;
-        if (gUnk_020354E8 != prev) {
-            for (;;) {
-                if (gUnk_020354F0[gUnk_020354E8] != -1) {
-                    break;
-                }
-                gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_04;
-                if (gUnk_020354E8 == prev) {
-                    break;
-                }
+        do {
+            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_04;
+            if (gUnk_020354E8 == prev) {
+                break;
             }
-        }
+        } while (gUnk_020354F0[gUnk_020354E8] == -1);
     } else if (keys & DPAD_RIGHT) {
-        gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_06;
-        if (gUnk_020354E8 != prev) {
-            for (;;) {
-                if (gUnk_020354F0[gUnk_020354E8] != -1) {
-                    break;
-                }
-                gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_06;
-                if (gUnk_020354E8 == prev) {
-                    break;
-                }
+        do {
+            gUnk_020354E8 = gUnk_09EF9384[gUnk_020354E8].unk_06;
+            if (gUnk_020354E8 == prev) {
+                break;
             }
-        }
+        } while (gUnk_020354F0[gUnk_020354E8] == -1);
     }
 
     if (gUnk_020354E8 != prev) {
@@ -631,56 +603,52 @@ void func_081006AC(void) {
         switch (gLanguage) {
         case 0:
             if ((gGameState.flags & 8) == 0) {
-                tiles = gUnk_09A0D63C;
+                func_08100670(gUnk_020354E8, gUnk_09A0D63C, (u8*)GetBgCharBase(0) + 0x20);
             } else {
-                tiles = gUnk_09A0F03C;
+                func_08100670(gUnk_020354E8, gUnk_09A0F03C, (u8*)GetBgCharBase(0) + 0x20);
             }
             break;
         case 1:
             if ((gGameState.flags & 8) == 0) {
-                tiles = gUnk_09A53380;
+                func_08100670(gUnk_020354E8, gUnk_09A53380, (u8*)GetBgCharBase(0) + 0x20);
             } else {
-                tiles = gUnk_09A59B80;
+                func_08100670(gUnk_020354E8, gUnk_09A59B80, (u8*)GetBgCharBase(0) + 0x20);
             }
             break;
         case 4:
             if ((gGameState.flags & 8) == 0) {
-                tiles = gUnk_09A54080;
+                func_08100670(gUnk_020354E8, gUnk_09A54080, (u8*)GetBgCharBase(0) + 0x20);
             } else {
-                tiles = gUnk_09A5A880;
+                func_08100670(gUnk_020354E8, gUnk_09A5A880, (u8*)GetBgCharBase(0) + 0x20);
             }
             break;
         case 3:
             if ((gGameState.flags & 8) == 0) {
-                tiles = gUnk_09A54D80;
+                func_08100670(gUnk_020354E8, gUnk_09A54D80, (u8*)GetBgCharBase(0) + 0x20);
             } else {
-                tiles = gUnk_09A5B580;
+                func_08100670(gUnk_020354E8, gUnk_09A5B580, (u8*)GetBgCharBase(0) + 0x20);
             }
             break;
         case 2:
         default:
             if ((gGameState.flags & 8) == 0) {
-                tiles = gUnk_09A55A80;
+                func_08100670(gUnk_020354E8, gUnk_09A55A80, (u8*)GetBgCharBase(0) + 0x20);
             } else {
-                tiles = gUnk_09A5C280;
+                func_08100670(gUnk_020354E8, gUnk_09A5C280, (u8*)GetBgCharBase(0) + 0x20);
             }
             break;
         }
 #else
         if ((gGameState.flags & 8) == 0) {
-            tiles = gUnk_09A0D63C;
+            func_08100670(gUnk_020354E8, gUnk_09A0D63C, (u8*)GetBgCharBase(0) + 0x20);
         } else {
-            tiles = gUnk_09A0F03C;
+            func_08100670(gUnk_020354E8, gUnk_09A0F03C, (u8*)GetBgCharBase(0) + 0x20);
         }
 #endif
-        func_08100670(gUnk_020354E8, (u8*)tiles, (u8*)GetBgCharBase(0) + 0x20);
         gUnk_020357A0 = func_0810063C(gUnk_020354F0[gUnk_020354E8]);
         m4aSongNumStart(0x65);
     }
 }
-#else
-INCLUDE_ASM("mode_worldinspect/func_081006AC.s");
-#endif
 
 void func_08100980(void) {
     s32 i;
