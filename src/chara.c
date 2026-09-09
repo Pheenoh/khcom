@@ -750,19 +750,15 @@ s32 func_080C60D8(void) {
 
 
 #ifdef VERSION_EU
-#ifdef NON_MATCHING
 void eu_080C24D8(void) {
     s32 i;
-    s32 count;
+    s16 count;
 
     count = 112;
     for (i = 0; i < count; i++) {
         gUnk_0203C39C[i] = gUnk_0203C390[i];
     }
 }
-#else
-INCLUDE_ASM("chara/eu_080C24D8.s");
-#endif
 #endif
 
 #ifdef NON_MATCHING
