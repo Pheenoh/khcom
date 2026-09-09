@@ -7365,7 +7365,59 @@ u16 func_08084BF0(void) {
     return count;
 }
 
-INCLUDE_ASM("card/func_08084C40.s");
+u16 func_08084C40(u8 deck, u8 mode, u16* out) {
+    u16 count;
+    u16 total;
+    u16 mask;
+    u16* present;
+    u16 i;
+    u32 zero;
+
+    mask = total = count = 0;
+    present = EwramAlloc(0x23C);
+    zero = 0;
+    CpuSet(&zero, present, 0x0500008F);
+
+    if (mode == 1) {
+        switch (deck) {
+        case 0:
+            mask = 0x1000;
+            break;
+        case 1:
+            mask = 0x2000;
+            break;
+        case 2:
+            mask = 0x4000;
+            break;
+        }
+    } else {
+        mask = 0x7000;
+    }
+
+    for (i = 0; i < gCardCount; i++) {
+        if (gCardCollection[i] == CARD_ID_MASK) {
+            continue;
+        }
+        if (gCardCollection[i] & mask) {
+            continue;
+        }
+        if (!(gCardCollection[i] & 0x8000)) {
+            present[gCardDefs[gCardCollection[i] & CARD_ID_MASK].unk_1C] = 1;
+        } else {
+            present[gCardDefs[gCardCollection[i] & CARD_ID_MASK].unk_1C + 0x8F] = 1;
+        }
+    }
+
+    for (i = 0; i < 0x11E; i++) {
+        if (present[i] != 0) {
+            total += present[i];
+            out[count++] = i;
+        }
+    }
+
+    EwramFree(present);
+    return total;
+}
 
 void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p) {
     u16 mask;
