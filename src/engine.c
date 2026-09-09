@@ -2023,6 +2023,10 @@ void eu_080059F4(s32 bg, void* src) {
     eu_080044C0(src, GetBgScreenBase(bg));
 }
 
+u32 eu_08005A14(u32* src) {
+    return *src >> 8;
+}
+
 INCLUDE_ASM("engine/eu_080059D4.s");
 #endif
 
