@@ -604,7 +604,214 @@ void SortSprites(void) {
     gSpriteWork->sortLo = 0;
 }
 
+#ifdef NON_MATCHING
+static inline void EngineObjSize(u16 a, u16 b, u16* w, u16* h) {
+    switch ((((u32)b << 16) | a) & 0xC000C000) {
+    case 0x00000000:
+        *w = 8;
+        *h = 8;
+        break;
+    case 0x40000000:
+        *w = 16;
+        *h = 16;
+        break;
+    case 0x80000000:
+        *w = 32;
+        *h = 32;
+        break;
+    case 0xC0000000:
+        *w = 64;
+        *h = 64;
+        break;
+    case 0x00004000:
+        *w = 16;
+        *h = 8;
+        break;
+    case 0x40004000:
+        *w = 32;
+        *h = 8;
+        break;
+    case 0x80004000:
+        *w = 32;
+        *h = 16;
+        break;
+    case 0xC0004000:
+        *w = 64;
+        *h = 32;
+        break;
+    case 0x00008000:
+        *w = 8;
+        *h = 16;
+        break;
+    case 0x40008000:
+        *w = 8;
+        *h = 32;
+        break;
+    case 0x80008000:
+        *w = 16;
+        *h = 32;
+        break;
+    case 0xC0008000:
+        *w = 32;
+        *h = 64;
+        break;
+    default:
+        *w = 0;
+        *h = 0;
+        break;
+    }
+}
+
+void func_08002F50(void) {
+    u16* oam;
+    s32 i;
+    s32 j;
+    s32 count;
+    s32 emitted;
+    u8 mosaic;
+    SpriteEntry** entries;
+    SpriteEntry* entry;
+    ObjAffine* affine;
+    u16* parts;
+    u16 partCount;
+    u16 tileOffset;
+    u16 attr0;
+    u16 attr1;
+    u16 attr2;
+    u16 width;
+    u16 height;
+    s16 x;
+    s16 y;
+    s32 xx;
+    s32 yy;
+    s32 angle;
+    s32 cosIndex;
+    s32 sinIndex;
+    u16 palette;
+    ObjTiles* tiles;
+    u16 flip;
+
+    if (gSpriteWork->unk_2BAE != 0) {
+        return;
+    }
+    oam = (u16*)0x07000000;
+    for (i = 0; i < gSpriteWork->affineCount; i++) {
+        oam += 3;
+        *oam = gSpriteWork->affine[i].pa;
+        oam += 4;
+        *oam = gSpriteWork->affine[i].pb;
+        oam += 4;
+        *oam = gSpriteWork->affine[i].pc;
+        oam += 4;
+        *oam = gSpriteWork->affine[i].pd;
+        oam++;
+    }
+    gSpriteWork->affineCount = 0;
+    emitted = 0;
+    oam = (u16*)0x07000000;
+    count = gSpriteWork->entryCount;
+    entries = gSpriteWork->sortPtrs;
+    mosaic = gSpriteWork->unk_2BAF;
+    for (i = 0; i < count; i++) {
+        entry = entries[i];
+        parts = entry->unk_0C;
+        affine = (ObjAffine*)entry->unk_08;
+        partCount = *parts++;
+        tileOffset = 0;
+        if (mosaic != 0 && (entry->unk_16 & 0x10) == 0) {
+            entry->unk_16 |= 8;
+        }
+        for (j = 0; j < partCount; j++) {
+            attr0 = *parts++;
+            attr1 = *parts++;
+            attr2 = *parts++;
+            y = attr0 & 0xFF;
+            if (y & 0x80) {
+                y = 0xFF ^ y;
+                y = 0xFFFF ^ y;
+            }
+            x = attr1 & 0x1FF;
+            if (x & 0x100) {
+                x = 0x1FF ^ x;
+                x = 0xFFFF ^ x;
+            }
+            EngineObjSize(attr0, attr1, &width, &height);
+            if (affine != 0) {
+                x += (s16)width >> 1;
+                y += (s16)height >> 1;
+                if (affine->angle != 0) {
+                    angle = -affine->angle;
+                    cosIndex = (angle + 64) & 255;
+                    sinIndex = angle & 255;
+                    xx = (s32)((u32)gSineTable[cosIndex] * x + (u32)gSineTable[sinIndex] * y);
+                    yy = (s32)((u32)gSineTable[cosIndex + 64] * x + (u32)gSineTable[sinIndex + 64] * y);
+                    xx = (s32)((u32)affine->sx * xx) >> 8;
+                    yy = (s32)((u32)affine->sy * yy) >> 8;
+                } else {
+                    xx = (s32)((u32)affine->sx * x);
+                    yy = (s32)((u32)affine->sy * y);
+                }
+                x = (s16)(xx >> 8) - ((s16)width >> 1);
+                y = (s16)(yy >> 8) - ((s16)height >> 1);
+                if (affine->unk_0A != 0) {
+                    x -= (s16)width >> 1;
+                    y -= (s16)height >> 1;
+                    width *= 2;
+                    height *= 2;
+                }
+                if (affine->unk_0A != 0) {
+                    attr0 |= 0x300;
+                } else {
+                    attr0 |= 0x100;
+                }
+                attr1 |= affine->index << 9;
+            } else {
+                flip = entry->unk_16 & 2;
+                if (flip) {
+                    attr1 ^= flip << 12;
+                    y = -y - height;
+                }
+                flip = entry->unk_16 & 1;
+                if (flip) {
+                    attr1 ^= flip << 12;
+                    x = -x - width;
+                }
+            }
+            x += entry->unk_10;
+            y += entry->unk_12;
+            if (x > 239 || x <= -(s16)width || y > 159 || y <= -(s16)height) {
+                if (((ObjTiles*)entry->unk_00)->unk_24 != 0) {
+                    tileOffset += GetObjTileCount(attr0, attr1);
+                }
+                continue;
+            }
+            oam[0] = (attr0 & 0xFF00) | (y & 0xFF);
+            oam[1] = (attr1 & 0xFE00) | (x & 0x1FF);
+            tiles = entry->unk_00;
+            if (tiles->unk_24 != 0) {
+                palette = (attr2 >> 12) + ((ObjPaletteNode*)entry->unk_04)->unk_06;
+                oam[2] = (attr2 & 0xC00) | (tileOffset + tiles->unk_06) | (palette << 12);
+                tileOffset += GetObjTileCount(oam[0], oam[1]);
+            } else {
+                palette = (attr2 >> 12) + ((ObjPaletteNode*)entry->unk_04)->unk_06;
+                oam[2] = ((attr2 & 0xFFF) + tiles->unk_06) | (palette << 12);
+            }
+            oam[0] |= (entry->unk_16 & 8) << 9;
+            oam[0] |= (entry->unk_16 & 4) << 8;
+            oam[2] |= entry->unk_16 & 0xC00;
+            oam += 4;
+            emitted++;
+        }
+    }
+    for (i = emitted; i < 128; i++) {
+        *oam = 0x200;
+        oam += 4;
+    }
+    gSpriteWork->entryCount = 0;
+}
+#else
 INCLUDE_ASM("engine/func_08002F50.s");
+#endif
 
 void func_080034D8(u8 a) {
     gSpriteWork->unk_2BAF = a;
