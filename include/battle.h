@@ -1,5 +1,5 @@
-#ifndef GUARD_UNK_0800EEBC_H
-#define GUARD_UNK_0800EEBC_H
+#ifndef GUARD_BATTLE_H
+#define GUARD_BATTLE_H
 
 #include "types.h"
 #include "m4a.h"
@@ -528,6 +528,22 @@ extern u8 gUnk_09EDA828[];
 extern const UnkStruct_08133E5C gUnk_08133E5C[];
 extern const UnkStruct_0813400C gUnk_0813400C[];
 
+extern UnkStruct_02039CA8 gUnk_02039CA8;
+extern UnkStruct_020348C8* gUnk_020348C8;
+extern u16 gUnk_020348CC[2];
+extern u16 gUnk_020348D0[2];
+extern u16 gUnk_020348D4[2];
+extern u16 gUnk_020348D8[2];
+extern u16 gUnk_020348DC[2];
+extern u16 gUnk_020348E0;
+extern u16 gUnk_020348E2;
+extern ListNode gUnk_020348E8;
+extern ListNode gUnk_020348F8;
+extern ListNode gUnk_02034908;
+extern ListNode gUnk_02034918;
+extern BgFx* gUnk_02034928;
+
+
 void func_0800ABD8(void);
 void func_08000D90(ListNode* node, void* pool);
 void* func_08012218(u32 type);
@@ -923,4 +939,4 @@ u8 GetActiveDeckIndex(void);
 u16 func_08085B38(u8 index);
 void func_0809B710(void* pool, s16 a, s16 b, s16 c, u16 d);
 
-#endif /* GUARD_UNK_0800EEBC_H */
+#endif /* GUARD_BATTLE_H */
