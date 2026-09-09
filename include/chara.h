@@ -8,6 +8,7 @@
 #include "malloc.h"
 #include "game.h"
 #include "mode.h"
+#include "pallet.h"
 
 typedef struct MaskFadeWork {
     u8* unk_000;
@@ -126,16 +127,25 @@ typedef struct CharaObj {
     u16 unk_38;
     u16 unk_3A;
     s32 unk_3C;
-    u16 unk_40;
-    u16 unk_42;
+    s16 unk_40;
+    s16 unk_42;
     u8 unk_44;
-    u8 unk_45[0x1003];
+    u8 unk_45;
+    u16 unk_46[0x400];
+    u16 unk_846[0x400];
     u32 unk_1048;
     u32 unk_104C;
     u16 unk_1050[32];
     u16 unk_1090;
     u8 unk_1092[0x02];
 } CharaObj;
+
+typedef struct CharaPrizeArgs {
+    s32 x;
+    s32 y;
+    s32 z;
+    u8 unk_0C[0x14];
+} CharaPrizeArgs;
 
 typedef struct CharaObjParam {
     u32 unk_00;
@@ -237,6 +247,19 @@ void func_080078A4(void);
 void SioReset(void);
 void func_08083D68(void);
 void func_08083DD4(void);
+u8 func_080128EC(void);
+void func_080149BC(s32 x, s32 y);
+void func_08014B30(s32 x, s32 y);
+void func_0801475C(s32 x, s32 y, s32 z);
+void func_08096DC4(TaskPool* pool, CharaPrizeArgs* args);
+void func_0801B918(void* obj);
+void func_08006184(s32 a, s32 b);
+void func_080063A8(void);
+void func_08006B4C(void);
+void m4aSongNumStop(u16 id);
+Task* TaskCreate(TaskPool* pool, TaskDesc* desc, void* args);
+void TaskPoolUpdate(TaskPool* pool);
+extern TaskDesc gUnk_09EF34A8;
 
 extern s16 gSineTable[];
 extern GameState gGameState;
