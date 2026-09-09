@@ -70,7 +70,8 @@ typedef struct HumActor {
     s32 unk_E8;
     u8 unk_EC[0x08];
     s32 unk_F4;
-    u8 unk_F8[0x10];
+    u16 unk_F8;
+    u8 unk_FA[0x0E];
     s32 unk_108;
     s32 unk_10C;
 } HumActor;

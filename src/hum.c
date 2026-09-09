@@ -4863,7 +4863,6 @@ void task_hum_lexceus_0(LexceusWork* work) {
     TaskPoolInit(&work->unk_1D8, 3);
 }
 
-#ifdef NON_MATCHING
 u8 task_hum_lexceus_1(LexceusWork* work) {
     LexceusWork* w;
     HumActor* act;
@@ -4918,6 +4917,8 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
 
     switch (work->base.unk_170) {
     case 12:
+        func_08019068(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
+        break;
     case 17:
     case 18:
         func_08019068(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
@@ -5092,6 +5093,11 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             AnimReset(&work->base.anim);
             func_08019068(gUnk_0813FA98, &w->base.anim, 3, 0, w->base.tiles);
             w->unk_1CA &= ~3;
+#ifdef VERSION_EU
+            if (act->unk_E4->unk_F4 == 49) {
+                act->unk_E4->unk_F8--;
+            }
+#endif
         }
 
         if (work->base.anim.timer == 0) {
@@ -5131,16 +5137,11 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                 if (AnimGetGfxIndex(&work->base.anim) == 5) {
                     func_08019A30();
 
-                    if (act->unk_34 & 4) {
-                        if (func_08011F78(0x144, act->unk_04 - 0x3C00, act->unk_08, act->unk_0C, 24, 20, 30)) {
-                            m4aSongNumStart(0x2B0);
-                            w->unk_1CA |= 1;
-                        }
-                    } else {
-                        if (func_08011F78(0x144, act->unk_04 + 0x3C00, act->unk_08, act->unk_0C, 24, 20, 30)) {
-                            m4aSongNumStart(0x2B0);
-                            w->unk_1CA |= 1;
-                        }
+                    if ((act->unk_34 & 4)
+                        ? func_08011F78(0x144, act->unk_04 - 0x3C00, act->unk_08, act->unk_0C, 24, 20, 30)
+                        : func_08011F78(0x144, act->unk_04 + 0x3C00, act->unk_08, act->unk_0C, 24, 20, 30)) {
+                        m4aSongNumStart(0x2B0);
+                        w->unk_1CA |= 1;
                     }
                 }
             }
@@ -5172,6 +5173,11 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
             AnimReset(&work->base.anim);
             func_08019068(gUnk_0813FA98, &w->base.anim, 4, 0, w->base.tiles);
             w->unk_1CA &= ~1;
+#ifdef VERSION_EU
+            if (act->unk_E4->unk_F4 == 49) {
+                act->unk_E4->unk_F8--;
+            }
+#endif
         }
 
         if (work->base.anim.timer == 0) {
@@ -5179,47 +5185,36 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
                 func_08019A30();
 
                 if (act->unk_E4->unk_F4 == 49) {
-                    if (act->unk_34 & 4) {
-                        if (func_08011F78(0x149, act->unk_04 - 0x2800, act->unk_08, act->unk_0C, 24, 20, 55)) {
-                            m4aSongNumStart(0x2B0);
-                            w->unk_1CA |= 1;
-                        }
-                    } else {
-                        if (func_08011F78(0x149, act->unk_04 + 0x2800, act->unk_08, act->unk_0C, 24, 20, 55)) {
-                            m4aSongNumStart(0x2B0);
-                            w->unk_1CA |= 1;
-                        }
+                    if ((act->unk_34 & 4)
+                        ? func_08011F78(0x149, act->unk_04 - 0x2800, act->unk_08, act->unk_0C, 24, 20, 55)
+                        : func_08011F78(0x149, act->unk_04 + 0x2800, act->unk_08, act->unk_0C, 24, 20, 55)) {
+                        m4aSongNumStart(0x2B0);
+                        w->unk_1CA |= 1;
                     }
                 } else {
-                    if (act->unk_34 & 4) {
-                        if (func_08011F78(0x145, act->unk_04 - 0x2800, act->unk_08, act->unk_0C, 24, 20, 55)) {
-                            m4aSongNumStart(0x2B0);
-                            w->unk_1CA |= 1;
-                        }
-                    } else {
-                        if (func_08011F78(0x145, act->unk_04 + 0x2800, act->unk_08, act->unk_0C, 24, 20, 55)) {
-                            m4aSongNumStart(0x2B0);
-                            w->unk_1CA |= 1;
-                        }
+                    if ((act->unk_34 & 4)
+                        ? func_08011F78(0x145, act->unk_04 - 0x2800, act->unk_08, act->unk_0C, 24, 20, 55)
+                        : func_08011F78(0x145, act->unk_04 + 0x2800, act->unk_08, act->unk_0C, 24, 20, 55)) {
+                        m4aSongNumStart(0x2B0);
+                        w->unk_1CA |= 1;
                     }
                 }
             }
         }
 
-        if (!AnimIsFinished(&work->base.anim)) {
-            work->base.unk_150++;
-            break;
-        }
-
-        if (act->unk_34 & 4) {
-            act->unk_04 = act->unk_04 - 0x1900;
+        if (AnimIsFinished(&work->base.anim)) {
+            if (act->unk_34 & 4) {
+                act->unk_04 = act->unk_04 - 0x1900;
+            } else {
+                act->unk_04 = act->unk_04 + 0x1900;
+            }
+            func_08019068(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
+            work->base.unk_150 = 0;
+            func_0801AF08(act);
+            work->base.unk_170 = 0;
         } else {
-            act->unk_04 = act->unk_04 + 0x1900;
+            work->base.unk_150++;
         }
-        func_08019068(gUnk_0813FA98, &w->base.anim, 0, 1, w->base.tiles);
-        work->base.unk_150 = 0;
-        func_0801AF08(act);
-        work->base.unk_170 = 0;
         break;
     case 27:
         if ((s16)work->base.unk_150 == 0) {
@@ -5322,9 +5317,6 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
     TaskPoolUpdate(&w->unk_1D8);
     return func_0800E5F0(&work->base);
 }
-#else
-INCLUDE_ASM("hum/task_hum_lexceus_1.s");
-#endif
 
 void task_hum_lexceus_2(LexceusWork* work) {
     func_0800EFE8(&work->base);
