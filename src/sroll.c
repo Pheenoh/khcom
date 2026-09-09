@@ -813,35 +813,26 @@ void func_08115740(u32* dst, u8* src, u32* pal, s32 x) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_081157E0(u32* dst, u8* src, u32* pal, s32 x) {
     SrollShift* t;
-    u32* d;
     s32 i;
     u32 v;
-    u32 c;
 
     t = &gUnk_09A54C78[x];
-    d = dst;
 
     for (i = 0; i <= 7; i++) {
-        c = src[i] << 24;
-        v = pal[(c >> 31) & 1];
-        v |= pal[(c >> 30) & 1] << 4;
-        v |= pal[(c >> 29) & 1] << 8;
-        v |= pal[(c >> 28) & 1] << 12;
-        v |= pal[(c >> 27) & 1] << 16;
-        v |= pal[(c >> 26) & 1] << 20;
-        v |= pal[(c >> 25) & 1] << 24;
+        v = pal[(src[i] >> 7) & 1];
+        v |= pal[(src[i] >> 6) & 1] << 4;
+        v |= pal[(src[i] >> 5) & 1] << 8;
+        v |= pal[(src[i] >> 4) & 1] << 12;
+        v |= pal[(src[i] >> 3) & 1] << 16;
+        v |= pal[(src[i] >> 2) & 1] << 20;
+        v |= pal[(src[i] >> 1) & 1] << 24;
         v |= pal[src[i] & 1] << 28;
-        d[0] |= v << t->unk_00;
-        d[8] |= v >> t->unk_04;
-        d++;
+        dst[i] |= v << t->unk_00;
+        dst[i + 8] |= v >> t->unk_04;
     }
 }
-#else
-INCLUDE_ASM("sroll/func_081157E0.s");
-#endif
 u32 func_0811589C(SrollBlit* w) {
     SrollMask* m;
     u32* d;
