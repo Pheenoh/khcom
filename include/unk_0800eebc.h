@@ -261,6 +261,7 @@ typedef struct Actor {
     u16 unk_17C;
     u16 unk_17E;
     void* gfx;
+    const u32* unk_184;
 } Actor;
 
 typedef struct BtlWork {
@@ -320,7 +321,8 @@ typedef struct BtlWork {
     u8 unk_0EE;
     u8 unk_0EF;
     s32 unk_0F0;
-    u8 unk_0F4[0x06];
+    s32 unk_0F4;
+    u8 unk_0F8[0x02];
     u8 unk_0FA;
     u8 unk_0FB;
     s32 unk_0FC;
@@ -658,6 +660,10 @@ void func_080147C8(s32 a, s32 b);
 void func_08019050(u16 a, s32 b, s32 c, s32 d);
 void func_0800FDD0(u32 a);
 u8 func_0807E29C(void);
+u8 func_08081870(void);
+s32 func_0807E2BC(void);
+u8 func_0807E33C(void);
+u8 func_08081848(void);
 extern Mode gModeChkbtl;
 void func_0806180C(u16 a);
 void SaveWriteHeader(s16 slot);
