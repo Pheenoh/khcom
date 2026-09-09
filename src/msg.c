@@ -2823,7 +2823,7 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
     }
     return gUnk_02034A90;
 }
-#ifdef VERSION_US
+#ifndef VERSION_EU
 s32 func_08065D10(u16* a, TextSlot* b) {
     u8 buf[2];
     u16* c;
@@ -2835,15 +2835,24 @@ s32 func_08065D10(u16* a, TextSlot* b) {
     t = 0;
     n = 0;
 
-    while (*a != 0) {
+    while (MSG_CHAR(a) != 0) {
         u16 v;
 
+#ifdef VERSION_JP
+        buf[0] = ((u8*)a)[0];
+        buf[1] = ((u8*)a)[1];
+#else
         buf[0] = a[0];
         buf[1] = a[1];
+#endif
         c = (u16*)buf;
 
         if (*c == 0x6E6E) {
+#ifdef VERSION_JP
+            a = (u16*)((u8*)a + 2);
+#else
             a += 2;
+#endif
 
             if (b->tiles != 0) {
                 ReleaseObjTiles(b->tiles);
@@ -2854,7 +2863,11 @@ s32 func_08065D10(u16* a, TextSlot* b) {
         } else {
             v = *c;
             v = (v / 256) | (v << 8);
+#ifdef VERSION_JP
+            a = (u16*)((u8*)a + 2);
+#else
             a += 2;
+#endif
 
             if ((v & 0xFF00) == 0x8100) {
                 v &= 0xFF;
@@ -3018,8 +3031,6 @@ s32 func_08065D10(u16* a, TextSlot* b) {
 
     return n;
 }
-#elif defined(VERSION_JP)
-INCLUDE_ASM("msg/func_08065D10.s");
 #endif
 #ifndef VERSION_EU
 #ifndef VERSION_JP
