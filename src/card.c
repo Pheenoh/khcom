@@ -18229,7 +18229,42 @@ void func_0809A1B8(UnkStruct_0809A02C* w, s32* args) {
 }
 
 
-INCLUDE_ASM("card/func_0809A368.s");
+void func_0809A368(UnkStruct_0809A02C* w, UnkStruct_0809A368_Args* args) {
+    u8* p;
+
+    w->unk_1A0 = args->unk_0C;
+    w->unk_38 = args->unk_00;
+    w->unk_3C = args->unk_04;
+    w->unk_40 = args->unk_08;
+    w->unk_44 = 0;
+    w->unk_1C6 = GetRandom();
+    w->unk_1A4 = -((u16)(GetRandom() % 129) + 0x300);
+    w->unk_1A8 = (u16)(GetRandom() % 129) + 0x80;
+    w->unk_1C7 = 0;
+    w->unk_1C8 = 0;
+    w->unk_1C9 = 24;
+    w->unk_1B8 = 0x80;
+    w->unk_1BA = 0x80;
+    w->unk_1BC = 0x80;
+    w->unk_1CA = 0;
+    w->unk_1CB = 0;
+    w->unk_1CC = 0;
+    w->unk_1C4 = 0;
+    w->unk_1CD = 1;
+    w->unk_1C = &gCardDefs[args->unk_0C];
+    w->unk_1CE = w->unk_1C->unk_2A;
+    w->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->unk_10 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
+    w->unk_08 = LoadObjTiles(w->unk_1C->unk_04, 0x300);
+    w->unk_0C = LoadObjPalette(w->unk_1C->unk_08, 32);
+    w->unk_14 = LoadObjTiles(gUnk_08B22BBC, 0x100);
+    w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
+    p = w->unk_144;
+    func_080122AC(p, 5, 8, 10);
+    func_08012324(p, w->unk_38, w->unk_3C, w->unk_40);
+    TaskPoolInit(&w->unk_20, 1);
+    gBtlWork->unk_0B0++;
+}
 
 void func_0809A4E0(UnkStruct_0809A02C* w, u8 kind) {
     s32 dx;
