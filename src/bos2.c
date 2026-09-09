@@ -792,29 +792,27 @@ void func_080BB518(TmArmJoint* joints) {
     p->unk_0C = x;
     p->unk_10 = y;
 }
-#ifdef NON_MATCHING
-void func_080BB588(u8* joints, u16 a) {
+void func_080BB588(TmArmJoint* joints, u16 a) {
     s32 i;
+    u8* q;
+    TmArmJoint* p;
 
     for (i = 0; i < 4; i++) {
-        u8* p = joints + i * 0x34;
-        u8* q = p + 8;
+        p = &joints[i];
 
-        ApproachAngle(q, *(u16*)(q + 12), a);
+        q = &p->unk_08;
+        ApproachAngle(q, p->unk_14, a);
     }
 
     func_080BB518(joints);
 
     for (i = 0; i < 4; i++) {
-        u8* p = joints + i * 0x34;
+        p = &joints[i];
 
-        *(s32*)p += (*(s32*)(p + 12) - *(s32*)p) >> 1;
-        *(s32*)(p + 4) += (*(s32*)(p + 16) - *(s32*)(p + 4)) >> 1;
+        p->unk_00 += (p->unk_0C - p->unk_00) >> 1;
+        p->unk_04 += (p->unk_10 - p->unk_04) >> 1;
     }
 }
-#else
-INCLUDE_ASM("bos2/func_080BB588.s");
-#endif
 
 void func_080BB5E8(u8* joints, TmAnim* a) {
     if (a->unk_00 >= a->unk_08[a->unk_02].unk_00) {
