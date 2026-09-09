@@ -1643,7 +1643,200 @@ void func_0801C2DC(BtlObj* p, u8 f) {
     }
 }
 
-INCLUDE_ASM("unk_08019050/func_0801C314.s");
+void func_0801C314(void) {
+    m4aMPlayAllStop();
+    if (gUnk_03006C10 & 1) {
+        ModeRequest(&gModeChkbtl, 0);
+        return;
+    }
+    if (gGameState.flags & 8) {
+        switch (gBtlWork->unk_10C) {
+        case 166:
+#ifdef VERSION_EU
+            func_0806180C(154);
+#else
+            func_0806180C(156);
+#endif
+            return;
+        case 176:
+#ifdef VERSION_EU
+            func_0806180C(159);
+#else
+            func_0806180C(161);
+#endif
+            return;
+        case 171:
+#ifdef VERSION_EU
+            func_0806180C(162);
+#else
+            func_0806180C(164);
+#endif
+            return;
+        case 167:
+#ifdef VERSION_EU
+            func_0806180C(170);
+#else
+            func_0806180C(172);
+#endif
+            return;
+        case 154:
+#ifdef VERSION_EU
+            func_0806180C(179);
+#else
+            func_0806180C(181);
+#endif
+            return;
+        case 172:
+#ifdef VERSION_EU
+            func_0806180C(186);
+#else
+            func_0806180C(188);
+#endif
+            return;
+        case 177:
+            gGameState.flags |= 0x800;
+            SaveWriteHeader(-1);
+#ifdef VERSION_EU
+            func_0806180C(192);
+#else
+            func_0806180C(194);
+#endif
+            return;
+        default:
+            if (gBtlWork->unk_068 & 4) {
+                func_080DF380();
+                func_080E04EC();
+            } else if (gBtlWork->unk_068 & 0x800) {
+                func_080DF380();
+                func_080E04EC();
+            } else {
+                func_080E04EC();
+            }
+            return;
+        }
+    } else {
+        switch (gBtlWork->unk_10C) {
+        case 120:
+            func_0806180C(96);
+            return;
+        case 121:
+            if (gBtlWork->unk_068 & 0x10) {
+                func_0806180C(84);
+            } else if (gBtlWork->unk_068 & 0x100000) {
+                func_0806180C(82);
+            } else {
+                func_0806180C(83);
+            }
+            return;
+        case 122:
+            func_0806180C(88);
+            return;
+        case 123:
+            func_0806180C(108);
+            return;
+        case 124:
+            func_0806180C(111);
+            return;
+        case 148:
+            func_0806180C(9);
+            return;
+        case 149:
+            func_0806180C(114);
+            return;
+        case 150:
+            func_0806180C(100);
+            return;
+        case 151:
+            func_0806180C(106);
+            return;
+        case 152:
+            func_0806180C(78);
+            return;
+        case 153:
+#ifdef VERSION_EU
+            func_0806180C(131);
+#else
+            func_0806180C(133);
+#endif
+            return;
+        case 154:
+            func_0806180C(56);
+            return;
+        case 155:
+            func_0806180C(93);
+            return;
+        case 156:
+            gGameState.flags |= 0x20;
+            SaveWriteHeader(-1);
+            func_0806180C(71);
+            return;
+        case 157:
+            func_0806180C(6);
+            return;
+        case 158:
+            func_0806180C(119);
+            return;
+        case 159:
+            func_0806180C(123);
+            return;
+        case 160:
+            func_0806180C(126);
+            return;
+        case 161:
+            func_0806180C(31);
+            return;
+        case 162:
+            func_0806180C(11);
+            return;
+        case 163:
+            func_0806180C(27);
+            return;
+        case 164:
+            func_0806180C(41);
+            return;
+        case 165:
+            func_0806180C(67);
+            return;
+        case 168:
+            func_0806180C(34);
+            return;
+        case 169:
+            func_0806180C(49);
+            return;
+        case 173:
+            func_0806180C(65);
+            return;
+        case 174:
+            func_0806180C(60);
+            return;
+        case 175:
+            func_0806180C(46);
+            return;
+        case 178:
+            func_0806180C(3);
+            return;
+        case 179:
+            func_0806180C(5);
+            return;
+        case 170:
+            func_080DF380();
+            func_080E04EC();
+            return;
+        default:
+            if (gBtlWork->unk_068 & 4) {
+                func_080DF380();
+                func_080E04EC();
+            } else if (gBtlWork->unk_068 & 0x800) {
+                func_080DF380();
+                func_080E04EC();
+            } else {
+                func_080E04EC();
+            }
+            return;
+        }
+    }
+}
+
 
 #ifdef NON_MATCHING
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d) {

@@ -10,6 +10,7 @@
 #include "engine.h"
 #include "key.h"
 #include "util.h"
+#include "mode.h"
 typedef struct Collider {
     s32 unk_00;
     s32 unk_04;
@@ -657,6 +658,11 @@ void func_080147C8(s32 a, s32 b);
 void func_08019050(u16 a, s32 b, s32 c, s32 d);
 void func_0800FDD0(u32 a);
 u8 func_0807E29C(void);
+extern Mode gModeChkbtl;
+void func_0806180C(u16 a);
+void SaveWriteHeader(s16 slot);
+void func_080DF380(void);
+void func_080E04EC(void);
 void func_0809B644(void* p, s16 x, s16 y, s16 z, u8 n);
 void func_0800F368(Actor* p, u16 n);
 u8 func_0800F4C8(BtlObj* p, u16 b);
