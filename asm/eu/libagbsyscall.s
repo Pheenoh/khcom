@@ -33,8 +33,14 @@ CpuSet:
 
 	swi #18
 	bx lr
+	.global LZ77UnCompWram
+	.thumb
+	.thumb_func
+	.type LZ77UnCompWram, %function
+LZ77UnCompWram:
 	swi #17
 	bx lr
+	.size LZ77UnCompWram, . - LZ77UnCompWram
 
 	.global RegisterRamReset
 	.thumb
