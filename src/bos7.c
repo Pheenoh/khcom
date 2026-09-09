@@ -503,7 +503,19 @@ u8 func_08110938(LstWork* work) {
 }
 
 #ifdef VERSION_EU
-INCLUDE_ASM("bos7/eu_0810F08C.s");
+u8 eu_0810F08C(LstWork* work) {
+    LstState* s;
+    u8 result;
+
+    s = work->unk_04;
+    result = func_08110918(work);
+
+    if (result == 1 && (s->unk_074 == 0x100 || s->unk_078 == 0x100)) {
+        result = 0;
+    }
+
+    return result;
+}
 #endif
 
 s16 func_0811095C(LstWork* work, u16 a) {
