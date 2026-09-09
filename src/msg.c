@@ -8062,7 +8062,35 @@ u8 eu_0806C848(EventSeqWork* work) {
     }
     return 1;
 }
-INCLUDE_ASM("msg/eu_0806C974.s");
+u8 eu_0806C974(EventSeqWork* work) {
+    Ent09EE3CA0* u = gUnk_09EE3CA0[work->unk_2C];
+    Obj0806180C* q = work->unk_34->unk_08;
+    u16 i;
+    gUnk_02039DC8->unk_50 = q->unk_04;
+    gUnk_02039DC8->unk_54 = q->unk_08;
+    gUnk_02039DC8->unk_48 = gUnk_02039DC8->unk_50 - 0x7800;
+    gUnk_02039DC8->unk_4C = gUnk_02039DC8->unk_54 - 0x5000;
+    gUnk_02039DC8->unk_64 = 0;
+    gUnk_02039DC8->unk_6C = 0;
+    gUnk_02039DC8->unk_7C = 0;
+    gUnk_02039DC8->unk_87 = 0;
+    gUnk_02039DC8->unk_81 = 0;
+    gUnk_02039DC8->unk_88 = 0;
+    gUnk_02039DC8->unk_89 = 0;
+    gUnk_02039DC8->unk_7D = 0;
+    gUnk_02039DC8->unk_7E = 0;
+    gUnk_02039DC8->unk_60 = 0;
+    if (u->unk_20 != 5) {
+        gUnk_02039DC8->unk_44 = u->unk_20;
+        work->unk_3D = 1;
+    } else {
+        gUnk_02039DC8->unk_44 = u->unk_20;
+    }
+    for (i = 0; i < 16; i++) {
+        gUnk_02039DC8->unk_00[i] = NULL;
+    }
+    return 1;
+}
 #endif
 #ifndef VERSION_EU
 u8 event_seq_1(EventSeqWork* work, void* a) {
