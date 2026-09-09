@@ -149,6 +149,9 @@ extern const char gUnk_09033F10[];
 extern s16 gUnk_09033D50[];
 extern s16 gUnk_09033E76[];
 extern const char* gEventNames[];
+#ifdef VERSION_EU
+extern Mode gUnkEu_09F5D6EC;
+#endif
 
 void SetBgMode0(void);
 void EnableBg(s32 a);
