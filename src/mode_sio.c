@@ -17,6 +17,26 @@ extern void* gUnkEu_088920BC[];
 extern u8 gUnkEu_096C798C[];
 extern u16 gUnkEu_095DA860[];
 extern u16 gUnkEu_095DA867[];
+extern u8 gUnkEu_095ECDD8[];
+extern u8 gUnkEu_095ED472[];
+extern void* gUnkEu_09F7EB28[];
+extern void* gUnkEu_09F7EB30[];
+extern u8 gUnkEu_095F5550[];
+extern u8 gUnkEu_095F5BB0[];
+extern void* gUnkEu_09F7EBD8[];
+extern void* gUnkEu_09F7EBE0[];
+extern u8 gUnkEu_095F6150[];
+extern u8 gUnkEu_095F67B0[];
+extern void* gUnkEu_09F7EBE8[];
+extern void* gUnkEu_09F7EBF0[];
+extern u8 gUnkEu_095F6D50[];
+extern u8 gUnkEu_095F73AA[];
+extern void* gUnkEu_09F7EBF8[];
+extern void* gUnkEu_09F7EC00[];
+extern u8 gUnkEu_095F79D2[];
+extern u8 gUnkEu_095F7FAE[];
+extern void* gUnkEu_09F7EC08[];
+extern void* gUnkEu_09F7EC10[];
 extern u8 gUnkEu_096C118C[];
 extern u8 gUnkEu_096BE98C[];
 extern u8 gUnkEu_096C298C[];
@@ -1524,13 +1544,49 @@ void func_080B1848(void) {
 #endif
 }
 
-#ifndef VERSION_EU
 void func_080B18C4(void) {
     LoadBgMap(2, gUnk_096F8C64, 0x800);
     gSioBtlCardgetWork->unk_08 = AllocObjTiles(0xC80, gUnk_088B6560);
     gSioBtlCardgetWork->unk_18 = gUnk_09EDE8CC[18];
     gSioBtlCardgetWork->unk_0C = AllocObjTiles(0xC80, gUnk_091CF5D4);
     gSioBtlCardgetWork->unk_1C = gUnk_09EEE4C8[6];
+#ifdef VERSION_EU
+    gSioBtlCardgetWork->unk_30 = LoadObjPalette(gUnk_096FBDE4, 32);
+    gSioBtlCardgetWork->unk_34 = LoadObjPalette(gUnk_096FBE04, 32);
+    switch (gLanguage) {
+    case 0:
+        gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnkEu_095ECDD8, 0x680);
+        gSioBtlCardgetWork->unk_38 = gUnkEu_09F7EB28[0];
+        gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnkEu_095ED472, 0x600);
+        gSioBtlCardgetWork->unk_3C = gUnkEu_09F7EB30[0];
+        break;
+    case 1:
+        gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnkEu_095F5550, 0x640);
+        gSioBtlCardgetWork->unk_38 = gUnkEu_09F7EBD8[0];
+        gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnkEu_095F5BB0, 0x580);
+        gSioBtlCardgetWork->unk_3C = gUnkEu_09F7EBE0[0];
+        break;
+    case 4:
+        gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnkEu_095F6150, 0x640);
+        gSioBtlCardgetWork->unk_38 = gUnkEu_09F7EBE8[0];
+        gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnkEu_095F67B0, 0x580);
+        gSioBtlCardgetWork->unk_3C = gUnkEu_09F7EBF0[0];
+        break;
+    case 3:
+        gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnkEu_095F6D50, 0x640);
+        gSioBtlCardgetWork->unk_38 = gUnkEu_09F7EBF8[0];
+        gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnkEu_095F73AA, 0x600);
+        gSioBtlCardgetWork->unk_3C = gUnkEu_09F7EC00[0];
+        break;
+    case 2:
+    default:
+        gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnkEu_095F79D2, 0x5C0);
+        gSioBtlCardgetWork->unk_38 = gUnkEu_09F7EC08[0];
+        gSioBtlCardgetWork->unk_2C = LoadObjTiles(gUnkEu_095F7FAE, 0x600);
+        gSioBtlCardgetWork->unk_3C = gUnkEu_09F7EC10[0];
+        break;
+    }
+#else
 #ifdef VERSION_JP
     gSioBtlCardgetWork->unk_28 = LoadObjTiles(gUnk_0962CAFC, 0x500);
 #else
@@ -1545,10 +1601,8 @@ void func_080B18C4(void) {
 #endif
     gSioBtlCardgetWork->unk_34 = LoadObjPalette(gUnk_096FBE04, 32);
     gSioBtlCardgetWork->unk_3C = gUnk_09EF38E4[0];
-}
-#else
-INCLUDE_ASM("mode_sio/func_080B18C4.s");
 #endif
+}
 
 #ifndef VERSION_EU
 void func_080B1974(void) {
