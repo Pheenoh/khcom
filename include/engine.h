@@ -54,7 +54,7 @@ typedef struct BgEntry {
     u16 unk_0C;
     u16 unk_0E;
 #ifdef VERSION_EU
-    u8 unkEu_10[4];
+    void** unkEu_10;
 #endif
 } BgEntry;
 
@@ -265,7 +265,7 @@ void InitDisplayRegs(void);
 #ifdef VERSION_EU
 void eu_080059D4(s32 bg, void* tiles);
 void eu_080059F4(s32 bg, void* map);
-void eu_08005A1C(s32 bg, void* src, u8 w, u8 h);
+u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h);
 void eu_08005ADC(s32 id);
 #endif
 

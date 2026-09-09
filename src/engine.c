@@ -2027,6 +2027,41 @@ u32 eu_08005A14(u32* src) {
     return *src >> 8;
 }
 
+void LZ77UnCompWram(void* src, void* dst);
+
+u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h) {
+    BgEntry* e;
+    s32 count;
+    s32 i;
+    if ((gDispCnt & 7) != 0 && (bg == 2 || bg == 3)) {
+        return 0;
+    }
+    e = &gBgEntries[bg];
+    if (e->unkEu_10 != 0) {
+        return 0;
+    }
+    count = w * h;
+    e->unkEu_10 = EwramAlloc(count * sizeof(void*));
+    if (e->unkEu_10 == 0) {
+        return 0;
+    }
+    for (i = 0; i < count; i++) {
+        e->unkEu_10[i] = EwramAlloc(eu_08005A14(((u32**)src)[i]));
+        if (e->unkEu_10[i] == 0) {
+            return 0;
+        }
+        LZ77UnCompWram(((u32**)src)[i], e->unkEu_10[i]);
+    }
+    EnableBg(bg);
+    e->unk_04 = e->unkEu_10;
+    e->unk_08 = w;
+    e->unk_09 = h;
+    e->unk_0A = 0;
+    e->unk_0C = 0;
+    e->unk_00 = 1;
+    return 1;
+}
+
 INCLUDE_ASM("engine/eu_080059D4.s");
 #endif
 
