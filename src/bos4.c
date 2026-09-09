@@ -1797,7 +1797,182 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
     func_08012324(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x3800);
     func_0801C7FC(&work->unk_028, 35, 51);
 }
-INCLUDE_ASM("bos4/task_bos_ursula_tako_1.s");
+u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
+    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_028;
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 dx;
+    s32 dz;
+
+    if (func_080DC528()) {
+        func_0801C2DC(p, 1);
+    } else if (work->unk_138 <= 1) {
+        func_0801C2DC(p, 0);
+    }
+
+    if (func_080DC628()) {
+        return 1;
+    }
+
+    switch (func_0801ADAC(p)) {
+    case 5:
+        work->unk_138 = 7;
+        work->unk_13C = 0;
+        func_08083914();
+        break;
+    case 1:
+    case 6:
+    case 7:
+        work->unk_138 = 1;
+        work->unk_13C = 0;
+        break;
+    case 3:
+    case 8:
+        work->unk_138 = 2;
+        work->unk_13C = 0;
+        break;
+    case 4:
+        func_0801AF08(p);
+        work->unk_138 = 0;
+        func_08083914();
+        break;
+    }
+
+    switch (work->unk_138) {
+    case 0:
+        AnimChange((AnimState*)&work->anim, (u16)(work->unk_024 + 4), 1);
+        break;
+    case 1:
+        if (work->unk_13C == 0) {
+            AnimChange((AnimState*)&work->anim, (u16)(work->unk_024 + 7), 0);
+        }
+        work->unk_13C++;
+        if (AnimIsFinished((AnimState*)&work->anim)) {
+            func_0801AF08(p);
+            work->unk_138 = 0;
+            work->unk_13C = 0;
+        }
+        break;
+    case 2:
+        if (AnimGetId((AnimState*)&work->anim) == (s16)work->unk_024 + 4) {
+            if (AnimGetFrame((AnimState*)&work->anim) == 0 && func_08005AC4((AnimState*)&work->anim)) {
+                AnimStart((AnimState*)&work->anim, (u16)(work->unk_024 + 5), 1);
+                func_0801C2DC(p, 1);
+                if ((u16)(GetRandom() % 100) <= 19) {
+                    _0801C1F8(0, p->x, p->y, p->z);
+                }
+            }
+        } else if (AnimGetId((AnimState*)&work->anim) == (s16)work->unk_024 + 5) {
+            if (AnimIsFinished((AnimState*)&work->anim)) {
+                func_0801AF08(p);
+                work->unk_138 = 3;
+                work->unk_13C = 0;
+            }
+        } else {
+            AnimStart((AnimState*)&work->anim, (u16)(work->unk_024 + 4), 1);
+        }
+        break;
+    case 3:
+        if (work->unk_13C > 180) {
+            work->unk_138 = 4;
+            work->unk_13C = 0;
+        } else {
+            work->unk_13C++;
+        }
+        break;
+    case 4:
+        if (work->unk_13C > 180) {
+            AnimStart((AnimState*)&work->anim, (u16)(work->unk_024 + 6), 0);
+            work->unk_138 = 5;
+            work->unk_200 = 0x800;
+            if (work->unk_13E) {
+                work->unk_1FC = -0x2AA;
+            } else {
+                work->unk_1FC = 0x2AA;
+            }
+            work->unk_13C = 30;
+        } else {
+            work->unk_13C++;
+        }
+        break;
+    case 5:
+        AnimReset((AnimState*)&work->anim);
+        if (work->unk_13C == 5) {
+            func_0801B7D8(&work->unk_028);
+            func_080DC9DC(&x, &y, &z, work);
+            func_0801B37C(&work->unk_028, gUnk_096FE1A8, x, y, z);
+            work->unk_05C |= 0x400;
+            func_0801C7FC(&work->unk_028, 35, 25);
+        }
+        if (work->unk_13C == 0) {
+            if (!func_080DC528()) {
+                func_0801BCD4(&work->unk_028);
+            }
+            work->unk_138 = 6;
+            work->unk_13C = 0;
+        } else {
+            ApproachValue(&work->unk_200, 0, work->unk_13C);
+            ApproachValue(&work->unk_1FC, 0, work->unk_13C);
+            work->unk_13C--;
+        }
+        break;
+    case 6:
+        if (work->unk_13C > 30) {
+            work->unk_138 = 0;
+        } else {
+            work->unk_13C++;
+        }
+        break;
+    case 7:
+        AnimChange((AnimState*)&work->anim, (u16)(work->unk_024 + 6), 0);
+        if (AnimIsFinished((AnimState*)&work->anim) || func_080DC528()) {
+            work->unk_138 = 0;
+            AnimStart((AnimState*)&work->anim, (u16)(work->unk_024 + 4), 1);
+            func_0801AF08(p);
+        } else {
+            if (AnimGetFrame((AnimState*)&work->anim) == 1) {
+                dx = 0x800;
+                if (work->unk_13E) {
+                    dx = -0x800;
+                }
+                dz = -0x6000;
+            } else if (AnimGetFrame((AnimState*)&work->anim) == 0) {
+                dx = -0x1800;
+                if (work->unk_13E) {
+                    dx = 0x1800;
+                }
+                dz = -0x3800;
+            } else {
+                dx = 0x1800;
+                if (work->unk_13E) {
+                    dx = -0x1800;
+                }
+                dz = -0x3800;
+            }
+            if (func_08011F78(241, p->x + dx, p->y + 0x1000, p->z + dz, 24, 16, 8) == 1) {
+                m4aSongNumStart(578);
+            }
+        }
+        break;
+    }
+
+    AnimUpdate((AnimState*)&work->anim);
+    func_080DC9DC(&p->x, &p->y, &p->z, work);
+    if (work->unk_138 - 3 <= 4 && ((BtlWork*)gBtlWork->unk_07C)->unk_00C < -0x5000 && !func_080DC528()) {
+        func_08012614(&work->unk_140, 0);
+        func_08012324(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x5000);
+    } else {
+        func_08012614(&work->unk_140, 1);
+    }
+    if (work->unk_138 == 3 && ((BtlWork*)gBtlWork->unk_07C)->unk_00C <= -0x2000 && ((BtlWork*)gBtlWork->unk_07C)->unk_00C > -0x3000) {
+        func_08012614(&work->unk_19C, 0);
+        func_08012324(&work->unk_19C, work->unk_02C + work->unk_1F8, work->unk_030 + 0x1000, 0);
+    } else {
+        func_08012614(&work->unk_19C, 1);
+    }
+    return 1;
+}
 
 void task_bos_ursula_tako_2(UrsulaTakoWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_028;
