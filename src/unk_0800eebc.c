@@ -60,7 +60,7 @@ void func_0800EEBC(Actor* p, SprObj* s) {
 void func_0800EFE8(Actor* work) {
     s16 x;
     s16 y;
-    Collider* c = (Collider*)&work->unk_40;
+    BtlObj* c = (BtlObj*)&work->unk_40;
     u16 attr;
     s32 affine;
     s32 sx;
@@ -71,12 +71,12 @@ void func_0800EFE8(Actor* work) {
     if (work->unk_154 & 0x20) {
         attr = 0x800;
     } else {
-        attr = func_0801AF1C(c->unk_08);
+        attr = func_0801AF1C(c->unk_008);
     }
-    WorldToScreen(&x, &y, c->unk_04, c->unk_08, c->unk_0C);
+    WorldToScreen(&x, &y, c->unk_004, c->unk_008, c->unk_00C);
 
     if (work->unk_168 == 0x100 && work->unk_16C == 0x100) {
-        if (*(u64*)&c->unk_34 & 4) {
+        if (c->unk_034 & 4) {
             sy = gBtlWork->unk_024;
             sx = sy;
         } else {
@@ -90,7 +90,7 @@ void func_0800EFE8(Actor* work) {
             }
         }
     } else {
-        if (*(u64*)&c->unk_34 & 4) {
+        if (c->unk_034 & 4) {
             sx = gBtlWork->unk_024 * work->unk_168 >> 8;
             g = gBtlWork->unk_024;
         } else {
@@ -118,14 +118,14 @@ void func_0800EFE8(Actor* work) {
             work->unk_154 &= ~2;
             LoadObjPaletteBank(work->palette->unk_06, work->unk_178);
         }
-    } else if (func_0801CA00((BtlObj*)c)) {
+    } else if (func_0801CA00(c)) {
         work->unk_154 |= 2;
         LoadObjPaletteBank(work->palette->unk_06, gUnk_08F69BC4);
     } else if (work->unk_154 & 2) {
         work->unk_154 &= ~2;
         LoadObjPaletteBank(work->palette->unk_06, work->unk_178);
     }
-    DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, attr, (-0x1004 - (c->unk_08 >> 8) * 4) | 3);
+    DrawSprite(x, y, work->gfx, work->tiles, work->palette, affine, attr, (-0x1004 - (c->unk_008 >> 8) * 4) | 3);
     func_0800EEBC(work, work->unk_0C);
     func_0800EEBC(work, work->unk_10);
     TaskPoolDraw(&work->unk_2C);
