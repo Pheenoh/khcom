@@ -2914,69 +2914,65 @@ void func_080E4B78(s16 x, s16 y) {
     RequestDma3Copy(p2, GetBgScreenBase(1), 0x800);
 }
 
-#ifdef NON_MATCHING
-void func_080E4D68(s32 a, s32 b) {
-    u16* dst;
-    UnkStruct_080DFB8C* p;
+void func_080E4D68(s32 x, s32 y) {
     s16 x0;
-    s16 cx;
-    s16 cy;
-    s16 sx;
-    s16 sy;
-    s16 mx;
-    s16 my;
-    s32 k;
-    s32 ty;
+    u16* dst;
+    s16 yy;
     s32 i;
-    s32 j;
 
     dst = (u16*)((u8*)gUnk_02034F30 + 0x1000);
-    x0 = a;
+    x0 = x;
     x0--;
-    cy = b;
-    cy--;
+    yy = y;
+    yy--;
 
     for (i = 0; i < 32; i++) {
-        if (cy < 0) {
-            sy = (cy - 8) / 2;
-        } else {
-            sy = cy / 2;
-        }
+        s16 v;
+        s16 m;
+        s16 ya;
+        s16 xx;
+        s32 j;
 
-        my = cy % 2;
-        ty = (cy & 31) << 5;
-        cx = x0;
+        v = (yy < 0) ? (yy - 8) / 2 : yy / 2;
 
-        for (j = 31; j >= 0; j--) {
-            if (cx < 0) {
-                sx = (cx - 8) / 4;
+        m = yy % 2;
+        ya = yy & 31;
+        xx = x0;
+
+        for (j = 0; j < 32; j++) {
+            UnkStruct_080DFB8C* e;
+            s16 c;
+            s16 n;
+            s16 xa;
+
+            if (xx < 0) {
+                c = (xx - 8) / 4;
             } else {
-                sx = cx / 4;
+                c = xx / 4;
             }
 
-            mx = cx % 4;
-            k = cx & 31;
-            p = func_080E08BC(sx, sy);
+            n = xx % 4;
+            xa = xx & 31;
+            e = func_080E08BC(c, v);
 
-            if (p != 0) {
-                if (p->unk_1C != 0) {
-                    dst[k | ty] = p->unk_1C[my * 32 + mx];
+            if (e != 0) {
+                if (e->unk_1C != 0) {
+                    dst[ya * 32 + xa] = e->unk_1C[m * 32 + n];
                 } else {
-                    dst[k | ty] = 0;
+                    dst[ya * 32 + xa] = 0;
                 }
             } else {
-                dst[k | ty] = gUnk_02034F34->unk_20[0x110];
+                dst[ya * 32 + xa] = gUnk_02034F34->unk_20[0x110];
             }
-            cx++;
+
+            xx++;
         }
-        cy++;
+
+        yy++;
     }
 
     RequestDma3Copy(dst, GetBgScreenBase(1), 0x800);
 }
-#else
-INCLUDE_ASM("map/func_080E4D68.s");
-#endif
 
 void func_080E4EB0(u16* a, u16* b, u16* c, s16 d, s16 e) {
     UnkStruct_080DFB8C* cell;
