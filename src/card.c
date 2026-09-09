@@ -24492,27 +24492,27 @@ s32 func_080AA77C(u8* work, u16 key) {
 
         d = -1;
         n = (u8)*(s16*)&work[0x6D2] - 1;
-        goto up_retry;
-up_again:
-        if (d < 0) {
-            d = -d;
-        } else {
-            d++;
-            d = -d;
-        }
+        for (;;) {
+            if (n < 0) {
+                n = 0;
+            }
 
-        n = (u8)*(s16*)&work[0x6D2] + d;
-up_retry:
-        if (n < 0) {
-            n = 0;
-        }
+            if (n > 4) {
+                n = 4;
+            }
 
-        if (n > 4) {
-            n = 4;
-        }
+            if (*(u16*)&tbl[n * 2] != 0) {
+                break;
+            }
 
-        if (*(u16*)&tbl[n * 2] == 0) {
-            goto up_again;
+            if (d < 0) {
+                d = -d;
+            } else {
+                d++;
+                d = -d;
+            }
+
+            n = (u8)*(s16*)&work[0x6D2] + d;
         }
 
         *(s16*)&work[0x6D2] = n;
@@ -24539,27 +24539,27 @@ up_retry:
 
         d = -1;
         n = (u8)*(s16*)&work[0x6D2] - 1;
-        goto down_retry;
-down_again:
-        if (d < 0) {
-            d = -d;
-        } else {
-            d++;
-            d = -d;
-        }
+        for (;;) {
+            if (n < 0) {
+                n = 0;
+            }
 
-        n = (u8)*(s16*)&work[0x6D2] + d;
-down_retry:
-        if (n < 0) {
-            n = 0;
-        }
+            if (n > 4) {
+                n = 4;
+            }
 
-        if (n > 4) {
-            n = 4;
-        }
+            if (*(u16*)&tbl[(n + 5) * 2] != 0) {
+                break;
+            }
 
-        if (*(u16*)&tbl[(n + 5) * 2] == 0) {
-            goto down_again;
+            if (d < 0) {
+                d = -d;
+            } else {
+                d++;
+                d = -d;
+            }
+
+            n = (u8)*(s16*)&work[0x6D2] + d;
         }
 
         *(s16*)&work[0x6D2] = n;
