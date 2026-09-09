@@ -3705,7 +3705,52 @@ u8 func_0807E34C(void) {
     return 0;
 }
 
-INCLUDE_ASM("card/func_0807E368.s");
+void func_0807E368(UnkStruct_08080268* w, u8 slot) {
+    UnkStruct_0807FD10_Args args;
+    u16 id;
+    CardSlot* card;
+    UnkStruct_02034AAC* node;
+    s16 count;
+
+    count = 0;
+    if (w->unk_94[slot] != 0xFFFF && (s16)w->unk_A8[slot] > 0) {
+        id = w->unk_94[slot];
+        card = func_08076674(w, slot, &id);
+        if (card != 0) {
+            args.unk_00 = &w->unk_54[slot];
+            args.unk_0C = id;
+            args.unk_0E = slot;
+            args.unk_04 = card;
+            args.unk_0F = w->unk_9C[slot];
+            if (card->unk_00 == 0xFFFE) {
+                gUnk_02034AAC = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49FC, &args))[1];
+            } else {
+                gUnk_02034AAC = ((UnkStruct_02034AAC**)TaskCreate(w, gUnk_09EE49CC, &args))[1];
+            }
+            count++;
+        }
+    }
+
+    switch (count) {
+    case 0:
+        args.unk_00 = &w->unk_54[slot];
+        args.unk_0C = 0xFFFF;
+        args.unk_04 = (CardSlot*)w->unk_44[slot];
+        args.unk_0E = slot;
+        node = ((UnkStruct_02034AAC**)TaskCreate(w, &gUnk_09EE49CC[0x18], &args))[1];
+        node->unk_98 = node->unk_94 = gUnk_090352E4[0];
+        node->unk_A4 = 0;
+        node->unk_A0 = 50;
+        node->unk_78 |= 0x802;
+        gUnk_02034AAC = node;
+        break;
+    case 1:
+        gUnk_02034AAC->unk_98 = gUnk_02034AAC->unk_94 = gUnk_090352E4[0];
+        gUnk_02034AAC->unk_A0 = 50;
+        gUnk_02034AAC->unk_78 |= 0x800;
+        break;
+    }
+}
 
 INCLUDE_ASM("card/sub_0807E4C8.s");
 
