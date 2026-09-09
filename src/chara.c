@@ -3,7 +3,7 @@
 
 CharaObj* gCharaObj;
 u8 gUnk_02034CDC[4];
-u8 gCharaTaskPool[0x14];
+TaskPool gCharaTaskPool;
 #include "gba/keys.h"
 
 void task_chara_mask_fade_0(MaskFadeWork* work, MaskFadeArgs* args) {
@@ -955,14 +955,166 @@ void func_080C640C(CharaObjParam2* param) {
     for (i = 0; i < 32; i++) {
         gCharaObj->unk_1050[i] = 0;
     }
-    TaskPoolInit(gCharaTaskPool, 2);
+    TaskPoolInit(&gCharaTaskPool, 2);
 }
 
-INCLUDE_ASM("chara/func_080C64A4.s");
+u8 func_080C64A4(void) {
+    CharaPrizeArgs prize;
+    MaskFadeArgs fade;
+
+    switch (gCharaObj->unk_44) {
+    case 0:
+        if (!func_080128EC()) {
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 1:
+        if (++gCharaObj->unk_42 > 59) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 2:
+        CpuSet((void*)0x05000000, gCharaObj->unk_46, 0x200);
+        func_080149BC(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
+        m4aSongNumStart(0x228);
+        gCharaObj->unk_44++;
+        break;
+    case 3:
+        gCharaObj->unk_3A++;
+        FadePaletteToBlack(gCharaObj->unk_46, (u16*)0x05000000, 320, gCharaObj->unk_3A);
+        if (++gCharaObj->unk_42 > 9) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 4:
+        gCharaObj->unk_3A = 0;
+        CpuSet((void*)0x05000000, gCharaObj->unk_846, 0x200);
+        gCharaObj->unk_44++;
+        break;
+    case 5:
+        if (++gCharaObj->unk_42 > 89) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 6:
+        if (gCharaObj->unk_40 > 1) {
+            gCharaObj->unk_40 = 0;
+            gCharaObj->unk_3A++;
+        }
+        gCharaObj->unk_40++;
+        if (gCharaObj->unk_28 != 0) {
+            FadePaletteToWhite((u16*)gCharaObj->unk_24, (u16*)gCharaObj->unk_24, gCharaObj->unk_28, gCharaObj->unk_3A);
+        }
+        if (gCharaObj->unk_42 == 20) {
+            func_08006B4C();
+            m4aSongNumStart(0x229);
+            fade.unk_00 = (u8*)gCharaObj->unk_0C;
+            fade.unk_04 = gCharaObj->unk_10;
+            fade.unk_06 = 1;
+            TaskCreate(&gCharaTaskPool, &gUnk_09EF34A8, &fade);
+        }
+        if (++gCharaObj->unk_42 > 39) {
+            gCharaObj->unk_42 = 0;
+            m4aSongNumStop(0x229);
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 7:
+        gCharaObj->unk_3A = 0;
+        gCharaObj->unk_40 = 0;
+        m4aSongNumStart(0x22A);
+        func_08006184(2, 20);
+        func_080063A8();
+        gCharaObj->unk_44++;
+        break;
+    case 8:
+        if (gCharaObj->unk_40 > 1) {
+            gCharaObj->unk_40 = 0;
+            gCharaObj->unk_3A++;
+        }
+        gCharaObj->unk_40++;
+        if (++gCharaObj->unk_42 > 37) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 9:
+        if (++gCharaObj->unk_42 > 20) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 10:
+        gCharaObj->unk_40 = 0;
+        if (gCharaObj->unk_1048 != 0) {
+            ((void (*)(void))gCharaObj->unk_1048)();
+        }
+        gCharaObj->unk_44++;
+        break;
+    case 11:
+        gCharaObj->unk_3A -= 2;
+        FadePaletteToWhite(gCharaObj->unk_846, (u16*)0x05000000, 1024, gCharaObj->unk_3A);
+        if (++gCharaObj->unk_42 > 8) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 12:
+        func_08014B30(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
+        prize.x = gCharaObj->unk_00;
+        prize.y = gCharaObj->unk_04;
+        prize.z = gCharaObj->unk_08;
+        func_08096DC4((TaskPool*)gBtlWork->unk_02C, &prize);
+        func_0801B918((void*)gCharaObj->unk_104C);
+        gCharaObj->unk_44++;
+        break;
+    case 13:
+        func_0801475C(76, 0, gCharaObj->unk_3C);
+        if (++gCharaObj->unk_42 > 79) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 14:
+        gCharaObj->unk_3C = 0;
+        gCharaObj->unk_44++;
+        break;
+    case 15:
+        func_0801475C(0, 0, gCharaObj->unk_3C);
+        gCharaObj->unk_3C -= 25;
+        if (++gCharaObj->unk_42 > 39) {
+            gCharaObj->unk_42 = 0;
+            gCharaObj->unk_44++;
+        }
+        break;
+    case 16:
+        func_08006B4C();
+        gCharaObj->unk_3A = 11;
+        gCharaObj->unk_44++;
+        break;
+    case 17:
+        gCharaObj->unk_3A--;
+        FadePaletteToBlack(gCharaObj->unk_46, (u16*)0x05000000, 320, gCharaObj->unk_3A);
+        if (++gCharaObj->unk_42 > 10) {
+            gCharaObj->unk_42 = 0;
+            CharaObjFree();
+            gCharaObj->unk_44++;
+        }
+        break;
+    default:
+        return 0;
+    }
+    TaskPoolUpdate(&gCharaTaskPool);
+    TaskPoolDraw(&gCharaTaskPool);
+    return 1;
+}
 
 void CharaObjFree(void) {
     EwramFree(gCharaObj);
-    TaskPoolDestroy(gCharaTaskPool);
+    TaskPoolDestroy(&gCharaTaskPool);
 }
 
 void func_080C6894(CharaObjParam* param) {
@@ -1007,7 +1159,7 @@ void func_080C6894(CharaObjParam* param) {
     if (gCharaObj->unk_28 == 32) {
         gCharaObj->unk_1050[(s16)idx] = 1;
     }
-    TaskPoolInit(gCharaTaskPool, 4);
+    TaskPoolInit(&gCharaTaskPool, 4);
 }
 
 void func_080C6990(u16 a, u8 b) {
