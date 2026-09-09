@@ -2391,8 +2391,81 @@ u8 func_0807BE54(UnkStruct_02034AAC* p, void* a) {
     return func_0807D194(p, a);
 }
 
-INCLUDE_ASM("card/func_0807BEC0.s");
+#ifdef NON_MATCHING
+void func_0807BEC0(UnkStruct_02034AAC* p) {
+    u16 y;
+    void* gfx;
+    s32 aff;
+    u8 j;
 
+    if (func_080A42C8() == 1) {
+        y = p->unk_50 >> 8;
+    } else {
+        y = (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8);
+    }
+
+    gfx = p->unk_48->unk_00;
+
+    if (!(p->unk_78 & 0x800)) {
+        return;
+    }
+
+    if (!(p->unk_78 & 0x80)) {
+        return;
+    }
+
+    if (!(p->unk_78 & 0x200)) {
+        aff = AllocObjAffine(p->unk_5E, p->unk_54, p->unk_58, 0);
+        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, (&gUnk_02039DD4->tiles)[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 1));
+        DrawSprite(p->unk_4C >> 8, y, gfx, p->unk_00, p->palette, aff, 0x410, p->unk_A0);
+        j = p->unk_A5;
+
+        if (p->unk_48->unk_2A == 3) {
+            return;
+        }
+
+        if (p->unk_A7 != 0) {
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE98C0[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 2));
+        } else if (p->unk_A6 != 0) {
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE9894[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 2));
+        } else {
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 2));
+        }
+
+        if (p->unk_A6 != 0) {
+            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_094, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 3));
+        }
+
+        return;
+    }
+
+    aff = AllocObjAffine(0, p->unk_54, p->unk_58, 0);
+    DrawSprite(p->unk_4C >> 8, y, p->unk_48->unk_10, p->unk_00, p->palette, aff, 0x410, p->unk_A0);
+    j = p->unk_A5;
+
+    if (p->unk_48->unk_2A == 3) {
+        return;
+    }
+
+    if (p->unk_A7 != 0) {
+        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 10));
+
+        if (p->unk_A6 == 0) {
+            return;
+        }
+    } else if (p->unk_A6 != 0) {
+        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 10));
+    } else {
+        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 10));
+        return;
+    }
+
+    DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 11));
+}
+
+#else
+INCLUDE_ASM("card/func_0807BEC0.s");
+#endif
 void card_not_have_2(UnkStruct_02034AAC* p) {
     void* gfx;
     u16 y;
