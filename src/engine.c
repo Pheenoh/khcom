@@ -1403,7 +1403,126 @@ u32 func_080046B4(void) {
     return q->unk_10AC;
 }
 
+#ifdef NON_MATCHING
+void FlushDma3Queue(void) {
+    Dma3Queue* q;
+    Dma3Request* req;
+    Dma3Blit* blits;
+    Dma3Fill* fills;
+    Dma3Fill* f;
+    s32 sy;
+    s32 dy;
+    Dma3Pending* pend;
+    void (**cb)(void);
+    void (**p)(void);
+    u16 n;
+    s32 i;
+    s32 j;
+    s32 row;
+    s32 col;
+    u16 zero;
+    vu32* dma;
+#ifdef VERSION_EU
+    Dma3Request* compressed;
+#endif
+
+    q = gDma3Requests;
+    req = q->requests;
+    blits = q->unk_0C00;
+    fills = q->unk_1000;
+    cb = (void (**)(void))q->unk_1060;
+    pend = q->pending;
+#ifdef VERSION_EU
+    compressed = q->unkEu_10A0;
+#endif
+    q->unk_10AC = 0;
+    n = q->unk_10A6;
+
+    if (n != 0) {
+        i = n;
+        p = cb;
+        do {
+            (*p++)();
+        } while (--i);
+    }
+    gDma3Requests->unk_10A6 = 0;
+    n = gDma3Requests->requestCount;
+
+    if (n != 0) {
+        i = n;
+        do {
+            dma = (vu32*)0x040000D4;
+            dma[0] = (u32)req->src;
+            dma[1] = (u32)req->dst;
+            dma[2] = (req->size >> 1) | 0x80000000;
+            dma[2];
+            gDma3Requests->unk_10AC += req->size;
+            req++;
+        } while (--i);
+    }
+    gDma3Requests->requestCount = 0;
+#ifdef VERSION_EU
+    n = gDma3Requests->unk_10AA;
+    if (n != 0) {
+        i = n;
+        do {
+            LZ77UnCompVram(compressed->src, compressed->dst);
+            compressed++;
+        } while (--i);
+    }
+    gDma3Requests->unk_10AA = 0;
+#endif
+    n = gDma3Requests->unk_10A4;
+
+    for (i = 0; i < n; i++) {
+        if (fills[i].unk_0A != 0) {
+            f = &fills[i];
+
+            for (j = 0; j < 32; j++) {
+                ((u16*)f->unk_04)[(((f->unk_09 + j) & 31) << 5) + f->unk_08] = ((u16*)f->unk_00)[j];
+            }
+        } else {
+            f = &fills[i];
+
+            for (j = 0; j < 32; j++) {
+                ((u16*)f->unk_04)[(f->unk_09 << 5) + ((f->unk_08 + j) & 31)] = ((u16*)f->unk_00)[j];
+            }
+        }
+    }
+    gDma3Requests->unk_10A4 = 0;
+    n = gDma3Requests->unk_10A2;
+
+    for (i = 0; i < n; i++) {
+        for (row = 0; row < blits[i].unk_0D; row++) {
+            sy = ((blits[i].unk_09 + row) & 31) << 5;
+            dy = ((blits[i].unk_0B + row) & 31) << 5;
+
+            for (col = 0; col < blits[i].unk_0C; col++) {
+                ((u16*)blits[i].unk_04)[((blits[i].unk_0A + col) & 31) + dy] = ((u16*)blits[i].unk_00)[((blits[i].unk_08 + col) & 31) + sy];
+            }
+        }
+    }
+    gDma3Requests->unk_10A2 = 0;
+    n = gDma3Requests->count;
+
+    if (n != 0) {
+        i = n;
+        do {
+            zero = 0;
+            dma = (vu32*)0x040000D4;
+            dma[0] = (u32)&zero;
+            dma[1] = (u32)pend->unk_00;
+            dma[2] = (pend->unk_04 >> 1) | 0x81000000;
+            dma[2];
+            gDma3Requests->unk_10AC += pend->unk_04;
+            pend++;
+        } while (--i);
+    }
+    gDma3Requests->count = 0;
+}
+#else
 INCLUDE_ASM("engine/FlushDma3Queue.s");
+#endif
 #ifdef NON_MATCHING
 void func_08004938(void) {
     Dma3Queue* q;
