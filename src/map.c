@@ -68,6 +68,31 @@ extern void* gUnkEu_09F8447C[];
 extern void* gUnkEu_09F8444C[];
 extern void* gUnkEu_09F8445C[];
 extern void* gUnkEu_09F8446C[];
+extern void* gUnkEu_09F84738[];
+extern void* gUnkEu_09F84720[];
+extern void* gUnkEu_09F84718[];
+extern void* gUnkEu_09F84728[];
+extern void* gUnkEu_09F84730[];
+extern void* gUnkEu_09F84560[];
+extern void* gUnkEu_09F84574[];
+extern void* gUnkEu_09F84588[];
+extern void* gUnkEu_09F8459C[];
+extern void* gUnkEu_09F845B0[];
+extern void* gUnkEu_09F844FC[];
+extern void* gUnkEu_09F84510[];
+extern void* gUnkEu_09F84524[];
+extern void* gUnkEu_09F84538[];
+extern void* gUnkEu_09F8454C[];
+extern void* gUnkEu_09F845C4[];
+extern void* gUnkEu_09F84678[];
+extern void* gUnkEu_09F845E8[];
+extern void* gUnkEu_09F84698[];
+extern void* gUnkEu_09F8460C[];
+extern void* gUnkEu_09F846B8[];
+extern void* gUnkEu_09F84630[];
+extern void* gUnkEu_09F846D8[];
+extern void* gUnkEu_09F84654[];
+extern void* gUnkEu_09F846F8[];
 #define LANGSEL(x) eu_0805E924(x)
 #else
 #define LANGSEL(x) (x)
@@ -8737,15 +8762,23 @@ s32 func_080EDE78(MapMenuWork* w) {
     return 1;
 }
 
-#ifndef VERSION_EU
 void func_080EDECC(MapMenuWork* w) {
     s32 i;
     s32 k;
 
+#ifdef VERSION_EU
+    DrawSprite(128, w->unk_008 >> 8, gUnkEu_09F84738[0], w->unk_004, w->unk_000, 0, 0x400, 90);
+    DrawSprite(128, w->unk_00C >> 8, gUnkEu_09F84738[1], w->unk_004, w->unk_000, 0, 0x400, 90);
+#else
     DrawSprite(128, w->unk_008 >> 8, gUnk_09EF8E74[0], w->unk_004, w->unk_000, 0, 0x400, 90);
     DrawSprite(128, w->unk_00C >> 8, gUnk_09EF8E74[1], w->unk_004, w->unk_000, 0, 0x400, 90);
+#endif
 
-    if (gUnk_0203C7AC->unk_00 & 0x1000) {
+    if (
+#ifdef VERSION_EU
+        w->unk_30A == 0 &&
+#endif
+        (gUnk_0203C7AC->unk_00 & 0x1000)) {
         if (gGameState.flags & 8) {
             DrawSprite(w->unk_148 >> 8, w->unk_14C >> 8, gUnk_09EEF89C[0], w->unk_13C, w->unk_138,
                 0, 0x400, 80);
@@ -8759,24 +8792,117 @@ void func_080EDECC(MapMenuWork* w) {
     }
 
     if (w->unk_30E != 0) {
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 4:
+            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84720[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+            break;
+        case 0:
+        case 1:
+        case 3:
+            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84718[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+            break;
+        case 2:
+        default:
+            DrawSprite(w->unk_014 >> 8, 0, gUnkEu_09F84728[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+            break;
+        }
+#else
         DrawSprite(w->unk_014 >> 8, 0, gUnk_09EF8E6C[0], w->unk_010, w->unk_000, 0, 0x400, 80);
+#endif
+#ifdef VERSION_EU
+        DrawSprite(w->unk_01C >> 8, 14, gUnkEu_09F84730[0], w->unk_018, w->unk_000, 0, 0x400, 90);
+#else
         DrawSprite(w->unk_01C >> 8, 14, gUnk_09EF8E64[0], w->unk_018, w->unk_000, 0, 0x400, 90);
+#endif
 
         if (gGameState.flags & 8) {
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84560[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84560[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84560[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 1:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84574[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84574[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84574[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 4:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84588[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84588[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84588[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 3:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8459C[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8459C[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F8459C[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 2:
+            default:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F845B0[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F845B0[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F845B0[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            }
+#else
             DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[0], w->unk_024, w->unk_020, 0, 0x400, 80);
             DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E80[1], w->unk_024, w->unk_020, 0, 0x400, 81);
             DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E80[2], w->unk_024, w->unk_020, 0, 0x400,
                 81);
+#endif
 
             if (w->unk_164[0] != 0) {
                 DrawSprite((w->unk_02C >> 8) + 18, 124, w->unk_170[0], w->unk_164[0],
                     w->unk_158[0], 0, 0x400, 80);
             }
         } else {
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F844FC[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F844FC[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F844FC[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 1:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84510[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84510[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84510[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 4:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84524[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84524[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84524[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 3:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84538[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F84538[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F84538[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 2:
+            default:
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8454C[0], w->unk_024, w->unk_020, 0, 0x400, 80);
+                DrawSprite(w->unk_028 >> 8, 0, gUnkEu_09F8454C[1], w->unk_024, w->unk_020, 0, 0x400, 81);
+                DrawSprite(w->unk_02C >> 8, 103, gUnkEu_09F8454C[2], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            }
+#else
             DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[0], w->unk_024, w->unk_020, 0, 0x400, 80);
             DrawSprite(w->unk_028 >> 8, 0, gUnk_09EF8E0C[1], w->unk_024, w->unk_020, 0, 0x400, 81);
             DrawSprite(w->unk_02C >> 8, 103, gUnk_09EF8E0C[2], w->unk_024, w->unk_020, 0, 0x400,
                 81);
+#endif
 
             for (i = 0; i < 3; i++) {
                 k = i * 20 + 14;
@@ -8789,12 +8915,98 @@ void func_080EDECC(MapMenuWork* w) {
         }
 
         if (!(gGameState.flags & 8)) {
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F844FC[3], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 1:
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84510[3], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 4:
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84524[3], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 3:
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F84538[3], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            case 2:
+            default:
+                DrawSprite(w->unk_030 >> 8, 144, gUnkEu_09F8454C[3], w->unk_024, w->unk_020, 0, 0x400,
+                    81);
+                break;
+            }
+#else
             DrawSprite(w->unk_030 >> 8, 144, gUnk_09EF8E0C[3], w->unk_024, w->unk_020, 0, 0x400,
                 81);
+#endif
             func_080664D8((w->unk_030 >> 8) + 16, 145, &w->unk_074, w->unk_070, 50,
                 w->unk_074[0xC0]);
         }
 
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+            if (w->unk_034 != 0) {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845C4[w->unk_309], w->unk_040, w->unk_03C, 0,
+                    0x400, 81);
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84678[w->unk_309], w->unk_040, w->unk_038, 0,
+                    0x400, 81);
+            } else {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845C4[7], w->unk_040, w->unk_03C, 0, 0x400,
+                    80);
+            }
+            break;
+        case 1:
+            if (w->unk_034 != 0) {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845E8[w->unk_309], w->unk_040, w->unk_03C, 0,
+                    0x400, 81);
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84698[w->unk_309], w->unk_040, w->unk_038, 0,
+                    0x400, 81);
+            } else {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F845E8[7], w->unk_040, w->unk_03C, 0, 0x400,
+                    80);
+            }
+            break;
+        case 4:
+            if (w->unk_034 != 0) {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F8460C[w->unk_309], w->unk_040, w->unk_03C, 0,
+                    0x400, 81);
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846B8[w->unk_309], w->unk_040, w->unk_038, 0,
+                    0x400, 81);
+            } else {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F8460C[7], w->unk_040, w->unk_03C, 0, 0x400,
+                    80);
+            }
+            break;
+        case 3:
+            if (w->unk_034 != 0) {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84630[w->unk_309], w->unk_040, w->unk_03C, 0,
+                    0x400, 81);
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846D8[w->unk_309], w->unk_040, w->unk_038, 0,
+                    0x400, 81);
+            } else {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84630[7], w->unk_040, w->unk_03C, 0, 0x400,
+                    80);
+            }
+            break;
+        case 2:
+        default:
+            if (w->unk_034 != 0) {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84654[w->unk_309], w->unk_040, w->unk_03C, 0,
+                    0x400, 81);
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F846F8[w->unk_309], w->unk_040, w->unk_038, 0,
+                    0x400, 81);
+            } else {
+                DrawSprite(w->unk_044 >> 8, 26, gUnkEu_09F84654[7], w->unk_040, w->unk_03C, 0, 0x400,
+                    80);
+            }
+            break;
+        }
+#else
         if (w->unk_034 != 0) {
             DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[w->unk_309], w->unk_040, w->unk_03C, 0,
                 0x400, 81);
@@ -8804,6 +9016,7 @@ void func_080EDECC(MapMenuWork* w) {
             DrawSprite(w->unk_044 >> 8, 26, gUnk_09EF8E20[7], w->unk_040, w->unk_03C, 0, 0x400,
                 80);
         }
+#endif
 
         if (w->unk_034 != 0) {
             switch (w->unk_30A) {
@@ -8827,16 +9040,19 @@ void func_080EDECC(MapMenuWork* w) {
         }
 
         if (w->unk_30A != 0) {
-            func_080664D8((240 - func_08065B08(w->unk_180, w->unk_288)) / 2, 64, w->unk_180,
+            func_080664D8(
+#ifdef VERSION_EU
+                120 - (func_08065B08(w->unk_180, w->unk_288) >> 1),
+#else
+                (240 - func_08065B08(w->unk_180, w->unk_288)) / 2,
+#endif
+                64, w->unk_180,
                 w->unk_17C, 70, w->unk_288);
             func_080664D8(80, 84, w->unk_28C, w->unk_17C, 70, w->unk_2BC);
             func_080664D8(144, 84, w->unk_2C0, w->unk_17C, 70, w->unk_308);
         }
     }
 }
-#else
-INCLUDE_ASM("map/func_080EDECC.s");
-#endif
 
 void func_080EE418(MapMenuWork* w) {
     s32 i;
