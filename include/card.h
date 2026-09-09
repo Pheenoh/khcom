@@ -363,9 +363,12 @@ extern UnkStruct_09EE7D84* gUnk_09EE7D84[];
 typedef struct GameState {
     u8 unk_000[0x08];
     u32 flags;
-    u8 unk_00C[0xEE];
+    u8 unk_00C[0xEC];
+    u16 unk_0F8;
     s16 cp;
-    u8 unk_0FC[0x0C];
+    u16 unk_0FC;
+    u16 unk_0FE;
+    u8 unk_100[0x08];
     u8 level;
     u8 unk_109[0x6F];
     u16 unk_178;
