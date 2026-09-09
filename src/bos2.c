@@ -546,51 +546,44 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
 #else
 INCLUDE_ASM("bos2/task_bos_tm_foot_1.s");
 #endif
-#ifdef NON_MATCHING
 void task_bos_tm_foot_2(TmFootWork* work) {
     void* pal;
-    u16 mode;
+    s32 flag;
     s16 x;
     s16 y;
     TmFootSub* s0;
     TmFootSub* s1;
     TmFootSub* s2;
     TmFootSub* s3;
+    u16 mode;
 
+    flag = work->unk_47C->unk_28 & 0x20;
     mode = 0x801;
-
-    if (work->unk_47C->unk_28 & 0x20) {
+    if (flag != 0) {
         mode = 0x800;
     }
 
     if (gBtlWork->unk_070 != 0) {
         pal = work->palette;
-    } else if (work->unk_47C->unk_28 & 1) {
-        if (gFrameCounter & 1) {
-            pal = work->palette2;
-        } else {
-            pal = work->palette;
-        }
+    } else if ((work->unk_47C->unk_28 & 1) && (gFrameCounter & 1)) {
+        pal = work->palette2;
     } else {
         pal = work->palette;
     }
 
     s0 = (TmFootSub*)&work->unk_01C;
-    s1 = s0 + 1;
-    s2 = s0 + 2;
-    s3 = s0 + 3;
+    s1 = (TmFootSub*)&work->unk_134;
+    s2 = (TmFootSub*)&work->unk_24C;
+    s3 = (TmFootSub*)&work->unk_364;
     WorldToScreen(&x, &y, s0->x, s0->y, s0->z);
-    DrawSprite(x, y, s0->gfx, work->tiles2, pal, 0, mode, (u16)(-4100 - (s0->y >> 8) * 4));
+    DrawSprite(x, y, work->unk_12C, work->tiles2, pal, 0, mode, (u16)(-4100 - (s0->y >> 8) * 4));
     WorldToScreen(&x, &y, s1->x, s1->y, s1->z);
-    DrawSprite(x, y, s1->gfx, work->tiles3, pal, 0, mode, (u16)(-4100 - (s1->y >> 8) * 4));
+    DrawSprite(x, y, work->unk_244, work->tiles3, pal, 0, mode, (u16)(-4100 - (s1->y >> 8) * 4));
     WorldToScreen(&x, &y, s2->x, s2->y, s2->z);
-    DrawSprite(x, y, s2->gfx, work->tiles, pal, 0, mode, (u16)(-4100 - (s2->y >> 8) * 4));
+    DrawSprite(x, y, work->unk_35C, work->tiles, pal, 0, mode, (u16)(-4100 - (s2->y >> 8) * 4));
     WorldToScreen(&x, &y, s3->x, s3->y, s3->z);
-    DrawSprite(x, y, s3->gfx, work->tiles, pal, 0, mode, (u16)(-4100 - (s3->y >> 8) * 4));
+    DrawSprite(x, y, work->unk_474, work->tiles, pal, 0, mode, (u16)(-4100 - (s3->y >> 8) * 4));
 }
-#else
-INCLUDE_ASM("bos2/task_bos_tm_foot_2.s");
-#endif
 
 void task_bos_tm_foot_3(TmFootWork* work) {
     if ((work->unk_47C->unk_28 & 8) == 0) {
