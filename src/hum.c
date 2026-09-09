@@ -6009,7 +6009,6 @@ void task_hum_leon_0(LeonWork* work) {
     gGameState.unk_114 = 0;
 }
 
-#ifdef NON_MATCHING
 u8 task_hum_leon_1(LeonWork* work) {
     LeonWork* w;
     HumActor* act;
@@ -6102,8 +6101,8 @@ u8 task_hum_leon_1(LeonWork* work) {
         break;
     }
 
-    if ((s16)work->unk_188 > 0) {
-        work->unk_188--;
+    if ((s16)w->unk_188 > 0) {
+        w->unk_188--;
         act->unk_34 |= 0x2000;
     } else {
         act->unk_34 &= ~0x2000;
@@ -6117,9 +6116,6 @@ u8 task_hum_leon_1(LeonWork* work) {
     act->unk_0C = z;
     return r;
 }
-#else
-INCLUDE_ASM("hum/task_hum_leon_1.s");
-#endif
 
 void task_hum_leon_2(HumWork* work) {
     func_0800EFE8(work);
