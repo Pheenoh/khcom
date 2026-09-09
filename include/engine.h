@@ -90,7 +90,7 @@ typedef struct Dma3Queue {
     void* unk_1060[8];
     Dma3Pending pending[4];
 #ifdef VERSION_EU
-    u8 unkEu_10A0[0x180];
+    Dma3Request unkEu_10A0[32];
 #endif
     vu16 requestCount;
     vu16 unk_10A2;
