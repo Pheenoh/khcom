@@ -7499,16 +7499,12 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             p->unk_04 += (*(s32*)&p->unk_14[0] - t2) >> 3;
         }
 
-        if (AnimIsFinished(&work->anim) == 0) {
-            goto riku_charge_tick;
+        if (AnimIsFinished(&work->anim) != 0) {
+            work->unk_03C = 51;
+            work->unk_158 = 0;
+        } else {
+            work->unk_158++;
         }
-
-        work->unk_03C = 51;
-        work->unk_158 = 0;
-        break;
-
-    riku_charge_tick:
-        work->unk_158++;
         break;
     case 51:
         func_0802F284(p->unk_04, p->unk_08, p->unk_0C);
@@ -8417,23 +8413,19 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             }
         }
 
-        if ((work->unk_15E & 2) == 0 && p->unk_0C < p->unk_10) {
-            goto riku_air_dive_tick;
+        if ((work->unk_15E & 2) != 0 || p->unk_0C >= p->unk_10) {
+            work->unk_158 = 0;
+
+            if ((s16)work->unk_15A > 4) {
+                work->unk_03C = 47;
+                break;
+            }
+
+            work->unk_03C = 46;
+            work->unk_15A++;
+        } else {
+            work->unk_158++;
         }
-
-        work->unk_158 = 0;
-
-        if ((s16)work->unk_15A > 4) {
-            work->unk_03C = 47;
-            break;
-        }
-
-        work->unk_03C = 46;
-        work->unk_15A++;
-        break;
-
-    riku_air_dive_tick:
-        work->unk_158++;
         break;
     case 46: {
         BtlWork* e;
@@ -8865,13 +8857,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if ((s16)work->unk_15A != 0) {
             ApproachValue(&work->unk_1A0, 256, work->unk_15A);
             work->unk_15A--;
-
-            if ((s16)work->unk_15A > 0) {
-                goto riku_transform_tick;
-            }
         }
 
-        if (p->unk_0C >= p->unk_10) {
+        if ((s16)work->unk_15A <= 0 && p->unk_0C >= p->unk_10) {
             func_080061E8(9, 10);
             func_0801AF08(p);
             work->unk_03C = 35;
@@ -8880,7 +8868,6 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             break;
         }
 
-    riku_transform_tick:
         work->unk_158++;
         break;
     case 33:
@@ -8937,18 +8924,15 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if ((s16)work->unk_15A != 0) {
             ApproachValue(&work->unk_1A0, 256, work->unk_15A);
             work->unk_15A--;
-
-            if ((s16)work->unk_15A > 0) {
-                goto riku_transform_end_tick;
-            }
         }
 
-        p->unk_34 &= 0xFFFFFFFFFFFFFCFFLL;
-        work->unk_03C = 1;
-        work->unk_15A = 0;
-        work->unk_158 = 0;
-        break;
-    riku_transform_end_tick:
+        if ((s16)work->unk_15A <= 0) {
+            p->unk_34 &= 0xFFFFFFFFFFFFFCFFLL;
+            work->unk_03C = 1;
+            work->unk_15A = 0;
+            work->unk_158 = 0;
+            break;
+        }
         work->unk_158++;
         break;
     case 0:
@@ -9422,13 +9406,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                     p->unk_08 += 384;
                 }
             }
-
-            if ((s16)work->unk_15A != 0) {
-                goto riku_light_dash_tick;
-            }
         }
 
-        if (p->unk_0C >= p->unk_10) {
+        if ((s16)work->unk_15A == 0 && p->unk_0C >= p->unk_10) {
             p->unk_34 &= ~0x80;
             func_08027444(work);
             work->unk_03C = 23;
@@ -9437,7 +9417,6 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             break;
         }
 
-    riku_light_dash_tick:
         work->unk_158++;
         break;
     case 23:
@@ -9502,13 +9481,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                     p->unk_08 += 384;
                 }
             }
-
-            if ((s16)work->unk_15A != 0) {
-                goto riku_dark_dash_tick;
-            }
         }
 
-        if (p->unk_0C >= p->unk_10) {
+        if ((s16)work->unk_15A == 0 && p->unk_0C >= p->unk_10) {
             func_08027444(work);
             work->unk_03C = 59;
             work->unk_15A = 0;
@@ -9516,7 +9491,6 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             break;
         }
 
-    riku_dark_dash_tick:
         work->unk_158++;
         break;
     case 59:
@@ -9580,13 +9554,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                     p->unk_04 += 640;
                 }
             }
-
-            if ((s16)work->unk_15A != 0) {
-                goto riku_dark_strafe_tick;
-            }
         }
 
-        if (p->unk_0C >= p->unk_10) {
+        if ((s16)work->unk_15A == 0 && p->unk_0C >= p->unk_10) {
             func_08027444(work);
             work->unk_03C = 59;
             work->unk_15A = 0;
@@ -9594,7 +9564,6 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             break;
         }
 
-    riku_dark_strafe_tick:
         work->unk_158++;
         break;
     case 12:
