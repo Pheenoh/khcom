@@ -550,7 +550,12 @@ typedef struct UnkStruct_0808C940 {
     void* unk_04;
     void* unk_08;
     void* unk_0C;
-    u8 unk_10[0x18];
+    void* unk_10;
+    void* unk_14;
+    void* unk_18;
+    void* unk_1C;
+    void* unk_20;
+    void* unk_24;
     TextSlot unk_28[8];
     TextSlot unk_68[8];
     TextSlot unk_A8[8];
@@ -559,7 +564,10 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_4C0[0xC];
     struct UnkStruct_08084D78* unk_4CC;
     struct UnkStruct_08084D78* unk_4D0;
-    u8 unk_4D4[0x14];
+    void* unk_4D4;
+    void* unk_4D8;
+    void* unk_4DC;
+    u8 unk_4E0[8];
     void* unk_4E8;
     void* unk_4EC;
     u8 unk_4F0[4];
@@ -573,7 +581,11 @@ typedef struct UnkStruct_0808C940 {
     s32 unk_698;
     s32 unk_69C;
     s32 unk_6A0;
-    u8 unk_6A4[0x2C];
+    u8 unk_6A4[0x14];
+    s32 unk_6B8;
+    s32 unk_6BC;
+    u8 unk_6C0[0xE];
+    u16 unk_6CE;
     s16 unk_6D0;
     s16 unk_6D2;
     s16 unk_6D4;
@@ -610,7 +622,8 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_70D;
     u8 unk_70E[2];
     u8 unk_710;
-    u8 unk_711[4];
+    u8 unk_711[3];
+    u8 unk_714;
     u8 unk_715;
     u16 unk_716;
     u8 unk_718[0x13C];
