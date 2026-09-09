@@ -17,6 +17,16 @@ extern void* gUnkEu_088920BC[];
 extern u8 gUnkEu_096C798C[];
 extern u16 gUnkEu_095DA860[];
 extern u16 gUnkEu_095DA867[];
+extern u8 gUnkEu_096C118C[];
+extern u8 gUnkEu_096BE98C[];
+extern u8 gUnkEu_096C298C[];
+extern u8 gUnkEu_096C498C[];
+extern u8 gUnkEu_096C198C[];
+extern u8 gUnkEu_096C398C[];
+extern u8 gUnkEu_096C218C[];
+extern u8 gUnkEu_096C418C[];
+extern u8 gUnkEu_096C318C[];
+extern u8 gUnkEu_096C518C[];
 extern u8 gUnkEu_096BF18C[];
 extern u8 gUnkEu_096C698C[];
 extern u8 gUnkEu_096C598C[];
@@ -235,19 +245,43 @@ void mode_sio_btl_option_0(s32 arg) {
     gSioBtlOptionWork->unk_002 = 0;
 }
 
-#ifndef VERSION_EU
 void func_080AF0B0(void) {
     RequestDma3Copy(gUnk_096AF744, (u8*)GetBgCharBase(0) + 0x2000, 0x800);
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+        LoadBgMap(0, gUnkEu_096C118C, 0x800);
+        LoadBgMap(1, gUnkEu_096BE98C, 0x800);
+        break;
+    case 3:
+        LoadBgMap(0, gUnkEu_096C298C, 0x800);
+        LoadBgMap(1, gUnkEu_096C498C, 0x800);
+        break;
+    case 1:
+        LoadBgMap(0, gUnkEu_096C198C, 0x800);
+        LoadBgMap(1, gUnkEu_096C398C, 0x800);
+        break;
+    case 4:
+        LoadBgMap(0, gUnkEu_096C218C, 0x800);
+        LoadBgMap(1, gUnkEu_096C418C, 0x800);
+        break;
+    case 2:
+    default:
+        LoadBgMap(0, gUnkEu_096C318C, 0x800);
+        LoadBgMap(1, gUnkEu_096C518C, 0x800);
+        break;
+    }
+#else
     LoadBgMap(0, gUnk_096F6C64, 0x800);
+#endif
     LoadBgPalette(0, gUnk_096FBC04, 0xC0);
+#ifndef VERSION_EU
     LoadBgMap(1, gUnk_096F7464, 0x800);
+#endif
     DisableBg(0);
     DisableBg(1);
     gSioBtlOptionWork->unk_002 = 1;
 }
-#else
-INCLUDE_ASM("mode_sio/func_080AF0B0.s");
-#endif
 
 #ifndef VERSION_EU
 void func_080AF11C(void) {
