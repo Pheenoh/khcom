@@ -6172,7 +6172,6 @@ void task_hum_robe_3(HumWork* work) {
     func_0800E380(work);
 }
 
-#ifdef NON_MATCHING
 void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
     s16 i;
 
@@ -6194,12 +6193,16 @@ void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
         data->flags |= 2;
     }
 
+#ifdef VERSION_EU
+    data->unk_02 = gLanguage;
+#endif
+
     for (i = 0; i < 4; i++) {
         if (file == i) {
             data->files[i].unk_00 = gGameState.floor;
             data->files[i].unk_01 = gGameState.world;
-            data->files[i].unk_02 = gUnk_02039CB8;
-            data->files[i].unk_04 = gUnk_02039D8C;
+            data->files[i].unk_02 = gGameState.level;
+            data->files[i].unk_04 = gGameState.playTime;
         } else {
             data->files[i].unk_00 = gGameState.fileSummaries[i].unk_00;
             data->files[i].unk_01 = gGameState.fileSummaries[i].unk_01;
@@ -6208,9 +6211,6 @@ void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
         }
     }
 }
-#else
-INCLUDE_ASM("hum/MakeSaveHeaderData.s");
-#endif
 
 void MakeSaveSystem(SaveFileLarge* save) {
     save->common.flags = gGameState.flags;
