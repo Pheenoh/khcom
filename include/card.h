@@ -687,7 +687,9 @@ typedef struct UnkStruct_0808DB04 {
     u16 unk_886;
     u8 unk_888[0x10];
     u16 unk_898;
-    u8 unk_89A[0x1D];
+    u8 unk_89A[0x12];
+    u8 unk_8AC;
+    u8 unk_8AD[0x0A];
     u8 unk_8B7;
     u8 unk_8B8[0x08];
     u8 unk_8C0;
