@@ -14323,7 +14323,75 @@ u8 func_0808FA0C(u8* work, void* a) {
 #endif
 }
 
-INCLUDE_ASM("card/func_0808FA8C.s");
+typedef struct UnkStruct_0808FA8C {
+    u8 unk_000[0x4D4];
+    UnkStruct_08084D78* unk_4D4;
+    UnkStruct_08084D78* unk_4D8;
+    u8 unk_4DC[0x3BC];
+#ifdef VERSION_EU
+    u8 unk_898[4];
+#endif
+    u16 count;
+} UnkStruct_0808FA8C;
+
+void func_0808FA8C(UnkStruct_0808FA8C* w) {
+    u16 i;
+    u16 j;
+    u16 n;
+
+    w->unk_4D4 = EwramAlloc(w->count * sizeof(UnkStruct_08084D78));
+    for (i = 0, n = 0; i <= 16; i++) {
+        if (w->unk_4D8[i].unk_16 != 0) {
+            w->unk_4D4[n] = w->unk_4D8[i];
+            w->unk_4D4[n].unk_1C = EwramAlloc(w->unk_4D8[i].unk_18 * 2);
+            for (j = 0; j < w->unk_4D8[i].unk_18; j++) {
+                w->unk_4D4[n].unk_1C[j] = w->unk_4D8[i].unk_1C[j];
+            }
+            n++;
+        }
+    }
+    for (i = 143; i <= 159; i++) {
+        if (w->unk_4D8[i].unk_16 != 0) {
+            w->unk_4D4[n] = w->unk_4D8[i];
+            w->unk_4D4[n].unk_1C = EwramAlloc(w->unk_4D8[i].unk_18 * 2);
+            for (j = 0; j < w->unk_4D8[i].unk_18; j++) {
+                w->unk_4D4[n].unk_1C[j] = w->unk_4D8[i].unk_1C[j];
+            }
+            n++;
+        }
+    }
+    for (i = 18; i <= 31; i++) {
+        if (w->unk_4D8[i].unk_16 != 0) {
+            w->unk_4D4[n] = w->unk_4D8[i];
+            w->unk_4D4[n].unk_1C = EwramAlloc(w->unk_4D8[i].unk_18 * 2);
+            for (j = 0; j < w->unk_4D8[i].unk_18; j++) {
+                w->unk_4D4[n].unk_1C[j] = w->unk_4D8[i].unk_1C[j];
+            }
+            n++;
+        }
+    }
+    for (i = 161; i <= 174; i++) {
+        if (w->unk_4D8[i].unk_16 != 0) {
+            w->unk_4D4[n] = w->unk_4D8[i];
+            w->unk_4D4[n].unk_1C = EwramAlloc(w->unk_4D8[i].unk_18 * 2);
+            for (j = 0; j < w->unk_4D8[i].unk_18; j++) {
+                w->unk_4D4[n].unk_1C[j] = w->unk_4D8[i].unk_1C[j];
+            }
+            n++;
+        }
+    }
+    for (i = 32; i <= 142; i++) {
+        if (w->unk_4D8[i].unk_16 != 0) {
+            w->unk_4D4[n] = w->unk_4D8[i];
+            w->unk_4D4[n].unk_1C = EwramAlloc(w->unk_4D8[i].unk_18 * 2);
+            for (j = 0; j < w->unk_4D8[i].unk_18; j++) {
+                w->unk_4D4[n].unk_1C[j] = w->unk_4D8[i].unk_1C[j];
+            }
+            n++;
+        }
+    }
+}
+
 void DeckCard2_0(UnkStruct_0808E890* n, UnkStruct_080A6838_Args* a) {
     *(UnkStruct_080A6838_Args*)&n->unk_1C = *a;
     n->unk_08 = 0;
