@@ -561,12 +561,14 @@ typedef struct UnkStruct_0808C940 {
     struct UnkStruct_08084D78* unk_4D0;
     u8 unk_4D4[0x14];
     void* unk_4E8;
-    u8 unk_4EC[8];
+    void* unk_4EC;
+    u8 unk_4F0[4];
     u8 unk_4F4[0x120];
     TaskPool unk_614;
     TaskPool unk_628;
     u8 unk_63C[0x10];
-    u8 unk_64C[0x48];
+    u8 unk_64C[0x18];
+    u8 unk_664[0x30];
     s32 unk_694;
     s32 unk_698;
     s32 unk_69C;
@@ -588,7 +590,9 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_6F0[0x168];
 #else
     u8 unk_6F0;
-    u8 unk_6F1[5];
+    u8 unk_6F1[3];
+    u8 unk_6F4;
+    u8 unk_6F5;
     u8 unk_6F6;
     u8 unk_6F7;
     u8 unk_6F8;
@@ -602,7 +606,11 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_704;
     u8 unk_705;
     u8 unk_706;
-    u8 unk_707[0xE];
+    u8 unk_707[6];
+    u8 unk_70D;
+    u8 unk_70E[2];
+    u8 unk_710;
+    u8 unk_711[4];
     u8 unk_715;
     u16 unk_716;
     u8 unk_718[0x13C];
