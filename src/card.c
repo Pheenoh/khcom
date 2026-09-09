@@ -25997,7 +25997,96 @@ void func_080A8EE4(u8* work) {
     func_080664D8(*(s16*)&work[0x708], *(s16*)&work[0x70A], &work[0x1D8],
                   *(void**)&work[0x0C], 20, work[0x70C]);
 }
-INCLUDE_ASM("card/deckexchange_2.s");
+void deckexchange_2(UnkStruct_0808C940* w) {
+    if (w->unk_70D == 0) {
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 30, w->unk_4E8, w->unk_00, w->unk_0C, 0, w->unk_6CE, 3);
+    }
+    DrawSprite(w->unk_69C >> 8, w->unk_6A0 >> 8, gUnk_09EEB000, w->unk_08, w->unk_0C, 0, 0x800, 10);
+    switch (w->unk_6F0) {
+    case 0:
+        if (w->unk_714 != 0) {
+            DrawSprite((w->unk_6B8 >> 8) - 16, (w->unk_6BC >> 8) - 20, w->unk_4EC, w->unk_04, w->unk_4BC, 0, 0, 8);
+        }
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->unk_4EC, w->unk_04, w->unk_4BC, 0, 0, 8);
+    case 1:
+    case 2:
+    case 3:
+        func_080A8C58(w, 0);
+        break;
+    case 4:
+        func_080A8C58(w, 1);
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->unk_4EC, w->unk_04, w->unk_4BC, 0, 0, 8);
+        if (w->unk_10 != 0) {
+            if (w->unk_70D == 0) {
+                DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->unk_4EC, w->unk_04, w->unk_4BC, 0, 0, 8);
+            }
+            DrawSprite(24, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
+            DrawSprite(24, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
+            func_080664D8(10, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        }
+        break;
+    case 7:
+        func_080A8C58(w, 1);
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->unk_4EC, w->unk_04, w->unk_4BC, 0, 0, 8);
+        if (w->unk_10 != 0) {
+            DrawSprite(164, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
+            DrawSprite(164, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
+            if (w->unk_18 != 0) {
+                DrawSprite(164, 82, w->unk_4DC, w->unk_18, w->unk_20, 0, 0, 19);
+            }
+            func_080664D8(100, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        }
+        break;
+    case 5:
+        DrawSprite((w->unk_694 >> 8) - 26, (w->unk_698 >> 8) - 13, w->unk_4EC, w->unk_04, w->unk_4BC, 0, 0, 8);
+        func_080A8C58(w, 1);
+        if (w->unk_10 != 0) {
+            DrawSprite(24, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
+            DrawSprite(24, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
+            func_080664D8(10, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        }
+        break;
+    case 6:
+        func_080A8C58(w, 1);
+        if (w->unk_10 != 0) {
+            DrawSprite(24, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
+            DrawSprite(24, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
+            func_080664D8(10, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        }
+        break;
+    case 8:
+        func_080A8C58(w, 1);
+        if (w->unk_10 != 0) {
+            DrawSprite(164, 82, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
+            DrawSprite(164, 82, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
+            if (w->unk_18 != 0) {
+                DrawSprite(164, 82, w->unk_4DC, w->unk_18, w->unk_20, 0, 0, 19);
+            }
+            func_080664D8(100, 116, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        }
+        break;
+    case 9:
+        DrawSprite((w->unk_694 >> 8) - 16, (w->unk_698 >> 8) - 20, w->unk_4EC, w->unk_04, w->unk_4BC, 0, 0, 8);
+        func_080A8EE4((u8*)w);
+        if (w->unk_10 != 0) {
+            DrawSprite(24, 66, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
+            DrawSprite(24, 66, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
+            func_080664D8(10, 100, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        }
+        break;
+    case 11:
+        DrawSprite((w->unk_694 >> 8) - 26, (w->unk_698 >> 8) - 13, w->unk_4EC, w->unk_04, w->unk_4BC, 0, 0, 8);
+        func_080A8EE4((u8*)w);
+        if (w->unk_10 != 0) {
+            DrawSprite(24, 66, w->unk_4D4, w->unk_10, w->unk_20, 0, 0, 20);
+            DrawSprite(24, 66, w->unk_4D8, w->unk_14, w->unk_24, 0, 0, 21);
+            func_080664D8(10, 100, w->unk_E8, w->unk_4BC, 20, w->unk_705);
+        }
+        break;
+    }
+    TaskPoolDraw(&w->unk_614);
+    TaskPoolDraw(&w->unk_628);
+}
 void deckexchange_3(u8* work) {
     void** p;
 
