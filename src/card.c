@@ -12,6 +12,7 @@ u8 func_080892E8(u8* work, void* a);
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
 extern u32 gLanguage;
+extern u8 gUnkEu_08895A00[];
 extern void** gUnkEu_09F72CC4[];
 extern void* gUnkEu_09F72CB0[];
 extern u16* gUnkEu_09F65FDC[];
@@ -22333,20 +22334,70 @@ u8 func_080A25E0(u8* work, void* a) {
 INCLUDE_ASM("card/func_080A25E0.s");
 #endif
 INCLUDE_ASM("card/func_080A2678.s");
-#ifndef VERSION_JP
 void func_080A27EC(u8* work) {
     func_08065AE0((TextSlot*)work, 20);
     func_08065AE0((TextSlot*)&work[0xA0], 20);
     func_08065AE0((TextSlot*)&work[0x140], 20);
+#ifdef VERSION_JP
+    ReleaseObjPalette(*(u8**)&work[0x1E0]);
+    ReleaseObjTiles(*(void**)&work[0x1E4]);
+    ReleaseObjPalette(*(u8**)&work[0x1E8]);
+#else
     func_08065AE0((TextSlot*)&work[0x1E0], 20);
     ReleaseObjPalette(*(u8**)&work[0x280]);
     ReleaseObjTiles(*(void**)&work[0x284]);
     ReleaseObjPalette(*(u8**)&work[0x288]);
-}
-#else
-INCLUDE_ASM("card/func_080A27EC.s");
 #endif
-INCLUDE_ASM("card/func_080A2844.s");
+}
+
+void func_080A2844(UnkStruct_080A2F54* w, u8* a) {
+    w->unk_78C = 0;
+    w->unk_78D = 0;
+    w->unk_78E = 0;
+    func_08065ACC(w, 80);
+    func_08065ACC(w->unk_280, 80);
+    func_08065ACC(w->unk_500, 80);
+    w->unk_78C = func_08065B6C(func_080857BC(GetActiveDeckIndex()), w);
+#ifdef VERSION_JP
+    w->unk_78D = func_08065B6C(&gUnk_0815C204[0x28], w->unk_280);
+#elif defined(VERSION_EU)
+    w->unk_78D = func_08065B6C(eu_0805E924(gUnkEu_08895A00), w->unk_280);
+#else
+    w->unk_78D = func_08065B6C(&gUnk_0815C204[0x58], w->unk_280);
+#endif
+    w->unk_784 = LoadObjPalette(gUnk_09614418, 32);
+    w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
+    w->unk_788 = LoadObjPalette(gUnk_09611AB8, 32);
+#ifdef VERSION_JP
+    w->unk_78E = func_08065B6C((u8*)gUnk_0903BFD4 + 0x30, w->unk_500);
+    w->unk_792 = (233 - func_08065B08(w, w->unk_78C) - func_08065B08(w->unk_500, w->unk_78E)) / 2;
+    w->unk_79A = w->unk_792 + func_08065B08(w, w->unk_78C);
+    w->unk_79C = 66;
+    w->unk_796 = 66;
+    w->unk_794 = (243 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
+    w->unk_798 = 82;
+#else
+    w->unk_792 = (240 - func_08065B08(w, w->unk_78C)) / 2;
+#ifdef VERSION_EU
+    w->unk_794 = (240 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
+    if (gLanguage - 1 <= 1) {
+        w->unk_796 = 66;
+        w->unk_798 = 82;
+    } else {
+        w->unk_796 = 82;
+        w->unk_798 = 66;
+    }
+#else
+    w->unk_796 = 82;
+    w->unk_794 = (240 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
+    w->unk_798 = 66;
+#endif
+#endif
+    w->unk_790 = 0;
+    w->unk_7A4 = 0;
+    w->unk_7A0 = a;
+    *a = 1;
+}
 void func_080A2980(UnkStruct_080A2F54* w, u8* a) {
     w->unk_78C = 0;
     w->unk_78D = 0;
