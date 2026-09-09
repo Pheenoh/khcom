@@ -2498,7 +2498,15 @@ void func_080B8FF4(WlogoTtEffTop* p, s16 a) {
     p->unk_35C = gUnk_09EF397C[gUnk_09EF2034[a].unk_16];
     p->unk_478 = gUnk_09EF3960[gUnk_09EF2034[a].unk_1E];
 }
-INCLUDE_ASM("wlogo/func_080B9190.s");
+s32 func_080B9190(s32 a, s32 b) {
+    if (a > b) {
+        return a - b;
+    }
+    if (a < b) {
+        return b - a;
+    }
+    return 0;
+}
 #ifdef NON_MATCHING
 void func_080B91A4(WlogoTtEffTop* p) {
     s32 st;
