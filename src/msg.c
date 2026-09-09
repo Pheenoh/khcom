@@ -2650,6 +2650,33 @@ s16 func_08065B08(TextSlot* p, u8 n) {
 INCLUDE_ASM("msg/func_08065B08.s");
 #endif
 
+#ifdef VERSION_EU
+s16 eu_0806629C(TextSlot* p, u8 n) {
+    s16 max = 0;
+    s16 x = 0;
+    s32 i;
+
+    for (i = 0; i < n; i++) {
+        if (p[i].tiles != NULL) {
+            if (p[i].unk_05 != -1) {
+                x += p[i].unk_05;
+            } else {
+                x += 3;
+            }
+        } else {
+            if (x > max) {
+                max = x;
+            }
+            x = 0;
+        }
+    }
+    if (max > x) {
+        return max;
+    }
+    return x;
+}
+#endif
+
 #ifndef VERSION_EU
 #ifdef VERSION_JP
 #define MSG_CHAR(p) (*(u8*)(p))

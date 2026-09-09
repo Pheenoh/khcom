@@ -119,7 +119,7 @@ u16 func_080857D4(u8 slot);
 u16 func_08065B6C(u16* a, TextSlot* b);
 s16 func_08065B08(TextSlot* p, u8 n);
 #ifdef VERSION_EU
-s16 func_08065B54(void* p, u8 n);
+s16 eu_0806629C(TextSlot* p, u8 n);
 #endif
 u16 GetRandom(void);
 u16 func_08085770(u8 index);
@@ -21029,7 +21029,7 @@ void func_080A2980(UnkStruct_080A2F54* w, u8* a) {
     w->unk_794 = (207 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
     w->unk_798 = 62;
 #elif defined(VERSION_EU)
-    w->unk_794 = (240 - func_08065B54(w->unk_280, w->unk_78D)) / 2;
+    w->unk_794 = (240 - eu_0806629C(w->unk_280, w->unk_78D)) / 2;
     w->unk_798 = 68;
 #else
     w->unk_794 = (240 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
@@ -21063,7 +21063,7 @@ void func_080A2A80(UnkStruct_080A2F54* w, u8* a) {
 #ifdef VERSION_JP
     w->unk_794 = (219 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
 #elif defined(VERSION_EU)
-    w->unk_794 = (240 - func_08065B54(w->unk_280, w->unk_78D)) / 2;
+    w->unk_794 = (240 - eu_0806629C(w->unk_280, w->unk_78D)) / 2;
 #else
     w->unk_794 = (240 - func_08065B08(w->unk_280, w->unk_78D)) / 2;
 #endif
