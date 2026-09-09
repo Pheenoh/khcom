@@ -566,9 +566,11 @@ void func_080AFA90(void) {
     func_080B0874();
 }
 
-#ifndef VERSION_EU
 void func_080AFADC(void) {
     s8 v = 0;
+#ifdef VERSION_EU
+    if (gUnk_0203A9E4 == 0) {
+#endif
     gUnk_02039B58[1] |= 5;
 
     if (GetKeysPressed() & 1) {
@@ -636,10 +638,60 @@ void func_080AFADC(void) {
     if (gSioBtlOptionWork->unk_416 > 0) {
         gSioBtlOptionWork->unk_416--;
     }
-}
-#else
-INCLUDE_ASM("mode_sio/func_080AFADC.s");
+#ifdef VERSION_EU
+    } else {
+        if (GetKeysPressed() & A_BUTTON) {
+            m4aSongNumStart(103);
+            gSioBtlOptionWork->unk_1B4 = 1;
+            gSioBtlOptionWork->unk_002 = 6;
+        }
+        if (GetKeysPressed() & L_BUTTON) {
+            if (gUnk_0203AA88 == 1) {
+                m4aSongNumStart(105);
+            } else {
+                v = gUnk_0203AA00;
+                v--;
+                if (v <= 0) {
+                    v = gUnk_0203AA88;
+                }
+                gSioBtlOptionWork->unk_006 = 0;
+                gSioBtlOptionWork->unk_004 = 0;
+                gSioBtlOptionWork->unk_410 = 0;
+                gSioBtlOptionWork->unk_001 = gSioBtlOptionWork->unk_002;
+                gUnk_0203AA90 = gUnk_0203AA00;
+                gUnk_0203AA00 = v;
+                gSioBtlOptionWork->unk_002 = 8;
+                m4aSongNumStart(103);
+            }
+        } else if (GetKeysPressed() & R_BUTTON) {
+            if (gUnk_0203AA88 == 1) {
+                m4aSongNumStart(105);
+            } else {
+                v = gUnk_0203AA00;
+                v++;
+                if (v > gUnk_0203AA88) {
+                    v = 1;
+                }
+                gSioBtlOptionWork->unk_006 = 0;
+                gSioBtlOptionWork->unk_004 = 0;
+                gSioBtlOptionWork->unk_410 = 0;
+                gSioBtlOptionWork->unk_001 = gSioBtlOptionWork->unk_002;
+                gUnk_0203AA90 = gUnk_0203AA00;
+                gUnk_0203AA00 = v;
+                gSioBtlOptionWork->unk_002 = 8;
+                m4aSongNumStart(103);
+            }
+        } else {
+            gUnk_02039B58[2] &= 0xFFF0;
+        }
+
+        func_080B0634();
+        func_080B1064();
+        func_080B06D4();
+        func_080B0874();
+    }
 #endif
+}
 
 #ifndef VERSION_EU
 void func_080AFCD4(void) {
