@@ -32,7 +32,9 @@ typedef struct BtlWork {
     u8 unk_071[0x0B];
     struct BtlWork* unk_07C;
     u8 unk_080[0x1C];
-    u8 unk_09C[0x17];
+    u8 unk_09C[6];
+    s16 unk_0A2;
+    u8 unk_0A4[15];
     u8 unk_0B3;
     u8 unk_0B4[0x04];
     u8 unk_0B8[0x14];
@@ -51,7 +53,9 @@ typedef struct BtlWork {
     s32 unk_10C;
     void* unk_110;
     void* unk_114;
-    u8 unk_118[0xB0];
+    u8 unk_118[0x10];
+    void (*unk_128)(s32*, s32*, s32*, s32*);
+    u8 unk_12C[0x9C];
 } BtlWork;
 
 typedef struct SmnBody {
@@ -232,8 +236,9 @@ typedef struct SmnGenieWork {
     u8 unk_153;
     struct BtlWork* unk_154;
     s16 unk_158;
-    u16 unk_15A;
-    s32 unk_15C;
+    s16 unk_15A;
+    u8 unk_15C;
+    u8 unk_15D[3];
     s32 unk_160;
     s32 unk_164;
 } SmnGenieWork;
@@ -298,6 +303,12 @@ void func_08019050(s32 a, s32 b, s32 c, s32 d);
 void func_08019A30(void);
 u16 AnimGetGfxIndex(AnimState* a);
 u16 AnimGetFrame(AnimState* a);
+void func_08006B74(void);
+void func_08006184(s32 a, u16 b);
+void func_08006120(s32 a, u16 b);
+void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
+void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
+void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w);
 void func_08006238(s32 a, s32 b, s32 c);
 void func_080061E8(s32 a, s32 b);
 void func_08013480(s32 a, s32 b, s32 c);
@@ -360,6 +371,7 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args);
 void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args);
 void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args);
 void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args);
+u8 task_smn_genie_1(SmnGenieWork* work);
 void task_smn_tinkeff_0(SmnTinkeffWork* work, SmnBody* args);
 u8 task_smn_tinkeff_1(SmnTinkeffWork* work);
 void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args);
