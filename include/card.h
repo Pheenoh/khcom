@@ -1601,6 +1601,11 @@ typedef struct UnkStruct_08F7CBA8 {
 
 extern UnkStruct_08F7CBA8 gUnk_08F7CBA8[];
 
+typedef struct UnkStruct_080A23A0_Args {
+    u8* unk_00;
+    u32 unk_04;
+} UnkStruct_080A23A0_Args;
+
 typedef struct UnkStruct_080A2678 {
     TextSlot unk_000[20];
     TextSlot unk_0A0[20];
@@ -1611,7 +1616,8 @@ typedef struct UnkStruct_080A2678 {
     void* unk_280;
     void* unk_284;
     void* unk_288;
-    u8 unk_28C[4];
+    u16 unk_28C;
+    u8 unk_28E[2];
     s32 unk_290;
     s32 unk_294;
     s32 unk_298;
