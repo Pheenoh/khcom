@@ -240,6 +240,7 @@ typedef struct EventSeqWork {
     u8 unk_3A;
     u8 unk_3B;
     u8 unk_3C;
+    u8 unk_3D;
 } EventSeqWork;
 
 typedef struct BtlWork {
