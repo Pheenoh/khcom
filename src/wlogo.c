@@ -707,7 +707,6 @@ void task_wlogo_col_0(WlogoColWork* work) {
     work->gfx = AnimGetGfx(&work->anim);
 }
 
-#ifdef NON_MATCHING
 u8 task_wlogo_col_1(WlogoColWork* work) {
     switch (work->unk_028) {
     case 0:
@@ -739,13 +738,11 @@ u8 task_wlogo_col_1(WlogoColWork* work) {
         }
         break;
     case 3:
-        work->unk_02A++;
-        if (work->unk_02A > 120) {
+        if (++work->unk_02A > 120) {
             work->unk_02A = 0;
             work->unk_028++;
         }
-        work->unk_02E++;
-        if (work->unk_02E > 4) {
+        if (++work->unk_02E > 4) {
             work->unk_02E = 0;
             work->unk_02C++;
             if (work->unk_02C > 10) {
@@ -772,9 +769,6 @@ u8 task_wlogo_col_1(WlogoColWork* work) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("wlogo/task_wlogo_col_1.s");
-#endif
 
 void task_wlogo_col_2(WlogoColWork* work) {
     if (work->unk_031 == 1) {
