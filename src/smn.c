@@ -50,7 +50,329 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
+#ifdef NON_MATCHING
+u8 task_smn_cloud_1(SmnCloudWork* work) {
+    SmnBody* body = &work->unk_038;
+    BtlWork* owner;
+    BtlWork* target;
+    s32 x;
+    s32 dz;
+    owner = work->unk_163 != 0 ? gBtlWork : gUnk_02039B9C;
+    if (owner->unk_068 & 0x40000000) return 0;
+    if (work->unk_034 == 4) func_0802F284(body->x, body->y, body->z + 0x2000);
+    else func_0802F284(body->x, body->y, body->z);
+    switch (work->unk_034) {
+    case 0:
+        if (work->unk_148 == 0) {
+            work->unk_14A = 12;
+            func_080140E0(body->x, body->y, body->z);
+            m4aSongNumStart(0x235);
+        }
+        ApproachValue(&work->unk_150, 256, work->unk_14A);
+        work->unk_154 = work->unk_150;
+        if (work->unk_14A <= 0) {
+            work->unk_148 = 0;
+            switch (work->unk_162) {
+            case 0:
+                work->unk_034 = 2;
+                work->unk_164 = 1;
+                break;
+            case 1:
+                work->unk_034 = 1;
+                work->unk_164 = 1;
+                break;
+            case 2:
+                work->unk_034 = 3;
+                work->unk_164 = 1;
+                break;
+            default:
+                work->unk_034 = 6;
+                break;
+            }
+        } else {
+            work->unk_148++;
+            work->unk_14A--;
+        }
+        break;
+    case 5:
+        if (work->unk_148 == 0) {
+            work->unk_14A = 30;
+            func_080140E0(body->x, body->y, body->z);
+            m4aSongNumStart(0x239);
+        }
+        ApproachValue(&work->unk_150, 25, work->unk_14A);
+        work->unk_154 = work->unk_150;
+        if (work->unk_14A <= 0) return 0;
+        work->unk_148++;
+        work->unk_14A--;
+        break;
+    case 6:
+        if (work->unk_148 == 0) work->unk_14A = 8;
+        ApproachValue(&work->unk_150, 10, work->unk_14A);
+        ApproachValue(&work->unk_154, 512, work->unk_14A);
+        if (--work->unk_14A <= 0) {
+            work->unk_034 = 7;
+            work->unk_148 = 0;
+            m4aSongNumStart(0x29C);
+        } else work->unk_148++;
+        break;
+    case 7:
+        if (work->unk_148 == 0) {
+            target = func_08040D54(work);
+            work->unk_14A = 8;
+            if (target != 0) {
+                body->y = target->unk_008;
+                body->z = target->unk_010;
+                body->unk_10 = target->unk_010;
+                if (target->unk_034 & 4) {
+                    body->x = target->unk_004 + 0x2000;
+                    body->flags |= 4;
+                } else {
+                    body->x = target->unk_004 - 0x2000;
+                    body->flags &= ~4ULL;
+                }
+            }
+        }
+        ApproachValue(&work->unk_150, 256, work->unk_14A);
+        ApproachValue(&work->unk_154, 256, work->unk_14A);
+        if (--work->unk_14A <= 0) {
+            work->unk_164 = 1;
+            work->unk_034 = 1;
+            work->unk_148 = 0;
+        } else work->unk_148++;
+        break;
+    case 1:
+        if (work->unk_148 == 0) {
+            func_08019068(gUnk_0813E958, &work->anim, 0, 0, work->tiles);
+        } else if ((s16)work->unk_160 == 0 && AnimIsFinished(&work->anim)) {
+            func_08019068(gUnk_0813E958, &work->anim, 1, 0, work->tiles);
+            work->unk_160++;
+        } else if (AnimIsFinished(&work->anim)) {
+            work->unk_034 = 5;
+            work->unk_148 = 0;
+            break;
+        }
+        if (work->anim.timer == 0) {
+            if ((s16)work->unk_160 == 0) {
+                switch (AnimGetFrame(&work->anim)) {
+                case 2:
+                    m4aSongNumStart(0xAF);
+                    break;
+                case 6:
+                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                        m4aSongNumStart(0x20B);
+                        func_08006120(2, 20);
+                        if (body->flags & 4) {
+                            func_08019050(6, 0x133, body->x - 0x2000, body->y + body->z - 0x1800);
+                        } else {
+                            func_08019050(6, 0x133, body->x + 0x2000, body->y + body->z - 0x1800);
+                        }
+                    }
+                    break;
+                case 7:
+                    func_08019050(6, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+                    break;
+                case 9:
+                    m4aSongNumStart(0xB0);
+                    break;
+                }
+            } else {
+                switch (AnimGetFrame(&work->anim)) {
+                case 0:
+                    func_08019A30();
+                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                        m4aSongNumStart(0x20C);
+                        func_08006120(2, 20);
+                        if (body->flags & 4) {
+                            func_08019050(6, 0x133, body->x - 0x2000, body->y + body->z - 0x1800);
+                        } else {
+                            func_08019050(6, 0x133, body->x + 0x2000, body->y + body->z - 0x1800);
+                        }
+                    }
+                    break;
+                case 1:
+                    func_08019050(6, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+                    break;
+                case 4:
+                    m4aSongNumStart(0xB1);
+                    break;
+                case 5:
+                    func_08019A30();
+                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                        m4aSongNumStart(0x20D);
+                        func_08006120(2, 50);
+                        if (body->flags & 4) {
+                            func_08019050(6, 512, body->x - 0x2000, body->y + body->z - 0x1800);
+                        } else {
+                            func_08019050(6, 512, body->x + 0x2000, body->y + body->z - 0x1800);
+                        }
+                    }
+                    break;
+                case 6:
+                    func_08019050(6, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+                    break;
+                }
+            }
+        }
+        work->unk_148++;
+        break;
+    case 2:
+        if (work->unk_148 == 0) {
+            func_08019068(gUnk_0813E958, &work->anim, 6, 0, work->tiles);
+        } else if ((s16)work->unk_160 == 0 && AnimIsFinished(&work->anim)) {
+            func_08019068(gUnk_0813E958, &work->anim, 7, 0, work->tiles);
+            work->unk_160++;
+        } else if (AnimIsFinished(&work->anim)) {
+            work->unk_034 = 5;
+            work->unk_148 = 0;
+            break;
+        }
+        if (work->anim.timer == 0) {
+            if ((s16)work->unk_160 == 0) {
+                switch (AnimGetFrame(&work->anim)) {
+                case 2:
+                    m4aSongNumStart(0xAF);
+                    break;
+                case 6:
+                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                        m4aSongNumStart(0x20B);
+                        func_08006120(2, 20);
+                        if (body->flags & 4) {
+                            func_08019050(6, 0x133, body->x - 0x2000, body->y + body->z - 0x1800);
+                        } else {
+                            func_08019050(6, 0x133, body->x + 0x2000, body->y + body->z - 0x1800);
+                        }
+                    }
+                    break;
+                case 7:
+                    func_08019050(6, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+                    break;
+                case 9:
+                    m4aSongNumStart(0xB0);
+                    break;
+                }
+            } else {
+                switch (AnimGetFrame(&work->anim)) {
+                case 0:
+                    func_08019A30();
+                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                        m4aSongNumStart(0x20C);
+                        func_08006120(2, 20);
+                        if (body->flags & 4) {
+                            func_08019050(6, 0x133, body->x - 0x2000, body->y + body->z - 0x1800);
+                        } else {
+                            func_08019050(6, 0x133, body->x + 0x2000, body->y + body->z - 0x1800);
+                        }
+                    }
+                    break;
+                case 1:
+                    func_08019050(6, 256, gBtlWork->unk_010, gBtlWork->unk_014);
+                    break;
+                }
+            }
+        }
+        work->unk_148++;
+        break;
+    case 3:
+        if (work->unk_148 == 0) {
+            func_08019068(gUnk_0813E958, &work->anim, 2, 1, work->tiles);
+            work->unk_14C = 0;
+        }
+        if (body->flags & 4) x = (gBtlWork->unk_0DA + 50) * 256;
+        else x = (gBtlWork->unk_0DC - 50) * 256;
+        body->x += (x - body->x) >> 4;
+        dz = (-0xC800 - body->z) >> 3;
+        if (dz > work->unk_14C) dz = work->unk_14C;
+        if (dz < -work->unk_14C) dz = -work->unk_14C;
+        body->z += dz;
+        work->unk_14C += 128;
+        if (abs(body->z + 0xC800) < 0x1000) {
+            work->unk_034 = 4;
+            work->unk_148 = 0;
+        } else work->unk_148++;
+        break;
+    case 4:
+        if (work->unk_148 == 0) {
+            target = func_08040C8C(work);
+            work->unk_168 = target;
+            if (target == 0) {
+                work->unk_034 = 5;
+                work->unk_148 = 0;
+                break;
+            }
+            work->unk_170 = target->unk_004;
+            work->unk_174 = target->unk_008;
+            work->unk_178 = target->unk_00C - 0x1000;
+            func_08019A30();
+            switch ((s16)work->unk_17C) {
+            case 0:
+                m4aSongNumStart(0xAF);
+                func_08019068(gUnk_0813E958, &work->anim, 3, 0, work->tiles);
+                break;
+            case 1:
+                m4aSongNumStart(0xB0);
+                func_08019068(gUnk_0813E958, &work->anim, 4, 0, work->tiles);
+                break;
+            case 2:
+            default:
+                m4aSongNumStart(0xB1);
+                func_08019068(gUnk_0813E958, &work->anim, 5, 0, work->tiles);
+                break;
+            }
+            if (body->x < work->unk_170) body->flags &= ~4ULL;
+            else body->flags |= 4;
+        }
+        body->x += (work->unk_170 - body->x) >> 3;
+        body->y += (work->unk_174 - body->y) >> 3;
+        body->z += (work->unk_178 - body->z) >> 3;
+        if (work->anim.timer == 0) {
+            switch ((s16)work->unk_17C) {
+            case 0:
+                if (AnimGetFrame(&work->anim) == 4) {
+                    if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
+                        m4aSongNumStart(0x20B);
+                        func_08006120(2, 20);
+                    }
+                }
+                break;
+            case 1:
+                if (AnimGetFrame(&work->anim) == 3) {
+                    func_08019A30();
+                    if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
+                        m4aSongNumStart(0x20C);
+                        func_08006120(2, 20);
+                    }
+                }
+                break;
+            case 2:
+            default:
+                if (AnimGetFrame(&work->anim) == 3) {
+                    func_08019A30();
+                    if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
+                        m4aSongNumStart(0x20D);
+                        func_08006120(2, 20);
+                    }
+                }
+                break;
+            }
+        }
+        if (work->unk_148 > 23 && AnimIsFinished(&work->anim)) {
+            work->unk_148 = 0;
+            if ((s16)++work->unk_17C > 2) work->unk_034 = 5;
+            else work->unk_034 = 3;
+        } else work->unk_148++;
+        break;
+    }
+    body->unk_10 = 0;
+    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
+    if (body->z > body->unk_10) body->z = body->unk_10;
+    if (work->unk_164 != 0) AnimUpdate(&work->anim);
+    TaskPoolUpdate(&work->unk_020);
+    return 1;
+}
+#else
 INCLUDE_ASM("smn/task_smn_cloud_1.s");
+#endif
 
 void task_smn_cloud_2(SmnCloudWork* work) {
     SmnBody* body;
