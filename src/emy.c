@@ -4143,13 +4143,18 @@ void task_emy_81_0(EmyWork* work, void* obj) {
     func_0800C778(work, gUnk_0813E53C, obj);
 }
 
-#ifdef NON_MATCHING
+static inline s32 EmyFacingX(EmyActor* actor, s32 offset) {
+    return actor->flags & 4 ? actor->x - offset : actor->x + offset;
+}
+
 u8 task_emy_81_1(Emy81Work* work) {
     Emy81Work* w;
     EmyActor* act;
     u16 r;
     u16 frame;
+    u16 idleFrame;
     s32 d;
+    s32 hitX;
     s32 a;
     s32 z;
     s32 b;
@@ -4173,9 +4178,9 @@ u8 task_emy_81_1(Emy81Work* work) {
     switch (work->base.unk_14C) {
     case 0:
     case 4:
-        frame = AnimGetGfxIndex(&work->base.anim);
+        idleFrame = AnimGetGfxIndex(&work->base.anim);
 
-        if ((frame == 2 || frame == 6) && work->base.unk_01A == 0) {
+        if ((idleFrame == 2 || idleFrame == 6) && work->base.unk_01A == 0) {
             work->base.unk_168 = -0x133;
         }
 
@@ -4209,16 +4214,20 @@ u8 task_emy_81_1(Emy81Work* work) {
         if (work->base.unk_154 == 0) {
             func_0801C700(act, &a, &b, 0);
             func_08019068(gUnk_0813E4EC, &w->base.anim, 3, 1, w->base.tiles);
-            w->unk_18C = (a << 1) - act->x;
-            w->unk_190 = (b << 1) - act->y;
+            w->unk_18C = (a * 2) - act->x;
+            w->unk_190 = (b * 2) - act->y;
             w->unk_184 = 0;
             w->unk_188 = 0;
         }
 
         work->base.unk_168 = 0;
-        z = act->z + 0x2800;
-        act->z += ((gSineTable[((u16)work->base.unk_154 * 4) & 0xFF] * 10) - z)
-            >> 3;
+        {
+            s32 sample = gSineTable[((u16)work->base.unk_154 * 4) & 0xFF] * 10;
+            s32 current = act->z;
+
+            z = current + 0x2800;
+            act->z = current + ((sample - z) >> 3);
+        }
 
         d = (w->unk_18C - act->x) >> 4;
 
@@ -4274,13 +4283,27 @@ u8 task_emy_81_1(Emy81Work* work) {
             func_08019068(gUnk_0813E4EC, &w->base.anim, 0, 0, w->base.tiles);
         }
 
-        if (act->flags & 4) {
-            d = act->x + 0x3000;
-        } else {
-            d = act->x - 0x3000;
-        }
+        {
+            s32 currentX;
+            s32 targetX;
+            s32 adjustedX;
 
-        act->x += (act->unk_14 - d) >> 4;
+            if (act->flags & 4) {
+                targetX = 0x3000;
+                currentX = act->x;
+                adjustedX = currentX + targetX;
+            } else {
+                targetX = -0x3000;
+                currentX = act->x;
+                adjustedX = currentX + targetX;
+            }
+
+            targetX = act->unk_14;
+            targetX -= adjustedX;
+            targetX >>= 4;
+            currentX += targetX;
+            act->x = currentX;
+        }
 
         frame = AnimGetFrame(&work->base.anim);
 
@@ -4295,13 +4318,9 @@ u8 task_emy_81_1(Emy81Work* work) {
             }
             break;
         case 3:
-            if (act->flags & 4) {
-                d = act->x - 0x1600;
-            } else {
-                d = act->x + 0x1600;
-            }
+            hitX = EmyFacingX(act, 0x1600);
 
-            if (func_08011F78(0xDC, d, act->y, act->z + 0x800, 10, 10, 10)) {
+            if (func_08011F78(0xDC, hitX, act->y, act->z + 0x800, 10, 10, 10)) {
                 m4aSongNumStart(0x249);
             }
             break;
@@ -4318,21 +4337,37 @@ u8 task_emy_81_1(Emy81Work* work) {
             func_08019068(gUnk_0813E4EC, &w->base.anim, 1, 0, w->base.tiles);
         }
 
-        if (act->flags & 4) {
-            d = act->x + 0x4600;
-        } else {
-            d = act->x - 0x4600;
-        }
+        {
+            s32 currentX;
+            s32 targetX;
+            s32 adjustedX;
 
-        act->x += (act->unk_14 - d) >> 4;
+            if (act->flags & 4) {
+                targetX = 0x4600;
+                currentX = act->x;
+                adjustedX = currentX + targetX;
+            } else {
+                targetX = -0x4600;
+                currentX = act->x;
+                adjustedX = currentX + targetX;
+            }
+
+            targetX = act->unk_14;
+            targetX -= adjustedX;
+            targetX >>= 4;
+            currentX += targetX;
+            act->x = currentX;
+        }
 
         frame = AnimGetFrame(&work->base.anim);
 
         if (frame == 4) {
+            s32 centerX = EmyFacingX(act, 0);
+
             if ((act->flags & 4)
-                    ? func_08011F78(0xDD, act->x - 0x1800, act->y, act->z,
+                    ? func_08011F78(0xDD, centerX - 0x1800, act->y, act->z,
                         0x10, 0x10, 10)
-                    : func_08011F78(0xDD, act->x + 0x1800, act->y, act->z,
+                    : func_08011F78(0xDD, centerX + 0x1800, act->y, act->z,
                         0x10, 0x10, 10)) {
                 m4aSongNumStart(0x211);
             }
@@ -4348,9 +4383,7 @@ u8 task_emy_81_1(Emy81Work* work) {
 
     return _0800CDF0(&work->base);
 }
-#else
-INCLUDE_ASM("emy/task_emy_81_1.s");
-#endif
+
 
 void task_emy_81_2(EmyWork* work) {
     func_0800DF30(work);
