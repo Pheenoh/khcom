@@ -435,7 +435,489 @@ void func_0805BAAC(s16 a, u8* out) {
     out[2] = a % 10;
 }
 
+#ifdef NON_MATCHING
+void func_0805BAE4(void) {
+    s32 count;
+    JiminyDetail* entries;
+    s16 i;
+    s16 unlocked;
+    s16 selected;
+    s16 width;
+    u8 digits[3];
+    u8* map0;
+    u8* map1;
+    u8* source;
+    u8* dest;
+#ifdef VERSION_EU
+    s32 wide = 0;
+#endif
+
+    switch (gJiminyWork->unk_000) {
+    case 8:
+        switch ((u32)gJiminyWork->unk_D34) {
+        case 1:
+            count = 17;
+            entries = gUnk_0815574C;
+            gJiminyWork->unk_D30 = 0;
+            break;
+        case 2:
+            count = 17;
+            entries = gUnk_08155C54;
+            gJiminyWork->unk_D30 = 1;
+            break;
+        case 3:
+            count = 14;
+            entries = gUnk_0815600C;
+            gJiminyWork->unk_D30 = 1;
+            break;
+        case 4:
+            count = 7;
+            entries = gUnk_0815631C;
+            gJiminyWork->unk_D30 = 1;
+            break;
+        case 5:
+            count = 7;
+            entries = gUnk_081564A4;
+            gJiminyWork->unk_D30 = 1;
+            break;
+        case 6:
+            count = 49;
+            entries = gUnk_0815662C;
+            gJiminyWork->unk_D30 = 1;
+            break;
+        case 7:
+            count = 26;
+            entries = gUnk_081570E4;
+            gJiminyWork->unk_D30 = 1;
+            break;
+        case 8:
+            count = 1;
+            entries = gUnk_08157694;
+            gJiminyWork->unk_D30 = 1;
+            break;
+        case 9:
+            count = 25;
+            entries = gUnk_08157B9C;
+            gJiminyWork->unk_D30 = 2;
+            break;
+        case 10:
+            count = 40;
+            entries = gUnk_08158114;
+            gJiminyWork->unk_D30 = 2;
+            break;
+        case 11:
+            count = 35;
+            entries = gUnk_081589D4;
+            gJiminyWork->unk_D30 = 2;
+            break;
+        case 12:
+            count = 6;
+            entries = gUnk_08155B04;
+            gJiminyWork->unk_D30 = 0;
+            break;
+        case 13:
+            count = 22;
+            entries = gUnk_081576CC;
+            gJiminyWork->unk_D30 = 1;
+            break;
+        case 14:
+            count = 14;
+            entries = gUnk_0815917C;
+            gJiminyWork->unk_D30 = 2;
+            break;
+        case 15:
+            count = 6;
+            entries = gUnk_0815948C;
+            gJiminyWork->unk_D30 = 2;
+            break;
+        case 16:
+            count = 33;
+            entries = gUnk_081595DC;
+            gJiminyWork->unk_D30 = 2;
+            break;
+        default:
+            count = 25;
+            entries = gUnk_08157B9C;
+            gJiminyWork->unk_D30 = 2;
+            break;
+        }
+        gJiminyWork->unk_CD0 = count;
+        if (gJiminyWork->unk_CD2 >= count) {
+            gJiminyWork->unk_CD2 = 0;
+        }
+        gJiminyWork->unk_CCC = &entries[gJiminyWork->unk_CD2];
+        if (gJiminyWork->unk_CB8 != 0) {
+            func_0800FFE0(gJiminyWork->unk_CB8[gJiminyWork->unk_CD2]);
+            unlocked = 0;
+            selected = 0;
+            for (i = 0; i < count; i++) {
+                if (func_0800FF00(gJiminyWork->unk_CB8[i])) {
+                    if (gJiminyWork->unk_CD2 == i) {
+                        selected = unlocked;
+                    }
+                    unlocked++;
+                }
+            }
+            gJiminyWork->unk_CD4 = gJiminyWork->unk_CD2;
+            gJiminyWork->unk_CD6 = gJiminyWork->unk_CD2;
+            i = gJiminyWork->unk_CD2 + 1;
+            for (;;) {
+                if (i >= count) {
+                    i = 0;
+                }
+                if (i == gJiminyWork->unk_CD2) {
+                    break;
+                }
+                if (func_0800FF00(gJiminyWork->unk_CB8[i])) {
+                    gJiminyWork->unk_CD4 = i;
+                    break;
+                }
+                i++;
+            }
+            i = gJiminyWork->unk_CD2 - 1;
+            for (;;) {
+                if (i < 0) {
+                    i = count - 1;
+                }
+                if (i == gJiminyWork->unk_CD2) {
+                    break;
+                }
+                if (func_0800FF00(gJiminyWork->unk_CB8[i])) {
+                    gJiminyWork->unk_CD6 = i;
+                    break;
+                }
+                i--;
+            }
+        } else {
+            unlocked = count;
+            selected = gJiminyWork->unk_CD2;
+            gJiminyWork->unk_CD4 = selected + 1;
+            if (gJiminyWork->unk_CD4 >= count) {
+                gJiminyWork->unk_CD4 = 0;
+            }
+            gJiminyWork->unk_CD6 = gJiminyWork->unk_CD2 - 1;
+            if (gJiminyWork->unk_CD6 < 0) {
+                gJiminyWork->unk_CD6 = count - 1;
+            }
+        }
+        switch (gJiminyWork->unk_D30) {
+        case 0:
+            map0 = gUnk_08F64384;
+            map1 = gUnk_08F60384;
+            break;
+        case 1:
+            map0 = gUnk_08F64384;
+            map1 = gUnk_08F5EB84;
+            break;
+        default:
+            map0 = gUnk_08F63384;
+            map1 = gUnk_08F5FB84;
+            break;
+        }
+#ifdef VERSION_JP
+        gJiminyWork->unk_C71 = func_080653D4(gJiminyWork->unk_D30 < 2 ? 0x400 : 0x2800,
+            0x1600, gJiminyWork->unk_CCC->name);
+#elif defined(VERSION_EU)
+        gJiminyWork->unk_C71 = func_08065170(gJiminyWork->unk_D30 < 2 ? 0x400 : 0x2800,
+            0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
+#else
+        gJiminyWork->unk_C71 = func_08065170(gJiminyWork->unk_D30 < 2 ? 0x400 : 0x2800,
+            0x1600, gJiminyWork->unk_CCC->name);
+#endif
+#ifdef VERSION_EU
+        width = eu_0805E9AC(gJiminyWork->unk_CCC->text);
+        func_0805B9D0(4, width, (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+#else
+        func_0805B9D0(
+#ifdef VERSION_JP
+            6,
+#else
+            4,
+#endif
+            gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
+#endif
+        LoadBgMap(0, map0, 0x800);
+        LoadBgMap(1, map1, 0x800);
+        if (gJiminyWork->unk_CCC->tiles != 0) {
+#ifdef VERSION_EU
+            if (gJiminyWork->unk_CCC->palette == gUnkEu_09A9A880 && func_080D2DD8()) {
+                LoadObjPaletteBank(gJiminyWork->palette8->unk_06, gUnkEu_09A9A8A0);
+                LoadObjPaletteBank(gJiminyWork->palette8->unk_06 + 1, gUnkEu_09A9A8A0 + 0x20);
+                func_08002A10(gJiminyWork->tiles7, gUnkEu_099FBE00);
+            } else
+#endif
+            {
+                LoadObjPaletteBank(gJiminyWork->palette8->unk_06, gJiminyWork->unk_CCC->palette);
+                func_08002A10(gJiminyWork->tiles7, gJiminyWork->unk_CCC->tiles);
+            }
+        }
+        if (gJiminyWork->unk_CCC->tiles2 != 0) {
+            LoadObjPaletteBank(gJiminyWork->palette9->unk_06, gJiminyWork->unk_CCC->palette2);
+            func_08002A10(gJiminyWork->tiles8, gJiminyWork->unk_CCC->tiles2);
+        }
+        if (gJiminyWork->unk_D30 == 2) {
+            source = gUnk_08F63B84;
+            dest = (u8*)GetBgScreenBase(0) + 0x8E;
+        } else {
+            source = gUnk_08F64B84;
+            dest = (u8*)GetBgScreenBase(0) + 0x80;
+        }
+        if (gJiminyWork->unk_D30 < 2) {
+#ifdef VERSION_JP
+            switch (gJiminyWork->unk_C71) {
+            case 1: source += 0xC0; break;
+            case 2: source += 0x240; break;
+            case 3: source += 0x300; break;
+            case 4: source += 0x480; break;
+            case 5: source += 0x540; break;
+            case 6: source += 0x600; break;
+            case 7: source += 0x6C0; break;
+            case 8: source += 0xE0; break;
+            case 9: source += 0x1A0; break;
+            case 10: source += 0x260; break;
+            default: source += 0x320; break;
+            }
+#else
+            width = func_08064DD4(
+#ifdef VERSION_EU
+                eu_0805E924(gJiminyWork->unk_CCC->name)
+#else
+                gJiminyWork->unk_CCC->name
+#endif
+            );
+            switch ((width + 12) / 8) {
+            case 0: source += 0x240; break;
+            case 1: source += 0x240; break;
+            case 2: source += 0x240; break;
+            case 3: source += 0x240; break;
+            case 4: source += 0x300; break;
+            case 5: source += 0x3C0; break;
+            case 6: source += 0x480; break;
+            case 7: source += 0x540; break;
+            case 8: source += 0x600; break;
+            case 9: source += 0x6C0; break;
+            case 10: source += 0x20; break;
+            case 11: source += 0xE0; break;
+            case 12: source += 0x1A0; break;
+            case 13: source += 0x260; break;
+#ifdef VERSION_EU
+            case 14: source += 0x320; break;
+            case 15: source += 0x3E0; break;
+            default: source += 0x3E0; wide = 1; break;
+#else
+            default: source += 0x320; break;
+#endif
+            }
+#endif
+        } else {
+#ifdef VERSION_JP
+            width = gJiminyWork->unk_C71;
+#else
+            width = func_08064DD4(
+#ifdef VERSION_EU
+                eu_0805E924(gJiminyWork->unk_CCC->name)
+#else
+                gJiminyWork->unk_CCC->name
+#endif
+            ) / 8;
+#endif
+            switch (width) {
+            case 0: break;
+            case 1: break;
+            case 2: source += 0xC0; break;
+            case 3: source += 0x180; break;
+            case 4: source += 0x240; break;
+            case 5: source += 0x300; break;
+            case 6: source += 0x3C0; break;
+#ifdef VERSION_JP
+            case 7: source += 0x540; break;
+            case 8: source += 0x600; break;
+            case 9: source += 0x6C0; break;
+            case 10: source += 0x20; break;
+            case 11: source += 0x1A0; break;
+            case 12: source += 0x1A0; break;
+            case 13: source += 0x1A0; break;
+#else
+            case 7: source += 0x480; break;
+            case 8: source += 0x540; break;
+            case 9: source += 0x600; break;
+            case 10: source += 0x6C0; break;
+            case 11: source += 0x20; break;
+            case 12: source += 0xE0; break;
+            case 13: source += 0x1A0; break;
+#endif
+            default: source += 0x260; break;
+            }
+        }
+        RequestDma3Copy(source, dest, 0x20);
+        RequestDma3Copy(source + 0x40, dest + 0x40, 0x20);
+        RequestDma3Copy(source + 0x80, dest + 0x80, 0x20);
+#ifdef VERSION_EU
+        if (wide) {
+            RequestDma3Copy(source, dest + 2, 0x20);
+            RequestDma3Copy(source + 0x40, dest + 0x42, 0x20);
+            RequestDma3Copy(source + 0x80, dest + 0x82, 0x20);
+        }
+#endif
+        source = gUnk_08EE78E4;
+        func_0805BAAC(selected + 1, digits);
+        RequestDma3Copy(source + digits[0] * 0x20, (u8*)GetBgCharBase(0) + 0x20, 0x20);
+        RequestDma3Copy(source + digits[1] * 0x20, (u8*)GetBgCharBase(0) + 0x40, 0x20);
+        RequestDma3Copy(source + digits[2] * 0x20, (u8*)GetBgCharBase(0) + 0x60, 0x20);
+        func_0805BAAC(unlocked, digits);
+        RequestDma3Copy(source + digits[0] * 0x20, (u8*)GetBgCharBase(0) + 0x80, 0x20);
+        RequestDma3Copy(source + digits[1] * 0x20, (u8*)GetBgCharBase(0) + 0xA0, 0x20);
+        RequestDma3Copy(source + digits[2] * 0x20, (u8*)GetBgCharBase(0) + 0xC0, 0x20);
+        gJiminyWork->unk_000 = 9;
+        DisableBg(2);
+        if (gJiminyWork->unk_CCC->bgTiles != 0) {
+            EnableBg(3);
+            RequestDma3Copy(gJiminyWork->unk_CCC->bgTiles,
+                (u8*)GetBgCharBase(3) + 0x4000, gJiminyWork->unk_CCC->tileSize);
+            switch (gJiminyWork->unk_CCC->paletteSize) {
+            case 0x60:
+                LoadPalette(gJiminyWork->unk_CCC->bgPalette, (void*)0x050001A0, 0x60);
+                break;
+            case 0x40:
+                LoadPalette(gJiminyWork->unk_CCC->bgPalette, (void*)0x050001C0, 0x40);
+                break;
+            default:
+                LoadPalette(gJiminyWork->unk_CCC->bgPalette, (void*)0x050001E0, 0x20);
+                break;
+            }
+            LoadBgMap(3, gJiminyWork->unk_CCC->bgMap, 0x800);
+        } else {
+            DisableBg(3);
+        }
+        gJiminyWork->unk_D3C = 5;
+        SetBlendAlpha(0, 16);
+    case 9:
+        if (gJiminyWork->unk_C72 > 0) {
+            gJiminyWork->unk_CAC |= 8;
+        } else {
+            gJiminyWork->unk_CAC &= ~8;
+        }
+        if (gJiminyWork->unk_C78 < gJiminyWork->unk_C76 - gJiminyWork->unk_C72) {
+            gJiminyWork->unk_CAC |= 0x10;
+        } else {
+            gJiminyWork->unk_CAC &= ~0x10;
+        }
+        if (func_08006314() != 0) {
+            break;
+        }
+        if (gJiminyWork->unk_CC0 <= 0) {
+            if (GetKeysRepeat() & 0x40) {
+                if (gJiminyWork->unk_C72 > 0) {
+                    gJiminyWork->unk_CC0 = 1;
+                    gJiminyWork->unk_C72--;
+                    m4aSongNumStart(0x79);
+                    func_0805A8D0();
+                }
+            } else if (GetKeysRepeat() & 0x80) {
+                if (gJiminyWork->unk_C78 < gJiminyWork->unk_C76 - gJiminyWork->unk_C72) {
+                    gJiminyWork->unk_CC0 = 1;
+                    gJiminyWork->unk_C72++;
+                    m4aSongNumStart(0x79);
+                    func_0805A8D0();
+                }
+            }
+        } else {
+            gJiminyWork->unk_CC0 = 0;
+        }
+        if (gJiminyWork->unk_CD2 != gJiminyWork->unk_CD4) {
+            if (GetKeysRepeat() & 0x200) {
+                gJiminyWork->unk_000 = 8;
+                gJiminyWork->unk_048 = 0;
+                gJiminyWork->unk_CD2 = gJiminyWork->unk_CD6;
+                m4aSongNumStart(0x67);
+                break;
+            } else if (GetKeysRepeat() & 0x100) {
+                gJiminyWork->unk_000 = 8;
+                gJiminyWork->unk_048 = 0;
+                gJiminyWork->unk_CD2 = gJiminyWork->unk_CD4;
+                m4aSongNumStart(0x67);
+                break;
+            }
+        }
+        if (GetKeysPressed() & 2) {
+            gJiminyWork->unk_048 = 0;
+            gJiminyWork->unk_000 = 6;
+            func_08006120(0, 5);
+            func_080063A8();
+            SetModeUpdate(mode_jiminy_1);
+            m4aSongNumStart(0x68);
+        } else if (GetKeysPressed() & 8) {
+            gJiminyWork->unk_048 = 0;
+            gJiminyWork->unk_000 = 5;
+            m4aSongNumStart(0x68);
+        }
+        break;
+    case 5:
+        if (gJiminyWork->unk_048 == 0) {
+            func_08006184(0, 16);
+            func_080063A8();
+        }
+        if (func_08006390() > 30) {
+            func_080E052C(0);
+        }
+        break;
+    }
+    func_080658B8(gJiminyWork->unk_C71);
+    for (i = 0; gJiminyWork->unk_060[i].unk_000 != 0 && i < gJiminyWork->unk_C78; i++) {
+        func_080664D8(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
+            &gJiminyWork->unk_060[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
+    }
+    if (gJiminyWork->unk_CAC & 8) {
+        DrawSprite(gJiminyWork->unk_CC2, gJiminyWork->unk_CC4 - ((gJiminyWork->unk_D3E >> 3) & 3) + 4,
+            gUnk_08C6A51C, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
+    }
+    if (gJiminyWork->unk_CAC & 0x10) {
+        DrawSprite(gJiminyWork->unk_CC6, gJiminyWork->unk_CC8 + ((gJiminyWork->unk_D3E >> 3) & 3),
+            gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
+    }
+    if (gJiminyWork->unk_CD2 != gJiminyWork->unk_CD4) {
+        DrawSprite(0x9A - ((gJiminyWork->unk_D3E >> 3) & 3), 5, gUnk_08C6A530,
+            gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
+        DrawSprite(0xE0 + ((gJiminyWork->unk_D3E >> 3) & 3), 5, gUnk_08C6A53A,
+            gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
+    }
+    switch (gJiminyWork->unk_D30) {
+    case 0:
+        if (gJiminyWork->unk_CCC->tiles != 0) {
+            DrawSprite(gJiminyWork->unk_CCC->x + 0xC8, gJiminyWork->unk_CCC->y + 0x5C,
+                gJiminyWork->unk_CCC->sprite, gJiminyWork->tiles7, gJiminyWork->palette8, 0, 4, 1);
+        }
+        break;
+    case 1:
+        if (gJiminyWork->unk_CCC->tiles != 0) {
+            DrawSprite(0xC2, 0x5E, gJiminyWork->unk_CCC->sprite,
+                gJiminyWork->tiles7, gJiminyWork->palette8, 0, 4, 1);
+        }
+        if (gJiminyWork->unk_CCC->tiles2 != 0 && gJiminyWork->unk_CCC->sprite2 != 0) {
+            DrawSprite(0xC2, 0x5E, gJiminyWork->unk_CCC->sprite2,
+                gJiminyWork->tiles8, gJiminyWork->palette9, 0, 4, 0);
+        }
+        break;
+    case 2:
+        if (gJiminyWork->unk_CCC->tiles != 0) {
+            DrawSprite(gJiminyWork->unk_CCC->x + 0xC4, gJiminyWork->unk_CCC->y + 0x74,
+                gJiminyWork->unk_CCC->sprite, gJiminyWork->tiles7, gJiminyWork->palette8, 0, 4, 1);
+        }
+        if (gJiminyWork->unk_CCC->tiles2 != 0) {
+            DrawSprite(0x14, 0x25, gJiminyWork->unk_CCC->sprite2,
+                gJiminyWork->tiles8, gJiminyWork->palette9, 0, 0x404, 0);
+        }
+        break;
+    }
+    if ((s16)gJiminyWork->unk_D3C > 0) {
+        gJiminyWork->unk_D3C--;
+    }
+    UpdatePlayTime();
+    gJiminyWork->unk_D3E++;
+}
+#else
 INCLUDE_ASM("mode_jiminy/func_0805BAE4.s");
+#endif
 
 void mode_jiminy_2(void) {
     func_08065940();
