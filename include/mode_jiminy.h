@@ -42,6 +42,28 @@ typedef struct JiminyEntry {
     void* unk_14;
 } JiminyEntry;
 
+typedef struct JiminyDetail {
+    void* name;
+    void* text;
+#ifndef VERSION_EU
+    s16 lineCount;
+    u16 padding;
+#endif
+    void* sprite;
+    void* palette;
+    void* tiles;
+    void* sprite2;
+    void* palette2;
+    void* tiles2;
+    void* bgMap;
+    void* bgPalette;
+    void* bgTiles;
+    s16 paletteSize;
+    u16 tileSize;
+    s16 x;
+    s16 y;
+} JiminyDetail;
+
 typedef struct JiminyWork {
     s32 unk_000;
     void* tiles;
@@ -93,19 +115,21 @@ typedef struct JiminyWork {
     s16 unk_CC6;
     s16 unk_CC8;
     u8 unk_CCA[0x02];
-    void* unk_CCC;
+    JiminyDetail* unk_CCC;
     u16 unk_CD0;
     s16 unk_CD2;
     s16 unk_CD4;
-    u16 unk_CD6;
+    s16 unk_CD6;
     JiminyPair unk_CD8[21];
     s32 unk_D2C;
-    u8 unk_D30[0x04];
+    u32 unk_D30;
     void* unk_D34;
     s32 unk_D38;
     u16 unk_D3C;
     u16 unk_D3E;
 } JiminyWork;
+
+extern JiminyWork* gJiminyWork;
 
 extern JiminyEntry gUnk_08155554[];
 extern s16 gSineTable[];
@@ -199,4 +223,49 @@ void func_0805BAE4(void);
 void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f);
 void func_0805BAAC(s16 a, u8* out);
 
-#endif /* GUARD_MODE_JIMINY_H */
+extern JiminyDetail gUnk_0815574C[];
+extern JiminyDetail gUnk_08155C54[];
+extern JiminyDetail gUnk_0815600C[];
+extern JiminyDetail gUnk_0815631C[];
+extern JiminyDetail gUnk_081564A4[];
+extern JiminyDetail gUnk_0815662C[];
+extern JiminyDetail gUnk_081570E4[];
+extern JiminyDetail gUnk_08157694[];
+extern JiminyDetail gUnk_08157B9C[];
+extern JiminyDetail gUnk_08158114[];
+extern JiminyDetail gUnk_081589D4[];
+extern JiminyDetail gUnk_08155B04[];
+extern JiminyDetail gUnk_081576CC[];
+extern JiminyDetail gUnk_0815917C[];
+extern JiminyDetail gUnk_0815948C[];
+extern JiminyDetail gUnk_081595DC[];
+extern u8 gUnk_08F64384[];
+extern u8 gUnk_08F60384[];
+extern u8 gUnk_08F5EB84[];
+extern u8 gUnk_08F63384[];
+extern u8 gUnk_08F5FB84[];
+extern u8 gUnk_08F63B84[];
+extern u8 gUnk_08F64B84[];
+extern u8 gUnk_08EE78E4[];
+extern u8 gUnk_08C6A530[];
+extern u8 gUnk_08C6A53A[];
+#ifdef VERSION_EU
+extern u8 gUnkEu_09A9A880[];
+extern u8 gUnkEu_09A9A8A0[];
+extern u8 gUnkEu_099FBE00[];
+void* eu_0805E968(void* text);
+s16 eu_0805E9AC(void* text);
+u8 func_080D2DD8(void);
+#else
+u8 RequestDma3Copy(void* src, void* dst, u16 size);
+void* GetBgCharBase(s32 bg);
+#endif
+void* GetBgScreenBase(s32 bg);
+void func_0800FFE0(u16 flag);
+void func_08002A10(void* tiles, void* src);
+s16 func_08064DD4(void* text);
+void LoadPalette(void* src, void* dst, u16 size);
+void mode_jiminy_1(void);
+
+
+#endif
