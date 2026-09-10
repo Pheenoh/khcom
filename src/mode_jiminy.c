@@ -448,11 +448,12 @@ void func_0805BAE4(void) {
     u8* map1;
     u8* source;
     u8* dest;
+    u16* paletteDest;
 #ifdef VERSION_EU
     s32 wide = 0;
 #endif
 
-    switch (gJiminyWork->unk_000) {
+    switch ((u32)gJiminyWork->unk_000) {
     case 8:
         switch ((u32)gJiminyWork->unk_D34) {
         case 1:
@@ -545,11 +546,11 @@ void func_0805BAE4(void) {
         if (gJiminyWork->unk_CD2 >= count) {
             gJiminyWork->unk_CD2 = 0;
         }
+        unlocked = 0;
+        selected = 0;
         gJiminyWork->unk_CCC = &entries[gJiminyWork->unk_CD2];
         if (gJiminyWork->unk_CB8 != 0) {
             func_0800FFE0(gJiminyWork->unk_CB8[gJiminyWork->unk_CD2]);
-            unlocked = 0;
-            selected = 0;
             for (i = 0; i < count; i++) {
                 if (func_0800FF00(gJiminyWork->unk_CB8[i])) {
                     if (gJiminyWork->unk_CD2 == i) {
@@ -604,38 +605,83 @@ void func_0805BAE4(void) {
         case 0:
             map0 = gUnk_08F64384;
             map1 = gUnk_08F60384;
+#ifdef VERSION_JP
+            gJiminyWork->unk_C71 = func_080653D4(0x400,
+                0x1600, gJiminyWork->unk_CCC->name);
+#elif defined(VERSION_EU)
+            gJiminyWork->unk_C71 = func_08065170(0x400,
+                0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
+#else
+            gJiminyWork->unk_C71 = func_08065170(0x400,
+                0x1600, gJiminyWork->unk_CCC->name);
+#endif
+#ifdef VERSION_EU
+            width = eu_0805E9AC(gJiminyWork->unk_CCC->text);
+            func_0805B9D0(4, width, (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+#else
+            func_0805B9D0(
+#ifdef VERSION_JP
+                6,
+#else
+                4,
+#endif
+                gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
+#endif
             break;
         case 1:
             map0 = gUnk_08F64384;
             map1 = gUnk_08F5EB84;
+#ifdef VERSION_JP
+            gJiminyWork->unk_C71 = func_080653D4(0x400,
+                0x1600, gJiminyWork->unk_CCC->name);
+#elif defined(VERSION_EU)
+            gJiminyWork->unk_C71 = func_08065170(0x400,
+                0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
+#else
+            gJiminyWork->unk_C71 = func_08065170(0x400,
+                0x1600, gJiminyWork->unk_CCC->name);
+#endif
+#ifdef VERSION_EU
+            width = eu_0805E9AC(gJiminyWork->unk_CCC->text);
+            func_0805B9D0(4, width, (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+#else
+            func_0805B9D0(
+#ifdef VERSION_JP
+                6,
+#else
+                4,
+#endif
+                gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
+#endif
             break;
+        case 2:
         default:
             map0 = gUnk_08F63384;
             map1 = gUnk_08F5FB84;
-            break;
-        }
 #ifdef VERSION_JP
-        gJiminyWork->unk_C71 = func_080653D4(gJiminyWork->unk_D30 < 2 ? 0x400 : 0x2800,
-            0x1600, gJiminyWork->unk_CCC->name);
+            gJiminyWork->unk_C71 = func_080653D4(0x2800,
+                0x1600, gJiminyWork->unk_CCC->name);
 #elif defined(VERSION_EU)
-        gJiminyWork->unk_C71 = func_08065170(gJiminyWork->unk_D30 < 2 ? 0x400 : 0x2800,
-            0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
+            gJiminyWork->unk_C71 = func_08065170(0x2800,
+                0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
 #else
-        gJiminyWork->unk_C71 = func_08065170(gJiminyWork->unk_D30 < 2 ? 0x400 : 0x2800,
-            0x1600, gJiminyWork->unk_CCC->name);
+            gJiminyWork->unk_C71 = func_08065170(0x2800,
+                0x1600, gJiminyWork->unk_CCC->name);
 #endif
 #ifdef VERSION_EU
-        width = eu_0805E9AC(gJiminyWork->unk_CCC->text);
-        func_0805B9D0(4, width, (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+            width = eu_0805E9AC(gJiminyWork->unk_CCC->text);
+            func_0805B9D0(4, width, (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
 #else
-        func_0805B9D0(
+            func_0805B9D0(
 #ifdef VERSION_JP
-            6,
+                6,
 #else
-            4,
+                4,
 #endif
-            gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
+                gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
 #endif
+            break;
+        }
         LoadBgMap(0, map0, 0x800);
         LoadBgMap(1, map1, 0x800);
         if (gJiminyWork->unk_CCC->tiles != 0) {
@@ -761,28 +807,38 @@ void func_0805BAE4(void) {
 #endif
         source = gUnk_08EE78E4;
         func_0805BAAC(selected + 1, digits);
-        RequestDma3Copy(source + digits[0] * 0x20, (u8*)GetBgCharBase(0) + 0x20, 0x20);
-        RequestDma3Copy(source + digits[1] * 0x20, (u8*)GetBgCharBase(0) + 0x40, 0x20);
-        RequestDma3Copy(source + digits[2] * 0x20, (u8*)GetBgCharBase(0) + 0x60, 0x20);
+        dest = (u8*)GetBgCharBase(0) + 0x20;
+        RequestDma3Copy(source + digits[0] * 0x20, dest, 0x20);
+        dest = (u8*)GetBgCharBase(0) + 0x40;
+        RequestDma3Copy(source + digits[1] * 0x20, dest, 0x20);
+        dest = (u8*)GetBgCharBase(0) + 0x60;
+        RequestDma3Copy(source + digits[2] * 0x20, dest, 0x20);
         func_0805BAAC(unlocked, digits);
-        RequestDma3Copy(source + digits[0] * 0x20, (u8*)GetBgCharBase(0) + 0x80, 0x20);
-        RequestDma3Copy(source + digits[1] * 0x20, (u8*)GetBgCharBase(0) + 0xA0, 0x20);
-        RequestDma3Copy(source + digits[2] * 0x20, (u8*)GetBgCharBase(0) + 0xC0, 0x20);
+        dest = (u8*)GetBgCharBase(0) + 0x80;
+        RequestDma3Copy(source + digits[0] * 0x20, dest, 0x20);
+        dest = (u8*)GetBgCharBase(0) + 0xA0;
+        RequestDma3Copy(source + digits[1] * 0x20, dest, 0x20);
+        dest = (u8*)GetBgCharBase(0) + 0xC0;
+        RequestDma3Copy(source + digits[2] * 0x20, dest, 0x20);
         gJiminyWork->unk_000 = 9;
         DisableBg(2);
         if (gJiminyWork->unk_CCC->bgTiles != 0) {
             EnableBg(3);
             RequestDma3Copy(gJiminyWork->unk_CCC->bgTiles,
                 (u8*)GetBgCharBase(3) + 0x4000, gJiminyWork->unk_CCC->tileSize);
-            switch (gJiminyWork->unk_CCC->paletteSize) {
+            switch ((u16)gJiminyWork->unk_CCC->paletteSize) {
             case 0x60:
-                LoadPalette(gJiminyWork->unk_CCC->bgPalette, (void*)0x050001A0, 0x60);
+                paletteDest = (u16*)0x050001A0;
+                LoadPalette(gJiminyWork->unk_CCC->bgPalette, paletteDest, 0x60);
                 break;
             case 0x40:
-                LoadPalette(gJiminyWork->unk_CCC->bgPalette, (void*)0x050001C0, 0x40);
+                paletteDest = (u16*)0x050001C0;
+                LoadPalette(gJiminyWork->unk_CCC->bgPalette, paletteDest, 0x40);
                 break;
+            case 0x20:
             default:
-                LoadPalette(gJiminyWork->unk_CCC->bgPalette, (void*)0x050001E0, 0x20);
+                paletteDest = (u16*)0x050001E0;
+                LoadPalette(gJiminyWork->unk_CCC->bgPalette, paletteDest, 0x20);
                 break;
             }
             LoadBgMap(3, gJiminyWork->unk_CCC->bgMap, 0x800);
@@ -876,7 +932,7 @@ void func_0805BAE4(void) {
             gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
     }
     if (gJiminyWork->unk_CD2 != gJiminyWork->unk_CD4) {
-        DrawSprite(0x9A - ((gJiminyWork->unk_D3E >> 3) & 3), 5, gUnk_08C6A530,
+        DrawSprite(-((gJiminyWork->unk_D3E >> 3) & 3) + 0x9A, 5, gUnk_08C6A530,
             gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
         DrawSprite(0xE0 + ((gJiminyWork->unk_D3E >> 3) & 3), 5, gUnk_08C6A53A,
             gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
