@@ -178,8 +178,7 @@ typedef struct GameState {
 } GameState;
 
 typedef struct EmyKind {
-    u16 unk_00;
-    u16 unk_02;
+    u32 unk_00;
     u16 unk_04;
     s16 unk_06;
     s16 unk_08;
