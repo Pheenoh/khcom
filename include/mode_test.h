@@ -214,6 +214,18 @@ typedef struct UnkModeTestWork {
 } UnkModeTestWork;
 
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
+typedef struct UnkModeTestArgs {
+    u16 card;
+    u8 side;
+    u8 unk_03;
+} UnkModeTestArgs;
+
+extern u8 gUnk_09849A98[];
+extern u8 gUnkEu_08896524[];
+extern TaskDesc gTaskDescBtlShadow;
+void func_08019068(void* resource, AnimState* anim, s32 a, s32 b, void* tiles);
+void func_080122AC(void* particles, s32 a, u16 b, u16 c);
+
 void func_08012304(void* particles);
 u16 func_0801AF1C(s32 y);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
