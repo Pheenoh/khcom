@@ -39,3 +39,4 @@ RegisterRamReset
 SoftReset
 Sqrt
 VBlankIntrWait
+func_08109AAC
