@@ -199,7 +199,7 @@ void func_0807E23C(void);
 void SetTaskUpdate(u8* p, u32 v);
 UnkStruct_02034AAC* ListPoolFirst(void* p);
 UnkStruct_02034AAC* ListPoolNext(void* p);
-s32 func_08076F80(void);
+s32 func_08076F80(UnkStruct_08080268* w, u8* task);
 s32 func_08077F44(UnkStruct_08080268* w, u8* task);
 void func_0807682C(UnkStruct_08080268* w, u8 slot);
 void func_0807E248(void);
