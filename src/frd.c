@@ -93,14 +93,18 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
 
-#ifdef NON_MATCHING
 u8 task_frd_donald_1(FrdDonaldWork* work) {
     FrdBody* body = &work->unk_020;
     BtlWork* owner;
     BtlWork* target;
     s32 angle;
-    owner = work->unk_14C != 0 ? gBtlWork : gUnk_02039B9C;
-    target = owner->unk_078;
+    if (work->unk_14C != 0) {
+        owner = gBtlWork;
+        target = owner->unk_078;
+    } else {
+        owner = gUnk_02039B9C;
+        target = owner->unk_078;
+    }
     if (owner->unk_068 & 0x40000000) return 0;
     switch (work->unk_148) {
     case 0:
@@ -126,7 +130,9 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             func_0801D288();
             if (gBtlWork->unk_068 & 0x800000000ULL) work->unk_148 = 4;
             else {
-                switch (GetRandom() & 3) {
+                u16 spell = GetRandom();
+                spell &= 3;
+                switch (spell) {
                 case 0:
                     work->unk_148 = 4;
                     break;
@@ -149,7 +155,9 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             func_0801D288();
             if (gBtlWork->unk_068 & 0x800000000ULL) work->unk_148 = 4;
             else {
-                switch (GetRandom() & 3) {
+                u16 spell = GetRandom();
+                spell &= 3;
+                switch (spell) {
                 case 0:
                     work->unk_148 = 4;
                     break;
@@ -194,8 +202,8 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         break;
     case 8:
         if (work->unk_14E == 0) {
-            if (body->flags & 4) angle = GetRandom() & 1 ? 0xAD : 0xD3;
-            else angle = GetRandom() & 1 ? 0x53 : 0x2D;
+            if (body->flags & 4) angle = GetRandom() % 2 ? 0xAD : 0xD3;
+            else angle = GetRandom() % 2 ? 0x53 : 0x2D;
             work->unk_158 = gSineTable[angle] * 3;
             work->unk_15C = -gSineTable[angle + 64] * 3;
         }
@@ -437,9 +445,6 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
     TaskPoolUpdate(&work->unk_000);
     return 1;
 }
-#else
-INCLUDE_ASM("frd/task_frd_donald_1.s");
-#endif
 
 void task_frd_donald_2(FrdDonaldWork* work) {
     FrdBody* body;
