@@ -3677,7 +3677,6 @@ u8 task_emy_37_1(Emy37Work* work) {
 INCLUDE_ASM("emy/task_emy_37_1.s");
 #endif
 
-#ifdef NON_MATCHING
 void task_emy_37_2(Emy37Work* work) {
     Emy37Work* w;
     EmyActor* act;
@@ -3686,7 +3685,6 @@ void task_emy_37_2(Emy37Work* work) {
     s32 rot;
     s32 scale;
     s32 zoom;
-    u8 f;
     s16 x;
     s16 y;
 
@@ -3723,18 +3721,14 @@ void task_emy_37_2(Emy37Work* work) {
             scale = scale * zoom >> 8;
         }
 
-        f = w->unk_184;
-
-        if (f == 0) {
-            if (scale == 0x100 && rot == scale) {
-                affine = 0;
-            } else if (scale <= 0xFF) {
-                affine = AllocObjAffine(0, rot, scale, 0);
-            } else {
-                affine = AllocObjAffine(0, rot, scale, 1);
-            }
+        if (w->unk_184) {
+            affine = AllocObjAffine(w->unk_184, rot, scale, 1);
+        } else if (scale == 0x100 && rot == scale) {
+            affine = 0;
+        } else if (scale <= 0xFF) {
+            affine = AllocObjAffine(0, rot, scale, 0);
         } else {
-            affine = AllocObjAffine(f, rot, scale, 1);
+            affine = AllocObjAffine(0, rot, scale, 1);
         }
 
         if (func_0801CA00(act)) {
@@ -3752,9 +3746,6 @@ void task_emy_37_2(Emy37Work* work) {
     }
 }
 
-#else
-INCLUDE_ASM("emy/task_emy_37_2.s");
-#endif
 
 void task_emy_37_3(EmyWork* work) {
     func_0800E0D0(work);
