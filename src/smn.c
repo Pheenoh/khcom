@@ -2019,15 +2019,13 @@ void func_08044518(SmnGenieWork* work) {
     body->y += v;
     body->z += (zt - gSineTable[(work->unk_148 * 2) & 0xFF] * 8 - body->z) >> 3;
 }
-#ifdef NON_MATCHING
 u8 task_smn_genie_1(SmnGenieWork* work) {
     SmnBody* body = &work->unk_038;
-    BtlWork* owner;
+    s32 height;
     s32 x;
     s32 y;
     s32 z;
-    owner = work->unk_151 != 0 ? gBtlWork : gUnk_02039B9C;
-    if (owner->unk_068 & 0x40000000) {
+    if ((work->unk_151 != 0 ? gBtlWork->unk_068 : gUnk_02039B9C->unk_068) & 0x40000000) {
         return 0;
     }
     func_0802F284(body->x, body->y, body->z);
@@ -2073,16 +2071,17 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
             gBtlWork->unk_068 |= 0x40000;
             func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
         }
-        x = ((u32)gSineTable[(work->unk_148 * 2) & 255] << 3) + 0xC00;
-        body->z += (body->unk_10 - x - body->z) >> 3;
+        height = ((u32)gSineTable[(work->unk_148 * 2) & 255] << 3) + 0xC00;
+        body->z += (body->unk_10 - height - body->z) >> 3;
         if ((s16)work->unk_148 > 10) {
             work->unk_154 = func_08044450(work);
             if (work->unk_154 == 0 || (s16)work->unk_15A-- <= 0) {
                 work->unk_034 = 1;
+                work->unk_148 = 0;
             } else {
                 work->unk_034 = 3;
+                work->unk_148 = 0;
             }
-            work->unk_148 = 0;
         } else {
             work->unk_148++;
         }
@@ -2172,7 +2171,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
                 if (body->flags & 4) {
                     func_08014D78(1, body->x - 0xD00, body->y, body->z - 0x6E00, x, y, z, 1, 148);
                 } else {
-                    func_08014D78(1, body->x + 0xD00, body->y, body->z - 0x6E00, x, y, z, 1, 148);
+                    func_08014D78(1, body->x + 0xD00, body->y, body->z - 0x6E00, x, y, z, 0, 148);
                 }
                 work->unk_15C = 1;
                 func_08006184(6, 8);
@@ -2228,9 +2227,6 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
     TaskPoolUpdate(&work->unk_020);
     return 1;
 }
-#else
-INCLUDE_ASM("smn/task_smn_genie_1.s");
-#endif
 
 void task_smn_genie_2(SmnGenieWork* work) {
     SmnBody* body;
