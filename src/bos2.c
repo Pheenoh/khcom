@@ -1691,11 +1691,12 @@ u8 task_bos_tm_arm_1(TmArmWork* work) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void task_bos_tm_arm_2(TmArmWork* work) {
     void* pal;
     s32 mode;
     s32 affine;
+    s16 depth;
+    s16 endDepth;
     s16 x;
     s16 y;
     s32 i;
@@ -1714,14 +1715,16 @@ void task_bos_tm_arm_2(TmArmWork* work) {
         affine = AllocObjAffine(j->unk_08, 256, 256, 0);
         WorldToScreen(&x, &y, work->unk_00C->unk_00 + j->unk_00, work->unk_00C->unk_04,
                       work->unk_00C->unk_08 + j->unk_04);
+        depth = -4100;
         DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
-                   (u16)(-4100 - (work->unk_00C->unk_04 >> 8) * 4));
+                   (depth -= (work->unk_00C->unk_04 >> 8) * 4, (u16)depth));
         j = &work->joints.all[i];
         affine = AllocObjAffine(j->unk_08, 256, 256, 0);
         WorldToScreen(&x, &y, work->unk_00C->unk_0C + j->unk_00, work->unk_00C->unk_10,
                       work->unk_00C->unk_14 + j->unk_04);
+        depth = -4100;
         DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
-                   (u16)(-4100 - (work->unk_00C->unk_10 >> 8) * 4));
+                   (depth -= (work->unk_00C->unk_10 >> 8) * 4, (u16)depth));
     }
 
     if (work->unk_00C->unk_18->unk_28 & 32) {
@@ -1735,18 +1738,15 @@ void task_bos_tm_arm_2(TmArmWork* work) {
     WorldToScreen(&x, &y, work->unk_00C->unk_00 + j->unk_00, work->unk_00C->unk_04,
                   work->unk_00C->unk_08 + j->unk_04);
     DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
-               (u16)(-4100 - (work->unk_00C->unk_04 >> 8) * 4));
+               (endDepth = -4100 - (work->unk_00C->unk_04 >> 8) * 4, (u16)endDepth));
     j = &work->joints.all[3];
     affine = AllocObjAffine(j->unk_08, mode, 256, 0);
     WorldToScreen(&x, &y, work->unk_00C->unk_0C + j->unk_00, work->unk_00C->unk_10,
                   work->unk_00C->unk_14 + j->unk_04);
     DrawSprite(x, y, j->unk_30, (void*)work->tiles, pal, affine, 0x800,
-               (u16)(-4100 - (work->unk_00C->unk_10 >> 8) * 4));
+               (endDepth = -4100 - (work->unk_00C->unk_10 >> 8) * 4, (u16)endDepth));
     TaskPoolDraw(&work->unk_1B4);
 }
-#else
-INCLUDE_ASM("bos2/task_bos_tm_arm_2.s");
-#endif
 
 void task_bos_tm_arm_3(TmArmWork* work) {
     ReleaseObjTiles((void*)work->tiles);
