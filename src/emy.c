@@ -4401,7 +4401,6 @@ u8 func_0803DD44(EmyWork* work) {
     return GetAngle(actorX, actorY, d, targetY);
 }
 
-#ifdef NON_MATCHING
 u8 task_emy_82_1(Emy82Work* work) {
     Emy82Work* w;
     EmyActor* act;
@@ -4495,39 +4494,45 @@ u8 task_emy_82_1(Emy82Work* work) {
             s32 currentX;
             s32 targetX;
             u32 frame;
+            s32 hitX;
             if (work->base.unk_154 == 0) {
                 func_08019068(gUnk_0813E5A4, &w->base.anim, 3, 0, w->base.tiles);
                 work->base.unk_168 = -0x400;
             }
             if (act->flags & 4) {
+                targetX = 0x3000;
                 currentX = act->x;
-                d = currentX + 0x3000;
+                d = currentX + targetX;
             } else {
+                targetX = -0x3000;
                 currentX = act->x;
-                d = currentX - 0x3000;
+                d = currentX + targetX;
             }
             targetX = act->unk_14;
-            act->x = currentX + ((targetX - d) >> 4);
+            targetX -= d;
+            targetX >>= 4;
+            currentX += targetX;
+            act->x = currentX;
             frame = AnimGetFrame(&work->base.anim);
             if (frame > 3) {
                 work->base.unk_168 = 0;
             }
             if (frame == 4) {
                 if (act->flags & 4) {
-                    d = act->x - 0x1400;
+                    hitX = act->x - 0x1400;
                 } else {
-                    d = act->x + 0x1400;
+                    hitX = act->x + 0x1400;
                 }
-                if (func_08011F78(0xDE, d, act->y, act->z + 0x800, 10, 10, 20)) {
+                if (func_08011F78(0xDE, hitX, act->y, act->z + 0x800, 10, 10, 20)) {
                     m4aSongNumStart(0x211);
                 }
-} else if (frame == 5) {
+            } else if (frame == 5) {
                 if (act->flags & 4) {
-                    d = act->x - 0x1800;
+                    hitX = act->x - 0x1800;
                 } else {
-                    d = act->x + 0x1800;
+                    hitX = act->x + 0x1800;
                 }
-                if (func_08011F78(0xDE, d, act->y, act->z - 0x2300, 10, 10, 10)) {
+                if (func_08011F78(0xDE, hitX, act->y, act->z - 0x2300, 10, 10, 10)) {
                     m4aSongNumStart(0x211);
                 }
             }
@@ -4605,9 +4610,19 @@ u8 task_emy_82_1(Emy82Work* work) {
                 case 24:
                     work->base.unk_168 = -0x380;
                     if (gBtlWork->unk_0EE <= 3 && (s16)w->unk_184 <= 2) {
+                        u32 spawnFailure = 0;
                         s32 x;
-                        x = act->x + (act->flags & 4 ? 0x2000 : -0x2000);
-                        if (func_0801BDDC(9, x, act->y, act->z - 0xC00) != 0U) {
+                        s32 offset;
+                        if (act->flags & 4) {
+                            x = act->x;
+                            offset = 0x2000;
+                        } else {
+                            x = act->x;
+                            offset = -0x2000;
+                        }
+                        x += offset;
+                        offset = act->y;
+                        if (func_0801BDDC(9, x, offset, act->z - 0xC00) != spawnFailure) {
                             gBtlWork->unk_120++;
                             w->unk_184++;
                         } else {
@@ -4651,9 +4666,7 @@ u8 task_emy_82_1(Emy82Work* work) {
     }
     return _0800CDF0(&work->base);
 }
-#else
-INCLUDE_ASM("emy/task_emy_82_1.s");
-#endif
+
 
 void task_emy_82_2(EmyWork* work) {
     func_0800DF30(work);
