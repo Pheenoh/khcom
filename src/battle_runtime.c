@@ -1103,23 +1103,19 @@ s32 func_0801A978(BtlObj* p) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 u8 func_0801AD68(BtlObj* p) {
     u64 f = p->unk_034;
-    if (!((u32)f & 1)) {
-        return 0;
+
+    if (f & 1) {
+        p->unk_034 &= ~0x46023;
+        p->unk_034 |= 0x90;
+        p->unk_014 = p->unk_004;
+        p->unk_018 = p->unk_008;
+        p->unk_01C = p->unk_00C;
+        return 1;
     }
-    f &= ~0x46023;
-    f |= 0x90;
-    p->unk_034 = f;
-    p->unk_014 = p->unk_004;
-    p->unk_018 = p->unk_008;
-    p->unk_01C = p->unk_00C;
-    return 1;
+    return 0;
 }
-#else
-INCLUDE_ASM("battle_runtime/func_0801AD68.s");
-#endif
 
 s32 func_0801ADAC(BtlObj* p) {
     u16 t;
