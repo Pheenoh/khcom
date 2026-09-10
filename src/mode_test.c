@@ -68,7 +68,28 @@ void func_0805F1C0(s32* p, s32 v) {
 
 #ifdef VERSION_EU
 void eu_0800115C(void);
-INCLUDE_ASM("mode_test/eu_08060C44.s");
+u8 eu_08060C44(UnkModeTestWork* work) {
+    UnkModeTestBody* body;
+
+    body = &work->body;
+    func_0801C6D4(&body->x, &body->y, &body->z, &body->ground);
+    body->z += work->velocity;
+    work->velocity += 0x33;
+    if (body->z > body->ground) {
+        body->z = body->ground;
+        work->velocity = 0;
+        return 1;
+    }
+    return 0;
+}
+
+INCLUDE_ASM("mode_test/eu_08060C8C.s");
+
+INCLUDE_ASM("mode_test/eu_08060DF8.s");
+
+INCLUDE_ASM("mode_test/eu_08061588.s");
+
+INCLUDE_ASM("mode_test/eu_08061698.s");
 #endif
 
 void task_lockon_0(LockonWork* w) {
