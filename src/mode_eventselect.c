@@ -1019,21 +1019,17 @@ void func_08076458(void) {
     func_0807B668(gUnk_02039DD4);
 }
 
-#ifdef NON_MATCHING
 CardSlot* func_08076674(UnkStruct_08078754* w, u8 slot, u16* n) {
-    CardSlot* base;
     CardSlot* e;
     s16 i;
     u16 cur;
     u16 next;
 
-    base = w->unk_44[slot];
     i = *n;
-    e = &base[i];
 
-    if (e->unk_06 == 0 && e->unk_07 == 0) {
-        if (e->unk_08 == 0 && e->unk_0A == 0) {
-            return &base[(s16)*n];
+    if (w->unk_44[slot][i].unk_06 == 0 && w->unk_44[slot][i].unk_07 == 0) {
+        if (w->unk_44[slot][i].unk_08 == 0 && w->unk_44[slot][i].unk_0A == 0) {
+            return &w->unk_44[slot][(s16)*n];
         }
     }
 
@@ -1045,17 +1041,17 @@ CardSlot* func_08076674(UnkStruct_08078754* w, u8 slot, u16* n) {
     }
 
     while ((s16)next != (s16)cur) {
-        base = w->unk_44[slot];
-        e = &base[(s16)next];
+        i = next;
 
-        if (e->unk_06 == 0 && e->unk_07 == 0) {
-            if (e->unk_08 == 0 && e->unk_0A == 0) {
+        if (w->unk_44[slot][i].unk_06 == 0 && w->unk_44[slot][i].unk_07 == 0) {
+            if (w->unk_44[slot][i].unk_08 == 0 && w->unk_44[slot][i].unk_0A == 0) {
+                e = &w->unk_44[slot][i];
                 *n = next;
                 return e;
             }
         }
 
-        next = (s16)next + 1;
+        next = i + 1;
 
         if ((s16)next >= w->unk_A8[slot]) {
             next = 0;
@@ -1064,9 +1060,6 @@ CardSlot* func_08076674(UnkStruct_08078754* w, u8 slot, u16* n) {
 
     return 0;
 }
-#else
-INCLUDE_ASM("mode_eventselect/func_08076674.s");
-#endif
 
 #ifdef NON_MATCHING
 CardSlot* func_08076750(UnkStruct_08078754* w, u8 slot, u16* n) {
