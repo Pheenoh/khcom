@@ -1096,7 +1096,6 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     TaskCreate(&work->unk_000, gTaskDescBtlShadow, body);
 }
 
-#ifdef NON_MATCHING
 u8 task_frd_jack_1(FrdJackWork* work) {
     FrdBody* body = &work->unk_020;
     BtlWork* owner;
@@ -1191,9 +1190,19 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             work->unk_15C = work->unk_014->unk_008;
             work->unk_154 = -0x500;
             work->unk_150 = 45;
-            if (work->unk_158 > body->x && !(body->flags & 4)) work->unk_164 = -256;
-            else if (work->unk_158 <= body->x && (body->flags & 4)) work->unk_164 = -256;
-            else work->unk_164 = 256;
+            if (work->unk_158 > body->x) {
+                if (body->flags & 4) {
+                    work->unk_164 = 256;
+                } else {
+                    work->unk_164 = -256;
+                }
+            } else {
+                if (body->flags & 4) {
+                    work->unk_164 = -256;
+                } else {
+                    work->unk_164 = 256;
+                }
+            }
             work->unk_14E++;
         }
         func_080474A8(work);
@@ -1436,9 +1445,6 @@ u8 task_frd_jack_1(FrdJackWork* work) {
     TaskPoolUpdate(&work->unk_000);
     return 1;
 }
-#else
-INCLUDE_ASM("frd/task_frd_jack_1.s");
-#endif
 
 #ifdef NON_MATCHING
 void task_frd_jack_2(FrdJackWork* work) {
