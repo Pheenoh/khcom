@@ -16,12 +16,13 @@ void func_08019068(AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
     func_08002A10(obj, e->unk_08);
 }
 
-#ifdef NON_MATCHING
 void WorldToScreen(s16* a, s16* b, s32 px, s32 py, s32 pz) {
     s16 x;
     s16 y;
     u8 ang;
     s32 c;
+    s16 idx;
+    const s16* sine;
     s32 u;
     s32 v;
 
@@ -38,16 +39,17 @@ void WorldToScreen(s16* a, s16* b, s32 px, s32 py, s32 pz) {
         *b = y + 80;
     } else {
         ang = -gBtlWork->unk_018;
-        c = (ang + 64) & 0xFF;
-        u = gSineTable[c] * x + gSineTable[ang] * y;
-        v = gSineTable[c + 64] * x + gSineTable[ang + 64] * y;
+        sine = gSineTable;
+        c = ang + 64;
+        idx = c & 255;
+        u = sine[idx] * x;
+        v = sine[idx += 64] * x;
+        u += sine[ang] * y;
+        v += sine[c] * y;
         *a = (u >> 8) + 120;
         *b = (v >> 8) + 80;
     }
 }
-#else
-INCLUDE_ASM("battle_runtime/WorldToScreen.s");
-#endif
 void func_08019190(BtlObj* p, s16 b) {
     UnkStruct_0801B8A8 a;
     s16* t;
