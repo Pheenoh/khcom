@@ -122,7 +122,163 @@ void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
 
-INCLUDE_ASM("mode_test/eu_08060DF8.s");
+u8 eu_08060DF8(UnkModeTestWork* work) {
+    UnkModeTestBody* body;
+    UnkModeTestActor* actor;
+
+    body = &work->body;
+    actor = work->side != 0 ? gBtlWork : gUnk_02039B9C;
+    if (actor->status & 0x40000000) {
+        return 0;
+    }
+    func_0802F284(body->x, body->y, body->z);
+    switch (work->state) {
+    case 0: {
+        s32 flip = 0;
+        u8 angle = GetAngle(body->x, body->y, work->targetX, work->targetY);
+        switch (((angle + 16) & 255) >> 5) {
+        case 0:
+            func_08019068(gUnkEu_08896524, &work->anim, 4, 1, work->tiles);
+            flip = 1;
+            break;
+        case 1:
+            func_08019068(gUnkEu_08896524, &work->anim, 3, 1, work->tiles);
+            flip = 1;
+            break;
+        case 2:
+            func_08019068(gUnkEu_08896524, &work->anim, 2, 1, work->tiles);
+            flip = 1;
+            break;
+        case 3:
+            func_08019068(gUnkEu_08896524, &work->anim, 1, 1, work->tiles);
+            flip = 1;
+            break;
+        case 4:
+            func_08019068(gUnkEu_08896524, &work->anim, 0, 1, work->tiles);
+            flip = 0;
+            break;
+        case 5:
+            func_08019068(gUnkEu_08896524, &work->anim, 1, 1, work->tiles);
+            flip = 0;
+            break;
+        case 6:
+            func_08019068(gUnkEu_08896524, &work->anim, 2, 1, work->tiles);
+            flip = 0;
+            break;
+        case 7:
+            func_08019068(gUnkEu_08896524, &work->anim, 3, 1, work->tiles);
+            flip = 0;
+            break;
+        }
+        if (flip) body->flags |= 4;
+        else body->flags &= ~4ULL;
+        body->x += gSineTable[angle] * 128 >> 8;
+        body->y += -gSineTable[angle + 64] * 128 >> 8;
+        func_08011F78(110, body->x, body->y, body->z, 20, 10, 64);
+        if ((body->x - work->targetX >= 0 ? body->x - work->targetX : work->targetX - body->x) < 0x800 &&
+            (body->y - work->targetY >= 0 ? body->y - work->targetY : work->targetY - body->y) < 0x800) {
+            work->targetX = (gBtlWork->minX + GetRandom() % (gBtlWork->maxX - gBtlWork->minX + 1)) * 256;
+            work->targetY = (gBtlWork->minY + GetRandom() % (gBtlWork->maxY - gBtlWork->minY + 1)) * 256;
+        }
+        if ((u16)(GetRandom() % 300u) == 0) work->state = 1;
+        break;
+    }
+    case 1: {
+        u8 angle;
+        work->targetX = work->actor->x;
+        work->targetY = work->actor->y;
+        func_08019068(gUnkEu_08896524, &work->anim, 5, 1, work->tiles);
+        angle = GetAngle(body->x, body->y, work->targetX, work->targetY);
+        if (work->targetX < body->x) body->flags |= 4;
+        else body->flags &= ~4ULL;
+        body->x += gSineTable[angle] * 0x133 >> 8;
+        body->y += -gSineTable[angle + 64] * 0x133 >> 8;
+        func_08011F78(110, body->x, body->y, body->z, 20, 10, 64);
+        if (func_08012660(body->particles, 1)) {
+            work->state = 2;
+            func_08012614(body->particles, 1);
+            work->bob = 0;
+        }
+        break;
+    }
+    case 2:
+        func_08019068(gUnkEu_08896524, &work->anim, 6, 0, work->tiles);
+        if (AnimIsFinished(&work->anim)) {
+            if (work->actor->flags & 4) body->flags |= 4;
+            else body->flags &= ~4ULL;
+            if ((u16)(GetRandom() % 200u) == 0) work->state = 5;
+        }
+        if (body->flags & 4) body->x = work->actor->x + 0xA00;
+        else body->x = work->actor->x - 0xA00;
+        body->y = work->actor->y + 0x800;
+        body->z = work->actor->z + work->bob;
+        work->bob += (-0x1C00 - work->bob) >> 3;
+        break;
+    case 5:
+        func_08019068(gUnkEu_08896524, &work->anim, 9, 0, work->tiles);
+        if (work->actor->flags & 4) body->flags |= 4;
+        else body->flags &= ~4ULL;
+        body->x = work->actor->x;
+        body->y = work->actor->y + 0x800;
+        body->z = work->actor->z + work->bob - 0xC00;
+        if (work->counter > 180) {
+            work->state = 6;
+            work->counter = 120;
+            work->animcounter = 0;
+            work->scale = 0;
+            func_08016C40(body->x, body->y, body->z - 0x1A00, 0x180, 0x80, 80);
+        } else work->counter++;
+        break;
+    case 6: {
+        s32 frame;
+        if (work->actor->flags & 4) body->flags |= 4;
+        else body->flags &= ~4ULL;
+        body->x = work->actor->x;
+        body->y = work->actor->y + 0x800;
+        body->z = work->actor->z + work->bob - 0xC00;
+        frame = (work->animcounter >> 8) & 7;
+        func_08019068(gUnkEu_08896524, &work->anim, frame + 10, 0, work->tiles);
+        ApproachValue(&work->animcounter, 0x800, work->counter);
+        ApproachValue(&work->scale, 0x10000, work->counter);
+        func_080147B8(-(work->scale >> 8) - 128);
+        func_08014780(body->x, body->y, body->z - 0x1A00);
+        if (--work->counter <= 0) {
+            work->state = 3;
+            work->counter = 0;
+            work->velocity = -0x380;
+            work->speed = 0x500;
+            work->bounce = 0;
+        }
+        break;
+    }
+    case 3:
+        func_08019068(gUnkEu_08896524, &work->anim, 7, 0, work->tiles);
+        if (body->flags & 4) body->x -= work->speed;
+        else body->x += work->speed;
+        work->speed -= 0x33;
+        if (work->speed <= 0) {
+            work->speed = 0;
+            if (AnimIsFinished(&work->anim)) {
+                work->state = 4;
+                func_08012614(body->particles, 0);
+            }
+        }
+        if (eu_08060C44(work) && !work->bounce) {
+            work->bounce = 1;
+            func_0802F1E8();
+        }
+        func_08011F78(162, body->x, body->y, body->z, 30, 25, 10);
+        break;
+    case 4:
+        func_08019068(gUnkEu_08896524, &work->anim, 8, 0, work->tiles);
+        if (AnimIsFinished(&work->anim)) work->state = 0;
+        break;
+    }
+    AnimUpdate(&work->anim);
+    TaskPoolUpdate(&work->tasks);
+    func_08012324(body->particles, body->x, body->y, body->z);
+    return 1;
+}
 
 void eu_08061588(UnkModeTestWork* work) {
     UnkModeTestBody* body;
