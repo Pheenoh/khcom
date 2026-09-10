@@ -1779,15 +1779,17 @@ void func_0801BCF8(BtlObj* p) {
     }
 
     if (p->unk_034 & 4) {
-        cx = p->unk_004 - (p->unk_0CE << 8);
+        cx = p->unk_004 - ((s16)(x1 = p->unk_0CE) * 256);
     } else {
-        cx = p->unk_004 + (p->unk_0CE << 8);
+        x1 = p->unk_0CE;
+        cx = p->unk_004 + (s16)x1 * 256;
     }
-    x0 = p->unk_0D0;
-    x0 = cx - ((x0 - 4) << 8);
-    y0 = p->unk_008 - (p->unk_0D2 << 8);
-    x1 = x0 + ((p->unk_0D0 + 4) << 9);
-    y1 = y0 + ((p->unk_0D2 + 4) << 9);
+    x1 = p->unk_0D0;
+    x1 -= 4;
+    x0 = cx - (x1 *= 256);
+    y0 = p->unk_008 - (p->unk_0D2 * 256);
+    x1 = x0 + ((p->unk_0D0 + 4) * 512);
+    y1 = y0 + ((p->unk_0D2 + 4) * 512);
 
     if (x0 > x) {
         return;
