@@ -163,18 +163,43 @@ typedef struct UnkStruct_02034A1C {
 } UnkStruct_02034A1C;
 
 #ifdef VERSION_EU
+typedef struct UnkModeTestActor {
+    s32 unk_00;
+    s32 x;
+    s32 y;
+    s32 z;
+    u8 unk_10[0x14];
+    s32 scale;
+    u8 unk_28[0x0C];
+    u64 flags;
+    u8 unk_3C[0x2C];
+    u64 status;
+    u8 unk_70[0x0C];
+    struct UnkModeTestActor* actor;
+    u8 unk_80[0x5A];
+    s16 minX;
+    s16 maxX;
+    u8 unk_DE[0x36];
+    void* tiles;
+} UnkModeTestActor;
+
 typedef struct UnkModeTestBody {
     s32 unk_00;
     s32 x;
     s32 y;
     s32 z;
     s32 ground;
-    u8 unk_14[0xFC];
+    u8 unk_14[0x20];
+    u64 flags;
+    u8 unk_3C[4];
+    u8 particles[0x8C];
+    u16 depth;
+    u8 unk_CE[0x42];
 } UnkModeTestBody;
 
 typedef struct UnkModeTestWork {
     TaskPool tasks;
-    void* actor;
+    UnkModeTestActor* actor;
     void* tiles;
     void* palette;
     UnkModeTestBody body;
@@ -189,6 +214,9 @@ typedef struct UnkModeTestWork {
 } UnkModeTestWork;
 
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
+void func_08012304(void* particles);
+extern UnkModeTestActor* gBtlWork;
+extern UnkModeTestActor* gUnk_02039B9C;
 
 #endif
 

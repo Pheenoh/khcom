@@ -89,7 +89,15 @@ INCLUDE_ASM("mode_test/eu_08060DF8.s");
 
 INCLUDE_ASM("mode_test/eu_08061588.s");
 
-INCLUDE_ASM("mode_test/eu_08061698.s");
+void eu_08061698(UnkModeTestWork* work) {
+    UnkModeTestActor* actor;
+
+    func_08012304(work->body.particles);
+    actor = work->side != 0 ? gBtlWork : gUnk_02039B9C;
+    actor->status &= 0xFFFFFFFFFFDFFFFF;
+    ReleaseObjPalette(work->palette);
+    TaskPoolDestroy(&work->tasks);
+}
 #endif
 
 void task_lockon_0(LockonWork* w) {
