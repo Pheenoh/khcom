@@ -752,7 +752,80 @@ void func_08060598(void) {
     gUnk_02034A20 = 0;
 }
 
+#ifdef NON_MATCHING
+void func_080605A4(u8 bg) {
+    u32 screen;
+    u32 font = 0;
+    u8 n;
+    u8 tileX;
+    u8 tileY;
+    u8 offsetX;
+    u8 offsetY;
+    s32 height = 0;
+    u32 destination;
+    u8 i;
+    u8 row;
+    u8 sourceRow;
+
+    gUnk_02034A14 = (u32)GetBgCharBase(bg);
+    screen = (u32)GetBgScreenBase(bg);
+    for (n = 0; n < gUnk_02034A20; n++) {
+        tileX = gUnk_02034A1C[n].unk_7A >> 3;
+        tileY = gUnk_02034A1C[n].unk_7B >> 3;
+        offsetX = gUnk_02034A1C[n].unk_7A - tileX * 8;
+        offsetY = gUnk_02034A1C[n].unk_7B - tileY * 8;
+        gUnk_02034A14 = (u32)GetBgCharBase(bg) + (tileX + (tileY * 32 + 1)) * 32;
+        for (i = 0; i < gUnk_02034A1C[n].unk_7D; i++) {
+            destination = gUnk_02034A14 + i * 32;
+            switch (gUnk_02034A1C[n].unk_80) {
+            case 0:
+                font = (u32)gUnk_0941BEB8 + gUnk_02034A1C[n].unk_00[i] * 32;
+                height = 8;
+                break;
+            case 1:
+                font = (u32)gUnk_0941DD38 + gUnk_02034A1C[n].unk_00[i] * 32;
+                height = 10;
+                break;
+            case 2:
+                font = (u32)gUnk_09EE26EC[gUnk_02034A1C[n].unk_00[i] >> 10];
+                height = 8;
+                break;
+            }
+            for (row = offsetY, sourceRow = 0; row < offsetY + height; row++, sourceRow++) {
+                if (offsetX == 0) {
+                    if (gUnk_02034A1C[n].unk_80 != 2) {
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400) = *(u32*)(font + (sourceRow & 7) * 4 + (sourceRow >> 3) * 0x400);
+                    } else {
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400) = *(u32*)(font + (sourceRow & 7) * 4 + (gUnk_02034A1C[n].unk_00[i] & 0x3FF) * 32);
+                    }
+                } else if (i != 0 || gUnk_02034A28 == 1) {
+                    if (gUnk_02034A1C[n].unk_80 != 2) {
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400) |= *(u32*)(font + (sourceRow & 7) * 4 + (sourceRow >> 3) * 0x400) << (offsetX * 4);
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400 + 32) = *(u32*)(font + (sourceRow & 7) * 4 + (sourceRow >> 3) * 0x400) >> (32 - offsetX * 4);
+                    } else {
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400) |= *(u32*)(font + (sourceRow & 7) * 4 + (gUnk_02034A1C[n].unk_00[i] & 0x3FF) * 32) << (offsetX * 4);
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400 + 32) = *(u32*)(font + (sourceRow & 7) * 4 + (gUnk_02034A1C[n].unk_00[i] & 0x3FF) * 32) >> (32 - offsetX * 4);
+                    }
+                } else {
+                    if (gUnk_02034A1C[n].unk_80 != 2) {
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400) = *(u32*)(font + (sourceRow & 7) * 4 + (sourceRow >> 3) * 0x400) << (offsetX * 4);
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400 + 32) = *(u32*)(font + (sourceRow & 7) * 4 + (sourceRow >> 3) * 0x400) >> (32 - offsetX * 4);
+                    } else {
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400) = *(u32*)(font + (sourceRow & 7) * 4 + (gUnk_02034A1C[n].unk_00[i] & 0x3FF) * 32) << (offsetX * 4);
+                        *(u32*)(destination + (row & 7) * 4 + (row >> 3) * 0x400 + 32) = *(u32*)(font + (sourceRow & 7) * 4 + (gUnk_02034A1C[n].unk_00[i] & 0x3FF) * 32) >> (32 - offsetX * 4);
+                    }
+                }
+                *(u16*)(screen + tileX * 2 + i * 2 + (tileY + (u8)(row >> 3)) * 64) = (tileX + 1 + i + (tileY + (u8)(row >> 3)) * 32) | (gUnk_02034A18 << 12);
+                *(u16*)(screen + tileX * 2 + i * 2 + (tileY + (u8)(row >> 3)) * 64 + 2) = (tileX + 2 + i + (tileY + (u8)(row >> 3)) * 32) | (gUnk_02034A18 << 12);
+            }
+        }
+    }
+    func_0805F904();
+}
+
+#else
 INCLUDE_ASM("mode_test/func_080605A4.s");
+#endif
 
 void func_0806098C(void) {
     EwramFree(gUnk_02034A1C);
