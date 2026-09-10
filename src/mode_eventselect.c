@@ -1254,7 +1254,94 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
     gUnk_02034A98->unk_78 |= 0x804;
 }
 
+#ifdef NON_MATCHING
+extern u16 gUnk_09033FC8[];
+extern TaskDesc gUnk_09EE8F30;
+extern u32 gUnk_02034A9C;
+extern u32 gUnk_02034AA0;
+void func_08091B28(void);
+void func_080782EC(void);
+s16 func_080858B8(s32 index);
+void func_080784BC(void* work, s32 mode);
+void func_080785B8(void* work, s32 mode);
+void func_080991CC(void* pool, u8* slot, void* count, u8* state, u8 mode);
+void ListPoolInit(void* pool);
+
+void func_08076CB4(UnkStruct_08080268* w) {
+    u32 zero = 0;
+    u8 i;
+
+    CpuSet(&zero, w, 0x05000033);
+    gUnk_02039DD4->unk_05C = (u32)w;
+    gBtlWork->unk_0F4 = 0;
+    func_08091B28();
+    func_080782EC();
+    w->unk_14 = func_080038C8(128);
+    w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
+    func_080038E4(w->unk_14, gUnk_09EF12E8[0], (u32)gUnk_093FBAB8);
+    TaskPoolInit((TaskPool*)w, 30);
+    w->unk_B9 = 0;
+    w->unk_B8 = 0;
+    w->unk_C0[0] = 0;
+    w->unk_C0[1] = 0;
+    w->unk_C0[2] = 0;
+    w->unk_C0[3] = 0;
+    w->unk_BC[0] = 1;
+    w->unk_BC[1] = 0;
+    w->unk_BC[2] = 0;
+    w->unk_BC[3] = 0;
+    w->unk_BA = 0;
+    w->unk_C4[3] = 0;
+    w->unk_A4 = gUnk_09033FC8[0];
+    w->unk_C9 = 0;
+    for (i = 0; i < 3; i++) {
+        w->unk_1C[i] = 0;
+        w->unk_28[i] = 0;
+    }
+    for (i = 0; i < 4; i++) {
+        w->unk_34[i] = 0;
+        w->unk_44[i] = 0;
+    }
+    w->unk_C4[1] = 0;
+    if (gBtlWork->unk_068 & 0x800000000LL) {
+        w->unk_A8[0] = gUnk_09041FA0.unk_DC + 15;
+        w->unk_B0[0] = gUnk_09041FA0.unk_DC + 1;
+        w->unk_A8[3] = w->unk_B0[3] = 0;
+        w->unk_A8[2] = w->unk_B0[2] = 0;
+        w->unk_A8[1] = w->unk_B0[1] = 0;
+        func_080784BC(w, 0);
+        func_080784BC(w, 1);
+    } else {
+        w->unk_A8[0] = func_080858B8(0) + 15;
+        w->unk_B0[0] = func_080858B8(0) + 1;
+        w->unk_A8[3] = w->unk_B0[3] = func_080858B8(1);
+        w->unk_A8[2] = w->unk_B0[2] = 0;
+        w->unk_A8[1] = w->unk_B0[1] = 0;
+        func_080785B8(w, 0);
+        func_080785B8(w, 1);
+    }
+    w->unk_9C[2] = w->unk_9C[1] = w->unk_9C[0] = 0;
+    func_08076458();
+    func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+    ListPoolInit(&w->unk_54[0]);
+    ListPoolInit(&w->unk_54[1]);
+    ListPoolInit(&w->unk_54[2]);
+    ListPoolInit(&w->unk_54[3]);
+    func_0807682C(w, w->unk_B8);
+    gUnk_02034A9C = 0;
+    gUnk_02034AA0 = 0;
+    func_0807B410(w);
+    w->unk_C4[4] = 0;
+    if (gGameState.flags & 0x100) {
+        return;
+    }
+    if (gGameState.flags & 8) {
+        TaskCreate((TaskPool*)w, &gUnk_09EE8F30, 0);
+    }
+}
+#else
 INCLUDE_ASM("mode_eventselect/func_08076CB4.s");
+#endif
 
 s32 func_08076F4C(CardBattleWork* w) {
     if (func_080787B8(w, 0) == 0 && w->unk_B0 <= 1 && w->unk_B9 != 0) {
