@@ -78,8 +78,21 @@ void task_chgCardObj_0(ChgCardObjWork* work, ChgCardObjParam* param) {
     work->unk_04 = 0;
 }
 
-#ifdef NON_MATCHING
+static inline u8 ChgCardRotation(ChgCardObjWork* work, u8 rotation) {
+    u8 phase;
+
+    if (work->unk_2C < 0) {
+        phase = -rotation;
+    } else {
+        phase = rotation;
+    }
+    return phase;
+}
+
 u8 task_chgCardObj_1(ChgCardObjWork* work) {
+    u8 phase;
+    u8 zero;
+    u8 angleA;
     s32 x;
     s32 y;
     s32* p10;
@@ -98,13 +111,16 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
         *work->unk_08 += (work->unk_38 * work->unk_34) >> 8;
         *work->unk_0C += (work->unk_3C * work->unk_34) >> 8;
         *work->unk_18 += 32;
-        work->unk_2A += (64 - work->unk_2A) >> 4;
-        work->unk_2B = 0;
+        angleA = work->unk_2A + ((64 - work->unk_2A) >> 4);
+        zero = 0;
+        work->unk_2A = angleA;
+        work->unk_2B = zero;
         work->unk_40 = func_0805F588(work->unk_20 - *work->unk_08, work->unk_24 - *work->unk_0C);
         work->unk_34 -= work->unk_30;
         work->unk_30 += 2;
+        phase = ChgCardRotation(work, 128);
         p10 = work->unk_10;
-        *p10 = (-gSineTable[((work->unk_2B + 128) & 0xFF) + 64] * work->unk_2C) >> 8;
+        *p10 = (-gSineTable[((work->unk_2B + phase) & 0xFF) + 64] * work->unk_2C) >> 8;
         p14 = work->unk_14;
         *p14 = (-gSineTable[((work->unk_2A + 128) & 0xFF) + 64] * work->unk_2C) >> 8;
 
@@ -125,7 +141,7 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
 
             if (work->unk_40 <= 0x7FF) {
                 m4aSongNumStart(0x6A);
-                *work->unk_1C = 0;
+                *work->unk_1C = zero;
                 return 0;
             }
         }
@@ -133,9 +149,6 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("chara/task_chgCardObj_1.s");
-#endif
 
 void task_chgCardObj_2(void) {
 }
