@@ -83,7 +83,44 @@ u8 eu_08060C44(UnkModeTestWork* work) {
     return 0;
 }
 
-INCLUDE_ASM("mode_test/eu_08060C8C.s");
+void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
+    UnkModeTestBody* body;
+
+    body = &work->body;
+    if (args->side != 0) {
+        work->side = 1;
+        gBtlWork->status |= 0x200000;
+        work->actor = gBtlWork->actor;
+        work->tiles = gBtlWork->tiles;
+    } else {
+        work->side = args->side;
+        gUnk_02039B9C->status |= 0x200000;
+        work->actor = gUnk_02039B9C->actor;
+        work->tiles = gBtlWork->tiles;
+    }
+    work->card = args->card;
+    work->counter = 0;
+    work->velocity = 0;
+    if (work->actor->flags & 4) {
+        body->x = (gBtlWork->maxX + 48) * 256;
+        body->flags = 4;
+    } else {
+        body->x = (gBtlWork->minX - 48) * 256;
+        body->flags = 0;
+    }
+    body->y = work->actor->y;
+    body->z = 0;
+    body->ground = 0;
+    work->state = 0;
+    work->targetX = work->actor->x;
+    work->targetY = work->actor->y;
+    work->palette = LoadObjPalette(gUnk_09849A98, 32);
+    AnimInit(&work->anim, 0, 0);
+    func_08019068(gUnkEu_08896524, &work->anim, 0, 0, work->tiles);
+    func_080122AC(body->particles, 3, 10, 32);
+    TaskPoolInit(&work->tasks, 1);
+    TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
+}
 
 INCLUDE_ASM("mode_test/eu_08060DF8.s");
 
