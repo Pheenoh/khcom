@@ -13,12 +13,13 @@
 
 typedef struct MovieSub {
     s16 unk_00;
-    u8 unk_02[2];
+    s16 unk_02;
     u16* unk_04;
     u8 unk_08;
     u8 unk_09;
     u16 unk_0A;
-    u8 unk_0C[4];
+    u16 unk_0C;
+    u16 unk_0E;
 } MovieSub;
 
 extern vu16 gUnk_02034938;
@@ -28,15 +29,15 @@ extern volatile s16 gUnk_02034942;
 extern volatile s16 gUnk_02034944;
 extern volatile u16 gUnk_02034946;
 extern MovieSub* volatile gUnk_02034948;
-extern MovieSub* gUnk_0203494C;
+extern MovieSub* volatile gUnk_0203494C;
 extern void* gUnk_02034950;
 extern volatile s16 gUnk_02034954;
 extern volatile u16 gUnk_02034956;
-extern u16 gUnk_02034958;
-extern u16 gUnk_0203495A;
+extern volatile u16 gUnk_02034958;
+extern volatile u16 gUnk_0203495A;
 extern volatile s16 gUnk_0203495C;
 extern volatile u16 gUnk_0203495E;
-extern u16 gUnk_02034960;
+extern volatile u16 gUnk_02034960;
 extern void* gVBlankHandlerOverride;
 extern u8 gUnk_0815C3EC[];
 extern u8 gUnk_084E0F34[];
@@ -68,4 +69,13 @@ void func_0805EA90(void);
 s32 func_0805E93C(void);
 u16 func_0805E89C(u16* str);
 
-#endif /* GUARD_MODE_MOVIE_H */
+void MovieUpdate(void);
+s32 func_0806C490(void* str);
+s32 func_0806C81C(void* str, u16 tile);
+u8 func_0806CBAC(void* str, u16* widths, u16 tile);
+#ifndef VERSION_JP
+s16 func_0805E848(u16* widths, u16 count);
+#endif
+extern u16 gUnk_02034968[];
+extern u16 gUnk_020349B8[];
+#endif
