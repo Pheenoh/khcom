@@ -1182,14 +1182,13 @@ u16 func_0801AF1C(s32 a) {
     return 0x400;
 }
 
-#ifdef NON_MATCHING
-void func_0801AF4C(void) {
+void func_0801AF4C(BtlObj* actor) {
     BtlObj* p;
 
     gBtlWork->unk_068 |= 0x80000;
     gBtlWork->unk_068 |= 0x40000000;
     gBtlWork->unk_068 |= 0x200000000;
-    func_0801C830();
+    func_0801C830(actor);
     m4aMPlayFadeOut(gMPlayTable[gSongTable[3].ms].info, 12);
     func_08006120(2, 20);
     func_080063A8();
@@ -1201,9 +1200,6 @@ void func_0801AF4C(void) {
     }
     gBtlWork->unk_0EE = 0;
 }
-#else
-INCLUDE_ASM("battle_runtime/func_0801AF4C.s");
-#endif
 
 void func_0801B008(void) {
     gBtlWork->unk_068 &= ~0x80000;
