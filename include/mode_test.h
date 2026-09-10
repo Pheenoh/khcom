@@ -179,7 +179,9 @@ typedef struct UnkModeTestActor {
     u8 unk_80[0x5A];
     s16 minX;
     s16 maxX;
-    u8 unk_DE[0x36];
+    s16 minY;
+    s16 maxY;
+    u8 unk_E2[0x32];
     void* tiles;
 } UnkModeTestActor;
 
@@ -211,6 +213,12 @@ typedef struct UnkModeTestWork {
     s32 targetX;
     s32 targetY;
     s32 velocity;
+    s32 speed;
+    u8 bounce;
+    u8 unk_161[3];
+    s32 bob;
+    s32 animcounter;
+    s32 scale;
 } UnkModeTestWork;
 
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
@@ -226,6 +234,19 @@ extern TaskDesc gTaskDescBtlShadow;
 void func_08019068(void* resource, AnimState* anim, s32 a, s32 b, void* tiles);
 void func_080122AC(void* particles, s32 a, u16 b, u16 c);
 
+u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
+u16 GetRandom(void);
+u8 AnimIsFinished(AnimState* a);
+void ApproachValue(s32* value, s32 target, u16 steps);
+s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
+void func_0802F284(s32 a, s32 b, s32 c);
+void func_08012324(void* a, s32 x, s32 y, s32 z);
+void func_08012614(void* a, s32 b);
+u8 func_08012660(void* a, s32 b);
+void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a);
+void func_08014780(s32 x, s32 y, s32 z);
+void func_080147B8(u8 a);
+void func_0802F1E8(void);
 void func_08012304(void* particles);
 u16 func_0801AF1C(s32 y);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
