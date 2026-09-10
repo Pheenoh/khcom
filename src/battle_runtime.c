@@ -1307,10 +1307,26 @@ void func_0801B024(BtlObj* p) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     const UnkStruct_08133E5C* e;
-    u32 v;
+    enum EmyId {
+        EMY_ID_32 = 32,
+        EMY_ID_33 = 33,
+        EMY_ID_34 = 34,
+        EMY_ID_35 = 35,
+        EMY_ID_36 = 36,
+        EMY_ID_37 = 37,
+        EMY_ID_38 = 38,
+        EMY_ID_39 = 39,
+        EMY_ID_40 = 40,
+        EMY_ID_45 = 45,
+        EMY_ID_48 = 48,
+        EMY_ID_49 = 49,
+        EMY_ID_50 = 50,
+        EMY_ID_51 = 51,
+        EMY_ID_52 = 52,
+        EMY_ID_53 = 53
+    } v;
     s32 a;
     s32 b;
     s32 c;
@@ -1318,105 +1334,105 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     e = func_0800FB14(d->unk_00);
 
     if (e != 0) {
-        v = *(s32*)d;
+        v = d->unk_00;
 
         switch (v) {
-        case 45:
-        case 48:
-        case 49:
-        case 50:
-        case 51:
-        case 52:
-        case 53:
+        case EMY_ID_45:
+        case EMY_ID_48:
+        case EMY_ID_49:
+        case EMY_ID_50:
+        case EMY_ID_51:
+        case EMY_ID_52:
+        case EMY_ID_53:
             switch (gBtlWork->unk_10C) {
-        case 161:
-            p->unk_02E = 1120;
-            p->unk_030 = 5;
-            p->unk_0B4 = 2775;
-            break;
-        case 168:
-            p->unk_02E = 1120;
-            p->unk_030 = 5;
-            p->unk_0B4 = 3225;
-            break;
-        case 169:
-            p->unk_02E = 1120;
-            p->unk_030 = 8;
-            p->unk_0B4 = 5700;
-            break;
-        case 170:
-            p->unk_02E = 1680;
-            p->unk_030 = 10;
-            p->unk_0B4 = 6825;
-            break;
-        case 171:
-            p->unk_02E = 1120;
-            p->unk_030 = 5;
-            p->unk_0B4 = 1875;
-            break;
-        case 172:
-            p->unk_02E = 1680;
-            p->unk_030 = 10;
-            p->unk_0B4 = 5700;
-            break;
-        case 162:
-            p->unk_02E = 320;
-            p->unk_030 = 2;
-            p->unk_0B4 = 75;
-            break;
-        case 173:
-            p->unk_02E = 1680;
-            p->unk_030 = 15;
-            p->unk_0B4 = 6825;
-            break;
-        case 163:
-            p->unk_02E = 1120;
-            p->unk_030 = 5;
-            p->unk_0B4 = 2325;
-            break;
-        case 174:
-            p->unk_02E = 1680;
-            p->unk_030 = 15;
-            p->unk_0B4 = 6263;
-            break;
-        case 164:
-            p->unk_02E = 1120;
-            p->unk_030 = 15;
-            p->unk_0B4 = 4125;
-            break;
-        case 175:
-            p->unk_02E = 1120;
-            p->unk_030 = 20;
-            p->unk_0B4 = 5700;
-            break;
-        case 176:
-            p->unk_02E = 1120;
-            p->unk_030 = 3;
-            p->unk_0B4 = 975;
-            break;
-        case 166:
-            p->unk_02E = 400;
-            p->unk_030 = 3;
-            p->unk_0B4 = 133;
-            break;
-        case 177:
-            p->unk_02E = 2240;
-            p->unk_030 = 25;
-            p->unk_0B4 = 0;
-            break;
-        case 167:
-            p->unk_02E = 1680;
-            p->unk_030 = 15;
-            p->unk_0B4 = 6517;
-            break;
-        default:
-            p->unk_02E = 2240;
-            p->unk_030 = 27;
-            p->unk_0B4 = 13131;
-            break;
+            case 161:
+                p->unk_02E = 1120;
+                p->unk_030 = 5;
+                p->unk_0B4 = 2775;
+                break;
+            case 168:
+                p->unk_02E = 1120;
+                p->unk_030 = 5;
+                p->unk_0B4 = 3225;
+                break;
+            case 169:
+                p->unk_02E = 1120;
+                p->unk_030 = 8;
+                p->unk_0B4 = 5700;
+                break;
+            case 170:
+                p->unk_02E = 1680;
+                p->unk_030 = 10;
+                p->unk_0B4 = 6825;
+                break;
+            case 171:
+                p->unk_02E = 1120;
+                p->unk_030 = 5;
+                p->unk_0B4 = 1875;
+                break;
+            case 172:
+                p->unk_02E = 1680;
+                p->unk_030 = 10;
+                p->unk_0B4 = 5700;
+                break;
+            case 162:
+                p->unk_02E = 320;
+                p->unk_030 = 2;
+                p->unk_0B4 = 75;
+                break;
+            case 173:
+                p->unk_02E = 1680;
+                p->unk_030 = 15;
+                p->unk_0B4 = 6825;
+                break;
+            case 163:
+                p->unk_02E = 1120;
+                p->unk_030 = 5;
+                p->unk_0B4 = 2325;
+                break;
+            case 174:
+                p->unk_02E = 1680;
+                p->unk_030 = 15;
+                p->unk_0B4 = 6263;
+                break;
+            case 164:
+                p->unk_02E = 1120;
+                p->unk_030 = 15;
+                p->unk_0B4 = 4125;
+                break;
+            case 175:
+                p->unk_02E = 1120;
+                p->unk_030 = 20;
+                p->unk_0B4 = 5700;
+                break;
+            case 176:
+                p->unk_02E = 1120;
+                p->unk_030 = 3;
+                p->unk_0B4 = 975;
+                break;
+            case 166:
+                p->unk_02E = 400;
+                p->unk_030 = 3;
+                p->unk_0B4 = 133;
+                break;
+            case 177:
+                p->unk_02E = 2240;
+                p->unk_030 = 25;
+                p->unk_0B4 = 0;
+                break;
+            case 167:
+                p->unk_02E = 1680;
+                p->unk_030 = 15;
+                p->unk_0B4 = 6517;
+                break;
+            default:
+                p->unk_02E = 2240;
+                p->unk_030 = 27;
+                p->unk_0B4 = 13131;
+                break;
             }
             break;
-        case 37:
+        case EMY_ID_37:
             if (gGameState.flags & 8) {
                 p->unk_02E = 300;
                 p->unk_030 = 4;
@@ -1442,7 +1458,7 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
         p->unk_02E = d->unk_04;
         p->unk_030 = 0;
         p->unk_0B4 = 1;
-        v = *(s32*)d;
+        v = d->unk_00;
     }
     p->unk_0CE = 80;
     p->unk_0D0 = 32;
@@ -1478,17 +1494,29 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     p->unk_10C = 0;
     p->unk_104 = 0;
 
-    if (v <= 40 && v >= 32) {
+    switch (v) {
+    case EMY_ID_32:
+    case EMY_ID_33:
+    case EMY_ID_34:
+    case EMY_ID_35:
+    case EMY_ID_36:
+    case EMY_ID_37:
+    case EMY_ID_38:
+    case EMY_ID_39:
+    case EMY_ID_40:
         if (!(d->unk_0E & 1)) {
             func_080122AC(&p->unk_040, 8, d->unk_08, d->unk_06);
         }
         p->unk_034 |= 0xAC280000000;
         p->unk_034 |= 0x40000000;
-    } else if (!(d->unk_0E & 1)) {
-        if (d->unk_0E & 8) {
-            func_080122AC(&p->unk_040, 11, d->unk_08, d->unk_06);
-        } else {
-            func_080122AC(&p->unk_040, 3, d->unk_08, d->unk_06);
+        break;
+    default:
+        if (!(d->unk_0E & 1)) {
+            if (d->unk_0E & 8) {
+                func_080122AC(&p->unk_040, 11, d->unk_08, d->unk_06);
+            } else {
+                func_080122AC(&p->unk_040, 3, d->unk_08, d->unk_06);
+            }
         }
     }
     func_0801B024(p);
@@ -1500,9 +1528,6 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     func_08000D28(&p->unk_0B8, &gBtlWork->unk_080);
     gBtlWork->unk_0EE++;
 }
-#else
-INCLUDE_ASM("battle_runtime/func_0801B37C.s");
-#endif
 
 void func_0801B7D8(BtlObj* obj) {
     BtlObj* p = obj->unk_0DC;
