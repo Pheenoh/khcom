@@ -867,22 +867,17 @@ void func_080428E8(SmnTinkWork* work) {
         TaskCreate(&work->unk_020, gTaskDescSmnTinkeff, &work->unk_038);
     }
 }
-#ifdef NON_MATCHING
 u8 task_smn_tink_1(SmnTinkWork* work) {
     SmnBody* body;
-    BtlWork* obj;
     BtlWork* p;
     s32 x;
     s32 y;
     s32 z;
     s32 d;
-    s32 i;
     s32 t;
 
     body = &work->unk_038;
-    obj = work->unk_153 != 0 ? gBtlWork : gUnk_02039B9C;
-
-    if (obj->unk_068 & 0x40000000) {
+    if ((work->unk_153 != 0 ? gBtlWork->unk_068 : gUnk_02039B9C->unk_068) & 0x40000000) {
         return 0;
     }
 
@@ -907,14 +902,14 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
 
         ApproachValue(&work->unk_14C, 256, work->unk_14A);
 
-        if (work->unk_14A > 0) {
-            work->unk_148++;
-            work->unk_14A--;
-        } else {
+        if (work->unk_14A <= 0) {
             work->unk_034 = 2;
             work->unk_148 = 0;
             work->unk_154 = 1;
             m4aSongNumStart(0x24F);
+        } else {
+            work->unk_148++;
+            work->unk_14A--;
         }
         break;
     case 1:
@@ -967,10 +962,9 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         }
 
         p = work->unk_17C;
-        i = (u16)work->unk_148 * 4 & 0xFF;
-        x = p->unk_004 + gSineTable[i] * 32;
-        y = p->unk_008 - gSineTable[i + 0x40] * 16;
-        z = gSineTable[(u16)work->unk_148 * 2 & 0xFF] * 16 - 0x1E00 + p->unk_00C;
+        x = p->unk_004 + gSineTable[((u16)work->unk_148 * 4) & 0xFF] * 32;
+        y = p->unk_008 + gSineTable[(((u16)work->unk_148 * 4) & 0xFF) + 64] * -16;
+        z = (p->unk_00C - 0x1E00) + gSineTable[(u16)work->unk_148 * 2 & 0xFF] * 16;
 
         if (x < body->x) {
             body->flags |= 4;
@@ -1061,9 +1055,6 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
     work->unk_170++;
     return 1;
 }
-#else
-INCLUDE_ASM("smn/task_smn_tink_1.s");
-#endif
 
 void task_smn_tink_2(SmnTinkWork* work) {
     SmnBody* body;
