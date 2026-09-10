@@ -3183,7 +3183,6 @@ void task_emy_31_0(EmyWork* work, void* obj) {
     work->unk_150 = 7;
 }
 
-#ifdef NON_MATCHING
 u8 task_emy_31_1(Emy31Work* work) {
     Emy31Work* w;
     EmyActor* act;
@@ -3208,7 +3207,9 @@ u8 task_emy_31_1(Emy31Work* work) {
     }
 
     switch (work->base.unk_14C) {
-    case 18:
+    case 18: {
+        s32 x;
+        s32 y;
         work->base.unk_168 = 0;
 
         switch (w->unk_184) {
@@ -3229,12 +3230,15 @@ u8 task_emy_31_1(Emy31Work* work) {
             if (work->base.unk_154 == 0) {
                 AnimStart(&work->base.anim, 1, 0);
 
+                y = act->y;
                 if (act->flags & 4) {
-                    func_08012E44(1, act->x - 0x4000, act->y, act->z,
-                        act->x - 0xC800, act->y, 0, 1, 0xCF);
+                    x = act->x - 0xC800;
+                    func_08012E44(1, act->x - 0x4000, y, act->z,
+                        x, y, 0, 1, 0xCF);
                 } else {
-                    func_08012E44(1, act->x + 0x4000, act->y, act->z,
-                        act->x + 0xC800, act->y, 0, 0, 0xCF);
+                    x = act->x + 0xC800;
+                    func_08012E44(1, act->x + 0x4000, y, act->z,
+                        x, y, 0, 0, 0xCF);
                 }
             }
 
@@ -3264,7 +3268,10 @@ u8 task_emy_31_1(Emy31Work* work) {
             break;
         }
         break;
-    case 19:
+    }
+    case 19: {
+        s32 x;
+        s32 y;
         work->base.unk_168 = 0;
 
         switch (w->unk_184) {
@@ -3285,12 +3292,15 @@ u8 task_emy_31_1(Emy31Work* work) {
             if (work->base.unk_154 == 0) {
                 AnimStart(&work->base.anim, 1, 1);
 
+                y = act->y;
                 if (act->flags & 4) {
-                    func_08013308(1, act->x - 0x4600, act->y, act->z,
-                        act->x - 0x6400, act->y, 0, 1, 0xD0);
+                    x = act->x - 0x6400;
+                    func_08013308(1, act->x - 0x4600, y, act->z,
+                        x, y, 0, 1, 0xD0);
                 } else {
-                    func_08013308(1, act->x + 0x4600, act->y, act->z,
-                        act->x + 0x6400, act->y, 0, 0, 0xD0);
+                    x = act->x + 0x6400;
+                    func_08013308(1, act->x + 0x4600, y, act->z,
+                        x, y, 0, 0, 0xD0);
                 }
             }
 
@@ -3320,6 +3330,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             break;
         }
         break;
+    }
     case 20:
         work->base.unk_168 = 0;
 
@@ -3359,15 +3370,13 @@ u8 task_emy_31_1(Emy31Work* work) {
                     work->base.unk_156++;
                 }
 
-                if (func_080128EC()) {
-                    work->base.unk_154++;
-                } else {
+                if (!func_080128EC()) {
                     w->unk_184 = 2;
                     work->base.unk_154 = 0;
+                    break;
                 }
-            } else {
-                work->base.unk_154++;
             }
+            work->base.unk_154++;
             break;
         case 2:
             if (work->base.unk_154 == 0) {
@@ -3387,9 +3396,7 @@ u8 task_emy_31_1(Emy31Work* work) {
 
     return _0800CDF0(&work->base);
 }
-#else
-INCLUDE_ASM("emy/task_emy_31_1.s");
-#endif
+
 
 void task_emy_31_2(EmyWork* work) {
     func_0800DF30(work);
