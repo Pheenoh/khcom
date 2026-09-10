@@ -87,7 +87,48 @@ INCLUDE_ASM("mode_test/eu_08060C8C.s");
 
 INCLUDE_ASM("mode_test/eu_08060DF8.s");
 
-INCLUDE_ASM("mode_test/eu_08061588.s");
+void eu_08061588(UnkModeTestWork* work) {
+    UnkModeTestBody* body;
+    void* gfx;
+    u16 flags;
+    s16 sx;
+    s16 sy;
+    s32 affine;
+    s32 sclX;
+    s32 sclY;
+
+    body = &work->body;
+    gfx = AnimGetGfx(&work->anim);
+    flags = func_0801AF1C(body->y);
+
+    if (body->flags & 4) {
+        sclY = gBtlWork->scale;
+        sclX = sclY;
+    } else if (gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
+        sclX = sclY;
+        flags |= 1;
+    } else {
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
+    }
+
+    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+
+    if (gBtlWork->scale == 256) {
+        affine = 0;
+    } else if (gBtlWork->scale <= 255) {
+        affine = AllocObjAffine(0, sclX, sclY, 0);
+    } else {
+        affine = AllocObjAffine(0, sclX, sclY, 1);
+    }
+
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
+               (u16)(-4100 - ((body->y >> 8) * 4)));
+    body->depth = (-4100 - ((body->y >> 8) * 4)) | 2;
+    TaskPoolDraw(&work->tasks);
+}
+
 
 void eu_08061698(UnkModeTestWork* work) {
     UnkModeTestActor* actor;

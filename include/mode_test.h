@@ -215,6 +215,9 @@ typedef struct UnkModeTestWork {
 
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void func_08012304(void* particles);
+u16 func_0801AF1C(s32 y);
+void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
+s32 AllocObjAffine(s32 angle, s32 x, s32 y, s32 mode);
 extern UnkModeTestActor* gBtlWork;
 extern UnkModeTestActor* gUnk_02039B9C;
 
