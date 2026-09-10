@@ -3414,7 +3414,6 @@ void task_emy_37_0(Emy37Work* work, void* obj) {
     work->unk_184 = 0;
 }
 
-#ifdef NON_MATCHING
 u8 task_emy_37_1(Emy37Work* work) {
     Emy37Work* w;
     EmyActor* act;
@@ -3533,11 +3532,15 @@ u8 task_emy_37_1(Emy37Work* work) {
             s32 y;
             s32 dx;
             s32 dy;
+            s32 sample;
+            s32 offset;
 
             func_0801C700(act, &x, &y, 0);
             func_08019068(gUnk_0813E1B4, &w->base.anim, 5, 1, w->base.tiles);
-            dx = gSineTable[work->base.angle] * 70;
-            dx = x + dx;
+            sample = gSineTable[work->base.angle];
+            offset = 70;
+            offset *= sample;
+            dx = x + offset;
             dy = y + -gSineTable[work->base.angle + 64] * 35;
             dx -= act->x;
             dx >>= 4;
@@ -3673,9 +3676,7 @@ u8 task_emy_37_1(Emy37Work* work) {
 
     return _0800CDF0(&work->base);
 }
-#else
-INCLUDE_ASM("emy/task_emy_37_1.s");
-#endif
+
 
 void task_emy_37_2(Emy37Work* work) {
     Emy37Work* w;
