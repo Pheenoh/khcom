@@ -162,6 +162,36 @@ typedef struct UnkStruct_02034A1C {
     u32 unk_80;
 } UnkStruct_02034A1C;
 
+#ifdef VERSION_EU
+typedef struct UnkModeTestBody {
+    s32 unk_00;
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 ground;
+    u8 unk_14[0xFC];
+} UnkModeTestBody;
+
+typedef struct UnkModeTestWork {
+    TaskPool tasks;
+    void* actor;
+    void* tiles;
+    void* palette;
+    UnkModeTestBody body;
+    AnimState anim;
+    s32 state;
+    u8 side;
+    u8 card;
+    s16 counter;
+    s32 targetX;
+    s32 targetY;
+    s32 velocity;
+} UnkModeTestWork;
+
+u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
+
+#endif
+
 typedef struct LockonWork {
     void* tiles;
     void* palette;
