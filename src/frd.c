@@ -1446,7 +1446,6 @@ u8 task_frd_jack_1(FrdJackWork* work) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void task_frd_jack_2(FrdJackWork* work) {
     FrdBody* body;
     void* gfx;
@@ -1457,13 +1456,11 @@ void task_frd_jack_2(FrdJackWork* work) {
     s32 sclX;
     s32 sclY;
     u8 angle;
-    s32 mask;
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
     flags = func_0801AF1C(body->y);
     angle = work->unk_160;
-    mask = 0xFF;
 
     if (body->flags & 4) {
         sclY = gBtlWork->unk_024;
@@ -1490,19 +1487,16 @@ void task_frd_jack_2(FrdJackWork* work) {
     }
 
     if (body->flags & 4) {
-        sx = sx + (gSineTable[(angle + 128) & mask] * 5 >> 5);
+        sx = sx + (gSineTable[(u16)(angle + 128) & 0xFF] * 5 >> 5);
     } else {
-        sx = sx - (gSineTable[(angle + 128) & mask] * 5 >> 5);
+        sx = sx - (gSineTable[(u16)(angle + 128) & 0xFF] * 5 >> 5);
     }
 
-    sy = sy + (-gSineTable[((angle + 128) & mask) + 64] * 5 >> 5) - 40;
+    sy = sy + (-gSineTable[((u16)(angle + 128) & 0xFF) + 64] * 5 >> 5) - 40;
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags, -4100 - ((body->y >> 8) * 4));
     body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
-#else
-INCLUDE_ASM("frd/task_frd_jack_2.s");
-#endif
 
 void task_frd_jack_3(FrdJackWork* work) {
     BtlWork* obj;
