@@ -50,13 +50,13 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
-#ifdef NON_MATCHING
 u8 task_smn_cloud_1(SmnCloudWork* work) {
     SmnBody* body = &work->unk_038;
     BtlWork* owner;
-    BtlWork* target;
     s32 x;
     s32 dz;
+    s32 targetZ;
+    s32 pixelX;
     owner = work->unk_163 != 0 ? gBtlWork : gUnk_02039B9C;
     if (owner->unk_068 & 0x40000000) return 0;
     if (work->unk_034 == 4) func_0802F284(body->x, body->y, body->z + 0x2000);
@@ -116,7 +116,8 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             m4aSongNumStart(0x29C);
         } else work->unk_148++;
         break;
-    case 7:
+    case 7: {
+        BtlWork* target;
         if (work->unk_148 == 0) {
             target = func_08040D54(work);
             work->unk_14A = 8;
@@ -141,6 +142,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             work->unk_148 = 0;
         } else work->unk_148++;
         break;
+    }
     case 1:
         if (work->unk_148 == 0) {
             func_08019068(gUnk_0813E958, &work->anim, 0, 0, work->tiles);
@@ -163,9 +165,9 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                         m4aSongNumStart(0x20B);
                         func_08006120(2, 20);
                         if (body->flags & 4) {
-                            func_08019050(6, 0x133, body->x - 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
                         } else {
-                            func_08019050(6, 0x133, body->x + 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 0x133, body->x + 0x2000, body->y - 0x1800 + body->z);
                         }
                     }
                     break;
@@ -184,9 +186,9 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                         m4aSongNumStart(0x20C);
                         func_08006120(2, 20);
                         if (body->flags & 4) {
-                            func_08019050(6, 0x133, body->x - 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
                         } else {
-                            func_08019050(6, 0x133, body->x + 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 0x133, body->x + 0x2000, body->y - 0x1800 + body->z);
                         }
                     }
                     break;
@@ -202,9 +204,9 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                         m4aSongNumStart(0x20D);
                         func_08006120(2, 50);
                         if (body->flags & 4) {
-                            func_08019050(6, 512, body->x - 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 512, body->x - 0x2000, body->y - 0x1800 + body->z);
                         } else {
-                            func_08019050(6, 512, body->x + 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 512, body->x + 0x2000, body->y - 0x1800 + body->z);
                         }
                     }
                     break;
@@ -238,9 +240,9 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                         m4aSongNumStart(0x20B);
                         func_08006120(2, 20);
                         if (body->flags & 4) {
-                            func_08019050(6, 0x133, body->x - 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
                         } else {
-                            func_08019050(6, 0x133, body->x + 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 0x133, body->x + 0x2000, body->y - 0x1800 + body->z);
                         }
                     }
                     break;
@@ -259,9 +261,9 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                         m4aSongNumStart(0x20C);
                         func_08006120(2, 20);
                         if (body->flags & 4) {
-                            func_08019050(6, 0x133, body->x - 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
                         } else {
-                            func_08019050(6, 0x133, body->x + 0x2000, body->y + body->z - 0x1800);
+                            func_08019050(6, 0x133, body->x + 0x2000, body->y - 0x1800 + body->z);
                         }
                     }
                     break;
@@ -278,20 +280,23 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             func_08019068(gUnk_0813E958, &work->anim, 2, 1, work->tiles);
             work->unk_14C = 0;
         }
-        if (body->flags & 4) x = (gBtlWork->unk_0DA + 50) * 256;
-        else x = (gBtlWork->unk_0DC - 50) * 256;
+        if (body->flags & 4) pixelX = gBtlWork->unk_0DA + 50;
+        else pixelX = gBtlWork->unk_0DC - 50;
+        x = pixelX * 256;
+        targetZ = -0xC800;
         body->x += (x - body->x) >> 4;
-        dz = (-0xC800 - body->z) >> 3;
+        dz = (targetZ - body->z) >> 3;
         if (dz > work->unk_14C) dz = work->unk_14C;
         if (dz < -work->unk_14C) dz = -work->unk_14C;
         body->z += dz;
         work->unk_14C += 128;
-        if (abs(body->z + 0xC800) < 0x1000) {
+        if ((body->z - targetZ >= 0 ? body->z - targetZ : targetZ - body->z) < 0x1000) {
             work->unk_034 = 4;
             work->unk_148 = 0;
         } else work->unk_148++;
         break;
-    case 4:
+    case 4: {
+        BtlWork* target;
         if (work->unk_148 == 0) {
             target = func_08040C8C(work);
             work->unk_168 = target;
@@ -363,6 +368,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         } else work->unk_148++;
         break;
     }
+    }
     body->unk_10 = 0;
     func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
     if (body->z > body->unk_10) body->z = body->unk_10;
@@ -370,9 +376,6 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
     TaskPoolUpdate(&work->unk_020);
     return 1;
 }
-#else
-INCLUDE_ASM("smn/task_smn_cloud_1.s");
-#endif
 
 void task_smn_cloud_2(SmnCloudWork* work) {
     SmnBody* body;
