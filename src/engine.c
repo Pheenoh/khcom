@@ -1610,19 +1610,24 @@ u32 func_080046B4(void) {
     return q->unk_10AC;
 }
 
-#ifdef NON_MATCHING
 void FlushDma3Queue(void) {
     Dma3Queue* q;
     Dma3Request* req;
     Dma3Blit* blits;
     Dma3Fill* fills;
     Dma3Fill* f;
+    s32 sx;
+    s32 dx;
+    s32 sy;
+    s32 dy;
     Dma3Pending* pend;
     void (**cb)(void);
     u16 n;
     s32 i;
+    s32 mask;
     s32 row;
     s32 col;
+    vu16 zero;
 #ifdef VERSION_EU
     Dma3Request* compressed;
 #endif
@@ -1649,7 +1654,7 @@ void FlushDma3Queue(void) {
         vu32* dma = (vu32*)0x040000D4;
         dma[0] = (u32)req[i].src;
         dma[1] = (u32)req[i].dst;
-        dma[2] = 0x80000000 | (req[i].size >> 1);
+        dma[2] = (req[i].size / 2) | 0x80000000;
         dma[2];
         gDma3Requests->unk_10AC += req[i].size;
     }
@@ -1664,19 +1669,18 @@ void FlushDma3Queue(void) {
     n = gDma3Requests->unk_10A4;
 
     for (i = 0; i < n; i++) {
+        mask = 31;
         if (fills[i].unk_0A != 0) {
-            row = 0;
-            for (; row < 32; row++) {
+            for (row = 0; row < 32; row++) {
                 f = &fills[i];
-                ((u16*)f->unk_04)[(((f->unk_09 + row) & 31) << 5) + f->unk_08] = ((u16*)f->unk_00)[row];
+                dy = ((f->unk_09 + row) & mask) << 5;
+                ((u16*)f->unk_04)[dy + f->unk_08] = ((u16*)f->unk_00)[row];
             }
         } else {
-            col = 0;
-            for (; col < 32; col++) {
-                s32 destIndex;
+            for (col = 0; col < 32; col++) {
                 f = &fills[i];
-                destIndex = (f->unk_08 + col) & 31;
-                ((u16*)f->unk_04)[(f->unk_09 << 5) + destIndex] = ((u16*)f->unk_00)[col];
+                sx = (f->unk_08 + col) & mask;
+                ((u16*)f->unk_04)[(f->unk_09 << 5) + sx] = ((u16*)f->unk_00)[col];
             }
         }
     }
@@ -1685,13 +1689,13 @@ void FlushDma3Queue(void) {
 
     for (i = 0; i < n; i++) {
         for (row = 0; row < blits[i].unk_0D; row++) {
-            s32 sy = ((blits[i].unk_09 + row) & 31) << 5;
-            s32 dy = ((blits[i].unk_0B + row) & 31) << 5;
+            sy = ((blits[i].unk_09 + row) & 31) << 5;
+            dy = ((blits[i].unk_0B + row) & 31) << 5;
 
             for (col = 0; col < blits[i].unk_0C; col++) {
-                s32 sourceIndex = (blits[i].unk_08 + col) & 31;
-                s32 destIndex = (blits[i].unk_0A + col) & 31;
-                ((u16*)blits[i].unk_04)[destIndex + dy] = ((u16*)blits[i].unk_00)[sourceIndex + sy];
+                sx = (blits[i].unk_08 + col) & 31;
+                dx = (blits[i].unk_0A + col) & 31;
+                ((u16*)blits[i].unk_04)[dx + dy] = ((u16*)blits[i].unk_00)[sx + sy];
             }
         }
     }
@@ -1699,19 +1703,17 @@ void FlushDma3Queue(void) {
     n = gDma3Requests->count;
 
     for (i = 0; i < n; i++) {
-        vu16 zero = 0;
-        vu32* dma = (vu32*)0x040000D4;
+        vu32* dma;
+        zero = 0;
+        dma = (vu32*)0x040000D4;
         dma[0] = (u32)&zero;
         dma[1] = (u32)pend[i].unk_00;
-        dma[2] = 0x81000000 | (pend[i].unk_04 >> 1);
+        dma[2] = (pend[i].unk_04 >> 1) | 0x81000000;
         dma[2];
         gDma3Requests->unk_10AC += pend[i].unk_04;
     }
     gDma3Requests->count = 0;
 }
-#else
-INCLUDE_ASM("engine/FlushDma3Queue.s");
-#endif
 #ifdef NON_MATCHING
 void func_08004938(void) {
     Dma3Queue* q;
