@@ -1385,7 +1385,8 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
     u8 i;
     u8 len;
     u8 j;
-    u8 idx;
+    s16 idx;
+    u8 count;
 
     idx = 0;
 
@@ -1408,19 +1409,20 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
         len = 16;
     }
 
-    for (i = 0, j = 0; i < len; i++) {
-        u8 c = s[i];
-
-        if ((u8)(c - 48) <= 9) {
-            idx = c - 47;
+    i = 0;
+    j = 0;
+    count = len;
+    for (; i < count; i++) {
+        if ((u8)(s[i] - 48) <= 9) {
+            idx = (u8)(s[i] + 209);
         }
 
-        if ((u8)(c - 65) <= 25) {
-            idx = c - 54;
+        if ((u8)(s[i] - 65) <= 25) {
+            idx = (u8)(s[i] + 202);
         }
 
-        if ((u8)(c - 97) <= 25) {
-            idx = c - 60;
+        if ((u8)(s[i] - 97) <= 25) {
+            idx = (u8)(s[i] + 196);
         }
 
         if (gUnk_02034A80[slot].unk_08[j] != 0) {
