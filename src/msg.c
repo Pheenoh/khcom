@@ -1668,21 +1668,24 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
 #ifndef VERSION_EU
 #ifdef NON_MATCHING
 void func_08064624(void) {
+    u8* screen;
     u8 n;
-    u8 k;
+    u16* src;
+    u8* dst;
     u8 tx;
     u8 ty;
     u8 sx;
+    u8 h;
+    u16 glyph;
+    u16* secondRowTile;
+    u8 k;
     u8 sy;
     u8 y;
     u8 yy;
-    s32 glyph;
-    s32 h;
-    s32 pal;
-    u8* dst;
-    u8* screen;
-    u16* src;
-
+    u8 pal;
+    u32 cur;
+    u32 pix;
+    s32 tileX2;
     for (n = 0; n < 10; n++) {
         if (gUnk_02034A8C[n].unk_25 != 1) {
             continue;
@@ -1704,16 +1707,13 @@ void func_08064624(void) {
                 src = (u16*)&gUnk_090AB5B2[((u16*)gUnk_09EEB204[glyph])[3] * 32];
 
                 for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
-                    u32 cur;
-                    u32 pix;
-
                     if (glyph == 0xFFFF) {
                         cur = 0;
                         pix = 0;
                     } else {
                         cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024);
                         pix = src[(yy & 15) + (yy >> 4) * 32] |
-                              (src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
+                              ((u32)src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
                     }
                     *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
 
@@ -1722,7 +1722,9 @@ void func_08064624(void) {
                     }
                 }
 
+                tileX2 = tx + 2;
                 *(u16*)(screen + ty * 64 + tx * 2) = (tx + 1 + ty * 32) | (pal << 12);
+                secondRowTile = (u16*)(screen + (ty + 1) * 64 + tx * 2 + 2);
                 *(u16*)(screen + (ty + 1) * 64 + tx * 2) = (tx + 1 + (ty + 1) * 32) | (pal << 12);
 
                 if (sy != 0) {
@@ -1730,30 +1732,27 @@ void func_08064624(void) {
                 }
 
                 if (sx != 0) {
-                    *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tx + 2 + ty * 32) | (pal << 12);
-                    *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 1) * 32) | (pal << 12);
+                    *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tileX2 + ty * 32) | (pal << 12);
+                    *secondRowTile = (tileX2 + (ty + 1) * 32) | (pal << 12);
 
                     if (sy != 0) {
-                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 2) * 32) | (pal << 12);
+                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tileX2 + (ty + 2) * 32) | (pal << 12);
                     }
                 }
 
                 for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
-                    u32 cur;
-                    u32 pix;
-
                     if (glyph == 0xFFFF) {
                         cur = 0;
                         pix = 0;
                     } else {
                         cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32);
                         pix = src[(yy & 15) + (yy >> 4) * 32 + 16] |
-                              (src[(yy & 15) + (yy >> 4) * 32 + 17] << 16);
+                              ((u32)src[(yy & 15) + (yy >> 4) * 32 + 17] << 16);
                     }
                     *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = cur | (pix << (sx * 4));
 
                     if (sy != 0) {
-                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 2) * 32) | (pal << 12);
+                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tileX2 + (ty + 2) * 32) | (pal << 12);
                     }
 
                     if (sx != 0) {
@@ -1767,8 +1766,8 @@ void func_08064624(void) {
                     }
                 }
 
-                *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tx + 2 + ty * 32) | (pal << 12);
-                *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 1) * 32) | (pal << 12);
+                *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tileX2 + ty * 32) | (pal << 12);
+                *secondRowTile = (tileX2 + (ty + 1) * 32) | (pal << 12);
 
                 if (sx != 0) {
                     *(u16*)(screen + ty * 64 + tx * 2 + 4) = (tx + 3 + ty * 32) | (pal << 12);
@@ -1788,16 +1787,13 @@ void func_08064624(void) {
                 src = (u16*)&gUnk_090AA506[((u16*)gUnk_09EEB188[glyph])[3] * 32];
 
                 for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
-                    u32 cur;
-                    u32 pix;
-
                     if (glyph == 0xFFFF) {
                         cur = 0;
                         pix = 0;
                     } else {
                         cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024);
                         pix = src[(yy & 15) + (yy >> 4) * 32] |
-                              (src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
+                              ((u32)src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
                     }
                     *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
 
@@ -1806,6 +1802,7 @@ void func_08064624(void) {
                     }
                 }
 
+                tileX2 = tx + 2;
                 *(u16*)(screen + ty * 64 + tx * 2) = (tx + 1 + ty * 32) | (pal << 12);
                 *(u16*)(screen + (ty + 1) * 64 + tx * 2) = (tx + 1 + (ty + 1) * 32) | (pal << 12);
 
@@ -1814,11 +1811,11 @@ void func_08064624(void) {
                 }
 
                 if (sx != 0) {
-                    *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tx + 2 + ty * 32) | (pal << 12);
-                    *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 1) * 32) | (pal << 12);
+                    *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tileX2 + ty * 32) | (pal << 12);
+                    *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 2) = (tileX2 + (ty + 1) * 32) | (pal << 12);
 
                     if (sy != 0) {
-                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tx + 2 + (ty + 2) * 32) | (pal << 12);
+                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tileX2 + (ty + 2) * 32) | (pal << 12);
                     }
                 }
             }
