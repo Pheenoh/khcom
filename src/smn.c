@@ -2520,26 +2520,25 @@ u8 func_0804544C(SmnFrdWork* work) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 void func_08045494(SmnBody* body, u8 a, s16 b, s16 c) {
     s32 x;
     s32 y;
     s32 z;
     s32 w;
     s32 t;
-    s32 p;
-    s32 q;
-    s32 r;
+    s16 p;
+    s16 q;
+    s16 r;
 
     y = body->y;
-    z = body->z - (c << 8);
+    z = body->z - (c * 256);
     w = 0x180;
 
     if (body->flags & 4) {
-        x = body->x + (b << 8);
+        x = body->x + (b * 256);
         t = -0x180;
     } else {
-        x = body->x - (b << 8);
+        x = body->x - (b * 256);
         t = w;
     }
 
@@ -2562,6 +2561,3 @@ void func_08045494(SmnBody* body, u8 a, s16 b, s16 c) {
         }
     }
 }
-#else
-INCLUDE_ASM("smn/func_08045494.s");
-#endif
