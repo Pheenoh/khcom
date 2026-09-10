@@ -1264,7 +1264,493 @@ s32 func_08076F4C(CardBattleWork* w) {
     return 0;
 }
 
+#ifdef NON_MATCHING
+void* memset(void* dest, int value, unsigned long count);
+extern u32 gUnk_02034A9C;
+extern u32 gUnk_02034AA0;
+extern UnkStruct_02034AAC* gUnk_02034A98;
+extern u16 gUnk_09033FC8[];
+void ApproachValue(s32* value, s32 target, u16 frames);
+void func_0807A620(void* work);
+void func_0807B378(void* work);
+void func_080788CC(void* work, u8 slot);
+void func_08078FFC(void* work, u8 slot);
+void func_08078E34(void* work, u8 slot, u8 mode);
+s32 func_08079600(void* work);
+s32 func_08079B3C(void* work);
+s32 func_08079ECC(void* work);
+s32 func_0807A188(void* work);
+void func_0807ABC8(void* work);
+void func_0807B16C(void* work);
+void func_0807AF40(void* work);
+void func_0807B728(void* work);
+void func_0807B7A4(void* work);
+void func_0807B81C(void* work);
+void func_0807B894(void* work);
+void func_0807B910(void* work);
+void func_0807B98C(void* work);
+void func_0807B9EC(void* work);
+void func_0807B6F4(void);
+void func_080789E4(void* work);
+void func_08078BB4(void* work);
+u8 func_080782AC(UnkStruct_02034AAC** cards, u8 count);
+u16 func_08006390(void);
+void func_08006290(s32 a, u16 b, u16 c);
+s32 func_080AC5E8(void* cards, u8 count, u8 kind, UnkStruct_080ABA80* data, u8* flag);
+s32 func_080AD144(void* cards, u8 count, u8 kind, UnkStruct_080ABA80* data, u8* flag, void* arg);
+s32 func_080AE28C(void* cards, void* output, u8 count);
+void func_080991CC(void* pool, u8* slot, void* count, u8* state, u8 mode);
+
+typedef struct {
+    u32 slot : 8;
+    u32 mode : 8;
+    u32 unk_02 : 16;
+    u8* state;
+} EventReloadArgs;
+
+typedef struct {
+    u8 unk_00[0x2C];
+    s16 unk_2C;
+} EventBattleActor;
+
+s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
+    UnkStruct_080ABA80 data;
+    UnkStruct_080ABA80 cards;
+    u16 output[3];
+    u8 flag;
+    u8 i;
+    u8 found;
+    s32 position;
+    u16 result;
+    s32 kind;
+    EventReloadArgs args;
+    EventBattleActor* actor;
+
+    if (gBtlWork->unk_0A0 == 4) {
+        if (gBtlWork->unk_068 & 0x1000000) {
+            gBtlWork->unk_068 &= ~0x1000000;
+        }
+        return 0;
+    }
+    if (w->unk_C4[3] != 0) {
+        position = w->unk_A4 * 256;
+        ApproachValue(&position, (s16)gUnk_09033FC8[w->unk_B9 - 1] * 256, w->unk_C4[3]);
+        w->unk_A4 = position >> 8;
+        w->unk_C4[3]--;
+    }
+    if (w->unk_C9 == 0) {
+        if ((gUnk_02034A98->unk_78 & 0x1000000) && (gUnk_02034A98->unk_78 & 0x4000000)) {
+            if (gBtlWork->unk_0F4 == 9) {
+                func_0807A620(w);
+                TaskPoolUpdate((TaskPool*)w);
+                if (gBtlWork->unk_0F4 != 25) {
+                    func_0807B378(w);
+                    if (gBtlWork->unk_0F4 == 10) {
+                        w->unk_9C[w->unk_B8] -= 2;
+                        if ((s16)w->unk_9C[w->unk_B8] < 0) {
+                            w->unk_9C[w->unk_B8] = 0;
+                        }
+                    }
+                }
+                gUnk_02039DD4->unk_0FC = w->unk_9C[w->unk_B8];
+                gUnk_02039DD4->unk_0F4 = 0;
+                gUnk_02039DD4->unk_100 = 4;
+                func_08078914((UnkStruct_08078754*)w, 0);
+                w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+                w->unk_94[0] = 0;
+                func_0807682C(w, 0);
+                func_0807BB04();
+            } else {
+                gBtlWork->unk_068 |= 0x80000000LL;
+                func_0807A620(w);
+                if (gBtlWork->unk_0F4 != 25) {
+                    func_0807B378(w);
+                    if (gBtlWork->unk_0F4 == 10) {
+                        w->unk_9C[w->unk_B8] -= 2;
+                        if ((s16)w->unk_9C[w->unk_B8] < 0) {
+                            w->unk_9C[w->unk_B8] = 0;
+                        }
+                    }
+                }
+                gUnk_02039DD4->unk_0FC = w->unk_9C[w->unk_B8];
+                gUnk_02039DD4->unk_0F4 = 0;
+                gUnk_02039DD4->unk_100 = 4;
+                func_080788CC(w, 0);
+                w->unk_94[w->unk_B8] = 0;
+                w->unk_B0[w->unk_B8] = 0;
+                w->unk_C0[w->unk_B8] = 1;
+                gUnk_02034A98 = 0;
+                gUnk_02034A9C = 0;
+            }
+        }
+        switch (gUnk_02034A9C) {
+        case 0:
+            break;
+        case 1:
+            gUnk_02034A9C = 0;
+            if (w->unk_B0[w->unk_B8] > 2) {
+                if (gUnk_02034A98->unk_78 & 0x40) {
+                    func_08078FFC(w, w->unk_B8);
+                }
+            } else if (w->unk_B0[w->unk_B8] > 1 && (gUnk_02034A98->unk_78 & 0x40)) {
+                func_08078D98((u8*)w, w->unk_B8, 4);
+            }
+            break;
+        case 2:
+            gUnk_02034A9C = 0;
+            if (w->unk_B0[w->unk_B8] > 2) {
+                if (gUnk_02034A98->unk_78 & 0x40) {
+                    func_08078E34(w, w->unk_B8, 4);
+                }
+            } else if (w->unk_B0[w->unk_B8] > 1 && (gUnk_02034A98->unk_78 & 0x40)) {
+                func_08078D98((u8*)w, w->unk_B8, 4);
+            }
+            break;
+        case 3:
+            gUnk_02034A9C = 0;
+            if (gUnk_02034A98->unk_48->unk_2A != 3) {
+                if (!(gUnk_02034A98->unk_78 & 0x100000)) {
+                    if (w->unk_C0[w->unk_B8] == 0) {
+                        if (gUnk_02034A98->unk_48->unk_1E & 0x10) {
+                            func_08079ECC(w);
+                        } else if (!(gUnk_02034A98->unk_78 & 2)) {
+                            if (func_0807B60C() != 0) {
+                                func_08079600(w);
+                            } else if (gUnk_02034A98->unk_78 & 0x20) {
+                                m4aSongNumStart(105);
+                            }
+                        } else if (gUnk_02034A98->unk_78 & 0x20) {
+                            m4aSongNumStart(105);
+                        }
+                    }
+                } else if (gGameState.flags & 8) {
+                    func_0807A620(w);
+                    gUnk_02034A98 = 0;
+                    gBtlWork->unk_068 |= 0x80000000LL;
+                    w->unk_B0[w->unk_B8] = 0;
+                    w->unk_C0[w->unk_B8] = 1;
+                }
+            } else if (!(gUnk_02034A98->unk_78 & 0x100000)) {
+                func_08079B3C(w);
+            } else if (gGameState.flags & 8) {
+                func_0807A620(w);
+                gUnk_02034A98 = 0;
+                gBtlWork->unk_068 |= 0x80000000LL;
+                w->unk_B0[w->unk_B8] = 0;
+                w->unk_C0[w->unk_B8] = 1;
+            }
+            w->unk_C4[4] = 1;
+            break;
+        case 4:
+            gUnk_02034A9C = 0;
+            if (!(gUnk_02034A98->unk_78 & 0x100000)) {
+                if (w->unk_B9 == 3) {
+                    func_0807ABC8(w);
+                } else if (gUnk_02034A98->unk_48->unk_2A == 3) {
+                    m4aSongNumStart(105);
+                } else if (w->unk_C0[w->unk_B8] == 0) {
+                    if (!(gUnk_02034A98->unk_78 & 2)) {
+                        if (func_0807B60C() != 0) {
+                            if (w->unk_B0[w->unk_B8] > 0 && w->unk_B9 <= 2 && gUnk_02039DD4->unk_0E1 == 0) {
+                                func_0807A188(w);
+                            }
+                        } else if (gUnk_02034A98->unk_78 & 0x20) {
+                            m4aSongNumStart(105);
+                        }
+                    } else if (gUnk_02034A98->unk_78 & 0x20) {
+                        m4aSongNumStart(105);
+                    }
+                }
+            } else if (w->unk_B9 != 0) {
+                func_0807ABC8(w);
+            } else {
+                m4aSongNumStart(105);
+            }
+            w->unk_C4[4] = 1;
+            break;
+        case 5:
+            gUnk_02034A9C = 0;
+            if (w->unk_B9 != 0) {
+                func_0807ABC8(w);
+            } else if (!(gBtlWork->unk_068 & 0x80)) {
+                m4aSongNumStart(105);
+            }
+            w->unk_C4[4] = 1;
+            break;
+        case 6:
+            gUnk_02034A9C = 0;
+            func_0807A6C8(w);
+            break;
+        case 7:
+            w->unk_BC[w->unk_B8] = 0;
+            w->unk_C4[0] = 0;
+            func_0807A75C(w);
+            break;
+        case 8:
+            gUnk_02034A9C = 0;
+            break;
+        case 9:
+            gUnk_02034A9C = 0;
+            func_0807B16C(w);
+            w->unk_C4[4] = 1;
+            break;
+        case 10:
+            gUnk_02034A9C = 0;
+            func_0807AF40(w);
+            w->unk_C4[4] = 1;
+            break;
+        case 11:
+        case 12:
+        case 13:
+            if (gUnk_02034A9C == 11) {
+                w->unk_A6 = 60;
+            } else if (gUnk_02034A9C == 12) {
+                w->unk_A6 = 180;
+            } else {
+                w->unk_A6 = 300;
+            }
+            gUnk_02034A9C = 0;
+            SetTaskUpdate(task, (u32)func_0807B578);
+            break;
+        default:
+            gUnk_02034A9C = 0;
+            break;
+        }
+        switch (gUnk_02034AA0) {
+        case 14:
+        case 15:
+        case 16:
+        case 20:
+            kind = gUnk_02034AA0;
+            gUnk_02034AA0 = 0;
+            if (kind == 20) {
+                func_0807B9EC(w);
+                if (w->unk_B8 == 0) {
+                    w->unk_9C[0] = 0;
+                }
+            }
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+            }
+            gUnk_02034A98 = 0;
+            if (kind == 14) {
+                gBtlWork->unk_068 |= 0x80000000LL;
+                w->unk_B0[0] = 0;
+                w->unk_C0[0] = 1;
+            }
+            m4aSongNumStart(202);
+            if (func_08006390() == 0) {
+                func_08006290(2, 16, 20);
+            }
+            if (kind != 14) {
+                gBtlWork->unk_068 |= 0x80000000LL;
+                w->unk_B0[0] = 0;
+                w->unk_C0[0] = 1;
+            }
+            break;
+        case 17:
+        case 18:
+        case 19:
+        case 21:
+        case 22:
+        case 23:
+        case 24:
+            kind = gUnk_02034AA0;
+            gUnk_02034AA0 = 0;
+            switch (kind) {
+            case 17: func_0807B728(w); break;
+            case 18: func_0807B7A4(w); break;
+            case 19: func_0807B81C(w); break;
+            case 21: func_0807B894(w); break;
+            case 22: func_0807B910(w); break;
+            case 23:
+            case 24: func_0807B98C(w); break;
+            }
+            if (kind == 19 || kind == 22 || kind == 24) {
+                w->unk_9C[0] = 0;
+                func_0807B6F4();
+            }
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+            }
+            TaskPoolUpdate((TaskPool*)w);
+            func_080788CC(w, 0);
+            if (kind == 17 || kind == 18 || kind == 21) {
+                w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+                w->unk_94[0] = 0;
+            } else {
+                w->unk_94[0] = 0;
+                w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+            }
+            func_0807682C(w, 0);
+#ifdef VERSION_EU
+            if (w->unk_BC[w->unk_B8] == 0) {
+                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+            }
+#endif
+            func_0807BB04();
+            break;
+        default:
+            gUnk_02034AA0 = 0;
+            break;
+        }
+        if (gUnk_02039DD4->unk_0B8 != 950 && w->unk_C4[4] == 0 && w->unk_C0[w->unk_B8] == 0) {
+            gBtlWork->unk_068 |= 0x20000000000LL;
+            func_08078BB4(w);
+        }
+        if (gUnk_02039DD4->unk_0BC != 950 && w->unk_C4[4] == 0 && w->unk_C0[w->unk_B8] == 0) {
+            func_08078BB4(w);
+        }
+        if (w->unk_C0[w->unk_B8] != 0) {
+            if (gUnk_02034A98 != 0) {
+                if (gUnk_02034A98->unk_78 & 0x4000000) {
+                    gUnk_02034A98->unk_78 |= 0x4000;
+                    func_080789E4(w);
+                    w->unk_C0[w->unk_B8] = 0;
+                    w->unk_C4[0] = 1;
+                    SetTaskUpdate(task, (u32)func_08077F44);
+                    TaskPoolUpdate((TaskPool*)w);
+                    TaskPoolUpdate(&gUnk_02039DD4->unk_09C);
+                    args.slot = w->unk_B8;
+                    args.state = &w->unk_C4[0];
+                    args.mode = 1;
+                    TaskCreate((TaskPool*)w, &gUnk_09EE7720[3], &args);
+                    return 1;
+                }
+            } else {
+                func_080789E4(w);
+                w->unk_C0[w->unk_B8] = 0;
+                SetTaskUpdate(task, (u32)func_08077F44);
+                TaskPoolUpdate((TaskPool*)w);
+                TaskPoolUpdate(&gUnk_02039DD4->unk_09C);
+                return 1;
+            }
+        } else if (gUnk_02034A98 != 0 && (gUnk_02034A98->unk_78 & 0x42) == 0x42 && func_080787B8((CardBattleWork*)w, w->unk_B8) != 0) {
+            w->unk_C0[w->unk_B8] = 1;
+            gUnk_02034A98->unk_A1 = 7;
+            actor = (EventBattleActor*)gBtlWork->unk_07C;
+            if (actor->unk_2C > 3) {
+                actor->unk_2C -= 2;
+            }
+            gBtlWork->unk_068 |= 0x80000000LL;
+            if (gBtlWork->unk_0F4 != 25) {
+                func_0807B378(w);
+                if (gBtlWork->unk_0F4 == 10) {
+                    w->unk_9C[w->unk_B8] -= 2;
+                    if ((s16)w->unk_9C[w->unk_B8] < 0) {
+                        w->unk_9C[w->unk_B8] = 0;
+                    }
+                }
+            }
+        }
+        if (w->unk_C4[1] == 0 && func_080782AC(w->unk_28, w->unk_B9) != 0) {
+            data = gUnk_09033FD0;
+            if (!(gBtlWork->unk_068 & 0x4000)) {
+                result = func_080AC5E8(w->unk_28, w->unk_B9, w->unk_BA, &data, &flag);
+            } else {
+                result = func_080AD144(w->unk_28, w->unk_B9, w->unk_BA, &data, &flag, 0);
+            }
+            if (result != 108) {
+                gUnk_02039DD4->unk_0C4 = result;
+                if (result <= 105) {
+                    if (result != 107) {
+                        for (i = 0; i < w->unk_B9; i++) {
+                            w->unk_28[i]->unk_78 |= 0x10000000;
+                        }
+                        if (gUnk_02039DD4->unk_0E3 == 0) {
+                            TaskCreate((TaskPool*)w, &gUnk_09EE77BC[24], 0);
+                            gUnk_02039DD4->unk_0E3 = 1;
+                        }
+                    } else {
+                        for (i = 0; i < w->unk_B9; i++) {
+                            w->unk_28[i]->unk_78 |= 0x10000000;
+                        }
+                        if (gUnk_02039DD4->unk_0E3 == 0) {
+                            TaskCreate((TaskPool*)w, &gUnk_09EE77BC[24], &data);
+                            gUnk_02039DD4->unk_0E3 = 1;
+                        }
+                    }
+                } else if (w->unk_B9 == 3) {
+                    cards = gUnk_09033FD0;
+                    memset(output, 0, sizeof(output));
+                    found = 0;
+                    for (i = 0; i < w->unk_B9; i++) {
+                        cards.unk_00[i] = w->unk_28[i]->unk_48->unk_28;
+                    }
+                    kind = func_080AE28C(&cards, output, w->unk_B9);
+                    switch (kind) {
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 11:
+                    case 15:
+                    case 17:
+                    case 19:
+                    case 21:
+                    case 23:
+                    case 25:
+                    case 27:
+                    case 29:
+                    case 31:
+                    case 33:
+                    case 35:
+                    case 37:
+                    case 39:
+                    case 41:
+                    case 43:
+                    case 44:
+                        gUnk_02039DD4->unk_0C4 = kind;
+                        found = 1;
+                        break;
+                    }
+                    if (found == 0) {
+                        for (i = 0; i < w->unk_B9; i++) {
+                            w->unk_28[i]->unk_78 &= ~0x10000000;
+                        }
+                        if (gUnk_02039DD4->unk_0E3 != 0) {
+                            gUnk_02039DD4->unk_0E3 = 0;
+                        }
+                    } else {
+                        for (i = 0; i < w->unk_B9; i++) {
+                            w->unk_28[i]->unk_78 |= 0x10000000;
+                        }
+                        if (gUnk_02039DD4->unk_0E3 == 0) {
+                            TaskCreate((TaskPool*)w, &gUnk_09EE77BC[24], 0);
+                            gUnk_02039DD4->unk_0E3 = 1;
+                        }
+                    }
+                }
+            }
+            w->unk_C4[1] = 1;
+        }
+    }
+    TaskPoolUpdate((TaskPool*)w);
+    TaskPoolUpdate(&gUnk_02039DD4->unk_09C);
+    gUnk_02039DD4->unk_0D3 = w->unk_B9;
+    w->unk_C4[4] = 0;
+    if (gBtlWork->unk_068 & 0x80000000000000LL) {
+        gBtlWork->unk_068 &= ~0x80000000000000LL;
+        w->unk_C4[1] = 0;
+    }
+    return 1;
+}
+#else
 INCLUDE_ASM("mode_eventselect/func_08076F80.s");
+#endif
 
 void func_08077E10(CardBattleWork* w) {
     gUnk_02039DD4->unk_094 = AnimUpdate(&gUnk_02039DD4->unk_064);
