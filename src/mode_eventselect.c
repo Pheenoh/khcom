@@ -1254,7 +1254,6 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
     gUnk_02034A98->unk_78 |= 0x804;
 }
 
-#ifdef NON_MATCHING
 extern u16 gUnk_09033FC8[];
 extern TaskDesc gUnk_09EE8F30;
 extern u32 gUnk_02034A9C;
@@ -1339,9 +1338,7 @@ void func_08076CB4(UnkStruct_08080268* w) {
         TaskCreate((TaskPool*)w, &gUnk_09EE8F30, 0);
     }
 }
-#else
-INCLUDE_ASM("mode_eventselect/func_08076CB4.s");
-#endif
+
 
 s32 func_08076F4C(CardBattleWork* w) {
     if (func_080787B8(w, 0) == 0 && w->unk_B0 <= 1 && w->unk_B9 != 0) {
