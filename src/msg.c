@@ -9527,7 +9527,6 @@ u8 func_0806F898(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-#ifdef NON_MATCHING
 void func_0806F94C(Work0806180C* p) {
     u16 z;
 
@@ -9564,19 +9563,18 @@ void func_0806F94C(Work0806180C* p) {
             z &= 0xFFFE;
             func_0801CE00(p->unk_028, z);
 
-            if (p->unk_000[p->unk_1A0].unk_18 & 0x400) {
-                z &= 0xF7FF;
+            if ((p->unk_000[p->unk_1A0].unk_18 & 0x400) == 0) {
+                z |= 0x800;
                 z &= 0xFFFE;
                 func_0801CE00(p->unk_028, z);
             } else {
-                func_0801CE00(p->unk_028, (z | 0x800) & 0xFFFE);
+                z &= 0xF7FF;
+                z &= 0xFFFE;
+                func_0801CE00(p->unk_028, z);
             }
         }
     }
 }
-#else
-INCLUDE_ASM("msg/func_0806F94C.s");
-#endif
 u8 func_0806FA84(Work0806180C* p, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
