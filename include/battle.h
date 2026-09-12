@@ -349,7 +349,7 @@ extern ListPool gUnk_02034908;
 extern ListPool gUnk_02034918;
 extern BgFx* gUnk_02034928;
 
-void* func_08012218(u32 type);
+void* ColliderGetPool(u32 type);
 void func_08019350(void);
 void func_080197AC(void);
 void func_0801B024(BtlObj* p);
@@ -380,7 +380,7 @@ void func_0801508C(void);
 void func_0801848C(void);
 void func_080185D0(void);
 void func_0801884C(void);
-void func_0801235C(ListPool* a, ListPool* b);
+void ColliderCheckPoolPairs(ListPool* a, ListPool* b);
 s64 __ashldi3(s64 v, s32 n);
 u8 func_080ABED0(void);
 
@@ -516,11 +516,11 @@ void func_080141D4(void);
 void func_08019C5C(void);
 
 void func_08012214(void);
-void func_08012330(ListPool* pool);
+void ColliderClearPoolContacts(ListPool* pool);
 u8 func_080126E4(u8 a);
 void func_0801CB18(void);
 
-u8 func_08012648(Collider* p);
+u8 ColliderIsColliding(Collider* p);
 s32 func_0801A978(BtlObj* p);
 u8 func_08085BAC(void);
 u8 HasNonPremiumCardsInActiveDeck(void);

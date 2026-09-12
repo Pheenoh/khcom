@@ -79,8 +79,8 @@ void task_fld_sora_0(FldWork* work) {
 
     TaskPoolInit(work->unk_24, 2);
     TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->unk_18);
-    func_080122AC(work->unk_38, 1, 4, 32);
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderInit(work->unk_38, 1, 4, 32);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
 }
 u8 func_08032268(FldWork* work, void* task) {
     FldActor* act;
@@ -115,7 +115,7 @@ u8 func_08032268(FldWork* work, void* task) {
 
         TaskPoolUpdate(work->unk_24);
         work->gfx = AnimUpdate(work->unk_08);
-        func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+        ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
         (*p)++;
     }
 
@@ -174,7 +174,7 @@ u8 func_0803234C(FldWork* work, void* task) {
         act->unk_00.y = y;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -466,7 +466,7 @@ u8 func_080324DC(FldWork* work, void* task) {
         }
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -616,7 +616,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
         act->unk_00.y = y;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     TaskPoolUpdate(work->unk_24);
     return 1;
@@ -720,7 +720,7 @@ u8 func_08033150(FldWork* work, void* task) {
         act->unk_00.y = y;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     TaskPoolUpdate(work->unk_24);
     return 1;
@@ -871,7 +871,7 @@ u8 func_08033334(FldWork* work, void* task) {
         break;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -1105,7 +1105,7 @@ u8 func_0803366C(FldWork* work, void* task) {
         act->unk_00.y = y;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -1167,7 +1167,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
             break;
         }
 
-        func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+        ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
         func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
         work->gfx = AnimUpdate(work->unk_08);
         TaskPoolUpdate(work->unk_24);
@@ -1398,7 +1398,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
         }
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -1454,7 +1454,7 @@ void task_fld_sora_3(FldWork* work) {
     act = &gUnk_02039BA0->unk_18;
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
-    func_08012304(work->unk_38);
+    ColliderUnregister(work->unk_38);
 
     if (gGameState.unk_000 != 0) {
         gGameState.unk_028 = act->unk_10;
@@ -1778,8 +1778,8 @@ void task_fld_riku_0(FldWork* work) {
 
     TaskPoolInit(work->unk_24, 2);
     TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->unk_18);
-    func_080122AC(work->unk_38, 1, 4, 32);
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderInit(work->unk_38, 1, 4, 32);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
 }
 u8 func_08034A0C(FldWork* work, void* task) {
     FldActor* act;
@@ -1814,7 +1814,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
 
         TaskPoolUpdate(work->unk_24);
         work->gfx = AnimUpdate(work->unk_08);
-        func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+        ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
         (*p)++;
     }
 
@@ -1874,7 +1874,7 @@ u8 func_08034AF0(FldWork* work, void* task) {
         act->unk_00.y = y;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -2165,7 +2165,7 @@ u8 func_08034C88(FldWork* work, void* task) {
         }
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -2314,7 +2314,7 @@ u8 func_080353DC(FldWork* work, void* task) {
         act->unk_00.y = y;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     TaskPoolUpdate(work->unk_24);
     return 1;
@@ -2418,7 +2418,7 @@ u8 func_080358F0(FldWork* work, void* task) {
         act->unk_00.y = y;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     TaskPoolUpdate(work->unk_24);
     return 1;
@@ -2564,7 +2564,7 @@ u8 func_08035AD4(FldWork* work, void* task) {
         break;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -2798,7 +2798,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
         act->unk_00.y = y;
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -2860,7 +2860,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
             break;
         }
 
-        func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+        ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
         func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
         work->gfx = AnimUpdate(work->unk_08);
         TaskPoolUpdate(work->unk_24);
@@ -3091,7 +3091,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
         }
     }
 
-    func_08012324(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
+    ColliderSetPosition(work->unk_38, act->unk_00.x, act->unk_00.y, act->unk_00.z);
     func_080E0298(act->unk_00.x, act->unk_00.y + act->unk_00.z);
     work->gfx = AnimUpdate(work->unk_08);
     TaskPoolUpdate(work->unk_24);
@@ -3147,7 +3147,7 @@ void task_fld_riku_3(FldWork* work) {
     act = &gUnk_02039BA0->unk_18;
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
-    func_08012304(work->unk_38);
+    ColliderUnregister(work->unk_38);
 
     if (gGameState.unk_000 != 0) {
         gGameState.unk_028 = act->unk_10;

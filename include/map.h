@@ -1725,7 +1725,7 @@ extern Mode gModeMsTop;
 extern Mode gModeMovie;
 extern Mode gModeDebflag;
 extern Mode gModeTitle;
-void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);
+void RequestTilemapStripCopy(void* a, void* b, u8 c, u8 d, s32 e);
 void* func_08093BF8(void);
 s32 func_080ECAC8(UnkStruct_080ECA88* p);
 s32 func_080ECBC8(UnkStruct_080ECA88* p);

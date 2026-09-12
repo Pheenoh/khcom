@@ -250,9 +250,9 @@ void VBlankIntr(void) {
     gIntrCheck |= 1;
 
     if (gFrameSyncFlags & 4) {
-        func_08001254();
+        ModeFlushDisplay();
     }
-    func_080012A8();
+    ModeRunVBlankCallbacks();
     func_08116D28();
     gVBlankEndVCount = REG_VCOUNT;
     gFrameSyncFlags &= 0xFFFB;
@@ -312,9 +312,9 @@ void VBlankIntrSio(void) {
     gIntrCheck |= 1;
 
     if (gFrameSyncFlags & 4) {
-        func_08001254();
+        ModeFlushDisplay();
     }
-    func_080012A8();
+    ModeRunVBlankCallbacks();
     gVBlankEndVCount = REG_VCOUNT;
     gFrameSyncFlags &= 0xFFFB;
     if (!(gFrameSyncFlags & 1)) {
@@ -338,9 +338,9 @@ void func_08000714(void) {
     gIntrCheck |= 1;
 
     if (gFrameSyncFlags & 4) {
-        func_08001254();
+        ModeFlushDisplay();
     }
-    func_080012A8();
+    ModeRunVBlankCallbacks();
     func_08116D28();
     gVBlankEndVCount = REG_VCOUNT;
     gFrameSyncFlags &= 0xFFFB;

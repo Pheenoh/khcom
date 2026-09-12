@@ -5689,8 +5689,8 @@ void task_hum_vixen_ice_0(VixenIceWork* work, VixenSub* args) {
     work->unk_00 = 3;
     AnimInit(&work->anim, gUnk_09EE26CC, gUnk_09EE26B4);
     AnimStart(&work->anim, 0, 0);
-    func_080122AC(&work->unk_28, 12, 27, 1);
-    func_08012614(&work->unk_28, 1);
+    ColliderInit(&work->unk_28, 12, 27, 1);
+    ColliderSetDisabled(&work->unk_28, 1);
 }
 
 u8 task_hum_vixen_ice_1(VixenIceWork* work) {
@@ -5698,7 +5698,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         if (work->unk_24->unk_00 != 0) {
             FadeSetPaletteExcluded(((ObjPalette*)work->palette)->unk_06 + 16, 1);
             work->unk_24->unk_00 = 0;
-            func_08012614(&work->unk_28, 1);
+            ColliderSetDisabled(&work->unk_28, 1);
         }
         return 1;
     }
@@ -5732,7 +5732,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         ApproachValue(&work->unk_8C, work->unk_90, work->unk_86);
         work->unk_86--;
         if ((s16)work->unk_86 <= 0) {
-            func_08012614(&work->unk_28, 0);
+            ColliderSetDisabled(&work->unk_28, 0);
             work->unk_00 = 1;
             work->unk_84 = 0;
             work->unk_88 = GetRandom() % 0x259 + 600;
@@ -5772,7 +5772,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
             work->unk_24->unk_00 = 1;
         }
         ColliderSetRadius(&work->unk_28, work->unk_8C * 27 >> 8);
-        func_08012324(&work->unk_28, work->unk_24->unk_04, work->unk_24->unk_08, 0);
+        ColliderSetPosition(&work->unk_28, work->unk_24->unk_04, work->unk_24->unk_08, 0);
         break;
     }
     AnimUpdate(&work->anim);
@@ -5802,7 +5802,7 @@ void task_hum_vixen_ice_2(VixenIceWork* work) {
 void task_hum_vixen_ice_3(VixenIceWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
-    func_08012304(&work->unk_28);
+    ColliderUnregister(&work->unk_28);
 }
 
 void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {

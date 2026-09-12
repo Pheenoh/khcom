@@ -1450,7 +1450,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         }
     }
     func_080D9058(&a->unk_004, &a->unk_008);
-    func_08012324(&a->unk_040, a->unk_004, a->unk_008, a->unk_00C);
+    ColliderSetPosition(&a->unk_040, a->unk_004, a->unk_008, a->unk_00C);
     TaskPoolUpdate(&work->unk_02C);
     if (func_0801C1C0(0)) {
         func_080D9A58();

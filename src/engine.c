@@ -1536,7 +1536,7 @@ u8 eu_080044C0(void* src, void* dst) {
 }
 #endif
 
-u8 func_0800443C(void* a, u16 b) {
+u8 RequestDma3Clear(void* a, u16 b) {
     Dma3Queue* q = gDma3Requests;
 
     if (q->count > 3) {
@@ -1548,7 +1548,7 @@ u8 func_0800443C(void* a, u16 b) {
 
     return 1;
 }
-u8 func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh) {
+u8 RequestTilemapRectCopy(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh) {
     if (gDma3Requests->unk_10A2 > 63) {
         return 0;
     }
@@ -1568,7 +1568,7 @@ u8 func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh) {
     return 1;
 }
 
-u8 func_080045AC(void* a, void* b, u8 c, u8 d, u8 e) {
+u8 RequestTilemapStripCopy(void* a, void* b, u8 c, u8 d, u8 e) {
     if (gDma3Requests->unk_10A4 > 7) {
         return 0;
     }
@@ -1582,7 +1582,7 @@ u8 func_080045AC(void* a, void* b, u8 c, u8 d, u8 e) {
     return 1;
 }
 
-u8 func_08004678(void* a) {
+u8 QueueVTransCallback(void* a) {
     Dma3Queue* q = gDma3Requests;
 
     if (q->unk_10A6 > 7) {
@@ -1594,7 +1594,7 @@ u8 func_08004678(void* a) {
     return 1;
 }
 
-u32 func_080046B4(void) {
+u32 GetVTransTransferredBytes(void) {
     Dma3Queue* q = gDma3Requests;
 
     return q->unk_10AC;
@@ -1704,7 +1704,7 @@ void FlushDma3Queue(void) {
     }
     gDma3Requests->count = 0;
 }
-void func_08004938(void) {
+void FlushDma3QueueWithCpu(void) {
     Dma3Queue* q;
     Dma3Request* req;
     Dma3Blit* blits;
@@ -1879,12 +1879,12 @@ void func_08004C20(u16 x, u16 y, BgEntry* e, void* dst, u8 sx, u8 sy, u8 w, u8 h
     } else {
         h2 = h - h1;
     }
-    func_0800448C(func_08004BD8(e, x, y), dst, tx, ty, sx, sy, w1, h1);
+    RequestTilemapRectCopy(func_08004BD8(e, x, y), dst, tx, ty, sx, sy, w1, h1);
     x2 = x + 256;
-    func_0800448C(func_08004BD8(e, x2, y), dst, 0, ty, sx2 = sx - (ox = tx - 32), sy, w2, h1);
+    RequestTilemapRectCopy(func_08004BD8(e, x2, y), dst, 0, ty, sx2 = sx - (ox = tx - 32), sy, w2, h1);
     y2 = y + 256;
-    func_0800448C(func_08004BD8(e, x, y2), dst, tx, 0, sx, sy2 = sy - (oy = ty - 32), w1, h2);
-    func_0800448C(func_08004BD8(e, x2, y2), dst, 0, 0, sx2, sy2, w2, h2);
+    RequestTilemapRectCopy(func_08004BD8(e, x, y2), dst, tx, 0, sx, sy2 = sy - (oy = ty - 32), w1, h2);
+    RequestTilemapRectCopy(func_08004BD8(e, x2, y2), dst, 0, 0, sx2, sy2, w2, h2);
 }
 
 void BgReset(void) {
@@ -3264,7 +3264,7 @@ void BgAnimUpdate(void) {
             if (over > 0) {
                 len = gUnk_0203404C - over;
                 RequestDma3Copy(src, GetBgCharBase(gUnk_02034048), len);
-                func_0800443C((u8*)GetBgCharBase(gUnk_02034048) + len, over);
+                RequestDma3Clear((u8*)GetBgCharBase(gUnk_02034048) + len, over);
             } else {
                 RequestDma3Copy(src, GetBgCharBase(gUnk_02034048), gUnk_0203404C);
             }

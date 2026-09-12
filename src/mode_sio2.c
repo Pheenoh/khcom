@@ -427,7 +427,7 @@ void mode_pooh_0(s32 arg) {
     SetBgPriority(1, 1);
     SetBgPriority(2, 2);
     SetBgPriority(3, 3);
-    func_0801227C();
+    ColliderPoolsInit();
     func_080CCBE8();
     func_080D2E98();
 
@@ -561,7 +561,7 @@ void mode_pooh_1(void) {
     TaskPoolDraw(&gUnk_02034D80);
     TaskPoolDraw(&gUnk_02034D30);
     TaskPoolDraw(&gUnk_02034D18);
-    func_080125A4();
+    ColliderUpdateAll();
     func_080C73D8();
 }
 

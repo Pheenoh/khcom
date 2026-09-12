@@ -595,7 +595,7 @@ s32 func_08065D10(u16* a, TextSlot* b);
 void func_08002488(s16 x, s16 y, void* a, void* b, void* c, u16 d);
 void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f);
 void func_08064624(void);
-u8 func_08004678(void* a);
+u8 QueueVTransCallback(void* a);
 u8 func_0809D280(u8* s);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c);

@@ -53,12 +53,12 @@ u32 BgAnimGetDuration(struct UnkBgAnim* p);
 struct UnkBgAnim* BgAnimGetCurrent(void);
 void VTransReset(void);
 void BgReset(void);
-u8 func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh);
+u8 RequestTilemapRectCopy(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh);
 void BgAnimSetPosition(s16 x, s16 y);
 void BgAnimUpdate(void);
 void BgAnimInit(s32 bg, u16 b, u16 c);
 void BgAnimStart(struct UnkBgAnim* a, s32 x, s32 y);
-u8 func_0800443C(void* a, u16 b);
+u8 RequestDma3Clear(void* a, u16 b);
 
 #ifdef VERSION_EU
 u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h);

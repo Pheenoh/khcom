@@ -75,7 +75,7 @@ void task_chgCardObj_0(ChgCardObjWork* work, ChgCardObjParam* param) {
     work->unk_30 = 2;
     x = work->unk_20 - *work->unk_08;
     y = work->unk_24 - *work->unk_0C;
-    work->unk_40 = func_0805F5A4(&x, &y);
+    work->unk_40 = NormalizeVector2D8(&x, &y);
     work->unk_38 = -x;
     work->unk_3C = -y;
     work->unk_00 = 0;
@@ -120,7 +120,7 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
         zero = 0;
         work->unk_2A = angleA;
         work->unk_2B = zero;
-        work->unk_40 = func_0805F588(work->unk_20 - *work->unk_08, work->unk_24 - *work->unk_0C);
+        work->unk_40 = VectorLength2D(work->unk_20 - *work->unk_08, work->unk_24 - *work->unk_0C);
         work->unk_34 -= work->unk_30;
         work->unk_30 += 2;
         phase = ChgCardRotation(work, 128);
@@ -140,7 +140,7 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
         if (work->unk_34 < 0) {
             x = work->unk_20 - *work->unk_08;
             y = work->unk_24 - *work->unk_0C;
-            func_0805F5A4(&x, &y);
+            NormalizeVector2D8(&x, &y);
             work->unk_38 = -x;
             work->unk_3C = -y;
 

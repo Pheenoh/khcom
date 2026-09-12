@@ -549,7 +549,7 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     case 15:
         if (work->unk_154 == 0) {
-            func_08012614(&actor->unk_040, 1);
+            ColliderSetDisabled(&actor->unk_040, 1);
             actor->unk_034 |= 0x100;
             func_08019068(work->unk_15C->unk_04, &work->anim, 1, 0, work->tiles);
             work->anim.frame = 0;
@@ -582,7 +582,7 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     case 17:
         if (work->unk_154 == 0) {
-            func_08012614(&actor->unk_040, 0);
+            ColliderSetDisabled(&actor->unk_040, 0);
             work->unk_156 = 10;
         }
         ApproachValueHalfSteps(&work->unk_180, 0x100, work->unk_156--);
@@ -792,7 +792,7 @@ s32 _0800CDF0(EmyWork* work) {
     }
 
     TaskPoolUpdate(&work->unk_028);
-    func_08012324(&actor->unk_040, actor->unk_004, actor->unk_008, actor->unk_00C);
+    ColliderSetPosition(&actor->unk_040, actor->unk_004, actor->unk_008, actor->unk_00C);
     return 1;
 }
 

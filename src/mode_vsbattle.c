@@ -33,7 +33,7 @@ void mode_vsbattle_0(u32 mode) {
     TaskPoolInit(&gBtlWork->taskPools[0], 32);
     TaskPoolInit(&gBtlWork->taskPools[1], 32);
     func_08012798(0x80, gBtlWork->unk_1C4);
-    func_0801227C();
+    ColliderPoolsInit();
 
     if (mode == 0) {
         arg.unk_04 = 1;
@@ -70,7 +70,7 @@ void mode_vsbattle_1(void) {
         }
 
         func_08012824();
-        func_080125A4();
+        ColliderUpdateAll();
         TaskPoolDraw(&gBtlWork->taskPools[1]);
 
         if (gBtlWork->unk_068 & 0x800000) {

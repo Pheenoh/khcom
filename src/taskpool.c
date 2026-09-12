@@ -35,15 +35,15 @@ extern Mode gModeLang;
 extern Mode gModeCopyright1;
 extern Mode* gDebugModes[];
 
-void func_08000F94(void);
+void ModeBlankDisplay(void);
 void ModeStart(Mode* mode, s32 arg);
-void func_0800109C(void (*fn)(void));
-void func_080010A8(void);
+void ModeSetVBlankCallback(void (*fn)(void));
+void ModeClearVBlankCallback(void);
 void ModeCallExit(void);
 const char* GetModeName(void);
 void UpdateDebugModeSelect(void);
 
-void func_08004938(void);
+void FlushDma3QueueWithCpu(void);
 void FlushDma3Queue(void);
 void CommitDisplayRegs(void);
 void MosaicUpdate(void);
@@ -197,7 +197,7 @@ s32 func_08000F90(void) {
     return 0;
 }
 
-void func_08000F94(void) {
+void ModeBlankDisplay(void) {
     *(vu16*)0x04000000 &= 0xE0FF;
     *(vu16*)0x05000000 = gUnk_0300749E;
 }
@@ -255,11 +255,11 @@ void func_08001080(void) {
     gUnk_030074A0 = 0;
 }
 
-void func_0800109C(void (*fn)(void)) {
+void ModeSetVBlankCallback(void (*fn)(void)) {
     gUnk_030074A4 = fn;
 }
 
-void func_080010A8(void) {
+void ModeClearVBlankCallback(void) {
     gUnk_030074A4 = 0;
 }
 
@@ -324,7 +324,7 @@ void ModeUpdate(void) {
             }
 
             FadeUpdate();
-            func_08004938();
+            FlushDma3QueueWithCpu();
             gModeFlags &= ~2;
         } else if (gPendingMode != 0) {
             if (gCurrentMode->exit != 0) {
@@ -354,15 +354,15 @@ void SetModeUpdate(void (*fn)(void)) {
     gCurrentModeUpdate = fn;
 }
 
-void func_08001254(void) {
+void ModeFlushDisplay(void) {
     if (gModeFlags & 1) {
-        func_08000F94();
+        ModeBlankDisplay();
         gModeFlags &= ~1;
     }
 
     if (!(gModeFlags & 2)) {
         if (gSystemFlags & 0x10) {
-            func_08004938();
+            FlushDma3QueueWithCpu();
         } else {
             FlushDma3Queue();
         }
@@ -372,7 +372,7 @@ void func_08001254(void) {
     }
 }
 
-void func_080012A8(void) {
+void ModeRunVBlankCallbacks(void) {
     if ((gModeFlags & 2) && gUnk_030074A0 != 0) {
         gUnk_030074A0();
     }

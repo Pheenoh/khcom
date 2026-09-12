@@ -1515,7 +1515,7 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     case EMY_ID_39:
     case EMY_ID_40:
         if (!(d->unk_0E & 1)) {
-            func_080122AC(&p->unk_040, 8, d->unk_08, d->unk_06);
+            ColliderInit(&p->unk_040, 8, d->unk_08, d->unk_06);
         }
         p->unk_034 |= 0xAC280000000;
         p->unk_034 |= 0x40000000;
@@ -1523,9 +1523,9 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     default:
         if (!(d->unk_0E & 1)) {
             if (d->unk_0E & 8) {
-                func_080122AC(&p->unk_040, 11, d->unk_08, d->unk_06);
+                ColliderInit(&p->unk_040, 11, d->unk_08, d->unk_06);
             } else {
-                func_080122AC(&p->unk_040, 3, d->unk_08, d->unk_06);
+                ColliderInit(&p->unk_040, 3, d->unk_08, d->unk_06);
             }
         }
     }
@@ -1545,7 +1545,7 @@ void func_0801B7D8(BtlObj* obj) {
         ListPoolRemove(&p->unk_0B8, &gBtlWork->unk_080);
 
         if (!(p->unk_03C & 1)) {
-            func_08012304(&p->unk_040);
+            ColliderUnregister(&p->unk_040);
         }
         gBtlWork->unk_0EE--;
     }

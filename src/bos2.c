@@ -373,8 +373,8 @@ void func_080BA08C(BtlObj* work, s16 x, s16 y, s16 z, s16 a, s16 b, s32 c, s16 d
     work->unk_00C = z << 8;
 
     if (d >= 6 && d <= 7) {
-        func_080122AC(&work->unk_040, 8, a, b);
-        func_08012324(&work->unk_040, work->unk_004, work->unk_008, work->unk_00C);
+        ColliderInit(&work->unk_040, 8, a, b);
+        ColliderSetPosition(&work->unk_040, work->unk_004, work->unk_008, work->unk_00C);
     }
 }
 
@@ -385,11 +385,11 @@ void func_080BA0E4(BtlObj* p, s32 a, s32 b, s32 c) {
 }
 
 void func_080BA0F8(BtlObj* work) {
-    func_08012304(&work->unk_040);
+    ColliderUnregister(&work->unk_040);
 }
 
 void func_080BA104(BtlObj* sub, TmFootWork* work) {
-    func_08012324(&sub->unk_040, sub->unk_004, sub->unk_008, sub->unk_00C);
+    ColliderSetPosition(&sub->unk_040, sub->unk_004, sub->unk_008, sub->unk_00C);
 }
 
 void func_080BA11C(TmFootWork* work) {
@@ -1761,9 +1761,9 @@ void task_bos_tm_arm_3(TmArmWork* work) {
 }
 
 void task_bos_tm_tbl_0(TmTblWork* work, void* arg) {
-    func_080122AC(&work->unk_004, 7, 0x1C, 0);
-    func_08012324(&work->unk_004, 0x10000, 0x16000, 0);
-    func_08012614(&work->unk_004, 0);
+    ColliderInit(&work->unk_004, 7, 0x1C, 0);
+    ColliderSetPosition(&work->unk_004, 0x10000, 0x16000, 0);
+    ColliderSetDisabled(&work->unk_004, 0);
     DisableBg(1);
     work->unk_000 = arg;
     work->unk_068 = 0;
@@ -1802,7 +1802,7 @@ u8 task_bos_tm_tbl_1(TmTblWork* work) {
             m4aSongNumStart(0x225);
             EnableBg(1);
             LoadBgMap(1, &gUnk_096BF464[0x5000], 0x800);
-            func_08012614(&work->unk_004, 0);
+            ColliderSetDisabled(&work->unk_004, 0);
             break;
         case 2:
             LoadBgMap(1, &gUnk_096BF464[0x4800], 0x800);
@@ -1846,7 +1846,7 @@ u8 task_bos_tm_tbl_1(TmTblWork* work) {
         switch (work->unk_066) {
         case 0:
             LoadBgMap(1, &gUnk_096BF464[0x1800], 0x800);
-            func_08012614(&work->unk_004, 1);
+            ColliderSetDisabled(&work->unk_004, 1);
             work->unk_060 = 0;
             break;
         case 1:
@@ -1890,7 +1890,7 @@ u8 task_bos_tm_tbl_1(TmTblWork* work) {
 }
 
 void task_bos_tm_tbl_3(TmTblWork* work) {
-    func_08012304(&work->unk_004);
+    ColliderUnregister(&work->unk_004);
     DisableBg(1);
 }
 
@@ -2706,7 +2706,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
 
     work->unk_1E++;
     work->unk_2D = func_080BD7F8(&sub->unk_004, &sub->unk_008, (s32)&sub->unk_00C, &sub->unk_010);
-    func_08012324(&sub->unk_040, sub->unk_004, sub->unk_008, sub->unk_00C);
+    ColliderSetPosition(&sub->unk_040, sub->unk_004, sub->unk_008, sub->unk_00C);
     TaskPoolUpdate(&work->unk_44);
 
     return 1;
@@ -2839,10 +2839,10 @@ void func_080BE3DC(u8 a, JfMajinWork* work) {
         n = ((work->unk_00->unk_000.unk_00C >> 8) + 0x88) / 8 + work->unk_6A;
 
         if (n > 0x20) {
-            func_0800443C(gUnk_0203B510, 0x800);
+            RequestDma3Clear(gUnk_0203B510, 0x800);
         } else {
             RequestDma3Copy(gUnk_09EF280C[a], gUnk_0203B510, (0x20 - n) * 64);
-            func_0800443C(gUnk_0203B510 + (0x20 - n) * 64, n * 64);
+            RequestDma3Clear(gUnk_0203B510 + (0x20 - n) * 64, n * 64);
         }
     }
 }
@@ -2853,10 +2853,10 @@ void func_080BE478(u8 a, JfMajinWork* work) {
         n = ((work->unk_00->unk_000.unk_00C >> 8) + 0x88) / 8 + work->unk_6A;
 
         if (n > 0x20) {
-            func_0800443C(gUnk_0203B510, 0x800);
+            RequestDma3Clear(gUnk_0203B510, 0x800);
         } else {
             RequestDma3Copy(gUnk_09EF280C[a], gUnk_0203B510, (0x20 - n) * 64);
-            func_0800443C(gUnk_0203B510 + (0x20 - n) * 64, n * 64);
+            RequestDma3Clear(gUnk_0203B510 + (0x20 - n) * 64, n * 64);
         }
 
         func_0800516C(1, gUnk_0203B500, 2, 2);
@@ -2965,7 +2965,7 @@ u8 task_bos_jf_majin_1(JfMajinWork* work) {
         break;
     }
 
-    func_08012324(&jf->unk_000.unk_040, jf->unk_000.unk_004, jf->unk_000.unk_008, jf->unk_000.unk_00C);
+    ColliderSetPosition(&jf->unk_000.unk_040, jf->unk_000.unk_004, jf->unk_000.unk_008, jf->unk_000.unk_00C);
     TaskPoolUpdate(&work->unk_6C);
 
     if (work->unk_00->unk_24C & 0x10) {
@@ -4804,9 +4804,9 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         p2->unk_09E = 16;
         p2->unk_0A0 = 16;
         p2->unk_09C = 32;
-        func_080122AC(&p2->unk_040, 7, 16, 32);
-        func_08012324(&p2->unk_040, p2->unk_004, p2->unk_008, p2->unk_00C);
-        func_08012614(&p2->unk_040, 1);
+        ColliderInit(&p2->unk_040, 7, 16, 32);
+        ColliderSetPosition(&p2->unk_040, p2->unk_004, p2->unk_008, p2->unk_00C);
+        ColliderSetDisabled(&p2->unk_040, 1);
         func_0801BDD4(p2, p1);
         gBtlWork->unk_0D8 = v;
         func_0801C298(0, 1);
@@ -4917,7 +4917,7 @@ void task_bos_dsd_3(DsdWork* work) {
     a = &work->unk_000[1];
     b = &work->unk_000[2];
     TaskPoolDestroy(&work->unk_37C);
-    func_08012304(&work->unk_000[2].unk_040);
+    ColliderUnregister(&work->unk_000[2].unk_040);
     func_0801B7D8(work);
     func_0801B7D8(a);
     func_0801B7D8(b);
@@ -4969,8 +4969,8 @@ void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg) {
     s->unk_004 = 0xDC00;
     s->unk_008 = 0x16800;
     s->unk_00C = 0;
-    func_080122AC(&s->unk_040, 8, 24, 100);
-    func_08012324(&s->unk_040, s->unk_004, s->unk_008, s->unk_00C);
+    ColliderInit(&s->unk_040, 8, 24, 100);
+    ColliderSetPosition(&s->unk_040, s->unk_004, s->unk_008, s->unk_00C);
     func_08005244(1, ((gBtlWork->unk_000 - arg->unk_000[0].unk_004) >> 8) + 100,
                   ((gBtlWork->unk_004 - (arg->unk_000[0].unk_008 + arg->unk_000[0].unk_00C)) >> 8) + 280);
     TaskPoolInit(&work->unk_058, 10);
@@ -5030,8 +5030,8 @@ u8 task_bos_dsd_main_1(DsdMainWork* work) {
         break;
     }
 
-    func_08012324(&d->unk_000[0].unk_040, d->unk_000[0].unk_004, d->unk_000[0].unk_008, d->unk_000[0].unk_00C);
-    func_08012324(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
+    ColliderSetPosition(&d->unk_000[0].unk_040, d->unk_000[0].unk_004, d->unk_000[0].unk_008, d->unk_000[0].unk_00C);
+    ColliderSetPosition(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
     TaskPoolUpdate(&work->unk_058);
     work->unk_070 = gBtlWork->unk_1CA;
 
@@ -5086,7 +5086,7 @@ void task_bos_dsd_main_3(DsdMainWork* work) {
     ReleaseObjPalette(work->unk_000->palette3);
     ReleaseObjTiles(work->unk_000->tiles3);
     ReleaseObjPalette(work->unk_000->palette4);
-    func_08012304(&work->unk_074.unk_040);
+    ColliderUnregister(&work->unk_074.unk_040);
     TaskPoolDestroy(&work->unk_058);
 }
 
@@ -5467,7 +5467,7 @@ void func_080C2FD8(DsdMainWork* work) {
         func_0802F1E8();
         m4aSongNumStart(0x2B9);
         func_0801801C(0x7800, 0x16800, 0, 0x100);
-        func_08012614(&b->unk_040, 0);
+        ColliderSetDisabled(&b->unk_040, 0);
         work->unk_000->unk_350++;
         break;
     case 1:
@@ -5513,7 +5513,7 @@ void func_080C2FD8(DsdMainWork* work) {
     case 5:
         func_080C213C(8, 0x80);
         b->unk_034 |= 0x1000000;
-        func_08012614(&b->unk_040, 1);
+        ColliderSetDisabled(&b->unk_040, 1);
         work->unk_000->unk_350++;
         break;
     default:
@@ -5806,13 +5806,13 @@ void func_080C386C(DsdMainWork* work) {
     if (d->unk_330 == 2 || d->unk_330 == 3) {
         func_0801AF08(a);
         b->unk_034 |= 0x1000000;
-        func_08012614(&b->unk_040, 1);
+        ColliderSetDisabled(&b->unk_040, 1);
         work->unk_000->unk_350 = 0;
         work->unk_000->unk_334 = 0;
     } else if (d->unk_350 > 60) {
         func_0801AF08(a);
         b->unk_034 |= 0x1000000;
-        func_08012614(&b->unk_040, 1);
+        ColliderSetDisabled(&b->unk_040, 1);
         work->unk_000->unk_350 = 0;
         work->unk_000->unk_334 = 0;
     } else {
@@ -5845,9 +5845,9 @@ void func_080C3928(DsdMainWork* work) {
         break;
     case 1:
         func_0801AF4C(a);
-        func_08012614(&a->unk_040, 1);
-        func_08012614(&b->unk_040, 1);
-        func_08012614(&c->unk_040, 1);
+        ColliderSetDisabled(&a->unk_040, 1);
+        ColliderSetDisabled(&b->unk_040, 1);
+        ColliderSetDisabled(&c->unk_040, 1);
         FadeSetPaletteExcluded(0, 0);
         FadeSetPaletteExcluded(19, 0);
         FadeToAmount(0, 20, 8);
@@ -6064,8 +6064,8 @@ void task_bos_dsd_ita_0(DsdItaWork* work, void* arg) {
     work->unk_07C = 0;
     work->unk_07E = 0;
     work->unk_080 = 0;
-    func_080122AC(&work->unk_004, 7, 0x20, 3);
-    func_08012324(&work->unk_004, work->x, work->y, work->z);
+    ColliderInit(&work->unk_004, 7, 0x20, 3);
+    ColliderSetPosition(&work->unk_004, work->x, work->y, work->z);
     work->gfx = (u32)gUnk_09EF3BF8[0];
     work->gfx2 = (u32)gUnk_09EF3C18;
 }
@@ -6134,7 +6134,7 @@ u8 task_bos_dsd_ita_1(DsdItaWork* work) {
         return 0;
     }
 
-    func_08012324(&work->unk_004, work->x, work->y, work->z);
+    ColliderSetPosition(&work->unk_004, work->x, work->y, work->z);
 
     return 1;
 }
@@ -6182,7 +6182,7 @@ void task_bos_dsd_ita_2(DsdItaWork* work) {
 }
 
 void task_bos_dsd_ita_3(DsdItaWork* work) {
-    func_08012304(&work->unk_004);
+    ColliderUnregister(&work->unk_004);
 }
 
 void func_080C427C(DsdItaWork* work) {

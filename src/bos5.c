@@ -372,7 +372,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
         e->unk_004 += e->unk_078;
         e->unk_008 += e->unk_07C;
     }
-    func_08012324(&e->unk_040, e->unk_004, e->unk_008, e->unk_00C + e->unk_13C);
+    ColliderSetPosition(&e->unk_040, e->unk_004, e->unk_008, e->unk_00C + e->unk_13C);
     TaskPoolUpdate(&e->unk_16C);
 }
 
@@ -1124,9 +1124,9 @@ void task_bos_md_0(MdWork* work, void* arg) {
         func_0801B37C(&work->sub[i], gUnk_099920D8, gBtlWork->unk_0CC,
                       gBtlWork->unk_0D0, gBtlWork->unk_0D4);
 #ifdef VERSION_EU
-        func_080122AC(work->sub[i].unk_040, 8, 16, 24);
+        ColliderInit(work->sub[i].unk_040, 8, 16, 24);
 #else
-        func_080122AC(work->sub[i].unk_040, 8, 16, 16);
+        ColliderInit(work->sub[i].unk_040, 8, 16, 16);
 #endif
 
         if (i == 0) {
@@ -1204,7 +1204,7 @@ s32 task_bos_md_1(MdWork* work) {
         work->sub[i].unk_00C = gBtlWork->unk_0D4
             + gUnk_09992108[(s16)work->unk_1A4.unk_04[work->unk_1A4.unk_0A].unk_00]
                   .unk_44[i].unk_04 * 256;
-        func_08012324(work->sub[i].unk_040, work->sub[i].unk_004, work->sub[i].unk_008,
+        ColliderSetPosition(work->sub[i].unk_040, work->sub[i].unk_004, work->sub[i].unk_008,
                       work->sub[i].unk_00C);
     }
 
@@ -1277,7 +1277,7 @@ void task_bos_md_3(MdWork* work) {
     DisableBg(1);
 
     for (i = 0; i < 1; i++) {
-        func_08012304(work->sub[i].unk_040);
+        ColliderUnregister(work->sub[i].unk_040);
         func_0801B7D8(&work->sub[i]);
     }
 
@@ -1459,7 +1459,7 @@ u8 func_080FCCB4(MdFireWork* work) {
 
             if (work->unk_008 > 0) {
                 work->unk_008--;
-            } else if (func_08012660(work->unk_038.unk_040, 1) != 0) {
+            } else if (ColliderIsTouchingType(work->unk_038.unk_040, 1) != 0) {
                 m4aSongNumStart(0x2CA);
                 gBtlWork->unk_07C->unk_034 |= 0x20000000;
                 work->unk_008 = 60;
@@ -1538,8 +1538,8 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
     work->unk_16C = (MdFireTarget*)arg->unk_08;
     func_080FCF78(work);
     func_0801B37C(&work->unk_038, gUnk_09992F28, work->x, work->y, work->z);
-    func_080122AC(work->unk_038.unk_040, 3, 16, 16);
-    func_08012324(work->unk_038.unk_040, work->unk_038.unk_004, work->unk_038.unk_008,
+    ColliderInit(work->unk_038.unk_040, 3, 16, 16);
+    ColliderSetPosition(work->unk_038.unk_040, work->unk_038.unk_004, work->unk_038.unk_008,
                   work->unk_038.unk_00C);
     work->unk_038.unk_034 |= 0x1000;
     work->unk_038.unk_02C = 20;
@@ -1581,7 +1581,7 @@ u8 task_bos_md_fire_1(MdFireWork* work) {
     work->unk_038.unk_004 = work->x;
     work->unk_038.unk_008 = work->y;
     work->unk_038.unk_00C = work->z;
-    func_08012324(work->unk_038.unk_040, work->unk_038.unk_004, work->unk_038.unk_008,
+    ColliderSetPosition(work->unk_038.unk_040, work->unk_038.unk_004, work->unk_038.unk_008,
                   work->unk_038.unk_00C);
     return result;
 }
@@ -1617,7 +1617,7 @@ void task_bos_md_fire_2(MdFireWork* work) {
 }
 
 void task_bos_md_fire_3(MdFireWork* work) {
-    func_08012304(work->unk_038.unk_040);
+    ColliderUnregister(work->unk_038.unk_040);
     func_0801B7D8(&work->unk_038);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjPalette((void*)work->palette2);
@@ -1638,9 +1638,9 @@ void task_bos_md_dai_0(MdDaiWork* work, s32* src) {
     work->unk_010 = 20;
     work->unk_00C = -40960;
     p = (u8*)work + 0x1C;
-    func_080122AC(p, 7, 24, 24);
-    func_08012324(p, work->x, work->y, work->z);
-    func_08012614(p, 1);
+    ColliderInit(p, 7, 24, 24);
+    ColliderSetPosition(p, work->x, work->y, work->z);
+    ColliderSetDisabled(p, 1);
     work->palette = (u32)LoadObjPalette(gUnk_09A3C9BC, 32);
     work->tiles = (u32)LoadObjTiles(gUnk_09999ED0, 0x480);
 }
@@ -1659,7 +1659,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
         work->unk_010--;
 
         if (work->unk_010 <= 0) {
-            func_08012614(&work->unk_01C, 0);
+            ColliderSetDisabled(&work->unk_01C, 0);
             ColliderSetHeight(&work->unk_01C, 8);
             work->unk_00C = work->z - 0xA000;
             m4aSongNumStart(680);
@@ -1673,7 +1673,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
         work->unk_010--;
 
         if (work->unk_010 <= 0) {
-            func_08012614(&work->unk_01C, 0);
+            ColliderSetDisabled(&work->unk_01C, 0);
             ColliderSetHeight(&work->unk_01C, 16);
             work->unk_00C = work->z - 0xA000;
             m4aSongNumStart(680);
@@ -1687,7 +1687,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
         work->unk_010--;
 
         if (work->unk_010 <= 0) {
-            func_08012614(&work->unk_01C, 0);
+            ColliderSetDisabled(&work->unk_01C, 0);
             ColliderSetHeight(&work->unk_01C, 24);
             m4aSongNumStart(680);
             work->unk_07C = 3;
@@ -1710,7 +1710,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             work->unk_07C--;
 
             if (work->unk_07C <= 0) {
-                func_08012614(&work->unk_01C, 1);
+                ColliderSetDisabled(&work->unk_01C, 1);
                 result = 0;
             } else {
                 ColliderSetHeight(&work->unk_01C, work->unk_07C * 8);
@@ -1749,7 +1749,7 @@ void task_bos_md_dai_2(MdDaiWork* work) {
 }
 
 void task_bos_md_dai_3(MdDaiWork* work) {
-    func_08012304(&work->unk_01C);
+    ColliderUnregister(&work->unk_01C);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjTiles((void*)work->tiles);
     gBtlWork->unk_068 &= 0xFFFFFFFFFFEFFFFF;

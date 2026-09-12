@@ -996,7 +996,7 @@ void func_08103CD8(s16 a) {
 
     for (i = 0; i < 4; i++) {
         if (gUnk_02035B08[i] >= 0) {
-            func_0800448C(gUnk_09A3ABDC, GetBgScreenBase(0), gUnk_02035B08[i] * 6, i == a ? 0 : 3, 0, i * 3 + 3, 6, 3);
+            RequestTilemapRectCopy(gUnk_09A3ABDC, GetBgScreenBase(0), gUnk_02035B08[i] * 6, i == a ? 0 : 3, 0, i * 3 + 3, 6, 3);
         }
     }
 }

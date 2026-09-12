@@ -3023,9 +3023,9 @@ void func_080E4FF0(void* p, s16 a, s16 b) {
     void* r = (u8*)p + 0x80;
 
     func_080E4EB0(p, q, r, a, b);
-    func_080045AC(p, GetBgScreenBase(3), a, b, 1);
-    func_080045AC(q, GetBgScreenBase(2), a, b, 1);
-    func_080045AC(r, GetBgScreenBase(1), a, b, 1);
+    RequestTilemapStripCopy(p, GetBgScreenBase(3), a, b, 1);
+    RequestTilemapStripCopy(q, GetBgScreenBase(2), a, b, 1);
+    RequestTilemapStripCopy(r, GetBgScreenBase(1), a, b, 1);
 }
 
 void func_080E507C(u16* a, u16* b, u16* c, s16 d, s16 e) {
@@ -3075,9 +3075,9 @@ void func_080E51C0(void* p, s16 a, s16 b) {
     void* r = (u8*)p + 0x80;
 
     func_080E507C(p, q, r, a, b);
-    func_080045AC(p, GetBgScreenBase(3), a, b, 0);
-    func_080045AC(q, GetBgScreenBase(2), a, b, 0);
-    func_080045AC(r, GetBgScreenBase(1), a, b, 0);
+    RequestTilemapStripCopy(p, GetBgScreenBase(3), a, b, 0);
+    RequestTilemapStripCopy(q, GetBgScreenBase(2), a, b, 0);
+    RequestTilemapStripCopy(r, GetBgScreenBase(1), a, b, 0);
 }
 
 u8 func_080E524C(UnkStruct_080DFF1C* a, s32* b) {
@@ -3606,7 +3606,7 @@ u8 func_080E5E44(void) {
 
 void func_080E5EAC(UnkStruct_080E590C* p) {
     gGameState.flags |= 2;
-    func_08012614(p->unk_48, 1);
+    ColliderSetDisabled(p->unk_48, 1);
     gUnk_0203C7AC->unk_00 |= 2;
     gUnk_02039BA0->unk_70 |= 0x80;
     p->unk_04 |= 4;
@@ -3624,12 +3624,12 @@ void func_080E5EAC(UnkStruct_080E590C* p) {
 
 void func_080E5F50(UnkStruct_080E590C* p) {
     if (p->unk_74 != 0) {
-        if ((gUnk_0203C7AC->unk_00 & 4) == 0 && func_08012660(p->unk_48, 1)) {
+        if ((gUnk_0203C7AC->unk_00 & 4) == 0 && ColliderIsTouchingType(p->unk_48, 1)) {
             func_080E5EAC(p);
             return;
         }
 
-        if (func_08012660(p->unk_48, 6)) {
+        if (ColliderIsTouchingType(p->unk_48, 6)) {
             p->unk_08.unk_00 += p->unk_80;
             p->unk_08.x += p->unk_84;
         }
@@ -3841,12 +3841,12 @@ void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
 
     if (d->unk_14 & 8) {
         p->unk_04 |= 2;
-        func_080122AC(&p->unk_48, 11, d->unk_0C, d->unk_0A);
+        ColliderInit(&p->unk_48, 11, d->unk_0C, d->unk_0A);
     } else {
-        func_080122AC(&p->unk_48, 3, d->unk_0C, d->unk_0A);
+        ColliderInit(&p->unk_48, 3, d->unk_0C, d->unk_0A);
     }
-    func_08012324(&p->unk_48, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
-    func_08012614(&p->unk_48, 1);
+    ColliderSetPosition(&p->unk_48, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetDisabled(&p->unk_48, 1);
     func_080E5CD4(p);
 }
 
@@ -3900,7 +3900,7 @@ void func_080E657C(UnkStruct_080E590C* p) {
     }
     gUnk_02034F40--;
     gUnk_02034F41 -= p->unk_00->unk_08;
-    func_08012304(p->unk_48);
+    ColliderUnregister(p->unk_48);
     ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->palette);
     TaskPoolDestroy(p->unk_E4);
@@ -5684,7 +5684,7 @@ void func_080E93FC(void) {
     }
     func_080E0780();
     func_080E0820();
-    func_080125A4();
+    ColliderUpdateAll();
     func_080E6264();
     if ((GetKeysHeld() & 0x300) == 0x300) {
         return;
@@ -5781,7 +5781,7 @@ void Mode_MapDbg_0(void) {
     SetBackdropColor(6, 31, 31);
     SetBlendAlpha(6, 10);
     func_080E0558();
-    func_0801227C();
+    ColliderPoolsInit();
     func_080E05E4();
     func_080E853C();
     func_080E6178();
@@ -5971,7 +5971,7 @@ void func_080E9B7C(void) {
     }
     func_080E0780();
     func_080E0820();
-    func_080125A4();
+    ColliderUpdateAll();
     func_080E6264();
 }
 
@@ -6135,7 +6135,7 @@ void Mode_MapFld_0(void) {
     SetBgPriority(0, 0);
     SetBackdropColor(6, 31, 31);
     func_080E0558();
-    func_0801227C();
+    ColliderPoolsInit();
     func_080E05E4();
     func_080E853C();
     func_080E6178();
@@ -6354,7 +6354,7 @@ void func_080EA498(void) {
     } else {
         func_080E0780();
         func_080E0820();
-        func_080125A4();
+        ColliderUpdateAll();
     }
 }
 
@@ -6477,7 +6477,7 @@ void func_080EA7FC(void) {
     } else {
         func_080E0780();
         func_080E0820();
-        func_080125A4();
+        ColliderUpdateAll();
     }
 }
 
@@ -6509,7 +6509,7 @@ void Mode_MapFix_0(void) {
     SetBgPriority(0, 0);
     SetBackdropColor(0, 0, 0);
     func_080E0558();
-    func_0801227C();
+    ColliderPoolsInit();
     gUnk_0203C7AC->unk_00 |= 0x80000000;
     gUnk_0203C7AC->unk_0C = 26;
     gUnk_0203C7AC->unk_0D = 0;
@@ -7772,8 +7772,8 @@ void func_080EC760(UnkStruct_080EC760* p, UnkStruct_080EC760Entry* q) {
 
         do {
             if (q->unk_00 != 0) {
-                func_080122AC(p->unk_04[i], 6, q->unk_00, 0xA0);
-                func_08012324(p->unk_04[i], q->unk_04, q->unk_08, 0);
+                ColliderInit(p->unk_04[i], 6, q->unk_00, 0xA0);
+                ColliderSetPosition(p->unk_04[i], q->unk_04, q->unk_08, 0);
                 p->unk_00++;
             } else {
                 break;
@@ -7929,7 +7929,7 @@ void func_080ECA54(u8* work) {
     s32 i;
 
     for (i = 0; i < work[0]; i++) {
-        func_08012304(&work[4 + i * 92]);
+        ColliderUnregister(&work[4 + i * 92]);
     }
 
 #ifdef VERSION_EU
@@ -9671,7 +9671,7 @@ s32 func_080EF3A0(UnkStruct_080E590C* p) {
     if (p->unk_08.unk_00 < gUnk_02039BA0->unk_00 - 0x1800 || p->unk_08.unk_00 > gUnk_02039BA0->unk_00 + 0x10800 ||
         q->x + q->y < gUnk_02039BA0->unk_04 - 0x800 || q->x + q->y > gUnk_02039BA0->unk_04 + 0xC000) {
         p->unk_CC = 0;
-        func_08012614(p->unk_48, 1);
+        ColliderSetDisabled(p->unk_48, 1);
         return 1;
     }
     return 0;
@@ -9699,7 +9699,7 @@ void func_080EF478(UnkStruct_080E590C* p, s32 b, s32 c) {
         p->unk_08.unk_00 = b;
         q->x = c;
         p->unk_CC = func_080EF84C;
-        func_08012614(p->unk_48, 1);
+        ColliderSetDisabled(p->unk_48, 1);
     }
 }
 
@@ -9731,7 +9731,7 @@ void func_080EF508(UnkStruct_080E590C* p) {
             p->unk_CC = func_080EF58C;
         }
         *(u16*)&p->unk_D0 = z = 0;
-        func_08012614(p->unk_48, z);
+        ColliderSetDisabled(p->unk_48, z);
     } else {
         func_080E5DEC(p);
 
@@ -9739,7 +9739,7 @@ void func_080EF508(UnkStruct_080E590C* p) {
             (*(s16*)&p->unk_E0)--;
 
             if (*(s16*)&p->unk_E0 <= 0) {
-                func_08012614(p->unk_48, 0);
+                ColliderSetDisabled(p->unk_48, 0);
             }
         }
     }
@@ -9922,15 +9922,15 @@ void func_080EF914(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
             p->unk_CC = func_080EF8CC;
             func_080E5D6C(p, 1, 0);
             p->gfx = AnimGetGfx(p->anim);
-            func_08012614(p->unk_48, 0);
+            ColliderSetDisabled(p->unk_48, 0);
         } else {
             p->unk_CC = func_080EF508;
             func_080E5D6C(p, 0, 0);
             p->gfx = AnimGetGfx(p->anim);
-            func_08012614(p->unk_48, 1);
+            ColliderSetDisabled(p->unk_48, 1);
         }
     } else {
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
     }
     *(u16*)&p->unk_D0 = 0;
 }
@@ -9951,7 +9951,7 @@ s32 func_080EF9A0(UnkStruct_080E590C* p) {
         p->unk_CC(p);
 
         if (p->unk_CC != 0) {
-            func_08012324(p->unk_48, q->unk_00, q->x, q->y);
+            ColliderSetPosition(p->unk_48, q->unk_00, q->x, q->y);
             return 1;
         }
     }
@@ -10188,12 +10188,12 @@ void func_080EFEDC(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
         p->unk_CC = func_080EFE94;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
     } else {
         p->unk_CC = func_080EFC08;
         func_080E5D6C(p, 0, 1);
         p->gfx = AnimGetGfx(p->anim);
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
     }
     w->unk_D0 = 0;
     ((UnkStruct_080EFA30*)p)->unk_F8 = 0;
@@ -10216,7 +10216,7 @@ s32 func_080EFF64(UnkStruct_080E590C* p) {
         ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
 
         if (p->unk_CC != 0) {
-            func_08012324(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
             return 1;
         }
     }
@@ -10251,7 +10251,7 @@ void func_080F005C(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
     p->unk_CC = func_080EFFF8;
     func_080E5D6C(p, 0, 1);
     p->gfx = AnimGetGfx(p->anim);
-    func_08012614(p->unk_48, 0);
+    ColliderSetDisabled(p->unk_48, 0);
 }
 
 s32 func_080F0098(UnkStruct_080E590C* p) {
@@ -10267,7 +10267,7 @@ s32 func_080F0098(UnkStruct_080E590C* p) {
         ((void (*)(UnkStruct_080E590C*))w->unk_CC)(w);
 
         if (w->unk_CC != 0) {
-            func_08012324(w->unk_48, q->unk_00, q->x, q->y);
+            ColliderSetPosition(w->unk_48, q->unk_00, q->x, q->y);
             return 1;
         }
     }
@@ -10472,7 +10472,7 @@ void func_080F0550(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
     w->unk_CC = func_080F02A0;
     func_080E5D6C((UnkStruct_080E590C*)w, 0, 1);
     w->unk_C4 = AnimGetGfx(&w->unk_A4);
-    func_08012614(&w->unk_48, 0);
+    ColliderSetDisabled(&w->unk_48, 0);
     w->unk_D0 = 0;
     *(UnkStruct_080DFF1C*)&w->unk_F8 = *(UnkStruct_080DFF1C*)&w->unk_08;
 }
@@ -10490,7 +10490,7 @@ s32 func_080F05A4(UnkStruct_080E590C* p) {
         ((void (*)(UnkStruct_080E590C*))w->unk_CC)(w);
 
         if (w->unk_CC != 0) {
-            func_08012324(w->unk_48, q->unk_00, q->x, q->y);
+            ColliderSetPosition(w->unk_48, q->unk_00, q->x, q->y);
             return 1;
         }
     }
@@ -10728,12 +10728,12 @@ void func_080F0ACC(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
         p->unk_CC = func_080F0A84;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
     } else {
         p->unk_CC = func_080F07EC;
         func_080E5D6C(p, 0, 1);
         p->gfx = AnimGetGfx(p->anim);
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
     }
     w->unk_D0 = 0;
     ((UnkStruct_080EFA30*)p)->unk_F8 = 0;
@@ -10756,7 +10756,7 @@ s32 func_080F0B54(UnkStruct_080E590C* p) {
         ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
 
         if (p->unk_CC != 0) {
-            func_08012324(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
             return 1;
         }
     }
@@ -10779,7 +10779,7 @@ void func_080F0BE8(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (AnimIsFinished(p->anim)) {
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
         p->unk_D0 = GetRandom() % 121 + 60;
         p->unk_CC = func_080F0C68;
     } else {
@@ -10788,7 +10788,7 @@ void func_080F0BE8(UnkStruct_080E590C* p) {
             q->unk_E0--;
 
             if (q->unk_E0 <= 0) {
-                func_08012614(q->unk_48, 0);
+                ColliderSetDisabled(q->unk_48, 0);
             }
         }
     }
@@ -10814,7 +10814,7 @@ void func_080F0C68(UnkStruct_080E590C* p) {
         if (p->unk_D0 != 0) {
             p->unk_D0--;
         } else {
-            func_08012614(q->unk_48, 1);
+            ColliderSetDisabled(q->unk_48, 1);
             q->unk_CC = func_080F0D00;
         }
     }
@@ -10850,9 +10850,9 @@ void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
         p->unk_CC = func_080F0BE8;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
-        func_08012614(p->unk_48, 1);
+        ColliderSetDisabled(p->unk_48, 1);
     } else {
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
     }
     p->unk_D0 = 0;
 }
@@ -10874,7 +10874,7 @@ s32 func_080F0DD8(UnkStruct_080E590C* p) {
         ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
 
         if (p->unk_CC != 0) {
-            func_08012324(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
             return 1;
         }
     }
@@ -10897,7 +10897,7 @@ void func_080F0E6C(UnkStruct_080E590C* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (AnimIsFinished(p->anim)) {
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
         p->unk_D0 = GetRandom() % 121 + 60;
         p->unk_CC = func_080F0EEC;
     } else {
@@ -10906,7 +10906,7 @@ void func_080F0E6C(UnkStruct_080E590C* p) {
             q->unk_E0--;
 
             if (q->unk_E0 <= 0) {
-                func_08012614(q->unk_48, 0);
+                ColliderSetDisabled(q->unk_48, 0);
             }
         }
     }
@@ -10932,7 +10932,7 @@ void func_080F0EEC(UnkStruct_080E590C* p) {
         if (p->unk_D0 != 0) {
             p->unk_D0--;
         } else {
-            func_08012614(q->unk_48, 1);
+            ColliderSetDisabled(q->unk_48, 1);
             q->unk_CC = func_080F0F84;
         }
     }
@@ -10968,9 +10968,9 @@ void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q) {
         p->unk_CC = func_080F0E6C;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
-        func_08012614(p->unk_48, 1);
+        ColliderSetDisabled(p->unk_48, 1);
     } else {
-        func_08012614(p->unk_48, 0);
+        ColliderSetDisabled(p->unk_48, 0);
     }
     p->unk_D0 = 0;
 }
@@ -10992,7 +10992,7 @@ s32 func_080F105C(UnkStruct_080E590C* p) {
         ((void (*)(UnkStruct_080E590C*))p->unk_CC)(q);
 
         if (p->unk_CC != 0) {
-            func_08012324(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
             return 1;
         }
     }
@@ -11152,7 +11152,7 @@ void func_080F1450(u8* work) {
 }
 
 void func_080F1460(MapGmkJumpWork* w) {
-    if (func_08012660(&w->unk_040, 1) && (w->unk_06E & 2)) {
+    if (ColliderIsTouchingType(&w->unk_040, 1) && (w->unk_06E & 2)) {
         gUnk_0203C7AC->unk_1C = w->unk_0C4;
         gUnk_0203C7AC->unk_18 = w->unk_014;
         w->unk_0C8 = func_080F14C4;
@@ -11164,7 +11164,7 @@ void func_080F1460(MapGmkJumpWork* w) {
 }
 
 void func_080F14C4(MapGmkJumpWork* w) {
-    if (func_08012660(&w->unk_040, 1)) {
+    if (ColliderIsTouchingType(&w->unk_040, 1)) {
         gUnk_0203C7AC->unk_1C = w->unk_0C4;
         gUnk_0203C7AC->unk_18 = w->unk_014;
     } else if (gUnk_02039BA0->unk_20 != gUnk_02039BA0->unk_24) {
@@ -11220,8 +11220,8 @@ void func_080F1584(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     w->unk_0C0 = 0;
     AnimStart(a, 0, 1);
     w->unk_0C8 = func_080F1460;
-    func_080122AC(&w->unk_040, 6, 16, 0);
-    func_08012324(&w->unk_040, p->unk_00, p->x, p->y);
+    ColliderInit(&w->unk_040, 6, 16, 0);
+    ColliderSetPosition(&w->unk_040, p->unk_00, p->x, p->y);
 }
 
 s32 func_080F1650(MapGmkJumpWork* w) {
@@ -11230,9 +11230,9 @@ s32 func_080F1650(MapGmkJumpWork* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)w)) {
-        func_08012614(&w->unk_040, 1);
+        ColliderSetDisabled(&w->unk_040, 1);
     } else {
-        func_08012614(&w->unk_040, 0);
+        ColliderSetDisabled(&w->unk_040, 0);
     }
 
     if (w->unk_0C8 != 0) {
@@ -11257,7 +11257,7 @@ void func_080F169C(MapGmkJumpWork* w) {
 void func_080F1718(MapGmkJumpWork* w) {
     ReleaseObjTiles(w->unk_0B4);
     ReleaseObjPalette(w->unk_0B8);
-    func_08012304(&w->unk_040);
+    ColliderUnregister(&w->unk_040);
 }
 
 s32 func_080F173C(MapGmkEnmWork* w) {
@@ -11433,8 +11433,8 @@ void func_080F1AD0(MapGmkTutorialWork* w) {
     w->unk_0A0 = LoadObjPalette(&gUnk_099910C4[0x140], 32);
     w->unk_09C = AllocSpriteFrameTiles(0x400);
     UpdateSpriteFrameTiles(w->unk_09C, gUnk_098A94A0, gUnk_0994BF64);
-    func_080122AC(&w->unk_040, 6, 16, 0);
-    func_08012324(&w->unk_040, w->unk_000, w->unk_004, w->unk_008);
+    ColliderInit(&w->unk_040, 6, 16, 0);
+    ColliderSetPosition(&w->unk_040, w->unk_000, w->unk_004, w->unk_008);
     w->unk_0A8 = 0;
     w->unk_0AC = func_080F1978;
     TaskPoolInit(&w->unk_0B0, 2);
@@ -11472,7 +11472,7 @@ void func_080F1BC8(MapGmkTutorialWork* w) {
 void func_080F1C38(MapGmkTutorialWork* w) {
     ReleaseObjTiles(w->unk_09C);
     ReleaseObjPalette(w->unk_0A0);
-    func_08012304(w->unk_040);
+    ColliderUnregister(w->unk_040);
     TaskPoolDestroy(&w->unk_0B0);
 }
 
@@ -11592,8 +11592,8 @@ void func_080F1ED4(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->unk_0A0, d->unk_10, d->unk_0C);
     AnimStart(&w->unk_0A0, 0, 1);
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C6 = 0;
     w->unk_0C8 = func_080F1E28;
@@ -11605,9 +11605,9 @@ u8 func_080F1F98(MapGmkGpWork* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
 
     if (w->unk_0C8 != 0) {
@@ -11632,16 +11632,16 @@ void func_080F1FEC(MapGmkGpWork* w) {
 void func_080F2058(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 u8 func_080F207C(MapGmkGp1Work* w) {
     UnkStruct_080DFF1C* p = &w->unk_004;
 
     if (func_080E8374((UnkStruct_080E8374*)p) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
 
     if (!func_080E02E0(p, 8, 8)) {
@@ -11652,7 +11652,7 @@ u8 func_080F207C(MapGmkGp1Work* w) {
         func_080E84DC(&w->unk_004);
         gUnk_0203C7AC->unk_00 |= 0x80;
         w->unk_000->unk_00 |= 1;
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
         AnimStart(&w->unk_0A0, 1, 0);
         w->unk_0C8 = func_080F2130;
     }
@@ -11690,8 +11690,8 @@ void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
     SetObjTileSource(w->unk_0B8, d->unk_04);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C6 = 1;
     w->unk_0C8 = func_080F207C;
@@ -11726,7 +11726,7 @@ void func_080F2274(MapGmkGp1Work* w) {
 void func_080F22E8(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 u8 func_080F230C(MapGmkGpWork* w) {
@@ -11782,8 +11782,8 @@ void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
     SetObjTileSource(w->unk_0B8, d->unk_04);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C8 = func_080F230C;
 }
@@ -11794,9 +11794,9 @@ u8 func_080F24B0(MapGmkGpWork* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
 
     if (w->unk_0C8 != 0) {
@@ -11821,7 +11821,7 @@ void func_080F2504(MapGmkGpWork* w) {
 void func_080F2570(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 u8 func_080F2594(MapGmkGpWork* w) {
@@ -11886,8 +11886,8 @@ void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
     SetObjTileSource(w->unk_0B8, d->unk_04);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C8 = func_080F2594;
 }
@@ -11898,9 +11898,9 @@ u8 func_080F2778(MapGmkGpWork* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
 
     if (w->unk_0C8 != 0) {
@@ -11925,7 +11925,7 @@ void func_080F27CC(MapGmkGpWork* w) {
 void func_080F2838(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 u8 func_080F285C(MapGmkGpWork* w) {
@@ -11981,8 +11981,8 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
     SetObjTileSource(w->unk_0B8, d->unk_04);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C8 = func_080F285C;
 }
@@ -11993,9 +11993,9 @@ u8 func_080F2A10(MapGmkGpWork* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
 
     if (w->unk_0C8 != 0) {
@@ -12020,7 +12020,7 @@ void func_080F2A64(MapGmkGpWork* w) {
 void func_080F2AD0(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 s32 func_080F2AF4(MapGmkGpWork* w) {
@@ -12074,8 +12074,8 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
     SetObjTileSource(w->unk_0B8, d->unk_04);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C8 = func_080F2AF4;
 }
@@ -12086,9 +12086,9 @@ u8 func_080F2CAC(MapGmkGpWork* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
 
     if (w->unk_0C8 != 0) {
@@ -12113,7 +12113,7 @@ void func_080F2D00(MapGmkGpWork* w) {
 void func_080F2D6C(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 u8 func_080F2D90(MapGmkGpWork* w) {
@@ -12181,8 +12181,8 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
     SetObjTileSource(w->unk_0B8, d->unk_04);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
     w->unk_0C8 = func_080F2D90;
 }
@@ -12193,9 +12193,9 @@ u8 func_080F2F6C(MapGmkGpWork* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
 
     if (w->unk_0C8 != 0) {
@@ -12220,7 +12220,7 @@ void func_080F2FC0(MapGmkGpWork* w) {
 void func_080F302C(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 s32 func_080F3050(MapGmkGp8Work* w) {
@@ -12228,7 +12228,7 @@ s32 func_080F3050(MapGmkGp8Work* w) {
 
     w->unk_0C0 = AnimUpdate(a);
 
-    if (func_08012660(w->unk_044, 1) != 0) {
+    if (ColliderIsTouchingType(w->unk_044, 1) != 0) {
         if (w->unk_072 & 2) {
             if (!(w->unk_000->unk_00 & 2)) {
                 w->unk_000->unk_00 |= 2;
@@ -12245,7 +12245,7 @@ s32 func_080F3050(MapGmkGp8Work* w) {
 s32 func_080F30C4(MapGmkGp8Work* w) {
     w->unk_0C0 = AnimUpdate(&w->unk_0A0);
 
-    if (func_08012660(w->unk_044, 1) == 0) {
+    if (ColliderIsTouchingType(w->unk_044, 1) == 0) {
         AnimStart(&w->unk_0A0, 2, 0);
         w->unk_0C4 = func_080F3108;
     }
@@ -12281,8 +12281,8 @@ void func_080F3150(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(&w->unk_0A0, 0, 1);
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
     SetObjTileSource(w->unk_0B8, d->unk_04);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = func_080F3050;
 }
 
@@ -12292,9 +12292,9 @@ u8 func_080F3210(MapGmkGp8Work* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004)) {
-        func_08012614(w->unk_044, 1);
+        ColliderSetDisabled(w->unk_044, 1);
     } else {
-        func_08012614(w->unk_044, 0);
+        ColliderSetDisabled(w->unk_044, 0);
     }
 
     if (w->unk_0C4 != 0) {
@@ -12319,7 +12319,7 @@ void func_080F3264(MapGmkGpWork* w) {
 void func_080F32D0(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 s32 func_080F32F4(MapGmkGp8Work* w) {
@@ -12373,8 +12373,8 @@ void func_080F33D0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->unk_0A0, d->unk_10, d->unk_0C);
     AnimStart(&w->unk_0A0, 0, 1);
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C8 = d->unk_20;
     w->unk_0CA = 0;
     w->unk_0CC = func_080F32F4;
@@ -12386,9 +12386,9 @@ u8 func_080F3494(MapGmkGp8Work* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004)) {
-        func_08012614(w->unk_044, 1);
+        ColliderSetDisabled(w->unk_044, 1);
     } else {
-        func_08012614(w->unk_044, 0);
+        ColliderSetDisabled(w->unk_044, 0);
     }
 
     if (w->unk_0CC != 0) {
@@ -12417,7 +12417,7 @@ void func_080F34E8(MapGmkGp8Work* w) {
 void func_080F359C(MapGmkGp8Work* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 s32 func_080F35C0(MapGmkGp8Work* w) {
@@ -12425,7 +12425,7 @@ s32 func_080F35C0(MapGmkGp8Work* w) {
 
     w->unk_0C4 = AnimUpdate(a);
 
-    if (func_08012660(w->unk_044, 1) != 0) {
+    if (ColliderIsTouchingType(w->unk_044, 1) != 0) {
         if (w->unk_072 & 2) {
             if (!(w->unk_000->unk_00 & 2)) {
                 w->unk_000->unk_00 |= 2;
@@ -12452,7 +12452,7 @@ s32 func_080F3638(MapGmkGp8Work* w) {
 }
 
 s32 func_080F3674(MapGmkGp8Work* w) {
-    if (func_08012660(w->unk_044, 1) == 0) {
+    if (ColliderIsTouchingType(w->unk_044, 1) == 0) {
         w->unk_0CC = func_080F35C0;
     }
     return 1;
@@ -12473,8 +12473,8 @@ void func_080F369C(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->unk_0A0, d->unk_10, d->unk_0C);
     AnimStart(&w->unk_0A0, 0, 1);
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C8 = 0;
     w->unk_0CC = func_080F35C0;
 }
@@ -12485,9 +12485,9 @@ u8 func_080F375C(MapGmkGp8Work* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004)) {
-        func_08012614(w->unk_044, 1);
+        ColliderSetDisabled(w->unk_044, 1);
     } else {
-        func_08012614(w->unk_044, 0);
+        ColliderSetDisabled(w->unk_044, 0);
     }
 
     if (w->unk_0CC != 0) {
@@ -12516,7 +12516,7 @@ void func_080F37B0(MapGmkGp8Work* w) {
 void func_080F3864(MapGmkGp8Work* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 void func_080F3888(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
@@ -12536,11 +12536,11 @@ void func_080F3888(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(a, d->unk_10, d->unk_0C);
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
 
     if (func_080E8374((UnkStruct_080E8374*)e) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     }
     w->unk_0C4 = d->unk_1C;
     w->unk_0C9 = 0;
@@ -12557,9 +12557,9 @@ u8 func_080F3958(MapGmk00Work* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)q) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
 
     if (!(w->unk_000->unk_00 & 2)) {
@@ -12596,7 +12596,7 @@ void func_080F39DC(MapGmk00Work* w) {
 void func_080F3A50(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 u8 func_080F3A74(MapGmk01Work* w) {
@@ -12670,8 +12670,8 @@ void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
         w->unk_0C8 = func_080F3A74;
     }
     SetObjTileSource(w->unk_0B8, &gUnk_09858238[0x74]);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
 }
 
 u8 func_080F3C98(MapGmk01Work* w) {
@@ -12701,7 +12701,7 @@ void func_080F3CC8(MapGmkGpWork* w) {
 void func_080F3D34(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 void func_080F3D58(UnkStruct_080DFF1C* p) {
@@ -12758,16 +12758,16 @@ u8 func_080F3E24(MapGmkBarrelWork* w) {
 
         gUnk_0203C7AC->unk_00 |= 0x80;
         w->unk_000->unk_00 |= 1;
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
         AnimStart(&w->unk_0A0, 1, 0);
         w->unk_0C8 = func_080F3F6C;
         return 1;
     }
 
     if ((u8)func_080E8374((UnkStruct_080E8374*)p) != 0) {
-        func_08012614(&w->unk_044, 1);
+        ColliderSetDisabled(&w->unk_044, 1);
     } else {
-        func_08012614(&w->unk_044, 0);
+        ColliderSetDisabled(&w->unk_044, 0);
     }
     return 1;
 }
@@ -12803,8 +12803,8 @@ void func_080F3FB4(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
     SetObjTileSource(w->unk_0B8, d->unk_04);
-    func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = 1;
     w->unk_0C8 = func_080F3E24;
 }
@@ -12838,7 +12838,7 @@ void func_080F40A8(MapGmkBarrelWork* w) {
 void func_080F411C(MapGmkGpWork* w) {
     ReleaseObjTiles(w->unk_0B8);
     ReleaseObjPalette(w->unk_0BC);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
 }
 
 void func_080F4140(MapGmk04Work* w) {
@@ -12901,8 +12901,8 @@ void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->unk_0A8, d->unk_10, d->unk_0C);
     AnimStart(&w->unk_0A8, 0, 1);
     w->unk_0C0 = AnimGetGfx(&w->unk_0A8);
-    func_080122AC(&w->unk_044, 4, 24, 24);
-    func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 4, 24, 24);
+    ColliderSetPosition(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     TaskPoolInit(&w->unk_0C8, 1);
     func_080121D4(e);
 }
@@ -12944,7 +12944,7 @@ void func_080F43B4(MapGmk04Work* w) {
 void func_080F4428(MapGmk04Work* w) {
     ReleaseObjTiles(w->unk_0A4);
     ReleaseObjPalette(w->unk_0A0);
-    func_08012304(&w->unk_044);
+    ColliderUnregister(&w->unk_044);
     TaskPoolDestroy(&w->unk_0C8);
     func_080121FC(&w->unk_004);
 }
@@ -12991,8 +12991,8 @@ void func_080F4500(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(a, d->unk_10, d->unk_0C);
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
-    func_080122AC(&w->unk_044, 4, 16, 24);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 4, 16, 24);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     func_080121D4(e);
     TaskPoolInit(&w->unk_0CC, 1);
     TaskCreate(&w->unk_0CC, &gTaskDescFldShadow, e);
@@ -13045,7 +13045,7 @@ void func_080F4630(MapGmk05Work* w) {
 void func_080F46C0(MapGmk05Work* w) {
     ReleaseObjTiles(w->unk_0A4);
     ReleaseObjPalette(w->unk_0A0);
-    func_08012304(w->unk_044);
+    ColliderUnregister(w->unk_044);
     func_080121FC(&w->unk_004);
     TaskPoolDestroy(&w->unk_0CC);
     TaskPoolDestroy(&w->unk_0E0);
@@ -13098,8 +13098,8 @@ void func_080F484C(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->unk_0A0, d->unk_10, d->unk_0C);
     AnimStart(&w->unk_0A0, 0, 1);
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
-    func_080122AC(&w->unk_044, 4, 24, 24);
-    func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_044, 4, 24, 24);
+    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     TaskPoolInit(&w->unk_0C8, 1);
     func_080121D4(e);
 }
@@ -13141,7 +13141,7 @@ void func_080F4928(MapGmk06Work* w) {
 void func_080F499C(MapGmk06Work* w) {
     ReleaseObjTiles(w->unk_0BC);
     ReleaseObjPalette(w->unk_0B8);
-    func_08012304(&w->unk_044);
+    ColliderUnregister(&w->unk_044);
     TaskPoolDestroy(&w->unk_0C8);
     func_080121FC(&w->unk_004);
 }
@@ -13195,12 +13195,12 @@ void func_080F49D0(MapPrizeWork* w) {
         w->unk_97 = 1;
         w->unk_96 = 1;
         w->unk_8D = GetRandom() % 6 + 5;
-        func_08012614(&w->unk_10, 1);
+        ColliderSetDisabled(&w->unk_10, 1);
     } else {
-        func_08012324(&w->unk_10, w->unk_00, w->unk_04, w->unk_08);
+        ColliderSetPosition(&w->unk_10, w->unk_00, w->unk_04, w->unk_08);
 
         if (w->unk_82 == 20) {
-            func_08012614(&w->unk_10, 0);
+            ColliderSetDisabled(&w->unk_10, 0);
         }
 
         if (w->unk_82 > 420) {
@@ -13278,9 +13278,9 @@ void func_080F4C5C(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     w->unk_82 = 0;
     w->unk_7C = func_080F49D0;
     w->unk_90 = 0x100;
-    func_080122AC(&w->unk_10, 5, 16, 50);
-    func_08012324(&w->unk_10, w->unk_00, w->unk_04, w->unk_08);
-    func_08012614(&w->unk_10, 1);
+    ColliderInit(&w->unk_10, 5, 16, 50);
+    ColliderSetPosition(&w->unk_10, w->unk_00, w->unk_04, w->unk_08);
+    ColliderSetDisabled(&w->unk_10, 1);
 }
 
 s32 func_080F4DB0(MapPrizeWork* w) {
@@ -13325,7 +13325,7 @@ void func_080F4DDC(MapPrizeWork* w) {
 void func_080F4EC4(MapPrizeWork* w) {
     ReleaseObjTiles(w->unk_6C);
     ReleaseObjPalette(w->unk_70);
-    func_08012304(w->unk_10);
+    ColliderUnregister(w->unk_10);
 }
 
 void func_080F4EE4(MapPrzCardWork* work) {
@@ -13348,7 +13348,7 @@ void func_080F4F60(MapPrzCardWork* w) {
     dy = 0x5000;
     dx -= w->unk_000;
     dy -= w->unk_004;
-    w->unk_0C8 = func_0805F5A4(&dx, &dy);
+    w->unk_0C8 = NormalizeVector2D8(&dx, &dy);
     w->unk_0C0 = -dx;
     w->unk_0C4 = -dy;
     w->unk_0B0 = 0x300;
@@ -13399,7 +13399,7 @@ void func_080F4FB0(MapPrzCardWork* w) {
         ny = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         w->unk_000 = (s16)nx << 8;
         w->unk_004 = (s16)ny << 8;
-        func_08012614(&w->unk_010, 1);
+        ColliderSetDisabled(&w->unk_010, 1);
         w->unk_0BE = 50;
         func_080F4F60(w);
         w->unk_088 = 0;
@@ -13410,10 +13410,10 @@ void func_080F4FB0(MapPrzCardWork* w) {
         w->unk_0BE = -0x1004 - (w->unk_004 >> 8) * 4;
         func_080F4EE4(w);
         w->unk_0D0 += 2;
-        func_08012324(&w->unk_010, w->unk_000, w->unk_004, w->unk_008);
+        ColliderSetPosition(&w->unk_010, w->unk_000, w->unk_004, w->unk_008);
 
         if (w->unk_08A == 20) {
-            func_08012614(&w->unk_010, 0);
+            ColliderSetDisabled(&w->unk_010, 0);
         }
 
         if (w->unk_08A <= 59) {
@@ -13431,7 +13431,7 @@ void func_080F51A0(MapPrzCardWork* w) {
     if (w->unk_0B0 < 0) {
         dx = 0x7800 - w->unk_000;
         dy = 0x5000 - w->unk_004;
-        func_0805F5A4(&dx, &dy);
+        NormalizeVector2D8(&dx, &dy);
         w->unk_0C0 = -dx;
         w->unk_0C4 = -dy;
 
@@ -13448,7 +13448,7 @@ void func_080F51A0(MapPrzCardWork* w) {
     w->unk_0CE += 32;
     w->unk_0CF += (64 - w->unk_0CF) >> 4;
     w->unk_0D0 = 0;
-    w->unk_0C8 = func_0805F588(0x7800 - w->unk_000, 0x5000 - w->unk_004);
+    w->unk_0C8 = VectorLength2D(0x7800 - w->unk_000, 0x5000 - w->unk_004);
     w->unk_0B0 -= w->unk_0AC;
     w->unk_0AC += 2;
     w->unk_0CC += 3;
@@ -13541,13 +13541,13 @@ void func_080F53D0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     w->unk_0CF = 0;
     w->unk_0D0 = 0;
     w->unk_0D1 = p->unk_00;
-    func_080122AC(&w->unk_010, 5, 30, 10);
-    func_08012324(&w->unk_010, w->unk_000, w->unk_004, w->unk_008);
+    ColliderInit(&w->unk_010, 5, 30, 10);
+    ColliderSetPosition(&w->unk_010, w->unk_000, w->unk_004, w->unk_008);
 
     if (w->unk_0D1 != 0) {
-        func_08012614(&w->unk_010, 0);
+        ColliderSetDisabled(&w->unk_010, 0);
     } else {
-        func_08012614(&w->unk_010, 1);
+        ColliderSetDisabled(&w->unk_010, 1);
     }
 
     w->unk_088 = 0x800;
@@ -13619,7 +13619,7 @@ void func_080F55B0(MapPrzCardWork* w) {
 void func_080F5780(MapPrzCardWork* w) {
     FadeSetPaletteExcluded(w->unk_074->unk_06 + 0x10, 0);
     FadeSetPaletteExcluded(w->unk_06C->unk_06 + 0x10, 0);
-    func_08012304(w->unk_010);
+    ColliderUnregister(w->unk_010);
     ReleaseObjTiles(w->unk_070);
     ReleaseObjTiles(w->unk_078);
     ReleaseObjTiles(w->unk_07C);
@@ -13859,8 +13859,8 @@ void func_080F5D10(MapDonaldWork* w) {
     w->unk_0B8 = LoadObjPalette(gUnk_09617C58, 32);
     AnimInit(&w->unk_09C, gUnk_09EEE0A8, gUnk_09EEE03C);
     AnimStart(&w->unk_09C, 0, 1);
-    func_080122AC(&w->unk_040, 4, 16, 48);
-    func_08012324(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_040, 4, 16, 48);
+    ColliderSetPosition(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     func_080121D4(e);
     TaskPoolInit(&w->unk_0C4, 2);
     TaskCreate(&w->unk_0C4, &gTaskDescFldShadow, w);
@@ -13913,7 +13913,7 @@ void func_080F5EA8(MapDonaldWork* w) {
 void func_080F5F4C(MapFrdWork* w) {
     ReleaseObjTiles(w->unk_0B4);
     ReleaseObjPalette(w->unk_0B8);
-    func_08012304(w->unk_040);
+    ColliderUnregister(w->unk_040);
     func_080121FC(w);
     TaskPoolDestroy(&w->unk_0C4);
     TaskPoolDestroy(&w->unk_0D8);
@@ -13974,8 +13974,8 @@ void func_080F6038(MapGoofyWork* w) {
     w->unk_0B8 = LoadObjPalette(gUnk_08F68384, 32);
     AnimInit(&w->unk_09C, gUnk_09EEE1CC, gUnk_09EEE1C8);
     AnimStart(&w->unk_09C, 0, 1);
-    func_080122AC(&w->unk_040, 4, 16, 48);
-    func_08012324(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_040, 4, 16, 48);
+    ColliderSetPosition(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     func_080121D4(e);
     TaskPoolInit(&w->unk_0C4, 2);
     TaskCreate(&w->unk_0C4, &gTaskDescFldShadow, w);
@@ -14028,7 +14028,7 @@ void func_080F61D0(MapGoofyWork* w) {
 void func_080F6274(MapFrdWork* w) {
     ReleaseObjTiles(w->unk_0B4);
     ReleaseObjPalette(w->unk_0B8);
-    func_08012304(w->unk_040);
+    ColliderUnregister(w->unk_040);
     func_080121FC(w);
     TaskPoolDestroy(&w->unk_0C4);
     TaskPoolDestroy(&w->unk_0D8);
@@ -14091,8 +14091,8 @@ void func_080F6348(MapNamineWork* w) {
     w->unk_0B8 = LoadObjPalette(gUnk_096184D8, 32);
     AnimInit(&w->unk_09C, gUnk_09EF0D64, gUnk_09EF0D48);
     AnimStart(&w->unk_09C, 0, 1);
-    func_080122AC(w->unk_040, 4, 16, 48);
-    func_08012324(w->unk_040, p->unk_00.unk_00, p->unk_00.x, p->unk_00.y);
+    ColliderInit(w->unk_040, 4, 16, 48);
+    ColliderSetPosition(w->unk_040, p->unk_00.unk_00, p->unk_00.x, p->unk_00.y);
 
     if (w->unk_0C0 != 0) {
         func_080121D4(p);
@@ -14149,7 +14149,7 @@ void func_080F6500(MapNamineWork* w) {
 void func_080F65A8(MapNamineWork* w) {
     ReleaseObjTiles(w->unk_0B4);
     ReleaseObjPalette(w->unk_0B8);
-    func_08012304(w->unk_040);
+    ColliderUnregister(w->unk_040);
 
     if (w->unk_0C0 != 0) {
         func_080121FC(w);
@@ -14256,8 +14256,8 @@ void func_080F6704(MapNiserikuWork* w) {
         w->unk_0B8 = LoadObjPalette(gUnk_09618338, 32);
         AnimInit(&w->unk_09C, gUnk_09EF04D8, gUnk_09EF04D4);
         AnimStart(&w->unk_09C, 0, 1);
-        func_080122AC(&w->unk_040, 4, 16, 48);
-        func_08012324(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+        ColliderInit(&w->unk_040, 4, 16, 48);
+        ColliderSetPosition(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
         TaskCreate(&w->unk_0C4, &gTaskDescFldShadow, w);
         break;
     case 23:
@@ -14266,8 +14266,8 @@ void func_080F6704(MapNiserikuWork* w) {
         w->unk_0B8 = LoadObjPalette(gUnk_09618338, 32);
         AnimInit(&w->unk_09C, gUnk_09EF0510, gUnk_09EF04FC);
         AnimStart(&w->unk_09C, 0, 1);
-        func_080122AC(&w->unk_040, 4, 16, 48);
-        func_08012324(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+        ColliderInit(&w->unk_040, 4, 16, 48);
+        ColliderSetPosition(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
         TaskCreate(&w->unk_0C4, &gTaskDescFldShadow, w);
         break;
     case 24:
@@ -14279,8 +14279,8 @@ void func_080F6704(MapNiserikuWork* w) {
         w->unk_0B8 = LoadObjPalette(gUnk_09618338, 32);
         AnimInit(&w->unk_09C, gUnk_09EF0628, gUnk_09EF060C);
         AnimStart(&w->unk_09C, 1, 1);
-        func_080122AC(&w->unk_040, 4, 36, 48);
-        func_08012324(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+        ColliderInit(&w->unk_040, 4, 36, 48);
+        ColliderSetPosition(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
         break;
     }
 
@@ -14333,7 +14333,7 @@ void func_080F6978(MapNiserikuWork* w) {
 void func_080F6A1C(MapMickeyWork* w) {
     ReleaseObjTiles(w->unk_0B4);
     ReleaseObjPalette(w->unk_0B8);
-    func_08012304(w->unk_040);
+    ColliderUnregister(w->unk_040);
 
     if (w->unk_0C0 != 0) {
         func_080121FC(w);
@@ -14390,8 +14390,8 @@ void func_080F6B0C(MapMickeyWork* w) {
     w->unk_0B8 = LoadObjPalette(gUnk_096183F8, 32);
     AnimInit(&w->unk_09C, gUnk_09EF0824, gUnk_09EF0820);
     AnimStart(&w->unk_09C, 0, 1);
-    func_080122AC(&w->unk_040, 4, 16, 48);
-    func_08012324(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->unk_040, 4, 16, 48);
+    ColliderSetPosition(&w->unk_040, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     func_080121D4(e);
     TaskPoolInit(&w->unk_0C4, 2);
     TaskCreate(&w->unk_0C4, &gTaskDescFldShadow, w);
@@ -14444,7 +14444,7 @@ void func_080F6C5C(MapMickeyWork* w) {
 void func_080F6D04(MapFrdWork* w) {
     ReleaseObjTiles(w->unk_0B4);
     ReleaseObjPalette(w->unk_0B8);
-    func_08012304(w->unk_040);
+    ColliderUnregister(w->unk_040);
     func_080121FC(w);
     TaskPoolDestroy(&w->unk_0C4);
     TaskPoolDestroy(&w->unk_0D8);
@@ -14489,8 +14489,8 @@ void func_080F6DE8(MapTutorialWork* w) {
         AnimInit(a, gUnk_09EF8460, gUnk_09EF8424);
         AnimStart(a, 0, 1);
         w->unk_0BC = AnimGetGfx(a);
-        func_080122AC(w->unk_040, 6, 12, 24);
-        func_08012324(w->unk_040, w->unk_000, w->unk_004, w->unk_008);
+        ColliderInit(w->unk_040, 6, 12, 24);
+        ColliderSetPosition(w->unk_040, w->unk_000, w->unk_004, w->unk_008);
         w->unk_0C1 = 1;
         TaskCreate(&w->unk_0DC, &gTaskDescFldShadow, w);
         w->unk_0C0 = 1;
@@ -14512,7 +14512,7 @@ void func_080F6EBC(MapTutorialWork* w) {
         w->unk_0C1 = 0;
         w->unk_0C4 = func_080F6F1C;
     }
-    func_08012324(p->unk_040, p->unk_000, p->unk_004, p->unk_008);
+    ColliderSetPosition(p->unk_040, p->unk_000, p->unk_004, p->unk_008);
 }
 
 void func_080F6F1C(MapTutorialWork* w) {
@@ -14523,7 +14523,7 @@ void func_080F6F1C(MapTutorialWork* w) {
         func_080E8FB8(0, w->unk_000, w->unk_004, w->unk_008);
         AnimStart(&w->unk_09C, 1, 0);
         w->unk_0C4 = func_080F6F90;
-        func_08012304(w->unk_040);
+        ColliderUnregister(w->unk_040);
     }
 }
 
@@ -14567,9 +14567,9 @@ void func_080F7024(MapTutorialWork* w) {
         AnimInit(a, gUnk_09EDF940, gUnk_09EDF914);
         AnimStart(a, 0, 1);
         w->unk_0BC = AnimGetGfx(a);
-        func_080122AC(w->unk_040, 3, 8, 16);
-        func_08012324(w->unk_040, w->unk_000, w->unk_004, w->unk_008);
-        func_08012614(w->unk_040, 1);
+        ColliderInit(w->unk_040, 3, 8, 16);
+        ColliderSetPosition(w->unk_040, w->unk_000, w->unk_004, w->unk_008);
+        ColliderSetDisabled(w->unk_040, 1);
         w->unk_0C4 = func_080F70F4;
     }
 }
@@ -14592,7 +14592,7 @@ void func_080F7160(MapTutorialWork* w) {
 
     if (func_080A42C8() == 0) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
-        func_08012614(w->unk_040, 0);
+        ColliderSetDisabled(w->unk_040, 0);
         w->unk_0C4 = func_080F71AC;
     }
 }
@@ -14612,7 +14612,7 @@ void func_080F71AC(MapTutorialWork* w) {
         w->unk_0C4 = func_080F7284;
     } else if (w->unk_06C != 0) {
         if (!(gUnk_0203C7AC->unk_00 & 4) && w->unk_074 == 1) {
-            func_08012614(w->unk_040, 1);
+            ColliderSetDisabled(w->unk_040, 1);
             func_080F6D40();
         } else {
             w->unk_000 += w->unk_078;
@@ -14625,7 +14625,7 @@ void func_080F7284(MapTutorialWork* w) {
     AnimState* a = &w->unk_09C;
 
     if (AnimIsFinished(a)) {
-        func_08012614(w->unk_040, 1);
+        ColliderSetDisabled(w->unk_040, 1);
         gGameState.flags |= 4;
         func_080F6D40();
     } else {

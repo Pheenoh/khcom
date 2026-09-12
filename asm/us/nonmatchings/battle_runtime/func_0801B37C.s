@@ -295,7 +295,7 @@ _0801B632:
 	ldrh r2, [r7, #0x08]
 	ldrh r3, [r7, #0x06]
 	movs r1, #0x08
-	bl func_080122AC
+	bl ColliderInit
 _0801B714:
 	ldr r2, [r6, #0x34]
 	ldr r3, [r6, #0x38]
@@ -331,7 +331,7 @@ _0801B748:
 	ldrh r2, [r7, #0x08]
 	ldrh r3, [r7, #0x06]
 	movs r1, #0x0B
-	bl func_080122AC
+	bl ColliderInit
 	b _0801B776
 _0801B768:
 	adds r0, r6, #0x0
@@ -339,7 +339,7 @@ _0801B768:
 	ldrh r2, [r7, #0x08]
 	ldrh r3, [r7, #0x06]
 	movs r1, #0x03
-	bl func_080122AC
+	bl ColliderInit
 _0801B776:
 	adds r0, r6, #0x0
 	bl func_0801B024
