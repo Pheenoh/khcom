@@ -27832,7 +27832,6 @@ s32 func_080A25B8(UnkStruct_080A2678* w, void* a) {
     w->unk_2B1++;
     return 1;
 }
-#ifndef VERSION_EU
 u8 func_080A25E0(UnkStruct_080A2678* w, void* a) {
     s8* counter = &w->unk_2AC;
 
@@ -27852,9 +27851,6 @@ u8 func_080A25E0(UnkStruct_080A2678* w, void* a) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_080A25E0.s");
-#endif
 void func_080A2678(UnkStruct_080A2678* w) {
 #ifdef VERSION_JP
     w->unk_298 = w->unk_294 + w->unk_2AD * 0xA00;
