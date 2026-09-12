@@ -5828,11 +5828,11 @@ void func_08080228(UnkStruct_08080268* w) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_08080268(UnkStruct_08080268* w) {
     UnkStruct_02034AAC* q;
     u8 d;
     u8 i;
+    u16 remaining;
 
     d = gUnk_02039DD4->unk_0C2;
 
@@ -5846,17 +5846,15 @@ void func_08080268(UnkStruct_08080268* w) {
                     break;
                 }
 
-                d -= q->unk_A5;
+                remaining = d - q->unk_A5;
                 q->unk_A5 = 0;
+                d = remaining;
             }
         }
 
         gBtlWork->unk_0F8--;
     }
 }
-#else
-INCLUDE_ASM("card/func_08080268.s");
-#endif
 
 #ifdef NON_MATCHING
 void func_080802D8(UnkStruct_08080268* w) {
