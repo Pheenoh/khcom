@@ -319,6 +319,7 @@ extern void** gUnkEu_09F6FF70[];
 extern u8 gUnkEu_094E04E4[];
 extern u8 gUnkEu_09533324[];
 extern u8* gUnkEu_09F6FE04[];
+extern void* gUnkEu_09F72D08[];
 extern u8 gUnkEu_094C6C22[];
 extern u8 gUnkEu_094C789A[];
 extern u8 gUnkEu_094C7472[];
@@ -23322,7 +23323,6 @@ s32 func_0809AD60(UnkStruct_0809A02C* w, void* a) {
     TaskPoolUpdate(&w->unk_20);
     return 1;
 }
-#ifndef VERSION_EU
 s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
     s32 dx = 0;
     s32 dy = 0;
@@ -23344,7 +23344,11 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
             w->unk_3C = 0x5000;
             *(u16*)&w->unk_1B8 = v = 0x100;
             *(u16*)&w->unk_1BA = v;
+#ifdef VERSION_EU
+            func_08096F08(&w->unk_20, eu_0805E924(gCardDefs[w->unk_1A0].unk_0C));
+#else
             func_08096F08(&w->unk_20, gCardDefs[w->unk_1A0].unk_0C);
+#endif
             SetTaskUpdate(a, (void*)func_0809AD60);
             w->unk_1C4 = 0;
             w->unk_1C2 = 50;
@@ -23380,10 +23384,6 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
     TaskPoolUpdate(&w->unk_20);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809AD98.s");
-#endif
-#ifndef VERSION_EU
 s32 func_0809AF84(UnkStruct_0809A02C* w, void* a) {
     s16 x;
     s16 y;
