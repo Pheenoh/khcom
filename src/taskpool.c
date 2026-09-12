@@ -22,6 +22,7 @@ u32 gUnkEu_030074AC;
 #endif
 #ifdef VERSION_EU
 void eu_0800115C(void);
+extern Mode gModeLang;
 #endif
 extern Mode gModeCopyright1;
 extern Mode* gDebugModes[];
@@ -33,7 +34,11 @@ u8 IsTaskActiveNamed(Task* t, const char* name);
 const char* GetTaskName(Task* t);
 void func_08000F94(void);
 void ModeStart(Mode* mode, s32 arg);
+#ifdef VERSION_EU
+void ModeInit(u8 a);
+#else
 void ModeInit(void);
+#endif
 void func_08001058(void (*a)(void), void (*b)(void));
 void func_08001080(void);
 void func_0800109C(void (*fn)(void));
@@ -236,19 +241,28 @@ void ModeStart(Mode* mode, s32 arg) {
     gModeFlags |= 8;
 }
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+void ModeInit(u8 a) {
+#else
 void ModeInit(void) {
+#endif
     gModeFlags = 3;
     gUnk_0300749E = 0;
     gDebugModeIndex = 0;
+#ifdef VERSION_EU
+
+    if (a) {
+        ModeStart(&gModeCopyright1, 0);
+    } else {
+        ModeStart(&gModeLang, 0);
+    }
+#else
     ModeStart(&gModeCopyright1, 0);
+#endif
     gPendingMode = 0;
     gUnk_030074A0 = 0;
     gUnk_030074A4 = 0;
 }
-#else
-INCLUDE_ASM("taskpool/ModeInit.s");
-#endif
 void func_08001058(void (*a)(void), void (*b)(void)) {
     if (a != 0) {
         a();
