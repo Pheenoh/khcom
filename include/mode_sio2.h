@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include "prize_types.h"
+
 #include "card_api.h"
 
 #include "msg_api.h"
@@ -33,14 +35,6 @@ typedef struct PoohAnim {
     u8 unk_0C;
 } PoohAnim;
 
-typedef struct PoohPrizeArgs {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    u16 unk_14;
-} PoohPrizeArgs;
 typedef struct CharaLinkData {
     u16 unk_00;
     u16 unk_02;

@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "obj_resource_types.h"
+
 #include "card_api.h"
 
 #include "gba/syscall.h"
@@ -428,12 +430,6 @@ typedef struct UnkStruct_09A4CEDC {
 
 extern const UnkStruct_09A4CEDC gUnk_09A4CEDC[];
 
-typedef struct UnkStruct_080038C8 {
-    u8* unk_00;
-    u8 unk_04[0x02];
-    u16 unk_06;
-    u16 unk_08;
-} UnkStruct_080038C8;
 
 extern u8 gUnk_09CC4E54[];
 extern u8 gUnk_09D693D4[];

@@ -1,6 +1,8 @@
 #ifndef GUARD_ROOM_H
 #define GUARD_ROOM_H
 
+#include "chara_types.h"
+
 #include "chara_api.h"
 #include "m4a_song.h"
 #include "text.h"
@@ -165,32 +167,6 @@ typedef struct RoomObjResource {
     u32 unk_20;
 } RoomObjResource;
 
-typedef struct CharaObjParam {
-    u32 unk_00;
-    u16 unk_04;
-    u8 unk_06[0x02];
-    u32 unk_08;
-    u16 unk_0C;
-    u8 unk_0E[0x02];
-    u32 unk_10;
-    u16 unk_14;
-    u8 unk_16[0x02];
-    u32 unk_18;
-    u16 unk_1C;
-    u8 unk_1E[0x02];
-    u32 unk_20;
-    u16 unk_24;
-    u8 unk_26[0x02];
-    u32 unk_28;
-    u16 unk_2C;
-    u8 unk_2E[0x02];
-    u32 unk_30;
-    u32 unk_34;
-    u32 unk_38;
-    u32 unk_3C;
-    u32 unk_40;
-    u16 unk_44;
-} CharaObjParam;
 
 s32 func_080F7F70(GaWork* work, s16 i);
 s32 func_080F7F94(GaWork* work, s16 i);

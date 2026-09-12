@@ -1,6 +1,8 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "obj_resource_types.h"
+
 #include "card_api.h"
 
 #include "card_deck.h"
@@ -445,14 +447,6 @@ extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_09EE7FD8[];
 extern u8 gUnk_09EE7FA8[];
 
-typedef struct CardBack {
-    void* unk_00;
-    void* unk_04;
-    u8 unk_08[0x04];
-    void* unk_0C;
-    void* unk_10;
-    u8 unk_14[0x04];
-} CardBack;
 
 typedef struct UnkStruct_09EE8008 {
     u32 unk_00;
@@ -868,12 +862,6 @@ typedef struct UnkStruct_08098670 {
     s32 unk_28;
 } UnkStruct_08098670;
 
-typedef struct UnkStruct_080038C8 {
-    u8* unk_00;
-    u8 unk_04[0x02];
-    u16 unk_06;
-    u16 unk_08;
-} UnkStruct_080038C8;
 
 typedef struct UnkStruct_0809CE88 {
     void* unk_00;

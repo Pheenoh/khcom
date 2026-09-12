@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
 
+#include "card_types.h"
+
+#include "ms_types.h"
+
 #include "card_api.h"
 
 #include "map_api.h"
@@ -28,38 +32,8 @@
 #include "malloc.h"
 #include "m4a.h"
 
-typedef struct CardBack {
-    void* unk_00;
-    u8 unk_04[0x8];
-    void* unk_0C;
-    u8 unk_10[0x8];
-} CardBack;
 
-typedef struct MsShopHosiArg {
-    s16 x;
-    s16 y;
-    void* palette;
-    u8 unk_08;
-    u8 unk_09[0x3];
-    s32 unk_0C;
-} MsShopHosiArg;
 
-typedef struct MsCardDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-    void* unk_18;
-    u16 unk_1C;
-    u8 unk_1E[0x2];
-    u8 unk_20;
-    u8 unk_21[0x7];
-    u16 unk_28;
-    u8 unk_2A;
-    u8 unk_2B[0x9];
-} MsCardDef;
 
 typedef struct UnkStruct_099935A8_00 {
     u16 unk_00;

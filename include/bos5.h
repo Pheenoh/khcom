@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "prize_types.h"
+
 #include "card_api.h"
 
 #include "map_api.h"
@@ -505,12 +507,6 @@ extern u8 gUnk_020352C0[];
 u8 func_080FF25C(s16 id);
 void func_080FC3FC(MdWork* work);
 void func_080FC360(MdWork* work);
-typedef struct PrizeCardArg {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    u8 unk_0C[0x14];
-} PrizeCardArg;
 
 u8 func_080FC17C(MdWork* work);
 void func_080FC29C(MdWork* work);
