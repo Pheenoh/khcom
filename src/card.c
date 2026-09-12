@@ -14778,7 +14778,6 @@ u8 func_0808E474(UnkStruct_0808DB04* w) {
 
     return 1;
 }
-#ifdef NON_MATCHING
 u8 func_0808E58C(UnkStruct_0808DB04* w) {
     u16 idx;
     UnkStruct_0808E2F0* e;
@@ -14804,7 +14803,20 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
 
             if (id >= 0x1C2) {
                 if (idx == 0) {
-                    if (def->unk_2A != 0) {
+                    if (def->unk_2A == 0) {
+                        if (func_08084FAC(def->unk_2A) > 1) {
+                            func_080850B0(&gCardCollection[card]);
+                            e->unk_1C[i] = 0xFFFF;
+                            e->unk_00[idx]--;
+                            func_0808DD20(e->unk_00[idx], idx);
+                            m4aSongNumStart(0x8A);
+                            return 1;
+                        } else {
+                            TaskCreate(&w->unk_7DC, gUnk_09EE7FD8, &w->unk_888[0x41]);
+                            m4aSongNumStart(0x69);
+                            return 0;
+                        }
+                    } else {
                         func_080850B0(&gCardCollection[card]);
                         e->unk_1C[i] = 0xFFFF;
                         e->unk_00[idx]--;
@@ -14812,7 +14824,9 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                         m4aSongNumStart(0x8A);
                         return 1;
                     }
-
+                }
+            } else if (def->unk_20 == idx) {
+                if (def->unk_2A == 0) {
                     if (func_08084FAC(def->unk_2A) > 1) {
                         func_080850B0(&gCardCollection[card]);
                         e->unk_1C[i] = 0xFFFF;
@@ -14820,14 +14834,12 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                         func_0808DD20(e->unk_00[idx], idx);
                         m4aSongNumStart(0x8A);
                         return 1;
+                    } else {
+                        TaskCreate(&w->unk_7DC, gUnk_09EE7FD8, &w->unk_888[0x41]);
+                        m4aSongNumStart(0x69);
+                        return 0;
                     }
-
-                    TaskCreate(&w->unk_7DC, gUnk_09EE7FD8, &w->unk_888[0x41]);
-                    m4aSongNumStart(0x69);
-                    return 0;
-                }
-            } else if (def->unk_20 == idx) {
-                if (def->unk_2A != 0) {
+                } else {
                     func_080850B0(&gCardCollection[card]);
                     e->unk_1C[i] = 0xFFFF;
                     e->unk_00[idx]--;
@@ -14835,19 +14847,6 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                     m4aSongNumStart(0x8A);
                     return 1;
                 }
-
-                if (func_08084FAC(def->unk_2A) > 1) {
-                    func_080850B0(&gCardCollection[card]);
-                    e->unk_1C[i] = 0xFFFF;
-                    e->unk_00[idx]--;
-                    func_0808DD20(e->unk_00[idx], idx);
-                    m4aSongNumStart(0x8A);
-                    return 1;
-                }
-
-                TaskCreate(&w->unk_7DC, gUnk_09EE7FD8, &w->unk_888[0x41]);
-                m4aSongNumStart(0x69);
-                return 0;
             }
         }
     }
@@ -14855,9 +14854,6 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
     m4aSongNumStart(0x69);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808E58C.s");
-#endif
 
 s32 func_0808E750(u8* work) {
     if (func_08085770(GetActiveDeckIndex()) > gGameState.cp) {
