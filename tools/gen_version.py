@@ -387,6 +387,10 @@ TARGET_ONLY_SYMBOLS = {
         "gUnk_0814FBB0": 0x0814FBB0,
         "gUnk_0814FBBC": 0x0814FBBC,
         "gUnk_0814FBD4": 0x0814FBD4,
+        "gUnkJp_093D1694": 0x093D1694,
+        "gUnkJp_09008DEC": 0x09008DEC,
+        "gUnkJp_094D4594": 0x094D4594,
+        "gUnkJp_094D4D94": 0x094D4D94,
     },
 }
 
@@ -582,6 +586,18 @@ def near_identical(a, b):
 VERSION_IF_RE = re.compile(r"#\s*(ifdef|ifndef|if|else|elif|endif)\b(.*)")
 
 
+def eval_version_expr(expr, tag):
+    e = re.sub(r"defined\s*\(\s*(\w+)\s*\)", lambda m: "True" if m.group(1) == tag else "False", expr)
+    e = re.sub(r"defined\s+(\w+)", lambda m: "True" if m.group(1) == tag else "False", e)
+    e = e.replace("&&", " and ").replace("||", " or ")
+    e = re.sub(r"!(?!=)", " not ", e)
+    e = re.sub(r"\b(VERSION_\w+)\b", lambda m: "True" if m.group(1) == tag else "False", e)
+    try:
+        return bool(eval(e, {"__builtins__": {}}, {}))
+    except Exception:
+        return tag in expr
+
+
 def active_includes(path, ver):
     """INCLUDE_ASM lines this version actually compiles.
 
@@ -602,8 +618,10 @@ def active_includes(path, ver):
                     frame = (False, True)
                 elif kind == "ifndef":
                     frame = (True, tag not in rest)
-                else:
+                elif kind == "ifdef":
                     frame = (True, tag in rest)
+                else:
+                    frame = (True, eval_version_expr(rest, tag))
                 if kind == "elif" and stack:
                     stack[-1] = frame
                 else:
