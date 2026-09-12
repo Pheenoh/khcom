@@ -1151,8 +1151,8 @@ void task_bos_boogie_0(BoogieWork* work) {
     gUnk_0203C560 = 0;
     func_0801A920(128, 368, 576, 632);
     func_0801B37C(&work->unk_040, gUnk_096FDF14, 0x15000, 0x22800, -0x2000);
-    work->unk_040.unk_10 = -0x2000;
-    work->unk_040.unk_34 |= 4;
+    work->unk_040.unk_010 = -0x2000;
+    work->unk_040.unk_034 |= 4;
     func_0801C2DC(&work->unk_040, 1);
     work->unk_150 = 0;
     work->unk_154 = 0;
@@ -1179,13 +1179,13 @@ void task_bos_boogie_0(BoogieWork* work) {
     work->unk_164 = 0;
     work->unk_168 = 0;
     work->unk_16C = 0;
-    gBtlWork->unk_0CC = work->unk_040.x;
-    gBtlWork->unk_0D0 = work->unk_040.y;
-    gBtlWork->unk_0D4 = work->unk_040.z;
+    gBtlWork->unk_0CC = work->unk_040.unk_004;
+    gBtlWork->unk_0D0 = work->unk_040.unk_008;
+    gBtlWork->unk_0D4 = work->unk_040.unk_00C;
 }
 
 u8 task_bos_boogie_1(BoogieWork* work) {
-    UnkStruct_0203C55C* a = &work->unk_040;
+    BtlObj* a = &work->unk_040;
     BoogieFx fx;
     u16 random;
 
@@ -1225,9 +1225,9 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         if (work->unk_004 == 0) {
             AnimReset(&work->anim);
             func_080D900C(work, 4, 1);
-            work->unk_158 = -((a->unk_AC << 9) >> 8);
-            work->unk_150 = ((gSineTable[a->unk_B0] * 375) >> 8) * a->unk_A8 >> 8;
-            work->unk_154 = ((-gSineTable[a->unk_B0 + 64] * 375) >> 8) * a->unk_A8 >> 8;
+            work->unk_158 = -((a->unk_0AC << 9) >> 8);
+            work->unk_150 = ((gSineTable[a->unk_0B0] * 375) >> 8) * a->unk_0A8 >> 8;
+            work->unk_154 = ((-gSineTable[a->unk_0B0 + 64] * 375) >> 8) * a->unk_0A8 >> 8;
             work->unk_004++;
         }
         if (AnimIsFinished(&work->anim)) {
@@ -1252,7 +1252,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             break;
         case 2:
             if (func_08006314() == 0) {
-                func_08014AAC(a->x, a->y + a->z - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
+                func_08014AAC(a->unk_004, a->unk_008 + a->unk_00C - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
                 func_0801C298(((BoogiePalette*)work->palette)->unk_06 + 16, 0);
                 func_08006238(0, gBtlWork->unk_0B3, 8);
                 work->unk_170 = 3;
@@ -1269,7 +1269,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             break;
         case 4:
             if (func_080128EC() == 0) {
-                fx.x = a->x;
+                fx.x = a->unk_004;
                 fx.y = 0x24000;
                 fx.z = -0x6400;
                 func_08096DC4(&gBtlWork->taskPools[0], &fx);
@@ -1344,17 +1344,17 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         if ((random & 255) == 0 && work->unk_174 == 0) {
             work->unk_000 = 0;
             work->unk_004 = 0;
-        } else if (a->unk_34 & 4) {
-            a->x -= 256;
-            if (a->x <= 0xA000) {
-                a->x = 0xA000;
-                a->unk_34 &= ~4ULL;
+        } else if (a->unk_034 & 4) {
+            a->unk_004 -= 256;
+            if (a->unk_004 <= 0xA000) {
+                a->unk_004 = 0xA000;
+                a->unk_034 &= ~4ULL;
             }
         } else {
-            a->x += 256;
-            if (a->x >= 0x15000) {
-                a->x = 0x15000;
-                a->unk_34 |= 4;
+            a->unk_004 += 256;
+            if (a->unk_004 >= 0x15000) {
+                a->unk_004 = 0x15000;
+                a->unk_034 |= 4;
             }
         }
         break;
@@ -1416,61 +1416,61 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         break;
     }
     AnimUpdate(&work->anim);
-    a->z += work->unk_158;
+    a->unk_00C += work->unk_158;
     work->unk_158 += 66;
-    if (a->z > -0x2000) {
-        a->z = -0x2000;
+    if (a->unk_00C > -0x2000) {
+        a->unk_00C = -0x2000;
         work->unk_158 = 0;
     }
     if (work->unk_150 > 0) {
-        a->x += work->unk_150;
+        a->unk_004 += work->unk_150;
         work->unk_150 -= 17;
         if (work->unk_150 < 0) {
             work->unk_150 = 0;
         }
     } else if (work->unk_150 < 0) {
-        a->x += work->unk_150;
+        a->unk_004 += work->unk_150;
         work->unk_150 += 17;
         if (work->unk_150 > 0) {
             work->unk_150 = 0;
         }
     }
     if (work->unk_154 > 0) {
-        a->y += work->unk_154 / 2;
+        a->unk_008 += work->unk_154 / 2;
         work->unk_154 -= 17;
         if (work->unk_154 < 0) {
             work->unk_154 = 0;
         }
     } else if (work->unk_154 < 0) {
-        a->y += work->unk_154 / 2;
+        a->unk_008 += work->unk_154 / 2;
         work->unk_154 += 17;
         if (work->unk_154 > 0) {
             work->unk_154 = 0;
         }
     }
-    func_080D9058(&a->x, &a->y);
-    func_08012324(a->unk_40, a->x, a->y, a->z);
+    func_080D9058(&a->unk_004, &a->unk_008);
+    func_08012324(&a->unk_040, a->unk_004, a->unk_008, a->unk_00C);
     TaskPoolUpdate(&work->unk_02C);
     if (func_0801C1C0(0)) {
         func_080D9A58();
     }
-    gBtlWork->unk_0CC = a->x;
-    gBtlWork->unk_0D0 = a->y;
-    gBtlWork->unk_0D4 = a->z;
+    gBtlWork->unk_0CC = a->unk_004;
+    gBtlWork->unk_0D0 = a->unk_008;
+    gBtlWork->unk_0D4 = a->unk_00C;
     return 1;
 }
 
 void task_bos_boogie_2(BoogieWork* work) {
-    UnkStruct_0203C55C* a;
+    BtlObj* a;
     u16 f;
     void* pal;
     s16 x;
     s16 y;
 
     a = &work->unk_040;
-    f = func_0801AF1C(a->y);
+    f = func_0801AF1C(a->unk_008);
 
-    if (!(a->unk_34 & 4)) {
+    if (!(a->unk_034 & 4)) {
         f |= 1;
     }
 
@@ -1479,8 +1479,8 @@ void task_bos_boogie_2(BoogieWork* work) {
     } else {
         pal = work->palette;
     }
-    WorldToScreen(&x, &y, a->x, a->y, a->z);
-    DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, f, -4100 - (a->y >> 8) * 4);
+    WorldToScreen(&x, &y, a->unk_004, a->unk_008, a->unk_00C);
+    DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, f, -4100 - (a->unk_008 >> 8) * 4);
     TaskPoolDraw(&work->unk_02C);
 }
 
@@ -1493,15 +1493,15 @@ void task_bos_boogie_3(BoogieWork* work) {
 }
 
 void func_080D9A14(void) {
-    UnkStruct_0203C55C* t;
+    BtlObj* t;
 
-    t = (UnkStruct_0203C55C*)ListPoolFirst(&gBtlWork->unk_080);
+    t = ListPoolFirst(&gBtlWork->unk_080);
     while (t != 0) {
-        if (t->unk_00 != 39) {
-            t->unk_34 |= 0x40;
-            t->unk_24 = 0;
+        if (t->unk_000 != 39) {
+            t->unk_034 |= 0x40;
+            t->unk_024 = 0;
         }
-        t = (UnkStruct_0203C55C*)ListPoolNext(&t->unk_B8);
+        t = ListPoolNext(&t->unk_0B8);
     }
 }
 

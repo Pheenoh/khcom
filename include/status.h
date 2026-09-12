@@ -129,25 +129,6 @@ typedef struct StatusMesParam {
     u32 unk_04_16 : 16;
 } StatusMesParam;
 
-typedef struct UnkStruct_0203C55C {
-    s32 unk_00;
-    s32 x;
-    s32 y;
-    s32 z;
-    s32 unk_10;
-    u8 unk_14[0x10];
-    s32 unk_24;
-    u8 unk_28[0x0C];
-    u64 unk_34;
-    u8 unk_3C[4];
-    u8 unk_40[0x68];
-    s32 unk_A8;
-    s32 unk_AC;
-    u8 unk_B0;
-    u8 unk_B1[7];
-    ListNode unk_B8;
-} UnkStruct_0203C55C;
-
 typedef struct StatusDialogSub {
     s32 unk_00;
     u8 unk_04[0x10];
@@ -163,8 +144,7 @@ typedef struct BoogieWork {
     void* palette2;
     AnimState anim;
     TaskPool unk_02C;
-    UnkStruct_0203C55C unk_040;
-    u8 unk_10C[0x44];
+    BtlObj unk_040;
     s32 unk_150;
     s32 unk_154;
     s32 unk_158;
@@ -317,7 +297,7 @@ extern StatusCardDef gCardDefs[];
 extern u16 gUnk_02039D2C;
 extern u8* gStockMesDispWork;
 extern u8 gUnk_0203C564;
-extern UnkStruct_0203C55C* gUnk_0203C55C;
+extern BtlObj* gUnk_0203C55C;
 extern u8 gUnk_0984AF78[];
 extern u8 gUnk_08F69BC4[];
 extern StatusObjDef gUnk_096FDEE4[];
@@ -412,9 +392,9 @@ typedef struct BoogiePalette {
 
 extern s16 gSineTable[];
 extern TaskDesc gTaskDescBosBoogieDice;
-s32 func_0801ADAC(UnkStruct_0203C55C* a);
-void func_0801AF08(UnkStruct_0203C55C* a);
-void func_0801AF4C(UnkStruct_0203C55C* a);
+s32 func_0801ADAC(BtlObj* a);
+void func_0801AF08(BtlObj* a);
+void func_0801AF4C(BtlObj* a);
 void func_08014AAC(s32 x, s32 y);
 void func_0801C298(u8 a, u8 b);
 void func_08006238(s32 a, s32 b, s32 c);
@@ -422,7 +402,7 @@ void func_0801536C(void);
 u8 func_080128EC(void);
 void func_08096DC4(TaskPool* pool, BoogieFx* p);
 void func_0801B008(void);
-void func_0801B918(UnkStruct_0203C55C* a);
+void func_0801B918(BtlObj* a);
 void func_08083914(void);
 void func_08083900(u8 a);
 u8 func_08083920(void);

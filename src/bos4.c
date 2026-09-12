@@ -729,7 +729,7 @@ u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z) {
     return r;
 }
 
-void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg) {
+void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     s32 x;
     s32 v;
     s32 d;
@@ -749,12 +749,12 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg) {
     }
 
     work->unk_158 = 0x133;
-    v = arg->unk_2E;
+    v = arg->unk_02E;
 
-    if (arg->unk_2C < (s16)(v / 3)) {
+    if (arg->unk_02C < (s16)(v / 3)) {
         work->unk_154 *= 3;
         work->unk_158 *= 3;
-    } else if (arg->unk_2C < v * 2 / 3) {
+    } else if (arg->unk_02C < v * 2 / 3) {
         work->unk_154 *= 2;
         work->unk_158 *= 2;
     }
@@ -901,7 +901,7 @@ void func_080DB04C(BoogieKnifeWork* work) {
     }
 }
 void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
-    UnkStruct_0203C55C* p;
+    BtlObj* p;
     s32 v;
 
     work->unk_000 = 0;
@@ -917,12 +917,12 @@ void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
     work->unk_150 = 0x42;
     work->unk_154 = -0x500;
     p = gUnk_0203C55C;
-    v = p->unk_2E;
+    v = p->unk_02E;
 
-    if (p->unk_2C < (s16)(v / 3)) {
+    if (p->unk_02C < (s16)(v / 3)) {
         work->unk_150 = (work->unk_150 * 0x300) >> 8;
         work->unk_154 = -0xA00;
-    } else if (p->unk_2C < v * 2 / 3) {
+    } else if (p->unk_02C < v * 2 / 3) {
         work->unk_150 = (work->unk_150 * 0x200) >> 8;
         work->unk_154 = -0x780;
     }
