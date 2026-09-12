@@ -151,7 +151,6 @@ extern u8 gUnk_09EF98B0[];
 extern u8 gUnk_09EF98A0[];
 
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* LoadObjTiles(void* a, s32 b);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjTiles(void* a);
@@ -170,7 +169,6 @@ void func_080063A8(void);
 u8 func_080A42C8(void);
 void func_080A42E0(void);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void* AnimUpdate(AnimState* a);
 void SetBgScroll(s32 a, u16 b, u16 c);
 void func_08102F30(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

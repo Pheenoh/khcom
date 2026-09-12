@@ -135,15 +135,12 @@ typedef struct FldShadowWork {
     u8 anim[0x18];
 } FldShadowWork;
 
-void AnimStart(AnimState* a, u16 animId, u16 flags);
-void* AnimUpdate(AnimState* a);
 s8 GetAngleDiff(u8 a, u8 b);
 void func_08002A10(void* a, void* b);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_0803473C(FldWork* work, s32 index, u16 flags);
 u8 GetKeyReleaseTime(s32 a);
 void SetTaskUpdate(u8* p, u32 v);
-u8 AnimIsFinished(AnimState* a);
 void func_080062F4(u16 a, s32 b);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_080E0298(s32 a, s32 b);
@@ -158,14 +155,12 @@ void func_08031F60(FldActor* act);
 void func_08031F98(FldWork* work, s32 a, s32 b);
 
 void* AllocObjTiles(s32 a, void* b);
-void* AnimGetGfx(AnimState* a);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_080DFF4C(FldPos* p);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_080A5830(void* a, s32 x, s32 y, s32 z);
 void func_080DFC7C(void);
 s32 abs(s32 a);
-u16 AnimGetFrame(AnimState* a);
 u16 GetRandom(void);
 void func_080E02C0(s32 x, s32 y, s32 z);
 

@@ -52,8 +52,6 @@ typedef struct EvtShadowWork {
 } EvtShadowWork;
 
 void* AllocObjTiles(u16 a, s32 b);
-void* AnimUpdate(AnimState* a);
-void* AnimGetGfx(AnimState* a);
 void func_0801CE70(EvtObjWork* work);
 
 extern u8 gUnk_08B22CBC[];

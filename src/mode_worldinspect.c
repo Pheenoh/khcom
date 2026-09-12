@@ -94,7 +94,6 @@ extern u8 gUnk_0999F400[];
 extern u8 gUnk_0999F416[];
 extern u8 gUnk_0999F44A[];
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void* AnimUpdate(AnimState* a);
 void func_0805F1C0(s32* p, s32 v);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 
@@ -188,7 +187,6 @@ void* LoadObjPalette(void* src, u16 size);
 void* LoadObjTiles(void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgTiles(s32 bg, void* src, u16 size);
-void AnimStart(AnimState* a, s32 b, s32 c);
 void func_08065ACC(void* a, s32 b);
 void func_080FF19C(s16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 void func_080FF10C(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y);

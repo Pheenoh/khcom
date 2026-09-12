@@ -761,11 +761,7 @@ void SetBgBlend(s32 a, u16 b, u16 c);
 void LoadPalette(void* src, void* dst, s32 size);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
 void ApproachValue(s32* value, s32 target, u16 steps);
-void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);
-void* AnimUpdate(AnimState* a);
-void* AnimGetGfx(AnimState* a);
-u8 AnimIsFinished(AnimState* a);
 
 void task_wlogo_hwt_0(WlogoHwtWork* work);
 u8 task_wlogo_hwt_1(WlogoHwtWork* work);

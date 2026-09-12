@@ -235,7 +235,6 @@ void func_080122AC(void* particles, s32 a, u16 b, u16 c);
 
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 u16 GetRandom(void);
-u8 AnimIsFinished(AnimState* a);
 void ApproachValue(s32* value, s32 target, u16 steps);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0802F284(s32 a, s32 b, s32 c);
@@ -280,9 +279,6 @@ void func_08002A10(void* a, void* b);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjPalette(u8* p);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void AnimStart(AnimState* a, u16 animId, u16 flags);
-void* AnimGetGfx(AnimState* a);
-void* AnimUpdate(AnimState* a);
 u32 Sqrt(u32 a);
 void* GetBgCharBase(s32 bg);
 s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
