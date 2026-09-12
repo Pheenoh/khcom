@@ -1,6 +1,23 @@
 #include "macros.h"
 #include "btl4.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern u8 gUnkEu_08B55C58[];
+extern u8 gUnkEu_08B55C6C[];
+extern u8 gUnkEu_08B55C76[];
+extern u8 gUnkEu_08B55CFE[];
+extern u8 gUnkEu_08B55D08[];
+extern u8 gUnkEu_08B55D18[];
+extern u8 gUnkEu_08B55D22[];
+extern u8 gUnkEu_08B55D32[];
+extern u8 gUnkEu_08B55D3C[];
+extern u8 gUnkEu_08B55D4C[];
+extern u8 gUnkEu_08B55D66[];
+extern u8 gUnkEu_08B55D70[];
+extern u8 gUnkEu_08B55D80[];
+#endif
+
 #ifndef VERSION_EU
 void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
     work->tiles = AllocObjTiles(0x200, gUnk_08B1FD66);
@@ -165,7 +182,6 @@ void task_btl_exp_0(BtlExpWork* work) {
     work->unk_40 = 0;
 }
 
-#ifndef VERSION_EU
 s32 task_btl_exp_1(BtlExpWork* work) {
     if (gBtlWork->unk_068 & 0x2000) {
         return 0;
@@ -173,7 +189,28 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 
     if (work->unk_3E < gGameState.level) {
         func_0805CE60(work, gGameState.level);
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+            work->gfx = gUnkEu_08B55C58;
+            break;
+        case 1:
+            work->gfx = gUnkEu_08B55CFE;
+            break;
+        case 4:
+            work->gfx = gUnkEu_08B55D18;
+            break;
+        case 3:
+            work->gfx = gUnkEu_08B55D32;
+            break;
+        case 2:
+        default:
+            work->gfx = gUnkEu_08B55D66;
+            break;
+        }
+#else
         work->gfx = gUnk_08B25E40;
+#endif
         work->unk_3C = 0;
         work->unk_48 = 3;
         work->unk_3E = gGameState.level;
@@ -184,7 +221,28 @@ s32 task_btl_exp_1(BtlExpWork* work) {
         if (work->unk_44 < gGameState.exp) {
             work->unk_40 += gGameState.exp - work->unk_44;
             func_0805CE60(work, work->unk_40);
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                work->gfx = gUnkEu_08B55C6C;
+                break;
+            case 1:
+                work->gfx = gUnkEu_08B55C6C;
+                break;
+            case 4:
+                work->gfx = gUnkEu_08B55C6C;
+                break;
+            case 3:
+                work->gfx = gUnkEu_08B55D4C;
+                break;
+            case 2:
+            default:
+                work->gfx = gUnkEu_08B55D80;
+                break;
+            }
+#else
             work->gfx = gUnk_08B25E54;
+#endif
             work->unk_3C = 0;
             work->unk_48 = 1;
             work->unk_44 = gGameState.exp;
@@ -201,7 +259,28 @@ s32 task_btl_exp_1(BtlExpWork* work) {
             } else {
                 work->unk_48 = 2;
                 func_0805CE60(work, gGameState.nextExp - gGameState.exp);
+#ifdef VERSION_EU
+                switch (gLanguage) {
+                case 0:
+                    work->gfx = gUnkEu_08B55C76;
+                    break;
+                case 1:
+                    work->gfx = gUnkEu_08B55D08;
+                    break;
+                case 4:
+                    work->gfx = gUnkEu_08B55D22;
+                    break;
+                case 3:
+                    work->gfx = gUnkEu_08B55D3C;
+                    break;
+                case 2:
+                default:
+                    work->gfx = gUnkEu_08B55D70;
+                    break;
+                }
+#else
                 work->gfx = gUnk_08B25E5E;
+#endif
             }
             work->unk_3C = 0;
             work->unk_40 = 0;
@@ -216,7 +295,28 @@ s32 task_btl_exp_1(BtlExpWork* work) {
             } else {
                 work->unk_48 = 2;
                 func_0805CE60(work, gGameState.nextExp - gGameState.exp);
+#ifdef VERSION_EU
+                switch (gLanguage) {
+                case 0:
+                    work->gfx = gUnkEu_08B55C76;
+                    break;
+                case 1:
+                    work->gfx = gUnkEu_08B55D08;
+                    break;
+                case 4:
+                    work->gfx = gUnkEu_08B55D22;
+                    break;
+                case 3:
+                    work->gfx = gUnkEu_08B55D3C;
+                    break;
+                case 2:
+                default:
+                    work->gfx = gUnkEu_08B55D70;
+                    break;
+                }
+#else
                 work->gfx = gUnk_08B25E5E;
+#endif
             }
             work->unk_3C = 0;
             work->unk_40 = 0;
@@ -236,9 +336,6 @@ s32 task_btl_exp_1(BtlExpWork* work) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("btl4/task_btl_exp_1.s");
-#endif
 
 void task_btl_exp_2(BtlExpWork* work) {
     s32 i;
