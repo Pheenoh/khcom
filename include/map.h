@@ -163,16 +163,6 @@ typedef struct UnkStruct_080E6034 {
     void* unk_34;
 } UnkStruct_080E6034;
 
-typedef struct UnkStruct_0203C7B0 {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u8 unk_04;
-    u8 unk_05;
-    u8 unk_06;
-    u8 unk_07;
-} UnkStruct_0203C7B0;
 
 typedef struct UnkStruct_080E7D80 {
     void* unk_00;

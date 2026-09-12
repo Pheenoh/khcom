@@ -60,4 +60,13 @@ typedef struct UnkStruct_09EE3FB4 {
 
 extern UnkStruct_09EE3FB4* gUnk_09EE3FB4[];
 
+typedef struct MsgFaceCtl {
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02;
+    u8 unk_03;
+    u32 unk_04;
+    u8 unk_08;
+} MsgFaceCtl;
+
 #endif

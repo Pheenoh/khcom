@@ -20,7 +20,7 @@ UrsulaMapanimeWork* gUrsulaMapanimeWork;
 u32 gUnkEu_02035104;
 #endif
 MapChkWork* gMapChkWork;
-UnkStruct_02034F18* gUnk_02034F18;
+UnkStruct_0203C7B0* gUnk_02034F18;
 
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)(arg + 0x40);
@@ -625,7 +625,7 @@ void task_bos_boogie_saku_3(BoogieSakuWork* work) {
     TaskPoolDestroy(&work->unk_028);
 }
 
-void task_bos_boogie_map_0(void* work, UnkStruct_080DAA28* arg) {
+void task_bos_boogie_map_0(void* work, FldInit* arg) {
     LoadBgTiles(0, arg->unk_00, arg->unk_04);
     LoadBgPalette(0, arg->unk_08, arg->unk_0C);
     SetBgMapBlocks(0, &arg->unk_10, 2, 2);
@@ -1817,7 +1817,7 @@ u8 func_080DC628(void) {
     return 0;
 }
 
-void task_bos_ursula_map_0(UrsulaMapWork* work, UnkStruct_080DAA28* arg) {
+void task_bos_ursula_map_0(UrsulaMapWork* work, FldInit* arg) {
     SetupBg(0, 0, 0x1A, 0);
     SetupBg(1, 0, 0x18, 0);
     SetBgPriority(1, 3);

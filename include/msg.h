@@ -138,14 +138,6 @@ typedef struct Ent02034A8C {
     u8 unk_26;
 } Ent02034A8C;
 
-typedef struct MsgFaceCtl {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u32 unk_04;
-    u8 unk_08;
-} MsgFaceCtl;
 
 typedef struct MsgFaceAnim {
     void* unk_00;
@@ -174,13 +166,6 @@ typedef struct MsgFaceWork {
     MsgFaceCtl* unk_38;
 } MsgFaceWork;
 
-typedef struct Work08073E34 {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u32 unk_04;
-} Work08073E34;
 
 typedef struct MsgWinWork {
     u8 unk_00[0x14];
@@ -198,9 +183,7 @@ typedef struct MsgWinWork {
     u8 unk_29;
     u8 unk_2A;
     u8 unk_2B;
-    Work08073E34 unk_2C;
-    u8 unk_34;
-    u8 unk_35[3];
+    MsgFaceCtl unk_2C;
     u8 unk_38;
     u8 unk_39[3];
     MsgLine0806180C* unk_3C;
@@ -481,8 +464,8 @@ u16 func_080659BC(u8 v, TextSlot* out);
 void InitTextTileArray(void** p, u8 n);
 void FreeTextTileArray(void** p, u8 n);
 u16 LoadTwoDigitTextSlots(u8 v, TextSlot* out);
-void _08073E6C(Work08073E34* p);
-void func_08073E74(Work08073E34* p);
+void _08073E6C(MsgFaceCtl* p);
+void func_08073E74(MsgFaceCtl* p);
 void view_2(void);
 void view_3(void);
 s32 LoadLatinTextSlots(u16* a, TextSlot* b);
@@ -493,7 +476,7 @@ void func_08064624(void);
 u8 QueueVTransCallback(void* a);
 u8 func_0809D280(u8* s);
 u8 _0806E9DC(Work0806180C* p, void* a);
-void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c);
+void func_08073E0C(void* pool, MsgFaceCtl* p, u8 a, u8 b, u8 c);
 u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void func_08074504(void);
 u8 func_08073DA4(MsgFaceWork* p, void* a);
@@ -547,7 +530,7 @@ u8 func_0806F858(Work0806180C* p, void* a);
 u8 func_0806F898(Work0806180C* p, void* a);
 void func_0806E9BC(Work0806180C* p);
 void func_0806F94C(Work0806180C* p);
-void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c);
+void func_08073E34(MsgFaceCtl* p, u8 a, u8 b, u8 c);
 void func_080746D8(void);
 void func_08072918(Actor0806180C* a, u8 kind, u8 flag);
 void func_08072A64(Actor0806180C* a, u8 kind, u8 flag);

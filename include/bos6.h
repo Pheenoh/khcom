@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "battle_bg_types.h"
+
 #include "evt_types.h"
 
 #include "obj_resource_types.h"
@@ -581,15 +583,6 @@ extern u8 gUnk_09EFBBBC[];
 void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg);
 void task_bos_pc_flt_2(PcFltWork* work);
 
-typedef struct FldInit {
-    void* unk_00;
-    u16 unk_04;
-    u8 unk_06[0x2];
-    void* unk_08;
-    u16 unk_0C;
-    u8 unk_0E[0x2];
-    u8 unk_10[0x4];
-} FldInit;
 
 void task_bos_pc_fld_0(PcFldWork* work, FldInit* arg);
 
