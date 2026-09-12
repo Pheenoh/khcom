@@ -82,6 +82,7 @@ mode_ms2.c -O2 -fprologue-bugfix -fno-common
 mode_mapinspect.c -O2 -fprologue-bugfix -fno-common
 ms.c
 mode_backupstat.c -O2 -fprologue-bugfix -fno-common
+transform.s
 bos6.c -O2 -fprologue-bugfix -fno-common
 bos7.c -O2 -fprologue-bugfix -fno-common
 sroll.c -O2 -fprologue-bugfix -fno-common

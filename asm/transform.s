@@ -1,4 +1,6 @@
-.syntax unified
+	.syntax unified
+	.text
+
 	.align 2, 0
 	.arm
 	.global func_08109AAC
@@ -180,7 +182,7 @@ func_08109AAC:
 	rsble	r0, r0, #0
 	mov	pc, lr
 .LSqrtTable:
-	.4byte 0x09c43708
+	.4byte gUnk_09C43708
 .LDequantize:
 	cmp	r0, #0
 	mul	r2, r0, r0
@@ -269,5 +271,3 @@ func_08109AAC:
 	pop	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr}
 	mov	pc, lr
 	.size func_08109AAC, . - func_08109AAC
-	.thumb
-.syntax divided

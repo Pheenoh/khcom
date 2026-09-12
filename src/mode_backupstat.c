@@ -134,4 +134,4 @@ void mode_backupstat_2(void) {
     func_080609A0();
 }
 
-INCLUDE_ASM("mode_backupstat/func_08109AAC.s");
+ALIGN_ZERO(2);
