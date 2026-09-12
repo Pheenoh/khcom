@@ -185,7 +185,7 @@ void task_emy_00_2(EmyWork* work) {
 
     if (work->unk_15A != 0) {
         act = &work->unk_03C;
-        pri = func_0801AF1C(act->unk_008) | work->unk_162;
+        pri = GetBattleSpritePriorityFlags(act->unk_008) | work->unk_162;
         WorldToScreen(&x, &y, act->unk_004, act->unk_008, act->unk_00C);
         zoom = work->unk_180;
 
@@ -470,7 +470,7 @@ u8 task_emy_03_1(Emy03Work* work) {
         }
 
         if (func_0800C980(&work->base, 0x11, 0x17, 0x0A, 0xAB, 0x50, 0x247, 0, 0, 0x0A) == 2) {
-            func_08006B4C();
+            BgAnimStop();
         }
         break;
     case 0x13:
@@ -1408,7 +1408,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
             work->x += work->unk_034;
         }
 
-        if (func_0801A8A4(&work->x, &work->y, -0x10, 0) != 0) {
+        if (ClampBattlePosition(&work->x, &work->y, -0x10, 0) != 0) {
             work->unk_034 = -work->unk_034;
         }
 
@@ -1496,7 +1496,7 @@ void task_emy_16_b_2(Emy16bWork* work) {
     gfx = AnimGetGfx(work->anim);
 
     if (work->unk_09C != 0) {
-        pri = func_0801AF1C(work->y);
+        pri = GetBattleSpritePriorityFlags(work->y);
         WorldToScreen(&x, &y, work->x, work->y, work->z);
         angle = gBtlWork->unk_024;
 
@@ -1555,7 +1555,7 @@ u8 task_emy_16_p_1(Emy16pWork* work) {
         m4aSongNumStart(0x264);
     }
 
-    if (func_0801A8A4(&work->x, &work->y, 0x10, 0) != 0) {
+    if (ClampBattlePosition(&work->x, &work->y, 0x10, 0) != 0) {
         return 0;
     }
 
@@ -1578,7 +1578,7 @@ void task_emy_16_p_2(Emy16pWork* work) {
     s16 y;
 
     gfx = AnimGetGfx(work->anim);
-    pri = func_0801AF1C(work->y);
+    pri = GetBattleSpritePriorityFlags(work->y);
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, gfx, work->tiles, work->palette, 0, pri,
         -0x1004 - ((work->y + 0x1000) >> 8) * 4);
@@ -3694,7 +3694,7 @@ void task_emy_37_2(Emy37Work* work) {
 
     if (work->base.unk_15A != 0) {
         act = &work->base.unk_03C;
-        pri = func_0801AF1C(act->unk_008) | work->base.unk_162;
+        pri = GetBattleSpritePriorityFlags(act->unk_008) | work->base.unk_162;
         WorldToScreen(&x, &y, act->unk_004, act->unk_008, act->unk_00C);
 
         zoom = work->base.unk_180;
@@ -3875,7 +3875,7 @@ u8 task_emy_39_1(Emy39Work* work) {
             }
         }
 
-        if (work->base.unk_154 > 0x30 && func_08006B74()) {
+        if (work->base.unk_154 > 0x30 && BgAnimIsStopped()) {
             func_0800CB4C(&work->base);
         } else {
             work->base.unk_154++;
@@ -4925,7 +4925,7 @@ void task_emy_83_b_2(Emy83bWork* work) {
     s16 y;
 
     gfx = AnimGetGfx(work->unk_008);
-    pri = func_0801AF1C(work->y);
+    pri = GetBattleSpritePriorityFlags(work->y);
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, gfx, work->tiles, work->palette, 0, pri,
         -0x1004 - ((work->y + 0x400) >> 8) * 4);
@@ -4989,7 +4989,7 @@ void task_emy_83_s_2(Emy83sWork* work) {
     s16 x;
     s16 y;
 
-    pri = func_0801AF1C(work->y);
+    pri = GetBattleSpritePriorityFlags(work->y);
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, gUnk_08B1D828, work->tiles, work->palette, 0, pri,
         -0x1004 - ((work->y + 0x400) >> 8) * 4);

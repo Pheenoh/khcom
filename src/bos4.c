@@ -52,7 +52,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
 #else
     work->unk_074 |= 0x80;
 #endif
-    work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6788, 4), gUnk_09796EAA);
+    work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6788, 4), gUnk_09796EAA);
     work->palette = (u32)LoadObjPalette(gUnk_0984AF98, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF6798, gUnk_09EF6788);
@@ -347,7 +347,7 @@ void task_bos_boogie_dice_2(BoogieDiceWork* work) {
         return;
     }
 
-    c = func_0801AF1C(p->y);
+    c = GetBattleSpritePriorityFlags(p->y);
 
     if (func_0801CA00(p) != 0) {
         pal = (void*)work->palette2;
@@ -450,7 +450,7 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     work->unk_048 = ((BtlObj*)p)->unk_008;
     work->unk_04C = -0xA000;
     func_080122AC(&work->unk_080, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
-    work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6774, 4), gUnk_0979666A);
+    work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6774, 4), gUnk_0979666A);
     work->palette = (u32)LoadObjPalette(gUnk_0984AF98, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF6784, gUnk_09EF6774);
@@ -504,7 +504,7 @@ void task_bos_boogie_explosiondice_2(BoogieExplosiondiceWork* work) {
         return;
     }
 
-    c = func_0801AF1C(p->y);
+    c = GetBattleSpritePriorityFlags(p->y);
     pal = (void*)work->palette;
     WorldToScreen(&x, &y, p->x, p->y, p->z);
     DrawSprite(x, y, AnimGetGfx(&work->anim), (void*)work->tiles, pal, f, c,
@@ -550,7 +550,7 @@ u8 task_bos_boogie_saku_1(BoogieSakuWork* work) {
             }
 
             work->unk_020++;
-            func_0801A920(0x80, 0x170, 0x228, 0x278);
+            SetBattleBounds(0x80, 0x170, 0x228, 0x278);
 
             if (func_080DA73C() != 0) {
                 func_0801C2DC((u8*)work->unk_024 + 0x40, 0);
@@ -571,7 +571,7 @@ u8 task_bos_boogie_saku_1(BoogieSakuWork* work) {
     }
 
     if (gUnk_0203C560 <= 2 && IsTaskActive((void*)work->unk_03C) == 0) {
-        func_0801A920(0x80, 0x170, 0x240, 0x278);
+        SetBattleBounds(0x80, 0x170, 0x240, 0x278);
 
         if (gUnk_0203C560 != 0) {
             AnimChange(&work->anim, gUnk_0203C560, 0);
@@ -612,7 +612,7 @@ void func_080DA954(BoogieSakuWork* work, s32 a, u16 b) {
 }
 
 void task_bos_boogie_saku_2(BoogieSakuWork* work) {
-    u16 v = func_0801AF1C(0x23F00);
+    u16 v = GetBattleSpritePriorityFlags(0x23F00);
 
     func_080DA954(work, 0xA800, v);
     func_080DA954(work, 0xF800, v);
@@ -765,7 +765,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     e = -0x1000;
     func_0801B37C(&work->unk_040, gUnk_096FE098, x, d, e);
     work->unk_074 |= 0x400;
-    work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6824, 8), gUnk_0979A426);
+    work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6824, 8), gUnk_0979A426);
     work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF6844, gUnk_09EF6824);
@@ -865,7 +865,7 @@ void task_bos_boogie_disk_2(BoogieDiskWork* work) {
     UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
     s16 x;
     s16 y;
-    u16 c = func_0801AF1C(p->y);
+    u16 c = GetBattleSpritePriorityFlags(p->y);
     void* pal = (void*)work->palette;
     u8* obj = AllocObjAffineAngle(work->unk_15C, 1);
 
@@ -1009,7 +1009,7 @@ void task_bos_boogie_knife_2(BoogieKnifeWork* work) {
         return;
     }
 
-    c = func_0801AF1C(p->y);
+    c = GetBattleSpritePriorityFlags(p->y);
 
     if (gUnk_0203C574 != 0 && (gFrameCounter & 1) != 0 && gBtlWork->unk_070 == 0) {
         pal = (void*)work->palette2;
@@ -1301,7 +1301,7 @@ void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work) {
     s16 y;
 
     if (work->unk_000 != 2) {
-        v = func_0801AF1C(p->y);
+        v = GetBattleSpritePriorityFlags(p->y);
         d = (void*)work->palette;
         WorldToScreen(&x, &y, p->x, p->y, p->z);
         DrawSprite(x, y, AnimGetGfx(&work->anim), (void*)work->tiles, d, 0, v, -0x1004 - (p->y >> 8) * 4);
@@ -1368,7 +1368,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
     work->unk_13C = 0;
     work->unk_138 = 0;
     work->unk_142 = 0;
-    func_0801A920(0, 0x200, 0x1A8, 0x1E0);
+    SetBattleBounds(0, 0x200, 0x1A8, 0x1E0);
     func_0801BCC0(0x10000, 0x1A800, 0);
     gBtlWork->unk_0D8 = 0xFF00;
     gUnk_0203C580 = -0x5000;
@@ -1936,7 +1936,7 @@ void task_bos_ursula_border_2(UrsulaBorderWork* work) {
     s16 c;
     s16 d;
 
-    func_0801AF1C(0x19800);
+    GetBattleSpritePriorityFlags(0x19800);
     WorldToScreen(&a, &b, 0x8000, 0x19800, -0x800);
     WorldToScreen(&c, &d, 0x18000, 0x19800, -0x800);
     DrawSprite(a, b, gUnk_0979D090, work->tiles, work->palette, 0, 0x800, 0xFB00);
@@ -2003,7 +2003,7 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
         work->unk_1F8 = 0x2800;
     }
 
-    work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6860, 6), gUnk_0979E344);
+    work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6860, 6), gUnk_0979E344);
     work->palette = LoadObjPalette(gUnk_0984B0F8, 32);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF68A0, gUnk_09EF6860);
@@ -2274,7 +2274,7 @@ void task_bos_ursula_backtako_0(UrsulaBacktakoWork* work, u8* arg) {
         work->unk_020 = 0;
     }
 
-    work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6860, 8), gUnk_0979E344);
+    work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6860, 8), gUnk_0979E344);
     work->palette = (u32)LoadObjPalette(gUnk_0984B0F8, 32);
     AnimInit(&work->anim, gUnk_09EF68A0, gUnk_09EF6860);
     AnimStart(&work->anim, (u16)(work->unk_020 + 4), 1);
@@ -2491,7 +2491,7 @@ void task_bos_ursula_bubble_0(UrsulaBubbleWork* work) {
     AnimInit(&work->unkEu_044, gUnk_09EF68D8, gUnk_09EF68C0);
     AnimStart(&work->unkEu_044, 0, 1);
     *(void**)((u8*)gBtlWork + 0x118) =
-        AllocObjTiles(func_08003524(gUnk_09EF68C0, 6), gUnk_097A0DE4);
+        AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF68C0, 6), gUnk_097A0DE4);
 #endif
     TaskPoolInit(&work->unk_004, 10);
     work->unk_040 = 0;
@@ -2681,7 +2681,7 @@ void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work) {
     s16 x;
     s16 y;
 
-    v = func_0801AF1C(p->y);
+    v = GetBattleSpritePriorityFlags(p->y);
     pal = func_0801CA00(p) != 0 ? work->palette2 : work->palette;
     WorldToScreen(&x, &y, p->x, p->y, p->z);
 #ifdef VERSION_EU

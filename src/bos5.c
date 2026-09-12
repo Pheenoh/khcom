@@ -1258,7 +1258,7 @@ void task_bos_md_2(MdWork* work) {
         wx = (work->unk_17C[i].unk_0C + 224) * 256;
         wy = (work->unk_17C[i].unk_0E + 256) * 256;
         WorldToScreen(&x, &y, wx, wy, work->unk_17C[i].unk_10 * 256);
-        frame = func_0801AF1C(wy);
+        frame = GetBattleSpritePriorityFlags(wy);
         DrawSprite(x, y, work->unk_17C[i].unk_08, work->unk_17C[i].unk_00, pal, 0, frame,
                    (u16)(-4100 - (wy >> 6)));
     }
@@ -1600,7 +1600,7 @@ void task_bos_md_fire_2(MdFireWork* work) {
     }
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    frame = func_0801AF1C(work->y);
+    frame = GetBattleSpritePriorityFlags(work->y);
 
     if (work->unk_000 == 0) {
         ApproachValue(&work->unk_030, 0x100, work->unk_034);
@@ -1727,7 +1727,7 @@ void task_bos_md_dai_2(MdDaiWork* work) {
     u16 frame;
 
     WorldToScreen(&x, &y, work->x, work->y, work->z + work->unk_00C);
-    frame = func_0801AF1C(work->y);
+    frame = GetBattleSpritePriorityFlags(work->y);
 
     if (work->unk_07E <= 2) {
         DrawSprite(x, y + 24, gUnk_09999E0C, (void*)work->tiles, (void*)work->palette, 0,
@@ -1739,7 +1739,7 @@ void task_bos_md_dai_2(MdDaiWork* work) {
     }
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    frame = func_0801AF1C(work->y);
+    frame = GetBattleSpritePriorityFlags(work->y);
 
     if (work->unk_07C > 0) {
         DrawSprite(x, y, (void*)gUnk_09EF9740[work->unk_07C + 1], (void*)work->tiles,
@@ -1817,7 +1817,7 @@ void task_bos_md_hahen_2(MdHahenWork* work) {
     }
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    frame = func_0801AF1C(work->y);
+    frame = GetBattleSpritePriorityFlags(work->y);
     DrawSprite(x, y, (void*)work->unk_020, (void*)work->tiles, (void*)work->palette,
                   flag, frame, (u16)(-4100 - (work->y >> 8) * 4));
 }
@@ -2379,7 +2379,7 @@ void mode_worldselect_0(void) {
     if (gUnk_020350EE == 0) {
         func_080065FC(2, 0x8000, 128);
         func_08006778(gUnk_09EDABA0, 120, 110);
-        func_08006B34(0);
+        BgAnimSetLoopStartFrame(0);
         gUnk_020350EF = 1;
     }
 
@@ -2454,7 +2454,7 @@ void mode_worldselect_1(void) {
                 func_080FE89C();
                 func_080065FC(2, 0x8000, 128);
                 func_08006778(gUnk_09EDABA0, 120, 110);
-                func_08006B34(0);
+                BgAnimSetLoopStartFrame(0);
                 gUnk_020350EF = 1;
                 gUnk_020350C0 = 3;
             }
@@ -2464,7 +2464,7 @@ void mode_worldselect_1(void) {
         func_080FDC04();
         break;
     case 4:
-        if (func_08006B74() != 0) {
+        if (BgAnimIsStopped() != 0) {
             LoadBgMap(0, gUnk_09A310DC, 0x500);
             LoadBgMap(1, gUnk_09A31ADC, 0x500);
             gUnk_020350C2 = 16;

@@ -26,7 +26,7 @@ func_0800EFE8: @ 0800EFE8
 	b _0800F01A
 _0800F00E:
 	ldr r0, [r5, #0x08]
-	bl func_0801AF1C
+	bl GetBattleSpritePriorityFlags
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	mov r8, r0

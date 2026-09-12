@@ -20,7 +20,7 @@ void func_0800EEBC(Actor* p, SprObj* s) {
         return;
     }
     c = (Collider*)&p->unk_40;
-    attr = func_0801AF1C(s->y);
+    attr = GetBattleSpritePriorityFlags(s->y);
 
     if (*(u64*)&c->unk_34 & 4) {
         sy = gBtlWork->unk_024;
@@ -69,7 +69,7 @@ void func_0800EFE8(Actor* work) {
     if (work->unk_154 & 0x20) {
         attr = 0x800;
     } else {
-        attr = func_0801AF1C(c->unk_008);
+        attr = GetBattleSpritePriorityFlags(c->unk_008);
     }
     WorldToScreen(&x, &y, c->unk_004, c->unk_008, c->unk_00C);
 

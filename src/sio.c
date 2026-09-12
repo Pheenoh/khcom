@@ -22,11 +22,11 @@ s8 gUnk_02034074;
 u16 gUnk_02034076;
 u16 gUnk_02034078;
 
-u8 func_08006B74(void) {
+u8 BgAnimIsStopped(void) {
     return gUnk_02034054;
 }
 
-void func_08006B80(u16* a, u16* b) {
+void BgAnimGetFrameState(u16* a, u16* b) {
     if (a != 0) {
         *a = gUnk_02034046;
     }
@@ -36,11 +36,11 @@ void func_08006B80(u16* a, u16* b) {
     }
 }
 
-u32 func_08006BA0(UnkBgAnim* p) {
+u32 BgAnimGetDuration(UnkBgAnim* p) {
     return (u32)p->unk_14 * p->unk_16;
 }
 
-UnkBgAnim* func_08006BA8(void) {
+UnkBgAnim* BgAnimGetCurrent(void) {
     return gUnk_02034040;
 }
 

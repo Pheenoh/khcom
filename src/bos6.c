@@ -88,7 +88,7 @@ void func_08109F20(PcWork* work) {
 }
 
 u16 func_08109FF0(PcWork* work, s32 a) {
-    return func_0801AF1C(a);
+    return GetBattleSpritePriorityFlags(a);
 }
 
 u16 func_0810A000(PcWork* work, s32 a, s32 b) {
@@ -1017,7 +1017,7 @@ void task_bos_pc_fld_2(PcFldWork* work) {
                     z = -0x800;
                     WorldToScreen(&sx, &sy, x, y, z);
                     DrawSprite(sx, sy, gUnk_09EFBEB8, (void*)work->tiles,
-                        (void*)work->palette, 0, func_0801AF1C(y),
+                        (void*)work->palette, 0, GetBattleSpritePriorityFlags(y),
                         (u16)(-0x1004 - (s32)(y >> 6)));
                 }
             }
@@ -1380,10 +1380,10 @@ void task_bos_pc_flt_2(PcFltWork* work) {
         WorldToScreen(&sx, &sy, work->unk_028,
             work->unk_02C + (gUnk_09A4CEDC[id].unk_00 << 8), work->unk_030);
         if (gBtlWork->unk_0F0 != 0) {
-            g = func_0801AF1C(work->unk_02C + (gUnk_09A4CEDC[id].unk_00 << 8));
+            g = GetBattleSpritePriorityFlags(work->unk_02C + (gUnk_09A4CEDC[id].unk_00 << 8));
             h = (-0x1004 - ((work->unk_02C >> 8) << 2)) | 3;
         } else {
-            g = func_0801AF1C(work->unk_02C);
+            g = GetBattleSpritePriorityFlags(work->unk_02C);
             h = -0x1004 - ((work->unk_02C >> 8) << 2);
         }
         DrawSprite(sx, sy, AnimGetGfx(&work->anim), (void*)work->tiles,
@@ -1489,7 +1489,7 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
         }
-        DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C(work->unk_010),
+        DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags(work->unk_010),
                    (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
     } else if (pos->unk_00C >= 0) {
         if (((*gp)->unk_068 & 0x20000000) && ((*gp)->unk_068 & 0x200000)) {
@@ -1509,11 +1509,11 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
             } else {
                 WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
             }
-            DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C(work->unk_010),
+            DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags(work->unk_010),
                        (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox, work->unk_010 - oy, 0);
-            DrawSprite(sx, sy, AnimGetGfx(anim), (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C((*gp)->unk_07C->unk_008),
+            DrawSprite(sx, sy, AnimGetGfx(anim), (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags((*gp)->unk_07C->unk_008),
                        (u16)(-0x1004 - (((*gp)->unk_07C->unk_008 >> 8) << 2)));
         }
     }
@@ -1832,9 +1832,9 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     work->unk_1F4[1].unk_008 = 0;
     work->unk_1F4[1].unk_00A = 0;
     work->unk_1F4[1].unk_00C = -1;
-    work->unk_1F4[0].tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EFADC4, 16), gUnk_09C53724);
-    work->unk_1F4[1].tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EFAE54, 16), gUnk_09C58590);
-    work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EFABB0, 0x62), gUnk_09C4B012);
+    work->unk_1F4[0].tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EFADC4, 16), gUnk_09C53724);
+    work->unk_1F4[1].tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EFAE54, 16), gUnk_09C58590);
+    work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EFABB0, 0x62), gUnk_09C4B012);
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     i = 0;
     obj = &work->unk_0E4;
@@ -3805,7 +3805,7 @@ void task_bos_lst_2(BosLstWork* work) {
     }
     WorldToScreen(&sx, &sy, work->unk_044 + work->unk_050, work->unk_048 + work->unk_054, work->unk_04C + work->unk_058);
     DrawSprite(sx + gUnk_09A4CF8C[anim].unk_04, sy + gUnk_09A4CF8C[anim].unk_06, AnimGetGfx(&work->anim), (void*)work->tiles, (void*)work->palette, 0,
-               func_0801AF1C(work->unk_048 + work->unk_054 + ((s16)gBtlWork->unk_0D8 << 8)),
+               GetBattleSpritePriorityFlags(work->unk_048 + work->unk_054 + ((s16)gBtlWork->unk_0D8 << 8)),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054 + ((s16)gBtlWork->unk_0D8 << 8)) >> 8) << 2)));
     WorldToScreen(&sx, &sy, work->unk_044 + work->unk_050, work->unk_048 + work->unk_054, work->unk_04C + work->unk_058);
     k = idx;
@@ -3815,7 +3815,7 @@ void task_bos_lst_2(BosLstWork* work) {
     }
     sub = &work->unk_1F4[k];
     DrawSprite(sx + gUnk_09A4CF8C[anim].unk_0C, sy + gUnk_09A4CF8C[anim].unk_0E, AnimGetGfx(&sub->anim), (void*)work->unk_1F4[0].tiles, (void*)work->palette, 0,
-               func_0801AF1C(work->unk_048 + work->unk_054),
+               GetBattleSpritePriorityFlags(work->unk_048 + work->unk_054),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054) >> 8) << 2)));
     j = idx ^ 1;
     w = work->unk_1F4[j].unk_008;
@@ -3824,7 +3824,7 @@ void task_bos_lst_2(BosLstWork* work) {
     }
     sub = &work->unk_1F4[j];
     DrawSprite(sx + gUnk_09A4CF8C[anim].unk_18, sy + gUnk_09A4CF8C[anim].unk_1A, AnimGetGfx(&sub->anim), (void*)work->unk_1F4[1].tiles, (void*)work->palette, 0,
-               func_0801AF1C(work->unk_048 + work->unk_054 - 0x1100),
+               GetBattleSpritePriorityFlags(work->unk_048 + work->unk_054 - 0x1100),
                (u16)(-0x1004 - (((work->unk_048 + work->unk_054 - 0x1100) >> 8) << 2)));
 }
 

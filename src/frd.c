@@ -114,7 +114,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             work->unk_14E++;
         }
         body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
-        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+        ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
         if (work->unk_14D == 3) func_08045494(body, 0, 8, 8);
         if (func_0804544C(work)) {
             work->unk_14E = 0;
@@ -195,7 +195,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         if (work->unk_14D == 3) func_08045494(body, 0, 8, 8);
         func_0804544C(work);
         if (work->unk_150 <= 0) {
-            if (work->unk_14D == 3) func_08006B4C();
+            if (work->unk_14D == 3) BgAnimStop();
             return 0;
         }
         work->unk_14E++;
@@ -216,7 +216,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         body->unk_008 += work->unk_15C;
         func_0804544C(work);
         func_08045494(body, 1, 2, 8);
-        switch (func_0801A8A4(&body->unk_004, &body->unk_008, 0, 0)) {
+        switch (ClampBattlePosition(&body->unk_004, &body->unk_008, 0, 0)) {
         case 1:
         case 2:
             work->unk_158 = -work->unk_158;
@@ -459,7 +459,7 @@ void task_frd_donald_2(FrdDonaldWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -587,7 +587,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         }
 
         body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
-        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+        ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
 
         if (func_080465F0(work)) {
             work->unk_148 = 1;
@@ -677,7 +677,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
                 m4aSongNumStart(0x20A);
             }
 
-            func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+            ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
         }
 
         func_080465F0(work);
@@ -713,7 +713,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         work->unk_15C = work->unk_014->unk_008 - (gSineTable[work->unk_160 + 0x40] << 5);
         body->unk_004 += (work->unk_158 - body->unk_004) >> 3;
         body->unk_008 += (work->unk_15C - body->unk_008) >> 3;
-        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+        ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
         work->unk_160 += 4;
 
         if (func_08011F78(0x7A, body->unk_004, body->unk_008, body->unk_00C, 0x23, 0x1C, 0x30)) {
@@ -748,7 +748,7 @@ void task_frd_goofy_2(FrdGoofyWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -982,7 +982,7 @@ void task_frd_ariel_2(FrdArielWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -1117,7 +1117,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             work->unk_14E++;
         }
         body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
-        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+        ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
         if (func_080474A8(work)) {
             work->unk_148 = 1;
             work->unk_14E = 0;
@@ -1460,7 +1460,7 @@ void task_frd_jack_2(FrdJackWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
     angle = work->unk_160;
 
     if (body->unk_034 & 4) {
@@ -1782,7 +1782,7 @@ void task_frd_pan_2(FrdPanWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -1918,7 +1918,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
             work->unk_14E++;
         }
         body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
-        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+        ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
         if (func_080490FC(work)) {
             work->unk_148 = 1;
             work->unk_14E = 0;
@@ -1995,7 +1995,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
             }
         }
         func_080490FC(work);
-        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+        ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
         if (work->unk_14E > work->unk_152) {
             work->unk_14E = 0;
             work->unk_148 = 2;
@@ -2021,7 +2021,7 @@ void task_frd_aladdin_2(FrdAladdinWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -2252,7 +2252,7 @@ void task_frd_beast_2(FrdBeastWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;

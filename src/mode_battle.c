@@ -291,60 +291,60 @@ void mode_battle_0(u32 mode) {
 
         switch (mode) {
         case 0x9A:
-            func_0801A920(0, 0x100, 0x148, 0x1A8);
+            SetBattleBounds(0, 0x100, 0x148, 0x1A8);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosDsd, 0);
             gBtlWork->unk_0B3 = 10;
             break;
         case 0x94:
-            func_0801A920(-32, 0x120, 0x120, 0x180);
+            SetBattleBounds(-32, 0x120, 0x120, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosGa, 0);
             gBtlWork->unk_0B3 = 5;
             break;
         case 0x99:
 #ifdef VERSION_EU
-            func_0801A920(0, 0xE0, 0x130, 0x180);
+            SetBattleBounds(0, 0xE0, 0x130, 0x180);
 #else
-            func_0801A920(0, 0xE0, 0x118, 0x180);
+            SetBattleBounds(0, 0xE0, 0x118, 0x180);
 #endif
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosMd, 0);
             gBtlWork->unk_0B3 = 5;
             break;
         case 0x96:
-            func_0801A920(0x80, 0x180, 0x140, 0x180);
+            SetBattleBounds(0x80, 0x180, 0x140, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosTm, 0);
             gBtlWork->unk_0B3 = 12;
             break;
         case 0x97:
-            func_0801A920(0, 0x200, 0, 0x200);
+            SetBattleBounds(0, 0x200, 0, 0x200);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosUrsula, 0);
             gBtlWork->unk_0B3 = 5;
             break;
         case 0x98:
-            func_0801A920(0x80, 0x1A8, 0x126, 0x180);
+            SetBattleBounds(0x80, 0x1A8, 0x126, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosPc, 0);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescPcAcddmg, gBtlWork->unk_07C);
             gBtlWork->unk_0B3 = 12;
             break;
         case 0x9C:
-            func_0801A920(0x80, 0x170, 0x1E0, 0x200);
+            SetBattleBounds(0x80, 0x170, 0x1E0, 0x200);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosLst, 0);
             gBtlWork->unk_0B3 = 10;
             break;
         case 0x9B:
-            func_0801A920(0x80, 0x170, 0x228, 0x278);
+            SetBattleBounds(0x80, 0x170, 0x228, 0x278);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosBoogie, 0);
             gBtlWork->unk_128 = &func_0801050C;
             gBtlWork->unk_0B3 = 5;
             break;
         default:
-            func_0801A920(0x1A4, 0x264, 0x148, 0x180);
+            SetBattleBounds(0x1A4, 0x264, 0x148, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosJf, 0);
             gBtlWork->unk_128 = &func_080BD4A8;
             gBtlWork->unk_0B3 = 10;
             break;
         }
     } else if (gBtlWork->unk_068 & 0x800000000) {
-        func_0801A920(0x68, 0x198, 0x160, 0x1A2);
+        SetBattleBounds(0x68, 0x198, 0x160, 0x1A2);
 
         if (mode == 0xB2) {
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumRobe, 0);
@@ -362,58 +362,58 @@ void mode_battle_0(u32 mode) {
         switch (mode) {
         case 0x9E:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumHook, 0);
-            func_0801A920(0x68, 0x198, 0x160, 0x1A2);
+            SetBattleBounds(0x68, 0x198, 0x160, 0x1A2);
             break;
         case 0xA6:
         case 0xB1:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumAnsem, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0x9F:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumCloud, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA0:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumHades, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA5:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumMahluxia, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA3:
         case 0xAE:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumLaxene, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA2:
         case 0xAD:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumAxcel, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA4:
         case 0xAF:
         case 0xB0:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumVixen, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0xA7:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumLexceus, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         case 0x9D:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumLeon, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         default:
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescHumRiku, 0);
-            func_0801A920(0x50, 0x1B0, 0x160, 0x1A2);
+            SetBattleBounds(0x50, 0x1B0, 0x160, 0x1A2);
             break;
         }
 
         TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlMap, 0);
     } else {
-        func_0801A920(0x68, 0x198, 0x160, 0x1A2);
+        SetBattleBounds(0x68, 0x198, 0x160, 0x1A2);
 
         if (mode <= 0x92) {
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlForm, gUnk_09EDA2A0[mode]);

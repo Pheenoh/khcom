@@ -206,7 +206,7 @@ s32 func_080D35B0(AllmapRoomWork* work) {
             if (work->unk_09C == 0) {
                 work->unk_00C[i] = LoadObjTiles(gUnk_0976DEDC, 0x500);
             } else {
-                work->unk_00C[i] = AllocObjTiles(func_08003524(gUnk_09EF64FC, 16), gUnk_0976DEDC);
+                work->unk_00C[i] = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF64FC, 16), gUnk_0976DEDC);
             }
         } else if (func_080D358C(work->unk_098, i) == 0) {
             AnimInit(&work->anim[i], gUnk_09EF658C, gUnk_09EF654C);
@@ -216,7 +216,7 @@ s32 func_080D35B0(AllmapRoomWork* work) {
             if (work->unk_09C == 0) {
                 work->unk_00C[i] = LoadObjTiles(gUnk_0976E4D4, 0x500);
             } else {
-                work->unk_00C[i] = AllocObjTiles(func_08003524(gUnk_09EF654C, 16), gUnk_0976E4D4);
+                work->unk_00C[i] = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF654C, 16), gUnk_0976E4D4);
             }
         }
     }

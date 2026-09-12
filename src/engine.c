@@ -798,7 +798,7 @@ void func_08002F50(void) {
 INCLUDE_ASM("engine/func_08002F50.s");
 #endif
 
-void func_080034D8(u8 a) {
+void SetSpriteMosaicEnabled(u8 a) {
     gSpriteWork->unk_2BAF = a;
 }
 
@@ -812,7 +812,7 @@ void func_08003510(u8 a) {
     gSpriteWork->unk_2BAE = a;
 }
 
-u16 func_08003524(u16** a, u16 n) {
+u16 GetMaxSpriteTileBytes(u16** a, u16 n) {
     u16* p;
     u16 count;
     u16 sum;
@@ -840,7 +840,7 @@ u16 func_08003524(u16** a, u16 n) {
     return max * 32;
 }
 
-u16 func_08003598(u16* p) {
+u16 GetSpriteTileBytes(u16* p) {
     u16 count = *p++;
     u16 total = 0;
     u16 i;
@@ -852,7 +852,7 @@ u16 func_08003598(u16* p) {
     return (u16)(total << 5);
 }
 
-u8 func_080035CC(s16 x, s16 y, s32 a, s32 b, s32 c, s32 d) {
+u8 IsRectOutsideScreen(s16 x, s16 y, s32 a, s32 b, s32 c, s32 d) {
     u16 top = a;
     u16 bottom = b;
     u16 left = c;
@@ -3021,7 +3021,7 @@ void MosaicUpdate(void) {
         SetObjMosaicSize(v, v);
     } else if (gMosaicActive != 0) {
         gMosaicActive = 0;
-        func_080034D8(0);
+        SetSpriteMosaicEnabled(0);
     }
 }
 
@@ -3034,7 +3034,7 @@ void MosaicStartIn(u16 a, u16 b) {
     SetBgMosaic(1, 1);
     SetBgMosaic(2, 1);
     SetBgMosaic(3, 1);
-    func_080034D8(1);
+    SetSpriteMosaicEnabled(1);
 }
 
 void MosaicStartOut(u16 a, u16 b) {
@@ -3046,7 +3046,7 @@ void MosaicStartOut(u16 a, u16 b) {
     SetBgMosaic(1, 1);
     SetBgMosaic(2, 1);
     SetBgMosaic(3, 1);
-    func_080034D8(1);
+    SetSpriteMosaicEnabled(1);
 }
 
 u8 MosaicIsActive(void) {
@@ -3235,7 +3235,7 @@ void func_08006954(void) {
             gUnk_02034046 = gUnk_02034066;
             gUnk_02034044 = 0;
         } else {
-            func_08006B4C();
+            BgAnimStop();
         }
         return;
     }
@@ -3283,19 +3283,19 @@ void func_08006954(void) {
     }
 }
 
-void func_08006B28(u16 a) {
+void BgAnimSetFrameDuration(u16 a) {
     gUnk_0203406A = a;
 }
 
-void func_08006B34(u16 a) {
+void BgAnimSetLoopStartFrame(u16 a) {
     gUnk_02034066 = a;
 }
 
-void func_08006B40(u16 a) {
+void BgAnimSetStopFrame(u16 a) {
     gUnk_02034068 = a;
 }
 
-void func_08006B4C(void) {
+void BgAnimStop(void) {
     gUnk_02034040 = 0;
     gUnk_02034054 = 1;
     DisableBg(gUnk_02034048);

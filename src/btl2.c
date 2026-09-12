@@ -90,7 +90,7 @@ void task_btl_shadow_2(BtlShadowWork* work) {
 
     if (actor->unk_0CC != 0) {
         if (!(actor->unk_034 & 0x0000000402000000)) {
-            anim = func_0801AF1C(actor->unk_008);
+            anim = GetBattleSpritePriorityFlags(actor->unk_008);
 
             if (actor->unk_00C >= 0 && gBtlWork->unk_024 == 0x100) {
                 aff = 0;
@@ -1350,7 +1350,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
             vz = work->unk_20 - 15;
             work->unk_20 = vz + gBtlWork->unk_12C;
 
-            switch (func_0801A8A4(&work->x, &work->y, 0, 0)) {
+            switch (ClampBattlePosition(&work->x, &work->y, 0, 0)) {
             case 1:
             case 2:
                 work->unk_3C = -work->unk_3C;
@@ -1606,7 +1606,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
             vz = work->unk_20 - 15;
             work->unk_20 = vz + gBtlWork->unk_12C;
 
-            switch (func_0801A8A4(&work->x, &work->y, 0, 0)) {
+            switch (ClampBattlePosition(&work->x, &work->y, 0, 0)) {
             case 1:
             case 2:
                 work->unk_38 = -work->unk_38;
@@ -1756,7 +1756,7 @@ void task_btl_premire_2(BtlPremireWork* work) {
     s32 aff;
 
     if (work->unk_2C & 1) {
-        u16 anim = func_0801AF1C(work->y);
+        u16 anim = GetBattleSpritePriorityFlags(work->y);
 
         WorldToScreen(&x, &y, work->x, work->y, work->z);
         aff = AllocObjAffine(0, gBtlWork->unk_024, gBtlWork->unk_024, 1);

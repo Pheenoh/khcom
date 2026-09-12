@@ -426,7 +426,7 @@ void task_bos_lst_edg_2(LstEdgWork* work) {
     void* gfx;
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    prio = func_0801AF1C(work->y);
+    prio = GetBattleSpritePriorityFlags(work->y);
     z = -0x1004 - (work->y >> 8) * 4;
     gfx = AnimGetGfx(&work->anim);
     DrawSprite(x, y, gfx, (void*)work->tiles, (void*)work->palette, 0, prio, z);
@@ -1085,7 +1085,7 @@ void task_bos_lst_bit_2(LstState* work) {
 
     WorldToScreen(&x, &y, work->unk_028 + work->unk_034, work->unk_02C + work->unk_038,
                   work->unk_030 + work->unk_03C + work->unk_040);
-    prio = func_0801AF1C(work->unk_02C);
+    prio = GetBattleSpritePriorityFlags(work->unk_02C);
     z = -0x1004 - (work->unk_02C >> 8) * 4;
     affine = AllocObjAffine(work->unk_01B, work->unk_074, work->unk_078, 0);
     gfx = AnimGetGfx(&work->anim);
@@ -1286,7 +1286,7 @@ void task_bos_lst_lsr_2(LstLsrWork* work) {
     switch (work->unk_000) {
     case 2:
         WorldToScreen(&x1, &y1, work->unk_030, work->unk_034, work->unk_038);
-        prio = func_0801AF1C(work->unk_034);
+        prio = GetBattleSpritePriorityFlags(work->unk_034);
         z = -0x1004 - (work->unk_034 >> 8) * 4;
         WorldToScreen(&x2, &y2, work->unk_024, work->unk_028, work->unk_02C);
         oam = AllocObjAffineAngle(work->unk_002, 1);
@@ -1297,7 +1297,7 @@ void task_bos_lst_lsr_2(LstLsrWork* work) {
         break;
     case 3:
         WorldToScreen(&x1, &y1, work->unk_030, work->unk_034, work->unk_038);
-        prio = func_0801AF1C(work->unk_034);
+        prio = GetBattleSpritePriorityFlags(work->unk_034);
         z = -0x1004 - (work->unk_034 >> 8) * 4;
         oam = AllocObjAffine(0, 0x100 - work->unk_010 * 8, work->unk_010 * 16 + 0x100, 1);
         gfx = AnimGetGfx(&work->anim);
@@ -1392,7 +1392,7 @@ void task_bos_lst_ptl_2(LstPtlWork* work) {
 
     x = (work->unk_008 >> 8) + (work->unk_010 * 12 >> 8);
     y = (work->unk_00C >> 8) + (work->unk_014 * 6 >> 8);
-    prio = func_0801AF1C(0x20100);
+    prio = GetBattleSpritePriorityFlags(0x20100);
     z = 0xE7F8;
     gfx = AnimGetGfx(&work->anim);
     DrawSprite(x, y, gfx, (void*)work->tiles, (void*)work->palette, 0, prio, z);
@@ -1506,7 +1506,7 @@ void task_bos_lst_fal_2(LstFalWork* work) {
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     gfx = AnimGetGfx(&work->anim);
-    prio = func_0801AF1C(work->y) | 4;
+    prio = GetBattleSpritePriorityFlags(work->y) | 4;
     DrawSprite(x, y, gfx, (void*)work->tiles, (void*)work->palette, 0, prio,
                -0x1004 - (work->y >> 8) * 4);
 }
@@ -1696,7 +1696,7 @@ void task_bos_lst_ctr_2(LstCtrWork* work) {
     WorldToScreen(&x, &y, work->unk_014 + work->unk_020, work->unk_018 + work->unk_024,
                   work->unk_01C + work->unk_028);
     affine = 0;
-    prio = func_0801AF1C(work->unk_018 + work->unk_024) | 4;
+    prio = GetBattleSpritePriorityFlags(work->unk_018 + work->unk_024) | 4;
     z = -0x1004 - ((work->unk_018 + work->unk_024) >> 8) * 4;
 
     switch (work->unk_008) {
@@ -1785,7 +1785,7 @@ void task_bos_lst_snp_2(LstSnpWork* work) {
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     oam = AllocObjAffineAngle(work->unk_000, 1);
     gfx = AnimGetGfx(&work->anim);
-    prio = func_0801AF1C(work->y) | 4;
+    prio = GetBattleSpritePriorityFlags(work->y) | 4;
     DrawSprite(x, y, gfx, (void*)work->tiles, (void*)work->palette, oam, prio,
                -0x1004 - (work->y >> 8) * 4);
 }

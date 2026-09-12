@@ -2719,7 +2719,7 @@ void task_bos_jf_lamp_2(JfLampWork* work) {
     s16 x;
     s16 y;
 
-    mode = func_0801AF1C(sub->unk_008);
+    mode = GetBattleSpritePriorityFlags(sub->unk_008);
 
     if (sub->unk_034 & 4) {
         mode &= 0xFFFE;
@@ -3006,9 +3006,9 @@ void task_bos_jf_majin_2(JfMajinWork* work) {
 
     if (work->unk_2C == 1) {
         if (jf->unk_000.unk_034 & 4) {
-            pal = func_0801AF1C(jf->unk_000.unk_008);
+            pal = GetBattleSpritePriorityFlags(jf->unk_000.unk_008);
         } else {
-            pal = func_0801AF1C(jf->unk_000.unk_008);
+            pal = GetBattleSpritePriorityFlags(jf->unk_000.unk_008);
             pal |= 1;
         }
 
@@ -4486,14 +4486,14 @@ void task_bos_jf_rock_2(JfRockWork* work) {
     if (work->unk_15A == 1) {
         if (jf->unk_000.unk_034 & 4) {
             if (work->unk_030 <= 0x259FF) {
-                pal = func_0801AF1C(work->unk_034);
+                pal = GetBattleSpritePriorityFlags(work->unk_034);
                 prio = 0xFD00;
             } else {
                 pal = 0x400;
                 prio = 0xFFF5;
             }
         } else if (work->unk_030 > 0x1B200) {
-            pal = func_0801AF1C(work->unk_034);
+            pal = GetBattleSpritePriorityFlags(work->unk_034);
             prio = 0xFD00;
         } else {
             pal = 0x400;
@@ -5063,7 +5063,7 @@ void task_bos_dsd_main_2(DsdMainWork* work) {
                   ((gBtlWork->unk_004 - (d->unk_000[0].unk_008 + d->unk_000[0].unk_00C)) >> 8) + 280);
 
     if (work->unk_054 == 1) {
-        func_0801AF1C(d->unk_000[0].unk_008);
+        GetBattleSpritePriorityFlags(d->unk_000[0].unk_008);
         WorldToScreen(&x, &y, d->unk_000[0].unk_004, d->unk_000[0].unk_008, -0x6400);
         DrawSprite(x - 96, y + 20, work->gfx, work->tiles, gfx, 0, 0x400,
                    (u16)(-4101 - (d->unk_000[0].unk_008 >> 8) * 4));
@@ -6152,7 +6152,7 @@ void task_bos_dsd_ita_2(DsdItaWork* work) {
         pal = 0x800;
         prio = -4100 - ((work->y - 0x4000) >> 8) * 4;
     } else {
-        pal = func_0801AF1C(work->y);
+        pal = GetBattleSpritePriorityFlags(work->y);
         prio = -4102 - (work->y >> 8) * 4;
     }
 
@@ -6416,7 +6416,7 @@ u8 task_bos_dsd_circle_1(DsdCircleWork* work) {
 
     if (work->unk_00->unk_334 == 11) {
         if (func_080128EC() == 1) {
-            func_08006B4C();
+            BgAnimStop();
         }
 
         return 0;
@@ -6734,7 +6734,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
     case 7:
         if (work->unk_34 >= (s8)work->unk_35 - 1) {
             if (func_080128EC() == 0) {
-                func_08006B4C();
+                BgAnimStop();
                 FadeToOriginal(0, 8);
                 work->unk_2C++;
             }
@@ -6756,7 +6756,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
 
     if (work->unk_00->unk_334 == 8 || work->unk_00->unk_334 == 11) {
         if (func_080128EC() == 1) {
-            func_08006B4C();
+            BgAnimStop();
             FadeToOriginal(0, 8);
         }
 

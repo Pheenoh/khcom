@@ -246,7 +246,7 @@ _0808D9DC:
 	movs r0, #0x02
 	bl LoadBgMap
 	mov r0, r8
-	bl func_080609AC
+	bl GetCardCpCost
 	lsls r0, r0, #0x18
 	lsrs r0, r0, #0x18
 	bl func_0808DE28

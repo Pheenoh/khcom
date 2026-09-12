@@ -8428,7 +8428,7 @@ s32 func_080ED498(MapMenuWork* w) {
         func_080D8B84(&w->unk_164, &w->unk_158, &w->unk_170);
         func_08065ACC(&w->unk_074, 24);
         w->unk_070 = _08066468(1);
-        w->unk_074[0xC0] = func_08065B6C(func_080857BC(GetActiveDeckIndex()), &w->unk_074);
+        w->unk_074[0xC0] = func_08065B6C(GetDeckName(GetActiveDeckIndex()), &w->unk_074);
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:

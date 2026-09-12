@@ -1714,7 +1714,7 @@ void mode_chkobj_1(void) {
         func_0809D458(6, 16, 0, gChkObjWork->anim.frame);
         func_0809D2B0(0, 17, 0, "frame");
         func_0809D458(6, 17, 0, gChkObjWork->anim.timer);
-        v = func_08003598(gChkObjWork->gfx) >> 5;
+        v = GetSpriteTileBytes(gChkObjWork->gfx) >> 5;
         func_0809D2B0(0, 18, 0, "chara");
         func_0809D458(6, 18, 0, v);
 

@@ -86,7 +86,7 @@ void task_bos_shadow_2(BosShadowWork* work) {
     obj = work->unk_08;
     flip = 0;
     gfx = gUnk_08B22BA8;
-    frame = func_0801AF1C(obj->unk_008);
+    frame = GetBattleSpritePriorityFlags(obj->unk_008);
     size = 0x100 - ((obj->unk_010 - obj->unk_00C) >> 7);
 
     if (size <= 0xB2) {

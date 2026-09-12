@@ -129,7 +129,7 @@ void mode_chkeff_1(void) {
             gChkEffWork->scale = 0xA00;
         }
 
-        if (func_08006B74() && (GetKeysHeld() & 1)) {
+        if (BgAnimIsStopped() && (GetKeysHeld() & 1)) {
             func_08006778(obj, 120, 80);
         }
 
@@ -146,7 +146,7 @@ void mode_chkeff_1(void) {
         func_0809D2B0(0, 17, 0, gUnk_081309F0);
         func_0809D2B0(0, 18, 0, gUnk_081309F0);
         func_0809D2B0(0, 19, 0, gUnk_081309F0);
-        func_08006B80(&a, &b);
+        BgAnimGetFrameState(&a, &b);
         func_0809D2B0(0, 14, 0, gUnk_08130A18);
         func_0809D458(6, 14, 0, (*wp)->alphaA);
         func_0809D2B0(0, 15, 0, gUnk_08130A20);

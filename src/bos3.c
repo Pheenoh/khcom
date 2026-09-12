@@ -34,7 +34,7 @@ void task_bos_jf_shadow_2(JfShadowWork* work) {
         return;
     }
 
-    frame = func_0801AF1C(obj->unk_008);
+    frame = GetBattleSpritePriorityFlags(obj->unk_008);
 
     if (obj->unk_00C >= 0 && gBtlWork->unk_024 == 0x100) {
         sprite = 0;

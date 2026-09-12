@@ -958,7 +958,7 @@ void _08019CB4(void) {
 ALIGN_ZERO(2);
 
 
-u32 func_0801A8A4(s32* px, s32* py, s32 radiusX, s32 radiusY) {
+u32 ClampBattlePosition(s32* px, s32* py, s32 radiusX, s32 radiusY) {
     u16 rx = radiusX;
     u16 ry = radiusY;
     u8 r = 0;
@@ -985,7 +985,7 @@ u32 func_0801A8A4(s32* px, s32* py, s32 radiusX, s32 radiusY) {
     return r;
 }
 
-void func_0801A920(s32 xMin, s32 xMax, s32 yMin, s32 yMax) {
+void SetBattleBounds(s32 xMin, s32 xMax, s32 yMin, s32 yMax) {
     u16 a = xMin;
     u16 b = xMax;
     u16 c = yMin;
@@ -1189,7 +1189,7 @@ void func_0801AF08(BtlObj* p) {
     p->unk_034 &= ~0x2290;
 }
 
-u16 func_0801AF1C(s32 a) {
+u16 GetBattleSpritePriorityFlags(s32 a) {
     if (a < gBtlWork->unk_0D0 + (gBtlWork->unk_0D8 << 8)) {
         return 0x800;
     }
@@ -1738,7 +1738,7 @@ void func_0801BBF0(BtlObj* p) {
     if (!func_080856DC()) {
         return;
     }
-    if (func_08085B38(GetActiveDeckIndex()) <= 9) {
+    if (GetDeckCardCount(GetActiveDeckIndex()) <= 9) {
         return;
     }
     gBtlWork->unk_068 |= 0x100000000;

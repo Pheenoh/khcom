@@ -123,7 +123,7 @@ void task_btl_born_0(BtlBornWork* work, BtlBornArgs* args) {
 
 u8 task_btl_born_1(BtlBornWork* work) {
     if (func_080128EC() == 0) {
-        func_0801A8A4(&work->unk_00.unk_00, &work->unk_00.unk_04, -24, -12);
+        ClampBattlePosition(&work->unk_00.unk_00, &work->unk_00.unk_04, -24, -12);
 
         if (IsSongPlaying(0x22D) == 0) {
             m4aSongNumStart(0x22D);
@@ -380,7 +380,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
     case 3:
         work->x += gSineTable[(u8)work->angle] * 8;
         work->y -= gSineTable[(u8)work->angle + 64] * 4;
-        hit = func_0801A8A4(&work->x, &work->y, 0, 0);
+        hit = ClampBattlePosition(&work->x, &work->y, 0, 0);
 
         switch (hit) {
         case 1:
@@ -451,13 +451,13 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
             switch (work->unk_48) {
             case 2:
             case 3:
-                func_08006B4C();
+                BgAnimStop();
                 break;
             }
             return 0;
         }
 
-        switch (func_0801A8A4(&work->x, &work->y, -20, 0)) {
+        switch (ClampBattlePosition(&work->x, &work->y, -20, 0)) {
         case 1:
         case 2:
             work->unk_40 = 1;
@@ -539,7 +539,7 @@ void task_btl_raid_2(BtlRaidWork* work) {
     s32 scale;
 
     if (work->unk_56 & 2) {
-        flags = func_0801AF1C(work->y);
+        flags = GetBattleSpritePriorityFlags(work->y);
         WorldToScreen(&sx, &sy, work->x, work->y, work->z);
         scale = gBtlWork->unk_024 * work->unk_44 >> 8;
 
@@ -640,7 +640,7 @@ void task_btl_badstatus_2(BtlBadStatusWork* work) {
     obj = work->unk_24;
 
     if (obj->unk_0E8 != 0) {
-        flags = func_0801AF1C(obj->unk_008);
+        flags = GetBattleSpritePriorityFlags(obj->unk_008);
 
         if (gBtlWork->unk_070 != 0) {
             gfx = AnimGetGfx(&work->anim);
