@@ -75,7 +75,7 @@ typedef struct BtlObj {
     struct BtlObj* unk_0DC;
     u16 unk_0E0;
     s16 unk_0E2;
-    struct BtlCardWork* unk_0E4;
+    struct BtlWork* unk_0E4;
     s32 unk_0E8;
     s16 unk_0EC;
     u8 unk_0EE[0x02];
@@ -88,13 +88,6 @@ typedef struct BtlObj {
     s32 unk_108;
     s32 unk_10C;
 } BtlObj;
-
-typedef struct BtlCardWork {
-    u8 unk_000[0xF4];
-    s32 unk_0F4;
-    u16 unk_0F8;
-    u8 unk_0FA[0x02];
-} BtlCardWork;
 
 typedef char Collider_size[(sizeof(Collider) == 0x5C) ? 1 : -1];
 typedef char BtlObj_size[(sizeof(BtlObj) == 0x110) ? 1 : -1];
