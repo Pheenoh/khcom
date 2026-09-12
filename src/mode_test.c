@@ -373,7 +373,7 @@ u8 task_lockon_1(LockonWork* w) {
     s32 oy;
 
     i = 0;
-    o = ListPoolFirst(&gUnk_02039BA0->unk_58);
+    o = ListPoolFirst(&gUnk_02039BA0->unk_18.unk_40);
 
     if (gUnk_02039BA0->unk_70 & 1) {
         gUnk_02039BA0->unk_68 = 0;
@@ -386,8 +386,8 @@ u8 task_lockon_1(LockonWork* w) {
         w->unk_30 = 0;
     }
 
-    px = gUnk_02039BA0->unk_18;
-    py = gUnk_02039BA0->unk_1C;
+    px = gUnk_02039BA0->unk_18.unk_00.x;
+    py = gUnk_02039BA0->unk_18.unk_00.y;
     count = 0;
 
     if ((gUnk_02039BA0->unk_70 & 2) == 0) {
@@ -397,7 +397,7 @@ u8 task_lockon_1(LockonWork* w) {
             dx = px - ox;
             dy = py - oy;
 
-            if (VectorLength2D(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->unk_24) {
+            if (VectorLength2D(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->unk_18.unk_00.unk_0C) {
                 if (o->unk_30 == 3) {
                     gUnk_02039DC4[0] = o->unk_00;
                     gUnk_02039DC4[1] = o->unk_04;
@@ -419,7 +419,7 @@ u8 task_lockon_1(LockonWork* w) {
             nsel = 0;
 
             for (i = 0; i < w->unk_2C; i++) {
-                if (func_0805F6B4(gUnk_02039BA0->unk_2C, px, py, w->unk_0C[i])) {
+                if (func_0805F6B4(gUnk_02039BA0->unk_18.angle, px, py, w->unk_0C[i])) {
                     w->unk_2D = i;
                     list[nsel++] = i;
                 }

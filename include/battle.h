@@ -1,6 +1,8 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include "field_state.h"
+
 #include "fld_types.h"
 
 #include "card_api.h"
@@ -205,10 +207,6 @@ typedef struct UnkStruct_0813400C {
 } UnkStruct_0813400C;
 
 
-typedef struct UnkStruct_02039BA0 {
-    u8 unk_00[0x58];
-    ListPool unk_58;
-} UnkStruct_02039BA0;
 extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
 extern u16 gUnk_09EDA4EC[];
@@ -246,7 +244,6 @@ extern TaskDesc gTaskDescEmy82;
 extern TaskDesc gTaskDescEmy83;
 extern TaskDesc gTaskDescEmyTrumpH;
 extern TaskDesc gTaskDescEmyTrumpS;
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern u32 gUnk_03006C10;
 extern const s16 gSineTable[];
 extern const u8 gUnk_08133E54[];

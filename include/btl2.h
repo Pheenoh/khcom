@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL2_H
 #define GUARD_BTL2_H
 
+#include "field_state.h"
+
 #include "map_api.h"
 #include "btl2_tasks.h"
 
@@ -19,15 +21,6 @@
 #include "fld_types.h"
 #include "bos4_api.h"
 #include "btl2_api.h"
-typedef struct UnkStruct_02039BA0 {
-    s32 unk_00;
-    s32 unk_04;
-    u8 unk_08[0x10];
-    FldActor unk_18;
-    s32 unk_68;
-    u8 unk_6C[0x04];
-    u32 unk_70;
-} UnkStruct_02039BA0;
 
 typedef struct FldWork {
     void* tiles;
@@ -224,7 +217,6 @@ typedef struct BtlStartWork {
     s16 unk_02;
 } BtlStartWork;
 
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 
 extern u8 gUnk_0203D990[];
 extern u8 gUnk_0203D9D0[];

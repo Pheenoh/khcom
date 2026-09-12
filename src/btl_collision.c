@@ -518,12 +518,12 @@ s32 func_08012188(BtlObj* p, s16 h, s32 c) {
 }
 
 void func_080121D4(FldObj* p) {
-    ListNodeInit(&p->unk_1C, &gUnk_02039BA0->unk_58, p);
-    ListPoolAppend(&p->unk_1C, &gUnk_02039BA0->unk_58);
+    ListNodeInit(&p->unk_1C, &gUnk_02039BA0->unk_18.unk_40, p);
+    ListPoolAppend(&p->unk_1C, &gUnk_02039BA0->unk_18.unk_40);
 }
 
 void func_080121FC(FldObj* p) {
-    ListPoolRemove(&p->unk_1C, &gUnk_02039BA0->unk_58);
+    ListPoolRemove(&p->unk_1C, &gUnk_02039BA0->unk_18.unk_40);
 }
 
 void func_08012214(void) {

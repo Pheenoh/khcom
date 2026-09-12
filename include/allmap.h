@@ -1,6 +1,8 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include "field_state.h"
+
 #include "allmap_types.h"
 
 #include "card_api.h"
@@ -43,10 +45,6 @@ typedef struct AllmapRoomnameWork {
     u16 unk_0CE;
 } AllmapRoomnameWork;
 
-typedef struct UnkStruct_02039BA0 {
-    u8 unk_00[0x70];
-    u32 unk_70;
-} UnkStruct_02039BA0;
 
 typedef struct AllmapRoomArg {
     u32 unk_00 : 16;
@@ -211,7 +209,6 @@ extern TaskPool gTitleTaskPool;
 extern Task* gTitleLogoTask;
 extern Task* gTitleObjTask;
 extern u8* gUnk_02034EC4;
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern void* gStockMesDispWork;
 extern UnkStruct_0203C4B4* gUnk_0203C4B4;
 extern u32 gUnk_0203C4E0;

@@ -20316,8 +20316,8 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
 }
 u8 func_08096390(PrizeCardWork* w) {
     w->unk_F6 += 32;
-    w->unk_EA = (gUnk_02039BA0->unk_18 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    w->unk_EC = (gUnk_02039BA0->unk_1C >> 8) + (gUnk_02039BA0->unk_20 >> 8) -
+    w->unk_EA = (gUnk_02039BA0->unk_18.unk_00.x >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+    w->unk_EC = (gUnk_02039BA0->unk_18.unk_00.y >> 8) + (gUnk_02039BA0->unk_18.unk_00.z >> 8) -
                 (gUnk_02039BA0->unk_04 >> 8);
     w->unk_E6 += (w->unk_EA - w->unk_E6) >> 3;
     w->unk_E8 += (w->unk_EC - w->unk_E8) >> 3;

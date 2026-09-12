@@ -36,7 +36,7 @@ typedef struct FldActor {
     u8 unk_34[0x06];
     u16 unk_3A;
     s32 unk_3C;
-    u8 unk_40[0x10];
+    ListPool unk_40;
 } FldActor;
 
 typedef struct FldObj {
@@ -50,5 +50,7 @@ typedef struct FldObj {
     u16 unk_30;
     u8 unk_32[0x02];
 } FldObj;
+
+typedef char FldActor_size[(sizeof(FldActor) == 0x50) ? 1 : -1];
 
 #endif

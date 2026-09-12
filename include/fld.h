@@ -1,6 +1,8 @@
 #ifndef GUARD_FLD_H
 #define GUARD_FLD_H
 
+#include "field_state.h"
+
 #include "map_types.h"
 
 #include "map_api.h"
@@ -23,21 +25,7 @@
 #include "btl2_api.h"
 
 
-typedef struct UnkStruct_02039BA0 {
-    s32 unk_00;
-    s32 unk_04;
-    u8 unk_08[0x10];
-    FldActor unk_18;
-    s32 unk_68;
-    u8 unk_6C[0x04];
-    u32 unk_70;
-    u8 unk_74[0x68];
-    s32 unk_DC;
-    s32 unk_E0;
-    u8 unk_E4;
-} UnkStruct_02039BA0;
 
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 
 typedef struct FldWork {
     void* tiles;

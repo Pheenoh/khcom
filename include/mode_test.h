@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "field_state.h"
+
 #include "continue_types.h"
 
 #include "fld_types.h"
@@ -39,22 +41,6 @@
 #define CPU_SET_32BIT     0x04000000
 
 
-typedef struct UnkStruct_02039BA0 {
-    s32 unk_00;
-    s32 unk_04;
-    u8 unk_08[0x10];
-    s32 unk_18;
-    s32 unk_1C;
-    u8 unk_20[0x04];
-    s32 unk_24;
-    u8 unk_28[0x04];
-    u8 unk_2C;
-    u8 unk_2D[0x2B];
-    ListPool unk_58;
-    FldObj* unk_68;
-    u8 unk_6C[0x04];
-    u32 unk_70;
-} UnkStruct_02039BA0;
 
 
 typedef struct UnkStruct_09EE3CA0 {
@@ -234,7 +220,6 @@ void func_0805F7E8(u8 x, u8 y, u16* s);
 void func_08060470(u8 bg);
 void func_0806098C(void);
 
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern s32* gUnk_02039DC4;
 extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern u16 gBldCnt;
