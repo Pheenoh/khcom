@@ -3,14 +3,15 @@
 
 UnkStruct_02039CA8 gUnk_02039CA8;
 
-#ifdef NON_MATCHING
 void func_0800F988(UnkStruct_02039CA8* p) {
     s32 n = p->level + 1;
-    p->nextExp += n * n * 3;
+
+    if (p->level) {
+        p->nextExp = n * n * 3 + p->nextExp;
+    } else {
+        p->nextExp = n * n * 3 + p->nextExp;
+    }
 }
-#else
-INCLUDE_ASM("player_progression/func_0800F988.s");
-#endif
 
 void func_0800F9A0(void) {
     gUnk_02039CA8.maxHp = 0x50;
