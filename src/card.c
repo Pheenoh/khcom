@@ -27778,9 +27778,12 @@ extern u8 gUnk_0815A0A0[];
 extern u8 gUnkEu_08895EDC[];
 #endif
 
-#ifdef NON_MATCHING
 void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
-    UnkStruct_080A23A0_Args args = *a;
+    struct UnkStruct_080A23A0_Packed {
+        u8* unk_00;
+        u32 unk_04 : 16;
+        u32 unk_06 : 16;
+    } args = *(struct UnkStruct_080A23A0_Packed*)a;
     void* text;
 
     func_08065ACC(w->unk_000, 20);
@@ -27853,9 +27856,6 @@ void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
 #endif
     w->unk_288 = LoadObjPalette(gUnk_09611AB8, 32);
 }
-#else
-INCLUDE_ASM("card/func_080A23A0.s");
-#endif
 
 s32 func_080A25B8(UnkStruct_080A2678* w, void* a) {
     SetTaskUpdate(a, func_080A25E0);
