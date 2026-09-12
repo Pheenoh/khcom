@@ -620,6 +620,9 @@ typedef struct JiminyWork {
     s32 unk_D38;
     u16 unk_D3C;
     u16 unk_D3E;
+#ifdef VERSION_EU
+    u16* unk_D40[100];
+#endif
 } JiminyWork;
 
 typedef struct GameState {
