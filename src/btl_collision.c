@@ -516,12 +516,12 @@ s32 func_08012188(BtlObj* p, s16 h, s32 c) {
 }
 
 void func_080121D4(FldObj* p) {
-    func_08000D20(&p->unk_1C, &gUnk_02039BA0->unk_58, p);
-    func_08000D28(&p->unk_1C, &gUnk_02039BA0->unk_58);
+    ListNodeInit(&p->unk_1C, &gUnk_02039BA0->unk_58, p);
+    ListPoolAppend(&p->unk_1C, &gUnk_02039BA0->unk_58);
 }
 
 void func_080121FC(FldObj* p) {
-    func_08000D90(&p->unk_1C, &gUnk_02039BA0->unk_58);
+    ListPoolRemove(&p->unk_1C, &gUnk_02039BA0->unk_58);
 }
 
 void func_08012214(void) {
@@ -573,14 +573,14 @@ void func_080122AC(Collider* p, u32 type, u16 r, u16 h) {
         p->unk_30 |= 1;
         break;
     }
-    func_08000D20(&p->unk_18, pool, p);
-    func_08000D28(&p->unk_18, pool);
+    ListNodeInit(&p->unk_18, pool, p);
+    ListPoolAppend(&p->unk_18, pool);
 }
 
 void func_08012304(Collider* p) {
     Collider* q = p->self;
     if (q == p) {
-        func_08000D90(&q->unk_18, func_08012218(q->unk_00));
+        ListPoolRemove(&q->unk_18, func_08012218(q->unk_00));
     }
 }
 

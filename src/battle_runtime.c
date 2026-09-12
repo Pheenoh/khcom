@@ -1520,15 +1520,15 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
     if (d->unk_0E & 4) {
         p->unk_034 |= 0x20000;
     }
-    func_08000D20(&p->unk_0B8, &gBtlWork->unk_080, p);
-    func_08000D28(&p->unk_0B8, &gBtlWork->unk_080);
+    ListNodeInit(&p->unk_0B8, &gBtlWork->unk_080, p);
+    ListPoolAppend(&p->unk_0B8, &gBtlWork->unk_080);
     gBtlWork->unk_0EE++;
 }
 
 void func_0801B7D8(BtlObj* obj) {
     BtlObj* p = obj->unk_0DC;
     if (p == obj) {
-        func_08000D90(&p->unk_0B8, &gBtlWork->unk_080);
+        ListPoolRemove(&p->unk_0B8, &gBtlWork->unk_080);
 
         if (!(p->unk_03C & 1)) {
             func_08012304(&p->unk_040);

@@ -2994,12 +2994,12 @@ void func_080CCB90(PooNode* n, u16 v, void* p) {
     func_080CCB8C(&n->unk_00, v);
     n->unk_08 = p;
     n->unk_04 = 0;
-    func_08000D20(&n->unk_0C, &gUnk_02034DF8, n);
-    func_08000D28(&n->unk_0C, &gUnk_02034DF8);
+    ListNodeInit(&n->unk_0C, &gUnk_02034DF8, n);
+    ListPoolAppend(&n->unk_0C, &gUnk_02034DF8);
 }
 
 void func_080CCBD4(PooNode* p) {
-    func_08000D90(&p->unk_0C, &gUnk_02034DF8);
+    ListPoolRemove(&p->unk_0C, &gUnk_02034DF8);
 }
 
 void func_080CCBE8(void) {
