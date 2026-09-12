@@ -11661,7 +11661,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
             p->unk_1E = 0;
             p->unk_29 = 0;
             p->unk_2A = 1;
-            p->unk_34 = 1;
+            p->unk_2C.unk_08 = 1;
             SetTaskUpdate(a, (void*)func_08073170);
         } else {
             _08065994();
@@ -11672,14 +11672,14 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                     func_08073E74(&p->unk_2C);
                     SetTaskUpdate(a, (void*)func_0807344C);
                     gUnk_02039DC8->unk_81 = text;
-                    p->unk_34 = text;
+                    p->unk_2C.unk_08 = text;
                 } else {
                     p->unk_1E = text;
                     p->unk_29 = text;
                     p->unk_2A = text;
                     p->unk_27++;
                     gUnk_02039DC8->unk_64 &= ~1;
-                    p->unk_34 = 1;
+                    p->unk_2C.unk_08 = 1;
                     SetTaskUpdate(a, (void*)func_08072EAC);
                 }
             } else {
@@ -11687,7 +11687,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                 func_08073E74(&p->unk_2C);
                 SetTaskUpdate(a, (void*)func_0807344C);
                 gUnk_02039DC8->unk_81 = text;
-                p->unk_34 = text;
+                p->unk_2C.unk_08 = text;
             }
         }
         p->unk_2B = 0;
@@ -12073,7 +12073,7 @@ u8 func_08073DA4(MsgFaceWork* p, void* a) {
     }
     return 1;
 }
-void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c) {
+void func_08073E0C(void* pool, MsgFaceCtl* p, u8 a, u8 b, u8 c) {
     p->unk_00 = a;
     p->unk_01 = b;
     p->unk_04 = c;
@@ -12082,7 +12082,7 @@ void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c) {
     TaskCreate(pool, gTaskDescMsgface, p);
 }
 
-void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c) {
+void func_08073E34(MsgFaceCtl* p, u8 a, u8 b, u8 c) {
     u8 v;
 
     if (p->unk_00 != a) {
@@ -12099,10 +12099,10 @@ void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c) {
     p->unk_04 = c;
 }
 
-void _08073E6C(Work08073E34* p) {
+void _08073E6C(MsgFaceCtl* p) {
     p->unk_02 = 1;
 }
-void func_08073E74(Work08073E34* p) {
+void func_08073E74(MsgFaceCtl* p) {
     p->unk_02 = 2;
 }
 void msgwait_0(MsgWaitWork* p, u8* arg) {

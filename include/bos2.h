@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "prize_types.h"
+
 #include "chara_types.h"
 
 #include "card_api.h"
@@ -355,12 +357,6 @@ typedef struct JfRockWork {
     u8 unk_195[0x3];
 } JfRockWork;
 
-typedef struct JfMajinFx {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    u8 unk_0C[0x14];
-} JfMajinFx;
 
 typedef struct JfMajinWork {
     JfWork* unk_00;

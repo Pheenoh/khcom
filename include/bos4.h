@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "battle_bg_types.h"
+
 #include "map_types.h"
 
 #include "card_api.h"
@@ -379,17 +381,8 @@ extern vu32 gFrameCounter;
 extern u8 gUnk_0203C578;
 extern u8 gUnk_0203C56C;
 
-typedef struct UnkStruct_080DAA28 {
-    void* unk_00;
-    u16 unk_04;
-    u8 unk_06[0x2];
-    void* unk_08;
-    u16 unk_0C;
-    u8 unk_0E[0x2];
-    u8 unk_10[0x4];
-} UnkStruct_080DAA28;
 
-void task_bos_boogie_map_0(void* work, UnkStruct_080DAA28* arg);
+void task_bos_boogie_map_0(void* work, FldInit* arg);
 extern s32 gUnk_0203C580;
 extern u8 gUnk_0203C564;
 extern u8 gUnk_0203C574;
@@ -454,7 +447,7 @@ typedef struct UrsulaBorderWork {
     void* palette;
 } UrsulaBorderWork;
 
-void task_bos_ursula_map_0(UrsulaMapWork* work, UnkStruct_080DAA28* arg);
+void task_bos_ursula_map_0(UrsulaMapWork* work, FldInit* arg);
 u8 task_bos_ursula_map_1(UrsulaMapWork* work);
 extern u8 gUnk_0203C57C;
 
@@ -616,18 +609,8 @@ void func_080DE3E8(MapChkWork* p);
 void func_080DE4A4(MapChkWork* p);
 extern const char* const gUnk_09EF6974[];
 
-typedef struct UnkStruct_02034F18 {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u8 unk_04;
-    u8 unk_05;
-    u8 unk_06;
-    u8 unk_07;
-} UnkStruct_02034F18;
 
-extern UnkStruct_02034F18 gUnk_0203C7B0;
+extern UnkStruct_0203C7B0 gUnk_0203C7B0;
 void func_080DE2FC(MapChkWork* p);
 void func_080DE35C(MapChkWork* p);
 extern const char* const gUnk_09EF6960[];

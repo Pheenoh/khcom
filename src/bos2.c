@@ -3834,7 +3834,7 @@ void func_080BFEF0(JfMajinWork* work) {
 void func_080BFFF8(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
     BtlObj* q = &jf->unk_110;
-    JfMajinFx fx;
+    PrizeCardArg fx;
     s32 v;
 
     if (jf->unk_244 == 0) {
