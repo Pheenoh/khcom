@@ -3098,7 +3098,7 @@ u16 GetRandom(void) {
     return x;
 }
 
-void func_080065FC(s32 bg, u16 b, u16 c) {
+void BgAnimInit(s32 bg, u16 b, u16 c) {
     gUnk_02034048 = bg;
     gUnk_02034040 = 0;
     gUnk_02034050 = 0;
@@ -3143,7 +3143,7 @@ void func_080065FC(s32 bg, u16 b, u16 c) {
     SetBgSize(bg, b);
     DisableBg(bg);
 }
-void func_080066F4(s16 x, s16 y) {
+void BgAnimSetPosition(s16 x, s16 y) {
     if (gUnk_02034058 != 0) {
         gUnk_02034050 = -x;
         gUnk_02034052 = -y;
@@ -3153,15 +3153,15 @@ void func_080066F4(s16 x, s16 y) {
     }
 }
 
-void func_0800675C(u8 a, s32 b, s32 c) {
+void BgAnimSetTransform(u8 a, s32 b, s32 c) {
     gUnk_02034064 = a;
     gUnk_0203405C = b;
     gUnk_02034060 = c;
 }
 
-void func_08006778(UnkBgAnim* a, s32 x, s32 y) {
+void BgAnimStart(UnkBgAnim* a, s32 x, s32 y) {
     gUnk_02034040 = a;
-    func_080066F4((s16)x, (s16)y);
+    BgAnimSetPosition((s16)x, (s16)y);
 
     if (gUnk_02034058 != 0) {
         gUnk_0203404C = a->unk_0E << 6;
@@ -3186,7 +3186,7 @@ void func_08006778(UnkBgAnim* a, s32 x, s32 y) {
     PopPaletteEffect();
     LoadBgMap(gUnk_02034048, a->unk_04, gUnk_02034056);
 }
-void func_0800685C(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
+void BgAnimApplyAffineTransform(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
     BgAffineSrcData src;
     BgAffineDstData dst;
 
@@ -3218,7 +3218,7 @@ void func_0800685C(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
         break;
     }
 }
-void func_08006954(void) {
+void BgAnimUpdate(void) {
     u8* src;
     u16 q;
     u16 off;
@@ -3241,7 +3241,7 @@ void func_08006954(void) {
     }
 
     if (gUnk_02034058 != 0) {
-        func_0800685C(gUnk_02034048, gUnk_02034064, gUnk_0203405C, gUnk_02034060, gUnk_02034050, gUnk_02034052);
+        BgAnimApplyAffineTransform(gUnk_02034048, gUnk_02034064, gUnk_0203405C, gUnk_02034060, gUnk_02034050, gUnk_02034052);
         vis = 1;
     } else {
         SetBgScroll(gUnk_02034048, (u16)gUnk_02034050, (u16)gUnk_02034052);

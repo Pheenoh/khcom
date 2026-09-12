@@ -1930,8 +1930,8 @@ void func_080FDC04(void) {
     switch (gUnk_0203508C) {
     case 0:
         if (GetKeysPressed() & 1) {
-            func_080065FC(2, 0x8000, 128);
-            func_08006778(gUnk_09EDABA0 + 0x18, 112, 126);
+            BgAnimInit(2, 0x8000, 128);
+            BgAnimStart(gUnk_09EDABA0 + 0x18, 112, 126);
             SetBgPriority(2, 1);
             gBldCnt |= 0x1000;
             gUnk_020350EF = 1;
@@ -2211,7 +2211,7 @@ void func_080FE47C(void) {
                 anim = gUnk_0999A350;
 
                 if (gUnk_020350C0 > 3 && gUnk_020350F0 == 0) {
-                    func_080066F4(x - 1, y - 5);
+                    BgAnimSetPosition(x - 1, y - 5);
                 }
             } else if (t <= 61) {
                 sprite = 0;
@@ -2264,7 +2264,7 @@ void func_080FE47C(void) {
     }
 
     if (gUnk_020350EF != 0) {
-        func_08006954();
+        BgAnimUpdate();
     }
 
     TaskPoolDraw(&gUnk_020350D8);
@@ -2377,8 +2377,8 @@ void mode_worldselect_0(void) {
     LoadBgMap(1, gUnk_09A31ADC, 0x500);
 
     if (gUnk_020350EE == 0) {
-        func_080065FC(2, 0x8000, 128);
-        func_08006778(gUnk_09EDABA0, 120, 110);
+        BgAnimInit(2, 0x8000, 128);
+        BgAnimStart(gUnk_09EDABA0, 120, 110);
         BgAnimSetLoopStartFrame(0);
         gUnk_020350EF = 1;
     }
@@ -2452,8 +2452,8 @@ void mode_worldselect_1(void) {
             } else {
                 gGameState.unk_17A |= 1;
                 func_080FE89C();
-                func_080065FC(2, 0x8000, 128);
-                func_08006778(gUnk_09EDABA0, 120, 110);
+                BgAnimInit(2, 0x8000, 128);
+                BgAnimStart(gUnk_09EDABA0, 120, 110);
                 BgAnimSetLoopStartFrame(0);
                 gUnk_020350EF = 1;
                 gUnk_020350C0 = 3;

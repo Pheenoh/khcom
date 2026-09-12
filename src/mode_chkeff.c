@@ -47,7 +47,7 @@ void mode_chkeff_0(void) {
     FadeSetPaletteExcluded(13, 1);
     FadeSetPaletteExcluded(14, 1);
     FadeSetPaletteExcluded(15, 1);
-    func_080065FC(2, 0x8000, 0x80);
+    BgAnimInit(2, 0x8000, 0x80);
     TaskPoolInit(&gChkEffWork->pool, 1);
     TaskCreate(&gChkEffWork->pool, &gTaskDescPrint, 0);
     gChkEffWork->unk_14 = 0;
@@ -58,7 +58,7 @@ void mode_chkeff_0(void) {
     gChkEffWork->unk_1C = 0;
     gChkEffWork->alphaA = 16;
     gChkEffWork->alphaB = 16;
-    func_08006778(gUnk_09ED9A1C[0], 0x78, 0x50);
+    BgAnimStart(gUnk_09ED9A1C[0], 0x78, 0x50);
 }
 
 void mode_chkeff_1(void) {
@@ -97,7 +97,7 @@ void mode_chkeff_1(void) {
 
         if (prev != gChkEffWork->unk_14) {
             gChkEffWork->paused = 0;
-            func_08006778(obj, 120, 80);
+            BgAnimStart(obj, 120, 80);
         }
 
         if (GetKeysRepeat() & DPAD_UP) {
@@ -130,7 +130,7 @@ void mode_chkeff_1(void) {
         }
 
         if (BgAnimIsStopped() && (GetKeysHeld() & 1)) {
-            func_08006778(obj, 120, 80);
+            BgAnimStart(obj, 120, 80);
         }
 
         if (gChkEffWork->paused != 0) {
@@ -161,11 +161,11 @@ void mode_chkeff_1(void) {
         func_0809D458(6, 19, 0, b);
         TaskPoolUpdate(&(*wp)->pool);
         TaskPoolDraw(&(*wp)->pool);
-        func_0800675C((*wp)->unk_1C, (*wp)->scale, (*wp)->scale);
+        BgAnimSetTransform((*wp)->unk_1C, (*wp)->scale, (*wp)->scale);
         SetBlendAlpha((*wp)->alphaA, (*wp)->alphaB);
 
         if ((*wp)->paused == 0 || (GetKeysRepeat() & 1)) {
-            func_08006954();
+            BgAnimUpdate();
         }
 
         SetBgScroll(1, gChkEffWork->scrollX, gChkEffWork->scrollY);

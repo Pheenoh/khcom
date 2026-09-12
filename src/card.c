@@ -422,7 +422,7 @@ s32 func_08097DE4(u8* work);
 u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a);
 s32 func_08083ADC(u8* work);
 void func_080A27EC(u8* work);
-void func_08085658(u16 index);
+void ConvertActiveDeckCardToPremium(u16 index);
 void func_0807D0F4(UnkStruct_02034AAC* p);
 void func_08082BF8(UnkStruct_02034AAC* p);
 u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d);
@@ -8233,7 +8233,7 @@ void func_08083F84(u16 a) {
     if (gCardDefs[a].unk_20 + GetDeckCpCost(GetActiveDeckIndex()) <=
             gGameState.cp &&
         v != -1) {
-        func_08085290(v);
+        AddCardToActiveDeck(v);
     }
 }
 
@@ -9284,7 +9284,7 @@ u8 func_0808510C(u16 id) {
     return 0;
 }
 
-void func_08085160(void) {
+void InitDecks(void) {
     u16 i;
     u16 j;
 
@@ -9302,7 +9302,7 @@ void func_08085160(void) {
     }
 }
 
-void func_080851E4(u8 deck) {
+void ClearDeck(u8 deck) {
     u16 mask;
     u16 i;
 
@@ -9331,7 +9331,7 @@ void func_080851E4(u8 deck) {
     gDecks[deck].unk_DC = 0;
 }
 
-u8 func_08085290(u16 card) {
+u8 AddCardToActiveDeck(u16 card) {
     u16* cards;
     u16 i;
     u16 v;
@@ -9367,7 +9367,7 @@ u8 func_08085290(u16 card) {
     return 1;
 }
 
-u8 func_08085374(u16 card, u8 deck) {
+u8 AddCardToDeck(u16 card, u8 deck) {
     u16* cards;
     u16 i;
     u16 v;
@@ -9401,7 +9401,7 @@ u8 func_08085374(u16 card, u8 deck) {
     return 1;
 }
 
-void func_08085448(u16 slot) {
+void RemoveCardFromActiveDeck(u16 slot) {
     u16* cards;
     u16 v;
 
@@ -9427,7 +9427,7 @@ void func_08085448(u16 slot) {
     cards[slot] = 0xFFFF;
 }
 
-void func_08085518(u16* p, u8 deck) {
+void RemoveCardFromDeck(u16* p, u8 deck) {
     u16 v;
 
     switch (deck) {
@@ -9448,7 +9448,7 @@ void func_08085518(u16* p, u8 deck) {
     *p = 0xFFFF;
 }
 
-void func_080855C8(void) {
+void RecalculateInactiveDeckCpCosts(void) {
     u8 i;
     u16 total;
     s32 j;
@@ -9472,7 +9472,7 @@ void func_080855C8(void) {
     }
 }
 
-void func_08085658(u16 index) {
+void ConvertActiveDeckCardToPremium(u16 index) {
     Deck* d;
     u16 v;
 
@@ -9481,7 +9481,7 @@ void func_08085658(u16 index) {
     gCardCollection[*(u16*)(index * 2 + (u32)d)] |= 0x8000;
     v = GetCardCpCost(gCardCollection[*(u16*)(index * 2 + (u32)d)]) + gDecks[gActiveDeck].unk_DA;
     gDecks[gActiveDeck].unk_DA = v;
-    func_080855C8();
+    RecalculateInactiveDeckCpCosts();
 }
 
 s32 func_080856DC(void) {
@@ -9743,7 +9743,7 @@ s32 func_08085BAC(void) {
 void func_08085C3C(void) {
     gActiveDeck = 0;
     func_08083FE0();
-    func_08085160();
+    InitDecks();
 
     if (gUnk_03006C10 & 0x10) {
         func_080AB228();
@@ -9771,7 +9771,7 @@ void func_08085C3C(void) {
 void func_08085CB0(void) {
     gActiveDeck = 0;
     func_08083FE0();
-    func_08085160();
+    InitDecks();
     func_080AB228();
     func_080AB334(0);
     func_080AB22C(1);
@@ -9791,7 +9791,7 @@ void _08085D04(u8 a) {
     u8 n = 0;
 
     func_08083FE0();
-    func_08085160();
+    InitDecks();
     SetActiveDeckIndex(0);
 
     switch (a) {
@@ -9843,12 +9843,12 @@ void func_08085DA0(u8 a) {
 
     for (i = 0, j = 0; i < gUnk_090356BA[a]; i++, j++) {
         func_08084458(gUnk_09EE4A68[a][i]);
-        func_08085290(i);
+        AddCardToActiveDeck(i);
     }
 
     for (i = 0; i < gUnk_090356D2[a]; j++, i++) {
         func_08084458(gUnk_09EE4A98[a][i]);
-        func_08085290(j);
+        AddCardToActiveDeck(j);
     }
 
     gCardCollection[200] = 0x21D;
@@ -9867,59 +9867,59 @@ void func_08085DA0(u8 a) {
     gCardCollection[213] = 0x234;
 
     if (func_0800FC5C(38) != 0) {
-        func_08085290(200);
+        AddCardToActiveDeck(200);
     }
 
     if (func_0800FC5C(42) != 0) {
-        func_08085290(201);
+        AddCardToActiveDeck(201);
     }
 
     if (func_0800FC5C(40) != 0) {
-        func_08085290(202);
+        AddCardToActiveDeck(202);
     }
 
     if (func_0800FC5C(44) != 0) {
-        func_08085290(203);
+        AddCardToActiveDeck(203);
     }
 
     if (func_0800FC5C(50) != 0) {
-        func_08085290(204);
+        AddCardToActiveDeck(204);
     }
 
     if (func_0800FC5C(39) != 0) {
-        func_08085290(205);
+        AddCardToActiveDeck(205);
     }
 
     if (func_0800FC5C(45) != 0) {
-        func_08085290(206);
+        AddCardToActiveDeck(206);
     }
 
     if (func_0800FC5C(41) != 0) {
-        func_08085290(207);
+        AddCardToActiveDeck(207);
     }
 
     if (func_0800FC5C(48) != 0) {
-        func_08085290(208);
+        AddCardToActiveDeck(208);
     }
 
     if (func_0800FC5C(43) != 0) {
-        func_08085290(209);
+        AddCardToActiveDeck(209);
     }
 
     if (func_0800FC5C(51) != 0) {
-        func_08085290(210);
+        AddCardToActiveDeck(210);
     }
 
     if (func_0800FC5C(54) != 0) {
-        func_08085290(211);
+        AddCardToActiveDeck(211);
     }
 
     if (func_0800FC5C(57) != 0) {
-        func_08085290(212);
+        AddCardToActiveDeck(212);
     }
 
     if (func_0800FC5C(56) != 0) {
-        func_08085290(213);
+        AddCardToActiveDeck(213);
     }
 }
 
@@ -11393,7 +11393,7 @@ u8 func_08088768(u8* work, void* a) {
         }
 
         m4aSongNumStart(0x66);
-        func_080851E4(work[0x8C4]);
+        ClearDeck(work[0x8C4]);
         func_0808D0A4(work[0x8C4]);
         func_0808D258(work[0x8C4]);
         func_0808D594();
@@ -11468,7 +11468,7 @@ u8 func_08088768(u8* work, void* a) {
         }
 
         m4aSongNumStart(0x66);
-        func_080851E4(work[0x8C0]);
+        ClearDeck(work[0x8C0]);
         func_0808D0A4(work[0x8C0]);
         func_0808D258(work[0x8C0]);
         func_0808D594();
@@ -14475,14 +14475,14 @@ s32 func_0808E19C(UnkStruct_0808DB04* w) {
 
             if (id > 0x1C1) {
                 if (idx == 0) {
-                    func_08085374(card, w->unk_8C0);
+                    AddCardToDeck(card, w->unk_8C0);
                     e->unk_00[idx]--;
                     func_0808DD20(e->unk_00[idx], idx);
                     m4aSongNumStart(0x66);
                     return e->unk_00[idx];
                 }
             } else if (def->unk_20 == idx) {
-                func_08085374(card, w->unk_8C0);
+                AddCardToDeck(card, w->unk_8C0);
                 e->unk_00[idx]--;
                 func_0808DD20(e->unk_00[idx], idx);
                 m4aSongNumStart(0x66);
@@ -14553,7 +14553,7 @@ void func_0808E3E0(u8* work) {
     while (n != 0) {
         if (n->unk_24 == *(s16*)&work[CARDWORK(0x886)] && n->unk_22 == *(s16*)&work[CARDWORK(0x884)]) {
             if (n->unk_20 != 0xFFFF) {
-                func_08085518(n->unk_28, work[CARDWORK(0x8C0)]);
+                RemoveCardFromDeck(n->unk_28, work[CARDWORK(0x8C0)]);
                 n->unk_4A = 1;
                 ((UnkStruct_0808E3E0*)n)->unk_24 |= 0xFFFF;
                 m4aSongNumStart(0x66);
@@ -24100,7 +24100,7 @@ u8 func_0809C2D0(u8* work, void* a) {
             if (n[0x53] == 0) {
                 if ((s8)n[0x52] == 3) {
                     n[0x55] = 2;
-                    func_08085658(*(u16*)&n[0x48]);
+                    ConvertActiveDeckCardToPremium(*(u16*)&n[0x48]);
                 } else {
                     n[0x55] = 3;
                 }
@@ -24120,13 +24120,13 @@ u8 func_0809C2D0(u8* work, void* a) {
         z = 0;
         *q = 1;
         SetBgPriority(2, 0);
-        func_080065FC(2, 0x8000, 0x80);
-        func_08006778(gUnk_09EDA9A8, 120, 60);
+        BgAnimInit(2, 0x8000, 0x80);
+        BgAnimStart(gUnk_09EDA9A8, 120, 60);
         work[0x88] = BgAnimGetDuration(gUnk_09EDA9A8);
         work[0x89] = z;
         gBldCnt = 0x1B44;
         gBldAlpha = 0x1010;
-        func_08006954();
+        BgAnimUpdate();
         FadeSetPaletteExcluded(10, 1);
         FadeSetPaletteExcluded(11, 1);
         FadeSetPaletteExcluded(12, 1);
@@ -24144,7 +24144,7 @@ u8 func_0809C2D0(u8* work, void* a) {
 
 u8 func_0809C448(u8* work, void* a) {
     ListPoolFirst(&gUnk_0203A9D0->cards);
-    func_08006954();
+    BgAnimUpdate();
     *(void**)&work[0x28] = AnimUpdate(&work[0x54]);
     *(void**)&work[0x2C] = AnimUpdate(&work[0x6C]);
     TaskPoolUpdate(&work[0x3C]);
@@ -32511,7 +32511,7 @@ void func_080AB1F8(u8 a, u16 b) {
 
     saved = GetActiveDeckIndex();
     SetActiveDeckIndex(a);
-    func_08085290(b);
+    AddCardToActiveDeck(b);
     SetActiveDeckIndex(saved);
 }
 
