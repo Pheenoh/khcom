@@ -26,11 +26,11 @@ extern u32 gLanguage;
 #define LANGSTR(x) (x)
 #endif
 
-static Ent02034A80* gUnk_02034A80;
+static SpriteTextLine* gUnk_02034A80;
 static TextGlyphSprite* gUnk_02034A84;
 static TextGlyphSprite* gUnk_02034A88;
 #ifndef VERSION_EU
-static Ent02034A8C* gUnk_02034A8C;
+static BgTextLine* gUnk_02034A8C;
 #endif
 static u8 gUnk_02034A90;
 static u8 gUnk_02034A91;
@@ -673,13 +673,13 @@ void func_08062D64(void) {
     gUnk_02034A90 = 0;
 
     for (i = 0; i < 45; i++) {
-        gUnk_02034A80[i].unk_00 = 0;
-        gUnk_02034A80[i].unk_04 = 0;
-        gUnk_02034A80[i].unk_48 = 0;
-        gUnk_02034A80[i].unk_50 = 0;
+        gUnk_02034A80[i].x = 0;
+        gUnk_02034A80[i].y = 0;
+        gUnk_02034A80[i].palette = 0;
+        gUnk_02034A80[i].length = 0;
 
         for (j = 0; j < 16; j++) {
-            gUnk_02034A80[i].unk_08[j] = 0;
+            gUnk_02034A80[i].glyphTiles[j] = 0;
         }
     }
 }
@@ -698,20 +698,20 @@ void func_08062DC8(s32 x, s32 y, u8* s) {
         return;
     }
 
-    gUnk_02034A80[gUnk_02034A90].unk_00 = x;
-    gUnk_02034A80[gUnk_02034A90].unk_04 = y;
-    gUnk_02034A80[gUnk_02034A90].unk_51 = 0;
+    gUnk_02034A80[gUnk_02034A90].x = x;
+    gUnk_02034A80[gUnk_02034A90].y = y;
+    gUnk_02034A80[gUnk_02034A90].font = 0;
     len = func_0809D280(s);
 
     if (len > 15) {
         len = 16;
     }
-    gUnk_02034A80[gUnk_02034A90].unk_50 = len;
+    gUnk_02034A80[gUnk_02034A90].length = len;
 
     for (i = 0; i < len; i++) {
         s16 c;
 
-        gUnk_02034A80[gUnk_02034A90].unk_08[i] = (u32)AllocSpriteFrameTiles(32);
+        gUnk_02034A80[gUnk_02034A90].glyphTiles[i] = (u32)AllocSpriteFrameTiles(32);
         c = s[i];
 
         if ((u8)(c - 48) <= 9) {
@@ -757,9 +757,9 @@ void func_08062DC8(s32 x, s32 y, u8* s) {
         if (s[i] == 37) {
             idx = 44;
         }
-        UpdateSpriteFrameTiles((void*)gUnk_02034A80[gUnk_02034A90].unk_08[i], gUnk_09EEC538[idx], gUnk_090D4180);
+        UpdateSpriteFrameTiles((void*)gUnk_02034A80[gUnk_02034A90].glyphTiles[i], gUnk_09EEC538[idx], gUnk_090D4180);
     }
-    gUnk_02034A80[gUnk_02034A90].unk_48 = (u32)LoadObjPalette(gUnk_08F69BE4, 32);
+    gUnk_02034A80[gUnk_02034A90].palette = (u32)LoadObjPalette(gUnk_08F69BE4, 32);
     gUnk_02034A90++;
 }
 #ifndef VERSION_EU
@@ -779,15 +779,15 @@ void func_08062F18(s32 x, s32 y, u8* s) {
         return;
     }
 
-    gUnk_02034A80[gUnk_02034A90].unk_00 = x;
-    gUnk_02034A80[gUnk_02034A90].unk_04 = y;
-    gUnk_02034A80[gUnk_02034A90].unk_51 = 1;
+    gUnk_02034A80[gUnk_02034A90].x = x;
+    gUnk_02034A80[gUnk_02034A90].y = y;
+    gUnk_02034A80[gUnk_02034A90].font = 1;
     len = func_0809D280(s);
 
     if (len > 15) {
         len = 16;
     }
-    gUnk_02034A80[gUnk_02034A90].unk_50 = len;
+    gUnk_02034A80[gUnk_02034A90].length = len;
 
     for (i = 0, k = 0; i < len; i++) {
         s32 c = s[i];
@@ -799,11 +799,11 @@ void func_08062F18(s32 x, s32 y, u8* s) {
         if ((u8)(c - 65) <= 25) {
             idx = c - 52;
         }
-        gUnk_02034A80[gUnk_02034A90].unk_08[k] = (u32)AllocSpriteFrameTiles(128);
-        UpdateSpriteFrameTiles((void*)gUnk_02034A80[gUnk_02034A90].unk_08[k], gUnk_09EEB204[idx], gUnk_090AB5B2);
+        gUnk_02034A80[gUnk_02034A90].glyphTiles[k] = (u32)AllocSpriteFrameTiles(128);
+        UpdateSpriteFrameTiles((void*)gUnk_02034A80[gUnk_02034A90].glyphTiles[k], gUnk_09EEB204[idx], gUnk_090AB5B2);
         k++;
     }
-    gUnk_02034A80[gUnk_02034A90].unk_48 = (u32)LoadObjPalette(&gUnk_096147B8[0x40], 32);
+    gUnk_02034A80[gUnk_02034A90].palette = (u32)LoadObjPalette(&gUnk_096147B8[0x40], 32);
     gUnk_02034A90++;
 }
 #endif
@@ -876,7 +876,7 @@ void func_080634C4(void) {
     step = 8;
 
     for (i = 0; i < gUnk_02034A90; i++) {
-        switch (gUnk_02034A80[i].unk_51) {
+        switch (gUnk_02034A80[i].font) {
         case 0:
             step = 8;
             break;
@@ -885,14 +885,14 @@ void func_080634C4(void) {
             break;
         }
 
-        x = gUnk_02034A80[i].unk_00;
-        y = gUnk_02034A80[i].unk_04;
+        x = gUnk_02034A80[i].x;
+        y = gUnk_02034A80[i].y;
 
-        for (j = 0; j < gUnk_02034A80[i].unk_50; j++) {
-            DrawSprite((x >> 8) + j * step, y >> 8, NULL, (void*)gUnk_02034A80[i].unk_08[j], (void*)gUnk_02034A80[i].unk_48, 0, 0, 50);
-            ReleaseObjTiles((void*)gUnk_02034A80[i].unk_08[j]);
+        for (j = 0; j < gUnk_02034A80[i].length; j++) {
+            DrawSprite((x >> 8) + j * step, y >> 8, NULL, (void*)gUnk_02034A80[i].glyphTiles[j], (void*)gUnk_02034A80[i].palette, 0, 0, 50);
+            ReleaseObjTiles((void*)gUnk_02034A80[i].glyphTiles[j]);
         }
-        ReleaseObjPalette((u8*)gUnk_02034A80[i].unk_48);
+        ReleaseObjPalette((u8*)gUnk_02034A80[i].palette);
     }
     gUnk_02034A90 = 0;
 }
@@ -902,12 +902,12 @@ void func_080635C4(void) {
     u8 j;
 
     for (i = 0; i < gUnk_02034A90; i++) {
-        gUnk_02034A80[i].unk_00 = 0;
-        gUnk_02034A80[i].unk_04 = 0;
-        ReleaseObjPalette((u8*)gUnk_02034A80[i].unk_48);
+        gUnk_02034A80[i].x = 0;
+        gUnk_02034A80[i].y = 0;
+        ReleaseObjPalette((u8*)gUnk_02034A80[i].palette);
 
-        for (j = 0; j < gUnk_02034A80[i].unk_50; j++) {
-            ReleaseObjTiles((void*)gUnk_02034A80[i].unk_08[j]);
+        for (j = 0; j < gUnk_02034A80[i].length; j++) {
+            ReleaseObjTiles((void*)gUnk_02034A80[i].glyphTiles[j]);
         }
     }
     gUnk_02034A90 = 0;
@@ -929,30 +929,30 @@ void* func_08063678(s32 a) {
     gUnk_02034A90 = 0;
 
     for (i = 0; i < 24; i++) {
-        gUnk_02034A80[i].unk_00 = 0;
-        gUnk_02034A80[i].unk_04 = 0;
-        gUnk_02034A80[i].unk_48 = 0;
-        gUnk_02034A80[i].unk_50 = 0;
+        gUnk_02034A80[i].x = 0;
+        gUnk_02034A80[i].y = 0;
+        gUnk_02034A80[i].palette = 0;
+        gUnk_02034A80[i].length = 0;
         gUnk_02034A80[i].unk_52 = 0;
         gUnk_02034A80[i].unk_53 = 0;
 
         for (j = 0; j < 16; j++) {
-            gUnk_02034A80[i].unk_08[j] = 0;
+            gUnk_02034A80[i].glyphTiles[j] = 0;
         }
 
         switch (a) {
         case 0:
-            gUnk_02034A80[i].unk_48 = (u32)LoadObjPalette(gUnk_09614718, 32);
+            gUnk_02034A80[i].palette = (u32)LoadObjPalette(gUnk_09614718, 32);
             break;
         case 1:
-            gUnk_02034A80[i].unk_48 = (u32)LoadObjPalette(gUnk_09614738, 32);
+            gUnk_02034A80[i].palette = (u32)LoadObjPalette(gUnk_09614738, 32);
             break;
         case 2:
-            gUnk_02034A80[i].unk_48 = (u32)LoadObjPalette(gUnk_09614758, 32);
+            gUnk_02034A80[i].palette = (u32)LoadObjPalette(gUnk_09614758, 32);
             break;
         }
     }
-    return (void*)gUnk_02034A80->unk_48;
+    return (void*)gUnk_02034A80->palette;
 }
 #endif
 #ifndef VERSION_EU
@@ -979,9 +979,9 @@ void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
         return;
     }
 
-    gUnk_02034A80[slot].unk_00 = x;
-    gUnk_02034A80[slot].unk_04 = y;
-    gUnk_02034A80[slot].unk_51 = 1;
+    gUnk_02034A80[slot].x = x;
+    gUnk_02034A80[slot].y = y;
+    gUnk_02034A80[slot].font = 1;
     gUnk_02034A80[slot].unk_52 = 1;
     gUnk_02034A80[slot].unk_53 = i;
     gUnk_02034A80[slot].unk_54 = a;
@@ -1344,17 +1344,17 @@ void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
             break;
         }
 
-        if (gUnk_02034A80[slot].unk_08[j] != 0) {
-            ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
+        if (gUnk_02034A80[slot].glyphTiles[j] != 0) {
+            ReleaseObjTiles((void*)gUnk_02034A80[slot].glyphTiles[j]);
         }
         g = ((u16*)gUnk_09EEB204[g])[3];
 
         switch (kind) {
         case 0:
-            gUnk_02034A80[slot].unk_08[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[g * 32], 128);
+            gUnk_02034A80[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[g * 32], 128);
             break;
         case 1:
-            gUnk_02034A80[slot].unk_08[j] = (u32)LoadObjTiles(&gUnk_090B3FBE[g * 32], 128);
+            gUnk_02034A80[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090B3FBE[g * 32], 128);
             break;
         }
         j++;
@@ -1362,12 +1362,12 @@ void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
     }
 
     for (j = i; j < 16; j++) {
-        if (gUnk_02034A80[slot].unk_08[j] != 0) {
-            ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
-            gUnk_02034A80[slot].unk_08[j] = 0;
+        if (gUnk_02034A80[slot].glyphTiles[j] != 0) {
+            ReleaseObjTiles((void*)gUnk_02034A80[slot].glyphTiles[j]);
+            gUnk_02034A80[slot].glyphTiles[j] = 0;
         }
     }
-    gUnk_02034A80[slot].unk_50 = i;
+    gUnk_02034A80[slot].length = i;
 }
 #endif
 #ifndef VERSION_EU
@@ -1401,9 +1401,9 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
         return;
     }
 
-    gUnk_02034A80[slot].unk_00 = x;
-    gUnk_02034A80[slot].unk_04 = y;
-    gUnk_02034A80[slot].unk_51 = 2;
+    gUnk_02034A80[slot].x = x;
+    gUnk_02034A80[slot].y = y;
+    gUnk_02034A80[slot].font = 2;
     gUnk_02034A80[slot].unk_52 = 1;
     gUnk_02034A80[slot].unk_54 = a;
     len = func_0809D280(s);
@@ -1429,23 +1429,23 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
             idx = (u8)(s[i] + 196);
         }
 
-        if (gUnk_02034A80[slot].unk_08[j] != 0) {
-            ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
+        if (gUnk_02034A80[slot].glyphTiles[j] != 0) {
+            ReleaseObjTiles((void*)gUnk_02034A80[slot].glyphTiles[j]);
         }
         idx = ((u8*)gUnk_09EEB204[idx])[6];
-        gUnk_02034A80[slot].unk_08[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[idx * 32], 128);
+        gUnk_02034A80[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[idx * 32], 128);
         j++;
     }
 
     len = count;
 
     for (j = len; j < 16; j++) {
-        if (gUnk_02034A80[slot].unk_08[j] != 0) {
-            ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
-            gUnk_02034A80[slot].unk_08[j] = 0;
+        if (gUnk_02034A80[slot].glyphTiles[j] != 0) {
+            ReleaseObjTiles((void*)gUnk_02034A80[slot].glyphTiles[j]);
+            gUnk_02034A80[slot].glyphTiles[j] = 0;
         }
     }
-    gUnk_02034A80[slot].unk_50 = len;
+    gUnk_02034A80[slot].length = len;
 }
 #endif
 #ifndef VERSION_EU
@@ -1463,20 +1463,20 @@ void func_080640E0(void) {
         }
 
         if (gUnk_02034A80[i].unk_54 == 0) {
-            g = (void*)gUnk_02034A80[i].unk_48;
+            g = (void*)gUnk_02034A80[i].palette;
         } else {
             g = (void*)gUnk_02034A80[i].unk_4C;
         }
-        x = gUnk_02034A80[i].unk_00;
-        y = gUnk_02034A80[i].unk_04;
+        x = gUnk_02034A80[i].x;
+        y = gUnk_02034A80[i].y;
         dx = 0;
 
-        for (j = 0; j < gUnk_02034A80[i].unk_50; j++) {
-            DrawSprite((x >> 8) + dx, y >> 8, gUnk_09EEB204[0], (void*)gUnk_02034A80[i].unk_08[j], g, 0, 0, 50);
+        for (j = 0; j < gUnk_02034A80[i].length; j++) {
+            DrawSprite((x >> 8) + dx, y >> 8, gUnk_09EEB204[0], (void*)gUnk_02034A80[i].glyphTiles[j], g, 0, 0, 50);
 
-            if (gUnk_02034A80[i].unk_51 == 1) {
+            if (gUnk_02034A80[i].font == 1) {
                 dx += 10;
-            } else if (gUnk_02034A80[i].unk_51 == 2) {
+            } else if (gUnk_02034A80[i].font == 2) {
                 dx += 10;
             }
         }
@@ -1489,13 +1489,13 @@ void func_080641CC(u8 i) {
     gUnk_02034A80[i].unk_52 = 0;
 }
 void func_080641E8(u8 i) {
-    if (gUnk_02034A80[i].unk_50 != 0) {
+    if (gUnk_02034A80[i].length != 0) {
         gUnk_02034A80[i].unk_52 = 1;
     }
 }
 void func_0806420C(void* a, void* b, u8 i) {
-    gUnk_02034A80[i].unk_00 = a;
-    gUnk_02034A80[i].unk_04 = b;
+    gUnk_02034A80[i].x = a;
+    gUnk_02034A80[i].y = b;
 }
 #endif
 #ifndef VERSION_EU
@@ -1505,12 +1505,12 @@ void func_0806422C(void) {
 
     for (i = 0; i < 24; i++) {
         for (j = 0; j < 16; j++) {
-            if (gUnk_02034A80[i].unk_08[j] != 0) {
-                ReleaseObjTiles((void*)gUnk_02034A80[i].unk_08[j]);
+            if (gUnk_02034A80[i].glyphTiles[j] != 0) {
+                ReleaseObjTiles((void*)gUnk_02034A80[i].glyphTiles[j]);
             }
         }
-        FadeSetPaletteExcluded(((ObjPalette*)gUnk_02034A80[i].unk_48)->unk_06, 0);
-        ReleaseObjPalette((u8*)gUnk_02034A80[i].unk_48);
+        FadeSetPaletteExcluded(((ObjPalette*)gUnk_02034A80[i].palette)->unk_06, 0);
+        ReleaseObjPalette((u8*)gUnk_02034A80[i].palette);
     }
     EwramFree(gUnk_02034A80);
     gUnk_02034A80 = NULL;
@@ -1526,15 +1526,15 @@ void func_080642A8(u8 bg) {
     gUnk_02034A8C = EwramAlloc(400);
 
     for (i = 0; i < 10; i++) {
-        gUnk_02034A8C[i].unk_00 = 0;
-        gUnk_02034A8C[i].unk_01 = 0;
-        gUnk_02034A8C[i].unk_22 = 0;
-        gUnk_02034A8C[i].unk_24 = bg;
-        gUnk_02034A8C[i].unk_23 = 16;
-        gUnk_02034A8C[i].unk_25 = 0;
+        gUnk_02034A8C[i].x = 0;
+        gUnk_02034A8C[i].y = 0;
+        gUnk_02034A8C[i].length = 0;
+        gUnk_02034A8C[i].bg = bg;
+        gUnk_02034A8C[i].glyphHeight = 16;
+        gUnk_02034A8C[i].dirty = 0;
 
         for (j = 0; j < 16; j++) {
-            gUnk_02034A8C[i].unk_02[j] = 0;
+            gUnk_02034A8C[i].glyphs[j] = 0;
         }
     }
 
@@ -1576,11 +1576,11 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
         return;
     }
 
-    gUnk_02034A8C[e].unk_00 = a;
-    gUnk_02034A8C[e].unk_01 = b;
-    gUnk_02034A8C[e].unk_23 = c;
-    gUnk_02034A8C[e].unk_25 = 1;
-    gUnk_02034A8C[e].unk_26 = f;
+    gUnk_02034A8C[e].x = a;
+    gUnk_02034A8C[e].y = b;
+    gUnk_02034A8C[e].glyphHeight = c;
+    gUnk_02034A8C[e].dirty = 1;
+    gUnk_02034A8C[e].paletteIndex = f;
 
     while (*s != 0) {
         w = *(u16*)s;
@@ -1656,11 +1656,11 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
             }
         }
 
-        gUnk_02034A8C[e].unk_02[j] = glyph;
+        gUnk_02034A8C[e].glyphs[j] = glyph;
         j++;
         i++;
     }
-    gUnk_02034A8C[e].unk_22 = i;
+    gUnk_02034A8C[e].length = i;
 
     if (gUnk_02034A91 == 0) {
         QueueVTransCallback(func_08064624);
@@ -1689,23 +1689,23 @@ void func_08064624(void) {
     u32 pix;
     u16 tile;
     for (n = 0; n < 10; n++) {
-        if (gUnk_02034A8C[n].unk_25 != 1) {
+        if (gUnk_02034A8C[n].dirty != 1) {
             continue;
         }
-        gUnk_02034A8C[n].unk_25 = 0;
+        gUnk_02034A8C[n].dirty = 0;
 
-        for (k = 0; k < gUnk_02034A8C[n].unk_22; k++) {
-            glyph = gUnk_02034A8C[n].unk_02[k];
-            pal = gUnk_02034A8C[n].unk_26;
-            h = gUnk_02034A8C[n].unk_23;
+        for (k = 0; k < gUnk_02034A8C[n].length; k++) {
+            glyph = gUnk_02034A8C[n].glyphs[k];
+            pal = gUnk_02034A8C[n].paletteIndex;
+            h = gUnk_02034A8C[n].glyphHeight;
 
             if (h > 8) {
-                tx = (k * 12 + gUnk_02034A8C[n].unk_00) >> 3;
-                ty = gUnk_02034A8C[n].unk_01 >> 3;
-                sx = k * 12 + gUnk_02034A8C[n].unk_00 - tx * 8;
-                sy = gUnk_02034A8C[n].unk_01 - ty * 8;
-                dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].unk_24) + (tx + 1) * 32 + ty * 1024;
-                screen = GetBgScreenBase(gUnk_02034A8C[n].unk_24);
+                tx = (k * 12 + gUnk_02034A8C[n].x) >> 3;
+                ty = gUnk_02034A8C[n].y >> 3;
+                sx = k * 12 + gUnk_02034A8C[n].x - tx * 8;
+                sy = gUnk_02034A8C[n].y - ty * 8;
+                dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].bg) + (tx + 1) * 32 + ty * 1024;
+                screen = GetBgScreenBase(gUnk_02034A8C[n].bg);
                 tile = ((u16*)gUnk_09EEB204[glyph])[3];
                 src = (u16*)&gUnk_090AB5B2[tile * 32];
                 p = dst;
@@ -1815,12 +1815,12 @@ void func_08064624(void) {
                     }
                 }
             } else {
-                tx = (k * 8 + gUnk_02034A8C[n].unk_00) >> 3;
-                ty = gUnk_02034A8C[n].unk_01 >> 3;
-                sx = k * 8 + gUnk_02034A8C[n].unk_00 - tx * 8;
-                sy = gUnk_02034A8C[n].unk_01 - ty * 8;
-                dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].unk_24) + (tx + 1) * 32 + ty * 1024;
-                screen = GetBgScreenBase(gUnk_02034A8C[n].unk_24);
+                tx = (k * 8 + gUnk_02034A8C[n].x) >> 3;
+                ty = gUnk_02034A8C[n].y >> 3;
+                sx = k * 8 + gUnk_02034A8C[n].x - tx * 8;
+                sy = gUnk_02034A8C[n].y - ty * 8;
+                dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].bg) + (tx + 1) * 32 + ty * 1024;
+                screen = GetBgScreenBase(gUnk_02034A8C[n].bg);
                 tile = ((u16*)gUnk_09EEB188[glyph])[3];
                 src = (u16*)&gUnk_090AA506[tile * 32];
                 p = dst;
@@ -1888,31 +1888,31 @@ u16 func_08064B80(s32 a) {
     gUnk_02034A84 = EwramAlloc(0xC00);
 
     for (i = 0; i < 128; i++) {
-        gUnk_02034A84[i].unk_00 = 0;
-        gUnk_02034A84[i].unk_04 = 0;
-        gUnk_02034A84[i].unk_08 = NULL;
-        gUnk_02034A84[i].unk_0C = NULL;
-        gUnk_02034A84[i].unk_10 = NULL;
-        gUnk_02034A84[i].unk_15 = 0;
-        gUnk_02034A84[i].unk_14 = 0;
+        gUnk_02034A84[i].x = 0;
+        gUnk_02034A84[i].y = 0;
+        gUnk_02034A84[i].tiles = NULL;
+        gUnk_02034A84[i].palette = NULL;
+        gUnk_02034A84[i].alternatePalette = NULL;
+        gUnk_02034A84[i].visible = 0;
+        gUnk_02034A84[i].useAlternatePalette = 0;
 
         switch (a) {
         case 0:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614758, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614758, 32);
             break;
         case 1:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614718, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614718, 32);
             break;
         case 2:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614738, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614738, 32);
             break;
         }
 
-        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->unk_06 + 16, 1);
     }
 
     gUnk_02034A90 = 0;
-    return gUnk_02034A84->unk_0C->unk_06;
+    return gUnk_02034A84->palette->unk_06;
 }
 u16 func_08064C34(s32 a) {
     s32 i;
@@ -1920,33 +1920,33 @@ u16 func_08064C34(s32 a) {
     gUnk_02034A84 = EwramAlloc(0xC00);
 
     for (i = 0; i < 128; i++) {
-        gUnk_02034A84[i].unk_00 = 0;
-        gUnk_02034A84[i].unk_04 = 0;
-        gUnk_02034A84[i].unk_08 = NULL;
-        gUnk_02034A84[i].unk_0C = NULL;
-        gUnk_02034A84[i].unk_10 = NULL;
-        gUnk_02034A84[i].unk_15 = 0;
-        gUnk_02034A84[i].unk_14 = 0;
+        gUnk_02034A84[i].x = 0;
+        gUnk_02034A84[i].y = 0;
+        gUnk_02034A84[i].tiles = NULL;
+        gUnk_02034A84[i].palette = NULL;
+        gUnk_02034A84[i].alternatePalette = NULL;
+        gUnk_02034A84[i].visible = 0;
+        gUnk_02034A84[i].useAlternatePalette = 0;
 
         switch (a) {
         case 0:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614758, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614758, 32);
             break;
         case 1:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614718, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614718, 32);
             break;
         case 2:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614738, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614738, 32);
             break;
         }
 
-        gUnk_02034A84[i].unk_10 = _08066468(5);
-        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
-        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_10->unk_06 + 16, 1);
+        gUnk_02034A84[i].alternatePalette = _08066468(5);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].alternatePalette->unk_06 + 16, 1);
     }
 
     gUnk_02034A90 = 0;
-    return gUnk_02034A84->unk_0C->unk_06;
+    return gUnk_02034A84->palette->unk_06;
 }
 
 u16 func_08064D04(s32 a) {
@@ -1955,33 +1955,33 @@ u16 func_08064D04(s32 a) {
     gUnk_02034A84 = EwramAlloc(0xC00);
 
     for (i = 0; i < 128; i++) {
-        gUnk_02034A84[i].unk_00 = 0;
-        gUnk_02034A84[i].unk_04 = 0;
-        gUnk_02034A84[i].unk_08 = NULL;
-        gUnk_02034A84[i].unk_0C = NULL;
-        gUnk_02034A84[i].unk_10 = NULL;
-        gUnk_02034A84[i].unk_15 = 0;
-        gUnk_02034A84[i].unk_14 = 0;
+        gUnk_02034A84[i].x = 0;
+        gUnk_02034A84[i].y = 0;
+        gUnk_02034A84[i].tiles = NULL;
+        gUnk_02034A84[i].palette = NULL;
+        gUnk_02034A84[i].alternatePalette = NULL;
+        gUnk_02034A84[i].visible = 0;
+        gUnk_02034A84[i].useAlternatePalette = 0;
 
         switch (a) {
         case 0:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614758, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614758, 32);
             break;
         case 1:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614718, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614718, 32);
             break;
         case 2:
-            gUnk_02034A84[i].unk_0C = LoadObjPalette(gUnk_09614738, 32);
+            gUnk_02034A84[i].palette = LoadObjPalette(gUnk_09614738, 32);
             break;
         }
 
-        gUnk_02034A84[i].unk_10 = _08066468(3);
-        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
-        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_10->unk_06 + 16, 1);
+        gUnk_02034A84[i].alternatePalette = _08066468(3);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].palette->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].alternatePalette->unk_06 + 16, 1);
     }
 
     gUnk_02034A90 = 0;
-    return gUnk_02034A84->unk_0C->unk_06;
+    return gUnk_02034A84->palette->unk_06;
 }
 
 #ifdef VERSION_US
@@ -2087,9 +2087,9 @@ u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
     while (MSG_LATIN_CHAR(s) != 0) {
         s32 v = 0;
 
-        gUnk_02034A84[gUnk_02034A90].unk_00 = x + cx;
-        gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
-        gUnk_02034A84[gUnk_02034A90].unk_15 = 1;
+        gUnk_02034A84[gUnk_02034A90].x = x + cx;
+        gUnk_02034A84[gUnk_02034A90].y = y + cy;
+        gUnk_02034A84[gUnk_02034A90].visible = 1;
 
         if (MSG_LATIN_CHAR(s) == MSG_LATIN_CODE(0x4079, 29)) {
             f = 1;
@@ -2101,7 +2101,7 @@ u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
             s += MSG_LATIN_STEP;
         }
 
-        gUnk_02034A84[gUnk_02034A90].unk_14 = f;
+        gUnk_02034A84[gUnk_02034A90].useAlternatePalette = f;
 
         if (MSG_LATIN_CHAR(s) == MSG_LATIN_CODE(10, 31)) {
             cx = 0;
@@ -2163,9 +2163,9 @@ u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
             }
 
 #endif
-            if (gUnk_02034A84[gUnk_02034A90].unk_08 != NULL) {
-                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].unk_08);
-                gUnk_02034A84[gUnk_02034A90].unk_08 = NULL;
+            if (gUnk_02034A84[gUnk_02034A90].tiles != NULL) {
+                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].tiles);
+                gUnk_02034A84[gUnk_02034A90].tiles = NULL;
             }
 
             cx += (s16)gUnk_08F7D438[v] << 8;
@@ -2173,10 +2173,10 @@ u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
             if (v != 32) {
 #ifdef VERSION_EU
                 v = ((u16*)gUnk_09EEB204[v])[3];
-                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
 #else
                 v = ((u16*)gUnk_09EEC134[v])[3];
-                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
 #endif
             }
 
@@ -2220,9 +2220,9 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
     while (*s != 0) {
         s32 v = 0;
 
-        gUnk_02034A84[gUnk_02034A90].unk_00 = x + cx;
-        gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
-        gUnk_02034A84[gUnk_02034A90].unk_15 = 1;
+        gUnk_02034A84[gUnk_02034A90].x = x + cx;
+        gUnk_02034A84[gUnk_02034A90].y = y + cy;
+        gUnk_02034A84[gUnk_02034A90].visible = 1;
 
         if (*s == MSG_LATIN_CODE(0x4079, 29)) {
             f = 1;
@@ -2234,7 +2234,7 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
             s++;
         }
 
-        gUnk_02034A84[gUnk_02034A90].unk_14 = f;
+        gUnk_02034A84[gUnk_02034A90].useAlternatePalette = f;
 
         if (*s == MSG_LATIN_CODE(10, 31)) {
             cx = 0;
@@ -2296,9 +2296,9 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
             }
 
 #endif
-            if (gUnk_02034A84[gUnk_02034A90].unk_08 != NULL) {
-                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].unk_08);
-                gUnk_02034A84[gUnk_02034A90].unk_08 = NULL;
+            if (gUnk_02034A84[gUnk_02034A90].tiles != NULL) {
+                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].tiles);
+                gUnk_02034A84[gUnk_02034A90].tiles = NULL;
             }
 
             cx += (s16)gUnk_08F7D438[v] << 8;
@@ -2306,10 +2306,10 @@ u8 func_08065170(s32 x, s32 y, u16* s) {
             if (v != 32) {
 #ifdef VERSION_EU
                 v = ((u16*)gUnk_09EEB204[v])[3];
-                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
 #else
                 v = ((u16*)gUnk_09EEC134[v])[3];
-                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
 #endif
             }
 
@@ -2348,11 +2348,11 @@ u8 func_080653D4(s32 x, s32 y, u8* s) {
         u16 v;
 
         w = 0;
-        gUnk_02034A84[gUnk_02034A90].unk_00 = x + cx;
+        gUnk_02034A84[gUnk_02034A90].x = x + cx;
         do {
-            gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
+            gUnk_02034A84[gUnk_02034A90].y = y + cy;
         } while (0);
-        gUnk_02034A84[gUnk_02034A90].unk_15 = 1;
+        gUnk_02034A84[gUnk_02034A90].visible = 1;
 
         if (*(u16*)s == 0x6E6E) {
             cx = 0;
@@ -2493,15 +2493,15 @@ u8 func_080653D4(s32 x, s32 y, u8* s) {
                     cx == 0 && cy > 0) {
                     cx = px + 0xA00;
                     cy -= 0xC00;
-                    gUnk_02034A84[gUnk_02034A90].unk_00 = x + cx;
-                    gUnk_02034A84[gUnk_02034A90].unk_04 = y + cy;
+                    gUnk_02034A84[gUnk_02034A90].x = x + cx;
+                    gUnk_02034A84[gUnk_02034A90].y = y + cy;
                 }
             } else {
                 func_08066E40(v, &w, &t);
             }
 
-            if (gUnk_02034A84[gUnk_02034A90].unk_08 != NULL) {
-                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].unk_08);
+            if (gUnk_02034A84[gUnk_02034A90].tiles != NULL) {
+                ReleaseObjTiles(gUnk_02034A84[gUnk_02034A90].tiles);
             }
             px = cx;
 
@@ -2519,19 +2519,19 @@ u8 func_080653D4(s32 x, s32 y, u8* s) {
             switch (t) {
             case 0:
                 w = ((u16*)gUnk_09EEB204[w])[3];
-                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090AB5B2[w * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090AB5B2[w * 32], 128);
                 break;
             case 1:
                 w = ((u16*)gUnk_09EEB608[w])[3];
-                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090B3FBE[w * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090B3FBE[w * 32], 128);
                 break;
             case 2:
                 w = ((u16*)gUnk_09EEBA0C[w])[3];
-                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090BC9CA[w * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090BC9CA[w * 32], 128);
                 break;
             case 3:
                 w = ((u16*)gUnk_09EEBE10[w])[3];
-                gUnk_02034A84[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090C51A6[w * 32], 128);
+                gUnk_02034A84[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090C51A6[w * 32], 128);
                 break;
             }
 
@@ -2549,17 +2549,17 @@ void func_080658B8(u8 n) {
     for (i = 0; i < n; i++) {
         TextGlyphSprite* b = gUnk_02034A84;
 
-        if (b[i].unk_15 == 1) {
-            s32 x = b[i].unk_00;
-            s32 y = b[i].unk_04;
+        if (b[i].visible == 1) {
+            s32 x = b[i].x;
+            s32 y = b[i].y;
 
-            if (b[i].unk_14 != 0) {
-                if (b[i].unk_08 != NULL) {
-                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].unk_08, b[i].unk_10, 0);
+            if (b[i].useAlternatePalette != 0) {
+                if (b[i].tiles != NULL) {
+                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].tiles, b[i].alternatePalette, 0);
                 }
             } else {
-                if (b[i].unk_08 != NULL) {
-                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].unk_08, b[i].unk_0C, 0);
+                if (b[i].tiles != NULL) {
+                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].tiles, b[i].palette, 0);
                 }
             }
         }
@@ -2570,16 +2570,16 @@ void func_08065940(void) {
     u8 i;
 
     for (i = 0; i < 128; i++) {
-        if (gUnk_02034A84[i].unk_08 != NULL) {
-            ReleaseObjTiles(gUnk_02034A84[i].unk_08);
+        if (gUnk_02034A84[i].tiles != NULL) {
+            ReleaseObjTiles(gUnk_02034A84[i].tiles);
         }
 
-        if (gUnk_02034A84[i].unk_0C != NULL) {
-            ReleaseObjPalette(gUnk_02034A84[i].unk_0C);
+        if (gUnk_02034A84[i].palette != NULL) {
+            ReleaseObjPalette(gUnk_02034A84[i].palette);
         }
 
-        if (gUnk_02034A84[i].unk_10 != NULL) {
-            ReleaseObjPalette(gUnk_02034A84[i].unk_10);
+        if (gUnk_02034A84[i].alternatePalette != NULL) {
+            ReleaseObjPalette(gUnk_02034A84[i].alternatePalette);
         }
     }
     EwramFree(gUnk_02034A84);
@@ -2589,7 +2589,7 @@ void _08065994(void) {
     u8 i;
 
     for (i = 0; i < 128; i++) {
-        gUnk_02034A84[i].unk_15 = 0;
+        gUnk_02034A84[i].visible = 0;
     }
 }
 
@@ -6773,35 +6773,35 @@ u16 func_0806BA74(s32 mode, s32 flag) {
     gUnk_02034A88 = EwramAlloc(0xC00);
 
     for (i = 0; i < 128; i++) {
-        gUnk_02034A88[i].unk_00 = 0;
-        gUnk_02034A88[i].unk_04 = 0;
-        gUnk_02034A88[i].unk_08 = NULL;
-        gUnk_02034A88[i].unk_0C = NULL;
-        gUnk_02034A88[i].unk_10 = NULL;
-        gUnk_02034A88[i].unk_15 = 0;
+        gUnk_02034A88[i].x = 0;
+        gUnk_02034A88[i].y = 0;
+        gUnk_02034A88[i].tiles = NULL;
+        gUnk_02034A88[i].palette = NULL;
+        gUnk_02034A88[i].alternatePalette = NULL;
+        gUnk_02034A88[i].visible = 0;
 
         switch (mode) {
         case 0:
-            gUnk_02034A88[i].unk_0C = LoadObjPalette(gUnk_09614758, 0x20);
+            gUnk_02034A88[i].palette = LoadObjPalette(gUnk_09614758, 0x20);
             break;
         case 1:
-            gUnk_02034A88[i].unk_0C = LoadObjPalette(gUnk_09614718, 0x20);
+            gUnk_02034A88[i].palette = LoadObjPalette(gUnk_09614718, 0x20);
             break;
         case 2:
-            gUnk_02034A88[i].unk_0C = LoadObjPalette(gUnk_09614738, 0x20);
+            gUnk_02034A88[i].palette = LoadObjPalette(gUnk_09614738, 0x20);
             break;
         }
 
         if (flag == 0) {
-            gUnk_02034A88[i].unk_10 = _08066468(3);
+            gUnk_02034A88[i].alternatePalette = _08066468(3);
         } else {
-            gUnk_02034A88[i].unk_10 = _08066468(5);
+            gUnk_02034A88[i].alternatePalette = _08066468(5);
         }
-        FadeSetPaletteExcluded(gUnk_02034A88[i].unk_0C->unk_06 + 0x10, 1);
-        FadeSetPaletteExcluded(gUnk_02034A88[i].unk_10->unk_06 + 0x10, 1);
+        FadeSetPaletteExcluded(gUnk_02034A88[i].palette->unk_06 + 0x10, 1);
+        FadeSetPaletteExcluded(gUnk_02034A88[i].alternatePalette->unk_06 + 0x10, 1);
     }
     gUnk_02034A90 = 0;
-    return gUnk_02034A88[0].unk_0C->unk_06;
+    return gUnk_02034A88[0].palette->unk_06;
 }
 
 u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
@@ -6822,9 +6822,9 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
     while (MSG_LATIN_CHAR(s) != 0) {
         s32 v;
 
-        gUnk_02034A88[gUnk_02034A90].unk_00 = x + cx;
-        gUnk_02034A88[gUnk_02034A90].unk_04 = y + cy;
-        gUnk_02034A88[gUnk_02034A90].unk_15 = 1;
+        gUnk_02034A88[gUnk_02034A90].x = x + cx;
+        gUnk_02034A88[gUnk_02034A90].y = y + cy;
+        gUnk_02034A88[gUnk_02034A90].visible = 1;
 
         if (MSG_LATIN_CHAR(s) == MSG_LATIN_CODE(0x4079, 29)) {
             f = 1;
@@ -6899,11 +6899,11 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
             }
 
 #endif
-            gUnk_02034A88[gUnk_02034A90].unk_14 = f;
+            gUnk_02034A88[gUnk_02034A90].useAlternatePalette = f;
 
-            if (gUnk_02034A88[gUnk_02034A90].unk_08 != NULL) {
-                ReleaseObjTiles(gUnk_02034A88[gUnk_02034A90].unk_08);
-                gUnk_02034A88[gUnk_02034A90].unk_08 = NULL;
+            if (gUnk_02034A88[gUnk_02034A90].tiles != NULL) {
+                ReleaseObjTiles(gUnk_02034A88[gUnk_02034A90].tiles);
+                gUnk_02034A88[gUnk_02034A90].tiles = NULL;
             }
 
             cx += (s16)gUnk_08F7D438[v] << 8;
@@ -6911,10 +6911,10 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
             if (v != 32) {
 #ifdef VERSION_EU
                 v = ((u16*)gUnk_09EEB204[v])[3];
-                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
+                gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnkEu_0919B63A[v * 32], 128);
 #else
                 v = ((u16*)gUnk_09EEC134[v])[3];
-                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
+                gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090CBFB2[v * 32], 128);
 #endif
             }
 
@@ -6960,10 +6960,10 @@ u8 func_0806BDB8(s32 x, s32 y, u8* s, u8** d) {
         u16 v;
 
         w = 0;
-        gUnk_02034A88[gUnk_02034A90].unk_00 = x + cx;
-        gUnk_02034A88[gUnk_02034A90].unk_04 = y + cy;
-        gUnk_02034A88[gUnk_02034A90].unk_15 = 1;
-        gUnk_02034A88[gUnk_02034A90].unk_14 = 0;
+        gUnk_02034A88[gUnk_02034A90].x = x + cx;
+        gUnk_02034A88[gUnk_02034A90].y = y + cy;
+        gUnk_02034A88[gUnk_02034A90].visible = 1;
+        gUnk_02034A88[gUnk_02034A90].useAlternatePalette = 0;
 
         if (*(u16*)s == 0x6E6E) {
             cx = 0;
@@ -7104,15 +7104,15 @@ u8 func_0806BDB8(s32 x, s32 y, u8* s, u8** d) {
                     cx == 0 && cy > 0) {
                     cx = px + 0xA00;
                     cy -= 0xC00;
-                    gUnk_02034A88[gUnk_02034A90].unk_00 = x + cx;
-                    gUnk_02034A88[gUnk_02034A90].unk_04 = y + cy;
+                    gUnk_02034A88[gUnk_02034A90].x = x + cx;
+                    gUnk_02034A88[gUnk_02034A90].y = y + cy;
                 }
             } else {
                 func_08066E40(v, &w, &t);
             }
 
-            if (gUnk_02034A88[gUnk_02034A90].unk_08 != NULL) {
-                ReleaseObjTiles(gUnk_02034A88[gUnk_02034A90].unk_08);
+            if (gUnk_02034A88[gUnk_02034A90].tiles != NULL) {
+                ReleaseObjTiles(gUnk_02034A88[gUnk_02034A90].tiles);
             }
             px = cx;
             cx += 0xA00;
@@ -7125,19 +7125,19 @@ u8 func_0806BDB8(s32 x, s32 y, u8* s, u8** d) {
             switch (t) {
             case 0:
                 w = ((u16*)gUnk_09EEB204[w])[3];
-                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090AB5B2[w * 32], 128);
+                gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090AB5B2[w * 32], 128);
                 break;
             case 1:
                 w = ((u16*)gUnk_09EEB608[w])[3];
-                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090B3FBE[w * 32], 128);
+                gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090B3FBE[w * 32], 128);
                 break;
             case 2:
                 w = ((u16*)gUnk_09EEBA0C[w])[3];
-                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090BC9CA[w * 32], 128);
+                gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090BC9CA[w * 32], 128);
                 break;
             case 3:
                 w = ((u16*)gUnk_09EEBE10[w])[3];
-                gUnk_02034A88[gUnk_02034A90].unk_08 = LoadObjTiles(&gUnk_090C51A6[w * 32], 128);
+                gUnk_02034A88[gUnk_02034A90].tiles = LoadObjTiles(&gUnk_090C51A6[w * 32], 128);
                 break;
             }
 
@@ -7171,15 +7171,15 @@ void func_0806C2C0(u8 n) {
     for (i = 0; i < n; i++) {
         TextGlyphSprite* b = gUnk_02034A88;
 
-        if (b[i].unk_15 == 1) {
-            s32 x = b[i].unk_00;
-            s32 y = b[i].unk_04;
+        if (b[i].visible == 1) {
+            s32 x = b[i].x;
+            s32 y = b[i].y;
 
-            if (b[i].unk_08 != NULL) {
-                if (b[i].unk_14 == 0) {
-                    DrawSprite(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].unk_08, b[i].unk_0C, 0, 0, 0);
+            if (b[i].tiles != NULL) {
+                if (b[i].useAlternatePalette == 0) {
+                    DrawSprite(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].tiles, b[i].palette, 0, 0, 0);
                 } else {
-                    DrawSprite(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].unk_08, b[i].unk_10, 0, 0, 0);
+                    DrawSprite(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].tiles, b[i].alternatePalette, 0, 0, 0);
                 }
             }
         }
@@ -7190,16 +7190,16 @@ void func_0806C34C(void) {
     u8 i;
 
     for (i = 0; i < 128; i++) {
-        if (gUnk_02034A88[i].unk_08 != NULL) {
-            ReleaseObjTiles(gUnk_02034A88[i].unk_08);
+        if (gUnk_02034A88[i].tiles != NULL) {
+            ReleaseObjTiles(gUnk_02034A88[i].tiles);
         }
 
-        if (gUnk_02034A88[i].unk_0C != NULL) {
-            ReleaseObjPalette(gUnk_02034A88[i].unk_0C);
+        if (gUnk_02034A88[i].palette != NULL) {
+            ReleaseObjPalette(gUnk_02034A88[i].palette);
         }
 
-        if (gUnk_02034A88[i].unk_10 != NULL) {
-            ReleaseObjPalette(gUnk_02034A88[i].unk_10);
+        if (gUnk_02034A88[i].alternatePalette != NULL) {
+            ReleaseObjPalette(gUnk_02034A88[i].alternatePalette);
         }
     }
     EwramFree(gUnk_02034A88);
@@ -7211,16 +7211,16 @@ void _0806C3A0(u8 n, void* a) {
     for (i = 0; i < n; i++) {
         TextGlyphSprite* b = gUnk_02034A84;
 
-        if (b[i].unk_15 == 1) {
-            s32 x = b[i].unk_00;
-            s32 y = b[i].unk_04;
+        if (b[i].visible == 1) {
+            s32 x = b[i].x;
+            s32 y = b[i].y;
 
-            if (b[i].unk_08 != NULL) {
-                if (b[i].unk_14 == 0) {
-                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].unk_08, a, 0);
+            if (b[i].tiles != NULL) {
+                if (b[i].useAlternatePalette == 0) {
+                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].tiles, a, 0);
                 } else {
-                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].unk_08,
-                                  b[i].unk_10, 0);
+                    func_08002488(x >> 8, y >> 8, gUnk_09EEB204[0], b[i].tiles,
+                                  b[i].alternatePalette, 0);
                 }
             }
         }
@@ -8847,7 +8847,7 @@ void event_chara_2(EventCharaWork* p) {
             h |= 1;
         }
         x = GetEventCharaScreenX(p);
-        y = (p->unk_184 >> 8) + gUnk_0903380C[p->unk_026].unk_00 - (gUnk_02039DC8->unk_5C >> 8);
+        y = (p->unk_184 >> 8) + gUnk_0903380C[p->unk_026].spriteYOffset - (gUnk_02039DC8->unk_5C >> 8);
         DrawSprite(x, y, p->gfx, p->tiles, p->palette, 0, h, 50);
     }
     p->unk_034 = save;
@@ -8927,13 +8927,13 @@ u8 func_0806E570(EventCharaWork* p) {
 }
 void func_0806E7A8(EventCharaWork* p) {
     EventCharaKeyframe* e = &p->unk_000[p->unk_1A0];
-    Ent0806E7A8* t;
+    BtlObj* t;
 
     if (e->unk_00 == 0x3A7) {
         t = ListPoolFirst(&gBtlWork->unk_080);
 
         if (t != NULL) {
-            t->unk_34 |= 2;
+            t->unk_034 |= 2;
         }
     }
 
@@ -12298,9 +12298,9 @@ void func_08074504(void) {
     v = (v + 1) % 228;
 
     if (v < 160) {
-        if (gUnk_02039DCC->unk_02 == 1) {
-            *(vu16*)0x04000018 = gUnk_02039DCC->unk_04[v];
-            *(vu16*)0x0400001C = gUnk_02039DCC->unk_04[v];
+        if (gUnk_02039DCC->enabled == 1) {
+            *(vu16*)0x04000018 = gUnk_02039DCC->scrollX[v];
+            *(vu16*)0x0400001C = gUnk_02039DCC->scrollX[v];
         }
     }
 }
@@ -12315,8 +12315,8 @@ void view_0(EventCameraWork* p, u8* arg) {
     u8 n;
 
     gUnk_02039DCC = (EventScanlineScroll*)p->unk_18;
-    p->unk_16 = 0;
-    p->unk_1A = 0;
+    p->wavePhase = 0;
+    p->waveEnabled = 0;
     p->unk_08 = arg[0];
     p->unk_09 = 0;
     p->unk_10 = 0;
@@ -12496,11 +12496,11 @@ u8 view_1(EventCameraWork* p, u8* task) {
 
         if (e->unk_14 & 0x20000) {
             StartBgWave(func_08074564);
-            p->unk_1A = 1;
+            p->waveEnabled = 1;
         }
 
         if (e->unk_14 & 0x40000) {
-            p->unk_1A = 0;
+            p->waveEnabled = 0;
             ResetHBlankCallback();
             DisableHBlankIntr();
         }
@@ -12643,7 +12643,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
         func_080CA368(3, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
     }
 
-    func_08075010((Work08075010*)p);
+    func_08075010(p);
     return 1;
 }
 void view_2(void) {
@@ -12778,15 +12778,15 @@ u8 _08074EC8(EventCameraWork* p) {
     return 1;
 }
 
-void func_08075010(Work08075010* p) {
+void func_08075010(EventCameraWork* p) {
     u8 i;
     s32 v;
 
-    if (p->unk_1A == 1) {
+    if (p->waveEnabled == 1) {
         for (i = 0; i < 160; i++) {
-            p->unk_1C[i] = (gUnk_02039DC8->unk_58 >> 8) + (v = (u8)gSineTable[((i + p->unk_16) * 2) & 0xFF]) / 32;
+            p->scanlineScrollX[i] = (gUnk_02039DC8->unk_58 >> 8) + (v = (u8)gSineTable[((i + p->wavePhase) * 2) & 0xFF]) / 32;
         }
-        p->unk_16++;
+        p->wavePhase++;
     }
 }
 
