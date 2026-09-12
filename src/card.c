@@ -16697,10 +16697,14 @@ u8 card_enemy_1(UnkStruct_02034AAC* p, void* a) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void func_08090374(UnkStruct_02034AAC* p) {
+    struct UnkStruct_08090374 {
+        u8 unk_00[0x30];
+        void* tiles[4];
+    };
     void* gfx;
     s32 affine;
+    u16 flags;
 
     gfx = p->unk_48->unk_00;
 
@@ -16713,28 +16717,26 @@ void func_08090374(UnkStruct_02034AAC* p) {
                     affine = AllocObjAffine(p->unk_5E, p->unk_54, p->unk_58, 1);
                 }
 
+                flags = 0x410;
                 DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
-                           gUnk_08F70A28[0].unk_00, (&gUnk_02039DD4->tiles)[p->unk_48->unk_2A],
-                           gUnk_02039DD4->palette, affine, 0x410, (u16)(p->unk_A0 - 1));
+                           gUnk_08F70A28[0].unk_00, ((struct UnkStruct_08090374*)gUnk_02039DD4)->tiles[p->unk_48->unk_2A],
+                           gUnk_02039DD4->palette, affine, flags, (u16)(p->unk_A0 - 1));
                 DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
-                           gfx, p->unk_00, p->palette, affine, 0x410, p->unk_A0);
+                           gfx, p->unk_00, p->palette, affine, flags, p->unk_A0);
 
                 if (p->unk_A7 != 0) {
                     DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                                gUnk_09EE981C[p->unk_A5], gUnk_02039DD4->tiles7,
-                               gUnk_02039DD4->palette2, affine, 0x410, (u16)(p->unk_A0 - 2));
+                               gUnk_02039DD4->palette2, affine, flags, (u16)(p->unk_A0 - 2));
                 } else {
                     DrawSprite(p->unk_4C >> 8, (p->unk_50 >> 8) + (gSineTable[p->unk_5F] >> 8),
                                gUnk_09EE981C[p->unk_A5], gUnk_02039DD4->tiles5,
-                               gUnk_02039DD4->palette, affine, 0x410, (u16)(p->unk_A0 - 2));
+                               gUnk_02039DD4->palette, affine, flags, (u16)(p->unk_A0 - 2));
                 }
             }
         }
     }
 }
-#else
-INCLUDE_ASM("card/func_08090374.s");
-#endif
 void func_08090530(u8* work) {
     if (*(void**)&work[0x00] != 0) {
         func_0807C39C((UnkStruct_02034AAC*)work);
