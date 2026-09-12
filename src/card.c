@@ -346,7 +346,7 @@ extern u8 gUnk_09EEA164[];
 extern u8 gUnk_09EEA148[];
 void func_08006238(s32 a, u16 b, u16 c);
 void func_080AA6D4(u8 a);
-u8 func_0808A114(u8* work, void* a);
+u8 func_0808A114(UnkStruct_0808DB04* work, void* a);
 u8 func_0809FE14(void);
 s32 func_080AC5E8(UnkStruct_02039DD4* g, u8 count, u8 kind, UnkStruct_080ABA80* arr, u8* flag);
 u8 func_080ABEF8(u32* a, u8* b);
@@ -12383,32 +12383,28 @@ u8 func_08089EC0(u8* work, void* a) {
     TaskPoolUpdate(&work[CARDWORK(0x7DC)]);
     return 1;
 }
-#ifdef NON_MATCHING
-u8 func_0808A114(u8* work, void* a) {
-    *(u16*)&work[0x894] = 94;
-    *(u16*)&work[0x896] = 130;
-    work[0x8B1] = 7;
+u8 func_0808A114(UnkStruct_0808DB04* work, void* a) {
+    work->unk_894 = 94;
+    work->unk_896 = 130;
+    work->unk_8B1 = 7;
     func_0808E344((void**)work);
-    func_0808E364(work, 0);
-    func_0808CD48(work);
+    func_0808E364((u8*)work, 0);
+    func_0808CD48((u8*)work);
     LoadBgMap(3, gUnk_095132B8, 0x800);
     func_0808C90C(work);
-    work[0x8C1] = 0;
-    *(s16*)&work[0x884] = 0;
-    *(s16*)&work[0x886] = 0;
-    func_0808C3DC(work, work[0x8C1]);
-    *(s32*)&work[0x848] = gUnk_09035950[*(s16*)&work[0x884]] << 8;
-    *(s32*)&work[0x84C] = gUnk_09035956[*(s16*)&work[0x886]] << 8;
-    func_0808DB50((UnkStruct_0808DB04*)work);
-    work[0x8C7] = 1;
+    work->unk_8C1 = 0;
+    work->unk_884 = 0;
+    work->unk_886 = 0;
+    func_0808C3DC(work, work->unk_8C1);
+    work->unk_848 = gUnk_09035950[work->unk_884] << 8;
+    work->unk_84C = gUnk_09035956[(s16)work->unk_886] << 8;
+    func_0808DB50(work);
+    work->unk_8C7 = 1;
     SetTaskUpdate(a, (void*)func_0808A218);
-    TaskPoolUpdate(&work[0x7C8]);
-    TaskPoolUpdate(&work[0x7DC]);
+    TaskPoolUpdate(work->unk_7C8);
+    TaskPoolUpdate(work->unk_7DC);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0808A114.s");
-#endif
 #ifdef NON_MATCHING
 u8 func_0808A218(u8* work, void* a) {
     *(void**)&work[0x4F0] = AnimUpdate((AnimState*)&work[0x800]);
