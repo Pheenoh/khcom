@@ -10194,28 +10194,57 @@ u8 func_080863C0(u8* work, void* a) {
 }
 u8 func_08086650(UnkStruct_0808DB04* w, void* a);
 
-#ifndef VERSION_EU
 u8 func_080864A4(u8* work, void* a) {
     func_08006120(0, 16);
 
-    switch (work[0x8D0]) {
+    switch (work[CARDWORK(0x8D0)]) {
     case 0:
         LoadBgTiles(3, gUnk_09402F78, 0x2000);
         LoadBgPalette(3, gUnk_09614118, 0x1E0);
         break;
     case 1:
+#ifdef VERSION_EU
+        RequestDma3Copy(&gUnk_09402F78[0x2000],
+                        (u8*)GetBgCharBase(3) + 0x2000, 0x1800);
+#else
         RequestDma3Copy(&gUnk_09402F78[0x2000],
                         (u8*)GetBgCharBase(3) + 0x2000, 0x2000);
+#endif
         break;
     case 2:
+#ifdef VERSION_EU
+        LoadBgMap(3, gUnkEu_09533324, 0x800);
+#else
         LoadBgMap(3, gUnk_09516AB8, 0x800);
+#endif
         break;
     case 3:
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+            RequestDma3Copy(gUnkEu_094E04E4, (u8*)GetBgCharBase(3) + 0x3800, 0x1C00);
+            break;
+        case 1:
+            RequestDma3Copy(&gUnkEu_094E04E4[0x1C00], (u8*)GetBgCharBase(3) + 0x3800, 0x1C00);
+            break;
+        case 2:
+            RequestDma3Copy(&gUnkEu_094E04E4[0x7000], (u8*)GetBgCharBase(3) + 0x3800, 0x1C00);
+            break;
+        case 3:
+            RequestDma3Copy(&gUnkEu_094E04E4[0x5400], (u8*)GetBgCharBase(3) + 0x3800, 0x1C00);
+            break;
+        case 4:
+            RequestDma3Copy(&gUnkEu_094E04E4[0x3800], (u8*)GetBgCharBase(3) + 0x3800, 0x1C00);
+            break;
+        }
+#else
         LoadBgTiles(0, gUnk_09406F78, 0xC00);
+#endif
         break;
     case 4:
         LoadBgMap(0, gUnk_08125E24, 0x800);
         break;
+#ifndef VERSION_EU
     case 5:
         LoadBgTiles(1, &gUnk_09406F78[0xC00], 0x2000);
         break;
@@ -10223,9 +10252,11 @@ u8 func_080864A4(u8* work, void* a) {
         RequestDma3Copy(&gUnk_09406F78[0x2C00],
                         (u8*)GetBgCharBase(1) + 0x2000, 0x1E20);
         break;
+#endif
     case 7:
         LoadBgMap(1, gUnk_08125E24, 0x800);
         break;
+#ifndef VERSION_EU
     case 8:
         LoadBgTiles(2, &gUnk_09406F78[0x4A20], 0x2000);
         break;
@@ -10233,6 +10264,7 @@ u8 func_080864A4(u8* work, void* a) {
         RequestDma3Copy(&gUnk_09406F78[0x6A20],
                         (u8*)GetBgCharBase(2) + 0x2000, 0x1E20);
         break;
+#endif
     case 10:
         LoadBgMap(2, gUnk_08125E24, 0x800);
         break;
@@ -10240,17 +10272,14 @@ u8 func_080864A4(u8* work, void* a) {
         SetBgScroll(0, -88, -16);
         SetBgScroll(1, -88, -64);
         SetBgScroll(2, -88, -112);
-        work[0x8D0] = 0;
+        work[CARDWORK(0x8D0)] = 0;
         SetTaskUpdate(a, (void*)func_08086650);
         return 1;
     }
 
-    work[0x8D0]++;
+    work[CARDWORK(0x8D0)]++;
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_080864A4.s");
-#endif
 u8 func_08086650(UnkStruct_0808DB04* w, void* a) {
     func_08006120(0, 16);
     switch (w->unk_8D0) {
