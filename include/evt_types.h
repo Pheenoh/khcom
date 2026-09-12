@@ -11,7 +11,7 @@ typedef struct Ent08074EC8 {
     s32 unk_0C;
 } Ent08074EC8;
 
-typedef struct UnkStruct_02039DC8 {
+typedef struct EventState {
     Ent08074EC8* unk_00[17];
     s32 unk_44;
     s32 unk_48;
@@ -49,6 +49,6 @@ typedef struct UnkStruct_02039DC8 {
     u8 unk_89;
     u8 unk_8A;
     u8 unk_8B;
-} UnkStruct_02039DC8;
+} EventState;
 
 #endif

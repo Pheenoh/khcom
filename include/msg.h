@@ -163,7 +163,7 @@ typedef struct MsgFaceWork {
     u8 unk_33;
     u8 unk_34;
     u8 unk_35[3];
-    MsgFaceCtl* unk_38;
+    MsgFaceControl* unk_38;
 } MsgFaceWork;
 
 
@@ -183,7 +183,7 @@ typedef struct MsgWinWork {
     u8 unk_29;
     u8 unk_2A;
     u8 unk_2B;
-    MsgFaceCtl unk_2C;
+    MsgFaceControl unk_2C;
     u8 unk_38;
     u8 unk_39[3];
     MsgLine0806180C* unk_3C;
@@ -202,7 +202,7 @@ typedef struct EventSeqWork {
     u8 unk_31;
     u8 unk_32;
     u8 unk_33;
-    struct UnkStruct_09EE3FB4* unk_34;
+    struct EventSequenceDef* unk_34;
     u16 unk_38;
     u8 unk_3A;
     u8 unk_3B;
@@ -351,7 +351,7 @@ typedef struct Work08075010 {
 
 
 
-extern UnkStruct_02039DC8* gUnk_02039DC8;
+extern EventState* gUnk_02039DC8;
 extern UnkStruct_02039DCC* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
 extern u8 gUnk_09EE274C[];
@@ -464,8 +464,8 @@ u16 func_080659BC(u8 v, TextSlot* out);
 void InitTextTileArray(void** p, u8 n);
 void FreeTextTileArray(void** p, u8 n);
 u16 LoadTwoDigitTextSlots(u8 v, TextSlot* out);
-void _08073E6C(MsgFaceCtl* p);
-void func_08073E74(MsgFaceCtl* p);
+void _08073E6C(MsgFaceControl* p);
+void func_08073E74(MsgFaceControl* p);
 void view_2(void);
 void view_3(void);
 s32 LoadLatinTextSlots(u16* a, TextSlot* b);
@@ -476,7 +476,7 @@ void func_08064624(void);
 u8 QueueVTransCallback(void* a);
 u8 func_0809D280(u8* s);
 u8 _0806E9DC(Work0806180C* p, void* a);
-void func_08073E0C(void* pool, MsgFaceCtl* p, u8 a, u8 b, u8 c);
+void func_08073E0C(void* pool, MsgFaceControl* p, u8 a, u8 b, u8 c);
 u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void func_08074504(void);
 u8 func_08073DA4(MsgFaceWork* p, void* a);
@@ -530,7 +530,7 @@ u8 func_0806F858(Work0806180C* p, void* a);
 u8 func_0806F898(Work0806180C* p, void* a);
 void func_0806E9BC(Work0806180C* p);
 void func_0806F94C(Work0806180C* p);
-void func_08073E34(MsgFaceCtl* p, u8 a, u8 b, u8 c);
+void func_08073E34(MsgFaceControl* p, u8 a, u8 b, u8 c);
 void func_080746D8(void);
 void func_08072918(Actor0806180C* a, u8 kind, u8 flag);
 void func_08072A64(Actor0806180C* a, u8 kind, u8 flag);

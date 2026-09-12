@@ -33,7 +33,7 @@ typedef struct AnimEntry0806180C {
     u8 unk_05[3];
 } AnimEntry0806180C;
 
-typedef struct UnkStruct_09EE3FB4 {
+typedef struct EventSequenceDef {
     u8 unk_00;
     u8 unk_01[3];
     AnimEntry0806180C* unk_04;
@@ -56,17 +56,17 @@ typedef struct UnkStruct_09EE3FB4 {
     u8 unk_2A;
     u8 unk_2B;
     u8 unk_2C;
-} UnkStruct_09EE3FB4;
+} EventSequenceDef;
 
-extern UnkStruct_09EE3FB4* gUnk_09EE3FB4[];
+extern EventSequenceDef* gUnk_09EE3FB4[];
 
-typedef struct MsgFaceCtl {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
+typedef struct MsgFaceControl {
+    u8 portraitId;
+    u8 expressionId;
+    u8 command;
     u8 unk_03;
-    u32 unk_04;
+    u32 positionIndex;
     u8 unk_08;
-} MsgFaceCtl;
+} MsgFaceControl;
 
 #endif

@@ -538,7 +538,7 @@ void func_0806250C(void) {
     }
 }
 void func_0806297C(void) {
-    UnkStruct_09EE3FB4* m = gUnk_09EE3FB4[gUnk_02034A78];
+    EventSequenceDef* m = gUnk_09EE3FB4[gUnk_02034A78];
 
     switch (gUnk_02034A78) {
     case 68:
@@ -8189,7 +8189,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     s32 flag;
 #endif
     Ent09EE3CA0* u;
-    UnkStruct_09EE3FB4* t;
+    EventSequenceDef* t;
 #ifndef VERSION_EU
     Obj0806180C* q;
     u16 i;
@@ -8372,7 +8372,7 @@ u8 func_0806D808(void) {
     return v;
 }
 u8 func_0806D830(EventSeqWork* p, void* a) {
-    UnkStruct_09EE3FB4* t;
+    EventSequenceDef* t;
     u8 i;
 
     if (gUnk_02039DC8 == NULL) {
@@ -11384,7 +11384,7 @@ void func_08072C34(Work0806180C* p) {
 #endif
 
 void func_08072D98(MsgWinWork* p, u8* arg) {
-    UnkStruct_09EE3FB4* t;
+    EventSequenceDef* t;
 
     p->unk_28 = arg[0];
 
@@ -11824,7 +11824,7 @@ void func_080736F8(MsgWinWork* p) {
         }
     }
 }
-void msgface_0(MsgFaceWork* p, MsgFaceCtl* ctl) {
+void msgface_0(MsgFaceWork* p, MsgFaceControl* ctl) {
     MsgFaceAnim* anim;
     u32 n;
 
@@ -11832,30 +11832,30 @@ void msgface_0(MsgFaceWork* p, MsgFaceCtl* ctl) {
     p->palette = AllocObjPalette(32);
     p->unk_38 = ctl;
     p->unk_30 = 0;
-    p->x = gUnk_09033CD0[n = p->unk_38->unk_04];
+    p->x = gUnk_09033CD0[n = p->unk_38->positionIndex];
     p->y = gUnk_09033CF0[n];
     p->unk_2C = 0x100;
     p->unk_31 = 0;
     p->unk_32 = 0;
     p->unk_34 = 1;
 
-    if (p->unk_38->unk_00 != 62) {
-        anim = gUnk_09EE45DC[p->unk_38->unk_00];
+    if (p->unk_38->portraitId != 62) {
+        anim = gUnk_09EE45DC[p->unk_38->portraitId];
     } else {
         anim = gUnk_09EE45DC[0];
     }
 
-    if (p->unk_38->unk_04 <= 1) {
+    if (p->unk_38->positionIndex <= 1) {
         p->unk_33 = 1;
-    } else if (p->unk_38->unk_04 <= 3) {
+    } else if (p->unk_38->positionIndex <= 3) {
         p->unk_33 = 0;
     }
 
-    if (p->unk_38->unk_00 != 62) {
-        SetObjTileSource(p->tiles, anim[p->unk_38->unk_01].unk_00);
-        UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->unk_01].unk_04);
-        AnimInit(p->anim, anim[p->unk_38->unk_01].unk_0C, anim[p->unk_38->unk_01].unk_08);
-        AnimStart(p->anim, 0, anim[p->unk_38->unk_01].unk_11);
+    if (p->unk_38->portraitId != 62) {
+        SetObjTileSource(p->tiles, anim[p->unk_38->expressionId].unk_00);
+        UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->expressionId].unk_04);
+        AnimInit(p->anim, anim[p->unk_38->expressionId].unk_0C, anim[p->unk_38->expressionId].unk_08);
+        AnimStart(p->anim, 0, anim[p->unk_38->expressionId].unk_11);
         p->gfx = AnimGetGfx(p->anim);
     } else {
         SetObjTileSource(p->tiles, anim->unk_00);
@@ -11869,17 +11869,17 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     MsgFaceAnim* anim = NULL;
     u32 n;
 
-    if (p->unk_38->unk_00 != 62) {
-        anim = gUnk_09EE45DC[p->unk_38->unk_00];
+    if (p->unk_38->portraitId != 62) {
+        anim = gUnk_09EE45DC[p->unk_38->portraitId];
         p->unk_34 = 1;
     } else {
         p->unk_34 = 0;
     }
 
-    switch (p->unk_38->unk_02) {
+    switch (p->unk_38->command) {
     case 1:
         if (p->unk_38->unk_08 == 0) {
-            p->x = gUnk_09033CD0[n = p->unk_38->unk_04];
+            p->x = gUnk_09033CD0[n = p->unk_38->positionIndex];
             p->y = gUnk_09033CF0[n];
         }
         p->unk_30 = 8;
@@ -11888,7 +11888,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
             if (p->unk_38->unk_03 == 1) {
                 UpdateAllocatedObjPalette(p->palette, &gUnk_096148D8[0x100]);
             } else {
-                UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->unk_01].unk_04);
+                UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->expressionId].unk_04);
             }
         }
 
@@ -11902,13 +11902,13 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     case 4:
         p->unk_30 = 4;
 
-        if (p->unk_38->unk_04 <= 1) {
+        if (p->unk_38->positionIndex <= 1) {
             p->unk_2C = -255;
-        } else if (p->unk_38->unk_04 <= 3) {
+        } else if (p->unk_38->positionIndex <= 3) {
             p->unk_2C = 256;
         }
 
-        p->y = gUnk_09033CF0[p->unk_38->unk_04];
+        p->y = gUnk_09033CF0[p->unk_38->positionIndex];
         SetTaskUpdate(a, (void*)func_08073CA4);
         break;
     case 3:
@@ -11918,8 +11918,8 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
 
     if (gUnk_02039DC8->unk_7B == 1) {
         if (p->unk_32 == 0) {
-            if (anim != NULL && anim[p->unk_38->unk_01].unk_10 > 1) {
-                AnimStart(p->anim, 1, anim[p->unk_38->unk_01].unk_11);
+            if (anim != NULL && anim[p->unk_38->expressionId].unk_10 > 1) {
+                AnimStart(p->anim, 1, anim[p->unk_38->expressionId].unk_11);
             }
 
             p->unk_32 = 1;
@@ -11927,7 +11927,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     } else {
         if (p->unk_32 == 1) {
             if (anim != NULL) {
-                AnimStart(p->anim, 0, anim[p->unk_38->unk_01].unk_11);
+                AnimStart(p->anim, 0, anim[p->unk_38->expressionId].unk_11);
             }
 
             p->unk_32 = 0;
@@ -11966,20 +11966,20 @@ void msgface_3(MsgFaceWork* p) {
     ReleaseObjPalette(p->palette);
 }
 u8 func_08073B04(MsgFaceWork* p, void* a) {
-    ApproachValue(&p->x, gUnk_09033CE0[p->unk_38->unk_04], p->unk_30);
+    ApproachValue(&p->x, gUnk_09033CE0[p->unk_38->positionIndex], p->unk_30);
     p->unk_30--;
     if (p->unk_30 == 0) {
-        p->unk_38->unk_02 = 0;
+        p->unk_38->command = 0;
         p->unk_31 = 1;
         SetTaskUpdate(a, (void*)msgface_1);
     }
     return 1;
 }
 u8 func_08073B54(MsgFaceWork* p, void* a) {
-    ApproachValue(&p->x, gUnk_09033CD0[p->unk_38->unk_04], p->unk_30);
+    ApproachValue(&p->x, gUnk_09033CD0[p->unk_38->positionIndex], p->unk_30);
     p->unk_30--;
     if (p->unk_30 == 0) {
-        p->unk_38->unk_02 = 0;
+        p->unk_38->command = 0;
         SetTaskUpdate(a, (void*)msgface_1);
     }
     return 1;
@@ -11990,30 +11990,30 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
 
     t = NULL;
 
-    if (p->unk_38->unk_00 != 62) {
-        t = gUnk_09EE45DC[p->unk_38->unk_00];
+    if (p->unk_38->portraitId != 62) {
+        t = gUnk_09EE45DC[p->unk_38->portraitId];
         p->unk_34 = 1;
     } else {
         p->unk_34 = 0;
     }
 
-    if (p->unk_38->unk_04 <= 1) {
+    if (p->unk_38->positionIndex <= 1) {
         p->unk_33 = 1;
-    } else if (p->unk_38->unk_04 <= 3) {
+    } else if (p->unk_38->positionIndex <= 3) {
         p->unk_33 = 0;
     }
 
     if (t != NULL) {
-        SetObjTileSource(p->tiles, t[p->unk_38->unk_01].unk_00);
-        UpdateAllocatedObjPalette(p->palette, t[p->unk_38->unk_01].unk_04);
-        AnimInit(p->anim, t[p->unk_38->unk_01].unk_0C, t[p->unk_38->unk_01].unk_08);
-        AnimStart(p->anim, 0, t[p->unk_38->unk_01].unk_11);
+        SetObjTileSource(p->tiles, t[p->unk_38->expressionId].unk_00);
+        UpdateAllocatedObjPalette(p->palette, t[p->unk_38->expressionId].unk_04);
+        AnimInit(p->anim, t[p->unk_38->expressionId].unk_0C, t[p->unk_38->expressionId].unk_08);
+        AnimStart(p->anim, 0, t[p->unk_38->expressionId].unk_11);
         p->gfx = AnimGetGfx(p->anim);
         p->unk_31 = 0;
         p->unk_30 = 8;
-        p->unk_38->unk_02 = 0;
+        p->unk_38->command = 0;
     }
-    p->x = gUnk_09033CD0[n = p->unk_38->unk_04];
+    p->x = gUnk_09033CD0[n = p->unk_38->positionIndex];
     p->y = gUnk_09033CF0[n];
     p->unk_2C = 256;
     p->unk_30 = 8;
@@ -12034,21 +12034,21 @@ u8 func_08073CA4(MsgFaceWork* p, void* a) {
     if (p->unk_30 == 0) {
         t = NULL;
 
-        if (p->unk_38->unk_00 != 62) {
-            t = gUnk_09EE45DC[p->unk_38->unk_00];
+        if (p->unk_38->portraitId != 62) {
+            t = gUnk_09EE45DC[p->unk_38->portraitId];
         }
 
-        if (p->unk_38->unk_04 <= 1) {
+        if (p->unk_38->positionIndex <= 1) {
             p->unk_33 = 1;
-        } else if (p->unk_38->unk_04 <= 3) {
+        } else if (p->unk_38->positionIndex <= 3) {
             p->unk_33 = 0;
         }
 
         if (t != NULL) {
-            SetObjTileSource(p->tiles, t[p->unk_38->unk_01].unk_00);
-            UpdateAllocatedObjPalette(p->palette, t[p->unk_38->unk_01].unk_04);
-            AnimInit(p->anim, t[p->unk_38->unk_01].unk_0C, t[p->unk_38->unk_01].unk_08);
-            AnimStart(p->anim, 0, t[p->unk_38->unk_01].unk_11);
+            SetObjTileSource(p->tiles, t[p->unk_38->expressionId].unk_00);
+            UpdateAllocatedObjPalette(p->palette, t[p->unk_38->expressionId].unk_04);
+            AnimInit(p->anim, t[p->unk_38->expressionId].unk_0C, t[p->unk_38->expressionId].unk_08);
+            AnimStart(p->anim, 0, t[p->unk_38->expressionId].unk_11);
             p->gfx = AnimGetGfx(p->anim);
             p->unk_31 = 0;
             p->unk_30 = 8;
@@ -12067,43 +12067,43 @@ u8 func_08073DA4(MsgFaceWork* p, void* a) {
     p->unk_30--;
     if (p->unk_30 == 0) {
         p->unk_31 = 1;
-        p->unk_38->unk_02 = 0;
+        p->unk_38->command = 0;
         p->unk_2C = 256;
         SetTaskUpdate(a, (void*)msgface_1);
     }
     return 1;
 }
-void func_08073E0C(void* pool, MsgFaceCtl* p, u8 a, u8 b, u8 c) {
-    p->unk_00 = a;
-    p->unk_01 = b;
-    p->unk_04 = c;
-    p->unk_02 = 0;
+void func_08073E0C(void* pool, MsgFaceControl* p, u8 a, u8 b, u8 c) {
+    p->portraitId = a;
+    p->expressionId = b;
+    p->positionIndex = c;
+    p->command = 0;
     p->unk_03 = 0;
     TaskCreate(pool, gTaskDescMsgface, p);
 }
 
-void func_08073E34(MsgFaceCtl* p, u8 a, u8 b, u8 c) {
+void func_08073E34(MsgFaceControl* p, u8 a, u8 b, u8 c) {
     u8 v;
 
-    if (p->unk_00 != a) {
+    if (p->portraitId != a) {
         v = 3;
     } else {
-        if (p->unk_01 == b && p->unk_04 == c) {
+        if (p->expressionId == b && p->positionIndex == c) {
             return;
         }
         v = 4;
     }
-    p->unk_02 = v;
-    p->unk_00 = a;
-    p->unk_01 = b;
-    p->unk_04 = c;
+    p->command = v;
+    p->portraitId = a;
+    p->expressionId = b;
+    p->positionIndex = c;
 }
 
-void _08073E6C(MsgFaceCtl* p) {
-    p->unk_02 = 1;
+void _08073E6C(MsgFaceControl* p) {
+    p->command = 1;
 }
-void func_08073E74(MsgFaceCtl* p) {
-    p->unk_02 = 2;
+void func_08073E74(MsgFaceControl* p) {
+    p->command = 2;
 }
 void msgwait_0(MsgWaitWork* p, u8* arg) {
     p->unk_103 = arg[0];
@@ -12309,7 +12309,7 @@ void func_08074564(void) {
     func_08074504();
 }
 void view_0(Work08074DC4* p, u8* arg) {
-    UnkStruct_09EE3FB4* t;
+    EventSequenceDef* t;
     Ent09EE3CA0* u;
     Obj0806180C* q;
     u8 n;
@@ -12708,7 +12708,7 @@ void func_08074DC4(Work08074DC4* a) {
 }
 
 u8 func_08074E40(Work08074DC4* p) {
-    UnkStruct_09EE3FB4* t = gUnk_09EE3FB4[p->unk_08];
+    EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
     AnimEntry0806180C* q = t->unk_04;
     Obj0806180C* e = &p->unk_0C[p->unk_09];
@@ -12723,7 +12723,7 @@ u8 func_08074E40(Work08074DC4* p) {
 }
 
 u8 func_08074E88(Work08074DC4* p, u8 v) {
-    UnkStruct_09EE3FB4* t = gUnk_09EE3FB4[p->unk_08];
+    EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
     AnimEntry0806180C* q = t->unk_04;
     u8 i;

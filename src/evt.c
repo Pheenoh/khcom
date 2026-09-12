@@ -2,7 +2,7 @@
 #include "evt.h"
 #include "evt_api.h"
 
-UnkStruct_02039DC8* gUnk_02039DC8;
+EventState* gUnk_02039DC8;
 
 void func_0801CD74(EvtObj* obj, s32 anim) {
     u16 t = obj->flags | 1;

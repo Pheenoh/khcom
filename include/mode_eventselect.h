@@ -122,7 +122,7 @@ typedef struct EffectWork {
 } EffectWork;
 
 extern UnkStruct_02039DD0* gUnk_02039DD0;
-extern UnkStruct_02039DC8* gUnk_02039DC8;
+extern EventState* gUnk_02039DC8;
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EEE6[];

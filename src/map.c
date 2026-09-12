@@ -13218,7 +13218,7 @@ void func_080F4BA0(MapPrizeWork* w) {
     s32 y;
     s32 z;
     s32 s;
-    UnkStruct_02039BA0* g = gUnk_02039BA0;
+    FieldState* g = gUnk_02039BA0;
 
     s = gSineTable[w->unk_8C] * 32;
     x = g->unk_18.unk_00.x + (s * w->unk_90 >> 8);

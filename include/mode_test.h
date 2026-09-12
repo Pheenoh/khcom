@@ -201,7 +201,7 @@ void func_08060470(u8 bg);
 void func_0806098C(void);
 
 extern s32* gUnk_02039DC4;
-extern UnkStruct_02039DC8* gUnk_02039DC8;
+extern EventState* gUnk_02039DC8;
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];

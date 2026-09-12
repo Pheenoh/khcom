@@ -923,7 +923,7 @@ void func_0810B51C(u8* p) {
     *p = 0;
 }
 
-void task_bos_pc_fld_0(PcFldWork* work, FldInit* arg) {
+void task_bos_pc_fld_0(PcFldWork* work, BattleBackgroundDef* arg) {
     void* p;
 
     LoadBgTiles(0, arg->unk_00, arg->unk_04);
