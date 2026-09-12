@@ -43,30 +43,8 @@ typedef struct BosPos {
     s32 unk_0C;
 } BosPos;
 
-typedef struct BosSub {
-    u32 unk_000;
-    s32 x;
-    s32 y;
-    s32 z;
-    u8 unk_010[0x14];
-    u32 unk_024;
-    u8 unk_028[0x4];
-    s16 unk_02C;
-    s16 unk_02E;
-    u8 unk_030[0x4];
-    u64 unk_034;
-    u8 unk_03C[0x4];
-    u32 unk_040;
-    u8 unk_044[0x58];
-    u16 unk_09C;
-    u16 unk_09E;
-    u16 unk_0A0;
-    u16 unk_0A2;
-    u8 unk_0A4[0x6C];
-} BosSub;
-
 typedef struct DsdWork {
-    BosSub unk_000[3];
+    BtlObj unk_000[3];
     u32 unk_330;
     u32 unk_334;
     u32 unk_338;
@@ -199,7 +177,7 @@ typedef struct DsdMainWork {
     void* unk_06C;
     s8 unk_070;
     u8 unk_071[0x3];
-    BosSub unk_074;
+    BtlObj unk_074;
     void* unk_184;
     void* unk_188;
     void* unk_18C;
@@ -936,7 +914,7 @@ void func_080C43E4(s32* p, s32 target);
 
 void func_080C3868(DsdMainWork* work);
 void func_080C3C34(DsdMainWork* work);
-void func_080BA104(BosSub* sub, TmFootWork* work);
+void func_080BA104(BtlObj* sub, TmFootWork* work);
 void task_bos_dsd_energy1_3(void);
 void task_bos_jf_lamp_3(JfLampWork* work);
 void task_bos_jf_majin_3(JfMajinWork* work);
@@ -996,12 +974,12 @@ void func_0802F1E8(void);
 void func_0801801C(s32 a, s32 b, s32 c, s32 d);
 void func_080C2FD8(DsdMainWork* work);
 void func_080C3574(DsdMainWork* work);
-void func_0801AF4C(BosSub* a);
+void func_0801AF4C(BtlObj* a);
 void func_0801B008(void);
 u8 func_080C69B4(void);
 void func_080C6894(CharaObjParam* param);
 void func_080C3928(DsdMainWork* work);
-void func_0801BCD4(BosSub* a);
+void func_0801BCD4(BtlObj* a);
 void func_080C3C40(DsdMainWork* work);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_080147B8(u8 a);
@@ -1044,8 +1022,8 @@ u8 func_08006314(void);
 void func_08014AAC(s32 a, s32 b);
 void func_0801536C(void);
 void func_08096DC4(void* a, JfMajinFx* b);
-void func_0801B918(BosSub* a);
-s32 func_0801ADAC(BosSub* a);
+void func_0801B918(BtlObj* a);
+s32 func_0801ADAC(BtlObj* a);
 u8 func_0801C1C0(s32 a);
 u8 task_bos_dsd_1(DsdWork* work);
 
