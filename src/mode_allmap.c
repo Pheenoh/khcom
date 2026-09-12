@@ -1,6 +1,8 @@
 #include "macros.h"
 #include "mode_allmap.h"
 
+TaskPool gUnk_0203C4F0 __attribute__((common));
+
 s16 gUnk_02034E3C;
 s16 gUnk_02034E3E;
 u8 gUnk_02034E40[0x40];
