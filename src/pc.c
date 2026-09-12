@@ -1,7 +1,7 @@
 #include "macros.h"
 #include "pc.h"
 
-void task_pc_acddmg_0(PcAcdDmgWork* work, BtlWork* obj) {
+void task_pc_acddmg_0(PcAcdDmgWork* work, BtlObj* obj) {
     work->unk_04 = obj;
     work->unk_02 = 0;
     work->unk_00 = 0x28;
@@ -9,7 +9,7 @@ void task_pc_acddmg_0(PcAcdDmgWork* work, BtlWork* obj) {
 }
 
 s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
-    BtlWork* obj;
+    BtlObj* obj;
 
     if (!(gBtlWork->unk_068 & 0x100000)) {
         obj = work->unk_04;
@@ -41,7 +41,7 @@ s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
 
 void func_08049E70(PcCharaWork* work, s16 a, s32 b) {
     PcCharaWork* w = work;
-    BtlWork* obj = (BtlWork*)work->unk_040;
+    BtlObj* obj = (BtlObj*)work->unk_040;
 
     if (obj->unk_034 & 4) {
         work->unk_15C = obj->unk_004 - (a << 8);
@@ -74,9 +74,9 @@ void func_08049F24(PcCharaWork* work, s32 a, s32 b) {
 s32 func_08049F50(PcCharaWork* work) {
     s32 x;
     s32 y;
-    BtlWork* obj;
+    BtlObj* obj;
 
-    obj = (BtlWork*)gBtlWork->unk_07C;
+    obj = gBtlWork->unk_07C;
 
     if ((u16)GetRandom() % 60 == 0) {
         func_0801C700(work->unk_040, &x, &y, 0);

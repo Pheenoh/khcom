@@ -3990,7 +3990,7 @@ u8 func_0807D584(UnkStruct_02034AAC* p, void* a) {
     if ((s16)p->unk_9C > 0) {
         p->unk_9C--;
     } else {
-        WorldToScreen(&sx, &sy, *(s32*)&gBtlWork->unk_100[0], *(s32*)&gBtlWork->unk_100[4], *(s32*)&gBtlWork->unk_100[8]);
+        WorldToScreen(&sx, &sy, gBtlWork->unk_100, gBtlWork->unk_104, gBtlWork->unk_108);
         x = sx;
         y = sy;
         dx = (x << 8) - p->unk_4C;
@@ -4020,7 +4020,7 @@ u8 func_0807D68C(UnkStruct_02034AAC* p, void* a) {
     s32 x;
     s32 y;
 
-    WorldToScreen(&sx, &sy, *(s32*)&gBtlWork->unk_100[0], *(s32*)&gBtlWork->unk_100[4], *(s32*)&gBtlWork->unk_100[8]);
+    WorldToScreen(&sx, &sy, gBtlWork->unk_100, gBtlWork->unk_104, gBtlWork->unk_108);
     x = sx;
     y = sy;
 
@@ -4445,7 +4445,7 @@ void func_0807E158(void) {
 
     p = gBtlWork;
 
-    switch (p->unk_0F4) {
+    switch ((u32)p->unk_0F4) {
     case 15:
     case 28:
     case 47:
@@ -4640,7 +4640,7 @@ void sub_0807E4C8(UnkStruct_08080268* w, CardSlot* slots, s8 kind, s32 n) {
     Deck* deck;
     u16 count;
 
-    switch (*(s32*)&gBtlWork->unk_100[0xC]) {
+    switch (gBtlWork->unk_10C) {
     case 157:
     case 179:
         deck = &gUnk_09034084[20];
@@ -4896,7 +4896,7 @@ void func_0807E8F4(UnkStruct_08080268* w) {
     ListPoolInit(&w->unk_54[2]);
     ListPoolInit(&w->unk_54[3]);
 
-    switch (*(s32*)&gBtlWork->unk_100[0xC]) {
+    switch (gBtlWork->unk_10C) {
     case 162:
         w->unk_B0[0] = w->unk_A8[0] = func_080859A0(0, &gUnk_09034084[0]) + 1;
         w->unk_B0[3] = w->unk_A8[3] = func_080859A0(1, &gUnk_09034084[0]);
@@ -8012,7 +8012,7 @@ void func_080838A0(void) {
 
     p = gUnk_02039B9C;
 
-    switch (p->unk_0F4) {
+    switch ((u32)p->unk_0F4) {
     case 15:
     case 28:
     case 47:
@@ -20600,7 +20600,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                 }
             }
         } else {
-            v = *(s32*)&gBtlWork->unk_100[0xC];
+            v = gBtlWork->unk_10C;
 
             if (v >= 125 && v <= 127) {
                 if ((gGameState.flags & 8) == 0) {
@@ -20693,7 +20693,7 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
     if (w->unk_14 == 0) {
         *(PrizeCardArgs*)&args = w->unk_18;
 
-        switch (*(s32*)&gBtlWork->unk_100[0xC]) {
+        switch (gBtlWork->unk_10C) {
         case 148:
             args.unk_20 = 0x21D;
             break;
@@ -20778,7 +20778,7 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
             return 1;
         }
 
-        if (*(s32*)&gBtlWork->unk_100[0xC] != 121) {
+        if (gBtlWork->unk_10C != 121) {
             if (func_0808510C(args.unk_20) == 0) {
                 TaskCreate(w, gTaskDescPrizeBoss, &args);
             }
@@ -21013,7 +21013,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
     if (w->unk_A8 - 8 > w->unk_AC) {
         w->unk_A8 = w->unk_AC - 8;
         w->unk_B4 = -((w->unk_B4 * 217) >> 8);
-        w->unk_DC = (u8)GetAngle(w->unk_A0, w->unk_A4, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08);
+        w->unk_DC = (u8)GetAngle(w->unk_A0, w->unk_A4, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008);
         w->unk_DC += GetRandom() % 65 - 32;
 
         if (w->unk_B4 > -0x200) {
@@ -21061,7 +21061,7 @@ void func_08097390(UnkStruct_08096F94* w) {
     s32 tx;
     s32 ty;
 
-    WorldToScreen(&x, &y, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+    WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
     tx = 0x7800;
     ty = 0x5000;
     dx = tx - w->unk_A0;
@@ -21167,7 +21167,7 @@ u8 func_0809753C(UnkStruct_08096F94* w, void* a) {
 
 u8 func_08097600(UnkStruct_08096F94* w) {
     w->unk_DE += 32;
-    WorldToScreen(&w->unk_D2, &w->unk_D4, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+    WorldToScreen(&w->unk_D2, &w->unk_D4, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
     w->unk_CE += (w->unk_D2 - w->unk_CE) >> 3;
     w->unk_D0 += (w->unk_D4 - w->unk_D0) >> 3;
     w->unk_C8 -= 10;
@@ -22663,7 +22663,7 @@ void func_080999A4(UnkStruct_08099928* w) {
     s32 tx;
     s32 ty;
 
-    WorldToScreen(&x, &y, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+    WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
     tx = 0x7800;
     ty = 0x5000;
     dx = tx - w->unk_A8;
@@ -22778,7 +22778,7 @@ u8 func_08099B60(UnkStruct_08099928* w, void* a) {
 
 u8 func_08099C4C(UnkStruct_08099928* w) {
     w->unk_E6 += 32;
-    WorldToScreen(&w->unk_DA, &w->unk_DC, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+    WorldToScreen(&w->unk_DA, &w->unk_DC, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
     *(s16*)&w->unk_D6 += (w->unk_DA - *(s16*)&w->unk_D6) >> 3;
     *(s16*)&w->unk_D8 += (w->unk_DC - *(s16*)&w->unk_D8) >> 3;
     w->unk_D0 -= 10;
@@ -23118,7 +23118,7 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
         return 0;
     }
 
-    w->unk_1A4 += *(s32*)&gBtlWork->unk_100[0x2C];
+    w->unk_1A4 += gBtlWork->unk_12C;
     w->unk_40 += w->unk_1A4;
     w->unk_38 += (gSineTable[w->unk_1C6] * w->unk_1A8) >> 8;
     w->unk_3C += (-gSineTable[w->unk_1C6 + 64] * w->unk_1A8) >> 8;
@@ -23131,8 +23131,8 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
         w->unk_40 = w->unk_44 - 0x800;
         w->unk_1A4 = -((204 * w->unk_1A4) >> 8);
         w->unk_1C6 = GetAngle(w->unk_38, w->unk_3C,
-                               ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04,
-                               ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08);
+                               gBtlWork->unk_07C->unk_004,
+                               gBtlWork->unk_07C->unk_008);
         w->unk_1C6 = (u8)(w->unk_1C6 + 224) + GetRandom() % 65;
 
         if (w->unk_1A4 > -0x200) {
@@ -23237,8 +23237,8 @@ s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
         w->unk_40 = w->unk_44 - 0x800;
         w->unk_1A4 = -((204 * w->unk_1A4) >> 8);
         w->unk_1C6 = GetAngle(w->unk_38, w->unk_3C,
-                               ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04,
-                               ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08);
+                               gBtlWork->unk_07C->unk_004,
+                               gBtlWork->unk_07C->unk_008);
         w->unk_1C6 = (u8)(w->unk_1C6 + 224) + GetRandom() % 65;
 
         if (w->unk_1A4 > -0x200) {
@@ -23378,7 +23378,7 @@ u8 func_0809ACDC(UnkStruct_0809A02C* w) {
     s16 y;
 
     w->unk_1C9 += 32;
-    WorldToScreen(&x, &y, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+    WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
     w->unk_38 += ((x << 8) - w->unk_38) >> 3;
     w->unk_3C += ((y << 8) - w->unk_3C) >> 3;
     w->unk_1B8 -= 10;
@@ -23478,7 +23478,7 @@ s32 func_0809AF84(UnkStruct_0809A02C* w, void* a) {
     if (w->unk_40 - 0x800 > w->unk_44) {
         w->unk_40 = w->unk_44 - 0x800;
         w->unk_1A4 = -((w->unk_1A4 * 204) >> 8);
-        w->unk_1C6 = GetAngle(w->unk_38, w->unk_3C, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08);
+        w->unk_1C6 = GetAngle(w->unk_38, w->unk_3C, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008);
         w->unk_1C6 = (u8)(w->unk_1C6 + 0xE0) + GetRandom() % 65;
 
         if (w->unk_1A4 > -0x200) {
@@ -25475,9 +25475,9 @@ void Level_Up_0(UnkStruct_0809F730* w) {
         w->unk_72C = AllocObjPalette(32);
         func_08003A70(w->unk_72C, gUnk_08F683A4);
         func_080062F4(((ObjPalette*)w->unk_72C)->unk_06 + 16, 1);
-        WorldToScreen(&x, &y, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04,
-                      ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08,
-                      ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+        WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004,
+                      gBtlWork->unk_07C->unk_008,
+                      gBtlWork->unk_07C->unk_00C);
         func_08002A10(w->unk_728, gUnk_088E33C2);
         AnimInit(&w->unk_734, gUnk_09EDEE14, gUnk_09EDEE08);
         AnimStart(&w->unk_734, 0, 1);
@@ -25486,9 +25486,9 @@ void Level_Up_0(UnkStruct_0809F730* w) {
         w->unk_72C = AllocObjPalette(32);
         func_08003A70(w->unk_72C, gUnk_09618118);
         func_080062F4(((ObjPalette*)w->unk_72C)->unk_06 + 16, 1);
-        WorldToScreen(&x, &y, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04,
-                      ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08,
-                      ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_0C);
+        WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004,
+                      gBtlWork->unk_07C->unk_008,
+                      gBtlWork->unk_07C->unk_00C);
         func_08002A10(w->unk_728, gUnk_0891ED26);
         AnimInit(&w->unk_734, gUnk_09EDF38C, gUnk_09EDF374);
         AnimStart(&w->unk_734, 0, 1);
@@ -25523,7 +25523,7 @@ void Level_Up_0(UnkStruct_0809F730* w) {
         gBg2Y = gBg3Y;
     } else {
         w->unk_7C6 = 1;
-        switch (*(u32*)&gBtlWork->unk_100[0xC]) {
+        switch ((u32)gBtlWork->unk_10C) {
         case 151:
             SetBgSize(0, 0);
             SetupBg(0, 0, 26, 0);
@@ -25604,7 +25604,7 @@ void Level_Up_0(UnkStruct_0809F730* w) {
 void func_0809E7A4(void) {
     u32 base;
 
-    if (*(u32*)&gBtlWork->unk_100[0x0C] == 151) {
+    if (gBtlWork->unk_10C == 151) {
         base = GetBgCharBase(0);
         RequestDma3Copy(gUnk_093FEEB8, (void*)(base + CARD_E7A4_DST), 288);
         RequestDma3Copy(&gUnk_093FEEB8[0x400], (void*)(base + CARD_E7A4_DST + 0x120), 288);
@@ -25715,7 +25715,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                 func_0800516C(1, gUnk_09EE790C, 2, 1);
                 func_080051C4(1, 0, 0);
             } else {
-                if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+                if (gBtlWork->unk_10C == 151) {
                     LoadBgTiles(0, gUnk_093FF8F8, bgSize);
 #ifdef VERSION_EU
                     switch (gLanguage) {
@@ -25889,7 +25889,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
         s32 x4 = w->unk_77C << 8;
         ApproachValue(&x3, 0x10000, w->unk_7B5);
         ApproachValue(&x4, 0, w->unk_7B5);
-        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+        if (gBtlWork->unk_10C == 151) {
             func_08005244(0, (u16)(x3 >> 8), 0);
         } else {
             func_08005244(1, (u16)(x3 >> 8), 0);
@@ -25931,7 +25931,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                 w->unk_750[2] = x[2] >> 8;
                 if (w->unk_7B2[2] == 0) {
                     u8 i;
-                    if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+                    if (gBtlWork->unk_10C == 151) {
                         LoadBgMap(0, gUnk_095112B8, mapSize);
                     } else {
                         LoadBgMap(1, gUnk_095112B8, mapSize);
@@ -26066,7 +26066,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                     w->unk_7B0 = i;
                     w->unk_776 = gUnk_09037FB4[w->unk_7B0];
                     SetTaskUpdate(a, (void*)func_0809F390);
-                    if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+                    if (gBtlWork->unk_10C == 151) {
                         LoadBgMap(0, gUnk_09EE7914[w->unk_7B0], 0x800);
                     } else {
                         LoadBgMap(1, gUnk_09EE7914[w->unk_7B0], 0x800);
@@ -26103,7 +26103,7 @@ u8 func_0809F390(u8* work, void* a) {
 
         work[0x7B0] = i;
 
-        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+        if (gBtlWork->unk_10C == 151) {
             LoadBgMap(0, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
         } else {
             LoadBgMap(1, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
@@ -26130,7 +26130,7 @@ u8 func_0809F390(u8* work, void* a) {
 
         work[0x7B0] = i;
 
-        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+        if (gBtlWork->unk_10C == 151) {
             LoadBgMap(0, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
         } else {
             LoadBgMap(1, ((void**)&gTaskDescHCEffectName[0x70])[(s8)work[0x7B0]], 0x800);
@@ -26142,7 +26142,7 @@ u8 func_0809F390(u8* work, void* a) {
     if (GetKeysRepeat() & 1) {
         work[0x7BD] = 2;
 
-        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+        if (gBtlWork->unk_10C == 151) {
             LoadBgMap(0, &gUnk_0950E2F8[0x7C0], 0x800);
         } else {
             LoadBgMap(1, &gUnk_0950E2F8[0x7C0], 0x800);
@@ -26320,7 +26320,7 @@ u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
     }
     if (w->unk_7A4 == 180) {
         if (GetKeysPressed() & 1) {
-            if (*(u32*)&gBtlWork->unk_100[0xC] == 151) {
+            if (gBtlWork->unk_10C == 151) {
                 func_0800516C(0, gUnk_09EE790C, 2, 1);
             } else {
                 func_0800516C(1, gUnk_09EE790C, 2, 1);
@@ -26387,7 +26387,7 @@ u8 func_0809FBCC(u8* work, void* a) {
     ApproachValue(&work[offsetof(UnkStruct_0809F730, unk_7A8)], 0x1BE00, (s8)work[offsetof(UnkStruct_0809F730, unk_7B5)]);
     ApproachValue(&work[offsetof(UnkStruct_0809F730, unk_7AC)], 0x4800, (s8)work[offsetof(UnkStruct_0809F730, unk_7B5)]);
 
-    if (*(u32*)&gBtlWork->unk_100[0x0C] == 151) {
+    if (gBtlWork->unk_10C == 151) {
         func_08005244(0, v3 >> 8, 0);
     } else {
         func_08005244(1, v3 >> 8, 0);
@@ -26890,7 +26890,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
     }
     if (w->unk_7B2[2] == 0) {
         u8 i;
-        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+        if (gBtlWork->unk_10C == 151) {
             LoadBgMap(0, gUnk_095112B8, mapSize);
         } else {
             LoadBgMap(1, gUnk_095112B8, mapSize);
@@ -27025,7 +27025,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
         w->unk_7B0 = i;
         w->unk_776 = gUnk_09037FB4[w->unk_7B0];
         SetTaskUpdate(a, (void*)func_0809F390);
-        if (*(s32*)&gBtlWork->unk_100[0xC] == 151) {
+        if (gBtlWork->unk_10C == 151) {
             LoadBgMap(0, gUnk_09EE7914[w->unk_7B0], 0x800);
         } else {
             LoadBgMap(1, gUnk_09EE7914[w->unk_7B0], 0x800);

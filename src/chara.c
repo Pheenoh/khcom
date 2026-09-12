@@ -1076,7 +1076,7 @@ u8 func_080C64A4(void) {
         prize.x = gCharaObj->unk_00;
         prize.y = gCharaObj->unk_04;
         prize.z = gCharaObj->unk_08;
-        func_08096DC4((TaskPool*)gBtlWork->unk_02C, &prize);
+        func_08096DC4(&gBtlWork->taskPools[0], &prize);
         func_0801B918((void*)gCharaObj->unk_104C);
         gCharaObj->unk_44++;
         break;
@@ -1326,7 +1326,7 @@ u8 func_080C69B4(void) {
         prize.x = gCharaObj->unk_00;
         prize.y = gCharaObj->unk_04;
         prize.z = gCharaObj->unk_08;
-        func_08096DC4((TaskPool*)gBtlWork->unk_02C, &prize);
+        func_08096DC4(&gBtlWork->taskPools[0], &prize);
         func_0801B918((void*)gCharaObj->unk_104C);
         if ((gCharaObj->unk_1090 & 1) == 0) {
             func_08014B30(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);

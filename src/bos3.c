@@ -4,7 +4,7 @@
 u16 gUnk_0203C3BC COMMON;
 u16 gUnk_0203C3C0 COMMON;
 
-void task_bos_jf_shadow_0(JfShadowWork* work, BtlWork* obj) {
+void task_bos_jf_shadow_0(JfShadowWork* work, BtlObj* obj) {
     work->unk_0C = obj;
     work->tiles = LoadObjTiles(gUnk_08B22EFE, 0x140);
     work->gfx = gUnk_08B22EE4;
@@ -16,7 +16,7 @@ s32 task_bos_jf_shadow_1(void) {
 }
 
 void task_bos_jf_shadow_2(JfShadowWork* work) {
-    BtlWork* obj;
+    BtlObj* obj;
     s16 x;
     s16 y;
     s32 size;
