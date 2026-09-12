@@ -1,6 +1,8 @@
+#include "engine_math.h"
 #include "macros.h"
 #include "listpool.h"
 #include "battle.h"
+#include "btl_collision.h"
 
 
 ListPool gUnk_020348E8;
@@ -407,8 +409,8 @@ u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
 INCLUDE_ASM("btl_collision/func_08011E3C.s");
 #endif
 
-s32 func_08011F68(s32 a, s32 b) {
-    return func_08011398((BtlObj*)b, a);
+s32 func_08011F68(s32 a, BtlObj* b) {
+    return func_08011398(b, a);
 }
 
 #ifdef NON_MATCHING

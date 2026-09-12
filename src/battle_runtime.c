@@ -1,5 +1,10 @@
+#include "display.h"
+#include "key.h"
+#include "m4a_song.h"
+#include "obj_api.h"
 #include "macros.h"
 #include "battle.h"
+#include "battle_actor.h"
 
 s32 gUnk_02039DC0;
 
@@ -2301,7 +2306,8 @@ void func_0801C700(BtlObj* a, s32* b, s32* c, s32* d) {
     }
 }
 
-void func_0801C7FC(HitData* a, u16 b, s32 c) {
+void func_0801C7FC(HitData* a, s32 id, s32 c) {
+    u16 b = id;
     const UnkStruct_08133E5C* e = func_0800FB14(b);
     if (e != 0) {
         a->unk_2E = (e->unk_00 * c) >> 8;

@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_CHKOBJ_H
 #define GUARD_MODE_CHKOBJ_H
 
+#include "mode_test_api.h"
+
 #include "display.h"
 #include "anim.h"
 #include <stdlib.h>
@@ -21,9 +23,6 @@ typedef struct ChkObjEntry {
 } ChkObjEntry;
 
 
-void func_0805FA8C(s32 a, s32 b, s32 c);
-void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
-void func_080605A4(s32 a);
 void func_0809D2B0(s32 a, s32 b, s32 c, const char* s);
 void func_0809D458(s32 a, s32 b, s32 c, s32 v);
 

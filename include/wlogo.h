@@ -1,6 +1,7 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
+#include "pallet.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -609,12 +610,6 @@ extern void* gUnk_09EF3924[];
 extern void* gUnk_09EF3960[];
 extern void* gUnk_09EF397C[];
 
-void StartBgWave(void (*a)(void));
-void SetBgWaveParams(s32 a, u8 b, u8 c);
-void EnableBgWave(s32 a);
-void HBlankIntrBgWave1(s32 a);
-void StopBgWave(s32 a);
-void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
 
 void task_wlogo_hwt_0(WlogoHwtWork* work);
 u8 task_wlogo_hwt_1(WlogoHwtWork* work);

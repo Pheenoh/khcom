@@ -1,3 +1,4 @@
+#include "pallet.h"
 #include "macros.h"
 #include "title.h"
 #include "gba/keys.h"

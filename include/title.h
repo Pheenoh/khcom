@@ -1,6 +1,7 @@
 #ifndef GUARD_TITLE_H
 #define GUARD_TITLE_H
 
+#include "pallet.h"
 #include "m4a_song.h"
 #include <string.h>
 #include "obj_api.h"
@@ -84,8 +85,6 @@ extern void* gUnk_09EF6658[];
 extern void* gUnk_09EF6668[];
 extern void* gUnk_09EF6684[];
 
-s16 GetPaletteEffect(void);
-void SetPaletteEffect(s16 a);
 void func_080D5978(u16 a, void* b, u16 c);
 void func_080D5998(void);
 u8 func_080D6280(void);

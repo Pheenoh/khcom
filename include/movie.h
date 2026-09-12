@@ -1,6 +1,7 @@
 #ifndef GUARD_MOVIE_H
 #define GUARD_MOVIE_H
 
+#include "snd_stream.h"
 #include "types.h"
 
 typedef void* (*MovieAllocFunc)(u32);
@@ -58,13 +59,6 @@ extern MoviePlayer* gMoviePlayer;
 extern u8 gUnk_0203C7C8[8];
 extern MovieHeap gMovieHeap;
 
-void SndStreamInit(u32 rate, u32 channels);
-void SndStreamUpdate(void);
-void SndStreamLock(u32 ch, u32 len, void** dst1, s32* len1, void** dst2, s32* len2);
-void SndStreamSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
-void SndStreamClose(void);
-void SndStreamStart(void);
-void SndStreamUnlock(u32 ch);
 
 void MovieSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
 s32 MovieStart(void* a);

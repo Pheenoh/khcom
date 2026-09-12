@@ -1,3 +1,6 @@
+#include "mode.h"
+#include "display.h"
+#include "pallet.h"
 #include "macros.h"
 #include "mode_movie.h"
 
@@ -20,7 +23,6 @@ extern u8 gUnkEu_0883E574[];
 extern u8 gUnkEu_0883E9F4[];
 extern u8 gUnkEu_0883EE08[];
 extern u8 gUnkEu_0883F218[];
-void eu_0800115C(void);
 #endif
 
 vu16 gUnk_02034938;

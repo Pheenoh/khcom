@@ -1,6 +1,10 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "mode_test_api.h"
+
+#include "sio_api.h"
+#include "util.h"
 #include "m4a_song.h"
 #include "fade.h"
 #include "btl_effect.h"
@@ -217,23 +221,11 @@ void func_080C6990(u16 a, u8 b);
 void func_080C6E7C(u8* src, u8* dst, u16 size, s16 count);
 void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 
-s32 func_0805F588(s32 a, s32 b);
-s32 func_0805F5A4(s32* a, s32* b);
-u32 func_08006ED4(void* a, void* b, void* c);
-u32 func_0800702C(void* a, void* b, void* c);
-void SioKeyStateUpdateA(u16 a);
-void SioKeyStateUpdateB(u16 a);
 u16* func_08083C94(void);
 u16* func_08083D7C(void);
-void func_080078A4(void);
-void SioReset(void);
 void func_08083D68(void);
 void func_08083DD4(void);
-void func_080149BC(s32 x, s32 y);
-void func_08014B30(s32 x, s32 y);
-void func_0801475C(s32 x, s32 y, s32 z);
 void func_08096DC4(TaskPool* pool, CharaPrizeArgs* args);
-void func_08006B4C(void);
 extern TaskDesc gUnk_09EF34A8;
 
 extern s16 gSineTable[];

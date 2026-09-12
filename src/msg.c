@@ -1,3 +1,7 @@
+#include "intr.h"
+#include "m4a_song.h"
+#include "obj_api.h"
+#include "pallet.h"
 #include "display.h"
 #include "text.h"
 #include "macros.h"
@@ -10,13 +14,11 @@ extern void* gUnkEu_08890E44[];
 extern u8 gUnkEu_0919B63A[];
 extern void* gUnkEu_09F5D7E4[];
 extern u8 gUnkEu_095A3D74[];
-void eu_08005A1C(s32 bg, void* map, s32 x, s32 y);
 u8 eu_0806C734(EventSeqWork* work);
 u8 eu_0806C7C8(EventSeqWork* work);
 u8 eu_0806C848(EventSeqWork* work);
 u8 eu_0806C974(EventSeqWork* work);
 extern u32 gLanguage;
-extern void eu_08005ADC(s32 id);
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
 #define LANGSTR(x) (x)

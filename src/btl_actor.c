@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "battle.h"
+#include "battle_actor.h"
 
 void func_0800EEBC(Actor* p, SprObj* s) {
     s16 x;
@@ -353,7 +354,7 @@ u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r) {
     return 1;
 }
 
-s32 func_0800F5A4(Actor* work, u16 interval, u16 offset, u16 width, u16 depth) {
+u8 func_0800F5A4(Actor* work, u16 interval, u16 offset, u16 width, u16 depth) {
     u32 value;
     u32 cards;
     u32 id;

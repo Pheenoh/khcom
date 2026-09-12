@@ -1,6 +1,8 @@
 #ifndef GUARD_SIO_H
 #define GUARD_SIO_H
 
+#include "display.h"
+#include "sio_api.h"
 #include "types.h"
 #include "gba/syscall.h"
 #include "intr.h"
@@ -79,17 +81,10 @@ extern u8 gUnk_02039B60;
 
 
 
-u8 func_08006B74(void);
-void func_08006B80(u16* a, u16* b);
-s32 func_08006BA0(UnkBgAnim* p);
-UnkBgAnim* func_08006BA8(void);
 u16 IsVBlankIntrLive(void);
 void SioInit(void);
-void SioReset(void);
 void func_08006E70(void);
 void SioStop(void);
-u32 func_08006ED4(u8* a, u16* b, u16 (*c)[2]);
-u32 func_0800702C(u8* a, u16* b, u16 (*c)[2]);
 void func_080070B4(void);
 void func_080070DC(void);
 void func_0800712C(u16* p);
@@ -106,8 +101,6 @@ void func_08007798(void);
 void func_080077C4(void);
 void func_08007814(void);
 void SioClearRegs(void);
-void func_080078A4(void);
-u8 func_080078E8(void);
 
 void VBlankIntr(void);
 void HBlankIntrDummy(void);

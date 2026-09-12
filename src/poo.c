@@ -1,3 +1,4 @@
+#include "obj_api.h"
 #include "poo.h"
 #include "macros.h"
 

@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MOVIE_H
 #define GUARD_MODE_MOVIE_H
 
+#include "display.h"
+#include "pallet.h"
 #include "obj_api.h"
 #include "types.h"
 #include "mode.h"
@@ -61,9 +63,6 @@ void MovieSetCallbacks(void* a, void* b, void* c, void* d);
 s32 MovieStart(void* a);
 void MoviePlay(void* a, s32 b);
 void MovieClose(void);
-void PalletInit(void);
-void VTransReset(void);
-void BgReset(void);
 void func_0806180C(s32 a);
 void func_0805EA90(void);
 s32 func_0805E93C(void);

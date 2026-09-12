@@ -1,6 +1,8 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "player_progression.h"
+
 #include "engine_math.h"
 
 #include "card_deck.h"
@@ -329,8 +331,8 @@ extern TaskDesc gTaskDescBosBoogieKnifereader;
 extern TaskDesc gTaskDescBosBoogieKaihuku;
 
 u8* func_080857BC(u8 index);
-u8 func_0800FBCC(s32 a);
-u8 func_0800FD20(s32 a);
+
+
 
 u8 func_080D7B94(void);
 void func_080D764C(StatusWork* work);
@@ -352,8 +354,7 @@ void func_080D8374(void);
 u16 func_080D8B84(void** a, void** b, void** c);
 void* func_080D8EB4(void* a, u16 b, u8 c, u16 d, s32 e);
 u8 func_080D8F04(void* a);
-void func_0800FD68(s32 a);
-void func_0801BDDC(s32 a, s32 b, s32 c, s32 d);
+
 void func_080D9A14(void);
 void func_080D7568(u8 a);
 void func_080D78B8(StatusBarWork* work);
@@ -380,8 +381,6 @@ typedef struct BoogiePalette {
 
 extern s16 gSineTable[];
 extern TaskDesc gTaskDescBosBoogieDice;
-void func_08014AAC(s32 x, s32 y);
-void func_0801536C(void);
 void func_08096DC4(TaskPool* pool, BoogieFx* p);
 void func_08083914(void);
 void func_08083900(u8 a);

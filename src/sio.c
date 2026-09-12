@@ -1,3 +1,6 @@
+#include "display.h"
+#include "intr.h"
+#include "sio_api.h"
 #include "sio.h"
 
 extern IntrFunc* gIntrTableSerial;
@@ -33,8 +36,8 @@ void func_08006B80(u16* a, u16* b) {
     }
 }
 
-s32 func_08006BA0(UnkBgAnim* p) {
-    return p->unk_14 * p->unk_16;
+u32 func_08006BA0(UnkBgAnim* p) {
+    return (u32)p->unk_14 * p->unk_16;
 }
 
 UnkBgAnim* func_08006BA8(void) {

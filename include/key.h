@@ -14,4 +14,6 @@ extern u16 gKeysHeld;
 
 extern u16 gKeysPressed;
 
+u16 func_080015F8(u16 a, u16 b);
+
 #endif

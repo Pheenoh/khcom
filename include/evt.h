@@ -1,6 +1,8 @@
 #ifndef GUARD_EVT_H
 #define GUARD_EVT_H
 
+#include "evt_tasks.h"
+
 #include "obj_api.h"
 #include "types.h"
 #include "anim.h"
@@ -89,13 +91,5 @@ void func_0801CE00(EvtObj* obj, u16 a);
 s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
 void func_0801CE70(EvtObjWork* work);
 
-void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param);
-s32 task_evt_obj_1(EvtObjWork* work);
-void task_evt_obj_2(EvtObjWork* work);
-void task_evt_obj_3(EvtObjWork* work);
-void task_evt_shadow_0(EvtShadowWork* work, EvtObj* obj);
-s32 task_evt_shadow_1(void);
-void task_evt_shadow_2(EvtShadowWork* work);
-void task_evt_shadow_3(EvtShadowWork* work);
 
 #endif /* GUARD_EVT_H */

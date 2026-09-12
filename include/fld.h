@@ -1,6 +1,8 @@
 #ifndef GUARD_FLD_H
 #define GUARD_FLD_H
 
+#include "fld_tasks.h"
+
 #include "m4a_song.h"
 #include <stdlib.h>
 #include "fade.h"
@@ -123,7 +125,6 @@ typedef struct FldShadowWork {
 } FldShadowWork;
 
 void func_0803473C(FldWork* work, s32 index, u16 flags);
-void SetTaskUpdate(u8* p, u32 v);
 void func_080E0298(s32 a, s32 b);
 u8 func_080DFC24(void);
 u8 func_08031D74(FldPos* p);
@@ -171,8 +172,6 @@ u8 func_08033054(FldWork* work, void* task);
 u8 func_08033150(FldWork* work, void* task);
 u8 func_08033334(FldWork* work, void* task);
 u8 func_0803366C(FldWork* work, void* task);
-u8 task_fld_sora_1(FldWork* work, void* task);
-u8 task_fld_riku_1(FldWork* work, void* task);
 u8 func_08034AF0(FldWork* work, void* task);
 u8 func_08034C88(FldWork* work, void* task);
 u8 func_080353DC(FldWork* work, void* task);
@@ -181,15 +180,5 @@ u8 func_080358F0(FldWork* work, void* task);
 u8 func_08035AD4(FldWork* work, void* task);
 u8 func_08035DFC(FldWork* work, void* task);
 u8 func_08034A0C(FldWork* work, void* task);
-void task_fld_sora_0(FldWork* work);
-void task_fld_sora_2(FldWork* work);
-void task_fld_sora_3(FldWork* work);
-void task_fld_riku_0(FldWork* work);
-void task_fld_riku_2(FldWork* work);
-void task_fld_riku_3(FldWork* work);
-void task_fld_shadow_0(FldShadowWork* work, FldActor* obj);
-s32 task_fld_shadow_1(FldShadowWork* work);
-void task_fld_shadow_2(FldShadowWork* work);
-void task_fld_shadow_3(FldShadowWork* work);
 
 #endif /* GUARD_FLD_H */

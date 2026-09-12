@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL2_H
 #define GUARD_BTL2_H
 
+#include "btl2_tasks.h"
+
 #include <stdlib.h>
 #include "fade.h"
 #include "obj_api.h"
@@ -232,8 +234,6 @@ s32 func_080DFF1C(FldPos* p);
 u8 func_080DFCDC(FldPos* p);
 u8 func_080DFBDC(FldPos* p);
 u8 _080DFE1C(FldPos* p);
-void func_08006778(void* a, s32 x, s32 y);
-void func_0800675C(u8 a, s32 b, s32 c);
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 
@@ -351,39 +351,6 @@ extern u8 gUnk_09EE12C8[];
 extern u8 gUnk_09EE1420[];
 extern u8 gUnk_09EE1498[];
 
-void task_btl_shadow_0(BtlShadowWork* work, BtlObj* actor);
-s32 task_btl_shadow_1(void);
-void task_btl_shadow_2(BtlShadowWork* work);
-void task_btl_shadow_3(BtlShadowWork* work);
-void task_btl_hpply_0(BtlHpplyWork* work);
-s32 task_btl_hpply_1(BtlHpplyWork* work);
-void task_btl_hpply_2(BtlHpplyWork* work);
-void task_btl_hpply_3(BtlHpplyWork* work);
-void task_btl_hpenm_0(BtlHpenmWork* work);
-s32 task_btl_hpenm_1(BtlHpenmWork* work);
-void task_btl_hpenm_2(BtlHpenmWork* work);
-void task_btl_pause_0(BtlPauseWork* work);
-s32 task_btl_pause_1(BtlPauseWork* work);
-void task_btl_pause_2(BtlPauseWork* work);
-void task_btl_pause_3(BtlPauseWork* work);
-void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src);
-s32 task_btl_pop_1(BtlPopWork* work);
-void task_btl_pop_2(BtlPopWork* work);
-void task_btl_pop_3(BtlPopWork* work);
-void task_btl_escape_0(BtlEscapeWork* work);
-s32 task_btl_escape_1(BtlEscapeWork* work);
-void task_btl_escape_2(BtlEscapeWork* work);
-void task_btl_escape_3(BtlEscapeWork* work);
-void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src);
-s32 task_btl_prize_1(BtlPrizeWork* work);
-void task_btl_prize_2(BtlPrizeWork* work);
-void task_btl_prize_3(BtlPrizeWork* work);
-void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src);
-s32 task_btl_premire_1(BtlPremireWork* work);
-void task_btl_premire_2(BtlPremireWork* work);
-void task_btl_premire_3(BtlPremireWork* work);
-void task_btl_start_0(BtlStartWork* work);
-s32 task_btl_start_1(BtlStartWork* work);
 void func_08031BC4(FldActor* act);
 u8 func_08031D74(FldPos* p);
 s32 func_08031DF8(FldPos* p);
@@ -392,6 +359,5 @@ u8 func_08031EC4(FldActor* act);
 s32 func_08031F1C(FldWork* work);
 void func_08031F60(FldActor* act);
 void func_08031F98(FldWork* work, s32 a, s32 b);
-void task_btl_hpenm_3(BtlHpenmWork* work);
 
 #endif /* GUARD_BTL2_H */

@@ -1,8 +1,9 @@
+#include "mode.h"
+#include "obj_api.h"
 #include "macros.h"
 #include "battle.h"
 
 void func_080100A0(void);
-void func_08001058(void (*a)(void), void (*b)(void));
 
 UnkStruct_020348C8* gUnk_020348C8;
 

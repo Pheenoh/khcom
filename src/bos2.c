@@ -1,3 +1,5 @@
+#include "display.h"
+#include "pallet.h"
 #include "macros.h"
 #include "bos2.h"
 #include "battle_bounds.h"

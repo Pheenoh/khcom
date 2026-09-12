@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_DEBFLAG_H
 #define GUARD_MODE_DEBFLAG_H
 
+#include "mode_test_api.h"
+
 #include "types.h"
 #include "key.h"
 #include "mode.h"
@@ -15,9 +17,6 @@ extern u8 gWhitePalette[];
 extern const DebugFlag gUnk_08130BE8[];
 extern const DebugFlag gUnk_08130DE0[];
 
-void func_0805FA8C(s32 a, u16 b, u16 c);
-void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
-void func_080605A4(s32 a);
 void func_080E04EC(void);
 
 void mode_debflag_0(s32 arg);

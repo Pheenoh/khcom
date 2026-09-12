@@ -196,29 +196,17 @@ void func_080028A0(ObjTiles* p);
 void func_08002BCC(ObjPaletteNode* p);
 void func_080034D8(u8 a);
 s32 func_08005920(u16 a);
-void func_08005C60(u16 a);
-u16 func_08006390(void);
-void MosaicReset(void);
-void func_0800675C(u8 a, s32 b, s32 c);
-void func_08006B34(u16 a);
 void func_08006B40(u16 a);
-void func_08006B4C(void);
 void VTransFree(void);
 void BgFree(void);
 void SetBgMosaic(s32 bg, u8 on);
 void FadeFree(void);
 u8 GetBgScrollX(u32 a);
 u8 GetBgScrollY(u32 a);
-void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size);
 void func_08003858(ObjTiles* t, u16 slot, u16 size, void* src);
 void* func_08004BD8(BgEntry* e, u16 x, u16 y);
-void func_08006494(u16 a, u16 b);
 void func_080064E8(u16 a, u16 b);
-u8 MosaicIsActive(void);
-void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size);
-s32 Sqrt8(s32 a);
 void func_08003510(u8 a);
-void func_08003A70(ObjTiles* t, void* src);
 void SetBgMosaicSize(u8 a, u8 b);
 s32 Lerp8(s32 a, s32 b, s32 t);
 
@@ -226,10 +214,5 @@ void VTransInit(void);
 void BgInit(void);
 void FadeInit(void);
 void InitDisplayRegs(void);
-
-#ifdef VERSION_EU
-u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h);
-void eu_08005ADC(s32 id);
-#endif
 
 #endif /* GUARD_ENGINE_H */

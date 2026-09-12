@@ -1,6 +1,8 @@
 #ifndef GUARD_SAVE_H
 #define GUARD_SAVE_H
 
+#include "save_api.h"
+
 #include "types.h"
 #include "save_types.h"
 #include "malloc.h"
@@ -114,8 +116,8 @@ void CopyBytes(u8* src, u8* dst, s16 len);
 u8 BytesEqual(u8* a, u8* b, s16 len);
 u16 SaveChecksum(u16* data, int size);
 int SaveVerifyBlock(u8* sram, u8* hdr, u8* buf, s16 size);
-void SaveClearHeader(void);
-int SaveCheckHeaderSlot(s16 slot);
+
+
 
 void MakeSaveHeaderData(SaveHeaderData* data, s16 file);
 void MakeSaveFileLarge(SaveFileLarge* data);
@@ -126,27 +128,27 @@ void ApplySaveSystem(SaveFileLarge* data);
 void ApplySaveFileLarge(SaveFileLarge* data);
 void ApplySaveFileSmall(SaveFileSmall* data);
 
-int SaveLoadHeader(void);
-void SaveWriteHeader(s16 slot);
-void SaveSetHeaderState(u16 slot, u16 state);
-void SaveClearSystem(void);
-int SaveCheckSystemSlot(s16 slot);
-int SaveRepairSystem(void);
-int SaveLoadSystem(void);
+
+
+
+
+
+
+
 void SaveWriteSystem(void);
-void SaveSetSystemState(u16 slot, u16 state);
-void SaveClearFileLarge(u16 file);
-int SaveCheckFileLargeSlot(s16 file, s16 slot);
-int SaveRepairFileLarge(u16 file);
-int SaveLoadFileLarge(u16 file);
-void SaveWriteFileLarge(u16 file);
-void SaveSetFileLargeState(u16 file, u16 slot, u16 state);
-void SaveClearFileSmall(u16 file);
-int SaveCheckFileSmallSlot(s16 file, s16 slot);
-int SaveRepairFileSmall(u16 file);
-int SaveLoadFileSmall(u16 file);
+
+
+
+
+
+
+
+
+
+
+
 void SaveWriteFileSmall(u16 file);
-void SaveSetFileSmallState(u16 file, u16 slot, u16 state);
+
 
 void SetSramFastFunc(void);
 u32 WriteAndVerifySramFast(const u8* src, u8* dest, u32 size);

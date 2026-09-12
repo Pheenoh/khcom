@@ -1,3 +1,4 @@
+#include "fade.h"
 #include "macros.h"
 #include "mode_jiminy.h"
 

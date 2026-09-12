@@ -22,12 +22,6 @@ typedef struct ChkEffWork {
     u16 alphaA;
     u16 alphaB;
 } ChkEffWork;
-void func_080065FC(s32 a, s32 b, s32 c);
-void func_0800675C(u8 a, s32 b, s32 c);
-void func_08006778(void* a, s32 x, s32 y);
-void func_08006954(void);
-u8 func_08006B74(void);
-void func_08006B80(u16* a, u16* b);
 void func_0809D2B0(s32 a, s32 b, s32 c, const char* s);
 void func_0809D458(s32 a, s32 b, s32 c, s32 v);
 

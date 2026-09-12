@@ -382,7 +382,7 @@ void SioKeyStateUpdateB(u16 keys) {
     KeyStateUpdate(gSioKeyStateB, keys);
 }
 
-s32 IsSongPlaying(u16 songNum) {
+u8 IsSongPlaying(u16 songNum) {
     u8 idx = gSongTable[songNum].ms;
     SongHeader* header = gSongTable[songNum].header;
     MusicPlayerInfo* info = gMPlayTable[idx].info;

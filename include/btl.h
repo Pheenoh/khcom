@@ -1,6 +1,12 @@
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
 
+#include "eventselect_api.h"
+
+#include "btl_tasks.h"
+
+#include "player_progression.h"
+
 #include "m4a_song.h"
 #include <string.h>
 #include "fade.h"
@@ -280,58 +286,22 @@ extern u8 gUnk_08F69BA4[];
 
 void func_0801D288(void);
 extern u32 gFrameCounter;
-u8 CanLevelUp(void);
-u8 LevelUp(void);
+
+
 u8 func_080A1B4C(BtlObj* p, void* pool);
 void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);
-s32 task_btl_sora_1(BtlSoraWork* work);
-void func_08015F3C(s32 x, s32 y, s32 z);
-void func_080165DC(s32 x, s32 y, s32 z);
-void func_08016684(s32 x, s32 y, s32 z);
-void func_08017008(s32 x, s32 y, s32 z);
-s32 Sqrt8(s32 a);
-void func_08017138(u16 a);
-void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
-void func_080147A8(s32 a, s32 b, s32 c);
-void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
-void func_08013CB4(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q);
-void func_08076300(void);
-void func_080762B8(void);
-void func_080762C4(void);
-void func_080762D0(void);
-void func_080762DC(void);
-void func_080762E8(void);
-void func_080762F4(void);
 void func_0807E1A0(void);
 void func_0807E1AC(void);
 void func_0807E1B8(void);
 void func_0807E1C4(void);
 void func_0807E1D0(void);
 void func_0807E1DC(void);
-void func_08013A68(s32 a, s32 b, s32 c);
-void func_08012AAC(s32 a, s32 b, s32 c, s32 d);
-void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_08016750(s32 x, s32 y, s32 z, u8 f);
-void func_08014FDC(s32 x, s32 y, u8 f);
 void func_080137C8(s32 x, s32 y, s32 z, u8 f);
-s32 func_08011F68(s32 a, BtlObj* b);
 void func_0807E1E8(void);
 void func_0802F1E8(void);
-void func_08017B74(s32 x, s32 w);
-void func_08017514(s32 x, s32 y, s32 z, s32 w);
-void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f);
-void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w);
-void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w);
-void func_08016038(s32 x, s32 y, s32 z);
 void func_080161F8(s32 x, s32 y, s32 z, u8 f);
-void func_08018F28(s32 x, s32 y, s32 z);
-void func_08018FE4(s32 x, s32 y, s32 z);
-void func_080184C4(s32 x, s32 y, s32 z, u8 f);
-void func_08015DC8(s32 x, s32 y, s32 z);
 extern TaskDesc gTaskDescSmnKing;
-void func_08015D30(s32 x, s32 y, s32 z);
 extern TaskDesc gTaskDescBtlRaid;
 extern TaskDesc gTaskDescSmnBambi;
 extern TaskDesc gTaskDescSmnTink;
@@ -349,10 +319,6 @@ extern TaskDesc gTaskDescFrdAladdin;
 extern TaskDesc gTaskDescFrdBeast;
 s32 func_080ABA80(s32* out);
 s32 func_080ABCA4(s32* out, s32 b);
-void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-void func_0801475C(s32 a, s32 b, s32 c);
-void func_080140C0(s32* a, s32* b, s32* c);
 void func_0802F284(s32 a, s32 b, s32 c);
 
 
@@ -366,17 +332,9 @@ typedef struct BtlMapWork {
 extern const s8 gUnk_0813C7D8[];
 void func_0802F1C8(void);
 void func_0802F1E8(void);
-void func_08017B74(s32 x, s32 w);
-void func_08017514(s32 x, s32 y, s32 z, s32 w);
-void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f);
-void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w);
-void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w);
 void func_0802F208(void);
 s32 func_0802F268(void);
 void func_0802F274(s32 a, s32 b);
 void func_0802F284(s32 a, s32 b, s32 c);
-void task_btl_map_0(BtlMapWork* work);
-s32 task_btl_map_1(BtlMapWork* work);
 
 #endif /* GUARD_BTL_H */

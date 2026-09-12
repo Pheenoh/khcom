@@ -10,7 +10,6 @@
 struct Task;
 
 void func_08000F30(TaskPool* a);
-void SetTaskUpdate(u8* p, u32 v);
 s32 func_08000F90(void);
 
 void InitSystem(void);

@@ -1,6 +1,8 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include "save_api.h"
+
 #include <string.h>
 #include <stdlib.h>
 #include "text.h"
@@ -177,8 +179,8 @@ typedef struct AllmapPushaWork {
     s16 unk_2E;
 } AllmapPushaWork;
 
-void SaveClearSystem(void);
-int SaveLoadSystem(void);
+
+
 void func_0801CCB4(void);
 void func_0801CD20(void);
 void func_080AEB94(void);
@@ -225,7 +227,6 @@ u8 func_080E8D00(void);
 void* func_080E8D1C(u8 a);
 void func_08098014(AllmapDoorEntry* a, void* b);
 void func_08098598(s32 a, s32 b, AllmapDoorEntry* c);
-void func_0800388C(void* t, u16 slot, void* src, u16 size);
 
 extern s16 gSineTable[];
 extern s16 gUnk_02034EC2;

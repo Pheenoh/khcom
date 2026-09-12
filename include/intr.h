@@ -12,7 +12,6 @@ void DisableHBlankIntr(void);
 void SetVBlankCallback(IntrFunc fn);
 void ResetVBlankCallback(void);
 void SetHBlankCallback(IntrFunc fn);
-void ResetHBlankCallback(void);
 void SetVCountCallback(IntrFunc fn);
 void ResetVCountCallback(void);
 void SetSerialCallback(IntrFunc fn);
@@ -20,5 +19,7 @@ void ResetSerialCallback(void);
 void SetTimer3Callback(IntrFunc fn);
 void ResetTimer3Callback(void);
 void ApplyIntrCallbacks(void);
+
+void ResetHBlankCallback(void);
 
 #endif

@@ -1,6 +1,12 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include "eventselect_api.h"
+
+#include "save_api.h"
+
+#include "player_progression.h"
+
 #include "card_deck.h"
 
 #include "display.h"
@@ -337,63 +343,26 @@ extern BgFx* gUnk_02034928;
 
 void func_0800ABD8(void);
 void* func_08012218(u32 type);
-void func_0801C830(BtlObj* p);
-u16 func_080015F8(u16 a, u16 b);
-void func_080763F0(void);
-void func_08076318(void);
-void func_08076324(void);
-void func_08076330(void);
-void func_0807633C(void);
-void func_08076348(void);
-void func_08076394(void);
-u8 func_080763D0(void);
 u8 func_0807B3E0(void);
 u8 func_0807B3C8(void);
-u8 func_0807643C(void);
 void func_08019350(void);
 void func_080197AC(void);
 void func_0801B024(BtlObj* p);
-u8 CanAllocObjPalette(s32 a);
-u8 func_0801BDDC(s32 id, s32 x, s32 y, s32 z);
 u16 func_08093B38(void);
 void func_0809B6D0(void* p, s16 x, s16 y, s16 z, u16 n);
 void func_08096DB0(void* p, UnkStruct_0801B8A8* v);
-void func_08006778(void* a, s32 x, s32 y);
 void func_08012674(void);
-void func_08006B80(u16* a, u16* b);
-u32 func_08006BA0(u8* p);
-u8* func_08006BA8(void);
 void func_08012908(void);
 void func_0801007C(void);
-void func_08076318(void);
-void func_08076324(void);
-void func_08076330(void);
-void func_0807633C(void);
-void func_08076348(void);
-void func_08076394(void);
-u8 func_080763D0(void);
-void func_080763F0(void);
-u8 func_0807643C(void);
 u8 func_0807B3C8(void);
 u8 func_0807B3E0(void);
-u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c);
 s32 func_08012170(s32 a, s32 b, s32 c, s32 d);
 void func_08013420(void);
-void func_08013EDC(s32 x, s32 y, s32 z, s32 s);
-void func_08013F5C(s32 x, s32 y, s32 s, u16 b, u16 c);
-void func_08016038(s32 x, s32 y, s32 z);
-void func_080147D8(s32 x, s32 y);
 void func_08014850(void);
-void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_080150D8(s32 x, s32 y, s32 z, u8 f);
-void func_08015228(s32 x, s32 y, s32 z, s32 s);
-void func_08014EC0(s32 x, s32 y, s32 z, s32 w);
 void func_08016A64(void);
-void BtlWorkInit(void);
 void func_08014E38(void);
 void func_08014F4C(void);
 void func_08017EF4(void);
-void func_0801536C(void);
 BtlObj* func_08016320(void);
 void func_080192E0(void);
 void func_08013D60(void);
@@ -411,50 +380,28 @@ void func_080185D0(void);
 void func_0801884C(void);
 void func_0801235C(ListPool* a, ListPool* b);
 s64 __ashldi3(s64 v, s32 n);
-void func_080065FC(s32 a, s32 b, s32 c);
-void func_080066F4(s16 x, s16 y);
 u8 func_080ABED0(void);
-void func_08006954(void);
 void func_080C6FF8(void);
 void func_080DDEA4(void);
 void func_080DFB2C(void);
 void func_08109620(void);
-u8 func_08006B74(void);
 
 void func_0800EEBC(Actor* p, SprObj* s);
-void func_0800EFE8(Actor* work);
 void func_0800F230(void);
-u8 func_0800F3BC(Collider* c, s32 x, s32 y, s32 spd);
 u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r);
-u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r);
-s32 _0800F84C(Actor* work);
 void func_0800F988(UnkStruct_02039CA8* p);
-void func_080140C0(s32* a, s32* b, s32* c);
-void func_0801475C(s32 a, s32 b, s32 c);
-void func_080147A8(s32 a, s32 b, s32 c);
-void func_080147B8(u8 a);
-void func_0801C274(s32 a, s32 b, s32 c);
 void func_0801CA88(void);
-void func_0801CB00(void);
-void func_0801CB44(void);
-u8 CanLevelUp(void);
+
 const UnkStruct_08133E5C* func_0800FB14(u16 i);
 s32 func_08011398(BtlObj* a, s32 b);
-s32 func_08011F68(s32 a, s32 b);
-void func_08012810(void);
-void func_08014790(u8 bit);
-void func_080147C8(s32 a, s32 b);
-void func_0800FDD0(u32 a);
+
 u8 func_0807E29C(void);
 u8 func_08081870(void);
 s32 func_0807E2BC(void);
 u8 func_0807E33C(void);
 u8 func_08081848(void);
 void func_08096DC4(void* pool, void* arg);
-void func_0801C104(void);
-void func_08076360(void);
 void func_080838E8(void);
-void func_08076374(void);
 void func_080838EC(void);
 extern TaskDesc gTaskDescBtlVslockon;
 extern TaskDesc gTaskDescBtlHpoth;
@@ -477,7 +424,7 @@ void eu_08013190(void);
 #endif
 extern Mode gModeChkbtl;
 void func_0806180C(u16 a);
-void SaveWriteHeader(s16 slot);
+
 void func_080DF380(void);
 void func_080E04EC(void);
 extern AnimHeader* gUnk_09EDF514[];
@@ -513,84 +460,44 @@ extern u8 gUnk_088BAC36[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08F683A4[];
 extern vu16 gSystemFlags;
-u8 IsModeStarted(void);
-void func_08001080(void);
-void func_08002F50(void);
 void func_0809B644(void* p, s16 x, s16 y, s16 z, u8 n);
-void func_0800F368(Actor* p, u16 n);
-u8 func_0800F4C8(BtlObj* p, u16 b);
-u8 func_0800FC90(u32 a);
-u8 func_0800FCD8(u32 a);
-u8 func_0800FD20(u32 a);
+
+
+
 u8 func_0801AD68(BtlObj* p);
 void func_08010C70(void);
 void func_08011364(BtlObj* a, BtlObj* b, const UnkStruct_0813400C* c);
 void func_0800F9A0(void);
-void func_0800FB2C(u32 a);
-u8 func_0800FF00(u32 a);
-void func_0800FFE0(u32 a);
-void func_080121D4(FldObj* p);
-void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
+
+
+
 void func_080135EC(s32 x, s32 y, s32 z);
 void func_08013560(s32 x, s32 y, s32 z);
 void func_0801350C(void);
 void func_08013070(void);
 void func_080146A8(s32 x, s32 y, s32 z);
 void func_08014654(void);
-void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a);
-void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a);
 void func_080167F8(void);
 void func_08012C08(void);
-void func_08017B74(s32 x, s32 w);
 void func_08017E18(s32 x, u8 f, s32 w);
 void func_08017AC0(void);
 void func_08017C54(void);
-void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_080155BC(s32 x, s32 y, s32 z, s32 w);
 void func_08016D00(void);
-void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w);
-void func_08014588(s32 x, s32 y, s32 z, s32 w, u16 a, u16 b);
 void func_0801440C(void);
-void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f);
-void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t);
 void func_080175BC(BtlObj* p, BtlObj* o, u8 a, u8 b);
 void func_080177EC(void);
 void func_080153C8(void);
-void func_080169A0(s32 x, s32 y, s32 z, u8 f);
-void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a);
-void func_08018F28(s32 x, s32 y, s32 z);
-void func_08018184(s32 x, s32 y, s32 z, s32 w);
 void func_08018CC4(void);
 void func_080180C8(void);
 void func_08018240(void);
-void func_08015F3C(s32 x, s32 y, s32 z);
-void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
 void func_08015E3C(void);
 void func_080160C0(void);
 void func_08015698(void);
 void func_080158E8(void);
-void func_08014FDC(s32 x, s32 y, u8 f);
-void func_08013CB4(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q);
 void func_08013B00(void);
-void func_08017514(s32 x, s32 y, s32 z, s32 w);
-void func_08016750(s32 x, s32 y, s32 z, u8 f);
-void func_080165DC(s32 x, s32 y, s32 z);
 void func_08017410(void);
 void func_08016468(void);
-void func_080172F8(s32 x, s32 y, s32 z, s32 s);
-void func_08015D30(s32 x, s32 y, s32 z);
-void func_080141FC(BtlObj* p);
-void func_08013A68(s32 x, s32 y, s32 z);
-void func_08018A70(s32 x, s32 y, s32 z, s32 s);
-void func_080189DC(s32 x, s32 y, s32 z, s32 s);
-void func_0801853C(s32 x, s32 y, s32 z, s32 s);
-void func_08017008(s32 x, s32 y, s32 z);
-void func_08013DB8(s32 x, s32 y, s32 z, s32 s);
-void func_08013E4C(s32 x, s32 y, s32 z, s32 s);
-void func_08018C38(s32 x, s32 y, s32 z);
 void func_08018B78(void);
-void func_08017390(s32 x, s32 y, s32 z);
-void func_08013480(s32 x, s32 y, s32 z);
 void func_080138BC(s32 x, s32 y, s32 z);
 void func_0801392C(s32 x, s32 y, s32 z);
 void func_08013854(s32 x, s32 y, s32 z);
@@ -600,26 +507,14 @@ void func_0801709C(void);
 void func_0801718C(void);
 u8 func_0801B818(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n, s16* cnt);
 void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n);
-void func_080184C4(s32 x, s32 y, s32 z, u8 f);
-void func_08015DC8(s32 x, s32 y, s32 z);
-void func_08016684(s32 x, s32 y, s32 z);
-void func_08017138(u16 a);
-void func_08018970(s32 x, s32 y, s32 z);
-void func_08018FE4(s32 x, s32 y, s32 z);
-void func_080171FC(u16 a);
-u8 LevelUp(void);
+
 s32 func_0800FA58(void);
 s32 func_0800FA7C(void);
 s32 func_0800FAA0(void);
 s32 func_0800FAC4(void);
 void AddExp(u16 a);
 void func_08015D04(void);
-u8 func_0801BCA8(s32 a);
-void func_0801C1A0(u8 a);
-void func_08014B30(s32 x, s32 y);
-void func_08018B04(s32 x, s32 y, s32 z, s32 s);
 s32 func_08012188(BtlObj* p, s16 h, s32 c);
-void func_08012798(u16 a, u16 bg);
 s32 func_080ABA80(s32* out);
 void func_0807E1F4(void);
 void func_0807E200(void);
@@ -631,36 +526,21 @@ u8 func_0807B3F8(void);
 u8 func_0807E34C(void);
 u8 func_08081838(void);
 u8 func_0801CA48(BtlObj* p);
-void func_0800FD68(u32 a);
+
 void func_08012728(s16 a);
-void func_08013994(s32 x, s32 y, s32 z);
 void func_080139FC(s32 x, s32 y, s32 z);
-void func_080140E0(s32 x, s32 y, s32 z);
 void func_08013748(s32 x, s32 y, s32 z, u8 f);
-void func_08014020(s32 x, s32 y, s32 z);
-void func_08017260(s32 x, s32 y, s32 z, s32 s);
-void func_0801801C(s32 x, s32 y, s32 z, s32 w);
-void func_08017F70(s32 x, s32 y, s32 z, s32 w);
-void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w);
-void func_0801416C(s32 x, s32 y, s32 z);
 void func_080141D4(void);
-void func_080149BC(s32 x, s32 y);
-void func_08014A34(s32 x, s32 y);
-void func_08014AAC(s32 x, s32 y);
 void func_08019C5C(void);
-void func_0801C7FC(HitData* a, u16 b, s32 c);
-u8 func_0800FBCC(u32 a);
-void func_0800FC14(s32 a);
-void func_080121FC(FldObj* p);
+
+
 void func_08012214(void);
 void func_08012330(ListPool* pool);
 u8 func_080126E4(u8 a);
-void func_0801CB0C(void);
 void func_0801CB18(void);
-u8 func_0800FC5C(s32 a);
+
 u8 func_08012648(Collider* p);
 s32 func_0801A978(BtlObj* p);
-void func_0801BCC0(s32 a, s32 b, s32 c);
 u8 func_08085BAC(void);
 u8 func_080856DC(void);
 u16 func_08085B38(u8 index);

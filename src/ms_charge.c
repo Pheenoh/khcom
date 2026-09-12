@@ -1,3 +1,4 @@
+#include "display.h"
 #include "text.h"
 #include "macros.h"
 #include "ms_charge.h"

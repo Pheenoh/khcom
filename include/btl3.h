@@ -1,6 +1,10 @@
 #ifndef GUARD_BTL3_H
 #define GUARD_BTL3_H
 
+#include "btl3_tasks.h"
+
+#include "display.h"
+#include "util.h"
 #include "m4a_song.h"
 #include "obj_api.h"
 #include "btl_effect.h"
@@ -150,34 +154,11 @@ extern u8 gUnk_096FAC64[];
 extern u8 gUnk_09EDF124[];
 extern u8 gUnk_09EDF154[];
 
-u8 CanAllocObjPalette(s32 a);
-void func_08006B4C(void);
-u8 IsSongPlaying(u16 song);
-u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-void func_08013EDC(s32 a, s32 b, s32 c, s32 d);
-void func_08014EC0(s32 a, s32 b, s32 c, s32 d);
-void func_080155BC(s32 a, s32 b, s32 c, s32 d);
-void func_08017260(s32 a, s32 b, s32 c, s32 d);
-void func_080172F8(s32 a, s32 b, s32 c, s32 d);
-void func_0801BDDC(void* a, s32 b, s32 c, s32 d);
 void func_0802F284(s32 a, s32 b, s32 c);
 u16 func_0803FDC8(BtlFormEntry* entry);
 
-void task_btl_form_0(BtlFormWork* work, BtlFormList* list);
-u8 task_btl_form_1(BtlFormWork* work);
-void task_btl_form_3(void);
-void task_btl_born_0(BtlBornWork* work, BtlBornArgs* args);
-u8 task_btl_born_1(BtlBornWork* work);
 void func_08040150(BtlRaidWork* work, s32* outX, s32* outY, s32* outZ);
-void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args);
 BtlObj* func_08040458(BtlRaidWork* work);
-u8 task_btl_raid_1(BtlRaidWork* work);
-void task_btl_raid_2(BtlRaidWork* work);
-void task_btl_raid_3(BtlRaidWork* work);
-void task_btl_badstatus_0(BtlBadStatusWork* work, BtlObj* obj);
-u8 task_btl_badstatus_1(BtlBadStatusWork* work);
-void task_btl_badstatus_2(BtlBadStatusWork* work);
-void task_btl_badstatus_3(BtlBadStatusWork* work);
 BtlObj* func_08040C8C(BtlAiWork* work);
 BtlObj* func_08040D54(BtlAiWork* work);
 

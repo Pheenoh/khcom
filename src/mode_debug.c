@@ -1,3 +1,5 @@
+#include "m4a_song.h"
+#include "pallet.h"
 #include "display.h"
 #include "macros.h"
 #include "mode_debug.h"

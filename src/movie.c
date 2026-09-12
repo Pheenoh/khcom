@@ -1,3 +1,4 @@
+#include "snd_stream.h"
 #include "macros.h"
 #include "gba/syscall.h"
 #include "movie.h"
@@ -23,10 +24,10 @@ s32 MovieStart(void* a) {
     void* dstA2;
     void* dstB1;
     void* dstB2;
-    s32 lenA1;
-    s32 lenA2;
-    s32 lenB1;
-    s32 lenB2;
+    u32 lenA1;
+    u32 lenA2;
+    u32 lenB1;
+    u32 lenB2;
     s32 i;
     u32 channels;
 
@@ -62,10 +63,10 @@ void MoviePlay(s32 (*a)(s32), s32 b) {
     void* dstA2;
     void* dstB1;
     void* dstB2;
-    s32 lenA1;
-    s32 lenA2;
-    s32 lenB1;
-    s32 lenB2;
+    u32 lenA1;
+    u32 lenA2;
+    u32 lenB1;
+    u32 lenB2;
     u32 channels;
     s32 ok;
     s32 w;

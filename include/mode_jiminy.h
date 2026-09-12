@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
+#include "mode.h"
+
+#include "player_progression.h"
+
 #include <stdlib.h>
 #include "text.h"
 #include "fade.h"
@@ -187,9 +191,7 @@ extern u8 gUnk_09EECAA0[];
 extern u8 gUnk_09EED2BC[];
 extern u8 gUnk_09EED320[];
 
-void SetModeUpdate(void (*fn)(void));
-u16 func_08006390(void);
-u8 func_0800FF00(u16 a);
+
 void func_080658B8(u8 a);
 void func_080E052C(u8 a);
 void func_0805A484(void);
@@ -239,7 +241,7 @@ void* eu_0805E968(void* text);
 s32 eu_0805E9AC(void* text);
 u8 func_080D2DD8(void);
 #endif
-void func_0800FFE0(u16 flag);
+
 s16 func_08064DD4(void* text);
 void mode_jiminy_1(void);
 

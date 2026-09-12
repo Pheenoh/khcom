@@ -1,3 +1,5 @@
+#include "display.h"
+#include "fade.h"
 #include "text.h"
 #include "macros.h"
 #include "bos5.h"

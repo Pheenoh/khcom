@@ -15,6 +15,8 @@
 #include "taskpool.h"
 #include "malloc.h"
 #include "m4a.h"
+#include "enemy_common.h"
+#include "hum_common.h"
 
 typedef struct CharaLinkData {
     u16 unk_00;
@@ -164,23 +166,8 @@ extern TaskDesc gTaskDescBtlMap;
 extern TaskDesc gTaskDescBtlShadow;
 extern TaskDesc gTaskDescBtlBadstatus;
 
-void func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
 void func_08010CC8(void);
 void func_0801071C(void);
-void func_08013A68(s32 a, s32 b, s32 c);
-void func_08014A34(s32 x, s32 y);
-void func_08014AAC(s32 x, s32 y);
-void func_0801536C(void);
-void func_08012798(s32 a, u16 b);
-void func_08012810(void);
-void func_08012824(void);
-void func_0801C068(void);
-void func_0801C104(void);
-void func_0801C830(BtlObj* a);
-void func_08006B4C(void);
-u8 func_08006B74(void);
-void func_08013DB8(s32 a, s32 b, s32 c, s32 d);
-void func_08013E4C(s32 a, s32 b, s32 c, s32 d);
 extern vu32 gFrameCounter;
 extern u16 gBldCnt;
 void func_0802F284(s32 a, s32 b, s32 c);
@@ -201,22 +188,9 @@ void mode_vsbattle_2(void);
 void func_0800C6B0(void);
 void func_0800C6B4(void);
 void func_0800C6B8(void);
-void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj);
-s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g, s16 h, u16 i);
-void func_0800CB4C(EmyWork* work);
 void func_0800CB78(EmyWork* work);
-u8 _0800CBDC(EmyWork* work);
-void func_0800CD40(EmyWork* work);
-void func_0800DF30(EmyWork* work);
-void func_0800E0D0(EmyWork* work);
-void func_0800E168(HumWork* work, HumDef* def);
-void func_0800E314(HumWork* work, HumSub* sub, HumSubDef* def);
 void func_0800E364(HumSub* sub);
-void func_0800E380(HumWork* work);
 void func_0800E3D0(HumWork* work);
-s32 _0800E434(HumWork* work);
-s32 _0800CDF0(EmyWork* work);
 void func_0800E5CC(HumSub* sub);
-s32 func_0800E5F0(HumWork* work);
 
 #endif

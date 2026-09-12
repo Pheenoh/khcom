@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_DUMMY_H
 #define GUARD_MODE_DUMMY_H
 
+#include "mode_test_api.h"
+
 #include "fade.h"
 #include "display.h"
 #include "types.h"
@@ -26,10 +28,6 @@ extern Mode gModeCopyright1;
 extern Mode gModeLang;
 #endif
 
-void SetModeUpdate(void (*fn)(void));
-void func_0805FA8C(s32 a, u16 b, u16 c);
-void func_0805FCB0(s32 a, s32 b, s32 c, const char* s);
-void func_080605A4(s32 a);
 void func_0806180C(u16 a);
 void func_080DF380(void);
 void func_080E04EC(void);

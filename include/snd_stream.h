@@ -17,21 +17,22 @@ typedef struct {
     u32 timerReload;
     u32 channels;
     u32 playing;
-    void (*unk_48)(void);
+    void* (*unk_48)(u32);
     void* (*alloc)(u32);
-    void (*unk_50)(void);
+    void (*unk_50)(void*);
     void (*free)(void*);
 } SoundStream;
 
 extern SoundStream gSndStream;
 
+void SndStreamStop(void);
+
 void SndStreamInit(u32 rate, u32 channels);
 void SndStreamUpdate(void);
 void SndStreamLock(u32 ch, u32 len, void** dst1, u32* len1, void** dst2, u32* len2);
-void SndStreamSetCallbacks(void (*a)(void), void* (*b)(u32), void (*c)(void), void (*d)(void*));
+void SndStreamSetCallbacks(void* (*a)(u32), void* (*b)(u32), void (*c)(void*), void (*d)(void*));
 void SndStreamClose(void);
 void SndStreamStart(void);
-void SndStreamStop(void);
 void SndStreamUnlock(u32 ch);
 
 #endif /* GUARD_SND_STREAM_H */

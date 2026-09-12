@@ -1,6 +1,13 @@
 #ifndef GUARD_MODE_DEBUG_H
 #define GUARD_MODE_DEBUG_H
 
+#include "mode_test_api.h"
+
+#include "pallet.h"
+#include "save_api.h"
+
+#include "player_progression.h"
+
 #include "fade.h"
 #include "obj_api.h"
 #include "display.h"
@@ -11,6 +18,7 @@
 #include "mode.h"
 #include "key.h"
 #include "m4a.h"
+#include "battle_actor.h"
 typedef struct DebugWork {
     s8 unk_00;
     s8 unk_01;
@@ -20,18 +28,12 @@ typedef struct DebugWork {
     AnimState anim;
 } DebugWork;
 
-s16 GetPaletteEffect(void);
-void SetPaletteEffect(s16 a);
-void SaveClearHeader(void);
-void SaveLoadHeader(void);
-void SaveClearSystem(void);
-void SaveClearFileLarge(s32 a);
-void SaveClearFileSmall(s32 a);
-void func_0800FDD0(s32 a);
-void func_0801CB44(void);
-void func_0805FA8C(s32 a, s32 b, s32 c);
-void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
-void func_080605A4(s32 a);
+
+
+
+
+
+
 void func_08085C3C(void);
 void func_08085FB0(void);
 

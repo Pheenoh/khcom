@@ -194,7 +194,6 @@ typedef struct CharaObjParam {
 void func_080C6894(CharaObjParam* param);
 u8 func_080C69B4(void);
 
-void func_0801C7FC(void* a, s32 b, s32 c);
 void func_0802F1E8(void);
 
 s32 func_080F7F70(GaWork* work, s16 i);

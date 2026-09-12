@@ -1,6 +1,13 @@
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
+#include "hum_tasks.h"
+
+#include "pallet.h"
+#include "save_api.h"
+
+#include "player_progression.h"
+
 #include "m4a_song.h"
 #include <string.h>
 #include <stdlib.h>
@@ -22,6 +29,7 @@
 #include "anim.h"
 #include "taskpool.h"
 #include "obj.h"
+#include "hum_common.h"
 typedef struct HumSub {
     void* unk_00;
     void* tiles;
@@ -721,41 +729,12 @@ extern JiminyEntry gUnk_08155554[];
 extern u8 gUnk_02039CB8;
 extern u32 gUnk_02039D8C;
 
-void func_0800E168(HumWork* work, void* def);
-void func_0800E380(HumWork* work);
-void func_0800EFE8(HumWork* work);
-void PushPaletteEffect(s32 a);
-void PopPaletteEffect(void);
-void func_0800E314(HumWork* work, HumSub* sub, void* def);
 void func_08054100(AxcelWork* work, HumSub* sub);
-u8 func_080035CC(s16 a, s16 b, s32 c, s32 d, s32 e, s32 f);
-u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-void func_08014020(s32 x, s32 y, s32 z);
-void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
 void func_08018724(s32 x, s32 y, s32 z, s32 f, s32 w);
-void func_080155BC(s32 a, s32 b, s32 c, s32 d);
-void func_0800380C(void* work, u16 a, void* b, s32 c);
-void func_08013994(s32 a, s32 b, s32 c);
-u16 func_08006390(void);
-u16 _08006338(void);
 void func_08057E90(RikuWork* work, RikuSpawn* p);
 void func_08057E2C(RikuWork* work, RikuSpawn* dst);
-void func_0800F368(void* p, u16 n);
-u8 func_0800F504(void* p, u16 a, u16 b, u16 c);
-s32 _0800E434(void* work);
-s32 func_0800E5F0(HumWork* work);
-u32 _0800F84C(void* work);
-u8 func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
-u8 func_0800F4C8(void* work, s32 n);
-void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
-void func_08018184(s32 a, s32 b, s32 c, s32 d);
-void func_08017F70(s32 a, s32 b, s32 c, s32 d);
-void func_0801475C(s32 a, s32 b, s32 c);
-void func_080169A0(s32 x, s32 y, s32 z, u8 f);
 void func_08016AF4(s32 x, s32 y, s32 z, u8 f, s32 w);
-u8 func_0800F3BC(HumWork* work, s32 x, s32 y, s32 spd);
 u8 func_08081828(void);
-void func_0801801C(s32 a, s32 b, s32 c, s32 d);
 void func_080560AC(HumWork* work, s32 a);
 s32 __modsi3(s32 a, s32 b);
 void func_080E92B8(void* p);
@@ -778,16 +757,13 @@ void func_0805A7D0(void);
 void func_0805A514(s16 a, s16 b, s16 c);
 void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h);
 u8 func_0800FF70(u16 a);
-u8 func_0800FF00(u16 a);
+
 s32 func_0805A574(s32 idx);
-s32 SaveRepairHeader(void);
-s32 SaveRepairFileLarge(u16 file);
-s32 SaveRepairFileSmall(u16 file);
-u32 _0800F84C(void* work);
+
+
+
 void func_0802F284(s32 a, s32 b, s32 c);
 u8 func_08081828(void);
-void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_080171FC(u16 a);
 struct PcCharaWork;
 void func_08049EE4(struct PcCharaWork* work, s32 a, s32 b);
 void func_08049F24(struct PcCharaWork* work, s32 a, s32 b);

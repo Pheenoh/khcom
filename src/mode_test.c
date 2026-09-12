@@ -1,3 +1,5 @@
+#include "mode.h"
+#include "m4a_song.h"
 #include "macros.h"
 #include "mode_test.h"
 #include "gba/keys.h"
@@ -67,7 +69,6 @@ void func_0805F1C0(s32* p, s32 v) {
 }
 
 #ifdef VERSION_EU
-void eu_0800115C(void);
 u8 eu_08060C44(UnkModeTestWork* work) {
     UnkModeTestBody* body;
 
@@ -1688,3 +1689,4 @@ void Event_2(void) {
     EwramFree(gUnk_02039DC8);
     gUnk_02039DC8 = 0;
 }
+#include "mode_test_api.h"

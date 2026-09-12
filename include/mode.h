@@ -19,4 +19,14 @@ void func_080609A0(void);
 
 extern Mode gModeDebug;
 
+u8 IsModeStarted(void);
+void func_08001080(void);
+void SetModeUpdate(void (*fn)(void));
+#ifdef VERSION_EU
+void eu_0800115C(void);
+#endif
+void func_08001058(void (*a)(void), void (*b)(void));
+void func_08001254(void);
+void func_080012A8(void);
+
 #endif

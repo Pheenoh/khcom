@@ -29,9 +29,10 @@ u16 SioKeyGetRepeatA(void);
 u16 SioKeyGetRepeatB(void);
 u16 func_080088FC(u16 a, u16 b);
 u16 func_08008920(u16 a, u16 b);
+void StopSong(u16 songNum);
+
 void SioKeyStateUpdateA(u16 keys);
 void SioKeyStateUpdateB(u16 keys);
-s32 IsSongPlaying(u16 songNum);
-void StopSong(u16 songNum);
+u8 IsSongPlaying(u16 songNum);
 
 #endif

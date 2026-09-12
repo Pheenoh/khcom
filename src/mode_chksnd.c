@@ -1,3 +1,4 @@
+#include "m4a_song.h"
 #include "macros.h"
 #include "mode_chksnd.h"
 
