@@ -2,6 +2,7 @@
 #define GUARD_SMN_H
 
 #include "types.h"
+#include "listpool.h"
 #include "battle_work.h"
 #include "anim.h"
 #include "taskpool.h"
@@ -11,26 +12,13 @@ typedef struct SmnArgs {
     u8 unk_03;
 } SmnArgs;
 
-typedef struct SmnBody {
-    s32 unk_00;
-    s32 x;
-    s32 y;
-    s32 z;
-    s32 unk_10;
-    u8 unk_14[0x20];
-    u64 flags;
-    u8 unk_3C[0x90];
-    u16 unk_CC;
-    u8 unk_CE[0x42];
-} SmnBody;
-
 typedef struct SmnCloudWork {
     void* tiles;
     void* palette;
     AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
-    SmnBody unk_038;
+    BtlObj unk_038;
     s16 unk_148;
     s16 unk_14A;
     s32 unk_14C;
@@ -60,7 +48,7 @@ typedef struct SmnBambiWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    SmnBody unk_038;
+    BtlObj unk_038;
     s16 unk_148;
     s16 unk_14A;
     s16 unk_14C;
@@ -88,7 +76,7 @@ typedef struct SmnTinkWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    SmnBody unk_038;
+    BtlObj unk_038;
     s16 unk_148;
     s16 unk_14A;
     s32 unk_14C;
@@ -125,7 +113,7 @@ typedef struct SmnSimbaWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    SmnBody unk_038;
+    BtlObj unk_038;
     s16 unk_148;
     s16 unk_14A;
     s16 unk_14C;
@@ -143,7 +131,7 @@ typedef struct SmnMushuWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    SmnBody unk_038;
+    BtlObj unk_038;
     s16 unk_148;
     s16 unk_14A;
     s32 unk_14C;
@@ -161,7 +149,7 @@ typedef struct SmnDumboWork {
     AnimState anim;
     TaskPool unk_020;
     u32 unk_034;
-    SmnBody unk_038;
+    BtlObj unk_038;
     s16 unk_148;
     s16 unk_14A;
     s16 unk_14C;
@@ -179,7 +167,7 @@ typedef struct SmnGenieWork {
     AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
-    SmnBody unk_038;
+    BtlObj unk_038;
     u16 unk_148;
     s16 unk_14A;
     s32 unk_14C;
@@ -208,7 +196,7 @@ typedef struct SmnPrizeArgs {
 
 typedef struct SmnFrdWork {
     u8 unk_000[0x20];
-    SmnBody unk_020;
+    BtlObj unk_020;
     u8 unk_130[0x24];
     s32 unk_154;
 } SmnFrdWork;
@@ -219,7 +207,7 @@ typedef struct SmnKingWork {
     AnimState anim;
     TaskPool unk_020;
     s32 unk_034;
-    SmnBody unk_038;
+    BtlObj unk_038;
     s16 unk_148;
     s16 unk_14A;
     u16 unk_14C;
@@ -276,8 +264,6 @@ void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_080147C8(s32 a, s32 b);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-struct BtlObj* ListPoolFirst(void* a);
-struct BtlObj* ListPoolNext(void* a);
 void* LoadObjPalette(void* src, s32 size);
 void* LoadObjTiles(void* src, s32 size);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
@@ -313,7 +299,7 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args);
 void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args);
 void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args);
 u8 task_smn_genie_1(SmnGenieWork* work);
-void task_smn_tinkeff_0(SmnTinkeffWork* work, SmnBody* args);
+void task_smn_tinkeff_0(SmnTinkeffWork* work, BtlObj* args);
 u8 task_smn_tinkeff_1(SmnTinkeffWork* work);
 void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args);
 void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args);
@@ -323,7 +309,7 @@ u8 task_smn_king_1(SmnKingWork* work);
 void func_08041D64(SmnBambiWork* work);
 void func_08044518(SmnGenieWork* work);
 u8 func_0804544C(SmnFrdWork* work);
-void func_08045494(SmnBody* body, u8 a, s16 b, s16 c);
+void func_08045494(BtlObj* body, u8 a, s16 b, s16 c);
 u8 func_08041FCC(SmnBambiWork* work);
 BtlObj* func_08042018(SmnBambiWork* work);
 BtlObj* func_08044450(SmnGenieWork* work);

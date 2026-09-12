@@ -2,6 +2,7 @@
 #define GUARD_BTL_H
 
 #include "types.h"
+#include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
@@ -421,8 +422,6 @@ void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0801475C(s32 a, s32 b, s32 c);
 u32 func_0801A8A4(s32* x, s32* y, s32 a, s32 b);
 void func_08012304(void* a);
-BtlObj* ListPoolFirst(void* node);
-BtlObj* ListPoolNext(void* node);
 void func_080140C0(s32* a, s32* b, s32* c);
 void func_0801AF08(void* p);
 void func_0802F284(s32 a, s32 b, s32 c);

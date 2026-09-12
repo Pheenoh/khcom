@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "listpool.h"
 #include "anim.h"
 #include "obj.h"
 #include "text_types.h"
@@ -215,8 +216,6 @@ u16 func_08096CCC(void);
 u8 func_0807CE68(UnkStruct_02034AAC* p);
 void func_0807C39C(UnkStruct_02034AAC* p);
 void func_0807C33C(UnkStruct_02034AAC* p);
-UnkStruct_0808E890* ListPoolFirst(void* node);
-UnkStruct_0808E890* ListPoolNext(void* node);
 void func_0808DE28(u8 a);
 s32 func_080609AC(u16 a);
 s32 func_0808C8D0(s32 a);
@@ -257,16 +256,12 @@ void func_080A5C60(u8* work, u16 card);
 u8 func_0807C934(UnkStruct_02034AAC* p, void* a);
 u8 func_0807D810(u8* work);
 void func_0807D4B8(UnkStruct_02034AAC* p);
-void func_08000D6C(void* a, void* b, void* c);
-void func_08000D48(void* a, void* b, void* c);
 void func_0807B458(UnkStruct_08080268* w, u16 value);
 void func_0807B45C(UnkStruct_08080268* w);
 void func_0807B478(UnkStruct_02034AAC* w);
 u8 func_0808EC24(UnkStruct_0808DB04* w);
 void func_0808EA0C(UnkStruct_0808DB04* w, u8 mode);
 u8 func_08006314(void);
-void func_08000D20(void* a, void* b, void* c);
-void func_08000D28(void* a, void* b);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08006184(s32 a, s32 b);
 void SetTaskUpdate(u8* p, u32 v);
@@ -417,7 +412,6 @@ u8 func_0809612C(PrizeCardWork* w, void* a);
 u16 func_08096D48(u16 a, s32 b);
 u8 func_080E924C(void);
 void func_0809D1B0(UnkStruct_0809CE88* w);
-MapcardWork* func_08000D90(void* a, void* b);
 void func_0809CAC8(void* work);
 u8 func_0800FCD8(s32 a, s32 b);
 u8 func_0800FC90(s32 a);
@@ -478,7 +472,6 @@ u8 func_0807D7B0(UnkStruct_02034AAC* p);
 void func_0806C2C0(u8 a);
 UnkStruct_080038C8* AllocObjPalette(s32 a);
 void func_08003A70(void* a, void* b);
-MapcardWork* ListPoolPrev(void* node);
 s32 func_08093838(UnkStruct_08093838* w);
 s32 func_080A5150(UnkStruct_080A3F5C* w);
 s32 func_08098BA4(UnkStruct_08098BE8* w);
@@ -19317,7 +19310,6 @@ u8 func_08094404(UnkStruct_08093838* w, void* a) {
     return 1;
 }
 
-MapcardWork* ListPoolLast(void* a);
 
 void func_08094548(UnkStruct_08093838* w) {
     MapcardWork* n;

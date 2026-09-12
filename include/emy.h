@@ -2,6 +2,7 @@
 #define GUARD_EMY_H
 
 #include "types.h"
+#include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
@@ -324,8 +325,6 @@ void func_080141FC(EmyActor* a);
 void func_08019190(EmyActor* a, s32 b);
 void func_08012AAC(s32 a, s32 b, s32 c, s32 d);
 void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
-EmyActor* ListPoolFirst(void* node);
-EmyActor* ListPoolNext(void* node);
 void func_08006B4C(void);
 u8 func_08006B74(void);
 void func_0802F1E8(void);

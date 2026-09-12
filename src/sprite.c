@@ -1,4 +1,5 @@
 #include "gba/syscall.h"
+#include "listpool.h"
 #include "malloc.h"
 #include "sprite.h"
 
@@ -8,8 +9,6 @@ extern u8 sSpriteHeapName[];
 
 extern u16 gDispCnt;
 
-void ListPoolInit(void* pool);
-void ListPoolAddFree(void* node, void* pool, void* owner);
 void SetObjMosaicSize(u8 a, u8 b);
 
 void EnableObj(void);

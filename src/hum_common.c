@@ -2,21 +2,21 @@
 #include "macros.h"
 
 void func_0800E168(HumWork* work, HumDef* def) {
-    VsActor* actor = &work->unk_040;
+    BtlObj* actor = &work->unk_040;
 
     s32 a = 0x14000;
     s32 b = 0x18100;
     s32 z = 0;
 
     func_0801B37C(actor, &def->unk_0C, a, b, z);
-    actor->unk_CE = 0;
-    actor->unk_D0 = 0;
-    actor->unk_D2 = 0;
-    actor->unk_B2 = 1;
-    actor->flags |= 0x40000000000000;
+    actor->unk_0CE = 0;
+    actor->unk_0D0 = 0;
+    actor->unk_0D2 = 0;
+    actor->unk_0B2 = 1;
+    actor->unk_034 |= 0x40000000000000;
 
-    if (gBtlWork->unk_07C->unk_004 < actor->x) {
-        actor->flags |= 4;
+    if (gBtlWork->unk_07C->unk_004 < actor->unk_004) {
+        actor->unk_034 |= 4;
     }
 
     work->unk_000 = def;
@@ -46,8 +46,8 @@ void func_0800E168(HumWork* work, HumDef* def) {
     work->unk_184 = 0;
     gUnk_02039B9C->unk_07C = actor;
     gBtlWork->unk_0A8 = actor;
-    actor->unk_E4 = gUnk_02039B9C;
-    actor->flags |= 0x24000000000;
+    actor->unk_0E4 = gUnk_02039B9C;
+    actor->unk_034 |= 0x24000000000;
 }
 
 void func_0800E314(HumWork* work, HumSub* sub, HumSubDef* def) {
@@ -59,9 +59,9 @@ void func_0800E314(HumWork* work, HumSub* sub, HumSubDef* def) {
 
     sub->tiles = AllocObjTiles(def->unk_04 * 32, 0);
     sub->unk_0C = sub->palette = LoadObjPalette(def->unk_00, 32);
-    sub->unk_28 = work->unk_040.x;
-    sub->unk_2C = work->unk_040.y;
-    sub->unk_30 = work->unk_040.z;
+    sub->unk_28 = work->unk_040.unk_004;
+    sub->unk_2C = work->unk_040.unk_008;
+    sub->unk_30 = work->unk_040.unk_00C;
     sub->unk_34 = 0;
     AnimInit(&sub->anim, 0, 0);
 }
@@ -88,17 +88,17 @@ void func_0800E380(HumWork* work) {
 }
 
 void func_0800E3D0(HumWork* work) {
-    work->unk_158 = -work->unk_040.unk_AC * 3;
-    work->unk_040.unk_108 = ((gSineTable[work->unk_040.unk_B0] << 1) * work->unk_040.unk_A8) >> 8;
-    work->unk_040.unk_10C = ((-gSineTable[work->unk_040.unk_B0 + 0x40] << 1) * work->unk_040.unk_A8) >> 8;
+    work->unk_158 = -work->unk_040.unk_0AC * 3;
+    work->unk_040.unk_108 = ((gSineTable[work->unk_040.unk_0B0] << 1) * work->unk_040.unk_0A8) >> 8;
+    work->unk_040.unk_10C = ((-gSineTable[work->unk_040.unk_0B0 + 0x40] << 1) * work->unk_040.unk_0A8) >> 8;
 }
 
 s32 _0800E434(HumWork* work) {
-    VsActor* actor = &work->unk_040;
+    BtlObj* actor = &work->unk_040;
     s32 r;
 
-    actor->unk_FC = actor->x;
-    actor->unk_100 = actor->y;
+    actor->unk_0FC = actor->unk_004;
+    actor->unk_100 = actor->unk_008;
     r = func_0801ADAC(actor);
 
     switch (r) {
@@ -113,9 +113,9 @@ s32 _0800E434(HumWork* work) {
         func_08006120(2, 20);
         gBtlWork->unk_072 = 15;
 
-        if (actor->unk_E8 != 1) {
-            actor->unk_E8 = 1;
-            actor->unk_EC = 0x168;
+        if (actor->unk_0E8 != 1) {
+            actor->unk_0E8 = 1;
+            actor->unk_0EC = 0x168;
         }
 
         work->unk_170 = 11;
@@ -172,7 +172,7 @@ void func_0800E5CC(HumSub* sub) {
 s32 func_0800E5F0(HumWork* work);
 
 s32 func_0800E5F0(HumWork* work) {
-    VsActor* actor = &work->unk_040;
+    BtlObj* actor = &work->unk_040;
     s32 x;
 
     func_0801C700(actor, &x, 0, 0);
@@ -195,16 +195,16 @@ s32 func_0800E5F0(HumWork* work) {
             work->unk_170 = 2;
             work->unk_150 = 0;
 
-            if (actor->x < x) {
-                if (actor->flags & 4) {
+            if (actor->unk_004 < x) {
+                if (actor->unk_034 & 4) {
                     if (GetRandom() % 3 == 0) {
-                        actor->flags &= ~4;
+                        actor->unk_034 &= ~4;
                     }
                 }
             } else {
-                if (!(actor->flags & 4)) {
+                if (!(actor->unk_034 & 4)) {
                     if (GetRandom() % 3 == 0) {
-                        actor->flags |= 4;
+                        actor->unk_034 |= 4;
                     }
                 }
             }
@@ -222,8 +222,8 @@ s32 func_0800E5F0(HumWork* work) {
     case 14:
         if (work->unk_150 == 0) {
             AnimReset(&work->anim);
-            func_08012614(&actor->unk_40, 1);
-            actor->flags |= 0x100;
+            func_08012614(&actor->unk_040, 1);
+            actor->unk_034 |= 0x100;
             work->anim.frame = 0;
             work->anim.timer = 0;
             work->unk_158 = 0x400;
@@ -242,7 +242,7 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 15:
         if (work->unk_150 > 44) {
-            if (actor->unk_2C <= 0) {
+            if (actor->unk_02C <= 0) {
                 work->unk_170 = 3;
             } else {
                 work->unk_170 = 16;
@@ -254,13 +254,13 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 16:
         if (work->unk_150 == 0) {
-            func_08012614(&actor->unk_40, 0);
+            func_08012614(&actor->unk_040, 0);
             work->unk_152 = 10;
         }
         func_0800592C(&work->unk_16C, 0x100, work->unk_152--);
 
         if (work->unk_152 <= 0) {
-            actor->flags &= ~0x100;
+            actor->unk_034 &= ~0x100;
             func_0801AF08(actor);
             work->unk_170 = 0;
             work->unk_150 = 0;
@@ -274,13 +274,13 @@ s32 func_0800E5F0(HumWork* work) {
             work->unk_150++;
         }
         if (AnimIsFinished(&work->anim)) {
-            actor->flags &= ~0x80;
-            actor->flags &= ~0x2000;
+            actor->unk_034 &= ~0x80;
+            actor->unk_034 &= ~0x2000;
         }
         if (GetRandom() % 3 == 0) {
-            actor->unk_EC -= 6;
+            actor->unk_0EC -= 6;
         }
-        if (actor->unk_E8 != 1) {
+        if (actor->unk_0E8 != 1) {
             func_0801AF08(actor);
             work->unk_170 = 0;
             work->unk_150 = 0;
@@ -306,9 +306,9 @@ s32 func_0800E5F0(HumWork* work) {
 
         if (work->unk_150 == 40) {
             func_08019190(actor, 10);
-            actor->unk_2C -= actor->unk_20;
-            if (actor->unk_2C > actor->unk_2E) {
-                actor->unk_2C = actor->unk_2E;
+            actor->unk_02C -= actor->unk_020;
+            if (actor->unk_02C > actor->unk_02E) {
+                actor->unk_02C = actor->unk_02E;
             }
             func_0801AF08(actor);
             work->unk_170 = 0;
@@ -319,7 +319,7 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 18:
         if (work->unk_150 == 23) {
-            func_08013A68(actor->x, actor->y, actor->z - ((actor->unk_9C - 48) << 8));
+            func_08013A68(actor->unk_004, actor->unk_008, actor->unk_00C - ((actor->unk_09C - 48) << 8));
         }
         if (work->unk_150 > 23 && func_080128EC() == 0) {
             switch (work->unk_17E) {
@@ -353,7 +353,7 @@ s32 func_0800E5F0(HumWork* work) {
         }
         break;
     case 13:
-        if (actor->unk_E8 != 2) {
+        if (actor->unk_0E8 != 2) {
             work->unk_170 = 0;
             func_0801AF08(actor);
         }
@@ -376,16 +376,16 @@ s32 func_0800E5F0(HumWork* work) {
                 work->unk_170 = 4;
             }
         } else {
-            func_0802F284(actor->x, actor->y, actor->z);
+            func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
             work->unk_150++;
         }
         break;
     case 4:
         if (work->unk_150 == 0) {
-            func_08014A34(actor->x, actor->y + actor->z - ((s16)actor->unk_A2 << 8));
+            func_08014A34(actor->unk_004, actor->unk_008 + actor->unk_00C - ((s16)actor->unk_0A2 << 8));
             func_08006238(0, gBtlWork->unk_0B3, 8);
         }
-        func_0802F284(actor->x, actor->y, actor->z);
+        func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
         work->unk_158 = 0;
 
         if (work->unk_150 > 150) {
@@ -405,8 +405,8 @@ s32 func_0800E5F0(HumWork* work) {
             gBtlWork->unk_068 |= 0x400000;
             func_0801B008();
             func_0801B918(actor);
-            arg.unk_00 = actor->x;
-            arg.unk_04 = actor->y;
+            arg.unk_00 = actor->unk_004;
+            arg.unk_04 = actor->unk_008;
             arg.unk_08 = -0x4600;
             func_08096DC4(&gBtlWork->taskPools[0], &arg);
             return 0;
@@ -416,10 +416,10 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     case 6:
         if (work->unk_150 == 0) {
-            func_08014AAC(actor->x, actor->y + actor->z - ((s16)actor->unk_A2 << 8));
+            func_08014AAC(actor->unk_004, actor->unk_008 + actor->unk_00C - ((s16)actor->unk_0A2 << 8));
             func_08006238(0, gBtlWork->unk_0B3, 8);
         }
-        func_0802F284(actor->x, actor->y, actor->z);
+        func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
         work->unk_158 = 0;
 
         if (work->unk_150 > 150) {
@@ -431,18 +431,18 @@ s32 func_0800E5F0(HumWork* work) {
         }
         break;
     case 7:
-        func_0802F284(actor->x, actor->y, actor->z);
+        func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
 
         if (func_080128EC() == 0) {
             PrizeCardArg arg2;
 
             func_0801B008();
 #ifdef VERSION_EU
-            func_0801A8A4(&actor->x, &actor->y, work->unk_174 - 8, -16);
+            func_0801A8A4(&actor->unk_004, &actor->unk_008, work->unk_174 - 8, -16);
 #endif
             func_0801B918(actor);
-            arg2.unk_00 = actor->x;
-            arg2.unk_04 = actor->y;
+            arg2.unk_00 = actor->unk_004;
+            arg2.unk_04 = actor->unk_008;
             arg2.unk_08 = -0x4600;
             func_08096DC4(&gBtlWork->taskPools[0], &arg2);
             return 0;
@@ -469,28 +469,28 @@ s32 func_0800E5F0(HumWork* work) {
         break;
     }
 
-    if (actor->unk_E8 != 2) {
-        actor->z += work->unk_158;
+    if (actor->unk_0E8 != 2) {
+        actor->unk_00C += work->unk_158;
         work->unk_158 += gBtlWork->unk_12C;
 
-        if (actor->z > 0) {
-            actor->z = 0;
+        if (actor->unk_00C > 0) {
+            actor->unk_00C = 0;
             work->unk_158 = 0;
         }
-        if (actor->unk_6C != 0 && !(work->unk_154 & 4) && !(actor->unk_90->unk_30 & 2)) {
-            actor->x += actor->unk_78 >> 1;
-            actor->y += actor->unk_7C >> 1;
+        if (actor->unk_040.unk_2C != 0 && !(work->unk_154 & 4) && !(actor->unk_040.unk_50->unk_30 & 2)) {
+            actor->unk_004 += actor->unk_040.unk_38 >> 1;
+            actor->unk_008 += actor->unk_040.unk_3C >> 1;
         }
     }
 
     if (actor->unk_108 > 0) {
-        actor->x += actor->unk_108;
+        actor->unk_004 += actor->unk_108;
         actor->unk_108 -= 17;
         if (actor->unk_108 < 0) {
             actor->unk_108 = 0;
         }
     } else if (actor->unk_108 < 0) {
-        actor->x += actor->unk_108;
+        actor->unk_004 += actor->unk_108;
         actor->unk_108 += 17;
         if (actor->unk_108 > 0) {
             actor->unk_108 = 0;
@@ -498,13 +498,13 @@ s32 func_0800E5F0(HumWork* work) {
     }
 
     if (actor->unk_10C > 0) {
-        actor->y += actor->unk_10C;
+        actor->unk_008 += actor->unk_10C;
         actor->unk_10C -= 17;
         if (actor->unk_10C < 0) {
             actor->unk_10C = 0;
         }
     } else if (actor->unk_10C < 0) {
-        actor->y += actor->unk_10C;
+        actor->unk_008 += actor->unk_10C;
         actor->unk_10C += 17;
         if (actor->unk_10C > 0) {
             actor->unk_10C = 0;
@@ -512,7 +512,7 @@ s32 func_0800E5F0(HumWork* work) {
     }
 
     if (!(work->unk_154 & 8)) {
-        switch (func_0801A8A4(&actor->x, &actor->y, work->unk_174, 0)) {
+        switch (func_0801A8A4(&actor->unk_004, &actor->unk_008, work->unk_174, 0)) {
         case 1:
         case 2:
             actor->unk_108 = -(actor->unk_108 >> 1);
@@ -529,19 +529,19 @@ s32 func_0800E5F0(HumWork* work) {
         }
     }
 
-    if (actor->unk_E8 != 2) {
+    if (actor->unk_0E8 != 2) {
         work->gfx = AnimUpdate(&work->anim);
         func_0800E5CC(work->unk_00C);
         func_0800E5CC(work->unk_010);
     }
 
-    if (actor->unk_E8 == 5) {
-        actor->x = actor->unk_FC;
-        actor->y = actor->unk_100;
+    if (actor->unk_0E8 == 5) {
+        actor->unk_004 = actor->unk_0FC;
+        actor->unk_008 = actor->unk_100;
     }
 
     TaskPoolUpdate(&work->unk_02C);
-    func_08012324(&actor->unk_40, actor->x, actor->y, actor->z);
+    func_08012324(&actor->unk_040, actor->unk_004, actor->unk_008, actor->unk_00C);
     return 1;
 }
 

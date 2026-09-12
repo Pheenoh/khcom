@@ -13,25 +13,12 @@ typedef struct FrdArgs {
     u8 unk_03;
 } FrdArgs;
 
-typedef struct FrdBody {
-    s32 unk_00;
-    s32 x;
-    s32 y;
-    s32 z;
-    s32 unk_10;
-    u8 unk_14[0x20];
-    u64 flags;
-    u8 unk_3C[0x90];
-    u16 unk_CC;
-    u8 unk_CE[0x42];
-} FrdBody;
-
 typedef struct FrdDonaldWork {
     TaskPool unk_000;
     BtlObj* unk_014;
     void* tiles;
     void* palette;
-    FrdBody unk_020;
+    BtlObj unk_020;
     AnimState anim;
     s32 unk_148;
     u8 unk_14C;
@@ -51,7 +38,7 @@ typedef struct FrdGoofyWork {
     BtlObj* unk_014;
     void* tiles;
     void* palette;
-    FrdBody unk_020;
+    BtlObj unk_020;
     AnimState anim;
     u32 unk_148;
     u8 unk_14C;
@@ -71,7 +58,7 @@ typedef struct FrdArielWork {
     BtlObj* unk_014;
     void* tiles;
     void* palette;
-    FrdBody unk_020;
+    BtlObj unk_020;
     AnimState anim;
     u32 unk_148;
     u8 unk_14C;
@@ -91,7 +78,7 @@ typedef struct FrdJackWork {
     BtlObj* unk_014;
     void* tiles;
     void* palette;
-    FrdBody unk_020;
+    BtlObj unk_020;
     AnimState anim;
     s32 unk_148;
     u8 unk_14C;
@@ -113,7 +100,7 @@ typedef struct FrdPanWork {
     BtlObj* unk_014;
     void* tiles;
     void* palette;
-    FrdBody unk_020;
+    BtlObj unk_020;
     AnimState anim;
     u32 unk_148;
     u8 unk_14C;
@@ -137,7 +124,7 @@ typedef struct FrdAladdinWork {
     BtlObj* unk_014;
     void* tiles;
     void* palette;
-    FrdBody unk_020;
+    BtlObj unk_020;
     AnimState anim;
     u32 unk_148;
     u8 unk_14C;
@@ -155,7 +142,7 @@ typedef struct FrdBeastWork {
     BtlObj* unk_014;
     void* tiles;
     void* palette;
-    FrdBody unk_020;
+    BtlObj unk_020;
     AnimState anim;
     s32 unk_148;
     u8 unk_14C;
@@ -195,7 +182,7 @@ void m4aSongNumStart(u16 n);
 void* LoadObjPalette(void* src, s32 size);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void func_08017260(s32 a, s32 b, s32 c, s32 d);
-void func_08045494(FrdBody* body, u8 a, s16 b, s16 c);
+void func_08045494(BtlObj* body, u8 a, s16 b, s16 c);
 u8 func_0804544C(FrdDonaldWork* work);
 void func_08006B4C(void);
 u8 func_080128EC(void);

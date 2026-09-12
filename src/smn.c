@@ -3,7 +3,7 @@
 #include "macros.h"
 
 void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
 
     body = &work->unk_038;
@@ -20,15 +20,15 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
         work->tiles = gUnk_02039B9C->unk_110;
     }
 
-    body->x = obj->unk_014;
-    body->y = obj->unk_018;
-    body->z = obj->unk_01C;
-    body->unk_10 = obj->unk_01C;
+    body->unk_004 = obj->unk_014;
+    body->unk_008 = obj->unk_018;
+    body->unk_00C = obj->unk_01C;
+    body->unk_010 = obj->unk_01C;
 
     if (obj->unk_034 & 4) {
-        body->flags = 4;
+        body->unk_034 = 4;
     } else {
-        body->flags = 0;
+        body->unk_034 = 0;
     }
 
     work->unk_162 = args->unk_00;
@@ -52,7 +52,7 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
 }
 
 u8 task_smn_cloud_1(SmnCloudWork* work) {
-    SmnBody* body = &work->unk_038;
+    BtlObj* body = &work->unk_038;
     BtlWork* owner;
     s32 x;
     s32 dz;
@@ -60,13 +60,13 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
     s32 pixelX;
     owner = work->unk_163 != 0 ? gBtlWork : gUnk_02039B9C;
     if (owner->unk_068 & 0x40000000) return 0;
-    if (work->unk_034 == 4) func_0802F284(body->x, body->y, body->z + 0x2000);
-    else func_0802F284(body->x, body->y, body->z);
+    if (work->unk_034 == 4) func_0802F284(body->unk_004, body->unk_008, body->unk_00C + 0x2000);
+    else func_0802F284(body->unk_004, body->unk_008, body->unk_00C);
     switch (work->unk_034) {
     case 0:
         if (work->unk_148 == 0) {
             work->unk_14A = 12;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x235);
         }
         ApproachValue(&work->unk_150, 256, work->unk_14A);
@@ -98,7 +98,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
     case 5:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x239);
         }
         ApproachValue(&work->unk_150, 25, work->unk_14A);
@@ -123,15 +123,15 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             target = func_08040D54(work);
             work->unk_14A = 8;
             if (target != 0) {
-                body->y = target->unk_008;
-                body->z = target->unk_010;
-                body->unk_10 = target->unk_010;
+                body->unk_008 = target->unk_008;
+                body->unk_00C = target->unk_010;
+                body->unk_010 = target->unk_010;
                 if (target->unk_034 & 4) {
-                    body->x = target->unk_004 + 0x2000;
-                    body->flags |= 4;
+                    body->unk_004 = target->unk_004 + 0x2000;
+                    body->unk_034 |= 4;
                 } else {
-                    body->x = target->unk_004 - 0x2000;
-                    body->flags &= ~4ULL;
+                    body->unk_004 = target->unk_004 - 0x2000;
+                    body->unk_034 &= ~4ULL;
                 }
             }
         }
@@ -162,13 +162,13 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     m4aSongNumStart(0xAF);
                     break;
                 case 6:
-                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                    if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20B);
                         func_08006120(2, 20);
-                        if (body->flags & 4) {
-                            func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
+                        if (body->unk_034 & 4) {
+                            func_08019050(6, 0x133, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
-                            func_08019050(6, 0x133, body->x + 0x2000, body->y - 0x1800 + body->z);
+                            func_08019050(6, 0x133, body->unk_004 + 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         }
                     }
                     break;
@@ -183,13 +183,13 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 switch (AnimGetFrame(&work->anim)) {
                 case 0:
                     func_08019A30();
-                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                    if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20C);
                         func_08006120(2, 20);
-                        if (body->flags & 4) {
-                            func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
+                        if (body->unk_034 & 4) {
+                            func_08019050(6, 0x133, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
-                            func_08019050(6, 0x133, body->x + 0x2000, body->y - 0x1800 + body->z);
+                            func_08019050(6, 0x133, body->unk_004 + 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         }
                     }
                     break;
@@ -201,13 +201,13 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     break;
                 case 5:
                     func_08019A30();
-                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                    if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20D);
                         func_08006120(2, 50);
-                        if (body->flags & 4) {
-                            func_08019050(6, 512, body->x - 0x2000, body->y - 0x1800 + body->z);
+                        if (body->unk_034 & 4) {
+                            func_08019050(6, 512, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
-                            func_08019050(6, 512, body->x + 0x2000, body->y - 0x1800 + body->z);
+                            func_08019050(6, 512, body->unk_004 + 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         }
                     }
                     break;
@@ -237,13 +237,13 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     m4aSongNumStart(0xAF);
                     break;
                 case 6:
-                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                    if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20B);
                         func_08006120(2, 20);
-                        if (body->flags & 4) {
-                            func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
+                        if (body->unk_034 & 4) {
+                            func_08019050(6, 0x133, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
-                            func_08019050(6, 0x133, body->x + 0x2000, body->y - 0x1800 + body->z);
+                            func_08019050(6, 0x133, body->unk_004 + 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         }
                     }
                     break;
@@ -258,13 +258,13 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 switch (AnimGetFrame(&work->anim)) {
                 case 0:
                     func_08019A30();
-                    if (body->flags & 4 ? func_08011F78(151, body->x - 0x2800, body->y, body->z, 24, 24, 48) : func_08011F78(151, body->x + 0x2800, body->y, body->z, 24, 24, 48)) {
+                    if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20C);
                         func_08006120(2, 20);
-                        if (body->flags & 4) {
-                            func_08019050(6, 0x133, body->x - 0x2000, body->y - 0x1800 + body->z);
+                        if (body->unk_034 & 4) {
+                            func_08019050(6, 0x133, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
-                            func_08019050(6, 0x133, body->x + 0x2000, body->y - 0x1800 + body->z);
+                            func_08019050(6, 0x133, body->unk_004 + 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         }
                     }
                     break;
@@ -281,17 +281,17 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             func_08019068(gUnk_0813E958, &work->anim, 2, 1, work->tiles);
             work->unk_14C = 0;
         }
-        if (body->flags & 4) pixelX = gBtlWork->unk_0DA + 50;
+        if (body->unk_034 & 4) pixelX = gBtlWork->unk_0DA + 50;
         else pixelX = gBtlWork->unk_0DC - 50;
         x = pixelX * 256;
         targetZ = -0xC800;
-        body->x += (x - body->x) >> 4;
-        dz = (targetZ - body->z) >> 3;
+        body->unk_004 += (x - body->unk_004) >> 4;
+        dz = (targetZ - body->unk_00C) >> 3;
         if (dz > work->unk_14C) dz = work->unk_14C;
         if (dz < -work->unk_14C) dz = -work->unk_14C;
-        body->z += dz;
+        body->unk_00C += dz;
         work->unk_14C += 128;
-        if ((body->z - targetZ >= 0 ? body->z - targetZ : targetZ - body->z) < 0x1000) {
+        if ((body->unk_00C - targetZ >= 0 ? body->unk_00C - targetZ : targetZ - body->unk_00C) < 0x1000) {
             work->unk_034 = 4;
             work->unk_148 = 0;
         } else work->unk_148++;
@@ -325,17 +325,17 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 func_08019068(gUnk_0813E958, &work->anim, 5, 0, work->tiles);
                 break;
             }
-            if (body->x < work->unk_170) body->flags &= ~4ULL;
-            else body->flags |= 4;
+            if (body->unk_004 < work->unk_170) body->unk_034 &= ~4ULL;
+            else body->unk_034 |= 4;
         }
-        body->x += (work->unk_170 - body->x) >> 3;
-        body->y += (work->unk_174 - body->y) >> 3;
-        body->z += (work->unk_178 - body->z) >> 3;
+        body->unk_004 += (work->unk_170 - body->unk_004) >> 3;
+        body->unk_008 += (work->unk_174 - body->unk_008) >> 3;
+        body->unk_00C += (work->unk_178 - body->unk_00C) >> 3;
         if (work->anim.timer == 0) {
             switch ((s16)work->unk_17C) {
             case 0:
                 if (AnimGetFrame(&work->anim) == 4) {
-                    if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
+                    if (body->unk_034 & 4 ? func_08011F78(152, body->unk_004 - 0x1800, body->unk_008, body->unk_00C, 40, 24, 48) : func_08011F78(152, body->unk_004 + 0x1800, body->unk_008, body->unk_00C, 40, 24, 48)) {
                         m4aSongNumStart(0x20B);
                         func_08006120(2, 20);
                     }
@@ -344,7 +344,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             case 1:
                 if (AnimGetFrame(&work->anim) == 3) {
                     func_08019A30();
-                    if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
+                    if (body->unk_034 & 4 ? func_08011F78(152, body->unk_004 - 0x1800, body->unk_008, body->unk_00C, 40, 24, 48) : func_08011F78(152, body->unk_004 + 0x1800, body->unk_008, body->unk_00C, 40, 24, 48)) {
                         m4aSongNumStart(0x20C);
                         func_08006120(2, 20);
                     }
@@ -354,7 +354,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
             default:
                 if (AnimGetFrame(&work->anim) == 3) {
                     func_08019A30();
-                    if (body->flags & 4 ? func_08011F78(152, body->x - 0x1800, body->y, body->z, 40, 24, 48) : func_08011F78(152, body->x + 0x1800, body->y, body->z, 40, 24, 48)) {
+                    if (body->unk_034 & 4 ? func_08011F78(152, body->unk_004 - 0x1800, body->unk_008, body->unk_00C, 40, 24, 48) : func_08011F78(152, body->unk_004 + 0x1800, body->unk_008, body->unk_00C, 40, 24, 48)) {
                         m4aSongNumStart(0x20D);
                         func_08006120(2, 20);
                     }
@@ -370,16 +370,16 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         break;
     }
     }
-    body->unk_10 = 0;
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
-    if (body->z > body->unk_10) body->z = body->unk_10;
+    body->unk_010 = 0;
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
+    if (body->unk_00C > body->unk_010) body->unk_00C = body->unk_010;
     if (work->unk_164 != 0) AnimUpdate(&work->anim);
     TaskPoolUpdate(&work->unk_020);
     return 1;
 }
 
 void task_smn_cloud_2(SmnCloudWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -390,11 +390,11 @@ void task_smn_cloud_2(SmnCloudWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    flags = func_0801AF1C(body->unk_008);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (work->unk_150 == 256 && work->unk_154 == work->unk_150) {
-        if (body->flags & 4) {
+        if (body->unk_034 & 4) {
             sclY = gBtlWork->unk_024;
             sclX = sclY;
         } else if (gBtlWork->unk_024 == work->unk_154) {
@@ -405,7 +405,7 @@ void task_smn_cloud_2(SmnCloudWork* work) {
             sclY = gBtlWork->unk_024;
             sclX = -sclY;
         }
-    } else if (body->flags & 4) {
+    } else if (body->unk_034 & 4) {
         sclX = gBtlWork->unk_024 * work->unk_150 >> 8;
         sclY = gBtlWork->unk_024 * work->unk_154 >> 8;
     } else {
@@ -422,8 +422,8 @@ void task_smn_cloud_2(SmnCloudWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
 }
 
@@ -437,19 +437,19 @@ void task_smn_cloud_3(SmnCloudWork* work) {
 }
 
 void func_08041D64(SmnBambiWork* work) {
-    work->unk_170 = work->unk_038.x + gSineTable[work->unk_158] * 80;
-    work->unk_174 = work->unk_038.y + -gSineTable[work->unk_158 + 0x40] * 40;
+    work->unk_170 = work->unk_038.unk_004 + gSineTable[work->unk_158] * 80;
+    work->unk_174 = work->unk_038.unk_008 + -gSineTable[work->unk_158 + 0x40] * 40;
     work->unk_158 += GetRandom() % 0x21 + 0x20;
 
-    if (work->unk_170 - work->unk_038.x > 0) {
-        work->unk_038.flags |= 4;
+    if (work->unk_170 - work->unk_038.unk_004 > 0) {
+        work->unk_038.unk_034 |= 4;
     } else {
-        work->unk_038.flags &= 0xFFFFFFFFFFFFFFFB;
+        work->unk_038.unk_034 &= 0xFFFFFFFFFFFFFFFB;
     }
 }
 
 void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
 
     body = &work->unk_038;
@@ -466,18 +466,18 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
         work->tiles = gBtlWork->unk_114;
     }
 
-    body->x = (gBtlWork->unk_0DA
+    body->unk_004 = (gBtlWork->unk_0DA
                     + GetRandom() % (gBtlWork->unk_0DC - gBtlWork->unk_0DA + 1)) << 8;
-    body->y = (gBtlWork->unk_0DE
+    body->unk_008 = (gBtlWork->unk_0DE
                     + GetRandom() % (gBtlWork->unk_0E0 - gBtlWork->unk_0DE + 1)) << 8;
-    body->z = obj->unk_01C;
-    body->unk_10 = obj->unk_01C;
+    body->unk_00C = obj->unk_01C;
+    body->unk_010 = obj->unk_01C;
 
     if (obj->unk_034 & 4) {
-        body->flags = 0;
+        body->unk_034 = 0;
         work->unk_158 = 0xC0;
     } else {
-        body->flags = 4;
+        body->unk_034 = 4;
         work->unk_158 = 0x40;
     }
 
@@ -502,16 +502,16 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
 }
 
 u8 func_08041FCC(SmnBambiWork* work) {
-    SmnBody* body;
+    BtlObj* body;
 
     body = &work->unk_038;
-    body->unk_10 = 0;
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
-    body->z += work->unk_15C;
+    body->unk_010 = 0;
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
+    body->unk_00C += work->unk_15C;
     work->unk_15C += 0x33;
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
         work->unk_15C = 0;
         return 1;
     }
@@ -561,7 +561,7 @@ BtlObj* func_08042018(SmnBambiWork* work) {
     return p;
 }
 u8 task_smn_bambi_1(SmnBambiWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     BtlWork* obj;
     SmnPrizeArgs args;
 
@@ -575,12 +575,12 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
     switch (work->unk_034) {
     case 0:
         if (work->unk_163 != 0) {
-            func_0802F284(body->x, body->y, body->z);
+            func_0802F284(body->unk_004, body->unk_008, body->unk_00C);
         }
 
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x235);
         }
 
@@ -603,7 +603,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
     case 3:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x239);
         }
 
@@ -630,8 +630,8 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         if (work->unk_15C > 0) {
             func_08019A30();
 
-            if (func_08011F78(0x76, body->x, body->y, body->z - 0x400, 8, 8, 2) != 0) {
-                func_0801416C(body->x, body->y, body->z);
+            if (func_08011F78(0x76, body->unk_004, body->unk_008, body->unk_00C - 0x400, 8, 8, 2) != 0) {
+                func_0801416C(body->unk_004, body->unk_008, body->unk_00C);
                 AnimStart(&work->anim, 0, 0);
                 work->unk_15C = -0x400;
                 m4aSongNumStart(0x236);
@@ -653,15 +653,15 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
             work->unk_034 = 3;
             work->unk_148 = 0;
         } else {
-            if (body->x < work->unk_168->unk_004) {
-                body->flags |= 4;
+            if (body->unk_004 < work->unk_168->unk_004) {
+                body->unk_034 |= 4;
             } else {
-                body->flags &= 0xFFFFFFFFFFFFFFFB;
+                body->unk_034 &= 0xFFFFFFFFFFFFFFFB;
             }
 
-            body->x += (work->unk_168->unk_004 - body->x) >> 4;
-            body->y += (work->unk_168->unk_008 - body->y) >> 4;
-            func_0801A8A4(&body->x, &body->y, -16, 0);
+            body->unk_004 += (work->unk_168->unk_004 - body->unk_004) >> 4;
+            body->unk_008 += (work->unk_168->unk_008 - body->unk_008) >> 4;
+            func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
             work->unk_148++;
         }
         break;
@@ -673,9 +673,9 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         }
 
         if (work->unk_162 == 2) {
-            func_08011F78(0x75, body->x, body->y, body->z, 8, 8, 8);
+            func_08011F78(0x75, body->unk_004, body->unk_008, body->unk_00C, 8, 8, 8);
         } else {
-            func_08011F78(0x74, body->x, body->y, body->z, 8, 8, 8);
+            func_08011F78(0x74, body->unk_004, body->unk_008, body->unk_00C, 8, 8, 8);
         }
 
         if (work->unk_14C > 4) {
@@ -685,21 +685,21 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
             }
 
             if (work->unk_14A > 0) {
-                func_0800592C(&body->x, work->unk_170, work->unk_14A);
-                func_0800592C(&body->y, work->unk_174, work->unk_14A);
+                func_0800592C(&body->unk_004, work->unk_170, work->unk_14A);
+                func_0800592C(&body->unk_008, work->unk_174, work->unk_14A);
                 work->unk_14A--;
             }
         }
 
         func_08041FCC(work);
-        func_0801A8A4(&body->x, &body->y, -16, 0);
+        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
 
         if (AnimIsFinished(&work->anim)) {
             work->unk_14C = 0;
             work->unk_148++;
-            args.x = body->x;
-            args.y = body->y;
-            args.z = body->z;
+            args.x = body->unk_004;
+            args.y = body->unk_008;
+            args.z = body->unk_00C;
 
             if (work->unk_162 == 0) {
                 args.unk_12 = 1;
@@ -729,7 +729,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
 }
 
 void task_smn_bambi_2(SmnBambiWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -740,9 +740,9 @@ void task_smn_bambi_2(SmnBambiWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256 && work->unk_154 == gBtlWork->unk_024) {
@@ -757,7 +757,7 @@ void task_smn_bambi_2(SmnBambiWork* work) {
     sclX = sclX * work->unk_154 >> 8;
     sclY = sclY * work->unk_154 >> 8;
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (sclX <= 256 && sclY <= 256) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
@@ -766,8 +766,8 @@ void task_smn_bambi_2(SmnBambiWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
 }
 
@@ -781,7 +781,7 @@ void task_smn_bambi_3(SmnBambiWork* work) {
 }
 
 void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
     s32 t;
 
@@ -799,19 +799,19 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
         work->tiles = gBtlWork->unk_114;
     }
 
-    body->x = obj->unk_014;
-    body->y = obj->unk_018;
-    body->z = obj->unk_01C - 0x3000;
+    body->unk_004 = obj->unk_014;
+    body->unk_008 = obj->unk_018;
+    body->unk_00C = obj->unk_01C - 0x3000;
 #ifdef VERSION_EU
-    body->unk_10 = 0;
+    body->unk_010 = 0;
 #else
-    body->unk_10 = obj->unk_01C;
+    body->unk_010 = obj->unk_01C;
 #endif
 
     if (obj->unk_034 & 4) {
-        body->flags = 0x80004;
+        body->unk_034 = 0x80004;
     } else {
-        body->flags = 0x80000;
+        body->unk_034 = 0x80000;
     }
 
     work->unk_152 = args->unk_00;
@@ -872,7 +872,7 @@ void func_080428E8(SmnTinkWork* work) {
     }
 }
 u8 task_smn_tink_1(SmnTinkWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* p;
     s32 x;
     s32 y;
@@ -900,7 +900,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
     case 0:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x235);
         }
 
@@ -920,7 +920,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         if (work->unk_148 == 0) {
             work->unk_14A = 20;
             m4aSongNumStop(0x24F);
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x239);
         }
 
@@ -938,17 +938,17 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
 
         if (work->unk_148 == 0) {
             func_08019068(gUnk_0813EA08, &work->anim, 0, 1, work->tiles);
-            work->unk_160 = body->z;
+            work->unk_160 = body->unk_00C;
             work->unk_14A = 30;
         } else {
-            body->z += (work->unk_160 + gSineTable[work->unk_148 & 0xFF] * 12
-                             - body->z) >> 2;
+            body->unk_00C += (work->unk_160 + gSineTable[work->unk_148 & 0xFF] * 12
+                             - body->unk_00C) >> 2;
         }
 
-        if (work->unk_17C->unk_004 < body->x) {
-            body->flags |= 4;
+        if (work->unk_17C->unk_004 < body->unk_004) {
+            body->unk_034 |= 4;
         } else {
-            body->flags &= 0xFFFFFFFFFFFFFFFB;
+            body->unk_034 &= 0xFFFFFFFFFFFFFFFB;
         }
 
         if (work->unk_14A-- <= 0) {
@@ -970,13 +970,13 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         y = p->unk_008 + gSineTable[(((u16)work->unk_148 * 4) & 0xFF) + 64] * -16;
         z = (p->unk_00C - 0x1E00) + gSineTable[(u16)work->unk_148 * 2 & 0xFF] * 16;
 
-        if (x < body->x) {
-            body->flags |= 4;
+        if (x < body->unk_004) {
+            body->unk_034 |= 4;
         } else {
-            body->flags &= 0xFFFFFFFFFFFFFFFB;
+            body->unk_034 &= 0xFFFFFFFFFFFFFFFB;
         }
 
-        d = (x - body->x) >> 3;
+        d = (x - body->unk_004) >> 3;
 
         if (d > 0x400) {
             d = 0x400;
@@ -984,8 +984,8 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
             d = -0x400;
         }
 
-        body->x += d;
-        d = (y - body->y) >> 3;
+        body->unk_004 += d;
+        d = (y - body->unk_008) >> 3;
 
         if (d > 0x200) {
             d = 0x200;
@@ -993,8 +993,8 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
             d = -0x200;
         }
 
-        body->y += d;
-        body->z += (z - body->z) >> 3;
+        body->unk_008 += d;
+        body->unk_00C += (z - body->unk_00C) >> 3;
         t = work->unk_148 % 60;
 
         if (t == 0) {
@@ -1023,17 +1023,17 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         if (work->unk_148 == 0) {
             func_08019068(gUnk_0813EA08, &work->anim, 2, 0, work->tiles);
 
-            if (body->flags & 4) {
+            if (body->unk_034 & 4) {
                 work->unk_16C = 0xC0;
             } else {
                 work->unk_16C = 0x40;
             }
         }
 
-        body->x += gSineTable[(u8)work->unk_16C] * work->unk_168 >> 8;
-        body->z += -gSineTable[(u8)work->unk_16C + 0x40] * work->unk_168 >> 8;
+        body->unk_004 += gSineTable[(u8)work->unk_16C] * work->unk_168 >> 8;
+        body->unk_00C += -gSineTable[(u8)work->unk_16C + 0x40] * work->unk_168 >> 8;
 
-        if (body->flags & 4) {
+        if (body->unk_034 & 4) {
             work->unk_16C += 7;
         } else {
             work->unk_16C -= 7;
@@ -1049,7 +1049,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         break;
     }
 
-    func_0801A8A4(&body->x, &body->y, -16, 0);
+    func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
 
     if (work->unk_154 != 0) {
         AnimUpdate(&work->anim);
@@ -1061,7 +1061,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
 }
 
 void task_smn_tink_2(SmnTinkWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -1072,9 +1072,9 @@ void task_smn_tink_2(SmnTinkWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256 && work->unk_14C == gBtlWork->unk_024) {
@@ -1089,7 +1089,7 @@ void task_smn_tink_2(SmnTinkWork* work) {
     sclX = sclX * work->unk_14C >> 8;
     sclY = sclY * work->unk_14C >> 8;
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (sclX <= 256 && sclY <= 256) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
@@ -1098,8 +1098,8 @@ void task_smn_tink_2(SmnTinkWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
 }
 
@@ -1117,10 +1117,10 @@ static inline s32 GetTinkEffectOffset(void) {
     return ((u16)(GetRandom() % 9) << 8) - 0x400;
 }
 
-void task_smn_tinkeff_0(SmnTinkeffWork* work, SmnBody* args) {
-    work->x = args->x + GetTinkEffectOffset();
-    work->y = args->y + GetTinkEffectOffset();
-    work->z = args->z;
+void task_smn_tinkeff_0(SmnTinkeffWork* work, BtlObj* args) {
+    work->x = args->unk_004 + GetTinkEffectOffset();
+    work->y = args->unk_008 + GetTinkEffectOffset();
+    work->z = args->unk_00C;
     work->unk_2C = (u16)(GetRandom() % 0xE8) + 0x4C;
     work->tiles = LoadObjTiles(gUnk_088A5D7A, 0x200);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
@@ -1167,7 +1167,7 @@ void task_smn_tinkeff_3(SmnTinkeffWork* work) {
 }
 
 void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
 
     body = &work->unk_038;
@@ -1184,15 +1184,15 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
         work->tiles = gUnk_02039B9C->unk_110;
     }
 
-    body->x = obj->unk_014;
-    body->y = obj->unk_018;
-    body->z = obj->unk_01C;
-    body->unk_10 = obj->unk_01C;
+    body->unk_004 = obj->unk_014;
+    body->unk_008 = obj->unk_018;
+    body->unk_00C = obj->unk_01C;
+    body->unk_010 = obj->unk_01C;
 
     if (obj->unk_034 & 4) {
-        body->flags = 0x20004;
+        body->unk_034 = 0x20004;
     } else {
-        body->flags = 0x20000;
+        body->unk_034 = 0x20000;
     }
 
     work->unk_154 = args->unk_00;
@@ -1210,7 +1210,7 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
 }
 
 u8 task_smn_simba_1(SmnSimbaWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     BtlWork* obj;
 
     body = &work->unk_038;
@@ -1222,13 +1222,13 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
         } while (0);
     }
 
-    func_0802F284(body->x, body->y, body->z);
+    func_0802F284(body->unk_004, body->unk_008, body->unk_00C);
 
     switch (work->unk_034) {
     case 0:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x235);
         }
 
@@ -1246,7 +1246,7 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
     case 2:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x239);
         }
 
@@ -1262,12 +1262,12 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
     case 1:
         switch (work->unk_148) {
         case 0:
-            if (body->flags & 4) {
-                func_08019050(30, 0x133, body->x - 0x1400,
-                              body->y + body->z - 0x1400);
+            if (body->unk_034 & 4) {
+                func_08019050(30, 0x133, body->unk_004 - 0x1400,
+                              body->unk_008 + body->unk_00C - 0x1400);
             } else {
-                func_08019050(30, 0x133, body->x + 0x1400,
-                              body->y + body->z - 0x1400);
+                func_08019050(30, 0x133, body->unk_004 + 0x1400,
+                              body->unk_008 + body->unk_00C - 0x1400);
             }
             break;
         case 50:
@@ -1288,38 +1288,38 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
             func_08006290(5, 8, 20);
             func_08019050(30, 0xCC, 0x10000, 0x15E00);
 
-            if (body->flags & 4) {
-                func_08014FDC(body->x - 0x1400, body->y + body->z - 0x1400, 1);
+            if (body->unk_034 & 4) {
+                func_08014FDC(body->unk_004 - 0x1400, body->unk_008 + body->unk_00C - 0x1400, 1);
             } else {
-                func_08014FDC(body->x + 0x1400, body->y + body->z - 0x1400, 0);
+                func_08014FDC(body->unk_004 + 0x1400, body->unk_008 + body->unk_00C - 0x1400, 0);
             }
 
             switch (work->unk_154) {
             case 0:
-                if (body->flags & 4) {
-                    func_08011F78(0x99, body->x - 0x8000, body->y, body->z,
+                if (body->unk_034 & 4) {
+                    func_08011F78(0x99, body->unk_004 - 0x8000, body->unk_008, body->unk_00C,
                                   0x80, 0x100, 0x100);
                 } else {
-                    func_08011F78(0x99, body->x + 0x8000, body->y, body->z,
+                    func_08011F78(0x99, body->unk_004 + 0x8000, body->unk_008, body->unk_00C,
                                   0x80, 0x100, 0x100);
                 }
                 break;
             case 1:
-                if (body->flags & 4) {
-                    func_08011F78(0x9A, body->x - 0x8000, body->y, body->z,
+                if (body->unk_034 & 4) {
+                    func_08011F78(0x9A, body->unk_004 - 0x8000, body->unk_008, body->unk_00C,
                                   0x80, 0x100, 0x100);
                 } else {
-                    func_08011F78(0x9A, body->x + 0x8000, body->y, body->z,
+                    func_08011F78(0x9A, body->unk_004 + 0x8000, body->unk_008, body->unk_00C,
                                   0x80, 0x100, 0x100);
                 }
                 break;
             case 2:
             default:
-                if (body->flags & 4) {
-                    func_08011F78(0x9B, body->x - 0x8000, body->y, body->z,
+                if (body->unk_034 & 4) {
+                    func_08011F78(0x9B, body->unk_004 - 0x8000, body->unk_008, body->unk_00C,
                                   0x80, 0x100, 0x100);
                 } else {
-                    func_08011F78(0x9B, body->x + 0x8000, body->y, body->z,
+                    func_08011F78(0x9B, body->unk_004 + 0x8000, body->unk_008, body->unk_00C,
                                   0x80, 0x100, 0x100);
                 }
                 break;
@@ -1341,10 +1341,10 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
         AnimUpdate(&work->anim);
     }
 
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
     }
 
     TaskPoolUpdate(&work->unk_020);
@@ -1352,7 +1352,7 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
 }
 
 void task_smn_simba_2(SmnSimbaWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -1363,9 +1363,9 @@ void task_smn_simba_2(SmnSimbaWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256 && work->unk_150 == gBtlWork->unk_024) {
@@ -1380,7 +1380,7 @@ void task_smn_simba_2(SmnSimbaWork* work) {
     sclX = sclX * work->unk_150 >> 8;
     sclY = sclY * work->unk_150 >> 8;
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (sclX <= 256 && sclY <= 256) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
@@ -1389,8 +1389,8 @@ void task_smn_simba_2(SmnSimbaWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
 }
 
@@ -1404,7 +1404,7 @@ void task_smn_simba_3(SmnSimbaWork* work) {
 }
 
 void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
 
     body = &work->unk_038;
@@ -1421,15 +1421,15 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
         work->tiles = gBtlWork->unk_114;
     }
 
-    body->x = obj->unk_004;
-    body->y = obj->unk_008;
-    body->z = obj->unk_00C - 0x2200;
-    body->unk_10 = obj->unk_010;
+    body->unk_004 = obj->unk_004;
+    body->unk_008 = obj->unk_008;
+    body->unk_00C = obj->unk_00C - 0x2200;
+    body->unk_010 = obj->unk_010;
 
     if (obj->unk_034 & 4) {
-        body->flags = 4;
+        body->unk_034 = 4;
     } else {
-        body->flags = 0;
+        body->unk_034 = 0;
     }
 
     work->unk_152 = args->unk_00;
@@ -1454,7 +1454,7 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
 }
 
 u8 task_smn_mushu_1(SmnMushuWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     BtlWork* obj;
     s32 px;
     s32 py;
@@ -1473,24 +1473,24 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         return 0;
     }
 
-    px = body->x;
-    py = body->y;
-    pz = body->z;
-    body->x = work->unk_158->unk_004;
-    body->y = work->unk_158->unk_008;
-    body->z = work->unk_158->unk_00C - 0x2200;
+    px = body->unk_004;
+    py = body->unk_008;
+    pz = body->unk_00C;
+    body->unk_004 = work->unk_158->unk_004;
+    body->unk_008 = work->unk_158->unk_008;
+    body->unk_00C = work->unk_158->unk_00C - 0x2200;
 
     if (work->unk_158->unk_034 & 4) {
-        body->flags |= 4;
+        body->unk_034 |= 4;
     } else {
-        body->flags &= 0xFFFFFFFFFFFFFFFB;
+        body->unk_034 &= 0xFFFFFFFFFFFFFFFB;
     }
 
     switch (work->unk_034) {
     case 0:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x235);
         }
 
@@ -1508,7 +1508,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
     case 1:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x239);
         }
 
@@ -1548,13 +1548,13 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         }
 
         if (AnimGetGfxIndex(&work->anim) == 5 && work->anim.timer == 0) {
-            if (body->flags & 4) {
-                x = body->x - 0xC800;
+            if (body->unk_034 & 4) {
+                x = body->unk_004 - 0xC800;
             } else {
-                x = body->x + 0xC800;
+                x = body->unk_004 + 0xC800;
             }
 
-            y = body->y;
+            y = body->unk_008;
             z = 0;
 
             switch (work->unk_152) {
@@ -1573,11 +1573,11 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
             func_08019A30();
             m4aSongNumStart(0x24D);
 
-            if (body->flags & 4) {
-                func_08012E44(0, body->x - 0x3800, body->y, body->z - 0x800,
+            if (body->unk_034 & 4) {
+                func_08012E44(0, body->unk_004 - 0x3800, body->unk_008, body->unk_00C - 0x800,
                               x, y, z, 1, n);
             } else {
-                func_08012E44(0, body->x + 0x3800, body->y, body->z - 0x800,
+                func_08012E44(0, body->unk_004 + 0x3800, body->unk_008, body->unk_00C - 0x800,
                               x, y, z, 0, n);
             }
         }
@@ -1585,7 +1585,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
         func_08006B80(&v1, &v2);
 
         if (v1 <= 3) {
-            func_0801475C(body->x - px, body->y - py, body->z - pz);
+            func_0801475C(body->unk_004 - px, body->unk_008 - py, body->unk_00C - pz);
         }
 
         if (work->unk_148 > work->unk_14A) {
@@ -1606,7 +1606,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
 }
 
 void task_smn_mushu_2(SmnMushuWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -1617,9 +1617,9 @@ void task_smn_mushu_2(SmnMushuWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256 && work->unk_14C == gBtlWork->unk_024) {
@@ -1634,7 +1634,7 @@ void task_smn_mushu_2(SmnMushuWork* work) {
     sclX = sclX * work->unk_14C >> 8;
     sclY = sclY * work->unk_14C >> 8;
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (sclX <= 256 && sclY <= 256) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
@@ -1643,7 +1643,7 @@ void task_smn_mushu_2(SmnMushuWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4101 - ((body->y >> 8) * 4));
+               -4101 - ((body->unk_008 >> 8) * 4));
     TaskPoolDraw(&work->unk_020);
 }
 
@@ -1657,7 +1657,7 @@ void task_smn_mushu_3(SmnMushuWork* work) {
 }
 
 void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
 
     body = &work->unk_038;
@@ -1674,15 +1674,15 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
         work->tiles = gUnk_02039B9C->unk_110;
     }
 
-    body->x = obj->unk_014;
-    body->y = obj->unk_018;
-    body->z = obj->unk_01C;
-    body->unk_10 = obj->unk_01C;
+    body->unk_004 = obj->unk_014;
+    body->unk_008 = obj->unk_018;
+    body->unk_00C = obj->unk_01C;
+    body->unk_010 = obj->unk_01C;
 
     if (obj->unk_034 & 4) {
-        body->flags = 0x20004;
+        body->unk_034 = 0x20004;
     } else {
-        body->flags = 0x20000;
+        body->unk_034 = 0x20000;
     }
 
     work->unk_154 = args->unk_00;
@@ -1700,7 +1700,7 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
 }
 
 u8 task_smn_dumbo_1(SmnDumboWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     BtlWork* obj;
 
     body = &work->unk_038;
@@ -1710,13 +1710,13 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         return 0;
     }
 
-    func_0802F284(body->x, body->y, body->z);
+    func_0802F284(body->unk_004, body->unk_008, body->unk_00C);
 
     switch (work->unk_034) {
     case 0:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x235);
         }
 
@@ -1734,7 +1734,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
     case 1:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x239);
         }
 
@@ -1763,12 +1763,12 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         if (work->unk_148 == 0) {
             func_08019068(gUnk_0813EADC, &work->anim, 1, 1, work->tiles);
 
-            if (body->flags & 4) {
-                func_08015B50(work->unk_154, body->x - 0x1C00, body->y,
-                              body->z - 0x1B00, 0, 0x9C);
+            if (body->unk_034 & 4) {
+                func_08015B50(work->unk_154, body->unk_004 - 0x1C00, body->unk_008,
+                              body->unk_00C - 0x1B00, 0, 0x9C);
             } else {
-                func_08015B50(work->unk_154, body->x + 0x1C00, body->y,
-                              body->z - 0x1B00, 1, 0x9C);
+                func_08015B50(work->unk_154, body->unk_004 + 0x1C00, body->unk_008,
+                              body->unk_00C - 0x1B00, 1, 0x9C);
             }
 
             m4aSongNumStart(0x24E);
@@ -1799,10 +1799,10 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
         AnimUpdate(&work->anim);
     }
 
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
     }
 
     TaskPoolUpdate(&work->unk_020);
@@ -1810,7 +1810,7 @@ u8 task_smn_dumbo_1(SmnDumboWork* work) {
 }
 
 void task_smn_dumbo_2(SmnDumboWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -1821,9 +1821,9 @@ void task_smn_dumbo_2(SmnDumboWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256 && work->unk_150 == gBtlWork->unk_024) {
@@ -1838,7 +1838,7 @@ void task_smn_dumbo_2(SmnDumboWork* work) {
     sclX = sclX * work->unk_150 >> 8;
     sclY = sclY * work->unk_150 >> 8;
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (sclX <= 256 && sclY <= 256) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
@@ -1847,8 +1847,8 @@ void task_smn_dumbo_2(SmnDumboWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
 }
 
@@ -1863,7 +1863,7 @@ void task_smn_dumbo_3(SmnDumboWork* work) {
 }
 
 void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
 
     body = &work->unk_038;
@@ -1881,16 +1881,16 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
     }
 
     if (obj->unk_034 & 4) {
-        body->flags = 0x20004;
-        body->x = obj->unk_014 + 0x3700;
+        body->unk_034 = 0x20004;
+        body->unk_004 = obj->unk_014 + 0x3700;
     } else {
-        body->flags = 0x20000;
-        body->x = obj->unk_014 - 0x3700;
+        body->unk_034 = 0x20000;
+        body->unk_004 = obj->unk_014 - 0x3700;
     }
 
-    body->y = obj->unk_018;
-    body->z = obj->unk_01C - 0x2800;
-    body->unk_10 = obj->unk_01C;
+    body->unk_008 = obj->unk_018;
+    body->unk_00C = obj->unk_01C - 0x2800;
+    body->unk_010 = obj->unk_01C;
     work->unk_150 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618298, 32);
     AnimInit(&work->anim, 0, 0);
@@ -1964,7 +1964,7 @@ BtlObj* func_08044450(SmnGenieWork* work) {
 }
 
 void func_08044518(SmnGenieWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
     s32 tx;
     s32 ty;
@@ -1979,10 +1979,10 @@ void func_08044518(SmnGenieWork* work) {
         return;
     }
 
-    if (obj->unk_004 < body->x) {
-        body->flags |= 4;
+    if (obj->unk_004 < body->unk_004) {
+        body->unk_034 |= 4;
     } else {
-        body->flags &= 0xFFFFFFFFFFFFFFFB;
+        body->unk_034 &= 0xFFFFFFFFFFFFFFFB;
     }
 
     if (obj->unk_004 > 0x10000) {
@@ -1992,8 +1992,8 @@ void func_08044518(SmnGenieWork* work) {
     }
 
     ty = obj->unk_008;
-    zt = body->unk_10 - 0x200;
-    v = (tx - body->x) >> 3;
+    zt = body->unk_010 - 0x200;
+    v = (tx - body->unk_004) >> 3;
     lim = work->unk_160;
 
     if (v > lim) {
@@ -2006,8 +2006,8 @@ void func_08044518(SmnGenieWork* work) {
         work->unk_160 = abs(v);
     }
 
-    body->x += v;
-    v = (ty - body->y) >> 3;
+    body->unk_004 += v;
+    v = (ty - body->unk_008) >> 3;
     lim = work->unk_164;
 
     if (v > lim) {
@@ -2020,11 +2020,11 @@ void func_08044518(SmnGenieWork* work) {
         work->unk_164 = abs(v);
     }
 
-    body->y += v;
-    body->z += (zt - gSineTable[(work->unk_148 * 2) & 0xFF] * 8 - body->z) >> 3;
+    body->unk_008 += v;
+    body->unk_00C += (zt - gSineTable[(work->unk_148 * 2) & 0xFF] * 8 - body->unk_00C) >> 3;
 }
 u8 task_smn_genie_1(SmnGenieWork* work) {
-    SmnBody* body = &work->unk_038;
+    BtlObj* body = &work->unk_038;
     s32 height;
     s32 x;
     s32 y;
@@ -2032,18 +2032,18 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
     if ((work->unk_151 != 0 ? gBtlWork->unk_068 : gUnk_02039B9C->unk_068) & 0x40000000) {
         return 0;
     }
-    func_0802F284(body->x, body->y, body->z);
+    func_0802F284(body->unk_004, body->unk_008, body->unk_00C);
     if (gBtlWork->unk_128 != 0) {
-        gBtlWork->unk_128(&body->x, &body->y, &body->z, &body->unk_10);
-        if (body->z > body->unk_10) {
-            body->z = body->unk_10;
+        gBtlWork->unk_128(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
+        if (body->unk_00C > body->unk_010) {
+            body->unk_00C = body->unk_010;
         }
     }
     switch (work->unk_034) {
     case 0:
         if ((s16)work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x235);
         }
         ApproachValue(&work->unk_14C, 256, work->unk_14A);
@@ -2060,7 +2060,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         if ((s16)work->unk_148 == 0) {
             func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x239);
         }
         ApproachValue(&work->unk_14C, 25, work->unk_14A);
@@ -2076,7 +2076,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
             func_08019068(gUnk_0813EB1C, &work->anim, 0, 0, work->tiles);
         }
         height = ((u32)gSineTable[(work->unk_148 * 2) & 255] << 3) + 0xC00;
-        body->z += (body->unk_10 - height - body->z) >> 3;
+        body->unk_00C += (body->unk_010 - height - body->unk_00C) >> 3;
         if ((s16)work->unk_148 > 10) {
             work->unk_154 = func_08044450(work);
             if (work->unk_154 == 0 || (s16)work->unk_15A-- <= 0) {
@@ -2126,18 +2126,18 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
                     y = work->unk_154->unk_008;
                     z = 0;
                 } else {
-                    if (body->flags & 4) {
-                        x = body->x - 0x5000;
+                    if (body->unk_034 & 4) {
+                        x = body->unk_004 - 0x5000;
                     } else {
-                        x = body->x + 0x5000;
+                        x = body->unk_004 + 0x5000;
                     }
-                    y = body->y;
+                    y = body->unk_008;
                     z = 0;
                 }
-                if (body->flags & 4) {
-                    func_08015834(1, body->x - 0xD00, body->y, body->z - 0x6E00, x, y, z, 146);
+                if (body->unk_034 & 4) {
+                    func_08015834(1, body->unk_004 - 0xD00, body->unk_008, body->unk_00C - 0x6E00, x, y, z, 146);
                 } else {
-                    func_08015834(1, body->x + 0xD00, body->y, body->z - 0x6E00, x, y, z, 146);
+                    func_08015834(1, body->unk_004 + 0xD00, body->unk_008, body->unk_00C - 0x6E00, x, y, z, 146);
                 }
                 work->unk_15C = 1;
             }
@@ -2164,18 +2164,18 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
                     y = work->unk_154->unk_008;
                     z = 0;
                 } else {
-                    if (body->flags & 4) {
-                        x = body->x - 0x5000;
+                    if (body->unk_034 & 4) {
+                        x = body->unk_004 - 0x5000;
                     } else {
-                        x = body->x + 0x5000;
+                        x = body->unk_004 + 0x5000;
                     }
-                    y = body->y;
+                    y = body->unk_008;
                     z = 0;
                 }
-                if (body->flags & 4) {
-                    func_08014D78(1, body->x - 0xD00, body->y, body->z - 0x6E00, x, y, z, 1, 148);
+                if (body->unk_034 & 4) {
+                    func_08014D78(1, body->unk_004 - 0xD00, body->unk_008, body->unk_00C - 0x6E00, x, y, z, 1, 148);
                 } else {
-                    func_08014D78(1, body->x + 0xD00, body->y, body->z - 0x6E00, x, y, z, 0, 148);
+                    func_08014D78(1, body->unk_004 + 0xD00, body->unk_008, body->unk_00C - 0x6E00, x, y, z, 0, 148);
                 }
                 work->unk_15C = 1;
                 func_08006184(6, 8);
@@ -2204,12 +2204,12 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
                     y = work->unk_154->unk_008;
                     z = work->unk_154->unk_00C - work->unk_154->unk_0A2 * 256;
                 } else {
-                    if (body->flags & 4) {
-                        x = body->x - 0x5000;
+                    if (body->unk_034 & 4) {
+                        x = body->unk_004 - 0x5000;
                     } else {
-                        x = body->x + 0x5000;
+                        x = body->unk_004 + 0x5000;
                     }
-                    y = body->y;
+                    y = body->unk_008;
                     z = -0x1000;
                 }
                 func_080148E0(1, x, y, z, 147);
@@ -2224,7 +2224,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         }
         break;
     }
-    func_0801A8A4(&body->x, &body->y, 0, -10);
+    func_0801A8A4(&body->unk_004, &body->unk_008, 0, -10);
     if (work->unk_152 != 0) {
         AnimUpdate(&work->anim);
     }
@@ -2233,7 +2233,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
 }
 
 void task_smn_genie_2(SmnGenieWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -2244,9 +2244,9 @@ void task_smn_genie_2(SmnGenieWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256 && work->unk_14C == gBtlWork->unk_024) {
@@ -2261,7 +2261,7 @@ void task_smn_genie_2(SmnGenieWork* work) {
     sclX = sclX * work->unk_14C >> 8;
     sclY = sclY * work->unk_14C >> 8;
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (sclX <= 256 && sclY <= 256) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
@@ -2270,8 +2270,8 @@ void task_smn_genie_2(SmnGenieWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
 }
 
@@ -2289,7 +2289,7 @@ void task_smn_genie_3(SmnGenieWork* work) {
 }
 
 void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
-    SmnBody* body;
+    BtlObj* body;
     BtlObj* obj;
 
     body = &work->unk_038;
@@ -2306,11 +2306,11 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
         work->tiles = gUnk_02039B9C->unk_110;
     }
 
-    body->x = obj->unk_014;
-    body->y = obj->unk_018;
-    body->z = obj->unk_01C - 0x4000;
-    body->unk_10 = 0;
-    body->flags = obj->unk_034 & 4;
+    body->unk_004 = obj->unk_014;
+    body->unk_008 = obj->unk_018;
+    body->unk_00C = obj->unk_01C - 0x4000;
+    body->unk_010 = 0;
+    body->unk_034 = obj->unk_034 & 4;
     work->unk_15C = args->unk_00;
     work->palette = LoadObjPalette(gUnk_096183F8, 32);
     work->unk_158 = 0;
@@ -2327,15 +2327,15 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
 }
 
 u8 func_08044F98(SmnKingWork* work) {
-    SmnBody* body;
+    BtlObj* body;
 
     body = &work->unk_038;
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
-    body->z += work->unk_158;
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
+    body->unk_00C += work->unk_158;
     work->unk_158 += 0x33;
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
         work->unk_158 = 0;
         return 1;
     }
@@ -2344,18 +2344,18 @@ u8 func_08044F98(SmnKingWork* work) {
 }
 
 u8 task_smn_king_1(SmnKingWork* work) {
-    SmnBody* body = &work->unk_038;
+    BtlObj* body = &work->unk_038;
     BtlWork* obj;
     obj = work->unk_15D != 0 ? gBtlWork : gUnk_02039B9C;
     if (obj->unk_068 & 0x40000000) {
         return 0;
     }
-    func_0802F284(body->x, body->y, body->z);
+    func_0802F284(body->unk_004, body->unk_008, body->unk_00C);
     switch (work->unk_034) {
     case 0:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x235);
         }
         ApproachValue(&work->unk_154, 256, work->unk_14A);
@@ -2371,7 +2371,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
     case 1:
         if (work->unk_148 == 0) {
             work->unk_14A = 30;
-            func_080140E0(body->x, body->y, body->z);
+            func_080140E0(body->unk_004, body->unk_008, body->unk_00C);
             m4aSongNumStart(0x239);
         }
         ApproachValue(&work->unk_154, 25, work->unk_14A);
@@ -2392,8 +2392,8 @@ u8 task_smn_king_1(SmnKingWork* work) {
     case 4:
         func_08019068(gUnk_0813EB4C, &work->anim, 2, 0, work->tiles);
         if (AnimGetFrame(&work->anim) == 5 && work->anim.timer == 3) {
-            func_08013480(body->x, body->y, body->z - 0x1300);
-            func_08011F78(3, body->x, body->y, body->z, 256, 256, 256);
+            func_08013480(body->unk_004, body->unk_008, body->unk_00C - 0x1300);
+            func_08011F78(3, body->unk_004, body->unk_008, body->unk_00C, 256, 256, 256);
             m4aSongNumStart(0x273);
             switch (work->unk_15C) {
             case 0:
@@ -2415,14 +2415,14 @@ u8 task_smn_king_1(SmnKingWork* work) {
                 gBtlWork->unk_07C->unk_02C = gBtlWork->unk_07C->unk_02E;
             }
         }
-        func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
+        func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
         if (AnimIsFinished(&work->anim)) {
             work->unk_034 = 5;
             work->unk_148 = 0;
         }
         break;
     case 5:
-        func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
+        func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
         if (work->unk_148 > 60) {
             func_080061E8(0, 8);
             work->unk_034 = 1;
@@ -2432,8 +2432,8 @@ u8 task_smn_king_1(SmnKingWork* work) {
         }
         break;
     }
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
     }
     if (work->unk_15E != 0) {
         AnimUpdate(&work->anim);
@@ -2443,7 +2443,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
 }
 
 void task_smn_king_2(SmnKingWork* work) {
-    SmnBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -2454,9 +2454,9 @@ void task_smn_king_2(SmnKingWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256 && work->unk_154 == gBtlWork->unk_024) {
@@ -2471,7 +2471,7 @@ void task_smn_king_2(SmnKingWork* work) {
     sclX = sclX * work->unk_154 >> 8;
     sclY = sclY * work->unk_154 >> 8;
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (sclX <= 256 && sclY <= 256) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
@@ -2480,8 +2480,8 @@ void task_smn_king_2(SmnKingWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_020);
 }
 
@@ -2495,15 +2495,15 @@ void task_smn_king_3(SmnKingWork* work) {
 }
 
 u8 func_0804544C(SmnFrdWork* work) {
-    SmnBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
-    body->z += work->unk_154;
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
+    body->unk_00C += work->unk_154;
     work->unk_154 += 0x33;
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
         work->unk_154 = 0;
         return 1;
     }
@@ -2511,7 +2511,7 @@ u8 func_0804544C(SmnFrdWork* work) {
     return 0;
 }
 
-void func_08045494(SmnBody* body, u8 a, s16 b, s16 c) {
+void func_08045494(BtlObj* body, u8 a, s16 b, s16 c) {
     s32 x;
     s32 y;
     s32 z;
@@ -2521,15 +2521,15 @@ void func_08045494(SmnBody* body, u8 a, s16 b, s16 c) {
     s16 q;
     s16 r;
 
-    y = body->y;
-    z = body->z - (c * 256);
+    y = body->unk_008;
+    z = body->unk_00C - (c * 256);
     w = 0x180;
 
-    if (body->flags & 4) {
-        x = body->x + (b * 256);
+    if (body->unk_034 & 4) {
+        x = body->unk_004 + (b * 256);
         t = -0x180;
     } else {
-        x = body->x - (b * 256);
+        x = body->unk_004 - (b * 256);
         t = w;
     }
 

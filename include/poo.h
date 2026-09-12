@@ -2,6 +2,7 @@
 #define GUARD_POO_H
 
 #include "types.h"
+#include "listpool.h"
 #include "game_state.h"
 #include "anim.h"
 #include "key.h"
@@ -1434,8 +1435,6 @@ u16 func_080CE880(PooAnimWork* w);
 void task_poo_tiggerroo_3(PooTiggerWork* w);
 void task_poo_trapballoon_3(PooBalloonWork* w);
 void task_poo_owlballoon_3(PooOwlBalloonWork* w);
-void func_08000D20(ListNode* node, void* pool, void* owner);
-void func_08000D28(ListNode* node, void* pool);
 u8 func_080DDDEC(void* p, void* q, u8 c);
 u16 GetRandom(void);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
@@ -1630,7 +1629,6 @@ void func_080CC178(void* pool, void* a, s32 b);
 s32 func_080CD1DC(u32 a);
 s32 func_080CD1F8(u32 a);
 void func_080C89B4(PooWork* w, PooSpot* b, u16 c);
-void func_08000D90(ListNode* node, void* pool);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 u16 func_080CCB80(u16* p);

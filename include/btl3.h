@@ -2,6 +2,7 @@
 #define GUARD_BTL3_H
 
 #include "types.h"
+#include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "taskpool.h"
@@ -145,8 +146,6 @@ extern u8 gUnk_09EDF154[];
 
 u16 GetRandom(void);
 void m4aSongNumStart(u16 song);
-BtlObj* ListPoolFirst(void* node);
-BtlObj* ListPoolNext(void* node);
 void* AllocObjTiles(s32 a, s32 b);
 void* LoadObjTiles(void* src, s32 size);
 void ReleaseObjTiles(void* a);

@@ -2,6 +2,7 @@
 #define GUARD_BOS4_H
 
 #include "types.h"
+#include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
@@ -690,8 +691,6 @@ u8 func_080DC544(void);
 u8 func_080DC578(void);
 u8 func_080DC5B0(void);
 u32 func_080DC5E8(void);
-BtlObj* ListPoolFirst(void* pool);
-BtlObj* ListPoolNext(void* node);
 u8 func_080DA73C(void);
 u8 func_080DB428(u8* p);
 u8 func_080DC628(void);

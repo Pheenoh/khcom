@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "listpool.h"
 #include "taskpool.h"
 #include "intr.h"
 #include "gba/syscall.h"
@@ -28,7 +29,6 @@ extern Mode gModeLang;
 extern Mode gModeCopyright1;
 extern Mode* gDebugModes[];
 
-Task* ListPoolRelease(ListNode* node, TaskPool* a);
 void func_08000DE8(TaskPool* a, Task* t);
 u8 IsTaskActive(Task* t);
 u8 IsTaskActiveNamed(Task* t, const char* name);
@@ -95,7 +95,7 @@ void func_08000DE8(TaskPool* a, Task* t) {
 Task* TaskCreate(TaskPool* a, TaskDesc* desc, void* arg) {
     Task* task;
 
-    task = ListPoolFirstFree();
+    task = ListPoolFirstFree(a);
 
     if (task == 0) {
         return 0;
