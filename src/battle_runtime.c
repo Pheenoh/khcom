@@ -1755,7 +1755,6 @@ void func_0801BCD4(BtlObj* p) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_0801BCF8(BtlObj* p) {
     s32 x;
     s32 y;
@@ -1780,11 +1779,13 @@ void func_0801BCF8(BtlObj* p) {
 
     if (p->unk_034 & 4) {
         cx = p->unk_004 - ((s16)(x1 = p->unk_0CE) * 256);
+        x1 = p->unk_0D0;
     } else {
         x1 = p->unk_0CE;
         cx = p->unk_004 + (s16)x1 * 256;
+        x1 = p->unk_0D0;
     }
-    x1 = p->unk_0D0;
+
     x1 -= 4;
     x0 = cx - (x1 *= 256);
     y0 = p->unk_008 - (p->unk_0D2 * 256);
@@ -1805,9 +1806,6 @@ void func_0801BCF8(BtlObj* p) {
     }
     gBtlWork->unk_0AC = p;
 }
-#else
-INCLUDE_ASM("battle_runtime/func_0801BCF8.s");
-#endif
 
 void func_0801BDD4(BtlObj* p, s32 v) {
     p->unk_0D8 = v;
