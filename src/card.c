@@ -3103,6 +3103,10 @@ u8 func_0807BE54(UnkStruct_02034AAC* p, void* a) {
 
 #ifdef NON_MATCHING
 void func_0807BEC0(UnkStruct_02034AAC* p) {
+    struct UnkStruct_0807BEC0 {
+        u8 unk_00[0x30];
+        void* tiles[4];
+    };
     u16 y;
     void* gfx;
     s32 aff;
@@ -3126,7 +3130,7 @@ void func_0807BEC0(UnkStruct_02034AAC* p) {
 
     if (!(p->unk_78 & 0x200)) {
         aff = AllocObjAffine(p->unk_5E, p->unk_54, p->unk_58, 0);
-        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, (&gUnk_02039DD4->tiles)[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 1));
+        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, ((struct UnkStruct_0807BEC0*)gUnk_02039DD4)->tiles[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 1));
         DrawSprite(p->unk_4C >> 8, y, gfx, p->unk_00, p->palette, aff, 0x410, p->unk_A0);
         j = p->unk_A5;
 
@@ -3172,10 +3176,10 @@ void func_0807BEC0(UnkStruct_02034AAC* p) {
 
     DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 11));
 }
-
 #else
 INCLUDE_ASM("card/func_0807BEC0.s");
 #endif
+
 void card_not_have_2(UnkStruct_02034AAC* p) {
     void* gfx;
     u16 y;
