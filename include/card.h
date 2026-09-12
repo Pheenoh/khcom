@@ -1793,7 +1793,11 @@ typedef struct UnkStruct_080A18F4 {
 } UnkStruct_080A18F4;
 
 typedef struct UnkStruct_0809FBCC {
+#ifdef VERSION_EU
+    u8 unk_000[0xD2];
+#else
     u8 unk_000[0x77A];
+#endif
     s16 unk_77A;
     s16 unk_77C;
     u8 unk_77E[0x32];

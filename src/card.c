@@ -75,6 +75,9 @@ extern u8 gUnkEu_09162C8C[];
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
 extern u32 gLanguage;
+extern void* gUnkEu_09F72A64[];
+extern void* gUnkEu_09F72A3C[];
+extern void* gUnkEu_09F72A50[];
 extern s32 gUnkEu_090D1DC0[];
 extern u8 gUnkEu_08895A00[];
 extern void** gUnkEu_09F72CC4[];
@@ -12437,7 +12440,11 @@ u8 func_0808A114(UnkStruct_0808DB04* work, void* a) {
     func_0808E344((void**)work);
     func_0808E364((u8*)work, 0);
     func_0808CD48((u8*)work);
+#ifdef VERSION_EU
+    LoadBgMap(3, &gUnk_095132B8[0x800], 0x800);
+#else
     LoadBgMap(3, gUnk_095132B8, 0x800);
+#endif
     func_0808C90C(work);
     work->unk_8C1 = 0;
     work->unk_884 = 0;
@@ -13351,7 +13358,7 @@ void func_0808C3DC(u8* work, u8 kind) {
     s8 x;
     s8 y;
 
-    deck = (u16*)GetDeck(work[0x8C0]);
+    deck = (u16*)GetDeck(work[CARDWORK(0x8C0)]);
     x = 0;
     y = 0;
 
@@ -13359,30 +13366,30 @@ void func_0808C3DC(u8* work, u8 kind) {
         for (i = 0; i < 99; i++) {
             if (deck[i] != 0xFFFF) {
                 if (kind == 0) {
-                    args.unk_00 = &work[0x7F0];
+                    args.unk_00 = &work[CARDWORK(0x7F0)];
                     args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
                     args.unk_06 = x;
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
                 } else if (gCardDefs[gCardCollection[deck[i]] & 0xFFF].unk_2A == kind - 1) {
-                    args.unk_00 = &work[0x7F0];
+                    args.unk_00 = &work[CARDWORK(0x7F0)];
                     args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
                     args.unk_06 = x;
                     args.unk_08 = y;
                     args.unk_0A = 0;
                     args.unk_0C = &deck[i];
-                    TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
+                    TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
                 }
             } else {
-                args.unk_00 = &work[0x7F0];
+                args.unk_00 = &work[CARDWORK(0x7F0)];
                 args.unk_04 = 0xFFFF;
                 args.unk_06 = x;
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
+                TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
             }
 
             x++;
@@ -13395,13 +13402,13 @@ void func_0808C3DC(u8* work, u8 kind) {
     } else {
         for (i = 0; i < 99; i++) {
             if (deck[i] != 0xFFFF && gCardDefs[gCardCollection[deck[i]] & 0xFFF].unk_2A == kind - 1) {
-                args.unk_00 = &work[0x7F0];
+                args.unk_00 = &work[CARDWORK(0x7F0)];
                 args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
                 args.unk_06 = x;
                 args.unk_08 = y;
                 args.unk_0A = 0;
                 args.unk_0C = &deck[i];
-                TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
+                TaskCreate(&work[CARDWORK(0x7C8)], gUnk_09EE4B28, &args);
                 x++;
             }
 
@@ -13412,9 +13419,9 @@ void func_0808C3DC(u8* work, u8 kind) {
         }
     }
 
-    *(s32*)&work[0x850] = 0x4800;
-    *(s32*)&work[0x854] = 0x2800;
-    *(u16*)&work[0x8AC] = 4;
+    *(s32*)&work[CARDWORK(0x850)] = 0x4800;
+    *(s32*)&work[CARDWORK(0x854)] = 0x2800;
+    *(u16*)&work[CARDWORK(0x8AC)] = 4;
     func_0808C940((UnkStruct_0808C940*)work, 99);
 }
 
@@ -13786,12 +13793,12 @@ void func_0808CDE8(u8* work, u8 b) {
         SetBgScroll(0, 0xFFB4, 0xFFF2);
         SetBgScroll(1, 0xFFA8, 0xFFC0);
         SetBgScroll(2, 0xFFA8, 0xFF90);
-        *(u16*)&work[0x888] = 100;
-        *(u16*)&work[0x88E] = 25;
-        *(u16*)&work[0x88A] = 102;
-        *(u16*)&work[0x890] = 75;
-        *(u16*)&work[0x88C] = 102;
-        *(u16*)&work[0x892] = 122;
+        *(u16*)&work[CARDWORK(0x888)] = 100;
+        *(u16*)&work[CARDWORK(0x88E)] = 25;
+        *(u16*)&work[CARDWORK(0x88A)] = 102;
+        *(u16*)&work[CARDWORK(0x890)] = 75;
+        *(u16*)&work[CARDWORK(0x88C)] = 102;
+        *(u16*)&work[CARDWORK(0x892)] = 122;
         break;
     case 1:
         dst = (void*)0x05000120;
@@ -13806,12 +13813,12 @@ void func_0808CDE8(u8* work, u8 b) {
         SetBgScroll(0, 0xFFA8, 0xFFF0);
         SetBgScroll(1, 0xFFB4, 0xFFC2);
         SetBgScroll(2, 0xFFA8, 0xFF90);
-        *(u16*)&work[0x888] = 102;
-        *(u16*)&work[0x88E] = 27;
-        *(u16*)&work[0x88A] = 100;
-        *(u16*)&work[0x890] = 73;
-        *(u16*)&work[0x88C] = 102;
-        *(u16*)&work[0x892] = 122;
+        *(u16*)&work[CARDWORK(0x888)] = 102;
+        *(u16*)&work[CARDWORK(0x88E)] = 27;
+        *(u16*)&work[CARDWORK(0x88A)] = 100;
+        *(u16*)&work[CARDWORK(0x890)] = 73;
+        *(u16*)&work[CARDWORK(0x88C)] = 102;
+        *(u16*)&work[CARDWORK(0x892)] = 122;
         break;
     case 2:
         dst = (void*)0x05000140;
@@ -13826,12 +13833,12 @@ void func_0808CDE8(u8* work, u8 b) {
         SetBgScroll(0, 0xFFA8, 0xFFF0);
         SetBgScroll(1, 0xFFA8, 0xFFC0);
         SetBgScroll(2, 0xFFB4, 0xFF92);
-        *(u16*)&work[0x888] = 102;
-        *(u16*)&work[0x88E] = 27;
-        *(u16*)&work[0x88A] = 102;
-        *(u16*)&work[0x890] = 75;
-        *(u16*)&work[0x88C] = 100;
-        *(u16*)&work[0x892] = 121;
+        *(u16*)&work[CARDWORK(0x888)] = 102;
+        *(u16*)&work[CARDWORK(0x88E)] = 27;
+        *(u16*)&work[CARDWORK(0x88A)] = 102;
+        *(u16*)&work[CARDWORK(0x890)] = 75;
+        *(u16*)&work[CARDWORK(0x88C)] = 100;
+        *(u16*)&work[CARDWORK(0x892)] = 121;
         break;
     }
 }
@@ -17841,6 +17848,11 @@ u8 func_08092234(UnkStruct_08093838* w, void* a) {
                     w->unk_285 = 0;
                 } else {
                     w->unk_285 = w->unk_27C / 6;
+#ifdef VERSION_EU
+                    if ((u16)(w->unk_27C % 6) == 0) {
+                        w->unk_285--;
+                    }
+#endif
                 }
 
                 w->unk_25C = 0x6400;
@@ -21385,9 +21397,20 @@ void SELMAP_EVKEY_0(UnkStruct_SELMAP_EVKEY* work, void* a) {
         }
     }
 
+#ifdef VERSION_EU
+    work->unk_00 = AllocObjTiles(0x800, 0);
+    func_08002A10(work->unk_00, gUnkEu_09F72A64[gLanguage]);
+    AnimInit(&work->unk_DC, gUnkEu_09F72A3C[gLanguage], gUnkEu_09F72A50[gLanguage]);
+#else
+#ifdef VERSION_JP
+    work->unk_00 = AllocObjTiles(0x480, 0);
+    func_08002A10(work->unk_00, &gUnk_093F47E4[0x22DC]);
+#else
     work->unk_00 = AllocObjTiles(0x6C0, 0);
     func_08002A10(work->unk_00, &gUnk_093F47E4[0x22E8]);
+#endif
     AnimInit(&work->unk_DC, (s32)gUnk_09EF1224, (s32)gUnk_09EF1220);
+#endif
     AnimStart(&work->unk_DC, 0, 1);
     work->unk_F4 = AnimGetGfx(&work->unk_DC);
     work->unk_04 = *work->unk_D8;
@@ -26354,32 +26377,32 @@ u8 func_0809FBCC(u8* work, void* a) {
     u8* q1;
     u8* q2;
 
-    ofs = (s8)work[0x7B0] * 2;
-    q1 = &work[0x750];
+    ofs = (s8)work[offsetof(UnkStruct_0809F730, unk_7B0)] * 2;
+    q1 = &work[offsetof(UnkStruct_0809F730, unk_750)];
     v1 = *(s16*)(q1 + ofs) << 8;
-    ofs = (s8)work[0x7B0] * 2;
-    q2 = &work[0x75C];
+    ofs = (s8)work[offsetof(UnkStruct_0809F730, unk_7B0)] * 2;
+    q2 = &work[offsetof(UnkStruct_0809F730, unk_75C)];
     v2 = *(s16*)(q2 + ofs) << 8;
-    v3 = *(s16*)&work[0x77A] << 8;
-    v4 = *(s16*)&work[0x77C] << 8;
-    v0 = *(s16*)&work[0x778] << 8;
-    ApproachValue(&v0, -0x8000, (s8)work[0x7B1]);
-    ApproachValue(&v1, -0x8000, (s8)((UnkStruct_0809FBCC*)work)->unk_7B2[(s8)work[0x7B0]]);
-    ApproachValue(&v2, -0xF800, (s8)((UnkStruct_0809FBCC*)work)->unk_7B2[(s8)work[0x7B0]]);
-    ofs = (s8)work[0x7B0] * 2;
+    v3 = *(s16*)&work[offsetof(UnkStruct_0809F730, unk_77A)] << 8;
+    v4 = *(s16*)&work[offsetof(UnkStruct_0809F730, unk_77C)] << 8;
+    v0 = *(s16*)&work[offsetof(UnkStruct_0809F730, unk_778)] << 8;
+    ApproachValue(&v0, -0x8000, (s8)work[offsetof(UnkStruct_0809F730, unk_7B1)]);
+    ApproachValue(&v1, -0x8000, (s8)((UnkStruct_0809FBCC*)work)->unk_7B2[(s8)work[offsetof(UnkStruct_0809F730, unk_7B0)]]);
+    ApproachValue(&v2, -0xF800, (s8)((UnkStruct_0809FBCC*)work)->unk_7B2[(s8)work[offsetof(UnkStruct_0809F730, unk_7B0)]]);
+    ofs = (s8)work[offsetof(UnkStruct_0809F730, unk_7B0)] * 2;
     *(s16*)(q1 + ofs) = v1 >> 8;
-    ofs = (s8)work[0x7B0] * 2;
+    ofs = (s8)work[offsetof(UnkStruct_0809F730, unk_7B0)] * 2;
     *(s16*)(q2 + ofs) = v2 >> 8;
-    *(s16*)&work[0x778] = v0 >> 8;
-    work[0x7B1]--;
-    ofs = (s8)work[0x7B0];
+    *(s16*)&work[offsetof(UnkStruct_0809F730, unk_778)] = v0 >> 8;
+    work[offsetof(UnkStruct_0809F730, unk_7B1)]--;
+    ofs = (s8)work[offsetof(UnkStruct_0809F730, unk_7B0)];
     q = ((UnkStruct_0809FBCC*)work)->unk_7B2;
     q += ofs;
     (*q)--;
-    ApproachValue(&v3, 0, (s8)work[0x7B5]);
-    ApproachValue(&v4, 0x10000, (s8)work[0x7B5]);
-    ApproachValue(&work[0x7A8], 0x1BE00, (s8)work[0x7B5]);
-    ApproachValue(&work[0x7AC], 0x4800, (s8)work[0x7B5]);
+    ApproachValue(&v3, 0, (s8)work[offsetof(UnkStruct_0809F730, unk_7B5)]);
+    ApproachValue(&v4, 0x10000, (s8)work[offsetof(UnkStruct_0809F730, unk_7B5)]);
+    ApproachValue(&work[offsetof(UnkStruct_0809F730, unk_7A8)], 0x1BE00, (s8)work[offsetof(UnkStruct_0809F730, unk_7B5)]);
+    ApproachValue(&work[offsetof(UnkStruct_0809F730, unk_7AC)], 0x4800, (s8)work[offsetof(UnkStruct_0809F730, unk_7B5)]);
 
     if (*(u32*)&gBtlWork->unk_100[0x0C] == 151) {
         func_08005244(0, v3 >> 8, 0);
@@ -26389,26 +26412,26 @@ u8 func_0809FBCC(u8* work, void* a) {
 
     ((UnkStruct_0809FBCC*)work)->unk_77A = v3 >> 8;
     ((UnkStruct_0809FBCC*)work)->unk_77C = v4 >> 8;
-    t = work[0x7B5];
+    t = work[offsetof(UnkStruct_0809F730, unk_7B5)];
 
     if ((s8)t > 0) {
-        work[0x7B5] = t - 1;
+        work[offsetof(UnkStruct_0809F730, unk_7B5)] = t - 1;
     }
 
-    n = work[0x7B5];
+    n = work[offsetof(UnkStruct_0809F730, unk_7B5)];
 
     if (n == 0) {
-        if (work[0x7BF] != 0) {
-            ApproachValue(&work[0x76C], -0x800, work[0x7BF]);
-            ApproachValue(&work[0x770], 0xA000, work[0x7BF]);
-            work[0x7BF]--;
+        if (work[offsetof(UnkStruct_0809F730, unk_7BF)] != 0) {
+            ApproachValue(&work[offsetof(UnkStruct_0809F730, unk_76C)], -0x800, work[offsetof(UnkStruct_0809F730, unk_7BF)]);
+            ApproachValue(&work[offsetof(UnkStruct_0809F730, unk_770)], 0xA000, work[offsetof(UnkStruct_0809F730, unk_7BF)]);
+            work[offsetof(UnkStruct_0809F730, unk_7BF)]--;
         } else {
             SetTaskUpdate(a, (void*)func_0809FE14);
         }
     }
 
-    *(void**)&work[0x730] = AnimUpdate(&work[0x734]);
-    TaskPoolUpdate(&work[0x6FC]);
+    *(void**)&work[offsetof(UnkStruct_0809F730, unk_730)] = AnimUpdate(&work[offsetof(UnkStruct_0809F730, unk_734)]);
+    TaskPoolUpdate(&work[offsetof(UnkStruct_0809F730, pool)]);
     return 1;
 }
 u8 func_0809FE14(void) {
@@ -27798,7 +27821,6 @@ void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
         u32 unk_04 : 16;
         u32 unk_06 : 16;
     } args = *(struct UnkStruct_080A23A0_Packed*)a;
-    void* text;
 
     func_08065ACC(w->unk_000, 20);
     func_08065ACC(w->unk_0A0, 20);
@@ -27837,11 +27859,10 @@ void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
     w->unk_2AE = func_08065A70((u8)w->unk_28C, w->unk_0A0);
 #ifdef VERSION_EU
     if ((args.unk_04 & 0x8000) && gLanguage == 4) {
-        text = gUnkEu_08895EDC;
+        w->unk_2AF = func_08065B6C(eu_0805E924(gUnkEu_08895EDC), w->unk_140);
     } else {
-        text = gUnk_0815A0A0;
+        w->unk_2AF = func_08065B6C(eu_0805E924(gUnk_0815A0A0), w->unk_140);
     }
-    w->unk_2AF = func_08065B6C(eu_0805E924(text), w->unk_140);
 #else
     w->unk_2AF = func_08065B6C(gUnk_0815A0A0, w->unk_140);
 #endif
