@@ -210,7 +210,6 @@ void func_0801BCD4(void* a);
 void func_0801BCF8(BtlObj* a);
 void func_0801B994(BtlObj* a);
 void func_0801C830(BtlObj* a);
-u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 u8 func_08005AC4(AnimState* a);
 void func_08006B4C(void);
 u8 func_08006B74(void);

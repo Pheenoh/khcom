@@ -199,7 +199,6 @@ extern TaskDesc gTaskDescBtlShadow;
 void func_08019068(void* resource, AnimState* anim, s32 a, s32 b, void* tiles);
 void func_080122AC(void* particles, s32 a, u16 b, u16 c);
 
-u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_08012324(void* a, s32 x, s32 y, s32 z);

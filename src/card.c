@@ -235,7 +235,6 @@ UnkStruct_080038C8* func_080038C8(s32 size);
 void func_080038E4(UnkStruct_080038C8* a, void* b, void* c);
 void m4aSongNumStart(u16 n);
 void m4aSongNumStop(u16 n);
-s32 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 s32 func_0801A8A4(void* a, void* b, s32 c, s32 d);
 void ColliderSetRadius(void* a, u16 b);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);

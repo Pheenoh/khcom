@@ -795,7 +795,6 @@ extern u8 gModeMapDbg[];
 void func_080DF048(void);
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
 extern s16 gSineTable[];
-s32 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 void task_bos_ursula_0(UrsulaWork* work);
 void func_0801BCC0(s32 a, s32 b, s32 c);
 void func_080051C4(s32 a, u16 b, u16 c);

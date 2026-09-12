@@ -1956,7 +1956,7 @@ void func_08031F60(FldActor* act) {
     if (old != act->angle) {
         s32 v;
 
-        if (abs(GetAngleDiff(old, act->angle)) > 100) {
+        if (abs((s8)GetAngleDiff(old, act->angle)) > 100) {
             v = 0;
         } else {
             v = act->unk_10 >> 1;

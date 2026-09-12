@@ -117,7 +117,6 @@ typedef struct FldShadowWork {
     u8 anim[0x18];
 } FldShadowWork;
 
-s8 GetAngleDiff(u8 a, u8 b);
 void func_08002A10(void* a, void* b);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_0803473C(FldWork* work, s32 index, u16 flags);

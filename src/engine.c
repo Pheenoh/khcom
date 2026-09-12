@@ -70,8 +70,6 @@ void PopPaletteEffect(void);
 extern u16 gSystemFlags;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 GetObjTileCount(u16 a, u16 b);
-s16 GetAngleDiff(s32 a, s32 b);
-s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 void func_080051C4(s32 bg, u16 x, u16 y);
 s32 abs(s32 a);
@@ -102,8 +100,6 @@ void PopPaletteEffect(void);
 extern u16 gSystemFlags;
 ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 GetObjTileCount(u16 a, u16 b);
-s16 GetAngleDiff(s32 a, s32 b);
-s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
 
 u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {

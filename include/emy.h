@@ -290,7 +290,6 @@ void func_08006B4C(void);
 u8 func_08006B74(void);
 void func_0802F1E8(void);
 void func_08013480(s32 a, s32 b, s32 c);
-u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 u8 func_0801CA00(BtlObj* a);
 void func_0801BCF8(BtlObj* a);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);

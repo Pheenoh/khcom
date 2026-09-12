@@ -275,17 +275,13 @@ s32 func_080C8B38(PooAim* w, PooPos* p, u8* c) {
 }
 
 void func_080C8B60(PooMover* w, s32 b, u8 c) {
-    s32 a;
-
     w->unk_3C += 6;
     if (w->unk_3C > b) {
         w->unk_3C = b;
     }
 
     if (c != 0) {
-        a = GetAngle(w->unk_28, w->unk_2C, w->unk_40, w->unk_44);
-        w->unk_38 = a;
-        w->unk_3A = a;
+        w->unk_3A = w->unk_38 = GetAngle(w->unk_28, w->unk_2C, w->unk_40, w->unk_44);
         w->unk_3B = w->unk_38;
     }
     w->unk_28 += gSineTable[w->unk_38] * w->unk_3C >> 8;

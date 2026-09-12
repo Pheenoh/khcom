@@ -1639,7 +1639,7 @@ void func_08034704(FldActor* act) {
     func_08034368(act);
 
     if (dir != act->angle) {
-        diff = GetAngleDiff(dir, act->angle);
+        diff = (s8)GetAngleDiff(dir, act->angle);
 
         if (diff < 0) {
             diff = -diff;
