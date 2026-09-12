@@ -2038,7 +2038,6 @@ void func_08077E98(CardBattleWork* w) {
     ReleaseObjPalette(w->palette);
 }
 
-#ifdef NON_MATCHING
 s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
     UnkStruct_0807FD10_Args arg;
     UnkStruct_02034AAC* e;
@@ -2139,13 +2138,14 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 e->unk_80 = gUnk_09033FA8[0];
                 e->unk_A0 = 60;
                 e->unk_78 |= 0x800;
-                gBtlWork->unk_068 &= ~0x80000000LL;
-                gBtlWork->unk_068 &= ~0x100;
-                w->unk_C4[0] = 0;
-                m4aSongNumStop(145);
-                gUnk_02034A9C = 0;
-                SetTaskUpdate(task, (u32)func_08076F80);
             }
+
+            gBtlWork->unk_068 &= ~0x80000000LL;
+            gBtlWork->unk_068 &= ~0x100;
+            w->unk_C4[0] = 0;
+            m4aSongNumStop(145);
+            gUnk_02034A9C = 0;
+            SetTaskUpdate(task, (u32)func_08076F80);
         }
     }
 
@@ -2161,6 +2161,3 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("mode_eventselect/func_08077F44.s");
-#endif
