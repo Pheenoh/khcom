@@ -162,6 +162,10 @@ typedef struct UnkStruct_02034A1C {
     u32 unk_80;
 } UnkStruct_02034A1C;
 
+typedef struct CharTile {
+    u32 rows[8];
+} CharTile;
+
 #ifdef VERSION_EU
 typedef struct UnkModeTestActor {
     s32 unk_00;
