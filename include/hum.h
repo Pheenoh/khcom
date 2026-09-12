@@ -1,6 +1,8 @@
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
+#include "hum_types.h"
+
 #include "card_api.h"
 
 #include "jiminy_list.h"
@@ -39,18 +41,6 @@
 #include "bos4_api.h"
 #include "btl_api.h"
 #include "pc_api.h"
-typedef struct HumSub {
-    void* unk_00;
-    void* tiles;
-    void* palette;
-    void* unk_0C;
-    AnimState anim;
-    s32 unk_28;
-    s32 unk_2C;
-    s32 unk_30;
-    u16 unk_34;
-    u8 unk_36[0x06];
-} HumSub;
 
 typedef struct VixenSub {
     u8 unk_00;

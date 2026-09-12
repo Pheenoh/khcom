@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
+#include "allmap_types.h"
+
 #include "map_api.h"
 #include "mode_allmap_api.h"
 
@@ -23,23 +25,6 @@
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_IE (*(vu16*)0x04000200)
 #define REG_IME (*(vu16*)0x04000208)
-typedef struct AllmapRoomWork {
-    u32 tiles;
-    u32 palette;
-    u32 unk_008;
-    void* unk_00C[4];
-    void* gfx[4];
-    AnimState anim[4];
-    u16 unk_08C;
-    u16 unk_08E;
-    u32 unk_090;
-    u32 unk_094;
-    u8 unk_098;
-    u8 unk_099;
-    u16 unk_09A;
-    u16 unk_09C;
-    u8 unk_09E[0x02];
-} AllmapRoomWork;
 
 typedef struct AllmapRoomOrder {
     s32 unk_00[16];
