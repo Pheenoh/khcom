@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
+#include "obj.h"
+
 #include "world_types.h"
 
 #include "card_api.h"
@@ -76,7 +78,7 @@ extern u16 gUnk_099931D0[];
 extern s32 gUnk_02035880;
 extern s32 gUnk_02035884;
 extern s32 gUnk_0203588C;
-extern struct ObjPaletteNode* gUnk_0203585C;
+extern struct ObjPalette* gUnk_0203585C;
 extern void* gUnk_02035818[];
 extern void* gUnk_02035820[];
 extern AnimState gUnk_02035828[];
@@ -102,14 +104,14 @@ extern s32 gUnk_02035888;
 extern s32 gUnk_02035898[];
 extern s32 gUnk_020358A0;
 extern struct ObjTiles* gUnk_020357C8;
-extern struct ObjPaletteNode* gUnk_020357CC;
+extern struct ObjPalette* gUnk_020357CC;
 extern struct ObjTiles* gUnk_020357D0;
-extern struct ObjPaletteNode* gUnk_020357D4;
+extern struct ObjPalette* gUnk_020357D4;
 extern AnimState gUnk_020357F8;
 extern struct ObjTiles* gUnk_020357F0;
-extern struct ObjPaletteNode* gUnk_020357F4;
+extern struct ObjPalette* gUnk_020357F4;
 extern struct ObjTiles* gUnk_02035810;
-extern struct ObjPaletteNode* gUnk_02035814;
+extern struct ObjPalette* gUnk_02035814;
 extern TaskPool gUnk_020358A8;
 extern u8 gUnk_099A2AD4[];
 extern u8 gUnk_099A2AF0[];

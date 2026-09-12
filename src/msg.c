@@ -1509,7 +1509,7 @@ void func_0806422C(void) {
                 ReleaseObjTiles((void*)gUnk_02034A80[i].unk_08[j]);
             }
         }
-        FadeSetPaletteExcluded(((Handle0806180C*)gUnk_02034A80[i].unk_48)->unk_06, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)gUnk_02034A80[i].unk_48)->unk_06, 0);
         ReleaseObjPalette((u8*)gUnk_02034A80[i].unk_48);
     }
     EwramFree(gUnk_02034A80);
@@ -7807,7 +7807,7 @@ void func_0806CD60(ContinueWork* p) {
     FadeStartIn(1, 24);
 
     for (i = 0; i < 5; i++) {
-        FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + i, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + i, 0);
     }
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
@@ -7874,7 +7874,7 @@ void func_0806CF04(ContinueWork* p) {
     FadeStartIn(1, 24);
 
     for (i = 0; i < 5; i++) {
-        FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + i, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + i, 0);
     }
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
@@ -11479,7 +11479,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                         p->palette = LoadObjPalette(gUnk_09614718, 32);
 
                         if ((e->unk_14 & 0x80) != 0) {
-                            FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
+                            FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
                         }
                     }
                     _08073E6C(&p->unk_2C);
@@ -11532,7 +11532,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                 p->palette = LoadObjPalette(gUnk_09614718, 32);
 
                 if ((e->unk_14 & 0x80) != 0) {
-                FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
+                FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
                 }
             }
             _08073E6C(&p->unk_2C);
@@ -11935,9 +11935,9 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     }
 
     if (gUnk_02039DC8->unk_82 == 1) {
-        FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + 16, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 0);
     } else {
-        FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(((ObjPalette*)p->palette)->unk_06 + 16, 1);
     }
 
     p->gfx = AnimUpdate(p->anim);
@@ -12168,23 +12168,23 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_103 = *a;
     p->unk_00 = AllocObjTiles(64, 0);
     p->unk_14 = LoadObjPalette(gUnk_08F69BA4, 32);
-    LoadObjPaletteBank(((Handle0806180C*)p->unk_14)->unk_06, gUnk_08F69BA4);
-    FadeSetPaletteExcluded(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
+    LoadObjPaletteBank(((ObjPalette*)p->unk_14)->unk_06, gUnk_08F69BA4);
+    FadeSetPaletteExcluded(((ObjPalette*)p->unk_14)->unk_06 + 16, 1);
     SetObjTileSource(p->unk_00, gUnk_09320796);
     AnimInit((AnimState*)p->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart((AnimState*)p->anim, 2, 1);
     p->unk_102 = 0;
     p->unk_04 = AllocObjTiles(288, 0);
     p->unk_08 = LoadObjPalette(gUnk_09614418, 32);
-    LoadObjPaletteBank(((Handle0806180C*)p->unk_08)->unk_06, gUnk_09614418);
+    LoadObjPaletteBank(((ObjPalette*)p->unk_08)->unk_06, gUnk_09614418);
     SetObjTileSource(p->unk_04, gUnk_090A4664);
     AnimInit((AnimState*)p->unk_C4, gUnk_09EEB03C, gUnk_09EEB008);
     AnimStart((AnimState*)p->unk_C4, 2, 1);
     p->unk_C0 = AnimGetGfx((AnimState*)p->unk_C4);
     p->unk_0C = LoadObjTiles(gUnk_093F7C9C, 4032);
     p->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
-    LoadObjPaletteBank(((Handle0806180C*)p->unk_10)->unk_06, gUnk_09611AB8);
-    FadeSetPaletteExcluded(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
+    LoadObjPaletteBank(((ObjPalette*)p->unk_10)->unk_06, gUnk_09611AB8);
+    FadeSetPaletteExcluded(((ObjPalette*)p->unk_14)->unk_06 + 16, 1);
     InitTextSlots(p->unk_1C, 10);
     InitTextSlots(p->unk_6C, 10);
     p->unk_18 = _08066468(1);

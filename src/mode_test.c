@@ -7,7 +7,7 @@
 
 #ifndef VERSION_EU
 struct ObjTiles* gUnk_02034A08;
-struct ObjPaletteNode* gUnk_02034A0C;
+struct ObjPalette* gUnk_02034A0C;
 s32 gUnk_02034A10;
 #endif
 u32 gUnk_02034A14;

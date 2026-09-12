@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "obj.h"
+
 #include "ga_types.h"
 
 #include "prize_types.h"
@@ -366,9 +368,9 @@ extern s32 gUnk_020354C8[];
 extern s32 gUnk_020354D8;
 extern s32 gUnk_020354DC;
 extern struct ObjTiles* gUnk_02035120;
-extern struct ObjPaletteNode* gUnk_02035124;
+extern struct ObjPalette* gUnk_02035124;
 extern struct ObjTiles* gUnk_02035128;
-extern struct ObjPaletteNode* gUnk_02035148;
+extern struct ObjPalette* gUnk_02035148;
 extern struct ObjTiles* gUnk_0203514C;
 extern void* gUnk_020351C8[];
 extern void* gUnk_02035198[];
@@ -406,7 +408,7 @@ extern u8 gUnk_020354E0;
 extern s16 gUnk_02035118;
 extern u8 gUnk_09A324DC[];
 extern u8 gUnk_09A3D07C[];
-extern struct ObjPaletteNode* gUnk_0203511C;
+extern struct ObjPalette* gUnk_0203511C;
 extern s16 gUnk_020354C0;
 void func_080FDB1C(s16 model, s16 n);
 void mode_worldselect_2(void);

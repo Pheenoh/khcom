@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
+#include "obj.h"
+
 #include "card_ui_types.h"
 
 #include "card_api.h"
@@ -59,15 +61,15 @@ extern u8 gUnk_02035E08;
 extern s32 gUnk_02035E18;
 extern s32 gUnk_02035E1C;
 extern struct ObjTiles* gUnk_02035C40;
-extern struct ObjPaletteNode* gUnk_02035C44;
+extern struct ObjPalette* gUnk_02035C44;
 extern struct ObjTiles* gUnk_02035C48;
-extern struct ObjPaletteNode* gUnk_02035C80;
+extern struct ObjPalette* gUnk_02035C80;
 extern struct ObjTiles* gUnk_02035C84;
-extern struct ObjPaletteNode* gUnk_02035CC0;
+extern struct ObjPalette* gUnk_02035CC0;
 extern struct ObjTiles* gUnk_02035CC4;
-extern struct ObjPaletteNode* gUnk_02035D84;
+extern struct ObjPalette* gUnk_02035D84;
 extern struct ObjTiles* gUnk_02035D88;
-extern struct ObjPaletteNode* gUnk_02035D90;
+extern struct ObjPalette* gUnk_02035D90;
 extern struct ObjTiles* gUnk_02035D94;
 extern struct ObjTiles* gUnk_02035D9C;
 extern struct ObjTiles* gUnk_02035DB8;

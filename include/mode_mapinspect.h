@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MAPINSPECT_H
 #define GUARD_MODE_MAPINSPECT_H
 
+#include "obj.h"
+
 #include "map_api.h"
 #include "mode_ms2_api.h"
 
@@ -60,16 +62,16 @@ extern u8 gUnk_09EF97EC[];
 extern u8 gUnk_09EF981C[];
 extern u8 gUnk_09EF9830[];
 extern u8 gUnk_09EF9858[];
-extern struct ObjPaletteNode* gUnk_02035E4C;
+extern struct ObjPalette* gUnk_02035E4C;
 extern struct ObjTiles* gUnk_02035E50;
-extern struct ObjPaletteNode* gUnk_02035E70;
-extern struct ObjPaletteNode* gUnk_02035E74;
+extern struct ObjPalette* gUnk_02035E70;
+extern struct ObjPalette* gUnk_02035E74;
 extern struct ObjTiles* gUnk_02035E78;
 extern void* gUnk_02035EA0[4][3];
 extern void* gUnk_02035ED0[4][3];
-extern struct ObjPaletteNode* gUnk_02035F3C;
+extern struct ObjPalette* gUnk_02035F3C;
 extern struct ObjTiles* gUnk_02035F40;
-extern struct ObjPaletteNode* gUnk_02035F48;
+extern struct ObjPalette* gUnk_02035F48;
 extern struct ObjTiles* gUnk_02035F4C;
 extern struct ObjTiles* gUnk_02035F54;
 extern struct ObjTiles* gUnk_02035F70;

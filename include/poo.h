@@ -34,11 +34,6 @@ typedef struct PooAim {
     s32 unk_40;
 } PooAim;
 
-typedef struct PooPal {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} PooPal;
 
 typedef struct PooShadowInfo {
     u16 unk_00;
@@ -209,7 +204,7 @@ typedef struct PooTileDesc {
 
 typedef struct PooGaugeWork {
     void* tiles;
-    PooPal* palette;
+    ObjPalette* palette;
     void* unk_08;
     void* unk_0C;
     u8 unk_10;

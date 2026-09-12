@@ -1,6 +1,8 @@
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
+#include "obj.h"
+
 #include "anim.h"
 #include <stdlib.h>
 #include "fade.h"
@@ -72,11 +74,6 @@ typedef struct SrollBlit {
     u32 unk_14[32];
 } SrollBlit;
 
-typedef struct SrollPal {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} SrollPal;
 
 typedef struct SrollANameWork {
     u16 unk_00;
@@ -88,7 +85,7 @@ typedef struct SrollANameWork {
     s32 targetX;
     s32 targetY;
     void* tiles;
-    SrollPal* palette;
+    ObjPalette* palette;
     AnimState anim;
 } SrollANameWork;
 
@@ -148,7 +145,7 @@ typedef struct SrollBCharWork {
     s32 unk_04;
     SrollBCharSub* unk_08;
     void* tiles;
-    SrollPal* palette;
+    ObjPalette* palette;
     AnimState anim;
     TaskPool unk_2C;
 } SrollBCharWork;
@@ -159,7 +156,7 @@ typedef struct SrollBLogoWork {
     s32* unk_08;
     s32 unk_0C;
     void* tiles;
-    SrollPal* palette;
+    ObjPalette* palette;
     AnimState anim;
 } SrollBLogoWork;
 
@@ -178,7 +175,7 @@ typedef struct SrollBSecnWork {
     s32* unk_0C;
     s32 unk_10;
     void* tiles;
-    SrollPal* palette;
+    ObjPalette* palette;
     AnimState unk_1C;
     AnimState unk_34;
 } SrollBSecnWork;
@@ -198,7 +195,7 @@ typedef struct SrollBCrtnWork {
     s32 x;
     s32 y;
     void* tiles;
-    SrollPal* palette;
+    ObjPalette* palette;
     AnimState anim;
 } SrollBCrtnWork;
 
@@ -206,7 +203,7 @@ typedef struct SrollCCharWork {
     s32 unk_00;
     u8 unk_04[0x14];
     void* tiles;
-    SrollPal* palette;
+    ObjPalette* palette;
     AnimState anim[5];
 } SrollCCharWork;
 
@@ -222,7 +219,7 @@ typedef struct SrollTmrWork {
     u8 unk_01[0x3];
     s32 unk_04;
     void* tiles;
-    SrollPal* palette;
+    ObjPalette* palette;
 } SrollTmrWork;
 
 typedef struct SrollInit {

@@ -395,10 +395,10 @@ void SetObjTileSource(void* a, void* b) {
     *(void**)a = b;
 }
 
-ObjPaletteNode* LoadObjPalette(void* src, u16 size) {
-    ObjPaletteNode* node;
-    ObjPaletteNode* cur;
-    ObjPaletteNode* next;
+ObjPalette* LoadObjPalette(void* src, u16 size) {
+    ObjPalette* node;
+    ObjPalette* cur;
+    ObjPalette* next;
     s32 avail;
     s16 end;
 
@@ -470,7 +470,7 @@ void LoadObjPaletteBank(u16 bank, void* src) {
     LoadPalette(src, (void*)((bank << 5) + 0x05000200), 32);
 }
 
-void ReleaseObjPaletteRef(ObjPaletteNode* p) {
+void ReleaseObjPaletteRef(ObjPalette* p) {
     if ((s16)p->refCount > 0) {
         p->refCount -= 1;
     } else {
@@ -479,7 +479,7 @@ void ReleaseObjPaletteRef(ObjPaletteNode* p) {
         ListPoolRelease(&p->unk_0C, &gSpriteWork->palettePool);
     }
 }
-void ReleaseObjPalette(ObjPaletteNode* p) {
+void ReleaseObjPalette(ObjPalette* p) {
     if (p != 0 && p->self == p) {
         ReleaseObjPaletteRef(p);
     }
@@ -774,11 +774,11 @@ void func_08002F50(void) {
             oam[1] = (attr1 & 0xFE00) | (x & 0x1FF);
             tiles = entry->unk_00;
             if (tiles->unk_24 != 0) {
-                palette = (attr2 >> 12) + ((ObjPaletteNode*)entry->unk_04)->unk_06;
+                palette = (attr2 >> 12) + ((ObjPalette*)entry->unk_04)->unk_06;
                 oam[2] = (attr2 & 0xC00) | (tileOffset + tiles->unk_06) | (palette << 12);
                 tileOffset += GetObjTileCount(oam[0], oam[1]);
             } else {
-                palette = (attr2 >> 12) + ((ObjPaletteNode*)entry->unk_04)->unk_06;
+                palette = (attr2 >> 12) + ((ObjPalette*)entry->unk_04)->unk_06;
                 oam[2] = ((attr2 & 0xFFF) + tiles->unk_06) | (palette << 12);
             }
             oam[0] |= (entry->unk_16 & 8) << 9;
@@ -1054,10 +1054,10 @@ u8 UpdateSpriteFrameTiles(ObjTiles* a, u16* b, void* c) {
     }
     return 0;
 }
-ObjPaletteNode* AllocObjPalette(u16 size) {
-    ObjPaletteNode* node;
-    ObjPaletteNode* cur;
-    ObjPaletteNode* next;
+ObjPalette* AllocObjPalette(u16 size) {
+    ObjPalette* node;
+    ObjPalette* cur;
+    ObjPalette* next;
     s32 avail;
     s16 end;
 
@@ -1153,8 +1153,8 @@ u8 CanAllocObjTiles(u16 n) {
     return 0;
 }
 u8 CanAllocObjPalette(u16 n) {
-    ObjPaletteNode* cur;
-    ObjPaletteNode* next;
+    ObjPalette* cur;
+    ObjPalette* next;
     u16 pos;
     s16 end;
 
