@@ -2091,10 +2091,8 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                     p = ((Task*)TaskCreate((TaskPool*)w, gUnk_09EE496C, &arg))->work;
                 }
 
-                p->unk_7C = gUnk_09033FA8[1];
-                p->unk_80 = gUnk_09033FA8[1];
-                p->unk_94 = gUnk_09033FB8[0];
-                p->unk_98 = gUnk_09033FB8[0];
+                p->unk_80 = p->unk_7C = gUnk_09033FA8[1];
+                p->unk_98 = p->unk_94 = gUnk_09033FB8[0];
                 p->unk_A4 = 1;
                 p->unk_9C = 8;
                 p->unk_A0 = 50;
@@ -2137,8 +2135,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 }
 
                 p->unk_7C = gUnk_09033FA8[3];
-                p->unk_94 = gUnk_09033FB8[0];
-                p->unk_98 = gUnk_09033FB8[0];
+                p->unk_98 = p->unk_94 = gUnk_09033FB8[0];
                 p->unk_A4 = 0;
                 p->unk_80 = gUnk_09033FA8[0];
                 p->unk_A0 = 60;
