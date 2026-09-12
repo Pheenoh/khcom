@@ -1,6 +1,8 @@
 #ifndef GUARD_MS_H
 #define GUARD_MS_H
 
+#include "ms_types.h"
+
 #include "ms_api.h"
 #include "mode_ms_api.h"
 
@@ -8,14 +10,6 @@
 #include "types.h"
 #include "engine.h"
 
-typedef struct MsShopHosiArg {
-    s16 x;
-    s16 y;
-    void* palette;
-    u8 unk_08;
-    u8 unk_09[0x3];
-    s32 unk_0C;
-} MsShopHosiArg;
 
 typedef struct MsShopHosiWork {
     s32 x;

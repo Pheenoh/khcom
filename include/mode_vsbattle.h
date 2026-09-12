@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_VSBATTLE_H
 #define GUARD_MODE_VSBATTLE_H
 
+#include "prize_types.h"
+
 #include "card_api.h"
 
 #include "fade.h"
@@ -139,12 +141,6 @@ typedef struct HumSubDef {
     u16 unk_06;
 } HumSubDef;
 
-typedef struct PrizeCardArg {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    u8 unk_0C[0x14];
-} PrizeCardArg;
 
 typedef struct HumDef {
     u16 unk_00;

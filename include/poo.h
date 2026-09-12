@@ -1,6 +1,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "prize_types.h"
+
 #include "mode_sio2_api.h"
 
 #include "player_progression.h"
@@ -515,14 +517,6 @@ typedef struct PooOwlBalloonWork {
     u16 unk_CA;
 } PooOwlBalloonWork;
 
-typedef struct PoohPrizeArgs {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    u16 unk_14;
-} PoohPrizeArgs;
 
 typedef struct PooPrizeWork {
     s32 unk_00;
