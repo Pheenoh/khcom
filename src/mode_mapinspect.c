@@ -1,6 +1,28 @@
 #include "macros.h"
 #include "mode_mapinspect.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern void* eu_0805E924(void* strings);
+extern u8 gUnkEu_09A3D400[];
+extern u8 gUnkEu_09A3E800[];
+extern u8 gUnkEu_09A3FC00[];
+extern u8 gUnkEu_09A41000[];
+extern void* gUnkEu_09F85058[];
+extern u16 gUnkEu_09999A50[];
+extern void* gUnkEu_09F8506C[];
+extern void* gUnkEu_09F85080[];
+extern u8 gUnkEu_08890EC0[];
+extern u8 gUnkEu_08890E1C[];
+extern u8 gUnkEu_08890E44[];
+extern u8 gUnkEu_08895CF8[];
+#endif
+
+#ifdef VERSION_JP
+extern u8 gUnk_0814FBB0[];
+extern u8 gUnk_0814FBBC[];
+#endif
+
 s16 gUnk_02035FC4;
 s16 gUnk_02035FC6;
 s16 gUnk_02035FC8;
@@ -16,7 +38,6 @@ s32 gUnk_02035FE0;
 u8 gUnk_02035FE4;
 
 
-#ifdef VERSION_US
 void mode_mapinspect_0(void) {
     s16 i;
     s16 j;
@@ -75,7 +96,32 @@ void mode_mapinspect_0(void) {
     gUnk_02035FC4 = 0;
     gUnk_02035FC6 = 0;
     LoadBgPalette(0, gUnk_09A3D0DC, 0x160);
+#ifdef VERSION_EU
+    LoadBgTiles(0, gUnk_09A03CFC, 0x2C00);
+
+    switch (gLanguage) {
+    case 0:
+        break;
+    case 1:
+        RequestDma3Copy(gUnkEu_09A3D400, (u8*)GetBgCharBase(0) + 0x800, 0xC00);
+        RequestDma3Copy(gUnkEu_09A3D400 + 0xC00, (u8*)GetBgCharBase(0) + 0x2400, 0x800);
+        break;
+    case 2:
+        RequestDma3Copy(gUnkEu_09A41000, (u8*)GetBgCharBase(0) + 0x800, 0xC00);
+        RequestDma3Copy(gUnkEu_09A41000 + 0xC00, (u8*)GetBgCharBase(0) + 0x2400, 0x800);
+        break;
+    case 3:
+        RequestDma3Copy(gUnkEu_09A3FC00, (u8*)GetBgCharBase(0) + 0x800, 0xC00);
+        RequestDma3Copy(gUnkEu_09A3FC00 + 0xC00, (u8*)GetBgCharBase(0) + 0x2400, 0x800);
+        break;
+    case 4:
+        RequestDma3Copy(gUnkEu_09A3E800, (u8*)GetBgCharBase(0) + 0x800, 0xC00);
+        RequestDma3Copy(gUnkEu_09A3E800 + 0xC00, (u8*)GetBgCharBase(0) + 0x2400, 0x800);
+        break;
+    }
+#else
     LoadBgTiles(0, gUnk_09A03CFC, 0x2980);
+#endif
     LoadBgPalette(2, gUnk_09611AB8, 0x20);
     LoadBgTiles(2, gUnk_099597E4, 0x140);
     LoadBgMap(2, gUnk_09985F44, 0x800);
@@ -92,8 +138,17 @@ void mode_mapinspect_0(void) {
     func_0810764C();
     func_081076D4();
     gUnk_02035E4C = LoadObjPalette(gUnk_09A3D2DC, 0x20);
+#ifdef VERSION_EU
+    gUnk_02035E50 = LoadObjTiles(gUnkEu_09F85058[gLanguage], gUnkEu_09999A50[gLanguage]);
+    AnimInit(&gUnk_02035E58, gUnkEu_09F8506C[gLanguage], gUnkEu_09F85080[gLanguage]);
+#else
+#ifdef VERSION_JP
+    gUnk_02035E50 = LoadObjTiles(gUnk_0999DAEC, 0xA80);
+#else
     gUnk_02035E50 = LoadObjTiles(gUnk_0999DAEC, 0xAC0);
+#endif
     AnimInit(&gUnk_02035E58, gUnk_09EF981C, gUnk_09EF97EC);
+#endif
     AnimStart(&gUnk_02035E58, 0, 1);
     gUnk_02035E78 = LoadObjTiles(gUnk_0999E69E, 0xD60);
     AnimInit(&gUnk_02035E80, gUnk_09EF9858, gUnk_09EF9830);
@@ -111,25 +166,69 @@ void mode_mapinspect_0(void) {
     gUnk_02035F9C = EwramAlloc(0x2D0);
     func_08065ACC(gUnk_02035F9C, 0x5A);
 
+#ifdef VERSION_EU
+    gUnk_02035FAA[0] = func_08065B54(eu_0805E924(gUnkEu_08890EC0));
+#else
     gUnk_02035FAA[0] = func_08065B54(gUnk_08159FBC);
+#endif
     gUnk_02035FA4 = EwramAlloc(gUnk_02035FAA[0] * 8);
     func_08065ACC(gUnk_02035FA4, gUnk_02035FAA[0]);
+#ifdef VERSION_EU
+    gUnk_02035FA8 = func_08065B6C(eu_0805E924(gUnkEu_08890EC0), gUnk_02035FA4);
+#else
     gUnk_02035FA8 = func_08065B6C(gUnk_08159FBC, gUnk_02035FA4);
+#endif
 
+#ifdef VERSION_EU
+    gUnk_02035FB2[0] = func_08065B54(eu_0805E924(gUnkEu_08890E1C));
+#else
     gUnk_02035FB2[0] = func_08065B54(gUnk_08159E10);
+#endif
     gUnk_02035FAC = EwramAlloc(gUnk_02035FB2[0] * 8);
     func_08065ACC(gUnk_02035FAC, gUnk_02035FB2[0]);
+#ifdef VERSION_EU
+    gUnk_02035FB0 = func_08065B6C(eu_0805E924(gUnkEu_08890E1C), gUnk_02035FAC);
+#else
     gUnk_02035FB0 = func_08065B6C(gUnk_08159E10, gUnk_02035FAC);
+#endif
 
+#ifdef VERSION_EU
+    gUnk_02035FBA[0] = func_08065B54(eu_0805E924(gUnkEu_08890E44));
+#else
     gUnk_02035FBA[0] = func_08065B54(gUnk_08159E18);
+#endif
     gUnk_02035FB4 = EwramAlloc(gUnk_02035FBA[0] * 8);
     func_08065ACC(gUnk_02035FB4, gUnk_02035FBA[0]);
+#ifdef VERSION_EU
+    gUnk_02035FB8 = func_08065B6C(eu_0805E924(gUnkEu_08890E44), gUnk_02035FB4);
+#else
     gUnk_02035FB8 = func_08065B6C(gUnk_08159E18, gUnk_02035FB4);
+#endif
 
-    gUnk_02035FC2[0] = func_08065B54(gUnk_0815C136);
+#ifdef VERSION_JP
+    gUnk_02035FC2[0] = func_08065B54(gUnk_0814FBB0);
     gUnk_02035FBC[0] = EwramAlloc(gUnk_02035FC2[0] * 8);
     func_08065ACC(gUnk_02035FBC[0], gUnk_02035FC2[0]);
+    gUnk_02035FC0[0] = func_08065B6C(gUnk_0814FBB0, gUnk_02035FBC[0]);
+
+    gUnk_02035FC2[1] = func_08065B54(gUnk_0814FBBC);
+    gUnk_02035FBC[1] = EwramAlloc(gUnk_02035FC2[1] * 8);
+    func_08065ACC(gUnk_02035FBC[1], gUnk_02035FC2[1]);
+    gUnk_02035FC0[1] = func_08065B6C(gUnk_0814FBBC, gUnk_02035FBC[1]);
+#else
+#ifdef VERSION_EU
+    gUnk_02035FC2[0] = func_08065B54(eu_0805E924(gUnkEu_08895CF8));
+#else
+    gUnk_02035FC2[0] = func_08065B54(gUnk_0815C136);
+#endif
+    gUnk_02035FBC[0] = EwramAlloc(gUnk_02035FC2[0] * 8);
+    func_08065ACC(gUnk_02035FBC[0], gUnk_02035FC2[0]);
+#ifdef VERSION_EU
+    gUnk_02035FC0[0] = func_08065B6C(eu_0805E924(gUnkEu_08895CF8), gUnk_02035FBC[0]);
+#else
     gUnk_02035FC0[0] = func_08065B6C(gUnk_0815C136, gUnk_02035FBC[0]);
+#endif
+#endif
 
     func_08107280();
     func_081073F0();
@@ -138,9 +237,6 @@ void mode_mapinspect_0(void) {
     DisableBg(2);
     DisableBg(3);
 }
-#else
-INCLUDE_ASM("mode_mapinspect/mode_mapinspect_0.s");
-#endif
 
 void mode_mapinspect_1(void) {
     UpdatePlayTime();
