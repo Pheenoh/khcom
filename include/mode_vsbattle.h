@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_VSBATTLE_H
 #define GUARD_MODE_VSBATTLE_H
 
+#include "card_api.h"
+
 #include "fade.h"
 #include "btl_effect.h"
 #include "btl_collision.h"
@@ -17,6 +19,7 @@
 #include "m4a.h"
 #include "enemy_common.h"
 #include "hum_common.h"
+#include "btl_api.h"
 
 typedef struct CharaLinkData {
     u16 unk_00;
@@ -170,17 +173,7 @@ void func_08010CC8(void);
 void func_0801071C(void);
 extern vu32 gFrameCounter;
 extern u16 gBldCnt;
-void func_0802F284(s32 a, s32 b, s32 c);
-void func_0807E1A0(void);
-void func_0807E1AC(void);
-void func_0807E1B8(void);
-void func_0807E1C4(void);
-void func_0807E1D0(void);
-void func_0807E1DC(void);
-void func_0807E1E8(void);
-u8 func_0807E29C(void);
 void func_0807E2F4(void);
-void func_08096DC4(TaskPool* pool, void* arg);
 
 void mode_vsbattle_0(u32 mode);
 void mode_vsbattle_1(void);

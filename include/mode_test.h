@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "card_api.h"
+
+#include "map_api.h"
 #include "mode_test_api.h"
 
 #include "fade.h"
@@ -21,6 +24,8 @@
 #include "taskpool.h"
 #include "gba/syscall.h"
 #include "m4a.h"
+#include "bos4_api.h"
+#include "btl_api.h"
 
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
@@ -205,9 +210,6 @@ extern u8 gUnk_09849A98[];
 extern u8 gUnkEu_08896524[];
 extern TaskDesc gTaskDescBtlShadow;
 
-void func_0802F284(s32 a, s32 b, s32 c);
-void func_0802F1E8(void);
-
 #endif
 
 typedef struct LockonWork {
@@ -226,14 +228,9 @@ typedef struct LockonWork {
     u8 unk_4D[3];
 } LockonWork;
 
-u32 Sqrt(u32 a);
 s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
 void func_080B0754(void);
-void func_080E052C(u8 a);
-void func_080E04EC(void);
-void func_080A42B4(void);
 void func_08061824(void);
-u8 func_080A42C8(void);
 
 void mode_test_0(void);
 void mode_test_1(void);
@@ -266,7 +263,6 @@ void func_0806119C(void);
 void Event_2(void);
 void func_08061248(void);
 void func_08062D3C(void);
-u8 func_080A42D4(void);
 void func_0806250C(void);
 void func_08062CE4(void);
 void func_08061FC8(void);
@@ -274,8 +270,6 @@ void func_080629F8(void);
 void func_08062D20(void);
 u8 func_080629CC(void);
 void func_0806297C(void);
-void func_080DF480(void);
-void func_080DF380(void);
 u8 task_lockon_1(LockonWork* w);
 void task_lockon_2(LockonWork* w);
 void task_lockon_3(LockonWork* w);

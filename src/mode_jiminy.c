@@ -1,3 +1,6 @@
+#include "jiminy_list.h"
+#include "map_api.h"
+#include "msg_api.h"
 #include "fade.h"
 #include "macros.h"
 #include "mode_jiminy.h"
@@ -859,7 +862,7 @@ void func_0805BAE4(void) {
 #ifdef VERSION_JP
             width = gJiminyWork->unk_C71;
 #else
-            width = func_08064DD4(
+            width = (s16)func_08064DD4(
 #ifdef VERSION_EU
                 eu_0805E924(gJiminyWork->unk_CCC->name)
 #else

@@ -1,6 +1,7 @@
 #ifndef GUARD_BTL2_H
 #define GUARD_BTL2_H
 
+#include "map_api.h"
 #include "btl2_tasks.h"
 
 #include <stdlib.h>
@@ -16,6 +17,8 @@
 #include "key.h"
 #include "anim.h"
 #include "fld_types.h"
+#include "bos4_api.h"
+#include "btl2_api.h"
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
@@ -230,11 +233,6 @@ typedef struct BtlStartWork {
     s16 unk_02;
 } BtlStartWork;
 
-s32 func_080DFF1C(FldPos* p);
-u8 func_080DFCDC(FldPos* p);
-u8 func_080DFBDC(FldPos* p);
-u8 _080DFE1C(FldPos* p);
-
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 
 extern u8 gUnk_0203D990[];
@@ -352,12 +350,5 @@ extern u8 gUnk_09EE1420[];
 extern u8 gUnk_09EE1498[];
 
 void func_08031BC4(FldActor* act);
-u8 func_08031D74(FldPos* p);
-s32 func_08031DF8(FldPos* p);
-u8 func_08031E48(FldPos* p, FldWork* work);
-u8 func_08031EC4(FldActor* act);
-s32 func_08031F1C(FldWork* work);
-void func_08031F60(FldActor* act);
-void func_08031F98(FldWork* work, s32 a, s32 b);
 
 #endif /* GUARD_BTL2_H */

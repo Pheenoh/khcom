@@ -1,3 +1,4 @@
+#include "ms_api.h"
 #include "macros.h"
 #include "ms.h"
 

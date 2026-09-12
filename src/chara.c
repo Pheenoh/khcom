@@ -1,3 +1,4 @@
+#include "chara_api.h"
 #include "display.h"
 #include "pallet.h"
 #include "sio_api.h"
@@ -342,7 +343,7 @@ void func_080C590C(void) {
     gUnk_0203BEA0 = (gVBlankCounter - gUnk_0203BEB0) & 0xFFFF;
 }
 
-s32 func_080C5930(void) {
+u8 func_080C5930(void) {
     if (gSioStatus & 0x7F0000) {
         return 1;
     }

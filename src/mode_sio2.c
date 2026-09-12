@@ -1,3 +1,5 @@
+#include "msg_api.h"
+#include "mode_sio2_api.h"
 #include "macros.h"
 #include "mode_sio2.h"
 #include "gba/keys.h"

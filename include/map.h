@@ -1,6 +1,14 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
+#include "card_api.h"
+
+#include "map_api.h"
+#include "msg_api.h"
+#include "status_api.h"
+#include "task.h"
+#include "mode_sio2_api.h"
+
 #include "mode_test_api.h"
 
 #include "save_api.h"
@@ -32,6 +40,7 @@
 #include "card_types.h"
 #include "text_types.h"
 #include "battle_actor.h"
+#include "bos4_api.h"
 
 typedef struct UnkStruct_080DFB8C {
     u16 unk_00;
@@ -1607,19 +1616,15 @@ extern void* gTaskDescMapNamine;
 extern void* gTaskDescMapNiseriku;
 extern void* gTaskDescMapMickey;
 
-void* func_080857BC(u8 a);
-void func_080D8B84(void* a, void* b, void* c);
 void func_080ED250(u8* work);
 void func_080EBE90(UnkStruct_02034FE0* work);
 void func_080EBD00(UnkStruct_02034FE0* work);
 void func_080EBEC8(UnkStruct_02034FE0* work);
 void func_080EBFB8(UnkStruct_02034FE0* work);
-void func_080EBFF8(UnkStruct_02034FE0* work);
 void func_080EC04C(UnkStruct_02034FE0* work);
 void func_080EBFF8(UnkStruct_02034FE0* work);
 void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
-s32 func_080DFE7C(s32 x, s32 y, s32 z);
 extern TaskDesc gTaskDescFldShadow;
 extern TaskDesc gTaskDescMapTalk;
 extern u8 gUnk_0937E90A[];
@@ -1649,10 +1654,6 @@ void func_080F6668(MapNamineWork* w);
 void func_080F6704(MapNiserikuWork* w);
 void func_080F6F1C(MapTutorialWork* w);
 
-
-
-
-void _08085D04(u8 a);
 s32 func_080EB7A0(u8 a);
 void func_080F6F90(MapTutorialWork* w);
 void func_080F6FC4(MapTutorialWork* w);
@@ -1673,9 +1674,6 @@ void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg);
 s32 func_080EE824(MapSaveWork* w);
 s32 func_080ED6CC(MapMenuWork* w);
 s32 func_080ED7CC(MapMenuWork* w);
-s32 func_080EDA90(MapMenuWork* w);
-s32 func_080EDB4C(MapMenuWork* w);
-s32 func_080EDC94(MapMenuWork* w);
 s32 func_080ED498(MapMenuWork* w);
 s32 func_080ED91C(MapMenuWork* w);
 s32 func_080EDA90(MapMenuWork* w);
@@ -1699,7 +1697,6 @@ void func_080F65A8(MapNamineWork* w);
 s32 func_080F78A8(u8* work);
 void func_080E2C50(void);
 void func_080EB1AC(UnkStruct_02034FDC* w);
-void func_080EB12C(UnkStruct_02034FDC* w);
 void func_080EB1F4(UnkStruct_02034FDC* w);
 void func_080EB27C(UnkStruct_02034FDC* w);
 void func_080EB2D0(UnkStruct_02034FDC* w);
@@ -1716,10 +1713,6 @@ s32 func_080F2E4C(MapGmkGpWork* w);
 s32 func_080F3108(MapGmkGp8Work* w);
 s32 func_080F30C4(MapGmkGp8Work* w);
 void func_080E4B34(void);
-void func_08066918(void* a, void* b);
-u16 CountCardsById(u16 cardId);
-void func_0801CCB4(void);
-void func_0801CD20(void);
 extern Mode gModeCopyright1;
 extern Mode gModeMenuMsg;
 extern Mode gUnk_09EE2704;
@@ -1734,7 +1727,6 @@ extern Mode gModeDebflag;
 extern Mode gModeTitle;
 void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);
 void* func_08093BF8(void);
-void func_080DF640(u8 a, void* p);
 s32 func_080ECAC8(UnkStruct_080ECA88* p);
 s32 func_080ECBC8(UnkStruct_080ECA88* p);
 s32 func_080ECC54(UnkStruct_080ECA88* p);
@@ -1763,18 +1755,6 @@ s32 func_080F2B78(MapGmkGpWork* w);
 void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 u8 func_080840E4(void);
-u8 func_080A42C8(void);
-s32 func_080DF548(s32 a);
-void func_080DF6D0(UnkStruct_0203C7AC* p, u8 a);
-u8 func_080DF750(void);
-void func_080DF9A8(void);
-void func_080DF9C4(void);
-void func_080DFAA8(void);
-void func_080DF244(void);
-UnkStruct_080DEDD8* func_080DEDD8(s32 a);
-UnkStruct_080DEE18* func_080DEE18(u8 a);
-u8 func_080DFBDC(UnkStruct_080DFF1C* p);
-UnkStruct_080DFB8C* func_080DFB8C(s32 x, s32 y);
 UnkStruct_080DFB8C* func_080E08BC(s16 x, s16 y);
 void func_080E2D80(void);
 void func_080E0960(UnkStruct_080DFB8C* p, s32 n);
@@ -1803,49 +1783,32 @@ u8 func_080E87EC(s16 x, s16 y, const UnkStruct_080E87EC* p);
 void func_080E8724(s16 x, s16 y, const u8* p, u16* base);
 void func_080E893C(s16 x, s16 y, const u8* p, u16* base);
 void func_080E8A24(UnkStruct_080E8864* p);
-u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y);
 UnkStruct_080E8E24* func_080E8E74(u8 a);
 void func_080EAB20(u8 a, u8 b, u8 c);
 void func_080EABB8(u8 a, u16 v);
 void func_080EAC60(u8 a, u32 b);
 
 s32 func_080DFEBC(s32 x, s32 y, s32 z);
-s32 func_080DFF1C(UnkStruct_080DFF1C* p);
 s32 func_080DFF30(UnkStruct_080DFF1C* p);
-void func_080DFF4C(UnkStruct_080DFF1C* p);
 void func_080DFF5C(UnkStruct_080DFF1C* p, s16 x, s16 y, u8 a, u8 b);
-s32 func_080DFF94(s32 x, s32 y, s32 z);
 void func_080DFFEC(UnkStruct_080DFF1C* p);
 s32 func_080E0010(s32 x);
 s32 func_080E0044(s32 y);
 void func_080E0078(void);
 void func_080E0558(void);
 void func_080E062C(void);
-void func_080E0298(s32 x, s32 y);
-void func_080E02A8(s32 dx, s32 dy);
-void func_080E02C0(s32 x, s32 y, s32 z);
 u8 func_080E02E0(UnkStruct_080DFF1C* p, s16 a, s16 b);
 u8 func_080E0378(void);
 s32 func_080E0390(void);
 s32 func_080E03C0(s32 a);
-void func_080E0418(void);
-void func_080E04EC(void);
-void func_080E052C(u8 a);
 void func_080E05E4(void);
 void func_080E0780(void);
 void func_080E0820(void);
 void* func_080D3A20(void* pool);
-void func_080C75A4(s32 a, u16 b);
 void func_080EC500(UnkStruct_02034FE4* w);
 void func_080EC544(UnkStruct_02034FE4* w);
 void func_080EC57C(s32 arg);
-void func_080DF730(u8 a, u8 b);
-void func_080DF814(void);
-void func_080DF828(void);
-void func_0806180C(u16 a);
-void func_080DFA3C(void);
 void func_080104F4(void);
-void func_080DEF20(void);
 void func_080E0878(void);
 void func_080E0900(UnkStruct_080DFB8C* p, s32 a, s32 b);
 u8 func_080E0920(UnkStruct_080DFF1C* p, u16 a);
@@ -1883,18 +1846,10 @@ void func_080E3400(u8 i, s16 a, s16 b, s16 c, u8 e);
 void func_080E3EFC(void);
 void func_080E4FF0(void* p, s16 a, s16 b);
 void func_080E51C0(void* p, s16 a, s16 b);
-UnkStruct_080DFB8C* func_080E548C(s16 a, s16 b);
 UnkStruct_02034F20* func_080E54A0(u8 a);
-u8* func_080E54B8(u8 a);
 void* func_080E5504(void);
-void func_080E5510(u8 a);
 u16 func_080E5564(void);
 void func_080E49DC(u16 a, u16 b);
-UnkStruct_080DFB8C* func_080DFB7C(u8 a);
-u8 func_080DEE28(u8 a, u8 b);
-u16 func_080DEE44(u8 a, u8 b);
-UnkStruct_02034F24* func_080E5590(u8 a);
-s32 func_080E58F8(s16 a, s16 b);
 void func_080E590C(UnkStruct_080E5B90* p);
 void func_080E5938(UnkStruct_080E5B90* p);
 s32 func_080E5968(UnkStruct_080E5B90* p);
@@ -1902,11 +1857,7 @@ void func_080E5CD4(UnkStruct_080E590C* p);
 void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a);
 void func_080E5DEC(UnkStruct_080E590C* p);
 void func_080EF508(UnkStruct_080E590C* p);
-void func_080EF58C(UnkStruct_080E590C* p);
 void func_080EF664(UnkStruct_080E590C* p);
-void func_080EF718(UnkStruct_080E590C* p);
-void func_080EF88C(UnkStruct_080E590C* p);
-void func_080EF7B8(UnkStruct_080E590C* p);
 void func_080EFC08(UnkStruct_080E590C* p);
 void func_080EFCF4(UnkStruct_080E590C* p);
 void func_080EF914(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
@@ -1967,10 +1918,7 @@ u8 func_080E89E4(s16 x, s16 y, const u8* p);
 void func_080E8AC8(UnkStruct_080E8864* p);
 void func_080E8AE8(void);
 u8 func_080E8C38(u8 a, u8 b);
-s32 func_080E8C84(u8 a, u8 b);
-u8 func_080E8D00(void);
 u8 func_080E8D64(UnkStruct_080E8D64* p);
-UnkStruct_02034F80* func_080E8D1C(u8 a);
 s32 func_080E8E24(UnkStruct_080E8E24* p);
 u8 func_080E8F0C(void);
 s32 func_080E8F50(UnkStruct_080E8E24* a, u8 b, s32 c, s32 d, s32 e);
@@ -1978,9 +1926,6 @@ u8 func_080E8FB8(u8 a, s32 b, s32 c, s32 d);
 void func_080E9338(s32 a);
 void func_080E9344(s32 a);
 void func_080E9034(u8 a, u8 b, s32 c, s32 d, s32 e);
-s32 func_080E924C(void);
-void func_080E92B8(UnkStruct_080E92B8* p);
-void func_080E92F8(UnkStruct_080E92B8* p);
 void func_080E935C(void);
 void func_080E93FC(void);
 void func_080E9508(void);
@@ -1997,7 +1942,6 @@ void func_080E9A28(void);
 void func_080E9AF0(void);
 void func_080E9B7C(void);
 void func_080E9CBC(void);
-void func_080E9D94(void);
 void func_080E9E04(void);
 void func_080E9E28(void);
 void func_080E9E94(void);
@@ -2038,13 +1982,9 @@ void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a);
 void func_080ED06C(UnkStruct_080ED06C* p, u8 a);
 void func_080EE50C(UnkStruct_080EE50C* p, u8 a);
 void func_080EE580(UnkStruct_080EE580* p, u8 a);
-u32 func_080DF804(u8 a);
 void func_080F7AE0(MapFloorWork* w);
 void func_080F77D4(MapFaintWork* w);
 void func_080EE5E0(u8 a);
-
-
-
 
 void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f);
 void func_080E64D4(UnkStruct_080E590C* p);
@@ -2056,18 +1996,9 @@ void func_080F0660(UnkStruct_080F023C* p, u8 a);
 void func_080EE760(u8* work, u8 i);
 void func_080F4EE4(MapPrzCardWork* work);
 void func_080F51A0(MapPrzCardWork* w);
-void func_08084458(u16 a);
 void func_080F4FB0(MapPrzCardWork* w);
 void func_080F52D4(MapPrzCardWork* w);
 void func_080F534C(MapPrzCardWork* w);
-void func_080A411C(void* pool, u32 a, u16 b);
-void func_080A4188(void* pool, u16 b);
-void func_080C736C(void);
-void func_080C73A4(s32 a, s32 b, s32 c);
-void func_080C7568(u32 a, u16 b);
-u16 func_0806692C(u8* s, u16* out);
-void func_08066DC0(s32 x, s32 y, void* s, void* d, void* e, s32 h, s32 n);
-u16 func_08066AF8(s32 v, u16* out);
 void func_080E00E4(s32 a, s32 b);
 void func_080EAF10(void);
 void func_080EBB24(void);
@@ -2089,12 +2020,9 @@ void func_080F6DE8(MapTutorialWork* w);
 void func_080F7458(MapTutorialWork* w);
 void func_080EB698(void);
 void func_080EC424(void);
-void func_080C73D8(void);
 s32 func_080EC720(MapRndWork* w);
 void func_080ECAA8(UnkStruct_080ECA88* p);
 void func_080F1718(MapGmkJumpWork* w);
-void func_080F1AD0(MapGmkTutorialWork* w);
-u8 func_080F1978(MapGmkTutorialWork* w);
 u8 func_080F1A10(MapGmkTutorialWork* w);
 void func_080F1C38(MapGmkTutorialWork* w);
 u8 func_080F1C64(MapGmkSpiderWork* w);
@@ -2113,7 +2041,6 @@ void func_080F1460(MapGmkJumpWork* w);
 void func_080F14C4(MapGmkJumpWork* w);
 void func_080F1544(MapGmkJumpWork* w);
 void func_080F2058(MapGmkGpWork* w);
-u8 func_080F207C(MapGmkGp1Work* w);
 u8 func_080F2244(MapGmkGpWork* w);
 u8 func_080F230C(MapGmkGpWork* w);
 u8 func_080F238C(MapGmkGpWork* w);

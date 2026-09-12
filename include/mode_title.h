@@ -1,6 +1,11 @@
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
+#include "card_api.h"
+
+#include "title_api.h"
+#include "mode_sio2_api.h"
+
 #include "save_api.h"
 
 #include "display.h"
@@ -56,20 +61,9 @@ extern void* gUnk_09EF65B4;
 extern void* gUnk_09EF65BC;
 extern void* gUnk_09EF65C4;
 
-
-void func_08093BB4(void);
-void func_08093C04(void);
-void func_080C736C(void);
-void func_080C73A4(s32 a, s32 b, s32 c);
-void func_080C73D8(void);
 void func_080D5A4C(s32 a);
 void func_080D5B04(void);
-void func_080C75A4(s32 a, u16 b);
-u8 func_080D6790(void);
 void func_080D5B30(void);
 void func_080D59B4(void);
-
-
-
 
 #endif /* GUARD_MODE_TITLE_H */

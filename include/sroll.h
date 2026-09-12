@@ -10,6 +10,7 @@
 #include "main.h"
 #include "types.h"
 #include "taskpool.h"
+#include "sroll_api.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
@@ -366,19 +367,15 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a);
 u8 task_sroll_b_crtn_1(SrollBCrtnWork* w);
 void task_sroll_b_crtn_2(SrollBCrtnWork* w);
 void task_sroll_b_logo_3(SrollBLogoWork* w);
-void func_081149B0(SrollBCharWork* w, s32 v);
 void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a);
 s32 task_sroll_b_char_1(SrollBCharWork* w);
 void task_sroll_b_char_2(SrollBCharWork* w);
 void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a);
 void func_081149B8(SrollBCharWork* w);
 void task_sroll_c_char_0(SrollCCharWork* w, s32 kind);
-void func_0811614C(SrollWork* w, SrollInit* a);
 void func_081161C8(SrollWork* w);
-void func_08116268(SrollWork* w, u16 a, u16 b, u16 c, u16 d);
 void func_0811627C(SrollWork* w, u8 flush);
 void func_08116698(SrollWork* w, u8 flush);
-void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush);
 u8* func_081167F8(SrollWork* w, u8* s);
 u8 sub_0811683C(SrollWork* w);
 void func_08116AD8(SrollWork* w, u8 flush);
@@ -397,7 +394,6 @@ void task_sroll_c_char_2(SrollCCharWork* w);
 void task_sroll_tmr_0(SrollTmrWork* w, void* arg);
 u8 task_sroll_tmr_1(SrollTmrWork* w);
 void func_08000714(void);
-void func_08116E98(void);
 void func_081154A0(u32* dst, u8* src, u32* pal, s32 x);
 void func_081154EC(u32* dst, u8* src, u32* pal, s32 x);
 void func_08115548(u32* dst, u8* src, u32* pal, s32 x);
@@ -416,15 +412,12 @@ u16 func_081167D0(u16 c);
 void func_08116A98(SrollWork* w, u8 flush);
 void func_08116644(SrollWork* w);
 u32 func_08116034(SrollWork* w, u32* dst, u8* src, s32 width);
-void func_08116BEC(SrollWork* w, u16 x, u16 y, u8* s, u8 flush);
 void func_081162E8(SrollWork* w);
 void func_081163CC(SrollWork* w);
 void func_08116500(SrollWork* w);
 u16 func_08115F34(u16 c, u8* font);
 u8 func_08115F8C(u16 c, u8* font, u8* widths, u32 count);
-s32 func_08115FBC(SrollWork* w, u8* s);
 u32 func_08116008(u16 c, u8* font, u32 base, u16 a, u16 b);
-void func_081160EC(SrollWork* w, u32 mode);
 void func_081161D4(SrollWork* w);
 u8 func_081161DC(SrollWork* w);
 void func_081161EC(SrollWork* w, u16 c);
@@ -432,17 +425,10 @@ u16 sub_08116204(SrollWork* w);
 void func_08116228(SrollWork* w, u16 x, u16 y);
 void func_08116254(SrollWork* w, u16 x);
 u16 func_08116CDC(u8 c);
-void func_08116CEC(void);
 void func_08116D28(void);
 void func_08116DD0(void);
 void func_08116DE8(void);
-void func_08116E00(vu16* dst, u8* src, u32 cnt);
-void func_08116E60(u8* src);
-void func_08116E80(void);
-void func_08116E8C(void);
-void func_08116ECC(void);
 void func_08116EF0(void);
-void func_08116F08(void);
 u16 func_08116F20(void);
 u32* func_08116F28(void);
 u8* func_08116F30(u32** p);

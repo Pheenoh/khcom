@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_BATTLE_H
 #define GUARD_MODE_BATTLE_H
 
+#include "mode_chkbtl_api.h"
+
+#include "mode_battle_api.h"
+
 #include "display.h"
 #include "fade.h"
 #include "battle_actor.h"
@@ -50,11 +54,6 @@ extern TaskDesc gTaskDescBosMd;
 extern TaskDesc gTaskDescBosPc;
 extern TaskDesc gTaskDescBosLst;
 
-void func_0800AB8C(void);
 void _08019CB4(void);
-
-void mode_battle_0(u32 mode);
-void mode_battle_1(void);
-void mode_battle_2(void);
 
 #endif /* GUARD_MODE_BATTLE_H */

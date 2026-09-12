@@ -27,7 +27,6 @@
 #define REG_IF (*(vu16*)0x04000202)
 #define REG_IME (*(vu16*)0x04000208)
 
-
 typedef struct {
     u8 unk_00;
     u8 unk_01;
@@ -77,9 +76,6 @@ extern u8 gUnk_0203982C;
 extern SioWork gUnk_02039830;
 extern u8 gUnk_02039B50;
 extern u8 gUnk_02039B60;
-
-
-
 
 u16 IsVBlankIntrLive(void);
 void SioInit(void);

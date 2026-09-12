@@ -374,7 +374,6 @@ extern char gNumMusicPlayers[];
 extern char gMaxLines[];
 extern SoundInfo* gSoundInfoPtr;
 
-
 u32 umul3232H32(u32 multiplier, u32 multiplicand);
 void SoundMain(void);
 void MPlayMain(MusicPlayerInfo* mplayInfo);

@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_CHKSND_H
 #define GUARD_MODE_CHKSND_H
 
+#include "card_api.h"
+
 #include "types.h"
 #include "taskpool.h"
 #include "main.h"
@@ -14,9 +16,6 @@ typedef struct ChkSndEntry {
 } ChkSndEntry;
 extern ChkSndEntry gChkSndEntries[];
 extern TaskDesc gTaskDescPrint;
-
-void func_0809D2B0(u8 x, u8 y, u8 c, const char* s);
-void func_0809D458(u16 x, u16 y, u16 c, s32 v);
 
 void mode_chksnd_0(void);
 void mode_chksnd_1(void);

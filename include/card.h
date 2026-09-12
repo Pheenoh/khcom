@@ -1,6 +1,8 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "card_api.h"
+
 #include "card_deck.h"
 
 #include "types.h"
@@ -873,7 +875,6 @@ typedef struct UnkStruct_080038C8 {
     u16 unk_08;
 } UnkStruct_080038C8;
 
-
 typedef struct UnkStruct_0809CE88 {
     void* unk_00;
     void* unk_04;
@@ -924,7 +925,6 @@ typedef struct UnkStruct_080AB018 {
 } UnkStruct_080AB018;
 
 typedef char UnkStruct_080AB018_sizechk[(sizeof(struct UnkStruct_080AB018) == 0x10) ? 1 : -1];
-
 
 typedef struct CardSlot {
     u32 unk_00;
@@ -1501,7 +1501,6 @@ typedef struct UnkStruct_08083B20 {
     u8 unk_33[0x13];
     u8 unk_46;
 } UnkStruct_08083B20;
-
 
 typedef struct UnkStruct_08099928 {
     UnkStruct_080038C8* unk_00;
@@ -2149,32 +2148,21 @@ typedef struct UnkStruct_02039BA0 {
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 
-void func_0807E1F4(void);
-void func_0807E200(void);
-void func_0807E20C(void);
-void func_0807E218(void);
-void func_0807E224(void);
 void func_0807E230(void);
-void func_0807E23C(void);
-void func_0807E248(void);
 void func_0807E254(void);
 
 Deck* GetActiveDeck(void);
 Deck* GetDeck(u8 index);
-u16 CountCardsById(u16 cardId);
 u8 func_08085B84(u16 index);
 u16 func_08085B5C(u16 index);
 void SetActiveDeckIndex(u8 index);
 u16 func_08085770(u8 index);
-u16 func_08085B38(u8 index);
-u8* func_080857BC(u8 index);
 
 void func_08066588(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void func_0807B410(void* pool);
 void func_080933D8(UnkStruct_080933D8* p);
 u8 func_0807B60C(void);
 u8 func_08081888(void);
-Deck* func_08083D7C(void);
 u16 func_08078754(UnkStruct_08078754* w, u8 n);
 u8 func_0809C448(u8* work, void* a);
 u8 func_0807BE54(UnkStruct_02034AAC* p, void* a);
@@ -2244,7 +2232,6 @@ void func_080A09C0(u16 n, u16* out);
 u8 func_080A5F70(u8* work, void* a);
 u8 func_08097600(UnkStruct_08096F94* w);
 u8 func_0809CBF8(u8* work, void* a);
-void func_0807B668(UnkStruct_02039DD4* p);
 u8 func_080A6474(u8* work, void* a);
 void func_080855C8(void);
 u8 RELOAD_1(u8* work, void* a);
@@ -2319,20 +2306,17 @@ void func_08085448(u16 slot);
 u8 func_0807C3E8(UnkStruct_02034AAC* p, void* a);
 u8 func_0808E934(u8* work, s16 x, s16 y, u16 dir);
 void Mapcard_0(MapcardWork* w, MapcardArgs* a);
-Deck* func_08083C94(void);
 u8 func_08085374(u16 card, u8 deck);
 void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p);
 void func_080AB228(void);
-u16 func_08093384();
+u16 func_08093384(void);
 void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a);
 void Deck_Clear_0(UnkStruct_080A2F54* w, u8* a);
 void Deck_Yes_No_0(UnkStruct_080A2F54* w, u8* a);
 void LVUP_EFFECT_2(UnkStruct_080A18F4* w);
 u8 func_0809CB0C(u8* work, void* a);
 void Lvup_Logo_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a);
-void func_080A32DC(u8* p);
 void func_0807F99C(UnkStruct_08080268* w);
-u8 func_080A1B4C(UnkStruct_080A1B4C* p, void* pool);
 u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a);
 u8 func_080A5EA0(UnkStruct_080A5D3C* w, void* a);
 void func_080A4C1C(UnkStruct_080A3F5C* w);
@@ -2375,7 +2359,6 @@ u8 func_08090DB0(UnkStruct_02034AAC* p, void* a);
 void card_reload_0(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
 void func_08091048(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
 void func_0807DAD0(UnkStruct_02034AAC* p);
-u8 func_080987C0(u16 n);
 void Reload_Card_0(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
 void func_08091138(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
 u8 func_0809C620(u8* work, void* a);
@@ -2416,7 +2399,6 @@ u8 func_08082348(UnkStruct_02034AAC* p, void* a);
 u8 func_0809C2D0(u8* work, void* a);
 u8 func_08090C3C(UnkStruct_02034AAC* p, void* a);
 
-
 void CardName_0(UnkStruct_0809CC80* w);
 void DarkPoint_0(UnkStruct_080AB018* w);
 s32 DarkPoint_1(UnkStruct_080AB018* w);
@@ -2430,6 +2412,5 @@ u8 func_080A7ABC(UnkStruct_0808C940* w, void* a);
 void func_080A9B84(UnkStruct_0808C940* w, u8 b);
 #endif
 #endif
-
 
 #endif /* GUARD_CARD_H */

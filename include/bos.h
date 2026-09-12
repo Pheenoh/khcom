@@ -22,5 +22,4 @@ typedef struct BosMapConfig {
     u8 unk_10[0x10];
 } BosMapConfig;
 
-
 #endif /* GUARD_BOS_H */

@@ -1,6 +1,11 @@
 #ifndef GUARD_MODE_STATUS_H
 #define GUARD_MODE_STATUS_H
 
+#include "map_api.h"
+#include "mode_status_api.h"
+
+#include "mode_copyright2.h"
+
 #include "display.h"
 #include "fade.h"
 #include "types.h"
@@ -18,12 +23,8 @@ extern u8 gUnk_09848B98[];
 extern TaskDesc gTaskDescStatusBar;
 extern TaskDesc gTaskDescStatus;
 
-void func_080D733C(void);
-void func_080E052C(u8 a);
-
 void mode_status_0(void);
 void mode_status_1(void);
 void mode_status_2(void);
-void func_080D7568(u8 a);
 
 #endif /* GUARD_MODE_STATUS_H */

@@ -1,3 +1,4 @@
+#include "status_api.h"
 #include "macros.h"
 #include "anim.h"
 #include "status.h"

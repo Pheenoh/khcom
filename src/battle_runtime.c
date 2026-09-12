@@ -1,3 +1,5 @@
+#include "map_api.h"
+#include "msg_api.h"
 #include "display.h"
 #include "key.h"
 #include "m4a_song.h"

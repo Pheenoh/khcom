@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "pc.h"
+#include "pc_api.h"
 
 void task_pc_acddmg_0(PcAcdDmgWork* work, BtlObj* obj) {
     work->unk_04 = obj;

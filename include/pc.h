@@ -7,6 +7,7 @@
 #include "battle_actor.h"
 #include "engine_math.h"
 #include "game.h"
+#include "pc_api.h"
 
 typedef struct PcAcdDmgWork {
     s16 unk_00;
@@ -34,9 +35,5 @@ typedef struct PcCharaWork {
 } PcCharaWork;
 
 void func_08049E70(PcCharaWork* work, s16 a, s32 b);
-void func_08049EE4(PcCharaWork* work, s32 a, s32 b);
-void func_08049F24(PcCharaWork* work, s32 a, s32 b);
-s32 func_08049F50(PcCharaWork* work);
-
 
 #endif /* GUARD_PC_H */

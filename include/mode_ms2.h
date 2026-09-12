@@ -1,6 +1,14 @@
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
+#include "card_api.h"
+
+#include "map_api.h"
+#include "ms_charge_api.h"
+#include "mode_worldwarp_api.h"
+
+#include "mode_ms2_api.h"
+
 #include "engine_math.h"
 
 #include "game_state.h"
@@ -159,58 +167,26 @@ extern u8 gUnk_09A0693C[];
 
 s16 func_0810712C(s16 a);
 s16 func_0810714C(void);
-UnkStruct_0810718C* func_0810718C(void);
 void func_081071AC(void);
 s16 func_08107220(s16 a);
 u8 func_08107268(void);
 s16 func_081075C0(s16 a, s16 b);
 s16 func_081075D8(void);
-void func_081075FC(void);
-void func_0810764C(void);
 u16 func_08107D24(void);
-void func_081085E8(void);
-void func_08107280(void);
-void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
-void func_081073F0(void);
-void func_081076D4(void);
-void func_08107B84(void);
 void mode_ms_charge_1(void);
-void func_0810594C(void);
-void func_08105BD8(void);
-void func_08105DE0(void);
-void func_0810601C(void);
-void func_081061DC(void);
-void func_080E04EC(void);
-void func_08106234(void);
 void mode_ms_charge_2(void);
-void func_08107D44(void);
-void func_08107FF0(void);
-void func_081078F0(s16 a);
 void func_08108170(UnkStruct_0810718C* p, u16 row);
-void func_08108208(void);
-void func_081083EC(void);
 void func_08107938(void);
 u8 func_081079A8(UnkStruct_0810718C* p);
 u8 func_081079E4(UnkStruct_0810718C* p);
 void func_08107A08(UnkStruct_0810718C* p);
 void func_08107A74(UnkStruct_0810718C* p);
 void mode_ms_charge_0(void);
-void func_0810563C(void);
-UnkStruct_0810718C* func_08104B2C(void);
-void func_081052C8(s16 a);
-void func_08104F2C(void);
-void func_08104FA4(void);
-void func_08104FF8(void);
-void func_08105090(void);
-void func_08104BBC(void);
-void func_08104D18(void);
-void func_08108650(void);
 extern s16 gUnk_02035C18;
 extern s16 gUnk_02035CE0;
 extern s16 gUnk_02035CE2;
 extern s16 gUnk_02035CE4;
 extern s16 gUnk_02035E0C;
 extern s16 gUnk_02035E0E;
-void* func_08093C18(s32 a);
 
 #endif /* GUARD_MODE_MS2_H */

@@ -1,6 +1,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "mode_sio2_api.h"
+
 #include "player_progression.h"
 
 #include "m4a_song.h"
@@ -19,6 +21,9 @@
 #include "taskpool.h"
 #include "main.h"
 #include "obj.h"
+#include "bos4_api.h"
+#include "poo_api.h"
+#include "btl_api.h"
 typedef struct PooAim {
     u8 unk_00[0x2E];
     u16 unk_2E;
@@ -1305,7 +1310,6 @@ extern PooActor gUnk_0203C420;
 #define REG_BG3CNT (*(vu16*)0x0400000C)
 #define REG_BG1HOFS (*(vu16*)0x04000018)
 
-
 void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p);
 void task_poo_zzz_2(PooZzzWork* w);
 s32 func_080D0210(s32 a, s32 b);
@@ -1325,7 +1329,6 @@ u8 task_poo_mapbeeborn_1(PooMapBornWork* w);
 u8 task_poo_mapbutterflyborn_1(PooMapBornWork* w);
 u8 task_poo_leaf_1(PooLeafWork* w);
 u8 func_080CA4E8(s16 x, s16 y, s16 h, s16 vy, s16 w, s16 vx, s32* ox, s32* oy);
-u16 func_080C7BF8(u8 kind, u8 count, s32 x, s32 y, s32 z);
 void func_080CE710(PooTiggerWork* w, u16 b);
 u8 task_poo_tiggerroo_1(PooTiggerWork* w);
 void task_poo_tiggerroo_2(PooTiggerWork* w);
@@ -1369,14 +1372,12 @@ void task_poo_spark_0(PooSparkWork* w, PooPos* p);
 void task_poo_trap_0(PooTrapWork* w, PooPos* p);
 u8 func_080D1650(void);
 void func_080C98B8(PooWork* w);
-void func_080C7FEC(PooWork* w, u32 a);
 void func_080C8C40(PooWork* w, PooNode* n);
 u8 task_poo_pooh_1(PooWork* w);
 u8 task_poo_mapbee_1(PooMapBeeWork* w);
 void task_poo_roo_3(PooRooWork* w);
 u8 func_080CF114(void);
 u8 func_080CF12C(void);
-void func_080C84E0(PooWork* w, u32 b);
 u8 func_080C9910(void);
 void task_poo_tanpopo_3(PooTanpopoWork* w);
 void task_poo_ti_board_0(PooBoardWork* w, PooPos* p);
@@ -1425,7 +1426,6 @@ u16 func_080CE880(PooAnimWork* w);
 void task_poo_tiggerroo_3(PooTiggerWork* w);
 void task_poo_trapballoon_3(PooBalloonWork* w);
 void task_poo_owlballoon_3(PooOwlBalloonWork* w);
-u8 func_080DDDEC(void* p, void* q, u8 c);
 s32 func_080C8B38(PooAim* w, PooPos* p, u8* c);
 u8 task_poo_map_1(PooMapWork* w);
 u16 func_080CA36C(u16 x, u16 y);
@@ -1433,7 +1433,6 @@ u8 func_080CA648(PooPos* p);
 void func_080CA9DC(PooSoraWork* w);
 void func_080CAA50(PooSoraWork* w, s32 b, u16 c);
 void func_080CAB24(PooActor* p);
-void func_080C7684(s32 a, s32 b, s32 c);
 s32 func_080CAA14(PooSoraWork* w);
 void task_poo_sora_3(PooSoraWork* w);
 u8 task_poo_sora_1(PooSoraWork* w, u8* t);
@@ -1452,8 +1451,6 @@ void task_poo_gauge_2(PooObjWork3* w);
 void func_080C9FBC(void);
 void func_080CA270(PooMapWork* w);
 void func_080CA724(PooSoraWork* w);
-void func_0802F208(void);
-s32 func_0802F268(void);
 void task_poo_butterfly_2(PooButterflyWork* w);
 u8 task_poo_prize_1(PooPrizeWork* w);
 void task_poo_prize_3(PooPrizeWork* w);
@@ -1489,8 +1486,6 @@ void task_poo_wagonwheel_0(PooWheelWork* w);
 void task_poo_trapballoon_0(PooBalloonWork* w, PooPos* p);
 void task_poo_owlballoon_0(PooOwlBalloonWork* w, PooPos* p);
 u8 func_080CA8D4(PooSoraWork* w, PooPos* p);
-u8 func_080C9DAC(void);
-void func_080CA6A8(s32 a, s32 b);
 u8 func_080CA960(PooPos* p);
 void task_poo_owl_0(PooOwlWork* w);
 u8 task_poo_owl_1(PooOwlWork* w);
@@ -1502,8 +1497,6 @@ void task_poo_mapbutterfly_2(PooMapButterflyWork* w);
 void task_poo_freeballoon_2(PooFreeBalloonWork* w);
 void task_poo_mapobjhit_0(PooMapObjHitWork* w, PooMapObjHitArgs* a);
 void task_poo_mapbee_2(PooMapBeeWork* w);
-void func_080C7CB0(s32 a);
-u8 func_080C7CBC(void);
 void task_poo_leaf_0(PooLeafWork* w, PooLeafArgs* a);
 void task_poo_beeAfterEvent_0(PooBeeAfterEventWork* w);
 u8 task_poo_tanpopo_1(PooTanpopoWork* w);
@@ -1527,12 +1520,10 @@ u8 task_poo_trapballoon_1(PooBalloonWork* w);
 u8 task_poo_cabbage_1(PooCabbageWork* w);
 void task_poo_cabbage_2(PooCabbageWork* w);
 void task_poo_pooh_0(PooWork* w);
-void func_080C7CC8(PooWork* w);
 extern const u16 gUnk_096FD86E[];
 extern TaskDesc gTaskDescPooFreeballoon;
 extern TaskDesc gTaskDescPooRoo;
 extern TaskDesc gTaskDescPooZzz;
-void func_0802F1C8(void);
 extern TaskDesc gTaskDescPooMapanime;
 extern PooMapBgDesc gUnk_096FC6E0;
 extern u8 gUnk_098A5C90[];
@@ -1547,7 +1538,6 @@ extern TaskDesc gTaskDescFldShadow;
 void func_080C8AE0(PooWork* w);
 s32 func_080D01BC(s32 x, s32 y);
 u8 func_080C871C(PooWork* w);
-void func_080C7B84(u32 a);
 
 void task_poo_mapbutterflyborn_3(PooMapBornWork* w);
 void task_poo_trap_3(PooTrapWork* w);
@@ -1558,9 +1548,6 @@ u8 task_poo_rabbitAfterEvent_1(PooRabbitAfterEventWork* w);
 void task_poo_rabbitAfterEvent_3(PooRabbitAfterEventWork* w);
 void func_080D0050(s32* a, s32* b);
 u8 func_080D1738(void);
-s32 func_080C8404(PooPos* a, PooActor* b);
-u8 func_080C83C4(u16 a, u16 b, u16 c, u16 d);
-void func_0802F1E8(void);
 void task_poo_cabbageAfterEvent_0(PooCabbageAfterEventWork* w);
 u16 func_080D172C(void);
 u32 func_080C8AD4(u32 a);
@@ -1572,15 +1559,11 @@ u8 task_poo_beeAfterEvent_1(PooBeeAfterEventWork* w);
 void task_poo_beeAfterEvent_3(PooBeeAfterEventWork* w);
 
 s32 func_080CFE34(PooPos* p);
-void func_080DDDDC(void* p, void* q);
 void task_poo_map_2(PooMapWork* w);
 void task_poo_map_3(PooMapWork* w);
-void func_080CA35C(void);
-void func_080CA368(void);
 void func_080CA0A8(void);
 void func_080CA0B4(void);
 u16 func_080CBB7C(void);
-void func_080CCBE8(void);
 void func_080D171C(void);
 u8 task_poo_shadowdodai_1(PooShadowWork* w);
 u8 task_poo_shadowscale_1(PooScaleWork* w);
@@ -1622,50 +1605,30 @@ u8 func_080C9D48(void);
 u8 func_080C9D5C(void);
 u8 func_080C9D70(void);
 u8 func_080C9D98(void);
-u8 func_080C9DAC(void);
 u8 func_080C9E28(void);
 u16 func_080C9E4C(void);
 u8 task_poo_honey_1(PooHoneyWork* w);
 u8 func_080C9E70(void);
-void func_080D2BE0(void);
 void func_080D2BF8(u16 a);
 u8 func_080D2C1C(u16 a);
 void func_080D2C48(void);
-void func_080D2C78(void);
-void func_080D2C8C(PooPos* p, s32 b);
 void func_080D2CA8(PooPos* p, s32* b);
 void func_080D2CC4(u16 a, u16 b);
 void func_080D2CD0(u16* a, u16* b);
 void func_080D2CE0(s16 a, s16 b);
 void func_080D2CF4(u16* a, u16* b);
-void func_080D2D0C(PooPos* p);
 void func_080D2D24(PooPos* p);
 void func_080D2D3C(s32 a);
-u8 func_080D2D50(s32 a);
-void func_080D2D6C(s32 a);
 void func_080D2D80(s32 a);
-u8 func_080D2D94(s32 a);
-void func_080D2DB0(void* p);
-void func_080D2DC4(const void* p);
-u8 func_080D2DD8(void);
 u16 func_080D2E28(void* a, u16 b);
 void func_080D2E70(u16 a, u8 b);
-void func_080D2E84(void);
-void func_080D2E98(void);
 u16 func_080D2EB8(void);
 void func_080D2F10(u8 a);
-void func_080D2F20(void);
-void func_080D2F64(void);
-void func_080D3008(void);
-void func_080D3034(s16 a);
-void func_080D3050(void);
-void func_080D30C8(void);
-void func_080D313C(void);
 
-u8 func_080C76B0(void* p);
 extern u8 gUnk_0203C3D8;
 u16 func_080CA67C(PooPos* p);
 u16 func_080CBAB0(PooPos* p);
-void func_080C7BCC(u16 a);
+
+u8 func_080C9DAC(void);
 
 #endif /* GUARD_POO_H */

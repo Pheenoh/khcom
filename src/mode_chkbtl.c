@@ -1,3 +1,4 @@
+#include "mode_chkbtl_api.h"
 #include "macros.h"
 #include "mode_chkbtl.h"
 #include "gba/keys.h"

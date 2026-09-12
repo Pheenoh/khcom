@@ -20,6 +20,8 @@
 #include "anim.h"
 #include "taskpool.h"
 #include "smn_api.h"
+#include "btl_api.h"
+#include "btl3_api.h"
 typedef struct SmnArgs {
     u16 unk_00;
     u8 unk_02;
@@ -234,9 +236,6 @@ typedef struct SmnKingWork {
     u8 unk_15F[0x09];
 } SmnKingWork;
 
-
-void func_0802F1E8(void);
-void func_0802F284(s32 a, s32 b, s32 c);
 extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescBtlPrize[];
 extern u8 gTaskDescSmnTinkeff[];
@@ -261,8 +260,6 @@ extern u8 gUnk_0813EA5C[];
 extern u8 gUnk_0813EB1C[];
 extern u8 gUnk_0813EA7C[];
 extern u8 gUnk_0813EADC[];
-BtlObj* func_08040D54(SmnCloudWork* work);
-BtlObj* func_08040C8C(SmnCloudWork* work);
 void func_08041D64(SmnBambiWork* work);
 void func_08044518(SmnGenieWork* work);
 u8 func_08041FCC(SmnBambiWork* work);

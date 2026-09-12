@@ -1,6 +1,7 @@
 #ifndef GUARD_ROOM_H
 #define GUARD_ROOM_H
 
+#include "chara_api.h"
 #include "m4a_song.h"
 #include "text.h"
 #include "obj_api.h"
@@ -12,6 +13,8 @@
 #include "anim.h"
 #include "text_types.h"
 #include "taskpool.h"
+#include "room_api.h"
+#include "btl_api.h"
 
 typedef struct RoomNameWork {
     void* tiles;
@@ -49,7 +52,6 @@ extern u8 gUnk_0993AF64[];
 extern u8 gUnk_099910C4[];
 extern void* gUnk_09EF8DA4;
 extern void* gUnk_09EF7048[];
-
 
 typedef struct GaEntryWork {
     s32 unk_000;
@@ -152,7 +154,6 @@ extern u8 gUnk_09EF9728[];
 extern u8 gUnk_099999AC[];
 extern u8 gUnk_09EF9738[];
 
-
 typedef struct RoomObjResource {
     void* unk_00;
     u16 refCount;
@@ -191,11 +192,6 @@ typedef struct CharaObjParam {
     u16 unk_44;
 } CharaObjParam;
 
-void func_080C6894(CharaObjParam* param);
-u8 func_080C69B4(void);
-
-void func_0802F1E8(void);
-
 s32 func_080F7F70(GaWork* work, s16 i);
 s32 func_080F7F94(GaWork* work, s16 i);
 s32 func_080F7FAC(GaWork* work, s16 i);
@@ -203,21 +199,9 @@ s32 func_080F7FC8(GaWork* work, s16 i);
 s32 func_080F7FE4(GaWork* work, s16 i);
 void func_080F800C(GaWork* work, s32 i);
 void func_080F80C0(GaWork* work);
-void func_080F7F54(GaWork* work, s32 state);
-void func_080F7E84(GaEntryWork* e);
-void func_080F80FC(GaWork* work, u32 i, s32 c);
-void func_080F8374(GaEntryWork* e);
 void func_080F83BC(void);
-u8 func_080F8958(GaWork* work);
-void func_080F83E0(GaWork* work, GaEntryWork* e);
-u8 func_080FAA18(GaWork* work);
-u8 func_080F99C0(GaWork* work);
-u8 func_080F9C2C(GaWork* work);
-u8 func_080FA2B4(GaWork* work);
-u8 func_080F9744(GaWork* work);
 
 u16 func_080F7DD8(s32 a);
-s32 func_080F7E0C(s32 a, s32 b, s32 c, s32 d);
 
 void task_room_name_0(RoomNameWork* work, s32 arg);
 u8 task_room_name_1(RoomNameWork* work);

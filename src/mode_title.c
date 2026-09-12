@@ -1,3 +1,4 @@
+#include "title_api.h"
 #include "macros.h"
 #include "mode_title.h"
 

@@ -1,6 +1,10 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "card_api.h"
+#include "card_deck.h"
+
+#include "chara_api.h"
 #include "mode_test_api.h"
 
 #include "sio_api.h"
@@ -179,53 +183,31 @@ void task_chgCardObj_0(ChgCardObjWork* work, ChgCardObjParam* param);
 u8 task_chgCardObj_1(ChgCardObjWork* work);
 void task_chgCardObj_2(void);
 void task_chgCardObj_3(void);
-u8 func_080C54B4(void);
-u8 func_080C55DC(void);
 u8 func_080C56BC(void);
-void func_080C57A4(void);
-void func_080C57B4(void);
 void func_080C5808(void);
 void func_080C5850(u16 a, u16 b, u16 c, u16 d);
 void func_080C58D0(void);
 void func_080C58DC(void);
 void func_080C58F0(void);
 void func_080C590C(void);
-s32 func_080C5930(void);
 void func_080C594C(void);
 u8 func_080C5978(void);
 void func_080C5A30(void);
-void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c);
 s32 func_080C5AA4(void);
 s32 func_080C5B50(void);
 s32 func_080C5C24(void);
 s32 func_080C5C7C(void);
-void func_080C5D00(void);
 void func_080C5D10(void);
 void func_080C5D24(void);
-s32 func_080C5D50(void);
-s32 func_080C5D80(void);
-void func_080C5DC0(s32 (*a)(void), s32 (*b)(void));
-s32 func_080C5E58(void);
-s32 func_080C5ECC(void);
-void func_080C5F94(void);
-s32 func_080C6008(void);
-void func_080C61D4(void);
-s32 func_080C60D8(void);
 void func_080C62F0(void (*a)(void));
 s32 func_080C6314(void);
 s32 func_080C6378(void);
-void func_080C640C(CharaObjParam2* param);
 void CharaObjFree(void);
-void func_080C6894(CharaObjParam* param);
 void func_080C6990(u16 a, u8 b);
 void func_080C6E7C(u8* src, u8* dst, u16 size, s16 count);
-void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 
-u16* func_08083C94(void);
-u16* func_08083D7C(void);
 void func_08083D68(void);
 void func_08083DD4(void);
-void func_08096DC4(TaskPool* pool, CharaPrizeArgs* args);
 extern TaskDesc gUnk_09EF34A8;
 
 extern s16 gSineTable[];

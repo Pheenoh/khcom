@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
+#include "gba/syscall.h"
+
 #include "m4a_song.h"
 #include <stdlib.h>
 #include "fade.h"
@@ -16,6 +18,10 @@
 #include "key.h"
 #include "taskpool.h"
 #include "anim.h"
+#include "bos7_api.h"
+#include "sroll_api.h"
+#include "btl_api.h"
+#include "evt_api.h"
 
 typedef struct LstAnimSet {
     u16 unk_00;
@@ -508,7 +514,6 @@ extern u8 gUnk_09EFBF54[];
 extern u8 gUnk_09EFBF5C[];
 extern u8 gUnk_09EFBF60[];
 
-
 extern u8 gUnk_09D6BE74[];
 
 extern u16 gBldCnt;
@@ -529,33 +534,13 @@ extern u16 gWin0V;
 extern u16 gWinIn;
 extern u16 gWinOut;
 
-void func_08116F08(void);
-void func_0801CD74(EvtObj* obj, s32 anim);
-void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c);
-void func_0801CE00(EvtObj* obj, u16 a);
-s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
-void func_081149B0(void* w, s32 v);
-void func_08116E98(void);
-void func_08116ECC(void);
-void SoftReset(s32 flags);
 u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);
-void func_0802F1C8(void);
-void func_0802F208(void);
 void func_0810FEDC(void);
-void func_08116E8C(void);
-void func_08116E60(u8* src);
-void func_08116E80(void);
-void func_08116E00(vu16* dst, u8* src, u32 cnt);
 void func_0810FE94(void);
 extern const s8* const gUnk_09EF9E6C[];
 void func_0810FEBC(s16 a);
 s32 func_0810FF44(void);
-void func_0810FF50(Task* t, s32 a, s32 b);
-void func_0810FF64(Task* t, s32 a);
-void func_0810FF6C(Task* t, s32 a);
-
-void func_08116CEC(void);
 
 void task_bos_lst_fld_0(LstFldWork* work, LstFldArg* arg);
 u8 task_bos_lst_fld_1(LstFldWork* work);
@@ -607,7 +592,6 @@ s32 func_08114748(s32 x);
 s32 func_08114750(s32 x);
 u8 func_08110668(LstWork* work);
 u8 func_08111A08(LstWork* work);
-u8 func_08111F4C(LstWork* work);
 u8 func_081115B4(LstWork* work);
 s32 func_0811157C(s32 n);
 s32 func_08111F60(s32 n);
@@ -631,14 +615,7 @@ void func_081126A8(StaffRollWork* w, u16 flags, s32 dur);
 void func_081126D0(StaffRollWork* w, u16 flags, s32 dur);
 void func_081126F8(StaffRollWork* w, u16 flags, s32 dur);
 void func_08112720(StaffRollWork* w, u16 flags, s32 dur);
-u8 func_08110938(LstWork* work);
-u8 func_08110918(LstWork* work);
-void func_08110984(LstWork* work);
-void func_08110994(LstWork* work, u16 a);
-void func_081109A8(LstWork* work);
 u8 func_081108AC(LstState* work, s32 kind);
-s16 func_0811095C(LstWork* work, u16 a);
-u8 func_081109B8(LstWork* work, u8 a);
 s32 func_08110A38(s32 a, s32 b);
 s32 func_08110A98(s32 x0, s32 y0, s32 x1, s32 y1);
 s32 func_08110B10(u8 a, u8 b);
@@ -649,11 +626,5 @@ void task_bos_lst_bit_2(LstState* work);
 void func_08110C9C(LstState* work);
 void func_081115CC(LstWork* work, Vec3* a, Vec3* b, s32 c, u16 d);
 void func_08111660(LstLsrTask* t);
-void func_0811614C(void* sw, void* init);
-void func_081166F8(void* sw, s32 a, s32 b, s32 c, s32 d, s32 e);
-void func_08116268(void* sw, u16 a, u16 b, u16 c, u16 d);
-void func_08116BEC(void* sw, u16 x, u16 y, u8* s, u8 flush);
-s32 func_08115FBC(void* sw, u8* s);
-void func_081160EC(void* sw, u32 mode);
 
 #endif /* GUARD_BOS7_H */

@@ -27,4 +27,14 @@ void func_08076290(void);
 void func_0807629C(void);
 void func_0807630C(void);
 
+struct CardSlot;
+struct EventTaskHost;
+struct UnkStruct_08078754;
+struct UnkStruct_08080268;
+
+s32 func_08076F80(struct UnkStruct_08080268* w, u8* task);
+struct CardSlot* func_08076674(struct UnkStruct_08078754* w, u8 slot, u16* n);
+struct CardSlot* func_08076750(struct UnkStruct_08078754* w, u8 slot, u16* n);
+void func_08075E60(struct EventTaskHost* h);
+
 #endif

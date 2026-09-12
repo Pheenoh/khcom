@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
+#include "map_api.h"
+#include "mode_allmap_api.h"
+
 #include "display.h"
 #include "game_state.h"
 #include "fade.h"
@@ -13,6 +16,9 @@
 #include "main.h"
 #include "anim.h"
 #include "engine.h"
+#include "bos4_api.h"
+#include "poo_api.h"
+#include "allmap_api.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_IE (*(vu16*)0x04000200)
@@ -71,32 +77,14 @@ extern u8 gUnk_09EF654C[];
 extern u8 gUnk_09EF658C[];
 extern TaskDesc gTaskDescAllmapBar;
 
-void func_080D2F20(void);
-void func_080D2F64(void);
-void func_080D3008(void);
-void func_080D3034(s16 a);
-void func_080D3050(void);
-void func_080D30C8(void);
-void func_080D313C(void);
-void func_080D4D44(void);
 void func_080D4EBC(void);
 void func_080D51D8(void);
 void func_080D53A8(void);
-u8 func_080D5944(u8 a, s32 b);
-u8* func_080DED98(u8 a);
-u16 func_080DEE44(u8 a, u8 b);
-u8 func_080DF51C(u8 a);
-void func_080E052C(u8 a);
 
 void mode_allmap_0(s32 a);
 void func_080D3370(void);
 void mode_allmap_1(void);
 void mode_allmap_2(void);
-void func_080D352C(u8 a);
 u8 func_080D3538(u8 a, u8 b);
-u8 func_080D3564(u8 a, u8 b);
-u8 func_080D358C(u8 a, u8 b);
-s32 func_080D35B0(AllmapRoomWork* work);
-s32 func_080D37BC(u8 a);
 
 #endif /* GUARD_MODE_ALLMAP_H */

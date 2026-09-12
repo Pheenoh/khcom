@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_CHKOBJ_H
 #define GUARD_MODE_CHKOBJ_H
 
+#include "card_api.h"
+
+#include "mode_debug_api.h"
+
 #include "mode_test_api.h"
 
 #include "display.h"
@@ -22,11 +26,6 @@ typedef struct ChkObjEntry {
     const char* name;
 } ChkObjEntry;
 
-
-void func_0809D2B0(s32 a, s32 b, s32 c, const char* s);
-void func_0809D458(s32 a, s32 b, s32 c, s32 v);
-
-void func_0800B30C(ObjDef* def);
 void mode_chkobj_0(void);
 void mode_chkobj_1(void);
 void mode_chkobj_2(void);

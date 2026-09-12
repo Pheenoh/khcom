@@ -1,6 +1,10 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "card_api.h"
+
+#include "map_api.h"
+#include "msg_api.h"
 #include "m4a_song.h"
 #include "text.h"
 #include "fade.h"
@@ -18,12 +22,11 @@
 #include "key.h"
 #include "taskpool.h"
 #include "anim.h"
-
-
-void func_0802F1C8(void);
-void func_0802F208(void);
-s32 func_0802F268(void);
-
+#include "bos4_api.h"
+#include "bos5_api.h"
+#include "poo_api.h"
+#include "room_api.h"
+#include "btl_api.h"
 
 typedef struct GaEntryDesc {
     u16 unk_00;
@@ -270,8 +273,6 @@ extern u8 gUnk_09A3CDDC[];
 extern u8 gUnk_099EDE7C[];
 extern u8 gUnk_099A8914[];
 
-u8 func_080D2DD8(void);
-
 typedef struct MdGfx {
     void* unk_00;
     void* unk_04;
@@ -310,8 +311,6 @@ typedef struct MdWork {
     u8 unk_1B6[0x2];
 } MdWork;
 
-
-
 extern s16 gSineTable[];
 extern u8 gUnk_09A3C9BC[];
 extern u8 gUnk_09999ED0[];
@@ -319,8 +318,6 @@ extern u32 gUnk_09EF9740[];
 
 void func_080FCC14(MdFireWork* work);
 u8 func_080FCCB4(MdFireWork* work);
-void func_080F83E0(GaWork* work, GaEntryWork* e);
-void func_080F8374(GaEntryWork* e);
 
 extern u8 gUnk_09992114[];
 extern GaEntry gUnk_09992108[];
@@ -348,7 +345,6 @@ void func_080FB908(MdWork* work, u16 index);
 extern u8 gUnk_09A02EFC[];
 extern u8 gUnk_09A020FC[];
 
-
 typedef struct MdMapData {
     void* unk_00;
     u16 unk_04;
@@ -363,13 +359,10 @@ typedef struct MdMapWork {
     u32 unk_00;
 } MdMapWork;
 
-void func_08083900(u8 a);
-void func_080F80FC(GaWork* work, u32 i, s32 c);
 void task_bos_ga_0(GaWork* work, s32 arg);
 s32 task_bos_md_dai_1(MdDaiWork* work);
 void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg);
 void func_080FCF78(MdFireWork* work);
-u8 func_080F7E0C(s32 a, s32 b, s32 c, s32 d);
 extern s16 gSineTable[];
 extern MdFireDef gUnk_09992EF8[];
 extern u8 gUnk_09992F28[];
@@ -384,19 +377,11 @@ extern u8 gUnk_09999E1C[];
 extern u8 gTaskDescBosMdHahen[];
 u8 task_bos_ga_1(GaWork* work);
 void func_080FB000(GaWork* work, GaEntryWork* p);
-void func_080F7E84(GaEntryWork* e);
-void func_080F7F54(GaWork* work, s32 b);
 u8 func_080F854C(GaWork* work);
-u8 func_080F8958(GaWork* work);
 u8 func_080F8AC8(GaWork* work);
 u8 func_080F8F9C(GaWork* work);
-u8 func_080F9744(GaWork* work);
-u8 func_080F99C0(GaWork* work);
-u8 func_080F9C2C(GaWork* work);
 u8 func_080F9EDC(GaWork* work);
-u8 func_080FA2B4(GaWork* work);
 u8 func_080FA644(GaWork* work);
-u8 func_080FAA18(GaWork* work);
 u8 func_080FABE4(GaWork* work);
 extern u8 gTaskDescBosMap[];
 extern u8 gUnk_0999202C[];
@@ -412,20 +397,11 @@ u8 func_080FBFA8(MdWork* work);
 s32 task_bos_md_1(MdWork* work);
 void task_bos_md_0(MdWork* work, void* arg);
 void func_080FE854(void);
-void func_080FF794(void);
-void func_080FF330(void);
 extern u8 gUnk_0999CB90[];
 extern u8 gUnk_0999C394[];
 extern u8 gUnk_0999C3C8[];
 extern void* gUnk_09EF9770[];
 void mode_worldselect_1(void);
-void func_080A411C(void* pool, u32 a, u16 b);
-u8 func_080A42C8(void);
-void func_080E04EC(void);
-void func_080DFA18(u8 a);
-void func_0806180C(u16 a);
-void func_080938F8(u16 a);
-void func_080DFA3C(void);
 void func_080FDC04(void);
 void func_080FE47C(void);
 extern u8 gUnk_09A315DC[];
@@ -442,7 +418,6 @@ extern u8 gUnk_0999B052[];
 extern u8 gUnk_09A3CC7C[];
 extern u8 gUnk_0999CBB6[];
 extern u8 gUnk_0999C410[];
-void func_080FF8CC(void);
 extern s32 gUnk_020354D0;
 extern s32 gUnk_020354C8[];
 extern s32 gUnk_020354D8;
@@ -502,7 +477,6 @@ extern u8 gUnk_099920E8[];
 extern u8 gUnk_099D42FC[];
 extern u8 gUnk_099920D8[];
 extern u8 gTaskDescBosMdDai[];
-void func_0802F1E8(void);
 void func_080FBA4C(MdWork* work);
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09A3C97C[];
@@ -528,7 +502,6 @@ extern MdMsg gUnk_09EF909C[];
 extern void* gUnk_09EE9138[];
 extern u8 gUnk_020351F8[];
 extern u8 gUnk_020352C0[];
-u8 func_080FF228(s16 id);
 u8 func_080FF25C(s16 id);
 void func_080FC3FC(MdWork* work);
 void func_080FC360(MdWork* work);
@@ -540,11 +513,9 @@ typedef struct PrizeCardArg {
 } PrizeCardArg;
 
 u8 func_080FC17C(MdWork* work);
-void func_08096DC4(void* a, void* b);
 void func_080FC29C(MdWork* work);
 void task_bos_md_map_0(MdMapWork* work, MdMapData* p);
 s32 task_bos_md_map_1(MdMapWork* work);
 s32 func_080FF310(void);
-void func_080FF2B8(s16 index);
 
 #endif /* GUARD_BOS5_H */

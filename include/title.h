@@ -1,6 +1,7 @@
 #ifndef GUARD_TITLE_H
 #define GUARD_TITLE_H
 
+#include "title_api.h"
 #include "pallet.h"
 #include "m4a_song.h"
 #include <string.h>
@@ -12,6 +13,7 @@
 #include "title_types.h"
 #include "main.h"
 #include "anim.h"
+#include "allmap_api.h"
 typedef struct TitlePal {
     void* unk_00;
     u16 unk_04;
@@ -85,7 +87,6 @@ extern void* gUnk_09EF6658[];
 extern void* gUnk_09EF6668[];
 extern void* gUnk_09EF6684[];
 
-void func_080D5978(u16 a, void* b, u16 c);
 void func_080D5998(void);
 u8 func_080D6280(void);
 u8 func_080D6294(void);
@@ -101,7 +102,6 @@ void task_title_obj_0(TitleObjWork* work);
 u8 task_title_obj_1(TitleObjWork* work);
 void task_title_obj_2(TitleObjWork* work);
 void task_title_obj_3(TitleObjWork* work);
-u8 func_080D6790(void);
 void task_title_menu_0(TitleMenuWork* work, s16* arg);
 s16 func_080D6908(s16 a);
 void func_080D6944(s16* p);

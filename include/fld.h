@@ -1,6 +1,7 @@
 #ifndef GUARD_FLD_H
 #define GUARD_FLD_H
 
+#include "map_api.h"
 #include "fld_tasks.h"
 
 #include "m4a_song.h"
@@ -16,6 +17,8 @@
 #include "key.h"
 #include "game.h"
 #include "fld_types.h"
+#include "bos4_api.h"
+#include "btl2_api.h"
 typedef struct UnkStruct_0203C7AC {
     u32 unk_00;
     u16 unk_04;
@@ -125,20 +128,8 @@ typedef struct FldShadowWork {
 } FldShadowWork;
 
 void func_0803473C(FldWork* work, s32 index, u16 flags);
-void func_080E0298(s32 a, s32 b);
-u8 func_080DFC24(void);
-u8 func_08031D74(FldPos* p);
-s32 func_08031DF8(FldPos* p);
-u8 func_08031E48(FldPos* p, FldWork* work);
-u8 func_08031EC4(FldPos* p);
-s32 func_08031F1C(FldWork* work);
-void func_08031F60(FldActor* act);
-void func_08031F98(FldWork* work, s32 a, s32 b);
 
-void func_080DFF4C(FldPos* p);
 void func_080A5830(void* a, s32 x, s32 y, s32 z);
-void func_080DFC7C(void);
-void func_080E02C0(s32 x, s32 y, s32 z);
 
 extern TaskDesc gTaskDescFldShadow;
 extern u16 gUnk_0813CD4C[][8];
@@ -150,12 +141,6 @@ extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_09EE1380[];
 extern u8 gUnk_09EE1384[];
 extern s16 gSineTable[];
-
-s32 func_080DFF1C(FldPos* p);
-u8 func_080DFF94(s32 x, s32 y, s32 z);
-u8 func_080DFCDC(FldPos* p);
-u8 func_080DFBDC(FldPos* p);
-u8 _080DFE1C(FldPos* p);
 
 u8 func_08034518(FldPos* p);
 s32 func_0803459C(FldPos* p);

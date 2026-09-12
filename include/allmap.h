@@ -1,6 +1,14 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include "card_api.h"
+
+#include "map_api.h"
+#include "task.h"
+#include "mode_sio2_api.h"
+
+#include "mode_allmap_api.h"
+
 #include "save_api.h"
 
 #include <string.h>
@@ -19,6 +27,8 @@
 #include "anim.h"
 #include "mode.h"
 #include "key.h"
+#include "bos4_api.h"
+#include "allmap_api.h"
 typedef struct AllmapRoomWork {
     void* tiles;
     void* palette;
@@ -179,26 +189,12 @@ typedef struct AllmapPushaWork {
     s16 unk_2E;
 } AllmapPushaWork;
 
-
-
-void func_0801CCB4(void);
-void func_0801CD20(void);
 void func_080AEB94(void);
-void func_080E04EC(void);
-u8 func_080987C0(u8 a);
 void func_080D510C(UnkStruct_0203C4B4* s);
 void func_080D55E4(void);
 void func_080D53F8(void);
 void func_080D58AC(u16 a, u16 b, u16 c, u16 d);
-void* func_08093C18(u8 a);
-void func_08098670(AllmapDoorEntry* e, s32 b);
 void func_08098778(AllmapDoorEntry* e);
-void func_080C75A4(s32 a, u16 b);
-void func_080D352C(u8 a);
-u8 func_080D3564(u8 a, u8 b);
-u8 func_080D358C(u8 a, u8 b);
-s32 func_080D35B0(AllmapRoomWork* work);
-s32 func_080D37BC(u8 a);
 u8 func_080D3A70(u8 a, u8 b);
 u8 func_080D3AB8(u8 a, u8 b);
 s16 func_080D3D40(u16 a);
@@ -212,19 +208,9 @@ void func_080D44D4(AllmapDoorinfoWork* work);
 void func_080D484C(AllmapDoorinfoWork* work);
 void func_080D49EC(AllmapDoorinfoWork* work);
 u8 func_080D4D1C(void);
-void func_080D4D44(void);
 s32 func_080D5494(AllmapCursorPos a);
 void func_080D576C(u8 a, u16 b, u16 c);
-u8 func_080D5944(u8 a, u16 b);
-void func_080D5978(u16 a, void* b, u16 c);
-u8* func_080DED98(u8 a);
-u8* func_080DEE18(u8 a);
-u8 func_080DF51C(u8 a);
-s32 func_080DF548(u8 a);
 void* func_080986FC(u8 a);
-s32 func_080E8C84(u8 a, u8 b);
-u8 func_080E8D00(void);
-void* func_080E8D1C(u8 a);
 void func_08098014(AllmapDoorEntry* a, void* b);
 void func_08098598(s32 a, s32 b, AllmapDoorEntry* c);
 

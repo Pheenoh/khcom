@@ -1,6 +1,7 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
+#include "chara_api.h"
 #include "pallet.h"
 #include "obj_api.h"
 #include "battle_actor.h"
@@ -610,7 +611,6 @@ extern void* gUnk_09EF3924[];
 extern void* gUnk_09EF3960[];
 extern void* gUnk_09EF397C[];
 
-
 void task_wlogo_hwt_0(WlogoHwtWork* work);
 u8 task_wlogo_hwt_1(WlogoHwtWork* work);
 void task_wlogo_hwt_2(WlogoHwtWork* work);
@@ -710,7 +710,6 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work);
 void task_wlogo_mons_2(WlogoMonsWork* work);
 void task_wlogo_mons_3(WlogoMonsWork* work);
 
-void func_080C640C(WlogoObjParam* param);
 u8 func_080C64A4(void);
 void func_080B7E68(TmWork* w);
 void task_bos_tm_0(TmWork* w, BtlObj* arg);

@@ -1,7 +1,10 @@
+#include "map_api.h"
+#include "task.h"
 #include "obj_api.h"
 #include "macros.h"
 #include "allmap.h"
 #include "gba/keys.h"
+#include "allmap_api.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
@@ -1145,7 +1148,7 @@ void func_080D58AC(u16 a, u16 b, u16 c, u16 d) {
 }
 
 u8 func_080D5944(u8 a, u16 b) {
-    return *func_080DEE18(a) & b;
+    return *(u8*)func_080DEE18(a) & b;
 }
 
 void* func_080D5960(u8 a) {

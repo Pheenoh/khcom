@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
+#include "jiminy_list.h"
+#include "map_api.h"
+#include "msg_api.h"
 #include "mode.h"
 
 #include "player_progression.h"
@@ -19,6 +22,7 @@
 #include "anim.h"
 #include "obj.h"
 #include "m4a.h"
+#include "poo_api.h"
 #ifdef VERSION_EU
 extern u32 gLanguage;
 extern u8 gUnkEu_08C9A5E2[];
@@ -47,7 +51,6 @@ typedef struct JiminyLine {
     s32 unk_000;
     u8 unk_004[0x17C];
 } JiminyLine;
-
 
 typedef struct JiminyEntry {
     void* unk_00;
@@ -191,16 +194,11 @@ extern u8 gUnk_09EECAA0[];
 extern u8 gUnk_09EED2BC[];
 extern u8 gUnk_09EED320[];
 
-
-void func_080658B8(u8 a);
-void func_080E052C(u8 a);
-void func_0805A484(void);
 u8 func_0805AA9C(void);
 void func_0805A8D0(void);
 void func_08064B80(s32 a);
 s32 func_08065170(s32 a, s32 b, void* c);
 s32 func_080653D4(s32 a, s32 b, void* c);
-void func_08065940(void);
 void func_0805A95C(s32 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, s32 h);
 
 void func_0805BAE4(void);
@@ -239,11 +237,8 @@ extern u8 gUnkEu_09A9A8A0[];
 extern u8 gUnkEu_099FBE00[];
 void* eu_0805E968(void* text);
 s32 eu_0805E9AC(void* text);
-u8 func_080D2DD8(void);
 #endif
 
-s16 func_08064DD4(void* text);
 void mode_jiminy_1(void);
-
 
 #endif

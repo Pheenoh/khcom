@@ -1,7 +1,11 @@
+#include "map_api.h"
+#include "msg_api.h"
+#include "status_api.h"
 #include "m4a_song.h"
 #include "text.h"
 #include "macros.h"
 #include "bos4.h"
+#include "bos4_api.h"
 
 void* gUrsulaWork;
 #ifdef VERSION_EU
@@ -2790,8 +2794,8 @@ u16 func_080DDEA0(UnkStruct_080DDDDC* p) {
     return p->unk_02;
 }
 
-void func_080DDEA4(s32 a) {
-    func_080D2C78(a);
+void func_080DDEA4(void) {
+    func_080D2C78();
 }
 
 void func_080DDEB0(s32 a) {
@@ -3805,7 +3809,7 @@ u8 func_080DF49C(void) {
 
 u8 func_080DF4D8(void) {
     if (func_080E8C84(gUnk_0203C7AC->unk_0F, gUnk_0203C7AC->unk_10) != 0) {
-        return *func_080E8D1C(0);
+        return func_080E8D1C(0)->unk_00;
     }
 
     return 0xFF;
@@ -3829,7 +3833,7 @@ u8 func_080DF51C(u8 a) {
     return 0;
 }
 
-u8 func_080DF548(u8 a) {
+s32 func_080DF548(u8 a) {
     u8* p;
     u8* q;
 
@@ -4220,7 +4224,7 @@ void func_080DFB2C(void) {
     func_080DF990(0);
 }
 
-s32 func_080DFB7C(u8 a) {
+struct UnkStruct_02034F24* func_080DFB7C(u8 a) {
     return func_080E5590(a);
 }
 

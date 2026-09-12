@@ -1,6 +1,10 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "card_api.h"
+
+#include "map_api.h"
+#include "msg_api.h"
 #include "eventselect_api.h"
 
 #include "intr.h"
@@ -28,7 +32,10 @@
 #include "text_types.h"
 #include "malloc.h"
 #include "taskpool.h"
-
+#include "bos4_api.h"
+#include "bos6_api.h"
+#include "poo_api.h"
+#include "evt_api.h"
 
 #define NULL ((void*)0)
 
@@ -579,37 +586,21 @@ u16 func_080659BC(u8 v, TextSlot* out);
 void func_08065A30(void** p, u8 n);
 void func_08065A44(void** p, u8 n);
 u16 func_08065A70(u8 v, TextSlot* out);
-#ifndef VERSION_JP
-s32 func_080660C0(u16* a, void** p);
-#else
-s32 func_080660C0(u8* a, void** p);
-#endif
 void _08073E6C(Work08073E34* p);
 void func_08073E74(Work08073E34* p);
 void view_2(void);
 void view_3(void);
 s32 func_08065B7C(u16* a, TextSlot* b);
 s32 func_08065D10(u16* a, TextSlot* b);
-void func_08066918(void* a, void* b);
 void func_08002488(s16 x, s16 y, void* a, void* b, void* c, u16 d);
 void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f);
 void func_08064624(void);
 u8 func_08004678(void* a);
-void func_080CA368(s32 a, u16 b, u16 c);
-void DisableHBlankIntr(void);
 u8 func_0809D280(u8* s);
-u16 func_0806692C(u8* s, u16* out);
-u16 func_08066AF8(s32 v, u16* out);
-void func_0801CD74(void* a, s32 b);
 u8 _0806E9DC(Work0806180C* p, void* a);
-void func_0801CE00(void* a, u16 b);
 void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c);
-#ifdef VERSION_US
-s32 func_08064DD4(u16* a);
-#endif
 u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void func_08074504(void);
-void func_080A4188(void* pool, u16 b);
 u8 func_08073DA4(MsgFaceWork* p, void* a);
 u8 func_08073294(MsgWinWork* p, void* a);
 u8 func_08073318(MsgWinWork* p, void* a);
@@ -627,14 +618,8 @@ u8 func_08073CA4(MsgFaceWork* p, void* a);
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a);
 void _0806C3A0(u8 a, void* b);
 void func_080635C4(void);
-void func_080DF828(void);
-void func_080E04EC(void);
 
-void func_08084458(u16 a);
-void func_080938F8(u16 a);
 void func_08066E40(u16 a, u16* b, u8* c);
-
-
 
 u8 event_chara_1(Work0806180C* p, void* a);
 u8 func_0806FA84(Work0806180C* p, void* a);
@@ -665,22 +650,12 @@ u8 func_0806F734(Work0806180C* p, void* a);
 u8 func_0806F770(Work0806180C* p, void* a);
 u8 func_0806F858(Work0806180C* p, void* a);
 u8 func_0806F898(Work0806180C* p, void* a);
-void func_08065940(void);
-void func_080658B8(u8 n);
-void func_0806C34C(void);
 void func_0806E9BC(Work0806180C* p);
 void func_0806F94C(Work0806180C* p);
-void func_0801CD98(void* pool, void* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
-s32 func_0810B350(void* p);
-void func_0810C2C4(void* p);
-void EvtObjSetPos(void* obj, s32 a, s32 b, s32 c);
 void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c);
 void func_080746D8(void);
 void func_08072918(Actor0806180C* a, u8 kind, u8 flag);
 void func_08072A64(Actor0806180C* a, u8 kind, u8 flag);
-u16 func_0806BA74(s32 mode, s32 flag);
-void func_0806BA0C(s16 v, u8* out);
-void func_0806C2C0(u8 n);
 void func_08074D00(Work08074DC4* p);
 void func_08074D14(Work08074DC4* a);
 u8 func_08074E40(Work08074DC4* p);
@@ -688,7 +663,6 @@ void func_08074D98(Work08074DC4* a);
 u8 func_08074E88(Work08074DC4* p, u8 v);
 u8 _08074EC8(Work08074DC4* p);
 void func_08075010(Work08075010* p);
-s16 func_08075064(u8 a);
 void func_08074DC4(Work08074DC4* a);
 
 void func_0806FE90(Work0806180C* p);
@@ -698,10 +672,7 @@ void func_0806CD60(ContinueWork* p);
 void func_0806CF04(ContinueWork* p);
 void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a);
 u8 func_0806D830(EventSeqWork* p, void* a);
-void func_080CA35C(void);
-void func_08075E60(Work0806180C* p);
 void func_08070008(Work0806180C* p);
 u8 func_080700D4(Work0806180C* p, void* a);
-
 
 #endif /* GUARD_MSG_H */

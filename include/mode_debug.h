@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_DEBUG_H
 #define GUARD_MODE_DEBUG_H
 
+#include "card_api.h"
+
+#include "mode_debug_api.h"
+
 #include "mode_test_api.h"
 
 #include "pallet.h"
@@ -28,19 +32,6 @@ typedef struct DebugWork {
     AnimState anim;
 } DebugWork;
 
-
-
-
-
-
-
-void func_08085C3C(void);
-void func_08085FB0(void);
-
-void mode_debug_0(void);
-void mode_debug_1(void);
-void mode_debug_2(void);
-void func_0800B30C(ObjDef* def);
 extern const char gUnk_08F68604[];
 extern u8 gUnk_08950902[];
 extern u8 gUnk_08C72CE4[];

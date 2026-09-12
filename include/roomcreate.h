@@ -1,6 +1,9 @@
 #ifndef GUARD_ROOMCREATE_H
 #define GUARD_ROOMCREATE_H
 
+#include "card_api.h"
+
+#include "map_api.h"
 #include "roomcreate_tasks.h"
 
 #include "fade.h"
@@ -9,6 +12,7 @@
 #include "taskpool.h"
 #include "fld_types.h"
 #include "engine.h"
+#include "bos4_api.h"
 typedef struct FldActor {
     FldPos unk_00;
     s32 unk_10;
@@ -58,11 +62,6 @@ extern TaskDesc gTaskDescSpotLight;
 struct Task;
 
 void func_08093B78(TaskPool* pool, u8* p);
-void func_08093C04(void);
-u8 func_080DFD84(FldPos* p);
-void func_080E0298(s32 a, s32 b);
-void func_080E0418(void);
 void func_080E042C(void);
-
 
 #endif /* GUARD_ROOMCREATE_H */

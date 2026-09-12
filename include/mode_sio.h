@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "chara_api.h"
+#include "map_api.h"
+#include "mode_sio_api.h"
+
 #include "mode_test_api.h"
 
 #include "pallet.h"
@@ -25,6 +29,7 @@
 #include "mode.h"
 #include "taskpool.h"
 #include "m4a.h"
+#include "poo_api.h"
 typedef struct SioAnimDef {
     void* unk_00;
     void* unk_04;
@@ -299,7 +304,6 @@ typedef struct SioBtlOptionWork {
     u8 unk_41A[2];
 } SioBtlOptionWork;
 
-
 extern u16 gUnk_02039810[4][2];
 extern u16 gCardCollection[];
 extern Deck gDecks[];
@@ -485,23 +489,6 @@ extern void* gUnk_09EF3904[];
 extern void* gUnk_09EF390C[];
 extern void* gUnk_09EF3920[];
 
-u8 func_080C5930(void);
-
-void func_080C57A4(void);
-u8 func_080C54B4(void);
-void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c);
-void func_080C5D00(void);
-s32 func_080C5D50(void);
-s32 func_080C5D80(void);
-void func_080C5DC0(s32 (*a)(void), s32 (*b)(void));
-s32 func_080C6008(void);
-s32 func_080C60D8(void);
-void func_080C61D4(void);
-void func_080C57B4(void);
-s32 func_080C5E58(void);
-s32 func_080C5ECC(void);
-void func_080C5F94(void);
-
 void mode_sio_btl_connect_0(s32 arg);
 void mode_sio_btl_connect_1(void);
 void mode_sio_btl_connect_2(void);
@@ -566,7 +553,6 @@ void func_080B2B78(void);
 void func_080B2CD0(void);
 void func_080B2FC0(void);
 void func_080B2FEC(u16 a);
-void func_080B31A0(void);
 void func_080B31D8(u16 a);
 void func_080B38A4(void);
 s8 func_080B3908(void);
@@ -596,8 +582,6 @@ void task_wLogo_0(WLogoTaskWork* work, u8 arg);
 u8 task_wLogo_1(WLogoTaskWork* work);
 void task_wLogo_2(WLogoTaskWork* work);
 void task_wLogo_3(WLogoTaskWork* work);
-void func_080CA6A8(s32 a, s32 b);
-void func_080E02A8(s32 a, s32 b);
 void func_080B1C70(u16 a, u16 b, u16 c);
 void func_080B1848(void);
 void func_080B18C4(void);

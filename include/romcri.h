@@ -31,7 +31,6 @@ typedef struct RomcriList {
     RomcriEntry* unk_04;
 } RomcriList;
 
-
 extern u8 gUnk_08ED21E4[];
 extern u8 gUnk_08ED6CA4[];
 extern u8 gUnk_08EDBB44[];
@@ -75,7 +74,6 @@ extern u8 gUnk_08F5DB84[];
 extern u8 gUnk_08F6D9E4[];
 extern u8 gUnk_08F6DA04[];
 extern const u16 gUnk_09EDA4EC[];
-
 
 u16 func_0803FDC8(RomcriList* list);
 

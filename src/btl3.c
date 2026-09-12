@@ -3,6 +3,7 @@
 #include "util.h"
 #include "macros.h"
 #include "btl3.h"
+#include "btl3_api.h"
 
 void task_btl_form_0(BtlFormWork* work, BtlFormList* list) {
     s32 i;

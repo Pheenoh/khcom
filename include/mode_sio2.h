@@ -1,6 +1,11 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include "card_api.h"
+
+#include "msg_api.h"
+#include "mode_sio2_api.h"
+
 #include "mode_test_api.h"
 
 #include "anim.h"
@@ -18,6 +23,8 @@
 #include "obj.h"
 #include "key.h"
 #include "m4a.h"
+#include "bos4_api.h"
+#include "poo_api.h"
 
 typedef struct PoohAnim {
     void* unk_00;
@@ -181,61 +188,25 @@ extern TaskDesc gTaskDescPooPrize;
 extern TaskDesc gTaskDescPooRabbitAfterEvent;
 extern TaskDesc gTaskDescPooCabbageAfterEvent;
 
-void func_0806180C(u16 a);
-void func_08085CB0(void);
-void func_080A411C(void* pool, u32 a, u16 b);
-u8 func_080A42C8(void);
-u8 func_080A42D4(void);
-void func_080CCBE8(void);
-void func_080D2BE0(void);
-void func_080D2E84(void);
-void func_080D2E98(void);
-void func_080D2C8C(PoohPos* p, s32 b);
-void func_080D2D0C(PoohPos* p);
-u8 func_080D2D50(s32 a);
-void func_080D2D6C(s32 a);
-u8 func_080D2D94(s32 a);
-
-
-void func_080DF814(void);
-
 void mode_sio_dbg_flg_0(s32 arg);
 void mode_sio_dbg_flg_1(void);
 void mode_sio_dbg_flg_2(void);
-void func_080C7350(void);
-void func_080C736C(void);
-void func_080C73A4(u16 r, u16 g, u16 b);
-void func_080C73D8(void);
-void func_080C7568(u32 a, u16 b);
-void func_080C75A4(u32 a, u16 b);
 void func_080C75E0(u32 a, u16 b);
 void func_080C7608(u32 a, u16 b, u16 c);
 u8 func_080C7638(void);
 void func_080C7644(u32 a, u16 b, u16 c);
-void func_080C7684(s32 a, s32 b, s32 c);
-u8 func_080C76B0(PoohNear* p);
 void func_080C7714(void);
 void func_080C774C(void);
 void mode_pooh_0(s32 arg);
 void mode_pooh_1(void);
 void mode_pooh_2(void);
-void func_080C7B84(u32 a);
-void func_080C7BCC(u16 a);
-u16 func_080C7BF8(u8 kind, u8 count, s32 x, s32 y, s32 z);
 u16 func_080C7C80(void);
-void func_080C7CB0(u8 a);
-u8 func_080C7CBC(void);
-void func_080C7CC8(PoohWork* w);
 void func_080C7D60(PoohWork* w);
 void func_080C7DF8(PoohWork* w);
 void func_080C7E98(PoohWork* w);
 void func_080C7F18(PoohWork* w);
 u8 func_080C7F4C(u8 a);
 u8 func_080C7F94(PoohWork* w);
-void func_080C7FEC(PoohWork* w, u32 anim);
-u8 func_080C83C4(u16 x, u16 y, u16 px, u16 py);
-s32 func_080C8404(PoohPos* a, PoohPos* b);
 void func_080C8428(PoohWork* w, u32 b);
-void func_080C84E0(PoohWork* w, u32 b);
 
 #endif /* GUARD_MODE_SIO2_H */

@@ -5,6 +5,7 @@
 #include "sio.h"
 #include "sroll.h"
 #include "types.h"
+#include "sroll_api.h"
 
 DmaStream gUnk_02036028;
 u8 gUnk_02036048;

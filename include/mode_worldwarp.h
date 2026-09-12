@@ -1,6 +1,13 @@
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
+#include "card_api.h"
+
+#include "map_api.h"
+#include "mode_worldwarp_api.h"
+
+#include "mode_ms_api.h"
+
 #include "text.h"
 #include "fade.h"
 #include "obj_api.h"
@@ -13,6 +20,7 @@
 #include "main.h"
 #include "anim.h"
 #include "m4a.h"
+#include "bos4_api.h"
 typedef struct WarpIcon {
     u8 unk_00[0x08];
     s16 unk_08;
@@ -138,14 +146,8 @@ extern u8 gUnk_09EF9870[];
 extern u8 gUnk_09EF98B0[];
 extern u8 gUnk_09EF98A0[];
 
-void func_080DF9E0(u8 a);
-void func_080E04EC(void);
 void func_08100980(void);
 void func_081006AC(void);
-u8 func_080A42C8(void);
-void func_080A42E0(void);
-void func_08102F30(void);
-u8 func_080DF750(void);
 void func_0810057C(s16 a, s16 b, void* c, s16 d, s16 e, void* f, s16 g, s16 h);
 void func_081004EC(s32 a, s32 b, s32 c, void* d, s32 e, s32 f);
 u8 func_08100608(s16 a);
@@ -155,16 +157,6 @@ void func_08100670(s32 a, void* b, void* c);
 void mode_worldwarp_0(void);
 void mode_worldwarp_1(void);
 void mode_worldwarp_2(void);
-u32 GetMooglePoints(void);
 void SetMooglePoints(u32 a);
-u8 func_08101538(u32 a);
-u8 func_0810155C(u32 a);
-void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
-void func_081015E8(void);
-void func_08101654(void);
-void func_08101740(s16 a);
-void func_08101768(void);
-void func_081017A0(void);
-void func_08101970(void);
 
 #endif /* GUARD_MODE_WORLDWARP_H */
