@@ -25541,33 +25541,43 @@ void Level_Up_0(UnkStruct_0809F730* w) {
 }
 
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+#define CARD_E7A4_DST 0x20
+#else
+#define CARD_E7A4_DST 0x2480
+#endif
+
 void func_0809E7A4(void) {
     u32 base;
 
     if (*(u32*)&gBtlWork->unk_100[0x0C] == 151) {
         base = GetBgCharBase(0);
-        RequestDma3Copy(gUnk_093FEEB8, (void*)(base + 0x2480), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[0x400], (void*)(base + 0x25A0), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[0x800], (void*)(base + 0x26C0), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[288], (void*)(base + 0x27E0), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[0x520], (void*)(base + 0x2900), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[0x920], (void*)(base + 0x2A20), 288);
+        RequestDma3Copy(gUnk_093FEEB8, (void*)(base + CARD_E7A4_DST), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[0x400], (void*)(base + CARD_E7A4_DST + 0x120), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[0x800], (void*)(base + CARD_E7A4_DST + 0x240), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[288], (void*)(base + CARD_E7A4_DST + 0x360), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[0x520], (void*)(base + CARD_E7A4_DST + 0x480), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[0x920], (void*)(base + CARD_E7A4_DST + 0x5A0), 288);
+#ifdef VERSION_EU
+        RequestDma3Copy((u8*)gUnkEu_09F72D08[gLanguage] + 0xC00, (void*)(base + 0x800), 0xA80);
+#else
         RequestDma3Copy(gUnk_093FD438, (void*)(base + 0x2C00), 0xA80);
+#endif
     } else {
         base = GetBgCharBase(1);
-        RequestDma3Copy(gUnk_093FEEB8, (void*)(base + 0x2480), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[0x400], (void*)(base + 0x25A0), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[0x800], (void*)(base + 0x26C0), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[288], (void*)(base + 0x27E0), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[0x520], (void*)(base + 0x2900), 288);
-        RequestDma3Copy(&gUnk_093FEEB8[0x920], (void*)(base + 0x2A20), 288);
+        RequestDma3Copy(gUnk_093FEEB8, (void*)(base + CARD_E7A4_DST), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[0x400], (void*)(base + CARD_E7A4_DST + 0x120), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[0x800], (void*)(base + CARD_E7A4_DST + 0x240), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[288], (void*)(base + CARD_E7A4_DST + 0x360), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[0x520], (void*)(base + CARD_E7A4_DST + 0x480), 288);
+        RequestDma3Copy(&gUnk_093FEEB8[0x920], (void*)(base + CARD_E7A4_DST + 0x5A0), 288);
+#ifdef VERSION_EU
+        RequestDma3Copy((u8*)gUnkEu_09F72D08[gLanguage] + 0xC00, (void*)(base + 0x800), 0xA80);
+#else
         RequestDma3Copy(gUnk_093FD438, (void*)(base + 0x2C00), 0xA80);
+#endif
     }
 }
-#else
-INCLUDE_ASM("card/func_0809E7A4.s");
-#endif
 extern void* gUnk_09EEA2BC[];
 extern void* gUnk_09EEA29C[];
 extern u8 gUnk_090950F4[];
@@ -25604,7 +25614,6 @@ extern u8 gUnkEu_094D53C4[];
 extern u8 gUnkEu_094D6BC4[];
 extern u8 gUnkEu_094D63C4[];
 extern u8 gUnkEu_094D5BC4[];
-extern void* gUnkEu_09F72D08[];
 #endif
 void func_0809E7A4(void);
 
