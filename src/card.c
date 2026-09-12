@@ -17677,10 +17677,35 @@ void MapSelect_0(UnkStruct_08093838* w, u8* a) {
     w->unk_29B = 0;
     w->unk_2C1 = 0;
 }
-#ifndef VERSION_EU
 u8 MapSelect_1(UnkStruct_08093838* w, void* a) {
+#ifdef VERSION_EU
+    LoadBgTiles(1, gUnk_09508098, 0x2020);
+
+    switch (gLanguage) {
+    case 0:
+        *(void**)&w->unk_014[0x24] = LoadObjTiles(gUnk_093F7172, 0x400);
+        break;
+    case 1:
+        *(void**)&w->unk_014[0x24] = LoadObjTiles(gUnkEu_094C6C22, 0x400);
+        RequestDma3Copy(gUnkEu_0952DDE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+        break;
+    case 2:
+        *(void**)&w->unk_014[0x24] = LoadObjTiles(gUnkEu_094C789A, 0x400);
+        RequestDma3Copy(gUnkEu_0952E0E4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+        break;
+    case 3:
+        *(void**)&w->unk_014[0x24] = LoadObjTiles(gUnkEu_094C7472, 0x400);
+        RequestDma3Copy(gUnkEu_0952DFE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+        break;
+    case 4:
+        *(void**)&w->unk_014[0x24] = LoadObjTiles(gUnkEu_094C704A, 0x400);
+        RequestDma3Copy(gUnkEu_0952DEE4, (u8*)GetBgCharBase(1) + 0x1AA0, 0x100);
+        break;
+    }
+#else
     *(void**)&w->unk_014[0x24] = LoadObjTiles(gUnk_093F7172, 0x400);
     LoadBgTiles(1, gUnk_09508098, 0x2020);
+#endif
     LoadPalette(gUnk_09618C58, (void*)0x05000180, 32);
     LoadPalette(&gUnk_09618C58[0x40], (void*)0x050001C0, 64);
     func_080062F4(12, 1);
@@ -17691,9 +17716,6 @@ u8 MapSelect_1(UnkStruct_08093838* w, void* a) {
     SetTaskUpdate(a, (void*)func_0809217C);
     return 1;
 }
-#else
-INCLUDE_ASM("card/MapSelect_1.s");
-#endif
 u8 func_0809217C(UnkStruct_08093838* w, void* a) {
     s32 n;
 
