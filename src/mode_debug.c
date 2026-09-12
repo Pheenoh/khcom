@@ -14,12 +14,68 @@ const char gUnk_081283C0[12] = "E041220b";
 #endif
 
 #ifdef VERSION_EU
-const char gUnkEu_08126FF4[0x4C] =
-    "\x82\x64\x82\x4f\x82\x53\x82\x50\x82\x51\x82\x51\x82\x4f\x82\x82\x00\x00\x00\x00"
-    "\x82\x63\x82\x60\x82\x71\x82\x6a\x82\x64\x82\x71\x00\x00\x00\x00"
-    "\x82\x6b\x82\x68\x82\x66\x82\x67\x82\x73\x82\x64\x82\x71\x00\x00"
-    "\x82\x61\x82\x71\x82\x68\x82\x66\x82\x67\x82\x73\x82\x6d\x82\x64\x82\x72\x82\x72\x00\x00\x00\x00";
+void eu_080059D4(s32 bg, void* tiles);
+void eu_080059F4(s32 bg, void* map);
+extern u32 gUnkEu_03006C10;
+extern u8 gUnkEu_08F6B5FC[];
+extern u8 gUnkEu_08F7913C[];
+#endif
 
+void mode_debug_0(void) {
+    m4aMPlayAllStop();
+#ifdef VERSION_EU
+    SaveLoadHeader();
+#endif
+    gDebugWork = EwramAlloc(sizeof(DebugWork));
+    func_08006120(1, 16);
+    func_0801CB44();
+#ifdef VERSION_EU
+    gUnkEu_03006C10 |= 0x8000;
+#endif
+    SetBgMode0();
+    SetupBg(0, 0, 15, 0);
+    SetupBg(1, 2, 31, 0);
+    SetBgColorMode(1, 0x80);
+    SetBgSize(1, 0);
+#ifdef VERSION_EU
+    LoadBgPalette(1, gUnk_08F683E4, 0x200);
+    eu_080059D4(1, gUnkEu_08F6B5FC);
+    eu_080059F4(1, gUnkEu_08F7913C);
+#else
+    LoadBgTiles(1, gUnk_08C72CE4, 0x5B40);
+    LoadBgPalette(1, gUnk_08F683E4, 0x200);
+    LoadBgMap(1, gUnk_08EEEB84, 0x800);
+#endif
+    EnableBg(1);
+    SetBackdropColor(31, 31, 31);
+    EnableBg(0);
+    func_0805FA8C(0, 0x5400, 0x500);
+    func_0805FA60(0, gUnk_08F68604, 0x20, 0x0F);
+    gDebugWork->tiles = LoadObjTiles(gUnk_08950902, 0x2E0);
+    gDebugWork->palette = LoadObjPalette(gUnk_08F685E4, 0x20);
+    AnimInit(&gDebugWork->anim, gUnk_09EDF774, gUnk_09EDF764);
+    AnimStart(&gDebugWork->anim, 0, 1);
+#ifdef VERSION_JP
+    func_0805FCB0(0, 0, 2, "\x82\x69\x82\x4f\x82\x53\x82\x50\x82\x4f\x82\x4f\x82\x50\x82\x81");
+#elif defined(VERSION_EU)
+    func_0805FCB0(0, 0, 2, "\x82\x64\x82\x4f\x82\x53\x82\x50\x82\x51\x82\x51\x82\x4f\x82\x82");
+#else
+    func_0805FCB0(0, 0, 2, "\x82\x6d\x82\x4f\x82\x53\x82\x50\x82\x4f\x82\x4f\x82\x50\x82\x81");
+#endif
+
+    if (GetPaletteEffect() < 0) {
+        func_0805FCB0(168, 150, 2, "\x82\x63\x82\x60\x82\x71\x82\x6a\x82\x64\x82\x71");
+    } else if (GetPaletteEffect() > 0) {
+        func_0805FCB0(168, 150, 2, "\x82\x6b\x82\x68\x82\x66\x82\x67\x82\x73\x82\x64\x82\x71");
+    } else {
+        func_0805FCB0(144, 150, 2, "\x82\x61\x82\x71\x82\x68\x82\x66\x82\x67\x82\x73\x82\x6d\x82\x64\x82\x72\x82\x72");
+    }
+
+    gDebugWork->unk_00 = 0;
+    gDebugWork->unk_01 = -1;
+}
+
+#ifdef VERSION_EU
 const char gUnkEu_08127040[0x190] =
     "\x82\x6c\x82\x60\x82\x68\x82\x6d\x81\x40\x81\x40\x81\x40\x81\x40\x00\x00\x00\x00"
     "\x82\x6e\x82\x61\x82\x69\x82\x64\x82\x62\x82\x73\x81\x40\x81\x40\x00\x00\x00\x00"
@@ -41,50 +97,6 @@ const char gUnkEu_08127040[0x190] =
     "\x82\x76\x82\x6e\x82\x71\x82\x6b\x82\x63\x82\x72\x82\x64\x82\x6b\x00\x00\x00\x00"
     "\x82\x62\x82\x6e\x82\x6d\x82\x73\x82\x68\x82\x6d\x82\x74\x82\x64\x00\x00\x00\x00"
     "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x00\x00\x00\x00";
-#endif
-
-#ifndef VERSION_EU
-void mode_debug_0(void) {
-    m4aMPlayAllStop();
-    gDebugWork = EwramAlloc(sizeof(DebugWork));
-    func_08006120(1, 16);
-    func_0801CB44();
-    SetBgMode0();
-    SetupBg(0, 0, 15, 0);
-    SetupBg(1, 2, 31, 0);
-    SetBgColorMode(1, 0x80);
-    SetBgSize(1, 0);
-    LoadBgTiles(1, gUnk_08C72CE4, 0x5B40);
-    LoadBgPalette(1, gUnk_08F683E4, 0x200);
-    LoadBgMap(1, gUnk_08EEEB84, 0x800);
-    EnableBg(1);
-    SetBackdropColor(31, 31, 31);
-    EnableBg(0);
-    func_0805FA8C(0, 0x5400, 0x500);
-    func_0805FA60(0, gUnk_08F68604, 0x20, 0x0F);
-    gDebugWork->tiles = LoadObjTiles(gUnk_08950902, 0x2E0);
-    gDebugWork->palette = LoadObjPalette(gUnk_08F685E4, 0x20);
-    AnimInit(&gDebugWork->anim, gUnk_09EDF774, gUnk_09EDF764);
-    AnimStart(&gDebugWork->anim, 0, 1);
-#ifdef VERSION_JP
-    func_0805FCB0(0, 0, 2, "\x82\x69\x82\x4f\x82\x53\x82\x50\x82\x4f\x82\x4f\x82\x50\x82\x81");
-#else
-    func_0805FCB0(0, 0, 2, "\x82\x6d\x82\x4f\x82\x53\x82\x50\x82\x4f\x82\x4f\x82\x50\x82\x81");
-#endif
-
-    if (GetPaletteEffect() < 0) {
-        func_0805FCB0(168, 150, 2, "\x82\x63\x82\x60\x82\x71\x82\x6a\x82\x64\x82\x71");
-    } else if (GetPaletteEffect() > 0) {
-        func_0805FCB0(168, 150, 2, "\x82\x6b\x82\x68\x82\x66\x82\x67\x82\x73\x82\x64\x82\x71");
-    } else {
-        func_0805FCB0(144, 150, 2, "\x82\x61\x82\x71\x82\x68\x82\x66\x82\x67\x82\x73\x82\x6d\x82\x64\x82\x72\x82\x72");
-    }
-
-    gDebugWork->unk_00 = 0;
-    gDebugWork->unk_01 = -1;
-}
-#else
-INCLUDE_ASM("mode_debug/mode_debug_0.s");
 #endif
 
 #ifndef VERSION_EU
