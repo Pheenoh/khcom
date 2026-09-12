@@ -30,7 +30,7 @@ extern void* gUnkEu_09F85008[];
 
 extern u8 gUnk_09A3D23C[];
 
-UnkStruct_0810718C* gUnk_02035E28;
+MapCardInventoryEntry* gUnk_02035E28;
 s16 gUnk_02035E2C;
 s16 gUnk_02035E2E;
 u16 gUnk_02035E30[4];
@@ -488,18 +488,18 @@ s16 func_0810714C(void) {
     return func_0810712C(gUnk_02035E2E) + (gUnk_02035E9C + gUnk_02035E9A) * 3 + gUnk_02035E98;
 }
 
-UnkStruct_0810718C* func_0810718C(void) {
+MapCardInventoryEntry* func_0810718C(void) {
     return &gUnk_02035E28[func_0810714C()];
 }
 
 void func_081071AC(void) {
-    UnkStruct_0810718C* p;
+    MapCardInventoryEntry* p;
     s16 i;
 
     p = func_0810718C();
-    if (p->unk_00 <= 26) {
+    if (p->cardType <= 26) {
         for (i = 0; i < 10; i++) {
-            if (p->unk_06[i] > 0) {
+            if (p->countsByValue[i] > 0) {
                 break;
             }
         }
@@ -559,11 +559,11 @@ void func_08107280(void) {
             }
 
             if (k < b) {
-                idx = gUnk_02035E28[a + k].unk_02;
+                idx = gUnk_02035E28[a + k].cardIndex;
                 gUnk_02035EA0[i][j] = LoadObjPalette(gUnk_09EE4C80[idx].unk_10, 32);
                 gUnk_02035ED0[i][j] = LoadObjTiles(gUnk_09EE4C80[idx].unk_0C, gUnk_09EE4C80[idx].unk_1C);
                 gUnk_02035F00[i][j] = *gUnk_09EE4C80[idx].unk_14;
-                gUnk_02035F30[i][j] = gUnk_02035E28[a + k].unk_04 == 3;
+                gUnk_02035F30[i][j] = gUnk_02035E28[a + k].category == 3;
             } else {
                 gUnk_02035EA0[i][j] = 0;
                 gUnk_02035ED0[i][j] = 0;
@@ -576,7 +576,7 @@ void func_08107280(void) {
 }
 
 void func_081073F0(void) {
-    UnkStruct_0810718C* p;
+    MapCardInventoryEntry* p;
     u16 idx;
     u16 k;
     u8* q;
@@ -603,28 +603,28 @@ void func_081073F0(void) {
         ReleaseObjPalette(gUnk_02035E74);
     }
 
-    if (p->unk_00 <= 26 && func_08107220(gUnk_02035E2E) > 0) {
-        idx = p->unk_02;
-        k = gUnk_099937A0[p->unk_04];
+    if (p->cardType <= 26 && func_08107220(gUnk_02035E2E) > 0) {
+        idx = p->cardIndex;
+        k = gUnk_099937A0[p->category];
         gUnk_02035F3C = LoadObjPalette(gUnk_09EE4C80[idx].unk_04, gUnk_09EE4C80[idx].unk_1A);
         gUnk_02035F40 = LoadObjTiles(gUnk_09EE4C80[idx].unk_00, gUnk_09EE4C80[idx].unk_18);
         gUnk_02035F44 = *gUnk_09EE4C80[idx].unk_08;
         gUnk_02035F48 = LoadObjPalette(gUnk_09EE4BF4[k].unk_04, gUnk_09EE4BF4[k].unk_16);
         gUnk_02035F4C = LoadObjTiles(gUnk_09EE4BF4[k].unk_00, gUnk_09EE4BF4[k].unk_14);
         gUnk_02035F50 = *gUnk_09EE4BF4[k].unk_08;
-        gUnk_02035F90 = p->unk_04 == 3;
-        gUnk_02035E74 = LoadObjPalette(gUnk_09A3D2FC + p->unk_04 * 32, 32);
+        gUnk_02035F90 = p->category == 3;
+        gUnk_02035E74 = LoadObjPalette(gUnk_09A3D2FC + p->category * 32, 32);
         q = &gUnk_02035F98;
-        *q = LoadTextSlots(func_08093C18(p->unk_00), gUnk_02035F94);
+        *q = LoadTextSlots(func_08093C18(p->cardType), gUnk_02035F94);
 #ifdef VERSION_EU
         {
-            void** strings = gUnk_09EE90D0[p->unk_00];
+            void** strings = gUnk_09EE90D0[p->cardType];
             q = &gUnk_02035FA0;
             *q = LoadTextSlots(strings[gLanguage], gUnk_02035F9C);
         }
 #else
         q = &gUnk_02035FA0;
-        *q = LoadTextSlots(gUnk_09EE90D0[p->unk_00], gUnk_02035F9C);
+        *q = LoadTextSlots(gUnk_09EE90D0[p->cardType], gUnk_02035F9C);
 #endif
     } else {
         gUnk_02035F3C = 0;
@@ -668,14 +668,14 @@ void func_0810764C(void) {
 }
 
 void func_081076D4(void) {
-    UnkStruct_0810718C* p;
+    MapCardInventoryEntry* p;
     s16 i;
     s32 v;
 
     p = func_0810718C();
 
     if (func_08107220(gUnk_02035E2E) > 0) {
-        LoadPalette(gUnk_09A3D23C + p->unk_04 * 32, (void*)0x05000000, 12);
+        LoadPalette(gUnk_09A3D23C + p->category * 32, (void*)0x05000000, 12);
     }
 
     if (gUnk_02035E2C == 1) {
@@ -683,13 +683,13 @@ void func_081076D4(void) {
             LoadDecimalDigitTiles(0, gUnk_09A067DC, (u8*)GetBgCharBase(0) + (i * 64 + 0x40), 32, 1);
             LoadPalette(gUnk_09A3D2C8, (void*)(0x05000000 + (i + 6) * 2), 2);
         }
-    } else if (p->unk_04 == 3) {
+    } else if (p->category == 3) {
         if (func_08107220(gUnk_02035E2E) > 0) {
             LoadBgMap(1, gUnk_09A3551C, 0x500);
         }
 
         for (i = 0; i <= 9; i++) {
-            v = p->unk_06[i];
+            v = p->countsByValue[i];
             if (v != 0 && func_08107220(gUnk_02035E2E) > 0) {
                 LoadDecimalDigitTiles(v, gUnk_09A067FC, (u8*)GetBgCharBase(0) + 0x40, 32, 1);
                 LoadPalette(gUnk_09A3D248, (void*)0x0500000C, 2);
@@ -707,7 +707,7 @@ void func_081076D4(void) {
         }
 
         for (i = 0; i <= 9; i++) {
-            v = p->unk_06[i];
+            v = p->countsByValue[i];
             if (v != 0 && func_08107220(gUnk_02035E2E) > 0) {
                 LoadDecimalDigitTiles(v, gUnk_09A067FC, (u8*)GetBgCharBase(0) + (i * 64 + 0x40), 32, 1);
                 LoadPalette(gUnk_09A3D248, (void*)(0x05000000 + (i + 6) * 2), 2);
@@ -720,19 +720,19 @@ void func_081076D4(void) {
 }
 
 void func_081078F0(s16 a) {
-    RequestTilemapRectCopy(gUnk_09A34D9C, GetBgScreenBase(0), 0, gUnk_09EF9618[a].unk_04 * 2, 0, 2, 11, 2);
+    RequestTilemapRectCopy(gUnk_09A34D9C, GetBgScreenBase(0), 0, gUnk_09EF9618[a].displayIndex * 2, 0, 2, 11, 2);
 }
 
 void func_08107938(void) {
-    UnkStruct_0810718C* p;
+    MapCardInventoryEntry* p;
     u16 card;
 
     p = func_0810718C();
-    if (p->unk_06[func_081075D8()] > 0) {
-        card = func_081075D8() + p->unk_02;
-        gUnk_02035E40[p->unk_04]--;
+    if (p->countsByValue[func_081075D8()] > 0) {
+        card = func_081075D8() + p->cardIndex;
+        gUnk_02035E40[p->category]--;
         gUnk_02035E48--;
-        p->unk_06[func_081075D8()]--;
+        p->countsByValue[func_081075D8()]--;
         RemoveMapCard(card);
         func_081075FC();
         func_081076D4();
@@ -740,11 +740,11 @@ void func_08107938(void) {
     }
 }
 
-u8 func_081079A8(UnkStruct_0810718C* p) {
+u8 func_081079A8(MapCardInventoryEntry* p) {
     s16 i;
 
     for (i = 0; i < 10; i++) {
-        if (p->unk_06[i] > 0) {
+        if (p->countsByValue[i] > 0) {
             break;
         }
     }
@@ -755,21 +755,21 @@ u8 func_081079A8(UnkStruct_0810718C* p) {
     return 0;
 }
 
-u8 func_081079E4(UnkStruct_0810718C* p) {
-    if (p->unk_06[func_081075D8()] == 0) {
+u8 func_081079E4(MapCardInventoryEntry* p) {
+    if (p->countsByValue[func_081075D8()] == 0) {
         return 1;
     }
     return 0;
 }
 
-void func_08107A08(UnkStruct_0810718C* p) {
+void func_08107A08(MapCardInventoryEntry* p) {
     s16 k;
     s16 i;
 
     k = func_081075D8();
 
     for (i = 0; i <= 9; i++) {
-        if (p->unk_06[k] > 0) {
+        if (p->countsByValue[k] > 0) {
             break;
         }
         k++;
@@ -781,14 +781,14 @@ void func_08107A08(UnkStruct_0810718C* p) {
     gUnk_02035FC6 = k % 5;
 }
 
-void func_08107A74(UnkStruct_0810718C* p) {
+void func_08107A74(MapCardInventoryEntry* p) {
     vu32* dma;
     vu16 zero;
-    UnkStruct_0810718C* q;
+    MapCardInventoryEntry* q;
     u16 row;
     s16 j;
 
-    row = p->unk_04;
+    row = p->category;
     dma = (vu32*)0x040000D4;
     dma[0] = (u32)(p + 1);
     dma[1] = (u32)p;
@@ -800,7 +800,7 @@ void func_08107A74(UnkStruct_0810718C* p) {
     dma[1] = (u32)q;
     dma[2] = 0x8100000E;
     dma[2];
-    q->unk_00 = 27;
+    q->cardType = 27;
 
     for (j = row + 1; j <= 3; j++) {
         gUnk_02035E30[j]--;
@@ -849,7 +849,7 @@ void func_08107B84(void) {
     dma[2];
 
     for (i = 0; i <= 26; i++) {
-        gUnk_02035E28[i].unk_00 = 27;
+        gUnk_02035E28[i].cardType = 27;
     }
     a = 0;
     gUnk_02035E48 = 0;
@@ -874,16 +874,16 @@ void func_08107B84(void) {
                             s32 index = a;
 
                             counts[j] += n;
-                            gUnk_02035E28[index].unk_00 = u;
-                            gUnk_02035E28[index].unk_02 = k * 10;
-                            gUnk_02035E28[index].unk_04 = j;
-                            gUnk_02035E28[index].unk_06[i] = n;
+                            gUnk_02035E28[index].cardType = u;
+                            gUnk_02035E28[index].cardIndex = k * 10;
+                            gUnk_02035E28[index].category = j;
+                            gUnk_02035E28[index].countsByValue[i] = n;
                         }
                     }
                 }
             }
 
-            if (gUnk_02035E28[a].unk_00 <= 26) {
+            if (gUnk_02035E28[a].cardType <= 26) {
                 a++;
             }
         }
@@ -912,7 +912,7 @@ void func_08107D44(void) {
     c = gUnk_02035E9C;
     keys = func_08107D24();
     if (keys & 1) {
-        if (func_0810718C()->unk_04 != 3) {
+        if (func_0810718C()->category != 3) {
             func_081071AC();
             m4aSongNumStart(0x66);
             AnimStart(&gUnk_02035E80, 1, 1);
@@ -1021,9 +1021,9 @@ void func_08107FF0(void) {
                 m4aSongNumStart(0x69);
             }
         } else if (keys & 0x20) {
-            gUnk_02035E2E = gUnk_09EF9618[gUnk_02035E2E].unk_00;
+            gUnk_02035E2E = gUnk_09EF9618[gUnk_02035E2E].leftCategory;
         } else if (keys & 0x10) {
-            gUnk_02035E2E = gUnk_09EF9618[gUnk_02035E2E].unk_02;
+            gUnk_02035E2E = gUnk_09EF9618[gUnk_02035E2E].rightCategory;
         }
     }
 
@@ -1038,7 +1038,7 @@ void func_08107FF0(void) {
     }
 }
 
-void func_08108170(UnkStruct_0810718C* p, u16 row) {
+void func_08108170(MapCardInventoryEntry* p, u16 row) {
     s16 c;
     s16 i;
     s32 k;
@@ -1047,13 +1047,13 @@ void func_08108170(UnkStruct_0810718C* p, u16 row) {
 
     for (i = 0; i <= 4; i++) {
         k = c - i;
-        if (k >= 0 && p->unk_06[func_081075C0(row, k)] > 0) {
+        if (k >= 0 && p->countsByValue[func_081075C0(row, k)] > 0) {
             gUnk_02035FC4 = row;
             gUnk_02035FC6 = k;
             return;
         }
         k = c + i;
-        if (k <= 4 && p->unk_06[func_081075C0(row, k)] > 0) {
+        if (k <= 4 && p->countsByValue[func_081075C0(row, k)] > 0) {
             gUnk_02035FC4 = row;
             gUnk_02035FC6 = k;
             return;
@@ -1062,7 +1062,7 @@ void func_08108170(UnkStruct_0810718C* p, u16 row) {
 }
 
 void func_08108208(void) {
-    UnkStruct_0810718C* p;
+    MapCardInventoryEntry* p;
     s16 a;
     s16 b;
     s16 i;
@@ -1110,7 +1110,7 @@ void func_08108208(void) {
                     gUnk_02035FC6 = 4;
                 }
 
-                if (p->unk_06[func_081075D8()] > 0) {
+                if (p->countsByValue[func_081075D8()] > 0) {
                     break;
                 }
             }
@@ -1120,7 +1120,7 @@ void func_08108208(void) {
                     gUnk_02035FC6 = 0;
                 }
 
-                if (p->unk_06[func_081075D8()] > 0) {
+                if (p->countsByValue[func_081075D8()] > 0) {
                     break;
                 }
             }
@@ -1133,7 +1133,7 @@ void func_08108208(void) {
 }
 
 void func_081083EC(void) {
-    UnkStruct_0810718C* p;
+    MapCardInventoryEntry* p;
     s16 old;
     u16 keys;
 
@@ -1260,7 +1260,7 @@ void func_08108650(void) {
     if (gUnk_02035FCA == 2) {
         switch (gUnk_02035E2C) {
         case 1:
-            ApproachValueHalf(&gUnk_02035FDC, gUnk_09EF9618[gUnk_02035E2E].unk_04 * 3584 - 256);
+            ApproachValueHalf(&gUnk_02035FDC, gUnk_09EF9618[gUnk_02035E2E].displayIndex * 3584 - 256);
             ApproachValueHalf(&gUnk_02035FE0, 0);
             DrawSprite(gUnk_02035FDC >> 8, gUnk_02035FE0 >> 8, AnimUpdate(&gUnk_02035E58), gUnk_02035E50, gUnk_02035E4C, 0, 0x800, 0x7D0);
             break;

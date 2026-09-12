@@ -304,7 +304,7 @@ extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
 extern u8 gUnk_0984B1F8[];
 extern s32 gUnk_096FDD8C[];
-extern UnkStruct_08F7CF18 gUnk_08F7CF18[];
+extern SpriteFrameResourceDef gUnk_08F7CF18[];
 extern StatusAnimDef gUnk_096FDE54[];
 extern const StatusFriendTable gUnk_096FDE24;
 extern StatusCardDef gCardDefs[];

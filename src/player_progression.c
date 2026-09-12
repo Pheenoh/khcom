@@ -3,9 +3,9 @@
 #include "macros.h"
 #include "battle.h"
 
-UnkStruct_02039CA8 gUnk_02039CA8;
+PlayerProgression gUnk_02039CA8;
 
-void AdvanceLevelExpThreshold(UnkStruct_02039CA8* p) {
+void AdvanceLevelExpThreshold(PlayerProgression* p) {
     s32 n = p->level + 1;
 
     if (p->level) {

@@ -3,14 +3,14 @@
 
 #include "types.h"
 
-typedef struct UnkStruct_08F7CF18 {
-    void* unk_00;
-    void** unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-} UnkStruct_08F7CF18;
+typedef struct SpriteFrameResourceDef {
+    void* tiles;
+    void** sprites;
+    u16 tilesSize;
+    u16 spriteIndex;
+} SpriteFrameResourceDef;
 
-typedef struct UnkStruct_09EE4C80 {
+typedef struct MapCardDef {
     void* unk_00;
     void* unk_04;
     void** unk_08;
@@ -26,9 +26,9 @@ typedef struct UnkStruct_09EE4C80 {
     u16 unk_22;
     u16 unk_24;
     u16 unk_26;
-} UnkStruct_09EE4C80;
+} MapCardDef;
 
-typedef struct UnkStruct_09EE4BF4 {
+typedef struct MapCardBackDef {
     void* unk_00;
     void* unk_04;
     void** unk_08;
@@ -37,6 +37,6 @@ typedef struct UnkStruct_09EE4BF4 {
     u16 unk_14;
     u16 unk_16;
     u8 unk_18[0x4];
-} UnkStruct_09EE4BF4;
+} MapCardBackDef;
 
 #endif

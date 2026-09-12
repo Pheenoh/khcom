@@ -3,15 +3,15 @@
 
 #include "types.h"
 
-typedef struct UnkStruct_09EF9488 {
-    void* unk_00;
-    u16 unk_04;
+typedef struct WorldSelectDef {
+    void* palette;
+    u16 paletteSize;
     u8 unk_06[0x02];
-    void* unk_08;
-    u16 unk_0C;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_0E[0x02];
-    void* unk_10;
-    void* unk_14;
-} UnkStruct_09EF9488;
+    void* sprite;
+    void* name;
+} WorldSelectDef;
 
 #endif

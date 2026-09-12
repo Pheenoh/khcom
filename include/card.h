@@ -187,8 +187,8 @@ typedef struct EventMapObjectWork {
     void* definition;
 } EventMapObjectWork;
 
-struct UnkStruct_09EE4C80;
-struct UnkStruct_09EE4BF4;
+struct MapCardDef;
+struct MapCardBackDef;
 
 typedef struct UnkStruct_08096F94 {
     void* unk_00;
@@ -199,8 +199,8 @@ typedef struct UnkStruct_08096F94 {
     void* unk_14;
     void* unk_18;
     void* unk_1C;
-    struct UnkStruct_09EE4C80* unk_20;
-    struct UnkStruct_09EE4BF4* unk_24;
+    struct MapCardDef* unk_20;
+    struct MapCardBackDef* unk_24;
     TaskPool unk_28;
     u16 unk_3C;
     u16 unk_3E;
@@ -947,8 +947,8 @@ typedef char UnkStruct_08078754_sizechk[(sizeof(struct UnkStruct_08078754) == 0x
 
 
 
-extern UnkStruct_09EE4C80 gUnk_09EE4C80[];
-extern UnkStruct_09EE4BF4 gUnk_09EE4BF4[];
+extern MapCardDef gUnk_09EE4C80[];
+extern MapCardBackDef gUnk_09EE4BF4[];
 
 typedef struct MapcardWork {
     void* unk_00;
@@ -956,8 +956,8 @@ typedef struct MapcardWork {
     void* unk_08;
     void* unk_0C;
     u8 unk_10[0x08];
-    UnkStruct_09EE4C80* unk_18;
-    UnkStruct_09EE4BF4* unk_1C;
+    MapCardDef* unk_18;
+    MapCardBackDef* unk_1C;
     u8 unk_20;
     u8 unk_21;
     u8 unk_22[0x06];
@@ -1890,7 +1890,7 @@ typedef struct ReloadWork {
 } ReloadWork;
 
 
-extern UnkStruct_08F7CF18 gUnk_08F7CF18[];
+extern SpriteFrameResourceDef gUnk_08F7CF18[];
 
 typedef struct UnkStruct_080984E4 {
     u8 unk_00[0x08];

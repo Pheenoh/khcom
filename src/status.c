@@ -647,16 +647,16 @@ s32 func_080D85A8(u32 a) {
 }
 
 void* func_080D85C0(u16 a) {
-    UnkStruct_08F7CF18* d;
+    SpriteFrameResourceDef* d;
     void* t;
 
     d = &gUnk_08F7CF18[a];
-    t = AllocSpriteFrameTiles(d->unk_08);
+    t = AllocSpriteFrameTiles(d->tilesSize);
 #ifdef VERSION_EU
-    UpdateSpriteFrameTiles(t, ((u32*)d->unk_04[gLanguage])[d->unk_0A],
-        ((u32*)d->unk_00)[gLanguage]);
+    UpdateSpriteFrameTiles(t, ((u32*)d->sprites[gLanguage])[d->spriteIndex],
+        ((u32*)d->tiles)[gLanguage]);
 #else
-    UpdateSpriteFrameTiles(t, d->unk_04[d->unk_0A], d->unk_00);
+    UpdateSpriteFrameTiles(t, d->sprites[d->spriteIndex], d->tiles);
 #endif
     return t;
 }
