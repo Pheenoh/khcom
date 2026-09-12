@@ -2347,7 +2347,7 @@ u8 func_08113180(StaffRollWork* w) {
             FadeSetPaletteExcluded(i, 1);
         }
 
-        func_0811614C(w->unk_1C0, gUnk_09A541C8);
+        SrollTextInit(w->unk_1C0, gUnk_09A541C8);
         LoadBgPalette(0, gUnk_09D6BE14, 32);
         gDispCnt |= 0;
         gWinIn = 31;
@@ -2375,11 +2375,11 @@ u8 func_08113180(StaffRollWork* w) {
             }
 
             if (*s != '!') {
-                func_081166F8(w->unk_1C0, 0, (row + 20) & 31, 30, 2, 1);
+                SrollTextClearRect(w->unk_1C0, 0, (row + 20) & 31, 30, 2, 1);
             }
 
             if (w->unk_0A0 == 0) {
-                func_08116268(w->unk_1C0, 15, 13, 0, 14);
+                SrollTextSetColors(w->unk_1C0, 15, 13, 0, 14);
                 loop = 1;
 
                 while (loop) {
@@ -2426,21 +2426,21 @@ u8 func_08113180(StaffRollWork* w) {
                         loop = 0;
                         break;
                     case '#':
-                        func_081160EC(w->unk_1C0, s[1] - '0');
+                        SrollTextSelectFont(w->unk_1C0, s[1] - '0');
                         s += 2;
                         break;
                     case '@':
-                        func_08116268(w->unk_1C0, 7, 5, 0, 6);
+                        SrollTextSetColors(w->unk_1C0, 7, 5, 0, 6);
                         s++;
                         break;
                     case '~':
                         s++;
-                        wa = func_08115FBC(w->unk_1C0, s);
-                        wb = func_08115FBC(w->unk_1C0, gUnk_09EFA9C0);
-                        wc = func_08115FBC(w->unk_1C0, gUnk_09EFA9BC);
+                        wa = SrollTextMeasureWidth(w->unk_1C0, s);
+                        wb = SrollTextMeasureWidth(w->unk_1C0, gUnk_09EFA9C0);
+                        wc = SrollTextMeasureWidth(w->unk_1C0, gUnk_09EFA9BC);
                         w1 = wa - wb + wc * 3;
                         x = (240 - w1) >> 1;
-                        func_08116268(w->unk_1C0, 7, 5, 0, 6);
+                        SrollTextSetColors(w->unk_1C0, 7, 5, 0, 6);
 
                         for (n = 0; s[n] != '~'; n++) {
                             buf[n] = s[n];
@@ -2450,8 +2450,8 @@ u8 func_08113180(StaffRollWork* w) {
                         buf[n + 1] = ' ';
                         buf[n + 2] = ' ';
                         buf[n + 3] = 0;
-                        w1 = func_08115FBC(w->unk_1C0, buf);
-                        func_08116BEC(w->unk_1C0, x, (row + 20) & 31, buf, 1);
+                        w1 = SrollTextMeasureWidth(w->unk_1C0, buf);
+                        SrollTextDrawStringAtPixelX(w->unk_1C0, x, (row + 20) & 31, buf, 1);
                         s += n + 1;
 
                         for (n = 0; s[n] != 0; n++) {
@@ -2459,24 +2459,24 @@ u8 func_08113180(StaffRollWork* w) {
                         }
 
                         buf[n] = 0;
-                        func_08116268(w->unk_1C0, 15, 13, 0, 14);
-                        func_08116BEC(w->unk_1C0, x + w1, (row + 20) & 31, buf, 1);
+                        SrollTextSetColors(w->unk_1C0, 15, 13, 0, 14);
+                        SrollTextDrawStringAtPixelX(w->unk_1C0, x + w1, (row + 20) & 31, buf, 1);
                         loop = 0;
                         break;
                     case '=':
-                        func_08116BEC(w->unk_1C0, (240 - func_08115FBC(w->unk_1C0, s + 1)) >> 1, (row + 20) & 31, s + 1, 1);
+                        SrollTextDrawStringAtPixelX(w->unk_1C0, (240 - SrollTextMeasureWidth(w->unk_1C0, s + 1)) >> 1, (row + 20) & 31, s + 1, 1);
                         loop = 0;
                         break;
                     case '-':
-                        func_08116BEC(w->unk_1C0, 0, (row + 20) & 31, s + 1, 1);
+                        SrollTextDrawStringAtPixelX(w->unk_1C0, 0, (row + 20) & 31, s + 1, 1);
                         loop = 0;
                         break;
                     case '+':
-                        func_08116BEC(w->unk_1C0, 240 - func_08115FBC(w->unk_1C0, s + 1), (row + 20) & 31, s + 1, 1);
+                        SrollTextDrawStringAtPixelX(w->unk_1C0, 240 - SrollTextMeasureWidth(w->unk_1C0, s + 1), (row + 20) & 31, s + 1, 1);
                         loop = 0;
                         break;
                     default:
-                        func_08116BEC(w->unk_1C0, (240 - func_08115FBC(w->unk_1C0, s)) >> 1, (row + 20) & 31, s, 1);
+                        SrollTextDrawStringAtPixelX(w->unk_1C0, (240 - SrollTextMeasureWidth(w->unk_1C0, s)) >> 1, (row + 20) & 31, s, 1);
                         loop = 0;
                         break;
                     }
