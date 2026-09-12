@@ -17405,16 +17405,22 @@ void func_08091234(u16 arg) {
 #else
 INCLUDE_ASM("card/func_08091234.s");
 #endif
-#ifdef NON_MATCHING
 void func_080917C8(u16 a, u8 b) {
-    UnkStruct_08090244 arg;
+    struct {
+        s32 unk_00;
+        s32 unk_04;
+        s32 unk_08;
+        u16 unk_0C;
+        u8 unk_0E;
+        u8 unk_0F;
+    } arg;
     UnkStruct_02034AAC* p;
     u8 i;
 
     arg.unk_00 = 0;
     arg.unk_04 = 0;
     arg.unk_08 = a;
-    *(u16*)&arg.unk_0C = b;
+    arg.unk_0C = b;
     arg.unk_0E = 0;
     p = ((UnkStruct_02034AAC**)TaskCreate(&gUnk_02039DD4->unk_09C, &gUnk_09EE4B28[0x48], &arg))[1];
     gBtlWork->unk_068 |= 0x10000000;
@@ -17450,9 +17456,6 @@ void func_080917C8(u16 a, u8 b) {
     p->unk_78 |= 4;
     p->unk_78 &= ~0x40;
 }
-#else
-INCLUDE_ASM("card/func_080917C8.s");
-#endif
 
 #ifdef NON_MATCHING
 void func_08091978(u16 a, u8 b) {
