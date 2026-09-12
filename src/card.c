@@ -17039,13 +17039,11 @@ u8 func_08090DB0(UnkStruct_02034AAC* p, void* a) {
 
     return 1;
 }
-#ifdef NON_MATCHING
 void func_08090EA0(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     s32* tbl;
     u8 n;
     s32 id;
     u8* g;
-    u8* q;
 
     p->unk_00 = 0;
     p->unk_04 = 0;
@@ -17096,22 +17094,25 @@ void func_08090EA0(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     p->unk_9C = 10;
     p->unk_A0 -= 4;
     func_0807C33C(p);
-    q = &p->unk_A5;
-    *q = p->unk_48->unk_20;
+    p->unk_A5 = p->unk_48->unk_20;
     g = (u8*)&gGameState;
 
     switch (*(s32*)(g + 0x1B8)) {
     case 1:
-        *q += 2;
+        p->unk_A5 += 2;
 
-        if (*q > 9) {
-            *q = 9;
+        if (p->unk_A5 > 9) {
+            p->unk_A5 = 9;
         }
 
         p->unk_A7 = 1;
         break;
     case 2:
-        *q = *q > 2 ? *q - 2 : 1;
+        if (p->unk_A5 > 2) {
+            p->unk_A5 -= 2;
+        } else {
+            p->unk_A5 = 1;
+        }
         p->unk_A7 = 1;
         break;
     default:
@@ -17121,9 +17122,6 @@ void func_08090EA0(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
 
     p->unk_78 |= 0x80;
 }
-#else
-INCLUDE_ASM("card/func_08090EA0.s");
-#endif
 
 void func_08091048(UnkStruct_02034AAC* p, UnkStruct_08090244* a) {
     s32* tbl;
