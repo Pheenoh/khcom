@@ -663,18 +663,18 @@ static inline void EngineObjSize(u16 a, u16 b, u16* w, u16* h) {
 }
 
 void func_08002F50(void) {
-    u16* oam;
-    s32 i;
-    s32 j;
-    s32 count;
-    s32 emitted;
-    u8 mosaic;
     SpriteEntry** entries;
     SpriteEntry* entry;
     ObjAffine* affine;
+    s32 emitted;
+    s32 i;
+    s32 j;
+    s32 count;
     u16* parts;
     u16 partCount;
+    u16* oam;
     u16 tileOffset;
+    u8 mosaic;
     u16 attr0;
     u16 attr1;
     u16 attr2;
