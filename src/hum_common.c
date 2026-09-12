@@ -171,7 +171,6 @@ void func_0800E5CC(HumSub* sub) {
 
 s32 func_0800E5F0(HumWork* work);
 
-#ifndef VERSION_EU
 s32 func_0800E5F0(HumWork* work) {
     VsActor* actor = &work->unk_040;
     s32 x;
@@ -438,6 +437,9 @@ s32 func_0800E5F0(HumWork* work) {
             PrizeCardArg arg2;
 
             func_0801B008();
+#ifdef VERSION_EU
+            func_0801A8A4(&actor->x, &actor->y, work->unk_174 - 8, -16);
+#endif
             func_0801B918(actor);
             arg2.unk_00 = actor->x;
             arg2.unk_04 = actor->y;
@@ -542,8 +544,5 @@ s32 func_0800E5F0(HumWork* work) {
     func_08012324(&actor->unk_40, actor->x, actor->y, actor->z);
     return 1;
 }
-#else
-INCLUDE_ASM("hum_common/func_0800E5F0.s");
-#endif
 
 ALIGN_ZERO(2);
