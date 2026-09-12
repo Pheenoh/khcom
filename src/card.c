@@ -15559,7 +15559,6 @@ void func_0808F2CC(u8* work) {
     d[19] = 0;
 }
 
-#ifndef VERSION_EU
 void func_0808F304(u8* work) {
     u8* p;
     s32 t;
@@ -15570,6 +15569,12 @@ void func_0808F304(u8* work) {
         return;
     }
 
+#ifdef VERSION_EU
+    for (i = work[0x7C4] - 1; i <= 19; i++) {
+        p = &work[0x784];
+        p[i] = 0;
+    }
+#else
     for (i = work[0x7C4] - 1; i <= 8; i++) {
         p = &work[0x784];
         t = i * 2;
@@ -15577,12 +15582,10 @@ void func_0808F304(u8* work) {
         t++;
         p[t] = 0;
     }
+#endif
 
     m4aSongNumStart(104);
 }
-#else
-INCLUDE_ASM("card/func_0808F304.s");
-#endif
 
 #ifdef VERSION_US
 s32 func_0808F358(UnkStruct_0808F358* work) {
