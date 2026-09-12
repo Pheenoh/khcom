@@ -140,7 +140,6 @@ void mode_jiminy_0(void) {
     }
 }
 
-#ifndef VERSION_EU
 void mode_jiminy_1(void) {
     s32 i;
     u16 c;
@@ -234,7 +233,11 @@ void mode_jiminy_1(void) {
 #ifdef VERSION_JP
         gJiminyWork->unk_C71 = func_080653D4(0x400, 0x2600, gUnk_08159FE0);
 #else
+#ifdef VERSION_EU
+        gJiminyWork->unk_C71 = func_08065170(0x200, 0x2400, eu_0805E924(gUnkEu_08892334));
+#else
         gJiminyWork->unk_C71 = func_08065170(0x200, 0x2400, gUnk_08159FE0);
+#endif
 #endif
         DisableBg(3);
         DisableBg(0);
@@ -349,18 +352,124 @@ void mode_jiminy_1(void) {
         if (gJiminyWork->unk_000 == 7) {
             switch (gJiminyWork->unk_C68[i]) {
             case 1:
+#ifdef VERSION_EU
+                switch (gLanguage) {
+                case 0:
+                    DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i, gUnk_08C6A6A4,
+                        gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0xFFFE);
+                    break;
+                case 1:
+                    DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i, gUnkEu_08C9BD82,
+                        gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0xFFFE);
+                    break;
+                case 4:
+                    DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i, gUnkEu_08C9BD8C,
+                        gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0xFFFE);
+                    break;
+                case 3:
+                    DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i, gUnkEu_08C9BD9C,
+                        gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0xFFFE);
+                    break;
+                case 2:
+                default:
+                    DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i, gUnkEu_08C9BDAC,
+                        gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0xFFFE);
+                    break;
+                }
+#else
                 DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i, gUnk_08C6A6A4,
                     gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0);
+#endif
                 break;
             case 2:
+#ifdef VERSION_EU
+                DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i - 2, gUnk_08C6A69A,
+                    gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0xFFFE);
+#else
                 DrawSprite(0xD9, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i - 2, gUnk_08C6A69A,
                     gJiminyWork->tiles6, gJiminyWork->palette7, 0, 4, 0);
+#endif
                 break;
             }
         }
     }
 
     if (gJiminyWork->unk_CAC & 2) {
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+            if (gGameState.flags & 8) {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C76, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            } else {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C04, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            }
+            DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
+            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnk_08C69C20, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnk_08C69C54, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            break;
+        case 1:
+            if (gGameState.flags & 8) {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A538, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            } else {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A4CC, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            }
+            DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
+            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            break;
+        case 4:
+            if (gGameState.flags & 8) {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A564, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            } else {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A554, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            }
+            DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
+            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            break;
+        case 3:
+            if (gGameState.flags & 8) {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A590, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            } else {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A57A, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            }
+            DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
+            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            break;
+        case 2:
+        default:
+            if (gGameState.flags & 8) {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A5C2, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            } else {
+                DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnkEu_08C9A5A6, gJiminyWork->tiles,
+                    gJiminyWork->palette, 0, 0, 0);
+            }
+            DrawSprite(0x58, 0x98, gUnk_08C6A878, gJiminyWork->tiles2, gJiminyWork->palette2, 0, 0, 0);
+            DrawSprite(0x80, gJiminyWork->unk_050 >> 8, gUnkEu_08C9A4E2, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnkEu_08C9A516, gJiminyWork->tiles,
+                gJiminyWork->palette, 0, 0, 1);
+            break;
+        }
+#else
         if (gGameState.flags & 8) {
             DrawSprite(gJiminyWork->unk_04C >> 8, 0, gUnk_08C69C76, gJiminyWork->tiles,
                 gJiminyWork->palette, 0, 0, 0);
@@ -373,6 +482,7 @@ void mode_jiminy_1(void) {
             gJiminyWork->palette, 0, 0, 1);
         DrawSprite(0x80, gJiminyWork->unk_054 >> 8, gUnk_08C69C54, gJiminyWork->tiles,
             gJiminyWork->palette, 0, 0, 1);
+#endif
     }
 
     if (gJiminyWork->unk_000 == 7) {
@@ -407,9 +517,6 @@ void mode_jiminy_1(void) {
     UpdatePlayTime();
     gJiminyWork->unk_D3E++;
 }
-#else
-INCLUDE_ASM("mode_jiminy/mode_jiminy_1.s");
-#endif
 
 void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f) {
     gJiminyWork->unk_CAE = d;
