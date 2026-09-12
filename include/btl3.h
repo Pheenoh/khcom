@@ -2,90 +2,10 @@
 #define GUARD_BTL3_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "taskpool.h"
 #include "anim.h"
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    u8 unk_018;
-    u8 unk_019;
-    u16 unk_01A;
-    s32 unk_01C;
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
-    s16 unk_02C;
-    s16 unk_02E;
-    u32 unk_030;
-    u64 unk_034;
-    u8 unk_03C[0x0C];
-    u32 unk_048;
-    u32 unk_04C;
-    u32 unk_050;
-    u32 unk_054;
-    u32 unk_058;
-    u32 unk_05C;
-    u8 unk_060[0x08];
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071;
-    u16 unk_072;
-    u16 unk_074;
-    u16 unk_076;
-    struct BtlWork* unk_078;
-    struct BtlWork* unk_07C;
-    u8 unk_080[0x1C];
-    u16 unk_09C;
-    u16 unk_09E;
-    u16 unk_0A0;
-    s16 unk_0A2;
-    u8 unk_0A4;
-    u8 unk_0A5[0x03];
-    u32 unk_0A8;
-    u32 unk_0AC;
-    u16 unk_0B0;
-    u8 unk_0B2;
-    u8 unk_0B3;
-    u8 unk_0B4;
-    u8 unk_0B5[0x03];
-    u32 unk_0B8;
-    u8 unk_0BC[0x10];
-    u16 unk_0CC;
-    u16 unk_0CE;
-    u32 unk_0D0;
-    u32 unk_0D4;
-    u16 unk_0D8;
-    s16 unk_0DA;
-    s16 unk_0DC;
-    s16 unk_0DE;
-    s16 unk_0E0;
-    u8 unk_0E2;
-    u8 unk_0E3;
-    u16 unk_0E4;
-    u8 unk_0E6[0x02];
-    u32 unk_0E8;
-    s16 unk_0EC;
-    u8 unk_0EE;
-    u8 unk_0EF;
-    u32 unk_0F0;
-    u32 unk_0F4;
-    u16 unk_0F8;
-    u8 unk_0FA;
-    u8 unk_0FB;
-    u32 unk_0FC;
-    u8 unk_100[0x14];
-    void* unk_114;
-    u32 unk_118;
-    u32 unk_11C;
-    u16 unk_120;
-    u8 unk_122[0xAE];
-} BtlWork;
-
 typedef struct BtlFormStep {
     void* unk_00;
     s16 unk_04;
@@ -172,7 +92,7 @@ typedef struct BtlRaidWork {
     u16 unk_56;
     u16 angle;
     u16 unk_5A;
-    BtlWork* unk_5C;
+    BtlObj* unk_5C;
     void* tiles;
     void* palette2;
     u16 unk_68;
@@ -196,7 +116,7 @@ typedef struct BtlBadStatusWork {
     void* palette;
     void* palette2;
     AnimState anim;
-    BtlWork* unk_24;
+    BtlObj* unk_24;
     u32 unk_28;
     void* unk_2C;
 } BtlBadStatusWork;
@@ -210,8 +130,6 @@ typedef struct BtlAiWork {
     s16 unk_16C;
 } BtlAiWork;
 
-extern BtlWork* gBtlWork;
-extern BtlWork* gUnk_02039B9C;
 
 extern s16 gSineTable[];
 extern u8 gUnk_08901C8A[];
@@ -227,8 +145,8 @@ extern u8 gUnk_09EDF154[];
 
 u16 GetRandom(void);
 void m4aSongNumStart(u16 song);
-BtlWork* ListPoolFirst(void* node);
-BtlWork* ListPoolNext(void* node);
+BtlObj* ListPoolFirst(void* node);
+BtlObj* ListPoolNext(void* node);
 void* AllocObjTiles(s32 a, s32 b);
 void* LoadObjTiles(void* src, s32 size);
 void ReleaseObjTiles(void* a);
@@ -270,15 +188,15 @@ void task_btl_born_0(BtlBornWork* work, BtlBornArgs* args);
 u8 task_btl_born_1(BtlBornWork* work);
 void func_08040150(BtlRaidWork* work, s32* outX, s32* outY, s32* outZ);
 void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args);
-BtlWork* func_08040458(BtlRaidWork* work);
+BtlObj* func_08040458(BtlRaidWork* work);
 u8 task_btl_raid_1(BtlRaidWork* work);
 void task_btl_raid_2(BtlRaidWork* work);
 void task_btl_raid_3(BtlRaidWork* work);
-void task_btl_badstatus_0(BtlBadStatusWork* work, BtlWork* obj);
+void task_btl_badstatus_0(BtlBadStatusWork* work, BtlObj* obj);
 u8 task_btl_badstatus_1(BtlBadStatusWork* work);
 void task_btl_badstatus_2(BtlBadStatusWork* work);
 void task_btl_badstatus_3(BtlBadStatusWork* work);
-BtlWork* func_08040C8C(BtlAiWork* work);
-BtlWork* func_08040D54(BtlAiWork* work);
+BtlObj* func_08040C8C(BtlAiWork* work);
+BtlObj* func_08040D54(BtlAiWork* work);
 
 #endif /* GUARD_BTL3_H */

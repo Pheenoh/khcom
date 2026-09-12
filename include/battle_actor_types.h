@@ -77,7 +77,7 @@ typedef struct BtlObj {
     s16 unk_0E2;
     struct BtlCardWork* unk_0E4;
     s32 unk_0E8;
-    u16 unk_0EC;
+    s16 unk_0EC;
     u8 unk_0EE[0x02];
     s32 unk_0F0;
     s32 unk_0F4;

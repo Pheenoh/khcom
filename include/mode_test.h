@@ -2,6 +2,7 @@
 #define GUARD_MODE_TEST_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "key.h"
 #include "anim.h"
@@ -148,28 +149,6 @@ typedef struct CharTile {
 } CharTile;
 
 #ifdef VERSION_EU
-typedef struct UnkModeTestActor {
-    s32 unk_00;
-    s32 x;
-    s32 y;
-    s32 z;
-    u8 unk_10[0x14];
-    s32 scale;
-    u8 unk_28[0x0C];
-    u64 flags;
-    u8 unk_3C[0x2C];
-    u64 status;
-    u8 unk_70[0x0C];
-    struct UnkModeTestActor* actor;
-    u8 unk_80[0x5A];
-    s16 minX;
-    s16 maxX;
-    s16 minY;
-    s16 maxY;
-    u8 unk_E2[0x32];
-    void* tiles;
-} UnkModeTestActor;
-
 typedef struct UnkModeTestBody {
     s32 unk_00;
     s32 x;
@@ -186,7 +165,7 @@ typedef struct UnkModeTestBody {
 
 typedef struct UnkModeTestWork {
     TaskPool tasks;
-    UnkModeTestActor* actor;
+    BtlObj* actor;
     void* tiles;
     void* palette;
     UnkModeTestBody body;
@@ -235,8 +214,6 @@ void func_08012304(void* particles);
 u16 func_0801AF1C(s32 y);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
 s32 AllocObjAffine(s32 angle, s32 x, s32 y, s32 mode);
-extern UnkModeTestActor* gBtlWork;
-extern UnkModeTestActor* gUnk_02039B9C;
 
 #endif
 
