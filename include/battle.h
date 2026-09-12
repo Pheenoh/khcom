@@ -354,7 +354,7 @@ void func_08019350(void);
 void func_080197AC(void);
 void func_0801B024(BtlObj* p);
 void func_0809B6D0(void* p, s16 x, s16 y, s16 z, u16 n);
-void func_08096DB0(void* p, UnkStruct_0801B8A8* v);
+void CreatePrizeCardTask(void* p, UnkStruct_0801B8A8* v);
 void func_08012674(void);
 void func_08012908(void);
 void func_0801007C(void);
@@ -523,7 +523,7 @@ void func_0801CB18(void);
 u8 func_08012648(Collider* p);
 s32 func_0801A978(BtlObj* p);
 u8 func_08085BAC(void);
-u8 func_080856DC(void);
+u8 HasNonPremiumCardsInActiveDeck(void);
 void func_0809B710(void* pool, s16 a, s16 b, s16 c, u16 d);
 
 #endif /* GUARD_BATTLE_H */

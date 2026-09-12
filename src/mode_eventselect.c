@@ -20,7 +20,7 @@ void mode_eventselect_0(void) {
     SetBgMode0();
     func_08085FB0();
     func_08085C3C();
-    func_08093BB4();
+    InitMapCardInventory();
     SetupBg(0, 0, 30, 0);
     EnableBg(0);
     func_0805FA8C(0, 0x8000, 0x800);

@@ -3910,7 +3910,7 @@ void func_080BFFF8(JfMajinWork* work) {
             fx.unk_00 = q->unk_004;
             fx.unk_04 = q->unk_008;
             fx.unk_08 = -0x7800;
-            func_08096DC4(&gBtlWork->taskPools[0], &fx);
+            CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &fx);
 #ifdef VERSION_EU
             func_0801B918(q);
 #else

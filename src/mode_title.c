@@ -32,7 +32,7 @@ void mode_title_0(void) {
     gUnk_02034ECA = 0;
     func_0801CB44();
     SaveLoadHeader();
-    func_08093BB4();
+    InitMapCardInventory();
     func_08093C04();
     gUnk_02034EC2 = 0;
     gUnk_02034EC4 = EwramAlloc(0x400);

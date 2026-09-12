@@ -470,7 +470,7 @@ void func_0806250C(void) {
     case MSG_CODE(177):
     case MSG_CODE(186):
     case MSG_CODE(192):
-        func_080938F8(221);
+        AddMapCard(221);
         break;
     case 4:
     case 54:
@@ -484,7 +484,7 @@ void func_0806250C(void) {
     case MSG_CODE(130):
     case MSG_CODE(152):
     case MSG_CODE(188):
-        func_080938F8(231);
+        AddMapCard(231);
         break;
     case 6:
     case 80:
@@ -496,7 +496,7 @@ void func_0806250C(void) {
     case 123:
     case MSG_CODE(131):
     case MSG_CODE(153):
-        func_080938F8(241);
+        AddMapCard(241);
         break;
     case 114:
         func_08084458(276);

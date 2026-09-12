@@ -8189,7 +8189,7 @@ void MakeSaveFileSmall(SaveFileSmall* save) {
     save->common.unk_91 = gGameState.world;
     save->common.unk_94 = gGameState.playTime;
     func_080E92B8(save->unk_098);
-    func_080A3370(save->unk_2EC);
+    CopyMapCardInventory(save->unk_2EC);
 
     if (gGameState.flags & 0x10) {
         gGameState.fileSummaries[3].unk_00 = gGameState.floor;
@@ -8324,6 +8324,6 @@ void ApplySaveFileSmall(SaveFileSmall* save) {
     gGameState.world = save->common.unk_91;
     gGameState.playTime = save->common.unk_94;
     func_080E92F8(save->unk_098);
-    func_080A3398(save->unk_2EC);
+    RestoreMapCardInventory(save->unk_2EC);
     gGameState.flags |= 8;
 }

@@ -374,7 +374,7 @@ void func_08105334(void) {
                 gUnk_02035C3A--;
                 gUnk_02035C3C--;
                 card->unk_06[func_08104EB4()][0]--;
-                func_080850B0(&gCardCollection[i]);
+                ClearCardCollectionSlot(&gCardCollection[i]);
                 break;
             }
         }

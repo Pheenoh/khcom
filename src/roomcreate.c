@@ -65,7 +65,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             work->unk_26--;
         } else if (work->unk_26 == 0) {
             m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x80);
-            func_08093B78(&work->unk_2C, &work->unk_29);
+            CreateMapCardSelection(&work->unk_2C, &work->unk_29);
             SetBgPriority(1, 1);
             work->unk_26--;
         }

@@ -1273,7 +1273,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                 fx.x = a->unk_004;
                 fx.y = 0x24000;
                 fx.z = -0x6400;
-                func_08096DC4(&gBtlWork->taskPools[0], &fx);
+                CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &fx);
                 func_0801B008();
                 func_0801B918(a);
                 return 0;
