@@ -2,6 +2,7 @@
 #define GUARD_MODE_MS_H
 
 #include "types.h"
+#include "game_state.h"
 #include "text_types.h"
 #include "key.h"
 #include "taskpool.h"
@@ -68,14 +69,6 @@ typedef struct UnkStruct_099932D4 {
     u16 unk_14;
     u16 unk_16;
 } UnkStruct_099932D4;
-
-typedef struct GameState {
-    u8 unk_000[0x0E];
-    s8 floor;
-    u8 unk_00F[0x16B];
-    u16 unk_17A;
-    u8 unk_17C[0x2];
-} GameState;
 
 typedef struct UnkStruct_020358C8 {
     FldRes* palette;
@@ -293,7 +286,6 @@ extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_09EEA164[];
 extern u8 gUnk_09EEA148[];
 extern Mode gModeMsTop;
-extern GameState gGameState;
 extern UnkStruct_099932D4 gUnk_099932D4[];
 extern u8 gUnk_09A3D87C[];
 extern u8 gUnk_09A1251C[];

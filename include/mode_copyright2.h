@@ -2,28 +2,9 @@
 #define GUARD_MODE_COPYRIGHT2_H
 
 #include "types.h"
+#include "game_state.h"
 #include "mode.h"
 #include "engine.h"
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C[0x26];
-    s16 hp;
-    u8 unk_034[0xC4];
-    s16 maxHp;
-    s16 cp;
-    s16 dp;
-    s16 ap;
-    s32 exp;
-    s32 nextExp;
-    u8 level;
-    u8 unk_109[0x6B];
-    s32 mooglePoints;
-    u8 unk_178[0x08];
-    u16 unk_180;
-} GameState;
-
-extern GameState gGameState;
 extern u8 gUnk_097E05B8[];
 extern u8 gUnk_0984AC38[];
 extern u8 gUnk_09841F98[];

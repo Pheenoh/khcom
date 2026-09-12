@@ -2,6 +2,7 @@
 #define GUARD_TASK_H
 
 #include "types.h"
+#include "game_state.h"
 #include "evt.h"
 
 typedef struct EvtAnimDef {
@@ -22,17 +23,6 @@ typedef struct EvtObjResTable {
     u8 unk_0C[0x04];
 } EvtObjResTable;
 
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C[0x16E];
-    u16 unk_17A;
-    u16 unk_17C;
-    u8 unk_17E[0x5E];
-    u32 playTime;
-} GameState;
-
-extern GameState gGameState;
 extern u32 gFrameCounter;
 extern EvtObjAnim gUnk_0813766C[];
 extern EvtObjResTable gUnk_0813B09C[];

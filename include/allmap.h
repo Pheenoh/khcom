@@ -2,6 +2,7 @@
 #define GUARD_ALLMAP_H
 
 #include "types.h"
+#include "game_state.h"
 #include "text_types.h"
 #include "taskpool.h"
 #include "main.h"
@@ -50,11 +51,6 @@ typedef struct AllmapRoomArg {
     u32 unk_05 : 8;
     u32 unk_06 : 16;
 } AllmapRoomArg;
-
-typedef struct GameState {
-    u8 unk_00[0x08];
-    u32 flags;
-} GameState;
 
 typedef struct AllmapBarWork {
     void* unk_00;
@@ -272,7 +268,6 @@ extern Task* gTitleLogoTask;
 extern Task* gTitleObjTask;
 extern u8* gUnk_02034EC4;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
-extern GameState gGameState;
 extern void* gStockMesDispWork;
 extern UnkStruct_0203C4B4* gUnk_0203C4B4;
 extern u32 gUnk_0203C4E0;

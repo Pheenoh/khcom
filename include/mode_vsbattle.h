@@ -2,6 +2,7 @@
 #define GUARD_MODE_VSBATTLE_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
 #include "malloc.h"
@@ -92,17 +93,6 @@ typedef struct VsTaskArg {
     s32 unk_00;
     u32 unk_04 : 8;
 } VsTaskArg;
-
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 world;
-    u8 unk_00D;
-    u8 unk_00E[0x02];
-    u16 unk_010;
-    u8 unk_012[0x1A6];
-    u32 unk_1B8;
-} GameState;
 
 typedef struct BtlWork {
     u8 unk_000[0x10];
@@ -264,7 +254,6 @@ extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
 extern u8 gUnk_02039B98;
 extern BtlWork* gUnk_02039B9C;
-extern GameState gGameState;
 extern u32 gSioPlayerId;
 extern CharaLinkData gUnk_0203AA10;
 extern CharaLinkData gUnk_0203AAC0;

@@ -2,15 +2,11 @@
 #define GUARD_TITLE_H
 
 #include "types.h"
+#include "game_state.h"
 #include "taskpool.h"
 #include "title_types.h"
 #include "main.h"
 #include "anim.h"
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-} GameState;
-
 typedef struct TitlePal {
     void* unk_00;
     u16 unk_04;
@@ -53,7 +49,6 @@ typedef struct TitleLumiChangeWork {
     void* gfx;
 } TitleLumiChangeWork;
 
-extern GameState gGameState;
 extern u8 gUnk_02034ECC;
 
 extern u8 gUnk_09771060[];

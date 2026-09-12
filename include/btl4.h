@@ -2,6 +2,7 @@
 #define GUARD_BTL4_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 typedef struct BtlWork {
     s32 unk_000;
@@ -22,14 +23,6 @@ typedef struct BtlWork {
     u8 unk_0A4[0x50];
     s32 unk_0F4;
 } BtlWork;
-
-typedef struct GameState {
-    u8 unk_000[0x100];
-    u32 exp;
-    u32 nextExp;
-    u8 level;
-    u8 unk_109[0x03];
-} GameState;
 
 typedef struct BtlEffect {
     u16 unk_00;
@@ -113,7 +106,6 @@ typedef struct BtlHpothWork {
 
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
-extern GameState gGameState;
 extern u16 gDispCnt;
 
 extern u8 gUnk_08B1D8BC[];

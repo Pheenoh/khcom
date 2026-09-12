@@ -2,6 +2,7 @@
 #define GUARD_MODE_TEST_H
 
 #include "types.h"
+#include "game_state.h"
 #include "key.h"
 #include "anim.h"
 #include "mode.h"
@@ -113,15 +114,6 @@ typedef struct CardDef {
     void* unk_18;
     CardStat unk_1C;
 } CardDef;
-
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C;
-    u8 unk_00D;
-    u8 unk_00E[0x172];
-    u16 unk_180;
-} GameState;
 
 typedef struct MenuWork {
     void* tiles;
@@ -375,7 +367,6 @@ extern Mode gUnk_09EE274C;
 extern const s16 gSineTable[];
 extern u32 gUnk_03006C10;
 extern vu16 gSystemFlags;
-extern GameState gGameState;
 extern void* gUnk_09EE14D4[];
 extern CardDef gCardDefs[];
 extern Mode gModeChkbtl;

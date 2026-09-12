@@ -2,6 +2,7 @@
 #define GUARD_BOS7_H
 
 #include "types.h"
+#include "game_state.h"
 #include "key.h"
 #include "taskpool.h"
 #include "anim.h"
@@ -272,11 +273,6 @@ typedef struct Vec3 {
     s32 z;
 } Vec3;
 
-typedef struct GameState {
-    u8 unk_000[0x8];
-    u32 flags;
-} GameState;
-
 typedef struct LstPos {
     s32 unk_00;
     s32 unk_04;
@@ -541,7 +537,6 @@ extern u8 gUnk_09EFBF60[];
 
 extern BtlWork* gBtlWork;
 
-extern GameState gGameState;
 extern u8 gUnk_09D6BE74[];
 
 extern u16 gBldCnt;

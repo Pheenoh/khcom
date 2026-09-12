@@ -2,6 +2,7 @@
 #define GUARD_BTL2_H
 
 #include "types.h"
+#include "game_state.h"
 #include "m4a.h"
 #include "key.h"
 #include "anim.h"
@@ -102,16 +103,6 @@ typedef struct BtlWork {
     u16 unk_1C4;
     u8 unk_1C6[0x02];
 } BtlWork;
-
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C[0xF4];
-    u32 exp;
-    u32 nextExp;
-    u8 level;
-    u8 unk_109[0x03];
-} GameState;
 
 typedef struct BtlShadowWork {
     void* tiles;
@@ -301,7 +292,6 @@ void SetBgPriority(s32 bg, u16 priority);
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
-extern GameState gGameState;
 
 extern u8 gUnk_0203D990[];
 extern u8 gUnk_0203D9D0[];

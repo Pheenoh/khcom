@@ -2,6 +2,7 @@
 #define GUARD_ROMCRI_H
 
 #include "types.h"
+#include "game_state.h"
 
 typedef struct RomcriEffWork {
     s16 unk_00;
@@ -26,12 +27,6 @@ typedef struct RomcriList {
     RomcriEntry* unk_04;
 } RomcriList;
 
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-} GameState;
-
-extern GameState gGameState;
 
 extern u8 gUnk_08ED21E4[];
 extern u8 gUnk_08ED6CA4[];

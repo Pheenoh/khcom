@@ -2,6 +2,7 @@
 #define GUARD_HUM_H
 
 #include "types.h"
+#include "game_state.h"
 #include "text_types.h"
 #include "jiminy_types.h"
 #include "save_types.h"
@@ -625,28 +626,6 @@ typedef struct JiminyWork {
 #endif
 } JiminyWork;
 
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 world;
-    u8 unk_00D;
-    u8 floor;
-    u8 unk_00F;
-    u8 unk_010[0x22];
-    u16 hp;
-    u8 unk_034[0xC4];
-    u8 unk_0F8[0x10];
-    u8 level;
-    u8 unk_109[0x03];
-    u64 unk_10C;
-    u64 unk_114;
-    u8 unk_11C[0x64];
-    u16 unk_180;
-    u8 unk_182[0x3A];
-    SaveFileSummary fileSummaries[4];
-    u32 playTime;
-} GameState;
-
 #define SAVE_OK 2
 
 typedef struct SaveHeaderData {
@@ -748,7 +727,6 @@ extern u8 gUnk_0813FD58[];
 extern u8 gUnk_0813FDA8[];
 extern u16 gBldCnt;
 extern BtlWork* gBtlWork;
-extern GameState gGameState;
 extern u8 gUnk_0813F91C[];
 extern s16 gSineTable[];
 extern vu32 gFrameCounter;

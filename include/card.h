@@ -2,12 +2,16 @@
 #define GUARD_CARD_H
 
 #include "types.h"
+#include "game_state.h"
 #include "text_types.h"
 #include "taskpool.h"
 #include "card_types.h"
 #include "fld_types.h"
 #include "game.h"
 #include "mode.h"
+
+void func_080A0944(u16 a, u16* p);
+void func_080A096C(u16 a, u16* p);
 
 #define CARD_ID_MASK 0xFFF
 
@@ -360,24 +364,6 @@ typedef struct UnkStruct_02034AFC {
 } UnkStruct_02034AFC;
 
 extern UnkStruct_09EE7D84* gUnk_09EE7D84[];
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C[0xEC];
-    u16 unk_0F8;
-    s16 cp;
-    u16 unk_0FC;
-    u16 unk_0FE;
-    u8 unk_100[0x08];
-    u8 level;
-    u8 unk_109[0x6F];
-    u16 unk_178;
-    u16 unk_17A;
-    u8 unk_17C[0x3C];
-    u32 unk_1B8;
-} GameState;
-
-extern GameState gGameState;
 extern s16 gUnk_09037FBA[];
 extern s32 gUnk_09037FFC[];
 extern s32 gUnk_0903800C[];

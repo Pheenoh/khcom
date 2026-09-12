@@ -2,6 +2,7 @@
 #define GUARD_MODE_JIMINY_H
 
 #include "types.h"
+#include "game_state.h"
 #include "text_types.h"
 #include "jiminy_types.h"
 #include "main.h"
@@ -35,11 +36,6 @@ extern u8 gUnk_09A3CDDC[];
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void* GetBgCharBase(s32 bg);
 #endif
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-} GameState;
-
 typedef struct JiminyLine {
     s32 unk_000;
     u8 unk_004[0x17C];
@@ -187,7 +183,6 @@ extern u8 gUnk_09EECA44[];
 extern u8 gUnk_09EECAA0[];
 extern u8 gUnk_09EED2BC[];
 extern u8 gUnk_09EED320[];
-extern GameState gGameState;
 
 void SetBgMode0(void);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);

@@ -2,6 +2,7 @@
 #define GUARD_BOS5_H
 
 #include "types.h"
+#include "game_state.h"
 #include "text_types.h"
 #include "key.h"
 #include "taskpool.h"
@@ -424,16 +425,6 @@ void task_bos_md_dai_3(MdDaiWork* work);
 void func_080FB8E8(MdWork* work, u16 index);
 void func_080FB908(MdWork* work, u16 index);
 
-typedef struct GameState {
-    u8 unk_000[0x8];
-    u32 flags;
-    u8 unk_00C[0x16E];
-    u16 unk_17A;
-    u8 unk_17C[0x4];
-    u16 unk_180;
-} GameState;
-
-extern GameState gGameState;
 extern u8 gUnk_09A02EFC[];
 extern u8 gUnk_09A020FC[];
 

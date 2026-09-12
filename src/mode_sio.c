@@ -1699,7 +1699,7 @@ void func_080B0F18(void) {
     table = gUnk_09EF1318;
     entry = &table[*p];
 
-    gs->unk_0D = entry->unk_1C;
+    gs->unk_00D = entry->unk_1C;
     gUnk_0203AAB0 = gs->world;
     gs->world = entry->unk_1C;
 

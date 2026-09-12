@@ -2,6 +2,7 @@
 #define GUARD_MODE_BATTLE_H
 
 #include "types.h"
+#include "game_state.h"
 #include "taskpool.h"
 #include "gba/syscall.h"
 #include "main.h"
@@ -32,21 +33,11 @@ typedef struct BtlWork {
     u8 unk_1C8[0x08];
 } BtlWork;
 
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 world;
-    u8 unk_00D;
-    u8 unk_00E[0x02];
-    u16 unk_010;
-} GameState;
-
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
 extern BtlWork* gBtlWork;
 extern void* gUnk_02039B9C;
-extern GameState gGameState;
 extern u32 gUnk_03006C10;
 extern void* gUnk_09EDA2A0[];
 extern TaskDesc gTaskDescBtlSora;

@@ -2,6 +2,7 @@
 #define GUARD_BTL_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
 #include "obj.h"
@@ -144,26 +145,6 @@ typedef struct BtlWork {
     s16 unk_1C8;
     u8 unk_1CA[0x6];
 } BtlWork;
-
-typedef struct GameState {
-    u8 unk_000[0x8];
-    u32 flags;
-    u8 unk_00C;
-    u8 unk_00D;
-    u8 unk_00E[0x24];
-    u16 hp;
-    u8 unk_034[0xC4];
-    u16 maxHp;
-    u8 unk_0FA[4];
-    u16 unk_0FE;
-    u8 unk_100[0xE0];
-    u16 unk_1E0;
-    u16 unk_1E2;
-    u8 unk_1E4[0x14];
-    u16 unk_1F8;
-    u16 unk_1FA;
-    u8 unk_1FC[0x14];
-} GameState;
 
 typedef struct BtlDrawInfo {
     s32 x;
@@ -341,7 +322,6 @@ extern FldAnimDef gUnk_0813C4DC[][5];
 
 extern u16 gBldCnt;
 
-extern GameState gGameState;
 
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;

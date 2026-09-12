@@ -6103,20 +6103,20 @@ void func_080D19C4(PooPrizeWork* w) {
         case 2:
         case 3:
             m4aSongNumStart(107);
-            gGameState.unk_174 += w->unk_94;
+            gGameState.mooglePoints += w->unk_94;
 
-            if (gGameState.unk_174 > 99999) {
-                gGameState.unk_174 = 99999;
+            if (gGameState.mooglePoints > 99999) {
+                gGameState.mooglePoints = 99999;
             }
             break;
         case 0:
         case 1:
         default:
             m4aSongNumStart(107);
-            gGameState.unk_32 += w->unk_94;
+            gGameState.hp += w->unk_94;
 
-            if (gGameState.unk_32 > (s16)gGameState.unk_F8) {
-                gGameState.unk_32 = gGameState.unk_F8;
+            if (gGameState.hp > (s16)gGameState.maxHp) {
+                gGameState.hp = gGameState.maxHp;
             }
             break;
         }

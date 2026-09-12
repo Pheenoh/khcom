@@ -1436,7 +1436,7 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
                 break;
             }
         default:
-            if (gGameState.unk_00E <= 9) {
+            if (gGameState.floor <= 9) {
                 a = 25;
                 b = 102;
                 c = 384;
@@ -1445,9 +1445,9 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
                 b = 76;
                 c = 640;
             }
-            p->unk_02E = ((gGameState.unk_00E * a + 256) * e->unk_00) >> 8;
-            p->unk_030 = ((gGameState.unk_00E * b + 256) * e->unk_02) >> 8;
-            p->unk_0B4 = ((c * gGameState.unk_00E + 256) * (u16)e->unk_04) >> 8;
+            p->unk_02E = ((gGameState.floor * a + 256) * e->unk_00) >> 8;
+            p->unk_030 = ((gGameState.floor * b + 256) * e->unk_02) >> 8;
+            p->unk_0B4 = ((c * gGameState.floor + 256) * (u16)e->unk_04) >> 8;
             break;
         }
     } else {
