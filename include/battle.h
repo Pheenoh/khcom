@@ -1,6 +1,8 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include "fld_types.h"
+
 #include "card_api.h"
 
 #include "map_api.h"
@@ -202,10 +204,6 @@ typedef struct UnkStruct_0813400C {
     u32 unk_14;
 } UnkStruct_0813400C;
 
-typedef struct FldObj {
-    u8 unk_00[0x1C];
-    ListNode unk_1C;
-} FldObj;
 
 typedef struct UnkStruct_02039BA0 {
     u8 unk_00[0x58];

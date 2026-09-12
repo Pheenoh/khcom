@@ -19,15 +19,6 @@
 #include "fld_types.h"
 #include "bos4_api.h"
 #include "btl2_api.h"
-typedef struct FldActor {
-    FldPos unk_00;
-    s32 unk_10;
-    u8 angle;
-    u8 unk_15[0x25];
-    u16 unk_3A;
-    s32 unk_3C;
-    u8 unk_40[0x10];
-} FldActor;
 typedef struct UnkStruct_02039BA0 {
     s32 unk_00;
     s32 unk_04;

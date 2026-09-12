@@ -3837,7 +3837,7 @@ s32 func_080DF548(u8 a) {
     u8* p;
     u8* q;
 
-    if (gUnk_0203C7AC->unk_00 < 0) {
+    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
         return 0;
     }
 
@@ -4232,7 +4232,7 @@ UnkStruct_080DFB8C* func_080DFB8C(s32 x, s32 y) {
     s16 a = x / 0x2000;
     s16 b = y / 0x1000;
 
-    if (gUnk_0203C7AC->unk_00 < 0) {
+    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
         return func_080E58F8(a, b);
     }
 
@@ -4306,7 +4306,7 @@ u8 func_080DFCDC(UnkStruct_080DFF1C* p) {
     UnkStruct_080DFB7C* e;
     u8 r = 0;
 
-    if (gUnk_0203C7AC->unk_00 < 0) {
+    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
         return 0;
     }
 
@@ -4340,7 +4340,7 @@ u8 func_080DFD84(UnkStruct_080DFF1C* p) {
     u16 b;
     UnkStruct_080DFB7C* e;
 
-    if (gUnk_0203C7AC->unk_00 < 0) {
+    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
         return (u32)gUnk_0203C7AC->unk_00 >> 9 & 1;
     }
 

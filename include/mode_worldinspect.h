@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_WORLDINSPECT_H
 #define GUARD_MODE_WORLDINSPECT_H
 
+#include "world_types.h"
+
 #include "map_api.h"
 #include "game_state.h"
 #include "text.h"
@@ -14,10 +16,6 @@
 #include "key.h"
 #include "bos5_api.h"
 
-typedef struct UnkStruct_09EF9488 {
-    u8 unk_00[0x14];
-    void* unk_14;
-} UnkStruct_09EF9488;
 
 extern UnkStruct_09EF9488 gUnk_09EF9488[];
 extern u8 gUnk_09A329DC[];

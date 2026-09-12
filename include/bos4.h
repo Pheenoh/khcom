@@ -261,16 +261,6 @@ void task_bos_boogie_mapanime_0(BoogieMapanimeWork* work);
 void task_bos_ursula_thunder_0(UrsulaThunderWork* work);
 u8 task_bos_ursula_thunder_1(UrsulaThunderWork* work);
 
-typedef struct UnkStruct_0203C7AC {
-    s32 unk_00;
-    u8 unk_04[0x08];
-    u8 unk_0C;
-    u8 unk_0D;
-    u8 unk_0E;
-    u8 unk_0F;
-    u8 unk_10;
-    u8 unk_11[0x03];
-} UnkStruct_0203C7AC;
 
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 
@@ -408,16 +398,6 @@ extern UnkStruct_02034F7C gUnk_0984CECC[];
 extern const u8 gUnk_09EF69EE[];
 
 
-typedef struct UnkStruct_080DFB8C {
-    u16 unk_00;
-    u8 unk_02;
-    u8 unk_03;
-    u8 unk_04;
-    u8 unk_05;
-    u8 unk_06[0x02];
-    s32 unk_08;
-    s32 unk_0C;
-} UnkStruct_080DFB8C;
 
 extern u16 gUnk_0203C560;
 

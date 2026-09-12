@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "evt_types.h"
+
 #include "obj_resource_types.h"
 
 #include "card_api.h"
@@ -549,11 +551,6 @@ extern u8 gUnk_09D69454[];
 void task_bos_lst_2(BosLstWork* work);
 u8 func_0810EBA0(BosLstWork* work);
 
-typedef struct UnkStruct_02039DC8 {
-    u8 unk_00[0x68];
-    s16 unk_68;
-    s16 unk_6A;
-} UnkStruct_02039DC8;
 
 extern UnkStruct_02039DC8* gUnk_02039DC8;
 void task_bos_pc_acd_2(PcAcdWork* work);

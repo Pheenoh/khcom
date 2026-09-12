@@ -1,6 +1,8 @@
 #ifndef GUARD_FLD_H
 #define GUARD_FLD_H
 
+#include "map_types.h"
+
 #include "map_api.h"
 #include "fld_tasks.h"
 
@@ -19,44 +21,7 @@
 #include "fld_types.h"
 #include "bos4_api.h"
 #include "btl2_api.h"
-typedef struct UnkStruct_0203C7AC {
-    u32 unk_00;
-    u16 unk_04;
-    u16 unk_06;
-    u16 unk_08;
-    u16 unk_0A;
-    u8 unk_0C;
-    u8 unk_0D;
-    u8 unk_0E;
-    u8 unk_0F;
-    u8 unk_10;
-    u8 unk_11[0x03];
-    s32 unk_14;
-    u8 unk_18;
-    u8 unk_19[0x03];
-    s32 unk_1C;
-    u8 unk_20;
-    u8 unk_21[0x03];
-    s32 unk_24;
-    s32 unk_28;
-    s32 unk_2C;
-    u8 unk_30[0x14];
-} UnkStruct_0203C7AC;
 
-typedef struct FldActor {
-    FldPos unk_00;
-    s32 unk_10;
-    u8 angle;
-    u8 unk_15[0x05];
-    u16 unk_1A;
-    u8 unk_1C[0x14];
-    u16 unk_30;
-    u16 unk_32;
-    u8 unk_34[0x06];
-    u16 unk_3A;
-    s32 unk_3C;
-    u8 unk_40[0x10];
-} FldActor;
 
 typedef struct UnkStruct_02039BA0 {
     s32 unk_00;
