@@ -9623,7 +9623,11 @@ void func_08085788(u8 index, u16* src) {
     u8* d;
     u8* s;
 
+#ifdef VERSION_US
     if (*src == 0) {
+#else
+    if (*(u8*)src == 0) {
+#endif
         return;
     }
 
@@ -9634,12 +9638,25 @@ void func_08085788(u8 index, u16* src) {
     d = deck + offsetof(Deck, unk_C6);
     d += offset;
 
+#ifdef VERSION_US
     do {
         d[0] = s[0];
         d[1] = s[1];
         d += 2;
         s += 2;
     } while (*(u16*)s != 0);
+#else
+    do {
+        *d = *s;
+#ifdef VERSION_EU
+        d++;
+        s++;
+#else
+        s++;
+        d++;
+#endif
+    } while (*(u8*)s != 0);
+#endif
 }
 
 u8* func_080857BC(u8 index) {
