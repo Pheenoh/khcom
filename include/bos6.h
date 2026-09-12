@@ -472,7 +472,6 @@ void func_0810B370(u8** p, u8 v);
 void func_08109EF8(PcWork* work, s32 a);
 void func_08109F20(PcWork* work);
 u8 func_0801BCA8(s32 a);
-u16 AnimGetGfxIndex(AnimState* a);
 s32 func_0810B350(void** p);
 u8 func_0810B800(void** p);
 u8 func_0810B824(void** p);
@@ -498,9 +497,6 @@ void func_0810B434(void);
 extern s8* gUnk_09EF9E04[];
 void func_0810B4B4(u8* p);
 
-void AnimChange(AnimState* a, u16 id, u16 flags);
-u8 AnimIsFinished(AnimState* a);
-void AnimReset(AnimState* a);
 
 void func_0810B930(PcFltWork* work);
 void func_0810B9A8(PcFltWork* work);
@@ -577,8 +573,6 @@ void func_0810CC68(BosLstWork* work);
 
 s32 func_0810D70C(BosLstWork* work);
 
-void* AnimUpdate(AnimState* a);
-void AnimStart(AnimState* a, u16 animId, u16 flags);
 void ColliderSetRadius(void* a, u16 b);
 void func_08110994(LstTask* t, s16 a);
 
@@ -710,7 +704,6 @@ typedef struct UnkStruct_02039DC8 {
 } UnkStruct_02039DC8;
 
 extern UnkStruct_02039DC8* gUnk_02039DC8;
-u16 AnimGetId(AnimState* a);
 void task_bos_pc_acd_2(PcAcdWork* work);
 
 extern u16 gUnk_09A4D0EC[];
@@ -736,7 +729,6 @@ extern u8 gUnk_09CB8F54[];
 extern u8 gUnk_09EFBBEC[];
 extern u8 gUnk_09EFBBBC[];
 
-void* AnimGetGfx(AnimState* a);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 
 void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg);

@@ -387,7 +387,6 @@ typedef struct MdWork {
 
 u16 GetRandom(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
-void* AnimUpdate(AnimState* a);
 
 extern s16 gSineTable[];
 extern u8 gUnk_09A3C9BC[];
@@ -491,8 +490,6 @@ void ApproachAngle(u16* a, s32 b, s32 c);
 void func_08013DB8(s32 a, s32 b, s32 c, s32 d);
 void func_080F7F54(GaWork* work, s32 b);
 u8 func_0801C1C0(s32 a);
-u8 AnimIsFinished(AnimState* a);
-void AnimStart(AnimState* a, u16 animId, u16 flags);
 u8 func_080F854C(GaWork* work);
 u8 func_080F8958(GaWork* work);
 u8 func_080F8AC8(GaWork* work);

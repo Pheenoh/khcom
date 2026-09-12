@@ -19,7 +19,6 @@ typedef struct DebugWork {
 
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
-void* AnimUpdate(AnimState* a);
 void* LoadObjTiles(void* a, s32 b);
 void func_08002A10(void* a, void* b);
 void* LoadObjPalette(void* a, s32 b);
@@ -34,7 +33,6 @@ void SetBgSize(s32 a, s32 b);
 void SetBgColorMode(s32 a, s32 b);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_08005974(void* a, u16 b, s32 c, void* d, void* e);
-void AnimStart(AnimState* a, u16 animId, u16 flags);
 void func_08006120(s32 a, s32 b);
 s16 GetPaletteEffect(void);
 void SetPaletteEffect(s16 a);

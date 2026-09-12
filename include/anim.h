@@ -28,4 +28,15 @@ typedef struct AnimState {
 
 void AnimInit(AnimState* anim, void* anims, void* gfxTable);
 
+void AnimStart(AnimState* anim, u16 animId, u16 flags);
+void AnimChange(AnimState* anim, u16 animId, u16 flags);
+void* AnimUpdate(AnimState* anim);
+void* AnimGetGfx(AnimState* anim);
+u8 AnimIsFinished(AnimState* anim);
+u16 AnimGetId(AnimState* anim);
+u16 AnimGetFrame(AnimState* anim);
+u16 AnimGetGfxIndex(AnimState* anim);
+void AnimSetFrame(AnimState* anim, u16 frame);
+void AnimReset(AnimState* anim);
+
 #endif

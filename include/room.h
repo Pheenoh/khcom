@@ -217,8 +217,6 @@ u16 GetRandom(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
-void AnimStart(AnimState* a, u16 animId, u16 flags);
-void* AnimGetGfx(AnimState* a);
 void m4aSongNumStart(u16 a);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012304(void* a);
