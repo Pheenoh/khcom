@@ -1,6 +1,8 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include "allmap_types.h"
+
 #include "card_api.h"
 
 #include "map_api.h"
@@ -29,23 +31,6 @@
 #include "key.h"
 #include "bos4_api.h"
 #include "allmap_api.h"
-typedef struct AllmapRoomWork {
-    void* tiles;
-    void* palette;
-    void* unk_008;
-    void* unk_00C[4];
-    void* gfx[4];
-    AnimState anim[4];
-    s16 unk_08C;
-    s16 unk_08E;
-    s32 unk_090;
-    s32 unk_094;
-    u8 unk_098;
-    u8 unk_099;
-    u16 unk_09A;
-    u16 unk_09C;
-    u8 unk_09E[0x02];
-} AllmapRoomWork;
 
 typedef struct AllmapRoomnameWork {
     u8 unk_000[0xC8];

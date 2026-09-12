@@ -30,4 +30,17 @@ typedef struct CharaObjParam {
     u16 unk_44;
 } CharaObjParam;
 
+typedef struct CharaLinkData {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u16 unk_06;
+    u16 unk_08;
+    u16 unk_0A;
+    u64 unk_0C;
+    u64 unk_14;
+    u16 unk_1C;
+    u16 unk_1E;
+} CharaLinkData;
+
 #endif

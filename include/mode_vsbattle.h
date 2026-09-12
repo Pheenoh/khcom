@@ -1,6 +1,12 @@
 #ifndef GUARD_MODE_VSBATTLE_H
 #define GUARD_MODE_VSBATTLE_H
 
+#include "hum_types.h"
+
+#include "enemy_types.h"
+
+#include "chara_types.h"
+
 #include "prize_types.h"
 
 #include "card_api.h"
@@ -23,89 +29,15 @@
 #include "hum_common.h"
 #include "btl_api.h"
 
-typedef struct CharaLinkData {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-    u16 unk_08;
-    u16 unk_0A;
-    u32 unk_0C;
-    u32 unk_10;
-    u32 unk_14;
-    u32 unk_18;
-    u16 unk_1C;
-    u16 unk_1E;
-} CharaLinkData;
 
 typedef struct VsTaskArg {
     s32 unk_00;
     u32 unk_04 : 8;
 } VsTaskArg;
 
-typedef struct EmyDef {
-    void* unk_00;
-    void* unk_04;
-    s32 unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    u16 unk_14;
-    u16 unk_16;
-    u16 unk_18;
-    u16 unk_1A;
-    u32 unk_1C;
-} EmyDef;
 
-typedef struct EmyObj {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-} EmyObj;
 
-typedef struct EmyWork {
-    void* tiles;
-    void* unk_004;
-    void* unk_008;
-    void* gfx;
-    AnimState anim;
-    TaskPool unk_028;
-    BtlObj unk_03C;
-    u32 unk_14C;
-    u32 unk_150;
-    s16 unk_154;
-    s16 unk_156;
-    u16 unk_158;
-    u8 unk_15A;
-    u8 unk_15B;
-    EmyDef* unk_15C;
-    u8 angle;
-    u8 unk_161;
-    u16 unk_162;
-    s32 unk_164;
-    s32 unk_168;
-    u32 unk_16C;
-    s32 unk_170;
-    s32 unk_174;
-    s32 unk_178;
-    s32 unk_17C;
-    s32 unk_180;
-} EmyWork;
 
-typedef struct HumSub {
-    void* unk_00;
-    void* tiles;
-    void* palette;
-    void* unk_0C;
-    AnimState anim;
-    s32 unk_28;
-    s32 unk_2C;
-    s32 unk_30;
-    u16 unk_34;
-    u16 unk_36;
-    void* gfx;
-} HumSub;
 
 typedef struct HumWork {
     void* unk_000;
@@ -135,20 +67,8 @@ typedef struct HumWork {
     u32 unk_184;
 } HumWork;
 
-typedef struct HumSubDef {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} HumSubDef;
 
 
-typedef struct HumDef {
-    u16 unk_00;
-    u16 unk_02;
-    void* unk_04;
-    u32 unk_08;
-    u32 unk_0C;
-} HumDef;
 
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;

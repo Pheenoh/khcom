@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "chara_types.h"
+
 #include "chara_api.h"
 #include "map_api.h"
 #include "mode_sio_api.h"
@@ -63,18 +65,6 @@ typedef struct SioBtlConnectWork {
     void* palette;
 } SioBtlConnectWork;
 
-typedef struct CharaLinkData {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-    u16 unk_08;
-    u16 unk_0A;
-    u64 unk_0C;
-    u64 unk_14;
-    u16 unk_1C;
-    u16 unk_1E;
-} CharaLinkData;
 
 typedef struct WLogoTaskWork {
     u8 unk_00;

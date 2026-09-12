@@ -38,18 +38,6 @@ typedef struct MaskFadeWork {
     s8 unk_04C[0x1F4];
 } MaskFadeWork;
 
-typedef struct CharaLinkData {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-    u16 unk_08;
-    u16 unk_0A;
-    u64 unk_0C;
-    u64 unk_14;
-    u16 unk_1C;
-    u16 unk_1E;
-} CharaLinkData;
 typedef struct ChgCardObjWork {
     s16 unk_00;
     s16 unk_02;

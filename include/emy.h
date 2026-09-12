@@ -1,6 +1,8 @@
 #ifndef GUARD_EMY_H
 #define GUARD_EMY_H
 
+#include "enemy_types.h"
+
 #include "emy_tasks.h"
 
 #include "display.h"
@@ -21,13 +23,6 @@
 #include "enemy_common.h"
 #include "btl_api.h"
 
-typedef struct EmyDef {
-    void* unk_00;
-    void* unk_04;
-    s32 unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
-} EmyDef;
 
 typedef struct EmySpawn {
     s32 x;
@@ -39,42 +34,6 @@ typedef struct EmySpawn {
     u8 unk_16[0x0A];
 } EmySpawn;
 
-typedef struct EmyWork {
-    void* tiles;
-    void* unk_004;
-    void* unk_008;
-    void* gfx;
-    u32 anim;
-    u8 unk_014[0x02];
-    u16 unk_016;
-    u8 unk_018[0x02];
-    u16 unk_01A;
-    u8 unk_01C[0x02];
-    u16 unk_01E;
-    u32 unk_020;
-    u8 unk_024[0x04];
-    TaskPool unk_028;
-    BtlObj unk_03C;
-    u32 unk_14C;
-    u32 unk_150;
-    s16 unk_154;
-    s16 unk_156;
-    u16 unk_158;
-    u8 unk_15A;
-    u8 unk_15B;
-    EmyDef* unk_15C;
-    u8 angle;
-    u8 unk_161;
-    u16 unk_162;
-    s32 unk_164;
-    s32 unk_168;
-    u32 unk_16C;
-    s32 unk_170;
-    s32 unk_174;
-    s32 unk_178;
-    s32 unk_17C;
-    s32 unk_180;
-} EmyWork;
 
 typedef struct Emy03Work {
     EmyWork base;
