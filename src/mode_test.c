@@ -474,6 +474,10 @@ void task_lockon_2(LockonWork* w) {
         y2 = 152;
     }
 
+    if (x2 < y2) {
+        w->unk_2D = w->unk_2D;
+    }
+
     if (w->unk_2F++ > 10) {
         w->unk_2F = 0;
     }
