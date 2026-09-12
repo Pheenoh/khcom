@@ -963,7 +963,6 @@ void func_0801AF08(void* a);
 void func_080C386C(DsdMainWork* work);
 u8 func_080C1370(s32 a, s32 b, s32 c);
 s32 func_080BE278(JfLampWork* work);
-s32 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 void func_080C4CCC(DsdEnergy1Work* work);
 void func_080C0624(JfMajinWork* work);
 void func_080BFEF0(JfMajinWork* work);

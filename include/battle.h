@@ -422,7 +422,6 @@ void func_080DDEA4(void);
 void func_080DFB2C(void);
 void func_08109620(void);
 void func_08006238(s32 a, s32 b, s32 c);
-u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 u8 func_08006B74(void);
 
 void func_0800EEBC(Actor* p, SprObj* s);

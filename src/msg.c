@@ -9839,7 +9839,7 @@ void func_08070008(Work0806180C* p) {
     func_0806FE90(p);
 
     if (old != p->unk_1AB) {
-        if (abs(GetAngleDiff(old, p->unk_1AB)) > 100) {
+        if (abs((s8)GetAngleDiff(old, p->unk_1AB)) > 100) {
             p->unk_19C = 0;
         } else {
             p->unk_19C >>= 1;

@@ -726,7 +726,6 @@ s16 func_08075064(u8 a);
 void func_08074DC4(Work08074DC4* a);
 
 s32 abs(s32 a);
-s8 GetAngleDiff(u8 a, u8 b);
 void func_0806FE90(Work0806180C* p);
 u8 func_0807048C(Work0806180C* p, void* a);
 u8 GetKeyReleaseTime(s32 a);
