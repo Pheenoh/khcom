@@ -12285,17 +12285,17 @@ u8 func_08089EC0(u8* work, void* a) {
 
     switch (work[CARDWORK(0x8C0)]) {
     case 0:
-    #ifdef VERSION_EU
+#ifdef VERSION_EU
         SetupBg(0, 0, 31, 0);
 #else
         SetupBg(0, 3, 31, 0);
 #endif
-    #ifdef VERSION_EU
+#ifdef VERSION_EU
         SetupBg(1, 0, 28, 0);
 #else
         SetupBg(1, 0, 23, 0);
 #endif
-    #ifdef VERSION_EU
+#ifdef VERSION_EU
         SetupBg(2, 0, 29, 0);
 #else
         SetupBg(2, 0, 15, 0);
@@ -12312,12 +12312,12 @@ u8 func_08089EC0(u8* work, void* a) {
         break;
     case 1:
         SetupBg(0, 0, 31, 0);
-    #ifdef VERSION_EU
+#ifdef VERSION_EU
         SetupBg(1, 0, 28, 0);
 #else
         SetupBg(1, 2, 23, 0);
 #endif
-    #ifdef VERSION_EU
+#ifdef VERSION_EU
         SetupBg(2, 0, 29, 0);
 #else
         SetupBg(2, 0, 15, 0);
@@ -12334,12 +12334,12 @@ u8 func_08089EC0(u8* work, void* a) {
         break;
     case 2:
         SetupBg(0, 0, 31, 0);
-    #ifdef VERSION_EU
+#ifdef VERSION_EU
         SetupBg(1, 0, 28, 0);
 #else
         SetupBg(1, 0, 23, 0);
 #endif
-    #ifdef VERSION_EU
+#ifdef VERSION_EU
         SetupBg(2, 0, 29, 0);
 #else
         SetupBg(2, 1, 15, 0);
