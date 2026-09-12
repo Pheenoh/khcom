@@ -628,7 +628,7 @@ void task_bos_boogie_saku_3(BoogieSakuWork* work) {
 void task_bos_boogie_map_0(void* work, UnkStruct_080DAA28* arg) {
     LoadBgTiles(0, arg->unk_00, arg->unk_04);
     LoadBgPalette(0, arg->unk_08, arg->unk_0C);
-    func_0800516C(0, &arg->unk_10, 2, 2);
+    SetBgMapBlocks(0, &arg->unk_10, 2, 2);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->unk_008 = 0xF800;
@@ -642,7 +642,7 @@ void task_bos_boogie_map_0(void* work, UnkStruct_080DAA28* arg) {
     gBtlWork->unk_01A = 15;
     gBtlWork->unk_018 = 0;
     func_0802F1C8();
-    func_08005244(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
+    ScrollBgMapTo(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
 }
 
 u8 task_bos_boogie_map_1(void) {
@@ -677,7 +677,7 @@ u8 task_bos_boogie_map_1(void) {
     }
 
     gBtlWork->unk_004 += func_0802F268();
-    func_08005244(0, (gBtlWork->unk_000 >> 8) + 8, (gBtlWork->unk_004 >> 8) - 0x108);
+    ScrollBgMapTo(0, (gBtlWork->unk_000 >> 8) + 8, (gBtlWork->unk_004 >> 8) - 0x108);
 
     return 1;
 }
@@ -1320,14 +1320,14 @@ void func_080DB978(UrsulaWork* work) {
         if (work->unk_028 > gBtlWork->unk_07C->unk_004) {
             if (work->unk_134 != (u32)gUnk_09EF5130) {
                 work->unk_134 = (u32)gUnk_09EF5130;
-                func_0800516C(0, gUnk_09EF5130, 4, 3);
+                SetBgMapBlocks(0, gUnk_09EF5130, 4, 3);
             } else {
                 func_080DD69C(0);
             }
         } else {
             if (work->unk_134 != (u32)gUnk_09EF5190) {
                 work->unk_134 = (u32)gUnk_09EF5190;
-                func_0800516C(0, gUnk_09EF5190, 4, 3);
+                SetBgMapBlocks(0, gUnk_09EF5190, 4, 3);
             } else {
                 func_080DD69C(0);
             }
@@ -1335,12 +1335,12 @@ void func_080DB978(UrsulaWork* work) {
     } else if (func_080DC510() != 0) {
         if (work->unk_134 != (u32)gUnk_09EF5100) {
             work->unk_134 = (u32)gUnk_09EF5100;
-            func_0800516C(0, gUnk_09EF5100, 4, 3);
+            SetBgMapBlocks(0, gUnk_09EF5100, 4, 3);
         }
     } else {
         if (work->unk_134 != (u32)gUnk_09EF5160) {
             work->unk_134 = (u32)gUnk_09EF5160;
-            func_0800516C(0, gUnk_09EF5160, 4, 3);
+            SetBgMapBlocks(0, gUnk_09EF5160, 4, 3);
         }
     }
 }
@@ -1377,7 +1377,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
     work->unk_058 |= 4;
     func_0801C2DC(&work->unk_024, 1);
     func_080DB978(work);
-    func_080051C4(0, (gBtlWork->unk_000 - (work->unk_028 - 0x12000)) >> 8,
+    RedrawBgMapAt(0, (gBtlWork->unk_000 - (work->unk_028 - 0x12000)) >> 8,
         (gBtlWork->unk_004 - (work->unk_02C + work->unk_030 - 0x12000)) >> 8);
     func_0801C298(0, 1);
     func_0801C298(1, 1);
@@ -1742,7 +1742,7 @@ void task_bos_ursula_2(UrsulaWork* work) {
         d = 0x1000;
     }
 
-    func_08005244(0, (gBtlWork->unk_000 - (p->x - 0x12000) + d) >> 8,
+    ScrollBgMapTo(0, (gBtlWork->unk_000 - (p->x - 0x12000) + d) >> 8,
         (gBtlWork->unk_004 - (p->y + p->z - 0x12000)) >> 8);
     TaskPoolDraw(&work->unk_008);
 }
@@ -1824,7 +1824,7 @@ void task_bos_ursula_map_0(UrsulaMapWork* work, UnkStruct_080DAA28* arg) {
     SetBgPriority(0, 2);
     LoadBgTiles(1, arg->unk_00, arg->unk_04);
     LoadBgPalette(1, arg->unk_08, arg->unk_0C);
-    func_0800516C(1, arg->unk_10, 2, 2);
+    SetBgMapBlocks(1, arg->unk_10, 2, 2);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->unk_008 = 0x10000;
@@ -1838,7 +1838,7 @@ void task_bos_ursula_map_0(UrsulaMapWork* work, UnkStruct_080DAA28* arg) {
     gBtlWork->unk_01A = 0x0F;
     gBtlWork->unk_018 = 0;
     func_0802F1C8();
-    func_08005244(1, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
+    ScrollBgMapTo(1, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
     gDispCnt |= 0x2000;
     gWin0H = 0xF0;
     gWin0V = 0x50A0;
@@ -1904,7 +1904,7 @@ u8 task_bos_ursula_map_1(UrsulaMapWork* work) {
     }
 
     gBtlWork->unk_004 += func_0802F268();
-    func_08005244(1, (gBtlWork->unk_000 >> 8) - 0x78, (gBtlWork->unk_004 >> 8) - 0x50);
+    ScrollBgMapTo(1, (gBtlWork->unk_000 >> 8) - 0x78, (gBtlWork->unk_004 >> 8) - 0x50);
     v = -0x18 - (gBtlWork->unk_004 >> 8);
 
     if (v > 0xA0 || gUnk_0203C57C == 0) {

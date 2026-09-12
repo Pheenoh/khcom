@@ -203,7 +203,7 @@ void FadeFree(void);
 u8 GetBgScrollX(u32 a);
 u8 GetBgScrollY(u32 a);
 void InitDynamicObjTilesAtSlot(ObjTiles* t, u16 slot, u16 size, void* src);
-void* func_08004BD8(BgEntry* e, u16 x, u16 y);
+void* GetBgMapBlock(BgEntry* e, u16 x, u16 y);
 void SetSpriteOamUpdatesPaused(u8 a);
 void SetBgMosaicSize(u8 a, u8 b);
 s32 Lerp8(s32 a, s32 b, s32 t);

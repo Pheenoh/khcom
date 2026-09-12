@@ -1840,14 +1840,14 @@ void BgFree(void) {
     IwramFree(gBgEntries);
 }
 
-void* func_08004BD8(BgEntry* e, u16 x, u16 y) {
+void* GetBgMapBlock(BgEntry* e, u16 x, u16 y) {
     u8 col = (x >> 8) % e->unk_08;
     u8 row = (y >> 8) % e->unk_09;
 
     return ((void**)e->unk_04)[e->unk_08 * row + col];
 }
 
-void func_08004C20(u16 x, u16 y, BgEntry* e, void* dst, u8 sx, u8 sy, u8 w, u8 h) {
+void CopyBgMapRect(u16 x, u16 y, BgEntry* e, void* dst, u8 sx, u8 sy, u8 w, u8 h) {
     u8 tx;
     u8 ty;
     s8 w1;
@@ -1879,12 +1879,12 @@ void func_08004C20(u16 x, u16 y, BgEntry* e, void* dst, u8 sx, u8 sy, u8 w, u8 h
     } else {
         h2 = h - h1;
     }
-    RequestTilemapRectCopy(func_08004BD8(e, x, y), dst, tx, ty, sx, sy, w1, h1);
+    RequestTilemapRectCopy(GetBgMapBlock(e, x, y), dst, tx, ty, sx, sy, w1, h1);
     x2 = x + 256;
-    RequestTilemapRectCopy(func_08004BD8(e, x2, y), dst, 0, ty, sx2 = sx - (ox = tx - 32), sy, w2, h1);
+    RequestTilemapRectCopy(GetBgMapBlock(e, x2, y), dst, 0, ty, sx2 = sx - (ox = tx - 32), sy, w2, h1);
     y2 = y + 256;
-    RequestTilemapRectCopy(func_08004BD8(e, x, y2), dst, tx, 0, sx, sy2 = sy - (oy = ty - 32), w1, h2);
-    RequestTilemapRectCopy(func_08004BD8(e, x2, y2), dst, 0, 0, sx2, sy2, w2, h2);
+    RequestTilemapRectCopy(GetBgMapBlock(e, x, y2), dst, tx, 0, sx, sy2 = sy - (oy = ty - 32), w1, h2);
+    RequestTilemapRectCopy(GetBgMapBlock(e, x2, y2), dst, 0, 0, sx2, sy2, w2, h2);
 }
 
 void BgReset(void) {
@@ -2042,7 +2042,7 @@ void* GetBgScreenBase(s32 bg) {
     return (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000);
 }
 
-void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
+void SetBgMapBlocks(s32 bg, void* src, u8 w, u8 h) {
     u8* p;
     u8* q;
     s32 ofs;
@@ -2068,7 +2068,7 @@ void func_0800516C(s32 bg, void* src, u8 w, u8 h) {
     ((BgEntry*)((u8*)gBgEntries + ofs))->unk_00 = 1;
 }
 
-void func_080051C4(s32 bg, u16 x, u16 y) {
+void RedrawBgMapAt(s32 bg, u16 x, u16 y) {
     BgEntry* e = &gBgEntries[bg];
 
     if (e->unk_04 == 0) {
@@ -2076,11 +2076,11 @@ void func_080051C4(s32 bg, u16 x, u16 y) {
     }
     e->unk_0A = x;
     e->unk_0C = y;
-    func_08004C20(x, y, e, (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000), 0, 0, 0x1F, 0x15);
+    CopyBgMapRect(x, y, e, (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000), 0, 0, 0x1F, 0x15);
     SetBgScroll(bg, x & 7, y & 7);
     e->unk_00 = 0;
 }
-void func_08005244(s32 bg, u16 x, u16 y) {
+void ScrollBgMapTo(s32 bg, u16 x, u16 y) {
     BgEntry* e;
     s8 dx;
     s8 dy;
@@ -2098,14 +2098,14 @@ void func_08005244(s32 bg, u16 x, u16 y) {
     }
 
     if (e->unk_00 != 0) {
-        func_080051C4(bg, x, y);
+        RedrawBgMapAt(bg, x, y);
         return;
     }
     dx = (x >> 3) - (e->unk_0A >> 3);
     dy = (y >> 3) - (e->unk_0C >> 3);
 
     if (abs(dx) > 29 || abs(dy) > 19) {
-        func_080051C4(bg, x, y);
+        RedrawBgMapAt(bg, x, y);
         return;
     }
     sx = GetBgScrollX(bg);
@@ -2127,34 +2127,34 @@ void func_08005244(s32 bg, u16 x, u16 y) {
         if (dx > 31) {
             dx = 31;
         }
-        func_08004C20(e->unk_0A + 248, y, e, dst, tx + 31, cy, dx, 21);
+        CopyBgMapRect(e->unk_0A + 248, y, e, dst, tx + 31, cy, dx, 21);
     } else if (dx < 0) {
         dx = -dx;
 
         if (dx > 31) {
             dx = 31;
         }
-        func_08004C20(e->unk_0A - (dx << 3), y, e, dst, tx - dx, cy, dx, 21);
+        CopyBgMapRect(e->unk_0A - (dx << 3), y, e, dst, tx - dx, cy, dx, 21);
     }
 
     if (dy > 0) {
         if (dy > 21) {
             dy = 21;
         }
-        func_08004C20(x, e->unk_0C + 168, e, dst, cx, ty + 21, 31, dy);
+        CopyBgMapRect(x, e->unk_0C + 168, e, dst, cx, ty + 21, 31, dy);
     } else if (dy < 0) {
         dy = -dy;
 
         if (dy > 21) {
             dy = 21;
         }
-        func_08004C20(x, e->unk_0C - (dy << 3), e, dst, cx, ty - dy, 31, dy);
+        CopyBgMapRect(x, e->unk_0C - (dy << 3), e, dst, cx, ty - dy, 31, dy);
     }
     e->unk_0A = x;
     e->unk_0C = y;
 }
 
-u16 func_08005458(s32 bg) {
+u16 GetBgMapX(s32 bg) {
     BgEntry* e = &gBgEntries[bg];
 
     if (e->unk_04 == 0) {
@@ -2163,7 +2163,7 @@ u16 func_08005458(s32 bg) {
     return e->unk_0A;
 }
 
-u16 func_08005474(s32 bg) {
+u16 GetBgMapY(s32 bg) {
     BgEntry* e = &gBgEntries[bg];
 
     if (e->unk_04 == 0) {

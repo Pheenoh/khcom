@@ -432,7 +432,7 @@ void func_080E042C(void) {
         p = gUnk_09EF8370[4];
         LoadBgTiles(1, p->unk_10, p->unk_14);
         LoadBgPalette(1, p->unk_00, p->unk_04);
-        func_0800516C(1, p->unk_20, p->unk_24, p->unk_25);
+        SetBgMapBlocks(1, p->unk_20, p->unk_24, p->unk_25);
         gUnk_0203C7AC->unk_00 &= ~1;
     } else {
         q = gUnk_09EF70D0[gUnk_0203C590.unk_04];
@@ -3315,9 +3315,9 @@ void func_080E5800(void) {
     gUnk_02039BA0->unk_04 = gUnk_02039BA0->unk_0C - 0x6000;
     sx = (gUnk_02039BA0->unk_00 / 8) >> 8;
     sy = (gUnk_02039BA0->unk_04 / 8) >> 8;
-    func_080051C4(3, sx, sy);
-    func_080051C4(2, sx, sy);
-    func_080051C4(1, sx, sy);
+    RedrawBgMapAt(3, sx, sy);
+    RedrawBgMapAt(2, sx, sy);
+    RedrawBgMapAt(1, sx, sy);
 }
 
 void func_080E5868(UnkStruct_09EF70D0* p) {
@@ -7823,7 +7823,7 @@ void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
     eu_08005A1C(3, p->unk_18, p->unk_24, p->unk_25);
     w->unk_1E4 = 1;
 #else
-    func_0800516C(3, p->unk_18, p->unk_24, p->unk_25);
+    SetBgMapBlocks(3, p->unk_18, p->unk_24, p->unk_25);
 #endif
 
     if (p->unk_1C != 0) {
@@ -7841,7 +7841,7 @@ void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
         eu_08005A1C(2, p->unk_1C, p->unk_24, p->unk_25);
         w->unk_1E5 = 1;
 #else
-        func_0800516C(2, p->unk_1C, p->unk_24, p->unk_25);
+        SetBgMapBlocks(2, p->unk_1C, p->unk_24, p->unk_25);
 #endif
     } else {
         DisableBg(2);
@@ -7862,7 +7862,7 @@ void func_080EC7AC(UnkStruct_080EC760* w, UnkStruct_09EF8370* p) {
         eu_08005A1C(1, p->unk_20, p->unk_24, p->unk_25);
         w->unk_1E6 = 1;
 #else
-        func_0800516C(1, p->unk_20, p->unk_24, p->unk_25);
+        SetBgMapBlocks(1, p->unk_20, p->unk_24, p->unk_25);
 #endif
     } else {
         DisableBg(1);
@@ -7916,11 +7916,11 @@ s32 func_080EC94C(u8* work) {
 }
 
 void func_080EC9EC(u8* work) {
-    func_08005244(3, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
-    func_08005244(2, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
+    ScrollBgMapTo(3, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
+    ScrollBgMapTo(2, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
 
     if ((gUnk_0203C7AC->unk_00 & 1) == 0) {
-        func_08005244(1, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
+        ScrollBgMapTo(1, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
     }
     TaskPoolDraw((TaskPool*)&work[0x1D0]);
 }

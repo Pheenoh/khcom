@@ -848,8 +848,8 @@ void func_080D4EBC(void) {
         }
     }
 
-    func_080051C4(0, gUnk_0203C4B4->unk_A0 - gUnk_0203C4B4->unk_AC % 8, gUnk_0203C4B4->unk_A2 - gUnk_0203C4B4->unk_AE % 8);
-    func_080051C4(1, gUnk_0203C4B4->unk_A0 - gUnk_0203C4B4->unk_AC % 8, gUnk_0203C4B4->unk_A2 - gUnk_0203C4B4->unk_AE % 8);
+    RedrawBgMapAt(0, gUnk_0203C4B4->unk_A0 - gUnk_0203C4B4->unk_AC % 8, gUnk_0203C4B4->unk_A2 - gUnk_0203C4B4->unk_AE % 8);
+    RedrawBgMapAt(1, gUnk_0203C4B4->unk_A0 - gUnk_0203C4B4->unk_AC % 8, gUnk_0203C4B4->unk_A2 - gUnk_0203C4B4->unk_AE % 8);
     c = gUnk_0203C4B4->unk_14[gUnk_0203C538]->work;
     arg.unk_00 = c->unk_08C;
     arg.unk_02 = c->unk_08E;
@@ -926,8 +926,8 @@ void func_080D51D8(void) {
 
     x = gUnk_0203C540 - gUnk_0203C4B4->unk_AC;
     y = gUnk_0203C53C - gUnk_0203C4B4->unk_AE;
-    func_08005244(0, x - gUnk_0203C4B4->unk_AC % 8, y - gUnk_0203C4B4->unk_AE % 8);
-    func_08005244(1, x - gUnk_0203C4B4->unk_AC % 8, y - gUnk_0203C4B4->unk_AE % 8);
+    ScrollBgMapTo(0, x - gUnk_0203C4B4->unk_AC % 8, y - gUnk_0203C4B4->unk_AE % 8);
+    ScrollBgMapTo(1, x - gUnk_0203C4B4->unk_AC % 8, y - gUnk_0203C4B4->unk_AE % 8);
     TaskPoolUpdate(&gUnk_0203C4B4->unk_00);
     TaskPoolDraw(&gUnk_0203C4B4->unk_00);
 }

@@ -534,7 +534,7 @@ void func_080FB8DC(MdWork* work, s32 state) {
 }
 
 void func_080FB8E8(MdWork* work, u16 index) {
-    func_0800516C(1, gUnk_09992114 + index * 0x4C, 2, 2);
+    SetBgMapBlocks(1, gUnk_09992114 + index * 0x4C, 2, 2);
 }
 
 void func_080FB908(MdWork* work, u16 index) {
@@ -1150,7 +1150,7 @@ void task_bos_md_0(MdWork* work, void* arg) {
     TaskPoolInit(&work->unk_02C, 6);
     TaskPoolInit(&work->unk_040, 1);
     TaskPoolInit(&work->unk_054, 8);
-    func_08005244(1, (gBtlWork->unk_000 >> 8) + 72 - work->unk_178,
+    ScrollBgMapTo(1, (gBtlWork->unk_000 >> 8) + 72 - work->unk_178,
                   (gBtlWork->unk_004 >> 8) + 48 - work->unk_17A);
 }
 
@@ -1245,7 +1245,7 @@ void task_bos_md_2(MdWork* work) {
 
     x = (gBtlWork->unk_000 >> 8) - (work->unk_178 - 72);
     y = (gBtlWork->unk_004 >> 8) - (work->unk_17A - 48);
-    func_08005244(1, x, y);
+    ScrollBgMapTo(1, x, y);
     p0 = &work->unk_02C;
     p1 = &work->unk_040;
     p2 = &work->unk_054;
@@ -1301,7 +1301,7 @@ void task_bos_md_3(MdWork* work) {
 void task_bos_md_map_0(MdMapWork* work, MdMapData* p) {
     LoadBgTiles(0, p->unk_00, p->unk_04);
     LoadBgPalette(0, p->unk_08, p->unk_0C);
-    func_0800516C(0, &p->unk_10, 2, 2);
+    SetBgMapBlocks(0, &p->unk_10, 2, 2);
     gBtlWork->unk_024 = 256;
     gBtlWork->unk_028 = 256;
     gBtlWork->unk_008 = 0x10000;
@@ -1315,7 +1315,7 @@ void task_bos_md_map_0(MdMapWork* work, MdMapData* p) {
     gBtlWork->unk_01A = 15;
     gBtlWork->unk_018 = 0;
     func_0802F1C8();
-    func_08005244(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
+    ScrollBgMapTo(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
 }
 s32 task_bos_md_map_1(MdMapWork* work) {
     s32 dx;
@@ -1349,7 +1349,7 @@ s32 task_bos_md_map_1(MdMapWork* work) {
     }
 
     gBtlWork->unk_004 += func_0802F268();
-    func_08005244(0, (gBtlWork->unk_000 >> 8) + 8, (gBtlWork->unk_004 >> 8) + 40);
+    ScrollBgMapTo(0, (gBtlWork->unk_000 >> 8) + 8, (gBtlWork->unk_004 >> 8) + 40);
     return 1;
 }
 void func_080FCC14(MdFireWork* work) {

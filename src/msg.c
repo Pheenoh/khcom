@@ -8089,9 +8089,9 @@ u8 eu_0806C734(EventSeqWork* work) {
                 eu_08005A1C(3, u->unk_0C, u->unk_1E, u->unk_1F);
             } else {
                 work->unk_3A = 0;
-                func_0800516C(3, u->unk_0C, u->unk_1E, u->unk_1F);
+                SetBgMapBlocks(3, u->unk_0C, u->unk_1E, u->unk_1F);
             }
-            func_080051C4(3, 0, 0);
+            RedrawBgMapAt(3, 0, 0);
         }
     }
     return 1;
@@ -8105,9 +8105,9 @@ u8 eu_0806C7C8(EventSeqWork* work) {
                 eu_08005A1C(2, u->unk_10, u->unk_1E, u->unk_1F);
             } else {
                 work->unk_3B = 0;
-                func_0800516C(2, u->unk_10, u->unk_1E, u->unk_1F);
+                SetBgMapBlocks(2, u->unk_10, u->unk_1E, u->unk_1F);
             }
-            func_080051C4(2, 0, 0);
+            RedrawBgMapAt(2, 0, 0);
             gUnk_02039DC8->unk_78 = 1;
         } else {
             DisableBg(2);
@@ -8143,9 +8143,9 @@ u8 eu_0806C848(EventSeqWork* work) {
                 eu_08005A1C(1, u->unk_14, u->unk_1E, u->unk_1F);
             } else {
                 work->unk_3C = 0;
-                func_0800516C(1, u->unk_14, u->unk_1E, u->unk_1F);
+                SetBgMapBlocks(1, u->unk_14, u->unk_1E, u->unk_1F);
             }
-            func_080051C4(1, 0, 0);
+            RedrawBgMapAt(1, 0, 0);
             gUnk_02039DC8->unk_79 = 1;
         } else {
             DisableBg(1);
@@ -8237,13 +8237,13 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             }
 
             if (u->unk_0C != NULL) {
-                func_0800516C(3, u->unk_0C, u->unk_1E, u->unk_1F);
-                func_080051C4(3, 0, 0);
+                SetBgMapBlocks(3, u->unk_0C, u->unk_1E, u->unk_1F);
+                RedrawBgMapAt(3, 0, 0);
             }
 
             if (u->unk_10 != NULL) {
-                func_0800516C(2, u->unk_10, u->unk_1E, u->unk_1F);
-                func_080051C4(2, 0, 0);
+                SetBgMapBlocks(2, u->unk_10, u->unk_1E, u->unk_1F);
+                RedrawBgMapAt(2, 0, 0);
                 gUnk_02039DC8->unk_78 = 1;
             } else {
                 DisableBg(2);
@@ -8261,8 +8261,8 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
                     gUnk_02039DC8->unk_70 = 0;
                 }
 
-                func_0800516C(1, u->unk_14, u->unk_1E, u->unk_1F);
-                func_080051C4(1, 0, 0);
+                SetBgMapBlocks(1, u->unk_14, u->unk_1E, u->unk_1F);
+                RedrawBgMapAt(1, 0, 0);
                 gUnk_02039DC8->unk_79 = 1;
             } else {
                 DisableBg(1);
@@ -11488,8 +11488,8 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                 } else {
                     LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
                     LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
-                    func_0800516C(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
-                    func_080051C4(p->unk_38, p->unk_18, 0);
+                    SetBgMapBlocks(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
+                    RedrawBgMapAt(p->unk_38, p->unk_18, 0);
                     SetTaskUpdate(a, (void*)func_08073294);
                     _08073E6C(&p->unk_2C);
                     gUnk_02039DC8->unk_81 = 1;
@@ -11541,8 +11541,8 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
         } else {
             LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
             LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
-            func_0800516C(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
-            func_080051C4(p->unk_38, p->unk_18, 0);
+            SetBgMapBlocks(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
+            RedrawBgMapAt(p->unk_38, p->unk_18, 0);
             SetTaskUpdate(a, (void*)func_08073294);
             _08073E6C(&p->unk_2C);
             gUnk_02039DC8->unk_81 = 1;
@@ -11626,7 +11626,7 @@ u8 func_08073294(MsgWinWork* p, void* a) {
     ApproachValue(&p->unk_18, gUnk_09033CA0[p->unk_20], p->unk_1E);
 
     if (e->unk_00 != 62) {
-        func_08005244(p->unk_38, p->unk_18, 0);
+        ScrollBgMapTo(p->unk_38, p->unk_18, 0);
     }
 
     if (p->unk_1E != 0) {
@@ -11701,7 +11701,7 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
     ApproachValue(&p->unk_18, gUnk_09033C98[p->unk_20], p->unk_1E);
 
     if (e->unk_00 != 62) {
-        func_08005244(p->unk_38, p->unk_18, 0);
+        ScrollBgMapTo(p->unk_38, p->unk_18, 0);
     } else {
         DisableBg(p->unk_38);
     }
@@ -12349,17 +12349,17 @@ void view_0(Work08074DC4* p, u8* arg) {
             SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
         } else {
             if (p->unk_08 == 77) {
-                func_08005244(3, (gUnk_02039DC8->unk_48 >> 8) + 8 + gUnk_02039DC8->unk_68, (gUnk_02039DC8->unk_4C >> 8) + 40);
+                ScrollBgMapTo(3, (gUnk_02039DC8->unk_48 >> 8) + 8 + gUnk_02039DC8->unk_68, (gUnk_02039DC8->unk_4C >> 8) + 40);
             } else {
-                func_08005244(3, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
+                ScrollBgMapTo(3, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
             }
 
             if (gUnk_02039DC8->unk_78 != 0) {
-                func_08005244(2, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
+                ScrollBgMapTo(2, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
             }
 
             if (gUnk_02039DC8->unk_79 != 0) {
-                func_08005244(1, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
+                ScrollBgMapTo(1, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
             }
         }
     }
@@ -12542,17 +12542,17 @@ u8 view_1(Work08074DC4* p, u8* task) {
                 SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
             } else {
                 if (p->unk_08 == 77) {
-                    func_08005244(3, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+                    ScrollBgMapTo(3, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
                 } else {
-                    func_08005244(3, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(3, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 }
 
                 if (gUnk_02039DC8->unk_78 != 0) {
-                    func_08005244(2, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(2, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 }
 
                 if (gUnk_02039DC8->unk_79 != 0) {
-                    func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 }
             }
         } else {
@@ -12565,8 +12565,8 @@ u8 view_1(Work08074DC4* p, u8* task) {
                 gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
                 gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
                 gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
-                func_08005244(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
-                func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                ScrollBgMapTo(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+                ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 break;
             case 105:
                 gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
@@ -12575,7 +12575,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
                 gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
                 gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
                 gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
-                func_08005244(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                ScrollBgMapTo(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 break;
             case MSG_VIEW_ID_B4:
                 break;
@@ -12586,8 +12586,8 @@ u8 view_1(Work08074DC4* p, u8* task) {
                 gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
                 gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
                 gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
-                func_08005244(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
-                func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                ScrollBgMapTo(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 break;
             }
         }
@@ -12614,24 +12614,24 @@ u8 view_1(Work08074DC4* p, u8* task) {
                 SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
             } else {
                 if (p->unk_08 == 77) {
-                    func_08005244(3, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+                    ScrollBgMapTo(3, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
                 } else {
-                    func_08005244(3, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(3, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 }
 
                 if (gUnk_02039DC8->unk_78 != 0) {
-                    func_08005244(2, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(2, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 }
 
                 if (gUnk_02039DC8->unk_79 != 0) {
-                    func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+                    ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 }
             }
         } else {
             gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
             gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
-            func_08005244(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
-            func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
+            ScrollBgMapTo(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
+            ScrollBgMapTo(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
         }
     }
 
@@ -12755,25 +12755,25 @@ u8 _08074EC8(Work08074DC4* p) {
             func_08074D14(p);
 
             if (p->unk_08 == 77) {
-                func_08005244(3, (gUnk_02039DC8->unk_48 >> 8) + 8 + gUnk_02039DC8->unk_68, (gUnk_02039DC8->unk_4C >> 8) + 40);
+                ScrollBgMapTo(3, (gUnk_02039DC8->unk_48 >> 8) + 8 + gUnk_02039DC8->unk_68, (gUnk_02039DC8->unk_4C >> 8) + 40);
             } else {
-                func_08005244(3, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
+                ScrollBgMapTo(3, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
             }
 
             if (gUnk_02039DC8->unk_78 != 0) {
-                func_08005244(2, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
+                ScrollBgMapTo(2, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
             }
 
             if (gUnk_02039DC8->unk_79 != 0) {
-                func_08005244(1, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
+                ScrollBgMapTo(1, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
             }
         }
     } else {
         func_08074D14(p);
         gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
         gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
-        func_08005244(0, (gUnk_02039DC8->unk_48 >> 8) + 8, (gUnk_02039DC8->unk_4C >> 8) + 40);
-        func_08005244(1, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
+        ScrollBgMapTo(0, (gUnk_02039DC8->unk_48 >> 8) + 8, (gUnk_02039DC8->unk_4C >> 8) + 40);
+        ScrollBgMapTo(1, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
     }
     return 1;
 }

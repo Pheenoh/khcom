@@ -2,7 +2,7 @@
 #include "macros.h"
 #include "hum_common.h"
 
-void func_0800E168(HumWork* work, HumDef* def) {
+void HumInit(HumWork* work, HumDef* def) {
     BtlObj* actor = &work->unk_040;
 
     s32 a = 0x14000;
@@ -51,7 +51,7 @@ void func_0800E168(HumWork* work, HumDef* def) {
     actor->unk_034 |= 0x24000000000;
 }
 
-void func_0800E314(HumWork* work, HumSub* sub, HumSubDef* def) {
+void HumSubInit(HumWork* work, HumSub* sub, HumSubDef* def) {
     if (work->unk_00C == 0) {
         work->unk_00C = sub;
     } else {
@@ -74,7 +74,7 @@ void HumSubReleaseGraphics(HumSub* sub) {
     }
 }
 
-void func_0800E380(HumWork* work) {
+void HumReleaseResources(HumWork* work) {
     if (gBtlWork->unk_078 == &work->unk_040) {
         gBtlWork->unk_078 = 0;
     }

@@ -4,7 +4,7 @@
 void task_bos_map_0(s32 unused, BosMapConfig* cfg) {
     LoadBgTiles(0, cfg->tiles, cfg->tilesSize);
     LoadBgPalette(0, cfg->palette, cfg->paletteSize);
-    func_0800516C(0, cfg->unk_10, 2, 2);
+    SetBgMapBlocks(0, cfg->unk_10, 2, 2);
 
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
@@ -20,7 +20,7 @@ void task_bos_map_0(s32 unused, BosMapConfig* cfg) {
     gBtlWork->unk_018 = 0;
     func_0802F1C8();
 
-    func_08005244(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
+    ScrollBgMapTo(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
 }
 
 s32 task_bos_map_1(void) {
@@ -58,7 +58,7 @@ s32 task_bos_map_1(void) {
 
     y = gBtlWork->unk_004 + func_0802F268();
     gBtlWork->unk_004 = y;
-    func_08005244(0, (gBtlWork->unk_000 >> 8) + 8, (y >> 8) + 0x28);
+    ScrollBgMapTo(0, (gBtlWork->unk_000 >> 8) + 8, (y >> 8) + 0x28);
 
     return 1;
 }
