@@ -63,7 +63,7 @@ s32 task_bos_map_1(void) {
     return 1;
 }
 
-void task_bos_shadow_0(BosShadowWork* work, BtlWork* obj) {
+void task_bos_shadow_0(BosShadowWork* work, BtlObj* obj) {
     work->unk_08 = obj;
     work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
@@ -74,7 +74,7 @@ s32 task_bos_shadow_1(void) {
 }
 
 void task_bos_shadow_2(BosShadowWork* work) {
-    BtlWork* obj;
+    BtlObj* obj;
     s16 x;
     s16 y;
     s32 size;

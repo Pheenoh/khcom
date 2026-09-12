@@ -8,10 +8,10 @@ typedef struct JfShadowWork {
     void* tiles;
     void* palette;
     void* gfx;
-    BtlWork* unk_0C;
+    BtlObj* unk_0C;
 } JfShadowWork;
 
-void task_bos_jf_shadow_0(JfShadowWork* work, BtlWork* obj);
+void task_bos_jf_shadow_0(JfShadowWork* work, BtlObj* obj);
 s32 task_bos_jf_shadow_1(void);
 void task_bos_jf_shadow_2(JfShadowWork* work);
 void task_bos_jf_shadow_3(JfShadowWork* work);

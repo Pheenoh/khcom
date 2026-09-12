@@ -76,7 +76,6 @@ typedef struct UnkStruct_02034AAC {
     u8 unk_A6;
     u8 unk_A7;
 } UnkStruct_02034AAC;
-extern BtlWork* gUnk_02039B9C;
 extern u8 gUnk_02039DD8;
 extern u8 gUnk_0203A9E8;
 extern void* gUnk_0203A854;

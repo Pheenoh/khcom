@@ -90,7 +90,7 @@ s32 task_tutorial_1(TutorialWork* work) {
         break;
     case 6:
         if (work->unk_00C == 0) {
-            func_0809B644(gBtlWork->unk_02C, 320, 0x181, 0, 1);
+            func_0809B644(&gBtlWork->taskPools[0], 320, 0x181, 0, 1);
         }
 
         if (work->unk_00C > 120) {

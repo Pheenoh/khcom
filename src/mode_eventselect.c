@@ -1377,11 +1377,6 @@ typedef struct {
     u8* state;
 } EventReloadArgs;
 
-typedef struct {
-    u8 unk_00[0x2C];
-    s16 unk_2C;
-} EventBattleActor;
-
 s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
     UnkStruct_080ABA80 data;
     u8 flag[4];
@@ -1393,7 +1388,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
     u16 result;
     s32 kind;
     EventReloadArgs args;
-    EventBattleActor* actor;
+    BtlObj* actor;
 
     if (gBtlWork->unk_0A0 == 4) {
         if (gBtlWork->unk_068 & 0x1000000) {
@@ -1887,9 +1882,9 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         } else if (gUnk_02034A98 != 0 && (gUnk_02034A98->unk_78 & 0x42) == 0x42 && func_080787B8((CardBattleWork*)w, w->unk_B8) != 0) {
             w->unk_C0[w->unk_B8] = 1;
             gUnk_02034A98->unk_A1 = 7;
-            actor = (EventBattleActor*)gBtlWork->unk_07C;
-            if (actor->unk_2C > 3) {
-                actor->unk_2C -= 2;
+            actor = gBtlWork->unk_07C;
+            if (actor->unk_02C > 3) {
+                actor->unk_02C -= 2;
             }
             gBtlWork->unk_068 |= 0x80000000LL;
             if (gBtlWork->unk_0F4 != 25) {
