@@ -22220,9 +22220,7 @@ u8 func_08098FDC(UnkStruct_08098CE4* w);
 u8 func_08099048(UnkStruct_08098CE4* w, void* a);
 u8 func_080990CC(UnkStruct_08098CE4* w, void* a);
 
-#ifdef NON_MATCHING
 u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
-    u8 (*f)(UnkStruct_08098CE4*, void*);
     s16* count;
     void** row;
 
@@ -22235,6 +22233,8 @@ u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
                 func_080038E4(w->unk_00, row[*count - 2],
                               gUnk_09EE76C0[w->unk_24]);
             } else {
+                u8 (*f)(UnkStruct_08098CE4*, void*);
+
                 w->unk_28 = 8;
                 f = func_080990CC;
                 SetTaskUpdate(a, (u32)f);
@@ -22247,6 +22247,8 @@ u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
                 func_080038E4(w->unk_00, row[*count - 1],
                               gUnk_09EE76C0[w->unk_24]);
             } else {
+                u8 (*f)(UnkStruct_08098CE4*, void*);
+
                 w->unk_28 = 8;
                 f = func_080990CC;
                 SetTaskUpdate(a, (u32)f);
@@ -22257,6 +22259,8 @@ u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
 
         w->unk_26 = *(u16*)w->unk_2C.unk_04;
     } else if (*count <= 0) {
+        u8 (*f)(UnkStruct_08098CE4*, void*);
+
         w->unk_28 = 8;
         f = func_080990CC;
         SetTaskUpdate(a, (u32)f);
@@ -22278,6 +22282,8 @@ u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
     }
 
     if (w->unk_2C.unk_0C != *(u8*)w->unk_2C.unk_00) {
+        u8 (*f)(UnkStruct_08098CE4*, void*);
+
         f = (u8 (*)(UnkStruct_08098CE4*, void*))func_08098FDC;
         SetTaskUpdate(a, (u32)f);
         w->unk_28 = 8;
@@ -22296,9 +22302,6 @@ u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/REV_COUNT_1.s");
-#endif
 
 u8 func_08098FDC(UnkStruct_08098CE4* w) {
     switch (w->unk_2C.unk_0D) {
