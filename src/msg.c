@@ -1670,6 +1670,7 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
 void func_08064624(void) {
     u8* screen;
     u8 n;
+    u8 k;
     u16* src;
     u8* dst;
     u8* p;
@@ -1678,7 +1679,6 @@ void func_08064624(void) {
     u8 sx;
     u8 h;
     u16 glyph;
-    u8 k;
     u8 sy;
     u8 y;
     u8 yy;
@@ -1764,16 +1764,23 @@ void func_08064624(void) {
                     *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = cur | (pix << (sx * 4));
 
                     if (sy != 0) {
-                        *(u16*)(screen + tx * 2 + (ty + 2) * 64 + 2) = (tx + 2 + (ty + 2) * 32) | (pal << 12);
+                        s32 r = ty + 2;
+                        s32 t = r * 32;
+                        *(u16*)(screen + tx * 2 + r * 64 + 2) = (tx + 2 + t) | (pal << 12);
                     }
 
                     if (sx != 0) {
                         *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 64) = pix >> (32 - sx * 4);
                         *(u16*)(screen + tx * 2 + ty * 64 + 4) = (tx + 3 + ty * 32) | (pal << 12);
-                        *(u16*)(screen + tx * 2 + (ty + 1) * 64 + 4) = (tx + 3 + (ty + 1) * 32) | (pal << 12);
+                        {
+                            s32 ty1 = ty + 1;
+                            s32 t1 = ty1 * 32;
+                            *(u16*)(screen + tx * 2 + ty1 * 64 + 4) = (tx + 3 + t1) | (pal << 12);
 
-                        if (sy != 0) {
-                            *(u16*)(screen + tx * 2 + (ty + 2) * 64 + 4) = (tx + 3 + (ty + 2) * 32) | (pal << 12);
+                            if (sy != 0) {
+                                s32 r = ty + 2;
+                                *(u16*)(screen + tx * 2 + r * 64 + 4) = (tx + 3 + r * 32) | (pal << 12);
+                            }
                         }
                     }
                 }
