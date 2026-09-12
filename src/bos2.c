@@ -4928,7 +4928,6 @@ void func_080C213C(u8 index, u16 a) {
     LoadBgTiles(1, gUnk_09EF2D94[index], a * 32);
 }
 
-#ifdef NON_MATCHING
 void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg) {
     BosSub* s = &work->unk_074;
 
@@ -4948,6 +4947,8 @@ void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg) {
     AnimInit(&work->unk_01C, gUnk_09EF3C34, gUnk_09EF3C20);
     AnimStart(&work->unk_01C, 0, 1);
     work->gfx = AnimGetGfx(&work->unk_01C);
+    arg->unk_000[0].y++;
+    arg->unk_000[0].y--;
     work->tiles2 = LoadObjTiles(gUnk_096983E4, 0x12A0);
     AnimInit(&work->unk_034, gUnk_09EF3C4C, gUnk_09EF3C38);
     AnimStart(&work->unk_034, 0, 1);
@@ -4971,9 +4972,6 @@ void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg) {
     TaskPoolInit(&work->unk_058, 10);
     func_080C2828(work);
 }
-#else
-INCLUDE_ASM("bos2/task_bos_dsd_main_0.s");
-#endif
 
 u8 task_bos_dsd_main_1(DsdMainWork* work) {
     DsdWork* d = work->unk_000;
