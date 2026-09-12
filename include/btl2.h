@@ -1,6 +1,9 @@
 #ifndef GUARD_BTL2_H
 #define GUARD_BTL2_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
@@ -223,14 +226,6 @@ typedef struct BtlStartWork {
     s16 unk_02;
 } BtlStartWork;
 
-void* AllocObjTiles(s32 a, void* b);
-void* LoadObjTiles(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(u8* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void func_080063C4(u8 a);
 u8 GetKeyReleaseTime(s32 a);
 u16 func_0801AF1C(s32 a);
@@ -247,7 +242,6 @@ void func_0800675C(u8 a, s32 b, s32 c);
 void SetBgBlend(s32 a, s32 b, s32 c);
 void func_08019050(s32 a, s32 b, s32 c, s32 d);
 void func_08006120(s32 a, s32 b);
-void SetBgPriority(s32 bg, u16 priority);
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 

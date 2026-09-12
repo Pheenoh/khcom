@@ -1,6 +1,9 @@
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
@@ -714,26 +717,17 @@ extern u32 gUnk_02039D8C;
 void func_0800E168(HumWork* work, void* def);
 void func_0800E380(HumWork* work);
 void func_0800EFE8(HumWork* work);
-void* LoadObjTiles(void* src, s32 size);
-void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjTiles(void* p);
-void ReleaseObjPalette(u8* p);
 void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 void func_0801C298(u8 a, u8 b);
 void func_08012304(void* p);
 void func_0800E314(HumWork* work, HumSub* sub, void* def);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u16 func_0801AF1C(s32 a);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void func_08054100(AxcelWork* work, HumSub* sub);
-void* AllocObjTiles(s32 a, void* b);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012614(void* a, s32 b);
 u8 func_080035CC(s16 a, s16 b, s32 c, s32 d, s32 e, s32 f);
-void func_0801C700(void* a, s32* b, s32* c, s32* d);
 u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08014020(s32 x, s32 y, s32 z);
@@ -753,12 +747,9 @@ void func_08057E90(RikuWork* work, RikuSpawn* p);
 void func_08057E2C(RikuWork* work, RikuSpawn* dst);
 void func_0800F368(void* p, u16 n);
 u8 func_0800F504(void* p, u16 a, u16 b, u16 c);
-void LoadObjPaletteBank(u16 bank, void* src);
-void func_0801AF08(BtlObj* act);
 s32 _0800E434(void* work);
 s32 func_0800E5F0(HumWork* work);
 u8 func_080128EC(void);
-void SetBlendAlpha(u16 a, u16 b);
 void func_08002A10(void* a, u32 b);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 u32 _0800F84C(void* work);
@@ -818,7 +809,6 @@ void func_08006238(s32 a, s32 b, s32 c);
 void func_080061E8(s32 a, s32 b);
 void func_08006120(s32 a, s32 b);
 void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_08019190(void* a, s32 b);
 void func_080171FC(u16 a);
 s32 abs(s32 x);
 struct PcCharaWork;

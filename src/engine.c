@@ -1,3 +1,4 @@
+#include "obj_api.h"
 #include "macros.h"
 #include "listpool.h"
 #include "anim.h"
@@ -68,7 +69,6 @@ void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 
 extern u16 gSystemFlags;
-ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 GetObjTileCount(u16 a, u16 b);
 void func_08005C60(u16 a);
 void func_080051C4(s32 bg, u16 x, u16 y);
@@ -98,7 +98,6 @@ void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 
 extern u16 gSystemFlags;
-ObjTiles* AllocObjTiles(u16 size, void* owner);
 u16 GetObjTileCount(u16 a, u16 b);
 void func_08005C60(u16 a);
 
@@ -165,7 +164,7 @@ u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h) {
     }
     return 1;
 }
-u8 DrawSprite(u16 x, u16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
+u8 DrawSprite(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     if (gSpriteWork->entryCount <= 127 && obj != 0) {
         switch (((ObjTiles*)obj)->unk_28) {
         case 0:

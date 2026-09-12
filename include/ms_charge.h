@@ -1,6 +1,7 @@
 #ifndef GUARD_MS_CHARGE_H
 #define GUARD_MS_CHARGE_H
 
+#include "obj_api.h"
 #include "types.h"
 #include "text_types.h"
 #include "key.h"
@@ -67,9 +68,6 @@ extern void* gUnk_09EE8F48[];
 void* memcpy(void* dst, const void* src, unsigned long n);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 void func_08006184(s32 a, u16 b);
-void* LoadObjPalette(void* a, s32 b);
-void* LoadObjTiles(void* a, s32 b);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_0805F1C0(s32* p, s32 v);
 u16 func_08060A2C(u16 a);
 s16 func_08065B08(TextSlot* p, u8 n);

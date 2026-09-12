@@ -1,6 +1,8 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "game_state.h"
@@ -171,7 +173,6 @@ typedef struct AllmapPushaWork {
     s16 unk_2E;
 } AllmapPushaWork;
 
-void* AllocObjTiles(s32 a, void* b);
 void SaveClearSystem(void);
 int SaveLoadSystem(void);
 void func_0801CCB4(void);
@@ -179,22 +180,10 @@ void func_0801CD20(void);
 void func_080AEB94(void);
 void func_080E04EC(void);
 u8 func_080987C0(u8 a);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-void* GetBgScreenBase(s32 bg);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void* LoadObjPalette(void* a, s32 b);
-void* LoadObjTiles(void* a, s32 b);
-void LoadPalette(void* src, void* dst, s32 size);
-void ReleaseObjPalette(u8* p);
-void ReleaseObjTiles(void* a);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
 s32 abs(s32 x);
 void func_08000DE8(TaskPool* a, Task* t);
 u8 IsTaskActive(Task* t);
 u16 func_08003524(void* a, s32 b);
-void EnableBg(s32 a);
-void DisableBg(s32 bg);
 void SetBgBlend(s32 a, s32 b, s32 c);
 void func_08006120(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);

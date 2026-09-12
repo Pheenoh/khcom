@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "game_state.h"
@@ -34,8 +36,6 @@ extern u8 gUnkEu_08C9A5A6[];
 extern u8 gUnkEu_08C9A4E2[];
 extern u8 gUnkEu_08C9A516[];
 extern u8 gUnk_09A3CDDC[];
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void* GetBgCharBase(s32 bg);
 #endif
 typedef struct JiminyLine {
     s32 unk_000;
@@ -185,25 +185,9 @@ extern u8 gUnk_09EECAA0[];
 extern u8 gUnk_09EED2BC[];
 extern u8 gUnk_09EED320[];
 
-void SetBgMode0(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void* LoadObjTiles(void* src, s32 size);
-void* LoadObjPalette(void* src, s32 size);
-void* AllocObjTiles(s32 size, void* src);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
 void func_080062F4(u16 slot, u8 value);
 u8 func_08006314(void);
 void func_08006120(s32 a, u16 b);
-void EnableBg(s32 bg);
-void DisableBg(s32 bg);
-void DrawSprite(s16 x, s16 y, void* sprite, void* tiles, void* pal, s32 f, s32 g, s32 h);
-void LoadObjPaletteBank(u16 bank, void* src);
-void SetBlendAlpha(u16 a, u16 b);
 void UpdatePlayTime(void);
 s32 abs(s32 x);
 void SetModeUpdate(void (*fn)(void));
@@ -261,15 +245,10 @@ extern u8 gUnkEu_099FBE00[];
 void* eu_0805E968(void* text);
 s32 eu_0805E9AC(void* text);
 u8 func_080D2DD8(void);
-#else
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void* GetBgCharBase(s32 bg);
 #endif
-void* GetBgScreenBase(s32 bg);
 void func_0800FFE0(u16 flag);
 void func_08002A10(void* tiles, void* src);
 s16 func_08064DD4(void* text);
-void LoadPalette(void* src, void* dst, u16 size);
 void mode_jiminy_1(void);
 
 

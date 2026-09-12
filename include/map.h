@@ -1,7 +1,10 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
+#include "malloc.h"
 #include "engine_math.h"
 #include "listpool.h"
 #include "game_state.h"
@@ -1590,10 +1593,6 @@ extern void* gTaskDescMapNiseriku;
 extern void* gTaskDescMapMickey;
 
 void* memcpy(void* dst, const void* src, unsigned long n);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void LoadPalette(void* src, void* dst, s32 size);
 void func_08065ACC(void* p, s32 n);
 u8 GetActiveDeckIndex(void);
 void* func_080857BC(u8 a);
@@ -1614,14 +1613,6 @@ void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
 void func_08000DE8(TaskPool* a, Task* t);
 s32 abs(s32 x);
-void* GetBgCharBase(s32 bg);
-void* GetBgScreenBase(s32 bg);
-void SetBgScroll(s32 a, u16 b, u16 c);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void* AllocObjTiles(u16 size, void* owner);
-void* LoadObjPalette(void* src, s32 size);
-void* LoadObjTiles(void* src, s32 size);
-void* LoadObjTiles(void* src, s32 size);
 void func_080122AC(void* a, s32 b, u16 c, u16 d);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_080121D4(UnkStruct_080E6394* p);
@@ -1639,8 +1630,6 @@ extern u8 gUnk_09EF0510[];
 extern u8 gUnk_09EF060C[];
 extern u8 gUnk_09EF0628[];
 void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
 void func_08012304(void* a);
 void func_080121FC(void* a);
 void func_080F5C60(MapDonaldWork* w);
@@ -1727,9 +1716,7 @@ void func_080F6C5C(MapMickeyWork* w);
 s32 func_080F2E4C(MapGmkGpWork* w);
 s32 func_080F3108(MapGmkGp8Work* w);
 s32 func_080F30C4(MapGmkGp8Work* w);
-void DisableBg(u8 bg);
 void func_08065AE0(void* p, s32 n);
-void EwramFree(void* p);
 void func_080E4B34(void);
 void func_08066918(void* a, void* b);
 void func_08005244(s32 bg, u16 x, u16 y);
@@ -1878,18 +1865,14 @@ void func_080DF814(void);
 void func_080DF828(void);
 void func_0806180C(u16 a);
 void func_080DFA3C(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
 void func_080104F4(void);
 void func_080DEF20(void);
-void SetBgMode0(void);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_0801227C(void);
 void func_0801CB00(void);
 void m4aSongNumStartOrContinue(u16 n);
 void func_08006120(s32 a, u16 b);
 void func_08006494(u16 a, u16 b);
-void SetBlendAlpha(u16 a, u16 b);
 u8 func_08006314(void);
 void func_0801CB0C(void);
 void func_080E0878(void);
@@ -2091,13 +2074,10 @@ s16 func_08065B08(void* a, u8 b);
 void func_080F7AE0(MapFloorWork* w);
 void func_080F77D4(MapFaintWork* w);
 void func_080EE5E0(u8 a);
-void LoadObjPaletteBank(u16 bank, void* src);
 u8 func_0800FC5C(s32 a);
 u8 func_0800FBCC(s32 a);
 void func_0800FB2C(s32 a);
 void func_0800FC14(s32 a);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f);
 void func_080E64D4(UnkStruct_080E590C* p);
 void func_080EBA58(u8 a);

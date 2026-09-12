@@ -1,6 +1,7 @@
 #ifndef GUARD_MONSGAGE_H
 #define GUARD_MONSGAGE_H
 
+#include "obj_api.h"
 #include "types.h"
 #include "game.h"
 
@@ -24,7 +25,6 @@ s32 task_monsgage_1(MonsgageWork* work);
 void task_monsgage_2(MonsgageWork* work);
 void task_monsgage_3(MonsgageWork* work);
 
-void* AllocObjTiles(s32 a, void* b);
 
 extern u8 gUnk_08B2556C[];
 extern u8 gUnk_08B2557C[];

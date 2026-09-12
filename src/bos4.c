@@ -124,7 +124,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             break;
         }
 
-        switch (func_0801ADAC(p)) {
+        switch ((u32)func_0801ADAC(p)) {
         case 1:
         case 3:
         case 6:

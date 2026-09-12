@@ -15,22 +15,22 @@ void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     switch (work->angle) {
     case 0xAD:
         LoadBgTiles(1, gUnk_08ED21E4, 0x4AC0);
-        SetBgScroll(1, -35, -23);
+        SetBgScroll(1, (u16)-35, (u16)-23);
         break;
     case 0x53:
         LoadBgTiles(1, gUnk_08ED21E4, 0x4AC0);
-        SetBgScroll(1, -77, -23);
+        SetBgScroll(1, (u16)-77, (u16)-23);
         break;
     case 0xD3:
         LoadBgTiles(1, gUnk_08EDBB44, 0x7520);
-        SetBgScroll(1, -39, 2);
+        SetBgScroll(1, (u16)-39, 2);
         break;
     case 0x2D:
         LoadBgTiles(1, gUnk_08EDBB44, 0x7520);
 #ifdef VERSION_EU
-        SetBgScroll(1, -73, 5);
+        SetBgScroll(1, (u16)-73, 5);
 #else
-        SetBgScroll(1, -71, 3);
+        SetBgScroll(1, (u16)-71, 3);
 #endif
         break;
     }
@@ -186,31 +186,31 @@ void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg) {
     if (gGameState.flags & 8) {
         switch (work->angle) {
         case 0x2D:
-            SetBgScroll(1, -100, 4);
+            SetBgScroll(1, (u16)-100, 4);
             break;
         case 0xD3:
-            SetBgScroll(1, -73, 5);
+            SetBgScroll(1, (u16)-73, 5);
             break;
         case 0x53:
-            SetBgScroll(1, -101, -18);
+            SetBgScroll(1, (u16)-101, (u16)-18);
             break;
         case 0xAD:
-            SetBgScroll(1, -75, -19);
+            SetBgScroll(1, (u16)-75, (u16)-19);
             break;
         }
     } else {
         switch (work->angle) {
         case 0x2D:
-            SetBgScroll(1, -100, -6);
+            SetBgScroll(1, (u16)-100, (u16)-6);
             break;
         case 0xD3:
-            SetBgScroll(1, -73, -5);
+            SetBgScroll(1, (u16)-73, (u16)-5);
             break;
         case 0x53:
-            SetBgScroll(1, -101, -28);
+            SetBgScroll(1, (u16)-101, (u16)-28);
             break;
         case 0xAD:
-            SetBgScroll(1, -75, -29);
+            SetBgScroll(1, (u16)-75, (u16)-29);
             break;
         }
     }

@@ -11468,11 +11468,11 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     switch (e->unk_08) {
                     case 0:
                     case 2:
-                        SetBgScroll(p->unk_38, -0x28, 0);
+                        SetBgScroll(p->unk_38, (u16)-0x28, 0);
                         break;
                     case 1:
                     case 3:
-                        SetBgScroll(p->unk_38, -0x28, -0x60);
+                        SetBgScroll(p->unk_38, (u16)-0x28, (u16)-0x60);
                         break;
                     }
 
@@ -11521,11 +11521,11 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             switch (e->unk_08) {
             case 0:
             case 2:
-                SetBgScroll(p->unk_38, -0x18, 0);
+                SetBgScroll(p->unk_38, (u16)-0x18, 0);
                 break;
             case 1:
             case 3:
-                SetBgScroll(p->unk_38, -0x18, -0x60);
+                SetBgScroll(p->unk_38, (u16)-0x18, (u16)-0x60);
                 break;
             }
 

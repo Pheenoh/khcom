@@ -1,6 +1,8 @@
 #ifndef GUARD_SMN_H
 #define GUARD_SMN_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -221,15 +223,10 @@ typedef struct SmnKingWork {
     u8 unk_15F[0x09];
 } SmnKingWork;
 
-void ReleaseObjPalette(u8* p);
 void m4aSongNumStart(u16 n);
 void m4aSongNumStop(u16 n);
 
-void ReleaseObjTiles(void* a);
 u16 func_0801AF1C(s32 a);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 s32 abs(s32 a);
 void func_08014780(s32 a, s32 b, s32 c);
@@ -248,7 +245,6 @@ void func_08013480(s32 a, s32 b, s32 c);
 void func_08076284(void);
 void func_08076290(void);
 void func_0807629C(void);
-void func_08019190(BtlObj* a, s16 b);
 void func_08006B80(u16* a, u16* b);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_0801416C(s32 a, s32 b, s32 c);
@@ -262,8 +258,6 @@ u8 func_080128EC(void);
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_080147C8(s32 a, s32 b);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-void* LoadObjPalette(void* src, s32 size);
-void* LoadObjTiles(void* src, s32 size);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescBtlPrize[];

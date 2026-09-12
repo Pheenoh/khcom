@@ -1,6 +1,9 @@
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -271,16 +274,10 @@ extern u8 gUnk_09EE10F8[];
 extern u8 gUnk_08F69BA4[];
 
 void func_08002A10(void* a, void* b);
-void LoadObjPaletteBank(u16 bank, void* src);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void SetBlendAlpha(u16 a, u16 b);
 u8 func_080128EC(void);
 u16 func_0801AF1C(s32 a);
 void func_08005974(AnimState* a, u8 b, u16 c, void* d, void* e);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_0801D288(void);
-u8 func_0801CA00(BtlObj* p);
 extern u32 gFrameCounter;
 void m4aSongNumStart(u16 id);
 void m4aSongNumStop(u16 id);
@@ -291,9 +288,7 @@ void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);
 void func_08012614(void* p, s32 a);
 s32 task_btl_sora_1(BtlSoraWork* work);
-s32 func_0801ADAC(BtlObj* p);
 void func_08019050(u16 a, s32 b, s32 c, s32 d);
-void func_08019190(BtlObj* p, s16 b);
 void func_08006120(s32 a, u16 b);
 void func_080061E8(s32 a, u16 b);
 void func_08006290(s32 a, u16 b, u16 c);
@@ -377,13 +372,8 @@ void func_0801475C(s32 a, s32 b, s32 c);
 u32 func_0801A8A4(s32* x, s32* y, s32 a, s32 b);
 void func_08012304(void* a);
 void func_080140C0(s32* a, s32* b, s32* c);
-void func_0801AF08(void* p);
 void func_0802F284(s32 a, s32 b, s32 c);
 
-void* LoadObjTiles(void* src, s32 size);
-void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjTiles(void* p);
-void ReleaseObjPalette(u8* p);
 
 typedef struct BtlMapWork {
     s32 unk_00;
@@ -394,9 +384,6 @@ typedef struct BtlMapWork {
 
 extern const s8 gUnk_0813C7D8[];
 void SetBgSize(s32 bg, s32 size);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0802F1C8(void);
 void func_0802F1E8(void);

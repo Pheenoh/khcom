@@ -1,6 +1,9 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
@@ -606,31 +609,12 @@ extern void* gUnk_09EF3924[];
 extern void* gUnk_09EF3960[];
 extern void* gUnk_09EF397C[];
 
-void* AllocObjTiles(s32 size, void* src);
-void* LoadObjTiles(void* src, s32 size);
-void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjTiles(void* p);
-void ReleaseObjPalette(u8* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-void LoadObjPaletteBank(u16 bank, void* src);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void* GetBgCharBase(s32 bg);
-void* GetBgScreenBase(s32 bg);
 void StartBgWave(void (*a)(void));
 void SetBgWaveParams(s32 a, u8 b, u8 c);
 void EnableBgWave(s32 a);
 void HBlankIntrBgWave1(s32 a);
 void StopBgWave(s32 a);
-void func_0801B7D8(void* a);
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void EnableBg(s32 bg);
-void DisableBg(s32 bg);
 void SetBgBlend(s32 a, u16 b, u16 c);
-void LoadPalette(void* src, void* dst, s32 size);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
 void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);
 
@@ -743,8 +727,5 @@ u8 task_bos_tm_1(TmWork* w);
 void task_bos_tm_2(TmWork* w);
 void task_bos_tm_3(TmWork* w);
 void func_080B82D4(void);
-s32 func_0801ADAC(BtlObj* p);
-void func_0801AF08(BtlObj* p);
-void func_0801AF4C(BtlObj* p);
 
 #endif /* GUARD_WLOGO_H */

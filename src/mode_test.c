@@ -3,8 +3,8 @@
 #include "gba/keys.h"
 
 #ifndef VERSION_EU
-void* gUnk_02034A08;
-void* gUnk_02034A0C;
+struct ObjTiles* gUnk_02034A08;
+struct ObjPaletteNode* gUnk_02034A0C;
 s32 gUnk_02034A10;
 #endif
 u32 gUnk_02034A14;

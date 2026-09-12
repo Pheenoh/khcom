@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_DEBUG_H
 #define GUARD_MODE_DEBUG_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "chkobj.h"
 #include "main.h"
@@ -17,18 +19,7 @@ typedef struct DebugWork {
     AnimState anim;
 } DebugWork;
 
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
-void* LoadObjTiles(void* a, s32 b);
 void func_08002A10(void* a, void* b);
-void* LoadObjPalette(void* a, s32 b);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void SetBgMode0(void);
-void EnableBg(s32 a);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgSize(s32 a, s32 b);
 void SetBgColorMode(s32 a, s32 b);
 void SetBackdropColor(u16 r, u16 g, u16 b);

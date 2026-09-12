@@ -1,6 +1,7 @@
 #ifndef GUARD_EVT_H
 #define GUARD_EVT_H
 
+#include "obj_api.h"
 #include "types.h"
 #include "anim.h"
 #include "taskpool.h"
@@ -69,7 +70,6 @@ typedef struct EvtShadowWork {
     void* tiles3;
 } EvtShadowWork;
 
-void* AllocObjTiles(u16 a, s32 b);
 
 extern EvtObjAnim gUnk_0813766C[];
 extern EvtObjResTable gUnk_0813B09C[];

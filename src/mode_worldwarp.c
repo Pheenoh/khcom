@@ -48,14 +48,14 @@ u8 gUnk_020354EC[4];
 s16 gUnk_020354F0[13];
 s16 gUnk_0203550A;
 void* gUnk_0203550C;
-void* gUnk_02035510;
-void* gUnk_02035514;
-void* gUnk_02035518;
-void* gUnk_0203551C;
+struct ObjTiles* gUnk_02035510;
+struct ObjPaletteNode* gUnk_02035514;
+struct ObjTiles* gUnk_02035518;
+struct ObjPaletteNode* gUnk_0203551C;
 AnimState gUnk_02035520;
 AnimState gUnk_02035538;
-void* gUnk_02035550;
-void* gUnk_02035554;
+struct ObjTiles* gUnk_02035550;
+struct ObjPaletteNode* gUnk_02035554;
 AnimState gUnk_02035558;
 void* gUnk_02035570[14];
 void* gUnk_020355A8[14];
@@ -621,6 +621,6 @@ void func_08101970(void) {
         func_08102F30();
     }
     TaskPoolDraw(&gUnk_020358A8);
-    SetBgScroll(0, gUnk_02035884 >> 8, 0);
-    SetBgScroll(1, gUnk_02035880 >> 8, 0);
+    SetBgScroll(0, (u16)(gUnk_02035884 >> 8), 0);
+    SetBgScroll(1, (u16)(gUnk_02035880 >> 8), 0);
 }

@@ -1,6 +1,7 @@
 #ifndef GUARD_TITLE_H
 #define GUARD_TITLE_H
 
+#include "obj_api.h"
 #include "types.h"
 #include "engine_math.h"
 #include "game_state.h"
@@ -83,12 +84,6 @@ extern void* gUnk_09EF6684[];
 
 void* memcpy(void* dst, const void* src, unsigned long n);
 void m4aSongNumStart(u16 id);
-void* LoadObjTiles(void* src, s32 size);
-void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjTiles(void* p);
-void ReleaseObjPalette(u8* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 s16 GetPaletteEffect(void);
 void SetPaletteEffect(s16 a);
 void func_080D5978(u16 a, void* b, u16 c);

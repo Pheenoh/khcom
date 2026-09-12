@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_VSBATTLE_H
 #define GUARD_MODE_VSBATTLE_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
@@ -158,17 +161,7 @@ extern TaskDesc gTaskDescBtlMap;
 extern TaskDesc gTaskDescBtlShadow;
 extern TaskDesc gTaskDescBtlBadstatus;
 
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
 void SetBgOverflow(s32 bg, u8 on);
-void* AllocObjTiles(u16 size, void* src);
-void ReleaseObjTiles(void* p);
-void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjPalette(u8* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-void SetBgMode2(void);
 void func_080063A8(void);
 void func_08006238(s32 a, s32 b, s32 c);
 u8 func_08006314(void);
@@ -191,35 +184,21 @@ void func_08012810(void);
 void func_08012824(void);
 void func_08019050(s32 a, s32 b, s32 c, s32 d);
 void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
-void func_08019190(BtlObj* a, s32 b);
 u32 func_0801A8A4(s32* px, s32* py, s16 rx, s16 ry);
 void func_0801A920(s16 a, s16 b, s16 c, s16 d);
-s32 func_0801ADAC(void* a);
-void func_0801AF08(void* p);
-void func_0801AF4C(BtlObj* a);
 u16 func_0801AF1C(s32 a);
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-void func_0801B7D8(void* p);
 void func_0801B008(void);
-void func_0801B918(BtlObj* a);
 void func_0801C068(void);
 void func_0801C104(void);
-void func_0801C700(BtlObj* actor, s32* a, s32* b, s32* c);
-void func_0801BBF0(BtlObj* a);
-void func_0801BCD4(void* a);
-void func_0801BCF8(BtlObj* a);
-void func_0801B994(BtlObj* a);
 void func_0801C830(BtlObj* a);
 u8 func_08005AC4(AnimState* a);
 void func_08006B4C(void);
 u8 func_08006B74(void);
-void SetBlendAlpha(u16 a, u16 b);
 void func_08013DB8(s32 a, s32 b, s32 c, s32 d);
 void func_08013E4C(s32 a, s32 b, s32 c, s32 d);
 extern vu32 gFrameCounter;
 extern u16 gBldCnt;
 void func_0801C2DC(void* a, s32 b);
-u8 func_0801CA00(void* a);
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_0807E1A0(void);
 void func_0807E1AC(void);

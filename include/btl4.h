@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL4_H
 #define GUARD_BTL4_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
 #include "types.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -138,14 +140,6 @@ extern u8 gUnk_09EE1420[];
 extern u8 gUnk_09EE1498[];
 extern void* gUnk_09EE157C[];
 
-void* AllocObjTiles(s32 a, void* b);
-void* LoadObjTiles(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(u8* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void func_080A411C(void* pool, u32 a, u16 b);
 void func_080A41F0(void* a, u16 b);
 void func_080A42E0(void);

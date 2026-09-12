@@ -1,3 +1,6 @@
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "macros.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -178,7 +181,6 @@ u8 gUnk_02034B1D[3];
 #endif
 #include "game.h"
 
-void LoadBgTiles(s32 bg, void* src, u16 size);
 extern u8 gUnk_0950E2F8[];
 extern u8 gUnk_096112B8[];
 u8 func_080A470C(UnkStruct_080A3F5C* w, void* a);
@@ -207,8 +209,6 @@ void func_080AB228(void);
 void func_080AB22C(u8 a);
 void func_080AB334(u8 a);
 void func_080AB4AC(u8 a);
-void* LoadObjTiles(void* a, s32 b);
-void* LoadObjPalette(void* a, s32 b);
 s16 func_08084458(u16 a);
 u16 func_08093B38(void);
 u16 func_08093B08(u16 a);
@@ -224,8 +224,6 @@ void func_08065ACC(TextSlot* p, s32 n);
 void func_080AB1F8(u8 a, u16 b);
 void func_080AB964(void);
 void func_080AB968(void);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-u32 GetBgCharBase(s32 bg);
 void* memcpy(void* dst, const void* src, unsigned long n);
 s16 func_080858B8(s32 index);
 void func_08085A58(s32 index, u16* dst);
@@ -292,12 +290,8 @@ void func_0808CD48(u8* work);
 u8 func_0800FF00(u16 n);
 struct UnkStruct_080889DC;
 u8 func_08086A14(struct UnkStruct_080889DC* w, void* a);
-void LoadPalette(void* src, void* dst, s32 size);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgSize(s32 a, s32 b);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void eu_080059F4(s32 bg, void* map);
-void SetBgMode2(void);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_0809217C(MapSelectWork* w, void* a);
 void func_0808E344(void** p);
@@ -312,7 +306,6 @@ void func_08085DA0(u8 a);
 void func_08080228(UnkStruct_08080268* w);
 u8 func_0800FC5C(s32 a);
 u8 func_080882DC(u8* work, void* a);
-void EnableBg(s32 bg);
 u8 func_080E8D00(void);
 void* func_080E8D1C(s32 a);
 void func_08093C44(u16 a, MapSelectWork* w);
@@ -347,7 +340,6 @@ s32 func_0805F588(s32 a, s32 b);
 void func_08096F08(void* a, void* b);
 u8 func_08096288(PrizeCardWork* w, void* a);
 u16 func_08093384();
-void* AllocObjTiles(s32 a, s32 b);
 u8 func_08092A34(MapSelectWork* w, void* a);
 u8 func_080923E0(MapSelectWork* w, void* a);
 extern void* gUnk_09EF1228[];
@@ -366,7 +358,6 @@ extern u8 gUnkEu_094C704A[];
 void func_0808CC58(u16 a, u8 b);
 void func_080AAA8C(u8* work, u8 b);
 u8 func_080A8430(UnkStruct_0808C940* w, void* a);
-void SetBgScroll(s32 a, u16 b, u16 c);
 void func_08090170(UnkStruct_0808E890* node);
 u8 func_08096390(PrizeCardWork* w);
 void func_080A9968(u8* work);
@@ -400,7 +391,6 @@ extern s32 gUnk_09035978[];
 u8 EV_BG_EFFECT_1(UnkStruct_080A1DAC* w, void* a);
 s32 func_0809CBD0(u8* work);
 u8 func_0809ACDC(UnkStruct_0809A02C* w);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void func_080061E8(s32 a, u16 b);
 void func_080A1BB8(UnkStruct_080A1C48* w, void** t);
 void func_0809D124(UnkStruct_0809CE88* w);
@@ -462,14 +452,12 @@ CardSlot* func_08076674(UnkStruct_08080268* w, u8 slot, u16* n);
 CardSlot* func_08076750(UnkStruct_08080268* w, u8 slot, u16* n);
 void func_08083340(UnkStruct_02034AAC* p);
 u16 func_08084FAC(u8 slot);
-void LoadObjPaletteBank(u16 bank, void* src);
 void* _08066468(s32 a);
 u8 func_080A5198(UnkStruct_080A3F5C* w, void* a);
 u8 func_080A5034(UnkStruct_080A3F5C* w, void* a);
 u8 func_0808A910(UnkStruct_0808DB04* w, void* a);
 u8 func_0807D7B0(UnkStruct_02034AAC* p);
 void func_0806C2C0(u8 a);
-UnkStruct_080038C8* AllocObjPalette(s32 a);
 void func_08003A70(void* a, void* b);
 s32 func_08093838(MapSelectWork* w);
 s32 func_080A5150(UnkStruct_080A3F5C* w);
@@ -511,7 +499,6 @@ void SetBgBlend(s32 a, s32 b, s32 c);
 u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a);
 void func_08094DEC(MapcardWork* w);
 void func_0800FDD0(s32 a);
-u32 GetBgScreenBase(s32 bg);
 void func_0807DAD0(UnkStruct_02034AAC* p);
 void func_0807DE10(UnkStruct_02034AAC* p);
 u8 func_080A6474(u8* work, void* a);
@@ -528,7 +515,6 @@ u8 func_0807CE04(UnkStruct_02034AAC* p);
 u8 func_0807D3A0(UnkStruct_02034AAC* p, void* a);
 void func_08094E90(MapcardWork* w);
 u8 func_0809CB78(u8* work, void* a);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 u8 func_08090940(UnkStruct_02034AAC* p);
 u8 func_08090DB0(UnkStruct_02034AAC* p, void* a);
 void func_0800FC14(s32 a);
@@ -10326,9 +10312,9 @@ u8 func_080864A4(u8* work, void* a) {
         LoadBgMap(2, gUnk_08125E24, 0x800);
         break;
     case 11:
-        SetBgScroll(0, -88, -16);
-        SetBgScroll(1, -88, -64);
-        SetBgScroll(2, -88, -112);
+        SetBgScroll(0, (u16)-88, (u16)-16);
+        SetBgScroll(1, (u16)-88, (u16)-64);
+        SetBgScroll(2, (u16)-88, (u16)-112);
         work[CARDWORK(0x8D0)] = 0;
         SetTaskUpdate(a, (void*)func_08086650);
         return 1;
@@ -12359,9 +12345,9 @@ u8 func_08089EC0(u8* work, void* a) {
         LoadBgMap(0, gUnk_09519AB8, 0x180);
         LoadBgMap(1, gUnk_095172B8, 0x800);
         LoadBgMap(2, gUnk_09517AB8, 0x800);
-        SetBgScroll(0, -88, -16);
-        SetBgScroll(1, -88, -112);
-        SetBgScroll(2, -140, -96);
+        SetBgScroll(0, (u16)-88, (u16)-16);
+        SetBgScroll(1, (u16)-88, (u16)-112);
+        SetBgScroll(2, (u16)-140, (u16)-96);
         *(u16*)&work[CARDWORK(0x888)] = 102;
         *(u16*)&work[CARDWORK(0x88E)] = 28;
         break;
@@ -12381,9 +12367,9 @@ u8 func_08089EC0(u8* work, void* a) {
         LoadBgMap(0, gUnk_095172B8, 0x800);
         LoadBgMap(1, gUnk_0951A2B8, 0x180);
         LoadBgMap(2, gUnk_09517AB8, 0x800);
-        SetBgScroll(0, -88, -112);
-        SetBgScroll(1, -88, -16);
-        SetBgScroll(2, -140, -96);
+        SetBgScroll(0, (u16)-88, (u16)-112);
+        SetBgScroll(1, (u16)-88, (u16)-16);
+        SetBgScroll(2, (u16)-140, (u16)-96);
         *(u16*)&work[CARDWORK(0x88A)] = 102;
         *(u16*)&work[CARDWORK(0x890)] = 28;
         break;
@@ -12403,9 +12389,9 @@ u8 func_08089EC0(u8* work, void* a) {
         LoadBgMap(0, gUnk_095172B8, 0x800);
         LoadBgMap(1, gUnk_09517AB8, 0x800);
         LoadBgMap(2, gUnk_0951AAB8, 0x180);
-        SetBgScroll(0, -88, -112);
-        SetBgScroll(1, -140, -96);
-        SetBgScroll(2, -88, -16);
+        SetBgScroll(0, (u16)-88, (u16)-112);
+        SetBgScroll(1, (u16)-140, (u16)-96);
+        SetBgScroll(2, (u16)-88, (u16)-16);
         *(u16*)&work[CARDWORK(0x88C)] = 102;
         *(u16*)&work[CARDWORK(0x892)] = 28;
         break;
@@ -27506,7 +27492,7 @@ void func_080A1DAC(UnkStruct_080A1DAC* w) {
     LoadBgTiles(0, d->unk_04, d->unk_0C);
     LoadBgPalette(0, d->unk_08, d->unk_0E);
     LoadBgMap(0, d->unk_00[0], 0x800);
-    SetBgScroll(0, (*(s32*)&gUnk_02039DC8[0x58] >> 8) - (e->unk_04 >> 8), (*(s32*)&gUnk_02039DC8[0x5C] >> 8) - (e->unk_08 >> 8));
+    SetBgScroll(0, (u16)((*(s32*)&gUnk_02039DC8[0x58] >> 8) - (e->unk_04 >> 8)), (u16)((*(s32*)&gUnk_02039DC8[0x5C] >> 8) - (e->unk_08 >> 8)));
 
     if (d->unk_14 != 0) {
         w->unk_15 = 1;
@@ -27634,8 +27620,8 @@ u8 func_080A2024(u8* work, void* a) {
     u8* p;
 
     p = *(u8**)&work[0] + work[0x14] * 16;
-    SetBgScroll(0, (*(s32*)&gUnk_02039DC8[0x58] >> 8) - (*(s32*)&p[4] >> 8),
-                (*(s32*)&gUnk_02039DC8[0x5C] >> 8) - (*(s32*)&p[8] >> 8));
+    SetBgScroll(0, (u16)((*(s32*)&gUnk_02039DC8[0x58] >> 8) - (*(s32*)&p[4] >> 8)),
+                (u16)((*(s32*)&gUnk_02039DC8[0x5C] >> 8) - (*(s32*)&p[8] >> 8)));
 
     if (func_080A207C(work) == 0) {
         SetTaskUpdate(a, (void*)EV_BG_EFFECT_1);
@@ -28975,14 +28961,14 @@ u8 func_080A4578(UnkStruct_080A3F5C* w, void* a) {
         switch ((u32)w->unk_114->unk_04) {
         case 0:
         case 2:
-            SetBgScroll(w->unk_10C, -24, 0);
+            SetBgScroll(w->unk_10C, (u16)-24, 0);
             break;
         case 1:
         case 3:
-            SetBgScroll(w->unk_10C, -24, -94);
+            SetBgScroll(w->unk_10C, (u16)-24, (u16)-94);
             break;
         default:
-            SetBgScroll(w->unk_10C, -24, -94);
+            SetBgScroll(w->unk_10C, (u16)-24, (u16)-94);
             break;
         }
         break;
@@ -29865,8 +29851,8 @@ u8 func_080A5C9C(u8* work, void* a) {
     LoadBgMap(1, gUnk_08125E24, 0x800);
     LoadBgMap(2, gUnk_08125E24, 0x800);
 #endif
-    SetBgScroll(0, -88, -108);
-    SetBgScroll(1, -88, -16);
+    SetBgScroll(0, (u16)-88, (u16)-108);
+    SetBgScroll(1, (u16)-88, (u16)-16);
     SetTaskUpdate(a, (void*)func_080A5D3C);
     return 1;
 }
@@ -30889,9 +30875,9 @@ u8 func_080A7914(u8* work, void* a) {
     }
 
     work[0x715]++;
-    SetBgScroll(0, -88, -16);
-    SetBgScroll(1, -88, -64);
-    SetBgScroll(2, -88, -112);
+    SetBgScroll(0, (u16)-88, (u16)-16);
+    SetBgScroll(1, (u16)-88, (u16)-64);
+    SetBgScroll(2, (u16)-88, (u16)-112);
     return 1;
 }
 u8 func_080A7ABC(UnkStruct_0808C940* w, void* a) {
@@ -31830,9 +31816,9 @@ void func_080A9B84(UnkStruct_0808C940* w, u8 b) {
         LoadBgMap(0, gUnk_09519AB8 + 0x180, 0x180);
         LoadBgMap(1, gUnk_0951A2B8, 0x180);
         LoadBgMap(2, gUnk_0951AAB8, 0x180);
-        SetBgScroll(0, -76, -14);
-        SetBgScroll(1, -88, -64);
-        SetBgScroll(2, -88, -112);
+        SetBgScroll(0, (u16)-76, (u16)-14);
+        SetBgScroll(1, (u16)-88, (u16)-64);
+        SetBgScroll(2, (u16)-88, (u16)-112);
         w->unk_6D4 = 100;
         w->unk_6DA = 25;
         w->unk_6D6 = 102;
@@ -31850,9 +31836,9 @@ void func_080A9B84(UnkStruct_0808C940* w, u8 b) {
         LoadBgMap(0, gUnk_09519AB8, 0x180);
         LoadBgMap(1, gUnk_0951A2B8 + 0x180, 0x180);
         LoadBgMap(2, gUnk_0951AAB8, 0x180);
-        SetBgScroll(0, -88, -16);
-        SetBgScroll(1, -76, -62);
-        SetBgScroll(2, -88, -112);
+        SetBgScroll(0, (u16)-88, (u16)-16);
+        SetBgScroll(1, (u16)-76, (u16)-62);
+        SetBgScroll(2, (u16)-88, (u16)-112);
         w->unk_6D4 = 102;
         w->unk_6DA = 27;
         w->unk_6D6 = 100;
@@ -31870,9 +31856,9 @@ void func_080A9B84(UnkStruct_0808C940* w, u8 b) {
         LoadBgMap(0, gUnk_09519AB8, 0x180);
         LoadBgMap(1, gUnk_0951A2B8, 0x180);
         LoadBgMap(2, gUnk_0951AAB8 + 0x180, 0x180);
-        SetBgScroll(0, -88, -16);
-        SetBgScroll(1, -88, -64);
-        SetBgScroll(2, -76, -110);
+        SetBgScroll(0, (u16)-88, (u16)-16);
+        SetBgScroll(1, (u16)-88, (u16)-64);
+        SetBgScroll(2, (u16)-76, (u16)-110);
         w->unk_6D4 = 102;
         w->unk_6DA = 27;
         w->unk_6D6 = 102;

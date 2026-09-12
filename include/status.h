@@ -1,6 +1,8 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
 #include "types.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -317,8 +319,6 @@ extern TaskDesc gTaskDescBosBoogieDisk;
 extern TaskDesc gTaskDescBosBoogieKnifereader;
 extern TaskDesc gTaskDescBosBoogieKaihuku;
 
-void* LoadObjTiles(void* src, s32 size);
-void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
 void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
@@ -328,8 +328,6 @@ u8 GetActiveDeckIndex(void);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void func_0805F1C0(s32* p, s32 v);
 void func_080038E4(void* a, u32 b, u32 c);
-void* LoadObjPalette(void* src, s32 size);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u8 func_0800FBCC(s32 a);
 u8 func_0800FD20(s32 a);
 
@@ -363,11 +361,7 @@ void func_080D7568(u8 a);
 void func_080D78B8(StatusBarWork* work);
 u8 func_080D7890(void);
 u16 func_0801AF1C(s32 a);
-u8 func_0801CA00(void* a);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
-void func_0801B7D8(void* a);
 void func_0801A920(s32 a, s32 b, s32 c, s32 d);
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 void func_0801C2DC(void* a, s32 b);
 void func_080D900C(BoogieWork* work, s32 a, u16 b);
 u8 IsTaskActive(Task* t);
@@ -392,9 +386,6 @@ typedef struct BoogiePalette {
 
 extern s16 gSineTable[];
 extern TaskDesc gTaskDescBosBoogieDice;
-s32 func_0801ADAC(BtlObj* a);
-void func_0801AF08(BtlObj* a);
-void func_0801AF4C(BtlObj* a);
 void func_08014AAC(s32 x, s32 y);
 void func_0801C298(u8 a, u8 b);
 void func_08006238(s32 a, s32 b, s32 c);
@@ -402,7 +393,6 @@ void func_0801536C(void);
 u8 func_080128EC(void);
 void func_08096DC4(TaskPool* pool, BoogieFx* p);
 void func_0801B008(void);
-void func_0801B918(BtlObj* a);
 void func_08083914(void);
 void func_08083900(u8 a);
 u8 func_08083920(void);

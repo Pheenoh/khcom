@@ -1,6 +1,7 @@
 #ifndef GUARD_FLD_H
 #define GUARD_FLD_H
 
+#include "obj_api.h"
 #include "types.h"
 #include "engine_math.h"
 #include "game_state.h"
@@ -135,7 +136,6 @@ s32 func_08031F1C(FldWork* work);
 void func_08031F60(FldActor* act);
 void func_08031F98(FldWork* work, s32 a, s32 b);
 
-void* AllocObjTiles(s32 a, void* b);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_080DFF4C(FldPos* p);
 void func_080A5830(void* a, s32 x, s32 y, s32 z);

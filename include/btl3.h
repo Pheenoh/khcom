@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL3_H
 #define GUARD_BTL3_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -146,13 +148,6 @@ extern u8 gUnk_09EDF124[];
 extern u8 gUnk_09EDF154[];
 
 void m4aSongNumStart(u16 song);
-void* AllocObjTiles(s32 a, s32 b);
-void* LoadObjTiles(void* src, s32 size);
-void ReleaseObjTiles(void* a);
-void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjPalette(u8* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u8 CanAllocObjTiles(u16 a);
 u8 CanAllocObjPalette(s32 a);
 void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);
@@ -169,7 +164,6 @@ void func_080155BC(s32 a, s32 b, s32 c, s32 d);
 void func_08017260(s32 a, s32 b, s32 c, s32 d);
 void func_080172F8(s32 a, s32 b, s32 c, s32 d);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void func_08019A30(void);
 u32 func_0801A8A4(void* a, void* b, s32 c, s32 d);
 u16 func_0801AF1C(s32 a);

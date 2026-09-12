@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "game_state.h"
 #include "card_types.h"
@@ -471,39 +473,18 @@ extern void* gUnk_09EF3904[];
 extern void* gUnk_09EF390C[];
 extern void* gUnk_09EF3920[];
 
-void* AllocObjTiles(s32 size, void* src);
-void* LoadObjTiles(void* src, s32 size);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void DisableBg(s32 bg);
-void SetBgPriority(s32 bg, u16 priority);
 void SetBgSize(s32 a, s32 b);
-void SetBgScroll(s32 bg, s32 x, s32 y);
 void SetBgBlend(s32 a, u16 b, u16 c);
 u8 IsTaskActive(Task* t);
 void SetBgOverflow(s32 bg, u8 on);
-void* GetBgCharBase(s32 bg);
-void SetBgMode1(void);
 u8 func_080C5930(void);
 void SaveWriteFileLarge(u16 file);
-void LoadPalette(void* src, void* dst, u16 size);
-void LoadObjPaletteBank(u16 bank, void* src);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void FadePaletteToBlack(void* src, void* dst, u16 size, u16 amount);
 void LoadPaletteWithEffect(void* src, void* dst, u16 size);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 void func_0805F1C0(s32* p, s32 v);
 void func_080C57A4(void);
 void func_08002A10(void* a, void* b);
-void* LoadObjPalette(void* src, s32 size);
-void ReleaseObjPalette(u8* p);
-void ReleaseObjTiles(void* p);
-void SetBgMode0(void);
-void EnableBg(s32 bg);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_08006120(s32 a, u16 b);
 void SioReset(void);

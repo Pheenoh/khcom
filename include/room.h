@@ -1,6 +1,8 @@
 #ifndef GUARD_ROOM_H
 #define GUARD_ROOM_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
@@ -45,12 +47,6 @@ extern u8 gUnk_099910C4[];
 extern void* gUnk_09EF8DA4;
 extern void* gUnk_09EF7048[];
 
-void* LoadObjTiles(void* a, s32 b);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, u16 h);
 void func_08065ACC(TextSlot* p, s32 n);
 void func_08065AE0(TextSlot* p, s32 n);
 u16 func_08065B6C(u16* a, TextSlot* b);
@@ -201,23 +197,16 @@ void func_080C6894(CharaObjParam* param);
 u8 func_080C69B4(void);
 void func_0801B008(void);
 
-void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
 void m4aSongNumStart(u16 a);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012304(void* a);
 void func_0801A8A4(void* a, void* b, s32 c, s32 d);
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-void func_0801B7D8(void* a);
 void func_0801C7FC(void* a, s32 b, s32 c);
-void func_0801BCD4(void* a);
 s32 AllocObjAffineAngle(u8 a, s32 b);
 u16 func_0801AF1C(s32 a);
-u8 func_0801CA00(void* a);
-void WorldToScreen(u16* a, u16* b, s32 c, s32 d, s32 e);
 void func_0802F1E8(void);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-void func_0801AF08(void* a);
 
 s32 func_080F7F70(GaWork* work, s16 i);
 s32 func_080F7F94(GaWork* work, s16 i);

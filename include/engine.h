@@ -1,6 +1,8 @@
 #ifndef GUARD_ENGINE_H
 #define GUARD_ENGINE_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -190,30 +192,10 @@ u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h);
 void func_0800284C(ObjTiles* p);
 void func_08002880(ObjTiles* p);
 void func_080028A0(ObjTiles* p);
-void ReleaseObjTiles(void* a);
 void func_08002A10(void* a, void* b);
 void func_08002BCC(ObjPaletteNode* p);
-void ReleaseObjPalette(ObjPaletteNode* p);
-void EnableBg(s32 a);
-void DisableBg(s32 bg);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgMode0(void);
-void SetBgMode1(void);
-void SetBgMode2(void);
-void SetBgMode3(void);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void* GetBgCharBase(s32 bg);
-void* GetBgScreenBase(s32 bg);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void SetBgPriority(s32 bg, u16 priority);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void LoadPalette(void* src, void* dst, u16 size);
-void SetBgScroll(s32 bg, s32 x, s32 y);
 u8 func_08006314(void);
-void LoadObjPaletteBank(u16 bank, void* src);
 void func_080034D8(u8 a);
-void SetBlendAlpha(u16 a, u16 b);
 s32 func_08005920(u16 a);
 void FadeReset(void);
 void func_08005C60(u16 a);

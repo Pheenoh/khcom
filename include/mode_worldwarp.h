@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "game_state.h"
@@ -72,7 +74,7 @@ extern u16 gUnk_099931D0[];
 extern s32 gUnk_02035880;
 extern s32 gUnk_02035884;
 extern s32 gUnk_0203588C;
-extern void* gUnk_0203585C;
+extern struct ObjPaletteNode* gUnk_0203585C;
 extern void* gUnk_02035818[];
 extern void* gUnk_02035820[];
 extern AnimState gUnk_02035828[];
@@ -93,19 +95,19 @@ extern s16 gUnk_02035892;
 extern u8 gUnk_020358A4;
 extern s16 gUnk_020358BE;
 extern u8 gUnk_09A378DC[];
-extern void* gUnk_02035858;
+extern struct ObjTiles* gUnk_02035858;
 extern s32 gUnk_02035888;
 extern s32 gUnk_02035898[];
 extern s32 gUnk_020358A0;
-extern void* gUnk_020357C8;
-extern void* gUnk_020357CC;
-extern void* gUnk_020357D0;
-extern void* gUnk_020357D4;
+extern struct ObjTiles* gUnk_020357C8;
+extern struct ObjPaletteNode* gUnk_020357CC;
+extern struct ObjTiles* gUnk_020357D0;
+extern struct ObjPaletteNode* gUnk_020357D4;
 extern AnimState gUnk_020357F8;
-extern void* gUnk_020357F0;
-extern void* gUnk_020357F4;
-extern void* gUnk_02035810;
-extern void* gUnk_02035814;
+extern struct ObjTiles* gUnk_020357F0;
+extern struct ObjPaletteNode* gUnk_020357F4;
+extern struct ObjTiles* gUnk_02035810;
+extern struct ObjPaletteNode* gUnk_02035814;
 extern TaskPool gUnk_020358A8;
 extern u8 gUnk_099A2AD4[];
 extern u8 gUnk_099A2AF0[];
@@ -134,12 +136,6 @@ extern u8 gUnk_09EF9870[];
 extern u8 gUnk_09EF98B0[];
 extern u8 gUnk_09EF98A0[];
 
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void* LoadObjTiles(void* a, s32 b);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void UpdatePlayTime(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
@@ -151,18 +147,8 @@ void func_08065AE0(TextSlot* p, s32 n);
 void func_080063A8(void);
 u8 func_080A42C8(void);
 void func_080A42E0(void);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void SetBgScroll(s32 a, u16 b, u16 c);
 void func_08102F30(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void* GetBgCharBase(s32 bg);
 void SpriteReset(void);
-void SetBgMode0(void);
-void EnableBg(s32 a);
-void DisableBg(s32 bg);
 void func_08006120(s32 a, s32 b);
 void func_08065ACC(TextSlot* p, s32 n);
 u8 func_080DF750(void);

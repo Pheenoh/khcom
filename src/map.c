@@ -254,9 +254,9 @@ void func_080E0078(void) {
     sx = gUnk_02039BA0->unk_00 >> 8;
     sy = gUnk_02039BA0->unk_04 >> 8;
     func_080E4B78(sx / 8, sy / 8);
-    SetBgScroll(3, sx, sy);
-    SetBgScroll(2, sx, sy);
-    SetBgScroll(1, sx, sy);
+    SetBgScroll(3, (u16)sx, (u16)sy);
+    SetBgScroll(2, (u16)sx, (u16)sy);
+    SetBgScroll(1, (u16)sx, (u16)sy);
 }
 
 void func_080E00E4(s32 a, s32 b) {
@@ -320,11 +320,11 @@ void func_080E00E4(s32 a, s32 b) {
         func_080E51C0(p, sx - 1, sy - 1);
     }
 
-    SetBgScroll(3, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
-    SetBgScroll(2, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
+    SetBgScroll(3, (u16)(gUnk_02039BA0->unk_00 >> 8), (u16)(gUnk_02039BA0->unk_04 >> 8));
+    SetBgScroll(2, (u16)(gUnk_02039BA0->unk_00 >> 8), (u16)(gUnk_02039BA0->unk_04 >> 8));
 
     if (!(gUnk_0203C7AC->unk_00 & 1)) {
-        SetBgScroll(1, gUnk_02039BA0->unk_00 >> 8, gUnk_02039BA0->unk_04 >> 8);
+        SetBgScroll(1, (u16)(gUnk_02039BA0->unk_00 >> 8), (u16)(gUnk_02039BA0->unk_04 >> 8));
     }
 }
 
@@ -437,7 +437,7 @@ void func_080E042C(void) {
         x = gUnk_02039BA0->unk_00 >> 8;
         y = gUnk_02039BA0->unk_04 >> 8;
         func_080E4D68(x / 8, y / 8);
-        SetBgScroll(1, x, y);
+        SetBgScroll(1, (u16)x, (u16)y);
         gUnk_0203C7AC->unk_00 &= ~1;
     }
 }
@@ -6766,7 +6766,7 @@ void func_080EAD84(u8 a) {
             LoadBgMap(1, &gUnk_09985F44[0x7800], 0x800);
         }
 
-        SetBgScroll(1, 0, -9);
+        SetBgScroll(1, 0, (u16)-9);
     } else {
         if (gUnk_02034FDC->unk_33D != 0) {
             LoadBgMap(1, &gUnk_09985F44[0x9000], 0x800);
@@ -6774,7 +6774,7 @@ void func_080EAD84(u8 a) {
             LoadBgMap(1, &gUnk_09985F44[0x8000], 0x800);
         }
 
-        SetBgScroll(1, 0, -6);
+        SetBgScroll(1, 0, (u16)-6);
     }
 }
 
@@ -7366,16 +7366,16 @@ void func_080EBD00(UnkStruct_02034FE0* w) {
         case 0:
             if (w->unk_180 != 0) {
                 LoadBgMap(1, &gUnk_09985F44[0x3000], 0x800);
-                SetBgScroll(1, 0, -1);
+                SetBgScroll(1, 0, (u16)-1);
             } else {
                 LoadBgMap(1, &gUnk_09985F44[0x2000], 0x800);
-                SetBgScroll(1, 0, -3);
+                SetBgScroll(1, 0, (u16)-3);
             }
             break;
         case 1:
             if (w->unk_180 != 0) {
                 LoadBgMap(1, &gUnk_09985F44[0x3800], 0x800);
-                SetBgScroll(1, 0, -1);
+                SetBgScroll(1, 0, (u16)-1);
             } else {
                 LoadBgMap(1, &gUnk_09985F44[0x2800], 0x800);
                 SetBgScroll(1, 0, 0);
@@ -7383,11 +7383,11 @@ void func_080EBD00(UnkStruct_02034FE0* w) {
             break;
         case 2:
             LoadBgMap(1, &gUnk_09985F44[0x4000], 0x800);
-            SetBgScroll(1, 0, -1);
+            SetBgScroll(1, 0, (u16)-1);
             break;
         case 3:
             LoadBgMap(1, &gUnk_09985F44[0x4800], 0x800);
-            SetBgScroll(1, 0, -1);
+            SetBgScroll(1, 0, (u16)-1);
             break;
         }
     }
@@ -13672,7 +13672,7 @@ void func_080F589C(MapPrzStockWork* w) {
 void func_080F58C4(MapMsgWork* w, void* text) {
     LoadBgTiles(0, &gUnk_099597E4[0x140], 0x140);
     LoadBgMap(0, &gUnk_09985F44[0x800], 0x800);
-    SetBgScroll(0, 0, -46);
+    SetBgScroll(0, 0, (u16)-46);
     LoadPalette(gUnk_09611AB8, &gUnk_050001C0[0x20], 32);
     func_08065ACC(w->unk_004, 48);
     w->unk_184 = func_08065B6C(text, w->unk_004);
