@@ -1680,7 +1680,6 @@ void* AllocObjTiles(u16 size, void* owner);
 void* LoadObjPalette(void* src, s32 size);
 void* LoadObjTiles(void* src, s32 size);
 void* LoadObjTiles(void* src, s32 size);
-void AnimInit(AnimState* a, void* b, void* c);
 void func_080122AC(void* a, s32 b, u16 c, u16 d);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_080121D4(UnkStruct_080E6394* p);

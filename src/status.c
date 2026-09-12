@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "anim.h"
 #include "status.h"
 
 #ifdef VERSION_EU
@@ -342,12 +343,12 @@ void task_status_sora_0(StatusSoraWork* work) {
         work->tiles = AllocObjTiles(0x800, 0);
         work->palette = LoadObjPalette(gUnk_09618118, 0x20);
         func_08002A10(work->tiles, gUnk_0891ED26);
-        AnimInit(&work->anim, (s32)gUnk_09EDF38C, (s32)gUnk_09EDF374);
+        AnimInit(&work->anim, gUnk_09EDF38C, gUnk_09EDF374);
     } else {
         work->tiles = AllocObjTiles(0x500, 0);
         work->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
         func_08002A10(work->tiles, gUnk_088E33C2);
-        AnimInit(&work->anim, (s32)gUnk_09EDEE14, (s32)gUnk_09EDEE08);
+        AnimInit(&work->anim, gUnk_09EDEE14, gUnk_09EDEE08);
     }
     AnimStart(&work->anim, 0, 1);
     work->gfx = AnimGetGfx(&work->anim);
@@ -403,12 +404,12 @@ void task_status_cursor_0(StatusCursorWork* work, s16* arg) {
     work->unk_48 = arg;
     work->tiles = AllocObjTiles(func_08003524(gUnk_09EF68F0, 5), gUnk_097A1C54);
     work->palette = LoadObjPalette(gUnk_0984B1D8, 0x20);
-    AnimInit(&work->anim[0], (s32)gUnk_09EF6904, (s32)gUnk_09EF68F0);
+    AnimInit(&work->anim[0], gUnk_09EF6904, gUnk_09EF68F0);
     AnimStart(&work->anim[0], 0, 1);
     work->gfx[0] = AnimGetGfx(&work->anim[0]);
     work->tiles2 = AllocObjTiles(func_08003524(gUnk_09EF6908, 4), gUnk_097A2394);
     work->palette2 = LoadObjPalette(gUnk_0984B1F8, 0x20);
-    AnimInit(&work->anim[1], (s32)gUnk_09EF691C, (s32)gUnk_09EF6908);
+    AnimInit(&work->anim[1], gUnk_09EF691C, gUnk_09EF6908);
     AnimStart(&work->anim[1], 0, 1);
     work->gfx[1] = AnimGetGfx(&work->anim[1]);
     work->unk_4C = *work->unk_48;

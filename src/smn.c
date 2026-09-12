@@ -1,4 +1,5 @@
 #include "smn.h"
+#include "anim.h"
 #include "macros.h"
 
 void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
@@ -1123,7 +1124,7 @@ void task_smn_tinkeff_0(SmnTinkeffWork* work, SmnBody* args) {
     work->unk_2C = (u16)(GetRandom() % 0xE8) + 0x4C;
     work->tiles = LoadObjTiles(gUnk_088A5D7A, 0x200);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
-    AnimInit(&work->anim, (s32)gUnk_09EDE7E4, (s32)gUnk_09EDE7B4);
+    AnimInit(&work->anim, gUnk_09EDE7E4, gUnk_09EDE7B4);
 
     switch ((u16)(GetRandom() % 3)) {
     case 0:

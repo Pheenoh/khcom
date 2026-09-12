@@ -674,7 +674,6 @@ void func_08002A10(void* a, void* b);
 void func_08003A70(void* a, void* b);
 void* AnimGetGfx(AnimState* a);
 u8 func_08073DA4(MsgFaceWork* p, void* a);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void func_08005244(s32 a, u16 b, u16 c);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_08073294(MsgWinWork* p, void* a);

@@ -280,7 +280,6 @@ void SeedRandom(u32 seed);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void SetBgOverflow(s32 bg, u8 on);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(AnimState* a);
 void* AllocObjTiles(u16 size, void* src);

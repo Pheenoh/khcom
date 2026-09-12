@@ -207,7 +207,6 @@ void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgPriority(s32 bg, u16 priority);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void ApproachValue(s32* value, s32 target, u16 steps);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(AnimState* a);
 u8 AnimIsFinished(AnimState* a);

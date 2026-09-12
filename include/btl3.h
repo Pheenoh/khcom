@@ -248,7 +248,6 @@ u8 CanAllocObjPalette(s32 a);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void ApproachAngle(void* a, u8 b, s32 c);
 u16 AnimGetFrame(AnimState* a);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 void* AnimGetGfx(AnimState* a);
 void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);

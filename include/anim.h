@@ -26,4 +26,6 @@ typedef struct AnimState {
     AnimFrame* frames;
 } AnimState;
 
+void AnimInit(AnimState* anim, void* anims, void* gfxTable);
+
 #endif
