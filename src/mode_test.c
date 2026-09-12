@@ -397,9 +397,9 @@ u8 task_lockon_1(LockonWork* w) {
 
             if (func_0805F588(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->unk_24) {
                 if (o->unk_30 == 3) {
-                    gUnk_02039DC4->unk_00 = o->unk_00;
-                    gUnk_02039DC4->unk_04 = o->unk_04;
-                    gUnk_02039DC4->unk_08 = o->unk_08;
+                    gUnk_02039DC4[0] = o->unk_00;
+                    gUnk_02039DC4[1] = o->unk_04;
+                    gUnk_02039DC4[2] = o->unk_08;
                 }
 
                 w->unk_0C[count++] = o;
@@ -599,8 +599,8 @@ u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d) {
 
 void func_0805F728(s32* x, s32* y) {
     if (gUnk_02039DC4 != 0) {
-        *x = (gUnk_02039DC4->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-        *y = (gUnk_02039DC4->unk_04 >> 8) + (gUnk_02039DC4->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
+        *x = (gUnk_02039DC4[0] >> 8) - (gUnk_02039BA0->unk_00 >> 8);
+        *y = (gUnk_02039DC4[1] >> 8) + (gUnk_02039DC4[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
     } else {
         *x = 0;
         *y = 0;
