@@ -21060,14 +21060,14 @@ void func_08097688(UnkStruct_08096F94* w) {
     }
 
     DrawSprite(w->unk_CE, (u16)w->unk_D0 - 8,
-               **(void***)(w->unk_20->unk_08),
+               *w->unk_20->unk_08,
                w->unk_00, w->unk_04, affine, pal,
                (u16)(w->unk_CC + 1));
 
     if (w->unk_20->unk_1E == 4) {
-        gfx = (*(void***)(w->unk_24->unk_08))[w->unk_E8];
+        gfx = w->unk_24->unk_08[w->unk_E8];
     } else {
-        gfx = (*(void***)(w->unk_24->unk_08))[0];
+        gfx = w->unk_24->unk_08[0];
     }
 
     DrawSprite(w->unk_CE, (u16)w->unk_D0 - 8, gfx,
@@ -21451,12 +21451,12 @@ void func_08098014(u8* work, u8* a) {
     if (a[0] != 255) {
         c = &gUnk_09EE4C80[a[0] * 10];
         b = &gUnk_09EE4BF4[c->unk_1E];
-        *(void**)&work[0x00] = LoadObjTiles(c->unk_00, *(u16*)&c->unk_08[0x10]);
-        *(void**)&work[0x0C] = LoadObjPalette(c->unk_04, *(u16*)&c->unk_08[0x12]);
-        *(void**)&work[0x18] = *(void**)&c->unk_08[0];
+        *(void**)&work[0x00] = LoadObjTiles(c->unk_00, c->unk_18);
+        *(void**)&work[0x0C] = LoadObjPalette(c->unk_04, c->unk_1A);
+        *(void**)&work[0x18] = c->unk_08;
         *(void**)&work[0x04] = LoadObjTiles(b->unk_00, b->unk_14);
         *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
-        *(void**)&work[0x1C] = *(void**)&b->unk_08[0];
+        *(void**)&work[0x1C] = b->unk_08;
         *(s32*)&work[0x08] = 0;
         *(s32*)&work[0x14] = 0;
         return;
@@ -21475,9 +21475,9 @@ void func_08098014(u8* work, u8* a) {
         n = a[1];
     } else {
         b = &gUnk_09EE4BF4[a[1]];
-        *(void**)&work[0x04] = LoadObjTiles(*(void**)&b->unk_08[4], *(u16*)&b->unk_18[0]);
+        *(void**)&work[0x04] = LoadObjTiles(b->unk_0C, *(u16*)&b->unk_18[0]);
         *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
-        *(void**)&work[0x1C] = *(void**)*(void**)&b->unk_08[8];
+        *(void**)&work[0x1C] = *b->unk_10;
         *(s32*)&work[0x08] = 0;
         *(s32*)&work[0x00] = 0;
         *(s32*)&work[0x0C] = 0;
@@ -21613,9 +21613,9 @@ void func_08098014(u8* work, u8* a) {
         n = a[1];
     } else {
         b = &gUnk_09EE4BF4[a[1]];
-        *(void**)&work[0x04] = LoadObjTiles(*(void**)&b->unk_08[4], *(u16*)&b->unk_18[0]);
+        *(void**)&work[0x04] = LoadObjTiles(b->unk_0C, *(u16*)&b->unk_18[0]);
         *(void**)&work[0x10] = LoadObjPalette(b->unk_04, b->unk_16);
-        *(void**)&work[0x1C] = *(void**)*(void**)&b->unk_08[8];
+        *(void**)&work[0x1C] = *b->unk_10;
         *(s32*)&work[0x08] = 0;
         *(s32*)&work[0x00] = 0;
         *(s32*)&work[0x0C] = 0;

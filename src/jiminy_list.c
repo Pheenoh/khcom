@@ -13,8 +13,8 @@ void func_0805A484(void) {
         FreeTextSlots(&gJiminyWork->unk_060[i], 48);
 
         for (j = 0; j < 48; j++) {
-            if (gJiminyWork->unk_060[i].unk_000[j].unk_00 != 0) {
-                gJiminyWork->unk_060[i].unk_000[j].unk_00 = 0;
+            if (gJiminyWork->unk_060[i].unk_000[j].tiles != 0) {
+                gJiminyWork->unk_060[i].unk_000[j].tiles = 0;
             }
         }
     }
@@ -73,7 +73,7 @@ s32 func_0805A574(s32 idx) {
         a = 1;
         b = 1;
 
-        for (i = 0; i < e->unk_08; i++) {
+        for (i = 0; i < (u16)e->unk_08; i++) {
             if (func_0800FF70(e->unk_10[i])) {
                 return 1;
             }
@@ -101,7 +101,7 @@ s32 func_0805A574(s32 idx) {
     c = 1;
     d = 1;
 
-    for (i = 0; i < e->unk_08; i++) {
+    for (i = 0; i < (u16)e->unk_08; i++) {
         switch (func_0805A574(e->unk_0C[i])) {
         case 1:
             return 1;

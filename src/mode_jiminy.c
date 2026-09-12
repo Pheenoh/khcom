@@ -346,7 +346,7 @@ void mode_jiminy_1(void) {
         DisableBg(2);
     }
 
-    for (i = 0; gJiminyWork->unk_060[i].unk_000 != 0; i++) {
+    for (i = 0; gJiminyWork->unk_060[i].unk_000[0].tiles != 0; i++) {
         if (i >= gJiminyWork->unk_C78) {
             break;
         }
@@ -1022,7 +1022,7 @@ void func_0805BAE4(void) {
         break;
     }
     func_080658B8(gJiminyWork->unk_C71);
-    for (i = 0; gJiminyWork->unk_060[i].unk_000 != 0 && i < gJiminyWork->unk_C78; i++) {
+    for (i = 0; gJiminyWork->unk_060[i].unk_000[0].tiles != 0 && i < gJiminyWork->unk_C78; i++) {
         DrawTextSlots(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
             &gJiminyWork->unk_060[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
     }

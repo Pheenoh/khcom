@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
+#include "card_ui_types.h"
+
 #include "card_api.h"
 
 #include "map_api.h"
@@ -24,32 +26,7 @@
 #include "anim.h"
 #include "mode.h"
 #include "m4a.h"
-typedef struct UnkStruct_09EE4C80 {
-    void* unk_00;
-    void* unk_04;
-    void** unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void** unk_14;
-    u16 unk_18;
-    u16 unk_1A;
-    u16 unk_1C;
-    u16 unk_1E;
-    u16 unk_20;
-    u16 unk_22;
-    u16 unk_24;
-    u16 unk_26;
-} UnkStruct_09EE4C80;
 
-typedef struct UnkStruct_09EE4BF4 {
-    void* unk_00;
-    void* unk_04;
-    void** unk_08;
-    u8 unk_0C[0x8];
-    u16 unk_14;
-    u16 unk_16;
-    u8 unk_18[0x4];
-} UnkStruct_09EE4BF4;
 
 extern UnkStruct_09EF9618 gUnk_09EF9618[];
 extern UnkStruct_09EE4C80 gUnk_09EE4C80[];
