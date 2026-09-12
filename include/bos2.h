@@ -2,6 +2,7 @@
 #define GUARD_BOS2_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "game_state.h"
 #include "anim.h"
@@ -850,7 +851,6 @@ void func_08002A10(void* a, void* b);
 void func_080122AC(void* a, u32 b, u16 c, u16 d);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_08012614(void* a, s32 b);
-void ApproachAngle(void* a, u16 b, u16 c);
 void func_080C1A48(JfBorderlineWork* work);
 void func_080062F4(u16 a, s32 b);
 void func_08006238(s32 a, s32 b, s32 c);
@@ -860,7 +860,6 @@ void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 a, s32 b);
 void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 void LoadObjPaletteBank(u16 bank, void* src);
 u8* AllocObjAffineAngle(u8 a, s32 b);
-u16 GetRandom(void);
 s32 __divsi3(s32 a, s32 b);
 void LoadPalette(void* src, void* dst, s32 size);
 void func_080BB924(TmArmWork* work);
@@ -990,7 +989,6 @@ void func_080C3754(DsdMainWork* work);
 void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src);
 void func_080C2BB0(DsdMainWork* work);
 void func_080C2A2C(DsdMainWork* work);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0802F274(s32 a, s32 b);
 void func_08014020(s32 x, s32 y, s32 z);
 u8 MosaicIsActive(void);

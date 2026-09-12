@@ -2,6 +2,7 @@
 #define GUARD_ROOM_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "anim.h"
 #include "text_types.h"
@@ -200,8 +201,6 @@ void func_080C6894(CharaObjParam* param);
 u8 func_080C69B4(void);
 void func_0801B008(void);
 
-u16 GetRandom(void);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
 void m4aSongNumStart(u16 a);

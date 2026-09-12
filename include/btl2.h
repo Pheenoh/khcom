@@ -2,6 +2,7 @@
 #define GUARD_BTL2_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "m4a.h"
@@ -231,9 +232,7 @@ s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void func_080063C4(u8 a);
-void ApproachValue(s32* value, s32 target, u16 steps);
 u8 GetKeyReleaseTime(s32 a);
-u16 GetRandom(void);
 u16 func_0801AF1C(s32 a);
 u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
 u8 GetAngle(s32 a, s32 b, s32 c, s32 d);

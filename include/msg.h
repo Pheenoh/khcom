@@ -2,6 +2,7 @@
 #define GUARD_MSG_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -673,7 +674,6 @@ u8 func_0806FA84(Work0806180C* p, void* a);
 u8 func_0806FDB0(Work0806180C* p, void* a);
 u8 func_0806FC28(Work0806180C* p, void* a);
 u8 func_0806FAB8(Work0806180C* p, void* a);
-u16 GetRandom(void);
 u8 func_0806E570(Work0806180C* p);
 void func_0806E7A8(Work0806180C* p);
 s32 func_08070AD4(Work0806180C* p);
@@ -715,7 +715,6 @@ void func_08072A64(Actor0806180C* a, u8 kind, u8 flag);
 u16 func_0806BA74(s32 mode, s32 flag);
 void func_0806BA0C(s16 v, u8* out);
 void func_0806C2C0(u8 n);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08074D00(Work08074DC4* p);
 void func_08074D14(Work08074DC4* a);
 u8 func_08074E40(Work08074DC4* p);

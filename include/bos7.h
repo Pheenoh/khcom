@@ -2,6 +2,7 @@
 #define GUARD_BOS7_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "key.h"
@@ -583,8 +584,6 @@ s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 s32 abs(s32 x);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 a, void* b);
-void func_0800592C(s32* value, s32 target, u16 steps);
-u16 GetRandom(void);
 void m4aSongNumStart(u16 id);
 s32 AllocObjAffineAngle(s32 a, s32 b);
 

@@ -2,6 +2,7 @@
 #define GUARD_MODE_MAPINSPECT_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "text_types.h"
 #include "ms_types.h"
 #include "main.h"
@@ -81,7 +82,6 @@ void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 void func_08065AE0(TextSlot* p, s32 n);
 void UpdatePlayTime(void);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);

@@ -2,6 +2,7 @@
 #define GUARD_MODE_JIMINY_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "game_state.h"
 #include "text_types.h"
 #include "jiminy_types.h"
@@ -206,7 +207,6 @@ void SetBlendAlpha(u16 a, u16 b);
 void UpdatePlayTime(void);
 s32 abs(s32 x);
 void SetModeUpdate(void (*fn)(void));
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08006184(s32 a, u16 b);
 u16 func_08006390(void);
 void func_080063A8(void);

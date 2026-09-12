@@ -2,6 +2,7 @@
 #define GUARD_BTL_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -326,7 +327,6 @@ void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_0801D288(void);
 u8 func_0801CA00(UnkStruct_0801AF08* p);
 extern u32 gFrameCounter;
-u16 GetRandom(void);
 void m4aSongNumStart(u16 id);
 void m4aSongNumStop(u16 id);
 u8 CanLevelUp(void);
@@ -395,7 +395,6 @@ void func_08018FE4(s32 x, s32 y, s32 z);
 void func_080184C4(s32 x, s32 y, s32 z, u8 f);
 void func_08019A30(void);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08015DC8(s32 x, s32 y, s32 z);
 extern TaskDesc gTaskDescSmnKing;
 void func_08015D30(s32 x, s32 y, s32 z);
@@ -439,7 +438,6 @@ typedef struct BtlMapWork {
 } BtlMapWork;
 
 extern const s8 gUnk_0813C7D8[];
-void func_0800592C(s32* p, s32 target, u16 steps);
 void SetBgSize(s32 bg, s32 size);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);

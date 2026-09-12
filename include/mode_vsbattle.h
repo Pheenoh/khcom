@@ -2,6 +2,7 @@
 #define GUARD_MODE_VSBATTLE_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
@@ -157,7 +158,6 @@ extern TaskDesc gTaskDescBtlMap;
 extern TaskDesc gTaskDescBtlShadow;
 extern TaskDesc gTaskDescBtlBadstatus;
 
-void SeedRandom(u32 seed);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgPriority(s32 bg, u16 priority);
 void SetBgOverflow(s32 bg, u8 on);
@@ -168,14 +168,11 @@ void ReleaseObjPalette(u8* p);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-void ApproachValue(s32* value, s32 target, u16 steps);
-u16 GetRandom(void);
 void SetBgMode2(void);
 void func_080063A8(void);
 void func_08006238(s32 a, s32 b, s32 c);
 u8 func_08006314(void);
 void func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
-void func_0800592C(s32* value, s32 target, u16 steps);
 void func_08006120(s32 a, s32 b);
 void func_08010CC8(void);
 void func_0801071C(void);

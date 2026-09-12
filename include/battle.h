@@ -2,6 +2,7 @@
 #define GUARD_BATTLE_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -415,7 +416,6 @@ void func_080065FC(s32 a, s32 b, s32 c);
 void func_080066F4(s16 x, s16 y);
 u8 func_080ABED0(void);
 void func_08006954(void);
-void ApproachAngle(u16* p, u16 target, u16 step);
 void* memcpy(void* dst, const void* src, unsigned long n);
 void func_080C6FF8(void);
 void func_080DDEA4(void);

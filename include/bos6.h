@@ -2,6 +2,7 @@
 #define GUARD_BOS6_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "taskpool.h"
@@ -482,7 +483,6 @@ u8 func_0810D304(BosLstWork* work, s32 idx);
 
 extern s32 gUnk_09A4D154[];
 
-u16 GetRandom(void);
 void _0801C1F8(s32 a, s32 b, s32 c, s32 d);
 void func_0801BCD4(void* a);
 
@@ -572,7 +572,6 @@ extern u8 gUnk_09D4B274[];
 void task_bos_lst_0(BosLstWork* work, void* pool);
 u16 func_08003524(void* a, s32 b);
 void func_0801C7FC(void* a, s32 b, s32 c);
-void func_0800592C(s32* value, s32 target, u16 steps);
 void func_0810FF6C(Task* t, s32 a);
 void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
 u8 task_bos_lst_1(BosLstWork* work);

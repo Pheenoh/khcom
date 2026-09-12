@@ -2,6 +2,7 @@
 #define GUARD_CHARA_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "game_state.h"
 #include "taskpool.h"
 #include "gba/syscall.h"
@@ -221,8 +222,6 @@ void SioKeyStateUpdateA(u16 a);
 void SioKeyStateUpdateB(u16 a);
 u16* func_08083C94(void);
 u16* func_08083D7C(void);
-u16 GetRandom(void);
-void SeedRandom(u32 seed);
 void func_080078A4(void);
 void SioReset(void);
 void func_08083D68(void);

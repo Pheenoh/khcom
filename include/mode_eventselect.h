@@ -2,6 +2,7 @@
 #define GUARD_MODE_EVENTSELECT_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "key.h"
 #include "taskpool.h"
@@ -184,7 +185,6 @@ void func_080062F4(u16 a, s32 b);
 void* AllocObjTiles(s32 a, void* b);
 void func_08002A10(void* a, u32 b);
 u8 func_08006314(void);
-u16 GetRandom(void);
 void* func_080038C8(u16 a);
 void func_080038E4(void* a, void* b, u32 c);
 u16 func_080787B8(CardBattleWork* w, u8 n);

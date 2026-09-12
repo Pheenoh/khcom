@@ -2,6 +2,7 @@
 #define GUARD_BTL3_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -144,7 +145,6 @@ extern u8 gUnk_096FAC64[];
 extern u8 gUnk_09EDF124[];
 extern u8 gUnk_09EDF154[];
 
-u16 GetRandom(void);
 void m4aSongNumStart(u16 song);
 void* AllocObjTiles(s32 a, s32 b);
 void* LoadObjTiles(void* src, s32 size);
@@ -155,8 +155,6 @@ s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u8 CanAllocObjTiles(u16 a);
 u8 CanAllocObjPalette(s32 a);
-void ApproachValue(s32* value, s32 target, u16 steps);
-void ApproachAngle(void* a, u8 b, s32 c);
 void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);
 void func_08002A10(void* a, void* b);
 void func_08006B4C(void);

@@ -2,6 +2,7 @@
 #define GUARD_MODE_MS_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "game_state.h"
 #include "text_types.h"
 #include "key.h"
@@ -139,7 +140,6 @@ void func_08103D54(s16 a);
 void func_08103D7C(void);
 void func_08103DE8(void);
 
-u16 GetRandom(void);
 void* GetBgScreenBase(s32 bg);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
@@ -148,7 +148,6 @@ u8 RequestDma3Copy(void* src, void* dst, u16 size);
 void LoadPalette(void* src, void* dst, s32 size);
 u16 func_08065B6C(u16* a, TextSlot* b);
 void LoadObjPaletteBank(u16 bank, void* src);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0800FDD0(s32 a);
 u8 func_080A42C8(void);
 void func_080A4234(void* pool, u32 a, u16 b);

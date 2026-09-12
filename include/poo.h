@@ -2,6 +2,7 @@
 #define GUARD_POO_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "game_state.h"
 #include "anim.h"
@@ -1325,7 +1326,6 @@ u8 func_080CA4E8(s16 x, s16 y, s16 h, s16 vy, s16 w, s16 vx, s32* ox, s32* oy);
 u8 IsTaskActive(Task* t);
 u16 func_080C7BF8(u8 kind, u8 count, s32 x, s32 y, s32 z);
 void func_080CE710(PooTiggerWork* w, u16 b);
-void func_0800592C(s32* a, s32 b, u16 c);
 u8 task_poo_tiggerroo_1(PooTiggerWork* w);
 void task_poo_tiggerroo_2(PooTiggerWork* w);
 s32 func_080CFEA0(PooPos* p);
@@ -1349,7 +1349,6 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w);
 void task_poo_honeycomb_0(PooHoneycombWork* w);
 void task_poo_spark_2(PooSparkWork* w);
 s32 func_080CCBF8(PooNode* n);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void m4aSongNumStart(u16 n);
 u16 func_080C9EAC(void* pool, u16 b);
 u8 func_080CA3A0(PooPos* p);
@@ -1436,7 +1435,6 @@ void task_poo_tiggerroo_3(PooTiggerWork* w);
 void task_poo_trapballoon_3(PooBalloonWork* w);
 void task_poo_owlballoon_3(PooOwlBalloonWork* w);
 u8 func_080DDDEC(void* p, void* q, u8 c);
-u16 GetRandom(void);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_08005974(void* a, u16 b, u16 c, void* d, void* e);
 void func_08002A10(void* a, void* b);
@@ -1588,7 +1586,6 @@ void func_080D0050(s32* a, s32* b);
 u8 func_080D1738(void);
 s32 func_080C8404(PooPos* a, PooActor* b);
 u8 func_080C83C4(u16 a, u16 b, u16 c, u16 d);
-void ApproachAngle(u16* p, u16 target, u16 step);
 void func_0802F1E8(void);
 void task_poo_cabbageAfterEvent_0(PooCabbageAfterEventWork* w);
 u16 func_080D172C(void);
