@@ -17,7 +17,7 @@ extern void* gUnkEu_09F84F5C[];
 #define LANGSEL(x) (x)
 #endif
 
-UnkStruct_020358C8 gUnk_020358C8[5];
+MooglePackCardWork gUnk_020358C8[5];
 struct ObjPalette* gUnk_02035A30;
 struct ObjTiles* gUnk_02035A34;
 struct ObjPalette* gUnk_02035A38;
@@ -572,10 +572,10 @@ void func_08102984(s16 a) {
         if (gUnk_02035B18[a][j][0] >= 0) {
             LoadDecimalDigitTiles(gUnk_09993760[gUnk_02035B08[a]][gUnk_02035B18[a][j][1]], gUnk_09A18EBC,
                 (u8*)GetBgCharBase(2) + (j * 0xC0 + 0xC0), 0x40, 3);
-            func_081028F8(12, 8, LANGSTR(gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_00),
-                gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_04,
-                gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_06, gUnk_02035C00,
-                gUnk_099931E4[j].unk_12, gUnk_099931E4[j].unk_14);
+            func_081028F8(12, 8, LANGSTR(gUnk_099931E4[j].packTilemaps[gUnk_02035B08[a]].tilemap),
+                gUnk_099931E4[j].packTilemaps[gUnk_02035B08[a]].srcX,
+                gUnk_099931E4[j].packTilemaps[gUnk_02035B08[a]].srcY, gUnk_02035C00,
+                gUnk_099931E4[j].tilemapX, gUnk_099931E4[j].tilemapY);
         }
     }
 
@@ -598,12 +598,12 @@ void func_08102AB4(s16 x, s16 y) {
         id = gUnk_02035B58[i];
 
         if (id & 0x8000) {
-            gUnk_020358C8[i].unk_46 = 1;
+            gUnk_020358C8[i].premium = 1;
         } else {
-            gUnk_020358C8[i].unk_46 = 0;
+            gUnk_020358C8[i].premium = 0;
         }
 
-        gUnk_020358C8[i].unk_47 = 0;
+        gUnk_020358C8[i].revealed = 0;
         id &= 0xFFF;
         gUnk_020358C8[i].palette = LoadObjPalette(gCardDefs[id].unk_08, 0x20);
         FadeSetPaletteExcluded(gUnk_020358C8[i].palette->unk_06 + 0x10, 1);
@@ -612,15 +612,15 @@ void func_08102AB4(s16 x, s16 y) {
         gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09A3DB1C + gCardDefs[id].unk_2A * 32, 0x20);
         FadeSetPaletteExcluded(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
         gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_099A4B9A, 0x1D80);
-        gUnk_020358C8[i].unk_14 = 0;
+        gUnk_020358C8[i].backSprite = 0;
         AnimInit(&gUnk_020358C8[i].anim, gUnk_09EF9A48, gUnk_09EF9A20);
         AnimStart(&gUnk_020358C8[i].anim, 0, 1);
         gUnk_020358C8[i].x = x << 8;
         gUnk_020358C8[i].y = y << 8;
-        gUnk_020358C8[i].unk_34 = 2;
-        gUnk_020358C8[i].unk_30 = 0;
-        gUnk_020358C8[i].unk_38 = 0;
-        gUnk_020358C8[i].unk_44 = 0;
+        gUnk_020358C8[i].scale = 2;
+        gUnk_020358C8[i].flipAngle = 0;
+        gUnk_020358C8[i].state = 0;
+        gUnk_020358C8[i].timer = 0;
     }
 
     gUnk_02035A30 = LoadObjPalette(gUnk_09611AB8, 0x20);
@@ -650,7 +650,7 @@ void func_08102AB4(s16 x, s16 y) {
         TaskPoolInit(&gUnk_02035A70[i], 8);
     }
 
-    gUnk_020358C8[0].unk_44 = 15;
+    gUnk_020358C8[0].timer = 15;
 }
 
 void func_08102DC8(void) {
@@ -697,23 +697,23 @@ void func_08102F30(void) {
     anim = AnimUpdate(&gUnk_02035A58);
 
     for (i = 0; i < 5; i++) {
-        if (gUnk_020358C8[i].unk_47 == 0) {
-            v = gUnk_020358C8[i].unk_34;
+        if (gUnk_020358C8[i].revealed == 0) {
+            v = gUnk_020358C8[i].scale;
             affine = AllocObjAffine(0, v, v, 0);
             obj = AnimUpdate(&gUnk_020358C8[i].anim);
         } else {
-            v = gUnk_020358C8[i].unk_34 * -gSineTable[(gUnk_020358C8[i].unk_30 & 0xFF) + 0x40] >> 8;
-            affine = AllocObjAffine(0, v, gUnk_020358C8[i].unk_34, 0);
-            obj = gUnk_020358C8[i].unk_14;
+            v = gUnk_020358C8[i].scale * -gSineTable[(gUnk_020358C8[i].flipAngle & 0xFF) + 0x40] >> 8;
+            affine = AllocObjAffine(0, v, gUnk_020358C8[i].scale, 0);
+            obj = gUnk_020358C8[i].backSprite;
         }
 
         if (v != 0) {
             DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, obj, gUnk_020358C8[i].tiles2, gUnk_020358C8[i].palette2, affine, 0, 0x50);
 
-            if (gUnk_020358C8[i].unk_47 != 0) {
+            if (gUnk_020358C8[i].revealed != 0) {
                 DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, gUnk_020358C8[i].gfx, gUnk_020358C8[i].tiles, gUnk_020358C8[i].palette, affine, 0, 0x58);
 
-                if (gUnk_020358C8[i].unk_46 != 0) {
+                if (gUnk_020358C8[i].premium != 0) {
                     DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, gUnk_09EE9894[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_20], gUnk_02035A3C, gUnk_02035A38, affine, 0, 0x48);
                     DrawSprite(gUnk_020358C8[i].x >> 8, gUnk_020358C8[i].y >> 8, anim, gUnk_02035A54, gUnk_02035A30, affine, 0, 0x40);
                 } else {
@@ -722,7 +722,7 @@ void func_08102F30(void) {
             }
         }
 
-        if (gUnk_020358C8[i].unk_38 == 9) {
+        if (gUnk_020358C8[i].state == 9) {
             DrawTextSlots(0x30, 0x63, gUnk_02035A44, gUnk_02035A40, 0, gUnk_02035A48);
             DrawTextSlots(0x31, 0x72, gUnk_02035A4C, gUnk_02035AE0, 0, gUnk_02035A50);
             ApproachValueHalf(&gUnk_02035AD4, gUnk_020358C8[gUnk_02035B62].x - 0x1000);
@@ -754,118 +754,118 @@ u8 func_0810329C(u16 a) {
     result = 1;
 
     for (i = 0; i < 5; i++) {
-        switch (gUnk_020358C8[i].unk_38) {
+        switch (gUnk_020358C8[i].state) {
         case 0:
             if (FadeIsActive() == 0) {
-                if (gUnk_020358C8[i].unk_44 != 0) {
-                    gUnk_020358C8[i].unk_38 = 1;
+                if (gUnk_020358C8[i].timer != 0) {
+                    gUnk_020358C8[i].state = 1;
                 }
             }
 
             break;
         case 1:
-            ApproachValue(&gUnk_020358C8[i].x, i * 10240 + 0x2800, gUnk_020358C8[i].unk_44);
-            ApproachValue(&gUnk_020358C8[i].y, 0x6400, gUnk_020358C8[i].unk_44);
-            ApproachValue(&gUnk_020358C8[i].unk_34, 0x100, gUnk_020358C8[i].unk_44);
+            ApproachValue(&gUnk_020358C8[i].x, i * 10240 + 0x2800, gUnk_020358C8[i].timer);
+            ApproachValue(&gUnk_020358C8[i].y, 0x6400, gUnk_020358C8[i].timer);
+            ApproachValue(&gUnk_020358C8[i].scale, 0x100, gUnk_020358C8[i].timer);
 
-            if (--gUnk_020358C8[i].unk_44 == 0) {
-                if (gUnk_020358C8[i].unk_46 != 0) {
-                    gUnk_020358C8[i].unk_38 = 5;
+            if (--gUnk_020358C8[i].timer == 0) {
+                if (gUnk_020358C8[i].premium != 0) {
+                    gUnk_020358C8[i].state = 5;
                 } else {
-                    gUnk_020358C8[i].unk_38 = 2;
+                    gUnk_020358C8[i].state = 2;
                 }
                 if (i <= 3) {
-                    gUnk_020358C8[i + 1].unk_44 = 15;
+                    gUnk_020358C8[i + 1].timer = 15;
                 } else {
                     for (j = 0; j < 5; j++) {
-                        if (gUnk_020358C8[j].unk_38 == 2) {
-                            gUnk_020358C8[j].unk_44 = 8;
+                        if (gUnk_020358C8[j].state == 2) {
+                            gUnk_020358C8[j].timer = 8;
                             break;
                         }
                     }
                     if (j == 5) {
-                        gUnk_020358C8[0].unk_44 = 8;
+                        gUnk_020358C8[0].timer = 8;
                     }
                 }
             }
 
             break;
         case 2:
-            if (gUnk_020358C8[i].unk_44 != 0) {
+            if (gUnk_020358C8[i].timer != 0) {
                 if (AnimGetFrame(&gUnk_020358C8[i].anim) == 3 || AnimGetFrame(&gUnk_020358C8[i].anim) == 8) {
                     ReleaseObjPalette(gUnk_020358C8[i].palette2);
                     ReleaseObjTiles(gUnk_020358C8[i].tiles2);
                     gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09611AB8, 0x20);
                     FadeSetPaletteExcluded(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
                     gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
-                    gUnk_020358C8[i].unk_14 = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_00;
-                    gUnk_020358C8[i].unk_30 = 0x40;
-                    gUnk_020358C8[i].unk_38 = 3;
-                    gUnk_020358C8[i].unk_47 = 1;
+                    gUnk_020358C8[i].backSprite = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_00;
+                    gUnk_020358C8[i].flipAngle = 0x40;
+                    gUnk_020358C8[i].state = 3;
+                    gUnk_020358C8[i].revealed = 1;
                 }
             }
             break;
         case 3:
-            d = 0x80 - gUnk_020358C8[i].unk_30;
-            gUnk_020358C8[i].unk_30 += d / gUnk_020358C8[i].unk_44;
+            d = 0x80 - gUnk_020358C8[i].flipAngle;
+            gUnk_020358C8[i].flipAngle += d / gUnk_020358C8[i].timer;
 
-            if (--gUnk_020358C8[i].unk_44 == 0) {
-                gUnk_020358C8[i].unk_44 = 5;
-                gUnk_020358C8[i].unk_38 = 4;
+            if (--gUnk_020358C8[i].timer == 0) {
+                gUnk_020358C8[i].timer = 5;
+                gUnk_020358C8[i].state = 4;
             }
 
             break;
         case 4:
-            ApproachValue(&gUnk_020358C8[i].y, 0x4600, gUnk_020358C8[i].unk_44);
+            ApproachValue(&gUnk_020358C8[i].y, 0x4600, gUnk_020358C8[i].timer);
 
-            if (--gUnk_020358C8[i].unk_44 == 0) {
+            if (--gUnk_020358C8[i].timer == 0) {
                 m4aSongNumStart(0xD2);
-                gUnk_020358C8[i].unk_38 = 8;
+                gUnk_020358C8[i].state = 8;
 
                 for (j = 0; j < 5; j++) {
-                    if (gUnk_020358C8[j].unk_38 == 2) {
-                        gUnk_020358C8[j].unk_44 = 8;
+                    if (gUnk_020358C8[j].state == 2) {
+                        gUnk_020358C8[j].timer = 8;
                         break;
                     }
                 }
 
                 if (j == 5) {
                     for (j = 0; j < 5; j++) {
-                        if (gUnk_020358C8[j].unk_38 == 5) {
-                            gUnk_020358C8[j].unk_44 = 8;
+                        if (gUnk_020358C8[j].state == 5) {
+                            gUnk_020358C8[j].timer = 8;
                             break;
                         }
                     }
                     if (j == 5) {
-                        gUnk_020358C8[0].unk_44 = 60;
+                        gUnk_020358C8[0].timer = 60;
                     }
                 }
             }
 
             break;
         case 5:
-            if (gUnk_020358C8[i].unk_44 != 0) {
+            if (gUnk_020358C8[i].timer != 0) {
                 if (AnimGetFrame(&gUnk_020358C8[i].anim) == 3 || AnimGetFrame(&gUnk_020358C8[i].anim) == 8) {
                     ReleaseObjPalette(gUnk_020358C8[i].palette2);
                     ReleaseObjTiles(gUnk_020358C8[i].tiles2);
                     gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09611AB8, 0x20);
                     FadeSetPaletteExcluded(gUnk_020358C8[i].palette2->unk_06 + 0x10, 1);
                     gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_0C, 0x300);
-                    gUnk_020358C8[i].unk_14 = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_00;
-                    gUnk_020358C8[i].unk_30 = 0x40;
-                    gUnk_020358C8[i].unk_38 = 6;
-                    gUnk_020358C8[i].unk_47 = 1;
+                    gUnk_020358C8[i].backSprite = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].unk_00;
+                    gUnk_020358C8[i].flipAngle = 0x40;
+                    gUnk_020358C8[i].state = 6;
+                    gUnk_020358C8[i].revealed = 1;
                 }
             }
 
             break;
         case 6:
-            d = 0x80 - gUnk_020358C8[i].unk_30;
-            gUnk_020358C8[i].unk_30 += d / gUnk_020358C8[i].unk_44;
+            d = 0x80 - gUnk_020358C8[i].flipAngle;
+            gUnk_020358C8[i].flipAngle += d / gUnk_020358C8[i].timer;
 
-            if (--gUnk_020358C8[i].unk_44 == 0) {
-                gUnk_020358C8[i].unk_44 = 5;
-                gUnk_020358C8[i].unk_38 = 7;
+            if (--gUnk_020358C8[i].timer == 0) {
+                gUnk_020358C8[i].timer = 5;
+                gUnk_020358C8[i].state = 7;
 
                 for (k = 0; k < 8; k++) {
                     arg0.x = gUnk_020358C8[i].x >> 8;
@@ -879,7 +879,7 @@ u8 func_0810329C(u16 a) {
 
             break;
         case 7:
-            ApproachValue(&gUnk_020358C8[i].y, 0x4600, gUnk_020358C8[i].unk_44);
+            ApproachValue(&gUnk_020358C8[i].y, 0x4600, gUnk_020358C8[i].timer);
             f = gFrameCounter & 0x1F;
             if (f == 0) {
                 arg0.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
@@ -890,24 +890,24 @@ u8 func_0810329C(u16 a) {
                 TaskCreate(&gUnk_02035A70[i], gTaskDescMsShopHosi, &arg0);
             }
 
-            if (--gUnk_020358C8[i].unk_44 == 0) {
+            if (--gUnk_020358C8[i].timer == 0) {
                 m4aSongNumStart(0xD2);
-                gUnk_020358C8[i].unk_38 = 8;
+                gUnk_020358C8[i].state = 8;
 
                 for (j = 0; j < 5; j++) {
-                    if (gUnk_020358C8[j].unk_38 == 5) {
-                        gUnk_020358C8[j].unk_44 = 8;
+                    if (gUnk_020358C8[j].state == 5) {
+                        gUnk_020358C8[j].timer = 8;
                         break;
                     }
                 }
                 if (j == 5) {
-                    gUnk_020358C8[0].unk_44 = 60;
+                    gUnk_020358C8[0].timer = 60;
                 }
             }
 
             break;
         case 8:
-            if (gUnk_020358C8[i].unk_46 != 0) {
+            if (gUnk_020358C8[i].premium != 0) {
                 g = gFrameCounter & 0x1F;
                 if (g == 0) {
                     arg1.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
@@ -919,8 +919,8 @@ u8 func_0810329C(u16 a) {
                 }
             }
 
-            if (gUnk_020358C8[i].unk_44 != 0) {
-                if (--gUnk_020358C8[i].unk_44 == 0) {
+            if (gUnk_020358C8[i].timer != 0) {
+                if (--gUnk_020358C8[i].timer == 0) {
                     if (a & 1) {
                         SetupBg(3, 0, 31, 0);
                         SetBgScroll(3, 0, 0);
@@ -936,13 +936,13 @@ u8 func_0810329C(u16 a) {
                     gUnk_02035A50 = LoadTextSlots(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                     LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                     EnableBg(3);
-                    gUnk_020358C8[i].unk_38 = 9;
+                    gUnk_020358C8[i].state = 9;
                 }
             }
 
             break;
         case 9:
-            if (gUnk_020358C8[i].unk_46 != 0) {
+            if (gUnk_020358C8[i].premium != 0) {
                 h = gFrameCounter & 0x1F;
                 if (h == 0) {
                     arg2.x = (gUnk_020358C8[i].x >> 8) + GetRandom() % 32 - 16;
@@ -1002,7 +1002,7 @@ void func_08103CD8(s16 a) {
 }
 
 void func_08103D54(s16 a) {
-    LoadBgMap(1, gUnk_099931E4[a].unk_0C, gUnk_099931E4[a].unk_10);
+    LoadBgMap(1, gUnk_099931E4[a].selectionTilemap, gUnk_099931E4[a].selectionTilemapSize);
 }
 
 void func_08103D7C(void) {
@@ -1123,8 +1123,8 @@ void func_08103F94(s16 a, s16 b) {
     u16 rnd;
     u16 acc;
     u16 id;
-    UnkStruct_099935A8_00** list;
-    UnkStruct_099935A8_00* e;
+    MooglePackCardDef** list;
+    MooglePackCardDef* e;
     s16 n;
 
     id = 0;
@@ -1141,19 +1141,19 @@ void func_08103F94(s16 a, s16 b) {
     cnt = 0;
 
     for (j = lo; j < hi; j++) {
-        cnt += gUnk_099935A8[j].unk_04;
+        cnt += gUnk_099935A8[j].count;
     }
 
     list = EwramAlloc(cnt * 4);
     k = 0;
 
     for (j = lo; j < hi; j++) {
-        e = gUnk_099935A8[j].unk_00;
-        n = gUnk_099935A8[j].unk_04;
+        e = gUnk_099935A8[j].cards;
+        n = gUnk_099935A8[j].count;
 
         for (m = 0; m < n; m++) {
-            if (e[m].unk_08[b] != 0) {
-                total += e[m].unk_08[b];
+            if (e[m].weights[b] != 0) {
+                total += e[m].weights[b];
                 list[k] = &e[m];
                 k++;
             }
@@ -1165,13 +1165,13 @@ void func_08103F94(s16 a, s16 b) {
         acc = 0;
 
         for (m = 0; m < k; m++) {
-            acc += list[m]->unk_08[b];
+            acc += list[m]->weights[b];
 
             if (rnd < acc) {
                 if (func_0800FC5C(list[m]->unk_04) != 0) {
-                    id = list[m]->unk_00;
+                    id = list[m]->cardId;
                 } else {
-                    switch (gCardDefs[list[m]->unk_00].unk_2A) {
+                    switch (gCardDefs[list[m]->cardId].unk_2A) {
                     case 0:
                         id = 0;
                         break;
@@ -1236,13 +1236,13 @@ void func_081041B4(void) {
         gUnk_02035C0C = 0;
         gUnk_02035B02 = 5;
     } else if (keys & DPAD_UP) {
-        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].unk_00;
+        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].upEntry;
     } else if (keys & DPAD_DOWN) {
-        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].unk_02;
+        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].downEntry;
     } else if (keys & DPAD_LEFT) {
-        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].unk_04;
+        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].leftEntry;
     } else if (keys & DPAD_RIGHT) {
-        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].unk_06;
+        gUnk_02035B10 = gUnk_099931E4[gUnk_02035B10].rightEntry;
     }
 
     if (gUnk_02035B10 == -1) {
@@ -1275,8 +1275,8 @@ void func_08104404(void) {
         }
         break;
     case 3:
-        ApproachValueHalf(&gUnk_02035C04, gUnk_099931E4[gUnk_02035B10].unk_08 << 8);
-        ApproachValueHalf(&gUnk_02035C08, gUnk_099931E4[gUnk_02035B10].unk_0A << 8);
+        ApproachValueHalf(&gUnk_02035C04, gUnk_099931E4[gUnk_02035B10].cursorX << 8);
+        ApproachValueHalf(&gUnk_02035C08, gUnk_099931E4[gUnk_02035B10].cursorY << 8);
         DrawSprite(gUnk_02035C04 >> 8, gUnk_02035C08 >> 8, AnimUpdate(&gUnk_02035BB8), gUnk_02035BAC, gUnk_02035BB0, 0, 0x400, 0x3E8);
         break;
     case 4:
@@ -1287,7 +1287,7 @@ void func_08104404(void) {
     for (i = 0; i < 4; i++) {
         if (gUnk_02035B18[gUnk_02035B04][i][0] >= 0) {
             v = gUnk_02035B18[gUnk_02035B04][i][1];
-            DrawSprite(gUnk_099931E4[i].unk_16 + gUnk_099932D4[v].unk_14, gUnk_099931E4[i].unk_18 + gUnk_099932D4[v].unk_16, gUnk_02035BF0[v], gUnk_02035BD0[v], gUnk_02035BE0[v], 0, 0x400, 0x3F2);
+            DrawSprite(gUnk_099931E4[i].spriteX + gUnk_099932D4[v].xOffset, gUnk_099931E4[i].spriteY + gUnk_099932D4[v].yOffset, gUnk_02035BF0[v], gUnk_02035BD0[v], gUnk_02035BE0[v], 0, 0x400, 0x3F2);
         }
     }
 }
@@ -1337,9 +1337,9 @@ void mode_ms_shop_0(void) {
     AnimStart(&gUnk_02035BB8, 0, 1);
 
     for (i = 0; i < 4; i++) {
-        gUnk_02035BE0[i] = LoadObjPalette(gUnk_099932D4[i].unk_00, gUnk_099932D4[i].unk_04);
-        gUnk_02035BD0[i] = LoadObjTiles(gUnk_099932D4[i].unk_08, gUnk_099932D4[i].unk_0C);
-        gUnk_02035BF0[i] = gUnk_099932D4[i].unk_10;
+        gUnk_02035BE0[i] = LoadObjPalette(gUnk_099932D4[i].palette, gUnk_099932D4[i].paletteSize);
+        gUnk_02035BD0[i] = LoadObjTiles(gUnk_099932D4[i].tiles, gUnk_099932D4[i].tilesSize);
+        gUnk_02035BF0[i] = gUnk_099932D4[i].sprite;
     }
 
     EnableBg(0);
