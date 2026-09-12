@@ -944,25 +944,7 @@ typedef struct UnkStruct_08078754 {
 
 typedef char UnkStruct_08078754_sizechk[(sizeof(struct UnkStruct_08078754) == 0xCC) ? 1 : -1];
 
-typedef struct UnkStruct_09EE4C80 {
-    void* unk_00;
-    void* unk_04;
-    u8 unk_08[0x16];
-    u8 unk_1E;
-    u8 unk_1F;
-    u16 unk_20;
-    u16 unk_22;
-    s32 unk_24;
-} UnkStruct_09EE4C80;
 
-typedef struct UnkStruct_09EE4BF4 {
-    void* unk_00;
-    void* unk_04;
-    u8 unk_08[0x0C];
-    u16 unk_14;
-    u16 unk_16;
-    u8 unk_18[0x04];
-} UnkStruct_09EE4BF4;
 
 extern UnkStruct_09EE4C80 gUnk_09EE4C80[];
 extern UnkStruct_09EE4BF4 gUnk_09EE4BF4[];

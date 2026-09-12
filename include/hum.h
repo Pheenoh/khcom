@@ -459,92 +459,9 @@ typedef struct LexRockWork {
     u8 unk_2C1[0x03];
 } LexRockWork;
 
-typedef struct JiminyEntry {
-    void* unk_00;
-    void* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16* unk_0C;
-    u16* unk_10;
-    void* unk_14;
-} JiminyEntry;
 
-typedef struct JiminyCell {
-    s32 unk_00;
-    s32 unk_04;
-} JiminyCell;
 
-typedef struct JiminyLine {
-    JiminyCell unk_000[48];
-} JiminyLine;
 
-typedef struct JiminyWork {
-    s32 unk_000;
-    void* tiles;
-    void* palette;
-    void* tiles2;
-    void* palette2;
-    void* palette3;
-    void* tiles3;
-    void* palette4;
-    void* tiles4;
-    void* palette5;
-    void* tiles5;
-    void* palette6;
-    void* tiles6;
-    void* palette7;
-    void* tiles7;
-    void* palette8;
-    void* tiles8;
-    void* palette9;
-    s16 unk_048;
-    s16 unk_04A;
-    s32 unk_04C;
-    s32 unk_050;
-    s32 unk_054;
-    s32 unk_058;
-    s32 unk_05C;
-    JiminyLine unk_060[8];
-    u8 unk_C60[8];
-    u8 unk_C68[8];
-    u8 unk_C70;
-    u8 unk_C71;
-    s16 unk_C72;
-    s16 unk_C74;
-    s16 unk_C76;
-    s16 unk_C78;
-    u8 unk_C7A[0x02];
-    AnimState unk_C7C;
-    AnimState unk_C94;
-    u16 unk_CAC;
-    s16 unk_CAE;
-    s16 unk_CB0;
-    s16 unk_CB2;
-    u16** unk_CB4;
-    u16* unk_CB8;
-    u16* unk_CBC;
-    s16 unk_CC0;
-    s16 unk_CC2;
-    s16 unk_CC4;
-    s16 unk_CC6;
-    s16 unk_CC8;
-    u8 unk_CCA[0x02];
-    void* unk_CCC;
-    u16 unk_CD0;
-    s16 unk_CD2;
-    s16 unk_CD4;
-    u16 unk_CD6;
-    JiminyPair unk_CD8[21];
-    s32 unk_D2C;
-    u8 unk_D30[0x04];
-    void* unk_D34;
-    s32 unk_D38;
-    u16 unk_D3C;
-    u16 unk_D3E;
-#ifdef VERSION_EU
-    u16* unk_D40[100];
-#endif
-} JiminyWork;
 
 #define SAVE_OK 2
 
