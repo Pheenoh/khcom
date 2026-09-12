@@ -28603,7 +28603,6 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
 
     return 1;
 }
-#ifdef NON_MATCHING
 u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
     UnkStruct_080A3F5C_Entry* e;
     u8* pal;
@@ -28614,11 +28613,11 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
         m4aSongNumStart(102);
         if (*(s32*)w->unk_138 != 0) {
 #ifdef VERSION_JP
-            w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->unk_114->unk_04],
+            *((u8*)w + offsetof(UnkStruct_080A3F5C, unk_143)) = func_0806BDB8(gUnk_09033CA8[w->unk_114->unk_04],
                                       gUnk_09033CB8[w->unk_114->unk_04],
                                       *(s32*)w->unk_138, (s32*)w->unk_138);
 #else
-            w->unk_143 = func_0806BB44(gUnk_09033CA8[w->unk_114->unk_04],
+            *((u8*)w + offsetof(UnkStruct_080A3F5C, unk_143)) = func_0806BB44(gUnk_09033CA8[w->unk_114->unk_04],
                                       gUnk_09033CB8[w->unk_114->unk_04] - 0x200,
                                       *(s32*)w->unk_138, (s32*)w->unk_138);
 #endif
@@ -28667,9 +28666,6 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
     return 1;
 }
 
-#else
-INCLUDE_ASM("card/func_080A3BB0.s");
-#endif
 
 u8 func_080A3DD0(UnkStruct_080A3F5C* w) {
     if (w->unk_008 != 0) {
