@@ -24,7 +24,7 @@ void task_btl_form_0(BtlFormWork* work, BtlFormList* list) {
 u8 task_btl_form_1(BtlFormWork* work) {
     BtlFormList* list;
     BtlFormStep* step;
-    BtlWork* obj;
+    BtlObj* obj;
     s32 x;
     s32 y;
     s32 z;
@@ -143,7 +143,7 @@ u8 task_btl_born_1(BtlBornWork* work) {
                           work->unk_00.unk_08 - 0x800, 0x100);
         }
 
-        TaskCreate(&gBtlWork->unk_02C, work->unk_0C, work);
+        TaskCreate(&gBtlWork->taskPools[0], work->unk_0C, work);
         return 0;
     }
 
@@ -298,8 +298,8 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     m4aSongNumStart(0x237);
 }
 
-BtlWork* func_08040458(BtlRaidWork* work) {
-    BtlWork* obj;
+BtlObj* func_08040458(BtlRaidWork* work) {
+    BtlObj* obj;
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (work->unk_3D != 0) {
@@ -316,14 +316,14 @@ BtlWork* func_08040458(BtlRaidWork* work) {
     }
 
     if (gBtlWork->unk_078 == 0) {
-        return ListPoolFirst(gBtlWork->unk_080);
+        return ListPoolFirst(&gBtlWork->unk_080);
     }
 
     return gBtlWork->unk_078;
 }
 
 u8 task_btl_raid_1(BtlRaidWork* work) {
-    BtlWork* obj;
+    BtlObj* obj;
     u16 hit;
     s32 x;
     s32 y;
@@ -566,7 +566,7 @@ void task_btl_raid_3(BtlRaidWork* work) {
     ReleaseObjPalette(work->palette2);
 }
 
-void task_btl_badstatus_0(BtlBadStatusWork* work, BtlWork* obj) {
+void task_btl_badstatus_0(BtlBadStatusWork* work, BtlObj* obj) {
     work->unk_28 = 0;
     work->unk_24 = obj;
     work->tiles = AllocObjTiles(128, 0);
@@ -578,7 +578,7 @@ void task_btl_badstatus_0(BtlBadStatusWork* work, BtlWork* obj) {
 }
 
 u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
-    BtlWork* obj;
+    BtlObj* obj;
     u32 state;
 
     obj = work->unk_24;
@@ -627,7 +627,7 @@ u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
 }
 
 void task_btl_badstatus_2(BtlBadStatusWork* work) {
-    BtlWork* obj;
+    BtlObj* obj;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -657,9 +657,9 @@ void task_btl_badstatus_3(BtlBadStatusWork* work) {
     ReleaseObjPalette(work->palette2);
 }
 
-BtlWork* func_08040C8C(BtlAiWork* work) {
-    BtlWork* list[10];
-    BtlWork* p;
+BtlObj* func_08040C8C(BtlAiWork* work) {
+    BtlObj* list[10];
+    BtlObj* p;
     s16 count;
 
     if (gBtlWork->unk_068 & 0x4000) {
@@ -677,7 +677,7 @@ BtlWork* func_08040C8C(BtlAiWork* work) {
     }
 
     count = 0;
-    p = ListPoolFirst(gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->unk_080);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
@@ -699,9 +699,9 @@ BtlWork* func_08040C8C(BtlAiWork* work) {
     return p;
 }
 
-BtlWork* func_08040D54(BtlAiWork* work) {
-    BtlWork* list[10];
-    BtlWork* p;
+BtlObj* func_08040D54(BtlAiWork* work) {
+    BtlObj* list[10];
+    BtlObj* p;
     s16 count;
     s32 d;
 
@@ -720,7 +720,7 @@ BtlWork* func_08040D54(BtlAiWork* work) {
     }
 
     count = 0;
-    p = ListPoolFirst(gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->unk_080);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {

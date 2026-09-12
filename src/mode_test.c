@@ -89,31 +89,31 @@ void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
     body = &work->body;
     if (args->side != 0) {
         work->side = 1;
-        gBtlWork->status |= 0x200000;
-        work->actor = gBtlWork->actor;
-        work->tiles = gBtlWork->tiles;
+        gBtlWork->unk_068 |= 0x200000;
+        work->actor = gBtlWork->unk_07C;
+        work->tiles = gBtlWork->unk_114;
     } else {
         work->side = args->side;
-        gUnk_02039B9C->status |= 0x200000;
-        work->actor = gUnk_02039B9C->actor;
-        work->tiles = gBtlWork->tiles;
+        gUnk_02039B9C->unk_068 |= 0x200000;
+        work->actor = gUnk_02039B9C->unk_07C;
+        work->tiles = gBtlWork->unk_114;
     }
     work->card = args->card;
     work->counter = 0;
     work->velocity = 0;
-    if (work->actor->flags & 4) {
-        body->x = (gBtlWork->maxX + 48) * 256;
+    if (work->actor->unk_034 & 4) {
+        body->x = (gBtlWork->unk_0DC + 48) * 256;
         body->flags = 4;
     } else {
-        body->x = (gBtlWork->minX - 48) * 256;
+        body->x = (gBtlWork->unk_0DA - 48) * 256;
         body->flags = 0;
     }
-    body->y = work->actor->y;
+    body->y = work->actor->unk_008;
     body->z = 0;
     body->ground = 0;
     work->state = 0;
-    work->targetX = work->actor->x;
-    work->targetY = work->actor->y;
+    work->targetX = work->actor->unk_004;
+    work->targetY = work->actor->unk_008;
     work->palette = LoadObjPalette(gUnk_09849A98, 32);
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnkEu_08896524, &work->anim, 0, 0, work->tiles);
@@ -124,11 +124,11 @@ void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
 
 u8 eu_08060DF8(UnkModeTestWork* work) {
     UnkModeTestBody* body;
-    UnkModeTestActor* actor;
+    BtlWork* battle;
 
     body = &work->body;
-    actor = work->side != 0 ? gBtlWork : gUnk_02039B9C;
-    if (actor->status & 0x40000000) {
+    battle = work->side != 0 ? gBtlWork : gUnk_02039B9C;
+    if (battle->unk_068 & 0x40000000) {
         return 0;
     }
     func_0802F284(body->x, body->y, body->z);
@@ -177,16 +177,16 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
         func_08011F78(110, body->x, body->y, body->z, 20, 10, 64);
         if ((body->x - work->targetX >= 0 ? body->x - work->targetX : work->targetX - body->x) < 0x800 &&
             (body->y - work->targetY >= 0 ? body->y - work->targetY : work->targetY - body->y) < 0x800) {
-            work->targetX = (gBtlWork->minX + GetRandom() % (gBtlWork->maxX - gBtlWork->minX + 1)) * 256;
-            work->targetY = (gBtlWork->minY + GetRandom() % (gBtlWork->maxY - gBtlWork->minY + 1)) * 256;
+            work->targetX = (gBtlWork->unk_0DA + GetRandom() % (gBtlWork->unk_0DC - gBtlWork->unk_0DA + 1)) * 256;
+            work->targetY = (gBtlWork->unk_0DE + GetRandom() % (gBtlWork->unk_0E0 - gBtlWork->unk_0DE + 1)) * 256;
         }
         if ((u16)(GetRandom() % 300u) == 0) work->state = 1;
         break;
     }
     case 1: {
         u8 angle;
-        work->targetX = work->actor->x;
-        work->targetY = work->actor->y;
+        work->targetX = work->actor->unk_004;
+        work->targetY = work->actor->unk_008;
         func_08019068(gUnkEu_08896524, &work->anim, 5, 1, work->tiles);
         angle = GetAngle(body->x, body->y, work->targetX, work->targetY);
         if (work->targetX < body->x) body->flags |= 4;
@@ -204,23 +204,23 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
     case 2:
         func_08019068(gUnkEu_08896524, &work->anim, 6, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
-            if (work->actor->flags & 4) body->flags |= 4;
+            if (work->actor->unk_034 & 4) body->flags |= 4;
             else body->flags &= ~4ULL;
             if ((u16)(GetRandom() % 200u) == 0) work->state = 5;
         }
-        if (body->flags & 4) body->x = work->actor->x + 0xA00;
-        else body->x = work->actor->x - 0xA00;
-        body->y = work->actor->y + 0x800;
-        body->z = work->actor->z + work->bob;
+        if (body->flags & 4) body->x = work->actor->unk_004 + 0xA00;
+        else body->x = work->actor->unk_004 - 0xA00;
+        body->y = work->actor->unk_008 + 0x800;
+        body->z = work->actor->unk_00C + work->bob;
         work->bob += (-0x1C00 - work->bob) >> 3;
         break;
     case 5:
         func_08019068(gUnkEu_08896524, &work->anim, 9, 0, work->tiles);
-        if (work->actor->flags & 4) body->flags |= 4;
+        if (work->actor->unk_034 & 4) body->flags |= 4;
         else body->flags &= ~4ULL;
-        body->x = work->actor->x;
-        body->y = work->actor->y + 0x800;
-        body->z = work->actor->z + work->bob - 0xC00;
+        body->x = work->actor->unk_004;
+        body->y = work->actor->unk_008 + 0x800;
+        body->z = work->actor->unk_00C + work->bob - 0xC00;
         if (work->counter > 180) {
             work->state = 6;
             work->counter = 120;
@@ -231,11 +231,11 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
         break;
     case 6: {
         s32 frame;
-        if (work->actor->flags & 4) body->flags |= 4;
+        if (work->actor->unk_034 & 4) body->flags |= 4;
         else body->flags &= ~4ULL;
-        body->x = work->actor->x;
-        body->y = work->actor->y + 0x800;
-        body->z = work->actor->z + work->bob - 0xC00;
+        body->x = work->actor->unk_004;
+        body->y = work->actor->unk_008 + 0x800;
+        body->z = work->actor->unk_00C + work->bob - 0xC00;
         frame = (work->animcounter >> 8) & 7;
         func_08019068(gUnkEu_08896524, &work->anim, frame + 10, 0, work->tiles);
         ApproachValue(&work->animcounter, 0x800, work->counter);
@@ -295,22 +295,22 @@ void eu_08061588(UnkModeTestWork* work) {
     flags = func_0801AF1C(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->scale;
+        sclY = gBtlWork->unk_024;
         sclX = sclY;
-    } else if (gBtlWork->scale == 256) {
-        sclY = gBtlWork->scale;
+    } else if (gBtlWork->unk_024 == 256) {
+        sclY = gBtlWork->unk_024;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->scale;
-        sclY = gBtlWork->scale;
+        sclX = -gBtlWork->unk_024;
+        sclY = gBtlWork->unk_024;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
-    if (gBtlWork->scale == 256) {
+    if (gBtlWork->unk_024 == 256) {
         affine = 0;
-    } else if (gBtlWork->scale <= 255) {
+    } else if (gBtlWork->unk_024 <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);
@@ -324,11 +324,11 @@ void eu_08061588(UnkModeTestWork* work) {
 
 
 void eu_08061698(UnkModeTestWork* work) {
-    UnkModeTestActor* actor;
+    BtlWork* battle;
 
     func_08012304(work->body.particles);
-    actor = work->side != 0 ? gBtlWork : gUnk_02039B9C;
-    actor->status &= 0xFFFFFFFFFFDFFFFF;
+    battle = work->side != 0 ? gBtlWork : gUnk_02039B9C;
+    battle->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->tasks);
 }
