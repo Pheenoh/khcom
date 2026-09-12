@@ -1,6 +1,28 @@
 #include "macros.h"
 #include "mode_movie.h"
 
+#ifdef VERSION_EU
+extern u32 gLanguage;
+extern u32 gUnkEu_03006C10;
+extern Mode gModeChkmov;
+extern u8 gUnkEu_0883E040[];
+extern u8 gUnkEu_0883E454[];
+extern u8 gUnkEu_0883E8D4[];
+extern u8 gUnkEu_0883ECE8[];
+extern u8 gUnkEu_0883F0F8[];
+extern u8 gUnkEu_0883E070[];
+extern u8 gUnkEu_0883E494[];
+extern u8 gUnkEu_0883E914[];
+extern u8 gUnkEu_0883ED28[];
+extern u8 gUnkEu_0883F138[];
+extern u8 gUnkEu_0883E150[];
+extern u8 gUnkEu_0883E574[];
+extern u8 gUnkEu_0883E9F4[];
+extern u8 gUnkEu_0883EE08[];
+extern u8 gUnkEu_0883F218[];
+void eu_0800115C(void);
+#endif
+
 vu16 gUnk_02034938;
 s32 gUnk_0203493C;
 u16 gUnk_02034940;
@@ -248,7 +270,6 @@ void func_0805EA90(void) {
 INCLUDE_ASM("mode_movie/func_0805EA90.s");
 #endif
 
-#ifndef VERSION_EU
 void mode_movie_1(void) {
     void* p;
 
@@ -280,8 +301,34 @@ void mode_movie_1(void) {
         switch (gUnk_0203493C) {
         case 1:
             p = gUnk_0815C3EC;
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                gUnk_02034950 = gUnkEu_0883E040;
+                gUnk_02034946 = 3;
+                break;
+            case 1:
+                gUnk_02034950 = gUnkEu_0883E454;
+                gUnk_02034946 = 4;
+                break;
+            case 2:
+                gUnk_02034950 = gUnkEu_0883E8D4;
+                gUnk_02034946 = 4;
+                break;
+            case 3:
+                gUnk_02034950 = gUnkEu_0883ECE8;
+                gUnk_02034946 = 4;
+                break;
+            case 4:
+            default:
+                gUnk_02034950 = gUnkEu_0883F0F8;
+                gUnk_02034946 = 4;
+                break;
+            }
+#else
             gUnk_02034950 = gUnk_0886AB40;
             gUnk_02034946 = 3;
+#endif
             break;
         case 2:
             p = gUnk_084E0F34;
@@ -295,27 +342,84 @@ void mode_movie_1(void) {
             break;
         case 4:
             p = gUnk_0855CCB4;
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                gUnk_02034950 = gUnkEu_0883E070;
+                gUnk_02034946 = 14;
+                break;
+            case 1:
+                gUnk_02034950 = gUnkEu_0883E494;
+                gUnk_02034946 = 14;
+                break;
+            case 2:
+                gUnk_02034950 = gUnkEu_0883E914;
+                gUnk_02034946 = 14;
+                break;
+            case 3:
+                gUnk_02034950 = gUnkEu_0883ED28;
+                gUnk_02034946 = 14;
+                break;
+            case 4:
+            default:
+                gUnk_02034950 = gUnkEu_0883F138;
+                gUnk_02034946 = 14;
+                break;
+            }
+#else
             gUnk_02034950 = gUnk_0886AB90;
 #ifdef VERSION_JP
             gUnk_02034946 = 12;
 #else
             gUnk_02034946 = 14;
 #endif
+#endif
             break;
+#ifdef VERSION_EU
+        default:
+#endif
         case 5:
             p = gUnk_086FBA14;
+#ifdef VERSION_EU
+            switch (gLanguage) {
+            case 0:
+                gUnk_02034950 = gUnkEu_0883E150;
+                gUnk_02034946 = 10;
+                break;
+            case 1:
+                gUnk_02034950 = gUnkEu_0883E574;
+                gUnk_02034946 = 12;
+                break;
+            case 2:
+                gUnk_02034950 = gUnkEu_0883E9F4;
+                gUnk_02034946 = 11;
+                break;
+            case 3:
+                gUnk_02034950 = gUnkEu_0883EE08;
+                gUnk_02034946 = 10;
+                break;
+            case 4:
+            default:
+                gUnk_02034950 = gUnkEu_0883F218;
+                gUnk_02034946 = 11;
+                break;
+            }
+#else
             gUnk_02034950 = gUnk_0886AC70;
 #ifdef VERSION_JP
             gUnk_02034946 = 8;
 #else
             gUnk_02034946 = 10;
 #endif
+#endif
             break;
+#ifndef VERSION_EU
         default:
             p = gUnk_0855CCB4;
             gUnk_02034950 = gUnk_0886AB40;
             gUnk_02034946 = 3;
             break;
+#endif
         }
 
         if (MovieStart(p)) {
@@ -351,7 +455,15 @@ void mode_movie_1(void) {
         CpuSet(&fill, (void*)0x06000000, 0x05006000);
 
         if (gUnk_02034958 & 4) {
+#ifdef VERSION_EU
+            eu_0800115C();
+#else
             SoftReset(0xFF);
+#endif
+#ifdef VERSION_EU
+        } else if (gUnkEu_03006C10 & 0x8000) {
+            ModeRequest(&gModeChkmov, 0);
+#endif
         } else {
             switch (gUnk_0203493C) {
             case 1:
@@ -379,9 +491,6 @@ void mode_movie_1(void) {
     }
     }
 }
-#else
-INCLUDE_ASM("mode_movie/mode_movie_1.s");
-#endif
 
 void mode_movie_2(void) {
     gVBlankHandlerOverride = 0;
