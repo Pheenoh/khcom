@@ -228,7 +228,7 @@ void func_080107D4(void) {
         }
     }
 }
-#ifdef NON_MATCHING
+
 void func_08010A24(void) {
     BtlWork* w;
     BtlObj* o;
@@ -292,7 +292,7 @@ void func_08010A24(void) {
         w->unk_0E2 = 0;
         w->unk_0E3 = 0;
     } else {
-        if ((held & 0x300) == 0x200) {
+        if ((held & 0x200) && !(held & 0x100)) {
             if (w->unk_0E2 <= 254) {
                 w->unk_0E2++;
             }
@@ -300,7 +300,7 @@ void func_08010A24(void) {
             w->unk_0E2 = f;
         }
 
-        if ((held & 0x300) == 0x100) {
+        if ((held & 0x100) && !(held & 0x200)) {
             if (w->unk_0E3 <= 254) {
                 w->unk_0E3++;
             }
@@ -357,9 +357,6 @@ void func_08010A24(void) {
         }
     }
 }
-#else
-INCLUDE_ASM("btl_vs/func_08010A24.s");
-#endif
 
 void func_08010C70(void) {
     gBtlWork->unk_0A0 = 1;
