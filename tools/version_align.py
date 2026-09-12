@@ -15,6 +15,7 @@ to produce that it is committed rather than regenerated on every build.
 
 import argparse
 import bisect
+import difflib
 import re
 import struct
 import subprocess
@@ -27,7 +28,11 @@ CODE_HI = 0x081213C4
 WINDOW = 0x600
 SNAP = 64
 PASSES = 4
-TRUSTED = ("named", "xref", "global", "body")
+PREFIX = 16
+SIM_WORDS = 64
+MATCH_BONUS = 8
+VOTER_MIN = 8
+TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
 
 MAP_RE = re.compile(r"^\s+(0x08[0-9a-f]{6})\s+(\S+)$")
 
@@ -79,6 +84,14 @@ def blpair(b, k):
         return None
     off = ((h1 & 0x7FF) << 12) | ((h2 & 0x7FF) << 1)
     return (off - 0x800000 if off & 0x400000 else off) + 4
+
+
+def is_push(h):
+    return (h & 0xFE00) == 0xB400
+
+
+def info(b):
+    return sum(1 for k in range(0, len(b) - 1, 2) if b[k:k + 2] != b"\0\0")
 
 
 def mask(b):
@@ -291,17 +304,56 @@ def main():
 
     start_of = {a: i for i, (a, e, nm) in enumerate(funcs)}
 
+    def code_pointer(w):
+        return w & 1 and CODE_LO <= (w & ~1) < CODE_HI
+
+    us_tables = []
+    for k in range(CODE_HI - ROM_BASE, len(us) - 3, 4):
+        w = struct.unpack_from("<I", us, k)[0]
+        if code_pointer(w) and (w & ~1) in start_of:
+            us_tables.append((k, start_of[w & ~1]))
+    ot_tables = {}
+    for k in range(CODE_HI - ROM_BASE, len(ot) - 3, 4):
+        w = struct.unpack_from("<I", ot, k)[0]
+        if code_pointer(w):
+            ot_tables.setdefault(w, []).append(k)
+
+    def table_votes(votes):
+        for p, j in us_tables:
+            if how[j] == "absent":
+                continue
+            for d in (-4, 4):
+                q = p + d
+                if q < CODE_HI - ROM_BASE or q + 4 > len(us):
+                    continue
+                w = struct.unpack_from("<I", us, q)[0]
+                if not code_pointer(w):
+                    continue
+                b = start_of.get(w & ~1)
+                if b is None or b == j or addr[b] is None or how[b] == "absent":
+                    continue
+                got = set()
+                for r in ot_tables.get(addr[b] | 1, []):
+                    if r - d < 0 or r - d + 4 > len(ot):
+                        continue
+                    v = struct.unpack_from("<I", ot, r - d)[0]
+                    if code_pointer(v):
+                        got.add(v & ~1)
+                if len(got) == 1:
+                    votes.setdefault(j, set()).add(next(iter(got)))
+
     def crossref():
         placed, corrected = 0, []
         for _ in range(PASSES):
             votes = {}
+            table_votes(votes)
             for i, (a, e, nm) in enumerate(funcs):
                 if addr[i] is None or how[i] == "absent":
                     continue
                 sz = e - a
                 x = us[a - ROM_BASE:a - ROM_BASE + sz]
                 y = ot[addr[i] - ROM_BASE:addr[i] - ROM_BASE + sz]
-                if len(y) != sz or mask(x) != mask(y):
+                if len(y) != sz or mask(x) != mask(y) or info(mask(x)) < VOTER_MIN:
                     continue
                 for k in range(0, sz - 3, 2):
                     o1, o2 = blpair(x, k), blpair(y, k)
@@ -329,13 +381,20 @@ def main():
                         continue
                     votes.setdefault(j, set()).add(v & ~1)
             progress = 0
+            occupied = {addr[m]: m for m in range(n)
+                        if addr[m] is not None and how[m] != "absent"
+                        and verify(m, addr[m]) is not None}
             for j, cands in sorted(votes.items()):
                 if len(cands) != 1:
                     continue
                 t = next(iter(cands))
                 if t == addr[j] or t % 2 or not CODE_LO <= t < CODE_HI:
                     continue
+                if occupied.get(t, j) != j:
+                    continue
                 if addr[j] is not None:
+                    if verify(j, addr[j]) == "fill":
+                        continue
                     corrected.append(f"{funcs[j][2]}({how[j]}{addr[j] - t:+#x})")
                 addr[j] = t
                 how[j] = "xref"
@@ -382,16 +441,149 @@ def main():
                 continue
             cands.add(t)
 
+        strong = set(cands)
+
+        run = 0
+
         for k in range(0, len(ot) - 3, 4):
             w = struct.unpack_from("<I", ot, k)[0]
 
-            if w & 1 and CODE_LO <= (w & ~1) < CODE_HI:
-                cands.add(w & ~1)
-        return sorted(cands)
+            if not code_pointer(w):
+                run = 0
+                continue
+            cands.add(w & ~1)
 
-    def entries_once(cands):
+            if k < CODE_HI - ROM_BASE:
+                continue
+            run += 1
+
+            if run >= 2:
+                strong.add(w & ~1)
+                strong.add(struct.unpack_from("<I", ot, k - 4)[0] & ~1)
+        return sorted(cands), strong
+
+    def shape_eq(h1, h2):
+        if h1 == h2:
+            return True
+        if (h1 & 0xF800) == 0x4800 and (h1 & 0xFF00) == (h2 & 0xFF00):
+            return True
+        if 0xD000 <= h1 < 0xDF00 and (h1 & 0xFF00) == (h2 & 0xFF00):
+            return True
+        return (h1 & 0xF800) == 0xE000 and (h2 & 0xF800) == 0xE000
+
+    def halfwords(b):
+        return [struct.unpack_from("<H", b, k)[0] for k in range(0, len(b) - 1, 2)]
+
+    def prologue(hw):
+        if not hw or not is_push(hw[0]):
+            return 0
+        i = 1
+
+        while i < len(hw) and (hw[i] & 0xFFC0) == 0x4640:
+            i += 1
+        if i < len(hw) and is_push(hw[i]):
+            i += 1
+        if i < len(hw) and (hw[i] & 0xFF80) == 0xB080:
+            i += 1
+        return i
+
+    def prefix_score(pat, got, cap):
+        p1, p2 = prologue(pat), prologue(got)
+
+        if p1 and not p2:
+            return 0
+        base = 1 if p1 and p2 else 0
+        s = 0
+
+        while (p1 + s < len(pat) and p2 + s < len(got) and base + s < cap
+               and shape_eq(pat[p1 + s], got[p2 + s])):
+            s += 1
+        if not base and (p1 or p2) and s < 4:
+            return 0
+        return base + s
+
+    def score(k, c):
+        a, e, nm = funcs[k]
+        cap = min(e - a, PREFIX) // 2
+        o = c - ROM_BASE
+
+        if c < CODE_LO or o + 2 * cap + 16 > len(ot):
+            return 0
+        pat = halfwords(mask(us[a - ROM_BASE:a - ROM_BASE + 2 * cap + 16]))
+        got = halfwords(mask(ot[o:o + 2 * cap + 16]))
+        return prefix_score(pat, got, cap)
+
+    def shape(hw):
+        out = []
+
+        for h in hw:
+            if (h & 0xF800) == 0x4800 or 0xD000 <= h < 0xDF00:
+                h &= 0xFF00
+            elif (h & 0xF800) == 0xE000:
+                h = 0xE000
+            out.append(h)
+        return out
+
+    sim_cache = {}
+
+    def sim(k, c):
+        key = (k, c)
+
+        if key not in sim_cache:
+            a, e, nm = funcs[k]
+            n2 = min(e - a, 2 * SIM_WORDS)
+            x = shape(halfwords(mask(us[a - ROM_BASE:a - ROM_BASE + n2])))
+            y = shape(halfwords(mask(ot[c - ROM_BASE:c - ROM_BASE + n2])))
+            sim_cache[key] = difflib.SequenceMatcher(None, x, y, autojunk=False).ratio()
+        return sim_cache[key]
+
+    def mid_prologue(c):
+        if c - 2 < CODE_LO:
+            return False
+        h = struct.unpack_from("<H", ot, c - 2 - ROM_BASE)[0]
+        return is_push(h) or (h & 0xFFC0) == 0x4640
+
+    def dense(k, lo, hi):
+        full = min(funcs[k][1] - funcs[k][0], PREFIX) // 2
+        return [c for c in range(lo + (lo & 1), hi, 2)
+                if not mid_prologue(c) and score(k, c) >= full]
+
+    def assign(rows, cands, weight):
+        m, kk = len(rows), len(cands)
+        best = [[0] * (kk + 1) for _ in range(m + 1)]
+        back = [[0] * (kk + 1) for _ in range(m + 1)]
+
+        for r in range(1, m + 1):
+            for c in range(1, kk + 1):
+                best[r][c], back[r][c] = best[r - 1][c], 1
+
+                if best[r][c - 1] > best[r][c]:
+                    best[r][c], back[r][c] = best[r][c - 1], 2
+                w = weight(rows[r - 1], cands[c - 1])
+
+                if w > 0 and best[r - 1][c - 1] + w > best[r][c]:
+                    best[r][c], back[r][c] = best[r - 1][c - 1] + w, 3
+        out = {}
+        r, c = m, kk
+
+        while r > 0 and c > 0:
+            if back[r][c] == 3:
+                out[rows[r - 1]] = cands[c - 1]
+                r, c = r - 1, c - 1
+            elif back[r][c] == 1:
+                r -= 1
+            else:
+                c -= 1
+        return out
+
+    def entries_once(cands, strong):
         placed = 0
         i = 0
+
+        def put(k, at):
+            addr[k] = at
+            how[k] = verify(k, at) or (
+                "match" if score(k, at) >= 2 or sim(k, at) >= 0.5 else "entry")
 
         while i < n:
             if addr[i] is not None or how[i] == "absent":
@@ -403,48 +595,69 @@ def main():
                 j += 1
 
             if i > 0 and addr[i - 1] is not None and j < n and addr[j] is not None:
-                lo = addr[i - 1] + 1
+                lo = addr[i - 1] + 2
                 hi = addr[j]
-                a = bisect.bisect_left(cands, lo)
-                b = bisect.bisect_left(cands, hi)
+                win = set(cands[bisect.bisect_left(cands, lo):bisect.bisect_left(cands, hi)])
+                cur = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
+                exact = cur if (verify(i - 1, addr[i - 1]) is not None and lo <= cur < hi
+                                and not mid_prologue(cur)) else None
+                rows = list(range(i, j))
+                extra = set()
 
-                if b - a == j - i:
-                    for k in range(i, j):
-                        cur = cands[a + k - i]
-                        addr[k] = cur
-                        how[k] = verify(k, cur) or "entry"
+                for k in rows:
+                    extra.update(dense(k, lo, hi))
+                if exact is not None and score(i, exact) >= 2:
+                    extra.add(exact)
+                allc = sorted(win | extra)
+                fwd = {}
+                pos = cur
+
+                for k in rows:
+                    fwd[k] = pos
+                    pos += funcs[k][1] - funcs[k][0]
+                bwd = {}
+                pos = hi
+
+                for k in reversed(rows):
+                    pos -= funcs[k][1] - funcs[k][0]
+                    bwd[k] = pos
+
+                def weight(k, c):
+                    s = score(k, c)
+
+                    if not s:
+                        return 1 if c in strong else 0
+                    w = s + round(8 * sim(k, c)) + MATCH_BONUS
+
+                    if c in strong:
+                        w += 3
+                    if abs(c - fwd[k]) <= SNAP or abs(c - bwd[k]) <= SNAP:
+                        w += 6
+                    if c == exact and k == i:
+                        w += 2
+                    return w
+
+                got = assign(rows, allc, weight)
+                hard = [c for c in allc if c in strong]
+                forced = (len(hard) == len(rows) and len(got) == len(rows)
+                          and all(c in strong for c in got.values()))
+
+                for k in rows:
+                    c = got.get(k)
+
+                    if c is None:
+                        continue
+                    ok = score(k, c) >= 2 or sim(k, c) >= 0.5 or forced or c == exact
+
+                    if not ok and score(k, c):
+                        for x in (fwd[k], bwd[k]):
+                            near = [d for d in allc if abs(d - x) <= SNAP and weight(k, d) > 0]
+
+                            if near == [c]:
+                                ok = True
+                    if ok:
+                        put(k, c)
                         placed += 1
-                else:
-                    win = cands[a:b]
-
-                    def snap(cur):
-                        lo2 = bisect.bisect_left(win, cur - SNAP)
-                        hi2 = bisect.bisect_right(win, cur + SNAP)
-                        return win[lo2] if hi2 - lo2 == 1 else None
-                    cur = addr[i - 1] + (funcs[i - 1][1] - funcs[i - 1][0])
-
-                    for k in range(i, j):
-                        at = snap(cur)
-
-                        if at is None:
-                            break
-                        addr[k] = at
-                        how[k] = verify(k, at) or "entry"
-                        placed += 1
-                        cur = at + (funcs[k][1] - funcs[k][0])
-                    cur = addr[j]
-
-                    for k in range(j - 1, i - 1, -1):
-                        if addr[k] is not None:
-                            break
-                        at = snap(cur - (funcs[k][1] - funcs[k][0]))
-
-                        if at is None:
-                            break
-                        addr[k] = at
-                        how[k] = verify(k, at) or "entry"
-                        placed += 1
-                        cur = at
             i = j
 
         return placed
@@ -453,7 +666,7 @@ def main():
         total = 0
 
         for _ in range(PASSES):
-            got = entries_once(entry_candidates())
+            got = entries_once(*entry_candidates())
 
             if not got:
                 break
@@ -539,6 +752,7 @@ def main():
 
     for _ in range(PASSES):
         got = entries()
+        got += crossref()
 
         if mark_absent():
             fill()
@@ -555,7 +769,7 @@ def main():
             va = "-" if addr[i] is None else f"{addr[i]:#010x}"
             f.write(f"{nm}\t{a:#010x}\t{e - a}\t{va}\t{how[i]}\n")
     counts = {k: how.count(k) for k in
-              ("named", "xref", "global", "body", "fill", "near", "entry", "absent", "-")}
+              ("named", "xref", "global", "body", "fill", "near", "match", "entry", "absent", "-")}
     print(f"{out}: {n} functions -> "
           + ", ".join(f"{k} {v}" for k, v in counts.items()))
 
