@@ -676,14 +676,14 @@ void _08019CB4(void) {
                 pos.x = 0x10000;
                 pos.y = (gBtlWork->unk_0DE + gBtlWork->unk_0E0) * 128;
                 pos.z = -0x4600;
-                func_08096DC4(gBtlWork->taskPools, &pos);
+                CreateBossPrizeCardTask(gBtlWork->taskPools, &pos);
                 break;
             case 121:
                 if (gBtlWork->unk_068 & 0x100000) {
                     pos.x = 0x10000;
                     pos.y = (gBtlWork->unk_0DE + gBtlWork->unk_0E0) * 128;
                     pos.z = -0x4600;
-                    func_08096DC4(gBtlWork->taskPools, &pos);
+                    CreateBossPrizeCardTask(gBtlWork->taskPools, &pos);
                 }
                 break;
             }
@@ -1694,7 +1694,7 @@ void func_0801B994(BtlObj* p) {
                 b.x = p->unk_004;
                 b.y = p->unk_008;
                 b.z = p->unk_00C;
-                func_08096DB0(&gBtlWork->taskPools[0], &b);
+                CreatePrizeCardTask(&gBtlWork->taskPools[0], &b);
             }
         }
     }
@@ -1735,7 +1735,7 @@ void func_0801BBF0(BtlObj* p) {
     if (gBtlWork->unk_068 & 0x100000000) {
         return;
     }
-    if (!func_080856DC()) {
+    if (!HasNonPremiumCardsInActiveDeck()) {
         return;
     }
     if (GetDeckCardCount(GetActiveDeckIndex()) <= 9) {

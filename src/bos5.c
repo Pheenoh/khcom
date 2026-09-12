@@ -974,7 +974,7 @@ u8 func_080FC17C(MdWork* work) {
                     arg.unk_00 = work->sub[0].unk_004;
                     arg.unk_04 = work->sub[0].unk_008;
                     arg.unk_08 = work->sub[0].unk_00C;
-                    func_08096DC4(&gBtlWork->taskPools[0], &arg);
+                    CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg);
                     func_0801B918(&work->sub[0]);
                     func_0801B008();
                     result = 0;
@@ -2530,7 +2530,7 @@ void mode_worldselect_1(void) {
                 func_0806180C(b);
             } else {
                 if (gGameState.flags & 8) {
-                    func_080938F8(221);
+                    AddMapCard(221);
                 }
 
                 func_080DFA3C();

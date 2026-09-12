@@ -681,7 +681,7 @@ u8 func_0810AF44(PcWork* work, s32 arg) {
             args[0] = 0x11400;
             args[1] = 0x15300;
             args[2] = -0x5C00;
-            func_08096DC4(&gBtlWork->taskPools[0], args);
+            CreateBossPrizeCardTask(&gBtlWork->taskPools[0], args);
             func_0801B918(p);
             func_0810B378(work->unk_2D0, 1);
             work->unk_002 += 1;

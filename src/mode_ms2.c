@@ -733,7 +733,7 @@ void func_08107938(void) {
         gUnk_02035E40[p->unk_04]--;
         gUnk_02035E48--;
         p->unk_06[func_081075D8()]--;
-        func_08093AC8(card);
+        RemoveMapCard(card);
         func_081075FC();
         func_081076D4();
         func_0810764C();

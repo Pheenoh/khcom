@@ -61,7 +61,7 @@ extern TaskDesc gTaskDescSpotLight;
 
 struct Task;
 
-void func_08093B78(TaskPool* pool, u8* p);
+void CreateMapCardSelection(TaskPool* pool, u8* p);
 void func_080E042C(void);
 
 #endif /* GUARD_ROOMCREATE_H */

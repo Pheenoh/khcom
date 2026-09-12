@@ -292,7 +292,7 @@ extern s16 gUnk_09EE4BC2[];
 void func_0808C940(UnkStruct_0808C940* w, s16 n);
 void func_0808C974(UnkStruct_0808C940* w);
 u8 func_080864A4(u8* work, void* a);
-void func_08096F08(void* a, void* b);
+void CreateCardNameDisplay(void* a, void* b);
 u8 func_08096288(PrizeCardWork* w, void* a);
 u8 func_08092A34(MapSelectWork* w, void* a);
 u8 func_080923E0(MapSelectWork* w, void* a);
@@ -350,7 +350,7 @@ s32 func_08097A80(u8* work);
 u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a);
 s32 func_080A22A4(u8* work);
 void func_0807CD48(UnkStruct_02034AAC* p);
-s32 func_08093AC8(u16 a);
+s32 RemoveMapCard(u16 a);
 u8 func_0809254C(MapSelectWork* w, void* a);
 u8 func_080A11CC(u8* work, void* a);
 struct UnkStruct_0809F730;
@@ -8237,7 +8237,7 @@ void func_08083F84(u16 a) {
     }
 }
 
-void func_08083FE0(void) {
+void InitCardCollection(void) {
     u16 i;
 
     for (i = 0; i < 999; i++) {
@@ -9252,10 +9252,10 @@ void func_0808500C(u8 mode, u16* out) {
     }
 }
 
-void func_080850B0(u16* p) {
+void ClearCardCollectionSlot(u16* p) {
     *p = CARD_ID_MASK;
 }
-void func_080850BC(u16 id) {
+void RemoveUnequippedCardById(u16 id) {
     s32 i;
 
     for (i = 0; i < gCardCount; i++) {
@@ -9484,7 +9484,7 @@ void ConvertActiveDeckCardToPremium(u16 index) {
     RecalculateInactiveDeckCpCosts();
 }
 
-s32 func_080856DC(void) {
+s32 HasNonPremiumCardsInActiveDeck(void) {
     Deck* deck;
     s32 count;
     s32 i;
@@ -9742,7 +9742,7 @@ s32 func_08085BAC(void) {
 
 void func_08085C3C(void) {
     gActiveDeck = 0;
-    func_08083FE0();
+    InitCardCollection();
     InitDecks();
 
     if (gUnk_03006C10 & 0x10) {
@@ -9770,7 +9770,7 @@ void func_08085C3C(void) {
 
 void func_08085CB0(void) {
     gActiveDeck = 0;
-    func_08083FE0();
+    InitCardCollection();
     InitDecks();
     func_080AB228();
     func_080AB334(0);
@@ -9790,7 +9790,7 @@ void func_08085CB0(void) {
 void _08085D04(u8 a) {
     u8 n = 0;
 
-    func_08083FE0();
+    InitCardCollection();
     InitDecks();
     SetActiveDeckIndex(0);
 
@@ -14659,7 +14659,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                 if (idx == 0) {
                     if (def->unk_2A == 0) {
                         if (func_08084FAC(def->unk_2A) > 1) {
-                            func_080850B0(&gCardCollection[card]);
+                            ClearCardCollectionSlot(&gCardCollection[card]);
                             e->unk_1C[i] = 0xFFFF;
                             e->unk_00[idx]--;
                             func_0808DD20(e->unk_00[idx], idx);
@@ -14671,7 +14671,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                             return 0;
                         }
                     } else {
-                        func_080850B0(&gCardCollection[card]);
+                        ClearCardCollectionSlot(&gCardCollection[card]);
                         e->unk_1C[i] = 0xFFFF;
                         e->unk_00[idx]--;
                         func_0808DD20(e->unk_00[idx], idx);
@@ -14682,7 +14682,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
             } else if (def->unk_20 == idx) {
                 if (def->unk_2A == 0) {
                     if (func_08084FAC(def->unk_2A) > 1) {
-                        func_080850B0(&gCardCollection[card]);
+                        ClearCardCollectionSlot(&gCardCollection[card]);
                         e->unk_1C[i] = 0xFFFF;
                         e->unk_00[idx]--;
                         func_0808DD20(e->unk_00[idx], idx);
@@ -14694,7 +14694,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
                         return 0;
                     }
                 } else {
-                    func_080850B0(&gCardCollection[card]);
+                    ClearCardCollectionSlot(&gCardCollection[card]);
                     e->unk_1C[i] = 0xFFFF;
                     e->unk_00[idx]--;
                     func_0808DD20(e->unk_00[idx], idx);
@@ -17852,7 +17852,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
                         w->unk_1EC->unk_6C |= 0x40;
                     }
 
-                    func_08093AC8(w->unk_1EC->unk_20 + sel);
+                    RemoveMapCard(w->unk_1EC->unk_20 + sel);
 
                     if ((u8)func_080E8E24((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20 + (s16)sel] + 0x20) == 1) {
                         w->unk_2DA = func_080E8D00();
@@ -17911,7 +17911,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
 
                 w->unk_1EC->unk_74 = sel;
                 w->unk_1EC->unk_6C |= 0x40;
-                func_08093AC8(w->unk_1EC->unk_20 + sel);
+                RemoveMapCard(w->unk_1EC->unk_20 + sel);
                 *w->unk_294 = 2;
                 w->unk_28F = 16;
                 w->unk_290 = 16;
@@ -18023,7 +18023,7 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
                 if ((u8)func_080E8D64((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20] + 0x48) == 1) {
                     if (gUnk_0203A8C0[w->unk_1EC->unk_20 + 1] != 0) {
                         m4aSongNumStart(140);
-                        func_08093AC8(w->unk_1EC->unk_20 + 1);
+                        RemoveMapCard(w->unk_1EC->unk_20 + 1);
                         if ((u8)func_080E8E24((u32)&gUnk_09EE4C80[w->unk_1EC->unk_20] + 0x48) == 1) {
                             w->unk_2DA = func_080E8D00();
                             ((u8*)w->unk_238)[0x122]++;
@@ -18247,7 +18247,7 @@ void func_0809332C(MapSelectWork* w) {
         args.unk_03 = q[i * 2 + 1];
         args.unk_08 = &w->cards;
         args.unk_04 = w;
-        func_08094E78(&args, (u8*)w);
+        CreateMapCard(&args, (u8*)w);
     }
 }
 
@@ -18523,7 +18523,7 @@ s32 func_08093838(MapSelectWork* w) {
 
     return 0;
 }
-u16 func_080938CC(void) {
+u16 CountMapCards(void) {
     u8 sum;
     s32 i;
 
@@ -18536,7 +18536,7 @@ u16 func_080938CC(void) {
     return sum;
 }
 
-s32 func_080938F8(u16 a) {
+s32 AddMapCard(u16 a) {
     if (func_08093B38() <= 98) {
         if (gUnk_0203A8C0[a] <= 8) {
             gUnk_0203A8C0[a]++;
@@ -18650,7 +18650,7 @@ s32 func_080938F8(u16 a) {
     return 0;
 }
 
-s32 func_08093AC8(u16 a) {
+s32 RemoveMapCard(u16 a) {
     if (gUnk_0203A8C0[a] != 0) {
         gUnk_0203A8C0[a]--;
         return 1;
@@ -18659,8 +18659,8 @@ s32 func_08093AC8(u16 a) {
     return 0;
 }
 
-s32 func_08093AE8(void) {
-    func_080938F8(GetRandom() % 270);
+s32 AddRandomMapCard(void) {
+    AddMapCard(GetRandom() % 270);
 }
 
 u16 func_08093B08(u16 a) {
@@ -18702,11 +18702,11 @@ u16 func_08093B58(void) {
     return sum;
 }
 
-void func_08093B78(void* a, void* b) {
+void CreateMapCardSelection(void* a, void* b) {
     TaskCreate(a, gTaskDescMapSelect, b);
 }
 
-void func_08093B8C(void) {
+void ClearMapCardInventory(void) {
     u16 i;
 
     for (i = 0; i < 270; i++) {
@@ -18714,34 +18714,34 @@ void func_08093B8C(void) {
     }
 }
 
-void func_08093BB4(void) {
+void InitMapCardInventory(void) {
 #ifdef VERSION_EU
     s32 i;
 #endif
 
-    func_08093B8C();
+    ClearMapCardInventory();
 
 #ifdef VERSION_EU
     if (gUnk_03006C10 & 8) {
-        func_080938F8(211);
-        func_080938F8(191);
+        AddMapCard(211);
+        AddMapCard(191);
 
         for (i = 0; i <= 219; i += 10) {
-            if (func_080938CC() <= 98) {
-                func_080938F8(i);
+            if (CountMapCards() <= 98) {
+                AddMapCard(i);
             }
         }
 
-        func_080938F8(221);
-        func_080938F8(231);
-        func_080938F8(241);
-        func_080938F8(251);
+        AddMapCard(221);
+        AddMapCard(231);
+        AddMapCard(241);
+        AddMapCard(251);
     } else {
-        func_080938F8(191);
+        AddMapCard(191);
     }
 #else
     if (!(gUnk_03006C10 & 8)) {
-        func_080938F8(191);
+        AddMapCard(191);
     }
 #endif
 }
@@ -18775,7 +18775,7 @@ void* func_08093C18(u16 a) {
 #endif
 }
 
-u8 func_08093C28(u16 a) {
+u8 HasMapCard(u16 a) {
     if (gUnk_0203A8C0[a] != 0) {
         return 1;
     }
@@ -19562,7 +19562,7 @@ u8 func_08094E4C(MapcardWork* w) {
 
     return 0;
 }
-void* func_08094E78(void* a, void* b) {
+void* CreateMapCard(void* a, void* b) {
     return ((void**)TaskCreate(b, gTaskDescMapcard, a))[1];
 }
 void func_08094E90(MapcardWork* w) {
@@ -20241,9 +20241,9 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
             w->unk_F6 = 0;
             SetTaskUpdate(a, (void*)func_08096288);
 #ifdef VERSION_EU
-            func_08096F08(&w->unk_20, eu_0805E924(gCardDefs[w->unk_C8].unk_0C));
+            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_C8].unk_0C));
 #else
-            func_08096F08(&w->unk_20, gCardDefs[w->unk_C8].unk_0C);
+            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_C8].unk_0C);
 #endif
         }
     }
@@ -20516,7 +20516,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                 *(PrizeCardArgs*)args = w->unk_18;
 
                 if ((gGameState.flags & 8) == 0) {
-                    if (func_08093C28(0xFB) == 0) {
+                    if (HasMapCard(0xFB) == 0) {
                         if (func_080E924C() == 0) {
                             if (gUnk_0903612C[gGameState.world] != 0) {
                                 if (GetRandom() % 100 <= gUnk_0903612C[gGameState.world]) {
@@ -20749,11 +20749,11 @@ u16 func_08096D48(u16 a, s32 b) {
     return base + off;
 }
 
-void func_08096DB0(void* a, void* b) {
+void CreatePrizeCardTask(void* a, void* b) {
     TaskCreate(a, gTaskDescPrizeCardInit, b);
 }
 
-void func_08096DC4(void* a, void* b) {
+void CreateBossPrizeCardTask(void* a, void* b) {
     TaskCreate(a, gTaskDescPrizeCardInitBoss, b);
 }
 void DispCardname_0(u8* work, u16* a) {
@@ -20793,7 +20793,7 @@ void DispCardname_3(u8* work) {
     ReleaseObjPalette(*(void**)&work[0x108]);
 }
 
-void func_08096F08(void* a, void* b) {
+void CreateCardNameDisplay(void* a, void* b) {
     TaskCreate(a, gTaskDescDispCardname, b);
 }
 void Version_0(u8* work) {
@@ -20811,7 +20811,7 @@ void Version_2(u8* work) {
 void Version_3(s32* p) {
     func_08066918(p[0], p[1]);
 }
-s32 func_08096F80(void* a) {
+s32 CreateVersionDisplay(void* a) {
     return (s32)TaskCreate(a, gTaskDescVersion, 0);
 }
 void func_08096F94(UnkStruct_08096F94* w, s32* args) {
@@ -20889,7 +20889,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
     if (w->unk_70 != 0) {
         w->unk_E5 = 1;
         m4aSongNumStart(106);
-        func_080938F8(w->unk_B0);
+        AddMapCard(w->unk_B0);
         SetTaskUpdate(a, (void*)func_08097404);
         WorldToScreen(&x, &y, w->unk_A0, w->unk_A4, w->unk_A8);
         w->unk_A0 = x << 8;
@@ -20959,7 +20959,7 @@ u8 func_08097404(UnkStruct_08096F94* w, void* a) {
             w->unk_E2 = 0;
             w->unk_DE = 0;
             SetTaskUpdate(a, (void*)func_0809753C);
-            func_08096F08(&w->unk_28, func_08093C18(w->unk_20->unk_20));
+            CreateCardNameDisplay(&w->unk_28, func_08093C18(w->unk_20->unk_20));
         }
     }
 
@@ -22559,9 +22559,9 @@ u8 func_08099A18(UnkStruct_08099928* w, void* a) {
             w->unk_E6 = 0;
             SetTaskUpdate(a, (void*)func_08099B60);
 #ifdef VERSION_EU
-            func_08096F08(&w->unk_20, eu_0805E924(gCardDefs[w->unk_B8].unk_0C));
+            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_B8].unk_0C));
 #else
-            func_08096F08(&w->unk_20, gCardDefs[w->unk_B8].unk_0C);
+            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_B8].unk_0C);
 #endif
         }
     }
@@ -22768,12 +22768,12 @@ void scrollbar_2(void) {
 }
 void scrollbar_3(void) {
 }
-void func_08099F74(ScrollBarWork* w) {
+void ScrollbarRequestClose(ScrollBarWork* w) {
     if (w != 0) {
         w->unk_16 = 0;
     }
 }
-void func_08099F80(ScrollBarWork* w) {
+void ScrollbarAdvance(ScrollBarWork* w) {
     if (w != 0) {
         if (w->unk_12 != 0) {
             w->unk_10++;
@@ -22784,7 +22784,7 @@ void func_08099F80(ScrollBarWork* w) {
         }
     }
 }
-void func_08099FA4(ScrollBarWork* w) {
+void ScrollbarRetreat(ScrollBarWork* w) {
     if (w != 0) {
         if (w->unk_10 != 0) {
             w->unk_10--;
@@ -22811,7 +22811,7 @@ void func_08099FE8(ScrollBarWork* w, u16 b, u8 c) {
         w->unk_17 = c;
     }
 }
-s32 func_08099FFC(void* pool, u16 a, u16 b, u16 c, u16 d, u16 e) {
+s32 CreateScrollbar(void* pool, u16 a, u16 b, u16 c, u16 d, u16 e) {
     u16 args[5];
 
     args[0] = a;
@@ -23285,9 +23285,9 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
             *(u16*)&w->unk_1B8 = v = 0x100;
             *(u16*)&w->unk_1BA = v;
 #ifdef VERSION_EU
-            func_08096F08(&w->unk_20, eu_0805E924(gCardDefs[w->unk_1A0].unk_0C));
+            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_1A0].unk_0C));
 #else
-            func_08096F08(&w->unk_20, gCardDefs[w->unk_1A0].unk_0C);
+            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_1A0].unk_0C);
 #endif
             SetTaskUpdate(a, (void*)func_0809AD60);
             w->unk_1C4 = 0;
@@ -28165,14 +28165,14 @@ void func_080A32DC(u8* p) {
     SetActiveDeckIndex(p[0]);
 }
 
-void func_080A3370(u8* p) {
+void CopyMapCardInventory(u8* p) {
     s32 i;
 
     for (i = 0; i <= 0x10D; i++) {
         p[i] = gUnk_0203A8C0[i];
     }
 }
-void func_080A3398(u8* p) {
+void RestoreMapCardInventory(u8* p) {
     u16 i;
 
     for (i = 0; i <= 0x10D; i++) {
@@ -32290,7 +32290,7 @@ s32 func_080AAB08(UnkStruct_080AAB08* w) {
             if (id > 0x1C1) {
                 if (idx == 0) {
                     gUnk_0203A9DC = gCardCollection[card] & CARD_ID_MASK;
-                    func_080850B0(&gCardCollection[card]);
+                    ClearCardCollectionSlot(&gCardCollection[card]);
                     e->unk_1C[i] = 0xFFFF;
                     e->unk_00[0]--;
                     func_0808DD20(e->unk_00[0], 0);
@@ -32301,7 +32301,7 @@ s32 func_080AAB08(UnkStruct_080AAB08* w) {
                 kind = def->unk_20;
                 if (kind == idx) {
                     gUnk_0203A9DC = gCardCollection[card] & CARD_ID_MASK;
-                    func_080850B0(&gCardCollection[card]);
+                    ClearCardCollectionSlot(&gCardCollection[card]);
                     e->unk_1C[i] = 0xFFFF;
                     e->unk_00[kind]--;
                     func_0808DD20(e->unk_00[kind], kind);

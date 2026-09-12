@@ -68,7 +68,7 @@ extern void* gUnk_09EE8F48[];
 
 s16 func_08084BAC(void);
 s16 func_08084BF0(void);
-void func_080850B0(u16* p);
+void ClearCardCollectionSlot(u16* p);
 
 s16 func_08104A84(s16 a);
 s16 func_08104AA4(s16 a);

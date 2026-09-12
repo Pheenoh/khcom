@@ -408,7 +408,7 @@ s32 func_0800E5F0(HumWork* work) {
             arg.unk_00 = actor->unk_004;
             arg.unk_04 = actor->unk_008;
             arg.unk_08 = -0x4600;
-            func_08096DC4(&gBtlWork->taskPools[0], &arg);
+            CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg);
             return 0;
         } else {
             work->unk_150++;
@@ -444,7 +444,7 @@ s32 func_0800E5F0(HumWork* work) {
             arg2.unk_00 = actor->unk_004;
             arg2.unk_04 = actor->unk_008;
             arg2.unk_08 = -0x4600;
-            func_08096DC4(&gBtlWork->taskPools[0], &arg2);
+            CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &arg2);
             return 0;
         }
         work->unk_150++;

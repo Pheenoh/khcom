@@ -1666,7 +1666,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
             }
             pos.y = 0x1A800;
             pos.z = p->unk_00C;
-            func_08096DC4(&gBtlWork->taskPools[0], &pos);
+            CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &pos);
             func_0801B008();
             func_0801B918(p);
             DisableBg(0);
@@ -3242,7 +3242,7 @@ void Mode_MapChk_1(void) {
             func_08085C3C();
         }
 
-        func_08093BB4();
+        InitMapCardInventory();
         gUnk_0203C584 = gMapChkWork->unk_05;
         gGameState.unk_17C |= 2;
         gGameState.unk_17C |= 1;
