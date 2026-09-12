@@ -17811,9 +17811,8 @@ u8 func_0809217C(UnkStruct_08093838* w, void* a) {
 void func_080A42B4(void);
 u8 func_08094404(UnkStruct_08093838* w, void* a);
 
-#ifdef NON_MATCHING
 u8 func_08092234(UnkStruct_08093838* w, void* a) {
-    u8* n;
+    MapcardWork* n;
 
     if (w->unk_290 != 0) {
         ApproachValue(&w->unk_26C, 0, w->unk_290);
@@ -17838,12 +17837,12 @@ u8 func_08092234(UnkStruct_08093838* w, void* a) {
                 SetTaskUpdate(a, (void*)func_08094404);
                 gGameState.unk_17A |= 0x40;
             } else {
-                n = (u8*)ListPoolFirst(w->unk_014);
+                n = ListPoolFirst(w->unk_014);
                 func_0800516C(1, gUnk_09EE4BB0, 1, 2);
 
                 while (n != 0) {
-                    *(u16*)&n[0x6C] |= 2;
-                    n = (u8*)ListPoolNext(&n[0x38]);
+                    n->unk_6C |= 2;
+                    n = ListPoolNext(n->unk_38);
                 }
 
                 if (w->unk_27C <= 6) {
@@ -17864,9 +17863,6 @@ u8 func_08092234(UnkStruct_08093838* w, void* a) {
     TaskPoolUpdate(w);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_08092234.s");
-#endif
 
 u8 func_080923E0(UnkStruct_08093838* w, void* a) {
     s8 v;
