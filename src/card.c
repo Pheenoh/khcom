@@ -17804,12 +17804,29 @@ u8 func_08092234(UnkStruct_08093838* w, void* a) {
 INCLUDE_ASM("card/func_08092234.s");
 #endif
 
-#ifndef VERSION_EU
 u8 func_080923E0(UnkStruct_08093838* w, void* a) {
     s8 v;
 
     if (w->unk_1EC->unk_6F == 0) {
         LoadBgTiles(1, &gUnk_09508098[0x2020], 0x23C0);
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+            break;
+        case 1:
+            RequestDma3Copy(gUnkEu_0952DDE4, (u8*)GetBgCharBase(1) + 0x1EA0, 0x100);
+            break;
+        case 2:
+            RequestDma3Copy(gUnkEu_0952E0E4, (u8*)GetBgCharBase(1) + 0x1EA0, 0x100);
+            break;
+        case 3:
+            RequestDma3Copy(gUnkEu_0952DFE4, (u8*)GetBgCharBase(1) + 0x1EA0, 0x100);
+            break;
+        case 4:
+            RequestDma3Copy(gUnkEu_0952DEE4, (u8*)GetBgCharBase(1) + 0x1EA0, 0x100);
+            break;
+        }
+#endif
         LoadBgMap(1, &gUnk_0960F2B8[0x1800], 0x800);
         func_08093D28(w->unk_1EC->unk_20, w);
         v = func_08093E34(w->unk_1EC->unk_20, w);
@@ -17854,9 +17871,6 @@ u8 func_080923E0(UnkStruct_08093838* w, void* a) {
     TaskPoolUpdate(w);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_080923E0.s");
-#endif
 u8 func_0809254C(UnkStruct_08093838* w, void* a) {
     u16 keys;
     s16 sel;
