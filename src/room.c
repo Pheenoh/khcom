@@ -335,12 +335,12 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
         AnimStart(&work->anim, 0, 1);
         work->gfx = AnimGetGfx(&work->anim);
     }
-    func_080122AC(&e->unk_040, 8, 8, 0x10);
+    ColliderInit(&e->unk_040, 8, 8, 0x10);
 }
 
 void func_080F8374(GaEntryWork* e) {
     if (!(e->unk_15A & 0x10)) {
-        func_08012304(&e->unk_040);
+        ColliderUnregister(&e->unk_040);
         ReleaseObjTiles(e->tiles);
         func_0801B7D8(e);
         TaskPoolDestroy(&e->unk_16C);

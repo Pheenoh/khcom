@@ -551,9 +551,9 @@ void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
     e->unk_108 = e->unk_10C = 0;
 
     if (arg->unk_04 != 0) {
-        func_080122AC(&e->unk_040, 1, e->unk_09E, e->unk_09C);
+        ColliderInit(&e->unk_040, 1, e->unk_09E, e->unk_09C);
     } else {
-        func_080122AC(&e->unk_040, 2, e->unk_09E, e->unk_09C);
+        ColliderInit(&e->unk_040, 2, e->unk_09E, e->unk_09C);
     }
 
     gBtlWork->unk_130 = e->unk_004;
@@ -837,7 +837,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             break;
         }
 
-        func_08012614(&p->unk_040, 0);
+        ColliderSetDisabled(&p->unk_040, 0);
         func_0801DC5C(work);
         p->unk_034 &= ~0x0000200400800000LL;
         gBtlWork->unk_068 |= 0x400000;
@@ -1940,7 +1940,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         func_08019050(12, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
-        func_08012614(&p->unk_040, 0);
+        ColliderSetDisabled(&p->unk_040, 0);
         func_0801DC5C(work);
         p->unk_034 &= 0xFFFFDFFBFF7FFFFFLL;
         p->unk_0E4->unk_068 |= 0x40000000LL;
@@ -1986,7 +1986,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         p->unk_0E4->unk_068 &= ~0x0002000000000000LL;
 #endif
         work->unk_19C = work->unk_1A0 = 0x100;
-        func_08012614(&p->unk_040, 0);
+        ColliderSetDisabled(&p->unk_040, 0);
         func_0801DC5C(work);
         p->unk_034 &= 0xFFFFDFFBFF7FFFFFLL;
         p->unk_0E4->unk_068 |= 0x40000000LL;
@@ -4018,7 +4018,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
     case 24:
         if ((s16)work->unk_154 == 0) {
             work->unk_156 = 20;
-            func_08012614(&p->unk_040, 1);
+            ColliderSetDisabled(&p->unk_040, 1);
             p->unk_034 |= 0x800000;
             p->unk_034 |= 0x0000200000000000LL;
             p->unk_01C = p->unk_00C;
@@ -4099,7 +4099,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             func_0801DE1C(work, 4, 0);
             break;
         case 18:
-            func_08012614(&p->unk_040, 0);
+            ColliderSetDisabled(&p->unk_040, 0);
             p->unk_034 &= ~0x800000LL;
             p->unk_034 &= ~0x200000000000LL;
             break;
@@ -4125,7 +4125,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         st = work->unk_154;
 
         if (st == 0) {
-            func_08012614(&p->unk_040, 0);
+            ColliderSetDisabled(&p->unk_040, 0);
             p->unk_034 &= ~0x800000LL;
             p->unk_034 &= ~0x200000000000LL;
             func_0801DE1C(work, 5, 0);
@@ -4322,7 +4322,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         if (st == 0) {
             AnimReset(&work->anim);
-            func_08012614(&p->unk_040, 1);
+            ColliderSetDisabled(&p->unk_040, 1);
             p->unk_034 |= 0x100;
             work->anim.frame = 0;
             work->anim.timer = 0;
@@ -4358,7 +4358,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         break;
     case 89:
         if ((s16)work->unk_154 == 0) {
-            func_08012614(&p->unk_040, 0);
+            ColliderSetDisabled(&p->unk_040, 0);
             work->unk_156 = 10;
         }
 
@@ -6016,7 +6016,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         work->unk_008 = (u32)AnimUpdate(&work->anim);
     }
 
-    func_08012324(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
+    ColliderSetPosition(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
     work->unk_1A8++;
     return 1;
 }
@@ -6145,7 +6145,7 @@ void task_btl_sora_3(BtlSoraWork* work) {
             gGameState.hp = p->unk_02C;
         }
     }
-    func_08012304(&p->unk_040);
+    ColliderUnregister(&p->unk_040);
     func_0801DEF4(work);
     TaskPoolDestroy(&work->unk_024);
 }
@@ -6584,9 +6584,9 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
     e->unk_108 = e->unk_10C = 0;
 
     if (arg->unk_04 != 0) {
-        func_080122AC(&e->unk_040, 1, e->unk_09E, e->unk_09C);
+        ColliderInit(&e->unk_040, 1, e->unk_09E, e->unk_09C);
     } else {
-        func_080122AC(&e->unk_040, 2, e->unk_09E, e->unk_09C);
+        ColliderInit(&e->unk_040, 2, e->unk_09E, e->unk_09C);
     }
 
     gBtlWork->unk_130 = e->unk_004;
@@ -6935,7 +6935,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         }
 
         work->unk_19C = work->unk_1A0 = 256;
-        func_08012614(&p->unk_040, 0);
+        ColliderSetDisabled(&p->unk_040, 0);
         func_08027444(work);
         p->unk_034 &= 0xFFFFDFFBFF7FFFFFLL;
         work->unk_160 = 0;
@@ -7303,7 +7303,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             }
 
             func_08019050(12, 256, gBtlWork->unk_010, gBtlWork->unk_014);
-            func_08012614(&p->unk_040, 0);
+            ColliderSetDisabled(&p->unk_040, 0);
             p->unk_034 &= 0xFFFFDFFBFF7FFFFFLL;
             func_08027444(work);
             p->unk_0E4->unk_068 |= 0x40000000;
@@ -7337,7 +7337,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             }
 
             work->unk_19C = work->unk_1A0 = 256;
-            func_08012614(&p->unk_040, 0);
+            ColliderSetDisabled(&p->unk_040, 0);
             func_08027444(work);
             p->unk_034 &= 0xFFFFDFFBFF7FFFFFLL;
             p->unk_0E4->unk_068 |= 0x40000000;
@@ -9893,7 +9893,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     case 25:
         if ((s16)work->unk_158 == 0) {
             work->unk_15A = 20;
-            func_08012614(&p->unk_040, 1);
+            ColliderSetDisabled(&p->unk_040, 1);
             p->unk_034 |= 0x800000;
             p->unk_034 |= 0x200000000000LL;
             p->unk_01C = p->unk_00C;
@@ -9995,7 +9995,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             }
             break;
         case 18:
-            func_08012614(&p->unk_040, 0);
+            ColliderSetDisabled(&p->unk_040, 0);
             p->unk_034 &= 0xFFFFFFFFFF7FFFFFLL;
             p->unk_034 &= 0xFFFFDFFFFFFFFFFFLL;
             break;
@@ -10017,7 +10017,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         break;
     case 28:
         if ((s16)work->unk_158 == 0) {
-            func_08012614(&p->unk_040, 0);
+            ColliderSetDisabled(&p->unk_040, 0);
             p->unk_034 &= 0xFFFFFFFFFF7FFFFFLL;
             p->unk_034 &= 0xFFFFDFFFFFFFFFFFLL;
 
@@ -10569,7 +10569,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         work->unk_00C = AnimUpdate(&work->anim);
     }
 
-    func_08012324(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
+    ColliderSetPosition(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
     work->unk_1A8++;
 
     return 1;
@@ -10702,7 +10702,7 @@ void task_btl_riku_3(BtlRikuWork* work) {
     } else {
         gGameState.hp = p->unk_02C;
     }
-    func_08012304(&p->unk_040);
+    ColliderUnregister(&p->unk_040);
     func_080277E4(work);
     ReleaseObjTiles(work->tiles);
     TaskPoolDestroy(&work->unk_028);

@@ -720,7 +720,7 @@ void func_081076D4(void) {
 }
 
 void func_081078F0(s16 a) {
-    func_0800448C(gUnk_09A34D9C, GetBgScreenBase(0), 0, gUnk_09EF9618[a].unk_04 * 2, 0, 2, 11, 2);
+    RequestTilemapRectCopy(gUnk_09A34D9C, GetBgScreenBase(0), 0, gUnk_09EF9618[a].unk_04 * 2, 0, 2, 11, 2);
 }
 
 void func_08107938(void) {

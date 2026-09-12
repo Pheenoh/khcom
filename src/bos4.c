@@ -45,7 +45,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     d = 0x24000;
     e = p->z - 0x3800;
     func_0801B37C(&work->unk_040, &gUnk_096FDF54, c, d, e);
-    func_080122AC(&work->unk_080, 3, gUnk_096FDF54.unk_08, gUnk_096FDF54.unk_06);
+    ColliderInit(&work->unk_080, 3, gUnk_096FDF54.unk_08, gUnk_096FDF54.unk_06);
     work->unk_074 |= 0x400;
 #ifdef VERSION_EU
     work->unk_074 |= 0x100;
@@ -327,7 +327,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         AnimUpdate(&work->anim);
     }
 
-    func_08012324((u8*)p + 0x40, p->x, p->y, p->z);
+    ColliderSetPosition((u8*)p + 0x40, p->x, p->y, p->z);
     TaskPoolUpdate(&work->unk_02C);
 
     return 1;
@@ -379,7 +379,7 @@ void task_bos_boogie_dice_3(BoogieDiceWork* work) {
         gUnk_0203C564 = 1;
     }
 
-    func_08012304(&work->unk_080);
+    ColliderUnregister(&work->unk_080);
     func_0801B7D8(&work->unk_040);
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->palette);
@@ -449,7 +449,7 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     work->unk_044 = ((BtlObj*)p)->unk_004;
     work->unk_048 = ((BtlObj*)p)->unk_008;
     work->unk_04C = -0xA000;
-    func_080122AC(&work->unk_080, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
+    ColliderInit(&work->unk_080, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
     work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6774, 4), gUnk_0979666A);
     work->palette = (u32)LoadObjPalette(gUnk_0984AF98, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
@@ -486,7 +486,7 @@ u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work) {
     }
 
     AnimUpdate(&work->anim);
-    func_08012324((u8*)p + 0x40, p->x, p->y, p->z);
+    ColliderSetPosition((u8*)p + 0x40, p->x, p->y, p->z);
     TaskPoolUpdate(&work->unk_02C);
 
     return 1;
@@ -513,7 +513,7 @@ void task_bos_boogie_explosiondice_2(BoogieExplosiondiceWork* work) {
 }
 
 void task_bos_boogie_explosiondice_3(BoogieExplosiondiceWork* work) {
-    func_08012304(&work->unk_080);
+    ColliderUnregister(&work->unk_080);
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjPalette((void*)work->palette2);
@@ -856,7 +856,7 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
     }
 
     AnimUpdate(&work->anim);
-    func_08012324((u8*)p + 0x40, p->x, p->y, p->z);
+    ColliderSetPosition((u8*)p + 0x40, p->x, p->y, p->z);
     TaskPoolUpdate(&work->unk_02C);
 
     return 1;
@@ -932,7 +932,7 @@ void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
     work->unk_034 = 0x25C00;
     work->unk_038 = -0xC000;
     work->unk_030 = *arg;
-    func_080122AC(&work->unk_06C, 8, gUnk_096FE0C0.unk_08, gUnk_096FE0C0.unk_06);
+    ColliderInit(&work->unk_06C, 8, gUnk_096FE0C0.unk_08, gUnk_096FE0C0.unk_06);
     work->tiles = (u32)LoadObjTiles(gUnk_0979C44E, 0xC40);
     work->palette = (u32)LoadObjPalette(gUnk_0984AFD8, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
@@ -991,7 +991,7 @@ u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
     }
 
     AnimUpdate(&work->anim);
-    func_08012324((u8*)p + 0x40, p->x, p->y, p->z);
+    ColliderSetPosition((u8*)p + 0x40, p->x, p->y, p->z);
 
     return 1;
 }
@@ -1023,7 +1023,7 @@ void task_bos_boogie_knife_2(BoogieKnifeWork* work) {
 }
 
 void task_bos_boogie_knife_3(BoogieKnifeWork* work) {
-    func_08012304(&work->unk_06C);
+    ColliderUnregister(&work->unk_06C);
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjPalette((void*)work->palette2);
@@ -1288,7 +1288,7 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
     }
 
     AnimUpdate(&work->anim);
-    func_08012324((u8*)p + 0x40, p->x, p->y, p->z);
+    ColliderSetPosition((u8*)p + 0x40, p->x, p->y, p->z);
 
     return 1;
 }
@@ -1722,9 +1722,9 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
         func_080DB978(work);
     }
     if (func_080DBA14(work)) {
-        func_08012324(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
+        ColliderSetPosition(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
     } else {
-        func_08012324(&p->unk_040, p->unk_004, p->unk_008 + 0x1000, p->unk_00C - 0x1000);
+        ColliderSetPosition(&p->unk_040, p->unk_004, p->unk_008 + 0x1000, p->unk_00C - 0x1000);
     }
     gBtlWork->unk_0CC = p->unk_004;
     gBtlWork->unk_0D0 = p->unk_008;
@@ -1992,7 +1992,7 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
     work->unk_200 = 0;
     func_080DC9DC(&x, &y, &z, work);
     func_0801B37C(&work->unk_028, gUnk_096FE1A8, x, y, z);
-    func_080122AC(&work->unk_19C, 7, 0x28, 0x20);
+    ColliderInit(&work->unk_19C, 7, 0x28, 0x20);
 
     if (work->unk_13E != 0) {
         work->unk_024 = 0xFFFC;
@@ -2009,8 +2009,8 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
     AnimInit(&work->anim, gUnk_09EF68A0, gUnk_09EF6860);
     AnimStart(&work->anim, (u16)(work->unk_024 + 4), 1);
     work->unk_138 = 0;
-    func_080122AC(&work->unk_140, 7, (u16)func_080DCA78(work->unk_13E), 1);
-    func_08012324(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x3800);
+    ColliderInit(&work->unk_140, 7, (u16)func_080DCA78(work->unk_13E), 1);
+    ColliderSetPosition(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x3800);
     func_0801C7FC(&work->unk_028, 35, 51);
 }
 u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
@@ -2176,16 +2176,16 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
     AnimUpdate((AnimState*)&work->anim);
     func_080DC9DC(&p->x, &p->y, &p->z, work);
     if (work->unk_138 - 3 <= 4 && gBtlWork->unk_07C->unk_00C < -0x5000 && !func_080DC528()) {
-        func_08012614(&work->unk_140, 0);
-        func_08012324(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x5000);
+        ColliderSetDisabled(&work->unk_140, 0);
+        ColliderSetPosition(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x5000);
     } else {
-        func_08012614(&work->unk_140, 1);
+        ColliderSetDisabled(&work->unk_140, 1);
     }
     if (work->unk_138 == 3 && gBtlWork->unk_07C->unk_00C <= -0x2000 && gBtlWork->unk_07C->unk_00C > -0x3000) {
-        func_08012614(&work->unk_19C, 0);
-        func_08012324(&work->unk_19C, work->unk_02C + work->unk_1F8, work->unk_030 + 0x1000, 0);
+        ColliderSetDisabled(&work->unk_19C, 0);
+        ColliderSetPosition(&work->unk_19C, work->unk_02C + work->unk_1F8, work->unk_030 + 0x1000, 0);
     } else {
-        func_08012614(&work->unk_19C, 1);
+        ColliderSetDisabled(&work->unk_19C, 1);
     }
     return 1;
 }
@@ -2205,8 +2205,8 @@ void task_bos_ursula_tako_2(UrsulaTakoWork* work) {
 
 void task_bos_ursula_tako_3(UrsulaTakoWork* work) {
     func_0801B7D8(&work->unk_028);
-    func_08012304(&work->unk_19C);
-    func_08012304(&work->unk_140);
+    ColliderUnregister(&work->unk_19C);
+    ColliderUnregister(&work->unk_140);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->palette2);
@@ -2669,7 +2669,7 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
 
     AnimUpdate(&work->anim);
 #endif
-    func_08012324((u8*)p + 0x40, p->x, p->y, p->z);
+    ColliderSetPosition((u8*)p + 0x40, p->x, p->y, p->z);
 
     return 1;
 }

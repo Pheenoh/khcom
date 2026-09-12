@@ -1663,7 +1663,7 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
     gUnk_02034A8C[e].unk_22 = i;
 
     if (gUnk_02034A91 == 0) {
-        func_08004678(func_08064624);
+        QueueVTransCallback(func_08064624);
         gUnk_02034A91 = 1;
     }
 }
@@ -8018,7 +8018,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
         gUnk_02039DC8->unk_85 = 0;
         gUnk_02039DC8->unk_83 = 0;
 #ifndef VERSION_EU
-        func_0800443C(GetBgCharBase(1), 0x8000);
+        RequestDma3Clear(GetBgCharBase(1), 0x8000);
 #endif
 
         if (work->unk_34->unk_08->unk_14 & 0x80) {

@@ -52,7 +52,7 @@ u8 task_emy_00_1(EmyWork* work) {
 
         if (AnimIsFinished(&w->anim)) {
             w->unk_14C = 20;
-            func_08012614(&act->unk_040, 1);
+            ColliderSetDisabled(&act->unk_040, 1);
             act->unk_034 |= 0x100;
             act->unk_0A2 = 0;
         }
@@ -66,7 +66,7 @@ u8 task_emy_00_1(EmyWork* work) {
 
             if (w->unk_154 > 100) {
                 w->unk_14C = 21;
-                func_08012614(&act->unk_040, 0);
+                ColliderSetDisabled(&act->unk_040, 0);
                 act->unk_034 &= ~0x100;
                 act->unk_0A2 = 16;
                 w->unk_154 = 0;
@@ -120,7 +120,7 @@ u8 task_emy_00_1(EmyWork* work) {
         break;
     case 18:
         if (w->unk_154 == 0) {
-            func_08012614(&act->unk_040, 0);
+            ColliderSetDisabled(&act->unk_040, 0);
             act->unk_034 &= ~0x300;
             func_08019068(work->unk_15C->unk_04, &work->anim, 0, 3,
                 work->tiles);
@@ -777,7 +777,7 @@ u8 task_emy_07_1(Emy07Work* work) {
         }
 
         act->unk_02C = act->unk_02E;
-        func_08012614(&act->unk_040, 0);
+        ColliderSetDisabled(&act->unk_040, 0);
         break;
     }
 
@@ -1395,8 +1395,8 @@ void task_emy_16_b_0(Emy16bWork* work, EmySpawn* spawn) {
     work->unk_03C = 0;
     work->unk_09C = 1;
     work->unk_09D = 0;
-    func_080122AC(&work->unk_040, 0x0C, 4, 3);
-    func_08012614(&work->unk_040, 1);
+    ColliderInit(&work->unk_040, 0x0C, 4, 3);
+    ColliderSetDisabled(&work->unk_040, 1);
 }
 
 u8 task_emy_16_b_1(Emy16bWork* work) {
@@ -1425,14 +1425,14 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
         break;
     case 1:
         if (work->unk_03C == 0) {
-            func_08012614(&work->unk_040, 0);
+            ColliderSetDisabled(&work->unk_040, 0);
             AnimStart(work->anim, 1, 1);
         }
 
         if (work->unk_06C != 0) {
             work->unk_03C = 0;
             work->unk_038 = 2;
-            func_08012614(&work->unk_040, 1);
+            ColliderSetDisabled(&work->unk_040, 1);
         } else if (work->unk_03C > 0x64) {
             work->unk_03C = 0;
             work->unk_038 = 3;
@@ -1462,7 +1462,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
         if (work->unk_06C != 0) {
             work->unk_03C = 0;
             work->unk_038 = 2;
-            func_08012614(&work->unk_040, 1);
+            ColliderSetDisabled(&work->unk_040, 1);
             work->unk_09C = 1;
         } else if (work->unk_03C > 0x3C) {
             return 0;
@@ -1480,7 +1480,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
         work->z = 0;
     }
 
-    func_08012324(&work->unk_040, work->x, work->y, work->z);
+    ColliderSetPosition(&work->unk_040, work->x, work->y, work->z);
     AnimUpdate(work->anim);
     return 1;
 }
@@ -1518,7 +1518,7 @@ void task_emy_16_b_2(Emy16bWork* work) {
 }
 
 void task_emy_16_b_3(Emy16bWork* work) {
-    func_08012304(&work->unk_040);
+    ColliderUnregister(&work->unk_040);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }
@@ -3522,7 +3522,7 @@ u8 task_emy_37_1(Emy37Work* work) {
 
         if (AnimIsFinished(&work->base.anim)) {
             work->base.unk_14C = 20;
-            func_08012614(&act->unk_040, 1);
+            ColliderSetDisabled(&act->unk_040, 1);
             act->unk_034 |= 0x100;
             act->unk_0A2 = 0;
         }
@@ -3580,7 +3580,7 @@ u8 task_emy_37_1(Emy37Work* work) {
             if (work->base.unk_154 > 160) {
                 w->unk_184 = 0;
                 work->base.unk_14C = 21;
-                func_08012614(&act->unk_040, 0);
+                ColliderSetDisabled(&act->unk_040, 0);
                 act->unk_034 &= ~0x100;
                 act->unk_0A2 = 20;
                 act->unk_034 |= 0x200;
@@ -3633,7 +3633,7 @@ u8 task_emy_37_1(Emy37Work* work) {
     case 18:
         if (work->base.unk_154 == 0) {
             act->unk_0A2 = 20;
-            func_08012614(&act->unk_040, 0);
+            ColliderSetDisabled(&act->unk_040, 0);
             act->unk_034 &= ~0x300;
             func_08019068(w->base.unk_15C->unk_04, &w->base.anim, 0, 3, w->base.tiles);
         }
@@ -4864,7 +4864,7 @@ void task_emy_83_b_0(Emy83bWork* work, EmySpawn* spawn) {
     work->y = spawn->y;
     work->z = spawn->z;
     work->unk_030 = 0;
-    func_080122AC(&work->unk_034, 0x0C, 4, 0x10);
+    ColliderInit(&work->unk_034, 0x0C, 4, 0x10);
 }
 
 u8 task_emy_83_b_1(Emy83bWork* work) {
@@ -4913,7 +4913,7 @@ u8 task_emy_83_b_1(Emy83bWork* work) {
         break;
     }
 
-    func_08012324(&work->unk_034, work->x, work->y, work->z);
+    ColliderSetPosition(&work->unk_034, work->x, work->y, work->z);
     AnimUpdate(work->unk_008);
     return 1;
 }
@@ -4932,7 +4932,7 @@ void task_emy_83_b_2(Emy83bWork* work) {
 }
 
 void task_emy_83_b_3(Emy83bWork* work) {
-    func_08012304(&work->unk_034);
+    ColliderUnregister(&work->unk_034);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }

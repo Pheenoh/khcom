@@ -529,7 +529,7 @@ void func_080121FC(FldObj* p) {
 void func_08012214(void) {
 }
 
-void* func_08012218(u32 type) {
+void* ColliderGetPool(u32 type) {
     switch (type) {
     case 1:
     case 2:
@@ -549,14 +549,14 @@ void* func_08012218(u32 type) {
     return &gUnk_02034918;
 }
 
-void func_0801227C(void) {
+void ColliderPoolsInit(void) {
     ListPoolInit(&gUnk_020348E8);
     ListPoolInit(&gUnk_020348F8);
     ListPoolInit(&gUnk_02034908);
     ListPoolInit(&gUnk_02034918);
 }
 
-void func_080122AC(Collider* p, u32 type, u16 r, u16 h) {
+void ColliderInit(Collider* p, u32 type, u16 r, u16 h) {
     void* pool;
     p->unk_34 = 0;
     p->unk_2C = 0;
@@ -567,7 +567,7 @@ void func_080122AC(Collider* p, u32 type, u16 r, u16 h) {
     p->unk_00 = type;
     p->self = p;
     p->unk_58 = 0;
-    pool = func_08012218(type);
+    pool = ColliderGetPool(type);
 
     switch (type) {
     case 6:
@@ -579,20 +579,20 @@ void func_080122AC(Collider* p, u32 type, u16 r, u16 h) {
     ListPoolAppend(&p->unk_18, pool);
 }
 
-void func_08012304(Collider* p) {
+void ColliderUnregister(Collider* p) {
     Collider* q = p->self;
     if (q == p) {
-        ListPoolRemove(&q->unk_18, func_08012218(q->unk_00));
+        ListPoolRemove(&q->unk_18, ColliderGetPool(q->unk_00));
     }
 }
 
-void func_08012324(Collider* p, s32 a, s32 b, s32 c) {
+void ColliderSetPosition(Collider* p, s32 a, s32 b, s32 c) {
     p->unk_04 = a;
     p->unk_08 = b * 2;
     p->unk_0C = c;
 }
 
-void func_08012330(ListPool* pool) {
+void ColliderClearPoolContacts(ListPool* pool) {
     Collider* p = ListPoolFirst(pool);
     while (p != 0) {
         p->unk_2C = 0;
@@ -602,7 +602,7 @@ void func_08012330(ListPool* pool) {
     }
 }
 
-void func_0801235C(ListPool* a, ListPool* b) {
+void ColliderCheckPoolPairs(ListPool* a, ListPool* b) {
     Collider* p;
     Collider* q;
     s32 sum;
@@ -718,20 +718,20 @@ void func_0801235C(ListPool* a, ListPool* b) {
     }
 }
 
-void func_080125A4(void) {
-    func_08012330(&gUnk_020348E8);
-    func_08012330(&gUnk_020348F8);
-    func_08012330(&gUnk_02034908);
-    func_08012330(&gUnk_02034918);
-    func_0801235C(&gUnk_020348E8, &gUnk_020348E8);
-    func_0801235C(&gUnk_020348F8, &gUnk_020348E8);
-    func_0801235C(&gUnk_02034908, &gUnk_020348E8);
-    func_0801235C(&gUnk_020348F8, &gUnk_020348F8);
-    func_0801235C(&gUnk_02034918, &gUnk_020348E8);
-    func_0801235C(&gUnk_02034918, &gUnk_020348F8);
+void ColliderUpdateAll(void) {
+    ColliderClearPoolContacts(&gUnk_020348E8);
+    ColliderClearPoolContacts(&gUnk_020348F8);
+    ColliderClearPoolContacts(&gUnk_02034908);
+    ColliderClearPoolContacts(&gUnk_02034918);
+    ColliderCheckPoolPairs(&gUnk_020348E8, &gUnk_020348E8);
+    ColliderCheckPoolPairs(&gUnk_020348F8, &gUnk_020348E8);
+    ColliderCheckPoolPairs(&gUnk_02034908, &gUnk_020348E8);
+    ColliderCheckPoolPairs(&gUnk_020348F8, &gUnk_020348F8);
+    ColliderCheckPoolPairs(&gUnk_02034918, &gUnk_020348E8);
+    ColliderCheckPoolPairs(&gUnk_02034918, &gUnk_020348F8);
 }
 
-void func_08012614(Collider* p, u8 b) {
+void ColliderSetDisabled(Collider* p, u8 b) {
     if (b) {
         p->unk_18.flags |= 2;
         p->unk_2C = 0;
@@ -741,7 +741,7 @@ void func_08012614(Collider* p, u8 b) {
     }
 }
 
-u8 func_08012648(Collider* p) {
+u8 ColliderIsColliding(Collider* p) {
     return p->unk_2C;
 }
 
@@ -753,7 +753,7 @@ void ColliderSetHeight(Collider* p, u16 h) {
     p->height = h << 8;
 }
 
-u8 func_08012660(Collider* p, s32 bit) {
+u8 ColliderIsTouchingType(Collider* p, s32 bit) {
     if (p->unk_58 & (1 << bit)) {
         return 1;
     }

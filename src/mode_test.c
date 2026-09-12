@@ -119,7 +119,7 @@ void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
     work->palette = LoadObjPalette(gUnk_09849A98, 32);
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnkEu_08896524, &work->anim, 0, 0, work->tiles);
-    func_080122AC(body->particles, 3, 10, 32);
+    ColliderInit(body->particles, 3, 10, 32);
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBtlShadow, body);
 }
@@ -196,9 +196,9 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
         body->x += gSineTable[angle] * 0x133 >> 8;
         body->y += -gSineTable[angle + 64] * 0x133 >> 8;
         func_08011F78(110, body->x, body->y, body->z, 20, 10, 64);
-        if (func_08012660(body->particles, 1)) {
+        if (ColliderIsTouchingType(body->particles, 1)) {
             work->state = 2;
-            func_08012614(body->particles, 1);
+            ColliderSetDisabled(body->particles, 1);
             work->bob = 0;
         }
         break;
@@ -262,7 +262,7 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
             work->speed = 0;
             if (AnimIsFinished(&work->anim)) {
                 work->state = 4;
-                func_08012614(body->particles, 0);
+                ColliderSetDisabled(body->particles, 0);
             }
         }
         if (eu_08060C44(work) && !work->bounce) {
@@ -278,7 +278,7 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
     }
     AnimUpdate(&work->anim);
     TaskPoolUpdate(&work->tasks);
-    func_08012324(body->particles, body->x, body->y, body->z);
+    ColliderSetPosition(body->particles, body->x, body->y, body->z);
     return 1;
 }
 
@@ -328,7 +328,7 @@ void eu_08061588(UnkModeTestWork* work) {
 void eu_08061698(UnkModeTestWork* work) {
     BtlWork* battle;
 
-    func_08012304(work->body.particles);
+    ColliderUnregister(work->body.particles);
     battle = work->side != 0 ? gBtlWork : gUnk_02039B9C;
     battle->unk_068 &= 0xFFFFFFFFFFDFFFFF;
     ReleaseObjPalette(work->palette);
@@ -397,7 +397,7 @@ u8 task_lockon_1(LockonWork* w) {
             dx = px - ox;
             dy = py - oy;
 
-            if (func_0805F588(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->unk_24) {
+            if (VectorLength2D(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->unk_24) {
                 if (o->unk_30 == 3) {
                     gUnk_02039DC4[0] = o->unk_00;
                     gUnk_02039DC4[1] = o->unk_04;
@@ -503,12 +503,12 @@ void task_lockon_3(LockonWork* w) {
     gUnk_02039DC4 = 0;
 }
 
-s32 func_0805F588(s32 a, s32 b) {
+s32 VectorLength2D(s32 a, s32 b) {
     return (u16)Sqrt(a * a + b * b);
 }
 
-s32 func_0805F5A4(s32* x, s32* y) {
-    s32 d = func_0805F588(*x, *y);
+s32 NormalizeVector2D8(s32* x, s32* y) {
+    s32 d = VectorLength2D(*x, *y);
 
     if (d > 0) {
         *x = (*x << 8) / d;
@@ -536,7 +536,7 @@ s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list) {
         if (o != 0) {
             dx = o->unk_00;
             dy = o->unk_04;
-            dist = func_0805F588(dx - a, dy - b);
+            dist = VectorLength2D(dx - a, dy - b);
 
             if (bestDist > dist) {
                 bestDist = dist;
@@ -578,7 +578,7 @@ u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d) {
         y = d->unk_04 - c;
         sn = gSineTable[a & 0xFF];
         cs = -gSineTable[(a & 0xFF) + 0x40];
-        func_0805F5A4(&x, &y);
+        NormalizeVector2D8(&x, &y);
         dot = (sn * x >> 8) + (y * cs >> 8);
 
         if (d->unk_30 == 3) {

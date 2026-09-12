@@ -3856,7 +3856,7 @@ u8 func_0807D584(UnkStruct_02034AAC* p, void* a) {
         y = sy;
         dx = (x << 8) - p->unk_4C;
         dy = (y << 8) - p->unk_50;
-        p->unk_84 = func_0805F5A4(&dx, &dy);
+        p->unk_84 = NormalizeVector2D8(&dx, &dy);
         p->unk_8C = -dx;
         p->unk_90 = -dy;
         p->unk_88 = 0x300;
@@ -3888,7 +3888,7 @@ u8 func_0807D68C(UnkStruct_02034AAC* p, void* a) {
     if (p->unk_88 < 0) {
         dx = (x << 8) - p->unk_4C;
         dy = (y << 8) - p->unk_50;
-        func_0805F5A4(&dx, &dy);
+        NormalizeVector2D8(&dx, &dy);
         p->unk_8C = -dx;
         p->unk_90 = -dy;
     }
@@ -3905,7 +3905,7 @@ u8 func_0807D68C(UnkStruct_02034AAC* p, void* a) {
 
     p->unk_4C += (p->unk_8C * p->unk_88) >> 8;
     p->unk_50 += (p->unk_90 * p->unk_88) >> 8;
-    p->unk_84 = func_0805F588((x << 8) - p->unk_4C, (y << 8) - p->unk_50);
+    p->unk_84 = VectorLength2D((x << 8) - p->unk_4C, (y << 8) - p->unk_50);
     p->unk_88 -= p->unk_80;
     p->unk_80 += 2;
 
@@ -10034,35 +10034,35 @@ u8 func_080863C0(u8* work, void* a) {
     FadeStartIn(0, 16);
 
     if (work[0x8D4] == 0) {
-        func_0800443C(GetBgCharBase(0), 0x2000);
+        RequestDma3Clear(GetBgCharBase(0), 0x2000);
     }
 
     if (work[0x8D4] == 1) {
-        func_0800443C(GetBgCharBase(0) + 0x2000, 0x2000);
+        RequestDma3Clear(GetBgCharBase(0) + 0x2000, 0x2000);
     }
 
     if (work[0x8D4] == 2) {
-        func_0800443C(GetBgCharBase(1), 0x2000);
+        RequestDma3Clear(GetBgCharBase(1), 0x2000);
     }
 
     if (work[0x8D4] == 3) {
-        func_0800443C(GetBgCharBase(1) + 0x2000, 0x2000);
+        RequestDma3Clear(GetBgCharBase(1) + 0x2000, 0x2000);
     }
 
     if (work[0x8D4] == 4) {
-        func_0800443C(GetBgCharBase(2), 0x2000);
+        RequestDma3Clear(GetBgCharBase(2), 0x2000);
     }
 
     if (work[0x8D4] == 5) {
-        func_0800443C(GetBgCharBase(2) + 0x2000, 0x2000);
+        RequestDma3Clear(GetBgCharBase(2) + 0x2000, 0x2000);
     }
 
     if (work[0x8D4] == 6) {
-        func_0800443C(GetBgCharBase(3), 0x2000);
+        RequestDma3Clear(GetBgCharBase(3), 0x2000);
     }
 
     if (work[0x8D4] == 7) {
-        func_0800443C(GetBgCharBase(3) + 0x2000, 0x2000);
+        RequestDma3Clear(GetBgCharBase(3) + 0x2000, 0x2000);
     }
 
     work[0x8D4]++;
@@ -10077,35 +10077,35 @@ u8 func_080863C0(u8* work, void* a) {
     FadeStartIn(0, 16);
 
     if (work[0x8D0] == 0) {
-        func_0800443C(GetBgCharBase(0), 0x2000);
+        RequestDma3Clear(GetBgCharBase(0), 0x2000);
     }
 
     if (work[0x8D0] == 1) {
-        func_0800443C(GetBgCharBase(0) + 0x2000, 0x2000);
+        RequestDma3Clear(GetBgCharBase(0) + 0x2000, 0x2000);
     }
 
     if (work[0x8D0] == 2) {
-        func_0800443C(GetBgCharBase(1), 0x2000);
+        RequestDma3Clear(GetBgCharBase(1), 0x2000);
     }
 
     if (work[0x8D0] == 3) {
-        func_0800443C(GetBgCharBase(1) + 0x2000, 0x2000);
+        RequestDma3Clear(GetBgCharBase(1) + 0x2000, 0x2000);
     }
 
     if (work[0x8D0] == 4) {
-        func_0800443C(GetBgCharBase(2), 0x2000);
+        RequestDma3Clear(GetBgCharBase(2), 0x2000);
     }
 
     if (work[0x8D0] == 5) {
-        func_0800443C(GetBgCharBase(2) + 0x2000, 0x2000);
+        RequestDma3Clear(GetBgCharBase(2) + 0x2000, 0x2000);
     }
 
     if (work[0x8D0] == 6) {
-        func_0800443C(GetBgCharBase(3), 0x2000);
+        RequestDma3Clear(GetBgCharBase(3), 0x2000);
     }
 
     if (work[0x8D0] == 7) {
-        func_0800443C(GetBgCharBase(3) + 0x2000, 0x2000);
+        RequestDma3Clear(GetBgCharBase(3) + 0x2000, 0x2000);
     }
 
     work[0x8D0]++;
@@ -19382,7 +19382,7 @@ void func_080949A0(MapcardWork* w) {
     dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->unk_04 >> 8) - 24;
     v[0] = dx * 256 - w->unk_4C;
     v[1] = dy * 256 - w->unk_50;
-    w->unk_64 = func_0805F5A4(&v[0], &v[1]);
+    w->unk_64 = NormalizeVector2D8(&v[0], &v[1]);
     w->unk_54 = -v[0];
     w->unk_58 = -v[1];
     w->unk_60 = 0x300;
@@ -19408,7 +19408,7 @@ u8 func_08094A18(MapcardWork* w, void* a) {
     if (w->unk_60 < 0) {
         x = (dx << 8) - w->unk_4C;
         y = (dy << 8) - w->unk_50;
-        func_0805F5A4(&x, &y);
+        NormalizeVector2D8(&x, &y);
         w->unk_54 = -x;
         w->unk_58 = -y;
     }
@@ -19421,7 +19421,7 @@ u8 func_08094A18(MapcardWork* w, void* a) {
     }
     w->unk_4C += (w->unk_54 * w->unk_60) >> 8;
     w->unk_50 += (w->unk_58 * w->unk_60) >> 8;
-    d = func_0805F588((dx << 8) - w->unk_4C, (dy << 8) - w->unk_50);
+    d = VectorLength2D((dx << 8) - w->unk_4C, (dy << 8) - w->unk_50);
     w->unk_64 = d;
     w->unk_60 -= w->unk_5C;
     w->unk_5C += 2;
@@ -20130,9 +20130,9 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     w->unk_F7 = 0;
     w->unk_F8 = 0;
     q = &w->unk_4C[0];
-    func_080122AC(q, 5, 30, 10);
-    func_08012614(q, 1);
-    func_08012324(q, w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
+    ColliderInit(q, 5, 30, 10);
+    ColliderSetDisabled(q, 1);
+    ColliderSetPosition(q, w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
     w->unk_F9 = 0;
     w->unk_FC[0] = 0;
     w->unk_FA = 0;
@@ -20183,14 +20183,14 @@ u8 func_08095E68(PrizeCardWork* w, void* a) {
         y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
         w->unk_A8 = x << 8;
         w->unk_AC = y << 8;
-        func_08012614(&w->unk_4C[0], 1);
+        ColliderSetDisabled(&w->unk_4C[0], 1);
         w->unk_FA = 16;
         w->unk_E4 = 50;
         func_080960D8(w);
         return 1;
     }
 
-    func_08012324(&w->unk_4C[0], w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
+    ColliderSetPosition(&w->unk_4C[0], w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
     w->unk_E6 = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
     w->unk_E8 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->unk_04 >> 8);
     w->unk_EE = (w->unk_A8 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
@@ -20200,7 +20200,7 @@ u8 func_08095E68(PrizeCardWork* w, void* a) {
     w->unk_F8 += 2;
 
     if (w->unk_F9 == 20) {
-        func_08012614(&w->unk_4C[0], 0);
+        ColliderSetDisabled(&w->unk_4C[0], 0);
     }
 
     if (w->unk_F9 <= 59) {
@@ -20220,7 +20220,7 @@ void func_080960D8(PrizeCardWork* w) {
 
     v[0] = cx - w->unk_A8;
     v[1] = cy - w->unk_AC;
-    w->unk_DC = func_0805F5A4(&v[0], &v[1]);
+    w->unk_DC = NormalizeVector2D8(&v[0], &v[1]);
     w->unk_D4 = -v[0];
     w->unk_D8 = -v[1];
     w->unk_D0 = 0x300;
@@ -20232,7 +20232,7 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
     if (w->unk_D0 < 0) {
         v[0] = 0x7800 - w->unk_A8;
         v[1] = 0x5000 - w->unk_AC;
-        func_0805F5A4(&v[0], &v[1]);
+        NormalizeVector2D8(&v[0], &v[1]);
         w->unk_D4 = -v[0];
         w->unk_D8 = -v[1];
 
@@ -20253,7 +20253,7 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
     w->unk_F6 += 32;
     w->unk_F7 += (64 - w->unk_F7) >> 4;
     w->unk_F8 = 0;
-    w->unk_DC = func_0805F588(0x7800 - w->unk_A8, 0x5000 - w->unk_AC);
+    w->unk_DC = VectorLength2D(0x7800 - w->unk_A8, 0x5000 - w->unk_AC);
     w->unk_D0 -= w->unk_CC;
     w->unk_CC += 2;
 
@@ -20380,7 +20380,7 @@ void func_08096428(PrizeCardWork* w) {
 void func_080965CC(PrizeCardWork* w) {
     FadeSetPaletteExcluded(w->unk_10->unk_06 + 16, 0);
     FadeSetPaletteExcluded(w->unk_04->unk_06 + 16, 0);
-    func_08012304(w->unk_4C);
+    ColliderUnregister(w->unk_4C);
     ReleaseObjTiles(w->unk_00);
     ReleaseObjTiles(w->unk_08);
     ReleaseObjTiles(w->unk_14);
@@ -20843,9 +20843,9 @@ void func_08096F94(UnkStruct_08096F94* w, s32* args) {
     w->unk_DF = 0;
     w->unk_E0 = 0;
     p = w->unk_44;
-    func_080122AC(p, 5, 8, 10);
-    func_08012614(p, 1);
-    func_08012324(p, w->unk_A0, w->unk_A4, w->unk_A8);
+    ColliderInit(p, 5, 8, 10);
+    ColliderSetDisabled(p, 1);
+    ColliderSetPosition(p, w->unk_A0, w->unk_A4, w->unk_A8);
     w->unk_E6 = 0;
     w->unk_E7 = 0;
     w->unk_E8 = 0;
@@ -20894,12 +20894,12 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
         WorldToScreen(&x, &y, w->unk_A0, w->unk_A4, w->unk_A8);
         w->unk_A0 = x << 8;
         w->unk_A4 = y << 8;
-        func_08012614(w->unk_44, 1);
+        ColliderSetDisabled(w->unk_44, 1);
         w->unk_CC = 50;
         func_08097390(w);
         return 1;
     } else {
-        func_08012324(w->unk_44, w->unk_A0, w->unk_A4, w->unk_A8);
+        ColliderSetPosition(w->unk_44, w->unk_A0, w->unk_A4, w->unk_A8);
         WorldToScreen(&w->unk_CE, &w->unk_D0, w->unk_A0, w->unk_A4, w->unk_A8);
         WorldToScreen(&w->unk_D6, &w->unk_D8, w->unk_A0, w->unk_A4, w->unk_AC);
         w->unk_CC = -0x1004 - (w->unk_A4 >> 8) * 4;
@@ -20907,7 +20907,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
         w->unk_E0 += 2;
 
         if (w->unk_E1 == 20) {
-            func_08012614(w->unk_44, 0);
+            ColliderSetDisabled(w->unk_44, 0);
         }
 
         if (w->unk_E1 <= 59) {
@@ -20931,7 +20931,7 @@ void func_08097390(UnkStruct_08096F94* w) {
     ty = 0x5000;
     dx = tx - w->unk_A0;
     dy = ty - w->unk_A4;
-    w->unk_C4 = func_0805F5A4(&dx, &dy);
+    w->unk_C4 = NormalizeVector2D8(&dx, &dy);
     w->unk_BC = -dx;
     w->unk_C0 = -dy;
     w->unk_B8 = 0x300;
@@ -20951,7 +20951,7 @@ u8 func_08097404(UnkStruct_08096F94* w, void* a) {
     if (w->unk_B8 < 0) {
         dx = 0x7800 - w->unk_A0;
         dy = 0x5000 - w->unk_A4;
-        func_0805F5A4(&dx, &dy);
+        NormalizeVector2D8(&dx, &dy);
         w->unk_BC = -dx;
         w->unk_C0 = -dy;
 
@@ -20970,7 +20970,7 @@ u8 func_08097404(UnkStruct_08096F94* w, void* a) {
     w->unk_DE = t;
     w->unk_DF += (64 - w->unk_DF) >> 4;
     w->unk_E0 = z;
-    w->unk_C4 = func_0805F588(0x7800 - w->unk_A0, 0x5000 - w->unk_A4);
+    w->unk_C4 = VectorLength2D(0x7800 - w->unk_A0, 0x5000 - w->unk_A4);
     w->unk_B8 -= w->unk_B4;
     w->unk_B4 += 2;
 
@@ -21100,7 +21100,7 @@ void func_08097688(UnkStruct_08096F94* w) {
 void func_08097834(PrizeCardWork* w) {
     FadeSetPaletteExcluded(w->unk_10->unk_06 + 16, 0);
     FadeSetPaletteExcluded(w->unk_04->unk_06 + 16, 0);
-    func_08012304(&w->unk_20[0x24]);
+    ColliderUnregister(&w->unk_20[0x24]);
     ReleaseObjTiles(w->unk_00);
     ReleaseObjTiles(w->unk_08);
     ReleaseObjTiles(w->unk_14);
@@ -22388,9 +22388,9 @@ void PrizeBoss_0(UnkStruct_08099928* w, s32* args) {
     w->unk_E8 = 0;
     w->unk_E9 = 0;
     p = &w->unk_4C[0];
-    func_080122AC(p, 5, 8, 10);
-    func_08012614(p, 1);
-    func_08012324(p, w->unk_A8, w->unk_AC, w->unk_B0);
+    ColliderInit(p, 5, 8, 10);
+    ColliderSetDisabled(p, 1);
+    ColliderSetPosition(p, w->unk_A8, w->unk_AC, w->unk_B0);
     w->unk_EA = 0;
     w->unk_ED = 0;
     w->unk_EB = 0;
@@ -22413,14 +22413,14 @@ u8 PrizeBoss_1(UnkStruct_08099928* w, void* a) {
     } else {
         ColliderSetRadius(&w->unk_4C[0], 10);
     }
-    func_08012324(&w->unk_4C[0], w->unk_A8, w->unk_AC, w->unk_B0);
+    ColliderSetPosition(&w->unk_4C[0], w->unk_A8, w->unk_AC, w->unk_B0);
     WorldToScreen((s16*)&w->unk_D6, (s16*)&w->unk_D8, w->unk_A8, w->unk_AC, w->unk_B0);
     WorldToScreen(&w->unk_DE, &w->unk_E0, w->unk_A8, w->unk_AC, w->unk_B4);
     w->unk_D4 = -0x1004 - (w->unk_AC >> 8) * 4;
     func_08099928(w);
     w->unk_E9 += 2;
     if (w->unk_EA == 60) {
-        func_08012614(&w->unk_4C[0], 0);
+        ColliderSetDisabled(&w->unk_4C[0], 0);
     }
     if (w->unk_EA <= 59) {
         w->unk_EA++;
@@ -22436,7 +22436,7 @@ u8 PrizeBoss_1(UnkStruct_08099928* w, void* a) {
         WorldToScreen(&x, &y, w->unk_A8, w->unk_AC, w->unk_B0);
         w->unk_A8 = x << 8;
         w->unk_AC = y << 8;
-        func_08012614(&w->unk_4C[0], 1);
+        ColliderSetDisabled(&w->unk_4C[0], 1);
         w->unk_EB = 16;
         w->unk_D4 = 50;
         func_080999A4(w);
@@ -22491,7 +22491,7 @@ void PrizeBoss_2(UnkStruct_08099928* w) {
 void PrizeBoss_3(UnkStruct_08099928* w) {
     FadeSetPaletteExcluded(w->unk_10->unk_06 + 16, 0);
     FadeSetPaletteExcluded(w->unk_04->unk_06 + 16, 0);
-    func_08012304(&w->unk_4C[0]);
+    ColliderUnregister(&w->unk_4C[0]);
     ReleaseObjTiles(w->unk_00);
     ReleaseObjTiles(w->unk_08);
     ReleaseObjTiles(w->unk_14);
@@ -22530,7 +22530,7 @@ void func_080999A4(UnkStruct_08099928* w) {
     ty = 0x5000;
     dx = tx - w->unk_A8;
     dy = ty - w->unk_AC;
-    w->unk_CC = func_0805F5A4(&dx, &dy);
+    w->unk_CC = NormalizeVector2D8(&dx, &dy);
     w->unk_C4 = -dx;
     w->unk_C8 = -dy;
     w->unk_C0 = 0x300;
@@ -22550,7 +22550,7 @@ u8 func_08099A18(UnkStruct_08099928* w, void* a) {
     if (w->unk_C0 < 0) {
         dx = 0x7800 - w->unk_A8;
         dy = 0x5000 - w->unk_AC;
-        func_0805F5A4(&dx, &dy);
+        NormalizeVector2D8(&dx, &dy);
         w->unk_C4 = -dx;
         w->unk_C8 = -dy;
 
@@ -22573,7 +22573,7 @@ u8 func_08099A18(UnkStruct_08099928* w, void* a) {
     w->unk_E6 = t;
     w->unk_E8 += (64 - w->unk_E8) >> 4;
     w->unk_E9 = z;
-    w->unk_CC = func_0805F588(0x7800 - w->unk_A8, 0x5000 - w->unk_AC);
+    w->unk_CC = VectorLength2D(0x7800 - w->unk_A8, 0x5000 - w->unk_AC);
     w->unk_C0 -= w->unk_BC;
     w->unk_BC += 2;
 
@@ -22859,8 +22859,8 @@ void func_0809A02C(UnkStruct_0809A02C* w, s32* args) {
     w->unk_14 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
     p = w->unk_144;
-    func_080122AC(p, 5, 8, 10);
-    func_08012324(p, w->unk_38, w->unk_3C, w->unk_40);
+    ColliderInit(p, 5, 8, 10);
+    ColliderSetPosition(p, w->unk_38, w->unk_3C, w->unk_40);
     TaskPoolInit(&w->unk_20, 1);
     gBtlWork->unk_0B0++;
 }
@@ -22903,8 +22903,8 @@ void func_0809A1B8(UnkStruct_0809A02C* w, s32* args) {
     w->unk_14 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
     p = w->unk_144;
-    func_080122AC(p, 5, 8, 10);
-    func_08012324(p, w->unk_38, w->unk_3C, w->unk_40);
+    ColliderInit(p, 5, 8, 10);
+    ColliderSetPosition(p, w->unk_38, w->unk_3C, w->unk_40);
     TaskPoolInit(&w->unk_20, 1);
     gBtlWork->unk_0B0++;
 }
@@ -22941,8 +22941,8 @@ void func_0809A368(UnkStruct_0809A02C* w, UnkStruct_0809A368_Args* args) {
     w->unk_14 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
     p = w->unk_144;
-    func_080122AC(p, 5, 8, 10);
-    func_08012324(p, w->unk_38, w->unk_3C, w->unk_40);
+    ColliderInit(p, 5, 8, 10);
+    ColliderSetPosition(p, w->unk_38, w->unk_3C, w->unk_40);
     TaskPoolInit(&w->unk_20, 1);
     gBtlWork->unk_0B0++;
 }
@@ -22963,7 +22963,7 @@ void func_0809A4E0(UnkStruct_0809A02C* w, u8 kind) {
 
     dx = tx - w->unk_38;
     dy = ty - w->unk_3C;
-    w->unk_1AC = func_0805F5A4(&dx, &dy);
+    w->unk_1AC = NormalizeVector2D8(&dx, &dy);
     w->unk_1B0 = -dx;
     w->unk_1B4 = -dy;
     w->unk_1A8 = 0x300;
@@ -23025,7 +23025,7 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
             w->unk_38 = sx << 8;
             w->unk_3C = sy << 8;
             w->unk_1CA = 1;
-            func_08012614(w->unk_144, 1);
+            ColliderSetDisabled(w->unk_144, 1);
             func_0809A4E0(w, 0);
 #ifdef VERSION_EU
             w->unk_1CD = 1;
@@ -23036,7 +23036,7 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
         return 1;
     }
 
-    func_08012324(w->unk_144, w->unk_38, w->unk_3C,
+    ColliderSetPosition(w->unk_144, w->unk_38, w->unk_3C,
                   w->unk_40);
     w->unk_1B8 =
         (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] *
@@ -23131,7 +23131,7 @@ s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
             w->unk_38 = sx << 8;
             w->unk_3C = sy << 8;
             w->unk_1CA = 1;
-            func_08012614(w->unk_144, 1);
+            ColliderSetDisabled(w->unk_144, 1);
             func_0809A4E0(w, 0);
 #ifdef VERSION_EU
             w->unk_1CD = 1;
@@ -23142,7 +23142,7 @@ s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
         return 1;
     }
 
-    func_08012324(w->unk_144, w->unk_38, w->unk_3C,
+    ColliderSetPosition(w->unk_144, w->unk_38, w->unk_3C,
                   w->unk_40);
     w->unk_1B8 =
         (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] *
@@ -23191,7 +23191,7 @@ u8 func_0809AB2C(UnkStruct_0809A02C* w) {
     if (w->unk_1A8 < 0) {
         dx = -w->unk_38;
         dy = 0xA000 - w->unk_3C;
-        func_0805F5A4(&dx, &dy);
+        NormalizeVector2D8(&dx, &dy);
         w->unk_1B0 = -dx;
         w->unk_1B4 = -dy;
 
@@ -23211,7 +23211,7 @@ u8 func_0809AB2C(UnkStruct_0809A02C* w) {
     w->unk_1C9 += 32;
     w->unk_1C8 += (64 - w->unk_1C8) >> 4;
     w->unk_1C7 = 0;
-    w->unk_1AC = func_0805F588(-w->unk_38, 0xA000 - w->unk_3C);
+    w->unk_1AC = VectorLength2D(-w->unk_38, 0xA000 - w->unk_3C);
     w->unk_1A8 -= w->unk_1A4;
     w->unk_1A4 += 2;
     t = w->unk_1BC;
@@ -23272,7 +23272,7 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
     if (w->unk_1A8 < 0) {
         dx = 0x7800 - w->unk_38;
         dy = 0x5000 - w->unk_3C;
-        func_0805F5A4(&dx, &dy);
+        NormalizeVector2D8(&dx, &dy);
         w->unk_1B0 = -dx;
         w->unk_1B4 = -dy;
 
@@ -23301,7 +23301,7 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
     w->unk_1C9 += 32;
     w->unk_1C8 += (64 - w->unk_1C8) >> 4;
     w->unk_1C7 = 0;
-    w->unk_1AC = func_0805F588(0x7800 - w->unk_38, 0x5000 - w->unk_3C);
+    w->unk_1AC = VectorLength2D(0x7800 - w->unk_38, 0x5000 - w->unk_3C);
     w->unk_1A8 -= w->unk_1A4;
     w->unk_1A4 += 2;
     t = w->unk_1BC;
@@ -23368,13 +23368,13 @@ s32 func_0809AF84(UnkStruct_0809A02C* w, void* a) {
         w->unk_38 = x << 8;
         w->unk_3C = y << 8;
         w->unk_1CA = 1;
-        func_08012614(w->unk_144, 1);
+        ColliderSetDisabled(w->unk_144, 1);
         func_0809A4E0(w, 1);
         SetTaskUpdate(a, (void*)func_0809AD98);
         return 1;
     }
 
-    func_08012324(w->unk_144, w->unk_38, w->unk_3C, w->unk_40);
+    ColliderSetPosition(w->unk_144, w->unk_38, w->unk_3C, w->unk_40);
     w->unk_1B8 = (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
     w->unk_1BA = (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
 
@@ -23494,7 +23494,7 @@ void func_0809B59C(UnkStruct_0809A02C* w) {
     ReleaseObjPalette(w->unk_0C);
     ReleaseObjTiles(w->unk_14);
     ReleaseObjPalette(w->unk_18);
-    func_08012304(w->unk_144);
+    ColliderUnregister(w->unk_144);
     TaskPoolDestroy(&w->unk_20);
     gUnk_02039DD4->unk_0D6 = 0;
     gBtlWork->unk_0B0--;
@@ -23507,7 +23507,7 @@ void func_0809B5F4(UnkStruct_0809A02C* w) {
     ReleaseObjPalette(w->unk_0C);
     ReleaseObjTiles(w->unk_14);
     ReleaseObjPalette(w->unk_18);
-    func_08012304(w->unk_144);
+    ColliderUnregister(w->unk_144);
     TaskPoolDestroy(&w->unk_20);
     gBtlWork->unk_0B0--;
 }
@@ -24635,7 +24635,7 @@ void func_0809D1B0(UnkStruct_0809CE88* w) {
 
     w->unk_44 = w->unk_24 - w->unk_30;
     w->unk_48 = w->unk_28 - w->unk_34;
-    w->unk_40 = func_0805F5A4(&w->unk_44, &w->unk_48);
+    w->unk_40 = NormalizeVector2D8(&w->unk_44, &w->unk_48);
     v = w->unk_4C;
     d = v >> 8;
     w->unk_30 += w->unk_44 * d;
@@ -24702,7 +24702,7 @@ void func_0809D2B0(u8 a, u8 b, u8 c, u8* s) {
         ((UnkStruct_02034AD4*)gUnk_02034AD4)[gUnk_02034AD8].unk_02 = b;
         ((UnkStruct_02034AD4*)gUnk_02034AD4)[gUnk_02034AD8].unk_03 = c;
         ((UnkStruct_02034AD4*)gUnk_02034AD4)[gUnk_02034AD8].unk_00 = n;
-        func_0800448C(((UnkStruct_02034AD4*)gUnk_02034AD4)[gUnk_02034AD8].unk_04, (void*)GetBgScreenBase(gUnk_02034AD9), 0, 0,
+        RequestTilemapRectCopy(((UnkStruct_02034AD4*)gUnk_02034AD4)[gUnk_02034AD8].unk_04, (void*)GetBgScreenBase(gUnk_02034AD9), 0, 0,
                       ((UnkStruct_02034AD4*)gUnk_02034AD4)[gUnk_02034AD8].unk_01,
                       ((UnkStruct_02034AD4*)gUnk_02034AD4)[gUnk_02034AD8].unk_02,
                       (s8)((UnkStruct_02034AD4*)gUnk_02034AD4)[gUnk_02034AD8].unk_00, 1);
@@ -29593,10 +29593,10 @@ void func_080A584C(u8* work, void* a) {
     SetupBg(1, 2, 23, 0);
     SetupBg(2, 1, 15, 0);
     SetupBg(3, 0, 30, 0);
-    func_0800443C(GetBgCharBase(0), 0x4000);
-    func_0800443C(GetBgCharBase(1), 0x4000);
-    func_0800443C(GetBgCharBase(2), 0x4000);
-    func_0800443C(GetBgCharBase(3), 0x4000);
+    RequestDma3Clear(GetBgCharBase(0), 0x4000);
+    RequestDma3Clear(GetBgCharBase(1), 0x4000);
+    RequestDma3Clear(GetBgCharBase(2), 0x4000);
+    RequestDma3Clear(GetBgCharBase(3), 0x4000);
     SetBgPriority(0, 0);
     SetBgPriority(1, 1);
     SetBgPriority(2, 2);
@@ -30650,52 +30650,52 @@ u8 deckexchange_1(u8* work, void* a) {
 
     switch (work[0x715]) {
     case 0:
-        func_0800443C(GetBgCharBase(0), 0x1000);
+        RequestDma3Clear(GetBgCharBase(0), 0x1000);
         break;
     case 1:
-        func_0800443C(GetBgCharBase(0) + 0x1000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(0) + 0x1000, 0x1000);
         break;
     case 2:
-        func_0800443C(GetBgCharBase(0) + 0x2000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(0) + 0x2000, 0x1000);
         break;
     case 3:
-        func_0800443C(GetBgCharBase(0) + 0x3000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(0) + 0x3000, 0x1000);
         break;
     case 4:
-        func_0800443C(GetBgCharBase(1), 0x1000);
+        RequestDma3Clear(GetBgCharBase(1), 0x1000);
         break;
     case 5:
-        func_0800443C(GetBgCharBase(1) + 0x1000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(1) + 0x1000, 0x1000);
         break;
     case 6:
-        func_0800443C(GetBgCharBase(1) + 0x2000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(1) + 0x2000, 0x1000);
         break;
     case 7:
-        func_0800443C(GetBgCharBase(1) + 0x3000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(1) + 0x3000, 0x1000);
         break;
     case 8:
-        func_0800443C(GetBgCharBase(2), 0x1000);
+        RequestDma3Clear(GetBgCharBase(2), 0x1000);
         break;
     case 9:
-        func_0800443C(GetBgCharBase(2) + 0x1000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(2) + 0x1000, 0x1000);
         break;
     case 10:
-        func_0800443C(GetBgCharBase(2) + 0x2000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(2) + 0x2000, 0x1000);
         break;
     case 11:
-        func_0800443C(GetBgCharBase(2) + 0x3000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(2) + 0x3000, 0x1000);
         break;
     case 12:
-        func_0800443C(GetBgCharBase(3), 0x1000);
+        RequestDma3Clear(GetBgCharBase(3), 0x1000);
         break;
     case 13:
-        func_0800443C(GetBgCharBase(3) + 0x1000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(3) + 0x1000, 0x1000);
         break;
     case 14:
-        func_0800443C(GetBgCharBase(3) + 0x2000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(3) + 0x2000, 0x1000);
         break;
     case 15:
-        func_0800443C(GetBgCharBase(3) + 0x3000, 0x1000);
+        RequestDma3Clear(GetBgCharBase(3) + 0x3000, 0x1000);
         work[0x715] = 0;
         SetTaskUpdate(a, (void*)func_080A7914);
         return 1;

@@ -347,9 +347,9 @@ void func_081052C8(s16 a) {
     t = 4 - a;
     base = GetBgScreenBase(0);
 #ifdef VERSION_EU
-    func_0800448C(gUnkEu_09F84FBC[gLanguage], base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
+    RequestTilemapRectCopy(gUnkEu_09F84FBC[gLanguage], base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
 #else
-    func_0800448C(gUnk_09A3B75C, base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
+    RequestTilemapRectCopy(gUnk_09A3B75C, base, t % 3 * 10, t / 3 * 2, 20, 2, 10, 2);
 #endif
 }
 
