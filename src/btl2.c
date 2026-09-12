@@ -10,6 +10,47 @@ extern u8 gUnkEu_08B51FB8[];
 extern u8 gUnkEu_08B52220[];
 extern u8 gUnkEu_08B52488[];
 extern void* gUnkEu_09F5C1FC[];
+extern u8 gUnkEu_08B54B7C[];
+extern u8 gUnkEu_08B54B86[];
+extern u8 gUnkEu_08B54B96[];
+extern u8 gUnkEu_08B54BA6[];
+extern u8 gUnkEu_08B54BB6[];
+extern u8 gUnkEu_08B54BC6[];
+extern u8 gUnkEu_08B54BDC[];
+extern u8 gUnkEu_08B54BF2[];
+extern u8 gUnkEu_08B54BFC[];
+extern u8 gUnkEu_08B54C06[];
+extern u8 gUnkEu_08B54C10[];
+extern u8 gUnkEu_08B54C26[];
+extern u8 gUnkEu_08B54C3C[];
+extern u8 gUnkEu_08B54C52[];
+extern u8 gUnkEu_08B54C5C[];
+extern u8 gUnkEu_08B54C6C[];
+extern u8 gUnkEu_08B54C7C[];
+extern u8 gUnkEu_08B54C8C[];
+extern u8 gUnkEu_08B54C9C[];
+extern u8 gUnkEu_08B54CB2[];
+extern u8 gUnkEu_08B54CC8[];
+extern u8 gUnkEu_08B54CDE[];
+extern u8 gUnkEu_08B54CF4[];
+extern u8 gUnkEu_08B54D0A[];
+extern u8 gUnkEu_08B54D1A[];
+extern u8 gUnkEu_08B54D2A[];
+extern u8 gUnkEu_08B54D3A[];
+extern u8 gUnkEu_08B54D4A[];
+extern u8 gUnkEu_08B54D60[];
+extern u8 gUnkEu_08B54D76[];
+extern u8 gUnkEu_08B54D8C[];
+extern u8 gUnkEu_08B54DA2[];
+extern u8 gUnkEu_08B54DB8[];
+extern u8 gUnkEu_08B54DC8[];
+extern u8 gUnkEu_08B54DD8[];
+extern u8 gUnkEu_08B54DE8[];
+extern u8 gUnkEu_08B54DF8[];
+extern u8 gUnkEu_08B54E0E[];
+extern u8 gUnkEu_08B54E24[];
+extern u8 gUnkEu_08B54E3A[];
+extern u8 gUnkEu_08B54E50[];
 extern void* gUnkEu_09F5C20C[];
 extern void* gUnkEu_09F5C21C[];
 extern void* gUnkEu_09F5C22C[];
@@ -561,7 +602,6 @@ s32 task_btl_hpenm_1(BtlHpenmWork* work) {
     return 1;
 }
 
-#ifndef VERSION_EU
 void task_btl_hpenm_2(BtlHpenmWork* work) {
     void* gfx;
     void* bar;
@@ -574,19 +614,182 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
 
     switch (work->unk_20) {
     case 3:
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+        case 1:
+            gfx = gUnkEu_08B54C3C;
+            break;
+        case 4:
+            gfx = gUnkEu_08B54CF4;
+            break;
+        case 3:
+            gfx = gUnkEu_08B54DA2;
+            break;
+        case 2:
+        default:
+            gfx = gUnkEu_08B54E50;
+            break;
+        }
+        bar = gUnkEu_08B54C06;
+#else
         gfx = gUnk_08B24D58;
         bar = gUnk_08B24D22;
+#endif
         break;
     case 2:
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+        case 1:
+            gfx = gUnkEu_08B54C26;
+            break;
+        case 4:
+            gfx = gUnkEu_08B54CDE;
+            break;
+        case 3:
+            gfx = gUnkEu_08B54D8C;
+            break;
+        case 2:
+        default:
+            gfx = gUnkEu_08B54E3A;
+            break;
+        }
+        bar = gUnkEu_08B54BFC;
+#else
         gfx = gUnk_08B24D42;
         bar = gUnk_08B24D18;
+#endif
         break;
     case 1:
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+        case 1:
+            gfx = gUnkEu_08B54C10;
+            break;
+        case 4:
+            gfx = gUnkEu_08B54CC8;
+            break;
+        case 3:
+            gfx = gUnkEu_08B54D76;
+            break;
+        case 2:
+        default:
+            gfx = gUnkEu_08B54E24;
+            break;
+        }
+        bar = gUnkEu_08B54BF2;
+#else
         gfx = gUnk_08B24D2C;
         bar = gUnk_08B24D0E;
+#endif
         break;
     case 0:
     default:
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+        case 1:
+            switch (work->unk_1C) {
+            case 0:
+            case 1:
+                gfx = gUnkEu_08B54B86;
+                break;
+            case 2:
+                gfx = gUnkEu_08B54B96;
+                break;
+            case 3:
+                gfx = gUnkEu_08B54BA6;
+                break;
+            case 4:
+                gfx = gUnkEu_08B54BB6;
+                break;
+            case 5:
+                gfx = gUnkEu_08B54BC6;
+                break;
+            case 6:
+            default:
+                gfx = gUnkEu_08B54BDC;
+                break;
+            }
+            break;
+        case 4:
+            switch (work->unk_1C) {
+            case 0:
+            case 1:
+                gfx = gUnkEu_08B54C5C;
+                break;
+            case 2:
+                gfx = gUnkEu_08B54C6C;
+                break;
+            case 3:
+                gfx = gUnkEu_08B54C7C;
+                break;
+            case 4:
+                gfx = gUnkEu_08B54C8C;
+                break;
+            case 5:
+                gfx = gUnkEu_08B54C9C;
+                break;
+            case 6:
+            default:
+                gfx = gUnkEu_08B54CB2;
+                break;
+            }
+            break;
+        case 3:
+            switch (work->unk_1C) {
+            case 0:
+            case 1:
+                gfx = gUnkEu_08B54D0A;
+                break;
+            case 2:
+                gfx = gUnkEu_08B54D1A;
+                break;
+            case 3:
+                gfx = gUnkEu_08B54D2A;
+                break;
+            case 4:
+                gfx = gUnkEu_08B54D3A;
+                break;
+            case 5:
+                gfx = gUnkEu_08B54D4A;
+                break;
+            case 6:
+            default:
+                gfx = gUnkEu_08B54D60;
+                break;
+            }
+            break;
+        case 2:
+        default:
+            switch (work->unk_1C) {
+            case 0:
+            case 1:
+                gfx = gUnkEu_08B54DB8;
+                break;
+            case 2:
+                gfx = gUnkEu_08B54DC8;
+                break;
+            case 3:
+                gfx = gUnkEu_08B54DD8;
+                break;
+            case 4:
+                gfx = gUnkEu_08B54DE8;
+                break;
+            case 5:
+                gfx = gUnkEu_08B54DF8;
+                break;
+            case 6:
+            default:
+                gfx = gUnkEu_08B54E0E;
+                break;
+            }
+            break;
+        }
+        bar = gUnkEu_08B54B7C;
+#else
         switch (work->unk_1C) {
         case 0:
         case 1:
@@ -612,11 +815,16 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
             break;
         }
         bar = gUnk_08B24C98;
+#endif
         break;
     }
 
     DrawSprite(236, 2, gfx, work->tiles, work->palette, 0, 0x410, 3);
+#ifdef VERSION_EU
+    DrawSprite(236, 2, gUnkEu_08B54C52, work->tiles3, work->palette, 0, 0x410, 1);
+#else
     DrawSprite(236, 2, gUnk_08B24D6E, work->tiles3, work->palette, 0, 0x410, 1);
+#endif
 
     switch (work->unk_1C) {
     case 0:
@@ -658,9 +866,6 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         DrawSprite(217, 6, bar, work->tiles2, work->palette, aff, 0x410, 2);
     }
 }
-#else
-INCLUDE_ASM("btl2/task_btl_hpenm_2.s");
-#endif
 
 void task_btl_hpenm_3(BtlHpenmWork* work) {
     ReleaseObjTiles(work->tiles3);
