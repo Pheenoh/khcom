@@ -42,4 +42,17 @@ typedef struct CardBack {
     u8 unk_14[0x04];
 } CardBack;
 
+typedef struct CardStat {
+    u16 unk_00;
+    u16 unk_02;
+    u8 unk_04;
+    u8 unk_05[0x03];
+    u32 unk_08;
+    u16 unk_0C;
+    u8 unk_0E;
+    u8 unk_0F;
+    u16 unk_10;
+    u8 unk_12[0x06];
+} CardStat;
+
 #endif

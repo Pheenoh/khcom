@@ -1,6 +1,8 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "card_ui_types.h"
+
 #include "obj_resource_types.h"
 
 #include "card_api.h"
@@ -318,20 +320,8 @@ typedef struct UnkStruct_0809A02C {
 
 typedef char UnkStruct_0809A02C_sizechk[(sizeof(struct UnkStruct_0809A02C) == 0x1D4) ? 1 : -1];
 
-typedef struct UnkStruct_08099412 {
-    u16 unk_00;
-    u16 unk_02;
-    u8 unk_04;
-    u8 unk_05[0x03];
-    u32 unk_08;
-    u16 unk_0C;
-    u8 unk_0E;
-    u8 unk_0F;
-    u16 unk_10;
-    u8 unk_12[0x06];
-} UnkStruct_08099412;
 
-typedef char UnkStruct_08099412_sizechk[(sizeof(struct UnkStruct_08099412) == 0x18) ? 1 : -1];
+typedef char CardStat_sizechk[(sizeof(struct CardStat) == 0x18) ? 1 : -1];
 
 typedef struct UnkStruct_080993D4 {
     u8 unk_000[0xE4];
@@ -1500,7 +1490,7 @@ typedef struct UnkStruct_08099928 {
     UnkStruct_080038C8* unk_18;
     UnkStruct_080038C8* unk_1C;
     TaskPool unk_20;
-    UnkStruct_08099412 unk_34;
+    CardStat unk_34;
     u8 unk_4C[0x5C];
     s32 unk_A8;
     s32 unk_AC;
@@ -1914,12 +1904,6 @@ typedef struct UnkStruct_080991F8 {
     u8 unk_34;
 } UnkStruct_080991F8;
 
-typedef struct UnkStruct_08F7CF18 {
-    void* unk_00;
-    void** unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-} UnkStruct_08F7CF18;
 
 extern UnkStruct_08F7CF18 gUnk_08F7CF18[];
 

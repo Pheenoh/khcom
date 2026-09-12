@@ -558,26 +558,8 @@ typedef struct JiminyWork {
 
 #define SAVE_OK 2
 
-typedef struct SaveHeaderData {
-    u16 flags;
-    u16 unk_02;
-    SaveFileSummary files[4];
-} SaveHeaderData;
 
-typedef struct SaveFileLarge {
-    SaveCommon common;
-    u8 unk_098[0x254];
-    u8 unk_2EC[0xB80];
-    u8 unk_E6C[0x04];
-    u8 unk_E70[0x44];
-    u8 unk_EB4[0x44];
-} SaveFileLarge;
 
-typedef struct SaveFileSmall {
-    SaveCommon common;
-    u8 unk_098[0x254];
-    u8 unk_2EC[0x110];
-} SaveFileSmall;
 
 typedef struct AxcelWork {
     HumWork base;

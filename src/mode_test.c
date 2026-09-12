@@ -1110,11 +1110,11 @@ u16 GetCardCpCost(u16 a) {
     CardStat* stat;
 
     if (a & 0x8000) {
-        return gCardDefs[a & 0x0FFF].unk_1C.unk_10;
+        return gCardDefs[a & 0x0FFF].unk_2C;
     }
 
     if ((a & 0x0FFF) <= 0x1C1) {
-        stat = &gCardDefs[a & 0x0FFF].unk_1C;
+        stat = (CardStat*)&gCardDefs[a & 0x0FFF].unk_1C;
         n = stat->unk_04;
 
         if (n == 0) {
@@ -1127,7 +1127,7 @@ u16 GetCardCpCost(u16 a) {
         return v;
     }
 
-    return gCardDefs[a & 0x0FFF].unk_1C.unk_10;
+    return gCardDefs[a & 0x0FFF].unk_2C;
 }
 
 u16 GetCardMooglePointValue(u16 a) {
