@@ -4,8 +4,18 @@
 #include "types.h"
 
 
-void func_08117E44(void* p);
-void func_08117F5C(u8* src, s32 a1, void* dst);
+extern u8* gUnk_02038628;
+extern s32 gUnk_0203862C;
+extern s32 gUnk_02038630;
+extern s32* gUnk_02038634;
+extern s32 gUnk_02038638[8];
+extern s32 gUnk_02038658[16];
+
+void _08117284(s32 offset);
+void _08117674(s32 offset);
+void _08117A4C(s32 offset);
+void func_08117E44(s32 offset);
+void func_08117F5C(u8* src, s32* samples, s32 offset);
 s32 func_08117F9C(void);
 
 #endif /* GUARD_LIB_H */
