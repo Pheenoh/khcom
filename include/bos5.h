@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "ga_types.h"
+
 #include "prize_types.h"
 
 #include "card_api.h"
@@ -182,68 +184,7 @@ typedef struct MdFireDef {
     u16 unk_06;
 } MdFireDef;
 
-typedef struct GaEntryWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    u8 unk_010[0x30];
-    u8 unk_040[0x2C];
-    u8 unk_06C;
-    u8 unk_06D[0xB];
-    s32 unk_078;
-    s32 unk_07C;
-    u8 unk_080[0x92];
-    u8 unk_112;
-    u8 unk_113[0x9];
-    u32 unk_11C;
-    u8 unk_120[0x4];
-    s32 unk_124;
-    s32 unk_128;
-    s32 unk_12C;
-    u8 unk_130[0xC];
-    s32 unk_13C;
-    u8 unk_140[0x18];
-    u8 unk_158;
-    u8 unk_159;
-    u16 unk_15A;
-    s16 unk_15C;
-    u8 unk_15E[0xE];
-    TaskPool unk_16C;
-    AnimState anim;
-    void* unk_198;
-    void* gfx;
-    u32 unk_1A0;
-    u8 unk_1A4;
-    u8 unk_1A5;
-    s16 unk_1A6;
-} GaEntryWork;
 
-typedef struct GaWork {
-    u32 unk_000;
-    u32 unk_004;
-    u32 unk_008;
-    u8 unk_00C[0x2];
-    u16 unk_00E;
-    u16 unk_010;
-    u16 unk_012;
-    u16 unk_014;
-    u8 unk_016[0x2];
-    u32 unk_018;
-    u8 unk_01C;
-    u8 unk_01D[0x3];
-    GaEntryWork entries[6];
-    AnimState unk_A10;
-    u32 tiles;
-    void* gfx;
-    u8* palette;
-    u8* palette2;
-    u8 unk_A38[0x14];
-    u32 unk_A4C;
-    s16 unk_A50;
-    u8 unk_A52;
-    u8 unk_A53;
-} GaWork;
 
 typedef struct MdModel {
     u16 unk_00;

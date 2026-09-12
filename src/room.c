@@ -330,7 +330,7 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
     e->gfx = AnimGetGfx(&e->anim);
 
     if (i == 0) {
-        work->unk_A28 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF9728, 4), gUnk_099999AC);
+        work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF9728, 4), gUnk_099999AC);
         AnimInit(&work->anim, gUnk_09EF9738, gUnk_09EF9728);
         AnimStart(&work->anim, 0, 1);
         work->gfx = AnimGetGfx(&work->anim);
@@ -373,16 +373,16 @@ void func_080F83E0(GaWork* work, GaEntryWork* e) {
     }
 
     if (func_0801CA00(e)) {
-        pal = work->unk_A34;
+        pal = work->palette2;
     } else {
-        pal = work->unk_A30;
+        pal = work->palette;
     }
     WorldToScreen(&sx, &sy, q->x, q->y, q->z);
     DrawSprite((s16)(sx + e->unk_15E), (s16)(sy + e->unk_160), e->gfx, e->tiles, pal, f, g,
                0xEFFC - ((q->y >> 8) << 2));
 
     if (e->unk_1A0 == 0 && work->unk_000 != 7 && work->unk_000 != 8 && work->unk_000 != 9) {
-        DrawSprite((s16)(sx + e->unk_15E), (s16)(sy + e->unk_160), work->gfx, work->unk_A28, pal, f, g,
+        DrawSprite((s16)(sx + e->unk_15E), (s16)(sy + e->unk_160), work->gfx, work->tiles, pal, f, g,
                    0xEFFC - ((q->y >> 8) << 2));
     }
     TaskPoolDraw(&e->unk_16C);
@@ -2114,8 +2114,8 @@ u8 func_080FABE4(GaWork* work) {
                 case 0:
                     param.unk_00 = 0x06010000 + (((RoomObjResource*)e->tiles)->unk_06 << 5);
                     param.unk_04 = ((RoomObjResource*)e->tiles)->unk_08;
-                    param.unk_08 = 0x06010000 + (((RoomObjResource*)work->unk_A28)->unk_06 << 5);
-                    param.unk_0C = ((RoomObjResource*)work->unk_A28)->unk_08;
+                    param.unk_08 = 0x06010000 + (((RoomObjResource*)work->tiles)->unk_06 << 5);
+                    param.unk_0C = ((RoomObjResource*)work->tiles)->unk_08;
                     param.unk_30 = e->unk_124 + (work->unk_018 == 0 ? -0x700 : 0x700);
                     param.unk_34 = e->unk_128;
                     param.unk_38 = e->unk_12C + 0x1000;
@@ -2127,8 +2127,8 @@ u8 func_080FABE4(GaWork* work) {
                     break;
                 }
             }
-            param.unk_18 = 0x05000200 + (((RoomObjResource*)work->unk_A30)->unk_06 << 5);
-            param.unk_1C = ((RoomObjResource*)work->unk_A30)->unk_08 << 5;
+            param.unk_18 = 0x05000200 + (((RoomObjResource*)work->palette)->unk_06 << 5);
+            param.unk_1C = ((RoomObjResource*)work->palette)->unk_08 << 5;
             param.unk_20 = 0;
             param.unk_24 = 0;
             param.unk_28 = 0;

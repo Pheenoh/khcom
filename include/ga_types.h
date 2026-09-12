@@ -1,0 +1,93 @@
+#ifndef GUARD_GA_TYPES_H
+#define GUARD_GA_TYPES_H
+
+#include "types.h"
+#include "anim.h"
+#include "taskpool.h"
+
+typedef struct GaEntryWork {
+    s32 unk_000;
+    s32 x;
+    s32 y;
+    s32 z;
+    u8 unk_010[0x24];
+    u64 unk_034;
+    u8 unk_03C[0x04];
+    u8 unk_040[0x2C];
+    u8 unk_06C;
+    u8 unk_06D[0x0B];
+    s32 unk_078;
+    s32 unk_07C;
+    u8 unk_080[0x20];
+    u16 unk_0A0;
+    u8 unk_0A2[0x70];
+    u8 unk_112;
+    u8 unk_113;
+    u16 unk_114;
+    u8 unk_116[0x02];
+    s32 unk_118;
+    s32 unk_11C;
+    s32 unk_120;
+    s32 unk_124;
+    s32 unk_128;
+    s32 unk_12C;
+    s32 unk_130;
+    s32 unk_134;
+    s32 unk_138;
+    s32 unk_13C;
+    s32 unk_140;
+    s32 unk_144;
+    s32 unk_148;
+    s32 unk_14C;
+    s32 unk_150;
+    s32 unk_154;
+    u8 unk_158;
+    u8 unk_159;
+    u16 unk_15A;
+    s16 unk_15C;
+    u16 unk_15E;
+    u16 unk_160;
+    u8 unk_162[0x02];
+    s32 unk_164;
+    s32 unk_168;
+    TaskPool unk_16C;
+    AnimState anim;
+    void* tiles;
+    void* gfx;
+    u32 unk_1A0;
+    u8 unk_1A4;
+    u8 unk_1A5;
+    s16 unk_1A6;
+} GaEntryWork;
+
+typedef struct GaWork {
+    s32 unk_000;
+    s32 unk_004;
+    u32 unk_008;
+    u16 unk_00C;
+    u16 unk_00E;
+    s16 unk_010;
+    s16 unk_012;
+    s16 unk_014;
+    u8 unk_016[0x02];
+    s32 unk_018;
+    u8 unk_01C;
+    u8 unk_01D[0x03];
+    GaEntryWork entries[6];
+    AnimState anim;
+    void* tiles;
+    void* gfx;
+    u8* palette;
+    u8* palette2;
+    s32 unk_A38;
+    s32 unk_A3C;
+    s32 unk_A40;
+    s32 unk_A44;
+    s32 unk_A48;
+    s32 unk_A4C;
+    s16 unk_A50;
+    u8 unk_A52;
+    u8 unk_A53;
+} GaWork;
+
+#endif

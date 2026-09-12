@@ -297,29 +297,29 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
         break;
     }
 
-    switch (e->unk_11C) {
+    switch ((u32)e->unk_11C) {
     case 0:
-        v = (e->unk_124 - e->unk_004) >> 1;
+        v = (e->unk_124 - e->x) >> 1;
         if (v > 0x600) {
             v = 0x600;
         } else if (v < -0x600) {
             v = -0x600;
         }
-        e->unk_004 += v;
-        v = (e->unk_128 - e->unk_008) >> 1;
+        e->x += v;
+        v = (e->unk_128 - e->y) >> 1;
         if (v > 0x600) {
             v = 0x600;
         } else if (v < -0x600) {
             v = -0x600;
         }
-        e->unk_008 += v;
-        v = ((e->unk_12C + e->unk_13C) - e->unk_00C) >> 1;
+        e->y += v;
+        v = ((e->unk_12C + e->unk_13C) - e->z) >> 1;
         if (v > 0x600) {
             v = 0x600;
         } else if (v < -0x600) {
             v = -0x600;
         }
-        e->unk_00C += v;
+        e->z += v;
         t = e->unk_112;
         ApproachAngle(&t, 0, 3);
         e->unk_112 = t;
@@ -339,7 +339,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
             e->unk_1A6 = 0;
 
             if (!func_080128EC()) {
-                func_08013DB8(e->unk_004, e->unk_008 + e->unk_00C, 0, 0x100);
+                func_08013DB8(e->x, e->y + e->z, 0, 0x100);
                 e->unk_15C++;
             }
         } else if (e->unk_15C > 0) {
@@ -365,14 +365,14 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
     e->gfx = AnimUpdate(&e->anim);
 
     if (e->unk_1A0 == 0) {
-        work->gfx = AnimUpdate(&work->unk_A10);
+        work->gfx = AnimUpdate(&work->anim);
     }
 
     if (e->unk_06C != 0) {
-        e->unk_004 += e->unk_078;
-        e->unk_008 += e->unk_07C;
+        e->x += e->unk_078;
+        e->y += e->unk_07C;
     }
-    ColliderSetPosition(&e->unk_040, e->unk_004, e->unk_008, e->unk_00C + e->unk_13C);
+    ColliderSetPosition(&e->unk_040, e->x, e->y, e->z + e->unk_13C);
     TaskPoolUpdate(&e->unk_16C);
 }
 
