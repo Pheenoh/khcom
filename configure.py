@@ -58,6 +58,7 @@ UNIT_COMMON = {
     "src/mode_debflag.o": {"us": 0X02039B94, "jp": 0x02039b04, "eu": 0x0203a1a4},
     "src/wlogo.o": {"us": 0X0203AB38, "jp": 0x0203aaa8, "eu": 0x0203b10c},
     "src/msg.o": {"us": 0x02039DD0, "jp": 0x02039D40, "eu": 0x0203A3E0},
+    "src/mode_allmap.o": {"us": 0x0203C4F0, "jp": 0x0203C460, "eu": 0x0203CAE0},
 }
 
 UNIT_BSS = {
