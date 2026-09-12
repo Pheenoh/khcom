@@ -62,11 +62,11 @@ ListPoolNext	0x08000cd4	28	0x08000d18	global
 ListPoolPrev	0x08000cf0	28	0x08000d34	global
 ListPoolFirstFree	0x08000d0c	16	0x08000d50	body
 func_08000D1C	0x08000d1c	4	0x08000d60	body
-func_08000D20	0x08000d20	8	0x08000d64	body
-func_08000D28	0x08000d28	32	0x08000d6c	global
-func_08000D48	0x08000d48	36	0x08000d8c	body
-func_08000D6C	0x08000d6c	36	0x08000db0	body
-func_08000D90	0x08000d90	44	0x08000dd4	global
+ListNodeInit	0x08000d20	8	0x08000d64	body
+ListPoolAppend	0x08000d28	32	0x08000d6c	global
+ListPoolInsertAfter	0x08000d48	36	0x08000d8c	body
+ListPoolInsertBefore	0x08000d6c	36	0x08000db0	body
+ListPoolRemove	0x08000d90	44	0x08000dd4	global
 TaskDestroy	0x08000dbc	44	0x08000e00	global
 func_08000DE8	0x08000de8	44	0x08000e2c	global
 TaskCreate	0x08000e14	80	0x08000e58	global

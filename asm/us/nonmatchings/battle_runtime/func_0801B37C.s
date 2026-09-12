@@ -363,11 +363,11 @@ _0801B794:
 	adds r1, #0x80
 	adds r0, r5, #0x0
 	adds r2, r6, #0x0
-	bl func_08000D20
+	bl ListNodeInit
 	ldr r1, [r4, #0x00]
 	adds r1, #0x80
 	adds r0, r5, #0x0
-	bl func_08000D28
+	bl ListPoolAppend
 	ldr r1, [r4, #0x00]
 	adds r1, #0xEE
 	ldrb r0, [r1, #0x00]

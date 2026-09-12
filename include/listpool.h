@@ -12,10 +12,10 @@ void* ListPoolLast(void* pool);
 void* ListPoolNext(void* node);
 void* ListPoolPrev(void* node);
 void* ListPoolFirstFree(void* pool);
-void func_08000D20(void* node, void* pool, void* owner);
-void func_08000D28(void* node, void* pool);
-void func_08000D48(void* node, void* pool, void* after);
-void func_08000D6C(void* node, void* pool, void* before);
-void* func_08000D90(void* node, void* pool);
+void ListNodeInit(void* node, void* pool, void* owner);
+void ListPoolAppend(void* node, void* pool);
+void ListPoolInsertAfter(void* node, void* pool, void* after);
+void ListPoolInsertBefore(void* node, void* pool, void* before);
+void* ListPoolRemove(void* node, void* pool);
 
 #endif
