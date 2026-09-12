@@ -2,6 +2,7 @@
 #define GUARD_ROOM_H
 
 #include "types.h"
+#include "anim.h"
 #include "text_types.h"
 #include "taskpool.h"
 
@@ -53,29 +54,6 @@ void func_08065AE0(TextSlot* p, s32 n);
 u16 func_08065B6C(u16* a, TextSlot* b);
 void* _08066468(s32 a);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
-
-typedef struct AnimHeader {
-    u32 unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} AnimHeader;
-
-typedef struct AnimFrame {
-    u16 unk_00;
-    u16 unk_02;
-} AnimFrame;
-
-typedef struct AnimState {
-    AnimHeader** unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-    u16 unk_10;
-    u16 unk_12;
-    AnimFrame* unk_14;
-} AnimState;
 
 typedef struct GaEntryWork {
     s32 unk_000;
@@ -239,7 +217,6 @@ u16 GetRandom(void);
 void ApproachValue(s32* value, s32 target, u16 steps);
 void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
 void* AnimGetGfx(AnimState* a);
 void m4aSongNumStart(u16 a);

@@ -610,7 +610,6 @@ extern u8 gUnk_09EFABA4[];
 extern u8 gUnk_09EFAB68[];
 
 void* AllocObjTiles(s32 a, void* b);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void func_080062F4(u16 a, s32 b);
 
 typedef struct PcShot {

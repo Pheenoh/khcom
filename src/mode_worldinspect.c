@@ -188,7 +188,6 @@ void* LoadObjPalette(void* src, u16 size);
 void* LoadObjTiles(void* src, u16 size);
 void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgTiles(s32 bg, void* src, u16 size);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void AnimStart(AnimState* a, s32 b, s32 c);
 void func_08065ACC(void* a, s32 b);
 void func_080FF19C(s16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
@@ -390,11 +389,11 @@ void mode_worldinspect_0(void) {
     func_080FF2B8(gUnk_020350F8);
     gUnk_02035124 = LoadObjPalette(gUnk_09A3D09C, 0x20);
     gUnk_02035128 = LoadObjTiles(gUnk_0999D41A, 0x400);
-    AnimInit((AnimState*)gUnk_02035130, (s32)gUnk_09EF97C4, (s32)gUnk_09EF97B0);
+    AnimInit((AnimState*)gUnk_02035130, gUnk_09EF97C4, gUnk_09EF97B0);
     AnimStart((AnimState*)gUnk_02035130, 0, 1);
     gUnk_02035148 = LoadObjPalette(gUnk_09A3D0BC, 0x20);
     gUnk_0203514C = LoadObjTiles(gUnk_0999D8A8, 0xC0);
-    AnimInit((AnimState*)gUnk_02035150, (s32)gUnk_09EF97DC, (s32)gUnk_09EF97CC);
+    AnimInit((AnimState*)gUnk_02035150, gUnk_09EF97DC, gUnk_09EF97CC);
     AnimStart((AnimState*)gUnk_02035150, 0, 1);
 #ifdef VERSION_EU
     func_08065ACC(gUnk_020351F8, 0x30);

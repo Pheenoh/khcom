@@ -256,7 +256,6 @@ void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void m4aSongNumStart(u16 n);
 void* LoadObjPalette(void* src, s32 size);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void func_08017260(s32 a, s32 b, s32 c, s32 d);
 void func_08045494(FrdBody* body, u8 a, s16 b, s16 c);

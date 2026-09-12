@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "anim.h"
 #include "msg.h"
 
 #ifdef VERSION_EU
@@ -7762,12 +7763,12 @@ void func_0806CD60(ContinueWork* p) {
     p->palette = LoadObjPalette(gUnk_09614658, 160);
     PopPaletteEffect();
     func_08002A10(p->tiles, gUnk_090A6B26);
-    AnimInit(&p->unk_20, (s32)gUnk_09EEB108, (s32)gUnk_09EEB0C4);
+    AnimInit(&p->unk_20, gUnk_09EEB108, gUnk_09EEB0C4);
     AnimStart(&p->unk_20, 0, 1);
     p->tiles2 = AllocObjTiles(1024, 0);
     p->palette2 = LoadObjPalette(gUnk_08F683A4, 32);
     func_08002A10(p->tiles2, gUnk_090A7F0A);
-    AnimInit(&p->unk_38, (s32)gUnk_09EEB14C, (s32)gUnk_09EEB11C);
+    AnimInit(&p->unk_38, gUnk_09EEB14C, gUnk_09EEB11C);
     AnimStart(&p->unk_38, 0, 1);
     p->unk_58 = -2048;
     p->unk_5C = 0xA000;
@@ -7829,12 +7830,12 @@ void func_0806CF04(ContinueWork* p) {
     p->palette = LoadObjPalette(gUnk_09614658, 160);
     PopPaletteEffect();
     func_08002A10(p->tiles, gUnk_090A6B26);
-    AnimInit(&p->unk_20, (s32)gUnk_09EEB108, (s32)gUnk_09EEB0C4);
+    AnimInit(&p->unk_20, gUnk_09EEB108, gUnk_09EEB0C4);
     AnimStart(&p->unk_20, 0, 1);
     p->tiles2 = AllocObjTiles(1024, 0);
     p->palette2 = LoadObjPalette(gUnk_09618118, 32);
     func_08002A10(p->tiles2, gUnk_090A8FC4);
-    AnimInit(&p->unk_38, (s32)gUnk_09EEB180, (s32)gUnk_09EEB150);
+    AnimInit(&p->unk_38, gUnk_09EEB180, gUnk_09EEB150);
     AnimStart(&p->unk_38, 0, 1);
     p->unk_58 = -2048;
     p->unk_5C = 0xA000;
@@ -12159,14 +12160,14 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     LoadObjPaletteBank(((Handle0806180C*)p->unk_14)->unk_06, gUnk_08F69BA4);
     func_080062F4(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
     func_08002A10(p->unk_00, gUnk_09320796);
-    AnimInit((AnimState*)p->anim, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
+    AnimInit((AnimState*)p->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart((AnimState*)p->anim, 2, 1);
     p->unk_102 = 0;
     p->unk_04 = AllocObjTiles(288, 0);
     p->unk_08 = LoadObjPalette(gUnk_09614418, 32);
     LoadObjPaletteBank(((Handle0806180C*)p->unk_08)->unk_06, gUnk_09614418);
     func_08002A10(p->unk_04, gUnk_090A4664);
-    AnimInit((AnimState*)p->unk_C4, (s32)gUnk_09EEB03C, (s32)gUnk_09EEB008);
+    AnimInit((AnimState*)p->unk_C4, gUnk_09EEB03C, gUnk_09EEB008);
     AnimStart((AnimState*)p->unk_C4, 2, 1);
     p->unk_C0 = AnimGetGfx((AnimState*)p->unk_C4);
     p->unk_0C = LoadObjTiles(gUnk_093F7C9C, 4032);

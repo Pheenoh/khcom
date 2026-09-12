@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "anim.h"
 #include "map.h"
 #ifdef VERSION_EU
 extern void* eu_0805E924(void* strings);
@@ -13759,7 +13760,7 @@ void func_080F5B18(MapTalkWork* w, s32* arg) {
     w->unk_00 = arg;
     w->unk_1C = AllocObjTiles(0x200, &gUnk_098A4B68[0x1028]);
     w->unk_20 = LoadObjPalette(gUnk_08F69BE4, 32);
-    AnimInit(&w->unk_04, (s32)gUnk_09EF8CD0, (s32)gUnk_09EF8CC8);
+    AnimInit(&w->unk_04, gUnk_09EF8CD0, gUnk_09EF8CC8);
     AnimStart(&w->unk_04, 0, 1);
     w->unk_28 = 0;
 }

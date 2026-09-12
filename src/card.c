@@ -276,7 +276,6 @@ u8 func_080A8C20(u8* work);
 u8 func_080A86F4(UnkStruct_0808C940* w, void* a);
 u8 func_080A7C80(u8* work, void* a);
 u8 func_080A8BD8(u8* work, void* a);
-void AnimInit(AnimState* a, s32 b, s32 c);
 s32 func_0805F5A4(s32* a, s32* b);
 s32* func_080E04E0(void);
 u8 func_0809511C(ReloadGageWork* w, void* a);
@@ -21403,7 +21402,7 @@ void SELMAP_EVKEY_0(UnkStruct_SELMAP_EVKEY* work, void* a) {
     work->unk_00 = AllocObjTiles(0x6C0, 0);
     func_08002A10(work->unk_00, &gUnk_093F47E4[0x22E8]);
 #endif
-    AnimInit(&work->unk_DC, (s32)gUnk_09EF1224, (s32)gUnk_09EF1220);
+    AnimInit(&work->unk_DC, gUnk_09EF1224, gUnk_09EF1220);
 #endif
     AnimStart(&work->unk_DC, 0, 1);
     work->unk_F4 = AnimGetGfx(&work->unk_DC);
@@ -34765,7 +34764,7 @@ void mode_sio_battle_0(s32 a) {
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_38 = LoadObjPalette(gUnk_096FBA84, 32);
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_40 = LoadObjTiles(gUnk_0962B090, 0x1C0);
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_44 = LoadObjPalette(gUnk_096FBAA4, 32);
-    AnimInit(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C, (s32)gUnk_09EF38B4, (s32)gUnk_09EF3894);
+    AnimInit(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C, gUnk_09EF38B4, gUnk_09EF3894);
     AnimStart(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C, 1, 1);
     gfx = AnimGetGfx(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C);
     w = (UnkStruct_02034B38*)gUnk_02034B38;

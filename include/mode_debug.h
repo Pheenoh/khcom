@@ -19,7 +19,6 @@ typedef struct DebugWork {
 
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
-void AnimInit(AnimState* a, s32 b, s32 c);
 void* AnimUpdate(AnimState* a);
 void* LoadObjTiles(void* a, s32 b);
 void func_08002A10(void* a, void* b);

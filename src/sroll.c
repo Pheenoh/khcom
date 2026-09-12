@@ -1,4 +1,5 @@
 #include "lib.h"
+#include "anim.h"
 #include "m4a.h"
 #include "macros.h"
 #include "sio.h"
@@ -44,13 +45,13 @@ void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
         w->tiles = LoadObjTiles(gUnk_09C638BE, 35 * 32);
 #endif
         anim = &w->anim;
-        AnimInit(anim, (s32)gUnk_09EFB200, (s32)gUnk_09EFB1F8);
+        AnimInit(anim, gUnk_09EFB200, gUnk_09EFB1F8);
         AnimStart(anim, a->unk_02, 0);
         break;
     case 1:
         w->tiles = LoadObjTiles(gUnk_09A54218[a->unk_04][0], *(u16*)&gUnk_09A54218[a->unk_04][1]);
         anim = &w->anim;
-        AnimInit(anim, (s32)gUnk_09EFB244, (s32)gUnk_09EFB208);
+        AnimInit(anim, gUnk_09EFB244, gUnk_09EFB208);
         AnimStart(anim, a->unk_02, 0);
         break;
     case 2:
@@ -58,10 +59,10 @@ void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
 
         if (a->unk_02 == 1) {
             anim = &w->anim;
-            AnimInit(anim, (s32)gUnk_09EFB5EC, (s32)gUnk_09EFB5B0);
+            AnimInit(anim, gUnk_09EFB5EC, gUnk_09EFB5B0);
         } else {
             anim = &w->anim;
-            AnimInit(anim, (s32)gUnk_09EFB244, (s32)gUnk_09EFB208);
+            AnimInit(anim, gUnk_09EFB244, gUnk_09EFB208);
         }
         AnimStart(anim, 2, 0);
         gBldCnt = 0x140;
@@ -250,7 +251,7 @@ void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
     w->palette = LoadObjPalette(gUnk_09D6BE34, 64);
 #endif
     anim = &w->anim;
-    AnimInit(anim, (s32)gUnk_09EFAF6C, (s32)gUnk_09EFAF60);
+    AnimInit(anim, gUnk_09EFAF6C, gUnk_09EFAF60);
     AnimStart(anim, a->unk_10, 0);
 
     for (i = 0; i < 2; i++) {
@@ -302,16 +303,16 @@ void task_sroll_b_secn_0(SrollBSecnWork* w, SrollBSecnArg* a) {
         w->tiles = LoadObjTiles(gUnk_09C87A10, 606 * 32);
 #endif
         w->palette = LoadObjPalette(gUnk_09D6CF34, 32);
-        AnimInit(&w->unk_1C, (s32)gUnk_09EFB834, (s32)gUnk_09EFB828);
+        AnimInit(&w->unk_1C, gUnk_09EFB834, gUnk_09EFB828);
         AnimStart(&w->unk_1C, 0, 0);
-        AnimInit(&w->unk_34, (s32)gUnk_09EFB834, (s32)gUnk_09EFB828);
+        AnimInit(&w->unk_34, gUnk_09EFB834, gUnk_09EFB828);
         AnimStart(&w->unk_34, 0, 0);
     } else {
         w->tiles = LoadObjTiles(gUnk_09A54374[a->unk_00][0], *(u16*)&gUnk_09A54374[a->unk_00][1]);
         w->palette = LoadObjPalette(gUnk_09D6BE74, 256);
-        AnimInit(&w->unk_1C, (s32)gUnk_09A54374[a->unk_00][2], (s32)gUnk_09A54374[a->unk_00][3]);
+        AnimInit(&w->unk_1C, gUnk_09A54374[a->unk_00][2], gUnk_09A54374[a->unk_00][3]);
         AnimStart(&w->unk_1C, 0, 0);
-        AnimInit(&w->unk_34, (s32)gUnk_09A54374[a->unk_00][2], (s32)gUnk_09A54374[a->unk_00][3]);
+        AnimInit(&w->unk_34, gUnk_09A54374[a->unk_00][2], gUnk_09A54374[a->unk_00][3]);
         AnimStart(&w->unk_34, 1, 0);
     }
 
@@ -382,7 +383,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         w->tiles = AllocObjTiles(128, gUnk_09320796);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
-        AnimInit(anim, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
+        AnimInit(anim, gUnk_09EEFD38, gUnk_09EEFCAC);
         AnimStart(anim, w->unk_04, 0);
         break;
     case 3:
@@ -391,7 +392,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         w->tiles = AllocObjTiles(128, gUnk_09320796);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
-        AnimInit(anim, (s32)gUnk_09EEFD38, (s32)gUnk_09EEFCAC);
+        AnimInit(anim, gUnk_09EEFD38, gUnk_09EEFCAC);
         AnimStart(anim, 0, 0);
         break;
     case 2:
@@ -402,7 +403,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         w->tiles = AllocObjTiles(128, gUnk_088A5D7A);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
-        AnimInit(anim, (s32)gUnk_09EDE7E4, (s32)gUnk_09EDE7B4);
+        AnimInit(anim, gUnk_09EDE7E4, gUnk_09EDE7B4);
         AnimStart(anim, w->unk_04, 0);
         break;
     }
@@ -474,7 +475,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
         w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
 
         for (i = 0, p = w->anim; i <= 4; i++) {
-            AnimInit(p, (s32)gUnk_09EFB9B8, (s32)gUnk_09EFB840);
+            AnimInit(p, gUnk_09EFB9B8, gUnk_09EFB840);
             AnimStart(p, i, 0);
             p++;
         }
@@ -487,7 +488,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
         w->palette = LoadObjPalette(gUnk_09D6D034, 224);
 
         for (i = 0, p = w->anim; i <= 4; i++) {
-            AnimInit(p, (s32)gUnk_09EFBAD4, (s32)gUnk_09EFB9CC);
+            AnimInit(p, gUnk_09EFBAD4, gUnk_09EFB9CC);
             AnimStart(p, i, 0);
             p++;
         }
@@ -500,7 +501,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
 
             for (i = 0, p = w->anim; i <= 4; i++) {
-                AnimInit(p, (s32)gUnkEu_09F879D4, (s32)gUnkEu_09F8785C);
+                AnimInit(p, gUnkEu_09F879D4, gUnkEu_09F8785C);
                 AnimStart(p, i, 0);
                 p++;
             }
@@ -509,7 +510,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             w->palette = LoadObjPalette(gUnk_09D6D034, 224);
 
             for (i = 0, p = w->anim; i <= 4; i++) {
-                AnimInit(p, (s32)gUnkEu_09F87AF0, (s32)gUnkEu_09F879E8);
+                AnimInit(p, gUnkEu_09F87AF0, gUnkEu_09F879E8);
                 AnimStart(p, i, 0);
                 p++;
             }
@@ -521,7 +522,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
 
             for (i = 0, p = w->anim; i <= 4; i++) {
-                AnimInit(p, (s32)gUnkEu_09F87C7C, (s32)gUnkEu_09F87B04);
+                AnimInit(p, gUnkEu_09F87C7C, gUnkEu_09F87B04);
                 AnimStart(p, i, 0);
                 p++;
             }
@@ -530,7 +531,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             w->palette = LoadObjPalette(gUnk_09D6D034, 224);
 
             for (i = 0, p = w->anim; i <= 4; i++) {
-                AnimInit(p, (s32)gUnkEu_09F87D98, (s32)gUnkEu_09F87C90);
+                AnimInit(p, gUnkEu_09F87D98, gUnkEu_09F87C90);
                 AnimStart(p, i, 0);
                 p++;
             }
@@ -542,7 +543,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
 
             for (i = 0, p = w->anim; i <= 4; i++) {
-                AnimInit(p, (s32)gUnkEu_09F87F24, (s32)gUnkEu_09F87DAC);
+                AnimInit(p, gUnkEu_09F87F24, gUnkEu_09F87DAC);
                 AnimStart(p, i, 0);
                 p++;
             }
@@ -551,7 +552,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             w->palette = LoadObjPalette(gUnk_09D6D034, 224);
 
             for (i = 0, p = w->anim; i <= 4; i++) {
-                AnimInit(p, (s32)gUnkEu_09F88040, (s32)gUnkEu_09F87F38);
+                AnimInit(p, gUnkEu_09F88040, gUnkEu_09F87F38);
                 AnimStart(p, i, 0);
                 p++;
             }
@@ -564,7 +565,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             w->palette = LoadObjPalette(gUnk_09D6CF54, 224);
 
             for (i = 0, p = w->anim; i <= 4; i++) {
-                AnimInit(p, (s32)gUnkEu_09F881CC, (s32)gUnkEu_09F88054);
+                AnimInit(p, gUnkEu_09F881CC, gUnkEu_09F88054);
                 AnimStart(p, i, 0);
                 p++;
             }
@@ -573,7 +574,7 @@ void task_sroll_c_char_0(SrollCCharWork* w, s32 kind) {
             w->palette = LoadObjPalette(gUnk_09D6D034, 224);
 
             for (i = 0, p = w->anim; i <= 4; i++) {
-                AnimInit(p, (s32)gUnkEu_09F882E8, (s32)gUnkEu_09F881E0);
+                AnimInit(p, gUnkEu_09F882E8, gUnkEu_09F881E0);
                 AnimStart(p, i, 0);
                 p++;
             }

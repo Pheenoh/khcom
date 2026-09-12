@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "anim.h"
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "engine.h"
@@ -2523,9 +2524,9 @@ s32 Lerp8(s32 a, s32 b, s32 t) {
     return (a * (0x100 - t) >> 8) + (b * t >> 8);
 }
 
-void AnimInit(AnimState* a, s32 b, s32 c) {
-    a->gfxTable = (u32*)c;
-    a->anims = (AnimHeader**)b;
+void AnimInit(AnimState* a, void* b, void* c) {
+    a->gfxTable = c;
+    a->anims = b;
     a->frames = 0;
 }
 
