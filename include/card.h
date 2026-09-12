@@ -5,6 +5,7 @@
 #include "game_state.h"
 #include "text_types.h"
 #include "taskpool.h"
+#include "listpool.h"
 #include "card_types.h"
 #include "fld_types.h"
 #include "game.h"
@@ -41,7 +42,7 @@ typedef struct UnkStruct_02034AAC {
     u8 unk_1C[0x04];
     void* unk_20;
     u8 unk_24[0x14];
-    void* unk_38;
+    ListPool* unk_38;
     u8 unk_3C[0x0A];
     u8 unk_46;
     u8 unk_47;
@@ -54,7 +55,7 @@ typedef struct UnkStruct_02034AAC {
     u8 unk_5E;
     u8 unk_5F;
     u8 unk_60[0x04];
-    u8 unk_64[0x14];
+    ListNode unk_64;
     u32 unk_78;
     s32 unk_7C;
     s32 unk_80;
@@ -465,14 +466,14 @@ typedef struct UnkStruct_0808E890 {
     void* unk_10;
     CardDef* unk_14;
     CardBack* unk_18;
-    void* unk_1C;
+    ListPool* unk_1C;
     u16 unk_20;
     s16 unk_22;
     s16 unk_24;
     u8 unk_26;
     u8 unk_27;
     void* unk_28;
-    u8 unk_2C[0x14];
+    ListNode unk_2C;
     s32 unk_40;
     s32 unk_44;
     u16 unk_48;
@@ -516,7 +517,7 @@ typedef struct UnkStruct_0809C534 {
     u8 unk_54;
     u8 unk_55;
     u8 unk_56[0x02];
-    u8 unk_58[0x14];
+    ListNode unk_58;
     s16 unk_6C;
     s16 unk_6E;
     u16 unk_70;
@@ -758,7 +759,7 @@ typedef struct UnkStruct_08080268 {
     UnkStruct_02034AAC* unk_28[3];
     UnkStruct_02034AAC* unk_34[4];
     UnkStruct_02034AAC* unk_44[4];
-    u8 unk_54[4][0x10];
+    ListPool unk_54[4];
     u16 unk_94[4];
     u16 unk_9C[4];
     s16 unk_A4;
@@ -824,7 +825,7 @@ typedef struct UnkStruct_08098BE8 {
     s32 unk_24;
     s32 unk_28;
     u8 unk_2C[0x04];
-    u8 unk_30[0x14];
+    ListNode unk_30;
     u8 unk_44;
     u8 unk_45;
     u8 unk_46;
@@ -978,9 +979,9 @@ typedef struct MapcardWork {
     u8 unk_20;
     u8 unk_21;
     u8 unk_22[0x06];
-    void* unk_28;
+    ListPool* unk_28;
     u8 unk_2C[0x0C];
-    u8 unk_38[0x14];
+    ListNode unk_38;
     s32 unk_4C;
     s32 unk_50;
     s32 unk_54;
@@ -1182,10 +1183,10 @@ typedef struct ReloadGageWork {
     void* unk_10;
     void* unk_14;
     u8 unk_18[0x04];
-    void* unk_1C;
+    ListPool* unk_1C;
     UnkStruct_08095A5C* unk_20;
     TaskPool unk_24;
-    void* unk_38;
+    ListPool* unk_38;
     void* unk_3C;
     u32 unk_40;
     u8 unk_44[0x02];
@@ -1196,7 +1197,7 @@ typedef struct ReloadGageWork {
     s32 unk_54;
     s32 unk_58;
     u8 unk_5C[0x08];
-    u8 unk_64[0x14];
+    ListNode unk_64;
     u32 unk_78;
     s32 unk_7C;
     s32 unk_80;

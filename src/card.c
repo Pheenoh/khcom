@@ -1531,7 +1531,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
         c = func_08076674(w, w->unk_B8, &id);
 
         if (c != 0 && id != prev && id != other) {
-            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_00 = &w->unk_54[w->unk_B8];
             args.unk_0C = id;
             args.unk_0E = w->unk_B8;
             args.unk_04 = c;
@@ -1646,7 +1646,7 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
     }
 
     if (gUnk_02034A98 == 0) {
-        args.unk_00 = w->unk_54[w->unk_B8];
+        args.unk_00 = &w->unk_54[w->unk_B8];
         args.unk_0C = 0xFFFF;
         args.unk_04 = (CardSlot*)w->unk_44[w->unk_B8];
         args.unk_0E = w->unk_B8;
@@ -1677,7 +1677,7 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
         c = func_08076674(w, w->unk_B8, &id);
 
         if (c != 0 && id != prev && id != other) {
-            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_00 = &w->unk_54[w->unk_B8];
             args.unk_0C = id;
             args.unk_0E = w->unk_B8;
             args.unk_04 = c;
@@ -1779,7 +1779,7 @@ s32 func_08079ECC(UnkStruct_08080268* w) {
         c = func_08076674(w, w->unk_B8, &id);
 
         if (c != 0 && id != prev && id != other) {
-            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_00 = &w->unk_54[w->unk_B8];
             args.unk_0C = id;
             args.unk_0E = w->unk_B8;
             args.unk_04 = c;
@@ -1935,7 +1935,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
         c = func_08076674(w, w->unk_B8, &id);
 
         if (c != 0 && id != prev && id != other) {
-            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_00 = &w->unk_54[w->unk_B8];
             args.unk_0C = id;
             args.unk_0E = w->unk_B8;
             args.unk_04 = c;
@@ -2019,7 +2019,7 @@ void func_0807A6C8(UnkStruct_08080268* w) {
     }
 
     for (i = 0; i < 4; i++) {
-        node = (UnkStruct_02034AAC*)ListPoolFirst(w->unk_54[i]);
+        node = (UnkStruct_02034AAC*)ListPoolFirst(&w->unk_54[i]);
 
         while (node != 0) {
             node->unk_78 |= 0x20;
@@ -2041,7 +2041,7 @@ void func_0807A75C(UnkStruct_08080268* w) {
     }
 
     for (i = 0; i < 4; i++) {
-        node = (UnkStruct_02034AAC*)ListPoolFirst(w->unk_54[i]);
+        node = (UnkStruct_02034AAC*)ListPoolFirst(&w->unk_54[i]);
 
         while (node != 0) {
             node->unk_78 &= ~0x20;
@@ -3807,7 +3807,7 @@ u8 func_0807D194(UnkStruct_02034AAC* w, void* a) {
         func_0807CC2C(w);
         w->unk_9C = 10;
         w->unk_A0 -= 4;
-        ListPoolRemove(w->unk_64, w->unk_38);
+        ListPoolRemove(&w->unk_64, w->unk_38);
         SetTaskUpdate(a, (void*)func_0807C4BC);
         return 1;
     case 6:
@@ -3820,7 +3820,7 @@ u8 func_0807D194(UnkStruct_02034AAC* w, void* a) {
         func_0807D490(w);
         w->unk_78 |= 0x200;
         w->unk_78 |= 0x80;
-        ListPoolRemove(w->unk_64, w->unk_38);
+        ListPoolRemove(&w->unk_64, w->unk_38);
         SetTaskUpdate(a, (void*)func_0807C934);
         return 1;
     case 8:
@@ -3834,18 +3834,18 @@ u8 func_0807D194(UnkStruct_02034AAC* w, void* a) {
     case 7:
         w->unk_84 = 0x500;
         w->unk_9C = 0x100;
-        ListPoolRemove(w->unk_64, w->unk_38);
+        ListPoolRemove(&w->unk_64, w->unk_38);
         return 0;
     case 10:
         w->unk_9C = 10;
         w->unk_A0 -= 4;
-        ListPoolRemove(w->unk_64, w->unk_38);
+        ListPoolRemove(&w->unk_64, w->unk_38);
         SetTaskUpdate(a, (void*)func_0807D4E4);
         return 1;
     case 11:
         w->unk_9C = 10;
         w->unk_A0 -= 4;
-        ListPoolRemove(w->unk_64, w->unk_38);
+        ListPoolRemove(&w->unk_64, w->unk_38);
         SetTaskUpdate(a, (void*)func_0807D584);
         return 1;
     }
@@ -6159,7 +6159,7 @@ void func_08080994(UnkStruct_08080268* w) {
         c = func_08076750(w, w->unk_B8, &v);
 
         if (c != 0) {
-            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_00 = &w->unk_54[w->unk_B8];
             args.unk_0C = v;
             args.unk_0E = w->unk_B8;
             args.unk_04 = c;
@@ -6184,7 +6184,7 @@ void func_08080994(UnkStruct_08080268* w) {
             w->unk_B0[w->unk_B8]++;
         }
     } else {
-        args.unk_00 = w->unk_54[w->unk_B8];
+        args.unk_00 = &w->unk_54[w->unk_B8];
         args.unk_0C = 0xFFFF;
         args.unk_04 = (CardSlot*)w->unk_44[w->unk_B8];
         args.unk_0E = w->unk_B8;
@@ -6614,7 +6614,7 @@ u8 func_080814BC(UnkStruct_08080268* w) {
         c = func_08076674(w, w->unk_B8, &v);
 
         if (c != 0) {
-            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_00 = &w->unk_54[w->unk_B8];
             args.unk_0C = v;
             args.unk_0E = w->unk_B8;
             args.unk_04 = c;
@@ -6635,7 +6635,7 @@ u8 func_080814BC(UnkStruct_08080268* w) {
             p->unk_78 |= 0x844;
             gUnk_02034AAC = p;
         } else {
-            args.unk_00 = w->unk_54[w->unk_B8];
+            args.unk_00 = &w->unk_54[w->unk_B8];
             args.unk_0C = 0xFFFF;
             args.unk_04 = (CardSlot*)w->unk_44[w->unk_B8];
             args.unk_0E = w->unk_B8;
@@ -13662,7 +13662,7 @@ u8 func_0808CA78(u8* work, u8 a) {
                 func_08090170(n);
             }
 
-            n = ListPoolNext(n->unk_2C);
+            n = ListPoolNext(&n->unk_2C);
         } while (n != 0);
 
         *(u16*)&work[CARDWORK(0x8AC)] = *(u16*)&work[CARDWORK(0x8AC)] - 1;
@@ -16476,8 +16476,8 @@ void DeckCard2_0(UnkStruct_0808E890* n, UnkStruct_080A6838_Args* a) {
     }
 
     n->unk_4A = 0;
-    ListNodeInit(n->unk_2C, n->unk_1C, n);
-    ListPoolAppend(n->unk_2C, n->unk_1C);
+    ListNodeInit(&n->unk_2C, n->unk_1C, n);
+    ListPoolAppend(&n->unk_2C, n->unk_1C);
 }
 
 u8 DeckCard2_1(UnkStruct_0808E890* n) {
@@ -17821,7 +17821,7 @@ u8 func_08092234(UnkStruct_08093838* w, void* a) {
 
                 while (n != 0) {
                     n->unk_6C |= 2;
-                    n = ListPoolNext(n->unk_38);
+                    n = ListPoolNext(&n->unk_38);
                 }
 
                 if (w->unk_27C <= 6) {
@@ -18155,7 +18155,7 @@ u8 func_08092A34(UnkStruct_08093838* w, void* a) {
                             if (w->unk_2DA == 0) {
                                 w->unk_1EC->unk_74 = 1;
                                 w->unk_1EC->unk_6C |= 0x40;
-                                for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(p->unk_38)) {
+                                for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(&p->unk_38)) {
                                     if (w->unk_1EC != p) {
                                         p->unk_6C &= 0xFFFD;
                                     }
@@ -18175,7 +18175,7 @@ u8 func_08092A34(UnkStruct_08093838* w, void* a) {
                 }
             } else {
                 if (func_08093B08(w->unk_1EC->unk_20) != 0) {
-                    for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(p->unk_38)) {
+                    for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(&p->unk_38)) {
                         if (w->unk_1EC != p) {
                             p->unk_6C &= 0xFFFD;
                         }
@@ -18194,7 +18194,7 @@ u8 func_08092A34(UnkStruct_08093838* w, void* a) {
         break;
     case 2:
         if (w->unk_2C1 == 0) {
-            for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(p->unk_38)) {
+            for (p = ListPoolFirst(w->unk_014); p != 0; p = ListPoolNext(&p->unk_38)) {
                 p->unk_6C &= 0xFFFD;
             }
             w->unk_2BF = 1;
@@ -18432,27 +18432,27 @@ void func_08093434(u8* work) {
 
     switch (GetKeysRepeat() & 0xF0) {
     case 16:
-        p = (MapcardWork*)ListPoolNext((*(MapcardWork**)&work[0x1EC])->unk_38);
+        p = (MapcardWork*)ListPoolNext(&(*(MapcardWork**)&work[0x1EC])->unk_38);
 
         if (p != 0 && (p->unk_6C & 1)) {
             *(s32*)&work[0x264] = p->unk_4C;
             work[0x28C] = 4;
             (*(MapcardWork**)&work[0x1EC])->unk_6C &= 0xFEFF;
             *(MapcardWork**)&work[0x1EC] = (MapcardWork*)ListPoolNext(
-                (*(MapcardWork**)&work[0x1EC])->unk_38);
+                &(*(MapcardWork**)&work[0x1EC])->unk_38);
             (*(MapcardWork**)&work[0x1EC])->unk_6C |= 0x100;
             m4aSongNumStart(121);
         }
         break;
     case 32:
-        p = ListPoolPrev((*(MapcardWork**)&work[0x1EC])->unk_38);
+        p = ListPoolPrev(&(*(MapcardWork**)&work[0x1EC])->unk_38);
 
         if (p != 0 && (p->unk_6C & 1)) {
             *(s32*)&work[0x264] = p->unk_4C;
             work[0x28C] = 4;
             (*(MapcardWork**)&work[0x1EC])->unk_6C &= 0xFEFF;
             *(MapcardWork**)&work[0x1EC] =
-                ListPoolPrev((*(MapcardWork**)&work[0x1EC])->unk_38);
+                ListPoolPrev(&(*(MapcardWork**)&work[0x1EC])->unk_38);
             (*(MapcardWork**)&work[0x1EC])->unk_6C |= 0x100;
             m4aSongNumStart(121);
         }
@@ -18469,12 +18469,12 @@ void func_08093434(u8* work) {
                 break;
             }
 
-            a = (MapcardWork*)ListPoolNext(a->unk_38);
+            a = (MapcardWork*)ListPoolNext(&a->unk_38);
         }
 
         while (b != 0 && (b->unk_6C & 1)) {
             cnt++;
-            b = (MapcardWork*)ListPoolNext(b->unk_38);
+            b = (MapcardWork*)ListPoolNext(&b->unk_38);
         }
 
         if (b != 0 && cnt == 6) {
@@ -18490,7 +18490,7 @@ void func_08093434(u8* work) {
                     if (a->unk_6C & 1) {
                         a->unk_4C = -0x6400;
                         a->unk_6C &= 0xFEFF;
-                        a = (MapcardWork*)ListPoolNext(a->unk_38);
+                        a = (MapcardWork*)ListPoolNext(&a->unk_38);
                     } else {
                         break;
                     }
@@ -18507,7 +18507,7 @@ void func_08093434(u8* work) {
                 a->unk_6C &= 0xFEFF;
             }
 
-            b = (MapcardWork*)ListPoolNext(b->unk_38);
+            b = (MapcardWork*)ListPoolNext(&b->unk_38);
         }
         break;
     case 64:
@@ -18520,11 +18520,11 @@ void func_08093434(u8* work) {
                 break;
             }
 
-            a = (MapcardWork*)ListPoolNext(a->unk_38);
+            a = (MapcardWork*)ListPoolNext(&a->unk_38);
         }
 
-        if (ListPoolPrev(a->unk_38) != 0) {
-            *(MapcardWork**)&work[0x1F4] = ListPoolPrev(a->unk_38);
+        if (ListPoolPrev(&a->unk_38) != 0) {
+            *(MapcardWork**)&work[0x1F4] = ListPoolPrev(&a->unk_38);
             work[0x298] = 2;
 
             if (b != 0) {
@@ -18534,7 +18534,7 @@ void func_08093434(u8* work) {
                     }
 
                     b->unk_4C = -0x6400;
-                    b = (MapcardWork*)ListPoolNext(b->unk_38);
+                    b = (MapcardWork*)ListPoolNext(&b->unk_38);
                 } while (b != 0);
             }
 
@@ -18548,7 +18548,7 @@ void func_08093434(u8* work) {
                 a->unk_6C &= 0xFEFF;
             }
 
-            b = (MapcardWork*)ListPoolNext(b->unk_38);
+            b = (MapcardWork*)ListPoolNext(&b->unk_38);
         }
         break;
     }
@@ -18577,7 +18577,7 @@ void func_08093708(UnkStruct_08093838* w) {
             if (i == 6) {
                 break;
             }
-            node = ListPoolNext(node->unk_38);
+            node = ListPoolNext(&node->unk_38);
         }
         w->unk_298 = 0;
         func_08093838(w);
@@ -18595,7 +18595,7 @@ void func_08093708(UnkStruct_08093838* w) {
             if (i < 0) {
                 break;
             }
-            node = ListPoolPrev(node->unk_38);
+            node = ListPoolPrev(&node->unk_38);
         }
         w->unk_298 = 0;
         func_08093838(w);
@@ -18609,14 +18609,14 @@ void func_08093708(UnkStruct_08093838* w) {
 }
 
 s32 func_08093838(UnkStruct_08093838* w) {
-    UnkStruct_02034AAC* node;
+    MapcardWork* node;
     s32 best;
     s32 d;
     u16 r;
     void* z;
     u8* q;
 
-    node = (UnkStruct_02034AAC*)ListPoolFirst(w->unk_014);
+    node = (MapcardWork*)ListPoolFirst(w->unk_014);
     best = 0x100;
     z = 0;
     w->unk_1EC = z;
@@ -18628,11 +18628,11 @@ s32 func_08093838(UnkStruct_08093838* w) {
 
             if (best > r) {
                 best = r;
-                w->unk_1EC = (MapcardWork*)node;
+                w->unk_1EC = node;
             }
         }
 
-        node = (UnkStruct_02034AAC*)ListPoolNext(&node->unk_38);
+        node = (MapcardWork*)ListPoolNext(&node->unk_38);
     }
 
     q = (u8*)w->unk_1EC;
@@ -18642,7 +18642,7 @@ s32 func_08093838(UnkStruct_08093838* w) {
         r = *(u16*)q | 0x100;
         *(u16*)q = r;
 
-        return (((UnkStruct_02034AAC*)w->unk_1EC)->unk_4C - w->unk_258) >> 8;
+        return (((MapcardWork*)w->unk_1EC)->unk_4C - w->unk_258) >> 8;
     }
 
     return 0;
@@ -19207,7 +19207,7 @@ u8 func_0809423C(UnkStruct_08093838* w, void* a) {
 
                 while (n != 0) {
                     n->unk_6C |= 2;
-                    n = (MapcardWork*)ListPoolNext(n->unk_38);
+                    n = (MapcardWork*)ListPoolNext(&n->unk_38);
                 }
 
                 if (w->unk_27C <= 6) {
@@ -19285,7 +19285,7 @@ u8 func_08094404(UnkStruct_08093838* w, void* a) {
                 func_0800516C(1, gUnk_09EE4BB0, 1, 2);
                 while (node != 0) {
                     node->unk_6C |= 2;
-                    node = ListPoolNext(node->unk_38);
+                    node = ListPoolNext(&node->unk_38);
                 }
                 if (w->unk_27C <= 6) {
                     w->unk_285 = 0;
@@ -19322,7 +19322,7 @@ void func_08094548(UnkStruct_08093838* w) {
         }
     }
 
-    n = ListPoolRemove(w->unk_1EC->unk_38, w->unk_014);
+    n = ListPoolRemove(&w->unk_1EC->unk_38, w->unk_014);
     w->unk_1EC->unk_6C |= 0x400;
     w->unk_1EC = n;
 
@@ -19334,10 +19334,10 @@ void func_08094548(UnkStruct_08093838* w) {
             i++;
         }
 
-        n = (MapcardWork*)ListPoolNext(n->unk_38);
+        n = (MapcardWork*)ListPoolNext(&n->unk_38);
     }
 
-    for (n = (MapcardWork*)ListPoolFirst(w->unk_014); n != 0; n = (MapcardWork*)ListPoolNext(n->unk_38)) {
+    for (n = (MapcardWork*)ListPoolFirst(w->unk_014); n != 0; n = (MapcardWork*)ListPoolNext(&n->unk_38)) {
         n->unk_6C |= 2;
     }
 
@@ -19841,7 +19841,7 @@ u8 func_0809511C(ReloadGageWork* w, void* a) {
 
                 while (node != 0) {
                     node->unk_1C &= 0xFFFD;
-                    node = (UnkStruct_08098BE8*)ListPoolNext(node->unk_30);
+                    node = (UnkStruct_08098BE8*)ListPoolNext(&node->unk_30);
                 }
 
                 if (w->unk_9F == 0) {
@@ -19864,7 +19864,7 @@ u8 func_0809511C(ReloadGageWork* w, void* a) {
                         while (node != 0) {
                             node->unk_1C |= 1;
                             node->unk_18--;
-                            node = (UnkStruct_08098BE8*)ListPoolNext(node->unk_30);
+                            node = (UnkStruct_08098BE8*)ListPoolNext(&node->unk_30);
                         }
 
                         p->unk_64--;
@@ -19940,7 +19940,7 @@ u8 func_0809511C(ReloadGageWork* w, void* a) {
 
             while (node != 0) {
                 node->unk_1C |= 2;
-                node = (UnkStruct_08098BE8*)ListPoolNext(node->unk_30);
+                node = (UnkStruct_08098BE8*)ListPoolNext(&node->unk_30);
             }
         }
     }
@@ -20089,7 +20089,7 @@ void func_080956AC(UnkStruct_02034AAC* p) {
         break;
     }
 
-    ListPoolRemove(&p->unk_64[0], p->unk_38);
+    ListPoolRemove(&p->unk_64, p->unk_38);
 }
 void func_080958E0(ReloadGageWork* w) {
     ApproachValue(&w->unk_94, w->unk_98, w->unk_A3);
@@ -22026,8 +22026,8 @@ void RELOAD_CHILDREN_0(UnkStruct_08098BE8* w, UnkStruct_080988C0_Args* a) {
         break;
     }
 
-    ListNodeInit(w->unk_30, *(void**)w->unk_0C, w);
-    ListPoolAppend(w->unk_30, *(void**)w->unk_0C);
+    ListNodeInit(&w->unk_30, *(void**)w->unk_0C, w);
+    ListPoolAppend(&w->unk_30, *(void**)w->unk_0C);
     w->unk_46 = 0;
 }
 
@@ -22062,7 +22062,7 @@ u8 RELOAD_CHILDREN_1(UnkStruct_08098BE8* w, void* a) {
 
         ApproachValue(&w->unk_24, gUnk_090361C0[(s8)w->unk_18] << 8, w->unk_44);
     } else if ((s8)w->unk_18 < 0) {
-        ListPoolRemove(w->unk_30, *(void**)w->unk_0C);
+        ListPoolRemove(&w->unk_30, *(void**)w->unk_0C);
         w->unk_08 = LoadObjTiles(gUnk_08F709B0[w->unk_19].unk_10, 0xD00);
         w->unk_44 = 8;
         w->unk_28 = 0x66;
@@ -24071,7 +24071,7 @@ u8 func_0809BE80(u8* work, void* a) {
             while (n != 0) {
                 n->unk_55 |= 0xFF;
                 work[0x86] = 0;
-                n = (UnkStruct_0809C534*)ListPoolNext(n->unk_58);
+                n = (UnkStruct_0809C534*)ListPoolNext(&n->unk_58);
             }
 
             TaskPoolUpdate(&work[0x3C]);
@@ -24102,7 +24102,7 @@ u8 func_0809BE80(u8* work, void* a) {
                 work[0x52] = 1;
             }
 
-            n = (UnkStruct_0809C534*)ListPoolNext(n->unk_58);
+            n = (UnkStruct_0809C534*)ListPoolNext(&n->unk_58);
         }
     } else {
         work[0x87] = 1;
@@ -24349,8 +24349,8 @@ void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a) {
 
     w->unk_50 = 0;
     func_0809C9A4((UnkStruct_0809C9A4*)w);
-    ListNodeInit(w->unk_58, gUnk_0203A9D0, w);
-    ListPoolAppend(w->unk_58, gUnk_0203A9D0);
+    ListNodeInit(&w->unk_58, gUnk_0203A9D0, w);
+    ListPoolAppend(&w->unk_58, gUnk_0203A9D0);
     w->unk_55 = 0;
     w->unk_6C = 0x100;
     w->unk_6E = 0x100;
@@ -32527,7 +32527,7 @@ u8 func_080AAD84(u8* work, u16 x, u16 y) {
 u8 func_080AADD4(u8* work, s16 x, s16 y, u16 dir) {
     UnkStruct_0808E890* n;
 
-    for (n = ListPoolFirst(&work[0x63C]); n != 0; n = ListPoolNext(n->unk_2C)) {
+    for (n = ListPoolFirst(&work[0x63C]); n != 0; n = ListPoolNext(&n->unk_2C)) {
         if (n->unk_22 == x && n->unk_24 == y) {
             return 1;
         }
