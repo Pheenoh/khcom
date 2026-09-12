@@ -113,30 +113,30 @@ typedef struct EventCharaWork {
 } EventCharaWork;
 
 
-typedef struct Ent02034A80 {
-    s32 unk_00;
-    s32 unk_04;
-    u32 unk_08[16];
-    u32 unk_48;
+typedef struct SpriteTextLine {
+    s32 x;
+    s32 y;
+    u32 glyphTiles[16];
+    u32 palette;
     u32 unk_4C;
-    u8 unk_50;
-    u8 unk_51;
+    u8 length;
+    u8 font;
     u8 unk_52;
     u8 unk_53;
     u8 unk_54;
     u8 unk_55[3];
-} Ent02034A80;
+} SpriteTextLine;
 
-typedef struct Ent02034A8C {
-    u8 unk_00;
-    u8 unk_01;
-    u16 unk_02[16];
-    u8 unk_22;
-    u8 unk_23;
-    u8 unk_24;
-    u8 unk_25;
-    u8 unk_26;
-} Ent02034A8C;
+typedef struct BgTextLine {
+    u8 x;
+    u8 y;
+    u16 glyphs[16];
+    u8 length;
+    u8 glyphHeight;
+    u8 bg;
+    u8 dirty;
+    u8 paletteIndex;
+} BgTextLine;
 
 
 typedef struct MsgFaceAnim {
@@ -210,19 +210,15 @@ typedef struct EventSeqWork {
     u8 unk_3D;
 } EventSeqWork;
 
-typedef struct Ent0903380C {
-    s16 unk_00;
+typedef struct EventCharaParams {
+    s16 spriteYOffset;
     s16 unk_02;
     s16 unk_04;
     s16 unk_06;
     s16 unk_08;
     s16 unk_0A;
-} Ent0903380C;
+} EventCharaParams;
 
-typedef struct Ent0806E7A8 {
-    u8 unk_00[0x34];
-    u64 unk_34;
-} Ent0806E7A8;
 
 
 typedef struct EventSeqArg {
@@ -255,9 +251,9 @@ typedef struct EventBackgroundDef {
 
 typedef struct EventScanlineScroll {
     u8 unk_00[2];
-    u8 unk_02;
+    u8 enabled;
     u8 unk_03;
-    u16 unk_04[160];
+    u16 scrollX[160];
 } EventScanlineScroll;
 
 typedef struct Actor0806180C {
@@ -281,11 +277,11 @@ typedef struct EventCameraWork {
     u16 unk_12;
     u8 unk_14;
     u8 unk_15;
-    u16 unk_16;
+    u16 wavePhase;
     u8 unk_18[2];
-    u8 unk_1A;
+    u8 waveEnabled;
     u8 unk_1B;
-    u16 unk_1C[160];
+    u16 scanlineScrollX[160];
 } EventCameraWork;
 
 
@@ -330,24 +326,16 @@ typedef struct MsgWaitYesNoWork {
 } MsgWaitYesNoWork;
 
 typedef struct TextGlyphSprite {
-    s32 unk_00;
-    s32 unk_04;
-    void* unk_08;
-    ObjPalette* unk_0C;
-    ObjPalette* unk_10;
-    u8 unk_14;
-    u8 unk_15;
+    s32 x;
+    s32 y;
+    void* tiles;
+    ObjPalette* palette;
+    ObjPalette* alternatePalette;
+    u8 useAlternatePalette;
+    u8 visible;
     u8 unk_16[2];
 } TextGlyphSprite;
 
-typedef struct Work08075010 {
-    u8 unk_00[0x16];
-    u16 unk_16;
-    u8 unk_18[2];
-    u8 unk_1A;
-    u8 unk_1B;
-    u16 unk_1C[160];
-} Work08075010;
 
 
 
@@ -456,7 +444,7 @@ extern u16 gUnk_08F7D438[];
 extern void* gUnk_09EEC134[];
 extern u8 gUnk_090CBFB2[];
 extern s32 gUnk_09033D28[];
-extern Ent0903380C gUnk_0903380C[];
+extern EventCharaParams gUnk_0903380C[];
 extern void* gUnk_09EF126C[];
 
 void _08065994(void);
@@ -540,7 +528,7 @@ u8 func_08074E40(EventCameraWork* p);
 void func_08074D98(EventCameraWork* a);
 u8 func_08074E88(EventCameraWork* p, u8 v);
 u8 _08074EC8(EventCameraWork* p);
-void func_08075010(Work08075010* p);
+void func_08075010(EventCameraWork* p);
 void func_08074DC4(EventCameraWork* a);
 
 void func_0806FE90(EventCharaWork* p);
