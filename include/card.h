@@ -179,13 +179,13 @@ typedef struct UnkStruct_0807FA0C {
     void* unk_44[0x04];
 } UnkStruct_0807FA0C;
 
-typedef struct UnkStruct_080A1C48 {
+typedef struct EventMapObjectWork {
     u8 unk_00[0x04];
-    void* unk_04[0x0A];
-    void* unk_2C[0x0A];
+    void* tiles[0x0A];
+    void* palettes[0x0A];
     u8 unk_54[0x04];
-    void* unk_58;
-} UnkStruct_080A1C48;
+    void* definition;
+} EventMapObjectWork;
 
 struct UnkStruct_09EE4C80;
 struct UnkStruct_09EE4BF4;
@@ -784,7 +784,7 @@ typedef struct UnkStruct_08080268 {
     u8 unk_C9;
 } UnkStruct_08080268;
 
-typedef struct UnkStruct_0809DF7C {
+typedef struct HcEffectNameWork {
     s16 unk_00;
     u8 unk_02[0x06];
     void* unk_08;
@@ -803,7 +803,7 @@ typedef struct UnkStruct_0809DF7C {
     u8 unk_25;
     u8 unk_26;
     u8 unk_27;
-} UnkStruct_0809DF7C;
+} HcEffectNameWork;
 
 typedef struct ReloadChildArgs {
     void* unk_00;
@@ -856,7 +856,7 @@ typedef struct UnkStruct_08098670 {
 } UnkStruct_08098670;
 
 
-typedef struct UnkStruct_0809CE88 {
+typedef struct PremiumCardEffectWork {
     void* unk_00;
     void* unk_04;
     void* unk_08;
@@ -873,11 +873,11 @@ typedef struct UnkStruct_0809CE88 {
     s32 unk_48;
     s32 unk_4C;
     s32 unk_50;
-} UnkStruct_0809CE88;
+} PremiumCardEffectWork;
 
-typedef char UnkStruct_0809CE88_sizechk[(sizeof(struct UnkStruct_0809CE88) == 0x54) ? 1 : -1];
+typedef char PremiumCardEffectWork_sizechk[(sizeof(struct PremiumCardEffectWork) == 0x54) ? 1 : -1];
 
-typedef struct UnkStruct_0809CC80 {
+typedef struct CardNameWork {
     void* unk_00;
     UnkStruct_080038C8* unk_04;
     TextSlot unk_08[32];
@@ -890,22 +890,22 @@ typedef struct UnkStruct_0809CC80 {
     s16 unk_224;
     u8 unk_226;
     u8 unk_227;
-} UnkStruct_0809CC80;
+} CardNameWork;
 
-typedef char UnkStruct_0809CC80_sizechk[(sizeof(struct UnkStruct_0809CC80) == 0x228) ? 1 : -1];
+typedef char CardNameWork_sizechk[(sizeof(struct CardNameWork) == 0x228) ? 1 : -1];
 
-typedef struct UnkStruct_080AB018 {
-    void* unk_00;
-    s32 unk_04;
+typedef struct DarkPointWork {
+    void* tiles;
+    s32 x;
     u8 unk_08[0x02];
-    s8 unk_0A;
+    s8 slideTimer;
     u8 unk_0B;
-    u8 unk_0C;
-    u8 unk_0D;
-    u8 unk_0E;
-} UnkStruct_080AB018;
+    u8 hundreds;
+    u8 tens;
+    u8 ones;
+} DarkPointWork;
 
-typedef char UnkStruct_080AB018_sizechk[(sizeof(struct UnkStruct_080AB018) == 0x10) ? 1 : -1];
+typedef char DarkPointWork_sizechk[(sizeof(struct DarkPointWork) == 0x10) ? 1 : -1];
 
 typedef struct CardSlot {
     u32 unk_00;
@@ -1028,7 +1028,7 @@ typedef struct UnkStruct_02034AD4 {
     u16 unk_04[32];
 } UnkStruct_02034AD4;
 
-typedef struct UnkStruct_0809E0A4 {
+typedef struct NumberPlusArgs {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
@@ -1036,17 +1036,17 @@ typedef struct UnkStruct_0809E0A4 {
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
-} UnkStruct_0809E0A4;
+} NumberPlusArgs;
 
-typedef struct UnkWork_0809E0A4 {
+typedef struct NumberPlusWork {
     void* tiles;
     void* palette;
-    UnkStruct_0809E0A4 unk_08;
+    NumberPlusArgs unk_08;
     s16 unk_24;
     s16 unk_26;
     u8 unk_28;
     u8 unk_29;
-} UnkWork_0809E0A4;
+} NumberPlusWork;
 
 typedef struct MapTileAnimationFrame {
     u16 tileOffset;
@@ -1428,7 +1428,7 @@ typedef struct SpotlightWork {
     u8 unk_14;
 } SpotlightWork;
 
-typedef struct UnkStruct_08099E70 {
+typedef struct CardEffectWork {
     void* tiles;
     void* palette;
     u8 anim[0x18];
@@ -1445,7 +1445,7 @@ typedef struct UnkStruct_08099E70 {
     u8 unk_44;
     u8 unk_45[0x03];
     u8* unk_48;
-} UnkStruct_08099E70;
+} CardEffectWork;
 
 typedef struct UnkStruct_08083B20 {
     void* unk_00;
@@ -1465,7 +1465,7 @@ typedef struct UnkStruct_08083B20 {
     u8 unk_46;
 } UnkStruct_08083B20;
 
-typedef struct UnkStruct_08099928 {
+typedef struct BossPrizeWork {
     UnkStruct_080038C8* unk_00;
     UnkStruct_080038C8* unk_04;
     UnkStruct_080038C8* unk_08;
@@ -1508,26 +1508,26 @@ typedef struct UnkStruct_08099928 {
     u8 unk_ED;
     u8 unk_EE;
     u8 unk_EF;
-} UnkStruct_08099928;
+} BossPrizeWork;
 
-typedef char UnkStruct_08099928_sizechk[(sizeof(struct UnkStruct_08099928) == 0xF0) ? 1 : -1];
+typedef char BossPrizeWork_sizechk[(sizeof(struct BossPrizeWork) == 0xF0) ? 1 : -1];
 
-typedef struct UnkStruct_080A1BB8_Entry {
-    s32 unk_00 : 24;
+typedef struct EventMapObjectPlacement {
+    s32 x : 24;
     s32 unk_03 : 8;
-    s32 unk_04 : 24;
+    s32 y : 24;
     s32 unk_07 : 8;
-    u8 unk_08;
+    u8 spriteIndex;
     u8 unk_09[0x03];
-} UnkStruct_080A1BB8_Entry;
+} EventMapObjectPlacement;
 
-typedef struct UnkStruct_080A1BB8 {
-    UnkStruct_09035DCC* unk_00;
-    UnkStruct_09035DCC* unk_04;
-    void** unk_08;
-    UnkStruct_080A1BB8_Entry* unk_0C;
-    u16 unk_10;
-} UnkStruct_080A1BB8;
+typedef struct EventMapObjectDef {
+    UnkStruct_09035DCC* tileResources;
+    UnkStruct_09035DCC* paletteResources;
+    void** sprites;
+    EventMapObjectPlacement* placements;
+    u16 placementCount;
+} EventMapObjectDef;
 
 typedef struct CardDisplayArgs {
     s32 unk_00;
@@ -1657,7 +1657,7 @@ typedef struct UnkStruct_080A2678 {
     u8* unk_2B4;
 } UnkStruct_080A2678;
 
-typedef struct UnkStruct_080A2F54 {
+typedef struct DeckConfirmWork {
     u8 unk_000[0x280];
     u8 unk_280[0x280];
     u8 unk_500[0x280];
@@ -1678,7 +1678,7 @@ typedef struct UnkStruct_080A2F54 {
     u8 unk_79E[2];
     u8* unk_7A0;
     u8 unk_7A4;
-} UnkStruct_080A2F54;
+} DeckConfirmWork;
 
 typedef struct UnkStruct_080A5D3C {
     u8 unk_000[0x3C4];
@@ -1720,7 +1720,7 @@ typedef struct UnkStruct_080A5D3C {
 
 typedef char UnkStruct_080A5D3C_sizechk[(sizeof(struct UnkStruct_080A5D3C) == 0x50C) ? 1 : -1];
 
-typedef struct UnkStruct_080A1A44_Args {
+typedef struct LevelUpEffectArgs {
     s32 unk_00;
     s32 unk_04;
     u8 unk_08;
@@ -1728,7 +1728,7 @@ typedef struct UnkStruct_080A1A44_Args {
     void* unk_0C;
     void* unk_10;
     u8* unk_14;
-} UnkStruct_080A1A44_Args;
+} LevelUpEffectArgs;
 
 typedef struct UnkStruct_080A1B4C {
     s32 unk_00;
@@ -1736,15 +1736,15 @@ typedef struct UnkStruct_080A1B4C {
     s32 unk_08;
 } UnkStruct_080A1B4C;
 
-typedef struct UnkStruct_08099CDC_Args {
+typedef struct CardEffectArgs {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
     u8 unk_0C;
     u8* unk_10;
-} UnkStruct_08099CDC_Args;
+} CardEffectArgs;
 
-typedef struct UnkStruct_080A18F4 {
+typedef struct LevelUpEffectWork {
     void* tiles;
     void* palette;
     void* unk_08;
@@ -1765,7 +1765,7 @@ typedef struct UnkStruct_080A18F4 {
     u8 unk_96;
     u8 unk_97;
     u8 unk_98[0x14];
-} UnkStruct_080A18F4;
+} LevelUpEffectWork;
 
 typedef struct UnkStruct_0809FBCC {
 #ifdef VERSION_EU
@@ -1814,11 +1814,11 @@ typedef struct WorldSelBeforeWork {
     u8 unk_A3;
 } WorldSelBeforeWork;
 
-typedef struct UnkStruct_080A5490_Args {
+typedef struct WorldSelBeforeArgs {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
-} UnkStruct_080A5490_Args;
+} WorldSelBeforeArgs;
 
 typedef struct DeckCard2Args {
     void* unk_00;
@@ -1830,33 +1830,33 @@ typedef struct DeckCard2Args {
     u16* unk_0C;
 } DeckCard2Args;
 
-typedef struct UnkStruct_080A1DAC_Frame {
-    u16 unk_00;
-    u16 unk_02;
-} UnkStruct_080A1DAC_Frame;
+typedef struct EventBgEffectFrame {
+    u16 duration;
+    u16 tilesOffset;
+} EventBgEffectFrame;
 
-typedef struct UnkStruct_080A1DAC_Desc {
-    void** unk_00;
-    u8* unk_04;
-    void* unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
+typedef struct EventBgEffectDef {
+    void** maps;
+    u8* tiles;
+    void* palette;
+    u16 tilesSize;
+    u16 paletteSize;
     u8 unk_10[0x04];
-    UnkStruct_080A1DAC_Frame* unk_14;
-    u8 unk_18;
-    s8 unk_19;
-} UnkStruct_080A1DAC_Desc;
+    EventBgEffectFrame* frames;
+    u8 frameCount;
+    s8 loopFrame;
+} EventBgEffectDef;
 
-typedef struct UnkStruct_080A1DAC_Entry {
+typedef struct EventBgEffectEntry {
     u8 unk_00[0x02];
     u16 unk_02;
     s32 unk_04;
     s32 unk_08;
     u8 unk_0C[0x04];
-} UnkStruct_080A1DAC_Entry;
+} EventBgEffectEntry;
 
-typedef struct UnkStruct_080A1DAC {
-    UnkStruct_080A1DAC_Entry* unk_00;
+typedef struct EventBgEffectWork {
+    EventBgEffectEntry* unk_00;
     u8 unk_04[0x08];
     u16 unk_0C;
     u16 unk_0E;
@@ -1866,9 +1866,9 @@ typedef struct UnkStruct_080A1DAC {
     u8 unk_14;
     u8 unk_15;
     u8 unk_16;
-} UnkStruct_080A1DAC;
+} EventBgEffectWork;
 
-extern UnkStruct_080A1DAC_Desc* gUnk_09EE79B4[];
+extern EventBgEffectDef* gUnk_09EE79B4[];
 
 typedef struct ReloadArgs {
     u32 unk_00;
@@ -2138,7 +2138,7 @@ void func_0809B3F4(UnkStruct_0809A02C* w);
 void func_0809B59C(UnkStruct_0809A02C* w);
 void func_0809B5F4(UnkStruct_0809A02C* w);
 void func_08090100(DeckCard2Work* n);
-u8 Card_EFFECT_1(UnkStruct_08099E70* w);
+u8 Card_EFFECT_1(CardEffectWork* w);
 void func_0809D1FC(u8 bg);
 u8 func_080A3640(UnkStruct_080A3F5C* w, void* a);
 u8 func_08083B20(UnkStruct_08083B20* w, u8 b);
@@ -2146,7 +2146,7 @@ void func_08096F94(UnkStruct_08096F94* w, s32* args);
 u8 func_08097138(UnkStruct_08096F94* w, void* a);
 void func_08097390(UnkStruct_08096F94* w);
 void func_08097688(UnkStruct_08096F94* w);
-void func_080999A4(UnkStruct_08099928* w);
+void func_080999A4(BossPrizeWork* w);
 u8 StockInfo_1(u8* work, void* a);
 void func_08090A54(CardDisplayWork* p, void* a);
 u8 func_0809438C(MapSelectWork* w, void* a);
@@ -2156,12 +2156,12 @@ void func_08083F08(u8 kind, u16* out);
 void func_0808E364(u8* work, u8 kind);
 void func_08096638(PrizeCardWork* w);
 void func_080978B0(UnkStruct_08096F94* w);
-void func_08099928(UnkStruct_08099928* w);
+void func_08099928(BossPrizeWork* w);
 void func_08097834(PrizeCardWork* w);
-void PrizeBoss_0(UnkStruct_08099928* w, s32* args);
-u8 PrizeBoss_1(UnkStruct_08099928* w, void* a);
-void PrizeBoss_2(UnkStruct_08099928* w);
-void PrizeBoss_3(UnkStruct_08099928* w);
+void PrizeBoss_0(BossPrizeWork* w, s32* args);
+u8 PrizeBoss_1(BossPrizeWork* w, void* a);
+void PrizeBoss_2(BossPrizeWork* w);
+void PrizeBoss_3(BossPrizeWork* w);
 u8 func_0809C710(u8* work, void* a);
 void func_080AAA8C(u8* work, u8 kind);
 u8 func_0808FA0C(u8* work, void* a);
@@ -2181,8 +2181,8 @@ u8 func_0809CBF8(u8* work, void* a);
 u8 func_080A6474(u8* work, void* a);
 void RecalculateInactiveDeckCpCosts(void);
 u8 RELOAD_1(u8* work, void* a);
-u8 func_08099C4C(UnkStruct_08099928* w);
-void func_080A1BB8(UnkStruct_080A1C48* w, void** t);
+u8 func_08099C4C(BossPrizeWork* w);
+void func_080A1BB8(EventMapObjectWork* w, void** t);
 void Mode_riku_deckTutorial_1(void);
 void func_0807A6C8(UnkStruct_08080268* w);
 u8 func_0807B578(UnkStruct_08080268* w, void* a);
@@ -2205,8 +2205,8 @@ u8 func_0807D4E4(CardDisplayWork* p);
 u8 func_08082F50(CardDisplayWork* p);
 void func_0808CD48(u8* work);
 void Mode_Premire_0(void);
-void func_080A1DAC(UnkStruct_080A1DAC* w);
-u8 func_080A207C(UnkStruct_080A1DAC* w);
+void func_080A1DAC(EventBgEffectWork* w);
+u8 func_080A207C(EventBgEffectWork* w);
 u8 func_080A5C9C(u8* work, void* a);
 void func_080837FC(CardDisplayWork* p);
 u8 map_anim_1(MapTileAnimationWork* w);
@@ -2225,7 +2225,7 @@ u8 func_080909A4(CardDisplayWork* p);
 u8 func_080A6A38(u8* work);
 u8 func_080A9A38(u8* work);
 void func_080AA148(u8 kind, u8 slot);
-void Ev_mapObj_2(UnkStruct_080A1C48* w);
+void Ev_mapObj_2(EventMapObjectWork* w);
 void func_080984E4(UnkStruct_080984E4* w);
 u8 card_reload_1(CardDisplayWork* p, void* a);
 void func_0808E7D8(u8* work);
@@ -2256,44 +2256,44 @@ u8 AddCardToDeck(u16 card, u8 deck);
 void func_08084D78(UnkStruct_08084D78* out, u8 deck, u8 mode, u16 n, void* p);
 void func_080AB228(void);
 u16 func_08093384(void);
-void LVUP_EFFECT_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a);
-void Deck_Clear_0(UnkStruct_080A2F54* w, u8* a);
-void Deck_Yes_No_0(UnkStruct_080A2F54* w, u8* a);
-void LVUP_EFFECT_2(UnkStruct_080A18F4* w);
+void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a);
+void Deck_Clear_0(DeckConfirmWork* w, u8* a);
+void Deck_Yes_No_0(DeckConfirmWork* w, u8* a);
+void LVUP_EFFECT_2(LevelUpEffectWork* w);
 u8 func_0809CB0C(u8* work, void* a);
-void Lvup_Logo_0(UnkStruct_080A18F4* w, UnkStruct_080A1A44_Args* a);
+void Lvup_Logo_0(LevelUpEffectWork* w, LevelUpEffectArgs* a);
 void func_0807F99C(UnkStruct_08080268* w);
 u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a);
 u8 func_080A5EA0(UnkStruct_080A5D3C* w, void* a);
 void func_080A4C1C(UnkStruct_080A3F5C* w);
 void func_080A53E4(UnkStruct_080A3F5C* w);
 void func_08090864(CardDisplayWork* p);
-void func_08099CDC(UnkStruct_08099928* w);
+void func_08099CDC(BossPrizeWork* w);
 void func_0809C110(u8* work);
-void func_0809CE88(UnkStruct_0809CE88* w, s16* a);
-void func_0809CF64(UnkStruct_0809CE88* w, s16* a);
+void func_0809CE88(PremiumCardEffectWork* w, s16* a);
+void func_0809CF64(PremiumCardEffectWork* w, s16* a);
 void RELOAD_CHILDREN_2(ReloadChildWork* w);
 u8 func_080AADD4(u8* work, s16 x, s16 y, u16 dir);
 u8 func_08090550(CardDisplayWork* p, void* a);
 u8 AddCardToActiveDeck(u16 card);
 void func_08084AC8(u16 a);
 void func_08085A58(s32 a, u16* out);
-void func_080A2E14(UnkStruct_080A2F54* w);
-void func_080A2EF8(UnkStruct_080A2F54* w);
+void func_080A2E14(DeckConfirmWork* w);
+void func_080A2EF8(DeckConfirmWork* w);
 u8 func_0808CA78(u8* work, u8 a);
 void func_0808C2F0(u8* work);
-void HCEffectName_2(UnkStruct_0809DF7C* w);
+void HCEffectName_2(HcEffectNameWork* w);
 u8 func_080A3558(UnkStruct_080A3F5C* w, void* a);
 void func_08090B50(CardDisplayWork* p, void* a);
 void RELOAD_CHILDREN_0(ReloadChildWork* w, ReloadChildArgs* a);
 u8 Bosscard_1(u8* work, void* a);
 void func_08094548(MapSelectWork* w);
-u8 func_08099B60(UnkStruct_08099928* w, void* a);
+u8 func_08099B60(BossPrizeWork* w, void* a);
 void func_08083714(UnkStruct_08083B20* w);
 void func_080836C4(UnkStruct_08095A5C* p, void* a, u8 b, s8 c);
 u8 func_08082A64(CardDisplayWork* p, void* a);
 void func_0808E3E0(u8* work);
-u8 func_080A18F4(UnkStruct_080A18F4* w);
+u8 func_080A18F4(LevelUpEffectWork* w);
 u8 func_0809753C(UnkStruct_08096F94* w, void* a);
 void func_0809B76C(u8* work, void** src);
 void func_0809B920(u8* work, void** src);
@@ -2308,9 +2308,9 @@ void func_0807DAD0(CardDisplayWork* p);
 void Reload_Card_0(CardDisplayWork* p, CardDisplayArgs* a);
 void func_08091138(CardDisplayWork* p, CardDisplayArgs* a);
 u8 func_0809C620(u8* work, void* a);
-u8 EV_BG_EFFECT_1(UnkStruct_080A1DAC* w, void* a);
+u8 EV_BG_EFFECT_1(EventBgEffectWork* w, void* a);
 void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a);
-void Card_EFFECT_0(UnkStruct_08099E70* w, UnkStruct_08099CDC_Args* a);
+void Card_EFFECT_0(CardEffectWork* w, CardEffectArgs* a);
 void deckexchange_3(u8* work);
 void func_0807BB04(void);
 void func_080818E4(void);
@@ -2331,7 +2331,7 @@ u8 func_0808A7E4(u8* work, void* a);
 u8 func_080A5198(UnkStruct_080A3F5C* w, void* a);
 void func_080A52BC(UnkStruct_080A3F5C* w);
 void func_080A6D0C(void);
-void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a);
+void WorldSel_Before_0(WorldSelBeforeWork* w, WorldSelBeforeArgs* a);
 void func_0807BC24(CardDisplayWork* p, CardDisplayArgs* a);
 void func_08081A3C(CardDisplayWork* p, CardDisplayArgs* a);
 u8 RELOAD_CHILDREN_1(ReloadChildWork* w, void* a);
@@ -2339,16 +2339,16 @@ u8 func_0807CFA8(CardDisplayWork* p, void* a);
 u8 func_08097404(UnkStruct_08096F94* w, void* a);
 u8 func_080824C8(CardDisplayWork* p, void* a);
 u8 func_0809423C(MapSelectWork* w, void* a);
-u8 func_08099A18(UnkStruct_08099928* w, void* a);
-void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a);
+u8 func_08099A18(BossPrizeWork* w, void* a);
+void HCEffectName_0(HcEffectNameWork* w, u8* a);
 u8 func_08082348(CardDisplayWork* p, void* a);
 u8 func_0809C2D0(u8* work, void* a);
 u8 func_08090C3C(CardDisplayWork* p, void* a);
 
-void CardName_0(UnkStruct_0809CC80* w);
-void DarkPoint_0(UnkStruct_080AB018* w);
-s32 DarkPoint_1(UnkStruct_080AB018* w);
-void DarkPoint_2(UnkStruct_080AB018* w);
+void CardName_0(CardNameWork* w);
+void DarkPoint_0(DarkPointWork* w);
+s32 DarkPoint_1(DarkPointWork* w);
+void DarkPoint_2(DarkPointWork* w);
 void DarkPoint_3(void** p);
 void func_080A33C4(UnkStruct_080A3F5C* w, void* a);
 #ifndef VERSION_EU
