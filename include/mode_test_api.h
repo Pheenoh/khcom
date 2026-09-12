@@ -10,6 +10,6 @@ void func_0805FC04(u8 x, u8 y, u32 c, u16 v);
 s32 func_0805F588(s32 a, s32 b);
 s32 func_0805F5A4(s32* x, s32* y);
 u16 func_08060A2C(u16 a);
-u16 func_080609AC(u16 a);
+u16 GetCardCpCost(u16 a);
 
 #endif

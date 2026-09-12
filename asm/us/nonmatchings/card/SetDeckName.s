@@ -1,10 +1,10 @@
 .syntax unified
 	.align 2, 0
-	.global func_08085788
+	.global SetDeckName
 	.thumb
 	.thumb_func
-	.type func_08085788, %function
-func_08085788: @ 08085788
+	.type SetDeckName, %function
+SetDeckName: @ 08085788
 	adds r3, r1, #0x0
 	lsls r0, r0, #0x18
 	lsrs r2, r0, #0x18

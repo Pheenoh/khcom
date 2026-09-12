@@ -1456,7 +1456,7 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
         work->unk_3C++;
         break;
     }
-    if (func_0801A8A4(&work->x, &work->y, 0, 0)) {
+    if (ClampBattlePosition(&work->x, &work->y, 0, 0)) {
         work->unk_34 = (u8)(work->unk_34 + 118) + GetRandom() % 21;
     }
     AnimUpdate(&work->anim);
@@ -1473,7 +1473,7 @@ void task_hum_hook_bomb_2(HookBombWork* work) {
         return;
     }
     gfx = AnimGetGfx(&work->anim);
-    attr = func_0801AF1C(work->y);
+    attr = GetBattleSpritePriorityFlags(work->y);
 
     if (work->unk_2C == 0) {
         attr |= 1;
@@ -2671,7 +2671,7 @@ void task_hum_hades_2(HadesWork* work) {
 
     for (i = 0; i < 2; i++) {
         e = &work->unk_22C[i];
-        attr = func_0801AF1C(e->unk_00);
+        attr = GetBattleSpritePriorityFlags(e->unk_00);
 
         if (work->unk_27C == 0x100) {
             if ((act->unk_034 & 4) == 0) {
@@ -2802,7 +2802,7 @@ void func_0804FAD4(MahluxiaWork* work, RikuSpawn* p) {
         SetBlendAlpha(4, 14);
         attr = 0x804;
     } else {
-        attr = func_0801AF1C(act->unk_008);
+        attr = GetBattleSpritePriorityFlags(act->unk_008);
     }
 
     if (p->unk_0C & 1) {
@@ -4216,15 +4216,15 @@ void task_hum_laxene_knf_2(LaxeneKnfWork* work) {
     gfx = AnimGetGfx(&work->anim);
 
     if (work->unk_2C != 0) {
-        attr = func_0801AF1C(work->y);
+        attr = GetBattleSpritePriorityFlags(work->y);
     } else {
-        attr = func_0801AF1C(work->y) | 1;
+        attr = GetBattleSpritePriorityFlags(work->y) | 1;
     }
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, gfx, work->tiles, work->palette, 0, attr,
         -0x1004 - (work->y >> 8) * 4);
 
-    if (func_080035CC(x, y, 2, 2, 32, 32)) {
+    if (IsRectOutsideScreen(x, y, 2, 2, 32, 32)) {
         work->unk_2D = 0;
     }
 }
@@ -4748,10 +4748,10 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         sub2->unk_30 += (-0x1000 - sub2->unk_30) >> 3;
         w->unk_234 += 2;
         w->unk_236 -= 2;
-        if (func_0801A8A4(&sub->unk_28, &sub->unk_2C, 0, 0)) {
+        if (ClampBattlePosition(&sub->unk_28, &sub->unk_2C, 0, 0)) {
             w->unk_234 += 128;
         }
-        if (func_0801A8A4(&sub2->unk_28, &sub2->unk_2C, 0, 0)) {
+        if (ClampBattlePosition(&sub2->unk_28, &sub2->unk_2C, 0, 0)) {
             w->unk_236 += 128;
         }
         if (func_08011F78(304, sub->unk_28, sub->unk_2C, sub->unk_30, 8, 8, 2)) {
@@ -5031,7 +5031,7 @@ void task_hum_axcel_ptc_2(AxcelPtcWork* work) {
 
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0,
-        func_0801AF1C(work->y), -0x1004 - (work->y >> 8) * 4);
+        GetBattleSpritePriorityFlags(work->y), -0x1004 - (work->y >> 8) * 4);
 }
 
 void task_hum_axcel_ptc_3(AxcelPtcWork* work) {
@@ -5406,7 +5406,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
             s += 384;
             work->unk_198 += (gSineTable[(u8)work->unk_1A0] * s) >> 8;
             work->unk_19C += (-gSineTable[(u8)work->unk_1A0 + 64] * s) >> 8;
-            func_0801A8A4(&work->unk_198, &work->unk_19C, 0, 0);
+            ClampBattlePosition(&work->unk_198, &work->unk_19C, 0, 0);
             func_0800F368(w, 1);
 
             if ((s16)w->base.unk_150 % 9 == 0) {
@@ -5668,7 +5668,7 @@ void task_hum_vixen_ndl_2(VixenNdlWork* work) {
     u16 attr;
 
     gfx = AnimGetGfx(&work->anim);
-    attr = func_0801AF1C(work->y);
+    attr = GetBattleSpritePriorityFlags(work->y);
 
     if (work->unk_2E != 0) {
         attr |= 1;
@@ -5986,7 +5986,7 @@ void task_hum_vixen_frz_2(VixenFrzWork* work) {
 
     if (work->unk_2C != 6) {
         gfx = AnimGetGfx(&work->anim);
-        attr = func_0801AF1C(work->y) | work->unk_34;
+        attr = GetBattleSpritePriorityFlags(work->y) | work->unk_34;
         WorldToScreen(&x, &y, work->x, work->y, work->z);
         DrawSprite(x, y, gfx, work->tiles, work->palette, 0, attr,
             -0x1004 - (work->y >> 8) * 4);
@@ -6047,7 +6047,7 @@ u8 task_hum_vixen_frg_1(VixenFrgWork* work) {
             e->unk_14 = e->unk_14 >> 1;
             e->unk_18 = e->unk_18 >> 1;
         }
-        func_0801A8A4(&e->unk_04, &e->unk_08, 0, 0);
+        ClampBattlePosition(&e->unk_04, &e->unk_08, 0, 0);
     }
     work->unk_38++;
     if (work->unk_38 == 50) {
@@ -6075,7 +6075,7 @@ void task_hum_vixen_frg_2(VixenFrgWork* work) {
     p = work->unk_3C;
 
     for (i = 0; i < 15; i++) {
-        attr = func_0801AF1C(p[i].unk_08) | p[i].unk_1C;
+        attr = GetBattleSpritePriorityFlags(p[i].unk_08) | p[i].unk_1C;
         WorldToScreen(&x, &y, p[i].unk_04, p[i].unk_08, p[i].unk_0C);
         DrawSprite(x, y, p[i].unk_00, work->unk_30, work->palette, 0, attr,
             -0x1004 - (p[i].unk_08 >> 8) * 4);
@@ -6687,9 +6687,9 @@ void task_hum_lex_tmh_2(LexTmhWork* work) {
     gfx = AnimGetGfx(&work->anim);
 
     if (work->unk_2C != 0) {
-        attr = func_0801AF1C(work->y);
+        attr = GetBattleSpritePriorityFlags(work->y);
     } else {
-        attr = func_0801AF1C(work->y) | 1;
+        attr = GetBattleSpritePriorityFlags(work->y) | 1;
     }
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, gfx, work->tiles, work->palette, 0, attr,
@@ -6756,7 +6756,7 @@ void task_hum_lex_tmh0_2(LexTmh0Work* work) {
     s16 y;
 
     gfx = AnimGetGfx(&work->anim);
-    attr = func_0801AF1C(work->y);
+    attr = GetBattleSpritePriorityFlags(work->y);
     h = work->unk_30;
     if (h == 0x100) {
         if (work->unk_2C == 0) {
@@ -6890,7 +6890,7 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
                     e->unk_0C = 0;
                     e->unk_10 = -(e->unk_10 >> 1);
                 }
-                v = func_0801A8A4(&e->unk_04, &e->unk_08, 0, 0);
+                v = ClampBattlePosition(&e->unk_04, &e->unk_08, 0, 0);
 
                 switch (v) {
                 case 3:
@@ -6945,9 +6945,9 @@ void task_hum_lex_rock_2(LexRockWork* work) {
         gfx = AnimGetGfx(&work->anim[0]);
 
         if (work->unk_160 != 0) {
-            attr = func_0801AF1C(work->y);
+            attr = GetBattleSpritePriorityFlags(work->y);
         } else {
-            attr = func_0801AF1C(work->y) | 1;
+            attr = GetBattleSpritePriorityFlags(work->y) | 1;
         }
         WorldToScreen(&x, &y, work->x, work->y, work->z);
         DrawSprite(x, y, gfx, work->tiles2[0], work->palette2, 0, attr,
@@ -6958,9 +6958,9 @@ void task_hum_lex_rock_2(LexRockWork* work) {
             gfx = AnimGetGfx(&work->anim[i]);
 
             if (work->unk_160 != 0) {
-                attr = func_0801AF1C(e->unk_08);
+                attr = GetBattleSpritePriorityFlags(e->unk_08);
             } else {
-                attr = func_0801AF1C(e->unk_08) | 1;
+                attr = GetBattleSpritePriorityFlags(e->unk_08) | 1;
             }
             WorldToScreen(&x, &y, e->unk_04, e->unk_08,
                 e->unk_0C);
@@ -7140,7 +7140,7 @@ void func_08057E90(RikuWork* work, RikuSpawn* p) {
         SetBlendAlpha(6, 12);
         attr = 0x804;
     } else {
-        attr = func_0801AF1C(act->unk_008);
+        attr = GetBattleSpritePriorityFlags(act->unk_008);
     }
 
     if (p->unk_0C & 1) {

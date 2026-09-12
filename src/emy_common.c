@@ -625,7 +625,7 @@ s32 _0800CDF0(EmyWork* work) {
         }
         actor->unk_00C -= (16 - work->unk_156) << 8;
 
-        if (func_08006B74()) {
+        if (BgAnimIsStopped()) {
             gBldCnt = 0xF10;
             work->unk_162 = 4;
             SetBlendAlpha(16 - work->unk_156, work->unk_156);
@@ -637,7 +637,7 @@ s32 _0800CDF0(EmyWork* work) {
         work->unk_156--;
         if (work->unk_156 <= 0) {
             if (gBtlWork->unk_0EE == 1 && gBtlWork->unk_120 <= 0) {
-                func_08006B4C();
+                BgAnimStop();
                 FadeStartIn(2, 20);
                 FadeLock();
             }
@@ -755,7 +755,7 @@ s32 _0800CDF0(EmyWork* work) {
         }
     }
 
-    switch (func_0801A8A4(&actor->unk_004, &actor->unk_008, -20, 0)) {
+    switch (ClampBattlePosition(&actor->unk_004, &actor->unk_008, -20, 0)) {
     case 1:
     case 2:
         work->unk_158 |= 2;
@@ -807,7 +807,7 @@ void func_0800DF30(EmyWork* work) {
         s16 y;
 
         actor = &work->unk_03C;
-        g = func_0801AF1C(actor->unk_008) | work->unk_162;
+        g = GetBattleSpritePriorityFlags(actor->unk_008) | work->unk_162;
         WorldToScreen(&x, &y, actor->unk_004, actor->unk_008, actor->unk_00C);
 
         if (work->unk_17C == 0x100 && work->unk_180 == 0x100) {

@@ -7765,7 +7765,7 @@ void func_0806CD60(ContinueWork* p) {
 #endif
     func_080065FC(2, 0x8000, 128);
     func_08006778(gUnk_09EDA7E0, 120, 46);
-    func_08006B34(0);
+    BgAnimSetLoopStartFrame(0);
     p->tiles3 = LoadObjTiles(gUnk_090A7D9A, 192);
     p->palette3 = LoadObjPalette(gUnk_096146F8, 32);
     func_0806CD30(p->unk_60);
@@ -7832,7 +7832,7 @@ void func_0806CF04(ContinueWork* p) {
 #endif
     func_080065FC(2, 0x8000, 128);
     func_08006778(gUnk_09EDA7E0, 120, 46);
-    func_08006B34(0);
+    BgAnimSetLoopStartFrame(0);
     p->tiles3 = LoadObjTiles(gUnk_090A7D9A, 192);
     p->palette3 = LoadObjPalette(gUnk_096146F8, 32);
     func_0806CD30(p->unk_60);
@@ -8547,7 +8547,7 @@ void event_chara_0(Work0806180C* p, u32* a) {
         gBtlWork->unk_004 = 0x5400;
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
-        func_0801A920(128, 424, 294, 384);
+        SetBattleBounds(128, 424, 294, 384);
         gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosPc, NULL);
         break;
     case 97:
@@ -8564,7 +8564,7 @@ void event_chara_0(Work0806180C* p, u32* a) {
         gBtlWork->unk_004 = 0x5400;
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
-        func_0801A920(128, 424, 294, 384);
+        SetBattleBounds(128, 424, 294, 384);
         gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosPc, &p->unk_010);
         p->unk_1B4 = 0;
         gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
@@ -8589,7 +8589,7 @@ void event_chara_0(Work0806180C* p, u32* a) {
         gBtlWork->unk_004 = 0x5400;
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
-        func_0801A920(128, 368, 480, 512);
+        SetBattleBounds(128, 368, 480, 512);
         gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosLst, &p->unk_010);
         break;
     case 101:
@@ -8615,7 +8615,7 @@ void event_chara_0(Work0806180C* p, u32* a) {
         p->unk_02C = 0x2A200;
         p->unk_030 = 0x15E00;
         p->unk_034 = -0x3800;
-        func_0801A920(420, 612, 328, 384);
+        SetBattleBounds(420, 612, 328, 384);
         TaskCreate(&p->unk_010, gTaskDescBosJf, p->unk_028);
         break;
     case 103:
@@ -8646,7 +8646,7 @@ void event_chara_0(Work0806180C* p, u32* a) {
         p->unk_02C = p->unk_000->unk_08;
         p->unk_030 = p->unk_000->unk_0C;
         p->unk_034 = p->unk_000->unk_10;
-        func_0801A920(0, 256, 328, 424);
+        SetBattleBounds(0, 256, 328, 424);
         TaskCreate(&p->unk_010, gTaskDescBosDsd, p->unk_028);
         break;
     case 98:

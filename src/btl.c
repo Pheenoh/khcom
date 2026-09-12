@@ -5322,7 +5322,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             p->unk_004 += 256;
         }
 
-        func_0801A8A4(&p->unk_004, &p->unk_008, -16, 0);
+        ClampBattlePosition(&p->unk_004, &p->unk_008, -16, 0);
         func_0801475C(p->unk_004 - t, p->unk_008 - t2, p->unk_00C - t3);
 
 #endif
@@ -5955,7 +5955,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
     }
 
     if ((p->unk_034 & 0x800000) == 0) {
-        switch (func_0801A8A4(&p->unk_004, &p->unk_008, -16, 0)) {
+        switch (ClampBattlePosition(&p->unk_004, &p->unk_008, -16, 0)) {
         case 3:
         case 4:
             p->unk_10C = -(p->unk_10C >> 1);
@@ -6049,7 +6049,7 @@ void task_btl_sora_2(BtlSoraWork* work) {
     }
 #endif
 
-    attr = func_0801AF1C(p->unk_008);
+    attr = GetBattleSpritePriorityFlags(p->unk_008);
 
     if (work->unk_19C == 0x100 && work->unk_1A0 == 0x100) {
         if (p->unk_034 & 4) {
@@ -6262,7 +6262,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
         SetBlendAlpha(6, 12);
         flags = 0x804;
     } else {
-        flags = func_0801AF1C(a->unk_008);
+        flags = GetBattleSpritePriorityFlags(a->unk_008);
     }
 
     if (out->unk_0C & 1) {
@@ -10507,7 +10507,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     }
 
     if (!(p->unk_034 & 0x800000)) {
-        switch (func_0801A8A4(&p->unk_004, &p->unk_008, -16, 0)) {
+        switch (ClampBattlePosition(&p->unk_004, &p->unk_008, -16, 0)) {
         case 1:
             p->unk_108 = 0;
 
@@ -10601,7 +10601,7 @@ void task_btl_riku_2(BtlRikuWork* work) {
         }
     }
 
-    attr = func_0801AF1C(p->unk_008);
+    attr = GetBattleSpritePriorityFlags(p->unk_008);
 
     if (work->unk_19C == 0x100 && work->unk_1A0 == 0x100) {
         if (p->unk_034 & 4) {

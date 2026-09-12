@@ -301,10 +301,10 @@ u8 func_080D7B94(void) {
 void task_status_tab_0(StatusTabWork* work, s32* arg) {
     work->unk_18 = arg;
 #ifdef VERSION_EU
-    work->tiles = AllocObjTiles(func_08003524(gUnkEu_09F802DC[gLanguage], 4),
+    work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnkEu_09F802DC[gLanguage], 4),
         gUnkEu_09F802C8[gLanguage]);
 #else
-    work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6920, 4), gUnk_097A24A6);
+    work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6920, 4), gUnk_097A24A6);
 #endif
     work->palette = LoadObjPalette(gUnk_0984B218, 0x20);
 #ifdef VERSION_EU
@@ -312,7 +312,7 @@ void task_status_tab_0(StatusTabWork* work, s32* arg) {
 #else
     work->gfx = gUnk_09EF6920[*work->unk_18];
 #endif
-    work->tiles2 = AllocObjTiles(func_08003524(gUnk_09EF6934, 4), gUnk_097A28DA);
+    work->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6934, 4), gUnk_097A28DA);
     work->palette2 = LoadObjPalette(gUnk_0984B238, 0x20);
     work->gfx2 = gUnk_09EF6934[*work->unk_18];
 }
@@ -382,7 +382,7 @@ void task_status_sora_3(StatusSoraWork* work) {
 void task_status_deckname_0(StatusDecknameWork* work, u8* arg) {
     func_08065ACC(work, 10);
     work->unk_58 = arg;
-    work->unk_54 = func_08065B6C(func_080857BC(GetActiveDeckIndex()), work);
+    work->unk_54 = func_08065B6C(GetDeckName(GetActiveDeckIndex()), work);
     work->palette = LoadObjPalette(gUnk_0984B1D8, 0x20);
 }
 
@@ -403,12 +403,12 @@ void task_status_deckname_3(StatusDecknameWork* work) {
 
 void task_status_cursor_0(StatusCursorWork* work, s16* arg) {
     work->unk_48 = arg;
-    work->tiles = AllocObjTiles(func_08003524(gUnk_09EF68F0, 5), gUnk_097A1C54);
+    work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF68F0, 5), gUnk_097A1C54);
     work->palette = LoadObjPalette(gUnk_0984B1D8, 0x20);
     AnimInit(&work->anim[0], gUnk_09EF6904, gUnk_09EF68F0);
     AnimStart(&work->anim[0], 0, 1);
     work->gfx[0] = AnimGetGfx(&work->anim[0]);
-    work->tiles2 = AllocObjTiles(func_08003524(gUnk_09EF6908, 4), gUnk_097A2394);
+    work->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6908, 4), gUnk_097A2394);
     work->palette2 = LoadObjPalette(gUnk_0984B1F8, 0x20);
     AnimInit(&work->anim[1], gUnk_09EF691C, gUnk_09EF6908);
     AnimStart(&work->anim[1], 0, 1);
@@ -821,7 +821,7 @@ s16 func_080D885C(StatusScrollcursorWork* work) {
 
 void task_status_scrollcursor_0(StatusScrollcursorWork* work, u16* arg) {
     work->unk_0C = arg;
-    work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6908, 4), gUnk_097A2394);
+    work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6908, 4), gUnk_097A2394);
     work->palette = LoadObjPalette(gUnk_0984B1F8, 0x20);
     work->gfx = gUnk_09EF6908[4];
     work->y = func_080D885C(work);
@@ -996,10 +996,10 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     TaskPoolInit(&work->unk_24, 1);
     work->unk_38 = (void*)func_080D8AA4(&work->unk_24, work->x + 6, work->y + 16,
                                         func_080A2334(work->unk_42, work->unk_40));
-    work->tiles2 = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
+    work->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6948, 2), gUnk_097A2CF6);
     work->palette2 = LoadObjPalette(gUnk_0984B258, 0x20);
     work->gfx = gUnk_09EF6948[0];
-    work->tiles3 = AllocObjTiles(func_08003524(gUnk_09EF6948, 2), gUnk_097A2CF6);
+    work->tiles3 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6948, 2), gUnk_097A2CF6);
     work->palette3 = LoadObjPalette(gUnk_0984B258, 0x20);
     work->gfx2 = gUnk_09EF6948[1];
     work->unk_20 = 0;
@@ -1150,7 +1150,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     work->unk_174 = 0;
     gUnk_0203C55C = &work->unk_040;
     gUnk_0203C560 = 0;
-    func_0801A920(128, 368, 576, 632);
+    SetBattleBounds(128, 368, 576, 632);
     func_0801B37C(&work->unk_040, gUnk_096FDF14, 0x15000, 0x22800, -0x2000);
     work->unk_040.unk_010 = -0x2000;
     work->unk_040.unk_034 |= 4;
@@ -1163,7 +1163,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     sz = 0;
 
     for (i = 0; i <= 5; i++) {
-        t = func_08003524(gUnk_096FDEE4[i].unk_00, gUnk_096FDEE4[i].unk_04);
+        t = GetMaxSpriteTileBytes(gUnk_096FDEE4[i].unk_00, gUnk_096FDEE4[i].unk_04);
         if (sz < t) {
             sz = t;
         }
@@ -1469,7 +1469,7 @@ void task_bos_boogie_2(BoogieWork* work) {
     s16 y;
 
     a = &work->unk_040;
-    f = func_0801AF1C(a->unk_008);
+    f = GetBattleSpritePriorityFlags(a->unk_008);
 
     if (!(a->unk_034 & 4)) {
         f |= 1;

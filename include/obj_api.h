@@ -18,8 +18,8 @@ u8* AllocObjAffineAngle(u8 angle, u8 flags);
 u8 CanAllocObjTiles(u16 size);
 void SpriteReset(void);
 void func_08002A10(void* tiles, void* src);
-u16 func_08003524(u16** sprites, u16 count);
-u16 func_08003598(u16* sprite);
+u16 GetMaxSpriteTileBytes(u16** sprites, u16 count);
+u16 GetSpriteTileBytes(u16* sprite);
 struct ObjTiles* func_080038C8(u16 size);
 u8 func_080038E4(struct ObjTiles* tiles, u16* sprite, void* src);
 
@@ -28,7 +28,7 @@ void func_0800388C(struct ObjTiles* t, u16 slot, void* src, u16 size);
 void func_08003A70(struct ObjTiles* t, void* src);
 u8 CanAllocObjPalette(u16 n);
 void func_08002F50(void);
-u8 func_080035CC(s16 x, s16 y, s32 a, s32 b, s32 c, s32 d);
+u8 IsRectOutsideScreen(s16 x, s16 y, s32 a, s32 b, s32 c, s32 d);
 void SetObjPaletteRange(u16 a, u16 b);
 u16 GetObjTileCount(u16 a, u16 b);
 

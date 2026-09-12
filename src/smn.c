@@ -392,7 +392,7 @@ void task_smn_cloud_2(SmnCloudWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
     WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (work->unk_150 == 256 && work->unk_154 == work->unk_150) {
@@ -663,7 +663,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
 
             body->unk_004 += (work->unk_168->unk_004 - body->unk_004) >> 4;
             body->unk_008 += (work->unk_168->unk_008 - body->unk_008) >> 4;
-            func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+            ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
             work->unk_148++;
         }
         break;
@@ -694,7 +694,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
         }
 
         func_08041FCC(work);
-        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+        ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
 
         if (AnimIsFinished(&work->anim)) {
             work->unk_14C = 0;
@@ -742,7 +742,7 @@ void task_smn_bambi_2(SmnBambiWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -1051,7 +1051,7 @@ u8 task_smn_tink_1(SmnTinkWork* work) {
         break;
     }
 
-    func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
+    ClampBattlePosition(&body->unk_004, &body->unk_008, -16, 0);
 
     if (work->unk_154 != 0) {
         AnimUpdate(&work->anim);
@@ -1074,7 +1074,7 @@ void task_smn_tink_2(SmnTinkWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -1365,7 +1365,7 @@ void task_smn_simba_2(SmnSimbaWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -1584,7 +1584,7 @@ u8 task_smn_mushu_1(SmnMushuWork* work) {
             }
         }
 
-        func_08006B80(&v1, &v2);
+        BgAnimGetFrameState(&v1, &v2);
 
         if (v1 <= 3) {
             func_0801475C(body->unk_004 - px, body->unk_008 - py, body->unk_00C - pz);
@@ -1619,7 +1619,7 @@ void task_smn_mushu_2(SmnMushuWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -1823,7 +1823,7 @@ void task_smn_dumbo_2(SmnDumboWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -2144,7 +2144,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
                 work->unk_15C = 1;
             }
         } else {
-            func_08006B74();
+            BgAnimIsStopped();
         }
         if (work->unk_15C != 0 && !func_080128EC()) {
             work->unk_034 = 2;
@@ -2183,7 +2183,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
                 FadeStartOut(6, 8);
             }
         } else {
-            func_08006B74();
+            BgAnimIsStopped();
         }
         if (work->unk_15C != 0 && !func_080128EC()) {
             FadeStartIn(6, 8);
@@ -2226,7 +2226,7 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
         }
         break;
     }
-    func_0801A8A4(&body->unk_004, &body->unk_008, 0, -10);
+    ClampBattlePosition(&body->unk_004, &body->unk_008, 0, -10);
     if (work->unk_152 != 0) {
         AnimUpdate(&work->anim);
     }
@@ -2246,7 +2246,7 @@ void task_smn_genie_2(SmnGenieWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
@@ -2456,7 +2456,7 @@ void task_smn_king_2(SmnKingWork* work) {
 
     body = &work->unk_038;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->unk_008);
+    flags = GetBattleSpritePriorityFlags(body->unk_008);
 
     if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;

@@ -438,7 +438,7 @@ s32 func_0800E5F0(HumWork* work) {
 
             func_0801B008();
 #ifdef VERSION_EU
-            func_0801A8A4(&actor->unk_004, &actor->unk_008, (s16)(work->unk_174 - 8), -16);
+            ClampBattlePosition(&actor->unk_004, &actor->unk_008, (s16)(work->unk_174 - 8), -16);
 #endif
             func_0801B918(actor);
             arg2.unk_00 = actor->unk_004;
@@ -512,7 +512,7 @@ s32 func_0800E5F0(HumWork* work) {
     }
 
     if (!(work->unk_154 & 8)) {
-        switch (func_0801A8A4(&actor->unk_004, &actor->unk_008, work->unk_174, 0)) {
+        switch (ClampBattlePosition(&actor->unk_004, &actor->unk_008, work->unk_174, 0)) {
         case 1:
         case 2:
             actor->unk_108 = -(actor->unk_108 >> 1);

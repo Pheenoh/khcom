@@ -888,7 +888,7 @@ u8 func_080C9910(void) {
 
     x = (gUnk_0203C3EC->unk_00 >> 8) - gUnk_0203C40C;
     y = (gUnk_0203C3EC->unk_04 >> 8) + (gUnk_0203C3EC->unk_08 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, gUnk_096FC010.unk_06, 0, gUnk_096FC010.unk_08, gUnk_096FC010.unk_08) != 0) {
+    if (IsRectOutsideScreen(x, y, gUnk_096FC010.unk_06, 0, gUnk_096FC010.unk_08, gUnk_096FC010.unk_08) != 0) {
         return 1;
     }
     return 0;
@@ -2489,12 +2489,12 @@ void task_poo_balloon_0(PooBalloonObjWork* w, PooPos* p) {
     w->unk_24 = p;
 
     if (p->unk_00 == 0x3FD00 && p->unk_04 == 0x21B00) {
-        w->tiles = AllocObjTiles(func_08003524(gUnk_09EF5E38, 3), gUnk_0974B4D8);
+        w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5E38, 3), gUnk_0974B4D8);
         w->palette = LoadObjPalette(gUnk_09849C98, 0x20);
         AnimInit(w->anim, gUnk_09EF5E44, gUnk_09EF5E38);
         AnimStart(w->anim, 0, 1);
     } else {
-        w->tiles = AllocObjTiles(func_08003524(gUnk_09EF5AD0, 4), gUnk_09732FB6);
+        w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AD0, 4), gUnk_09732FB6);
         w->palette = LoadObjPalette(gUnk_09849B78, 0x20);
         AnimInit(w->anim, gUnk_09EF5AE0, gUnk_09EF5AD0);
         AnimStart(w->anim, 0, 1);
@@ -2649,12 +2649,12 @@ void task_poo_freeballoon_0(PooFreeBalloonWork* w, PooPos* p) {
     w->unk_34 = *p;
     w->unk_7C = *p;
     w->unk_94 = p;
-    w->unk_00 = AllocObjTiles(func_08003524(gUnk_09EF5AA0, 4), gUnk_09732272);
+    w->unk_00 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AA0, 4), gUnk_09732272);
     w->unk_04 = LoadObjPalette(gUnk_09849B38, 0x20);
     AnimInit(w->unk_0C, gUnk_09EF5AB4, gUnk_09EF5AA0);
     AnimStart(w->unk_0C, 0, 1);
     w->unk_08 = AnimGetGfx(w->unk_0C);
-    w->unk_48 = AllocObjTiles(func_08003524(gUnk_09EF5AB8, 4), gUnk_0973291E);
+    w->unk_48 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AB8, 4), gUnk_0973291E);
     w->unk_4C = LoadObjPalette(gUnk_09849B58, 0x20);
     AnimInit(w->unk_54, gUnk_09EF5ACC, gUnk_09EF5AB8);
     AnimStart(w->unk_54, 0, 1);
@@ -2753,7 +2753,7 @@ s32 func_080CC488(u16 x) {
 
 void task_poo_gauge_0(PooGaugeWork* w) {
     w->unk_12 = 0;
-    w->tiles = AllocObjTiles(func_08003524(gUnk_09EF5B2C, 4), gUnk_097356F4);
+    w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5B2C, 4), gUnk_097356F4);
     w->palette = LoadObjPalette(gUnk_09849B98, 0x20);
     w->unk_0C = gUnk_09849B98;
     w->unk_08 = gUnk_09EF5B2C[func_080CC488(w->unk_12)];
@@ -2799,7 +2799,7 @@ void task_poo_trapballoon_0(PooBalloonWork* w, PooPos* p) {
     w->unk_24 = *p;
     w->unk_24.unk_08 = 0;
     w->unk_24.unk_0C = 0;
-    w->unk_CC = func_08003524(gUnk_09EF5AD0, 4);
+    w->unk_CC = GetMaxSpriteTileBytes(gUnk_09EF5AD0, 4);
     w->palette = 0;
     AnimInit(w->anim, gUnk_09EF5AE0, gUnk_09EF5AD0);
     AnimStart(w->anim, 0, 1);
@@ -2876,7 +2876,7 @@ void task_poo_trapballoon_2(PooBalloonWork* w) {
         d += 0x1200;
         y = ((w->unk_24.unk_04 + d) >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
 
-        if (func_080035CC(x, y, 64, 8, 24, 24) != 0) {
+        if (IsRectOutsideScreen(x, y, 64, 8, 24, 24) != 0) {
             if (w->palette != 0) {
                 ReleaseObjTiles(w->tiles);
                 ReleaseObjPalette(w->palette);
@@ -2912,7 +2912,7 @@ void task_poo_owlballoon_0(PooOwlBalloonWork* w, PooPos* p) {
     w->unk_24 = *p;
     w->unk_24.unk_08 = 0;
     w->unk_24.unk_0C = 0;
-    w->unk_C8 = func_08003524(gUnk_09EF5E38, 3);
+    w->unk_C8 = GetMaxSpriteTileBytes(gUnk_09EF5E38, 3);
     w->palette = 0;
     AnimInit(w->anim, gUnk_09EF5E44, gUnk_09EF5E38);
     AnimStart(w->anim, 0, 1);
@@ -2942,7 +2942,7 @@ void task_poo_owlballoon_2(PooOwlBalloonWork* w) {
     w->gfx = AnimUpdate(w->anim);
     x = ((w->unk_24.unk_00 - 0x800) >> 8) - gUnk_0203C40C;
     y = ((w->unk_24.unk_04 + 0x1000) >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 64, 8, 24, 24) != 0) {
+    if (IsRectOutsideScreen(x, y, 64, 8, 24, 24) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -3061,7 +3061,7 @@ void task_poo_honey_0(PooHoneyWork* w, PooPos* p) {
     w->unk_24.unk_04 = p->unk_04;
     w->unk_24.unk_08 = 0;
     w->palette = 0;
-    w->unk_20 = func_08003524(gUnk_09EF5AE4, 14);
+    w->unk_20 = GetMaxSpriteTileBytes(gUnk_09EF5AE4, 14);
     AnimInit(w->anim, gUnk_09EF5B1C, gUnk_09EF5AE4);
     AnimStart(w->anim, 3, 1);
     func_08012324(w->unk_74, w->unk_24.unk_00, w->unk_24.unk_04, w->unk_24.unk_08);
@@ -3171,7 +3171,7 @@ void task_poo_honey_2(PooHoneyWork* w) {
 
     x = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 24, 8, 16, 16) != 0) {
+    if (IsRectOutsideScreen(x, y, 24, 8, 16, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -3526,7 +3526,7 @@ void task_poo_piglet_0(PooPigletWork* w) {
     m = 0;
 
     for (i = 0; i < 4; i++) {
-        n = func_08003524(gUnk_096FD4BC[i].unk_00, gUnk_096FD4BC[i].unk_04);
+        n = GetMaxSpriteTileBytes(gUnk_096FD4BC[i].unk_00, gUnk_096FD4BC[i].unk_04);
 
         if (m < n) {
             m = n;
@@ -3672,7 +3672,7 @@ void task_poo_piglet_2(PooPigletWork* w) {
 
     x = (w->unk_28 >> 8) - gUnk_0203C40C;
     y = (w->unk_2C >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 24, 8, 8, 8) != 0) {
+    if (IsRectOutsideScreen(x, y, 24, 8, 8, 8) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             func_08012304(w->unk_38);
@@ -3712,7 +3712,7 @@ void task_poo_eeyore_0(PooEeyoreWork* w) {
     w->unk_28 = 0x47E00;
     w->unk_2C = 0;
     w->unk_30 = 0;
-    w->unk_A8 = func_08003524(gUnk_09EF5D68, 0x10);
+    w->unk_A8 = GetMaxSpriteTileBytes(gUnk_09EF5D68, 0x10);
     w->tiles = 0;
     w->palette = 0;
 
@@ -3779,7 +3779,7 @@ void task_poo_eeyore_2(PooEeyoreWork* w) {
 
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 24, 10, 24, 24) != 0) {
+    if (IsRectOutsideScreen(x, y, 24, 10, 24, 24) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             w->palette = 0;
@@ -3827,7 +3827,7 @@ void task_poo_owl_0(PooOwlWork* w) {
     w->unk_24.unk_04 = 0x20700;
     w->unk_24.unk_08 = -0x3000;
     w->unk_24.unk_0C = 0;
-    w->unk_4C = func_08003524(gUnk_09EF5DC4, 18);
+    w->unk_4C = GetMaxSpriteTileBytes(gUnk_09EF5DC4, 18);
     w->palette = 0;
     w->gfx = gUnk_09746EDC;
     AnimInit(w->unk_0C, gUnk_09EF5E24, gUnk_09EF5DC4);
@@ -3891,7 +3891,7 @@ void task_poo_owl_2(PooOwlWork* w) {
     TaskPoolDraw(&w->unk_34);
     x = (w->unk_24.unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_24.unk_04 >> 8) + (w->unk_24.unk_08 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 24, 8, 8, 8) != 0) {
+    if (IsRectOutsideScreen(x, y, 24, 8, 8, 8) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -3935,7 +3935,7 @@ void task_poo_rabbit_0(PooRabbitWork* w) {
     m = 0;
 
     for (i = 0; i < 2; i++) {
-        n = func_08003524(gUnk_096FD57C[i].unk_00, gUnk_096FD57C[i].unk_04);
+        n = GetMaxSpriteTileBytes(gUnk_096FD57C[i].unk_00, gUnk_096FD57C[i].unk_04);
 
         if (m < n) {
             m = n;
@@ -4039,7 +4039,7 @@ void task_poo_rabbit_2(PooRabbitWork* w) {
 
     x = (w->unk_28 >> 8) - gUnk_0203C40C;
     y = (w->unk_2C >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 48, 8, 16, 16) != 0) {
+    if (IsRectOutsideScreen(x, y, 48, 8, 16, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             func_08012304(w->unk_4C);
@@ -4205,7 +4205,7 @@ void func_080CE960(s32 x, s32 y, s32 z, u8 c) {
 
     sx = (x >> 8) - gUnk_0203C40C;
     sy = (y >> 8) + (z >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(sx, sy, 120, 8, 24, 24) == 0) {
+    if (IsRectOutsideScreen(sx, sy, 120, 8, 24, 24) == 0) {
         if (c != 0) {
             m4aSongNumStart(0x3C1);
         } else {
@@ -4227,7 +4227,7 @@ void task_poo_tigger_0(PooTiggerWork* w) {
     m = 0;
 
     for (i = 0; i < 4; i++) {
-        t = func_08003524(gUnk_096FD5DC[i].unk_00, gUnk_096FD5DC[i].unk_04);
+        t = GetMaxSpriteTileBytes(gUnk_096FD5DC[i].unk_00, gUnk_096FD5DC[i].unk_04);
         if (m < t) {
             m = t;
         }
@@ -4298,7 +4298,7 @@ void task_poo_tiggerroo_2(PooTiggerWork* w) {
 
     x = (w->unk_28 >> 8) - gUnk_0203C40C;
     y = (w->unk_2C >> 8) + (w->unk_30 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 56, 8, 24, 24) != 0) {
+    if (IsRectOutsideScreen(x, y, 56, 8, 24, 24) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             w->palette = 0;
@@ -4377,7 +4377,7 @@ void task_poo_tiggerroo_0(PooTiggerWork* w) {
     w->unk_D1 = 0;
     w->palette = 0;
     w->tiles = 0;
-    w->unk_D2 = func_08003524(gUnk_09EF5EF8, 18);
+    w->unk_D2 = GetMaxSpriteTileBytes(gUnk_09EF5EF8, 18);
     AnimInit(w->anim, gUnk_09EF5FA0, gUnk_09EF5EF8);
     w->unk_26 = 4;
     func_080CE710(w, 0);
@@ -4393,7 +4393,7 @@ void task_poo_tiggerroo_0(PooTiggerWork* w) {
 void task_poo_roo_0(PooRooWork* w, PooPos* p) {
     gStockMesDispWork = w;
     w->unk_38 = p;
-    w->tiles = AllocObjTiles(func_08003524(gUnk_09EF5EF8, 8), gUnk_09753154);
+    w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5EF8, 8), gUnk_09753154);
     w->palette = LoadObjPalette(gUnk_09849CF8, 0x20);
     AnimInit(w->anim, gUnk_09EF5FA0, gUnk_09EF5EF8);
 
@@ -4537,7 +4537,7 @@ void task_poo_roo_footmark_2(PooFootmarkWork* w) {
 
     x = (w->unk_0C >> 8) - gUnk_0203C40C;
     y = (w->unk_10 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 0, 48, 0, 48) != 0) {
+    if (IsRectOutsideScreen(x, y, 0, 48, 0, 48) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             func_080CCBD4(&w->unk_1C);
@@ -4570,7 +4570,7 @@ void task_poo_leaf_0(PooLeafWork* w, PooLeafArgs* a) {
     w->unk_28 = a->unk_04;
     w->unk_2C = 0;
     w->unk_94 = a->unk_10;
-    w->unk_92 = func_08003524(gUnk_09EF610C, 5);
+    w->unk_92 = GetMaxSpriteTileBytes(gUnk_09EF610C, 5);
     w->palette = 0;
     AnimInit(w->anim, gUnk_09EF612C, gUnk_09EF610C);
     AnimStart(w->anim, 0, 0);
@@ -4601,7 +4601,7 @@ void task_poo_leaf_2(PooLeafWork* w) {
 
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 0, 32, 0, 56) != 0) {
+    if (IsRectOutsideScreen(x, y, 0, 32, 0, 56) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -4641,8 +4641,8 @@ void task_poo_tanpopo_0(PooTanpopoWork* w, PooLeafArgs* a) {
     w->unk_48 = a->unk_04;
     w->unk_4C = 0;
     w->unk_B6 = a->unk_10;
-    w->unk_B2 = func_08003524(gUnk_09EF6130, 2);
-    w->unk_B4 = func_08003524(gUnk_09EF613C, 6);
+    w->unk_B2 = GetMaxSpriteTileBytes(gUnk_09EF6130, 2);
+    w->unk_B4 = GetMaxSpriteTileBytes(gUnk_09EF613C, 6);
     w->palette = 0;
     AnimInit(w->unk_0C, gUnk_09EF6138, gUnk_09EF6130);
     AnimStart(w->unk_0C, 0, 0);
@@ -4676,7 +4676,7 @@ void task_poo_tanpopo_2(PooTanpopoWork* w) {
 
     x = (w->unk_44 >> 8) - gUnk_0203C40C;
     y = (w->unk_48 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 0, 32, 0, 48) != 0) {
+    if (IsRectOutsideScreen(x, y, 0, 32, 0, 48) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjTiles(w->tiles2);
@@ -4741,7 +4741,7 @@ void task_poo_ti_board_2(PooBoardWork* w) {
 
     x = (w->unk_0C >> 8) - gUnk_0203C40C;
     y = (w->unk_10 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 16, 1, 8, 8) != 0) {
+    if (IsRectOutsideScreen(x, y, 16, 1, 8, 8) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             w->palette = 0;
@@ -4770,7 +4770,7 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w) {
     w->unk_10 = 0x49E00;
     w->unk_14 = -0x2000;
     w->unk_18 = 0;
-    w->unk_1C = func_08003524(gUnk_09EF5D68, 0x10);
+    w->unk_1C = GetMaxSpriteTileBytes(gUnk_09EF5D68, 0x10);
     w->palette = 0;
     w->gfx = gUnk_09744842;
     TaskPoolInit(&w->unk_24, 1);
@@ -4802,7 +4802,7 @@ void task_poo_eeyoretail_2(PooEeyoreTailWork* w) {
 
     x = ((s32)w->unk_0C >> 8) - gUnk_0203C40C;
     y = ((s32)w->unk_10 >> 8) + (w->unk_14 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 8, 8, 8, 8) != 0) {
+    if (IsRectOutsideScreen(x, y, 8, 8, 8, 8) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -4847,7 +4847,7 @@ void task_poo_honeycomb_0(PooHoneycombWork* w) {
     w->unk_28 = 0x46600;
     w->unk_2C = -0xA00;
     w->unk_30 = 0;
-    w->unk_34 = func_08003524(gUnk_09EF5FF0, 1);
+    w->unk_34 = GetMaxSpriteTileBytes(gUnk_09EF5FF0, 1);
     w->palette = 0;
     w->gfx = gUnk_097567FC;
     func_08012324(w->unk_38, w->unk_24, w->unk_28, 0);
@@ -4901,7 +4901,7 @@ void task_poo_honeycomb_2(PooHoneycombWork* w) {
 
     x = ((w->unk_24 + w->unk_98) >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) + (w->unk_2C >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 16, 16, 16, 16) != 0) {
+    if (IsRectOutsideScreen(x, y, 16, 16, 16, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             ReleaseObjTiles(w->tiles);
@@ -4949,7 +4949,7 @@ void task_poo_vegetable_0(PooVegetableWork* w) {
     w->unk_28 = 0x18000;
     w->unk_2C = 0;
     w->unk_30 = 0;
-    w->unk_34 = func_08003524(gUnk_09EF602C, 1);
+    w->unk_34 = GetMaxSpriteTileBytes(gUnk_09EF602C, 1);
     w->palette = 0;
     w->gfx = gUnk_09756C50;
     func_08012324(w->unk_38, w->unk_24, w->unk_28, w->unk_2C);
@@ -4970,7 +4970,7 @@ void task_poo_vegetable_2(PooVegetableWork* w) {
 
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 32, 40, 48, 48) != 0) {
+    if (IsRectOutsideScreen(x, y, 32, 40, 48, 48) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -5313,7 +5313,7 @@ void task_poo_wagon_2(PooCamera* w) {
     x = ((w->unk_1C.unk_00 + t) >> 8) - gUnk_0203C40C;
     y = (w->unk_1C.unk_04 >> 8) + (w->unk_1C.unk_08 >> 8) - gUnk_0203C3F8;
 
-    if (func_080035CC(x, y, 32, 40, 48, 48) != 0) {
+    if (IsRectOutsideScreen(x, y, 32, 40, 48, 48) != 0) {
         if (w->unk_04 != 0) {
             ReleaseObjTiles(w->unk_00);
             ReleaseObjTiles(w->unk_0C);
@@ -5444,7 +5444,7 @@ void task_poo_wagonwheel_2(PooWheelWork* w) {
 
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) + (w->unk_2C >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 32, 0, 16, 16) != 0) {
+    if (IsRectOutsideScreen(x, y, 32, 0, 16, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -5606,7 +5606,7 @@ void task_poo_bee_2(PooBeeWork* w) {
     x = (w->unk_A4 >> 8) - gUnk_0203C40C;
     y = (w->unk_A8 >> 8) + (w->unk_AC >> 8) - gUnk_0203C3F8;
 
-    if (func_080035CC(x, y, 19, 17, 46, 16) != 0) {
+    if (IsRectOutsideScreen(x, y, 19, 17, 46, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             ReleaseObjTiles(w->tiles);
@@ -5668,7 +5668,7 @@ void task_poo_beeAfterEvent_2(PooBeeAfterEventWork* w) {
 
     x = (w->unk_44 >> 8) - gUnk_0203C40C;
     y = (w->unk_48 >> 8) + (w->unk_4C >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 19, 17, 46, 16) != 0) {
+    if (IsRectOutsideScreen(x, y, 19, 17, 46, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjPalette(w->palette);
             ReleaseObjTiles(w->unk_00);
@@ -5989,7 +5989,7 @@ void task_poo_mapobjhit_0(PooMapObjHitWork* w, PooMapObjHitArgs* a) {
     w->unk_98 = a->unk_14;
     w->unk_9C = a->unk_18;
     w->unk_34 = a->unk_10;
-    w->unk_3A = func_08003524(w->unk_34->unk_0C, w->unk_34->unk_04);
+    w->unk_3A = GetMaxSpriteTileBytes(w->unk_34->unk_0C, w->unk_34->unk_04);
     w->palette = 0;
     AnimInit(w->anim, w->unk_34->unk_08, w->unk_34->unk_0C);
     AnimStart(w->anim, 0, 1);
@@ -6041,7 +6041,7 @@ void task_poo_mapobjhit_2(PooMapObjHitWork* w) {
 
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
-    if (w->unk_38 == 0 || func_080035CC(x, y, 0, 24, 0, 32) != 0) {
+    if (w->unk_38 == 0 || IsRectOutsideScreen(x, y, 0, 24, 0, 32) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -6243,7 +6243,7 @@ void task_poo_prize_2(PooPrizeWork* w) {
 
     x = (w->unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_04 >> 8) + (w->unk_08 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 8, 8, 8, 8) != 0) {
+    if (IsRectOutsideScreen(x, y, 8, 8, 8, 8) != 0) {
         return;
     }
 
@@ -6468,7 +6468,7 @@ void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p) {
     w->unk_24 = p->unk_00;
     w->unk_28 = p->unk_04;
     w->unk_2C = 0;
-    w->tiles = AllocObjTiles(func_08003524(gUnk_09EF6158, 1), gUnk_097606E8);
+    w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6158, 1), gUnk_097606E8);
     w->palette = LoadObjPalette(gUnk_09849E38, 0x20);
     AnimInit(w->anim, gUnk_09EF6200, gUnk_09EF6158);
     AnimStart(w->anim, 0, 0);
@@ -6504,7 +6504,7 @@ void task_poo_mapbee_2(PooMapBeeWork* w) {
 
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) + (w->unk_2C >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 8, 8, 8, 8) != 0) {
+    if (IsRectOutsideScreen(x, y, 8, 8, 8, 8) != 0) {
         w->unk_34 = 0;
     } else {
         func_080C7CB0(1);
@@ -6555,7 +6555,7 @@ void task_poo_mapbeeborn_2(PooMapBornWork* w) {
 
     x = (w->unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_04 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 0, 24, 0, 32) != 0) {
+    if (IsRectOutsideScreen(x, y, 0, 24, 0, 32) != 0) {
         if (w->unk_98 != 0) {
             w->unk_98 = 0;
             func_08012304(w->unk_20);
@@ -6611,7 +6611,7 @@ void task_poo_mapbutterfly_2(PooMapButterflyWork* w) {
 
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) + (w->unk_2C >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 8, 8, 8, 8) != 0) {
+    if (IsRectOutsideScreen(x, y, 8, 8, 8, 8) != 0) {
         w->unk_34 = 0;
     } else {
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_28 >> 8) * 4);
@@ -6657,7 +6657,7 @@ void task_poo_mapbutterflyborn_2(PooMapBornWork* w) {
 
     x = (w->unk_00 >> 8) - gUnk_0203C40C;
     y = (w->unk_04 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 0, 24, 0, 32) != 0) {
+    if (IsRectOutsideScreen(x, y, 0, 24, 0, 32) != 0) {
         if (w->unk_98 != 0) {
             w->unk_98 = 0;
             func_08012304(w->unk_20);
@@ -6687,7 +6687,7 @@ void task_poo_rabbitAfterEvent_0(PooRabbitAfterEventWork* w) {
     w->unk_2C = 0;
     w->unk_30 = 0;
     w->palette = 0;
-    w->unk_A4 = func_08003524(gUnk_09EF5EA8, 15);
+    w->unk_A4 = GetMaxSpriteTileBytes(gUnk_09EF5EA8, 15);
     AnimInit(w->anim, gUnk_09EF5EE4, gUnk_09EF5EA8);
     AnimStart(w->anim, 0, 1);
     w->gfx = AnimGetGfx(w->anim);
@@ -6713,7 +6713,7 @@ void task_poo_rabbitAfterEvent_2(PooRabbitAfterEventWork* w) {
 
     x = (w->unk_24 >> 8) - gUnk_0203C40C;
     y = (w->unk_28 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 48, 8, 16, 16) != 0) {
+    if (IsRectOutsideScreen(x, y, 48, 8, 16, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);
@@ -6751,7 +6751,7 @@ void task_poo_cabbageAfterEvent_0(PooCabbageAfterEventWork* w) {
     w->unk_14 = 0;
     w->unk_18 = 0;
     w->palette = 0;
-    w->unk_1C = func_08003524(gUnk_09EF602C, 13);
+    w->unk_1C = GetMaxSpriteTileBytes(gUnk_09EF602C, 13);
     w->gfx = gUnk_09756D16;
 }
 
@@ -6766,7 +6766,7 @@ void task_poo_cabbageAfterEvent_2(PooCabbageAfterEventWork* w) {
 
     x = (w->unk_0C >> 8) - gUnk_0203C40C;
     y = (w->unk_10 >> 8) - gUnk_0203C3F8;
-    if (func_080035CC(x, y, 48, 8, 16, 16) != 0) {
+    if (IsRectOutsideScreen(x, y, 48, 8, 16, 16) != 0) {
         if (w->palette != 0) {
             ReleaseObjTiles(w->tiles);
             ReleaseObjPalette(w->palette);

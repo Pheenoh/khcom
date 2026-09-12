@@ -34,7 +34,7 @@ void task_allmap_room_0(AllmapRoomWork* work, AllmapRoomArg* arg) {
         work->tiles = LoadObjTiles(gUnk_0976B340, 0x2400);
         work->unk_008 = 0;
     } else {
-        work->tiles = AllocObjTiles(func_08003524(gUnk_09EF6424, 17), gUnk_0976B340);
+        work->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6424, 17), gUnk_0976B340);
         work->unk_008 = gUnk_09EF6424[work->unk_09A];
     }
 

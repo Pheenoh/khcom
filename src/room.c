@@ -196,7 +196,7 @@ void func_080F7E84(GaEntryWork* e) {
             e->unk_168 = 0;
         }
     }
-    func_0801A8A4(&e->x, &e->y, -0x18, -0x0C);
+    ClampBattlePosition(&e->x, &e->y, -0x18, -0x0C);
 }
 
 void func_080F7F54(GaWork* work, s32 state) {
@@ -324,13 +324,13 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
     TaskPoolInit(&e->unk_16C, 1);
     TaskCreate(&e->unk_16C, gTaskDescBtlShadow, e);
     p = gUnk_09991F54[i].unk_1C;
-    e->tiles = AllocObjTiles(func_08003524(p, gUnk_09991F54[i].unk_20), gUnk_09991F54[i].unk_14);
+    e->tiles = AllocObjTiles(GetMaxSpriteTileBytes(p, gUnk_09991F54[i].unk_20), gUnk_09991F54[i].unk_14);
     AnimInit(&e->anim, gUnk_09991F54[i].unk_18, p);
     AnimStart(&e->anim, 0, 1);
     e->gfx = AnimGetGfx(&e->anim);
 
     if (i == 0) {
-        work->unk_A28 = AllocObjTiles(func_08003524(gUnk_09EF9728, 4), gUnk_099999AC);
+        work->unk_A28 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF9728, 4), gUnk_099999AC);
         AnimInit(&work->anim, gUnk_09EF9738, gUnk_09EF9728);
         AnimStart(&work->anim, 0, 1);
         work->gfx = AnimGetGfx(&work->anim);
@@ -366,7 +366,7 @@ void func_080F83E0(GaWork* work, GaEntryWork* e) {
     }
     f = AllocObjAffineAngle(e->unk_112, 1);
     q = e;
-    g = func_0801AF1C(e->y);
+    g = GetBattleSpritePriorityFlags(e->y);
 
     if (work->unk_018 == 1) {
         g |= 1;

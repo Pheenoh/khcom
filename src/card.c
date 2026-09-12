@@ -202,7 +202,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a);
 void func_0808DB04(void** p);
 void func_0808CDE8(u8* work, u8 b);
 u16 func_080857D4(u8 slot);
-void func_08085788(u8 index, u16* src);
+void SetDeckName(u8 index, u16* src);
 void func_080AB22C(u8 a);
 void func_080AB334(u8 a);
 void func_080AB4AC(u8 a);
@@ -8108,8 +8108,8 @@ Deck* func_08083C94(void) {
         ((Deck*)gUnk_0203A854)->unk_C6[i] = gDecks[GetActiveDeckIndex()].unk_C6[i];
     }
 
-    ((Deck*)gUnk_0203A854)->unk_DA = func_08085770(GetActiveDeckIndex());
-    ((Deck*)gUnk_0203A854)->unk_DC = func_08085B38(GetActiveDeckIndex());
+    ((Deck*)gUnk_0203A854)->unk_DA = GetDeckCpCost(GetActiveDeckIndex());
+    ((Deck*)gUnk_0203A854)->unk_DC = GetDeckCardCount(GetActiveDeckIndex());
     return gUnk_0203A854;
 }
 
@@ -8230,7 +8230,7 @@ void func_08083F84(u16 a) {
 
     v = func_08084458(a);
 
-    if (gCardDefs[a].unk_20 + func_08085770(GetActiveDeckIndex()) <=
+    if (gCardDefs[a].unk_20 + GetDeckCpCost(GetActiveDeckIndex()) <=
             gGameState.cp &&
         v != -1) {
         func_08085290(v);
@@ -9361,7 +9361,7 @@ u8 func_08085290(u16 card) {
         break;
     }
 
-    v = func_080609AC(gCardCollection[card]);
+    v = GetCardCpCost(gCardCollection[card]);
     gDecks[gActiveDeck].unk_DA += v;
     gDecks[gActiveDeck].unk_DC++;
     return 1;
@@ -9395,7 +9395,7 @@ u8 func_08085374(u16 card, u8 deck) {
         break;
     }
 
-    v = func_080609AC(gCardCollection[card]);
+    v = GetCardCpCost(gCardCollection[card]);
     gDecks[deck].unk_DA += v;
     gDecks[deck].unk_DC++;
     return 1;
@@ -9421,7 +9421,7 @@ void func_08085448(u16 slot) {
         }
     }
 
-    v = func_080609AC(gCardCollection[cards[slot]]);
+    v = GetCardCpCost(gCardCollection[cards[slot]]);
     gDecks[gActiveDeck].unk_DA -= v;
     gDecks[gActiveDeck].unk_DC--;
     cards[slot] = 0xFFFF;
@@ -9442,7 +9442,7 @@ void func_08085518(u16* p, u8 deck) {
         break;
     }
 
-    v = func_080609AC(gCardCollection[*p]);
+    v = GetCardCpCost(gCardCollection[*p]);
     gDecks[deck].unk_DA -= v;
     gDecks[deck].unk_DC--;
     *p = 0xFFFF;
@@ -9464,7 +9464,7 @@ void func_080855C8(void) {
 
         for (j = 0; j < 99; j++) {
             if (deck->cards[j] != 0xFFFF) {
-                total += func_080609AC(gCardCollection[deck->cards[j]]);
+                total += GetCardCpCost(gCardCollection[deck->cards[j]]);
             }
         }
 
@@ -9477,9 +9477,9 @@ void func_08085658(u16 index) {
     u16 v;
 
     d = GetActiveDeck();
-    gDecks[gActiveDeck].unk_DA -= func_080609AC(gCardCollection[*(u16*)(index * 2 + (u32)d)]);
+    gDecks[gActiveDeck].unk_DA -= GetCardCpCost(gCardCollection[*(u16*)(index * 2 + (u32)d)]);
     gCardCollection[*(u16*)(index * 2 + (u32)d)] |= 0x8000;
-    v = func_080609AC(gCardCollection[*(u16*)(index * 2 + (u32)d)]) + gDecks[gActiveDeck].unk_DA;
+    v = GetCardCpCost(gCardCollection[*(u16*)(index * 2 + (u32)d)]) + gDecks[gActiveDeck].unk_DA;
     gDecks[gActiveDeck].unk_DA = v;
     func_080855C8();
 }
@@ -9515,11 +9515,11 @@ Deck* GetDeck(u8 index) {
     return &gDecks[index];
 }
 
-u16 func_08085770(u8 index) {
+u16 GetDeckCpCost(u8 index) {
     return gDecks[index].unk_DA;
 }
 
-void func_08085788(u8 index, u16* src) {
+void SetDeckName(u8 index, u16* src) {
     u8* deck;
     u32 offset;
     u8* d;
@@ -9561,7 +9561,7 @@ void func_08085788(u8 index, u16* src) {
 #endif
 }
 
-u8* func_080857BC(u8 index) {
+u8* GetDeckName(u8 index) {
     return gDecks[index].unk_C6;
 }
 
@@ -9689,7 +9689,7 @@ void func_08085A58(s32 a, u16* out) {
     }
 }
 
-u16 func_08085B38(u8 index) {
+u16 GetDeckCardCount(u8 index) {
     return gDecks[index].unk_DC;
 }
 
@@ -9758,13 +9758,13 @@ void func_08085C3C(void) {
     }
 
 #ifdef VERSION_EU
-    func_08085788(0, gUnkEu_09F65FDC[gLanguage]);
-    func_08085788(1, gUnkEu_09F65FF0[gLanguage]);
-    func_08085788(2, gUnkEu_09F66004[gLanguage]);
+    SetDeckName(0, gUnkEu_09F65FDC[gLanguage]);
+    SetDeckName(1, gUnkEu_09F65FF0[gLanguage]);
+    SetDeckName(2, gUnkEu_09F66004[gLanguage]);
 #else
-    func_08085788(0, gUnk_09EE4AC8);
-    func_08085788(1, gUnk_09EE4AD6);
-    func_08085788(2, gUnk_09EE4AE4);
+    SetDeckName(0, gUnk_09EE4AC8);
+    SetDeckName(1, gUnk_09EE4AD6);
+    SetDeckName(2, gUnk_09EE4AE4);
 #endif
 }
 
@@ -9777,13 +9777,13 @@ void func_08085CB0(void) {
     func_080AB22C(1);
     func_080AB4AC(2);
 #ifdef VERSION_EU
-    func_08085788(0, gUnkEu_09F65FDC[gLanguage]);
-    func_08085788(1, gUnkEu_09F65FF0[gLanguage]);
-    func_08085788(2, gUnkEu_09F66004[gLanguage]);
+    SetDeckName(0, gUnkEu_09F65FDC[gLanguage]);
+    SetDeckName(1, gUnkEu_09F65FF0[gLanguage]);
+    SetDeckName(2, gUnkEu_09F66004[gLanguage]);
 #else
-    func_08085788(0, gUnk_09EE4AC8);
-    func_08085788(1, gUnk_09EE4AD6);
-    func_08085788(2, gUnk_09EE4AE4);
+    SetDeckName(0, gUnk_09EE4AC8);
+    SetDeckName(1, gUnk_09EE4AD6);
+    SetDeckName(2, gUnk_09EE4AE4);
 #endif
 }
 
@@ -11112,7 +11112,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
         m4aSongNumStart(104);
         return 1;
     case 1:
-        if ((u16)func_08085B38(w->unk_8C0) <= 98) {
+        if ((u16)GetDeckCardCount(w->unk_8C0) <= 98) {
             func_0808E19C((u8*)w);
             func_0808D0A4(w->unk_8C0);
             func_0808D258(w->unk_8C0);
@@ -13704,7 +13704,7 @@ void func_0808D0A4(u8 deck) {
     u16 n;
 
     base = 0;
-    n = func_08085B38(deck);
+    n = GetDeckCardCount(deck);
     d[0] = n / 10;
     d[1] = n - (u16)(n / 10) * 10;
     e[0] = 9;
@@ -13806,7 +13806,7 @@ void func_0808D258(u8 mode) {
     u32 base;
 
     base = 0;
-    v = func_08085770(mode);
+    v = GetDeckCpCost(mode);
 
     d1[0] = v / 1000;
     d1[1] = v / 100 - d1[0] * 10;
@@ -13946,13 +13946,13 @@ void func_0808D6C4(u8* work) {
     func_08065ACC(&work[0x78], 8);
     func_08065ACC(&work[0xB8], 8);
 #ifdef VERSION_EU
-    work[0x8C6] = func_08065B6C(func_080857BC(0), &work[0x38]);
-    work[0x8C7] = func_08065B6C(func_080857BC(1), &work[0x78]);
-    work[0x8C8] = func_08065B6C(func_080857BC(2), &work[0xB8]);
+    work[0x8C6] = func_08065B6C(GetDeckName(0), &work[0x38]);
+    work[0x8C7] = func_08065B6C(GetDeckName(1), &work[0x78]);
+    work[0x8C8] = func_08065B6C(GetDeckName(2), &work[0xB8]);
 #else
-    work[0x8C2] = func_08065B6C(func_080857BC(0), &work[0x38]);
-    work[0x8C3] = func_08065B6C(func_080857BC(1), &work[0x78]);
-    work[0x8C4] = func_08065B6C(func_080857BC(2), &work[0xB8]);
+    work[0x8C2] = func_08065B6C(GetDeckName(0), &work[0x38]);
+    work[0x8C3] = func_08065B6C(GetDeckName(1), &work[0x78]);
+    work[0x8C4] = func_08065B6C(GetDeckName(2), &work[0xB8]);
 #endif
 }
 
@@ -14076,7 +14076,7 @@ s32 func_0808D828(u8* work) {
     if (work[0x8B1] >= 9 && work[0x8B1] <= 12) {
         if (def->unk_1C > 46) {
             LoadBgMap(2, gUnk_09518AB8, 0x800);
-            func_0808DE28((u8)func_080609AC(id));
+            func_0808DE28((u8)GetCardCpCost(id));
             return id;
         }
 
@@ -14184,7 +14184,7 @@ void func_0808DB50(UnkStruct_0808DB04* w) {
             w->unk_4E4 = gUnk_09EE981C[def->unk_20];
         }
 
-        func_0808DE28(func_080609AC(id));
+        func_0808DE28(GetCardCpCost(id));
         dst = gUnk_05000160;
         LoadPalette(&gUnk_09614118[def->unk_2A * 32 + 0x200], dst, 32);
         func_0808D73C((u8*)w, id & CARD_ID_MASK);
@@ -14221,7 +14221,7 @@ void func_0808DDD0(u8* work) {
 
     t = func_0808C8D0(*(u16*)(*(u16*)&work[CARDWORK(0x880)] * 32 +
                               (u32)*(void**)&work[0x4D4] + 20));
-    func_0808DE28(func_080609AC(t + *(s16*)&work[CARDWORK(0x884)] * 5 +
+    func_0808DE28(GetCardCpCost(t + *(s16*)&work[CARDWORK(0x884)] * 5 +
                                 *(u16*)&work[CARDWORK(0x886)]));
 }
 
@@ -14710,7 +14710,7 @@ u8 func_0808E58C(UnkStruct_0808DB04* w) {
 }
 
 s32 func_0808E750(u8* work) {
-    if (func_08085770(GetActiveDeckIndex()) > gGameState.cp) {
+    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.cp) {
 #ifdef VERSION_EU
         TaskCreate(&work[0x7E0], gUnk_09EE7FA8, &work[0x8CD]);
 #else
@@ -15446,9 +15446,9 @@ void func_0808F284(u8* work) {
     s32 i;
 
 #ifdef VERSION_EU
-    s = func_080857BC(work[0x8C4]);
+    s = GetDeckName(work[0x8C4]);
 #else
-    s = func_080857BC(work[0x8C0]);
+    s = GetDeckName(work[0x8C0]);
 #endif
 
     for (i = 0; i <= 19; i++) {
@@ -15464,7 +15464,7 @@ void func_0808F2CC(u8* work) {
     u8* s;
     s32 i;
 
-    d = func_080857BC(work[CARDWORK(0x8C0)]);
+    d = GetDeckName(work[CARDWORK(0x8C0)]);
 
     for (i = 0; i <= 19; i++) {
         s = &work[0x784];
@@ -20865,7 +20865,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
     w->unk_A0 += (gSineTable[(u8)w->unk_DC] * w->unk_B8) >> 8;
     w->unk_A4 += (-gSineTable[(u8)w->unk_DC + 64] * w->unk_B8) >> 8;
 
-    if (func_0801A8A4(&w->unk_A0, &w->unk_A4, -10, -10)) {
+    if (ClampBattlePosition(&w->unk_A0, &w->unk_A4, -10, -10)) {
         w->unk_DC += GetRandom() % 57 + 100;
     }
 
@@ -21051,7 +21051,7 @@ void func_08097688(UnkStruct_08096F94* w) {
     void* gfx;
     s16 v;
 
-    pal = w->unk_E5 == 0 ? func_0801AF1C(w->unk_A4) : 0;
+    pal = w->unk_E5 == 0 ? GetBattleSpritePriorityFlags(w->unk_A4) : 0;
 
     if (w->unk_C8 == 0x100 && w->unk_DE == 0) {
         affine = 0;
@@ -22454,7 +22454,7 @@ void PrizeBoss_2(UnkStruct_08099928* w) {
     CardDef* def;
     s16 v;
 
-    pal = work[0xED] == 0 ? func_0801AF1C(*(s32*)&work[0xAC]) : 0;
+    pal = work[0xED] == 0 ? GetBattleSpritePriorityFlags(*(s32*)&work[0xAC]) : 0;
     affine = AllocObjAffine(work[0xE6], *(s16*)&work[0xD0], *(s16*)&work[0xD2], 1);
     def = &gCardDefs[*(s32*)&work[0xB8]];
     DrawSprite(*(s16*)&work[0xD6], *(u16*)&work[0xD8] - 8, def->unk_00,
@@ -22985,7 +22985,7 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
     w->unk_38 += (gSineTable[w->unk_1C6] * w->unk_1A8) >> 8;
     w->unk_3C += (-gSineTable[w->unk_1C6 + 64] * w->unk_1A8) >> 8;
 
-    if (func_0801A8A4(&w->unk_38, &w->unk_3C, -10, -10) != 0) {
+    if (ClampBattlePosition(&w->unk_38, &w->unk_3C, -10, -10) != 0) {
         w->unk_1C6 = (u8)(w->unk_1C6 + 112) + GetRandom() % 33;
     }
 
@@ -23091,7 +23091,7 @@ s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
     w->unk_38 += (gSineTable[w->unk_1C6] * w->unk_1A8) >> 8;
     w->unk_3C += (-gSineTable[w->unk_1C6 + 64] * w->unk_1A8) >> 8;
 
-    if (func_0801A8A4(&w->unk_38, &w->unk_3C, -10, -10) != 0) {
+    if (ClampBattlePosition(&w->unk_38, &w->unk_3C, -10, -10) != 0) {
         w->unk_1C6 = (u8)(w->unk_1C6 + 112) + GetRandom() % 33;
     }
 
@@ -23333,7 +23333,7 @@ s32 func_0809AF84(UnkStruct_0809A02C* w, void* a) {
     w->unk_38 += (gSineTable[w->unk_1C6] * w->unk_1A8) >> 8;
     w->unk_3C += (-gSineTable[w->unk_1C6 + 64] * w->unk_1A8) >> 8;
 
-    if (func_0801A8A4(&w->unk_38, &w->unk_3C, -10, -10) != 0) {
+    if (ClampBattlePosition(&w->unk_38, &w->unk_3C, -10, -10) != 0) {
         w->unk_1C6 = (u8)(w->unk_1C6 + 0x70) + GetRandom() % 33;
     }
 
@@ -23400,7 +23400,7 @@ void func_0809B200(UnkStruct_0809A02C* w) {
 
     if (w->unk_1CD != 0) {
         if (w->unk_1CA == 0) {
-            w->unk_1D0 = func_0801AF1C(w->unk_3C);
+            w->unk_1D0 = GetBattleSpritePriorityFlags(w->unk_3C);
             WorldToScreen(&x, &y, w->unk_38, w->unk_3C,
                           w->unk_40);
         } else {
@@ -23450,7 +23450,7 @@ void func_0809B3F4(UnkStruct_0809A02C* w) {
 
     if (w->unk_1CD != 0) {
         if (w->unk_1CA == 0) {
-            w->unk_1D0 = func_0801AF1C(w->unk_3C);
+            w->unk_1D0 = GetBattleSpritePriorityFlags(w->unk_3C);
             WorldToScreen(&x, &y, w->unk_38, w->unk_3C,
                           w->unk_40);
         } else {
@@ -24122,7 +24122,7 @@ u8 func_0809C2D0(u8* work, void* a) {
         SetBgPriority(2, 0);
         func_080065FC(2, 0x8000, 0x80);
         func_08006778(gUnk_09EDA9A8, 120, 60);
-        work[0x88] = func_08006BA0(gUnk_09EDA9A8);
+        work[0x88] = BgAnimGetDuration(gUnk_09EDA9A8);
         work[0x89] = z;
         gBldCnt = 0x1B44;
         gBldAlpha = 0x1010;
@@ -27836,7 +27836,7 @@ void func_080A2844(UnkStruct_080A2F54* w, u8* a) {
     func_08065ACC(w, 80);
     func_08065ACC(w->unk_280, 80);
     func_08065ACC(w->unk_500, 80);
-    w->unk_78C = func_08065B6C(func_080857BC(GetActiveDeckIndex()), w);
+    w->unk_78C = func_08065B6C(GetDeckName(GetActiveDeckIndex()), w);
 #ifdef VERSION_JP
     w->unk_78D = func_08065B6C(&gUnk_0815C204[0x28], w->unk_280);
 #elif defined(VERSION_EU)
@@ -30270,7 +30270,7 @@ void func_080A6C50(u8 deck) {
     u16 n;
 
     base = 0;
-    n = func_08085B38(deck);
+    n = GetDeckCardCount(deck);
     d[0] = n / 10;
     d[1] = n - (u16)(n / 10) * 10;
     e[0] = 9;
@@ -30329,9 +30329,9 @@ void func_080A6E3C(u8* work) {
     func_08065AE0(&work[0x30], 8);
     func_08065AE0(&work[0x70], 8);
     func_08065AE0(&work[0xB0], 8);
-    work[0x4FA] = func_08065B6C(func_080857BC(0), &work[0x30]);
-    work[0x4FB] = func_08065B6C(func_080857BC(1), &work[0x70]);
-    work[0x4FC] = func_08065B6C(func_080857BC(2), &work[0xB0]);
+    work[0x4FA] = func_08065B6C(GetDeckName(0), &work[0x30]);
+    work[0x4FB] = func_08065B6C(GetDeckName(1), &work[0x70]);
+    work[0x4FC] = func_08065B6C(GetDeckName(2), &work[0xB0]);
 }
 
 void func_080A6EB4(u8* work, s32 id) {
@@ -30507,7 +30507,7 @@ void func_080A7284(u8* work, u8 mode) {
     }
 }
 u8 func_080A7300(u8* work) {
-    if (func_08085770(GetActiveDeckIndex()) > gGameState.cp) {
+    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.cp) {
         TaskCreate(&work[0x420], gUnk_09EE7FA8, &work[0x501]);
         m4aSongNumStart(0x69);
         return 0;
@@ -31752,7 +31752,7 @@ void func_080A9E40(u8 deck) {
     u16 n;
 
     base = 0;
-    n = func_08085B38(deck);
+    n = GetDeckCardCount(deck);
     d[0] = n / 10;
     d[1] = n - (u16)(n / 10) * 10;
     e[0] = 9;
@@ -31812,7 +31812,7 @@ void func_080A9FF4(u8 kind) {
     u8* ep;
 
     base = 0;
-    n = func_08085770(kind);
+    n = GetDeckCpCost(kind);
     d[0] = n / 100;
     d[1] = n / 10 - d[0] * 10;
     d[2] = n - d[0] * 100 - d[1] * 10;
@@ -31901,9 +31901,9 @@ void func_080AA328(u8* work) {
     func_08065ACC(&work[0x28], 8);
     func_08065ACC(&work[0x68], 8);
     func_08065ACC(&work[0xA8], 8);
-    work[0x702] = func_08065B6C(func_080857BC(0), &work[0x28]);
-    work[0x703] = func_08065B6C(func_080857BC(1), &work[0x68]);
-    work[0x704] = func_08065B6C(func_080857BC(2), &work[0xA8]);
+    work[0x702] = func_08065B6C(GetDeckName(0), &work[0x28]);
+    work[0x703] = func_08065B6C(GetDeckName(1), &work[0x68]);
+    work[0x704] = func_08065B6C(GetDeckName(2), &work[0xA8]);
 }
 
 void func_080AA3A0(u8* work, s32 id) {
@@ -32029,7 +32029,7 @@ void func_080AA634(void** p) {
 }
 
 void func_080AA680(u8* work) {
-    func_080AA6D4(func_080609AC(
+    func_080AA6D4(GetCardCpCost(
         func_080A993C(*(u16*)(*(u16*)&work[0x6CC] * 32 +
                               (u32)*(void**)&work[0x4CC] + 20)) +
         *(s16*)&work[0x6D0] * 5 + *(u16*)&work[0x6D2]));
@@ -32316,7 +32316,7 @@ s32 func_080AAB08(UnkStruct_080AAB08* w) {
 }
 
 s32 func_080AAC40(u8* work) {
-    if (func_08085770(GetActiveDeckIndex()) > gGameState.cp) {
+    if (GetDeckCpCost(GetActiveDeckIndex()) > gGameState.cp) {
         TaskCreate(&work[0x628], gUnk_09EE7FA8, &work[0x70D]);
         m4aSongNumStart(105);
 

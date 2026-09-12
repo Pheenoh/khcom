@@ -1023,7 +1023,7 @@ u8 func_080C64A4(void) {
             FadePaletteToWhite((u16*)gCharaObj->unk_24, (u16*)gCharaObj->unk_24, gCharaObj->unk_28, gCharaObj->unk_3A);
         }
         if (gCharaObj->unk_42 == 20) {
-            func_08006B4C();
+            BgAnimStop();
             m4aSongNumStart(0x229);
             fade.unk_00 = (u8*)gCharaObj->unk_0C;
             fade.unk_04 = gCharaObj->unk_10;
@@ -1105,7 +1105,7 @@ u8 func_080C64A4(void) {
         }
         break;
     case 16:
-        func_08006B4C();
+        BgAnimStop();
         gCharaObj->unk_3A = 11;
         gCharaObj->unk_44++;
         break;
@@ -1239,7 +1239,7 @@ u8 func_080C69B4(void) {
         }
         gCharaObj->unk_40++;
         if (gCharaObj->unk_42 == 20) {
-            func_08006B4C();
+            BgAnimStop();
             m4aSongNumStart(0x229);
             fade0.unk_00 = (u8*)gCharaObj->unk_0C;
             fade0.unk_04 = gCharaObj->unk_10;
@@ -1363,7 +1363,7 @@ u8 func_080C69B4(void) {
         }
         break;
     case 18:
-        func_08006B4C();
+        BgAnimStop();
         gCharaObj->unk_3A = 12;
         gCharaObj->unk_44++;
         break;

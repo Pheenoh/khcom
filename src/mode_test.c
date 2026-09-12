@@ -294,7 +294,7 @@ void eu_08061588(UnkModeTestWork* work) {
 
     body = &work->body;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
         sclY = gBtlWork->unk_024;
@@ -1104,7 +1104,7 @@ void func_080609A0(void) {
     func_0806098C();
 }
 
-u16 func_080609AC(u16 a) {
+u16 GetCardCpCost(u16 a) {
     s32 n;
     u16 v;
     CardStat* stat;
@@ -1134,9 +1134,9 @@ u16 func_08060A2C(u16 a) {
     u16 v;
 
     if ((a & 0x8000) == 0) {
-        v = func_080609AC(a) / 5 * 2;
+        v = GetCardCpCost(a) / 5 * 2;
     } else {
-        v = func_080609AC(a & 0x0FFF) / 5 * 2 + 10;
+        v = GetCardCpCost(a & 0x0FFF) / 5 * 2 + 10;
     }
 
     return v;

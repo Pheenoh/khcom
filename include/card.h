@@ -2156,7 +2156,7 @@ Deck* GetDeck(u8 index);
 u8 func_08085B84(u16 index);
 u16 func_08085B5C(u16 index);
 void SetActiveDeckIndex(u8 index);
-u16 func_08085770(u8 index);
+u16 GetDeckCpCost(u8 index);
 
 void func_08066588(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void func_0807B410(void* pool);
