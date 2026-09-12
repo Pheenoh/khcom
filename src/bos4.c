@@ -4228,7 +4228,7 @@ struct UnkStruct_02034F24* func_080DFB7C(u8 a) {
     return func_080E5590(a);
 }
 
-UnkStruct_080DFB8C* func_080DFB8C(s32 x, s32 y) {
+MapCell* func_080DFB8C(s32 x, s32 y) {
     s16 a = x / 0x2000;
     s16 b = y / 0x1000;
 
@@ -4241,7 +4241,7 @@ UnkStruct_080DFB8C* func_080DFB8C(s32 x, s32 y) {
 
 u8 func_080DFBDC(UnkStruct_080DFF1C* p) {
     s32 y = p->x + p->z;
-    UnkStruct_080DFB8C* q = func_080DFB8C(p->unk_00, y);
+    MapCell* q = func_080DFB8C(p->unk_00, y);
 
     if (q == 0) {
         return 1;
@@ -4364,7 +4364,7 @@ u8 func_080DFD84(UnkStruct_080DFF1C* p) {
 }
 
 u8 _080DFE1C(UnkStruct_080DFF1C* p) {
-    UnkStruct_080DFB8C* q = func_080DFB8C(p->unk_00, p->x + p->z);
+    MapCell* q = func_080DFB8C(p->unk_00, p->x + p->z);
 
     if (q->unk_00 & 0x20) {
         switch (q->unk_02) {
@@ -4385,7 +4385,7 @@ u8 _080DFE1C(UnkStruct_080DFF1C* p) {
 }
 
 s32 func_080DFE7C(s32 x, s32 y, s32 z) {
-    UnkStruct_080DFB8C* p;
+    MapCell* p;
     s32 r;
 
     y += z;

@@ -55,7 +55,7 @@ typedef struct UnkStruct_0203C7AC {
     u8 unk_30[0x14];
 } UnkStruct_0203C7AC;
 
-typedef struct UnkStruct_080DFB8C {
+typedef struct MapCell {
     u16 unk_00;
     u8 unk_02;
     u8 unk_03;
@@ -68,7 +68,7 @@ typedef struct UnkStruct_080DFB8C {
     u16* unk_14;
     u16* unk_18;
     u16* unk_1C;
-} UnkStruct_080DFB8C;
+} MapCell;
 
 typedef struct UnkStruct_080DEDD8 {
     u8 unk_00;

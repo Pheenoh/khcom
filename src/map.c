@@ -103,7 +103,7 @@ extern void* gUnkEu_09F846F8[];
 #define LANGSEL(x) (x)
 #endif
 
-UnkStruct_080DFB8C* gUnk_02034F1C;
+MapCell* gUnk_02034F1C;
 UnkStruct_02034F20* gUnk_02034F20;
 UnkStruct_02034F24* gUnk_02034F24;
 u16 gUnk_02034F28;
@@ -146,7 +146,7 @@ UnkStruct_02034FE0* gUnk_02034FE0;
 UnkStruct_02034FE4* gUnk_02034FE4;
 
 s32 func_080DFEBC(s32 x, s32 y, s32 z) {
-    UnkStruct_080DFB8C* p = func_080DFB8C(x, y);
+    MapCell* p = func_080DFB8C(x, y);
     s32 r;
 
     if (p == 0) {
@@ -596,7 +596,7 @@ void func_080E0878(void) {
     TaskPoolDestroy(gUnk_0203C7AC->unk_30);
 }
 
-UnkStruct_080DFB8C* func_080E08BC(s16 x, s16 y) {
+MapCell* func_080E08BC(s16 x, s16 y) {
     if (y < 0 || y >= gUnk_02034F2A) {
         return 0;
     }
@@ -607,7 +607,7 @@ UnkStruct_080DFB8C* func_080E08BC(s16 x, s16 y) {
     return &gUnk_02034F1C[gUnk_02034F28 * y + x];
 }
 
-void func_080E0900(UnkStruct_080DFB8C* p, s32 a, s32 b) {
+void func_080E0900(MapCell* p, s32 a, s32 b) {
     if (p != 0) {
         p->unk_02 = a;
         p->unk_10 = func_080E8668(a);
@@ -626,7 +626,7 @@ u8 func_080E0938(u8 a) {
     return GetRandom() % p[3];
 }
 
-void func_080E0960(UnkStruct_080DFB8C* p, s32 n) {
+void func_080E0960(MapCell* p, s32 n) {
     if (p != 0) {
         u16* base = gUnk_02034F34->unk_18;
         const u8* q = gUnk_0984D314[n];
@@ -638,7 +638,7 @@ void func_080E0960(UnkStruct_080DFB8C* p, s32 n) {
     }
 }
 
-void func_080E09B4(UnkStruct_080DFB8C* p, u8 n, u8 v) {
+void func_080E09B4(MapCell* p, u8 n, u8 v) {
     if (p != 0) {
         const u8* q = gUnk_0984D32C[n];
         u16* base;
@@ -667,7 +667,7 @@ void func_080E09B4(UnkStruct_080DFB8C* p, u8 n, u8 v) {
     }
 }
 
-void func_080E0A38(UnkStruct_080DFB8C* p) {
+void func_080E0A38(MapCell* p) {
     if (p->unk_00 & 1) {
         func_080E0960(p, 1);
     } else if (p->unk_00 & 2) {
@@ -677,7 +677,7 @@ void func_080E0A38(UnkStruct_080DFB8C* p) {
     }
 }
 
-void func_080E0A70(UnkStruct_080DFB8C* p, s32 n) {
+void func_080E0A70(MapCell* p, s32 n) {
     u16* base;
     const u8* t;
     u8 r;
@@ -708,7 +708,7 @@ void func_080E0A70(UnkStruct_080DFB8C* p, s32 n) {
     p->unk_18 = base + off;
 }
 
-void sub_080E0B00(UnkStruct_080DFB8C* p, s32 n) {
+void sub_080E0B00(MapCell* p, s32 n) {
     const u8* t;
     u16* base;
     u16 off;
@@ -746,7 +746,7 @@ void sub_080E0B00(UnkStruct_080DFB8C* p, s32 n) {
     p->unk_18 = base + off;
 }
 
-void func_080E0B98(UnkStruct_080DFB8C* p, s32 n, u8 v) {
+void func_080E0B98(MapCell* p, s32 n, u8 v) {
     if (p != 0) {
         u16* base = gUnk_02034F34->unk_1C;
         const u8* q = gUnk_0984D32C[n];
@@ -762,14 +762,14 @@ void func_080E0B98(UnkStruct_080DFB8C* p, s32 n, u8 v) {
 }
 
 void func_080E0BF4(s16 x, s16 y, s32 a, s32 b) {
-    UnkStruct_080DFB8C* p = func_080E08BC(x, y);
+    MapCell* p = func_080E08BC(x, y);
 
     func_080E0960(p, a);
     sub_080E0B00(p, b);
 }
 
 void func_080E0C1C(u16 x, u16 y) {
-    UnkStruct_080DFB8C* e;
+    MapCell* e;
     u8 v;
     s32 go;
 
@@ -847,7 +847,7 @@ void func_080E0ED4(UnkStruct_02034F20* p) {
 
     while (go) {
         s16 cy = (s16)y;
-        UnkStruct_080DFB8C* c = func_080E08BC((s16)x, cy);
+        MapCell* c = func_080E08BC((s16)x, cy);
 
         switch (c->unk_02) {
         case 4:
@@ -879,8 +879,8 @@ void func_080E0FD8(UnkStruct_02034F20* p) {
     u16 x;
     u16 y;
     u16 d;
-    UnkStruct_080DFB8C* e;
-    UnkStruct_080DFB8C* q;
+    MapCell* e;
+    MapCell* q;
 
     x = p->unk_00;
 
@@ -1006,7 +1006,7 @@ void func_080E1274(void) {
     s32 i;
     s32 j;
     s32 dir;
-    UnkStruct_080DFB8C* p;
+    MapCell* p;
 
     for (i = 0; i < gUnk_02034F28; i++) {
         dir = 10;
@@ -1079,7 +1079,7 @@ void func_080E13B0(void) {
         u16 x;
 
         for (x = 0; x < gUnk_02034F28; x++) {
-            UnkStruct_080DFB8C* c = func_080E08BC((s16)x, (s16)y);
+            MapCell* c = func_080E08BC((s16)x, (s16)y);
             s32 v;
             s32 ok;
             s32 k;
@@ -1135,8 +1135,8 @@ void func_080E14D0(void) {
 
     for (y = 0; y < gUnk_02034F2A; y++) {
         for (x = 0; x < gUnk_02034F28 - 1; x++) {
-            UnkStruct_080DFB8C* a = func_080E08BC(x, y);
-            UnkStruct_080DFB8C* b = func_080E08BC(x + 1, y);
+            MapCell* a = func_080E08BC(x, y);
+            MapCell* b = func_080E08BC(x + 1, y);
             s32 flag = 0;
 
             switch (a->unk_02) {
@@ -1215,7 +1215,7 @@ void func_080E14D0(void) {
 void func_080E1670(void) {
     s32 i;
     s32 j;
-    UnkStruct_080DFB8C* e;
+    MapCell* e;
     u8 v;
 
     for (i = 0; i < gUnk_02034F28; i++) {
@@ -1384,7 +1384,7 @@ void func_080E1670(void) {
 }
 
 void func_080E1C64(s16 x, s16 y, u8 n) {
-    UnkStruct_080DFB8C* p = func_080E08BC(x, y);
+    MapCell* p = func_080E08BC(x, y);
     if (p != 0) {
         u16* base = gUnk_02034F34->unk_20;
         const u8* q = gUnk_0984D3F8[n];
@@ -1395,7 +1395,7 @@ void func_080E1C64(s16 x, s16 y, u8 n) {
 }
 
 u8 func_080E1CA8(s16 x, s16 y) {
-    UnkStruct_080DFB8C* p = func_080E08BC(x, y);
+    MapCell* p = func_080E08BC(x, y);
     if (p == 0 || p->unk_08 == -0x100000 || p->unk_0C == 0x100000) {
         return 1;
     }
@@ -1403,7 +1403,7 @@ u8 func_080E1CA8(s16 x, s16 y) {
 }
 
 u8 func_080E1CE0(s16 x, s16 y, u8 n) {
-    UnkStruct_080DFB8C* p = func_080E08BC(x, y);
+    MapCell* p = func_080E08BC(x, y);
 
     if (p != 0 && p->unk_02 == n) {
         return 1;
@@ -1412,7 +1412,7 @@ u8 func_080E1CE0(s16 x, s16 y, u8 n) {
 }
 
 void func_080E1D08(s16 x, s16 y) {
-    UnkStruct_080DFB8C* p = func_080E08BC(x, y + 7);
+    MapCell* p = func_080E08BC(x, y + 7);
 
     if (p->unk_08 == -0x100000) {
         switch (p->unk_02) {
@@ -1472,7 +1472,7 @@ void func_080E1D08(s16 x, s16 y) {
 }
 
 void func_080E1FA8(s16 x, s16 y) {
-    UnkStruct_080DFB8C* p = func_080E08BC(x, y);
+    MapCell* p = func_080E08BC(x, y);
 
     if (p->unk_0C == 0x100000 && p->unk_05 == 0) {
         switch (p->unk_02) {
@@ -1593,7 +1593,7 @@ void func_080E2318(s16 y) {
 
 void func_080E23CC(s16 j) {
     s16 x = gUnk_02034F28 - 1;
-    UnkStruct_080DFB8C* q = func_080E08BC(x, j);
+    MapCell* q = func_080E08BC(x, j);
 
     switch (q->unk_05) {
     case 12:
@@ -1635,7 +1635,7 @@ void func_080E2520(void) {
     s16 i;
     s16 j;
     s32 z;
-    UnkStruct_080DFB8C* p;
+    MapCell* p;
 
     for (i = 0; i < gUnk_02034F28; i++) {
         z = 0x100000;
@@ -1701,7 +1701,7 @@ void func_080E2668(UnkStruct_02034F20* p, s32 a) {
     u16 y;
     u16 w;
     UnkStruct_080DFB7C* e;
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
 
     d = a;
     e = (UnkStruct_080DFB7C*)func_080DFB7C(d);
@@ -1898,7 +1898,7 @@ void func_080E2C50(void) {
 
 void func_080E2C98(void) {
     s32 i;
-    UnkStruct_080DFB8C* e;
+    MapCell* e;
 
     for (i = 0; i < 4; i++) {
         e = func_080DFB7C(i);
@@ -2095,7 +2095,7 @@ void func_080E309C(u8 i, s16 a, s16 b, s16 c, u8 e) {
     u16* buf;
     u16* w;
     s32 v;
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
     s32 m;
 
     v = gUnk_02034F20[i].unk_04;
@@ -2199,7 +2199,7 @@ void func_080E3400(u8 i, s16 a, s16 b, s16 c, u8 e) {
     u16* buf;
     u16* w;
     s32 v;
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
     s32 m;
 
     v = gUnk_02034F20[i].unk_04;
@@ -2303,7 +2303,7 @@ void func_080E3768(u8 i, s16 a, s16 b, s16 c, s16 d, u8 e) {
     u16* buf;
     u16* w;
     s32 v;
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
     s32 m;
 
     v = gUnk_02034F20[i].unk_04;
@@ -2441,7 +2441,7 @@ void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi) {
         s32 j;
 
         for (j = gUnk_02034F2A - 1; j >= 0; j--) {
-            UnkStruct_080DFB8C* p = func_080E08BC(x, j);
+            MapCell* p = func_080E08BC(x, j);
 
             if (p->unk_02 == a) {
                 *px = x;
@@ -2467,7 +2467,7 @@ void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f) {
     s32 j;
     s32 x;
     u16 n;
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
 
     n = f - e;
     x = e + GetRandom() % (-e + f);
@@ -2500,7 +2500,7 @@ u8 func_080E3D80(s16* a, s16* b, s16* c, s16* d) {
     s32 found = 0;
     s32 x;
     s32 y;
-    UnkStruct_080DFB8C* p;
+    MapCell* p;
 
     for (x = 0; x < gUnk_02034F28; x++) {
         for (y = gUnk_02034F2A - 1; y >= 0; y--) {
@@ -2873,7 +2873,7 @@ void func_080E4B78(s16 x, s16 y) {
         xx = x0;
 
         for (j = 0; j < 32; j++) {
-            UnkStruct_080DFB8C* e;
+            MapCell* e;
             s16 c;
             s16 n;
             s16 xa;
@@ -2945,7 +2945,7 @@ void func_080E4D68(s32 x, s32 y) {
         xx = x0;
 
         for (j = 0; j < 32; j++) {
-            UnkStruct_080DFB8C* e;
+            MapCell* e;
             s16 c;
             s16 n;
             s16 xa;
@@ -2980,7 +2980,7 @@ void func_080E4D68(s32 x, s32 y) {
 }
 
 void func_080E4EB0(u16* a, u16* b, u16* c, s16 d, s16 e) {
-    UnkStruct_080DFB8C* cell;
+    MapCell* cell;
     s16 hx;
     s16 mx;
     s16 hy;
@@ -3029,7 +3029,7 @@ void func_080E4FF0(void* p, s16 a, s16 b) {
 }
 
 void func_080E507C(u16* a, u16* b, u16* c, s16 d, s16 e) {
-    UnkStruct_080DFB8C* cell;
+    MapCell* cell;
     s16 hx;
     s16 mx;
     s16 hy;
@@ -3133,7 +3133,7 @@ u8 func_080E5354(UnkStruct_080DFF1C* a, s32* b) {
             s32 tx = (gUnk_02039BA0->unk_00 / 32 >> 8) + 1;
             u16 xx = x + tx;
             s32* q = &gUnk_02039BA0->unk_18.unk_00.x;
-            UnkStruct_080DFB8C* e;
+            MapCell* e;
 
             if (q[0] < (xx * 32 + 80) << 8 && q[0] > (xx * 32 - 48) << 8 &&
                 q[1] < (yy * 16 + 40) << 8 && q[1] > (yy * 16 - 24) << 8) {
@@ -3160,7 +3160,7 @@ u8 func_080E5354(UnkStruct_080DFF1C* a, s32* b) {
     return 0;
 }
 
-UnkStruct_080DFB8C* func_080E548C(s16 a, s16 b) {
+MapCell* func_080E548C(s16 a, s16 b) {
     return func_080E08BC(a, b);
 }
 
@@ -3208,7 +3208,7 @@ void func_080E55E4(const u8* src) {
 
     for (y = 0; y < gUnk_0203C7AC->unk_06; y++) {
         for (x = 0; x < gUnk_0203C7AC->unk_04; x++) {
-            UnkStruct_080DFB8C* e = (UnkStruct_080DFB8C*)func_080E55A4(x, y);
+            MapCell* e = (MapCell*)func_080E55A4(x, y);
 
             e->unk_02 = src[gUnk_0203C7AC->unk_04 * y + x];
             e->unk_10 = func_080E8668(e->unk_02);
@@ -3328,14 +3328,14 @@ void func_080E5868(UnkStruct_09EF70D0* p) {
     n = gUnk_0203C7AC->unk_04 * gUnk_0203C7AC->unk_06;
 
     for (i = 0; i < n; i++) {
-        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_00 = 0;
-        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_02 = 11;
-        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_03 = 7;
-        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_04 = 0;
-        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_05 = 0;
-        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_14 = 0;
-        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_18 = 0;
-        ((UnkStruct_080DFB8C*)gUnk_02034F38)[i].unk_1C = 0;
+        ((MapCell*)gUnk_02034F38)[i].unk_00 = 0;
+        ((MapCell*)gUnk_02034F38)[i].unk_02 = 11;
+        ((MapCell*)gUnk_02034F38)[i].unk_03 = 7;
+        ((MapCell*)gUnk_02034F38)[i].unk_04 = 0;
+        ((MapCell*)gUnk_02034F38)[i].unk_05 = 0;
+        ((MapCell*)gUnk_02034F38)[i].unk_14 = 0;
+        ((MapCell*)gUnk_02034F38)[i].unk_18 = 0;
+        ((MapCell*)gUnk_02034F38)[i].unk_1C = 0;
     }
     func_080E55E4((const u8*)p->unk_28);
 }
@@ -3344,8 +3344,8 @@ void func_080E58E4(void) {
     EwramFree(gUnk_02034F38);
 }
 
-UnkStruct_080DFB8C* func_080E58F8(s16 a, s16 b) {
-    return (UnkStruct_080DFB8C*)func_080E55A4(a, b);
+MapCell* func_080E58F8(s16 a, s16 b) {
+    return (MapCell*)func_080E55A4(a, b);
 }
 
 void func_080E590C(UnkStruct_080E5B90* p) {
@@ -3407,7 +3407,7 @@ u8 func_080E59D8(UnkStruct_080E5B90* w) {
 
         for (j = 0; j < wd; j++) {
             s32 x = (s16)(q->unk_00 + j);
-            UnkStruct_080DFB8C* e = func_080E548C(x, y);
+            MapCell* e = func_080E548C(x, y);
 
             if (e->unk_0C == q->unk_04 && (e->unk_00 & 0x20)) {
                 s32 t;
@@ -3966,7 +3966,7 @@ u8 func_080E6634(u8 a) {
     return r;
 }
 
-UnkStruct_080DFB8C* func_080E67D4(s32 x, s32 y) {
+MapCell* func_080E67D4(s32 x, s32 y) {
     u16 a = x / 0x2000;
     u16 b = y / 0x1000;
     return func_080E548C(a, b);
@@ -3994,7 +3994,7 @@ s32 func_080E6804(s16 x, s16 y) {
 }
 
 u8 func_080E68A4(s16 x, s16 y, u8 n) {
-    UnkStruct_080DFB8C* p = func_080E548C(x, y);
+    MapCell* p = func_080E548C(x, y);
 
     if (p != 0 && p->unk_0C != 0x100000 && p->unk_02 == n && (p->unk_00 & 0x960) == 0) {
         return 1;
@@ -4018,7 +4018,7 @@ s32 func_080E68E4(s16 x, s16 y, u8 w, u8 h, u8 n) {
 
 s32 func_080E6968(s16 a, s16 b, u8 c) {
     u16 d;
-    UnkStruct_080DFB8C* p = func_080E548C(a, b);
+    MapCell* p = func_080E548C(a, b);
     d = (p->unk_0C - p->unk_08) >> 8;
     return d > (c << 4);
 }
@@ -4039,7 +4039,7 @@ s16 func_080E6A14(s16 x, s16 y) {
     s32 i;
 
     for (i = 0; i < n; i++) {
-        UnkStruct_080DFB8C* p = func_080E548C(x, y + i);
+        MapCell* p = func_080E548C(x, y + i);
         if (p->unk_00 & 0x100) {
             return 0;
         }
@@ -4055,7 +4055,7 @@ s32 func_080E6A80(s16 x, s16 y, u16 n) {
     s32 i;
     u16 h;
     s32 j;
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
     s32 mask;
 
     h = gUnk_0203C7AC->unk_06 - y;
@@ -4692,7 +4692,7 @@ void func_080E7E3C(void) {
 
     if (gUnk_0203C7AC->unk_0D == 3 || gUnk_0203C7AC->unk_0D == 9 || gUnk_0203C7AC->unk_0D == 10 ||
         gUnk_0203C7AC->unk_0D == 22) {
-        UnkStruct_080DFB8C* p;
+        MapCell* p;
         u16 v;
 
         q = &gUnk_0984C158;
@@ -4984,7 +4984,7 @@ void* func_080E8668(u8 a) {
     return &gUnk_0984B860[i + 10];
 }
 
-u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y) {
+u8 func_080E86C8(MapCell* p, s32 x, s32 y) {
     u16 cx;
     u16 cy;
     u8 bx;
@@ -5007,7 +5007,7 @@ void func_080E8724(s16 x, s16 y, const u8* p, u16* base) {
     s32 j;
     s32 off;
     u8 v;
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
 
     v = GetRandom() % 100;
     while (v >= p[0]) {
@@ -5035,7 +5035,7 @@ void func_080E8724(s16 x, s16 y, const u8* p, u16* base) {
 }
 
 u8 func_080E87EC(s16 x, s16 y, const UnkStruct_080E87EC* p) {
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
     s32 v;
 
     while (p->unk_04 != 0xFF) {
@@ -5100,7 +5100,7 @@ void func_080E893C(s16 x, s16 y, const u8* p, u16* base) {
     s32 j;
     s32 off;
     u8 v;
-    UnkStruct_080DFB8C* q;
+    MapCell* q;
 
     v = GetRandom() % 100;
     while (v >= p[0]) {
@@ -7737,7 +7737,7 @@ void func_080EC660(MapRndWork* w) {
     func_080E49DC(gUnk_0203C7AC->unk_04, gUnk_0203C7AC->unk_06);
 
     for (i = 0; i < 4; i++) {
-        UnkStruct_080DFB8C* e = func_080DFB7C(i);
+        MapCell* e = func_080DFB7C(i);
 
         if (e->unk_00 & 1) {
             if ((e->unk_00 & 8) == 0) {
@@ -11581,7 +11581,7 @@ void func_080F1ED4(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (UnkStruct_080DFB8C*)arg;
+    w->unk_000 = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -11733,7 +11733,7 @@ u8 func_080F230C(MapGmkGpWork* w) {
     UnkStruct_080DFF1C* q = &w->unk_004;
 
     if (func_080E02E0(q, 8, 8)) {
-        UnkStruct_080DFB8C* e;
+        MapCell* e;
 
         m4aSongNumStart(w->unk_0C4);
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
@@ -11841,7 +11841,7 @@ s32 func_080F25FC(MapGmkGpWork* w) {
     AnimState* a = &w->unk_0A0;
 
     if (AnimIsFinished(a)) {
-        UnkStruct_080DFB8C* e = w->unk_000;
+        MapCell* e = w->unk_000;
 
         if ((e->unk_00 & 2) == 0) {
             e->unk_00 |= 2;
@@ -11963,7 +11963,7 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (UnkStruct_080DFB8C*)arg;
+    w->unk_000 = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12056,7 +12056,7 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (UnkStruct_080DFB8C*)arg;
+    w->unk_000 = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12163,7 +12163,7 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (UnkStruct_080DFB8C*)arg;
+    w->unk_000 = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12269,7 +12269,7 @@ void func_080F3150(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (UnkStruct_080DFB8C*)arg;
+    w->unk_000 = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12362,7 +12362,7 @@ void func_080F33D0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (UnkStruct_080DFB8C*)arg;
+    w->unk_000 = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;
@@ -12462,7 +12462,7 @@ void func_080F369C(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_004;
     UnkStruct_080E7D80* d = arg->unk_14;
 
-    w->unk_000 = (UnkStruct_080DFB8C*)arg;
+    w->unk_000 = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
     w->unk_004.unk_00 += d->unk_16 << 8;
     e->unk_00.x += d->unk_18 << 8;

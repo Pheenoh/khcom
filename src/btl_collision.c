@@ -48,14 +48,14 @@ u8 func_08011270(BtlObj* p, s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
     return 1;
 }
 
-void func_08011364(BtlObj* a, BtlObj* b, const UnkStruct_0813400C* c) {
+void func_08011364(BtlObj* a, BtlObj* b, const BattleAttackDef* c) {
     gBtlWork->unk_076 = 8;
     a->unk_020 = -((b->unk_030 * c->unk_00) >> 8);
     a->unk_034 |= 0x20;
 }
 
 s32 func_08011398(BtlObj* hit, s32 index) {
-    const UnkStruct_0813400C* attack = &gUnk_0813400C[index];
+    const BattleAttackDef* attack = &gUnk_0813400C[index];
     s32 scale = gBtlWork->unk_124;
     BtlObj* target;
     BtlObj* source;
@@ -64,15 +64,15 @@ s32 func_08011398(BtlObj* hit, s32 index) {
     } else {
         target = hit;
     }
-    target->unk_024 = attack->unk_14;
+    target->unk_024 = attack->flags;
     target->unk_028 = index;
-    if (attack->unk_14 & 0x40000) {
+    if (attack->flags & 0x40000) {
         if (hit->unk_034 & 0x8000000000ULL) {
             func_08019190(hit, 0);
             hit->unk_0E2 = 30;
             return 2;
         }
-        if (attack->unk_14 & 0x80000) target->unk_0B4 = 0;
+        if (attack->flags & 0x80000) target->unk_0B4 = 0;
         target->unk_034 |= 0x40;
         return 0;
     }
@@ -89,13 +89,13 @@ s32 func_08011398(BtlObj* hit, s32 index) {
     if (source->unk_0E4 != 0) {
         switch (source->unk_0E4->unk_0F4) {
         case 35:
-            if ((attack->unk_14 & 0x01002000) != 0x2000) break;
+            if ((attack->flags & 0x01002000) != 0x2000) break;
             if (hit->unk_034 & 0x100000000ULL) break;
-            if ((attack->unk_14 & 0x80000000) && (hit->unk_034 & 0x8000)) break;
-            if ((attack->unk_14 & 0x08000000) && (hit->unk_034 & 0x0200000000000000ULL)) break;
-            if ((attack->unk_14 & 0x10000000) && (hit->unk_034 & 0x4000000)) break;
-            if ((attack->unk_14 & 0x20000000) && (hit->unk_034 & 0x8000000)) break;
-            if ((attack->unk_14 & 0x40000000) && (hit->unk_034 & 0x10000000)) break;
+            if ((attack->flags & 0x80000000) && (hit->unk_034 & 0x8000)) break;
+            if ((attack->flags & 0x08000000) && (hit->unk_034 & 0x0200000000000000ULL)) break;
+            if ((attack->flags & 0x10000000) && (hit->unk_034 & 0x4000000)) break;
+            if ((attack->flags & 0x20000000) && (hit->unk_034 & 0x8000000)) break;
+            if ((attack->flags & 0x40000000) && (hit->unk_034 & 0x10000000)) break;
             if (hit->unk_0E8 == 2) break;
             {
                 s16 drain = target->unk_02C >> 3;
@@ -110,42 +110,42 @@ s32 func_08011398(BtlObj* hit, s32 index) {
             }
             break;
         case 43:
-            if ((attack->unk_14 & 0x01002000) == 0x2000) {
+            if ((attack->flags & 0x01002000) == 0x2000) {
                 scale = scale != 0 ? (scale * 384) >> 8 : 384;
             }
             break;
         case 8:
-            if ((attack->unk_14 & 0x01002000) == 0x2000 && source->unk_02C < (source->unk_02E >> 2)) {
+            if ((attack->flags & 0x01002000) == 0x2000 && source->unk_02C < (source->unk_02E >> 2)) {
                 scale = scale != 0 ? (scale * 512) >> 8 : 512;
             }
             break;
         case 4:
-            if (attack->unk_14 & 0x10000000) {
+            if (attack->flags & 0x10000000) {
                 scale = scale != 0 ? (scale * 384) >> 8 : 384;
             }
             break;
         case 11:
-            if (attack->unk_14 & 0x20000000) {
+            if (attack->flags & 0x20000000) {
                 scale = scale != 0 ? (scale * 384) >> 8 : 384;
             }
             break;
         case 12:
-            if (attack->unk_14 & 0x40000000) {
+            if (attack->flags & 0x40000000) {
                 scale = scale != 0 ? (scale * 384) >> 8 : 384;
             }
             break;
         case 38:
-            if (attack->unk_14 & 0x4000) {
+            if (attack->flags & 0x4000) {
                 scale = scale != 0 ? (scale * 332) >> 8 : 332;
             }
             break;
         case 39:
-            if (attack->unk_14 & 0x8000) {
+            if (attack->flags & 0x8000) {
                 scale = scale != 0 ? (scale * 332) >> 8 : 332;
             }
             break;
         case 36:
-            if ((attack->unk_14 & 0x01002000) == 0x2000) {
+            if ((attack->flags & 0x01002000) == 0x2000) {
                 if (source->unk_034 & 4) {
                     if ((hit->unk_034 & 4) && hit->unk_004 < source->unk_004) {
                         scale = scale != 0 ? (scale * 512) >> 8 : 512;
@@ -160,7 +160,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
     if (target->unk_0E4 != 0) {
         switch (target->unk_0E4->unk_0F4) {
         case 14:
-            if (attack->unk_14 & 0x80000000) {
+            if (attack->flags & 0x80000000) {
                 func_08019190(hit, 0);
                 scale = scale != 0 ? (scale * 128) >> 8 : 128;
             }
@@ -168,7 +168,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         case 46:
             target->unk_0E4->unk_0F8--;
 #ifdef VERSION_EU
-            if (attack->unk_14 & 0x4000)
+            if (attack->flags & 0x4000)
 #endif
             {
                 scale = scale != 0 ? (scale * 128) >> 8 : 128;
@@ -176,7 +176,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
             break;
         }
     }
-    if (attack->unk_14 & 0x80000000) {
+    if (attack->flags & 0x80000000) {
         if (hit->unk_034 & 0x8000) {
             switch ((u32)hit->unk_000) {
             case 7:
@@ -202,7 +202,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
                 hit->unk_034 |= 0x4000;
             }
         }
-    } else if (attack->unk_14 & 0x08000000) {
+    } else if (attack->flags & 0x08000000) {
         if (hit->unk_034 & 0x0200000000000000ULL) {
             switch ((u32)hit->unk_000) {
             case 7:
@@ -227,7 +227,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
                 hit->unk_034 |= 0x4000;
             }
         }
-    } else if (attack->unk_14 & 0x10000000) {
+    } else if (attack->flags & 0x10000000) {
         if (hit->unk_034 & 0x100000) {
             func_08011364(target, source, attack);
             return 1;
@@ -245,7 +245,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
                 hit->unk_034 |= 0x4000;
             }
         }
-    } else if (attack->unk_14 & 0x20000000) {
+    } else if (attack->flags & 0x20000000) {
         if (hit->unk_034 & 0x200000) {
             func_08011364(target, source, attack);
             return 1;
@@ -263,7 +263,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
                 hit->unk_034 |= 0x4000;
             }
         }
-    } else if (attack->unk_14 & 0x40000000) {
+    } else if (attack->flags & 0x40000000) {
         if (hit->unk_034 & 0x400000) {
             func_08011364(target, source, attack);
             return 1;
@@ -281,7 +281,7 @@ s32 func_08011398(BtlObj* hit, s32 index) {
                 hit->unk_034 |= 0x4000;
             }
         }
-    } else if (attack->unk_14 & 0x100) {
+    } else if (attack->flags & 0x100) {
         if (hit->unk_034 & 0x80000000ULL) {
             func_08019190(hit, 0);
             hit->unk_0E2 = 30;
@@ -300,23 +300,23 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         gBtlWork->unk_072 = (u8)attack->unk_0C;
         return 1;
     }
-    if (attack->unk_14 & 0x200) {
+    if (attack->flags & 0x200) {
         target->unk_034 |= 0x4000;
-    } else if (attack->unk_14 & 0x100000) {
+    } else if (attack->flags & 0x100000) {
         if (hit->unk_034 & 0x4000000000ULL) {
             func_08019190(hit, 0);
             hit->unk_0E2 = 30;
             return 2;
         }
         target->unk_034 |= 0x2000000000ULL;
-    } else if (attack->unk_14 & 0x200000) {
+    } else if (attack->flags & 0x200000) {
         if (hit->unk_034 & 0x20000000000ULL) {
             func_08019190(hit, 0);
             hit->unk_0E2 = 30;
             return 2;
         }
         target->unk_034 |= 0x10000000000ULL;
-    } else if (attack->unk_14 & 0x400000) {
+    } else if (attack->flags & 0x400000) {
         if (hit->unk_034 & 0x80000000000ULL) {
             func_08019190(hit, 0);
             hit->unk_0E2 = 30;
@@ -324,14 +324,14 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         }
         target->unk_034 |= 0x40000000000ULL;
     }
-    if (attack->unk_14 & 0x400) {
+    if (attack->flags & 0x400) {
         if (hit->unk_034 & 0x200000000ULL) {
             func_08019190(hit, 0);
             hit->unk_0E2 = 30;
             return 2;
         }
         target->unk_034 |= 0x40000;
-        if (attack->unk_14 & 0x8000000) {
+        if (attack->flags & 0x8000000) {
             if (scale == 0) target->unk_020 = (source->unk_030 * attack->unk_00) >> 8;
             else target->unk_020 = (((source->unk_030 * attack->unk_00) >> 8) * scale) >> 8;
         } else {
@@ -358,10 +358,10 @@ s32 func_08011398(BtlObj* hit, s32 index) {
     gBtlWork->unk_076 = (u8)attack->unk_0C;
     target->unk_0A8 = attack->unk_04;
     target->unk_0AC = attack->unk_08;
-    if (attack->unk_14 & 0x800000) {
+    if (attack->flags & 0x800000) {
         if (source->unk_034 & 4) target->unk_0B0 = 192;
         else target->unk_0B0 = 64;
-    } else if (attack->unk_14 & 0x1000) {
+    } else if (attack->flags & 0x1000) {
         target->unk_0B0 = GetAngle(gBtlWork->unk_0B8, gBtlWork->unk_0BC, target->unk_004, target->unk_008);
     } else {
         target->unk_0B0 = GetAngle(source->unk_004, source->unk_008, target->unk_004, target->unk_008);
@@ -415,7 +415,7 @@ s32 func_08011F68(s32 a, BtlObj* b) {
 
 #ifdef NON_MATCHING
 s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
-    const UnkStruct_0813400C* t;
+    const BattleAttackDef* t;
     BtlWork* w;
     BtlObj* o;
     s32 sx;
@@ -459,7 +459,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
                     sz += o->unk_00C;
                     cnt++;
 
-                    if (t->unk_14 & 0x800) {
+                    if (t->flags & 0x800) {
                         break;
                     }
                 } else if (r2 == 2) {
@@ -476,11 +476,11 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
         n = cnt;
 
         if (n > 0) {
-            if (t->unk_10 != 0) {
+            if (t->hitEffect != 0) {
                 sx /= n;
                 sy /= n;
                 sz /= n;
-                t->unk_10(sx, sy, sz);
+                t->hitEffect(sx, sy, sz);
             }
             return 1;
         }
@@ -493,8 +493,8 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
         res = func_08011398(o, a);
 
         if (res == 1) {
-            if (t->unk_10 != 0) {
-                t->unk_10(o->unk_004, o->unk_008, o->unk_00C);
+            if (t->hitEffect != 0) {
+                t->hitEffect(o->unk_004, o->unk_008, o->unk_00C);
             }
         }
         return res;
