@@ -689,7 +689,8 @@ void func_08002F50(void) {
     s32 sinIndex;
     u16 palette;
     ObjTiles* tiles;
-    u16 flip;
+    u32 flip;
+    u32 flags;
 
     if (gSpriteWork->unk_2BAE != 0) {
         return;
@@ -751,13 +752,15 @@ void func_08002F50(void) {
                     xx = (s32)((u32)affine->sx * x);
                     yy = (s32)((u32)affine->sy * y);
                 }
-                x = (s16)(xx >> 8) - ((s16)width >> 1);
-                y = (s16)(yy >> 8) - ((s16)height >> 1);
+                x = xx >> 8;
+                y = yy >> 8;
+                x -= (s16)width >> 1;
+                y -= (s16)height >> 1;
                 if (affine->unk_0A != 0) {
                     x -= (s16)width >> 1;
                     y -= (s16)height >> 1;
-                    width *= 2;
-                    height *= 2;
+                    width <<= 1;
+                    height <<= 1;
                 }
                 if (affine->unk_0A != 0) {
                     attr0 |= 0x300;
@@ -766,19 +769,20 @@ void func_08002F50(void) {
                 }
                 attr1 |= affine->index << 9;
             } else {
-                flip = entry->unk_16 & 2;
+                flags = entry->unk_16;
+                flip = flags & 2;
                 if (flip) {
                     attr1 ^= flip << 12;
                     y = -y - height;
                 }
-                flip = entry->unk_16 & 1;
+                flip = flags & 1;
                 if (flip) {
                     attr1 ^= flip << 12;
                     x = -x - width;
                 }
             }
-            x += entry->unk_10;
-            y += entry->unk_12;
+            x += (s16)entry->unk_10;
+            y += (s16)entry->unk_12;
             if (x > 239 || x <= -(s16)width || y > 159 || y <= -(s16)height) {
                 if (((ObjTiles*)entry->unk_00)->unk_24 != 0) {
                     tileOffset += GetObjTileCount(attr0, attr1);
