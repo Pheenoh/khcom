@@ -20546,7 +20546,7 @@ void func_080966B4(void* a, s32 b, s32 c, s32 d) {
     args[0] = b;
     args[1] = c;
     args[2] = d;
-    args[8] = func_08096D48(gGameState.unk_00C[0], 0);
+    args[8] = func_08096D48(gGameState.world, 0);
     func_08096700(a, args);
 }
 void func_080966E4(void* a, s32 b, s32 c, s32 d, s32 e) {
@@ -20579,10 +20579,10 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
             args[8] = 2;
             func_0809797C(w, args);
             gGameState.unk_17A |= 0x20;
-        } else if ((s8)gGameState.unk_00C[2] == 0) {
+        } else if ((s8)gGameState.floor == 0) {
             if (func_08093B58() == 0) {
                 *(PrizeCardArgs*)args = w->unk_18;
-                args[8] = func_08096D0C(gGameState.unk_00C[0], 1);
+                args[8] = func_08096D0C(gGameState.world, 1);
 
                 if (args[8] != 0xFFFF) {
                     func_0809797C(w, args);
@@ -20591,7 +20591,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                 }
             } else {
                 *(PrizeCardArgs*)args = w->unk_18;
-                args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                args[8] = func_08096D48(gGameState.world, 1);
 
                 if (args[8] != 0xFFFF) {
                     func_0809797C(w, args);
@@ -20617,7 +20617,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
 #endif
                     } else {
                         *(PrizeCardArgs*)args = w->unk_18;
-                        args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                        args[8] = func_08096D48(gGameState.world, 1);
                     }
 
                     if (args[8] != 0xFFFF) {
@@ -20627,7 +20627,7 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                     }
                 } else {
                     *(PrizeCardArgs*)args = w->unk_18;
-                    args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                    args[8] = func_08096D48(gGameState.world, 1);
 
                     if (args[8] != 0xFFFF) {
                         func_0809797C(w, args);
@@ -20653,23 +20653,23 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                 if ((gGameState.flags & 8) == 0) {
                     if (func_08093C28(0xFB) == 0) {
                         if (func_080E924C() == 0) {
-                            if (gUnk_0903612C[gGameState.unk_00C[0]] != 0) {
-                                if (GetRandom() % 100 <= gUnk_0903612C[gGameState.unk_00C[0]]) {
+                            if (gUnk_0903612C[gGameState.world] != 0) {
+                                if (GetRandom() % 100 <= gUnk_0903612C[gGameState.world]) {
                                     args[8] = 0xFB;
                                 } else {
-                                    args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                                    args[8] = func_08096D48(gGameState.world, 1);
                                 }
                             } else {
-                                args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                                args[8] = func_08096D48(gGameState.world, 1);
                             }
                         } else {
-                            args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                            args[8] = func_08096D48(gGameState.world, 1);
                         }
                     } else {
-                        args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                        args[8] = func_08096D48(gGameState.world, 1);
                     }
                 } else {
-                    args[8] = func_08096D48(gGameState.unk_00C[0], 1);
+                    args[8] = func_08096D48(gGameState.world, 1);
                 }
 
                 if (args[8] != 0xFFFF) {
@@ -22568,7 +22568,7 @@ u8 PrizeBoss_1(UnkStruct_08099928* w, void* a) {
         m4aSongNumStart(106);
         func_08084458(*(u16*)&w->unk_B8);
         if (gGameState.flags & 8) {
-            _08085D04(gGameState.unk_00C[0]);
+            _08085D04(gGameState.world);
         }
         SetTaskUpdate(a, (void*)func_08099A18);
         WorldToScreen(&x, &y, w->unk_A8, w->unk_AC, w->unk_B0);
@@ -25581,10 +25581,10 @@ void Level_Up_0(UnkStruct_0809F730* w) {
     w->unk_7B0 = 0;
     w->unk_7C7 = 0;
     func_080A096C(gGameState.level, w->unk_77E);
-    func_080A096C(gGameState.unk_0F8, w->unk_784);
+    func_080A096C(gGameState.maxHp, w->unk_784);
     func_080A09C0((u16)gGameState.cp, w->unk_78C);
-    func_080A096C(gGameState.unk_0FC, w->unk_794);
-    func_080A0944(gGameState.unk_0FE, w->unk_79C);
+    func_080A096C(gGameState.dp, w->unk_794);
+    func_080A0944(gGameState.ap, w->unk_79C);
     w->unk_7A4 = 0;
     w->unk_7C2[1] = 0;
     w->unk_7C2[0] = 0;
@@ -25938,7 +25938,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                     }
                     w->unk_7BD = 1;
                     if (!(gGameState.flags & 8)) {
-                        if ((s16)gGameState.unk_0F8 > 559) {
+                        if ((s16)gGameState.maxHp > 559) {
 #ifdef VERSION_EU
                             func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -25997,7 +25997,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                         w->unk_6E0 = LoadObjPalette(gUnk_09613F98, 32);
                         w->unk_6E4 = LoadObjPalette(gUnk_09613FB8, 32);
                     } else {
-                        if ((s16)gGameState.unk_0F8 > 559) {
+                        if ((s16)gGameState.maxHp > 559) {
 #ifdef VERSION_EU
                             func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26013,7 +26013,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7B7[3] = func_08065B6C(gUnk_09EE78F0[3], w->text[3]);
 #endif
                         }
-                        if ((s16)gGameState.unk_0FE > 29) {
+                        if ((s16)gGameState.ap > 29) {
 #ifdef VERSION_EU
                             func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26037,7 +26037,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7B7[4] = func_08065B6C(gUnk_09EE78F0[4], w->text[4]);
 #endif
                         }
-                        if ((s16)gGameState.unk_0FC > 299) {
+                        if ((s16)gGameState.dp > 299) {
 #ifdef VERSION_EU
                             func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26299,10 +26299,10 @@ u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
                 }
                 break;
             }
-            func_080A096C(gGameState.unk_0F8, w->unk_784);
+            func_080A096C(gGameState.maxHp, w->unk_784);
             func_080A09C0((u16)gGameState.cp, w->unk_78C);
-            func_080A096C(gGameState.unk_0FC, w->unk_794);
-            func_080A0944(gGameState.unk_0FE, w->unk_79C);
+            func_080A096C(gGameState.dp, w->unk_794);
+            func_080A0944(gGameState.ap, w->unk_79C);
             w->unk_7C7 = 1;
         }
     }
@@ -26897,7 +26897,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
         }
         w->unk_7BD = 1;
         if (!(gGameState.flags & 8)) {
-            if ((s16)gGameState.unk_0F8 > 559) {
+            if ((s16)gGameState.maxHp > 559) {
 #ifdef VERSION_EU
                 func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26956,7 +26956,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
             w->unk_6E0 = LoadObjPalette(gUnk_09613F98, 32);
             w->unk_6E4 = LoadObjPalette(gUnk_09613FB8, 32);
         } else {
-            if ((s16)gGameState.unk_0F8 > 559) {
+            if ((s16)gGameState.maxHp > 559) {
 #ifdef VERSION_EU
                 func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26972,7 +26972,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7B7[3] = func_08065B6C(gUnk_09EE78F0[3], w->text[3]);
 #endif
             }
-            if ((s16)gGameState.unk_0FE > 29) {
+            if ((s16)gGameState.ap > 29) {
 #ifdef VERSION_EU
                 func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
@@ -26996,7 +26996,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7B7[4] = func_08065B6C(gUnk_09EE78F0[4], w->text[4]);
 #endif
             }
-            if ((s16)gGameState.unk_0FC > 299) {
+            if ((s16)gGameState.dp > 299) {
 #ifdef VERSION_EU
                 func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else

@@ -2,6 +2,7 @@
 #define GUARD_MODE_SIO_H
 
 #include "types.h"
+#include "game_state.h"
 #include "card_types.h"
 #include "text_types.h"
 #include "key.h"
@@ -171,30 +172,6 @@ typedef struct SioBtlCardgetWork {
     u8 unk_40[4];
 } SioBtlCardgetWork;
 
-typedef struct GameState {
-    u8 unk_00[8];
-    u32 flags;
-    u8 world;
-    u8 unk_0D;
-    u8 unk_0E[0x24];
-    u16 hp;
-    u8 unk_34[0xF8];
-    u64 unk_12C;
-    u8 unk_134[0xAC];
-    u16 unk_1E0;
-    u16 unk_1E2;
-    u8 unk_1E4;
-    u8 unk_1E5[3];
-    u64 unk_1E8;
-    u64 unk_1F0;
-    u16 unk_1F8;
-    u16 unk_1FA;
-    u8 unk_1FC;
-    u8 unk_1FD[3];
-    u64 unk_200;
-    u64 unk_208;
-} GameState;
-
 typedef struct ObjPalSlot {
     u8 unk_00[6];
     u16 unk_06;
@@ -318,7 +295,6 @@ extern s8 gUnk_0203C374;
 extern u16 gUnk_0203A9EC;
 extern u16 gUnk_0203A9F0;
 extern s8 gUnk_0203AA00;
-extern GameState gGameState;
 extern u8 gUnk_0203AAB0;
 extern s8 gUnk_0203A9E4;
 extern s8 gUnk_0203AB10;

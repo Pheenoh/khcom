@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_debug.h"
+#include "game_state.h"
 
 DebugWork* gDebugWork;
 ChkObjWork* gChkObjWork;
@@ -76,14 +77,6 @@ void mode_debug_0(void) {
 }
 
 #ifdef VERSION_EU
-typedef struct GameState {
-    u8 unk_000[0x17A];
-    s16 unk_17A;
-    u8 unk_17C[0x04];
-    u16 unk_180;
-} GameState;
-
-extern GameState gGameState;
 extern Mode gModeChkmov;
 extern Mode gModeStaffRoll;
 extern Mode gModeLang;

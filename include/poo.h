@@ -2,6 +2,7 @@
 #define GUARD_POO_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "key.h"
 #include "taskpool.h"
@@ -1091,20 +1092,6 @@ typedef struct PooRooWork {
     u16 unk_BA;
 } PooRooWork;
 
-typedef struct GameState {
-    u8 unk_00[0x08];
-    u32 flags;
-    u8 world;
-    u8 unk_0D;
-    s8 floor;
-    u8 unk_0F[0x23];
-    s16 unk_32;
-    u8 unk_34[0xC4];
-    u16 unk_F8;
-    u8 unk_FA[0x7A];
-    u32 unk_174;
-} GameState;
-
 typedef struct PooBgSet {
     void* unk_00;
     void* unk_04;
@@ -1121,7 +1108,6 @@ extern u16 gUnk_0203C3E0;
 extern u16 gUnk_0203C3E4;
 extern UnkStruct_0203C4B4* gUnk_0203C4B4;
 extern const s32 gUnk_096FDA74[];
-extern GameState gGameState;
 extern u16* gUnk_0203C504;
 extern u16* gUnk_0203C530;
 extern u16* gUnk_0203C4C0[];

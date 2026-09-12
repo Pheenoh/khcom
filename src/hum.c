@@ -8136,7 +8136,7 @@ void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
 void MakeSaveSystem(SaveFileLarge* save) {
     save->common.flags = gGameState.flags;
     save->common.unk_8E = gGameState.hp;
-    memcpy(save->common.unk_04, gGameState.unk_0F8, 0x88);
+    memcpy(save->common.unk_04, &gGameState.maxHp, 0x88);
     save->common.unk_8C = gGameState.unk_180;
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
@@ -8151,7 +8151,7 @@ void MakeSaveSystem(SaveFileLarge* save) {
 void MakeSaveFileLarge(SaveFileLarge* save) {
     save->common.flags = gGameState.flags;
     save->common.unk_8E = gGameState.hp;
-    memcpy(save->common.unk_04, gGameState.unk_0F8, 0x88);
+    memcpy(save->common.unk_04, &gGameState.maxHp, 0x88);
     save->common.unk_8C = gGameState.unk_180;
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
@@ -8178,7 +8178,7 @@ void MakeSaveFileLarge(SaveFileLarge* save) {
 void MakeSaveFileSmall(SaveFileSmall* save) {
     save->common.flags = gGameState.flags;
     save->common.unk_8E = gGameState.hp;
-    memcpy(save->common.unk_04, gGameState.unk_0F8, 0x88);
+    memcpy(save->common.unk_04, &gGameState.maxHp, 0x88);
     save->common.unk_8C = gGameState.unk_180;
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
@@ -8274,7 +8274,7 @@ void ApplySaveSystem(SaveFileLarge* save) {
     save->common.flags &= 0xFFFFF5DF;
     gGameState.flags = save->common.flags | t;
     gGameState.hp = save->common.unk_8E;
-    memcpy(gGameState.unk_0F8, save->common.unk_04, 0x88);
+    memcpy(&gGameState.maxHp, save->common.unk_04, 0x88);
     gGameState.unk_180 = save->common.unk_8C;
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
@@ -8293,7 +8293,7 @@ void ApplySaveFileLarge(SaveFileLarge* save) {
     save->common.flags &= 0xFFFFF5DF;
     gGameState.flags = save->common.flags | t;
     gGameState.hp = save->common.unk_8E;
-    memcpy(gGameState.unk_0F8, save->common.unk_04, 0x88);
+    memcpy(&gGameState.maxHp, save->common.unk_04, 0x88);
     gGameState.unk_180 = save->common.unk_8C;
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
@@ -8313,7 +8313,7 @@ void ApplySaveFileSmall(SaveFileSmall* save) {
     save->common.flags &= 0xFFFFF5DF;
     gGameState.flags = save->common.flags | t;
     gGameState.hp = save->common.unk_8E;
-    memcpy(gGameState.unk_0F8, save->common.unk_04, 0x88);
+    memcpy(&gGameState.maxHp, save->common.unk_04, 0x88);
     gGameState.unk_180 = save->common.unk_8C;
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;

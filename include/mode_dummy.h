@@ -2,34 +2,15 @@
 #define GUARD_MODE_DUMMY_H
 
 #include "types.h"
+#include "game_state.h"
 #include "key.h"
 #include "mode.h"
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C[0x26];
-    s16 hp;
-    u8 unk_034[0xC4];
-    s16 maxHp;
-    s16 cp;
-    s16 dp;
-    s16 ap;
-    s32 exp;
-    s32 nextExp;
-    u8 level;
-    u8 unk_109[0x6B];
-    s32 mooglePoints;
-    u8 unk_178[0x08];
-    u16 unk_180;
-} GameState;
-
 typedef struct DummyEntry {
     const char* name;
     const char* desc;
     u16 unk_08;
 } DummyEntry;
 
-extern GameState gGameState;
 extern u32 gFrameCounter;
 extern const DummyEntry gDummyEntries[];
 extern u8 gWhitePalette[];

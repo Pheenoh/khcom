@@ -2,6 +2,7 @@
 #define GUARD_BTL3_H
 
 #include "types.h"
+#include "game_state.h"
 #include "taskpool.h"
 #include "anim.h"
 typedef struct BtlWork {
@@ -84,13 +85,6 @@ typedef struct BtlWork {
     u16 unk_120;
     u8 unk_122[0xAE];
 } BtlWork;
-
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C[0x1AC];
-    u32 unk_1B8;
-} GameState;
 
 typedef struct BtlFormStep {
     void* unk_00;
@@ -218,7 +212,6 @@ typedef struct BtlAiWork {
 
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
-extern GameState gGameState;
 
 extern s16 gSineTable[];
 extern u8 gUnk_08901C8A[];

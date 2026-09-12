@@ -2,6 +2,7 @@
 #define GUARD_MSG_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "mode.h"
 #include "key.h"
@@ -119,17 +120,6 @@ typedef struct Ent02034A8C {
     u8 unk_25;
     u8 unk_26;
 } Ent02034A8C;
-
-typedef struct GameState {
-    u8 unk_00[8];
-    u32 flags;
-    u8 world;
-    u8 unk_0D;
-    u8 unk_0E[0x16E];
-    u16 unk_17C;
-    u8 unk_17E[2];
-    u16 unk_180;
-} GameState;
 
 typedef struct MsgFaceCtl {
     u8 unk_00;
@@ -521,7 +511,6 @@ extern u8 gUnk_09614618[];
 extern vu16 gIntrCheck;
 extern TaskPool gUnk_02034A60;
 extern u32 gUnk_02034A78;
-extern GameState gGameState;
 extern u16 gUnk_09033C98[];
 extern u16 gUnk_09033CA0[];
 extern s32 gUnk_09033CA8[];

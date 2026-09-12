@@ -2,6 +2,7 @@
 #define GUARD_MODE_CHKBTL_H
 
 #include "types.h"
+#include "game_state.h"
 #include "taskpool.h"
 #include "main.h"
 #include "mode.h"
@@ -43,20 +44,6 @@ typedef struct ChkBtlWorld {
     const char* name;
 } ChkBtlWorld;
 
-typedef struct GameState {
-    u8 unk_00[0x08];
-    u32 flags;
-    u8 world;
-    u8 unk_0D;
-    u8 floor;
-    u8 unk_0F[0x23];
-    u16 hp;
-    u8 unk_34[0xC4];
-    u16 maxHp;
-    u16 cp;
-    u8 unk_FC[0x80];
-    u16 unk_17C;
-} GameState;
 void func_08006120(s32 a, s32 b);
 void func_0805FA8C(s32 a, s32 b, s32 c);
 void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
@@ -76,7 +63,6 @@ extern BtlWork* gBtlWork;
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
-extern GameState gGameState;
 extern u32 gUnk_03006C10;
 extern u32 gFrameCounter;
 extern const ChkBtlEntry gChkBtlEntries[];

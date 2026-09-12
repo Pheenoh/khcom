@@ -2,6 +2,7 @@
 #define GUARD_BOS6_H
 
 #include "types.h"
+#include "game_state.h"
 #include "taskpool.h"
 #include "anim.h"
 
@@ -554,12 +555,6 @@ s32 func_0810CC14(s32 a, s32 b, s32 c, s32 d, s32 e);
 u8 func_0810AE74(PcWork* work, s32 arg);
 u8 func_0810D304(BosLstWork* work, s32 idx);
 
-typedef struct GameState {
-    u8 unk_000[0x8];
-    u32 flags;
-} GameState;
-
-extern GameState gGameState;
 extern s32 gUnk_09A4D154[];
 
 u16 GetRandom(void);

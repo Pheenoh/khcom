@@ -2,6 +2,7 @@
 #define GUARD_BATTLE_H
 
 #include "types.h"
+#include "game_state.h"
 #include "m4a.h"
 #include "gba/syscall.h"
 #include "malloc.h"
@@ -134,48 +135,6 @@ typedef struct BtlCardWork {
     u16 unk_0F8;
     u8 unk_0FA[0x02];
 } BtlCardWork;
-
-typedef struct GameState {
-    u8 unk_000;
-    u8 unk_001[0x03];
-    u32 randomSeed;
-    u32 flags;
-    u8 world;
-    u8 unk_00D;
-    s8 unk_00E;
-    u8 unk_00F;
-    u16 unk_010;
-    u8 unk_012[0x12];
-    u8 unk_024;
-    u8 unk_025[0x0D];
-    u16 hp;
-    u8 unk_034[0xC4];
-    s16 maxHp;
-    s16 cp;
-    s16 dp;
-    s16 ap;
-    u8 unk_100[0x0C];
-    u64 unk_10C;
-    u64 unk_114;
-    u64 unk_11C;
-    u64 unk_124;
-    u64 unk_12C;
-    u64 unk_134[8];
-    u8 unk_174[0x04];
-    u16 unk_178;
-    u16 unk_17A;
-    u16 unk_17C;
-    u8 unk_17E[0x02];
-    u16 unk_180;
-    u8 unk_182[0x36];
-    u32 unk_1B8;
-    u8 fileSummaries[0x2C];
-    u64 unk_1E8;
-    u64 unk_1F0;
-    u64 unk_1F8;
-    u64 unk_200;
-    u64 unk_208;
-} GameState;
 
 typedef struct EmyKind {
     u32 unk_00;
@@ -440,7 +399,6 @@ extern TaskDesc gTaskDescEmyTrumpH;
 extern TaskDesc gTaskDescEmyTrumpS;
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
-extern GameState gGameState;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern u32 gUnk_03006C10;
 extern const s16 gSineTable[];

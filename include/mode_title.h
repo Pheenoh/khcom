@@ -2,6 +2,7 @@
 #define GUARD_MODE_TITLE_H
 
 #include "types.h"
+#include "game_state.h"
 #include "taskpool.h"
 #include "title_types.h"
 #include "intr.h"
@@ -13,12 +14,6 @@
 #define REG_IE (*(vu16*)0x04000200)
 #define REG_IME (*(vu16*)0x04000208)
 
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-} GameState;
-
-extern GameState gGameState;
 extern s32 gTitleBgScale;
 extern s32 gTitleBgX;
 extern s32 gTitleBgY;

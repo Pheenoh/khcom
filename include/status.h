@@ -2,17 +2,13 @@
 #define GUARD_STATUS_H
 
 #include "types.h"
+#include "game_state.h"
 #include "text_types.h"
 #include "taskpool.h"
 #include "main.h"
 #include "engine.h"
 #include "key.h"
 #include "m4a.h"
-
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-} GameState;
 
 typedef struct UnkStruct_08F7CF18 {
     u32 unk_00;
@@ -279,7 +275,6 @@ typedef struct StatusStocklistWork {
     u8 unk_4C9[3];
 } StatusStocklistWork;
 
-extern GameState gGameState;
 extern s32 gUnk_0203C550;
 
 extern TaskDesc gTaskDescStatusTab;

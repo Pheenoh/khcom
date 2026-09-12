@@ -2,6 +2,7 @@
 #define GUARD_BOS2_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
 #include "game.h"
@@ -806,12 +807,6 @@ extern u8 gTaskDescBosJfMajin[];
 extern s16 gUnk_0203ACB0;
 extern s16 gUnk_0203ACB4;
 
-typedef struct GameState {
-    u8 unk_000[0x8];
-    u32 flags;
-} GameState;
-
-extern GameState gGameState;
 extern u8 gUnk_08F69BC4[];
 extern s16 gUnk_0961A860[];
 extern u8 gTaskDescBosDsdCircle[];

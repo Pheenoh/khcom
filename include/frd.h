@@ -2,14 +2,9 @@
 #define GUARD_FRD_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
-
-typedef struct GameState {
-    u8 unk_000[0x0C];
-    u8 world;
-    u8 unk_00D[0x03];
-} GameState;
 
 typedef struct FrdArgs {
     u16 unk_00;
@@ -225,7 +220,6 @@ typedef struct FrdBeastWork {
     s32 unk_15C;
 } FrdBeastWork;
 
-extern GameState gGameState;
 extern BtlWork* gBtlWork;
 extern BtlWork* gUnk_02039B9C;
 

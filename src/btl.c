@@ -558,7 +558,7 @@ void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
         }
 
         e->unk_34 = 0;
-        e->unk_30 = gGameState.unk_0FE;
+        e->unk_30 = gGameState.ap;
         e->maxHp = gGameState.maxHp;
         e->hp = gGameState.hp;
 
@@ -6591,7 +6591,7 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
         }
 
         e->unk_34 = 0;
-        e->unk_30 = gGameState.unk_0FE;
+        e->unk_30 = gGameState.ap;
         e->maxHp = gGameState.maxHp;
         e->hp = gGameState.hp;
 

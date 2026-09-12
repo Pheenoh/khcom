@@ -2,6 +2,7 @@
 #define GUARD_MODE_SIO2_H
 
 #include "types.h"
+#include "game_state.h"
 #include "taskpool.h"
 #include "main.h"
 #include "mode.h"
@@ -24,11 +25,6 @@ typedef struct PoohPrizeArgs {
     s32 unk_10;
     u16 unk_14;
 } PoohPrizeArgs;
-typedef struct GameState {
-    u8 unk_00[0x0C];
-    u8 world;
-} GameState;
-
 typedef struct CharaLinkData {
     u16 unk_00;
     u16 unk_02;
@@ -100,7 +96,6 @@ typedef struct PoohWork {
 } PoohWork;
 
 extern u32 gUnk_02034DAC;
-extern GameState gGameState;
 extern u8 gUnk_0203A9E4;
 extern CharaLinkData gUnk_0203AAC0;
 extern s8 gUnk_0203C3C4;
