@@ -54,7 +54,6 @@ void func_0800EEBC(Actor* p, SprObj* s) {
     DrawSprite(x, y, s->gfx, s->tiles, s->palette, affine, attr, prio);
 }
 
-#ifdef NON_MATCHING
 void func_0800EFE8(Actor* work) {
     s16 x;
     s16 y;
@@ -89,13 +88,14 @@ void func_0800EFE8(Actor* work) {
         }
     } else {
         if (c->unk_034 & 4) {
-            sx = gBtlWork->unk_024 * work->unk_168 >> 8;
+            sx = (gBtlWork->unk_024 * work->unk_168 >> 8);
             g = gBtlWork->unk_024;
+            sy = g * work->unk_16C >> 8;
         } else {
             sx = -(gBtlWork->unk_024 * work->unk_168 >> 8);
             g = gBtlWork->unk_024;
+            sy = g * work->unk_16C >> 8;
         }
-        sy = g * work->unk_16C >> 8;
     }
 
     if (sy == 0x100 && sx == 0x100) {
@@ -128,9 +128,6 @@ void func_0800EFE8(Actor* work) {
     func_0800EEBC(work, work->unk_10);
     TaskPoolDraw(&work->unk_2C);
 }
-#else
-INCLUDE_ASM("btl_actor/func_0800EFE8.s");
-#endif
 void func_0800F230(void) {
     Collider* c = gUnk_02039B9C->unk_07C;
     u8 keys;
