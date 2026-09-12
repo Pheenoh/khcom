@@ -25041,7 +25041,6 @@ void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a) {
 #else
 INCLUDE_ASM("card/HCEffectName_0.s");
 #endif
-#ifndef VERSION_EU
 u8 HCEffectName_1(UnkStruct_0809DF7C* w, void* a) {
     u8 done;
     s32 div;
@@ -25050,6 +25049,9 @@ u8 HCEffectName_1(UnkStruct_0809DF7C* w, void* a) {
     done = func_0809DE18((u8*)w);
 
     if (done != 0) {
+#ifdef VERSION_EU
+        func_0806BA0C((s16)gBtlWork->unk_0F8, &w->unk_22);
+#endif
         SetTaskUpdate(a, (void*)func_0809DE30);
         return 1;
     }
@@ -25128,9 +25130,6 @@ u8 HCEffectName_1(UnkStruct_0809DF7C* w, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/HCEffectName_1.s");
-#endif
 u8 func_0809DE18(u8* p) {
     if (p[25] != 1) {
         if (p[25] != 2) {
