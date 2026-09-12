@@ -186,7 +186,7 @@ void InitSystem(void) {
     SeedRandom(0x12D687);
     InitDisplayRegs();
     SaveInitSram();
-    func_08116CEC();
+    ScanlineDmaReset();
 #ifdef VERSION_EU
     ModeInit(flag);
 #else
@@ -253,7 +253,7 @@ void VBlankIntr(void) {
         ModeFlushDisplay();
     }
     ModeRunVBlankCallbacks();
-    func_08116D28();
+    ScanlineDmaUpdate();
     gVBlankEndVCount = REG_VCOUNT;
     gFrameSyncFlags &= 0xFFFB;
     if (!(gFrameSyncFlags & 1)) {
@@ -333,7 +333,7 @@ void func_08000714(void) {
     }
     gFrameSyncFlags |= 2;
     REG_IME = 0;
-    func_08116EF0();
+    BlockAudioVBlank();
     REG_IME = 1;
     gIntrCheck |= 1;
 
@@ -341,7 +341,7 @@ void func_08000714(void) {
         ModeFlushDisplay();
     }
     ModeRunVBlankCallbacks();
-    func_08116D28();
+    ScanlineDmaUpdate();
     gVBlankEndVCount = REG_VCOUNT;
     gFrameSyncFlags &= 0xFFFB;
     gFrameSyncFlags &= 0xFFFD;

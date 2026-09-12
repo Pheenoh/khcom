@@ -348,7 +348,7 @@ void func_08117E44(s32 p) {
     }
 }
 
-void func_08117F5C(u8* src, s32* a1, s32 dst) {
+void DecodeAudioBlock(u8* src, s32* a1, s32 dst) {
     u8** p = &gUnk_02038628;
     s32 i;
 
@@ -363,7 +363,7 @@ void func_08117F5C(u8* src, s32* a1, s32 dst) {
     }
 }
 
-s32 func_08117F9C(void) {
+s32 PeekAudioBits8(void) {
     if (gUnk_02038630 < 8) {
         ShiftInByte();
         gUnk_02038630 += 8;
