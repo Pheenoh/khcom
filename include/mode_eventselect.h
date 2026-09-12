@@ -2,6 +2,7 @@
 #define GUARD_MODE_EVENTSELECT_H
 
 #include "types.h"
+#include "listpool.h"
 #include "key.h"
 #include "taskpool.h"
 #include "gba/syscall.h"
@@ -190,8 +191,6 @@ u16 func_080787B8(CardBattleWork* w, u8 n);
 void func_0807B668(UnkStruct_02039DD4* p);
 void func_0807E23C(void);
 void SetTaskUpdate(u8* p, u32 v);
-UnkStruct_02034AAC* ListPoolFirst(void* p);
-UnkStruct_02034AAC* ListPoolNext(void* p);
 s32 func_08076F80(UnkStruct_08080268* w, u8* task);
 s32 func_08077F44(UnkStruct_08080268* w, u8* task);
 void func_0807682C(UnkStruct_08080268* w, u8 slot);

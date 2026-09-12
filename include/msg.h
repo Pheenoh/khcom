@@ -2,6 +2,7 @@
 #define GUARD_MSG_H
 
 #include "types.h"
+#include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
@@ -706,7 +707,6 @@ void LoadPalette(void* src, void* dst, s32 size);
 void func_0801CD98(void* pool, void* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
 s32 func_0810B350(void* p);
 void func_0810C2C4(void* p);
-Ent0806E7A8* ListPoolFirst(ListNode* node);
 void EvtObjSetPos(void* obj, s32 a, s32 b, s32 c);
 void func_08073E34(Work08073E34* p, u8 a, u8 b, u8 c);
 void func_080746D8(void);

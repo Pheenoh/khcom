@@ -2,6 +2,7 @@
 #define GUARD_BOS2_H
 
 #include "types.h"
+#include "listpool.h"
 #include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
@@ -998,8 +999,6 @@ void func_0802F1E8(void);
 void func_0801801C(s32 a, s32 b, s32 c, s32 d);
 void func_080C2FD8(DsdMainWork* work);
 void func_080C3574(DsdMainWork* work);
-BtlObj* ListPoolFirst(void* pool);
-BtlObj* ListPoolNext(void* node);
 void func_0801AF4C(BosSub* a);
 void func_0801B008(void);
 u8 func_080C69B4(void);

@@ -82,7 +82,8 @@ typedef struct BtlObj {
     s32 unk_0F0;
     s32 unk_0F4;
     s32 unk_0F8;
-    u8 unk_0FC[0x08];
+    s32 unk_0FC;
+    s32 unk_100;
     s16 unk_104;
     s16 unk_106;
     s32 unk_108;

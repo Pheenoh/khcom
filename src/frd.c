@@ -6,7 +6,7 @@ extern u32 gLanguage;
 #endif
 
 void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
 
@@ -30,17 +30,17 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
 
     if (work->unk_014->unk_034 & 4) {
         work->unk_158 = work->unk_014->unk_004 - 0x3000;
-        body->x = (gBtlWork->unk_0DC + 0x30) << 8;
-        body->flags = 4;
+        body->unk_004 = (gBtlWork->unk_0DC + 0x30) << 8;
+        body->unk_034 = 4;
     } else {
         work->unk_158 = work->unk_014->unk_004 + 0x3000;
-        body->x = (gBtlWork->unk_0DA - 0x30) << 8;
-        body->flags = 0;
+        body->unk_004 = (gBtlWork->unk_0DA - 0x30) << 8;
+        body->unk_034 = 0;
     }
 
-    body->y = work->unk_014->unk_008;
-    body->z = -0x5000;
-    body->unk_10 = 0;
+    body->unk_008 = work->unk_014->unk_008;
+    body->unk_00C = -0x5000;
+    body->unk_010 = 0;
     work->palette = LoadObjPalette(gUnk_09617C58, 32);
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
@@ -94,7 +94,7 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
 }
 
 u8 task_frd_donald_1(FrdDonaldWork* work) {
-    FrdBody* body = &work->unk_020;
+    BtlObj* body = &work->unk_020;
     BtlWork* owner;
     BtlObj* target;
     s32 angle;
@@ -112,8 +112,8 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             func_08019068(gUnk_0813EB8C, &work->anim, 2, 0, work->tiles);
             work->unk_14E++;
         }
-        body->x += (work->unk_158 - body->x) >> 4;
-        func_0801A8A4(&body->x, &body->y, -16, 0);
+        body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
+        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
         if (work->unk_14D == 3) func_08045494(body, 0, 8, 8);
         if (func_0804544C(work)) {
             work->unk_14E = 0;
@@ -185,12 +185,12 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
     case 3:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813EB8C, &work->anim, 2, 0, work->tiles);
-            if (!(body->flags & 4)) work->unk_158 = (gBtlWork->unk_0DA - 64) * 256;
+            if (!(body->unk_034 & 4)) work->unk_158 = (gBtlWork->unk_0DA - 64) * 256;
             else work->unk_158 = (gBtlWork->unk_0DC + 64) * 256;
             work->unk_154 = -0x500;
             work->unk_150 = 30;
         }
-        ApproachValue(&body->x, work->unk_158, work->unk_150);
+        ApproachValue(&body->unk_004, work->unk_158, work->unk_150);
         if (work->unk_14D == 3) func_08045494(body, 0, 8, 8);
         func_0804544C(work);
         if (work->unk_150 <= 0) {
@@ -202,20 +202,20 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         break;
     case 8:
         if (work->unk_14E == 0) {
-            if (body->flags & 4) angle = GetRandom() % 2 ? 0xAD : 0xD3;
+            if (body->unk_034 & 4) angle = GetRandom() % 2 ? 0xAD : 0xD3;
             else angle = GetRandom() % 2 ? 0x53 : 0x2D;
             work->unk_158 = gSineTable[angle] * 3;
             work->unk_15C = -gSineTable[angle + 64] * 3;
         }
         if (work->unk_15C > 0) func_08019068(gUnk_0813EB8C, &work->anim, 4, 1, work->tiles);
         else func_08019068(gUnk_0813EB8C, &work->anim, 5, 1, work->tiles);
-        if (work->unk_158 < 0) body->flags |= 4;
-        else body->flags &= ~4ULL;
-        body->x += work->unk_158;
-        body->y += work->unk_15C;
+        if (work->unk_158 < 0) body->unk_034 |= 4;
+        else body->unk_034 &= ~4ULL;
+        body->unk_004 += work->unk_158;
+        body->unk_008 += work->unk_15C;
         func_0804544C(work);
         func_08045494(body, 1, 2, 8);
-        switch (func_0801A8A4(&body->x, &body->y, 0, 0)) {
+        switch (func_0801A8A4(&body->unk_004, &body->unk_008, 0, 0)) {
         case 1:
         case 2:
             work->unk_158 = -work->unk_158;
@@ -237,8 +237,8 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
                 func_08019068(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
-                    if (target->unk_004 < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (target->unk_004 < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 }
             }
             if (work->unk_14E == 40) {
@@ -246,27 +246,27 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
                     x = target->unk_004;
                     y = target->unk_008;
                     z = target->unk_00C - target->unk_0A2 * 256;
-                    if (x < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (x < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 } else {
-                    if (body->flags & 4) x = body->x - 0xC800;
-                    else x = body->x + 0xC800;
-                    y = body->y;
-                    z = body->z - 0x800;
+                    if (body->unk_034 & 4) x = body->unk_004 - 0xC800;
+                    else x = body->unk_004 + 0xC800;
+                    y = body->unk_008;
+                    z = body->unk_00C - 0x800;
                 }
                 switch (work->unk_14D) {
                 case 0:
-                    if (body->flags & 4) func_08012E44(0, body->x - 0x5000, body->y, body->z - 0x800, x, y, z, 1, 123);
-                    else func_08012E44(0, body->x + 0x5000, body->y, body->z - 0x800, x, y, z, 0, 123);
+                    if (body->unk_034 & 4) func_08012E44(0, body->unk_004 - 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 1, 123);
+                    else func_08012E44(0, body->unk_004 + 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 0, 123);
                     break;
                 case 1:
-                    if (body->flags & 4) func_08012E44(1, body->x - 0x5000, body->y, body->z - 0x800, x, y, z, 1, 124);
-                    else func_08012E44(1, body->x + 0x5000, body->y, body->z - 0x800, x, y, z, 0, 124);
+                    if (body->unk_034 & 4) func_08012E44(1, body->unk_004 - 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 1, 124);
+                    else func_08012E44(1, body->unk_004 + 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 0, 124);
                     break;
                 case 2:
                 default:
-                    if (body->flags & 4) func_08012E44(2, body->x - 0x5000, body->y, body->z - 0x800, x, y, z, 1, 125);
-                    else func_08012E44(2, body->x + 0x5000, body->y, body->z - 0x800, x, y, z, 0, 125);
+                    if (body->unk_034 & 4) func_08012E44(2, body->unk_004 - 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 1, 125);
+                    else func_08012E44(2, body->unk_004 + 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 0, 125);
                     break;
                 }
             }
@@ -288,8 +288,8 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
                 func_08019068(gUnk_0813EB8C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
-                    if (target->unk_004 < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (target->unk_004 < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 }
             }
             if (work->unk_14E == 40) {
@@ -297,27 +297,27 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
                     x = target->unk_004;
                     y = target->unk_008;
                     z = target->unk_00C - target->unk_0A2 * 256;
-                    if (x < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (x < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 } else {
-                    if (body->flags & 4) x = body->x - 0x6400;
-                    else x = body->x + 0x6400;
-                    y = body->y;
-                    z = body->z - 0x800;
+                    if (body->unk_034 & 4) x = body->unk_004 - 0x6400;
+                    else x = body->unk_004 + 0x6400;
+                    y = body->unk_008;
+                    z = body->unk_00C - 0x800;
                 }
                 switch (work->unk_14D) {
                 case 0:
-                    if (body->flags & 4) func_08013308(0, body->x - 0x5000, body->y, body->z - 0x800, x, y, z, 1, 126);
-                    else func_08013308(0, body->x + 0x5000, body->y, body->z - 0x800, x, y, z, 0, 126);
+                    if (body->unk_034 & 4) func_08013308(0, body->unk_004 - 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 1, 126);
+                    else func_08013308(0, body->unk_004 + 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 0, 126);
                     break;
                 case 1:
-                    if (body->flags & 4) func_08013308(1, body->x - 0x5000, body->y, body->z - 0x800, x, y, z, 1, 127);
-                    else func_08013308(1, body->x + 0x5000, body->y, body->z - 0x800, x, y, z, 0, 127);
+                    if (body->unk_034 & 4) func_08013308(1, body->unk_004 - 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 1, 127);
+                    else func_08013308(1, body->unk_004 + 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 0, 127);
                     break;
                 case 2:
                 default:
-                    if (body->flags & 4) func_08013308(2, body->x - 0x5000, body->y, body->z - 0x800, x, y, z, 1, 128);
-                    else func_08013308(2, body->x + 0x5000, body->y, body->z - 0x800, x, y, z, 0, 128);
+                    if (body->unk_034 & 4) func_08013308(2, body->unk_004 - 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 1, 128);
+                    else func_08013308(2, body->unk_004 + 0x5000, body->unk_008, body->unk_00C - 0x800, x, y, z, 0, 128);
                     break;
                 }
             }
@@ -337,8 +337,8 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             func_08019068(gUnk_0813EB8C, &work->anim, 1, 0, work->tiles);
             AnimReset(&work->anim);
             if (target != 0) {
-                if (target->unk_004 < body->x) body->flags |= 4;
-                else body->flags &= ~4ULL;
+                if (target->unk_004 < body->unk_004) body->unk_034 |= 4;
+                else body->unk_034 &= ~4ULL;
             }
         }
         if (work->unk_14E == 40) {
@@ -351,20 +351,20 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
                         y=target->unk_008;
                         z=target->unk_010;
                     } else {
-                        if (body->flags & 4) x=body->x-0x5000;
-                        else x=body->x+0x5000;
-                        y=body->y;
+                        if (body->unk_034 & 4) x=body->unk_004-0x5000;
+                        else x=body->unk_004+0x5000;
+                        y=body->unk_008;
                         z=0;
                     }
-                    func_08015834(0, body->x, body->y, body->z-0x4000, x,y,z,129);
+                    func_08015834(0, body->unk_004, body->unk_008, body->unk_00C-0x4000, x,y,z,129);
                     break;
                 }
             case 1:
-                func_08013CB4(1,body->x,body->y,body->z-0x4000,body->unk_10,130);
+                func_08013CB4(1,body->unk_004,body->unk_008,body->unk_00C-0x4000,body->unk_010,130);
                 break;
             case 2:
             default:
-                func_08013CB4(2,body->x,body->y,body->z-0x4000,body->unk_10,131);
+                func_08013CB4(2,body->unk_004,body->unk_008,body->unk_00C-0x4000,body->unk_010,131);
                 break;
             }
         }
@@ -381,8 +381,8 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             if (work->unk_14E == 0) {
                 func_08019068(gUnk_0813EB8C,&work->anim,1,0,work->tiles);
                 AnimReset(&work->anim);
-                if (ally->unk_004 < body->x) body->flags |= 4;
-                else body->flags &= ~4ULL;
+                if (ally->unk_004 < body->unk_004) body->unk_034 |= 4;
+                else body->unk_034 &= ~4ULL;
             }
             if (work->unk_14E == 40) {
                 switch (work->unk_14D) {
@@ -447,7 +447,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
 }
 
 void task_frd_donald_2(FrdDonaldWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -458,9 +458,9 @@ void task_frd_donald_2(FrdDonaldWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256) {
@@ -472,7 +472,7 @@ void task_frd_donald_2(FrdDonaldWork* work) {
         sclY = gBtlWork->unk_024;
     }
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (gBtlWork->unk_024 == 256) {
         affine = 0;
@@ -483,8 +483,8 @@ void task_frd_donald_2(FrdDonaldWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
 
@@ -498,15 +498,15 @@ void task_frd_donald_3(FrdDonaldWork* work) {
 }
 
 u8 func_080465F0(FrdGoofyWork* work) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
-    body->z += work->unk_154;
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
+    body->unk_00C += work->unk_154;
     work->unk_154 += 0x33;
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
         work->unk_154 = 0;
         return 1;
     }
@@ -515,7 +515,7 @@ u8 func_080465F0(FrdGoofyWork* work) {
 }
 
 void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
 #ifdef VERSION_EU
@@ -548,17 +548,17 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
 
     if (work->unk_014->unk_034 & 4) {
         work->unk_158 = work->unk_014->unk_004 - 0x3000;
-        body->x = (gBtlWork->unk_0DC + 0x30) << 8;
-        body->flags = 4;
+        body->unk_004 = (gBtlWork->unk_0DC + 0x30) << 8;
+        body->unk_034 = 4;
     } else {
         work->unk_158 = work->unk_014->unk_004 + 0x3000;
-        body->x = (gBtlWork->unk_0DA - 0x30) << 8;
-        body->flags = 0;
+        body->unk_004 = (gBtlWork->unk_0DA - 0x30) << 8;
+        body->unk_034 = 0;
     }
 
-    body->y = work->unk_014->unk_008;
-    body->z = -0x5000;
-    body->unk_10 = 0;
+    body->unk_008 = work->unk_014->unk_008;
+    body->unk_00C = -0x5000;
+    body->unk_010 = 0;
     work->palette = LoadObjPalette(gUnk_08F68384, 32);
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
@@ -567,7 +567,7 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
 }
 
 u8 task_frd_goofy_1(FrdGoofyWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     BtlWork* obj;
     s32 t;
 
@@ -585,8 +585,8 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
             work->unk_14E++;
         }
 
-        body->x += (work->unk_158 - body->x) >> 4;
-        func_0801A8A4(&body->x, &body->y, -16, 0);
+        body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
+        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
 
         if (func_080465F0(work)) {
             work->unk_148 = 1;
@@ -631,7 +631,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
 
-            if (body->flags & 4) {
+            if (body->unk_034 & 4) {
                 work->unk_158 = (gBtlWork->unk_0DA - 0x40) << 8;
             } else {
                 work->unk_158 = (gBtlWork->unk_0DC + 0x40) << 8;
@@ -641,7 +641,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
             work->unk_150 = 30;
         }
 
-        ApproachValue(&body->x, work->unk_158, work->unk_150);
+        ApproachValue(&body->unk_004, work->unk_158, work->unk_150);
         func_080465F0(work);
 
         if (work->unk_150 <= 0) {
@@ -655,10 +655,10 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813EBFC, &work->anim, 2, 0, work->tiles);
 
-            if (body->flags & 4) {
-                work->unk_158 = body->x - 0x8500;
+            if (body->unk_034 & 4) {
+                work->unk_158 = body->unk_004 - 0x8500;
             } else {
-                work->unk_158 = body->x + 0x8500;
+                work->unk_158 = body->unk_004 + 0x8500;
             }
         }
 
@@ -667,16 +667,16 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         }
 
         if (work->unk_14E > 39) {
-            body->x += (work->unk_158 - body->x) >> 4;
-            body->y += (work->unk_15C - body->y) >> 4;
+            body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
+            body->unk_008 += (work->unk_15C - body->unk_008) >> 4;
 
-            if (body->flags & 4
-                    ? func_08011F78(work->unk_14D + 120, body->x - 0xF00, body->y, body->z, 0x1E, 0x0C, 0x30)
-                    : func_08011F78(work->unk_14D + 120, body->x + 0xF00, body->y, body->z, 0x1E, 0x0C, 0x30)) {
+            if (body->unk_034 & 4
+                    ? func_08011F78(work->unk_14D + 120, body->unk_004 - 0xF00, body->unk_008, body->unk_00C, 0x1E, 0x0C, 0x30)
+                    : func_08011F78(work->unk_14D + 120, body->unk_004 + 0xF00, body->unk_008, body->unk_00C, 0x1E, 0x0C, 0x30)) {
                 m4aSongNumStart(0x20A);
             }
 
-            func_0801A8A4(&body->x, &body->y, -16, 0);
+            func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
         }
 
         func_080465F0(work);
@@ -710,12 +710,12 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
 
         work->unk_158 = work->unk_014->unk_004 + (gSineTable[work->unk_160] << 6);
         work->unk_15C = work->unk_014->unk_008 - (gSineTable[work->unk_160 + 0x40] << 5);
-        body->x += (work->unk_158 - body->x) >> 3;
-        body->y += (work->unk_15C - body->y) >> 3;
-        func_0801A8A4(&body->x, &body->y, -16, 0);
+        body->unk_004 += (work->unk_158 - body->unk_004) >> 3;
+        body->unk_008 += (work->unk_15C - body->unk_008) >> 3;
+        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
         work->unk_160 += 4;
 
-        if (func_08011F78(0x7A, body->x, body->y, body->z, 0x23, 0x1C, 0x30)) {
+        if (func_08011F78(0x7A, body->unk_004, body->unk_008, body->unk_00C, 0x23, 0x1C, 0x30)) {
             m4aSongNumStart(0x20A);
         }
 
@@ -736,7 +736,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
 }
 
 void task_frd_goofy_2(FrdGoofyWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -747,9 +747,9 @@ void task_frd_goofy_2(FrdGoofyWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256) {
@@ -761,7 +761,7 @@ void task_frd_goofy_2(FrdGoofyWork* work) {
         sclY = gBtlWork->unk_024;
     }
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (gBtlWork->unk_024 == 256) {
         affine = 0;
@@ -772,8 +772,8 @@ void task_frd_goofy_2(FrdGoofyWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
 
@@ -787,7 +787,7 @@ void task_frd_goofy_3(FrdGoofyWork* work) {
 }
 
 void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
     m4aSongNumStart(0xBB);
@@ -809,17 +809,17 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     work->unk_14E = 0;
 
     if (work->unk_014->unk_034 & 4) {
-        body->x = (gBtlWork->unk_0DC + 0x30) << 8;
-        body->flags = 4;
+        body->unk_004 = (gBtlWork->unk_0DC + 0x30) << 8;
+        body->unk_034 = 4;
     } else {
-        body->x = (gBtlWork->unk_0DA - 0x30) << 8;
-        body->flags = 0;
+        body->unk_004 = (gBtlWork->unk_0DA - 0x30) << 8;
+        body->unk_034 = 0;
     }
 
-    body->y = work->unk_014->unk_008;
-    body->unk_10 = 0;
+    body->unk_008 = work->unk_014->unk_008;
+    body->unk_010 = 0;
     work->unk_154 = -0x1000;
-    body->z = -0x1000;
+    body->unk_00C = -0x1000;
     work->palette = LoadObjPalette(gUnk_09617DF8, 32);
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnk_0813EC5C, &work->anim, 1, 0, work->tiles);
@@ -844,7 +844,7 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
 }
 
 u8 task_frd_ariel_1(FrdArielWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     BtlWork* obj;
     s32 t;
 
@@ -861,17 +861,17 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
         return 0;
     }
 
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
 
     switch (work->unk_148) {
     case 0:
-        if (body->flags & 4) {
+        if (body->unk_034 & 4) {
             t = gBtlWork->unk_0DC - 0x30;
         } else {
             t = gBtlWork->unk_0DA + 0x30;
         }
 
-        body->x += ((t << 8) - body->x) >> 3;
+        body->unk_004 += ((t << 8) - body->unk_004) >> 3;
 
         if (work->unk_14E > 20) {
             work->unk_14E = 0;
@@ -899,10 +899,10 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
                 work->unk_150--;
             }
 
-            if (body->flags & 4) {
-                body->x -= work->unk_160;
+            if (body->unk_034 & 4) {
+                body->unk_004 -= work->unk_160;
             } else {
-                body->x += work->unk_160;
+                body->unk_004 += work->unk_160;
             }
             break;
         }
@@ -917,44 +917,44 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
     case 2:
         func_08019068(gUnk_0813EC5C, &work->anim, 0, 1, work->tiles);
 
-        if (body->flags & 4
-                ? func_08011F78(0x77, body->x, body->y, body->z, 0x10, 0x10, 0x10)
-                : func_08011F78(0x77, body->x, body->y, body->z, 0x10, 0x10, 0x10)) {
+        if (body->unk_034 & 4
+                ? func_08011F78(0x77, body->unk_004, body->unk_008, body->unk_00C, 0x10, 0x10, 0x10)
+                : func_08011F78(0x77, body->unk_004, body->unk_008, body->unk_00C, 0x10, 0x10, 0x10)) {
             m4aSongNumStart(0x250);
         }
 
-        if (body->flags & 4) {
-            body->x -= work->unk_15C;
+        if (body->unk_034 & 4) {
+            body->unk_004 -= work->unk_15C;
 
-            if (body->x < (gBtlWork->unk_0DA - 0x30) << 8) {
+            if (body->unk_004 < (gBtlWork->unk_0DA - 0x30) << 8) {
                 if (work->unk_158 == 0) {
                     return 0;
                 }
 
                 work->unk_158--;
-                body->flags &= 0xFFFFFFFFFFFFFFFB;
+                body->unk_034 &= 0xFFFFFFFFFFFFFFFB;
                 work->unk_14E = 0;
-                body->y = work->unk_014->unk_008;
+                body->unk_008 = work->unk_014->unk_008;
                 func_08019A30();
             }
         } else {
-            body->x += work->unk_15C;
+            body->unk_004 += work->unk_15C;
 
-            if (body->x > (gBtlWork->unk_0DC + 0x30) << 8) {
+            if (body->unk_004 > (gBtlWork->unk_0DC + 0x30) << 8) {
                 if (work->unk_158 == 0) {
                     return 0;
                 }
 
                 work->unk_158--;
-                body->flags |= 4;
+                body->unk_034 |= 4;
                 work->unk_14E = 0;
-                body->y = work->unk_014->unk_008;
+                body->unk_008 = work->unk_014->unk_008;
                 func_08019A30();
             }
         }
 
-        body->z = work->unk_154 + (gSineTable[((u16)work->unk_14E * 8) & 0xFF] << 3);
-        body->y += (work->unk_014->unk_008 - body->y) >> 4;
+        body->unk_00C = work->unk_154 + (gSineTable[((u16)work->unk_14E * 8) & 0xFF] << 3);
+        body->unk_008 += (work->unk_014->unk_008 - body->unk_008) >> 4;
 
         if (work->unk_14E == 20) {
             m4aSongNumStart(0xBE);
@@ -970,7 +970,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
 }
 
 void task_frd_ariel_2(FrdArielWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -981,9 +981,9 @@ void task_frd_ariel_2(FrdArielWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256) {
@@ -995,7 +995,7 @@ void task_frd_ariel_2(FrdArielWork* work) {
         sclY = gBtlWork->unk_024;
     }
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (gBtlWork->unk_024 == 256) {
         affine = 0;
@@ -1006,8 +1006,8 @@ void task_frd_ariel_2(FrdArielWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
 
@@ -1021,15 +1021,15 @@ void task_frd_ariel_3(FrdArielWork* work) {
 }
 
 u8 func_080474A8(FrdJackWork* work) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
-    body->z += work->unk_154;
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
+    body->unk_00C += work->unk_154;
     work->unk_154 += 0x33;
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
         work->unk_154 = 0;
         return 1;
     }
@@ -1038,7 +1038,7 @@ u8 func_080474A8(FrdJackWork* work) {
 }
 
 void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
     m4aSongNumStart(0xB8);
@@ -1063,17 +1063,17 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
 
     if (work->unk_014->unk_034 & 4) {
         work->unk_158 = work->unk_014->unk_004 - 0x3000;
-        body->x = (gBtlWork->unk_0DC + 0x30) << 8;
-        body->flags = 4;
+        body->unk_004 = (gBtlWork->unk_0DC + 0x30) << 8;
+        body->unk_034 = 4;
     } else {
         work->unk_158 = work->unk_014->unk_004 + 0x3000;
-        body->x = (gBtlWork->unk_0DA - 0x30) << 8;
-        body->flags = 0;
+        body->unk_004 = (gBtlWork->unk_0DA - 0x30) << 8;
+        body->unk_034 = 0;
     }
 
-    body->y = work->unk_014->unk_008;
-    body->z = -0x5000;
-    body->unk_10 = 0;
+    body->unk_008 = work->unk_014->unk_008;
+    body->unk_00C = -0x5000;
+    body->unk_010 = 0;
     work->unk_160 = 0;
     work->palette = LoadObjPalette(gUnk_09617DB8, 32);
     AnimInit(&work->anim, 0, 0);
@@ -1097,7 +1097,7 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
 }
 
 u8 task_frd_jack_1(FrdJackWork* work) {
-    FrdBody* body = &work->unk_020;
+    BtlObj* body = &work->unk_020;
     BtlWork* owner;
     BtlObj* target;
     if (gGameState.world != 6) return 0;
@@ -1115,8 +1115,8 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             func_08019068(gUnk_0813EC9C, &work->anim, 1, 0, work->tiles);
             work->unk_14E++;
         }
-        body->x += (work->unk_158 - body->x) >> 4;
-        func_0801A8A4(&body->x, &body->y, -16, 0);
+        body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
+        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
         if (func_080474A8(work)) {
             work->unk_148 = 1;
             work->unk_14E = 0;
@@ -1163,12 +1163,12 @@ u8 task_frd_jack_1(FrdJackWork* work) {
     case 3:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813EC9C, &work->anim, 3, 0, work->tiles);
-            if (!(body->flags & 4)) work->unk_158 = (gBtlWork->unk_0DA - 64) * 256;
+            if (!(body->unk_034 & 4)) work->unk_158 = (gBtlWork->unk_0DA - 64) * 256;
             else work->unk_158 = (gBtlWork->unk_0DC + 64) * 256;
             work->unk_154 = -0x500;
             work->unk_150 = 30;
         }
-        ApproachValue(&body->x, work->unk_158, work->unk_150);
+        ApproachValue(&body->unk_004, work->unk_158, work->unk_150);
         func_080474A8(work);
         if (work->unk_150 <= 0) return 0;
         work->unk_14E++;
@@ -1190,14 +1190,14 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             work->unk_15C = work->unk_014->unk_008;
             work->unk_154 = -0x500;
             work->unk_150 = 45;
-            if (work->unk_158 > body->x) {
-                if (body->flags & 4) {
+            if (work->unk_158 > body->unk_004) {
+                if (body->unk_034 & 4) {
                     work->unk_164 = 256;
                 } else {
                     work->unk_164 = -256;
                 }
             } else {
-                if (body->flags & 4) {
+                if (body->unk_034 & 4) {
                     work->unk_164 = -256;
                 } else {
                     work->unk_164 = 256;
@@ -1209,12 +1209,12 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         if (work->unk_154 > 0) func_08019068(gUnk_0813EC9C, &work->anim, 1, 0, work->tiles);
         else func_08019068(gUnk_0813EC9C, &work->anim, 3, 0, work->tiles);
         if (work->unk_150 > 0) {
-            func_0800592C(&body->x, work->unk_158, work->unk_150);
-            func_0800592C(&body->y, work->unk_15C, work->unk_150);
+            func_0800592C(&body->unk_004, work->unk_158, work->unk_150);
+            func_0800592C(&body->unk_008, work->unk_15C, work->unk_150);
             if (work->unk_150 <= 39) func_0800592C(&work->unk_160, work->unk_164, work->unk_150);
             work->unk_150--;
         }
-        if (body->z >= body->unk_10 && work->unk_150 <= 0) {
+        if (body->unk_00C >= body->unk_010 && work->unk_150 <= 0) {
             work->unk_14E = 0;
             work->unk_160 = 0;
             work->unk_148 = 10;
@@ -1251,8 +1251,8 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                 func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
-                    if (target->unk_004 < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (target->unk_004 < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 }
             }
             if (work->unk_14E == 44) {
@@ -1260,27 +1260,27 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                     x = target->unk_004;
                     y = target->unk_008;
                     z = target->unk_00C - target->unk_0A2 * 256;
-                    if (x < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (x < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 } else {
-                    if (body->flags & 4) x = body->x - 0xC800;
-                    else x = body->x + 0xC800;
-                    y = body->y;
-                    z = body->z - 0x1800;
+                    if (body->unk_034 & 4) x = body->unk_004 - 0xC800;
+                    else x = body->unk_004 + 0xC800;
+                    y = body->unk_008;
+                    z = body->unk_00C - 0x1800;
                 }
                 switch (work->unk_14D) {
                 case 0:
-                    if (body->flags & 4) func_08012E44(0, body->x - 0x4A00, body->y, body->z - 0x1800, x, y, z, 1, 133);
-                    else func_08012E44(0, body->x + 0x4A00, body->y, body->z - 0x1800, x, y, z, 0, 133);
+                    if (body->unk_034 & 4) func_08012E44(0, body->unk_004 - 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 133);
+                    else func_08012E44(0, body->unk_004 + 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 133);
                     break;
                 case 1:
-                    if (body->flags & 4) func_08012E44(1, body->x - 0x4A00, body->y, body->z - 0x1800, x, y, z, 1, 134);
-                    else func_08012E44(1, body->x + 0x4A00, body->y, body->z - 0x1800, x, y, z, 0, 134);
+                    if (body->unk_034 & 4) func_08012E44(1, body->unk_004 - 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 134);
+                    else func_08012E44(1, body->unk_004 + 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 134);
                     break;
                 case 2:
                 default:
-                    if (body->flags & 4) func_08012E44(2, body->x - 0x4A00, body->y, body->z - 0x1800, x, y, z, 1, 135);
-                    else func_08012E44(2, body->x + 0x4A00, body->y, body->z - 0x1800, x, y, z, 0, 135);
+                    if (body->unk_034 & 4) func_08012E44(2, body->unk_004 - 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 135);
+                    else func_08012E44(2, body->unk_004 + 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 135);
                     break;
                 }
             }
@@ -1302,8 +1302,8 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                 func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
-                    if (target->unk_004 < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (target->unk_004 < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 }
                 func_08006238(2, 13, 60);
             }
@@ -1312,27 +1312,27 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                     x = target->unk_004;
                     y = target->unk_008;
                     z = target->unk_010;
-                    if (x < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (x < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 } else {
-                    if (body->flags & 4) x = body->x - 0x4000;
-                    else x = body->x + 0x4000;
-                    y = body->y;
-                    z = body->unk_10;
+                    if (body->unk_034 & 4) x = body->unk_004 - 0x4000;
+                    else x = body->unk_004 + 0x4000;
+                    y = body->unk_008;
+                    z = body->unk_010;
                 }
                 switch (work->unk_14D) {
                 case 0:
-                    if (body->flags & 4) func_08014D78(0, body->x - 0x2800, body->y, body->z - 0x1800, x, y, z, 1, 142);
-                    else func_08014D78(0, body->x + 0x2800, body->y, body->z - 0x1800, x, y, z, 0, 142);
+                    if (body->unk_034 & 4) func_08014D78(0, body->unk_004 - 0x2800, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 142);
+                    else func_08014D78(0, body->unk_004 + 0x2800, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 142);
                     break;
                 case 1:
-                    if (body->flags & 4) func_08014D78(1, body->x - 0x2800, body->y, body->z - 0x1800, x, y, z, 1, 143);
-                    else func_08014D78(1, body->x + 0x2800, body->y, body->z - 0x1800, x, y, z, 0, 143);
+                    if (body->unk_034 & 4) func_08014D78(1, body->unk_004 - 0x2800, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 143);
+                    else func_08014D78(1, body->unk_004 + 0x2800, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 143);
                     break;
                 case 2:
                 default:
-                    if (body->flags & 4) func_08014D78(2, body->x - 0x2800, body->y, body->z - 0x1800, x, y, z, 1, 144);
-                    else func_08014D78(2, body->x + 0x2800, body->y, body->z - 0x1800, x, y, z, 0, 144);
+                    if (body->unk_034 & 4) func_08014D78(2, body->unk_004 - 0x2800, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 144);
+                    else func_08014D78(2, body->unk_004 + 0x2800, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 144);
                     break;
                 }
             }
@@ -1350,8 +1350,8 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                 func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
                 AnimReset(&work->anim);
                 if (target != 0) {
-                    if (target->unk_004 < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (target->unk_004 < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 }
             }
             if (work->unk_14E == 44) {
@@ -1359,27 +1359,27 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                     x = target->unk_004;
                     y = target->unk_008;
                     z = target->unk_00C - target->unk_0A2 * 256;
-                    if (x < body->x) body->flags |= 4;
-                    else body->flags &= ~4ULL;
+                    if (x < body->unk_004) body->unk_034 |= 4;
+                    else body->unk_034 &= ~4ULL;
                 } else {
-                    if (body->flags & 4) x = body->x - 0x6400;
-                    else x = body->x + 0x6400;
-                    y = body->y;
-                    z = body->z - 0x1800;
+                    if (body->unk_034 & 4) x = body->unk_004 - 0x6400;
+                    else x = body->unk_004 + 0x6400;
+                    y = body->unk_008;
+                    z = body->unk_00C - 0x1800;
                 }
                 switch (work->unk_14D) {
                 case 0:
-                    if (body->flags & 4) func_08013308(0, body->x - 0x4A00, body->y, body->z - 0x1800, x, y, z, 1, 136);
-                    else func_08013308(0, body->x + 0x4A00, body->y, body->z - 0x1800, x, y, z, 0, 136);
+                    if (body->unk_034 & 4) func_08013308(0, body->unk_004 - 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 136);
+                    else func_08013308(0, body->unk_004 + 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 136);
                     break;
                 case 1:
-                    if (body->flags & 4) func_08013308(1, body->x - 0x4A00, body->y, body->z - 0x1800, x, y, z, 1, 137);
-                    else func_08013308(1, body->x + 0x4A00, body->y, body->z - 0x1800, x, y, z, 0, 137);
+                    if (body->unk_034 & 4) func_08013308(1, body->unk_004 - 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 137);
+                    else func_08013308(1, body->unk_004 + 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 137);
                     break;
                 case 2:
                 default:
-                    if (body->flags & 4) func_08013308(2, body->x - 0x4A00, body->y, body->z - 0x1800, x, y, z, 1, 138);
-                    else func_08013308(2, body->x + 0x4A00, body->y, body->z - 0x1800, x, y, z, 0, 138);
+                    if (body->unk_034 & 4) func_08013308(2, body->unk_004 - 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 1, 138);
+                    else func_08013308(2, body->unk_004 + 0x4A00, body->unk_008, body->unk_00C - 0x1800, x, y, z, 0, 138);
                     break;
                 }
             }
@@ -1399,8 +1399,8 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             func_08019068(gUnk_0813EC9C, &work->anim, 0, 0, work->tiles);
             AnimReset(&work->anim);
             if (target != 0) {
-                if (target->unk_004 < body->x) body->flags |= 4;
-                else body->flags &= ~4ULL;
+                if (target->unk_004 < body->unk_004) body->unk_034 |= 4;
+                else body->unk_034 &= ~4ULL;
             }
         }
         if (work->unk_14E == 44) {
@@ -1413,23 +1413,23 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                         y = target->unk_008;
                         z = target->unk_010;
                     } else {
-                        if (body->flags & 4) x = body->x - 0x5000;
-                        else x = body->x + 0x5000;
-                        y = body->y;
+                        if (body->unk_034 & 4) x = body->unk_004 - 0x5000;
+                        else x = body->unk_004 + 0x5000;
+                        y = body->unk_008;
                         z = 0;
                     }
-                    if (body->flags & 4) func_08015834(0, body->x - 0x2800, body->y, body->z - 0x1800, x, y, z, 139);
-                    else func_08015834(0, body->x + 0x2800, body->y, body->z - 0x1800, x, y, z, 139);
+                    if (body->unk_034 & 4) func_08015834(0, body->unk_004 - 0x2800, body->unk_008, body->unk_00C - 0x1800, x, y, z, 139);
+                    else func_08015834(0, body->unk_004 + 0x2800, body->unk_008, body->unk_00C - 0x1800, x, y, z, 139);
                     break;
                 }
             case 1:
-                if (body->flags & 4) func_08013CB4(1, body->x - 0x2800, body->y, body->z - 0x1800, body->unk_10, 140);
-                else func_08013CB4(1, body->x + 0x2800, body->y, body->z - 0x1800, body->unk_10, 140);
+                if (body->unk_034 & 4) func_08013CB4(1, body->unk_004 - 0x2800, body->unk_008, body->unk_00C - 0x1800, body->unk_010, 140);
+                else func_08013CB4(1, body->unk_004 + 0x2800, body->unk_008, body->unk_00C - 0x1800, body->unk_010, 140);
                 break;
             case 2:
             default:
-                if (body->flags & 4) func_08013CB4(2, body->x - 0x2800, body->y, body->z - 0x1800, body->unk_10, 141);
-                else func_08013CB4(2, body->x + 0x2800, body->y, body->z - 0x1800, body->unk_10, 141);
+                if (body->unk_034 & 4) func_08013CB4(2, body->unk_004 - 0x2800, body->unk_008, body->unk_00C - 0x1800, body->unk_010, 141);
+                else func_08013CB4(2, body->unk_004 + 0x2800, body->unk_008, body->unk_00C - 0x1800, body->unk_010, 141);
                 break;
             }
         }
@@ -1447,7 +1447,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
 }
 
 void task_frd_jack_2(FrdJackWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -1459,10 +1459,10 @@ void task_frd_jack_2(FrdJackWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
     angle = work->unk_160;
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (angle == 0 && gBtlWork->unk_024 == 256) {
@@ -1474,7 +1474,7 @@ void task_frd_jack_2(FrdJackWork* work) {
         sclY = gBtlWork->unk_024;
     }
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (angle != 0) {
         affine = AllocObjAffine(angle, sclX, sclY, 1);
@@ -1486,15 +1486,15 @@ void task_frd_jack_2(FrdJackWork* work) {
         affine = AllocObjAffine(0, sclX, sclY, 1);
     }
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sx = sx + (gSineTable[(u16)(angle + 128) & 0xFF] * 5 >> 5);
     } else {
         sx = sx - (gSineTable[(u16)(angle + 128) & 0xFF] * 5 >> 5);
     }
 
     sy = sy + (-gSineTable[((u16)(angle + 128) & 0xFF) + 64] * 5 >> 5) - 40;
-    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags, -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+    DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags, -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
 
@@ -1508,7 +1508,7 @@ void task_frd_jack_3(FrdJackWork* work) {
 }
 
 void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
     m4aSongNumStart(0xB9);
@@ -1532,22 +1532,22 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     work->unk_158 = 0;
 
     if (work->unk_014->unk_034 & 4) {
-        body->x = (gBtlWork->unk_0DC + 0x30) << 8;
-        body->flags = 0x20004;
+        body->unk_004 = (gBtlWork->unk_0DC + 0x30) << 8;
+        body->unk_034 = 0x20004;
         work->unk_168 = -0x800;
         work->unk_16C = 0;
     } else {
-        body->x = (gBtlWork->unk_0DA - 0x30) << 8;
-        body->flags = 0x20000;
+        body->unk_004 = (gBtlWork->unk_0DA - 0x30) << 8;
+        body->unk_034 = 0x20000;
         work->unk_168 = 0x800;
         work->unk_16C = 1;
     }
 
     work->unk_15C = 0x10000;
-    body->y = work->unk_014->unk_008;
-    body->unk_10 = 0;
+    body->unk_008 = work->unk_014->unk_008;
+    body->unk_010 = 0;
     work->unk_164 = -0x2000;
-    body->z = -0x2000;
+    body->unk_00C = -0x2000;
     work->palette = LoadObjPalette(gUnk_09617DD8, 32);
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
@@ -1569,36 +1569,36 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
 }
 
 void func_08048980(FrdPanWork* work) {
-    FrdBody sub;
+    BtlObj sub;
 
     if ((s16)work->unk_14E % 3 == 0) {
-        sub.x = work->unk_020.x;
-        sub.y = work->unk_020.y;
-        sub.z = work->unk_020.z;
+        sub.unk_004 = work->unk_020.unk_004;
+        sub.unk_008 = work->unk_020.unk_008;
+        sub.unk_00C = work->unk_020.unk_00C;
 
         switch (AnimGetGfxIndex(&work->anim)) {
         case 1:
         case 2:
-            sub.z -= 0x800;
+            sub.unk_00C -= 0x800;
             break;
         case 3:
         case 4:
-            sub.z -= 0x1800;
+            sub.unk_00C -= 0x1800;
 
-            if (work->unk_020.flags & 4) {
-                sub.x += 0x2000;
+            if (work->unk_020.unk_034 & 4) {
+                sub.unk_004 += 0x2000;
             } else {
-                sub.x -= 0x2000;
+                sub.unk_004 -= 0x2000;
             }
             break;
         case 5:
         default:
-            sub.z -= 0x1000;
+            sub.unk_00C -= 0x1000;
 
-            if (work->unk_020.flags & 4) {
-                sub.x += 0x1000;
+            if (work->unk_020.unk_034 & 4) {
+                sub.unk_004 += 0x1000;
             } else {
-                sub.x -= 0x1000;
+                sub.unk_004 -= 0x1000;
             }
             break;
         }
@@ -1608,14 +1608,14 @@ void func_08048980(FrdPanWork* work) {
 }
 
 void func_08048A68(FrdPanWork* work) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
-    body->z += ((work->unk_164 + (gSineTable[((u16)work->unk_14E * 2) & 0xFF] << 4)) - body->z) >> 2;
+    body->unk_00C += ((work->unk_164 + (gSineTable[((u16)work->unk_14E * 2) & 0xFF] << 4)) - body->unk_00C) >> 2;
 }
 
 u8 task_frd_pan_1(FrdPanWork* work) {
-    FrdBody* body = &work->unk_020;
+    BtlObj* body = &work->unk_020;
     BtlWork* owner;
     BtlObj* target;
     s32 ground;
@@ -1630,11 +1630,11 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         return 0;
     }
     if (gBtlWork->unk_128 != 0) {
-        ground = body->unk_10;
-        gBtlWork->unk_128(&body->x, &body->y, &body->z, &ground);
-        if (ground != body->unk_10) {
-            work->unk_164 = body->unk_10 - 0x1000;
-            body->unk_10 = ground;
+        ground = body->unk_010;
+        gBtlWork->unk_128(&body->unk_004, &body->unk_008, &body->unk_00C, &ground);
+        if (ground != body->unk_010) {
+            work->unk_164 = body->unk_010 - 0x1000;
+            body->unk_010 = ground;
         }
     }
     switch (work->unk_148) {
@@ -1643,7 +1643,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
             func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
             work->unk_150 = 30;
         }
-        func_0800592C(&body->x, work->unk_15C, work->unk_150);
+        func_0800592C(&body->unk_004, work->unk_15C, work->unk_150);
         func_08048A68(work);
         if (work->unk_150 <= 0) {
             work->unk_148 = 3;
@@ -1668,7 +1668,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
     case 2:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
-            if (!(body->flags & 4)) {
+            if (!(body->unk_034 & 4)) {
                 work->unk_15C = (gBtlWork->unk_0DA - 64) * 256;
             } else {
                 work->unk_15C = (gBtlWork->unk_0DC + 64) * 256;
@@ -1676,7 +1676,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
             work->unk_150 = 30;
         }
         work->unk_164 -= 0x400;
-        ApproachValue(&body->x, work->unk_15C, work->unk_150);
+        ApproachValue(&body->unk_004, work->unk_15C, work->unk_150);
         func_08048A68(work);
         if (work->unk_150 <= 0) {
             return 0;
@@ -1715,7 +1715,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
             y = work->unk_014->unk_008;
             z = work->unk_014->unk_00C;
         }
-        body->y += (y - body->y) >> 5;
+        body->unk_008 += (y - body->unk_008) >> 5;
         work->unk_164 += (z - work->unk_164) >> 5;
         func_08048A68(work);
         if (work->unk_16C != 0) {
@@ -1723,22 +1723,22 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         } else {
             ApproachValue(&work->unk_168, 0x800, work->unk_150);
         }
-        body->x += work->unk_168;
+        body->unk_004 += work->unk_168;
         if (--work->unk_150 <= 0) {
             work->unk_150 = 70;
             work->unk_16C = !work->unk_16C;
         }
         if (work->unk_168 < 0) {
-            body->flags |= 4;
+            body->unk_034 |= 4;
         } else {
-            body->flags &= ~4ULL;
+            body->unk_034 &= ~4ULL;
         }
-        if (body->flags & 4) {
-            if (func_08011F78(150, body->x - 0x1C00, body->y, body->z - 0x1400, 20, 20, 20)) {
+        if (body->unk_034 & 4) {
+            if (func_08011F78(150, body->unk_004 - 0x1C00, body->unk_008, body->unk_00C - 0x1400, 20, 20, 20)) {
                 m4aSongNumStart(0x252);
             }
         } else {
-            if (func_08011F78(150, body->x + 0x1C00, body->y, body->z - 0x1400, 20, 20, 20)) {
+            if (func_08011F78(150, body->unk_004 + 0x1C00, body->unk_008, body->unk_00C - 0x1400, 20, 20, 20)) {
                 m4aSongNumStart(0x252);
             }
         }
@@ -1770,7 +1770,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
 }
 
 void task_frd_pan_2(FrdPanWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -1781,9 +1781,9 @@ void task_frd_pan_2(FrdPanWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256) {
@@ -1795,7 +1795,7 @@ void task_frd_pan_2(FrdPanWork* work) {
         sclY = gBtlWork->unk_024;
     }
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (gBtlWork->unk_024 == 256) {
         affine = 0;
@@ -1806,8 +1806,8 @@ void task_frd_pan_2(FrdPanWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
 
@@ -1821,20 +1821,20 @@ void task_frd_pan_3(FrdPanWork* work) {
 }
 
 u8 func_080490FC(FrdAladdinWork* work) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
 
-    if (func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10)) {
-        body->z += work->unk_154;
+    if (func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010)) {
+        body->unk_00C += work->unk_154;
         work->unk_154 = -0x200;
     } else {
-        body->z += work->unk_154;
+        body->unk_00C += work->unk_154;
         work->unk_154 += 0x33;
     }
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
         work->unk_154 = 0;
         return 1;
     }
@@ -1843,7 +1843,7 @@ u8 func_080490FC(FrdAladdinWork* work) {
 }
 
 void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
     m4aSongNumStart(0xBC);
@@ -1868,17 +1868,17 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
 
     if (work->unk_014->unk_034 & 4) {
         work->unk_158 = work->unk_014->unk_004 - 0x3000;
-        body->x = (gBtlWork->unk_0DC + 0x30) << 8;
-        body->flags = 4;
+        body->unk_004 = (gBtlWork->unk_0DC + 0x30) << 8;
+        body->unk_034 = 4;
     } else {
         work->unk_158 = work->unk_014->unk_004 + 0x3000;
-        body->x = (gBtlWork->unk_0DA - 0x30) << 8;
-        body->flags = 0;
+        body->unk_004 = (gBtlWork->unk_0DA - 0x30) << 8;
+        body->unk_034 = 0;
     }
 
-    body->y = work->unk_014->unk_008;
-    body->z = -0x5000;
-    body->unk_10 = 0;
+    body->unk_008 = work->unk_014->unk_008;
+    body->unk_00C = -0x5000;
+    body->unk_010 = 0;
     work->palette = LoadObjPalette(gUnk_09617D98, 32);
     AnimInit(&work->anim, 0, 0);
     func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
@@ -1900,7 +1900,7 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
 }
 
 u8 task_frd_aladdin_1(FrdAladdinWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     s32 x;
     s32 y;
     s32 delta;
@@ -1916,8 +1916,8 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
             func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
             work->unk_14E++;
         }
-        body->x += (work->unk_158 - body->x) >> 4;
-        func_0801A8A4(&body->x, &body->y, -16, 0);
+        body->unk_004 += (work->unk_158 - body->unk_004) >> 4;
+        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
         if (func_080490FC(work)) {
             work->unk_148 = 1;
             work->unk_14E = 0;
@@ -1938,7 +1938,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
     case 2:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
-            if (!(body->flags & 4)) {
+            if (!(body->unk_034 & 4)) {
                 work->unk_158 = (gBtlWork->unk_0DA - 64) << 8;
             } else {
                 work->unk_158 = (gBtlWork->unk_0DC + 64) << 8;
@@ -1946,7 +1946,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
             work->unk_154 = -0x500;
             work->unk_150 = 30;
         }
-        ApproachValue(&body->x, work->unk_158, work->unk_150);
+        ApproachValue(&body->unk_004, work->unk_158, work->unk_150);
         func_080490FC(work);
         if (work->unk_150 <= 0) {
             return 0;
@@ -1960,41 +1960,41 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
         }
         func_0801D288();
         if (work->unk_014->unk_034 & 4) {
-            body->flags |= 4;
+            body->unk_034 |= 4;
             x = work->unk_014->unk_004 - 0x2800;
         } else {
-            body->flags &= ~4ULL;
+            body->unk_034 &= ~4ULL;
             x = work->unk_014->unk_004 + 0x2800;
         }
         y = work->unk_014->unk_008;
-        delta = (x - body->x) >> 3;
+        delta = (x - body->unk_004) >> 3;
         if (delta < -0x400) {
             delta = -0x400;
         } else if (delta > 0x400) {
             delta = 0x400;
         }
-        body->x += delta;
-        delta = (y - body->y) >> 5;
+        body->unk_004 += delta;
+        delta = (y - body->unk_008) >> 5;
         if (delta < -0x200) {
             delta = -0x200;
         } else if (delta > 0x200) {
             delta = 0x200;
         }
-        body->y += delta;
+        body->unk_008 += delta;
         if (work->anim.timer == 0) {
             switch (AnimGetFrame(&work->anim)) {
             case 0:
             case 1:
             case 5:
             case 6:
-                if ((body->flags & 4) ? func_08011F78(0x95, body->x - 0x1E00, body->y, body->z, 20, 20, 50) : func_08011F78(0x95, body->x + 0x1E00, body->y, body->z, 20, 20, 50)) {
+                if ((body->unk_034 & 4) ? func_08011F78(0x95, body->unk_004 - 0x1E00, body->unk_008, body->unk_00C, 20, 20, 50) : func_08011F78(0x95, body->unk_004 + 0x1E00, body->unk_008, body->unk_00C, 20, 20, 50)) {
                     m4aSongNumStart(0x251);
                 }
                 break;
             }
         }
         func_080490FC(work);
-        func_0801A8A4(&body->x, &body->y, -16, 0);
+        func_0801A8A4(&body->unk_004, &body->unk_008, -16, 0);
         if (work->unk_14E > work->unk_152) {
             work->unk_14E = 0;
             work->unk_148 = 2;
@@ -2009,7 +2009,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
 }
 
 void task_frd_aladdin_2(FrdAladdinWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -2020,9 +2020,9 @@ void task_frd_aladdin_2(FrdAladdinWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256) {
@@ -2034,7 +2034,7 @@ void task_frd_aladdin_2(FrdAladdinWork* work) {
         sclY = gBtlWork->unk_024;
     }
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (gBtlWork->unk_024 == 256) {
         affine = 0;
@@ -2045,8 +2045,8 @@ void task_frd_aladdin_2(FrdAladdinWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
 
@@ -2060,15 +2060,15 @@ void task_frd_aladdin_3(FrdAladdinWork* work) {
 }
 
 u8 func_080497E8(FrdBeastWork* work) {
-    FrdBody* body;
+    BtlObj* body;
 
     body = &work->unk_020;
-    func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_10);
-    body->z += work->unk_158;
+    func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
+    body->unk_00C += work->unk_158;
     work->unk_158 += 0x33;
 
-    if (body->z > body->unk_10) {
-        body->z = body->unk_10;
+    if (body->unk_00C > body->unk_010) {
+        body->unk_00C = body->unk_010;
         work->unk_158 = 0;
         return 1;
     }
@@ -2077,7 +2077,7 @@ u8 func_080497E8(FrdBeastWork* work) {
 }
 
 void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
-    FrdBody* body;
+    BtlObj* body;
     BtlObj* obj;
 
     body = &work->unk_020;
@@ -2118,16 +2118,16 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
     }
 
     if (work->unk_014->unk_034 & 4) {
-        body->x = (gBtlWork->unk_0DC + 0x30) << 8;
-        body->flags = 0x20004;
+        body->unk_004 = (gBtlWork->unk_0DC + 0x30) << 8;
+        body->unk_034 = 0x20004;
     } else {
-        body->x = (gBtlWork->unk_0DA - 0x30) << 8;
-        body->flags = 0x20000;
+        body->unk_004 = (gBtlWork->unk_0DA - 0x30) << 8;
+        body->unk_034 = 0x20000;
     }
 
-    body->y = work->unk_154;
-    body->z = 0;
-    body->unk_10 = 0;
+    body->unk_008 = work->unk_154;
+    body->unk_00C = 0;
+    body->unk_010 = 0;
 
     switch (work->unk_14D) {
     case 0:
@@ -2153,7 +2153,7 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
 }
 
 u8 task_frd_beast_1(FrdBeastWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     BtlWork* obj;
 
     body = &work->unk_020;
@@ -2179,16 +2179,16 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
             m4aSongNumStart(0x270);
         }
 
-        if (body->z < body->unk_10) {
-            body->x += (work->unk_150 - body->x) >> 4;
-            body->y += (work->unk_154 - body->y) >> 4;
+        if (body->unk_00C < body->unk_010) {
+            body->unk_004 += (work->unk_150 - body->unk_004) >> 4;
+            body->unk_008 += (work->unk_154 - body->unk_008) >> 4;
         }
 
         if (work->unk_158 > 0) {
             if (gBtlWork->unk_10C == 0x99) {
-                func_08011F78(0xA3, body->x, body->y, body->z - 0x1800, 0x28, 0x14, 0x10);
+                func_08011F78(0xA3, body->unk_004, body->unk_008, body->unk_00C - 0x1800, 0x28, 0x14, 0x10);
             } else {
-                func_08011F78(0xA2, body->x, body->y, body->z - 0x1800, 0x28, 0x14, 0x10);
+                func_08011F78(0xA2, body->unk_004, body->unk_008, body->unk_00C - 0x1800, 0x28, 0x14, 0x10);
             }
         }
 
@@ -2211,21 +2211,21 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
             }
         }
 
-        if (body->flags & 4) {
-            body->x -= 0x380;
+        if (body->unk_034 & 4) {
+            body->unk_004 -= 0x380;
 
-            if (body->x < (gBtlWork->unk_0DA - 0x28) << 8) {
+            if (body->unk_004 < (gBtlWork->unk_0DA - 0x28) << 8) {
                 return 0;
             }
         } else {
-            body->x += 0x380;
+            body->unk_004 += 0x380;
 
-            if (body->x > (gBtlWork->unk_0DC + 0x28) << 8) {
+            if (body->unk_004 > (gBtlWork->unk_0DC + 0x28) << 8) {
                 return 0;
             }
         }
 
-        if (func_08011F78(work->unk_15C, body->x, body->y, body->z - 0x1800, 0x28, 0x14, 0x10)) {
+        if (func_08011F78(work->unk_15C, body->unk_004, body->unk_008, body->unk_00C - 0x1800, 0x28, 0x14, 0x10)) {
             m4aSongNumStart(0x26F);
         }
 
@@ -2240,7 +2240,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
 }
 
 void task_frd_beast_2(FrdBeastWork* work) {
-    FrdBody* body;
+    BtlObj* body;
     void* gfx;
     u16 flags;
     s16 sx;
@@ -2251,9 +2251,9 @@ void task_frd_beast_2(FrdBeastWork* work) {
 
     body = &work->unk_020;
     gfx = AnimGetGfx(&work->anim);
-    flags = func_0801AF1C(body->y);
+    flags = func_0801AF1C(body->unk_008);
 
-    if (body->flags & 4) {
+    if (body->unk_034 & 4) {
         sclY = gBtlWork->unk_024;
         sclX = sclY;
     } else if (gBtlWork->unk_024 == 256) {
@@ -2265,7 +2265,7 @@ void task_frd_beast_2(FrdBeastWork* work) {
         sclY = gBtlWork->unk_024;
     }
 
-    WorldToScreen(&sx, &sy, body->x, body->y, body->z);
+    WorldToScreen(&sx, &sy, body->unk_004, body->unk_008, body->unk_00C);
 
     if (gBtlWork->unk_024 == 256) {
         affine = 0;
@@ -2276,8 +2276,8 @@ void task_frd_beast_2(FrdBeastWork* work) {
     }
 
     DrawSprite(sx, sy, gfx, work->tiles, work->palette, affine, flags,
-               -4100 - ((body->y >> 8) * 4));
-    body->unk_CC = (-4100 - ((body->y >> 8) * 4)) | 2;
+               -4100 - ((body->unk_008 >> 8) * 4));
+    body->unk_0CC = (-4100 - ((body->unk_008 >> 8) * 4)) | 2;
     TaskPoolDraw(&work->unk_000);
 }
 

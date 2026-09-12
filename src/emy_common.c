@@ -2,21 +2,21 @@
 #include "macros.h"
 
 void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
-    VsActor* actor = &work->unk_03C;
+    BtlObj* actor = &work->unk_03C;
     u16 t;
 
     func_0801B37C(actor, &def->unk_1C, obj->unk_00, obj->unk_04, obj->unk_08);
-    actor->unk_CE = def->unk_12;
-    actor->unk_D0 = def->unk_14;
-    actor->unk_D2 = def->unk_16;
-    actor->unk_B2 = def->unk_18;
+    actor->unk_0CE = def->unk_12;
+    actor->unk_0D0 = def->unk_14;
+    actor->unk_0D2 = def->unk_16;
+    actor->unk_0B2 = def->unk_18;
 
-    if (gBtlWork->unk_07C->unk_004 < actor->x) {
-        actor->flags |= 4;
+    if (gBtlWork->unk_07C->unk_004 < actor->unk_004) {
+        actor->unk_034 |= 4;
     }
 
-    actor->flags |= 0x300;
-    t = gUnk_09EDA4EC[actor->unk_00];
+    actor->unk_034 |= 0x300;
+    t = gUnk_09EDA4EC[actor->unk_000];
     work->unk_15C = def;
     work->tiles = AllocObjTiles(t * 32, 0);
     work->unk_004 = LoadObjPalette(def->unk_00, 32);
@@ -34,7 +34,7 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     actor->unk_10C = 0;
     work->unk_162 = 0;
 
-    if (actor->flags & 0x20000) {
+    if (actor->unk_034 & 0x20000) {
         work->unk_16C = 281;
     } else {
         work->unk_16C = 0x100;
@@ -66,7 +66,7 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     gBtlWork->unk_120--;
 }
 s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g, s16 h, u16 i) {
-    VsActor* actor = &work->unk_03C;
+    BtlObj* actor = &work->unk_03C;
     s32 ret;
     s32 v;
     s32 target;
@@ -81,28 +81,28 @@ s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g
     if (work->unk_154 >= a) {
         if (work->unk_154 < a + b) {
             steps = (a + b) - work->unk_154;
-            target = actor->unk_18;
+            target = actor->unk_018;
 
-            if (work->unk_03C.flags & 4) {
-                v = actor->unk_14 - (e << 8);
+            if (work->unk_03C.unk_034 & 4) {
+                v = actor->unk_014 - (e << 8);
             } else {
-                v = actor->unk_14 + (e << 8);
+                v = actor->unk_014 + (e << 8);
             }
 
-            if (actor->unk_E8 != 5) {
-                func_0800592C(&actor->x, v, steps);
-                func_0800592C(&actor->y, target, steps);
+            if (actor->unk_0E8 != 5) {
+                func_0800592C(&actor->unk_004, v, steps);
+                func_0800592C(&actor->unk_008, target, steps);
             }
 
             if (!(work->unk_158 & 4)) {
-                if (actor->flags & 4) {
-                    if (func_08011F78(d, actor->x - (g << 8), actor->y, actor->z + (h << 8), (s16)i, i / 2, (s16)i) != 0) {
+                if (actor->unk_034 & 4) {
+                    if (func_08011F78(d, actor->unk_004 - (g << 8), actor->unk_008, actor->unk_00C + (h << 8), (s16)i, i / 2, (s16)i) != 0) {
                         m4aSongNumStart(f);
                         work->unk_158 |= 4;
                         ret = 1;
                     }
                 } else {
-                    if (func_08011F78(d, actor->x + (g << 8), actor->y, actor->z + (h << 8), (s16)i, i / 2, (s16)i) != 0) {
+                    if (func_08011F78(d, actor->unk_004 + (g << 8), actor->unk_008, actor->unk_00C + (h << 8), (s16)i, i / 2, (s16)i) != 0) {
                         m4aSongNumStart(f);
                         ret = 1;
                         work->unk_158 |= 4;
@@ -126,17 +126,17 @@ void func_0800CB4C(EmyWork* work) {
 }
 
 void func_0800CB78(EmyWork* work) {
-    work->unk_168 = -work->unk_03C.unk_AC * 3;
-    work->unk_03C.unk_108 = ((gSineTable[work->unk_03C.unk_B0] << 1) * work->unk_03C.unk_A8) >> 8;
-    work->unk_03C.unk_10C = ((-gSineTable[work->unk_03C.unk_B0 + 0x40] << 1) * work->unk_03C.unk_A8) >> 8;
+    work->unk_168 = -work->unk_03C.unk_0AC * 3;
+    work->unk_03C.unk_108 = ((gSineTable[work->unk_03C.unk_0B0] << 1) * work->unk_03C.unk_0A8) >> 8;
+    work->unk_03C.unk_10C = ((-gSineTable[work->unk_03C.unk_0B0 + 0x40] << 1) * work->unk_03C.unk_0A8) >> 8;
 }
 
 
 u8 _0800CBDC(EmyWork* work) {
-    VsActor* actor = &work->unk_03C;
+    BtlObj* actor = &work->unk_03C;
 
-    actor->unk_FC = actor->x;
-    actor->unk_100 = actor->y;
+    actor->unk_0FC = actor->unk_004;
+    actor->unk_100 = actor->unk_008;
 
     if (work->unk_14C == 3) {
         return 0;
@@ -208,30 +208,30 @@ u8 _0800CBDC(EmyWork* work) {
 }
 
 void func_0800CD40(EmyWork* work) {
-    VsActor* actor = &work->unk_03C;
+    BtlObj* actor = &work->unk_03C;
 
     if (gGameState.flags & 4) {
-        actor->flags |= 0x4002;
+        actor->unk_034 |= 0x4002;
 
         if (gGameState.unk_1B8 == 3) {
-            actor->unk_20 = (actor->unk_2E * 204) >> 8;
+            actor->unk_020 = (actor->unk_02E * 204) >> 8;
         } else {
-            actor->unk_20 = (actor->unk_2E * 25) >> 8;
+            actor->unk_020 = (actor->unk_02E * 25) >> 8;
         }
 
-        actor->unk_24 = 0x200;
+        actor->unk_024 = 0x200;
         gBtlWork->unk_076 = 0;
-        actor->unk_A8 = 0;
-        actor->unk_AC = 0;
+        actor->unk_0A8 = 0;
+        actor->unk_0AC = 0;
     }
 
     work->unk_14C = work->unk_150;
     work->unk_154 = 0;
-    actor->flags &= ~0x300;
+    actor->unk_034 &= ~0x300;
 }
 
 s32 _0800CDF0(EmyWork* work) {
-    VsActor* actor = &work->unk_03C;
+    BtlObj* actor = &work->unk_03C;
     s32 x;
     s32 y;
     s32 z;
@@ -261,13 +261,13 @@ s32 _0800CDF0(EmyWork* work) {
         work->unk_168 = 0;
         func_08019068(work->unk_15C->unk_04, &work->anim, 2, 1, work->tiles);
         func_0801BCF8(actor);
-        actor->z += ((work->unk_178 + gSineTable[gFrameCounter & 0xFF] * 10) - actor->z) >> 4;
+        actor->unk_00C += ((work->unk_178 + gSineTable[gFrameCounter & 0xFF] * 10) - actor->unk_00C) >> 4;
 
         if (GetRandom() % work->unk_15C->unk_0E == 0) {
-            if (actor->x > x) {
-                actor->flags |= 4;
+            if (actor->unk_004 > x) {
+                actor->unk_034 |= 4;
             } else {
-                actor->flags &= ~4;
+                actor->unk_034 &= ~4;
             }
         }
         if (gBtlWork->unk_068 & 0x40000) {
@@ -278,20 +278,20 @@ s32 _0800CDF0(EmyWork* work) {
             tx = work->unk_170;
             ty = work->unk_174;
             work->unk_164 += 51;
-            d = (tx - actor->x) >> 5;
+            d = (tx - actor->unk_004) >> 5;
             if (d > work->unk_164) {
                 d = work->unk_164;
             } else if (d < -work->unk_164) {
                 d = -work->unk_164;
             }
-            actor->x += d;
-            d = (ty - actor->y) >> 5;
+            actor->unk_004 += d;
+            d = (ty - actor->unk_008) >> 5;
             if (d > work->unk_164) {
                 d = work->unk_164;
             } else if (d < -work->unk_164) {
                 d = -work->unk_164;
             }
-            actor->y += d;
+            actor->unk_008 += d;
 
             if (work->unk_154 > 64) {
                 work->unk_14C = work->unk_150;
@@ -304,13 +304,13 @@ s32 _0800CDF0(EmyWork* work) {
         work->unk_168 = 0;
         func_08019068(work->unk_15C->unk_04, &work->anim, 0, 1, work->tiles);
         func_0801BCF8(actor);
-        actor->z += ((work->unk_178 + gSineTable[gFrameCounter * 2 & 0xFF] * 12) - actor->z) >> 4;
+        actor->unk_00C += ((work->unk_178 + gSineTable[gFrameCounter * 2 & 0xFF] * 12) - actor->unk_00C) >> 4;
 
         if (GetRandom() % work->unk_15C->unk_0E == 0) {
-            if (actor->x > x) {
-                actor->flags |= 4;
+            if (actor->unk_004 > x) {
+                actor->unk_034 |= 4;
             } else {
-                actor->flags &= ~4;
+                actor->unk_034 &= ~4;
             }
         }
         if (GetRandom() % work->unk_15C->unk_0C == 0) {
@@ -320,11 +320,11 @@ s32 _0800CDF0(EmyWork* work) {
             if (GetRandom() % 2 == 0) {
                 s32 lo;
 
-                work->unk_170 = x - ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+                work->unk_170 = x - ((actor->unk_0CE + ((lo = -actor->unk_0D0) + GetRandom() % (actor->unk_0D0 - lo + 1))) << 8);
             } else {
                 s32 lo;
 
-                work->unk_170 = x + ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+                work->unk_170 = x + ((actor->unk_0CE + ((lo = -actor->unk_0D0) + GetRandom() % (actor->unk_0D0 - lo + 1))) << 8);
             }
             work->unk_174 = y + ((GetRandom() % 121 - 60) << 8);
             work->unk_178 = -((GetRandom() % 49 + 16) << 8);
@@ -337,25 +337,25 @@ s32 _0800CDF0(EmyWork* work) {
         if (work->unk_154 == 0) {
             AnimReset(&work->anim);
             func_08019068(work->unk_15C->unk_04, &work->anim, 1, 0, work->tiles);
-            actor->unk_14 = actor->x;
-            actor->unk_18 = actor->y;
+            actor->unk_014 = actor->unk_004;
+            actor->unk_018 = actor->unk_008;
         }
         switch (work->unk_154 % 4) {
         case 0:
-            actor->x = actor->unk_14 + 0x100;
-            actor->y = actor->unk_18;
+            actor->unk_004 = actor->unk_014 + 0x100;
+            actor->unk_008 = actor->unk_018;
             break;
         case 1:
-            actor->x = actor->unk_14 - 0x100;
-            actor->y = actor->unk_18;
+            actor->unk_004 = actor->unk_014 - 0x100;
+            actor->unk_008 = actor->unk_018;
             break;
         case 2:
-            actor->x = actor->unk_14;
-            actor->y = actor->unk_18 + 0x100;
+            actor->unk_004 = actor->unk_014;
+            actor->unk_008 = actor->unk_018 + 0x100;
             break;
         case 3:
-            actor->x = actor->unk_14;
-            actor->y = actor->unk_18 - 0x100;
+            actor->unk_004 = actor->unk_014;
+            actor->unk_008 = actor->unk_018 - 0x100;
             break;
         }
         if (AnimIsFinished(&work->anim)) {
@@ -384,16 +384,16 @@ s32 _0800CDF0(EmyWork* work) {
             } else {
                 ty = (gBtlWork->unk_0E0 << 8) + 0x4000;
             }
-            work->angle = GetAngle(tx, ty, actor->x, actor->y);
-            actor->x += ((gSineTable[work->angle] << 1) * work->unk_15C->unk_08) >> 8;
-            actor->y += ((-gSineTable[work->angle + 64] << 1) * work->unk_15C->unk_08) >> 8;
+            work->angle = GetAngle(tx, ty, actor->unk_004, actor->unk_008);
+            actor->unk_004 += ((gSineTable[work->angle] << 1) * work->unk_15C->unk_08) >> 8;
+            actor->unk_008 += ((-gSineTable[work->angle + 64] << 1) * work->unk_15C->unk_08) >> 8;
 
             if ((s8)work->angle >= 0) {
-                actor->flags &= ~4;
+                actor->unk_034 &= ~4;
             } else {
-                actor->flags |= 4;
+                actor->unk_034 |= 4;
             }
-            if (actor->unk_E8 != 4) {
+            if (actor->unk_0E8 != 4) {
                 work->unk_14C = work->unk_150;
                 work->unk_154 = 0;
             } else {
@@ -415,35 +415,35 @@ s32 _0800CDF0(EmyWork* work) {
             ty = y;
 
             if (tx < (gBtlWork->unk_0DA + 32) << 8) {
-                tx = px + ((actor->unk_CE + actor->unk_D0) << 8);
+                tx = px + ((actor->unk_0CE + actor->unk_0D0) << 8);
             } else if (tx > (gBtlWork->unk_0DC - 32) << 8) {
-                tx = ty - ((actor->unk_CE + actor->unk_D0) << 8);
+                tx = ty - ((actor->unk_0CE + actor->unk_0D0) << 8);
             }
             if (GetRandom() % 100 == 0) {
                 if (GetRandom() % 2 == 0) {
                     s32 lo;
 
-                    work->unk_170 = -((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+                    work->unk_170 = -((actor->unk_0CE + ((lo = -actor->unk_0D0) + GetRandom() % (actor->unk_0D0 - lo + 1))) << 8);
                 } else {
                     s32 lo;
 
-                    work->unk_170 = ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+                    work->unk_170 = ((actor->unk_0CE + ((lo = -actor->unk_0D0) + GetRandom() % (actor->unk_0D0 - lo + 1))) << 8);
                 }
             } else {
-                if ((tx - actor->x >= 0 ? tx - actor->x : actor->x - tx) > 0x400
-                    || (ty - actor->y >= 0 ? ty - actor->y : actor->y - ty) > 0x400) {
-                    work->angle = GetAngle(actor->x, actor->y, tx, ty);
-                    actor->x += (gSineTable[work->angle] * work->unk_164) >> 8;
-                    actor->y += (-gSineTable[work->angle + 64] * work->unk_164) >> 8;
+                if ((tx - actor->unk_004 >= 0 ? tx - actor->unk_004 : actor->unk_004 - tx) > 0x400
+                    || (ty - actor->unk_008 >= 0 ? ty - actor->unk_008 : actor->unk_008 - ty) > 0x400) {
+                    work->angle = GetAngle(actor->unk_004, actor->unk_008, tx, ty);
+                    actor->unk_004 += (gSineTable[work->angle] * work->unk_164) >> 8;
+                    actor->unk_008 += (-gSineTable[work->angle + 64] * work->unk_164) >> 8;
                 } else if (AnimIsFinished(&work->anim)) {
                     work->unk_14C = work->unk_150;
                 }
             }
             if (GetRandom() % work->unk_15C->unk_0E == 0) {
-                if (actor->x > x) {
-                    actor->flags |= 4;
+                if (actor->unk_004 > x) {
+                    actor->unk_034 |= 4;
                 } else {
-                    actor->flags &= ~4;
+                    actor->unk_034 &= ~4;
                 }
             }
         }
@@ -458,23 +458,23 @@ s32 _0800CDF0(EmyWork* work) {
             if (GetRandom() % 2 == 0) {
                 s32 lo;
 
-                work->unk_170 = -((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+                work->unk_170 = -((actor->unk_0CE + ((lo = -actor->unk_0D0) + GetRandom() % (actor->unk_0D0 - lo + 1))) << 8);
             } else {
                 s32 lo;
 
-                work->unk_170 = ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
+                work->unk_170 = ((actor->unk_0CE + ((lo = -actor->unk_0D0) + GetRandom() % (actor->unk_0D0 - lo + 1))) << 8);
             }
         }
         if (GetRandom() % work->unk_15C->unk_0E == 0) {
-            if (actor->x > x) {
-                actor->flags |= 4;
+            if (actor->unk_004 > x) {
+                actor->unk_034 |= 4;
             } else {
-                actor->flags &= ~4;
+                actor->unk_034 &= ~4;
             }
         }
         break;
     case 12:
-        if (actor->unk_E8 != 2) {
+        if (actor->unk_0E8 != 2) {
             work->unk_14C = work->unk_150;
             func_0801AF08(actor);
         }
@@ -486,13 +486,13 @@ s32 _0800CDF0(EmyWork* work) {
             work->unk_154++;
         }
         if (AnimIsFinished(&work->anim)) {
-            actor->flags &= ~0x80;
-            actor->flags &= ~0x2000;
+            actor->unk_034 &= ~0x80;
+            actor->unk_034 &= ~0x2000;
         }
         if (GetRandom() % 10 == 0) {
-            actor->unk_EC--;
+            actor->unk_0EC--;
         }
-        if (actor->unk_E8 != 1) {
+        if (actor->unk_0E8 != 1) {
             func_0801AF08(actor);
             work->unk_14C = work->unk_150;
             work->unk_154 = 0;
@@ -510,21 +510,21 @@ s32 _0800CDF0(EmyWork* work) {
             work->unk_14C = 2;
             work->unk_154 = 0;
 
-            if (actor->x < x) {
-                if (actor->flags & 4) {
+            if (actor->unk_004 < x) {
+                if (actor->unk_034 & 4) {
                     if (GetRandom() % 5 == 0) {
-                        actor->flags &= ~4;
+                        actor->unk_034 &= ~4;
                         ok = 1;
                     }
                 } else {
                     ok = 1;
                 }
             } else {
-                if (actor->flags & 4) {
+                if (actor->unk_034 & 4) {
                     ok = 1;
                 } else {
                     if (GetRandom() % 5 == 0) {
-                        actor->flags |= 4;
+                        actor->unk_034 |= 4;
                         ok = 1;
                     }
                 }
@@ -547,8 +547,8 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     case 15:
         if (work->unk_154 == 0) {
-            func_08012614(&actor->unk_40, 1);
-            actor->flags |= 0x100;
+            func_08012614(&actor->unk_040, 1);
+            actor->unk_034 |= 0x100;
             func_08019068(work->unk_15C->unk_04, &work->anim, 1, 0, work->tiles);
             work->anim.frame = 0;
             work->anim.timer = 0;
@@ -568,7 +568,7 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     case 16:
         if (work->unk_154 > 44) {
-            if (actor->unk_2C <= 0) {
+            if (actor->unk_02C <= 0) {
                 work->unk_14C = 3;
             } else {
                 work->unk_14C = 17;
@@ -580,13 +580,13 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     case 17:
         if (work->unk_154 == 0) {
-            func_08012614(&actor->unk_40, 0);
+            func_08012614(&actor->unk_040, 0);
             work->unk_156 = 10;
         }
         func_0800592C(&work->unk_180, 0x100, work->unk_156--);
 
         if (work->unk_156 <= 0) {
-            actor->flags &= ~0x100;
+            actor->unk_034 &= ~0x100;
             func_0801AF08(actor);
             work->unk_14C = work->unk_150;
             work->unk_154 = 0;
@@ -606,9 +606,9 @@ s32 _0800CDF0(EmyWork* work) {
 
         if (work->unk_154 == 40) {
             func_08019190(actor, 10);
-            actor->unk_2C -= actor->unk_20;
-            if (actor->unk_2C > actor->unk_2E) {
-                actor->unk_2C = actor->unk_2E;
+            actor->unk_02C -= actor->unk_020;
+            if (actor->unk_02C > actor->unk_02E) {
+                actor->unk_02C = actor->unk_02E;
             }
             func_0801AF08(actor);
             work->unk_14C = work->unk_150;
@@ -621,7 +621,7 @@ s32 _0800CDF0(EmyWork* work) {
         if (work->unk_154 == 0) {
             work->unk_156 = 16;
         }
-        actor->z -= (16 - work->unk_156) << 8;
+        actor->unk_00C -= (16 - work->unk_156) << 8;
 
         if (func_08006B74()) {
             gBldCnt = 0xF10;
@@ -652,7 +652,7 @@ s32 _0800CDF0(EmyWork* work) {
 
             func_08019068(work->unk_15C->unk_04, &work->anim, 1, 0, work->tiles);
 
-            if (actor->flags & 0x800000000) {
+            if (actor->unk_034 & 0x800000000) {
                 work->unk_154++;
                 break;
             }
@@ -662,18 +662,18 @@ s32 _0800CDF0(EmyWork* work) {
             if (actor->unk_10C != 0) {
                 break;
             }
-            if (actor->z != actor->unk_10) {
+            if (actor->unk_00C != actor->unk_010) {
                 break;
             }
             if (func_080128EC()) {
                 break;
             }
-            t = (actor->unk_9C / 2) * work->unk_16C;
+            t = (actor->unk_09C / 2) * work->unk_16C;
 
             if (work->unk_158 & 1) {
-                func_08013E4C(actor->x, actor->y, actor->z - t, work->unk_16C);
+                func_08013E4C(actor->unk_004, actor->unk_008, actor->unk_00C - t, work->unk_16C);
             } else {
-                func_08013DB8(actor->x, actor->y, actor->z - t, work->unk_16C);
+                func_08013DB8(actor->unk_004, actor->unk_008, actor->unk_00C - t, work->unk_16C);
             }
             work->unk_154++;
         } else if (work->unk_154 > 0) {
@@ -711,28 +711,28 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     }
 
-    if (actor->unk_E8 != 2) {
-        actor->z += work->unk_168;
+    if (actor->unk_0E8 != 2) {
+        actor->unk_00C += work->unk_168;
         work->unk_168 += gBtlWork->unk_12C;
 
-        if (actor->z > 0) {
-            actor->z = 0;
+        if (actor->unk_00C > 0) {
+            actor->unk_00C = 0;
             work->unk_168 = 0;
         }
-        if (actor->unk_6C != 0 && !(actor->flags & 0x10) && !(actor->unk_90->unk_30 & 2)) {
-            actor->x += actor->unk_78 >> 1;
-            actor->y += actor->unk_7C >> 1;
+        if (actor->unk_040.unk_2C != 0 && !(actor->unk_034 & 0x10) && !(actor->unk_040.unk_50->unk_30 & 2)) {
+            actor->unk_004 += actor->unk_040.unk_38 >> 1;
+            actor->unk_008 += actor->unk_040.unk_3C >> 1;
         }
     }
 
     if (actor->unk_108 > 0) {
-        actor->x += actor->unk_108;
+        actor->unk_004 += actor->unk_108;
         actor->unk_108 -= 17;
         if (actor->unk_108 < 0) {
             actor->unk_108 = 0;
         }
     } else if (actor->unk_108 < 0) {
-        actor->x += actor->unk_108;
+        actor->unk_004 += actor->unk_108;
         actor->unk_108 += 17;
         if (actor->unk_108 > 0) {
             actor->unk_108 = 0;
@@ -740,20 +740,20 @@ s32 _0800CDF0(EmyWork* work) {
     }
 
     if (actor->unk_10C > 0) {
-        actor->y += actor->unk_10C;
+        actor->unk_008 += actor->unk_10C;
         actor->unk_10C -= 17;
         if (actor->unk_10C < 0) {
             actor->unk_10C = 0;
         }
     } else if (actor->unk_10C < 0) {
-        actor->y += actor->unk_10C;
+        actor->unk_008 += actor->unk_10C;
         actor->unk_10C += 17;
         if (actor->unk_10C > 0) {
             actor->unk_10C = 0;
         }
     }
 
-    switch (func_0801A8A4(&actor->x, &actor->y, -20, 0)) {
+    switch (func_0801A8A4(&actor->unk_004, &actor->unk_008, -20, 0)) {
     case 1:
     case 2:
         work->unk_158 |= 2;
@@ -769,9 +769,9 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     }
 
-    if (actor->flags & 0x10) {
+    if (actor->unk_034 & 0x10) {
         work->gfx = AnimUpdate(&work->anim);
-    } else if (actor->unk_E8 != 2) {
+    } else if (actor->unk_0E8 != 2) {
         if (gBtlWork->unk_068 & 1) {
             if (!func_08005AC4(&work->anim)) {
                 work->gfx = AnimUpdate(&work->anim);
@@ -784,19 +784,19 @@ s32 _0800CDF0(EmyWork* work) {
         }
     }
 
-    if (actor->unk_E8 == 5) {
-        actor->x = actor->unk_FC;
-        actor->y = actor->unk_100;
+    if (actor->unk_0E8 == 5) {
+        actor->unk_004 = actor->unk_0FC;
+        actor->unk_008 = actor->unk_100;
     }
 
     TaskPoolUpdate(&work->unk_028);
-    func_08012324(&actor->unk_40, actor->x, actor->y, actor->z);
+    func_08012324(&actor->unk_040, actor->unk_004, actor->unk_008, actor->unk_00C);
     return 1;
 }
 
 void func_0800DF30(EmyWork* work) {
     if (work->unk_15A != 0) {
-        VsActor* actor;
+        BtlObj* actor;
         u16 g;
         s32 affine;
         s32 sx;
@@ -805,11 +805,11 @@ void func_0800DF30(EmyWork* work) {
         s16 y;
 
         actor = &work->unk_03C;
-        g = func_0801AF1C(actor->y) | work->unk_162;
-        WorldToScreen(&x, &y, actor->x, actor->y, actor->z);
+        g = func_0801AF1C(actor->unk_008) | work->unk_162;
+        WorldToScreen(&x, &y, actor->unk_004, actor->unk_008, actor->unk_00C);
 
         if (work->unk_17C == 0x100 && work->unk_180 == 0x100) {
-            if (actor->flags & 4) {
+            if (actor->unk_034 & 4) {
                 sy = gBtlWork->unk_024;
                 sx = sy;
             } else if (gBtlWork->unk_024 == 0x100) {
@@ -821,7 +821,7 @@ void func_0800DF30(EmyWork* work) {
                 sx = -sy;
             }
         } else {
-            if (actor->flags & 4) {
+            if (actor->unk_034 & 4) {
                 sx = (gBtlWork->unk_024 * work->unk_17C) >> 8;
                 sy = gBtlWork->unk_024;
                 sy = (sy * work->unk_180) >> 8;
@@ -841,9 +841,9 @@ void func_0800DF30(EmyWork* work) {
         }
 
         if (func_0801CA00(actor) != 0) {
-            DrawSprite(x, y, work->gfx, work->tiles, work->unk_008, affine, g, (-4100 - ((actor->y >> 8) << 2)) | 3);
+            DrawSprite(x, y, work->gfx, work->tiles, work->unk_008, affine, g, (-4100 - ((actor->unk_008 >> 8) << 2)) | 3);
         } else {
-            DrawSprite(x, y, work->gfx, work->tiles, work->unk_004, affine, g, (-4100 - ((actor->y >> 8) << 2)) | 3);
+            DrawSprite(x, y, work->gfx, work->tiles, work->unk_004, affine, g, (-4100 - ((actor->unk_008 >> 8) << 2)) | 3);
         }
 
         TaskPoolDraw(&work->unk_028);
@@ -851,7 +851,7 @@ void func_0800DF30(EmyWork* work) {
 }
 
 void func_0800E0D0(EmyWork* work) {
-    gBtlWork->unk_0EC -= gUnk_09EDA4EC[work->unk_03C.unk_00];
+    gBtlWork->unk_0EC -= gUnk_09EDA4EC[work->unk_03C.unk_000];
 
     if (gBtlWork->unk_078 == (BtlObj*)&work->unk_03C) {
         gBtlWork->unk_078 = 0;

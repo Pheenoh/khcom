@@ -2,6 +2,7 @@
 #define GUARD_MODE_TEST_H
 
 #include "types.h"
+#include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "key.h"
@@ -264,8 +265,6 @@ void func_08006120(s32 a, s32 b);
 void func_080A42B4(void);
 void func_08061824(void);
 u8 func_080A42C8(void);
-FldObj* ListPoolFirst(ListNode* node);
-FldObj* ListPoolNext(ListNode* node);
 
 void mode_test_0(void);
 void mode_test_1(void);

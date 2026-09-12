@@ -1,8 +1,7 @@
 #include "macros.h"
+#include "listpool.h"
 #include "battle.h"
 
-void* ListPoolLast(ListNode* pool);
-void* ListPoolPrev(ListNode* node);
 
 ListNode gUnk_020348E8;
 ListNode gUnk_020348F8;

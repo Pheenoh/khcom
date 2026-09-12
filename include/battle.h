@@ -2,6 +2,7 @@
 #define GUARD_BATTLE_H
 
 #include "types.h"
+#include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "m4a.h"
@@ -323,10 +324,7 @@ extern BgFx* gUnk_02034928;
 
 
 void func_0800ABD8(void);
-void func_08000D90(ListNode* node, void* pool);
 void* func_08012218(u32 type);
-void* ListPoolFirst(ListNode* pool);
-void* ListPoolNext(ListNode* node);
 void func_08006120(s32 a, s32 b);
 void func_0801C830(BtlObj* p);
 u16 func_080015F8(u16 a, u16 b);
@@ -411,9 +409,6 @@ void func_080185D0(void);
 void func_0801884C(void);
 void func_0801235C(ListNode* a, ListNode* b);
 s64 __ashldi3(s64 v, s32 n);
-void ListPoolInit(ListNode* pool);
-void func_08000D20(ListNode* node, void* pool, void* owner);
-void func_08000D28(ListNode* node, void* pool);
 void SetBgBlend(s32 a, s32 b, s32 c);
 void func_080062F4(u16 a, s32 b);
 void func_080065FC(s32 a, s32 b, s32 c);

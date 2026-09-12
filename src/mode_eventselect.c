@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "listpool.h"
 #include "mode_eventselect.h"
 
 s16 gUnk_02034A94;
@@ -1250,7 +1251,6 @@ s16 func_080858B8(s32 index);
 void func_080784BC(void* work, s32 mode);
 void func_080785B8(void* work, s32 mode);
 void func_080991CC(void* pool, u8* slot, void* count, u8* state, u8 mode);
-void ListPoolInit(void* pool);
 
 void func_08076CB4(UnkStruct_08080268* w) {
     u32 zero = 0;

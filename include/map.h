@@ -2,6 +2,7 @@
 #define GUARD_MAP_H
 
 #include "types.h"
+#include "listpool.h"
 #include "game_state.h"
 #include "anim.h"
 #include "m4a.h"
@@ -1612,12 +1613,6 @@ void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
 void func_08000DE8(TaskPool* a, Task* t);
-void ListPoolInit(void* pool);
-void ListPoolAddFree(void* a, void* pool, void* b);
-void* ListPoolActivate(void* node, void* pool);
-void* ListPoolFirst(void* pool);
-void* ListPoolNext(void* node);
-void* ListPoolFirstFree(void* pool);
 u16 GetRandom(void);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 s16 GetAngleDiff(u8 a, u8 b);

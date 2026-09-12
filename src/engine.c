@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "listpool.h"
 #include "anim.h"
 #include "gba/syscall.h"
 #include "malloc.h"
@@ -31,14 +32,7 @@ s16 gUnk_02034066;
 s16 gUnk_02034068;
 u16 gUnk_0203406A;
 
-void* ListPoolActivate(void* node, void* pool);
-void ListPoolActivateAfter(void* node, void* pool, void* after);
-void ListPoolActivateBefore(void* node, void* pool, void* before);
-void* ListPoolFirst(void* pool);
-void* ListPoolNext(void* node);
-void* ListPoolFirstFree(void* pool);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
-void ListPoolRelease(void* node, void* pool);
 extern s16 gSineTable[];
 extern u16 gBg0Cnt;
 extern u16 gBg1Cnt;
