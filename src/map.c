@@ -141,8 +141,8 @@ u8 gUnk_02034FBC;
 u8 gUnk_02034FBD[0x17];
 s32 gUnk_02034FD4;
 u8 gUnk_02034FD8;
-UnkStruct_02034FDC* gUnk_02034FDC;
-UnkStruct_02034FE0* gUnk_02034FE0;
+NewGameSlotMenuWork* gUnk_02034FDC;
+LoadGameMenuWork* gUnk_02034FE0;
 UnkStruct_02034FE4* gUnk_02034FE4;
 
 s32 func_080DFEBC(s32 x, s32 y, s32 z) {
@@ -6732,12 +6732,12 @@ void func_080EAC60(u8 a, u32 b) {
 }
 
 s32 func_080EAD3C(u8 i) {
-    UnkStruct_02039D6C* p = &gUnk_02039D6C[i];
+    SaveFileSummary* p = &gUnk_02039D6C[i];
 
-    if (p->unk_02 != 0) {
-        func_080EABB8(i, p->unk_02);
-        func_080EAC60(i, p->unk_04);
-        func_080EAB20(i, 0, p->unk_00);
+    if (p->level != 0) {
+        func_080EABB8(i, p->level);
+        func_080EAC60(i, p->playTime);
+        func_080EAB20(i, 0, p->floor);
         return 1;
     }
     func_080EAB20(i, 0, 13);
@@ -6745,13 +6745,13 @@ s32 func_080EAD3C(u8 i) {
 }
 
 void func_080EAD84(u8 a) {
-    UnkStruct_02039D6C* e;
+    SaveFileSummary* e;
     u8 i = gUnk_02034FDC->unk_33D != 0 ? a + 2 : a;
     e = &gUnk_02039D6C[i];
 
-    if (e->unk_02 != 0) {
-        func_080EAB20(i, 1, e->unk_00);
-        gUnk_02034FDC->unk_160 = LoadTextSlots((void*)func_080DF804(e->unk_01), &gUnk_02034FDC->unk_040);
+    if (e->level != 0) {
+        func_080EAB20(i, 1, e->floor);
+        gUnk_02034FDC->unk_160 = LoadTextSlots((void*)func_080DF804(e->world), &gUnk_02034FDC->unk_040);
 
         if (gUnk_02034FDC->unk_33D == 0) {
             LoadObjPaletteBank(gUnk_02034FDC->unk_03C->unk_06, &gUnk_099910C4[0xB40]);
@@ -6763,7 +6763,7 @@ void func_080EAD84(u8 a) {
         gUnk_02034FDC->unk_160 = 0;
     }
 
-    if (gUnk_02034FDC->unk_33E == 0) {
+    if (gUnk_02034FDC->selectedSlot == 0) {
         if (gUnk_02034FDC->unk_33D != 0) {
             LoadBgMap(1, &gUnk_09985F44[0x8800], 0x800);
         } else {
@@ -6784,10 +6784,10 @@ void func_080EAD84(u8 a) {
 
 void func_080EAEB0(u8 a) {
     u8 idx = gUnk_02034FDC->unk_33D != 0 ? a + 2 : a;
-    UnkStruct_02039D6C* e = &gUnk_02039D6C[idx];
+    SaveFileSummary* e = &gUnk_02039D6C[idx];
 
-    if (e->unk_02 != 0) {
-        func_080EAB20(idx, 0, e->unk_00);
+    if (e->level != 0) {
+        func_080EAB20(idx, 0, e->floor);
     } else {
         func_080EAB20(idx, 0, 13);
     }
@@ -6818,7 +6818,7 @@ void func_080EAF10(void) {
 
     DrawSprite(0, 16, gUnk_098A8F28, gUnk_02034FDC->unk_014, gUnk_02034FDC->unk_010, 0, 0x400, 90);
     t = 45;
-    u = gUnk_02034FDC->unk_33E * t;
+    u = gUnk_02034FDC->selectedSlot * t;
     ApproachValueHalf(&gUnk_02034FDC->unk_038, (gUnk_02034FDC->unk_162 + u) << 8);
     DrawSprite(76, gUnk_02034FDC->unk_038 >> 8, AnimGetGfx(&gUnk_02034FDC->unk_018),
         gUnk_02034FDC->unk_034, gUnk_02034FDC->unk_030, 0, 0, 70);
@@ -6829,36 +6829,36 @@ void func_080EAF10(void) {
         &gUnk_02034FDC->unk_168, gUnk_02034FDC->unk_164, 50, gUnk_02034FDC->unk_318);
 }
 
-void func_080EB12C(UnkStruct_02034FDC* w) {
-    u8 prev = w->unk_33E;
+void func_080EB12C(NewGameSlotMenuWork* w) {
+    u8 prev = w->selectedSlot;
 
     if (GetKeysRepeat() & 0x40) {
-        w->unk_33E = w->unk_33E != 0 ? w->unk_33E - 1 : 1;
+        w->selectedSlot = w->selectedSlot != 0 ? w->selectedSlot - 1 : 1;
         m4aSongNumStart(0x65);
     }
 
     if (GetKeysRepeat() & 0x80) {
-        w->unk_33E = w->unk_33E == 0 ? w->unk_33E + 1 : 0;
+        w->selectedSlot = w->selectedSlot == 0 ? w->selectedSlot + 1 : 0;
         m4aSongNumStart(0x65);
     }
 
-    if (prev != w->unk_33E) {
+    if (prev != w->selectedSlot) {
         func_080EAEB0(prev);
-        func_080EAD84(w->unk_33E);
+        func_080EAD84(w->selectedSlot);
     }
 }
 
-void func_080EB1AC(UnkStruct_02034FDC* w) {
-    if (w->unk_340 != 0) {
-        ApproachValue(&w->unk_008, 0, w->unk_340);
-        ApproachValue(&w->unk_00C, 0x9800, w->unk_340);
-        w->unk_340--;
+void func_080EB1AC(NewGameSlotMenuWork* w) {
+    if (w->timer != 0) {
+        ApproachValue(&w->unk_008, 0, w->timer);
+        ApproachValue(&w->unk_00C, 0x9800, w->timer);
+        w->timer--;
     } else {
-        w->unk_344 = func_080EB1F4;
+        w->update = func_080EB1F4;
     }
 }
 
-void func_080EB1F4(UnkStruct_02034FDC* w) {
+void func_080EB1F4(NewGameSlotMenuWork* w) {
     func_080EB12C(w);
 
     if (GetKeysPressed() & 2) {
@@ -6868,7 +6868,7 @@ void func_080EB1F4(UnkStruct_02034FDC* w) {
             return;
         }
 
-        switch (w->unk_33E) {
+        switch (w->selectedSlot) {
         case 0:
             gGameState.flags &= ~0x10;
             break;
@@ -6879,22 +6879,22 @@ void func_080EB1F4(UnkStruct_02034FDC* w) {
         m4aSongNumStart(0xD3);
         w->unk_33C = 1;
     }
-    w->unk_340 = 16;
-    w->unk_344 = func_080EB27C;
+    w->timer = 16;
+    w->update = func_080EB27C;
 }
 
-void func_080EB27C(UnkStruct_02034FDC* w) {
-    if (w->unk_340 != 0) {
-        ApproachValue(&w->unk_008, -0x800, w->unk_340);
-        ApproachValue(&w->unk_00C, 0xA000, w->unk_340);
-        w->unk_340--;
+void func_080EB27C(NewGameSlotMenuWork* w) {
+    if (w->timer != 0) {
+        ApproachValue(&w->unk_008, -0x800, w->timer);
+        ApproachValue(&w->unk_00C, 0xA000, w->timer);
+        w->timer--;
     } else {
         FadeStartOut(0, 90);
-        w->unk_344 = func_080EB2D0;
+        w->update = func_080EB2D0;
     }
 }
 
-void func_080EB2D0(UnkStruct_02034FDC* w) {
+void func_080EB2D0(NewGameSlotMenuWork* w) {
     if ((u8)FadeIsActive() != 0) {
         return;
     }
@@ -6924,8 +6924,8 @@ void func_080EB328(void) {
     gUnk_02034FDC->unk_33C = 0;
     gUnk_02034FDC->unk_33D = (gGameState.flags >> 3) & 1;
     gUnk_02034FDC->unk_162 = 33;
-    gUnk_02034FDC->unk_340 = 16;
-    gUnk_02034FDC->unk_344 = func_080EB1AC;
+    gUnk_02034FDC->timer = 16;
+    gUnk_02034FDC->update = func_080EB1AC;
     SetBgMode0();
     SetupBg(3, 0, 28, 0);
     SetupBg(1, 0, 29, 0);
@@ -7007,19 +7007,19 @@ void func_080EB328(void) {
     }
 
     if (v != 0) {
-        gUnk_02034FDC->unk_33E = u == 0 ? 1 : 0;
+        gUnk_02034FDC->selectedSlot = u == 0 ? 1 : 0;
     } else {
-        gUnk_02034FDC->unk_33E = 0;
+        gUnk_02034FDC->selectedSlot = 0;
     }
 
-    func_080EAD84(gUnk_02034FDC->unk_33E);
-    gUnk_02034FDC->unk_038 = (gUnk_02034FDC->unk_162 + gUnk_02034FDC->unk_33E * 45) << 8;
+    func_080EAD84(gUnk_02034FDC->selectedSlot);
+    gUnk_02034FDC->unk_038 = (gUnk_02034FDC->unk_162 + gUnk_02034FDC->selectedSlot * 45) << 8;
     FadeStartIn(0, 8);
 }
 
 void func_080EB698(void) {
-    if (gUnk_02034FDC->unk_344 != 0) {
-        gUnk_02034FDC->unk_344(gUnk_02034FDC);
+    if (gUnk_02034FDC->update != 0) {
+        gUnk_02034FDC->update(gUnk_02034FDC);
     }
     func_080EAF10();
 }
@@ -7227,23 +7227,23 @@ void func_080EB93C(u8 a, u32 v) {
 }
 
 void func_080EBA14(u8 a) {
-    UnkStruct_02039D6C* e = &gUnk_02039D6C[a];
+    SaveFileSummary* e = &gUnk_02039D6C[a];
 
-    if (e->unk_02 != 0) {
-        func_080EB898(a, e->unk_02);
-        func_080EB93C(a, e->unk_04);
-        func_080EB818(a, 0, e->unk_00);
+    if (e->level != 0) {
+        func_080EB898(a, e->level);
+        func_080EB93C(a, e->playTime);
+        func_080EB818(a, 0, e->floor);
     } else {
         func_080EB818(a, 0, 13);
     }
 }
 
 void func_080EBA58(u8 a) {
-    UnkStruct_02039D6C* e = &gUnk_02039D6C[a];
+    SaveFileSummary* e = &gUnk_02039D6C[a];
 
-    if (e->unk_02 != 0) {
-        func_080EB818(a, 1, e->unk_00);
-        gUnk_02034FE0->unk_15C = LoadTextSlots((void*)func_080DF804(e->unk_01), &gUnk_02034FE0->unk_03C);
+    if (e->level != 0) {
+        func_080EB818(a, 1, e->floor);
+        gUnk_02034FE0->unk_15C = LoadTextSlots((void*)func_080DF804(e->world), &gUnk_02034FE0->unk_03C);
 
         if (a <= 1) {
             LoadObjPaletteBank(gUnk_02034FE0->unk_038->unk_06, &gUnk_099910C4[0xB40]);
@@ -7257,10 +7257,10 @@ void func_080EBA58(u8 a) {
 }
 
 void func_080EBAE0(u8 a) {
-    UnkStruct_02039D6C* e = &gUnk_02039D6C[a];
+    SaveFileSummary* e = &gUnk_02039D6C[a];
 
-    if (e->unk_02 != 0) {
-        func_080EB818(a, 0, e->unk_00);
+    if (e->level != 0) {
+        func_080EB818(a, 0, e->floor);
     } else {
         func_080EB818(a, 0, 13);
     }
@@ -7323,7 +7323,7 @@ void func_080EBB24(void) {
         gUnk_02034FE0->unk_000, 0, 0xC00, 80);
 #endif
 
-    if (gUnk_02034FE0->unk_183 <= 1) {
+    if (gUnk_02034FE0->selectedSlot <= 1) {
         DrawSprite(56, 112, ((void**)gUnk_09EDE8CC)[0], gUnk_02034FE0->unk_164,
             gUnk_02034FE0->unk_160, 0, 0x400, 80);
         DrawSprite(72, 96, ((void**)gUnk_09EEE03C)[0], gUnk_02034FE0->unk_16C,
@@ -7341,7 +7341,7 @@ void func_080EBB24(void) {
         t = 45;
     }
 
-    u = t * gUnk_02034FE0->unk_183;
+    u = t * gUnk_02034FE0->selectedSlot;
     ApproachValueHalf(&gUnk_02034FE0->unk_034, (gUnk_02034FE0->unk_15E + u) << 8);
     DrawSprite(76, gUnk_02034FE0->unk_034 >> 8, AnimGetGfx(&gUnk_02034FE0->unk_014),
         gUnk_02034FE0->unk_030, gUnk_02034FE0->unk_02C, 0, 0x400, 70);
@@ -7349,24 +7349,24 @@ void func_080EBB24(void) {
         gUnk_02034FE0->unk_038, 50, gUnk_02034FE0->unk_15C);
 }
 
-void func_080EBD00(UnkStruct_02034FE0* w) {
-    u8 old = w->unk_183;
+void func_080EBD00(LoadGameMenuWork* w) {
+    u8 old = w->selectedSlot;
 
     if (GetKeysRepeat() & 0x40) {
-        w->unk_183 = w->unk_183 != 0 ? w->unk_183 - 1 : w->unk_184;
+        w->selectedSlot = w->selectedSlot != 0 ? w->selectedSlot - 1 : w->unk_184;
         m4aSongNumStart(0x65);
     }
 
     if (GetKeysRepeat() & 0x80) {
-        w->unk_183 = w->unk_183 < w->unk_184 ? w->unk_183 + 1 : 0;
+        w->selectedSlot = w->selectedSlot < w->unk_184 ? w->selectedSlot + 1 : 0;
         m4aSongNumStart(0x65);
     }
 
-    if (old != w->unk_183) {
+    if (old != w->selectedSlot) {
         func_080EBAE0(old);
-        func_080EBA58(w->unk_183);
+        func_080EBA58(w->selectedSlot);
 
-        switch (w->unk_183) {
+        switch (w->selectedSlot) {
         case 0:
             if (w->unk_180 != 0) {
                 LoadBgMap(1, &gUnk_09985F44[0x3000], 0x800);
@@ -7397,36 +7397,36 @@ void func_080EBD00(UnkStruct_02034FE0* w) {
     }
 }
 
-void func_080EBE44(UnkStruct_02034FE0* work) {
-    if (work->unk_186 != 0) {
-        ApproachValue(&work->unk_008, 0, work->unk_186);
-        ApproachValue(&work->unk_00C, 0x9800, work->unk_186);
-        work->unk_186--;
+void func_080EBE44(LoadGameMenuWork* work) {
+    if (work->timer != 0) {
+        ApproachValue(&work->unk_008, 0, work->timer);
+        ApproachValue(&work->unk_00C, 0x9800, work->timer);
+        work->timer--;
     } else {
-        work->unk_186 = 16;
-        work->unk_188 = func_080EBE90;
+        work->timer = 16;
+        work->update = func_080EBE90;
     }
 }
 
-void func_080EBE90(UnkStruct_02034FE0* work) {
-    if (work->unk_186 != 0) {
-        ApproachValue(&work->unk_010, 0, work->unk_186);
-        work->unk_186--;
+void func_080EBE90(LoadGameMenuWork* work) {
+    if (work->timer != 0) {
+        ApproachValue(&work->unk_010, 0, work->timer);
+        work->timer--;
     } else {
-        work->unk_188 = func_080EBEC8;
+        work->update = func_080EBEC8;
     }
 }
 
-void func_080EBEC8(UnkStruct_02034FE0* work) {
+void func_080EBEC8(LoadGameMenuWork* work) {
     func_080EBD00(work);
 
     if (GetKeysPressed() & 2) {
-        work->unk_186 = 16;
-        work->unk_188 = func_080EBFB8;
+        work->timer = 16;
+        work->update = func_080EBFB8;
         m4aSongNumStart(0x68);
     } else if (GetKeysPressed() & 9) {
-        if ((u8)func_080EB7A0(work->unk_183) != 0) {
-            switch (work->unk_183) {
+        if ((u8)func_080EB7A0(work->selectedSlot) != 0) {
+            switch (work->selectedSlot) {
             case 0:
                 gGameState.flags &= ~8;
                 gGameState.flags &= ~0x10;
@@ -7446,38 +7446,38 @@ void func_080EBEC8(UnkStruct_02034FE0* work) {
             }
             m4aSongNumStart(0xD3);
             work->unk_182 = 1;
-            work->unk_186 = 16;
-            work->unk_188 = func_080EBFB8;
+            work->timer = 16;
+            work->update = func_080EBFB8;
         } else {
             m4aSongNumStart(0x69);
         }
     }
 }
 
-void func_080EBFB8(UnkStruct_02034FE0* work) {
-    if (work->unk_186 != 0) {
-        ApproachValue(&work->unk_010, -0x8000, work->unk_186);
-        work->unk_186--;
+void func_080EBFB8(LoadGameMenuWork* work) {
+    if (work->timer != 0) {
+        ApproachValue(&work->unk_010, -0x8000, work->timer);
+        work->timer--;
     } else {
-        work->unk_186 = 16;
-        work->unk_188 = func_080EBFF8;
+        work->timer = 16;
+        work->update = func_080EBFF8;
     }
 }
 
-void func_080EBFF8(UnkStruct_02034FE0* work) {
-    if (work->unk_186 != 0) {
-        ApproachValue(&work->unk_008, -0x800, work->unk_186);
-        ApproachValue(&work->unk_00C, 0xA000, work->unk_186);
-        work->unk_186--;
+void func_080EBFF8(LoadGameMenuWork* work) {
+    if (work->timer != 0) {
+        ApproachValue(&work->unk_008, -0x800, work->timer);
+        ApproachValue(&work->unk_00C, 0xA000, work->timer);
+        work->timer--;
     } else {
         FadeStartOut(0, 16);
-        work->unk_188 = func_080EC04C;
+        work->update = func_080EC04C;
     }
 }
 
-void func_080EC04C(UnkStruct_02034FE0* work) {
+void func_080EC04C(LoadGameMenuWork* work) {
 #ifdef VERSION_EU
-    UnkStruct_02039D6C* e = &gUnk_02039D6C[work->unk_183];
+    SaveFileSummary* e = &gUnk_02039D6C[work->selectedSlot];
 #endif
 
     if ((u8)FadeIsActive() != 0) {
@@ -7492,7 +7492,7 @@ void func_080EC04C(UnkStruct_02034FE0* work) {
         }
     } else if (work->unk_182 != 0) {
 #ifdef VERSION_EU
-        if (e->unk_01 != 13) {
+        if (e->world != 13) {
 #else
         if (gUnk_0203C590.unk_04 != 13) {
 #endif
@@ -7518,7 +7518,7 @@ void func_080EC0D4(s32 arg) {
     }
 
     gUnk_02034FE0->unk_182 = 0;
-    gUnk_02034FE0->unk_183 = 0;
+    gUnk_02034FE0->selectedSlot = 0;
 
     if (gUnk_02034FE0->unk_180 != 0) {
         gUnk_02034FE0->unk_184 = 3;
@@ -7530,8 +7530,8 @@ void func_080EC0D4(s32 arg) {
         gUnk_02034FE0->unk_034 = gUnk_02034FE0->unk_15E << 8;
     }
 
-    gUnk_02034FE0->unk_186 = 16;
-    gUnk_02034FE0->unk_188 = func_080EBE44;
+    gUnk_02034FE0->timer = 16;
+    gUnk_02034FE0->update = func_080EBE44;
     SetBgMode0();
     SetupBg(3, 0, 28, 0);
     SetupBg(2, 0, 29, 0);
@@ -7627,13 +7627,13 @@ void func_080EC0D4(s32 arg) {
         func_080EBA14(i);
     }
 
-    func_080EBA58(gUnk_02034FE0->unk_183);
+    func_080EBA58(gUnk_02034FE0->selectedSlot);
     FadeStartIn(0, 16);
 }
 
 void func_080EC424(void) {
-    if (gUnk_02034FE0->unk_188 != 0) {
-        gUnk_02034FE0->unk_188(gUnk_02034FE0);
+    if (gUnk_02034FE0->update != 0) {
+        gUnk_02034FE0->update(gUnk_02034FE0);
     }
     func_080EBB24();
 }
@@ -9189,15 +9189,15 @@ void func_080EE6AC(u32 t) {
 }
 
 void func_080EE760(u8* work, u8 i) {
-    UnkStruct_02039D6C* e = &gUnk_02039D6C[i];
+    SaveFileSummary* e = &gUnk_02039D6C[i];
 
-    if (e->unk_02 == 0) {
+    if (e->level == 0) {
         work[0x164] = 0;
     } else {
-        func_080EE5E0(e->unk_00);
-        func_080EE62C(e->unk_02);
-        func_080EE6AC(e->unk_04);
-        work[0x164] = LoadTextSlots((void*)func_080DF804(e->unk_01), &work[0x44]);
+        func_080EE5E0(e->floor);
+        func_080EE62C(e->level);
+        func_080EE6AC(e->playTime);
+        work[0x164] = LoadTextSlots((void*)func_080DF804(e->world), &work[0x44]);
     }
 }
 

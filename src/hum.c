@@ -8125,15 +8125,15 @@ void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
 
     for (i = 0; i < 4; i++) {
         if (file == i) {
-            data->files[i].unk_00 = gGameState.floor;
-            data->files[i].unk_01 = gGameState.world;
-            data->files[i].unk_02 = gGameState.level;
-            data->files[i].unk_04 = gGameState.playTime;
+            data->files[i].floor = gGameState.floor;
+            data->files[i].world = gGameState.world;
+            data->files[i].level = gGameState.level;
+            data->files[i].playTime = gGameState.playTime;
         } else {
-            data->files[i].unk_00 = gGameState.fileSummaries[i].unk_00;
-            data->files[i].unk_01 = gGameState.fileSummaries[i].unk_01;
-            data->files[i].unk_02 = gGameState.fileSummaries[i].unk_02;
-            data->files[i].unk_04 = gGameState.fileSummaries[i].unk_04;
+            data->files[i].floor = gGameState.fileSummaries[i].floor;
+            data->files[i].world = gGameState.fileSummaries[i].world;
+            data->files[i].level = gGameState.fileSummaries[i].level;
+            data->files[i].playTime = gGameState.fileSummaries[i].playTime;
         }
     }
 }
@@ -8168,15 +8168,15 @@ void MakeSaveFileLarge(SaveFileLarge* save) {
     func_0810962C(&save->unk_EB4);
 
     if (gGameState.flags & 0x10) {
-        gGameState.fileSummaries[1].unk_00 = gGameState.floor;
-        gGameState.fileSummaries[1].unk_01 = gGameState.world;
-        gGameState.fileSummaries[1].unk_02 = gGameState.level;
-        gGameState.fileSummaries[1].unk_04 = gGameState.playTime;
+        gGameState.fileSummaries[1].floor = gGameState.floor;
+        gGameState.fileSummaries[1].world = gGameState.world;
+        gGameState.fileSummaries[1].level = gGameState.level;
+        gGameState.fileSummaries[1].playTime = gGameState.playTime;
     } else {
-        gGameState.fileSummaries[0].unk_00 = gGameState.floor;
-        gGameState.fileSummaries[0].unk_01 = gGameState.world;
-        gGameState.fileSummaries[0].unk_02 = gGameState.level;
-        gGameState.fileSummaries[0].unk_04 = gGameState.playTime;
+        gGameState.fileSummaries[0].floor = gGameState.floor;
+        gGameState.fileSummaries[0].world = gGameState.world;
+        gGameState.fileSummaries[0].level = gGameState.level;
+        gGameState.fileSummaries[0].playTime = gGameState.playTime;
     }
 }
 
@@ -8192,15 +8192,15 @@ void MakeSaveFileSmall(SaveFileSmall* save) {
     CopyMapCardInventory(&save->unk_2EC);
 
     if (gGameState.flags & 0x10) {
-        gGameState.fileSummaries[3].unk_00 = gGameState.floor;
-        gGameState.fileSummaries[3].unk_01 = gGameState.world;
-        gGameState.fileSummaries[3].unk_02 = gGameState.level;
-        gGameState.fileSummaries[3].unk_04 = gGameState.playTime;
+        gGameState.fileSummaries[3].floor = gGameState.floor;
+        gGameState.fileSummaries[3].world = gGameState.world;
+        gGameState.fileSummaries[3].level = gGameState.level;
+        gGameState.fileSummaries[3].playTime = gGameState.playTime;
     } else {
-        gGameState.fileSummaries[2].unk_00 = gGameState.floor;
-        gGameState.fileSummaries[2].unk_01 = gGameState.world;
-        gGameState.fileSummaries[2].unk_02 = gGameState.level;
-        gGameState.fileSummaries[2].unk_04 = gGameState.playTime;
+        gGameState.fileSummaries[2].floor = gGameState.floor;
+        gGameState.fileSummaries[2].world = gGameState.world;
+        gGameState.fileSummaries[2].level = gGameState.level;
+        gGameState.fileSummaries[2].playTime = gGameState.playTime;
     }
 }
 
@@ -8224,51 +8224,51 @@ void ApplySaveHeaderData(SaveHeaderData* data) {
     }
 
     if (SaveRepairFileLarge(0) == SAVE_OK) {
-        gGameState.fileSummaries[0].unk_00 = data->files[0].unk_00;
-        gGameState.fileSummaries[0].unk_01 = data->files[0].unk_01;
-        gGameState.fileSummaries[0].unk_02 = data->files[0].unk_02;
-        gGameState.fileSummaries[0].unk_04 = data->files[0].unk_04;
+        gGameState.fileSummaries[0].floor = data->files[0].floor;
+        gGameState.fileSummaries[0].world = data->files[0].world;
+        gGameState.fileSummaries[0].level = data->files[0].level;
+        gGameState.fileSummaries[0].playTime = data->files[0].playTime;
     } else {
-        gGameState.fileSummaries[0].unk_00 = 0;
-        gGameState.fileSummaries[0].unk_01 = 0;
-        gGameState.fileSummaries[0].unk_02 = 0;
-        gGameState.fileSummaries[0].unk_04 = 0;
+        gGameState.fileSummaries[0].floor = 0;
+        gGameState.fileSummaries[0].world = 0;
+        gGameState.fileSummaries[0].level = 0;
+        gGameState.fileSummaries[0].playTime = 0;
     }
 
     if (SaveRepairFileLarge(1) == SAVE_OK) {
-        gGameState.fileSummaries[1].unk_00 = data->files[1].unk_00;
-        gGameState.fileSummaries[1].unk_01 = data->files[1].unk_01;
-        gGameState.fileSummaries[1].unk_02 = data->files[1].unk_02;
-        gGameState.fileSummaries[1].unk_04 = data->files[1].unk_04;
+        gGameState.fileSummaries[1].floor = data->files[1].floor;
+        gGameState.fileSummaries[1].world = data->files[1].world;
+        gGameState.fileSummaries[1].level = data->files[1].level;
+        gGameState.fileSummaries[1].playTime = data->files[1].playTime;
     } else {
-        gGameState.fileSummaries[1].unk_00 = 0;
-        gGameState.fileSummaries[1].unk_01 = 0;
-        gGameState.fileSummaries[1].unk_02 = 0;
-        gGameState.fileSummaries[1].unk_04 = 0;
+        gGameState.fileSummaries[1].floor = 0;
+        gGameState.fileSummaries[1].world = 0;
+        gGameState.fileSummaries[1].level = 0;
+        gGameState.fileSummaries[1].playTime = 0;
     }
 
     if (SaveRepairFileSmall(0) == SAVE_OK) {
-        gGameState.fileSummaries[2].unk_00 = data->files[2].unk_00;
-        gGameState.fileSummaries[2].unk_01 = data->files[2].unk_01;
-        gGameState.fileSummaries[2].unk_02 = data->files[2].unk_02;
-        gGameState.fileSummaries[2].unk_04 = data->files[2].unk_04;
+        gGameState.fileSummaries[2].floor = data->files[2].floor;
+        gGameState.fileSummaries[2].world = data->files[2].world;
+        gGameState.fileSummaries[2].level = data->files[2].level;
+        gGameState.fileSummaries[2].playTime = data->files[2].playTime;
     } else {
-        gGameState.fileSummaries[2].unk_00 = 0;
-        gGameState.fileSummaries[2].unk_01 = 0;
-        gGameState.fileSummaries[2].unk_02 = 0;
-        gGameState.fileSummaries[2].unk_04 = 0;
+        gGameState.fileSummaries[2].floor = 0;
+        gGameState.fileSummaries[2].world = 0;
+        gGameState.fileSummaries[2].level = 0;
+        gGameState.fileSummaries[2].playTime = 0;
     }
 
     if (SaveRepairFileSmall(1) == SAVE_OK) {
-        gGameState.fileSummaries[3].unk_00 = data->files[3].unk_00;
-        gGameState.fileSummaries[3].unk_01 = data->files[3].unk_01;
-        gGameState.fileSummaries[3].unk_02 = data->files[3].unk_02;
-        gGameState.fileSummaries[3].unk_04 = data->files[3].unk_04;
+        gGameState.fileSummaries[3].floor = data->files[3].floor;
+        gGameState.fileSummaries[3].world = data->files[3].world;
+        gGameState.fileSummaries[3].level = data->files[3].level;
+        gGameState.fileSummaries[3].playTime = data->files[3].playTime;
     } else {
-        gGameState.fileSummaries[3].unk_00 = 0;
-        gGameState.fileSummaries[3].unk_01 = 0;
-        gGameState.fileSummaries[3].unk_02 = 0;
-        gGameState.fileSummaries[3].unk_04 = 0;
+        gGameState.fileSummaries[3].floor = 0;
+        gGameState.fileSummaries[3].world = 0;
+        gGameState.fileSummaries[3].level = 0;
+        gGameState.fileSummaries[3].playTime = 0;
     }
 }
 
