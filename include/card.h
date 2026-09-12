@@ -1796,6 +1796,10 @@ typedef struct UnkStruct_0809FBCC {
     u8 unk_000[0x77A];
     s16 unk_77A;
     s16 unk_77C;
+    u8 unk_77E[0x32];
+    u8 unk_7B0;
+    u8 unk_7B1;
+    u8 unk_7B2[3];
 } UnkStruct_0809FBCC;
 
 typedef struct UnkStruct_080ABA80 {
