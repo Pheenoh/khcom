@@ -9,6 +9,23 @@
 #include "card.h"
 #include <stddef.h>
 
+typedef struct UnkStruct_080A82E0 {
+    u8 unk_000[0x614];
+    TaskPool unk_614;
+    TaskPool unk_628;
+    u8 unk_63C[0x88];
+    u16 unk_6C4;
+    u16 unk_6C6;
+    u16 unk_6C8;
+    u16 unk_6CA;
+    u8 unk_6CC[0x16];
+    u16 unk_6E2[4];
+    u8 unk_6EA[6];
+    u8 unk_6F0;
+    u8 unk_6F1[0x24];
+    u8 unk_715;
+} UnkStruct_080A82E0;
+
 u8 func_080892E8(u8* work, void* a);
 extern u8 gUnk_09618CD8[];
 extern u8 gUnk_093F4578[];
@@ -512,7 +529,7 @@ void func_0808CBB4(u8 a, u8 b);
 void func_080A9B84(UnkStruct_0808C940* w, u8 b);
 void func_080A9F08(u8 a);
 void func_080AA1F8(void);
-u8 func_080A82E0(u8* work, void* a);
+u8 func_080A82E0(UnkStruct_080A82E0* work, void* a);
 s32 func_08097DE4(u8* work);
 u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a);
 u8 func_08090C3C(UnkStruct_02034AAC* p, void* a);
@@ -31140,8 +31157,7 @@ u8 func_080A8020(UnkStruct_0808C940* w, void* a) {
     TaskPoolUpdate(&w->unk_628);
     return 1;
 }
-#ifdef NON_MATCHING
-u8 func_080A82E0(u8* work, void* a) {
+u8 func_080A82E0(UnkStruct_080A82E0* work, void* a) {
     func_08006120(0, 4);
     SetupBg(3, 0, 30, 0);
     SetupBg(2, 0, 15, 0);
@@ -31154,27 +31170,24 @@ u8 func_080A82E0(u8* work, void* a) {
     LoadBgMap(2, gUnk_095182B8, 0x800);
     LoadBgMap(1, gUnk_09514AB8, 0x800);
     DisableBg(0);
-    func_0808500C(3, (u16*)&work[0x6E2]);
-    func_0808CC58(*(u16*)&work[0x6E2], 0);
-    func_0808CC58(*(u16*)&work[0x6E4], 1);
-    func_0808CC58(*(u16*)&work[0x6E6], 2);
-    func_0808CC58(*(u16*)&work[0x6E8], 3);
-    work[0x6F0] = 9;
-    func_080AAA8C(work, 0);
-    func_080A9968(work);
-    work[0x715] = 0;
+    func_0808500C(3, work->unk_6E2);
+    func_0808CC58(work->unk_6E2[0], 0);
+    func_0808CC58(work->unk_6E2[1], 1);
+    func_0808CC58(work->unk_6E2[2], 2);
+    func_0808CC58(work->unk_6E2[3], 3);
+    work->unk_6F0 = 9;
+    func_080AAA8C((u8*)work, 0);
+    func_080A9968((u8*)work);
+    work->unk_715 = 0;
     SetTaskUpdate(a, (void*)func_080A8430);
-    *(u16*)&work[0x6C4] = 0xFFFE;
-    *(u16*)&work[0x6C6] = 142;
-    *(u16*)&work[0x6C8] = 142;
-    *(u16*)&work[0x6CA] = 142;
-    TaskPoolUpdate(&work[0x614]);
-    TaskPoolUpdate(&work[0x628]);
+    work->unk_6C4 = 0xFFFE;
+    work->unk_6C6 = 142;
+    work->unk_6C8 = 142;
+    work->unk_6CA = 142;
+    TaskPoolUpdate(&work->unk_614);
+    TaskPoolUpdate(&work->unk_628);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_080A82E0.s");
-#endif
 u8 func_080A8430(UnkStruct_0808C940* w, void* a) {
     u32 zero;
     u16 i;
