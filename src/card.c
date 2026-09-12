@@ -24568,18 +24568,28 @@ INCLUDE_ASM("card/CardName_0.s");
 s32 CardName_1(void) {
     return 1;
 }
-#ifdef VERSION_US
+#ifdef VERSION_EU
+#define CARDNAME(off) ((off) + 0xF0)
+#else
+#define CARDNAME(off) (off)
+#endif
+
+#ifdef VERSION_JP
+#define CARDNAME_PAL0 0x218
+#else
+#define CARDNAME_PAL0 CARDNAME(0x21C)
+#endif
+
 void CardName_2(u8* work) {
     void** p = &gUnk_09EF1278[2];
 
     DrawSprite(120, 126, *p, *(void**)&work[0x00], *(void**)&work[0x04], 0, 0, 50);
-    func_080664D8(*(s16*)&work[0x220], 115, &work[0x08], *(void**)&work[0x21C], 30, work[0x226]);
-    func_080664D8(*(s16*)&work[0x222], 130, &work[0x108], *(void**)&work[0x218], 30, work[0x227]);
-}
-#else
-INCLUDE_ASM("card/CardName_2.s");
+    func_080664D8(*(s16*)&work[CARDNAME(0x220)], 115, &work[0x08], *(void**)&work[CARDNAME_PAL0], 30, work[CARDNAME(0x226)]);
+#ifndef VERSION_US
+    func_080664D8(*(s16*)&work[CARDNAME(0x224)], 115, &work[0x208], *(void**)&work[CARDNAME(0x218)], 30, work[CARDNAME(0x228)]);
 #endif
-#ifndef VERSION_JP
+    func_080664D8(*(s16*)&work[CARDNAME(0x222)], 130, &work[0x108], *(void**)&work[CARDNAME(0x218)], 30, work[CARDNAME(0x227)]);
+}
 void CardName_3(u8* work) {
     func_08065AE0((TextSlot*)&work[0x08], 32);
     func_08065AE0((TextSlot*)&work[0x108], 32);
@@ -24594,12 +24604,11 @@ void CardName_3(u8* work) {
     ReleaseObjTiles(*(void**)&work[0x00]);
     ReleaseObjPalette(*(void**)&work[0x218]);
     ReleaseObjPalette(*(void**)&work[0x04]);
+#ifndef VERSION_JP
     ReleaseObjPalette(*(void**)&work[0x21C]);
 #endif
-}
-#else
-INCLUDE_ASM("card/CardName_3.s");
 #endif
+}
 
 void func_0809CE88(UnkStruct_0809CE88* w, s16* a) {
     w->unk_00 = AllocObjTiles(128, 0);
