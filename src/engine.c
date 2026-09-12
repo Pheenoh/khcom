@@ -2090,17 +2090,16 @@ void func_080051C4(s32 bg, u16 x, u16 y) {
     SetBgScroll(bg, x & 7, y & 7);
     e->unk_00 = 0;
 }
-#ifdef NON_MATCHING
 void func_08005244(s32 bg, u16 x, u16 y) {
     BgEntry* e;
     s8 dx;
     s8 dy;
     u32 sx;
     u32 sy;
-    s32 tx;
-    s32 ty;
-    s32 cx;
-    s32 cy;
+    u8 tx;
+    u8 ty;
+    u8 cx;
+    u8 cy;
     void* dst;
 
     e = &gBgEntries[bg];
@@ -2123,47 +2122,47 @@ void func_08005244(s32 bg, u16 x, u16 y) {
     sy = GetBgScrollY(bg);
     SetBgScroll(bg, (u16)(sx + (x - e->unk_0A)), (u16)(sy + (y - e->unk_0C)));
 
-    if (dx != 0 || dy != 0) {
-        dst = (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000);
-        tx = sx >> 3;
-        ty = sy >> 3;
-        cx = GetBgScrollX(bg) >> 3;
-        cy = GetBgScrollY(bg) >> 3;
+    if (dx == 0 && dy == 0) {
+        e->unk_0A = x;
+        e->unk_0C = y;
+        return;
+    }
+    dst = (void*)(((*gBgControl[bg] & 0x1F00) << 3) + 0x06000000);
+    tx = sx >> 3;
+    ty = sy >> 3;
+    cx = GetBgScrollX(bg) >> 3;
+    cy = GetBgScrollY(bg) >> 3;
 
-        if (dx > 0) {
-            if (dx > 31) {
-                dx = 31;
-            }
-            func_08004C20(e->unk_0A + 248, y, e, dst, tx + 31, cy, dx, 21);
-        } else if (dx < 0) {
-            dx = -dx;
-
-            if (dx > 31) {
-                dx = 31;
-            }
-            func_08004C20(e->unk_0A - (dx << 3), y, e, dst, tx - dx, cy, dx, 21);
+    if (dx > 0) {
+        if (dx > 31) {
+            dx = 31;
         }
+        func_08004C20(e->unk_0A + 248, y, e, dst, tx + 31, cy, dx, 21);
+    } else if (dx < 0) {
+        dx = -dx;
 
-        if (dy > 0) {
-            if (dy > 21) {
-                dy = 21;
-            }
-            func_08004C20(x, e->unk_0C + 168, e, dst, cx, ty + 21, 31, dy);
-        } else if (dy < 0) {
-            dy = -dy;
-
-            if (dy > 21) {
-                dy = 21;
-            }
-            func_08004C20(x, e->unk_0C - (dy << 3), e, dst, cx, ty - dy, 31, dy);
+        if (dx > 31) {
+            dx = 31;
         }
+        func_08004C20(e->unk_0A - (dx << 3), y, e, dst, tx - dx, cy, dx, 21);
+    }
+
+    if (dy > 0) {
+        if (dy > 21) {
+            dy = 21;
+        }
+        func_08004C20(x, e->unk_0C + 168, e, dst, cx, ty + 21, 31, dy);
+    } else if (dy < 0) {
+        dy = -dy;
+
+        if (dy > 21) {
+            dy = 21;
+        }
+        func_08004C20(x, e->unk_0C - (dy << 3), e, dst, cx, ty - dy, 31, dy);
     }
     e->unk_0A = x;
     e->unk_0C = y;
 }
-#else
-INCLUDE_ASM("engine/func_08005244.s");
-#endif
 
 u16 func_08005458(s32 bg) {
     BgEntry* e = &gBgEntries[bg];
