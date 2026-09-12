@@ -1,3 +1,4 @@
+#include "text.h"
 #include "macros.h"
 #include "mode_ms2.h"
 #include "gba/keys.h"
@@ -5,7 +6,6 @@ extern u8 gUnk_0203A8C0[];
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
-extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_09F84FA8[];
 extern void* gUnkEu_09F84FE4[];
 extern void* gUnkEu_09F84FD0[];

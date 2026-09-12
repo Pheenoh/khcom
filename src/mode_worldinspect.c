@@ -1,3 +1,6 @@
+#include "m4a_song.h"
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "macros.h"
@@ -8,7 +11,6 @@
 #include "anim.h"
 #include "m4a.h"
 #ifdef VERSION_EU
-extern void* eu_0805E924(void* strings);
 extern u8 gUnkEu_09A86E60[];
 extern u32 gLanguage;
 extern u8 gUnkEu_09A2D440[];
@@ -80,7 +82,6 @@ extern u8 gUnk_0999F400[];
 extern u8 gUnk_0999F416[];
 extern u8 gUnk_0999F44A[];
 void func_0805F1C0(s32* p, s32 v);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 
 typedef struct {
     u16 unk_00;
@@ -166,13 +167,10 @@ extern u8 gUnk_09A55A80[];
 extern u8 gUnk_09A5C280[];
 #endif
 void SpriteReset(void);
-void func_08006120(s32 a, u16 b);
-void func_08065ACC(void* a, s32 b);
 void func_080FF19C(s16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 void func_080FF10C(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y);
 void func_080FF2B8(s16 index);
 u8 func_080FF228(s16 id);
-void m4aSongNumStart(u16 id);
 
 s16 gUnk_02035118;
 u8 gUnk_0203511A;

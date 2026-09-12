@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_MAPINSPECT_H
 #define GUARD_MODE_MAPINSPECT_H
 
+#include "game_state.h"
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -80,10 +83,6 @@ extern u16 gUnk_02035FC2[];
 extern u8* gUnk_02035E28;
 extern u8 gUnk_09A3489C[];
 
-void func_08065AE0(TextSlot* p, s32 n);
-void UpdatePlayTime(void);
-void func_08006184(s32 a, u16 b);
-u8 func_08006314(void);
 void func_080E052C(u8 a);
 void func_08107D44(void);
 void func_08107FF0(void);
@@ -92,16 +91,12 @@ void func_081083EC(void);
 void func_081085E8(void);
 void func_08108650(void);
 void SpriteReset(void);
-void func_08006120(s32 a, s32 b);
 void func_08107B84(void);
 UnkStruct_0810718C* func_0810718C(void);
 void func_081078F0(s16 a);
 void func_081075FC(void);
 void func_0810764C(void);
 void func_081076D4(void);
-void func_08065ACC(TextSlot* p, s32 n);
-s32 func_08065B54(u16* s);
-u16 func_08065B6C(u16* a, TextSlot* b);
 void func_08107280(void);
 void func_081073F0(void);
 

@@ -1,6 +1,7 @@
 #ifndef GUARD_ENGINE_H
 #define GUARD_ENGINE_H
 
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -194,13 +195,10 @@ void func_08002880(ObjTiles* p);
 void func_080028A0(ObjTiles* p);
 void func_08002A10(void* a, void* b);
 void func_08002BCC(ObjPaletteNode* p);
-u8 func_08006314(void);
 void func_080034D8(u8 a);
 s32 func_08005920(u16 a);
-void FadeReset(void);
 void func_08005C60(u16 a);
 u16 func_08006390(void);
-void func_080063A8(void);
 void MosaicReset(void);
 void func_0800675C(u8 a, s32 b, s32 c);
 void func_08006B34(u16 a);
@@ -210,7 +208,6 @@ void VTransFree(void);
 void BgFree(void);
 void SetBgMosaic(s32 bg, u8 on);
 void FadeFree(void);
-void func_080063C4(u8 on);
 u8 GetBgScrollX(u32 a);
 u8 GetBgScrollY(u32 a);
 void SetBgOverflow(s32 bg, u8 on);

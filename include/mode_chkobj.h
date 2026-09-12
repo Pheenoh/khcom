@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_CHKOBJ_H
 #define GUARD_MODE_CHKOBJ_H
 
+#include <stdlib.h>
 #include "obj_api.h"
 #include "types.h"
 #include "taskpool.h"
@@ -20,7 +21,6 @@ typedef struct ChkObjEntry {
 
 u16 func_08003598(void* a);
 void SetBackdropColor(u16 r, u16 g, u16 b);
-s32 abs(s32 n);
 void func_08005974(void* a, u16 b, s32 c, void* d, void* e);
 void func_0805FA8C(s32 a, s32 b, s32 c);
 void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);

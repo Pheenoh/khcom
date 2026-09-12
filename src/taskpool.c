@@ -1,3 +1,4 @@
+#include "fade.h"
 #include "macros.h"
 #include "listpool.h"
 #include "taskpool.h"
@@ -29,8 +30,6 @@ extern Mode gModeLang;
 extern Mode gModeCopyright1;
 extern Mode* gDebugModes[];
 
-void func_08000DE8(TaskPool* a, Task* t);
-u8 IsTaskActive(Task* t);
 u8 IsTaskActiveNamed(Task* t, const char* name);
 const char* GetTaskName(Task* t);
 void func_08000F94(void);
@@ -56,7 +55,6 @@ u16 _08006338(void);
 void VTransReset(void);
 void BgReset(void);
 void SpriteReset(void);
-void FadeReset(void);
 void MosaicReset(void);
 void func_08004938(void);
 void FlushDma3Queue(void);

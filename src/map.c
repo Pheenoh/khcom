@@ -1,8 +1,8 @@
+#include "text.h"
 #include "macros.h"
 #include "anim.h"
 #include "map.h"
 #ifdef VERSION_EU
-extern void* eu_0805E924(void* strings);
 extern void eu_080059D4(s32 bg, void* tiles);
 extern void eu_08005A1C(s32 bg, void* src, u8 w, u8 h);
 extern void eu_08005ADC(s32 id);

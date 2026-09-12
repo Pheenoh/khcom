@@ -717,7 +717,6 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work);
 void task_wlogo_mons_2(WlogoMonsWork* work);
 void task_wlogo_mons_3(WlogoMonsWork* work);
 
-void func_08000DE8(TaskPool* a, Task* t);
 void func_080C640C(WlogoObjParam* param);
 u8 func_080C64A4(void);
 void func_0801B008(void);

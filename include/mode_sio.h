@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -475,7 +477,6 @@ extern void* gUnk_09EF3920[];
 
 void SetBgSize(s32 a, s32 b);
 void SetBgBlend(s32 a, u16 b, u16 c);
-u8 IsTaskActive(Task* t);
 void SetBgOverflow(s32 bg, u8 on);
 u8 func_080C5930(void);
 void SaveWriteFileLarge(u16 file);
@@ -486,12 +487,7 @@ void func_0805F1C0(s32* p, s32 v);
 void func_080C57A4(void);
 void func_08002A10(void* a, void* b);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
-void func_08006120(s32 a, u16 b);
 void SioReset(void);
-void func_08065ACC(TextSlot* p, s32 n);
-void func_08065AE0(TextSlot* p, s32 n);
-u16 func_08065B6C(u16* a, TextSlot* b);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 u8 func_080C54B4(void);
 void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c);
 void func_080C5D00(void);

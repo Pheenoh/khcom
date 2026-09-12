@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
+#include "game_state.h"
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -164,15 +167,12 @@ void func_081075FC(void);
 void func_0810764C(void);
 u16 func_08107D24(void);
 void func_081085E8(void);
-void func_08006184(s32 a, u16 b);
 void func_08107280(void);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
 void func_081073F0(void);
 void func_081076D4(void);
 void func_08107B84(void);
 void mode_ms_charge_1(void);
-void UpdatePlayTime(void);
-u8 func_08006314(void);
 void func_0810594C(void);
 void func_08105BD8(void);
 void func_08105DE0(void);
@@ -195,7 +195,6 @@ void func_08107A74(UnkStruct_0810718C* p);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 void mode_ms_charge_0(void);
 void SpriteReset(void);
-void func_08006120(s32 a, s32 b);
 void func_0810563C(void);
 UnkStruct_0810718C* func_08104B2C(void);
 void func_081052C8(s16 a);
@@ -203,22 +202,16 @@ void func_08104F2C(void);
 void func_08104FA4(void);
 void func_08104FF8(void);
 void func_08105090(void);
-void func_08065ACC(TextSlot* p, s32 n);
-s32 func_08065B54(u16* s);
 void func_08104BBC(void);
 void func_08104D18(void);
 void func_08108650(void);
 void func_0805F1C0(s32* p, s32 v);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
-s16 func_08065B08(TextSlot* p, u8 n);
 extern s16 gUnk_02035C18;
 extern s16 gUnk_02035CE0;
 extern s16 gUnk_02035CE2;
 extern s16 gUnk_02035CE4;
 extern s16 gUnk_02035E0C;
 extern s16 gUnk_02035E0E;
-void func_08065AE0(TextSlot* p, s32 n);
 void* func_08093C18(s32 a);
-u16 func_08065B6C(u16* a, TextSlot* b);
 
 #endif /* GUARD_MODE_MS2_H */

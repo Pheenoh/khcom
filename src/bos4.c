@@ -1,9 +1,6 @@
+#include "text.h"
 #include "macros.h"
 #include "bos4.h"
-
-#ifdef VERSION_EU
-extern void* eu_0805E924(void* strings);
-#endif
 
 void* gUrsulaWork;
 #ifdef VERSION_EU

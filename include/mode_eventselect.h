@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_EVENTSELECT_H
 #define GUARD_MODE_EVENTSELECT_H
 
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -175,14 +177,10 @@ s16 func_08075064(u8 a);
 void func_08085C3C(void);
 void func_08085FB0(void);
 void func_08093BB4(void);
-void* func_080668F0(void);
-void* func_08066904(void);
 void func_08066918(void* a, void* b);
 u8 _080669DC(s32 a, void* b);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
-void func_080062F4(u16 a, s32 b);
 void func_08002A10(void* a, u32 b);
-u8 func_08006314(void);
 void* func_080038C8(u16 a);
 void func_080038E4(void* a, void* b, u32 c);
 u16 func_080787B8(CardBattleWork* w, u8 n);

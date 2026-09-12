@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL2_H
 #define GUARD_BTL2_H
 
+#include <stdlib.h>
+#include "fade.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -226,11 +228,8 @@ typedef struct BtlStartWork {
     s16 unk_02;
 } BtlStartWork;
 
-void func_080063C4(u8 a);
 u8 GetKeyReleaseTime(s32 a);
-u16 func_0801AF1C(s32 a);
 u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
-s32 abs(s32 a);
 s32 func_080DFF1C(FldPos* p);
 u8 func_080DFCDC(FldPos* p);
 u8 func_080DFBDC(FldPos* p);
@@ -241,7 +240,6 @@ void func_08006778(void* a, s32 x, s32 y);
 void func_0800675C(u8 a, s32 b, s32 c);
 void SetBgBlend(s32 a, s32 b, s32 c);
 void func_08019050(s32 a, s32 b, s32 c, s32 d);
-void func_08006120(s32 a, s32 b);
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 

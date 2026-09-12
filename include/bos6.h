@@ -1,6 +1,11 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "m4a_song.h"
+#include <stdlib.h>
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -28,11 +33,9 @@ typedef struct PcPos {
 
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08005244(s32 a, u16 b, u16 c);
-u16 func_0801AF1C(s32 a);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
-void func_08012304(void* a);
 
 typedef struct PcAnimStep {
     u16 unk_00;
@@ -404,7 +407,6 @@ u8 func_08110918(LstTask* t);
 u16 func_0811095C(LstTask* t, s16 a);
 void func_08110984(LstTask* t);
 void func_081109A8(LstTask* t);
-void func_08000DE8(TaskPool* a, Task* t);
 
 extern u16 gUnk_09A4CABE[];
 extern s16 gUnk_09A4CAC4[];
@@ -420,9 +422,6 @@ void func_0810B930(PcFltWork* work);
 void func_0810B9A8(PcFltWork* work);
 void func_0810BA14(PcFltWork* work);
 
-void func_08012324(void* a, s32 x, s32 y, s32 z);
-void ColliderSetHeight(void* a, u16 b);
-void func_08012614(void* a, s32 b);
 
 void func_0810B8F8(PcFltWork* work);
 void func_0810B95C(PcFltWork* work);
@@ -461,7 +460,6 @@ u8 func_0810E950(BosLstWork* work);
 u8 func_0810E984(BosLstWork* work);
 void func_0810D4B0(BosLstWork* work);
 
-s32 abs(s32 x);
 s32 Sqrt8(s32 x);
 u8 func_08110938(LstTask* t);
 u8 func_0810A424(PcWork* work);
@@ -481,7 +479,6 @@ void func_0810CC68(BosLstWork* work);
 
 s32 func_0810D70C(BosLstWork* work);
 
-void ColliderSetRadius(void* a, u16 b);
 void func_08110994(LstTask* t, s16 a);
 
 u8 func_0810D3E0(BosLstWork* work, s32 idx, s16 a);
@@ -504,14 +501,12 @@ void func_0810C57C(BosLstWork* work, s16 a);
 
 extern void* gUnk_09EFBEB8;
 
-u16 func_0801AF1C(s32 a);
 void task_bos_pc_fld_2(PcFldWork* work);
 
 extern u8 gUnk_09C489E4[];
 extern u8 gUnk_09EFABA4[];
 extern u8 gUnk_09EFAB68[];
 
-void func_080062F4(u16 a, s32 b);
 
 typedef struct PcShot {
     s32 unk_00;
@@ -591,10 +586,6 @@ void CpuFastSet(void* src, void* dst, s32 ctrl);
 u8 func_0810EBA0(BosLstWork* work);
 void func_0810FF64(Task* t, s32 a);
 void func_08014A34(s32 a, s32 b);
-void func_08006238(s32 a, s32 b, s32 c);
-void func_08006184(s32 a, u16 b);
-void func_08006120(s32 a, u16 b);
-void func_080063A8(void);
 
 typedef struct UnkStruct_02039DC8 {
     u8 unk_00[0x68];
@@ -628,7 +619,6 @@ extern u8 gUnk_09CB8F54[];
 extern u8 gUnk_09EFBBEC[];
 extern u8 gUnk_09EFBBBC[];
 
-void func_080122AC(void* a, s32 b, s32 c, s32 d);
 
 void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg);
 void task_bos_pc_flt_2(PcFltWork* work);
@@ -669,11 +659,8 @@ extern const s16 gSineTable[];
 u8 func_0810A914(PcWork* work, s32 arg);
 void func_0810B844(PcFltWork* work);
 
-void m4aSongNumStart(u16 id);
-u8 func_080128EC(void);
 void func_08018184(s32 a, s32 b, s32 c, s32 d);
 
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 u8 func_0810C32C(BosLstWork* work, s32 a);
 
 void func_0801C2DC(void* a, s32 b);

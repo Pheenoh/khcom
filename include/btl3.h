@@ -1,7 +1,10 @@
 #ifndef GUARD_BTL3_H
 #define GUARD_BTL3_H
 
+#include "m4a_song.h"
 #include "obj_api.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "battle_actor.h"
 #include "types.h"
 #include "engine_math.h"
@@ -147,7 +150,6 @@ extern u8 gUnk_096FAC64[];
 extern u8 gUnk_09EDF124[];
 extern u8 gUnk_09EDF154[];
 
-void m4aSongNumStart(u16 song);
 u8 CanAllocObjTiles(u16 a);
 u8 CanAllocObjPalette(s32 a);
 void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);
@@ -155,10 +157,7 @@ void func_08002A10(void* a, void* b);
 void func_08006B4C(void);
 u8 IsSongPlaying(u16 song);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-u8 func_080128EC(void);
 void func_08013EDC(s32 a, s32 b, s32 c, s32 d);
-void func_08014780(s32 a, s32 b, s32 c);
 void func_08014EC0(s32 a, s32 b, s32 c, s32 d);
 void func_080155BC(s32 a, s32 b, s32 c, s32 d);
 void func_08017260(s32 a, s32 b, s32 c, s32 d);
@@ -166,7 +165,6 @@ void func_080172F8(s32 a, s32 b, s32 c, s32 d);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void func_08019A30(void);
 u32 func_0801A8A4(void* a, void* b, s32 c, s32 d);
-u16 func_0801AF1C(s32 a);
 void func_0801BDDC(void* a, s32 b, s32 c, s32 d);
 void func_0802F284(s32 a, s32 b, s32 c);
 u16 func_0803FDC8(BtlFormEntry* entry);

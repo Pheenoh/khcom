@@ -1,6 +1,11 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "m4a_song.h"
+#include <string.h>
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -716,14 +721,8 @@ extern TmFootStep gUnk_09EF2464[];
 extern u8 gUnk_09619C94[];
 
 void func_08002A10(void* a, void* b);
-void func_080122AC(void* a, u32 b, u16 c, u16 d);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
-void func_08012614(void* a, s32 b);
 void func_080C1A48(JfBorderlineWork* work);
-void func_080062F4(u16 a, s32 b);
-void func_08006238(s32 a, s32 b, s32 c);
 void func_08018B04(s32 x, s32 y, s32 z, s32 s);
-void m4aSongNumStart(u16 a);
 void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 a, s32 b);
 void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 u8* AllocObjAffineAngle(u8 a, s32 b);
@@ -780,7 +779,6 @@ void task_bos_tm_tbl_3(TmTblWork* work);
 void task_bos_tm_clb_3(TmClbWork* work);
 void func_080BA0E4(BtlObj* p, s32 a, s32 b, s32 c);
 void func_080BA0F8(BtlObj* work);
-void* memcpy(void* dst, const void* src, unsigned long n);
 void func_08083900(u8 a);
 void task_bos_tm_body_3(TmBodyWork* work);
 void func_080BB1B8(void* pool, TmClbArg* p, TmClbSrc* a);
@@ -802,7 +800,6 @@ void task_bos_dsd_energy1_3(void);
 void task_bos_jf_lamp_3(JfLampWork* work);
 void task_bos_jf_majin_3(JfMajinWork* work);
 s32 func_080BE910(void);
-void func_080061E8(s32 a, u16 b);
 void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg);
 void task_bos_jf_rock_3(JfRockWork* work);
 void func_080C29F4(DsdMainWork* work);
@@ -838,11 +835,9 @@ void func_080BF8C4(JfMajinWork* work);
 void func_080BFFF8(JfMajinWork* work);
 void func_080C02AC(JfMajinWork* work);
 u8 task_bos_jf_majin_1(JfMajinWork* work);
-u8 func_080128EC(void);
 void func_080147C8(s32 a, s32 b);
 void func_08017F70(s32 a, s32 b, s32 c, s32 d);
 u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work);
-u8 IsTaskActive(Task* t);
 void func_080C3754(DsdMainWork* work);
 void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src);
 void func_080C2BB0(DsdMainWork* work);
@@ -860,18 +855,15 @@ u8 func_080C69B4(void);
 void func_080C6894(CharaObjParam* param);
 void func_080C3928(DsdMainWork* work);
 void func_080C3C40(DsdMainWork* work);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_080147B8(u8 a);
 void func_080147C8(s32 a, s32 b);
 void func_080147D8(s32 a, s32 b);
-void func_08014780(s32 a, s32 b, s32 c);
 void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a);
 void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a);
 void _0801C1F8(u8 a, s32 b, s32 c, s32 d);
 void func_080C3188(DsdMainWork* work);
 void func_080C427C(DsdItaWork* work);
 void LoadPaletteWithEffect(void* src, void* dst, s32 size);
-u16 func_0801AF1C(s32 a);
 void task_bos_jf_majin_2(JfMajinWork* work);
 void task_bos_jf_rock_2(JfRockWork* work);
 void task_bos_dsd_ita_2(DsdItaWork* work);
@@ -893,7 +885,6 @@ void task_bos_dsd_0(DsdWork* work, void* arg);
 void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg);
 void task_bos_jf_lamp_2(JfLampWork* work);
 void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg);
-u8 func_08006314(void);
 void func_08014AAC(s32 a, s32 b);
 void func_0801536C(void);
 void func_08096DC4(void* a, JfMajinFx* b);

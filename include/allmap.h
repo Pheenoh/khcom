@@ -1,6 +1,10 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include <string.h>
+#include <stdlib.h>
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -180,29 +184,14 @@ void func_0801CD20(void);
 void func_080AEB94(void);
 void func_080E04EC(void);
 u8 func_080987C0(u8 a);
-s32 abs(s32 x);
-void func_08000DE8(TaskPool* a, Task* t);
-u8 IsTaskActive(Task* t);
 u16 func_08003524(void* a, s32 b);
 void SetBgBlend(s32 a, s32 b, s32 c);
-void func_08006120(s32 a, u16 b);
-void func_08006184(s32 a, u16 b);
-void func_080061E8(s32 a, u16 b);
-void func_08006238(s32 a, s32 b, s32 c);
-void func_080062F4(u16 a, s32 b);
-u8 func_08006314(void);
 void func_08005244(s32 a, u16 b, u16 c);
 void func_080D510C(UnkStruct_0203C4B4* s);
 void func_080D55E4(void);
 void func_080D53F8(void);
 void func_080D58AC(u16 a, u16 b, u16 c, u16 d);
 void func_080051C4(s32 a, u16 b, u16 c);
-void func_080063A8(void);
-void func_08065ACC(TextSlot* p, s32 n);
-void func_08065AE0(TextSlot* p, s32 n);
-s16 func_08065B08(TextSlot* p, u8 n);
-u16 func_08065B6C(u16* a, TextSlot* b);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void* func_08093C18(u8 a);
 void func_08098670(AllmapDoorEntry* e, s32 b);
 void func_08098778(AllmapDoorEntry* e);
@@ -241,7 +230,6 @@ void* func_080E8D1C(u8 a);
 void func_08098014(AllmapDoorEntry* a, void* b);
 void func_08098598(s32 a, s32 b, AllmapDoorEntry* c);
 void func_0800388C(void* t, u16 slot, void* src, u16 size);
-void* memcpy(void* dst, const void* src, unsigned long n);
 
 extern s16 gSineTable[];
 extern s16 gUnk_02034EC2;

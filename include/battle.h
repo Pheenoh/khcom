@@ -1,6 +1,11 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include <string.h>
+#include <stdlib.h>
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "types.h"
@@ -328,7 +333,6 @@ extern BgFx* gUnk_02034928;
 
 void func_0800ABD8(void);
 void* func_08012218(u32 type);
-void func_08006120(s32 a, s32 b);
 void func_0801C830(BtlObj* p);
 u16 func_080015F8(u16 a, u16 b);
 void func_080763F0(void);
@@ -357,7 +361,6 @@ void func_08012674(void);
 void func_08006B80(u16* a, u16* b);
 u32 func_08006BA0(u8* p);
 u8* func_08006BA8(void);
-void func_080061E8(s32 a, u16 b);
 void func_08012908(void);
 void func_0801007C(void);
 void func_08076318(void);
@@ -372,7 +375,6 @@ u8 func_0807643C(void);
 u8 func_0807B3C8(void);
 u8 func_0807B3E0(void);
 u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s16 e, s16 f, s16 g);
 s32 func_08012170(s32 a, s32 b, s32 c, s32 d);
 void func_08013420(void);
 void func_08013EDC(s32 x, s32 y, s32 z, s32 s);
@@ -409,17 +411,14 @@ void func_0801884C(void);
 void func_0801235C(ListPool* a, ListPool* b);
 s64 __ashldi3(s64 v, s32 n);
 void SetBgBlend(s32 a, s32 b, s32 c);
-void func_080062F4(u16 a, s32 b);
 void func_080065FC(s32 a, s32 b, s32 c);
 void func_080066F4(s16 x, s16 y);
 u8 func_080ABED0(void);
 void func_08006954(void);
-void* memcpy(void* dst, const void* src, unsigned long n);
 void func_080C6FF8(void);
 void func_080DDEA4(void);
 void func_080DFB2C(void);
 void func_08109620(void);
-void func_08006238(s32 a, s32 b, s32 c);
 u8 func_08006B74(void);
 
 void func_0800EEBC(Actor* p, SprObj* s);
@@ -430,12 +429,10 @@ u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r);
 u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r);
 s32 _0800F84C(Actor* work);
 void func_0800F988(UnkStruct_02039CA8* p);
-void func_08012304(Collider* p);
 void func_080140C0(s32* a, s32* b, s32* c);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_080147A8(s32 a, s32 b, s32 c);
 void func_080147B8(u8 a);
-u16 func_0801AF1C(s32 a);
 void func_0801C274(s32 a, s32 b, s32 c);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void func_0801CA88(void);
@@ -445,13 +442,7 @@ u8 CanLevelUp(void);
 const UnkStruct_08133E5C* func_0800FB14(u16 i);
 s32 func_08011398(BtlObj* a, s32 b);
 s32 func_08011F68(s32 a, s32 b);
-void func_08012324(Collider* p, s32 a, s32 b, s32 c);
-void ColliderSetRadius(Collider* p, u16 r);
-void ColliderSetHeight(Collider* p, u16 h);
-u8 func_08012660(Collider* p, s32 bit);
 void func_08012810(void);
-u8 func_080128EC(void);
-void func_08014780(s32 a, s32 b, s32 c);
 void func_08014790(u8 bit);
 void func_080147C8(s32 a, s32 b);
 void func_08019050(u16 a, s32 b, s32 c, s32 d);
@@ -463,9 +454,7 @@ u8 func_0807E33C(void);
 u8 func_08081848(void);
 void func_08096DC4(void* pool, void* arg);
 void func_0801C104(void);
-u8 IsTaskActive(Task* task);
 u8 IsTaskActiveNamed(Task* task, const char* name);
-void func_08006290(s32 a, u16 b, u16 c);
 void func_08076360(void);
 void func_080838E8(void);
 void func_08076374(void);
@@ -539,7 +528,6 @@ u8 func_0800FD20(u32 a);
 u8 func_0801AD68(BtlObj* p);
 void func_08010C70(void);
 void func_08011364(BtlObj* a, BtlObj* b, const UnkStruct_0813400C* c);
-void func_080125A4(void);
 void func_0800F9A0(void);
 void func_0800FB2C(u32 a);
 u8 func_0800FF00(u32 a);
@@ -580,7 +568,6 @@ void func_080180C8(void);
 void func_08018240(void);
 void func_08015F3C(s32 x, s32 y, s32 z);
 void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
-void func_08006184(s32 a, u16 b);
 void func_08015E3C(void);
 void func_080160C0(void);
 void func_08015698(void);
@@ -614,7 +601,6 @@ void func_080136E0(s32 x, s32 y, s32 z);
 void func_08013678(s32 x, s32 y, s32 z);
 void func_0801709C(void);
 void func_0801718C(void);
-s32 abs(s32 x);
 u8 func_0801B818(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n, s16* cnt);
 void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n);
 void func_080184C4(s32 x, s32 y, s32 z, u8 f);
@@ -648,7 +634,6 @@ u8 func_0807B3F8(void);
 u8 func_0807E34C(void);
 u8 func_08081838(void);
 u8 func_0801CA48(BtlObj* p);
-void func_080122AC(Collider* p, u32 type, u16 r, u16 h);
 void func_0800FD68(u32 a);
 void func_08012728(s16 a);
 void func_08013994(s32 x, s32 y, s32 z);
@@ -673,14 +658,12 @@ u8 func_0800FBCC(u32 a);
 void func_0800FC14(s32 a);
 void func_080121FC(FldObj* p);
 void func_08012214(void);
-void func_0801227C(void);
 void func_08012330(ListPool* pool);
 u8 func_080126E4(u8 a);
 void func_0801C298(u8 a, u8 b);
 void func_0801CB0C(void);
 void func_0801CB18(void);
 u8 func_0800FC5C(s32 a);
-void func_08012614(Collider* p, u8 b);
 u8 func_08012648(Collider* p);
 u8 func_0801C1C0(u8 a);
 s32 func_0801A978(BtlObj* p);

@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_STATUS_H
 #define GUARD_MODE_STATUS_H
 
+#include "fade.h"
 #include "types.h"
 #include "game_state.h"
 #include "taskpool.h"
@@ -17,9 +18,6 @@ extern TaskDesc gTaskDescStatusBar;
 extern TaskDesc gTaskDescStatus;
 
 void BgReset(void);
-void func_08006120(s32 a, u16 b);
-u8 IsTaskActive(Task* t);
-void UpdatePlayTime(void);
 void func_080D733C(void);
 void func_080E052C(u8 a);
 

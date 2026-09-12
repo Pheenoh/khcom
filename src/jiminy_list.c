@@ -1,3 +1,4 @@
+#include "text.h"
 #include "macros.h"
 #include "hum.h"
 #include "gba/keys.h"
@@ -204,10 +205,6 @@ void func_0805A8D0(void) {
         gJiminyWork->unk_CB4 + t, 0, 0,
         gJiminyWork->unk_CAE, gJiminyWork->unk_CB0, gJiminyWork->unk_CB2);
 }
-
-#ifdef VERSION_EU
-extern void* eu_0805E924(void* strings);
-#endif
 
 void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
 #ifdef VERSION_EU

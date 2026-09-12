@@ -1,6 +1,7 @@
 #ifndef GUARD_ROOMCREATE_H
 #define GUARD_ROOMCREATE_H
 
+#include "fade.h"
 #include "types.h"
 #include "m4a.h"
 #include "taskpool.h"
@@ -54,8 +55,6 @@ extern TaskDesc gTaskDescSpotLight;
 
 struct Task;
 
-void func_08006120(s32 a, s32 b);
-void func_080062F4(u16 a, s32 b);
 void func_08093B78(TaskPool* pool, u8* p);
 void func_08093C04(void);
 u8 func_080DFD84(FldPos* p);

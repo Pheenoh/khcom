@@ -1,6 +1,9 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "m4a_song.h"
+#include "fade.h"
+#include "btl_effect.h"
 #include "display.h"
 #include "battle_actor.h"
 #include "types.h"
@@ -216,7 +219,6 @@ void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 
 s32 func_0805F588(s32 a, s32 b);
 s32 func_0805F5A4(s32* a, s32* b);
-void m4aSongNumStart(u16 id);
 u32 func_08006ED4(void* a, void* b, void* c);
 u32 func_0800702C(void* a, void* b, void* c);
 void SioKeyStateUpdateA(u16 a);
@@ -227,15 +229,11 @@ void func_080078A4(void);
 void SioReset(void);
 void func_08083D68(void);
 void func_08083DD4(void);
-u8 func_080128EC(void);
 void func_080149BC(s32 x, s32 y);
 void func_08014B30(s32 x, s32 y);
 void func_0801475C(s32 x, s32 y, s32 z);
 void func_08096DC4(TaskPool* pool, CharaPrizeArgs* args);
-void func_08006184(s32 a, s32 b);
-void func_080063A8(void);
 void func_08006B4C(void);
-void m4aSongNumStop(u16 id);
 extern TaskDesc gUnk_09EF34A8;
 
 extern s16 gSineTable[];

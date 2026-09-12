@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include <string.h>
+#include "fade.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -175,18 +178,9 @@ extern TaskDesc gTaskDescPooPrize;
 extern TaskDesc gTaskDescPooRabbitAfterEvent;
 extern TaskDesc gTaskDescPooCabbageAfterEvent;
 
-u8 IsTaskActive(Task* t);
 void func_08002A10(void* a, void* b);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_08005974(void* a, u8 b, s32 c, void* d, void* e);
-void func_08006120(s32 a, u16 b);
-void func_08006184(s32 a, u16 b);
-void func_080062F4(u16 a, s32 b);
-u8 func_08006314(void);
-void func_0801227C(void);
-void func_080125A4(void);
-void ColliderSetRadius(void* a, u16 b);
-void UpdatePlayTime(void);
 void func_0805FA8C(s32 a, u16 b, u16 c);
 void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
 void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
@@ -208,7 +202,6 @@ u8 func_080D2D94(s32 a);
 
 
 void func_080DF814(void);
-void* memcpy(void* dst, const void* src, unsigned long n);
 
 void mode_sio_dbg_flg_0(s32 arg);
 void mode_sio_dbg_flg_1(void);

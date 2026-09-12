@@ -1,9 +1,6 @@
+#include "text.h"
 #include "macros.h"
 #include "room.h"
-
-#ifdef VERSION_EU
-extern void* eu_0805E924(void* strings);
-#endif
 
 void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);

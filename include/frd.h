@@ -1,6 +1,10 @@
 #ifndef GUARD_FRD_H
 #define GUARD_FRD_H
 
+#include "m4a_song.h"
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "types.h"
@@ -175,32 +179,25 @@ extern u8 gUnk_0813ED4C[];
 extern u8 gUnk_09617E18[];
 extern u8 gUnk_0813ED90[];
 
-u16 func_0801AF1C(s32 a);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
-void m4aSongNumStart(u16 n);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void func_08017260(s32 a, s32 b, s32 c, s32 d);
 void func_08045494(BtlObj* body, u8 a, s16 b, s16 c);
 u8 func_0804544C(FrdDonaldWork* work);
 void func_08006B4C(void);
-u8 func_080128EC(void);
 void func_08012E44(s32 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,s32 h,s32 i);
 void func_08013308(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,u8 h,s32 i);
 void func_08015834(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,s32 h);
 void func_08013CB4(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f);
 void func_080147A8(s32 x,s32 y,s32 z);
-void func_08014780(s32 x,s32 y,s32 z);
 void func_08012AAC(u16 a,s32 x,s32 y,s32 z);
 void func_08019050(s32 a,s32 b,s32 c,s32 d);
 u8 task_frd_donald_1(FrdDonaldWork* work);
 u8 func_080474A8(FrdJackWork* work);
 void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 u8 task_frd_jack_1(FrdJackWork* work);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0802F1E8(void);
 void func_08019A30(void);
-void func_08006238(s32 a, s32 b, s32 c);
-void func_080061E8(s32 a, u16 b);
 void func_08048A68(FrdPanWork* work);
 u8 task_frd_pan_1(FrdPanWork* work);
 void func_08048980(FrdPanWork* work);

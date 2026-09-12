@@ -1,6 +1,13 @@
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
+#include "m4a_song.h"
+#include <string.h>
+#include <stdlib.h>
+#include "text.h"
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -720,13 +727,9 @@ void func_0800EFE8(HumWork* work);
 void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 void func_0801C298(u8 a, u8 b);
-void func_08012304(void* p);
 void func_0800E314(HumWork* work, HumSub* sub, void* def);
-u16 func_0801AF1C(s32 a);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void func_08054100(AxcelWork* work, HumSub* sub);
-void func_080122AC(void* a, s32 b, s32 c, s32 d);
-void func_08012614(void* a, s32 b);
 u8 func_080035CC(s16 a, s16 b, s32 c, s32 d, s32 e, s32 f);
 u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
@@ -737,9 +740,6 @@ void func_08018724(s32 x, s32 y, s32 z, s32 f, s32 w);
 void func_080155BC(s32 a, s32 b, s32 c, s32 d);
 void func_0800380C(void* work, u16 a, void* b, s32 c);
 void func_08013994(s32 a, s32 b, s32 c);
-void func_080062F4(u16 a, s32 b);
-void ColliderSetRadius(void* a, u16 b);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
 u16 func_08006390(void);
 u16 _08006338(void);
 void SetBackdropColor(u16 r, u16 g, u16 b);
@@ -749,30 +749,22 @@ void func_0800F368(void* p, u16 n);
 u8 func_0800F504(void* p, u16 a, u16 b, u16 c);
 s32 _0800E434(void* work);
 s32 func_0800E5F0(HumWork* work);
-u8 func_080128EC(void);
 void func_08002A10(void* a, u32 b);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 u32 _0800F84C(void* work);
 u8 func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
 u8 func_0800F4C8(void* work, s32 n);
 void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
 void func_08018184(s32 a, s32 b, s32 c, s32 d);
 void func_08017F70(s32 a, s32 b, s32 c, s32 d);
-void func_08006120(s32 a, s32 b);
-void func_08006184(s32 a, s32 b);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_080169A0(s32 x, s32 y, s32 z, u8 f);
 void func_08016AF4(s32 x, s32 y, s32 z, u8 f, s32 w);
-void func_080063A8(void);
 u8 func_0800F3BC(HumWork* work, s32 x, s32 y, s32 spd);
 u8 func_08081828(void);
 u8 IsTaskActiveNamed(void* task, const char* name);
 void func_0801801C(s32 a, s32 b, s32 c, s32 d);
 void func_080560AC(HumWork* work, s32 a);
-void m4aSongNumStart(u16 n);
-void m4aSongNumStop(u16 n);
 s32 __modsi3(s32 a, s32 b);
-void* memcpy(void* dst, const void* src, unsigned long n);
 void func_080E92B8(void* p);
 void func_080A324C(void* p);
 void func_080A3370(void* p);
@@ -785,7 +777,6 @@ void func_080A3398(void* p);
 void func_080C7024(u16* in);
 void func_080DDEBC(s32 a);
 void func_08109638(void* p);
-void func_08065AE0(TextSlot* p, s32 n);
 void func_0805F1C0(s32* p, s32 v);
 u16 func_0805A55C(u16* p);
 void func_0805A638(s32 a, u16** b);
@@ -793,9 +784,7 @@ void func_0805A484(void);
 void func_0805A4D8(s16 a, s16 b, s16 c);
 void func_0805A7D0(void);
 void func_0805A514(s16 a, s16 b, s16 c);
-u8 func_08006314(void);
 void func_0805A698(s16 a, s16 b, u16** d, u16* c, u16* e, s16 f, s16 g, s16 h);
-u16 func_08065B6C(u16* a, TextSlot* b);
 u8 func_0800FF70(u16 a);
 u8 func_0800FF00(u16 a);
 s32 func_0805A574(s32 idx);
@@ -805,12 +794,8 @@ s32 SaveRepairFileSmall(u16 file);
 u32 _0800F84C(void* work);
 void func_0802F284(s32 a, s32 b, s32 c);
 u8 func_08081828(void);
-void func_08006238(s32 a, s32 b, s32 c);
-void func_080061E8(s32 a, s32 b);
-void func_08006120(s32 a, s32 b);
 void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 void func_080171FC(u16 a);
-s32 abs(s32 x);
 struct PcCharaWork;
 void func_08049EE4(struct PcCharaWork* work, s32 a, s32 b);
 void func_08049F24(struct PcCharaWork* work, s32 a, s32 b);

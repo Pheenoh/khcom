@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_VSBATTLE_H
 #define GUARD_MODE_VSBATTLE_H
 
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -162,23 +165,13 @@ extern TaskDesc gTaskDescBtlShadow;
 extern TaskDesc gTaskDescBtlBadstatus;
 
 void SetBgOverflow(s32 bg, u8 on);
-void func_080063A8(void);
-void func_08006238(s32 a, s32 b, s32 c);
-u8 func_08006314(void);
 void func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
-void func_08006120(s32 a, s32 b);
 void func_08010CC8(void);
 void func_0801071C(void);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-void func_0801227C(void);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
-void func_08012614(void* a, s32 b);
-u8 func_080128EC(void);
 void func_08013A68(s32 a, s32 b, s32 c);
 void func_08014A34(s32 x, s32 y);
 void func_08014AAC(s32 x, s32 y);
 void func_0801536C(void);
-void func_080125A4(void);
 void func_08012798(s32 a, u16 b);
 void func_08012810(void);
 void func_08012824(void);
@@ -186,7 +179,6 @@ void func_08019050(s32 a, s32 b, s32 c, s32 d);
 void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
 u32 func_0801A8A4(s32* px, s32* py, s16 rx, s16 ry);
 void func_0801A920(s16 a, s16 b, s16 c, s16 d);
-u16 func_0801AF1C(s32 a);
 void func_0801B008(void);
 void func_0801C068(void);
 void func_0801C104(void);

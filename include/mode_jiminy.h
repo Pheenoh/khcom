@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
+#include <stdlib.h>
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -14,7 +17,6 @@
 #include "m4a.h"
 #ifdef VERSION_EU
 extern u32 gLanguage;
-extern void* eu_0805E924(void* strings);
 extern u8 gUnkEu_08C9A5E2[];
 extern u8 gUnkEu_08892334[];
 extern u8 gUnkEu_08EF3EDC[];
@@ -185,18 +187,10 @@ extern u8 gUnk_09EECAA0[];
 extern u8 gUnk_09EED2BC[];
 extern u8 gUnk_09EED320[];
 
-void func_080062F4(u16 slot, u8 value);
-u8 func_08006314(void);
-void func_08006120(s32 a, u16 b);
-void UpdatePlayTime(void);
-s32 abs(s32 x);
 void SetModeUpdate(void (*fn)(void));
-void func_08006184(s32 a, u16 b);
 u16 func_08006390(void);
-void func_080063A8(void);
 u8 func_0800FF00(u16 a);
 void func_080658B8(u8 a);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void func_080E052C(u8 a);
 void func_0805A484(void);
 u8 func_0805AA9C(void);
@@ -205,7 +199,6 @@ void func_08064B80(s32 a);
 s32 func_08065170(s32 a, s32 b, void* c);
 s32 func_080653D4(s32 a, s32 b, void* c);
 void func_08065940(void);
-void func_08065ACC(TextSlot* p, s32 n);
 void func_0805A95C(s32 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, s32 h);
 
 void func_0805BAE4(void);

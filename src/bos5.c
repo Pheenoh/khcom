@@ -1,9 +1,9 @@
+#include "text.h"
 #include "macros.h"
 #include "bos5.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
-extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_09F847D4[];
 extern void* gUnkEu_09F847FC[];
 extern u8 gUnkEu_099A421C[];

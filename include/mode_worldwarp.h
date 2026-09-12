@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -136,21 +138,14 @@ extern u8 gUnk_09EF9870[];
 extern u8 gUnk_09EF98B0[];
 extern u8 gUnk_09EF98A0[];
 
-void UpdatePlayTime(void);
-void func_08006184(s32 a, u16 b);
-u8 func_08006314(void);
 void func_080DF9E0(u8 a);
 void func_080E04EC(void);
 void func_08100980(void);
 void func_081006AC(void);
-void func_08065AE0(TextSlot* p, s32 n);
-void func_080063A8(void);
 u8 func_080A42C8(void);
 void func_080A42E0(void);
 void func_08102F30(void);
 void SpriteReset(void);
-void func_08006120(s32 a, s32 b);
-void func_08065ACC(TextSlot* p, s32 n);
 u8 func_080DF750(void);
 void func_0810057C(s16 a, s16 b, void* c, s16 d, s16 e, void* f, s16 g, s16 h);
 void func_081004EC(s32 a, s32 b, s32 c, void* d, s32 e, s32 f);

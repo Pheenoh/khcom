@@ -1,6 +1,11 @@
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
 
+#include "m4a_song.h"
+#include <string.h>
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -274,29 +279,17 @@ extern u8 gUnk_09EE10F8[];
 extern u8 gUnk_08F69BA4[];
 
 void func_08002A10(void* a, void* b);
-u8 func_080128EC(void);
-u16 func_0801AF1C(s32 a);
 void func_08005974(AnimState* a, u8 b, u16 c, void* d, void* e);
 void func_0801D288(void);
 extern u32 gFrameCounter;
-void m4aSongNumStart(u16 id);
-void m4aSongNumStop(u16 id);
 u8 CanLevelUp(void);
 u8 LevelUp(void);
 u8 func_080A1B4C(BtlObj* p, void* pool);
 void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);
-void func_08012614(void* p, s32 a);
 s32 task_btl_sora_1(BtlSoraWork* work);
 void func_08019050(u16 a, s32 b, s32 c, s32 d);
-void func_08006120(s32 a, u16 b);
-void func_080061E8(s32 a, u16 b);
-void func_08006290(s32 a, u16 b, u16 c);
 void func_08015F3C(s32 x, s32 y, s32 z);
-void func_08006238(s32 a, s32 b, s32 c);
-void func_08006184(s32 a, u16 b);
-void func_080063A8(void);
-u8 func_08006314(void);
 void func_080165DC(s32 x, s32 y, s32 z);
 void func_08016684(s32 x, s32 y, s32 z);
 void func_08017008(s32 x, s32 y, s32 z);
@@ -326,8 +319,6 @@ void func_08016750(s32 x, s32 y, s32 z, u8 f);
 void func_08014FDC(s32 x, s32 y, u8 f);
 void func_080137C8(s32 x, s32 y, s32 z, u8 f);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
-void* memcpy(void* dst, const void* src, u32 n);
 s32 func_08011F68(s32 a, BtlObj* b);
 void func_0807E1E8(void);
 void func_0802F1E8(void);
@@ -337,14 +328,12 @@ void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f);
 void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w);
 void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w);
-void func_08014780(s32 a, s32 b, s32 c);
 void func_08016038(s32 x, s32 y, s32 z);
 void func_080161F8(s32 x, s32 y, s32 z, u8 f);
 void func_08018F28(s32 x, s32 y, s32 z);
 void func_08018FE4(s32 x, s32 y, s32 z);
 void func_080184C4(s32 x, s32 y, s32 z, u8 f);
 void func_08019A30(void);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_08015DC8(s32 x, s32 y, s32 z);
 extern TaskDesc gTaskDescSmnKing;
 void func_08015D30(s32 x, s32 y, s32 z);
@@ -370,7 +359,6 @@ void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0801475C(s32 a, s32 b, s32 c);
 u32 func_0801A8A4(s32* x, s32* y, s32 a, s32 b);
-void func_08012304(void* a);
 void func_080140C0(s32* a, s32* b, s32* c);
 void func_0802F284(s32 a, s32 b, s32 c);
 

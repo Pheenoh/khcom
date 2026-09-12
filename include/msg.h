@@ -1,6 +1,11 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "m4a_song.h"
+#include <string.h>
+#include <stdlib.h>
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -107,13 +112,6 @@ typedef struct Ent02034A80 {
     u8 unk_54;
     u8 unk_55[3];
 } Ent02034A80;
-
-typedef struct Ent08066588 {
-    void* unk_00;
-    u8 unk_04;
-    s8 unk_05;
-    u8 unk_06[2];
-} Ent08066588;
 
 typedef struct Ent02034A8C {
     u8 unk_00;
@@ -581,32 +579,19 @@ void _08073E6C(Work08073E34* p);
 void func_08073E74(Work08073E34* p);
 void view_2(void);
 void view_3(void);
-void func_08065ACC(TextSlot* p, s32 n);
-void func_08065AE0(TextSlot* p, s32 n);
-s16 func_08065B08(TextSlot* p, u8 n);
-s32 func_08065B54(u16* s);
-u16 func_08065B6C(u16* a, TextSlot* b);
 s32 func_08065B7C(u16* a, TextSlot* b);
 s32 func_08065D10(u16* a, TextSlot* b);
-void* func_080668F0(void);
-void* func_08066904(void);
 void func_08066918(void* a, void* b);
 void func_08002488(s16 x, s16 y, void* a, void* b, void* c, u16 d);
 void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f);
 void func_08064624(void);
 u8 func_08004678(void* a);
-void* _08066468(s32 a);
-void func_080062F4(u16 a, s32 b);
 u8 func_0800443C(void* a, u16 b);
 void SetBackdropColor(u16 r, u16 g, u16 b);
-void func_08006120(s32 a, s32 b);
-void func_08006184(s32 a, u16 b);
-void func_08006290(s32 a, u16 b, u16 c);
 void func_080CA368(s32 a, u16 b, u16 c);
 void StartBgWave(void (*a)(void));
 void ResetHBlankCallback(void);
 void DisableHBlankIntr(void);
-void m4aSongNumStart(u16 id);
 void func_08076110(s32 song, s16 x, s16 y);
 u8 func_0809D280(u8* s);
 u16 func_0806692C(u8* s, u16* out);
@@ -615,14 +600,12 @@ void func_0801CD74(void* a, s32 b);
 void SetTaskUpdate(u8* p, u32 v);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
-void* memcpy(void* dst, const void* src, unsigned long n);
 void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c);
 #ifdef VERSION_US
 s32 func_08064DD4(u16* a);
 #endif
 u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void m4aMPlayAllStop(void);
-u8 func_08006314(void);
 void func_08074504(void);
 void func_080A4188(void* pool, u16 b);
 void func_08002A10(void* a, void* b);
@@ -647,7 +630,6 @@ u8 func_08073B9C(MsgFaceWork* p, void* a);
 u8 func_08073CA4(MsgFaceWork* p, void* a);
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a);
 void _0806C3A0(u8 a, void* b);
-void func_08065AE0(TextSlot* p, s32 n);
 void func_080635C4(void);
 void func_080DF828(void);
 void func_080E04EC(void);
@@ -713,7 +695,6 @@ void func_08075010(Work08075010* p);
 s16 func_08075064(u8 a);
 void func_08074DC4(Work08074DC4* a);
 
-s32 abs(s32 a);
 void func_0806FE90(Work0806180C* p);
 u8 func_0807048C(Work0806180C* p, void* a);
 u8 GetKeyReleaseTime(s32 a);

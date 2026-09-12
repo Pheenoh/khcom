@@ -1,9 +1,9 @@
+#include "text.h"
 #include "macros.h"
 #include "mode_mapinspect.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
-extern void* eu_0805E924(void* strings);
 extern u8 gUnkEu_09A3D400[];
 extern u8 gUnkEu_09A3E800[];
 extern u8 gUnkEu_09A3FC00[];
