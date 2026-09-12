@@ -23438,6 +23438,9 @@ s32 func_0809AF84(UnkStruct_0809A02C* w, void* a) {
 
     if (w->unk_170 != 0) {
         m4aSongNumStart(0x6A);
+#ifdef VERSION_EU
+        w->unk_1C2 = 10;
+#endif
         func_08084458(w->unk_1A0);
         WorldToScreen(&x, &y, w->unk_38, w->unk_3C, w->unk_40);
         w->unk_38 = x << 8;
@@ -23466,9 +23469,6 @@ s32 func_0809AF84(UnkStruct_0809A02C* w, void* a) {
     TaskPoolUpdate(&w->unk_20);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809AF84.s");
-#endif
 void func_0809B200(UnkStruct_0809A02C* w) {
     s16 x;
     s16 y;
