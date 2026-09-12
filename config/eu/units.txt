@@ -88,7 +88,7 @@ transform.s
 bos6.c -O2 -fprologue-bugfix -fno-common
 bos7.c -O2 -fprologue-bugfix -fno-common
 sroll.c -O2 -fprologue-bugfix -fno-common
-lib.c -O2 -fprologue-bugfix -fno-common
+audio_block_codec.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.s
 agb_sram.c -O1 -fno-common
 movie.c -O0 -fno-common

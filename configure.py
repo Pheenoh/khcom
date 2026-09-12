@@ -103,7 +103,7 @@ UNIT_BSS = {
     "src/mode_copyright2.o": {"us": 0x02034EDC, "jp": 0x02034E38, "eu": 0x020350CC},
     "src/mode_backupstat.o": {"us": 0x02035FE8, "jp": 0x02035F58, "eu": 0x020365F8},
     "src/sroll.o": {"us": 0x02036028, "jp": 0x02035F98, "eu": 0x02036638},
-    "src/lib.o": {"us": 0x02038628, "jp": 0x02038598, "eu": 0x02038C38},
+    "src/audio_block_codec.o": {"us": 0x02038628, "jp": 0x02038598, "eu": 0x02038C38},
     "src/agb_sram.o": {"us": 0x02038698, "jp": 0x02038608, "eu": 0x02038CA8},
     "src/ms_charge.o": {"us": 0x02035C10, "jp": 0x02035B70, "eu": 0x02036220},
     "src/mode_ms2.o": {"us": 0x02035E28, "jp": 0x02035D88, "eu": 0x02036438},
