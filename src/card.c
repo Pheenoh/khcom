@@ -10982,27 +10982,27 @@ u8 func_0808778C(u8* work, void* a) {
 INCLUDE_ASM("card/func_0808778C.s");
 #endif
 
-#ifdef NON_MATCHING
-void func_08087B98(u8* work, u8 mode) {
+void func_08087B98(UnkStruct_0808DB04* w, u8 mode) {
     UnkStruct_0808E890* node;
     UnkStruct_0808E890* p;
+    UnkStruct_0808E2F0* e;
     s32 i;
 
-    node = ListPoolFirst(&work[0x7F0]);
+    node = ListPoolFirst(w->unk_7F0);
     i = 0;
-    EwramFree((*(UnkStruct_0808E2F0**)&work[0x4D4])[*(u16*)&work[0x880]].unk_1C);
-    (*(UnkStruct_0808E2F0**)&work[0x4D4])[*(u16*)&work[0x880]].unk_1C = 0;
+    e = &w->unk_4D4[w->unk_880];
+    EwramFree(w->unk_4D4[w->unk_880].unk_1C);
+    w->unk_4D4[w->unk_880].unk_1C = 0;
 
-    for (i = *(u16*)&work[0x880]; i < *(u16*)&work[0x898] - 1; i++) {
-        (*(UnkStruct_0808E2F0**)&work[0x4D4])[i] =
-            (*(UnkStruct_0808E2F0**)&work[0x4D4])[i + 1];
+    for (i = w->unk_880; i < w->unk_898 - 1; i++) {
+        w->unk_4D4[i] = w->unk_4D4[i + 1];
     }
 
-    *(u16*)&work[0x898] -= 1;
-    *(u16*)&work[0x8D4] -= 1;
+    w->unk_898 -= 1;
+    w->unk_8D4 -= 1;
 
     while (node != 0) {
-        if (node->unk_22 == (s8)work[0x8B5] && node->unk_24 == (s8)work[0x8B6]) {
+        if (node->unk_22 == w->unk_8B5 && node->unk_24 == w->unk_8B6) {
             break;
         }
 
@@ -11023,14 +11023,15 @@ void func_08087B98(u8* work, u8 mode) {
     }
 
     node->unk_4A = 1;
-    TaskPoolUpdate(&work[0x7C8]);
-    func_0808D828(work);
-    func_0808C940((UnkStruct_0808C940*)work, *(s16*)&work[0x898]);
-    func_0808C974((UnkStruct_0808C940*)work);
-}
+    TaskPoolUpdate(w->unk_7C8);
+    func_0808D828((u8*)w);
+#ifdef VERSION_EU
+    func_0808C940((UnkStruct_0808C940*)w, (s16)w->unk_8D4);
 #else
-INCLUDE_ASM("card/func_08087B98.s");
+    func_0808C940((UnkStruct_0808C940*)w, (s16)w->unk_898);
 #endif
+    func_0808C974((UnkStruct_0808C940*)w);
+}
 
 
 u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
@@ -11165,7 +11166,7 @@ u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
             func_0808CC58(w->unk_89A[3], 3);
             w->unk_8B7 = 1;
             if ((u8)func_0808DED0((u8*)w, 0) == 0) {
-                func_08087B98((u8*)w, 0);
+                func_08087B98((UnkStruct_0808DB04*)w, 0);
                 if (w->unk_8D4 != 0) {
                     u8 ready;
                     func_0808E364((u8*)w, 0);
