@@ -264,17 +264,17 @@ void func_0810A4CC(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e) {
     arg.unk_08 = c;
     arg.unk_0C = d;
     arg.unk_10 = &work->unk_2E8;
-    work->unk_2D4[e] = TaskCreate(gBtlWork->unk_02C, &gTaskDescBosPcFlt, &arg);
+    work->unk_2D4[e] = TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosPcFlt, &arg);
 }
 
 void func_0810A51C(PcWork* work, TaskPool* pool) {
     if ((s32)pool > 0x01FFFFFF) {
-        gBtlWork->unk_07C->unk_04 = 0xFE00;
-        gBtlWork->unk_07C->unk_08 = 0x15D00;
-        gBtlWork->unk_07C->unk_0C = 0;
+        gBtlWork->unk_07C->unk_004 = 0xFE00;
+        gBtlWork->unk_07C->unk_008 = 0x15D00;
+        gBtlWork->unk_07C->unk_00C = 0;
         work->unk_2E4 = TaskCreate(pool, &gTaskDescBosPcAcd, &work->unk_2E8);
     } else {
-        work->unk_2E4 = TaskCreate(gBtlWork->unk_02C, &gTaskDescBosPcAcd, &work->unk_2E8);
+        work->unk_2E4 = TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosPcAcd, &work->unk_2E8);
     }
 }
 
@@ -287,7 +287,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     BtlWork* g;
     u16 zero;
 
-    work->unk_2D0 = TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBosPcFld, gUnk_09A3DF0C);
+    work->unk_2D0 = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosPcFld, gUnk_09A3DF0C);
     work->unk_000 = 0;
     work->unk_002 = 0;
     work->unk_004 = 600;
@@ -437,8 +437,8 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
 
     p = (PcPos*)&work->unk_054;
     if (work->unk_002 == 0) {
-        x = ((PcPos*)gBtlWork->unk_07C)->unk_04 >> 8;
-        y = ((PcPos*)gBtlWork->unk_07C)->unk_08 >> 8;
+        x = gBtlWork->unk_07C->unk_004 >> 8;
+        y = gBtlWork->unk_07C->unk_008 >> 8;
         if (x <= 0x109) {
             sel = (y >= 0x144 && y <= 0x162 && x > 175 && (GetRandom() & 0x300)) ? 8 : 7;
         } else {
@@ -493,7 +493,7 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
             }
             break;
         case 4:
-            dx = (((PcPos*)gBtlWork->unk_07C)->unk_04 >> 8) - 128;
+            dx = (gBtlWork->unk_07C->unk_004 >> 8) - 128;
             idx = 0;
             if (dx > 68) {
                 if (dx <= 137) {
@@ -502,7 +502,7 @@ u8 func_0810A9CC(PcWork* work, s32 arg) {
                     idx = 2;
                 }
             }
-            dy = (((PcPos*)gBtlWork->unk_07C)->unk_08 >> 8) - 0x126;
+            dy = (gBtlWork->unk_07C->unk_008 >> 8) - 0x126;
             if (dy > 29) {
                 if (dy <= 59) {
                     idx += 3;
@@ -671,7 +671,7 @@ u8 func_0810AF44(PcWork* work, s32 arg) {
             if (work->unk_2D4[i] == 0) {
                 n++;
             } else if (func_0810B800(work->unk_2D4[i]) == 1) {
-                func_08000DE8(gBtlWork->unk_02C, work->unk_2D4[i]);
+                func_08000DE8(&gBtlWork->taskPools[0], work->unk_2D4[i]);
                 work->unk_2D4[i] = 0;
             }
         }
@@ -679,7 +679,7 @@ u8 func_0810AF44(PcWork* work, s32 arg) {
             args[0] = 0x11400;
             args[1] = 0x15300;
             args[2] = -0x5C00;
-            func_08096DC4(gBtlWork->unk_02C, args);
+            func_08096DC4(&gBtlWork->taskPools[0], args);
             func_0801B918(p);
             func_0810B378(work->unk_2D0, 1);
             work->unk_002 += 1;
@@ -698,7 +698,7 @@ u8 func_0810AF44(PcWork* work, s32 arg) {
 
 u8 task_bos_pc_1(PcWork* work, s32 arg) {
     PcPos* p;
-    PcPos* pos;
+    BtlObj* pos;
     BtlWork* g;
     u8 r;
 
@@ -723,10 +723,10 @@ u8 task_bos_pc_1(PcWork* work, s32 arg) {
         func_0810BF24((u8**)work->unk_2E4, 0);
         gBtlWork->unk_068 &= ~0x100000;
     }
-    pos = (PcPos*)gBtlWork->unk_07C;
-    if ((pos->unk_34 & 0x800000) == 0) {
-        if (pos->unk_04 > work->unk_01C) {
-            pos->unk_04 = work->unk_01C;
+    pos = gBtlWork->unk_07C;
+    if ((pos->unk_034 & 0x800000) == 0) {
+        if (pos->unk_004 > work->unk_01C) {
+            pos->unk_004 = work->unk_01C;
         }
     }
     switch (func_0801ADAC(p)) {
@@ -957,13 +957,13 @@ u8 task_bos_pc_fld_1(PcFldWork* work) {
     s32 u;
     s32 dx;
     s32 dy;
-    PcPos* pos;
+    BtlObj* pos;
 
     func_0802F208();
     func_0810B434();
-    pos = (PcPos*)gBtlWork->unk_07C;
+    pos = gBtlWork->unk_07C;
     u = gBtlWork->unk_000 - 0x7800;
-    t = pos->unk_04 - u;
+    t = pos->unk_004 - u;
     if (t < 0) {
         t = 0;
     }
@@ -999,15 +999,15 @@ u8 task_bos_pc_fld_1(PcFldWork* work) {
 void task_bos_pc_fld_2(PcFldWork* work) {
     s16 sx;
     s16 sy;
-    PcPos* pos;
+    BtlObj* pos;
     u32 x;
     u32 y;
     s32 z;
 
     func_0810B4F4((u8*)work);
-    pos = (PcPos*)gBtlWork->unk_07C;
-    if (pos->unk_0C >= -0x100) {
-        if ((pos->unk_34 & 0x80) == 0) {
+    pos = gBtlWork->unk_07C;
+    if (pos->unk_00C >= -0x100) {
+        if ((pos->unk_034 & 0x80) == 0) {
             if (work->tiles != 0) {
                 if (work->palette != 0) {
                     x = 0x17000;
@@ -1436,7 +1436,7 @@ u8 task_bos_pc_acd_1(PcAcdWork* work) {
     func_080062F4(((UnkStruct_080038C8*)work->palette)->unk_06 + 18, 0);
     anim = &work->anim;
     AnimUpdate(anim);
-    if (((PcPos*)gBtlWork->unk_07C)->unk_0C >= 0) {
+    if (gBtlWork->unk_07C->unk_00C >= 0) {
         if ((gBtlWork->unk_068 & 0x20000000) == 0 ||
             (gBtlWork->unk_068 & 0x200000) == 0) {
             if (work->unk_00C < 0 || AnimIsFinished(anim) == 1) {
@@ -1456,7 +1456,7 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
     s16 sx;
     s16 sy;
     BtlWork** gp;
-    PcPos* pos;
+    BtlObj* pos;
     PcFltWork* flt;
     AnimState* anim;
     u8* tbl;
@@ -1466,8 +1466,8 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
     s32 oy;
 
     gp = &gBtlWork;
-    pos = (PcPos*)(*gp)->unk_07C;
-    pos->unk_34 &= ~0x2000000;
+    pos = (*gp)->unk_07C;
+    pos->unk_034 &= ~0x2000000;
     ox = 0;
     oy = 0;
     flt = work->unk_01C;
@@ -1475,34 +1475,34 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
         ox = gUnk_02039DC8->unk_68 << 8;
         oy = gUnk_02039DC8->unk_6A << 8;
     }
-    work->unk_00C = pos->unk_04;
-    work->unk_010 = pos->unk_08 - 0x400;
+    work->unk_00C = pos->unk_004;
+    work->unk_010 = pos->unk_008 - 0x400;
     work->unk_014 = 0;
     if (flt->unk_004 == 1) {
         tbl = gUnk_09EFAB68;
         ofs = (AnimGetGfxIndex(&work->anim) + 5) * 4;
         gfx = *(void**)((u32)tbl + ofs);
-        if (((PcPos*)(*gp)->unk_07C)->unk_34 & 4) {
+        if ((*gp)->unk_07C->unk_034 & 4) {
             WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x600, work->unk_010 - oy, 0);
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
         }
         DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C(work->unk_010),
                    (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
-    } else if (pos->unk_0C >= 0) {
+    } else if (pos->unk_00C >= 0) {
         if (((*gp)->unk_068 & 0x20000000) && ((*gp)->unk_068 & 0x200000)) {
             return;
         }
         anim = &work->anim;
         if (AnimGetId(anim) == 1) {
-            ((PcPos*)(*gp)->unk_07C)->unk_34 |= 0x2000000;
-            if (((PcPos*)(*gp)->unk_07C)->unk_34 & 0x80) {
+            (*gp)->unk_07C->unk_034 |= 0x2000000;
+            if ((*gp)->unk_07C->unk_034 & 0x80) {
                 return;
             }
             tbl = gUnk_09EFAB68;
             ofs = (AnimGetGfxIndex(anim) + 5) * 4;
             gfx = *(void**)((u32)tbl + ofs);
-            if (((PcPos*)(*gp)->unk_07C)->unk_34 & 4) {
+            if ((*gp)->unk_07C->unk_034 & 4) {
                 WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x600, work->unk_010 - oy, 0);
             } else {
                 WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
@@ -1511,8 +1511,8 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
                        (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox, work->unk_010 - oy, 0);
-            DrawSprite(sx, sy, AnimGetGfx(anim), (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C(((PcPos*)(*gp)->unk_07C)->unk_08),
-                       (u16)(-0x1004 - ((((PcPos*)(*gp)->unk_07C)->unk_08 >> 8) << 2)));
+            DrawSprite(sx, sy, AnimGetGfx(anim), (void*)work->tiles, (void*)work->palette, 0, func_0801AF1C((*gp)->unk_07C->unk_008),
+                       (u16)(-0x1004 - (((*gp)->unk_07C->unk_008 >> 8) << 2)));
         }
     }
 }
@@ -1554,7 +1554,7 @@ void func_0810C2F8(BosLstWork* work) {
 
     for (i = 0; i < 0x20; i++) {
         if (work->unk_810[i] != 0) {
-            func_08000DE8(&gBtlWork->unk_03C[4], work->unk_810[i]);
+            func_08000DE8(&gBtlWork->taskPools[1], work->unk_810[i]);
         }
         work->unk_810[i] = 0;
     }
@@ -1588,7 +1588,7 @@ u8 func_0810C32C(BosLstWork* work, s32 a) {
             s.unk_08 -= d1;
             d2 = (GetRandom() % 17 << 8) - 0x800;
             s.unk_0C += d2;
-            pool = &gBtlWork->unk_03C[4];
+            pool = &gBtlWork->taskPools[1];
             break;
         case 4:
             range = 0x800;
@@ -1727,7 +1727,7 @@ u8 func_0810C65C(BosLstWork* work, u16 a) {
 
 void func_0810C754(BosLstWork* work) {
     s32 t;
-    PcPos* pos;
+    BtlObj* pos;
 
     t = work->unk_07C;
     work->unk_07C = t - 0x100;
@@ -1735,13 +1735,13 @@ void func_0810C754(BosLstWork* work) {
         work->unk_07C = t - 0x200;
     }
     if (work->unk_012 > 0) {
-        pos = (PcPos*)gBtlWork->unk_07C;
-        if (pos->unk_04 > work->unk_044 + 0x1000) {
+        pos = gBtlWork->unk_07C;
+        if (pos->unk_004 > work->unk_044 + 0x1000) {
             work->unk_07C -= 0x80;
         }
     } else {
-        pos = (PcPos*)gBtlWork->unk_07C;
-        if (pos->unk_04 < work->unk_044 - 0x1000) {
+        pos = gBtlWork->unk_07C;
+        if (pos->unk_004 < work->unk_044 - 0x1000) {
             work->unk_07C -= 0x80;
         }
     }
@@ -1756,7 +1756,7 @@ void func_0810C7C4(BosLstWork* work) {
 }
 
 void task_bos_lst_0(BosLstWork* work, void* pool) {
-    PcPos* pos;
+    BtlObj* pos;
     void* obj;
     void* anim;
     void* tbl;
@@ -1767,7 +1767,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     if (pool == 0) {
         work->unk_000 = 0;
         work->unk_001 = 0;
-        work->unk_80C = TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBosLstFld, gUnk_09A4CF6C);
+        work->unk_80C = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstFld, gUnk_09A4CF6C);
         work->unk_008 = 0;
         work->unk_044 = 0x14000;
         work->unk_04C = -0x5400;
@@ -1791,10 +1791,10 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     work->unk_050 = 0;
     work->unk_054 = 0;
     work->unk_058 = 0;
-    pos = (PcPos*)gBtlWork->unk_07C;
-    work->unk_05C = pos->unk_04;
-    work->unk_060 = pos->unk_08;
-    work->unk_064 = pos->unk_0C;
+    pos = gBtlWork->unk_07C;
+    work->unk_05C = pos->unk_004;
+    work->unk_060 = pos->unk_008;
+    work->unk_064 = pos->unk_00C;
 #ifdef VERSION_EU
     work->unk_004 = 0;
 #endif
@@ -1940,7 +1940,7 @@ void func_0810CD00(BosLstWork* work) {
         work->unk_07C = 0x400;
         if (((*pp)->unk_068 & 0x20000000) == 0) {
             work->unk_084 = -0x1200;
-            work->unk_088 = ((PcPos*)(*pp)->unk_07C)->unk_04 - ((work->unk_012 * 5) << 10);
+            work->unk_088 = (*pp)->unk_07C->unk_004 - ((work->unk_012 * 5) << 10);
             if (work->unk_088 > 0x14000) {
                 work->unk_088 = 0x14000;
             }
@@ -2113,7 +2113,7 @@ void func_0810CEC8(BosLstWork* work) {
             if (work->unk_0AA >= n) {
                 work->unk_0A8 = 5;
                 work->unk_068 = 0;
-                if (((PcPos*)gBtlWork->unk_07C)->unk_04 < 0xF800) {
+                if (gBtlWork->unk_07C->unk_004 < 0xF800) {
                     work->unk_044 = 0x14800;
                     func_0810C57C(work, 1);
                 } else {
@@ -2287,7 +2287,7 @@ void func_0810D4F8(BosLstWork* work) {
             s.unk_20 = s.unk_14 + (i << 11);
             s.unk_24 = obj->unk_08 + 0x1400;
             s.unk_28 = s.unk_1C + ((i << 2) << 8);
-            work->unk_810[i] = TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBosLstBit, &s);
+            work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstBit, &s);
         }
         *pBC = 0;
         *pBE += 1;
@@ -2347,7 +2347,7 @@ s32 func_0810D70C(BosLstWork* work) {
 
     base = work->unk_048 + work->unk_058;
     r = base + 0x1A00;
-    d = abs((((PcPos*)gBtlWork->unk_07C)->unk_04 - work->unk_044) >> 8);
+    d = abs((gBtlWork->unk_07C->unk_004 - work->unk_044) >> 8);
     if (d > 23) {
         if (d <= 83) {
             r -= (d / 3) << 8;
@@ -2408,7 +2408,7 @@ void func_0810D77C(BosLstWork* work) {
                 s.unk_20 = s.unk_14 + (i << 11);
                 s.unk_24 = obj->unk_08 + 0x1400;
                 s.unk_28 = s.unk_1C + ((i << 2) << 8);
-                work->unk_810[i] = TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBosLstBit, &s);
+                work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstBit, &s);
             }
         }
         if ((gBtlWork->unk_068 & 0x2000000000000) == 0) {
@@ -2453,7 +2453,7 @@ void func_0810D77C(BosLstWork* work) {
         }
         if (work->unk_06E > 0x4AF ||
             (work->unk_0D4 == 1 && (gBtlWork->unk_068 & 0x2000000000000) == 0 &&
-             ((PcPos*)gBtlWork->unk_07C)->unk_0C > work->unk_04C + work->unk_058 + 0x1800)) {
+             gBtlWork->unk_07C->unk_00C > work->unk_04C + work->unk_058 + 0x1800)) {
             func_0810D478(work);
             work->unk_0D6 += 1;
         }
@@ -2478,7 +2478,7 @@ void func_0810D77C(BosLstWork* work) {
         }
         func_0810C2F8(work);
         work->unk_0BE = 0;
-        if (((PcPos*)gBtlWork->unk_07C)->unk_04 < 0xF800) {
+        if (gBtlWork->unk_07C->unk_004 < 0xF800) {
             work->unk_044 = 0x14800;
             func_0810C57C(work, 1);
         } else {
@@ -2566,8 +2566,8 @@ u8 func_0810DC28(BosLstWork* work) {
     case 4:
         work->unk_068 += 1;
         if (work->unk_068 <= 19) {
-            if (func_08011F78(268, ((PcPos*)gBtlWork->unk_07C)->unk_04,
-                              ((PcPos*)gBtlWork->unk_07C)->unk_08, 0,
+            if (func_08011F78(268, gBtlWork->unk_07C->unk_004,
+                              gBtlWork->unk_07C->unk_008, 0,
                               32, 32, (s16)(((v * 8) >> 8) + 8)) != 0) {
                 m4aSongNumStart(0x2AB);
             }
@@ -2641,7 +2641,7 @@ u8 func_0810DE04(BosLstWork* work) {
             work->unk_068 = 0;
             work->unk_094 = work->unk_048;
             work->unk_098 = work->unk_04C;
-            if (((PcPos*)gBtlWork->unk_07C)->unk_04 > 0xF7FF) {
+            if (gBtlWork->unk_07C->unk_004 > 0xF7FF) {
                 work->unk_090 = (GetRandom() % 41 << 8) + 0xB000;
                 func_0810C57C(work, 1);
             } else {
@@ -2650,7 +2650,7 @@ u8 func_0810DE04(BosLstWork* work) {
             }
             func_0810C65C(work, 5);
             work->unk_044 = work->unk_090;
-            work->unk_09C = ((PcPos*)gBtlWork->unk_07C)->unk_04 + work->unk_012 * 0x3000;
+            work->unk_09C = gBtlWork->unk_07C->unk_004 + work->unk_012 * 0x3000;
             work->unk_0A0 = 0x1F000;
             work->unk_0A4 = -0x5400;
         }
@@ -2659,16 +2659,16 @@ u8 func_0810DE04(BosLstWork* work) {
         z = 0;
         *p8C = 3;
         work->unk_068 = z;
-        work->unk_09C = ((PcPos*)gBtlWork->unk_07C)->unk_04;
+        work->unk_09C = gBtlWork->unk_07C->unk_004;
         work->unk_0A0 = 0x1F000;
         work->unk_0A4 = -0x5400;
         break;
     case 3:
         if (work->unk_068 <= 7) {
-            func_0800592C(&work->unk_09C, ((PcPos*)gBtlWork->unk_07C)->unk_04 + work->unk_012 * 0x3000, 8);
+            func_0800592C(&work->unk_09C, gBtlWork->unk_07C->unk_004 + work->unk_012 * 0x3000, 8);
         }
         if (work->unk_068 == 0) {
-            work->unk_0A0 = func_0810CC14(work->unk_0A0, ((PcPos*)gBtlWork->unk_07C)->unk_08, 0x100, 0x100, 0x100);
+            work->unk_0A0 = func_0810CC14(work->unk_0A0, gBtlWork->unk_07C->unk_008, 0x100, 0x100, 0x100);
         }
         work->unk_044 = func_0810CC14(work->unk_044, work->unk_09C, 0, 0x100, 0x800);
         work->unk_048 = work->unk_0A0;
@@ -2838,7 +2838,7 @@ u8 func_0810E32C(BosLstWork* work) {
                 s.unk_04 = work->unk_0B8;
                 s.unk_06 = i;
                 s.unk_08 = i * ang + 90;
-                work->unk_810[i] = TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBosLstCtr, &s);
+                work->unk_810[i] = TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstCtr, &s);
             }
             work->unk_004 = 0;
             work->unk_068 = 0;
@@ -3167,7 +3167,7 @@ u8 func_0810E99C(BosLstWork* work) {
         work->unk_0AA = 0;
         func_0810C2CC(work, 5, 6);
         work->unk_06E = 0;
-        if (((PcPos*)gBtlWork->unk_07C)->unk_04 < 0xF800) {
+        if (gBtlWork->unk_07C->unk_004 < 0xF800) {
             work->unk_044 = 0x15000;
             func_0810C57C(work, -1);
         } else {
@@ -3191,7 +3191,7 @@ u8 func_0810E99C(BosLstWork* work) {
     s.unk_04 = work->unk_048 + work->unk_054;
     s.unk_08 = (work->unk_04C + work->unk_058) - ((obj->unk_9C >> 1) << 8);
     s.unk_12 = 9;
-    TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBtlPop, &s);
+    TaskCreate(&gBtlWork->taskPools[1], gTaskDescBtlPop, &s);
     return 1;
 }
 
@@ -3454,7 +3454,7 @@ void func_0810F064(BosLstWork* work, LstSub* p) {
         s.unk_04 = p->unk_020;
         s.unk_08 = p->unk_024;
         s.unk_0C = work->unk_012;
-        TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBosLstSnp, &s);
+        TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstSnp, &s);
         break;
     case 4:
         p->unk_004 = 2;
@@ -3491,12 +3491,12 @@ u8 task_bos_lst_1(BosLstWork* work) {
     s16 sy;
     u8 r;
     PcPos* obj;
-    PcPos* pos;
+    BtlObj* pos;
     PcPos* sub;
     LstSub* s;
     BtlWork** gp;
     s32 v;
-    PcPos* p2;
+    BtlObj* p2;
     s32 t;
     s32 y;
     s32 lim;
@@ -3511,26 +3511,26 @@ u8 task_bos_lst_1(BosLstWork* work) {
     work->unk_050 = work->unk_050 / 512;
     *(s32*)&work->unk_018 = (work->unk_110 * 255) / work->unk_112;
     gp = &gBtlWork;
-    pos = (PcPos*)(*gp)->unk_07C;
-    pos->unk_34 |= 0x2000000;
+    pos = (*gp)->unk_07C;
+    pos->unk_034 |= 0x2000000;
     (*gp)->unk_0D8 = -16;
     if (work->unk_0D4 == 1) {
         y = func_0810D70C(work);
-        p2 = (PcPos*)(*gp)->unk_07C;
-        p2->unk_08 = y;
+        p2 = (*gp)->unk_07C;
+        p2->unk_008 = y;
         if (((*gp)->unk_068 & 0x2000000000000) == 0) {
             t = (work->unk_0DC * 70) >> 8;
-            v = p2->unk_04 + t * work->unk_012;
-            p2->unk_04 = v;
+            v = p2->unk_004 + t * work->unk_012;
+            p2->unk_004 = v;
             if (work->unk_012 < 0) {
                 lim = work->unk_044 - 0x2000;
                 if (v > lim) {
-                    p2->unk_04 = lim;
+                    p2->unk_004 = lim;
                 }
             } else {
                 lim = work->unk_044 + 0x2000;
                 if (v < lim) {
-                    p2->unk_04 = lim;
+                    p2->unk_004 = lim;
                 }
             }
         }

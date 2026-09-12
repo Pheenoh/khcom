@@ -92,9 +92,9 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
         if (work->unk_000 == 10 || work->unk_004 == 10) {
             func_0801AF08(e);
         } else {
-            d1 = gBtlWork->unk_07C[1] - e->unk_124;
+            d1 = gBtlWork->unk_07C->unk_004 - e->unk_124;
             d1 = (d1 * d1) >> 8;
-            d2 = gBtlWork->unk_07C[2] - e->unk_128;
+            d2 = gBtlWork->unk_07C->unk_008 - e->unk_128;
             d2 = (d2 * d2) >> 8;
 
             if (work->entries[2].unk_15A & work->entries[3].unk_15A & work->entries[4].unk_15A & work->entries[5].unk_15A & 4) {
@@ -114,7 +114,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
                             flag = 1;
                         }
 
@@ -140,7 +140,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
                             flag = 1;
                         }
 
@@ -156,7 +156,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
                             flag = 1;
                         }
 
@@ -182,7 +182,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
                             flag = 1;
                         }
 
@@ -198,7 +198,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     if ((work->entries[2].unk_15A & work->entries[3].unk_15A & 4) == 0) {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
                             flag = 1;
                         }
 
@@ -224,7 +224,7 @@ void func_080FB000(GaWork* work, GaEntryWork* e) {
                     } else {
                         flag = 0;
 
-                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
+                        if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
                             flag = 1;
                         }
 
@@ -393,7 +393,7 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
     work->unk_01C = 0;
     work->unk_A4C = 0;
     work->unk_A50 = 60;
-    TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBosMap, gUnk_0999202C);
+    TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosMap, gUnk_0999202C);
     gBtlWork->unk_0CC = 0xE200;
     gBtlWork->unk_0D0 = 0x15E00;
     gBtlWork->unk_0D4 = 0;
@@ -614,7 +614,7 @@ u8 func_080FBAB8(MdWork* work) {
 
     switch (work->unk_008) {
     case 0:
-        if (gBtlWork->unk_07C[1] > 0x8000) {
+        if (gBtlWork->unk_07C->unk_004 > 0x8000) {
             func_080FBA14(work, 1);
         } else {
             func_080FBA14(work, 0);
@@ -629,7 +629,7 @@ u8 func_080FBAB8(MdWork* work) {
         }
         break;
     case 1:
-        if (func_080FBA9C(work) != 0 && gBtlWork->unk_07C[1] > 0x8000) {
+        if (func_080FBA9C(work) != 0 && gBtlWork->unk_07C->unk_004 > 0x8000) {
             func_080FBA14(work, 1);
         }
 
@@ -668,7 +668,7 @@ u8 func_080FBC4C(MdWork* work) {
 
     switch (work->unk_008) {
         case 0:
-            d = gBtlWork->unk_07C[1];
+            d = gBtlWork->unk_07C->unk_004;
 
             if (d > 0xA800) {
                 switch (GetRandom() % 3) {
@@ -759,7 +759,7 @@ u8 func_080FBDD4(MdWork* work) {
 
     switch (work->unk_008) {
         case 0:
-            if (gBtlWork->unk_07C[1] > 0xA800) {
+            if (gBtlWork->unk_07C->unk_004 > 0xA800) {
                 if (GetRandom() % 100 <= 59) {
                     func_080FBA14(work, 6);
                 } else {
@@ -969,7 +969,7 @@ u8 func_080FC17C(MdWork* work) {
                     arg.unk_00 = work->sub[0].unk_004;
                     arg.unk_04 = work->sub[0].unk_008;
                     arg.unk_08 = work->sub[0].unk_00C;
-                    func_08096DC4(gBtlWork->unk_02C, &arg);
+                    func_08096DC4(&gBtlWork->taskPools[0], &arg);
                     func_0801B918(&work->sub[0]);
                     func_0801B008();
                     result = 0;
@@ -997,7 +997,7 @@ void func_080FC29C(MdWork* work) {
     s32 d;
     u16 r;
 
-    d = gBtlWork->unk_07C[1];
+    d = gBtlWork->unk_07C->unk_004;
 
     if (d > 0xA800) {
         r = GetRandom() % 100;
@@ -1084,7 +1084,7 @@ void func_080FC3FC(MdWork* work) {
 void task_bos_md_0(MdWork* work, void* arg) {
     s16 i;
 
-    TaskCreate(&gBtlWork->unk_03C[4], gTaskDescBosMdMap, gUnk_099920E8);
+    TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosMdMap, gUnk_099920E8);
     gBtlWork->unk_068 &= 0xFFFFFFFFFFEFFFFF;
     work->unk_000 = 0;
     work->unk_004 = 0;
@@ -1409,8 +1409,8 @@ u8 func_080FCCB4(MdFireWork* work) {
                             case 2:
                             case 4:
                                 a = func_080F7E0C(work->x, work->y,
-                                                  gBtlWork->unk_07C[1],
-                                                  gBtlWork->unk_07C[2]);
+                                                  gBtlWork->unk_07C->unk_004,
+                                                  gBtlWork->unk_07C->unk_008);
                                 work->unk_154 = gSineTable[a] * 3;
                                 work->unk_158 = -gSineTable[a + 0x40] * 3;
                                 work->unk_004 = 90;
@@ -1456,7 +1456,7 @@ u8 func_080FCCB4(MdFireWork* work) {
                 work->unk_008--;
             } else if (func_08012660(work->unk_038.unk_040, 1) != 0) {
                 m4aSongNumStart(0x2CA);
-                *(u64*)&gBtlWork->unk_07C[13] |= 0x20000000;
+                gBtlWork->unk_07C->unk_034 |= 0x20000000;
                 work->unk_008 = 60;
             }
             break;
