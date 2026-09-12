@@ -2615,14 +2615,14 @@ u16 func_080659BC(u8 v, TextSlot* out) {
     return func_080660C0(buf, out);
 }
 #endif
-void func_08065A30(void** p, u8 n) {
+void InitTextTileArray(void** p, u8 n) {
     s32 i;
 
     for (i = 0; i < n; i++) {
         *p++ = NULL;
     }
 }
-void func_08065A44(void** p, u8 n) {
+void FreeTextTileArray(void** p, u8 n) {
     s32 i;
 
     for (i = 0; i < n; i++) {
@@ -2634,7 +2634,7 @@ void func_08065A44(void** p, u8 n) {
     }
 }
 
-u16 func_08065A70(u8 v, TextSlot* out) {
+u16 LoadTwoDigitTextSlots(u8 v, TextSlot* out) {
 #ifdef VERSION_JP
     u8 buf[8];
     s32 q;
@@ -2688,10 +2688,10 @@ u16 func_08065A70(u8 v, TextSlot* out) {
         buf[1] = 0;
     }
 #endif
-    return func_08065B6C((u16*)buf, out);
+    return LoadTextSlots((u16*)buf, out);
 }
 
-void func_08065ACC(TextSlot* p, s32 n) {
+void InitTextSlots(TextSlot* p, s32 n) {
     s32 i;
 
     for (i = 0; i < n; i++) {
@@ -2701,7 +2701,7 @@ void func_08065ACC(TextSlot* p, s32 n) {
     }
 }
 
-void func_08065AE0(TextSlot* p, s32 n) {
+void FreeTextSlots(TextSlot* p, s32 n) {
     s32 i;
 
     for (i = 0; i < n; i++) {
@@ -2714,7 +2714,7 @@ void func_08065AE0(TextSlot* p, s32 n) {
     }
 }
 
-s16 func_08065B08(TextSlot* p, u8 n) {
+s16 GetTextSlotsWidth(TextSlot* p, u8 n) {
     s16 x;
     s32 i;
 
@@ -2786,15 +2786,15 @@ s32 func_08065B54(u16* s) {
     return n;
 }
 
-u16 func_08065B6C(u16* a, TextSlot* b) {
+u16 LoadTextSlots(u16* a, TextSlot* b) {
 #ifdef VERSION_JP
-    return func_08065D10(a, b);
+    return LoadJapaneseTextSlots(a, b);
 #else
-    return func_08065B7C(a, b);
+    return LoadLatinTextSlots(a, b);
 #endif
 }
 
-s32 func_08065B7C(u16* a, TextSlot* b) {
+s32 LoadLatinTextSlots(u16* a, TextSlot* b) {
     s32 n;
 
     n = 0;
@@ -2907,7 +2907,7 @@ s32 func_08065B7C(u16* a, TextSlot* b) {
     return gUnk_02034A90;
 }
 #ifndef VERSION_EU
-s32 func_08065D10(u16* a, TextSlot* b) {
+s32 LoadJapaneseTextSlots(u16* a, TextSlot* b) {
     u8 buf[2];
     u16* c;
     u16 w;
@@ -3339,7 +3339,7 @@ void* _08066468(s32 a) {
     return r;
 }
 
-void func_080664D8(s16 x, s16 y, TextSlot* p, void* d, u16 h, u8 n) {
+void DrawTextSlots(s16 x, s16 y, TextSlot* p, void* d, u16 h, u8 n) {
     s16 x0 = x;
     s16 cy = y;
     u8 i;
@@ -3385,7 +3385,7 @@ void func_08066588(s16 x, s32 y, TextSlot* p, void* d, s32 e, u8 n) {
     }
 }
 
-void func_0806662C(s16 x, s32 y, TextSlot* p, void* d, u16 g, u16 h, u8 n) {
+void DrawTextSlotsWithFlags(s16 x, s32 y, TextSlot* p, void* d, u16 g, u16 h, u8 n) {
     s16 x0 = x;
     s16 cy = y;
     u8 i;
@@ -3408,7 +3408,7 @@ void func_0806662C(s16 x, s32 y, TextSlot* p, void* d, u16 g, u16 h, u8 n) {
     }
 }
 
-void func_080666F0(s16 x, s32 y, TextSlot* p, void* d, void* e, u16 h, u8 n) {
+void DrawTextSlotsWithTwoPalettes(s16 x, s32 y, TextSlot* p, void* d, void* e, u16 h, u8 n) {
     s16 x0 = x;
     s16 cy = y;
     u8 i;
@@ -3468,20 +3468,20 @@ void func_08066864(s16 x, s32 y, void** p, void* d, s32 e, u16 h, u8 n) {
     }
 }
 
-void* func_080668F0(void) {
+void* LoadSmallFontTiles(void) {
     return LoadObjTiles(gUnk_090D4180, 0x5A0);
 }
 
-void* func_08066904(void) {
+void* LoadSmallFontPalette(void) {
     return LoadObjPalette(gUnk_08F69BE4, 0x20);
 }
 
-void func_08066918(void* a, void* b) {
+void FreeSmallFontResources(void* a, void* b) {
     ReleaseObjTiles(a);
     ReleaseObjPalette(b);
 }
 
-u16 func_0806692C(u8* s, u16* out) {
+u16 EncodeSmallFontString(u8* s, u16* out) {
     u16 g = 0;
     u8 n;
     u8 i;
@@ -3543,7 +3543,7 @@ u16 func_0806692C(u8* s, u16* out) {
     return n;
 }
 
-u16 _080669DC(s32 v, u16* out) {
+u16 FormatSmallFontDecimal(s32 v, u16* out) {
     s32 t[11];
     u8 s[12];
     s32 acc;
@@ -3571,7 +3571,7 @@ u16 _080669DC(s32 v, u16* out) {
                 break;
             }
         }
-        return func_0806692C(&s[i], out);
+        return EncodeSmallFontString(&s[i], out);
     }
     d = -1000000000;
 
@@ -3593,12 +3593,12 @@ u16 _080669DC(s32 v, u16* out) {
         }
     }
     s[i - 1] = '-';
-    return func_0806692C(&s[i - 1], out);
+    return EncodeSmallFontString(&s[i - 1], out);
 }
 
 
 
-u16 func_08066AF8(s32 v, u16* out) {
+u16 FormatSmallFontHex(s32 v, u16* out) {
     u8 buf[11];
     u8* p;
     s32 i;
@@ -3624,10 +3624,10 @@ u16 func_08066AF8(s32 v, u16* out) {
         }
         p++;
     }
-    return func_0806692C(buf, out);
+    return EncodeSmallFontString(buf, out);
 }
 
-u16 _08066B84(u32 v, u16* out, u8 mode) {
+u16 FormatSmallFontBinary(u32 v, u16* out, u8 mode) {
     u8 a[2];
     u8 b[9];
     u8 c[17];
@@ -3638,7 +3638,7 @@ u16 _08066B84(u32 v, u16* out, u8 mode) {
         a[0] = v;
         a[0] += '0';
         a[1] = 0;
-        return func_0806692C(a, out);
+        return EncodeSmallFontString(a, out);
     case 1:
         b[0] = (v >> 7) + '0';
         b[1] = ((v >> 6) & 1) + '0';
@@ -3649,7 +3649,7 @@ u16 _08066B84(u32 v, u16* out, u8 mode) {
         b[6] = ((v >> 1) & 1) + '0';
         b[7] = (v & 1) + '0';
         b[8] = 0;
-        return func_0806692C(b, out);
+        return EncodeSmallFontString(b, out);
     case 2:
         c[0] = (v >> 15) + '0';
         c[1] = ((v >> 14) & 1) + '0';
@@ -3668,7 +3668,7 @@ u16 _08066B84(u32 v, u16* out, u8 mode) {
         c[14] = ((v >> 1) & 1) + '0';
         c[15] = (v & 1) + '0';
         c[16] = 0;
-        return func_0806692C(c, out);
+        return EncodeSmallFontString(c, out);
     case 3:
         d[0] = (v >> 31) + '0';
         d[1] = ((v >> 30) & 1) + '0';
@@ -3702,10 +3702,10 @@ u16 _08066B84(u32 v, u16* out, u8 mode) {
         d[29] = ((v >> 2) & 1) + '0';
         d[30] = ((v >> 1) & 1) + '0';
         d[31] = (v & 1) + '0';
-        return func_0806692C(d, out);
+        return EncodeSmallFontString(d, out);
     }
 }
-s32 func_08066DC0(s16 x, s16 y, u16* s, void* d, void* e, u16 h, u8 n) {
+s32 DrawSmallFontString(s16 x, s16 y, u16* s, void* d, void* e, u16 h, u8 n) {
     u8 i;
 
     for (i = 0; i < n; i++) {
@@ -7246,7 +7246,7 @@ u16 func_0806C42C(s16 v, u16* out) {
         }
         p++;
     }
-    return func_0806692C(buf, out);
+    return EncodeSmallFontString(buf, out);
 }
 #ifndef VERSION_EU
 #ifndef VERSION_JP
@@ -12185,15 +12185,15 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
     LoadObjPaletteBank(((Handle0806180C*)p->unk_10)->unk_06, gUnk_09611AB8);
     FadeSetPaletteExcluded(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
-    func_08065ACC(p->unk_1C, 10);
-    func_08065ACC(p->unk_6C, 10);
+    InitTextSlots(p->unk_1C, 10);
+    InitTextSlots(p->unk_6C, 10);
     p->unk_18 = _08066468(1);
 #ifdef VERSION_EU
-    p->unk_F4 = func_08065B6C(eu_0805E924(gUnkEu_08890E1C), p->unk_1C);
-    p->unk_F5 = func_08065B6C(eu_0805E924(gUnkEu_08890E44), p->unk_6C);
+    p->unk_F4 = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), p->unk_1C);
+    p->unk_F5 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), p->unk_6C);
 #else
-    p->unk_F4 = func_08065B6C(gUnk_08159E10, p->unk_1C);
-    p->unk_F5 = func_08065B6C(gUnk_08159E18, p->unk_6C);
+    p->unk_F4 = LoadTextSlots(gUnk_08159E10, p->unk_1C);
+    p->unk_F5 = LoadTextSlots(gUnk_08159E18, p->unk_6C);
 #endif
     p->unk_F8 = 0x5800;
     p->unk_100 = 1;
@@ -12277,8 +12277,8 @@ void msgwait_yesno_2(MsgWaitYesNoWork* p) {
     case 1:
         DrawSprite(120, 80, gUnk_09EF126C[1], p->unk_0C, p->unk_10, 0, 0, 10);
         DrawSprite(p->unk_F8 >> 8, p->unk_FC >> 8, p->unk_C0, p->unk_04, p->unk_08, 0, 1, 9);
-        func_080664D8((240 - func_08065B08(p->unk_1C, p->unk_F4)) >> 1, 67, p->unk_1C, p->unk_18, 0, p->unk_F4);
-        func_080664D8((240 - func_08065B08(p->unk_6C, p->unk_F5)) >> 1, 82, p->unk_6C, p->unk_18, 0, p->unk_F5);
+        DrawTextSlots((240 - GetTextSlotsWidth(p->unk_1C, p->unk_F4)) >> 1, 67, p->unk_1C, p->unk_18, 0, p->unk_F4);
+        DrawTextSlots((240 - GetTextSlotsWidth(p->unk_6C, p->unk_F5)) >> 1, 82, p->unk_6C, p->unk_18, 0, p->unk_F5);
         break;
     }
 }
@@ -12288,8 +12288,8 @@ void msgwait_yesno_3(MsgWaitYesNoWork* p) {
     ReleaseObjPalette(p->unk_10);
     ReleaseObjPalette(p->unk_08);
     ReleaseObjPalette(p->unk_18);
-    func_08065AE0(p->unk_1C, 10);
-    func_08065AE0(p->unk_6C, 10);
+    FreeTextSlots(p->unk_1C, 10);
+    FreeTextSlots(p->unk_6C, 10);
 }
 void func_08074504(void) {
     vu16 v;

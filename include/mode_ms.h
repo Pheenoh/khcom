@@ -136,7 +136,7 @@ void func_08102728(u16 a);
 u8 func_0810274C(u16 a);
 void func_08102774(void);
 u8 func_081027B4(s16 a);
-s32 func_08102A94(void);
+s32 MoogleShopReadMenuKeys(void);
 u16 func_08103F3C(void);
 void func_08102984(s16 a);
 void func_08103CD8(s16 a);

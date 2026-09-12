@@ -380,9 +380,9 @@ void task_status_sora_3(StatusSoraWork* work) {
 }
 
 void task_status_deckname_0(StatusDecknameWork* work, u8* arg) {
-    func_08065ACC(work, 10);
+    InitTextSlots(work, 10);
     work->unk_58 = arg;
-    work->unk_54 = func_08065B6C(GetDeckName(GetActiveDeckIndex()), work);
+    work->unk_54 = LoadTextSlots(GetDeckName(GetActiveDeckIndex()), work);
     work->palette = LoadObjPalette(gUnk_0984B1D8, 0x20);
 }
 
@@ -392,12 +392,12 @@ u8 task_status_deckname_1(StatusDecknameWork* work) {
 
 void task_status_deckname_2(StatusDecknameWork* work) {
     if (*work->unk_58 == 0) {
-        func_080664D8(144, 142, work, work->palette, 4, work->unk_54);
+        DrawTextSlots(144, 142, work, work->palette, 4, work->unk_54);
     }
 }
 
 void task_status_deckname_3(StatusDecknameWork* work) {
-    func_08065AE0(work, 10);
+    FreeTextSlots(work, 10);
     ReleaseObjPalette(work->palette);
 }
 
@@ -889,9 +889,9 @@ void task_status_meswindow_3(StatusMeswindowWork* work) {
 }
 
 void task_status_message_0(StatusMessageWork* work, StatusMessageParam* arg) {
-    func_08065ACC(work, 100);
+    InitTextSlots(work, 100);
     work->unk_328 = *arg;
-    work->unk_320 = func_08065B6C(work->unk_328.unk_00, work);
+    work->unk_320 = LoadTextSlots(work->unk_328.unk_00, work);
     work->palette = LoadObjPalette(gUnk_0984B1B8, 0x20);
 }
 
@@ -900,11 +900,11 @@ u8 task_status_message_1(StatusMessageWork* work) {
 }
 
 void task_status_message_2(StatusMessageWork* work) {
-    func_080664D8(work->unk_328.unk_04, work->unk_328.unk_06, work, work->palette, 3, work->unk_320);
+    DrawTextSlots(work->unk_328.unk_04, work->unk_328.unk_06, work, work->palette, 3, work->unk_320);
 }
 
 void task_status_message_3(StatusMessageWork* work) {
-    func_08065AE0(work, 100);
+    FreeTextSlots(work, 100);
     ReleaseObjPalette(work->palette);
 }
 

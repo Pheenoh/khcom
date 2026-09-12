@@ -393,7 +393,7 @@ u8 task_sroll_c_char_1(SrollCCharWork* w);
 void task_sroll_c_char_2(SrollCCharWork* w);
 void task_sroll_tmr_0(SrollTmrWork* w, void* arg);
 u8 task_sroll_tmr_1(SrollTmrWork* w);
-void func_08000714(void);
+void VBlankIntrBlockAudio(void);
 void func_081154A0(u32* dst, u8* src, u32* pal, s32 x);
 void func_081154EC(u32* dst, u8* src, u32* pal, s32 x);
 void func_08115548(u32* dst, u8* src, u32* pal, s32 x);

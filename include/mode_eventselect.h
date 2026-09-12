@@ -175,7 +175,7 @@ extern Mode gUnkEu_09F5D6EC;
 
 extern TaskDesc gUnk_09EE4984[];
 
-u8 _080669DC(s32 a, void* b);
+u8 FormatSmallFontDecimal(s32 a, void* b);
 u16 func_080787B8(CardBattleWork* w, u8 n);
 s32 func_08077F44(UnkStruct_08080268* w, u8* task);
 void func_0807682C(UnkStruct_08080268* w, u8 slot);

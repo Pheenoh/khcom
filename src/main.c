@@ -326,7 +326,7 @@ void VBlankIntrSio(void) {
     gVBlankCounter++;
 }
 
-void func_08000714(void) {
+void VBlankIntrBlockAudio(void) {
     if (gFrameSyncFlags & 2) {
         gFrameSyncFlags |= 8;
         return;

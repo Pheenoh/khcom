@@ -30,7 +30,7 @@ u16* GetPaletteBufferBank(u8 bank);
 void ResetPaletteEffect(void);
 void PalletFree(void);
 void PalletClear(void);
-void func_08007F20(u16 bank, u8 a);
+void SetPaletteBankFadeEnabled(u16 bank, u8 a);
 u16* FadeAllPalettesToBlack(u16* src, u16 amount);
 u16* FadeAllPalettesToWhite(u16* src, u16 amount);
 void DisableBgWave(s32 a);

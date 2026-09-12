@@ -2610,7 +2610,7 @@ u8 func_080FF228(s16 id) {
     u8 ret = 0;
 
     if (id != 0) {
-        ret = func_08065B6C(eu_0805E924(gUnk_09EF909C[id].unk_2C), gUnk_020351F8);
+        ret = LoadTextSlots(eu_0805E924(gUnk_09EF909C[id].unk_2C), gUnk_020351F8);
     }
     return ret;
 #else
@@ -2618,7 +2618,7 @@ u8 func_080FF228(s16 id) {
         return 0;
     }
 
-    return func_08065B6C(gUnk_09EF909C[id].unk_2C, gUnk_020351F8);
+    return LoadTextSlots(gUnk_09EF909C[id].unk_2C, gUnk_020351F8);
 #endif
 }
 u8 func_080FF25C(s16 id) {
@@ -2640,10 +2640,10 @@ u8 func_080FF25C(s16 id) {
         {
             void** langs = *p;
 
-            return func_08065B6C(langs[gLanguage], gUnk_020352C0);
+            return LoadTextSlots(langs[gLanguage], gUnk_020352C0);
         }
 #else
-        return func_08065B6C(*p, gUnk_020352C0);
+        return LoadTextSlots(*p, gUnk_020352C0);
 #endif
     }
 
@@ -3009,7 +3009,7 @@ void func_080FF8CC(void) {
     }
 
     if (gUnk_020352B8 != 0) {
-        func_080664D8(
+        DrawTextSlots(
 #ifdef VERSION_EU
                       120,
 #else
@@ -3020,7 +3020,7 @@ void func_080FF8CC(void) {
 
     if (gUnk_02035118 == 1) {
         if (gUnk_020354A0 != 0) {
-            func_080664D8(97, 56, gUnk_020352C0, gUnk_02035124, 0, gUnk_020354A0);
+            DrawTextSlots(97, 56, gUnk_020352C0, gUnk_02035124, 0, gUnk_020354A0);
         }
 
         DrawSprite(47, (-gSineTable[gUnk_0203511A + 0x40] >> 5) + 84, gUnk_020354B8[0],

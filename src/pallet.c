@@ -243,7 +243,7 @@ void PalletClear(void) {
     }
 }
 
-void func_08007F20(u16 bank, u8 a) {
+void SetPaletteBankFadeEnabled(u16 bank, u8 a) {
     gPaletteBuffer->banks[bank] = a;
 }
 

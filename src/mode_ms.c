@@ -121,7 +121,7 @@ void mode_ms_top_0(u32 a) {
 #else
     LoadBgTiles(0, gUnk_09A10A3C, 0x19A0);
 #endif
-    func_08101588(GetMooglePoints(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+    LoadDecimalDigitTiles(GetMooglePoints(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
     LoadBgMap(0, gUnk_09A36EDC, 0x500);
     LoadBgMap(1, gUnk_09A373DC, 0x500);
 
@@ -243,7 +243,7 @@ void mode_ms_top_1(void) {
             func_08102704(gUnk_0203C590[6]);
             SetupBg(3, 3, 31, 14);
             DisableBg(3);
-            func_08101588(GetMooglePoints(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+            LoadDecimalDigitTiles(GetMooglePoints(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
             FadeToOriginal(0, 8);
             gUnk_02035890 = 7;
         }
@@ -570,7 +570,7 @@ void func_08102984(s16 a) {
 
     for (j = 0; j < 4; j++) {
         if (gUnk_02035B18[a][j][0] >= 0) {
-            func_08101588(gUnk_09993760[gUnk_02035B08[a]][gUnk_02035B18[a][j][1]], gUnk_09A18EBC,
+            LoadDecimalDigitTiles(gUnk_09993760[gUnk_02035B08[a]][gUnk_02035B18[a][j][1]], gUnk_09A18EBC,
                 (u8*)GetBgCharBase(2) + (j * 0xC0 + 0xC0), 0x40, 3);
             func_081028F8(12, 8, LANGSTR(gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_00),
                 gUnk_099931E4[j].unk_1C[gUnk_02035B08[a]].unk_04,
@@ -582,7 +582,7 @@ void func_08102984(s16 a) {
     LoadBgMap(2, gUnk_02035C00, 0x500);
 }
 
-s32 func_08102A94(void) {
+s32 MoogleShopReadMenuKeys(void) {
     s32 k;
 
     k = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
@@ -638,10 +638,10 @@ void func_08102AB4(s16 x, s16 y) {
     FadeSetPaletteExcluded(((FldRes*)gUnk_02035A40)->unk_06 + 0x10, 1);
     p = &gUnk_02035A44;
     *p = EwramAlloc(0x120);
-    func_08065ACC(gUnk_02035A44, 0x24);
+    InitTextSlots(gUnk_02035A44, 0x24);
     p = &gUnk_02035A4C;
     *p = EwramAlloc(0x2D0);
-    func_08065ACC(gUnk_02035A4C, 0x5A);
+    InitTextSlots(gUnk_02035A4C, 0x5A);
     gUnk_02035A54 = LoadObjTiles(gUnk_0908B1B4, 0x9A0);
     AnimInit(&gUnk_02035A58, gUnk_09EEA164, gUnk_09EEA148);
     AnimStart(&gUnk_02035A58, 0, 1);
@@ -670,9 +670,9 @@ void func_08102DC8(void) {
     ReleaseObjTiles(gUnk_02035ADC);
     FadeSetPaletteExcluded(((FldRes*)gUnk_02035A40)->unk_06 + 0x10, 0);
     ReleaseObjPalette(gUnk_02035A40);
-    func_08065AE0(gUnk_02035A44, 0x24);
+    FreeTextSlots(gUnk_02035A44, 0x24);
     EwramFree(gUnk_02035A44);
-    func_08065AE0(gUnk_02035A4C, 0x5A);
+    FreeTextSlots(gUnk_02035A4C, 0x5A);
     EwramFree(gUnk_02035A4C);
     FadeSetPaletteExcluded(((FldRes*)gUnk_02035A30)->unk_06 + 0x10, 0);
     ReleaseObjPalette(gUnk_02035A30);
@@ -723,8 +723,8 @@ void func_08102F30(void) {
         }
 
         if (gUnk_020358C8[i].unk_38 == 9) {
-            func_080664D8(0x30, 0x63, gUnk_02035A44, gUnk_02035A40, 0, gUnk_02035A48);
-            func_080664D8(0x31, 0x72, gUnk_02035A4C, gUnk_02035AE0, 0, gUnk_02035A50);
+            DrawTextSlots(0x30, 0x63, gUnk_02035A44, gUnk_02035A40, 0, gUnk_02035A48);
+            DrawTextSlots(0x31, 0x72, gUnk_02035A4C, gUnk_02035AE0, 0, gUnk_02035A50);
             ApproachValueHalf(&gUnk_02035AD4, gUnk_020358C8[gUnk_02035B62].x - 0x1000);
             ApproachValueHalf(&gUnk_02035AD8, gUnk_020358C8[gUnk_02035B62].y - 0x2000);
             DrawSprite(gUnk_02035AD4 >> 8, gUnk_02035AD8 >> 8, AnimUpdate(&gUnk_02035AE8), gUnk_02035ADC, gUnk_02035AE0, 0, 0, 0);
@@ -932,8 +932,8 @@ u8 func_0810329C(u16 a) {
                     gUnk_02035AD4 = gUnk_020358C8[0].x - 0x1000;
                     gUnk_02035AD8 = gUnk_020358C8[0].y - 0x2000;
                     LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
-                    gUnk_02035A48 = func_08065B6C(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
-                    gUnk_02035A50 = func_08065B6C(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
+                    gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
+                    gUnk_02035A50 = LoadTextSlots(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                     LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                     EnableBg(3);
                     gUnk_020358C8[i].unk_38 = 9;
@@ -954,7 +954,7 @@ u8 func_0810329C(u16 a) {
                 }
             }
 
-            keys = func_08102A94();
+            keys = MoogleShopReadMenuKeys();
             old = gUnk_02035B62;
 
             if (keys & (A_BUTTON | B_BUTTON)) {
@@ -974,8 +974,8 @@ u8 func_0810329C(u16 a) {
 
             if (gUnk_02035B62 != old) {
                 LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
-                gUnk_02035A48 = func_08065B6C(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
-                gUnk_02035A50 = func_08065B6C(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
+                gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
+                gUnk_02035A50 = LoadTextSlots(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                 LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                 m4aSongNumStart(0x65);
             }
@@ -1007,7 +1007,7 @@ void func_08103D54(s16 a) {
 
 void func_08103D7C(void) {
     u16 keys;
-    keys = func_08102A94();
+    keys = MoogleShopReadMenuKeys();
 
     if ((keys & A_BUTTON) == 0) {
         if (keys & B_BUTTON) {
@@ -1030,7 +1030,7 @@ void func_08103DE8(void) {
     s16 i;
 
     old = gUnk_02035B04;
-    keys = func_08102A94();
+    keys = MoogleShopReadMenuKeys();
 
     if ((keys & A_BUTTON) == 0) {
         if (keys & B_BUTTON) {
@@ -1195,7 +1195,7 @@ void func_08103F94(s16 a, s16 b) {
                 gUnk_02035B58[j] = id;
 
                 if (func_08084458(id) < 0) {
-                    func_0810155C(func_08060A2C(id));
+                    AddMooglePoints(GetCardMooglePointValue(id));
                 }
 
                 break;
@@ -1211,11 +1211,11 @@ void func_081041B4(void) {
     s16 old;
 
     old = gUnk_02035B10;
-    keys = func_08102A94();
+    keys = MoogleShopReadMenuKeys();
 
     if (keys & A_BUTTON) {
         if (gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0] >= 0 &&
-            func_08101538(gUnk_09993760[gUnk_02035B08[gUnk_02035B04]][gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][1]]) != 0) {
+            SpendMooglePoints(gUnk_09993760[gUnk_02035B08[gUnk_02035B04]][gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][1]]) != 0) {
             func_08103F94(gUnk_02035B08[gUnk_02035B04], gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][1]);
             func_08102AB4(gUnk_02035B10 % 2 * 96 + 72, gUnk_02035B10 / 2 * 64 + 48);
             FadeSetPaletteExcluded(13, 1);
@@ -1317,7 +1317,7 @@ void mode_ms_shop_0(void) {
     gUnk_02035B00 = func_081027B4(gGameState.floor);
     LoadBgPalette(0, gUnk_09A3D87C, 0x1A0);
     LoadBgTiles(0, gUnk_09A1251C, 0x6860);
-    func_08101588(GetMooglePoints(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+    LoadDecimalDigitTiles(GetMooglePoints(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
 #ifdef VERSION_EU
     LoadBgMap(0, gUnkEu_09F84F5C[gLanguage], size);
 #else
@@ -1405,7 +1405,7 @@ void mode_ms_shop_1(void) {
                 DisableBg(1);
             }
             
-            func_08101588(GetMooglePoints(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+            LoadDecimalDigitTiles(GetMooglePoints(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
             DisableBg(3);
             FadeToOriginal(0, 8);
             gUnk_02035B02 = gUnk_02035B00 != 0 ? 3 : 1;
