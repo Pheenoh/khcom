@@ -1,6 +1,8 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "obj.h"
+
 #include "msg_types.h"
 
 #include "continue_types.h"
@@ -303,15 +305,11 @@ typedef struct Work08074DC4 {
     u16 unk_1C[160];
 } Work08074DC4;
 
-typedef struct Handle0806180C {
-    u8 unk_00[6];
-    u16 unk_06;
-} Handle0806180C;
 
 typedef struct MsgWaitWork {
     void* tiles;
     u8 unk_04[0x10];
-    Handle0806180C* palette;
+    ObjPalette* palette;
     u8 unk_18[0xA4];
     void* gfx;
     u8 unk_C0[0x1C];
@@ -352,8 +350,8 @@ typedef struct Ent080658B8 {
     s32 unk_00;
     s32 unk_04;
     void* unk_08;
-    Handle0806180C* unk_0C;
-    Handle0806180C* unk_10;
+    ObjPalette* unk_0C;
+    ObjPalette* unk_10;
     u8 unk_14;
     u8 unk_15;
     u8 unk_16[2];

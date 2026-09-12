@@ -39,7 +39,7 @@ typedef struct ObjAffine {
 struct SpriteWork {
     ObjTiles tiles[128];
     ObjListPool tilePool;
-    ObjPaletteNode palettes[16];
+    ObjPalette palettes[16];
     ObjListPool palettePool;
     SpriteEntry entries[128];
     SpriteEntry* sortPtrs[128];
@@ -53,7 +53,7 @@ struct SpriteWork {
 
 typedef char SpriteWork_size[(sizeof(SpriteWork) == 0x2BB0) ? 1 : -1];
 typedef char ObjTiles_size[(sizeof(ObjTiles) == 0x30) ? 1 : -1];
-typedef char ObjPaletteNode_size[(sizeof(ObjPaletteNode) == 0x28) ? 1 : -1];
+typedef char ObjPalette_size[(sizeof(ObjPalette) == 0x28) ? 1 : -1];
 typedef char ObjListPool_size[(sizeof(ObjListPool) == 0x14) ? 1 : -1];
 typedef char SpriteEntry_size[(sizeof(SpriteEntry) == 0x18) ? 1 : -1];
 typedef char ObjAffine_size[(sizeof(ObjAffine) == 0x18) ? 1 : -1];

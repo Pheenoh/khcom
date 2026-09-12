@@ -1,6 +1,8 @@
 #ifndef GUARD_TITLE_H
 #define GUARD_TITLE_H
 
+#include "obj.h"
+
 #include "title_api.h"
 #include "pallet.h"
 #include "m4a_song.h"
@@ -14,11 +16,6 @@
 #include "main.h"
 #include "anim.h"
 #include "allmap_api.h"
-typedef struct TitlePal {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} TitlePal;
 
 typedef struct TitleObjSprite {
     void* tiles;
@@ -38,9 +35,9 @@ typedef struct TitleObjWork {
 
 typedef struct TitleMenuWork {
     void* tiles;
-    TitlePal* palette;
+    ObjPalette* palette;
     void* tiles2[3];
-    TitlePal* palette2[3];
+    ObjPalette* palette2[3];
     void* gfx[3];
     AnimState anim;
     s16* unk_44;

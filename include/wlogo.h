@@ -1,6 +1,8 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
+#include "obj.h"
+
 #include "chara_api.h"
 #include "pallet.h"
 #include "obj_api.h"
@@ -17,11 +19,6 @@
 
 #define REG_VCOUNT (*(vu16*)0x04000006)
 #define REG_BGHOFS(n) (*(vu16*)(0x04000010 + (n) * 4))
-typedef struct WlogoPal {
-    void* unk_00;
-    u16 unk_04;
-    u16 unk_06;
-} WlogoPal;
 
 typedef struct WlogoTtEffStep {
     s16 unk_00;
@@ -54,7 +51,7 @@ typedef struct WlogoTtWork {
     void* tiles3;
     void* tiles4;
     void* tiles5;
-    WlogoPal* palette;
+    ObjPalette* palette;
     void* gfx;
     void* gfx2;
     void* gfx3;
@@ -440,7 +437,7 @@ typedef struct WlogoHwtWork {
 
 typedef struct WlogoMonsWork {
     void* tiles;
-    WlogoPal* palette;
+    ObjPalette* palette;
     s16 x;
     s16 y;
     void* gfx;

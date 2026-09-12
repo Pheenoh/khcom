@@ -6003,7 +6003,7 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
     s32 a;
     s32 b;
 
-    InitObjTilesAtSlot(work, ((ObjPalette*)gBtlWork->unk_114)->unk_06, gUnk_08C1E78C, 0x4C0);
+    InitObjTilesAtSlot(work, ((ObjTiles*)gBtlWork->unk_114)->unk_06, gUnk_08C1E78C, 0x4C0);
     work->unk_30 = work;
     work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
     work->unk_38 = 0;

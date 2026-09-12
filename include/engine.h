@@ -9,19 +9,6 @@
 #include "listpool.h"
 #include "anim.h"
 #include "obj.h"
-typedef struct ObjTiles {
-    void* unk_00;
-    u16 refCount;
-    u16 unk_06;
-    u16 unk_08;
-    u16 unk_0A;
-    ListNode unk_0C;
-    u32 unk_20;
-    u8 unk_24;
-    u8 unk_25[0x03];
-    u32 unk_28;
-    struct ObjTiles* self;
-} ObjTiles;
 
 typedef struct ObjTileListEntry {
     u16 unk_00;
@@ -29,16 +16,6 @@ typedef struct ObjTileListEntry {
     u16 unk_04;
 } ObjTileListEntry;
 
-typedef struct ObjPaletteNode {
-    void* unk_00;
-    u16 refCount;
-    u16 unk_06;
-    u16 unk_08;
-    u16 unk_0A;
-    ListNode unk_0C;
-    u32 unk_20;
-    struct ObjPaletteNode* self;
-} ObjPaletteNode;
 typedef struct Dma3Request {
     void* src;
     void* dst;
@@ -193,7 +170,7 @@ u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h);
 void ReleaseSharedObjTiles(ObjTiles* p);
 void ReleaseAllocatedObjTiles(ObjTiles* p);
 void ReleaseSpriteFrameTiles(ObjTiles* p);
-void ReleaseObjPaletteRef(ObjPaletteNode* p);
+void ReleaseObjPaletteRef(ObjPalette* p);
 void SetSpriteMosaicEnabled(u8 a);
 void BgAnimSetStopFrame(u16 a);
 void VTransFree(void);

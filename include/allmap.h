@@ -1,6 +1,8 @@
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H
 
+#include "obj.h"
+
 #include "field_state.h"
 
 #include "allmap_types.h"
@@ -118,18 +120,14 @@ typedef struct UnkStruct_0203C4B4 {
     u8 unk_C1[0x03];
 } UnkStruct_0203C4B4;
 
-typedef struct AllmapPal {
-    u8 unk_00[0x06];
-    u16 unk_06;
-} AllmapPal;
 
 typedef struct AllmapDoorEntry {
     void* unk_00;
     void* unk_04;
     u8 unk_08[0x04];
-    AllmapPal* unk_0C;
-    AllmapPal* unk_10;
-    AllmapPal* unk_14;
+    ObjPalette* unk_0C;
+    ObjPalette* unk_10;
+    ObjPalette* unk_14;
     void* unk_18;
     void* unk_1C;
     u8 unk_20[0x14];

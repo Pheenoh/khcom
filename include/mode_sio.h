@@ -181,10 +181,6 @@ typedef struct SioBtlCardgetWork {
     u8 unk_40[4];
 } SioBtlCardgetWork;
 
-typedef struct ObjPalSlot {
-    u8 unk_00[6];
-    u16 unk_06;
-} ObjPalSlot;
 
 typedef struct SioChgCardPos {
     s16 unk_00;
