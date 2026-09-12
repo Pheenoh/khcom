@@ -31,7 +31,7 @@ extern u16 gCardCollection[];
 extern u16 gCardCount;
 extern s16 gSineTable[];
 extern CardBack gUnk_08F709B0[];
-extern MsCardDef gCardDefs[];
+extern CardDef gCardDefs[];
 extern u8 gUnk_099A7C64[];
 extern u8 gUnk_09A1DB9C[];
 extern u8 gUnk_09A1DCDC[];

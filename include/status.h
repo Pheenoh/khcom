@@ -1,6 +1,8 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "card_ui_types.h"
+
 #include "card_api.h"
 
 #include "status_api.h"
@@ -29,12 +31,6 @@
 #include "key.h"
 #include "m4a.h"
 
-typedef struct UnkStruct_08F7CF18 {
-    u32 unk_00;
-    u32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
-} UnkStruct_08F7CF18;
 
 typedef struct StatusEntry {
     s32 unk_000[72];

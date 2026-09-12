@@ -20101,7 +20101,7 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     def = &gCardDefs[args.unk_20];
     w->unk_00 = LoadObjTiles(def->unk_04, 0x300);
     w->unk_04 = LoadObjPalette(def->unk_08, 32);
-    *(UnkStruct_08099412*)&w->unk_20[0x14] = *(UnkStruct_08099412*)&def->unk_1C;
+    *(CardStat*)&w->unk_20[0x14] = *(CardStat*)&def->unk_1C;
 
     if (gCardDefs[w->unk_C8].unk_1E & 12) {
         back = &gUnk_08F709B0[3];
@@ -22366,7 +22366,7 @@ void PrizeBoss_0(UnkStruct_08099928* w, s32* args) {
     def = &gCardDefs[args[8]];
     w->unk_00 = LoadObjTiles(def->unk_04, 0x300);
     w->unk_04 = LoadObjPalette(def->unk_08, 32);
-    w->unk_34 = *(UnkStruct_08099412*)&def->unk_1C;
+    w->unk_34 = *(CardStat*)&def->unk_1C;
     back = &gUnk_08F709B0[def->unk_2A];
     w->unk_08 = LoadObjTiles(back->unk_0C, 0x280);
     w->unk_0C = LoadObjTiles(*(void**)back->unk_14, 0x600);

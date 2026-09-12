@@ -206,7 +206,7 @@ extern u8 gTaskDescMsShopHosi[];
 extern void* gUnk_09EE981C[];
 extern void* gUnk_09EE9894[];
 extern s16 gSineTable[];
-extern MsCardDef gCardDefs[];
+extern CardDef gCardDefs[];
 extern u8 gUnk_09A3DB1C[];
 extern u8 gUnk_099A4B9A[];
 extern u8 gUnk_09EF9A48[];

@@ -8146,11 +8146,11 @@ void MakeSaveSystem(SaveFileLarge* save) {
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
     save->common.unk_94 = gGameState.playTime;
-    func_080E92B8(save->unk_098);
-    func_080A324C(save->unk_2EC);
-    func_080C700C(save->unk_E6C);
+    func_080E92B8(&save->unk_098);
+    func_080A324C(&save->unk_2EC);
+    func_080C700C(&save->unk_E6C);
     func_080DDEB0(save->unk_E70);
-    func_0810962C(save->unk_EB4);
+    func_0810962C(&save->unk_EB4);
 }
 
 void MakeSaveFileLarge(SaveFileLarge* save) {
@@ -8161,11 +8161,11 @@ void MakeSaveFileLarge(SaveFileLarge* save) {
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
     save->common.unk_94 = gGameState.playTime;
-    func_080E92B8(save->unk_098);
-    func_080A324C(save->unk_2EC);
-    func_080C700C(save->unk_E6C);
+    func_080E92B8(&save->unk_098);
+    func_080A324C(&save->unk_2EC);
+    func_080C700C(&save->unk_E6C);
     func_080DDEB0(save->unk_E70);
-    func_0810962C(save->unk_EB4);
+    func_0810962C(&save->unk_EB4);
 
     if (gGameState.flags & 0x10) {
         gGameState.fileSummaries[1].unk_00 = gGameState.floor;
@@ -8188,8 +8188,8 @@ void MakeSaveFileSmall(SaveFileSmall* save) {
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
     save->common.unk_94 = gGameState.playTime;
-    func_080E92B8(save->unk_098);
-    CopyMapCardInventory(save->unk_2EC);
+    func_080E92B8(&save->unk_098);
+    CopyMapCardInventory(&save->unk_2EC);
 
     if (gGameState.flags & 0x10) {
         gGameState.fileSummaries[3].unk_00 = gGameState.floor;
@@ -8284,11 +8284,11 @@ void ApplySaveSystem(SaveFileLarge* save) {
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
     gGameState.playTime = save->common.unk_94;
-    func_080E92F8(save->unk_098);
-    func_080A32DC(save->unk_2EC);
-    func_080C7024(save->unk_E6C);
+    func_080E92F8(&save->unk_098);
+    func_080A32DC(&save->unk_2EC);
+    func_080C7024(&save->unk_E6C);
     func_080DDEBC(save->unk_E70);
-    func_08109638(save->unk_EB4);
+    func_08109638(&save->unk_EB4);
 }
 
 void ApplySaveFileLarge(SaveFileLarge* save) {
@@ -8303,11 +8303,11 @@ void ApplySaveFileLarge(SaveFileLarge* save) {
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
     gGameState.playTime = save->common.unk_94;
-    func_080E92F8(save->unk_098);
-    func_080A32DC(save->unk_2EC);
-    func_080C7024(save->unk_E6C);
+    func_080E92F8(&save->unk_098);
+    func_080A32DC(&save->unk_2EC);
+    func_080C7024(&save->unk_E6C);
     func_080DDEBC(save->unk_E70);
-    func_08109638(save->unk_EB4);
+    func_08109638(&save->unk_EB4);
     gGameState.flags &= ~8;
 }
 
@@ -8323,7 +8323,7 @@ void ApplySaveFileSmall(SaveFileSmall* save) {
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
     gGameState.playTime = save->common.unk_94;
-    func_080E92F8(save->unk_098);
-    RestoreMapCardInventory(save->unk_2EC);
+    func_080E92F8(&save->unk_098);
+    RestoreMapCardInventory(&save->unk_2EC);
     gGameState.flags |= 8;
 }

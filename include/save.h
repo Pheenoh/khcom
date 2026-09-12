@@ -29,63 +29,15 @@ extern u8 gSramFileLarge[];
 extern void (*ReadSramFast)(const u8* src, u8* dest, u32 size);
 extern u8* gSaveSignature;
 
-#define SAVE_FILES 4
 
-typedef struct SaveHeaderData {
-    u16 flags;
-    u16 unk_02;
-    SaveFileSummary files[SAVE_FILES];
-} SaveHeaderData;
 
-typedef struct SaveSharedSlice {
-    u8 unk_000;
-    u8 unk_001;
-    u8 unk_002[2];
-    u8 unk_004[0x21C];
-    u32 unk_220[13];
-} SaveSharedSlice;
 
-#define SAVE_CARDS 999
-#define SAVE_DECKS 3
 
-typedef struct SaveLargeSlice {
-    u8 unk_000;
-    u8 unk_001[0x10E];
-    u8 unk_10F;
-    u16 cards[SAVE_CARDS];
-    u16 cardCount;
-    Deck decks[SAVE_DECKS];
-} SaveLargeSlice;
 
-typedef struct SaveSmallSlice {
-    u8 unk_000[0x10E];
-    u8 unk_10E[2];
-} SaveSmallSlice;
 
-typedef struct SaveSliceE6C {
-    u16 unk_00;
-    u16 unk_02;
-} SaveSliceE6C;
 
-typedef struct SaveSliceEB4 {
-    u16 unk_00[32];
-    u16 unk_40[2];
-} SaveSliceEB4;
 
-typedef struct SaveFileLarge {
-    SaveCommon common;
-    SaveSharedSlice unk_098;
-    SaveLargeSlice unk_2EC;
-    SaveSliceE6C unk_E6C;
-    u8 unk_E70[0x044];
-    SaveSliceEB4 unk_EB4;
-} SaveFileLarge;
 
-typedef struct SaveFileSmall {
-    SaveCommon common;
-    SaveSharedSlice unk_098;
-    SaveSmallSlice unk_2EC;
-} SaveFileSmall;
 
 typedef struct SaveBlockLarge {
     u8 signature[SAVE_SIGNATURE_SIZE];
