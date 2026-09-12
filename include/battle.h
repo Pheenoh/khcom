@@ -705,7 +705,7 @@ void func_08019190(BtlObj* p, s16 b);
 void func_0801AF4C(BtlObj* actor);
 void func_0801B008(void);
 void func_0801BCC0(s32 a, s32 b, s32 c);
-void func_0801BDD4(BtlObj* p, s32 v);
+void func_0801BDD4(BtlObj* p, BtlObj* v);
 void* AllocObjTiles(s32 a, void* b);
 u8 func_08085BAC(void);
 u8 func_080856DC(void);

@@ -56,7 +56,7 @@ void func_08019190(BtlObj* p, s16 b) {
 
     if (b != 9) {
         if (p->unk_0D8 != 0) {
-            t = &((BtlObj*)p->unk_0D8)->unk_104;
+            t = &p->unk_0D8->unk_104;
         } else {
             t = &p->unk_104;
         }
@@ -1807,7 +1807,7 @@ void func_0801BCF8(BtlObj* p) {
     gBtlWork->unk_0AC = p;
 }
 
-void func_0801BDD4(BtlObj* p, s32 v) {
+void func_0801BDD4(BtlObj* p, BtlObj* v) {
     p->unk_0D8 = v;
 }
 
