@@ -628,7 +628,7 @@ void func_0801235C(ListNode* a, ListNode* b) {
             }
 
             if (dx < sum && dy < sum) {
-                pen = sum - func_08003C9C(((dx * dx) >> 8) + ((dy * dy) >> 8));
+                pen = sum - Sqrt8(((dx * dx) >> 8) + ((dy * dy) >> 8));
 
                 if (pen > 0) {
                     dz = p->unk_0C - q->unk_0C;

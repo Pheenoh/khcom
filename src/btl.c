@@ -3115,7 +3115,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
                     t = (p->unk_04 - e->unk_004) >> 8;
                     t2 = (p->unk_08 - e->unk_008) >> 8;
-                    d = func_08003C9C(t * t + t2 * t2);
+                    d = Sqrt8(t * t + t2 * t2);
 
                     if (d < t3) {
                         t3 = d;

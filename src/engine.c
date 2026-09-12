@@ -79,7 +79,6 @@ u16 GetObjTileCount(u16 a, u16 b);
 s16 GetAngleDiff(s32 a, s32 b);
 s32 GetAngleDiff16(s32 a, s32 b);
 void func_08005C60(u16 a);
-void func_08003CD4(UnkSpline* p, s32* d, s32* xs, s32* e);
 void func_080051C4(s32 bg, u16 x, u16 y);
 s32 abs(s32 a);
 
@@ -1262,7 +1261,7 @@ void GetObjSize(u16 a, u16 b, u16* w, u16* h) {
     }
 }
 
-s32 func_08003C9C(s32 a) {
+s32 Sqrt8(s32 a) {
     s32 x;
     s32 prev;
 
@@ -1282,16 +1281,16 @@ s32 func_08003C9C(s32 a) {
     return 0;
 }
 
-void func_08003CD4(UnkSpline* p, s32* d, s32* xs, s32* e) {
+void SplineBuildAxisCoefficients(Spline2D* p, s32* d, s32* xs, s32* e) {
     s32* a;
     s32* b;
     s32 n;
     s32 i;
     s32 q;
 
-    n = p->unk_00;
-    a = p->unk_04;
-    b = p->unk_08;
+    n = p->pointCount;
+    a = p->intervals;
+    b = p->scratch;
     e[0] = 0;
     e[n - 1] = 0;
 
@@ -1313,7 +1312,7 @@ void func_08003CD4(UnkSpline* p, s32* d, s32* xs, s32* e) {
         e[i] = ((e[i] - ((a[i] * e[i + 1]) >> 8)) << 8) / b[i];
     }
 }
-s32 func_08003E2C(s16* n, s32 v, s32* a, s32* c, s32* b) {
+s32 SplineEvaluateAxis(s16* n, s32 v, s32* a, s32* c, s32* b) {
     s32 lo;
     s32 hi;
     s32 mid;
@@ -1348,7 +1347,7 @@ s32 func_08003E2C(s16* n, s32 v, s32* a, s32* c, s32* b) {
     r += ((c[lo + 1] - c[lo]) << 8) / dx - ((dx * (y0 * 2 + y1)) >> 8);
     return ((t * r) >> 8) + c[lo];
 }
-void func_08003ED4(UnkSpline* p, s32* xs, s32* ys, s16 n) {
+void SplineInit2D(Spline2D* p, s32* xs, s32* ys, s16 n) {
     s32 i;
     s32 len;
     s32* d;
@@ -1360,44 +1359,44 @@ void func_08003ED4(UnkSpline* p, s32* xs, s32* ys, s16 n) {
 
     size = n * 4;
     len = 0;
-    p->unk_00 = n;
-    p->unk_04 = EwramAlloc(size);
-    p->unk_08 = EwramAlloc(size);
-    p->unk_0C = EwramAlloc(size);
-    p->unk_10 = EwramAlloc(size);
-    p->unk_14 = EwramAlloc(size);
-    p->unk_18 = xs;
-    p->unk_1C = ys;
-    d = p->unk_0C;
-    e = p->unk_10;
-    f = p->unk_14;
+    p->pointCount = n;
+    p->intervals = EwramAlloc(size);
+    p->scratch = EwramAlloc(size);
+    p->knots = EwramAlloc(size);
+    p->xCoefficients = EwramAlloc(size);
+    p->yCoefficients = EwramAlloc(size);
+    p->xValues = xs;
+    p->yValues = ys;
+    d = p->knots;
+    e = p->xCoefficients;
+    f = p->yCoefficients;
     d[0] = len;
 
     for (i = 1; i < n; i++) {
         dx = xs[i] - xs[i - 1];
         dy = ys[i] - ys[i - 1];
-        d[i] = d[i - 1] + func_08003C9C(((dx * dx) >> 8) + ((dy * dy) >> 8));
+        d[i] = d[i - 1] + Sqrt8(((dx * dx) >> 8) + ((dy * dy) >> 8));
     }
 
     for (i = 1; i < n; i++) {
         d[i] = (d[i] << 8) / d[n - 1];
     }
 
-    func_08003CD4(p, d, xs, e);
-    func_08003CD4(p, d, ys, f);
+    SplineBuildAxisCoefficients(p, d, xs, e);
+    SplineBuildAxisCoefficients(p, d, ys, f);
 }
 
-void func_08003FCC(UnkSpline* p, s32 v, s32* outX, s32* outY) {
-    *outX = func_08003E2C(&p->unk_00, v, p->unk_0C, p->unk_18, p->unk_10);
-    *outY = func_08003E2C(&p->unk_00, v, p->unk_0C, p->unk_1C, p->unk_14);
+void SplineEvaluate2D(Spline2D* p, s32 v, s32* outX, s32* outY) {
+    *outX = SplineEvaluateAxis(&p->pointCount, v, p->knots, p->xValues, p->xCoefficients);
+    *outY = SplineEvaluateAxis(&p->pointCount, v, p->knots, p->yValues, p->yCoefficients);
 }
 
-void func_0800400C(UnkSpline* p) {
-    EwramFree(p->unk_04);
-    EwramFree(p->unk_08);
-    EwramFree(p->unk_0C);
-    EwramFree(p->unk_10);
-    EwramFree(p->unk_14);
+void SplineFreeBuffers(Spline2D* p) {
+    EwramFree(p->intervals);
+    EwramFree(p->scratch);
+    EwramFree(p->knots);
+    EwramFree(p->xCoefficients);
+    EwramFree(p->yCoefficients);
 }
 void InitDisplayRegs(void) {
     gDispCnt = 0x40;

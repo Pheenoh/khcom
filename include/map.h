@@ -1808,7 +1808,7 @@ extern Mode gModeMsTop;
 extern Mode gModeMovie;
 extern Mode gModeDebflag;
 extern Mode gModeTitle;
-s32 func_08003C9C(s32 a);
+s32 Sqrt8(s32 a);
 void* func_080038C8(u16 a);
 void func_080038E4(void* a, void* b, void* c);
 void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);

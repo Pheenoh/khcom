@@ -1889,7 +1889,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
 }
 s32 func_0810CC14(s32 a, s32 b, s32 c, s32 d, s32 e) {
     if (c == 0) {
-        c = func_08003C9C((abs(a - b) << 8) / 768);
+        c = Sqrt8((abs(a - b) << 8) / 768);
         if (c < d) {
             c = d;
         }
