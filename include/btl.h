@@ -2,12 +2,12 @@
 #define GUARD_BTL_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
 #include "obj.h"
 #include "fld_types.h"
-struct BtlWork;
 
 typedef struct BtlSpawnArgs {
     u32 unk_00 : 16;
@@ -59,93 +59,6 @@ typedef struct UnkStruct_0801AF08 {
     u8 unk_CE[0x16];
     struct BtlWork* unk_E4;
 } UnkStruct_0801AF08;
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    u8 unk_018;
-    u8 unk_019;
-    s16 unk_01A;
-    s32 unk_01C;
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
-    s16 unk_02C;
-    s16 unk_02E;
-    u32 unk_030;
-    u64 unk_034;
-    u8 unk_03C[0x2C];
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071;
-    u16 unk_072;
-    u16 unk_074;
-    u16 unk_076;
-    struct BtlWork* unk_078;
-    struct BtlWork* unk_07C;
-    ListNode unk_080;
-    u8 unk_090[0x0C];
-    u16 unk_09C;
-    u16 unk_09E;
-    u16 unk_0A0;
-    s16 unk_0A2;
-    s16 unk_0A4;
-    u16 unk_0A6;
-    struct BtlWork* unk_0A8;
-    void* unk_0AC;
-    u8 unk_0B0[0x03];
-    u8 unk_0B3;
-    u8 unk_0B4;
-    u8 unk_0B5[0x03];
-    s32 unk_0B8;
-    s32 unk_0BC;
-    s32 unk_0C0;
-    s16 unk_0C4;
-    s16 unk_0C6;
-    s16 unk_0C8;
-    u8 unk_0CA[0x06];
-    s32 unk_0D0;
-    s32 unk_0D4;
-    s16 unk_0D8;
-    s16 unk_0DA;
-    s16 unk_0DC;
-    s16 unk_0DE;
-    s16 unk_0E0;
-    u8 unk_0E2;
-    u8 unk_0E3;
-    u16 unk_0E4;
-    u8 unk_0E6[0x02];
-    s32 unk_0E8;
-    u16 unk_0EC;
-    u8 unk_0EE;
-    u8 unk_0EF;
-    u8 unk_0F0[0x4];
-    s32 unk_0F4;
-    u16 unk_0F8;
-    u8 unk_0FA;
-    u8 unk_0FB;
-    s32 unk_0FC;
-    s32 unk_100;
-    s32 unk_104;
-    s32 unk_108;
-    s32 unk_10C;
-    void* unk_110;
-    u8 unk_114[0x14];
-    u8 (*unk_128)(s32 a);
-    s32 unk_12C;
-    s32 unk_130;
-    s32 unk_134;
-    s32 unk_138;
-    u8 unk_13C[0x88];
-    u16 unk_1C4;
-    u16 unk_1C6;
-    s16 unk_1C8;
-    u8 unk_1CA[0x6];
-} BtlWork;
-
 typedef struct BtlDrawInfo {
     s32 x;
     s32 y;
@@ -294,7 +207,7 @@ typedef struct BtlRikuWork {
     s16 unk_1BC;
     u8 unk_1BE[0x2];
     BtlDrawInfo unk_1C0[9];
-    BtlWork* unk_370;
+    BtlObj* unk_370;
 } BtlRikuWork;
 
 extern u8 gUnk_08F6DD04[];
@@ -323,8 +236,6 @@ extern FldAnimDef gUnk_0813C4DC[][5];
 extern u16 gBldCnt;
 
 
-extern BtlWork* gBtlWork;
-extern BtlWork* gUnk_02039B9C;
 extern u8 gUnk_0813C294[];
 
 extern s16 gSineTable[];
@@ -466,7 +377,7 @@ void func_080137C8(s32 x, s32 y, s32 z, u8 f);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void* memcpy(void* dst, const void* src, u32 n);
-s32 func_08011F68(s32 a, BtlWork* b);
+s32 func_08011F68(s32 a, BtlObj* b);
 void func_0807E1E8(void);
 void func_0802F1E8(void);
 void func_08017B74(s32 x, s32 w);
@@ -510,8 +421,8 @@ void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0801475C(s32 a, s32 b, s32 c);
 u32 func_0801A8A4(s32* x, s32* y, s32 a, s32 b);
 void func_08012304(void* a);
-BtlWork* ListPoolFirst(void* node);
-BtlWork* ListPoolNext(void* node);
+BtlObj* ListPoolFirst(void* node);
+BtlObj* ListPoolNext(void* node);
 void func_080140C0(s32* a, s32* b, s32* c);
 void func_0801AF08(void* p);
 void func_0802F284(s32 a, s32 b, s32 c);
