@@ -1,6 +1,8 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
+#include "field_state.h"
+
 #include "map_types.h"
 
 #include "card_api.h"
@@ -47,35 +49,6 @@
 
 
 
-typedef struct UnkStruct_02039BA0 {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    u16 unk_10;
-    u16 unk_12;
-    u8 unk_14[0x04];
-    s32 unk_18;
-    s32 unk_1C;
-    s32 unk_20;
-    s32 unk_24;
-    u8 unk_28[0x30];
-    u8 unk_58[0x10];
-    s32 unk_68;
-    s16 unk_6C;
-    u16 unk_6E;
-    u32 unk_70;
-    u16 unk_74;
-    u16 unk_76;
-    u8 unk_78[0x14];
-    u8 unk_8C[0x14];
-    u8 unk_A0[0x14];
-    u8 unk_B4[0x14];
-    u8 unk_C8[0x14];
-    s32 unk_DC;
-    s32 unk_E0;
-    u8 unk_E4[0x04];
-} UnkStruct_02039BA0;
 
 
 typedef struct UnkStruct_02034F20 {
@@ -1294,7 +1267,6 @@ typedef struct UnkStruct_080EE580 {
     FldRes* unk_188;
 } UnkStruct_080EE580;
 
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern u8 gUnk_09EDF834[];
 extern u8 gUnk_09EDF85C[];
 extern u8 gUnk_093A5E10[];

@@ -1,6 +1,8 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "field_state.h"
+
 #include "card_ui_types.h"
 
 #include "obj_resource_types.h"
@@ -2107,18 +2109,7 @@ typedef struct UnkStruct_0808F358 {
 s32 func_0808F358(UnkStruct_0808F358* work);
 extern u8* gUnk_09EE4B0C[];
 
-typedef struct UnkStruct_02039BA0 {
-    s32 unk_00;
-    s32 unk_04;
-    u8 unk_08[0x10];
-    s32 unk_18;
-    s32 unk_1C;
-    s32 unk_20;
-    u8 unk_24[0x4C];
-    u32 unk_70;
-} UnkStruct_02039BA0;
 
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 
 void func_0807E230(void);
 void func_0807E254(void);

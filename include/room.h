@@ -1,6 +1,8 @@
 #ifndef GUARD_ROOM_H
 #define GUARD_ROOM_H
 
+#include "field_state.h"
+
 #include "chara_types.h"
 
 #include "chara_api.h"
@@ -41,12 +43,7 @@ typedef struct RoomNameWork {
     u8 unk_3C[0x120];
 } RoomNameWork;
 
-typedef struct UnkStruct_02039BA0 {
-    u8 unk_00[0x70];
-    u32 unk_70;
-} UnkStruct_02039BA0;
 
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 
 extern s16 gSineTable[];
 extern s32 gUnk_0999204C[];

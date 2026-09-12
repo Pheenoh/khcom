@@ -1,6 +1,8 @@
 #ifndef GUARD_ROOMCREATE_H
 #define GUARD_ROOMCREATE_H
 
+#include "field_state.h"
+
 #include "card_api.h"
 
 #include "map_api.h"
@@ -14,17 +16,6 @@
 #include "engine.h"
 #include "bos4_api.h"
 
-typedef struct UnkStruct_02039BA0 {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    u8 unk_10[0x08];
-    FldActor unk_18;
-    FldActor* unk_68;
-    u8 unk_6C[0x04];
-    u32 unk_70;
-} UnkStruct_02039BA0;
 
 typedef struct RoomCreateWork {
     s32 unk_00;
@@ -46,7 +37,6 @@ typedef struct RoomCreateWork {
     s32 unk_40;
 } RoomCreateWork;
 
-extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern s16 gSineTable[];
 extern u8 gMPlayInfo_BGM[];
 extern TaskDesc gTaskDescRomcriEff;

@@ -15,6 +15,7 @@
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
+#include "field_state.h"
 #include "engine_math.h"
 #include "listpool.h"
 #include "game_state.h"
@@ -1137,7 +1138,6 @@ extern u16 gUnk_0203C3F8;
 extern u16* gUnk_09EF4208[];
 extern u16* gUnk_09EF4448[];
 extern u16* gUnk_09EF4688[];
-extern PooPos* gUnk_02039BA0;
 extern s32 gUnk_0203C3FC;
 extern s32 gUnk_0203C408;
 extern s32 gUnk_0203C3DC;
