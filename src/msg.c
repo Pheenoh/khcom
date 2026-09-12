@@ -1669,7 +1669,6 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
 }
 #endif
 #ifndef VERSION_EU
-#ifdef NON_MATCHING
 void func_08064624(void) {
     u8* screen;
     u8 n;
@@ -1719,7 +1718,7 @@ void func_08064624(void) {
                         s32 q;
                         cur = *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024);
                         q = yy & 15;
-                        q += (yy >> 4) * 32;
+                        q += (u16)((yy >> 4) * 32);
                         pix = src[q] | ((u32)src[q + 1] << 16);
                     }
                     *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
@@ -1876,9 +1875,6 @@ void func_08064624(void) {
     }
     gUnk_02034A91 = 0;
 }
-#else
-INCLUDE_ASM("msg/func_08064624.s");
-#endif
 #endif
 #ifndef VERSION_EU
 void func_08064B68(void) {
