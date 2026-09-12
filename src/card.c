@@ -6158,12 +6158,11 @@ u8 func_08080594(UnkStruct_08080268* w) {
 INCLUDE_ASM("card/func_08080594.s");
 #endif
 
-#ifdef NON_MATCHING
 void func_08080994(UnkStruct_08080268* w) {
     UnkStruct_0807FD10_Args args;
     UnkStruct_02034AAC* p;
     UnkStruct_02034AAC* q;
-    CardSlot* c;
+    CardSlot* c = 0;
     u16 v;
 
     w->unk_C4[2] = 0;
@@ -6215,9 +6214,6 @@ void func_08080994(UnkStruct_08080268* w) {
 
     func_080818E4();
 }
-#else
-INCLUDE_ASM("card/func_08080994.s");
-#endif
 #ifdef NON_MATCHING
 u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     UnkStruct_0807FD10_Args args;
