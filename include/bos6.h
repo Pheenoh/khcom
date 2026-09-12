@@ -5,6 +5,20 @@
 #include "taskpool.h"
 #include "anim.h"
 
+typedef struct PcPos {
+    s16 unk_00;
+    u8 unk_02;
+    u8 unk_03;
+    s32 unk_04;
+    s32 unk_08;
+    s32 unk_0C;
+    u8 unk_10[0x24];
+    u64 unk_34;
+    u8 unk_3C[0x4];
+    u8 unk_40[0x5C];
+    u16 unk_9C;
+} PcPos;
+
 typedef struct BtlWork {
     s32 unk_000;
     s32 unk_004;
@@ -36,7 +50,7 @@ typedef struct BtlWork {
     u16 unk_074;
     u16 unk_076;
     u32 unk_078;
-    u32 unk_07C;
+    PcPos* unk_07C;
     u8 unk_080[0x20];
     u32 unk_0A0;
     u8 unk_0A4;
@@ -102,19 +116,57 @@ void DisableBg(s32 bg);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);
 
-typedef struct PcPos {
-    s16 unk_00;
-    u8 unk_02;
-    u8 unk_03;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    u8 unk_10[0x24];
-    u64 unk_34;
-    u8 unk_3C[0x4];
-    u8 unk_40[0x5C];
-    u16 unk_9C;
-} PcPos;
+typedef struct PcAnimStep {
+    u16 unk_00;
+    u8 unk_02[0x2];
+    s16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    u8 unk_0A[0x2];
+    u16 unk_0C;
+    s16 unk_0E;
+    s16 unk_10;
+    s16 unk_12;
+    s16 unk_14;
+    s16 unk_16;
+    s16 unk_18;
+    u8 unk_1A[0x2];
+    u16 unk_1C;
+    s16 unk_1E;
+    s16 unk_20;
+    s16 unk_22;
+} PcAnimStep;
+
+typedef struct PcSpriteCmd {
+    u8 unk_00;
+    u8 unk_01;
+    s16 unk_02;
+    s16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    u16 unk_0A;
+} PcSpriteCmd;
+
+typedef struct PcSpriteDef {
+    u16 unk_00;
+    u16 unk_02;
+    u16 unk_04;
+    u16 unk_06;
+} PcSpriteDef;
+
+typedef struct PcGfxSet {
+    void* unk_00;
+    u16 unk_04;
+    u8 unk_06[0x02];
+    void* unk_08;
+    u16 unk_0C;
+    u8 unk_0E[0x02];
+} PcGfxSet;
+
+typedef struct PcOam {
+    u16 count;
+    u16 attr[0x95];
+} PcOam;
 
 typedef struct PcWork {
     s16 unk_000;
@@ -122,27 +174,31 @@ typedef struct PcWork {
     s16 unk_004;
     s16 unk_006;
     s16 unk_008;
-    u16 unk_00A;
-    u16 unk_00C;
+    s16 unk_00A;
+    s16 unk_00C;
     u8 unk_00E[0x2];
     s32 unk_010;
     s32 unk_014;
     u8 unk_018;
     u8 unk_019[0x3];
     s32 unk_01C;
-    u32 unk_020;
-    u32 unk_024;
-    u32 unk_028;
-    u32 unk_02C;
-    u16 unk_030;
-    u8 unk_032[0x2];
-    u16 unk_034;
-    u8 unk_036[0xA];
-    u32 tiles;
-    u32 tiles2;
-    u32 tiles3;
-    u32 palette;
-    u32 palette2;
+    s32 unk_020;
+    s32 unk_024;
+    s32 unk_028;
+    PcAnimStep* unk_02C;
+    s16 unk_030;
+    s16 unk_032;
+    s16 unk_034;
+    s16 unk_036;
+    u8 unk_038;
+    u8 unk_039;
+    s16 unk_03A;
+    s16 unk_03C;
+    u8 unk_03E[0x2];
+    void* tiles;
+    void* tiles2[2];
+    void* palette;
+    void* palette2;
     u32 unk_054;
     u32 unk_058;
     u32 unk_05C;
@@ -166,7 +222,7 @@ typedef struct PcWork {
     u8 unk_278[0x58];
     void** unk_2D0;
     void* unk_2D4[4];
-    u32 unk_2E4;
+    void* unk_2E4;
     s16 unk_2E8;
     u8 unk_2EA;
     u8 unk_2EB;
@@ -175,8 +231,27 @@ typedef struct PcWork {
     u8 unk_2EE[0x2];
     s32 unk_2F0;
     s32 unk_2F4;
-    u8 unk_2F8[0x1C24];
+    u8 unk_2F8[0x4];
+    PcOam unk_2FC[24];
 } PcWork;
+
+extern PcAnimStep gUnk_09A4AF34[];
+extern PcAnimStep gUnk_09A4C278[];
+extern PcAnimStep* gUnk_09EF9DB4[];
+extern PcSpriteCmd* gUnk_09EF9C34[];
+extern PcSpriteDef* gUnk_09EFBB18[];
+extern PcGfxSet gUnk_09A4AC84[];
+extern void* gUnk_09EFAB18[];
+extern PcSpriteCmd gUnk_09A3DF34[];
+extern u8 gUnk_09D69274[];
+extern u16 gUnk_09A4C9EC[];
+extern s16 gUnk_09A4C9F2[];
+extern TaskDesc gTaskDescBosPcFlt;
+extern TaskDesc gTaskDescBosPcAcd;
+
+s32 func_08109EA8(s32 a);
+u16 func_08109FF0(PcWork* work, s32 a);
+u16 func_0810A000(PcWork* work, s32 a, s32 b);
 
 typedef struct PcAcdWork {
     u32 unk_000;
@@ -397,7 +472,7 @@ s32 func_0810FE8C(s32 x);
 void func_0810B370(u8** p, u8 v);
 
 void func_08109EF8(PcWork* work, s32 a);
-s32 func_08109F20(void* work);
+void func_08109F20(PcWork* work);
 u8 func_0801BCA8(s32 a);
 u16 AnimGetGfxIndex(AnimState* a);
 s32 func_0810B350(void** p);
@@ -532,15 +607,6 @@ extern void* gUnk_09EFBEB8;
 u16 func_0801AF1C(s32 a);
 void task_bos_pc_fld_2(PcFldWork* work);
 
-typedef struct PcStep {
-    u8 unk_00;
-    u8 unk_01[0x3];
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    u16 unk_0A;
-} PcStep;
-
 extern u8 gUnk_09C489E4[];
 extern u8 gUnk_09EFABA4[];
 extern u8 gUnk_09EFAB68[];
@@ -548,23 +614,6 @@ extern u8 gUnk_09EFAB68[];
 void* AllocObjTiles(s32 a, void* b);
 void AnimInit(AnimState* a, s32 b, s32 c);
 void func_080062F4(u16 a, s32 b);
-typedef struct PcAnim {
-    u8 unk_00[0x4];
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    u8 unk_0A[0x2];
-    u16 unk_0C;
-    s16 unk_0E;
-    s16 unk_10;
-    s16 unk_12;
-    s16 unk_14;
-    s16 unk_16;
-    s16 unk_18;
-    u8 unk_1A[0x2];
-    u16 unk_1C;
-    u8 unk_1E[0x6];
-} PcAnim;
 
 typedef struct PcShot {
     s32 unk_00;
@@ -576,7 +625,7 @@ typedef struct PcShot {
 
 extern const PcShot gUnk_09A4C9F8[];
 
-PcAnim* func_08109EB0(PcWork* work);
+PcAnimStep* func_08109EB0(PcWork* work);
 void func_080147D8(s32 x, s32 y);
 void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t);
 u8 func_0801C1C0(s32 a);
@@ -672,7 +721,7 @@ void task_bos_pc_acd_2(PcAcdWork* work);
 
 extern u16 gUnk_09A4D0EC[];
 extern LstAnimDef gUnk_09A4CF8C[];
-PcStep* func_08109ECC(PcWork* work);
+PcSpriteCmd* func_08109ECC(PcWork* work);
 
 void func_0810A850(PcWork* work);
 void task_bos_pc_acd_0(PcAcdWork* work, void* arg);
@@ -686,7 +735,7 @@ typedef struct PcFltInit {
     u32 unk_04;
     u32 unk_08;
     u32 unk_0C;
-    PcPos* unk_10;
+    void* unk_10;
 } PcFltInit;
 
 extern u8 gUnk_09CB8F54[];
