@@ -76,8 +76,7 @@ s32 func_0805E93C(void) {
         for (i = 1; i >= 0; i--) {
             if (((MovieSub*)gUnk_02034950)[gUnk_02034944].unk_00 == gUnk_02034942) {
                 if (((MovieSub*)gUnk_02034950)[gUnk_02034944].unk_08 == 0) {
-                    e = &((MovieSub*)gUnk_02034950)[gUnk_02034944];
-                    gUnk_02034948 = e;
+                    gUnk_02034948 = e = &((MovieSub*)gUnk_02034950)[gUnk_02034944];
                     gUnk_02034958 |= 1;
                     gUnk_02034954 = e->unk_0A;
 
@@ -91,8 +90,7 @@ s32 func_0805E93C(void) {
                         gUnk_02034956 = 40;
                     }
                 } else {
-                    e = &((MovieSub*)gUnk_02034950)[gUnk_02034944];
-                    gUnk_0203494C = e;
+                    gUnk_0203494C = e = &((MovieSub*)gUnk_02034950)[gUnk_02034944];
                     gUnk_02034958 |= 2;
                     gUnk_0203495C = e->unk_0A;
 
