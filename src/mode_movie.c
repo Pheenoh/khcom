@@ -127,8 +127,6 @@ void func_0805EA90(void) {
     s16 x;
     s16 y;
     u16 i;
-    u16 tile;
-    u16 palette;
     u32 attr0;
     u32 attr1;
 
@@ -189,6 +187,9 @@ void func_0805EA90(void) {
                 }
 #endif
                 for (i = 0; i < gUnk_02034956; i++) {
+                    u16 tile;
+                    u16 palette;
+
                     tile = i * 4;
                     palette = (gUnk_02034948->unk_0C & 15) << 12;
 #ifdef VERSION_JP
@@ -212,6 +213,9 @@ void func_0805EA90(void) {
                 }
 #endif
                 for (i = 0; i < gUnk_0203495E; i++) {
+                    u16 tile;
+                    u16 palette;
+
                     tile = i * 4;
                     palette = (gUnk_0203494C->unk_0C & 15) << 12;
 #ifdef VERSION_JP
