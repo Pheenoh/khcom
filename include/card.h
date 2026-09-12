@@ -4,6 +4,7 @@
 #include "types.h"
 #include "game_state.h"
 #include "text_types.h"
+#include "obj.h"
 #include "taskpool.h"
 #include "listpool.h"
 #include "card_types.h"
@@ -108,7 +109,18 @@ extern u8 gUnk_09507F38[];
 extern u8 gUnk_09507F58[];
 extern u16 gUnk_09EE4BE0[];
 extern void* gUnk_09EF1278[];
-extern u8* gUnk_0203A9D0;
+typedef struct CardListWork {
+    ListPool cards;
+    struct UnkStruct_0809C534* selectedCard;
+    TaskPool effectTasks;
+    u8 effectCount;
+    u8 unk_29;
+    u8 unk_2A[2];
+} CardListWork;
+
+typedef char CardListWork_size[(sizeof(CardListWork) == 0x2C) ? 1 : -1];
+
+extern CardListWork* gUnk_0203A9D0;
 extern void** gUnk_09EE3FB4[];
 extern u8 gUnk_081283C0[];
 extern void** gUnk_09EEA28C;
@@ -563,9 +575,10 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_4F4[0x120];
     TaskPool unk_614;
     TaskPool unk_628;
-    u8 unk_63C[0x10];
-    u8 unk_64C[0x18];
-    u8 unk_664[0x30];
+    ListPool unk_63C;
+    AnimState unk_64C;
+    AnimState unk_664;
+    u8 unk_67C[0x18];
     s32 unk_694;
     s32 unk_698;
     s32 unk_69C;
@@ -663,7 +676,9 @@ typedef struct UnkStruct_080A6FAC {
     u8 unk_3F8[0x10];
     void* gfx;
     u8 unk_40C[0x28];
-    u8 unk_434[0x40];
+    ListPool unk_434;
+    AnimState unk_444;
+    AnimState unk_45C;
     AnimState anim;
     u8 unk_48C[0x3C];
     s16 unk_4C8;
@@ -698,9 +713,11 @@ typedef struct UnkStruct_0808DB04 {
 #else
     u8 unk_4FC[0x2CC];
 #endif
-    u8 unk_7C8[0x14];
-    u8 unk_7DC[0x14];
-    u8 unk_7F0[0x40];
+    TaskPool unk_7C8;
+    TaskPool unk_7DC;
+    ListPool unk_7F0;
+    AnimState unk_800;
+    AnimState unk_818;
     AnimState anim;
     s32 unk_848;
     s32 unk_84C;
@@ -1558,9 +1575,14 @@ typedef struct UnkStruct_08090244 {
     u8 unk_0F;
 } UnkStruct_08090244;
 
-typedef struct UnkStruct_08093838 {
-    u8 unk_000[0x14];
-    u8 unk_014[0x28];
+typedef struct MapSelectWork {
+    TaskPool tasks;
+    ListPool cards;
+    u8 unk_024[8];
+    UnkStruct_080038C8* unk_02C;
+    ObjPalette* unk_030;
+    void* unk_034;
+    void* unk_038;
     void* tiles;
     u8 unk_040[0x1AC];
     MapcardWork* unk_1EC;
@@ -1620,9 +1642,9 @@ typedef struct UnkStruct_08093838 {
     u8 unk_2DB;
     void* unk_2DC;
     void* unk_2E0;
-} UnkStruct_08093838;
+} MapSelectWork;
 
-typedef char UnkStruct_08093838_sizechk[(sizeof(struct UnkStruct_08093838) == 0x2E4) ? 1 : -1];
+typedef char MapSelectWork_size[(sizeof(struct MapSelectWork) == 0x2E4) ? 1 : -1];
 
 typedef struct UnkStruct_08F7CBA8 {
     void* unk_00;
@@ -1702,7 +1724,10 @@ typedef struct UnkStruct_080A5D3C {
     u8 unk_3D0[0x3C];
     TaskPool unk_40C;
     TaskPool unk_420;
-    u8 unk_434[0x58];
+    ListPool unk_434;
+    AnimState unk_444;
+    AnimState unk_45C;
+    AnimState unk_474;
     s32 unk_48C;
     s32 unk_490;
     s32 unk_494;
@@ -2189,7 +2214,7 @@ void func_08097688(UnkStruct_08096F94* w);
 void func_080999A4(UnkStruct_08099928* w);
 u8 StockInfo_1(u8* work, void* a);
 void func_08090A54(UnkStruct_02034AAC* p, void* a);
-u8 func_0809438C(UnkStruct_08093838* w, void* a);
+u8 func_0809438C(MapSelectWork* w, void* a);
 void func_080A6E3C(u8* work);
 void func_080AA328(u8* work);
 void func_08083F08(u8 kind, u16* out);
@@ -2331,7 +2356,7 @@ u8 func_080A3558(UnkStruct_080A3F5C* w, void* a);
 void func_08090B50(UnkStruct_02034AAC* p, void* a);
 void RELOAD_CHILDREN_0(UnkStruct_08098BE8* w, UnkStruct_080988C0_Args* a);
 u8 Bosscard_1(u8* work, void* a);
-void func_08094548(UnkStruct_08093838* w);
+void func_08094548(MapSelectWork* w);
 u8 func_08099B60(UnkStruct_08099928* w, void* a);
 void func_08083714(UnkStruct_08083B20* w);
 void func_080836C4(UnkStruct_08095A5C* p, void* a, u8 b, s8 c);
@@ -2383,7 +2408,7 @@ u8 RELOAD_CHILDREN_1(UnkStruct_08098BE8* w, void* a);
 u8 func_0807CFA8(UnkStruct_02034AAC* p, void* a);
 u8 func_08097404(UnkStruct_08096F94* w, void* a);
 u8 func_080824C8(UnkStruct_02034AAC* p, void* a);
-u8 func_0809423C(UnkStruct_08093838* w, void* a);
+u8 func_0809423C(MapSelectWork* w, void* a);
 u8 func_08099A18(UnkStruct_08099928* w, void* a);
 void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a);
 u8 func_08082348(UnkStruct_02034AAC* p, void* a);
