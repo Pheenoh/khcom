@@ -8,6 +8,7 @@
 #include "anim.h"
 #include "taskpool.h"
 #include "game.h"
+#include "boss_tm.h"
 
 typedef struct CharaObjParam {
     u32 unk_00;
@@ -249,28 +250,8 @@ typedef struct TmClbWork {
 } TmClbWork;
 
 typedef struct JfWork {
-    u32 unk_000;
-    s32 x;
-    s32 y;
-    s32 z;
-    u8 unk_010[0x24];
-    u64 unk_034;
-    u8 unk_03C[0x4];
-    u32 unk_040;
-    u8 unk_044[0x58];
-    u16 unk_09C;
-    u16 unk_09E;
-    u16 unk_0A0;
-    u8 unk_0A2[0x6E];
-    u32 unk_110;
-    u32 unk_114;
-    u32 unk_118;
-    u32 unk_11C;
-    u8 unk_120[0x14];
-    u32 unk_134;
-    u8 unk_138[0x7A];
-    u16 unk_1B2;
-    u8 unk_1B4[0x6C];
+    BtlObj unk_000;
+    BtlObj unk_110;
     s32 unk_220;
     s32 unk_224;
     s32 unk_228;
@@ -289,8 +270,7 @@ typedef struct JfWork {
     s16 unk_24E;
     s16 unk_250;
     u8 unk_252[0x2];
-    u32 unk_254;
-    u8 unk_258[0x10];
+    TaskPool unk_254;
     u16 unk_268;
     u16 unk_26A;
 } JfWork;
@@ -457,74 +437,6 @@ typedef struct JfBorderlineWork {
     u8 unk_0B6[0x2];
 } JfBorderlineWork;
 
-typedef struct TmWork {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u8 unk_06[0x2];
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
-    s32 unk_20;
-    s32 unk_24;
-    u16 unk_28;
-    u8 unk_2A[0x2];
-    u32 unk_2C;
-    s16 unk_30;
-    s16 unk_32;
-    s16 unk_34;
-    s16 unk_36;
-    s16 unk_38;
-    s8 unk_3A;
-    u8 unk_3B;
-    s32 unk_3C;
-    u16 unk_40;
-    u16 unk_42;
-    u16 unk_44;
-    u8 unk_46[0x1E];
-} TmWork;
-
-typedef struct TmBodyWork {
-    TmWork* unk_000;
-    void* tiles;
-    void* palette;
-    void* palette2;
-    u8 unk_010[0x114];
-    void* gfx;
-    u8 unk_128;
-    u8 unk_129[0x3];
-    u8 unk_12C[0x2C];
-    s16 unk_158;
-    s16 unk_15A;
-    u8 unk_15C[0xE4];
-    void* gfx2;
-    u8 unk_244;
-    u8 unk_245[0x3];
-    u8 unk_248[0x114];
-    void* gfx3;
-    u8 unk_360;
-    u8 unk_361[0x3];
-    u8 unk_364[0x114];
-    void* gfx4;
-    u8 unk_47C;
-    u8 unk_47D[0x3];
-    s16 unk_480;
-    s16 unk_482;
-    s16 unk_484;
-    s16 unk_486;
-    u8 unk_488;
-    u8 unk_489;
-    s16 unk_48A;
-    s16 unk_48C;
-    s16 unk_48E;
-    u8 unk_490;
-    u8 unk_491;
-    s16 unk_492;
-} TmBodyWork;
-
 typedef struct TmArmState {
     u8 unk_00[0x8];
     s32 unk_08;
@@ -602,8 +514,7 @@ typedef struct TmArmWork {
     } joints;
     u16 unk_1B0;
     u16 unk_1B2;
-    u32 unk_1B4;
-    u8 unk_1B8[0x10];
+    TaskPool unk_1B4;
     u32 unk_1C8;
     u8 unk_1CC[0xC];
     u32 unk_1D8;
@@ -644,17 +555,6 @@ typedef struct TmFootStep {
     u8 unk_1C[0x4];
 } TmFootStep;
 
-typedef struct TmFootSub {
-    u32 unk_000;
-    s32 x;
-    s32 y;
-    s32 z;
-    u8 unk_010[0x100];
-    void* gfx;
-    u8 unk_114;
-    u8 unk_115[0x3];
-} TmFootSub;
-
 typedef struct TmFootWork {
     u16 unk_000;
     u8 unk_002;
@@ -666,41 +566,29 @@ typedef struct TmFootWork {
     u32 tiles3;
     u32 palette;
     u32 palette2;
-    u32 unk_01C;
-    u32 unk_020;
-    u32 unk_024;
-    u32 unk_028;
-    u8 unk_02C[0x100];
+    BtlObj unk_01C;
     void* unk_12C;
     u8 unk_130;
     u8 unk_131[0x3];
-    u32 unk_134;
-    u32 unk_138;
-    u32 unk_13C;
-    u32 unk_140;
-    u8 unk_144[0x100];
+    BtlObj unk_134;
     void* unk_244;
     u8 unk_248;
     u8 unk_249[0x3];
-    u32 unk_24C;
-    u32 unk_250;
-    u32 unk_254;
-    u32 unk_258;
-    u8 unk_25C[0x100];
+    BtlObj unk_24C;
     u32 unk_35C;
     u8 unk_360;
     u8 unk_361[0x3];
-    u32 unk_364;
-    u32 unk_368;
-    u32 unk_36C;
-    u32 unk_370;
-    u8 unk_374[0x100];
+    BtlObj unk_364;
     void* unk_474;
     u8 unk_478;
     u8 unk_479[0x3];
     TmWork* unk_47C;
     u32 unk_480;
 } TmFootWork;
+
+typedef char JfWork_size[(sizeof(JfWork) == 0x26C) ? 1 : -1];
+typedef char TmArmWork_size[(sizeof(TmArmWork) == 0x258) ? 1 : -1];
+typedef char TmFootWork_size[(sizeof(TmFootWork) == 0x484) ? 1 : -1];
 
 extern s16 gSineTable[];
 extern u16 gUnk_0961A63C[];
@@ -734,7 +622,6 @@ extern void* gUnk_09EF3950;
 extern void* gUnk_09EF3958;
 extern void* gUnk_09EF3960;
 extern void* gUnk_09EF397C;
-extern u8 gUnk_0203AB50[];
 extern s16 gUnk_0203AC60;
 extern s32 gUnk_0203AC64;
 extern s16 gUnk_0203AC6C;
@@ -891,14 +778,10 @@ void task_bos_dsd_3(DsdWork* work);
 void task_bos_tm_tbl_0(TmTblWork* work, void* arg);
 void task_bos_tm_tbl_3(TmTblWork* work);
 void task_bos_tm_clb_3(TmClbWork* work);
-void func_080BA0E4(s32* p, s32 a, s32 b, s32 c);
-void func_080BA0F8(u8* work);
-void func_080B83B8(void* a);
-void func_080B83A4(void* a, s16 x, s16 y, s16 z);
-void func_080B8334(void* a, s16 x, s16 y, s16 z);
+void func_080BA0E4(BtlObj* p, s32 a, s32 b, s32 c);
+void func_080BA0F8(BtlObj* work);
 void* memcpy(void* dst, const void* src, unsigned long n);
 void func_08083900(u8 a);
-void func_080B9FC4(TmBodyWork* work);
 void task_bos_tm_body_3(TmBodyWork* work);
 void func_080BB1B8(void* pool, TmClbArg* p, TmClbSrc* a);
 void func_080BB1D8(TmClbArg* p, TmClbSrc* a, s32 b);
@@ -946,7 +829,7 @@ void func_080C0624(JfMajinWork* work);
 void func_080BFEF0(JfMajinWork* work);
 void func_080C0714(JfMajinWork* work);
 void func_080BE9A0(JfMajinWork* work);
-void func_08019190(JfWork* a, s32 b);
+void func_08019190(BtlObj* a, s16 b);
 void func_080BFDD4(JfMajinWork* work);
 void func_080BFDD8(JfMajinWork* work);
 void func_080BEAE8(JfMajinWork* work);
@@ -1027,20 +910,6 @@ s32 func_0801ADAC(BtlObj* a);
 u8 func_0801C1C0(s32 a);
 u8 task_bos_dsd_1(DsdWork* work);
 
-struct WlogoBtlObj;
-struct WlogoTtEff;
-struct WlogoTtEffTop;
 extern u8 gUnk_09EF1D58[];
-void _080B949C(struct WlogoBtlObj*, struct WlogoTtEffTop*);
-void func_080B83C4(struct WlogoTtEff*);
-void func_080B8508(struct WlogoTtEffTop*);
-void func_080B895C(struct WlogoTtEffTop*);
-void func_080B89B0(struct WlogoTtEffTop*);
-void func_080B8324(struct WlogoTtEffTop*);
-void func_080B8688(struct WlogoTtEffTop*);
-void func_080B8A00(struct WlogoTtEffTop*);
-void func_080B8554(struct WlogoTtEffTop*);
-void func_080B87C0(struct WlogoTtEffTop*,s16);
-void func_080B8FF4(struct WlogoTtEffTop*,s16);
 
 #endif /* GUARD_BOS2_H */
