@@ -91,7 +91,7 @@ tools:
             - asm/movie_codec
             - src/movie
             - src/snd_stream
-            - src/lib
+            - src/audio_block_codec
 
         - id: thirdparty
           name: Third party

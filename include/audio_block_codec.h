@@ -1,5 +1,5 @@
-#ifndef GUARD_LIB_H
-#define GUARD_LIB_H
+#ifndef GUARD_AUDIO_BLOCK_CODEC_H
+#define GUARD_AUDIO_BLOCK_CODEC_H
 
 #include "types.h"
 
@@ -18,4 +18,4 @@ void func_08117E44(s32 offset);
 void func_08117F5C(u8* src, s32* samples, s32 offset);
 s32 func_08117F9C(void);
 
-#endif /* GUARD_LIB_H */
+#endif
