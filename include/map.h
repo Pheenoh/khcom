@@ -83,13 +83,6 @@ typedef struct UnkStruct_02034F84 {
     u8 unk_01;
 } UnkStruct_02034F84;
 
-typedef struct UnkStruct_02039D6C {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    s32 unk_04;
-} UnkStruct_02039D6C;
 
 
 typedef struct UnkStruct_080E92B8 {
@@ -361,7 +354,7 @@ typedef struct UnkStruct_080E590C {
     u8 unk_E4[0x14];
 } UnkStruct_080E590C;
 
-typedef struct UnkStruct_02034FE0 {
+typedef struct LoadGameMenuWork {
     u8* unk_000;
     void* unk_004;
     s32 unk_008;
@@ -387,12 +380,12 @@ typedef struct UnkStruct_02034FE0 {
     u8 unk_180;
     u8 unk_181;
     u8 unk_182;
-    u8 unk_183;
+    u8 selectedSlot;
     u8 unk_184;
     u8 unk_185;
-    u16 unk_186;
-    void (*unk_188)(struct UnkStruct_02034FE0*);
-} UnkStruct_02034FE0;
+    u16 timer;
+    void (*update)(struct LoadGameMenuWork*);
+} LoadGameMenuWork;
 
 typedef struct UnkStruct_02034FE4 {
     u8 unk_00;
@@ -401,7 +394,7 @@ typedef struct UnkStruct_02034FE4 {
     TaskPool unk_08;
 } UnkStruct_02034FE4;
 
-typedef struct UnkStruct_02034FDC {
+typedef struct NewGameSlotMenuWork {
     u8* unk_000;
     void* unk_004;
     s32 unk_008;
@@ -431,12 +424,12 @@ typedef struct UnkStruct_02034FDC {
     void* unk_338;
     u8 unk_33C;
     u8 unk_33D;
-    u8 unk_33E;
+    u8 selectedSlot;
     u8 unk_33F;
-    u16 unk_340;
+    u16 timer;
     u8 unk_342[0x02];
-    void (*unk_344)(struct UnkStruct_02034FDC*);
-} UnkStruct_02034FDC;
+    void (*update)(struct NewGameSlotMenuWork*);
+} NewGameSlotMenuWork;
 
 typedef struct MapRndWork {
     TaskPool unk_00;
@@ -1262,7 +1255,7 @@ extern u8 gUnk_08B1E992[];
 extern u8 gUnk_08B1E9A6[];
 extern u8 gUnk_09EF6C38[];
 extern u8 gUnk_0984C868[];
-extern UnkStruct_02039D6C gUnk_02039D6C[];
+extern SaveFileSummary gUnk_02039D6C[];
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 extern UnkStruct_0203C7B0 gUnk_0203C7B0;
 extern UnkStruct_0203C7B8* gUnk_0203C7B8;
@@ -1493,12 +1486,12 @@ extern void* gTaskDescMapNiseriku;
 extern void* gTaskDescMapMickey;
 
 void func_080ED250(u8* work);
-void func_080EBE90(UnkStruct_02034FE0* work);
-void func_080EBD00(UnkStruct_02034FE0* work);
-void func_080EBEC8(UnkStruct_02034FE0* work);
-void func_080EBFB8(UnkStruct_02034FE0* work);
-void func_080EC04C(UnkStruct_02034FE0* work);
-void func_080EBFF8(UnkStruct_02034FE0* work);
+void func_080EBE90(LoadGameMenuWork* work);
+void func_080EBD00(LoadGameMenuWork* work);
+void func_080EBEC8(LoadGameMenuWork* work);
+void func_080EBFB8(LoadGameMenuWork* work);
+void func_080EC04C(LoadGameMenuWork* work);
+void func_080EBFF8(LoadGameMenuWork* work);
 void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
 extern TaskDesc gTaskDescFldShadow;
@@ -1572,10 +1565,10 @@ void func_080F59A0(MapMsgWork* w);
 void func_080F65A8(MapNamineWork* w);
 s32 func_080F78A8(u8* work);
 void func_080E2C50(void);
-void func_080EB1AC(UnkStruct_02034FDC* w);
-void func_080EB1F4(UnkStruct_02034FDC* w);
-void func_080EB27C(UnkStruct_02034FDC* w);
-void func_080EB2D0(UnkStruct_02034FDC* w);
+void func_080EB1AC(NewGameSlotMenuWork* w);
+void func_080EB1F4(NewGameSlotMenuWork* w);
+void func_080EB27C(NewGameSlotMenuWork* w);
+void func_080EB2D0(NewGameSlotMenuWork* w);
 void func_080ED314(u8* work);
 s32 func_080EEF04(MapSaveWork* w);
 void func_080EF8CC(UnkStruct_080E590C* p);
@@ -1886,7 +1879,7 @@ s32 func_080F0B54(UnkStruct_080E590C* p);
 s32 func_080F0DD8(UnkStruct_080E590C* p);
 s32 func_080F105C(UnkStruct_080E590C* p);
 void func_080F169C(MapGmkJumpWork* w);
-void func_080EB12C(UnkStruct_02034FDC* w);
+void func_080EB12C(NewGameSlotMenuWork* w);
 void func_080F41A4(MapGmk04Work* w);
 void func_080F4224(MapGmk04Work* w);
 void func_080F4258(MapGmk04Work* w);

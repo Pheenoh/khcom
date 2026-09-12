@@ -20,11 +20,11 @@ typedef struct SaveCommon {
 } SaveCommon;
 
 typedef struct SaveFileSummary {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
+    u8 floor;
+    u8 world;
+    u8 level;
     u8 unk_03;
-    u32 unk_04;
+    u32 playTime;
 } SaveFileSummary;
 
 typedef struct SaveHeaderData {
