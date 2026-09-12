@@ -73,7 +73,9 @@ void MovieUpdate(void);
 s32 func_0806C490(void* str);
 s32 func_0806C81C(void* str, u16 tile);
 u8 func_0806CBAC(void* str, u16* widths, u16 tile);
-#ifndef VERSION_JP
+#ifdef VERSION_JP
+u16 func_0805E848(u8* str);
+#else
 s16 func_0805E848(u16* widths, u16 count);
 #endif
 extern u16 gUnk_02034968[];
