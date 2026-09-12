@@ -44,7 +44,7 @@ extern u8 gUnk_02039DDC;
 extern u8 gUnk_0203A9D4;
 extern u8 gUnk_0203A9D8;
 
-typedef struct UnkStruct_02034AAC {
+typedef struct CardDisplayWork {
     void* unk_00;
     void* unk_04;
     void* unk_08;
@@ -89,7 +89,7 @@ typedef struct UnkStruct_02034AAC {
     u8 unk_A5;
     u8 unk_A6;
     u8 unk_A7;
-} UnkStruct_02034AAC;
+} CardDisplayWork;
 extern u8 gUnk_02039DD8;
 extern u8 gUnk_0203A9E8;
 extern void* gUnk_0203A854;
@@ -331,16 +331,16 @@ typedef struct UnkStruct_080993D4 {
     s16 unk_0E4;
 } UnkStruct_080993D4;
 
-typedef struct UnkStruct_080991CC {
+typedef struct RevCountArgs {
     void* unk_00;
     void* unk_04;
     void* unk_08;
     u8 unk_0C;
     u8 unk_0D;
     u8 unk_0E[0x02];
-} UnkStruct_080991CC;
+} RevCountArgs;
 
-typedef struct UnkStruct_08098CE4 {
+typedef struct RevCountWork {
     void* unk_00;
     void* unk_04;
     void* unk_08;
@@ -350,12 +350,12 @@ typedef struct UnkStruct_08098CE4 {
     u16 unk_26;
     u8 unk_28;
     u8 unk_29[0x03];
-    UnkStruct_080991CC unk_2C;
+    RevCountArgs unk_2C;
     s32 unk_3C;
     s32 unk_40;
-} UnkStruct_08098CE4;
+} RevCountWork;
 
-typedef char UnkStruct_08098CE4_sizechk[(sizeof(struct UnkStruct_08098CE4) == 0x44) ? 1 : -1];
+typedef char UnkStruct_08098CE4_sizechk[(sizeof(struct RevCountWork) == 0x44) ? 1 : -1];
 
 typedef struct UnkStruct_09EE7D84 {
     void** unk_00;
@@ -461,7 +461,7 @@ typedef struct UnkStruct_0807B410 {
     u8 unk_B8[0x10];
 } UnkStruct_0807B410;
 
-typedef struct UnkStruct_0808E890 {
+typedef struct DeckCard2Work {
     u8 unk_00[0x04];
     void* unk_04;
     void* unk_08;
@@ -483,7 +483,7 @@ typedef struct UnkStruct_0808E890 {
     u8 unk_4A;
     u8 unk_4B[0x02];
     u8 unk_4D;
-} UnkStruct_0808E890;
+} DeckCard2Work;
 
 typedef struct UnkStruct_0808E3E0 {
     u8 unk_00[0x24];
@@ -763,10 +763,10 @@ typedef struct UnkStruct_08080268 {
     u8 unk_00[0x14];
     void* unk_14;
     void* unk_18;
-    UnkStruct_02034AAC* unk_1C[3];
-    UnkStruct_02034AAC* unk_28[3];
-    UnkStruct_02034AAC* unk_34[4];
-    UnkStruct_02034AAC* unk_44[4];
+    CardDisplayWork* unk_1C[3];
+    CardDisplayWork* unk_28[3];
+    CardDisplayWork* unk_34[4];
+    CardDisplayWork* unk_44[4];
     ListPool unk_54[4];
     u16 unk_94[4];
     u16 unk_9C[4];
@@ -805,7 +805,7 @@ typedef struct UnkStruct_0809DF7C {
     u8 unk_27;
 } UnkStruct_0809DF7C;
 
-typedef struct UnkStruct_080988C0_Args {
+typedef struct ReloadChildArgs {
     void* unk_00;
     s32* unk_04;
     s32* unk_08;
@@ -814,9 +814,9 @@ typedef struct UnkStruct_080988C0_Args {
     u8 unk_0E;
     u8 unk_0F;
     u8 unk_10[0x04];
-} UnkStruct_080988C0_Args;
+} ReloadChildArgs;
 
-typedef struct UnkStruct_08098BE8 {
+typedef struct ReloadChildWork {
     void* tiles;
     void* palette;
     void* unk_08;
@@ -837,9 +837,9 @@ typedef struct UnkStruct_08098BE8 {
     u8 unk_44;
     u8 unk_45;
     u8 unk_46;
-} UnkStruct_08098BE8;
+} ReloadChildWork;
 
-typedef char UnkStruct_08098BE8_sizechk[(sizeof(struct UnkStruct_08098BE8) == 0x48) ? 1 : -1];
+typedef char UnkStruct_08098BE8_sizechk[(sizeof(struct ReloadChildWork) == 0x48) ? 1 : -1];
 
 typedef struct UnkStruct_08098670 {
     void* unk_00;
@@ -1048,34 +1048,34 @@ typedef struct UnkWork_0809E0A4 {
     u8 unk_29;
 } UnkWork_0809E0A4;
 
-typedef struct UnkStruct_08083BE4_Frame {
-    u16 unk_00;
-    u8 unk_02;
+typedef struct MapTileAnimationFrame {
+    u16 tileOffset;
+    u8 duration;
     u8 unk_03;
-} UnkStruct_08083BE4_Frame;
+} MapTileAnimationFrame;
 
-typedef struct UnkStruct_08083BE4_Entry {
-    UnkStruct_08083BE4_Frame* unk_00;
-    u8* unk_04;
-    u8 unk_08;
+typedef struct MapTileAnimationTrack {
+    MapTileAnimationFrame* frames;
+    u8* tiles;
+    u8 frameCount;
     u8 unk_09;
-    s16 unk_0A;
-    u16 unk_0C;
+    s16 destOffset;
+    u16 copySize;
     u8 unk_0E[0x02];
-} UnkStruct_08083BE4_Entry;
+} MapTileAnimationTrack;
 
-typedef struct UnkStruct_08083BE4_Anim {
-    UnkStruct_08083BE4_Entry* unk_00;
-    u8 unk_04;
-} UnkStruct_08083BE4_Anim;
+typedef struct MapTileAnimationDef {
+    MapTileAnimationTrack* tracks;
+    u8 trackCount;
+} MapTileAnimationDef;
 
-typedef struct UnkStruct_08083B94 {
+typedef struct MapTileAnimationWork {
     u8 unk_00;
-    u8 unk_01[8];
-    u8 unk_09[8];
+    u8 frameTimers[8];
+    u8 frameIndices[8];
     u8 unk_11[3];
-    UnkStruct_08083BE4_Anim* unk_14;
-} UnkStruct_08083B94;
+    MapTileAnimationDef* definition;
+} MapTileAnimationWork;
 
 typedef struct UnkStruct_09EE752C {
     u8 unk_00;
@@ -1417,7 +1417,7 @@ typedef struct UnkStruct_080933D8 {
     u16 unk_02;
 } UnkStruct_080933D8;
 
-typedef struct UnkStruct_08097A14 {
+typedef struct SpotlightWork {
     u8 unk_00;
     u8 unk_01[0x03];
     s32 unk_04;
@@ -1426,7 +1426,7 @@ typedef struct UnkStruct_08097A14 {
     u8 unk_0E[0x02];
     u8* unk_10;
     u8 unk_14;
-} UnkStruct_08097A14;
+} SpotlightWork;
 
 typedef struct UnkStruct_08099E70 {
     void* tiles;
@@ -1529,7 +1529,7 @@ typedef struct UnkStruct_080A1BB8 {
     u16 unk_10;
 } UnkStruct_080A1BB8;
 
-typedef struct UnkStruct_08090244 {
+typedef struct CardDisplayArgs {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
@@ -1537,7 +1537,7 @@ typedef struct UnkStruct_08090244 {
     u8 unk_0D;
     u8 unk_0E;
     u8 unk_0F;
-} UnkStruct_08090244;
+} CardDisplayArgs;
 
 typedef struct MapSelectWork {
     TaskPool tasks;
@@ -1820,7 +1820,7 @@ typedef struct UnkStruct_080A5490_Args {
     s32 unk_08;
 } UnkStruct_080A5490_Args;
 
-typedef struct UnkStruct_080A6838_Args {
+typedef struct DeckCard2Args {
     void* unk_00;
     u16 unk_04;
     s16 unk_06;
@@ -1828,7 +1828,7 @@ typedef struct UnkStruct_080A6838_Args {
     u8 unk_0A;
     u8 unk_0B;
     u16* unk_0C;
-} UnkStruct_080A6838_Args;
+} DeckCard2Args;
 
 typedef struct UnkStruct_080A1DAC_Frame {
     u16 unk_00;
@@ -1870,12 +1870,12 @@ typedef struct UnkStruct_080A1DAC {
 
 extern UnkStruct_080A1DAC_Desc* gUnk_09EE79B4[];
 
-typedef struct UnkStruct_080991F8_Args {
+typedef struct ReloadArgs {
     u32 unk_00;
     u8* unk_04;
-} UnkStruct_080991F8_Args;
+} ReloadArgs;
 
-typedef struct UnkStruct_080991F8 {
+typedef struct ReloadWork {
     void* tiles;
     void* palette;
     void* gfx;
@@ -1887,7 +1887,7 @@ typedef struct UnkStruct_080991F8 {
     u8 unk_2E[0x02];
     u8* unk_30;
     u8 unk_34;
-} UnkStruct_080991F8;
+} ReloadWork;
 
 
 extern UnkStruct_08F7CF18 gUnk_08F7CF18[];
@@ -2037,7 +2037,7 @@ extern s16 gUnk_090361B0[];
 extern s16 gUnk_090361B8[];
 extern s16 gUnk_090361C0[];
 
-typedef struct UnkStruct_08083930 {
+typedef struct BossCardWork {
     CardDef* unk_00;
     CardBack* unk_04;
     s32* unk_08;
@@ -2053,7 +2053,7 @@ typedef struct UnkStruct_08083930 {
     u8 unk_32;
     u8 unk_33;
     u8 unk_34;
-} UnkStruct_08083930;
+} BossCardWork;
 
 extern u8 gUnk_08F7DAC4[];
 extern CardBack gUnk_08F70A28[];
@@ -2111,19 +2111,19 @@ u8 func_0807B60C(void);
 u8 func_08081888(void);
 u16 func_08078754(UnkStruct_08078754* w, u8 n);
 u8 func_0809C448(u8* work, void* a);
-u8 func_0807BE54(UnkStruct_02034AAC* p, void* a);
+u8 func_0807BE54(CardDisplayWork* p, void* a);
 u8 func_08088EB4(u8* work, void* a);
 void func_08078330(CardSlot* slots, s32 deckIndex);
-u8 func_0807CBC0(UnkStruct_02034AAC* p, void* a);
-u8 func_0807D930(UnkStruct_02034AAC* p, void* a);
+u8 func_0807CBC0(CardDisplayWork* p, void* a);
+u8 func_0807D930(CardDisplayWork* p, void* a);
 u8 func_08094934(MapcardWork* w, void* a);
-u8 SpotLight_1(UnkStruct_08097A14* w, void* a);
-u8 func_08098FDC(UnkStruct_08098CE4* w);
-void REV_COUNT_0(UnkStruct_08098CE4* w, UnkStruct_080991CC* a);
-u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a);
-void REV_COUNT_2(UnkStruct_08098CE4* w);
-void REV_COUNT_3(UnkStruct_08098CE4* w);
-u8 func_080990CC(UnkStruct_08098CE4* w, void* a);
+u8 SpotLight_1(SpotlightWork* w, void* a);
+u8 func_08098FDC(RevCountWork* w);
+void REV_COUNT_0(RevCountWork* w, RevCountArgs* a);
+u8 REV_COUNT_1(RevCountWork* w, void* a);
+void REV_COUNT_2(RevCountWork* w);
+void REV_COUNT_3(RevCountWork* w);
+u8 func_080990CC(RevCountWork* w, void* a);
 void func_0809A4E0(UnkStruct_0809A02C* w, u8 kind);
 void func_0809A02C(UnkStruct_0809A02C* w, s32* args);
 void func_0809A1B8(UnkStruct_0809A02C* w, s32* args);
@@ -2137,7 +2137,7 @@ void func_0809B200(UnkStruct_0809A02C* w);
 void func_0809B3F4(UnkStruct_0809A02C* w);
 void func_0809B59C(UnkStruct_0809A02C* w);
 void func_0809B5F4(UnkStruct_0809A02C* w);
-void func_08090100(UnkStruct_0808E890* n);
+void func_08090100(DeckCard2Work* n);
 u8 Card_EFFECT_1(UnkStruct_08099E70* w);
 void func_0809D1FC(u8 bg);
 u8 func_080A3640(UnkStruct_080A3F5C* w, void* a);
@@ -2148,7 +2148,7 @@ void func_08097390(UnkStruct_08096F94* w);
 void func_08097688(UnkStruct_08096F94* w);
 void func_080999A4(UnkStruct_08099928* w);
 u8 StockInfo_1(u8* work, void* a);
-void func_08090A54(UnkStruct_02034AAC* p, void* a);
+void func_08090A54(CardDisplayWork* p, void* a);
 u8 func_0809438C(MapSelectWork* w, void* a);
 void func_080A6E3C(u8* work);
 void func_080AA328(u8* work);
@@ -2167,10 +2167,10 @@ void func_080AAA8C(u8* work, u8 kind);
 u8 func_0808FA0C(u8* work, void* a);
 void func_0807FAD8(UnkStruct_08080268* w);
 void InitDecks(void);
-void func_08090ACC(UnkStruct_02034AAC* p, void* a);
+void func_08090ACC(CardDisplayWork* p, void* a);
 u8 func_0809486C(MapcardWork* w, void* a);
-void SpotLight_0(UnkStruct_08097A14* w, u8* src);
-u8 func_08099048(UnkStruct_08098CE4* w, void* a);
+void SpotLight_0(SpotlightWork* w, u8* src);
+u8 func_08099048(RevCountWork* w, void* a);
 u8 func_0809ACDC(UnkStruct_0809A02C* w);
 u8 func_0809C4B0(u8* work, void* a);
 void func_0809D87C(u16 a, u16 b, u16 c, u16 bits);
@@ -2187,54 +2187,54 @@ void Mode_riku_deckTutorial_1(void);
 void func_0807A6C8(UnkStruct_08080268* w);
 u8 func_0807B578(UnkStruct_08080268* w, void* a);
 void func_0807FA44(UnkStruct_08080268* w);
-u8 func_080829D0(UnkStruct_02034AAC* p, void* a);
-void card_enemy_0(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
+u8 func_080829D0(CardDisplayWork* p, void* a);
+void card_enemy_0(CardDisplayWork* p, CardDisplayArgs* a);
 void func_080A3A04(UnkStruct_080A3F5C* w);
-void card_not_have_2(UnkStruct_02034AAC* p);
+void card_not_have_2(CardDisplayWork* p);
 u8 func_0809C078(u8* work, void* a);
 void func_0809D900(u16 a, u16 b, u16 c, u32 v);
 void func_080A69A0(u8* work);
 void func_080A99A0(u8* work);
 void func_08078D98(u8* work, u8 kind, u8 c);
-u8 func_0807CB24(UnkStruct_02034AAC* p, void* a);
-u8 card_enemy_1(UnkStruct_02034AAC* p, void* a);
+u8 func_0807CB24(CardDisplayWork* p, void* a);
+u8 card_enemy_1(CardDisplayWork* p, void* a);
 void func_080A6BB4(u8* work);
 void func_080A6B40(u8 a, u8 b);
 void func_080A9AE8(u8* work);
-u8 func_0807D4E4(UnkStruct_02034AAC* p);
-u8 func_08082F50(UnkStruct_02034AAC* p);
+u8 func_0807D4E4(CardDisplayWork* p);
+u8 func_08082F50(CardDisplayWork* p);
 void func_0808CD48(u8* work);
 void Mode_Premire_0(void);
 void func_080A1DAC(UnkStruct_080A1DAC* w);
 u8 func_080A207C(UnkStruct_080A1DAC* w);
 u8 func_080A5C9C(u8* work, void* a);
-void func_080837FC(UnkStruct_02034AAC* p);
-u8 map_anim_1(UnkStruct_08083B94* w);
+void func_080837FC(CardDisplayWork* p);
+u8 map_anim_1(MapTileAnimationWork* w);
 u8 Mapcard_1(MapcardWork* w, void* a);
-void RELOAD_0(UnkStruct_080991F8* w, UnkStruct_080991F8_Args* a);
+void RELOAD_0(ReloadWork* w, ReloadArgs* a);
 void func_0809C1EC(u8* work);
-void NO_Card_2(UnkStruct_02034AAC* p);
+void NO_Card_2(CardDisplayWork* p);
 void ClearDeck(u8 deck);
 void func_0807A75C(UnkStruct_08080268* w);
 u8 func_0807BA54(void);
-u8 func_0807CE9C(UnkStruct_02034AAC* p);
-u8 func_08082B48(UnkStruct_02034AAC* p);
+u8 func_0807CE9C(CardDisplayWork* p);
+u8 func_08082B48(CardDisplayWork* p);
 void RemoveCardFromDeck(u16* p, u8 deck);
 void func_0808D4E4(u8 kind, u8 slot);
-u8 func_080909A4(UnkStruct_02034AAC* p);
+u8 func_080909A4(CardDisplayWork* p);
 u8 func_080A6A38(u8* work);
 u8 func_080A9A38(u8* work);
 void func_080AA148(u8 kind, u8 slot);
 void Ev_mapObj_2(UnkStruct_080A1C48* w);
 void func_080984E4(UnkStruct_080984E4* w);
-u8 card_reload_1(UnkStruct_02034AAC* p, void* a);
+u8 card_reload_1(CardDisplayWork* p, void* a);
 void func_0808E7D8(u8* work);
 u8 func_080947B4(MapcardWork* w, void* a);
 u8 func_080A63B8(u8* work, void* a);
 s16 func_080859A0(s32 mode, Deck* d);
 u8 func_080A3DD0(UnkStruct_080A3F5C* w);
-u8 func_08098AE4(UnkStruct_08098BE8* w, void* a);
-void DeckCard2_2(UnkStruct_0808E890* n);
+u8 func_08098AE4(ReloadChildWork* w, void* a);
+void DeckCard2_2(DeckCard2Work* n);
 void func_08081760(UnkStruct_08080268* w);
 void func_08094CE4(MapcardWork* w);
 void func_0808D0A4(u8 deck);
@@ -2242,14 +2242,14 @@ void func_080A9E40(u8 deck);
 void func_080A6C50(u8 deck);
 u8 func_0809B840(u8* work);
 u8 func_0809B9F4(u8* work);
-u8 DeckCard2_1(UnkStruct_0808E890* n);
+u8 DeckCard2_1(DeckCard2Work* n);
 void func_080A676C(u8* work);
 void func_08078914(UnkStruct_08078754* w, u8 n);
-u8 func_08082154(UnkStruct_02034AAC* p, void* a);
-void Bosscard_0(UnkStruct_08083930* w, u32* a);
+u8 func_08082154(CardDisplayWork* p, void* a);
+void Bosscard_0(BossCardWork* w, u32* a);
 void func_080985A0(UnkStruct_08098670* w, u16 b, s16 c, s16 d);
 void RemoveCardFromActiveDeck(u16 slot);
-u8 func_0807C3E8(UnkStruct_02034AAC* p, void* a);
+u8 func_0807C3E8(CardDisplayWork* p, void* a);
 u8 func_0808E934(u8* work, s16 x, s16 y, u16 dir);
 void Mapcard_0(MapcardWork* w, MapcardArgs* a);
 u8 AddCardToDeck(u16 card, u8 deck);
@@ -2267,14 +2267,14 @@ u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a);
 u8 func_080A5EA0(UnkStruct_080A5D3C* w, void* a);
 void func_080A4C1C(UnkStruct_080A3F5C* w);
 void func_080A53E4(UnkStruct_080A3F5C* w);
-void func_08090864(UnkStruct_02034AAC* p);
+void func_08090864(CardDisplayWork* p);
 void func_08099CDC(UnkStruct_08099928* w);
 void func_0809C110(u8* work);
 void func_0809CE88(UnkStruct_0809CE88* w, s16* a);
 void func_0809CF64(UnkStruct_0809CE88* w, s16* a);
-void RELOAD_CHILDREN_2(UnkStruct_08098BE8* w);
+void RELOAD_CHILDREN_2(ReloadChildWork* w);
 u8 func_080AADD4(u8* work, s16 x, s16 y, u16 dir);
-u8 func_08090550(UnkStruct_02034AAC* p, void* a);
+u8 func_08090550(CardDisplayWork* p, void* a);
 u8 AddCardToActiveDeck(u16 card);
 void func_08084AC8(u16 a);
 void func_08085A58(s32 a, u16* out);
@@ -2284,29 +2284,29 @@ u8 func_0808CA78(u8* work, u8 a);
 void func_0808C2F0(u8* work);
 void HCEffectName_2(UnkStruct_0809DF7C* w);
 u8 func_080A3558(UnkStruct_080A3F5C* w, void* a);
-void func_08090B50(UnkStruct_02034AAC* p, void* a);
-void RELOAD_CHILDREN_0(UnkStruct_08098BE8* w, UnkStruct_080988C0_Args* a);
+void func_08090B50(CardDisplayWork* p, void* a);
+void RELOAD_CHILDREN_0(ReloadChildWork* w, ReloadChildArgs* a);
 u8 Bosscard_1(u8* work, void* a);
 void func_08094548(MapSelectWork* w);
 u8 func_08099B60(UnkStruct_08099928* w, void* a);
 void func_08083714(UnkStruct_08083B20* w);
 void func_080836C4(UnkStruct_08095A5C* p, void* a, u8 b, s8 c);
-u8 func_08082A64(UnkStruct_02034AAC* p, void* a);
+u8 func_08082A64(CardDisplayWork* p, void* a);
 void func_0808E3E0(u8* work);
 u8 func_080A18F4(UnkStruct_080A18F4* w);
 u8 func_0809753C(UnkStruct_08096F94* w, void* a);
 void func_0809B76C(u8* work, void** src);
 void func_0809B920(u8* work, void** src);
 void func_0808D438(u8 kind, u8 slot);
-u8 func_0807BD64(UnkStruct_02034AAC* p, void* a);
-u8 func_0807D3A0(UnkStruct_02034AAC* p, void* a);
-u8 func_08082E0C(UnkStruct_02034AAC* p, void* a);
-u8 func_08090DB0(UnkStruct_02034AAC* p, void* a);
-void card_reload_0(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
-void func_08091048(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
-void func_0807DAD0(UnkStruct_02034AAC* p);
-void Reload_Card_0(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
-void func_08091138(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
+u8 func_0807BD64(CardDisplayWork* p, void* a);
+u8 func_0807D3A0(CardDisplayWork* p, void* a);
+u8 func_08082E0C(CardDisplayWork* p, void* a);
+u8 func_08090DB0(CardDisplayWork* p, void* a);
+void card_reload_0(CardDisplayWork* p, CardDisplayArgs* a);
+void func_08091048(CardDisplayWork* p, CardDisplayArgs* a);
+void func_0807DAD0(CardDisplayWork* p);
+void Reload_Card_0(CardDisplayWork* p, CardDisplayArgs* a);
+void func_08091138(CardDisplayWork* p, CardDisplayArgs* a);
 u8 func_0809C620(u8* work, void* a);
 u8 EV_BG_EFFECT_1(UnkStruct_080A1DAC* w, void* a);
 void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a);
@@ -2317,33 +2317,33 @@ void func_080818E4(void);
 u8 func_0809DA64(s32 a, u16 n);
 void StockInfo_0(u8* work, void* a);
 u8 func_080A3754(UnkStruct_080A3F5C* w, void* a);
-u8 func_08082C98(UnkStruct_02034AAC* p, void* a);
-u8 Reload_Card_1(UnkStruct_02034AAC* p, void* a);
+u8 func_08082C98(CardDisplayWork* p, void* a);
+u8 Reload_Card_1(CardDisplayWork* p, void* a);
 u8 func_0808686C(u8* work, void* a);
-u8 func_0807C4BC(UnkStruct_02034AAC* p, void* a);
+u8 func_0807C4BC(CardDisplayWork* p, void* a);
 u8 func_080A5034(UnkStruct_080A3F5C* w, void* a);
 u8 func_0808E474(UnkStruct_0808DB04* w);
 u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a);
-u8 func_08082224(UnkStruct_02034AAC* p, void* a);
-u8 func_08081B70(UnkStruct_02034AAC* p, void* a);
-u8 func_0807D68C(UnkStruct_02034AAC* p, void* a);
+u8 func_08082224(CardDisplayWork* p, void* a);
+u8 func_08081B70(CardDisplayWork* p, void* a);
+u8 func_0807D68C(CardDisplayWork* p, void* a);
 u8 func_0808A7E4(u8* work, void* a);
 u8 func_080A5198(UnkStruct_080A3F5C* w, void* a);
 void func_080A52BC(UnkStruct_080A3F5C* w);
 void func_080A6D0C(void);
 void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a);
-void func_0807BC24(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
-void func_08081A3C(UnkStruct_02034AAC* p, UnkStruct_08090244* a);
-u8 RELOAD_CHILDREN_1(UnkStruct_08098BE8* w, void* a);
-u8 func_0807CFA8(UnkStruct_02034AAC* p, void* a);
+void func_0807BC24(CardDisplayWork* p, CardDisplayArgs* a);
+void func_08081A3C(CardDisplayWork* p, CardDisplayArgs* a);
+u8 RELOAD_CHILDREN_1(ReloadChildWork* w, void* a);
+u8 func_0807CFA8(CardDisplayWork* p, void* a);
 u8 func_08097404(UnkStruct_08096F94* w, void* a);
-u8 func_080824C8(UnkStruct_02034AAC* p, void* a);
+u8 func_080824C8(CardDisplayWork* p, void* a);
 u8 func_0809423C(MapSelectWork* w, void* a);
 u8 func_08099A18(UnkStruct_08099928* w, void* a);
 void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a);
-u8 func_08082348(UnkStruct_02034AAC* p, void* a);
+u8 func_08082348(CardDisplayWork* p, void* a);
 u8 func_0809C2D0(u8* work, void* a);
-u8 func_08090C3C(UnkStruct_02034AAC* p, void* a);
+u8 func_08090C3C(CardDisplayWork* p, void* a);
 
 void CardName_0(UnkStruct_0809CC80* w);
 void DarkPoint_0(UnkStruct_080AB018* w);

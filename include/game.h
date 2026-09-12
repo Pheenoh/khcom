@@ -11,11 +11,11 @@
 #include "anim.h"
 #include "btl_api.h"
 
-struct UnkStruct_02034AAC;
+struct CardDisplayWork;
 
 typedef struct UnkStruct_02039DD4 {
-    struct UnkStruct_02034AAC* unk_000[6];
-    struct UnkStruct_02034AAC* unk_018[6];
+    struct CardDisplayWork* unk_000[6];
+    struct CardDisplayWork* unk_018[6];
     void* tiles;
     void* tiles2;
     void* tiles3;

@@ -11,7 +11,7 @@
 
 s16 gUnk_02034A94;
 u8 gUnk_02034A96;
-UnkStruct_02034AAC* gUnk_02034A98;
+CardDisplayWork* gUnk_02034A98;
 u32 gUnk_02034A9C;
 u32 gUnk_02034AA0;
 #include "gba/keys.h"
@@ -1116,7 +1116,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
     s16 count = 0;
     u16 old;
     CardSlot* c;
-    UnkStruct_02034AAC* e;
+    CardDisplayWork* e;
     EventCardLink* p;
     if (w->unk_94[slot] != 0xFFFF) {
         u32 index = w->unk_94[slot];
@@ -1242,7 +1242,7 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
     }
     w->unk_34[slot] = ListPoolFirst(&w->unk_54[slot]);
     {
-        UnkStruct_02034AAC** active = &gUnk_02034A98;
+        CardDisplayWork** active = &gUnk_02034A98;
         *active = ListPoolFirst(&w->unk_54[slot]);
     }
     gUnk_02034A98->unk_78 |= 0x804;
@@ -1341,7 +1341,7 @@ s32 func_08076F4C(CardBattleWork* w) {
 
 extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
-extern UnkStruct_02034AAC* gUnk_02034A98;
+extern CardDisplayWork* gUnk_02034A98;
 extern u16 gUnk_09033FC8[];
 void func_0807A620(void* work);
 void func_0807B378(void* work);
@@ -1364,7 +1364,7 @@ void func_0807B9EC(void* work);
 void func_0807B6F4(void* work);
 void func_080789E4(void* work);
 void func_08078BB4(void* work);
-u8 func_080782AC(UnkStruct_02034AAC** cards, u8 count);
+u8 func_080782AC(CardDisplayWork** cards, u8 count);
 s32 func_080AE28C(void* cards, void* output, u8 count);
 
 typedef struct {
@@ -2032,7 +2032,7 @@ void func_08077E98(CardBattleWork* w) {
 
 s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
     UnkStruct_0807FD10_Args arg;
-    UnkStruct_02034AAC* e;
+    CardDisplayWork* e;
     CardSlot* c;
     u16 n;
     s16 a;
