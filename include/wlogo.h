@@ -2,6 +2,7 @@
 #define GUARD_WLOGO_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "taskpool.h"
 #include "intr.h"
 #include "main.h"
@@ -535,29 +536,6 @@ typedef struct WlogoMonsWork {
     u8 unk_02E;
     u8 unk_02F;
 } WlogoMonsWork;
-typedef struct WlogoCollider {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    u8 unk_10[0x0C];
-    s32 unk_1C;
-} WlogoCollider;
-
-typedef struct WlogoBtlWork {
-    u8 unk_000[0x40];
-    TaskPool unk_040;
-    u8 unk_054[0x14];
-    u64 unk_068;
-    u8 unk_070[0x0C];
-    WlogoCollider* unk_07C;
-    u8 unk_080[0x4C];
-    s32 unk_0CC;
-    s32 unk_0D0;
-    s32 unk_0D4;
-    s16 unk_0D8;
-} WlogoBtlWork;
-
 typedef struct WlogoObjParam {
     u32 tiles;
     u16 unk_04;
@@ -572,13 +550,6 @@ typedef struct WlogoObjParam {
     void* unk_20;
 } WlogoObjParam;
 
-typedef struct WlogoBtlObj {
-    u8 unk_000[0x2C];
-    s16 unk_02C;
-    u8 unk_02E[0x06];
-    u64 unk_034;
-} WlogoBtlObj;
-
 typedef struct BosTmShared {
     s32 unk_00;
     s32 x;
@@ -588,7 +559,6 @@ typedef struct BosTmShared {
 
 
 extern s32 gUnk_0203AB38;
-extern WlogoBtlWork* gBtlWork;
 extern s16 gUnk_0203AB3C;
 extern s16 gUnk_0203AB40;
 extern s16 gUnk_0203AB44;
@@ -888,9 +858,9 @@ void func_080B82D4(void);
 void func_080B8324(WlogoTtEffTop* p);
 void func_080B91A4(WlogoTtEffTop* p);
 void func_080B9FC4(WlogoTtEffTop* p);
-s32 func_0801ADAC(WlogoBtlObj* p);
-void func_0801AF08(WlogoBtlObj* p);
-void func_0801AF4C(WlogoBtlObj* p);
-void _080B949C(WlogoBtlObj* a, WlogoTtEffTop* b);
+s32 func_0801ADAC(BtlObj* p);
+void func_0801AF08(BtlObj* p);
+void func_0801AF4C(BtlObj* p);
+void _080B949C(BtlObj* a, WlogoTtEffTop* b);
 
 #endif /* GUARD_WLOGO_H */

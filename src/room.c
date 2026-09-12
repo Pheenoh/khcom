@@ -265,7 +265,7 @@ void func_080F80C0(GaWork* work) {
 
     flip = 0;
 
-    if (gBtlWork->unk_0CC <= gBtlWork->unk_07C[1]) {
+    if (gBtlWork->unk_0CC <= gBtlWork->unk_07C->unk_004) {
         flip = 1;
     }
 
@@ -555,9 +555,9 @@ u8 func_080F8958(GaWork* work) {
         if (work->unk_010 > 0) {
             break;
         }
-        dx = gBtlWork->unk_07C[1] - gBtlWork->unk_0CC;
+        dx = gBtlWork->unk_07C->unk_004 - gBtlWork->unk_0CC;
         dx = (dx * dx) >> 8;
-        dy = gBtlWork->unk_07C[2] - gBtlWork->unk_0D0;
+        dy = gBtlWork->unk_07C->unk_008 - gBtlWork->unk_0D0;
         dy = (dy * dy) >> 8;
         d = (dx + dy) >> 8;
         if (d <= 0xE0F) {
@@ -642,8 +642,8 @@ u8 func_080F8AC8(GaWork* work) {
             if (e->unk_1A0 != 0) {
                 break;
             }
-            x = gBtlWork->unk_07C[1];
-            y = gBtlWork->unk_07C[2];
+            x = gBtlWork->unk_07C->unk_004;
+            y = gBtlWork->unk_07C->unk_008;
             if (work->unk_A4C == 0) {
                 if (x > e->unk_124) {
                     x -= 0x2800;
@@ -904,7 +904,7 @@ u8 func_080F8F9C(GaWork* work) {
                     work->unk_012 = 5;
                     work->unk_A40 = 1024;
                     work->unk_A44 = work->unk_A40 * 2 / work->unk_010;
-                    work->unk_01C = func_080F7E0C(e->unk_124, e->unk_128, gBtlWork->unk_07C[1], gBtlWork->unk_07C[2]);
+                    work->unk_01C = func_080F7E0C(e->unk_124, e->unk_128, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008);
                     work->unk_00C = 3;
                     break;
                 }
@@ -1351,8 +1351,8 @@ u8 func_080F9C2C(GaWork* work) {
             break;
         case 1:
             gBtlWork->unk_0D4 = 0;
-            work->unk_A38 = (gBtlWork->unk_07C[1] - gBtlWork->unk_0CC) / 60;
-            work->unk_A3C = (gBtlWork->unk_07C[2] - gBtlWork->unk_0D0) / 60;
+            work->unk_A38 = (gBtlWork->unk_07C->unk_004 - gBtlWork->unk_0CC) / 60;
+            work->unk_A3C = (gBtlWork->unk_07C->unk_008 - gBtlWork->unk_0D0) / 60;
             work->unk_A40 = 0x600;
             work->unk_00C = 2;
             break;
@@ -1481,7 +1481,7 @@ u8 func_080F9EDC(GaWork* work) {
             func_080F80C0(work);
             break;
         case 2:
-            work->unk_01C = func_080F7E0C(gBtlWork->unk_0CC, gBtlWork->unk_0D0, gBtlWork->unk_07C[1], gBtlWork->unk_07C[2]);
+            work->unk_01C = func_080F7E0C(gBtlWork->unk_0CC, gBtlWork->unk_0D0, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008);
             work->unk_A38 += gSineTable[work->unk_01C] * 5 >> 8;
             if (work->unk_A38 > 0x200) {
                 work->unk_A38 = 0x200;
@@ -1648,7 +1648,7 @@ u8 func_080FA2B4(GaWork* work) {
             }
             break;
         case 1:
-            work->unk_01C = func_080F7E0C(gBtlWork->unk_0CC, gBtlWork->unk_0D0, gBtlWork->unk_07C[1], gBtlWork->unk_07C[2]);
+            work->unk_01C = func_080F7E0C(gBtlWork->unk_0CC, gBtlWork->unk_0D0, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008);
             work->unk_A38 = gSineTable[work->unk_01C] * 4;
             work->unk_A3C = -gSineTable[work->unk_01C + 0x40] * 4;
             work->unk_010 = 0x12C;
@@ -1810,8 +1810,8 @@ u8 func_080FA644(GaWork* work) {
             }
             break;
         case 1:
-            work->unk_A38 = (gBtlWork->unk_07C[1] - gBtlWork->unk_0CC) / 60;
-            work->unk_A3C = (gBtlWork->unk_07C[2] - gBtlWork->unk_0D0) / 60;
+            work->unk_A38 = (gBtlWork->unk_07C->unk_004 - gBtlWork->unk_0CC) / 60;
+            work->unk_A3C = (gBtlWork->unk_07C->unk_008 - gBtlWork->unk_0D0) / 60;
             work->unk_A40 = -0x400;
             work->unk_A44 = 0x22;
             work->unk_00C = 2;

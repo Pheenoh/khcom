@@ -2143,8 +2143,8 @@ void task_bos_tm_0(BosTmWork* w, BosTmShared* arg) {
         gBosTmArmTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmArm, &w->unk_48);
     } else {
         w->unk_2C = 0;
-        TaskCreate(&gBtlWork->unk_040, &gTaskDescBosMap, gUnk_09619C68);
-        gBosTmTblTask = TaskCreate(&gBtlWork->unk_040, &gTaskDescBosTmTbl, w);
+        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMap, gUnk_09619C68);
+        gBosTmTblTask = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosTmTbl, w);
         gBosTmBodyTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmBody, w);
         gBosTmFootTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmFoot, w);
         gBosTmArmTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmArm, &w->unk_48);
@@ -2226,19 +2226,19 @@ u8 task_bos_tm_1(BosTmWork* w) {
     case 17:
         break;
     }
-    gUnk_0203AB44 = gBtlWork->unk_07C->unk_08 >> 8;
-    gUnk_0203AB40 = gBtlWork->unk_07C->unk_1C >> 8;
-    gUnk_0203AB3C = gBtlWork->unk_07C->unk_0C >> 8;
+    gUnk_0203AB44 = gBtlWork->unk_07C->unk_008 >> 8;
+    gUnk_0203AB40 = gBtlWork->unk_07C->unk_01C >> 8;
+    gUnk_0203AB3C = gBtlWork->unk_07C->unk_00C >> 8;
     gUnk_0203AB48 = gBtlWork->unk_0D0 >> 8;
 
     if ((gBtlWork->unk_068 & 0x20000000) && w->unk_2C != 13) {
-        if (gBtlWork->unk_07C->unk_1C <= -0x2D00) {
+        if (gBtlWork->unk_07C->unk_01C <= -0x2D00) {
             gBtlWork->unk_0D8 = -10;
         } else {
             gBtlWork->unk_0D8 = 10;
         }
     } else {
-        if (gBtlWork->unk_07C->unk_0C <= -0x2D00) {
+        if (gBtlWork->unk_07C->unk_00C <= -0x2D00) {
             gBtlWork->unk_0D8 = -10;
         } else {
             gBtlWork->unk_0D8 = 10;
@@ -2259,7 +2259,7 @@ void task_bos_tm_3(BosTmWork* w) {
 }
 
 void func_080B82D4(void) {
-    func_08000DE8(&gBtlWork->unk_040, gBosTmTblTask);
+    func_08000DE8(&gBtlWork->taskPools[1], gBosTmTblTask);
     func_08000DE8(&gBosTmTaskPool, gBosTmBodyTask);
     func_08000DE8(&gBosTmTaskPool, gBosTmFootTask);
     func_08000DE8(&gBosTmTaskPool, gBosTmArmTask);
@@ -2589,7 +2589,7 @@ void func_080B91A4(WlogoTtEffTop* p) {
             if (p->unk_000->unk_28 & 0x10) {
                 p->unk_000->unk_2C = 1;
                 p->unk_000->unk_28 = p->unk_000->unk_28 & ~0x10;
-            } else if (func_080B9190(gBtlWork->unk_07C->unk_04, p->unk_000->unk_08) <= 0x1DFF) {
+            } else if (func_080B9190(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
@@ -2609,7 +2609,7 @@ void func_080B91A4(WlogoTtEffTop* p) {
                 }
             }
         } else if (st == 0) {
-            if (func_080B9190(gBtlWork->unk_07C->unk_04, p->unk_000->unk_08) <= 0x1DFF) {
+            if (func_080B9190(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {
@@ -2670,7 +2670,7 @@ void func_080B91A4(WlogoTtEffTop* p) {
             if (p->unk_000->unk_28 & 0x10) {
                 p->unk_000->unk_2C = 1;
                 p->unk_000->unk_28 = p->unk_000->unk_28 & ~0x10;
-            } else if (func_080B9190(gBtlWork->unk_07C->unk_04, p->unk_000->unk_08) <= 0x1DFF) {
+            } else if (func_080B9190(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
@@ -2690,7 +2690,7 @@ void func_080B91A4(WlogoTtEffTop* p) {
                 }
             }
         } else if (st == 0) {
-            if (func_080B9190(gBtlWork->unk_07C->unk_04, p->unk_000->unk_08) <= 0x1DFF) {
+            if (func_080B9190(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {
@@ -2720,7 +2720,7 @@ void func_080B91A4(WlogoTtEffTop* p) {
 }
 
 
-void _080B949C(WlogoBtlObj* a, WlogoTtEffTop* b) {
+void _080B949C(BtlObj* a, WlogoTtEffTop* b) {
     u16 t;
 
     if (a->unk_02C <= 0) {
