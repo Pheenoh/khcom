@@ -37,73 +37,73 @@
 
 
 
-typedef struct UnkStruct_099935A8_00 {
-    u16 unk_00;
+typedef struct MooglePackCardDef {
+    u16 cardId;
     u8 unk_02[0x2];
     void* unk_04;
-    u16 unk_08[4];
-} UnkStruct_099935A8_00;
+    u16 weights[4];
+} MooglePackCardDef;
 
-typedef struct UnkStruct_099935A8 {
-    UnkStruct_099935A8_00* unk_00;
-    s16 unk_04;
+typedef struct MooglePackCardTable {
+    MooglePackCardDef* cards;
+    s16 count;
     u8 unk_06[0x2];
-} UnkStruct_099935A8;
+} MooglePackCardTable;
 
-typedef struct UnkStruct_099932D4 {
-    void* unk_00;
-    u16 unk_04;
+typedef struct MooglePackSpriteDef {
+    void* palette;
+    u16 paletteSize;
     u8 unk_06[0x2];
-    void* unk_08;
-    u16 unk_0C;
+    void* tiles;
+    u16 tilesSize;
     u8 unk_0E[0x2];
-    void* unk_10;
-    u16 unk_14;
-    u16 unk_16;
-} UnkStruct_099932D4;
+    void* sprite;
+    u16 xOffset;
+    u16 yOffset;
+} MooglePackSpriteDef;
 
-typedef struct UnkStruct_020358C8 {
+typedef struct MooglePackCardWork {
     FldRes* palette;
     void* tiles;
     void* gfx;
     FldRes* palette2;
     void* tiles2;
-    s32 unk_14;
+    s32 backSprite;
     AnimState anim;
-    u16 unk_30;
+    u16 flipAngle;
     u16 unk_32;
-    s32 unk_34;
-    u16 unk_38;
+    s32 scale;
+    u16 state;
     u16 unk_3A;
     s32 x;
     s32 y;
-    u16 unk_44;
-    u8 unk_46;
-    u8 unk_47;
-} UnkStruct_020358C8;
+    u16 timer;
+    u8 premium;
+    u8 revealed;
+} MooglePackCardWork;
 
-typedef struct UnkStruct_099931E4_1C {
-    u16* unk_00;
-    s16 unk_04;
-    s16 unk_06;
-} UnkStruct_099931E4_1C;
+typedef struct MooglePackTilemapDef {
+    u16* tilemap;
+    s16 srcX;
+    s16 srcY;
+} MooglePackTilemapDef;
 
-typedef struct UnkStruct_099931E4 {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
-    void* unk_0C;
-    u16 unk_10;
-    s16 unk_12;
-    s16 unk_14;
-    u16 unk_16;
-    u16 unk_18;
+typedef struct MooglePackMenuEntry {
+    s16 upEntry;
+    s16 downEntry;
+    s16 leftEntry;
+    s16 rightEntry;
+    s16 cursorX;
+    s16 cursorY;
+    void* selectionTilemap;
+    u16 selectionTilemapSize;
+    s16 tilemapX;
+    s16 tilemapY;
+    u16 spriteX;
+    u16 spriteY;
     u16 unk_1A;
-    UnkStruct_099931E4_1C unk_1C[4];
-} UnkStruct_099931E4;
+    MooglePackTilemapDef packTilemaps[4];
+} MooglePackMenuEntry;
 
 void func_08102688(u16 a, u16 b, u16 c);
 u8 func_081026C4(u16 a, u16 b, u16 c);
@@ -198,7 +198,7 @@ extern u8 gUnk_09617D58[];
 extern u8 gUnk_092028EC[];
 extern u8 gUnk_09EEEAC8[];
 extern u8 gUnk_09EEEA98[];
-extern UnkStruct_099935A8 gUnk_099935A8[];
+extern MooglePackCardTable gUnk_099935A8[];
 extern CardBack gUnk_08F709B0[];
 extern u32 gFrameCounter;
 extern u8 gUnk_09A17D1C[];
@@ -221,7 +221,7 @@ extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_09EEA164[];
 extern u8 gUnk_09EEA148[];
 extern Mode gModeMsTop;
-extern UnkStruct_099932D4 gUnk_099932D4[];
+extern MooglePackSpriteDef gUnk_099932D4[];
 extern u8 gUnk_09A3D87C[];
 extern u8 gUnk_09A1251C[];
 extern u8 gUnk_09A18D7C[];
@@ -231,7 +231,7 @@ extern u8 gUnk_09A3DA7C[];
 extern u8 gUnk_099A3CE4[];
 extern u8 gUnk_09EF99F8[];
 extern u8 gUnk_09EF99D8[];
-extern UnkStruct_099931E4 gUnk_099931E4[];
+extern MooglePackMenuEntry gUnk_099931E4[];
 extern s16 gUnk_099935C0[][4][4];
 extern s16 gUnk_09993760[][4];
 extern u8 gUnk_09A18EBC[];
