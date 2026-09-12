@@ -193,7 +193,7 @@ u8 func_08006314(void);
 u16 GetRandom(void);
 void* func_080038C8(u16 a);
 void func_080038E4(void* a, void* b, u32 c);
-u16 func_080787B8(CardBattleWork* w, s32 a);
+u16 func_080787B8(CardBattleWork* w, u8 n);
 void func_0807B668(UnkStruct_02039DD4* p);
 void func_0807E23C(void);
 void SetTaskUpdate(u8* p, u32 v);

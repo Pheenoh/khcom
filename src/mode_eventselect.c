@@ -1334,7 +1334,6 @@ s32 func_08076F4C(CardBattleWork* w) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 void* memset(void* dest, int value, unsigned long count);
 extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
@@ -1360,7 +1359,7 @@ void func_0807B894(void* work);
 void func_0807B910(void* work);
 void func_0807B98C(void* work);
 void func_0807B9EC(void* work);
-void func_0807B6F4(void);
+void func_0807B6F4(void* work);
 void func_080789E4(void* work);
 void func_08078BB4(void* work);
 u8 func_080782AC(UnkStruct_02034AAC** cards, u8 count);
@@ -1385,9 +1384,9 @@ typedef struct {
 
 s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
     UnkStruct_080ABA80 data;
+    u8 flag[4];
     UnkStruct_080ABA80 cards;
     u16 output[3];
-    u8 flag;
     u8 i;
     u8 found;
     s32 position;
@@ -1409,7 +1408,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         w->unk_C4[3]--;
     }
     if (w->unk_C9 == 0) {
-        if ((gUnk_02034A98->unk_78 & 0x1000000) && (gUnk_02034A98->unk_78 & 0x4000000)) {
+        if (gUnk_02034A98->unk_78 & 0x1000000) {
+            if (gUnk_02034A98->unk_78 & 0x4000000) {
             if (gBtlWork->unk_0F4 == 9) {
                 func_0807A620(w);
                 TaskPoolUpdate((TaskPool*)w);
@@ -1452,6 +1452,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 gUnk_02034A98 = 0;
                 gUnk_02034A9C = 0;
             }
+            }
         }
         switch (gUnk_02034A9C) {
         case 0:
@@ -1475,41 +1476,6 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             } else if (w->unk_B0[w->unk_B8] > 1 && (gUnk_02034A98->unk_78 & 0x40)) {
                 func_08078D98((u8*)w, w->unk_B8, 4);
             }
-            break;
-        case 3:
-            gUnk_02034A9C = 0;
-            if (gUnk_02034A98->unk_48->unk_2A != 3) {
-                if (!(gUnk_02034A98->unk_78 & 0x100000)) {
-                    if (w->unk_C0[w->unk_B8] == 0) {
-                        if (gUnk_02034A98->unk_48->unk_1E & 0x10) {
-                            func_08079ECC(w);
-                        } else if (!(gUnk_02034A98->unk_78 & 2)) {
-                            if (func_0807B60C() != 0) {
-                                func_08079600(w);
-                            } else if (gUnk_02034A98->unk_78 & 0x20) {
-                                m4aSongNumStart(105);
-                            }
-                        } else if (gUnk_02034A98->unk_78 & 0x20) {
-                            m4aSongNumStart(105);
-                        }
-                    }
-                } else if (gGameState.flags & 8) {
-                    func_0807A620(w);
-                    gUnk_02034A98 = 0;
-                    gBtlWork->unk_068 |= 0x80000000LL;
-                    w->unk_B0[w->unk_B8] = 0;
-                    w->unk_C0[w->unk_B8] = 1;
-                }
-            } else if (!(gUnk_02034A98->unk_78 & 0x100000)) {
-                func_08079B3C(w);
-            } else if (gGameState.flags & 8) {
-                func_0807A620(w);
-                gUnk_02034A98 = 0;
-                gBtlWork->unk_068 |= 0x80000000LL;
-                w->unk_B0[w->unk_B8] = 0;
-                w->unk_C0[w->unk_B8] = 1;
-            }
-            w->unk_C4[4] = 1;
             break;
         case 4:
             gUnk_02034A9C = 0;
@@ -1535,6 +1501,40 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 func_0807ABC8(w);
             } else {
                 m4aSongNumStart(105);
+            }
+            w->unk_C4[4] = 1;
+            break;
+        case 3:
+            gUnk_02034A9C = 0;
+            if (gUnk_02034A98->unk_48->unk_2A != 3) {
+                if (!(gUnk_02034A98->unk_78 & 0x100000)) {
+                    if (w->unk_C0[w->unk_B8] == 0) {
+                        if (gUnk_02034A98->unk_48->unk_1E & 0x10) {
+                            func_08079ECC(w);
+                        } else if (!(gUnk_02034A98->unk_78 & 2)) {
+                            if (func_0807B60C() != 0) {
+                                func_08079600(w);
+                            } else if (gUnk_02034A98->unk_78 & 0x20) {
+                                m4aSongNumStart(105);
+                            }
+                        } else if (gUnk_02034A98->unk_78 & 0x20) {
+                            m4aSongNumStart(105);
+                        }
+                    }
+                } else {
+                    goto locked;
+                }
+            } else if (!(gUnk_02034A98->unk_78 & 0x100000)) {
+                func_08079B3C(w);
+            } else {
+            locked:
+                if (gGameState.flags & 8) {
+                    func_0807A620(w);
+                    gUnk_02034A98 = 0;
+                    gBtlWork->unk_068 |= 0x80000000LL;
+                    w->unk_B0[w->unk_B8] = 0;
+                    w->unk_C0[w->unk_B8] = 1;
+                }
             }
             w->unk_C4[4] = 1;
             break;
@@ -1570,15 +1570,17 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             w->unk_C4[4] = 1;
             break;
         case 11:
+            w->unk_A6 = 60;
+            gUnk_02034A9C = 0;
+            SetTaskUpdate(task, (u32)func_0807B578);
+            break;
         case 12:
+            w->unk_A6 = 180;
+            gUnk_02034A9C = 0;
+            SetTaskUpdate(task, (u32)func_0807B578);
+            break;
         case 13:
-            if (gUnk_02034A9C == 11) {
-                w->unk_A6 = 60;
-            } else if (gUnk_02034A9C == 12) {
-                w->unk_A6 = 180;
-            } else {
-                w->unk_A6 = 300;
-            }
+            w->unk_A6 = 300;
             gUnk_02034A9C = 0;
             SetTaskUpdate(task, (u32)func_0807B578);
             break;
@@ -1588,64 +1590,71 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         }
         switch (gUnk_02034AA0) {
         case 14:
-        case 15:
-        case 16:
-        case 20:
-            kind = gUnk_02034AA0;
             gUnk_02034AA0 = 0;
-            if (kind == 20) {
-                func_0807B9EC(w);
-                if (w->unk_B8 == 0) {
-                    w->unk_9C[0] = 0;
-                }
-            }
             if (w->unk_B8 == 0) {
                 func_0807A620(w);
+                gUnk_02034A98 = 0;
             } else {
                 func_0807A620(w);
                 w->unk_B8 = 0;
 #ifdef VERSION_EU
                 gUnk_02039DD4->unk_0D2 = 0;
 #endif
+                gUnk_02034A98 = 0;
             }
-            gUnk_02034A98 = 0;
-            if (kind == 14) {
-                gBtlWork->unk_068 |= 0x80000000LL;
-                w->unk_B0[0] = 0;
-                w->unk_C0[0] = 1;
+            gBtlWork->unk_068 |= 0x80000000LL;
+            w->unk_B0[0] = 0;
+            w->unk_C0[0] = 1;
+            m4aSongNumStart(202);
+            if (func_08006390() == 0) {
+                func_08006290(2, 16, 20);
+            }
+            break;
+        case 15:
+            gUnk_02034AA0 = 0;
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+                gUnk_02034A98 = 0;
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+                gUnk_02034A98 = 0;
             }
             m4aSongNumStart(202);
             if (func_08006390() == 0) {
                 func_08006290(2, 16, 20);
             }
-            if (kind != 14) {
-                gBtlWork->unk_068 |= 0x80000000LL;
-                w->unk_B0[0] = 0;
-                w->unk_C0[0] = 1;
+            gBtlWork->unk_068 |= 0x80000000LL;
+            w->unk_B0[0] = 0;
+            w->unk_C0[0] = 1;
+            break;
+        case 16:
+            gUnk_02034AA0 = 0;
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+                gUnk_02034A98 = 0;
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+                gUnk_02034A98 = 0;
             }
+            m4aSongNumStart(202);
+            if (func_08006390() == 0) {
+                func_08006290(2, 16, 20);
+            }
+            gBtlWork->unk_068 |= 0x80000000LL;
+            w->unk_B0[0] = 0;
+            w->unk_C0[0] = 1;
             break;
         case 17:
-        case 18:
-        case 19:
-        case 21:
-        case 22:
-        case 23:
-        case 24:
-            kind = gUnk_02034AA0;
             gUnk_02034AA0 = 0;
-            switch (kind) {
-            case 17: func_0807B728(w); break;
-            case 18: func_0807B7A4(w); break;
-            case 19: func_0807B81C(w); break;
-            case 21: func_0807B894(w); break;
-            case 22: func_0807B910(w); break;
-            case 23:
-            case 24: func_0807B98C(w); break;
-            }
-            if (kind == 19 || kind == 22 || kind == 24) {
-                w->unk_9C[0] = 0;
-                func_0807B6F4();
-            }
+            func_0807B728(w);
             if (w->unk_B8 == 0) {
                 func_0807A620(w);
             } else {
@@ -1657,13 +1666,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             }
             TaskPoolUpdate((TaskPool*)w);
             func_080788CC(w, 0);
-            if (kind == 17 || kind == 18 || kind == 21) {
-                w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
-                w->unk_94[0] = 0;
-            } else {
-                w->unk_94[0] = 0;
-                w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
-            }
+            w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+            w->unk_94[0] = 0;
             func_0807682C(w, 0);
 #ifdef VERSION_EU
             if (w->unk_BC[w->unk_B8] == 0) {
@@ -1671,6 +1675,179 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             }
 #endif
             func_0807BB04();
+            break;
+        case 18:
+            gUnk_02034AA0 = 0;
+            func_0807B7A4(w);
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+            }
+            TaskPoolUpdate((TaskPool*)w);
+            func_080788CC(w, 0);
+            w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+            w->unk_94[0] = 0;
+            func_0807682C(w, 0);
+#ifdef VERSION_EU
+            if (w->unk_BC[w->unk_B8] == 0) {
+                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+            }
+#endif
+            func_0807BB04();
+            break;
+        case 19:
+            gUnk_02034AA0 = 0;
+            func_0807B81C(w);
+            w->unk_9C[0] = 0;
+            func_0807B6F4(w);
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+            }
+            TaskPoolUpdate((TaskPool*)w);
+            func_080788CC(w, 0);
+            w->unk_94[0] = 0;
+            w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+            func_0807682C(w, 0);
+#ifdef VERSION_EU
+            if (w->unk_BC[w->unk_B8] == 0) {
+                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+            }
+#endif
+            func_0807BB04();
+            break;
+        case 21:
+            gUnk_02034AA0 = 0;
+            func_0807B894(w);
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+            }
+            TaskPoolUpdate((TaskPool*)w);
+            func_080788CC(w, 0);
+            w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+            w->unk_94[0] = 0;
+            func_0807682C(w, 0);
+#ifdef VERSION_EU
+            if (w->unk_BC[w->unk_B8] == 0) {
+                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+            }
+#endif
+            func_0807BB04();
+            break;
+        case 22:
+            gUnk_02034AA0 = 0;
+            func_0807B910(w);
+            w->unk_9C[0] = 0;
+            func_0807B6F4(w);
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+            }
+            TaskPoolUpdate((TaskPool*)w);
+            func_080788CC(w, 0);
+            w->unk_94[0] = 0;
+            w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+            func_0807682C(w, 0);
+#ifdef VERSION_EU
+            if (w->unk_BC[w->unk_B8] == 0) {
+                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+            }
+#endif
+            func_0807BB04();
+            break;
+        case 23:
+            gUnk_02034AA0 = 0;
+            func_0807B98C(w);
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+            }
+            TaskPoolUpdate((TaskPool*)w);
+            func_080788CC(w, 0);
+            w->unk_94[0] = 0;
+            w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+            func_0807682C(w, 0);
+#ifdef VERSION_EU
+            if (w->unk_BC[w->unk_B8] == 0) {
+                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+            }
+#endif
+            func_0807BB04();
+            break;
+        case 24:
+            gUnk_02034AA0 = 0;
+            func_0807B98C(w);
+            w->unk_9C[0] = 0;
+            func_0807B6F4(w);
+            if (w->unk_B8 == 0) {
+                func_0807A620(w);
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+            }
+            TaskPoolUpdate((TaskPool*)w);
+            func_080788CC(w, 0);
+            w->unk_94[0] = 0;
+            w->unk_B0[0] = func_08078754((UnkStruct_08078754*)w, 0);
+            func_0807682C(w, 0);
+#ifdef VERSION_EU
+            if (w->unk_BC[w->unk_B8] == 0) {
+                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+            }
+#endif
+            func_0807BB04();
+            break;
+        case 20:
+            gUnk_02034AA0 = 0;
+            func_0807B9EC(w);
+            if (w->unk_B8 == 0) {
+                w->unk_9C[0] = 0;
+                func_0807A620(w);
+                gUnk_02034A98 = 0;
+            } else {
+                func_0807A620(w);
+                w->unk_B8 = 0;
+#ifdef VERSION_EU
+                gUnk_02039DD4->unk_0D2 = 0;
+#endif
+                gUnk_02034A98 = 0;
+            }
+            m4aSongNumStart(202);
+            if (func_08006390() == 0) {
+                func_08006290(2, 16, 20);
+            }
+            gBtlWork->unk_068 |= 0x80000000LL;
+            w->unk_B0[0] = 0;
+            w->unk_C0[0] = 1;
             break;
         default:
             gUnk_02034AA0 = 0;
@@ -1728,9 +1905,9 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         if (w->unk_C4[1] == 0 && func_080782AC(w->unk_28, w->unk_B9) != 0) {
             data = gUnk_09033FD0;
             if (!(gBtlWork->unk_068 & 0x4000)) {
-                result = func_080AC5E8(w->unk_28, w->unk_B9, w->unk_BA, &data, &flag);
+                result = func_080AC5E8(w->unk_28, w->unk_B9, w->unk_BA, &data, flag);
             } else {
-                result = func_080AD144(w->unk_28, w->unk_B9, w->unk_BA, &data, &flag, 0);
+                result = func_080AD144(w->unk_28, w->unk_B9, w->unk_BA, &data, flag, 0);
             }
             if (result != 108) {
                 gUnk_02039DD4->unk_0C4 = result;
@@ -1818,9 +1995,6 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
     }
     return 1;
 }
-#else
-INCLUDE_ASM("mode_eventselect/func_08076F80.s");
-#endif
 
 void func_08077E10(CardBattleWork* w) {
     gUnk_02039DD4->unk_094 = AnimUpdate(&gUnk_02039DD4->unk_064);
