@@ -7,6 +7,7 @@
 #include "gba/syscall.h"
 #include "malloc.h"
 #include "card.h"
+#include <stddef.h>
 
 u8 func_080892E8(u8* work, void* a);
 extern u8 gUnk_09618CD8[];
@@ -9618,9 +9619,9 @@ u16 func_08085770(u8 index) {
     return gDecks[index].unk_DA;
 }
 
-#ifdef NON_MATCHING
 void func_08085788(u8 index, u16* src) {
-    Deck* deck;
+    u8* deck;
+    u32 offset;
     u8* d;
     u8* s;
 
@@ -9628,9 +9629,12 @@ void func_08085788(u8 index, u16* src) {
         return;
     }
 
-    deck = &gDecks[index];
-    d = deck->unk_C6;
+    deck = (u8*)&gDecks;
+    offset = index * (sizeof(Deck) / sizeof(*src));
     s = (u8*)src;
+    offset *= sizeof(*src);
+    d = deck + offsetof(Deck, unk_C6);
+    d += offset;
 
     do {
         d[0] = s[0];
@@ -9639,9 +9643,6 @@ void func_08085788(u8 index, u16* src) {
         s += 2;
     } while (*(u16*)s != 0);
 }
-#else
-INCLUDE_ASM("card/func_08085788.s");
-#endif
 
 u8* func_080857BC(u8 index) {
     return gDecks[index].unk_C6;
