@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "anim.h"
 #include "obj.h"
@@ -198,7 +199,6 @@ s16 func_08065B08(TextSlot* p, u8 n);
 #ifdef VERSION_EU
 s16 eu_0806629C(TextSlot* p, u8 n);
 #endif
-u16 GetRandom(void);
 u16 func_08085770(u8 index);
 void func_08085788(u8 index, u16* src);
 void func_08085160(void);
@@ -262,7 +262,6 @@ void func_0807B478(UnkStruct_02034AAC* w);
 u8 func_0808EC24(UnkStruct_0808DB04* w);
 void func_0808EA0C(UnkStruct_0808DB04* w, u8 mode);
 u8 func_08006314(void);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08006184(s32 a, s32 b);
 void SetTaskUpdate(u8* p, u32 v);
 u8 func_080A8C20(u8* work);

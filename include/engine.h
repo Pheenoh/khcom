@@ -2,6 +2,7 @@
 #define GUARD_ENGINE_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "anim.h"
 #include "obj.h"
 typedef struct ObjTiles {
@@ -100,10 +101,6 @@ typedef struct Dma3Queue {
     vu16 unk_10AA;
     u32 unk_10AC;
 } Dma3Queue;
-u16 GetRandom(void);
-void SeedRand(u32 seed);
-u32 Rand(void);
-void SeedRandom(u32 seed);
 
 extern vu16* const gBgControl[];
 extern u8 gBgPaletteBank[];
@@ -212,7 +209,6 @@ void* GetBgScreenBase(s32 bg);
 void LoadBgMap(s32 bg, void* src, u16 size);
 void SetBgPriority(s32 bg, u16 priority);
 u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void LoadPalette(void* src, void* dst, u16 size);
 void SetBgScroll(s32 bg, s32 x, s32 y);
 u8 func_08006314(void);
@@ -251,7 +247,6 @@ void func_08003510(u8 a);
 ObjTiles* func_080038C8(u16 a);
 void func_08003A70(ObjTiles* t, void* src);
 void SetBgMosaicSize(u8 a, u8 b);
-void func_0800592C(s32* p, s32 target, u16 steps);
 s32 Lerp8(s32 a, s32 b, s32 t);
 
 void VTransInit(void);

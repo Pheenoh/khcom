@@ -2,6 +2,7 @@
 #define GUARD_MAP_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "game_state.h"
 #include "anim.h"
@@ -1606,14 +1607,12 @@ void func_080EBFB8(UnkStruct_02034FE0* work);
 void func_080EBFF8(UnkStruct_02034FE0* work);
 void func_080EC04C(UnkStruct_02034FE0* work);
 void func_080EBFF8(UnkStruct_02034FE0* work);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08006238(s32 a, s32 b, s32 c);
 void func_080061E8(s32 a, u16 b);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
 void func_08000DE8(TaskPool* a, Task* t);
-u16 GetRandom(void);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
 s16 GetAngleDiff(u8 a, u8 b);
 s32 abs(s32 x);
@@ -1889,7 +1888,6 @@ void SetBgMode0(void);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_0801227C(void);
 void func_0801CB00(void);
-void SeedRandom(u32 a);
 void m4aSongNumStartOrContinue(u16 n);
 void func_08006120(s32 a, u16 b);
 void func_08006494(u16 a, u16 b);

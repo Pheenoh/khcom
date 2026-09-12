@@ -2,6 +2,7 @@
 #define GUARD_EMY_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -295,7 +296,6 @@ u8 IsTaskActiveNamed(void* task, void* name);
 void func_0800C778(EmyWork* work, void* def, void* obj);
 void func_0800DF30(EmyWork* work);
 void func_0800E0D0(EmyWork* work);
-u16 GetRandom(void);
 void* LoadObjTiles(void* src, s32 size);
 void* LoadObjPalette(void* src, s32 size);
 void ReleaseObjTiles(void* p);
@@ -304,8 +304,6 @@ void func_08012304(void* p);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void* AllocObjTiles(s32 size, void* src);
-void ApproachValue(s32* value, s32 target, u16 steps);
-void func_0800592C(s32* value, s32 target, u16 steps);
 void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u16 func_0801AF1C(s32 a);
@@ -330,7 +328,6 @@ u8 func_08006B74(void);
 void func_0802F1E8(void);
 void func_08013480(s32 a, s32 b, s32 c);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
-void ApproachAngle(u16* p, u16 target, u16 shift);
 u8 func_0801CA00(EmyActor* a);
 void func_0801BCF8(EmyActor* a);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);

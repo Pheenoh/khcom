@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "mode_eventselect.h"
 
@@ -1339,7 +1340,6 @@ extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
 extern UnkStruct_02034AAC* gUnk_02034A98;
 extern u16 gUnk_09033FC8[];
-void ApproachValue(s32* value, s32 target, u16 frames);
 void func_0807A620(void* work);
 void func_0807B378(void* work);
 void func_080788CC(void* work, u8 slot);

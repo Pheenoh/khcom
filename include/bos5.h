@@ -2,6 +2,7 @@
 #define GUARD_BOS5_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "text_types.h"
@@ -316,8 +317,6 @@ typedef struct MdWork {
 } MdWork;
 
 
-u16 GetRandom(void);
-void ApproachValue(s32* value, s32 target, u16 steps);
 
 extern s16 gSineTable[];
 extern u8 gUnk_09A3C9BC[];
@@ -407,7 +406,6 @@ extern u8 gTaskDescBosMdHahen[];
 u8 task_bos_ga_1(GaWork* work);
 void func_080FB000(GaWork* work, GaEntryWork* p);
 void func_080F7E84(GaEntryWork* e);
-void ApproachAngle(u16* a, s32 b, s32 c);
 void func_08013DB8(s32 a, s32 b, s32 c, s32 d);
 void func_080F7F54(GaWork* work, s32 b);
 u8 func_0801C1C0(s32 a);

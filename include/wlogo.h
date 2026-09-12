@@ -2,6 +2,7 @@
 #define GUARD_WLOGO_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "taskpool.h"
 #include "intr.h"
@@ -730,7 +731,6 @@ void DisableBg(s32 bg);
 void SetBgBlend(s32 a, u16 b, u16 c);
 void LoadPalette(void* src, void* dst, s32 size);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);
 
 void task_wlogo_hwt_0(WlogoHwtWork* work);
@@ -834,7 +834,6 @@ void func_080B8688(WlogoTtEffTop* p);
 void func_080B87C0(WlogoTtEffTop* p, s16 a);
 void func_080B8FF4(WlogoTtEffTop* p, s16 a);
 s32 func_080B9190(s32 a, s32 b);
-u16 GetRandom(void);
 void func_080B83B8(void* a);
 void task_wlogo_won_0(WlogoWonWork* work);
 u8 task_wlogo_won_1(WlogoWonWork* work);

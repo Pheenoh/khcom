@@ -2,6 +2,7 @@
 #define GUARD_MODE_WORLDWARP_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "game_state.h"
 #include "text_types.h"
 #include "taskpool.h"
@@ -139,7 +140,6 @@ void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void ReleaseObjPalette(u8* p);
 void LoadBgMap(s32 bg, void* src, u16 size);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void UpdatePlayTime(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);

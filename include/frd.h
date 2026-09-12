@@ -2,6 +2,7 @@
 #define GUARD_FRD_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
@@ -201,16 +202,13 @@ void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
 u8 task_frd_jack_1(FrdJackWork* work);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0802F1E8(void);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_08019A30(void);
-void func_0800592C(s32* a, s32 b, u16 c);
 void func_08006238(s32 a, s32 b, s32 c);
 void func_080061E8(s32 a, u16 b);
 void func_08048A68(FrdPanWork* work);
 u8 task_frd_pan_1(FrdPanWork* work);
 void func_08048980(FrdPanWork* work);
 void func_0801D288(void);
-u16 GetRandom(void);
 u8 func_080465F0(FrdGoofyWork* work);
 u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
 u8 func_080490FC(FrdAladdinWork* work);

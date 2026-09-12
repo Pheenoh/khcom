@@ -2,6 +2,7 @@
 #define GUARD_BOS4_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -496,7 +497,6 @@ typedef struct UnkStruct_080DAA28 {
 } UnkStruct_080DAA28;
 
 void task_bos_boogie_map_0(void* work, UnkStruct_080DAA28* arg);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 extern s32 gUnk_0203C580;
@@ -507,7 +507,6 @@ extern u8 gUnk_0203C574;
 extern u8 gUnk_096FE0E8[];
 u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
 void task_bos_boogie_dice_3(BoogieDiceWork* work);
-void SeedRandom(u32 seed);
 void func_080E5510(u8 a);
 extern u8 gUnk_0203C584;
 extern const u8 gUnk_0984D134[][8];
@@ -533,7 +532,6 @@ u16 func_080DD7C4(UrsulaBubbleWork* work);
 u16 func_080DD854(UrsulaBubbleWork* work);
 void task_bos_ursula_bubble_0(UrsulaBubbleWork* work);
 u16 func_080DD8A8(UrsulaBubbleWork* work);
-u16 GetRandom(void);
 void func_080DFAA8(void);
 u8 func_080DF5F4(void);
 u8 func_080DF49C(void);
@@ -798,7 +796,6 @@ void func_080DF048(void);
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work);
 extern s16 gSineTable[];
 s32 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
-void ApproachAngle(u16* p, u16 target, u16 step);
 void task_bos_ursula_0(UrsulaWork* work);
 void func_0801BCC0(s32 a, s32 b, s32 c);
 void func_080051C4(s32 a, u16 b, u16 c);

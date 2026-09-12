@@ -2,6 +2,7 @@
 #define GUARD_TUTORIAL_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "anim.h"
 #include "game.h"
 
@@ -41,7 +42,6 @@ u16 func_0805E89C(u16* str);
 void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void SetBgScroll(s32 a, s32 b, s32 c);
 void* AllocObjTiles(s32 a, void* b);
-void SeedRandom(s32 a);
 
 extern u32 gFrameCounter;
 extern s16 gSineTable[];

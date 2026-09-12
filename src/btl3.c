@@ -348,7 +348,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         if (obj != 0) {
             if (work->unk_3A <= 0) {
                 ApproachAngle(&work->angle,
-                              GetAngle(work->x, work->z, obj->unk_004,
+                              (u8)GetAngle(work->x, work->z, obj->unk_004,
                                             obj->unk_00C - (obj->unk_0A2 << 8)),
                               2);
             } else {

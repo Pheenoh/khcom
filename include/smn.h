@@ -2,6 +2,7 @@
 #define GUARD_SMN_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
 #include "anim.h"
@@ -221,7 +222,6 @@ typedef struct SmnKingWork {
 } SmnKingWork;
 
 void ReleaseObjPalette(u8* p);
-u16 GetRandom(void);
 void m4aSongNumStart(u16 n);
 void m4aSongNumStop(u16 n);
 
@@ -252,7 +252,6 @@ void func_08019190(BtlObj* a, s16 b);
 void func_08006B80(u16* a, u16* b);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_0801416C(s32 a, s32 b, s32 c);
-void func_0800592C(s32* a, s32 b, u16 c);
 u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
 void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
 void func_0802F1E8(void);
@@ -260,7 +259,6 @@ void func_08006290(s32 a, s32 b, s32 c);
 void func_08014FDC(s32 a, s32 b, s32 c);
 void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_080128EC(void);
-void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_080147C8(s32 a, s32 b);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);

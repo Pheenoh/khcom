@@ -2,6 +2,7 @@
 #define GUARD_HUM_H
 
 #include "types.h"
+#include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "text_types.h"
@@ -725,14 +726,12 @@ void func_0800E314(HumWork* work, HumSub* sub, void* def);
 s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-u16 GetRandom(void);
 u16 func_0801AF1C(s32 a);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void func_08054100(AxcelWork* work, HumSub* sub);
 void* AllocObjTiles(s32 a, void* b);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08012614(void* a, s32 b);
-void ApproachValue(s32* value, s32 target, u16 steps);
 u8 func_080035CC(s16 a, s16 b, s32 c, s32 d, s32 e, s32 f);
 void func_0801C700(void* a, s32* b, s32* c, s32* d);
 u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
@@ -766,7 +765,6 @@ s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 u32 _0800F84C(void* work);
 u8 func_0800F5A4(HumWork* work, s32 b, s32 c, s32 d, s32 e);
 u8 func_0800F4C8(void* work, s32 n);
-void func_0800592C(s32* p, s32 target, u16 steps);
 void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
 void func_08018184(s32 a, s32 b, s32 c, s32 d);
 void func_08017F70(s32 a, s32 b, s32 c, s32 d);
@@ -822,7 +820,6 @@ void func_08006238(s32 a, s32 b, s32 c);
 void func_080061E8(s32 a, s32 b);
 void func_08006120(s32 a, s32 b);
 void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void ApproachAngle(u16* p, u8 target, s32 step);
 void func_08019190(void* a, s32 b);
 void func_080171FC(u16 a);
 s32 abs(s32 x);
