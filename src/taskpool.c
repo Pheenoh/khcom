@@ -46,7 +46,6 @@ void UpdateDebugModeSelect(void);
 void func_08004938(void);
 void FlushDma3Queue(void);
 void CommitDisplayRegs(void);
-void func_08005C78(void);
 void MosaicUpdate(void);
 void SortSprites(void);
 
@@ -204,7 +203,7 @@ void func_08000F94(void) {
 }
 
 void ModeStart(Mode* mode, s32 arg) {
-    gUnk_0300749E = _08006338();
+    gUnk_0300749E = FadeGetColor();
     VTransReset();
     BgReset();
     SpriteReset();
@@ -324,7 +323,7 @@ void ModeUpdate(void) {
                 return;
             }
 
-            func_08005C78();
+            FadeUpdate();
             func_08004938();
             gModeFlags &= ~2;
         } else if (gPendingMode != 0) {
@@ -345,7 +344,7 @@ void ModeUpdate(void) {
                 gCurrentModeUpdate();
             }
 
-            func_08005C78();
+            FadeUpdate();
             MosaicUpdate();
             SortSprites();
         }

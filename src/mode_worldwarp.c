@@ -89,7 +89,7 @@ void mode_worldwarp_0(void) {
     p = &gUnk_0203550C;
     *p = EwramAlloc(0x500);
     SpriteReset();
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     SetBgMode0();
     SetupBg(0, 0, 28, 0);
     SetupBg(1, 0, 29, 0);
@@ -362,12 +362,12 @@ void mode_worldwarp_1(void) {
 
         if (--gUnk_020357A4 <= 0) {
             gUnk_020357A4 = 16;
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
             gUnk_020357A2 = 5;
         }
         break;
     case 5:
-        if (!func_08006314()) {
+        if (!FadeIsActive()) {
             if (gUnk_0203550A >= 0) {
                 func_080DF9E0(gUnk_0203550A);
             } else {
@@ -522,8 +522,8 @@ void func_081017A0(void) {
         }
         gUnk_020357C4 = gUnk_09993118[gUnk_020357C0].unk_00;
         m4aSongNumStart(0x66);
-        func_08006184(0, 16);
-        func_080063A8();
+        FadeStartOut(0, 16);
+        FadeLock();
         gUnk_02035890 = 11;
     } else if (keys & 2) {
         gUnk_020357C4 = 0;
@@ -545,8 +545,8 @@ void func_081017A0(void) {
 #else
         LoadBgMap(2, gUnk_09A378DC, 0x500);
 #endif
-        func_08006184(0, 16);
-        func_080063A8();
+        FadeStartOut(0, 16);
+        FadeLock();
         gUnk_02035890 = 11;
     } else if ((keys & 0x20) && gUnk_02035878 != 1 && gUnk_020357C0 != 0) {
         gUnk_020357C0 = 0;

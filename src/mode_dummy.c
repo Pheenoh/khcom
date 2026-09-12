@@ -27,7 +27,7 @@ const DummyEntry gDummyEntries[10] = {
 void mode_dummy_0(u32 arg) {
     const DummyEntry* entry;
 
-    func_08006120(0, 0x10);
+    FadeStartIn(0, 0x10);
     SetBgMode0();
     SetupBg(0, 0, 0x0F, 0);
     EnableBg(0);
@@ -60,7 +60,7 @@ void mode_dummy_0(u32 arg) {
 void func_0800C064(void) {
     const DummyEntry* entry;
 
-    if (!func_08006314()) {
+    if (!FadeIsActive()) {
         entry = &gDummyEntries[gUnk_020348BC];
 
         switch (entry->unk_08) {
@@ -111,8 +111,8 @@ void func_0800C064(void) {
 }
 
 void mode_dummy_1(void) {
-    if (!func_08006314() && (GetKeysPressed() & 9)) {
-        func_08006184(0, 0x10);
+    if (!FadeIsActive() && (GetKeysPressed() & 9)) {
+        FadeStartOut(0, 0x10);
         SetModeUpdate(func_0800C064);
     }
 

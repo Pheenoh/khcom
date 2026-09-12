@@ -56,7 +56,7 @@ void mode_vsbattle_0(u32 mode) {
                   (s16)gUnk_02039B88, (s16)gUnk_02039B8C);
     TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlMap, 0);
     gUnk_02039B98 = 0;
-    func_08006120(0, 60);
+    FadeStartIn(0, 60);
 }
 
 void mode_vsbattle_1(void) {

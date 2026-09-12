@@ -19,7 +19,7 @@ void func_08019050(u16 a, s32 b, s32 c, s32 d) {
 
 void func_08019068(AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
     AnimDef* e = &tbl[i];
-    func_08005974(a, e->unk_0C, j, e->unk_04, e->unk_00);
+    AnimChangeWithTables(a, e->unk_0C, j, e->unk_04, e->unk_00);
     func_08002A10(obj, e->unk_08);
 }
 
@@ -170,7 +170,7 @@ void func_08019350(void) {
     if (gBtlWork->unk_068 & 0x1000000) {
         return;
     }
-    a = func_080015F8(0x200, 0x100);
+    a = ReadKeyChord(0x200, 0x100);
 
     switch (a) {
     case 0x200:
@@ -269,7 +269,7 @@ void func_080195A8(void) {
         return;
     }
 
-    a = func_080015F8(0x200, 0x100);
+    a = ReadKeyChord(0x200, 0x100);
 
     switch (a) {
     case 0x200:
@@ -370,7 +370,7 @@ void func_080197AC(void) {
     if (gBtlWork->unk_068 & 0x1000000) {
         return;
     }
-    a = func_080015F8(0x200, 0x100);
+    a = ReadKeyChord(0x200, 0x100);
     pressed = GetKeysPressed();
     held = GetKeysHeld();
 
@@ -632,13 +632,13 @@ void _08019CB4(void) {
             if (obj != 0) {
                 obj->unk_034 |= 0x10000ULL;
             }
-            func_08006290(2, 10, 4);
+            FadeFromAmount(2, 10, 4);
         } else {
             gBtlWork->unk_068 &= ~0x20000000ULL;
             player->unk_034 |= 0x10000ULL;
-            func_08006290(3, 10, 4);
+            FadeFromAmount(3, 10, 4);
         }
-        func_08006494(16, 15);
+        MosaicStartIn(16, 15);
         func_08019050(1, 256, gBtlWork->unk_010, gBtlWork->unk_014);
         gBtlWork->unk_0E4 = 0;
     }
@@ -697,13 +697,13 @@ void _08019CB4(void) {
             }
             gBtlWork->unk_0E4 = 1;
         }
-        if (func_08006314()) {
+        if (FadeIsActive()) {
             break;
         }
         if ((s16)gBtlWork->unk_0E4 == 1) {
             for (i = 0; i < 32; i++) {
                 if (gBtlWork->unk_0FC & (s32)(1U << i)) {
-                    func_080062F4(i, 1);
+                    FadeSetPaletteExcluded(i, 1);
                 }
             }
             gBtlWork->unk_0E4 = 2;
@@ -771,7 +771,7 @@ void _08019CB4(void) {
             gBtlWork->unk_068 &= ~0x40000ULL;
             if (gBtlWork->unk_068 & 0x200000) {
                 gBtlWork->unk_068 |= 0x40000000ULL;
-                func_080061E8(0, 8);
+                FadeToOriginal(0, 8);
             }
             func_08019050(8, 256, gBtlWork->unk_010, gBtlWork->unk_014);
             gBtlWork->unk_068 |= 0x20;
@@ -839,16 +839,16 @@ void _08019CB4(void) {
                 }
                 break;
             }
-            if ((s16)gBtlWork->unk_0E4 == 2 && !func_08006314()) {
+            if ((s16)gBtlWork->unk_0E4 == 2 && !FadeIsActive()) {
                 gBtlWork->unk_068 |= 0x4000000ULL;
                 gBtlWork->unk_072 = 99;
                 gBtlWork->unk_0E4 = 3;
             } else if ((s16)gBtlWork->unk_0E4 == 3) {
                 SetBackdropColor(0, 0, 0);
-                func_08006184(0, 15);
-                func_080063A8();
+                FadeStartOut(0, 15);
+                FadeLock();
                 gBtlWork->unk_0E4 = 4;
-            } else if (!func_08006314()) {
+            } else if (!FadeIsActive()) {
                 func_0801C314();
             }
         }
@@ -863,12 +863,12 @@ void _08019CB4(void) {
             gBtlWork->unk_120 = 0;
         }
         if ((s16)gBtlWork->unk_0E4 == 140) {
-            func_08006184(1, 100);
-            func_080063A8();
+            FadeStartOut(1, 100);
+            FadeLock();
             gBtlWork->unk_068 |= 0x4000000ULL;
             gBtlWork->unk_068 |= 0x400000ULL;
             gBtlWork->unk_072 = 100;
-        } else if ((s16)gBtlWork->unk_0E4 > 140 && !func_08006314()) {
+        } else if ((s16)gBtlWork->unk_0E4 > 140 && !FadeIsActive()) {
             m4aMPlayAllStop();
             if (gUnk_03006C10 & 1) {
                 ModeRequest(&gModeChkbtl, 0);
@@ -1204,8 +1204,8 @@ void func_0801AF4C(BtlObj* actor) {
     gBtlWork->unk_068 |= 0x200000000;
     func_0801C830(actor);
     m4aMPlayFadeOut(gMPlayTable[gSongTable[3].ms].info, 12);
-    func_08006120(2, 20);
-    func_080063A8();
+    FadeStartIn(2, 20);
+    FadeLock();
     p = ListPoolFirst(&gBtlWork->unk_080);
 
     while (p != 0) {

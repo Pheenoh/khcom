@@ -1210,9 +1210,9 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         if (work->unk_154 > 0) func_08019068(gUnk_0813EC9C, &work->anim, 1, 0, work->tiles);
         else func_08019068(gUnk_0813EC9C, &work->anim, 3, 0, work->tiles);
         if (work->unk_150 > 0) {
-            func_0800592C(&body->unk_004, work->unk_158, work->unk_150);
-            func_0800592C(&body->unk_008, work->unk_15C, work->unk_150);
-            if (work->unk_150 <= 39) func_0800592C(&work->unk_160, work->unk_164, work->unk_150);
+            ApproachValueHalfSteps(&body->unk_004, work->unk_158, work->unk_150);
+            ApproachValueHalfSteps(&body->unk_008, work->unk_15C, work->unk_150);
+            if (work->unk_150 <= 39) ApproachValueHalfSteps(&work->unk_160, work->unk_164, work->unk_150);
             work->unk_150--;
         }
         if (body->unk_00C >= body->unk_010 && work->unk_150 <= 0) {
@@ -1306,7 +1306,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                     if (target->unk_004 < body->unk_004) body->unk_034 |= 4;
                     else body->unk_034 &= ~4ULL;
                 }
-                func_08006238(2, 13, 60);
+                FadeToAmount(2, 13, 60);
             }
             if (work->unk_14E == 44) {
                 if (target != 0) {
@@ -1338,7 +1338,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
                 }
             }
             if (work->unk_14E > 44 && !func_080128EC()) {
-                func_080061E8(2, 20);
+                FadeToOriginal(2, 20);
                 work->unk_148 = 2;
                 work->unk_14E = 0;
             } else work->unk_14E++;
@@ -1644,7 +1644,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
             func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
             work->unk_150 = 30;
         }
-        func_0800592C(&body->unk_004, work->unk_15C, work->unk_150);
+        ApproachValueHalfSteps(&body->unk_004, work->unk_15C, work->unk_150);
         func_08048A68(work);
         if (work->unk_150 <= 0) {
             work->unk_148 = 3;
@@ -1702,7 +1702,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813ECFC, &work->anim, 2, 1, work->tiles);
             work->unk_150 = 70;
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
         }
         func_0801D288();
         if (gBtlWork->unk_068 & 0x4000) {
@@ -1758,7 +1758,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         if (AnimIsFinished(&work->anim)) {
             work->unk_14E = 0;
             work->unk_148 = 1;
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
         } else {
             work->unk_14E++;
         }

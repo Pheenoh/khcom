@@ -242,8 +242,8 @@ void Exclamation_0(EffectWork* w, EventActor* arg) {
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
 
-    if (func_08006314() == 0) {
-        func_080062F4(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
+    if (FadeIsActive() == 0) {
+        FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
     }
 
     func_08002A10(w->tiles, gUnk_09320796);
@@ -1023,7 +1023,7 @@ void func_08076458(void) {
     gUnk_02039DD4->tiles7 = LoadObjTiles(gUnk_0905EEE6, 320);
     gUnk_02039DD4->palette = LoadObjPalette(gUnk_09611AB8, 32);
     gUnk_02039DD4->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
-    func_080062F4(((UnkStruct_080038C8*)gUnk_02039DD4->palette)->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(((UnkStruct_080038C8*)gUnk_02039DD4->palette)->unk_06 + 16, 1);
     func_0807B668(gUnk_02039DD4);
 }
 
@@ -1598,8 +1598,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             w->unk_B0[0] = 0;
             w->unk_C0[0] = 1;
             m4aSongNumStart(202);
-            if (func_08006390() == 0) {
-                func_08006290(2, 16, 20);
+            if (FadeGetAmount() == 0) {
+                FadeFromAmount(2, 16, 20);
             }
             break;
         case 15:
@@ -1616,8 +1616,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 gUnk_02034A98 = 0;
             }
             m4aSongNumStart(202);
-            if (func_08006390() == 0) {
-                func_08006290(2, 16, 20);
+            if (FadeGetAmount() == 0) {
+                FadeFromAmount(2, 16, 20);
             }
             gBtlWork->unk_068 |= 0x80000000LL;
             w->unk_B0[0] = 0;
@@ -1637,8 +1637,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 gUnk_02034A98 = 0;
             }
             m4aSongNumStart(202);
-            if (func_08006390() == 0) {
-                func_08006290(2, 16, 20);
+            if (FadeGetAmount() == 0) {
+                FadeFromAmount(2, 16, 20);
             }
             gBtlWork->unk_068 |= 0x80000000LL;
             w->unk_B0[0] = 0;
@@ -1834,8 +1834,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 gUnk_02034A98 = 0;
             }
             m4aSongNumStart(202);
-            if (func_08006390() == 0) {
-                func_08006290(2, 16, 20);
+            if (FadeGetAmount() == 0) {
+                FadeFromAmount(2, 16, 20);
             }
             gBtlWork->unk_068 |= 0x80000000LL;
             w->unk_B0[0] = 0;

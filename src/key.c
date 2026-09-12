@@ -41,7 +41,6 @@ u8 gKeyReleaseSelect;
 
 
 u8 GetKeyHoldTime(u16 key);
-u16 func_080016EC(void);
 
 
 u16 GetKeysHeld(void) {
@@ -133,7 +132,7 @@ u8 GetKeyReleaseTime(u16 key) {
     }
 }
 
-u16 func_080015F8(u16 a, u16 b) {
+u16 ReadKeyChord(u16 a, u16 b) {
     u16 r = 0;
     u8 va = GetKeyReleaseTime(a);
     u8 vb = GetKeyReleaseTime(b);
@@ -168,7 +167,7 @@ u16 func_080015F8(u16 a, u16 b) {
     return r;
 }
 
-u16 func_080016EC(void) {
+u16 ReadDpadChord(void) {
     u16 r = 0;
     u8 up = GetKeyReleaseTime(DPAD_UP);
     u8 down = GetKeyReleaseTime(DPAD_DOWN);

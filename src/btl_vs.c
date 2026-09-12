@@ -403,13 +403,13 @@ void func_08010CC8(void) {
         if (gBtlWork->unk_0A4 != 0) {
             gBtlWork->unk_068 &= ~0x40ULL;
             other->unk_034 |= 0x10000;
-            func_08006290(2, 10, 4);
+            FadeFromAmount(2, 10, 4);
         } else {
             gBtlWork->unk_068 &= ~0x20000000ULL;
             player->unk_034 |= 0x10000;
-            func_08006290(3, 10, 4);
+            FadeFromAmount(3, 10, 4);
         }
-        func_08006494(16, 15);
+        MosaicStartIn(16, 15);
         func_08019050(1, 256, gBtlWork->unk_010, gBtlWork->unk_014);
         gBtlWork->unk_0E4 = 0;
     }
@@ -440,10 +440,10 @@ void func_08010CC8(void) {
             gBtlWork->unk_0E8 = 0;
             gBtlWork->unk_0E4 = 1;
         }
-        if (func_08006314()) return;
+        if (FadeIsActive()) return;
         if (gBtlWork->unk_0E4 == 1) {
             for (i = 0; i < 32; i++) {
-                if (gBtlWork->unk_0FC & (s32)(1U << i)) func_080062F4(i, 1);
+                if (gBtlWork->unk_0FC & (s32)(1U << i)) FadeSetPaletteExcluded(i, 1);
             }
             gBtlWork->unk_0E4 = 2;
         }
@@ -479,11 +479,11 @@ void func_08010CC8(void) {
             gUnk_02039B9C->unk_0F4 = 0;
         }
         if (gBtlWork->unk_0E4 == 140) {
-            func_08006184(1, 100);
-            func_080063A8();
+            FadeStartOut(1, 100);
+            FadeLock();
             gBtlWork->unk_068 |= 0x400000;
             gBtlWork->unk_072 = 100;
-        } else if (gBtlWork->unk_0E4 > 140 && !func_08006314()) {
+        } else if (gBtlWork->unk_0E4 > 140 && !FadeIsActive()) {
             m4aMPlayAllStop();
             if (player->unk_02C <= 0) ModeRequest(&gModeSioBtlCardget, 1);
             else ModeRequest(&gModeSioBtlCardget, 0);

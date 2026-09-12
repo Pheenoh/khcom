@@ -1434,8 +1434,8 @@ u8 task_bos_pc_acd_1(PcAcdWork* work) {
     AnimState* anim;
     s32 v;
 
-    func_080062F4(((UnkStruct_080038C8*)work->palette)->unk_06 + 17, 0);
-    func_080062F4(((UnkStruct_080038C8*)work->palette)->unk_06 + 18, 0);
+    FadeSetPaletteExcluded(((UnkStruct_080038C8*)work->palette)->unk_06 + 17, 0);
+    FadeSetPaletteExcluded(((UnkStruct_080038C8*)work->palette)->unk_06 + 18, 0);
     anim = &work->anim;
     AnimUpdate(anim);
     if (gBtlWork->unk_07C->unk_00C >= 0) {
@@ -1632,12 +1632,12 @@ void func_0810C494(BosLstWork* work, u16 a, u16 b, u8 c) {
     switch (gUnk_09A4D14C[a]) {
     case 0:
         func_08002A10(work->tiles, gUnk_09C4B012);
-        func_08005974(&work->anim, v, b, gUnk_09EFAD3C, gUnk_09EFABB0);
+        AnimChangeWithTables(&work->anim, v, b, gUnk_09EFAD3C, gUnk_09EFABB0);
         break;
     case 1:
         v -= 14;
         func_08002A10(work->tiles, gUnk_09C51CBC);
-        func_08005974(&work->anim, v, b, gUnk_09EFADBC, gUnk_09EFAD74);
+        AnimChangeWithTables(&work->anim, v, b, gUnk_09EFADBC, gUnk_09EFAD74);
         break;
     }
     if (c == 1) {
@@ -2466,7 +2466,7 @@ void func_0810D77C(BosLstWork* work) {
         for (i = 0; i < 8; i++) {
             func_08012614(work->unk_52C[i], 1);
         }
-        func_0800592C(p4C, -0x16800, 48);
+        ApproachValueHalfSteps(p4C, -0x16800, 48);
         if (work->unk_012 < 0) {
             if (work->unk_044 < 0x26000) {
                 work->unk_044 += 0x800;
@@ -2667,7 +2667,7 @@ u8 func_0810DE04(BosLstWork* work) {
         break;
     case 3:
         if (work->unk_068 <= 7) {
-            func_0800592C(&work->unk_09C, gBtlWork->unk_07C->unk_004 + work->unk_012 * 0x3000, 8);
+            ApproachValueHalfSteps(&work->unk_09C, gBtlWork->unk_07C->unk_004 + work->unk_012 * 0x3000, 8);
         }
         if (work->unk_068 == 0) {
             work->unk_0A0 = func_0810CC14(work->unk_0A0, gBtlWork->unk_07C->unk_008, 0x100, 0x100, 0x100);
@@ -3273,7 +3273,7 @@ u8 func_0810EBA0(BosLstWork* work) {
     case 3:
         func_08014A34(work->unk_044, -0x800 + work->unk_048 + work->unk_04C);
         m4aSongNumStart(0x2CE);
-        func_08006238(0, gBtlWork->unk_0B3, 8);
+        FadeToAmount(0, gBtlWork->unk_0B3, 8);
         work->unk_00A += 1;
         work->unk_068 = 0;
     case 4:
@@ -3294,7 +3294,7 @@ u8 func_0810EBA0(BosLstWork* work) {
                 for (i = 0; i < 8; i++) {
                     func_0810C32C(work, 5);
                 }
-                func_08006184(2, 4);
+                FadeStartOut(2, 4);
                 m4aSongNumStart(0x2D0);
                 break;
             case 120:
@@ -3303,24 +3303,24 @@ u8 func_0810EBA0(BosLstWork* work) {
                 for (i = 0; i < 8; i++) {
                     func_0810C32C(work, 5);
                 }
-                func_08006184(2, 2);
+                FadeStartOut(2, 2);
                 m4aSongNumStart(0x2D0);
                 break;
             case 44:
-                func_08006120(2, 4);
+                FadeStartIn(2, 4);
                 break;
             case 122:
             case 172:
             case 192:
-                func_08006120(2, 2);
+                FadeStartIn(2, 2);
                 break;
             }
         } else {
             for (i = 0; i < 80; i++) {
                 func_0810C32C(work, 5);
             }
-            func_08006120(2, 60);
-            func_080063A8();
+            FadeStartIn(2, 60);
+            FadeLock();
             m4aSongNumStart(0x2CF);
             gBtlWork->unk_068 |= 0x400000;
             work->unk_002 = 1;
@@ -3404,15 +3404,15 @@ void func_0810F064(BosLstWork* work, LstSub* p) {
     }
     if (work->unk_012 > 0) {
         if (p->unk_001 == 1) {
-            func_08005974(&p->anim, p->unk_00A * 2, f, gUnk_09EFAE1C, gUnk_09EFADC4);
+            AnimChangeWithTables(&p->anim, p->unk_00A * 2, f, gUnk_09EFAE1C, gUnk_09EFADC4);
         } else {
-            func_08005974(&p->anim, p->unk_00A * 2, f, gUnk_09EFAEAC, gUnk_09EFAE54);
+            AnimChangeWithTables(&p->anim, p->unk_00A * 2, f, gUnk_09EFAEAC, gUnk_09EFAE54);
         }
     } else {
         if (p->unk_001 == 1) {
-            func_08005974(&p->anim, p->unk_00A * 2 + 1, f, gUnk_09EFAEAC, gUnk_09EFAE54);
+            AnimChangeWithTables(&p->anim, p->unk_00A * 2 + 1, f, gUnk_09EFAEAC, gUnk_09EFAE54);
         } else {
-            func_08005974(&p->anim, p->unk_00A * 2 + 1, f, gUnk_09EFAE1C, gUnk_09EFADC4);
+            AnimChangeWithTables(&p->anim, p->unk_00A * 2 + 1, f, gUnk_09EFAE1C, gUnk_09EFADC4);
         }
     }
     p->unk_00C = p->unk_00A;

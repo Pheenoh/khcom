@@ -239,7 +239,7 @@ const ChkBtlWorld gChkBtlWorlds[13] = {
 const char gWhitePalette[32] = "\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff";
 
 void mode_chkbtl_0(void) {
-    func_08006120(0, 8);
+    FadeStartIn(0, 8);
     SetBgMode0();
     SetupBg(0, 0, 15, 0);
     EnableBg(0);

@@ -39,14 +39,14 @@ void mode_chkeff_0(void) {
     LoadBgPalette(1, gUnk_08F683C4, 0x20);
     LoadBgMap(1, gUnk_08EEE384, 0x800);
 #endif
-    func_080062F4(8, 1);
-    func_080062F4(9, 1);
-    func_080062F4(10, 1);
-    func_080062F4(11, 1);
-    func_080062F4(12, 1);
-    func_080062F4(13, 1);
-    func_080062F4(14, 1);
-    func_080062F4(15, 1);
+    FadeSetPaletteExcluded(8, 1);
+    FadeSetPaletteExcluded(9, 1);
+    FadeSetPaletteExcluded(10, 1);
+    FadeSetPaletteExcluded(11, 1);
+    FadeSetPaletteExcluded(12, 1);
+    FadeSetPaletteExcluded(13, 1);
+    FadeSetPaletteExcluded(14, 1);
+    FadeSetPaletteExcluded(15, 1);
     func_080065FC(2, 0x8000, 0x80);
     TaskPoolInit(&gChkEffWork->pool, 1);
     TaskCreate(&gChkEffWork->pool, &gTaskDescPrint, 0);

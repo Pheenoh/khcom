@@ -138,7 +138,7 @@ Task* gUnk_02034C34;
 
 void mode_sio_btl_connect_0(s32 arg) {
     gSioBtlConnectWork = EwramAlloc(sizeof(SioBtlConnectWork));
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     SetBgMode0();
     SetupBg(0, 0, 7, 15);
     SetupBg(1, 1, 31, 0);
@@ -298,7 +298,7 @@ void func_080AEE84(void) {
 
 void func_080AEED8(u16 a, u16 b, u16 c) {
     SioAnimDef* def = &gUnk_096193E0[b];
-    func_08005974(&gSioBtlOptionWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
+    AnimChangeWithTables(&gSioBtlOptionWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
     func_08002A10(gSioBtlOptionWork->unk_008[a], def->unk_08);
 }
 
@@ -545,7 +545,7 @@ void func_080AF4F8(void) {
 
 void func_080AF58C(void) {
     s8 i = gUnk_0203AAA0[gUnk_0203AA00];
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     RequestDma3Copy((u8*)gUnk_09EF1318[i].unk_00 + 0x2000, (u8*)GetBgCharBase(2) + 0x2000, gUnk_09EF1318[i].unk_04 - 0x2000);
     EnableBg(0);
     EnableBg(1);
@@ -649,7 +649,7 @@ void func_080AF70C(void) {
         DrawSprite(72, 38, gSioBtlOptionWork->gfx, gSioBtlOptionWork->tiles, gSioBtlOptionWork->palette, 0, 0, 0x200);
 
         if (gSioBtlOptionWork->unk_1E0 == 1) {
-            func_0805F1C0(&gSioBtlOptionWork->unk_1DC, gSioBtlOptionWork->unk_000 * 4608 + 10752);
+            ApproachValueHalf(&gSioBtlOptionWork->unk_1DC, gSioBtlOptionWork->unk_000 * 4608 + 10752);
             DrawSprite(64, gSioBtlOptionWork->unk_1DC >> 8, gSioBtlOptionWork->gfx2, gSioBtlOptionWork->tiles2, gSioBtlOptionWork->palette2, 0, 0, 0x100);
         }
     }
@@ -1935,7 +1935,7 @@ void func_080B1558(void) {
 }
 
 void func_080B15A4(void) {
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     DisableBg(0);
     EnableBg(1);
     EnableBg(2);
@@ -2251,7 +2251,7 @@ void func_080B1974(void) {
 #ifndef VERSION_EU
 void mode_sio_chg_connect_0(s32 arg) {
     gSioChgConnectWork = EwramAlloc(sizeof(SioBtlConnectWork));
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     SetBgMode0();
     SetupBg(0, 0, 7, 15);
     SetupBg(1, 1, 31, 0);
@@ -2344,7 +2344,7 @@ void func_080B1C14(void) {
 #ifndef VERSION_EU
 void func_080B1C70(u16 a, u16 b, u16 c) {
     SioAnimDef* def = &gUnk_09619444[b];
-    func_08005974(&gSioChgCardWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
+    AnimChangeWithTables(&gSioChgCardWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
     func_08002A10(gSioChgCardWork->unk_008[a], def->unk_08);
 }
 #endif
@@ -2397,7 +2397,7 @@ void func_080B1DDC(void) {
 void func_080B1E70(void) {
     s32 i;
     s16 n;
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     LoadBgMap(1, gUnk_096F9C64, 0x800);
     LoadBgMap(2, gUnk_096F9464, 0x800);
     DisableBg(0);
@@ -3324,7 +3324,7 @@ void mode_sioError_0(s32 arg) {
     gSystemFlags |= 0x20;
     gSioErrorWork = EwramAlloc(sizeof(SioErrorWork));
     m4aMPlayAllStop();
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     func_080C57B4();
     SetBgMode0();
     SetupBg(0, 0, 7, 15);
@@ -3427,7 +3427,7 @@ void mode_wLogo_1(void) {
         }
 
         if (GetKeysPressed() & 1) {
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
             DisableBg(0);
             DisableBg(1);
             gUnk_02034B58++;
@@ -3471,7 +3471,7 @@ void mode_wLogo_2(void) {
 
 void func_080B4154(void) {
     u8* p;
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     SetBgMode0();
     SetupBg(1, 2, 31, 0);
     SetBgSize(1, 0);
@@ -3493,7 +3493,7 @@ void func_080B4154(void) {
 }
 
 void func_080B4210(u8 a) {
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     SetBgMode1();
     SetupBg(0, 0, 7, 14);
     SetBgPriority(0, 0);

@@ -3577,17 +3577,17 @@ void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a) {
         p->unk_04 &= ~1;
         break;
     }
-    func_08005974(p->anim, q->unk_0C, a, q->unk_04, q->unk_00);
+    AnimChangeWithTables(p->anim, q->unk_0C, a, q->unk_04, q->unk_00);
     func_08002A10(p->tiles, q->unk_08);
 }
 
 void func_080E5DEC(UnkStruct_080E590C* p) {
     if (gUnk_02039BA0->unk_70 & 0x10000) {
-        if (func_08005AC4(p->anim)) {
+        if (AnimIsFrameEnding(p->anim)) {
             return;
         }
     } else {
-        if (func_08005AC4(p->anim)) {
+        if (AnimIsFrameEnding(p->anim)) {
             gUnk_02039BA0->unk_70 |= 0x10000;
         }
     }
@@ -5662,7 +5662,7 @@ void func_080E93FC(void) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
     }
     if (gUnk_02039BA0->unk_70 & 0x10) {
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         func_080E9344((s32)func_080E9508);
         return;
     }
@@ -5699,7 +5699,7 @@ void func_080E93FC(void) {
 
 void func_080E9508(void) {
     func_080E0820();
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         func_080DF730(gUnk_0203C7AC->unk_0F, gUnk_0203C7AC->unk_10);
         if (gUnk_0203C7AC->unk_0F != 0xFD && gUnk_0203C7AC->unk_0F != 0xFE) {
             ModeRequest(&gModeMapDbg, 0);
@@ -5748,7 +5748,7 @@ void func_080E95E8(void) {
 
 void func_080E963C(void) {
     if (gUnk_02039BA0->unk_70 & 0x10) {
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         func_080E9344((s32)func_080E9508);
     } else if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
         gBldCnt = 0;
@@ -5807,7 +5807,7 @@ void Mode_MapDbg_0(void) {
     TaskPoolInit(gUnk_02034F90, 1);
     TaskCreate(gUnk_02034F90, &gTaskDescMapDbg, &gUnk_02034FA4);
     TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapDmg, 0);
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
 }
 
 void Mode_MapDbg_1(void) {
@@ -5932,23 +5932,23 @@ void func_080E9AF0(void) {
 
 void func_080E9B7C(void) {
     if (gUnk_0203C7AC->unk_00 & 2) {
-        func_08006184(0, 16);
-        func_080063A8();
+        FadeStartOut(0, 16);
+        FadeLock();
         func_080E9898((s32)func_080E9D94);
         return;
     }
     if (gUnk_02039BA0->unk_70 & 0x10) {
-        func_08006184(0, 16);
-        func_080063A8();
+        FadeStartOut(0, 16);
+        FadeLock();
         func_080E9898((s32)func_080E9CBC);
         return;
     }
-    if (func_08006314() == 0 && (gGameState.unk_17A & 0x200) != 0 &&
+    if (FadeIsActive() == 0 && (gGameState.unk_17A & 0x200) != 0 &&
         (gUnk_02039BA0->unk_70 & 0x41000) == 0 && (gUnk_0203C7AC->unk_00 & 4) == 0) {
         if (GetKeysPressed() & 4) {
             m4aSongNumStart(0x67);
-            func_08006184(0, 16);
-            func_080063A8();
+            FadeStartOut(0, 16);
+            FadeLock();
             func_080E9898((s32)func_080E9E04);
             return;
         }
@@ -5981,7 +5981,7 @@ void func_080E9CBC(void) {
     UnkStruct_080DEDD8* d;
 
     func_080E0820();
-    r = func_08006314();
+    r = FadeIsActive();
     if (r != 0) {
         return;
     }
@@ -6031,7 +6031,7 @@ void func_080E9CBC(void) {
 
 void func_080E9D94(void) {
     func_080E0820();
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         func_0801CB0C();
         if (gGameState.flags & 8) {
             if (gGameState.unk_17A & 0x1000) {
@@ -6047,7 +6047,7 @@ void func_080E9D94(void) {
 
 void func_080E9E04(void) {
     func_080E0820();
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         func_0801CB0C();
         ModeRequest(&gModeAllmap, 1);
     }
@@ -6070,8 +6070,8 @@ void func_080E9E94(void) {
     u16 t;
 
     if (gUnk_02039BA0->unk_70 & 0x10) {
-        func_08006184(0, 16);
-        func_080063A8();
+        FadeStartOut(0, 16);
+        FadeLock();
         func_080E9898((s32)func_080E9CBC);
         if ((gGameState.unk_17A & 0x200) == 0) {
             t = gGameState.unk_17A | 0x200;
@@ -6177,7 +6177,7 @@ void Mode_MapFld_0(void) {
     func_0801CB00();
     SeedRandom(gFrameCounter);
     m4aSongNumStartOrContinue(p->unk_38);
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
 }
 
 void Mode_MapFld_1(void) {
@@ -6328,7 +6328,7 @@ void func_080EA498(void) {
         return;
     }
     if (gUnk_0203C7AC->unk_00 & 0xE00) {
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         if (gUnk_0203C590.unk_06 == 0xFE) {
             func_080EA1F4((s32)func_080EA5CC);
             return;
@@ -6346,7 +6346,7 @@ void func_080EA498(void) {
     }
     if (gUnk_0203C7AC->unk_00 & 0x2000) {
         func_080EA1F4((s32)func_080EA730);
-    } else if (func_08006314() == 0 && (gGameState.unk_17A & 0x200) != 0 &&
+    } else if (FadeIsActive() == 0 && (gGameState.unk_17A & 0x200) != 0 &&
                (gUnk_02039BA0->unk_70 & 0x41000) == 0 && (gUnk_0203C7AC->unk_00 & 4) == 0 &&
                (GetKeysPressed() & 8) != 0) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapMenu, 0);
@@ -6360,7 +6360,7 @@ void func_080EA498(void) {
 
 void func_080EA5A8(void) {
     func_080E0820();
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         func_080DFA3C();
         ModeRequest(&gModeMapFld, 0);
     }
@@ -6368,7 +6368,7 @@ void func_080EA5A8(void) {
 
 void func_080EA5CC(void) {
     func_080E0820();
-    if (func_08006314() != 0) {
+    if (FadeIsActive() != 0) {
         return;
     }
     if (gUnk_0203C7AC->unk_00 & 0x200) {
@@ -6404,7 +6404,7 @@ void func_080EA694(void) {
     u16 t;
 
     func_080E0820();
-    if (func_08006314() != 0) {
+    if (FadeIsActive() != 0) {
         return;
     }
     if (gUnk_0203C7AC->unk_00 & 0x200) {
@@ -6447,8 +6447,8 @@ void func_080EA730(void) {
 
 void func_080EA78C(void) {
     if ((gUnk_0203C7AC->unk_00 & 0x100) == 0) {
-        func_08006184(2, 60);
-        func_080063A8();
+        FadeStartOut(2, 60);
+        FadeLock();
         gUnk_0203C7AC->unk_00 |= 0x200;
         func_080EA1F4((s32)func_080EA5CC);
     } else {
@@ -6467,7 +6467,7 @@ void func_080EA7D8(void) {
 
 void func_080EA7FC(void) {
     if (gUnk_02039BA0->unk_70 & 0x10) {
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         func_080EA1F4((s32)func_080EA5A8);
     } else if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
         gBldCnt = 0;
@@ -6561,10 +6561,10 @@ void Mode_MapFix_0(void) {
     if (gUnk_0203C590.unk_02 & 0x80) {
         t = gUnk_0203C590.unk_02 & 0xFF7F;
         gUnk_0203C590.unk_02 = t;
-        func_08006494(16, 15);
-        func_08006120(0, 16);
+        MosaicStartIn(16, 15);
+        FadeStartIn(0, 16);
     } else {
-        func_08006120(0, 16);
+        FadeStartIn(0, 16);
     }
 }
 
@@ -6819,7 +6819,7 @@ void func_080EAF10(void) {
     DrawSprite(0, 16, gUnk_098A8F28, gUnk_02034FDC->unk_014, gUnk_02034FDC->unk_010, 0, 0x400, 90);
     t = 45;
     u = gUnk_02034FDC->unk_33E * t;
-    func_0805F1C0(&gUnk_02034FDC->unk_038, (gUnk_02034FDC->unk_162 + u) << 8);
+    ApproachValueHalf(&gUnk_02034FDC->unk_038, (gUnk_02034FDC->unk_162 + u) << 8);
     DrawSprite(76, gUnk_02034FDC->unk_038 >> 8, AnimGetGfx(&gUnk_02034FDC->unk_018),
         gUnk_02034FDC->unk_034, gUnk_02034FDC->unk_030, 0, 0, 70);
     func_080664D8(100, u + (gUnk_02034FDC->unk_162 + 22), &gUnk_02034FDC->unk_040,
@@ -6889,13 +6889,13 @@ void func_080EB27C(UnkStruct_02034FDC* w) {
         ApproachValue(&w->unk_00C, 0xA000, w->unk_340);
         w->unk_340--;
     } else {
-        func_08006184(0, 90);
+        FadeStartOut(0, 90);
         w->unk_344 = func_080EB2D0;
     }
 }
 
 void func_080EB2D0(UnkStruct_02034FDC* w) {
-    if ((u8)func_08006314() != 0) {
+    if ((u8)FadeIsActive() != 0) {
         return;
     }
 
@@ -7014,7 +7014,7 @@ void func_080EB328(void) {
 
     func_080EAD84(gUnk_02034FDC->unk_33E);
     gUnk_02034FDC->unk_038 = (gUnk_02034FDC->unk_162 + gUnk_02034FDC->unk_33E * 45) << 8;
-    func_08006120(0, 8);
+    FadeStartIn(0, 8);
 }
 
 void func_080EB698(void) {
@@ -7342,7 +7342,7 @@ void func_080EBB24(void) {
     }
 
     u = t * gUnk_02034FE0->unk_183;
-    func_0805F1C0(&gUnk_02034FE0->unk_034, (gUnk_02034FE0->unk_15E + u) << 8);
+    ApproachValueHalf(&gUnk_02034FE0->unk_034, (gUnk_02034FE0->unk_15E + u) << 8);
     DrawSprite(76, gUnk_02034FE0->unk_034 >> 8, AnimGetGfx(&gUnk_02034FE0->unk_014),
         gUnk_02034FE0->unk_030, gUnk_02034FE0->unk_02C, 0, 0x400, 70);
     func_080664D8(100, u + (gUnk_02034FE0->unk_15E + 22), &gUnk_02034FE0->unk_03C,
@@ -7470,7 +7470,7 @@ void func_080EBFF8(UnkStruct_02034FE0* work) {
         ApproachValue(&work->unk_00C, 0xA000, work->unk_186);
         work->unk_186--;
     } else {
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         work->unk_188 = func_080EC04C;
     }
 }
@@ -7480,7 +7480,7 @@ void func_080EC04C(UnkStruct_02034FE0* work) {
     UnkStruct_02039D6C* e = &gUnk_02039D6C[work->unk_183];
 #endif
 
-    if ((u8)func_08006314() != 0) {
+    if ((u8)FadeIsActive() != 0) {
         return;
     }
 
@@ -7628,7 +7628,7 @@ void func_080EC0D4(s32 arg) {
     }
 
     func_080EBA58(gUnk_02034FE0->unk_183);
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
 }
 
 void func_080EC424(void) {
@@ -7660,17 +7660,17 @@ void func_080EC500(UnkStruct_02034FE4* w) {
     if (func_080A42C8() == 0) {
         if (w->unk_00 == 0) {
             func_080C75A4(1, 16);
-            func_08006184(1, 16);
+            FadeStartOut(1, 16);
         } else {
             func_080C75A4(0, 16);
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
         }
         w->unk_04 = func_080EC544;
     }
 }
 
 void func_080EC544(UnkStruct_02034FE4* w) {
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         if (w->unk_00 == 0) {
             ModeRequest(&gModeCopyright1, 0);
         } else {
@@ -7690,8 +7690,8 @@ void func_080EC57C(s32 arg) {
         func_080C736C();
         func_080C73A4(0, 0, 0);
         func_080C7568(1, 16);
-        func_08006120(1, 16);
-        func_080063A8();
+        FadeStartIn(1, 16);
+        FadeLock();
     } else {
 #ifdef VERSION_EU
         func_080A4188(&gUnk_02034FE4->unk_08, 0xB2);
@@ -7701,8 +7701,8 @@ void func_080EC57C(s32 arg) {
         func_080C736C();
         func_080C73A4(0, 0, 0);
         func_080C7568(0, 1);
-        func_08006120(0, 1);
-        func_080063A8();
+        FadeStartIn(0, 1);
+        FadeLock();
     }
     gUnk_02034FE4->unk_04 = func_080EC500;
 }
@@ -7980,8 +7980,8 @@ s32 func_080ECAC8(UnkStruct_080ECA88* p) {
         p->unk_6C = func_080ECBC8;
         gUnk_0203C7AC->unk_0F = flags->unk_07;
         gUnk_0203C7AC->unk_10 = flags->unk_06;
-        func_080062F4(*(u16*)&p->unk_48[6] + 16, 1);
-        func_080062F4(*(u16*)&p->unk_5C[6] + 16, 1);
+        FadeSetPaletteExcluded(*(u16*)&p->unk_48[6] + 16, 1);
+        FadeSetPaletteExcluded(*(u16*)&p->unk_5C[6] + 16, 1);
         TaskCreate(pool, &gTaskDescRoomcreate, 0);
     }
     return 1;
@@ -8002,8 +8002,8 @@ s32 func_080ECBC8(UnkStruct_080ECA88* p) {
 
     if (!(gUnk_02039BA0->unk_70 & 0x40000)) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
-        func_080062F4(*(u16*)&p->unk_48[6] + 16, 0);
-        func_080062F4(*(u16*)&p->unk_5C[6] + 16, 0);
+        FadeSetPaletteExcluded(*(u16*)&p->unk_48[6] + 16, 0);
+        FadeSetPaletteExcluded(*(u16*)&p->unk_5C[6] + 16, 0);
         p->unk_6C = func_080ECAC8;
     }
     return 1;
@@ -8187,23 +8187,23 @@ void func_080ECFBC(UnkStruct_080ECA88* p) {
 void func_080ECFE8(UnkStruct_080ECFE8* p, u8 a) {
     s32 i;
 
-    func_080062F4(p->unk_020->unk_06 + 0x10, a);
-    func_080062F4(p->unk_070->unk_06 + 0x10, a);
-    func_080062F4(p->unk_038->unk_06 + 0x10, a);
-    func_080062F4(p->unk_03C->unk_06 + 0x10, a);
-    func_080062F4(p->unk_060->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_020->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_070->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_038->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_03C->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_060->unk_06 + 0x10, a);
 
     for (i = 0; i < 3; i++) {
         if (p->unk_158[i] != 0) {
-            func_080062F4(p->unk_158[i]->unk_06 + 0x10, a);
+            FadeSetPaletteExcluded(p->unk_158[i]->unk_06 + 0x10, a);
         }
     }
 }
 
 void func_080ED06C(UnkStruct_080ED06C* p, u8 a) {
-    func_080062F4(p->unk_000->unk_06 + 0x10, a);
-    func_080062F4(p->unk_138->unk_06 + 0x10, a);
-    func_080062F4(p->unk_140->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_000->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_138->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_140->unk_06 + 0x10, a);
 }
 
 void func_080ED0B8(FldRes* p, u8 a, u16 v) {
@@ -8245,7 +8245,7 @@ void func_080ED250(u8* work) {
     LoadBgTiles(0, gUnk_099597E4, 0x140);
     LoadBgMap(0, gUnk_09985F44, 0x800);
     LoadPalette(gUnk_09611AB8, &gUnk_050001C0[0x20], 0x20);
-    func_080062F4(15, 1);
+    FadeSetPaletteExcluded(15, 1);
     SetBgScroll(0, 0, 0);
     *(void**)&work[0x17C] = _08066468(1);
 #ifdef VERSION_EU
@@ -8271,7 +8271,7 @@ void func_080ED250(u8* work) {
 #endif
 }
 void func_080ED314(u8* work) {
-    func_080062F4(15, 0);
+    FadeSetPaletteExcluded(15, 0);
     DisableBg(0);
     ReleaseObjPalette(*(u8**)&work[0x17C]);
 #ifdef VERSION_EU
@@ -8312,7 +8312,7 @@ s32 func_080ED35C(MapMenuWork* w) {
     func_080ED06C((UnkStruct_080ED06C*)w, 1);
 
     if (w->unk_30F == 0) {
-        func_08006238(0, 16, 16);
+        FadeToAmount(0, 16, 16);
     }
     return 1;
 }
@@ -8482,7 +8482,7 @@ s32 func_080ED6CC(MapMenuWork* w) {
 
         if (w->unk_30F != 0) {
             w->unk_30F = 0;
-            func_08006238(0, 16, 1);
+            FadeToAmount(0, 16, 1);
             w->unk_310 = func_080EDD7C;
         } else {
             w->unk_310 = (gGameState.flags & 8) ? func_080ED91C : func_080ED7CC;
@@ -8645,7 +8645,7 @@ s32 func_080EDB4C(MapMenuWork* w) {
         gUnk_0203C7AC->unk_00 &= ~0x1000;
         gUnk_02039BA0->unk_70 &= ~0x100;
         func_080ECFE8((UnkStruct_080ECFE8*)w, 0);
-        func_080061E8(0, 16);
+        FadeToOriginal(0, 16);
         w->unk_30C = 16;
         w->unk_310 = func_080EDC38;
     }
@@ -8713,7 +8713,7 @@ void func_080EDDBC(MapMenuWork* w) {
         w->unk_138 = LoadObjPalette(gUnk_08F683A4, 32);
     }
 
-    func_080062F4(w->unk_138->unk_06 + 0x10, 1);
+    FadeSetPaletteExcluded(w->unk_138->unk_06 + 0x10, 1);
     v = gGameState.unk_00F;
 
     if (v != -1) {
@@ -8729,7 +8729,7 @@ void func_080EDDBC(MapMenuWork* w) {
 
 s32 func_080EDE78(MapMenuWork* w) {
     if (w->unk_30F != 0) {
-        func_08006120(0, 16);
+        FadeStartIn(0, 16);
     }
 
     if (w->unk_30E != 0) {
@@ -9001,18 +9001,18 @@ void func_080EDECC(MapMenuWork* w) {
         if (w->unk_034 != 0) {
             switch (w->unk_30A) {
             case 1:
-                func_0805F1C0(&w->unk_068, 0x4800);
+                ApproachValueHalf(&w->unk_068, 0x4800);
                 DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
                     1, 60);
                 break;
             case 2:
-                func_0805F1C0(&w->unk_068, 0x8800);
+                ApproachValueHalf(&w->unk_068, 0x8800);
                 DrawSprite(w->unk_068 >> 8, 80, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
                     1, 60);
                 break;
             case 0:
             default:
-                func_0805F1C0(&w->unk_06C, (w->unk_309 * 19 + 16) << 8);
+                ApproachValueHalf(&w->unk_06C, (w->unk_309 * 19 + 16) << 8);
                 DrawSprite(24, w->unk_06C >> 8, AnimGetGfx(&w->unk_048), w->unk_064, w->unk_060, 0,
                     0x401, 60);
                 break;
@@ -9071,21 +9071,21 @@ void func_080EE418(MapMenuWork* w) {
 }
 
 void func_080EE50C(UnkStruct_080EE50C* p, u8 a) {
-    func_080062F4(0x0B, a);
-    func_080062F4(0x0C, a);
-    func_080062F4(0x0D, a);
-    func_080062F4(0x0E, a);
-    func_080062F4(p->unk_014->unk_06 + 0x10, a);
-    func_080062F4(p->unk_034->unk_06 + 0x10, a);
-    func_080062F4(p->unk_040->unk_06 + 0x10, a);
-    func_080062F4(p->unk_190->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(0x0B, a);
+    FadeSetPaletteExcluded(0x0C, a);
+    FadeSetPaletteExcluded(0x0D, a);
+    FadeSetPaletteExcluded(0x0E, a);
+    FadeSetPaletteExcluded(p->unk_014->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_034->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_040->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_190->unk_06 + 0x10, a);
 }
 
 void func_080EE580(UnkStruct_080EE580* p, u8 a) {
-    func_080062F4(p->unk_000->unk_06 + 0x10, a);
-    func_080062F4(p->unk_168->unk_06 + 0x10, a);
-    func_080062F4(p->unk_180->unk_06 + 0x10, a);
-    func_080062F4(p->unk_188->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_000->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_168->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_180->unk_06 + 0x10, a);
+    FadeSetPaletteExcluded(p->unk_188->unk_06 + 0x10, a);
 }
 
 void func_080EE5E0(u8 a) {
@@ -9408,7 +9408,7 @@ s32 func_080EEC9C(MapSaveWork* w) {
         gUnk_0203C7AC->unk_00 &= ~0x1000;
         gUnk_02039BA0->unk_70 &= ~0x100;
         func_080EE50C((UnkStruct_080EE50C*)w, 0);
-        func_080061E8(0, 16);
+        FadeToOriginal(0, 16);
         w->unk_2F6 = 16;
         w->unk_2F0 = func_080EED44;
     }
@@ -9480,7 +9480,7 @@ void func_080EED88(MapSaveWork* w) {
     w->unk_2F0 = func_080EE7B0;
     TaskPoolInit(&w->unk_2FC, 1);
     func_080EE580((UnkStruct_080EE580*)w, 1);
-    func_08006238(0, 16, 16);
+    FadeToAmount(0, 16, 16);
     m4aSongNumStart(103);
 }
 
@@ -9577,12 +9577,12 @@ void func_080EEF4C(MapSaveWork* w) {
 
         switch (w->unk_2F4) {
         case 1:
-            func_0805F1C0(&w->unk_03C, 0x7800);
+            ApproachValueHalf(&w->unk_03C, 0x7800);
             DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->unk_01C), w->unk_038, w->unk_034, 0, 1,
                 40);
             break;
         case 2:
-            func_0805F1C0(&w->unk_03C, 0xB000);
+            ApproachValueHalf(&w->unk_03C, 0xB000);
             DrawSprite(w->unk_03C >> 8, 110, AnimGetGfx(&w->unk_01C), w->unk_038, w->unk_034, 0, 1,
                 40);
             break;
@@ -11385,7 +11385,7 @@ u8 func_080F1978(MapGmkTutorialWork* w) {
             w->unk_0AC = func_080F1A10;
             gUnk_0203C7AC->unk_0F = 0;
             gUnk_0203C7AC->unk_10 = 0;
-            func_080062F4(*(u16*)&w->unk_0A0[6] + 16, 1);
+            FadeSetPaletteExcluded(*(u16*)&w->unk_0A0[6] + 16, 1);
             TaskCreate(pool, &gTaskDescRoomcreate, 0);
         }
     }
@@ -11402,7 +11402,7 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
         gUnk_0203C7AC->unk_00 &= ~0x80;
-        func_080062F4(*(u16*)&w->unk_0A0[6] + 16, 0);
+        FadeSetPaletteExcluded(*(u16*)&w->unk_0A0[6] + 16, 0);
         w->unk_0AC = func_080F1978;
     }
     return 1;
@@ -12953,7 +12953,7 @@ void func_080F445C(MapGmk05Work* w) {
     if (w->unk_0C8 != 0 && (GetKeysPressed() & 1)) {
         gUnk_02039BA0->unk_70 |= 0x1000;
         func_0801CB0C();
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         m4aSongNumStart(0xCF);
         w->unk_0C4 = func_080F44AC;
     }
@@ -12962,7 +12962,7 @@ void func_080F445C(MapGmk05Work* w) {
 void func_080F44AC(MapGmk04Work* w) {
     UnkStruct_080DEE18* e;
 
-    if ((u8)func_08006314() != 0) {
+    if ((u8)FadeIsActive() != 0) {
         return;
     }
     e = func_080DEE18(gUnk_0203C590.unk_06);
@@ -13062,13 +13062,13 @@ void func_080F46FC(MapGmk06Work* w) {
         m4aSongNumStart(0x66);
         gUnk_02039BA0->unk_70 |= 0x1000;
         func_0801CB0C();
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         w->unk_0C4 = func_080F47B4;
     }
 }
 
 void func_080F47B4(MapGmk06Work* w) {
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         ModeRequest(&gModeWorldwarp, 0);
         w->unk_0C4 = 0;
     }
@@ -13617,8 +13617,8 @@ void func_080F55B0(MapPrzCardWork* w) {
     TaskPoolDraw(&w->unk_0D4);
 }
 void func_080F5780(MapPrzCardWork* w) {
-    func_080062F4(w->unk_074->unk_06 + 0x10, 0);
-    func_080062F4(w->unk_06C->unk_06 + 0x10, 0);
+    FadeSetPaletteExcluded(w->unk_074->unk_06 + 0x10, 0);
+    FadeSetPaletteExcluded(w->unk_06C->unk_06 + 0x10, 0);
     func_08012304(w->unk_010);
     ReleaseObjTiles(w->unk_070);
     ReleaseObjTiles(w->unk_078);
@@ -13681,7 +13681,7 @@ void func_080F58C4(MapMsgWork* w, void* text) {
     func_08065ACC(w->unk_004, 48);
     w->unk_184 = func_08065B6C(text, w->unk_004);
     w->unk_000 = _08066468(1);
-    func_080062F4(w->unk_000->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(w->unk_000->unk_06 + 16, 1);
     w->unk_186 = (240 - func_08065B08(w->unk_004, w->unk_184)) / 2;
     w->unk_188 = 0;
 }
@@ -13699,7 +13699,7 @@ void func_080F59A0(MapMsgWork* w) {
         DisableBg(0);
     }
 
-    func_080062F4(w->unk_000->unk_06 + 0x10, 0);
+    FadeSetPaletteExcluded(w->unk_000->unk_06 + 0x10, 0);
     ReleaseObjPalette((u8*)w->unk_000);
     func_08065AE0(&w->unk_004, 0x30);
 }
@@ -14192,7 +14192,7 @@ void func_080F6668(MapNamineWork* w) {
 
     if (dx <= 0x8000 && dy <= 0x8000) {
         if (Sqrt8((dx * dx >> 8) + (dy * dy >> 8)) < 0x3000) {
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
             gUnk_02039BA0->unk_70 |= 0x1000;
             w->unk_0BC = func_080F66E0;
         }
@@ -14200,7 +14200,7 @@ void func_080F6668(MapNamineWork* w) {
 }
 
 void func_080F66E0(MapNamineWork* w) {
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         func_0806180C(0x3B);
         w->unk_0BC = 0;
     }
@@ -14578,7 +14578,7 @@ void func_080F70F4(MapTutorialWork* w) {
     AnimState* a = &w->unk_09C;
 
     if (AnimIsFinished(a)) {
-        func_08005974(a, 0, 1, gUnk_09EDF85C, gUnk_09EDF834);
+        AnimChangeWithTables(a, 0, 1, gUnk_09EDF85C, gUnk_09EDF834);
         func_08002A10(w->unk_0B4, gUnk_08957290);
         func_080A411C(&w->unk_0C8, 0, 0x6C);
         w->unk_0C4 = func_080F7160;
@@ -14607,7 +14607,7 @@ void func_080F71AC(MapTutorialWork* w) {
         gUnk_0203C7AC->unk_00 |= 4;
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, w);
         m4aSongNumStart(0x75);
-        func_08005974(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
+        AnimChangeWithTables(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
         func_08002A10(w->unk_0B4, gUnk_08963BAC);
         w->unk_0C4 = func_080F7284;
     } else if (w->unk_06C != 0) {

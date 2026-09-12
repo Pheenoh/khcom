@@ -401,7 +401,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                         ? func_08011F78(0x11B, act->unk_004 - 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)
                         : func_08011F78(0x11B, act->unk_004 + 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20B);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                         if (act->unk_034 & 4) {
                             func_08019050(6, 0x133, act->unk_004 - 0x2000, (d = act->unk_00C - 0x1800, act->unk_008 + d));
                         } else {
@@ -424,7 +424,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                         ? func_08011F78(0x11B, act->unk_004 - 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)
                         : func_08011F78(0x11B, act->unk_004 + 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20C);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                         if (act->unk_034 & 4) {
                             func_08019050(6, 0x133, act->unk_004 - 0x2000, (d = act->unk_00C - 0x1800, act->unk_008 + d));
                         } else {
@@ -444,7 +444,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                         ? func_08011F78(0x11C, act->unk_004 - 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)
                         : func_08011F78(0x11C, act->unk_004 + 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20D);
-                        func_08006120(2, 50);
+                        FadeStartIn(2, 50);
                         if (act->unk_034 & 4) {
                             func_08019050(6, 0x200, act->unk_004 - 0x2000, (d = act->unk_00C - 0x1800, act->unk_008 + d));
                         } else {
@@ -558,7 +558,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                         ? func_08011F78(0x11D, act->unk_004 - 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)
                         : func_08011F78(0x11D, act->unk_004 + 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20B);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                     }
                 }
                 break;
@@ -569,7 +569,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                         ? func_08011F78(0x11D, act->unk_004 - 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)
                         : func_08011F78(0x11D, act->unk_004 + 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20C);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                     }
                 }
                 break;
@@ -581,7 +581,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                         ? func_08011F78(0x11D, act->unk_004 - 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)
                         : func_08011F78(0x11D, act->unk_004 + 0x2800, act->unk_008, act->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20D);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                     }
                 }
                 break;
@@ -1298,9 +1298,9 @@ void task_hum_hook_moon_2(HookMoonWork* work) {
     DrawSprite(x - 32, y, gUnk_08B5A85E, work->tiles, work->palette, 0, 0xC00, 0xFFFE);
     DrawSprite(x + 24, y, gUnk_08B5A85E, work->tiles, work->palette, 0, 0xC00, 0xFFFE);
     DrawSprite(x + 80, y, gUnk_08B5A85E, work->tiles, work->palette, 0, 0xC00, 0xFFFE);
-    v = func_08006390();
+    v = FadeGetAmount();
     if (v != 0) {
-        switch (_08006338()) {
+        switch (FadeGetColor()) {
         case 0:
             t = 9 - v;
             if ((s16)t < 0) {
@@ -1729,7 +1729,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             func_08019068(gUnk_0813F0D0, &w->base.anim, 2, 0, w->base.tiles);
             func_08019068(gUnk_0813F140, &w->base.unk_00C->anim, 3, 0, w->base.unk_00C->tiles);
             w->unk_1D0 = 0;
-            func_08006184(9, 90);
+            FadeStartOut(9, 90);
             m4aSongNumStart(0x271);
             w->unk_1C4 = -0xC00;
         }
@@ -1850,16 +1850,16 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         }
 
         if (act->unk_034 & 4) {
-            func_0800592C(&w->unk_188.unk_28, act->unk_004 + 0x1800, w->unk_1D6);
+            ApproachValueHalfSteps(&w->unk_188.unk_28, act->unk_004 + 0x1800, w->unk_1D6);
         } else {
-            func_0800592C(&w->unk_188.unk_28, act->unk_004 - 0x1800, w->unk_1D6);
+            ApproachValueHalfSteps(&w->unk_188.unk_28, act->unk_004 - 0x1800, w->unk_1D6);
         }
-        func_0800592C(&w->unk_188.unk_2C, act->unk_008, w->unk_1D6);
-        func_0800592C(&w->unk_188.unk_30, act->unk_00C, w->unk_1D6);
+        ApproachValueHalfSteps(&w->unk_188.unk_2C, act->unk_008, w->unk_1D6);
+        ApproachValueHalfSteps(&w->unk_188.unk_30, act->unk_00C, w->unk_1D6);
         w->unk_1D6--;
 
         if (w->unk_1D6 <= 0) {
-            func_08006120(0, 30);
+            FadeStartIn(0, 30);
             func_0801AF08(act);
             work->base.unk_170 = 0;
             work->base.unk_150 = 0;
@@ -1947,7 +1947,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
 
         if (w->unk_1D6 > 0) {
             ApproachValue(&act->unk_004, work->base.unk_15C, w->unk_1D6);
-            func_0800592C(&act->unk_008, work->base.unk_160, w->unk_1D6);
+            ApproachValueHalfSteps(&act->unk_008, work->base.unk_160, w->unk_1D6);
         }
         w->unk_1D6--;
 
@@ -2005,7 +2005,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             func_08019068(gUnk_0813F0D0, &w->base.anim, 3, 0, w->base.tiles);
             func_08019068(gUnk_0813F140, &w->base.unk_00C->anim, 6, 0, w->base.unk_00C->tiles);
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
             w->unk_1C4 = -0xC00;
         }
 
@@ -2031,7 +2031,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             }
 
             if (w->unk_1D6 > 0) {
-                func_0800592C(&w->unk_188.unk_30, act->unk_00C - 0x3000, w->unk_1D6);
+                ApproachValueHalfSteps(&w->unk_188.unk_30, act->unk_00C - 0x3000, w->unk_1D6);
                 w->unk_1D6--;
             }
             break;
@@ -2041,7 +2041,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             }
 
             if (w->unk_1D6 > 0) {
-                func_0800592C(&w->unk_188.unk_30, act->unk_00C - 0x1000, w->unk_1D6);
+                ApproachValueHalfSteps(&w->unk_188.unk_30, act->unk_00C - 0x1000, w->unk_1D6);
                 w->unk_1D6--;
             }
             break;
@@ -2050,7 +2050,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         if (AnimIsFinished(&w->unk_188.anim)) {
             if (func_080128EC() == 0) {
                 func_0801AF08(act);
-                func_080061E8(0, 8);
+                FadeToOriginal(0, 8);
                 work->base.unk_170 = 0;
                 work->base.unk_150 = 0;
                 break;
@@ -3044,8 +3044,8 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         }
 
         if ((s16)w->unk_1CA != 0) {
-            func_0800592C(&act->unk_004, work->base.unk_15C, w->unk_1CA);
-            func_0800592C(&w->unk_1CC, 128, w->unk_1CA);
+            ApproachValueHalfSteps(&act->unk_004, work->base.unk_15C, w->unk_1CA);
+            ApproachValueHalfSteps(&w->unk_1CC, 128, w->unk_1CA);
 
             if (w->unk_1D0 & 1) {
                 act->unk_008 = w->unk_1D4 + gSineTable[(u8)w->unk_1CC] * w->unk_1C8;
@@ -3163,9 +3163,9 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
     case 29:
         if ((s16)work->base.unk_150 == 0) {
             func_08019068(gUnk_0813F368, &w->base.anim, 11, 0, w->base.tiles);
-            func_08006120(2, 20);
+            FadeStartIn(2, 20);
             m4aSongNumStart(0x2C2);
-            func_080063A8();
+            FadeLock();
             gBtlWork->unk_072 = 20;
             w->unk_1D0 |= 2;
 
@@ -3700,7 +3700,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             m4aSongNumStart(0x11D);
             func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 12, 0, w->base.tiles);
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
             w->unk_188 = 0;
             work->base.unk_158 = 0x400;
         }
@@ -3728,7 +3728,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         }
 
         if ((s16)work->base.unk_150 > 120) {
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
             func_0801AF08(act);
             work->base.unk_170 = 0;
             work->base.unk_150 = 0;
@@ -4069,7 +4069,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             act->unk_00C = 0;
             AnimReset(&work->base.anim);
             func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 12, 0, w->base.tiles);
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
             w->unk_188 = 0;
             work->base.unk_158 = 0x400;
             w->unk_190 = 8;
@@ -4091,7 +4091,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         }
 
         if (AnimIsFinished(&work->base.anim)) {
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
             work->base.unk_150 = 0;
             work->base.unk_152--;
 
@@ -4414,7 +4414,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         } else {
             work->base.unk_15C = x + 0x6E00;
         }
-        func_0800592C(&act->unk_004, work->base.unk_15C, work->base.unk_152);
+        ApproachValueHalfSteps(&act->unk_004, work->base.unk_15C, work->base.unk_152);
         work->base.unk_152--;
         func_0800F368(work, 1);
         if ((s16)work->base.unk_152 <= 0) {
@@ -4876,7 +4876,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     case 33: {
         s32 a, b, c;
         if ((s16)work->base.unk_150 == 0) {
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
             func_08019068(gUnk_0813F5E0, &w->base.anim, 12, 0, w->base.tiles);
             if (act->unk_034 & 4) {
                 func_08017E18(act->unk_004, 1, 303);
@@ -4900,7 +4900,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             work->base.unk_170 = 34;
             work->base.unk_150 = 0;
             gBtlWork->unk_068 |= 0x400000;
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
         } else {
             work->base.unk_150++;
         }
@@ -5440,7 +5440,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         if ((s16)w->base.unk_150 == 0) {
             func_08019068(gUnk_0813F7D8, &work->base.anim, 8, 0, work->base.tiles);
             work->unk_188 = 0;
-            func_08006238(0, *((u8*)gBtlWork + 0xB3), 8);
+            FadeToAmount(0, *((u8*)gBtlWork + 0xB3), 8);
         }
 
         if (AnimGetFrame(&w->base.anim) > 4 && func_080128EC() == 0) {
@@ -5460,7 +5460,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         if ((s16)w->base.unk_150 > 300 ||
             ((s16)w->base.unk_150 > 120 && (s16)gBtlWork->unk_07C->unk_02C <= 1)) {
             m4aSongNumStop(0x288);
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
             gBtlWork->unk_068 |= 0x400000;
             func_0801AF08(act);
             w->base.unk_170 = 0;
@@ -5512,11 +5512,11 @@ u8 task_hum_vixen_1(VixenWork* work) {
         }
 
         if (AnimGetFrame(&w->base.anim) == 3 && w->base.anim.timer == 0) {
-            func_08006120(1, 60);
+            FadeStartIn(1, 60);
             func_08054334(work);
         }
 
-        if (AnimIsFinished(&w->base.anim) && func_08006314() == 0) {
+        if (AnimIsFinished(&w->base.anim) && FadeIsActive() == 0) {
             func_0801AF08(act);
             w->base.unk_170 = 0;
             w->base.unk_150 = 0;
@@ -5696,7 +5696,7 @@ void task_hum_vixen_ice_0(VixenIceWork* work, VixenSub* args) {
 u8 task_hum_vixen_ice_1(VixenIceWork* work) {
     if (work->unk_24->unk_01 == 0) {
         if (work->unk_24->unk_00 != 0) {
-            func_080062F4(((ObjPalette*)work->palette)->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(((ObjPalette*)work->palette)->unk_06 + 16, 1);
             work->unk_24->unk_00 = 0;
             func_08012614(&work->unk_28, 1);
         }
@@ -5704,7 +5704,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
     }
 
     if (work->unk_24->unk_00 != 0) {
-        func_080062F4(((ObjPalette*)work->palette)->unk_06 + 16, 0);
+        FadeSetPaletteExcluded(((ObjPalette*)work->palette)->unk_06 + 16, 0);
         work->unk_24->unk_00 = 0;
         work->unk_00 = 0;
         work->unk_84 = 0;
@@ -7347,7 +7347,7 @@ u8 task_hum_riku_1(RikuWork* work) {
             func_08019068(gUnk_0813FBBC + 24, &w->base.anim, 14, 0, w->base.tiles);
             m4aSongNumStart(262);
             m4aSongNumStart(625);
-            func_08006184(9, 80);
+            FadeStartOut(9, 80);
         }
         work->base.unk_158 = 0;
         act->unk_00C += (-0x2800 - act->unk_00C) >> 5;
@@ -7503,7 +7503,7 @@ u8 task_hum_riku_1(RikuWork* work) {
             work->base.unk_154 &= ~8;
             func_0801AF08(act);
             work->base.unk_170 = 0;
-            func_08006120(9, 30);
+            FadeStartIn(9, 30);
             work->base.unk_150 = 0;
         } else {
             work->base.unk_150++;
@@ -7758,7 +7758,7 @@ u8 task_hum_riku_1(RikuWork* work) {
                     func_08011F78(attack, act->unk_004 + 0x1400, act->unk_008, act->unk_00C, 20, 8, 16)) {
                     m4aSongNumStart(656);
                     if (attack == 291) {
-                        func_08006120(2, 45);
+                        FadeStartIn(2, 45);
                         if (act->unk_034 & 4) {
                             func_08019050(6, 332, act->unk_004 - 0x2000, (act->unk_008 - 0x1800) + act->unk_00C);
                         } else {

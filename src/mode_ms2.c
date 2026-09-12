@@ -103,7 +103,7 @@ void mode_ms_charge_0(void) {
         *dst = EwramAlloc(0x3A18);
     }
     SpriteReset();
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     SetBgMode0();
     SetupBg(0, 0, 28, 0);
     SetupBg(1, 0, 29, 0);
@@ -363,7 +363,7 @@ void mode_ms_charge_1(void) {
 
     switch (gUnk_02035C14) {
     case 0:
-        if (!func_08006314()) {
+        if (!FadeIsActive()) {
             gUnk_02035C14 = 1;
         }
         break;
@@ -387,7 +387,7 @@ void mode_ms_charge_1(void) {
         }
         break;
     case 2:
-        if (!func_08006314()) {
+        if (!FadeIsActive()) {
             if (gUnk_02035E20 != 0) {
                 ModeRequest(&gModeMsTop, 2);
             } else {
@@ -930,7 +930,7 @@ void func_08107D44(void) {
         LoadBgMap(0, gUnk_09A3439C, 0x500);
         m4aSongNumStart(0x68);
         gUnk_02035FE4 = 0;
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         gUnk_02035FCA = 5;
     } else if (keys & 4) {
         gUnk_02035E98 = 0;
@@ -997,7 +997,7 @@ void func_08107FF0(void) {
             LoadBgMap(0, gUnk_09A3439C, 0x500);
             m4aSongNumStart(0x68);
             gUnk_02035FE4 = 0;
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
             gUnk_02035FCA = 5;
         } else if (keys & 0x82) {
             if (func_08107220(gUnk_02035E2E) > 0) {
@@ -1098,7 +1098,7 @@ void func_08108208(void) {
             LoadBgMap(0, gUnk_09A3439C, 0x500);
             m4aSongNumStart(0x68);
             gUnk_02035FE4 = 0;
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
             gUnk_02035FCA = 5;
         } else if (keys & 0x20) {
             func_08108170(p, 0);
@@ -1183,7 +1183,7 @@ void func_081083EC(void) {
         LoadBgMap(0, gUnk_09A3439C, 0x500);
         m4aSongNumStart(0x68);
         gUnk_02035FE4 = 0;
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         gUnk_02035FCA = 5;
     } else if (keys & 0x20) {
         gUnk_02035FC8 = 0;
@@ -1208,7 +1208,7 @@ void func_081085E8(void) {
         LoadBgMap(0, gUnk_09A3439C, 0x500);
         m4aSongNumStart(0x68);
         gUnk_02035FE4 = 0;
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         gUnk_02035FCA = 5;
     }
 }
@@ -1260,26 +1260,26 @@ void func_08108650(void) {
     if (gUnk_02035FCA == 2) {
         switch (gUnk_02035E2C) {
         case 1:
-            func_0805F1C0(&gUnk_02035FDC, gUnk_09EF9618[gUnk_02035E2E].unk_04 * 3584 - 256);
-            func_0805F1C0(&gUnk_02035FE0, 0);
+            ApproachValueHalf(&gUnk_02035FDC, gUnk_09EF9618[gUnk_02035E2E].unk_04 * 3584 - 256);
+            ApproachValueHalf(&gUnk_02035FE0, 0);
             DrawSprite(gUnk_02035FDC >> 8, gUnk_02035FE0 >> 8, AnimUpdate(&gUnk_02035E58), gUnk_02035E50, gUnk_02035E4C, 0, 0x800, 0x7D0);
             break;
         case 0:
-            func_0805F1C0(&gUnk_02035FDC, (gUnk_02035E98 * 23 - 2) * 256);
-            func_0805F1C0(&gUnk_02035FE0, (gUnk_02035E9A * 26 + 16) * 256);
+            ApproachValueHalf(&gUnk_02035FDC, (gUnk_02035E98 * 23 - 2) * 256);
+            ApproachValueHalf(&gUnk_02035FE0, (gUnk_02035E9A * 26 + 16) * 256);
             DrawSprite(gUnk_02035FDC >> 8, gUnk_02035FE0 >> 8, AnimUpdate(&gUnk_02035E58), gUnk_02035E50, gUnk_02035E4C, 0, 0x800, 0x7D0);
             DrawSprite(gUnk_02035E98 * 23 - 3, gUnk_02035E9A * 26 + 28, AnimUpdate(&gUnk_02035E80), gUnk_02035E78, gUnk_02035E74, 0, 0x800, 0x7DA);
             break;
         case 2:
             func_0810718C();
-            func_0805F1C0(&gUnk_02035FDC, gUnk_02035FC4 * 12288 + 0x9200);
-            func_0805F1C0(&gUnk_02035FE0, gUnk_02035FC6 * 2048 + 0x1000);
+            ApproachValueHalf(&gUnk_02035FDC, gUnk_02035FC4 * 12288 + 0x9200);
+            ApproachValueHalf(&gUnk_02035FE0, gUnk_02035FC6 * 2048 + 0x1000);
             DrawSprite(gUnk_02035FDC >> 8, gUnk_02035FE0 >> 8, AnimUpdate(&gUnk_02035E58), gUnk_02035E50, gUnk_02035E4C, 0, 0x800, 0x7D0);
             DrawSprite(gUnk_02035FC4 * 48 + 133, gUnk_02035FC6 * 8 + 35, AnimUpdate(&gUnk_02035E80), gUnk_02035E78, gUnk_02035E74, 0, 0x800, 0x7DA);
             break;
         case 3:
-            func_0805F1C0(&gUnk_02035FDC, gUnk_02035FC8 == 0 ? 0x3400 : 0x7400);
-            func_0805F1C0(&gUnk_02035FE0, 0x5000);
+            ApproachValueHalf(&gUnk_02035FDC, gUnk_02035FC8 == 0 ? 0x3400 : 0x7400);
+            ApproachValueHalf(&gUnk_02035FE0, 0x5000);
             DrawSprite(gUnk_02035FDC >> 8, gUnk_02035FE0 >> 8, AnimUpdate(&gUnk_02035E58), gUnk_02035E50, gUnk_02035E4C, 0, 0, 0);
 
             if (gUnk_02035FA8 != 0) {

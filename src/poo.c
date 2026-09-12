@@ -447,7 +447,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
             break;
         }
 
-        if (func_08005AC4((AnimState*)w->unk_0C) == 0) {
+        if (AnimIsFrameEnding((AnimState*)w->unk_0C) == 0) {
             break;
         }
 
@@ -581,7 +581,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
             break;
         }
 
-        if (func_08005AC4((AnimState*)w->unk_0C) != 0) {
+        if (AnimIsFrameEnding((AnimState*)w->unk_0C) != 0) {
             func_080C8A28(w);
         }
         w->unk_DA = 0;
@@ -592,7 +592,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
             break;
         }
 
-        if (func_08005AC4((AnimState*)w->unk_0C) == 0) {
+        if (AnimIsFrameEnding((AnimState*)w->unk_0C) == 0) {
             break;
         }
         func_080C8A3C(w);
@@ -1654,7 +1654,7 @@ void func_080CAA50(PooSoraWork* w, s32 b, u16 c) {
     }
     w->unk_A4 = b;
     e = &gUnk_096FCF54[b][d];
-    func_08005974(w->unk_08, (u8)e->unk_0C, c, e->unk_04, e->unk_00);
+    AnimChangeWithTables(w->unk_08, (u8)e->unk_0C, c, e->unk_04, e->unk_00);
     func_08002A10(w->tiles, e->unk_08);
 }
 
@@ -3507,7 +3507,7 @@ void task_poo_poohstump_3(PooStumpWork* w) {
 void func_080CD854(PooAnimWork* w, s32 b, u16 c) {
     if (w->unk_26 != b) {
         w->unk_26 = b;
-        func_08005974(w->unk_0C, gUnk_096FD47C[b].unk_0C, c, gUnk_096FD47C[b].unk_00, gUnk_096FD47C[b].unk_04);
+        AnimChangeWithTables(w->unk_0C, gUnk_096FD47C[b].unk_0C, c, gUnk_096FD47C[b].unk_00, gUnk_096FD47C[b].unk_04);
         func_08002A10(w->unk_00, gUnk_096FD47C[b].unk_08);
     }
 }
@@ -3857,7 +3857,7 @@ u8 task_poo_owl_1(PooOwlWork* w) {
 
             if (AnimGetFrame(w->unk_0C) > 3) {
                 if (w->unk_4A != 0) {
-                    func_0800592C(&w->unk_24.unk_08, -0x9000, w->unk_4A);
+                    ApproachValueHalfSteps(&w->unk_24.unk_08, -0x9000, w->unk_4A);
                     w->unk_4A--;
                     w->unk_24.unk_00 -= 204;
                 } else {
@@ -3917,7 +3917,7 @@ void task_poo_owl_3(PooOwlWork* w) {
 void func_080CE2C4(PooRabbitWork* w, s32 b, u16 c) {
     if (w->unk_A8 != b) {
         w->unk_A8 = b;
-        func_08005974(w->anim, gUnk_096FD50C[b].unk_0C, c, gUnk_096FD50C[b].unk_00, gUnk_096FD50C[b].unk_04);
+        AnimChangeWithTables(w->anim, gUnk_096FD50C[b].unk_0C, c, gUnk_096FD50C[b].unk_00, gUnk_096FD50C[b].unk_04);
         func_08002A10(w->tiles, gUnk_096FD50C[b].unk_08);
     }
 }
@@ -4140,7 +4140,7 @@ void func_080CE77C(PooTiggerWork* w, u16 b) {
 
     if (w->unk_26 != r) {
         w->unk_26 = r;
-        func_08005974(w->anim, gUnk_096FD59C[r].unk_0C, b, gUnk_096FD59C[r].unk_00, gUnk_096FD59C[r].unk_04);
+        AnimChangeWithTables(w->anim, gUnk_096FD59C[r].unk_0C, b, gUnk_096FD59C[r].unk_00, gUnk_096FD59C[r].unk_04);
         func_08002A10(w->tiles, gUnk_096FD59C[r].unk_08);
     }
 }
@@ -4250,8 +4250,8 @@ u8 task_poo_tiggerroo_1(PooTiggerWork* w) {
 
     if (w->unk_C0 == 2) {
         if (w->unk_BA > 0) {
-            func_0800592C(&w->unk_28, w->unk_A8, w->unk_BA);
-            func_0800592C(&w->unk_2C, w->unk_AC, w->unk_BA);
+            ApproachValueHalfSteps(&w->unk_28, w->unk_A8, w->unk_BA);
+            ApproachValueHalfSteps(&w->unk_2C, w->unk_AC, w->unk_BA);
             w->unk_BA--;
             ApproachValue((u32*)&w->unk_30, w->unk_B0, w->unk_BC);
             w->unk_BC--;
@@ -4505,7 +4505,7 @@ void task_poo_roo_3(PooRooWork* w) {
 }
 
 u8 func_080CF114(void) {
-    return func_08005AC4((u8*)gStockMesDispWork + 0x0C);
+    return AnimIsFrameEnding((u8*)gStockMesDispWork + 0x0C);
 }
 
 u8 func_080CF12C(void) {
@@ -6349,7 +6349,7 @@ void func_080D2034(PooBflyPart* p) {
 
     func_080D1FB8(p);
     d = &gUnk_09EF4C88[p->unk_4C];
-    func_08005974(p->anim, d->unk_0C, 1, d->unk_04, d->unk_00);
+    AnimChangeWithTables(p->anim, d->unk_0C, 1, d->unk_04, d->unk_00);
     func_08002A10(p->tiles, d->unk_08);
 }
 
@@ -7012,10 +7012,10 @@ void func_080D3008(void) {
     s32 i;
 
     for (i = 0; i < 32; i++) {
-        func_080062F4(i, 1);
+        FadeSetPaletteExcluded(i, 1);
     }
-    func_080062F4(10, 0);
-    func_08006238(0, 16, 16);
+    FadeSetPaletteExcluded(10, 0);
+    FadeToAmount(0, 16, 16);
 }
 
 void func_080D3034(s16 a) {

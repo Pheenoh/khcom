@@ -136,7 +136,7 @@ void func_081149B8(SrollBCharWork* w) {
 
     def = w->unk_08->unk_00;
     gfx = def->unk_00;
-    func_08005974(&w->anim, def->unk_0C, def->unk_0E, gfx->unk_04, gfx->unk_00);
+    AnimChangeWithTables(&w->anim, def->unk_0C, def->unk_0E, gfx->unk_04, gfx->unk_00);
     func_08002A10(w->tiles, gfx->unk_08);
     w->unk_08->unk_14 &= 0xFFFE;
 }
@@ -167,9 +167,9 @@ s32 task_sroll_b_char_1(SrollBCharWork* w) {
     }
 
     if ((w->unk_08->unk_16 & 4) == 0) {
-        func_080062F4((w->palette->unk_06 & 15) + 16, 0);
+        FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 0);
     } else {
-        func_080062F4((w->palette->unk_06 & 15) + 16, 1);
+        FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 1);
     }
 
     AnimUpdate(&w->anim);
@@ -256,7 +256,7 @@ void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
     AnimStart(anim, a->unk_10, 0);
 
     for (i = 0; i < 2; i++) {
-        func_080062F4((w->palette->unk_06 + i) % 16 + 16, 1);
+        FadeSetPaletteExcluded((w->palette->unk_06 + i) % 16 + 16, 1);
     }
 }
 
@@ -318,7 +318,7 @@ void task_sroll_b_secn_0(SrollBSecnWork* w, SrollBSecnArg* a) {
     }
 
     for (i = 0; i < 8; i++) {
-        func_080062F4((w->palette->unk_06 + i) % 16 + 16, 1);
+        FadeSetPaletteExcluded((w->palette->unk_06 + i) % 16 + 16, 1);
     }
 }
 
@@ -333,7 +333,7 @@ u8 task_sroll_b_secn_1(SrollBSecnWork* w) {
     }
 
     if (y <= 159) {
-        func_0800592C(&w->unk_04, 0x7800, 20);
+        ApproachValueHalfSteps(&w->unk_04, 0x7800, 20);
 
         if (abs(w->unk_04 - 0x7800) <= 255) {
             w->unk_04 = 0x7800;
@@ -408,7 +408,7 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
         AnimStart(anim, w->unk_04, 0);
         break;
     }
-    func_080062F4((w->palette->unk_06 & 15) + 16, 0);
+    FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 0);
 }
 
 u8 task_sroll_b_crtn_1(SrollBCrtnWork* w) {
@@ -640,7 +640,7 @@ u8 task_sroll_tmr_1(SrollTmrWork* w) {
             w->unk_00 = r;
         }
     }
-    func_080062F4((w->palette->unk_06 & 15) + 16, 1);
+    FadeSetPaletteExcluded((w->palette->unk_06 & 15) + 16, 1);
     w->unk_04++;
     return r;
 }

@@ -215,7 +215,7 @@ void mode_worldinspect_0(void) {
     p = &gUnk_020354D4;
     *p = EwramAlloc(0x500);
     SpriteReset();
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     SetBgMode0();
     SetupBg(0, 0, 0x1C, 0);
     SetupBg(1, 0, 0x1D, 0);
@@ -461,12 +461,12 @@ void mode_worldinspect_1(void) {
         ApproachValue(&gUnk_020354C8[1], 0xA800, gUnk_020354C2);
         gUnk_020354C2--;
         if (gUnk_020354C2 <= 0) {
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
             gUnk_020354C0 = 5;
         }
         break;
     case 5:
-        if (!func_08006314()) {
+        if (!FadeIsActive()) {
             func_080E052C(gUnk_020354E0);
         }
         break;
@@ -745,8 +745,8 @@ void func_08100980(void) {
         DrawSprite((s16)(gUnk_09EF9384[gUnk_020354E8].unk_08 * 8 + 22),
             (s16)(gUnk_09EF9384[gUnk_020354E8].unk_0A * 8 + 12),
             AnimUpdate(&gUnk_02035520), gUnk_02035518, gUnk_0203551C, 0, 0x800, 0x898);
-        func_0805F1C0(&gUnk_020357B4, (gUnk_09EF9384[gUnk_020354E8].unk_08 << 11) + 0x2000);
-        func_0805F1C0(&gUnk_020357B8, (gUnk_09EF9384[gUnk_020354E8].unk_0A << 11) + 0xFFFFFA00);
+        ApproachValueHalf(&gUnk_020357B4, (gUnk_09EF9384[gUnk_020354E8].unk_08 << 11) + 0x2000);
+        ApproachValueHalf(&gUnk_020357B8, (gUnk_09EF9384[gUnk_020354E8].unk_0A << 11) + 0xFFFFFA00);
         DrawSprite(gUnk_020357B4 >> 8, gUnk_020357B8 >> 8, AnimUpdate(&gUnk_02035558),
             gUnk_02035550, gUnk_02035554, 0, 0x800, 0x7D0);
     }

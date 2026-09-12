@@ -46,7 +46,7 @@ void func_08012728(s16 a) {
 
         if (gUnk_02034928->unk_34 & 8) {
             gUnk_02034928->unk_34 &= ~8;
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
         }
     }
 }
@@ -56,7 +56,7 @@ void func_08012798(u16 a, u16 bg) {
     gUnk_02034928 = EwramAlloc(0x50);
 
     for (i = 10; i < 16; i++) {
-        func_080062F4(i, 1);
+        FadeSetPaletteExcluded(i, 1);
     }
 
     if (a == 0) {
@@ -121,7 +121,7 @@ void func_08012908(void) {
         gUnk_02034928->unk_34 &= ~2;
 
         if (gUnk_02034928->unk_34 & 8) {
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
         }
         return;
     }
@@ -195,7 +195,7 @@ void func_08012AAC(u16 a, s32 x, s32 y, s32 z) {
         m4aSongNumStart(0x206);
         break;
     }
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
     gUnk_02034928->unk_04 = func_08012908;
 }
@@ -333,7 +333,7 @@ void func_08012E44(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
         gUnk_02034928->unk_34 |= 1;
         gUnk_02034928->unk_1C = -0x100;
     }
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
@@ -366,7 +366,7 @@ void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
         gUnk_02034928->unk_1C = 0x180;
     }
     gUnk_02034928->unk_20 = 0x180;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08013070(void) {
@@ -507,7 +507,7 @@ void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
         gUnk_02034928->unk_1C = -0x100;
         gUnk_02034928->unk_34 |= 1;
     }
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -771,7 +771,7 @@ void func_08013A68(s32 x, s32 y, s32 z) {
     func_08006778(gUnk_09EDA6C0, sx, sy);
     m4aSongNumStart(0x207);
     gUnk_02034928->unk_04 = func_08012908;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08013B00(void) {
@@ -846,7 +846,7 @@ void func_08013CB4(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q) {
     gUnk_02034928->unk_48 = q;
     gUnk_02034928->unk_04 = func_08013B00;
     gUnk_02034928->unk_26 = a;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -976,7 +976,7 @@ void func_08014020(s32 x, s32 y, s32 z) {
     gUnk_02034928->unk_04 = func_08014000;
     m4aSongNumStart(0x22C);
     gUnk_02034928->unk_34 |= 0x10;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -1000,7 +1000,7 @@ void func_080140E0(s32 x, s32 y, s32 z) {
     WorldToScreen(&sx, &sy, x, y, z);
     func_08006778(gUnk_09EDA8E8, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -1046,7 +1046,7 @@ void func_080141FC(BtlObj* p) {
     func_08006778(gUnk_09EDA768, sx, sy);
     func_08006B34(4);
     gUnk_02034928->unk_04 = func_080141D4;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08014294(void) {
@@ -1106,7 +1106,7 @@ void func_0801435C(s32 x, s32 y, s32 z, s32 w, s32 v) {
     func_08006778(gUnk_09EDA768, sx, sy);
     func_08006B34(4);
     gUnk_02034928->unk_04 = func_08014294;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_0801440C(void) {
@@ -1197,7 +1197,7 @@ void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 paramA, s32 paramB) {
     gUnk_02034928->unk_04 = func_0801440C;
     gUnk_02034928->unk_0A = a;
     gUnk_02034928->unk_0C = b;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08014654(void) {
@@ -1237,7 +1237,7 @@ void func_080146A8(s32 x, s32 y, s32 z) {
     func_08006B34(0);
     gUnk_02034928->unk_04 = func_08014654;
     gUnk_02034928->unk_08 = 0;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -1649,7 +1649,7 @@ void func_080150D8(s32 x, s32 y, s32 z, u8 f) {
     if (f == 0) {
         gUnk_02034928->unk_34 |= 1;
     }
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
     func_08006B34(3);
 }
@@ -1707,7 +1707,7 @@ void func_08015228(s32 x, s32 y, s32 z, s32 s) {
     func_08006778(gUnk_09EDA9F0, sx, sy);
     func_08006B34(0);
     gUnk_02034928->unk_04 = func_0801519C;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -1715,8 +1715,8 @@ void func_080152DC(void) {
     switch (gUnk_02034928->unk_26) {
     case 0:
         if (gUnk_02034928->unk_08 > 30) {
-            func_08006184(2, 60);
-            func_080063A8();
+            FadeStartOut(2, 60);
+            FadeLock();
             gUnk_02034928->unk_08 = 0;
             gUnk_02034928->unk_26 = 1;
         } else {
@@ -1724,10 +1724,10 @@ void func_080152DC(void) {
         }
         break;
     case 1:
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             func_08006B4C();
-            func_08006120(2, 120);
-            func_080063A8();
+            FadeStartIn(2, 120);
+            FadeLock();
             gUnk_02034928->unk_04 = 0;
             gUnk_02034928->unk_34 &= ~2;
         }
@@ -1761,7 +1761,7 @@ void func_080153C8(void) {
     case 0:
         t = gUnk_02034928->unk_08;
         SetBlendAlpha(16, t);
-        func_0800592C(&gUnk_02034928->unk_1C, 0x100, 17 - t);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_1C, 0x100, 17 - t);
         gUnk_02034928->unk_20 = gUnk_02034928->unk_1C;
 
         if (t > 15) {
@@ -1831,7 +1831,7 @@ void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_48 = s;
     gUnk_02034928->unk_3C = t;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_080155BC(s32 x, s32 y, s32 z, s32 w) {
@@ -1857,7 +1857,7 @@ void func_080155BC(s32 x, s32 y, s32 z, s32 w) {
     m4aSongNumStart(0x201);
     func_08011F78(w, gUnk_02034928->unk_10, gUnk_02034928->unk_14, gUnk_02034928->unk_18, 16, 16, 256);
     gUnk_02034928->unk_04 = func_08012908;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08015698(void) {
@@ -1934,7 +1934,7 @@ void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s) {
     gUnk_02034928->unk_48 = s;
     gUnk_02034928->unk_04 = func_08015698;
     gUnk_02034928->unk_26 = a;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_080158E8(void) {
@@ -2076,7 +2076,7 @@ void func_08015B50(u16 a, s32 x, s32 y, s32 z, u8 f, s32 w) {
     func_08006778(gUnk_09EDAA68, sx, sy);
     func_08006B34(0);
     gUnk_02034928->unk_04 = func_080158E8;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08015C80(s32 x, s32 y, s32 z) {
@@ -2172,7 +2172,7 @@ void func_08015E3C(void) {
         if ((s16)t > 32) {
             func_08011F78(87, gUnk_02034928->unk_10, gUnk_02034928->unk_14, 0, 0x100, 0x100, 0x100);
             func_08019050(1, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
-            func_08006120(2, 60);
+            FadeStartIn(2, 60);
             gUnk_02034928->unk_08 = 0;
             gUnk_02034928->unk_26++;
         } else {
@@ -2216,14 +2216,14 @@ void func_08015F3C(s32 x, s32 y, s32 z) {
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_34 |= 0x10;
     gUnk_02034928->unk_04 = func_08015E3C;
-    func_08006184(2, 40);
+    FadeStartOut(2, 40);
     func_08019050(80, 204, x, y + z + 0x2000);
 }
 
 void func_08015FF4(void) {
     if (gUnk_02034928->unk_08 > 0) {
-        func_0800592C(&gUnk_02034928->unk_1C, 0x100, gUnk_02034928->unk_08);
-        func_0800592C(&gUnk_02034928->unk_20, 0x100, gUnk_02034928->unk_08);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_1C, 0x100, gUnk_02034928->unk_08);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_20, 0x100, gUnk_02034928->unk_08);
         gUnk_02034928->unk_08--;
     }
     func_08012908();
@@ -2414,7 +2414,7 @@ void func_08016468(void) {
         gUnk_02034928->unk_1C = (gSineTable[((u16)gUnk_02034928->unk_08 * 4) & 0xFF] >> 3) + 89;
 
         if (gUnk_02034928->unk_0A > 0) {
-            func_0800592C(&gUnk_02034928->unk_18, gUnk_02034928->unk_30 - 0x2000, gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_18, gUnk_02034928->unk_30 - 0x2000, gUnk_02034928->unk_0A);
             gUnk_02034928->unk_0A--;
         } else {
             gUnk_02034928->unk_26 = 1;
@@ -2435,9 +2435,9 @@ void func_08016468(void) {
         o = func_08016320();
 
         if (o != 0) {
-            func_0800592C(&gUnk_02034928->unk_10, o->unk_004, gUnk_02034928->unk_0A);
-            func_0800592C(&gUnk_02034928->unk_14, o->unk_008, gUnk_02034928->unk_0A);
-            func_0800592C(&gUnk_02034928->unk_18, o->unk_00C - (o->unk_0A2 << 8), gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_10, o->unk_004, gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_14, o->unk_008, gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_18, o->unk_00C - (o->unk_0A2 << 8), gUnk_02034928->unk_0A);
         }
         gUnk_02034928->unk_0A--;
 
@@ -2486,7 +2486,7 @@ void func_080165DC(s32 x, s32 y, s32 z) {
     gUnk_02034928->unk_20 = 89;
     gUnk_02034928->unk_04 = func_08016468;
     m4aSongNumStart(0x297);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08016684(s32 x, s32 y, s32 z) {
@@ -2552,8 +2552,8 @@ void func_080167F8(void) {
     switch (gUnk_02034928->unk_26) {
     case 0:
         SetBlendAlpha(16, (gUnk_02034928->unk_08 >> 1) + 8);
-        func_0800592C(&gUnk_02034928->unk_1C, gUnk_02034928->unk_28, 17 - gUnk_02034928->unk_08);
-        func_0800592C(&gUnk_02034928->unk_20, gUnk_02034928->unk_2C, 17 - gUnk_02034928->unk_08);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_1C, gUnk_02034928->unk_28, 17 - gUnk_02034928->unk_08);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_20, gUnk_02034928->unk_2C, 17 - gUnk_02034928->unk_08);
 
         if (gUnk_02034928->unk_08 > 15) {
             gUnk_02034928->unk_08 = 0;
@@ -2610,7 +2610,7 @@ void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a) {
     m4aSongNumStart(0x282);
     gUnk_02034928->unk_04 = func_080167F8;
     func_08006B34(0);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_080169A0(s32 x, s32 y, s32 z, u8 f) {
@@ -2637,7 +2637,7 @@ void func_080169A0(s32 x, s32 y, s32 z, u8 f) {
     gUnk_02034928->unk_20 = 0x100;
     gUnk_02034928->unk_04 = func_0801519C;
     func_08006B34(0);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -2681,7 +2681,7 @@ void func_08016AF4(s32 x, s32 y, s32 z, u8 f, s32 w) {
     m4aSongNumStart(0x27E);
     gUnk_02034928->unk_04 = func_08016A64;
     func_08006B34(0);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08016BCC(s32 x, s32 y) {
@@ -2719,7 +2719,7 @@ void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a) {
     gUnk_02034928->unk_20 = w;
     gUnk_02034928->unk_04 = func_0801519C;
     func_08006B34(0);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08016D00(void) {
@@ -2832,7 +2832,7 @@ void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w) {
         gUnk_02034928->unk_34 |= 1;
         gUnk_02034928->unk_1C = -0x100;
     }
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08017008(s32 x, s32 y, s32 z) {
@@ -2851,7 +2851,7 @@ void func_08017008(s32 x, s32 y, s32 z) {
     WorldToScreen(&sx, &sy, x, y, z);
     func_08006778(gUnk_09EDA858, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_0801709C(void) {
@@ -2940,7 +2940,7 @@ void func_08017260(s32 x, s32 y, s32 z, s32 s) {
     func_08006778(gUnk_09EDA5A0, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
     func_08006B34(0);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -2961,7 +2961,7 @@ void func_080172F8(s32 x, s32 y, s32 z, s32 s) {
     func_08006778(gUnk_09EDA6F0, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
     func_08006B34(0);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08017390(s32 x, s32 y, s32 z) {
@@ -2978,11 +2978,11 @@ void func_08017390(s32 x, s32 y, s32 z) {
     WorldToScreen(&sx, &sy, x, y, z);
     func_08006778(gUnk_09EDAB88, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
 }
 void func_08017410(void) {
     if (gUnk_02034928->unk_0C > 0) {
-        func_0800592C(&gUnk_02034928->unk_1C, 0x200, gUnk_02034928->unk_0C);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_1C, 0x200, gUnk_02034928->unk_0C);
         gUnk_02034928->unk_0C--;
     }
 
@@ -3059,7 +3059,7 @@ void func_08017514(s32 x, s32 y, s32 z, s32 w) {
     WorldToScreen(&sx, &sy, x, y, z);
     func_08006778(gUnk_09EDAC00, sx, sy);
     gUnk_02034928->unk_04 = func_08017410;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_080175BC(BtlObj* a, BtlObj* b, u8 c, u8 d) {
@@ -3143,12 +3143,12 @@ void func_080177EC(void) {
         v = 17 - gUnk_02034928->unk_08;
 
         if (gUnk_02034928->unk_34 & 1) {
-            func_0800592C(&gUnk_02034928->unk_1C, -0x100, v);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_1C, -0x100, v);
         } else {
-            func_0800592C(&gUnk_02034928->unk_1C, 0x100, v);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_1C, 0x100, v);
         }
 
-        func_0800592C(&gUnk_02034928->unk_20, 0x100, v);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_20, 0x100, v);
         SetBlendAlpha(16, gUnk_02034928->unk_08);
 
         if (gUnk_02034928->unk_08 > 15) {
@@ -3247,7 +3247,7 @@ void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f) {
     func_08006778(gUnk_09EDAC18, sx, sy);
     gUnk_02034928->unk_04 = func_080177EC;
     func_08006B34(0);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08017AC0(void) {
@@ -3315,7 +3315,7 @@ void func_08017B74(s32 x, s32 w) {
     SetBlendAlpha(16, 8);
     gUnk_02034928->unk_04 = func_08017AC0;
     func_08006B34(0);
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08017C54(void) {
@@ -3440,7 +3440,7 @@ void func_08017F70(s32 x, s32 y, s32 z, s32 w) {
     gUnk_02034928->unk_0A = func_08006BA0(func_08006BA8());
     gUnk_02034928->unk_34 |= 0x20;
     gUnk_02034928->unk_04 = func_08017EF4;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -3463,7 +3463,7 @@ void func_0801801C(s32 x, s32 y, s32 z, s32 w) {
     gUnk_02034928->unk_0A = func_08006BA0(func_08006BA8());
     gUnk_02034928->unk_34 |= 0x20;
     gUnk_02034928->unk_04 = func_08017EF4;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -3522,7 +3522,7 @@ void func_08018184(s32 x, s32 y, s32 z, s32 w) {
     gUnk_02034928->unk_34 |= 0x10;
     m4aSongNumStart(0x2AE);
     gUnk_02034928->unk_04 = func_080180C8;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08018240(void) {
@@ -3609,7 +3609,7 @@ void func_0801836C(s32 x, s32 y, s32 z, s32 w, s32 v) {
     func_08006778(&gUnk_09EDACC0[0x18], sx, sy);
     gUnk_02034928->unk_26 = 0;
     gUnk_02034928->unk_04 = func_08018240;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -3657,7 +3657,7 @@ void func_0801853C(s32 x, s32 y, s32 z, s32 s) {
     WorldToScreen(&sx, &sy, x, y, z);
     func_08006778(gUnk_09EDACF0, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_080185D0(void) {
@@ -3671,9 +3671,9 @@ void func_080185D0(void) {
     switch (gUnk_02034928->unk_26) {
     case 0:
         if (gUnk_02034928->unk_34 & 1) {
-            func_0800592C(&gUnk_02034928->unk_1C, -204, gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_1C, -204, gUnk_02034928->unk_0A);
         } else {
-            func_0800592C(&gUnk_02034928->unk_1C, 204, gUnk_02034928->unk_0A);
+            ApproachValueHalfSteps(&gUnk_02034928->unk_1C, 204, gUnk_02034928->unk_0A);
         }
         gUnk_02034928->unk_0A--;
 
@@ -3753,7 +3753,7 @@ void func_08018724(s32 x, s32 y, s32 z, u8 f, s32 v) {
     }
     func_08006B34(3);
     gUnk_02034928->unk_04 = func_080185D0;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -3801,7 +3801,7 @@ void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w) {
     WorldToScreen(&sx, &sy, x, y, z);
     func_08006778(gUnk_09EDAD20, sx, sy);
     gUnk_02034928->unk_04 = func_0801884C;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 
@@ -3836,7 +3836,7 @@ void func_080189DC(s32 x, s32 y, s32 z, s32 s) {
     WorldToScreen(&sx, &sy, x, y, z);
     func_08006778(gUnk_09EDAD68, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08018A70(s32 x, s32 y, s32 z, s32 s) {
@@ -3855,7 +3855,7 @@ void func_08018A70(s32 x, s32 y, s32 z, s32 s) {
     WorldToScreen(&sx, &sy, x, y, z);
     func_08006778(gUnk_09EDAD68, sx, sy);
     gUnk_02034928->unk_04 = func_08012908;
-    func_08006238(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
 void func_08018B04(s32 x, s32 y, s32 z, s32 s) {
@@ -3879,8 +3879,8 @@ void func_08018B78(void) {
     switch (gUnk_02034928->unk_26) {
     case 0:
         ApproachValue(&gUnk_02034928->unk_3C, 0xA00, gUnk_02034928->unk_0A);
-        func_0800592C(&gUnk_02034928->unk_1C, 460, gUnk_02034928->unk_0A);
-        func_0800592C(&gUnk_02034928->unk_20, 512, gUnk_02034928->unk_0A);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_1C, 460, gUnk_02034928->unk_0A);
+        ApproachValueHalfSteps(&gUnk_02034928->unk_20, 512, gUnk_02034928->unk_0A);
         SetBlendAlpha(16, gUnk_02034928->unk_3C >> 8);
         gUnk_02034928->unk_0A--;
 

@@ -58,7 +58,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 173);
         break;
@@ -67,7 +67,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 133);
         break;
@@ -76,7 +76,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 134);
         break;
@@ -85,7 +85,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 139);
         break;
@@ -94,7 +94,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 160);
         break;
@@ -103,7 +103,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 159);
         break;
@@ -112,7 +112,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 136);
         break;
@@ -121,7 +121,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 137);
         break;
@@ -130,7 +130,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 135);
         break;
@@ -139,7 +139,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         m4aSongNumStart(106);
         func_080A4188(&gUnk_02034A60, 138);
         break;
@@ -149,7 +149,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 162);
         break;
     case 114:
@@ -158,7 +158,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 161);
         break;
     case 57:
@@ -167,7 +167,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 163);
         break;
     case MSG_CODE(143):
@@ -177,7 +177,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 165);
         break;
     case MSG_CODE(145):
@@ -188,7 +188,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 166);
         break;
     case 3:
@@ -210,7 +210,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 168);
         break;
     case 54:
@@ -229,7 +229,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 169);
         break;
     case 5:
@@ -238,7 +238,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 175);
         break;
     case 6:
@@ -256,7 +256,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 170);
         break;
     case 119:
@@ -265,7 +265,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 172);
         break;
     case 60:
@@ -274,7 +274,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 164);
         break;
     case 27:
@@ -285,7 +285,7 @@ void func_08061824(void) {
         DisableBg(1);
         DisableBg(2);
         DisableBg(3);
-        func_08006120(0, 1);
+        FadeStartIn(0, 1);
         func_080A4188(&gUnk_02034A60, 174);
         break;
     }
@@ -1509,7 +1509,7 @@ void func_0806422C(void) {
                 ReleaseObjTiles((void*)gUnk_02034A80[i].unk_08[j]);
             }
         }
-        func_080062F4(((Handle0806180C*)gUnk_02034A80[i].unk_48)->unk_06, 0);
+        FadeSetPaletteExcluded(((Handle0806180C*)gUnk_02034A80[i].unk_48)->unk_06, 0);
         ReleaseObjPalette((u8*)gUnk_02034A80[i].unk_48);
     }
     EwramFree(gUnk_02034A80);
@@ -1912,7 +1912,7 @@ u16 func_08064B80(s32 a) {
             break;
         }
 
-        func_080062F4(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
     }
 
     gUnk_02034A90 = 0;
@@ -1945,8 +1945,8 @@ u16 func_08064C34(s32 a) {
         }
 
         gUnk_02034A84[i].unk_10 = _08066468(5);
-        func_080062F4(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
-        func_080062F4(gUnk_02034A84[i].unk_10->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_10->unk_06 + 16, 1);
     }
 
     gUnk_02034A90 = 0;
@@ -1980,8 +1980,8 @@ u16 func_08064D04(s32 a) {
         }
 
         gUnk_02034A84[i].unk_10 = _08066468(3);
-        func_080062F4(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
-        func_080062F4(gUnk_02034A84[i].unk_10->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_0C->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(gUnk_02034A84[i].unk_10->unk_06 + 16, 1);
     }
 
     gUnk_02034A90 = 0;
@@ -6801,8 +6801,8 @@ u16 func_0806BA74(s32 mode, s32 flag) {
         } else {
             gUnk_02034A88[i].unk_10 = _08066468(5);
         }
-        func_080062F4(gUnk_02034A88[i].unk_0C->unk_06 + 0x10, 1);
-        func_080062F4(gUnk_02034A88[i].unk_10->unk_06 + 0x10, 1);
+        FadeSetPaletteExcluded(gUnk_02034A88[i].unk_0C->unk_06 + 0x10, 1);
+        FadeSetPaletteExcluded(gUnk_02034A88[i].unk_10->unk_06 + 0x10, 1);
     }
     gUnk_02034A90 = 0;
     return gUnk_02034A88[0].unk_0C->unk_06;
@@ -7808,10 +7808,10 @@ void func_0806CD60(ContinueWork* p) {
     p->unk_54 = 0x4000;
     p->unk_64 = 0;
     p->unk_66 = 0;
-    func_08006120(1, 24);
+    FadeStartIn(1, 24);
 
     for (i = 0; i < 5; i++) {
-        func_080062F4(((Handle0806180C*)p->palette)->unk_06 + i, 0);
+        FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + i, 0);
     }
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
@@ -7875,10 +7875,10 @@ void func_0806CF04(ContinueWork* p) {
     p->unk_54 = 0x4000;
     p->unk_64 = 0;
     p->unk_66 = 0;
-    func_08006120(1, 24);
+    FadeStartIn(1, 24);
 
     for (i = 0; i < 5; i++) {
-        func_080062F4(((Handle0806180C*)p->palette)->unk_06 + i, 0);
+        FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + i, 0);
     }
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
@@ -7893,7 +7893,7 @@ s32 func_0806D0A8(ContinueWork* p) {
     gBldAlpha = p->unk_66;
 
     if (p->unk_6A == 0) {
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             p->unk_6A = 1;
         }
     }
@@ -7928,10 +7928,10 @@ s32 func_0806D0A8(ContinueWork* p) {
         if ((GetKeysHeld() & 1) != 0) {
             switch (p->unk_60) {
             case 0:
-                func_08006184(0, 96);
+                FadeStartOut(0, 96);
                 break;
             case 1:
-                func_08006184(0, 96);
+                FadeStartOut(0, 96);
                 break;
             }
 
@@ -7954,7 +7954,7 @@ s32 func_0806D0A8(ContinueWork* p) {
             p->unk_66 = 0x1000;
         }
 
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             DisableBg(0);
             DisableBg(2);
             LoadBgMap(0, gUnk_08125E24, 0x800);
@@ -8027,7 +8027,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
 
         if (work->unk_34->unk_08->unk_14 & 0x80) {
             SetBackdropColor(31, 31, 31);
-            func_08006120(1, 0x40);
+            FadeStartIn(1, 0x40);
         }
 #ifdef VERSION_EU
         u = gUnk_09EE3CA0[work->unk_2C];
@@ -8067,9 +8067,9 @@ void event_seq_0(EventSeqWork* work, u8* a) {
             }
         }
         if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0) {
-            func_08006120(0, 64);
+            FadeStartIn(0, 64);
         } else if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0x80) {
-            func_08006120(1, 120);
+            FadeStartIn(1, 120);
         }
         work->unk_38 = 0;
         eu_0806C974(work);
@@ -8340,9 +8340,9 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
 #ifndef VERSION_EU
     if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0) {
-        func_08006120(0, 64);
+        FadeStartIn(0, 64);
     } else if ((work->unk_34->unk_08->unk_14 & 0xFF0) == 0x80) {
-        func_08006120(1, 120);
+        FadeStartIn(1, 120);
     }
 
     work->unk_38 = 0;
@@ -8363,7 +8363,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     return 1;
 }
 u8 func_0806D808(void) {
-    u8 r = func_08006314();
+    u8 r = FadeIsActive();
     u8 v;
 
     if (r != 0) {
@@ -8401,11 +8401,11 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         gUnk_02039DC8->unk_8A = 64;
         p->unk_2F = 1;
         gUnk_02039DC8->unk_82 = 1;
-        func_08006184(0, 64);
+        FadeStartOut(0, 64);
         SetTaskUpdate(a, (u32)func_0806D808);
 
         for (i = 0; i < 32; i++) {
-            func_080062F4(i, 0);
+            FadeSetPaletteExcluded(i, 0);
         }
         return 1;
     }
@@ -8416,9 +8416,9 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         s32 t = p->unk_34->unk_08->unk_14 & 0xFF0;
 
         if (t == 0) {
-            func_08006120(0, 64);
+            FadeStartIn(0, 64);
         } else if (t == 128) {
-            func_08006120(1, 120);
+            FadeStartIn(1, 120);
         }
         p->unk_38++;
     }
@@ -8436,9 +8436,9 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
 
     t = gUnk_09EE3FB4[p->unk_2C];
 
-    if (gUnk_02039DC8->unk_6C >= t->unk_18 && p->unk_2F == 0 && func_08006314() == 0) {
+    if (gUnk_02039DC8->unk_6C >= t->unk_18 && p->unk_2F == 0 && FadeIsActive() == 0) {
         if (gUnk_02039DC8->unk_7F == 0) {
-            func_08006184(0, 64);
+            FadeStartOut(0, 64);
         }
         p->unk_2F = 1;
         gUnk_02039DC8->unk_82 = 1;
@@ -8446,10 +8446,10 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
 
     if (p->unk_2F == 1) {
         for (i = 0; i < 32; i++) {
-            func_080062F4(i, 0);
+            FadeSetPaletteExcluded(i, 0);
         }
 
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             gUnk_02039DC8->unk_7A = 0;
             return 0;
         }
@@ -11464,7 +11464,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     LoadPalette(gUnk_09611AB8, pal, 32);
 
                     if ((e->unk_14 & 0x80) != 0) {
-                        func_080062F4(15, 1);
+                        FadeSetPaletteExcluded(15, 1);
                     }
                     gUnk_02039DC8->unk_81 = 1;
 
@@ -11483,7 +11483,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                         p->palette = LoadObjPalette(gUnk_09614718, 32);
 
                         if ((e->unk_14 & 0x80) != 0) {
-                            func_080062F4(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
+                            FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
                         }
                     }
                     _08073E6C(&p->unk_2C);
@@ -11517,7 +11517,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             LoadPalette(gUnk_09611AB8, pal, 32);
 
             if ((e->unk_14 & 0x80) != 0) {
-                func_080062F4(15, 1);
+                FadeSetPaletteExcluded(15, 1);
             }
             gUnk_02039DC8->unk_81 = 1;
 
@@ -11536,7 +11536,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                 p->palette = LoadObjPalette(gUnk_09614718, 32);
 
                 if ((e->unk_14 & 0x80) != 0) {
-                func_080062F4(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
+                FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
                 }
             }
             _08073E6C(&p->unk_2C);
@@ -11561,11 +11561,11 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
     }
 
     if (gUnk_02039DC8->unk_82 == 1) {
-        func_080062F4(p->unk_1C + 16, 0);
-        func_080062F4(14, 0);
+        FadeSetPaletteExcluded(p->unk_1C + 16, 0);
+        FadeSetPaletteExcluded(14, 0);
     } else {
-        func_080062F4(p->unk_1C + 16, 1);
-        func_080062F4(14, 1);
+        FadeSetPaletteExcluded(p->unk_1C + 16, 1);
+        FadeSetPaletteExcluded(14, 1);
     }
     TaskPoolUpdate(p);
     return 1;
@@ -11598,11 +11598,11 @@ u8 func_08073170(MsgWinWork* p, void* a) {
     }
 
     if (gUnk_02039DC8->unk_82 == 1) {
-        func_080062F4(p->unk_1C + 16, 0);
-        func_080062F4(14, 0);
+        FadeSetPaletteExcluded(p->unk_1C + 16, 0);
+        FadeSetPaletteExcluded(14, 0);
     } else {
-        func_080062F4(p->unk_1C + 16, 1);
-        func_080062F4(14, 1);
+        FadeSetPaletteExcluded(p->unk_1C + 16, 1);
+        FadeSetPaletteExcluded(14, 1);
     }
     TaskPoolUpdate(p);
     return 1;
@@ -11939,9 +11939,9 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     }
 
     if (gUnk_02039DC8->unk_82 == 1) {
-        func_080062F4(((Handle0806180C*)p->palette)->unk_06 + 16, 0);
+        FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + 16, 0);
     } else {
-        func_080062F4(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(((Handle0806180C*)p->palette)->unk_06 + 16, 1);
     }
 
     p->gfx = AnimUpdate(p->anim);
@@ -12114,7 +12114,7 @@ void msgwait_0(MsgWaitWork* p, u8* arg) {
     p->tiles = AllocObjTiles(64, 0);
     p->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     LoadObjPaletteBank(p->palette->unk_06, gUnk_08F69BA4);
-    func_080062F4(p->palette->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(p->palette->unk_06 + 16, 1);
     func_08002A10(p->tiles, gUnk_09320796);
     AnimInit(p->unk_DC, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(p->unk_DC, 2, 1);
@@ -12164,7 +12164,7 @@ void msgwait_2(MsgWaitWork* p) {
     }
 }
 void msgwait_3(MsgWaitWork* p) {
-    func_080062F4(p->palette->unk_06 + 16, 0);
+    FadeSetPaletteExcluded(p->palette->unk_06 + 16, 0);
     ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->palette);
 }
@@ -12173,7 +12173,7 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_00 = AllocObjTiles(64, 0);
     p->unk_14 = LoadObjPalette(gUnk_08F69BA4, 32);
     LoadObjPaletteBank(((Handle0806180C*)p->unk_14)->unk_06, gUnk_08F69BA4);
-    func_080062F4(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
     func_08002A10(p->unk_00, gUnk_09320796);
     AnimInit((AnimState*)p->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart((AnimState*)p->anim, 2, 1);
@@ -12188,7 +12188,7 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_0C = LoadObjTiles(gUnk_093F7C9C, 4032);
     p->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
     LoadObjPaletteBank(((Handle0806180C*)p->unk_10)->unk_06, gUnk_09611AB8);
-    func_080062F4(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
     func_08065ACC(p->unk_1C, 10);
     func_08065ACC(p->unk_6C, 10);
     p->unk_18 = _08066468(1);
@@ -12373,7 +12373,7 @@ void func_080746D8(void) {
     u8 i;
 
     for (i = 0; i < 16; i++) {
-        func_080062F4(i + 16, 0);
+        FadeSetPaletteExcluded(i + 16, 0);
     }
 }
 
@@ -12435,7 +12435,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
         if (e->unk_14 & 0x10) {
             if (p->unk_15 == 0) {
                 func_080746D8();
-                func_08006120(2, e->unk_18);
+                FadeStartIn(2, e->unk_18);
 
                 if (!(e->unk_14 & 0x10000)) {
                     m4aSongNumStart(0x14F);
@@ -12449,7 +12449,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
         if (e->unk_14 & 0x20) {
             if (p->unk_15 == 0) {
                 func_080746D8();
-                func_08006184(1, e->unk_18);
+                FadeStartOut(1, e->unk_18);
                 gUnk_02039DC8->unk_7F = 1;
                 p->unk_15 = 1;
 
@@ -12462,7 +12462,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
         if (e->unk_14 & 0x40) {
             if (p->unk_15 == 0) {
                 func_080746D8();
-                func_08006184(0, e->unk_18);
+                FadeStartOut(0, e->unk_18);
                 gUnk_02039DC8->unk_7F = 1;
                 p->unk_15 = 1;
             }
@@ -12470,7 +12470,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
 
         if (e->unk_14 & 0x80) {
             if (p->unk_15 == 0) {
-                func_08006120(1, e->unk_18);
+                FadeStartIn(1, e->unk_18);
                 gUnk_02039DC8->unk_7F = 0;
                 p->unk_15 = 1;
             }
@@ -12479,7 +12479,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
         if (e->unk_14 & 0x100) {
             if (p->unk_15 == 0) {
                 func_080746D8();
-                func_08006120(0, e->unk_18);
+                FadeStartIn(0, e->unk_18);
                 gUnk_02039DC8->unk_7F = 0;
                 p->unk_15 = 1;
             }
@@ -12488,7 +12488,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
         if (e->unk_14 & 0x200) {
             if (p->unk_15 == 0) {
                 func_080746D8();
-                func_08006290(2, 16, e->unk_18);
+                FadeFromAmount(2, 16, e->unk_18);
 
                 if (!(e->unk_14 & 0x10000)) {
                     m4aSongNumStart(332);
@@ -12511,7 +12511,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
 
         if (e->unk_14 & 0x4000) {
             if (p->unk_15 == 0) {
-                func_08006120(7, e->unk_18);
+                FadeStartIn(7, e->unk_18);
             }
 
             p->unk_15 = 1;

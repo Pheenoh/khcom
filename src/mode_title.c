@@ -96,7 +96,7 @@ void mode_title_0(void) {
     TaskPoolInit(&gTitleTaskPool, 4);
     gTitleLogoTask = 0;
     gTitleObjTask = 0;
-    func_08006120(0, 0x4C);
+    FadeStartIn(0, 0x4C);
     gUnk_02034E98 = 0;
     m4aSongNumStart(0);
     gUnk_02034EC0 = 0x1E;
@@ -105,7 +105,7 @@ void mode_title_0(void) {
 void mode_title_1(void) {
     switch (gUnk_02034E98) {
     case 0:
-        if (func_08006314()) {
+        if (FadeIsActive()) {
             break;
         }
 
@@ -132,7 +132,7 @@ void mode_title_1(void) {
             func_080C75A4(1, 0x46);
 
             if (gUnk_02034EC0 == 0x46) {
-                func_08006184(1, 0x46);
+                FadeStartOut(1, 0x46);
             }
         }
 
@@ -142,7 +142,7 @@ void mode_title_1(void) {
         }
         break;
     case 2:
-        if (func_08006314()) {
+        if (FadeIsActive()) {
             break;
         }
         gUnk_02034EC0--;
@@ -154,7 +154,7 @@ void mode_title_1(void) {
         gUnk_02034EC0 = 0x28;
         break;
     case 3:
-        if (func_08006314()) {
+        if (FadeIsActive()) {
             break;
         }
 
@@ -266,13 +266,13 @@ void mode_title_1(void) {
         }
         break;
     case 9:
-        if (!func_08006314()) {
+        if (!FadeIsActive()) {
             func_080D59B4();
         }
         break;
     }
 
-    if (!func_08006314() && gUnk_02034E98 != 6) {
+    if (!FadeIsActive() && gUnk_02034E98 != 6) {
         TaskPoolUpdate(&gTitleTaskPool);
     }
     TaskPoolDraw(&gTitleTaskPool);

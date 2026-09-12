@@ -60,7 +60,7 @@ void mode_jiminy_0(void) {
     gJiminyWork->tiles = LoadObjTiles(gUnk_08C69C9C, 0x880);
 #endif
     gJiminyWork->palette = LoadObjPalette(gUnk_08F6DD64, 0x20);
-    func_080062F4(gJiminyWork->palette->unk_06 + 0x10, 1);
+    FadeSetPaletteExcluded(gJiminyWork->palette->unk_06 + 0x10, 1);
     gJiminyWork->tiles2 = LoadObjTiles(gUnk_08C6A88C, 0x40);
     gJiminyWork->palette2 = LoadObjPalette(gUnk_08F6DDE4, 0x20);
     gJiminyWork->palette3 = LoadObjPalette(gUnk_08F6DD84, 0x20);
@@ -93,7 +93,7 @@ void mode_jiminy_0(void) {
         AnimStart(&gJiminyWork->unk_C7C, 0, 1);
     }
 
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         gJiminyWork->tiles4 = AllocObjTiles(0x200, gUnk_08C6A958);
         gJiminyWork->palette5 = LoadObjPalette(gUnk_08F6DE04, 0x20);
         AnimInit(&gJiminyWork->unk_C94, gUnk_09EE2678, gUnk_09EE2668);
@@ -110,7 +110,7 @@ void mode_jiminy_0(void) {
     gJiminyWork->palette9 = LoadObjPalette(gUnk_09611AB8, 0x20);
     gJiminyWork->unk_D3C = 0;
     gJiminyWork->unk_D38 = 0x100;
-    func_08006120(0, 0x10);
+    FadeStartIn(0, 0x10);
 
     for (i = 0; i < 8; i++) {
         func_08065ACC(&gJiminyWork->unk_060[i], 0x30);
@@ -213,21 +213,21 @@ void mode_jiminy_1(void) {
         break;
     case 4:
         if (gJiminyWork->unk_048 == 0) {
-            func_08006184(0, 16);
-            func_080063A8();
+            FadeStartOut(0, 16);
+            FadeLock();
         }
 
-        if (func_08006390() > 30) {
+        if (FadeGetAmount() > 30) {
             func_080E052C(1);
         }
         break;
     case 5:
         if (gJiminyWork->unk_048 == 0) {
-            func_08006184(0, 16);
-            func_080063A8();
+            FadeStartOut(0, 16);
+            FadeLock();
         }
 
-        if (func_08006390() > 30) {
+        if (FadeGetAmount() > 30) {
             func_080E052C(0);
         }
         break;
@@ -286,8 +286,8 @@ void mode_jiminy_1(void) {
             } else {
                 gJiminyWork->unk_000 = 6;
                 gJiminyWork->unk_D2C = e2->unk_0A;
-                func_08006120(0, 5);
-                func_080063A8();
+                FadeStartIn(0, 5);
+                FadeLock();
             }
             m4aSongNumStart(0x68);
             break;
@@ -313,12 +313,12 @@ void mode_jiminy_1(void) {
                     gJiminyWork->unk_000 = 6;
                     gJiminyWork->unk_D2C = e2->unk_0C[gJiminyWork->unk_C72];
                     gJiminyWork->unk_048 = 0;
-                    func_08006120(0, 5);
-                    func_080063A8();
+                    FadeStartIn(0, 5);
+                    FadeLock();
                     break;
                 } else {
-                    func_08006120(0, 5);
-                    func_080063A8();
+                    FadeStartIn(0, 5);
+                    FadeLock();
                     gJiminyWork->unk_048 = 0;
                     gJiminyWork->unk_000 = 8;
                     gJiminyWork->unk_CD2 = gJiminyWork->unk_C72;
@@ -500,7 +500,7 @@ void mode_jiminy_1(void) {
                 gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
         }
 
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             if (gJiminyWork->unk_CAC & 4) {
                 if (gJiminyWork->unk_CC0 <= 0) {
                     DrawSprite(gJiminyWork->unk_058 >> 8, gJiminyWork->unk_05C >> 8,
@@ -961,7 +961,7 @@ void func_0805BAE4(void) {
         } else {
             gJiminyWork->unk_CAC &= ~0x10;
         }
-        if (func_08006314() != 0) {
+        if (FadeIsActive() != 0) {
             break;
         }
         if (gJiminyWork->unk_CC0 <= 0) {
@@ -1001,8 +1001,8 @@ void func_0805BAE4(void) {
         if (GetKeysPressed() & 2) {
             gJiminyWork->unk_048 = 0;
             gJiminyWork->unk_000 = 6;
-            func_08006120(0, 5);
-            func_080063A8();
+            FadeStartIn(0, 5);
+            FadeLock();
             SetModeUpdate(mode_jiminy_1);
             m4aSongNumStart(0x68);
         } else if (GetKeysPressed() & 8) {
@@ -1013,10 +1013,10 @@ void func_0805BAE4(void) {
         break;
     case 5:
         if (gJiminyWork->unk_048 == 0) {
-            func_08006184(0, 16);
-            func_080063A8();
+            FadeStartOut(0, 16);
+            FadeLock();
         }
-        if (func_08006390() > 30) {
+        if (FadeGetAmount() > 30) {
             func_080E052C(0);
         }
         break;

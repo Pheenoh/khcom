@@ -602,12 +602,12 @@ void func_0810594C(void) {
     } else if (keys & 2) {
         m4aSongNumStart(0x68);
         gUnk_02035E20 = 1;
-        func_08006184(0, 0x10);
+        FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
     } else if (keys & 8) {
         m4aSongNumStart(0x68);
         gUnk_02035E20 = 0;
-        func_08006184(0, 0x10);
+        FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
     } else if (keys & 4) {
         gUnk_02035CE0 = 0;
@@ -676,7 +676,7 @@ void func_08105BD8(void) {
         if (keys & 8) {
             m4aSongNumStart(0x68);
             gUnk_02035E20 = 0;
-            func_08006184(0, 0x10);
+            FadeStartOut(0, 0x10);
             gUnk_02035C14 = 2;
         } else if (keys & 0x82) {
             if (func_08104AA4(gUnk_02035C18) > 0) {
@@ -693,7 +693,7 @@ void func_08105BD8(void) {
             } else if (keys & 2) {
                 m4aSongNumStart(0x68);
                 gUnk_02035E20 = 1;
-                func_08006184(0, 0x10);
+                FadeStartOut(0, 0x10);
                 gUnk_02035C14 = 2;
             } else if (keys & 0x80) {
                 m4aSongNumStart(0x69);
@@ -779,7 +779,7 @@ void func_08105DE0(void) {
     } else if (keys & 8) {
         m4aSongNumStart(0x68);
         gUnk_02035E20 = 0;
-        func_08006184(0, 0x10);
+        FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
     } else if (keys & 0x20) {
         func_08105D24(card, 0);
@@ -876,7 +876,7 @@ void func_0810601C(void) {
     } else if (keys & 8) {
         m4aSongNumStart(0x68);
         gUnk_02035E20 = 0;
-        func_08006184(0, 0x10);
+        FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
     } else if (keys & 0x20) {
         gUnk_02035E10 = 0;
@@ -900,7 +900,7 @@ void func_081061DC(void) {
     } else if (keys & 8) {
         m4aSongNumStart(0x68);
         gUnk_02035E20 = 0;
-        func_08006184(0, 0x10);
+        FadeStartOut(0, 0x10);
         gUnk_02035C14 = 2;
     }
 }
@@ -936,8 +936,8 @@ void func_08106234(void) {
             DrawSprite(gUnk_02035E18 >> 8, (gUnk_02035E1C >> 8) + ((sine = gSineTable[gUnk_02035CB8]) >> 6), AnimUpdate(&gUnk_02035C88), gUnk_02035C84, gUnk_02035C80, 0, 0x801, 0x7D0);
             break;
         case 0:
-            func_0805F1C0(&gUnk_02035E18, (gUnk_02035CE0 * 23 + 181) << 8);
-            func_0805F1C0(&gUnk_02035E1C, (gUnk_02035CE2 * 26 + 40) << 8);
+            ApproachValueHalf(&gUnk_02035E18, (gUnk_02035CE0 * 23 + 181) << 8);
+            ApproachValueHalf(&gUnk_02035E1C, (gUnk_02035CE2 * 26 + 40) << 8);
             DrawSprite(gUnk_02035E18 >> 8, (gUnk_02035E1C >> 8) + ((sine = gSineTable[gUnk_02035CB8]) >> 6), AnimUpdate(&gUnk_02035C88), gUnk_02035C84, gUnk_02035C80, 0, 0x801, 0x7D0);
             DrawSprite(gUnk_02035CE0 * 23 + 165, gUnk_02035CE2 * 26 + 27, AnimUpdate(&gUnk_02035C68), gUnk_02035C48, gUnk_02035C44, 0, 0x800, 0x7DA);
             break;
@@ -950,13 +950,13 @@ void func_08106234(void) {
                 col = gUnk_02035E0C;
                 row = gUnk_02035E0E;
             }
-            func_0805F1C0(&gUnk_02035E18, (col * 48 + 64) << 8);
-            func_0805F1C0(&gUnk_02035E1C, (row * 8 + 64) << 8);
+            ApproachValueHalf(&gUnk_02035E18, (col * 48 + 64) << 8);
+            ApproachValueHalf(&gUnk_02035E1C, (row * 8 + 64) << 8);
             DrawSprite(gUnk_02035E18 >> 8, (gUnk_02035E1C >> 8) + ((sine = gSineTable[gUnk_02035CB8]) >> 6), AnimUpdate(&gUnk_02035C88), gUnk_02035C84, gUnk_02035C80, 0, 0x801, 0x7D0);
             DrawSprite(col * 48 + 53, row * 8 + 67, AnimUpdate(&gUnk_02035C68), gUnk_02035C48, gUnk_02035C44, 0, 0x800, 0x7DA);
             break;
         case 3:
-            func_0805F1C0(&gUnk_02035E14, gUnk_02035E10 == 0 ? 0x4800 : 0x8800);
+            ApproachValueHalf(&gUnk_02035E14, gUnk_02035E10 == 0 ? 0x4800 : 0x8800);
             DrawSprite(gUnk_02035E14 >> 8, 98, AnimUpdate(&gUnk_02035CC8), gUnk_02035CC4, gUnk_02035CC0, 0, 1, 0);
 
             if (gUnk_02035DF0 != 0) {

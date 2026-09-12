@@ -88,11 +88,11 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
             gUnk_02039BA0->unk_70 |= 0x100000;
             DisableBg(2);
             DisableBg(3);
-            func_08006120(0, 1);
+            FadeStartIn(0, 1);
             work->unk_26++;
         } else if (work->unk_26 == 1) {
             for (i = 0; i <= 31; i++) {
-                func_080062F4(i, 0);
+                FadeSetPaletteExcluded(i, 0);
             }
             work->unk_26++;
         } else if (work->unk_26 <= 19) {
