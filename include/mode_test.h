@@ -24,7 +24,6 @@ typedef struct FldObj {
     u8 unk_10[0x0A];
     s16 unk_1A;
     ListNode unk_1C;
-    u8 unk_2C[0x04];
     u16 unk_30;
     u8 unk_32[0x02];
 } FldObj;
@@ -40,7 +39,7 @@ typedef struct UnkStruct_02039BA0 {
     u8 unk_28[0x04];
     u8 unk_2C;
     u8 unk_2D[0x2B];
-    ListNode unk_58;
+    ListPool unk_58;
     FldObj* unk_68;
     u8 unk_6C[0x04];
     u32 unk_70;

@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "engine_math.h"
+#include "listpool.h"
 #include "anim.h"
 #include "obj.h"
 typedef struct ObjTiles {
@@ -11,8 +12,7 @@ typedef struct ObjTiles {
     u16 unk_06;
     u16 unk_08;
     u16 unk_0A;
-    u8 unk_0C[0x10];
-    u8 unk_1C[0x04];
+    ListNode unk_0C;
     u32 unk_20;
     u8 unk_24;
     u8 unk_25[0x03];
@@ -32,8 +32,7 @@ typedef struct ObjPaletteNode {
     u16 unk_06;
     u16 unk_08;
     u16 unk_0A;
-    u8 unk_0C[0x10];
-    u8 unk_1C[0x04];
+    ListNode unk_0C;
     u32 unk_20;
     struct ObjPaletteNode* self;
 } ObjPaletteNode;

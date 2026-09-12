@@ -30,8 +30,8 @@ typedef struct BtlWork {
     u16 unk_076;
     BtlObj* unk_078;
     BtlObj* unk_07C;
-    ListNode unk_080;
-    ListNode unk_090;
+    ListPool unk_080;
+    ListPool unk_090;
     s32 unk_0A0;
     u8 unk_0A4;
     u8 unk_0A5[0x03];

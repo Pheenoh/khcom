@@ -2,16 +2,10 @@
 #define GUARD_TASKPOOL_H
 
 #include "types.h"
-
-typedef struct ListNode {
-    void* owner;
-    u8 unk_04[0x04];
-    struct ListNode* next;
-    u16 flags;
-} ListNode;
+#include "listpool.h"
 
 typedef struct TaskPool {
-    ListNode head;
+    ListPool head;
     void* tasks;
 } TaskPool;
 
@@ -29,9 +23,11 @@ typedef struct Task {
     void* work;
     u8 unk_08[0x04];
     ListNode node;
-    u8 unk_1C[0x04];
     u8 (*update)(void* work, struct Task* task);
 } Task;
+
+typedef char TaskPool_size[(sizeof(TaskPool) == 0x14) ? 1 : -1];
+typedef char Task_size[(sizeof(Task) == 0x24) ? 1 : -1];
 
 Task* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 Task* TaskDestroy(TaskPool* pool, Task* task);

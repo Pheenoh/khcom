@@ -127,12 +127,12 @@ void SpriteReset(void) {
     ListPoolInit(&gSpriteWork->tilePool);
 
     for (i = 0; i < 128; i++) {
-        ListPoolAddFree(gSpriteWork->tiles[i].unk_0C, &gSpriteWork->tilePool, &gSpriteWork->tiles[i]);
+        ListPoolAddFree(&gSpriteWork->tiles[i].unk_0C, &gSpriteWork->tilePool, &gSpriteWork->tiles[i]);
     }
     ListPoolInit(&gSpriteWork->palettePool);
 
     for (i = 0; i < 16; i++) {
-        ListPoolAddFree(gSpriteWork->palettes[i].unk_0C, &gSpriteWork->palettePool,
+        ListPoolAddFree(&gSpriteWork->palettes[i].unk_0C, &gSpriteWork->palettePool,
                       &gSpriteWork->palettes[i]);
     }
     gSpriteWork->entryCount = 0;

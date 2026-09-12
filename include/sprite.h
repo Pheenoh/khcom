@@ -6,7 +6,7 @@
 #include "engine.h"
 
 typedef struct ObjListPool {
-    ListNode head;
+    ListPool head;
     u16 rangeStart;
     u16 rangeEnd;
 } ObjListPool;
