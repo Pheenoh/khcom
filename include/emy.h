@@ -8,43 +8,6 @@
 #include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
-typedef struct EmyActor {
-    s32 unk_00;
-    s32 x;
-    s32 y;
-    s32 z;
-    s32 unk_10;
-    s32 unk_14;
-    s32 unk_18;
-    u8 unk_1C;
-    u8 unk_1D;
-    u8 unk_1E;
-    u8 unk_1F;
-    u16 unk_20;
-    u8 unk_22[0x02];
-    s32 unk_24;
-    u8 unk_28[0x04];
-    s16 hp;
-    s16 maxHp;
-    u8 unk_30[0x04];
-    u64 flags;
-    u8 unk_3C[0x04];
-    u32 unk_40;
-    u8 unk_44[0x04];
-    u32 unk_48;
-    u32 unk_4C;
-    u8 unk_50[0x4C];
-    u16 unk_9C;
-    u8 unk_9E[0x04];
-    u16 unk_A2;
-    u8 unk_A4[0x14];
-    u32 unk_B8;
-    u8 unk_BC[0x12];
-    s16 unk_CE;
-    s16 unk_D0;
-    u16 unk_D2;
-    u8 unk_D4[0x3C];
-} EmyActor;
 
 typedef struct EmyDef {
     void* unk_00;
@@ -79,7 +42,7 @@ typedef struct EmyWork {
     u32 unk_020;
     u8 unk_024[0x04];
     TaskPool unk_028;
-    EmyActor unk_03C;
+    BtlObj unk_03C;
     u32 unk_14C;
     u32 unk_150;
     s16 unk_154;
@@ -318,9 +281,9 @@ u8 _0800CBDC(EmyWork* work);
 u8 _0800CDF0(EmyWork* work);
 void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
 s16 func_0800C980(EmyWork* work, s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
-void func_0801B994(EmyActor* a);
-void func_080141FC(EmyActor* a);
-void func_08019190(EmyActor* a, s32 b);
+void func_0801B994(BtlObj* a);
+void func_080141FC(BtlObj* a);
+void func_08019190(BtlObj* a, s32 b);
 void func_08012AAC(s32 a, s32 b, s32 c, s32 d);
 void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
 void func_08006B4C(void);
@@ -328,20 +291,20 @@ u8 func_08006B74(void);
 void func_0802F1E8(void);
 void func_08013480(s32 a, s32 b, s32 c);
 u8 GetAngle(s32 x0, s32 y0, s32 x1, s32 y1);
-u8 func_0801CA00(EmyActor* a);
-void func_0801BCF8(EmyActor* a);
+u8 func_0801CA00(BtlObj* a);
+void func_0801BCF8(BtlObj* a);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_080128EC(void);
 void func_080150D8(s32 x, s32 y, s32 z, u8 f);
 void func_0800CB4C(EmyWork* work);
 void func_0800CD40(EmyWork* work);
 void func_08015834(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h);
-void func_0801C700(EmyActor* a, s32* b, s32* c, s32 d);
+void func_0801C700(BtlObj* a, s32* b, s32* c, s32 d);
 void func_08019A30(void);
 void func_08014020(s32 x, s32 y, s32 z);
 void func_0801AF08(void* a);
 void func_0800FDD0(s32 a);
-void func_0801BBF0(EmyActor* a);
+void func_0801BBF0(BtlObj* a);
 void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 
 extern s16 gSineTable[];
