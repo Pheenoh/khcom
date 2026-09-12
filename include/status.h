@@ -164,7 +164,7 @@ typedef struct BoogieWork {
     AnimState anim;
     TaskPool unk_02C;
     UnkStruct_0203C55C unk_040;
-    u8 unk_108[0x48];
+    u8 unk_10C[0x44];
     s32 unk_150;
     s32 unk_154;
     s32 unk_158;

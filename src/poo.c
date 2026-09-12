@@ -21,7 +21,7 @@ PooSoraWork* gPooSoraWork;
 u16 gUnk_02034DEC;
 s32 gUnk_02034DF0;
 s32 gUnk_02034DF4;
-ListNode gUnk_02034DF8;
+ListPool gUnk_02034DF8;
 PooPos gUnk_02034E08;
 u16 gUnk_02034E18;
 u32 gUnk_02034E1C;

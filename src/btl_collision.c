@@ -3,10 +3,10 @@
 #include "battle.h"
 
 
-ListNode gUnk_020348E8;
-ListNode gUnk_020348F8;
-ListNode gUnk_02034908;
-ListNode gUnk_02034918;
+ListPool gUnk_020348E8;
+ListPool gUnk_020348F8;
+ListPool gUnk_02034908;
+ListPool gUnk_02034918;
 
 u8 func_08011270(BtlObj* p, s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
     BtlObj* q = p->unk_0D8;
@@ -590,7 +590,7 @@ void func_08012324(Collider* p, s32 a, s32 b, s32 c) {
     p->unk_0C = c;
 }
 
-void func_08012330(ListNode* pool) {
+void func_08012330(ListPool* pool) {
     Collider* p = ListPoolFirst(pool);
     while (p != 0) {
         p->unk_2C = 0;
@@ -600,7 +600,7 @@ void func_08012330(ListNode* pool) {
     }
 }
 
-void func_0801235C(ListNode* a, ListNode* b) {
+void func_0801235C(ListPool* a, ListPool* b) {
     Collider* p;
     Collider* q;
     s32 sum;

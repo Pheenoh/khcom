@@ -12,7 +12,6 @@ typedef struct Collider {
     s32 radius;
     s32 height;
     ListNode unk_18;
-    u8 unk_28[0x04];
     u8 unk_2C;
     u8 unk_2D;
     u16 unk_2E;
@@ -65,7 +64,6 @@ typedef struct BtlObj {
     u16 unk_0B4;
     u8 unk_0B6[0x02];
     ListNode unk_0B8;
-    u8 unk_0C8[0x04];
     u16 unk_0CC;
     s16 unk_0CE;
     s16 unk_0D0;

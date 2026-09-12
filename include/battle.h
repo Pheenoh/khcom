@@ -183,7 +183,7 @@ typedef struct FldObj {
 
 typedef struct UnkStruct_02039BA0 {
     u8 unk_00[0x58];
-    ListNode unk_58;
+    ListPool unk_58;
 } UnkStruct_02039BA0;
 extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
@@ -317,10 +317,10 @@ extern u16 gUnk_020348D8[2];
 extern u16 gUnk_020348DC[2];
 extern u16 gUnk_020348E0;
 extern u16 gUnk_020348E2;
-extern ListNode gUnk_020348E8;
-extern ListNode gUnk_020348F8;
-extern ListNode gUnk_02034908;
-extern ListNode gUnk_02034918;
+extern ListPool gUnk_020348E8;
+extern ListPool gUnk_020348F8;
+extern ListPool gUnk_02034908;
+extern ListPool gUnk_02034918;
 extern BgFx* gUnk_02034928;
 
 
@@ -408,7 +408,7 @@ void func_0801508C(void);
 void func_0801848C(void);
 void func_080185D0(void);
 void func_0801884C(void);
-void func_0801235C(ListNode* a, ListNode* b);
+void func_0801235C(ListPool* a, ListPool* b);
 s64 __ashldi3(s64 v, s32 n);
 void SetBgBlend(s32 a, s32 b, s32 c);
 void func_080062F4(u16 a, s32 b);
@@ -683,7 +683,7 @@ void func_0800FC14(s32 a);
 void func_080121FC(FldObj* p);
 void func_08012214(void);
 void func_0801227C(void);
-void func_08012330(ListNode* pool);
+void func_08012330(ListPool* pool);
 u8 func_080126E4(u8 a);
 void func_0801C298(u8 a, u8 b);
 void func_0801CB0C(void);
