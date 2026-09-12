@@ -1,4 +1,3 @@
-gActiveDeck   = 0x02034AB0
 gDecks        = 0x02039DE0
 gCardCollection = 0x0203A080
 gCardCount    = 0x0203A858
