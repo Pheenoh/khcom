@@ -112,8 +112,6 @@ void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
 void* LoadObjPalette(void* a, s32 b);
 void ReleaseObjPalette(u8* p);
-void TaskPoolDraw(TaskPool* a);
-void TaskPoolDestroy(TaskPool* a);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);
 
@@ -287,7 +285,6 @@ typedef struct UrsulaThunderWork {
 
 extern u16 gDispCnt;
 
-void TaskPoolInit(TaskPool* a, s32 count);
 u8 IsTaskActive(Task* t);
 void func_08017390(s32 x, s32 y, s32 z);
 u8 func_080128EC(void);
@@ -547,7 +544,6 @@ typedef struct UnkStruct_080DFB8C {
 extern u16 gUnk_0203C560;
 
 void func_0801C298(u8 a, u8 b);
-void TaskPoolUpdate(TaskPool* a);
 u16 AnimGetId(AnimState* a);
 u16 AnimGetFrame(AnimState* a);
 void AnimStart(AnimState* a, u16 animId, u16 flags);
@@ -621,7 +617,6 @@ void func_080DF6D0(UnkStruct_0203C7AC* p, u8 a);
 u8 _080DFE1C(UnkStruct_080DFF1C* p);
 void m4aSongNumStart(u16 id);
 u8 func_080DFC24(void);
-void* TaskCreate(void* pool, void* desc, void* arg);
 UnkStruct_080DFB8C* func_080E548C(s16 a, s16 b);
 UnkStruct_080DFB8C* func_080E58F8(s16 a, s16 b);
 extern u8 gTaskDescBosUrsulaBubbleSingle[];

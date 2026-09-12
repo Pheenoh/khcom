@@ -147,11 +147,6 @@ typedef struct ContinueWork {
     u8 unk_6B;
 } ContinueWork;
 
-typedef struct UnkStruct_02034A5C {
-    TaskDesc* unk_00;
-    ContinueWork* unk_04;
-} UnkStruct_02034A5C;
-
 typedef struct UnkStruct_02034A1C {
     u16 unk_00[61];
     u8 unk_7A;
@@ -295,11 +290,6 @@ s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
 void* GetBgScreenBase(s32 bg);
 void EnableBg(s32 bg);
 void LoadPalette(void* src, void* dst, s32 size);
-void TaskPoolInit(TaskPool* a, s32 count);
-void TaskPoolUpdate(TaskPool* a);
-void TaskPoolDraw(TaskPool* a);
-void TaskPoolDestroy(TaskPool* a);
-UnkStruct_02034A5C* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
 void UpdatePlayTime(void);
 void func_080B0754(void);
 void func_080E052C(u8 a);

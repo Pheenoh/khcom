@@ -21,7 +21,7 @@ u32 gUnkJp_0203498C;
 TaskPool gUnk_02034A30;
 u8 gUnk_02034A44;
 TaskPool gUnk_02034A48;
-UnkStruct_02034A5C* gUnk_02034A5C;
+Task* gUnk_02034A5C;
 TaskPool gUnk_02034A60;
 u8 gUnk_02034A74;
 s32 gUnk_02034A78;
@@ -1386,7 +1386,7 @@ void func_08060F1C(void) {
 
     TaskPoolUpdate(&gUnk_02034A48);
     TaskPoolDraw(&gUnk_02034A48);
-    w = gUnk_02034A5C->unk_04;
+    w = gUnk_02034A5C->work;
 
     if (w->unk_6A == 3) {
         switch (w->unk_60) {

@@ -33,4 +33,11 @@ typedef struct Task {
     u8 (*update)(void* work, struct Task* task);
 } Task;
 
+Task* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
+Task* TaskDestroy(TaskPool* pool, Task* task);
+void TaskPoolInit(TaskPool* pool, s32 count);
+void TaskPoolUpdate(TaskPool* pool);
+void TaskPoolDraw(TaskPool* pool);
+void TaskPoolDestroy(TaskPool* pool);
+
 #endif

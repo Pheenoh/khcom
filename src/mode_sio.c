@@ -126,9 +126,9 @@ u8 gUnkEu_02034C10[0x1E0];
 void* gUnk_02034C00;
 u8 gUnk_02034C04[4];
 u8 gUnk_02034C08[20];
-void* gUnk_02034C1C;
+Task* gUnk_02034C1C;
 u8 gUnk_02034C20[20];
-void* gUnk_02034C34;
+Task* gUnk_02034C34;
 
 void mode_sio_btl_connect_0(s32 arg) {
     gSioBtlConnectWork = EwramAlloc(sizeof(SioBtlConnectWork));

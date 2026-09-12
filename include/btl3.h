@@ -234,7 +234,6 @@ extern u8 gUnk_09EDF154[];
 
 u16 GetRandom(void);
 void m4aSongNumStart(u16 song);
-void TaskCreate(void* pool, void* desc, void* arg);
 BtlWork* ListPoolFirst(void* node);
 BtlWork* ListPoolNext(void* node);
 void* AllocObjTiles(s32 a, s32 b);

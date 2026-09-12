@@ -110,8 +110,6 @@ u16 func_0801AF1C(s32 a);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
-void TaskPoolDraw(TaskPool* a);
-void TaskPoolDestroy(TaskPool* a);
 void DisableBg(s32 bg);
 void func_08012304(void* a);
 void func_0801B7D8(void* a);
@@ -661,11 +659,9 @@ extern u8 gUnk_09D4B274[];
 void task_bos_lst_0(BosLstWork* work, void* pool);
 u16 func_08003524(void* a, s32 b);
 void func_0801C7FC(void* a, s32 b, s32 c);
-void TaskPoolInit(TaskPool* a, s32 count);
 void func_0800592C(s32* value, s32 target, u16 steps);
 void func_0810FF6C(Task* t, s32 a);
 void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
-void TaskPoolUpdate(TaskPool* a);
 u8 task_bos_lst_1(BosLstWork* work);
 
 typedef struct LstAnimDef {
@@ -695,7 +691,6 @@ extern void* gUnk_09A4D194[][2];
 extern u8 gUnk_09D69454[];
 
 void task_bos_lst_2(BosLstWork* work);
-void TaskPoolDraw(TaskPool* a);
 u8 func_0801CA00(void* a);
 void SetBgScroll(s32 a, u16 b, u16 c);
 void DisableBg(s32 bg);
@@ -810,7 +805,6 @@ typedef struct LstSpawn {
 } LstSpawn;
 
 extern u8 gTaskDescBosLstFal[];
-void* TaskCreate(void* pool, void* desc, void* arg);
 void func_08017F70(s32 a, s32 b, s32 c, s32 d);
 
 u8 func_0810ACB8(PcWork* work, s32 arg);
