@@ -343,12 +343,12 @@ void task_status_sora_0(StatusSoraWork* work) {
     if (gGameState.flags & 8) {
         work->tiles = AllocObjTiles(0x800, 0);
         work->palette = LoadObjPalette(gUnk_09618118, 0x20);
-        func_08002A10(work->tiles, gUnk_0891ED26);
+        SetObjTileSource(work->tiles, gUnk_0891ED26);
         AnimInit(&work->anim, gUnk_09EDF38C, gUnk_09EDF374);
     } else {
         work->tiles = AllocObjTiles(0x500, 0);
         work->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
-        func_08002A10(work->tiles, gUnk_088E33C2);
+        SetObjTileSource(work->tiles, gUnk_088E33C2);
         AnimInit(&work->anim, gUnk_09EDEE14, gUnk_09EDEE08);
     }
     AnimStart(&work->anim, 0, 1);
@@ -651,12 +651,12 @@ void* func_080D85C0(u16 a) {
     void* t;
 
     d = &gUnk_08F7CF18[a];
-    t = func_080038C8(d->unk_08);
+    t = AllocSpriteFrameTiles(d->unk_08);
 #ifdef VERSION_EU
-    func_080038E4(t, ((u32*)d->unk_04[gLanguage])[d->unk_0A],
+    UpdateSpriteFrameTiles(t, ((u32*)d->unk_04[gLanguage])[d->unk_0A],
         ((u32*)d->unk_00)[gLanguage]);
 #else
-    func_080038E4(t, d->unk_04[d->unk_0A], d->unk_00);
+    UpdateSpriteFrameTiles(t, d->unk_04[d->unk_0A], d->unk_00);
 #endif
     return t;
 }
@@ -1104,7 +1104,7 @@ void func_080D900C(BoogieWork* work, s32 a, u16 b) {
     if (work->unk_15C != a) {
         work->unk_15C = a;
         AnimChangeWithTables(&work->anim, gUnk_096FDE54[a].unk_0C, b, gUnk_096FDE54[a].unk_00, gUnk_096FDE54[a].unk_04);
-        func_08002A10(work->tiles, gUnk_096FDE54[a].unk_08);
+        SetObjTileSource(work->tiles, gUnk_096FDE54[a].unk_08);
     }
 }
 

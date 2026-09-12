@@ -346,7 +346,7 @@ void func_0801DDE4(BtlSoraWork* work, u16 a, u16 b) {
 
     e = &gUnk_0813BA2C[a];
     AnimChangeWithTables(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
-    func_08002A10(work->unk_000, e->unk_08);
+    SetObjTileSource(work->unk_000, e->unk_08);
 }
 
 void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
@@ -377,7 +377,7 @@ void func_0801DE1C(BtlSoraWork* work, u16 a, u16 b) {
     }
     e = &gUnk_0813BEFC[a][idx];
     AnimChangeWithTables(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
-    func_08002A10(work->unk_000, e->unk_08);
+    SetObjTileSource(work->unk_000, e->unk_08);
 }
 
 void func_0801DEB8(BtlSoraWork* work) {
@@ -6289,7 +6289,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
     }
     z = 0xFFF0;
     WorldToScreen(&x, &y, out->x, out->y, out->z);
-    func_08002A10(work->tiles, out->unk_28);
+    SetObjTileSource(work->tiles, out->unk_28);
     DrawSprite(x, y, gfx, work->tiles, work->palette, affine, flags, z);
 }
 
@@ -6298,7 +6298,7 @@ void func_080276D4(BtlRikuWork* work, u16 a, u16 b) {
 
     e = &gUnk_0813C2AC[a];
     AnimChangeWithTables(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
-    func_08002A10(work->unk_000, e->unk_08);
+    SetObjTileSource(work->unk_000, e->unk_08);
 }
 
 void func_0802770C(BtlRikuWork* work, u16 a, u16 b) {
@@ -6329,7 +6329,7 @@ void func_0802770C(BtlRikuWork* work, u16 a, u16 b) {
     }
     e = &gUnk_0813C4DC[a][idx];
     AnimChangeWithTables(&work->anim, e->unk_0C, b, e->unk_04, e->unk_00);
-    func_08002A10(work->unk_000, e->unk_08);
+    SetObjTileSource(work->unk_000, e->unk_08);
 }
 
 void func_080277A8(BtlRikuWork* work) {

@@ -387,7 +387,7 @@ void mode_debug_2(void) {
 
 void func_0800B30C(ObjDef* def) {
     AnimChangeWithTables(&gChkObjWork->anim, gChkObjWork->animId, 0, def->unk_04, def->unk_00);
-    func_08002A10(gChkObjWork->tiles, def->unk_08);
+    SetObjTileSource(gChkObjWork->tiles, def->unk_08);
     ReleaseObjPalette(gChkObjWork->palette);
     gChkObjWork->palette = LoadObjPalette(def->palette, def->paletteSize);
 }

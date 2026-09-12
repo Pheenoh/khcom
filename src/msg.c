@@ -711,7 +711,7 @@ void func_08062DC8(s32 x, s32 y, u8* s) {
     for (i = 0; i < len; i++) {
         s16 c;
 
-        gUnk_02034A80[gUnk_02034A90].unk_08[i] = (u32)func_080038C8(32);
+        gUnk_02034A80[gUnk_02034A90].unk_08[i] = (u32)AllocSpriteFrameTiles(32);
         c = s[i];
 
         if ((u8)(c - 48) <= 9) {
@@ -757,7 +757,7 @@ void func_08062DC8(s32 x, s32 y, u8* s) {
         if (s[i] == 37) {
             idx = 44;
         }
-        func_080038E4((void*)gUnk_02034A80[gUnk_02034A90].unk_08[i], gUnk_09EEC538[idx], gUnk_090D4180);
+        UpdateSpriteFrameTiles((void*)gUnk_02034A80[gUnk_02034A90].unk_08[i], gUnk_09EEC538[idx], gUnk_090D4180);
     }
     gUnk_02034A80[gUnk_02034A90].unk_48 = (u32)LoadObjPalette(gUnk_08F69BE4, 32);
     gUnk_02034A90++;
@@ -799,8 +799,8 @@ void func_08062F18(s32 x, s32 y, u8* s) {
         if ((u8)(c - 65) <= 25) {
             idx = c - 52;
         }
-        gUnk_02034A80[gUnk_02034A90].unk_08[k] = (u32)func_080038C8(128);
-        func_080038E4((void*)gUnk_02034A80[gUnk_02034A90].unk_08[k], gUnk_09EEB204[idx], gUnk_090AB5B2);
+        gUnk_02034A80[gUnk_02034A90].unk_08[k] = (u32)AllocSpriteFrameTiles(128);
+        UpdateSpriteFrameTiles((void*)gUnk_02034A80[gUnk_02034A90].unk_08[k], gUnk_09EEB204[idx], gUnk_090AB5B2);
         k++;
     }
     gUnk_02034A80[gUnk_02034A90].unk_48 = (u32)LoadObjPalette(&gUnk_096147B8[0x40], 32);
@@ -7773,12 +7773,12 @@ void func_0806CD60(ContinueWork* p) {
     PushPaletteEffect(0);
     p->palette = LoadObjPalette(gUnk_09614658, 160);
     PopPaletteEffect();
-    func_08002A10(p->tiles, gUnk_090A6B26);
+    SetObjTileSource(p->tiles, gUnk_090A6B26);
     AnimInit(&p->unk_20, gUnk_09EEB108, gUnk_09EEB0C4);
     AnimStart(&p->unk_20, 0, 1);
     p->tiles2 = AllocObjTiles(1024, 0);
     p->palette2 = LoadObjPalette(gUnk_08F683A4, 32);
-    func_08002A10(p->tiles2, gUnk_090A7F0A);
+    SetObjTileSource(p->tiles2, gUnk_090A7F0A);
     AnimInit(&p->unk_38, gUnk_09EEB14C, gUnk_09EEB11C);
     AnimStart(&p->unk_38, 0, 1);
     p->unk_58 = -2048;
@@ -7840,12 +7840,12 @@ void func_0806CF04(ContinueWork* p) {
     PushPaletteEffect(0);
     p->palette = LoadObjPalette(gUnk_09614658, 160);
     PopPaletteEffect();
-    func_08002A10(p->tiles, gUnk_090A6B26);
+    SetObjTileSource(p->tiles, gUnk_090A6B26);
     AnimInit(&p->unk_20, gUnk_09EEB108, gUnk_09EEB0C4);
     AnimStart(&p->unk_20, 0, 1);
     p->tiles2 = AllocObjTiles(1024, 0);
     p->palette2 = LoadObjPalette(gUnk_09618118, 32);
-    func_08002A10(p->tiles2, gUnk_090A8FC4);
+    SetObjTileSource(p->tiles2, gUnk_090A8FC4);
     AnimInit(&p->unk_38, gUnk_09EEB180, gUnk_09EEB150);
     AnimStart(&p->unk_38, 0, 1);
     p->unk_58 = -2048;
@@ -11852,14 +11852,14 @@ void msgface_0(MsgFaceWork* p, MsgFaceCtl* ctl) {
     }
 
     if (p->unk_38->unk_00 != 62) {
-        func_08002A10(p->tiles, anim[p->unk_38->unk_01].unk_00);
-        func_08003A70(p->palette, anim[p->unk_38->unk_01].unk_04);
+        SetObjTileSource(p->tiles, anim[p->unk_38->unk_01].unk_00);
+        UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->unk_01].unk_04);
         AnimInit(p->anim, anim[p->unk_38->unk_01].unk_0C, anim[p->unk_38->unk_01].unk_08);
         AnimStart(p->anim, 0, anim[p->unk_38->unk_01].unk_11);
         p->gfx = AnimGetGfx(p->anim);
     } else {
-        func_08002A10(p->tiles, anim->unk_00);
-        func_08003A70(p->palette, anim->unk_04);
+        SetObjTileSource(p->tiles, anim->unk_00);
+        UpdateAllocatedObjPalette(p->palette, anim->unk_04);
         AnimInit(p->anim, anim->unk_0C, anim->unk_08);
         AnimStart(p->anim, 0, anim->unk_11);
         p->gfx = AnimGetGfx(p->anim);
@@ -11886,9 +11886,9 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
 
         if (anim != NULL) {
             if (p->unk_38->unk_03 == 1) {
-                func_08003A70(p->palette, &gUnk_096148D8[0x100]);
+                UpdateAllocatedObjPalette(p->palette, &gUnk_096148D8[0x100]);
             } else {
-                func_08003A70(p->palette, anim[p->unk_38->unk_01].unk_04);
+                UpdateAllocatedObjPalette(p->palette, anim[p->unk_38->unk_01].unk_04);
             }
         }
 
@@ -12004,8 +12004,8 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
     }
 
     if (t != NULL) {
-        func_08002A10(p->tiles, t[p->unk_38->unk_01].unk_00);
-        func_08003A70(p->palette, t[p->unk_38->unk_01].unk_04);
+        SetObjTileSource(p->tiles, t[p->unk_38->unk_01].unk_00);
+        UpdateAllocatedObjPalette(p->palette, t[p->unk_38->unk_01].unk_04);
         AnimInit(p->anim, t[p->unk_38->unk_01].unk_0C, t[p->unk_38->unk_01].unk_08);
         AnimStart(p->anim, 0, t[p->unk_38->unk_01].unk_11);
         p->gfx = AnimGetGfx(p->anim);
@@ -12045,8 +12045,8 @@ u8 func_08073CA4(MsgFaceWork* p, void* a) {
         }
 
         if (t != NULL) {
-            func_08002A10(p->tiles, t[p->unk_38->unk_01].unk_00);
-            func_08003A70(p->palette, t[p->unk_38->unk_01].unk_04);
+            SetObjTileSource(p->tiles, t[p->unk_38->unk_01].unk_00);
+            UpdateAllocatedObjPalette(p->palette, t[p->unk_38->unk_01].unk_04);
             AnimInit(p->anim, t[p->unk_38->unk_01].unk_0C, t[p->unk_38->unk_01].unk_08);
             AnimStart(p->anim, 0, t[p->unk_38->unk_01].unk_11);
             p->gfx = AnimGetGfx(p->anim);
@@ -12111,7 +12111,7 @@ void msgwait_0(MsgWaitWork* p, u8* arg) {
     p->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     LoadObjPaletteBank(p->palette->unk_06, gUnk_08F69BA4);
     FadeSetPaletteExcluded(p->palette->unk_06 + 16, 1);
-    func_08002A10(p->tiles, gUnk_09320796);
+    SetObjTileSource(p->tiles, gUnk_09320796);
     AnimInit(p->unk_DC, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(p->unk_DC, 2, 1);
     p->unk_102 = 0;
@@ -12170,14 +12170,14 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_14 = LoadObjPalette(gUnk_08F69BA4, 32);
     LoadObjPaletteBank(((Handle0806180C*)p->unk_14)->unk_06, gUnk_08F69BA4);
     FadeSetPaletteExcluded(((Handle0806180C*)p->unk_14)->unk_06 + 16, 1);
-    func_08002A10(p->unk_00, gUnk_09320796);
+    SetObjTileSource(p->unk_00, gUnk_09320796);
     AnimInit((AnimState*)p->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart((AnimState*)p->anim, 2, 1);
     p->unk_102 = 0;
     p->unk_04 = AllocObjTiles(288, 0);
     p->unk_08 = LoadObjPalette(gUnk_09614418, 32);
     LoadObjPaletteBank(((Handle0806180C*)p->unk_08)->unk_06, gUnk_09614418);
-    func_08002A10(p->unk_04, gUnk_090A4664);
+    SetObjTileSource(p->unk_04, gUnk_090A4664);
     AnimInit((AnimState*)p->unk_C4, gUnk_09EEB03C, gUnk_09EEB008);
     AnimStart((AnimState*)p->unk_C4, 2, 1);
     p->unk_C0 = AnimGetGfx((AnimState*)p->unk_C4);

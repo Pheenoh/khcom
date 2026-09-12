@@ -66,7 +66,7 @@ void func_0801CE70(EvtObjWork* work) {
     anim = (EvtObjAnim*)obj->unk_00;
     def = anim->unk_00;
     AnimChangeWithTables(&work->anim, anim->unk_0C, anim->unk_0E, def->unk_04, def->unk_00);
-    func_08002A10(work->tiles, def->unk_08);
+    SetObjTileSource(work->tiles, def->unk_08);
     work->obj->flags &= 0xFFFE;
 }
 

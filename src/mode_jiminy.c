@@ -792,17 +792,17 @@ void func_0805BAE4(void) {
             if (gJiminyWork->unk_CCC->palette == gUnkEu_09A9A880 && func_080D2DD8()) {
                 LoadObjPaletteBank(gJiminyWork->palette8->unk_06, gUnkEu_09A9A8A0);
                 LoadObjPaletteBank(gJiminyWork->palette8->unk_06 + 1, gUnkEu_09A9A8A0 + 0x20);
-                func_08002A10(gJiminyWork->tiles7, gUnkEu_099FBE00);
+                SetObjTileSource(gJiminyWork->tiles7, gUnkEu_099FBE00);
             } else
 #endif
             {
                 LoadObjPaletteBank(gJiminyWork->palette8->unk_06, gJiminyWork->unk_CCC->palette);
-                func_08002A10(gJiminyWork->tiles7, gJiminyWork->unk_CCC->tiles);
+                SetObjTileSource(gJiminyWork->tiles7, gJiminyWork->unk_CCC->tiles);
             }
         }
         if (gJiminyWork->unk_CCC->tiles2 != 0) {
             LoadObjPaletteBank(gJiminyWork->palette9->unk_06, gJiminyWork->unk_CCC->palette2);
-            func_08002A10(gJiminyWork->tiles8, gJiminyWork->unk_CCC->tiles2);
+            SetObjTileSource(gJiminyWork->tiles8, gJiminyWork->unk_CCC->tiles2);
         }
         if (gJiminyWork->unk_D30 == 2) {
             source = gUnk_08F63B84;

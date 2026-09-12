@@ -292,7 +292,7 @@ ObjTiles* LoadObjTiles(void* src, u16 size) {
     return 0;
 }
 
-void func_0800284C(ObjTiles* p) {
+void ReleaseSharedObjTiles(ObjTiles* p) {
     if ((s16)p->refCount > 0) {
         p->refCount -= 1;
     } else {
@@ -300,11 +300,11 @@ void func_0800284C(ObjTiles* p) {
         ListPoolRelease(&p->unk_0C, &gSpriteWork->tilePool);
     }
 }
-void func_08002880(ObjTiles* p) {
+void ReleaseAllocatedObjTiles(ObjTiles* p) {
     p->self = 0;
     ListPoolRelease(&p->unk_0C, &gSpriteWork->tilePool);
 }
-void func_080028A0(ObjTiles* p) {
+void ReleaseSpriteFrameTiles(ObjTiles* p) {
     p->self = 0;
     ListPoolRelease(&p->unk_0C, &gSpriteWork->tilePool);
 }
@@ -322,13 +322,13 @@ void ReleaseObjTiles(void* a) {
 
     switch (q->unk_28) {
     case 0:
-        func_0800284C(q);
+        ReleaseSharedObjTiles(q);
         break;
     case 1:
-        func_08002880(q);
+        ReleaseAllocatedObjTiles(q);
         break;
     case 2:
-        func_080028A0(q);
+        ReleaseSpriteFrameTiles(q);
         break;
     }
 }
@@ -391,7 +391,7 @@ ObjTiles* AllocObjTiles(u16 size, void* owner) {
     return 0;
 }
 
-void func_08002A10(void* a, void* b) {
+void SetObjTileSource(void* a, void* b) {
     *(void**)a = b;
 }
 
@@ -470,7 +470,7 @@ void LoadObjPaletteBank(u16 bank, void* src) {
     LoadPalette(src, (void*)((bank << 5) + 0x05000200), 32);
 }
 
-void func_08002BCC(ObjPaletteNode* p) {
+void ReleaseObjPaletteRef(ObjPaletteNode* p) {
     if ((s16)p->refCount > 0) {
         p->refCount -= 1;
     } else {
@@ -481,7 +481,7 @@ void func_08002BCC(ObjPaletteNode* p) {
 }
 void ReleaseObjPalette(ObjPaletteNode* p) {
     if (p != 0 && p->self == p) {
-        func_08002BCC(p);
+        ReleaseObjPaletteRef(p);
     }
 }
 u8* AllocObjAffineAngle(u8 a, u8 b) {
@@ -808,7 +808,7 @@ void SetObjMosaicSize(u8 a, u8 b) {
     gMosaic = (gMosaic & 0xFF) | (a << 8) | (b << 12);
 }
 
-void func_08003510(u8 a) {
+void SetSpriteOamUpdatesPaused(u8 a) {
     gSpriteWork->unk_2BAE = a;
 }
 
@@ -979,7 +979,7 @@ u8 func_08003620(u16* oam, s16 x, s16 y) {
     return 1;
 }
 
-void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size) {
+void InitObjTilesAtSlot(ObjTiles* t, u16 slot, void* src, u16 size) {
     if (slot + (size >> 5) <= 0x400) {
         t->unk_28 = 0;
         t->unk_08 = size >> 5;
@@ -992,7 +992,7 @@ void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size) {
     }
 }
 
-void func_08003858(ObjTiles* t, u16 slot, u16 size, void* src) {
+void InitDynamicObjTilesAtSlot(ObjTiles* t, u16 slot, u16 size, void* src) {
     if (slot + (size >> 5) <= 0x400) {
         t->unk_28 = 1;
         t->unk_08 = size >> 5;
@@ -1004,7 +1004,7 @@ void func_08003858(ObjTiles* t, u16 slot, u16 size, void* src) {
     }
 }
 
-void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size) {
+void InitObjPaletteAtSlot(ObjTiles* t, u16 slot, void* src, u16 size) {
     if (slot + (size >> 5) <= 0x10) {
         t->unk_20 = 0;
         t->unk_08 = size >> 5;
@@ -1015,7 +1015,7 @@ void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size) {
     }
 }
 
-ObjTiles* func_080038C8(u16 a) {
+ObjTiles* AllocSpriteFrameTiles(u16 a) {
     ObjTiles* t = AllocObjTiles(a, 0);
 
     if (t != 0) {
@@ -1024,7 +1024,7 @@ ObjTiles* func_080038C8(u16 a) {
     return t;
 }
 
-u8 func_080038E4(ObjTiles* a, u16* b, void* c) {
+u8 UpdateSpriteFrameTiles(ObjTiles* a, u16* b, void* c) {
     u16 count;
     s32 j;
     u16 acc;
@@ -1108,7 +1108,7 @@ ObjPaletteNode* AllocObjPalette(u16 size) {
     return 0;
 }
 
-void func_08003A70(ObjTiles* t, void* src) {
+void UpdateAllocatedObjPalette(ObjTiles* t, void* src) {
     if (t->unk_20 == 2) {
         LoadPalette(src, (void*)((t->unk_06 << 5) + 0x05000200), (u16)(t->unk_08 << 5));
     }

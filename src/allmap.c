@@ -526,7 +526,7 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
         FadeSetPaletteExcluded(((AllmapPal*)work->palette)->unk_06 + 16, 1);
         work->unk_0F0 = LoadObjTiles(gUnk_0976B340, 0x2400);
         work->unk_0F8 = gUnk_09EF6424[0];
-        func_0800388C(work->unk_0F4, 15, gUnk_0984A0F8, 32);
+        InitObjPaletteAtSlot(work->unk_0F4, 15, gUnk_0984A0F8, 32);
         FadeSetPaletteExcluded(((AllmapPal*)work->unk_0F4)->unk_06 + 16, 1);
     }
 }
@@ -583,10 +583,10 @@ void func_080D44D4(AllmapDoorinfoWork* work) {
 
     if (func_080DF51C(work->unk_004) == 1 || func_080DF51C(work->unk_004) == 4) {
         work->unk_0F8 = gUnk_09EF6424[1];
-        func_0800388C(work->unk_0F4, 15, gUnk_0984A118, 32);
+        InitObjPaletteAtSlot(work->unk_0F4, 15, gUnk_0984A118, 32);
     } else {
         work->unk_0F8 = gUnk_09EF6424[0];
-        func_0800388C(work->unk_0F4, 15, gUnk_0984A0F8, 32);
+        InitObjPaletteAtSlot(work->unk_0F4, 15, gUnk_0984A0F8, 32);
     }
 
     FadeSetPaletteExcluded(((AllmapPal*)work->unk_0F4)->unk_06 + 16, 1);

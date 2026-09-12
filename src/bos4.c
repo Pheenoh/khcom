@@ -423,7 +423,7 @@ void func_080DA42C(BoogieDiceWork* work) {
     }
 
     AnimChangeWithTables(&work->anim, 0, 0, tbl[n][0], tbl[n][1]);
-    func_08002A10((void*)work->tiles, tbl[n][2]);
+    SetObjTileSource((void*)work->tiles, tbl[n][2]);
 }
 
 u8 func_080DA4DC(u8* p) {

@@ -224,7 +224,7 @@ void smoke_0(EffectWork* w, EventActor* arg) {
     w->unk_30 = b->unk_08 - 0x800;
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->tiles, gUnk_093215CA);
+    SetObjTileSource(w->tiles, gUnk_093215CA);
     AnimInit(&w->anim, gUnk_09EEFD78, gUnk_09EEFD60);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
@@ -246,7 +246,7 @@ void Exclamation_0(EffectWork* w, EventActor* arg) {
         FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
     }
 
-    func_08002A10(w->tiles, gUnk_09320796);
+    SetObjTileSource(w->tiles, gUnk_09320796);
     AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(&w->anim, 0, 0);
     w->gfx = AnimGetGfx(&w->anim);
@@ -263,7 +263,7 @@ void balloon_0(EffectWork* w, EventActor* arg) {
     w->unk_30 = b->unk_08;
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->tiles, gUnk_09320796);
+    SetObjTileSource(w->tiles, gUnk_09320796);
     AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(&w->anim, 1, 1);
     w->gfx = AnimGetGfx(&w->anim);
@@ -322,7 +322,7 @@ void Question_0(EffectWork* w, EventActor* arg) {
     w->unk_30 = b->unk_08;
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->tiles, gUnk_09320796);
+    SetObjTileSource(w->tiles, gUnk_09320796);
     AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(&w->anim, 5, 0);
     w->gfx = AnimGetGfx(&w->anim);
@@ -365,7 +365,7 @@ void func_080758D0(EffectWork* w, EventActor* arg) {
     w->unk_3C = GetRandom() % 232 + 76;
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->tiles, gUnk_088A5D7A);
+    SetObjTileSource(w->tiles, gUnk_088A5D7A);
     AnimInit(&w->anim, gUnk_09EDE7E4, gUnk_09EDE7B4);
     AnimStart(&w->anim, GetRandom() % 3, 0);
     w->gfx = AnimGetGfx(&w->anim);
@@ -416,7 +416,7 @@ void GlowNose_0(EffectWork* w, EventActor* arg) {
     w->unk_30 = b->unk_08 + 3072;
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->tiles, gUnk_09321804);
+    SetObjTileSource(w->tiles, gUnk_09321804);
     AnimInit(&w->anim, gUnk_09EEFD9C, gUnk_09EEFD7C);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
@@ -454,7 +454,7 @@ void GlowNose2_0(EffectWork* w, EventActor* arg) {
 
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    func_08002A10(w->tiles, gUnk_09321804);
+    SetObjTileSource(w->tiles, gUnk_09321804);
     AnimInit(&w->anim, gUnk_09EEFD9C, gUnk_09EEFD7C);
     AnimStart(&w->anim, 1, 1);
     w->gfx = AnimGetGfx(&w->anim);
@@ -496,8 +496,8 @@ void down_0(EffectWork* w, EventActor* arg) {
         break;
     }
 
-    w->tiles = func_080038C8(32);
-    func_080038E4(w->tiles, gUnk_09EEA19C[3], gUnk_0908C686);
+    w->tiles = AllocSpriteFrameTiles(32);
+    UpdateSpriteFrameTiles(w->tiles, gUnk_09EEA19C[3], gUnk_0908C686);
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_10 = EwramAlloc(sizeof(DownWork));
     s = w->unk_10;
@@ -1266,9 +1266,9 @@ void func_08076CB4(UnkStruct_08080268* w) {
     gBtlWork->unk_0F4 = 0;
     func_08091B28();
     func_080782EC();
-    w->unk_14 = func_080038C8(128);
+    w->unk_14 = AllocSpriteFrameTiles(128);
     w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
-    func_080038E4(w->unk_14, gUnk_09EF12E8[0], (u32)gUnk_093FBAB8);
+    UpdateSpriteFrameTiles(w->unk_14, gUnk_09EF12E8[0], (u32)gUnk_093FBAB8);
     TaskPoolInit((TaskPool*)w, 30);
     w->unk_B9 = 0;
     w->unk_B8 = 0;
