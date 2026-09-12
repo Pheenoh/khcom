@@ -127,3 +127,4 @@ tools:
             - src/wlogo
             - src/unk_
             - src/map
+            - asm/transform
