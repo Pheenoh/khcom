@@ -17,7 +17,7 @@
 #include "ms_types.h"
 #include "main.h"
 #include "anim.h"
-extern UnkStruct_09EF9618 gUnk_09EF9618[];
+extern MapCardCategoryDef gUnk_09EF9618[];
 extern s16 gUnk_02035E2C;
 extern s16 gUnk_02035E2E;
 extern s16 gUnk_02035E48;

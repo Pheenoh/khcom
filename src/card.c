@@ -18789,8 +18789,8 @@ void func_08093C44(u16 a, MapSelectWork* w) {
     u8* pal;
     s32 k;
     s32 k2;
-    UnkStruct_09EE4C80* card;
-    UnkStruct_09EE4C80* cards;
+    MapCardDef* card;
+    MapCardDef* cards;
 
     for (i = 0; i < 22; i++) {
         pal = w->unk_29E;
@@ -21440,8 +21440,8 @@ void SELMAP_EVKEY_3(u8* work) {
 #ifdef NON_MATCHING
 void func_08098014(u8* work, u8* a) {
     s32 zero;
-    UnkStruct_09EE4C80* c;
-    UnkStruct_09EE4BF4* b;
+    MapCardDef* c;
+    MapCardBackDef* b;
     UnkStruct_080038C8* g;
     u8 n;
 
@@ -23587,22 +23587,22 @@ void func_0809B76C(u8* work, void** src) {
         void** t;
         void* u;
 
-        t = (void**)LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_04);
-        u = LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_00);
-        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_0A], u);
+        t = (void**)LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].sprites);
+        u = LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].tiles);
+        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].spriteIndex], u);
 #else
-        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_04[gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_0A], gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_00);
+        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].sprites[gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].spriteIndex], gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].tiles);
 #endif
     } else {
 #ifdef VERSION_EU
         void** t;
         void* u;
 
-        t = (void**)LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04);
-        u = LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
-        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], u);
+        t = (void**)LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].sprites);
+        u = LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].tiles);
+        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[*(u32*)&work[0x18]].spriteIndex], u);
 #else
-        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
+        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[*(u32*)&work[0x18]].sprites[gUnk_08F7CF18[*(u32*)&work[0x18]].spriteIndex], gUnk_08F7CF18[*(u32*)&work[0x18]].tiles);
 #endif
     }
 
@@ -23635,7 +23635,7 @@ u8 func_0809B840(u8* work) {
             work[0x11] = 0;
         }
 
-        UpdateSpriteFrameTiles(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_04[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_0A], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_00);
+        UpdateSpriteFrameTiles(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].sprites[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].spriteIndex], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].tiles);
     }
 
     return 1;
@@ -23688,22 +23688,22 @@ void func_0809B920(u8* work, void** src) {
         void** t;
         void* u;
 
-        t = (void**)LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_04);
-        u = LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_00);
-        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_0A], u);
+        t = (void**)LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].sprites);
+        u = LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].tiles);
+        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].spriteIndex], u);
 #else
-        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_04[gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_0A], gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_00);
+        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].sprites[gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].spriteIndex], gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].tiles);
 #endif
     } else {
 #ifdef VERSION_EU
         void** t;
         void* u;
 
-        t = (void**)LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04);
-        u = LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
-        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], u);
+        t = (void**)LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].sprites);
+        u = LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].tiles);
+        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[*(u32*)&work[0x18]].spriteIndex], u);
 #else
-        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
+        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[*(u32*)&work[0x18]].sprites[gUnk_08F7CF18[*(u32*)&work[0x18]].spriteIndex], gUnk_08F7CF18[*(u32*)&work[0x18]].tiles);
 #endif
     }
 
@@ -23736,7 +23736,7 @@ u8 func_0809B9F4(u8* work) {
             work[0x11] = 0;
         }
 
-        UpdateSpriteFrameTiles(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_04[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_0A], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_00);
+        UpdateSpriteFrameTiles(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].sprites[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].spriteIndex], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].tiles);
     }
 
     return 1;
@@ -26066,11 +26066,11 @@ u8 func_0809FBCC(u8* work, void* a);
 
 
 
-typedef struct UnkStruct_0809F730_Args {
+typedef struct StatIncreaseDisplayArgs {
     u8* done;
     u32 flags : 16;
     u32 amount : 16;
-} UnkStruct_0809F730_Args;
+} StatIncreaseDisplayArgs;
 
 u8 func_0809F730(LevelUpWork* w, void* a) {
     u8 i;
@@ -26118,7 +26118,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
             switch (w->unk_7B0) {
             case 0: {
                 s32 amount = LevelUpMaxHp();
-                UnkStruct_0809F730_Args args;
+                StatIncreaseDisplayArgs args;
                 w->unk_7C4 = 1;
                 args.amount = amount;
                 args.done = &w->unk_7C4;
@@ -26129,7 +26129,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
             case 1:
                 if (!(gGameState.flags & 8)) {
                     s32 amount = LevelUpCp();
-                    UnkStruct_0809F730_Args args;
+                    StatIncreaseDisplayArgs args;
                     w->unk_7C4 = 1;
                     args.amount = amount;
                     args.done = &w->unk_7C4;
@@ -26137,7 +26137,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     TaskCreate(&w->pool, gUnk_09EE7F48, &args);
                 } else {
                     s32 amount = LevelUpAp();
-                    UnkStruct_0809F730_Args args;
+                    StatIncreaseDisplayArgs args;
                     w->unk_7C4 = 1;
                     args.amount = amount;
                     args.done = &w->unk_7C4;
@@ -26152,7 +26152,7 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
                     TaskCreate(&w->pool, gUnk_09EE7F30, &w->unk_7C4);
                 } else {
                     s32 amount = LevelUpDp();
-                    UnkStruct_0809F730_Args args;
+                    StatIncreaseDisplayArgs args;
                     w->unk_7C4 = 1;
                     args.amount = amount;
                     args.done = &w->unk_7C4;

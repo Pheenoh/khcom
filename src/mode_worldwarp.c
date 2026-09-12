@@ -121,9 +121,9 @@ void mode_worldwarp_0(void) {
 
     for (i = 0; i <= 12; i++) {
         if (gUnk_020354F0[i] > 0) {
-            gUnk_020355A8[i] = LoadObjPalette(gUnk_09EF9488[gUnk_020354F0[i]].unk_00, gUnk_09EF9488[gUnk_020354F0[i]].unk_04);
-            gUnk_02035570[i] = LoadObjTiles(gUnk_09EF9488[gUnk_020354F0[i]].unk_08, gUnk_09EF9488[gUnk_020354F0[i]].unk_0C);
-            gUnk_020355E0[i] = gUnk_09EF9488[gUnk_020354F0[i]].unk_10;
+            gUnk_020355A8[i] = LoadObjPalette(gUnk_09EF9488[gUnk_020354F0[i]].palette, gUnk_09EF9488[gUnk_020354F0[i]].paletteSize);
+            gUnk_02035570[i] = LoadObjTiles(gUnk_09EF9488[gUnk_020354F0[i]].tiles, gUnk_09EF9488[gUnk_020354F0[i]].tilesSize);
+            gUnk_020355E0[i] = gUnk_09EF9488[gUnk_020354F0[i]].sprite;
         } else {
             gUnk_020355A8[i] = 0;
             gUnk_02035570[i] = 0;

@@ -17,7 +17,7 @@
 #include "bos5_api.h"
 
 
-extern UnkStruct_09EF9488 gUnk_09EF9488[];
+extern WorldSelectDef gUnk_09EF9488[];
 extern u8 gUnk_09A329DC[];
 extern u8 gUnk_02035618[];
 extern u8 gUnk_020356E0[];

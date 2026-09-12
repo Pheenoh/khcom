@@ -72,7 +72,7 @@ void mode_mapinspect_0(void) {
         gUnk_02035FE0 = 0x1000;
         gUnk_02035E2C = v;
     } else {
-        gUnk_02035FDC = gUnk_09EF9618[4].unk_04 * 7 * 512 - 0x100;
+        gUnk_02035FDC = gUnk_09EF9618[4].displayIndex * 7 * 512 - 0x100;
         gUnk_02035FE0 = 0;
         gUnk_02035E2C = 1;
     }
@@ -128,7 +128,7 @@ void mode_mapinspect_0(void) {
     LoadBgMap(2, gUnk_09985F44, 0x800);
     LoadBgMap(0, gUnk_09A3439C, 0x500);
 
-    if (func_0810718C()->unk_04 == 3) {
+    if (func_0810718C()->category == 3) {
         LoadBgMap(1, gUnk_09A3551C, 0x500);
     } else {
         LoadBgMap(1, gUnk_09A3501C, 0x500);

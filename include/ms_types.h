@@ -3,20 +3,20 @@
 
 #include "types.h"
 
-typedef struct UnkStruct_0810718C {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    s16 unk_06[10];
+typedef struct MapCardInventoryEntry {
+    u16 cardType;
+    u16 cardIndex;
+    u16 category;
+    s16 countsByValue[10];
     u16 unk_1A;
-} UnkStruct_0810718C;
+} MapCardInventoryEntry;
 
-typedef struct UnkStruct_09EF9618 {
-    u16 unk_00;
-    u16 unk_02;
-    s16 unk_04;
+typedef struct MapCardCategoryDef {
+    u16 leftCategory;
+    u16 rightCategory;
+    s16 displayIndex;
     u16 unk_06;
-} UnkStruct_09EF9618;
+} MapCardCategoryDef;
 
 typedef struct MsShopHosiArg {
     s16 x;

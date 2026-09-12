@@ -118,7 +118,7 @@ extern u8 gUnk_099A2AF0[];
 extern u8 gUnk_099A2B24[];
 extern u8 gUnk_08B22BA8[];
 extern WarpIcon gUnk_09EF9384[];
-extern UnkStruct_09EF9488 gUnk_09EF9488[];
+extern WorldSelectDef gUnk_09EF9488[];
 extern WarpRect gUnk_099930E8[];
 extern u8 gUnk_09A3D37C[];
 extern u8 gUnk_09A06A7C[];

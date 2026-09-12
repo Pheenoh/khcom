@@ -550,9 +550,9 @@ u8 func_08100608(s16 a) {
         return 0;
     }
 #ifdef VERSION_EU
-    return LoadTextSlots(eu_0805E924(gUnk_09EF9488[a].unk_14), gUnk_02035618);
+    return LoadTextSlots(eu_0805E924(gUnk_09EF9488[a].name), gUnk_02035618);
 #else
-    return LoadTextSlots(gUnk_09EF9488[a].unk_14, gUnk_02035618);
+    return LoadTextSlots(gUnk_09EF9488[a].name, gUnk_02035618);
 #endif
 }
 
@@ -561,9 +561,9 @@ u8 func_0810063C(s16 a) {
         return 0;
     }
 #ifdef VERSION_EU
-    return LoadTextSlots(eu_0805E924(gUnk_09EF9488[a].unk_14), gUnk_020356E0);
+    return LoadTextSlots(eu_0805E924(gUnk_09EF9488[a].name), gUnk_020356E0);
 #else
-    return LoadTextSlots(gUnk_09EF9488[a].unk_14, gUnk_020356E0);
+    return LoadTextSlots(gUnk_09EF9488[a].name, gUnk_020356E0);
 #endif
 }
 

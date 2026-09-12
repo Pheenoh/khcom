@@ -173,7 +173,7 @@ typedef struct Actor {
     const u32* unk_184;
 } Actor;
 
-typedef struct UnkStruct_02039CA8 {
+typedef struct PlayerProgression {
     u16 maxHp;
     u16 cp;
     u16 dp;
@@ -188,7 +188,7 @@ typedef struct UnkStruct_02039CA8 {
     u16 unk_82;
     u16 unk_84;
     u8 unk_86[0x02];
-} UnkStruct_02039CA8;
+} PlayerProgression;
 
 typedef struct UnkStruct_08133E5C {
     s16 unk_00;
@@ -329,7 +329,7 @@ extern u8 gUnk_09EDA828[];
 extern const UnkStruct_08133E5C gUnk_08133E5C[];
 extern const UnkStruct_0813400C gUnk_0813400C[];
 
-extern UnkStruct_02039CA8 gUnk_02039CA8;
+extern PlayerProgression gUnk_02039CA8;
 extern UnkStruct_020348C8* gUnk_020348C8;
 extern u16 gUnk_020348CC[2];
 extern u16 gUnk_020348D0[2];
@@ -382,7 +382,7 @@ u8 func_080ABED0(void);
 void func_0800EEBC(Actor* p, SprObj* s);
 void func_0800F230(void);
 u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r);
-void AdvanceLevelExpThreshold(UnkStruct_02039CA8* p);
+void AdvanceLevelExpThreshold(PlayerProgression* p);
 void func_0801CA88(void);
 
 const UnkStruct_08133E5C* func_0800FB14(u16 i);

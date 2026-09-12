@@ -30,9 +30,9 @@
 #include "m4a.h"
 
 
-extern UnkStruct_09EF9618 gUnk_09EF9618[];
-extern UnkStruct_09EE4C80 gUnk_09EE4C80[];
-extern UnkStruct_09EE4BF4 gUnk_09EE4BF4[];
+extern MapCardCategoryDef gUnk_09EF9618[];
+extern MapCardDef gUnk_09EE4C80[];
+extern MapCardBackDef gUnk_09EE4BF4[];
 extern s16 gUnk_02035C14;
 extern s16 gUnk_02035C16;
 extern AnimState gUnk_02035CA0;
@@ -154,12 +154,12 @@ s16 func_081075D8(void);
 u16 func_08107D24(void);
 void mode_ms_charge_1(void);
 void mode_ms_charge_2(void);
-void func_08108170(UnkStruct_0810718C* p, u16 row);
+void func_08108170(MapCardInventoryEntry* p, u16 row);
 void func_08107938(void);
-u8 func_081079A8(UnkStruct_0810718C* p);
-u8 func_081079E4(UnkStruct_0810718C* p);
-void func_08107A08(UnkStruct_0810718C* p);
-void func_08107A74(UnkStruct_0810718C* p);
+u8 func_081079A8(MapCardInventoryEntry* p);
+u8 func_081079E4(MapCardInventoryEntry* p);
+void func_08107A08(MapCardInventoryEntry* p);
+void func_08107A74(MapCardInventoryEntry* p);
 void mode_ms_charge_0(void);
 extern s16 gUnk_02035C18;
 extern s16 gUnk_02035CE0;

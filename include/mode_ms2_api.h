@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-struct UnkStruct_0810718C;
+struct MapCardInventoryEntry;
 
 void func_08107D44(void);
 void func_08107FF0(void);
@@ -12,7 +12,7 @@ void func_081083EC(void);
 void func_081085E8(void);
 void func_08108650(void);
 void func_08107B84(void);
-struct UnkStruct_0810718C* func_0810718C(void);
+struct MapCardInventoryEntry* func_0810718C(void);
 void func_081078F0(s16 a);
 void func_081075FC(void);
 void func_0810764C(void);
