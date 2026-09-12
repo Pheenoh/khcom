@@ -205,14 +205,30 @@ void func_0805A8D0(void) {
         gJiminyWork->unk_CAE, gJiminyWork->unk_CB0, gJiminyWork->unk_CB2);
 }
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+extern void* eu_0805E924(void* strings);
+#endif
+
 void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
+#ifdef VERSION_EU
+    s32 i;
+#endif
+
     gJiminyWork->unk_CAE = f;
     gJiminyWork->unk_CB0 = g;
     gJiminyWork->unk_CB2 = h;
     gJiminyWork->unk_C76 = b;
     gJiminyWork->unk_C78 = a;
+#ifdef VERSION_EU
+
+    for (i = 0; i < b; i++) {
+        gJiminyWork->unk_D40[i] = eu_0805E924(c[i]);
+    }
+
+    gJiminyWork->unk_CB4 = gJiminyWork->unk_D40;
+#else
     gJiminyWork->unk_CB4 = c;
+#endif
     gJiminyWork->unk_CB8 = d;
     gJiminyWork->unk_CBC = e;
     gJiminyWork->unk_CC2 = f + 56;
@@ -226,9 +242,6 @@ void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
     func_0805A7D0();
     gJiminyWork->unk_D3E = 0;
 }
-#else
-INCLUDE_ASM("jiminy_list/func_0805A95C.s");
-#endif
 
 u8 func_0805AA9C(void) {
     if (func_08006314()) {
