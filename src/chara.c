@@ -793,7 +793,6 @@ void eu_080C24D8(void) {
 
 void func_080C61D4(void) {
     s32 i;
-    CharaLinkCard* q;
     CharaLinkData* send;
     u16* recv;
 
@@ -810,9 +809,8 @@ void func_080C61D4(void) {
     gUnk_0203AAC0.unk_1C = 0;
 
     for (i = 0; i < 13; i++) {
-        q = &gGameState.unk_186[i];
-        if ((u8)(q->unk_00 - 1) <= 11) {
-            gUnk_0203AAC0.unk_1C |= 1 << q->unk_00;
+        if ((u8)(gGameState.floors[i].world - 1) <= 11) {
+            gUnk_0203AAC0.unk_1C |= 1 << gGameState.floors[i].world;
         }
     }
 

@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "mode_worldinspect.h"
+#include "game_state.h"
 #include "gba/keys.h"
 #include "anim.h"
 #include "m4a.h"
@@ -37,23 +38,6 @@ extern u8 gUnkEu_099AC9B2[];
 #endif
 
 typedef struct {
-    u16 world : 8;
-    u16 unk_01 : 8;
-    u16 unk_02;
-} __attribute__((packed, aligned(2))) WorldinspectFloor;
-
-typedef struct {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C[0x02];
-    s8 floor;
-    u8 unk_00F[0x165];
-    u32 mooglePoints;
-    u8 unk_178[0x0E];
-    WorldinspectFloor unk_186[12];
-} WorldinspectGameState;
-
-typedef struct {
     s16 unk_00;
     s16 unk_02;
     s16 unk_04;
@@ -66,7 +50,6 @@ typedef struct {
     u8 unk_12[0x02];
 } WorldinspectWarpIcon;
 
-extern WorldinspectGameState gGameState;
 extern s16 gUnk_020354E8;
 extern s16 gUnk_020357A2;
 extern s32 gUnk_020357A8[2];
@@ -256,7 +239,7 @@ void mode_worldinspect_0(void) {
     gUnk_020350FA = 0;
 
     for (i = 0; i <= 11; i++) {
-        gUnk_02035100[i] = gGameState.unk_186[i].world;
+        gUnk_02035100[i] = gGameState.floors[i].world;
 
         if (gUnk_02035100[i] != 0) {
             gUnk_020350FA = i + 1;

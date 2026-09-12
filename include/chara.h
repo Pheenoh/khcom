@@ -2,6 +2,7 @@
 #define GUARD_CHARA_H
 
 #include "types.h"
+#include "game_state.h"
 #include "taskpool.h"
 #include "gba/syscall.h"
 #include "key.h"
@@ -20,28 +21,6 @@ typedef struct MaskFadeWork {
     u8 unk_02C[0x20];
     s8 unk_04C[0x1F4];
 } MaskFadeWork;
-
-typedef struct CharaLinkCard {
-    u16 unk_00 : 8;
-    u16 unk_01 : 8;
-    u16 unk_02;
-} __attribute__((packed, aligned(2))) CharaLinkCard;
-
-typedef struct GameState {
-    u8 unk_000[0x32];
-    u16 hp;
-    u8 unk_034[0xC4];
-    u16 maxHp;
-    u8 unk_0FA[0x04];
-    u16 ap;
-    u8 unk_100[0x08];
-    u8 level;
-    u8 unk_109[0x03];
-    u64 unk_10C;
-    u64 unk_114;
-    u8 unk_11C[0x6A];
-    CharaLinkCard unk_186[13];
-} GameState;
 
 typedef struct CharaLinkData {
     u16 unk_00;
@@ -261,7 +240,6 @@ void m4aSongNumStop(u16 id);
 extern TaskDesc gUnk_09EF34A8;
 
 extern s16 gSineTable[];
-extern GameState gGameState;
 extern CharaLinkData gUnk_0203AAC0;
 extern u16 gUnk_0203AA10[];
 extern u16 gUnk_0203A9EC;

@@ -21,15 +21,15 @@ void task_fld_sora_0(FldWork* work) {
     act->unk_32 = 0;
     act->unk_30 = 0;
 
-    if (gGameState.unk_00 != 0) {
-        act->unk_00 = gGameState.unk_14;
-        act->angle = gGameState.unk_24;
-        act->unk_10 = gGameState.unk_28;
-        work->unk_94 = gGameState.unk_30;
-        work->unk_A0 = gGameState.unk_2C;
-        work->unk_B0 = gGameState.unk_34;
-        work->unk_B4 = gGameState.unk_38;
-        work->unk_B8 = gGameState.unk_3C;
+    if (gGameState.unk_000 != 0) {
+        act->unk_00 = gGameState.fieldPosition;
+        act->angle = gGameState.unk_024;
+        act->unk_10 = gGameState.unk_028;
+        work->unk_94 = gGameState.unk_030;
+        work->unk_A0 = gGameState.unk_02C;
+        work->unk_B0 = gGameState.unk_034;
+        work->unk_B4 = gGameState.unk_038;
+        work->unk_B8 = gGameState.unk_03C;
     } else {
         act->unk_00.x = gUnk_02039BA0->unk_DC;
         act->unk_00.y = gUnk_02039BA0->unk_E0;
@@ -47,7 +47,7 @@ void task_fld_sora_0(FldWork* work) {
     func_08031F98(work, 0, 1);
     work->gfx = AnimGetGfx(work->unk_08);
 
-    switch (gGameState.unk_0C) {
+    switch (gGameState.world) {
     case 7:
         work->unk_AC = gUnk_0813CD4C[1];
         break;
@@ -736,7 +736,7 @@ u8 func_08033334(FldWork* work, void* task) {
             act->angle = 45;
             func_08031F98(work, 2, 1);
 
-            if (gGameState.unk_0E == 0) {
+            if (gGameState.floor == 0) {
                 act->unk_00.x = 0x32000;
             } else {
                 act->unk_00.x = 0x22000;
@@ -1455,17 +1455,17 @@ void task_fld_sora_3(FldWork* work) {
     ReleaseObjPalette(work->palette);
     func_08012304(work->unk_38);
 
-    if (gGameState.unk_00 != 0) {
-        gGameState.unk_28 = act->unk_10;
-        gGameState.unk_14 = act->unk_00;
-        gGameState.unk_24 = act->angle;
-        gGameState.unk_30 = work->unk_94;
-        gGameState.unk_2C = work->unk_A0;
-        gGameState.unk_34 = work->unk_B0;
-        gGameState.unk_38 = work->unk_B4;
-        gGameState.unk_3C = work->unk_B8;
+    if (gGameState.unk_000 != 0) {
+        gGameState.unk_028 = act->unk_10;
+        gGameState.fieldPosition = act->unk_00;
+        gGameState.unk_024 = act->angle;
+        gGameState.unk_030 = work->unk_94;
+        gGameState.unk_02C = work->unk_A0;
+        gGameState.unk_034 = work->unk_B0;
+        gGameState.unk_038 = work->unk_B4;
+        gGameState.unk_03C = work->unk_B8;
     } else {
-        gGameState.unk_24 = act->angle;
+        gGameState.unk_024 = act->angle;
     }
 
     TaskPoolDestroy(work->unk_24);
@@ -1720,15 +1720,15 @@ void task_fld_riku_0(FldWork* work) {
     act->unk_32 = 0;
     act->unk_30 = 0;
 
-    if (gGameState.unk_00 != 0) {
-        act->unk_00 = gGameState.unk_14;
-        act->angle = gGameState.unk_24;
-        act->unk_10 = gGameState.unk_28;
-        work->unk_94 = gGameState.unk_30;
-        work->unk_A0 = gGameState.unk_2C;
-        work->unk_B0 = gGameState.unk_34;
-        work->unk_B4 = gGameState.unk_38;
-        work->unk_B8 = gGameState.unk_3C;
+    if (gGameState.unk_000 != 0) {
+        act->unk_00 = gGameState.fieldPosition;
+        act->angle = gGameState.unk_024;
+        act->unk_10 = gGameState.unk_028;
+        work->unk_94 = gGameState.unk_030;
+        work->unk_A0 = gGameState.unk_02C;
+        work->unk_B0 = gGameState.unk_034;
+        work->unk_B4 = gGameState.unk_038;
+        work->unk_B8 = gGameState.unk_03C;
     } else {
         act->unk_00.x = gUnk_02039BA0->unk_DC;
         act->unk_00.y = gUnk_02039BA0->unk_E0;
@@ -1746,7 +1746,7 @@ void task_fld_riku_0(FldWork* work) {
     func_0803473C(work, 0, 1);
     work->gfx = AnimGetGfx(work->unk_08);
 
-    switch (gGameState.unk_0C) {
+    switch (gGameState.world) {
     case 7:
         work->unk_AC = gUnk_0813D28C[1];
         break;
@@ -3148,17 +3148,17 @@ void task_fld_riku_3(FldWork* work) {
     ReleaseObjPalette(work->palette);
     func_08012304(work->unk_38);
 
-    if (gGameState.unk_00 != 0) {
-        gGameState.unk_28 = act->unk_10;
-        gGameState.unk_14 = act->unk_00;
-        gGameState.unk_24 = act->angle;
-        gGameState.unk_30 = work->unk_94;
-        gGameState.unk_2C = work->unk_A0;
-        gGameState.unk_34 = work->unk_B0;
-        gGameState.unk_38 = work->unk_B4;
-        gGameState.unk_3C = work->unk_B8;
+    if (gGameState.unk_000 != 0) {
+        gGameState.unk_028 = act->unk_10;
+        gGameState.fieldPosition = act->unk_00;
+        gGameState.unk_024 = act->angle;
+        gGameState.unk_030 = work->unk_94;
+        gGameState.unk_02C = work->unk_A0;
+        gGameState.unk_034 = work->unk_B0;
+        gGameState.unk_038 = work->unk_B4;
+        gGameState.unk_03C = work->unk_B8;
     } else {
-        gGameState.unk_24 = act->angle;
+        gGameState.unk_024 = act->angle;
     }
 
     TaskPoolDestroy(work->unk_24);

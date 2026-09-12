@@ -102,7 +102,7 @@ void mode_worldwarp_0(void) {
 
     for (i = 0; i <= 12; i++) {
         if (i < gUnk_020354EA) {
-            gUnk_020354F0[i] = gGameState.unk_186[i].world;
+            gUnk_020354F0[i] = gGameState.floors[i].world;
         } else {
             gUnk_020354F0[i] |= 0xFFFFu;
         }

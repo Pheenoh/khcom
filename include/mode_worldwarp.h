@@ -2,28 +2,12 @@
 #define GUARD_MODE_WORLDWARP_H
 
 #include "types.h"
+#include "game_state.h"
 #include "text_types.h"
 #include "taskpool.h"
 #include "main.h"
 #include "anim.h"
 #include "m4a.h"
-typedef struct {
-    u16 world : 8;
-    u16 unk_01 : 8;
-    u16 unk_02;
-} __attribute__((packed, aligned(2))) WorldwarpFloor;
-
-typedef struct GameState {
-    u8 unk_000[0x08];
-    u32 flags;
-    u8 unk_00C[0x02];
-    s8 floor;
-    u8 unk_00F[0x165];
-    u32 mooglePoints;
-    u8 unk_178[0x0E];
-    WorldwarpFloor unk_186[13];
-} GameState;
-
 typedef struct WarpIcon {
     u8 unk_00[0x08];
     s16 unk_08;
@@ -82,7 +66,6 @@ typedef struct WarpDef {
     WarpGfx unk_1C[2];
 } WarpDef;
 
-extern GameState gGameState;
 extern const WarpDef gUnk_09993118[];
 extern u16 gUnk_099931D0[];
 extern s32 gUnk_02035880;
