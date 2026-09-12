@@ -48,24 +48,24 @@ void task_bos_tm_body_0(TmBodyWork* work, TmWork* arg) {
     work->unk_492 = 0;
 
     if (work->unk_000->unk_28 & 8) {
-        func_080B83A4(work->unk_010, work->unk_000->unk_00 + 4, work->unk_000->unk_02,
+        func_080B83A4(&work->unk_010, work->unk_000->unk_00 + 4, work->unk_000->unk_02,
                       work->unk_000->unk_04 - 34);
-        func_080B83A4(work->unk_12C, work->unk_000->unk_00, work->unk_000->unk_02,
+        func_080B83A4(&work->unk_12C, work->unk_000->unk_00, work->unk_000->unk_02,
                       work->unk_000->unk_04 + 9);
-        func_080B83A4(work->unk_248, work->unk_000->unk_00 + 12, work->unk_000->unk_02 + 1,
+        func_080B83A4(&work->unk_248, work->unk_000->unk_00 + 12, work->unk_000->unk_02 + 1,
                       work->unk_000->unk_04 - 33);
-        func_080B83A4(work->unk_364, work->unk_000->unk_00 - 1, work->unk_000->unk_02 - 4,
+        func_080B83A4(&work->unk_364, work->unk_000->unk_00 - 1, work->unk_000->unk_02 - 4,
                       work->unk_000->unk_04 - 30);
     } else {
-        func_080B83A4(work->unk_010, work->unk_000->unk_00 + 4, work->unk_000->unk_02,
+        func_080B83A4(&work->unk_010, work->unk_000->unk_00 + 4, work->unk_000->unk_02,
                       work->unk_000->unk_04 - 34);
-        func_080B8334(work->unk_12C, work->unk_000->unk_00, work->unk_000->unk_02,
+        func_080B8334(&work->unk_12C, work->unk_000->unk_00, work->unk_000->unk_02,
                       work->unk_000->unk_04 - 16);
-        func_080B83A4(work->unk_248, work->unk_000->unk_00 + 12, work->unk_000->unk_02 + 1,
+        func_080B83A4(&work->unk_248, work->unk_000->unk_00 + 12, work->unk_000->unk_02 + 1,
                       work->unk_000->unk_04 - 33);
-        func_080B83A4(work->unk_364, work->unk_000->unk_00 - 1, work->unk_000->unk_02 - 4,
+        func_080B83A4(&work->unk_364, work->unk_000->unk_00 - 1, work->unk_000->unk_02 - 4,
                       work->unk_000->unk_04 - 30);
-        memcpy(gUnk_0203AB50, work->unk_12C, 272);
+        memcpy(&gUnk_0203AB50, &work->unk_12C, 272);
     }
 }
 u8 task_bos_tm_body_1(TmBodyWork* work) {
@@ -74,42 +74,42 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
     u16 flags;
 
     if (!(work->unk_000->unk_28 & 8)) {
-        _080B949C((struct WlogoBtlObj*)work->unk_12C, (struct WlogoTtEffTop*)work);
+        _080B949C(&work->unk_12C, work);
     }
     switch (work->unk_000->unk_2C) {
     case 0:
     case 15:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B8508((struct WlogoTtEffTop*)work);
+            func_080B8508(work);
         } else {
             if (gBtlWork->unk_0A0 && (u16)(GetRandom() % 80) == 0) {
-                func_0801BCD4((BtlObj*)work->unk_12C);
+                func_0801BCD4(&work->unk_12C);
             }
             if ((s16)work->unk_000->unk_36 == 0) {
                 table = (s16*)(gUnk_09EF1D58 + 12);
                 work->unk_000->unk_1C += table[(s16)work->unk_000->unk_34] << 8;
-                *(s32*)&work->unk_010[12] = work->unk_000->unk_1C - 0x2200;
-                *(s32*)&work->unk_12C[12] = work->unk_000->unk_1C + 0x900;
-                *(s32*)&work->unk_248[12] = work->unk_000->unk_1C - 0x2100;
-                *(s32*)&work->unk_364[12] = work->unk_000->unk_1C - 0x1E00;
+                work->unk_010.unk_00C = work->unk_000->unk_1C - 0x2200;
+                work->unk_12C.unk_00C = work->unk_000->unk_1C + 0x900;
+                work->unk_248.unk_00C = work->unk_000->unk_1C - 0x2100;
+                work->unk_364.unk_00C = work->unk_000->unk_1C - 0x1E00;
             }
-            func_080B83C4((struct WlogoTtEff*)work);
+            func_080B83C4(work);
         }
         break;
     case 4:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B895C((struct WlogoTtEffTop*)work);
+            func_080B895C(work);
             work->unk_000->unk_20 = -0x900;
             work->unk_000->unk_24 = 0;
         } else {
-            func_080B89B0((struct WlogoTtEffTop*)work);
+            func_080B89B0(work);
             if (work->unk_000->unk_08 <= 0x8E00) {
                 work->unk_000->unk_28 &= ~0x20;
-                *(u64*)&work->unk_12C[0x34] &= ~4;
+                work->unk_12C.unk_034 &= ~4;
                 work->unk_000->unk_2C = 5;
                 work->unk_000->unk_3C = 5;
-                func_080B8324((struct WlogoTtEffTop*)work);
-                func_080B895C((struct WlogoTtEffTop*)work);
+                func_080B8324(work);
+                func_080B895C(work);
                 work->unk_000->unk_20 = 0x900;
                 work->unk_000->unk_24 = 0;
             }
@@ -117,35 +117,35 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
         break;
     case 5:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B895C((struct WlogoTtEffTop*)work);
+            func_080B895C(work);
             work->unk_000->unk_20 = 0x900;
             work->unk_000->unk_24 = 0;
         } else {
-            func_080B89B0((struct WlogoTtEffTop*)work);
+            func_080B89B0(work);
             if (work->unk_000->unk_08 > 0x9FFF) {
-                func_0801AF08(work->unk_12C);
+                func_0801AF08(&work->unk_12C);
                 work->unk_000->unk_28 &= ~0x40;
                 work->unk_000->unk_2C = 0;
                 work->unk_000->unk_3C = 16;
-                func_080B8324((struct WlogoTtEffTop*)work);
-                func_080B8508((struct WlogoTtEffTop*)work);
+                func_080B8324(work);
+                func_080B8508(work);
             }
         }
         break;
     case 6:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B895C((struct WlogoTtEffTop*)work);
+            func_080B895C(work);
             work->unk_000->unk_20 = 0x900;
             work->unk_000->unk_24 = 0;
         } else {
-            func_080B89B0((struct WlogoTtEffTop*)work);
+            func_080B89B0(work);
             if (work->unk_000->unk_08 > 0x16EFF) {
                 work->unk_000->unk_28 |= 0x20;
-                *(u64*)&work->unk_12C[0x34] |= 4;
+                work->unk_12C.unk_034 |= 4;
                 work->unk_000->unk_2C = 7;
                 work->unk_000->unk_3C = 7;
-                func_080B8324((struct WlogoTtEffTop*)work);
-                func_080B895C((struct WlogoTtEffTop*)work);
+                func_080B8324(work);
+                func_080B895C(work);
                 work->unk_000->unk_20 = -0x900;
                 work->unk_000->unk_24 = 0;
             }
@@ -153,115 +153,115 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
         break;
     case 7:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B895C((struct WlogoTtEffTop*)work);
+            func_080B895C(work);
             work->unk_000->unk_20 = -0x900;
             work->unk_000->unk_24 = 0;
         } else {
-            func_080B89B0((struct WlogoTtEffTop*)work);
+            func_080B89B0(work);
             if (work->unk_000->unk_08 <= 0x15D00) {
-                func_0801AF08(work->unk_12C);
+                func_0801AF08(&work->unk_12C);
                 work->unk_000->unk_28 &= ~0x40;
                 work->unk_000->unk_2C = 0;
                 work->unk_000->unk_3C = 16;
-                func_080B8324((struct WlogoTtEffTop*)work);
-                func_080B8508((struct WlogoTtEffTop*)work);
+                func_080B8324(work);
+                func_080B8508(work);
             }
         }
         break;
     case 1:
     case 10:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B8508((struct WlogoTtEffTop*)work);
+            func_080B8508(work);
         } else if (work->unk_000->unk_28 & 2) {
             work->unk_000->unk_28 &= ~2;
-            func_0801AF08(work->unk_12C);
+            func_0801AF08(&work->unk_12C);
             work->unk_000->unk_2C = 0;
-            func_080B8324((struct WlogoTtEffTop*)work);
+            func_080B8324(work);
             work->unk_000->unk_1C = (s16)work->unk_000->unk_04 << 8;
         }
         break;
     case 2:
     case 3:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B8508((struct WlogoTtEffTop*)work);
+            func_080B8508(work);
         } else {
             n = work->unk_000->unk_34;
             if ((s16)work->unk_000->unk_34 <= 3) {
-                func_080B87C0((struct WlogoTtEffTop*)work, (s16)work->unk_000->unk_34);
+                func_080B87C0(work, (s16)work->unk_000->unk_34);
             } else if (n >= 66 && n <= 74) {
-                func_080B87C0((struct WlogoTtEffTop*)work, n - 62);
+                func_080B87C0(work, n - 62);
             } else if (n >= 98 && n <= 100) {
-                func_080B87C0((struct WlogoTtEffTop*)work, n - 85);
+                func_080B87C0(work, n - 85);
             }
             if (work->unk_000->unk_28 & 2) {
                 work->unk_000->unk_28 &= ~2;
-                func_0801AF08(work->unk_12C);
+                func_0801AF08(&work->unk_12C);
                 work->unk_000->unk_2C = 0;
-                func_080B8324((struct WlogoTtEffTop*)work);
-                func_080B8508((struct WlogoTtEffTop*)work);
+                func_080B8324(work);
+                func_080B8508(work);
             }
         }
         break;
     case 11:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B8508((struct WlogoTtEffTop*)work);
+            func_080B8508(work);
         } else {
             n = work->unk_000->unk_34;
             if ((s16)work->unk_000->unk_34 <= 3) {
-                func_080B87C0((struct WlogoTtEffTop*)work, (s16)work->unk_000->unk_34);
+                func_080B87C0(work, (s16)work->unk_000->unk_34);
             } else if (n >= 96 && n <= 104) {
-                func_080B87C0((struct WlogoTtEffTop*)work, n - 92);
+                func_080B87C0(work, n - 92);
             } else if (n >= 128 && n <= 130) {
-                func_080B87C0((struct WlogoTtEffTop*)work, n - 115);
+                func_080B87C0(work, n - 115);
             }
             if (work->unk_000->unk_28 & 2) {
                 work->unk_000->unk_28 &= ~2;
-                func_0801AF08(work->unk_12C);
+                func_0801AF08(&work->unk_12C);
                 work->unk_000->unk_2C = 0;
-                func_080B8324((struct WlogoTtEffTop*)work);
-                func_080B8508((struct WlogoTtEffTop*)work);
+                func_080B8324(work);
+                func_080B8508(work);
             }
         }
         break;
     case 9:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B8508((struct WlogoTtEffTop*)work);
+            func_080B8508(work);
         } else {
             n = work->unk_000->unk_34;
             if ((s16)work->unk_000->unk_34 <= 2) {
-                func_080B8FF4((struct WlogoTtEffTop*)work, (s16)work->unk_000->unk_34);
+                func_080B8FF4(work, (s16)work->unk_000->unk_34);
             } else if (n >= 41 && n <= 46) {
-                func_080B8FF4((struct WlogoTtEffTop*)work, n - 38);
+                func_080B8FF4(work, n - 38);
             }
             if (work->unk_000->unk_28 & 2) {
                 work->unk_000->unk_28 &= ~2;
-                func_0801AF08(work->unk_12C);
+                func_0801AF08(&work->unk_12C);
                 work->unk_000->unk_2C = 0;
-                func_080B8324((struct WlogoTtEffTop*)work);
-                func_080B8508((struct WlogoTtEffTop*)work);
+                func_080B8324(work);
+                func_080B8508(work);
             }
         }
         break;
     case 12:
-        func_080B8A00((struct WlogoTtEffTop*)work);
+        func_080B8A00(work);
         break;
     case 14:
         if ((s16)work->unk_000->unk_38 == 0) {
-            func_080B8688((struct WlogoTtEffTop*)work);
+            func_080B8688(work);
             if (work->unk_000->unk_28 & 0x40) {
                 func_08083900(9);
             }
         } else if ((s16)work->unk_000->unk_38 > 59) {
-            func_080B8324((struct WlogoTtEffTop*)work);
+            func_080B8324(work);
             work->unk_000->unk_28 &= ~0x80;
             flags = work->unk_000->unk_28 & 0x40;
             if (flags) {
-                func_0801AF08(work->unk_12C);
-                func_080B8688((struct WlogoTtEffTop*)work);
+                func_0801AF08(&work->unk_12C);
+                func_080B8688(work);
                 work->unk_000->unk_2C = 8;
             } else {
-                func_0801AF08(work->unk_12C);
-                func_080B8508((struct WlogoTtEffTop*)work);
+                func_0801AF08(&work->unk_12C);
+                func_080B8508(work);
                 work->unk_000->unk_2C = 0;
             }
         } else if (!(work->unk_000->unk_28 & 0x80) && work->unk_000->unk_3A == 0 && (work->unk_000->unk_28 & 1)) {
@@ -274,11 +274,11 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
         }
         break;
     case 8:
-        func_0801BCD4((BtlObj*)work->unk_12C);
+        func_0801BCD4(&work->unk_12C);
         break;
     case 13:
         if ((s16)work->unk_000->unk_34 == 0) {
-            func_080B8554((struct WlogoTtEffTop*)work);
+            func_080B8554(work);
         }
         break;
     case 16:
@@ -321,10 +321,10 @@ void task_bos_tm_body_2(TmBodyWork* work) {
         pal = work->palette;
     }
 
-    s0 = (BtlObj*)work->unk_010;
-    s1 = (BtlObj*)work->unk_12C;
-    s2 = (BtlObj*)work->unk_248;
-    s3 = (BtlObj*)work->unk_364;
+    s0 = &work->unk_010;
+    s1 = &work->unk_12C;
+    s2 = &work->unk_248;
+    s3 = &work->unk_364;
     WorldToScreen(&x, &y, s0->unk_004, s0->unk_008, s0->unk_00C);
     DrawSprite(x, y, work->gfx, work->tiles, pal, a1, 0x800,
                (u16)(-4101 - (s0->unk_008 >> 8) * 4));
@@ -341,7 +341,7 @@ void task_bos_tm_body_2(TmBodyWork* work) {
 
 void task_bos_tm_body_3(TmBodyWork* work) {
     if ((work->unk_000->unk_28 & 8) == 0) {
-        func_080B83B8(work->unk_12C);
+        func_080B83B8(&work->unk_12C);
     }
 
     ReleaseObjTiles(work->tiles);
@@ -349,7 +349,7 @@ void task_bos_tm_body_3(TmBodyWork* work) {
     ReleaseObjPalette(work->palette2);
 }
 void func_080B9FC4(TmBodyWork* work) {
-    if (work->unk_158 < work->unk_15A / 2) {
+    if (work->unk_12C.unk_02C < work->unk_12C.unk_02E / 2) {
         if (GetRandom() % 100 <= 9) {
             func_08083900(1);
         } else if (GetRandom() % 90 <= 19) {
@@ -375,14 +375,14 @@ void func_080BA08C(BtlObj* work, s16 x, s16 y, s16 z, s16 a, s16 b, s32 c, s16 d
     }
 }
 
-void func_080BA0E4(s32* p, s32 a, s32 b, s32 c) {
-    p[1] = (s16)a << 8;
-    p[2] = (s16)b << 8;
-    p[3] = (s16)c << 8;
+void func_080BA0E4(BtlObj* p, s32 a, s32 b, s32 c) {
+    p->unk_004 = (s16)a << 8;
+    p->unk_008 = (s16)b << 8;
+    p->unk_00C = (s16)c << 8;
 }
 
-void func_080BA0F8(u8* work) {
-    func_08012304(work + 0x40);
+void func_080BA0F8(BtlObj* work) {
+    func_08012304(&work->unk_040);
 }
 
 void func_080BA104(BtlObj* sub, TmFootWork* work) {
@@ -398,31 +398,31 @@ void func_080BA11C(TmFootWork* work) {
     work->unk_244 = gUnk_09EF39DC[2];
 
     if (work->unk_47C->unk_28 & 0x20) {
-        work->unk_020 = work->unk_47C->unk_08 + 0x100;
-        work->unk_138 = work->unk_47C->unk_08 - 0x600;
-        work->unk_250 = work->unk_47C->unk_08 + 0x600;
-        work->unk_368 = work->unk_47C->unk_08 - 0x200;
-        work->unk_024 = work->unk_47C->unk_0C + 0x200;
-        work->unk_13C = work->unk_47C->unk_0C - 0x200;
-        work->unk_254 = work->unk_47C->unk_0C + 0x500;
-        work->unk_36C = work->unk_47C->unk_0C - 0x200;
-        work->unk_028 = work->unk_47C->unk_10 - 0x400;
-        work->unk_140 = work->unk_47C->unk_10 - 0x400;
-        work->unk_258 = work->unk_47C->unk_10 + 0x2800;
-        work->unk_370 = work->unk_47C->unk_10 + 0x2B00;
+        work->unk_01C.unk_004 = work->unk_47C->unk_08 + 0x100;
+        work->unk_134.unk_004 = work->unk_47C->unk_08 - 0x600;
+        work->unk_24C.unk_004 = work->unk_47C->unk_08 + 0x600;
+        work->unk_364.unk_004 = work->unk_47C->unk_08 - 0x200;
+        work->unk_01C.unk_008 = work->unk_47C->unk_0C + 0x200;
+        work->unk_134.unk_008 = work->unk_47C->unk_0C - 0x200;
+        work->unk_24C.unk_008 = work->unk_47C->unk_0C + 0x500;
+        work->unk_364.unk_008 = work->unk_47C->unk_0C - 0x200;
+        work->unk_01C.unk_00C = work->unk_47C->unk_10 - 0x400;
+        work->unk_134.unk_00C = work->unk_47C->unk_10 - 0x400;
+        work->unk_24C.unk_00C = work->unk_47C->unk_10 + 0x2800;
+        work->unk_364.unk_00C = work->unk_47C->unk_10 + 0x2B00;
     } else {
-        work->unk_020 = work->unk_47C->unk_08 + 0x600;
-        work->unk_138 = work->unk_47C->unk_08 - 0x100;
-        work->unk_250 = work->unk_47C->unk_08 + 0x200;
-        work->unk_368 = work->unk_47C->unk_08 - 0x600;
-        work->unk_024 = work->unk_47C->unk_0C - 0x200;
-        work->unk_13C = work->unk_47C->unk_0C + 0x200;
-        work->unk_254 = work->unk_47C->unk_0C - 0x500;
-        work->unk_36C = work->unk_47C->unk_0C + 0x200;
-        work->unk_028 = work->unk_47C->unk_10 - 0x400;
-        work->unk_140 = work->unk_47C->unk_10 - 0x400;
-        work->unk_258 = work->unk_47C->unk_10 + 0x2800;
-        work->unk_370 = work->unk_47C->unk_10 + 0x2B00;
+        work->unk_01C.unk_004 = work->unk_47C->unk_08 + 0x600;
+        work->unk_134.unk_004 = work->unk_47C->unk_08 - 0x100;
+        work->unk_24C.unk_004 = work->unk_47C->unk_08 + 0x200;
+        work->unk_364.unk_004 = work->unk_47C->unk_08 - 0x600;
+        work->unk_01C.unk_008 = work->unk_47C->unk_0C - 0x200;
+        work->unk_134.unk_008 = work->unk_47C->unk_0C + 0x200;
+        work->unk_24C.unk_008 = work->unk_47C->unk_0C - 0x500;
+        work->unk_364.unk_008 = work->unk_47C->unk_0C + 0x200;
+        work->unk_01C.unk_00C = work->unk_47C->unk_10 - 0x400;
+        work->unk_134.unk_00C = work->unk_47C->unk_10 - 0x400;
+        work->unk_24C.unk_00C = work->unk_47C->unk_10 + 0x2800;
+        work->unk_364.unk_00C = work->unk_47C->unk_10 + 0x2B00;
     }
 }
 void func_080BA2B0(TmFootWork* work) {
@@ -432,39 +432,39 @@ void func_080BA2B0(TmFootWork* work) {
     work->unk_244 = gUnk_09EF39DC[0];
 
     if (work->unk_47C->unk_28 & 0x20) {
-        work->unk_020 = work->unk_47C->unk_08 + 0x100;
-        work->unk_138 = work->unk_47C->unk_08 - 0x600;
-        work->unk_250 = work->unk_47C->unk_08 + 0x600;
-        work->unk_368 = work->unk_47C->unk_08 - 0x200;
-        work->unk_024 = work->unk_47C->unk_18 + 0x200;
-        work->unk_13C = work->unk_47C->unk_18 - 0x200;
-        work->unk_254 = work->unk_47C->unk_18 + 0x500;
-        work->unk_36C = work->unk_47C->unk_18 - 0x200;
-        work->unk_028 = work->unk_47C->unk_1C - 0x400;
-        work->unk_140 = work->unk_47C->unk_1C - 0x400;
-        work->unk_258 = work->unk_47C->unk_1C + 0x1900;
-        work->unk_370 = work->unk_47C->unk_1C + 0x1C00;
+        work->unk_01C.unk_004 = work->unk_47C->unk_08 + 0x100;
+        work->unk_134.unk_004 = work->unk_47C->unk_08 - 0x600;
+        work->unk_24C.unk_004 = work->unk_47C->unk_08 + 0x600;
+        work->unk_364.unk_004 = work->unk_47C->unk_08 - 0x200;
+        work->unk_01C.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_134.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_24C.unk_008 = work->unk_47C->unk_18 + 0x500;
+        work->unk_364.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_01C.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_134.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_24C.unk_00C = work->unk_47C->unk_1C + 0x1900;
+        work->unk_364.unk_00C = work->unk_47C->unk_1C + 0x1C00;
     } else {
-        work->unk_020 = work->unk_47C->unk_08 + 0x600;
-        work->unk_138 = work->unk_47C->unk_08 - 0x100;
-        work->unk_250 = work->unk_47C->unk_08 + 0x200;
-        work->unk_368 = work->unk_47C->unk_08 - 0x600;
-        work->unk_024 = work->unk_47C->unk_18 - 0x200;
-        work->unk_13C = work->unk_47C->unk_18 + 0x200;
-        work->unk_254 = work->unk_47C->unk_18 - 0x500;
-        work->unk_36C = work->unk_47C->unk_18 + 0x200;
-        work->unk_028 = work->unk_47C->unk_1C - 0x400;
-        work->unk_140 = work->unk_47C->unk_1C - 0x400;
-        work->unk_258 = work->unk_47C->unk_1C + 0x1900;
-        work->unk_370 = work->unk_47C->unk_1C + 0x1C00;
+        work->unk_01C.unk_004 = work->unk_47C->unk_08 + 0x600;
+        work->unk_134.unk_004 = work->unk_47C->unk_08 - 0x100;
+        work->unk_24C.unk_004 = work->unk_47C->unk_08 + 0x200;
+        work->unk_364.unk_004 = work->unk_47C->unk_08 - 0x600;
+        work->unk_01C.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_134.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_24C.unk_008 = work->unk_47C->unk_18 - 0x500;
+        work->unk_364.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_01C.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_134.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_24C.unk_00C = work->unk_47C->unk_1C + 0x1900;
+        work->unk_364.unk_00C = work->unk_47C->unk_1C + 0x1C00;
     }
 }
 
 void func_080BA43C(TmFootWork* work, s16 a) {
     work->unk_12C = gUnk_09EF39DC[gUnk_09EF2244[a].unk_06];
     work->unk_244 = gUnk_09EF39DC[gUnk_09EF2244[a].unk_0E];
-    work->unk_028 += gUnk_09EF2244[a].unk_02 << 8;
-    work->unk_140 += gUnk_09EF2244[a].unk_0A << 8;
+    work->unk_01C.unk_00C += gUnk_09EF2244[a].unk_02 << 8;
+    work->unk_134.unk_00C += gUnk_09EF2244[a].unk_0A << 8;
 }
 
 void func_080BA49C(TmFootWork* work) {
@@ -476,31 +476,31 @@ void func_080BA49C(TmFootWork* work) {
     work->unk_244 = gUnk_09EF3A1C[1];
 
     if (work->unk_47C->unk_28 & 0x20) {
-        work->unk_020 = work->unk_47C->unk_14 + 0x500;
-        work->unk_138 = work->unk_47C->unk_14 - 0x600;
-        work->unk_250 = work->unk_47C->unk_14 + 0x600;
-        work->unk_368 = work->unk_47C->unk_14 - 0x200;
-        work->unk_024 = work->unk_47C->unk_18 + 0x200;
-        work->unk_13C = work->unk_47C->unk_18 - 0x200;
-        work->unk_254 = work->unk_47C->unk_18 + 0x500;
-        work->unk_36C = work->unk_47C->unk_18 - 0x200;
-        work->unk_028 = work->unk_47C->unk_1C - 0x400;
-        work->unk_140 = work->unk_47C->unk_1C - 0x400;
-        work->unk_258 = work->unk_47C->unk_1C + 0x1E00;
-        work->unk_370 = work->unk_47C->unk_1C + 0x3200;
+        work->unk_01C.unk_004 = work->unk_47C->unk_14 + 0x500;
+        work->unk_134.unk_004 = work->unk_47C->unk_14 - 0x600;
+        work->unk_24C.unk_004 = work->unk_47C->unk_14 + 0x600;
+        work->unk_364.unk_004 = work->unk_47C->unk_14 - 0x200;
+        work->unk_01C.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_134.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_24C.unk_008 = work->unk_47C->unk_18 + 0x500;
+        work->unk_364.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_01C.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_134.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_24C.unk_00C = work->unk_47C->unk_1C + 0x1E00;
+        work->unk_364.unk_00C = work->unk_47C->unk_1C + 0x3200;
     } else {
-        work->unk_020 = work->unk_47C->unk_14 + 0x200;
-        work->unk_138 = work->unk_47C->unk_14 - 0x100;
-        work->unk_250 = work->unk_47C->unk_14 + 0x200;
-        work->unk_368 = work->unk_47C->unk_14 - 0x600;
-        work->unk_024 = work->unk_47C->unk_18 - 0x200;
-        work->unk_13C = work->unk_47C->unk_18 + 0x200;
-        work->unk_254 = work->unk_47C->unk_18 - 0x500;
-        work->unk_36C = work->unk_47C->unk_18 + 0x200;
-        work->unk_028 = work->unk_47C->unk_1C - 0x400;
-        work->unk_140 = work->unk_47C->unk_1C - 0x400;
-        work->unk_258 = work->unk_47C->unk_1C + 0x1E00;
-        work->unk_370 = work->unk_47C->unk_1C + 0x3200;
+        work->unk_01C.unk_004 = work->unk_47C->unk_14 + 0x200;
+        work->unk_134.unk_004 = work->unk_47C->unk_14 - 0x100;
+        work->unk_24C.unk_004 = work->unk_47C->unk_14 + 0x200;
+        work->unk_364.unk_004 = work->unk_47C->unk_14 - 0x600;
+        work->unk_01C.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_134.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_24C.unk_008 = work->unk_47C->unk_18 - 0x500;
+        work->unk_364.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_01C.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_134.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_24C.unk_00C = work->unk_47C->unk_1C + 0x1E00;
+        work->unk_364.unk_00C = work->unk_47C->unk_1C + 0x3200;
     }
 }
 void func_080BA62C(TmFootWork* work) {
@@ -512,41 +512,41 @@ void func_080BA62C(TmFootWork* work) {
     work->unk_244 = gUnk_09EF3A1C[gUnk_09EF2464[work->unk_47C->unk_34].unk_0E];
 
     if (work->unk_47C->unk_28 & 0x20) {
-        work->unk_250 = work->unk_47C->unk_14 + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_10 + 6) << 8);
-        work->unk_368 = work->unk_47C->unk_14 + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_18 - 2) << 8);
-        work->unk_020 = work->unk_47C->unk_14 + 0x100;
-        work->unk_138 = work->unk_47C->unk_14 - 0x600;
-        work->unk_254 = work->unk_47C->unk_18 + 0x500;
-        work->unk_36C = work->unk_47C->unk_18 - 0x200;
-        work->unk_024 = work->unk_47C->unk_18 + 0x200;
-        work->unk_13C = work->unk_47C->unk_18 - 0x200;
-        work->unk_258 = work->unk_47C->unk_1C + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_12 + 40) << 8);
-        work->unk_370 = work->unk_47C->unk_1C + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_1A + 43) << 8);
-        work->unk_028 = work->unk_47C->unk_1C - 0x400;
-        work->unk_140 = work->unk_47C->unk_1C - 0x400;
+        work->unk_24C.unk_004 = work->unk_47C->unk_14 + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_10 + 6) << 8);
+        work->unk_364.unk_004 = work->unk_47C->unk_14 + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_18 - 2) << 8);
+        work->unk_01C.unk_004 = work->unk_47C->unk_14 + 0x100;
+        work->unk_134.unk_004 = work->unk_47C->unk_14 - 0x600;
+        work->unk_24C.unk_008 = work->unk_47C->unk_18 + 0x500;
+        work->unk_364.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_01C.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_134.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_24C.unk_00C = work->unk_47C->unk_1C + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_12 + 40) << 8);
+        work->unk_364.unk_00C = work->unk_47C->unk_1C + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_1A + 43) << 8);
+        work->unk_01C.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_134.unk_00C = work->unk_47C->unk_1C - 0x400;
     } else {
-        work->unk_250 = work->unk_47C->unk_14 + ((2 - gUnk_09EF2464[work->unk_47C->unk_34].unk_10) << 8);
-        work->unk_368 = work->unk_47C->unk_14 + ((-6 - gUnk_09EF2464[work->unk_47C->unk_34].unk_18) << 8);
-        work->unk_020 = work->unk_47C->unk_14 + 0x600;
-        work->unk_138 = work->unk_47C->unk_14 - 0x100;
-        work->unk_254 = work->unk_47C->unk_18 - 0x500;
-        work->unk_36C = work->unk_47C->unk_18 + 0x200;
-        work->unk_024 = work->unk_47C->unk_18 - 0x200;
-        work->unk_13C = work->unk_47C->unk_18 + 0x200;
-        work->unk_258 = work->unk_47C->unk_1C + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_12 + 40) << 8);
-        work->unk_370 = work->unk_47C->unk_1C + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_1A + 43) << 8);
-        work->unk_028 = work->unk_47C->unk_1C - 0x400;
-        work->unk_140 = work->unk_47C->unk_1C - 0x400;
+        work->unk_24C.unk_004 = work->unk_47C->unk_14 + ((2 - gUnk_09EF2464[work->unk_47C->unk_34].unk_10) << 8);
+        work->unk_364.unk_004 = work->unk_47C->unk_14 + ((-6 - gUnk_09EF2464[work->unk_47C->unk_34].unk_18) << 8);
+        work->unk_01C.unk_004 = work->unk_47C->unk_14 + 0x600;
+        work->unk_134.unk_004 = work->unk_47C->unk_14 - 0x100;
+        work->unk_24C.unk_008 = work->unk_47C->unk_18 - 0x500;
+        work->unk_364.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_01C.unk_008 = work->unk_47C->unk_18 - 0x200;
+        work->unk_134.unk_008 = work->unk_47C->unk_18 + 0x200;
+        work->unk_24C.unk_00C = work->unk_47C->unk_1C + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_12 + 40) << 8);
+        work->unk_364.unk_00C = work->unk_47C->unk_1C + ((gUnk_09EF2464[work->unk_47C->unk_34].unk_1A + 43) << 8);
+        work->unk_01C.unk_00C = work->unk_47C->unk_1C - 0x400;
+        work->unk_134.unk_00C = work->unk_47C->unk_1C - 0x400;
     }
 
     if (work->unk_47C->unk_34 == 2) {
-        if (func_08011F78(239, work->unk_250, work->unk_254 - 0x500, 0, 20, 16, 20) == 1) {
+        if (func_08011F78(239, work->unk_24C.unk_004, work->unk_24C.unk_008 - 0x500, 0, 20, 16, 20) == 1) {
             m4aSongNumStart(0x248);
         }
     }
 
     if (work->unk_47C->unk_34 == 7) {
-        if (func_08011F78(239, work->unk_368, work->unk_36C - 0x500, 0, 20, 16, 20) == 1) {
+        if (func_08011F78(239, work->unk_364.unk_004, work->unk_364.unk_008 - 0x500, 0, 20, 16, 20) == 1) {
             m4aSongNumStart(0x248);
         }
     }
@@ -555,8 +555,8 @@ void func_080BA62C(TmFootWork* work) {
 void func_080BA8C8(TmFootWork* work, s16 a) {
     work->unk_12C = gUnk_09EF39DC[gUnk_09EF25A4[a].unk_06];
     work->unk_244 = gUnk_09EF39DC[gUnk_09EF25A4[a].unk_0E];
-    work->unk_028 += gUnk_09EF25A4[a].unk_02 << 8;
-    work->unk_140 += gUnk_09EF25A4[a].unk_0A << 8;
+    work->unk_01C.unk_00C += gUnk_09EF25A4[a].unk_02 << 8;
+    work->unk_134.unk_00C += gUnk_09EF25A4[a].unk_0A << 8;
 }
 
 void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
@@ -585,25 +585,25 @@ void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
     f = work->unk_47C->unk_28 & 8;
 
     if (f != 0) {
-        func_080BA0E4((s32*)&work->unk_01C, (s16)(work->unk_47C->unk_00 + 1),
+        func_080BA0E4(&work->unk_01C, (s16)(work->unk_47C->unk_00 + 1),
                       (s16)(work->unk_47C->unk_02 + 2), (s16)(work->unk_47C->unk_04 - 4));
-        func_080BA0E4((s32*)&work->unk_134, (s16)(work->unk_47C->unk_00 - 6),
+        func_080BA0E4(&work->unk_134, (s16)(work->unk_47C->unk_00 - 6),
                       (s16)(work->unk_47C->unk_02 - 2), (s16)(work->unk_47C->unk_04 - 4));
-        func_080BA0E4((s32*)&work->unk_24C, (s16)(work->unk_47C->unk_00 + 6),
+        func_080BA0E4(&work->unk_24C, (s16)(work->unk_47C->unk_00 + 6),
                       (s16)(work->unk_47C->unk_02 + 5), (s16)(work->unk_47C->unk_04 + 40));
-        func_080BA0E4((s32*)&work->unk_364, (s16)(work->unk_47C->unk_00 - 2),
+        func_080BA0E4(&work->unk_364, (s16)(work->unk_47C->unk_00 - 2),
                       (s16)(work->unk_47C->unk_02 - 2), (s16)(work->unk_47C->unk_04 + 43));
     } else {
-        func_080BA08C((BtlObj*)&work->unk_01C, (s16)(work->unk_47C->unk_00 + 1),
+        func_080BA08C(&work->unk_01C, (s16)(work->unk_47C->unk_00 + 1),
                       (s16)(work->unk_47C->unk_02 + 2), (s16)(work->unk_47C->unk_04 - 4), 4, 32, f,
                       4);
-        func_080BA08C((BtlObj*)&work->unk_134, (s16)(work->unk_47C->unk_00 - 6),
+        func_080BA08C(&work->unk_134, (s16)(work->unk_47C->unk_00 - 6),
                       (s16)(work->unk_47C->unk_02 - 2), (s16)(work->unk_47C->unk_04 - 4), 4, 32, f,
                       5);
-        func_080BA08C((BtlObj*)&work->unk_24C, (s16)(work->unk_47C->unk_00 + 6),
+        func_080BA08C(&work->unk_24C, (s16)(work->unk_47C->unk_00 + 6),
                       (s16)(work->unk_47C->unk_02 + 5), (s16)(work->unk_47C->unk_04 + 40), 20, 140,
                       f, 6);
-        func_080BA08C((BtlObj*)&work->unk_364, (s16)(work->unk_47C->unk_00 - 2),
+        func_080BA08C(&work->unk_364, (s16)(work->unk_47C->unk_00 - 2),
                       (s16)(work->unk_47C->unk_02 - 2), (s16)(work->unk_47C->unk_04 + 43), 20, 140,
                       f, 7);
     }
@@ -613,8 +613,8 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
     TmFootStep* e;
     TmFootStep* table;
 
-    func_080BA104((BtlObj*)&work->unk_24C, work);
-    func_080BA104((BtlObj*)&work->unk_364, work);
+    func_080BA104(&work->unk_24C, work);
+    func_080BA104(&work->unk_364, work);
 
     switch (work->unk_47C->unk_2C) {
     case 0:
@@ -628,12 +628,12 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
             work->unk_004 = gUnk_09EF21B0[((s16)work->unk_47C->unk_34 + 4) & 7];
             work->unk_12C = gUnk_09EF39DC[(s8)work->unk_003];
             work->unk_244 = gUnk_09EF39DC[(s8)work->unk_004];
-            work->unk_258 =
+            work->unk_24C.unk_00C =
                 work->unk_47C->unk_1C + ((gUnk_09EF21B8[(s8)work->unk_003] + 40) << 8);
-            work->unk_370 =
+            work->unk_364.unk_00C =
                 work->unk_47C->unk_1C + ((gUnk_09EF21B8[(s8)work->unk_004] + 43) << 8);
-            work->unk_028 = work->unk_47C->unk_1C - 0x400;
-            work->unk_140 = work->unk_47C->unk_1C - 0x400;
+            work->unk_01C.unk_00C = work->unk_47C->unk_1C - 0x400;
+            work->unk_134.unk_00C = work->unk_47C->unk_1C - 0x400;
         } else {
             func_080BA11C(work);
         }
@@ -718,28 +718,28 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
             work->unk_000 = 0;
             work->unk_12C = gUnk_09EF39DC[1];
             work->unk_244 = gUnk_09EF39DC[1];
-            work->unk_028 = work->unk_47C->unk_10 +
+            work->unk_01C.unk_00C = work->unk_47C->unk_10 +
                             ((gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_02 - 4) << 8);
-            work->unk_140 = work->unk_47C->unk_10 +
+            work->unk_134.unk_00C = work->unk_47C->unk_10 +
                             ((gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_0A - 4) << 8);
-            work->unk_258 = work->unk_47C->unk_10 + 0x2800;
-            work->unk_370 = work->unk_47C->unk_10 + 0x2800;
+            work->unk_24C.unk_00C = work->unk_47C->unk_10 + 0x2800;
+            work->unk_364.unk_00C = work->unk_47C->unk_10 + 0x2800;
             break;
         }
 
         if ((s16)work->unk_47C->unk_34 <= 2) {
             work->unk_12C = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_06];
             work->unk_244 = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_0E];
-            work->unk_028 += gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_02 << 8;
-            work->unk_140 += gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_0A << 8;
+            work->unk_01C.unk_00C += gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_02 << 8;
+            work->unk_134.unk_00C += gUnk_09EF21C4[(s16)work->unk_47C->unk_34].unk_0A << 8;
         }
 
         if (work->unk_47C->unk_32 <= 2) {
             work->unk_12C =
                 gUnk_09EF39DC[(table = gUnk_09EF21C4, e = &table[work->unk_47C->unk_32])->unk_06 + 1];
             work->unk_244 = gUnk_09EF39DC[e->unk_0E + 1];
-            work->unk_028 -= e->unk_02 << 8;
-            work->unk_140 -= e->unk_0A << 8;
+            work->unk_01C.unk_00C -= e->unk_02 << 8;
+            work->unk_134.unk_00C -= e->unk_0A << 8;
         }
         break;
     case 14:
@@ -772,10 +772,10 @@ void task_bos_tm_foot_2(TmFootWork* work) {
     s32 flag;
     s16 x;
     s16 y;
-    TmFootSub* s0;
-    TmFootSub* s1;
-    TmFootSub* s2;
-    TmFootSub* s3;
+    BtlObj* s0;
+    BtlObj* s1;
+    BtlObj* s2;
+    BtlObj* s3;
     u16 mode;
 
     flag = work->unk_47C->unk_28 & 0x20;
@@ -792,24 +792,24 @@ void task_bos_tm_foot_2(TmFootWork* work) {
         pal = work->palette;
     }
 
-    s0 = (TmFootSub*)&work->unk_01C;
-    s1 = (TmFootSub*)&work->unk_134;
-    s2 = (TmFootSub*)&work->unk_24C;
-    s3 = (TmFootSub*)&work->unk_364;
-    WorldToScreen(&x, &y, s0->x, s0->y, s0->z);
-    DrawSprite(x, y, work->unk_12C, work->tiles2, pal, 0, mode, (u16)(-4100 - (s0->y >> 8) * 4));
-    WorldToScreen(&x, &y, s1->x, s1->y, s1->z);
-    DrawSprite(x, y, work->unk_244, work->tiles3, pal, 0, mode, (u16)(-4100 - (s1->y >> 8) * 4));
-    WorldToScreen(&x, &y, s2->x, s2->y, s2->z);
-    DrawSprite(x, y, work->unk_35C, work->tiles, pal, 0, mode, (u16)(-4100 - (s2->y >> 8) * 4));
-    WorldToScreen(&x, &y, s3->x, s3->y, s3->z);
-    DrawSprite(x, y, work->unk_474, work->tiles, pal, 0, mode, (u16)(-4100 - (s3->y >> 8) * 4));
+    s0 = &work->unk_01C;
+    s1 = &work->unk_134;
+    s2 = &work->unk_24C;
+    s3 = &work->unk_364;
+    WorldToScreen(&x, &y, s0->unk_004, s0->unk_008, s0->unk_00C);
+    DrawSprite(x, y, work->unk_12C, work->tiles2, pal, 0, mode, (u16)(-4100 - (s0->unk_008 >> 8) * 4));
+    WorldToScreen(&x, &y, s1->unk_004, s1->unk_008, s1->unk_00C);
+    DrawSprite(x, y, work->unk_244, work->tiles3, pal, 0, mode, (u16)(-4100 - (s1->unk_008 >> 8) * 4));
+    WorldToScreen(&x, &y, s2->unk_004, s2->unk_008, s2->unk_00C);
+    DrawSprite(x, y, work->unk_35C, work->tiles, pal, 0, mode, (u16)(-4100 - (s2->unk_008 >> 8) * 4));
+    WorldToScreen(&x, &y, s3->unk_004, s3->unk_008, s3->unk_00C);
+    DrawSprite(x, y, work->unk_474, work->tiles, pal, 0, mode, (u16)(-4100 - (s3->unk_008 >> 8) * 4));
 }
 
 void task_bos_tm_foot_3(TmFootWork* work) {
     if ((work->unk_47C->unk_28 & 8) == 0) {
-        func_080BA0F8((u8*)&work->unk_24C);
-        func_080BA0F8((u8*)&work->unk_364);
+        func_080BA0F8(&work->unk_24C);
+        func_080BA0F8(&work->unk_364);
     }
 
     ReleaseObjTiles((void*)work->tiles);
@@ -1951,31 +1951,31 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         work->unk_22C = 0x2A200;
         work->unk_230 = 0x15E00;
         work->unk_234 = -0x3800;
-        func_0801B37C(work, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
-        work->unk_034 |= 4;
+        func_0801B37C(&work->unk_000, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
+        work->unk_000.unk_034 |= 4;
         TaskCreate(&work->unk_254, gTaskDescBosJfMajin, work);
     } else {
         work->unk_220 = 0x29600;
         work->unk_224 = 0x15400;
         work->unk_228 = -0xB400;
-        sub = (BtlObj*)&work->unk_110;
+        sub = &work->unk_110;
         func_0801B37C(sub, gUnk_0961A668, work->unk_220, work->unk_224, work->unk_228);
         sub->unk_034 |= 0x400;
         sub->unk_034 |= 0x200000000000;
         sub->unk_034 &= ~4;
         sub->unk_024 = v2;
-        work->unk_1B2 = 4;
+        work->unk_110.unk_0A2 = 4;
         work->unk_22C = 0x2A200;
         work->unk_230 = 0x15E00;
         work->unk_234 = -0x3800;
-        func_0801B37C(work, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
-        work->unk_034 |= 4;
-        work->unk_034 |= 0x8000;
-        work->unk_034 |= 0x100000000;
-        work->unk_09E = 32;
-        work->unk_0A0 = 40;
-        work->unk_09C = 28;
-        func_0801BDD4(work, sub);
+        func_0801B37C(&work->unk_000, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
+        work->unk_000.unk_034 |= 4;
+        work->unk_000.unk_034 |= 0x8000;
+        work->unk_000.unk_034 |= 0x100000000;
+        work->unk_000.unk_09E = 32;
+        work->unk_000.unk_0A0 = 40;
+        work->unk_000.unk_09C = 28;
+        func_0801BDD4(&work->unk_000, sub);
         gBtlWork->unk_0D8 = 0xFF00;
         func_0801C298(0, 1);
         func_0801BCC0(0x23E00, 0x16800, -0x4000);
@@ -1989,7 +1989,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
     }
 }
 u8 task_bos_jf_1(JfWork* work) {
-    BtlObj* sub = (BtlObj*)&work->unk_110;
+    BtlObj* sub = &work->unk_110;
     BtlWork* q;
     u16 t;
 
@@ -2096,7 +2096,7 @@ void task_bos_jf_2(JfWork* work) {
 void task_bos_jf_3(JfWork* work) {
     if ((work->unk_24C & 8) == 0) {
         func_0801B7D8(&work->unk_110);
-        func_0801B7D8(work);
+        func_0801B7D8(&work->unk_000);
     }
 
     TaskPoolDestroy(&work->unk_254);
@@ -2536,7 +2536,7 @@ void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
 INCLUDE_ASM("bos2/task_bos_jf_lamp_0.s");
 #endif
 u8 task_bos_jf_lamp_1(JfLampWork* work) {
-    BtlObj* sub = (BtlObj*)&work->unk_00->unk_110;
+    BtlObj* sub = &work->unk_00->unk_110;
     JfWork* jf = work->unk_00;
     u16* p;
     s32 d;
@@ -2601,7 +2601,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
         break;
     case 2:
         if (work->unk_34 == 0) {
-            if (jf->unk_034 & 4) {
+            if (jf->unk_000.unk_034 & 4) {
                 work->unk_38 = 0x27800;
             } else {
                 work->unk_38 = 0x19400;
@@ -2752,7 +2752,7 @@ s32 func_080BE278(JfLampWork* work) {
     s16 v;
     s32 r;
 
-    if (work->unk_00->unk_034 & 4) {
+    if (work->unk_00->unk_000.unk_034 & 4) {
         switch (gUnk_0203B4E4) {
         case 5:
         case 6:
@@ -2830,10 +2830,10 @@ void func_080BE380(u8 a, u16 b, JfMajinWork* work) {
 void func_080BE3DC(u8 a, JfMajinWork* work) {
     s16 n;
 
-    if (work->unk_00->z < -0x8000) {
+    if (work->unk_00->unk_000.unk_00C < -0x8000) {
         RequestDma3Copy(gUnk_09EF280C[a], gUnk_0203B510, 0x800);
     } else {
-        n = ((work->unk_00->z >> 8) + 0x88) / 8 + work->unk_6A;
+        n = ((work->unk_00->unk_000.unk_00C >> 8) + 0x88) / 8 + work->unk_6A;
 
         if (n > 0x20) {
             func_0800443C(gUnk_0203B510, 0x800);
@@ -2846,8 +2846,8 @@ void func_080BE3DC(u8 a, JfMajinWork* work) {
 void func_080BE478(u8 a, JfMajinWork* work) {
     s16 n;
 
-    if (work->unk_00->z >= -0x8000) {
-        n = ((work->unk_00->z >> 8) + 0x88) / 8 + work->unk_6A;
+    if (work->unk_00->unk_000.unk_00C >= -0x8000) {
+        n = ((work->unk_00->unk_000.unk_00C >> 8) + 0x88) / 8 + work->unk_6A;
 
         if (n > 0x20) {
             func_0800443C(gUnk_0203B510, 0x800);
@@ -2869,9 +2869,9 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
 
 
     work->unk_00 = arg;
-    x = arg->x;
-    y = arg->y;
-    z = arg->z;
+    x = arg->unk_000.unk_004;
+    y = arg->unk_000.unk_008;
+    z = arg->unk_000.unk_00C;
     work->unk_48 = 0;
     work->unk_46 = 0;
     work->unk_44 = 0;
@@ -2909,8 +2909,8 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     AnimInit(&work->anim, gUnk_09EF3B40, gUnk_09EF3A48);
     AnimStart(&work->anim, 1, 1);
     work->gfx = AnimGetGfx(&work->anim);
-    func_08005244(1, ((gBtlWork->unk_000 - arg->x) >> 8) + 0x308,
-                  ((gBtlWork->unk_004 - (arg->y + arg->z)) >> 8) + 0x126);
+    func_08005244(1, ((gBtlWork->unk_000 - arg->unk_000.unk_004) >> 8) + 0x308,
+                  ((gBtlWork->unk_004 - (arg->unk_000.unk_008 + arg->unk_000.unk_00C)) >> 8) + 0x126);
     TaskPoolInit(&work->unk_6C, 2);
     TaskCreate(&work->unk_6C, gUnk_09EF2A74, work->unk_00);
 }
@@ -2962,7 +2962,7 @@ u8 task_bos_jf_majin_1(JfMajinWork* work) {
         break;
     }
 
-    func_08012324(&jf->unk_040, jf->x, jf->y, jf->z);
+    func_08012324(&jf->unk_000.unk_040, jf->unk_000.unk_004, jf->unk_000.unk_008, jf->unk_000.unk_00C);
     TaskPoolUpdate(&work->unk_6C);
 
     if (work->unk_00->unk_24C & 0x10) {
@@ -2998,20 +2998,20 @@ void task_bos_jf_majin_2(JfMajinWork* work) {
         gfx = work->palette;
     }
 
-    func_08005244(1, ((gBtlWork->unk_000 - jf->x) >> 8) + 776,
-                  ((gBtlWork->unk_004 - (jf->y + jf->z)) >> 8) + 294);
+    func_08005244(1, ((gBtlWork->unk_000 - jf->unk_000.unk_004) >> 8) + 776,
+                  ((gBtlWork->unk_004 - (jf->unk_000.unk_008 + jf->unk_000.unk_00C)) >> 8) + 294);
 
     if (work->unk_2C == 1) {
-        if (jf->unk_034 & 4) {
-            pal = func_0801AF1C(jf->y);
+        if (jf->unk_000.unk_034 & 4) {
+            pal = func_0801AF1C(jf->unk_000.unk_008);
         } else {
-            pal = func_0801AF1C(jf->y);
+            pal = func_0801AF1C(jf->unk_000.unk_008);
             pal |= 1;
         }
 
-        WorldToScreen(&x, &y, jf->x, jf->y, jf->z);
+        WorldToScreen(&x, &y, jf->unk_000.unk_004, jf->unk_000.unk_008, jf->unk_000.unk_00C);
         DrawSprite(x, work->unk_40 + (y - 61), work->gfx, work->tiles, gfx, 0, pal,
-                   (u16)(-4100 - (jf->y >> 8) * 4));
+                   (u16)(-4100 - (jf->unk_000.unk_008 >> 8) * 4));
     }
 
     TaskPoolDraw(&work->unk_6C);
@@ -3040,7 +3040,7 @@ s32 func_080BE910(void) {
 s32 func_080BE940(JfMajinWork* work) {
     s32 v;
 
-    if (work->unk_00->unk_034 & 4) {
+    if (work->unk_00->unk_000.unk_034 & 4) {
         v = gBtlWork->unk_07C->unk_004;
 
         if (v < 0x1EA00) {
@@ -3071,7 +3071,7 @@ void func_080BE9A0(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             jf->unk_248 = 8;
             work->unk_5C = 8;
         } else {
@@ -3115,7 +3115,7 @@ void func_080BEAE8(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             jf->unk_248 = 0;
         } else {
             jf->unk_248 = 7;
@@ -3133,7 +3133,7 @@ void func_080BEAE8(JfMajinWork* work) {
             if (jf->unk_24A >= gUnk_0961A6A8[jf->unk_248]) {
                 jf->unk_24A = 0;
 
-                if (jf->unk_034 & 4) {
+                if (jf->unk_000.unk_034 & 4) {
                     work->unk_00->unk_248++;
 
                     if (work->unk_00->unk_248 > 7) {
@@ -3151,7 +3151,7 @@ void func_080BEAE8(JfMajinWork* work) {
             }
 
             work->unk_00->unk_24A++;
-            jf->z += 0x400;
+            jf->unk_000.unk_00C += 0x400;
             work->unk_46++;
 
             if (work->unk_46 > 40) {
@@ -3160,7 +3160,7 @@ void func_080BEAE8(JfMajinWork* work) {
             }
 
             if (work->unk_46 == 21) {
-                jf->unk_034 |= 0x1000000;
+                jf->unk_000.unk_034 |= 0x1000000;
             }
             break;
         case 1:
@@ -3170,13 +3170,13 @@ void func_080BEAE8(JfMajinWork* work) {
                 work->unk_46 = 0;
                 work->unk_00->unk_24A = 0;
 
-                if (jf->unk_034 & 4) {
-                    jf->unk_034 &= ~4;
-                    jf->x = 0x16A00;
+                if (jf->unk_000.unk_034 & 4) {
+                    jf->unk_000.unk_034 &= ~4;
+                    jf->unk_000.unk_004 = 0x16A00;
                     work->unk_00->unk_248 = 3;
                 } else {
-                    jf->unk_034 |= 4;
-                    jf->x = 0x2A200;
+                    jf->unk_000.unk_034 |= 4;
+                    jf->unk_000.unk_004 = 0x2A200;
                     work->unk_00->unk_248 = 3;
                 }
 
@@ -3189,7 +3189,7 @@ void func_080BEAE8(JfMajinWork* work) {
             if (jf->unk_24A >= gUnk_0961A6A8[jf->unk_248]) {
                 jf->unk_24A = 0;
 
-                if (jf->unk_034 & 4) {
+                if (jf->unk_000.unk_034 & 4) {
                     work->unk_00->unk_248++;
 
                     if (work->unk_00->unk_248 > 7) {
@@ -3207,7 +3207,7 @@ void func_080BEAE8(JfMajinWork* work) {
             }
 
             work->unk_00->unk_24A++;
-            jf->z -= 0x400;
+            jf->unk_000.unk_00C -= 0x400;
             work->unk_46++;
 
             if (work->unk_46 > 40) {
@@ -3216,7 +3216,7 @@ void func_080BEAE8(JfMajinWork* work) {
             }
 
             if (work->unk_46 == 22) {
-                jf->unk_034 &= ~0x1000000;
+                jf->unk_000.unk_034 &= ~0x1000000;
             }
             break;
         default:
@@ -3228,10 +3228,10 @@ void func_080BEAE8(JfMajinWork* work) {
 }
 void func_080BEDF4(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
-    u32* q = &jf->unk_110;
+    BtlObj* q = &jf->unk_110;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             jf->unk_248 = 0;
             work->unk_5C = 14;
         } else {
@@ -3251,7 +3251,7 @@ void func_080BEDF4(JfMajinWork* work) {
             if (work->unk_00->unk_24A >= gUnk_0961A6A8[work->unk_00->unk_248]) {
                 work->unk_00->unk_24A = 0;
 
-                if (jf->unk_034 & 4) {
+                if (jf->unk_000.unk_034 & 4) {
                     work->unk_00->unk_248++;
 
                     if (work->unk_00->unk_248 > 7) {
@@ -3269,7 +3269,7 @@ void func_080BEDF4(JfMajinWork* work) {
             }
 
             work->unk_00->unk_24A++;
-            jf->z += 0x400;
+            jf->unk_000.unk_00C += 0x400;
             work->unk_46++;
 
             if (work->unk_46 > 60) {
@@ -3278,11 +3278,11 @@ void func_080BEDF4(JfMajinWork* work) {
             }
 
             if (work->unk_46 == 23) {
-                jf->unk_034 |= 0x1000000;
+                jf->unk_000.unk_034 |= 0x1000000;
             }
             break;
         case 1:
-            if (jf->unk_034 & 4) {
+            if (jf->unk_000.unk_034 & 4) {
                 work->unk_00->unk_248 = 14;
                 work->unk_58 = -0x2000 - ((gUnk_0203ACC0 + 1) << 11);
             } else {
@@ -3298,11 +3298,11 @@ void func_080BEDF4(JfMajinWork* work) {
             break;
         case 2:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_00C, work->unk_58, work->unk_44);
                 work->unk_44--;
 
                 if (work->unk_44 == 30) {
-                    jf->unk_034 &= ~0x1000000;
+                    jf->unk_000.unk_034 &= ~0x1000000;
                 }
             } else {
                 work->unk_48++;
@@ -3314,7 +3314,7 @@ void func_080BEDF4(JfMajinWork* work) {
                 work->unk_00->unk_248++;
 
                 if (work->unk_00->unk_248 > work->unk_5C + 4) {
-                    if (jf->unk_034 & 4) {
+                    if (jf->unk_000.unk_034 & 4) {
                         work->unk_00->unk_248 = 8;
                     } else {
                         work->unk_00->unk_248 = 28;
@@ -3338,7 +3338,7 @@ void func_080BEDF4(JfMajinWork* work) {
             break;
         case 5:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_00C, work->unk_58, work->unk_44);
                 work->unk_44--;
             } else {
                 work->unk_48++;
@@ -3354,10 +3354,10 @@ void func_080BEDF4(JfMajinWork* work) {
 }
 void func_080BF160(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
-    u32* q = &jf->unk_110;
+    BtlObj* q = &jf->unk_110;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             jf->unk_248 = 19;
             work->unk_00->unk_24A = 0;
             work->unk_5C = 19;
@@ -3381,8 +3381,8 @@ void func_080BF160(JfMajinWork* work) {
         switch (work->unk_48) {
         case 0:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->x, work->unk_50, work->unk_44);
-                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_004, work->unk_50, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_00C, work->unk_58, work->unk_44);
                 work->unk_44--;
 
                 if (work->unk_00->unk_24A >= gUnk_0961A6A8[work->unk_00->unk_248]) {
@@ -3411,7 +3411,7 @@ void func_080BF160(JfMajinWork* work) {
             }
             break;
         case 2:
-            jf->z += 0xA00;
+            jf->unk_000.unk_00C += 0xA00;
 
             if (work->unk_00->unk_24A >= gUnk_0961A6A8[work->unk_00->unk_248]) {
                 work->unk_00->unk_24A = 0;
@@ -3428,12 +3428,12 @@ void func_080BF160(JfMajinWork* work) {
             work->unk_00->unk_24A++;
             break;
         case 3:
-            if (jf->unk_034 & 4) {
-                func_080147D8(jf->x - 0x3000, jf->y + jf->z + 0x1800);
-                func_08011F78(0xE8, jf->x - 0x3000, jf->y, jf->z + 0x1800, 30, 30, 30);
+            if (jf->unk_000.unk_034 & 4) {
+                func_080147D8(jf->unk_000.unk_004 - 0x3000, jf->unk_000.unk_008 + jf->unk_000.unk_00C + 0x1800);
+                func_08011F78(0xE8, jf->unk_000.unk_004 - 0x3000, jf->unk_000.unk_008, jf->unk_000.unk_00C + 0x1800, 30, 30, 30);
             } else {
-                func_080147D8(jf->x + 0x3000, jf->y + jf->z + 0x1800);
-                func_08011F78(0xE8, jf->x + 0x3000, jf->y, jf->z + 0x1800, 30, 30, 30);
+                func_080147D8(jf->unk_000.unk_004 + 0x3000, jf->unk_000.unk_008 + jf->unk_000.unk_00C + 0x1800);
+                func_08011F78(0xE8, jf->unk_000.unk_004 + 0x3000, jf->unk_000.unk_008, jf->unk_000.unk_00C + 0x1800, 30, 30, 30);
             }
 
             func_0802F1E8();
@@ -3450,7 +3450,7 @@ void func_080BF160(JfMajinWork* work) {
             if (work->unk_46 > 20) {
                 work->unk_46 = 0;
 
-                if (jf->unk_034 & 4) {
+                if (jf->unk_000.unk_034 & 4) {
                     work->unk_50 = 0x2A200;
                 } else {
                     work->unk_50 = 0x16A00;
@@ -3465,8 +3465,8 @@ void func_080BF160(JfMajinWork* work) {
             break;
         case 5:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->x, work->unk_50, work->unk_44);
-                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_004, work->unk_50, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_00C, work->unk_58, work->unk_44);
                 work->unk_44--;
             } else {
                 work->unk_48++;
@@ -3482,10 +3482,10 @@ void func_080BF160(JfMajinWork* work) {
 }
 void func_080BF4F4(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
-    u32* q = &jf->unk_110;
+    BtlObj* q = &jf->unk_110;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             jf->unk_248 = 25;
             work->unk_00->unk_24A = 0;
             work->unk_5C = 25;
@@ -3509,17 +3509,17 @@ void func_080BF4F4(JfMajinWork* work) {
         switch (work->unk_48) {
         case 0:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_00C, work->unk_58, work->unk_44);
                 work->unk_44--;
             } else {
                 work->unk_48++;
             }
             break;
         case 1:
-            if (jf->unk_034 & 4) {
-                jf->x += 0x100;
+            if (jf->unk_000.unk_034 & 4) {
+                jf->unk_000.unk_004 += 0x100;
             } else {
-                jf->x -= 0x100;
+                jf->unk_000.unk_004 -= 0x100;
             }
 
             work->unk_46++;
@@ -3534,7 +3534,7 @@ void func_080BF4F4(JfMajinWork* work) {
             break;
         case 2:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->x, work->unk_50, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_004, work->unk_50, work->unk_44);
                 work->unk_44--;
             } else {
                 work->unk_48++;
@@ -3542,31 +3542,31 @@ void func_080BF4F4(JfMajinWork* work) {
             }
             break;
         case 3:
-            if (jf->unk_034 & 4) {
-                func_08016C40(jf->x - 0x1A00, jf->y, jf->z - 0x3100, 0x133, 160, 45);
+            if (jf->unk_000.unk_034 & 4) {
+                func_08016C40(jf->unk_000.unk_004 - 0x1A00, jf->unk_000.unk_008, jf->unk_000.unk_00C - 0x3100, 0x133, 160, 45);
             } else {
-                func_08016C40(jf->x + 0x1A00, jf->y, jf->z - 0x3100, 0x133, 96, 45);
+                func_08016C40(jf->unk_000.unk_004 + 0x1A00, jf->unk_000.unk_008, jf->unk_000.unk_00C - 0x3100, 0x133, 96, 45);
             }
 
             m4aSongNumStart(0x27A);
-            jf->x = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
+            jf->unk_000.unk_004 = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
             work->unk_46 = 0;
             work->unk_48++;
             break;
         case 4:
-            jf->x = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
+            jf->unk_000.unk_004 = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
 
-            if (jf->unk_034 & 4) {
-                func_08014780(jf->x - 0x1A00, jf->y, jf->z - 0x3100);
+            if (jf->unk_000.unk_034 & 4) {
+                func_08014780(jf->unk_000.unk_004 - 0x1A00, jf->unk_000.unk_008, jf->unk_000.unk_00C - 0x3100);
             } else {
-                func_08014780(jf->x + 0x1A00, jf->y, jf->z - 0x3100);
+                func_08014780(jf->unk_000.unk_004 + 0x1A00, jf->unk_000.unk_008, jf->unk_000.unk_00C - 0x3100);
             }
 
             if (work->unk_46 > 10 && work->unk_46 % 10 == 9) {
-                if (jf->unk_034 & 4) {
-                    func_08011F78(0xE9, jf->x - 0x6400, jf->y + 0xA00, jf->z + 0x2000, 20, 20, 20);
+                if (jf->unk_000.unk_034 & 4) {
+                    func_08011F78(0xE9, jf->unk_000.unk_004 - 0x6400, jf->unk_000.unk_008 + 0xA00, jf->unk_000.unk_00C + 0x2000, 20, 20, 20);
                 } else {
-                    func_08011F78(0xE9, jf->x + 0x6400, jf->y + 0xA00, jf->z + 0x2000, 20, 20, 20);
+                    func_08011F78(0xE9, jf->unk_000.unk_004 + 0x6400, jf->unk_000.unk_008 + 0xA00, jf->unk_000.unk_00C + 0x2000, 20, 20, 20);
                 }
             }
 
@@ -3583,8 +3583,8 @@ void func_080BF4F4(JfMajinWork* work) {
             break;
         case 5:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->x, work->unk_50, work->unk_44);
-                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_004, work->unk_50, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_00C, work->unk_58, work->unk_44);
                 work->unk_44--;
             } else {
                 work->unk_48++;
@@ -3600,10 +3600,10 @@ void func_080BF4F4(JfMajinWork* work) {
 }
 void func_080BF8C4(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
-    u32* q = &jf->unk_110;
+    BtlObj* q = &jf->unk_110;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             jf->unk_248 = 25;
             work->unk_00->unk_24A = 0;
             work->unk_5C = 25;
@@ -3628,21 +3628,21 @@ void func_080BF8C4(JfMajinWork* work) {
     } else {
         switch (work->unk_48) {
         case 0:
-            func_0802F274(jf->x, jf->y + jf->z);
+            func_0802F274(jf->unk_000.unk_004, jf->unk_000.unk_008 + jf->unk_000.unk_00C);
 
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->y, work->unk_54, work->unk_44);
-                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_008, work->unk_54, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_00C, work->unk_58, work->unk_44);
                 work->unk_44--;
             } else {
                 work->unk_48++;
             }
             break;
         case 1:
-            if (jf->unk_034 & 4) {
-                jf->x += 0x100;
+            if (jf->unk_000.unk_034 & 4) {
+                jf->unk_000.unk_004 += 0x100;
             } else {
-                jf->x -= 0x100;
+                jf->unk_000.unk_004 -= 0x100;
             }
 
             work->unk_46++;
@@ -3657,7 +3657,7 @@ void func_080BF8C4(JfMajinWork* work) {
             break;
         case 2:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->x, work->unk_50, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_004, work->unk_50, work->unk_44);
                 work->unk_44--;
             } else {
                 work->unk_48++;
@@ -3665,20 +3665,20 @@ void func_080BF8C4(JfMajinWork* work) {
             }
             break;
         case 3:
-            if (jf->unk_034 & 4) {
+            if (jf->unk_000.unk_034 & 4) {
                 work->unk_49 = 148;
                 work->unk_4C = 0x100;
-                func_08016C40(jf->x - 0x1A00, jf->y, jf->z - 0x3100, 0x100, work->unk_49, 45);
+                func_08016C40(jf->unk_000.unk_004 - 0x1A00, jf->unk_000.unk_008, jf->unk_000.unk_00C - 0x3100, 0x100, work->unk_49, 45);
                 func_080147C8(0x133, 0x100);
             } else {
                 work->unk_49 = 108;
                 work->unk_4C = 0x133;
-                func_08016C40(jf->x + 0x1A00, jf->y, jf->z - 0x3100, 0x100, work->unk_49, 45);
+                func_08016C40(jf->unk_000.unk_004 + 0x1A00, jf->unk_000.unk_008, jf->unk_000.unk_00C - 0x3100, 0x100, work->unk_49, 45);
                 func_080147C8(0x133, 0x100);
             }
 
             m4aSongNumStart(0x27A);
-            jf->x = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
+            jf->unk_000.unk_004 = (work->unk_50 - 0x100) + (work->unk_44++ % 2) * 0x200;
             work->unk_46 = 0;
             work->unk_4A = 0;
             work->unk_48++;
@@ -3686,9 +3686,9 @@ void func_080BF8C4(JfMajinWork* work) {
         case 4:
             work->unk_44++;
 
-            if (jf->unk_034 & 4) {
-                jf->x = (work->unk_50 - 0x100) + (work->unk_44 % 2) * 0x200;
-                func_08014780(jf->x - 0x1A00, jf->y, jf->z - 0x3100);
+            if (jf->unk_000.unk_034 & 4) {
+                jf->unk_000.unk_004 = (work->unk_50 - 0x100) + (work->unk_44 % 2) * 0x200;
+                func_08014780(jf->unk_000.unk_004 - 0x1A00, jf->unk_000.unk_008, jf->unk_000.unk_00C - 0x3100);
 
                 if (work->unk_49 <= 173 && work->unk_44 % 2 == 0) {
                     work->unk_49++;
@@ -3698,8 +3698,8 @@ void func_080BF8C4(JfMajinWork* work) {
                     func_080147C8(0x133, work->unk_4C);
                 }
             } else {
-                jf->x = (work->unk_50 - 0x100) + (work->unk_44 % 2) * 0x200;
-                func_08014780(jf->x + 0x1A00, jf->y, jf->z - 0x3100);
+                jf->unk_000.unk_004 = (work->unk_50 - 0x100) + (work->unk_44 % 2) * 0x200;
+                func_08014780(jf->unk_000.unk_004 + 0x1A00, jf->unk_000.unk_008, jf->unk_000.unk_00C - 0x3100);
 
                 if (work->unk_49 > 82 && work->unk_44 % 2 == 0) {
                     work->unk_49--;
@@ -3711,10 +3711,10 @@ void func_080BF8C4(JfMajinWork* work) {
             }
 
             if (work->unk_46 >= 11 && work->unk_46 <= 50) {
-                if (jf->unk_034 & 4) {
-                    func_08011F78(0xEA, jf->x - 0x3200 - work->unk_4A * 3 * 512, jf->y + 0xA00, jf->z + 0x2C00, 20, 20, 20);
+                if (jf->unk_000.unk_034 & 4) {
+                    func_08011F78(0xEA, jf->unk_000.unk_004 - 0x3200 - work->unk_4A * 3 * 512, jf->unk_000.unk_008 + 0xA00, jf->unk_000.unk_00C + 0x2C00, 20, 20, 20);
                 } else {
-                    func_08011F78(0xEA, jf->x + 0x3200 + work->unk_4A * 3 * 512, jf->y + 0xA00, jf->z + 0x2C00, 20, 20, 20);
+                    func_08011F78(0xEA, jf->unk_000.unk_004 + 0x3200 + work->unk_4A * 3 * 512, jf->unk_000.unk_008 + 0xA00, jf->unk_000.unk_00C + 0x2C00, 20, 20, 20);
                 }
             }
 
@@ -3732,9 +3732,9 @@ void func_080BF8C4(JfMajinWork* work) {
             break;
         case 5:
             if (work->unk_44 > 0) {
-                ApproachValue(&jf->x, work->unk_50, work->unk_44);
-                ApproachValue(&jf->y, work->unk_54, work->unk_44);
-                ApproachValue(&jf->z, work->unk_58, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_004, work->unk_50, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_008, work->unk_54, work->unk_44);
+                ApproachValue(&jf->unk_000.unk_00C, work->unk_58, work->unk_44);
                 work->unk_44--;
             } else {
                 work->unk_48++;
@@ -3753,32 +3753,32 @@ void func_080BFDD4(JfMajinWork* work) {
 }
 void func_080BFDD8(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
-    u32* q = &jf->unk_110;
+    BtlObj* q = &jf->unk_110;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
-            jf->x = 0x2A200;
+        if (jf->unk_000.unk_034 & 4) {
+            jf->unk_000.unk_004 = 0x2A200;
             jf->unk_248 = 8;
         } else {
-            jf->x = 0x16A00;
+            jf->unk_000.unk_004 = 0x16A00;
             jf->unk_248 = 28;
         }
 
-        jf->y = 0x15E00;
-        jf->z = -0x3800;
+        jf->unk_000.unk_008 = 0x15E00;
+        jf->unk_000.unk_00C = -0x3800;
         work->unk_00->unk_24A = 0;
         func_080BE380(work->unk_00->unk_248, 0x80, work);
         work->unk_3C = 0;
         work->unk_2C = 1;
         work->unk_6A = 0;
-        jf->unk_034 &= ~0x1000000;
-        func_08019190(jf, 9);
+        jf->unk_000.unk_034 &= ~0x1000000;
+        func_08019190(&jf->unk_000, 9);
         work->unk_00->unk_244++;
     } else if (jf->unk_244 > 60) {
         func_0801AF08(q);
         work->unk_00->unk_244 = 0;
 
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             work->unk_00->unk_248 = 8;
         } else {
             work->unk_00->unk_248 = 28;
@@ -3793,31 +3793,31 @@ void func_080BFDD8(JfMajinWork* work) {
 
 void func_080BFEF0(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
-    u32* q = &jf->unk_110;
+    BtlObj* q = &jf->unk_110;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
-            jf->x = 0x2A200;
+        if (jf->unk_000.unk_034 & 4) {
+            jf->unk_000.unk_004 = 0x2A200;
             jf->unk_248 = 8;
         } else {
-            jf->x = 0x16A00;
+            jf->unk_000.unk_004 = 0x16A00;
             jf->unk_248 = 28;
         }
 
-        jf->y = 0x15E00;
-        jf->z = -0x3800;
+        jf->unk_000.unk_008 = 0x15E00;
+        jf->unk_000.unk_00C = -0x3800;
         work->unk_00->unk_24A = 0;
         func_080BE380(work->unk_00->unk_248, 0x80, work);
         work->unk_3C = 0;
         work->unk_2C = 1;
         work->unk_6A = 0;
-        jf->unk_034 &= ~0x1000000;
+        jf->unk_000.unk_034 &= ~0x1000000;
         work->unk_00->unk_244++;
     } else {
         func_0801AF08(q);
         work->unk_00->unk_244 = 0;
 
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             work->unk_00->unk_248 = 8;
         } else {
             work->unk_00->unk_248 = 28;
@@ -3830,12 +3830,12 @@ void func_080BFEF0(JfMajinWork* work) {
 
 void func_080BFFF8(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
-    BtlObj* q = (BtlObj*)&jf->unk_110;
+    BtlObj* q = &jf->unk_110;
     JfMajinFx fx;
     s32 v;
 
     if (jf->unk_244 == 0) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             jf->unk_248 = 8;
             v = 0x2A200;
         } else {
@@ -3843,14 +3843,14 @@ void func_080BFFF8(JfMajinWork* work) {
             v = 0x16A00;
         }
 
-        jf->x = v;
+        jf->unk_000.unk_004 = v;
 
-        jf->y = 0x15E00;
-        jf->z = -0x3800;
+        jf->unk_000.unk_008 = 0x15E00;
+        jf->unk_000.unk_00C = -0x3800;
         func_080BE380(work->unk_00->unk_248, 0x80, work);
         work->unk_2C = 1;
-        func_0802F274(jf->x, jf->y + jf->z);
-        func_0801AF4C((BtlObj*)jf);
+        func_0802F274(jf->unk_000.unk_004, jf->unk_000.unk_008 + jf->unk_000.unk_00C);
+        func_0801AF4C(&jf->unk_000);
         work->unk_48 = 0;
         work->unk_44 = 0;
         work->unk_00->unk_244++;
@@ -3859,7 +3859,7 @@ void func_080BFFF8(JfMajinWork* work) {
 
     switch (work->unk_48) {
     case 0:
-        func_0802F274(jf->x, jf->y + jf->z);
+        func_0802F274(jf->unk_000.unk_004, jf->unk_000.unk_008 + jf->unk_000.unk_00C);
 
         if (work->unk_44 > 1) {
             work->unk_44 = 0;
@@ -3869,23 +3869,23 @@ void func_080BFFF8(JfMajinWork* work) {
         }
         break;
     case 1:
-        func_0802F274(jf->x, jf->y + jf->z);
+        func_0802F274(jf->unk_000.unk_004, jf->unk_000.unk_008 + jf->unk_000.unk_00C);
 
         if (func_08006314() != 0) {
             break;
         }
 
-        if (jf->unk_034 & 4) {
-            func_08014AAC(jf->x - 0x800, jf->y + jf->z - 0x800);
+        if (jf->unk_000.unk_034 & 4) {
+            func_08014AAC(jf->unk_000.unk_004 - 0x800, jf->unk_000.unk_008 + jf->unk_000.unk_00C - 0x800);
         } else {
-            func_08014AAC(jf->x + 0x800, jf->y + jf->z - 0x800);
+            func_08014AAC(jf->unk_000.unk_004 + 0x800, jf->unk_000.unk_008 + jf->unk_000.unk_00C - 0x800);
         }
 
         func_08006238(0, gBtlWork->unk_0B3, 8);
         work->unk_48++;
         break;
     case 2:
-        func_0802F274(jf->x, jf->y + jf->z);
+        func_0802F274(jf->unk_000.unk_004, jf->unk_000.unk_008 + jf->unk_000.unk_00C);
 
         if (work->unk_44 <= 119) {
             work->unk_44++;
@@ -3911,19 +3911,19 @@ void func_080BFFF8(JfMajinWork* work) {
 #ifdef VERSION_EU
             func_0801B918(q);
 #else
-            func_0801B918((BtlObj*)jf);
+            func_0801B918(&jf->unk_000);
 #endif
             gUnk_0203ACC4 = 0;
             gUnk_0203ACD4 = 0;
             gUnk_0203ACC0 = 0;
             func_080BDAAC();
-            jf->x = 0;
-            jf->y = 0;
-            jf->z = 0;
+            jf->unk_000.unk_004 = 0;
+            jf->unk_000.unk_008 = 0;
+            jf->unk_000.unk_00C = 0;
             func_08005244(1, (gBtlWork->unk_000 >> 8) + 776, (gBtlWork->unk_004 >> 8) + 294);
             work->unk_48++;
         } else {
-            func_0802F274(jf->x, jf->y + jf->z);
+            func_0802F274(jf->unk_000.unk_004, jf->unk_000.unk_008 + jf->unk_000.unk_00C);
         }
         break;
     default:
@@ -3961,7 +3961,7 @@ u8 func_080C0258(u16* p, s16 b, u8 c, u8 d) {
 
 void func_080C02AC(JfMajinWork* work) {
     JfWork* jf = work->unk_00;
-    BtlObj* s = (BtlObj*)&work->unk_00->unk_110;
+    BtlObj* s = &work->unk_00->unk_110;
     s16 n = 0;
     s16 m;
     u8 v;
@@ -3974,7 +3974,7 @@ void func_080C02AC(JfMajinWork* work) {
 
     switch (jf->unk_244) {
     case 0:
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             jf->unk_248 = 8;
             work->unk_5C = 8;
         } else {
@@ -4121,7 +4121,7 @@ void func_080C0624(JfMajinWork* work) {
 }
 
 void func_080C0714(JfMajinWork* work) {
-    BtlObj* s = (BtlObj*)&work->unk_00->unk_110;
+    BtlObj* s = &work->unk_00->unk_110;
     u8 v;
     s32 r;
 
@@ -4218,9 +4218,9 @@ void func_080C0714(JfMajinWork* work) {
 }
 void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_000 = arg;
-    work->unk_030 = arg->x;
-    work->unk_034 = arg->y + 0x500;
-    work->unk_038 = arg->z - 0x4800;
+    work->unk_030 = arg->unk_000.unk_004;
+    work->unk_034 = arg->unk_000.unk_008 + 0x500;
+    work->unk_038 = arg->unk_000.unk_00C - 0x4800;
     work->unk_03C = 0;
     work->unk_0F8 = 0xFE00;
     work->unk_060 = 0x20000;
@@ -4235,15 +4235,15 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_02A = 0;
     work->unk_194 = 0;
 
-    if (arg->unk_034 & 4) {
-        work->unk_170 = arg->x + 0x2000;
-        work->unk_174 = arg->y + 0xA00;
-        work->unk_178 = arg->z - 0x1900;
+    if (arg->unk_000.unk_034 & 4) {
+        work->unk_170 = arg->unk_000.unk_004 + 0x2000;
+        work->unk_174 = arg->unk_000.unk_008 + 0xA00;
+        work->unk_178 = arg->unk_000.unk_00C - 0x1900;
         work->unk_144 = -((gUnk_0203ACC0 + 1) << 11) - 0x2000;
     } else {
-        work->unk_170 = arg->x - 0x2000;
-        work->unk_174 = arg->y + 0xA00;
-        work->unk_178 = arg->z - 0x1900;
+        work->unk_170 = arg->unk_000.unk_004 - 0x2000;
+        work->unk_174 = arg->unk_000.unk_008 + 0xA00;
+        work->unk_178 = arg->unk_000.unk_00C - 0x1900;
         work->unk_144 = -0x2000 - ((gUnk_0203ACC4 + 1) << 11);
     }
 
@@ -4365,14 +4365,14 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
         if (work->unk_15E > 3) {
             work->unk_15E = 0;
 
-            if (jf->unk_034 & 4) {
-                work->unk_170 = jf->x + 0x1000;
-                work->unk_174 = jf->y + 0xA00;
-                work->unk_178 = jf->z - 0x1000;
+            if (jf->unk_000.unk_034 & 4) {
+                work->unk_170 = jf->unk_000.unk_004 + 0x1000;
+                work->unk_174 = jf->unk_000.unk_008 + 0xA00;
+                work->unk_178 = jf->unk_000.unk_00C - 0x1000;
             } else {
-                work->unk_170 = jf->x - 0x1000;
-                work->unk_174 = jf->y + 0xA00;
-                work->unk_178 = jf->z - 0x1000;
+                work->unk_170 = jf->unk_000.unk_004 - 0x1000;
+                work->unk_174 = jf->unk_000.unk_008 + 0xA00;
+                work->unk_178 = jf->unk_000.unk_00C - 0x1000;
             }
 
             work->gfx2 = gUnk_09EF3A48[15];
@@ -4481,7 +4481,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
     s16 y;
 
     if (work->unk_15A == 1) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             if (work->unk_030 <= 0x259FF) {
                 pal = func_0801AF1C(work->unk_034);
                 prio = 0xFD00;
@@ -4502,7 +4502,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
     }
 
     if (work->unk_17C == 1) {
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             pal = 0x400;
         } else {
             pal = 0x400;
@@ -4681,14 +4681,14 @@ void func_080C1A48(JfBorderlineWork* work) {
     case 9:
     case 10:
     case 11:
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             work->unk_0A4 = -0x500;
         } else {
             work->unk_0A4 = 0x500;
         }
         break;
     case 3:
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             work->unk_0A4 = -0x100;
         } else {
             work->unk_0A4 = 0x100;
@@ -4696,7 +4696,7 @@ void func_080C1A48(JfBorderlineWork* work) {
         break;
     case 4:
     case 5:
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             work->unk_0A4 = 0x1000;
         } else {
             work->unk_0A4 = -0x1000;
@@ -4704,7 +4704,7 @@ void func_080C1A48(JfBorderlineWork* work) {
         break;
     case 1:
     case 2:
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             work->unk_0A4 = -0xA00;
         } else {
             work->unk_0A4 = 0xA00;
@@ -4713,7 +4713,7 @@ void func_080C1A48(JfBorderlineWork* work) {
         work->unk_0B5 = 1;
         return;
     default:
-        if (jf->unk_034 & 4) {
+        if (jf->unk_000.unk_034 & 4) {
             work->unk_0A4 = -0x500;
         } else {
             work->unk_0A4 = 0x500;

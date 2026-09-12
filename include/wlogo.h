@@ -4,6 +4,7 @@
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
+#include "boss_tm.h"
 #include "taskpool.h"
 #include "intr.h"
 #include "main.h"
@@ -35,97 +36,6 @@ typedef struct WlogoTtEffStep {
     u8 unk_1C[0x2];
     s16 unk_1E;
 } WlogoTtEffStep;
-
-typedef struct BosTmWork {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
-    u8 unk_06[0x02];
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
-    s32 unk_20;
-    s32 unk_24;
-    u16 unk_28;
-    u8 unk_2A[0x02];
-    s32 unk_2C;
-    u16 unk_30;
-    u16 unk_32;
-    u16 unk_34;
-    u16 unk_36;
-    u16 unk_38;
-    s8 unk_3A;
-    u8 unk_3B;
-    s32 unk_3C;
-    u16 unk_40;
-    u16 unk_42;
-    u16 unk_44;
-    u8 unk_46[0x02];
-    s32 unk_48;
-    s32 unk_4C;
-    s32 unk_50;
-    s32 unk_54;
-    s32 unk_58;
-    s32 unk_5C;
-    struct BosTmWork* unk_60;
-} BosTmWork;
-
-typedef BosTmWork WlogoTtEffSrc;
-
-typedef struct WlogoTtEffTop {
-    WlogoTtEffSrc* unk_000;
-    u8 unk_004[0x10];
-    s32 unk_014;
-    s32 unk_018;
-    s32 unk_01C;
-    u8 unk_020[0x108];
-    u8 unk_128;
-    u8 unk_129[0x7];
-    s32 unk_130;
-    s32 unk_134;
-    s32 unk_138;
-    u8 unk_13C[0x1C];
-    s16 unk_158;
-    s16 unk_15A;
-    u8 unk_15C[0xE8];
-    u8 unk_244;
-    u8 unk_245[0x7];
-    s32 unk_24C;
-    s32 unk_250;
-    s32 unk_254;
-    u8 unk_258[0x104];
-    s32 unk_35C;
-    u8 unk_360[0x8];
-    s32 unk_368;
-    s32 unk_36C;
-    s32 unk_370;
-    u8 unk_374[0x104];
-    s32 unk_478;
-    u8 unk_47C[0x0E];
-    s16 unk_48A;
-    s16 unk_48C;
-} WlogoTtEffTop;
-
-typedef struct WlogoTtEff {
-    u8 unk_000[0x4];
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    u8 unk_010[0x24];
-    u64 unk_034;
-    u8 unk_03C[0x60];
-    u16 unk_09C;
-    u16 unk_09E;
-    u16 unk_0A0;
-    u8 unk_0A2[0x86];
-    u8 unk_128;
-    u8 unk_129[0x359];
-    s16 unk_482;
-    s16 unk_484;
-} WlogoTtEff;
 
 typedef struct WlogoTtWork {
     u8 unk_000;
@@ -551,20 +461,11 @@ typedef struct WlogoObjParam {
     void* unk_20;
 } WlogoObjParam;
 
-typedef struct BosTmShared {
-    s32 unk_00;
-    s32 x;
-    s32 y;
-    s32 z;
-} BosTmShared;
-
-
 extern s32 gUnk_0203AB38;
 extern s16 gUnk_0203AB3C;
 extern s16 gUnk_0203AB40;
 extern s16 gUnk_0203AB44;
 extern s16 gUnk_0203AB48;
-extern BosTmShared gUnk_0203AB50;
 extern TaskDesc gTaskDescBosTmBody;
 extern TaskDesc gTaskDescBosTmFoot;
 extern TaskDesc gTaskDescBosTmArm;
@@ -702,8 +603,8 @@ extern u8 gUnk_09EF3804[];
 extern void* gUnk_09EF380C[];
 extern u8 gUnk_09EF3850[];
 extern void* gUnk_09EF3924[];
-extern s32 gUnk_09EF3960[];
-extern s32 gUnk_09EF397C[];
+extern void* gUnk_09EF3960[];
+extern void* gUnk_09EF397C[];
 
 void* AllocObjTiles(s32 size, void* src);
 void* LoadObjTiles(void* src, s32 size);
@@ -822,19 +723,7 @@ void func_080B5444(void);
 void WlogoEnableHBlank(void);
 void WlogoHBlankIntr(void);
 void WlogoDisableHBlank(void);
-void func_080B8334(WlogoTtEff* p, s16 a, s16 b, s16 c);
-void func_080B83A4(WlogoTtEff* p, s16 a, s16 b, s16 c);
-void func_080B83C4(WlogoTtEff* p);
-void func_080B8418(WlogoTtEffTop* p);
-void func_080B89B0(WlogoTtEffTop* p);
-void func_080B895C(WlogoTtEffTop* p);
-void func_080B8508(WlogoTtEffTop* p);
-void func_080B8554(WlogoTtEffTop* p);
-void func_080B8688(WlogoTtEffTop* p);
-void func_080B87C0(WlogoTtEffTop* p, s16 a);
-void func_080B8FF4(WlogoTtEffTop* p, s16 a);
 s32 func_080B9190(s32 a, s32 b);
-void func_080B83B8(void* a);
 void task_wlogo_won_0(WlogoWonWork* work);
 u8 task_wlogo_won_1(WlogoWonWork* work);
 void task_wlogo_won_2(WlogoWonWork* work);
@@ -848,18 +737,14 @@ void func_08000DE8(TaskPool* a, Task* t);
 void func_080C640C(WlogoObjParam* param);
 u8 func_080C64A4(void);
 void func_0801B008(void);
-void func_080B7E68(BosTmWork* w);
-void task_bos_tm_0(BosTmWork* w, BosTmShared* arg);
-u8 task_bos_tm_1(BosTmWork* w);
-void task_bos_tm_2(BosTmWork* w);
-void task_bos_tm_3(BosTmWork* w);
+void func_080B7E68(TmWork* w);
+void task_bos_tm_0(TmWork* w, BtlObj* arg);
+u8 task_bos_tm_1(TmWork* w);
+void task_bos_tm_2(TmWork* w);
+void task_bos_tm_3(TmWork* w);
 void func_080B82D4(void);
-void func_080B8324(WlogoTtEffTop* p);
-void func_080B91A4(WlogoTtEffTop* p);
-void func_080B9FC4(WlogoTtEffTop* p);
 s32 func_0801ADAC(BtlObj* p);
 void func_0801AF08(BtlObj* p);
 void func_0801AF4C(BtlObj* p);
-void _080B949C(BtlObj* a, WlogoTtEffTop* b);
 
 #endif /* GUARD_WLOGO_H */
