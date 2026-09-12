@@ -2531,7 +2531,6 @@ void func_0807B45C(UnkStruct_08080268* w) {
     gBtlWork->unk_0F4 = gUnk_02039DD4->unk_0CC;
 }
 
-#ifndef VERSION_EU
 void func_0807B478(UnkStruct_02034AAC* w) {
     u32* p;
     u16* c;
@@ -2549,6 +2548,11 @@ void func_0807B478(UnkStruct_02034AAC* w) {
         p = &gBtlWork->unk_0F4;
 
         if (*p == 41) {
+#ifdef VERSION_EU
+            if (gUnk_02039B9C->unk_0F4 == 47 && (gBtlWork->unk_068 & 0x40)) {
+                gUnk_02039B9C->unk_068 &= ~2;
+            }
+#endif
             gUnk_02039DD4->unk_0CE = 0;
             gUnk_02039B9C->unk_0F4 = 0;
             gUnk_02039B9C->unk_0F8 = 0;
@@ -2582,9 +2586,6 @@ void func_0807B478(UnkStruct_02034AAC* w) {
         }
     }
 }
-#else
-INCLUDE_ASM("card/func_0807B478.s");
-#endif
 
 u8 func_0807B578(UnkStruct_08080268* w, void* a) {
     s16 v;
