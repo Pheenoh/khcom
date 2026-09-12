@@ -9,7 +9,7 @@ struct UnkStruct_080DDDDC;
 struct UnkStruct_080DEDD8;
 struct UnkStruct_080DEE18;
 struct UnkStruct_080DF640;
-struct UnkStruct_080DFB8C;
+struct MapCell;
 struct UnkStruct_080DFF1C;
 struct UnkStruct_096FE034;
 
@@ -45,7 +45,7 @@ void func_080DFAA8(void);
 void func_080DFAF4(u8 a, u8 b);
 void func_080DFB2C(void);
 struct UnkStruct_02034F24* func_080DFB7C(u8 a);
-struct UnkStruct_080DFB8C* func_080DFB8C(s32 x, s32 y);
+struct MapCell* func_080DFB8C(s32 x, s32 y);
 u8 func_080DFBDC(struct UnkStruct_080DFF1C* p);
 u8 func_080DFC24(void);
 void func_080DFC7C(void);

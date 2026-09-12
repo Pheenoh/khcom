@@ -797,7 +797,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
     s32 t4;
     u32 id;
     u8* base;
-    UnkStruct_08021C8A* a;
+    SoraAttackDef* a;
     s32 sel[6];
     u8 buf[5];
     BtlObj* e3;
@@ -2775,7 +2775,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         if (work->unk_161 != 0) {
-            if (a->unk_10 & 1) {
+            if (a->flags & 1) {
                 if ((p->unk_0E4->unk_068 & 0x8000) == 0) {
                     a = a->unk_14;
                 }
@@ -2784,11 +2784,11 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         if ((s16)work->unk_154 == 0) {
 #ifdef VERSION_EU
-            func_0801DDE4(work, (u16)(a->unk_00 + work->unk_190), 0);
+            func_0801DDE4(work, (u16)(a->animId + work->unk_190), 0);
 #else
-            func_0801DDE4(work, a->unk_00 + work->unk_190, 0);
+            func_0801DDE4(work, a->animId + work->unk_190, 0);
 #endif
-            m4aSongNumStart(a->unk_08);
+            m4aSongNumStart(a->swingSound);
             work->unk_150 = a->unk_0C;
 
             switch (p->unk_0E4->unk_0F4) {
@@ -2804,31 +2804,31 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             func_08019A30();
 
             if (p->unk_0E4->unk_0F4 == 34) {
-                switch (a->unk_00) {
+                switch (a->animId) {
                 case 22:
                     if (p->unk_034 & 4) {
-                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_004 - 5120, p->unk_008,
+                        d = func_08011F78(a->attackIds[work->unk_191[1]], p->unk_004 - 5120, p->unk_008,
                                           p->unk_00C - 7168, 40, 16, 44);
                     } else {
-                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_004 + 5120, p->unk_008,
+                        d = func_08011F78(a->attackIds[work->unk_191[1]], p->unk_004 + 5120, p->unk_008,
                                           p->unk_00C - 7168, 40, 16, 44);
                     }
                     break;
                 case 12:
                     if (p->unk_034 & 4) {
-                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_004 - 8192, p->unk_008,
+                        d = func_08011F78(a->attackIds[work->unk_191[1]], p->unk_004 - 8192, p->unk_008,
                                           p->unk_00C, 28, 20, 32);
                     } else {
-                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_004 + 8192, p->unk_008,
+                        d = func_08011F78(a->attackIds[work->unk_191[1]], p->unk_004 + 8192, p->unk_008,
                                           p->unk_00C, 28, 20, 32);
                     }
                     break;
                 default:
                     if (p->unk_034 & 4) {
-                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_004 - 9216, p->unk_008,
+                        d = func_08011F78(a->attackIds[work->unk_191[1]], p->unk_004 - 9216, p->unk_008,
                                           p->unk_00C, 32, 12, 32);
                     } else {
-                        d = func_08011F78(a->unk_04[work->unk_191[1]], p->unk_004 + 9216, p->unk_008,
+                        d = func_08011F78(a->attackIds[work->unk_191[1]], p->unk_004 + 9216, p->unk_008,
                                           p->unk_00C, 32, 12, 32);
                     }
                     break;
@@ -2839,13 +2839,13 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                         t = 164;
                     } else {
                         func_08019190(p, 2);
-                        t = a->unk_04[work->unk_191[1]];
+                        t = a->attackIds[work->unk_191[1]];
                     }
                 } else {
-                    t = a->unk_04[work->unk_191[1]];
+                    t = a->attackIds[work->unk_191[1]];
                 }
 
-                switch (a->unk_00) {
+                switch (a->animId) {
                 case 22:
                     if (p->unk_034 & 4) {
                         d = func_08011F78(t, p->unk_004 - 5120, p->unk_008, p->unk_00C - 7168, 28, 16, 44);
@@ -2871,9 +2871,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             }
 
             if (d == 1) {
-                m4aSongNumStart(a->unk_0A);
+                m4aSongNumStart(a->hitSound);
 
-                if (a->unk_10 & 2) {
+                if (a->flags & 2) {
                     if (p->unk_034 & 4) {
                         func_08019050(8, 384, p->unk_004 - 5120, (p->unk_008 - 5120) + p->unk_00C);
                     } else {
@@ -2886,7 +2886,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                 work->unk_15A &= ~2;
             }
         } else if ((s16)work->unk_154 == buf[work->unk_190] + 2) {
-            if (a->unk_10 & 2) {
+            if (a->flags & 2) {
                 func_08019050(15, 256, gBtlWork->unk_010, gBtlWork->unk_014);
             }
 
@@ -2946,7 +2946,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                     p->unk_008 += ((p->unk_018 + t2) - p->unk_008) >> 4;
                 }
 
-                if (a->unk_10 & 1) {
+                if (a->flags & 1) {
                     s32 t3 = (e->unk_00C - (e->unk_0A2 << 8)) - p->unk_00C;
 
                     if (t3 < 0) {
@@ -6888,12 +6888,12 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     s32 t4;
     s32 t5;
 #ifdef VERSION_EU
-    UnkStruct_0802CD54** q;
+    RikuAttackDef** q;
 #else
     void** q;
 #endif
     u8* base;
-    UnkStruct_0802CD54* a;
+    RikuAttackDef* a;
     BtlSpawnArgs spawn;
     u32 id;
     s32 sel[6];
@@ -9659,7 +9659,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         a = *q;
 
         if (work->unk_165 != 0) {
-            if (a->unk_14 & 1) {
+            if (a->flags & 1) {
                 if ((p->unk_0E4->unk_068 & 0x8000) == 0) {
                     a = a->unk_18;
                 }
@@ -9669,9 +9669,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         if ((s16)work->unk_158 == 0) {
             func_08019A30();
 #ifdef VERSION_EU
-            func_080276D4(work, *(u16*)&a->unk_00, 0);
+            func_080276D4(work, *(u16*)&a->animId, 0);
 #else
-            func_080276D4(work, a->unk_00, 0);
+            func_080276D4(work, a->animId, 0);
 #endif
 
             if (work->unk_165 == 2) {
@@ -9691,28 +9691,28 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                 p->unk_0E4->unk_0F8--;
                 break;
             }
-        } else if ((s16)work->unk_158 == a->unk_04) {
+        } else if ((s16)work->unk_158 == a->hitFrame) {
             if (p->unk_0E4->unk_0F4 == 34) {
-                switch (a->unk_00) {
+                switch (a->animId) {
                 case 5:
                     if (p->unk_034 & 4) {
-                        d = func_08011F78(a->unk_08[0], p->unk_004 - 5120, p->unk_008, p->unk_00C - 7168, 40, 24, 44);
+                        d = func_08011F78(a->attackIds[0], p->unk_004 - 5120, p->unk_008, p->unk_00C - 7168, 40, 24, 44);
                     } else {
-                        d = func_08011F78(a->unk_08[0], p->unk_004 + 5120, p->unk_008, p->unk_00C - 7168, 40, 24, 44);
+                        d = func_08011F78(a->attackIds[0], p->unk_004 + 5120, p->unk_008, p->unk_00C - 7168, 40, 24, 44);
                     }
                     break;
                 case 3:
                     if (p->unk_034 & 4) {
-                        d = func_08011F78(a->unk_08[0], p->unk_004 - 8192, p->unk_008, p->unk_00C, 32, 35, 32);
+                        d = func_08011F78(a->attackIds[0], p->unk_004 - 8192, p->unk_008, p->unk_00C, 32, 35, 32);
                     } else {
-                        d = func_08011F78(a->unk_08[0], p->unk_004 + 8192, p->unk_008, p->unk_00C, 32, 35, 32);
+                        d = func_08011F78(a->attackIds[0], p->unk_004 + 8192, p->unk_008, p->unk_00C, 32, 35, 32);
                     }
                     break;
                 default:
                     if (p->unk_034 & 4) {
-                        d = func_08011F78(a->unk_08[0], p->unk_004 - 9216, p->unk_008, p->unk_00C, 32, 20, 32);
+                        d = func_08011F78(a->attackIds[0], p->unk_004 - 9216, p->unk_008, p->unk_00C, 32, 20, 32);
                     } else {
-                        d = func_08011F78(a->unk_08[0], p->unk_004 + 9216, p->unk_008, p->unk_00C, 32, 20, 32);
+                        d = func_08011F78(a->attackIds[0], p->unk_004 + 9216, p->unk_008, p->unk_00C, 32, 20, 32);
                     }
                     break;
                 }
@@ -9722,13 +9722,13 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                         t = 164;
                     } else {
                         func_08019190(p, 2);
-                        t = a->unk_08[0];
+                        t = a->attackIds[0];
                     }
                 } else {
-                    t = a->unk_08[0];
+                    t = a->attackIds[0];
                 }
 
-                switch (a->unk_00) {
+                switch (a->animId) {
                 case 5:
                     if (p->unk_034 & 4) {
                         d = func_08011F78(t, p->unk_004 - 5120, p->unk_008, p->unk_00C - 7168, 28, 20, 44);
@@ -9758,7 +9758,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             if (d == 1) {
                 m4aSongNumStart(a->unk_0E);
 
-                if (a->unk_14 & 2) {
+                if (a->flags & 2) {
                     if (p->unk_034 & 4) {
                         func_08019050(8, 384, p->unk_004 - 5120, (p->unk_008 - 5120) + p->unk_00C);
                     } else {
@@ -9770,8 +9770,8 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             } else {
                 work->unk_15E &= ~2;
             }
-        } else if ((s16)work->unk_158 == a->unk_04 + 2) {
-            if (a->unk_14 & 2) {
+        } else if ((s16)work->unk_158 == a->hitFrame + 2) {
+            if (a->flags & 2) {
                 func_08019050(15, 256, gBtlWork->unk_010, gBtlWork->unk_014);
             }
 
@@ -9832,7 +9832,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
                     p->unk_008 += ((p->unk_018 + t2) - p->unk_008) >> 4;
                 }
 
-                if (a->unk_14 & 1) {
+                if (a->flags & 1) {
                     t3 = (e->unk_00C - (e->unk_0A2 << 8)) - p->unk_00C;
 
                     if (t3 < 0) {

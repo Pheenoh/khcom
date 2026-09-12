@@ -1318,7 +1318,7 @@ void func_0801B024(BtlObj* p) {
 }
 
 void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
-    const UnkStruct_08133E5C* e;
+    const EnemyBaseStats* e;
     enum EmyId {
         EMY_ID_32 = 32,
         EMY_ID_33 = 33,
@@ -1459,9 +1459,9 @@ void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z) {
                 b = 76;
                 c = 640;
             }
-            p->unk_02E = ((gGameState.floor * a + 256) * e->unk_00) >> 8;
-            p->unk_030 = ((gGameState.floor * b + 256) * e->unk_02) >> 8;
-            p->unk_0B4 = ((c * gGameState.floor + 256) * (u16)e->unk_04) >> 8;
+            p->unk_02E = ((gGameState.floor * a + 256) * e->hp) >> 8;
+            p->unk_030 = ((gGameState.floor * b + 256) * e->attack) >> 8;
+            p->unk_0B4 = ((c * gGameState.floor + 256) * (u16)e->exp) >> 8;
             break;
         }
     } else {
@@ -2310,9 +2310,9 @@ void func_0801C700(BtlObj* a, s32* b, s32* c, s32* d) {
 
 void func_0801C7FC(HitData* a, s32 id, s32 c) {
     u16 b = id;
-    const UnkStruct_08133E5C* e = func_0800FB14(b);
+    const EnemyBaseStats* e = func_0800FB14(b);
     if (e != 0) {
-        a->unk_2E = (e->unk_00 * c) >> 8;
+        a->unk_2E = (e->hp * c) >> 8;
         if (a->unk_2E <= 0) {
             a->unk_2E = 1;
         }

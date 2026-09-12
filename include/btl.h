@@ -75,29 +75,29 @@ typedef struct BtlAreaWork {
     s16 unk_00A;
 } BtlAreaWork;
 
-typedef struct UnkStruct_08021C8A {
-    s32 unk_00;
-    s32* unk_04;
-    u16 unk_08;
-    u16 unk_0A;
+typedef struct SoraAttackDef {
+    s32 animId;
+    s32* attackIds;
+    u16 swingSound;
+    u16 hitSound;
     s32 unk_0C;
-    u16 unk_10;
+    u16 flags;
     u16 unk_12;
-    struct UnkStruct_08021C8A* unk_14;
-} UnkStruct_08021C8A;
+    struct SoraAttackDef* unk_14;
+} SoraAttackDef;
 
-typedef struct UnkStruct_0802CD54 {
-    s32 unk_00;
-    s16 unk_04;
+typedef struct RikuAttackDef {
+    s32 animId;
+    s16 hitFrame;
     u16 unk_06;
-    s32* unk_08;
+    s32* attackIds;
     u16 unk_0C;
     u16 unk_0E;
     s32 unk_10;
-    u16 unk_14;
+    u16 flags;
     u16 unk_16;
-    struct UnkStruct_0802CD54* unk_18;
-} UnkStruct_0802CD54;
+    struct RikuAttackDef* unk_18;
+} RikuAttackDef;
 
 typedef struct BtlSoraWork {
     void* unk_000;

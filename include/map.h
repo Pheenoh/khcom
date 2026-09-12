@@ -682,7 +682,7 @@ typedef struct MapGmkSpiderWork {
 } MapGmkSpiderWork;
 
 typedef struct MapGmkGpWork {
-    UnkStruct_080DFB8C* unk_000;
+    MapCell* unk_000;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x5C];
@@ -696,7 +696,7 @@ typedef struct MapGmkGpWork {
 } MapGmkGpWork;
 
 typedef struct MapGmkGp1Work {
-    UnkStruct_080DFB8C* unk_000;
+    MapCell* unk_000;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x5C];
@@ -767,7 +767,7 @@ typedef struct MapPrizeWork {
 } MapPrizeWork;
 
 typedef struct MapGmkGp8Work {
-    UnkStruct_080DFB8C* unk_000;
+    MapCell* unk_000;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x2E];
@@ -786,7 +786,7 @@ typedef struct MapGmkGp8Work {
 } MapGmkGp8Work;
 
 typedef struct MapGmkGp08Work {
-    UnkStruct_080DFB8C* unk_000;
+    MapCell* unk_000;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
     u8 unk_044[0x2E];
@@ -1631,10 +1631,10 @@ s32 func_080F2B78(MapGmkGpWork* w);
 void func_080F0D80(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 void func_080F1004(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 u8 func_080840E4(void);
-UnkStruct_080DFB8C* func_080E08BC(s16 x, s16 y);
+MapCell* func_080E08BC(s16 x, s16 y);
 void func_080E2D80(void);
-void func_080E0960(UnkStruct_080DFB8C* p, s32 n);
-void sub_080E0B00(UnkStruct_080DFB8C* p, s32 n);
+void func_080E0960(MapCell* p, s32 n);
+void sub_080E0B00(MapCell* p, s32 n);
 void func_080E2668(UnkStruct_02034F20* p, s32 a);
 void func_080E4EB0(u16* a, u16* b, u16* c, s16 d, s16 e);
 void func_080E507C(u16* a, u16* b, u16* c, s16 d, s16 e);
@@ -1686,13 +1686,13 @@ void func_080EC544(UnkStruct_02034FE4* w);
 void func_080EC57C(s32 arg);
 void func_080104F4(void);
 void func_080E0878(void);
-void func_080E0900(UnkStruct_080DFB8C* p, s32 a, s32 b);
+void func_080E0900(MapCell* p, s32 a, s32 b);
 u8 func_080E0920(UnkStruct_080DFF1C* p, u16 a);
 u8 func_080E0938(u8 a);
-void func_080E09B4(UnkStruct_080DFB8C* p, u8 n, u8 v);
-void func_080E0A38(UnkStruct_080DFB8C* p);
-void func_080E0A70(UnkStruct_080DFB8C* p, s32 n);
-void func_080E0B98(UnkStruct_080DFB8C* p, s32 n, u8 v);
+void func_080E09B4(MapCell* p, u8 n, u8 v);
+void func_080E0A38(MapCell* p);
+void func_080E0A70(MapCell* p, s32 n);
+void func_080E0B98(MapCell* p, s32 n, u8 v);
 void func_080E0BF4(s16 x, s16 y, s32 a, s32 b);
 s16 func_080E1204(u8 a, u8 b, s16 c);
 u8 func_080E1CE0(s16 x, s16 y, u8 n);
@@ -1757,7 +1757,7 @@ void func_080E607C(void);
 void func_080E6100(void);
 void func_080E6178(void);
 void func_080E6264(void);
-UnkStruct_080DFB8C* func_080E67D4(s32 x, s32 y);
+MapCell* func_080E67D4(s32 x, s32 y);
 u8 func_080E68A4(s16 x, s16 y, u8 n);
 s32 func_080E68E4(s16 x, s16 y, u8 w, u8 h, u8 n);
 s32 func_080E6968(s16 a, s16 b, u8 c);

@@ -106,14 +106,14 @@ typedef struct UnkStruct_0801B8A8 {
     u8 unk_16[0x0A];
 } UnkStruct_0801B8A8;
 
-typedef struct UnkStruct_020348C8 {
-    void* unk_00;
-    void* unk_04;
-    AnimState unk_08;
-    u16 unk_20;
-    u8 unk_22;
+typedef struct FieldTransitionWork {
+    void* tiles;
+    void* palette;
+    AnimState anim;
+    u16 initialized;
+    u8 flipped;
     u8 unk_23;
-} UnkStruct_020348C8;
+} FieldTransitionWork;
 
 typedef struct HitData {
     u8 unk_00[0x2C];
@@ -190,21 +190,21 @@ typedef struct PlayerProgression {
     u8 unk_86[0x02];
 } PlayerProgression;
 
-typedef struct UnkStruct_08133E5C {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
+typedef struct EnemyBaseStats {
+    s16 hp;
+    s16 attack;
+    s16 exp;
     s16 unk_06;
-} UnkStruct_08133E5C;
+} EnemyBaseStats;
 
-typedef struct UnkStruct_0813400C {
+typedef struct BattleAttackDef {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
     s32 unk_0C;
-    void (*unk_10)(s32, s32, s32);
-    u32 unk_14;
-} UnkStruct_0813400C;
+    void (*hitEffect)(s32, s32, s32);
+    u32 flags;
+} BattleAttackDef;
 
 
 extern u32 gFrameCounter;
@@ -326,11 +326,11 @@ extern u8 gUnk_09EDA6D8[];
 extern u8 gUnk_09EDA558[];
 extern u8 gUnk_09EDA840[];
 extern u8 gUnk_09EDA828[];
-extern const UnkStruct_08133E5C gUnk_08133E5C[];
-extern const UnkStruct_0813400C gUnk_0813400C[];
+extern const EnemyBaseStats gUnk_08133E5C[];
+extern const BattleAttackDef gUnk_0813400C[];
 
 extern PlayerProgression gUnk_02039CA8;
-extern UnkStruct_020348C8* gUnk_020348C8;
+extern FieldTransitionWork* gUnk_020348C8;
 extern u16 gUnk_020348CC[2];
 extern u16 gUnk_020348D0[2];
 extern u16 gUnk_020348D4[2];
@@ -385,7 +385,7 @@ u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r);
 void AdvanceLevelExpThreshold(PlayerProgression* p);
 void func_0801CA88(void);
 
-const UnkStruct_08133E5C* func_0800FB14(u16 i);
+const EnemyBaseStats* func_0800FB14(u16 i);
 s32 func_08011398(BtlObj* a, s32 b);
 
 u8 func_08081870(void);
@@ -451,7 +451,7 @@ extern vu16 gSystemFlags;
 
 u8 func_0801AD68(BtlObj* p);
 void func_08010C70(void);
-void func_08011364(BtlObj* a, BtlObj* b, const UnkStruct_0813400C* c);
+void func_08011364(BtlObj* a, BtlObj* b, const BattleAttackDef* c);
 void InitPlayerProgression(void);
 
 void func_080135EC(s32 x, s32 y, s32 z);
