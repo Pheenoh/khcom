@@ -2,6 +2,7 @@
 #define GUARD_BOS7_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "key.h"
 #include "taskpool.h"
@@ -273,43 +274,6 @@ typedef struct Vec3 {
     s32 z;
 } Vec3;
 
-typedef struct LstPos {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-} LstPos;
-
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    u8 unk_018;
-    u8 unk_019;
-    u16 unk_01A;
-    s32 unk_01C;
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
-    u8 unk_02C[0x14];
-    u8 unk_040[0x28];
-    u64 unk_068;
-    u8 unk_070[0xC];
-    LstPos* unk_07C;
-    u8 unk_080[0x4C];
-    s32 unk_0CC;
-    s32 unk_0D0;
-    s32 unk_0D4;
-    u8 unk_0D8[0x2];
-    s16 unk_0DA;
-    s16 unk_0DC;
-    u8 unk_0DE[0x2];
-    s16 unk_0E0;
-} BtlWork;
-
 typedef struct LstLsrArg {
     s32 unk_00;
     u16* unk_04;
@@ -535,7 +499,6 @@ extern u8 gUnk_09EFBF54[];
 extern u8 gUnk_09EFBF5C[];
 extern u8 gUnk_09EFBF60[];
 
-extern BtlWork* gBtlWork;
 
 extern u8 gUnk_09D6BE74[];
 

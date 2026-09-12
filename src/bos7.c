@@ -155,7 +155,7 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
         break;
     case 2:
         a = (gBtlWork->unk_010 - gBtlWork->unk_008) >> 3;
-        b = (gBtlWork->unk_07C->unk_08 + gBtlWork->unk_07C->unk_0C -
+        b = (gBtlWork->unk_07C->unk_008 + gBtlWork->unk_07C->unk_00C -
               gBtlWork->unk_00C) >> 3;
         if (b > 256) {
             b = 256;
@@ -170,14 +170,14 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
         if (gBtlWork->unk_068 & 0x2000000000000) {
             b = (gBtlWork->unk_014 - gBtlWork->unk_00C) >> 3;
         } else if (gBtlWork->unk_068 & 0x200000) {
-            if (gBtlWork->unk_07C->unk_0C < -0xA000) {
-                b = (gBtlWork->unk_07C->unk_08 + gBtlWork->unk_07C->unk_0C -
+            if (gBtlWork->unk_07C->unk_00C < -0xA000) {
+                b = (gBtlWork->unk_07C->unk_008 + gBtlWork->unk_07C->unk_00C -
                       gBtlWork->unk_00C) >> 3;
             } else {
                 b = 0;
             }
         } else {
-            b = (gBtlWork->unk_07C->unk_08 + gBtlWork->unk_07C->unk_0C -
+            b = (gBtlWork->unk_07C->unk_008 + gBtlWork->unk_07C->unk_00C -
                   gBtlWork->unk_00C) >> 3;
         }
         break;
@@ -358,7 +358,7 @@ void task_bos_lst_edg_0(LstEdgWork* work, LstEdgArg* arg) {
 }
 
 u8 task_bos_lst_edg_1(LstEdgWork* work) {
-    LstPos* p;
+    BtlObj* p;
 
     switch (work->unk_000) {
     case 0:
@@ -369,13 +369,13 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
             work->unk_004 = 0;
             work->unk_006 = 0;
             p = gBtlWork->unk_07C;
-            work->unk_020 = p->unk_04;
-            work->unk_024 = p->unk_08;
+            work->unk_020 = p->unk_004;
+            work->unk_024 = p->unk_008;
             work->unk_028 = -0x1000;
         }
         break;
     case 1:
-        work->unk_020 = gBtlWork->unk_07C->unk_04;
+        work->unk_020 = gBtlWork->unk_07C->unk_004;
         func_0800592C(&work->x, work->unk_020, 30);
         func_0800592C(&work->y, work->unk_024, 30);
         func_0800592C(&work->z, work->unk_028, 30);
@@ -467,7 +467,7 @@ u8 func_081108AC(LstState* work, s32 kind) {
         }
         arg.unk_12 = *work->unk_01C;
         arg.unk_14 = work->unk_020;
-        TaskCreate(gBtlWork->unk_040, gTaskDescBosLstFal, &arg);
+        TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstFal, &arg);
         result = 1;
     }
 
@@ -607,7 +607,7 @@ u8 func_081109B8(LstWork* work, u8 a) {
         s->unk_006 = 0;
         s->unk_008 = 0;
 
-        if (gBtlWork->unk_07C->unk_0C > -0xC000) {
+        if (gBtlWork->unk_07C->unk_00C > -0xC000) {
             s->unk_058 = -0x6000;
         } else {
             s->unk_058 = gBtlWork->unk_0D4 - 0x5000;
@@ -704,7 +704,7 @@ s32 func_08110B10(u8 a, u8 b) {
 
 void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     LstBitSubArg sub;
-    LstPos* p;
+    BtlObj* p;
     void* pool;
 
     work->unk_000 = 0;
@@ -732,9 +732,9 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     work->unk_054 = arg->unk_24;
     work->unk_058 = arg->unk_28;
     p = gBtlWork->unk_07C;
-    work->unk_068 = p->unk_04;
-    work->unk_06C = p->unk_08;
-    work->unk_070 = p->unk_0C;
+    work->unk_068 = p->unk_004;
+    work->unk_06C = p->unk_008;
+    work->unk_070 = p->unk_00C;
     work->unk_016 = arg->unk_04 << 7;
     work->unk_074 = 2;
     work->unk_078 = 2;
@@ -791,7 +791,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
     s16 y1;
     s16 x2;
     s16 y2;
-    LstPos* p;
+    BtlObj* p;
     s32 d;
     u8 dir;
     LstObj* obj;
@@ -828,14 +828,14 @@ u8 task_bos_lst_bit_1(LstState* work) {
             if (gBtlWork->unk_068 & 0x2000000000000) {
                 work->unk_050 = (GetRandom() % 113 << 8) + 0xC000;
 #ifndef VERSION_EU
-                work->unk_054 = gBtlWork->unk_07C->unk_08;
+                work->unk_054 = gBtlWork->unk_07C->unk_008;
 #endif
             } else if (work->unk_00E == 0) {
                 work->unk_050 = (GetRandom() % 113 << 8) + 0xC000;
-                work->unk_054 = gBtlWork->unk_07C->unk_08 + (gUnk_09A4FDDC[work->unk_010] << 8);
+                work->unk_054 = gBtlWork->unk_07C->unk_008 + (gUnk_09A4FDDC[work->unk_010] << 8);
             } else {
-                work->unk_050 = gBtlWork->unk_07C->unk_04;
-                work->unk_054 = gBtlWork->unk_07C->unk_08;
+                work->unk_050 = gBtlWork->unk_07C->unk_004;
+                work->unk_054 = gBtlWork->unk_07C->unk_008;
             }
 
             AnimReset(&work->anim);
@@ -843,7 +843,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
         }
 
         if (!(gBtlWork->unk_068 & 0x2000000000000)) {
-            if (gBtlWork->unk_07C->unk_0C > -0xC000) {
+            if (gBtlWork->unk_07C->unk_00C > -0xC000) {
                 work->unk_058 = -0x6000;
             } else {
                 work->unk_058 = gBtlWork->unk_0D4 - 0x5000;
@@ -862,10 +862,10 @@ u8 task_bos_lst_bit_1(LstState* work) {
         break;
     case 2:
         if (work->unk_006 == 0) {
-            work->unk_050 = gBtlWork->unk_07C->unk_04;
-            work->unk_054 = gBtlWork->unk_07C->unk_08;
+            work->unk_050 = gBtlWork->unk_07C->unk_004;
+            work->unk_054 = gBtlWork->unk_07C->unk_008;
 
-            if (gBtlWork->unk_07C->unk_0C > -0xC000) {
+            if (gBtlWork->unk_07C->unk_00C > -0xC000) {
                 work->unk_058 = 0;
             } else {
                 work->unk_058 = gBtlWork->unk_0D4;
@@ -904,10 +904,10 @@ u8 task_bos_lst_bit_1(LstState* work) {
 
             work->unk_006++;
         } else {
-            work->unk_050 = gBtlWork->unk_07C->unk_04;
-            work->unk_054 = gBtlWork->unk_07C->unk_08;
+            work->unk_050 = gBtlWork->unk_07C->unk_004;
+            work->unk_054 = gBtlWork->unk_07C->unk_008;
 
-            if (gBtlWork->unk_07C->unk_0C > -0xC000) {
+            if (gBtlWork->unk_07C->unk_00C > -0xC000) {
                 work->unk_058 = 0;
             } else {
                 work->unk_058 = gBtlWork->unk_0D4;
@@ -935,19 +935,19 @@ u8 task_bos_lst_bit_1(LstState* work) {
             func_081108AC(work, 1);
         }
 
-        if (abs(work->unk_050 - gBtlWork->unk_07C->unk_04) < 0x180) {
-            work->unk_050 = gBtlWork->unk_07C->unk_04;
-        } else if (work->unk_050 > gBtlWork->unk_07C->unk_04) {
+        if (abs(work->unk_050 - gBtlWork->unk_07C->unk_004) < 0x180) {
+            work->unk_050 = gBtlWork->unk_07C->unk_004;
+        } else if (work->unk_050 > gBtlWork->unk_07C->unk_004) {
             work->unk_050 = work->unk_050 - 0x180;
-        } else if (work->unk_050 < gBtlWork->unk_07C->unk_04) {
+        } else if (work->unk_050 < gBtlWork->unk_07C->unk_004) {
             work->unk_050 = work->unk_050 + 0x180;
         }
 
-        if (abs(work->unk_054 - gBtlWork->unk_07C->unk_08) < 0x180) {
-            work->unk_054 = gBtlWork->unk_07C->unk_08;
-        } else if (work->unk_054 > gBtlWork->unk_07C->unk_08) {
+        if (abs(work->unk_054 - gBtlWork->unk_07C->unk_008) < 0x180) {
+            work->unk_054 = gBtlWork->unk_07C->unk_008;
+        } else if (work->unk_054 > gBtlWork->unk_07C->unk_008) {
             work->unk_054 = work->unk_054 - 0x180;
-        } else if (work->unk_054 < gBtlWork->unk_07C->unk_08) {
+        } else if (work->unk_054 < gBtlWork->unk_07C->unk_008) {
             work->unk_054 = work->unk_054 + 0x180;
         }
 
@@ -998,8 +998,8 @@ u8 task_bos_lst_bit_1(LstState* work) {
                 break;
             default:
                 work->unk_016 += 2;
-                WorldToScreen(&x2, &y2, gBtlWork->unk_07C->unk_04, gBtlWork->unk_07C->unk_08,
-                              gBtlWork->unk_07C->unk_0C);
+                WorldToScreen(&x2, &y2, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008,
+                              gBtlWork->unk_07C->unk_00C);
                 break;
             }
         } else {
@@ -1012,15 +1012,15 @@ u8 task_bos_lst_bit_1(LstState* work) {
                 break;
             default:
                 work->unk_016 += 2;
-                WorldToScreen(&x2, &y2, gBtlWork->unk_07C->unk_04, gBtlWork->unk_07C->unk_08,
-                              gBtlWork->unk_07C->unk_0C);
+                WorldToScreen(&x2, &y2, gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008,
+                              gBtlWork->unk_07C->unk_00C);
                 break;
             }
         }
 
-        work->unk_068 = gBtlWork->unk_07C->unk_04;
-        work->unk_06C = gBtlWork->unk_07C->unk_08;
-        work->unk_070 = gBtlWork->unk_07C->unk_0C;
+        work->unk_068 = gBtlWork->unk_07C->unk_004;
+        work->unk_06C = gBtlWork->unk_07C->unk_008;
+        work->unk_070 = gBtlWork->unk_07C->unk_00C;
     }
 
     work->unk_016 &= 0xFF;
@@ -1198,7 +1198,7 @@ u8 func_08111678(LstLsrWork* work) {
         arg.unk_0C = work->unk_038;
         arg.unk_12 = *work->unk_008;
         arg.unk_14 = work->unk_00C;
-        TaskCreate(gBtlWork->unk_040, gTaskDescBosLstFal, &arg);
+        TaskCreate(&gBtlWork->taskPools[1], gTaskDescBosLstFal, &arg);
         result = 1;
     }
 
@@ -1246,18 +1246,18 @@ u8 task_bos_lst_lsr_1(LstLsrWork* work) {
             if ((work->unk_010 & 3) == 0) {
                 func_08111678(work);
             }
-            if (abs(work->unk_030 - gBtlWork->unk_07C->unk_04) < 384) {
-                work->unk_030 = gBtlWork->unk_07C->unk_04;
-            } else if (work->unk_030 > gBtlWork->unk_07C->unk_04) {
+            if (abs(work->unk_030 - gBtlWork->unk_07C->unk_004) < 384) {
+                work->unk_030 = gBtlWork->unk_07C->unk_004;
+            } else if (work->unk_030 > gBtlWork->unk_07C->unk_004) {
                 work->unk_030 = work->unk_030 - 384;
-            } else if (work->unk_030 < gBtlWork->unk_07C->unk_04) {
+            } else if (work->unk_030 < gBtlWork->unk_07C->unk_004) {
                 work->unk_030 = work->unk_030 + 384;
             }
-            if (abs(work->unk_034 - gBtlWork->unk_07C->unk_08) < 384) {
-                work->unk_034 = gBtlWork->unk_07C->unk_08;
-            } else if (work->unk_034 > gBtlWork->unk_07C->unk_08) {
+            if (abs(work->unk_034 - gBtlWork->unk_07C->unk_008) < 384) {
+                work->unk_034 = gBtlWork->unk_07C->unk_008;
+            } else if (work->unk_034 > gBtlWork->unk_07C->unk_008) {
                 work->unk_034 = work->unk_034 - 384;
-            } else if (work->unk_034 < gBtlWork->unk_07C->unk_08) {
+            } else if (work->unk_034 < gBtlWork->unk_07C->unk_008) {
                 work->unk_034 = work->unk_034 + 384;
             }
             work->unk_010++;
@@ -1586,7 +1586,7 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
     s16 y1;
     s16 x2;
     s16 y2;
-    LstPos* p;
+    BtlObj* p;
     s32 c;
 
     work->unk_020 /= 2;
@@ -1600,8 +1600,8 @@ u8 task_bos_lst_ctr_1(LstCtrWork* work) {
         work->unk_00E--;
         if (work->unk_00E <= 0) {
             p = gBtlWork->unk_07C;
-            work->unk_038 = work->unk_014 - (work->unk_014 - p->unk_04) / 4;
-            work->unk_03C = p->unk_08;
+            work->unk_038 = work->unk_014 - (work->unk_014 - p->unk_004) / 4;
+            work->unk_03C = p->unk_008;
             work->unk_040 = -0x1000;
             work->unk_008 = 1;
             work->unk_00A = 0;

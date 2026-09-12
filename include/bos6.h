@@ -2,6 +2,7 @@
 #define GUARD_BOS6_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "taskpool.h"
 #include "anim.h"
@@ -20,82 +21,6 @@ typedef struct PcPos {
     u16 unk_9C;
 } PcPos;
 
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    u8 unk_018;
-    u8 unk_019;
-    u16 unk_01A;
-    s32 unk_01C;
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
-    u8 unk_02C[0x08];
-    u64 unk_034;
-    u8 unk_03C[0x0C];
-    u32 unk_048;
-    u32 unk_04C;
-    void* unk_050;
-    u32 unk_054;
-    u32 unk_058;
-    u32 unk_05C;
-    u8 unk_060[0x08];
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071;
-    u16 unk_072;
-    u16 unk_074;
-    u16 unk_076;
-    u32 unk_078;
-    PcPos* unk_07C;
-    u8 unk_080[0x20];
-    u32 unk_0A0;
-    u8 unk_0A4;
-    u8 unk_0A5[0x03];
-    u32 unk_0A8;
-    u32 unk_0AC;
-    u16 unk_0B0;
-    u8 unk_0B2;
-    u8 unk_0B3;
-    u8 unk_0B4;
-    u8 unk_0B5[0x17];
-    s32 unk_0CC;
-    u32 unk_0D0;
-    u32 unk_0D4;
-    u16 unk_0D8;
-    s16 unk_0DA;
-    s16 unk_0DC;
-    s16 unk_0DE;
-    s16 unk_0E0;
-    u8 unk_0E2;
-    u8 unk_0E3;
-    u16 unk_0E4;
-    u8 unk_0E6[0x02];
-    u32 unk_0E8;
-    s16 unk_0EC;
-    u8 unk_0EE;
-    u8 unk_0EF;
-    u32 unk_0F0;
-    u32 unk_0F4;
-    u16 unk_0F8;
-    u8 unk_0FA;
-    u8 unk_0FB;
-    u32 unk_0FC;
-    u8 unk_100[0x30];
-    s32 unk_130;
-    s32 unk_134;
-    s32 unk_138;
-    u8 unk_13C[0x8C];
-    s16 unk_1C8;
-    u8 unk_1CA;
-    u8 unk_1CB[0x05];
-} BtlWork;
-
-extern BtlWork* gBtlWork;
 
 void* LoadObjTiles(void* a, s32 b);
 void ReleaseObjTiles(void* a);
