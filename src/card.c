@@ -13923,7 +13923,12 @@ void func_0808D258(u8 mode) {
     RequestDma3Copy(&gUnk_0940F938[(d2[3] + 1) * 32], (void*)(base + 0x180), 32);
 }
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+#define CARD_SLOT_OFFSET(slot, fixed) ((fixed) * 256)
+#else
+#define CARD_SLOT_OFFSET(slot, fixed) ((slot) * 256)
+#endif
+
 void func_0808D438(u8 kind, u8 slot) {
     u8* dst;
 
@@ -13931,32 +13936,28 @@ void func_0808D438(u8 kind, u8 slot) {
 
     switch (kind) {
     case 0:
-        RequestDma3Copy(gUnk_095152B8 + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_095152B8 + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_095152B8 + CARD_SLOT_OFFSET(slot, 0), dst, 20);
+        RequestDma3Copy(gUnk_095152B8 + 0x40 + CARD_SLOT_OFFSET(slot, 0), dst + 0x40, 20);
         break;
     case 1:
-        RequestDma3Copy(gUnk_095152CC + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_095152CC + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_095152CC + CARD_SLOT_OFFSET(slot, 0), dst, 20);
+        RequestDma3Copy(gUnk_095152CC + 0x40 + CARD_SLOT_OFFSET(slot, 0), dst + 0x40, 20);
         break;
     case 2:
-        RequestDma3Copy(gUnk_095152E0 + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_095152E0 + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_095152E0 + CARD_SLOT_OFFSET(slot, 0), dst, 20);
+        RequestDma3Copy(gUnk_095152E0 + 0x40 + CARD_SLOT_OFFSET(slot, 0), dst + 0x40, 20);
         break;
     case 3:
-        RequestDma3Copy(gUnk_09515338 + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_09515338 + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_09515338 + CARD_SLOT_OFFSET(slot, 0), dst, 20);
+        RequestDma3Copy(gUnk_09515338 + 0x40 + CARD_SLOT_OFFSET(slot, 0), dst + 0x40, 20);
         break;
     case 4:
-        RequestDma3Copy(gUnk_0951534C + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_0951534C + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_0951534C + CARD_SLOT_OFFSET(slot, 0), dst, 20);
+        RequestDma3Copy(gUnk_0951534C + 0x40 + CARD_SLOT_OFFSET(slot, 0), dst + 0x40, 20);
         break;
     }
 }
-#else
-INCLUDE_ASM("card/func_0808D438.s");
-#endif
 
-#ifndef VERSION_EU
 void func_0808D4E4(u8 kind, u8 slot) {
     u8* dst;
 
@@ -13964,30 +13965,27 @@ void func_0808D4E4(u8 kind, u8 slot) {
 
     switch (kind) {
     case 5:
-        RequestDma3Copy(gUnk_095152B8 + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_095152B8 + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_095152B8 + CARD_SLOT_OFFSET(slot, 1), dst, 20);
+        RequestDma3Copy(gUnk_095152B8 + 0x40 + CARD_SLOT_OFFSET(slot, 1), dst + 0x40, 20);
         break;
     case 4:
-        RequestDma3Copy(gUnk_095152CC + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_095152CC + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_095152CC + CARD_SLOT_OFFSET(slot, 1), dst, 20);
+        RequestDma3Copy(gUnk_095152CC + 0x40 + CARD_SLOT_OFFSET(slot, 1), dst + 0x40, 20);
         break;
     case 3:
-        RequestDma3Copy(gUnk_095152E0 + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_095152E0 + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_095152E0 + CARD_SLOT_OFFSET(slot, 1), dst, 20);
+        RequestDma3Copy(gUnk_095152E0 + 0x40 + CARD_SLOT_OFFSET(slot, 1), dst + 0x40, 20);
         break;
     case 2:
-        RequestDma3Copy(gUnk_09515338 + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_09515338 + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_09515338 + CARD_SLOT_OFFSET(slot, 1), dst, 20);
+        RequestDma3Copy(gUnk_09515338 + 0x40 + CARD_SLOT_OFFSET(slot, 1), dst + 0x40, 20);
         break;
     case 1:
-        RequestDma3Copy(gUnk_0951534C + slot * 256, dst, 20);
-        RequestDma3Copy(gUnk_0951534C + 0x40 + slot * 256, dst + 0x40, 20);
+        RequestDma3Copy(gUnk_0951534C + CARD_SLOT_OFFSET(slot, 1), dst, 20);
+        RequestDma3Copy(gUnk_0951534C + 0x40 + CARD_SLOT_OFFSET(slot, 1), dst + 0x40, 20);
         break;
     }
 }
-#else
-INCLUDE_ASM("card/func_0808D4E4.s");
-#endif
 
 void func_0808D594(void) {
     u8 d1[3];
