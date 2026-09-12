@@ -1103,7 +1103,7 @@ u32 func_08115E24(SrollBlit* w) {
     return r;
 }
 
-u16 func_08115F34(u16 c, u8* font) {
+u16 SrollTextGetGlyphIndex(u16 c, u8* font) {
     u16 result;
     s32 off;
     s32 hi;
@@ -1128,13 +1128,13 @@ u16 func_08115F34(u16 c, u8* font) {
     return result;
 }
 
-u8 func_08115F8C(u16 c, u8* font, u8* widths, u32 count) {
+u8 SrollTextGetGlyphWidth(u16 c, u8* font, u8* widths, u32 count) {
     u8 w;
 
     w = 0;
 
     if (widths != 0) {
-        u16 idx = func_08115F34(c, font);
+        u16 idx = SrollTextGetGlyphIndex(c, font);
         if (idx < count) {
             w = widths[idx];
         }
@@ -1146,7 +1146,7 @@ u8 func_08115F8C(u16 c, u8* font, u8* widths, u32 count) {
     return w;
 }
 
-s32 func_08115FBC(SrollWork* w, u8* s) {
+s32 SrollTextMeasureWidth(SrollWork* w, u8* s) {
     s32 total;
     u16 c;
     s32 hi;
@@ -1159,19 +1159,19 @@ s32 func_08115FBC(SrollWork* w, u8* s) {
             c = s[1] | hi;
             s += 2;
         } else {
-            c = func_08116CDC(s[0]);
+            c = SrollTextMapSingleByteChar(s[0]);
             s += 1;
         }
-        total += func_08115F8C(c, w->unk_34, w->unk_3C, w->unk_40);
+        total += SrollTextGetGlyphWidth(c, w->unk_34, w->unk_3C, w->unk_40);
     }
     return total;
 }
 
-u32 func_08116008(u16 c, u8* font, u32 base, u16 a, u16 b) {
-    return base + func_08115F34(c, font) * (a << 3) * b;
+u32 SrollTextGetGlyphAddress(u16 c, u8* font, u32 base, u16 a, u16 b) {
+    return base + SrollTextGetGlyphIndex(c, font) * (a << 3) * b;
 }
 
-u32 func_08116034(SrollWork* w, u32* dst, u8* src, s32 width) {
+u32 SrollTextBlitGlyph(SrollWork* w, u32* dst, u8* src, s32 width) {
     SrollBlit b;
     u32 pal[16];
     u32 fill;
@@ -1219,7 +1219,7 @@ u32 func_08116034(SrollWork* w, u32* dst, u8* src, s32 width) {
     return r;
 }
 
-void func_081160EC(SrollWork* w, u32 mode) {
+void SrollTextSelectFont(SrollWork* w, u32 mode) {
     if (mode > 1) {
         mode = 0;
     }
@@ -1230,12 +1230,12 @@ void func_081160EC(SrollWork* w, u32 mode) {
     w->unk_3C = gUnk_09A5B440[mode].unk_0C;
     w->unk_40 = gUnk_09A5B440[mode].unk_10;
     w->unk_44 = gUnk_09A5B440[mode].unk_14;
-    func_08116228(w, w->unk_20, w->unk_22);
+    SrollTextSetCursorTile(w, w->unk_20, w->unk_22);
 }
 
-void func_0811614C(SrollWork* w, SrollInit* a) {
-    func_081160EC(w, a->unk_04);
-    func_08116268(w, a->unk_20, a->unk_22, a->unk_24, a->unk_26);
+void SrollTextInit(SrollWork* w, SrollInit* a) {
+    SrollTextSelectFont(w, a->unk_04);
+    SrollTextSetColors(w, a->unk_20, a->unk_22, a->unk_24, a->unk_26);
     w->unk_0A = 32;
     w->unk_00 = 0;
     w->unk_0C = a->unk_28;
@@ -1254,20 +1254,20 @@ void func_0811614C(SrollWork* w, SrollInit* a) {
     w->unk_4C = a->unk_14;
     w->unk_50 = a->unk_18;
     w->unk_54 = a->unk_1C;
-    func_081161D4(w);
+    SrollTextClearQueue(w);
     func_08116698(w, 1);
 }
 
-void func_081161C8(SrollWork* w) {
-    func_0811627C(w, 1);
+void SrollTextClearWindowImmediate(SrollWork* w) {
+    SrollTextClearWindow(w, 1);
 }
 
-void func_081161D4(SrollWork* w) {
+void SrollTextClearQueue(SrollWork* w) {
     w->writeIdx = 0;
     w->readIdx = 0;
 }
 
-u8 func_081161DC(SrollWork* w) {
+u8 SrollTextQueueIsEmpty(SrollWork* w) {
     u8 r;
 
     r = 0;
@@ -1278,12 +1278,12 @@ u8 func_081161DC(SrollWork* w) {
     return r;
 }
 
-void func_081161EC(SrollWork* w, u16 c) {
+void SrollTextEnqueueChar(SrollWork* w, u16 c) {
     w->charQueue[w->writeIdx] = c;
     w->writeIdx = (w->writeIdx + 1) & 0xFF;
 }
 
-u16 sub_08116204(SrollWork* w) {
+u16 SrollTextDequeueChar(SrollWork* w) {
     u16 c;
 
     if (w->writeIdx == w->readIdx) {
@@ -1294,7 +1294,7 @@ u16 sub_08116204(SrollWork* w) {
     return c;
 }
 
-void func_08116228(SrollWork* w, u16 x, u16 y) {
+void SrollTextSetCursorTile(SrollWork* w, u16 x, u16 y) {
     if (x >= w->unk_1C) {
         x = 0;
     }
@@ -1306,26 +1306,26 @@ void func_08116228(SrollWork* w, u16 x, u16 y) {
     w->unk_22 = y;
 }
 
-void func_08116254(SrollWork* w, u16 x) {
+void SrollTextSetCursorPixelX(SrollWork* w, u16 x) {
     if (x >= w->unk_1C * 8) {
         x = 0;
     }
     w->unk_20 = x;
 }
 
-void func_08116268(SrollWork* w, u16 a, u16 b, u16 c, u16 d) {
+void SrollTextSetColors(SrollWork* w, u16 a, u16 b, u16 c, u16 d) {
     w->unk_02 = a;
     w->unk_04 = b;
     w->unk_06 = c;
     w->unk_08 = d;
 }
 
-void func_0811627C(SrollWork* w, u8 flush) {
+void SrollTextClearWindow(SrollWork* w, u8 flush) {
     u16 fill[1];
     u16* p;
     u16 i;
 
-    p = (u16*)((u8*)sub_08116B10(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
+    p = (u16*)((u8*)SrollTextGetTilemap(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
 
     for (i = 0; i < w->unk_16; i++) {
         fill[0] = w->unk_2C;
@@ -1334,7 +1334,7 @@ void func_0811627C(SrollWork* w, u8 flush) {
     }
 
     if (flush == 1) {
-        func_08116B1C(w);
+        SrollTextFlushTilemap(w);
     }
 }
 
@@ -1347,7 +1347,7 @@ void func_081162E8(SrollWork* w) {
     u16 i;
     u16 t;
 
-    p = (u16*)((u8*)sub_08116B10(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
+    p = (u16*)((u8*)SrollTextGetTilemap(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
     t = w->unk_2E + 1;
     q = &a;
     a = t + 2;
@@ -1378,7 +1378,7 @@ void func_081163CC(SrollWork* w) {
     u16 i;
     u16 t;
 
-    p = (u16*)((u8*)sub_08116B10(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
+    p = (u16*)((u8*)SrollTextGetTilemap(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
     t = w->unk_2E + 1;
     q = &a;
     a = t + 2;
@@ -1418,7 +1418,7 @@ void func_08116500(SrollWork* w) {
     u16 i;
     u16 t;
 
-    p = (u16*)((u8*)sub_08116B10(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
+    p = (u16*)((u8*)SrollTextGetTilemap(w) + w->unk_12 * w->unk_0A * 2 + w->unk_10 * 2);
     t = w->unk_2E + 1;
     q = &a;
     a = t + 2;
@@ -1447,13 +1447,13 @@ void func_08116500(SrollWork* w) {
     p[0] = t + 6;
     p[w->unk_14 - 2] = t + 8;
 }
-void func_08116644(SrollWork* w) {
+void SrollTextClearTextArea(SrollWork* w) {
     u16 fill;
     u16* p;
     u16 i;
     u16 t;
 
-    p = (u16*)((u8*)sub_08116B10(w) + w->unk_1A * w->unk_0A * 2 + w->unk_18 * 2);
+    p = (u16*)((u8*)SrollTextGetTilemap(w) + w->unk_1A * w->unk_0A * 2 + w->unk_18 * 2);
     t = w->unk_2E + 1;
 
     for (i = 0; i < w->unk_1E; i++) {
@@ -1476,19 +1476,19 @@ void func_08116698(SrollWork* w, u8 flush) {
         func_08116500(w);
         break;
     default:
-        func_08116644(w);
+        SrollTextClearTextArea(w);
         break;
     }
-    func_08116228(w, 0, 0);
+    SrollTextSetCursorTile(w, 0, 0);
 
     if (flush == 1) {
-        func_08116B1C(w);
+        SrollTextFlushTilemap(w);
     } else {
         t = w->unk_00 | 1;
         w->unk_00 = t;
     }
 }
-void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
+void SrollTextClearRect(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
     u16 fill;
     u16* p;
     u16 i;
@@ -1511,7 +1511,7 @@ void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
         ch = w->unk_1E - y;
     }
 
-    p = (u16*)((u8*)sub_08116B10(w) + (w->unk_1A + y) * w->unk_0A * 2 + (w->unk_18 + x) * 2);
+    p = (u16*)((u8*)SrollTextGetTilemap(w) + (w->unk_1A + y) * w->unk_0A * 2 + (w->unk_18 + x) * 2);
     v = w->unk_2E + 1;
     i = 0;
 
@@ -1523,7 +1523,7 @@ void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
     }
 
     if (flush == 1) {
-        func_08116B1C(w);
+        SrollTextFlushTilemap(w);
     } else {
         t = w->unk_00 | 1;
         w->unk_00 = t;
@@ -1533,7 +1533,7 @@ void func_081166F8(SrollWork* w, u16 x, u16 y, u16 cw, u16 ch, u8 flush) {
 void func_081167CC(void) {
 }
 
-u16 func_081167D0(u16 c) {
+u16 ParseLowercaseHexDigit(u16 c) {
     u16 v;
 
     v = c;
@@ -1545,22 +1545,22 @@ u16 func_081167D0(u16 c) {
     }
     return v;
 }
-u8* func_081167F8(SrollWork* w, u8* s) {
+u8* SrollTextEnqueueString(SrollWork* w, u8* s) {
     s32 hi;
 
     while (*s != 0) {
         if (*s & 0x80) {
             hi = s[0] << 8;
-            func_081161EC(w, s[1] | hi);
+            SrollTextEnqueueChar(w, s[1] | hi);
             s += 2;
         } else {
-            func_081161EC(w, func_08116CDC(s[0]));
+            SrollTextEnqueueChar(w, SrollTextMapSingleByteChar(s[0]));
             s += 1;
         }
     }
     return s + 1;
 }
-u8 sub_0811683C(SrollWork* w) {
+u8 SrollTextProcessNextChar(SrollWork* w) {
     u16 v[2];
     u16* p;
     u32 off;
@@ -1577,14 +1577,14 @@ u8 sub_0811683C(SrollWork* w) {
     if (w->unk_20 >= w->unk_1C * 8) {
         w->unk_20 = 0;
     }
-    c = sub_08116204(w);
+    c = SrollTextDequeueChar(w);
     if (c & 0xFF00) {
         off = (w->unk_22 * w->unk_1C + (w->unk_20 >> 3)) * 32;
-        g = func_08116008(c, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
-        wd = func_08115F8C(c, w->unk_34, w->unk_3C, w->unk_40);
-        n = func_08116034(w, (u32*)(w->unk_50 + off), (u8*)g, wd);
+        g = SrollTextGetGlyphAddress(c, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
+        wd = SrollTextGetGlyphWidth(c, w->unk_34, w->unk_3C, w->unk_40);
+        n = SrollTextBlitGlyph(w, (u32*)(w->unk_50 + off), (u8*)g, wd);
         t = w->unk_22 * w->unk_1C + (w->unk_20 >> 3) + w->unk_30;
-        p = (u16*)((u8*)sub_08116B10(w) +
+        p = (u16*)((u8*)SrollTextGetTilemap(w) +
                    ((w->unk_1A + w->unk_22) * w->unk_0A + ((w->unk_20 >> 3) + w->unk_18)) * 2);
 
         for (i = 0; i < w->unk_24; i++) {
@@ -1603,24 +1603,24 @@ u8 sub_0811683C(SrollWork* w) {
     } else {
         switch (c) {
         case '@':
-            v[0] = sub_08116204(w);
-            v[1] = sub_08116204(w);
+            v[0] = SrollTextDequeueChar(w);
+            v[1] = SrollTextDequeueChar(w);
 
             switch (v[0]) {
             case 'F':
-                func_081160EC(w, func_081167D0(v[1]));
+                SrollTextSelectFont(w, ParseLowercaseHexDigit(v[1]));
                 break;
             case 'f':
-                w->unk_02 = func_081167D0(v[1]);
+                w->unk_02 = ParseLowercaseHexDigit(v[1]);
                 break;
             case 's':
-                w->unk_04 = func_081167D0(v[1]);
+                w->unk_04 = ParseLowercaseHexDigit(v[1]);
                 break;
             case 'b':
-                w->unk_06 = func_081167D0(v[1]);
+                w->unk_06 = ParseLowercaseHexDigit(v[1]);
                 break;
             case 'e':
-                w->unk_08 = func_081167D0(v[1]);
+                w->unk_08 = ParseLowercaseHexDigit(v[1]);
                 break;
             }
             break;
@@ -1638,30 +1638,30 @@ u8 sub_0811683C(SrollWork* w) {
     }
     return r;
 }
-void func_08116A98(SrollWork* w, u8 flush) {
+void SrollTextDrawNextGlyph(SrollWork* w, u8 flush) {
     u8 r;
 
     r = 0;
-    while (!func_081161DC(w) && r == 0) {
-        r = sub_0811683C(w);
+    while (!SrollTextQueueIsEmpty(w) && r == 0) {
+        r = SrollTextProcessNextChar(w);
     }
 
     if (flush == 1 && (w->unk_00 & 1)) {
-        func_08116B1C(w);
+        SrollTextFlushTilemap(w);
     }
 }
 
-void func_08116AD8(SrollWork* w, u8 flush) {
-    while (!func_081161DC(w)) {
-        sub_0811683C(w);
+void SrollTextDrawQueued(SrollWork* w, u8 flush) {
+    while (!SrollTextQueueIsEmpty(w)) {
+        SrollTextProcessNextChar(w);
     }
 
     if (flush == 1 && (w->unk_00 & 1)) {
-        func_08116B1C(w);
+        SrollTextFlushTilemap(w);
     }
 }
 
-u32 sub_08116B10(SrollWork* w) {
+u32 SrollTextGetTilemap(SrollWork* w) {
     u32 v;
 
     v = w->unk_4C;
@@ -1671,7 +1671,7 @@ u32 sub_08116B10(SrollWork* w) {
     return v;
 }
 
-void func_08116B1C(SrollWork* w) {
+void SrollTextFlushTilemap(SrollWork* w) {
     u32 off;
 
     if (w->unk_4C != 0) {
@@ -1681,56 +1681,56 @@ void func_08116B1C(SrollWork* w) {
     w->unk_00 &= 0xFFFE;
 }
 
-void func_08116B54(SrollWork* w, u8* s, u8 flush) {
-    func_08116AD8(w, 0);
-    func_081167F8(w, s);
-    func_08116AD8(w, 0);
+void SrollTextDrawString(SrollWork* w, u8* s, u8 flush) {
+    SrollTextDrawQueued(w, 0);
+    SrollTextEnqueueString(w, s);
+    SrollTextDrawQueued(w, 0);
 
     if (flush == 1 && (w->unk_00 & 1)) {
-        func_08116B1C(w);
+        SrollTextFlushTilemap(w);
     }
 }
 
-void func_08116B90(SrollWork* w, u16 x, u16 y, u8* s, u8 flush) {
-    func_08116AD8(w, 0);
-    func_08116228(w, x, y);
-    func_081167F8(w, s);
-    func_08116AD8(w, 0);
+void SrollTextDrawStringAtTile(SrollWork* w, u16 x, u16 y, u8* s, u8 flush) {
+    SrollTextDrawQueued(w, 0);
+    SrollTextSetCursorTile(w, x, y);
+    SrollTextEnqueueString(w, s);
+    SrollTextDrawQueued(w, 0);
 
     if (flush == 1 && (w->unk_00 & 1)) {
-        func_08116B1C(w);
+        SrollTextFlushTilemap(w);
     }
 }
 
-void func_08116BEC(SrollWork* w, u16 x, u16 y, u8* s, u8 flush) {
+void SrollTextDrawStringAtPixelX(SrollWork* w, u16 x, u16 y, u8* s, u8 flush) {
     u32 off;
     u32 g;
     s32 n;
 
-    func_08116AD8(w, 0);
-    func_08116228(w, x >> 3, y);
+    SrollTextDrawQueued(w, 0);
+    SrollTextSetCursorTile(w, x >> 3, y);
     n = x & 7;
     if (n != 0) {
         off = (w->unk_22 * w->unk_1C + (x >> 3)) * 32;
-        g = func_08116008(0x8140, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
-        func_08116034(w, (u32*)(w->unk_50 + off), (u8*)g, n);
+        g = SrollTextGetGlyphAddress(0x8140, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
+        SrollTextBlitGlyph(w, (u32*)(w->unk_50 + off), (u8*)g, n);
     }
-    func_08116254(w, x);
-    func_081167F8(w, s);
-    func_08116AD8(w, 0);
+    SrollTextSetCursorPixelX(w, x);
+    SrollTextEnqueueString(w, s);
+    SrollTextDrawQueued(w, 0);
 
     if ((w->unk_20 & 7) != 0) {
         off = (w->unk_22 * w->unk_1C + (w->unk_20 >> 3)) * 32;
-        g = func_08116008(0x8140, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
-        func_08116034(w, (u32*)(w->unk_50 + off), (u8*)g, 8 - (w->unk_20 & 7));
+        g = SrollTextGetGlyphAddress(0x8140, w->unk_34, w->unk_38, w->unk_26, w->unk_24);
+        SrollTextBlitGlyph(w, (u32*)(w->unk_50 + off), (u8*)g, 8 - (w->unk_20 & 7));
     }
 
     if (flush == 1 && (w->unk_00 & 1)) {
-        func_08116B1C(w);
+        SrollTextFlushTilemap(w);
     }
 }
 
-u16 func_08116CDC(u8 c) {
+u16 SrollTextMapSingleByteChar(u8 c) {
     return gUnk_09A5B470[c];
 }
 
