@@ -60,7 +60,7 @@ def blob_source(code, lo, hi, data):
                  f'\t.incbin "roms/{code}.gba", {at - ROM_BASE:#x}, {VENEER_SIZE:#x}\n')
     return head + body
 
-SIZE_SLACK = 64
+TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
 
 TARGET_ANCHORS = {
     "eu": {
@@ -74,6 +74,8 @@ TARGET_ANCHORS = {
         0x0951A2B8: 0x09538B24,
         0x0951AAB8: 0x09539324,
         0x02034890: 0x02034898,
+        0x08C6A51C: 0x08C9C100,
+        0x08C6A526: 0x08C9C10A,
         0x08F7CF18: 0x08F8DE14,
         0x0976DB68: 0x0973BA18,
         0x0976DB9C: 0x0973BA4C,
@@ -126,11 +128,124 @@ TARGET_ANCHORS = {
         0x08C6A958: 0x08C9C354,
         0x09EE2678: 0x09F5D4C0,
         0x09EE2668: 0x09F5D4B0,
+        0x09EEA1EC: 0x09F76024,
+        0x099930E8: 0x09999398,
+        0x09A3641C: 0x09A88EE0,
+        0x09A3691C: 0x09A893E0,
+        0x0999FA20: 0x099AB1C4,
+        0x099A012C: 0x099AB8D0,
+        0x09EF9898: 0x09F85484,
+        0x09EF9870: 0x09F8545C,
+        0x09EF98B0: 0x09F8549C,
+        0x09EF98A0: 0x09F8548C,
+        0x091CF5D4: 0x0929EC5C,
+        0x096B2124: 0x096776CC,
+        0x096F8464: 0x096BF98C,
+        0x096F8C64: 0x096C018C,
+        0x09EE42C8: 0x09F6F57C,
+        0x020354A0: 0x02035930,
+        0x020352B8: 0x02035568,
+        0x090A7D9A: 0x09198606,
+        0x090A6B26: 0x09197392,
+        0x09EEB108: 0x09F77298,
+        0x09EEB0C4: 0x09F77254,
+        0x09EEB14C: 0x09F772DC,
+        0x09EEB11C: 0x09F772AC,
+        0x090A7F0A: 0x09198776,
+        0x090A8FC4: 0x09199830,
+        0x09EEB180: 0x09F77310,
+        0x09EEB150: 0x09F772E0,
+        0x09ED9B78: 0x09F49A7C,
+        0x0815A09A: 0x088912C8,
+        0x0815A198: 0x088912F0,
+        0x0815A0EE: 0x08891318,
+        0x0815A152: 0x08891340,
+        0x0815A0A0: 0x088912A0,
+        0x09613E98: 0x09546D84,
+        0x09EE7F60: 0x09F733BC,
+        0x09EE7F90: 0x09F733EC,
+        0x09035898: 0x090CEB78,
+        0x090358D0: 0x090CEBB8,
+        0x0951C2B8: 0x0953BB24,
+        0x09035874: 0x090CEB3A,
+        0x09EE7F48: 0x09F733A4,
+        0x09EE7F30: 0x09F7338C,
+        0x09EE790C: 0x09F72D6C,
+        0x09037FB4: 0x090D1354,
+        0x090950F4: 0x0916C228,
+        0x09091D36: 0x09168E6A,
+        0x095112B8: 0x09531224,
+        0x09EE78D4: 0x09F72D58,
+        0x09EE78F0: 0x09F72D58,
+        0x09EE7914: 0x09F72D74,
+        0x09613EB8: 0x09546DA4,
+        0x09613ED8: 0x09546DC4,
+        0x09613F18: 0x09546E04,
+        0x09613F38: 0x09546E24,
+        0x09EEA1BC: 0x09F72D30,
+        0x0950F2B8: 0x09532624,
+        0x099930BC: 0x0999936C,
+        0x0999CFC6: 0x099A42AA,
+        0x0999D41A: 0x099A46FE,
+        0x0999D8A8: 0x099A4B8C,
+        0x099FB53C: 0x09A24480,
+        0x09A32EDC: 0x09A859A0,
+        0x09A333DC: 0x09A85EA0,
+        0x09A3399C: 0x09A86460,
+        0x09A33E9C: 0x09A86960,
+        0x09EF97B0: 0x09F8524C,
+        0x09EF97C4: 0x09F85260,
+        0x09EF97CC: 0x09F85268,
+        0x09EF97DC: 0x09F85278,
+        0x08155C54: 0x0887B6AC,
+        0x0815600C: 0x0887BA20,
+        0x0815631C: 0x0887BCF8,
+        0x081564A4: 0x0887BE64,
+        0x0815662C: 0x0887BFD0,
+        0x081570E4: 0x0887C9C4,
+        0x08157694: 0x0887CF0C,
+        0x08157B9C: 0x0887D3B8,
+        0x08158114: 0x0887D8CC,
+        0x081589D4: 0x0887E0EC,
+        0x08155B04: 0x0887B574,
+        0x081576CC: 0x0887CF40,
+        0x0815917C: 0x0887E808,
+        0x0815948C: 0x0887EAE0,
+        0x081595DC: 0x0887EC18,
+        0x08F64384: 0x08F5A8DC,
+        0x08F60384: 0x08F610DC,
+        0x08F5EB84: 0x08F5E0DC,
+        0x08F63384: 0x08F5F8DC,
+        0x08F5FB84: 0x08F5F0DC,
+        0x08F63B84: 0x08F600DC,
+        0x08F64B84: 0x08F5B0DC,
+        0x08EE78E4: 0x08EF7E3C,
+        0x08C6A530: 0x08C9C114,
+        0x08C6A53A: 0x08C9C11E,
     },
     "jp": {
         0x09C8D47A: 0x09C678B4,
         0x09C8F1FA: 0x09C68CC6,
         0x09EFBAD4: 0x09ED304C,
+        0x0999D9C0: 0x0995248C,
+        0x0999D9CA: 0x09952496,
+        0x0999D9E6: 0x099524AC,
+        0x0999DA1A: 0x099524E0,
+        0x0999D41A: 0x09951EE6,
+        0x0999D8A8: 0x09952374,
+        0x0815A09A: 0x0814EF38,
+        0x0815A198: 0x0814EF40,
+        0x0815A0EE: 0x0814EF48,
+        0x0815A152: 0x0814EF50,
+        0x0815A0A0: 0x0814EF2C,
+        0x09417438: 0x093CB694,
+        0x09418438: 0x093CD694,
+        0x09419438: 0x093CF694,
+        0x09035808: 0x09008CA4,
+        0x09035874: 0x09008D10,
+        0x09035898: 0x09008D34,
+        0x090358D0: 0x09008D6C,
+        0x08EE78E4: 0x08EDADEC,
     },
 }
 
@@ -398,6 +513,289 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_099AC968": 0x099AC968,
         "gUnkEu_099AC97E": 0x099AC97E,
         "gUnkEu_099AC9B2": 0x099AC9B2,
+        "gUnkEu_08896524": 0x08896524,
+        "gUnkEu_09538324": 0x09538324,
+        "gUnkEu_09538B24": 0x09538B24,
+        "gUnkEu_09539324": 0x09539324,
+        "gUnkEu_09F5D6EC": 0x09F5D6EC,
+        "gUnkEu_098863B2": 0x098863B2,
+        "gUnkEu_0988683C": 0x0988683C,
+        "gUnkEu_09886C7E": 0x09886C7E,
+        "gUnkEu_09886FC8": 0x09886FC8,
+        "gUnkEu_09F8447C": 0x09F8447C,
+        "gUnkEu_09F8444C": 0x09F8444C,
+        "gUnkEu_09F8445C": 0x09F8445C,
+        "gUnkEu_09F8446C": 0x09F8446C,
+        "gUnkEu_09F84720": 0x09F84720,
+        "gUnkEu_09F84718": 0x09F84718,
+        "gUnkEu_09F84728": 0x09F84728,
+        "gUnkEu_09F84738": 0x09F84738,
+        "gUnkEu_09F84730": 0x09F84730,
+        "gUnkEu_09F84560": 0x09F84560,
+        "gUnkEu_09F84574": 0x09F84574,
+        "gUnkEu_09F84588": 0x09F84588,
+        "gUnkEu_09F8459C": 0x09F8459C,
+        "gUnkEu_09F845B0": 0x09F845B0,
+        "gUnkEu_09F844FC": 0x09F844FC,
+        "gUnkEu_09F84510": 0x09F84510,
+        "gUnkEu_09F84524": 0x09F84524,
+        "gUnkEu_09F84538": 0x09F84538,
+        "gUnkEu_09F8454C": 0x09F8454C,
+        "gUnkEu_09F845C4": 0x09F845C4,
+        "gUnkEu_09F84678": 0x09F84678,
+        "gUnkEu_09F845E8": 0x09F845E8,
+        "gUnkEu_09F84698": 0x09F84698,
+        "gUnkEu_09F8460C": 0x09F8460C,
+        "gUnkEu_09F846B8": 0x09F846B8,
+        "gUnkEu_09F84630": 0x09F84630,
+        "gUnkEu_09F846D8": 0x09F846D8,
+        "gUnkEu_09F84654": 0x09F84654,
+        "gUnkEu_09F846F8": 0x09F846F8,
+        "gUnkEu_08895A00": 0x08895A00,
+        "gUnkEu_08895C30": 0x08895C30,
+        "gUnkEu_09F847FC": 0x09F847FC,
+        "gUnkEu_099A421C": 0x099A421C,
+        "gUnkEu_099A4238": 0x099A4238,
+        "gUnkEu_099A426C": 0x099A426C,
+        "gUnkEu_099A4C4C": 0x099A4C4C,
+        "gUnkEu_099A4C68": 0x099A4C68,
+        "gUnkEu_099A4C9C": 0x099A4C9C,
+        "gUnkEu_099A511C": 0x099A511C,
+        "gUnkEu_099A5138": 0x099A5138,
+        "gUnkEu_099A516C": 0x099A516C,
+        "gUnkEu_099A55AC": 0x099A55AC,
+        "gUnkEu_099A55C8": 0x099A55C8,
+        "gUnkEu_099A55FC": 0x099A55FC,
+        "gUnkEu_099A5A3C": 0x099A5A3C,
+        "gUnkEu_099A5A58": 0x099A5A58,
+        "gUnkEu_099A5A8C": 0x099A5A8C,
+        "gUnkEu_08C9CD3C": 0x08C9CD3C,
+        "gUnkEu_08F79520": 0x08F79520,
+        "gUnkEu_08F74484": 0x08F74484,
+        "gUnkEu_08F7E498": 0x08F7E498,
+        "gUnkEu_08F7042C": 0x08F7042C,
+        "gUnkEu_08F7D724": 0x08F7D724,
+        "gUnkEu_08F6EF3C": 0x08F6EF3C,
+        "gUnkEu_08F7D318": 0x08F7D318,
+        "gUnkEu_08CA0D3C": 0x08CA0D3C,
+        "gUnkEu_08F79960": 0x08F79960,
+        "gUnkEu_08F728C0": 0x08F728C0,
+        "gUnkEu_08F7DED0": 0x08F7DED0,
+        "gUnkEu_08F756FC": 0x08F756FC,
+        "gUnkEu_08F7E83C": 0x08F7E83C,
+        "gUnkEu_08F71C40": 0x08F71C40,
+        "gUnkEu_08F7DB78": 0x08F7DB78,
+        "gUnkEu_08CA4D3C": 0x08CA4D3C,
+        "gUnkEu_08F79DEC": 0x08F79DEC,
+        "gUnkEu_08CA8D3C": 0x08CA8D3C,
+        "gUnkEu_08F7A224": 0x08F7A224,
+        "gUnkEu_08CB4D3C": 0x08CB4D3C,
+        "gUnkEu_08F7B498": 0x08F7B498,
+        "gUnkEu_08CACD3C": 0x08CACD3C,
+        "gUnkEu_08F7A7A8": 0x08F7A7A8,
+        "gUnkEu_08CB8D3C": 0x08CB8D3C,
+        "gUnkEu_08F7B958": 0x08F7B958,
+        "gUnkEu_08CBCD3C": 0x08CBCD3C,
+        "gUnkEu_08F7BE78": 0x08F7BE78,
+        "gUnkEu_08CC0BFC": 0x08CC0BFC,
+        "gUnkEu_08F7C274": 0x08F7C274,
+        "gUnkEu_08CC4BFC": 0x08CC4BFC,
+        "gUnkEu_08F7C6CC": 0x08F7C6CC,
+        "gUnkEu_08CCCBFC": 0x08CCCBFC,
+        "gUnkEu_08F7CFB4": 0x08F7CFB4,
+        "gUnkEu_08CC8BFC": 0x08CC8BFC,
+        "gUnkEu_08F7CB08": 0x08F7CB08,
+        "gUnkEu_09F800A4": 0x09F800A4,
+        "gUnkEu_09F800B8": 0x09F800B8,
+        "gUnkEu_0919B63A": 0x0919B63A,
+        "gUnkEu_09F5D7E4": 0x09F5D7E4,
+        "gUnkEu_095A3D74": 0x095A3D74,
+        "gUnkEu_09CEF9E8": 0x09CEF9E8,
+        "gUnkEu_09F879D4": 0x09F879D4,
+        "gUnkEu_09F8785C": 0x09F8785C,
+        "gUnkEu_09CF1B7E": 0x09CF1B7E,
+        "gUnkEu_09F87AF0": 0x09F87AF0,
+        "gUnkEu_09F879E8": 0x09F879E8,
+        "gUnkEu_09CF3FEE": 0x09CF3FEE,
+        "gUnkEu_09F87C7C": 0x09F87C7C,
+        "gUnkEu_09F87B04": 0x09F87B04,
+        "gUnkEu_09CF6334": 0x09CF6334,
+        "gUnkEu_09F87D98": 0x09F87D98,
+        "gUnkEu_09F87C90": 0x09F87C90,
+        "gUnkEu_09CF86A2": 0x09CF86A2,
+        "gUnkEu_09F87F24": 0x09F87F24,
+        "gUnkEu_09F87DAC": 0x09F87DAC,
+        "gUnkEu_09CFA56C": 0x09CFA56C,
+        "gUnkEu_09F88040": 0x09F88040,
+        "gUnkEu_09F87F38": 0x09F87F38,
+        "gUnkEu_09CFCB38": 0x09CFCB38,
+        "gUnkEu_09F881CC": 0x09F881CC,
+        "gUnkEu_09F88054": 0x09F88054,
+        "gUnkEu_09CFEFA8": 0x09CFEFA8,
+        "gUnkEu_09F882E8": 0x09F882E8,
+        "gUnkEu_09F881E0": 0x09F881E0,
+        "gUnkEu_096BF18C": 0x096BF18C,
+        "gUnkEu_096C698C": 0x096C698C,
+        "gUnkEu_096C598C": 0x096C598C,
+        "gUnkEu_096C618C": 0x096C618C,
+        "gUnkEu_096C718C": 0x096C718C,
+        "gUnkEu_096C118C": 0x096C118C,
+        "gUnkEu_096BE98C": 0x096BE98C,
+        "gUnkEu_096C298C": 0x096C298C,
+        "gUnkEu_096C498C": 0x096C498C,
+        "gUnkEu_096C198C": 0x096C198C,
+        "gUnkEu_096C398C": 0x096C398C,
+        "gUnkEu_096C218C": 0x096C218C,
+        "gUnkEu_096C418C": 0x096C418C,
+        "gUnkEu_096C318C": 0x096C318C,
+        "gUnkEu_096C518C": 0x096C518C,
+        "gUnkEu_095ECDD8": 0x095ECDD8,
+        "gUnkEu_095ED472": 0x095ED472,
+        "gUnkEu_09F7EB28": 0x09F7EB28,
+        "gUnkEu_09F7EB30": 0x09F7EB30,
+        "gUnkEu_095F5550": 0x095F5550,
+        "gUnkEu_095F5BB0": 0x095F5BB0,
+        "gUnkEu_09F7EBD8": 0x09F7EBD8,
+        "gUnkEu_09F7EBE0": 0x09F7EBE0,
+        "gUnkEu_095F6150": 0x095F6150,
+        "gUnkEu_095F67B0": 0x095F67B0,
+        "gUnkEu_09F7EBE8": 0x09F7EBE8,
+        "gUnkEu_09F7EBF0": 0x09F7EBF0,
+        "gUnkEu_095F6D50": 0x095F6D50,
+        "gUnkEu_095F73AA": 0x095F73AA,
+        "gUnkEu_09F7EBF8": 0x09F7EBF8,
+        "gUnkEu_09F7EC00": 0x09F7EC00,
+        "gUnkEu_095F79D2": 0x095F79D2,
+        "gUnkEu_095F7FAE": 0x095F7FAE,
+        "gUnkEu_09F7EC08": 0x09F7EC08,
+        "gUnkEu_09F7EC10": 0x09F7EC10,
+        "gUnkEu_0203B108": 0x0203B108,
+        "gUnkEu_08891670": 0x08891670,
+        "gUnkEu_08891714": 0x08891714,
+        "gUnkEu_09F72CC4": 0x09F72CC4,
+        "gUnkEu_09F72CB0": 0x09F72CB0,
+        "gUnkEu_08895EDC": 0x08895EDC,
+        "gUnkEu_090D1DC0": 0x090D1DC0,
+        "gUnkEu_0916292A": 0x0916292A,
+        "gUnkEu_091633A4": 0x091633A4,
+        "gUnkEu_09162FB8": 0x09162FB8,
+        "gUnkEu_09162C8C": 0x09162C8C,
+        "gUnkEu_09F6FF70": 0x09F6FF70,
+        "gUnkEu_09F6FF30": 0x09F6FF30,
+        "gUnkEu_090CED64": 0x090CED64,
+        "gUnkEu_09F6FF44": 0x09F6FF44,
+        "gUnkEu_090CEC30": 0x090CEC30,
+        "gUnkEu_090CEC70": 0x090CEC70,
+        "gUnkEu_09F6FE30": 0x09F6FE30,
+        "gUnkEu_09F6FE58": 0x09F6FE58,
+        "gUnkEu_09F6FE44": 0x09F6FE44,
+        "gUnkEu_094F03A4": 0x094F03A4,
+        "gUnkEu_094F1BA4": 0x094F1BA4,
+        "gUnkEu_094F13A4": 0x094F13A4,
+        "gUnkEu_094F0BA4": 0x094F0BA4,
+        "gUnkEu_0953C324": 0x0953C324,
+        "gUnkEu_090CECE8": 0x090CECE8,
+        "gUnkEu_09F72D1C": 0x09F72D1C,
+        "gUnkEu_090D1328": 0x090D1328,
+        "gUnkEu_09F7626C": 0x09F7626C,
+        "gUnkEu_09F762A4": 0x09F762A4,
+        "gUnkEu_09172200": 0x09172200,
+        "gUnkEu_091759BA": 0x091759BA,
+        "gUnkEu_09F72D58": 0x09F72D58,
+        "gUnkEu_09F72D44": 0x09F72D44,
+        "gUnkEu_094D53C4": 0x094D53C4,
+        "gUnkEu_094D6BC4": 0x094D6BC4,
+        "gUnkEu_094D63C4": 0x094D63C4,
+        "gUnkEu_094D5BC4": 0x094D5BC4,
+        "gUnkEu_09F72D08": 0x09F72D08,
+        "gUnkEu_09F6FDC8": 0x09F6FDC8,
+        "gUnkEu_09F6FDF0": 0x09F6FDF0,
+        "gUnkEu_0967CB6C": 0x0967CB6C,
+        "gUnkEu_095F18BE": 0x095F18BE,
+        "gUnkEu_095F3D12": 0x095F3D12,
+        "gUnkEu_095F24DA": 0x095F24DA,
+        "gUnkEu_095F30F6": 0x095F30F6,
+        "gUnkEu_095F492E": 0x095F492E,
+        "gUnkEu_09F7EBB0": 0x09F7EBB0,
+        "gUnkEu_09F7EBC8": 0x09F7EBC8,
+        "gUnkEu_09F7EBB8": 0x09F7EBB8,
+        "gUnkEu_09F7EBC0": 0x09F7EBC0,
+        "gUnkEu_09F7EBD0": 0x09F7EBD0,
+        "gUnkEu_08891580": 0x08891580,
+        "gUnkEu_095EC758": 0x095EC758,
+        "gUnkEu_095EC898": 0x095EC898,
+        "gUnkEu_095ECB38": 0x095ECB38,
+        "gUnkEu_09F7EB08": 0x09F7EB08,
+        "gUnkEu_09F7EB18": 0x09F7EB18,
+        "gUnkEu_09F7EB20": 0x09F7EB20,
+        "gUnk_09A53380": 0x09A53380,
+        "gUnk_09A54080": 0x09A54080,
+        "gUnk_09A54D80": 0x09A54D80,
+        "gUnk_09A55A80": 0x09A55A80,
+        "gUnk_09A59B80": 0x09A59B80,
+        "gUnk_09A5A880": 0x09A5A880,
+        "gUnk_09A5B580": 0x09A5B580,
+        "gUnk_09A5C280": 0x09A5C280,
+        "gUnkEu_09F85008": 0x09F85008,
+        "gUnkEu_09F8501C": 0x09F8501C,
+        "gUnkEu_09F85030": 0x09F85030,
+        "gUnkEu_09F85044": 0x09F85044,
+        "gUnkEu_09F84FA8": 0x09F84FA8,
+        "gUnkEu_09A97520": 0x09A97520,
+        "gUnkEu_099AEE98": 0x099AEE98,
+        "gUnkEu_09F855A4": 0x09F855A4,
+        "gUnkEu_09F85554": 0x09F85554,
+        "gUnkEu_092D1F74": 0x092D1F74,
+        "gUnkEu_08890F40": 0x08890F40,
+        "gUnkEu_08895960": 0x08895960,
+        "gUnkEu_09A2D440": 0x09A2D440,
+        "gUnkEu_09A2E440": 0x09A2E440,
+        "gUnkEu_09A2F440": 0x09A2F440,
+        "gUnkEu_09A30440": 0x09A30440,
+        "gUnkEu_09A2CC40": 0x09A2CC40,
+        "gUnkEu_09A2DC40": 0x09A2DC40,
+        "gUnkEu_09A2EC40": 0x09A2EC40,
+        "gUnkEu_09A2FC40": 0x09A2FC40,
+        "gUnkEu_099A4CDA": 0x099A4CDA,
+        "gUnkEu_099A51AA": 0x099A51AA,
+        "gUnkEu_099A563A": 0x099A563A,
+        "gUnkEu_099A5ACA": 0x099A5ACA,
+        "gUnkEu_09A4FBC0": 0x09A4FBC0,
+        "gUnkEu_09A50BC0": 0x09A50BC0,
+        "gUnkEu_09A51BC0": 0x09A51BC0,
+        "gUnkEu_09A52BC0": 0x09A52BC0,
+        "gUnkEu_09A4F3C0": 0x09A4F3C0,
+        "gUnkEu_09A503C0": 0x09A503C0,
+        "gUnkEu_09A513C0": 0x09A513C0,
+        "gUnkEu_09A523C0": 0x09A523C0,
+        "gUnkEu_09A4CCC0": 0x09A4CCC0,
+        "gUnkEu_09A4BFC0": 0x09A4BFC0,
+        "gUnkEu_09A4E6C0": 0x09A4E6C0,
+        "gUnkEu_09A4D9C0": 0x09A4D9C0,
+        "gUnkEu_09A56780": 0x09A56780,
+        "gUnkEu_09A53380": 0x09A53380,
+        "gUnkEu_09A5CF80": 0x09A5CF80,
+        "gUnkEu_09A59B80": 0x09A59B80,
+        "gUnkEu_09A57480": 0x09A57480,
+        "gUnkEu_09A54080": 0x09A54080,
+        "gUnkEu_09A5DC80": 0x09A5DC80,
+        "gUnkEu_09A5A880": 0x09A5A880,
+        "gUnkEu_09A58180": 0x09A58180,
+        "gUnkEu_09A54D80": 0x09A54D80,
+        "gUnkEu_09A5E980": 0x09A5E980,
+        "gUnkEu_09A5B580": 0x09A5B580,
+        "gUnkEu_09A58E80": 0x09A58E80,
+        "gUnkEu_09A55A80": 0x09A55A80,
+        "gUnkEu_09A5F680": 0x09A5F680,
+        "gUnkEu_09A5C280": 0x09A5C280,
+        "gUnkEu_099AAC2C": 0x099AAC2C,
+        "gUnkEu_099ABA18": 0x099ABA18,
+        "gUnkEu_099ABFA0": 0x099ABFA0,
+        "gUnkEu_099AC468": 0x099AC468,
+        "gUnkEu_099AC9F0": 0x099AC9F0,
+        "gUnkEu_09A9A880": 0x09A9A880,
+        "gUnkEu_09A9A8A0": 0x09A9A8A0,
+        "gUnkEu_099FBE00": 0x099FBE00,
     },
     "jp": {
         "gUnk_0814F180": 0x0814F180,
@@ -506,29 +904,8 @@ TARGET_FUNC_SIZE = {
 
 TARGET_FUNC_ADDR = {
     "eu": {
-        "func_08065170": 0x08065F24,
         "func_08005458": 0x08005600,
         "func_08005474": 0x08005620,
-        "func_0801CB44": 0x08020A14,
-        "task_btl_escape_0": 0x08034CA8,
-        "event_seq_3": 0x0806CD78,
-        "func_08060F1C": 0x08063430,
-        "func_081017A0": 0x080FFB9C,
-        "func_08101970": 0x080FFD88,
-        "mode_worldinspect_1": 0x080FE19C,
-        "mode_chksnd_1": 0x0800C214,
-        "ModeUpdate": 0x08001178,
-        "task_bos_lst_0": 0x0810AEB8,
-        "func_0808686C": 0x08085db4,
-        "func_0808A650": 0x08089c88,
-        "func_0808A7E4": 0x08089e1c,
-        "func_0808B068": 0x0808a6ac,
-        "func_0808C2F0": 0x0808b914,
-        "func_0808B208": 0x0808a84c,
-        "func_0808B30C": 0x0808a950,
-        "func_0808B398": 0x0808a9dc,
-        "func_0808B3DC": 0x0808aa20,
-        "func_0808B238": 0x0808a87c,
     },
 }
 
@@ -537,6 +914,8 @@ TARGET_DATA_SIZE = {
         ("unk_0800c778_data.c", ".rodata"): 0x2928,
         ("unk_0800c778_data.c", ".data"): 0,
         ("mode_battle.c", ".rodata"): 0x914,
+        ("formation_data.c", ".rodata"): 0x2928,
+        ("formation_data.c", ".data"): 0,
         ("mode_debug.c", ".rodata"): 0x1F4,
         ("mode_chkobj.c", ".rodata"): 0x6350,
         ("mode_chksnd.c", ".rodata"): 0x20E8,
@@ -605,20 +984,24 @@ def near_identical(a, b):
 VERSION_IF_RE = re.compile(r"#\s*(ifdef|ifndef|if|else|elif|endif)\b(.*)")
 
 
-def eval_version_expr(expr, tag):
-    e = re.sub(r"defined\s*\(\s*(\w+)\s*\)", lambda m: "True" if m.group(1) == tag else "False", expr)
-    e = re.sub(r"defined\s+(\w+)", lambda m: "True" if m.group(1) == tag else "False", e)
-    e = e.replace("&&", " and ").replace("||", " or ")
-    e = re.sub(r"!(?!=)", " not ", e)
-    e = re.sub(r"\b(VERSION_\w+)\b", lambda m: "True" if m.group(1) == tag else "False", e)
+def version_cond(rest, ver):
+    tag = f"VERSION_{ver.upper()}"
+    expr = re.sub(r"defined\s*\(\s*(\w+)\s*\)", r"\1", rest)
+    expr = re.sub(r"defined\s+(\w+)", r"\1", expr)
+    expr = expr.replace("||", " or ").replace("&&", " and ")
+    expr = re.sub(r"!(?!=)", " not ", expr)
+    expr = re.sub(r"\b[A-Za-z_]\w*\b",
+                  lambda m: "True" if m.group(0) == tag else
+                  m.group(0) if m.group(0) in ("and", "or", "not", "True", "False") else "False",
+                  expr)
     try:
-        return bool(eval(e, {"__builtins__": {}}, {}))
+        return bool(eval(expr, {"__builtins__": {}}, {}))
     except Exception:
-        return tag in expr
+        return tag in rest
 
 
-def active_includes(path, ver):
-    """INCLUDE_ASM lines this version actually compiles.
+def active_lines(path, ver):
+    """Source lines this version actually compiles.
 
     A function that only diverges in one version is guarded against that
     version alone, so the same line is C for one build and asm for another.
@@ -626,7 +1009,6 @@ def active_includes(path, ver):
     """
     tag = f"VERSION_{ver.upper()}"
     stack = []
-    out = []
     for line in Path(path).read_text().splitlines():
         m = VERSION_IF_RE.match(line.strip())
         if m:
@@ -640,7 +1022,7 @@ def active_includes(path, ver):
                 elif kind == "ifdef":
                     frame = (True, tag in rest)
                 else:
-                    frame = (True, eval_version_expr(rest, tag))
+                    frame = (True, version_cond(rest, ver))
                 if kind == "elif" and stack:
                     stack[-1] = frame
                 else:
@@ -654,10 +1036,40 @@ def active_includes(path, ver):
                     stack.pop()
             continue
         if all(state for _versioned, state in stack):
-            m = INCLUDE_ASM_RE.search(line)
-            if m:
-                out.append((m.group(1), m.group(2)))
+            yield line
+
+
+def active_includes(path, ver):
+    out = []
+    for line in active_lines(path, ver):
+        m = INCLUDE_ASM_RE.search(line)
+        if m:
+            out.append((m.group(1), m.group(2)))
     return out
+
+
+def active_definitions(path, ver):
+    pat = re.compile(r"^[A-Za-z_][A-Za-z0-9_* ]*\b((?:func_)?" + ver + r"_([0-9A-Fa-f]{8}))\(.*\)\s*\{")
+    out = []
+    for line in active_lines(path, ver):
+        m = pat.match(line)
+        if m:
+            out.append((m.group(1), int(m.group(2), 16)))
+    return out
+
+
+def load_rows(ver):
+    rows = load_funcmap(f"config/{ver}/funcmap.txt")
+    for r in rows:
+        at = TARGET_FUNC_ADDR.get(ver, {}).get(r[0])
+        if at is not None:
+            r[3] = at
+            if r[4] == "absent":
+                r[4] = "entry"
+    for f in sorted(Path("src").glob("*.c")):
+        for name, at in active_definitions(f, ver):
+            rows.append([name, 0, 0, at, "named"])
+    return rows
 
 
 def load_funcmap(path):
@@ -709,22 +1121,24 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None, fixed=None):
     for k, r in enumerate(present):
         nxt = present[k + 1][3] if k + 1 < len(present) else code_end
         if r[0] in flexible:
-            if (k and r[3] > pos and clean(present[k - 1])
-                    and (r[4] in ("named", "xref", "global", "body")
-                         or (r[4] != "-" and unit_of.get(r[0])
-                             != unit_of.get(present[k - 1][0])))):
+            if r[4] in TRUSTED or (k and r[3] > pos and clean(present[k - 1])
+                                   and r[4] != "-" and unit_of.get(r[0])
+                                   != unit_of.get(present[k - 1][0])):
                 pos = r[3]
             start[id(r)] = pos
             size[id(r)] = max(0, nxt - pos)
+            pos = nxt
+        elif r[2] == 0:
+            start[id(r)] = r[3]
+            size[id(r)] = max(0, nxt - r[3])
             pos = nxt
         else:
             nk = present[k + 1][4] if k + 1 < len(present) else None
             tsz = fixed.get(r[0], r[2])
 
             if (r[0] not in fixed
-                    and nxt > r[3] and nk in ("named", "xref", "global", "body")
-                    and r[4] in ("named", "xref", "global", "body")
-                    and abs(nxt - r[3] - r[2]) <= SIZE_SLACK
+                    and nxt > r[3] and nk in TRUSTED
+                    and r[4] in TRUSTED
                     and not clean(r)):
                 tsz = nxt - r[3]
             start[id(r)] = r[3]
@@ -739,7 +1153,7 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None, fixed=None):
 def symbol_map(rows, us, ot):
     pairs = {}
     for nm, ua, sz, va, how, vsz in rows:
-        if va is None or vsz != sz:
+        if va is None or vsz != sz or sz == 0:
             continue
         a = us[ua - ROM_BASE:ua - ROM_BASE + sz]
         b = ot[va - ROM_BASE:va - ROM_BASE + sz]
@@ -804,13 +1218,7 @@ def main():
 
     us = Path("roms/B8CE.gba").read_bytes()
     ot = Path(f"roms/{code}.gba").read_bytes()
-    rows = load_funcmap(f"config/{ver}/funcmap.txt")
-    for r in rows:
-        at = TARGET_FUNC_ADDR.get(ver, {}).get(r[0])
-        if at is not None:
-            r[3] = at
-            if r[4] == "absent":
-                r[4] = "entry"
+    rows = load_rows(ver)
 
     owner = {}
     cur = None
@@ -829,6 +1237,8 @@ def main():
     for f in sorted(Path("src").glob("*.c")):
         for tu, name in active_includes(f, ver):
             flexible.add(name)
+        for name, at in active_definitions(f, ver):
+            owner[name] = f"build/us/src/{f.stem}.o"
 
     def identical(r):
         a = us[r[1] - ROM_BASE:r[1] - ROM_BASE + r[2]]
@@ -850,13 +1260,7 @@ def main():
 
     code_end, how_end = tr(CODE_HI)
     if code_end != guess_end:
-        rows = load_funcmap(f"config/{ver}/funcmap.txt")
-        for r in rows:
-            at = TARGET_FUNC_ADDR.get(ver, {}).get(r[0])
-            if at is not None:
-                r[3] = at
-                if r[4] == "absent":
-                    r[4] = "entry"
+        rows = load_rows(ver)
         rows = complete(rows, code_end, flexible, owner, clean, fixed)
         res = symbol_map(rows, us, ot)
         res.update(anchors)
@@ -964,7 +1368,7 @@ def main():
     slack = 0
     for at, (size, kind, a, b, clean) in sorted(gaps.items()):
         unit = owner.get(a[0], "?").rsplit("/", 1)[-1][:-2]
-        if kind == "boundary":
+        if kind == "boundary" and clean:
             nm = f"{ver}_{at:08X}.s"
             cuts = [at] + [x for x in extra_labels if at < x < at + size] + [at + size]
             body = "".join(
