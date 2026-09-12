@@ -305,11 +305,11 @@ void ModeUpdate(void) {
 
         m4aMPlayAllStop();
 #ifdef VERSION_EU
-        func_08116CEC();
+        ScanlineDmaReset();
         eu_0800115C();
 #else
         SoftReset(0xFF);
-        func_08116CEC();
+        ScanlineDmaReset();
 #endif
     } else {
         if (gModeFlags & 4) {

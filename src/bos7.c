@@ -207,7 +207,7 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
     }
 
     work->unk_018++;
-    func_08116E8C();
+    ScanlineDmaDisable();
 
     switch (work->unk_004) {
     case 0:
@@ -241,18 +241,18 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
             work->unk_1084[work->unk_018 & 1][i] = work->unk_020 & 0x1FF;
         }
 
-        func_08116E60(work->unk_1084[work->unk_018 & 1]);
-        func_08116E80();
+        ScanlineDmaQueueBuffer(work->unk_1084[work->unk_018 & 1]);
+        ScanlineDmaEnable();
         break;
     case 1:
         work->unk_022 -= work->unk_00C * 4;
-        func_08116E60(&work->unk_744[work->unk_018 & 0x3FF]);
-        func_08116E80();
+        ScanlineDmaQueueBuffer(&work->unk_744[work->unk_018 & 0x3FF]);
+        ScanlineDmaEnable();
         break;
     case 3:
         work->unk_020 -= work->unk_01C * work->unk_00C;
-        func_08116E60(&work->unk_0C4[(u8)work->unk_018]);
-        func_08116E80();
+        ScanlineDmaQueueBuffer(&work->unk_0C4[(u8)work->unk_018]);
+        ScanlineDmaEnable();
         break;
     case 2:
         work->unk_020 -= work->unk_00C * 3;
@@ -266,8 +266,8 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
             work->unk_1084[work->unk_018 & 1][i] = (work->unk_022 + a) & 0x1FF;
         }
 
-        func_08116E60(work->unk_1084[work->unk_018 & 1]);
-        func_08116E80();
+        ScanlineDmaQueueBuffer(work->unk_1084[work->unk_018 & 1]);
+        ScanlineDmaEnable();
         break;
     }
 
@@ -282,11 +282,11 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
         switch (work->unk_010) {
         case 0:
             LoadBgMap(0, gUnk_09D4B274, 0x800);
-            func_08116E00(0x04000010, work->unk_1084[work->unk_018 & 1], 0xA2600001);
+            ScanlineDmaInit(0x04000010, work->unk_1084[work->unk_018 & 1], 0xA2600001);
             break;
         case 1:
             LoadBgMap(0, gUnk_09D4BA74, 0x800);
-            func_08116E00(0x04000010, work->unk_744, 0xA2600001);
+            ScanlineDmaInit(0x04000010, work->unk_744, 0xA2600001);
             break;
         case 2:
             work->unk_020 = -(work->unk_014 * 120);
@@ -297,12 +297,12 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
                 LoadBgMap(0, gUnk_09D4CA74, 0x800);
             }
 
-            func_08116E00(0x04000012, work->unk_1084[work->unk_018 & 1], 0xA2600001);
+            ScanlineDmaInit(0x04000012, work->unk_1084[work->unk_018 & 1], 0xA2600001);
             break;
         case 3:
             work->unk_01C = 0;
             LoadBgMap(0, gUnk_09D4C274, 0x800);
-            func_08116E00(0x04000012, work->unk_0C4, 0xA2600001);
+            ScanlineDmaInit(0x04000012, work->unk_0C4, 0xA2600001);
             break;
         default:
             LoadBgMap(0, gUnk_09D4D274, 0x800);
@@ -323,7 +323,7 @@ void task_bos_lst_fld_2(void) {
 }
 
 void task_bos_lst_fld_3(LstFldWork* work) {
-    func_08116CEC();
+    ScanlineDmaReset();
 }
 
 s32 func_08110658(s32 x) {
@@ -2594,7 +2594,7 @@ u8 func_0811394C(StaffRollWork* w) {
     case 4:
         w->unk_0A8++;
         if (w->unk_0A8 > 119) {
-            func_08116F08();
+            BlockAudioStop();
             result = 0;
         }
         break;
@@ -3076,7 +3076,7 @@ void mode_StaffRoll_1(void) {
         w->unk_008 = 1;
         w->unk_00C = 0;
         w->unk_010 = 0;
-        func_08116E98();
+        BlockAudioStart();
     case 1:
     {
         vu32* dma;
@@ -3444,7 +3444,7 @@ void mode_StaffRoll_1(void) {
 
     TaskPoolUpdate(w->unk_0FC);
     TaskPoolDraw(w->unk_0FC);
-    func_08116ECC();
+    BlockAudioUpdate();
     w->unk_010++;
 }
 

@@ -1734,7 +1734,7 @@ u16 func_08116CDC(u8 c) {
     return gUnk_09A5B470[c];
 }
 
-void func_08116CEC(void) {
+void ScanlineDmaReset(void) {
     vu16* dma;
 
     dma = (vu16*)REG_ADDR_DMA0;
@@ -1751,7 +1751,7 @@ void func_08116CEC(void) {
     gUnk_02036028.cnt = 0;
 }
 
-void func_08116D28(void) {
+void ScanlineDmaUpdate(void) {
     vu16* dma;
     vu32* dma32;
     u8* src;
@@ -1792,28 +1792,28 @@ void func_08116D28(void) {
     }
 }
 
-void func_08116DD0(void) {
+void ScanlineDmaPrime32Bit(void) {
     *gUnk_02036028.dst = *(u32*)gUnk_02036028.src[gUnk_02036028.unk_0C];
 }
 
-void func_08116DE8(void) {
+void ScanlineDmaPrime16Bit(void) {
     *gUnk_02036028.dst = *(u16*)gUnk_02036028.src[gUnk_02036028.unk_0C];
 }
 
-void func_08116E00(vu16* dst, u8* src, u32 cnt) {
-    func_08116CEC();
+void ScanlineDmaInit(vu16* dst, u8* src, u32 cnt) {
+    ScanlineDmaReset();
     gUnk_02036028.src[0] = src;
     gUnk_02036028.src[1] = src;
     gUnk_02036028.unk_18 = src;
 
     if (cnt & CPU_SET_32BIT) {
-        gUnk_02036028.unk_04 = func_08116DD0;
+        gUnk_02036028.unk_04 = ScanlineDmaPrime32Bit;
 
         if (!(cnt & CPU_SET_SRC_FIXED)) {
             gUnk_02036028.unk_18 = src + 4;
         }
     } else {
-        gUnk_02036028.unk_04 = func_08116DE8;
+        gUnk_02036028.unk_04 = ScanlineDmaPrime16Bit;
 
         if (!(cnt & CPU_SET_SRC_FIXED)) {
             gUnk_02036028.unk_18 = src + 2;
@@ -1823,58 +1823,58 @@ void func_08116E00(vu16* dst, u8* src, u32 cnt) {
     gUnk_02036028.cnt = cnt;
 }
 
-void func_08116E60(u8* src) {
+void ScanlineDmaQueueBuffer(u8* src) {
     gUnk_02036028.src[gUnk_02036028.unk_0C ^ 1] = src;
     gUnk_02036028.unk_01 = 1;
 }
 
-void func_08116E80(void) {
+void ScanlineDmaEnable(void) {
     gUnk_02036028.unk_00 = 1;
 }
 
-void func_08116E8C(void) {
+void ScanlineDmaDisable(void) {
     gUnk_02036028.unk_00 = 0;
 }
 
-void func_08116E98(void) {
+void BlockAudioStart(void) {
     gUnk_02036048 = 1;
-    func_08116F64(func_08116F28());
-    func_081170C0(func_08116F20());
+    AudioBlockStreamInit(GetBlockAudioData());
+    PcmPlaybackInit(GetBlockAudioSampleRate());
     SetVBlankCallback(func_08000714);
-    func_08117154();
+    PcmPlaybackStart();
 }
 
-void func_08116ECC(void) {
+void BlockAudioUpdate(void) {
     if (gUnk_02036048 == 1) {
-        gUnk_02036048 = func_08116FE4();
+        gUnk_02036048 = AudioBlockStreamUpdate();
         if (gUnk_02036048 == 0) {
-            func_08116F08();
+            BlockAudioStop();
         }
     }
 }
 
-void func_08116EF0(void) {
+void BlockAudioVBlank(void) {
     if (gUnk_02036048 == 1) {
-        func_08117194();
+        PcmPlaybackUpdate();
     }
 }
 
-void func_08116F08(void) {
+void BlockAudioStop(void) {
     ResetVBlankCallback();
-    func_08117170();
+    PcmPlaybackStop();
     m4aSoundInit();
     m4aSoundVSyncOn();
 }
 
-u16 func_08116F20(void) {
+u16 GetBlockAudioSampleRate(void) {
     return 21024;
 }
 
-u32* func_08116F28(void) {
+u32* GetBlockAudioData(void) {
     return gUnk_09A5B674;
 }
 
-u8* func_08116F30(u32** p) {
+u8* ReadNextAudioBlock(u32** p) {
     u32* base;
     u32* q;
     u32 v;
@@ -1891,7 +1891,7 @@ u8* func_08116F30(u32** p) {
     return (u8*)q;
 }
 
-s32 func_08116F64(u32* src) {
+s32 AudioBlockStreamInit(u32* src) {
     s32* p;
     u8* q;
 
@@ -1902,9 +1902,9 @@ s32 func_08116F64(u32* src) {
 
     for (gUnk_02038094 = 0; gUnk_02038094 <= 0x7FF; gUnk_02038094 += 0x200) {
         if (gUnk_02038090 != 0) {
-            q = func_08116F30(&gUnk_02038090);
+            q = ReadNextAudioBlock(&gUnk_02038090);
             if (q != 0) {
-                func_08117F5C(q, gUnk_02036050, gUnk_02038094);
+                DecodeAudioBlock(q, gUnk_02036050, gUnk_02038094);
             }
         }
     }
@@ -1913,14 +1913,14 @@ s32 func_08116F64(u32* src) {
     return gUnk_02038090 != 0;
 }
 
-s32 func_08116FE4(void) {
+s32 AudioBlockStreamUpdate(void) {
     u8* q;
 
     if (gUnk_02038098 > gUnk_02038094 + 0x200 || gUnk_02038098 < gUnk_02038094) {
         if (gUnk_02038090 != 0) {
-            q = func_08116F30(&gUnk_02038090);
+            q = ReadNextAudioBlock(&gUnk_02038090);
             if (q != 0) {
-                func_08117F5C(q, gUnk_02036050, gUnk_02038094);
+                DecodeAudioBlock(q, gUnk_02036050, gUnk_02038094);
             }
             gUnk_02038094 = (gUnk_02038094 + 0x200) & 0x7FF;
         }
@@ -1928,19 +1928,19 @@ s32 func_08116FE4(void) {
     return gUnk_02038090 != 0;
 }
 
-s32* func_08117044(void) {
+s32* GetDecodedAudioBuffer(void) {
     return gUnk_02036050;
 }
 
-s32 func_0811704C(void) {
+s32 GetDecodedAudioReadPosition(void) {
     return gUnk_02038098;
 }
 
-void func_08117058(s32 pos) {
+void SetDecodedAudioReadPosition(s32 pos) {
     gUnk_02038098 = pos;
 }
 
-u8 func_08117064(u32 id, u16* rate, u32* count) {
+u8 LookupPcmPlaybackConfig(u32 id, u16* rate, u32* count) {
     s32 i = 0;
 
     do {
@@ -1954,11 +1954,11 @@ u8 func_08117064(u32 id, u16* rate, u32* count) {
     return 0;
 }
 
-u8 func_081170C0(u32 id) {
+u8 PcmPlaybackInit(u32 id) {
     u16 rate;
     s32 i;
 
-    if (!func_08117064(id, &rate, (u32*)&gUnk_020380A4)) {
+    if (!LookupPcmPlaybackConfig(id, &rate, (u32*)&gUnk_020380A4)) {
         return 0;
     }
     REG_SOUNDCNT_H = 0x0B06;
@@ -1975,25 +1975,25 @@ u8 func_081170C0(u32 id) {
     return 1;
 }
 
-void func_08117154(void) {
+void PcmPlaybackStart(void) {
     REG_TM0CNT_H = TIMER_ENABLE;
     REG_DMA1CNT |= DMA_ENABLE << 16;
 }
 
-void func_08117170(void) {
+void PcmPlaybackStop(void) {
     REG_DMA1CNT = 0;
     REG_TM0CNT_H = 0;
     REG_SOUNDCNT_H |= 0x800;
 }
 
-void func_08117194(void) {
+void PcmPlaybackUpdate(void) {
     s32* src;
     s8* dst;
     s32 pos;
     s32 i;
 
-    src = func_08117044();
-    pos = func_0811704C();
+    src = GetDecodedAudioBuffer();
+    pos = GetDecodedAudioReadPosition();
     REG_DMA1CNT ^= DMA_ENABLE << 16;
     REG_DMA1SAD = (s32)(gUnk_020380A0 == 1 ? gUnk_02038368 : gUnk_020380A8);
     REG_DMA1CNT ^= DMA_ENABLE << 16;
@@ -2005,7 +2005,7 @@ void func_08117194(void) {
             dst[i] = src[pos] >> 8;
             pos++;
         }
-        func_08117058(pos);
+        SetDecodedAudioReadPosition(pos);
     } else {
         for (i = 0; i < 0x800 - pos; i++) {
             dst[i] = src[pos + i] >> 8;
@@ -2014,6 +2014,6 @@ void func_08117194(void) {
         for (; i < gUnk_020380A4; i++) {
             dst[i] = src[pos + i - 0x800] >> 8;
         }
-        func_08117058(pos + gUnk_020380A4 - 0x800);
+        SetDecodedAudioReadPosition(pos + gUnk_020380A4 - 0x800);
     }
 }
