@@ -1,6 +1,8 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -341,7 +343,6 @@ u8 func_0807B3E0(void);
 u8 func_0807B3C8(void);
 u8 func_0807643C(void);
 void func_08019350(void);
-void func_0801B37C(BtlObj* p, EmyKind* d, s32 x, s32 y, s32 z);
 void func_080197AC(void);
 void func_0801B024(BtlObj* p);
 u8 CanAllocObjTiles(u16 a);
@@ -350,11 +351,8 @@ u8 func_0801BDDC(s32 id, s32 x, s32 y, s32 z);
 u16 func_08093B38(void);
 void func_0809B6D0(void* p, s16 x, s16 y, s16 z, u16 n);
 void func_08096DB0(void* p, UnkStruct_0801B8A8* v);
-void func_0801B994(BtlObj* p);
-void func_0801C700(BtlObj* a, s32* b, s32* c, s32* d);
 void func_08005974(void* a, u8 b, u16 c, s32 d, void* e);
 void func_08006778(void* a, s32 x, s32 y);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 void func_08012674(void);
 void func_08006B80(u16* a, u16* b);
 u32 func_08006BA0(u8* p);
@@ -438,7 +436,6 @@ void func_0801475C(s32 a, s32 b, s32 c);
 void func_080147A8(s32 a, s32 b, s32 c);
 void func_080147B8(u8 a);
 u16 func_0801AF1C(s32 a);
-void func_0801BCD4(BtlObj* p);
 void func_0801C274(s32 a, s32 b, s32 c);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void func_0801CA88(void);
@@ -464,7 +461,6 @@ u8 func_08081870(void);
 s32 func_0807E2BC(void);
 u8 func_0807E33C(void);
 u8 func_08081848(void);
-ObjPaletteNode* LoadObjPalette(void* src, u16 size);
 void func_08096DC4(void* pool, void* arg);
 void func_0801C104(void);
 u8 IsTaskActive(Task* task);
@@ -621,7 +617,6 @@ void func_0801718C(void);
 s32 abs(s32 x);
 u8 func_0801B818(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n, s16* cnt);
 void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n);
-void func_0801B918(BtlObj* p);
 void func_080184C4(s32 x, s32 y, s32 z, u8 f);
 void func_08015DC8(s32 x, s32 y, s32 z);
 void func_08016684(s32 x, s32 y, s32 z);
@@ -642,9 +637,6 @@ void func_08014B30(s32 x, s32 y);
 void func_08018B04(s32 x, s32 y, s32 z, s32 s);
 s32 func_08012188(BtlObj* p, s16 h, s32 c);
 void func_08012798(u16 a, u16 bg);
-u8 func_0801CA00(BtlObj* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 s32 func_080ABA80(s32* out);
 void func_0807E1F4(void);
 void func_0807E200(void);
@@ -691,16 +683,9 @@ u8 func_0800FC5C(s32 a);
 void func_08012614(Collider* p, u8 b);
 u8 func_08012648(Collider* p);
 u8 func_0801C1C0(u8 a);
-void func_0801B7D8(BtlObj* obj);
-void func_0801AF08(BtlObj* p);
 s32 func_0801A978(BtlObj* p);
-s32 func_0801ADAC(BtlObj* p);
-void func_08019190(BtlObj* p, s16 b);
-void func_0801AF4C(BtlObj* actor);
 void func_0801B008(void);
 void func_0801BCC0(s32 a, s32 b, s32 c);
-void func_0801BDD4(BtlObj* p, BtlObj* v);
-void* AllocObjTiles(s32 a, void* b);
 u8 func_08085BAC(void);
 u8 func_080856DC(void);
 u8 GetActiveDeckIndex(void);

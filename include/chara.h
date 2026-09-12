@@ -1,6 +1,8 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "display.h"
+#include "battle_actor.h"
 #include "types.h"
 #include "engine_math.h"
 #include "game_state.h"
@@ -212,7 +214,6 @@ void func_080C6990(u16 a, u8 b);
 void func_080C6E7C(u8* src, u8* dst, u16 size, s16 count);
 void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
 s32 func_0805F588(s32 a, s32 b);
 s32 func_0805F5A4(s32* a, s32* b);
 void m4aSongNumStart(u16 id);
@@ -231,7 +232,6 @@ void func_080149BC(s32 x, s32 y);
 void func_08014B30(s32 x, s32 y);
 void func_0801475C(s32 x, s32 y, s32 z);
 void func_08096DC4(TaskPool* pool, CharaPrizeArgs* args);
-void func_0801B918(void* obj);
 void func_08006184(s32 a, s32 b);
 void func_080063A8(void);
 void func_08006B4C(void);

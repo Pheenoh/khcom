@@ -1,7 +1,11 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
+#include "malloc.h"
 #include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
@@ -210,8 +214,6 @@ void func_080147B8(u8 a);
 void func_0802F1E8(void);
 void func_08012304(void* particles);
 u16 func_0801AF1C(s32 y);
-void WorldToScreen(s16* x, s16* y, s32 a, s32 b, s32 c);
-s32 AllocObjAffine(s32 angle, s32 x, s32 y, s32 mode);
 
 #endif
 
@@ -231,21 +233,9 @@ typedef struct LockonWork {
     u8 unk_4D[3];
 } LockonWork;
 
-void* EwramAlloc(s32 size);
-void EwramFree(void* p);
-void* LoadObjTiles(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void* AllocObjTiles(s32 a, s32 b);
 void func_08002A10(void* a, void* b);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(u8* p);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 u32 Sqrt(u32 a);
-void* GetBgCharBase(s32 bg);
 s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
-void* GetBgScreenBase(s32 bg);
-void EnableBg(s32 bg);
-void LoadPalette(void* src, void* dst, s32 size);
 void UpdatePlayTime(void);
 void func_080B0754(void);
 void func_080E052C(u8 a);
@@ -253,11 +243,6 @@ void func_0801CB0C(void);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
 void func_080E04EC(void);
-void SetBgMode0(void);
-void SetBgMode1(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
-void DisableBg(s32 bg);
 void func_08006120(s32 a, s32 b);
 void func_080A42B4(void);
 void func_08061824(void);

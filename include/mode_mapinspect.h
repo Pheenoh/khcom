@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MAPINSPECT_H
 #define GUARD_MODE_MAPINSPECT_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "text_types.h"
@@ -52,19 +54,19 @@ extern u8 gUnk_09EF97EC[];
 extern u8 gUnk_09EF981C[];
 extern u8 gUnk_09EF9830[];
 extern u8 gUnk_09EF9858[];
-extern void* gUnk_02035E4C;
-extern void* gUnk_02035E50;
-extern void* gUnk_02035E70;
-extern void* gUnk_02035E74;
-extern void* gUnk_02035E78;
+extern struct ObjPaletteNode* gUnk_02035E4C;
+extern struct ObjTiles* gUnk_02035E50;
+extern struct ObjPaletteNode* gUnk_02035E70;
+extern struct ObjPaletteNode* gUnk_02035E74;
+extern struct ObjTiles* gUnk_02035E78;
 extern void* gUnk_02035EA0[4][3];
 extern void* gUnk_02035ED0[4][3];
-extern void* gUnk_02035F3C;
-extern void* gUnk_02035F40;
-extern void* gUnk_02035F48;
-extern void* gUnk_02035F4C;
-extern void* gUnk_02035F54;
-extern void* gUnk_02035F70;
+extern struct ObjPaletteNode* gUnk_02035F3C;
+extern struct ObjTiles* gUnk_02035F40;
+extern struct ObjPaletteNode* gUnk_02035F48;
+extern struct ObjTiles* gUnk_02035F4C;
+extern struct ObjTiles* gUnk_02035F54;
+extern struct ObjTiles* gUnk_02035F70;
 extern u8* gUnk_02035F94;
 extern u8* gUnk_02035F9C;
 extern u8* gUnk_02035FA4;
@@ -78,11 +80,8 @@ extern u16 gUnk_02035FC2[];
 extern u8* gUnk_02035E28;
 extern u8 gUnk_09A3489C[];
 
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
 void func_08065AE0(TextSlot* p, s32 n);
 void UpdatePlayTime(void);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);
 void func_080E052C(u8 a);
@@ -94,25 +93,16 @@ void func_081085E8(void);
 void func_08108650(void);
 void SpriteReset(void);
 void func_08006120(s32 a, s32 b);
-void SetBgMode0(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_08107B84(void);
 UnkStruct_0810718C* func_0810718C(void);
 void func_081078F0(s16 a);
 void func_081075FC(void);
 void func_0810764C(void);
 void func_081076D4(void);
-void* LoadObjTiles(void* a, s32 b);
-void* LoadObjPalette(void* a, s32 b);
 void func_08065ACC(TextSlot* p, s32 n);
 s32 func_08065B54(u16* s);
 u16 func_08065B6C(u16* a, TextSlot* b);
 void func_08107280(void);
 void func_081073F0(void);
-void EnableBg(s32 a);
-void DisableBg(s32 bg);
 
 #endif /* GUARD_MODE_MAPINSPECT_H */

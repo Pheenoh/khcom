@@ -1,6 +1,9 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
@@ -23,23 +26,13 @@ typedef struct PcPos {
 } PcPos;
 
 
-void* LoadObjTiles(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(u8* p);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08005244(s32 a, u16 b, u16 c);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 u16 func_0801AF1C(s32 a);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
-void DisableBg(s32 bg);
 void func_08012304(void* a);
-void func_0801B7D8(void* a);
 
 typedef struct PcAnimStep {
     u16 unk_00;
@@ -361,14 +354,12 @@ typedef struct BosLstWork {
     u8 unk_B48[0x55C];
 } BosLstWork;
 
-void LoadPalette(void* src, void* dst, s32 size);
 
 extern u8 gUnk_09D69374[];
 extern u8 gUnk_05000080[];
 
 void func_0810A018(PcWork* work);
 void func_0810A498(PcWork* work);
-void func_0801BCD4(void* a);
 
 
 s32 func_0810B49C(void);
@@ -461,9 +452,7 @@ extern u8 gUnk_09D693D4[];
 extern u8 gUnk_09D69434[];
 extern u8 gUnk_05000220[];
 
-void func_0801B7D8(void* a);
 void func_0810A4C4(PcWork* work);
-void func_0801AF08(void* a);
 u8 func_081109B8(LstTask* t, u8 a);
 void func_0810C494(BosLstWork* work, u16 a, u16 b, u8 c);
 
@@ -484,7 +473,6 @@ u8 func_0810D304(BosLstWork* work, s32 idx);
 extern s32 gUnk_09A4D154[];
 
 void _0801C1F8(s32 a, s32 b, s32 c, s32 d);
-void func_0801BCD4(void* a);
 
 u8 func_0810AED4(PcWork* work, s32 arg);
 void func_0810C754(BosLstWork* work);
@@ -523,7 +511,6 @@ extern u8 gUnk_09C489E4[];
 extern u8 gUnk_09EFABA4[];
 extern u8 gUnk_09EFAB68[];
 
-void* AllocObjTiles(s32 a, void* b);
 void func_080062F4(u16 a, s32 b);
 
 typedef struct PcShot {
@@ -547,11 +534,8 @@ void task_bos_pc_0(PcWork* work, s32 arg);
 void func_0810A444(PcWork* work);
 void func_0810A4CC(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e);
 void func_0810A51C(PcWork* work, TaskPool* pool);
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-void func_0801BDD4(void* a, void* b);
 void func_0801BCC0(s32 a, s32 b, s32 c);
 void func_0801C298(u8 a, u8 b);
-void LoadBgMap(s32 bg, void* src, u16 size);
 
 extern u8 gTaskDescBosPcFld[];
 extern u8 gUnk_09A3DF0C[];
@@ -603,10 +587,6 @@ extern void* gUnk_09A4D194[][2];
 extern u8 gUnk_09D69454[];
 
 void task_bos_lst_2(BosLstWork* work);
-u8 func_0801CA00(void* a);
-void SetBgScroll(s32 a, u16 b, u16 c);
-void DisableBg(s32 bg);
-void LoadBgTiles(s32 bg, void* src, u16 size);
 void CpuFastSet(void* src, void* dst, s32 ctrl);
 u8 func_0810EBA0(BosLstWork* work);
 void func_0810FF64(Task* t, s32 a);
@@ -696,9 +676,7 @@ void func_08018184(s32 a, s32 b, s32 c, s32 d);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 u8 func_0810C32C(BosLstWork* work, s32 a);
 
-void func_0801AF4C(void* a);
 void func_0801C2DC(void* a, s32 b);
-void func_0801B918(void* a);
 void func_0801B008(void);
 void func_08096DC4(void* a, void* b);
 u8 func_0810AF44(PcWork* work, s32 arg);
@@ -777,7 +755,6 @@ extern u8 gUnk_09EFAEAC[];
 extern u8 gUnk_09EFAE54[];
 extern u8 gTaskDescBosLstSnp[];
 
-s32 func_0801ADAC(void* a);
 void func_0810F064(BosLstWork* work, LstSub* p);
 
 extern u8 gTaskDescBtlPop[];

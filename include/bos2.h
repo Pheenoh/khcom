@@ -1,6 +1,9 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -723,14 +726,11 @@ void func_08018B04(s32 x, s32 y, s32 z, s32 s);
 void m4aSongNumStart(u16 a);
 void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 a, s32 b);
 void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
-void LoadObjPaletteBank(u16 bank, void* src);
 u8* AllocObjAffineAngle(u8 a, s32 b);
 s32 __divsi3(s32 a, s32 b);
-void LoadPalette(void* src, void* dst, s32 size);
 void func_080BB924(TmArmWork* work);
 void func_080BC304(TmArmWork* work);
 s32 func_0802F268(void);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
 u8 func_0800443C(void* a, u16 b);
 void func_080BE3DC(u8 a, JfMajinWork* work);
 void func_080BE478(u8 a, JfMajinWork* work);
@@ -820,7 +820,6 @@ void func_0801475C(s32 a, s32 b, s32 c);
 void func_080C2F68(DsdMainWork* work);
 void func_080C3504(DsdMainWork* work);
 void func_080C4C54(DsdEnergy1Work* work);
-void func_0801AF08(void* a);
 void func_080C386C(DsdMainWork* work);
 u8 func_080C1370(s32 a, s32 b, s32 c);
 s32 func_080BE278(JfLampWork* work);
@@ -829,7 +828,6 @@ void func_080C0624(JfMajinWork* work);
 void func_080BFEF0(JfMajinWork* work);
 void func_080C0714(JfMajinWork* work);
 void func_080BE9A0(JfMajinWork* work);
-void func_08019190(BtlObj* a, s16 b);
 void func_080BFDD4(JfMajinWork* work);
 void func_080BFDD8(JfMajinWork* work);
 void func_080BEAE8(JfMajinWork* work);
@@ -857,12 +855,10 @@ void func_0802F1E8(void);
 void func_0801801C(s32 a, s32 b, s32 c, s32 d);
 void func_080C2FD8(DsdMainWork* work);
 void func_080C3574(DsdMainWork* work);
-void func_0801AF4C(BtlObj* a);
 void func_0801B008(void);
 u8 func_080C69B4(void);
 void func_080C6894(CharaObjParam* param);
 void func_080C3928(DsdMainWork* work);
-void func_0801BCD4(BtlObj* a);
 void func_080C3C40(DsdMainWork* work);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_080147B8(u8 a);
@@ -891,22 +887,16 @@ void func_0801BDDC(s32 a, s32 b, s32 c, s32 d);
 void func_08006B4C(void);
 u8 task_bos_dsd_circle_1(DsdCircleWork* work);
 void func_0801C298(u8 a, u8 b);
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-void func_0801BDD4(void* a, void* b);
 void func_0801BCC0(s32 a, s32 b, s32 c);
 void func_0801C274(s32 a, s32 b, s32 c);
 void task_bos_dsd_0(DsdWork* work, void* arg);
 void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg);
 void task_bos_jf_lamp_2(JfLampWork* work);
-void SetBgPriority(s32 bg, s32 prio);
-void* AllocObjTiles(s32 a, void* b);
 void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg);
 u8 func_08006314(void);
 void func_08014AAC(s32 a, s32 b);
 void func_0801536C(void);
 void func_08096DC4(void* a, JfMajinFx* b);
-void func_0801B918(BtlObj* a);
-s32 func_0801ADAC(BtlObj* a);
 u8 func_0801C1C0(s32 a);
 u8 task_bos_dsd_1(DsdWork* work);
 

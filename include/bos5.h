@@ -1,7 +1,11 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
+#include "malloc.h"
 #include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -11,24 +15,13 @@
 #include "anim.h"
 
 
-void* LoadObjTiles(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(u8* p);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08005244(s32 a, u16 b, u16 c);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 u16 func_0801AF1C(s32 a);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
-void DisableBg(s32 bg);
 void func_08012304(void* a);
-void func_0801B7D8(void* a);
 
 
 typedef struct GaEntryDesc {
@@ -357,8 +350,6 @@ void func_080FB908(MdWork* work, u16 index);
 extern u8 gUnk_09A02EFC[];
 extern u8 gUnk_09A020FC[];
 
-void* GetBgCharBase(s32 bg);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
 
 typedef struct MdMapData {
     void* unk_00;
@@ -374,8 +365,6 @@ typedef struct MdMapWork {
     u32 unk_00;
 } MdMapWork;
 
-void func_0801AF08(void* a);
-s32 func_0801ADAC(MdSub* e);
 void _0801C1F8(s32 a, s32 b, s32 c, s32 d);
 void func_0801C2DC(void* a, s32 b);
 void func_0801C298(u8 a, u8 b);
@@ -389,7 +378,6 @@ void func_080FCF78(MdFireWork* work);
 u8 func_080F7E0C(s32 a, s32 b, s32 c, s32 d);
 u8 func_08012660(void* a, s32 b);
 extern s16 gSineTable[];
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
 extern MdFireDef gUnk_09992EF8[];
 extern u8 gUnk_09992F28[];
 extern u8 gUnk_09A3C99C[];
@@ -462,7 +450,6 @@ extern u8 gUnk_09A31FDC[];
 void mode_worldselect_0(void);
 void SpriteReset(void);
 void func_08006120(s32 a, u16 b);
-void* EwramAlloc(s32 size);
 void func_080065FC(s32 a, s32 b, s32 c);
 void func_08006778(void* a, s32 x, s32 y);
 void func_08006B34(u16 a);
@@ -484,11 +471,11 @@ extern s32 gUnk_020354D0;
 extern s32 gUnk_020354C8[];
 extern s32 gUnk_020354D8;
 extern s32 gUnk_020354DC;
-extern void* gUnk_02035120;
-extern void* gUnk_02035124;
-extern void* gUnk_02035128;
-extern void* gUnk_02035148;
-extern void* gUnk_0203514C;
+extern struct ObjTiles* gUnk_02035120;
+extern struct ObjPaletteNode* gUnk_02035124;
+extern struct ObjTiles* gUnk_02035128;
+extern struct ObjPaletteNode* gUnk_02035148;
+extern struct ObjTiles* gUnk_0203514C;
 extern void* gUnk_020351C8[];
 extern void* gUnk_02035198[];
 extern AnimState gUnk_02035130;
@@ -499,7 +486,6 @@ extern u8 gUnk_0203511A;
 extern u8 gUnk_0999CF38[];
 extern u8 gUnk_0999CF54[];
 extern u8 gUnk_0999CF88[];
-void EnableBg(s32 a);
 extern void* gUnk_020354B8[];
 extern u8 gUnk_020354A0;
 extern u16 gUnk_020354C2;
@@ -519,7 +505,6 @@ typedef struct MdWorldNav {
 } MdWorldNav;
 
 extern MdWorldNav gUnk_09EF8FAC[];
-void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006184(s32 a, u16 b);
 extern void* gUnk_020354A8[];
 extern void* gUnk_020354B0[];
@@ -528,19 +513,14 @@ extern u8 gUnk_020354E0;
 extern s16 gUnk_02035118;
 extern u8 gUnk_09A324DC[];
 extern u8 gUnk_09A3D07C[];
-extern void* gUnk_0203511C;
+extern struct ObjPaletteNode* gUnk_0203511C;
 extern s16 gUnk_020354C0;
 void func_080FDB1C(s16 model, s16 n);
 void mode_worldselect_2(void);
-void EwramFree(void* p);
 void func_080FE89C(void);
-void SetBgMode1(void);
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 void func_080FE900(void);
-void SetBgMode0(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
 extern void* gUnk_09EF8F24[];
 void* func_080038C8(u16 a);
 extern u8 gTaskDescBosMdMap[];
@@ -552,10 +532,7 @@ void func_0801853C(s32 a, s32 b, s32 c, s32 d);
 void func_0802F1E8(void);
 void func_08019A30(void);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-void func_0801BCD4(MdSub* e);
 void func_080FBA4C(MdWork* work);
-u8 func_0801CA00(void* a);
-void LoadPalette(void* src, void* dst, s32 size);
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09A3C97C[];
 void task_bos_md_2(MdWork* work);
@@ -593,7 +570,6 @@ typedef struct PrizeCardArg {
 } PrizeCardArg;
 
 u8 func_080FC17C(MdWork* work);
-void func_0801AF4C(MdSub* e);
 u8 func_08006314(void);
 void func_08014AAC(s32 a, s32 b);
 void func_08006238(s32 a, u8 b, s32 c);
@@ -601,7 +577,6 @@ void func_0801536C(void);
 u16 func_08006390(void);
 u8 func_080128EC(void);
 void func_08096DC4(void* a, void* b);
-void func_0801B918(MdSub* e);
 void func_0801B008(void);
 void func_080FC29C(MdWork* work);
 void task_bos_md_map_0(MdMapWork* work, MdMapData* p);

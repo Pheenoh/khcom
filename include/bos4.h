@@ -1,7 +1,11 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
+#include "malloc.h"
 #include "engine_math.h"
 #include "listpool.h"
 #include "battle_work.h"
@@ -41,12 +45,7 @@ typedef struct UnkStruct_0203C590 {
 extern UnkStruct_0203C590 gUnk_0203C590;
 extern u32 gUnk_09EF69FC[];
 
-void* LoadObjTiles(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(u8* p);
 void func_08012304(void* a);
-void func_0801B7D8(void* a);
 
 typedef struct UnkStruct_080DEDD8 {
     u8 unk_00;
@@ -232,7 +231,6 @@ u8 func_080DD794(void);
 void func_080DF9E0(u8 a);
 void func_080DFAF4(u8 a, u8 b);
 void func_080DDEC8(u8* p, u8 a);
-void EwramFree(void* p);
 u8 func_080E8C84(u8 a, u8 b);
 u8* func_080E8D1C(s32 a);
 typedef struct MapChkWork {
@@ -461,9 +459,6 @@ u8 func_080DDDEC(UnkStruct_080DDDDC* p, UnkStruct_096FE034* q, u8 a);
 u8 func_080DFBDC(UnkStruct_080DFF1C* p);
 s32 func_080DFF1C(UnkStruct_080DFF1C* p);
 void func_08085C3C(void);
-void* GetBgCharBase(s32 bg);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-u8 func_0801CA00(void* a);
 void func_08014020(s32 x, s32 y, s32 z);
 void func_08012324(void* a, s32 x, s32 y, s32 z);
 typedef struct UnkStruct_080DF640 {
@@ -478,8 +473,6 @@ void func_080DF640(u8 a, UnkStruct_080DF640* p);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 extern u8 gUnk_0203C578;
 extern u8 gUnk_0203C56C;
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08005244(s32 a, u16 b, u16 c);
 void func_0802F1C8(void);
@@ -497,11 +490,7 @@ typedef struct UnkStruct_080DAA28 {
 } UnkStruct_080DAA28;
 
 void task_bos_boogie_map_0(void* work, UnkStruct_080DAA28* arg);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 extern s32 gUnk_0203C580;
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-void func_0801BCD4(void* a);
 extern u8 gUnk_0203C564;
 extern u8 gUnk_0203C574;
 extern u8 gUnk_096FE0E8[];
@@ -743,11 +732,8 @@ void func_080605A4(s32 a);
 void func_080DDF04(u8 a, u8 b);
 void func_080DE2A4(MapChkWork* p);
 void Mode_MapChk_0(void);
-void* EwramAlloc(s32 size);
 s32 SaveLoadHeader(void);
-void EnableBg(s32 bg);
 void func_0805FA8C(s32 a, s32 b, s32 c);
-void SetBgMode0(void);
 void func_08006120(s32 a, s32 b);
 void m4aMPlayAllStop(void);
 extern const char gUnk_0984B72C[];
@@ -827,7 +813,6 @@ extern u8 gUnk_09EF6798[];
 u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work);
 void func_0802F274(s32 a, s32 b);
 void func_08015228(s32 x, s32 y, s32 z, s32 s);
-void func_08019190(void* a, s32 b);
 extern u8 gUnk_0203C570;
 void func_08014780(s32 a, s32 b, s32 c);
 void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a);
@@ -847,8 +832,6 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work);
 void func_080DEF20(void);
 extern const u8 gUnk_09EF69E0[];
 u8 task_bos_boogie_knifereader_1(BoogieKnifereaderWork* work);
-u32 func_0801ADAC(void* a);
-void func_0801AF08(void* a);
 u8 func_0801C1C0(s32 a);
 void func_080D9A58(void);
 u8 task_bos_boogie_knife_1(BoogieKnifeWork* work);
@@ -874,8 +857,6 @@ extern UnkStruct_096FDFC4 gUnk_096FDF54;
 u8 task_bos_boogie_map_1(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
 extern u16 gWin0H;
 extern u16 gWin0V;
 extern u16 gWinIn;
@@ -883,9 +864,7 @@ extern u16 gWinOut;
 u16 func_080DEE44(u8 a, u8 b);
 void task_bos_boogie_dice_2(BoogieDiceWork* work);
 u8 func_080D9B28(BoogieDiceWork* work);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void task_bos_ursula_backtako_0(UrsulaBacktakoWork* work, u8* arg);
-void* AllocObjTiles(s32 size, void* src);
 u16 func_08003524(void* a, s32 b);
 extern u8 gUnk_09EF6860[];
 extern u8 gUnk_0979E344[];

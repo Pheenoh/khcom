@@ -78,7 +78,7 @@ void task_bos_shadow_2(BosShadowWork* work) {
     s16 x;
     s16 y;
     s32 size;
-    s32 flip;
+    u8 flip;
     u16 frame;
     s32 sprite;
     u8* gfx;

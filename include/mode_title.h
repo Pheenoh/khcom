@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
+#include "obj_api.h"
 #include "types.h"
 #include "game_state.h"
 #include "taskpool.h"
@@ -62,8 +63,6 @@ void func_08006120(s32 a, s32 b);
 void func_080C73D8(void);
 void func_080D5A4C(s32 a);
 void func_080D5B04(void);
-void* LoadObjTiles(void* a, s32 b);
-void* LoadObjPalette(void* a, s32 b);
 void func_080C75A4(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);
 void func_08000DE8(TaskPool* a, Task* t);

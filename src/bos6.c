@@ -214,7 +214,7 @@ void func_0810A018(PcWork* work) {
         LoadBgMap(1, gUnk_09A4AC84[step->unk_1E].unk_08, gUnk_09A4AC84[step->unk_1E].unk_0C);
         work->unk_036 = work->unk_032;
     }
-    SetBgScroll(1, -sx + 0x50, -sy + 8);
+    SetBgScroll(1, (u16)(-sx + 0x50), (u16)(-sy + 8));
 }
 
 u8 func_0810A424(PcWork* work) {
@@ -3728,7 +3728,7 @@ void task_bos_lst_2(BosLstWork* work) {
     WorldToScreen(&sx, &sy, work->unk_044 + work->unk_050 - (gUnk_09A4CF8C[anim].unk_24 << 8),
                   work->unk_048 + work->unk_054 - (gUnk_09A4CF8C[anim].unk_26 << 8),
                   work->unk_04C + work->unk_058 - (gUnk_09A4CF8C[anim].unk_28 << 8));
-    SetBgScroll(1, -sx, -sy);
+    SetBgScroll(1, (u16)(-sx), (u16)(-sy));
     if ((u16)(sy + 255) > 0x19E || (u16)(sx + 255) > 0x1FE) {
         DisableBg(1);
     } else {

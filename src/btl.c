@@ -1,3 +1,4 @@
+#include "obj_api.h"
 #include "macros.h"
 #include "btl.h"
 
@@ -467,7 +468,6 @@ typedef struct BtlTaskArg {
 } BtlTaskArg;
 extern u16 gUnk_0813C0DC[][4];
 extern u16 gUnk_0813C6BC[][4];
-void* AllocObjTiles(s32 size, void* src);
 extern TaskDesc gTaskDescBtlShadow, gTaskDescBtlBadstatus;
 void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
     BtlObj* e;

@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_EVENTSELECT_H
 #define GUARD_MODE_EVENTSELECT_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -164,9 +166,6 @@ extern Mode gUnkEu_09F5D6EC;
 
 extern TaskDesc gUnk_09EE4984[];
 
-void SetBgMode0(void);
-void EnableBg(s32 a);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_0805FA8C(s32 a, s32 b, s32 c);
 void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
 void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
@@ -182,7 +181,6 @@ void func_08066918(void* a, void* b);
 u8 _080669DC(s32 a, void* b);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_080062F4(u16 a, s32 b);
-void* AllocObjTiles(s32 a, void* b);
 void func_08002A10(void* a, u32 b);
 u8 func_08006314(void);
 void* func_080038C8(u16 a);

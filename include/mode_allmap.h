@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
+#include "obj_api.h"
 #include "types.h"
 #include "m4a.h"
 #include "taskpool.h"
@@ -68,8 +69,6 @@ extern u8 gUnk_09EF658C[];
 extern TaskDesc gTaskDescAllmapBar;
 
 void SetObjPaletteRange(s32 a, s32 b);
-void* LoadObjTiles(void* a, s32 b);
-void* AllocObjTiles(s32 a, void* b);
 u16 func_08003524(void* a, s32 b);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08006120(s32 a, u16 b);

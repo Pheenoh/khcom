@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "game_state.h"
@@ -140,14 +142,7 @@ void func_08103D54(s16 a);
 void func_08103D7C(void);
 void func_08103DE8(void);
 
-void* GetBgScreenBase(s32 bg);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
-void SetBgScroll(s32 bg, s32 x, s32 y);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void LoadPalette(void* src, void* dst, s32 size);
 u16 func_08065B6C(u16* a, TextSlot* b);
-void LoadObjPaletteBank(u16 bank, void* src);
 void func_0800FDD0(s32 a);
 u8 func_080A42C8(void);
 void func_080A4234(void* pool, u32 a, u16 b);
@@ -161,7 +156,6 @@ s16 func_08084458(u16 a);
 u16 func_08060A2C(u16 a);
 u8 func_0800FC5C(s32 a);
 u8 func_0810155C(u32 a);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void func_08065ACC(TextSlot* p, s32 n);
 void UpdatePlayTime(void);
@@ -171,21 +165,11 @@ void func_080E04EC(void);
 void func_0810264C(u16 a, u16 b, u16 c);
 u8 func_0810329C(u16 a);
 void func_0805F1C0(s32* p, s32 v);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_08102F30(void);
-void DisableBg(s32 bg);
-void EnableBg(s32 a);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void* LoadObjPalette(void* a, s32 b);
-void* LoadObjTiles(void* a, s32 b);
 void SpriteReset(void);
 void func_081015E8(void);
 void func_08101654(void);
 void func_08101740(s16 a);
-void SetBgMode0(void);
 void func_08006120(s32 a, s32 b);
 u32 GetMooglePoints(void);
 void func_08006238(s32 a, s32 b, s32 c);
@@ -194,28 +178,26 @@ void func_08102AB4(s16 x, s16 y);
 void func_08103F94(s16 a, s16 b);
 void func_080062F4(u16 a, s32 b);
 void func_08065AE0(TextSlot* p, s32 n);
-void* GetBgCharBase(s32 bg);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
 void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 void func_08006184(s32 a, u16 b);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 
 extern u8 gUnk_0203C590[];
 extern u16 gUnk_09993334[];
 extern u8 gUnk_09A3ABDC[];
-extern void* gUnk_020357C8;
-extern void* gUnk_020357CC;
-extern void* gUnk_020357D0;
-extern void* gUnk_020357D4;
-extern void* gUnk_020357F0;
-extern void* gUnk_020357F4;
-extern void* gUnk_02035810;
-extern void* gUnk_02035814;
+extern struct ObjTiles* gUnk_020357C8;
+extern struct ObjPaletteNode* gUnk_020357CC;
+extern struct ObjTiles* gUnk_020357D0;
+extern struct ObjPaletteNode* gUnk_020357D4;
+extern struct ObjTiles* gUnk_020357F0;
+extern struct ObjPaletteNode* gUnk_020357F4;
+extern struct ObjTiles* gUnk_02035810;
+extern struct ObjPaletteNode* gUnk_02035814;
 extern void* gUnk_02035818[];
 extern void* gUnk_02035820[];
-extern void* gUnk_02035858;
-extern void* gUnk_0203585C;
+extern struct ObjTiles* gUnk_02035858;
+extern struct ObjPaletteNode* gUnk_0203585C;
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 extern s16 gUnk_020357C0;

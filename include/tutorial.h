@@ -1,6 +1,8 @@
 #ifndef GUARD_TUTORIAL_H
 #define GUARD_TUTORIAL_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "anim.h"
@@ -39,9 +41,6 @@ u16 func_0805E89C(u16* str);
 #endif
 #endif
 
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgScroll(s32 a, s32 b, s32 c);
-void* AllocObjTiles(s32 a, void* b);
 
 extern u32 gFrameCounter;
 extern s16 gSineTable[];

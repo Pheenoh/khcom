@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_CHKEFF_H
 #define GUARD_MODE_CHKEFF_H
 
+#include "display.h"
 #include "types.h"
 #include "taskpool.h"
 #include "main.h"
@@ -20,15 +21,7 @@ typedef struct ChkEffWork {
     u16 alphaA;
     u16 alphaB;
 } ChkEffWork;
-void SetBgMode1(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void SetBgScroll(s32 a, u16 b, u16 c);
-void SetBgPriority(s32 bg, u16 priority);
 void SetBgBlend(s32 a, s32 b, s32 c);
-void SetBlendAlpha(u16 a, u16 b);
 void func_080062F4(s32 a, s32 b);
 void func_080065FC(s32 a, s32 b, s32 c);
 void func_0800675C(u8 a, s32 b, s32 c);

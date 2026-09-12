@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "game_state.h"
@@ -175,12 +177,6 @@ extern TaskDesc gTaskDescPooCabbageAfterEvent;
 
 u8 IsTaskActive(Task* t);
 void func_08002A10(void* a, void* b);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(u8* p);
-void SetBgMode0(void);
-void EnableBg(s32 a);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_08005974(void* a, u8 b, s32 c, void* d, void* e);
 void func_08006120(s32 a, u16 b);

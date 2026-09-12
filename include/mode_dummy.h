@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_DUMMY_H
 #define GUARD_MODE_DUMMY_H
 
+#include "display.h"
 #include "types.h"
 #include "game_state.h"
 #include "key.h"
@@ -25,13 +26,6 @@ extern Mode gModeLang;
 #endif
 
 void SetModeUpdate(void (*fn)(void));
-void SetBgMode0(void);
-void EnableBg(s32 a);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void SetBgScroll(s32 a, u16 b, u16 c);
 void func_08006120(s32 a, u16 b);
 void func_08006184(s32 a, u16 b);
 u8 func_08006314(void);

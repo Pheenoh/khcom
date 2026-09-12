@@ -1,6 +1,8 @@
 #ifndef GUARD_FRD_H
 #define GUARD_FRD_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
 #include "types.h"
 #include "engine_math.h"
 #include "battle_work.h"
@@ -173,14 +175,9 @@ extern u8 gUnk_0813ED4C[];
 extern u8 gUnk_09617E18[];
 extern u8 gUnk_0813ED90[];
 
-void ReleaseObjPalette(u8* p);
 u16 func_0801AF1C(s32 a);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void m4aSongNumStart(u16 n);
-void* LoadObjPalette(void* src, s32 size);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 void func_08017260(s32 a, s32 b, s32 c, s32 d);
 void func_08045494(BtlObj* body, u8 a, s16 b, s16 c);
@@ -195,7 +192,6 @@ void func_080147A8(s32 x,s32 y,s32 z);
 void func_08014780(s32 x,s32 y,s32 z);
 void func_08012AAC(u16 a,s32 x,s32 y,s32 z);
 void func_08019050(s32 a,s32 b,s32 c,s32 d);
-void func_08019190(BtlObj* a,s16 b);
 u8 task_frd_donald_1(FrdDonaldWork* work);
 u8 func_080474A8(FrdJackWork* work);
 void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);

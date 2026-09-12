@@ -2,6 +2,7 @@
 #define GUARD_PC_H
 
 #include "types.h"
+#include "battle_actor.h"
 #include "engine_math.h"
 #include "game.h"
 
@@ -39,6 +40,5 @@ s32 func_08049F50(PcCharaWork* work);
 
 void func_0800F368(void* work, u16 a);
 u8 func_0800F504(void* work, u16 a, u16 b, u16 c);
-void func_0801C700(void* obj, s32* a, s32* b, s32* c);
 
 #endif /* GUARD_PC_H */

@@ -1,6 +1,7 @@
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
+#include "obj_api.h"
 #include "engine.h"
 #include "gba/syscall.h"
 #include "main.h"
@@ -367,7 +368,6 @@ void task_sroll_b_char_0(SrollBCharWork* w, SrollBCharArg* a);
 s32 task_sroll_b_char_1(SrollBCharWork* w);
 void task_sroll_b_char_2(SrollBCharWork* w);
 void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 void func_081149B8(SrollBCharWork* w);
 void task_sroll_c_char_0(SrollCCharWork* w, s32 kind);
 void func_0811614C(SrollWork* w, SrollInit* a);
@@ -396,12 +396,8 @@ u8 task_sroll_tmr_1(SrollTmrWork* w);
 s32 abs(s32 x);
 void func_08000714(void);
 void func_08116E98(void);
-void* AllocObjTiles(s32 size, void* b);
 void func_08005974(void* a, u16 b, u16 c, void* d, void* e);
-void* LoadObjTiles(void* src, s32 size);
-SrollPal* LoadObjPalette(void* src, s32 size);
 void func_080062F4(u16 a, s32 b);
-void DrawSprite(s16 x, s16 y, void* a, void* b, void* c, s32 d, s32 e, u16 f);
 void func_081154A0(u32* dst, u8* src, u32* pal, s32 x);
 void func_081154EC(u32* dst, u8* src, u32* pal, s32 x);
 void func_08115548(u32* dst, u8* src, u32* pal, s32 x);

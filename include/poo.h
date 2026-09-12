@@ -1,6 +1,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -1309,7 +1311,6 @@ void task_poo_roo_2(PooRooWork* w);
 void task_poo_shadowdodai_2(PooShadowWork* w);
 void task_poo_pooh_2(PooWork* w);
 void task_poo_pooh_3(PooWork* w);
-void LoadObjPaletteBank(u16 bank, void* src);
 u8 task_poo_butterflyRight_1(PooButterflyWork* w);
 void task_poo_butterflyRight_2(PooButterflyWork* w);
 u8 task_poo_butterflyLeft_1(PooButterflyWork* w);
@@ -1330,7 +1331,6 @@ void task_poo_shadowscale_2(PooScaleWork* w);
 void task_poo_wagon_0(PooCamera* w);
 u8 task_poo_wagon_1(PooCamera* w);
 void task_poo_zzz_0(PooZzzWork* w, u8* arg);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
 u8 func_080C9D84(void);
 void func_080D2190(PooBflyPart* p);
 u8 task_poo_owlballoon_1(PooOwlBalloonWork* w);
@@ -1373,8 +1373,6 @@ u8 task_poo_mapbee_1(PooMapBeeWork* w);
 void task_poo_roo_3(PooRooWork* w);
 u8 func_080CF114(void);
 u8 func_080CF12C(void);
-void* AllocObjTiles(s32 size, void* src);
-void* LoadObjPalette(void* src, s32 size);
 void func_080C84E0(PooWork* w, u32 b);
 u8 func_080C9910(void);
 u8 func_08005AC4(AnimState* a);
@@ -1405,7 +1403,6 @@ u8 task_poo_mapbutterfly_1(PooMapButterflyWork* w);
 void func_080C9E84(void* pool);
 void func_080D1FB8(PooBflyPart* p);
 
-void* LoadObjTiles(void* src, s32 size);
 u16 func_08003524(void* a, s32 b);
 void m4aSongNumStop(u16 n);
 void func_080CCB90(PooNode* n, u16 v, void* p);
@@ -1461,7 +1458,6 @@ void func_08005244(s32 a, u16 b, u16 c);
 u8 GetKeyReleaseTime(s32 a);
 void func_080CA724(PooSoraWork* w);
 u8 func_08012660(void* p, s32 bit);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, u16 h);
 s32 abs(s32 a);
 void func_0802F208(void);
 s32 func_0802F268(void);
@@ -1544,8 +1540,6 @@ extern const u16 gUnk_096FD86E[];
 extern TaskDesc gTaskDescPooFreeballoon;
 extern TaskDesc gTaskDescPooRoo;
 extern TaskDesc gTaskDescPooZzz;
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_080051C4(s32 a, u16 b, u16 c);
 void func_0802F1C8(void);
@@ -1619,8 +1613,6 @@ void func_080CC178(void* pool, void* a, s32 b);
 s32 func_080CD1DC(u32 a);
 s32 func_080CD1F8(u32 a);
 void func_080C89B4(PooWork* w, PooSpot* b, u16 c);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
 u16 func_080CCB80(u16* p);
 void func_080CCB84(u16* p, u16 v);
 u16 func_080CCB88(u16* p);
@@ -1689,11 +1681,6 @@ extern u8 gUnk_0203C3D8;
 u16 func_080CA67C(PooPos* p);
 u16 func_080CBAB0(PooPos* p);
 void func_080C7BCC(u16 a);
-void* GetBgCharBase(s32 bg);
-void* GetBgScreenBase(s32 bg);
-u8 RequestDma3Copy(void* src, void* dst, u16 size);
-void LoadPalette(void* src, void* dst, s32 size);
-void SetBlendAlpha(u16 a, u16 b);
 void func_08006238(s32 a, s32 b, s32 c);
 void func_080062F4(u16 a, s32 b);
 

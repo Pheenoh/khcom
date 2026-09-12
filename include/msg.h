@@ -1,6 +1,8 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -590,12 +592,9 @@ void* func_080668F0(void);
 void* func_08066904(void);
 void func_08066918(void* a, void* b);
 void func_08002488(s16 x, s16 y, void* a, void* b, void* c, u16 d);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f);
 void func_08064624(void);
 u8 func_08004678(void* a);
-void* GetBgCharBase(s32 bg);
-void* GetBgScreenBase(s32 bg);
 void* _08066468(s32 a);
 void func_080062F4(u16 a, s32 b);
 u8 func_0800443C(void* a, u16 b);
@@ -617,9 +616,6 @@ void SetTaskUpdate(u8* p, u32 v);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
 void* memcpy(void* dst, const void* src, unsigned long n);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void SetBgPriority(s32 bg, u16 priority);
 void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c);
 #ifdef VERSION_US
 s32 func_08064DD4(u16* a);
@@ -628,12 +624,7 @@ u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void m4aMPlayAllStop(void);
 u8 func_08006314(void);
 void func_08074504(void);
-void DisableBg(s32 bg);
 void func_080A4188(void* pool, u16 b);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void* AllocObjTiles(s32 a, s32 b);
-void* AllocObjPalette(s32 a);
-void LoadObjPaletteBank(u16 a, void* b);
 void func_08002A10(void* a, void* b);
 void func_08003A70(void* a, void* b);
 u8 func_08073DA4(MsgFaceWork* p, void* a);
@@ -647,8 +638,6 @@ void func_08073508(MsgWinWork* p);
 void func_080736F8(MsgWinWork* p);
 u8 func_08072EAC(MsgWinWork* p, void* a);
 u8 func_08073F78(MsgWaitWork* p);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void SetBgScroll(s32 a, u16 b, u16 c);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_080051C4(s32 a, u16 b, u16 c);
 u8 msgface_1(MsgFaceWork* p, void* a);
@@ -703,7 +692,6 @@ void func_080658B8(u8 n);
 void func_0806C34C(void);
 void func_0806E9BC(Work0806180C* p);
 void func_0806F94C(Work0806180C* p);
-void LoadPalette(void* src, void* dst, s32 size);
 void func_0801CD98(void* pool, void* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
 s32 func_0810B350(void* p);
 void func_0810C2C4(void* p);
@@ -734,8 +722,6 @@ void func_0806CD60(ContinueWork* p);
 void func_0806CF04(ContinueWork* p);
 void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a);
 u8 func_0806D830(EventSeqWork* p, void* a);
-void SetBgMode1(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void BtlWorkInit(void);
 void func_0801A920(s32 a, s32 b, s32 c, s32 d);
 void SetBgSize(s32 bg, s32 size);
@@ -750,11 +736,7 @@ void func_08075E60(Work0806180C* p);
 void func_08070008(Work0806180C* p);
 u8 func_080700D4(Work0806180C* p, void* a);
 
-void* LoadObjTiles(void* a, s32 b);
-void* LoadObjPalette(void* a, s32 b);
 void* func_080038C8(u16 a);
 void func_080038E4(void* a, void* b, void* c);
-void ReleaseObjTiles(void* a);
-void ReleaseObjPalette(u8* p);
 
 #endif /* GUARD_MSG_H */

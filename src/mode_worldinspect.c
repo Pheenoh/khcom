@@ -1,4 +1,7 @@
+#include "obj_api.h"
+#include "display.h"
 #include "macros.h"
+#include "malloc.h"
 #include "mode_worldinspect.h"
 #include "game_state.h"
 #include "gba/keys.h"
@@ -56,14 +59,14 @@ extern s32 gUnk_020357A8[2];
 extern s32 gUnk_020357B0;
 extern s32 gUnk_020357B4;
 extern s32 gUnk_020357B8;
-extern void* gUnk_02035510;
-extern void* gUnk_02035514;
-extern void* gUnk_02035518;
-extern void* gUnk_0203551C;
+extern struct ObjTiles* gUnk_02035510;
+extern struct ObjPaletteNode* gUnk_02035514;
+extern struct ObjTiles* gUnk_02035518;
+extern struct ObjPaletteNode* gUnk_0203551C;
 extern AnimState gUnk_02035520;
 extern AnimState gUnk_02035538;
-extern void* gUnk_02035550;
-extern void* gUnk_02035554;
+extern struct ObjTiles* gUnk_02035550;
+extern struct ObjPaletteNode* gUnk_02035554;
 extern AnimState gUnk_02035558;
 extern void* gUnk_02035570[];
 extern void* gUnk_020355A8[];
@@ -76,7 +79,6 @@ extern WorldinspectWarpIcon gUnk_09EF9384[];
 extern u8 gUnk_0999F400[];
 extern u8 gUnk_0999F416[];
 extern u8 gUnk_0999F44A[];
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_0805F1C0(s32* p, s32 v);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 
@@ -163,31 +165,25 @@ extern u8 gUnk_09A5B580[];
 extern u8 gUnk_09A55A80[];
 extern u8 gUnk_09A5C280[];
 #endif
-void* EwramAlloc(u32 size);
 void SpriteReset(void);
 void func_08006120(s32 a, u16 b);
-void* LoadObjPalette(void* src, u16 size);
-void* LoadObjTiles(void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgTiles(s32 bg, void* src, u16 size);
 void func_08065ACC(void* a, s32 b);
 void func_080FF19C(s16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 void func_080FF10C(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y);
 void func_080FF2B8(s16 index);
 u8 func_080FF228(s16 id);
-void* GetBgCharBase(s32 bg);
 void m4aSongNumStart(u16 id);
 
 s16 gUnk_02035118;
 u8 gUnk_0203511A;
-void* gUnk_0203511C;
-void* gUnk_02035120;
-void* gUnk_02035124;
-void* gUnk_02035128;
+struct ObjPaletteNode* gUnk_0203511C;
+struct ObjTiles* gUnk_02035120;
+struct ObjPaletteNode* gUnk_02035124;
+struct ObjTiles* gUnk_02035128;
 s32 gUnk_0203512C;
 u8 gUnk_02035130[0x18];
-void* gUnk_02035148;
-void* gUnk_0203514C;
+struct ObjPaletteNode* gUnk_02035148;
+struct ObjTiles* gUnk_0203514C;
 u8 gUnk_02035150[0x18];
 void* gUnk_02035168[12];
 void* gUnk_02035198[12];

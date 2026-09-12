@@ -3664,7 +3664,7 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
 }
 
 void task_poo_piglet_2(PooPigletWork* w) {
-    s32 pr;
+    u16 pr;
     s16 x;
     s16 y;
 
@@ -4795,7 +4795,7 @@ u8 task_poo_eeyoretail_1(PooEeyoreTailWork* w) {
 void task_poo_eeyoretail_2(PooEeyoreTailWork* w) {
     s16 x;
     s16 y;
-    s32 pr;
+    u16 pr;
     s32 z;
 
     x = ((s32)w->unk_0C >> 8) - gUnk_0203C40C;

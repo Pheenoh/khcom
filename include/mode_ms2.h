@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
+#include "obj_api.h"
+#include "display.h"
 #include "types.h"
 #include "text_types.h"
 #include "ms_types.h"
@@ -66,19 +68,19 @@ extern u8 gUnk_02035E00;
 extern u8 gUnk_02035E08;
 extern s32 gUnk_02035E18;
 extern s32 gUnk_02035E1C;
-extern void* gUnk_02035C40;
-extern void* gUnk_02035C44;
-extern void* gUnk_02035C48;
-extern void* gUnk_02035C80;
-extern void* gUnk_02035C84;
-extern void* gUnk_02035CC0;
-extern void* gUnk_02035CC4;
-extern void* gUnk_02035D84;
-extern void* gUnk_02035D88;
-extern void* gUnk_02035D90;
-extern void* gUnk_02035D94;
-extern void* gUnk_02035D9C;
-extern void* gUnk_02035DB8;
+extern struct ObjTiles* gUnk_02035C40;
+extern struct ObjPaletteNode* gUnk_02035C44;
+extern struct ObjTiles* gUnk_02035C48;
+extern struct ObjPaletteNode* gUnk_02035C80;
+extern struct ObjTiles* gUnk_02035C84;
+extern struct ObjPaletteNode* gUnk_02035CC0;
+extern struct ObjTiles* gUnk_02035CC4;
+extern struct ObjPaletteNode* gUnk_02035D84;
+extern struct ObjTiles* gUnk_02035D88;
+extern struct ObjPaletteNode* gUnk_02035D90;
+extern struct ObjTiles* gUnk_02035D94;
+extern struct ObjTiles* gUnk_02035D9C;
+extern struct ObjTiles* gUnk_02035DB8;
 extern void* gUnk_02035DDC;
 extern void* gUnk_02035DE4;
 extern void* gUnk_02035DEC;
@@ -162,16 +164,9 @@ void func_081075FC(void);
 void func_0810764C(void);
 u16 func_08107D24(void);
 void func_081085E8(void);
-void DisableBg(s32 bg);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006184(s32 a, u16 b);
 void func_08107280(void);
-void ReleaseObjPalette(u8* p);
-void ReleaseObjTiles(void* a);
-void* LoadObjPalette(void* a, s32 b);
-void* LoadObjTiles(void* a, s32 b);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
-void* GetBgCharBase(s32 bg);
 void func_081073F0(void);
 void func_081076D4(void);
 void func_08107B84(void);
@@ -198,16 +193,10 @@ u8 func_081079E4(UnkStruct_0810718C* p);
 void func_08107A08(UnkStruct_0810718C* p);
 void func_08107A74(UnkStruct_0810718C* p);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
-void* GetBgScreenBase(s32 bg);
 void mode_ms_charge_0(void);
 void SpriteReset(void);
 void func_08006120(s32 a, s32 b);
-void SetBgMode0(void);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void SetBgPriority(s32 bg, u16 priority);
 void func_0810563C(void);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgTiles(s32 bg, void* src, u16 size);
 UnkStruct_0810718C* func_08104B2C(void);
 void func_081052C8(s16 a);
 void func_08104F2C(void);
@@ -219,7 +208,6 @@ s32 func_08065B54(u16* s);
 void func_08104BBC(void);
 void func_08104D18(void);
 void func_08108650(void);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, s32 h);
 void func_0805F1C0(s32* p, s32 v);
 void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s16 func_08065B08(TextSlot* p, u8 n);
@@ -229,9 +217,7 @@ extern s16 gUnk_02035CE2;
 extern s16 gUnk_02035CE4;
 extern s16 gUnk_02035E0C;
 extern s16 gUnk_02035E0E;
-void EnableBg(s32 a);
 void func_08065AE0(TextSlot* p, s32 n);
-void LoadPalette(void* src, void* dst, s32 size);
 void* func_08093C18(s32 a);
 u16 func_08065B6C(u16* a, TextSlot* b);
 

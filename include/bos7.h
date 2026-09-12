@@ -1,7 +1,11 @@
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
+#include "obj_api.h"
+#include "battle_actor.h"
+#include "display.h"
 #include "types.h"
+#include "malloc.h"
 #include "engine_math.h"
 #include "battle_work.h"
 #include "game_state.h"
@@ -521,30 +525,14 @@ extern u16 gWin0V;
 extern u16 gWinIn;
 extern u16 gWinOut;
 
-void* LoadObjTiles(void* a, s32 b);
-void ReleaseObjTiles(void* a);
-void* LoadObjPalette(void* a, s32 b);
-void ReleaseObjPalette(u8* p);
-void DrawSprite(s16 a, s16 b, void* c, void* d, void* e, s32 f, u16 g, u16 h);
-void WorldToScreen(s16* a, s16* b, s32 c, s32 d, s32 e);
 u16 func_0801AF1C(s32 a);
-void func_0801B7D8(void* a);
 void func_0801C2DC(void* a, s32 b);
-void func_0801B37C(void* a, void* b, s32 c, s32 d, s32 e);
-void* EwramAlloc(s32 size);
-void EwramFree(void* p);
 void SetBackdropColor(s32 a, s32 b, s32 c);
-void LoadBgMap(s32 bg, void* src, u16 size);
 void func_08006120(s32 a, s32 b);
 void func_08006184(s32 a, s32 b);
-void EnableBg(s32 bg);
-void DisableBg(s32 bg);
-void SetBgScroll(s32 bg, s32 x, s32 y);
 void SetBgColorMode(s32 bg, s32 mode);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08116F08(void);
-void SetBgMode0(void);
-void SetBgMode1(void);
 void func_08000DE8(TaskPool* a, Task* t);
 void func_0801CD74(EvtObj* obj, s32 anim);
 void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c);
@@ -556,13 +544,9 @@ void func_08116ECC(void);
 void SoftReset(s32 flags);
 u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);
-void SetupBg(s32 bg, s32 a, s32 b, s32 c);
-void SetBgPriority(s32 bg, s32 prio);
 void SetBgSize(s32 bg, s32 size);
 u8 func_08006314(void);
 void SpriteReset(void);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
 void func_0802F1C8(void);
 void func_0802F208(void);
 void func_0810FEDC(void);
@@ -570,7 +554,6 @@ void func_08116E8C(void);
 void func_08116E60(u8* src);
 void func_08116E80(void);
 void func_08116E00(vu16* dst, u8* src, u32 cnt);
-void LoadPalette(void* src, s32 dst, s32 size);
 void func_0810FE94(void);
 extern const s8* const gUnk_09EF9E6C[];
 void func_0810FEBC(s16 a);
@@ -578,12 +561,8 @@ s32 func_0810FF44(void);
 void func_0810FF50(Task* t, s32 a, s32 b);
 void func_0810FF64(Task* t, s32 a);
 void func_0810FF6C(Task* t, s32 a);
-s32 func_0801ADAC(void* a);
-void func_0801AF08(void* a);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 s32 abs(s32 x);
-s32 AllocObjAffine(s32 a, s32 b, s32 c, s32 d);
-void* AllocObjTiles(s32 a, void* b);
 void m4aSongNumStart(u16 id);
 s32 AllocObjAffineAngle(s32 a, s32 b);
 

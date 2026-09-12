@@ -1,6 +1,7 @@
 #ifndef GUARD_ROMCRI_H
 #define GUARD_ROMCRI_H
 
+#include "display.h"
 #include "types.h"
 #include "game_state.h"
 
@@ -72,15 +73,7 @@ extern u8 gUnk_08F6D9E4[];
 extern u8 gUnk_08F6DA04[];
 extern const u16 gUnk_09EDA4EC[];
 
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
-void LoadBgTiles(s32 bg, void* src, u16 size);
-void LoadBgPalette(s32 bg, void* src, u16 size);
-void LoadBgMap(s32 bg, void* src, u16 size);
-void SetBgPriority(s32 bg, u16 priority);
-void SetBgScroll(s32 bg, u16 x, u16 y);
 void SetBgBlend(s32 a, s32 b, s32 c);
-void EnableBg(s32 a);
-void DisableBg(s32 bg);
 void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 

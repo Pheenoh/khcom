@@ -123,7 +123,7 @@ TextSlot gUnk_02034B60[20];
 #ifdef VERSION_EU
 u8 gUnkEu_02034C10[0x1E0];
 #endif
-void* gUnk_02034C00;
+struct ObjPaletteNode* gUnk_02034C00;
 u8 gUnk_02034C04[4];
 u8 gUnk_02034C08[20];
 Task* gUnk_02034C1C;

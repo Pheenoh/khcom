@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_BACKUPSTAT_H
 #define GUARD_MODE_BACKUPSTAT_H
 
+#include "display.h"
 #include "types.h"
 #include "taskpool.h"
 #include "evt_types.h"
@@ -21,9 +22,6 @@ extern const char gUnk_09993888[];
 extern const char* gUnk_09EF9668[];
 extern u8 gWhitePalette[];
 
-void SetBgMode0(void);
-void EnableBg(s32 a);
-void SetupBg(s32 bg, u8 charBase, u8 screenBase, u8 palette);
 void func_0805FA8C(u8 a, s16 b, s16 c);
 void func_0805FCB0(u8 a, u8 b, u32 c, const char* d);
 void func_080605A4(u8 a);

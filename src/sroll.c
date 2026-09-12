@@ -94,7 +94,7 @@ u8 task_sroll_a_name_1(SrollANameWork* w) {
 void task_sroll_a_name_2(SrollANameWork* w) {
     s32 x;
     s32 y;
-    s32 flags;
+    u16 flags;
     s32 ofs;
 
     if (w->unk_04 <= 29) {
@@ -600,7 +600,7 @@ u8 task_sroll_c_char_1(SrollCCharWork* w) {
 void task_sroll_c_char_2(SrollCCharWork* w) {
     AnimState* p;
     s32 i;
-    s32 flags;
+    u16 flags;
 
     flags = 0;
     p = w->anim;
