@@ -25212,9 +25212,7 @@ u8 func_0809DE18(u8* p) {
 
     return 1;
 }
-#ifdef NON_MATCHING
 u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a) {
-    u16 id;
     void** tiles;
 
     switch (w->unk_19) {
@@ -25240,7 +25238,7 @@ u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a) {
 #endif
             SetTaskUpdate(a, (void*)HCEffectName_1);
         } else {
-            id = func_080792D0(&w->unk_20);
+            u16 id = func_080792D0(&w->unk_20);
             w->unk_1E = id;
             tiles = LANGSTR(gUnk_08F7CBA8[id].unk_08);
             func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
@@ -25269,7 +25267,7 @@ u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a) {
 #endif
             SetTaskUpdate(a, (void*)HCEffectName_1);
         } else {
-            id = func_080792D0(&w->unk_20);
+            u16 id = func_080792D0(&w->unk_20);
             w->unk_1E = id;
             tiles = LANGSTR(gUnk_08F7CBA8[id].unk_08);
             func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
@@ -25279,10 +25277,6 @@ u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a) {
     }
     return 1;
 }
-
-#else
-INCLUDE_ASM("card/func_0809DE30.s");
-#endif
 
 void HCEffectName_2(UnkStruct_0809DF7C* w) {
 #ifdef VERSION_EU
