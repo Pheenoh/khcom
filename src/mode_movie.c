@@ -59,9 +59,15 @@ void mode_movie_0(s32 a) {
     gUnk_0203494C = 0;
 }
 
-#ifdef NON_MATCHING
+#ifdef VERSION_JP
+#define MOVIE_SUB_MAX_CHARS 24
+#elif defined(VERSION_EU)
+#define MOVIE_SUB_MAX_CHARS 48
+#else
+#define MOVIE_SUB_MAX_CHARS 40
+#endif
+
 s32 func_0805E93C(void) {
-    MovieSub* e;
     s32 i;
     u16 keys;
 
@@ -73,9 +79,11 @@ s32 func_0805E93C(void) {
     }
 
     if (gUnk_02034950 != 0) {
-        for (i = 1; i >= 0; i--) {
+        for (i = 0; i < 2; i++) {
             if (((MovieSub*)gUnk_02034950)[gUnk_02034944].unk_00 == gUnk_02034942) {
                 if (((MovieSub*)gUnk_02034950)[gUnk_02034944].unk_08 == 0) {
+                    MovieSub* e;
+
                     gUnk_02034948 = e = &((MovieSub*)gUnk_02034950)[gUnk_02034944];
                     gUnk_02034958 |= 1;
                     gUnk_02034954 = e->unk_0A;
@@ -84,12 +92,18 @@ s32 func_0805E93C(void) {
                         gUnk_02034944++;
                     }
 
+#ifdef VERSION_JP
+                    gUnk_02034956 = func_0805E848((u8*)gUnk_02034948->unk_04);
+#else
                     gUnk_02034956 = func_0805E89C(gUnk_02034948->unk_04);
+#endif
 
-                    if (gUnk_02034956 > 40) {
-                        gUnk_02034956 = 40;
+                    if (gUnk_02034956 > MOVIE_SUB_MAX_CHARS) {
+                        gUnk_02034956 = MOVIE_SUB_MAX_CHARS;
                     }
                 } else {
+                    MovieSub* e;
+
                     gUnk_0203494C = e = &((MovieSub*)gUnk_02034950)[gUnk_02034944];
                     gUnk_02034958 |= 2;
                     gUnk_0203495C = e->unk_0A;
@@ -98,10 +112,14 @@ s32 func_0805E93C(void) {
                         gUnk_02034944++;
                     }
 
+#ifdef VERSION_JP
+                    gUnk_0203495E = func_0805E848((u8*)e->unk_04);
+#else
                     gUnk_0203495E = func_0805E89C(e->unk_04);
+#endif
 
-                    if (gUnk_0203495E > 40) {
-                        gUnk_0203495E = 40;
+                    if (gUnk_0203495E > MOVIE_SUB_MAX_CHARS) {
+                        gUnk_0203495E = MOVIE_SUB_MAX_CHARS;
                     }
                 }
             }
@@ -118,9 +136,6 @@ s32 func_0805E93C(void) {
     gUnk_02034942++;
     return 0;
 }
-#else
-INCLUDE_ASM("mode_movie/func_0805E93C.s");
-#endif
 void func_0805EA90(void) {
     u16* oam;
 #ifndef VERSION_JP
