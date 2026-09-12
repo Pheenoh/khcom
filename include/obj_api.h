@@ -14,5 +14,13 @@ struct ObjPaletteNode* AllocObjPalette(u16 size);
 void ReleaseObjPalette(struct ObjPaletteNode* palette);
 u8 DrawSprite(s16 x, s16 y, void* sprite, void* tiles, void* palette, s32 affine, u16 flags, u16 priority);
 u8* AllocObjAffine(u8 angle, s32 sx, s32 sy, u8 flags);
+u8* AllocObjAffineAngle(u8 angle, u8 flags);
+u8 CanAllocObjTiles(u16 size);
+void SpriteReset(void);
+void func_08002A10(void* tiles, void* src);
+u16 func_08003524(u16** sprites, u16 count);
+u16 func_08003598(u16* sprite);
+struct ObjTiles* func_080038C8(u16 size);
+u8 func_080038E4(struct ObjTiles* tiles, u16* sprite, void* src);
 
 #endif

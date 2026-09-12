@@ -1,6 +1,10 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include "card_deck.h"
+
+#include "display.h"
+#include "anim.h"
 #include <string.h>
 #include <stdlib.h>
 #include "fade.h"
@@ -349,13 +353,11 @@ u8 func_0807643C(void);
 void func_08019350(void);
 void func_080197AC(void);
 void func_0801B024(BtlObj* p);
-u8 CanAllocObjTiles(u16 a);
 u8 CanAllocObjPalette(s32 a);
 u8 func_0801BDDC(s32 id, s32 x, s32 y, s32 z);
 u16 func_08093B38(void);
 void func_0809B6D0(void* p, s16 x, s16 y, s16 z, u16 n);
 void func_08096DB0(void* p, UnkStruct_0801B8A8* v);
-void func_08005974(void* a, u8 b, u16 c, s32 d, void* e);
 void func_08006778(void* a, s32 x, s32 y);
 void func_08012674(void);
 void func_08006B80(u16* a, u16* b);
@@ -394,7 +396,6 @@ void func_08017EF4(void);
 void func_0801536C(void);
 BtlObj* func_08016320(void);
 void func_080192E0(void);
-void func_0801C2DC(BtlObj* p, u8 f);
 void func_08013D60(void);
 void func_080166F8(void);
 void func_08012BCC(void);
@@ -410,7 +411,6 @@ void func_080185D0(void);
 void func_0801884C(void);
 void func_0801235C(ListPool* a, ListPool* b);
 s64 __ashldi3(s64 v, s32 n);
-void SetBgBlend(s32 a, s32 b, s32 c);
 void func_080065FC(s32 a, s32 b, s32 c);
 void func_080066F4(s16 x, s16 y);
 u8 func_080ABED0(void);
@@ -434,7 +434,6 @@ void func_0801475C(s32 a, s32 b, s32 c);
 void func_080147A8(s32 a, s32 b, s32 c);
 void func_080147B8(u8 a);
 void func_0801C274(s32 a, s32 b, s32 c);
-u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void func_0801CA88(void);
 void func_0801CB00(void);
 void func_0801CB44(void);
@@ -445,7 +444,6 @@ s32 func_08011F68(s32 a, s32 b);
 void func_08012810(void);
 void func_08014790(u8 bit);
 void func_080147C8(s32 a, s32 b);
-void func_08019050(u16 a, s32 b, s32 c, s32 d);
 void func_0800FDD0(u32 a);
 u8 func_0807E29C(void);
 u8 func_08081870(void);
@@ -454,7 +452,6 @@ u8 func_0807E33C(void);
 u8 func_08081848(void);
 void func_08096DC4(void* pool, void* arg);
 void func_0801C104(void);
-u8 IsTaskActiveNamed(Task* task, const char* name);
 void func_08076360(void);
 void func_080838E8(void);
 void func_08076374(void);
@@ -651,8 +648,6 @@ void func_080149BC(s32 x, s32 y);
 void func_08014A34(s32 x, s32 y);
 void func_08014AAC(s32 x, s32 y);
 void func_08019C5C(void);
-void func_0801A920(u16 a, u16 b, u16 c, u16 d);
-void func_08019068(AnimDef* tbl, void* a, u16 i, u16 j, void* obj);
 void func_0801C7FC(HitData* a, u16 b, s32 c);
 u8 func_0800FBCC(u32 a);
 void func_0800FC14(s32 a);
@@ -660,18 +655,14 @@ void func_080121FC(FldObj* p);
 void func_08012214(void);
 void func_08012330(ListPool* pool);
 u8 func_080126E4(u8 a);
-void func_0801C298(u8 a, u8 b);
 void func_0801CB0C(void);
 void func_0801CB18(void);
 u8 func_0800FC5C(s32 a);
 u8 func_08012648(Collider* p);
-u8 func_0801C1C0(u8 a);
 s32 func_0801A978(BtlObj* p);
-void func_0801B008(void);
 void func_0801BCC0(s32 a, s32 b, s32 c);
 u8 func_08085BAC(void);
 u8 func_080856DC(void);
-u8 GetActiveDeckIndex(void);
 u16 func_08085B38(u8 index);
 void func_0809B710(void* pool, s16 a, s16 b, s16 c, u16 d);
 

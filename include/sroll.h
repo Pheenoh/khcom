@@ -1,6 +1,7 @@
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
+#include "anim.h"
 #include <stdlib.h>
 #include "fade.h"
 #include "obj_api.h"
@@ -397,7 +398,6 @@ void task_sroll_tmr_0(SrollTmrWork* w, void* arg);
 u8 task_sroll_tmr_1(SrollTmrWork* w);
 void func_08000714(void);
 void func_08116E98(void);
-void func_08005974(void* a, u16 b, u16 c, void* d, void* e);
 void func_081154A0(u32* dst, u8* src, u32* pal, s32 x);
 void func_081154EC(u32* dst, u8* src, u32* pal, s32 x);
 void func_08115548(u32* dst, u8* src, u32* pal, s32 x);

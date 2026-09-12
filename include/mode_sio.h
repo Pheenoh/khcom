@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "engine_math.h"
+
+#include "card_deck.h"
+
 #include "text.h"
 #include "fade.h"
 #include "obj_api.h"
@@ -475,18 +479,11 @@ extern void* gUnk_09EF3904[];
 extern void* gUnk_09EF390C[];
 extern void* gUnk_09EF3920[];
 
-void SetBgSize(s32 a, s32 b);
-void SetBgBlend(s32 a, u16 b, u16 c);
-void SetBgOverflow(s32 bg, u8 on);
 u8 func_080C5930(void);
 void SaveWriteFileLarge(u16 file);
-void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void FadePaletteToBlack(void* src, void* dst, u16 size, u16 amount);
 void LoadPaletteWithEffect(void* src, void* dst, u16 size);
-void func_0805F1C0(s32* p, s32 v);
 void func_080C57A4(void);
-void func_08002A10(void* a, void* b);
-void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void SioReset(void);
 u8 func_080C54B4(void);
 void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c);
@@ -497,7 +494,6 @@ void func_080C5DC0(s32 (*a)(void), s32 (*b)(void));
 s32 func_080C6008(void);
 s32 func_080C60D8(void);
 void func_080C61D4(void);
-u8 GetActiveDeckIndex(void);
 void func_080C57B4(void);
 s32 func_080C5E58(void);
 s32 func_080C5ECC(void);

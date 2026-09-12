@@ -1668,9 +1668,9 @@ void mode_chkobj_1(void) {
             func_0805FCB0(166, 0, 2, gChkObjEntries[gChkObjWork->unk_18].name);
         }
 
-        SetBackdropColor(abs(gSineTable[gChkObjWork->unk_42 & 0xFF] * 5 >> 6),
-                      abs(gSineTable[(gChkObjWork->unk_42 / 2) & 0xFF] * 5 >> 6),
-                      abs(gSineTable[(gChkObjWork->unk_42 / 4) & 0xFF] * 5 >> 6));
+        SetBackdropColor((u16)abs(gSineTable[gChkObjWork->unk_42 & 0xFF] * 5 >> 6),
+                      (u16)abs(gSineTable[(gChkObjWork->unk_42 / 2) & 0xFF] * 5 >> 6),
+                      (u16)abs(gSineTable[(gChkObjWork->unk_42 / 4) & 0xFF] * 5 >> 6));
 
         if (GetKeysHeld() & DPAD_UP) {
             gChkObjWork->unk_46--;

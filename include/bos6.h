@@ -31,8 +31,6 @@ typedef struct PcPos {
 } PcPos;
 
 
-void func_0800516C(s32 a, void* b, s32 c, s32 d);
-void func_08005244(s32 a, u16 b, u16 c);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
@@ -493,8 +491,6 @@ extern u8 gUnk_09C51CBC[];
 extern u8 gUnk_09EFADBC[];
 extern u8 gUnk_09EFAD74[];
 
-void func_08002A10(u32 a, void* b);
-void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);
 
 void func_0810CE1C(BosLstWork* work);
 void func_0810C57C(BosLstWork* work, s16 a);
@@ -521,7 +517,6 @@ extern const PcShot gUnk_09A4C9F8[];
 PcAnimStep* func_08109EB0(PcWork* work);
 void func_080147D8(s32 x, s32 y);
 void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t);
-u8 func_0801C1C0(s32 a);
 void func_0810A454(PcWork* work);
 u8 func_0810A9CC(PcWork* work, s32 arg);
 u8 task_bos_pc_1(PcWork* work, s32 arg);
@@ -530,7 +525,6 @@ void func_0810A444(PcWork* work);
 void func_0810A4CC(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e);
 void func_0810A51C(PcWork* work, TaskPool* pool);
 void func_0801BCC0(s32 a, s32 b, s32 c);
-void func_0801C298(u8 a, u8 b);
 
 extern u8 gTaskDescBosPcFld[];
 extern u8 gUnk_09A3DF0C[];
@@ -549,7 +543,6 @@ extern u8 gUnk_09D4DA74[];
 extern u8 gUnk_09D4B274[];
 
 void task_bos_lst_0(BosLstWork* work, void* pool);
-u16 func_08003524(void* a, s32 b);
 void func_0801C7FC(void* a, s32 b, s32 c);
 void func_0810FF6C(Task* t, s32 a);
 void func_0801836C(s32 a, s32 b, s32 c, s32 d, s32 e);
@@ -663,8 +656,6 @@ void func_08018184(s32 a, s32 b, s32 c, s32 d);
 
 u8 func_0810C32C(BosLstWork* work, s32 a);
 
-void func_0801C2DC(void* a, s32 b);
-void func_0801B008(void);
 void func_08096DC4(void* a, void* b);
 u8 func_0810AF44(PcWork* work, s32 arg);
 

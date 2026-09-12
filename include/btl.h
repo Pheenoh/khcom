@@ -278,8 +278,6 @@ extern u8 gUnk_09EE10EC[];
 extern u8 gUnk_09EE10F8[];
 extern u8 gUnk_08F69BA4[];
 
-void func_08002A10(void* a, void* b);
-void func_08005974(AnimState* a, u8 b, u16 c, void* d, void* e);
 void func_0801D288(void);
 extern u32 gFrameCounter;
 u8 CanLevelUp(void);
@@ -288,7 +286,6 @@ u8 func_080A1B4C(BtlObj* p, void* pool);
 void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);
 s32 task_btl_sora_1(BtlSoraWork* work);
-void func_08019050(u16 a, s32 b, s32 c, s32 d);
 void func_08015F3C(s32 x, s32 y, s32 z);
 void func_080165DC(s32 x, s32 y, s32 z);
 void func_08016684(s32 x, s32 y, s32 z);
@@ -318,7 +315,6 @@ void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
 void func_08016750(s32 x, s32 y, s32 z, u8 f);
 void func_08014FDC(s32 x, s32 y, u8 f);
 void func_080137C8(s32 x, s32 y, s32 z, u8 f);
-u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 s32 func_08011F68(s32 a, BtlObj* b);
 void func_0807E1E8(void);
 void func_0802F1E8(void);
@@ -333,11 +329,9 @@ void func_080161F8(s32 x, s32 y, s32 z, u8 f);
 void func_08018F28(s32 x, s32 y, s32 z);
 void func_08018FE4(s32 x, s32 y, s32 z);
 void func_080184C4(s32 x, s32 y, s32 z, u8 f);
-void func_08019A30(void);
 void func_08015DC8(s32 x, s32 y, s32 z);
 extern TaskDesc gTaskDescSmnKing;
 void func_08015D30(s32 x, s32 y, s32 z);
-u8 IsTaskActiveNamed(s32 task, const char* name);
 extern TaskDesc gTaskDescBtlRaid;
 extern TaskDesc gTaskDescSmnBambi;
 extern TaskDesc gTaskDescSmnTink;
@@ -358,7 +352,6 @@ s32 func_080ABCA4(s32* out, s32 b);
 void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0801475C(s32 a, s32 b, s32 c);
-u32 func_0801A8A4(s32* x, s32* y, s32 a, s32 b);
 void func_080140C0(s32* a, s32* b, s32* c);
 void func_0802F284(s32 a, s32 b, s32 c);
 
@@ -371,8 +364,6 @@ typedef struct BtlMapWork {
 } BtlMapWork;
 
 extern const s8 gUnk_0813C7D8[];
-void SetBgSize(s32 bg, s32 size);
-void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0802F1C8(void);
 void func_0802F1E8(void);
 void func_08017B74(s32 x, s32 w);

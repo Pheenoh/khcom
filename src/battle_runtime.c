@@ -951,7 +951,9 @@ void _08019CB4(void) {
 ALIGN_ZERO(2);
 
 
-u8 func_0801A8A4(s32* px, s32* py, u16 rx, u16 ry) {
+u32 func_0801A8A4(s32* px, s32* py, s32 radiusX, s32 radiusY) {
+    u16 rx = radiusX;
+    u16 ry = radiusY;
     u8 r = 0;
 
     if (*py < (gBtlWork->unk_0DE - (s16)ry) << 8) {
@@ -976,7 +978,12 @@ u8 func_0801A8A4(s32* px, s32* py, u16 rx, u16 ry) {
     return r;
 }
 
-void func_0801A920(u16 a, u16 b, u16 c, u16 d) {
+void func_0801A920(s32 xMin, s32 xMax, s32 yMin, s32 yMax) {
+    u16 a = xMin;
+    u16 b = xMax;
+    u16 c = yMin;
+    u16 d = yMax;
+
     gBtlWork->unk_0DA = a;
     gBtlWork->unk_0DC = b;
     gBtlWork->unk_0DE = c;

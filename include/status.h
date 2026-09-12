@@ -1,6 +1,11 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "engine_math.h"
+
+#include "card_deck.h"
+
+#include "anim.h"
 #include "text.h"
 #include "fade.h"
 #include "btl_effect.h"
@@ -323,11 +328,7 @@ extern TaskDesc gTaskDescBosBoogieDisk;
 extern TaskDesc gTaskDescBosBoogieKnifereader;
 extern TaskDesc gTaskDescBosBoogieKaihuku;
 
-u16 func_08003524(void* a, s32 b);
 u8* func_080857BC(u8 index);
-u8 GetActiveDeckIndex(void);
-void func_0805F1C0(s32* p, s32 v);
-void func_080038E4(void* a, u32 b, u32 c);
 u8 func_0800FBCC(s32 a);
 u8 func_0800FD20(s32 a);
 
@@ -353,13 +354,10 @@ void* func_080D8EB4(void* a, u16 b, u8 c, u16 d, s32 e);
 u8 func_080D8F04(void* a);
 void func_0800FD68(s32 a);
 void func_0801BDDC(s32 a, s32 b, s32 c, s32 d);
-void func_08005974(AnimState* a, u16 b, u16 c, u32 d, u32 e);
 void func_080D9A14(void);
 void func_080D7568(u8 a);
 void func_080D78B8(StatusBarWork* work);
 u8 func_080D7890(void);
-void func_0801A920(s32 a, s32 b, s32 c, s32 d);
-void func_0801C2DC(void* a, s32 b);
 void func_080D900C(BoogieWork* work, s32 a, u16 b);
 void func_080D83F4(void);
 
@@ -383,14 +381,11 @@ typedef struct BoogiePalette {
 extern s16 gSineTable[];
 extern TaskDesc gTaskDescBosBoogieDice;
 void func_08014AAC(s32 x, s32 y);
-void func_0801C298(u8 a, u8 b);
 void func_0801536C(void);
 void func_08096DC4(TaskPool* pool, BoogieFx* p);
-void func_0801B008(void);
 void func_08083914(void);
 void func_08083900(u8 a);
 u8 func_08083920(void);
-u8 func_0801C1C0(s32 a);
 void func_080D9A58(void);
 void func_080D8F14(BoogieWork* work);
 u8 func_080D9058(s32* x, s32* y);

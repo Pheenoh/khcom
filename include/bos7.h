@@ -529,10 +529,6 @@ extern u16 gWin0V;
 extern u16 gWinIn;
 extern u16 gWinOut;
 
-void func_0801C2DC(void* a, s32 b);
-void SetBackdropColor(s32 a, s32 b, s32 c);
-void SetBgColorMode(s32 bg, s32 mode);
-void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08116F08(void);
 void func_0801CD74(EvtObj* obj, s32 anim);
 void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c);
@@ -544,8 +540,6 @@ void func_08116ECC(void);
 void SoftReset(s32 flags);
 u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);
-void SetBgSize(s32 bg, s32 size);
-void SpriteReset(void);
 void func_0802F1C8(void);
 void func_0802F208(void);
 void func_0810FEDC(void);
@@ -560,7 +554,6 @@ s32 func_0810FF44(void);
 void func_0810FF50(Task* t, s32 a, s32 b);
 void func_0810FF64(Task* t, s32 a);
 void func_0810FF6C(Task* t, s32 a);
-s32 AllocObjAffineAngle(s32 a, s32 b);
 
 void func_08116CEC(void);
 

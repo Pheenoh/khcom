@@ -75,8 +75,6 @@ extern EvtObjAnim gUnk_0813766C[];
 extern EvtObjResTable gUnk_0813B09C[];
 extern u8 gTaskDescEvtObj[];
 
-void func_08002A10(void* a, void* b);
-void func_08005974(void* a, u16 b, u16 c, void* d, void* e);
 
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_08B22CE4[];

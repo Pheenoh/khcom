@@ -1,3 +1,4 @@
+#include "obj_api.h"
 #include "fade.h"
 #include "macros.h"
 #include "listpool.h"
@@ -30,8 +31,6 @@ extern Mode gModeLang;
 extern Mode gModeCopyright1;
 extern Mode* gDebugModes[];
 
-u8 IsTaskActiveNamed(Task* t, const char* name);
-const char* GetTaskName(Task* t);
 void func_08000F94(void);
 void ModeStart(Mode* mode, s32 arg);
 #ifdef VERSION_EU
@@ -54,7 +53,6 @@ void UpdateDebugModeSelect(void);
 u16 _08006338(void);
 void VTransReset(void);
 void BgReset(void);
-void SpriteReset(void);
 void MosaicReset(void);
 void func_08004938(void);
 void FlushDma3Queue(void);

@@ -6,6 +6,7 @@
 u16 GetKeysHeld(void);
 u16 GetKeysPressed(void);
 u16 GetKeysRepeat(void);
+u8 GetKeyReleaseTime(u16 key);
 void UpdateKeyState(void);
 void ResetKeyState(void);
 

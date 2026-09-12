@@ -1,3 +1,4 @@
+#include "display.h"
 #include "gba/syscall.h"
 #include "listpool.h"
 #include "malloc.h"
@@ -9,7 +10,6 @@ extern u8 sSpriteHeapName[];
 
 extern u16 gDispCnt;
 
-void SetObjMosaicSize(u8 a, u8 b);
 
 void EnableObj(void);
 void DisableObj(void);

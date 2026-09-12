@@ -193,7 +193,6 @@ u8 func_080022D4(s16 x, s16 y, void* obj, void* e, s32 f, u16 g, u16 h);
 void func_0800284C(ObjTiles* p);
 void func_08002880(ObjTiles* p);
 void func_080028A0(ObjTiles* p);
-void func_08002A10(void* a, void* b);
 void func_08002BCC(ObjPaletteNode* p);
 void func_080034D8(u8 a);
 s32 func_08005920(u16 a);
@@ -210,19 +209,15 @@ void SetBgMosaic(s32 bg, u8 on);
 void FadeFree(void);
 u8 GetBgScrollX(u32 a);
 u8 GetBgScrollY(u32 a);
-void SetBgOverflow(s32 bg, u8 on);
 void func_0800380C(ObjTiles* t, u16 slot, void* src, u16 size);
 void func_08003858(ObjTiles* t, u16 slot, u16 size, void* src);
 void* func_08004BD8(BgEntry* e, u16 x, u16 y);
-u8 func_08005AC4(AnimState* a);
 void func_08006494(u16 a, u16 b);
 void func_080064E8(u16 a, u16 b);
 u8 MosaicIsActive(void);
 void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size);
 s32 Sqrt8(s32 a);
-void SetObjMosaicSize(u8 a, u8 b);
 void func_08003510(u8 a);
-ObjTiles* func_080038C8(u16 a);
 void func_08003A70(ObjTiles* t, void* src);
 void SetBgMosaicSize(u8 a, u8 b);
 s32 Lerp8(s32 a, s32 b, s32 t);
@@ -233,8 +228,6 @@ void FadeInit(void);
 void InitDisplayRegs(void);
 
 #ifdef VERSION_EU
-void eu_080059D4(s32 bg, void* tiles);
-void eu_080059F4(s32 bg, void* map);
 u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h);
 void eu_08005ADC(s32 id);
 #endif

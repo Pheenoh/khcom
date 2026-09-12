@@ -1,3 +1,4 @@
+#include "display.h"
 #include "obj_api.h"
 #include "macros.h"
 #include "btl.h"
@@ -10707,8 +10708,6 @@ void task_btl_riku_3(BtlRikuWork* work) {
 }
 
 #ifdef VERSION_EU
-void eu_080059D4(s32 bg, void* tiles);
-void eu_080059F4(s32 bg, void* map);
 extern u8 gUnkEu_08C9CD3C[];
 extern u8 gUnkEu_08F79520[];
 extern u8 gUnkEu_08F74484[];

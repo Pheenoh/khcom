@@ -41,7 +41,6 @@ u8 gKeyReleaseSelect;
 
 
 u8 GetKeyHoldTime(u16 key);
-u8 GetKeyReleaseTime(u16 key);
 u16 func_080015F8(u16 a, u16 b);
 u16 func_080016EC(void);
 

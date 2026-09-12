@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_MOVIE_H
 #define GUARD_MODE_MOVIE_H
 
+#include "obj_api.h"
 #include "types.h"
 #include "mode.h"
 #include "gba/syscall.h"
@@ -63,7 +64,6 @@ void MovieClose(void);
 void PalletInit(void);
 void VTransReset(void);
 void BgReset(void);
-void SpriteReset(void);
 void func_0806180C(s32 a);
 void func_0805EA90(void);
 s32 func_0805E93C(void);

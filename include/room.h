@@ -193,12 +193,8 @@ typedef struct CharaObjParam {
 
 void func_080C6894(CharaObjParam* param);
 u8 func_080C69B4(void);
-void func_0801B008(void);
 
-u16 func_08003524(void* a, s32 b);
-void func_0801A8A4(void* a, void* b, s32 c, s32 d);
 void func_0801C7FC(void* a, s32 b, s32 c);
-s32 AllocObjAffineAngle(u8 a, s32 b);
 void func_0802F1E8(void);
 
 s32 func_080F7F70(GaWork* work, s16 i);

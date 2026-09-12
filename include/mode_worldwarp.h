@@ -145,7 +145,6 @@ void func_081006AC(void);
 u8 func_080A42C8(void);
 void func_080A42E0(void);
 void func_08102F30(void);
-void SpriteReset(void);
 u8 func_080DF750(void);
 void func_0810057C(s16 a, s16 b, void* c, s16 d, s16 e, void* f, s16 g, s16 h);
 void func_081004EC(s32 a, s32 b, s32 c, void* d, s32 e, s32 f);

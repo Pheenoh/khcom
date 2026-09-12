@@ -1,3 +1,4 @@
+#include "display.h"
 #include "macros.h"
 #include "mode_debug.h"
 #include "game_state.h"
@@ -15,8 +16,6 @@ const char gUnk_081283C0[12] = "E041220b";
 #endif
 
 #ifdef VERSION_EU
-void eu_080059D4(s32 bg, void* tiles);
-void eu_080059F4(s32 bg, void* map);
 extern u32 gUnkEu_03006C10;
 extern u8 gUnkEu_08F6B5FC[];
 extern u8 gUnkEu_08F7913C[];

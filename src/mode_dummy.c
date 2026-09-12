@@ -1,9 +1,8 @@
+#include "display.h"
 #include "macros.h"
 #include "mode_dummy.h"
 
 #ifdef VERSION_EU
-extern void eu_080059D4(s32 bg, void* tiles);
-extern void eu_080059F4(s32 bg, void* map);
 extern void* gUnkEu_08F6A73C;
 extern void* gUnkEu_08F79038;
 #endif

@@ -1,11 +1,10 @@
+#include "display.h"
 #include "macros.h"
 #include "mode_chkeff.h"
 
 ChkEffWork* gChkEffWork;
 #ifdef VERSION_EU
 u32 gUnkEu_020348C4;
-extern void eu_080059D4(s32 bg, void* tiles);
-extern void eu_080059F4(s32 bg, void* map);
 extern u8 gUnkEu_08F6A73C[];
 extern u8 gUnkEu_08F79038[];
 #endif

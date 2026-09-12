@@ -1,3 +1,4 @@
+#include "engine_math.h"
 #include "m4a_song.h"
 #include "text.h"
 #include "fade.h"
@@ -81,7 +82,6 @@ extern WorldinspectWarpIcon gUnk_09EF9384[];
 extern u8 gUnk_0999F400[];
 extern u8 gUnk_0999F416[];
 extern u8 gUnk_0999F44A[];
-void func_0805F1C0(s32* p, s32 v);
 
 typedef struct {
     u16 unk_00;
@@ -166,7 +166,6 @@ extern u8 gUnk_09A5B580[];
 extern u8 gUnk_09A55A80[];
 extern u8 gUnk_09A5C280[];
 #endif
-void SpriteReset(void);
 void func_080FF19C(s16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 void func_080FF10C(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y);
 void func_080FF2B8(s16 index);

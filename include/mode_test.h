@@ -193,7 +193,6 @@ typedef struct UnkModeTestWork {
     s32 scale;
 } UnkModeTestWork;
 
-u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 typedef struct UnkModeTestArgs {
     u16 card;
     u8 side;
@@ -203,7 +202,6 @@ typedef struct UnkModeTestArgs {
 extern u8 gUnk_09849A98[];
 extern u8 gUnkEu_08896524[];
 extern TaskDesc gTaskDescBtlShadow;
-void func_08019068(void* resource, AnimState* anim, s32 a, s32 b, void* tiles);
 
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a);
@@ -228,7 +226,6 @@ typedef struct LockonWork {
     u8 unk_4D[3];
 } LockonWork;
 
-void func_08002A10(void* a, void* b);
 u32 Sqrt(u32 a);
 s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
 void func_080B0754(void);
@@ -242,7 +239,6 @@ u8 func_080A42C8(void);
 void mode_test_0(void);
 void mode_test_1(void);
 void mode_test_2(void);
-void func_0805F1C0(s32* p, s32 v);
 s32 func_0805F588(s32 a, s32 b);
 s32 func_0805F5A4(s32* x, s32* y);
 void func_0805F66C(LockonWork* w);

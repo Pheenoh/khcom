@@ -1,3 +1,4 @@
+#include "display.h"
 #include "text.h"
 #include "macros.h"
 #include "anim.h"
@@ -9,8 +10,6 @@ extern void* gUnkEu_08890E44[];
 extern u8 gUnkEu_0919B63A[];
 extern void* gUnkEu_09F5D7E4[];
 extern u8 gUnkEu_095A3D74[];
-void eu_080059D4(s32 bg, void* tiles);
-void eu_080059F4(s32 bg, void* map);
 void eu_08005A1C(s32 bg, void* map, s32 x, s32 y);
 u8 eu_0806C734(EventSeqWork* work);
 u8 eu_0806C7C8(EventSeqWork* work);

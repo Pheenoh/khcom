@@ -228,18 +228,12 @@ typedef struct BtlStartWork {
     s16 unk_02;
 } BtlStartWork;
 
-u8 GetKeyReleaseTime(s32 a);
-u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
 s32 func_080DFF1C(FldPos* p);
 u8 func_080DFCDC(FldPos* p);
 u8 func_080DFBDC(FldPos* p);
 u8 _080DFE1C(FldPos* p);
-void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
-void func_08002A10(void* a, void* b);
 void func_08006778(void* a, s32 x, s32 y);
 void func_0800675C(u8 a, s32 b, s32 c);
-void SetBgBlend(s32 a, s32 b, s32 c);
-void func_08019050(s32 a, s32 b, s32 c, s32 d);
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 

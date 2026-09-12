@@ -260,15 +260,12 @@ typedef struct Emy83sWork {
     s16 unk_022;
 } Emy83sWork;
 
-u8 IsTaskActiveNamed(void* task, void* name);
 void func_0800C778(EmyWork* work, void* def, void* obj);
 void func_0800DF30(EmyWork* work);
 void func_0800E0D0(EmyWork* work);
-s32 func_0801A8A4(void* a, void* b, s32 c, s32 d);
 
 u8 _0800CBDC(EmyWork* work);
 u8 _0800CDF0(EmyWork* work);
-void func_08019068(void* a, void* b, s32 c, s32 d, void* e);
 s16 func_0800C980(EmyWork* work, s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
 void func_080141FC(BtlObj* a);
 void func_08012AAC(s32 a, s32 b, s32 c, s32 d);
@@ -282,7 +279,6 @@ void func_080150D8(s32 x, s32 y, s32 z, u8 f);
 void func_0800CB4C(EmyWork* work);
 void func_0800CD40(EmyWork* work);
 void func_08015834(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h);
-void func_08019A30(void);
 void func_08014020(s32 x, s32 y, s32 z);
 void func_0800FDD0(s32 a);
 void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);

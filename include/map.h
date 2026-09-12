@@ -1,6 +1,8 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
+#include "card_deck.h"
+
 #include "m4a_song.h"
 #include <string.h>
 #include <stdlib.h>
@@ -1598,7 +1600,6 @@ extern void* gTaskDescMapNamine;
 extern void* gTaskDescMapNiseriku;
 extern void* gTaskDescMapMickey;
 
-u8 GetActiveDeckIndex(void);
 void* func_080857BC(u8 a);
 void func_080D8B84(void* a, void* b, void* c);
 void func_080ED250(u8* work);
@@ -1609,7 +1610,6 @@ void func_080EBFB8(UnkStruct_02034FE0* work);
 void func_080EBFF8(UnkStruct_02034FE0* work);
 void func_080EC04C(UnkStruct_02034FE0* work);
 void func_080EBFF8(UnkStruct_02034FE0* work);
-void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
 void func_080121D4(UnkStruct_080E6394* p);
@@ -1666,7 +1666,6 @@ void func_080F33D0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg);
 void func_080F369C(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg);
 void func_080F42B4(MapGmk04Work* w, UnkStruct_0203C7B8* arg);
 s32 func_080EE824(MapSaveWork* w);
-void func_0805F1C0(s32* p, s32 v);
 s32 func_080ED6CC(MapMenuWork* w);
 s32 func_080ED7CC(MapMenuWork* w);
 s32 func_080EDA90(MapMenuWork* w);
@@ -1713,7 +1712,6 @@ s32 func_080F3108(MapGmkGp8Work* w);
 s32 func_080F30C4(MapGmkGp8Work* w);
 void func_080E4B34(void);
 void func_08066918(void* a, void* b);
-void func_08005244(s32 bg, u16 x, u16 y);
 void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 u16 CountCardsById(u16 cardId);
 void func_0801CCB4(void);
@@ -1731,15 +1729,12 @@ extern Mode gModeMovie;
 extern Mode gModeDebflag;
 extern Mode gModeTitle;
 s32 Sqrt8(s32 a);
-void* func_080038C8(u16 a);
-void func_080038E4(void* a, void* b, void* c);
 void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);
 void* func_08093BF8(void);
 void func_080DF640(u8 a, void* p);
 s32 func_080ECAC8(UnkStruct_080ECA88* p);
 s32 func_080ECBC8(UnkStruct_080ECA88* p);
 s32 func_080ECC54(UnkStruct_080ECA88* p);
-u8 func_08005AC4(AnimState* a);
 void func_080F0550(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg);
 void func_080F02A0(UnkStruct_080F023C* w);
 void func_080F0348(UnkStruct_080F023C* w);
@@ -1799,7 +1794,6 @@ u8 func_080E8374(UnkStruct_080E8374* p);
 u16 func_080E83C4(void);
 void func_080E83DC(s32 a, s32 b, s32 c);
 void func_080E55E4(const u8* src);
-void func_080051C4(s32 a, u16 b, u16 c);
 void func_080E5800(void);
 void func_080E8864(UnkStruct_080E8864* p);
 u8 func_080E87EC(s16 x, s16 y, const UnkStruct_080E87EC* p);
@@ -1850,7 +1844,6 @@ void func_0806180C(u16 a);
 void func_080DFA3C(void);
 void func_080104F4(void);
 void func_080DEF20(void);
-void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_0801CB00(void);
 void func_08006494(u16 a, u16 b);
 void func_0801CB0C(void);
@@ -2073,8 +2066,6 @@ void func_080A4188(void* pool, u16 b);
 void func_080C736C(void);
 void func_080C73A4(s32 a, s32 b, s32 c);
 void func_080C7568(u32 a, u16 b);
-void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
-void func_08002A10(void* a, void* b);
 u16 func_0806692C(u8* s, u16* out);
 void func_08066DC0(s32 x, s32 y, void* s, void* d, void* e, s32 h, s32 n);
 u16 func_08066AF8(s32 v, u16* out);
