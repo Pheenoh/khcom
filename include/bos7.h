@@ -1,6 +1,10 @@
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
+#include "m4a_song.h"
+#include <stdlib.h>
+#include "fade.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -525,15 +529,11 @@ extern u16 gWin0V;
 extern u16 gWinIn;
 extern u16 gWinOut;
 
-u16 func_0801AF1C(s32 a);
 void func_0801C2DC(void* a, s32 b);
 void SetBackdropColor(s32 a, s32 b, s32 c);
-void func_08006120(s32 a, s32 b);
-void func_08006184(s32 a, s32 b);
 void SetBgColorMode(s32 bg, s32 mode);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_08116F08(void);
-void func_08000DE8(TaskPool* a, Task* t);
 void func_0801CD74(EvtObj* obj, s32 anim);
 void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c);
 void func_0801CE00(EvtObj* obj, u16 a);
@@ -545,7 +545,6 @@ void SoftReset(s32 flags);
 u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);
 void SetBgSize(s32 bg, s32 size);
-u8 func_08006314(void);
 void SpriteReset(void);
 void func_0802F1C8(void);
 void func_0802F208(void);
@@ -561,9 +560,6 @@ s32 func_0810FF44(void);
 void func_0810FF50(Task* t, s32 a, s32 b);
 void func_0810FF64(Task* t, s32 a);
 void func_0810FF6C(Task* t, s32 a);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-s32 abs(s32 x);
-void m4aSongNumStart(u16 id);
 s32 AllocObjAffineAngle(s32 a, s32 b);
 
 void func_08116CEC(void);
@@ -660,7 +656,6 @@ void task_bos_lst_bit_2(LstState* work);
 void func_08110C9C(LstState* work);
 void func_081115CC(LstWork* work, Vec3* a, Vec3* b, s32 c, u16 d);
 void func_08111660(LstLsrTask* t);
-void func_080062F4(u16 a, s32 b);
 void func_0811614C(void* sw, void* init);
 void func_081166F8(void* sw, s32 a, s32 b, s32 c, s32 d, s32 e);
 void func_08116268(void* sw, u16 a, u16 b, u16 c, u16 d);

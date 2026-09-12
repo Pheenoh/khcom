@@ -1,6 +1,11 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "m4a_song.h"
+#include <string.h>
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -45,7 +50,6 @@ typedef struct UnkStruct_0203C590 {
 extern UnkStruct_0203C590 gUnk_0203C590;
 extern u32 gUnk_09EF69FC[];
 
-void func_08012304(void* a);
 
 typedef struct UnkStruct_080DEDD8 {
     u8 unk_00;
@@ -217,9 +221,7 @@ typedef struct UrsulaThunderWork {
 
 extern u16 gDispCnt;
 
-u8 IsTaskActive(Task* t);
 void func_08017390(s32 x, s32 y, s32 z);
-u8 func_080128EC(void);
 void func_080155BC(s32 a, s32 b, s32 c, s32 d);
 void func_080DD69C(s32 a);
 void func_0801CB00(void);
@@ -249,7 +251,6 @@ void func_080DF480(void);
 u8 func_080DF500(void);
 u8 func_080DF4D8(void);
 u16 func_080DBE64(void);
-u8 func_08006314(void);
 u8 func_080DA4DC(u8* p);
 u8 func_080DDE74(UnkStruct_080DDDDC* p);
 void task_bos_boogie_explosiondice_3(BoogieExplosiondiceWork* work);
@@ -452,7 +453,6 @@ extern u16 gUnk_0203C560;
 
 void func_0801C298(u8 a, u8 b);
 void func_0801C2DC(void* a, s32 b);
-u16 func_0801AF1C(s32 a);
 UnkStruct_080DFB8C* func_080DFB8C(s32 x, s32 y);
 u8 func_080E86C8(UnkStruct_080DFB8C* p, s32 x, s32 y);
 u8 func_080DDDEC(UnkStruct_080DDDDC* p, UnkStruct_096FE034* q, u8 a);
@@ -460,7 +460,6 @@ u8 func_080DFBDC(UnkStruct_080DFF1C* p);
 s32 func_080DFF1C(UnkStruct_080DFF1C* p);
 void func_08085C3C(void);
 void func_08014020(s32 x, s32 y, s32 z);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
 typedef struct UnkStruct_080DF640 {
     u16 unk_00;
     u16 unk_02;
@@ -470,7 +469,6 @@ extern const u8 gUnk_0984D0CC[][4];
 extern vu32 gFrameCounter;
 
 void func_080DF640(u8 a, UnkStruct_080DF640* p);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 extern u8 gUnk_0203C578;
 extern u8 gUnk_0203C56C;
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
@@ -505,7 +503,6 @@ extern u8 gUnk_09EF680C[];
 extern u8 gUnk_09EF67FC[];
 void func_080DF6D0(UnkStruct_0203C7AC* p, u8 a);
 u8 _080DFE1C(UnkStruct_080DFF1C* p);
-void m4aSongNumStart(u16 id);
 u8 func_080DFC24(void);
 UnkStruct_080DFB8C* func_080E548C(s16 a, s16 b);
 UnkStruct_080DFB8C* func_080E58F8(s16 a, s16 b);
@@ -717,7 +714,6 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg);
 u8 task_bos_ursula_tako_1(UrsulaTakoWork* work);
 void _0801C1F8(s32 a, s32 b, s32 c, s32 d);
 u8 func_08005AC4(AnimState* a);
-void func_08012614(void* a, s32 b);
 void func_0801C7FC(void* a, s32 b, s32 c);
 void func_08083914(void);
 extern u8 gUnk_096FE1A8[];
@@ -734,7 +730,6 @@ void func_080DE2A4(MapChkWork* p);
 void Mode_MapChk_0(void);
 s32 SaveLoadHeader(void);
 void func_0805FA8C(s32 a, s32 b, s32 c);
-void func_08006120(s32 a, s32 b);
 void m4aMPlayAllStop(void);
 extern const char gUnk_0984B72C[];
 extern const char gUnk_0984B77C[];
@@ -814,7 +809,6 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work);
 void func_0802F274(s32 a, s32 b);
 void func_08015228(s32 x, s32 y, s32 z, s32 s);
 extern u8 gUnk_0203C570;
-void func_08014780(s32 a, s32 b, s32 c);
 void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a);
 extern UnkStruct_096FE034 gUnk_096FE260;
 extern u8 gTaskDescBosUrsulaBubble[];
@@ -838,7 +832,6 @@ u8 task_bos_boogie_knife_1(BoogieKnifeWork* work);
 void func_080DF380(void);
 void task_bos_boogie_knife_2(BoogieKnifeWork* work);
 void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg);
-void func_080122AC(void* a, s32 b, s32 c, s32 d);
 extern u8 gUnk_09EF6774[];
 extern u8 gUnk_0979666A[];
 extern u8 gUnk_0984AF98[];
@@ -880,7 +873,6 @@ extern u8 gUnk_0979D090[];
 extern u8 gUnk_0979D8B8[];
 u8 func_080DF750(void);
 const char* GetTaskName(void* t);
-void func_08000DE8(TaskPool* a, Task* t);
 s32 strcmp(const char* a, const char* b);
 extern const char gUnk_096FE2F4[];
 extern u8 gTaskDescBosUrsulaThunder[];
@@ -888,7 +880,6 @@ extern UnkStruct_096FE034 gUnk_096FE2C0;
 void func_080DA42C(BoogieDiceWork* work);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_08002A10(void* a, void* b);
-void* memcpy(void* dst, const void* src, unsigned long n);
 extern u8 gUnk_096FDF7C[];
 extern u8 gUnk_0203C558;
 void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg);

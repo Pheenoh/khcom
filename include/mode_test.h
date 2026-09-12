@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -201,19 +204,11 @@ extern u8 gUnk_09849A98[];
 extern u8 gUnkEu_08896524[];
 extern TaskDesc gTaskDescBtlShadow;
 void func_08019068(void* resource, AnimState* anim, s32 a, s32 b, void* tiles);
-void func_080122AC(void* particles, s32 a, u16 b, u16 c);
 
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_0802F284(s32 a, s32 b, s32 c);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
-void func_08012614(void* a, s32 b);
-u8 func_08012660(void* a, s32 b);
 void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a);
-void func_08014780(s32 x, s32 y, s32 z);
 void func_080147B8(u8 a);
 void func_0802F1E8(void);
-void func_08012304(void* particles);
-u16 func_0801AF1C(s32 y);
 
 #endif
 
@@ -236,14 +231,10 @@ typedef struct LockonWork {
 void func_08002A10(void* a, void* b);
 u32 Sqrt(u32 a);
 s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
-void UpdatePlayTime(void);
 void func_080B0754(void);
 void func_080E052C(u8 a);
 void func_0801CB0C(void);
-void func_08006184(s32 a, u16 b);
-u8 func_08006314(void);
 void func_080E04EC(void);
-void func_08006120(s32 a, s32 b);
 void func_080A42B4(void);
 void func_08061824(void);
 u8 func_080A42C8(void);

@@ -1,6 +1,11 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "m4a_song.h"
+#include "text.h"
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -17,11 +22,9 @@
 
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08005244(s32 a, u16 b, u16 c);
-u16 func_0801AF1C(s32 a);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
-void func_08012304(void* a);
 
 
 typedef struct GaEntryDesc {
@@ -318,9 +321,6 @@ extern u32 gUnk_09EF9740[];
 
 void func_080FCC14(MdFireWork* work);
 u8 func_080FCCB4(MdFireWork* work);
-void func_08012324();
-void func_080122AC(void* a, s32 b, s32 c, s32 d);
-void func_08012614(void* a, s32 b);
 void func_080F83E0(GaWork* work, GaEntryWork* e);
 void func_080F8374(GaEntryWork* e);
 
@@ -376,7 +376,6 @@ s32 task_bos_md_dai_1(MdDaiWork* work);
 void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg);
 void func_080FCF78(MdFireWork* work);
 u8 func_080F7E0C(s32 a, s32 b, s32 c, s32 d);
-u8 func_08012660(void* a, s32 b);
 extern s16 gSineTable[];
 extern MdFireDef gUnk_09992EF8[];
 extern u8 gUnk_09992F28[];
@@ -388,8 +387,6 @@ extern u8 gTaskDescBosMdFire[];
 void task_bos_md_dai_2(MdDaiWork* work);
 extern u8 gUnk_09999E0C[];
 extern u8 gUnk_09999E1C[];
-void ColliderSetHeight(void* a, u16 b);
-void m4aSongNumStart(u16 n);
 extern u8 gTaskDescBosMdHahen[];
 u8 task_bos_ga_1(GaWork* work);
 void func_080FB000(GaWork* work, GaEntryWork* p);
@@ -433,11 +430,9 @@ extern u8 gUnk_0999C394[];
 extern u8 gUnk_0999C3C8[];
 extern void* gUnk_09EF9770[];
 void mode_worldselect_1(void);
-void UpdatePlayTime(void);
 void func_080A411C(void* pool, u32 a, u16 b);
 u8 func_080A42C8(void);
 u8 func_08006B74(void);
-void func_080063A8(void);
 void func_080E04EC(void);
 void func_080DFA18(u8 a);
 void func_0806180C(u16 a);
@@ -449,7 +444,6 @@ extern u8 gUnk_09A315DC[];
 extern u8 gUnk_09A31FDC[];
 void mode_worldselect_0(void);
 void SpriteReset(void);
-void func_08006120(s32 a, u16 b);
 void func_080065FC(s32 a, s32 b, s32 c);
 void func_08006778(void* a, s32 x, s32 y);
 void func_08006B34(u16 a);
@@ -466,7 +460,6 @@ extern u8 gUnk_0999CBB6[];
 extern u8 gUnk_0999C410[];
 void func_080FF8CC(void);
 void func_0805F1C0(s32* p, s32 v);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 extern s32 gUnk_020354D0;
 extern s32 gUnk_020354C8[];
 extern s32 gUnk_020354D8;
@@ -505,7 +498,6 @@ typedef struct MdWorldNav {
 } MdWorldNav;
 
 extern MdWorldNav gUnk_09EF8FAC[];
-void func_08006184(s32 a, u16 b);
 extern void* gUnk_020354A8[];
 extern void* gUnk_020354B0[];
 extern void* gUnk_02035168[];
@@ -531,7 +523,6 @@ extern u8 gTaskDescBosMdDai[];
 void func_0801853C(s32 a, s32 b, s32 c, s32 d);
 void func_0802F1E8(void);
 void func_08019A30(void);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_080FBA4C(MdWork* work);
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09A3C97C[];
@@ -557,7 +548,6 @@ extern MdMsg gUnk_09EF909C[];
 extern void* gUnk_09EE9138[];
 extern u8 gUnk_020351F8[];
 extern u8 gUnk_020352C0[];
-u16 func_08065B6C(u16* a, TextSlot* b);
 u8 func_080FF228(s16 id);
 u8 func_080FF25C(s16 id);
 void func_080FC3FC(MdWork* work);
@@ -570,12 +560,9 @@ typedef struct PrizeCardArg {
 } PrizeCardArg;
 
 u8 func_080FC17C(MdWork* work);
-u8 func_08006314(void);
 void func_08014AAC(s32 a, s32 b);
-void func_08006238(s32 a, u8 b, s32 c);
 void func_0801536C(void);
 u16 func_08006390(void);
-u8 func_080128EC(void);
 void func_08096DC4(void* a, void* b);
 void func_0801B008(void);
 void func_080FC29C(MdWork* work);

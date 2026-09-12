@@ -1,6 +1,10 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "text.h"
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "types.h"
@@ -320,12 +324,8 @@ extern TaskDesc gTaskDescBosBoogieKnifereader;
 extern TaskDesc gTaskDescBosBoogieKaihuku;
 
 u16 func_08003524(void* a, s32 b);
-void func_08065ACC(TextSlot* p, s32 n);
-void func_08065AE0(TextSlot* p, s32 n);
-u16 func_08065B6C(u16* a, TextSlot* b);
 u8* func_080857BC(u8 index);
 u8 GetActiveDeckIndex(void);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void func_0805F1C0(s32* p, s32 v);
 void func_080038E4(void* a, u32 b, u32 c);
 u8 func_0800FBCC(s32 a);
@@ -351,20 +351,16 @@ void func_080D8374(void);
 u16 func_080D8B84(void** a, void** b, void** c);
 void* func_080D8EB4(void* a, u16 b, u8 c, u16 d, s32 e);
 u8 func_080D8F04(void* a);
-void func_08000DE8(TaskPool* a, Task* t);
 void func_0800FD68(s32 a);
 void func_0801BDDC(s32 a, s32 b, s32 c, s32 d);
 void func_08005974(AnimState* a, u16 b, u16 c, u32 d, u32 e);
 void func_080D9A14(void);
-void func_08006184(s32 a, u16 b);
 void func_080D7568(u8 a);
 void func_080D78B8(StatusBarWork* work);
 u8 func_080D7890(void);
-u16 func_0801AF1C(s32 a);
 void func_0801A920(s32 a, s32 b, s32 c, s32 d);
 void func_0801C2DC(void* a, s32 b);
 void func_080D900C(BoogieWork* work, s32 a, u16 b);
-u8 IsTaskActive(Task* t);
 void func_080D83F4(void);
 
 typedef struct BoogieFx {
@@ -388,9 +384,7 @@ extern s16 gSineTable[];
 extern TaskDesc gTaskDescBosBoogieDice;
 void func_08014AAC(s32 x, s32 y);
 void func_0801C298(u8 a, u8 b);
-void func_08006238(s32 a, s32 b, s32 c);
 void func_0801536C(void);
-u8 func_080128EC(void);
 void func_08096DC4(TaskPool* pool, BoogieFx* p);
 void func_0801B008(void);
 void func_08083914(void);
@@ -400,6 +394,5 @@ u8 func_0801C1C0(s32 a);
 void func_080D9A58(void);
 void func_080D8F14(BoogieWork* work);
 u8 func_080D9058(s32* x, s32* y);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
 
 #endif /* GUARD_STATUS_H */

@@ -1,6 +1,9 @@
 #ifndef GUARD_MS_CHARGE_H
 #define GUARD_MS_CHARGE_H
 
+#include <string.h>
+#include "text.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "types.h"
 #include "text_types.h"
@@ -65,14 +68,9 @@ extern u8 gUnk_09A3DE08[];
 extern u8 gUnk_09A3DE7C[];
 extern void* gUnk_09EE8F48[];
 
-void* memcpy(void* dst, const void* src, unsigned long n);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
-void func_08006184(s32 a, u16 b);
 void func_0805F1C0(s32* p, s32 v);
 u16 func_08060A2C(u16 a);
-s16 func_08065B08(TextSlot* p, u8 n);
-u16 func_08065B6C(u16* a, TextSlot* b);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 s16 func_08084BAC(void);
 s16 func_08084BF0(void);
 void func_080850B0(u16* p);

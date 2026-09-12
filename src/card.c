@@ -1,3 +1,9 @@
+#include "m4a_song.h"
+#include "game_state.h"
+#include <string.h>
+#include "text.h"
+#include "fade.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "display.h"
@@ -79,7 +85,6 @@ extern u8 gUnkEu_09162C8C[];
 #endif
 
 #ifdef VERSION_EU
-extern void* eu_0805E924(void* strings);
 extern u32 gLanguage;
 extern void* gUnkEu_09F72A64[];
 extern void* gUnkEu_09F72A3C[];
@@ -190,15 +195,11 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a);
 void func_0808DB04(void** p);
 void func_0808CDE8(u8* work, u8 b);
 u16 func_0806BA74(s32 mode, s32 flag);
-void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_08098670(UnkStruct_08098670* p, u16 a);
 void func_080DFF4C(void* p);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
 u8 func_08085290(u16 a);
 s32 func_080938F8(u16 a);
 u16 func_080857D4(u8 slot);
-u16 func_08065B6C(u16* a, TextSlot* b);
-s16 func_08065B08(TextSlot* p, u8 n);
 #ifdef VERSION_EU
 s16 eu_0806629C(TextSlot* p, u8 n);
 #endif
@@ -220,11 +221,9 @@ void func_0807C33C(UnkStruct_02034AAC* p);
 void func_0808DE28(u8 a);
 s32 func_080609AC(u16 a);
 s32 func_0808C8D0(s32 a);
-void func_08065ACC(TextSlot* p, s32 n);
 void func_080AB1F8(u8 a, u16 b);
 void func_080AB964(void);
 void func_080AB968(void);
-void* memcpy(void* dst, const void* src, unsigned long n);
 s16 func_080858B8(s32 index);
 void func_08085A58(s32 index, u16* dst);
 u8 func_080A42C8(void);
@@ -232,14 +231,9 @@ s32 func_080A40EC(u64* src);
 s32 func_080A4D7C(u64* src);
 UnkStruct_080038C8* func_080038C8(s32 size);
 void func_080038E4(UnkStruct_080038C8* a, void* b, void* c);
-void m4aSongNumStart(u16 n);
-void m4aSongNumStop(u16 n);
 s32 func_0801A8A4(void* a, void* b, s32 c, s32 d);
-void ColliderSetRadius(void* a, u16 b);
 u8 func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
-void func_08012614(void* a, s32 b);
 u16 func_08006390(void);
-void func_08006290(s32 a, u16 b, u16 c);
 u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
 u8 func_0807FB5C(UnkStruct_08080268* w, void* a);
 void func_0807FD10(UnkStruct_08080268* w, u8 n);
@@ -259,8 +253,6 @@ void func_0807B45C(UnkStruct_08080268* w);
 void func_0807B478(UnkStruct_02034AAC* w);
 u8 func_0808EC24(UnkStruct_0808DB04* w);
 void func_0808EA0C(UnkStruct_0808DB04* w, u8 mode);
-u8 func_08006314(void);
-void func_08006184(s32 a, s32 b);
 void SetTaskUpdate(u8* p, u32 v);
 u8 func_080A8C20(u8* work);
 u8 func_080A86F4(UnkStruct_0808C940* w, void* a);
@@ -272,8 +264,6 @@ u8 func_0809511C(ReloadGageWork* w, void* a);
 u8 func_080954C4(ReloadGageWork* w, void* a);
 u8 func_08089558(u8* work, void* a);
 s32 func_0809AD98(UnkStruct_0809A02C* w, void* a);
-void func_080062F4(u16 a, s32 b);
-void func_08012304(void* a);
 void func_0808E364(u8* work, u8 b);
 u8 func_08088F24(UnkStruct_0808DB04* w, void* a);
 u8 func_08089220(u8* work, void* a);
@@ -330,10 +320,8 @@ extern s16 gUnk_09EE4BB8[];
 extern s16 gUnk_09EE4BC2[];
 void func_0808C940(UnkStruct_0808C940* w, s16 n);
 void func_0808C974(UnkStruct_0808C940* w);
-void func_08065AE0(TextSlot* p, s32 n);
 void func_08096638(PrizeCardWork* w);
 void SetObjMosaicSize(s32 a, s32 b);
-void func_08006120(s32 a, s32 b);
 void func_0800443C(u32 a, s32 b);
 u8 func_080864A4(u8* work, void* a);
 s32 func_0805F588(s32 a, s32 b);
@@ -361,9 +349,7 @@ u8 func_080A8430(UnkStruct_0808C940* w, void* a);
 void func_08090170(UnkStruct_0808E890* node);
 u8 func_08096390(PrizeCardWork* w);
 void func_080A9968(u8* work);
-void UpdatePlayTime(void);
 void func_080B31A0(void);
-void func_080664D8(s16 a, s16 b, void* c, void* d, s32 e, u8 f);
 void func_0806BA0C(s16 v, u8* out);
 u8 Mapcard_1(MapcardWork* w, void* a);
 extern u16 gBldAlpha;
@@ -371,7 +357,6 @@ extern u8* gUnk_02039DC8;
 extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_09EEA164[];
 extern u8 gUnk_09EEA148[];
-void func_08006238(s32 a, u16 b, u16 c);
 void func_080AA6D4(u8 a);
 u8 func_0808A114(UnkStruct_0808DB04* work, void* a);
 u8 func_0809FE14(void);
@@ -385,13 +370,11 @@ u8 func_0807C5D8(UnkStruct_02034AAC* w, void* a);
 u8 card_enemy_1(UnkStruct_02034AAC* p, void* a);
 extern s32 gUnk_09034054[];
 extern void* gUnk_09EF126C[];
-void func_080063A8(void);
 void func_0801C1A0(s32 a);
 extern s32 gUnk_09035978[];
 u8 EV_BG_EFFECT_1(UnkStruct_080A1DAC* w, void* a);
 s32 func_0809CBD0(u8* work);
 u8 func_0809ACDC(UnkStruct_0809A02C* w);
-void func_080061E8(s32 a, u16 b);
 void func_080A1BB8(UnkStruct_080A1C48* w, void** t);
 void func_0809D124(UnkStruct_0809CE88* w);
 u16 func_08096D0C(u16 a, s32 b);
@@ -404,8 +387,6 @@ void func_0809D1B0(UnkStruct_0809CE88* w);
 void func_0809CAC8(void* work);
 u8 func_0800FCD8(s32 a, s32 b);
 u8 func_0800FC90(s32 a);
-void* func_080668F0(void);
-void* func_08066904(void);
 u16 func_0806692C(u8* s, u16* out);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_0809D160(UnkStruct_0809CE88* w);
@@ -452,7 +433,6 @@ CardSlot* func_08076674(UnkStruct_08080268* w, u8 slot, u16* n);
 CardSlot* func_08076750(UnkStruct_08080268* w, u8 slot, u16* n);
 void func_08083340(UnkStruct_02034AAC* p);
 u16 func_08084FAC(u8 slot);
-void* _08066468(s32 a);
 u8 func_080A5198(UnkStruct_080A3F5C* w, void* a);
 u8 func_080A5034(UnkStruct_080A3F5C* w, void* a);
 u8 func_0808A910(UnkStruct_0808DB04* w, void* a);

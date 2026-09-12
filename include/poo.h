@@ -1,6 +1,11 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "m4a_song.h"
+#include <string.h>
+#include <stdlib.h>
+#include "fade.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -1298,7 +1303,6 @@ extern PooActor gUnk_0203C420;
 #define REG_BG3CNT (*(vu16*)0x0400000C)
 #define REG_BG1HOFS (*(vu16*)0x04000018)
 
-void* memcpy(void* dst, const void* src, unsigned long n);
 
 void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p);
 void task_poo_zzz_2(PooZzzWork* w);
@@ -1319,7 +1323,6 @@ u8 task_poo_mapbeeborn_1(PooMapBornWork* w);
 u8 task_poo_mapbutterflyborn_1(PooMapBornWork* w);
 u8 task_poo_leaf_1(PooLeafWork* w);
 u8 func_080CA4E8(s16 x, s16 y, s16 h, s16 vy, s16 w, s16 vx, s32* ox, s32* oy);
-u8 IsTaskActive(Task* t);
 u16 func_080C7BF8(u8 kind, u8 count, s32 x, s32 y, s32 z);
 void func_080CE710(PooTiggerWork* w, u16 b);
 u8 task_poo_tiggerroo_1(PooTiggerWork* w);
@@ -1343,7 +1346,6 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w);
 void task_poo_honeycomb_0(PooHoneycombWork* w);
 void task_poo_spark_2(PooSparkWork* w);
 s32 func_080CCBF8(PooNode* n);
-void m4aSongNumStart(u16 n);
 u16 func_080C9EAC(void* pool, u16 b);
 u8 func_080CA3A0(PooPos* p);
 u8 func_080CA3FC(PooActor* p, s32 x, s32 y, s32* ox, s32* oy);
@@ -1404,7 +1406,6 @@ void func_080C9E84(void* pool);
 void func_080D1FB8(PooBflyPart* p);
 
 u16 func_08003524(void* a, s32 b);
-void m4aSongNumStop(u16 n);
 void func_080CCB90(PooNode* n, u16 v, void* p);
 void task_poo_honey_3(PooHoneyWork* w);
 u8 task_poo_mapanime_1(PooMapAnimeWork* w);
@@ -1426,7 +1427,6 @@ void task_poo_tiggerroo_3(PooTiggerWork* w);
 void task_poo_trapballoon_3(PooBalloonWork* w);
 void task_poo_owlballoon_3(PooOwlBalloonWork* w);
 u8 func_080DDDEC(void* p, void* q, u8 c);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
 void func_08005974(void* a, u16 b, u16 c, void* d, void* e);
 void func_08002A10(void* a, void* b);
 s32 func_080C8B38(PooAim* w, PooPos* p, u8* c);
@@ -1457,8 +1457,6 @@ void func_080CA270(PooMapWork* w);
 void func_08005244(s32 a, u16 b, u16 c);
 u8 GetKeyReleaseTime(s32 a);
 void func_080CA724(PooSoraWork* w);
-u8 func_08012660(void* p, s32 bit);
-s32 abs(s32 a);
 void func_0802F208(void);
 s32 func_0802F268(void);
 void task_poo_butterfly_2(PooButterflyWork* w);
@@ -1503,7 +1501,6 @@ void task_poo_owl_0(PooOwlWork* w);
 u8 task_poo_owl_1(PooOwlWork* w);
 void task_poo_rabbitAfterEvent_0(PooRabbitAfterEventWork* w);
 void task_poo_balloon_2(PooBalloonObjWork* w);
-void func_080122AC(void* p, s32 b, u16 c, u16 d);
 void task_poo_mapbeeborn_2(PooMapBornWork* w);
 void task_poo_mapbutterflyborn_2(PooMapBornWork* w);
 void task_poo_mapbutterfly_2(PooMapButterflyWork* w);
@@ -1545,15 +1542,12 @@ void func_080051C4(s32 a, u16 b, u16 c);
 void func_0802F1C8(void);
 extern TaskDesc gTaskDescPooMapanime;
 extern PooMapBgDesc gUnk_096FC6E0;
-void func_08012614(void* p, s32 b);
 extern u8 gUnk_098A5C90[];
 extern u8 gUnk_098A5C9A[];
 extern u8 gUnk_098A5CA4[];
 extern u8 gUnk_098A5CAE[];
 extern u8 gUnk_098A5CB8[];
 extern u8 gUnk_098A5CF4[];
-void ColliderSetHeight(void* p, u16 h);
-void func_08000DE8(TaskPool* a, Task* t);
 extern TaskDesc gTaskDescPooSpark;
 extern u8 gUnk_08F683A4[];
 extern TaskDesc gTaskDescFldShadow;
@@ -1585,7 +1579,6 @@ u8 task_poo_beeAfterEvent_1(PooBeeAfterEventWork* w);
 void task_poo_beeAfterEvent_3(PooBeeAfterEventWork* w);
 
 s32 func_080CFE34(PooPos* p);
-void func_08012304(void* a);
 void func_080DDDDC(void* p, void* q);
 void task_poo_map_2(PooMapWork* w);
 void task_poo_map_3(PooMapWork* w);
@@ -1681,7 +1674,5 @@ extern u8 gUnk_0203C3D8;
 u16 func_080CA67C(PooPos* p);
 u16 func_080CBAB0(PooPos* p);
 void func_080C7BCC(u16 a);
-void func_08006238(s32 a, s32 b, s32 c);
-void func_080062F4(u16 a, s32 b);
 
 #endif /* GUARD_POO_H */

@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "obj_api.h"
 #include "macros.h"
 #include "listpool.h"
@@ -72,7 +73,6 @@ extern u16 gSystemFlags;
 u16 GetObjTileCount(u16 a, u16 b);
 void func_08005C60(u16 a);
 void func_080051C4(s32 bg, u16 x, u16 y);
-s32 abs(s32 a);
 
 extern u16 gBldY;
 extern u16 gWin0H;

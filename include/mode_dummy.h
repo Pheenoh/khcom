@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_DUMMY_H
 #define GUARD_MODE_DUMMY_H
 
+#include "fade.h"
 #include "display.h"
 #include "types.h"
 #include "game_state.h"
@@ -26,10 +27,6 @@ extern Mode gModeLang;
 #endif
 
 void SetModeUpdate(void (*fn)(void));
-void func_08006120(s32 a, u16 b);
-void func_08006184(s32 a, u16 b);
-u8 func_08006314(void);
-void UpdatePlayTime(void);
 void func_0805FA8C(s32 a, u16 b, u16 c);
 void func_0805FCB0(s32 a, s32 b, s32 c, const char* s);
 void func_080605A4(s32 a);

@@ -1,3 +1,4 @@
+#include "fade.h"
 #include "macros.h"
 #include "engine_math.h"
 #include "listpool.h"
@@ -1364,7 +1365,6 @@ void func_080789E4(void* work);
 void func_08078BB4(void* work);
 u8 func_080782AC(UnkStruct_02034AAC** cards, u8 count);
 u16 func_08006390(void);
-void func_08006290(s32 a, u16 b, u16 c);
 s32 func_080AC5E8(void* cards, u8 count, u8 kind, UnkStruct_080ABA80* data, u8* flag);
 s32 func_080AD144(void* cards, u8 count, u8 kind, UnkStruct_080ABA80* data, u8* flag, void* arg);
 s32 func_080AE28C(void* cards, void* output, u8 count);

@@ -1,9 +1,9 @@
+#include "text.h"
 #include "macros.h"
 #include "ms_charge.h"
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
-extern void* eu_0805E924(void* strings);
 extern u32 gLanguage;
 extern void* gUnkEu_09F84FBC[];
 extern void* gUnkEu_09F84FD0[];

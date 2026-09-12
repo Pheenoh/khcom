@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_DEBUG_H
 #define GUARD_MODE_DEBUG_H
 
+#include "fade.h"
 #include "obj_api.h"
 #include "display.h"
 #include "types.h"
@@ -24,7 +25,6 @@ void SetBgSize(s32 a, s32 b);
 void SetBgColorMode(s32 a, s32 b);
 void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_08005974(void* a, u16 b, s32 c, void* d, void* e);
-void func_08006120(s32 a, s32 b);
 s16 GetPaletteEffect(void);
 void SetPaletteEffect(s16 a);
 void SaveClearHeader(void);

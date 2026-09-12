@@ -1,6 +1,11 @@
 #ifndef GUARD_SMN_H
 #define GUARD_SMN_H
 
+#include "m4a_song.h"
+#include <stdlib.h>
+#include "fade.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "types.h"
@@ -223,24 +228,15 @@ typedef struct SmnKingWork {
     u8 unk_15F[0x09];
 } SmnKingWork;
 
-void m4aSongNumStart(u16 n);
-void m4aSongNumStop(u16 n);
 
-u16 func_0801AF1C(s32 a);
 void func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
-s32 abs(s32 a);
-void func_08014780(s32 a, s32 b, s32 c);
 void func_080140E0(s32 a, s32 b, s32 c);
 void func_08019050(s32 a, s32 b, s32 c, s32 d);
 void func_08019A30(void);
 void func_08006B74(void);
-void func_08006184(s32 a, u16 b);
-void func_08006120(s32 a, u16 b);
 void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
 void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
 void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w);
-void func_08006238(s32 a, s32 b, s32 c);
-void func_080061E8(s32 a, s32 b);
 void func_08013480(s32 a, s32 b, s32 c);
 void func_08076284(void);
 void func_08076290(void);
@@ -251,13 +247,10 @@ void func_0801416C(s32 a, s32 b, s32 c);
 u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
 void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
 void func_0802F1E8(void);
-void func_08006290(s32 a, s32 b, s32 c);
 void func_08014FDC(s32 a, s32 b, s32 c);
 void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-u8 func_080128EC(void);
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_080147C8(s32 a, s32 b);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescBtlPrize[];

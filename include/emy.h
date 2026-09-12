@@ -1,7 +1,10 @@
 #ifndef GUARD_EMY_H
 #define GUARD_EMY_H
 
+#include "m4a_song.h"
 #include "obj_api.h"
+#include "btl_effect.h"
+#include "btl_collision.h"
 #include "battle_actor.h"
 #include "types.h"
 #include "engine_math.h"
@@ -261,15 +264,7 @@ u8 IsTaskActiveNamed(void* task, void* name);
 void func_0800C778(EmyWork* work, void* def, void* obj);
 void func_0800DF30(EmyWork* work);
 void func_0800E0D0(EmyWork* work);
-void func_08012304(void* p);
-void func_08012324(void* a, s32 x, s32 y, s32 z);
-void func_080122AC(void* a, s32 b, s32 c, s32 d);
-u16 func_0801AF1C(s32 a);
-s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
 s32 func_0801A8A4(void* a, void* b, s32 c, s32 d);
-void m4aSongNumStart(u16 n);
-void m4aSongNumStop(u16 n);
-void func_08012614(void* a, s32 b);
 
 u8 _0800CBDC(EmyWork* work);
 u8 _0800CDF0(EmyWork* work);
@@ -283,7 +278,6 @@ u8 func_08006B74(void);
 void func_0802F1E8(void);
 void func_08013480(s32 a, s32 b, s32 c);
 u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-u8 func_080128EC(void);
 void func_080150D8(s32 x, s32 y, s32 z, u8 f);
 void func_0800CB4C(EmyWork* work);
 void func_0800CD40(EmyWork* work);

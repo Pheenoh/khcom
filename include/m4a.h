@@ -1,6 +1,7 @@
 #ifndef GUARD_M4A_H
 #define GUARD_M4A_H
 
+#include "m4a_song.h"
 #include "types.h"
 #include "gba/syscall.h"
 
@@ -391,11 +392,6 @@ void MPlayContinue(MusicPlayerInfo* mplayInfo);
 void MPlayFadeOut(MusicPlayerInfo* mplayInfo, u16 speed);
 void m4aSoundInit(void);
 void m4aSoundMain(void);
-void m4aSongNumStart(u16 n);
-void m4aSongNumStartOrChange(u16 n);
-void m4aSongNumStartOrContinue(u16 n);
-void m4aSongNumStop(u16 n);
-void m4aSongNumContinue(u16 n);
 void m4aMPlayAllStop(void);
 void m4aMPlayContinue(MusicPlayerInfo* mplayInfo);
 void m4aMPlayAllContinue(void);

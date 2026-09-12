@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_CHKEFF_H
 #define GUARD_MODE_CHKEFF_H
 
+#include "fade.h"
 #include "display.h"
 #include "types.h"
 #include "taskpool.h"
@@ -22,7 +23,6 @@ typedef struct ChkEffWork {
     u16 alphaB;
 } ChkEffWork;
 void SetBgBlend(s32 a, s32 b, s32 c);
-void func_080062F4(s32 a, s32 b);
 void func_080065FC(s32 a, s32 b, s32 c);
 void func_0800675C(u8 a, s32 b, s32 c);
 void func_08006778(void* a, s32 x, s32 y);

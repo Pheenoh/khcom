@@ -83,4 +83,6 @@ typedef char GameFloor_size[(sizeof(GameFloor) == 4) ? 1 : -1];
 
 extern GameState gGameState;
 
+void UpdatePlayTime(void);
+
 #endif

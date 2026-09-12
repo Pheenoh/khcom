@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
+#include "fade.h"
 #include "obj_api.h"
 #include "types.h"
 #include "game_state.h"
@@ -59,13 +60,10 @@ void func_080C736C(void);
 void func_080C73A4(s32 a, s32 b, s32 c);
 void SetBgSize(s32 a, s32 b);
 void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-void func_08006120(s32 a, s32 b);
 void func_080C73D8(void);
 void func_080D5A4C(s32 a);
 void func_080D5B04(void);
 void func_080C75A4(s32 a, u16 b);
-void func_08006184(s32 a, u16 b);
-void func_08000DE8(TaskPool* a, Task* t);
 u8 func_080D6790(void);
 void func_080D5B30(void);
 void func_080D59B4(void);

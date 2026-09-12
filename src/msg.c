@@ -1,9 +1,9 @@
+#include "text.h"
 #include "macros.h"
 #include "anim.h"
 #include "msg.h"
 
 #ifdef VERSION_EU
-extern void* eu_0805E924(void* strings);
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
 extern u8 gUnkEu_0919B63A[];
@@ -3340,7 +3340,7 @@ void* _08066468(s32 a) {
     return r;
 }
 
-void func_080664D8(s16 x, s32 y, Ent08066588* p, void* d, u16 h, u8 n) {
+void func_080664D8(s16 x, s16 y, TextSlot* p, void* d, u16 h, u8 n) {
     s16 x0 = x;
     s16 cy = y;
     u8 i;
@@ -3350,11 +3350,11 @@ void func_080664D8(s16 x, s32 y, Ent08066588* p, void* d, u16 h, u8 n) {
 #endif
 
     for (i = 0; i < n; i++) {
-        if (p->unk_00 == NULL) {
+        if (p->tiles == NULL) {
             cy += 12;
             x = x0;
         } else if (p->unk_05 != -1) {
-            DrawSprite(x, cy, gUnk_09EEB204[0], p->unk_00, d, 0, 0, h);
+            DrawSprite(x, cy, gUnk_09EEB204[0], p->tiles, d, 0, 0, h);
             x += p->unk_05;
         } else {
             x += 3;
@@ -3363,7 +3363,7 @@ void func_080664D8(s16 x, s32 y, Ent08066588* p, void* d, u16 h, u8 n) {
     }
 }
 
-void func_08066588(s16 x, s32 y, Ent08066588* p, void* d, s32 e, u8 n) {
+void func_08066588(s16 x, s32 y, TextSlot* p, void* d, s32 e, u8 n) {
     s16 x0 = x;
     s16 cy = y;
     u8 i;
@@ -3373,11 +3373,11 @@ void func_08066588(s16 x, s32 y, Ent08066588* p, void* d, s32 e, u8 n) {
 #endif
 
     for (i = 0; i < n; i++) {
-        if (p->unk_00 == NULL) {
+        if (p->tiles == NULL) {
             cy += 12;
             x = x0;
         } else if (p->unk_05 != -1) {
-            func_08002488(x, cy, gUnk_09EEB204[0], p->unk_00, d, 0);
+            func_08002488(x, cy, gUnk_09EEB204[0], p->tiles, d, 0);
             x += p->unk_05;
         } else {
             x += 3;
@@ -3386,7 +3386,7 @@ void func_08066588(s16 x, s32 y, Ent08066588* p, void* d, s32 e, u8 n) {
     }
 }
 
-void func_0806662C(s16 x, s32 y, Ent08066588* p, void* d, u16 g, u16 h, u8 n) {
+void func_0806662C(s16 x, s32 y, TextSlot* p, void* d, u16 g, u16 h, u8 n) {
     s16 x0 = x;
     s16 cy = y;
     u8 i;
@@ -3396,11 +3396,11 @@ void func_0806662C(s16 x, s32 y, Ent08066588* p, void* d, u16 g, u16 h, u8 n) {
 #endif
 
     for (i = 0; i < n; i++) {
-        if (p->unk_00 == NULL) {
+        if (p->tiles == NULL) {
             cy += 12;
             x = x0;
         } else if (p->unk_05 != -1) {
-            DrawSprite(x, cy, gUnk_09EEB204[0], p->unk_00, d, 0, g, h);
+            DrawSprite(x, cy, gUnk_09EEB204[0], p->tiles, d, 0, g, h);
             x += p->unk_05;
         } else {
             x += 3;
@@ -3409,7 +3409,7 @@ void func_0806662C(s16 x, s32 y, Ent08066588* p, void* d, u16 g, u16 h, u8 n) {
     }
 }
 
-void func_080666F0(s16 x, s32 y, Ent08066588* p, void* d, void* e, u16 h, u8 n) {
+void func_080666F0(s16 x, s32 y, TextSlot* p, void* d, void* e, u16 h, u8 n) {
     s16 x0 = x;
     s16 cy = y;
     u8 i;
@@ -3419,14 +3419,14 @@ void func_080666F0(s16 x, s32 y, Ent08066588* p, void* d, void* e, u16 h, u8 n) 
 #endif
 
     for (i = 0; i < n; i++) {
-        if (p->unk_00 == NULL) {
+        if (p->tiles == NULL) {
             cy += 12;
             x = x0;
         } else if (p->unk_05 != -1) {
             if (p->unk_04 == 0) {
-                DrawSprite(x, cy, gUnk_09EEB204[0], p->unk_00, d, 0, 0, h);
+                DrawSprite(x, cy, gUnk_09EEB204[0], p->tiles, d, 0, 0, h);
             } else {
-                DrawSprite(x, cy, gUnk_09EEB204[0], p->unk_00, e, 0, 0, h);
+                DrawSprite(x, cy, gUnk_09EEB204[0], p->tiles, e, 0, 0, h);
             }
             x += p->unk_05;
         } else {

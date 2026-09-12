@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_ALLMAP_H
 #define GUARD_MODE_ALLMAP_H
 
+#include "game_state.h"
+#include "fade.h"
 #include "obj_api.h"
 #include "types.h"
 #include "m4a.h"
@@ -71,9 +73,6 @@ extern TaskDesc gTaskDescAllmapBar;
 void SetObjPaletteRange(s32 a, s32 b);
 u16 func_08003524(void* a, s32 b);
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
-void func_08006120(s32 a, u16 b);
-void func_080062F4(s32 a, s32 b);
-void UpdatePlayTime(void);
 void func_080D2F20(void);
 void func_080D2F64(void);
 void func_080D3008(void);

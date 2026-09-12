@@ -1,3 +1,4 @@
+#include "text.h"
 #include "macros.h"
 #include "mode_ms.h"
 
@@ -6,7 +7,6 @@ extern u32 gLanguage;
 extern void* gUnkEu_09F84EE8[];
 extern void* gUnkEu_09F84EFC[];
 extern void* gUnkEu_09F84F5C[];
-extern void* eu_0805E924(void* strings);
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #define LANGSEL(x) eu_0805E924(x)
 #else

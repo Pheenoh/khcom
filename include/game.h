@@ -2,6 +2,7 @@
 #define GUARD_GAME_H
 
 #include "obj_api.h"
+#include "btl_collision.h"
 #include "battle_actor.h"
 #include "display.h"
 #include "types.h"
@@ -92,12 +93,10 @@ extern UnkStruct_02039DD4* gUnk_02039DD4;
 
 void func_0800516C(s32 a, void* b, s32 c, s32 d);
 void func_08005244(s32 a, u16 b, u16 c);
-u16 func_0801AF1C(s32 a);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);
 
-void func_08012304(void* a);
 
 extern u8 gUnk_09EF2AA4[];
 

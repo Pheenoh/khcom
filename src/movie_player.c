@@ -1,3 +1,4 @@
+#include <string.h>
 #include "macros.h"
 #include "gba/syscall.h"
 #include "movie.h"
@@ -10,7 +11,6 @@ extern u8 gUnk_0811D1A4[];
 extern u8 gUnk_0811D1B0[];
 extern u16 gUnk_09D6D1E4[];
 
-void* memcpy(void* dst, const void* src, unsigned long n);
 
 extern u8 gUnk_081196B4[];
 extern u8 MovieVideoCodecEnd[];

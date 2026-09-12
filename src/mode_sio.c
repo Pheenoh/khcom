@@ -1,3 +1,4 @@
+#include "text.h"
 #include "macros.h"
 #include "mode_sio.h"
 #include "gba/keys.h"
@@ -44,7 +45,6 @@ extern u8 gUnkEu_08CB4D3C[];
 extern u8 gUnkEu_08C9CD3C[];
 extern u8 gUnkEu_08CC8BFC[];
 extern u8 gUnkEu_08CCCBFC[];
-extern void* eu_0805E924(void* strings);
 extern void func_080C7350(void);
 extern void* gUnkEu_08891580[];
 extern s16 eu_0806629C(TextSlot* text, u8 count);
