@@ -1,4 +1,5 @@
 #include "macros.h"
+#include "taskpool.h"
 #include "intr.h"
 #include "gba/syscall.h"
 #include "key.h"
@@ -91,7 +92,7 @@ void func_08000DE8(TaskPool* a, Task* t) {
     ListPoolRelease(&t->node, a);
 }
 
-Task* TaskCreate(void* a, TaskDesc* desc, void* arg) {
+Task* TaskCreate(TaskPool* a, TaskDesc* desc, void* arg) {
     Task* task;
 
     task = ListPoolFirstFree();

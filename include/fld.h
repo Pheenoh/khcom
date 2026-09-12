@@ -143,7 +143,6 @@ void func_08002A10(void* a, void* b);
 void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_0803473C(FldWork* work, s32 index, u16 flags);
 u8 GetKeyReleaseTime(s32 a);
-void TaskPoolUpdate(TaskPool* a);
 void SetTaskUpdate(u8* p, u32 v);
 u8 AnimIsFinished(AnimState* a);
 void func_080062F4(u16 a, s32 b);
@@ -161,8 +160,6 @@ void func_08031F98(FldWork* work, s32 a, s32 b);
 
 void* AllocObjTiles(s32 a, void* b);
 void* AnimGetGfx(AnimState* a);
-void TaskPoolInit(TaskPool* a, s32 count);
-void* TaskCreate(void* a, void* desc, void* args);
 void func_080122AC(void* a, s32 b, s32 c, s32 d);
 void func_080DFF4C(FldPos* p);
 void ApproachValue(s32* value, s32 target, u16 steps);

@@ -242,7 +242,6 @@ void SioKeyStateUpdateA(u16 a);
 void SioKeyStateUpdateB(u16 a);
 u16* func_08083C94(void);
 u16* func_08083D7C(void);
-void TaskPoolInit(TaskPool* a, s32 count);
 u16 GetRandom(void);
 void SeedRandom(u32 seed);
 void func_080078A4(void);
@@ -259,8 +258,6 @@ void func_08006184(s32 a, s32 b);
 void func_080063A8(void);
 void func_08006B4C(void);
 void m4aSongNumStop(u16 id);
-Task* TaskCreate(TaskPool* pool, TaskDesc* desc, void* args);
-void TaskPoolUpdate(TaskPool* pool);
 extern TaskDesc gUnk_09EF34A8;
 
 extern s16 gSineTable[];

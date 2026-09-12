@@ -394,12 +394,7 @@ typedef struct Emy83sWork {
     s16 unk_022;
 } Emy83sWork;
 
-void TaskPoolInit(TaskPool* a, s32 count);
-void TaskPoolDraw(TaskPool* a);
-void TaskPoolUpdate(TaskPool* a);
-void* TaskCreate(TaskPool* pool, void* desc, void* arg);
 u8 IsTaskActiveNamed(void* task, void* name);
-void TaskPoolDestroy(TaskPool* a);
 void func_0800C778(EmyWork* work, void* def, void* obj);
 void func_0800DF30(EmyWork* work);
 void func_0800E0D0(EmyWork* work);

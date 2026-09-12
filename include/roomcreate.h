@@ -54,11 +54,6 @@ extern TaskDesc gTaskDescSpotLight;
 
 struct Task;
 
-struct Task* TaskCreate(TaskPool* pool, TaskDesc* desc, void* arg);
-void TaskPoolInit(TaskPool* a, s32 count);
-void TaskPoolUpdate(TaskPool* a);
-void TaskPoolDraw(TaskPool* a);
-void TaskPoolDestroy(TaskPool* a);
 void func_08006120(s32 a, s32 b);
 void func_080062F4(u16 a, s32 b);
 void func_08093B78(TaskPool* pool, u8* p);

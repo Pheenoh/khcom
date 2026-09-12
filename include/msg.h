@@ -647,18 +647,13 @@ u8 func_0809D280(u8* s);
 u16 func_0806692C(u8* s, u16* out);
 u16 func_08066AF8(s32 v, u16* out);
 void func_0801CD74(void* a, s32 b);
-void TaskPoolUpdate(TaskPool* a);
 void SetTaskUpdate(u8* p, u32 v);
 u8 _0806E9DC(Work0806180C* p, void* a);
 void func_0801CE00(void* a, u16 b);
 void* memcpy(void* dst, const void* src, unsigned long n);
-void* TaskCreate(void* a, TaskDesc* desc, void* arg);
-void TaskPoolDestroy(TaskPool* a);
-void TaskPoolDraw(TaskPool* a);
 void LoadBgPalette(s32 bg, void* src, u16 size);
 void LoadBgTiles(s32 bg, void* src, u16 size);
 void SetBgPriority(s32 bg, u16 priority);
-void TaskPoolInit(TaskPool* a, s32 count);
 void func_08073E0C(void* pool, Work08073E34* p, u8 a, u8 b, u8 c);
 #ifdef VERSION_US
 s32 func_08064DD4(u16* a);

@@ -130,7 +130,7 @@ u8 gUnk_02034FA4;
 void* gUnk_02034FA8;
 u32 gUnk_02034FAC;
 s32 gUnk_02034FB0;
-void* gUnk_02034FB4;
+Task* gUnk_02034FB4;
 void* gUnk_02034FB8;
 u8 gUnk_02034FBC;
 u8 gUnk_02034FBD[0x17];
