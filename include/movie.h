@@ -59,12 +59,6 @@ extern MoviePlayer* gMoviePlayer;
 extern u8 gUnk_0203C7C8[8];
 extern MovieHeap gMovieHeap;
 
-
-void MovieSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
-s32 MovieStart(void* a);
-void MoviePlay(s32 (*a)(s32), s32 b);
-void MovieClose(void);
-void MovieUpdate(void);
 void MovieSetHeapCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
 void MovieAdvanceTicks(void);
 u8* MovieGetTicks(void);
@@ -84,6 +78,10 @@ u32 MovieGetChannels(MoviePlayer* a);
 u32 MovieGetSampleRate(MoviePlayer* a);
 void MovieGetSize(MoviePlayer* a, s32* w, s32* h);
 
-
+void MovieSetCallbacks(MovieAllocFunc a, MovieAllocFunc b, MovieFreeFunc c, MovieFreeFunc d);
+s32 MovieStart(void* a);
+void MoviePlay(s32 (*a)(s32), s32 b);
+void MovieClose(void);
+void MovieUpdate(void);
 
 #endif

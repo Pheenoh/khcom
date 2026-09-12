@@ -1,3 +1,5 @@
+#include "map_api.h"
+#include "ms_api.h"
 #include "fade.h"
 #include "obj_api.h"
 #include "pallet.h"

@@ -8,7 +8,6 @@ typedef void (*IntrFunc)(void);
 void EnableVBlankIntr(void);
 void DisableVBlankIntr(void);
 void EnableHBlankIntr(void);
-void DisableHBlankIntr(void);
 void SetVBlankCallback(IntrFunc fn);
 void ResetVBlankCallback(void);
 void SetHBlankCallback(IntrFunc fn);
@@ -21,5 +20,7 @@ void ResetTimer3Callback(void);
 void ApplyIntrCallbacks(void);
 
 void ResetHBlankCallback(void);
+
+void DisableHBlankIntr(void);
 
 #endif

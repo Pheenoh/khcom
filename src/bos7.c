@@ -1,6 +1,7 @@
 #include "mode.h"
 #include "macros.h"
 #include "bos7.h"
+#include "bos7_api.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
@@ -518,7 +519,7 @@ u8 eu_0810F08C(LstWork* work) {
 }
 #endif
 
-s16 func_0811095C(LstWork* work, u16 a) {
+s16 func_0811095C(LstWork* work, s16 a) {
     LstState* s;
 
     s = work->unk_04;
@@ -543,7 +544,7 @@ void func_08110984(LstWork* work) {
     s->unk_008 = zero;
 }
 
-void func_08110994(LstWork* work, u16 a) {
+void func_08110994(LstWork* work, s16 a) {
     LstState* s;
     u16 zero;
 

@@ -1,3 +1,8 @@
+#include "chara_api.h"
+#include "map_api.h"
+#include "msg_api.h"
+#include "mode_sio_api.h"
+#include "mode_sio2_api.h"
 #include "m4a_song.h"
 #include "pallet.h"
 #include "sio_api.h"
@@ -49,9 +54,7 @@ extern u8 gUnkEu_08CB4D3C[];
 extern u8 gUnkEu_08C9CD3C[];
 extern u8 gUnkEu_08CC8BFC[];
 extern u8 gUnkEu_08CCCBFC[];
-extern void func_080C7350(void);
 extern void* gUnkEu_08891580[];
-extern s16 eu_0806629C(TextSlot* text, u8 count);
 extern void eu_080C24D8(void);
 extern s32 eu_080C273C(void);
 extern s32 eu_080C2740(void);

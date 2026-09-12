@@ -1,6 +1,9 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "card_api.h"
+
+#include "chara_api.h"
 #include "pallet.h"
 #include "m4a_song.h"
 #include <string.h>
@@ -18,6 +21,8 @@
 #include "taskpool.h"
 #include "game.h"
 #include "boss_tm.h"
+#include "btl_api.h"
+#include "acgtrans.h"
 
 typedef struct CharaObjParam {
     u32 unk_00;
@@ -722,11 +727,9 @@ extern TmFootStep gUnk_09EF2464[];
 extern u8 gUnk_09619C94[];
 
 void func_080C1A48(JfBorderlineWork* work);
-void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count);
 s32 __divsi3(s32 a, s32 b);
 void func_080BB924(TmArmWork* work);
 void func_080BC304(TmArmWork* work);
-s32 func_0802F268(void);
 void func_080BE3DC(u8 a, JfMajinWork* work);
 void func_080BE478(u8 a, JfMajinWork* work);
 void func_080BE380(u8 a, u16 b, JfMajinWork* work);
@@ -775,7 +778,6 @@ void task_bos_tm_tbl_3(TmTblWork* work);
 void task_bos_tm_clb_3(TmClbWork* work);
 void func_080BA0E4(BtlObj* p, s32 a, s32 b, s32 c);
 void func_080BA0F8(BtlObj* work);
-void func_08083900(u8 a);
 void task_bos_tm_body_3(TmBodyWork* work);
 void func_080BB1B8(void* pool, TmClbArg* p, TmClbSrc* a);
 void func_080BB1D8(TmClbArg* p, TmClbSrc* a, s32 b);
@@ -801,7 +803,6 @@ void task_bos_jf_rock_3(JfRockWork* work);
 void func_080C29F4(DsdMainWork* work);
 void func_080C2944(DsdMainWork* work);
 void func_080C4398(DsdItaWork* work);
-void func_080C3C40(DsdMainWork* work);
 u8 func_080C0258(u16* p, s16 b, u8 c, u8 d);
 void func_080BA43C(TmFootWork* work, s16 a);
 void func_080BA62C(TmFootWork* work);
@@ -832,18 +833,12 @@ void func_080C02AC(JfMajinWork* work);
 u8 task_bos_jf_majin_1(JfMajinWork* work);
 u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work);
 void func_080C3754(DsdMainWork* work);
-void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src);
 void func_080C2BB0(DsdMainWork* work);
 void func_080C2A2C(DsdMainWork* work);
-void func_0802F274(s32 a, s32 b);
 void func_080C2CC0(DsdMainWork* work);
-void func_0802F1E8(void);
 void func_080C2FD8(DsdMainWork* work);
 void func_080C3574(DsdMainWork* work);
-u8 func_080C69B4(void);
-void func_080C6894(CharaObjParam* param);
 void func_080C3928(DsdMainWork* work);
-void func_080C3C40(DsdMainWork* work);
 void func_080C3188(DsdMainWork* work);
 void func_080C427C(DsdItaWork* work);
 void task_bos_jf_majin_2(JfMajinWork* work);
@@ -860,9 +855,10 @@ void task_bos_dsd_0(DsdWork* work, void* arg);
 void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg);
 void task_bos_jf_lamp_2(JfLampWork* work);
 void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg);
-void func_08096DC4(void* a, JfMajinFx* b);
 u8 task_bos_dsd_1(DsdWork* work);
 
 extern u8 gUnk_09EF1D58[];
+
+void func_080C3C40(DsdMainWork* work);
 
 #endif /* GUARD_BOS2_H */

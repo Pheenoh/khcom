@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_EVENTSELECT_H
 #define GUARD_MODE_EVENTSELECT_H
 
+#include "card_api.h"
+
+#include "msg_api.h"
 #include "mode_test_api.h"
 
 #include "eventselect_api.h"
@@ -172,21 +175,10 @@ extern Mode gUnkEu_09F5D6EC;
 
 extern TaskDesc gUnk_09EE4984[];
 
-void func_0806180C(u16 a);
-s16 func_08075064(u8 a);
-void func_08085C3C(void);
-void func_08085FB0(void);
-void func_08093BB4(void);
-void func_08066918(void* a, void* b);
 u8 _080669DC(s32 a, void* b);
-void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 u16 func_080787B8(CardBattleWork* w, u8 n);
-void func_0807B668(UnkStruct_02039DD4* p);
-void func_0807E23C(void);
-s32 func_08076F80(UnkStruct_08080268* w, u8* task);
 s32 func_08077F44(UnkStruct_08080268* w, u8* task);
 void func_0807682C(UnkStruct_08080268* w, u8 slot);
-void func_0807E248(void);
 
 void mode_eventselect_0(void);
 void mode_eventselect_1(void);
@@ -208,8 +200,6 @@ void EffectDrawObj(EffectWork* w);
 void EffectReleaseObj(EffectWork* w);
 void Question_0(EffectWork* w, EventActor* arg);
 void func_080758D0(EffectWork* w, EventActor* arg);
-CardSlot* func_08076674(UnkStruct_08078754* w, u8 slot, u16* n);
-CardSlot* func_08076750(UnkStruct_08078754* w, u8 slot, u16* n);
 s32 Question_1(EffectWork* w);
 s32 func_080759B0(EffectWork* w);
 void func_080759E0(EffectWork* w);
@@ -226,7 +216,6 @@ void Tinkerbell_0(EffectWork* w, void* arg);
 s32 Tinkerbell_1(EffectWork* w);
 void Tinkerbell_2(EffectWork* w);
 void Tinkerbell_3(EffectWork* w);
-void func_08075E60(EventTaskHost* h);
 void func_08075E74(EventTaskHost* h);
 void func_08075E88(EventTaskHost* h);
 void func_08075E9C(EventTaskHost* h);

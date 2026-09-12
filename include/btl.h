@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
 
+#include "card_api.h"
+
 #include "eventselect_api.h"
 
 #include "btl_tasks.h"
@@ -24,6 +26,7 @@
 #include "taskpool.h"
 #include "obj.h"
 #include "fld_types.h"
+#include "btl_api.h"
 
 typedef struct BtlSpawnArgs {
     u32 unk_00 : 16;
@@ -206,7 +209,6 @@ extern FldAnimDef gUnk_0813C4DC[][5];
 
 extern u16 gBldCnt;
 
-
 extern u8 gUnk_0813C294[];
 
 extern s16 gSineTable[];
@@ -284,22 +286,11 @@ extern u8 gUnk_09EE10EC[];
 extern u8 gUnk_09EE10F8[];
 extern u8 gUnk_08F69BA4[];
 
-void func_0801D288(void);
 extern u32 gFrameCounter;
 
-
-u8 func_080A1B4C(BtlObj* p, void* pool);
 void func_0801DEB8(BtlSoraWork* work);
 void func_0801DC5C(BtlSoraWork* work);
-void func_0807E1A0(void);
-void func_0807E1AC(void);
-void func_0807E1B8(void);
-void func_0807E1C4(void);
-void func_0807E1D0(void);
-void func_0807E1DC(void);
 void func_080137C8(s32 x, s32 y, s32 z, u8 f);
-void func_0807E1E8(void);
-void func_0802F1E8(void);
 void func_080161F8(s32 x, s32 y, s32 z, u8 f);
 extern TaskDesc gTaskDescSmnKing;
 extern TaskDesc gTaskDescBtlRaid;
@@ -317,10 +308,7 @@ extern TaskDesc gTaskDescFrdJack;
 extern TaskDesc gTaskDescFrdPan;
 extern TaskDesc gTaskDescFrdAladdin;
 extern TaskDesc gTaskDescFrdBeast;
-s32 func_080ABA80(s32* out);
 s32 func_080ABCA4(s32* out, s32 b);
-void func_0802F284(s32 a, s32 b, s32 c);
-
 
 typedef struct BtlMapWork {
     s32 unk_00;
@@ -330,11 +318,5 @@ typedef struct BtlMapWork {
 } BtlMapWork;
 
 extern const s8 gUnk_0813C7D8[];
-void func_0802F1C8(void);
-void func_0802F1E8(void);
-void func_0802F208(void);
-s32 func_0802F268(void);
-void func_0802F274(s32 a, s32 b);
-void func_0802F284(s32 a, s32 b, s32 c);
 
 #endif /* GUARD_BTL_H */

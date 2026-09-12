@@ -1,3 +1,4 @@
+#include "map_api.h"
 #include "m4a_song.h"
 #include "macros.h"
 #include "roomcreate.h"

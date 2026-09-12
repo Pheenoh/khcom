@@ -19,6 +19,7 @@
 #include "anim.h"
 #include "taskpool.h"
 #include "enemy_common.h"
+#include "btl_api.h"
 
 typedef struct EmyDef {
     void* unk_00;
@@ -265,10 +266,6 @@ typedef struct Emy83sWork {
     u16 unk_020;
     s16 unk_022;
 } Emy83sWork;
-
-
-void func_0802F1E8(void);
-
 
 extern s16 gSineTable[];
 extern u8 gUnk_08A20BCE[];

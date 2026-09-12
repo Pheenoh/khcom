@@ -1,6 +1,7 @@
 #include "obj_api.h"
 #include "poo.h"
 #include "macros.h"
+#include "poo_api.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
@@ -1316,7 +1317,7 @@ void func_080CA35C(void) {
     gUnk_0203C3F4 = 0;
 }
 
-void func_080CA368(void) {
+void func_080CA368(s32 a, u16 b, u16 c) {
 }
 
 u16 func_080CA36C(u16 x, u16 y) {

@@ -1,3 +1,4 @@
+#include "chara_api.h"
 #include "display.h"
 #include "pallet.h"
 #include "macros.h"

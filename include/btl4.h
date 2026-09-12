@@ -1,12 +1,15 @@
 #ifndef GUARD_BTL4_H
 #define GUARD_BTL4_H
 
+#include "card_api.h"
+
 #include "obj_api.h"
 #include "battle_actor.h"
 #include "types.h"
 #include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
+#include "btl4_api.h"
 typedef struct BtlEffect {
     u16 unk_00;
     u16 unk_02;
@@ -140,9 +143,7 @@ extern u8 gUnk_09EE1420[];
 extern u8 gUnk_09EE1498[];
 extern void* gUnk_09EE157C[];
 
-void func_080A411C(void* pool, u32 a, u16 b);
 void func_080A41F0(void* a, u16 b);
-void func_080A42E0(void);
 
 void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src);
 s32 task_btl_pop_cb_1(BtlPopCbWork* work);
@@ -162,14 +163,5 @@ void task_btl_hpoth_0(BtlHpothWork* work);
 s32 task_btl_hpoth_1(BtlHpothWork* work);
 void task_btl_hpoth_2(BtlHpothWork* work);
 void task_btl_hpoth_3(BtlHpothWork* work);
-void func_0805DA64(u16 a);
-void func_0805DA98(u16 a);
-void func_0805DAB4(void);
-void func_0805DACC(BtlEffect* p, u16 b, void* c);
-void func_0805DADC(BtlEffect* p, u16 b, void* c);
-void func_0805DAEC(void);
-void func_0805DAF8(BtlEffect* p, u16 b, void* c);
-void func_0805DB04(BtlEffect* p, u16 b, u16 c, u16 d);
-void func_0805DB28(BtlEffect* p);
 
 #endif /* GUARD_BTL4_H */

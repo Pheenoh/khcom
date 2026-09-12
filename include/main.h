@@ -15,4 +15,7 @@ s32 func_08000F90(void);
 void InitSystem(void);
 void InitIntrTable(void);
 
+void* GetEwramHeapStart(void);
+u32 GetEwramHeapSize(void);
+
 #endif /* GUARD_MAIN_H */

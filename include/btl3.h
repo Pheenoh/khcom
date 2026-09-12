@@ -17,6 +17,9 @@
 #include "game_state.h"
 #include "taskpool.h"
 #include "anim.h"
+#include "btl_api.h"
+#include "btl3_api.h"
+#include "romcri.h"
 typedef struct BtlFormStep {
     void* unk_00;
     s16 unk_04;
@@ -141,7 +144,6 @@ typedef struct BtlAiWork {
     s16 unk_16C;
 } BtlAiWork;
 
-
 extern s16 gSineTable[];
 extern u8 gUnk_08901C8A[];
 extern u8 gUnk_08B22CBC[];
@@ -154,12 +156,7 @@ extern u8 gUnk_096FAC64[];
 extern u8 gUnk_09EDF124[];
 extern u8 gUnk_09EDF154[];
 
-void func_0802F284(s32 a, s32 b, s32 c);
-u16 func_0803FDC8(BtlFormEntry* entry);
-
 void func_08040150(BtlRaidWork* work, s32* outX, s32* outY, s32* outZ);
 BtlObj* func_08040458(BtlRaidWork* work);
-BtlObj* func_08040C8C(BtlAiWork* work);
-BtlObj* func_08040D54(BtlAiWork* work);
 
 #endif /* GUARD_BTL3_H */

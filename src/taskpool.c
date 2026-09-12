@@ -1,3 +1,4 @@
+#include "chara_api.h"
 #include "display.h"
 #include "m4a_song.h"
 #include "sio_api.h"
@@ -13,6 +14,7 @@
 #include "main.h"
 #include "mode.h"
 #include "gba/keys.h"
+#include "sroll_api.h"
 
 extern u16 gSystemFlags;
 Mode* gCurrentMode;
@@ -35,11 +37,6 @@ extern Mode* gDebugModes[];
 
 void func_08000F94(void);
 void ModeStart(Mode* mode, s32 arg);
-#ifdef VERSION_EU
-void ModeInit(u8 a);
-#else
-void ModeInit(void);
-#endif
 void func_0800109C(void (*fn)(void));
 void func_080010A8(void);
 void ModeCallExit(void);
@@ -52,10 +49,6 @@ void CommitDisplayRegs(void);
 void func_08005C78(void);
 void MosaicUpdate(void);
 void SortSprites(void);
-void func_080C57B4(void);
-void func_08116CEC(void);
-void* GetEwramHeapStart(void);
-u32 GetEwramHeapSize(void);
 
 Task* TaskDestroy(TaskPool* a, Task* t) {
     if (t->desc->destroy != 0) {

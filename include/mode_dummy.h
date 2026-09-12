@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_DUMMY_H
 #define GUARD_MODE_DUMMY_H
 
+#include "map_api.h"
+#include "msg_api.h"
 #include "mode_test_api.h"
 
 #include "fade.h"
@@ -9,6 +11,7 @@
 #include "game_state.h"
 #include "key.h"
 #include "mode.h"
+#include "bos4_api.h"
 typedef struct DummyEntry {
     const char* name;
     const char* desc;
@@ -27,10 +30,6 @@ extern Mode gModeCopyright1;
 #ifdef VERSION_EU
 extern Mode gModeLang;
 #endif
-
-void func_0806180C(u16 a);
-void func_080DF380(void);
-void func_080E04EC(void);
 
 void mode_dummy_0(u32 arg);
 void func_0800C064(void);

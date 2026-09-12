@@ -1,3 +1,4 @@
+#include "mode_battle_api.h"
 #include "macros.h"
 #include "mode_battle.h"
 

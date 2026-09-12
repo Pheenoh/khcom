@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "evt.h"
+#include "evt_api.h"
 
 UnkStruct_02039DC8* gUnk_02039DC8;
 

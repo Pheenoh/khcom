@@ -17,6 +17,7 @@
 #include "anim.h"
 #include "taskpool.h"
 #include "smn_api.h"
+#include "btl_api.h"
 
 typedef struct FrdArgs {
     u16 unk_00;
@@ -184,10 +185,8 @@ extern u8 gUnk_09617E18[];
 extern u8 gUnk_0813ED90[];
 
 u8 func_080474A8(FrdJackWork* work);
-void func_0802F1E8(void);
 void func_08048A68(FrdPanWork* work);
 void func_08048980(FrdPanWork* work);
-void func_0801D288(void);
 u8 func_080465F0(FrdGoofyWork* work);
 u8 func_080490FC(FrdAladdinWork* work);
 

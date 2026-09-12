@@ -1,3 +1,4 @@
+#include <string.h>
 #include "types.h"
 #include "snd_stream.h"
 
@@ -39,7 +40,6 @@ SoundStream gSndStream;
 
 #define FRAMES_PER_BUFFER 30
 
-void* memset(void* dst, s32 c, unsigned long n);
 
 void SndStreamInit(u32 rate, u32 channels) {
     u32 i;

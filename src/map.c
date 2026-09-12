@@ -1,3 +1,7 @@
+#include "map_api.h"
+#include "msg_api.h"
+#include "status_api.h"
+#include "task.h"
 #include "engine_math.h"
 #include "m4a_song.h"
 #include "display.h"
@@ -3340,8 +3344,8 @@ void func_080E58E4(void) {
     EwramFree(gUnk_02034F38);
 }
 
-s32 func_080E58F8(s16 a, s16 b) {
-    return func_080E55A4(a, b);
+UnkStruct_080DFB8C* func_080E58F8(s16 a, s16 b) {
+    return (UnkStruct_080DFB8C*)func_080E55A4(a, b);
 }
 
 void func_080E590C(UnkStruct_080E5B90* p) {
@@ -5258,7 +5262,7 @@ u8 func_080E8C38(u8 a, u8 b) {
     return 0;
 }
 
-s32 func_080E8C84(u8 a, u8 b) {
+u8 func_080E8C84(u8 a, u8 b) {
     UnkStruct_080DEDD8* p;
     u8 i;
 
@@ -5555,7 +5559,7 @@ void func_080E9078(s32 x, s32 y, s32 z) {
     }
 }
 
-s32 func_080E924C(void) {
+u8 func_080E924C(void) {
     s32 i;
     u8* p;
 

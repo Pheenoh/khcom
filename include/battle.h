@@ -1,6 +1,13 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include "card_api.h"
+
+#include "map_api.h"
+#include "ms_api.h"
+#include "msg_api.h"
+#include "mode_chkbtl_api.h"
+
 #include "eventselect_api.h"
 
 #include "save_api.h"
@@ -32,6 +39,8 @@
 #include "key.h"
 #include "util.h"
 #include "mode.h"
+#include "bos3.h"
+#include "bos4_api.h"
 struct BtlObj;
 
 typedef struct BgFx {
@@ -340,22 +349,15 @@ extern ListPool gUnk_02034908;
 extern ListPool gUnk_02034918;
 extern BgFx* gUnk_02034928;
 
-
-void func_0800ABD8(void);
 void* func_08012218(u32 type);
-u8 func_0807B3E0(void);
-u8 func_0807B3C8(void);
 void func_08019350(void);
 void func_080197AC(void);
 void func_0801B024(BtlObj* p);
-u16 func_08093B38(void);
 void func_0809B6D0(void* p, s16 x, s16 y, s16 z, u16 n);
 void func_08096DB0(void* p, UnkStruct_0801B8A8* v);
 void func_08012674(void);
 void func_08012908(void);
 void func_0801007C(void);
-u8 func_0807B3C8(void);
-u8 func_0807B3E0(void);
 s32 func_08012170(s32 a, s32 b, s32 c, s32 d);
 void func_08013420(void);
 void func_08014850(void);
@@ -381,10 +383,6 @@ void func_0801884C(void);
 void func_0801235C(ListPool* a, ListPool* b);
 s64 __ashldi3(s64 v, s32 n);
 u8 func_080ABED0(void);
-void func_080C6FF8(void);
-void func_080DDEA4(void);
-void func_080DFB2C(void);
-void func_08109620(void);
 
 void func_0800EEBC(Actor* p, SprObj* s);
 void func_0800F230(void);
@@ -395,12 +393,10 @@ void func_0801CA88(void);
 const UnkStruct_08133E5C* func_0800FB14(u16 i);
 s32 func_08011398(BtlObj* a, s32 b);
 
-u8 func_0807E29C(void);
 u8 func_08081870(void);
 s32 func_0807E2BC(void);
 u8 func_0807E33C(void);
 u8 func_08081848(void);
-void func_08096DC4(void* pool, void* arg);
 void func_080838E8(void);
 void func_080838EC(void);
 extern TaskDesc gTaskDescBtlVslockon;
@@ -423,10 +419,7 @@ extern u8 gUnkEu_09F72D80[];
 void eu_08013190(void);
 #endif
 extern Mode gModeChkbtl;
-void func_0806180C(u16 a);
 
-void func_080DF380(void);
-void func_080E04EC(void);
 extern AnimHeader* gUnk_09EDF514[];
 extern u32 gUnk_09EDF4F4[];
 extern u8 gUnk_08935BC2[];
@@ -460,16 +453,11 @@ extern u8 gUnk_088BAC36[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08F683A4[];
 extern vu16 gSystemFlags;
-void func_0809B644(void* p, s16 x, s16 y, s16 z, u8 n);
-
-
 
 u8 func_0801AD68(BtlObj* p);
 void func_08010C70(void);
 void func_08011364(BtlObj* a, BtlObj* b, const UnkStruct_0813400C* c);
 void func_0800F9A0(void);
-
-
 
 void func_080135EC(s32 x, s32 y, s32 z);
 void func_08013560(s32 x, s32 y, s32 z);
@@ -515,12 +503,6 @@ s32 func_0800FAC4(void);
 void AddExp(u16 a);
 void func_08015D04(void);
 s32 func_08012188(BtlObj* p, s16 h, s32 c);
-s32 func_080ABA80(s32* out);
-void func_0807E1F4(void);
-void func_0807E200(void);
-void func_0807E20C(void);
-void func_0807E218(void);
-void func_0807E224(void);
 void func_0807E260(void);
 u8 func_0807B3F8(void);
 u8 func_0807E34C(void);
@@ -533,7 +515,6 @@ void func_08013748(s32 x, s32 y, s32 z, u8 f);
 void func_080141D4(void);
 void func_08019C5C(void);
 
-
 void func_08012214(void);
 void func_08012330(ListPool* pool);
 u8 func_080126E4(u8 a);
@@ -543,7 +524,6 @@ u8 func_08012648(Collider* p);
 s32 func_0801A978(BtlObj* p);
 u8 func_08085BAC(void);
 u8 func_080856DC(void);
-u16 func_08085B38(u8 index);
 void func_0809B710(void* pool, s16 a, s16 b, s16 c, u16 d);
 
 #endif /* GUARD_BATTLE_H */

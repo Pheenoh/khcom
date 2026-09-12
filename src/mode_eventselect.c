@@ -1,3 +1,6 @@
+#include "msg_api.h"
+#include "card_api.h"
+#include <string.h>
 #include "eventselect_api.h"
 #include "m4a_song.h"
 #include "fade.h"
@@ -1251,10 +1254,8 @@ extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
 void func_08091B28(void);
 void func_080782EC(void);
-s16 func_080858B8(s32 index);
 void func_080784BC(void* work, s32 mode);
 void func_080785B8(void* work, s32 mode);
-void func_080991CC(void* pool, u8* slot, void* count, u8* state, u8 mode);
 
 void func_08076CB4(UnkStruct_08080268* w) {
     u32 zero = 0;
@@ -1338,7 +1339,6 @@ s32 func_08076F4C(CardBattleWork* w) {
     return 0;
 }
 
-void* memset(void* dest, int value, unsigned long count);
 extern u32 gUnk_02034A9C;
 extern u32 gUnk_02034AA0;
 extern UnkStruct_02034AAC* gUnk_02034A98;
@@ -1347,7 +1347,6 @@ void func_0807A620(void* work);
 void func_0807B378(void* work);
 void func_080788CC(void* work, u8 slot);
 void func_08078FFC(void* work, u8 slot);
-void func_08078E34(void* work, u8 slot, u8 mode);
 s32 func_08079600(void* work);
 s32 func_08079B3C(void* work);
 s32 func_08079ECC(void* work);
@@ -1366,10 +1365,7 @@ void func_0807B6F4(void* work);
 void func_080789E4(void* work);
 void func_08078BB4(void* work);
 u8 func_080782AC(UnkStruct_02034AAC** cards, u8 count);
-s32 func_080AC5E8(void* cards, u8 count, u8 kind, UnkStruct_080ABA80* data, u8* flag);
-s32 func_080AD144(void* cards, u8 count, u8 kind, UnkStruct_080ABA80* data, u8* flag, void* arg);
 s32 func_080AE28C(void* cards, void* output, u8 count);
-void func_080991CC(void* pool, u8* slot, void* count, u8* state, u8 mode);
 
 typedef struct {
     u32 slot : 8;

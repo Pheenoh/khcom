@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_CHKBTL_H
 #define GUARD_MODE_CHKBTL_H
 
+#include "card_api.h"
+
+#include "mode_chkbtl_api.h"
+
 #include "mode_test_api.h"
 
 #include "fade.h"
@@ -42,16 +46,6 @@ typedef struct ChkBtlWorld {
     u8 unk_01[0x03];
     const char* name;
 } ChkBtlWorld;
-
-void func_08085CB0(void);
-void _08085D04(u8 a);
-void func_08085FB0(void);
-
-void func_0800AB8C(void);
-void func_0800ABD8(void);
-void mode_chkbtl_0(void);
-void mode_chkbtl_1(void);
-void mode_chkbtl_2(void);
 
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;

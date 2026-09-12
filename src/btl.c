@@ -5,6 +5,7 @@
 #include "macros.h"
 #include "btl.h"
 #include "btl_effect.h"
+#include "btl_api.h"
 
 u8 gUnk_0203492C;
 u16 gUnk_0203492E;

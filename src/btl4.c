@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "btl4.h"
+#include "btl4_api.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;

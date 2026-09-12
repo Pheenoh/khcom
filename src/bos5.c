@@ -1,8 +1,11 @@
+#include "map_api.h"
+#include "msg_api.h"
 #include "display.h"
 #include "fade.h"
 #include "text.h"
 #include "macros.h"
 #include "bos5.h"
+#include "bos5_api.h"
 
 #ifdef VERSION_EU
 extern u32 gLanguage;

@@ -1,6 +1,11 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "card_api.h"
+
+#include "status_api.h"
+#include "mode_status_api.h"
+
 #include "player_progression.h"
 
 #include "engine_math.h"
@@ -330,10 +335,6 @@ extern TaskDesc gTaskDescBosBoogieDisk;
 extern TaskDesc gTaskDescBosBoogieKnifereader;
 extern TaskDesc gTaskDescBosBoogieKaihuku;
 
-u8* func_080857BC(u8 index);
-
-
-
 u8 func_080D7B94(void);
 void func_080D764C(StatusWork* work);
 s16 func_080D78A8(void);
@@ -351,12 +352,10 @@ void* func_080D85C0(u16 a);
 s32 func_080D85F8(s32 a);
 s16 func_080D885C(StatusScrollcursorWork* work);
 void func_080D8374(void);
-u16 func_080D8B84(void** a, void** b, void** c);
 void* func_080D8EB4(void* a, u16 b, u8 c, u16 d, s32 e);
 u8 func_080D8F04(void* a);
 
 void func_080D9A14(void);
-void func_080D7568(u8 a);
 void func_080D78B8(StatusBarWork* work);
 u8 func_080D7890(void);
 void func_080D900C(BoogieWork* work, s32 a, u16 b);
@@ -381,11 +380,7 @@ typedef struct BoogiePalette {
 
 extern s16 gSineTable[];
 extern TaskDesc gTaskDescBosBoogieDice;
-void func_08096DC4(TaskPool* pool, BoogieFx* p);
-void func_08083914(void);
-void func_08083900(u8 a);
 u8 func_08083920(void);
-void func_080D9A58(void);
 void func_080D8F14(BoogieWork* work);
 u8 func_080D9058(s32* x, s32* y);
 

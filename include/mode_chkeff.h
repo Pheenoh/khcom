@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_CHKEFF_H
 #define GUARD_MODE_CHKEFF_H
 
+#include "card_api.h"
+
 #include "fade.h"
 #include "display.h"
 #include "types.h"
@@ -22,8 +24,6 @@ typedef struct ChkEffWork {
     u16 alphaA;
     u16 alphaB;
 } ChkEffWork;
-void func_0809D2B0(s32 a, s32 b, s32 c, const char* s);
-void func_0809D458(s32 a, s32 b, s32 c, s32 v);
 
 void mode_chkeff_0(void);
 void mode_chkeff_1(void);

@@ -29,4 +29,10 @@ void func_08001058(void (*a)(void), void (*b)(void));
 void func_08001254(void);
 void func_080012A8(void);
 
+#ifdef VERSION_EU
+void ModeInit(u8 a);
+#else
+void ModeInit(void);
+#endif
+
 #endif

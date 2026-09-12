@@ -31,13 +31,11 @@ extern u8* gSaveSignature;
 
 #define SAVE_FILES 4
 
-
 typedef struct SaveHeaderData {
     u16 flags;
     u16 unk_02;
     SaveFileSummary files[SAVE_FILES];
 } SaveHeaderData;
-
 
 typedef struct SaveSharedSlice {
     u8 unk_000;
@@ -110,14 +108,11 @@ typedef struct SaveHeader {
     SaveHeaderData data;
 } SaveHeader;
 
-
 void ZeroFill(void* dst, s16 size);
 void CopyBytes(u8* src, u8* dst, s16 len);
 u8 BytesEqual(u8* a, u8* b, s16 len);
 u16 SaveChecksum(u16* data, int size);
 int SaveVerifyBlock(u8* sram, u8* hdr, u8* buf, s16 size);
-
-
 
 void MakeSaveHeaderData(SaveHeaderData* data, s16 file);
 void MakeSaveFileLarge(SaveFileLarge* data);
@@ -128,27 +123,9 @@ void ApplySaveSystem(SaveFileLarge* data);
 void ApplySaveFileLarge(SaveFileLarge* data);
 void ApplySaveFileSmall(SaveFileSmall* data);
 
-
-
-
-
-
-
-
 void SaveWriteSystem(void);
 
-
-
-
-
-
-
-
-
-
-
 void SaveWriteFileSmall(u16 file);
-
 
 void SetSramFastFunc(void);
 u32 WriteAndVerifySramFast(const u8* src, u8* dest, u32 size);

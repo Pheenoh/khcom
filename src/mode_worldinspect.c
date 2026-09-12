@@ -1,3 +1,4 @@
+#include "map_api.h"
 #include "engine_math.h"
 #include "m4a_song.h"
 #include "text.h"
@@ -11,6 +12,7 @@
 #include "gba/keys.h"
 #include "anim.h"
 #include "m4a.h"
+#include "bos5_api.h"
 #ifdef VERSION_EU
 extern u8 gUnkEu_09A86E60[];
 extern u32 gLanguage;
@@ -168,8 +170,6 @@ extern u8 gUnk_09A5C280[];
 #endif
 void func_080FF19C(s16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 void func_080FF10C(u8 pal, u16 w, s16 h, u16* map, s16 x, s16 y);
-void func_080FF2B8(s16 index);
-u8 func_080FF228(s16 id);
 
 s16 gUnk_02035118;
 u8 gUnk_0203511A;

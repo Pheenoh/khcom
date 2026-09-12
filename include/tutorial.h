@@ -1,6 +1,9 @@
 #ifndef GUARD_TUTORIAL_H
 #define GUARD_TUTORIAL_H
 
+#include "card_api.h"
+
+#include "movie_text.h"
 #include "eventselect_api.h"
 
 #include "obj_api.h"
@@ -10,6 +13,7 @@
 #include "engine_math.h"
 #include "anim.h"
 #include "game.h"
+#include "btl4_api.h"
 
 typedef struct TutorialWork {
     u16 unk_000;
@@ -33,17 +37,6 @@ void task_tutorial_0(TutorialWork* work, s32 arg1);
 s32 task_tutorial_1(TutorialWork* work);
 void task_tutorial_2(TutorialWork* work);
 void task_tutorial_3(TutorialWork* work);
-#ifdef VERSION_JP
-u16 func_0805E848(u8* str);
-#else
-s16 func_0805E848(u16* widths, u16 count);
-#ifdef VERSION_EU
-u16 func_0805E89C(u8* str);
-#else
-u16 func_0805E89C(u16* str);
-#endif
-#endif
-
 
 extern u32 gFrameCounter;
 extern s16 gSineTable[];
@@ -51,18 +44,5 @@ extern u16 gBg0Cnt;
 extern u8 gUnk_08B263D2[];
 extern u8 gUnk_09EE15F0[];
 extern u8 gUnk_09EE15C0[];
-
-void func_0805DA64(u16 a);
-void func_0805DA98(u16 a);
-void func_0805DAB4(void);
-void func_0805DACC(TutorialWork* work, u16 a, u32 b);
-void func_0805DADC(TutorialWork* work, u16 a, u32 b);
-void func_0805DAEC(void);
-void func_0805DAF8(TutorialWork* work, s16 a, u32 b);
-void func_0805DB04(TutorialWork* work, u16 a, u16 b, u16 c);
-void func_0805DB28(TutorialWork* work);
-u8 func_080A42C8(void);
-void func_0809B644(void* a, s32 b, s32 c, s32 d, s32 e);
-u8 func_0807B3E0(void);
 
 #endif /* GUARD_TUTORIAL_H */

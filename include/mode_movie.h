@@ -1,6 +1,9 @@
 #ifndef GUARD_MODE_MOVIE_H
 #define GUARD_MODE_MOVIE_H
 
+#include "movie.h"
+#include "movie_text.h"
+#include "msg_api.h"
 #include "display.h"
 #include "pallet.h"
 #include "obj_api.h"
@@ -57,26 +60,12 @@ extern u8 gModeStaffRoll[];
 
 s32 GetIwramHeapStart(void);
 s32 GetIwramHeapSize(void);
-s32 GetEwramHeapStart(void);
-s32 GetEwramHeapSize(void);
-void MovieSetCallbacks(void* a, void* b, void* c, void* d);
-s32 MovieStart(void* a);
-void MoviePlay(void* a, s32 b);
-void MovieClose(void);
-void func_0806180C(s32 a);
 void func_0805EA90(void);
-s32 func_0805E93C(void);
-u16 func_0805E89C(u16* str);
+s32 func_0805E93C(s32 arg);
 
-void MovieUpdate(void);
 s32 func_0806C490(void* str);
 s32 func_0806C81C(void* str, u16 tile);
 u8 func_0806CBAC(void* str, u16* widths, u16 tile);
-#ifdef VERSION_JP
-u16 func_0805E848(u8* str);
-#else
-s16 func_0805E848(u16* widths, u16 count);
-#endif
 extern u16 gUnk_02034968[];
 extern u16 gUnk_020349B8[];
 #endif

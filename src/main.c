@@ -1,3 +1,4 @@
+#include "chara_api.h"
 #include "macros.h"
 #include "intr.h"
 #include "gba/syscall.h"
@@ -57,12 +58,6 @@ extern u16 gIntrCheck;
 
 extern const IntrFunc gIntrTableTemplate[14];
 
-void func_080C55DC(void);
-#ifdef VERSION_EU
-void ModeInit(u32 a);
-#else
-void ModeInit(void);
-#endif
 void SaveInitSram(void);
 
 void* GetEwramHeapStart(void) {

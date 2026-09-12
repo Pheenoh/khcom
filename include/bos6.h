@@ -1,6 +1,10 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "card_api.h"
+
+#include "gba/syscall.h"
+
 #include "m4a_song.h"
 #include <stdlib.h>
 #include "fade.h"
@@ -15,6 +19,9 @@
 #include "game_state.h"
 #include "taskpool.h"
 #include "anim.h"
+#include "bos6_api.h"
+#include "bos7_api.h"
+#include "btl_api.h"
 
 typedef struct PcPos {
     s16 unk_00;
@@ -29,11 +36,6 @@ typedef struct PcPos {
     u8 unk_40[0x5C];
     u16 unk_9C;
 } PcPos;
-
-
-void func_0802F1C8(void);
-void func_0802F208(void);
-s32 func_0802F268(void);
 
 typedef struct PcAnimStep {
     u16 unk_00;
@@ -355,19 +357,16 @@ typedef struct BosLstWork {
     u8 unk_B48[0x55C];
 } BosLstWork;
 
-
 extern u8 gUnk_09D69374[];
 extern u8 gUnk_05000080[];
 
 void func_0810A018(PcWork* work);
 void func_0810A498(PcWork* work);
 
-
 s32 func_0810B49C(void);
 void func_0810B4A8(u8* p);
 void func_0810B51C(u8* p);
 void func_0810BF24(u8** p, u8 v);
-void func_0810C2C4(u8** p);
 void func_0810C2CC(BosLstWork* work, u16 a, u16 b);
 void func_0810C2E0(BosLstWork* work);
 void task_bos_pc_2(PcWork* work);
@@ -390,7 +389,6 @@ void func_0810B370(u8** p, u8 v);
 
 void func_08109EF8(PcWork* work, s32 a);
 void func_08109F20(PcWork* work);
-s32 func_0810B350(void** p);
 u8 func_0810B800(void** p);
 u8 func_0810B824(void** p);
 void func_0810B7E8(void** p, s32* a, s32* b, s32* c);
@@ -400,10 +398,6 @@ s16 func_0810C630(BosLstWork* work);
 u8 func_0810D364(BosLstWork* work);
 void func_0810D3A8(BosLstWork* work);
 void func_0810D478(BosLstWork* work);
-u8 func_08110918(LstTask* t);
-u16 func_0811095C(LstTask* t, s16 a);
-void func_08110984(LstTask* t);
-void func_081109A8(LstTask* t);
 
 extern u16 gUnk_09A4CABE[];
 extern s16 gUnk_09A4CAC4[];
@@ -414,11 +408,9 @@ void func_0810B434(void);
 extern s8* gUnk_09EF9E04[];
 void func_0810B4B4(u8* p);
 
-
 void func_0810B930(PcFltWork* work);
 void func_0810B9A8(PcFltWork* work);
 void func_0810BA14(PcFltWork* work);
-
 
 void func_0810B8F8(PcFltWork* work);
 void func_0810B95C(PcFltWork* work);
@@ -449,7 +441,6 @@ extern u8 gUnk_09D69434[];
 extern u8 gUnk_05000220[];
 
 void func_0810A4C4(PcWork* work);
-u8 func_081109B8(LstTask* t, u8 a);
 void func_0810C494(BosLstWork* work, u16 a, u16 b, u8 c);
 
 void func_0810B378(void** p, u8 a);
@@ -457,7 +448,6 @@ u8 func_0810E950(BosLstWork* work);
 u8 func_0810E984(BosLstWork* work);
 void func_0810D4B0(BosLstWork* work);
 
-u8 func_08110938(LstTask* t);
 u8 func_0810A424(PcWork* work);
 
 s32 func_0810CC14(s32 a, s32 b, s32 c, s32 d, s32 e);
@@ -466,15 +456,12 @@ u8 func_0810D304(BosLstWork* work, s32 idx);
 
 extern s32 gUnk_09A4D154[];
 
-
 u8 func_0810AED4(PcWork* work, s32 arg);
 void func_0810C754(BosLstWork* work);
 void func_0810C7C4(BosLstWork* work);
 void func_0810CC68(BosLstWork* work);
 
 s32 func_0810D70C(BosLstWork* work);
-
-void func_08110994(LstTask* t, s16 a);
 
 u8 func_0810D3E0(BosLstWork* work, s32 idx, s16 a);
 u8 task_bos_pc_flt_1(PcFltWork* work);
@@ -488,7 +475,6 @@ extern u8 gUnk_09C51CBC[];
 extern u8 gUnk_09EFADBC[];
 extern u8 gUnk_09EFAD74[];
 
-
 void func_0810CE1C(BosLstWork* work);
 void func_0810C57C(BosLstWork* work, s16 a);
 
@@ -499,7 +485,6 @@ void task_bos_pc_fld_2(PcFldWork* work);
 extern u8 gUnk_09C489E4[];
 extern u8 gUnk_09EFABA4[];
 extern u8 gUnk_09EFAB68[];
-
 
 typedef struct PcShot {
     s32 unk_00;
@@ -537,7 +522,6 @@ extern u8 gUnk_09D4DA74[];
 extern u8 gUnk_09D4B274[];
 
 void task_bos_lst_0(BosLstWork* work, void* pool);
-void func_0810FF6C(Task* t, s32 a);
 u8 task_bos_lst_1(BosLstWork* work);
 
 typedef struct LstAnimDef {
@@ -567,9 +551,7 @@ extern void* gUnk_09A4D194[][2];
 extern u8 gUnk_09D69454[];
 
 void task_bos_lst_2(BosLstWork* work);
-void CpuFastSet(void* src, void* dst, s32 ctrl);
 u8 func_0810EBA0(BosLstWork* work);
-void func_0810FF64(Task* t, s32 a);
 
 typedef struct UnkStruct_02039DC8 {
     u8 unk_00[0x68];
@@ -603,7 +585,6 @@ extern u8 gUnk_09CB8F54[];
 extern u8 gUnk_09EFBBEC[];
 extern u8 gUnk_09EFBBBC[];
 
-
 void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg);
 void task_bos_pc_flt_2(PcFltWork* work);
 
@@ -623,7 +604,6 @@ u8 task_bos_pc_fld_1(PcFldWork* work);
 
 u8 func_0810C65C(BosLstWork* work, u16 a);
 u8 func_0810DB40(BosLstWork* work);
-void func_0810FF50(Task* t, s32 a, s32 b);
 void func_0810CD00(BosLstWork* work);
 void func_0810CEC8(BosLstWork* work);
 void func_0810D4F8(BosLstWork* work);
@@ -643,10 +623,8 @@ extern const s16 gSineTable[];
 u8 func_0810A914(PcWork* work, s32 arg);
 void func_0810B844(PcFltWork* work);
 
-
 u8 func_0810C32C(BosLstWork* work, s32 a);
 
-void func_08096DC4(void* a, void* b);
 u8 func_0810AF44(PcWork* work, s32 arg);
 
 typedef struct LstSpawn {
@@ -678,8 +656,6 @@ typedef struct LstSpawn2 {
 } LstSpawn2;
 
 extern u8 gTaskDescBosLstCtr[];
-
-u8 func_08111F4C(LstTask* t);
 
 typedef struct LstSpawn3 {
     s32 unk_00;

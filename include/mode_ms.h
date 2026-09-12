@@ -1,6 +1,13 @@
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
 
+#include "card_api.h"
+
+#include "map_api.h"
+#include "mode_worldwarp_api.h"
+
+#include "mode_ms_api.h"
+
 #include "mode_test_api.h"
 
 #include "player_progression.h"
@@ -122,9 +129,6 @@ typedef struct UnkStruct_099931E4 {
     UnkStruct_099931E4_1C unk_1C[4];
 } UnkStruct_099931E4;
 
-void func_081025AC(void);
-void func_081025D4(void* a);
-void func_08102610(void* a);
 void func_08102688(u16 a, u16 b, u16 c);
 u8 func_081026C4(u16 a, u16 b, u16 c);
 void func_08102704(u16 a);
@@ -148,29 +152,13 @@ void func_08103D54(s16 a);
 void func_08103D7C(void);
 void func_08103DE8(void);
 
-
-u8 func_080A42C8(void);
 void func_080A4234(void* pool, u32 a, u16 b);
-void func_080A411C(void* pool, u32 a, u16 b);
-void func_08101768(void);
-void func_081017A0(void);
-void func_08101970(void);
 void mode_ms_top_1(void);
-s16 func_08084458(u16 a);
 
-u8 func_0810155C(u32 a);
-void func_080E04EC(void);
 void func_0810264C(u16 a, u16 b, u16 c);
 u8 func_0810329C(u16 a);
-void func_08102F30(void);
-void func_081015E8(void);
-void func_08101654(void);
-void func_08101740(s16 a);
-u32 GetMooglePoints(void);
-u8 func_08101538(u32 a);
 void func_08102AB4(s16 x, s16 y);
 void func_08103F94(s16 a, s16 b);
-void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
 void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 
 extern u8 gUnk_0203C590[];

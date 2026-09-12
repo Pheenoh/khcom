@@ -1,3 +1,4 @@
+#include "map_api.h"
 #include "macros.h"
 #include "mode_debflag.h"
 

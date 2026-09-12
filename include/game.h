@@ -9,6 +9,7 @@
 #include "battle_work.h"
 #include "taskpool.h"
 #include "anim.h"
+#include "btl_api.h"
 
 struct UnkStruct_02034AAC;
 
@@ -90,11 +91,6 @@ typedef struct UnkStruct_02039DD4 {
 } UnkStruct_02039DD4;
 
 extern UnkStruct_02039DD4* gUnk_02039DD4;
-
-void func_0802F1C8(void);
-void func_0802F208(void);
-s32 func_0802F268(void);
-
 
 extern u8 gUnk_09EF2AA4[];
 

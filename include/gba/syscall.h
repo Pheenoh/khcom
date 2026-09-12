@@ -8,5 +8,6 @@ void CpuSet(void* src, void* dst, u32 ctrl);
 void CpuFastSet(void* src, void* dst, s32 ctrl);
 void RegisterRamReset(u32 flags);
 void VBlankIntrWait(void);
+u32 Sqrt(u32 value);
 
 #endif

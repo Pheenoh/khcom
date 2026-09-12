@@ -1,3 +1,5 @@
+#include "map_api.h"
+#include "mode_ms_api.h"
 #include "display.h"
 #include "text.h"
 #include "macros.h"

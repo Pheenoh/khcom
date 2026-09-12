@@ -1,3 +1,4 @@
+#include "title_api.h"
 #include "pallet.h"
 #include "macros.h"
 #include "title.h"

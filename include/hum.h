@@ -1,6 +1,11 @@
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
+#include "card_api.h"
+
+#include "jiminy_list.h"
+#include "map_api.h"
+#include "ms_api.h"
 #include "hum_tasks.h"
 
 #include "pallet.h"
@@ -30,6 +35,10 @@
 #include "taskpool.h"
 #include "obj.h"
 #include "hum_common.h"
+#include "bos3.h"
+#include "bos4_api.h"
+#include "btl_api.h"
+#include "pc_api.h"
 typedef struct HumSub {
     void* unk_00;
     void* tiles;
@@ -734,24 +743,13 @@ void func_08018724(s32 x, s32 y, s32 z, s32 f, s32 w);
 void func_08057E90(RikuWork* work, RikuSpawn* p);
 void func_08057E2C(RikuWork* work, RikuSpawn* dst);
 void func_08016AF4(s32 x, s32 y, s32 z, u8 f, s32 w);
-u8 func_08081828(void);
 void func_080560AC(HumWork* work, s32 a);
 s32 __modsi3(s32 a, s32 b);
-void func_080E92B8(void* p);
 void func_080A324C(void* p);
 void func_080A3370(void* p);
-void func_080C700C(u16* out);
-void func_080DDEB0(s32 a);
-void func_0810962C(void* p);
-void func_080E92F8(void* p);
-void func_080A32DC(u8* p);
 void func_080A3398(void* p);
-void func_080C7024(u16* in);
-void func_080DDEBC(s32 a);
-void func_08109638(void* p);
 u16 func_0805A55C(u16* p);
 void func_0805A638(s32 a, u16** b);
-void func_0805A484(void);
 void func_0805A4D8(s16 a, s16 b, s16 c);
 void func_0805A7D0(void);
 void func_0805A514(s16 a, s16 b, s16 c);
@@ -760,13 +758,6 @@ u8 func_0800FF70(u16 a);
 
 s32 func_0805A574(s32 idx);
 
-
-
-void func_0802F284(s32 a, s32 b, s32 c);
-u8 func_08081828(void);
 struct PcCharaWork;
-void func_08049EE4(struct PcCharaWork* work, s32 a, s32 b);
-void func_08049F24(struct PcCharaWork* work, s32 a, s32 b);
-s32 func_08049F50(struct PcCharaWork* work);
 
 #endif /* GUARD_HUM_H */

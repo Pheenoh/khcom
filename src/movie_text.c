@@ -1,3 +1,4 @@
+#include "movie_text.h"
 #include "macros.h"
 #include "tutorial.h"
 

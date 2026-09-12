@@ -1,3 +1,7 @@
+#include "main.h"
+#include "movie.h"
+#include "movie_text.h"
+#include "msg_api.h"
 #include "mode.h"
 #include "display.h"
 #include "pallet.h"
@@ -69,7 +73,7 @@ void mode_movie_0(s32 a) {
 #define MOVIE_SUB_MAX_CHARS 40
 #endif
 
-s32 func_0805E93C(void) {
+s32 func_0805E93C(s32 arg) {
     s32 i;
     u16 keys;
 

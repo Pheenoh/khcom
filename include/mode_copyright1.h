@@ -19,8 +19,6 @@ extern Mode gModeMenuMsg;
 extern Mode gModeCopyright1;
 extern Mode gModeCopyright2;
 
-
-
 void mode_copyright1_0(s32 arg);
 void mode_copyright1_1(void);
 void mode_copyright1_2(void);

@@ -9,7 +9,7 @@
 #include "taskpool.h"
 #include "evt_types.h"
 #include "game.h"
-
+#include "evt_api.h"
 
 typedef struct EvtObj {
     s32 unk_00;
@@ -72,24 +72,16 @@ typedef struct EvtShadowWork {
     void* tiles3;
 } EvtShadowWork;
 
-
 extern EvtObjAnim gUnk_0813766C[];
 extern EvtObjResTable gUnk_0813B09C[];
 extern u8 gTaskDescEvtObj[];
-
 
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_08B22CE4[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gTaskDescEvtShadow[];
 
-void func_0801CD74(EvtObj* obj, s32 anim);
-void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c);
 void func_0801CD94(EvtObj* obj, s32 a);
-void func_0801CD98(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
-void func_0801CE00(EvtObj* obj, u16 a);
-s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, s32 c);
 void func_0801CE70(EvtObjWork* work);
-
 
 #endif /* GUARD_EVT_H */
