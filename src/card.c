@@ -14266,32 +14266,27 @@ void func_0808DB50(UnkStruct_0808DB04* w) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_0808DD20(u8 a, u16 b) {
     u8 v[2];
-    u32 base;
-    u8* dst;
+    u8* base;
 
-    base = GetBgCharBase(3);
+    base = (u8*)GetBgCharBase(3);
 
     if (a != 0) {
+        u8* dst;
+
         v[0] = a / 10;
         v[1] = a - v[0] * 10;
-        dst = (u8*)(base + b * 64 + 0xD20);
-        RequestDma3Copy(&gUnk_0940FA98[(v[0] + 3) * 32], dst, 32);
-        dst += 32;
-        RequestDma3Copy(&gUnk_0940FA98[(v[1] + 3) * 32], dst, 32);
+        RequestDma3Copy(&gUnk_0940FA98[(v[0] + 3) * 32], dst = base + (b * 64 + 0xD20), 32);
+        RequestDma3Copy(&gUnk_0940FA98[(v[1] + 3) * 32], dst += 32, 32);
     } else {
-        dst = (u8*)(base + b * 64 + 0xD20);
-        RequestDma3Copy(gUnk_0940FAD8, dst, 32);
-        dst += 32;
-        RequestDma3Copy(gUnk_0940FAD8, dst, 32);
+        u8* dst;
+
+        RequestDma3Copy(gUnk_0940FAD8, dst = base + (b * 64 + 0xD20), 32);
+        RequestDma3Copy(gUnk_0940FAD8, dst += 32, 32);
         LoadPalette(gUnk_09614406, (void*)(b * 2 + 0x0500016C), 2);
     }
 }
-#else
-INCLUDE_ASM("card/func_0808DD20.s");
-#endif
 
 void func_0808DDD0(u8* work) {
     u16 t;
