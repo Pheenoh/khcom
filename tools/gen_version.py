@@ -65,6 +65,8 @@ SIZE_SLACK = 64
 TARGET_ANCHORS = {
     "eu": {
         0x09402F78: 0x094DCCE4,
+        0x095152B8: 0x09537B24,
+        0x0951534C: 0x09537BB8,
         0x095172B8: 0x09534324,
         0x09517AB8: 0x09534B24,
         0x09519AB8: 0x09538324,
@@ -135,6 +137,11 @@ TARGET_ONLY_SYMBOLS = {
     "eu": {
         "gUnkEu_094E04E4": 0x094E04E4,
         "gUnkEu_09533324": 0x09533324,
+        "gUnkEu_09F6FE04": 0x09F6FE04,
+        "gUnkEu_094C6C22": 0x094C6C22,
+        "gUnkEu_094C789A": 0x094C789A,
+        "gUnkEu_094C7472": 0x094C7472,
+        "gUnkEu_094C704A": 0x094C704A,
         "gLanguage": 0x03007484,
         "gModeLang": 0x09F3EA64,
         "gUnkEu_08F6A73C": 0x08F6A73C,

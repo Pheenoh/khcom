@@ -318,6 +318,11 @@ extern void* gUnk_09EF11AC[];
 extern void** gUnkEu_09F6FF70[];
 extern u8 gUnkEu_094E04E4[];
 extern u8 gUnkEu_09533324[];
+extern u8* gUnkEu_09F6FE04[];
+extern u8 gUnkEu_094C6C22[];
+extern u8 gUnkEu_094C789A[];
+extern u8 gUnkEu_094C7472[];
+extern u8 gUnkEu_094C704A[];
 #endif
 void func_0808CC58(u16 a, u8 b);
 void func_080AAA8C(u8* work, u8 b);
@@ -13807,8 +13812,36 @@ void func_0808D0A4(u8 deck) {
     RequestDma3Copy(&gUnk_0940F938[(e[1] + 1) * 32], (u8*)base + 0x80, 32);
 }
 
-#ifndef VERSION_EU
 void func_0808D16C(u8 mode) {
+#ifdef VERSION_EU
+    u8* bg0;
+    u8* bg1;
+    u8* bg2;
+    u8* src;
+
+    bg0 = (u8*)GetBgCharBase(0) + 0x2D80;
+    bg1 = (u8*)GetBgCharBase(1) + 0x30E0;
+    bg2 = (u8*)GetBgCharBase(2) + 0x3440;
+    src = gUnkEu_09F6FE04[gLanguage];
+
+    switch (mode) {
+    case 0:
+        RequestDma3Copy(src + 0x20, bg0, 0x1E0);
+        RequestDma3Copy(src + 0x420, bg1, 0x1E0);
+        RequestDma3Copy(src + 0x420, bg2, 0x1E0);
+        break;
+    case 1:
+        RequestDma3Copy(src + 0x420, bg0, 0x1E0);
+        RequestDma3Copy(src + 0x20, bg1, 0x1E0);
+        RequestDma3Copy(src + 0x420, bg2, 0x1E0);
+        break;
+    case 2:
+        RequestDma3Copy(src + 0x420, bg0, 0x1E0);
+        RequestDma3Copy(src + 0x420, bg1, 0x1E0);
+        RequestDma3Copy(src + 0x20, bg2, 0x1E0);
+        break;
+    }
+#else
     u32 bg0;
     u32 bg1;
     u32 bg2;
@@ -13834,10 +13867,8 @@ void func_0808D16C(u8 mode) {
         RequestDma3Copy(gUnk_09410058 - 0x400, (u8*)bg2 + 0x1A0, 0x1E0);
         break;
     }
-}
-#else
-INCLUDE_ASM("card/func_0808D16C.s");
 #endif
+}
 
 void func_0808D258(u8 mode) {
     u8 d1[4];
