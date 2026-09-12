@@ -5,13 +5,9 @@
 u8* gUnk_02038628;
 s32 gUnk_0203862C;
 s32 gUnk_02038630;
-s32 gUnk_02038634;
-u8 gUnk_02038638[0x20];
-u8 gUnk_02038658[0x40];
-
-void _08117284(void* p);
-void _08117674(void* p);
-void _08117A4C(void* p);
+s32* gUnk_02038634;
+s32 gUnk_02038638[8];
+s32 gUnk_02038658[16];
 
 static inline void ShiftInByte(void) {
     gUnk_0203862C <<= 8;
@@ -28,7 +24,7 @@ static inline s32 ReadBits(s32 n) {
     return (gUnk_0203862C >> gUnk_02038630) & 1;
 }
 
-void func_08117E44(void* p) {
+void func_08117E44(s32 p) {
     if (ReadBits(1) != 0) {
         _08117A4C(p);
     } else {
@@ -39,14 +35,14 @@ void func_08117E44(void* p) {
         }
 
         if (ReadBits(1) != 0) {
-            _08117674((u8*)p + 8);
+            _08117674(p + 8);
         } else {
-            _08117284((u8*)p + 8);
+            _08117284(p + 8);
         }
     }
 }
 
-void func_08117F5C(u8* src, s32 a1, void* dst) {
+void func_08117F5C(u8* src, s32* a1, s32 dst) {
     u8** p = &gUnk_02038628;
     s32 i;
 
@@ -57,7 +53,7 @@ void func_08117F5C(u8* src, s32 a1, void* dst) {
 
     for (i = 31; i >= 0; i--) {
         func_08117E44(dst);
-        dst = (u8*)dst + 0x10;
+        dst += 0x10;
     }
 }
 
