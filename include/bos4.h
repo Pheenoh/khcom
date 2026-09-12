@@ -382,7 +382,7 @@ extern u8 gUnk_0203C578;
 extern u8 gUnk_0203C56C;
 
 
-void task_bos_boogie_map_0(void* work, FldInit* arg);
+void task_bos_boogie_map_0(void* work, BattleBackgroundDef* arg);
 extern s32 gUnk_0203C580;
 extern u8 gUnk_0203C564;
 extern u8 gUnk_0203C574;
@@ -447,7 +447,7 @@ typedef struct UrsulaBorderWork {
     void* palette;
 } UrsulaBorderWork;
 
-void task_bos_ursula_map_0(UrsulaMapWork* work, FldInit* arg);
+void task_bos_ursula_map_0(UrsulaMapWork* work, BattleBackgroundDef* arg);
 u8 task_bos_ursula_map_1(UrsulaMapWork* work);
 extern u8 gUnk_0203C57C;
 

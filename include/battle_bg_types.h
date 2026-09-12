@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-typedef struct FldInit {
+typedef struct BattleBackgroundDef {
     void* unk_00;
     u16 unk_04;
     u8 unk_06[0x2];
@@ -11,6 +11,6 @@ typedef struct FldInit {
     u16 unk_0C;
     u8 unk_0E[0x2];
     u8 unk_10[0x4];
-} FldInit;
+} BattleBackgroundDef;
 
 #endif

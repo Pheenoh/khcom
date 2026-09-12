@@ -856,7 +856,7 @@ void func_080D4EBC(void) {
     gUnk_0203C4B4->unk_94 = TaskCreate(gUnk_0203C4B4, &gTaskDescAllmapCursor, &arg);
     func_080D53F8();
 }
-void func_080D510C(UnkStruct_0203C4B4* s) {
+void func_080D510C(AllmapState* s) {
     s32 tx;
     s32 ty;
     s32 dx;

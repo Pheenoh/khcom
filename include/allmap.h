@@ -97,7 +97,7 @@ typedef struct AllmapCursorWork {
     u8 unk_46[0x02];
 } AllmapCursorWork;
 
-typedef struct UnkStruct_0203C4B4 {
+typedef struct AllmapState {
     TaskPool unk_00;
     Task* unk_14[32];
     Task* unk_94;
@@ -118,7 +118,7 @@ typedef struct UnkStruct_0203C4B4 {
     s32 unk_BC;
     u8 unk_C0;
     u8 unk_C1[0x03];
-} UnkStruct_0203C4B4;
+} AllmapState;
 
 
 typedef struct AllmapDoorEntry {
@@ -171,7 +171,7 @@ typedef struct AllmapPushaWork {
 } AllmapPushaWork;
 
 void func_080AEB94(void);
-void func_080D510C(UnkStruct_0203C4B4* s);
+void func_080D510C(AllmapState* s);
 void func_080D55E4(void);
 void func_080D53F8(void);
 void func_080D58AC(u16 a, u16 b, u16 c, u16 d);
@@ -208,7 +208,7 @@ extern Task* gTitleLogoTask;
 extern Task* gTitleObjTask;
 extern u8* gUnk_02034EC4;
 extern void* gStockMesDispWork;
-extern UnkStruct_0203C4B4* gUnk_0203C4B4;
+extern AllmapState* gUnk_0203C4B4;
 extern u32 gUnk_0203C4E0;
 extern u16 gUnk_0203C534;
 extern void* gUnk_0203C504;

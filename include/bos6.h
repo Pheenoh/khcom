@@ -554,7 +554,7 @@ void task_bos_lst_2(BosLstWork* work);
 u8 func_0810EBA0(BosLstWork* work);
 
 
-extern UnkStruct_02039DC8* gUnk_02039DC8;
+extern EventState* gUnk_02039DC8;
 void task_bos_pc_acd_2(PcAcdWork* work);
 
 extern u16 gUnk_09A4D0EC[];
@@ -584,7 +584,7 @@ void task_bos_pc_flt_0(PcFltWork* work, PcFltInit* arg);
 void task_bos_pc_flt_2(PcFltWork* work);
 
 
-void task_bos_pc_fld_0(PcFldWork* work, FldInit* arg);
+void task_bos_pc_fld_0(PcFldWork* work, BattleBackgroundDef* arg);
 
 u8 task_bos_pc_fld_1(PcFldWork* work);
 

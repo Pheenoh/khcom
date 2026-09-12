@@ -87,14 +87,14 @@ typedef struct EmyKind {
     u16 unk_0E;
 } EmyKind;
 
-typedef struct EmySpawn {
+typedef struct EnemySpawnRequest {
     TaskDesc* desc;
     s32 x;
     s32 y;
     s32 z;
     u16 unk_10;
     u16 unk_12;
-} EmySpawn;
+} EnemySpawnRequest;
 
 typedef struct UnkStruct_0801B8A8 {
     s32 x;

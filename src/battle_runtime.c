@@ -1826,7 +1826,7 @@ void func_0801BDD4(BtlObj* p, BtlObj* v) {
 }
 
 u8 func_0801BDDC(s32 id, s32 x, s32 y, s32 z) {
-    EmySpawn s;
+    EnemySpawnRequest s;
     s32 born;
 
     born = 1;

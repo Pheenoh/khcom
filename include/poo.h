@@ -83,11 +83,11 @@ typedef struct PooHit {
     u8 unk_07;
 } PooHit;
 
-typedef struct UnkStruct_0203C4B4 {
+typedef struct PoohInteractionRegistry {
     PooHit unk_00[6];
     u16 unk_30;
     u8 unk_32;
-} UnkStruct_0203C4B4;
+} PoohInteractionRegistry;
 
 typedef struct PooWork {
     void* tiles;
@@ -1107,7 +1107,7 @@ typedef struct PooPalStep {
 extern PooState gUnk_0203C470;
 extern u16 gUnk_0203C3E0;
 extern u16 gUnk_0203C3E4;
-extern UnkStruct_0203C4B4* gUnk_0203C4B4;
+extern PoohInteractionRegistry* gUnk_0203C4B4;
 extern const s32 gUnk_096FDA74[];
 extern u16* gUnk_0203C504;
 extern u16* gUnk_0203C530;

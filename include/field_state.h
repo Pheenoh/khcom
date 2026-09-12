@@ -4,7 +4,7 @@
 #include "types.h"
 #include "fld_types.h"
 
-typedef struct UnkStruct_02039BA0 {
+typedef struct FieldState {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
@@ -28,10 +28,10 @@ typedef struct UnkStruct_02039BA0 {
     s32 unk_E0;
     u8 unk_E4;
     u8 unk_E5[0x03];
-} UnkStruct_02039BA0;
+} FieldState;
 
-typedef char FieldState_size[(sizeof(UnkStruct_02039BA0) == 0xE8) ? 1 : -1];
+typedef char FieldState_size[(sizeof(FieldState) == 0xE8) ? 1 : -1];
 
-extern UnkStruct_02039BA0* gUnk_02039BA0;
+extern FieldState* gUnk_02039BA0;
 
 #endif

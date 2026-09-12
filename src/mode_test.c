@@ -1506,7 +1506,7 @@ void func_0806119C(void) {
 }
 
 void func_08061248(void) {
-    UnkStruct_09EE3FB4* p = gUnk_09EE3FB4[gUnk_02034A78];
+    EventSequenceDef* p = gUnk_09EE3FB4[gUnk_02034A78];
     UpdatePlayTime();
     TaskPoolUpdate(&gUnk_02034A60);
     TaskPoolDraw(&gUnk_02034A60);
