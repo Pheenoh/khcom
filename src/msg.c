@@ -7763,8 +7763,8 @@ void func_0806CD60(ContinueWork* p) {
     LoadBgTiles(0, gUnk_0941A418, MSG_CONT_BG_TILES);
     LoadBgMap(0, gUnk_0951CAB8, 0x800);
 #endif
-    func_080065FC(2, 0x8000, 128);
-    func_08006778(gUnk_09EDA7E0, 120, 46);
+    BgAnimInit(2, 0x8000, 128);
+    BgAnimStart(gUnk_09EDA7E0, 120, 46);
     BgAnimSetLoopStartFrame(0);
     p->tiles3 = LoadObjTiles(gUnk_090A7D9A, 192);
     p->palette3 = LoadObjPalette(gUnk_096146F8, 32);
@@ -7830,8 +7830,8 @@ void func_0806CF04(ContinueWork* p) {
     LoadBgTiles(0, gUnk_0941A418, MSG_CONT_BG_TILES);
     LoadBgMap(0, gUnk_0951CAB8, 0x800);
 #endif
-    func_080065FC(2, 0x8000, 128);
-    func_08006778(gUnk_09EDA7E0, 120, 46);
+    BgAnimInit(2, 0x8000, 128);
+    BgAnimStart(gUnk_09EDA7E0, 120, 46);
     BgAnimSetLoopStartFrame(0);
     p->tiles3 = LoadObjTiles(gUnk_090A7D9A, 192);
     p->palette3 = LoadObjPalette(gUnk_096146F8, 32);
@@ -7882,7 +7882,7 @@ void func_0806CF04(ContinueWork* p) {
 s32 func_0806D0A8(ContinueWork* p) {
     s32* t;
 
-    func_08006954();
+    BgAnimUpdate();
     p->gfx = AnimUpdate(&p->unk_20);
     p->gfx2 = AnimUpdate(&p->unk_38);
     gBldCnt = 0xB54;

@@ -41,7 +41,7 @@ void eu_080059F4(s32 bg, void* src);
 struct UnkBgAnim;
 
 void MosaicReset(void);
-void func_0800675C(u8 a, s32 b, s32 c);
+void BgAnimSetTransform(u8 a, s32 b, s32 c);
 void BgAnimSetLoopStartFrame(u16 a);
 void BgAnimStop(void);
 void MosaicStartIn(u16 frames, u16 size);
@@ -54,10 +54,10 @@ struct UnkBgAnim* BgAnimGetCurrent(void);
 void VTransReset(void);
 void BgReset(void);
 u8 func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh);
-void func_080066F4(s16 x, s16 y);
-void func_08006954(void);
-void func_080065FC(s32 bg, u16 b, u16 c);
-void func_08006778(struct UnkBgAnim* a, s32 x, s32 y);
+void BgAnimSetPosition(s16 x, s16 y);
+void BgAnimUpdate(void);
+void BgAnimInit(s32 bg, u16 b, u16 c);
+void BgAnimStart(struct UnkBgAnim* a, s32 x, s32 y);
 u8 func_0800443C(void* a, u16 b);
 
 #ifdef VERSION_EU
