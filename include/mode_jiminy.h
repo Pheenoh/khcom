@@ -254,7 +254,7 @@ extern u8 gUnkEu_09A9A880[];
 extern u8 gUnkEu_09A9A8A0[];
 extern u8 gUnkEu_099FBE00[];
 void* eu_0805E968(void* text);
-s16 eu_0805E9AC(void* text);
+s32 eu_0805E9AC(void* text);
 u8 func_080D2DD8(void);
 #else
 u8 RequestDma3Copy(void* src, void* dst, u16 size);

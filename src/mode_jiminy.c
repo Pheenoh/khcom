@@ -435,7 +435,6 @@ void func_0805BAAC(s16 a, u8* out) {
     out[2] = a % 10;
 }
 
-#ifdef NON_MATCHING
 void func_0805BAE4(void) {
     s32 count;
     JiminyDetail* entries;
@@ -543,14 +542,14 @@ void func_0805BAE4(void) {
             break;
         }
         gJiminyWork->unk_CD0 = count;
-        if (gJiminyWork->unk_CD2 >= count) {
+        if (gJiminyWork->unk_CD2 >= (s16)count) {
             gJiminyWork->unk_CD2 = 0;
         }
-        unlocked = 0;
-        selected = 0;
         gJiminyWork->unk_CCC = &entries[gJiminyWork->unk_CD2];
         if (gJiminyWork->unk_CB8 != 0) {
             func_0800FFE0(gJiminyWork->unk_CB8[gJiminyWork->unk_CD2]);
+            unlocked = 0;
+            selected = 0;
             for (i = 0; i < count; i++) {
                 if (func_0800FF00(gJiminyWork->unk_CB8[i])) {
                     if (gJiminyWork->unk_CD2 == i) {
@@ -592,7 +591,7 @@ void func_0805BAE4(void) {
         } else {
             unlocked = count;
             selected = gJiminyWork->unk_CD2;
-            gJiminyWork->unk_CD4 = selected + 1;
+            gJiminyWork->unk_CD4 = gJiminyWork->unk_CD2 + 1;
             if (gJiminyWork->unk_CD4 >= count) {
                 gJiminyWork->unk_CD4 = 0;
             }
@@ -607,7 +606,7 @@ void func_0805BAE4(void) {
             map1 = gUnk_08F60384;
 #ifdef VERSION_JP
             gJiminyWork->unk_C71 = func_080653D4(0x400,
-                0x1600, gJiminyWork->unk_CCC->name);
+                0x1800, gJiminyWork->unk_CCC->name);
 #elif defined(VERSION_EU)
             gJiminyWork->unk_C71 = func_08065170(0x400,
                 0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
@@ -616,16 +615,13 @@ void func_0805BAE4(void) {
                 0x1600, gJiminyWork->unk_CCC->name);
 #endif
 #ifdef VERSION_EU
-            width = eu_0805E9AC(gJiminyWork->unk_CCC->text);
-            func_0805B9D0(4, width, (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->unk_CCC->text), (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
 #else
-            func_0805B9D0(
 #ifdef VERSION_JP
-                6,
+            func_0805B9D0(7, gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x2A, 16);
 #else
-                4,
+            func_0805B9D0(4, gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
 #endif
-                gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
 #endif
             break;
         case 1:
@@ -633,7 +629,7 @@ void func_0805BAE4(void) {
             map1 = gUnk_08F5EB84;
 #ifdef VERSION_JP
             gJiminyWork->unk_C71 = func_080653D4(0x400,
-                0x1600, gJiminyWork->unk_CCC->name);
+                0x1800, gJiminyWork->unk_CCC->name);
 #elif defined(VERSION_EU)
             gJiminyWork->unk_C71 = func_08065170(0x400,
                 0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
@@ -642,16 +638,13 @@ void func_0805BAE4(void) {
                 0x1600, gJiminyWork->unk_CCC->name);
 #endif
 #ifdef VERSION_EU
-            width = eu_0805E9AC(gJiminyWork->unk_CCC->text);
-            func_0805B9D0(4, width, (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->unk_CCC->text), (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
 #else
-            func_0805B9D0(
 #ifdef VERSION_JP
-                6,
+            func_0805B9D0(7, gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x2A, 16);
 #else
-                4,
+            func_0805B9D0(4, gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
 #endif
-                gJiminyWork->unk_CCC->lineCount, (s32)gJiminyWork->unk_CCC->text, 8, 0x3A, 16);
 #endif
             break;
         case 2:
@@ -660,7 +653,7 @@ void func_0805BAE4(void) {
             map1 = gUnk_08F5FB84;
 #ifdef VERSION_JP
             gJiminyWork->unk_C71 = func_080653D4(0x2800,
-                0x1600, gJiminyWork->unk_CCC->name);
+                0x1800, gJiminyWork->unk_CCC->name);
 #elif defined(VERSION_EU)
             gJiminyWork->unk_C71 = func_08065170(0x2800,
                 0x1600, eu_0805E924(gJiminyWork->unk_CCC->name));
@@ -669,8 +662,7 @@ void func_0805BAE4(void) {
                 0x1600, gJiminyWork->unk_CCC->name);
 #endif
 #ifdef VERSION_EU
-            width = eu_0805E9AC(gJiminyWork->unk_CCC->text);
-            func_0805B9D0(4, width, (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
+            func_0805B9D0(4, eu_0805E9AC(gJiminyWork->unk_CCC->text), (s32)eu_0805E968(gJiminyWork->unk_CCC->text), 8, 0x3A, 16);
 #else
             func_0805B9D0(
 #ifdef VERSION_JP
@@ -971,9 +963,6 @@ void func_0805BAE4(void) {
     UpdatePlayTime();
     gJiminyWork->unk_D3E++;
 }
-#else
-INCLUDE_ASM("mode_jiminy/func_0805BAE4.s");
-#endif
 
 void mode_jiminy_2(void) {
     func_08065940();
