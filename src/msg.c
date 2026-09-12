@@ -1685,6 +1685,7 @@ void func_08064624(void) {
     u8 pal;
     u32 cur;
     u32 pix;
+    u16 tile;
     for (n = 0; n < 10; n++) {
         if (gUnk_02034A8C[n].unk_25 != 1) {
             continue;
@@ -1703,17 +1704,20 @@ void func_08064624(void) {
                 sy = gUnk_02034A8C[n].unk_01 - ty * 8;
                 dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].unk_24) + (tx + 1) * 32 + ty * 1024;
                 screen = GetBgScreenBase(gUnk_02034A8C[n].unk_24);
-                src = (u16*)&gUnk_090AB5B2[((u16*)gUnk_09EEB204[glyph])[3] * 32];
+                tile = ((u16*)gUnk_09EEB204[glyph])[3];
+                src = (u16*)&gUnk_090AB5B2[tile * 32];
                 p = dst;
 
                 for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
                     if (glyph == 0xFFFF) {
-                        cur = 0;
                         pix = 0;
+                        cur = 0;
                     } else {
+                        s32 q;
                         cur = *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024);
-                        pix = src[(yy & 15) + (yy >> 4) * 32] |
-                              ((u32)src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
+                        q = yy & 15;
+                        q += (yy >> 4) * 32;
+                        pix = src[q] | ((u32)src[q + 1] << 16);
                     }
                     *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
 
@@ -1815,7 +1819,8 @@ void func_08064624(void) {
                 sy = gUnk_02034A8C[n].unk_01 - ty * 8;
                 dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].unk_24) + (tx + 1) * 32 + ty * 1024;
                 screen = GetBgScreenBase(gUnk_02034A8C[n].unk_24);
-                src = (u16*)&gUnk_090AA506[((u16*)gUnk_09EEB188[glyph])[3] * 32];
+                tile = ((u16*)gUnk_09EEB188[glyph])[3];
+                src = (u16*)&gUnk_090AA506[tile * 32];
                 p = dst;
 
                 for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
@@ -1823,9 +1828,11 @@ void func_08064624(void) {
                         cur = 0;
                         pix = 0;
                     } else {
+                        s32 q;
                         cur = *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024);
-                        pix = src[(yy & 15) + (yy >> 4) * 32] |
-                              ((u32)src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
+                        q = yy & 15;
+                        q += (yy >> 4) * 32;
+                        pix = src[q] | ((u32)src[q + 1] << 16);
                     }
                     *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
 
@@ -1838,7 +1845,6 @@ void func_08064624(void) {
                     s32 t0;
                     s32 ty1;
                     s32 t1;
-                    s32 tx2;
                     t0 = ty * 32;
                     *(u16*)(screen + tx * 2 + ty * 64) = (tx + 1 + t0) | (pal << 12);
                     ty1 = ty + 1;
@@ -1850,16 +1856,15 @@ void func_08064624(void) {
                         s32 t = r * 32;
                         *(u16*)(screen + tx * 2 + r * 64) = (tx + 1 + t) | (pal << 12);
                     }
-                    tx2 = tx + 2;
 
                     if (sx != 0) {
-                        *(u16*)(screen + tx * 2 + ty * 64 + 2) = (tx2 + t0) | (pal << 12);
-                        *(u16*)(screen + tx * 2 + ty1 * 64 + 2) = (tx2 + t1) | (pal << 12);
+                        *(u16*)(screen + tx * 2 + ty * 64 + 2) = (tx + 2 + ty * 32) | (pal << 12);
+                        *(u16*)(screen + tx * 2 + ty1 * 64 + 2) = (tx + 2 + ty1 * 32) | (pal << 12);
 
                         if (sy != 0) {
                             s32 r = ty + 2;
                             s32 t = r * 32;
-                            *(u16*)(screen + tx * 2 + r * 64 + 2) = (tx2 + t) | (pal << 12);
+                            *(u16*)(screen + tx * 2 + r * 64 + 2) = (tx + 2 + t) | (pal << 12);
                         }
                     }
                 }
