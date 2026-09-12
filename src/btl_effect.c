@@ -350,9 +350,9 @@ void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
     m4aSongNumStart(0x23D);
     func_08006B34(8);
     gUnk_02034928->unk_04 = func_08012C08;
-    gUnk_02034928->unk_28 = gBtlWork->unk_07C->unk_04;
-    gUnk_02034928->unk_2C = gBtlWork->unk_07C->unk_08;
-    gUnk_02034928->unk_30 = gBtlWork->unk_07C->unk_0C;
+    gUnk_02034928->unk_28 = gBtlWork->unk_07C->unk_004;
+    gUnk_02034928->unk_2C = gBtlWork->unk_07C->unk_008;
+    gUnk_02034928->unk_30 = gBtlWork->unk_07C->unk_00C;
     gUnk_02034928->unk_08 = a;
     gUnk_02034928->unk_26 = 1;
     gUnk_02034928->unk_48 = w;
@@ -2347,7 +2347,7 @@ void func_080162A8(s32 x, s32 y, s32 z, s32 w) {
     gUnk_02034928->unk_04 = func_08012BCC;
 }
 
-Collider* func_08016320(void) {
+BtlObj* func_08016320(void) {
     if (gBtlWork->unk_068 & 0x4000) {
         if (gBtlWork->unk_068 & 0x20000000) {
             return gBtlWork->unk_07C;
@@ -2367,18 +2367,18 @@ void func_08016374(s16 a) {
     if (gBtlWork->unk_068 & 0x4000) {
         if (GetRandom() % 5) {
             if (gBtlWork->unk_068 & 0x20000000) {
-                func_08019190((BtlObj*)gBtlWork->unk_07C, 2);
+                func_08019190(gBtlWork->unk_07C, 2);
             } else {
-                func_08019190((BtlObj*)gUnk_02039B9C->unk_07C, 2);
+                func_08019190(gUnk_02039B9C->unk_07C, 2);
             }
         } else {
-            o = (BtlObj*)gUnk_02039B9C->unk_07C;
+            o = gUnk_02039B9C->unk_07C;
             o->unk_02C = a;
 
             if (a > o->unk_02E) {
                 o->unk_02C = o->unk_02E;
             }
-            o = (BtlObj*)gBtlWork->unk_07C;
+            o = gBtlWork->unk_07C;
             o->unk_02C = a;
 
             if (a > o->unk_02E) {
@@ -2428,7 +2428,7 @@ void func_08016468(void) {
         break;
     case 2:
         gUnk_02034928->unk_1C = (gSineTable[((u16)gUnk_02034928->unk_08 * 4) & 0xFF] >> 3) + 89;
-        o = (BtlObj*)func_08016320();
+        o = func_08016320();
 
         if (o != 0) {
             func_0800592C(&gUnk_02034928->unk_10, o->unk_004, gUnk_02034928->unk_0A);
@@ -3058,7 +3058,7 @@ void func_08017514(s32 x, s32 y, s32 z, s32 w) {
     func_08006238(0, gBtlWork->unk_0B3, 8);
     gUnk_02034928->unk_34 |= 8;
 }
-void func_080175BC(Collider* a, BtlObj* b, u8 c, u8 d) {
+void func_080175BC(BtlObj* a, BtlObj* b, u8 c, u8 d) {
     s32 h;
     s32 dx;
     s32 dy;
@@ -3067,7 +3067,7 @@ void func_080175BC(Collider* a, BtlObj* b, u8 c, u8 d) {
     s32 ny;
 
     if (d) {
-        b->unk_0B0 = GetAngle(a->unk_04, a->unk_08, b->unk_004, b->unk_008);
+        b->unk_0B0 = GetAngle(a->unk_004, a->unk_008, b->unk_004, b->unk_008);
         b->unk_0A8 = 0;
     }
     dx = b->unk_004 - gUnk_02034928->unk_10;
@@ -3103,16 +3103,16 @@ void func_080175BC(Collider* a, BtlObj* b, u8 c, u8 d) {
 }
 
 void func_08017728(u8 a, u8 b) {
-    Collider* p;
+    BtlObj* p;
     BtlObj* o;
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (gBtlWork->unk_068 & 0x20000000) {
             p = gBtlWork->unk_07C;
-            o = (BtlObj*)gUnk_02039B9C->unk_07C;
+            o = gUnk_02039B9C->unk_07C;
         } else {
             p = gUnk_02039B9C->unk_07C;
-            o = (BtlObj*)gBtlWork->unk_07C;
+            o = gBtlWork->unk_07C;
         }
 
         func_080175BC(p, o, a, b);
@@ -3348,11 +3348,11 @@ void func_08017C54(void) {
         }
 
         if (gUnk_02034928->unk_34 & 1) {
-            if (gBtlWork->unk_07C->unk_04 < gUnk_02034928->unk_10) {
+            if (gBtlWork->unk_07C->unk_004 < gUnk_02034928->unk_10) {
                 gUnk_02034928->unk_26 = 2;
             }
         } else {
-            if (gBtlWork->unk_07C->unk_04 > gUnk_02034928->unk_10) {
+            if (gBtlWork->unk_07C->unk_004 > gUnk_02034928->unk_10) {
                 gUnk_02034928->unk_26 = 2;
             }
         }
@@ -3701,7 +3701,7 @@ void func_080185D0(void) {
     z = gUnk_02034928->unk_18 + -gSineTable[ang + 64] * r;
     y = gUnk_02034928->unk_14;
     func_08011F78(gUnk_02034928->unk_48, x, y, z, 32, 16, 16);
-    o = (BtlObj*)gBtlWork->unk_07C;
+    o = gBtlWork->unk_07C;
 
     if (o->unk_034 & 0x2000) {
         o->unk_004 += (x - o->unk_004) >> 2;
@@ -3735,16 +3735,16 @@ void func_08018724(s32 x, s32 y, s32 z, u8 f, s32 v) {
     }
 
     if (gUnk_02034928->unk_34 & 1) {
-        if (gUnk_02034928->unk_10 < gBtlWork->unk_07C->unk_04) {
+        if (gUnk_02034928->unk_10 < gBtlWork->unk_07C->unk_004) {
             gUnk_02034928->unk_26 = 1;
         } else {
-            gUnk_02034928->unk_1C = -(((gUnk_02034928->unk_10 - gBtlWork->unk_07C->unk_04) << 8) / 19200);
+            gUnk_02034928->unk_1C = -(((gUnk_02034928->unk_10 - gBtlWork->unk_07C->unk_004) << 8) / 19200);
         }
     } else {
-        if (gUnk_02034928->unk_10 > gBtlWork->unk_07C->unk_04) {
+        if (gUnk_02034928->unk_10 > gBtlWork->unk_07C->unk_004) {
             gUnk_02034928->unk_26 = 1;
         } else {
-            gUnk_02034928->unk_1C = ((gBtlWork->unk_07C->unk_04 - gUnk_02034928->unk_10) << 8) / 19200;
+            gUnk_02034928->unk_1C = ((gBtlWork->unk_07C->unk_004 - gUnk_02034928->unk_10) << 8) / 19200;
         }
     }
     func_08006B34(3);

@@ -2,6 +2,7 @@
 #define GUARD_MODE_BATTLE_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "taskpool.h"
 #include "gba/syscall.h"
@@ -9,35 +10,9 @@
 #include "engine.h"
 #include "m4a.h"
 
-typedef struct BtlWork {
-    u8 unk_000[0x2C];
-    TaskPool unk_02C;
-    TaskPool unk_040;
-    TaskPool unk_054;
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071;
-    s16 unk_072;
-    s16 unk_074;
-    u8 unk_076[0x06];
-    void* unk_07C;
-    u8 unk_080[0x33];
-    u8 unk_0B3;
-    u8 unk_0B4[0x58];
-    u32 unk_10C;
-    u8 unk_110[0x18];
-    void* unk_128;
-    u8 unk_12C[0x98];
-    u16 unk_1C4;
-    u16 unk_1C6;
-    u8 unk_1C8[0x08];
-} BtlWork;
-
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
-extern BtlWork* gBtlWork;
-extern void* gUnk_02039B9C;
 extern u32 gUnk_03006C10;
 extern void* gUnk_09EDA2A0[];
 extern TaskDesc gTaskDescBtlSora;
@@ -88,8 +63,5 @@ void UpdatePlayTime(void);
 void mode_battle_0(u32 mode);
 void mode_battle_1(void);
 void mode_battle_2(void);
-
-void func_0801050C(void);
-void func_080BD4A8(void);
 
 #endif /* GUARD_MODE_BATTLE_H */

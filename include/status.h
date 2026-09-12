@@ -2,6 +2,7 @@
 #define GUARD_STATUS_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "text_types.h"
 #include "taskpool.h"
@@ -146,22 +147,6 @@ typedef struct UnkStruct_0203C55C {
     u8 unk_B1[7];
     ListNode unk_B8;
 } UnkStruct_0203C55C;
-
-typedef struct BtlWork {
-    u8 unk_00[0x2C];
-    TaskPool unk_2C;
-    TaskPool unk_40;
-    u8 unk_54[0x2C];
-    ListNode unk_80;
-    u8 unk_90[0x23];
-    u8 unk_B3;
-    u8 unk_B4[0x18];
-    s32 unk_CC;
-    s32 unk_D0;
-    s32 unk_D4;
-    u8 unk_D8[0x14];
-    s16 unk_EC;
-} BtlWork;
 
 typedef struct StatusDialogSub {
     s32 unk_00;
@@ -342,7 +327,6 @@ extern TaskDesc gTaskDescBosBoogieMap;
 extern TaskDesc gTaskDescBosBoogieSaku;
 extern TaskDesc gTaskDescBosBoogieMapanime;
 extern TaskDesc gTaskDescBosShadow;
-extern BtlWork* gBtlWork;
 extern u8 gUnk_0203C558;
 extern u16 gUnk_0203C554;
 extern u16 gUnk_0203C560;

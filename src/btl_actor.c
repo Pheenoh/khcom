@@ -129,7 +129,7 @@ void func_0800EFE8(Actor* work) {
     TaskPoolDraw(&work->unk_2C);
 }
 void func_0800F230(void) {
-    Collider* c = gUnk_02039B9C->unk_07C;
+    BtlObj* c = gUnk_02039B9C->unk_07C;
     u8 keys;
     u16 t;
 
@@ -161,7 +161,7 @@ void func_0800F230(void) {
         func_0807E260();
     }
 
-    if (*(u64*)&c->unk_34 & 0x200) {
+    if (c->unk_034 & 0x200) {
         return;
     }
 
@@ -177,7 +177,7 @@ void func_0800F230(void) {
         return;
     }
 
-    if (*(u64*)&c->unk_34 & 2) {
+    if (c->unk_034 & 2) {
         return;
     }
 
@@ -200,7 +200,7 @@ void func_0800F230(void) {
 
 #ifdef VERSION_EU
 void eu_08013190(void) {
-    BtlObj* c = (BtlObj*)gUnk_02039B9C->unk_07C;
+    BtlObj* c = gUnk_02039B9C->unk_07C;
     u8 keys;
 
     keys = gBtlWork->unk_0EF;
@@ -313,7 +313,7 @@ u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r) {
     s32 v0;
     s32 v1;
     Collider* c = (Collider*)&p->unk_40;
-    Collider* o = gBtlWork->unk_07C;
+    BtlObj* o = gBtlWork->unk_07C;
     s32 d;
     s32 t;
     s32 bb;
@@ -327,7 +327,7 @@ u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r) {
         return 0;
     }
 
-    if (*(u64*)&o->unk_34 & 4) {
+    if (o->unk_034 & 4) {
         t = v0 - (a << 8);
         bb = b << 8;
 

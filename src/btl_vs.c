@@ -188,7 +188,7 @@ void func_080107D4(void) {
     if (w->unk_0E3 > 32) {
         func_0807E200();
     }
-    o = (BtlObj*)w->unk_07C;
+    o = w->unk_07C;
 
     if (o->unk_034 & 0x200) {
         return;
@@ -317,7 +317,7 @@ void func_08010A24(void) {
         func_08076324();
     }
 
-    o = (BtlObj*)w->unk_07C;
+    o = w->unk_07C;
 
     if (o->unk_034 & 0x200) {
         return;
@@ -369,8 +369,8 @@ void func_08010C70(void) {
 }
 
 void func_08010CC8(void) {
-    BtlObj* player = (BtlObj*)gBtlWork->unk_07C;
-    BtlObj* other = (BtlObj*)gUnk_02039B9C->unk_07C;
+    BtlObj* player = gBtlWork->unk_07C;
+    BtlObj* other = gUnk_02039B9C->unk_07C;
     s32 entered;
     s32 i;
     s32 busy;
@@ -392,7 +392,7 @@ void func_08010CC8(void) {
         }
         break;
     }
-    TaskPoolUpdate(&gBtlWork->unk_02C[1]);
+    TaskPoolUpdate(&gBtlWork->taskPools[1]);
     if (gBtlWork->unk_068 & 0x800000) {
         gBtlWork->unk_068 |= 0x400000;
         gBtlWork->unk_068 &= ~2ULL;
@@ -447,15 +447,15 @@ void func_08010CC8(void) {
         }
         if (IsTaskActive((Task*)gBtlWork->unk_0E8)) return;
         if (gBtlWork->unk_0E4 == 2) {
-            TaskCreate(&gBtlWork->unk_02C[0], &gTaskDescBtlVslockon, 0);
-            TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescBtlHpply, 0);
-            TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescBtlHpoth, 0);
+            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlVslockon, 0);
+            TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlHpply, 0);
+            TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlHpoth, 0);
             if (gBtlWork->unk_068 & 0x1000) {
-                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleSora, 0);
-                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleRiku, 0);
+                TaskCreate(&gBtlWork->taskPools[1], &gTaskDescCardBattleSora, 0);
+                TaskCreate(&gBtlWork->taskPools[1], &gTaskDescCardBattleRiku, 0);
             } else {
-                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleRiku, 0);
-                TaskCreate(&gBtlWork->unk_02C[1], &gTaskDescCardBattleSora, 0);
+                TaskCreate(&gBtlWork->taskPools[1], &gTaskDescCardBattleRiku, 0);
+                TaskCreate(&gBtlWork->taskPools[1], &gTaskDescCardBattleSora, 0);
             }
             func_08076360();
             func_080838E8();

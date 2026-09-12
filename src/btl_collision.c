@@ -72,13 +72,13 @@ s32 func_08011398(BtlObj* hit, s32 index) {
         return 0;
     }
     if (gBtlWork->unk_068 & 0x4000) {
-        if (gBtlWork->unk_068 & 0x20000000) source = (BtlObj*)gBtlWork->unk_07C;
-        else source = (BtlObj*)gUnk_02039B9C->unk_07C;
+        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->unk_07C;
+        else source = gUnk_02039B9C->unk_07C;
     } else if (gBtlWork->unk_068 & 0x800) {
-        if (gBtlWork->unk_068 & 0x20000000) source = (BtlObj*)gBtlWork->unk_07C;
+        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->unk_07C;
         else source = gBtlWork->unk_0A8;
     } else {
-        if (gBtlWork->unk_068 & 0x20000000) source = (BtlObj*)gBtlWork->unk_07C;
+        if (gBtlWork->unk_068 & 0x20000000) source = gBtlWork->unk_07C;
         else source = gBtlWork->unk_0A8;
     }
     if (source->unk_0E4 != 0) {
@@ -377,9 +377,9 @@ u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
 
     if (gBtlWork->unk_068 & 0x4000) {
         if (gBtlWork->unk_068 & 0x20000000) {
-            o = (BtlObj*)gUnk_02039B9C->unk_07C;
+            o = gUnk_02039B9C->unk_07C;
         } else {
-            o = (BtlObj*)gBtlWork->unk_07C;
+            o = gBtlWork->unk_07C;
         }
     } else if (gBtlWork->unk_068 & 0x20000000) {
         o = ListPoolFirst(&gBtlWork->unk_080);
@@ -392,7 +392,7 @@ u8 func_08011E3C(s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
         }
         return 0;
     } else {
-        o = (BtlObj*)gBtlWork->unk_07C;
+        o = gBtlWork->unk_07C;
     }
 
     if (func_08011270(o, x, y, z, a, b, c) == 0) {
@@ -437,7 +437,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
     f = w->unk_068;
 
     if ((f & 0x4000) && (f & 0x20000000)) {
-        o = (BtlObj*)gUnk_02039B9C->unk_07C;
+        o = gUnk_02039B9C->unk_07C;
     } else if (f & 0x20000000) {
         o = ListPoolFirst(&w->unk_080);
         sz = 0;
@@ -481,7 +481,7 @@ s32 func_08011F78(s32 a, s32 x, s32 y, s32 z, s16 p, s16 q, s16 r) {
         }
         return 0;
     } else {
-        o = (BtlObj*)w->unk_07C;
+        o = w->unk_07C;
     }
 
     if (func_08011270(o, x, y, z, p, q, r)) {
