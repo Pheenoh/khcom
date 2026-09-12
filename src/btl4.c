@@ -411,7 +411,7 @@ s32 task_btl_vslockon_1(BtlVslockonWork* work) {
 void task_btl_vslockon_2(BtlVslockonWork* work) {
     s16 x;
     s16 y;
-    BtlWork* p;
+    BtlObj* p;
 
     p = gBtlWork->unk_078;
     if (p != 0) {
@@ -549,7 +549,7 @@ void task_btl_hpoth_0(BtlHpothWork* work) {
 }
 
 s32 task_btl_hpoth_1(BtlHpothWork* work) {
-    BtlWork* actor;
+    BtlObj* actor;
     s32 flag;
     u32 state;
 
@@ -793,11 +793,11 @@ void task_btl_hpoth_3(BtlHpothWork* work) {
 
 void func_0805DA64(u16 a) {
     gDispCnt = (gDispCnt & 0xFFF8) | 1;
-    func_080A411C(gBtlWork->unk_040, 0, a);
+    func_080A411C(&gBtlWork->taskPools[1], 0, a);
 }
 
 void func_0805DA98(u16 a) {
-    func_080A41F0(gBtlWork->unk_040, a);
+    func_080A41F0(&gBtlWork->taskPools[1], a);
 }
 
 void func_0805DAB4(void) {

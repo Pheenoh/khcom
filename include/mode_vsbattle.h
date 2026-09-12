@@ -2,6 +2,7 @@
 #define GUARD_MODE_VSBATTLE_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
@@ -93,47 +94,6 @@ typedef struct VsTaskArg {
     s32 unk_00;
     u32 unk_04 : 8;
 } VsTaskArg;
-
-typedef struct BtlWork {
-    u8 unk_000[0x10];
-    s32 unk_010;
-    s32 unk_014;
-    u8 unk_018[0x0C];
-    s32 unk_024;
-    u8 unk_028[0x04];
-    TaskPool unk_02C;
-    TaskPool unk_040;
-    u8 unk_054[0x14];
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071;
-    s16 unk_072;
-    s16 unk_074;
-    u16 unk_076;
-    VsActor* unk_078;
-    VsActor* unk_07C;
-    u8 unk_080[0x28];
-    VsActor* unk_0A8;
-    u8 unk_0AC[0x07];
-    u8 unk_0B3;
-    u8 unk_0B4[0x26];
-    s16 unk_0DA;
-    s16 unk_0DC;
-    s16 unk_0DE;
-    s16 unk_0E0;
-    u8 unk_0E2[0x0A];
-    u16 unk_0EC;
-    u8 unk_0EE;
-    u8 unk_0EF;
-    u8 unk_0F0[0x30];
-    s16 unk_120;
-    u8 unk_122[0x0A];
-    s32 unk_12C;
-    u8 unk_130[0x94];
-    u16 unk_1C4;
-    u16 unk_1C6;
-    u8 unk_1C8[0x08];
-} BtlWork;
 
 typedef struct EmyDef {
     void* unk_00;
@@ -248,12 +208,10 @@ typedef struct HumDef {
     u32 unk_0C;
 } HumDef;
 
-extern BtlWork* gBtlWork;
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
 extern u8 gUnk_02039B98;
-extern BtlWork* gUnk_02039B9C;
 extern u32 gSioPlayerId;
 extern CharaLinkData gUnk_0203AA10;
 extern CharaLinkData gUnk_0203AAC0;

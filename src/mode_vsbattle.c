@@ -30,30 +30,30 @@ void mode_vsbattle_0(u32 mode) {
     SetBgPriority(2, 0);
     SetBgOverflow(3, 1);
     SetBgOverflow(2, 0);
-    TaskPoolInit(&gBtlWork->unk_02C, 32);
-    TaskPoolInit(&gBtlWork->unk_040, 32);
+    TaskPoolInit(&gBtlWork->taskPools[0], 32);
+    TaskPoolInit(&gBtlWork->taskPools[1], 32);
     func_08012798(0x80, gBtlWork->unk_1C4);
     func_0801227C();
 
     if (mode == 0) {
         arg.unk_04 = 1;
         arg.unk_00 = 0;
-        TaskCreate(&gBtlWork->unk_02C, &gTaskDescBtlSora, &arg);
+        TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlSora, &arg);
         arg.unk_04 = 0;
         arg.unk_00 = 1;
-        TaskCreate(&gBtlWork->unk_02C, &gTaskDescBtlSora, &arg);
+        TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlSora, &arg);
         gBtlWork->unk_068 |= 0x1000;
     } else {
         arg2.unk_04 = 0;
         arg2.unk_00 = 0;
-        TaskCreate(&gBtlWork->unk_02C, &gTaskDescBtlSora, &arg2);
+        TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlSora, &arg2);
         arg2.unk_04 = 1;
         arg2.unk_00 = 1;
-        TaskCreate(&gBtlWork->unk_02C, &gTaskDescBtlSora, &arg2);
+        TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlSora, &arg2);
     }
 
     func_0801A920(0x100 - gUnk_02039B90, gUnk_02039B90 + 0x100, gUnk_02039B88, gUnk_02039B8C);
-    TaskCreate(&gBtlWork->unk_040, &gTaskDescBtlMap, 0);
+    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlMap, 0);
     gUnk_02039B98 = 0;
     func_08006120(0, 60);
 }
@@ -63,27 +63,27 @@ void mode_vsbattle_1(void) {
         func_08010CC8();
 
         if (gBtlWork->unk_072 <= 0) {
-            TaskPoolUpdate(&gBtlWork->unk_02C);
+            TaskPoolUpdate(&gBtlWork->taskPools[0]);
         } else {
             gBtlWork->unk_072--;
         }
 
         func_08012824();
         func_080125A4();
-        TaskPoolDraw(&gBtlWork->unk_040);
+        TaskPoolDraw(&gBtlWork->taskPools[1]);
 
         if (gBtlWork->unk_068 & 0x800000) {
             gBtlWork->unk_068 &= ~0x800000;
         }
     }
 
-    TaskPoolDraw(&gBtlWork->unk_02C);
+    TaskPoolDraw(&gBtlWork->taskPools[0]);
 }
 
 void mode_vsbattle_2(void) {
     func_08012810();
-    TaskPoolDestroy(&gBtlWork->unk_040);
-    TaskPoolDestroy(&gBtlWork->unk_02C);
+    TaskPoolDestroy(&gBtlWork->taskPools[1]);
+    TaskPoolDestroy(&gBtlWork->taskPools[0]);
     func_0801C104();
     EwramFree(gUnk_02039B9C);
     EwramFree(gBtlWork);
