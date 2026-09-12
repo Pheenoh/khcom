@@ -1,5 +1,6 @@
 #include "macros.h"
 #include "bos2.h"
+#include "battle_bounds.h"
 
 s16 gUnk_0203ACC0 COMMON;
 s16 gUnk_0203ACC4 COMMON;
@@ -2101,7 +2102,7 @@ void task_bos_jf_3(JfWork* work) {
     TaskPoolDestroy(&work->unk_254);
 }
 
-u8 func_080BD4A8(s32* p, s32 b, s32* a, s32* out) {
+u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
     s32 v1;
     s32 v2;
     s32 v3;

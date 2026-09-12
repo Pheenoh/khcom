@@ -1140,7 +1140,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     u16 t;
 
     gBoogieWork = work;
-    TaskCreate(&gBtlWork->unk_40, &gTaskDescBosBoogieMap, gUnk_096FDF24);
+    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosBoogieMap, gUnk_096FDF24);
     work->unk_000 = 0;
     work->unk_004 = 0;
     gUnk_0203C564 = 0;
@@ -1179,9 +1179,9 @@ void task_bos_boogie_0(BoogieWork* work) {
     work->unk_164 = 0;
     work->unk_168 = 0;
     work->unk_16C = 0;
-    gBtlWork->unk_CC = work->unk_040.x;
-    gBtlWork->unk_D0 = work->unk_040.y;
-    gBtlWork->unk_D4 = work->unk_040.z;
+    gBtlWork->unk_0CC = work->unk_040.x;
+    gBtlWork->unk_0D0 = work->unk_040.y;
+    gBtlWork->unk_0D4 = work->unk_040.z;
 }
 
 u8 task_bos_boogie_1(BoogieWork* work) {
@@ -1254,7 +1254,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             if (func_08006314() == 0) {
                 func_08014AAC(a->x, a->y + a->z - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
                 func_0801C298(((BoogiePalette*)work->palette)->unk_06 + 16, 0);
-                func_08006238(0, gBtlWork->unk_B3, 8);
+                func_08006238(0, gBtlWork->unk_0B3, 8);
                 work->unk_170 = 3;
                 work->unk_004 = 0;
             }
@@ -1272,7 +1272,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
                 fx.x = a->x;
                 fx.y = 0x24000;
                 fx.z = -0x6400;
-                func_08096DC4(&gBtlWork->unk_2C, &fx);
+                func_08096DC4(&gBtlWork->taskPools[0], &fx);
                 func_0801B008();
                 func_0801B918(a);
                 return 0;
@@ -1302,7 +1302,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         work->unk_004++;
         if (gUnk_0203C560 <= 2 && !IsTaskActive((Task*)work->unk_160) &&
             !IsTaskActive((Task*)work->unk_168) && !IsTaskActive((Task*)work->unk_16C) &&
-            !IsTaskActive((Task*)work->unk_164) && gBtlWork->unk_EC <= 0 && work->unk_174 == 0) {
+            !IsTaskActive((Task*)work->unk_164) && gBtlWork->unk_0EC <= 0 && work->unk_174 == 0) {
             random = GetRandom() % 100;
             if (random == 0) {
                 func_08083900(8);
@@ -1454,9 +1454,9 @@ u8 task_bos_boogie_1(BoogieWork* work) {
     if (func_0801C1C0(0)) {
         func_080D9A58();
     }
-    gBtlWork->unk_CC = a->x;
-    gBtlWork->unk_D0 = a->y;
-    gBtlWork->unk_D4 = a->z;
+    gBtlWork->unk_0CC = a->x;
+    gBtlWork->unk_0D0 = a->y;
+    gBtlWork->unk_0D4 = a->z;
     return 1;
 }
 
@@ -1495,7 +1495,7 @@ void task_bos_boogie_3(BoogieWork* work) {
 void func_080D9A14(void) {
     UnkStruct_0203C55C* t;
 
-    t = (UnkStruct_0203C55C*)ListPoolFirst(&gBtlWork->unk_80);
+    t = (UnkStruct_0203C55C*)ListPoolFirst(&gBtlWork->unk_080);
     while (t != 0) {
         if (t->unk_00 != 39) {
             t->unk_34 |= 0x40;

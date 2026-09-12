@@ -2,6 +2,7 @@
 #define GUARD_BATTLE_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "m4a.h"
 #include "gba/syscall.h"
@@ -232,92 +233,6 @@ typedef struct Actor {
     const u32* unk_184;
 } Actor;
 
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    u8 unk_018;
-    u8 unk_019;
-    u16 unk_01A;
-    s32 unk_01C;
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
-    TaskPool unk_02C[3];
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071;
-    u16 unk_072;
-    u16 unk_074;
-    u16 unk_076;
-    Collider* unk_078;
-    Collider* unk_07C;
-    ListNode unk_080;
-    ListNode unk_090;
-    s32 unk_0A0;
-    u8 unk_0A4;
-    u8 unk_0A5[0x03];
-    BtlObj* unk_0A8;
-    BtlObj* unk_0AC;
-    s16 unk_0B0;
-    s8 unk_0B2;
-    u8 unk_0B3;
-    u8 unk_0B4;
-    u8 unk_0B5[0x03];
-    s32 unk_0B8;
-    s32 unk_0BC;
-    s32 unk_0C0;
-    u16 unk_0C4;
-    u16 unk_0C6;
-    u16 unk_0C8;
-    u8 unk_0CA[0x06];
-    s32 unk_0D0;
-    u8 unk_0D4[0x04];
-    s16 unk_0D8;
-    s16 unk_0DA;
-    s16 unk_0DC;
-    s16 unk_0DE;
-    s16 unk_0E0;
-    u8 unk_0E2;
-    u8 unk_0E3;
-    s16 unk_0E4;
-    u8 unk_0E6[0x02];
-    Task* unk_0E8;
-    u8 unk_0EC[0x02];
-    u8 unk_0EE;
-    u8 unk_0EF;
-    s32 unk_0F0;
-    s32 unk_0F4;
-    u8 unk_0F8[0x02];
-    u8 unk_0FA;
-    u8 unk_0FB;
-    s32 unk_0FC;
-    s32 unk_100;
-    s32 unk_104;
-    s32 unk_108;
-    s32 unk_10C;
-    void* unk_110;
-    void* unk_114;
-    u8 unk_118[0x08];
-    s16 unk_120;
-    u8 unk_122[0x02];
-    s32 unk_124;
-    u8 (*unk_128)(s32* a, s32* b, s32* c, s32* d);
-    s32 unk_12C;
-    s32 unk_130;
-    s32 unk_134;
-    s32 unk_138;
-    u8 unk_13C[0x88];
-    u8 unk_1C4[0x06];
-    s8 unk_1CA;
-    u8 unk_1CB;
-    u16 unk_1CC;
-    u8 unk_1CE[0x02];
-} BtlWork;
-
 typedef struct UnkStruct_02039CA8 {
     u16 maxHp;
     u16 cp;
@@ -397,8 +312,6 @@ extern TaskDesc gTaskDescEmy82;
 extern TaskDesc gTaskDescEmy83;
 extern TaskDesc gTaskDescEmyTrumpH;
 extern TaskDesc gTaskDescEmyTrumpS;
-extern BtlWork* gBtlWork;
-extern BtlWork* gUnk_02039B9C;
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 extern u32 gUnk_03006C10;
 extern const s16 gSineTable[];
@@ -572,7 +485,7 @@ void func_08014E38(void);
 void func_08014F4C(void);
 void func_08017EF4(void);
 void func_0801536C(void);
-Collider* func_08016320(void);
+BtlObj* func_08016320(void);
 void func_080192E0(void);
 void func_0801C2DC(BtlObj* p, u8 f);
 void func_08013D60(void);
@@ -757,7 +670,7 @@ void func_08014588(s32 x, s32 y, s32 z, s32 w, u16 a, u16 b);
 void func_0801440C(void);
 void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f);
 void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t);
-void func_080175BC(Collider* p, BtlObj* o, u8 a, u8 b);
+void func_080175BC(BtlObj* p, BtlObj* o, u8 a, u8 b);
 void func_080177EC(void);
 void func_080153C8(void);
 void func_080169A0(s32 x, s32 y, s32 z, u8 f);
@@ -873,7 +786,6 @@ void func_0801C298(u8 a, u8 b);
 void func_0801CB0C(void);
 void func_0801CB18(void);
 u8 func_0800FC5C(s32 a);
-u8 func_0801050C(s32 a, s32* b, s32* c, s32* d);
 void func_08012614(Collider* p, u8 b);
 u8 func_08012648(Collider* p);
 u8 func_0801C1C0(u8 a);

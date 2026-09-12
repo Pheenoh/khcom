@@ -126,7 +126,7 @@ void func_080104F4(void) {
     func_08001058(func_0801007C, func_080100A0);
 }
 
-u8 func_0801050C(s32 a, s32* b, s32* c, s32* d) {
+u8 func_0801050C(s32* a, s32* b, s32* c, s32* d) {
     if (*b < 0x24000) {
         if (*c > -0x2000) {
             *d = 0;

@@ -2,6 +2,7 @@
 #define GUARD_MODE_CHKBTL_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "taskpool.h"
 #include "main.h"
@@ -26,11 +27,6 @@ typedef struct ChkBtlEntry {
     TaskDesc* taskDesc;
     const char* name;
 } ChkBtlEntry;
-
-typedef struct BtlWork {
-    u8 unk_00[0x2C];
-    TaskPool unk_2C;
-} BtlWork;
 
 typedef struct ChkBtlPos {
     s32 unk_00;
@@ -59,7 +55,6 @@ void mode_chkbtl_0(void);
 void mode_chkbtl_1(void);
 void mode_chkbtl_2(void);
 
-extern BtlWork* gBtlWork;
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
