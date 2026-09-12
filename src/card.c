@@ -23048,7 +23048,6 @@ void func_0809A4E0(UnkStruct_0809A02C* w, u8 kind) {
     w->unk_1A4 = 2;
 }
 
-#ifndef VERSION_EU
 s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
     s16 sx;
     s32 t;
@@ -23094,6 +23093,9 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
 
     if (w->unk_170 != 0) {
         m4aSongNumStart(106);
+#ifdef VERSION_EU
+        w->unk_1C2 = 10;
+#endif
 
         if (gUnk_02039DD4 != 0) {
             WorldToScreen(&sx, &sy, w->unk_38, w->unk_3C,
@@ -23103,6 +23105,9 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
             w->unk_1CA = 1;
             func_08012614(w->unk_144, 1);
             func_0809A4E0(w, 0);
+#ifdef VERSION_EU
+            w->unk_1CD = 1;
+#endif
             SetTaskUpdate(a, (u32)func_0809AB2C);
         }
 
@@ -23149,10 +23154,6 @@ s32 func_0809A54C(UnkStruct_0809A02C* w, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809A54C.s");
-#endif
-#ifndef VERSION_EU
 s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
     s16 sx;
     s32 t;
@@ -23198,6 +23199,9 @@ s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
 
     if (w->unk_170 != 0) {
         m4aSongNumStart(106);
+#ifdef VERSION_EU
+        w->unk_1C2 = 10;
+#endif
 
         if (gUnk_02039DD4 != 0) {
             WorldToScreen(&sx, &sy, w->unk_38, w->unk_3C,
@@ -23207,6 +23211,9 @@ s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
             w->unk_1CA = 1;
             func_08012614(w->unk_144, 1);
             func_0809A4E0(w, 0);
+#ifdef VERSION_EU
+            w->unk_1CD = 1;
+#endif
             SetTaskUpdate(a, (u32)func_0809AB2C);
         }
 
@@ -23250,9 +23257,6 @@ s32 func_0809A840(UnkStruct_0809A02C* w, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809A840.s");
-#endif
 u8 func_0809AB2C(UnkStruct_0809A02C* w) {
     s32 dx;
     s32 dy;
