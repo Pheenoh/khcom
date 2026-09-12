@@ -29200,7 +29200,7 @@ void func_080A4C1C(UnkStruct_080A3F5C* w) {
     gUnk_02034B00 = 0;
 }
 
-#if !defined(VERSION_JP) && !defined(VERSION_EU)
+#ifndef VERSION_JP
 u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
     s32* p;
     u8 x;
@@ -29233,7 +29233,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
 
     return 1;
 }
-#elif defined(VERSION_JP)
+#else
 u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
     if (w->unk_146[0] == 0) {
         return 0;
@@ -29252,8 +29252,6 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_080A4CC8.s");
 #endif
 
 s32 func_080A4D7C(u64* src) {
