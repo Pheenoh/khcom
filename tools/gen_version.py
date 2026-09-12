@@ -64,6 +64,12 @@ SIZE_SLACK = 64
 
 TARGET_ANCHORS = {
     "eu": {
+        0x09402F78: 0x094DCCE4,
+        0x095172B8: 0x09534324,
+        0x09517AB8: 0x09534B24,
+        0x09519AB8: 0x09538324,
+        0x0951A2B8: 0x09538B24,
+        0x0951AAB8: 0x09539324,
         0x02034890: 0x02034898,
         0x08F7CF18: 0x08F8DE14,
         0x0976DB68: 0x0973BA18,
@@ -127,6 +133,8 @@ TARGET_ANCHORS = {
 
 TARGET_ONLY_SYMBOLS = {
     "eu": {
+        "gUnkEu_094E04E4": 0x094E04E4,
+        "gUnkEu_09533324": 0x09533324,
         "gLanguage": 0x03007484,
         "gModeLang": 0x09F3EA64,
         "gUnkEu_08F6A73C": 0x08F6A73C,
@@ -408,6 +416,8 @@ TARGET_FUNC_SIZE = {
         "task_title_logo_2": 196,
     },
     "eu": {
+        "func_080892E8": 632,
+        "func_08089EC0": 596,
         "func_0805E89C": 32,
         "func_0801CB44": 60,
         "task_btl_escape_0": 224,
