@@ -700,7 +700,7 @@ void func_080B5444(void);
 void WlogoEnableHBlank(void);
 void WlogoHBlankIntr(void);
 void WlogoDisableHBlank(void);
-s32 func_080B9190(s32 a, s32 b);
+s32 GetAbsoluteDifference(s32 a, s32 b);
 void task_wlogo_won_0(WlogoWonWork* work);
 u8 task_wlogo_won_1(WlogoWonWork* work);
 void task_wlogo_won_2(WlogoWonWork* work);

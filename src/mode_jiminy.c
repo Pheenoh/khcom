@@ -113,7 +113,7 @@ void mode_jiminy_0(void) {
     FadeStartIn(0, 0x10);
 
     for (i = 0; i < 8; i++) {
-        func_08065ACC(&gJiminyWork->unk_060[i], 0x30);
+        InitTextSlots(&gJiminyWork->unk_060[i], 0x30);
     }
 
     func_08064B80(0);
@@ -350,7 +350,7 @@ void mode_jiminy_1(void) {
         if (i >= gJiminyWork->unk_C78) {
             break;
         }
-        func_080664D8(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
+        DrawTextSlots(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
             &gJiminyWork->unk_060[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
 
         if (gJiminyWork->unk_000 == 7) {
@@ -540,7 +540,7 @@ void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f) {
     func_0805A8D0();
 }
 
-void func_0805BAAC(s16 a, u8* out) {
+void SplitThreeDecimalDigits(s16 a, u8* out) {
     out[0] = a / 100;
     out[1] = a % 100 / 10;
     out[2] = a % 10;
@@ -909,14 +909,14 @@ void func_0805BAE4(void) {
         }
 #endif
         source = gUnk_08EE78E4;
-        func_0805BAAC(selected + 1, digits);
+        SplitThreeDecimalDigits(selected + 1, digits);
         dest = (u8*)GetBgCharBase(0) + 0x20;
         RequestDma3Copy(source + digits[0] * 0x20, dest, 0x20);
         dest = (u8*)GetBgCharBase(0) + 0x40;
         RequestDma3Copy(source + digits[1] * 0x20, dest, 0x20);
         dest = (u8*)GetBgCharBase(0) + 0x60;
         RequestDma3Copy(source + digits[2] * 0x20, dest, 0x20);
-        func_0805BAAC(unlocked, digits);
+        SplitThreeDecimalDigits(unlocked, digits);
         dest = (u8*)GetBgCharBase(0) + 0x80;
         RequestDma3Copy(source + digits[0] * 0x20, dest, 0x20);
         dest = (u8*)GetBgCharBase(0) + 0xA0;
@@ -1023,7 +1023,7 @@ void func_0805BAE4(void) {
     }
     func_080658B8(gJiminyWork->unk_C71);
     for (i = 0; gJiminyWork->unk_060[i].unk_000 != 0 && i < gJiminyWork->unk_C78; i++) {
-        func_080664D8(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
+        DrawTextSlots(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
             &gJiminyWork->unk_060[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
     }
     if (gJiminyWork->unk_CAC & 8) {

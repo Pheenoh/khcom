@@ -154,11 +154,11 @@ void mode_sio_btl_connect_0(s32 arg) {
     gSioBtlConnectWork->unk_02 = 0;
     gSioBtlConnectWork->unk_04 = 0;
     gSioBtlConnectWork->unk_05 = 0;
-    func_08065ACC(gSioBtlConnectWork->unk_08, SIO_CONNECT_TEXT_SLOTS);
+    InitTextSlots(gSioBtlConnectWork->unk_08, SIO_CONNECT_TEXT_SLOTS);
 #ifdef VERSION_EU
-    gSioBtlConnectWork->unk_05 = func_08065B6C(eu_0805E924(gUnkEu_08891508), gSioBtlConnectWork->unk_08);
+    gSioBtlConnectWork->unk_05 = LoadTextSlots(eu_0805E924(gUnkEu_08891508), gSioBtlConnectWork->unk_08);
 #else
-    gSioBtlConnectWork->unk_05 = func_08065B6C(gUnk_08159E4A, gSioBtlConnectWork->unk_08);
+    gSioBtlConnectWork->unk_05 = LoadTextSlots(gUnk_08159E4A, gSioBtlConnectWork->unk_08);
 #endif
     gSioBtlConnectWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
 #ifdef VERSION_EU
@@ -250,21 +250,21 @@ void mode_sio_btl_connect_1(void) {
     width = eu_0806629C(gSioBtlConnectWork->unk_08, gSioBtlConnectWork->unk_05);
     if (gLanguage == 1) {
         x = 120 - (width >> 1);
-        func_080664D8(x, 68, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
+        DrawTextSlots(x, 68, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
     } else {
         x = 120 - (width >> 1);
-        func_080664D8(x, 63, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
+        DrawTextSlots(x, 63, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
     }
 #elif defined(VERSION_JP)
-    func_080664D8(0x3D, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
+    DrawTextSlots(0x3D, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
 #else
-    func_080664D8(0x42, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
+    DrawTextSlots(0x42, 0x3F, gSioBtlConnectWork->unk_08, gSioBtlConnectWork->palette, 20, gSioBtlConnectWork->unk_05);
 #endif
 }
 
 void mode_sio_btl_connect_2(void) {
     ReleaseObjPalette(gSioBtlConnectWork->palette);
-    func_08065AE0(gSioBtlConnectWork->unk_08, SIO_CONNECT_TEXT_SLOTS);
+    FreeTextSlots(gSioBtlConnectWork->unk_08, SIO_CONNECT_TEXT_SLOTS);
     EwramFree(gSioBtlConnectWork);
 }
 
@@ -319,22 +319,22 @@ void mode_sio_btl_option_0(s32 arg) {
     SetBgSize(2, 0x8000);
     RequestDma3Copy(gUnk_096AD744, GetBgCharBase(0), 0x2000);
 #ifdef VERSION_EU
-    func_08065ACC(gSioBtlOptionWork->unk_054, 40);
-    func_08065ACC(gSioBtlOptionWork->unk_0FC, 20);
-    func_08065ACC(gSioBtlOptionWork->unk_154, 20);
+    InitTextSlots(gSioBtlOptionWork->unk_054, 40);
+    InitTextSlots(gSioBtlOptionWork->unk_0FC, 20);
+    InitTextSlots(gSioBtlOptionWork->unk_154, 20);
     if (gUnk_0203A9E4 == 0) {
-        gSioBtlOptionWork->unk_0F8 = func_08065B6C(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
-        gSioBtlOptionWork->unk_150 = func_08065B6C(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
+        gSioBtlOptionWork->unk_0F8 = LoadTextSlots(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
+        gSioBtlOptionWork->unk_150 = LoadTextSlots(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
     } else {
-        gSioBtlOptionWork->unk_0F8 = func_08065B6C(gUnkEu_095DA860, gSioBtlOptionWork->unk_0FC);
-        gSioBtlOptionWork->unk_150 = func_08065B6C(gUnkEu_095DA867, gSioBtlOptionWork->unk_154);
+        gSioBtlOptionWork->unk_0F8 = LoadTextSlots(gUnkEu_095DA860, gSioBtlOptionWork->unk_0FC);
+        gSioBtlOptionWork->unk_150 = LoadTextSlots(gUnkEu_095DA867, gSioBtlOptionWork->unk_154);
     }
 #else
-    func_08065ACC(gSioBtlOptionWork->unk_054, 20);
-    func_08065ACC(gSioBtlOptionWork->unk_0FC, 10);
-    func_08065ACC(gSioBtlOptionWork->unk_154, 10);
-    gSioBtlOptionWork->unk_0F8 = func_08065B6C(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
-    gSioBtlOptionWork->unk_150 = func_08065B6C(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
+    InitTextSlots(gSioBtlOptionWork->unk_054, 20);
+    InitTextSlots(gSioBtlOptionWork->unk_0FC, 10);
+    InitTextSlots(gSioBtlOptionWork->unk_154, 10);
+    gSioBtlOptionWork->unk_0F8 = LoadTextSlots(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
+    gSioBtlOptionWork->unk_150 = LoadTextSlots(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
 #endif
     gSioBtlOptionWork->unk_0F4 = LoadObjPalette(gUnk_096FBCC4, 32);
     gSioBtlOptionWork->unk_14C = LoadObjPalette(gUnk_096FBCC4 + 64, 32);
@@ -465,11 +465,11 @@ void func_080AF11C(void) {
     gSioBtlOptionWork->gfx3 = gUnk_09EF1278[0];
     gSioBtlOptionWork->unk_228 = 0;
 #ifdef VERSION_EU
-    func_08065ACC(gSioBtlOptionWork->unk_22C, 120);
-    gSioBtlOptionWork->unk_229 = func_08065B6C(eu_0805E924(gUnkEu_08891580), gSioBtlOptionWork->unk_22C);
+    InitTextSlots(gSioBtlOptionWork->unk_22C, 120);
+    gSioBtlOptionWork->unk_229 = LoadTextSlots(eu_0805E924(gUnkEu_08891580), gSioBtlOptionWork->unk_22C);
 #else
-    func_08065ACC(gSioBtlOptionWork->unk_22C, 60);
-    gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A20C, gSioBtlOptionWork->unk_22C);
+    InitTextSlots(gSioBtlOptionWork->unk_22C, 60);
+    gSioBtlOptionWork->unk_229 = LoadTextSlots(gUnk_0815A20C, gSioBtlOptionWork->unk_22C);
 #endif
 #ifdef VERSION_JP
     gSioBtlOptionWork->unk_412 = 68;
@@ -534,10 +534,10 @@ void func_080AF4F8(void) {
     LoadBgPalette(2, gUnk_09EF1318[i].unk_10, gUnk_09EF1318[i].unk_14);
 #ifdef VERSION_EU
     eu_080059F4(2, gUnk_09EF1318[i].unk_08);
-    gSioBtlOptionWork->unk_050 = func_08065B6C(eu_0805E924(gUnk_09EF1318[i].unk_18), gSioBtlOptionWork->unk_054);
+    gSioBtlOptionWork->unk_050 = LoadTextSlots(eu_0805E924(gUnk_09EF1318[i].unk_18), gSioBtlOptionWork->unk_054);
 #else
     LoadBgMap(2, gUnk_09EF1318[i].unk_08, gUnk_09EF1318[i].unk_0C);
-    gSioBtlOptionWork->unk_050 = func_08065B6C(gUnk_09EF1318[i].unk_18, gSioBtlOptionWork->unk_054);
+    gSioBtlOptionWork->unk_050 = LoadTextSlots(gUnk_09EF1318[i].unk_18, gSioBtlOptionWork->unk_054);
 #endif
     DisableBg(2);
     gSioBtlOptionWork->unk_002++;
@@ -635,13 +635,13 @@ void func_080AF70C(void) {
     DrawSprite(60, 88, gSioBtlOptionWork->unk_018[0], gSioBtlOptionWork->unk_008[0], gSioBtlOptionWork->unk_008[2], 0, 1, 0xFFF0);
     DrawSprite(180, 88, gSioBtlOptionWork->unk_018[1], gSioBtlOptionWork->unk_008[1], gSioBtlOptionWork->unk_008[3], 0, 0, 0xFFF0);
 #ifdef VERSION_EU
-    width = func_08065B08(gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_050);
-    func_080664D8(162 - width / 2, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
+    width = GetTextSlotsWidth(gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_050);
+    DrawTextSlots(162 - width / 2, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
 #else
-    func_080664D8(gUnk_09EF1318[gSioBtlOptionWork->unk_417].unk_1E + 108, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
+    DrawTextSlots(gUnk_09EF1318[gSioBtlOptionWork->unk_417].unk_1E + 108, 4, gSioBtlOptionWork->unk_054, gSioBtlOptionWork->unk_0F4, 20, gSioBtlOptionWork->unk_050);
 #endif
-    func_080664D8(16, 144, gSioBtlOptionWork->unk_0FC, gSioBtlOptionWork->unk_14C, 0xF200, gSioBtlOptionWork->unk_0F8);
-    func_080664D8(136, 144, gSioBtlOptionWork->unk_154, gSioBtlOptionWork->unk_1A4, 0xF200, gSioBtlOptionWork->unk_150);
+    DrawTextSlots(16, 144, gSioBtlOptionWork->unk_0FC, gSioBtlOptionWork->unk_14C, 0xF200, gSioBtlOptionWork->unk_0F8);
+    DrawTextSlots(136, 144, gSioBtlOptionWork->unk_154, gSioBtlOptionWork->unk_1A4, 0xF200, gSioBtlOptionWork->unk_150);
     DrawSprite(-((gSioBtlOptionWork->unk_1FA >> 3) % 4) + 88, 2, gSioBtlOptionWork->gfx4, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xFF00);
     DrawSprite(224 + ((gSioBtlOptionWork->unk_1FA >> 3) % 4), 2, gSioBtlOptionWork->unk_1F0, gSioBtlOptionWork->tiles4, gSioBtlOptionWork->palette4, 0, 0, 0xFF00);
 
@@ -666,12 +666,12 @@ void func_080AF70C(void) {
             }
         }
         if (multiline != 0) {
-            func_080664D8(120 - (width >> 1), 119, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
+            DrawTextSlots(120 - (width >> 1), 119, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
         } else {
-            func_080664D8(120 - (width >> 1), 124, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
+            DrawTextSlots(120 - (width >> 1), 124, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
         }
 #else
-        func_080664D8(gSioBtlOptionWork->unk_412, gSioBtlOptionWork->unk_414, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
+        DrawTextSlots(gSioBtlOptionWork->unk_412, gSioBtlOptionWork->unk_414, gSioBtlOptionWork->unk_22C, gSioBtlOptionWork->palette6, 20, gSioBtlOptionWork->unk_229);
 #endif
     }
     DrawSprite(32, 24, gSioBtlOptionWork->gfx5[0], gSioBtlOptionWork->tiles5[0], gSioBtlOptionWork->palette5[0], 0, 0, 0xF100);
@@ -888,9 +888,9 @@ void func_080AFCD4(void) {
             gSioBtlOptionWork->unk_1B4 = 0;
             gSioBtlOptionWork->unk_228 = 1;
 #ifdef VERSION_EU
-            gSioBtlOptionWork->unk_229 = func_08065B6C(eu_0805E924(gUnkEu_08891580), gSioBtlOptionWork->unk_22C);
+            gSioBtlOptionWork->unk_229 = LoadTextSlots(eu_0805E924(gUnkEu_08891580), gSioBtlOptionWork->unk_22C);
 #else
-            gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A20C, gSioBtlOptionWork->unk_22C);
+            gSioBtlOptionWork->unk_229 = LoadTextSlots(gUnk_0815A20C, gSioBtlOptionWork->unk_22C);
 #endif
 #ifdef VERSION_JP
             gSioBtlOptionWork->unk_412 = 68;
@@ -980,7 +980,7 @@ void func_080AFCD4(void) {
                 gUnkEu_0203B108[0] = 1;
                 gSioBtlOptionWork->unk_1B4 = 0;
                 gSioBtlOptionWork->unk_228 = 1;
-                gSioBtlOptionWork->unk_229 = func_08065B6C(eu_0805E924(gUnkEu_08891580), gSioBtlOptionWork->unk_22C);
+                gSioBtlOptionWork->unk_229 = LoadTextSlots(eu_0805E924(gUnkEu_08891580), gSioBtlOptionWork->unk_22C);
 #ifdef VERSION_JP
                 gSioBtlOptionWork->unk_412 = 68;
 #else
@@ -1127,9 +1127,9 @@ void func_080B0010(void) {
     case 2:
         RequestDma3Copy((u8*)gUnk_09EF1318[b].unk_00 + 0x2000, (u8*)GetBgCharBase(2) + 0x2000, gUnk_09EF1318[b].unk_04 - 0x2000);
 #ifdef VERSION_EU
-        gSioBtlOptionWork->unk_050 = func_08065B6C(eu_0805E924(gUnk_09EF1318[b].unk_18), gSioBtlOptionWork->unk_054);
+        gSioBtlOptionWork->unk_050 = LoadTextSlots(eu_0805E924(gUnk_09EF1318[b].unk_18), gSioBtlOptionWork->unk_054);
 #else
-        gSioBtlOptionWork->unk_050 = func_08065B6C(gUnk_09EF1318[b].unk_18, gSioBtlOptionWork->unk_054);
+        gSioBtlOptionWork->unk_050 = LoadTextSlots(gUnk_09EF1318[b].unk_18, gSioBtlOptionWork->unk_054);
 #endif
         gSioBtlOptionWork->unk_417 = b;
         gSioBtlOptionWork->unk_410++;
@@ -1180,9 +1180,9 @@ void func_080B01FC(void) {
     if (gSioBtlOptionWork->unk_217 == 1 && gSioBtlOptionWork->unk_218 == 1) {
         gSioBtlOptionWork->unk_006 = 0;
 #ifdef VERSION_EU
-        gSioBtlOptionWork->unk_229 = func_08065B6C(eu_0805E924(gUnkEu_08891670), gSioBtlOptionWork->unk_22C);
+        gSioBtlOptionWork->unk_229 = LoadTextSlots(eu_0805E924(gUnkEu_08891670), gSioBtlOptionWork->unk_22C);
 #else
-        gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815A23C, gSioBtlOptionWork->unk_22C);
+        gSioBtlOptionWork->unk_229 = LoadTextSlots(gUnk_0815A23C, gSioBtlOptionWork->unk_22C);
 #endif
 #ifdef VERSION_JP
         gSioBtlOptionWork->unk_412 = 61;
@@ -1212,9 +1212,9 @@ void func_080B02A4(void) {
         m4aSongNumStart(106);
         gSioBtlOptionWork->unk_006 = 0;
 #ifdef VERSION_EU
-        gSioBtlOptionWork->unk_229 = func_08065B6C(eu_0805E924(gUnkEu_08891714), gSioBtlOptionWork->unk_22C);
+        gSioBtlOptionWork->unk_229 = LoadTextSlots(eu_0805E924(gUnkEu_08891714), gSioBtlOptionWork->unk_22C);
 #else
-        gSioBtlOptionWork->unk_229 = func_08065B6C(gUnk_0815B3D4, gSioBtlOptionWork->unk_22C);
+        gSioBtlOptionWork->unk_229 = LoadTextSlots(gUnk_0815B3D4, gSioBtlOptionWork->unk_22C);
 #endif
 #ifdef VERSION_JP
         gSioBtlOptionWork->unk_412 = 74;
@@ -1234,7 +1234,7 @@ void func_080B02A4(void) {
     } else if (GetKeysPressed() & A_BUTTON) {
         m4aSongNumStart(106);
         gSioBtlOptionWork->unk_006 = 0;
-        gSioBtlOptionWork->unk_229 = func_08065B6C(eu_0805E924(gUnkEu_08891714), gSioBtlOptionWork->unk_22C);
+        gSioBtlOptionWork->unk_229 = LoadTextSlots(eu_0805E924(gUnkEu_08891714), gSioBtlOptionWork->unk_22C);
         gSioBtlOptionWork->unk_412 = 72;
         gSioBtlOptionWork->unk_414 = 124;
         gSioBtlOptionWork->unk_002++;
@@ -1354,15 +1354,15 @@ void mode_sio_btl_option_2(void) {
     ReleaseObjPalette(gSioBtlOptionWork->unk_1A4);
     ReleaseObjPalette(gSioBtlOptionWork->palette6);
 #ifdef VERSION_EU
-    func_08065AE0(gSioBtlOptionWork->unk_054, 40);
-    func_08065AE0(gSioBtlOptionWork->unk_0FC, 20);
-    func_08065AE0(gSioBtlOptionWork->unk_154, 20);
-    func_08065AE0(gSioBtlOptionWork->unk_22C, 120);
+    FreeTextSlots(gSioBtlOptionWork->unk_054, 40);
+    FreeTextSlots(gSioBtlOptionWork->unk_0FC, 20);
+    FreeTextSlots(gSioBtlOptionWork->unk_154, 20);
+    FreeTextSlots(gSioBtlOptionWork->unk_22C, 120);
 #else
-    func_08065AE0(gSioBtlOptionWork->unk_054, 20);
-    func_08065AE0(gSioBtlOptionWork->unk_0FC, 10);
-    func_08065AE0(gSioBtlOptionWork->unk_154, 10);
-    func_08065AE0(gSioBtlOptionWork->unk_22C, 60);
+    FreeTextSlots(gSioBtlOptionWork->unk_054, 20);
+    FreeTextSlots(gSioBtlOptionWork->unk_0FC, 10);
+    FreeTextSlots(gSioBtlOptionWork->unk_154, 10);
+    FreeTextSlots(gSioBtlOptionWork->unk_22C, 60);
 #endif
     ReleaseObjTiles(gSioBtlOptionWork->tiles);
     ReleaseObjPalette(gSioBtlOptionWork->palette);
@@ -1539,7 +1539,7 @@ void func_080B0874(void) {
                 gUnk_0203AA60[0][i] = gUnk_0203AAE0[0][i];
                 gUnk_0203AA30[0][i] = gUnk_0203AA60[0][i];
             }
-            gSioBtlOptionWork->unk_0F8 = func_08065B6C(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
+            gSioBtlOptionWork->unk_0F8 = LoadTextSlots(gUnk_0203AA30[0], gSioBtlOptionWork->unk_0FC);
         }
     }
 
@@ -1553,7 +1553,7 @@ void func_080B0874(void) {
                 gUnk_0203AA60[1][i] = gUnk_0203AAE0[1][i];
                 gUnk_0203AA30[1][i] = gUnk_0203AA60[1][i];
             }
-            gSioBtlOptionWork->unk_150 = func_08065B6C(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
+            gSioBtlOptionWork->unk_150 = LoadTextSlots(gUnk_0203AA30[1], gSioBtlOptionWork->unk_154);
         }
     }
 }
@@ -2267,8 +2267,8 @@ void mode_sio_chg_connect_0(s32 arg) {
     gSioChgConnectWork->unk_02 = 0;
     gSioChgConnectWork->unk_04 = 0;
     gSioChgConnectWork->unk_05 = 0;
-    func_08065ACC(gSioChgConnectWork->unk_08, 0x5A);
-    gSioChgConnectWork->unk_05 = func_08065B6C(gUnk_08159EC4, gSioChgConnectWork->unk_08);
+    InitTextSlots(gSioChgConnectWork->unk_08, 0x5A);
+    gSioChgConnectWork->unk_05 = LoadTextSlots(gUnk_08159EC4, gSioChgConnectWork->unk_08);
     gSioChgConnectWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
     SioReset();
     func_080C5A3C(func_080B1BE0, func_080B1BFC, 1);
@@ -2294,14 +2294,14 @@ void mode_sio_chg_connect_1(void) {
         }
         break;
     }
-    func_080664D8(61, 68, gSioChgConnectWork->unk_08, gSioChgConnectWork->palette, 20, gSioChgConnectWork->unk_05);
+    DrawTextSlots(61, 68, gSioChgConnectWork->unk_08, gSioChgConnectWork->palette, 20, gSioChgConnectWork->unk_05);
 }
 #endif
 
 #ifndef VERSION_EU
 void mode_sio_chg_connect_2(void) {
     ReleaseObjPalette(gSioChgConnectWork->palette);
-    func_08065AE0(gSioChgConnectWork->unk_08, 0x5A);
+    FreeTextSlots(gSioChgConnectWork->unk_08, 0x5A);
     EwramFree(gSioChgConnectWork);
 }
 #endif
@@ -2470,12 +2470,12 @@ void func_080B1E70(void) {
     gSioChgCardWork->unk_204 = LoadObjTiles(gUnk_093F8C8E, 0xC00);
     gSioChgCardWork->unk_208 = gUnk_09EF1278[0];
     gSioChgCardWork->unk_20C = 0;
-    func_08065ACC(gSioChgCardWork->unk_210, 42);
-    gSioChgCardWork->unk_20D = func_08065B6C(gUnk_0815A394, gSioChgCardWork->unk_210);
+    InitTextSlots(gSioChgCardWork->unk_210, 42);
+    gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A394, gSioChgCardWork->unk_210);
     gSioChgCardWork->unk_BDC = 68;
     gSioChgCardWork->unk_BDE = 124;
-    func_08065ACC(gSioChgCardWork->unk_364, 20);
-    gSioChgCardWork->unk_361 = func_08065B6C(gCardDefs[0].unk_0C, gSioChgCardWork->unk_364);
+    InitTextSlots(gSioChgCardWork->unk_364, 20);
+    gSioChgCardWork->unk_361 = LoadTextSlots(gCardDefs[0].unk_0C, gSioChgCardWork->unk_364);
     gSioChgCardWork->unk_360 = 0;
     TaskPoolInit(gSioChgCardWork->unk_BE4, 11);
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
@@ -2601,7 +2601,7 @@ void func_080B2480(void) {
     if (gUnk_0203AB34[0] == 1 && gUnk_0203AB34[1] == 1) {
         gSioChgCardWork->unk_004 = 0;
         m4aSongNumStart(106);
-        gSioChgCardWork->unk_20D = func_08065B6C(gUnk_0815A3C0, gSioChgCardWork->unk_210);
+        gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A3C0, gSioChgCardWork->unk_210);
         gSioChgCardWork->unk_BDC = 64;
         gSioChgCardWork->unk_BDE = 114;
         gSioChgCardWork->unk_001++;
@@ -2648,7 +2648,7 @@ void func_080B2788(void) {
 
     if (gUnk_02039810[1][0] == 0xEF01 || gUnk_02039810[1][1] == 0xEF01) {
         gSioChgCardWork->unk_004 = 0;
-        gSioChgCardWork->unk_20D = func_08065B6C(gUnk_0815A404, gSioChgCardWork->unk_210);
+        gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A404, gSioChgCardWork->unk_210);
         gSioChgCardWork->unk_BDC = 71;
         gSioChgCardWork->unk_BDE = 124;
         gSioChgCardWork->unk_001++;
@@ -2691,7 +2691,7 @@ void func_080B28A8(void) {
 
     if (gUnk_02039810[1][0] == 0x1269 || gUnk_02039810[1][1] == 0x1269) {
         m4aSongNumStart(105);
-        gSioChgCardWork->unk_20D = func_08065B6C(gUnk_0815A4B6, gSioChgCardWork->unk_210);
+        gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A4B6, gSioChgCardWork->unk_210);
         gSioChgCardWork->unk_BDC = 63;
         gSioChgCardWork->unk_BDE = 118;
         func_080B3CC0();
@@ -2745,7 +2745,7 @@ void func_080B2A5C(void) {
     if (gSioChgCardWork->unk_004 > 199) {
         gSioChgCardWork->unk_004 = 0;
         gSioChgCardWork->unk_20C = 1;
-        gSioChgCardWork->unk_20D = func_08065B6C(gUnk_0815A428, gSioChgCardWork->unk_210);
+        gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A428, gSioChgCardWork->unk_210);
         gSioChgCardWork->unk_BDC = 70;
         gSioChgCardWork->unk_BDE = 119;
         gSioChgCardWork->unk_001++;
@@ -2756,7 +2756,7 @@ void func_080B2AE8(void) {
     gSioChgCardWork->unk_004++;
     if (gSioChgCardWork->unk_004 > 119) {
         gSioChgCardWork->unk_004 = 0;
-        gSioChgCardWork->unk_20D = func_08065B6C(gUnk_0815B3FA, gSioChgCardWork->unk_210);
+        gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815B3FA, gSioChgCardWork->unk_210);
         gSioChgCardWork->unk_BDC = 83;
         gSioChgCardWork->unk_BDE = 124;
         gSioChgCardWork->unk_001++;
@@ -2810,8 +2810,8 @@ void mode_sio_chg_card_2(void) {
     ReleaseObjTiles(gSioChgCardWork->unk_178);
     ReleaseObjPalette(gSioChgCardWork->unk_17C);
     ReleaseObjTiles(gSioChgCardWork->unk_204);
-    func_08065AE0(gSioChgCardWork->unk_210, 42);
-    func_08065AE0(gSioChgCardWork->unk_364, 20);
+    FreeTextSlots(gSioChgCardWork->unk_210, 42);
+    FreeTextSlots(gSioChgCardWork->unk_364, 20);
     TaskPoolDestroy(gSioChgCardWork->unk_BE4);
     EwramFree(gSioChgCardWork);
 }
@@ -2844,12 +2844,12 @@ void func_080B2CD0(void) {
 
     if (gSioChgCardWork->unk_20C == 1) {
         DrawSprite(120, 131, gSioChgCardWork->unk_208, gSioChgCardWork->unk_204, gSioChgCardWork->unk_17C, 0, 0, 0xFF00);
-        func_080664D8(gSioChgCardWork->unk_BDC, gSioChgCardWork->unk_BDE, gSioChgCardWork->unk_210, gSioChgCardWork->unk_084, 20, gSioChgCardWork->unk_20D);
+        DrawTextSlots(gSioChgCardWork->unk_BDC, gSioChgCardWork->unk_BDE, gSioChgCardWork->unk_210, gSioChgCardWork->unk_084, 20, gSioChgCardWork->unk_20D);
     }
 
     if (gSioChgCardWork->unk_360 == 1) {
-        func_080664D8(58, 27, gSioChgCardWork->unk_364, gSioChgCardWork->unk_054, 18, gSioChgCardWork->unk_361);
-        func_080664D8(52, 42, gSioChgCardWork->unk_210, gSioChgCardWork->unk_084, 18, gSioChgCardWork->unk_20D);
+        DrawTextSlots(58, 27, gSioChgCardWork->unk_364, gSioChgCardWork->unk_054, 18, gSioChgCardWork->unk_361);
+        DrawTextSlots(52, 42, gSioChgCardWork->unk_210, gSioChgCardWork->unk_084, 18, gSioChgCardWork->unk_20D);
     }
 }
 
@@ -2941,7 +2941,7 @@ void func_080B3204(void) {
     for (i = 0; i < 5; i++) {
         x = gUnk_0203AB20[i];
         if ((s16)x != lim) {
-            sum = func_08060A2C(x) - (0 - sum);
+            sum = GetCardMooglePointValue(x) - (0 - sum);
         }
     }
     v = (s16)sum;
@@ -2958,7 +2958,7 @@ void func_080B3204(void) {
     for (j = 5; j < 10; j++) {
         x = gUnk_0203AB20[j];
         if ((s16)x != 0x800) {
-            sum = func_08060A2C(x) - (0 - sum);
+            sum = GetCardMooglePointValue(x) - (0 - sum);
         }
     }
     v = (s16)sum;
@@ -3020,7 +3020,7 @@ void func_080B3354(void) {
             if (v == 2) {
                 if (func_080B3908() == 1) {
                     gSioChgCardWork->unk_0A4 = 1;
-                    gSioChgCardWork->unk_20D = func_08065B6C(gUnk_0815A394, gSioChgCardWork->unk_210);
+                    gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A394, gSioChgCardWork->unk_210);
                     gSioChgCardWork->unk_BDC = 68;
                     gSioChgCardWork->unk_BDE = 124;
                     gSioChgCardWork->unk_20C = 1;
@@ -3079,7 +3079,7 @@ void func_080B3354(void) {
             if (v == 2) {
                 if (func_080B3908() == 1) {
                     gSioChgCardWork->unk_0A4 = 1;
-                    gSioChgCardWork->unk_20D = func_08065B6C(gUnk_0815A394, gSioChgCardWork->unk_210);
+                    gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_0815A394, gSioChgCardWork->unk_210);
                     gSioChgCardWork->unk_BDC = 68;
                     gSioChgCardWork->unk_BDE = 124;
                     gSioChgCardWork->unk_20C = 1;
@@ -3180,8 +3180,8 @@ void func_080B397C(void) {
     LoadObjPaletteBank(((ObjPalSlot*)gSioChgCardWork->unk_054)->unk_06, gUnk_096FBF04 + off);
     nameId = def->unk_1C;
     defs = (CardDef*)((u8*)defs + 12);
-    gSioChgCardWork->unk_361 = func_08065B6C(defs[n].unk_00, gSioChgCardWork->unk_364);
-    gSioChgCardWork->unk_20D = func_08065B6C(gUnk_09EE8F48[nameId], gSioChgCardWork->unk_210);
+    gSioChgCardWork->unk_361 = LoadTextSlots(defs[n].unk_00, gSioChgCardWork->unk_364);
+    gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_09EE8F48[nameId], gSioChgCardWork->unk_210);
     EnableBg(0);
     gSioChgCardWork->unk_360 = 1;
 }
@@ -3360,13 +3360,13 @@ void mode_sioError_0(s32 arg) {
     LoadBgPalette(0, gUnk_09611AB8, 32);
     SetBgScroll(0, 0xFFE9, 0xFFD0);
 #endif
-    func_08065ACC(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
+    InitTextSlots(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
 #ifdef VERSION_EU
-    gSioErrorWork->unk_06 = func_08065B6C(eu_0805E924(gUnkEu_088920BC), gSioErrorWork->unk_08);
+    gSioErrorWork->unk_06 = LoadTextSlots(eu_0805E924(gUnkEu_088920BC), gSioErrorWork->unk_08);
 #elif defined(VERSION_JP)
-    gSioErrorWork->unk_06 = func_08065B6C(gUnk_0814F180, gSioErrorWork->unk_08);
+    gSioErrorWork->unk_06 = LoadTextSlots(gUnk_0814F180, gSioErrorWork->unk_08);
 #else
-    gSioErrorWork->unk_06 = func_08065B6C(gUnk_0815A2BE, gSioErrorWork->unk_08);
+    gSioErrorWork->unk_06 = LoadTextSlots(gUnk_0815A2BE, gSioErrorWork->unk_08);
 #endif
     gSioErrorWork->palette = LoadObjPalette(gUnk_096FBAA4, 32);
 }
@@ -3377,15 +3377,15 @@ void mode_sioError_1(void) {
 
 void func_080B3F24(void) {
 #ifdef VERSION_JP
-    func_080664D8(58, 62, gSioErrorWork->unk_08, gSioErrorWork->palette, 20, gSioErrorWork->unk_06);
+    DrawTextSlots(58, 62, gSioErrorWork->unk_08, gSioErrorWork->palette, 20, gSioErrorWork->unk_06);
 #else
-    func_080664D8(36, 57, gSioErrorWork->unk_08, gSioErrorWork->palette, 20, gSioErrorWork->unk_06);
+    DrawTextSlots(36, 57, gSioErrorWork->unk_08, gSioErrorWork->palette, 20, gSioErrorWork->unk_06);
 #endif
 }
 
 void mode_sioError_2(void) {
     ReleaseObjPalette(gSioErrorWork->palette);
-    func_08065AE0(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
+    FreeTextSlots(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
     EwramFree(gSioErrorWork);
 }
 
@@ -3399,7 +3399,7 @@ void mode_wLogo_1(void) {
 
     switch (gUnk_02034B58) {
     case 0:
-        func_080664D8(35, 75, gUnk_02034B60, gUnk_02034C00, 20, gUnk_02034B5B);
+        DrawTextSlots(35, 75, gUnk_02034B60, gUnk_02034C00, 20, gUnk_02034B5B);
 
         if (GetKeysPressed() & DPAD_LEFT) {
             gUnk_02034B59--;
@@ -3407,9 +3407,9 @@ void mode_wLogo_1(void) {
                 gUnk_02034B59 = 12;
             }
 #ifdef VERSION_EU
-            gUnk_02034B5B = func_08065B6C(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
+            gUnk_02034B5B = LoadTextSlots(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
 #else
-            gUnk_02034B5B = func_08065B6C(gWorldNames[gUnk_02034B59], gUnk_02034B60);
+            gUnk_02034B5B = LoadTextSlots(gWorldNames[gUnk_02034B59], gUnk_02034B60);
 #endif
         }
 
@@ -3420,9 +3420,9 @@ void mode_wLogo_1(void) {
             }
             p = &gUnk_02034B5B;
 #ifdef VERSION_EU
-            *p = func_08065B6C(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
+            *p = LoadTextSlots(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
 #else
-            *p = func_08065B6C(gWorldNames[gUnk_02034B59], gUnk_02034B60);
+            *p = LoadTextSlots(gWorldNames[gUnk_02034B59], gUnk_02034B60);
 #endif
         }
 
@@ -3459,7 +3459,7 @@ void mode_wLogo_1(void) {
 }
 
 void mode_wLogo_2(void) {
-    func_08065AE0(gUnk_02034B60, 20);
+    FreeTextSlots(gUnk_02034B60, 20);
     ReleaseObjPalette(gUnk_02034C00);
 
     if (gUnk_02034B58 != 0) {
@@ -3482,12 +3482,12 @@ void func_080B4154(void) {
     EnableBg(1);
     gUnk_02034B58 = 0;
     gUnk_02034B5A = 0;
-    func_08065ACC(gUnk_02034B60, 20);
+    InitTextSlots(gUnk_02034B60, 20);
     p = &gUnk_02034B5B;
 #ifdef VERSION_EU
-    *p = func_08065B6C(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
+    *p = LoadTextSlots(eu_0805E924(gWorldNames[gUnk_02034B59]), gUnk_02034B60);
 #else
-    *p = func_08065B6C(gWorldNames[gUnk_02034B59], gUnk_02034B60);
+    *p = LoadTextSlots(gWorldNames[gUnk_02034B59], gUnk_02034B60);
 #endif
     gUnk_02034C00 = LoadObjPalette(gUnk_096FBCC4, 32);
 }

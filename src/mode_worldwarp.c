@@ -310,11 +310,11 @@ void mode_worldwarp_0(void) {
     AnimInit(&gUnk_02035558, gUnk_09EF98B0, gUnk_09EF98A0);
     AnimStart(&gUnk_02035558, 0, 1);
 #ifdef VERSION_EU
-    func_08065ACC(gUnk_02035618, 48);
-    func_08065ACC(gUnk_020356E0, 48);
+    InitTextSlots(gUnk_02035618, 48);
+    InitTextSlots(gUnk_020356E0, 48);
 #else
-    func_08065ACC(gUnk_02035618, 24);
-    func_08065ACC(gUnk_020356E0, 24);
+    InitTextSlots(gUnk_02035618, 24);
+    InitTextSlots(gUnk_020356E0, 24);
 #endif
     gUnk_020356D8 = func_08100608(gUnk_020354F0[gGameState.floor]);
     gUnk_020357A0 = func_0810063C(gUnk_020354F0[gUnk_020354E8]);
@@ -399,14 +399,14 @@ void mode_worldwarp_2(void) {
         }
     }
 #ifdef VERSION_EU
-    func_08065AE0(gUnk_02035618, 48);
+    FreeTextSlots(gUnk_02035618, 48);
 #else
-    func_08065AE0(gUnk_02035618, 24);
+    FreeTextSlots(gUnk_02035618, 24);
 #endif
 #ifdef VERSION_EU
-    func_08065AE0(gUnk_020356E0, 48);
+    FreeTextSlots(gUnk_020356E0, 48);
 #else
-    func_08065AE0(gUnk_020356E0, 24);
+    FreeTextSlots(gUnk_020356E0, 24);
 #endif
     EwramFree(gUnk_0203550C);
 }
@@ -419,7 +419,7 @@ void SetMooglePoints(u32 a) {
     gGameState.mooglePoints = a;
 }
 
-u8 func_08101538(u32 a) {
+u8 SpendMooglePoints(u32 a) {
     u8 ok = 0;
 
     if (GetMooglePoints() >= a) {
@@ -429,7 +429,7 @@ u8 func_08101538(u32 a) {
     return ok;
 }
 
-u8 func_0810155C(u32 a) {
+u8 AddMooglePoints(u32 a) {
     a += GetMooglePoints();
     if (a > 99999) {
         SetMooglePoints(99999);
@@ -439,7 +439,7 @@ u8 func_0810155C(u32 a) {
     return 1;
 }
 
-void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count) {
+void LoadDecimalDigitTiles(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count) {
     s32 i;
     u32 digit;
 

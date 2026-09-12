@@ -67,7 +67,7 @@ void func_0800E314(HumWork* work, HumSub* sub, HumSubDef* def) {
     AnimInit(&sub->anim, 0, 0);
 }
 
-void func_0800E364(HumSub* sub) {
+void HumSubReleaseGraphics(HumSub* sub) {
     if (sub != 0) {
         ReleaseObjTiles(sub->tiles);
         ReleaseObjPalette(sub->palette);
@@ -79,8 +79,8 @@ void func_0800E380(HumWork* work) {
         gBtlWork->unk_078 = 0;
     }
 
-    func_0800E364(work->unk_00C);
-    func_0800E364(work->unk_010);
+    HumSubReleaseGraphics(work->unk_00C);
+    HumSubReleaseGraphics(work->unk_010);
     gBtlWork->unk_0A8 = 0;
     func_0801B7D8(&work->unk_040);
     ReleaseObjTiles(work->tiles);
@@ -162,7 +162,7 @@ s32 _0800E434(HumWork* work) {
     return r;
 }
 
-void func_0800E5CC(HumSub* sub) {
+void HumSubUpdateAnimation(HumSub* sub) {
     if (sub != 0) {
         if (!(sub->unk_34 & 2)) {
             sub->gfx = AnimUpdate(&sub->anim);
@@ -531,8 +531,8 @@ s32 func_0800E5F0(HumWork* work) {
 
     if (actor->unk_0E8 != 2) {
         work->gfx = AnimUpdate(&work->anim);
-        func_0800E5CC(work->unk_00C);
-        func_0800E5CC(work->unk_010);
+        HumSubUpdateAnimation(work->unk_00C);
+        HumSubUpdateAnimation(work->unk_010);
     }
 
     if (actor->unk_0E8 == 5) {

@@ -271,15 +271,15 @@ void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
     u16 pal;
 
 #ifdef VERSION_EU
-    func_08065ACC(work, 36);
+    InitTextSlots(work, 36);
 #else
-    func_08065ACC(work, 24);
+    InitTextSlots(work, 24);
 #endif
-    work->unk_0CC = func_08065B6C(func_08093C18(arg[0]), work);
+    work->unk_0CC = LoadTextSlots(func_08093C18(arg[0]), work);
     pal = func_080D3DCC(arg[0]);
     work->palette = LoadObjPalette(gUnk_0984A1F8 + pal, 32);
     LoadPalette(gUnk_0984A078 + pal, gUnk_05000160, 32);
-    work->unk_0CE = func_080D3D40(func_08065B08(work, work->unk_0CC));
+    work->unk_0CE = func_080D3D40(GetTextSlotsWidth(work, work->unk_0CC));
 }
 
 s32 task_allmap_roomname_1(void) {
@@ -287,14 +287,14 @@ s32 task_allmap_roomname_1(void) {
 }
 
 void task_allmap_roomname_2(AllmapRoomnameWork* work) {
-    func_080664D8(work->unk_0CE + 117, 3, work, work->palette, 50, work->unk_0CC);
+    DrawTextSlots(work->unk_0CE + 117, 3, work, work->palette, 50, work->unk_0CC);
 }
 
 void task_allmap_roomname_3(AllmapRoomnameWork* work) {
 #ifdef VERSION_EU
-    func_08065AE0(work, 36);
+    FreeTextSlots(work, 36);
 #else
-    func_08065AE0(work, 24);
+    FreeTextSlots(work, 24);
 #endif
     ReleaseObjPalette(work->palette);
 }

@@ -794,22 +794,22 @@ void func_08076110(u16 song, s16 x, s16 y) {
 }
 
 void Event_Debug_0(u8* work) {
-    *(void**)&work[0x00] = func_080668F0();
-    *(void**)&work[0x04] = func_08066904();
+    *(void**)&work[0x00] = LoadSmallFontTiles();
+    *(void**)&work[0x04] = LoadSmallFontPalette();
 }
 
 s32 Event_Debug_1(u8* work) {
-    work[0x28] = _080669DC(gUnk_02039DC8->unk_6C, &work[0x08]);
+    work[0x28] = FormatSmallFontDecimal(gUnk_02039DC8->unk_6C, &work[0x08]);
     return 1;
 }
 
 void Event_Debug_2(u8* work) {
-    func_08066DC0(0, 0, &work[0x08], *(s32*)&work[0x00], *(s32*)&work[0x04], 0,
+    DrawSmallFontString(0, 0, &work[0x08], *(s32*)&work[0x00], *(s32*)&work[0x04], 0,
                   work[0x28]);
 }
 
 void Event_Debug_3(s32* p) {
-    func_08066918(p[0], p[1]);
+    FreeSmallFontResources(p[0], p[1]);
 }
 
 void func_08076284(void) {

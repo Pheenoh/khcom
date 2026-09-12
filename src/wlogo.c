@@ -2566,7 +2566,7 @@ void func_080B8FF4(TmBodyWork* p, s16 a) {
     p->gfx3 = gUnk_09EF397C[gUnk_09EF2034[a].unk_16];
     p->gfx4 = gUnk_09EF3960[gUnk_09EF2034[a].unk_1E];
 }
-s32 func_080B9190(s32 a, s32 b) {
+s32 GetAbsoluteDifference(s32 a, s32 b) {
     if (a > b) {
         return a - b;
     }
@@ -2592,7 +2592,7 @@ void func_080B91A4(TmBodyWork* p) {
             if (p->unk_000->unk_28 & 0x10) {
                 p->unk_000->unk_2C = 1;
                 p->unk_000->unk_28 = p->unk_000->unk_28 & ~0x10;
-            } else if (func_080B9190(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
+            } else if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
@@ -2612,7 +2612,7 @@ void func_080B91A4(TmBodyWork* p) {
                 }
             }
         } else if (st == 0) {
-            if (func_080B9190(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
+            if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {
@@ -2673,7 +2673,7 @@ void func_080B91A4(TmBodyWork* p) {
             if (p->unk_000->unk_28 & 0x10) {
                 p->unk_000->unk_2C = 1;
                 p->unk_000->unk_28 = p->unk_000->unk_28 & ~0x10;
-            } else if (func_080B9190(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
+            } else if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 20) {
@@ -2693,7 +2693,7 @@ void func_080B91A4(TmBodyWork* p) {
                 }
             }
         } else if (st == 0) {
-            if (func_080B9190(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
+            if (GetAbsoluteDifference(gBtlWork->unk_07C->unk_004, p->unk_000->unk_08) <= 0x1DFF) {
                 rnd = GetRandom() % 100;
 
                 if (rnd > 30) {

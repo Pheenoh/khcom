@@ -203,7 +203,7 @@ void func_0805A95C(s32 a, s16 b, void* c, void* d, void* e, s32 f, s32 g, s32 h)
 
 void func_0805BAE4(void);
 void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f);
-void func_0805BAAC(s16 a, u8* out);
+void SplitThreeDecimalDigits(s16 a, u8* out);
 
 extern JiminyDetail gUnk_0815574C[];
 extern JiminyDetail gUnk_08155C54[];

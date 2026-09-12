@@ -1840,7 +1840,7 @@ void BlockAudioStart(void) {
     gUnk_02036048 = 1;
     AudioBlockStreamInit(GetBlockAudioData());
     PcmPlaybackInit(GetBlockAudioSampleRate());
-    SetVBlankCallback(func_08000714);
+    SetVBlankCallback(VBlankIntrBlockAudio);
     PcmPlaybackStart();
 }
 

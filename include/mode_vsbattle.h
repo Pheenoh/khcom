@@ -182,8 +182,8 @@ void func_0800C6B0(void);
 void func_0800C6B4(void);
 void func_0800C6B8(void);
 void func_0800CB78(EmyWork* work);
-void func_0800E364(HumSub* sub);
+void HumSubReleaseGraphics(HumSub* sub);
 void func_0800E3D0(HumWork* work);
-void func_0800E5CC(HumSub* sub);
+void HumSubUpdateAnimation(HumSub* sub);
 
 #endif

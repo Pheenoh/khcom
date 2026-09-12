@@ -21,10 +21,10 @@ s32 func_080660C0(u16* a, void** p);
 #else
 s32 func_080660C0(u8* a, void** p);
 #endif
-void func_08066918(void* a, void* b);
-u16 func_0806692C(u8* s, u16* out);
-u16 func_08066AF8(s32 v, u16* out);
-s32 func_08066DC0(s16 x, s16 y, u16* s, void* d, void* e, u16 h, u8 n);
+void FreeSmallFontResources(void* a, void* b);
+u16 EncodeSmallFontString(u8* s, u16* out);
+u16 FormatSmallFontHex(s32 v, u16* out);
+s32 DrawSmallFontString(s16 x, s16 y, u16* s, void* d, void* e, u16 h, u8 n);
 void func_0806BA0C(s16 v, u8* out);
 u16 func_0806BA74(s32 mode, s32 flag);
 void func_0806C2C0(u8 n);

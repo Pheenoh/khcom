@@ -1130,7 +1130,7 @@ u16 GetCardCpCost(u16 a) {
     return gCardDefs[a & 0x0FFF].unk_1C.unk_10;
 }
 
-u16 func_08060A2C(u16 a) {
+u16 GetCardMooglePointValue(u16 a) {
     u16 v;
 
     if ((a & 0x8000) == 0) {

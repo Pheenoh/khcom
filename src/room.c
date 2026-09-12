@@ -19,12 +19,12 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->unk_2C = 0;
     work->unk_28 = 0;
     work->unk_1C = 0x19;
-    func_08065ACC(work->unk_3C, 0x24);
+    InitTextSlots(work->unk_3C, 0x24);
     work->unk_38 = _08066468(1);
 #ifdef VERSION_EU
-    work->unk_34 = func_08065B6C(eu_0805E924(gUnk_09EF7048[work->unk_30]), work->unk_3C);
+    work->unk_34 = LoadTextSlots(eu_0805E924(gUnk_09EF7048[work->unk_30]), work->unk_3C);
 #else
-    work->unk_34 = func_08065B6C(gUnk_09EF7048[work->unk_30], work->unk_3C);
+    work->unk_34 = LoadTextSlots(gUnk_09EF7048[work->unk_30], work->unk_3C);
 #endif
 }
 
@@ -82,13 +82,13 @@ void task_room_name_2(RoomNameWork* work) {
     if (work->unk_28 != 0) {
         affine = AllocObjAffine(0, 0x100, work->unk_1C, 0);
         DrawSprite(work->unk_14 >> 8, work->unk_18 >> 8, work->unk_08, work->tiles, work->palette, affine, 0, 0x3C);
-        func_080664D8(work->unk_0C >> 8, work->unk_10 >> 8, work->unk_3C, work->unk_38, 0x32, work->unk_34);
+        DrawTextSlots(work->unk_0C >> 8, work->unk_10 >> 8, work->unk_3C, work->unk_38, 0x32, work->unk_34);
     }
 }
 
 void task_room_name_3(RoomNameWork* work) {
     ReleaseObjTiles(work->tiles);
-    func_08065AE0(work->unk_3C, 0x24);
+    FreeTextSlots(work->unk_3C, 0x24);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->unk_38);
 }

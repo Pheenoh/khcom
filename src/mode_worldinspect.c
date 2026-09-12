@@ -370,15 +370,15 @@ void mode_worldinspect_0(void) {
     AnimInit((AnimState*)gUnk_02035150, gUnk_09EF97DC, gUnk_09EF97CC);
     AnimStart((AnimState*)gUnk_02035150, 0, 1);
 #ifdef VERSION_EU
-    func_08065ACC(gUnk_020351F8, 0x30);
+    InitTextSlots(gUnk_020351F8, 0x30);
 #else
-    func_08065ACC(gUnk_020351F8, 0x18);
+    InitTextSlots(gUnk_020351F8, 0x18);
 #endif
     gUnk_020352B8 = func_080FF228(gUnk_02035100[gUnk_020350F8]);
 #ifdef VERSION_EU
-    func_08065ACC(gUnk_020352C0, 0x78);
+    InitTextSlots(gUnk_020352C0, 0x78);
 #else
-    func_08065ACC(gUnk_020352C0, 0x3C);
+    InitTextSlots(gUnk_020352C0, 0x3C);
 #endif
     gUnk_0203511C = LoadObjPalette(gUnk_09A3D07C, 0x20);
 #ifdef VERSION_EU
@@ -496,14 +496,14 @@ void mode_worldinspect_2(void) {
     }
 
 #ifdef VERSION_EU
-    func_08065AE0(gUnk_020351F8, 0x30);
+    FreeTextSlots(gUnk_020351F8, 0x30);
 #else
-    func_08065AE0(gUnk_020351F8, 0x18);
+    FreeTextSlots(gUnk_020351F8, 0x18);
 #endif
 #ifdef VERSION_EU
-    func_08065AE0(gUnk_020352C0, 0x78);
+    FreeTextSlots(gUnk_020352C0, 0x78);
 #else
-    func_08065AE0(gUnk_020352C0, 0x3C);
+    FreeTextSlots(gUnk_020352C0, 0x3C);
 #endif
     EwramFree(gUnk_020354D4);
 }
@@ -550,9 +550,9 @@ u8 func_08100608(s16 a) {
         return 0;
     }
 #ifdef VERSION_EU
-    return func_08065B6C(eu_0805E924(gUnk_09EF9488[a].unk_14), gUnk_02035618);
+    return LoadTextSlots(eu_0805E924(gUnk_09EF9488[a].unk_14), gUnk_02035618);
 #else
-    return func_08065B6C(gUnk_09EF9488[a].unk_14, gUnk_02035618);
+    return LoadTextSlots(gUnk_09EF9488[a].unk_14, gUnk_02035618);
 #endif
 }
 
@@ -561,9 +561,9 @@ u8 func_0810063C(s16 a) {
         return 0;
     }
 #ifdef VERSION_EU
-    return func_08065B6C(eu_0805E924(gUnk_09EF9488[a].unk_14), gUnk_020356E0);
+    return LoadTextSlots(eu_0805E924(gUnk_09EF9488[a].unk_14), gUnk_020356E0);
 #else
-    return func_08065B6C(gUnk_09EF9488[a].unk_14, gUnk_020356E0);
+    return LoadTextSlots(gUnk_09EF9488[a].unk_14, gUnk_020356E0);
 #endif
 }
 
@@ -571,7 +571,7 @@ void func_08100670(s16 a, u8* b, void* c) {
     RequestDma3Copy(b + a * 256, c, 0x100);
 }
 
-u16 func_0810068C(void) {
+u16 WorldInspectReadMenuKeys(void) {
     s32 keys;
 
     keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
@@ -584,7 +584,7 @@ void func_081006AC(void) {
     u16 keys;
 
     prev = gUnk_020354E8;
-    keys = func_0810068C();
+    keys = WorldInspectReadMenuKeys();
 
     if (keys & A_BUTTON) {
         if (gUnk_020354E8 == gGameState.floor) {
@@ -770,9 +770,9 @@ void func_08100980(void) {
 
     if (gUnk_020356D8 != 0) {
 #ifdef VERSION_EU
-        func_080664D8(0x78, 0x0C, gUnk_02035618, gUnk_0203551C, 0, gUnk_020356D8);
+        DrawTextSlots(0x78, 0x0C, gUnk_02035618, gUnk_0203551C, 0, gUnk_020356D8);
 #else
-        func_080664D8(0x80, 0x0C, gUnk_02035618, gUnk_0203551C, 0, gUnk_020356D8);
+        DrawTextSlots(0x80, 0x0C, gUnk_02035618, gUnk_0203551C, 0, gUnk_020356D8);
 #endif
     }
 
@@ -790,9 +790,9 @@ void func_08100980(void) {
 
     if (gUnk_020357A0 != 0) {
 #ifdef VERSION_EU
-        func_080664D8(0x78, 0x2C, gUnk_020356E0, gUnk_02035554, 0, gUnk_020357A0);
+        DrawTextSlots(0x78, 0x2C, gUnk_020356E0, gUnk_02035554, 0, gUnk_020357A0);
 #else
-        func_080664D8(0x80, 0x2C, gUnk_020356E0, gUnk_02035554, 0, gUnk_020357A0);
+        DrawTextSlots(0x80, 0x2C, gUnk_020356E0, gUnk_02035554, 0, gUnk_020357A0);
 #endif
     }
 }

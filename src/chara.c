@@ -1206,7 +1206,7 @@ u8 func_080C69B4(void) {
         func_080149BC(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
         m4aSongNumStart(0x228);
         for (i = 0; i < 32; i++) {
-            func_08007F20(i, gCharaObj->unk_1050[i]);
+            SetPaletteBankFadeEnabled(i, gCharaObj->unk_1050[i]);
         }
         gCharaObj->unk_44++;
         break;
