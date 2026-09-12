@@ -405,7 +405,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     }
                     break;
                 case 7:
-                    func_08019050(6, 0x100, *(s32*)gBtlWork->unk_010, gBtlWork->unk_014);
+                    func_08019050(6, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
                     break;
                 case 9:
                     m4aSongNumStart(0x10C);
@@ -428,7 +428,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     }
                     break;
                 case 1:
-                    func_08019050(6, 0x100, *(s32*)gBtlWork->unk_010, gBtlWork->unk_014);
+                    func_08019050(6, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
                     break;
                 case 4:
                     m4aSongNumStart(0x10D);
@@ -448,7 +448,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
                     }
                     break;
                 case 6:
-                    func_08019050(6, 0x100, *(s32*)gBtlWork->unk_010, gBtlWork->unk_014);
+                    func_08019050(6, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
                     break;
                 }
             }
@@ -634,7 +634,7 @@ void func_0804B4BC(CloudWork* work, s32 a, s32 b) {
 u8 func_0804B4F4(CloudWork* work) {
     s32 x;
     s32 y;
-    Collider* c;
+    BtlObj* c;
 
     c = gBtlWork->unk_07C;
     func_0801C700(&work->base.unk_040, &x, &y, 0);
@@ -644,7 +644,7 @@ u8 func_0804B4F4(CloudWork* work) {
         if (gBtlWork->unk_068 & 0x8000) {
             func_0804B44C(work, -99, 0x280);
         } else if (GetRandom() & 1) {
-            if (c->unk_34 & 4) {
+            if (c->unk_034 & 4) {
                 func_0804B4BC(work, x + 0x2800, y);
             } else {
                 func_0804B4BC(work, x - 0x2800, y);
@@ -658,7 +658,7 @@ u8 func_0804B4F4(CloudWork* work) {
 }
 
 void task_hum_hook_0(HookWork* work, void* arg) {
-    TaskCreate(&gBtlWork->unk_02C, gTaskDescHumHookMoon, 0);
+    TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumHookMoon, 0);
     func_0800E168(&work->base, gUnk_0813F05C);
     work->base.unk_040.unk_34 |= 0x10000000;
 
@@ -2736,7 +2736,7 @@ void func_0804F9A0(MahluxiaWork* work, s32 a, u16 b) {
 
 u8 func_0804F9C8(MahluxiaWork* work) {
     s32 v;
-    Collider* c;
+    BtlObj* c;
 
     c = gBtlWork->unk_07C;
     func_0801C700(&work->base.unk_040, &v, 0, 0);
@@ -2746,7 +2746,7 @@ u8 func_0804F9C8(MahluxiaWork* work) {
         if (gBtlWork->unk_068 & 0x8000) {
             func_0804F8F0(work, -128);
         } else if (GetRandom() & 1) {
-            if (c->unk_34 & 4) {
+            if (c->unk_034 & 4) {
                 func_0804F9A0(work, v + 0x2800, 48);
             } else {
                 func_0804F9A0(work, v - 0x2800, 48);
@@ -4146,15 +4146,15 @@ void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
     work->unk_2E = 0;
     work->unk_2D = 1;
     work->unk_3C = 0;
-    work->unk_30 = gBtlWork->unk_07C->unk_04;
-    work->unk_34 = gBtlWork->unk_07C->unk_08;
-    work->unk_38 = gBtlWork->unk_07C->unk_0C;
+    work->unk_30 = gBtlWork->unk_07C->unk_004;
+    work->unk_34 = gBtlWork->unk_07C->unk_008;
+    work->unk_38 = gBtlWork->unk_07C->unk_00C;
     work->unk_40 = GetRandom() % 897 + 0x800;
     m4aSongNumStart(0x2A4);
 }
 
 u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
-    Collider* c;
+    BtlObj* c;
 
     if ((gBtlWork->unk_068 & 0x40) == 0) {
         return 0;
@@ -4185,9 +4185,9 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
             AnimStart(&work->anim, 1, 0);
         }
         c = gBtlWork->unk_07C;
-        work->x += c->unk_04 - work->unk_30;
-        work->y += c->unk_08 - work->unk_34;
-        work->z += c->unk_0C - work->unk_38;
+        work->x += c->unk_004 - work->unk_30;
+        work->y += c->unk_008 - work->unk_34;
+        work->z += c->unk_00C - work->unk_38;
 
         if ((s16)work->unk_2E > 30) {
             return 0;
@@ -4196,9 +4196,9 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
         break;
     }
     AnimUpdate(&work->anim);
-    work->unk_30 = gBtlWork->unk_07C->unk_04;
-    work->unk_34 = gBtlWork->unk_07C->unk_08;
-    work->unk_38 = gBtlWork->unk_07C->unk_0C;
+    work->unk_30 = gBtlWork->unk_07C->unk_004;
+    work->unk_34 = gBtlWork->unk_07C->unk_008;
+    work->unk_38 = gBtlWork->unk_07C->unk_00C;
     return 1;
 }
 
@@ -5415,7 +5415,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
             }
         }
 
-        if ((s16)w->base.unk_150 > 360 || (gBtlWork->unk_07C->unk_34 & 0x2000)) {
+        if ((s16)w->base.unk_150 > 360 || (gBtlWork->unk_07C->unk_034 & 0x2000)) {
             w->base.unk_170 = 27;
             w->base.unk_150 = 0;
         } else {
@@ -5445,15 +5445,15 @@ u8 task_hum_vixen_1(VixenWork* work) {
         }
 
         if ((s16)w->base.unk_150 % 15 == 0) {
-            t = gBtlWork->unk_07C->unk_2C;
+            t = gBtlWork->unk_07C->unk_02C;
 
             if ((s16)t > 1) {
-                gBtlWork->unk_07C->unk_2C = t - 1;
+                gBtlWork->unk_07C->unk_02C = t - 1;
             }
         }
 
         if ((s16)w->base.unk_150 > 300 ||
-            ((s16)w->base.unk_150 > 120 && (s16)gBtlWork->unk_07C->unk_2C <= 1)) {
+            ((s16)w->base.unk_150 > 120 && (s16)gBtlWork->unk_07C->unk_02C <= 1)) {
             m4aSongNumStop(0x288);
             func_080061E8(0, 8);
             gBtlWork->unk_068 |= 0x400000;
@@ -5585,7 +5585,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         func_080543F4(&w->base, work->unk_188);
     }
     r = func_0800E5F0(&w->base);
-    cx = gBtlWork->unk_07C->unk_04;
+    cx = gBtlWork->unk_07C->unk_004;
     ax = act->unk_04;
 
     if ((cx < ax && (act->unk_34 & 4)) || (cx > ax && !(act->unk_34 & 4))) {
@@ -5649,7 +5649,7 @@ u8 task_hum_vixen_ndl_1(VixenNdlWork* work) {
         break;
     }
 
-    if (gBtlWork->unk_07C->unk_34 & 0x2000) {
+    if (gBtlWork->unk_07C->unk_034 & 0x2000) {
         work->unk_2D = 1;
     }
     AnimUpdate(&work->anim);
@@ -5817,7 +5817,7 @@ void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
     func_08019068(gUnk_0813F91C, &work->anim, 0, 0, work->tiles);
     work->unk_2C = 0;
 
-    if (gBtlWork->unk_07C->unk_34 & 4) {
+    if (gBtlWork->unk_07C->unk_034 & 4) {
         work->unk_34 = 0;
     } else {
         work->unk_34 = 1;
@@ -5851,9 +5851,9 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
                 break;
             }
         }
-        work->x = gBtlWork->unk_07C->unk_04;
-        work->y = gBtlWork->unk_07C->unk_08;
-        work->z = gBtlWork->unk_07C->unk_0C;
+        work->x = gBtlWork->unk_07C->unk_004;
+        work->y = gBtlWork->unk_07C->unk_008;
+        work->z = gBtlWork->unk_07C->unk_00C;
 
         if (AnimIsFinished(&work->anim)) {
             work->unk_2C = 2;
@@ -5876,9 +5876,9 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
                 break;
             }
         }
-        work->x = gBtlWork->unk_07C->unk_04;
-        work->y = gBtlWork->unk_07C->unk_08;
-        work->z = gBtlWork->unk_07C->unk_0C;
+        work->x = gBtlWork->unk_07C->unk_004;
+        work->y = gBtlWork->unk_07C->unk_008;
+        work->z = gBtlWork->unk_07C->unk_00C;
 
         if (gBtlWork->unk_068 & 0x100000) {
             work->unk_2C = 3;
@@ -5901,15 +5901,15 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
                 break;
             }
         }
-        work->x = gBtlWork->unk_07C->unk_04;
-        work->y = gBtlWork->unk_07C->unk_08;
-        work->z = gBtlWork->unk_07C->unk_0C;
+        work->x = gBtlWork->unk_07C->unk_004;
+        work->y = gBtlWork->unk_07C->unk_008;
+        work->z = gBtlWork->unk_07C->unk_00C;
 
         if (AnimIsFinished(&work->anim)) {
             args.unk_00 = work->x;
             args.unk_04 = work->y;
             args.unk_08 = work->z;
-            TaskCreate(&gBtlWork->unk_02C, gTaskDescHumVixenFrg, &args);
+            TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumVixenFrg, &args);
             work->unk_2C = 6;
             work->unk_30 = 0;
         } else {
@@ -5922,10 +5922,10 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
         }
 
         if (func_08011E3C(work->x, work->y, work->z, 8, 8, 1)) {
-            gBtlWork->unk_07C->unk_04 = work->x;
-            gBtlWork->unk_07C->unk_08 = work->y;
-            gBtlWork->unk_07C->unk_0C = work->z;
-            gBtlWork->unk_07C->unk_34 |= 0x100000000200;
+            gBtlWork->unk_07C->unk_004 = work->x;
+            gBtlWork->unk_07C->unk_008 = work->y;
+            gBtlWork->unk_07C->unk_00C = work->z;
+            gBtlWork->unk_07C->unk_034 |= 0x100000000200;
             work->unk_2C = 1;
             gBtlWork->unk_068 &= ~0x100000;
             work->unk_30 = 0;
@@ -5955,7 +5955,7 @@ u8 task_hum_vixen_frz_1(VixenFrzWork* work) {
             args2.unk_00 = work->x;
             args2.unk_04 = work->y;
             args2.unk_08 = work->z;
-            TaskCreate(&gBtlWork->unk_02C, gTaskDescHumVixenFrg, &args2);
+            TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumVixenFrg, &args2);
             work->unk_2C = 6;
             work->unk_30 = 0;
         } else {
@@ -6109,7 +6109,7 @@ void task_hum_lexceus_0(LexceusWork* work) {
 u8 task_hum_lexceus_1(LexceusWork* work) {
     LexceusWork* w;
     HumActor* act;
-    Collider* p;
+    BtlObj* p;
     VixenNdlArgs a1;
     VixenNdlArgs a2;
     s32 x;
@@ -6551,9 +6551,9 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
     }
     gBtlWork->unk_018 = w->unk_1F0 >> 8;
 
-    if (p->unk_0C >= p->unk_10 && (s16)p->unk_2C > 0 && p->unk_E8 != 2 && !(p->unk_34 & 16)) {
+    if (p->unk_00C >= p->unk_010 && (s16)p->unk_02C > 0 && p->unk_0E8 != 2 && !(p->unk_034 & 16)) {
         w->unk_1FC += (GetAngleDiff(0, gBtlWork->unk_018) * 64 - w->unk_1FC) >> 4;
-        p->unk_04 -= w->unk_1FC;
+        p->unk_004 -= w->unk_1FC;
     } else {
         w->unk_1FC = 0;
     }
@@ -7071,7 +7071,7 @@ void func_08057D30(RikuWork* work, s32 a, s32 b) {
 u8 func_08057D68(RikuWork* work) {
     s32 v;
     s32 w;
-    Collider* c;
+    BtlObj* c;
 
     c = gBtlWork->unk_07C;
 
@@ -7083,7 +7083,7 @@ u8 func_08057D68(RikuWork* work) {
             if (gBtlWork->unk_068 & 0x8000) {
                 func_08057CBC(work, -99, 0x280);
             } else if (GetRandom() & 1) {
-                if (c->unk_34 & 4) {
+                if (c->unk_034 & 4) {
                     func_08057D30(work, v + 0x2800, w);
                 } else {
                     func_08057D30(work, v - 0x2800, w);
@@ -7446,7 +7446,7 @@ u8 task_hum_riku_1(RikuWork* work) {
             work->base.unk_168 = 10;
         }
         work->base.unk_158 = 0;
-        func_0802F284(gBtlWork->unk_07C->unk_04, gBtlWork->unk_07C->unk_08, gBtlWork->unk_07C->unk_0C);
+        func_0802F284(gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
         ApproachValue(&work->base.unk_168, 256, work->base.unk_152);
         work->base.unk_152--;
         if ((s16)work->base.unk_152 <= 0) {
@@ -7468,7 +7468,7 @@ u8 task_hum_riku_1(RikuWork* work) {
             m4aSongNumStart(658);
         }
         work->base.unk_158 = 0;
-        func_0802F284(gBtlWork->unk_07C->unk_04, gBtlWork->unk_07C->unk_08, gBtlWork->unk_07C->unk_0C);
+        func_0802F284(gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
         if ((s16)work->base.unk_150 == 15 && (s16)w->unk_380 > 4) {
             work->base.unk_170 = 35;
             work->base.unk_150 = 0;
@@ -7764,7 +7764,7 @@ u8 task_hum_riku_1(RikuWork* work) {
             }
         }
         if (work->base.anim.timer == 2 && AnimGetGfxIndex(&work->base.anim) == 6) {
-            func_08019050(8, 256, *(s32*)gBtlWork->unk_010, gBtlWork->unk_014);
+            func_08019050(8, 256, gBtlWork->unk_010, gBtlWork->unk_014);
         }
         if (AnimIsFinished(&work->base.anim)) {
             func_0801AF08(act);

@@ -2,6 +2,7 @@
 #define GUARD_HUM_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "text_types.h"
 #include "jiminy_types.h"
@@ -484,61 +485,6 @@ typedef struct LexRockWork {
     u8 unk_2C1[0x03];
 } LexRockWork;
 
-typedef struct Collider {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    u8 unk_14[0x18];
-    s16 unk_2C;
-    u16 unk_2E;
-    u8 unk_30[0x04];
-    u64 unk_34;
-    u8 unk_3C[0xAC];
-    s32 unk_E8;
-} Collider;
-
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    u8 unk_008[0x04];
-    s32 unk_00C;
-    u8 unk_010[0x04];
-    s32 unk_014;
-    u8 unk_018;
-    u8 unk_019[0x0B];
-    s32 unk_024;
-    u8 unk_028[0x04];
-    TaskPool unk_02C;
-    u8 unk_040[0x28];
-    u64 unk_068;
-    u8 unk_070[0x02];
-    u16 unk_072;
-    u8 unk_074[0x08];
-    Collider* unk_07C;
-    u8 unk_080[0x33];
-    u8 unk_0B3;
-    u8 unk_0B4[0x26];
-    s16 unk_0DA;
-    s16 unk_0DC;
-    s16 unk_0DE;
-    s16 unk_0E0;
-    u8 unk_0E2[0x0D];
-    u8 unk_0EF;
-    u8 unk_0F0[0x1C];
-    s32 unk_10C;
-    u8 unk_110[0x04];
-    void* unk_114;
-    u8 unk_118[0x0C];
-    s32 unk_124;
-    u8 unk_128[0x04];
-    s32 unk_12C;
-    s32 unk_130;
-    s32 unk_134;
-    s32 unk_138;
-} BtlWork;
-
 typedef struct JiminyEntry {
     void* unk_00;
     void* unk_04;
@@ -726,7 +672,6 @@ extern u8 gUnk_0813F2CC[];
 extern u8 gUnk_0813FD58[];
 extern u8 gUnk_0813FDA8[];
 extern u16 gBldCnt;
-extern BtlWork* gBtlWork;
 extern u8 gUnk_0813F91C[];
 extern s16 gSineTable[];
 extern vu32 gFrameCounter;
