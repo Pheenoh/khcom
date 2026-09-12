@@ -90,7 +90,6 @@ void func_08108208(void);
 void func_081083EC(void);
 void func_081085E8(void);
 void func_08108650(void);
-void SpriteReset(void);
 void func_08107B84(void);
 UnkStruct_0810718C* func_0810718C(void);
 void func_081078F0(s16 a);

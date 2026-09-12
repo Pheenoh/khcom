@@ -1,7 +1,9 @@
 #ifndef GUARD_MODE_BATTLE_H
 #define GUARD_MODE_BATTLE_H
 
+#include "display.h"
 #include "fade.h"
+#include "battle_actor.h"
 #include "btl_collision.h"
 #include "types.h"
 #include "battle_work.h"
@@ -47,14 +49,12 @@ extern TaskDesc gTaskDescBosMd;
 extern TaskDesc gTaskDescBosPc;
 extern TaskDesc gTaskDescBosLst;
 
-void SetBgSize(s32 a, s32 b);
 void func_0800AB8C(void);
 void func_08012798(s32 a, u16 b);
 void func_08012810(void);
 void func_08012824(void);
 void BtlWorkInit(void);
 void _08019CB4(void);
-void func_0801A920(s32 a, s32 b, s32 c, s32 d);
 void func_0801C068(void);
 void func_0801C104(void);
 

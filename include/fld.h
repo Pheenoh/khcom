@@ -122,10 +122,7 @@ typedef struct FldShadowWork {
     u8 anim[0x18];
 } FldShadowWork;
 
-void func_08002A10(void* a, void* b);
-void func_08005974(void* a, u8 b, u16 c, void* d, void* e);
 void func_0803473C(FldWork* work, s32 index, u16 flags);
-u8 GetKeyReleaseTime(s32 a);
 void SetTaskUpdate(u8* p, u32 v);
 void func_080E0298(s32 a, s32 b);
 u8 func_080DFC24(void);

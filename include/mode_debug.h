@@ -20,11 +20,6 @@ typedef struct DebugWork {
     AnimState anim;
 } DebugWork;
 
-void func_08002A10(void* a, void* b);
-void SetBgSize(s32 a, s32 b);
-void SetBgColorMode(s32 a, s32 b);
-void SetBackdropColor(u16 r, u16 g, u16 b);
-void func_08005974(void* a, u16 b, s32 c, void* d, void* e);
 s16 GetPaletteEffect(void);
 void SetPaletteEffect(s16 a);
 void SaveClearHeader(void);

@@ -614,9 +614,7 @@ void SetBgWaveParams(s32 a, u8 b, u8 c);
 void EnableBgWave(s32 a);
 void HBlankIntrBgWave1(s32 a);
 void StopBgWave(s32 a);
-void SetBgBlend(s32 a, u16 b, u16 c);
 void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
-void func_08005974(AnimState* a, u16 b, u16 c, void* d, void* e);
 
 void task_wlogo_hwt_0(WlogoHwtWork* work);
 u8 task_wlogo_hwt_1(WlogoHwtWork* work);
@@ -719,7 +717,6 @@ void task_wlogo_mons_3(WlogoMonsWork* work);
 
 void func_080C640C(WlogoObjParam* param);
 u8 func_080C64A4(void);
-void func_0801B008(void);
 void func_080B7E68(TmWork* w);
 void task_bos_tm_0(TmWork* w, BtlObj* arg);
 u8 task_bos_tm_1(TmWork* w);

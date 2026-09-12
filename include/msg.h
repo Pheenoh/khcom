@@ -2,6 +2,7 @@
 #define GUARD_MSG_H
 
 #include "m4a_song.h"
+#include "battle_actor.h"
 #include <string.h>
 #include <stdlib.h>
 #include "text.h"
@@ -587,7 +588,6 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f);
 void func_08064624(void);
 u8 func_08004678(void* a);
 u8 func_0800443C(void* a, u16 b);
-void SetBackdropColor(u16 r, u16 g, u16 b);
 void func_080CA368(s32 a, u16 b, u16 c);
 void StartBgWave(void (*a)(void));
 void ResetHBlankCallback(void);
@@ -608,11 +608,8 @@ u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void m4aMPlayAllStop(void);
 void func_08074504(void);
 void func_080A4188(void* pool, u16 b);
-void func_08002A10(void* a, void* b);
 void func_08003A70(void* a, void* b);
 u8 func_08073DA4(MsgFaceWork* p, void* a);
-void func_08005244(s32 a, u16 b, u16 c);
-void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 u8 func_08073294(MsgWinWork* p, void* a);
 u8 func_08073318(MsgWinWork* p, void* a);
 u8 func_0807344C(MsgWinWork* p, void* a);
@@ -621,8 +618,6 @@ void func_08073508(MsgWinWork* p);
 void func_080736F8(MsgWinWork* p);
 u8 func_08072EAC(MsgWinWork* p, void* a);
 u8 func_08073F78(MsgWaitWork* p);
-void func_0800516C(s32 a, void* b, s32 c, s32 d);
-void func_080051C4(s32 a, u16 b, u16 c);
 u8 msgface_1(MsgFaceWork* p, void* a);
 u8 func_08073B04(MsgFaceWork* p, void* a);
 u8 func_08073B54(MsgFaceWork* p, void* a);
@@ -697,16 +692,12 @@ void func_08074DC4(Work08074DC4* a);
 
 void func_0806FE90(Work0806180C* p);
 u8 func_0807048C(Work0806180C* p, void* a);
-u8 GetKeyReleaseTime(s32 a);
 void func_08072C34(Work0806180C* p);
 void func_0806CD60(ContinueWork* p);
 void func_0806CF04(ContinueWork* p);
 void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a);
 u8 func_0806D830(EventSeqWork* p, void* a);
 void BtlWorkInit(void);
-void func_0801A920(s32 a, s32 b, s32 c, s32 d);
-void SetBgSize(s32 bg, s32 size);
-void SetBgColorMode(s32 bg, s32 mode);
 void func_080CA35C(void);
 void func_080065FC(s32 a, s32 b, s32 c);
 void func_08006778(void* a, s32 x, s32 y);
@@ -717,7 +708,5 @@ void func_08075E60(Work0806180C* p);
 void func_08070008(Work0806180C* p);
 u8 func_080700D4(Work0806180C* p, void* a);
 
-void* func_080038C8(u16 a);
-void func_080038E4(void* a, void* b, void* c);
 
 #endif /* GUARD_MSG_H */

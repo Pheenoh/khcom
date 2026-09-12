@@ -240,7 +240,6 @@ s32 eu_0805E9AC(void* text);
 u8 func_080D2DD8(void);
 #endif
 void func_0800FFE0(u16 flag);
-void func_08002A10(void* tiles, void* src);
 s16 func_08064DD4(void* text);
 void mode_jiminy_1(void);
 

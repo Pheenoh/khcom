@@ -229,10 +229,7 @@ typedef struct SmnKingWork {
 } SmnKingWork;
 
 
-void func_0801C6D4(s32* a, s32* b, s32* c, s32* d);
 void func_080140E0(s32 a, s32 b, s32 c);
-void func_08019050(s32 a, s32 b, s32 c, s32 d);
-void func_08019A30(void);
 void func_08006B74(void);
 void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
 void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
@@ -244,14 +241,12 @@ void func_0807629C(void);
 void func_08006B80(u16* a, u16* b);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_0801416C(s32 a, s32 b, s32 c);
-u32 func_0801A8A4(s32* a, s32* b, s32 c, s32 d);
 void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
 void func_0802F1E8(void);
 void func_08014FDC(s32 a, s32 b, s32 c);
 void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_080147C8(s32 a, s32 b);
-void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
 extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescBtlPrize[];
 extern u8 gTaskDescSmnTinkeff[];

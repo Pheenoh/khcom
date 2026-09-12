@@ -1,3 +1,4 @@
+#include "display.h"
 #include "text.h"
 #include "macros.h"
 #include "mode_sio.h"
@@ -48,7 +49,6 @@ extern u8 gUnkEu_08CCCBFC[];
 extern void func_080C7350(void);
 extern void* gUnkEu_08891580[];
 extern s16 eu_0806629C(TextSlot* text, u8 count);
-extern void eu_080059F4(s32 bg, void* map);
 extern void eu_080C24D8(void);
 extern s32 eu_080C273C(void);
 extern s32 eu_080C2740(void);

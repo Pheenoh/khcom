@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
+#include "engine_math.h"
+
 #include "game_state.h"
 #include "text.h"
 #include "fade.h"
@@ -194,7 +196,6 @@ void func_08107A08(UnkStruct_0810718C* p);
 void func_08107A74(UnkStruct_0810718C* p);
 void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 void mode_ms_charge_0(void);
-void SpriteReset(void);
 void func_0810563C(void);
 UnkStruct_0810718C* func_08104B2C(void);
 void func_081052C8(s16 a);
@@ -205,7 +206,6 @@ void func_08105090(void);
 void func_08104BBC(void);
 void func_08104D18(void);
 void func_08108650(void);
-void func_0805F1C0(s32* p, s32 v);
 extern s16 gUnk_02035C18;
 extern s16 gUnk_02035CE0;
 extern s16 gUnk_02035CE2;

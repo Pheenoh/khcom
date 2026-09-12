@@ -1,6 +1,7 @@
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
+#include "display.h"
 #include "fade.h"
 #include "obj_api.h"
 #include "types.h"
@@ -58,8 +59,6 @@ void func_08093BB4(void);
 void func_08093C04(void);
 void func_080C736C(void);
 void func_080C73A4(s32 a, s32 b, s32 c);
-void SetBgSize(s32 a, s32 b);
-void SetBgAffine(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_080C73D8(void);
 void func_080D5A4C(s32 a);
 void func_080D5B04(void);

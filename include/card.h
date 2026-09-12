@@ -1,6 +1,8 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "card_deck.h"
+
 #include "types.h"
 #include "game_state.h"
 #include "text_types.h"
@@ -2162,7 +2164,6 @@ Deck* GetDeck(u8 index);
 u16 CountCardsById(u16 cardId);
 u8 func_08085B84(u16 index);
 u16 func_08085B5C(u16 index);
-u8 GetActiveDeckIndex(void);
 void SetActiveDeckIndex(u8 index);
 u16 func_08085770(u8 index);
 u16 func_08085B38(u8 index);

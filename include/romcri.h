@@ -73,7 +73,6 @@ extern u8 gUnk_08F6D9E4[];
 extern u8 gUnk_08F6DA04[];
 extern const u16 gUnk_09EDA4EC[];
 
-void SetBgBlend(s32 a, s32 b, s32 c);
 void PushPaletteEffect(s32 a);
 void PopPaletteEffect(void);
 

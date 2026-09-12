@@ -91,8 +91,6 @@ typedef struct UnkStruct_02039DD4 {
 
 extern UnkStruct_02039DD4* gUnk_02039DD4;
 
-void func_0800516C(s32 a, void* b, s32 c, s32 d);
-void func_08005244(s32 a, u16 b, u16 c);
 void func_0802F1C8(void);
 void func_0802F208(void);
 s32 func_0802F268(void);

@@ -1,3 +1,4 @@
+#include "display.h"
 #include <stdlib.h>
 #include "obj_api.h"
 #include "macros.h"
@@ -72,7 +73,6 @@ void PopPaletteEffect(void);
 extern u16 gSystemFlags;
 u16 GetObjTileCount(u16 a, u16 b);
 void func_08005C60(u16 a);
-void func_080051C4(s32 bg, u16 x, u16 y);
 
 extern u16 gBldY;
 extern u16 gWin0H;
@@ -2326,10 +2326,14 @@ void SetBgAffine(s32 bg, u8 rot, s32 sx, s32 sy, s32 dx, s32 dy) {
     }
 }
 
-void SetBackdropColor(u8 r, u8 g, u8 b) {
-    g &= 0x1F;
-    b &= 0x1F;
-    gUnk_030074CC = (b << 10) | (g << 5) | (r & 0x1F);
+void SetBackdropColor(u32 r, u32 g, u32 b) {
+    u8 red = r;
+    u8 green = g;
+    u8 blue = b;
+
+    green &= 0x1F;
+    blue &= 0x1F;
+    gUnk_030074CC = (blue << 10) | (green << 5) | (red & 0x1F);
     gBackdropColor = gUnk_030074CC;
 }
 
@@ -2518,10 +2522,10 @@ void AnimInit(AnimState* a, void* b, void* c) {
     a->frames = 0;
 }
 
-void func_08005974(AnimState* a, u16 animId, u16 flags, s32 b, s32 c) {
-    if (a->gfxTable != (u32*)c || a->anims != (AnimHeader**)b || a->animId != animId) {
-        a->gfxTable = (u32*)c;
-        a->anims = (AnimHeader**)b;
+void func_08005974(AnimState* a, u16 animId, u16 flags, void* b, void* c) {
+    if (a->gfxTable != c || a->anims != b || a->animId != animId) {
+        a->gfxTable = c;
+        a->anims = b;
         AnimStart(a, animId, flags);
     }
 }

@@ -52,7 +52,8 @@ void mode_vsbattle_0(u32 mode) {
         TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlSora, &arg2);
     }
 
-    func_0801A920(0x100 - gUnk_02039B90, gUnk_02039B90 + 0x100, gUnk_02039B88, gUnk_02039B8C);
+    func_0801A920((s16)(0x100 - gUnk_02039B90), (s16)(gUnk_02039B90 + 0x100),
+                  (s16)gUnk_02039B88, (s16)gUnk_02039B8C);
     TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlMap, 0);
     gUnk_02039B98 = 0;
     func_08006120(0, 60);

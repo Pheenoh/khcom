@@ -826,7 +826,7 @@ u8 func_080C7F94(PoohWork* w) {
 
 void func_080C7FEC(PoohWork* w, u32 anim) {
     PoohAnim* e;
-    s32 flags;
+    u16 flags;
 
     flags = 0;
     ColliderSetRadius(w->unk_4C, gUnk_096FC010.unk_08);
