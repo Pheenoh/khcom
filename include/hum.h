@@ -49,33 +49,6 @@ typedef struct VixenSub {
     s32 unk_04;
     s32 unk_08;
 } VixenSub;
-typedef struct HumWork {
-    void* unk_000;
-    void* tiles;
-    void* palette;
-    HumSub* unk_00C;
-    void* unk_010;
-    AnimState anim;
-    TaskPool unk_02C;
-    BtlObj unk_040;
-    u16 unk_150;
-    u16 unk_152;
-    u32 unk_154;
-    u32 unk_158;
-    u32 unk_15C;
-    u32 unk_160;
-    u32 unk_164;
-    s32 unk_168;
-    s32 unk_16C;
-    u32 unk_170;
-    s16 unk_174;
-    u16 unk_176;
-    void* unk_178;
-    u16 unk_17C;
-    u16 unk_17E;
-    u32 gfx;
-    u32 unk_184;
-} HumWork;
 
 typedef struct CloudWork {
     HumWork base;

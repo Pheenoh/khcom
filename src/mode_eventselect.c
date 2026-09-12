@@ -630,7 +630,7 @@ void EV_SOUND_0(EvSoundWork* w, u8* arg) {
     w->unk_06 = 0;
     w->unk_07 = 0;
     w->unk_08 = 256;
-    w->unk_00 = gUnk_09EE3FB4[w->unk_04][4];
+    w->unk_00 = gUnk_09EE3FB4[w->unk_04]->unk_10;
     gUnk_02039DD0 = EwramAlloc(256);
 
     for (i = 0; i < 64; i++) {

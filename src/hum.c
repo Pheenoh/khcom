@@ -2377,9 +2377,9 @@ u8 task_hum_hades_1(HadesWork* work) {
 
         if ((s16)work->base.unk_152 > 0) {
             if (w->unk_1CA & 4) {
-                ApproachValue(&w->unk_27C, 10, work->base.unk_152);
+                ApproachValue(&w->unk_27C, 10, (u16)work->base.unk_152);
             } else {
-                ApproachValue(&w->unk_27C, 0x100, work->base.unk_152);
+                ApproachValue(&w->unk_27C, 0x100, (u16)work->base.unk_152);
             }
             work->base.unk_152--;
         }
@@ -3083,7 +3083,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             func_08019068(gUnk_0813F368, &w->base.anim, 5, 1, w->base.tiles);
         }
         act->unk_008 += (y - act->unk_008) >> 2;
-        n = work->base.unk_150;
+        n = (u16)work->base.unk_150;
 
         if ((s16)n > 60) {
             work->base.unk_170 = 24;
@@ -3177,7 +3177,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
                 func_08011F78(0x13F, act->unk_004 - 0x2800, act->unk_008, 0, 40, 16, 40);
             }
         }
-        n = work->base.unk_150;
+        n = (u16)work->base.unk_150;
 
         if ((s16)n > 60) {
             work->base.unk_170 = 30;
@@ -3541,9 +3541,9 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         } else if (AnimIsFinished(&work->base.anim)) {
             func_08019068(gUnk_0813F480 + 0x18, &w->base.anim, 2, 1, w->base.tiles);
         }
-        ApproachValue(&act->unk_004, work->base.unk_15C, work->base.unk_152);
-        ApproachValue(&act->unk_008, work->base.unk_160, work->base.unk_152);
-        ApproachValue(&act->unk_00C, work->base.unk_164, work->base.unk_152);
+        ApproachValue(&act->unk_004, work->base.unk_15C, (u16)work->base.unk_152);
+        ApproachValue(&act->unk_008, work->base.unk_160, (u16)work->base.unk_152);
+        ApproachValue(&act->unk_00C, work->base.unk_164, (u16)work->base.unk_152);
         work->base.unk_152--;
 
         if ((s16)work->base.unk_152 <= 0) {
@@ -4414,7 +4414,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         } else {
             work->base.unk_15C = x + 0x6E00;
         }
-        ApproachValueHalfSteps(&act->unk_004, work->base.unk_15C, work->base.unk_152);
+        ApproachValueHalfSteps(&act->unk_004, work->base.unk_15C, (u16)work->base.unk_152);
         work->base.unk_152--;
         func_0800F368(work, 1);
         if ((s16)work->base.unk_152 <= 0) {
@@ -4608,8 +4608,8 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         }
         sub->unk_28 += (t - sub->unk_28) >> 3;
         sub2->unk_28 += (t - sub2->unk_28) >> 3;
-        sub->unk_2C += (act->unk_008 + gSineTable[(work->base.unk_150 * 4) & 255] * 55 - sub->unk_2C) >> 2;
-        sub2->unk_2C += (act->unk_008 - gSineTable[(work->base.unk_150 * 4) & 255] * 55 - sub2->unk_2C) >> 2;
+        sub->unk_2C += (act->unk_008 + gSineTable[((u16)work->base.unk_150 * 4) & 255] * 55 - sub->unk_2C) >> 2;
+        sub2->unk_2C += (act->unk_008 - gSineTable[((u16)work->base.unk_150 * 4) & 255] * 55 - sub2->unk_2C) >> 2;
         {
             s32* ground = &gBtlWork->unk_138;
             {
@@ -4667,7 +4667,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             w->unk_214 = 0x5A00;
             m4aSongNumStart(651);
         }
-        angle = work->base.unk_150 * 4;
+        angle = (u16)work->base.unk_150 * 4;
         ApproachValue(&w->unk_214, 0x2800, w->unk_204);
         w->unk_204--;
         dx = gSineTable[angle % 256] * w->unk_214 >> 8;
@@ -5402,7 +5402,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
         if (AnimGetFrame(&w->base.anim) > 2) {
             ang = GetAngle(work->unk_198, work->unk_19C, x, y);
             ApproachAngle(&work->unk_1A0, ang, 3);
-            s = abs(gSineTable[(w->base.unk_150 * 2) & 0xFF]);
+            s = abs(gSineTable[((u16)w->base.unk_150 * 2) & 0xFF]);
             s += 384;
             work->unk_198 += (gSineTable[(u8)work->unk_1A0] * s) >> 8;
             work->unk_19C += (-gSineTable[(u8)work->unk_1A0 + 64] * s) >> 8;
@@ -7452,7 +7452,7 @@ u8 task_hum_riku_1(RikuWork* work) {
         }
         work->base.unk_158 = 0;
         func_0802F284(gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_008, gBtlWork->unk_07C->unk_00C);
-        ApproachValue(&work->base.unk_168, 256, work->base.unk_152);
+        ApproachValue(&work->base.unk_168, 256, (u16)work->base.unk_152);
         work->base.unk_152--;
         if ((s16)work->base.unk_152 <= 0) {
             work->base.unk_170 = 34;
@@ -7491,9 +7491,9 @@ u8 task_hum_riku_1(RikuWork* work) {
             work->base.unk_152 = 40;
         }
         if ((s16)work->base.unk_152 > 0) {
-            ApproachValue(&act->unk_004, act->unk_014, work->base.unk_152);
-            ApproachValue(&act->unk_008, act->unk_018, work->base.unk_152);
-            ApproachValue(&act->unk_00C, act->unk_01C, work->base.unk_152);
+            ApproachValue(&act->unk_004, act->unk_014, (u16)work->base.unk_152);
+            ApproachValue(&act->unk_008, act->unk_018, (u16)work->base.unk_152);
+            ApproachValue(&act->unk_00C, act->unk_01C, (u16)work->base.unk_152);
             work->base.unk_152--;
             if ((s16)work->base.unk_152 <= 0) {
                 func_08018F28(act->unk_004, act->unk_008 - 0x2000, 0);

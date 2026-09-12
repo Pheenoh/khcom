@@ -27438,7 +27438,7 @@ void EV_BG_EFFECT_0(u8* a, u8* b) {
     a[19] = t;
     a[20] = z;
     a[21] = z;
-    *(void**)&a[0] = gUnk_09EE3FB4[a[19]][5];
+    *(void**)&a[0] = gUnk_09EE3FB4[a[19]]->unk_14;
 }
 u8 EV_BG_EFFECT_1(UnkStruct_080A1DAC* w, void* a) {
     UnkStruct_080A1DAC_Entry* e;

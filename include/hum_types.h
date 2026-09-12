@@ -3,6 +3,8 @@
 
 #include "types.h"
 #include "anim.h"
+#include "taskpool.h"
+#include "battle_actor_types.h"
 
 typedef struct HumSub {
     void* unk_00;
@@ -31,5 +33,33 @@ typedef struct HumSubDef {
     u16 unk_04;
     u16 unk_06;
 } HumSubDef;
+
+typedef struct HumWork {
+    void* unk_000;
+    void* tiles;
+    void* palette;
+    HumSub* unk_00C;
+    HumSub* unk_010;
+    AnimState anim;
+    TaskPool unk_02C;
+    BtlObj unk_040;
+    s16 unk_150;
+    s16 unk_152;
+    u32 unk_154;
+    u32 unk_158;
+    u32 unk_15C;
+    u32 unk_160;
+    s32 unk_164;
+    s32 unk_168;
+    s32 unk_16C;
+    u32 unk_170;
+    s16 unk_174;
+    u16 unk_176;
+    void* unk_178;
+    u16 unk_17C;
+    u16 unk_17E;
+    void* gfx;
+    u32 unk_184;
+} HumWork;
 
 #endif

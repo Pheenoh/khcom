@@ -1,6 +1,8 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "msg_types.h"
+
 #include "continue_types.h"
 
 #include "evt_types.h"
@@ -108,16 +110,6 @@ typedef struct Work0806180C {
     u8 unk_1BA[2];
 } Work0806180C;
 
-typedef struct MsgLine0806180C {
-    u32 unk_00;
-    u32 unk_04;
-    u32 unk_08;
-    u8 unk_0C;
-    u8 unk_0D[3];
-    u32 unk_10;
-    u16 unk_14;
-    u16 unk_16;
-} MsgLine0806180C;
 
 typedef struct Ent02034A80 {
     s32 unk_00;
@@ -292,18 +284,6 @@ typedef struct Actor0806180C {
     s32 unk_34;
 } Actor0806180C;
 
-typedef struct Obj0806180C {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    u8 unk_10;
-    u8 unk_11[3];
-    u32 unk_14;
-    u16 unk_18;
-    u8 unk_1A[2];
-    void* unk_1C;
-} Obj0806180C;
 
 typedef struct Work08074DC4 {
     s32 unk_00;
@@ -388,25 +368,7 @@ typedef struct Work08075010 {
     u16 unk_1C[160];
 } Work08075010;
 
-typedef struct AnimEntry0806180C {
-    struct Ent0806E9BC* unk_00;
-    u8 unk_04;
-    u8 unk_05[3];
-} AnimEntry0806180C;
 
-typedef struct UnkStruct_09EE3FB4 {
-    u8 unk_00;
-    u8 unk_01[3];
-    AnimEntry0806180C* unk_04;
-    Obj0806180C* unk_08;
-    MsgLine0806180C* unk_0C;
-    u8 unk_10[8];
-    u16 unk_18;
-    u8 unk_1A[6];
-    u16 unk_20;
-    u16 unk_22;
-    u16 unk_24;
-} UnkStruct_09EE3FB4;
 
 extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern UnkStruct_02039DCC* gUnk_02039DCC;
@@ -451,7 +413,6 @@ extern s32 gUnk_09033CF0[];
 extern u16 gBldCnt;
 extern vu16 gBldAlpha;
 extern u32 gFrameCounter;
-extern UnkStruct_09EE3FB4* gUnk_09EE3FB4[];
 extern u8 gUnk_09614718[];
 extern u8 gUnk_09614738[];
 extern u8 gUnk_09614758[];
