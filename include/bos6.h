@@ -546,7 +546,7 @@ u8 func_0810E984(BosLstWork* work);
 void func_0810D4B0(BosLstWork* work);
 
 s32 abs(s32 x);
-s32 func_08003C9C(s32 x);
+s32 Sqrt8(s32 x);
 u8 func_08110938(LstTask* t);
 u8 func_0810A424(PcWork* work);
 

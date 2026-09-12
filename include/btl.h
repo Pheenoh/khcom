@@ -458,7 +458,7 @@ u8 func_08006314(void);
 void func_080165DC(s32 x, s32 y, s32 z);
 void func_08016684(s32 x, s32 y, s32 z);
 void func_08017008(s32 x, s32 y, s32 z);
-s32 func_08003C9C(s32 a);
+s32 Sqrt8(s32 a);
 void func_08017138(u16 a);
 void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
 void func_080147A8(s32 a, s32 b, s32 c);

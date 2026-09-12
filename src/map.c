@@ -10357,7 +10357,7 @@ s32 func_080F023C(UnkStruct_080F023C* p, s32 lim) {
     if (dx > 0x8000 || dy > 0x8000) {
         return 0;
     }
-    return func_08003C9C((dx * dx >> 8) + (dy * dy >> 8)) < lim ? 1 : 0;
+    return Sqrt8((dx * dx >> 8) + (dy * dy >> 8)) < lim ? 1 : 0;
 }
 
 void func_080F02A0(UnkStruct_080F023C* w) {
@@ -14187,7 +14187,7 @@ void func_080F6668(MapNamineWork* w) {
     }
 
     if (dx <= 0x8000 && dy <= 0x8000) {
-        if (func_08003C9C((dx * dx >> 8) + (dy * dy >> 8)) < 0x3000) {
+        if (Sqrt8((dx * dx >> 8) + (dy * dy >> 8)) < 0x3000) {
             func_08006184(0, 16);
             gUnk_02039BA0->unk_70 |= 0x1000;
             w->unk_0BC = func_080F66E0;
@@ -14723,7 +14723,7 @@ s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
     if (dx > 0x8000 || dy > 0x8000) {
         return 0;
     }
-    return func_08003C9C((dx * dx >> 8) + (dy * dy >> 8)) < lim ? 1 : 0;
+    return Sqrt8((dx * dx >> 8) + (dy * dy >> 8)) < lim ? 1 : 0;
 }
 
 void func_080F74E8(UnkStruct_080DFF1C* p) {

@@ -151,19 +151,26 @@ typedef struct UnkBgAnim {
 typedef char UnkBgAnim_size[(sizeof(UnkBgAnim) == 0x18) ? 1 : -1];
 typedef char UnkBgAnimFrame_size[(sizeof(UnkBgAnimFrame) == 0x08) ? 1 : -1];
 
-typedef struct UnkSpline {
-    s16 unk_00;
+typedef struct Spline2D {
+    s16 pointCount;
     u16 unk_02;
-    s32* unk_04;
-    s32* unk_08;
-    s32* unk_0C;
-    s32* unk_10;
-    s32* unk_14;
-    s32* unk_18;
-    s32* unk_1C;
-} UnkSpline;
+    s32* intervals;
+    s32* scratch;
+    s32* knots;
+    s32* xCoefficients;
+    s32* yCoefficients;
+    s32* xValues;
+    s32* yValues;
+} Spline2D;
 
-typedef char UnkSpline_size[(sizeof(UnkSpline) == 0x20) ? 1 : -1];
+typedef char Spline2D_size[(sizeof(Spline2D) == 0x20) ? 1 : -1];
+
+void SplineBuildAxisCoefficients(Spline2D* spline, s32* knots, s32* values, s32* coefficients);
+s32 SplineEvaluateAxis(s16* count, s32 t, s32* knots, s32* values, s32* coefficients);
+void SplineInit2D(Spline2D* spline, s32* xValues, s32* yValues, s16 count);
+void SplineEvaluate2D(Spline2D* spline, s32 t, s32* x, s32* y);
+void SplineFreeBuffers(Spline2D* spline);
+
 extern u16 gBg0HOfs;
 extern u16 gBg0VOfs;
 extern u16 gBg1HOfs;
@@ -238,7 +245,7 @@ void func_08006494(u16 a, u16 b);
 void func_080064E8(u16 a, u16 b);
 u8 MosaicIsActive(void);
 void func_0800388C(ObjTiles* t, u16 slot, void* src, u16 size);
-s32 func_08003C9C(s32 a);
+s32 Sqrt8(s32 a);
 void SetObjMosaicSize(u8 a, u8 b);
 void func_08003510(u8 a);
 ObjTiles* func_080038C8(u16 a);
