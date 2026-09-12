@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "msg_types.h"
+
 #include "field_state.h"
 
 #include "continue_types.h"
@@ -49,29 +51,7 @@ typedef struct UnkStruct_09EE3CA0 {
     u8 unk_25[0x03];
 } UnkStruct_09EE3CA0;
 
-typedef struct UnkStruct_09EE3FB4_08 {
-    u8 unk_00[0x14];
-    u32 unk_14;
-} UnkStruct_09EE3FB4_08;
 
-typedef struct UnkStruct_09EE3FB4 {
-    u8 unk_00[0x08];
-    UnkStruct_09EE3FB4_08* unk_08;
-    u8 unk_0C[0x0E];
-    u8 unk_1A;
-    u8 unk_1B;
-    u8 unk_1C;
-    u8 unk_1D;
-    u8 unk_1E;
-    u8 unk_1F;
-    u16 unk_20;
-    u16 unk_22;
-    u8 unk_24[0x04];
-    u16 unk_28;
-    u8 unk_2A;
-    u8 unk_2B;
-    u8 unk_2C;
-} UnkStruct_09EE3FB4;
 
 typedef struct EvtArg {
     u32 unk_00 : 8;
@@ -225,7 +205,6 @@ extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
 extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
-extern UnkStruct_09EE3FB4* gUnk_09EE3FB4[];
 extern TaskDesc gTaskDescEventSeq;
 extern Mode gModeEventselect;
 extern Mode gModeBattle;

@@ -1,6 +1,8 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "msg_types.h"
+
 #include "field_state.h"
 
 #include "card_ui_types.h"
@@ -131,7 +133,6 @@ typedef struct CardListWork {
 typedef char CardListWork_size[(sizeof(CardListWork) == 0x2C) ? 1 : -1];
 
 extern CardListWork* gUnk_0203A9D0;
-extern void** gUnk_09EE3FB4[];
 extern u8 gUnk_081283C0[];
 extern void** gUnk_09EEA28C;
 extern u8 gUnk_0203A9E0;
