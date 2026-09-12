@@ -1380,7 +1380,6 @@ void func_08063EE4(s32 a, s32 b, u8 v, u8 d, u8 e) {
 }
 #endif
 #ifndef VERSION_EU
-#ifdef NON_MATCHING
 void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
     u8 i;
     u8 len;
@@ -1412,7 +1411,8 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
     i = 0;
     j = 0;
     count = len;
-    for (; i < count; i++) {
+
+    for (; i < len; i++) {
         if ((u8)(s[i] - 48) <= 9) {
             idx = (u8)(s[i] + 209);
         }
@@ -1433,6 +1433,8 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
         j++;
     }
 
+    len = count;
+
     for (j = len; j < 16; j++) {
         if (gUnk_02034A80[slot].unk_08[j] != 0) {
             ReleaseObjTiles((void*)gUnk_02034A80[slot].unk_08[j]);
@@ -1441,9 +1443,6 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
     }
     gUnk_02034A80[slot].unk_50 = len;
 }
-#else
-INCLUDE_ASM("msg/func_08063F60.s");
-#endif
 #endif
 #ifndef VERSION_EU
 void func_080640E0(void) {
