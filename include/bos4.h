@@ -841,14 +841,8 @@ extern u8 gUnk_0984AFD8[];
 extern u8 gUnk_09EF684C[];
 extern u8 gUnk_09EF6848[];
 
-typedef struct UnkStruct_0203C55C {
-    u8 unk_00[0x2C];
-    s16 unk_2C;
-    s16 unk_2E;
-} UnkStruct_0203C55C;
-
-extern UnkStruct_0203C55C* gUnk_0203C55C;
-void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg);
+extern BtlObj* gUnk_0203C55C;
+void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg);
 u8 task_bos_boogie_disk_1(BoogieDiskWork* work);
 void func_080DEF20(void);
 extern const u8 gUnk_09EF69E0[];
