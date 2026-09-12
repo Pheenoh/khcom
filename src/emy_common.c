@@ -230,7 +230,6 @@ void func_0800CD40(EmyWork* work) {
     actor->flags &= ~0x300;
 }
 
-#ifdef NON_MATCHING
 s32 _0800CDF0(EmyWork* work) {
     VsActor* actor = &work->unk_03C;
     s32 x;
@@ -404,17 +403,19 @@ s32 _0800CDF0(EmyWork* work) {
         break;
     case 4:
         if (gBtlWork->unk_068 & 0x40000) {
+            s32 px;
             s32 tx;
             s32 ty;
             s32 d;
 
             func_08019068(work->unk_15C->unk_04, &work->anim, 2, 1, work->tiles);
             func_0801BCF8(actor);
-            tx = x + work->unk_170;
+            px = x;
+            tx = px + work->unk_170;
             ty = y;
 
             if (tx < (gBtlWork->unk_0DA + 32) << 8) {
-                tx = x + ((actor->unk_CE + actor->unk_D0) << 8);
+                tx = px + ((actor->unk_CE + actor->unk_D0) << 8);
             } else if (tx > (gBtlWork->unk_0DC - 32) << 8) {
                 tx = ty - ((actor->unk_CE + actor->unk_D0) << 8);
             }
@@ -639,7 +640,6 @@ s32 _0800CDF0(EmyWork* work) {
                 func_080063A8();
             }
             func_0801B994(actor);
-            gBtlWork->unk_068 |= 0x10000;
             func_0801C830(actor);
             return 0;
         } else {
@@ -671,9 +671,9 @@ s32 _0800CDF0(EmyWork* work) {
             t = (actor->unk_9C / 2) * work->unk_16C;
 
             if (work->unk_158 & 1) {
-                func_08013E4C(actor->x, actor->y, actor->z - t);
+                func_08013E4C(actor->x, actor->y, actor->z - t, work->unk_16C);
             } else {
-                func_08013DB8(actor->x, actor->y, actor->z - t);
+                func_08013DB8(actor->x, actor->y, actor->z - t, work->unk_16C);
             }
             work->unk_154++;
         } else if (work->unk_154 > 0) {
@@ -793,9 +793,6 @@ s32 _0800CDF0(EmyWork* work) {
     func_08012324(&actor->unk_40, actor->x, actor->y, actor->z);
     return 1;
 }
-#else
-INCLUDE_ASM("emy_common/_0800CDF0.s");
-#endif
 
 void func_0800DF30(EmyWork* work) {
     if (work->unk_15A != 0) {
