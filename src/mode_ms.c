@@ -3,10 +3,15 @@
 
 #ifdef VERSION_EU
 extern u32 gLanguage;
+extern void* gUnkEu_09F84EE8[];
 extern void* gUnkEu_09F84EFC[];
+extern void* gUnkEu_09F84F5C[];
+extern void* eu_0805E924(void* strings);
 #define LANGSTR(x) (((void**)(x))[gLanguage])
+#define LANGSEL(x) eu_0805E924(x)
 #else
 #define LANGSTR(x) (x)
+#define LANGSEL(x) (x)
 #endif
 
 UnkStruct_020358C8 gUnk_020358C8[5];
@@ -54,7 +59,6 @@ s32 gUnk_02035C08;
 u8 gUnk_02035C0C;
 #include "gba/keys.h"
 
-#ifndef VERSION_EU
 void mode_ms_top_0(u32 a) {
     s32 i;
 
@@ -109,15 +113,27 @@ void mode_ms_top_0(u32 a) {
     gUnk_020358BE = -1;
     gUnk_020358C0 = 0;
     LoadBgPalette(0, gUnk_09A3D79C, 0x60);
+#ifdef VERSION_EU
+    LoadBgTiles(0, gUnk_09A10A3C, 0x24C0);
+#else
     LoadBgTiles(0, gUnk_09A10A3C, 0x19A0);
+#endif
     func_08101588(GetMooglePoints(), gUnk_09A123DC, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
     LoadBgMap(0, gUnk_09A36EDC, 0x500);
     LoadBgMap(1, gUnk_09A373DC, 0x500);
 
     if (gUnk_020358A4 != 0) {
+#ifdef VERSION_EU
+        LoadBgMap(2, gUnkEu_09F84EE8[gLanguage], 0x500);
+#else
         LoadBgMap(2, gUnk_09A378DC, 0x500);
+#endif
     } else {
+#ifdef VERSION_EU
+        LoadBgMap(2, gUnkEu_09F84EFC[gLanguage], 0x500);
+#else
         LoadBgMap(2, gUnk_09A37DDC, 0x500);
+#endif
     }
 
     for (i = 0; i < 2; i++) {
@@ -149,9 +165,6 @@ void mode_ms_top_0(u32 a) {
     EnableBg(2);
     DisableBg(3);
 }
-#else
-INCLUDE_ASM("mode_ms/mode_ms_top_0.s");
-#endif
 
 void mode_ms_top_1(void) {
     UpdatePlayTime();
@@ -720,7 +733,6 @@ void func_08102F30(void) {
     }
 }
 
-#ifndef VERSION_EU
 u8 func_0810329C(u16 a) {
     MsShopHosiArg arg0;
     MsShopHosiArg arg1;
@@ -917,8 +929,8 @@ u8 func_0810329C(u16 a) {
                     gUnk_02035AD4 = gUnk_020358C8[0].x - 0x1000;
                     gUnk_02035AD8 = gUnk_020358C8[0].y - 0x2000;
                     LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
-                    gUnk_02035A48 = func_08065B6C(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C, gUnk_02035A44);
-                    gUnk_02035A50 = func_08065B6C(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C], gUnk_02035A4C);
+                    gUnk_02035A48 = func_08065B6C(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
+                    gUnk_02035A50 = func_08065B6C(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                     LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                     EnableBg(3);
                     gUnk_020358C8[i].unk_38 = 9;
@@ -959,8 +971,8 @@ u8 func_0810329C(u16 a) {
 
             if (gUnk_02035B62 != old) {
                 LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
-                gUnk_02035A48 = func_08065B6C(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C, gUnk_02035A44);
-                gUnk_02035A50 = func_08065B6C(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C], gUnk_02035A4C);
+                gUnk_02035A48 = func_08065B6C(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
+                gUnk_02035A50 = func_08065B6C(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                 LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                 m4aSongNumStart(0x65);
             }
@@ -975,9 +987,6 @@ u8 func_0810329C(u16 a) {
 
     return result;
 }
-#else
-INCLUDE_ASM("mode_ms/func_0810329C.s");
-#endif
 
 void func_08103CD8(s16 a) {
     s32 i;
@@ -1280,7 +1289,6 @@ void func_08104404(void) {
     }
 }
 
-#ifndef VERSION_EU
 void mode_ms_shop_0(void) {
     s16 i;
     s32 size;
@@ -1307,7 +1315,11 @@ void mode_ms_shop_0(void) {
     LoadBgPalette(0, gUnk_09A3D87C, 0x1A0);
     LoadBgTiles(0, gUnk_09A1251C, 0x6860);
     func_08101588(GetMooglePoints(), gUnk_09A18D7C, (u8*)GetBgCharBase(0) + 0x20, 0x20, 5);
+#ifdef VERSION_EU
+    LoadBgMap(0, gUnkEu_09F84F5C[gLanguage], size);
+#else
     LoadBgMap(0, gUnk_09A382DC, size);
+#endif
     func_08103CD8(gUnk_02035B04);
 
     if (gUnk_02035B00 != 0) {
@@ -1332,11 +1344,7 @@ void mode_ms_shop_0(void) {
     EnableBg(2);
     DisableBg(3);
 }
-#else
-INCLUDE_ASM("mode_ms/mode_ms_shop_0.s");
-#endif
 
-#ifndef VERSION_EU
 void mode_ms_shop_1(void) {
     UpdatePlayTime();
 
@@ -1366,7 +1374,11 @@ void mode_ms_shop_1(void) {
             func_08102DC8();
             func_0810264C(gUnk_0203C590[6], gUnk_02035B08[gUnk_02035B04], gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0]);
             gUnk_02035B00 = func_081027B4(gGameState.floor);
+#ifdef VERSION_EU
+            LoadBgMap(0, gUnkEu_09F84F5C[gLanguage], 0x500);
+#else
             LoadBgMap(0, gUnk_09A382DC, 0x500);
+#endif
 
             if (gUnk_02035B04 > 0) {
                 if (gUnk_02035B08[gUnk_02035B04] < 0) {
@@ -1409,9 +1421,6 @@ void mode_ms_shop_1(void) {
 
     func_08104404();
 }
-#else
-INCLUDE_ASM("mode_ms/mode_ms_shop_1.s");
-#endif
 
 void mode_ms_shop_2(void) {
     s32 i;

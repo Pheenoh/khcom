@@ -64,6 +64,14 @@ TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
 
 TARGET_ANCHORS = {
     "eu": {
+        0x09A10A3C: 0x09A60380,
+        0x099A2B62: 0x099AF866,
+        0x099A36F8: 0x099B167C,
+        0x09EF99D0: 0x09F8563C,
+        0x09EF99A8: 0x09F85614,
+        0x088C56C6: 0x088F0FEA,
+        0x09A36EDC: 0x09A89EA0,
+        0x09A373DC: 0x09A8A3A0,
         0x09402F78: 0x094DCCE4,
         0x09041E80: 0x090D1DC0,
         0x095152B8: 0x09537B24,
@@ -348,6 +356,7 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_09F84F10": 0x09F84F10,
         "gUnkEu_09F84F24": 0x09F84F24,
         "gUnkEu_09F84F38": 0x09F84F38,
+        "gUnkEu_09F84F5C": 0x09F84F5C,
         "gUnkEu_08B51BA8": 0x08B51BA8,
         "gUnkEu_08B51D50": 0x08B51D50,
         "gUnkEu_08B51FB8": 0x08B51FB8,
