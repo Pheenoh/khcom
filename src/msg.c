@@ -11596,9 +11596,7 @@ u8 func_08073294(MsgWinWork* p, void* a) {
 #ifdef NON_MATCHING
 u8 func_08073318(MsgWinWork* p, void* a) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
-    UnkStruct_02039DC8** world;
 
-    u8* flag;
     func_0807361C(p);
 
     if (e->unk_00 == 62) {
@@ -11609,9 +11607,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
         }
     }
 
-    world = &gUnk_02039DC8;
-    flag = &p->unk_2B;
-    if (*flag == 1 && (*world)->unk_7D == 0) {
+    if (p->unk_2B == 1 && gUnk_02039DC8->unk_7D == 0) {
         s32 text = p->unk_40;
         if (text != 0) {
             p->unk_1E = 0;
@@ -11622,23 +11618,31 @@ u8 func_08073318(MsgWinWork* p, void* a) {
         } else {
             _08065994();
 
-            if ((e->unk_14 & 0x8000) == 0 && p->unk_3C[p->unk_27 + 1].unk_08 == 4) {
-                p->unk_1E = text;
-                p->unk_29 = text;
-                p->unk_2A = text;
-                p->unk_27++;
-                (*world)->unk_64 &= ~1;
-                p->unk_34 = 1;
-                SetTaskUpdate(a, (void*)func_08072EAC);
+            if ((e->unk_14 & 0x8000) == 0) {
+                if (p->unk_3C[p->unk_27 + 1].unk_08 == 4) {
+                    p->unk_1E = text;
+                    p->unk_29 = text;
+                    p->unk_2A = text;
+                    p->unk_27++;
+                    gUnk_02039DC8->unk_64 &= ~1;
+                    p->unk_34 = 1;
+                    SetTaskUpdate(a, (void*)func_08072EAC);
+                } else {
+                    p->unk_1E = 8;
+                    func_08073E74(&p->unk_2C);
+                    SetTaskUpdate(a, (void*)func_0807344C);
+                    gUnk_02039DC8->unk_81 = text;
+                    p->unk_34 = text;
+                }
             } else {
                 p->unk_1E = 8;
                 func_08073E74(&p->unk_2C);
                 SetTaskUpdate(a, (void*)func_0807344C);
-                (*world)->unk_81 = text;
+                gUnk_02039DC8->unk_81 = text;
                 p->unk_34 = text;
             }
         }
-        *flag = 0;
+        p->unk_2B = 0;
     }
     TaskPoolUpdate(p);
     return 1;
