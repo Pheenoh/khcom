@@ -2,6 +2,7 @@
 #define GUARD_ROOM_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "anim.h"
 #include "text_types.h"
 #include "taskpool.h"
@@ -156,20 +157,6 @@ extern u8 gUnk_09EF9728[];
 extern u8 gUnk_099999AC[];
 extern u8 gUnk_09EF9738[];
 
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    u8 unk_008[0x74];
-    s32* unk_07C;
-    u8 unk_080[0x20];
-    s32 unk_0A0;
-    u8 unk_0A4[0x28];
-    s32 unk_0CC;
-    s32 unk_0D0;
-    s32 unk_0D4;
-} BtlWork;
-
-extern BtlWork* gBtlWork;
 
 typedef struct RoomObjResource {
     void* unk_00;

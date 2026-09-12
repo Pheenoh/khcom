@@ -8418,8 +8418,8 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
     TaskPoolUpdate(&p->unk_14);
 
     if (p->unk_32 != 0) {
-        gBtlWork->unk_00 = gUnk_02039DC8->unk_48;
-        gBtlWork->unk_04 = gUnk_02039DC8->unk_4C;
+        gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
+        gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
     }
 
     if ((gUnk_02039DC8->unk_64 & 3) == 2) {
@@ -8452,7 +8452,7 @@ void event_seq_2(EventSeqWork* p) {
     TaskPoolDraw(&p->unk_14);
 
     if (p->unk_32 != 0) {
-        TaskPoolDraw(&gBtlWork->unk_2C);
+        TaskPoolDraw(&gBtlWork->taskPools[0]);
     }
     TaskPoolDraw(&p->unk_00);
 }
@@ -8508,22 +8508,22 @@ void event_chara_0(Work0806180C* p, u32* a) {
     case 95:
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
-        gBtlWork->unk_68 = 0;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
+        gBtlWork->unk_068 = 0;
         p->unk_1B3 = 1;
-        gBtlWork->unk_00 = gUnk_02039DC8->unk_48;
-        gBtlWork->unk_04 = gUnk_02039DC8->unk_4C;
-        gBtlWork->unk_24 = 0x100;
-        gBtlWork->unk_18 = 0;
-        gBtlWork->unk_28 = 0x100;
-        gBtlWork->unk_08 = gUnk_02039DC8->unk_48;
-        gBtlWork->unk_0C = gUnk_02039DC8->unk_4C;
-        gBtlWork->unk_10 = 0x10000;
-        gBtlWork->unk_14 = 0x14000;
-        gBtlWork->unk_1C = 0x10000;
-        gBtlWork->unk_20 = 0x14000;
-        gBtlWork->unk_1A = 15;
+        gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
+        gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
+        gBtlWork->unk_024 = 0x100;
+        gBtlWork->unk_018 = 0;
+        gBtlWork->unk_028 = 0x100;
+        gBtlWork->unk_008 = gUnk_02039DC8->unk_48;
+        gBtlWork->unk_00C = gUnk_02039DC8->unk_4C;
+        gBtlWork->unk_010 = 0x10000;
+        gBtlWork->unk_014 = 0x14000;
+        gBtlWork->unk_01C = 0x10000;
+        gBtlWork->unk_020 = 0x14000;
+        gBtlWork->unk_01A = 15;
         p->unk_02C = p->unk_000->unk_08;
         p->unk_030 = p->unk_000->unk_0C;
         p->unk_034 = p->unk_000->unk_10;
@@ -8535,14 +8535,14 @@ void event_chara_0(Work0806180C* p, u32* a) {
         SetBgPriority(1, 1);
         SetBgPriority(2, 0);
         BtlWorkInit();
-        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
-        gBtlWork->unk_68 = 4;
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->unk_068 = 4;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        gBtlWork->unk_04 = 0x5400;
-        gBtlWork->unk_24 = 0x100;
-        gBtlWork->unk_18 = 0;
+        gBtlWork->unk_004 = 0x5400;
+        gBtlWork->unk_024 = 0x100;
+        gBtlWork->unk_018 = 0;
         func_0801A920(128, 424, 294, 384);
         gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosPc, NULL);
         break;
@@ -8552,21 +8552,21 @@ void event_chara_0(Work0806180C* p, u32* a) {
         SetBgPriority(1, 1);
         SetBgPriority(2, 0);
         BtlWorkInit();
-        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
-        gBtlWork->unk_68 = 4;
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->unk_068 = 4;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        gBtlWork->unk_04 = 0x5400;
-        gBtlWork->unk_24 = 0x100;
-        gBtlWork->unk_18 = 0;
+        gBtlWork->unk_004 = 0x5400;
+        gBtlWork->unk_024 = 0x100;
+        gBtlWork->unk_018 = 0;
         func_0801A920(128, 424, 294, 384);
         gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosPc, &p->unk_010);
         p->unk_1B4 = 0;
-        gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_00;
-        gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_04;
-        gUnk_02039DC8->unk_50 = gBtlWork->unk_08;
-        gUnk_02039DC8->unk_54 = gBtlWork->unk_0C;
+        gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
+        gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
+        gUnk_02039DC8->unk_50 = gBtlWork->unk_008;
+        gUnk_02039DC8->unk_54 = gBtlWork->unk_00C;
         gUnk_02039DC8->unk_58 = v0;
         gUnk_02039DC8->unk_5C = v1;
         break;
@@ -8577,14 +8577,14 @@ void event_chara_0(Work0806180C* p, u32* a) {
         SetBgPriority(2, 0);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
-        gBtlWork->unk_68 = 4;
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->unk_068 = 4;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        gBtlWork->unk_04 = 0x5400;
-        gBtlWork->unk_24 = 0x100;
-        gBtlWork->unk_18 = 0;
+        gBtlWork->unk_004 = 0x5400;
+        gBtlWork->unk_024 = 0x100;
+        gBtlWork->unk_018 = 0;
         func_0801A920(128, 368, 480, 512);
         gUnk_02039DC8->unk_00[16] = TaskCreate(&p->unk_010, gTaskDescBosLst, &p->unk_010);
         break;
@@ -8597,17 +8597,17 @@ void event_chara_0(Work0806180C* p, u32* a) {
         SetBgPriority(2, 0);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
-        gBtlWork->unk_68 = 4;
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->unk_068 = 4;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
-        gBtlWork->unk_08 = 0x26600;
-        gBtlWork->unk_0C = 0x12800;
-        gBtlWork->unk_00 = 0x26600;
-        gBtlWork->unk_04 = 0x12800;
-        gBtlWork->unk_10 = 0x26600;
-        gBtlWork->unk_14 = 0x12800;
+        gBtlWork->unk_008 = 0x26600;
+        gBtlWork->unk_00C = 0x12800;
+        gBtlWork->unk_000 = 0x26600;
+        gBtlWork->unk_004 = 0x12800;
+        gBtlWork->unk_010 = 0x26600;
+        gBtlWork->unk_014 = 0x12800;
         p->unk_02C = 0x2A200;
         p->unk_030 = 0x15E00;
         p->unk_034 = -0x3800;
@@ -8623,20 +8623,20 @@ void event_chara_0(Work0806180C* p, u32* a) {
         SetBgPriority(2, 0);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
-        gBtlWork->unk_68 = 0;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
+        gBtlWork->unk_068 = 0;
         p->unk_1B3 = 1;
-        gBtlWork->unk_08 = 0x12C00;
-        gBtlWork->unk_0C = 0x16800;
-        gBtlWork->unk_00 = 0x12C00;
-        gBtlWork->unk_04 = 0x16800;
-        gBtlWork->unk_10 = 0x12C00;
-        gBtlWork->unk_14 = 0x16800;
-        gUnk_02039DC8->unk_48 = gBtlWork->unk_08 - 0x7800;
-        gUnk_02039DC8->unk_4C = gBtlWork->unk_0C - 0x5000;
-        gUnk_02039DC8->unk_50 = gBtlWork->unk_08;
-        gUnk_02039DC8->unk_54 = gBtlWork->unk_0C;
+        gBtlWork->unk_008 = 0x12C00;
+        gBtlWork->unk_00C = 0x16800;
+        gBtlWork->unk_000 = 0x12C00;
+        gBtlWork->unk_004 = 0x16800;
+        gBtlWork->unk_010 = 0x12C00;
+        gBtlWork->unk_014 = 0x16800;
+        gUnk_02039DC8->unk_48 = gBtlWork->unk_008 - 0x7800;
+        gUnk_02039DC8->unk_4C = gBtlWork->unk_00C - 0x5000;
+        gUnk_02039DC8->unk_50 = gBtlWork->unk_008;
+        gUnk_02039DC8->unk_54 = gBtlWork->unk_00C;
         gUnk_02039DC8->unk_68 = 0;
         gUnk_02039DC8->unk_6A = 0;
         p->unk_02C = p->unk_000->unk_08;
@@ -8654,13 +8654,13 @@ void event_chara_0(Work0806180C* p, u32* a) {
         SetBgPriority(2, 1);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
-        gBtlWork->unk_68 = 4;
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->unk_068 = 4;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         TaskCreate(&p->unk_010, gTaskDescBosBoogie, NULL);
-        gBtlWork->unk_B3 = 5;
+        gBtlWork->unk_0B3 = 5;
         break;
     case 99:
         SetupBg(0, 0, 24, 0);
@@ -8671,13 +8671,13 @@ void event_chara_0(Work0806180C* p, u32* a) {
         SetBgPriority(2, 1);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
-        gBtlWork->unk_68 = 4;
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->unk_068 = 4;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         TaskCreate(&p->unk_010, gTaskDescBosUrsula, NULL);
-        gBtlWork->unk_B3 = 5;
+        gBtlWork->unk_0B3 = 5;
         break;
     case 104:
         SetupBg(0, 0, 24, 0);
@@ -8688,13 +8688,13 @@ void event_chara_0(Work0806180C* p, u32* a) {
         SetBgPriority(2, 1);
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
-        gBtlWork->unk_7C = (Ent08074EC8*)p->unk_054;
-        gBtlWork->unk_68 = 4;
-        TaskPoolInit(&gBtlWork->unk_2C, 32);
-        TaskPoolInit(&gBtlWork->unk_40, 1);
+        gBtlWork->unk_07C = (BtlObj*)p->unk_054;
+        gBtlWork->unk_068 = 4;
+        TaskPoolInit(&gBtlWork->taskPools[0], 32);
+        TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         TaskCreate(&p->unk_010, gTaskDescBosGa, (void*)1);
-        gBtlWork->unk_B3 = 5;
+        gBtlWork->unk_0B3 = 5;
         break;
     default:
         if ((p->unk_000->unk_18 & 0x2000) == 0) {
@@ -8755,30 +8755,30 @@ u8 event_chara_1(Work0806180C* p, void* a) {
     if (p->unk_1B3 != 0) {
         switch (p->unk_026) {
         case 0x62:
-            gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48 = gBtlWork->unk_10;
-            gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C = gBtlWork->unk_14;
-            TaskPoolUpdate(&gBtlWork->unk_40);
+            gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48 = gBtlWork->unk_010;
+            gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C = gBtlWork->unk_014;
+            TaskPoolUpdate(&gBtlWork->taskPools[1]);
             break;
         case 0x63:
-            gBtlWork->unk_04 = gBtlWork->unk_0C;
-            gBtlWork->unk_10 = gUnk_02039DC8->unk_48;
-            gBtlWork->unk_14 = gUnk_02039DC8->unk_4C;
+            gBtlWork->unk_004 = gBtlWork->unk_00C;
+            gBtlWork->unk_010 = gUnk_02039DC8->unk_48;
+            gBtlWork->unk_014 = gUnk_02039DC8->unk_4C;
             gUnk_02039DC8->unk_58 = gUnk_02039DC8->unk_48;
             gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C;
-            TaskPoolUpdate(&gBtlWork->unk_2C);
-            TaskPoolUpdate(&gBtlWork->unk_40);
+            TaskPoolUpdate(&gBtlWork->taskPools[0]);
+            TaskPoolUpdate(&gBtlWork->taskPools[1]);
             break;
         case 0x65:
-            gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_00;
-            gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_04;
-            gUnk_02039DC8->unk_50 = gBtlWork->unk_08;
-            gUnk_02039DC8->unk_54 = gBtlWork->unk_0C;
+            gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
+            gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
+            gUnk_02039DC8->unk_50 = gBtlWork->unk_008;
+            gUnk_02039DC8->unk_54 = gBtlWork->unk_00C;
             gUnk_02039DC8->unk_58 = v0;
             gUnk_02039DC8->unk_5C = v1;
             break;
         case 0x61:
-            gBtlWork->unk_10 = gUnk_02039DC8->unk_50;
-            gBtlWork->unk_14 = gUnk_02039DC8->unk_54;
+            gBtlWork->unk_010 = gUnk_02039DC8->unk_50;
+            gBtlWork->unk_014 = gUnk_02039DC8->unk_54;
             break;
         case 0x67:
             break;
@@ -8787,9 +8787,9 @@ u8 event_chara_1(Work0806180C* p, void* a) {
 
     if (p->unk_026 == 0) {
         if (gBtlWork != NULL) {
-            gBtlWork->unk_7C->unk_04 = p->unk_02C - 0x7800;
-            gBtlWork->unk_7C->unk_08 = p->unk_030 - 0x5000;
-            gBtlWork->unk_7C->unk_0C = 0;
+            gBtlWork->unk_07C->unk_004 = p->unk_02C - 0x7800;
+            gBtlWork->unk_07C->unk_008 = p->unk_030 - 0x5000;
+            gBtlWork->unk_07C->unk_00C = 0;
         }
     }
 
@@ -8831,7 +8831,7 @@ void event_chara_2(Work0806180C* p) {
     }
 
     if (p->unk_026 == 99) {
-        TaskPoolDraw(&gBtlWork->unk_2C);
+        TaskPoolDraw(&gBtlWork->taskPools[0]);
     }
 
     if (p->tiles != NULL) {
@@ -8852,8 +8852,8 @@ void event_chara_3(Work0806180C* p) {
     TaskPoolDestroy(&p->unk_010);
 
     if (p->unk_1B3 != 0) {
-        TaskPoolDestroy(&gBtlWork->unk_2C);
-        TaskPoolDestroy(&gBtlWork->unk_40);
+        TaskPoolDestroy(&gBtlWork->taskPools[0]);
+        TaskPoolDestroy(&gBtlWork->taskPools[1]);
         EwramFree(gBtlWork);
     }
 }
@@ -8926,7 +8926,7 @@ void func_0806E7A8(Work0806180C* p) {
     Ent0806E7A8* t;
 
     if (e->unk_00 == 0x3A7) {
-        t = ListPoolFirst(&gBtlWork->unk_80);
+        t = ListPoolFirst(&gBtlWork->unk_080);
 
         if (t != NULL) {
             t->unk_34 |= 2;
@@ -10020,9 +10020,9 @@ u8 func_080700D4(Work0806180C* p, void* a) {
 
     if (p->unk_026 == 0) {
         if (gBtlWork != NULL) {
-            gBtlWork->unk_7C->unk_04 = v - 0x7800;
-            gBtlWork->unk_7C->unk_08 = p->unk_030 - 0x5000;
-            gBtlWork->unk_7C->unk_0C = 0;
+            gBtlWork->unk_07C->unk_004 = v - 0x7800;
+            gBtlWork->unk_07C->unk_008 = p->unk_030 - 0x5000;
+            gBtlWork->unk_07C->unk_00C = 0;
         }
     }
 
@@ -12555,33 +12555,33 @@ u8 view_1(Work08074DC4* p, u8* task) {
             switch (p->unk_08) {
             case 77:
             case 78:
-                gBtlWork->unk_00 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_04 = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_08 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_0C = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_10 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_14 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_008 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
                 func_08005244(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
                 func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 break;
             case 105:
-                gBtlWork->unk_00 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_04 = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_08 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_0C = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_10 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_14 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_008 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
                 func_08005244(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 break;
             case MSG_VIEW_ID_B4:
                 break;
             default:
-                gBtlWork->unk_00 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_04 = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_08 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_0C = gUnk_02039DC8->unk_5C;
-                gBtlWork->unk_10 = gUnk_02039DC8->unk_58;
-                gBtlWork->unk_14 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_008 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_00C = gUnk_02039DC8->unk_5C;
+                gBtlWork->unk_010 = gUnk_02039DC8->unk_58;
+                gBtlWork->unk_014 = gUnk_02039DC8->unk_5C;
                 func_08005244(0, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
                 break;
@@ -12624,8 +12624,8 @@ u8 view_1(Work08074DC4* p, u8* task) {
                 }
             }
         } else {
-            gBtlWork->unk_00 = gUnk_02039DC8->unk_58;
-            gBtlWork->unk_04 = gUnk_02039DC8->unk_5C;
+            gBtlWork->unk_000 = gUnk_02039DC8->unk_58;
+            gBtlWork->unk_004 = gUnk_02039DC8->unk_5C;
             func_08005244(0, (gUnk_02039DC8->unk_58 >> 8) + 8, (gUnk_02039DC8->unk_5C >> 8) + 40);
             func_08005244(1, gUnk_02039DC8->unk_58 >> 8, gUnk_02039DC8->unk_5C >> 8);
         }
@@ -12766,8 +12766,8 @@ u8 _08074EC8(Work08074DC4* p) {
         }
     } else {
         func_08074D14(p);
-        gBtlWork->unk_00 = gUnk_02039DC8->unk_48;
-        gBtlWork->unk_04 = gUnk_02039DC8->unk_4C;
+        gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
+        gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
         func_08005244(0, (gUnk_02039DC8->unk_48 >> 8) + 8, (gUnk_02039DC8->unk_4C >> 8) + 40);
         func_08005244(1, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
     }

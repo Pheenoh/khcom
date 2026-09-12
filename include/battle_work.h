@@ -5,7 +5,7 @@
 #include "taskpool.h"
 #include "battle_bounds.h"
 
-struct BtlObj;
+#include "battle_actor_types.h"
 
 typedef struct BtlWork {
     s32 unk_000;
@@ -28,15 +28,15 @@ typedef struct BtlWork {
     s16 unk_072;
     s16 unk_074;
     u16 unk_076;
-    struct BtlObj* unk_078;
-    struct BtlObj* unk_07C;
+    BtlObj* unk_078;
+    BtlObj* unk_07C;
     ListNode unk_080;
     ListNode unk_090;
     s32 unk_0A0;
     u8 unk_0A4;
     u8 unk_0A5[0x03];
-    struct BtlObj* unk_0A8;
-    struct BtlObj* unk_0AC;
+    BtlObj* unk_0A8;
+    BtlObj* unk_0AC;
     s16 unk_0B0;
     s8 unk_0B2;
     u8 unk_0B3;

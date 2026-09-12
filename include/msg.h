@@ -2,6 +2,7 @@
 #define GUARD_MSG_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
 #include "mode.h"
@@ -232,31 +233,6 @@ typedef struct EventSeqWork {
     u8 unk_3C;
     u8 unk_3D;
 } EventSeqWork;
-
-typedef struct BtlWork {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    s32 unk_10;
-    s32 unk_14;
-    u8 unk_18;
-    u8 unk_19;
-    u16 unk_1A;
-    s32 unk_1C;
-    s32 unk_20;
-    s32 unk_24;
-    s32 unk_28;
-    TaskPool unk_2C;
-    TaskPool unk_40;
-    u8 unk_54[0x14];
-    u64 unk_68;
-    u8 unk_70[0xC];
-    struct Ent08074EC8* unk_7C;
-    ListNode unk_80;
-    u8 unk_90[0x23];
-    u8 unk_B3;
-} BtlWork;
 
 typedef struct Ent0903380C {
     s16 unk_00;
@@ -518,7 +494,6 @@ extern s32 gUnk_09033CB8[];
 extern s32 gUnk_09033CD0[];
 extern s32 gUnk_09033CE0[];
 extern s32 gUnk_09033CF0[];
-extern BtlWork* gBtlWork;
 extern u16 gBldCnt;
 extern vu16 gBldAlpha;
 extern u32 gFrameCounter;
