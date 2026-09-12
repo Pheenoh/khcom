@@ -26353,7 +26353,6 @@ u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
     w->unk_730 = AnimUpdate(&w->unk_734);
     return 1;
 }
-#ifdef NON_MATCHING
 u8 func_0809FBCC(u8* work, void* a) {
     s32 v1;
     s32 v2;
@@ -26377,9 +26376,8 @@ u8 func_0809FBCC(u8* work, void* a) {
     v4 = *(s16*)&work[0x77C] << 8;
     v0 = *(s16*)&work[0x778] << 8;
     ApproachValue(&v0, -0x8000, (s8)work[0x7B1]);
-    q = &work[0x7B2];
-    ApproachValue(&v1, -0x8000, (s8)*((s8)work[0x7B0] + q));
-    ApproachValue(&v2, -0xF800, (s8)*((s8)work[0x7B0] + q));
+    ApproachValue(&v1, -0x8000, (s8)((UnkStruct_0809FBCC*)work)->unk_7B2[(s8)work[0x7B0]]);
+    ApproachValue(&v2, -0xF800, (s8)((UnkStruct_0809FBCC*)work)->unk_7B2[(s8)work[0x7B0]]);
     ofs = (s8)work[0x7B0] * 2;
     *(s16*)(q1 + ofs) = v1 >> 8;
     ofs = (s8)work[0x7B0] * 2;
@@ -26387,6 +26385,7 @@ u8 func_0809FBCC(u8* work, void* a) {
     *(s16*)&work[0x778] = v0 >> 8;
     work[0x7B1]--;
     ofs = (s8)work[0x7B0];
+    q = ((UnkStruct_0809FBCC*)work)->unk_7B2;
     q += ofs;
     (*q)--;
     ApproachValue(&v3, 0, (s8)work[0x7B5]);
@@ -26424,9 +26423,6 @@ u8 func_0809FBCC(u8* work, void* a) {
     TaskPoolUpdate(&work[0x6FC]);
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809FBCC.s");
-#endif
 u8 func_0809FE14(void) {
     if (func_08006314() == 0) {
         return 0;
