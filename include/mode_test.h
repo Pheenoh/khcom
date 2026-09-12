@@ -90,12 +90,6 @@ typedef struct EvtArg {
     u32 unk_10 : 16;
 } EvtArg;
 
-typedef struct UnkStruct_02039DC4 {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-} UnkStruct_02039DC4;
-
 typedef struct CardStat {
     u16 unk_00;
     u16 unk_02;
@@ -361,7 +355,7 @@ void func_08060470(u8 bg);
 void func_0806098C(void);
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
-extern UnkStruct_02039DC4* gUnk_02039DC4;
+extern s32* gUnk_02039DC4;
 extern UnkStruct_02039DC8* gUnk_02039DC8;
 extern u16 gBldCnt;
 extern u16 gBldAlpha;
