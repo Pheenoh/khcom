@@ -15,7 +15,7 @@ void func_0800E168(HumWork* work, HumDef* def) {
     actor->unk_B2 = 1;
     actor->flags |= 0x40000000000000;
 
-    if (gBtlWork->unk_07C->x < actor->x) {
+    if (gBtlWork->unk_07C->unk_004 < actor->x) {
         actor->flags |= 4;
     }
 
@@ -408,7 +408,7 @@ s32 func_0800E5F0(HumWork* work) {
             arg.unk_00 = actor->x;
             arg.unk_04 = actor->y;
             arg.unk_08 = -0x4600;
-            func_08096DC4(&gBtlWork->unk_02C, &arg);
+            func_08096DC4(&gBtlWork->taskPools[0], &arg);
             return 0;
         } else {
             work->unk_150++;
@@ -444,7 +444,7 @@ s32 func_0800E5F0(HumWork* work) {
             arg2.unk_00 = actor->x;
             arg2.unk_04 = actor->y;
             arg2.unk_08 = -0x4600;
-            func_08096DC4(&gBtlWork->unk_02C, &arg2);
+            func_08096DC4(&gBtlWork->taskPools[0], &arg2);
             return 0;
         }
         work->unk_150++;

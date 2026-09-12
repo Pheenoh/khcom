@@ -2,28 +2,9 @@
 #define GUARD_BTL4_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    u8 unk_010[0x1C];
-    s16 unk_02C;
-    s16 unk_02E;
-    u8 unk_030[0x10];
-    u8 unk_040[0x28];
-    u64 unk_068;
-    u8 unk_070[0x08];
-    struct BtlWork* unk_078;
-    struct BtlWork* unk_07C;
-    u8 unk_080[0x22];
-    s16 unk_0A2;
-    u8 unk_0A4[0x50];
-    s32 unk_0F4;
-} BtlWork;
-
 typedef struct BtlEffect {
     u16 unk_00;
     u16 unk_02;
@@ -104,8 +85,6 @@ typedef struct BtlHpothWork {
     u32 unk_68;
 } BtlHpothWork;
 
-extern BtlWork* gBtlWork;
-extern BtlWork* gUnk_02039B9C;
 extern u16 gDispCnt;
 
 extern u8 gUnk_08B1D8BC[];

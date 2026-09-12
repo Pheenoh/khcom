@@ -143,9 +143,9 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         }
 
 #ifdef VERSION_EU
-        ((BtlWork*)p)->unk_034 &= ~0x100;
+        ((BtlObj*)p)->unk_034 &= ~0x100;
 #else
-        ((BtlWork*)p)->unk_034 &= ~0x80;
+        ((BtlObj*)p)->unk_034 &= ~0x80;
 #endif
         func_080D9B6C(work);
         work->unk_150 += 51;
@@ -172,7 +172,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             if (work->unk_150 >= -25) {
                 func_080DA42C(work);
                 work->unk_000 = 4;
-                ((BtlWork*)p)->unk_034 |= 0x100;
+                ((BtlObj*)p)->unk_034 |= 0x100;
 
                 if (work->unk_170 == 0) {
                     func_0801AF08(p);
@@ -183,9 +183,9 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         break;
     case 0:
 #ifdef VERSION_EU
-        ((BtlWork*)p)->unk_034 &= ~0x100;
+        ((BtlObj*)p)->unk_034 &= ~0x100;
 #else
-        ((BtlWork*)p)->unk_034 &= ~0x80;
+        ((BtlObj*)p)->unk_034 &= ~0x80;
 #endif
 
         if ((s16)work->unk_004 == 0 && work->unk_170 == 0) {
@@ -444,8 +444,8 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
     work->unk_154 = GetRandom() % 437 + 76;
     work->unk_158 = GetRandom() % 128 + 0x40;
     p = (u8*)gBtlWork->unk_07C;
-    work->unk_044 = ((BtlWork*)p)->unk_004;
-    work->unk_048 = ((BtlWork*)p)->unk_008;
+    work->unk_044 = ((BtlObj*)p)->unk_004;
+    work->unk_048 = ((BtlObj*)p)->unk_008;
     work->unk_04C = -0xA000;
     func_080122AC(&work->unk_080, 8, gUnk_096FDFC4.unk_08, gUnk_096FDFC4.unk_06);
     work->tiles = (u32)AllocObjTiles(func_08003524(gUnk_09EF6774, 4), gUnk_0979666A);
@@ -519,7 +519,7 @@ void task_bos_boogie_explosiondice_3(BoogieExplosiondiceWork* work) {
 }
 
 u8 func_080DA73C(void) {
-    if (((BtlWork*)gBtlWork->unk_07C)->unk_008 <= 0x23EFF) {
+    if (gBtlWork->unk_07C->unk_008 <= 0x23EFF) {
         return 1;
     }
 
@@ -740,11 +740,11 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg) {
     work->unk_15C = 0;
     work->unk_150 = -0x200;
 
-    if (((BtlWork*)gBtlWork->unk_07C)->unk_004 < 0xF800) {
-        x = ((BtlWork*)gBtlWork->unk_07C)->unk_004 + 0xF000;
+    if (gBtlWork->unk_07C->unk_004 < 0xF800) {
+        x = gBtlWork->unk_07C->unk_004 + 0xF000;
         work->unk_154 = -0x266;
     } else {
-        x = ((BtlWork*)gBtlWork->unk_07C)->unk_004 - 0xF000;
+        x = gBtlWork->unk_07C->unk_004 - 0xF000;
         work->unk_154 = 0x266;
     }
 
@@ -759,7 +759,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, UnkStruct_0203C55C* arg) {
         work->unk_158 *= 2;
     }
 
-    d = ((BtlWork*)gBtlWork->unk_07C)->unk_008;
+    d = gBtlWork->unk_07C->unk_008;
     e = -0x1000;
     func_0801B37C(&work->unk_040, gUnk_096FE098, x, d, e);
     work->unk_074 |= 0x400;
@@ -1315,7 +1315,7 @@ void task_bos_boogie_kaihuku_3(BoogieKaihukuWork* work) {
 
 void func_080DB978(UrsulaWork* work) {
     if (work->unk_000 >= 3 && work->unk_000 <= 4) {
-        if (work->unk_028 > ((BtlWork*)gBtlWork->unk_07C)->unk_004) {
+        if (work->unk_028 > gBtlWork->unk_07C->unk_004) {
             if (work->unk_134 != (u32)gUnk_09EF5130) {
                 work->unk_134 = (u32)gUnk_09EF5130;
                 func_0800516C(0, gUnk_09EF5130, 4, 3);
@@ -1436,7 +1436,7 @@ u8 func_080DBC68(UrsulaWork* work) {
 }
 
 s32 func_080DBCC0(UrsulaWork* work) {
-    BtlWork* p = (BtlWork*)gBtlWork->unk_07C;
+    BtlObj* p = gBtlWork->unk_07C;
 
     if (p->unk_004 < work->unk_028 - 0x5000 || work->unk_028 + 0x5000 < p->unk_004) {
         return 1;
@@ -1446,11 +1446,11 @@ s32 func_080DBCC0(UrsulaWork* work) {
 }
 
 s32 func_080DBCEC(UrsulaWork* work) {
-    if (work->unk_028 - 0x3800 < ((BtlWork*)gBtlWork->unk_07C)->unk_004 && ((BtlWork*)gBtlWork->unk_07C)->unk_004 < work->unk_028 + 0x3800) {
+    if (work->unk_028 - 0x3800 < gBtlWork->unk_07C->unk_004 && gBtlWork->unk_07C->unk_004 < work->unk_028 + 0x3800) {
         return 3;
     }
 
-    if (work->unk_028 - 0x6800 < ((BtlWork*)gBtlWork->unk_07C)->unk_004 && ((BtlWork*)gBtlWork->unk_07C)->unk_004 < work->unk_028 + 0x6800) {
+    if (work->unk_028 - 0x6800 < gBtlWork->unk_07C->unk_004 && gBtlWork->unk_07C->unk_004 < work->unk_028 + 0x6800) {
         return 2;
     }
 
@@ -1458,17 +1458,17 @@ s32 func_080DBCEC(UrsulaWork* work) {
 }
 
 s32 func_080DBD44(UrsulaWork* work) {
-    if (((BtlWork*)gBtlWork->unk_07C)->unk_00C <= -0x5000) {
+    if (gBtlWork->unk_07C->unk_00C <= -0x5000) {
         return 3;
     } else {
-        if (work->unk_028 - 0x3800 < ((BtlWork*)gBtlWork->unk_07C)->unk_004 && ((BtlWork*)gBtlWork->unk_07C)->unk_004 < work->unk_028 + 0x3800) {
+        if (work->unk_028 - 0x3800 < gBtlWork->unk_07C->unk_004 && gBtlWork->unk_07C->unk_004 < work->unk_028 + 0x3800) {
             if ((u16)(GetRandom() % 100) < 50) {
                 return 3;
             }
             return 1;
         }
     }
-    if (work->unk_028 - 0x8000 < ((BtlWork*)gBtlWork->unk_07C)->unk_004 && ((BtlWork*)gBtlWork->unk_07C)->unk_004 < work->unk_028 + 0x8000) {
+    if (work->unk_028 - 0x8000 < gBtlWork->unk_07C->unk_004 && gBtlWork->unk_07C->unk_004 < work->unk_028 + 0x8000) {
         return 2;
     }
     return 1;
@@ -1516,7 +1516,7 @@ u16 func_080DBE64(void) {
 }
 
 u8 task_bos_ursula_1(UrsulaWork* work) {
-    BtlWork* p = (BtlWork*)&work->unk_024;
+    BtlObj* p = (BtlObj*)&work->unk_024;
     UrsulaPrizeArg pos;
     s32 x;
     u16 chance;
@@ -1664,7 +1664,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
             }
             pos.y = 0x1A800;
             pos.z = p->unk_00C;
-            func_08096DC4(&gBtlWork->unk_02C, &pos);
+            func_08096DC4(&gBtlWork->taskPools[0], &pos);
             func_0801B008();
             func_0801B918(p);
             DisableBg(0);
@@ -1673,7 +1673,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
         }
         break;
     case 0:
-        if (work->unk_028 > ((BtlWork*)gBtlWork->unk_07C)->unk_004) {
+        if (work->unk_028 > gBtlWork->unk_07C->unk_004) {
             p->unk_034 |= 4;
         } else {
             p->unk_034 &= ~4ULL;
@@ -1689,7 +1689,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                 work->unk_000 = 5;
             }
             if (func_080DC5E8() == 2) {
-                if (((p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004) >= 0 ? p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004 : -(p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004)) > 0x6800) {
+                if (((p->unk_004 - gBtlWork->unk_07C->unk_004) >= 0 ? p->unk_004 - gBtlWork->unk_07C->unk_004 : -(p->unk_004 - gBtlWork->unk_07C->unk_004)) > 0x6800) {
                     work->unk_000 = 5;
                 }
             }
@@ -1704,7 +1704,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                 p->unk_034 ^= 4;
             }
             if (func_080DC5E8() == 2 && p->unk_004 > 0x6800 && p->unk_004 < 0x19800) {
-                if (((p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004) >= 0 ? p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004 : -(p->unk_004 - ((BtlWork*)gBtlWork->unk_07C)->unk_004)) < 0x6800 && func_080DBA14(work)) {
+                if (((p->unk_004 - gBtlWork->unk_07C->unk_004) >= 0 ? p->unk_004 - gBtlWork->unk_07C->unk_004 : -(p->unk_004 - gBtlWork->unk_07C->unk_004)) < 0x6800 && func_080DBA14(work)) {
                     func_0801BCD4(&work->unk_024);
                     work->unk_000 = 0;
                 }
@@ -1720,9 +1720,9 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
         func_080DB978(work);
     }
     if (func_080DBA14(work)) {
-        func_08012324(&p->unk_03C[4], p->unk_004, p->unk_008, p->unk_00C);
+        func_08012324(&p->unk_040, p->unk_004, p->unk_008, p->unk_00C);
     } else {
-        func_08012324(&p->unk_03C[4], p->unk_004, p->unk_008 + 0x1000, p->unk_00C - 0x1000);
+        func_08012324(&p->unk_040, p->unk_004, p->unk_008 + 0x1000, p->unk_00C - 0x1000);
     }
     gBtlWork->unk_0CC = p->unk_004;
     gBtlWork->unk_0D0 = p->unk_008;
@@ -1764,10 +1764,10 @@ u8 func_080DC528(void) {
 }
 
 u8 func_080DC544(void) {
-    BtlWork* p;
+    BtlObj* p;
     u8 r = 1;
 
-    for (p = ListPoolFirst(gBtlWork->unk_080); p != 0; p = ListPoolNext((u8*)p + 0xB8)) {
+    for (p = ListPoolFirst(&gBtlWork->unk_080); p != 0; p = ListPoolNext(&p->unk_0B8)) {
         if (p->unk_000 == 0x23) {
             r = 0;
             break;
@@ -2173,13 +2173,13 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
 
     AnimUpdate((AnimState*)&work->anim);
     func_080DC9DC(&p->x, &p->y, &p->z, work);
-    if (work->unk_138 - 3 <= 4 && ((BtlWork*)gBtlWork->unk_07C)->unk_00C < -0x5000 && !func_080DC528()) {
+    if (work->unk_138 - 3 <= 4 && gBtlWork->unk_07C->unk_00C < -0x5000 && !func_080DC528()) {
         func_08012614(&work->unk_140, 0);
         func_08012324(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x5000);
     } else {
         func_08012614(&work->unk_140, 1);
     }
-    if (work->unk_138 == 3 && ((BtlWork*)gBtlWork->unk_07C)->unk_00C <= -0x2000 && ((BtlWork*)gBtlWork->unk_07C)->unk_00C > -0x3000) {
+    if (work->unk_138 == 3 && gBtlWork->unk_07C->unk_00C <= -0x2000 && gBtlWork->unk_07C->unk_00C > -0x3000) {
         func_08012614(&work->unk_19C, 0);
         func_08012324(&work->unk_19C, work->unk_02C + work->unk_1F8, work->unk_030 + 0x1000, 0);
     } else {
@@ -2619,13 +2619,13 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
 
     if (work->unk_138 == 1 && work->unk_134 != 0) {
         work->unk_13E = (u8)GetAngle(p->x, p->z,
-            ((BtlWork*)gBtlWork->unk_07C)->unk_004, ((BtlWork*)gBtlWork->unk_07C)->unk_00C);
+            gBtlWork->unk_07C->unk_004, gBtlWork->unk_07C->unk_00C);
         ApproachAngle(&work->unk_13C, work->unk_13E, 4);
         p->x += gSineTable[(u8)work->unk_13C] * work->unk_140 >> 8;
         p->z += -gSineTable[(u8)work->unk_13C + 0x40] * work->unk_140 >> 8;
 
         if (work->unk_134 <= 169) {
-            ApproachValue(&p->y, ((BtlWork*)gBtlWork->unk_07C)->unk_008, 30);
+            ApproachValue(&p->y, gBtlWork->unk_07C->unk_008, 30);
         }
 
         if ((u32)p->x > 0x20800 || p->y > 0x20800) {
@@ -2716,7 +2716,7 @@ void func_080DDD30(UrsulaBubbleSingleWork* work) {
 }
 
 void task_bos_ursula_thunder_0(UrsulaThunderWork* work) {
-    BtlWork* p = (BtlWork*)gBtlWork->unk_07C;
+    BtlObj* p = gBtlWork->unk_07C;
 
     work->unk_004 = p->unk_004;
     work->unk_008 = p->unk_008;

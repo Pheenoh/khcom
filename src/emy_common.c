@@ -11,7 +11,7 @@ void func_0800C778(EmyWork* work, EmyDef* def, EmyObj* obj) {
     actor->unk_D2 = def->unk_16;
     actor->unk_B2 = def->unk_18;
 
-    if (gBtlWork->unk_07C->x < actor->x) {
+    if (gBtlWork->unk_07C->unk_004 < actor->x) {
         actor->flags |= 4;
     }
 
@@ -853,7 +853,7 @@ void func_0800DF30(EmyWork* work) {
 void func_0800E0D0(EmyWork* work) {
     gBtlWork->unk_0EC -= gUnk_09EDA4EC[work->unk_03C.unk_00];
 
-    if (gBtlWork->unk_078 == &work->unk_03C) {
+    if (gBtlWork->unk_078 == (BtlObj*)&work->unk_03C) {
         gBtlWork->unk_078 = 0;
     }
 
@@ -861,7 +861,7 @@ void func_0800E0D0(EmyWork* work) {
 
     if (gBtlWork->unk_0EE == 0) {
         if (gBtlWork->unk_120 <= 0) {
-            if (gBtlWork->unk_07C->unk_2C > 0) {
+            if (gBtlWork->unk_07C->unk_02C > 0) {
                 gBtlWork->unk_068 |= 0x200000000;
             }
         }
