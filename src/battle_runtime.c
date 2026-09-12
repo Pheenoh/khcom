@@ -20,7 +20,7 @@ void func_08019050(u16 a, s32 b, s32 c, s32 d) {
 void func_08019068(AnimDef* tbl, void* a, u16 i, u16 j, void* obj) {
     AnimDef* e = &tbl[i];
     AnimChangeWithTables(a, e->unk_0C, j, e->unk_04, e->unk_00);
-    func_08002A10(obj, e->unk_08);
+    SetObjTileSource(obj, e->unk_08);
 }
 
 void WorldToScreen(s16* a, s16* b, s32 px, s32 py, s32 pz) {
@@ -2475,7 +2475,7 @@ void func_0801CA88(void) {
     }
     gGameState.world = 4;
     gGameState.unk_00D = 1;
-    func_0800F9A0();
+    InitPlayerProgression();
     gGameState.unk_180 = 0xFFFF;
     func_080DFB2C();
     gGameState.hp = gGameState.maxHp;

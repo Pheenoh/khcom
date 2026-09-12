@@ -1472,7 +1472,7 @@ s32 func_08079B3C(UnkStruct_08080268* w) {
     gUnk_02034A98->unk_A0 = 50;
     gUnk_02034A98->unk_78 &= ~0x40;
     if (w->unk_BA != 0) {
-        func_080038E4(w->unk_14, gUnk_09EF12E8[0], (void*)((u32)gUnk_093FBAB8 + ((w->unk_BA - 1) << 7)));
+        UpdateSpriteFrameTiles(w->unk_14, gUnk_09EF12E8[0], (void*)((u32)gUnk_093FBAB8 + ((w->unk_BA - 1) << 7)));
         w->unk_C4[3] = 8;
     }
 
@@ -1734,7 +1734,7 @@ s32 func_0807A188(UnkStruct_08080268* w) {
     w->unk_B9++;
     gUnk_02039DD4->unk_0DE++;
     if (w->unk_BA != 0) {
-        func_080038E4(w->unk_14, gUnk_09EF12E8[0], (void*)((u32)gUnk_093FBAB8 + ((w->unk_BA - 1) << 7)));
+        UpdateSpriteFrameTiles(w->unk_14, gUnk_09EF12E8[0], (void*)((u32)gUnk_093FBAB8 + ((w->unk_BA - 1) << 7)));
         w->unk_C4[3] = 8;
     }
     w->unk_B0[w->unk_B8]--;
@@ -2552,12 +2552,12 @@ u8 func_0807B60C(void) {
 
 void func_0807B668(UnkStruct_02039DD4* p) {
     p->unk_040 = AllocObjTiles(0x280, 0);
-    func_08002A10(p->unk_040, gUnk_0908B1B4);
+    SetObjTileSource(p->unk_040, gUnk_0908B1B4);
     AnimInit(&p->unk_064, gUnk_09EEA164, gUnk_09EEA148);
     AnimStart(&p->unk_064, 0, 1);
     p->unk_094 = AnimGetGfx(&p->unk_064);
     p->unk_050 = AllocObjTiles(0x100, 0);
-    func_08002A10(p->unk_050, gUnk_0908C3CE);
+    SetObjTileSource(p->unk_050, gUnk_0908C3CE);
     AnimInit(&p->unk_07C, gUnk_09EEA198, gUnk_09EEA180);
     AnimStart(&p->unk_07C, 0, 1);
     p->unk_098 = AnimGetGfx(&p->unk_07C);
@@ -4082,15 +4082,15 @@ void func_0807DAD0(UnkStruct_02034AAC* p) {
 
     d = p->unk_20;
     p->unk_00 = AllocObjTiles(0x80, 0);
-    func_08002A10(p->unk_00, gUnk_0909A4E0);
+    SetObjTileSource(p->unk_00, gUnk_0909A4E0);
     func_0807DA54(p->unk_20, p->unk_00, p->unk_46, gUnk_02039DD4->unk_0FC);
     p->palette = 0;
     p->unk_04 = LoadObjTiles(gUnk_0909FDCA, 0x280);
     p->unk_18 = 0;
     p->unk_08 = AllocObjTiles(0x200, 0);
-    func_08002A10(p->unk_08, gUnk_090A0C86);
+    SetObjTileSource(p->unk_08, gUnk_090A0C86);
     p->unk_0C = AllocObjTiles(0x80, 0);
-    func_08002A10(p->unk_0C, gUnk_090A0C86);
+    SetObjTileSource(p->unk_0C, gUnk_090A0C86);
     AnimInit(&d[0x28], gUnk_09EEAFB0, gUnk_09EEAF4C);
     AnimStart(&d[0x28], 1, 1);
     *(void**)&d[0x58] = gUnk_09EEAF4C[3];
@@ -4723,9 +4723,9 @@ void func_0807E8F4(UnkStruct_08080268* w) {
     zero = 0;
     CpuSet((void*)&zero, w, 0x05000033);
     gUnk_02039DD4->unk_060 = (u32)w;
-    w->unk_14 = func_080038C8(0x80);
+    w->unk_14 = AllocSpriteFrameTiles(0x80);
     w->unk_18 = LoadObjPalette(gUnk_08F69BA4, 32);
-    func_080038E4((UnkStruct_080038C8*)w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8);
+    UpdateSpriteFrameTiles((UnkStruct_080038C8*)w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8);
     TaskPoolInit((TaskPool*)w, 30);
     w->unk_B9 = 0;
     w->unk_B8 = 0;
@@ -6134,7 +6134,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     gUnk_02039DD4->unk_0DF++;
 
     if (w->unk_BA != 0) {
-        func_080038E4((UnkStruct_080038C8*)w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8[w->unk_BA - 1]);
+        UpdateSpriteFrameTiles((UnkStruct_080038C8*)w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8[w->unk_BA - 1]);
         w->unk_C4[3] = 8;
     }
 
@@ -6466,7 +6466,7 @@ u8 func_080814BC(UnkStruct_08080268* w) {
         gUnk_02034AAC->unk_78 &= ~0x40;
 
         if (w->unk_BA > 1) {
-            func_080038E4(w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8[w->unk_BA - 1]);
+            UpdateSpriteFrameTiles(w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8[w->unk_BA - 1]);
             w->unk_C4[3] = 8;
         }
 
@@ -7826,15 +7826,15 @@ void func_08083714(UnkStruct_08083B20* w) {
 
     q = w->unk_20;
     w->unk_00 = AllocObjTiles(128, 0);
-    func_08002A10(w->unk_00, gUnk_0909A4E0);
+    SetObjTileSource(w->unk_00, gUnk_0909A4E0);
     func_080836C4(w->unk_20, w->unk_00, w->unk_46, gUnk_02039DD4->unk_0FE);
     w->unk_14 = 0;
     w->unk_04 = LoadObjTiles(gUnk_0909FDCA, 0x280);
     w->unk_18 = 0;
     w->unk_08 = AllocObjTiles(0x200, 0);
-    func_08002A10(w->unk_08, gUnk_090A0C86);
+    SetObjTileSource(w->unk_08, gUnk_090A0C86);
     w->unk_0C = AllocObjTiles(128, 0);
-    func_08002A10(w->unk_0C, gUnk_090A0C86);
+    SetObjTileSource(w->unk_0C, gUnk_090A0C86);
     AnimInit(q->unk_28, gUnk_09EEAFB0, gUnk_09EEAF4C);
     AnimStart(q->unk_28, 1, 1);
     q->unk_58 = gUnk_09EEAF4C[3];
@@ -9949,7 +9949,7 @@ void func_08085FB4(u8* work, void* a) {
     work[0x8C0] = GetActiveDeckIndex();
     func_0808C3DC(work, 0);
     *(void**)&work[0x00] = AllocObjTiles(0x120, 0);
-    func_08002A10(*(void**)&work[0x00], gUnk_090A4664);
+    SetObjTileSource(*(void**)&work[0x00], gUnk_090A4664);
     AnimInit((AnimState*)&work[0x800], gUnk_09EEB03C, gUnk_09EEB008);
     AnimStart((AnimState*)&work[0x800], 0, 1);
     *(void**)&work[0x4F0] = AnimGetGfx((AnimState*)&work[0x800]);
@@ -9966,7 +9966,7 @@ void func_08085FB4(u8* work, void* a) {
     *(void**)&work[0x4C4] = LoadObjPalette(gUnk_09614438, 32);
     gUnk_0203A860[0] = AllocObjTiles(0x100, 0);
     gUnk_0203A860[1] = LoadObjPalette(gUnk_09611AB8, 32);
-    func_08002A10(gUnk_0203A860[0], gUnk_0908C3CE);
+    SetObjTileSource(gUnk_0203A860[0], gUnk_0908C3CE);
     AnimInit((AnimState*)&gUnk_0203A860[2], gUnk_09EEA198, gUnk_09EEA180);
     AnimStart((AnimState*)&gUnk_0203A860[2], 0, 1);
     gUnk_0203A860[8] = AnimUpdate((AnimState*)&gUnk_0203A860[2]);
@@ -14034,7 +14034,7 @@ s32 func_0808D828(u8* work) {
 
     if (flag != 0) {
         *(void**)&work[0x28] = AllocObjTiles(0x280, 0);
-        func_08002A10(*(void**)&work[0x28], gUnk_0908B1B4);
+        SetObjTileSource(*(void**)&work[0x28], gUnk_0908B1B4);
         AnimInit((AnimState*)&work[0x830], gUnk_09EEA164, gUnk_09EEA148);
         AnimStart((AnimState*)&work[0x830], 0, 1);
         *(void**)&work[0x4F8] = AnimGetGfx((AnimState*)&work[0x830]);
@@ -14165,7 +14165,7 @@ void func_0808DB50(UnkStruct_0808DB04* w) {
     if (id != 0xFFFF) {
         if (id & 0x8000) {
             w->unk_028 = AllocObjTiles(0x280, 0);
-            func_08002A10(w->unk_028, gUnk_0908B1B4);
+            SetObjTileSource(w->unk_028, gUnk_0908B1B4);
             AnimInit(&w->anim, gUnk_09EEA164, gUnk_09EEA148);
             AnimStart(&w->anim, 0, 1);
             w->gfx = AnimGetGfx(&w->anim);
@@ -14519,7 +14519,7 @@ void func_0808E344(void** p) {
 void func_0808E364(u8* work, u8 kind) {
     switch (kind) {
     case 0:
-        func_08002A10(*(void**)&work[4], gUnk_090A4A0C);
+        SetObjTileSource(*(void**)&work[4], gUnk_090A4A0C);
 #ifdef VERSION_EU
         AnimInit(&work[0x81C], gUnk_09EEB064, gUnk_09EEB050);
         AnimStart(&work[0x81C], 0, 1);
@@ -14531,7 +14531,7 @@ void func_0808E364(u8* work, u8 kind) {
 #endif
         break;
     case 1:
-        func_08002A10(*(void**)&work[4], gUnk_090A51F6);
+        SetObjTileSource(*(void**)&work[4], gUnk_090A51F6);
 #ifdef VERSION_EU
         AnimInit(&work[0x81C], gUnk_09EEB07C, gUnk_09EEB068);
         AnimStart(&work[0x81C], 0, 1);
@@ -15741,20 +15741,20 @@ u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
         w->unk_738 = AllocObjTiles(0x200, 0);
 #endif
         w->unk_740 = LoadObjPalette(gUnk_096145B8, 32);
-        w->unk_73C = func_080038C8(0x80);
+        w->unk_73C = AllocSpriteFrameTiles(0x80);
 #ifdef VERSION_EU
-        func_08002A10(w->unk_738, gUnkEu_09F6FE30[gLanguage]);
+        SetObjTileSource(w->unk_738, gUnkEu_09F6FE30[gLanguage]);
         AnimInit(&w->unk_798, gUnkEu_09F6FE58[gLanguage], gUnkEu_09F6FE44[gLanguage]);
 #else
-        func_08002A10(w->unk_738, gUnk_090A5F1E);
+        SetObjTileSource(w->unk_738, gUnk_090A5F1E);
         AnimInit(&w->unk_798, gUnk_09EEB0B8, gUnk_09EEB08C);
 #endif
         AnimStart(&w->unk_798, 0, 1);
         w->unk_7B0 = AnimGetGfx(&w->unk_798);
 #ifdef VERSION_EU
-        func_080038E4(w->unk_73C, gUnkEu_09F6FE44[gLanguage][10], gUnkEu_09F6FE30[gLanguage]);
+        UpdateSpriteFrameTiles(w->unk_73C, gUnkEu_09F6FE44[gLanguage][10], gUnkEu_09F6FE30[gLanguage]);
 #else
-        func_080038E4(w->unk_73C, gUnk_09EEB08C[10], gUnk_090A5F1E);
+        UpdateSpriteFrameTiles(w->unk_73C, gUnk_09EEB08C[10], gUnk_090A5F1E);
 #endif
         func_08065AE0(w->unk_038, 8);
         func_08065AE0(w->unk_078, 8);
@@ -17495,11 +17495,11 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     w->unk_038 = 0;
     if (w->unk_2BE == 0) {
         if (*(u16*)w->unk_27E == 0) {
-            w->unk_02C = func_080038C8(0x80);
-            func_080038E4(w->unk_02C, gUnk_09EF1198[0], gUnk_0950C478);
+            w->unk_02C = AllocSpriteFrameTiles(0x80);
+            UpdateSpriteFrameTiles(w->unk_02C, gUnk_09EF1198[0], gUnk_0950C478);
         } else {
-            w->unk_02C = func_080038C8(0x180);
-            func_080038E4(w->unk_02C, gUnk_09EF1198[1], gUnk_0950C478);
+            w->unk_02C = AllocSpriteFrameTiles(0x180);
+            UpdateSpriteFrameTiles(w->unk_02C, gUnk_09EF1198[1], gUnk_0950C478);
             RequestDma3Copy((u8*)w->unk_02C->unk_00 + (*(u16*)w->unk_27E << 7),
                            (void*)(0x06010000 + ((w->unk_02C->unk_06 + 4) << 5)), 0x80);
             RequestDma3Copy((u8*)w->unk_02C->unk_00 + 0x500,
@@ -17515,19 +17515,19 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
         FadeSetPaletteExcluded((u16)(w->unk_030->unk_06 + 16), 1);
     }
     gUnk_0203A890[0] = AllocObjTiles(0x280, 0);
-    func_08002A10(gUnk_0203A890[0], gUnk_0908B1B4);
+    SetObjTileSource(gUnk_0203A890[0], gUnk_0908B1B4);
     AnimInit((AnimState*)&gUnk_0203A890[6], gUnk_09EEA164, gUnk_09EEA148);
     AnimStart((AnimState*)&gUnk_0203A890[6], 0, 1);
     gUnk_0203A890[4] = AnimGetGfx((AnimState*)&gUnk_0203A890[6]);
     w->tiles = AllocObjTiles(0x3C0, 0);
     *(void**)w->unk_040 = LoadObjPalette(gUnk_09618D18, 32);
-    func_08002A10(w->tiles, gUnk_093F47E4);
+    SetObjTileSource(w->tiles, gUnk_093F47E4);
     AnimInit((AnimState*)w->unk_1F8, gUnk_09EF1194, gUnk_09EF1180);
     AnimStart((AnimState*)w->unk_1F8, 0, 1);
     w->gfx = AnimGetGfx((AnimState*)w->unk_1F8);
     *(void**)&w->unk_040[4] = AllocObjTiles(0x120, 0);
     *(void**)&w->unk_040[8] = LoadObjPalette(gUnk_09618CD8, 32);
-    func_08002A10(*(void**)&w->unk_040[4], gUnk_093F4578);
+    SetObjTileSource(*(void**)&w->unk_040[4], gUnk_093F4578);
     AnimInit((AnimState*)&w->unk_1F8[0x18], gUnk_09EF1170, gUnk_09EF1150);
     AnimStart((AnimState*)&w->unk_1F8[0x18], 0, 1);
     *(void**)w->unk_278 = AnimGetGfx((AnimState*)&w->unk_1F8[0x18]);
@@ -17753,7 +17753,7 @@ u8 func_080923E0(MapSelectWork* w, void* a) {
         SetTaskUpdate(a, (void*)func_0809254C);
         ReleaseObjTiles(w->tiles);
         w->tiles = AllocObjTiles(0x1E0, 0);
-        func_08002A10(w->tiles, &gUnk_093F47E4[0xD88]);
+        SetObjTileSource(w->tiles, &gUnk_093F47E4[0xD88]);
         AnimInit(w->unk_1F8, &gUnk_09EF1194[0x38], &gUnk_09EF1180[0x38]);
         AnimStart(w->unk_1F8, 0, 1);
         w->gfx = AnimGetGfx(w->unk_1F8);
@@ -17971,7 +17971,7 @@ u8 func_080928E4(MapSelectWork* w, void* a) {
         SetTaskUpdate(a, (void*)func_08092A34);
         ReleaseObjTiles(w->tiles);
         w->tiles = AllocObjTiles(0x3C0, 0);
-        func_08002A10(w->tiles, gUnk_093F47E4);
+        SetObjTileSource(w->tiles, gUnk_093F47E4);
         AnimInit(w->unk_1F8, gUnk_09EF1194, gUnk_09EF1180);
         AnimStart(w->unk_1F8, 0, 1);
         w->gfx = AnimGetGfx(w->unk_1F8);
@@ -19636,14 +19636,14 @@ void func_08094EB0(ReloadGageWork* w, ReloadGageArgs* a) {
     ListPoolAppend(&w->unk_64, w->unk_38);
     w->unk_04 = LoadObjTiles(gUnk_09EE75A8[w->unk_46], 0x280);
     w->unk_08 = AllocObjTiles(0x200, 0);
-    func_08002A10(w->unk_08, gUnk_09EE75A8[1]);
+    SetObjTileSource(w->unk_08, gUnk_09EE75A8[1]);
     w->unk_0C = AllocObjTiles(0x80, 0);
-    func_08002A10(w->unk_0C, gUnk_09EE75A8[1]);
+    SetObjTileSource(w->unk_0C, gUnk_09EE75A8[1]);
     func_08095B50(w->unk_20, w, w->unk_46);
     w->unk_00 = LoadObjTiles(gUnk_0905F03C, 0x80);
     w->unk_14 = LoadObjPalette(gUnk_08F69BA4, 32);
     w->unk_10 = AllocObjTiles(0x100, 0);
-    func_08002A10(w->unk_10, gUnk_09EE7578[w->unk_46]);
+    SetObjTileSource(w->unk_10, gUnk_09EE7578[w->unk_46]);
     func_08095A78(w->unk_20, w->unk_10, w->unk_46, d->unk_64);
     w->unk_78 |= 0x1000026;
 
@@ -21253,15 +21253,15 @@ void SELMAP_EVKEY_0(UnkStruct_SELMAP_EVKEY* work, void* a) {
 
 #ifdef VERSION_EU
     work->unk_00 = AllocObjTiles(0x800, 0);
-    func_08002A10(work->unk_00, gUnkEu_09F72A64[gLanguage]);
+    SetObjTileSource(work->unk_00, gUnkEu_09F72A64[gLanguage]);
     AnimInit(&work->unk_DC, gUnkEu_09F72A3C[gLanguage], gUnkEu_09F72A50[gLanguage]);
 #else
 #ifdef VERSION_JP
     work->unk_00 = AllocObjTiles(0x480, 0);
-    func_08002A10(work->unk_00, &gUnk_093F47E4[0x22DC]);
+    SetObjTileSource(work->unk_00, &gUnk_093F47E4[0x22DC]);
 #else
     work->unk_00 = AllocObjTiles(0x6C0, 0);
-    func_08002A10(work->unk_00, &gUnk_093F47E4[0x22E8]);
+    SetObjTileSource(work->unk_00, &gUnk_093F47E4[0x22E8]);
 #endif
     AnimInit(&work->unk_DC, gUnk_09EF1224, gUnk_09EF1220);
 #endif
@@ -21509,18 +21509,18 @@ void func_08098014(u8* work, u8* a) {
     switch (a[2]) {
     case 1:
         if (a[3] <= 9) {
-            g = func_080038C8(0x100);
+            g = AllocSpriteFrameTiles(0x100);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[1], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[1], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
         } else {
-            g = func_080038C8(0x180);
+            g = AllocSpriteFrameTiles(0x180);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[3], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[3], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
@@ -21532,18 +21532,18 @@ void func_08098014(u8* work, u8* a) {
         break;
     case 2:
         if (a[3] <= 9) {
-            g = func_080038C8(0x100);
+            g = AllocSpriteFrameTiles(0x100);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[1], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[1], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + 0x580, &gUnk_06010000[g->unk_06 * 32], 128);
         } else {
-            g = func_080038C8(0x180);
+            g = AllocSpriteFrameTiles(0x180);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[3], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[3], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
@@ -21555,18 +21555,18 @@ void func_08098014(u8* work, u8* a) {
         break;
     case 3:
         if (a[3] <= 9) {
-            g = func_080038C8(0x100);
+            g = AllocSpriteFrameTiles(0x100);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[1], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[1], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + 0x600, &gUnk_06010000[g->unk_06 * 32], 128);
         } else {
-            g = func_080038C8(0x180);
+            g = AllocSpriteFrameTiles(0x180);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[3], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[3], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
@@ -21578,16 +21578,16 @@ void func_08098014(u8* work, u8* a) {
         break;
     case 4:
         if (a[3] <= 9) {
-            g = func_080038C8(0x80);
+            g = AllocSpriteFrameTiles(0x80);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[0], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[0], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[g->unk_06 * 32], 128);
         } else {
-            g = func_080038C8(0x100);
+            g = AllocSpriteFrameTiles(0x100);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[2], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[2], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + (u8)(a[3] / 10) * 128, &gUnk_06010000[g->unk_06 * 32], 128);
@@ -21647,18 +21647,18 @@ void func_08098014(u8* work, u8* a) {
     switch (a[2]) {
     case 1:
         if (a[3] <= 9) {
-            g = func_080038C8(0x100);
+            g = AllocSpriteFrameTiles(0x100);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[1], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[1], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + a[3] * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + 0x500, &gUnk_06010000[g->unk_06 * 32], 128);
         } else {
-            g = func_080038C8(0x180);
+            g = AllocSpriteFrameTiles(0x180);
             *(void**)&work[0x08] = g;
-            func_080038E4(g, gUnk_09EF1198[3], gUnk_0950C478);
+            UpdateSpriteFrameTiles(g, gUnk_09EF1198[3], gUnk_0950C478);
             *(s32*)&work[0x20] = 0;
             g = *(UnkStruct_080038C8**)&work[0x08];
             RequestDma3Copy((u8*)g->unk_00 + (a[3] / 10) * 128, &gUnk_06010000[(g->unk_06 + 4) * 32], 128);
@@ -21690,12 +21690,12 @@ void func_080984E4(UnkStruct_080984E4* w) {
 
     if (w->unk_2E <= 9) {
         z = 0;
-        func_080038E4(w->unk_08, gUnk_09EF1198[0], gUnk_0950C478);
+        UpdateSpriteFrameTiles(w->unk_08, gUnk_09EF1198[0], gUnk_0950C478);
         w->unk_20 = z;
         RequestDma3Copy(w->unk_08->unk_00 + w->unk_2E * 128, &gUnk_06010000[w->unk_08->unk_06 * 32], 128);
     } else {
         z = 0;
-        func_080038E4(w->unk_08, gUnk_09EF1198[2], gUnk_0950C478);
+        UpdateSpriteFrameTiles(w->unk_08, gUnk_09EF1198[2], gUnk_0950C478);
         w->unk_20 = z;
         RequestDma3Copy(w->unk_08->unk_00 + (u16)(w->unk_2E / 10) * 128, &gUnk_06010000[w->unk_08->unk_06 * 32], 128);
         RequestDma3Copy(w->unk_08->unk_00 + (w->unk_2E - (u16)(w->unk_2E / 10) * 10) * 128, &gUnk_06010000[(w->unk_08->unk_06 + 4) * 32], 128);
@@ -21745,13 +21745,13 @@ UnkStruct_080038C8* func_080986FC(u8 a) {
     UnkStruct_080038C8* obj;
 
     if (a != 0) {
-        obj = func_080038C8(256);
-        func_080038E4(obj, gUnk_09EF1198[1], gUnk_0950C478);
+        obj = AllocSpriteFrameTiles(256);
+        UpdateSpriteFrameTiles(obj, gUnk_09EF1198[1], gUnk_0950C478);
         RequestDma3Copy(&obj->unk_00[a * 128], (void*)(0x06010000 + (obj->unk_06 + 4) * 32), 128);
         RequestDma3Copy(&obj->unk_00[0x500], (void*)(0x06010000 + obj->unk_06 * 32), 128);
     } else {
-        obj = func_080038C8(128);
-        func_080038E4(obj, gUnk_09EF1198[0], gUnk_0950C478);
+        obj = AllocSpriteFrameTiles(128);
+        UpdateSpriteFrameTiles(obj, gUnk_09EF1198[0], gUnk_0950C478);
     }
 
     return obj;
@@ -22037,7 +22037,7 @@ void REV_COUNT_0(UnkStruct_08098CE4* w, UnkStruct_080991CC* a) {
     w->unk_2C = *a;
     idx = w->unk_2C.unk_0C;
     w->unk_24 = idx;
-    w->unk_00 = func_080038C8(320);
+    w->unk_00 = AllocSpriteFrameTiles(320);
     w->unk_04 = LoadObjPalette(gUnk_09611AB8, 32);
 
     if (w->unk_24 == 0) {
@@ -22045,23 +22045,23 @@ void REV_COUNT_0(UnkStruct_08098CE4* w, UnkStruct_080991CC* a) {
 
         if (*count >= 2 && *count <= 100) {
             row = gUnk_09EE76D0[w->unk_24];
-            func_080038E4(w->unk_00, row[*count - 2], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->unk_00, row[*count - 2], gUnk_09EE76C0[w->unk_24]);
         } else if (*count > 100) {
             row = gUnk_09EE76D0[w->unk_24];
-            func_080038E4(w->unk_00, row[98], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->unk_00, row[98], gUnk_09EE76C0[w->unk_24]);
         } else {
             row = gUnk_09EE76D0[w->unk_24];
-            func_080038E4(w->unk_00, row[0], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->unk_00, row[0], gUnk_09EE76C0[w->unk_24]);
         }
     } else {
         count2 = (s16*)w->unk_2C.unk_04;
 
         if (*count2 >= 1 && *count2 <= 99) {
             row = gUnk_09EE76D0[w->unk_24];
-            func_080038E4(w->unk_00, row[*count2 - 1], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->unk_00, row[*count2 - 1], gUnk_09EE76C0[w->unk_24]);
         } else {
             row = gUnk_09EE76D0[w->unk_24];
-            func_080038E4(w->unk_00, row[0], gUnk_09EE76C0[w->unk_24]);
+            UpdateSpriteFrameTiles(w->unk_00, row[0], gUnk_09EE76C0[w->unk_24]);
         }
     }
 
@@ -22092,7 +22092,7 @@ u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
         if (w->unk_24 == 0) {
             if (*count >= 2 && *count <= 100) {
                 row = gUnk_09EE76D0[w->unk_24];
-                func_080038E4(w->unk_00, row[*count - 2],
+                UpdateSpriteFrameTiles(w->unk_00, row[*count - 2],
                               gUnk_09EE76C0[w->unk_24]);
             } else {
                 u8 (*f)(UnkStruct_08098CE4*, void*);
@@ -22106,7 +22106,7 @@ u8 REV_COUNT_1(UnkStruct_08098CE4* w, void* a) {
         } else {
             if (*count >= 1 && *count <= 99) {
                 row = gUnk_09EE76D0[w->unk_24];
-                func_080038E4(w->unk_00, row[*count - 1],
+                UpdateSpriteFrameTiles(w->unk_00, row[*count - 1],
                               gUnk_09EE76C0[w->unk_24]);
             } else {
                 u8 (*f)(UnkStruct_08098CE4*, void*);
@@ -22280,7 +22280,7 @@ void RELOAD_0(UnkStruct_080991F8* w, UnkStruct_080991F8_Args* a) {
     w->tiles = AllocObjTiles(0xA0, 0);
     w->palette = LoadObjPalette(gUnk_09611AB8, 32);
     *(UnkStruct_080991F8_Args*)&w->unk_2C = *a;
-    func_08002A10(w->tiles, gUnk_09EE7708[w->unk_2C]);
+    SetObjTileSource(w->tiles, gUnk_09EE7708[w->unk_2C]);
     AnimInit(&w->anim, gUnk_09EE7714[w->unk_2C], gUnk_09EE7720[w->unk_2C]);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
@@ -22706,7 +22706,7 @@ void Card_EFFECT_0(UnkStruct_08099E70* w, UnkStruct_08099CDC_Args* a) {
 
     w->tiles = AllocObjTiles(0x80, 0);
     w->palette = LoadObjPalette(gUnk_09619158, 32);
-    func_08002A10(w->tiles, gUnk_093F762E);
+    SetObjTileSource(w->tiles, gUnk_093F762E);
     AnimInit(&w->anim, gUnk_09EF1260, gUnk_09EF1230);
     AnimStart(&w->anim, GetRandom() % 3, 0);
     w->gfx = AnimGetGfx(&w->anim);
@@ -23579,7 +23579,7 @@ void func_0809B76C(u8* work, void** src) {
     z = 0;
     work[0x11] = z;
     *(u16*)&work[4] = z;
-    obj = func_080038C8(0x3C0);
+    obj = AllocSpriteFrameTiles(0x3C0);
     *(UnkStruct_080038C8**)&work[8] = obj;
 
     if (work[0x30] == 0) {
@@ -23589,9 +23589,9 @@ void func_0809B76C(u8* work, void** src) {
 
         t = (void**)LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_04);
         u = LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_00);
-        func_080038E4(obj, t[gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_0A], u);
+        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_0A], u);
 #else
-        func_080038E4(obj, gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_04[gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_0A], gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_00);
+        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_04[gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_0A], gUnk_08F7CF18[gUnk_02039DD4->unk_0C4].unk_00);
 #endif
     } else {
 #ifdef VERSION_EU
@@ -23600,9 +23600,9 @@ void func_0809B76C(u8* work, void** src) {
 
         t = (void**)LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04);
         u = LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
-        func_080038E4(obj, t[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], u);
+        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], u);
 #else
-        func_080038E4(obj, gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
+        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
 #endif
     }
 
@@ -23635,7 +23635,7 @@ u8 func_0809B840(u8* work) {
             work[0x11] = 0;
         }
 
-        func_080038E4(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_04[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_0A], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_00);
+        UpdateSpriteFrameTiles(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_04[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_0A], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_00);
     }
 
     return 1;
@@ -23680,7 +23680,7 @@ void func_0809B920(u8* work, void** src) {
     z = 0;
     work[0x11] = z;
     *(u16*)&work[4] = z;
-    obj = func_080038C8(0x3C0);
+    obj = AllocSpriteFrameTiles(0x3C0);
     *(UnkStruct_080038C8**)&work[8] = obj;
 
     if (work[0x30] == 0) {
@@ -23690,9 +23690,9 @@ void func_0809B920(u8* work, void** src) {
 
         t = (void**)LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_04);
         u = LANGSTR(gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_00);
-        func_080038E4(obj, t[gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_0A], u);
+        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_0A], u);
 #else
-        func_080038E4(obj, gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_04[gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_0A], gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_00);
+        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_04[gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_0A], gUnk_08F7CF18[gUnk_02039DD4->unk_0C6].unk_00);
 #endif
     } else {
 #ifdef VERSION_EU
@@ -23701,9 +23701,9 @@ void func_0809B920(u8* work, void** src) {
 
         t = (void**)LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04);
         u = LANGSTR(gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
-        func_080038E4(obj, t[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], u);
+        UpdateSpriteFrameTiles(obj, t[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], u);
 #else
-        func_080038E4(obj, gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
+        UpdateSpriteFrameTiles(obj, gUnk_08F7CF18[*(u32*)&work[0x18]].unk_04[gUnk_08F7CF18[*(u32*)&work[0x18]].unk_0A], gUnk_08F7CF18[*(u32*)&work[0x18]].unk_00);
 #endif
     }
 
@@ -23736,7 +23736,7 @@ u8 func_0809B9F4(u8* work) {
             work[0x11] = 0;
         }
 
-        func_080038E4(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_04[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_0A], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_00);
+        UpdateSpriteFrameTiles(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_04[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_0A], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].unk_00);
     }
 
     return 1;
@@ -23821,7 +23821,7 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
     deck = GetActiveDeck();
     w->unk_08 = AllocObjTiles(0x120, 0);
     w->unk_0C = LoadObjPalette(gUnk_09618CD8, 32);
-    func_08002A10(w->unk_08, gUnk_093F4578);
+    SetObjTileSource(w->unk_08, gUnk_093F4578);
     AnimInit(&w->unk_54, gUnk_09EF1170, gUnk_09EF1150);
     AnimStart(&w->unk_54, 0, 1);
     w->unk_28 = AnimGetGfx(&w->unk_54);
@@ -23850,7 +23850,7 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
     w->unk_20 = LoadObjTiles(gUnk_0908BFB2, 0x3C0);
     w->unk_10 = AllocObjTiles(0x3C0, 0);
     w->unk_14 = LoadObjPalette(gUnk_09618D18, 32);
-    func_08002A10(w->unk_10, gUnk_093F47E4);
+    SetObjTileSource(w->unk_10, gUnk_093F47E4);
     AnimInit(&w->unk_6C, gUnk_09EF1194, gUnk_09EF1180);
     AnimStart(&w->unk_6C, 0, 1);
     w->unk_2C = AnimGetGfx(&w->unk_6C);
@@ -24410,7 +24410,7 @@ u8 func_0809CB0C(u8* work, void* a) {
 
 u8 func_0809CB78(u8* work, void* a) {
     *(void**)&work[0x18] = AllocObjTiles(640, 0);
-    func_08002A10(*(void**)&work[0x18], gUnk_0908B1B4);
+    SetObjTileSource(*(void**)&work[0x18], gUnk_0908B1B4);
     AnimInit(&work[0x2C], gUnk_09EEA164, gUnk_09EEA148);
     AnimStart(&work[0x2C], 0, 1);
     *(void**)&work[0x44] = AnimGetGfx(&work[0x2C]);
@@ -24535,7 +24535,7 @@ void CardName_3(u8* work) {
 void func_0809CE88(UnkStruct_0809CE88* w, s16* a) {
     w->unk_00 = AllocObjTiles(128, 0);
     w->unk_04 = LoadObjPalette(gUnk_09619158, 32);
-    func_08002A10(w->unk_00, gUnk_093F762E);
+    SetObjTileSource(w->unk_00, gUnk_093F762E);
     AnimInit(&w->unk_0C, gUnk_09EF1260, gUnk_09EF1230);
     AnimStart(&w->unk_0C, GetRandom() % 3, 1);
     w->unk_08 = AnimGetGfx(&w->unk_0C);
@@ -24555,7 +24555,7 @@ void func_0809CE88(UnkStruct_0809CE88* w, s16* a) {
 void func_0809CF64(UnkStruct_0809CE88* w, s16* a) {
     w->unk_00 = AllocObjTiles(128, 0);
     w->unk_04 = LoadObjPalette(gUnk_09619158, 32);
-    func_08002A10(w->unk_00, gUnk_093F762E);
+    SetObjTileSource(w->unk_00, gUnk_093F762E);
     AnimInit(&w->unk_0C, gUnk_09EF1260, gUnk_09EF1230);
     AnimStart(&w->unk_0C, GetRandom() % 3, 1);
     w->unk_08 = AnimGetGfx(&w->unk_0C);
@@ -24922,8 +24922,8 @@ void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a) {
     w->unk_1A = 0;
     w->unk_1C = 32;
     w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
-    w->unk_08 = func_080038C8(0x3C0);
-    w->unk_0C = func_080038C8(32);
+    w->unk_08 = AllocSpriteFrameTiles(0x3C0);
+    w->unk_0C = AllocSpriteFrameTiles(32);
     w->unk_20 = 0;
     w->unk_27 = 1;
 
@@ -24932,9 +24932,9 @@ void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a) {
         w->unk_00 = 48;
         w->unk_1E = gUnk_02039DD4->unk_0CC;
         tiles = gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_08;
-        func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C], gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_00);
+        UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C], gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_00);
         w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
-        func_080038E4(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+        UpdateSpriteFrameTiles(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 
         if (gUnk_02039DD4->unk_0CC == 0) {
             w->unk_27 = 0;
@@ -24944,9 +24944,9 @@ void HCEffectName_0(UnkStruct_0809DF7C* w, u8* a) {
         w->unk_00 = 162;
         w->unk_1E = gUnk_02039DD4->unk_0CE;
         tiles = gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_08;
-        func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C], gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_00);
+        UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C], gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_00);
         w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
-        func_080038E4(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+        UpdateSpriteFrameTiles(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 
         if (gUnk_02039DD4->unk_0CE == 0) {
             w->unk_27 = 0;
@@ -25080,21 +25080,21 @@ u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a) {
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
 #endif
             tiles = LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_08);
-            func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C],
+            UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_0C],
                          LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CC].unk_00));
 #ifdef VERSION_EU
-            func_080038E4(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26],
+            UpdateSpriteFrameTiles(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26],
                          gUnkEu_09F72CB0[gLanguage]);
 #else
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
-            func_080038E4(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+            UpdateSpriteFrameTiles(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 #endif
             SetTaskUpdate(a, (void*)HCEffectName_1);
         } else {
             u16 id = func_080792D0(&w->unk_20);
             w->unk_1E = id;
             tiles = LANGSTR(gUnk_08F7CBA8[id].unk_08);
-            func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
+            UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
                          LANGSTR(gUnk_08F7CBA8[id].unk_00));
         }
         break;
@@ -25109,21 +25109,21 @@ u8 func_0809DE30(UnkStruct_0809DF7C* w, void* a) {
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
 #endif
             tiles = LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_08);
-            func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C],
+            UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_0C],
                          LANGSTR(gUnk_08F7CBA8[gUnk_02039DD4->unk_0CE].unk_00));
 #ifdef VERSION_EU
-            func_080038E4(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26],
+            UpdateSpriteFrameTiles(w->unk_0C, gUnkEu_09F72CC4[gLanguage][w->unk_26],
                          gUnkEu_09F72CB0[gLanguage]);
 #else
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
-            func_080038E4(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
+            UpdateSpriteFrameTiles(w->unk_0C, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 #endif
             SetTaskUpdate(a, (void*)HCEffectName_1);
         } else {
             u16 id = func_080792D0(&w->unk_20);
             w->unk_1E = id;
             tiles = LANGSTR(gUnk_08F7CBA8[id].unk_08);
-            func_080038E4(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
+            UpdateSpriteFrameTiles(w->unk_08, tiles[gUnk_08F7CBA8[id].unk_0C],
                          LANGSTR(gUnk_08F7CBA8[id].unk_00));
         }
         break;
@@ -25324,9 +25324,9 @@ void Level_Up_0(UnkStruct_0809F730* w) {
     w->unk_000[6] = LoadObjTiles(gUnk_0908CAEC, 0x500);
 #else
     w->unk_000[6] = LoadObjTiles(gUnkEu_09F72D1C[gLanguage], gUnkEu_090D1328[gLanguage]);
-    w->unk_020[0] = func_080038C8(0x500);
-    w->unk_020[1] = func_080038C8(0x500);
-    w->unk_020[2] = func_080038C8(0x500);
+    w->unk_020[0] = AllocSpriteFrameTiles(0x500);
+    w->unk_020[1] = AllocSpriteFrameTiles(0x500);
+    w->unk_020[2] = AllocSpriteFrameTiles(0x500);
 #endif
     w->unk_000[7] = LoadObjPalette(gUnk_09613E98 + 0x60, 32);
     FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[7])->unk_06 + 16, 1);
@@ -25335,23 +25335,23 @@ void Level_Up_0(UnkStruct_0809F730* w) {
     if (!(gGameState.flags & 8)) {
         w->unk_728 = AllocObjTiles(0x500, 0);
         w->unk_72C = AllocObjPalette(32);
-        func_08003A70(w->unk_72C, gUnk_08F683A4);
+        UpdateAllocatedObjPalette(w->unk_72C, gUnk_08F683A4);
         FadeSetPaletteExcluded(((ObjPalette*)w->unk_72C)->unk_06 + 16, 1);
         WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004,
                       gBtlWork->unk_07C->unk_008,
                       gBtlWork->unk_07C->unk_00C);
-        func_08002A10(w->unk_728, gUnk_088E33C2);
+        SetObjTileSource(w->unk_728, gUnk_088E33C2);
         AnimInit(&w->unk_734, gUnk_09EDEE14, gUnk_09EDEE08);
         AnimStart(&w->unk_734, 0, 1);
     } else {
         w->unk_728 = AllocObjTiles(0x800, 0);
         w->unk_72C = AllocObjPalette(32);
-        func_08003A70(w->unk_72C, gUnk_09618118);
+        UpdateAllocatedObjPalette(w->unk_72C, gUnk_09618118);
         FadeSetPaletteExcluded(((ObjPalette*)w->unk_72C)->unk_06 + 16, 1);
         WorldToScreen(&x, &y, gBtlWork->unk_07C->unk_004,
                       gBtlWork->unk_07C->unk_008,
                       gBtlWork->unk_07C->unk_00C);
-        func_08002A10(w->unk_728, gUnk_0891ED26);
+        SetObjTileSource(w->unk_728, gUnk_0891ED26);
         AnimInit(&w->unk_734, gUnk_09EDF38C, gUnk_09EDF374);
         AnimStart(&w->unk_734, 0, 1);
     }
@@ -25657,39 +25657,39 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
         w->unk_7A4++;
         if (w->unk_7A4 > 7) {
             if (!(gGameState.flags & 8)) {
-                w->unk_000[0] = func_080038C8(tileSize);
-                w->unk_000[1] = func_080038C8(tileSize);
-                w->unk_000[2] = func_080038C8(tileSize);
+                w->unk_000[0] = AllocSpriteFrameTiles(tileSize);
+                w->unk_000[1] = AllocSpriteFrameTiles(tileSize);
+                w->unk_000[2] = AllocSpriteFrameTiles(tileSize);
 #ifdef VERSION_EU
                 if (gLanguage != 3) {
 #endif
-                    func_080038E4(w->unk_000[0], gUnk_09EEA2BC[0], gUnk_090950F4);
-                    func_080038E4(w->unk_000[1], gUnk_09EEA2BC[1], gUnk_090950F4);
-                    func_080038E4(w->unk_000[2], gUnk_09EEA2BC[2], gUnk_090950F4);
+                    UpdateSpriteFrameTiles(w->unk_000[0], gUnk_09EEA2BC[0], gUnk_090950F4);
+                    UpdateSpriteFrameTiles(w->unk_000[1], gUnk_09EEA2BC[1], gUnk_090950F4);
+                    UpdateSpriteFrameTiles(w->unk_000[2], gUnk_09EEA2BC[2], gUnk_090950F4);
 #ifdef VERSION_EU
                 } else {
-                    func_080038E4(w->unk_000[0], gUnkEu_09F7626C[0], gUnkEu_09172200);
-                    func_080038E4(w->unk_000[1], gUnkEu_09F7626C[1], gUnkEu_09172200);
-                    func_080038E4(w->unk_000[2], gUnkEu_09F7626C[2], gUnkEu_09172200);
+                    UpdateSpriteFrameTiles(w->unk_000[0], gUnkEu_09F7626C[0], gUnkEu_09172200);
+                    UpdateSpriteFrameTiles(w->unk_000[1], gUnkEu_09F7626C[1], gUnkEu_09172200);
+                    UpdateSpriteFrameTiles(w->unk_000[2], gUnkEu_09F7626C[2], gUnkEu_09172200);
                 }
 #endif
                 w->unk_000[4] = LoadObjPalette(gUnk_09613F18, 32);
                 w->unk_000[5] = LoadObjPalette(gUnk_09613F38, 32);
             } else {
-                w->unk_000[0] = func_080038C8(tileSize);
-                w->unk_000[1] = func_080038C8(tileSize);
-                w->unk_000[2] = func_080038C8(tileSize);
+                w->unk_000[0] = AllocSpriteFrameTiles(tileSize);
+                w->unk_000[1] = AllocSpriteFrameTiles(tileSize);
+                w->unk_000[2] = AllocSpriteFrameTiles(tileSize);
 #ifdef VERSION_EU
                 if (gLanguage != 3) {
 #endif
-                    func_080038E4(w->unk_000[0], gUnk_09EEA29C[0], gUnk_09091D36);
-                    func_080038E4(w->unk_000[1], gUnk_09EEA29C[1], gUnk_09091D36);
-                    func_080038E4(w->unk_000[2], gUnk_09EEA29C[2], gUnk_09091D36);
+                    UpdateSpriteFrameTiles(w->unk_000[0], gUnk_09EEA29C[0], gUnk_09091D36);
+                    UpdateSpriteFrameTiles(w->unk_000[1], gUnk_09EEA29C[1], gUnk_09091D36);
+                    UpdateSpriteFrameTiles(w->unk_000[2], gUnk_09EEA29C[2], gUnk_09091D36);
 #ifdef VERSION_EU
                 } else {
-                    func_080038E4(w->unk_000[0], gUnkEu_09F762A4[0], gUnkEu_091759BA);
-                    func_080038E4(w->unk_000[1], gUnkEu_09F762A4[1], gUnkEu_091759BA);
-                    func_080038E4(w->unk_000[2], gUnkEu_09F762A4[2], gUnkEu_091759BA);
+                    UpdateSpriteFrameTiles(w->unk_000[0], gUnkEu_09F762A4[0], gUnkEu_091759BA);
+                    UpdateSpriteFrameTiles(w->unk_000[1], gUnkEu_09F762A4[1], gUnkEu_091759BA);
+                    UpdateSpriteFrameTiles(w->unk_000[2], gUnkEu_09F762A4[2], gUnkEu_091759BA);
                 }
 #endif
                 w->unk_000[4] = LoadObjPalette(gUnk_09613EB8, 32);
@@ -25726,7 +25726,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
             w->unk_6E8 = AllocObjTiles(0x3C0, 0);
             w->unk_6EC = LoadObjPalette(gUnk_09618CD8, 32);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_6EC)->unk_06 + 16, 1);
-            func_08002A10(w->unk_6E8, gUnk_093F4578);
+            SetObjTileSource(w->unk_6E8, gUnk_093F4578);
             AnimInit(&w->unk_710, gUnk_09EF1170, gUnk_09EF1150);
             AnimStart(&w->unk_710, 2, 1);
             w->unk_74C = AnimGetGfx(&w->unk_710);
@@ -25802,7 +25802,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                     if (!(gGameState.flags & 8)) {
                         if ((s16)gGameState.maxHp > 559) {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[0] = func_08065B6C(gUnk_09EE78D4[6], w->text[0]);
                             w->unk_7B7[3] = 0;
@@ -25810,7 +25810,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7C8[0] = 0;
                         } else {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][0], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][0], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[0] = func_08065B6C(gUnk_09EE78D4[0], w->text[0]);
                             w->unk_7B7[3] = func_08065B6C(gUnk_09EE78D4[3], w->text[3]);
@@ -25818,7 +25818,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                         }
                         if (gGameState.cp > 1899) {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[1] = func_08065B6C(gUnk_09EE78D4[6], w->text[1]);
                             w->unk_7B7[4] = 0;
@@ -25826,7 +25826,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7C8[1] = 0;
                         } else {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][1], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][1], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[1] = func_08065B6C(gUnk_09EE78D4[1], w->text[1]);
                             w->unk_7B7[4] = func_08065B6C(gUnk_09EE78D4[4], w->text[4]);
@@ -25834,7 +25834,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                         }
                         if (gGameState.unk_178 > 10) {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[2] = func_08065B6C(gUnk_09EE78D4[6], w->text[2]);
                             w->unk_7B7[5] = 0;
@@ -25842,7 +25842,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7C8[2] = 0;
                         } else if ((u8)func_080A2370() == 0) {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[2] = func_08065B6C(gUnk_09EE78D4[6], w->text[2]);
                             w->unk_7B7[5] = 0;
@@ -25850,7 +25850,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7C8[2] = 0;
                         } else {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][2], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][2], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[2] = func_08065B6C(gUnk_09EE78D4[2], w->text[2]);
                             w->unk_7B7[5] = func_08065B6C(gUnk_09EE78D4[5], w->text[5]);
@@ -25861,7 +25861,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                     } else {
                         if ((s16)gGameState.maxHp > 559) {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[0] = func_08065B6C(gUnk_09EE78F0[6], w->text[0]);
                             w->unk_7B7[3] = 0;
@@ -25869,7 +25869,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7C8[0] = 0;
                         } else {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][3], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][3], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[0] = func_08065B6C(gUnk_09EE78F0[0], w->text[0]);
                             w->unk_7B7[3] = func_08065B6C(gUnk_09EE78F0[3], w->text[3]);
@@ -25877,7 +25877,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                         }
                         if ((s16)gGameState.ap > 29) {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[1] = func_08065B6C(gUnk_09EE78D4[6], w->text[1]);
                             w->unk_7B7[4] = 0;
@@ -25885,7 +25885,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7C8[1] = 0;
                         } else if ((u8)func_080A151C() == 0) {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[1] = func_08065B6C(gUnk_09EE78D4[6], w->text[1]);
                             w->unk_7B7[4] = 0;
@@ -25893,7 +25893,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7C8[1] = 0;
                         } else {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][4], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][4], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[1] = func_08065B6C(gUnk_09EE78F0[1], w->text[1]);
                             w->unk_7B7[4] = func_08065B6C(gUnk_09EE78F0[4], w->text[4]);
@@ -25901,7 +25901,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                         }
                         if ((s16)gGameState.dp > 299) {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[2] = func_08065B6C(gUnk_09EE78D4[6], w->text[2]);
                             w->unk_7B7[5] = 0;
@@ -25909,7 +25909,7 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                             w->unk_7C8[2] = 0;
                         } else {
 #ifdef VERSION_EU
-                            func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][5], gUnkEu_09F72D44[gLanguage]);
+                            UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][5], gUnkEu_09F72D44[gLanguage]);
 #else
                             w->unk_7B7[2] = func_08065B6C(gUnk_09EE78F0[2], w->text[2]);
                             w->unk_7B7[5] = func_08065B6C(gUnk_09EE78F0[5], w->text[5]);
@@ -26019,7 +26019,7 @@ u8 func_0809F390(u8* work, void* a) {
         *(void**)&work[0x6E8] = AllocObjTiles(128, 0);
         *(void**)&work[0x6EC] = LoadObjPalette(&gUnk_09611AB8[0x24A0], 32);
         FadeSetPaletteExcluded(*(u16*)((u8*)*(void**)&work[0x6EC] + 6) + 16, 1);
-        func_08002A10(*(void**)&work[0x6E8], &gUnk_0908C686[0x2B0A]);
+        SetObjTileSource(*(void**)&work[0x6E8], &gUnk_0908C686[0x2B0A]);
         AnimInit((AnimState*)&work[0x710], &gUnk_09EEA19C[0x39], &gUnk_09EEA19C[0x34]);
         AnimStart((AnimState*)&work[0x710], 0, 1);
         *(void**)&work[0x74C] = AnimGetGfx((AnimState*)&work[0x710]);
@@ -26027,11 +26027,11 @@ u8 func_0809F390(u8* work, void* a) {
         *(u16*)&work[0x774] = 136;
 
         if (gGameState.flags & 8) {
-            func_08002A10(*(void**)&work[0x728], gUnk_092EB78A);
+            SetObjTileSource(*(void**)&work[0x728], gUnk_092EB78A);
             AnimInit((AnimState*)&work[0x734], &gUnk_09EEF89C[0x24], gUnk_09EEF89C);
             AnimStart((AnimState*)&work[0x734], 1, 0);
         } else {
-            func_08002A10(*(void**)&work[0x728], gUnk_088B6560);
+            SetObjTileSource(*(void**)&work[0x728], gUnk_088B6560);
             AnimInit((AnimState*)&work[0x734], &gUnk_09EDE8CC[0x4C], gUnk_09EDE8CC);
             AnimStart((AnimState*)&work[0x734], 1, 0);
         }
@@ -26117,7 +26117,7 @@ u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
         if (w->unk_7C7 == 0) {
             switch (w->unk_7B0) {
             case 0: {
-                s32 amount = func_0800FA58();
+                s32 amount = LevelUpMaxHp();
                 UnkStruct_0809F730_Args args;
                 w->unk_7C4 = 1;
                 args.amount = amount;
@@ -26128,7 +26128,7 @@ u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
             }
             case 1:
                 if (!(gGameState.flags & 8)) {
-                    s32 amount = func_0800FA7C();
+                    s32 amount = LevelUpCp();
                     UnkStruct_0809F730_Args args;
                     w->unk_7C4 = 1;
                     args.amount = amount;
@@ -26136,7 +26136,7 @@ u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
                     args.flags = 0;
                     TaskCreate(&w->pool, gUnk_09EE7F48, &args);
                 } else {
-                    s32 amount = func_0800FAC4();
+                    s32 amount = LevelUpAp();
                     UnkStruct_0809F730_Args args;
                     w->unk_7C4 = 1;
                     args.amount = amount;
@@ -26151,7 +26151,7 @@ u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
                     w->unk_7C4 = 1;
                     TaskCreate(&w->pool, gUnk_09EE7F30, &w->unk_7C4);
                 } else {
-                    s32 amount = func_0800FAA0();
+                    s32 amount = LevelUpDp();
                     UnkStruct_0809F730_Args args;
                     w->unk_7C4 = 1;
                     args.amount = amount;
@@ -26641,44 +26641,44 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
         w->unk_7A4++;
         if (w->unk_7A4 > 7) {
 #ifdef VERSION_EU
-            w->unk_020[0] = func_080038C8(0x500);
-            w->unk_020[1] = func_080038C8(0x500);
-            w->unk_020[2] = func_080038C8(0x500);
+            w->unk_020[0] = AllocSpriteFrameTiles(0x500);
+            w->unk_020[1] = AllocSpriteFrameTiles(0x500);
+            w->unk_020[2] = AllocSpriteFrameTiles(0x500);
 #endif
             if (!(gGameState.flags & 8)) {
-                w->unk_000[0] = func_080038C8(tileSize);
-                w->unk_000[1] = func_080038C8(tileSize);
-                w->unk_000[2] = func_080038C8(tileSize);
+                w->unk_000[0] = AllocSpriteFrameTiles(tileSize);
+                w->unk_000[1] = AllocSpriteFrameTiles(tileSize);
+                w->unk_000[2] = AllocSpriteFrameTiles(tileSize);
 #ifdef VERSION_EU
                 if (gLanguage != 3) {
 #endif
-                    func_080038E4(w->unk_000[0], gUnk_09EEA2BC[0], gUnk_090950F4);
-                    func_080038E4(w->unk_000[1], gUnk_09EEA2BC[1], gUnk_090950F4);
-                    func_080038E4(w->unk_000[2], gUnk_09EEA2BC[2], gUnk_090950F4);
+                    UpdateSpriteFrameTiles(w->unk_000[0], gUnk_09EEA2BC[0], gUnk_090950F4);
+                    UpdateSpriteFrameTiles(w->unk_000[1], gUnk_09EEA2BC[1], gUnk_090950F4);
+                    UpdateSpriteFrameTiles(w->unk_000[2], gUnk_09EEA2BC[2], gUnk_090950F4);
 #ifdef VERSION_EU
                 } else {
-                    func_080038E4(w->unk_000[0], gUnkEu_09F7626C[0], gUnkEu_09172200);
-                    func_080038E4(w->unk_000[1], gUnkEu_09F7626C[1], gUnkEu_09172200);
-                    func_080038E4(w->unk_000[2], gUnkEu_09F7626C[2], gUnkEu_09172200);
+                    UpdateSpriteFrameTiles(w->unk_000[0], gUnkEu_09F7626C[0], gUnkEu_09172200);
+                    UpdateSpriteFrameTiles(w->unk_000[1], gUnkEu_09F7626C[1], gUnkEu_09172200);
+                    UpdateSpriteFrameTiles(w->unk_000[2], gUnkEu_09F7626C[2], gUnkEu_09172200);
                 }
 #endif
                 w->unk_000[4] = LoadObjPalette(gUnk_09613F18, 32);
                 w->unk_000[5] = LoadObjPalette(gUnk_09613F38, 32);
             } else {
-                w->unk_000[0] = func_080038C8(tileSize);
-                w->unk_000[1] = func_080038C8(tileSize);
-                w->unk_000[2] = func_080038C8(tileSize);
+                w->unk_000[0] = AllocSpriteFrameTiles(tileSize);
+                w->unk_000[1] = AllocSpriteFrameTiles(tileSize);
+                w->unk_000[2] = AllocSpriteFrameTiles(tileSize);
 #ifdef VERSION_EU
                 if (gLanguage != 3) {
 #endif
-                    func_080038E4(w->unk_000[0], gUnk_09EEA29C[0], gUnk_09091D36);
-                    func_080038E4(w->unk_000[1], gUnk_09EEA29C[1], gUnk_09091D36);
-                    func_080038E4(w->unk_000[2], gUnk_09EEA29C[2], gUnk_09091D36);
+                    UpdateSpriteFrameTiles(w->unk_000[0], gUnk_09EEA29C[0], gUnk_09091D36);
+                    UpdateSpriteFrameTiles(w->unk_000[1], gUnk_09EEA29C[1], gUnk_09091D36);
+                    UpdateSpriteFrameTiles(w->unk_000[2], gUnk_09EEA29C[2], gUnk_09091D36);
 #ifdef VERSION_EU
                 } else {
-                    func_080038E4(w->unk_000[0], gUnkEu_09F762A4[0], gUnkEu_091759BA);
-                    func_080038E4(w->unk_000[1], gUnkEu_09F762A4[1], gUnkEu_091759BA);
-                    func_080038E4(w->unk_000[2], gUnkEu_09F762A4[2], gUnkEu_091759BA);
+                    UpdateSpriteFrameTiles(w->unk_000[0], gUnkEu_09F762A4[0], gUnkEu_091759BA);
+                    UpdateSpriteFrameTiles(w->unk_000[1], gUnkEu_09F762A4[1], gUnkEu_091759BA);
+                    UpdateSpriteFrameTiles(w->unk_000[2], gUnkEu_09F762A4[2], gUnkEu_091759BA);
                 }
 #endif
                 w->unk_000[4] = LoadObjPalette(gUnk_09613EB8, 32);
@@ -26715,7 +26715,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
             w->unk_6E8 = AllocObjTiles(0x3C0, 0);
             w->unk_6EC = LoadObjPalette(gUnk_09618CD8, 32);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_6EC)->unk_06 + 16, 1);
-            func_08002A10(w->unk_6E8, gUnk_093F4578);
+            SetObjTileSource(w->unk_6E8, gUnk_093F4578);
             AnimInit(&w->unk_710, gUnk_09EF1170, gUnk_09EF1150);
             AnimStart(&w->unk_710, 2, 1);
             w->unk_74C = AnimGetGfx(&w->unk_710);
@@ -26761,7 +26761,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
         if (!(gGameState.flags & 8)) {
             if ((s16)gGameState.maxHp > 559) {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[0] = func_08065B6C(gUnk_09EE78D4[6], w->text[0]);
                 w->unk_7B7[3] = 0;
@@ -26769,7 +26769,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7C8[0] = 0;
             } else {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][0], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][0], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[0] = func_08065B6C(gUnk_09EE78D4[0], w->text[0]);
                 w->unk_7B7[3] = func_08065B6C(gUnk_09EE78D4[3], w->text[3]);
@@ -26777,7 +26777,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
             }
             if (gGameState.cp > 1899) {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[1] = func_08065B6C(gUnk_09EE78D4[6], w->text[1]);
                 w->unk_7B7[4] = 0;
@@ -26785,7 +26785,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7C8[1] = 0;
             } else {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][1], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][1], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[1] = func_08065B6C(gUnk_09EE78D4[1], w->text[1]);
                 w->unk_7B7[4] = func_08065B6C(gUnk_09EE78D4[4], w->text[4]);
@@ -26793,7 +26793,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
             }
             if (gGameState.unk_178 > 10) {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[2] = func_08065B6C(gUnk_09EE78D4[6], w->text[2]);
                 w->unk_7B7[5] = 0;
@@ -26801,7 +26801,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7C8[2] = 0;
             } else if ((u8)func_080A2370() == 0) {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[2] = func_08065B6C(gUnk_09EE78D4[6], w->text[2]);
                 w->unk_7B7[5] = 0;
@@ -26809,7 +26809,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7C8[2] = 0;
             } else {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][2], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][2], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[2] = func_08065B6C(gUnk_09EE78D4[2], w->text[2]);
                 w->unk_7B7[5] = func_08065B6C(gUnk_09EE78D4[5], w->text[5]);
@@ -26820,7 +26820,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
         } else {
             if ((s16)gGameState.maxHp > 559) {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[0] = func_08065B6C(gUnk_09EE78F0[6], w->text[0]);
                 w->unk_7B7[3] = 0;
@@ -26828,7 +26828,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7C8[0] = 0;
             } else {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[0], gUnkEu_09F72D58[gLanguage][3], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[0], gUnkEu_09F72D58[gLanguage][3], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[0] = func_08065B6C(gUnk_09EE78F0[0], w->text[0]);
                 w->unk_7B7[3] = func_08065B6C(gUnk_09EE78F0[3], w->text[3]);
@@ -26836,7 +26836,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
             }
             if ((s16)gGameState.ap > 29) {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[1] = func_08065B6C(gUnk_09EE78D4[6], w->text[1]);
                 w->unk_7B7[4] = 0;
@@ -26844,7 +26844,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7C8[1] = 0;
             } else if ((u8)func_080A151C() == 0) {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[1] = func_08065B6C(gUnk_09EE78D4[6], w->text[1]);
                 w->unk_7B7[4] = 0;
@@ -26852,7 +26852,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7C8[1] = 0;
             } else {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[1], gUnkEu_09F72D58[gLanguage][4], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[1], gUnkEu_09F72D58[gLanguage][4], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[1] = func_08065B6C(gUnk_09EE78F0[1], w->text[1]);
                 w->unk_7B7[4] = func_08065B6C(gUnk_09EE78F0[4], w->text[4]);
@@ -26860,7 +26860,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
             }
             if ((s16)gGameState.dp > 299) {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[2] = func_08065B6C(gUnk_09EE78D4[6], w->text[2]);
                 w->unk_7B7[5] = 0;
@@ -26868,7 +26868,7 @@ u8 func_080A0A44(UnkStruct_0809F730* w, void* a) {
                 w->unk_7C8[2] = 0;
             } else {
 #ifdef VERSION_EU
-                func_080038E4(w->unk_020[2], gUnkEu_09F72D58[gLanguage][5], gUnkEu_09F72D44[gLanguage]);
+                UpdateSpriteFrameTiles(w->unk_020[2], gUnkEu_09F72D58[gLanguage][5], gUnkEu_09F72D44[gLanguage]);
 #else
                 w->unk_7B7[2] = func_08065B6C(gUnk_09EE78F0[2], w->text[2]);
                 w->unk_7B7[5] = func_08065B6C(gUnk_09EE78F0[5], w->text[5]);
@@ -26990,11 +26990,11 @@ u8 func_080A11CC(u8* work, void* a) {
             *(u16*)&work[0x776] = *(u16*)&gUnk_09036380[0x1C34];
 
             if (gGameState.flags & 8) {
-                func_08002A10(*(void**)&work[0x728], gUnk_0891ED26);
+                SetObjTileSource(*(void**)&work[0x728], gUnk_0891ED26);
                 AnimInit((AnimState*)&work[0x734], gUnk_09EDF38C, gUnk_09EDF374);
                 AnimStart((AnimState*)&work[0x734], 0, 1);
             } else {
-                func_08002A10(*(void**)&work[0x728], gUnk_088E33C2);
+                SetObjTileSource(*(void**)&work[0x728], gUnk_088E33C2);
                 AnimInit((AnimState*)&work[0x734], gUnk_09EDEE14, gUnk_09EDEE08);
                 AnimStart((AnimState*)&work[0x734], 0, 1);
             }
@@ -27729,8 +27729,8 @@ void func_080A23A0(UnkStruct_080A2678* w, UnkStruct_080A23A0_Args* a) {
                          + func_08065B08(w->unk_0A0, w->unk_2AE)
                          + func_08065B08(w->unk_140, w->unk_2AF))) / 2) << 8;
 #ifdef VERSION_EU
-    w->unk_284 = func_080038C8(0x780);
-    func_080038E4(w->unk_284, gUnk_09EF126C[0], gUnk_093F7C9C);
+    w->unk_284 = AllocSpriteFrameTiles(0x780);
+    UpdateSpriteFrameTiles(w->unk_284, gUnk_09EF126C[0], gUnk_093F7C9C);
 #else
     w->unk_284 = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
 #endif
@@ -28331,7 +28331,7 @@ u8 func_080A3754(UnkStruct_080A3F5C* w, void* a) {
         e = gUnk_09EE45DC[sel->unk_00];
         w->unk_000 = AllocObjTiles(0xD80, 0);
         w->unk_004 = LoadObjPalette(e[w->unk_114->unk_08].unk_04, 32);
-        func_08002A10(w->unk_000, e[w->unk_114->unk_08].unk_00);
+        SetObjTileSource(w->unk_000, e[w->unk_114->unk_08].unk_00);
         AnimInit(w->unk_0C4, e[w->unk_114->unk_08].unk_0C, e[w->unk_114->unk_08].unk_08);
         AnimStart(w->unk_0C4, 0, e[w->unk_114->unk_08].unk_11);
         w->unk_12C = AnimGetGfx(w->unk_0C4);
@@ -28446,7 +28446,7 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
             if (w->unk_008 == 0) {
                 w->unk_008 = AllocObjTiles(0x40, 0);
                 w->unk_00C = LoadObjPalette(gUnk_08F69BE4, 32);
-                func_08002A10(w->unk_008, gUnk_09320796);
+                SetObjTileSource(w->unk_008, gUnk_09320796);
                 AnimInit(w->unk_0DC, gUnk_09EEFD38, gUnk_09EEFCAC);
                 AnimStart(w->unk_0DC, 2, 1);
                 w->unk_130 = AnimGetGfx(w->unk_0DC);
@@ -28501,7 +28501,7 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
             pal = gUnk_09614418;
             w->unk_014 = LoadObjPalette(pal, 32);
             LoadObjPaletteBank(((UnkStruct_080038C8*)w->unk_014)->unk_06, pal);
-            func_08002A10(w->unk_010, gUnk_090A4664);
+            SetObjTileSource(w->unk_010, gUnk_090A4664);
             AnimInit(w->unk_0F4, gUnk_09EEB03C, gUnk_09EEB008);
             AnimStart(w->unk_0F4, 2, 1);
             w->unk_134 = AnimGetGfx(w->unk_0F4);
@@ -28802,7 +28802,7 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
         w->unk_000 = AllocObjTiles(0x40, 0);
         w->unk_004 = LoadObjPalette(gUnk_08F69BA4, 32);
         FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->unk_004)->unk_06 + 16, 1);
-        func_08002A10(w->unk_000, gUnk_09320796);
+        SetObjTileSource(w->unk_000, gUnk_09320796);
         AnimInit(w->unk_0DC, gUnk_09EEFD38, gUnk_09EEFCAC);
         AnimStart(w->unk_0DC, 2, 1);
         w->unk_128 = (s32)AnimGetGfx(w->unk_0DC);
@@ -28815,7 +28815,7 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
         w->unk_000 = AllocObjTiles(0x40, 0);
         w->unk_004 = LoadObjPalette(gUnk_08F69BA4, 32);
         FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->unk_004)->unk_06 + 16, 1);
-        func_08002A10(w->unk_000, gUnk_09320796);
+        SetObjTileSource(w->unk_000, gUnk_09320796);
         AnimInit(w->unk_0DC, gUnk_09EEFD38, gUnk_09EEFCAC);
         AnimStart(w->unk_0DC, 2, 1);
         w->unk_128 = (s32)AnimGetGfx(w->unk_0DC);
@@ -28933,7 +28933,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
             FadeSetPaletteExcluded(w->unk_01C->unk_06 + 16, 1);
 #endif
             LoadObjPaletteBank(((UnkStruct_080038C8*)w->unk_00C)->unk_06, pal);
-            func_08002A10(w->unk_008, gUnk_090A4664);
+            SetObjTileSource(w->unk_008, gUnk_090A4664);
             AnimInit(w->unk_0F4, gUnk_09EEB03C, gUnk_09EEB008);
             AnimStart(w->unk_0F4, 2, 1);
             w->unk_12C = AnimGetGfx(w->unk_0F4);
@@ -29329,7 +29329,7 @@ u8 func_080A5034(UnkStruct_080A3F5C* w, void* a) {
     FadeSetPaletteExcluded(w->unk_01C->unk_06 + 16, 1);
 #endif
     LoadObjPaletteBank(((UnkStruct_080038C8*)w->unk_00C)->unk_06, pal);
-    func_08002A10(w->unk_008, gUnk_090A4664);
+    SetObjTileSource(w->unk_008, gUnk_090A4664);
     AnimInit(w->unk_0F4, gUnk_09EEB03C, gUnk_09EEB008);
     AnimStart(w->unk_0F4, 2, 1);
     w->unk_12C = AnimGetGfx(w->unk_0F4);
@@ -29509,7 +29509,7 @@ void WorldSel_Before_0(WorldSelBeforeWork* w, UnkStruct_080A5490_Args* a) {
     w->unk_1C = 0;
     w->unk_1D = 0;
     w->unk_A3 = 0;
-    func_08003A70(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
+    UpdateAllocatedObjPalette(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
     FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->unk_06 + 16, 1);
     FadeSetPaletteExcluded(w->unk_0C->unk_06 + 16, 1);
 
@@ -29545,7 +29545,7 @@ s32 WorldSel_Before_1(WorldSelBeforeWork* w) {
         } while (0);
 
         w->unk_1D = 0;
-        func_08003A70(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
+        UpdateAllocatedObjPalette(w->unk_0C, &gUnk_09619178[gUnk_09EE8E60[w->unk_1C].unk_00 << 5]);
     }
 
     return 1;
@@ -29607,7 +29607,7 @@ void func_080A584C(u8* work, void* a) {
     work[0x4F8] = GetActiveDeckIndex();
     func_080A6838(work, 0);
     *(void**)&work[0] = AllocObjTiles(0x120, 0);
-    func_08002A10(*(void**)&work[0], gUnk_090A4664);
+    SetObjTileSource(*(void**)&work[0], gUnk_090A4664);
     AnimInit((AnimState*)&work[0x444], gUnk_09EEB03C, gUnk_09EEB008);
     AnimStart((AnimState*)&work[0x444], 0, 1);
     *(void**)&work[0x400] = AnimGetGfx((AnimState*)&work[0x444]);
@@ -30420,7 +30420,7 @@ void func_080A6FAC(UnkStruct_080A6FAC* w) {
     if (id != 0xFFFF) {
         if (id & 0x8000) {
             w->unk_024 = AllocObjTiles(0x280, 0);
-            func_08002A10(w->unk_024, gUnk_0908B1B4);
+            SetObjTileSource(w->unk_024, gUnk_0908B1B4);
             AnimInit(&w->anim, gUnk_09EEA164, gUnk_09EEA148);
             AnimStart(&w->anim, 0, 1);
             w->gfx = AnimGetGfx(&w->anim);
@@ -30493,13 +30493,13 @@ void func_080A7264(void** p) {
 void func_080A7284(u8* work, u8 mode) {
     switch (mode) {
     case 0:
-        func_08002A10(*(void**)&work[4], gUnk_090A4A0C);
+        SetObjTileSource(*(void**)&work[4], gUnk_090A4A0C);
         AnimInit(&work[0x45C], gUnk_09EEB064, gUnk_09EEB050);
         AnimStart(&work[0x45C], 0, 1);
         *(void**)&work[0x404] = AnimGetGfx(&work[0x45C]);
         break;
     case 1:
-        func_08002A10(*(void**)&work[4], gUnk_090A51F6);
+        SetObjTileSource(*(void**)&work[4], gUnk_090A51F6);
         AnimInit(&work[0x45C], gUnk_09EEB07C, gUnk_09EEB068);
         AnimStart(&work[0x45C], 0, 1);
         *(void**)&work[0x404] = AnimGetGfx(&work[0x45C]);
@@ -30587,7 +30587,7 @@ void deckexchange_0(u8* work, void* a) {
     work[0x700] = GetActiveDeckIndex();
     func_080A968C(work, 0);
     *(void**)&work[0x00] = AllocObjTiles(0x120, 0);
-    func_08002A10(*(void**)&work[0x00], gUnk_090A4664);
+    SetObjTileSource(*(void**)&work[0x00], gUnk_090A4664);
     AnimInit((AnimState*)&work[0x64C], gUnk_09EEB03C, gUnk_09EEB008);
     AnimStart((AnimState*)&work[0x64C], 0, 1);
     *(void**)&work[0x4E8] = AnimGetGfx((AnimState*)&work[0x64C]);
@@ -32253,13 +32253,13 @@ void func_080AAA38(u8* work) {
 void func_080AAA8C(u8* work, u8 kind) {
     switch (kind) {
     case 0:
-        func_08002A10(*(void**)&work[4], gUnk_090A4A0C);
+        SetObjTileSource(*(void**)&work[4], gUnk_090A4A0C);
         AnimInit(&work[0x664], gUnk_09EEB064, gUnk_09EEB050);
         AnimStart(&work[0x664], 0, 1);
         *(void**)&work[0x4EC] = AnimGetGfx(&work[0x664]);
         break;
     case 1:
-        func_08002A10(*(void**)&work[4], gUnk_090A51F6);
+        SetObjTileSource(*(void**)&work[4], gUnk_090A51F6);
         AnimInit(&work[0x664], gUnk_09EEB07C, gUnk_09EEB068);
         AnimStart(&work[0x664], 0, 1);
         *(void**)&work[0x4EC] = AnimGetGfx(&work[0x664]);

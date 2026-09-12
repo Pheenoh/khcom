@@ -163,12 +163,12 @@ _08098140:
 	bhi _08098198
 	movs r0, #0x80
 	lsls r0, r0, #0x01
-	bl func_080038C8
+	bl AllocSpriteFrameTiles
 	str r0, [r7, #0x08]
 	ldr r1, _0809818C @ =0x09EF1198
 	ldr r1, [r1, #0x04]
 	ldr r2, _08098190 @ =0x0950C478
-	bl func_080038E4
+	bl UpdateSpriteFrameTiles
 	str r4, [r7, #0x20]
 	ldr r2, [r7, #0x08]
 	mov r0, r8
@@ -198,12 +198,12 @@ _08098194: .4byte 0x06010000
 _08098198:
 	movs r0, #0xC0
 	lsls r0, r0, #0x01
-	bl func_080038C8
+	bl AllocSpriteFrameTiles
 	str r0, [r7, #0x08]
 	ldr r1, _0809820C @ =0x09EF1198
 	ldr r1, [r1, #0x0C]
 	ldr r2, _08098210 @ =0x0950C478
-	bl func_080038E4
+	bl UpdateSpriteFrameTiles
 	str r4, [r7, #0x20]
 	ldr r4, [r7, #0x08]
 	mov r1, r8
@@ -258,12 +258,12 @@ _08098218:
 	bhi _08098270
 	movs r0, #0x80
 	lsls r0, r0, #0x01
-	bl func_080038C8
+	bl AllocSpriteFrameTiles
 	str r0, [r7, #0x08]
 	ldr r1, _08098264 @ =0x09EF1198
 	ldr r1, [r1, #0x04]
 	ldr r2, _08098268 @ =0x0950C478
-	bl func_080038E4
+	bl UpdateSpriteFrameTiles
 	str r4, [r7, #0x20]
 	ldr r2, [r7, #0x08]
 	mov r0, r8
@@ -293,12 +293,12 @@ _0809826C: .4byte 0x06010000
 _08098270:
 	movs r0, #0xC0
 	lsls r0, r0, #0x01
-	bl func_080038C8
+	bl AllocSpriteFrameTiles
 	str r0, [r7, #0x08]
 	ldr r1, _080982E4 @ =0x09EF1198
 	ldr r1, [r1, #0x0C]
 	ldr r2, _080982E8 @ =0x0950C478
-	bl func_080038E4
+	bl UpdateSpriteFrameTiles
 	str r4, [r7, #0x20]
 	ldr r4, [r7, #0x08]
 	mov r1, r8
@@ -353,12 +353,12 @@ _080982F0:
 	bhi _08098348
 	movs r0, #0x80
 	lsls r0, r0, #0x01
-	bl func_080038C8
+	bl AllocSpriteFrameTiles
 	str r0, [r7, #0x08]
 	ldr r1, _0809833C @ =0x09EF1198
 	ldr r1, [r1, #0x04]
 	ldr r2, _08098340 @ =0x0950C478
-	bl func_080038E4
+	bl UpdateSpriteFrameTiles
 	str r4, [r7, #0x20]
 	ldr r2, [r7, #0x08]
 	mov r0, r8
@@ -388,12 +388,12 @@ _08098344: .4byte 0x06010000
 _08098348:
 	movs r0, #0xC0
 	lsls r0, r0, #0x01
-	bl func_080038C8
+	bl AllocSpriteFrameTiles
 	str r0, [r7, #0x08]
 	ldr r1, _080983CC @ =0x09EF1198
 	ldr r1, [r1, #0x0C]
 	ldr r2, _080983D0 @ =0x0950C478
-	bl func_080038E4
+	bl UpdateSpriteFrameTiles
 	str r4, [r7, #0x20]
 	ldr r4, [r7, #0x08]
 	mov r1, r8
@@ -456,12 +456,12 @@ _080983D8:
 	cmp r0, #0x09
 	bhi _0809841C
 	movs r0, #0x80
-	bl func_080038C8
+	bl AllocSpriteFrameTiles
 	str r0, [r7, #0x08]
 	ldr r1, _08098410 @ =0x09EF1198
 	ldr r1, [r1, #0x00]
 	ldr r2, _08098414 @ =0x0950C478
-	bl func_080038E4
+	bl UpdateSpriteFrameTiles
 	str r4, [r7, #0x20]
 	ldr r2, [r7, #0x08]
 	mov r0, r8
@@ -482,12 +482,12 @@ _08098418: .4byte 0x06010000
 _0809841C:
 	movs r0, #0x80
 	lsls r0, r0, #0x01
-	bl func_080038C8
+	bl AllocSpriteFrameTiles
 	str r0, [r7, #0x08]
 	ldr r1, _080984D0 @ =0x09EF1198
 	ldr r1, [r1, #0x08]
 	ldr r2, _080984D4 @ =0x0950C478
-	bl func_080038E4
+	bl UpdateSpriteFrameTiles
 	str r4, [r7, #0x20]
 	ldr r4, [r7, #0x08]
 	mov r1, r8

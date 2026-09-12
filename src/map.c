@@ -3578,7 +3578,7 @@ void func_080E5D6C(UnkStruct_080E590C* p, u8 n, u16 a) {
         break;
     }
     AnimChangeWithTables(p->anim, q->unk_0C, a, q->unk_04, q->unk_00);
-    func_08002A10(p->tiles, q->unk_08);
+    SetObjTileSource(p->tiles, q->unk_08);
 }
 
 void func_080E5DEC(UnkStruct_080E590C* p) {
@@ -7951,13 +7951,13 @@ void func_080ECA54(u8* work) {
 }
 
 void func_080ECA88(UnkStruct_080ECA88* p) {
-    func_080038E4(p->unk_44, p->unk_4C, p->unk_54);
-    func_080038E4(p->unk_58, p->unk_60, p->unk_64);
+    UpdateSpriteFrameTiles(p->unk_44, p->unk_4C, p->unk_54);
+    UpdateSpriteFrameTiles(p->unk_58, p->unk_60, p->unk_64);
 }
 
 void func_080ECAA8(UnkStruct_080ECA88* p) {
-    func_080038E4(p->unk_44, p->unk_4C, p->unk_50);
-    func_080038E4(p->unk_58, p->unk_60, p->unk_68);
+    UpdateSpriteFrameTiles(p->unk_44, p->unk_4C, p->unk_50);
+    UpdateSpriteFrameTiles(p->unk_58, p->unk_60, p->unk_68);
 }
 
 s32 func_080ECAC8(UnkStruct_080ECA88* p) {
@@ -8078,10 +8078,10 @@ void func_080ECC90(UnkStruct_080ECA88* w, UnkStruct_080DFB7C* p) {
     v->x -= v->y;
     e->unk_1A = 32;
     e->unk_30 = 3;
-    w->unk_44 = func_080038C8(0x400);
+    w->unk_44 = AllocSpriteFrameTiles(0x400);
     w->unk_48 = LoadObjPalette(q->unk_00, 32);
     w->unk_5C = LoadObjPalette(gUnk_09991284, 32);
-    w->unk_58 = func_080038C8(0x100);
+    w->unk_58 = AllocSpriteFrameTiles(0x100);
 
     switch (p->unk_06) {
     case 0:
@@ -11410,7 +11410,7 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
 
 u8 func_080F1A84(MapGmkTutorialWork* w) {
     if (gUnk_02039BA0->unk_70 & 0x200000) {
-        func_080038E4(w->unk_09C, gUnk_098A94A0, gUnk_0994C364);
+        UpdateSpriteFrameTiles(w->unk_09C, gUnk_098A94A0, gUnk_0994C364);
         w->unk_0A8 = 1;
         w->unk_0AC = func_080F1ACC;
     }
@@ -11431,8 +11431,8 @@ void func_080F1AD0(MapGmkTutorialWork* w) {
     w->unk_014 = 0xAD;
     w->unk_01A = 32;
     w->unk_0A0 = LoadObjPalette(&gUnk_099910C4[0x140], 32);
-    w->unk_09C = func_080038C8(0x400);
-    func_080038E4(w->unk_09C, gUnk_098A94A0, gUnk_0994BF64);
+    w->unk_09C = AllocSpriteFrameTiles(0x400);
+    UpdateSpriteFrameTiles(w->unk_09C, gUnk_098A94A0, gUnk_0994BF64);
     func_080122AC(&w->unk_040, 6, 16, 0);
     func_08012324(&w->unk_040, w->unk_000, w->unk_004, w->unk_008);
     w->unk_0A8 = 0;
@@ -11500,7 +11500,7 @@ void func_080F1CCC(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->unk_09C, gUnk_09EDFCF4, gUnk_09EDFCBC);
     AnimStart(&w->unk_09C, 0, 1);
     w->unk_0BC = AnimGetGfx(&w->unk_09C);
-    func_08002A10(w->unk_0B4, gUnk_0899A8BE);
+    SetObjTileSource(w->unk_0B4, gUnk_0899A8BE);
     w->unk_0C0 = func_080F1C64;
     v = 0;
 
@@ -11689,7 +11689,7 @@ void func_080F2178(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(a, d->unk_10, d->unk_0C);
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
-    func_08002A10(w->unk_0B8, d->unk_04);
+    SetObjTileSource(w->unk_0B8, d->unk_04);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -11781,7 +11781,7 @@ void func_080F23E8(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     AnimInit(a, d->unk_10, d->unk_0C);
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
-    func_08002A10(w->unk_0B8, d->unk_04);
+    SetObjTileSource(w->unk_0B8, d->unk_04);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -11885,7 +11885,7 @@ void func_080F26B0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     AnimInit(a, d->unk_10, d->unk_0C);
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
-    func_08002A10(w->unk_0B8, d->unk_04);
+    SetObjTileSource(w->unk_0B8, d->unk_04);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -11980,7 +11980,7 @@ void func_080F2934(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     }
 
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
-    func_08002A10(w->unk_0B8, d->unk_04);
+    SetObjTileSource(w->unk_0B8, d->unk_04);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -12073,7 +12073,7 @@ void func_080F2BD0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     }
 
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
-    func_08002A10(w->unk_0B8, d->unk_04);
+    SetObjTileSource(w->unk_0B8, d->unk_04);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -12180,7 +12180,7 @@ void func_080F2E90(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     }
 
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
-    func_08002A10(w->unk_0B8, d->unk_04);
+    SetObjTileSource(w->unk_0B8, d->unk_04);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = d->unk_20;
@@ -12280,7 +12280,7 @@ void func_080F3150(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->unk_0A0, d->unk_10, d->unk_0C);
     AnimStart(&w->unk_0A0, 0, 1);
     w->unk_0C0 = AnimGetGfx(&w->unk_0A0);
-    func_08002A10(w->unk_0B8, d->unk_04);
+    SetObjTileSource(w->unk_0B8, d->unk_04);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = func_080F3050;
@@ -12608,7 +12608,7 @@ u8 func_080F3A74(MapGmk01Work* w) {
         a = &w->unk_0A0;
         AnimStart(a, 1, 1);
         w->unk_0C0 = AnimGetGfx(a);
-        func_08002A10(w->unk_0B8, &gUnk_09858238[0x74]);
+        SetObjTileSource(w->unk_0B8, &gUnk_09858238[0x74]);
         w->unk_0C8 = func_080F3ADC;
     }
     return 1;
@@ -12669,7 +12669,7 @@ void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
         w->unk_0C0 = AnimGetGfx(a);
         w->unk_0C8 = func_080F3A74;
     }
-    func_08002A10(w->unk_0B8, &gUnk_09858238[0x74]);
+    SetObjTileSource(w->unk_0B8, &gUnk_09858238[0x74]);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
 }
@@ -12802,7 +12802,7 @@ void func_080F3FB4(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
     AnimInit(a, d->unk_10, d->unk_0C);
     AnimStart(a, 0, 1);
     w->unk_0C0 = AnimGetGfx(a);
-    func_08002A10(w->unk_0B8, d->unk_04);
+    SetObjTileSource(w->unk_0B8, d->unk_04);
     func_080122AC(&w->unk_044, 6, d->unk_1C, d->unk_1E);
     func_08012324(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = 1;
@@ -14579,7 +14579,7 @@ void func_080F70F4(MapTutorialWork* w) {
 
     if (AnimIsFinished(a)) {
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF85C, gUnk_09EDF834);
-        func_08002A10(w->unk_0B4, gUnk_08957290);
+        SetObjTileSource(w->unk_0B4, gUnk_08957290);
         func_080A411C(&w->unk_0C8, 0, 0x6C);
         w->unk_0C4 = func_080F7160;
     } else {
@@ -14608,7 +14608,7 @@ void func_080F71AC(MapTutorialWork* w) {
         TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, w);
         m4aSongNumStart(0x75);
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
-        func_08002A10(w->unk_0B4, gUnk_08963BAC);
+        SetObjTileSource(w->unk_0B4, gUnk_08963BAC);
         w->unk_0C4 = func_080F7284;
     } else if (w->unk_06C != 0) {
         if (!(gUnk_0203C7AC->unk_00 & 4) && w->unk_074 == 1) {

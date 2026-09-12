@@ -2017,5 +2017,5 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
 
     e = &gUnk_0813C89C[a][idx];
     AnimChangeWithTables(&work->unk_08, e->unk_0C, flags, e->unk_04, e->unk_00);
-    func_08002A10(work->tiles, e->unk_08);
+    SetObjTileSource(work->tiles, e->unk_08);
 }

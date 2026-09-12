@@ -5,7 +5,7 @@
 
 UnkStruct_02039CA8 gUnk_02039CA8;
 
-void func_0800F988(UnkStruct_02039CA8* p) {
+void AdvanceLevelExpThreshold(UnkStruct_02039CA8* p) {
     s32 n = p->level + 1;
 
     if (p->level) {
@@ -15,7 +15,7 @@ void func_0800F988(UnkStruct_02039CA8* p) {
     }
 }
 
-void func_0800F9A0(void) {
+void InitPlayerProgression(void) {
     gUnk_02039CA8.maxHp = 0x50;
     gUnk_02039CA8.cp = 0x113;
     gUnk_02039CA8.dp = 8;
@@ -49,34 +49,34 @@ u8 LevelUp(void) {
     if (gUnk_02039CA8.level + gBtlWork->unk_0FA + 1 <= 99) {
         gBtlWork->unk_0FA++;
         gUnk_02039CA8.level++;
-        func_0800F988(&gUnk_02039CA8);
+        AdvanceLevelExpThreshold(&gUnk_02039CA8);
         return 1;
     } else {
         return 0;
     }
 }
-s32 func_0800FA58(void) {
+s32 LevelUpMaxHp(void) {
     gGameState.maxHp += 15;
     if (gGameState.maxHp > 560) {
         gGameState.maxHp = 560;
     }
     return 15;
 }
-s32 func_0800FA7C(void) {
+s32 LevelUpCp(void) {
     gGameState.cp += 25;
     if (gGameState.cp > 9999) {
         gGameState.cp = 9999;
     }
     return 25;
 }
-s32 func_0800FAA0(void) {
+s32 LevelUpDp(void) {
     gGameState.dp += 2;
     if (gGameState.dp > 999) {
         gGameState.dp = 999;
     }
     return 2;
 }
-s32 func_0800FAC4(void) {
+s32 LevelUpAp(void) {
     gGameState.ap += 1;
     if (gGameState.ap > 999) {
         gGameState.ap = 999;

@@ -387,7 +387,7 @@ u8 func_080ABED0(void);
 void func_0800EEBC(Actor* p, SprObj* s);
 void func_0800F230(void);
 u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r);
-void func_0800F988(UnkStruct_02039CA8* p);
+void AdvanceLevelExpThreshold(UnkStruct_02039CA8* p);
 void func_0801CA88(void);
 
 const UnkStruct_08133E5C* func_0800FB14(u16 i);
@@ -457,7 +457,7 @@ extern vu16 gSystemFlags;
 u8 func_0801AD68(BtlObj* p);
 void func_08010C70(void);
 void func_08011364(BtlObj* a, BtlObj* b, const UnkStruct_0813400C* c);
-void func_0800F9A0(void);
+void InitPlayerProgression(void);
 
 void func_080135EC(s32 x, s32 y, s32 z);
 void func_08013560(s32 x, s32 y, s32 z);
@@ -496,10 +496,10 @@ void func_0801718C(void);
 u8 func_0801B818(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n, s16* cnt);
 void func_0801B8A8(UnkStruct_0801B8A8* p, u16 b, s16 c, s16* n);
 
-s32 func_0800FA58(void);
-s32 func_0800FA7C(void);
-s32 func_0800FAA0(void);
-s32 func_0800FAC4(void);
+s32 LevelUpMaxHp(void);
+s32 LevelUpCp(void);
+s32 LevelUpDp(void);
+s32 LevelUpAp(void);
 void AddExp(u16 a);
 void func_08015D04(void);
 s32 func_08012188(BtlObj* p, s16 h, s32 c);

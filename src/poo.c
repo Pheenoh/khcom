@@ -1655,7 +1655,7 @@ void func_080CAA50(PooSoraWork* w, s32 b, u16 c) {
     w->unk_A4 = b;
     e = &gUnk_096FCF54[b][d];
     AnimChangeWithTables(w->unk_08, (u8)e->unk_0C, c, e->unk_04, e->unk_00);
-    func_08002A10(w->tiles, e->unk_08);
+    SetObjTileSource(w->tiles, e->unk_08);
 }
 
 void func_080CAB24(PooActor* p) {
@@ -3508,7 +3508,7 @@ void func_080CD854(PooAnimWork* w, s32 b, u16 c) {
     if (w->unk_26 != b) {
         w->unk_26 = b;
         AnimChangeWithTables(w->unk_0C, gUnk_096FD47C[b].unk_0C, c, gUnk_096FD47C[b].unk_00, gUnk_096FD47C[b].unk_04);
-        func_08002A10(w->unk_00, gUnk_096FD47C[b].unk_08);
+        SetObjTileSource(w->unk_00, gUnk_096FD47C[b].unk_08);
     }
 }
 
@@ -3918,7 +3918,7 @@ void func_080CE2C4(PooRabbitWork* w, s32 b, u16 c) {
     if (w->unk_A8 != b) {
         w->unk_A8 = b;
         AnimChangeWithTables(w->anim, gUnk_096FD50C[b].unk_0C, c, gUnk_096FD50C[b].unk_00, gUnk_096FD50C[b].unk_04);
-        func_08002A10(w->tiles, gUnk_096FD50C[b].unk_08);
+        SetObjTileSource(w->tiles, gUnk_096FD50C[b].unk_08);
     }
 }
 
@@ -4141,7 +4141,7 @@ void func_080CE77C(PooTiggerWork* w, u16 b) {
     if (w->unk_26 != r) {
         w->unk_26 = r;
         AnimChangeWithTables(w->anim, gUnk_096FD59C[r].unk_0C, b, gUnk_096FD59C[r].unk_00, gUnk_096FD59C[r].unk_04);
-        func_08002A10(w->tiles, gUnk_096FD59C[r].unk_08);
+        SetObjTileSource(w->tiles, gUnk_096FD59C[r].unk_08);
     }
 }
 
@@ -6350,7 +6350,7 @@ void func_080D2034(PooBflyPart* p) {
     func_080D1FB8(p);
     d = &gUnk_09EF4C88[p->unk_4C];
     AnimChangeWithTables(p->anim, d->unk_0C, 1, d->unk_04, d->unk_00);
-    func_08002A10(p->tiles, d->unk_08);
+    SetObjTileSource(p->tiles, d->unk_08);
 }
 
 void func_080D206C(PooBflyPart* p) {

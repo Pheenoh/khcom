@@ -299,7 +299,7 @@ void func_080AEE84(void) {
 void func_080AEED8(u16 a, u16 b, u16 c) {
     SioAnimDef* def = &gUnk_096193E0[b];
     AnimChangeWithTables(&gSioBtlOptionWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
-    func_08002A10(gSioBtlOptionWork->unk_008[a], def->unk_08);
+    SetObjTileSource(gSioBtlOptionWork->unk_008[a], def->unk_08);
 }
 
 void mode_sio_btl_option_0(s32 arg) {
@@ -2345,7 +2345,7 @@ void func_080B1C14(void) {
 void func_080B1C70(u16 a, u16 b, u16 c) {
     SioAnimDef* def = &gUnk_09619444[b];
     AnimChangeWithTables(&gSioChgCardWork->unk_020[a], def->unk_0C, c, def->unk_04, def->unk_00);
-    func_08002A10(gSioChgCardWork->unk_008[a], def->unk_08);
+    SetObjTileSource(gSioChgCardWork->unk_008[a], def->unk_08);
 }
 #endif
 

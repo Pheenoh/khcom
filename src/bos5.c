@@ -558,7 +558,7 @@ void func_080FB930(MdWork* work, u16 id) {
 
         if (work->unk_17C[n].unk_04 != gUnk_09992108[id].unk_1C[n].unk_08 && n == 0) {
             work->unk_17C[n].unk_04 = gUnk_09992108[id].unk_1C[n].unk_08;
-            func_080038E4(work->unk_17C[n].unk_00, work->unk_17C[n].unk_08, work->unk_17C[n].unk_04);
+            UpdateSpriteFrameTiles(work->unk_17C[n].unk_00, work->unk_17C[n].unk_08, work->unk_17C[n].unk_04);
         }
 
         work->unk_17C[n].unk_0C = gUnk_09992108[id].unk_1C[n].unk_00;
@@ -1113,7 +1113,7 @@ void task_bos_md_0(MdWork* work, void* arg) {
         work->unk_17C[i].unk_0E = 0;
     }
 
-    work->unk_17C[0].unk_00 = func_080038C8(2432);
+    work->unk_17C[0].unk_00 = AllocSpriteFrameTiles(2432);
     work->unk_17C[1].unk_00 = LoadObjTiles(gUnk_099D42FC, 0x12A0);
     gBtlWork->unk_0CC = 0x11000;
     gBtlWork->unk_0D0 = 0x15000;

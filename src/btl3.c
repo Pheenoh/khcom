@@ -228,7 +228,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
 
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithTables(&work->anim, 0, 1, gUnk_09EDF154, gUnk_09EDF124);
-    func_08002A10(work->unk_00, gUnk_08901C8A);
+    SetObjTileSource(work->unk_00, gUnk_08901C8A);
     work->x = args->unk_00;
     work->y = args->unk_04;
     work->z = args->unk_08;

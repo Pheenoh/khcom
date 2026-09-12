@@ -98,7 +98,7 @@ u8 KeyGetOffFrames(KeyState* k, u16 key) {
     }
 }
 
-u16 func_0800846C(KeyState* k, u16 a, u16 b) {
+u16 KeyReadChord(KeyState* k, u16 a, u16 b) {
     u16 r = 0;
     u8 ca = KeyGetOffFrames(k, a);
     u8 cb = KeyGetOffFrames(k, b);
@@ -366,12 +366,12 @@ u16 SioKeyGetRepeatB(void) {
     return KeyGetRepeat(gSioKeyStateB);
 }
 
-u16 func_080088FC(u16 a, u16 b) {
-    return func_0800846C(gSioKeyStateA, a, b);
+u16 SioKeyReadChordA(u16 a, u16 b) {
+    return KeyReadChord(gSioKeyStateA, a, b);
 }
 
-u16 func_08008920(u16 a, u16 b) {
-    return func_0800846C(gSioKeyStateB, a, b);
+u16 SioKeyReadChordB(u16 a, u16 b) {
+    return KeyReadChord(gSioKeyStateB, a, b);
 }
 
 void SioKeyStateUpdateA(u16 keys) {

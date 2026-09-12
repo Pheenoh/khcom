@@ -395,8 +395,8 @@ void func_080BA104(BtlObj* sub, TmFootWork* work) {
 void func_080BA11C(TmFootWork* work) {
     work->unk_002 = 0;
     work->unk_000 = 0;
-    func_08002A10(work->tiles2, gUnk_09654C04);
-    func_08002A10(work->tiles3, gUnk_09654C04);
+    SetObjTileSource(work->tiles2, gUnk_09654C04);
+    SetObjTileSource(work->tiles3, gUnk_09654C04);
     work->unk_12C = gUnk_09EF39DC[2];
     work->unk_244 = gUnk_09EF39DC[2];
 
@@ -429,8 +429,8 @@ void func_080BA11C(TmFootWork* work) {
     }
 }
 void func_080BA2B0(TmFootWork* work) {
-    func_08002A10(work->tiles2, gUnk_09654C04);
-    func_08002A10(work->tiles3, gUnk_09654C04);
+    SetObjTileSource(work->tiles2, gUnk_09654C04);
+    SetObjTileSource(work->tiles3, gUnk_09654C04);
     work->unk_12C = gUnk_09EF39DC[0];
     work->unk_244 = gUnk_09EF39DC[0];
 
@@ -473,8 +473,8 @@ void func_080BA43C(TmFootWork* work, s16 a) {
 void func_080BA49C(TmFootWork* work) {
     work->unk_002 = 0;
     work->unk_000 = 0;
-    func_08002A10(work->tiles2, gUnk_09658C04);
-    func_08002A10(work->tiles3, gUnk_09658C04);
+    SetObjTileSource(work->tiles2, gUnk_09658C04);
+    SetObjTileSource(work->tiles3, gUnk_09658C04);
     work->unk_12C = gUnk_09EF3A1C[6];
     work->unk_244 = gUnk_09EF3A1C[1];
 

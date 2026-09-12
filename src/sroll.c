@@ -137,7 +137,7 @@ void func_081149B8(SrollBCharWork* w) {
     def = w->unk_08->unk_00;
     gfx = def->unk_00;
     AnimChangeWithTables(&w->anim, def->unk_0C, def->unk_0E, gfx->unk_04, gfx->unk_00);
-    func_08002A10(w->tiles, gfx->unk_08);
+    SetObjTileSource(w->tiles, gfx->unk_08);
     w->unk_08->unk_14 &= 0xFFFE;
 }
 

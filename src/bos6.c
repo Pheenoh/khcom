@@ -1631,12 +1631,12 @@ void func_0810C494(BosLstWork* work, u16 a, u16 b, u8 c) {
     }
     switch (gUnk_09A4D14C[a]) {
     case 0:
-        func_08002A10(work->tiles, gUnk_09C4B012);
+        SetObjTileSource(work->tiles, gUnk_09C4B012);
         AnimChangeWithTables(&work->anim, v, b, gUnk_09EFAD3C, gUnk_09EFABB0);
         break;
     case 1:
         v -= 14;
-        func_08002A10(work->tiles, gUnk_09C51CBC);
+        SetObjTileSource(work->tiles, gUnk_09C51CBC);
         AnimChangeWithTables(&work->anim, v, b, gUnk_09EFADBC, gUnk_09EFAD74);
         break;
     }

@@ -73,7 +73,7 @@ _0808D894:
 	bl AllocObjTiles
 	str r0, [r5, #0x28]
 	ldr r1, _0808D980 @ =0x0908B1B4
-	bl func_08002A10
+	bl SetObjTileSource
 	movs r2, #0x83
 	lsls r2, r2, #0x04
 	adds r4, r5, r2

@@ -342,7 +342,7 @@ void task_lockon_0(LockonWork* w) {
     gUnk_02039DC4 = EwramAlloc(12);
     w->tiles = AllocObjTiles(0x80, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 0x20);
-    func_08002A10(w->tiles, gUnk_090D7C84);
+    SetObjTileSource(w->tiles, gUnk_090D7C84);
     AnimInit(&w->anim, gUnk_09EEC66C, gUnk_09EEC660);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
