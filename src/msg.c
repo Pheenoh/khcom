@@ -11592,7 +11592,6 @@ u8 func_08073294(MsgWinWork* p, void* a) {
     TaskPoolUpdate(p);
     return 1;
 }
-#ifdef NON_MATCHING
 u8 func_08073318(MsgWinWork* p, void* a) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
 
@@ -11618,7 +11617,13 @@ u8 func_08073318(MsgWinWork* p, void* a) {
             _08065994();
 
             if ((e->unk_14 & 0x8000) == 0) {
-                if (p->unk_3C[p->unk_27 + 1].unk_08 == 4) {
+                if (p->unk_3C[p->unk_27 + 1].unk_08 != 4) {
+                    p->unk_1E = 8;
+                    func_08073E74(&p->unk_2C);
+                    SetTaskUpdate(a, (void*)func_0807344C);
+                    gUnk_02039DC8->unk_81 = text;
+                    p->unk_34 = text;
+                } else {
                     p->unk_1E = text;
                     p->unk_29 = text;
                     p->unk_2A = text;
@@ -11626,12 +11631,6 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                     gUnk_02039DC8->unk_64 &= ~1;
                     p->unk_34 = 1;
                     SetTaskUpdate(a, (void*)func_08072EAC);
-                } else {
-                    p->unk_1E = 8;
-                    func_08073E74(&p->unk_2C);
-                    SetTaskUpdate(a, (void*)func_0807344C);
-                    gUnk_02039DC8->unk_81 = text;
-                    p->unk_34 = text;
                 }
             } else {
                 p->unk_1E = 8;
@@ -11646,9 +11645,6 @@ u8 func_08073318(MsgWinWork* p, void* a) {
     TaskPoolUpdate(p);
     return 1;
 }
-#else
-INCLUDE_ASM("msg/func_08073318.s");
-#endif
 u8 func_0807344C(MsgWinWork* p, void* a) {
     MsgLine0806180C* e = &p->unk_3C[p->unk_27];
 
