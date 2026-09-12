@@ -2,6 +2,7 @@
 #define GUARD_FLD_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
 #include "key.h"
@@ -62,26 +63,6 @@ typedef struct UnkStruct_02039BA0 {
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
 
-typedef struct GameState {
-    u8 unk_00;
-    u8 unk_01[0x0B];
-    u8 unk_0C;
-    u8 unk_0D;
-    s8 unk_0E;
-    u8 unk_0F[0x05];
-    FldPos unk_14;
-    u8 unk_24;
-    u8 unk_25[0x03];
-    s32 unk_28;
-    s32 unk_2C;
-    u16 unk_30;
-    u8 unk_32[0x02];
-    s32 unk_34;
-    s32 unk_38;
-    s32 unk_3C;
-} GameState;
-
-extern GameState gGameState;
 typedef struct FldWork {
     void* tiles;
     FldRes* palette;

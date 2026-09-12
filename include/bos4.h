@@ -2,6 +2,7 @@
 #define GUARD_BOS4_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "mode.h"
 #include "key.h"
@@ -370,30 +371,6 @@ void func_080DFA18(u8 a);
 void func_080DEC00(void);
 void task_bos_ursula_bubble_single_3(UrsulaBubbleSingleWork* work);
 
-typedef struct UnkStruct_02039D34 {
-    u16 unk_00;
-    u8 unk_02;
-    u8 unk_03;
-} UnkStruct_02039D34;
-
-typedef struct GameState {
-    u8 unk_000;
-    u8 unk_001[0x07];
-    u32 flags;
-    u8 world;
-    u8 unk_00D;
-    u8 floor;
-    u8 unk_00F;
-    u8 unk_010[0x16A];
-    u16 unk_17A;
-    u16 unk_17C;
-    u16 unk_17E;
-    u8 unk_180[0x04];
-    UnkStruct_02039D34 unk_184[13];
-    u32 unk_1B8;
-} GameState;
-
-extern GameState gGameState;
 
 void func_080DF8C0(u8 a, u8 b);
 void func_080DF990(u8 a);

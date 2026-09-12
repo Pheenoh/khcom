@@ -2,6 +2,7 @@
 #define GUARD_MAP_H
 
 #include "types.h"
+#include "game_state.h"
 #include "anim.h"
 #include "m4a.h"
 #include "mode.h"
@@ -160,62 +161,12 @@ typedef struct UnkStruct_0203C590 {
     u8 unk_1C[0x200];
 } UnkStruct_0203C590;
 
-typedef struct UnkStruct_02039D34 {
-    u16 unk_00;
-    u8 unk_02;
-    u8 unk_03;
-} UnkStruct_02039D34;
-
-typedef struct UnkStruct_02039BB0Tail {
-    UnkStruct_02039D34 unk_00[0x0D];
-} UnkStruct_02039BB0Tail;
-
-typedef struct UnkStruct_02039BF0 {
-    u8 unk_00[0x1C];
-    u8 unk_1C[0x1C];
-} UnkStruct_02039BF0;
-
-typedef struct GameState {
-    u8 unk_00;
-    u8 unk_01[0x07];
-    u32 flags;
-    u8 world;
-    u8 unk_0D;
-    u8 floor;
-    u8 unk_0F;
-    u8 unk_10[0x04];
-    s32 unk_14;
-    s32 unk_18;
-    s32 unk_1C;
-    u8 unk_20[0x04];
-    u8 unk_24;
-    u8 unk_25[0x0D];
-    u16 unk_32;
-    u8 unk_34[0x0C];
-    UnkStruct_02039BF0 unk_40[3];
-    u8 unk_E8[0x10];
-    s16 unk_F8;
-    u8 unk_FA[0x02];
-    u16 unk_FC;
-    u8 unk_FE[0x0A];
-    u8 unk_108;
-    u8 unk_109[0x6B];
-    u32 unk_174;
-    u8 unk_178[0x02];
-    u16 unk_17A;
-    u16 unk_17C;
-    u16 unk_17E;
-    u8 unk_180[0x04];
-    UnkStruct_02039BB0Tail unk_184;
-    u32 unk_1B8;
-} GameState;
-
 typedef struct UnkStruct_080E92B8 {
     u8 unk_00;
     u8 unk_01;
     u8 unk_02[0x02];
     u8 unk_04[0x21C];
-    UnkStruct_02039BB0Tail unk_220;
+    GameFloor unk_220[13];
 } UnkStruct_080E92B8;
 
 typedef struct UnkStruct_09EF8370 {
@@ -1406,7 +1357,6 @@ extern u8 gUnk_08B1E992[];
 extern u8 gUnk_08B1E9A6[];
 extern u8 gUnk_09EF6C38[];
 extern u8 gUnk_0984C868[];
-extern GameState gGameState;
 extern UnkStruct_02039D6C gUnk_02039D6C[];
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 extern UnkStruct_0203C7B0 gUnk_0203C7B0;

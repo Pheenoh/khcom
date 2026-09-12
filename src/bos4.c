@@ -3249,7 +3249,7 @@ void Mode_MapChk_1(void) {
 
         switch (e->unk_01) {
         case 1:
-            gGameState.unk_184[e->unk_03].unk_02 = gUnk_0984B458[e->unk_02][0];
+            gGameState.floors[e->unk_03].world = gUnk_0984B458[e->unk_02][0];
             func_080DDF04(gMapChkWork->unk_03, 0);
             func_080DF990(gMapChkWork->unk_03);
             func_080DFA18(gUnk_0984B458[gMapChkWork->unk_02][0]);
@@ -3258,7 +3258,7 @@ void Mode_MapChk_1(void) {
             func_080E04EC();
             break;
         case 2:
-            gGameState.unk_184[e->unk_03].unk_02 = 0;
+            gGameState.floors[e->unk_03].world = 0;
             func_080DDF04(gMapChkWork->unk_03, 0);
             func_080DF990(gMapChkWork->unk_03);
             gUnk_0203C590.unk_06 = 0xFE;
@@ -3266,7 +3266,7 @@ void Mode_MapChk_1(void) {
             func_080E04EC();
             break;
         case 3:
-            gGameState.unk_184[gMapChkWork->unk_03].unk_02 = gUnk_0984B458[gMapChkWork->unk_02][0];
+            gGameState.floors[gMapChkWork->unk_03].world = gUnk_0984B458[gMapChkWork->unk_02][0];
             func_080DDF04(gMapChkWork->unk_03, 1);
             func_080DF990(gMapChkWork->unk_03);
             gUnk_0203C590.unk_06 = 0xFD;
@@ -3274,7 +3274,7 @@ void Mode_MapChk_1(void) {
             func_080E04EC();
             break;
         case 4:
-            gGameState.unk_184[0].unk_02 = 10;
+            gGameState.floors[0].world = 10;
             func_080DF990(0);
             func_080DFA18(10);
             gUnk_0203C590.unk_06 = 0xFC;
@@ -3282,7 +3282,7 @@ void Mode_MapChk_1(void) {
             func_080E04EC();
             break;
         default:
-            gGameState.unk_184[gMapChkWork->unk_03].unk_02 =
+            gGameState.floors[gMapChkWork->unk_03].world =
                 gUnk_0984B458[gMapChkWork->unk_02][0];
             func_080DDF04(gMapChkWork->unk_03, 0);
             func_080DF990(gMapChkWork->unk_03);
@@ -4096,9 +4096,9 @@ void func_080DF8C0(u8 a, u8 b) {
     s32 i;
     u16 t;
 
-    gUnk_0203C590.unk_02 = gGameState.unk_184[(s8)gGameState.floor].unk_00;
-    gUnk_0203C590.unk_04 = gGameState.unk_184[(s8)gGameState.floor].unk_02;
-    gUnk_0203C590.unk_05 = gGameState.unk_184[(s8)gGameState.floor].unk_03;
+    gUnk_0203C590.unk_02 = gGameState.floors[(s8)gGameState.floor].unk_00;
+    gUnk_0203C590.unk_04 = gGameState.floors[(s8)gGameState.floor].world;
+    gUnk_0203C590.unk_05 = gGameState.floors[(s8)gGameState.floor].unk_03;
     gUnk_0203C590.unk_06 = a;
     gUnk_0203C590.unk_07 = b;
 
@@ -4159,7 +4159,7 @@ void func_080DF9E0(u8 a) {
 
 void func_080DFA18(u8 a) {
     gUnk_0203C590.unk_04 = a;
-    gGameState.unk_184[(s8)gGameState.floor].unk_02 = a;
+    gGameState.floors[(s8)gGameState.floor].world = a;
 }
 
 void func_080DFA3C(void) {
@@ -4189,9 +4189,9 @@ void func_080DFA3C(void) {
 }
 
 void func_080DFAA8(void) {
-    gGameState.unk_184[(s8)gGameState.floor].unk_00 = gUnk_0203C590.unk_02;
-    gGameState.unk_184[(s8)gGameState.floor].unk_02 = gUnk_0203C590.unk_04;
-    gGameState.unk_184[(s8)gGameState.floor].unk_03 = gUnk_0203C590.unk_05;
+    gGameState.floors[(s8)gGameState.floor].unk_00 = gUnk_0203C590.unk_02;
+    gGameState.floors[(s8)gGameState.floor].world = gUnk_0203C590.unk_04;
+    gGameState.floors[(s8)gGameState.floor].unk_03 = gUnk_0203C590.unk_05;
 }
 
 void func_080DFAF4(u8 a, u8 b) {
@@ -4208,9 +4208,9 @@ void func_080DFB2C(void) {
     s32 i;
 
     for (i = 0; i < 13; i++) {
-        gGameState.unk_184[i].unk_00 = 0;
-        gGameState.unk_184[i].unk_02 = 0;
-        gGameState.unk_184[i].unk_03 = 0;
+        gGameState.floors[i].unk_00 = 0;
+        gGameState.floors[i].world = 0;
+        gGameState.floors[i].unk_03 = 0;
     }
 
     gUnk_0203C590.unk_00 = 0;

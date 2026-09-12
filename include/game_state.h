@@ -3,6 +3,18 @@
 
 #include "types.h"
 #include "save_types.h"
+#include "fld_types.h"
+
+typedef struct GameFloor {
+    u16 unk_00;
+    u8 world;
+    u8 unk_03;
+} GameFloor;
+
+typedef struct UnkStruct_02039BF0 {
+    u8 unk_00[0x1C];
+    u8 unk_1C[0x1C];
+} UnkStruct_02039BF0;
 
 typedef struct GameState {
     u8 unk_000;
@@ -14,11 +26,19 @@ typedef struct GameState {
     s8 floor;
     u8 unk_00F;
     u16 unk_010;
-    u8 unk_012[0x12];
+    u8 unk_012[0x02];
+    FldPos fieldPosition;
     u8 unk_024;
-    u8 unk_025[0x0D];
+    u8 unk_025[0x03];
+    s32 unk_028;
+    s32 unk_02C;
+    u16 unk_030;
     s16 hp;
-    u8 unk_034[0xC4];
+    s32 unk_034;
+    s32 unk_038;
+    s32 unk_03C;
+    UnkStruct_02039BF0 unk_040[3];
+    u8 unk_0E8[0x10];
     s16 maxHp;
     s16 cp;
     s16 dp;
@@ -39,7 +59,8 @@ typedef struct GameState {
     u16 unk_17C;
     u16 unk_17E;
     u16 unk_180;
-    u8 unk_182[0x36];
+    u8 unk_182[0x02];
+    GameFloor floors[13];
     u32 unk_1B8;
     SaveFileSummary fileSummaries[4];
     u32 playTime;
@@ -58,6 +79,7 @@ typedef struct GameState {
 } GameState;
 
 typedef char GameState_size[(sizeof(GameState) == 0x210) ? 1 : -1];
+typedef char GameFloor_size[(sizeof(GameFloor) == 4) ? 1 : -1];
 
 extern GameState gGameState;
 
