@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-typedef struct Obj0806180C {
+typedef struct EventCameraKeyframe {
     s32 unk_00;
     s32 unk_04;
     s32 unk_08;
@@ -14,9 +14,9 @@ typedef struct Obj0806180C {
     u16 unk_18;
     u8 unk_1A[2];
     void* unk_1C;
-} Obj0806180C;
+} EventCameraKeyframe;
 
-typedef struct MsgLine0806180C {
+typedef struct MessageScriptEntry {
     u32 unk_00;
     u32 unk_04;
     u32 unk_08;
@@ -25,20 +25,20 @@ typedef struct MsgLine0806180C {
     u32 unk_10;
     u16 unk_14;
     u16 unk_16;
-} MsgLine0806180C;
+} MessageScriptEntry;
 
-typedef struct AnimEntry0806180C {
-    struct Ent0806E9BC* unk_00;
+typedef struct EventCharaTrack {
+    struct EventCharaKeyframe* unk_00;
     u8 unk_04;
     u8 unk_05[3];
-} AnimEntry0806180C;
+} EventCharaTrack;
 
 typedef struct EventSequenceDef {
     u8 unk_00;
     u8 unk_01[3];
-    AnimEntry0806180C* unk_04;
-    Obj0806180C* unk_08;
-    MsgLine0806180C* unk_0C;
+    EventCharaTrack* unk_04;
+    EventCameraKeyframe* unk_08;
+    MessageScriptEntry* unk_0C;
     void* unk_10;
     void* unk_14;
     u16 unk_18;

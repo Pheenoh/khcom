@@ -47,7 +47,7 @@
 
 #define NULL ((void*)0)
 
-typedef struct Ent0806E9BC {
+typedef struct EventCharaKeyframe {
     u32 unk_00;
     u16 unk_04;
     u8 unk_06[2];
@@ -59,10 +59,10 @@ typedef struct Ent0806E9BC {
     u32 unk_18;
     void* unk_1C;
     void (*unk_20)(void*);
-} Ent0806E9BC;
+} EventCharaKeyframe;
 
-typedef struct Work0806180C {
-    Ent0806E9BC* unk_000;
+typedef struct EventCharaWork {
+    EventCharaKeyframe* unk_000;
     void* tiles;
     void* palette;
     void* gfx;
@@ -110,7 +110,7 @@ typedef struct Work0806180C {
     u8 unk_1B7;
     u16 unk_1B8;
     u8 unk_1BA[2];
-} Work0806180C;
+} EventCharaWork;
 
 
 typedef struct Ent02034A80 {
@@ -186,7 +186,7 @@ typedef struct MsgWinWork {
     MsgFaceControl unk_2C;
     u8 unk_38;
     u8 unk_39[3];
-    MsgLine0806180C* unk_3C;
+    MessageScriptEntry* unk_3C;
     s32 unk_40;
 } MsgWinWork;
 
@@ -231,7 +231,7 @@ typedef struct EventSeqArg {
     u32 unk_03 : 8;
 } EventSeqArg;
 
-typedef struct Ent09EE3CA0 {
+typedef struct EventBackgroundDef {
     void* unk_00;
     void* unk_04;
     void* unk_08;
@@ -250,15 +250,15 @@ typedef struct Ent09EE3CA0 {
     u8 unk_2C;
     u8 unk_2D;
     u8 unk_2E[2];
-} Ent09EE3CA0;
+} EventBackgroundDef;
 
 
-typedef struct UnkStruct_02039DCC {
+typedef struct EventScanlineScroll {
     u8 unk_00[2];
     u8 unk_02;
     u8 unk_03;
     u16 unk_04[160];
-} UnkStruct_02039DCC;
+} EventScanlineScroll;
 
 typedef struct Actor0806180C {
     u8 unk_00[0x24];
@@ -270,13 +270,13 @@ typedef struct Actor0806180C {
 } Actor0806180C;
 
 
-typedef struct Work08074DC4 {
+typedef struct EventCameraWork {
     s32 unk_00;
     s32 unk_04;
     u8 unk_08;
     u8 unk_09;
     u8 unk_0A[2];
-    Obj0806180C* unk_0C;
+    EventCameraKeyframe* unk_0C;
     u16 unk_10;
     u16 unk_12;
     u8 unk_14;
@@ -286,7 +286,7 @@ typedef struct Work08074DC4 {
     u8 unk_1A;
     u8 unk_1B;
     u16 unk_1C[160];
-} Work08074DC4;
+} EventCameraWork;
 
 
 typedef struct MsgWaitWork {
@@ -329,7 +329,7 @@ typedef struct MsgWaitYesNoWork {
     u8 unk_105[3];
 } MsgWaitYesNoWork;
 
-typedef struct Ent080658B8 {
+typedef struct TextGlyphSprite {
     s32 unk_00;
     s32 unk_04;
     void* unk_08;
@@ -338,7 +338,7 @@ typedef struct Ent080658B8 {
     u8 unk_14;
     u8 unk_15;
     u8 unk_16[2];
-} Ent080658B8;
+} TextGlyphSprite;
 
 typedef struct Work08075010 {
     u8 unk_00[0x16];
@@ -352,7 +352,7 @@ typedef struct Work08075010 {
 
 
 extern EventState* gUnk_02039DC8;
-extern UnkStruct_02039DCC* gUnk_02039DCC;
+extern EventScanlineScroll* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
 extern u8 gUnk_09EE274C[];
 extern u8 gModeBattle[];
@@ -475,7 +475,7 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f);
 void func_08064624(void);
 u8 QueueVTransCallback(void* a);
 u8 func_0809D280(u8* s);
-u8 _0806E9DC(Work0806180C* p, void* a);
+u8 _0806E9DC(EventCharaWork* p, void* a);
 void func_08073E0C(void* pool, MsgFaceControl* p, u8 a, u8 b, u8 c);
 u8 func_08064EF4(s32 a, s32 b, s32 c, s32* d);
 void func_08074504(void);
@@ -499,58 +499,58 @@ void func_080635C4(void);
 
 void func_08066E40(u16 a, u16* b, u8* c);
 
-u8 event_chara_1(Work0806180C* p, void* a);
-u8 func_0806FA84(Work0806180C* p, void* a);
-u8 func_0806FDB0(Work0806180C* p, void* a);
-u8 func_0806FC28(Work0806180C* p, void* a);
-u8 func_0806FAB8(Work0806180C* p, void* a);
-u8 func_0806E570(Work0806180C* p);
-void func_0806E7A8(Work0806180C* p);
-s32 func_08070AD4(Work0806180C* p);
-u8 func_0806EA28(Work0806180C* p, void* a);
-u8 func_0806EB94(Work0806180C* p, void* a);
-u8 func_0806EBE0(Work0806180C* p, void* a);
-u8 func_0806ECE0(Work0806180C* p, void* a);
-u8 func_0806ED2C(Work0806180C* p, void* a);
-u8 func_0806EE20(Work0806180C* p, void* a);
-u8 func_0806EE6C(Work0806180C* p, void* a);
+u8 event_chara_1(EventCharaWork* p, void* a);
+u8 func_0806FA84(EventCharaWork* p, void* a);
+u8 func_0806FDB0(EventCharaWork* p, void* a);
+u8 func_0806FC28(EventCharaWork* p, void* a);
+u8 func_0806FAB8(EventCharaWork* p, void* a);
+u8 func_0806E570(EventCharaWork* p);
+void func_0806E7A8(EventCharaWork* p);
+s32 func_08070AD4(EventCharaWork* p);
+u8 func_0806EA28(EventCharaWork* p, void* a);
+u8 func_0806EB94(EventCharaWork* p, void* a);
+u8 func_0806EBE0(EventCharaWork* p, void* a);
+u8 func_0806ECE0(EventCharaWork* p, void* a);
+u8 func_0806ED2C(EventCharaWork* p, void* a);
+u8 func_0806EE20(EventCharaWork* p, void* a);
+u8 func_0806EE6C(EventCharaWork* p, void* a);
 u8 func_0806EF40(void* work, void* a);
-u8 func_0806F02C(Work0806180C* p, void* a);
+u8 func_0806F02C(EventCharaWork* p, void* a);
 u8 func_0806F114(void* work, void* a);
-u8 func_0806F204(Work0806180C* p, void* a);
+u8 func_0806F204(EventCharaWork* p, void* a);
 u8 func_0806F2EC(void* work, void* a);
-u8 func_0806F3A8(Work0806180C* p, void* a);
+u8 func_0806F3A8(EventCharaWork* p, void* a);
 u8 func_0806F47C(void* work, void* a);
-u8 func_0806F53C(Work0806180C* p, void* a);
-u8 func_0806F610(Work0806180C* p, void* a);
-u8 func_0806F64C(Work0806180C* p, void* a);
-u8 func_0806F734(Work0806180C* p, void* a);
-u8 func_0806F770(Work0806180C* p, void* a);
-u8 func_0806F858(Work0806180C* p, void* a);
-u8 func_0806F898(Work0806180C* p, void* a);
-void func_0806E9BC(Work0806180C* p);
-void func_0806F94C(Work0806180C* p);
+u8 func_0806F53C(EventCharaWork* p, void* a);
+u8 func_0806F610(EventCharaWork* p, void* a);
+u8 func_0806F64C(EventCharaWork* p, void* a);
+u8 func_0806F734(EventCharaWork* p, void* a);
+u8 func_0806F770(EventCharaWork* p, void* a);
+u8 func_0806F858(EventCharaWork* p, void* a);
+u8 func_0806F898(EventCharaWork* p, void* a);
+void func_0806E9BC(EventCharaWork* p);
+void func_0806F94C(EventCharaWork* p);
 void func_08073E34(MsgFaceControl* p, u8 a, u8 b, u8 c);
 void func_080746D8(void);
 void func_08072918(Actor0806180C* a, u8 kind, u8 flag);
 void func_08072A64(Actor0806180C* a, u8 kind, u8 flag);
-void func_08074D00(Work08074DC4* p);
-void func_08074D14(Work08074DC4* a);
-u8 func_08074E40(Work08074DC4* p);
-void func_08074D98(Work08074DC4* a);
-u8 func_08074E88(Work08074DC4* p, u8 v);
-u8 _08074EC8(Work08074DC4* p);
+void func_08074D00(EventCameraWork* p);
+void func_08074D14(EventCameraWork* a);
+u8 func_08074E40(EventCameraWork* p);
+void func_08074D98(EventCameraWork* a);
+u8 func_08074E88(EventCameraWork* p, u8 v);
+u8 _08074EC8(EventCameraWork* p);
 void func_08075010(Work08075010* p);
-void func_08074DC4(Work08074DC4* a);
+void func_08074DC4(EventCameraWork* a);
 
-void func_0806FE90(Work0806180C* p);
-u8 func_0807048C(Work0806180C* p, void* a);
-void func_08072C34(Work0806180C* p);
+void func_0806FE90(EventCharaWork* p);
+u8 func_0807048C(EventCharaWork* p, void* a);
+void func_08072C34(EventCharaWork* p);
 void func_0806CD60(ContinueWork* p);
 void func_0806CF04(ContinueWork* p);
 void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a);
 u8 func_0806D830(EventSeqWork* p, void* a);
-void func_08070008(Work0806180C* p);
-u8 func_080700D4(Work0806180C* p, void* a);
+void func_08070008(EventCharaWork* p);
+u8 func_080700D4(EventCharaWork* p, void* a);
 
 #endif /* GUARD_MSG_H */

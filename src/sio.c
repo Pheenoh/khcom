@@ -36,11 +36,11 @@ void BgAnimGetFrameState(u16* a, u16* b) {
     }
 }
 
-u32 BgAnimGetDuration(UnkBgAnim* p) {
-    return (u32)p->unk_14 * p->unk_16;
+u32 BgAnimGetDuration(BgAnimationDef* p) {
+    return (u32)p->frameCount * p->frameDuration;
 }
 
-UnkBgAnim* BgAnimGetCurrent(void) {
+BgAnimationDef* BgAnimGetCurrent(void) {
     return gUnk_02034040;
 }
 

@@ -38,7 +38,7 @@ void eu_080059D4(s32 bg, void* src);
 void eu_080059F4(s32 bg, void* src);
 #endif
 
-struct UnkBgAnim;
+struct BgAnimationDef;
 
 void MosaicReset(void);
 void BgAnimSetTransform(u8 a, s32 b, s32 c);
@@ -49,15 +49,15 @@ void MosaicStartOut(u16 frames, u16 size);
 u8 MosaicIsActive(void);
 u8 BgAnimIsStopped(void);
 void BgAnimGetFrameState(u16* a, u16* b);
-u32 BgAnimGetDuration(struct UnkBgAnim* p);
-struct UnkBgAnim* BgAnimGetCurrent(void);
+u32 BgAnimGetDuration(struct BgAnimationDef* p);
+struct BgAnimationDef* BgAnimGetCurrent(void);
 void VTransReset(void);
 void BgReset(void);
 u8 RequestTilemapRectCopy(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh);
 void BgAnimSetPosition(s16 x, s16 y);
 void BgAnimUpdate(void);
 void BgAnimInit(s32 bg, u16 b, u16 c);
-void BgAnimStart(struct UnkBgAnim* a, s32 x, s32 y);
+void BgAnimStart(struct BgAnimationDef* a, s32 x, s32 y);
 u8 RequestDma3Clear(void* a, u16 b);
 
 #ifdef VERSION_EU
