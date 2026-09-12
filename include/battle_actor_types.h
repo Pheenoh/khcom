@@ -71,7 +71,7 @@ typedef struct BtlObj {
     s16 unk_0D0;
     s16 unk_0D2;
     s32 unk_0D4;
-    s32 unk_0D8;
+    struct BtlObj* unk_0D8;
     struct BtlObj* unk_0DC;
     u16 unk_0E0;
     s16 unk_0E2;

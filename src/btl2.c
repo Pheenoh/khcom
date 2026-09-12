@@ -57,7 +57,7 @@ extern void* gUnkEu_09F5C22C[];
 extern void* gUnkEu_09F5C23C[];
 #endif
 
-void task_btl_shadow_0(BtlShadowWork* work, BtlWork* actor) {
+void task_btl_shadow_0(BtlShadowWork* work, BtlObj* actor) {
     work->actor = actor;
 
     if (actor->unk_034 & 0x80000) {
@@ -78,7 +78,7 @@ s32 task_btl_shadow_1(void) {
 }
 
 void task_btl_shadow_2(BtlShadowWork* work) {
-    BtlWork* actor = work->actor;
+    BtlObj* actor = work->actor;
     s16 x;
     s16 y;
     u16 anim;
@@ -244,7 +244,7 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
 }
 
 s32 task_btl_hpply_1(BtlHpplyWork* work) {
-    BtlWork* actor;
+    BtlObj* actor;
     s32 flag;
 
     actor = gBtlWork->unk_07C;
@@ -513,7 +513,7 @@ void task_btl_hpenm_0(BtlHpenmWork* work) {
 }
 
 s32 task_btl_hpenm_1(BtlHpenmWork* work) {
-    BtlWork* actor;
+    BtlObj* actor;
 
     if (gBtlWork->unk_0A0 == 4) {
         return 0;
@@ -1172,7 +1172,7 @@ s32 task_btl_escape_1(BtlEscapeWork* work) {
 }
 
 void task_btl_escape_2(BtlEscapeWork* work) {
-    BtlWork* actor;
+    BtlObj* actor;
     s16 x;
     s16 y;
     s32 v;

@@ -2,6 +2,7 @@
 #define GUARD_BTL2_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "m4a.h"
 #include "key.h"
@@ -66,48 +67,10 @@ typedef struct FldWork {
     u8 unk_BD[0x03];
 } FldWork;
 
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    u8 unk_018[0x0C];
-    s32 unk_024;
-    u8 unk_028[0x04];
-    s16 unk_02C;
-    s16 unk_02E;
-    s32 unk_030;
-    u64 unk_034;
-    u8 unk_03C[0x2C];
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071[0x07];
-    struct BtlWork* unk_078;
-    struct BtlWork* unk_07C;
-    u8 unk_080[0x20];
-    s32 unk_0A0;
-    u8 unk_0A4[0x0C];
-    u16 unk_0B0;
-    u8 unk_0B2[0x1A];
-    u16 unk_0CC;
-    u8 unk_0CE[0x0A];
-    struct BtlWork* unk_0D8;
-    u8 unk_0DC[0x18];
-    s32 unk_0F4;
-    u8 unk_0F8[0x30];
-    void (*unk_128)(s32* a, s32* b, s32* c, s32* d);
-    s32 unk_12C;
-    u8 unk_130[0x94];
-    u16 unk_1C4;
-    u8 unk_1C6[0x02];
-} BtlWork;
-
 typedef struct BtlShadowWork {
     void* tiles;
     void* palette;
-    BtlWork* actor;
+    BtlObj* actor;
     void* gfx;
 } BtlShadowWork;
 
@@ -144,7 +107,7 @@ typedef struct BtlHpenmWork {
     s32 unk_10;
     u8 unk_14;
     u8 unk_15[0x03];
-    BtlWork* unk_18;
+    BtlObj* unk_18;
     s16 unk_1C;
     s16 unk_1E;
     u32 unk_20;
@@ -215,7 +178,7 @@ typedef struct BtlPrizeWork {
     s32 unk_40;
     u8 unk_44;
     u8 unk_45[0x03];
-    BtlWork* unk_48;
+    BtlObj* unk_48;
 } BtlPrizeWork;
 
 typedef struct BtlPremireWork {
@@ -240,7 +203,7 @@ typedef struct BtlPremireWork {
     s32 unk_3C;
     u8 unk_40;
     u8 unk_41[0x03];
-    BtlWork* unk_44;
+    BtlObj* unk_44;
     AnimState anim;
 } BtlPremireWork;
 
@@ -290,8 +253,6 @@ void func_08006120(s32 a, s32 b);
 void SetBgPriority(s32 bg, u16 priority);
 
 extern UnkStruct_02039BA0* gUnk_02039BA0;
-extern BtlWork* gBtlWork;
-extern BtlWork* gUnk_02039B9C;
 
 extern u8 gUnk_0203D990[];
 extern u8 gUnk_0203D9D0[];
@@ -407,7 +368,7 @@ extern u8 gUnk_09EE12C8[];
 extern u8 gUnk_09EE1420[];
 extern u8 gUnk_09EE1498[];
 
-void task_btl_shadow_0(BtlShadowWork* work, BtlWork* actor);
+void task_btl_shadow_0(BtlShadowWork* work, BtlObj* actor);
 s32 task_btl_shadow_1(void);
 void task_btl_shadow_2(BtlShadowWork* work);
 void task_btl_shadow_3(BtlShadowWork* work);

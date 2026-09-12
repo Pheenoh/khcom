@@ -10,7 +10,7 @@ ListNode gUnk_02034908;
 ListNode gUnk_02034918;
 
 u8 func_08011270(BtlObj* p, s32 x, s32 y, s32 z, s16 a, s16 b, s16 c) {
-    BtlObj* q = (BtlObj*)p->unk_0D8;
+    BtlObj* q = p->unk_0D8;
     u64 f;
 
     if (q != 0) {
@@ -58,7 +58,11 @@ s32 func_08011398(BtlObj* hit, s32 index) {
     s32 scale = gBtlWork->unk_124;
     BtlObj* target;
     BtlObj* source;
-    target = hit->unk_0D8 != 0 ? (BtlObj*)hit->unk_0D8 : hit;
+    if (hit->unk_0D8 != 0) {
+        target = hit->unk_0D8;
+    } else {
+        target = hit;
+    }
     target->unk_024 = attack->unk_14;
     target->unk_028 = index;
     if (attack->unk_14 & 0x40000) {
