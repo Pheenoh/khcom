@@ -121,11 +121,12 @@ s32 func_0805E93C(void) {
 #else
 INCLUDE_ASM("mode_movie/func_0805E93C.s");
 #endif
-#ifdef NON_MATCHING
 void func_0805EA90(void) {
     u16* oam;
+#ifndef VERSION_JP
     s16 x;
     s16 y;
+#endif
     u16 i;
     u32 attr0;
     u32 attr1;
@@ -189,13 +190,20 @@ void func_0805EA90(void) {
                 for (i = 0; i < gUnk_02034956; i++) {
                     u16 tile;
                     u16 palette;
+#ifdef VERSION_JP
+                    MovieSub* sub;
+                    s16 x;
+#endif
 
                     tile = i * 4;
-                    palette = (gUnk_02034948->unk_0C & 15) << 12;
 #ifdef VERSION_JP
+                    sub = gUnk_02034948;
+                    x = sub->unk_02;
+                    palette = (sub->unk_0C & 15) << 12;
                     oam[0] = attr0 | 0x74;
-                    oam[1] = (gUnk_02034948->unk_02 + i * 10) | 0x4000;
+                    oam[1] = (x + i * 10) | 0x4000;
 #else
+                    palette = (gUnk_02034948->unk_0C & 15) << 12;
                     oam[0] = attr0 | y;
                     oam[1] = x | 0x4000;
 #endif
@@ -215,13 +223,20 @@ void func_0805EA90(void) {
                 for (i = 0; i < gUnk_0203495E; i++) {
                     u16 tile;
                     u16 palette;
+#ifdef VERSION_JP
+                    MovieSub* sub;
+                    s16 x;
+#endif
 
                     tile = i * 4;
-                    palette = (gUnk_0203494C->unk_0C & 15) << 12;
 #ifdef VERSION_JP
+                    sub = gUnk_0203494C;
+                    x = sub->unk_02;
+                    palette = (sub->unk_0C & 15) << 12;
                     oam[0] = attr1 | 0x84;
-                    oam[1] = (gUnk_0203494C->unk_02 + i * 10) | 0x4000;
+                    oam[1] = (x + i * 10) | 0x4000;
 #else
+                    palette = (gUnk_0203494C->unk_0C & 15) << 12;
                     oam[0] = attr1 | y;
                     oam[1] = x | 0x4000;
 #endif
@@ -234,6 +249,8 @@ void func_0805EA90(void) {
                 for (i = gUnk_02034956 + gUnk_0203495E;
 #ifdef VERSION_JP
                      i < 48;
+#elif defined(VERSION_EU)
+                     i < 96;
 #else
                      i < 80;
 #endif
@@ -268,9 +285,6 @@ void func_0805EA90(void) {
     }
     *(vu16*)0x03007FF8 |= 1;
 }
-#else
-INCLUDE_ASM("mode_movie/func_0805EA90.s");
-#endif
 
 void mode_movie_1(void) {
     void* p;
