@@ -1,6 +1,8 @@
 #ifndef GUARD_PC_H
 #define GUARD_PC_H
 
+#include "pc_tasks.h"
+
 #include "types.h"
 #include "battle_actor.h"
 #include "engine_math.h"
@@ -31,14 +33,10 @@ typedef struct PcCharaWork {
     u8 unk_192[0x2];
 } PcCharaWork;
 
-void task_pc_acddmg_0(PcAcdDmgWork* work, BtlObj* obj);
-s32 task_pc_acddmg_1(PcAcdDmgWork* work);
 void func_08049E70(PcCharaWork* work, s16 a, s32 b);
 void func_08049EE4(PcCharaWork* work, s32 a, s32 b);
 void func_08049F24(PcCharaWork* work, s32 a, s32 b);
 s32 func_08049F50(PcCharaWork* work);
 
-void func_0800F368(void* work, u16 a);
-u8 func_0800F504(void* work, u16 a, u16 b, u16 c);
 
 #endif /* GUARD_PC_H */

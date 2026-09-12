@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "mode_test_api.h"
+
 #include "fade.h"
 #include "btl_effect.h"
 #include "btl_collision.h"
@@ -204,8 +206,6 @@ extern u8 gUnkEu_08896524[];
 extern TaskDesc gTaskDescBtlShadow;
 
 void func_0802F284(s32 a, s32 b, s32 c);
-void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a);
-void func_080147B8(u8 a);
 void func_0802F1E8(void);
 
 #endif
@@ -230,7 +230,6 @@ u32 Sqrt(u32 a);
 s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
 void func_080B0754(void);
 void func_080E052C(u8 a);
-void func_0801CB0C(void);
 void func_080E04EC(void);
 void func_080A42B4(void);
 void func_08061824(void);
@@ -239,8 +238,6 @@ u8 func_080A42C8(void);
 void mode_test_0(void);
 void mode_test_1(void);
 void mode_test_2(void);
-s32 func_0805F588(s32 a, s32 b);
-s32 func_0805F5A4(s32* x, s32* y);
 void func_0805F66C(LockonWork* w);
 void func_0805F728(s32* x, s32* y);
 void func_0805F770(void);
@@ -249,13 +246,8 @@ void func_0805F7BC(void);
 void func_0805F7C8(u8 a);
 u8 func_0805F8F0(u8 a);
 void func_0805F904(void);
-void func_0805FA8C(u8 bg, u16 b, u16 c);
 void func_0805FB78(s32 a);
 void func_0805FB84(u8 x, u8 y, u32 c, u8 v);
-void func_0805FC04(u8 x, u8 y, u32 c, u16 v);
-void func_0805FCB0(u8 x, u8 y, u32 c, const char* s);
-u16 func_080609AC(u16 a);
-u16 func_08060A2C(u16 a);
 void func_08060A74(void);
 void func_08060AD8(void);
 void func_08060BAC(void);

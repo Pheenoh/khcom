@@ -35,6 +35,7 @@ void func_08000DE8(TaskPool* pool, Task* task);
 u8 IsTaskActive(Task* task);
 u8 IsTaskActiveNamed(Task* task, const char* name);
 const char* GetTaskName(Task* task);
+void SetTaskUpdate(Task* task, void* update);
 void TaskPoolInit(TaskPool* pool, s32 count);
 void TaskPoolUpdate(TaskPool* pool);
 void TaskPoolDraw(TaskPool* pool);

@@ -1,3 +1,4 @@
+#include "engine_math.h"
 #include "macros.h"
 #include "bos6.h"
 

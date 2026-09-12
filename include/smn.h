@@ -1,6 +1,11 @@
 #ifndef GUARD_SMN_H
 #define GUARD_SMN_H
 
+#include "eventselect_api.h"
+
+#include "smn_tasks.h"
+
+#include "display.h"
 #include "m4a_song.h"
 #include <stdlib.h>
 #include "fade.h"
@@ -14,6 +19,7 @@
 #include "battle_work.h"
 #include "anim.h"
 #include "taskpool.h"
+#include "smn_api.h"
 typedef struct SmnArgs {
     u16 unk_00;
     u8 unk_02;
@@ -229,24 +235,8 @@ typedef struct SmnKingWork {
 } SmnKingWork;
 
 
-void func_080140E0(s32 a, s32 b, s32 c);
-void func_08006B74(void);
-void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s);
-void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-void func_080148E0(u16 a, s32 x, s32 y, s32 z, s32 w);
-void func_08013480(s32 a, s32 b, s32 c);
-void func_08076284(void);
-void func_08076290(void);
-void func_0807629C(void);
-void func_08006B80(u16* a, u16* b);
-void func_0801475C(s32 a, s32 b, s32 c);
-void func_0801416C(s32 a, s32 b, s32 c);
-void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
 void func_0802F1E8(void);
-void func_08014FDC(s32 a, s32 b, s32 c);
-void func_08015B50(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
 void func_0802F284(s32 a, s32 b, s32 c);
-void func_080147C8(s32 a, s32 b);
 extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescBtlPrize[];
 extern u8 gTaskDescSmnTinkeff[];
@@ -271,52 +261,14 @@ extern u8 gUnk_0813EA5C[];
 extern u8 gUnk_0813EB1C[];
 extern u8 gUnk_0813EA7C[];
 extern u8 gUnk_0813EADC[];
-void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args);
-u8 task_smn_cloud_1(SmnCloudWork* work);
 BtlObj* func_08040D54(SmnCloudWork* work);
 BtlObj* func_08040C8C(SmnCloudWork* work);
-void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args);
-void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args);
-void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args);
-u8 task_smn_genie_1(SmnGenieWork* work);
-void task_smn_tinkeff_0(SmnTinkeffWork* work, BtlObj* args);
-u8 task_smn_tinkeff_1(SmnTinkeffWork* work);
-void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args);
-void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args);
-void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args);
-void task_smn_king_0(SmnKingWork* work, SmnArgs* args);
-u8 task_smn_king_1(SmnKingWork* work);
 void func_08041D64(SmnBambiWork* work);
 void func_08044518(SmnGenieWork* work);
-u8 func_0804544C(SmnFrdWork* work);
-void func_08045494(BtlObj* body, u8 a, s16 b, s16 c);
 u8 func_08041FCC(SmnBambiWork* work);
 BtlObj* func_08042018(SmnBambiWork* work);
 BtlObj* func_08044450(SmnGenieWork* work);
 void func_080428E8(SmnTinkWork* work);
 u8 func_08044F98(SmnKingWork* work);
-u8 task_smn_bambi_1(SmnBambiWork* work);
-u8 task_smn_tink_1(SmnTinkWork* work);
-u8 task_smn_simba_1(SmnSimbaWork* work);
-u8 task_smn_mushu_1(SmnMushuWork* work);
-u8 task_smn_dumbo_1(SmnDumboWork* work);
-void task_smn_cloud_2(SmnCloudWork* work);
-void task_smn_bambi_2(SmnBambiWork* work);
-void task_smn_tink_2(SmnTinkWork* work);
-void task_smn_tinkeff_2(SmnTinkeffWork* work);
-void task_smn_simba_2(SmnSimbaWork* work);
-void task_smn_mushu_2(SmnMushuWork* work);
-void task_smn_dumbo_2(SmnDumboWork* work);
-void task_smn_genie_2(SmnGenieWork* work);
-void task_smn_king_2(SmnKingWork* work);
-void task_smn_cloud_3(SmnCloudWork* work);
-void task_smn_bambi_3(SmnBambiWork* work);
-void task_smn_tink_3(SmnTinkWork* work);
-void task_smn_tinkeff_3(SmnTinkeffWork* work);
-void task_smn_simba_3(SmnSimbaWork* work);
-void task_smn_mushu_3(SmnMushuWork* work);
-void task_smn_dumbo_3(SmnDumboWork* work);
-void task_smn_genie_3(SmnGenieWork* work);
-void task_smn_king_3(SmnKingWork* work);
 
 #endif /* GUARD_SMN_H */

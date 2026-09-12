@@ -1,3 +1,4 @@
+#include "display.h"
 #include "frd.h"
 #include "macros.h"
 

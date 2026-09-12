@@ -1,5 +1,7 @@
+#include "display.h"
 #include "macros.h"
 #include "battle.h"
+#include "btl_effect.h"
 
 BgFx* gUnk_02034928;
 
@@ -1169,7 +1171,9 @@ void func_080144D8(s32 x, s32 y, s32 z, s32 w, u16 a, u16 b) {
     gUnk_02034928->unk_0A = a;
     gUnk_02034928->unk_0C = b;
 }
-void func_08014588(s32 x, s32 y, s32 z, s32 w, u16 a, u16 b) {
+void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 paramA, s32 paramB) {
+    u16 a = paramA;
+    u16 b = paramB;
     s16 sx;
     s16 sy;
 

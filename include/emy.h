@@ -1,6 +1,11 @@
 #ifndef GUARD_EMY_H
 #define GUARD_EMY_H
 
+#include "emy_tasks.h"
+
+#include "display.h"
+#include "player_progression.h"
+
 #include "m4a_song.h"
 #include "obj_api.h"
 #include "btl_effect.h"
@@ -13,6 +18,7 @@
 #include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
+#include "enemy_common.h"
 
 typedef struct EmyDef {
     void* unk_00;
@@ -260,28 +266,9 @@ typedef struct Emy83sWork {
     s16 unk_022;
 } Emy83sWork;
 
-void func_0800C778(EmyWork* work, void* def, void* obj);
-void func_0800DF30(EmyWork* work);
-void func_0800E0D0(EmyWork* work);
 
-u8 _0800CBDC(EmyWork* work);
-u8 _0800CDF0(EmyWork* work);
-s16 func_0800C980(EmyWork* work, s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
-void func_080141FC(BtlObj* a);
-void func_08012AAC(s32 a, s32 b, s32 c, s32 d);
-void func_08012E44(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h, s32 i);
-void func_08006B4C(void);
-u8 func_08006B74(void);
 void func_0802F1E8(void);
-void func_08013480(s32 a, s32 b, s32 c);
-u8 func_08011E3C(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f);
-void func_080150D8(s32 x, s32 y, s32 z, u8 f);
-void func_0800CB4C(EmyWork* work);
-void func_0800CD40(EmyWork* work);
-void func_08015834(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g, s32 h);
-void func_08014020(s32 x, s32 y, s32 z);
-void func_0800FDD0(s32 a);
-void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
+
 
 extern s16 gSineTable[];
 extern u8 gUnk_08A20BCE[];
@@ -373,160 +360,7 @@ extern u8 gUnk_0813E7B4[];
 extern u8 gUnk_0813E7C4[];
 extern u8 gUnk_0813E834[];
 
-void task_emy_00_0(EmyWork* work, void* obj);
-u8 task_emy_00_1(EmyWork* work);
-void task_emy_00_2(EmyWork* work);
-void task_emy_00_3(EmyWork* work);
-void task_emy_01_0(EmyWork* work, void* obj);
-u8 task_emy_01_1(EmyWork* work);
-void task_emy_01_2(EmyWork* work);
-void task_emy_01_3(EmyWork* work);
-void task_emy_02_0(EmyWork* work, void* obj);
-u8 task_emy_02_1(EmyWork* work);
-void task_emy_02_2(EmyWork* work);
-void task_emy_02_3(EmyWork* work);
-void task_emy_03_0(EmyWork* work, void* obj);
-u8 task_emy_03_1(Emy03Work* work);
-void task_emy_03_2(EmyWork* work);
-void task_emy_03_3(EmyWork* work);
-void task_emy_04_0(Emy04Work* work, void* obj);
-u8 task_emy_04_1(Emy04Work* work);
-void task_emy_04_2(EmyWork* work);
-void task_emy_04_3(EmyWork* work);
-void task_emy_06_0(EmyWork* work, void* obj);
-u8 task_emy_06_1(Emy06Work* work);
-void task_emy_06_2(EmyWork* work);
-void task_emy_06_3(EmyWork* work);
-void task_emy_07_0(Emy07Work* work, void* obj);
-u8 task_emy_07_1(Emy07Work* work);
-void task_emy_07_2(EmyWork* work);
-void task_emy_07_3(EmyWork* work);
-void task_emy_08_0(Emy08Work* work, void* obj);
-u8 task_emy_08_1(Emy08Work* work);
-void task_emy_08_2(Emy08Work* work);
-void task_emy_08_3(Emy08Work* work);
-void task_emy_14_0(EmyWork* work, void* obj);
-u8 task_emy_14_1(EmyWork* work);
-void task_emy_14_2(EmyWork* work);
-void task_emy_14_3(EmyWork* work);
-void task_emy_15_0(EmyWork* work, void* obj);
-u8 task_emy_15_1(EmyWork* work);
-void task_emy_15_2(EmyWork* work);
-void task_emy_15_3(EmyWork* work);
-void task_emy_16_0(Emy16Work* work, void* obj);
-u8 task_emy_16_1(Emy16Work* work);
-void task_emy_16_2(Emy16Work* work);
-void task_emy_16_3(Emy16Work* work);
-void task_emy_16_b_0(Emy16bWork* work, EmySpawn* spawn);
-u8 task_emy_16_b_1(Emy16bWork* work);
-void task_emy_16_b_2(Emy16bWork* work);
-void task_emy_16_b_3(Emy16bWork* work);
-void task_emy_16_p_0(Emy16pWork* work, EmySpawn* spawn);
-u8 task_emy_16_p_1(Emy16pWork* work);
-void task_emy_16_p_2(Emy16pWork* work);
-void task_emy_16_p_3(Emy16pWork* work);
-void task_emy_18_0(EmyWork* work, void* obj);
-u8 task_emy_18_1(Emy18Work* work);
-void task_emy_18_2(EmyWork* work);
-void task_emy_18_3(EmyWork* work);
-void task_emy_19_0(EmyWork* work, void* obj);
-u8 task_emy_19_1(Emy19Work* work);
-void task_emy_19_2(EmyWork* work);
-void task_emy_19_3(EmyWork* work);
-void task_emy_21_0(Emy21Work* work, void* obj);
-u8 task_emy_21_1(Emy21Work* work);
-void task_emy_21_2(EmyWork* work);
-void task_emy_21_3(EmyWork* work);
-void task_emy_22_0(Emy22Work* work, void* obj);
-u8 task_emy_22_1(Emy22Work* work);
-void task_emy_22_2(EmyWork* work);
-void task_emy_22_3(EmyWork* work);
-void task_emy_23_0(EmyWork* work, void* obj);
-u8 task_emy_23_1(Emy23Work* work);
-void task_emy_23_2(EmyWork* work);
-void task_emy_23_3(EmyWork* work);
-void task_emy_25_0(EmyWork* work, void* obj);
-u8 task_emy_25_1(EmyWork* work);
-void task_emy_25_2(EmyWork* work);
-void task_emy_25_3(EmyWork* work);
-void task_emy_26_0(EmyWork* work, void* obj);
-u8 task_emy_26_1(EmyWork* work);
-void task_emy_26_2(EmyWork* work);
-void task_emy_26_3(EmyWork* work);
-void task_emy_27_0(EmyWork* work, void* obj);
-u8 task_emy_27_1(EmyWork* work);
-void task_emy_27_2(EmyWork* work);
-void task_emy_27_3(EmyWork* work);
-void task_emy_28_0(EmyWork* work, void* obj);
-u8 task_emy_28_1(Emy28Work* work);
-void task_emy_28_2(EmyWork* work);
-void task_emy_28_3(EmyWork* work);
-void task_emy_29_0(Emy29Work* work, void* obj);
 void func_0803B468(Emy29Work* work, s16 anim, s16 dx, s16 dy, s16 dz);
-u8 task_emy_29_1(Emy29Work* work);
-void task_emy_29_2(EmyWork* work);
-void task_emy_29_3(EmyWork* work);
-void task_emy_30_0(EmyWork* work, void* obj);
-u8 task_emy_30_1(EmyWork* work);
-void task_emy_30_2(EmyWork* work);
-void task_emy_30_3(EmyWork* work);
-void task_emy_31_0(EmyWork* work, void* obj);
-u8 task_emy_31_1(Emy31Work* work);
-void task_emy_31_2(EmyWork* work);
-void task_emy_31_3(EmyWork* work);
-void task_emy_37_0(Emy37Work* work, void* obj);
-u8 task_emy_37_1(Emy37Work* work);
-void task_emy_37_2(Emy37Work* work);
-void task_emy_37_3(EmyWork* work);
-void task_emy_38_0(EmyWork* work, void* obj);
-u8 task_emy_38_1(EmyWork* work);
-void task_emy_38_2(EmyWork* work);
-void task_emy_38_3(EmyWork* work);
-void task_emy_39_0(EmyWork* work, void* obj);
-u8 task_emy_39_1(Emy39Work* work);
-void task_emy_39_2(EmyWork* work);
-void task_emy_39_3(EmyWork* work);
-void task_emy_41_0(EmyWork* work, void* obj);
-u8 task_emy_41_1(Emy41Work* work);
-void task_emy_41_2(EmyWork* work);
-void task_emy_41_3(EmyWork* work);
-void task_emy_44_0(EmyWork* work, void* obj);
-u8 task_emy_44_1(EmyWork* work);
-void task_emy_44_2(EmyWork* work);
-void task_emy_44_3(EmyWork* work);
-void task_emy_81_0(EmyWork* work, void* obj);
-u8 task_emy_81_1(Emy81Work* work);
-void task_emy_81_2(EmyWork* work);
-void task_emy_81_3(EmyWork* work);
-void task_emy_82_0(Emy82Work* work, void* obj);
-u8 task_emy_82_1(Emy82Work* work);
-u8 func_0801BDDC(s32 id, s32 x, s32 y, s32 z);
 u8 func_0803DD44(EmyWork* work);
-void task_emy_82_2(EmyWork* work);
-void task_emy_82_3(EmyWork* work);
-void task_emy_83_0(Emy83Work* work, void* obj);
-u8 task_emy_83_1(Emy83Work* work);
-void task_emy_83_2(Emy83Work* work);
-void task_emy_83_3(Emy83Work* work);
-void task_emy_83_b_0(Emy83bWork* work, EmySpawn* spawn);
-u8 task_emy_83_b_1(Emy83bWork* work);
-void task_emy_83_b_2(Emy83bWork* work);
-void task_emy_83_b_3(Emy83bWork* work);
-void task_emy_83_s_0(Emy83sWork* work, EmySpawn* spawn);
-u8 task_emy_83_s_1(Emy83sWork* work);
-void task_emy_83_s_2(Emy83sWork* work);
-void task_emy_83_s_3(Emy83sWork* work);
-void task_emy_trump_h_0(EmyWork* work, void* obj);
-u8 task_emy_trump_h_1(EmyWork* work);
-void task_emy_trump_h_2(EmyWork* work);
-void task_emy_trump_h_3(EmyWork* work);
-void task_emy_trump_s_0(EmyWork* work, void* obj);
-u8 task_emy_trump_s_1(EmyWork* work);
-void task_emy_trump_s_2(EmyWork* work);
-void task_emy_trump_s_3(EmyWork* work);
-void task_emy_test_0(EmyWork* work, void* obj);
-u8 task_emy_test_1(EmyWork* work);
-void task_emy_test_2(EmyWork* work);
-void task_emy_test_3(EmyWork* work);
 
 #endif /* GUARD_EMY_H */

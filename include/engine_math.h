@@ -16,4 +16,6 @@ u32 Rand(void);
 void SeedRandom(u32 seed);
 u16 GetRandom(void);
 
+s32 Sqrt8(s32 a);
+
 #endif

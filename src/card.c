@@ -1,3 +1,5 @@
+#include "mode_test_api.h"
+#include "player_progression.h"
 #include "m4a_song.h"
 #include "game_state.h"
 #include <string.h>
@@ -219,7 +221,6 @@ u8 func_0807CE68(UnkStruct_02034AAC* p);
 void func_0807C39C(UnkStruct_02034AAC* p);
 void func_0807C33C(UnkStruct_02034AAC* p);
 void func_0808DE28(u8 a);
-s32 func_080609AC(u16 a);
 s32 func_0808C8D0(s32 a);
 void func_080AB1F8(u8 a, u16 b);
 void func_080AB964(void);
@@ -229,7 +230,6 @@ void func_08085A58(s32 index, u16* dst);
 u8 func_080A42C8(void);
 s32 func_080A40EC(u64* src);
 s32 func_080A4D7C(u64* src);
-u16 func_08006390(void);
 u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
 u8 func_0807FB5C(UnkStruct_08080268* w, void* a);
 void func_0807FD10(UnkStruct_08080268* w, u8 n);
@@ -249,12 +249,10 @@ void func_0807B45C(UnkStruct_08080268* w);
 void func_0807B478(UnkStruct_02034AAC* w);
 u8 func_0808EC24(UnkStruct_0808DB04* w);
 void func_0808EA0C(UnkStruct_0808DB04* w, u8 mode);
-void SetTaskUpdate(u8* p, u32 v);
 u8 func_080A8C20(u8* work);
 u8 func_080A86F4(UnkStruct_0808C940* w, void* a);
 u8 func_080A7C80(u8* work, void* a);
 u8 func_080A8BD8(u8* work, void* a);
-s32 func_0805F5A4(s32* a, s32* b);
 s32* func_080E04E0(void);
 u8 func_0809511C(ReloadGageWork* w, void* a);
 u8 func_080954C4(ReloadGageWork* w, void* a);
@@ -271,7 +269,7 @@ extern u8 gUnk_09EE7F90[];
 extern s16 gUnk_0903570E[];
 void func_0808D6C4(u8* work);
 void func_0808CD48(u8* work);
-u8 func_0800FF00(u16 n);
+
 struct UnkStruct_080889DC;
 u8 func_08086A14(struct UnkStruct_080889DC* w, void* a);
 u8 func_0809217C(MapSelectWork* w, void* a);
@@ -285,7 +283,7 @@ void func_08081740(UnkStruct_08080268* w, u16 n);
 void func_08081744(UnkStruct_08080268* w);
 void func_08085DA0(u8 a);
 void func_08080228(UnkStruct_08080268* w);
-u8 func_0800FC5C(s32 a);
+
 u8 func_080882DC(u8* work, void* a);
 u8 func_080E8D00(void);
 void* func_080E8D1C(s32 a);
@@ -312,9 +310,7 @@ extern s16 gUnk_09EE4BC2[];
 void func_0808C940(UnkStruct_0808C940* w, s16 n);
 void func_0808C974(UnkStruct_0808C940* w);
 void func_08096638(PrizeCardWork* w);
-void func_0800443C(u32 a, s32 b);
 u8 func_080864A4(u8* work, void* a);
-s32 func_0805F588(s32 a, s32 b);
 void func_08096F08(void* a, void* b);
 u8 func_08096288(PrizeCardWork* w, void* a);
 u16 func_08093384();
@@ -360,7 +356,6 @@ u8 func_0807C5D8(UnkStruct_02034AAC* w, void* a);
 u8 card_enemy_1(UnkStruct_02034AAC* p, void* a);
 extern s32 gUnk_09034054[];
 extern void* gUnk_09EF126C[];
-void func_0801C1A0(s32 a);
 extern s32 gUnk_09035978[];
 u8 EV_BG_EFFECT_1(UnkStruct_080A1DAC* w, void* a);
 s32 func_0809CBD0(u8* work);
@@ -375,13 +370,12 @@ u16 func_08096D48(u16 a, s32 b);
 u8 func_080E924C(void);
 void func_0809D1B0(UnkStruct_0809CE88* w);
 void func_0809CAC8(void* work);
-u8 func_0800FCD8(s32 a, s32 b);
-u8 func_0800FC90(s32 a);
+
+
 u16 func_0806692C(u8* s, u16* out);
 void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 void func_0809D160(UnkStruct_0809CE88* w);
 u8 func_080A25E0(UnkStruct_080A2678* w, void* a);
-void func_08006954(void);
 u8 func_0809C4B0(u8* work, void* a);
 void func_0807CC2C(UnkStruct_02034AAC* p);
 u8 func_0807D194(UnkStruct_02034AAC* p, void* a);
@@ -417,7 +411,7 @@ u8 func_0809C9F4(UnkStruct_0809C9A4* p);
 u8 func_080A2024(u8* work, void* a);
 u8 func_08082224(UnkStruct_02034AAC* p, void* a);
 u8 func_080827E0(UnkStruct_02034AAC* p, void* a);
-void func_0800FB2C(s32 a);
+
 CardSlot* func_08076674(UnkStruct_08080268* w, u8 slot, u16* n);
 CardSlot* func_08076750(UnkStruct_08080268* w, u8 slot, u16* n);
 void func_08083340(UnkStruct_02034AAC* p);
@@ -427,7 +421,6 @@ u8 func_080A5034(UnkStruct_080A3F5C* w, void* a);
 u8 func_0808A910(UnkStruct_0808DB04* w, void* a);
 u8 func_0807D7B0(UnkStruct_02034AAC* p);
 void func_0806C2C0(u8 a);
-void func_08003A70(void* a, void* b);
 s32 func_08093838(MapSelectWork* w);
 s32 func_080A5150(UnkStruct_080A3F5C* w);
 s32 func_08098BA4(UnkStruct_08098BE8* w);
@@ -466,7 +459,7 @@ void func_08090864(UnkStruct_02034AAC* p);
 void func_08090B50(UnkStruct_02034AAC* p, void* a);
 u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a);
 void func_08094DEC(MapcardWork* w);
-void func_0800FDD0(s32 a);
+
 void func_0807DAD0(UnkStruct_02034AAC* p);
 void func_0807DE10(UnkStruct_02034AAC* p);
 u8 func_080A6474(u8* work, void* a);
@@ -485,7 +478,7 @@ void func_08094E90(MapcardWork* w);
 u8 func_0809CB78(u8* work, void* a);
 u8 func_08090940(UnkStruct_02034AAC* p);
 u8 func_08090DB0(UnkStruct_02034AAC* p, void* a);
-void func_0800FC14(s32 a);
+
 void func_0808E2F0(UnkStruct_0808DB04* w);
 u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a);
 u8 func_080A3F5C(UnkStruct_080A3F5C* w, void* a);
@@ -9559,7 +9552,7 @@ void func_080855C8(void) {
 
 void func_08085658(u16 index) {
     Deck* d;
-    s32 v;
+    u16 v;
 
     d = GetActiveDeck();
     gDecks[gActiveDeck].unk_DA -= func_080609AC(gCardCollection[*(u16*)(index * 2 + (u32)d)]);
@@ -34534,7 +34527,7 @@ u8 func_080AE274(s32 a, s32 b) {
     u8 r;
 
     if (b != 0) {
-        r = func_0800FCD8(a, b);
+        r = func_0800FCD8(a);
     } else {
         r = func_0800FC90(a);
     }

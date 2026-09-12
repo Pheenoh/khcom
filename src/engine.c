@@ -1,3 +1,6 @@
+#include "engine_math.h"
+#include "fade.h"
+#include "pallet.h"
 #include "display.h"
 #include <stdlib.h>
 #include "obj_api.h"
@@ -35,7 +38,6 @@ s16 gUnk_02034066;
 s16 gUnk_02034068;
 u16 gUnk_0203406A;
 
-void* LoadPaletteWithEffect(void* src, void* dst, u16 size);
 extern s16 gSineTable[];
 extern u16 gBg0Cnt;
 extern u16 gBg1Cnt;
@@ -66,13 +68,8 @@ void BgAffineSet(BgAffineSrcData* src, BgAffineDstData* dst, s32 count);
 extern u16 gBg0Cnt;
 extern u16 gBg1Cnt;
 extern u16 gBg2Cnt;
-void func_080066F4(s16 x, s16 y);
-void PushPaletteEffect(s32 a);
-void PopPaletteEffect(void);
 
 extern u16 gSystemFlags;
-u16 GetObjTileCount(u16 a, u16 b);
-void func_08005C60(u16 a);
 
 extern u16 gBldY;
 extern u16 gWin0H;
@@ -93,13 +90,8 @@ extern u16 gBg3PC;
 extern u16 gBg3PD;
 extern u32 gBg3X;
 extern u32 gBg3Y;
-void func_080066F4(s16 x, s16 y);
-void PushPaletteEffect(s32 a);
-void PopPaletteEffect(void);
 
 extern u16 gSystemFlags;
-u16 GetObjTileCount(u16 a, u16 b);
-void func_08005C60(u16 a);
 
 u8 func_0800216C(s16 x, s16 y, void* c, void* obj, void* e, s32 f, u16 g, u16 h) {
     SpriteWork* p;
@@ -860,20 +852,25 @@ u16 func_08003598(u16* p) {
     return (u16)(total << 5);
 }
 
-u8 func_080035CC(s16 x, u16 y, u16 a, u16 b, u16 c, s16 d) {
-    if (x + d < 0) {
+u8 func_080035CC(s16 x, s16 y, s32 a, s32 b, s32 c, s32 d) {
+    u16 top = a;
+    u16 bottom = b;
+    u16 left = c;
+    s16 right = d;
+
+    if (x + right < 0) {
         return 1;
     }
 
-    if (x - (s16)c > 0xF0) {
+    if (x - (s16)left > 0xF0) {
         return 1;
     }
 
-    if ((s16)y + (s16)b < 0) {
+    if ((s16)y + (s16)bottom < 0) {
         return 1;
     }
 
-    if ((s16)y - (s16)a > 0xA0) {
+    if ((s16)y - (s16)top > 0xA0) {
         return 1;
     }
     return 0;

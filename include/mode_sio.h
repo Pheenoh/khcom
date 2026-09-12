@@ -1,6 +1,12 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "mode_test_api.h"
+
+#include "pallet.h"
+#include "sio_api.h"
+#include "save_api.h"
+
 #include "engine_math.h"
 
 #include "card_deck.h"
@@ -480,11 +486,8 @@ extern void* gUnk_09EF390C[];
 extern void* gUnk_09EF3920[];
 
 u8 func_080C5930(void);
-void SaveWriteFileLarge(u16 file);
-void FadePaletteToBlack(void* src, void* dst, u16 size, u16 amount);
-void LoadPaletteWithEffect(void* src, void* dst, u16 size);
+
 void func_080C57A4(void);
-void SioReset(void);
 u8 func_080C54B4(void);
 void func_080C5A3C(void (*a)(void), void (*b)(void), u8 c);
 void func_080C5D00(void);
@@ -571,7 +574,6 @@ s8 func_080B3958(void);
 void func_080B397C(void);
 void func_080B3A48(void);
 s16 func_08084068(u16 a);
-u16 func_08060A2C(u16 a);
 void func_080B3204(void);
 void func_080B3354(void);
 void func_080B3A68(void);

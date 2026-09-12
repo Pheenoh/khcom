@@ -38,4 +38,30 @@ void eu_080059D4(s32 bg, void* src);
 void eu_080059F4(s32 bg, void* src);
 #endif
 
+struct UnkBgAnim;
+
+void MosaicReset(void);
+void func_0800675C(u8 a, s32 b, s32 c);
+void func_08006B34(u16 a);
+void func_08006B4C(void);
+void func_08006494(u16 a, u16 b);
+u8 MosaicIsActive(void);
+u8 func_08006B74(void);
+void func_08006B80(u16* a, u16* b);
+u32 func_08006BA0(struct UnkBgAnim* p);
+struct UnkBgAnim* func_08006BA8(void);
+void VTransReset(void);
+void BgReset(void);
+u8 func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, s8 sw, s8 sh);
+void func_080066F4(s16 x, s16 y);
+void func_08006954(void);
+void func_080065FC(s32 bg, u16 b, u16 c);
+void func_08006778(struct UnkBgAnim* a, s32 x, s32 y);
+u8 func_0800443C(void* a, u16 b);
+
+#ifdef VERSION_EU
+u8 eu_08005A1C(s32 bg, void* src, u8 w, u8 h);
+void eu_08005ADC(s32 bg);
+#endif
+
 #endif

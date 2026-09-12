@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_EVENTSELECT_H
 #define GUARD_MODE_EVENTSELECT_H
 
+#include "mode_test_api.h"
+
+#include "eventselect_api.h"
+
 #include "text.h"
 #include "fade.h"
 #include "obj_api.h"
@@ -168,10 +172,6 @@ extern Mode gUnkEu_09F5D6EC;
 
 extern TaskDesc gUnk_09EE4984[];
 
-void func_0805FA8C(s32 a, s32 b, s32 c);
-void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
-void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
-void func_080605A4(s32 a);
 void func_0806180C(u16 a);
 s16 func_08075064(u8 a);
 void func_08085C3C(void);
@@ -183,7 +183,6 @@ void func_08066DC0(s32 a, s32 b, void* c, s32 d, s32 e, s32 f, s32 g);
 u16 func_080787B8(CardBattleWork* w, u8 n);
 void func_0807B668(UnkStruct_02039DD4* p);
 void func_0807E23C(void);
-void SetTaskUpdate(u8* p, u32 v);
 s32 func_08076F80(UnkStruct_08080268* w, u8* task);
 s32 func_08077F44(UnkStruct_08080268* w, u8* task);
 void func_0807682C(UnkStruct_08080268* w, u8 slot);
@@ -244,41 +243,18 @@ void func_080760D8(EvSoundWork* w);
 s32 func_08076F4C(CardBattleWork* w);
 void func_08077E10(CardBattleWork* w);
 void func_08077E98(CardBattleWork* w);
-void func_08076110(u16 song, s16 x, s16 y);
 void Event_Debug_0(u8* work);
 s32 Event_Debug_1(u8* work);
 void Event_Debug_2(u8* work);
 void Event_Debug_3(s32* p);
-void func_08076284(void);
-void func_08076290(void);
-void func_0807629C(void);
 u8 func_080762A8(void);
-void func_080762B8(void);
-void func_080762C4(void);
-void func_080762D0(void);
-void func_080762DC(void);
-void func_080762E8(void);
-void func_080762F4(void);
-void func_08076300(void);
-void func_0807630C(void);
-void func_08076318(void);
-void func_08076324(void);
-void func_08076330(void);
-void func_0807633C(void);
-void func_08076348(void);
 void func_08076354(void);
-void func_08076360(void);
-void func_08076374(void);
 void func_08076388(void);
-void func_08076394(void);
 void func_080763A0(void);
 void func_080763AC(void);
 void func_080763B8(void);
 void func_080763C4(void);
-u8 func_080763D0(void);
-void func_080763F0(void);
 void func_08076438(void);
-u8 func_0807643C(void);
 void func_08076458(void);
 
 #endif

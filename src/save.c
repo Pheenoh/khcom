@@ -1,3 +1,4 @@
+#include "save_api.h"
 #include "macros.h"
 #include "gba/syscall.h"
 #include "save.h"
@@ -197,7 +198,7 @@ void SaveWriteHeader(s16 slot) {
     EwramFree(hdr);
 }
 
-void SaveSetHeaderState(u16 slot, u16 state) {
+void SaveSetHeaderState(s16 slot, s16 state) {
     SaveHeader* hdr;
 
     hdr = EwramAlloc(SAVE_HEADER_SIZE);
@@ -333,7 +334,7 @@ void SaveWriteSystem(void) {
     EwramFree(blk);
 }
 
-void SaveSetSystemState(u16 slot, u16 state) {
+void SaveSetSystemState(s16 slot, s16 state) {
     SaveBlockLarge* blk;
 
     blk = EwramAlloc(SAVE_SYSTEM_SIZE);
@@ -487,7 +488,7 @@ void SaveWriteFileLarge(u16 file) {
     SaveWriteHeader((s16)file);
 }
 
-void SaveSetFileLargeState(u16 file, u16 slot, u16 state) {
+void SaveSetFileLargeState(s16 file, s16 slot, s16 state) {
     SaveBlockLarge* blk;
 
     blk = EwramAlloc(SAVE_FILE_LARGE_SIZE);
@@ -643,7 +644,7 @@ void SaveWriteFileSmall(u16 file) {
     SaveWriteHeader(f + 2);
 }
 
-void SaveSetFileSmallState(u16 file, u16 slot, u16 state) {
+void SaveSetFileSmallState(s16 file, s16 slot, s16 state) {
     SaveBlockSmall* blk;
 
     blk = EwramAlloc(SAVE_FILE_SMALL_SIZE);

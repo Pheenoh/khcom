@@ -1,6 +1,8 @@
 #ifndef GUARD_ACGTRANS_H
 #define GUARD_ACGTRANS_H
 
+#include "acgtrans_tasks.h"
+
 #include "display.h"
 #include "types.h"
 #include "taskpool.h"
@@ -25,8 +27,6 @@ typedef struct AcgTransConfig {
 
 extern u8 gTaskDescAcgtrans[];
 
-void task_acgtrans_0(AcgTransWork* work, AcgTransConfig* cfg);
-s32 task_acgtrans_1(AcgTransWork* work);
 void func_0801D1C4(void* a, s32 bg, u16 tile, u16 count, u16 frames, u32 src);
 
 #endif /* GUARD_ACGTRANS_H */

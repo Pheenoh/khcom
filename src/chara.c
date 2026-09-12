@@ -1,3 +1,7 @@
+#include "display.h"
+#include "pallet.h"
+#include "sio_api.h"
+#include "util.h"
 #include "macros.h"
 #include "chara.h"
 

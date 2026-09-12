@@ -1,6 +1,8 @@
+#include "display.h"
 #include "smn.h"
 #include "anim.h"
 #include "macros.h"
+#include "smn_api.h"
 
 void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     BtlObj* body;

@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_TITLE_H
 #define GUARD_MODE_TITLE_H
 
+#include "save_api.h"
+
 #include "display.h"
 #include "fade.h"
 #include "obj_api.h"
@@ -12,6 +14,7 @@
 #include "main.h"
 #include "engine.h"
 #include "m4a.h"
+#include "battle_actor.h"
 
 #define REG_DISPSTAT (*(vu16*)0x04000004)
 #define REG_IE (*(vu16*)0x04000200)
@@ -53,8 +56,7 @@ extern void* gUnk_09EF65B4;
 extern void* gUnk_09EF65BC;
 extern void* gUnk_09EF65C4;
 
-void func_0801CB44(void);
-s32 SaveLoadHeader(void);
+
 void func_08093BB4(void);
 void func_08093C04(void);
 void func_080C736C(void);
@@ -66,8 +68,8 @@ void func_080C75A4(s32 a, u16 b);
 u8 func_080D6790(void);
 void func_080D5B30(void);
 void func_080D59B4(void);
-s32 SaveRepairSystem(void);
-s32 SaveRepairFileLarge(u16 file);
-s32 SaveRepairFileSmall(u16 file);
+
+
+
 
 #endif /* GUARD_MODE_TITLE_H */

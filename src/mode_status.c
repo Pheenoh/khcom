@@ -1,3 +1,4 @@
+#include "display.h"
 #include "macros.h"
 #include "mode_status.h"
 

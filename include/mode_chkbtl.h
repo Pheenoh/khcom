@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_CHKBTL_H
 #define GUARD_MODE_CHKBTL_H
 
+#include "mode_test_api.h"
+
 #include "fade.h"
 #include "types.h"
 #include "battle_work.h"
@@ -41,10 +43,6 @@ typedef struct ChkBtlWorld {
     const char* name;
 } ChkBtlWorld;
 
-void func_0805FA8C(s32 a, s32 b, s32 c);
-void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
-void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
-void func_080605A4(s32 a);
 void func_08085CB0(void);
 void _08085D04(u8 a);
 void func_08085FB0(void);

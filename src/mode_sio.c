@@ -1,3 +1,6 @@
+#include "m4a_song.h"
+#include "pallet.h"
+#include "sio_api.h"
 #include "display.h"
 #include "text.h"
 #include "macros.h"

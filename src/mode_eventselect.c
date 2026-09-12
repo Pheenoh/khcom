@@ -1,3 +1,5 @@
+#include "eventselect_api.h"
+#include "m4a_song.h"
 #include "fade.h"
 #include "macros.h"
 #include "engine_math.h"
@@ -1364,7 +1366,6 @@ void func_0807B6F4(void* work);
 void func_080789E4(void* work);
 void func_08078BB4(void* work);
 u8 func_080782AC(UnkStruct_02034AAC** cards, u8 count);
-u16 func_08006390(void);
 s32 func_080AC5E8(void* cards, u8 count, u8 kind, UnkStruct_080ABA80* data, u8* flag);
 s32 func_080AD144(void* cards, u8 count, u8 kind, UnkStruct_080ABA80* data, u8* flag, void* arg);
 s32 func_080AE28C(void* cards, void* output, u8 count);

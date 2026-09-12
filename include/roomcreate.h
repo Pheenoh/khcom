@@ -1,6 +1,8 @@
 #ifndef GUARD_ROOMCREATE_H
 #define GUARD_ROOMCREATE_H
 
+#include "roomcreate_tasks.h"
+
 #include "fade.h"
 #include "types.h"
 #include "m4a.h"
@@ -62,9 +64,5 @@ void func_080E0298(s32 a, s32 b);
 void func_080E0418(void);
 void func_080E042C(void);
 
-void task_roomcreate_0(RoomCreateWork* work);
-u8 task_roomcreate_1(RoomCreateWork* work);
-void task_roomcreate_2(RoomCreateWork* work);
-void task_roomcreate_3(RoomCreateWork* work);
 
 #endif /* GUARD_ROOMCREATE_H */

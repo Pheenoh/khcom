@@ -63,8 +63,6 @@ void ModeInit(u32 a);
 #else
 void ModeInit(void);
 #endif
-void func_08001254(void);
-void func_080012A8(void);
 void SaveInitSram(void);
 
 void* GetEwramHeapStart(void) {

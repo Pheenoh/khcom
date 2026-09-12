@@ -1,3 +1,4 @@
+#include "pallet.h"
 #include "macros.h"
 #include "romcri.h"
 

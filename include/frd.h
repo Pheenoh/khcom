@@ -1,6 +1,9 @@
 #ifndef GUARD_FRD_H
 #define GUARD_FRD_H
 
+#include "frd_tasks.h"
+
+#include "display.h"
 #include "m4a_song.h"
 #include "fade.h"
 #include "btl_effect.h"
@@ -13,6 +16,7 @@
 #include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
+#include "smn_api.h"
 
 typedef struct FrdArgs {
     u16 unk_00;
@@ -179,23 +183,9 @@ extern u8 gUnk_0813ED4C[];
 extern u8 gUnk_09617E18[];
 extern u8 gUnk_0813ED90[];
 
-void func_08017260(s32 a, s32 b, s32 c, s32 d);
-void func_08045494(BtlObj* body, u8 a, s16 b, s16 c);
-u8 func_0804544C(FrdDonaldWork* work);
-void func_08006B4C(void);
-void func_08012E44(s32 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,s32 h,s32 i);
-void func_08013308(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,u8 h,s32 i);
-void func_08015834(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f,s32 g,s32 h);
-void func_08013CB4(u16 a,s32 b,s32 c,s32 d,s32 e,s32 f);
-void func_080147A8(s32 x,s32 y,s32 z);
-void func_08012AAC(u16 a,s32 x,s32 y,s32 z);
-u8 task_frd_donald_1(FrdDonaldWork* work);
 u8 func_080474A8(FrdJackWork* work);
-void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
-u8 task_frd_jack_1(FrdJackWork* work);
 void func_0802F1E8(void);
 void func_08048A68(FrdPanWork* work);
-u8 task_frd_pan_1(FrdPanWork* work);
 void func_08048980(FrdPanWork* work);
 void func_0801D288(void);
 u8 func_080465F0(FrdGoofyWork* work);

@@ -1,3 +1,5 @@
+#include "m4a_song.h"
+#include "obj_api.h"
 #include "macros.h"
 #include "mode_allmap.h"
 

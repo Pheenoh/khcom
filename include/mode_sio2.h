@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include "mode_test_api.h"
+
 #include "anim.h"
 #include <string.h>
 #include "fade.h"
@@ -179,10 +181,6 @@ extern TaskDesc gTaskDescPooPrize;
 extern TaskDesc gTaskDescPooRabbitAfterEvent;
 extern TaskDesc gTaskDescPooCabbageAfterEvent;
 
-void func_0805FA8C(s32 a, u16 b, u16 c);
-void func_0805FC04(u8 x, u8 y, u8 c, u16 v);
-void func_0805FCB0(u8 x, u8 y, u8 c, const char* s);
-void func_080605A4(s32 a);
 void func_0806180C(u16 a);
 void func_08085CB0(void);
 void func_080A411C(void* pool, u32 a, u16 b);

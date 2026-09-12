@@ -1,6 +1,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "player_progression.h"
+
 #include "m4a_song.h"
 #include <string.h>
 #include <stdlib.h>
@@ -1359,7 +1361,6 @@ void task_poo_mapbutterfly_0(PooMapButterflyWork* w, PooPos* p);
 void task_poo_shadowdodai_0(PooShadowWork* w, PooShadowArgs* a);
 void task_poo_shadowscale_0(PooScaleWork* w, PooShadowArgs* a);
 void func_080D1990(void* pool, u32 a, s32 x, s32 y, u16 e);
-u8 func_080035CC(s16 a, s16 b, s32 c, s32 d, s32 e, s32 f);
 void task_poo_zzz_3(PooZzzWork* w);
 void func_080CE2C4(PooRabbitWork* w, s32 b, u16 c);
 void func_080D206C(PooBflyPart* p);
@@ -1547,7 +1548,7 @@ void func_080C8AE0(PooWork* w);
 s32 func_080D01BC(s32 x, s32 y);
 u8 func_080C871C(PooWork* w);
 void func_080C7B84(u32 a);
-void func_0800FDD0(s32 a);
+
 void task_poo_mapbutterflyborn_3(PooMapBornWork* w);
 void task_poo_trap_3(PooTrapWork* w);
 u8 task_poo_pitAndButterfly_1(PooTrapWork* w);

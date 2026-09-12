@@ -1,3 +1,6 @@
+#include "display.h"
+#include "m4a_song.h"
+#include "sio_api.h"
 #include "obj_api.h"
 #include "fade.h"
 #include "macros.h"
@@ -25,7 +28,6 @@ void (*gUnk_030074A4)(void);
 u32 gUnkEu_030074AC;
 #endif
 #ifdef VERSION_EU
-void eu_0800115C(void);
 extern Mode gModeLang;
 #endif
 extern Mode gModeCopyright1;
@@ -38,32 +40,19 @@ void ModeInit(u8 a);
 #else
 void ModeInit(void);
 #endif
-void func_08001058(void (*a)(void), void (*b)(void));
-void func_08001080(void);
 void func_0800109C(void (*fn)(void));
 void func_080010A8(void);
-u8 IsModeStarted(void);
-void SetModeUpdate(void (*fn)(void));
-void func_08001254(void);
-void func_080012A8(void);
 void ModeCallExit(void);
 const char* GetModeName(void);
 void UpdateDebugModeSelect(void);
 
-u16 _08006338(void);
-void VTransReset(void);
-void BgReset(void);
-void MosaicReset(void);
 void func_08004938(void);
 void FlushDma3Queue(void);
-void func_08002F50(void);
 void CommitDisplayRegs(void);
 void func_08005C78(void);
 void MosaicUpdate(void);
 void SortSprites(void);
-u8 func_080078E8(void);
 void func_080C57B4(void);
-void m4aMPlayAllStop(void);
 void func_08116CEC(void);
 void* GetEwramHeapStart(void);
 u32 GetEwramHeapSize(void);
@@ -208,8 +197,8 @@ const char* GetTaskName(Task* t) {
     return t->desc->name;
 }
 
-void SetTaskUpdate(u8* p, u32 v) {
-    *(u32*)(p + 32) = v;
+void SetTaskUpdate(Task* task, void* update) {
+    task->update = update;
 }
 
 s32 func_08000F90(void) {

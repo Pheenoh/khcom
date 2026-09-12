@@ -137,7 +137,7 @@ void SndStreamLock(u32 ch, u32 len, void** dst1, u32* len1, void** dst2,
     }
 }
 
-void SndStreamSetCallbacks(void (*a)(void), void* (*b)(u32), void (*c)(void),
+void SndStreamSetCallbacks(void* (*a)(u32), void* (*b)(u32), void (*c)(void*),
                    void (*d)(void*)) {
     gSndStream.unk_48 = a;
     gSndStream.alloc = b;

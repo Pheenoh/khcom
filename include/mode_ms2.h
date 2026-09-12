@@ -194,7 +194,6 @@ u8 func_081079A8(UnkStruct_0810718C* p);
 u8 func_081079E4(UnkStruct_0810718C* p);
 void func_08107A08(UnkStruct_0810718C* p);
 void func_08107A74(UnkStruct_0810718C* p);
-void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 void mode_ms_charge_0(void);
 void func_0810563C(void);
 UnkStruct_0810718C* func_08104B2C(void);

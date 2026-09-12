@@ -1,6 +1,8 @@
 #ifndef GUARD_TUTORIAL_H
 #define GUARD_TUTORIAL_H
 
+#include "eventselect_api.h"
+
 #include "obj_api.h"
 #include "btl_effect.h"
 #include "display.h"
@@ -61,8 +63,6 @@ void func_0805DB04(TutorialWork* work, u16 a, u16 b, u16 c);
 void func_0805DB28(TutorialWork* work);
 u8 func_080A42C8(void);
 void func_0809B644(void* a, s32 b, s32 c, s32 d, s32 e);
-void func_08076324(void);
-u8 func_080763D0(void);
 u8 func_0807B3E0(void);
 
 #endif /* GUARD_TUTORIAL_H */

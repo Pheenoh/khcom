@@ -1,3 +1,4 @@
+#include "obj_api.h"
 #include "macros.h"
 #include "allmap.h"
 #include "gba/keys.h"

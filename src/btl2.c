@@ -1,3 +1,5 @@
+#include "display.h"
+#include "m4a_song.h"
 #include "macros.h"
 #include "btl2.h"
 #include "gba/keys.h"

@@ -1,3 +1,4 @@
+#include "obj_api.h"
 #include "display.h"
 #include "gba/syscall.h"
 #include "listpool.h"
@@ -14,7 +15,6 @@ extern u16 gDispCnt;
 void EnableObj(void);
 void DisableObj(void);
 void SetObjTileRange(u16 a, u16 b);
-void SetObjPaletteRange(u16 a, u16 b);
 
 void SpriteInit(void) {
     u32 zero;

@@ -1,8 +1,8 @@
+#include "mode.h"
 #include "macros.h"
 #include "bos7.h"
 
 #ifdef VERSION_EU
-extern void eu_0800115C(void);
 extern u32 gLanguage;
 extern u8 gUnkEu_09DD51A0[];
 extern u8 gUnkEu_09DD59A0[];

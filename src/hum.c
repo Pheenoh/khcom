@@ -1,3 +1,6 @@
+#include "fade.h"
+#include "obj_api.h"
+#include "pallet.h"
 #include "macros.h"
 #include "hum.h"
 #include "gba/keys.h"
@@ -25,7 +28,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
     switch (_0800E434(work)) {
     case 5:
         work->base.unk_150 = 0;
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
         case 38:
             if (act->unk_00C < 0) {
@@ -696,7 +699,7 @@ u8 task_hum_hook_1(HookWork* work) {
     if (_0800E434(work) == 5) {
         work->base.unk_150 = 0;
 
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
             work->base.unk_170 = 20;
             break;
@@ -1542,7 +1545,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         act->unk_034 &= ~0x100008000;
         func_08019A30();
 
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
         case 38:
             work->base.unk_170 = 20;
@@ -2150,7 +2153,7 @@ u8 task_hum_hades_1(HadesWork* work) {
     case 5:
         work->base.unk_150 = 0;
 
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
         case 38:
             if (w->unk_1CA & 1) {
@@ -2894,7 +2897,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         work->base.unk_150 = 0;
         w->unk_1C4 = 0;
 
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
             work->base.unk_170 = 21;
             break;
@@ -3455,7 +3458,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         work->base.unk_150 = 0;
         work->base.unk_152 = 0;
 
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
             work->base.unk_170 = 21;
             break;
@@ -4297,7 +4300,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     switch (_0800E434(work)) {
     case 5:
         work->base.unk_150 = 0;
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
         case 38:
             work->base.unk_170 = 20;
@@ -5116,7 +5119,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
     case 5:
         work->base.unk_150 = 0;
 
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
         case 38:
             w->base.unk_170 = 22;
@@ -6128,7 +6131,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         work->base.unk_150 = 0;
         work->base.unk_152 = 0;
 
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
             work->base.unk_170 = 21;
             break;
@@ -7199,7 +7202,7 @@ u8 task_hum_riku_1(RikuWork* work) {
     switch (_0800E434(work)) {
     case 5:
         work->base.unk_150 = 0;
-        switch (_0800F84C(work)) {
+        switch ((u32)_0800F84C(work)) {
         case 36:
             work->base.unk_170 = 24;
             break;

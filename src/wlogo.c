@@ -1,3 +1,5 @@
+#include "intr.h"
+#include "pallet.h"
 #include "macros.h"
 #include "wlogo.h"
 

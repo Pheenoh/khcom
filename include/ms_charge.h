@@ -1,6 +1,9 @@
 #ifndef GUARD_MS_CHARGE_H
 #define GUARD_MS_CHARGE_H
 
+#include "mode_test_api.h"
+
+#include "display.h"
 #include "engine_math.h"
 
 #include <string.h>
@@ -70,8 +73,6 @@ extern u8 gUnk_09A3DE08[];
 extern u8 gUnk_09A3DE7C[];
 extern void* gUnk_09EE8F48[];
 
-void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
-u16 func_08060A2C(u16 a);
 s16 func_08084BAC(void);
 s16 func_08084BF0(void);
 void func_080850B0(u16* p);

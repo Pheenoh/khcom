@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_COPYRIGHT1_H
 #define GUARD_MODE_COPYRIGHT1_H
 
+#include "save_api.h"
+
 #include "fade.h"
 #include "display.h"
 #include "types.h"
@@ -17,7 +19,7 @@ extern Mode gModeMenuMsg;
 extern Mode gModeCopyright1;
 extern Mode gModeCopyright2;
 
-int SaveRepairHeader(void);
+
 
 void mode_copyright1_0(s32 arg);
 void mode_copyright1_1(void);

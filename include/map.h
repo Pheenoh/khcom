@@ -1,6 +1,12 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
+#include "mode_test_api.h"
+
+#include "save_api.h"
+
+#include "player_progression.h"
+
 #include "card_deck.h"
 
 #include "m4a_song.h"
@@ -25,6 +31,7 @@
 #include "fld_types.h"
 #include "card_types.h"
 #include "text_types.h"
+#include "battle_actor.h"
 
 typedef struct UnkStruct_080DFB8C {
     u16 unk_00;
@@ -1612,7 +1619,6 @@ void func_080EC04C(UnkStruct_02034FE0* work);
 void func_080EBFF8(UnkStruct_02034FE0* work);
 void func_080E4D68(s32 a, s32 b);
 void func_080E3C1C(s32 a, s16* px, s16* py, s16* pz, s16 lo, s16 hi);
-void func_080121D4(UnkStruct_080E6394* p);
 s32 func_080DFE7C(s32 x, s32 y, s32 z);
 extern TaskDesc gTaskDescFldShadow;
 extern TaskDesc gTaskDescMapTalk;
@@ -1627,7 +1633,6 @@ extern u8 gUnk_09EF0510[];
 extern u8 gUnk_09EF060C[];
 extern u8 gUnk_09EF0628[];
 void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
-void func_080121FC(void* a);
 void func_080F5C60(MapDonaldWork* w);
 void func_080F5CDC(MapDonaldWork* w);
 void func_080F5F88(MapGoofyWork* w);
@@ -1643,10 +1648,10 @@ void func_080F65EC(MapNamineWork* w);
 void func_080F6668(MapNamineWork* w);
 void func_080F6704(MapNiserikuWork* w);
 void func_080F6F1C(MapTutorialWork* w);
-s32 SaveRepairFileLarge(u16 file);
-s32 SaveLoadFileLarge(u16 file);
-s32 SaveRepairFileSmall(u16 file);
-s32 SaveLoadFileSmall(u16 file);
+
+
+
+
 void _08085D04(u8 a);
 s32 func_080EB7A0(u8 a);
 void func_080F6F90(MapTutorialWork* w);
@@ -1712,7 +1717,6 @@ s32 func_080F3108(MapGmkGp8Work* w);
 s32 func_080F30C4(MapGmkGp8Work* w);
 void func_080E4B34(void);
 void func_08066918(void* a, void* b);
-void m4aMPlayVolumeControl(MusicPlayerInfo* mplayInfo, u16 trackBits, u16 volume);
 u16 CountCardsById(u16 cardId);
 void func_0801CCB4(void);
 void func_0801CD20(void);
@@ -1728,7 +1732,6 @@ extern Mode gModeMsTop;
 extern Mode gModeMovie;
 extern Mode gModeDebflag;
 extern Mode gModeTitle;
-s32 Sqrt8(s32 a);
 void func_080045AC(void* a, void* b, u8 c, u8 d, s32 e);
 void* func_08093BF8(void);
 void func_080DF640(u8 a, void* p);
@@ -1831,7 +1834,6 @@ void func_080E052C(u8 a);
 void func_080E05E4(void);
 void func_080E0780(void);
 void func_080E0820(void);
-void func_0801CB0C(void);
 void* func_080D3A20(void* pool);
 void func_080C75A4(s32 a, u16 b);
 void func_080EC500(UnkStruct_02034FE4* w);
@@ -1844,9 +1846,6 @@ void func_0806180C(u16 a);
 void func_080DFA3C(void);
 void func_080104F4(void);
 void func_080DEF20(void);
-void func_0801CB00(void);
-void func_08006494(u16 a, u16 b);
-void func_0801CB0C(void);
 void func_080E0878(void);
 void func_080E0900(UnkStruct_080DFB8C* p, s32 a, s32 b);
 u8 func_080E0920(UnkStruct_080DFF1C* p, u16 a);
@@ -2043,10 +2042,10 @@ u32 func_080DF804(u8 a);
 void func_080F7AE0(MapFloorWork* w);
 void func_080F77D4(MapFaintWork* w);
 void func_080EE5E0(u8 a);
-u8 func_0800FC5C(s32 a);
-u8 func_0800FBCC(s32 a);
-void func_0800FB2C(s32 a);
-void func_0800FC14(s32 a);
+
+
+
+
 void func_080E3CD4(s32 a, s16* px, s16* py, s16* pz, s16 e, s16 f);
 void func_080E64D4(UnkStruct_080E590C* p);
 void func_080EBA58(u8 a);
@@ -2157,7 +2156,6 @@ s32 func_080F5B68(MapTalkWork* w);
 void func_080F5BB8(MapTalkWork* w);
 void func_080F5C48(MapTalkWork* w);
 void func_080F4F60(MapPrzCardWork* w);
-s32 func_0805F5A4(s32* a, s32* b);
 void* func_080F7AB4(void);
 void func_080F49D0(MapPrizeWork* w);
 void func_080F4BA0(MapPrizeWork* w);

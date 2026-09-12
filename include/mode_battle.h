@@ -13,6 +13,7 @@
 #include "main.h"
 #include "engine.h"
 #include "m4a.h"
+#include "btl_effect.h"
 
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
@@ -50,13 +51,7 @@ extern TaskDesc gTaskDescBosPc;
 extern TaskDesc gTaskDescBosLst;
 
 void func_0800AB8C(void);
-void func_08012798(s32 a, u16 b);
-void func_08012810(void);
-void func_08012824(void);
-void BtlWorkInit(void);
 void _08019CB4(void);
-void func_0801C068(void);
-void func_0801C104(void);
 
 void mode_battle_0(u32 mode);
 void mode_battle_1(void);

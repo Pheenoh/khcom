@@ -1,6 +1,9 @@
 #ifndef GUARD_ROMCRI_H
 #define GUARD_ROMCRI_H
 
+#include "romcri_tasks.h"
+
+#include "pallet.h"
 #include "display.h"
 #include "types.h"
 #include "game_state.h"
@@ -73,15 +76,7 @@ extern u8 gUnk_08F6D9E4[];
 extern u8 gUnk_08F6DA04[];
 extern const u16 gUnk_09EDA4EC[];
 
-void PushPaletteEffect(s32 a);
-void PopPaletteEffect(void);
 
-void task_romcri_eff_0(RomcriEffWork* work, s32 arg);
-u8 task_romcri_eff_1(RomcriEffWork* work);
-void task_romcri_eff_3(void);
-void task_romcri_eff2_0(RomcriEff2Work* work, s32 arg);
-u8 task_romcri_eff2_1(RomcriEff2Work* work);
-void task_romcri_eff2_3(void);
 u16 func_0803FDC8(RomcriList* list);
 
 #endif /* GUARD_ROMCRI_H */

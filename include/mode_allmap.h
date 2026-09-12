@@ -71,7 +71,6 @@ extern u8 gUnk_09EF654C[];
 extern u8 gUnk_09EF658C[];
 extern TaskDesc gTaskDescAllmapBar;
 
-void SetObjPaletteRange(s32 a, s32 b);
 void func_080D2F20(void);
 void func_080D2F64(void);
 void func_080D3008(void);

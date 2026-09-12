@@ -1,5 +1,6 @@
 #include "mode_vsbattle.h"
 #include "macros.h"
+#include "hum_common.h"
 
 void func_0800E168(HumWork* work, HumDef* def) {
     BtlObj* actor = &work->unk_040;
@@ -169,7 +170,6 @@ void func_0800E5CC(HumSub* sub) {
     }
 }
 
-s32 func_0800E5F0(HumWork* work);
 
 s32 func_0800E5F0(HumWork* work) {
     BtlObj* actor = &work->unk_040;

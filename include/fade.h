@@ -14,4 +14,8 @@ u8 func_08006314(void);
 void func_080063A8(void);
 void func_080063C4(u8 on);
 
+void func_08005C60(u16 a);
+u16 func_08006390(void);
+u16 _08006338(void);
+
 #endif

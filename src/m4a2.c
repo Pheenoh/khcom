@@ -1,3 +1,4 @@
+#include "m4a_song.h"
 #include "m4a.h"
 #include "macros.h"
 

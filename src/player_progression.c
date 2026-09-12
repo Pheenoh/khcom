@@ -1,3 +1,4 @@
+#include "player_progression.h"
 #include "macros.h"
 #include "battle.h"
 

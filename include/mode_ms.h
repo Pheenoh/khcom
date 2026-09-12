@@ -1,6 +1,10 @@
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
 
+#include "mode_test_api.h"
+
+#include "player_progression.h"
+
 #include "text.h"
 #include "fade.h"
 #include "obj_api.h"
@@ -144,7 +148,7 @@ void func_08103D54(s16 a);
 void func_08103D7C(void);
 void func_08103DE8(void);
 
-void func_0800FDD0(s32 a);
+
 u8 func_080A42C8(void);
 void func_080A4234(void* pool, u32 a, u16 b);
 void func_080A411C(void* pool, u32 a, u16 b);
@@ -153,8 +157,7 @@ void func_081017A0(void);
 void func_08101970(void);
 void mode_ms_top_1(void);
 s16 func_08084458(u16 a);
-u16 func_08060A2C(u16 a);
-u8 func_0800FC5C(s32 a);
+
 u8 func_0810155C(u32 a);
 void func_080E04EC(void);
 void func_0810264C(u16 a, u16 b, u16 c);
@@ -169,7 +172,6 @@ void func_08102AB4(s16 x, s16 y);
 void func_08103F94(s16 a, s16 b);
 void func_08101588(u32 value, u8* glyphs, u8* dst, u16 stride, u16 count);
 void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
-void func_0800448C(void* src, void* dst, u8 x, u8 y, u8 w, u8 h, u8 sw, u8 sh);
 
 extern u8 gUnk_0203C590[];
 extern u16 gUnk_09993334[];

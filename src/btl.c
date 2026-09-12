@@ -1,16 +1,16 @@
+#include "eventselect_api.h"
+#include "engine_math.h"
 #include "display.h"
 #include "obj_api.h"
 #include "macros.h"
 #include "btl.h"
+#include "btl_effect.h"
 
 u8 gUnk_0203492C;
 u16 gUnk_0203492E;
 s32 gUnk_02034930;
 
 void func_0807B3C4(s32 a);
-void func_0807630C(void);
-void func_08018970(s32 x, s32 y, s32 z);
-void func_08018C38(s32 x, s32 y, s32 z);
 
 void task_btl_lockon_0(BtlLockonWork* work) {
     work->tiles = LoadObjTiles(gUnk_08B1D8BC, 0x180);

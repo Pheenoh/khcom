@@ -1,3 +1,6 @@
+#include "display.h"
+#include "obj_api.h"
+#include "util.h"
 #include "macros.h"
 #include "btl3.h"
 

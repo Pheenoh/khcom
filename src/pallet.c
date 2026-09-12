@@ -335,7 +335,7 @@ u16* FadeAllPalettesToWhite(u16* src, u16 amount) {
     return gPaletteBuffer->colors;
 }
 
-void StartBgWave(s32 a) {
+void StartBgWave(void (*callback)(void)) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
@@ -343,7 +343,7 @@ void StartBgWave(s32 a) {
         gBgWaves[i].frequency = 1;
         gBgWaves[i].enabled = 0;
     }
-    SetHBlankCallback(a);
+    SetHBlankCallback(callback);
     EnableHBlankIntr();
 }
 
