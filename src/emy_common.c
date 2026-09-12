@@ -429,15 +429,8 @@ s32 _0800CDF0(EmyWork* work) {
                     work->unk_170 = ((actor->unk_CE + ((lo = -actor->unk_D0) + GetRandom() % (actor->unk_D0 - lo + 1))) << 8);
                 }
             } else {
-                d = tx - actor->x;
-                if (d < 0) {
-                    d = actor->x - tx;
-                }
-                if (d > 0x400) {
-                    work->angle = GetAngle(actor->x, actor->y, tx, ty);
-                    actor->x += (gSineTable[work->angle] * work->unk_164) >> 8;
-                    actor->y += (-gSineTable[work->angle + 64] * work->unk_164) >> 8;
-                } else if ((d = ty - actor->y) >= 0 ? d > 0x400 : actor->y - ty > 0x400) {
+                if ((tx - actor->x >= 0 ? tx - actor->x : actor->x - tx) > 0x400
+                    || (ty - actor->y >= 0 ? ty - actor->y : actor->y - ty) > 0x400) {
                     work->angle = GetAngle(actor->x, actor->y, tx, ty);
                     actor->x += (gSineTable[work->angle] * work->unk_164) >> 8;
                     actor->y += (-gSineTable[work->angle + 64] * work->unk_164) >> 8;
