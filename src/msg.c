@@ -1671,12 +1671,12 @@ void func_08064624(void) {
     u8 n;
     u16* src;
     u8* dst;
+    u8* p;
     u8 tx;
     u8 ty;
     u8 sx;
     u8 h;
     u16 glyph;
-    u16* secondRowTile;
     u8 k;
     u8 sy;
     u8 y;
@@ -1684,7 +1684,6 @@ void func_08064624(void) {
     u8 pal;
     u32 cur;
     u32 pix;
-    s32 tileX2;
     for (n = 0; n < 10; n++) {
         if (gUnk_02034A8C[n].unk_25 != 1) {
             continue;
@@ -1704,76 +1703,101 @@ void func_08064624(void) {
                 dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].unk_24) + (tx + 1) * 32 + ty * 1024;
                 screen = GetBgScreenBase(gUnk_02034A8C[n].unk_24);
                 src = (u16*)&gUnk_090AB5B2[((u16*)gUnk_09EEB204[glyph])[3] * 32];
+                p = dst;
 
                 for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
                     if (glyph == 0xFFFF) {
                         cur = 0;
                         pix = 0;
                     } else {
-                        cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024);
+                        cur = *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024);
                         pix = src[(yy & 15) + (yy >> 4) * 32] |
                               ((u32)src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
                     }
-                    *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
+                    *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
 
                     if (sx != 0) {
-                        *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = pix >> (32 - sx * 4);
+                        *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = pix >> (32 - sx * 4);
                     }
                 }
 
-                tileX2 = tx + 2;
-                *(u16*)(screen + ty * 64 + tx * 2) = (tx + 1 + ty * 32) | (pal << 12);
-                secondRowTile = (u16*)(screen + (ty + 1) * 64 + tx * 2 + 2);
-                *(u16*)(screen + (ty + 1) * 64 + tx * 2) = (tx + 1 + (ty + 1) * 32) | (pal << 12);
-
-                if (sy != 0) {
-                    *(u16*)(screen + (ty + 2) * 64 + tx * 2) = (tx + 1 + (ty + 2) * 32) | (pal << 12);
-                }
-
-                if (sx != 0) {
-                    *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tileX2 + ty * 32) | (pal << 12);
-                    *secondRowTile = (tileX2 + (ty + 1) * 32) | (pal << 12);
+                {
+                    s32 t0;
+                    s32 ty1;
+                    s32 t1;
+                    s32 tx2;
+                    t0 = ty * 32;
+                    *(u16*)(screen + tx * 2 + ty * 64) = (tx + 1 + t0) | (pal << 12);
+                    ty1 = ty + 1;
+                    t1 = ty1 * 32;
+                    *(u16*)(screen + tx * 2 + ty1 * 64) = (tx + 1 + t1) | (pal << 12);
 
                     if (sy != 0) {
-                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tileX2 + (ty + 2) * 32) | (pal << 12);
+                        s32 r = ty + 2;
+                        s32 t = r * 32;
+                        *(u16*)(screen + tx * 2 + r * 64) = (tx + 1 + t) | (pal << 12);
                     }
-                }
-
-                for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
-                    if (glyph == 0xFFFF) {
-                        cur = 0;
-                        pix = 0;
-                    } else {
-                        cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32);
-                        pix = src[(yy & 15) + (yy >> 4) * 32 + 16] |
-                              ((u32)src[(yy & 15) + (yy >> 4) * 32 + 17] << 16);
-                    }
-                    *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = cur | (pix << (sx * 4));
-
-                    if (sy != 0) {
-                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tileX2 + (ty + 2) * 32) | (pal << 12);
-                    }
+                    tx2 = tx + 2;
 
                     if (sx != 0) {
-                        *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 64) = pix >> (32 - sx * 4);
-                        *(u16*)(screen + ty * 64 + tx * 2 + 4) = (tx + 3 + ty * 32) | (pal << 12);
-                        *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 4) = (tx + 3 + (ty + 1) * 32) | (pal << 12);
+                        *(u16*)(screen + tx * 2 + ty * 64 + 2) = (tx2 + t0) | (pal << 12);
+                        *(u16*)(screen + tx * 2 + ty1 * 64 + 2) = (tx2 + t1) | (pal << 12);
 
                         if (sy != 0) {
-                            *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 4) = (tx + 3 + (ty + 2) * 32) | (pal << 12);
+                            s32 r = ty + 2;
+                            s32 t = r * 32;
+                            *(u16*)(screen + tx * 2 + r * 64 + 2) = (tx2 + t) | (pal << 12);
                         }
                     }
                 }
 
-                *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tileX2 + ty * 32) | (pal << 12);
-                *secondRowTile = (tileX2 + (ty + 1) * 32) | (pal << 12);
-
-                if (sx != 0) {
-                    *(u16*)(screen + ty * 64 + tx * 2 + 4) = (tx + 3 + ty * 32) | (pal << 12);
-                    *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 4) = (tx + 3 + (ty + 1) * 32) | (pal << 12);
+                for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
+                    if (glyph == 0xFFFF) {
+                        cur = 0;
+                        pix = 0;
+                    } else {
+                        cur = *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32);
+                        pix = src[(yy & 15) + (yy >> 4) * 32 + 16] |
+                              ((u32)src[(yy & 15) + (yy >> 4) * 32 + 17] << 16);
+                    }
+                    *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = cur | (pix << (sx * 4));
 
                     if (sy != 0) {
-                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 4) = (tx + 3 + (ty + 2) * 32) | (pal << 12);
+                        *(u16*)(screen + tx * 2 + (ty + 2) * 64 + 2) = (tx + 2 + (ty + 2) * 32) | (pal << 12);
+                    }
+
+                    if (sx != 0) {
+                        *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 64) = pix >> (32 - sx * 4);
+                        *(u16*)(screen + tx * 2 + ty * 64 + 4) = (tx + 3 + ty * 32) | (pal << 12);
+                        *(u16*)(screen + tx * 2 + (ty + 1) * 64 + 4) = (tx + 3 + (ty + 1) * 32) | (pal << 12);
+
+                        if (sy != 0) {
+                            *(u16*)(screen + tx * 2 + (ty + 2) * 64 + 4) = (tx + 3 + (ty + 2) * 32) | (pal << 12);
+                        }
+                    }
+                }
+
+                {
+                    s32 tx2;
+                    s32 t0;
+                    s32 ty1;
+                    s32 t1;
+                    tx2 = tx + 2;
+                    t0 = ty * 32;
+                    *(u16*)(screen + tx * 2 + ty * 64 + 2) = (tx2 + t0) | (pal << 12);
+                    ty1 = ty + 1;
+                    t1 = ty1 * 32;
+                    *(u16*)(screen + tx * 2 + ty1 * 64 + 2) = (tx2 + t1) | (pal << 12);
+
+                    if (sx != 0) {
+                        *(u16*)(screen + tx * 2 + ty * 64 + 4) = (tx + 3 + t0) | (pal << 12);
+                        *(u16*)(screen + tx * 2 + ty1 * 64 + 4) = (tx + 3 + t1) | (pal << 12);
+
+                        if (sy != 0) {
+                            s32 r = ty + 2;
+                            s32 t = r * 32;
+                            *(u16*)(screen + tx * 2 + r * 64 + 4) = (tx + 3 + t) | (pal << 12);
+                        }
                     }
                 }
             } else {
@@ -1784,37 +1808,51 @@ void func_08064624(void) {
                 dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].unk_24) + (tx + 1) * 32 + ty * 1024;
                 screen = GetBgScreenBase(gUnk_02034A8C[n].unk_24);
                 src = (u16*)&gUnk_090AA506[((u16*)gUnk_09EEB188[glyph])[3] * 32];
+                p = dst;
 
                 for (y = sy, yy = 0; y < sy + h; y++, yy += 2) {
                     if (glyph == 0xFFFF) {
                         cur = 0;
                         pix = 0;
                     } else {
-                        cur = *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024);
+                        cur = *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024);
                         pix = src[(yy & 15) + (yy >> 4) * 32] |
                               ((u32)src[(yy & 15) + (yy >> 4) * 32 + 1] << 16);
                     }
-                    *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
+                    *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024) = cur | (pix << (sx * 4));
 
                     if (sx != 0) {
-                        *(u32*)(dst + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = pix >> (32 - sx * 4);
+                        *(u32*)(p + (y & 7) * 4 + (u8)(y >> 3) * 1024 + 32) = pix >> (32 - sx * 4);
                     }
                 }
 
-                tileX2 = tx + 2;
-                *(u16*)(screen + ty * 64 + tx * 2) = (tx + 1 + ty * 32) | (pal << 12);
-                *(u16*)(screen + (ty + 1) * 64 + tx * 2) = (tx + 1 + (ty + 1) * 32) | (pal << 12);
-
-                if (sy != 0) {
-                    *(u16*)(screen + (ty + 2) * 64 + tx * 2) = (tx + 1 + (ty + 2) * 32) | (pal << 12);
-                }
-
-                if (sx != 0) {
-                    *(u16*)(screen + ty * 64 + tx * 2 + 2) = (tileX2 + ty * 32) | (pal << 12);
-                    *(u16*)(screen + (ty + 1) * 64 + tx * 2 + 2) = (tileX2 + (ty + 1) * 32) | (pal << 12);
+                {
+                    s32 t0;
+                    s32 ty1;
+                    s32 t1;
+                    s32 tx2;
+                    t0 = ty * 32;
+                    *(u16*)(screen + tx * 2 + ty * 64) = (tx + 1 + t0) | (pal << 12);
+                    ty1 = ty + 1;
+                    t1 = ty1 * 32;
+                    *(u16*)(screen + tx * 2 + ty1 * 64) = (tx + 1 + t1) | (pal << 12);
 
                     if (sy != 0) {
-                        *(u16*)(screen + (ty + 2) * 64 + tx * 2 + 2) = (tileX2 + (ty + 2) * 32) | (pal << 12);
+                        s32 r = ty + 2;
+                        s32 t = r * 32;
+                        *(u16*)(screen + tx * 2 + r * 64) = (tx + 1 + t) | (pal << 12);
+                    }
+                    tx2 = tx + 2;
+
+                    if (sx != 0) {
+                        *(u16*)(screen + tx * 2 + ty * 64 + 2) = (tx2 + t0) | (pal << 12);
+                        *(u16*)(screen + tx * 2 + ty1 * 64 + 2) = (tx2 + t1) | (pal << 12);
+
+                        if (sy != 0) {
+                            s32 r = ty + 2;
+                            s32 t = r * 32;
+                            *(u16*)(screen + tx * 2 + r * 64 + 2) = (tx2 + t) | (pal << 12);
+                        }
                     }
                 }
             }
