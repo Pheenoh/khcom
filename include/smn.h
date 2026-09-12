@@ -2,6 +2,7 @@
 #define GUARD_SMN_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "anim.h"
 #include "taskpool.h"
 typedef struct SmnArgs {
@@ -9,54 +10,6 @@ typedef struct SmnArgs {
     u8 unk_02;
     u8 unk_03;
 } SmnArgs;
-
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    s32 unk_018;
-    s32 unk_01C;
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
-    s16 unk_02C;
-    s16 unk_02E;
-    u32 unk_030;
-    u64 unk_034;
-    u8 unk_03C[0x2C];
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071[0x0B];
-    struct BtlWork* unk_07C;
-    u8 unk_080[0x1C];
-    u8 unk_09C[6];
-    s16 unk_0A2;
-    u8 unk_0A4[15];
-    u8 unk_0B3;
-    u8 unk_0B4[0x04];
-    u8 unk_0B8[0x14];
-    u16 unk_0CC;
-    u16 unk_0CE;
-    u32 unk_0D0;
-    u32 unk_0D4;
-    u16 unk_0D8;
-    s16 unk_0DA;
-    s16 unk_0DC;
-    s16 unk_0DE;
-    s16 unk_0E0;
-    u8 unk_0E2[0x02];
-    u8* unk_0E4;
-    u8 unk_0E8[0x24];
-    s32 unk_10C;
-    void* unk_110;
-    void* unk_114;
-    u8 unk_118[0x10];
-    void (*unk_128)(s32*, s32*, s32*, s32*);
-    u8 unk_12C[0x9C];
-} BtlWork;
 
 typedef struct SmnBody {
     s32 unk_00;
@@ -91,7 +44,7 @@ typedef struct SmnCloudWork {
     u8 unk_163;
     u8 unk_164;
     u8 unk_165[0x03];
-    BtlWork* unk_168;
+    BtlObj* unk_168;
     u16 unk_16C;
     u8 unk_16E[0x02];
     s32 unk_170;
@@ -122,7 +75,7 @@ typedef struct SmnBambiWork {
     u8 unk_163;
     u8 unk_164;
     u8 unk_165[0x03];
-    struct BtlWork* unk_168;
+    struct BtlObj* unk_168;
     s16 unk_16C;
     u8 unk_16E[0x02];
     s32 unk_170;
@@ -153,7 +106,7 @@ typedef struct SmnTinkWork {
     u8 unk_172[0x02];
     s32 unk_174;
     s32 unk_178;
-    struct BtlWork* unk_17C;
+    struct BtlObj* unk_17C;
 } SmnTinkWork;
 
 typedef struct SmnTinkeffWork {
@@ -199,7 +152,7 @@ typedef struct SmnMushuWork {
     u8 unk_153;
     u8 unk_154;
     u8 unk_155[0x03];
-    struct BtlWork* unk_158;
+    struct BtlObj* unk_158;
 } SmnMushuWork;
 
 typedef struct SmnDumboWork {
@@ -234,7 +187,7 @@ typedef struct SmnGenieWork {
     u8 unk_151;
     u8 unk_152;
     u8 unk_153;
-    struct BtlWork* unk_154;
+    struct BtlObj* unk_154;
     s16 unk_158;
     s16 unk_15A;
     u8 unk_15C;
@@ -279,9 +232,6 @@ typedef struct SmnKingWork {
     u8 unk_15F[0x09];
 } SmnKingWork;
 
-extern BtlWork* gBtlWork;
-extern BtlWork* gUnk_02039B9C;
-
 void ReleaseObjPalette(u8* p);
 u16 GetRandom(void);
 void m4aSongNumStart(u16 n);
@@ -310,7 +260,7 @@ void func_08013480(s32 a, s32 b, s32 c);
 void func_08076284(void);
 void func_08076290(void);
 void func_0807629C(void);
-void func_08019190(BtlWork* a, s16 b);
+void func_08019190(BtlObj* a, s16 b);
 void func_08006B80(u16* a, u16* b);
 void func_0801475C(s32 a, s32 b, s32 c);
 void func_0801416C(s32 a, s32 b, s32 c);
@@ -326,8 +276,8 @@ void ApproachValue(s32* value, s32 target, u16 steps);
 void func_0802F284(s32 a, s32 b, s32 c);
 void func_080147C8(s32 a, s32 b);
 s32 func_08011F78(s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-struct BtlWork* ListPoolFirst(void* a);
-struct BtlWork* ListPoolNext(void* a);
+struct BtlObj* ListPoolFirst(void* a);
+struct BtlObj* ListPoolNext(void* a);
 void* LoadObjPalette(void* src, s32 size);
 void* LoadObjTiles(void* src, s32 size);
 void func_08019068(void* a, AnimState* b, s32 c, s32 d, void* e);
@@ -357,8 +307,8 @@ extern u8 gUnk_0813EA7C[];
 extern u8 gUnk_0813EADC[];
 void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args);
 u8 task_smn_cloud_1(SmnCloudWork* work);
-BtlWork* func_08040D54(SmnCloudWork* work);
-BtlWork* func_08040C8C(SmnCloudWork* work);
+BtlObj* func_08040D54(SmnCloudWork* work);
+BtlObj* func_08040C8C(SmnCloudWork* work);
 void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args);
 void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args);
 void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args);
@@ -375,8 +325,8 @@ void func_08044518(SmnGenieWork* work);
 u8 func_0804544C(SmnFrdWork* work);
 void func_08045494(SmnBody* body, u8 a, s16 b, s16 c);
 u8 func_08041FCC(SmnBambiWork* work);
-BtlWork* func_08042018(SmnBambiWork* work);
-BtlWork* func_08044450(SmnGenieWork* work);
+BtlObj* func_08042018(SmnBambiWork* work);
+BtlObj* func_08044450(SmnGenieWork* work);
 void func_080428E8(SmnTinkWork* work);
 u8 func_08044F98(SmnKingWork* work);
 u8 task_smn_bambi_1(SmnBambiWork* work);

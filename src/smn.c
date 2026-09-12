@@ -4,7 +4,7 @@
 
 void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
 
     body = &work->unk_038;
 
@@ -118,7 +118,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         } else work->unk_148++;
         break;
     case 7: {
-        BtlWork* target;
+        BtlObj* target;
         if (work->unk_148 == 0) {
             target = func_08040D54(work);
             work->unk_14A = 8;
@@ -297,7 +297,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
         } else work->unk_148++;
         break;
     case 4: {
-        BtlWork* target;
+        BtlObj* target;
         if (work->unk_148 == 0) {
             target = func_08040C8C(work);
             work->unk_168 = target;
@@ -450,7 +450,7 @@ void func_08041D64(SmnBambiWork* work) {
 
 void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
 
     body = &work->unk_038;
 
@@ -519,9 +519,9 @@ u8 func_08041FCC(SmnBambiWork* work) {
     return 0;
 }
 
-BtlWork* func_08042018(SmnBambiWork* work) {
-    BtlWork* list[10];
-    BtlWork* p;
+BtlObj* func_08042018(SmnBambiWork* work) {
+    BtlObj* list[10];
+    BtlObj* p;
     s16 count;
 
     if (gBtlWork->unk_068 & 0x4000) {
@@ -539,7 +539,7 @@ BtlWork* func_08042018(SmnBambiWork* work) {
     }
 
     count = 0;
-    p = ListPoolFirst(gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->unk_080);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
@@ -708,7 +708,7 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
             }
 
             args.unk_14 = 0;
-            TaskCreate((TaskPool*)&gBtlWork->unk_02C, gTaskDescBtlPrize, &args);
+            TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPrize, &args);
         } else {
             work->unk_14C++;
         }
@@ -782,7 +782,7 @@ void task_smn_bambi_3(SmnBambiWork* work) {
 
 void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
     s32 t;
 
     body = &work->unk_038;
@@ -852,7 +852,7 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
         break;
     }
 
-    if (*(u32*)(work->unk_17C->unk_0E4 + 0xF4) == 0x27) {
+    if (work->unk_17C->unk_0E4->unk_0F4 == 0x27) {
         t = 332 * t >> 8;
     }
 
@@ -873,7 +873,7 @@ void func_080428E8(SmnTinkWork* work) {
 }
 u8 task_smn_tink_1(SmnTinkWork* work) {
     SmnBody* body;
-    BtlWork* p;
+    BtlObj* p;
     s32 x;
     s32 y;
     s32 z;
@@ -1168,7 +1168,7 @@ void task_smn_tinkeff_3(SmnTinkeffWork* work) {
 
 void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
 
     body = &work->unk_038;
 
@@ -1405,7 +1405,7 @@ void task_smn_simba_3(SmnSimbaWork* work) {
 
 void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
 
     body = &work->unk_038;
 
@@ -1658,7 +1658,7 @@ void task_smn_mushu_3(SmnMushuWork* work) {
 
 void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
 
     body = &work->unk_038;
 
@@ -1864,7 +1864,7 @@ void task_smn_dumbo_3(SmnDumboWork* work) {
 
 void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
 
     body = &work->unk_038;
 
@@ -1921,9 +1921,9 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
     TaskCreate(&work->unk_020, gTaskDescBtlShadow, body);
 }
 
-BtlWork* func_08044450(SmnGenieWork* work) {
-    BtlWork* list[10];
-    BtlWork* p;
+BtlObj* func_08044450(SmnGenieWork* work) {
+    BtlObj* list[10];
+    BtlObj* p;
     s16 count;
 
     if (gBtlWork->unk_068 & 0x4000) {
@@ -1941,7 +1941,7 @@ BtlWork* func_08044450(SmnGenieWork* work) {
     }
 
     count = 0;
-    p = ListPoolFirst(gBtlWork->unk_080);
+    p = ListPoolFirst(&gBtlWork->unk_080);
 
     while (p != 0) {
         if (!(p->unk_034 & 0x01000000)) {
@@ -1965,7 +1965,7 @@ BtlWork* func_08044450(SmnGenieWork* work) {
 
 void func_08044518(SmnGenieWork* work) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
     s32 tx;
     s32 ty;
     s32 zt;
@@ -2290,7 +2290,7 @@ void task_smn_genie_3(SmnGenieWork* work) {
 
 void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
     SmnBody* body;
-    BtlWork* obj;
+    BtlObj* obj;
 
     body = &work->unk_038;
 
