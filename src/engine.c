@@ -20,7 +20,7 @@ u8 gMosaicActive;
 u32 gRandSeed;
 u8 gUnk_0203402C[4];
 u32 gRandomState[4];
-UnkBgAnim* gUnk_02034040;
+BgAnimationDef* gUnk_02034040;
 u16 gUnk_02034044;
 u16 gUnk_02034046;
 s32 gUnk_02034048;
@@ -3159,14 +3159,14 @@ void BgAnimSetTransform(u8 a, s32 b, s32 c) {
     gUnk_02034060 = c;
 }
 
-void BgAnimStart(UnkBgAnim* a, s32 x, s32 y) {
+void BgAnimStart(BgAnimationDef* a, s32 x, s32 y) {
     gUnk_02034040 = a;
     BgAnimSetPosition((s16)x, (s16)y);
 
     if (gUnk_02034058 != 0) {
-        gUnk_0203404C = a->unk_0E << 6;
+        gUnk_0203404C = a->tilesPerFrame << 6;
     } else {
-        gUnk_0203404C = a->unk_0E << 5;
+        gUnk_0203404C = a->tilesPerFrame << 5;
     }
     gUnk_0203404E = 0x8000 / gUnk_0203404C;
     gUnk_02034066 = -1;
@@ -3174,7 +3174,7 @@ void BgAnimStart(UnkBgAnim* a, s32 x, s32 y) {
     gUnk_02034044 = 0;
     gUnk_02034046 = 0;
     gUnk_02034054 = 0;
-    gUnk_0203406A = a->unk_16;
+    gUnk_0203406A = a->frameDuration;
 
     if (gUnk_02034058 != 0) {
         gUnk_0203405C = 0x100;
@@ -3182,9 +3182,9 @@ void BgAnimStart(UnkBgAnim* a, s32 x, s32 y) {
         gUnk_02034064 = 0;
     }
     PushPaletteEffect(0);
-    LoadBgPalette(gUnk_02034048, a->unk_08, a->unk_0C);
+    LoadBgPalette(gUnk_02034048, a->palette, a->paletteSize);
     PopPaletteEffect();
-    LoadBgMap(gUnk_02034048, a->unk_04, gUnk_02034056);
+    LoadBgMap(gUnk_02034048, a->tilemap, gUnk_02034056);
 }
 void BgAnimApplyAffineTransform(s32 bg, u8 rot, s32 sx, s32 sy, s16 cx, s16 cy) {
     BgAffineSrcData src;
@@ -3230,7 +3230,7 @@ void BgAnimUpdate(void) {
         return;
     }
 
-    if (gUnk_02034046 >= gUnk_02034040->unk_14) {
+    if (gUnk_02034046 >= gUnk_02034040->frameCount) {
         if (gUnk_02034066 >= 0) {
             gUnk_02034046 = gUnk_02034066;
             gUnk_02034044 = 0;
@@ -3258,8 +3258,8 @@ void BgAnimUpdate(void) {
         if (gUnk_02034044 == 0) {
             q = gUnk_02034046 / gUnk_0203404E;
             off = gUnk_02034046 % gUnk_0203404E * gUnk_0203404C;
-            src = (u8*)gUnk_02034040->unk_00[q].unk_00 + off;
-            over = off + gUnk_0203404C - gUnk_02034040->unk_00[q].unk_04;
+            src = (u8*)gUnk_02034040->chunks[q].data + off;
+            over = off + gUnk_0203404C - gUnk_02034040->chunks[q].size;
 
             if (over > 0) {
                 len = gUnk_0203404C - over;

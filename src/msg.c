@@ -27,8 +27,8 @@ extern u32 gLanguage;
 #endif
 
 static Ent02034A80* gUnk_02034A80;
-static Ent080658B8* gUnk_02034A84;
-static Ent080658B8* gUnk_02034A88;
+static TextGlyphSprite* gUnk_02034A84;
+static TextGlyphSprite* gUnk_02034A88;
 #ifndef VERSION_EU
 static Ent02034A8C* gUnk_02034A8C;
 #endif
@@ -2547,7 +2547,7 @@ void func_080658B8(u8 n) {
     u8 i;
 
     for (i = 0; i < n; i++) {
-        Ent080658B8* b = gUnk_02034A84;
+        TextGlyphSprite* b = gUnk_02034A84;
 
         if (b[i].unk_15 == 1) {
             s32 x = b[i].unk_00;
@@ -7169,7 +7169,7 @@ void func_0806C2C0(u8 n) {
     u8 i;
 
     for (i = 0; i < n; i++) {
-        Ent080658B8* b = gUnk_02034A88;
+        TextGlyphSprite* b = gUnk_02034A88;
 
         if (b[i].unk_15 == 1) {
             s32 x = b[i].unk_00;
@@ -7209,7 +7209,7 @@ void _0806C3A0(u8 n, void* a) {
     u8 i;
 
     for (i = 0; i < n; i++) {
-        Ent080658B8* b = gUnk_02034A84;
+        TextGlyphSprite* b = gUnk_02034A84;
 
         if (b[i].unk_15 == 1) {
             s32 x = b[i].unk_00;
@@ -7983,7 +7983,7 @@ void Continue_3(ContinueWork* p) {
 }
 void event_seq_0(EventSeqWork* work, u8* a) {
 #ifdef VERSION_EU
-    Ent09EE3CA0* u;
+    EventBackgroundDef* u;
 #endif
 
     gUnk_02039DD0 = NULL;
@@ -8075,7 +8075,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
 
 #ifdef VERSION_EU
 u8 eu_0806C734(EventSeqWork* work) {
-    Ent09EE3CA0* u = gUnk_09EE3CA0[work->unk_2C];
+    EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
     if (u != NULL) {
         if (u->unk_2E[0] == 1 || u->unk_2E[0] == 3) {
             eu_080059D4(3, u->unk_00);
@@ -8097,7 +8097,7 @@ u8 eu_0806C734(EventSeqWork* work) {
     return 1;
 }
 u8 eu_0806C7C8(EventSeqWork* work) {
-    Ent09EE3CA0* u = gUnk_09EE3CA0[work->unk_2C];
+    EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
     if (u != NULL) {
         if (u->unk_10 != NULL) {
             if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
@@ -8116,7 +8116,7 @@ u8 eu_0806C7C8(EventSeqWork* work) {
     return 1;
 }
 u8 eu_0806C848(EventSeqWork* work) {
-    Ent09EE3CA0* u = gUnk_09EE3CA0[work->unk_2C];
+    EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
     if (u != NULL) {
         if (u->unk_04 != NULL) {
             if ((u->unk_2D & 1) != 0) {
@@ -8154,8 +8154,8 @@ u8 eu_0806C848(EventSeqWork* work) {
     return 1;
 }
 u8 eu_0806C974(EventSeqWork* work) {
-    Ent09EE3CA0* u = gUnk_09EE3CA0[work->unk_2C];
-    Obj0806180C* q = work->unk_34->unk_08;
+    EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
+    EventCameraKeyframe* q = work->unk_34->unk_08;
     u16 i;
     gUnk_02039DC8->unk_50 = q->unk_04;
     gUnk_02039DC8->unk_54 = q->unk_08;
@@ -8188,10 +8188,10 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 #ifndef VERSION_EU
     s32 flag;
 #endif
-    Ent09EE3CA0* u;
+    EventBackgroundDef* u;
     EventSequenceDef* t;
 #ifndef VERSION_EU
-    Obj0806180C* q;
+    EventCameraKeyframe* q;
     u16 i;
 #endif
     u8 j;
@@ -8480,7 +8480,7 @@ void event_seq_3(EventSeqWork* p) {
     }
 #endif
 }
-void event_chara_0(Work0806180C* p, u32* a) {
+void event_chara_0(EventCharaWork* p, u32* a) {
     s32 v0;
     s32 v1;
 
@@ -8716,7 +8716,7 @@ void event_chara_0(Work0806180C* p, u32* a) {
         func_0806F94C(p);
     }
 }
-u8 event_chara_1(Work0806180C* p, void* a) {
+u8 event_chara_1(EventCharaWork* p, void* a) {
     u8 t;
     s32 v0;
     s32 v1;
@@ -8731,7 +8731,7 @@ u8 event_chara_1(Work0806180C* p, void* a) {
     if (t != 0) {
         if (p->unk_000[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->unk_000[p->unk_1A0].unk_1C);
-            ((void (*)(Work0806180C*, void*))p->unk_000[p->unk_1A0].unk_1C)(p, a);
+            ((void (*)(EventCharaWork*, void*))p->unk_000[p->unk_1A0].unk_1C)(p, a);
         }
 
         if (p->unk_000[p->unk_1A0].unk_20 != NULL) {
@@ -8810,12 +8810,12 @@ u8 event_chara_1(Work0806180C* p, void* a) {
     }
     return 1;
 }
-static inline s16 GetEventCharaScreenX(Work0806180C* p) {
+static inline s16 GetEventCharaScreenX(EventCharaWork* p) {
     return (p->unk_180 >> 8) - (gUnk_02039DC8->unk_58 >> 8);
 }
 
-void event_chara_2(Work0806180C* p) {
-    Ent0806E9BC* e;
+void event_chara_2(EventCharaWork* p) {
+    EventCharaKeyframe* e;
     s32 save;
     s32 x;
     s32 y;
@@ -8852,7 +8852,7 @@ void event_chara_2(Work0806180C* p) {
     }
     p->unk_034 = save;
 }
-void event_chara_3(Work0806180C* p) {
+void event_chara_3(EventCharaWork* p) {
     TaskPoolDestroy(&p->unk_010);
 
     if (p->unk_1B3 != 0) {
@@ -8861,8 +8861,8 @@ void event_chara_3(Work0806180C* p) {
         EwramFree(gBtlWork);
     }
 }
-u8 func_0806E570(Work0806180C* p) {
-    Ent0806E9BC* e = &p->unk_000[p->unk_1A0];
+u8 func_0806E570(EventCharaWork* p) {
+    EventCharaKeyframe* e = &p->unk_000[p->unk_1A0];
     u16 v;
 
     if (p->unk_000[p->unk_1A0].unk_04 > gUnk_02039DC8->unk_6C) {
@@ -8925,8 +8925,8 @@ u8 func_0806E570(Work0806180C* p) {
 
     return 0;
 }
-void func_0806E7A8(Work0806180C* p) {
-    Ent0806E9BC* e = &p->unk_000[p->unk_1A0];
+void func_0806E7A8(EventCharaWork* p) {
+    EventCharaKeyframe* e = &p->unk_000[p->unk_1A0];
     Ent0806E7A8* t;
 
     if (e->unk_00 == 0x3A7) {
@@ -8986,13 +8986,13 @@ void func_0806E7A8(Work0806180C* p) {
     }
 }
 
-void func_0806E9BC(Work0806180C* p) {
-    Ent0806E9BC* e = &p->unk_000[p->unk_1A0];
+void func_0806E9BC(EventCharaWork* p) {
+    EventCharaKeyframe* e = &p->unk_000[p->unk_1A0];
 
     func_0801CD74(p->unk_028, e->unk_14);
 }
 
-u8 _0806E9DC(Work0806180C* p, void* a) {
+u8 _0806E9DC(EventCharaWork* p, void* a) {
     p->unk_188 = 0x800;
     p->unk_18C = 0;
     p->unk_1A8 = 0;
@@ -9001,7 +9001,7 @@ u8 _0806E9DC(Work0806180C* p, void* a) {
     SetTaskUpdate(a, (void*)func_0806EA28);
     return 1;
 }
-u8 func_0806EA28(Work0806180C* p, void* a) {
+u8 func_0806EA28(EventCharaWork* p, void* a) {
     u16 x;
     u16 y;
     u8 t;
@@ -9052,7 +9052,7 @@ u8 func_0806EA28(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806EB94(Work0806180C* p, void* a) {
+u8 func_0806EB94(EventCharaWork* p, void* a) {
     p->unk_188 = 0xC00;
     p->unk_18C = 0;
     p->unk_1A8 = 0;
@@ -9061,7 +9061,7 @@ u8 func_0806EB94(Work0806180C* p, void* a) {
     SetTaskUpdate(a, (void*)func_0806EBE0);
     return 1;
 }
-u8 func_0806EBE0(Work0806180C* p, void* a) {
+u8 func_0806EBE0(EventCharaWork* p, void* a) {
     u8 t;
 
     t = func_0806E570(p);
@@ -9102,7 +9102,7 @@ u8 func_0806EBE0(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806ECE0(Work0806180C* p, void* a) {
+u8 func_0806ECE0(EventCharaWork* p, void* a) {
     p->unk_188 = 0x300;
     p->unk_18C = 0;
     p->unk_1A8 = 0;
@@ -9111,7 +9111,7 @@ u8 func_0806ECE0(Work0806180C* p, void* a) {
     SetTaskUpdate(a, (void*)func_0806ED2C);
     return 1;
 }
-u8 func_0806ED2C(Work0806180C* p, void* a) {
+u8 func_0806ED2C(EventCharaWork* p, void* a) {
     u8 t;
 
     t = func_0806E570(p);
@@ -9152,7 +9152,7 @@ u8 func_0806ED2C(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806EE20(Work0806180C* p, void* a) {
+u8 func_0806EE20(EventCharaWork* p, void* a) {
     p->unk_188 = 0x300;
     p->unk_18C = 0;
     p->unk_1A8 = 0;
@@ -9161,7 +9161,7 @@ u8 func_0806EE20(Work0806180C* p, void* a) {
     SetTaskUpdate(a, (void*)func_0806EE6C);
     return 1;
 }
-u8 func_0806EE6C(Work0806180C* p, void* a) {
+u8 func_0806EE6C(EventCharaWork* p, void* a) {
     u8 t;
 
     t = func_0806E570(p);
@@ -9199,8 +9199,8 @@ u8 func_0806EE6C(Work0806180C* p, void* a) {
     return 1;
 }
 u8 func_0806EF40(void* work, void* a) {
-    Work0806180C* p = work;
-    Ent0806E9BC* e;
+    EventCharaWork* p = work;
+    EventCharaKeyframe* e;
     u16 z;
 
     func_0806E7A8(p);
@@ -9236,7 +9236,7 @@ u8 func_0806EF40(void* work, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806F02C(Work0806180C* p, void* a) {
+u8 func_0806F02C(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
     p->unk_1AA++;
@@ -9273,8 +9273,8 @@ u8 func_0806F02C(Work0806180C* p, void* a) {
     return 1;
 }
 u8 func_0806F114(void* work, void* a) {
-    Work0806180C* p = work;
-    Ent0806E9BC* e;
+    EventCharaWork* p = work;
+    EventCharaKeyframe* e;
     u16 z;
 
     func_0806E7A8(p);
@@ -9310,7 +9310,7 @@ u8 func_0806F114(void* work, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806F204(Work0806180C* p, void* a) {
+u8 func_0806F204(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
     p->unk_1AA++;
@@ -9347,7 +9347,7 @@ u8 func_0806F204(Work0806180C* p, void* a) {
     return 1;
 }
 u8 func_0806F2EC(void* work, void* a) {
-    Work0806180C* p = work;
+    EventCharaWork* p = work;
     u16 z;
 
     func_0806E7A8(p);
@@ -9376,7 +9376,7 @@ u8 func_0806F2EC(void* work, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806F3A8(Work0806180C* p, void* a) {
+u8 func_0806F3A8(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
     p->unk_1AA++;
@@ -9407,7 +9407,7 @@ u8 func_0806F3A8(Work0806180C* p, void* a) {
     return 1;
 }
 u8 func_0806F47C(void* work, void* a) {
-    Work0806180C* p = work;
+    EventCharaWork* p = work;
     u16 z;
 
     func_0806E7A8(p);
@@ -9436,7 +9436,7 @@ u8 func_0806F47C(void* work, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806F53C(Work0806180C* p, void* a) {
+u8 func_0806F53C(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
     p->unk_1AA++;
@@ -9466,7 +9466,7 @@ u8 func_0806F53C(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806F610(Work0806180C* p, void* a) {
+u8 func_0806F610(EventCharaWork* p, void* a) {
     p->unk_18C = 0;
     p->unk_198 = 0;
     p->unk_190 = p->unk_02C;
@@ -9474,7 +9474,7 @@ u8 func_0806F610(Work0806180C* p, void* a) {
     SetTaskUpdate(a, (void*)func_0806F64C);
     return 1;
 }
-u8 func_0806F64C(Work0806180C* p, void* a) {
+u8 func_0806F64C(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
     p->unk_02C += gSineTable[(u8)p->unk_18C] * (p->unk_198 >> 8);
@@ -9502,7 +9502,7 @@ u8 func_0806F64C(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806F734(Work0806180C* p, void* a) {
+u8 func_0806F734(EventCharaWork* p, void* a) {
     p->unk_18C = 0;
     p->unk_198 = 0;
     p->unk_190 = p->unk_02C;
@@ -9510,7 +9510,7 @@ u8 func_0806F734(Work0806180C* p, void* a) {
     SetTaskUpdate(a, (void*)func_0806F770);
     return 1;
 }
-u8 func_0806F770(Work0806180C* p, void* a) {
+u8 func_0806F770(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
     p->unk_02C += gSineTable[(u8)p->unk_18C] * (p->unk_198 >> 8);
@@ -9538,7 +9538,7 @@ u8 func_0806F770(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806F858(Work0806180C* p, void* a) {
+u8 func_0806F858(EventCharaWork* p, void* a) {
     p->unk_18C = 1;
     p->unk_198 = 0;
     p->unk_190 = p->unk_02C;
@@ -9546,7 +9546,7 @@ u8 func_0806F858(Work0806180C* p, void* a) {
     SetTaskUpdate(a, (void*)func_0806F898);
     return 1;
 }
-u8 func_0806F898(Work0806180C* p, void* a) {
+u8 func_0806F898(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
 
@@ -9575,7 +9575,7 @@ u8 func_0806F898(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-void func_0806F94C(Work0806180C* p) {
+void func_0806F94C(EventCharaWork* p) {
     u16 z;
 
     z = p->unk_03E;
@@ -9623,14 +9623,14 @@ void func_0806F94C(Work0806180C* p) {
         }
     }
 }
-u8 func_0806FA84(Work0806180C* p, void* a) {
+u8 func_0806FA84(EventCharaWork* p, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
     SetTaskUpdate(a, (void*)func_0806FAB8);
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806FAB8(Work0806180C* p, void* a) {
+u8 func_0806FAB8(EventCharaWork* p, void* a) {
     u16 buf[2];
 
     memcpy(buf, gUnk_09033C8C, 4);
@@ -9662,7 +9662,7 @@ u8 func_0806FAB8(Work0806180C* p, void* a) {
     return 1;
 }
 u8 func_0806FB6C(void* work, void* a) {
-    Work0806180C* p = work;
+    EventCharaWork* p = work;
     u16 z;
 
     func_0806E7A8(p);
@@ -9691,7 +9691,7 @@ u8 func_0806FB6C(void* work, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806FC28(Work0806180C* p, void* a) {
+u8 func_0806FC28(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
     p->unk_1AA++;
@@ -9722,7 +9722,7 @@ u8 func_0806FC28(Work0806180C* p, void* a) {
     return 1;
 }
 u8 func_0806FCF4(void* work, void* a) {
-    Work0806180C* p = work;
+    EventCharaWork* p = work;
     u16 z;
 
     func_0806E7A8(p);
@@ -9751,7 +9751,7 @@ u8 func_0806FCF4(void* work, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0806FDB0(Work0806180C* p, void* a) {
+u8 func_0806FDB0(EventCharaWork* p, void* a) {
     func_0806E7A8(p);
     func_08070AD4(p);
     p->unk_1AA++;
@@ -9782,7 +9782,7 @@ u8 func_0806FDB0(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-void func_0806FE90(Work0806180C* p) {
+void func_0806FE90(EventCharaWork* p) {
     u16 keys = GetKeysHeld();
 
     switch (keys & 0xF0) {
@@ -9837,7 +9837,7 @@ void func_0806FE90(Work0806180C* p) {
     }
 }
 
-void func_08070008(Work0806180C* p) {
+void func_08070008(EventCharaWork* p) {
     u8 old = p->unk_1AB;
 
     func_0806FE90(p);
@@ -9851,7 +9851,7 @@ void func_08070008(Work0806180C* p) {
     }
 }
 
-void func_08070058(Work0806180C* p, s32 a) {
+void func_08070058(EventCharaWork* p, s32 a) {
     u16 f;
 
     f = p->unk_03E;
@@ -9879,7 +9879,7 @@ void func_08070058(Work0806180C* p, s32 a) {
     }
     func_0801CE00(p->unk_028, f);
 }
-u8 func_080700D4(Work0806180C* p, void* a) {
+u8 func_080700D4(EventCharaWork* p, void* a) {
     u16 keys;
     s32 v;
 
@@ -10035,7 +10035,7 @@ u8 func_080700D4(Work0806180C* p, void* a) {
     TaskPoolUpdate(&p->unk_010);
     return 1;
 }
-u8 func_0807048C(Work0806180C* p, void* a) {
+u8 func_0807048C(EventCharaWork* p, void* a) {
     u16 keys = GetKeysHeld();
 
     if ((keys & 0xF0) != 0) {
@@ -10305,7 +10305,7 @@ u8 func_0807048C(Work0806180C* p, void* a) {
 #define MSG_SOUND_ID_B1 0xB1
 #endif
 
-s32 func_08070AD4(Work0806180C* p) {
+s32 func_08070AD4(EventCharaWork* p) {
     u16 x;
     u16 y;
 
@@ -10834,13 +10834,13 @@ s32 func_08070AD4(Work0806180C* p) {
     case 0x7:
     case 0x8:
     case 0x9:
-        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 1) {
-                    func_08072918((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072918((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 5) {
-                    func_08072918((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072918((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
                 }
             }
         }
@@ -10849,13 +10849,13 @@ s32 func_08070AD4(Work0806180C* p) {
     case 0x77:
     case 0x288:
     case 0x28C:
-        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 2) {
-                    func_08072A64((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072A64((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 6) {
-                    func_08072A64((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072A64((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
                 }
             }
         }
@@ -10864,13 +10864,13 @@ s32 func_08070AD4(Work0806180C* p) {
     case 0x79:
     case 0x289:
     case 0x28D:
-        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 3) {
-                    func_08072A64((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072A64((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 7) {
-                    func_08072A64((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072A64((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
                 }
             }
         }
@@ -10882,13 +10882,13 @@ s32 func_08070AD4(Work0806180C* p) {
     case 0x265:
     case 0x266:
     case 0x267:
-        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 3) {
-                    func_08072B4C((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072B4C((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 7) {
-                    func_08072B4C((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072B4C((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
                 }
             }
         }
@@ -10898,13 +10898,13 @@ s32 func_08070AD4(Work0806180C* p) {
     case 0xC:
     case 0xD:
     case 0xE:
-        if (((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024]) != 0) {
+        if (((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024]) != 0) {
             if (p->unk_040->timer == 0) {
                 if (p->unk_040->frame == 3) {
-                    func_08072918((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
+                    func_08072918((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 1);
                 }
                 if (p->unk_040->frame == 7) {
-                    func_08072918((Actor0806180C*)p, ((Ent09EE3CA0*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
+                    func_08072918((Actor0806180C*)p, ((EventBackgroundDef*)gUnk_09EE3CA0[p->unk_024])->unk_2C, 0);
                 }
             }
         }
@@ -11347,7 +11347,7 @@ void func_08072B4C(Actor0806180C* a, u8 kind, u8 flag) {
     }
 }
 
-void func_08072C34(Work0806180C* p) {
+void func_08072C34(EventCharaWork* p) {
     switch (p->unk_026) {
     case 6:
     case 16:
@@ -11432,7 +11432,7 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
 }
 
 u8 func_08072EAC(MsgWinWork* p, void* a) {
-    MsgLine0806180C* e;
+    MessageScriptEntry* e;
 
     if (p->unk_29 == 0) {
         if (gUnk_02039DC8->unk_80 == 0) {
@@ -11604,7 +11604,7 @@ u8 func_08073170(MsgWinWork* p, void* a) {
     return 1;
 }
 void func_08073238(MsgWinWork* p) {
-    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+    MessageScriptEntry* e = &p->unk_3C[p->unk_27];
 
     if (e->unk_00 != 62) {
         func_080658B8(p->unk_24);
@@ -11621,7 +11621,7 @@ void func_08073274(MsgWinWork* p) {
     TaskPoolDestroy(p);
 }
 u8 func_08073294(MsgWinWork* p, void* a) {
-    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+    MessageScriptEntry* e = &p->unk_3C[p->unk_27];
 
     ApproachValue(&p->unk_18, gUnk_09033CA0[p->unk_20], p->unk_1E);
 
@@ -11643,7 +11643,7 @@ u8 func_08073294(MsgWinWork* p, void* a) {
     return 1;
 }
 u8 func_08073318(MsgWinWork* p, void* a) {
-    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+    MessageScriptEntry* e = &p->unk_3C[p->unk_27];
 
     func_0807361C(p);
 
@@ -11696,7 +11696,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
     return 1;
 }
 u8 func_0807344C(MsgWinWork* p, void* a) {
-    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+    MessageScriptEntry* e = &p->unk_3C[p->unk_27];
 
     ApproachValue(&p->unk_18, gUnk_09033C98[p->unk_20], p->unk_1E);
 
@@ -11727,7 +11727,7 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
     return 1;
 }
 void func_08073508(MsgWinWork* p) {
-    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+    MessageScriptEntry* e = &p->unk_3C[p->unk_27];
     s32 n;
 
     n = e->unk_08;
@@ -11771,7 +11771,7 @@ void func_08073508(MsgWinWork* p) {
 }
 
 void func_0807361C(MsgWinWork* p) {
-    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+    MessageScriptEntry* e = &p->unk_3C[p->unk_27];
     u8 v;
 
     if (p->unk_25 >= e->unk_0C) {
@@ -11806,7 +11806,7 @@ void func_0807361C(MsgWinWork* p) {
     }
 }
 void func_080736F8(MsgWinWork* p) {
-    MsgLine0806180C* e = &p->unk_3C[p->unk_27];
+    MessageScriptEntry* e = &p->unk_3C[p->unk_27];
 
     if (gUnk_02039DC8->unk_6C >= e->unk_16) {
         if (p->unk_2A == 0) {
@@ -12308,13 +12308,13 @@ void func_08074564(void) {
     gIntrCheck |= 2;
     func_08074504();
 }
-void view_0(Work08074DC4* p, u8* arg) {
+void view_0(EventCameraWork* p, u8* arg) {
     EventSequenceDef* t;
-    Ent09EE3CA0* u;
-    Obj0806180C* q;
+    EventBackgroundDef* u;
+    EventCameraKeyframe* q;
     u8 n;
 
-    gUnk_02039DCC = (UnkStruct_02039DCC*)p->unk_18;
+    gUnk_02039DCC = (EventScanlineScroll*)p->unk_18;
     p->unk_16 = 0;
     p->unk_1A = 0;
     p->unk_08 = arg[0];
@@ -12330,7 +12330,7 @@ void view_0(Work08074DC4* p, u8* arg) {
 
     if (q->unk_10 != 255) {
         n = func_08074E40(p);
-        q = (Obj0806180C*)gUnk_02039DC8->unk_00[n];
+        q = (EventCameraKeyframe*)gUnk_02039DC8->unk_00[n];
         p->unk_00 = q->unk_04;
         p->unk_04 = q->unk_08;
     } else {
@@ -12379,9 +12379,9 @@ void func_080746D8(void) {
 #define MSG_VIEW_ID_B4 0xB4
 #endif
 
-u8 view_1(Work08074DC4* p, u8* task) {
-    Ent09EE3CA0* u = gUnk_09EE3CA0[p->unk_08];
-    Obj0806180C* e;
+u8 view_1(EventCameraWork* p, u8* task) {
+    EventBackgroundDef* u = gUnk_09EE3CA0[p->unk_08];
+    EventCameraKeyframe* e;
     Ent08074EC8* q;
     u8 n;
 
@@ -12402,7 +12402,7 @@ u8 view_1(Work08074DC4* p, u8* task) {
             p->unk_15 = 0;
 
             if (e->unk_1C != NULL) {
-                ((void (*)(Work08074DC4*))e->unk_1C)(p);
+                ((void (*)(EventCameraWork*))e->unk_1C)(p);
             }
 
             switch (e->unk_14 & 15) {
@@ -12651,13 +12651,13 @@ void view_2(void) {
 void view_3(void) {
 }
 
-void func_08074D00(Work08074DC4* p) {
+void func_08074D00(EventCameraWork* p) {
     gUnk_02039DC8->unk_50 = p->unk_00;
     gUnk_02039DC8->unk_54 = p->unk_04;
 }
 
-void func_08074D14(Work08074DC4* a) {
-    Obj0806180C* e;
+void func_08074D14(EventCameraWork* a) {
+    EventCameraKeyframe* e;
     s32 x;
     s32 y;
 
@@ -12676,7 +12676,7 @@ void func_08074D14(Work08074DC4* a) {
     gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C + (gUnk_02039DC8->unk_6A << 8);
 }
 
-void func_08074D98(Work08074DC4* a) {
+void func_08074D98(EventCameraWork* a) {
     s32 x;
     s32 y;
 
@@ -12687,7 +12687,7 @@ void func_08074D98(Work08074DC4* a) {
     gUnk_02039DC8->unk_4C = y;
 }
 
-void func_08074DC4(Work08074DC4* a) {
+void func_08074DC4(EventCameraWork* a) {
     s32 x;
     s32 y;
 
@@ -12707,11 +12707,11 @@ void func_08074DC4(Work08074DC4* a) {
     gUnk_02039DC8->unk_5C = gUnk_02039DC8->unk_4C + (gUnk_02039DC8->unk_6A << 8);
 }
 
-u8 func_08074E40(Work08074DC4* p) {
+u8 func_08074E40(EventCameraWork* p) {
     EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
-    AnimEntry0806180C* q = t->unk_04;
-    Obj0806180C* e = &p->unk_0C[p->unk_09];
+    EventCharaTrack* q = t->unk_04;
+    EventCameraKeyframe* e = &p->unk_0C[p->unk_09];
     u8 i;
 
     for (i = 0; i < n; i++) {
@@ -12722,10 +12722,10 @@ u8 func_08074E40(Work08074DC4* p) {
     return 0xFF;
 }
 
-u8 func_08074E88(Work08074DC4* p, u8 v) {
+u8 func_08074E88(EventCameraWork* p, u8 v) {
     EventSequenceDef* t = gUnk_09EE3FB4[p->unk_08];
     u8 n = t->unk_00;
-    AnimEntry0806180C* q = t->unk_04;
+    EventCharaTrack* q = t->unk_04;
     u8 i;
 
     for (i = 0; i < n; i++) {
@@ -12736,8 +12736,8 @@ u8 func_08074E88(Work08074DC4* p, u8 v) {
     return 0xFF;
 }
 
-u8 _08074EC8(Work08074DC4* p) {
-    Ent09EE3CA0* t;
+u8 _08074EC8(EventCameraWork* p) {
+    EventBackgroundDef* t;
     Ent08074EC8* q;
     u8 n;
 

@@ -106,26 +106,26 @@ typedef char PaletteSlot_size[(sizeof(PaletteSlot) == 0x2C) ? 1 : -1];
 
 extern FadeWork* gFadeWork;
 
-typedef struct UnkBgAnimFrame {
-    void* unk_00;
-    u16 unk_04;
+typedef struct BgAnimationChunk {
+    void* data;
+    u16 size;
     u16 unk_06;
-} UnkBgAnimFrame;
+} BgAnimationChunk;
 
-typedef struct UnkBgAnim {
-    UnkBgAnimFrame* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u16 unk_0C;
-    u16 unk_0E;
+typedef struct BgAnimationDef {
+    BgAnimationChunk* chunks;
+    void* tilemap;
+    void* palette;
+    u16 paletteSize;
+    u16 tilesPerFrame;
     u16 unk_10;
     u16 unk_12;
-    u16 unk_14;
-    u16 unk_16;
-} UnkBgAnim;
+    u16 frameCount;
+    u16 frameDuration;
+} BgAnimationDef;
 
-typedef char UnkBgAnim_size[(sizeof(UnkBgAnim) == 0x18) ? 1 : -1];
-typedef char UnkBgAnimFrame_size[(sizeof(UnkBgAnimFrame) == 0x08) ? 1 : -1];
+typedef char BgAnimationDef_size[(sizeof(BgAnimationDef) == 0x18) ? 1 : -1];
+typedef char BgAnimationChunk_size[(sizeof(BgAnimationChunk) == 0x08) ? 1 : -1];
 
 typedef struct Spline2D {
     s16 pointCount;
