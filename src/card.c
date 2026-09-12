@@ -9,6 +9,36 @@
 #include "card.h"
 #include <stddef.h>
 
+typedef struct UnkStruct_SELMAP_EVKEY {
+    void* unk_00;
+    void* unk_04;
+    u8 unk_08[0xD0];
+    void** unk_D8;
+    AnimState unk_DC;
+    void* unk_F4;
+    void* unk_F8;
+    s32 unk_FC;
+    s32 unk_100;
+    s32 unk_104;
+    s32 unk_108;
+    s32 unk_10C;
+    s32 unk_110;
+    u16 unk_114;
+    u16 unk_116;
+    u16 unk_118;
+    u8 unk_11A;
+    u8 unk_11B;
+    u8 unk_11C;
+    u8 unk_11D;
+    u8 unk_11E;
+    u8 unk_11F;
+    u8 unk_120;
+    u8 unk_121;
+    u8 unk_122;
+    u8 unk_123;
+} UnkStruct_SELMAP_EVKEY;
+
+
 typedef struct UnkStruct_080A82E0 {
     u8 unk_000[0x614];
     TaskPool unk_614;
@@ -21333,8 +21363,7 @@ void SpotLight_2(void) {
 void SpotLight_3(void) {
     func_080062F4(13, 0);
 }
-#ifdef NON_MATCHING
-void SELMAP_EVKEY_0(u8* work, void* a) {
+void SELMAP_EVKEY_0(UnkStruct_SELMAP_EVKEY* work, void* a) {
     s32 zero;
     s32 i;
     s32 ofs;
@@ -21344,59 +21373,56 @@ void SELMAP_EVKEY_0(u8* work, void* a) {
 
     zero = 0;
     CpuSet(&zero, work, 0x05000049);
-    *(void**)&work[0xD8] = a;
-    *(void**)&work[0xF8] = ((void**)a)[1];
-    work[0x121] = func_080E8D00();
+    work->unk_D8 = a;
+    work->unk_F8 = ((void**)a)[1];
+    work->unk_121 = func_080E8D00();
 
-    for (i = 0; i < work[0x121]; i++) {
+    for (i = 0; i < work->unk_121; i++) {
         ofs = i * 52;
-        func_08098014(&work[ofs + 8], func_080E8D1C((u8)i));
-        q1 = &work[0x14];
+        func_08098014(&work->unk_08[ofs], func_080E8D1C((u8)i));
+        q1 = &work->unk_08[0xC];
 
         if (*(u8**)&q1[ofs] != 0) {
             func_080062F4(*(u16*)&(*(u8**)&q1[ofs])[6] + 16, 1);
         }
-        q2 = &work[0x18];
+        q2 = &work->unk_08[0x10];
 
         if (*(u8**)&q2[ofs] != 0) {
             func_080062F4(*(u16*)&(*(u8**)&q2[ofs])[6] + 16, 1);
         }
-        q3 = &work[0x1C];
+        q3 = &work->unk_08[0x14];
 
         if (*(u8**)&q3[ofs] != 0) {
             func_080062F4(*(u16*)&(*(u8**)&q3[ofs])[6] + 16, 1);
         }
     }
 
-    *(void**)&work[0] = AllocObjTiles(0x6C0, 0);
-    func_08002A10(*(void**)&work[0], &gUnk_093F47E4[0x22E8]);
-    AnimInit((AnimState*)&work[0xDC], (s32)gUnk_09EF1224, (s32)gUnk_09EF1220);
-    AnimStart((AnimState*)&work[0xDC], 0, 1);
-    *(void**)&work[0xF4] = AnimGetGfx((AnimState*)&work[0xDC]);
-    *(void**)&work[4] = **(void***)&work[0xD8];
-    work[0x11C] = 0;
-    work[0x11D] = 0;
-    work[0x11E] = 8;
-    work[0x11F] = 8;
-    work[0x120] = 0;
-    work[0x123] = 0;
-    SetObjMosaicSize(work[0x11E], work[0x11F]);
-    *(s32*)&work[0xFC] = 0x7800;
-    *(s32*)&work[0x100] = 0x4000;
-    *(u16*)&work[0x114] = 0x100;
-    *(u16*)&work[0x116] = 0x100;
-    work[0x11B] = 0;
-    work[0x122] = 0;
-    work[0x11A] = 8;
-    *(u16*)&work[0x118] = 0;
-    func_08098598(0x10000, *(s32*)&work[0x100], (s32*)&work[8]);
-    func_08098598(0x10000, *(s32*)&work[0x100], (s32*)&work[0x3C]);
-    func_08098598(0x10000, *(s32*)&work[0x100], (s32*)&work[0x70]);
-    func_08098598(0x10000, *(s32*)&work[0x100], (s32*)&work[0xA4]);
+    work->unk_00 = AllocObjTiles(0x6C0, 0);
+    func_08002A10(work->unk_00, &gUnk_093F47E4[0x22E8]);
+    AnimInit(&work->unk_DC, (s32)gUnk_09EF1224, (s32)gUnk_09EF1220);
+    AnimStart(&work->unk_DC, 0, 1);
+    work->unk_F4 = AnimGetGfx(&work->unk_DC);
+    work->unk_04 = *work->unk_D8;
+    work->unk_11C = 0;
+    work->unk_11D = 0;
+    work->unk_11E = 8;
+    work->unk_11F = 8;
+    work->unk_120 = 0;
+    work->unk_123 = 0;
+    SetObjMosaicSize(work->unk_11E, work->unk_11F);
+    work->unk_FC = 0x7800;
+    work->unk_100 = 0x4000;
+    work->unk_114 = 0x100;
+    work->unk_116 = 0x100;
+    work->unk_11B = 0;
+    work->unk_122 = 0;
+    work->unk_11A = 8;
+    work->unk_118 = 0;
+    func_08098598(0x10000, work->unk_100, (s32*)&work->unk_08[0]);
+    func_08098598(0x10000, work->unk_100, (s32*)&work->unk_08[0x34]);
+    func_08098598(0x10000, work->unk_100, (s32*)&work->unk_08[0x68]);
+    func_08098598(0x10000, work->unk_100, (s32*)&work->unk_08[0x9C]);
 }
-#else
-INCLUDE_ASM("card/SELMAP_EVKEY_0.s");
-#endif
 s32 SELMAP_EVKEY_1(u8* work, void* a) {
     s32 i;
     u8* q1;
