@@ -87,7 +87,7 @@ task_bos_jf_majin_0: @ 080BE508
 	movs r0, #0x01
 	movs r2, #0x02
 	movs r3, #0x02
-	bl func_0800516C
+	bl SetBgMapBlocks
 	ldr r0, _080BE68C @ =0x09682AA4
 	movs r1, #0xA0
 	lsls r1, r1, #0x06
@@ -150,7 +150,7 @@ task_bos_jf_majin_0: @ 080BE508
 	lsls r2, r2, #0x10
 	lsrs r2, r2, #0x10
 	movs r0, #0x01
-	bl func_08005244
+	bl ScrollBgMapTo
 	adds r4, #0x58
 	adds r0, r4, #0x0
 	movs r1, #0x02

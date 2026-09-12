@@ -41,10 +41,10 @@ void mode_allmap_0(s32 a) {
     LoadBgTiles(0, gUnk_0976B340, 0x2400);
     LoadBgPalette(0, gUnk_0984A0F8, 0xE0);
     func_080D2F64();
-    func_0800516C(0, gUnk_0203C4C0, 2, 4);
+    SetBgMapBlocks(0, gUnk_0203C4C0, 2, 4);
     SetupBg(1, 0, 27, 0);
     SetBgPriority(1, 2);
-    func_0800516C(1, gUnk_0203C510, 2, 4);
+    SetBgMapBlocks(1, gUnk_0203C510, 2, 4);
     TaskPoolInit(&gUnk_0203C4F0, 1);
     TaskCreate(&gUnk_0203C4F0, &gTaskDescAllmapBar, 0);
     gUnk_0203C4E0 = 0;

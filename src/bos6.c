@@ -928,7 +928,7 @@ void task_bos_pc_fld_0(PcFldWork* work, FldInit* arg) {
 
     LoadBgTiles(0, arg->unk_00, arg->unk_04);
     LoadBgPalette(0, arg->unk_08, arg->unk_0C);
-    func_0800516C(0, &arg->unk_10, 2, 3);
+    SetBgMapBlocks(0, &arg->unk_10, 2, 3);
     gBtlWork->unk_024 = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->unk_008 = 0x11400;
@@ -943,7 +943,7 @@ void task_bos_pc_fld_0(PcFldWork* work, FldInit* arg) {
     gBtlWork->unk_018 = 0;
     func_0802F1C8();
     func_0810B3E4();
-    func_08005244(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
+    ScrollBgMapTo(0, gBtlWork->unk_000 >> 8, gBtlWork->unk_004 >> 8);
     func_0810B4A8((u8*)work);
     func_0810B4B4((u8*)work);
     work->tiles = 0;
@@ -993,7 +993,7 @@ u8 task_bos_pc_fld_1(PcFldWork* work) {
     }
     gBtlWork->unk_004 += func_0802F268();
     gBtlWork->unk_004 += func_0810B49C();
-    func_08005244(0, (gBtlWork->unk_000 >> 8) + 8, (gBtlWork->unk_004 >> 8) + 40);
+    ScrollBgMapTo(0, (gBtlWork->unk_000 >> 8) + 8, (gBtlWork->unk_004 >> 8) + 40);
     func_0810B4B4((u8*)work);
     return 1;
 }

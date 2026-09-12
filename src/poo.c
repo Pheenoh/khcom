@@ -1237,22 +1237,22 @@ void task_poo_map_0(PooMapWork* w) {
     LoadBgTiles(3, gUnk_096FC6E0.unk_00, gUnk_096FC6E0.unk_04);
     LoadBgTiles(2, gUnk_096FC6E0.unk_10, gUnk_096FC6E0.unk_14);
     LoadBgPalette(3, gUnk_096FC6E0.unk_08, gUnk_096FC6E0.unk_0C);
-    func_0800516C(3, gUnk_09EF4208, w->unk_00, w->unk_01);
-    func_080051C4(3, gUnk_0203C40C, gUnk_0203C3F8);
+    SetBgMapBlocks(3, gUnk_09EF4208, w->unk_00, w->unk_01);
+    RedrawBgMapAt(3, gUnk_0203C40C, gUnk_0203C3F8);
     func_080CA35C();
-    func_0800516C(1, gUnk_09EF4448, w->unk_00, w->unk_01);
-    func_080051C4(1, gUnk_0203C40C, gUnk_0203C3F8);
-    func_0800516C(2, gUnk_09EF4688, w->unk_00, w->unk_01);
-    func_080051C4(2, gUnk_0203C40C, gUnk_0203C3F8);
+    SetBgMapBlocks(1, gUnk_09EF4448, w->unk_00, w->unk_01);
+    RedrawBgMapAt(1, gUnk_0203C40C, gUnk_0203C3F8);
+    SetBgMapBlocks(2, gUnk_09EF4688, w->unk_00, w->unk_01);
+    RedrawBgMapAt(2, gUnk_0203C40C, gUnk_0203C3F8);
     func_0802F1C8();
 }
 
 u8 task_poo_map_1(PooMapWork* w) {
     func_080C9FBC();
     func_080CA270(w);
-    func_08005244(3, gUnk_0203C40C, gUnk_0203C3F8);
-    func_08005244(1, gUnk_0203C40C, gUnk_0203C3F8);
-    func_08005244(2, gUnk_0203C40C, gUnk_0203C3F8);
+    ScrollBgMapTo(3, gUnk_0203C40C, gUnk_0203C3F8);
+    ScrollBgMapTo(1, gUnk_0203C40C, gUnk_0203C3F8);
+    ScrollBgMapTo(2, gUnk_0203C40C, gUnk_0203C3F8);
     TaskPoolUpdate(&w->unk_04);
     return 1;
 }
@@ -1492,9 +1492,9 @@ void func_080CA6A8(s32 a, s32 b) {
     gUnk_0203C3F8 = (gUnk_0203C408 >> 8) - 80;
     gUnk_02039BA0->unk_00 = gUnk_0203C40C << 8;
     gUnk_02039BA0->unk_04 = gUnk_0203C3F8 << 8;
-    func_08005244(3, gUnk_0203C40C, gUnk_0203C3F8);
-    func_08005244(1, gUnk_0203C40C, gUnk_0203C3F8);
-    func_08005244(2, gUnk_0203C40C, gUnk_0203C3F8);
+    ScrollBgMapTo(3, gUnk_0203C40C, gUnk_0203C3F8);
+    ScrollBgMapTo(1, gUnk_0203C40C, gUnk_0203C3F8);
+    ScrollBgMapTo(2, gUnk_0203C40C, gUnk_0203C3F8);
 }
 
 void func_080CA724(PooSoraWork* w) {

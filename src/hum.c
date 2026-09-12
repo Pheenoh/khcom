@@ -10,7 +10,7 @@
 extern u32 gLanguage;
 
 void task_hum_cloud_0(CloudWork* work, void* obj) {
-    func_0800E168(&work->base, gUnk_0813EF28);
+    HumInit(&work->base, gUnk_0813EF28);
     work->unk_188 = 0;
     work->base.unk_184 = (u32)gUnk_0813EDD0;
 }
@@ -610,7 +610,7 @@ void task_hum_cloud_2(HumWork* work) {
 }
 
 void task_hum_cloud_3(HumWork* work) {
-    func_0800E380(work);
+    HumReleaseResources(work);
 }
 
 void func_0804B44C(CloudWork* work, s16 a, s32 b) {
@@ -664,7 +664,7 @@ u8 func_0804B4F4(CloudWork* work) {
 
 void task_hum_hook_0(HookWork* work, void* arg) {
     TaskCreate(&gBtlWork->taskPools[0], gTaskDescHumHookMoon, 0);
-    func_0800E168(&work->base, gUnk_0813F05C);
+    HumInit(&work->base, gUnk_0813F05C);
     work->base.unk_040.unk_034 |= 0x10000000;
 
     if (GetRandom() % 2) {
@@ -1262,7 +1262,7 @@ void task_hum_hook_2(HookWork* work) {
 
 void task_hum_hook_3(HookWork* work) {
     TaskPoolDestroy(&work->unk_19C);
-    func_0800E380(&work->base);
+    HumReleaseResources(&work->base);
     gBtlWork->unk_018 = 0;
 }
 
@@ -1518,8 +1518,8 @@ void func_0804D060(AnsemWork* work) {
 }
 
 void task_hum_ansem_0(AnsemWork* work) {
-    func_0800E168(&work->base, gUnk_0813F1E8);
-    func_0800E314(&work->base, &work->unk_188, gUnk_0813F1E0);
+    HumInit(&work->base, gUnk_0813F1E8);
+    HumSubInit(&work->base, &work->unk_188, gUnk_0813F1E0);
     work->unk_1C4 = -0xC00;
     *(s32*)&work->unk_1C8 = 0;
     work->base.unk_174 = -50;
@@ -2084,7 +2084,7 @@ void task_hum_ansem_2(HumWork* work) {
 }
 
 void task_hum_ansem_3(HumWork* work) {
-    func_0800E380(work);
+    HumReleaseResources(work);
 }
 
 void func_0804E3BC(HumWork* work, s32 a) {
@@ -2113,8 +2113,8 @@ void func_0804E404(AnsemWork* work) {
 }
 
 void task_hum_hades_0(HadesWork* work) {
-    func_0800E168(&work->base, gUnk_0813F324);
-    func_0800E314(&work->base, &work->unk_188, gUnk_0813F31C);
+    HumInit(&work->base, gUnk_0813F324);
+    HumSubInit(&work->base, &work->unk_188, gUnk_0813F31C);
     work->base.unk_040.unk_034 |= 0x100000;
     work->base.unk_154 |= 0x40;
     work->unk_1CA = 0;
@@ -2706,7 +2706,7 @@ void task_hum_hades_3(HadesWork* work) {
     ReleaseObjTiles(work->tiles2);
     ReleaseObjTiles(work->tiles3);
     ReleaseObjPalette(work->palette);
-    func_0800E380(&work->base);
+    HumReleaseResources(&work->base);
 }
 
 void func_0804F8F0(MahluxiaWork* work, s16 a) {
@@ -2843,8 +2843,8 @@ void func_0804FBDC(HumWork* work, s32 a) {
 }
 
 void task_hum_mahluxia_0(MahluxiaWork* work) {
-    func_0800E168(&work->base, gUnk_0813F450);
-    func_0800E314(&work->base, &work->unk_188, gUnk_0813F448);
+    HumInit(&work->base, gUnk_0813F450);
+    HumSubInit(&work->base, &work->unk_188, gUnk_0813F448);
     work->unk_1D0 = 0;
     work->unk_1C4 = -0x300;
     work->unk_188.unk_34 |= 3;
@@ -3400,7 +3400,7 @@ void task_hum_mahluxia_2(MahluxiaWork* work) {
 }
 
 void task_hum_mahluxia_3(MahluxiaWork* work) {
-    func_0800E380(&work->base);
+    HumReleaseResources(&work->base);
     TaskPoolDestroy(&work->unk_390);
 }
 
@@ -3433,7 +3433,7 @@ void func_08050F10(LaxeneWork* work, s16 a, s16 b) {
 }
 
 void task_hum_laxene_0(LaxeneWork* work) {
-    func_0800E168(&work->base, gUnk_0813F588);
+    HumInit(&work->base, gUnk_0813F588);
     work->unk_18E = 0;
     work->unk_188 = -0x3000;
     work->unk_190 = 0;
@@ -4130,7 +4130,7 @@ void task_hum_laxene_2(LaxeneWork* work) {
 
 void task_hum_laxene_3(LaxeneWork* work) {
     m4aSongNumStop(0x2A2);
-    func_0800E380(&work->base);
+    HumReleaseResources(&work->base);
     TaskPoolDestroy(&work->unk_194);
 }
 
@@ -4271,9 +4271,9 @@ void func_0805273C(AxcelWork* work, HumSub* sub) {
 }
 
 void task_hum_axcel_0(AxcelWork* work) {
-    func_0800E168(&work->base, gUnk_0813F768);
-    func_0800E314(&work->base, &work->unk_188, gUnk_0813F760);
-    func_0800E314(&work->base, &work->unk_1C4, gUnk_0813F760);
+    HumInit(&work->base, gUnk_0813F768);
+    HumSubInit(&work->base, &work->unk_188, gUnk_0813F760);
+    HumSubInit(&work->base, &work->unk_1C4, gUnk_0813F760);
     work->base.unk_040.unk_034 |= 0x04000000;
     work->base.unk_184 = (u32)gUnk_0813F5C8;
     work->unk_206 = 0;
@@ -4993,7 +4993,7 @@ void task_hum_axcel_3(AxcelWork* work) {
     TaskPoolDestroy(&work->unk_220);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
-    func_0800E380(&work->base);
+    HumReleaseResources(&work->base);
 }
 
 void task_hum_axcel_ptc_0(AxcelPtcWork* work, s32* args) {
@@ -5084,7 +5084,7 @@ void func_080543F4(HumWork* work, s32 a) {
 }
 
 void task_hum_vixen_0(VixenWork* work) {
-    func_0800E168(&work->base, gUnk_0813F8C8);
+    HumInit(&work->base, gUnk_0813F8C8);
     work->unk_188 = 0;
     work->base.unk_040.unk_034 |= 0x08000000;
     work->unk_1A2 = 0;
@@ -5611,7 +5611,7 @@ void task_hum_vixen_3(VixenWork* work) {
     if (gGameState.flags & 8) {
         ReleaseObjTiles(gBtlWork->unk_114);
     }
-    func_0800E380(&work->base);
+    HumReleaseResources(&work->base);
     TaskPoolDestroy(&work->unk_1A4);
 }
 
@@ -6099,7 +6099,7 @@ void func_080560AC(HumWork* work, s32 a) {
 }
 
 void task_hum_lexceus_0(LexceusWork* work) {
-    func_0800E168(&work->base, gUnk_0813FB38);
+    HumInit(&work->base, gUnk_0813FB38);
     work->unk_1CA = 0;
     work->unk_1C4 = 0;
     work->unk_1CC = 0;
@@ -6578,7 +6578,7 @@ void task_hum_lexceus_2(LexceusWork* work) {
 }
 
 void task_hum_lexceus_3(LexceusWork* work) {
-    func_0800E380(&work->base);
+    HumReleaseResources(&work->base);
     TaskPoolDestroy(&work->unk_1D8);
 }
 
@@ -7169,8 +7169,8 @@ void func_08057E90(RikuWork* work, RikuSpawn* p) {
 }
 
 void task_hum_riku_0(RikuWork* work) {
-    func_0800E168(&work->base, gUnk_0813FD24);
-    func_0800E314(&work->base, &work->unk_188, gUnk_0813FD40);
+    HumInit(&work->base, gUnk_0813FD24);
+    HumSubInit(&work->base, &work->unk_188, gUnk_0813FD40);
     work->unk_1C4 = 0;
     work->unk_1CA = 0;
     work->unk_188.unk_34 |= 3;
@@ -7921,11 +7921,11 @@ void task_hum_riku_2(RikuWork* work) {
 }
 
 void task_hum_riku_3(HumWork* work) {
-    func_0800E380(work);
+    HumReleaseResources(work);
 }
 
 void task_hum_leon_0(LeonWork* work) {
-    func_0800E168(&work->base, gUnk_0813FDA8);
+    HumInit(&work->base, gUnk_0813FDA8);
     work->unk_188 = 0;
     work->unk_18A = 0;
     func_08019068(gUnk_0813FD58, &work->base.anim, 0, 1, work->base.tiles);
@@ -8050,11 +8050,11 @@ void task_hum_leon_2(HumWork* work) {
 void task_hum_leon_3(LeonWork* work) {
     gGameState.unk_10C = work->unk_18C;
     gGameState.unk_114 = work->unk_194;
-    func_0800E380(&work->base);
+    HumReleaseResources(&work->base);
 }
 
 void task_hum_robe_0(RobeWork* work) {
-    func_0800E168(&work->base, gUnk_0813FDF4);
+    HumInit(&work->base, gUnk_0813FDF4);
     work->unk_188 = 1;
     func_08019068(gUnk_0813FDD4, &work->base.anim, 0, 1, work->base.tiles);
 }
@@ -8095,7 +8095,7 @@ void task_hum_robe_2(HumWork* work) {
 }
 
 void task_hum_robe_3(HumWork* work) {
-    func_0800E380(work);
+    HumReleaseResources(work);
 }
 
 void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {

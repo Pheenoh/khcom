@@ -17640,9 +17640,9 @@ u8 MapSelect_1(MapSelectWork* w, void* a) {
 u8 func_0809217C(MapSelectWork* w, void* a) {
     s32 n;
 
-    func_0800516C(1, gUnk_09EE4BB0, 1, 2);
+    SetBgMapBlocks(1, gUnk_09EE4BB0, 1, 2);
     w->unk_240 = 0;
-    func_08005244(1, 0, 0);
+    ScrollBgMapTo(1, 0, 0);
     EnableBg(1);
 
     if (w->unk_2BE == 1) {
@@ -17676,7 +17676,7 @@ u8 func_08092234(MapSelectWork* w, void* a) {
     } else {
         ApproachValue(&w->unk_240, 0x10000, w->unk_28F);
         ApproachValue(&w->unk_248, 0, w->unk_28F);
-        func_08005244(1, 0, (u32)w->unk_240 >> 8);
+        ScrollBgMapTo(1, 0, (u32)w->unk_240 >> 8);
 
         if (w->unk_28F != 0) {
             w->unk_28F--;
@@ -17693,7 +17693,7 @@ u8 func_08092234(MapSelectWork* w, void* a) {
                 gGameState.unk_17A |= 0x40;
             } else {
                 n = ListPoolFirst(&w->cards);
-                func_0800516C(1, gUnk_09EE4BB0, 1, 2);
+                SetBgMapBlocks(1, gUnk_09EE4BB0, 1, 2);
 
                 while (n != 0) {
                     n->unk_6C |= 2;
@@ -18120,7 +18120,7 @@ u8 func_08092E2C(MapSelectWork* w) {
     ApproachValue(&w->unk_25C, 0x16400, w->unk_28F);
     ApproachValue(&w->unk_254, 0x17A00, w->unk_28F);
     ApproachValue(&w->unk_244, 0x19100, w->unk_28F);
-    func_08005244(1, 0, (u32)w->unk_240 >> 8);
+    ScrollBgMapTo(1, 0, (u32)w->unk_240 >> 8);
     w->unk_2C0 = 0;
 
     if (w->unk_299 <= 8) {
@@ -19079,7 +19079,7 @@ u8 func_0809423C(MapSelectWork* w, void* a) {
                 w->unk_2C2++;
             } else {
                 n = (MapcardWork*)ListPoolFirst(&w->cards);
-                func_0800516C(1, gUnk_09EE4BB0, 1, 2);
+                SetBgMapBlocks(1, gUnk_09EE4BB0, 1, 2);
 
                 while (n != 0) {
                     n->unk_6C |= 2;
@@ -19158,7 +19158,7 @@ u8 func_08094404(MapSelectWork* w, void* a) {
                 w->unk_2C2++;
             } else {
                 node = ListPoolFirst(&w->cards);
-                func_0800516C(1, gUnk_09EE4BB0, 1, 2);
+                SetBgMapBlocks(1, gUnk_09EE4BB0, 1, 2);
                 while (node != 0) {
                     node->unk_6C |= 2;
                     node = ListPoolNext(&node->unk_38);
@@ -25574,8 +25574,8 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                     LoadPalette(gUnk_09614098, (void*)0x05000140, 0x80);
                 }
                 LoadBgMap(1, gUnk_0950F2B8, mapSize);
-                func_0800516C(1, gUnk_09EE790C, 2, 1);
-                func_080051C4(1, 0, 0);
+                SetBgMapBlocks(1, gUnk_09EE790C, 2, 1);
+                RedrawBgMapAt(1, 0, 0);
             } else {
                 if (gBtlWork->unk_10C == 151) {
                     LoadBgTiles(0, gUnk_093FF8F8, bgSize);
@@ -25607,8 +25607,8 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                         func_0809E7A4();
                         LoadPalette(gUnk_09614098, (void*)0x05000140, 0x80);
                     }
-                    func_0800516C(0, gUnk_09EE790C, 2, 1);
-                    func_080051C4(0, 0, 0);
+                    SetBgMapBlocks(0, gUnk_09EE790C, 2, 1);
+                    RedrawBgMapAt(0, 0, 0);
                 } else {
                     LoadBgTiles(1, gUnk_093FF8F8, bgSize);
 #ifdef VERSION_EU
@@ -25639,8 +25639,8 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
                         func_0809E7A4();
                         LoadPalette(gUnk_09614098, (void*)0x05000140, 0x80);
                     }
-                    func_0800516C(1, gUnk_09EE790C, 2, 1);
-                    func_080051C4(1, 0, 0);
+                    SetBgMapBlocks(1, gUnk_09EE790C, 2, 1);
+                    RedrawBgMapAt(1, 0, 0);
                 }
             }
             FadeSetPaletteExcluded(10, 1);
@@ -25752,9 +25752,9 @@ u8 Level_Up_1(UnkStruct_0809F730* w, void* a) {
         ApproachValue(&x3, 0x10000, w->unk_7B5);
         ApproachValue(&x4, 0, w->unk_7B5);
         if (gBtlWork->unk_10C == 151) {
-            func_08005244(0, (u16)(x3 >> 8), 0);
+            ScrollBgMapTo(0, (u16)(x3 >> 8), 0);
         } else {
-            func_08005244(1, (u16)(x3 >> 8), 0);
+            ScrollBgMapTo(1, (u16)(x3 >> 8), 0);
         }
         w->unk_77A = x3 >> 8;
         w->unk_77C = x4 >> 8;
@@ -26183,9 +26183,9 @@ u8 func_0809F730(UnkStruct_0809F730* w, void* a) {
     if (w->unk_7A4 == 180) {
         if (GetKeysPressed() & 1) {
             if (gBtlWork->unk_10C == 151) {
-                func_0800516C(0, gUnk_09EE790C, 2, 1);
+                SetBgMapBlocks(0, gUnk_09EE790C, 2, 1);
             } else {
-                func_0800516C(1, gUnk_09EE790C, 2, 1);
+                SetBgMapBlocks(1, gUnk_09EE790C, 2, 1);
             }
             w->unk_7B1 = 16;
             w->unk_7B5 = 16;
@@ -26250,9 +26250,9 @@ u8 func_0809FBCC(u8* work, void* a) {
     ApproachValue(&work[offsetof(UnkStruct_0809F730, unk_7AC)], 0x4800, (s8)work[offsetof(UnkStruct_0809F730, unk_7B5)]);
 
     if (gBtlWork->unk_10C == 151) {
-        func_08005244(0, v3 >> 8, 0);
+        ScrollBgMapTo(0, v3 >> 8, 0);
     } else {
-        func_08005244(1, v3 >> 8, 0);
+        ScrollBgMapTo(1, v3 >> 8, 0);
     }
 
     ((UnkStruct_0809FBCC*)work)->unk_77A = v3 >> 8;
@@ -28258,7 +28258,7 @@ u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
 
     ApproachValue(&w->unk_118, gUnk_09033CA0[w->unk_114->unk_04], w->unk_140);
     ApproachValue(&w->unk_11C, gUnk_09033CE0[w->unk_114->unk_04], w->unk_140);
-    func_08005244(w->unk_10C, w->unk_118, 0);
+    ScrollBgMapTo(w->unk_10C, w->unk_118, 0);
     w->unk_12C = AnimUpdate(w->unk_0C4);
 
     if (w->unk_140 != 0) {
@@ -28286,8 +28286,8 @@ u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
 u8 func_080A3640(UnkStruct_080A3F5C* w, void* a) {
     LoadBgTiles(w->unk_10C, gUnk_094233B8, 1280);
     LoadBgPalette(w->unk_10C, gUnk_096148D8, 32);
-    func_0800516C(w->unk_10C, gUnk_09EE4724[((UnkStruct_0809E0A4*)w->unk_114)->unk_04], 2, 1);
-    func_08005244(w->unk_10C, *(u16*)&w->unk_118, 0);
+    SetBgMapBlocks(w->unk_10C, gUnk_09EE4724[((UnkStruct_0809E0A4*)w->unk_114)->unk_04], 2, 1);
+    ScrollBgMapTo(w->unk_10C, *(u16*)&w->unk_118, 0);
     SetTaskUpdate(a, (void*)func_080A36B0);
     return 1;
 }
@@ -28538,7 +28538,7 @@ u8 func_080A3DD0(UnkStruct_080A3F5C* w) {
         w->unk_148 = 0;
         ApproachValue(&w->unk_118, gUnk_09033C98[w->unk_114->unk_04], w->unk_140);
         ApproachValue(&w->unk_11C, gUnk_09033CD0[w->unk_114->unk_04], w->unk_140);
-        func_08005244(w->unk_10C, w->unk_118, 0);
+        ScrollBgMapTo(w->unk_10C, w->unk_118, 0);
 
         if (w->unk_140 == 0) {
             return 0;
