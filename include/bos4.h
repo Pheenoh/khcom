@@ -36,44 +36,11 @@
 #include "poo_api.h"
 #include "btl_api.h"
 
-typedef struct UnkStruct_080DEE18 {
-    u16 unk_00;
-    u8 unk_02;
-    u8 unk_03;
-    u32 unk_04;
-    u8 unk_08;
-    u8 unk_09;
-    u8 unk_0A;
-    u8 unk_0B;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} UnkStruct_080DEE18;
 
-typedef struct UnkStruct_0203C590 {
-    u8 unk_00;
-    u8 unk_01;
-    u16 unk_02;
-    u8 unk_04;
-    u8 unk_05;
-    u8 unk_06;
-    u8 unk_07;
-    u8 unk_08[4][4];
-    u8 unk_18[0x04];
-    UnkStruct_080DEE18 unk_1C[32];
-} UnkStruct_0203C590;
 
 extern UnkStruct_0203C590 gUnk_0203C590;
 extern u32 gUnk_09EF69FC[];
 
-typedef struct UnkStruct_080DEDD8 {
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u8 unk_04;
-    u8 unk_05;
-    u8 unk_06[0x02];
-} UnkStruct_080DEDD8;
 
 typedef struct UnkStruct_0984C868 {
     u8 unk_00;

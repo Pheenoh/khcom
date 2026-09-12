@@ -53,4 +53,47 @@ typedef struct FldObj {
 
 typedef char FldActor_size[(sizeof(FldActor) == 0x50) ? 1 : -1];
 
+typedef struct FldWork {
+    void* tiles;
+    FldRes* palette;
+    u8 unk_08[0x0A];
+    u16 unk_12;
+    u8 unk_14[0x02];
+    u16 unk_16;
+    u8 unk_18[0x08];
+    void* gfx;
+    u8 unk_24[0x14];
+    u8 unk_38[0x10];
+    s32 unk_48;
+    u8 unk_4C[0x18];
+    u8 unk_64;
+    u8 unk_65;
+    u16 unk_66;
+    u8 unk_68[0x04];
+    u32 unk_6C;
+    s32 unk_70;
+    s32 unk_74;
+    s32 unk_78;
+    s32 unk_7C;
+    s32 unk_80;
+    s32 unk_84;
+    u8 unk_88[0x0C];
+    u32 unk_94;
+    s16 unk_98;
+    s16 unk_9A;
+    u8 unk_9C;
+    u8 unk_9D;
+    u16 unk_9E;
+    s32 unk_A0;
+    u16 unk_A4;
+    u8 unk_A6[0x02];
+    s32 unk_A8;
+    u16* unk_AC;
+    s32 unk_B0;
+    s32 unk_B4;
+    s32 unk_B8;
+    u8 unk_BC;
+    u8 unk_BD[0x03];
+} FldWork;
+
 #endif
