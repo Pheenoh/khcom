@@ -539,7 +539,7 @@ u8 task_emy_04_1(Emy04Work* work) {
             best = 0;
             bestv = 0;
 
-            for (p = ListPoolFirst(gBtlWork->unk_080); p != 0;
+            for (p = ListPoolFirst(&gBtlWork->unk_080); p != 0;
                     p = ListPoolNext(&p->unk_B8)) {
                 if (!(p->flags & 0x100)) {
                     if (bestv < p->maxHp - p->hp) {
@@ -860,7 +860,7 @@ u8 task_emy_07_1(Emy07Work* work) {
             spawn.x = act->x;
             spawn.y = act->y;
             spawn.z = act->z - (act->unk_9C << 8);
-            TaskCreate((TaskPool*)&gBtlWork->unk_02C, gTaskDescBtlPrize,
+            TaskCreate(&gBtlWork->taskPools[0], gTaskDescBtlPrize,
                 &spawn);
         }
 
@@ -4597,7 +4597,7 @@ u8 task_emy_82_1(Emy82Work* work) {
                         EmyActor* best = 0;
                         EmyActor* actor;
                         s16 missing = 0;
-                        for (actor = ListPoolFirst(gBtlWork->unk_080); actor;
+                        for (actor = ListPoolFirst(&gBtlWork->unk_080); actor;
                              actor = ListPoolNext(&actor->unk_B8)) {
                             if (actor != act && !(actor->flags & 0x100)) {
                                 if (missing <= actor->maxHp - actor->hp) {
