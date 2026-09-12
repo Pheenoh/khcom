@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
+#include "world_types.h"
+
 #include "card_api.h"
 
 #include "map_api.h"
@@ -31,16 +33,6 @@ typedef struct WarpIcon {
     u8 unk_12[0x02];
 } WarpIcon;
 
-typedef struct UnkStruct_09EF9488 {
-    void* unk_00;
-    u16 unk_04;
-    u8 unk_06[0x02];
-    void* unk_08;
-    u16 unk_0C;
-    u8 unk_0E[0x02];
-    void* unk_10;
-    u8 unk_14[0x04];
-} UnkStruct_09EF9488;
 
 typedef struct WarpRect {
     s16 unk_00;

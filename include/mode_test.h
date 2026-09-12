@@ -1,6 +1,12 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
+#include "continue_types.h"
+
+#include "fld_types.h"
+
+#include "evt_types.h"
+
 #include "card_types.h"
 
 #include "card_api.h"
@@ -32,17 +38,6 @@
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
-typedef struct FldObj {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    u8 unk_10[0x0A];
-    s16 unk_1A;
-    ListNode unk_1C;
-    u16 unk_30;
-    u8 unk_32[0x02];
-} FldObj;
 
 typedef struct UnkStruct_02039BA0 {
     s32 unk_00;
@@ -61,17 +56,6 @@ typedef struct UnkStruct_02039BA0 {
     u32 unk_70;
 } UnkStruct_02039BA0;
 
-typedef struct UnkStruct_02039DC8 {
-    u8 unk_00[0x74];
-    s32 unk_74;
-    u8 unk_78[0x02];
-    u8 unk_7A;
-    u8 unk_7B;
-    u8 unk_7C[0x08];
-    u8 unk_84;
-    u8 unk_85;
-    u8 unk_86[0x06];
-} UnkStruct_02039DC8;
 
 typedef struct UnkStruct_09EE3CA0 {
     u8 unk_00[0x24];
@@ -121,13 +105,6 @@ typedef struct MenuWork {
     u8 unk_12[0x02];
 } MenuWork;
 
-typedef struct ContinueWork {
-    u8 unk_00[0x60];
-    s32 unk_60;
-    u8 unk_64[0x06];
-    u8 unk_6A;
-    u8 unk_6B;
-} ContinueWork;
 
 typedef struct UnkStruct_02034A1C {
     u16 unk_00[61];

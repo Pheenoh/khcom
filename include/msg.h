@@ -1,6 +1,10 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
+#include "continue_types.h"
+
+#include "evt_types.h"
+
 #include "card_api.h"
 
 #include "map_api.h"
@@ -209,29 +213,6 @@ typedef struct MsgWinWork {
     s32 unk_40;
 } MsgWinWork;
 
-typedef struct ContinueWork {
-    void* tiles;
-    void* palette;
-    void* tiles2;
-    void* palette2;
-    void* tiles3;
-    void* palette3;
-    void* gfx;
-    void* gfx2;
-    AnimState unk_20;
-    AnimState unk_38;
-    s32 unk_50;
-    s32 unk_54;
-    s32 unk_58;
-    s32 unk_5C;
-    s32 unk_60;
-    u8 unk_64;
-    u8 unk_65;
-    u16 unk_66;
-    u8 unk_68[2];
-    u8 unk_6A;
-    s8 unk_6B;
-} ContinueWork;
 
 typedef struct EventSeqWork {
     TaskPool unk_00;
@@ -266,12 +247,6 @@ typedef struct Ent0806E7A8 {
     u64 unk_34;
 } Ent0806E7A8;
 
-typedef struct Ent08074EC8 {
-    s32 unk_00;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-} Ent08074EC8;
 
 typedef struct EventSeqArg {
     u32 unk_00 : 16;
@@ -300,45 +275,6 @@ typedef struct Ent09EE3CA0 {
     u8 unk_2E[2];
 } Ent09EE3CA0;
 
-typedef struct UnkStruct_02039DC8 {
-    Ent08074EC8* unk_00[17];
-    s32 unk_44;
-    s32 unk_48;
-    s32 unk_4C;
-    s32 unk_50;
-    s32 unk_54;
-    s32 unk_58;
-    s32 unk_5C;
-    s32 unk_60;
-    u32 unk_64;
-    s16 unk_68;
-    s16 unk_6A;
-    u16 unk_6C;
-    u16 unk_6E;
-    u16 unk_70;
-    u8 unk_72[2];
-    s32 unk_74;
-    u8 unk_78;
-    u8 unk_79;
-    u8 unk_7A;
-    u8 unk_7B;
-    u8 unk_7C;
-    u8 unk_7D;
-    u8 unk_7E;
-    u8 unk_7F;
-    u8 unk_80;
-    u8 unk_81;
-    u8 unk_82;
-    u8 unk_83;
-    u8 unk_84;
-    u8 unk_85;
-    u8 unk_86;
-    u8 unk_87;
-    u8 unk_88;
-    u8 unk_89;
-    u8 unk_8A;
-    u8 unk_8B;
-} UnkStruct_02039DC8;
 
 typedef struct UnkStruct_02039DCC {
     u8 unk_00[2];
