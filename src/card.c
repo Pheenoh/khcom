@@ -20974,7 +20974,6 @@ void func_08096F94(UnkStruct_08096F94* w, s32* args) {
     TaskPoolInit(&w->unk_28, 1);
     gBtlWork->unk_0B0++;
 }
-#ifdef NON_MATCHING
 u8 func_08097138(UnkStruct_08096F94* w, void* a) {
     s16 x;
     s16 y;
@@ -20998,7 +20997,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
         w->unk_A8 = w->unk_AC - 8;
         w->unk_B4 = -((w->unk_B4 * 217) >> 8);
         w->unk_DC = (u8)GetAngle(w->unk_A0, w->unk_A4, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_04, ((UnkStruct_0809E0A4*)gBtlWork->unk_07C)->unk_08);
-        w->unk_DC = w->unk_DC - 32 + GetRandom() % 65;
+        w->unk_DC += GetRandom() % 65 - 32;
 
         if (w->unk_B4 > -0x200) {
             w->unk_B4 = -0x200;
@@ -21016,6 +21015,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
         func_08012614(w->unk_44, 1);
         w->unk_CC = 50;
         func_08097390(w);
+        return 1;
     } else {
         func_08012324(w->unk_44, w->unk_A0, w->unk_A4, w->unk_A8);
         WorldToScreen(&w->unk_CE, &w->unk_D0, w->unk_A0, w->unk_A4, w->unk_A8);
@@ -21035,9 +21035,6 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_08097138.s");
-#endif
 
 void func_08097390(UnkStruct_08096F94* w) {
     s16 x;
