@@ -489,7 +489,7 @@ void mode_pooh_0(s32 arg) {
     TaskPoolInit(&gUnk_02034D30, 1);
     func_080C736C();
     func_080C73A4(6, 31, 31);
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     func_080C7568(0, 16);
     gUnk_02034D44 = 0;
 #ifdef VERSION_EU
@@ -503,7 +503,7 @@ void mode_pooh_1(void) {
     UpdatePlayTime();
     func_080C7CB0(0);
 
-    if (gUnk_02034D44 != 0 && !func_08006314()) {
+    if (gUnk_02034D44 != 0 && !FadeIsActive()) {
 #ifdef VERSION_EU
         if (gUnk_02034D48 == 195) {
 #else
@@ -516,7 +516,7 @@ void mode_pooh_1(void) {
         return;
     }
 
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         gUnk_0203C3D8 = 0;
 
         if (IsTaskActive(gWLogoTask)) {
@@ -580,9 +580,9 @@ void func_080C7B84(u32 a) {
         gUnk_02034D48 = a;
 
         for (i = 0; i <= 31; i++) {
-            func_080062F4(i, 0);
+            FadeSetPaletteExcluded(i, 0);
         }
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         func_080C75A4(0, 16);
         gUnk_02034D44 = 1;
     }
@@ -987,7 +987,7 @@ void func_080C7FEC(PoohWork* w, u32 anim) {
         break;
     }
 
-    func_08005974(&w->unk_0C, e->unk_0C, flags, e->unk_04, e->unk_00);
+    AnimChangeWithTables(&w->unk_0C, e->unk_0C, flags, e->unk_04, e->unk_00);
     func_08002A10(w->unk_00, e->unk_08);
 }
 

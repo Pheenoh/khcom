@@ -2520,7 +2520,7 @@ void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
     work->gfx2 = gUnk_09EF3A48[14];
     work->palette = LoadObjPalette(gUnk_096FB5A4, 0x60);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
-    func_080062F4(*(u16*)((u8*)work->palette + 6) + 16, 1);
+    FadeSetPaletteExcluded(*(u16*)((u8*)work->palette + 6) + 16, 1);
     work->unk_2E = 0;
     work->unk_1C = 0;
     work->unk_1E = 0;
@@ -3874,7 +3874,7 @@ void func_080BFFF8(JfMajinWork* work) {
     case 1:
         func_0802F274(jf->unk_000.unk_004, jf->unk_000.unk_008 + jf->unk_000.unk_00C);
 
-        if (func_08006314() != 0) {
+        if (FadeIsActive() != 0) {
             break;
         }
 
@@ -3884,7 +3884,7 @@ void func_080BFFF8(JfMajinWork* work) {
             func_08014AAC(jf->unk_000.unk_004 + 0x800, jf->unk_000.unk_008 + jf->unk_000.unk_00C - 0x800);
         }
 
-        func_08006238(0, gBtlWork->unk_0B3, 8);
+        FadeToAmount(0, gBtlWork->unk_0B3, 8);
         work->unk_48++;
         break;
     case 2:
@@ -5173,9 +5173,9 @@ void func_080C2944(DsdMainWork* work) {
 void func_080C297C(DsdMainWork* work, s32 x, s32 y, s32 z) {
     BtlObj* q = &work->unk_000->unk_000[1];
 
-    func_080062F4(0, 0);
-    func_080062F4(0x13, 0);
-    func_08006238(0, 0x14, 8);
+    FadeSetPaletteExcluded(0, 0);
+    FadeSetPaletteExcluded(0x13, 0);
+    FadeToAmount(0, 0x14, 8);
     func_08018B04(x - 0x1400, y, z - 0xA00, 0x100);
     m4aSongNumStart(0x2D1);
     q->unk_034 |= 0x01000000;
@@ -5184,9 +5184,9 @@ void func_080C297C(DsdMainWork* work, s32 x, s32 y, s32 z) {
 void func_080C29F4(DsdMainWork* work) {
     BtlObj* q = &work->unk_000->unk_000[1];
 
-    func_080061E8(0, 8);
-    func_080062F4(0, 1);
-    func_080062F4(19, 1);
+    FadeToOriginal(0, 8);
+    FadeSetPaletteExcluded(0, 1);
+    FadeSetPaletteExcluded(19, 1);
     q->unk_034 &= ~0x1000000;
 }
 
@@ -5848,9 +5848,9 @@ void func_080C3928(DsdMainWork* work) {
         func_08012614(&a->unk_040, 1);
         func_08012614(&b->unk_040, 1);
         func_08012614(&c->unk_040, 1);
-        func_080062F4(0, 0);
-        func_080062F4(19, 0);
-        func_08006238(0, 20, 8);
+        FadeSetPaletteExcluded(0, 0);
+        FadeSetPaletteExcluded(19, 0);
+        FadeToAmount(0, 20, 8);
         func_08018B04(a->unk_004 - 0x1400, a->unk_008, a->unk_00C - 0xA00, 0x100);
         m4aSongNumStart(0x2D1);
         work->unk_006 = 0;
@@ -5880,9 +5880,9 @@ void func_080C3928(DsdMainWork* work) {
             break;
         }
 
-        func_080061E8(0, 8);
-        func_080062F4(0, 1);
-        func_080062F4(19, 1);
+        FadeToOriginal(0, 8);
+        FadeSetPaletteExcluded(0, 1);
+        FadeSetPaletteExcluded(19, 1);
         work->unk_000->unk_350++;
         break;
     case 5:
@@ -6693,7 +6693,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         }
         break;
     case 4:
-        func_08006238(0, gBtlWork->unk_0B3, 8);
+        FadeToAmount(0, gBtlWork->unk_0B3, 8);
         work->unk_2C++;
         break;
     case 5:
@@ -6735,7 +6735,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         if (work->unk_34 >= (s8)work->unk_35 - 1) {
             if (func_080128EC() == 0) {
                 func_08006B4C();
-                func_080061E8(0, 8);
+                FadeToOriginal(0, 8);
                 work->unk_2C++;
             }
 
@@ -6757,7 +6757,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
     if (work->unk_00->unk_334 == 8 || work->unk_00->unk_334 == 11) {
         if (func_080128EC() == 1) {
             func_08006B4C();
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
         }
 
         work->unk_3C = 0;

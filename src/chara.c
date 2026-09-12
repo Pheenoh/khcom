@@ -1040,8 +1040,8 @@ u8 func_080C64A4(void) {
         gCharaObj->unk_3A = 0;
         gCharaObj->unk_40 = 0;
         m4aSongNumStart(0x22A);
-        func_08006184(2, 20);
-        func_080063A8();
+        FadeStartOut(2, 20);
+        FadeLock();
         gCharaObj->unk_44++;
         break;
     case 8:
@@ -1282,8 +1282,8 @@ u8 func_080C69B4(void) {
         gCharaObj->unk_3A = 0;
         gCharaObj->unk_40 = 0;
         m4aSongNumStart(0x22A);
-        func_08006184(2, 20);
-        func_080063A8();
+        FadeStartOut(2, 20);
+        FadeLock();
         gCharaObj->unk_44++;
         break;
     case 9:

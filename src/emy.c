@@ -1219,9 +1219,9 @@ u8 task_emy_15_1(EmyWork* work) {
         func_08019068(gUnk_0813D8F4, &w->anim, 1, 0, w->tiles);
 
         if (act->unk_034 & 4) {
-            func_0800592C(&act->unk_004, act->unk_014 - 0x5000, work->unk_154);
+            ApproachValueHalfSteps(&act->unk_004, act->unk_014 - 0x5000, work->unk_154);
         } else {
-            func_0800592C(&act->unk_004, act->unk_014 + 0x5000, work->unk_154);
+            ApproachValueHalfSteps(&act->unk_004, act->unk_014 + 0x5000, work->unk_154);
         }
 
         work->unk_154--;

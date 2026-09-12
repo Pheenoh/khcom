@@ -629,15 +629,15 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
         work->gfx = AnimUpdate(&work->anim);
 
         if (work->unk_01E == 40) {
-            func_08005974(&work->anim, 2, 0, gUnk_09EF35A4, gUnk_09EF3574);
+            AnimChangeWithTables(&work->anim, 2, 0, gUnk_09EF35A4, gUnk_09EF3574);
         }
 
         if (work->unk_01E == 55) {
-            func_08005974(&work->anim, 4, 0, gUnk_09EF35A4, gUnk_09EF3574);
+            AnimChangeWithTables(&work->anim, 4, 0, gUnk_09EF35A4, gUnk_09EF3574);
         }
 
         if (work->unk_01E == 75) {
-            func_08005974(&work->anim, 2, 0, gUnk_09EF35A4, gUnk_09EF3574);
+            AnimChangeWithTables(&work->anim, 2, 0, gUnk_09EF35A4, gUnk_09EF3574);
         }
         work->unk_01E++;
     } else {

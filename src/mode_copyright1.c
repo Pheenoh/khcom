@@ -76,17 +76,17 @@ void mode_copyright1_0(s32 arg) {
         LoadBgMap(0, gUnk_09841798, 0x800);
     }
 
-    func_08006120(1, 0x43);
+    FadeStartIn(1, 0x43);
     gUnk_02034ED6 = 60;
 }
 
 void mode_copyright1_1(void) {
     if (gUnk_02034ED8 != 0) {
         ModeRequest(&gModeMenuMsg, 0);
-    } else if (!func_08006314()) {
+    } else if (!FadeIsActive()) {
         if (gUnk_02034ED6 != 0) {
             if (--gUnk_02034ED6 == 0) {
-                func_08006184(1, 0x43);
+                FadeStartOut(1, 0x43);
             }
         } else
 #ifndef VERSION_JP

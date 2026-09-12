@@ -422,7 +422,7 @@ void func_080DA42C(BoogieDiceWork* work) {
         gUnk_0203C558 = n;
     }
 
-    func_08005974(&work->anim, 0, 0, tbl[n][0], tbl[n][1]);
+    AnimChangeWithTables(&work->anim, 0, 0, tbl[n][0], tbl[n][1]);
     func_08002A10((void*)work->tiles, tbl[n][2]);
 }
 
@@ -1645,10 +1645,10 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                 x = p->unk_004 - 0x1C00;
             }
             func_08014AAC(x, p->unk_008 + p->unk_00C + 0x1C00);
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
             work->unk_004++;
         } else if ((s16)work->unk_004 == 3) {
-            if (!func_08006314()) {
+            if (!FadeIsActive()) {
                 work->unk_004++;
             }
         } else if ((s16)work->unk_004 < 124) {
@@ -2072,7 +2072,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
         break;
     case 2:
         if (AnimGetId((AnimState*)&work->anim) == (s16)work->unk_024 + 4) {
-            if (AnimGetFrame((AnimState*)&work->anim) == 0 && func_08005AC4((AnimState*)&work->anim)) {
+            if (AnimGetFrame((AnimState*)&work->anim) == 0 && AnimIsFrameEnding((AnimState*)&work->anim)) {
                 AnimStart((AnimState*)&work->anim, (u16)(work->unk_024 + 5), 1);
                 func_0801C2DC(p, 1);
                 if ((u16)(GetRandom() % 100) <= 19) {
@@ -3216,7 +3216,7 @@ void Mode_MapChk_0(void) {
     func_0805FC04(80, 116, 2, gUnk_02034F18->unk_04);
     func_0805FC04(80, 128, 2, gUnk_02034F18->unk_05);
     func_0805FC04(80, 140, 2, gUnk_02034F18->unk_06);
-    func_08006120(0, 8);
+    FadeStartIn(0, 8);
     m4aMPlayAllStop();
 }
 void Mode_MapChk_1(void) {

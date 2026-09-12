@@ -99,7 +99,7 @@ u8 func_08032268(FldWork* work, void* task) {
     }
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
-        func_080062F4(work->palette->unk_06 + 16, 0);
+        FadeSetPaletteExcluded(work->palette->unk_06 + 16, 0);
         work->unk_94 = 0;
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)task_fld_sora_1);
@@ -108,7 +108,7 @@ u8 func_08032268(FldWork* work, void* task) {
         p = &work->unk_98;
 
         if (*p == 0) {
-            func_080062F4(work->palette->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->palette->unk_06 + 16, 1);
             act->unk_10 = 0;
             work->unk_BC = 0;
         }
@@ -851,7 +851,7 @@ u8 func_08033334(FldWork* work, void* task) {
     case 18:
         if (work->unk_98 == 0) {
             func_08031F98(work, 12, 0);
-            func_080062F4(work->palette->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->palette->unk_06 + 16, 1);
         }
 
         if (work->unk_98 == 40) {
@@ -1284,7 +1284,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
                 }
             } else {
                 if (func_08031EC4(&act->unk_00) != 0) {
-                    func_080062F4(work->palette->unk_06 + 16, 1);
+                    FadeSetPaletteExcluded(work->palette->unk_06 + 16, 1);
                     gUnk_02039BA0->unk_70 |= 16;
                     return 1;
                 }
@@ -1700,7 +1700,7 @@ void func_0803473C(FldWork* work, s32 index, u16 flags) {
 
     work->unk_A8 = index;
     def = &gUnk_0813CDDC[index][dir];
-    func_08005974(work->unk_08, def->unk_0C, flags, def->unk_04, def->unk_00);
+    AnimChangeWithTables(work->unk_08, def->unk_0C, flags, def->unk_04, def->unk_00);
     func_08002A10(work->tiles, def->unk_08);
 }
 
@@ -1798,7 +1798,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
     }
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
-        func_080062F4(work->palette->unk_06 + 16, 0);
+        FadeSetPaletteExcluded(work->palette->unk_06 + 16, 0);
         work->unk_94 = 0;
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)task_fld_riku_1);
@@ -1807,7 +1807,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
         p = &work->unk_98;
 
         if (*p == 0) {
-            func_080062F4(work->palette->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->palette->unk_06 + 16, 1);
             act->unk_10 = 0;
             work->unk_BC = 0;
         }
@@ -2544,7 +2544,7 @@ u8 func_08035AD4(FldWork* work, void* task) {
     case 18:
         if (work->unk_98 == 0) {
             func_0803473C(work, 12, 0);
-            func_080062F4(work->palette->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->palette->unk_06 + 16, 1);
         }
 
         if (work->unk_98 == 40) {
@@ -2977,7 +2977,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
                 }
             } else {
                 if (func_08034668(&act->unk_00) != 0) {
-                    func_080062F4(work->palette->unk_06 + 16, 1);
+                    FadeSetPaletteExcluded(work->palette->unk_06 + 16, 1);
                     gUnk_02039BA0->unk_70 |= 16;
                     return 1;
                 }

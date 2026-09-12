@@ -166,7 +166,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 case 6:
                     if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20B);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                         if (body->unk_034 & 4) {
                             func_08019050(6, 0x133, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
@@ -187,7 +187,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     func_08019A30();
                     if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20C);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                         if (body->unk_034 & 4) {
                             func_08019050(6, 0x133, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
@@ -205,7 +205,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     func_08019A30();
                     if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20D);
-                        func_08006120(2, 50);
+                        FadeStartIn(2, 50);
                         if (body->unk_034 & 4) {
                             func_08019050(6, 512, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
@@ -241,7 +241,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 case 6:
                     if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20B);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                         if (body->unk_034 & 4) {
                             func_08019050(6, 0x133, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
@@ -262,7 +262,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     func_08019A30();
                     if (body->unk_034 & 4 ? func_08011F78(151, body->unk_004 - 0x2800, body->unk_008, body->unk_00C, 24, 24, 48) : func_08011F78(151, body->unk_004 + 0x2800, body->unk_008, body->unk_00C, 24, 24, 48)) {
                         m4aSongNumStart(0x20C);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                         if (body->unk_034 & 4) {
                             func_08019050(6, 0x133, body->unk_004 - 0x2000, body->unk_008 - 0x1800 + body->unk_00C);
                         } else {
@@ -339,7 +339,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                 if (AnimGetFrame(&work->anim) == 4) {
                     if (body->unk_034 & 4 ? func_08011F78(152, body->unk_004 - 0x1800, body->unk_008, body->unk_00C, 40, 24, 48) : func_08011F78(152, body->unk_004 + 0x1800, body->unk_008, body->unk_00C, 40, 24, 48)) {
                         m4aSongNumStart(0x20B);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                     }
                 }
                 break;
@@ -348,7 +348,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     func_08019A30();
                     if (body->unk_034 & 4 ? func_08011F78(152, body->unk_004 - 0x1800, body->unk_008, body->unk_00C, 40, 24, 48) : func_08011F78(152, body->unk_004 + 0x1800, body->unk_008, body->unk_00C, 40, 24, 48)) {
                         m4aSongNumStart(0x20C);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                     }
                 }
                 break;
@@ -358,7 +358,7 @@ u8 task_smn_cloud_1(SmnCloudWork* work) {
                     func_08019A30();
                     if (body->unk_034 & 4 ? func_08011F78(152, body->unk_004 - 0x1800, body->unk_008, body->unk_00C, 40, 24, 48) : func_08011F78(152, body->unk_004 + 0x1800, body->unk_008, body->unk_00C, 40, 24, 48)) {
                         m4aSongNumStart(0x20D);
-                        func_08006120(2, 20);
+                        FadeStartIn(2, 20);
                     }
                 }
                 break;
@@ -687,8 +687,8 @@ u8 task_smn_bambi_1(SmnBambiWork* work) {
             }
 
             if (work->unk_14A > 0) {
-                func_0800592C(&body->unk_004, work->unk_170, work->unk_14A);
-                func_0800592C(&body->unk_008, work->unk_174, work->unk_14A);
+                ApproachValueHalfSteps(&body->unk_004, work->unk_170, work->unk_14A);
+                ApproachValueHalfSteps(&body->unk_008, work->unk_174, work->unk_14A);
                 work->unk_14A--;
             }
         }
@@ -1287,7 +1287,7 @@ u8 task_smn_simba_1(SmnSimbaWork* work) {
             }
 
             func_0802F1E8();
-            func_08006290(5, 8, 20);
+            FadeFromAmount(5, 8, 20);
             func_08019050(30, 0xCC, 0x10000, 0x15E00);
 
             if (body->unk_034 & 4) {
@@ -2180,13 +2180,13 @@ u8 task_smn_genie_1(SmnGenieWork* work) {
                     func_08014D78(1, body->unk_004 + 0xD00, body->unk_008, body->unk_00C - 0x6E00, x, y, z, 0, 148);
                 }
                 work->unk_15C = 1;
-                func_08006184(6, 8);
+                FadeStartOut(6, 8);
             }
         } else {
             func_08006B74();
         }
         if (work->unk_15C != 0 && !func_080128EC()) {
-            func_08006120(6, 8);
+            FadeStartIn(6, 8);
             work->unk_034 = 2;
             work->unk_148 = 0;
         } else {
@@ -2388,7 +2388,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
         if (func_08044F98(work)) {
             work->unk_034 = 4;
             work->unk_148 = 0;
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
         }
         break;
     case 4:
@@ -2426,7 +2426,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
     case 5:
         func_0801C6D4(&body->unk_004, &body->unk_008, &body->unk_00C, &body->unk_010);
         if (work->unk_148 > 60) {
-            func_080061E8(0, 8);
+            FadeToOriginal(0, 8);
             work->unk_034 = 1;
             work->unk_148 = 0;
         } else {

@@ -434,7 +434,7 @@ void mode_battle_0(u32 mode) {
         TaskCreate(&gBtlWork->taskPools[2], &gTaskDescBtlPause, 0);
     }
 
-    func_08006120(0, 60);
+    FadeStartIn(0, 60);
     gGameState.unk_010++;
 }
 

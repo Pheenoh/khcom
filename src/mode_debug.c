@@ -30,7 +30,7 @@ void mode_debug_0(void) {
     SaveLoadHeader();
 #endif
     gDebugWork = EwramAlloc(sizeof(DebugWork));
-    func_08006120(1, 16);
+    FadeStartIn(1, 16);
     func_0801CB44();
 #ifdef VERSION_EU
     gUnkEu_03006C10 |= 0x8000;
@@ -386,7 +386,7 @@ void mode_debug_2(void) {
 }
 
 void func_0800B30C(ObjDef* def) {
-    func_08005974(&gChkObjWork->anim, gChkObjWork->animId, 0, def->unk_04, def->unk_00);
+    AnimChangeWithTables(&gChkObjWork->anim, gChkObjWork->animId, 0, def->unk_04, def->unk_00);
     func_08002A10(gChkObjWork->tiles, def->unk_08);
     ReleaseObjPalette(gChkObjWork->palette);
     gChkObjWork->palette = LoadObjPalette(def->palette, def->paletteSize);

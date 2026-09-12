@@ -43,8 +43,8 @@ func_0801AF4C: @ 0801AF4C
 	bl m4aMPlayFadeOut
 	movs r0, #0x02
 	movs r1, #0x14
-	bl func_08006120
-	bl func_080063A8
+	bl FadeStartIn
+	bl FadeLock
 	mov r1, r9
 	ldr r0, [r1, #0x00]
 	adds r0, #0x80

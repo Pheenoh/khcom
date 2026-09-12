@@ -111,7 +111,7 @@ s32 _0800E434(HumWork* work) {
         AnimReset(&work->anim);
         break;
     case 11:
-        func_08006120(2, 20);
+        FadeStartIn(2, 20);
         gBtlWork->unk_072 = 15;
 
         if (actor->unk_0E8 != 1) {
@@ -257,7 +257,7 @@ s32 func_0800E5F0(HumWork* work) {
             func_08012614(&actor->unk_040, 0);
             work->unk_152 = 10;
         }
-        func_0800592C(&work->unk_16C, 0x100, work->unk_152--);
+        ApproachValueHalfSteps(&work->unk_16C, 0x100, work->unk_152--);
 
         if (work->unk_152 <= 0) {
             actor->unk_034 &= ~0x100;
@@ -367,7 +367,7 @@ s32 func_0800E5F0(HumWork* work) {
             }
             func_08019050(1, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
         }
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             work->unk_150 = 0;
 
             if (work->unk_154 & 0x40) {
@@ -383,7 +383,7 @@ s32 func_0800E5F0(HumWork* work) {
     case 4:
         if (work->unk_150 == 0) {
             func_08014A34(actor->unk_004, actor->unk_008 + actor->unk_00C - ((s16)actor->unk_0A2 << 8));
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
         }
         func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
         work->unk_158 = 0;
@@ -399,8 +399,8 @@ s32 func_0800E5F0(HumWork* work) {
         if (work->unk_150 == 0) {
             PrizeCardArg arg;
 
-            func_08006120(2, 60);
-            func_080063A8();
+            FadeStartIn(2, 60);
+            FadeLock();
             m4aSongNumStart(0x20F);
             gBtlWork->unk_068 |= 0x400000;
             func_0801B008();
@@ -417,7 +417,7 @@ s32 func_0800E5F0(HumWork* work) {
     case 6:
         if (work->unk_150 == 0) {
             func_08014AAC(actor->unk_004, actor->unk_008 + actor->unk_00C - ((s16)actor->unk_0A2 << 8));
-            func_08006238(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->unk_0B3, 8);
         }
         func_0802F284(actor->unk_004, actor->unk_008, actor->unk_00C);
         work->unk_158 = 0;

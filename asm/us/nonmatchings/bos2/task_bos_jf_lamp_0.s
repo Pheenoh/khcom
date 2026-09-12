@@ -41,7 +41,7 @@ task_bos_jf_lamp_0: @ 080BDBDC
 	lsls r0, r0, #0x10
 	lsrs r0, r0, #0x10
 	movs r1, #0x01
-	bl func_080062F4
+	bl FadeSetPaletteExcluded
 	movs r5, #0x00
 	movs r4, #0x00
 	strh r4, [r7, #0x2E]

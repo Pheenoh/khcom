@@ -55,7 +55,7 @@ void mode_allmap_0(s32 a) {
     REG_DISPSTAT |= 0x5020;
     SetVCountCallback(func_080D2F20);
     REG_IME = 1;
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
 
     if (gUnk_02034E81 != 0) {
         m4aMPlayVolumeControl(gMPlayInfo_BGM, 0xFF, 0x80);
@@ -67,7 +67,7 @@ void mode_allmap_0(s32 a) {
 }
 
 void func_080D3370(void) {
-    func_080062F4(10, 1);
+    FadeSetPaletteExcluded(10, 1);
     CpuSet(gUnk_05000140, gUnk_02034E40, 16);
     LoadPalette(gUnk_02034E40, gUnk_05000140, 32);
 }
@@ -77,7 +77,7 @@ void mode_allmap_1(void) {
     TaskPoolUpdate(&gUnk_0203C4F0);
     TaskPoolDraw(&gUnk_0203C4F0);
 
-    if (gUnk_0203C4E0 == 0 && !func_08006314()) {
+    if (gUnk_0203C4E0 == 0 && !FadeIsActive()) {
         if (gUnk_0203C534 != 0 && gUnk_0203C508 != 0) {
             gUnk_0203C4E0 = 1;
             gUnk_02034E3C = 16;

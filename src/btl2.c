@@ -917,7 +917,7 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
     paused = gBtlWork->unk_070;
     if (paused != 0) {
         if (work->unk_10 == 0) {
-            func_080063C4(1);
+            FadeSetPaused(1);
             work->unk_10 = 1;
             work->x = -0x4000;
             work->y = 0x5000;
@@ -980,7 +980,7 @@ s32 task_btl_pause_1(BtlPauseWork* work) {
         m4aMPlayVolumeControl(gUnk_0203DB90, 0xFF, 0x100);
         m4aMPlayVolumeControl(gUnk_0203DD50, 0xFF, 0x100);
         work->unk_10 = paused;
-        func_080063C4(0);
+        FadeSetPaused(0);
     }
 
     return 1;
@@ -994,7 +994,7 @@ void task_btl_pause_2(BtlPauseWork* work) {
 }
 
 void task_btl_pause_3(BtlPauseWork* work) {
-    func_080063C4(0);
+    FadeSetPaused(0);
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }
@@ -1781,7 +1781,7 @@ void task_btl_start_0(BtlStartWork* work) {
     func_0800675C(0, 0x200, 0x200);
     SetBgBlend(gBtlWork->unk_1C4, 16, 16);
     func_08019050(1, 0x200, 0x10000, 0x14000);
-    func_08006120(0, 60);
+    FadeStartIn(0, 60);
     work->unk_00 = 0;
     m4aSongNumStart(0x8F);
     SetBgPriority(gBtlWork->unk_1C4, 0);
@@ -1789,7 +1789,7 @@ void task_btl_start_0(BtlStartWork* work) {
 
 s32 task_btl_start_1(BtlStartWork* work) {
     if (work->unk_00 <= 20) {
-        func_08006120(0, 40);
+        FadeStartIn(0, 40);
     }
 
     switch (work->unk_00) {
@@ -1797,7 +1797,7 @@ s32 task_btl_start_1(BtlStartWork* work) {
         func_08019050(35, 0x100, gBtlWork->unk_010, gBtlWork->unk_014);
         break;
     case 43:
-        func_08006120(2, 30);
+        FadeStartIn(2, 30);
         break;
     case 74:
         return 0;
@@ -2016,6 +2016,6 @@ void func_08031F98(FldWork* work, s32 a, s32 b) {
     work->unk_A8 = a;
 
     e = &gUnk_0813C89C[a][idx];
-    func_08005974(&work->unk_08, e->unk_0C, flags, e->unk_04, e->unk_00);
+    AnimChangeWithTables(&work->unk_08, e->unk_0C, flags, e->unk_04, e->unk_00);
     func_08002A10(work->tiles, e->unk_08);
 }

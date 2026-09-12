@@ -65,7 +65,7 @@ void mode_test_2(void) {
 }
 #endif
 
-void func_0805F1C0(s32* p, s32 v) {
+void ApproachValueHalf(s32* p, s32 v) {
     *p += (v - *p) >> 1;
 }
 
@@ -1248,7 +1248,7 @@ u8 menu_1(MenuWork* w) {
                 break;
             case 2:
                 func_0801CB0C();
-                func_08006184(0, 32);
+                FadeStartOut(0, 32);
                 w->unk_10 = 4;
                 m4aSongNumStart(102);
                 break;
@@ -1315,7 +1315,7 @@ u8 menu_1(MenuWork* w) {
                 break;
             case 9:
                 func_0801CB0C();
-                func_08006184(0, 32);
+                FadeStartOut(0, 32);
                 w->unk_10 = 4;
                 m4aSongNumStart(102);
                 break;
@@ -1327,7 +1327,7 @@ u8 menu_1(MenuWork* w) {
         w->x += (0x11800 - w->x) >> 1;
 
         if ((w->x >> 8) > 274) {
-            if (func_08006314() == 0) {
+            if (FadeIsActive() == 0) {
                 if (w->unk_11 != 2) {
                     if (w->unk_11 == 9) {
                         ModeRequest(&gUnk_09EE2704, 0);
@@ -1466,7 +1466,7 @@ void Event_0(s32 arg) {
     }
 
     if (gUnk_09EE3FB4[gUnk_02034A78 & 0x8000]->unk_08->unk_14 & 0x80) {
-        func_08006120(1, 999);
+        FadeStartIn(1, 999);
     }
 
     TaskPoolInit(&gUnk_02034A60, 2);
@@ -1620,7 +1620,7 @@ void func_08061248(void) {
         return;
     }
     if (p->unk_1C != 0) {
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         ModeRequest(&gModeTitle, 0);
         return;
     }

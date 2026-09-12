@@ -177,9 +177,9 @@ s32 task_allmap_cursor_1(AllmapCursorWork* work) {
         if (gUnk_0203C508 > 6) {
             ApproachValue(&work->unk_28, work->unk_2C, gUnk_0203C508 - 7);
         } else if (gUnk_0203C508 > 3) {
-            func_0800592C(&work->unk_28, work->unk_2C - 0x800, gUnk_0203C508 - 3);
+            ApproachValueHalfSteps(&work->unk_28, work->unk_2C - 0x800, gUnk_0203C508 - 3);
         } else {
-            func_0800592C(&work->unk_28, work->unk_2C, gUnk_0203C508);
+            ApproachValueHalfSteps(&work->unk_28, work->unk_2C, gUnk_0203C508);
         }
     }
 
@@ -356,8 +356,8 @@ void task_allmap_bar_0(AllmapBarWork* work) {
 }
 
 void func_080D3FD4(AllmapBarWork* work) {
-    func_08006184(0, 16);
-    func_080063A8();
+    FadeStartOut(0, 16);
+    FadeLock();
 }
 
 s32 task_allmap_bar_1(AllmapBarWork* work) {
@@ -395,9 +395,9 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         }
         break;
     case 4:
-        if (func_08006314() == 0 && work->unk_2D == 0) {
+        if (FadeIsActive() == 0 && work->unk_2D == 0) {
             for (i = 0; i < 32; i++) {
-                func_080062F4(i, 0);
+                FadeSetPaletteExcluded(i, 0);
             }
             func_080D3FD4(work);
             work->unk_2D = 1;
@@ -511,8 +511,8 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
             work->unk_01C[i].unk_04 = LoadObjTiles(gUnk_0905E3BA, 0x600);
             work->unk_01C[i].unk_10 = LoadObjPalette(gUnk_09618D38, 32);
             work->unk_01C[i].unk_1C = gUnk_09EE97F4[0];
-            func_080062F4(work->unk_01C[i].unk_0C->unk_06 + 16, 1);
-            func_080062F4(work->unk_01C[i].unk_10->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->unk_01C[i].unk_0C->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->unk_01C[i].unk_10->unk_06 + 16, 1);
             work->unk_008[i] = gUnk_09EF64E8[i];
             work->unk_114++;
         } else {
@@ -523,11 +523,11 @@ void func_080D42D4(AllmapDoorinfoWork* work) {
     if (work->unk_114 != 0) {
         work->unk_018 = LoadObjTiles(gUnk_0976DD62, 0x80);
         work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
-        func_080062F4(((AllmapPal*)work->palette)->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(((AllmapPal*)work->palette)->unk_06 + 16, 1);
         work->unk_0F0 = LoadObjTiles(gUnk_0976B340, 0x2400);
         work->unk_0F8 = gUnk_09EF6424[0];
         func_0800388C(work->unk_0F4, 15, gUnk_0984A0F8, 32);
-        func_080062F4(((AllmapPal*)work->unk_0F4)->unk_06 + 16, 1);
+        FadeSetPaletteExcluded(((AllmapPal*)work->unk_0F4)->unk_06 + 16, 1);
     }
 }
 
@@ -567,15 +567,15 @@ void func_080D44D4(AllmapDoorinfoWork* work) {
         func_08098598(func_080D44A0(work->unk_114, i), 0x6800, e);
 
         if (work->unk_01C[i].unk_0C != 0) {
-            func_080062F4(work->unk_01C[i].unk_0C->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->unk_01C[i].unk_0C->unk_06 + 16, 1);
         }
 
         if (work->unk_01C[i].unk_10 != 0) {
-            func_080062F4(work->unk_01C[i].unk_10->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->unk_01C[i].unk_10->unk_06 + 16, 1);
         }
 
         if (work->unk_01C[i].unk_14 != 0) {
-            func_080062F4(work->unk_01C[i].unk_14->unk_06 + 16, 1);
+            FadeSetPaletteExcluded(work->unk_01C[i].unk_14->unk_06 + 16, 1);
         }
     }
 
@@ -589,14 +589,14 @@ void func_080D44D4(AllmapDoorinfoWork* work) {
         func_0800388C(work->unk_0F4, 15, gUnk_0984A0F8, 32);
     }
 
-    func_080062F4(((AllmapPal*)work->unk_0F4)->unk_06 + 16, 1);
+    FadeSetPaletteExcluded(((AllmapPal*)work->unk_0F4)->unk_06 + 16, 1);
 }
 
 void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
     s32 i;
 
     for (i = 0; i < 32; i++) {
-        func_080062F4(i, 0);
+        FadeSetPaletteExcluded(i, 0);
     }
     work->unk_0F4 = EwramAlloc(40);
     work->unk_000 = *arg;
@@ -616,7 +616,7 @@ void task_allmap_doorinfo_0(AllmapDoorinfoWork* work, AllmapCursorPos* arg) {
     work->unk_104 = work->unk_0FC << 8;
     work->unk_108 = work->unk_0FE << 8;
     work->unk_116 = 0;
-    func_08006238(0, 14, 8);
+    FadeToAmount(0, 14, 8);
 }
 
 s32 task_allmap_doorinfo_1(AllmapDoorinfoWork* work) {
@@ -626,7 +626,7 @@ s32 task_allmap_doorinfo_1(AllmapDoorinfoWork* work) {
         work->unk_100 = 8 - work->unk_100;
         work->unk_10C = work->unk_0FC << 8;
         work->unk_110 = work->unk_0FE << 8;
-        func_080061E8(0, 8);
+        FadeToOriginal(0, 8);
     }
 
     if (work->unk_100 != 0) {
@@ -683,7 +683,7 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
     s32 i;
 
     if (work->unk_116 == 0) {
-        func_080061E8(0, 8);
+        FadeToOriginal(0, 8);
     }
     ReleaseObjTiles(work->unk_0F0);
 
@@ -706,9 +706,9 @@ void task_allmap_doorinfo_3(AllmapDoorinfoWork* work) {
     }
 
     for (i = 0; i < 32; i++) {
-        func_080062F4(i, 1);
+        FadeSetPaletteExcluded(i, 1);
     }
-    func_080062F4(10, 0);
+    FadeSetPaletteExcluded(10, 0);
     EwramFree(work->unk_0F4);
 }
 
@@ -899,7 +899,7 @@ void func_080D51D8(void) {
     s16 x;
     s16 y;
 
-    if (func_08006314() == 0 && gUnk_0203C4E0 == 3) {
+    if (FadeIsActive() == 0 && gUnk_0203C4E0 == 3) {
         func_080D55E4();
     }
 
@@ -1216,7 +1216,7 @@ void func_080D5A4C(u16 a) {
     if (IsTaskActive(gTitleObjTask) == 0) {
         gTitleObjTask = TaskCreate(&gTitleTaskPool, &gTaskDescTitleObj, 0);
     }
-    func_08006120(2, a);
+    FadeStartIn(2, a);
 }
 
 void func_080D5B04(void) {
@@ -1244,7 +1244,7 @@ void func_080D5B04(void) {
 
 void func_080D5B30(void) {
     m4aMPlayFadeOut(gMPlayTable[gSongTable[6].ms].info, 5);
-    func_08006184(0, 90);
+    FadeStartOut(0, 90);
     func_080C75A4(0, 90);
     gUnk_02034E98 = 9;
 }

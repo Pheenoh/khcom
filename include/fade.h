@@ -4,18 +4,19 @@
 #include "types.h"
 
 void FadeReset(void);
-void func_08006120(s32 a, u16 b);
-void func_08006184(s32 a, u16 b);
-void func_080061E8(s32 a, u16 b);
-void func_08006238(s32 a, u16 b, u16 c);
-void func_08006290(s32 a, u16 b, u16 c);
-void func_080062F4(u16 slot, u8 value);
-u8 func_08006314(void);
-void func_080063A8(void);
-void func_080063C4(u8 on);
+void FadeUpdate(void);
+void FadeStartIn(s32 mode, u16 frames);
+void FadeStartOut(s32 mode, u16 frames);
+void FadeToOriginal(s32 mode, u16 frames);
+void FadeToAmount(s32 mode, u16 amount, u16 frames);
+void FadeFromAmount(s32 mode, u16 amount, u16 frames);
+void FadeSetPaletteExcluded(u16 slot, u8 excluded);
+u8 FadeIsActive(void);
+void FadeLock(void);
+void FadeSetPaused(u8 on);
 
-void func_08005C60(u16 a);
-u16 func_08006390(void);
-u16 _08006338(void);
+void FadeClearPaletteSlot(u16 slot);
+u16 FadeGetAmount(void);
+u16 FadeGetColor(void);
 
 #endif

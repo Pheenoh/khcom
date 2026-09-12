@@ -92,8 +92,8 @@ s16 func_0800C980(EmyWork* work, s16 a, s16 b, s16 c, s32 d, s16 e, u16 f, s16 g
             }
 
             if (actor->unk_0E8 != 5) {
-                func_0800592C(&actor->unk_004, v, steps);
-                func_0800592C(&actor->unk_008, target, steps);
+                ApproachValueHalfSteps(&actor->unk_004, v, steps);
+                ApproachValueHalfSteps(&actor->unk_008, target, steps);
             }
 
             if (!(work->unk_158 & 4)) {
@@ -585,7 +585,7 @@ s32 _0800CDF0(EmyWork* work) {
             func_08012614(&actor->unk_040, 0);
             work->unk_156 = 10;
         }
-        func_0800592C(&work->unk_180, 0x100, work->unk_156--);
+        ApproachValueHalfSteps(&work->unk_180, 0x100, work->unk_156--);
 
         if (work->unk_156 <= 0) {
             actor->unk_034 &= ~0x100;
@@ -638,8 +638,8 @@ s32 _0800CDF0(EmyWork* work) {
         if (work->unk_156 <= 0) {
             if (gBtlWork->unk_0EE == 1 && gBtlWork->unk_120 <= 0) {
                 func_08006B4C();
-                func_08006120(2, 20);
-                func_080063A8();
+                FadeStartIn(2, 20);
+                FadeLock();
             }
             func_0801B994(actor);
             func_0801C830(actor);
@@ -680,8 +680,8 @@ s32 _0800CDF0(EmyWork* work) {
             work->unk_154++;
         } else if (work->unk_154 > 0) {
             if (gBtlWork->unk_0EE == 1 && gBtlWork->unk_120 <= 0) {
-                func_08006120(2, 20);
-                func_080063A8();
+                FadeStartIn(2, 20);
+                FadeLock();
             }
             func_0801B994(actor);
 
@@ -775,11 +775,11 @@ s32 _0800CDF0(EmyWork* work) {
         work->gfx = AnimUpdate(&work->anim);
     } else if (actor->unk_0E8 != 2) {
         if (gBtlWork->unk_068 & 1) {
-            if (!func_08005AC4(&work->anim)) {
+            if (!AnimIsFrameEnding(&work->anim)) {
                 work->gfx = AnimUpdate(&work->anim);
             }
         } else {
-            if (func_08005AC4(&work->anim)) {
+            if (AnimIsFrameEnding(&work->anim)) {
                 gBtlWork->unk_068 |= 1;
             }
             work->gfx = AnimUpdate(&work->anim);

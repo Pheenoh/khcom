@@ -36,38 +36,38 @@ void func_080100A0(void) {
             AnimInit(&gUnk_020348C8->unk_08, 0, 0);
             switch (gGameState.unk_024) {
             case 0:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDF514, gUnk_09EDF4F4);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDF514, gUnk_09EDF4F4);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_08935BC2);
                 break;
             case 45:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF938, gUnk_09EEF918);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF938, gUnk_09EEF918);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_092F15E4);
                 gUnk_020348C8->unk_22 = 1;
                 break;
             case 64:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF914, gUnk_09EEF8F4);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF914, gUnk_09EEF8F4);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_092EFAD4);
                 gUnk_020348C8->unk_22 = 1;
                 break;
             case 83:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF8F0, gUnk_09EEF8D0);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF8F0, gUnk_09EEF8D0);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_092ED9F6);
                 gUnk_020348C8->unk_22 = 1;
                 break;
             case 128:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDF4F0, gUnk_09EDF4D0);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDF4F0, gUnk_09EDF4D0);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_0893416A);
                 break;
             case 173:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF8F0, gUnk_09EEF8D0);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF8F0, gUnk_09EEF8D0);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_092ED9F6);
                 break;
             case 192:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF914, gUnk_09EEF8F4);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF914, gUnk_09EEF8F4);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_092EFAD4);
                 break;
             default:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF938, gUnk_09EEF918);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EEF938, gUnk_09EEF918);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_092F15E4);
                 break;
             }
@@ -76,38 +76,38 @@ void func_080100A0(void) {
             AnimInit(&gUnk_020348C8->unk_08, 0, 0);
             switch (gGameState.unk_024) {
             case 0:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDED5C, gUnk_09EDED3C);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDED5C, gUnk_09EDED3C);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_088DC192);
                 break;
             case 45:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEB88, gUnk_09EDEB68);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEB88, gUnk_09EDEB68);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_088CE0C2);
                 gUnk_020348C8->unk_22 = 1;
                 break;
             case 64:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEA90, gUnk_09EDEA70);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEA90, gUnk_09EDEA70);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_088C5AAA);
                 gUnk_020348C8->unk_22 = 1;
                 break;
             case 83:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEA0C, gUnk_09EDE9EC);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEA0C, gUnk_09EDE9EC);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_088C1388);
                 gUnk_020348C8->unk_22 = 1;
                 break;
             case 128:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDE940, gUnk_09EDE920);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDE940, gUnk_09EDE920);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_088BAC36);
                 break;
             case 173:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEA0C, gUnk_09EDE9EC);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEA0C, gUnk_09EDE9EC);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_088C1388);
                 break;
             case 192:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEA90, gUnk_09EDEA70);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEA90, gUnk_09EDEA70);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_088C5AAA);
                 break;
             default:
-                func_08005974(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEB88, gUnk_09EDEB68);
+                AnimChangeWithTables(&gUnk_020348C8->unk_08, 0, 1, (s32)gUnk_09EDEB88, gUnk_09EDEB68);
                 func_08002A10(gUnk_020348C8->unk_00, gUnk_088CE0C2);
                 break;
             }

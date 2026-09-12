@@ -27,8 +27,8 @@ typedef struct AnimState {
 } AnimState;
 
 void AnimInit(AnimState* anim, void* anims, void* gfxTable);
-void func_08005974(AnimState* anim, u16 animId, u16 flags, void* anims, void* gfxTable);
-u8 func_08005AC4(AnimState* anim);
+void AnimChangeWithTables(AnimState* anim, u16 animId, u16 flags, void* anims, void* gfxTable);
+u8 AnimIsFrameEnding(AnimState* anim);
 
 void AnimStart(AnimState* anim, u16 animId, u16 flags);
 void AnimChange(AnimState* anim, u16 animId, u16 flags);

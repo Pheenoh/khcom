@@ -475,7 +475,7 @@ void func_08002BCC(ObjPaletteNode* p) {
         p->refCount -= 1;
     } else {
         p->self = 0;
-        func_08005C60(p->unk_06 + 0x10);
+        FadeClearPaletteSlot(p->unk_06 + 0x10);
         ListPoolRelease(&p->unk_0C, &gSpriteWork->palettePool);
     }
 }
@@ -2494,7 +2494,7 @@ void ApproachValue(s32* value, s32 target, u16 steps) {
     *value = cur + delta / steps;
 }
 
-s32 func_08005920(u16 a) {
+s32 GetHalfStepDivisor(u16 a) {
     a >>= 1;
 
     if (a == 0) {
@@ -2503,10 +2503,10 @@ s32 func_08005920(u16 a) {
     return a;
 }
 
-void func_0800592C(s32* p, s32 target, u16 steps) {
+void ApproachValueHalfSteps(s32* p, s32 target, u16 steps) {
     s32 d = target - *p;
 
-    *p += d / func_08005920(steps);
+    *p += d / GetHalfStepDivisor(steps);
 }
 
 s32 Lerp8(s32 a, s32 b, s32 t) {
@@ -2519,7 +2519,7 @@ void AnimInit(AnimState* a, void* b, void* c) {
     a->frames = 0;
 }
 
-void func_08005974(AnimState* a, u16 animId, u16 flags, void* b, void* c) {
+void AnimChangeWithTables(AnimState* a, u16 animId, u16 flags, void* b, void* c) {
     if (a->gfxTable != c || a->anims != b || a->animId != animId) {
         a->gfxTable = c;
         a->anims = b;
@@ -2605,7 +2605,7 @@ void* AnimUpdate(AnimState* a) {
     return gfx;
 }
 
-u8 func_08005AC4(AnimState* a) {
+u8 AnimIsFrameEnding(AnimState* a) {
     if (a->frames == 0) {
         return 0;
     }
@@ -2707,7 +2707,7 @@ void LoadPalette(void* src, void* dst, u16 size) {
 }
 
 
-void func_08005C60(u16 a) {
+void FadeClearPaletteSlot(u16 a) {
     PaletteSlot* p = gFadeWork->slots;
 
     p += a;
@@ -2715,7 +2715,7 @@ void func_08005C60(u16 a) {
 }
 
 
-void func_08005C78(void) {
+void FadeUpdate(void) {
     s32 i;
     s32 j;
     s32 changed;
@@ -2865,7 +2865,7 @@ void func_08005C78(void) {
         gFadeWork->unk_594 = 0;
     }
 }
-void func_08006120(s32 a, u16 b) {
+void FadeStartIn(s32 a, u16 b) {
     FadeWork* base = gFadeWork;
     u32 z;
 
@@ -2882,7 +2882,7 @@ void func_08006120(s32 a, u16 b) {
     base->unk_588 = z;
     base->unk_590 = a;
 }
-void func_08006184(s32 a, u16 b) {
+void FadeStartOut(s32 a, u16 b) {
     FadeWork* base = gFadeWork;
     u32 z;
 
@@ -2899,7 +2899,7 @@ void func_08006184(s32 a, u16 b) {
     base->unk_588 = z;
     base->unk_590 = a;
 }
-void func_080061E8(s32 a, u16 b) {
+void FadeToOriginal(s32 a, u16 b) {
     FadeWork* base = gFadeWork;
     u32 z;
 
@@ -2915,7 +2915,7 @@ void func_080061E8(s32 a, u16 b) {
     base->unk_590 = a;
 }
 
-void func_08006238(s32 a, u16 b, u16 c) {
+void FadeToAmount(s32 a, u16 b, u16 c) {
     FadeWork* base = gFadeWork;
 
     if (base->unk_594 & 2) {
@@ -2929,7 +2929,7 @@ void func_08006238(s32 a, u16 b, u16 c) {
     base->unk_590 = a;
 }
 
-void func_08006290(s32 a, u16 b, u16 c) {
+void FadeFromAmount(s32 a, u16 b, u16 c) {
     FadeWork* base = gFadeWork;
     u32 z;
 
@@ -2947,7 +2947,7 @@ void func_08006290(s32 a, u16 b, u16 c) {
     base->unk_590 = a;
 }
 
-void func_080062F4(u16 slot, u8 value) {
+void FadeSetPaletteExcluded(u16 slot, u8 value) {
     PaletteSlot* p;
 
     if (slot > 0x1F) {
@@ -2958,14 +2958,14 @@ void func_080062F4(u16 slot, u8 value) {
     p->unk_28 = value;
 }
 
-u8 func_08006314(void) {
+u8 FadeIsActive(void) {
     if (gFadeWork->unk_594 & 1) {
         return 1;
     }
     return 0;
 }
 
-u16 _08006338(void) {
+u16 FadeGetColor(void) {
     switch (gFadeWork->unk_590) {
     case 1:
     case 2:
@@ -2982,17 +2982,17 @@ u16 _08006338(void) {
     }
 }
 
-u16 func_08006390(void) {
+u16 FadeGetAmount(void) {
     return gFadeWork->unk_580 >> 8;
 }
 
-void func_080063A8(void) {
+void FadeLock(void) {
     u16 v = gFadeWork->unk_594 | 2;
 
     gFadeWork->unk_594 = v;
 }
 
-void func_080063C4(u8 on) {
+void FadeSetPaused(u8 on) {
     if (on) {
         u16 v = gFadeWork->unk_594 | 4;
 
@@ -3025,7 +3025,7 @@ void MosaicUpdate(void) {
     }
 }
 
-void func_08006494(u16 a, u16 b) {
+void MosaicStartIn(u16 a, u16 b) {
     gUnk_02034024 = a;
     gUnk_0203401C = b << 8;
     gUnk_02034020 = 0;
@@ -3037,7 +3037,7 @@ void func_08006494(u16 a, u16 b) {
     func_080034D8(1);
 }
 
-void func_080064E8(u16 a, u16 b) {
+void MosaicStartOut(u16 a, u16 b) {
     gUnk_02034024 = a;
     gUnk_0203401C = 0;
     gUnk_02034020 = b << 8;

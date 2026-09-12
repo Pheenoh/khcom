@@ -229,8 +229,8 @@ u8 task_status_bar_1(StatusBarWork* work) {
         }
         break;
     case 4:
-        if (!func_08006314() && work->unk_25 == 0) {
-            func_08006184(0, 16);
+        if (!FadeIsActive() && work->unk_25 == 0) {
+            FadeStartOut(0, 16);
             work->unk_25 = 1;
         }
         ApproachValue(&work->y, work->targetY, work->unk_08);
@@ -244,7 +244,7 @@ u8 task_status_bar_1(StatusBarWork* work) {
         if (work->unk_24 == 0) {
             if (GetKeysPressed() & 8) {
                 m4aSongNumStart(0x68);
-                func_08006184(0, 16);
+                FadeStartOut(0, 16);
                 func_080D7568(0);
                 gUnk_0203C550 = 5;
             } else if (GetKeysPressed() & 2) {
@@ -257,7 +257,7 @@ u8 task_status_bar_1(StatusBarWork* work) {
         }
         break;
     case 5:
-        if (!func_08006314()) {
+        if (!FadeIsActive()) {
             return 0;
         }
         break;
@@ -443,8 +443,8 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
             work->targetY = *work->unk_48 * 3072 + 0x2400;
         }
     }
-    func_0805F1C0(&work->y, work->targetY);
-    func_0805F1C0(&work->x, work->targetX);
+    ApproachValueHalf(&work->y, work->targetY);
+    ApproachValueHalf(&work->x, work->targetX);
 
     for (i = 0; i < 2; i++) {
         work->gfx[i] = AnimUpdate(&work->anim[i]);
@@ -453,7 +453,7 @@ u8 task_status_cursor_1(StatusCursorWork* work) {
 }
 
 void task_status_cursor_2(StatusCursorWork* work) {
-    if (func_08006314() == 0) {
+    if (FadeIsActive() == 0) {
         if (!(gGameState.flags & 8) || func_080D8340()) {
             DrawSprite(work->x >> 8, (work->y >> 8) - 16, work->gfx[1], work->tiles2, work->palette2, 0, 0, 0);
 
@@ -1103,7 +1103,7 @@ void func_080D8F14(BoogieWork* work) {
 void func_080D900C(BoogieWork* work, s32 a, u16 b) {
     if (work->unk_15C != a) {
         work->unk_15C = a;
-        func_08005974(&work->anim, gUnk_096FDE54[a].unk_0C, b, gUnk_096FDE54[a].unk_00, gUnk_096FDE54[a].unk_04);
+        AnimChangeWithTables(&work->anim, gUnk_096FDE54[a].unk_0C, b, gUnk_096FDE54[a].unk_00, gUnk_096FDE54[a].unk_04);
         func_08002A10(work->tiles, gUnk_096FDE54[a].unk_08);
     }
 }
@@ -1252,10 +1252,10 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             work->unk_170 = 2;
             break;
         case 2:
-            if (func_08006314() == 0) {
+            if (FadeIsActive() == 0) {
                 func_08014AAC(a->unk_004, a->unk_008 + a->unk_00C - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
                 func_0801C298(((BoogiePalette*)work->palette)->unk_06 + 16, 0);
-                func_08006238(0, gBtlWork->unk_0B3, 8);
+                FadeToAmount(0, gBtlWork->unk_0B3, 8);
                 work->unk_170 = 3;
                 work->unk_004 = 0;
             }
@@ -1285,7 +1285,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         func_080D900C(work, 0, 1);
         if (AnimIsFinished(&work->anim)) {
             random = GetRandom();
-            if ((random & 15) <= 7 && func_08006314() == 0) {
+            if ((random & 15) <= 7 && FadeIsActive() == 0) {
                 work->unk_000 = 11;
                 if (work->unk_174 != 0) {
                     func_08083914();

@@ -30,7 +30,7 @@ void func_0805A514(s16 a, s16 b, s16 c) {
     s32 v;
 
     v = (b + gJiminyWork->unk_C74 * c) << 8;
-    func_0805F1C0(&gJiminyWork->unk_05C, v);
+    ApproachValueHalf(&gJiminyWork->unk_05C, v);
 
     if (gJiminyWork->unk_CC0 > 0) {
         gJiminyWork->unk_CC0--;
@@ -242,14 +242,14 @@ void func_0805A95C(s16 a, s16 b, u16** c, u16* d, u16* e, s16 f, s16 g, s16 h) {
 }
 
 u8 func_0805AA9C(void) {
-    if (func_08006314()) {
+    if (FadeIsActive()) {
         return 1;
     }
 
     if (gJiminyWork->unk_C70 < gJiminyWork->unk_C71) {
         AnimChange(&gJiminyWork->unk_C7C, 1, 1);
 
-        if (!func_08006314()) {
+        if (!FadeIsActive()) {
             if (gJiminyWork->unk_048 % 5 == 0) {
                 gJiminyWork->unk_C70++;
             }

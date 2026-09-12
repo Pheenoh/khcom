@@ -63,7 +63,7 @@ void mode_status_0(void) {
     TaskPoolInit(&gUnk_02034EE0, 4);
     gUnk_02034EF4 = TaskCreate(&gUnk_02034EE0, &gTaskDescStatusBar, 0);
     TaskCreate(&gUnk_02034EE0, &gTaskDescStatus, 0);
-    func_08006120(0, 0x10);
+    FadeStartIn(0, 0x10);
 }
 
 void mode_status_1(void) {
@@ -71,7 +71,7 @@ void mode_status_1(void) {
     TaskPoolUpdate(&gUnk_02034EE0);
     TaskPoolDraw(&gUnk_02034EE0);
 
-    if (!IsTaskActive(gUnk_02034EF4) && !func_08006314()) {
+    if (!IsTaskActive(gUnk_02034EF4) && !FadeIsActive()) {
         func_080E052C(gUnk_02034EF8);
     }
 }

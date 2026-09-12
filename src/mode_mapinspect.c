@@ -46,7 +46,7 @@ void mode_mapinspect_0(void) {
 
     gUnk_02035E28 = EwramAlloc(0x2F4);
     SpriteReset();
-    func_08006120(0, 16);
+    FadeStartIn(0, 16);
     SetBgMode0();
     SetupBg(0, 0, 28, 0);
     SetupBg(1, 0, 29, 0);
@@ -292,12 +292,12 @@ void mode_mapinspect_1(void) {
         ApproachValue(&gUnk_02035FD0[1], 0xA800, gUnk_02035FCC);
         gUnk_02035FCC--;
         if (gUnk_02035FCC <= 0) {
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
             gUnk_02035FCA = 5;
         }
         break;
     case 5:
-        if (!func_08006314()) {
+        if (!FadeIsActive()) {
             func_080E052C(gUnk_02035FE4);
         }
         break;

@@ -377,9 +377,9 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
         break;
     case 1:
         work->unk_020 = gBtlWork->unk_07C->unk_004;
-        func_0800592C(&work->x, work->unk_020, 30);
-        func_0800592C(&work->y, work->unk_024, 30);
-        func_0800592C(&work->z, work->unk_028, 30);
+        ApproachValueHalfSteps(&work->x, work->unk_020, 30);
+        ApproachValueHalfSteps(&work->y, work->unk_024, 30);
+        ApproachValueHalfSteps(&work->z, work->unk_028, 30);
         work->unk_004++;
         if (work->unk_004 > 49) {
             work->unk_000 = 2;
@@ -390,9 +390,9 @@ u8 task_bos_lst_edg_1(LstEdgWork* work) {
         func_08011F78(0x10C, work->x, work->y, work->z, 8, 8, 1);
         break;
     case 2:
-        func_0800592C(&work->x, work->unk_014, 30);
-        func_0800592C(&work->y, work->unk_018, 30);
-        func_0800592C(&work->z, work->unk_01C, 30);
+        ApproachValueHalfSteps(&work->x, work->unk_014, 30);
+        ApproachValueHalfSteps(&work->y, work->unk_018, 30);
+        ApproachValueHalfSteps(&work->z, work->unk_01C, 30);
         work->unk_004++;
         if (work->unk_004 > 49) {
             work->unk_000 = 3;
@@ -808,11 +808,11 @@ u8 task_bos_lst_bit_1(LstState* work) {
 
     switch (work->unk_002) {
     case 0:
-        func_0800592C(&work->unk_028, work->unk_050, 20);
-        func_0800592C(&work->unk_02C, work->unk_054, 20);
-        func_0800592C(&work->unk_030, work->unk_058, 20);
-        func_0800592C(&work->unk_074, 0x100, 32);
-        func_0800592C(&work->unk_078, 0x100, 32);
+        ApproachValueHalfSteps(&work->unk_028, work->unk_050, 20);
+        ApproachValueHalfSteps(&work->unk_02C, work->unk_054, 20);
+        ApproachValueHalfSteps(&work->unk_030, work->unk_058, 20);
+        ApproachValueHalfSteps(&work->unk_074, 0x100, 32);
+        ApproachValueHalfSteps(&work->unk_078, 0x100, 32);
         work->unk_006++;
 
         if (work->unk_006 > 29) {
@@ -857,9 +857,9 @@ u8 task_bos_lst_bit_1(LstState* work) {
             func_081108AC(work, 0);
         }
 
-        func_0800592C(&work->unk_028, work->unk_050, 20);
-        func_0800592C(&work->unk_02C, work->unk_054, 20);
-        func_0800592C(&work->unk_030, work->unk_058, 20);
+        ApproachValueHalfSteps(&work->unk_028, work->unk_050, 20);
+        ApproachValueHalfSteps(&work->unk_02C, work->unk_054, 20);
+        ApproachValueHalfSteps(&work->unk_030, work->unk_058, 20);
         break;
     case 2:
         if (work->unk_006 == 0) {
@@ -958,11 +958,11 @@ u8 task_bos_lst_bit_1(LstState* work) {
         work->unk_050 = gBtlWork->unk_0CC;
         work->unk_054 = gBtlWork->unk_0D0 - 0x1400;
         work->unk_058 = gBtlWork->unk_0D4;
-        func_0800592C(&work->unk_028, work->unk_050, 16);
-        func_0800592C(&work->unk_02C, work->unk_054, 16);
-        func_0800592C(&work->unk_030, work->unk_058, 16);
-        func_0800592C(&work->unk_074, 0x200, 16);
-        func_0800592C(&work->unk_078, 2, 16);
+        ApproachValueHalfSteps(&work->unk_028, work->unk_050, 16);
+        ApproachValueHalfSteps(&work->unk_02C, work->unk_054, 16);
+        ApproachValueHalfSteps(&work->unk_030, work->unk_058, 16);
+        ApproachValueHalfSteps(&work->unk_074, 0x200, 16);
+        ApproachValueHalfSteps(&work->unk_078, 2, 16);
         work->unk_006++;
 
         if (work->unk_006 > 59) {
@@ -1974,10 +1974,10 @@ void func_08112768(StaffRollWork* w) {
             w->unk_0F4 = w->unk_0CC[w->unk_0D0 + 4];
             break;
         case 9:
-            func_08006120(0, (u16)w->unk_0CC[w->unk_0D0 + 4]);
+            FadeStartIn(0, (u16)w->unk_0CC[w->unk_0D0 + 4]);
             break;
         case 10:
-            func_08006184(0, (u16)w->unk_0CC[w->unk_0D0 + 4]);
+            FadeStartOut(0, (u16)w->unk_0CC[w->unk_0D0 + 4]);
             break;
         case 11:
             e = (EvtObj*)func_08112748(w);
@@ -2344,7 +2344,7 @@ u8 func_08113180(StaffRollWork* w) {
         DisableBg(3);
 
         for (i = 0; i < 32; i++) {
-            func_080062F4(i, 1);
+            FadeSetPaletteExcluded(i, 1);
         }
 
         func_0811614C(w->unk_1C0, gUnk_09A541C8);
@@ -2522,7 +2522,7 @@ u8 func_08113180(StaffRollWork* w) {
         break;
     case 3:
         for (i = 0; i < 32; i++) {
-            func_080062F4(i, 0);
+            FadeSetPaletteExcluded(i, 0);
         }
 
         gDispCnt &= 0xDFFF;
@@ -2564,10 +2564,10 @@ u8 func_0811394C(StaffRollWork* w) {
         break;
     case 1:
         if (w->unk_0A8 == 0) {
-            func_08006120(0, 1);
+            FadeStartIn(0, 1);
             w->unk_0A8++;
         }
-        t = func_08006314();
+        t = FadeIsActive();
         if (t == 0) {
             w->unk_0A4 = 2;
             w->unk_0A8 = 0;
@@ -2582,10 +2582,10 @@ u8 func_0811394C(StaffRollWork* w) {
         break;
     case 3:
         if (w->unk_0A8 == 0) {
-            func_08006184(0, 120);
+            FadeStartOut(0, 120);
             w->unk_0A8++;
         }
-        t = func_08006314();
+        t = FadeIsActive();
         if (t == 0) {
             w->unk_0A4 = 4;
             w->unk_0A8 = 0;
@@ -2625,10 +2625,10 @@ u8 func_08113A94(StaffRollWork* w) {
         break;
     case 1:
         if (w->unk_0C0 == 0) {
-            func_08006120(0, 60);
+            FadeStartIn(0, 60);
             w->unk_0C0++;
         }
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             if ((gGameState.flags & 8) != 0) {
                 w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, gTaskDescSrollCChar, (void*)1);
             } else {
@@ -2654,10 +2654,10 @@ u8 func_08113A94(StaffRollWork* w) {
         break;
     case 3:
         if (w->unk_0C0 == 0) {
-            func_08006184(0, 120);
+            FadeStartOut(0, 120);
             w->unk_0C0++;
         }
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             result = 0;
         }
         break;
@@ -2707,10 +2707,10 @@ u8 func_08113BB4(StaffRollWork* w) {
         w->unk_0C0 = 0;
     case 1:
         if (w->unk_0C0 == 0) {
-            func_08006120(0, 120);
+            FadeStartIn(0, 120);
             w->unk_0C0++;
         }
-        t = func_08006314();
+        t = FadeIsActive();
         if (t == 0) {
             w->unk_0BC = 2;
             w->unk_0C0 = 0;
@@ -2736,10 +2736,10 @@ u8 func_08113BB4(StaffRollWork* w) {
     case 4:
         if (w->unk_0C0 == 0) {
             SetBackdropColor(31, 31, 31);
-            func_08006184(1, 120);
+            FadeStartOut(1, 120);
             w->unk_0C0++;
         }
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             SetBgScroll(0, 0, 0);
             result = 0;
         }
@@ -2764,10 +2764,10 @@ u8 func_08113DB8(StaffRollWork* w) {
         w->unk_0C0 = 0;
     case 1:
         if (w->unk_0C0 == 0) {
-            func_08006120(1, 120);
+            FadeStartIn(1, 120);
             w->unk_0C0++;
         }
-        t = func_08006314();
+        t = FadeIsActive();
         if (t == 0) {
             SetBackdropColor(0, 0, 0);
             w->unk_0BC = 2;
@@ -2783,10 +2783,10 @@ u8 func_08113DB8(StaffRollWork* w) {
         break;
     case 3:
         if (w->unk_0C0 == 0) {
-            func_08006184(0, 60);
+            FadeStartOut(0, 60);
             w->unk_0C0++;
         }
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             result = 0;
         }
         break;
@@ -2835,10 +2835,10 @@ u8 func_08113E94(StaffRollWork* w) {
         w->unk_0C0 = 0;
     case 1:
         if (w->unk_0C0 == 0) {
-            func_08006120(0, 120);
+            FadeStartIn(0, 120);
             w->unk_0C0++;
         }
-        t = func_08006314();
+        t = FadeIsActive();
         if (t == 0) {
             w->unk_0BC = 2;
             w->unk_0C0 = 0;
@@ -2854,10 +2854,10 @@ u8 func_08113E94(StaffRollWork* w) {
     case 3:
         if (w->unk_0C0 == 0) {
             SetBackdropColor(31, 31, 31);
-            func_08006184(1, 120);
+            FadeStartOut(1, 120);
             w->unk_0C0++;
         }
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             result = 0;
         }
         break;
@@ -2881,10 +2881,10 @@ u8 func_08114048(StaffRollWork* w) {
         w->unk_0C0 = 0;
     case 1:
         if (w->unk_0C0 == 0) {
-            func_08006120(1, 120);
+            FadeStartIn(1, 120);
             w->unk_0C0++;
         }
-        t = func_08006314();
+        t = FadeIsActive();
         if (t == 0) {
             w->unk_0BC = 2;
             w->unk_0C0 = 0;
@@ -2899,10 +2899,10 @@ u8 func_08114048(StaffRollWork* w) {
         break;
     case 3:
         if (w->unk_0C0 == 0) {
-            func_08006184(1, 120);
+            FadeStartOut(1, 120);
             w->unk_0C0++;
         }
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             result = 0;
         }
         break;
@@ -2926,10 +2926,10 @@ u8 func_0811411C(StaffRollWork* w) {
         w->unk_0C0 = 0;
     case 1:
         if (w->unk_0C0 == 0) {
-            func_08006120(1, 120);
+            FadeStartIn(1, 120);
             w->unk_0C0++;
         }
-        t = func_08006314();
+        t = FadeIsActive();
         if (t == 0) {
             SetBackdropColor(0, 0, 0);
             w->unk_0BC = 2;
@@ -2945,10 +2945,10 @@ u8 func_0811411C(StaffRollWork* w) {
         break;
     case 3:
         if (w->unk_0C0 == 0) {
-            func_08006184(0, 60);
+            FadeStartOut(0, 60);
             w->unk_0C0++;
         }
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             result = 0;
         }
         break;
@@ -3041,10 +3041,10 @@ u8 func_081141F8(StaffRollWork* w) {
         break;
     case 2:
         if (w->unk_0C8 == 0) {
-            func_08006120(0, 120);
+            FadeStartIn(0, 120);
             w->unk_0C8++;
         }
-        t = func_08006314();
+        t = FadeIsActive();
         if (t == 0) {
             w->unk_0C4 = 3;
             w->unk_0C8 = 0;
@@ -3429,7 +3429,7 @@ void mode_StaffRoll_1(void) {
         break;
     case 11:
         if (w->unk_00C == 0) {
-            func_08006184(0, 120);
+            FadeStartOut(0, 120);
         }
         w->unk_00C++;
         if (w->unk_00C > 120) {

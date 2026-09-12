@@ -948,10 +948,10 @@ u8 func_080FC17C(MdWork* work) {
         case 1:
             switch (work->unk_00C) {
             case 0:
-                if (func_08006314() == 0) {
+                if (FadeIsActive() == 0) {
                     func_08014AAC(work->sub[0].unk_004,
                                   work->sub[0].unk_008 + work->sub[0].unk_00C);
-                    func_08006238(0, gBtlWork->unk_0B3, 8);
+                    FadeToAmount(0, gBtlWork->unk_0B3, 8);
                     work->unk_016 = 120;
                     work->unk_00C = 1;
                 }
@@ -965,7 +965,7 @@ u8 func_080FC17C(MdWork* work) {
                 }
                 break;
             case 2:
-                if (work->unk_01C != 0 && func_08006390() == 31) {
+                if (work->unk_01C != 0 && FadeGetAmount() == 31) {
                     DisableBg(1);
                     work->unk_01C = 0;
                 }
@@ -2314,7 +2314,7 @@ void mode_worldselect_0(void) {
     gUnk_020350EE = (gGameState.unk_17A ^ 1) & 1;
     gUnk_020350EF = 0;
     gUnk_020350F0 = 0;
-    func_08006120(2, 16);
+    FadeStartIn(2, 16);
 
     if (gUnk_020350EE != 0) {
         func_080FE854();
@@ -2490,18 +2490,18 @@ void mode_worldselect_1(void) {
         }
         break;
     case 7:
-        func_080063A8();
+        FadeLock();
 
         if (gUnk_020350F0 != 0) {
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
         } else {
-            func_08006184(2, 16);
+            FadeStartOut(2, 16);
         }
 
         gUnk_020350C0 = 8;
         break;
     case 8:
-        if (func_08006314() == 0) {
+        if (FadeIsActive() == 0) {
             if (gUnk_020350F0 != 0) {
                 func_080E04EC();
             } else {
@@ -2542,8 +2542,8 @@ void mode_worldselect_1(void) {
 
     func_080FE900();
 
-    if (func_08006314() != 0) {
-        func_08006390();
+    if (FadeIsActive() != 0) {
+        FadeGetAmount();
     }
 
     TaskPoolUpdate(&gUnk_020350D8);
@@ -2787,7 +2787,7 @@ void func_080FF330(void) {
         gUnk_0203511C = LoadObjPalette(gUnk_09A3D07C, 32);
 #endif
         gUnk_020354E0 = 0;
-        func_08006184(0, 16);
+        FadeStartOut(0, 16);
         gUnk_020354C0 = 5;
     } else if (keys & 0x40) {
         while (1) {
@@ -2891,7 +2891,7 @@ void func_080FF794(void) {
             gUnk_0203511C = LoadObjPalette(gUnk_09A3D07C, 32);
 #endif
             gUnk_020354E0 = 0;
-            func_08006184(0, 16);
+            FadeStartOut(0, 16);
             gUnk_020354C0 = 5;
         }
     }
@@ -2981,9 +2981,9 @@ void func_080FF8CC(void) {
         DrawSprite((s16)(gUnk_09EF8FAC[gUnk_020350F8].unk_08 * 8 + 22),
                       (s16)(gUnk_09EF8FAC[gUnk_020350F8].unk_0A * 8 + 12),
                       AnimUpdate(&gUnk_02035130), gUnk_02035128, gUnk_02035124, 0, prio, 2013);
-        func_0805F1C0(&gUnk_020354D8,
+        ApproachValueHalf(&gUnk_020354D8,
                       (gUnk_09EF8FAC[gUnk_020350F8].unk_08 << 11) + 0x2000);
-        func_0805F1C0(&gUnk_020354DC,
+        ApproachValueHalf(&gUnk_020354DC,
                       (gUnk_09EF8FAC[gUnk_020350F8].unk_0A << 11) + 0xFFFFFA00);
         DrawSprite(gUnk_020354D8 >> 8, gUnk_020354DC >> 8, AnimUpdate(&gUnk_02035150),
                       gUnk_0203514C, gUnk_02035148, 0, prio, 2000);

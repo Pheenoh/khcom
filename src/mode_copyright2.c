@@ -12,19 +12,19 @@ void mode_copyright2_0(s32 arg) {
     LoadBgMap(0, gUnk_09841F98, 0x800);
 
     if (arg == 0) {
-        func_08006120(0, 0x43);
+        FadeStartIn(0, 0x43);
     } else {
-        func_08006120(1, 0x43);
+        FadeStartIn(1, 0x43);
     }
 
     gUnk_02034EDC = 60;
 }
 
 void mode_copyright2_1(void) {
-    if (!func_08006314()) {
+    if (!FadeIsActive()) {
         if (gUnk_02034EDC != 0) {
             if (--gUnk_02034EDC == 0) {
-                func_08006184(0, 0x43);
+                FadeStartOut(0, 0x43);
             }
         } else {
             ModeRequest(&gModeTitle, 0);
