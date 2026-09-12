@@ -20501,7 +20501,6 @@ void func_08096714(PrizeCardInitWork* w, PrizeCardArgs* args) {
     TaskPoolInit(w, 1);
 }
 
-#ifndef VERSION_EU
 s32 PrizeCardInit_1(PrizeCardInitWork* w) {
     s32 args[9];
     s32 v;
@@ -20539,7 +20538,15 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                 if ((gGameState.flags & 8) == 0) {
                     if (GetRandom() % 100 < 20) {
                         *(PrizeCardArgs*)args = w->unk_18;
+#ifdef VERSION_EU
+                        if (func_08093B38() <= 98) {
+                            args[8] = GetRandom() % 10 + 210;
+                        } else {
+                            args[8] = 0xFFFF;
+                        }
+#else
                         args[8] = GetRandom() % 10 + 210;
+#endif
                     } else {
                         *(PrizeCardArgs*)args = w->unk_18;
                         args[8] = func_08096D48(gGameState.unk_00C[0], 1);
@@ -20561,9 +20568,17 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                     }
                 }
             } else if (v >= 131 && v <= 133) {
+#ifdef VERSION_EU
+                if (func_08093B38() <= 98) {
+                    *(PrizeCardArgs*)args = w->unk_18;
+                    args[8] = GetRandom() % 10 + 160;
+                    func_0809797C(w, args);
+                }
+#else
                 *(PrizeCardArgs*)args = w->unk_18;
                 args[8] = GetRandom() % 10 + 160;
                 func_0809797C(w, args);
+#endif
             } else {
                 *(PrizeCardArgs*)args = w->unk_18;
 
@@ -20603,9 +20618,6 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
     TaskPoolUpdate(w);
     return 1;
 }
-#else
-INCLUDE_ASM("card/PrizeCardInit_1.s");
-#endif
 
 s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
     PrizeCardTaskArgs args;
