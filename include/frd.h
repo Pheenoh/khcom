@@ -2,6 +2,7 @@
 #define GUARD_FRD_H
 
 #include "types.h"
+#include "battle_work.h"
 #include "game_state.h"
 #include "anim.h"
 #include "taskpool.h"
@@ -11,60 +12,6 @@ typedef struct FrdArgs {
     u8 unk_02;
     u8 unk_03;
 } FrdArgs;
-
-typedef struct FrdActorState {
-    u8 unk_000[0xF4];
-    s32 unk_0F4;
-} FrdActorState;
-
-typedef struct BtlWork {
-    s32 unk_000;
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
-    s32 unk_010;
-    s32 unk_014;
-    s32 unk_018;
-    s32 unk_01C;
-    s32 unk_020;
-    s32 unk_024;
-    s32 unk_028;
-    s16 unk_02C;
-    s16 unk_02E;
-    u32 unk_030;
-    u64 unk_034;
-    u8 unk_03C[0x2C];
-    u64 unk_068;
-    u8 unk_070;
-    u8 unk_071[0x07];
-    struct BtlWork* unk_078;
-    struct BtlWork* unk_07C;
-    u8 unk_080[0x1C];
-    u8 unk_09C[6];
-    s16 unk_0A2;
-    u8 unk_0A4[15];
-    u8 unk_0B3;
-    u8 unk_0B4[0x04];
-    u8 unk_0B8[0x14];
-    u16 unk_0CC;
-    u16 unk_0CE;
-    u32 unk_0D0;
-    u32 unk_0D4;
-    u16 unk_0D8;
-    s16 unk_0DA;
-    s16 unk_0DC;
-    s16 unk_0DE;
-    s16 unk_0E0;
-    u8 unk_0E2[0x02];
-    FrdActorState* unk_0E4;
-    u8 unk_0E8[0x24];
-    s32 unk_10C;
-    void* unk_110;
-    void* unk_114;
-    u8 unk_118[0x10];
-    void (*unk_128)(s32* a, s32* b, s32* c, s32* d);
-    u8 unk_12C[0x9C];
-} BtlWork;
 
 typedef struct FrdBody {
     s32 unk_00;
@@ -81,7 +28,7 @@ typedef struct FrdBody {
 
 typedef struct FrdDonaldWork {
     TaskPool unk_000;
-    BtlWork* unk_014;
+    BtlObj* unk_014;
     void* tiles;
     void* palette;
     FrdBody unk_020;
@@ -101,7 +48,7 @@ typedef struct FrdDonaldWork {
 
 typedef struct FrdGoofyWork {
     TaskPool unk_000;
-    BtlWork* unk_014;
+    BtlObj* unk_014;
     void* tiles;
     void* palette;
     FrdBody unk_020;
@@ -121,7 +68,7 @@ typedef struct FrdGoofyWork {
 
 typedef struct FrdArielWork {
     TaskPool unk_000;
-    BtlWork* unk_014;
+    BtlObj* unk_014;
     void* tiles;
     void* palette;
     FrdBody unk_020;
@@ -141,7 +88,7 @@ typedef struct FrdArielWork {
 
 typedef struct FrdJackWork {
     TaskPool unk_000;
-    BtlWork* unk_014;
+    BtlObj* unk_014;
     void* tiles;
     void* palette;
     FrdBody unk_020;
@@ -163,7 +110,7 @@ typedef struct FrdJackWork {
 
 typedef struct FrdPanWork {
     TaskPool unk_000;
-    BtlWork* unk_014;
+    BtlObj* unk_014;
     void* tiles;
     void* palette;
     FrdBody unk_020;
@@ -187,7 +134,7 @@ typedef struct FrdPanWork {
 
 typedef struct FrdAladdinWork {
     TaskPool unk_000;
-    BtlWork* unk_014;
+    BtlObj* unk_014;
     void* tiles;
     void* palette;
     FrdBody unk_020;
@@ -205,7 +152,7 @@ typedef struct FrdAladdinWork {
 
 typedef struct FrdBeastWork {
     TaskPool unk_000;
-    BtlWork* unk_014;
+    BtlObj* unk_014;
     void* tiles;
     void* palette;
     FrdBody unk_020;
@@ -219,9 +166,6 @@ typedef struct FrdBeastWork {
     s32 unk_158;
     s32 unk_15C;
 } FrdBeastWork;
-
-extern BtlWork* gBtlWork;
-extern BtlWork* gUnk_02039B9C;
 
 extern u8 gTaskDescBtlShadow[];
 extern u8 gTaskDescSmnTinkeff[];
@@ -263,7 +207,7 @@ void func_080147A8(s32 x,s32 y,s32 z);
 void func_08014780(s32 x,s32 y,s32 z);
 void func_08012AAC(u16 a,s32 x,s32 y,s32 z);
 void func_08019050(s32 a,s32 b,s32 c,s32 d);
-void func_08019190(BtlWork* a,s16 b);
+void func_08019190(BtlObj* a,s16 b);
 u8 task_frd_donald_1(FrdDonaldWork* work);
 u8 func_080474A8(FrdJackWork* work);
 void func_08014D78(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w);
