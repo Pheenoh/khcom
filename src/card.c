@@ -13344,47 +13344,35 @@ void func_0808C2F0(u8* work) {
     ReleaseObjPalette(gUnk_0203A860[1]);
 }
 
-#ifdef NON_MATCHING
 void func_0808C3DC(u8* work, u8 kind) {
-    struct {
-        void* unk_00;
-        u32 unk_04 : 16;
-        s16 unk_06;
-        s16 unk_08;
-        u8 unk_0A;
-        u8 unk_0B;
-        u16* unk_0C;
-    } args;
-    Deck* deck;
+    UnkStruct_080A97D4 args;
+    u16* deck;
     u8 i;
     s8 x;
     s8 y;
-    u16* p;
 
-    deck = GetDeck(work[0x8C0]);
+    deck = (u16*)GetDeck(work[0x8C0]);
     x = 0;
     y = 0;
 
     if (kind == 0) {
         for (i = 0; i < 99; i++) {
-            p = &deck->cards[i];
-
-            if (*p != 0xFFFF) {
+            if (deck[i] != 0xFFFF) {
                 if (kind == 0) {
                     args.unk_00 = &work[0x7F0];
-                    args.unk_04 = gCardCollection[*p] & 0x8FFF;
+                    args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
                     args.unk_06 = x;
                     args.unk_08 = y;
                     args.unk_0A = 0;
-                    args.unk_0C = p;
+                    args.unk_0C = &deck[i];
                     TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
-                } else if (gCardDefs[gCardCollection[*p] & 0xFFF].unk_2A == kind - 1) {
+                } else if (gCardDefs[gCardCollection[deck[i]] & 0xFFF].unk_2A == kind - 1) {
                     args.unk_00 = &work[0x7F0];
-                    args.unk_04 = gCardCollection[*p] & 0x8FFF;
+                    args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
                     args.unk_06 = x;
                     args.unk_08 = y;
                     args.unk_0A = 0;
-                    args.unk_0C = p;
+                    args.unk_0C = &deck[i];
                     TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
                 }
             } else {
@@ -13393,7 +13381,7 @@ void func_0808C3DC(u8* work, u8 kind) {
                 args.unk_06 = x;
                 args.unk_08 = y;
                 args.unk_0A = 0;
-                args.unk_0C = p;
+                args.unk_0C = &deck[i];
                 TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
             }
 
@@ -13406,15 +13394,13 @@ void func_0808C3DC(u8* work, u8 kind) {
         }
     } else {
         for (i = 0; i < 99; i++) {
-            p = &deck->cards[i];
-
-            if (*p != 0xFFFF && gCardDefs[gCardCollection[*p] & 0xFFF].unk_2A == kind - 1) {
+            if (deck[i] != 0xFFFF && gCardDefs[gCardCollection[deck[i]] & 0xFFF].unk_2A == kind - 1) {
                 args.unk_00 = &work[0x7F0];
-                args.unk_04 = gCardCollection[*p] & 0x8FFF;
+                args.unk_04 = gCardCollection[deck[i]] & 0x8FFF;
                 args.unk_06 = x;
                 args.unk_08 = y;
                 args.unk_0A = 0;
-                args.unk_0C = p;
+                args.unk_0C = &deck[i];
                 TaskCreate(&work[0x7C8], gUnk_09EE4B28, &args);
                 x++;
             }
@@ -13431,9 +13417,6 @@ void func_0808C3DC(u8* work, u8 kind) {
     *(u16*)&work[0x8AC] = 4;
     func_0808C940((UnkStruct_0808C940*)work, 99);
 }
-#else
-INCLUDE_ASM("card/func_0808C3DC.s");
-#endif
 
 s32 func_0808C60C(u8* work, u8 kind, u8 c) {
     UnkStruct_080A97D4 args;
