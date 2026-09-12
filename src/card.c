@@ -13739,13 +13739,16 @@ void func_0808CD48(u8* work) {
     }
 }
 
-#ifdef NON_MATCHING
 void func_0808CDE8(u8* work, u8 b) {
+    void* dst;
     switch (b) {
     case 0:
-        LoadPalette(gUnk_096142F8, (void*)0x05000100, 32);
-        LoadPalette(&gUnk_09614118[0x120], (void*)0x05000120, 32);
-        LoadPalette(&gUnk_09614118[0x140], (void*)0x05000140, 32);
+        dst = (void*)0x05000100;
+        LoadPalette(gUnk_096142F8, dst, 32);
+        dst = (void*)0x05000120;
+        LoadPalette(&gUnk_09614118[0x120], dst, 32);
+        dst = (void*)0x05000140;
+        LoadPalette(&gUnk_09614118[0x140], dst, 32);
         LoadBgMap(0, &gUnk_09519AB8[0x180], 0x180);
         LoadBgMap(1, gUnk_0951A2B8, 0x180);
         LoadBgMap(2, gUnk_0951AAB8, 0x180);
@@ -13760,9 +13763,12 @@ void func_0808CDE8(u8* work, u8 b) {
         *(u16*)&work[0x892] = 122;
         break;
     case 1:
-        LoadPalette(gUnk_096142F8, (void*)0x05000120, 32);
-        LoadPalette(&gUnk_09614118[0x100], (void*)0x05000100, 32);
-        LoadPalette(&gUnk_09614118[0x140], (void*)0x05000140, 32);
+        dst = (void*)0x05000120;
+        LoadPalette(gUnk_096142F8, dst, 32);
+        dst = (void*)0x05000100;
+        LoadPalette(&gUnk_09614118[0x100], dst, 32);
+        dst = (void*)0x05000140;
+        LoadPalette(&gUnk_09614118[0x140], dst, 32);
         LoadBgMap(0, gUnk_09519AB8, 0x180);
         LoadBgMap(1, &gUnk_0951A2B8[0x180], 0x180);
         LoadBgMap(2, gUnk_0951AAB8, 0x180);
@@ -13777,9 +13783,12 @@ void func_0808CDE8(u8* work, u8 b) {
         *(u16*)&work[0x892] = 122;
         break;
     case 2:
-        LoadPalette(gUnk_096142F8, (void*)0x05000140, 32);
-        LoadPalette(&gUnk_09614118[0x100], (void*)0x05000100, 32);
-        LoadPalette(&gUnk_09614118[0x120], (void*)0x05000120, 32);
+        dst = (void*)0x05000140;
+        LoadPalette(gUnk_096142F8, dst, 32);
+        dst = (void*)0x05000100;
+        LoadPalette(&gUnk_09614118[0x100], dst, 32);
+        dst = (void*)0x05000120;
+        LoadPalette(&gUnk_09614118[0x120], dst, 32);
         LoadBgMap(0, gUnk_09519AB8, 0x180);
         LoadBgMap(1, gUnk_0951A2B8, 0x180);
         LoadBgMap(2, &gUnk_0951AAB8[0x180], 0x180);
@@ -13795,9 +13804,6 @@ void func_0808CDE8(u8* work, u8 b) {
         break;
     }
 }
-#else
-INCLUDE_ASM("card/func_0808CDE8.s");
-#endif
 
 void func_0808D0A4(u8 deck) {
     u8 d[2];
