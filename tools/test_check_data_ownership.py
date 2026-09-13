@@ -1,8 +1,9 @@
 import tempfile
+import subprocess
 import unittest
 from pathlib import Path
 
-from check_data_ownership import active_objects, check
+from check_data_ownership import ROOT, active_objects, check, read_symbols
 
 
 def symbol(name='gState', value=0, size=4, kind='B'):
@@ -87,6 +88,48 @@ class OwnershipTests(unittest.TestCase):
         self.contract()
         self.assertEqual(self.errors(), [])
 
+    def multi_section_contract(self):
+        self.contract()
+        first = self.contracts['src/state.o']
+        self.contracts['src/state.o'] = {'sections': [first, {
+            'section': '.common.state', 'base': '0x02000020', 'size': '0x4',
+            'symbols': {'gCommon': {'offset': '0x0', 'size': '0x4'}}}]}
+        self.objects['src/state.o'].append(symbol('gCommon', kind='C', value=4))
+        self.linked.append(symbol('gCommon', value=0x02000020))
+        self.placements['src/state.o', 'common'] = 0x02000020
+        self.sections['.common.state'] = {'value': 0x02000020, 'size': 4}
+
+    def test_multi_section_contract(self):
+        self.multi_section_contract()
+        self.assertEqual(self.errors(), [])
+
+    def test_multi_section_missing_common(self):
+        self.multi_section_contract()
+        del self.sections['.common.state']
+        self.assertTrue(any('.common.state extent differs' in error for error in self.errors()))
+
+    def test_multi_section_common_drift(self):
+        self.multi_section_contract()
+        self.linked[1]['value'] += 4
+        self.assertTrue(any('expected RAM address' in error for error in self.errors()))
+
+    def test_multi_section_duplicate_member(self):
+        self.multi_section_contract()
+        group = self.contracts['src/state.o']['sections'][1]
+        group['symbols']['gState'] = {'offset': 0, 'size': 4}
+        self.assertTrue(any('duplicate objects' in error for error in self.errors()))
+
+    def test_multi_section_overlap(self):
+        self.multi_section_contract()
+        self.contracts['src/state.o']['sections'][1]['base'] = '0x02000002'
+        self.assertTrue(any('overlapping contract sections' in error for error in self.errors()))
+
+    def test_multi_section_member_overrun(self):
+        self.multi_section_contract()
+        group = self.contracts['src/state.o']['sections'][1]
+        group['symbols']['gCommon']['offset'] = 4
+        self.assertTrue(any('outside its layout contract' in error for error in self.errors()))
+
     def test_contract_rejects_moved_base(self):
         self.contract()
         self.placements['src/state.o', 'bss'] += 4
@@ -138,6 +181,43 @@ class OwnershipTests(unittest.TestCase):
             stale.mkdir(parents=True)
             (stale / 'old_state.o').touch()
             self.assertEqual(active_objects(root, 'us'), ['src/state.o'])
+
+
+class CompilerStorageTests(unittest.TestCase):
+    def compile_storage(self, directory, source, flags):
+        root = Path(directory)
+        src = root / 'storage.c'
+        assembly = root / 'storage.s'
+        obj = root / 'storage.o'
+        src.write_text(source)
+        subprocess.run([str(ROOT / 'tools/agbcc/bin/agbcc'), '-O2', *flags,
+                        '-o', str(assembly), str(src)], check=True, capture_output=True)
+        subprocess.run(['arm-none-eabi-as', '-mcpu=arm7tdmi', '-o', str(obj), str(assembly)],
+                       check=True, capture_output=True)
+        return obj
+
+    def test_common_attribute_overrides_no_common(self):
+        with tempfile.TemporaryDirectory() as directory:
+            obj = self.compile_storage(directory,
+                'int ordinary;\nint forced __attribute__((common));\n', ['-fno-common'])
+            symbols = {s['name']: s for s in read_symbols(obj, 'arm-none-eabi-')}
+            self.assertEqual(symbols['ordinary']['kind'], 'B')
+            self.assertEqual(symbols['forced']['kind'], 'C')
+
+    def test_common_storage_alignment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            obj = self.compile_storage(directory,
+                'struct SpriteState { unsigned words[9]; } sprite;\n'
+                'struct MapResources { unsigned words[12]; } resources;\n'
+                'unsigned char inventory[270];\nvoid* pointer;\n', [])
+            output = subprocess.check_output(['arm-none-eabi-readelf', '-sW', str(obj)], text=True)
+            common = {}
+            for line in output.splitlines():
+                fields = line.split()
+                if len(fields) == 8 and fields[6] == 'COM':
+                    common[fields[7]] = (int(fields[1], 16), int(fields[2]))
+            self.assertEqual(common, {'sprite': (16, 36), 'resources': (16, 48),
+                                      'inventory': (16, 272), 'pointer': (4, 4)})
 
 
 if __name__ == '__main__':

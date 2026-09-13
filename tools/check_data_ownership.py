@@ -120,28 +120,39 @@ def check(objects, linked, ledger, placements, contracts, sections=None):
             errors.append(f'{owner}: contracted owner is not linked')
             continue
         definitions = {s['name']: s for s in objects[owner] if s['kind'] in 'BbCc' and s['size']}
-        expected_names = set(contract['symbols'])
+        layouts = contract.get('sections', [contract])
+        names = [name for layout in layouts for name in layout['symbols']]
+        expected_names = set(names)
+        if len(names) != len(expected_names):
+            errors.append(f'{owner}: duplicate objects in layout contract')
         if set(definitions) != expected_names:
             errors.append(f'{owner}: RAM definition set differs from layout contract')
-        base = number(contract['base'])
-        limit = base + number(contract['size'])
-        if sections is not None:
-            section_name = contract.get('section', '.bss.' + Path(owner).stem)
-            section = sections.get(section_name)
-            if section != {'value': base, 'size': limit - base}:
-                errors.append(f'{owner}: {section_name} extent differs from layout contract')
         intervals = []
-        for name, spec in contract['symbols'].items():
-            address = base + number(spec['offset'])
-            size = number(spec['size'])
-            if size <= 0 or address < base or address + size > limit:
-                errors.append(f'{owner}: {name} is outside its layout contract')
-            intervals.append((address, address + size, name))
-            definition = definitions.get(name)
-            if definition is None or definition['size'] != size:
-                errors.append(f'{owner}: {name} definition size does not match {size:#x}')
-            if not any(s['kind'] in 'Bb' and s['value'] == address and s['size'] == size for s in final[name]):
-                errors.append(f'{owner}: {name} does not match expected RAM address {address:#010x}')
+        section_intervals = []
+        for layout in layouts:
+            base = number(layout['base'])
+            limit = base + number(layout['size'])
+            section_name = layout.get('section', '.bss.' + Path(owner).stem)
+            section_intervals.append((base, limit, section_name))
+            if sections is not None:
+                section = sections.get(section_name)
+                if section != {'value': base, 'size': limit - base}:
+                    errors.append(f'{owner}: {section_name} extent differs from layout contract')
+            for name, spec in layout['symbols'].items():
+                address = base + number(spec['offset'])
+                size = number(spec['size'])
+                if size <= 0 or address < base or address + size > limit:
+                    errors.append(f'{owner}: {name} is outside its layout contract')
+                intervals.append((address, address + size, name))
+                definition = definitions.get(name)
+                if definition is None or definition['size'] != size:
+                    errors.append(f'{owner}: {name} definition size does not match {size:#x}')
+                if not any(s['kind'] in 'Bb' and s['value'] == address and s['size'] == size for s in final[name]):
+                    errors.append(f'{owner}: {name} does not match expected RAM address {address:#010x}')
+        section_intervals.sort()
+        for left, right in zip(section_intervals, section_intervals[1:]):
+            if left[1] > right[0]:
+                errors.append(f'{owner}: overlapping contract sections {left[2]} and {right[2]}')
         intervals.sort()
         for left, right in zip(intervals, intervals[1:]):
             if left[1] > right[0]:

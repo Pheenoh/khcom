@@ -53,6 +53,8 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # is shifted down by 0x90..0xA4 above that; EU differs from 0x02034898 on and
 # in IWRAM from 0x03007484, so most units need the dict form.
 UNIT_COMMON = {
+    "src/mode_eventselect.o": {"us": 0x02039DD4, "jp": 0x02039D44, "eu": 0x0203A3E4},
+    "src/mode_test.o": {"us": 0x02039DC4, "jp": 0x02039D34, "eu": 0x0203A3D4},
     "src/pallet.o": {"us": 0X02039B70, "jp": 0x02039ae0, "eu": 0x0203a180},
     "src/status.o": {"us": 0X0203C550, "jp": 0x0203c4c0, "eu": 0x0203cb40},
     "src/mode_debflag.o": {"us": 0X02039B94, "jp": 0x02039b04, "eu": 0x0203a1a4},
@@ -74,7 +76,7 @@ UNIT_BSS = {
     "src/mode_ms.o": {"us": 0x020358C8, "jp": 0x02035828, "eu": 0x02035ED8},
     "src/card.o": {"us": 0x02034AA4, "jp": 0x02034A04, "eu": 0x02034AC0},
     "src/card_state.o": {"us": 0x02039DD8, "jp": 0x02039D48, "eu": 0x0203A3E8},
-    "src/card_ui_state.o": {"us": 0x0203A890, "jp": 0x0203A800, "eu": 0x0203AEA0},
+    "src/card_ui_state.o": {"us": 0x0203A860, "jp": 0x0203A7D0, "eu": 0x0203AE70},
     "src/util.o": 0x0203407C,
     "src/save.o": 0x02034088,
     "src/mode_debug.o": {"us": 0x02034898, "jp": 0x02034898, "eu": 0x020348A0},
