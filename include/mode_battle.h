@@ -23,7 +23,7 @@
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
-extern void* gUnk_09EDA2A0[];
+#include "formation_data.h"
 extern TaskDesc gTaskDescBtlSora;
 extern TaskDesc gTaskDescBtlRiku;
 extern TaskDesc gTaskDescBtlMap;

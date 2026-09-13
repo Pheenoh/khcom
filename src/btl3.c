@@ -5,7 +5,7 @@
 #include "btl3.h"
 #include "btl3_api.h"
 
-void task_btl_form_0(BtlFormWork* work, BtlFormList* list) {
+void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
     s32 i;
 
     gBtlWork->unk_068 |= 0x2000000;
@@ -26,8 +26,8 @@ void task_btl_form_0(BtlFormWork* work, BtlFormList* list) {
 }
 
 u8 task_btl_form_1(BtlFormWork* work) {
-    BtlFormList* list;
-    BtlFormStep* step;
+    const BtlFormList* list;
+    const BtlFormStep* step;
     BtlObj* obj;
     s32 x;
     s32 y;

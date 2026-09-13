@@ -416,7 +416,7 @@ void mode_battle_0(u32 mode) {
         SetBattleBounds(0x68, 0x198, 0x160, 0x1A2);
 
         if (mode <= 0x92) {
-            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlForm, gUnk_09EDA2A0[mode]);
+            TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlForm, (void*)gUnk_09EDA2A0[mode]);
         } else if (gUnk_03006C10 & 1) {
             func_0800AB8C();
         }

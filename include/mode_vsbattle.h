@@ -46,7 +46,7 @@ extern u16 gUnk_02039B90;
 extern u8 gUnk_02039B98;
 extern s16 gSineTable[];
 extern u8 gUnk_08F69BC4[];
-extern u16 gUnk_09EDA4EC[];
+#include "enemy_tile_counts.h"
 extern TaskDesc gTaskDescBtlSora;
 extern TaskDesc gTaskDescBtlMap;
 extern TaskDesc gTaskDescBtlShadow;

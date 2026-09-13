@@ -195,7 +195,7 @@ typedef struct BattleAttackDef {
 
 extern u32 gFrameCounter;
 extern s32 gUnk_02039DC0;
-extern u16 gUnk_09EDA4EC[];
+#include "enemy_tile_counts.h"
 extern TaskDesc gTaskDescBtlBorn;
 extern TaskDesc gTaskDescEmy00;
 extern TaskDesc gTaskDescEmy01;

@@ -20,36 +20,15 @@
 #include "btl_api.h"
 #include "btl3_api.h"
 #include "romcri.h"
-typedef struct BtlFormStep {
-    void* unk_00;
-    s16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
-} BtlFormStep;
-
-typedef struct BtlFormEntry {
-    s16 unk_00;
-    u8 unk_02[0x02];
-    BtlFormStep* unk_04;
-    u16 unk_08;
-} BtlFormEntry;
-
-typedef struct BtlFormList {
-    s16 unk_00;
-    u8 unk_02[0x02];
-    BtlFormEntry** unk_04;
-    s16 unk_08;
-    u8 unk_0A[0x02];
-} BtlFormList;
+#include "formation_types.h"
 
 typedef struct BtlFormWork {
     s16 unk_00;
     s16 unk_02;
     s16 unk_04;
     u8 unk_06[0x02];
-    BtlFormList* unk_08;
-    BtlFormEntry* unk_0C;
+    const BtlFormList* unk_08;
+    const BtlFormEntry* unk_0C;
     s16 unk_10;
     u8 unk_12[0x02];
     s32 unk_14;

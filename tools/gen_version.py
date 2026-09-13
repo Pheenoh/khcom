@@ -66,6 +66,7 @@ TRUSTED = ("named", "xref", "global", "body", "fill", "near", "match")
 
 TARGET_ANCHORS = {
     "eu": {
+        0x09ED9BA8: 0x09F57460,
         0x0813B67C: 0x08889B50,
         0x08135EFC: 0x088843D0,
         0x09A10A3C: 0x09A60380,
@@ -1042,13 +1043,20 @@ TARGET_DATA_SIZE = {
         ("unk_0800c778_data.c", ".rodata"): 0x2928,
         ("unk_0800c778_data.c", ".data"): 0,
         ("mode_battle.c", ".rodata"): 0x914,
-        ("formation_data.c", ".rodata"): 0x2928,
-        ("formation_data.c", ".data"): 0,
+        ("formation_data.c", ".data"): 0x940,
         ("mode_debug.c", ".rodata"): 0x1F4,
         ("mode_chkobj.c", ".rodata"): 0x6350,
         ("mode_chksnd.c", ".rodata"): 0x20E8,
         ("mode_dummy.c", ".rodata"): 0x19C,
     },
+}
+
+TARGET_BLOB_REGIONS = {
+    "jp": ((0x0813BA86, "rodata_tasknames_alignment"),),
+    "eu": (
+        (0x08889EDE, "rodata_tasknames_alignment"),
+        (0x09F49910, "rodata_registrations"),
+    ),
 }
 
 INCLUDE_ASM_RE = re.compile(r'INCLUDE_ASM\("([^"]+)/([^"/]+)\.s"\)')
@@ -1639,6 +1647,8 @@ def main():
                 continue
             i -= ROM_BASE
         found.append((ROM_BASE + i, base, how))
+    found.extend((address, name, "explicit")
+                 for address, name in TARGET_BLOB_REGIONS.get(ver, ()))
     regions = []
 
     for here, base, how in sorted(found):

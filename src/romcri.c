@@ -260,7 +260,7 @@ void task_romcri_eff2_3(void) {
     DisableBg(1);
 }
 
-u16 func_0803FDC8(RomcriList* list) {
+u16 func_0803FDC8(const BtlFormEntry* list) {
     u16 total;
     s32 i;
 

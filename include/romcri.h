@@ -20,16 +20,7 @@ typedef struct RomcriEff2Work {
     u8 unk_03;
 } RomcriEff2Work;
 
-typedef struct RomcriEntry {
-    u32 unk_00;
-    u8 unk_04[0x08];
-} RomcriEntry;
-
-typedef struct RomcriList {
-    s16 unk_00;
-    u8 unk_02[0x02];
-    RomcriEntry* unk_04;
-} RomcriList;
+#include "formation_types.h"
 
 extern u8 gUnk_08ED21E4[];
 extern u8 gUnk_08ED6CA4[];
@@ -73,8 +64,8 @@ extern u8 gUnk_08F5D384[];
 extern u8 gUnk_08F5DB84[];
 extern u8 gUnk_08F6D9E4[];
 extern u8 gUnk_08F6DA04[];
-extern const u16 gUnk_09EDA4EC[];
+#include "enemy_tile_counts.h"
 
-u16 func_0803FDC8(RomcriList* list);
+u16 func_0803FDC8(const BtlFormEntry* list);
 
 #endif /* GUARD_ROMCRI_H */
