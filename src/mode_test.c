@@ -359,7 +359,6 @@ void task_lockon_0(LockonWork* w) {
     w->unk_4C = 0;
 }
 
-#ifdef NON_MATCHING
 u8 task_lockon_1(LockonWork* w) {
     FldObj* o;
     s8 count;
@@ -403,10 +402,12 @@ u8 task_lockon_1(LockonWork* w) {
                     gUnk_02039DC4[0] = o->unk_00;
                     gUnk_02039DC4[1] = o->unk_04;
                     gUnk_02039DC4[2] = o->unk_08;
+                    w->unk_0C[count++] = o;
+                    w->unk_2C++;
+                } else {
+                    w->unk_0C[count++] = o;
+                    w->unk_2C++;
                 }
-
-                w->unk_0C[count++] = o;
-                w->unk_2C++;
             }
 
             if (count > 6) {
@@ -443,9 +444,6 @@ u8 task_lockon_1(LockonWork* w) {
     w->gfx = AnimUpdate(&w->anim);
     return 1;
 }
-#else
-INCLUDE_ASM("mode_test/task_lockon_1.s");
-#endif
 #ifdef NON_MATCHING
 void task_lockon_2(LockonWork* w) {
     FldObj* obj;
