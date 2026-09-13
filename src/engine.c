@@ -3269,3 +3269,5 @@ void BgAnimStop(void) {
     gUnk_02034054 = 1;
     DisableBg(gUnk_02034048);
 }
+
+Dma3Queue* gDma3Requests __attribute__((common));

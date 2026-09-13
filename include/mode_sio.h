@@ -1,6 +1,8 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "sio_runtime_state.h"
+
 #include "chara_link_state.h"
 
 #include "chara_types.h"
@@ -292,9 +294,6 @@ typedef struct SioBtlOptionWork {
     u8 unk_41A[2];
 } SioBtlOptionWork;
 
-extern u16 gUnk_02039810[4][2];
-extern u16 gUnk_02039B58[];
-extern u8 gUnk_02039B60;
 
 extern u16 gUnk_0203A9EC;
 extern u16 gUnk_0203A9F0;
@@ -316,7 +315,6 @@ extern u8 gUnk_0203AAE0[][20];
 extern vu16 gSystemFlags;
 extern u32 gFrameCounter;
 
-extern u32 gSioPlayerId;
 
 extern SioAnimDef gUnk_096193E0[];
 extern SioAnimDef gUnk_09619444[];

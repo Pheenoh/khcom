@@ -731,6 +731,8 @@ u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z) {
     return r;
 }
 
+UnkStruct_0203C590 gUnk_0203C590 __attribute__((common));
+
 void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     s32 x;
     s32 v;
@@ -3440,7 +3442,7 @@ UnkStruct_080DEDD8* func_080DEDD8(u8 a) {
 }
 
 UnkStruct_080DEE18* func_080DEE18(u8 index) {
-    return &gUnk_0203C5AC[index];
+    return &gUnk_0203C590.unk_1C[index];
 }
 
 u8 func_080DEE28(u8 a, u8 b) {

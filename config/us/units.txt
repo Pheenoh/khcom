@@ -56,6 +56,9 @@ msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
+sio_runtime_state.c -O2 -fprologue-bugfix -fno-common
+sio_callback_state.c -O2 -fprologue-bugfix -fno-common
+sio_link_header_state.c -O2 -fprologue-bugfix -fno-common
 allmap_cursor_state.c -O2 -fprologue-bugfix -fno-common
 battle_field_state.c -O2 -fprologue-bugfix -fno-common
 chara_link_cursor.c -O2 -fprologue-bugfix -fno-common
@@ -104,6 +107,7 @@ sroll.c -O2 -fprologue-bugfix -fno-common
 audio_block_codec.c -O2 -fprologue-bugfix -fno-common
 libagbsyscall.s
 agb_sram.c -O1 -fno-common
+sram_state.c -O2 -fprologue-bugfix -fno-common
 movie.c -O0 -fno-common
 movie_player.c -O0 -g -fno-common
 movie_codec.s

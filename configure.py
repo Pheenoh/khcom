@@ -53,6 +53,9 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # is shifted down by 0x90..0xA4 above that; EU differs from 0x02034898 on and
 # in IWRAM from 0x03007484, so most units need the dict form.
 UNIT_COMMON = {
+    "src/bos4.o": {"us": 0x203c590, "jp": 0x203c500, "eu": 0x203cb80},
+    "src/m4a2.o": {"us": 0x3007ff0, "jp": 0x3007ff0, "eu": 0x3007ff0},
+    "src/engine.o": {"us": 0x3007574, "jp": 0x3007574, "eu": 0x300757c},
     "src/mode_eventselect.o": {"us": 0x02039DD4, "jp": 0x02039D44, "eu": 0x0203A3E4},
     "src/mode_test.o": {"us": 0x02039DC4, "jp": 0x02039D34, "eu": 0x0203A3D4},
     "src/pallet.o": {"us": 0X02039B70, "jp": 0x02039ae0, "eu": 0x0203a180},
@@ -64,6 +67,10 @@ UNIT_COMMON = {
 }
 
 UNIT_BSS = {
+    "src/sio_runtime_state.o": {"us": 0x02039810, "jp": 0x02039780, "eu": 0x02039E20},
+    "src/sio_callback_state.o": {"us": 0x020397F8, "jp": 0x02039768, "eu": 0x02039E08},
+    "src/sio_link_header_state.o": {"us": 0x020397D0, "jp": 0x02039740, "eu": 0x02039DE0},
+    "src/sram_state.o": {"us": 0x0203C7BC, "jp": 0x0203C72C, "eu": 0x0203CDAC},
     "src/allmap_cursor_state.o": {"us": 0x0203C538, "jp": 0x0203C4A8, "eu": 0x0203CB28},
     "src/battle_field_state.o": {"us": 0x02039B9C, "jp": 0x02039B0C, "eu": 0x0203A1AC},
     "src/chara_link_cursor.o": {"us": 0x0203BEB8, "jp": 0x0203BE28, "eu": 0x0203C488},

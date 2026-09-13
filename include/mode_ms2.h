@@ -96,7 +96,6 @@ extern s32 gUnk_02035FDC;
 extern s32 gUnk_02035FE0;
 extern u8 gUnk_02035FE4;
 extern const u16 gUnk_099937A0[];
-extern u8 gUnk_0203C0A8[];
 extern u8 gUnk_0908B1B4[];
 extern u8 gUnk_0999D9C0[];
 extern u8 gUnk_0999D9CA[];

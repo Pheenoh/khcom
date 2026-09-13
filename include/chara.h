@@ -1,6 +1,12 @@
 #ifndef GUARD_CHARA_H
 #define GUARD_CHARA_H
 
+#include "sio_runtime_state.h"
+
+#include "sio_callback_state.h"
+
+#include "sio_link_header_state.h"
+
 #include "chara_link_cursor.h"
 
 #include "chara_link_buffers.h"
@@ -186,24 +192,10 @@ extern u16 gUnk_0203A9EC;
 extern u16 gUnk_0203A9F0;
 extern vu32 gFrameCounter;
 extern Mode gModeSioError;
-extern u16 gUnk_0203982C[];
-extern u32 gSioPlayerId;
-extern u8 gUnk_020397FC;
-extern u8 gUnk_02039824;
-extern u8 gUnk_02039B60;
-extern s32 (*gUnk_02039804)(void);
-extern s32 (*gUnk_020397F8)(void);
-extern s16 gUnk_020397D4;
-extern u32 gUnk_020397F0;
 
 extern u8 gUnk_09EF2F08[];
-extern u16 gUnk_020397E0[4][2];
-extern u16 gUnk_02039810[4][2];
-extern u16 gUnk_02039B58[];
-extern u16 gUnk_02039B68[];
 
 
-extern u32 gSioStatus;
 extern u32 gVBlankCounter;
 extern vu16 gSystemFlags;
 

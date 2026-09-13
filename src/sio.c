@@ -360,7 +360,7 @@ void func_08007210(u16 (*c)[2]) {
     } else {
         for (i = 0; i < 4; i++) {
             for (j = 0; j < gUnk_02039830.playerCount; j++) {
-                c[i][j] = gUnk_02039830.recvBuf[j][i][gUnk_02039B50];
+                c[i][j] = gUnk_02039830.recvBuf[j][i][gUnk_02039830.recvReadIdx];
             }
         }
         gUnk_02039830.recvCount--;

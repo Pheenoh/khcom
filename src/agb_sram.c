@@ -1,3 +1,4 @@
+#include "sram_state.h"
 #include "types.h"
 
 #define REG_WAITCNT (*(vu16*)0x4000204)
@@ -5,8 +6,6 @@
 u16 verifySramFast_Work[80];
 u16 readSramFast_Work[64];
 
-extern void (*ReadSramFast)(const u8* src, u8* dest, u32 size);
-extern u32 (*VerifySramFast)(const u8* src, u8* dest, u32 size);
 
 void ReadSramFast_Core(const u8* src, u8* dest, u32 size) {
     REG_WAITCNT = (REG_WAITCNT & ~3) | 3;

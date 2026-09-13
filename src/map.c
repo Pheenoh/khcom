@@ -5274,7 +5274,7 @@ u8 func_080E8C84(u8 a, u8 b) {
     while (p->unk_00 != 5) {
         if (p->unk_01 != 0xFF && p->unk_02 == a && p->unk_03 == b) {
             gUnk_02034F7C = &gUnk_0984CECC[p->unk_01];
-            gUnk_02034F84 = &gUnk_0203C598[i];
+            gUnk_02034F84 = &((UnkStruct_02034F84*)gUnk_0203C590.unk_08)[i];
             return 1;
         }
         i++;
