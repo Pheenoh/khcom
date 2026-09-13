@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "ms_api.h"
 #include "fade.h"
@@ -7,7 +8,6 @@
 #include "hum.h"
 #include "gba/keys.h"
 
-extern u32 gLanguage;
 
 void task_hum_cloud_0(CloudWork* work, void* obj) {
     HumInit(&work->base, gUnk_0813EF28);

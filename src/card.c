@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "graphics_state.h"
 #include "map_api.h"
 #include "msg_api.h"
@@ -91,7 +92,6 @@ extern u8 gUnkEu_09162C8C[];
 #endif
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern void* gUnkEu_09F72A64[];
 extern void* gUnkEu_09F72A3C[];
 extern void* gUnkEu_09F72A50[];
@@ -187,8 +187,6 @@ void* gUnk_02034B34;
 #ifdef VERSION_EU
 TaskPool gUnkEu_02034B38;
 u32 gUnkEu_02034B4C;
-u8 gUnk_02034B1C;
-u8 gUnk_02034B1D[3];
 #endif
 #include "game.h"
 #include "bos4_api.h"
@@ -34785,3 +34783,5 @@ void mode_sio_battle_2(void) {
 void func_080AEB94(void) {
     gUnk_0203A9E8 = 0;
 }
+
+void** gUnk_02034B38 __attribute__((common));

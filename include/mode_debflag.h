@@ -1,3 +1,4 @@
+#include "system_state.h"
 #ifndef GUARD_MODE_DEBFLAG_H
 #define GUARD_MODE_DEBFLAG_H
 
@@ -13,7 +14,6 @@ typedef struct DebugFlag {
     u32 mask;
 } DebugFlag;
 extern u8 gUnk_02039B94;
-extern u32 gUnk_03006C10;
 extern u8 gWhitePalette[];
 extern const DebugFlag gUnk_08130BE8[];
 extern const DebugFlag gUnk_08130DE0[];

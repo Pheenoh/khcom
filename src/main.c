@@ -1,3 +1,4 @@
+#include "memory_regions.h"
 #include "chara_api.h"
 #include "macros.h"
 #include "intr.h"
@@ -42,18 +43,17 @@ u8 gUnk_03006C7A[6];
 u8 gIntrHandler[0x800];
 u32 gFrameCounter;
 #ifdef VERSION_EU
-u32 gUnkEu_03007484;
+u32 gLanguage;
 #endif
 IntrFunc gVBlankHandlerOverride;
+
+#include "system_state.h"
 
 extern u8 sEwramHeapName[];
 extern u8 sIwramHeapName[];
 
-extern u8 gEwramHeapStart[];
-extern u8 gIwramHeapStart[];
 extern u8 IrqHandler[];
 
-extern u16 gIntrCheck;
 
 
 extern const IntrFunc gIntrTableTemplate[14];
@@ -65,7 +65,7 @@ void* GetEwramHeapStart(void) {
 }
 
 u32 GetEwramHeapSize(void) {
-    return 0x34000;
+    return EWRAM_HEAP_SIZE;
 }
 
 void* GetIwramHeapStart(void) {
@@ -73,7 +73,7 @@ void* GetIwramHeapStart(void) {
 }
 
 u32 GetIwramHeapSize(void) {
-    return 0x6800;
+    return IWRAM_HEAP_SIZE;
 }
 
 void EnableVBlankIntr(void) {
@@ -156,7 +156,7 @@ void InitSystem(void) {
     gFrameSyncFlags = 0;
     gVBlankHandlerOverride = 0;
 #ifdef VERSION_EU
-    gUnkEu_03007484 = 0;
+    gLanguage = 0;
 #endif
     REG_IME = 0;
 #ifdef VERSION_EU
@@ -264,6 +264,8 @@ void VBlankIntr(void) {
     gFrameSyncFlags &= 0xFFFD;
     gVBlankCounter++;
 }
+
+vu16 gIntrCheck __attribute__((common));
 
 void HBlankIntrDummy(void) {
 }

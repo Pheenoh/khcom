@@ -53,6 +53,9 @@ BSS_MEMBERS = {"fp-bit.o": True, "dp-bit.o": True}
 # is shifted down by 0x90..0xA4 above that; EU differs from 0x02034898 on and
 # in IWRAM from 0x03007484, so most units need the dict form.
 UNIT_COMMON = {
+    "src/card.o": {"us": 0x02034B38, "jp": 0x02034A98, "eu": 0x02034B50},
+    "src/main.o": 0x03007FF8,
+    "src/memory_regions.o": 0x02000000,
     "src/boss_tm_state.o": {"us": 0x203ab50, "jp": 0x203aac0, "eu": 0x203b120},
     "src/bos4.o": {"us": 0x203c590, "jp": 0x203c500, "eu": 0x203cb80},
     "src/m4a2.o": {"us": 0x3007ff0, "jp": 0x3007ff0, "eu": 0x3007ff0},
@@ -68,6 +71,9 @@ UNIT_COMMON = {
 }
 
 UNIT_BSS = {
+    "src/memory_regions.o": 0x03000000,
+    "src/mode_chkbtl_data.o": {"us": 0x02034890, "jp": 0x02034890, "eu": 0x02034898},
+    "src/event_scanline_state.o": {"us": 0x02039DCC, "jp": 0x02039D3C, "eu": 0x0203A3DC},
     "src/map_transition_state.o": {"us": 0x0203C7B0, "jp": 0x0203C720, "eu": 0x0203CDA0},
     "src/allmap_bottom_state.o": {"us": 0x0203C510, "jp": 0x0203C480, "eu": 0x0203CB00},
     "src/allmap_scroll_state.o": {"us": 0x0203C504, "jp": 0x0203C474, "eu": 0x0203CAF4},

@@ -1,3 +1,4 @@
+#include "system_state.h"
 #ifndef GUARD_MODE_BATTLE_H
 #define GUARD_MODE_BATTLE_H
 
@@ -22,7 +23,6 @@
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
-extern u32 gUnk_03006C10;
 extern void* gUnk_09EDA2A0[];
 extern TaskDesc gTaskDescBtlSora;
 extern TaskDesc gTaskDescBtlRiku;

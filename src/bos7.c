@@ -1,10 +1,10 @@
+#include "system_state.h"
 #include "mode.h"
 #include "macros.h"
 #include "bos7.h"
 #include "bos7_api.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8 gUnkEu_09DD51A0[];
 extern u8 gUnkEu_09DD59A0[];
 extern u8 gUnkEu_09DD61A0[];

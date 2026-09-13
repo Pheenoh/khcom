@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "intr.h"
@@ -20,7 +21,6 @@ u8 eu_0806C734(EventSeqWork* work);
 u8 eu_0806C7C8(EventSeqWork* work);
 u8 eu_0806C848(EventSeqWork* work);
 u8 eu_0806C974(EventSeqWork* work);
-extern u32 gLanguage;
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
 #define LANGSTR(x) (x)

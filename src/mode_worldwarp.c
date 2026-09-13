@@ -1,10 +1,10 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "mode_worldwarp_api.h"
 #include "macros.h"
 #include "mode_worldwarp.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8 gUnkEu_09A4FBC0[];
 extern u8 gUnkEu_09A50BC0[];
 extern u8 gUnkEu_09A51BC0[];

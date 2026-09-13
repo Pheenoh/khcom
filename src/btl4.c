@@ -1,9 +1,9 @@
+#include "system_state.h"
 #include "macros.h"
 #include "btl4.h"
 #include "btl4_api.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8 gUnkEu_08B55C58[];
 extern u8 gUnkEu_08B55C6C[];
 extern u8 gUnkEu_08B55C76[];

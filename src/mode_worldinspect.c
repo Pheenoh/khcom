@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "engine_math.h"
 #include "m4a_song.h"
@@ -15,7 +16,6 @@
 #include "bos5_api.h"
 #ifdef VERSION_EU
 extern u8 gUnkEu_09A86E60[];
-extern u32 gLanguage;
 extern u8 gUnkEu_09A2D440[];
 extern u8 gUnkEu_09A2E440[];
 extern u8 gUnkEu_09A2F440[];

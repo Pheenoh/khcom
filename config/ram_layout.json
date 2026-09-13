@@ -651,6 +651,145 @@
         "gUnk_0203C7B0": {"offset": "0x0", "size": "0x8"},
         "gUnk_0203C7B8": {"offset": "0x8", "size": "0x4"}
       }
+    },
+    "src/main.o": {
+      "sections": [
+        {
+          "base": "0x3006c00",
+          "size": "0x888",
+          "symbols": {
+            "gFrameCounter": {"offset": "0x880", "size": "0x4"},
+            "gFrameSyncFlags": {"offset": "0x0", "size": "0x2"},
+            "gHBlankCallback": {"offset": "0x64", "size": "0x4"},
+            "gIntrHandler": {"offset": "0x80", "size": "0x800"},
+            "gIntrTable": {"offset": "0x20", "size": "0x38"},
+            "gIntrTableHBlank": {"offset": "0x74", "size": "0x4"},
+            "gIntrTableSerial": {"offset": "0x14", "size": "0x4"},
+            "gIntrTableTimer3": {"offset": "0x60", "size": "0x4"},
+            "gIntrTableVBlank": {"offset": "0x5c", "size": "0x4"},
+            "gIntrTableVCount": {"offset": "0x58", "size": "0x4"},
+            "gSystemFlags": {"offset": "0x78", "size": "0x2"},
+            "gUnk_03006C04": {"offset": "0x4", "size": "0xc"},
+            "gUnk_03006C10": {"offset": "0x10", "size": "0x4"},
+            "gUnk_03006C18": {"offset": "0x18", "size": "0x8"},
+            "gUnk_03006C7A": {"offset": "0x7a", "size": "0x6"},
+            "gVBlankCallback": {"offset": "0x70", "size": "0x4"},
+            "gVBlankCounter": {"offset": "0x68", "size": "0x4"},
+            "gVBlankEndVCount": {"offset": "0x2", "size": "0x2"},
+            "gVBlankHandlerOverride": {"offset": "0x884", "size": "0x4"},
+            "gVCountCallback": {"offset": "0x6c", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.main",
+          "base": "0x03007FF8",
+          "size": "0x4",
+          "symbols": {
+            "gIntrCheck": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/card.o": {
+      "sections": [
+        {
+          "base": "0x2034aa4",
+          "size": "0x94",
+          "symbols": {
+            "gActiveDeck": {"offset": "0xc", "size": "0x1"},
+            "gUnk_02034AA4": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034AA8": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034AAC": {"offset": "0x8", "size": "0x4"},
+            "gUnk_02034AB1": {"offset": "0xd", "size": "0x3"},
+            "gUnk_02034AB4": {"offset": "0x10", "size": "0x2"},
+            "gUnk_02034AB6": {"offset": "0x12", "size": "0x2"},
+            "gUnk_02034AB8": {"offset": "0x14", "size": "0x14"},
+            "gUnk_02034ACC": {"offset": "0x28", "size": "0x1"},
+            "gUnk_02034AD0": {"offset": "0x2c", "size": "0x4"},
+            "gUnk_02034AD4": {"offset": "0x30", "size": "0x4"},
+            "gUnk_02034AD8": {"offset": "0x34", "size": "0x1"},
+            "gUnk_02034AD9": {"offset": "0x35", "size": "0x1"},
+            "gUnk_02034ADA": {"offset": "0x36", "size": "0x6"},
+            "gUnk_02034AE0": {"offset": "0x3c", "size": "0x14"},
+            "gUnk_02034AF4": {"offset": "0x50", "size": "0x4"},
+            "gUnk_02034AF8": {"offset": "0x54", "size": "0x1"},
+            "gUnk_02034AFC": {"offset": "0x58", "size": "0x4"},
+            "gUnk_02034B00": {"offset": "0x5c", "size": "0x4"},
+            "gUnk_02034B04": {"offset": "0x60", "size": "0x4"},
+            "gUnk_02034B08": {"offset": "0x64", "size": "0x14"},
+            "gUnk_02034B1C": {"offset": "0x78", "size": "0x1"},
+            "gUnk_02034B1D": {"offset": "0x79", "size": "0x3"},
+            "gUnk_02034B20": {"offset": "0x7c", "size": "0x14"},
+            "gUnk_02034B34": {"offset": "0x90", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.card",
+          "base": "0x2034b38",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_02034B38": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/mode_movie.o": {
+      "base": "0x2034938",
+      "size": "0xd0",
+      "symbols": {
+        "gUnk_02034938": {"offset": "0x0", "size": "0x2"},
+        "gUnk_0203493C": {"offset": "0x4", "size": "0x4"},
+        "gUnk_02034940": {"offset": "0x8", "size": "0x2"},
+        "gUnk_02034942": {"offset": "0xa", "size": "0x2"},
+        "gUnk_02034944": {"offset": "0xc", "size": "0x2"},
+        "gUnk_02034946": {"offset": "0xe", "size": "0x2"},
+        "gUnk_02034948": {"offset": "0x10", "size": "0x4"},
+        "gUnk_0203494C": {"offset": "0x14", "size": "0x4"},
+        "gUnk_02034950": {"offset": "0x18", "size": "0x4"},
+        "gUnk_02034954": {"offset": "0x1c", "size": "0x2"},
+        "gUnk_02034956": {"offset": "0x1e", "size": "0x2"},
+        "gUnk_02034958": {"offset": "0x20", "size": "0x2"},
+        "gUnk_0203495A": {"offset": "0x22", "size": "0x2"},
+        "gUnk_0203495C": {"offset": "0x24", "size": "0x2"},
+        "gUnk_0203495E": {"offset": "0x26", "size": "0x2"},
+        "gUnk_02034960": {"offset": "0x28", "size": "0x2"},
+        "gUnk_02034968": {"offset": "0x30", "size": "0x50"},
+        "gUnk_020349B8": {"offset": "0x80", "size": "0x50"}
+      }
+    },
+    "src/mode_chkbtl_data.o": {
+      "base": "0x2034890",
+      "size": "0x8",
+      "symbols": {
+        "gUnk_02034890": {"offset": "0x0", "size": "0x8"}
+      }
+    },
+    "src/event_scanline_state.o": {
+      "base": "0x2039dcc",
+      "size": "0x4",
+      "symbols": {
+        "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
+      }
+    },
+    "src/memory_regions.o": {
+      "sections": [
+        {
+          "base": "0x03000000",
+          "size": "0x6c00",
+          "symbols": {
+            "SoundMainRAM_Buffer": {"offset": "0x0", "size": "0x400"},
+            "gIwramHeapStart": {"offset": "0x400", "size": "0x6800"}
+          }
+        },
+        {
+          "section": ".common.memory_regions",
+          "base": "0x02000000",
+          "size": "0x34000",
+          "symbols": {
+            "gEwramHeapStart": {"offset": "0x0", "size": "0x34000"}
+          }
+        }
+      ]
     }
   },
   "jp": {
@@ -1306,6 +1445,143 @@
         "gUnk_0203C7B0": {"offset": "0x0", "size": "0x8"},
         "gUnk_0203C7B8": {"offset": "0x8", "size": "0x4"}
       }
+    },
+    "src/main.o": {
+      "sections": [
+        {
+          "base": "0x3006c00",
+          "size": "0x888",
+          "symbols": {
+            "gFrameCounter": {"offset": "0x880", "size": "0x4"},
+            "gFrameSyncFlags": {"offset": "0x0", "size": "0x2"},
+            "gHBlankCallback": {"offset": "0x64", "size": "0x4"},
+            "gIntrHandler": {"offset": "0x80", "size": "0x800"},
+            "gIntrTable": {"offset": "0x20", "size": "0x38"},
+            "gIntrTableHBlank": {"offset": "0x74", "size": "0x4"},
+            "gIntrTableSerial": {"offset": "0x14", "size": "0x4"},
+            "gIntrTableTimer3": {"offset": "0x60", "size": "0x4"},
+            "gIntrTableVBlank": {"offset": "0x5c", "size": "0x4"},
+            "gIntrTableVCount": {"offset": "0x58", "size": "0x4"},
+            "gSystemFlags": {"offset": "0x78", "size": "0x2"},
+            "gUnk_03006C04": {"offset": "0x4", "size": "0xc"},
+            "gUnk_03006C10": {"offset": "0x10", "size": "0x4"},
+            "gUnk_03006C18": {"offset": "0x18", "size": "0x8"},
+            "gUnk_03006C7A": {"offset": "0x7a", "size": "0x6"},
+            "gVBlankCallback": {"offset": "0x70", "size": "0x4"},
+            "gVBlankCounter": {"offset": "0x68", "size": "0x4"},
+            "gVBlankEndVCount": {"offset": "0x2", "size": "0x2"},
+            "gVBlankHandlerOverride": {"offset": "0x884", "size": "0x4"},
+            "gVCountCallback": {"offset": "0x6c", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.main",
+          "base": "0x03007FF8",
+          "size": "0x4",
+          "symbols": {
+            "gIntrCheck": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/card.o": {
+      "sections": [
+        {
+          "base": "0x2034a04",
+          "size": "0x94",
+          "symbols": {
+            "gActiveDeck": {"offset": "0xc", "size": "0x1"},
+            "gUnk_02034AA4": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034AA8": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034AAC": {"offset": "0x8", "size": "0x4"},
+            "gUnk_02034AB1": {"offset": "0xd", "size": "0x3"},
+            "gUnk_02034AB4": {"offset": "0x10", "size": "0x2"},
+            "gUnk_02034AB6": {"offset": "0x12", "size": "0x2"},
+            "gUnk_02034AB8": {"offset": "0x14", "size": "0x14"},
+            "gUnk_02034ACC": {"offset": "0x28", "size": "0x1"},
+            "gUnk_02034AD0": {"offset": "0x2c", "size": "0x4"},
+            "gUnk_02034AD4": {"offset": "0x30", "size": "0x4"},
+            "gUnk_02034AD8": {"offset": "0x34", "size": "0x1"},
+            "gUnk_02034AD9": {"offset": "0x35", "size": "0x1"},
+            "gUnk_02034ADA": {"offset": "0x36", "size": "0x6"},
+            "gUnk_02034AE0": {"offset": "0x3c", "size": "0x14"},
+            "gUnk_02034AF4": {"offset": "0x50", "size": "0x4"},
+            "gUnk_02034AF8": {"offset": "0x54", "size": "0x1"},
+            "gUnk_02034AFC": {"offset": "0x58", "size": "0x4"},
+            "gUnk_02034B00": {"offset": "0x5c", "size": "0x4"},
+            "gUnk_02034B04": {"offset": "0x60", "size": "0x4"},
+            "gUnk_02034B08": {"offset": "0x64", "size": "0x14"},
+            "gUnk_02034B1C": {"offset": "0x78", "size": "0x1"},
+            "gUnk_02034B1D": {"offset": "0x79", "size": "0x3"},
+            "gUnk_02034B20": {"offset": "0x7c", "size": "0x14"},
+            "gUnk_02034B34": {"offset": "0x90", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.card",
+          "base": "0x2034a98",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_02034B38": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/mode_movie.o": {
+      "base": "0x2034938",
+      "size": "0x2a",
+      "symbols": {
+        "gUnk_02034938": {"offset": "0x0", "size": "0x2"},
+        "gUnk_0203493C": {"offset": "0x4", "size": "0x4"},
+        "gUnk_02034940": {"offset": "0x8", "size": "0x2"},
+        "gUnk_02034942": {"offset": "0xa", "size": "0x2"},
+        "gUnk_02034944": {"offset": "0xc", "size": "0x2"},
+        "gUnk_02034946": {"offset": "0xe", "size": "0x2"},
+        "gUnk_02034948": {"offset": "0x10", "size": "0x4"},
+        "gUnk_0203494C": {"offset": "0x14", "size": "0x4"},
+        "gUnk_02034950": {"offset": "0x18", "size": "0x4"},
+        "gUnk_02034954": {"offset": "0x1c", "size": "0x2"},
+        "gUnk_02034956": {"offset": "0x1e", "size": "0x2"},
+        "gUnk_02034958": {"offset": "0x20", "size": "0x2"},
+        "gUnk_0203495A": {"offset": "0x22", "size": "0x2"},
+        "gUnk_0203495C": {"offset": "0x24", "size": "0x2"},
+        "gUnk_0203495E": {"offset": "0x26", "size": "0x2"},
+        "gUnk_02034960": {"offset": "0x28", "size": "0x2"}
+      }
+    },
+    "src/mode_chkbtl_data.o": {
+      "base": "0x2034890",
+      "size": "0x8",
+      "symbols": {
+        "gUnk_02034890": {"offset": "0x0", "size": "0x8"}
+      }
+    },
+    "src/event_scanline_state.o": {
+      "base": "0x2039d3c",
+      "size": "0x4",
+      "symbols": {
+        "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
+      }
+    },
+    "src/memory_regions.o": {
+      "sections": [
+        {
+          "base": "0x03000000",
+          "size": "0x6c00",
+          "symbols": {
+            "SoundMainRAM_Buffer": {"offset": "0x0", "size": "0x400"},
+            "gIwramHeapStart": {"offset": "0x400", "size": "0x6800"}
+          }
+        },
+        {
+          "section": ".common.memory_regions",
+          "base": "0x02000000",
+          "size": "0x34000",
+          "symbols": {
+            "gEwramHeapStart": {"offset": "0x0", "size": "0x34000"}
+          }
+        }
+      ]
     }
   },
   "eu": {
@@ -1951,6 +2227,144 @@
         "gUnk_0203C7B0": {"offset": "0x0", "size": "0x8"},
         "gUnk_0203C7B8": {"offset": "0x8", "size": "0x4"}
       }
+    },
+    "src/main.o": {
+      "sections": [
+        {
+          "base": "0x3006c00",
+          "size": "0x88c",
+          "symbols": {
+            "gFrameCounter": {"offset": "0x880", "size": "0x4"},
+            "gFrameSyncFlags": {"offset": "0x0", "size": "0x2"},
+            "gHBlankCallback": {"offset": "0x64", "size": "0x4"},
+            "gIntrHandler": {"offset": "0x80", "size": "0x800"},
+            "gIntrTable": {"offset": "0x20", "size": "0x38"},
+            "gIntrTableHBlank": {"offset": "0x74", "size": "0x4"},
+            "gIntrTableSerial": {"offset": "0x14", "size": "0x4"},
+            "gIntrTableTimer3": {"offset": "0x60", "size": "0x4"},
+            "gIntrTableVBlank": {"offset": "0x5c", "size": "0x4"},
+            "gIntrTableVCount": {"offset": "0x58", "size": "0x4"},
+            "gSystemFlags": {"offset": "0x78", "size": "0x2"},
+            "gUnk_03006C04": {"offset": "0x4", "size": "0xc"},
+            "gUnk_03006C10": {"offset": "0x10", "size": "0x4"},
+            "gUnk_03006C18": {"offset": "0x18", "size": "0x8"},
+            "gUnk_03006C7A": {"offset": "0x7a", "size": "0x6"},
+            "gVBlankCallback": {"offset": "0x70", "size": "0x4"},
+            "gVBlankCounter": {"offset": "0x68", "size": "0x4"},
+            "gVBlankEndVCount": {"offset": "0x2", "size": "0x2"},
+            "gVBlankHandlerOverride": {"offset": "0x888", "size": "0x4"},
+            "gVCountCallback": {"offset": "0x6c", "size": "0x4"},
+            "gLanguage": {"offset": "0x884", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.main",
+          "base": "0x03007FF8",
+          "size": "0x4",
+          "symbols": {
+            "gIntrCheck": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/card.o": {
+      "sections": [
+        {
+          "base": "0x2034ac0",
+          "size": "0x90",
+          "symbols": {
+            "gActiveDeck": {"offset": "0xc", "size": "0x1"},
+            "gUnkEu_02034AD4": {"offset": "0x14", "size": "0x4"},
+            "gUnkEu_02034B38": {"offset": "0x78", "size": "0x14"},
+            "gUnkEu_02034B4C": {"offset": "0x8c", "size": "0x4"},
+            "gUnk_02034AA4": {"offset": "0x0", "size": "0x4"},
+            "gUnk_02034AA8": {"offset": "0x4", "size": "0x4"},
+            "gUnk_02034AAC": {"offset": "0x8", "size": "0x4"},
+            "gUnk_02034AB1": {"offset": "0xd", "size": "0x3"},
+            "gUnk_02034AB4": {"offset": "0x10", "size": "0x2"},
+            "gUnk_02034AB6": {"offset": "0x12", "size": "0x2"},
+            "gUnk_02034AB8": {"offset": "0x18", "size": "0x14"},
+            "gUnk_02034ACC": {"offset": "0x2c", "size": "0x1"},
+            "gUnk_02034AD0": {"offset": "0x30", "size": "0x4"},
+            "gUnk_02034AD4": {"offset": "0x34", "size": "0x4"},
+            "gUnk_02034AD8": {"offset": "0x38", "size": "0x1"},
+            "gUnk_02034AD9": {"offset": "0x39", "size": "0x1"},
+            "gUnk_02034ADA": {"offset": "0x3a", "size": "0x6"},
+            "gUnk_02034AE0": {"offset": "0x40", "size": "0x14"},
+            "gUnk_02034AF8": {"offset": "0x54", "size": "0x1"},
+            "gUnk_02034AFC": {"offset": "0x58", "size": "0x4"},
+            "gUnk_02034B00": {"offset": "0x5c", "size": "0x4"},
+            "gUnk_02034B20": {"offset": "0x60", "size": "0x14"},
+            "gUnk_02034B34": {"offset": "0x74", "size": "0x4"}
+          }
+        },
+        {
+          "section": ".common.card",
+          "base": "0x2034b50",
+          "size": "0x4",
+          "symbols": {
+            "gUnk_02034B38": {"offset": "0x0", "size": "0x4"}
+          }
+        }
+      ]
+    },
+    "src/mode_movie.o": {
+      "base": "0x20348d8",
+      "size": "0xf0",
+      "symbols": {
+        "gUnk_02034938": {"offset": "0x0", "size": "0x2"},
+        "gUnk_0203493C": {"offset": "0x4", "size": "0x4"},
+        "gUnk_02034940": {"offset": "0x8", "size": "0x2"},
+        "gUnk_02034942": {"offset": "0xa", "size": "0x2"},
+        "gUnk_02034944": {"offset": "0xc", "size": "0x2"},
+        "gUnk_02034946": {"offset": "0xe", "size": "0x2"},
+        "gUnk_02034948": {"offset": "0x10", "size": "0x4"},
+        "gUnk_0203494C": {"offset": "0x14", "size": "0x4"},
+        "gUnk_02034950": {"offset": "0x18", "size": "0x4"},
+        "gUnk_02034954": {"offset": "0x1c", "size": "0x2"},
+        "gUnk_02034956": {"offset": "0x1e", "size": "0x2"},
+        "gUnk_02034958": {"offset": "0x20", "size": "0x2"},
+        "gUnk_0203495A": {"offset": "0x22", "size": "0x2"},
+        "gUnk_0203495C": {"offset": "0x24", "size": "0x2"},
+        "gUnk_0203495E": {"offset": "0x26", "size": "0x2"},
+        "gUnk_02034960": {"offset": "0x28", "size": "0x2"},
+        "gUnk_02034968": {"offset": "0x30", "size": "0x60"},
+        "gUnk_020349B8": {"offset": "0x90", "size": "0x60"}
+      }
+    },
+    "src/mode_chkbtl_data.o": {
+      "base": "0x2034898",
+      "size": "0x8",
+      "symbols": {
+        "gUnk_02034890": {"offset": "0x0", "size": "0x8"}
+      }
+    },
+    "src/event_scanline_state.o": {
+      "base": "0x203a3dc",
+      "size": "0x4",
+      "symbols": {
+        "gUnk_02039DCC": {"offset": "0x0", "size": "0x4"}
+      }
+    },
+    "src/memory_regions.o": {
+      "sections": [
+        {
+          "base": "0x03000000",
+          "size": "0x6c00",
+          "symbols": {
+            "SoundMainRAM_Buffer": {"offset": "0x0", "size": "0x400"},
+            "gIwramHeapStart": {"offset": "0x400", "size": "0x6800"}
+          }
+        },
+        {
+          "section": ".common.memory_regions",
+          "base": "0x02000000",
+          "size": "0x34000",
+          "symbols": {
+            "gEwramHeapStart": {"offset": "0x0", "size": "0x34000"}
+          }
+        }
+      ]
     }
   }
 }

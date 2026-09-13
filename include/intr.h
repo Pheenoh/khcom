@@ -5,6 +5,8 @@
 
 typedef void (*IntrFunc)(void);
 
+extern vu16 gIntrCheck;
+
 void EnableVBlankIntr(void);
 void DisableVBlankIntr(void);
 void EnableHBlankIntr(void);

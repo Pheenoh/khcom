@@ -1,10 +1,10 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "text.h"
 #include "macros.h"
 #include "mode_mapinspect.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8 gUnkEu_09A3D400[];
 extern u8 gUnkEu_09A3E800[];
 extern u8 gUnkEu_09A3FC00[];

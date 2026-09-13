@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "display.h"
 #include "m4a_song.h"
@@ -7,7 +8,6 @@
 #include "btl2_api.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8 gUnkEu_08B51BA8[];
 extern u8 gUnkEu_08B51D50[];
 extern u8 gUnkEu_08B51FB8[];

@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "main.h"
 #include "movie.h"
 #include "movie_text.h"
@@ -9,8 +10,6 @@
 #include "mode_movie.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
-extern u32 gUnkEu_03006C10;
 extern Mode gModeChkmov;
 extern u8 gUnkEu_0883E040[];
 extern u8 gUnkEu_0883E454[];
@@ -498,7 +497,7 @@ void mode_movie_1(void) {
             SoftReset(0xFF);
 #endif
 #ifdef VERSION_EU
-        } else if (gUnkEu_03006C10 & 0x8000) {
+        } else if (gUnk_03006C10 & 0x8000) {
             ModeRequest(&gModeChkmov, 0);
 #endif
         } else {
@@ -532,3 +531,8 @@ void mode_movie_1(void) {
 void mode_movie_2(void) {
     gVBlankHandlerOverride = 0;
 }
+
+#ifndef VERSION_JP
+u16 gUnk_02034968[MOVIE_SUB_MAX_CHARS] __attribute__((aligned(8)));
+u16 gUnk_020349B8[MOVIE_SUB_MAX_CHARS] __attribute__((aligned(8)));
+#endif

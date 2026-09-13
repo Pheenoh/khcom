@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "ms_charge_api.h"
 #include "mode_ms2_api.h"
@@ -9,7 +10,6 @@
 #include "card_ui_state.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern void* gUnkEu_09F84FA8[];
 extern void* gUnkEu_09F84FE4[];
 extern void* gUnkEu_09F84FD0[];

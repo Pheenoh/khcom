@@ -1,9 +1,9 @@
+#include "system_state.h"
 #include "display.h"
 #include "frd.h"
 #include "macros.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 #endif
 
 void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
