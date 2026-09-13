@@ -19459,38 +19459,45 @@ u8 func_08094A18(MapcardWork* w, void* a) {
     return 1;
 }
 
-#ifdef NON_MATCHING
 void Mapcard_2(MapcardWork* w) {
     s32 aff;
     u16 y;
+    void* sprite;
 
     if (func_080A42C8() == 0) {
         y = (w->unk_50 >> 8) + (gSineTable[w->unk_6E] >> 8);
 
         if (w->unk_6C & 1) {
-            if (w->unk_4C > 0 && w->unk_4C <= 0xEFFF) {
-                aff = 0;
-
-                if (w->unk_6C & 0x40) {
-                    aff = AllocObjAffine(w->unk_6E, (s16)w->unk_68, (s16)w->unk_68, 1);
+            if (w->unk_4C > 0) {
+                if (w->unk_4C <= 0xEFFF) {
+                    goto draw;
                 }
-
-                if (gUnk_09EE4C80[w->unk_20].unk_1E == 4) {
-                    DrawSprite(w->unk_4C >> 8, y, gUnk_0203A890.gfx, gUnk_0203A890.tiles, *(void**)&w->unk_10[4], aff, 0,
-                               (u16)(w->unk_6A - 2));
-                }
-
-                DrawSprite(w->unk_4C >> 8, y, *(void**)*(void**)&w->unk_1C->unk_00[8], *(void**)&w->unk_10[0],
-                           *(void**)&w->unk_10[4], aff, 0, w->unk_6A);
-                DrawSprite(w->unk_4C >> 8, y, *(void**)*(void**)&w->unk_18->unk_00[8], w->unk_08, w->unk_0C, aff, 0,
-                           (u16)(w->unk_6A + 1));
             }
+
+            do {
+                return;
+            } while (0);
+
+        draw:
+            aff = 0;
+
+            if (w->unk_6C & 0x40) {
+                aff = AllocObjAffine(w->unk_6E, (s16)w->unk_68, (s16)w->unk_68, 1);
+            }
+
+            if (gUnk_09EE4C80[w->unk_20].unk_1E == 4) {
+                DrawSprite(w->unk_4C >> 8, y, gUnk_0203A890.gfx, gUnk_0203A890.tiles, *(void**)&w->unk_10[4], aff, 0,
+                           (u16)(w->unk_6A - 2));
+            }
+
+            sprite = w->unk_1C->unk_08[0];
+            DrawSprite(w->unk_4C >> 8, y, sprite, *(void**)&w->unk_10[0], *(void**)&w->unk_10[4], aff, 0, w->unk_6A);
+            sprite = w->unk_18->unk_08[0];
+            DrawSprite(w->unk_4C >> 8, y, sprite, w->unk_08, w->unk_0C, aff, 0, (u16)(w->unk_6A + 1));
         }
     }
 }
-#else
-INCLUDE_ASM("card/Mapcard_2.s");
-#endif
+
 void Mapcard_3(MapcardWork* w) {
     if (w->unk_6C & 1) {
         ReleaseObjTiles(w->unk_08);
