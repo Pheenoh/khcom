@@ -6833,11 +6833,13 @@ u8 func_08081B70(CardDisplayWork* p, void* a) {
 
     return func_08082C98(p, a);
 }
-#ifdef NON_MATCHING
+
 void func_08081C98(CardDisplayWork* p) {
     void* gfx;
     s32 aff;
     u16 y;
+    s16 sy;
+    u16 flags;
     u8 j;
 
     gfx = p->unk_48->unk_00;
@@ -6861,13 +6863,16 @@ void func_08081C98(CardDisplayWork* p) {
     }
 
     if (!(p->unk_78 & 0x200)) {
+        u8 j;
+
         if (gUnk_02039B9C->unk_0F4 == 7) {
             return;
         }
 
         aff = AllocObjAffine(p->unk_5E, p->unk_54, p->unk_58, 0);
-        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, (&gUnk_02039DD4->tiles)[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 1));
-        DrawSprite(p->unk_4C >> 8, y, gfx, p->unk_00, p->palette, aff, 0x410, p->unk_A0);
+        flags = 0x410;
+        DrawSprite(p->unk_4C >> 8, y, gUnk_08F709B0[p->unk_48->unk_2A].unk_00, ((UnkStruct_0809B200*)gUnk_02039DD4)->unk_030[p->unk_48->unk_2A], gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 1));
+        DrawSprite(p->unk_4C >> 8, y, gfx, p->unk_00, p->palette, aff, flags, p->unk_A0);
         j = p->unk_A5;
 
         if (p->unk_48->unk_2A == 3) {
@@ -6875,15 +6880,15 @@ void func_08081C98(CardDisplayWork* p) {
         }
 
         if (p->unk_A7 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE98C0[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE98C0[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 2));
         } else if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE9894[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE9894[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 2));
         } else {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 2));
+            DrawSprite(p->unk_4C >> 8, y, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 2));
         }
 
         if (p->unk_A6 != 0) {
-            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_094, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 3));
+            DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_094, gUnk_02039DD4->unk_040, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 3));
         }
 
         return;
@@ -6894,7 +6899,9 @@ void func_08081C98(CardDisplayWork* p) {
     }
 
     aff = AllocObjAffine(0, p->unk_54, p->unk_58, 0);
-    DrawSprite(p->unk_4C >> 8, y, p->unk_48->unk_10, p->unk_00, p->palette, aff, 0x410, p->unk_A0);
+    flags = 0x410;
+    sy = y;
+    DrawSprite(p->unk_4C >> 8, sy, p->unk_48->unk_10, p->unk_00, p->palette, aff, flags, p->unk_A0);
     j = p->unk_A5;
 
     if (p->unk_48->unk_2A == 3) {
@@ -6902,23 +6909,18 @@ void func_08081C98(CardDisplayWork* p) {
     }
 
     if (p->unk_A7 != 0) {
-        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 10));
+        DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles7, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 10));
 
-        if (p->unk_A6 == 0) {
-            return;
+        if (p->unk_A6 != 0) {
+            DrawSprite(p->unk_4C >> 8, sy, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
         }
     } else if (p->unk_A6 != 0) {
-        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, 0x410, (u16)(p->unk_A0 - 10));
+        DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles6, gUnk_02039DD4->palette2, aff, flags, (u16)(p->unk_A0 - 10));
+        DrawSprite(p->unk_4C >> 8, sy, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 11));
     } else {
-        DrawSprite((p->unk_4C >> 8) - 3, y - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 10));
-        return;
+        DrawSprite((p->unk_4C >> 8) - 3, sy - 4, gUnk_09EE981C[j], gUnk_02039DD4->tiles5, gUnk_02039DD4->palette, aff, flags, (u16)(p->unk_A0 - 10));
     }
-
-    DrawSprite(p->unk_4C >> 8, y, gUnk_02039DD4->unk_098, gUnk_02039DD4->unk_050, gUnk_02039DD4->palette, aff, 0x410, (u16)(p->unk_A0 - 11));
 }
-#else
-INCLUDE_ASM("card/func_08081C98.s");
-#endif
 
 void NO_Card_2(CardDisplayWork* p) {
     void* gfx;
@@ -17142,7 +17144,7 @@ void func_08091138(CardDisplayWork* p, CardDisplayArgs* a) {
     p->unk_A5 = p->unk_48->unk_20;
 }
 
-#ifdef NON_MATCHING
+#ifndef VERSION_EU
 void func_08091234(u16 arg) {
     UnkStruct_0807FD10_Args args;
     CardDisplayWork* p;
@@ -17151,7 +17153,7 @@ void func_08091234(u16 arg) {
 
     args.unk_00 = 0;
     args.unk_04 = 0;
-    *(u16*)&args.unk_08[0] = arg;
+    *(u32*)&args.unk_08 = arg;
     args.unk_0C = gUnk_02034AB4;
     args.unk_0E = 0;
     p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->unk_09C, &gUnk_09EE4B58, &args))[1];
@@ -17167,192 +17169,159 @@ void func_08091234(u16 arg) {
         gBtlWork->unk_068 |= 0x400;
         gBtlWork->unk_068 |= 0x80;
     } else if ((gBtlWork->unk_068 & 0x20) == 0) {
-        if ((s16)gUnk_02039DD4->unk_0C2 > p->unk_A5) {
-            p->unk_78 = (p->unk_78 | 4) & ~0x40;
-            return;
-        }
+        if ((s16)gUnk_02039DD4->unk_0C2 <= p->unk_A5) {
+            flag = 0;
 
-        flag = 0;
+            if (gBtlWork->unk_0F4 == 2) {
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 0) {
+                        flag = 1;
+                        break;
+                    }
+                }
+            }
 
-        if (gUnk_02039B9C->unk_0F4 == 2) {
-            for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 0) {
-                    flag = 1;
-                    break;
+            if (gBtlWork->unk_0F4 == 20) {
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    if (gUnk_02039DD4->unk_000[i]->unk_48->unk_24 == 22) {
+                        flag = 1;
+                        break;
+                    }
+                }
+            }
+
+            if (gBtlWork->unk_0F4 == 29) {
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 2) {
+                        flag = 1;
+                        break;
+                    }
+                }
+            }
+
+            if (flag == 0) {
+                gBtlWork->unk_068 |= 0x800000;
+
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
+                }
+
+                if ((s16)gUnk_02039DD4->unk_0C2 != p->unk_A5) {
+                    if (p->unk_A5 == 0) {
+                        gBtlWork->unk_1CA = -(s8)gUnk_02039DD4->unk_0C2;
+                    } else {
+                        gBtlWork->unk_1CA = gUnk_02039DD4->unk_0C2 - p->unk_A5;
+                    }
+
+                    m4aSongNumStart(203);
+                    gBtlWork->unk_068 |= 0x400;
+                    gBtlWork->unk_068 |= 0x80;
+                    gBtlWork->unk_068 &= ~0x20;
+                    gUnk_02039DD4->unk_000[0] = p;
+
+                    if (gBtlWork->unk_0F4 == 48) {
+                        if (p->unk_A5 != 0) {
+                            gUnk_02039DD4->unk_0C2 = p->unk_A5 - gUnk_02039DD4->unk_0C2;
+                            p->unk_A5 = gUnk_02039DD4->unk_0C2;
+                        } else {
+                            gUnk_02039DD4->unk_0C2 = 0;
+                        }
+
+                        if ((s16)gUnk_02039DD4->unk_0C2 < 0) {
+                            gUnk_02039DD4->unk_0C2 = 0;
+                        }
+
+                        gBtlWork->unk_0F8--;
+                    } else {
+                        gUnk_02039DD4->unk_0C2 = p->unk_A5;
+                    }
+
+                    gUnk_02039DD4->unk_0D0 = 1;
+                    gBtlWork->unk_0A4 = 0;
+                    p->unk_78 |= 0x2000;
+                    func_0807BA54();
+                } else {
+                    m4aSongNumStart(204);
+                    gBtlWork->unk_068 &= ~0x80;
+                    gBtlWork->unk_068 &= ~0x20;
+                    gBtlWork->unk_068 &= ~0x400;
+                    gBtlWork->unk_0A4 = 0;
                 }
             }
         }
-
-        if (gBtlWork->unk_0F4 == 20) {
-            for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if (gUnk_02039DD4->unk_000[i]->unk_48->unk_24 == 22) {
-                    flag = 1;
-                    break;
-                }
-            }
-        }
-
-        if (gBtlWork->unk_0F4 == 29) {
-            for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 2) {
-                    flag = 1;
-                    break;
-                }
-            }
-        }
-
-        if (flag != 0) {
-            p->unk_78 = (p->unk_78 | 4) & ~0x40;
-            return;
-        }
-
-        gBtlWork->unk_068 |= 0x800000;
-
-        for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-            gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
-        }
-
-        if ((s16)gUnk_02039DD4->unk_0C2 == p->unk_A5) {
-            m4aSongNumStart(204);
-            gBtlWork->unk_068 &= ~0x80;
-            gBtlWork->unk_068 &= ~0x20;
-            gBtlWork->unk_068 &= ~0x400;
-            gBtlWork->unk_0A4 = 0;
-            p->unk_78 = (p->unk_78 | 4) & ~0x40;
-            return;
-        }
-
-        if (p->unk_A5 == 0) {
-            gBtlWork->unk_1CA = -(s8)gUnk_02039DD4->unk_0C2;
-        } else {
-            gBtlWork->unk_1CA = gUnk_02039DD4->unk_0C2 - p->unk_A5;
-        }
-
-        m4aSongNumStart(203);
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x80;
-        gBtlWork->unk_068 &= ~0x20;
-        gUnk_02039DD4->unk_000[0] = p;
-
-        if (gBtlWork->unk_0F4 == 48) {
-            if (p->unk_A5 != 0) {
-                gUnk_02039DD4->unk_0C2 = p->unk_A5 - gUnk_02039DD4->unk_0C2;
-                p->unk_A5 = gUnk_02039DD4->unk_0C2;
-            } else {
-                gUnk_02039DD4->unk_0C2 = p->unk_A5;
-            }
-
-            if ((s16)gUnk_02039DD4->unk_0C2 < 0) {
-                gUnk_02039DD4->unk_0C2 = 0;
-            }
-
-            gBtlWork->unk_0F8--;
-        } else {
-            gUnk_02039DD4->unk_0C2 = p->unk_A5;
-        }
-
-        gUnk_02039DD4->unk_0D0 = 1;
-        gBtlWork->unk_0A4 = 0;
-        p->unk_78 |= 0x2000;
-        func_0807BA54();
     } else {
-        if ((s16)gUnk_02039DD4->unk_0C2 > p->unk_A5) {
-            p->unk_78 = (p->unk_78 | 4) & ~0x40;
-            return;
-        }
+        if ((s16)gUnk_02039DD4->unk_0C2 <= p->unk_A5) {
+            flag = 0;
 
-        flag = 0;
+            if (gBtlWork->unk_0F4 == 2) {
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 0) {
+                        flag = 1;
+                        break;
+                    }
+                }
+            }
 
-        if (gUnk_02039B9C->unk_0F4 == 2) {
-            for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 0) {
-                    flag = 1;
-                    break;
+            if (gBtlWork->unk_0F4 == 54) {
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 1) {
+                        flag = 1;
+                        break;
+                    }
+                }
+            }
+
+            if (gBtlWork->unk_0F4 == 20) {
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    if (gUnk_02039DD4->unk_000[i]->unk_48->unk_24 == 22) {
+                        flag = 1;
+                        break;
+                    }
+                }
+            }
+
+            if (gBtlWork->unk_0F4 == 29) {
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 2) {
+                        flag = 1;
+                        break;
+                    }
+                }
+            }
+
+            if (flag == 0) {
+                gBtlWork->unk_068 |= 0x800000;
+
+                for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+                    gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
+                }
+
+                if ((s16)gUnk_02039DD4->unk_0C2 != p->unk_A5) {
+                    if (p->unk_A5 == 0) {
+                        gBtlWork->unk_1CA = -(s8)gUnk_02039DD4->unk_0C2;
+                    } else {
+                        gBtlWork->unk_1CA = gUnk_02039DD4->unk_0C2 - p->unk_A5;
+                    }
+
+                    m4aSongNumStart(203);
+                    gBtlWork->unk_068 |= 0x400;
+                    gBtlWork->unk_068 |= 0x80;
+                    gBtlWork->unk_068 &= ~0x20;
+                    gUnk_02039DD4->unk_000[0] = p;
+                    gUnk_02039DD4->unk_0C2 = p->unk_A5;
+                    gUnk_02039DD4->unk_0D0 = 1;
+                    gBtlWork->unk_0A4 = 0;
+                    p->unk_78 |= 0x2000;
+                    func_0807BA54();
+                } else {
+                    m4aSongNumStart(204);
+                    gBtlWork->unk_068 &= ~0x80;
+                    gBtlWork->unk_068 &= ~0x20;
+                    gBtlWork->unk_068 &= ~0x400;
+                    gBtlWork->unk_0A4 = 0;
                 }
             }
         }
-
-        if (gBtlWork->unk_0F4 == 54) {
-            for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 1) {
-                    flag = 1;
-                    break;
-                }
-            }
-        }
-
-        if (gBtlWork->unk_0F4 == 20) {
-            for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if (gUnk_02039DD4->unk_000[i]->unk_48->unk_24 == 22) {
-                    flag = 1;
-                    break;
-                }
-            }
-        }
-
-        if (gBtlWork->unk_0F4 == 29) {
-            for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-                if (gUnk_02039DD4->unk_000[i]->unk_48->unk_2A == 2) {
-                    flag = 1;
-                    break;
-                }
-            }
-        }
-
-        if (flag != 0) {
-            p->unk_78 = (p->unk_78 | 4) & ~0x40;
-            return;
-        }
-
-        gBtlWork->unk_068 |= 0x800000;
-
-        for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
-            gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
-        }
-
-        if ((s16)gUnk_02039DD4->unk_0C2 == p->unk_A5) {
-            m4aSongNumStart(204);
-            gBtlWork->unk_068 &= ~0x80;
-            gBtlWork->unk_068 &= ~0x20;
-            gBtlWork->unk_068 &= ~0x400;
-            gBtlWork->unk_0A4 = 0;
-            p->unk_78 = (p->unk_78 | 4) & ~0x40;
-            return;
-        }
-
-        if (p->unk_A5 == 0) {
-            gBtlWork->unk_1CA = -(s8)gUnk_02039DD4->unk_0C2;
-        } else {
-            gBtlWork->unk_1CA = gUnk_02039DD4->unk_0C2 - p->unk_A5;
-        }
-
-        m4aSongNumStart(203);
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x80;
-        gBtlWork->unk_068 &= ~0x20;
-        gUnk_02039DD4->unk_000[0] = p;
-
-        if (gBtlWork->unk_0F4 == 48) {
-            if (p->unk_A5 != 0) {
-                gUnk_02039DD4->unk_0C2 = p->unk_A5 - gUnk_02039DD4->unk_0C2;
-                p->unk_A5 = gUnk_02039DD4->unk_0C2;
-            } else {
-                gUnk_02039DD4->unk_0C2 = p->unk_A5;
-            }
-
-            if ((s16)gUnk_02039DD4->unk_0C2 < 0) {
-                gUnk_02039DD4->unk_0C2 = 0;
-            }
-
-            gBtlWork->unk_0F8--;
-        } else {
-            gUnk_02039DD4->unk_0C2 = p->unk_A5;
-        }
-
-        gUnk_02039DD4->unk_0D0 = 1;
-        gBtlWork->unk_0A4 = 0;
-        p->unk_78 |= 0x2000;
-        func_0807BA54();
     }
 
     p->unk_78 = (p->unk_78 | 4) & ~0x40;
