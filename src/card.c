@@ -6103,7 +6103,6 @@ void func_08080994(UnkStruct_08080268* w) {
 
     func_080818E4();
 }
-#ifdef NON_MATCHING
 u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     UnkStruct_0807FD10_Args args;
     u16 t;
@@ -6136,7 +6135,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     gUnk_02034AAC->unk_9F = w->unk_B9;
     gUnk_02034AAC->unk_A0 = (3 - w->unk_B9) * 4 + 50;
     w->unk_28[w->unk_B9] = gUnk_02034AAC;
-    (&gUnk_02039DD4->unk_018[3])[gUnk_02039DD4->unk_0DF] = gUnk_02034AAC;
+    gUnk_02039DD4->unk_024[gUnk_02039DD4->unk_0DF] = gUnk_02034AAC;
     (*(CardSlot**)gUnk_02034AAC->unk_3C)->unk_07 = 1;
 
     if (gUnk_02039B9C->unk_0F4 == 1) {
@@ -6152,12 +6151,12 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     } else if (gUnk_02039B9C->unk_0F4 == 21) {
         if (gUnk_02034AAC->unk_A5 != 0) {
             n = gUnk_02034AAC->unk_A5 - 1;
-            gUnk_02034AAC->unk_A5 = n;
+            gUnk_02034AAC->unk_A5--;
+            gUnk_02034AAC->unk_A7 = 1;
         } else {
             n = 0;
+            gUnk_02034AAC->unk_A7 = 1;
         }
-
-        gUnk_02034AAC->unk_A7 = 1;
     } else {
         n = gUnk_02034AAC->unk_A5;
     }
@@ -6167,7 +6166,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
     gUnk_02039DD4->unk_0DF++;
 
     if (w->unk_BA != 0) {
-        UpdateSpriteFrameTiles((UnkStruct_080038C8*)w->unk_14, gUnk_09EF12E8[0], gUnk_093FBAB8[w->unk_BA - 1]);
+        UpdateSpriteFrameTiles((UnkStruct_080038C8*)w->unk_14, gUnk_09EF12E8[0], (u8*)gUnk_093FBAB8 + ((w->unk_BA - 1) << 7));
         w->unk_C4[3] = 8;
     }
 
@@ -6211,7 +6210,7 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
             p = ((CardDisplayWork**)TaskCreate(w, &gUnk_09EE49CC, &args))[1];
         }
 
-        p->unk_94 = p->unk_98 = gUnk_090352E4[0];
+        p->unk_98 = p->unk_94 = gUnk_090352E4[0];
         p->unk_A4 = 0;
         p->unk_A0 = 60;
         p->unk_9C = 4;
@@ -6228,7 +6227,9 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
         w->unk_34[w->unk_B8] = 0;
         gUnk_02034AAC = 0;
         w->unk_C0[0] = 1;
+#ifndef VERSION_EU
         m4aSongNumStart(202);
+#endif
 
         if (FadeGetAmount() == 0) {
             FadeFromAmount(2, 16, 20);
@@ -6237,9 +6238,6 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_08080B44.s");
-#endif
 
 #ifndef VERSION_EU
 void func_08080EB4(UnkStruct_08080268* w) {
