@@ -2039,7 +2039,6 @@ void func_0807A80C(UnkStruct_08080268* w) {
 INCLUDE_ASM("card/func_0807A80C.s");
 #endif
 
-#ifdef NON_MATCHING
 void func_0807ABC8(UnkStruct_08080268* w) {
     CardDisplayWork** q;
     CardDisplayWork* p;
@@ -2117,10 +2116,17 @@ void func_0807ABC8(UnkStruct_08080268* w) {
         }
     }
 
-    for (i = 0; i < w->unk_B9; i++) {
-        w->unk_1C[i] = w->unk_28[i];
-        w->unk_28[i]->unk_A1 = 5;
-        w->unk_28[i] = 0;
+    i = 0;
+
+    if (i < w->unk_B9) {
+        do {
+            p = 0;
+            n = i;
+            w->unk_1C[n] = w->unk_28[n];
+            w->unk_28[n]->unk_A1 = 5;
+            w->unk_28[n] = p;
+            i = ++n;
+        } while (i < w->unk_B9);
     }
 
     func_0807BC08();
@@ -2130,10 +2136,6 @@ void func_0807ABC8(UnkStruct_08080268* w) {
     func_0807AE78((UnkStruct_08078754*)w);
     w->unk_C4[1] = 0;
 }
-
-#else
-INCLUDE_ASM("card/func_0807ABC8.s");
-#endif
 
 void func_0807AE78(UnkStruct_08078754* w) {
     CardSlot* c;
