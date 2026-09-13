@@ -1,0 +1,47 @@
+{
+  "us": {
+    "src/card_state.o": {
+      "base": "0x02039DD8",
+      "size": "0xA82",
+      "symbols": {
+        "gUnk_02039DD8": {"offset": "0x0", "size": "0x1"},
+        "gUnk_02039DDC": {"offset": "0x4", "size": "0x1"},
+        "gDecks": {"offset": "0x8", "size": "0x2A0"},
+        "gCardCollection": {"offset": "0x2A8", "size": "0x7CE"},
+        "gUnk_0203A850": {"offset": "0xA78", "size": "0x4"},
+        "gUnk_0203A854": {"offset": "0xA7C", "size": "0x4"},
+        "gCardCount": {"offset": "0xA80", "size": "0x2"}
+      }
+    }
+  },
+  "jp": {
+    "src/card_state.o": {
+      "base": "0x02039D48",
+      "size": "0xA82",
+      "symbols": {
+        "gUnk_02039DD8": {"offset": "0x0", "size": "0x1"},
+        "gUnk_02039DDC": {"offset": "0x4", "size": "0x1"},
+        "gDecks": {"offset": "0x8", "size": "0x2A0"},
+        "gCardCollection": {"offset": "0x2A8", "size": "0x7CE"},
+        "gUnk_0203A850": {"offset": "0xA78", "size": "0x4"},
+        "gUnk_0203A854": {"offset": "0xA7C", "size": "0x4"},
+        "gCardCount": {"offset": "0xA80", "size": "0x2"}
+      }
+    }
+  },
+  "eu": {
+    "src/card_state.o": {
+      "base": "0x0203A3E8",
+      "size": "0xA82",
+      "symbols": {
+        "gUnk_02039DD8": {"offset": "0x0", "size": "0x1"},
+        "gUnk_02039DDC": {"offset": "0x4", "size": "0x1"},
+        "gDecks": {"offset": "0x8", "size": "0x2A0"},
+        "gCardCollection": {"offset": "0x2A8", "size": "0x7CE"},
+        "gUnk_0203A850": {"offset": "0xA78", "size": "0x4"},
+        "gUnk_0203A854": {"offset": "0xA7C", "size": "0x4"},
+        "gCardCount": {"offset": "0xA80", "size": "0x2"}
+      }
+    }
+  }
+}

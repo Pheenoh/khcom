@@ -12,6 +12,7 @@
 #include "card_api.h"
 
 #include "card_deck.h"
+#include "card_state.h"
 
 #include "types.h"
 #include "game_state.h"
@@ -36,11 +37,7 @@ void func_080A096C(u16 a, u16* p);
 #endif
 
 extern CardDef gCardDefs[];
-extern u16 gCardCollection[];
-extern u16 gCardCount;
 
-extern Deck gDecks[];
-extern u8 gUnk_02039DDC;
 extern u8 gUnk_0203A9D4;
 extern u8 gUnk_0203A9D8;
 
@@ -90,9 +87,7 @@ typedef struct CardDisplayWork {
     u8 unk_A6;
     u8 unk_A7;
 } CardDisplayWork;
-extern u8 gUnk_02039DD8;
 extern u8 gUnk_0203A9E8;
-extern void* gUnk_0203A854;
 extern u8 gTaskDescMapSelect[];
 extern u8 gTaskDescPrizeCardInit[];
 extern u16 gUnk_0203A9DC;
@@ -1232,7 +1227,6 @@ extern u32 gUnk_03006C10;
 extern u16 gUnk_09EE4AC8[];
 extern u16 gUnk_09EE4AD6[];
 extern u16 gUnk_09EE4AE4[];
-extern Deck* gUnk_0203A850;
 extern s16 gSineTable[];
 extern u32 gUnk_09036210[];
 extern s16 gUnk_09036278[];
