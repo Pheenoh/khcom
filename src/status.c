@@ -949,7 +949,7 @@ void task_status_friend_3(StatusFriendWork* work) {
 
 u16 func_080D8B84(void** a, void** b, void** c) {
     StatusFriendTable table;
-    StatusCardDef* card;
+    CardDef* card;
     const void* data;
     u16 count;
     u16 index;

@@ -1,5 +1,8 @@
+#include "card_def_data.h"
 #ifndef GUARD_MS_CHARGE_H
 #define GUARD_MS_CHARGE_H
+
+#include "card_description_data.h"
 
 #include "card_types.h"
 #include "card_state.h"
@@ -29,8 +32,6 @@
 
 
 extern s16 gSineTable[];
-extern CardBack gUnk_08F709B0[];
-extern CardDef gCardDefs[];
 extern u8 gUnk_099A7C64[];
 extern u8 gUnk_09A1DB9C[];
 extern u8 gUnk_09A1DCDC[];
@@ -45,7 +46,6 @@ extern u8 gUnk_09A3DD7C[];
 extern u8 gUnk_09A3DD88[];
 extern u8 gUnk_09A3DE08[];
 extern u8 gUnk_09A3DE7C[];
-extern void* gUnk_09EE8F48[];
 
 s16 func_08084BAC(void);
 s16 func_08084BF0(void);

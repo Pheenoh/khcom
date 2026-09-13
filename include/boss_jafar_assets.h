@@ -79,4 +79,13 @@ extern u8 gUnk_096E1464[];
 extern u8 gUnk_096E1C64[];
 extern u8 gUnk_096E2464[];
 
+extern u8 gUnk_096C6C64[];
+extern u8 gUnk_096C7464[];
+extern u8 gUnk_096C7C64[];
+extern u8 gUnk_096C8464[];
+extern u8 gUnk_096C8C64[];
+extern u8 gUnk_096C9464[];
+extern u8 gUnk_096C9C64[];
+extern u8 gUnk_096CA464[];
+
 #endif

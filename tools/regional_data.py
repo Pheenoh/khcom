@@ -169,24 +169,29 @@ def normalize_sidecar(document, roms=None):
             fields(asset, {'name', 'address', 'size', 'sha256', 'kind'}, set(), version + ' binary asset')
             name = identifier(asset['name'], version + ' binary asset')
             kind = asset['kind']
-            if not isinstance(kind, str) or kind not in ('Sprite', 'AnimHeader'):
+            if not isinstance(kind, str) or kind not in ('Sprite', 'AnimHeader', 'SongHeader'):
                 raise ValueError(f'{name}: unsupported binary asset kind')
             address, size = extent(asset['address'], asset['size'], limit, name)
-            header, stride = (2, 6) if kind == 'Sprite' else (6, 4)
-            if address % 2 or size < header or (size - header) % stride:
+            header, stride = {'Sprite': (2, 6), 'AnimHeader': (6, 4), 'SongHeader': (4, 4)}[kind]
+            alignment = 4 if kind == 'SongHeader' else 2
+            if address % alignment or size < header or (size - header) % stride:
                 raise ValueError(f'{name}: binary alignment or size disagrees with format')
             digest = asset['sha256']
             if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
                 raise ValueError(f'{name}: invalid binary SHA-256')
             if rom is not None:
                 data = rom[address - ROM_BASE:address - ROM_BASE + size]
-                count = struct.unpack_from('<H', data, header - 2)[0]
-                if size != header + count * stride:
+                if kind == 'SongHeader':
+                    expected = 8 + data[0] * 4 if data[0] else 4
+                else:
+                    count = struct.unpack_from('<H', data, header - 2)[0]
+                    expected = header + count * stride
+                if size != expected:
                     raise ValueError(f'{name}: binary size differs from complete format extent')
                 if hashlib.sha256(data).hexdigest() != digest:
                     raise ValueError(f'{name}: original binary ROM SHA-256 differs')
             item = {'name': name, 'address': address, 'size': size, 'kind': kind,
-                    'sha256': digest, 'ctype': 'u8' if kind == 'Sprite' else 'AnimHeader',
+                    'sha256': digest, 'ctype': 'u8' if kind == 'Sprite' else kind,
                     'groups': ['binary_assets']}
             previous = assets.get(address)
             if previous is not None:

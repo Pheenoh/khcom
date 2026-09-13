@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_DEBUG_H
 #define GUARD_MODE_DEBUG_H
@@ -39,8 +40,6 @@ extern u8 gUnk_08C72CE4[];
 extern u8 gUnk_08EEEB84[];
 extern u8 gUnk_08F683E4[];
 extern u8 gUnk_08F685E4[];
-extern u8 gUnk_09EDF764[];
-extern u8 gUnk_09EDF774[];
 extern Mode gModeChkbtl;
 extern Mode gModeChksnd;
 

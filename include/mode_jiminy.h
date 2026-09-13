@@ -1,3 +1,4 @@
+#include "battle_localized_data.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
@@ -90,8 +91,6 @@ extern u8 gUnk_09611AB8[];
 extern u8 gUnk_09614AB8[];
 extern u8 gUnk_09614D58[];
 extern u8 gUnk_09A3CC9C[];
-extern u8 gUnk_09EE2668[];
-extern u8 gUnk_09EE2678[];
 
 u8 func_0805AA9C(void);
 void func_0805A8D0(void);

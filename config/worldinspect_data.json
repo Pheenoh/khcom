@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "provenance": {
+    "worldinspect": "mode_worldinspect_0 iterates 12 floor/navigation entries and 14 world resource records explicitly. The four directional navigation fields form a closed 0..11 graph. Each world record carries its own matching 0..13 ID; both description selectors stay 0..13. Existing WorldinspectNav exposes 20 bytes and WorldinspectMsg 52 bytes, agreeing with the MdWorldNav/MdMsg storage layouts. Their complete scalar fields and padding agree across all regions. Palette and tile sizes are consumed by LoadObjPalette/LoadObjTiles and those complete copied payloads agree byte-for-byte. All 26 Sprite/OAM payloads match JP, and 25 match EU; world 5 small-icon Sprite preserves the actual EU one-pixel decrement in all three vertical OAM coordinates with every other field unchanged. Native world names reuse existing Jiminy encoded assets; EU names reuse existing compiler-owned LocalizedText objects."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "worldinspect_data.c",
+          "section": ".data_worldinspect",
+          "address": "0x9ef8fac",
+          "size": 968,
+          "sha256": "fd796d3287aca104cf139a98d321172d2661420f9bcb7ad4f25f86a9fd57f886",
+          "objects": [
+            {
+              "name": "gUnk_09EF8FAC",
+              "offset": 0,
+              "size": 240
+            },
+            {
+              "name": "gUnk_09EF909C",
+              "offset": 240,
+              "size": 728
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "worldinspect_data.c",
+          "section": ".data_worldinspect",
+          "address": "0x9ed0398",
+          "size": 968,
+          "sha256": "39d0af1ee8333dda1ef8f037033cdea0cab58de341366281085af5c95360cce9",
+          "objects": [
+            {
+              "name": "gUnk_09EF8FAC",
+              "offset": 0,
+              "size": 240
+            },
+            {
+              "name": "gUnk_09EF909C",
+              "offset": 240,
+              "size": 728
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "worldinspect_data.c",
+          "section": ".data_worldinspect",
+          "address": "0x9f848ac",
+          "size": 968,
+          "sha256": "45851e6e9c8de015b8584e959c9f997cab762203fcfec666290d32193f13952c",
+          "objects": [
+            {
+              "name": "gUnk_09EF8FAC",
+              "offset": 0,
+              "size": 240
+            },
+            {
+              "name": "gUnk_09EF909C",
+              "offset": 240,
+              "size": 728
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

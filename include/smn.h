@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #ifndef GUARD_SMN_H
 #define GUARD_SMN_H
 
@@ -246,8 +247,6 @@ extern s16 gSineTable[];
 extern u8 gUnk_088A5D7A[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09617FF8[];
-extern u8 gUnk_09EDE7B4[];
-extern u8 gUnk_09EDE7E4[];
 extern u8 gUnk_09617F98[];
 extern u8 gUnk_09618018[];
 extern u8 gUnk_09618098[];

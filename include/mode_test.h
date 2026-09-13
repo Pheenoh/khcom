@@ -1,3 +1,5 @@
+#include "mode_test_data.h"
+#include "card_def_data.h"
 #include "card_lookup_data.h"
 #include "card_animation_data.h"
 #include "registration_data.h"
@@ -207,15 +209,12 @@ extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
 extern Mode gModeBattle;
 extern const s16 gSineTable[];
 extern vu16 gSystemFlags;
-extern CardDef gCardDefs[];
 extern Mode gModeChkbtl;
-extern Mode gUnk_09EE2704;
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_090D4DD0[];
 extern u8 gUnk_090D7C84[];
 extern u8 gUnk_0941BEB8[];
 extern u8 gUnk_0941DD38[];
-extern u8* gUnk_09EE26EC[];
 extern u8 gUnk_096148B8[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_08F69BE4[];

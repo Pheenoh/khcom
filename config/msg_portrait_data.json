@@ -1,0 +1,3422 @@
+{
+  "version": 1,
+  "provenance": {
+    "portraits": "The portrait ID sentinel is62 in msgface_0/msgface_1, and the62-entry index selects expression arrays used by msgface and card message tasks. Every four-pointer expression record has the independently consumed tiles, palette, sprite-pointer-table and AnimHeader-pointer-table roles followed by two consumed bytes and two zero padding bytes. All401 distinct graphics/animation pointer expressions resolve to existing canonical compiler-owned resource arrays, including explicit interior indices, and match the regional ROM pointers. The62 independently selected array bases partition241 complete records with identical group counts in all three versions. The next separately consumed gUnk_09033758 coordinate table starts with negative scalar values that cannot be another expression record. Coherent unused continuation expressions are owned without claiming they are called at runtime. Five groups have exactly one expression and are real scalar objects; the remaining57 are arrays."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032484",
+          "address": "0x9032484",
+          "size": 160,
+          "sha256": "389ef8c49cd1235b9a145628ee8c9b3f7d47d6616e8c1147657aeb82801099a1",
+          "objects": [
+            {
+              "name": "gUnk_09032484",
+              "offset": 0,
+              "size": 160,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032524",
+          "address": "0x9032524",
+          "size": 120,
+          "sha256": "8613036119ede850122deb5ea15b04272e43cde48f2507b6719e5f5ab9ed8922",
+          "objects": [
+            {
+              "name": "gUnk_09032524",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903259C",
+          "address": "0x903259c",
+          "size": 100,
+          "sha256": "796cbc4c5ee784cdf48b7387bcfb9253ef382acc1fccad4d6502ddd84bb4f4ab",
+          "objects": [
+            {
+              "name": "gUnk_0903259C",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032600",
+          "address": "0x9032600",
+          "size": 100,
+          "sha256": "803f9a2b6ba9d95504faeff361b04f8d729a5f5d03508dab9c1672e0998ab3ff",
+          "objects": [
+            {
+              "name": "gUnk_09032600",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032664",
+          "address": "0x9032664",
+          "size": 60,
+          "sha256": "98e07424321552bcf9782fbb25e075bffd9251983b6bca73b4bf3f60e12d196b",
+          "objects": [
+            {
+              "name": "gUnk_09032664",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090326A0",
+          "address": "0x90326a0",
+          "size": 20,
+          "sha256": "7880cdf7c11b8772d364c448e1f9cbb76ad73d03e43dbd8d3a9c2dfc090113f0",
+          "objects": [
+            {
+              "name": "gUnk_090326A0",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090326B4",
+          "address": "0x90326b4",
+          "size": 80,
+          "sha256": "80c50ba86a05699dc13077ad19150f57f27cd930b36e014bb1dd1742640daf9f",
+          "objects": [
+            {
+              "name": "gUnk_090326B4",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032704",
+          "address": "0x9032704",
+          "size": 80,
+          "sha256": "1dfe3b335f2a73ca8a522383aec7b8df41d408435c357b7a0bcbd1dd49bb5daa",
+          "objects": [
+            {
+              "name": "gUnk_09032704",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032754",
+          "address": "0x9032754",
+          "size": 100,
+          "sha256": "5d6f413a9bc8f56b580a52b44ed6f8affe928b9fb7bf273709f011b070c2b7d8",
+          "objects": [
+            {
+              "name": "gUnk_09032754",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327B8",
+          "address": "0x90327b8",
+          "size": 20,
+          "sha256": "01c65288f49d84d52f0cb12628883f1fcb482d6517bd7848625f5e07186f2434",
+          "objects": [
+            {
+              "name": "gUnk_090327B8",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327CC",
+          "address": "0x90327cc",
+          "size": 40,
+          "sha256": "190ab9d04d6cb96c4ded46c617973c8ccab7fe55ebcc6ba322bd030b9d67b42d",
+          "objects": [
+            {
+              "name": "gUnk_090327CC",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327F4",
+          "address": "0x90327f4",
+          "size": 40,
+          "sha256": "0682a20f3d0736eaf78f1c76f11bd80bb1b0700335fa11bfee37d5667af17e6f",
+          "objects": [
+            {
+              "name": "gUnk_090327F4",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903281C",
+          "address": "0x903281c",
+          "size": 300,
+          "sha256": "76285cc735d7353176711da6adee9a62f27bea52c0d2817df48f29c2db1ad46b",
+          "objects": [
+            {
+              "name": "gUnk_0903281C",
+              "offset": 0,
+              "size": 300,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032948",
+          "address": "0x9032948",
+          "size": 100,
+          "sha256": "d559461e6a85beb48ec27cb2ec3719da7af5facb9dd68f9dfff9bd6e7697985c",
+          "objects": [
+            {
+              "name": "gUnk_09032948",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090329AC",
+          "address": "0x90329ac",
+          "size": 80,
+          "sha256": "e0fc0027fe71dcbb1909e1b75327ae79c22bbb6206bad688ed980bf57130bf35",
+          "objects": [
+            {
+              "name": "gUnk_090329AC",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090329FC",
+          "address": "0x90329fc",
+          "size": 120,
+          "sha256": "95bcf6b2204c28a4537a6a8c74984c14886464063a883531e27cf28b14612d88",
+          "objects": [
+            {
+              "name": "gUnk_090329FC",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032A74",
+          "address": "0x9032a74",
+          "size": 60,
+          "sha256": "741f77a2527c24a36d866a2ea8ea55f79e076f1968eab59377d8348af8da48cf",
+          "objects": [
+            {
+              "name": "gUnk_09032A74",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032AB0",
+          "address": "0x9032ab0",
+          "size": 100,
+          "sha256": "0c0620871437e5aee33c9dfd9a3e5222bb5dfa0c375029fe9dd2bf330d325cfe",
+          "objects": [
+            {
+              "name": "gUnk_09032AB0",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032B14",
+          "address": "0x9032b14",
+          "size": 80,
+          "sha256": "f0376f6e5c5d169e011c6c3add5728b400ecf7b7e73f0af6691d53766fd61c67",
+          "objects": [
+            {
+              "name": "gUnk_09032B14",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032B64",
+          "address": "0x9032b64",
+          "size": 60,
+          "sha256": "d60a451907e7afcc08cd84e07be68e0dfb5de1b7bd00b5684db20f2beb623f95",
+          "objects": [
+            {
+              "name": "gUnk_09032B64",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032BA0",
+          "address": "0x9032ba0",
+          "size": 60,
+          "sha256": "579e32c393328a43549e093798c1b11beb8cfa1f399859ce204b4ff76d1d4efa",
+          "objects": [
+            {
+              "name": "gUnk_09032BA0",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032BDC",
+          "address": "0x9032bdc",
+          "size": 60,
+          "sha256": "181a5bf97b0f1fe18f56498349a02a8c77c78385fe567d424de75bbdfad3e917",
+          "objects": [
+            {
+              "name": "gUnk_09032BDC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032C18",
+          "address": "0x9032c18",
+          "size": 80,
+          "sha256": "f04be561b38a6495327014e8a9b28491a8caa4748f4a24d0aef4fc4cb9838eb5",
+          "objects": [
+            {
+              "name": "gUnk_09032C18",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032C68",
+          "address": "0x9032c68",
+          "size": 100,
+          "sha256": "ca9197306af2fc3f1c61fe289a0a7e2321c3b3119e9bbae5a45b9e91771fb442",
+          "objects": [
+            {
+              "name": "gUnk_09032C68",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032CCC",
+          "address": "0x9032ccc",
+          "size": 20,
+          "sha256": "fd7774958c85ed113ef356bb181391876ced9afa9a900a7165b2140f995316b1",
+          "objects": [
+            {
+              "name": "gUnk_09032CCC",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032CE0",
+          "address": "0x9032ce0",
+          "size": 40,
+          "sha256": "b13280ce810b4d571638e2cdca2eaac33881d99e36d447d27a03d8ebcc46a21c",
+          "objects": [
+            {
+              "name": "gUnk_09032CE0",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032D08",
+          "address": "0x9032d08",
+          "size": 120,
+          "sha256": "ac9703678f1ca36e96b193011b6a629203b5ea1c361986d19975b06c60750f66",
+          "objects": [
+            {
+              "name": "gUnk_09032D08",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032D80",
+          "address": "0x9032d80",
+          "size": 120,
+          "sha256": "87645cba8967d7626f03ada3d941f8d40dd7816cdd2367f995de60acf0145024",
+          "objects": [
+            {
+              "name": "gUnk_09032D80",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032DF8",
+          "address": "0x9032df8",
+          "size": 40,
+          "sha256": "b121b5a6706e82593044b53bff2d34260bbff616c9404c26f547c19d2cac2aa4",
+          "objects": [
+            {
+              "name": "gUnk_09032DF8",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032E20",
+          "address": "0x9032e20",
+          "size": 80,
+          "sha256": "7097a6b621a2b879793e6d0f24a29f66ccebd8bbd4a62aa234460e9eae5147f4",
+          "objects": [
+            {
+              "name": "gUnk_09032E20",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032E70",
+          "address": "0x9032e70",
+          "size": 80,
+          "sha256": "dc493f2ec5f021a35cb6a815772758417fe4f30b2618cbdd989d49ed94285ae7",
+          "objects": [
+            {
+              "name": "gUnk_09032E70",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032EC0",
+          "address": "0x9032ec0",
+          "size": 120,
+          "sha256": "72f7a214b5b4c67df3c4c0bdc4f8f0ffbc3da4d9cb1f53b4b21a4b7018937997",
+          "objects": [
+            {
+              "name": "gUnk_09032EC0",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032F38",
+          "address": "0x9032f38",
+          "size": 100,
+          "sha256": "9e71c79189b06559245616fa3db6ef9da148e74f043e4d87a4213706742a2c75",
+          "objects": [
+            {
+              "name": "gUnk_09032F38",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032F9C",
+          "address": "0x9032f9c",
+          "size": 80,
+          "sha256": "10516d817d0cf89fb2e78716ef0b1661d95829cd42676ea1e3c849fdbe78fe4c",
+          "objects": [
+            {
+              "name": "gUnk_09032F9C",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032FEC",
+          "address": "0x9032fec",
+          "size": 80,
+          "sha256": "86b7596f7e8f1a3540d6a561d0c716f90a51cfb7aabcb99fd5663d2150a2b448",
+          "objects": [
+            {
+              "name": "gUnk_09032FEC",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903303C",
+          "address": "0x903303c",
+          "size": 60,
+          "sha256": "b6f09cac9d2068ed0f5abc708bf15e1041c4eaf7075022f8e317101feca4b80d",
+          "objects": [
+            {
+              "name": "gUnk_0903303C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033078",
+          "address": "0x9033078",
+          "size": 60,
+          "sha256": "6e2035c8485f92bc6432826ca4d7a504ed2caa9de9739b74b522d4c31c073085",
+          "objects": [
+            {
+              "name": "gUnk_09033078",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090330B4",
+          "address": "0x90330b4",
+          "size": 40,
+          "sha256": "dacd2184b7e1af18b907c97f6d91bd85f1e6778a5ffd1f0436fe74b0b5f1f1ad",
+          "objects": [
+            {
+              "name": "gUnk_090330B4",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090330DC",
+          "address": "0x90330dc",
+          "size": 40,
+          "sha256": "7da7179cd59dd3b789cc8b651c11b712330067a40b9d168c24d6532b60d3b5db",
+          "objects": [
+            {
+              "name": "gUnk_090330DC",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033104",
+          "address": "0x9033104",
+          "size": 60,
+          "sha256": "2cf43c918eaeca180e41cf442d77a4cddb5b475c6eabe0dc611084a2af103034",
+          "objects": [
+            {
+              "name": "gUnk_09033104",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033140",
+          "address": "0x9033140",
+          "size": 60,
+          "sha256": "c2a2679830cc28402e8d60fee36e34f33c617500e725c64df9c72ddb8be0aad5",
+          "objects": [
+            {
+              "name": "gUnk_09033140",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903317C",
+          "address": "0x903317c",
+          "size": 80,
+          "sha256": "1a45d46d5198eaad493c7484342f8e1f54384edf5747d86961f2cced49368578",
+          "objects": [
+            {
+              "name": "gUnk_0903317C",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090331CC",
+          "address": "0x90331cc",
+          "size": 60,
+          "sha256": "e1587afb6cba549109ec7a25c98776634f54b2c392e521344ad1eb46361b0426",
+          "objects": [
+            {
+              "name": "gUnk_090331CC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033208",
+          "address": "0x9033208",
+          "size": 80,
+          "sha256": "3057aea7de57b2a3e21fb28f7cb622bb725ea61a876ad77a199c0b87e683f03b",
+          "objects": [
+            {
+              "name": "gUnk_09033208",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033258",
+          "address": "0x9033258",
+          "size": 80,
+          "sha256": "c13cbc1fbff386129f93e68c29d8637f27bef33c25c0800811b5b8b609197bd5",
+          "objects": [
+            {
+              "name": "gUnk_09033258",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090332A8",
+          "address": "0x90332a8",
+          "size": 100,
+          "sha256": "aee688bcc665b7ae3e43b727ae82fc16aaddb85db154b225fdf3c8b9d678299c",
+          "objects": [
+            {
+              "name": "gUnk_090332A8",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903330C",
+          "address": "0x903330c",
+          "size": 60,
+          "sha256": "add595e63734366dcec4268f8b4a0b651977f28ccdeeef514423542fc405a8da",
+          "objects": [
+            {
+              "name": "gUnk_0903330C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033348",
+          "address": "0x9033348",
+          "size": 80,
+          "sha256": "951d6193d1ae133b8e034eeba3591e1a727c4795091250f93b3b1e5604b0d3d3",
+          "objects": [
+            {
+              "name": "gUnk_09033348",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033398",
+          "address": "0x9033398",
+          "size": 100,
+          "sha256": "abda3ac84e17196c420b9d05b50eebf95ba016d7c7dcb3a3aa120a841a29c083",
+          "objects": [
+            {
+              "name": "gUnk_09033398",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090333FC",
+          "address": "0x90333fc",
+          "size": 60,
+          "sha256": "b3cf6441e728c0928a6d7fdb300781f99d0e341389a9452a40e5a41ae115d9c8",
+          "objects": [
+            {
+              "name": "gUnk_090333FC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033438",
+          "address": "0x9033438",
+          "size": 40,
+          "sha256": "58c01387cd61382cb5658af1bdd71e2e07a7e1d95480cea4fb36fee20cda7fe5",
+          "objects": [
+            {
+              "name": "gUnk_09033438",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033460",
+          "address": "0x9033460",
+          "size": 60,
+          "sha256": "78ab2a72a155a057868b77adb725a365b2b5280703429178c0663d573349639e",
+          "objects": [
+            {
+              "name": "gUnk_09033460",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903349C",
+          "address": "0x903349c",
+          "size": 20,
+          "sha256": "748d82c170ad560c9493cfba5e5ee51ad5ed0ab4cd8854e9cd7457a550b32c73",
+          "objects": [
+            {
+              "name": "gUnk_0903349C",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090334B0",
+          "address": "0x90334b0",
+          "size": 60,
+          "sha256": "def85e9bbfbac279111544df35c248658e75d5a3d7b3817b03071af6fd9b9584",
+          "objects": [
+            {
+              "name": "gUnk_090334B0",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090334EC",
+          "address": "0x90334ec",
+          "size": 20,
+          "sha256": "3a5599f095e18c9528b2d055ac981e5ec8a4c6d17b7a26b34cdaf5e8094be0b8",
+          "objects": [
+            {
+              "name": "gUnk_090334EC",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033500",
+          "address": "0x9033500",
+          "size": 60,
+          "sha256": "37b902fa9450b8c9f8ad4384fb7b88b7434ca44945328895f545b0b3119e4fba",
+          "objects": [
+            {
+              "name": "gUnk_09033500",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903353C",
+          "address": "0x903353c",
+          "size": 100,
+          "sha256": "da0dca2f269f078b89097d2efc4d42f55830ffccf9d026d09365280b04bac7d8",
+          "objects": [
+            {
+              "name": "gUnk_0903353C",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090335A0",
+          "address": "0x90335a0",
+          "size": 100,
+          "sha256": "f863174b35a04267cf3dda44abdfdf8cf8874ac0172c5cac61f5b9dd8bc3b9b6",
+          "objects": [
+            {
+              "name": "gUnk_090335A0",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033604",
+          "address": "0x9033604",
+          "size": 120,
+          "sha256": "93bc3091ce703c946584cc58e57fcbde77445580d03de1c51deaa41c4bde4380",
+          "objects": [
+            {
+              "name": "gUnk_09033604",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903367C",
+          "address": "0x903367c",
+          "size": 60,
+          "sha256": "9aa3ac3cb6bd838693fb5e548c25afbc6ce4fa1be6e14a19839e0e4730887e52",
+          "objects": [
+            {
+              "name": "gUnk_0903367C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090336B8",
+          "address": "0x90336b8",
+          "size": 60,
+          "sha256": "334fa315f8fc9411f6fc40bd49f1bec4072dd1a94bfab84b0407168c1d9db033",
+          "objects": [
+            {
+              "name": "gUnk_090336B8",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090336F4",
+          "address": "0x90336f4",
+          "size": 100,
+          "sha256": "2dbd182f1b3316281ba141a43b852b0b160005851065497ff57590d0bebfb225",
+          "objects": [
+            {
+              "name": "gUnk_090336F4",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_index",
+          "address": "0x9ee45dc",
+          "size": 248,
+          "sha256": "247588868667a4211e7be4107739565016d9392ef1e44b98ba5a54c6db4dd34d",
+          "objects": [
+            {
+              "name": "gUnk_09EE45DC",
+              "offset": 0,
+              "size": 248,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032484",
+          "address": "0x9005748",
+          "size": 160,
+          "sha256": "a04abe7986c1d92c8e76c7c0f80c1467c0647566fb04df8f6306c44c6962bcc5",
+          "objects": [
+            {
+              "name": "gUnk_09032484",
+              "offset": 0,
+              "size": 160,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032524",
+          "address": "0x90057e8",
+          "size": 120,
+          "sha256": "4a4f75ab8eb2ea0c2886e1463db467a14b4fa7440bc4687387e480fac70c7665",
+          "objects": [
+            {
+              "name": "gUnk_09032524",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903259C",
+          "address": "0x9005860",
+          "size": 100,
+          "sha256": "75a1dc47d7b9ef74129c3da8c6cda9a85ff1f5e739f07267e4159d88d632670b",
+          "objects": [
+            {
+              "name": "gUnk_0903259C",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032600",
+          "address": "0x90058c4",
+          "size": 100,
+          "sha256": "41bf48463c390378e582d0d67a2cae37379202a718f8154eabbd9bcca555937c",
+          "objects": [
+            {
+              "name": "gUnk_09032600",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032664",
+          "address": "0x9005928",
+          "size": 60,
+          "sha256": "3e11a351cfaa0d7ac6ef5a48c99919584296967340d692a0dcb8c56bcc55906c",
+          "objects": [
+            {
+              "name": "gUnk_09032664",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090326A0",
+          "address": "0x9005964",
+          "size": 20,
+          "sha256": "edfc5766b6cdf1bc0e940eb6b67d8def799e96582d4db03ab7341055364a5683",
+          "objects": [
+            {
+              "name": "gUnk_090326A0",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090326B4",
+          "address": "0x9005978",
+          "size": 80,
+          "sha256": "9dbcf6ac9931eee18d3c6540269240d5eb70eaa26167c31ed7cdb76f1110a4b0",
+          "objects": [
+            {
+              "name": "gUnk_090326B4",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032704",
+          "address": "0x90059c8",
+          "size": 80,
+          "sha256": "cce12db2bcabdceaabafad5c12eb80e1e2c0ba2278066d24e043b541353d2747",
+          "objects": [
+            {
+              "name": "gUnk_09032704",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032754",
+          "address": "0x9005a18",
+          "size": 100,
+          "sha256": "155b11b9e39cab4d8f4735cc544b74137a4cd4c7345f3ee0ce53027c0aac999c",
+          "objects": [
+            {
+              "name": "gUnk_09032754",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327B8",
+          "address": "0x9005a7c",
+          "size": 20,
+          "sha256": "77b6c427967bef52d2296a67961298534d30840718e5df038fcaf90897e192e4",
+          "objects": [
+            {
+              "name": "gUnk_090327B8",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327CC",
+          "address": "0x9005a90",
+          "size": 40,
+          "sha256": "d078fd38c57236d5114133d25e9f64e262698dba66ec220c440e375f618b677f",
+          "objects": [
+            {
+              "name": "gUnk_090327CC",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327F4",
+          "address": "0x9005ab8",
+          "size": 40,
+          "sha256": "30d10932132bc5aeb7deadd6a5fc8b097f043f24b94c9cdba464090e14e84ed7",
+          "objects": [
+            {
+              "name": "gUnk_090327F4",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903281C",
+          "address": "0x9005ae0",
+          "size": 300,
+          "sha256": "1ace07949f2b0b59c3868461e399051e9090c36ee49e924f21e8c7827d7070cb",
+          "objects": [
+            {
+              "name": "gUnk_0903281C",
+              "offset": 0,
+              "size": 300,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032948",
+          "address": "0x9005c0c",
+          "size": 100,
+          "sha256": "5b4b4b3555e6ddd58b0c5cf3c14382ec06a4614a882760750d9ffd492184fc89",
+          "objects": [
+            {
+              "name": "gUnk_09032948",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090329AC",
+          "address": "0x9005c70",
+          "size": 80,
+          "sha256": "a6879665d48d8c591333f54f423360b207589d72f70773da1f6483782db29ab2",
+          "objects": [
+            {
+              "name": "gUnk_090329AC",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090329FC",
+          "address": "0x9005cc0",
+          "size": 120,
+          "sha256": "4cc3a7bf152b1f698f16ff294b68f70ba03d638d65b7f719b1a6440b0a4d057a",
+          "objects": [
+            {
+              "name": "gUnk_090329FC",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032A74",
+          "address": "0x9005d38",
+          "size": 60,
+          "sha256": "faba899feb0f830549c755b661ecb65e0ed4b3bb353dfd68816fbe35db1f1280",
+          "objects": [
+            {
+              "name": "gUnk_09032A74",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032AB0",
+          "address": "0x9005d74",
+          "size": 100,
+          "sha256": "9209508dc440478ebdfab60731288db37ecefd422e93e195f93c4548151f9c32",
+          "objects": [
+            {
+              "name": "gUnk_09032AB0",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032B14",
+          "address": "0x9005dd8",
+          "size": 80,
+          "sha256": "642a9ac91762a17ac5bc6460d90a087bcc9b7f0262410145c4860eb940fb3f10",
+          "objects": [
+            {
+              "name": "gUnk_09032B14",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032B64",
+          "address": "0x9005e28",
+          "size": 60,
+          "sha256": "06ba1fa10b0547f13a337fd679d854cd0fdf2f61f4aa3b1947da4e903040a459",
+          "objects": [
+            {
+              "name": "gUnk_09032B64",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032BA0",
+          "address": "0x9005e64",
+          "size": 60,
+          "sha256": "bfb71f809d7a67cdb784e505c5f693b2f68d924e055b7d5fc6d924f700482775",
+          "objects": [
+            {
+              "name": "gUnk_09032BA0",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032BDC",
+          "address": "0x9005ea0",
+          "size": 60,
+          "sha256": "7b173ea739e0a893290d2a63b241a4e5bc20d7bf9767639cacd635c9c1d9c805",
+          "objects": [
+            {
+              "name": "gUnk_09032BDC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032C18",
+          "address": "0x9005edc",
+          "size": 80,
+          "sha256": "af912a9758631929d9b656941c9238798fb9863c881d58f1a29492521f64c2e8",
+          "objects": [
+            {
+              "name": "gUnk_09032C18",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032C68",
+          "address": "0x9005f2c",
+          "size": 100,
+          "sha256": "cc1d534d50b9d6523cbba38ae8bf0e4540e21ea9378c30542eab5581f9eee3fe",
+          "objects": [
+            {
+              "name": "gUnk_09032C68",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032CCC",
+          "address": "0x9005f90",
+          "size": 20,
+          "sha256": "43617f0ae905d0f12170e12392711ac64cf5963834bd33c9b9f8ed4e881db52a",
+          "objects": [
+            {
+              "name": "gUnk_09032CCC",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032CE0",
+          "address": "0x9005fa4",
+          "size": 40,
+          "sha256": "9c65261b2f59eeffa2a34c47f0817acd4457d9cf92b60df28182a981c823ab18",
+          "objects": [
+            {
+              "name": "gUnk_09032CE0",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032D08",
+          "address": "0x9005fcc",
+          "size": 120,
+          "sha256": "ab827c1349727957f350c66fac016747598cd517562c2afac6317129f36aaed6",
+          "objects": [
+            {
+              "name": "gUnk_09032D08",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032D80",
+          "address": "0x9006044",
+          "size": 120,
+          "sha256": "ceb3fb563bd2a4ea64231505c307f4e027d7a9657df9731df608064ae84c853e",
+          "objects": [
+            {
+              "name": "gUnk_09032D80",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032DF8",
+          "address": "0x90060bc",
+          "size": 40,
+          "sha256": "0f9beb65f1edda85adc8668b20ea43d8c1adfc7f881c15fe80bcc180c8e99ecc",
+          "objects": [
+            {
+              "name": "gUnk_09032DF8",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032E20",
+          "address": "0x90060e4",
+          "size": 80,
+          "sha256": "6b3dbe66ae071912e84bc4a84906d6720792a05e7de6bcace012886b858749d4",
+          "objects": [
+            {
+              "name": "gUnk_09032E20",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032E70",
+          "address": "0x9006134",
+          "size": 80,
+          "sha256": "145e8c34c2da32f12be34183eaff8ba505a6bbc7127594b7397ace3f4e981543",
+          "objects": [
+            {
+              "name": "gUnk_09032E70",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032EC0",
+          "address": "0x9006184",
+          "size": 120,
+          "sha256": "8cc96987b7d2f52d4bf82360fcb3a50918e2c0b88c379761852174bc0e51b40c",
+          "objects": [
+            {
+              "name": "gUnk_09032EC0",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032F38",
+          "address": "0x90061fc",
+          "size": 100,
+          "sha256": "513669cfdc5487480af8ef39c2a867c56042da621fc976dd323058e4bb3b43c1",
+          "objects": [
+            {
+              "name": "gUnk_09032F38",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032F9C",
+          "address": "0x9006260",
+          "size": 80,
+          "sha256": "643971c0c08dd1680a3f10b4658c0a40892047966ae1f1130611bd3409ba1eea",
+          "objects": [
+            {
+              "name": "gUnk_09032F9C",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032FEC",
+          "address": "0x90062b0",
+          "size": 80,
+          "sha256": "3922c8fd58ca378590ab5c8414858aafac78b765358513e8a24696be91e5bbfb",
+          "objects": [
+            {
+              "name": "gUnk_09032FEC",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903303C",
+          "address": "0x9006300",
+          "size": 60,
+          "sha256": "9f2c158557c0c363d75a2189ed8f1e6c1d6f320ffad6bca106424c24b811fe99",
+          "objects": [
+            {
+              "name": "gUnk_0903303C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033078",
+          "address": "0x900633c",
+          "size": 60,
+          "sha256": "fe4229fae14d9aabbd10449384e223c695b4e39f521ab454b33c24656b4eeadc",
+          "objects": [
+            {
+              "name": "gUnk_09033078",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090330B4",
+          "address": "0x9006378",
+          "size": 40,
+          "sha256": "df83cfae4cc2bf974b5620cb7984f3cba79e5487548b52e07427687f2faad33a",
+          "objects": [
+            {
+              "name": "gUnk_090330B4",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090330DC",
+          "address": "0x90063a0",
+          "size": 40,
+          "sha256": "e6d70af2c50c38e8e33e14cc03e7bb1823b2cfc96ae5dac1bf7115c4d7355520",
+          "objects": [
+            {
+              "name": "gUnk_090330DC",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033104",
+          "address": "0x90063c8",
+          "size": 60,
+          "sha256": "d966a7e12a2ace9624a749c7f5959d62b9b4a9b9c1dbc0e6935183d4a513e143",
+          "objects": [
+            {
+              "name": "gUnk_09033104",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033140",
+          "address": "0x9006404",
+          "size": 60,
+          "sha256": "74891ad85c0259538ae3d9a4f064e5ad14f6e98bdb952c7ad6fd1254a9d7e4d1",
+          "objects": [
+            {
+              "name": "gUnk_09033140",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903317C",
+          "address": "0x9006440",
+          "size": 80,
+          "sha256": "00b4c4b6196e5222873a3cb77d5a36d5393e124ce5b5bc520e2a248b095d2edf",
+          "objects": [
+            {
+              "name": "gUnk_0903317C",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090331CC",
+          "address": "0x9006490",
+          "size": 60,
+          "sha256": "6bab2a36ec8caad2d7f09ae39ede83c0e5b7138b5ef841dd8cf4189091f597e6",
+          "objects": [
+            {
+              "name": "gUnk_090331CC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033208",
+          "address": "0x90064cc",
+          "size": 80,
+          "sha256": "628844eee13b597a299b23950b1618a1b77aeb637f213430ae642fc9ed02a1dc",
+          "objects": [
+            {
+              "name": "gUnk_09033208",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033258",
+          "address": "0x900651c",
+          "size": 80,
+          "sha256": "694f91ac744126274d47ee65f6f7f335d3d2ed45aa9885fa77975ee1c3559eba",
+          "objects": [
+            {
+              "name": "gUnk_09033258",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090332A8",
+          "address": "0x900656c",
+          "size": 100,
+          "sha256": "044fd38966f8717c5da253e70d26bbf4f1eb9f37f2b7fb18296d1e31d1db2f13",
+          "objects": [
+            {
+              "name": "gUnk_090332A8",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903330C",
+          "address": "0x90065d0",
+          "size": 60,
+          "sha256": "f572eff5a4ac63524fdf3de60af7b889e124fd79e8ede53b7a9cacebec4b3f43",
+          "objects": [
+            {
+              "name": "gUnk_0903330C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033348",
+          "address": "0x900660c",
+          "size": 80,
+          "sha256": "4abf42ee48b35c3401131db12ad756fe176e611ec2a2fce42e02aa76b1d31a92",
+          "objects": [
+            {
+              "name": "gUnk_09033348",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033398",
+          "address": "0x900665c",
+          "size": 100,
+          "sha256": "382e9434d504d5f639dc190416c04c9ddfcba5c7b55fcef68219b848e3d3866e",
+          "objects": [
+            {
+              "name": "gUnk_09033398",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090333FC",
+          "address": "0x90066c0",
+          "size": 60,
+          "sha256": "7804acf50faa09313b68244b36765afb27f20971c1cc48dba0b5a83f972a4dea",
+          "objects": [
+            {
+              "name": "gUnk_090333FC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033438",
+          "address": "0x90066fc",
+          "size": 40,
+          "sha256": "53c691098d52006fc493693687668bab40075253a2b8815601e8ada70c6b7f6c",
+          "objects": [
+            {
+              "name": "gUnk_09033438",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033460",
+          "address": "0x9006724",
+          "size": 60,
+          "sha256": "2365f800efc713ce21c605c0307c9c30721983c6facd03388d34fdaebb7297bb",
+          "objects": [
+            {
+              "name": "gUnk_09033460",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903349C",
+          "address": "0x9006760",
+          "size": 20,
+          "sha256": "24dde94a0a8eb6b8cdbc37367a29af63409cfeafaa6f35c7ea253b2f004eac8d",
+          "objects": [
+            {
+              "name": "gUnk_0903349C",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090334B0",
+          "address": "0x9006774",
+          "size": 60,
+          "sha256": "e24ea9f00ae525c3fe194cf70d6880c74c6a8bd4e52dedb7815da8e22964f52a",
+          "objects": [
+            {
+              "name": "gUnk_090334B0",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090334EC",
+          "address": "0x90067b0",
+          "size": 20,
+          "sha256": "3f2580b44a873677e7e94b2aa7d4a64aaa02c7d65794274d605cd903a7d81be5",
+          "objects": [
+            {
+              "name": "gUnk_090334EC",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033500",
+          "address": "0x90067c4",
+          "size": 60,
+          "sha256": "7a273282e2d93757b29957c7e330e6b2fd183b79feecc009ffa5233bd767f727",
+          "objects": [
+            {
+              "name": "gUnk_09033500",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903353C",
+          "address": "0x9006800",
+          "size": 100,
+          "sha256": "cd1bfcae098482830186365bace34fa5a2bcdae603b550f71f4b06692f5dc529",
+          "objects": [
+            {
+              "name": "gUnk_0903353C",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090335A0",
+          "address": "0x9006864",
+          "size": 100,
+          "sha256": "c482ab6e4b31142b085edc2457140914073699d677a37af460bc3502877d0104",
+          "objects": [
+            {
+              "name": "gUnk_090335A0",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033604",
+          "address": "0x90068c8",
+          "size": 120,
+          "sha256": "069af5b2555d825a84d80a3642fbae8edc52578bdfc99ac963fb810279d02240",
+          "objects": [
+            {
+              "name": "gUnk_09033604",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903367C",
+          "address": "0x9006940",
+          "size": 60,
+          "sha256": "eb4c76e9fb84ee39fc9e1592112538c26382ff673f9bc92431bc96f2d162bb0d",
+          "objects": [
+            {
+              "name": "gUnk_0903367C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090336B8",
+          "address": "0x900697c",
+          "size": 60,
+          "sha256": "1f77bf79abff665d12f99acf428a9f630e7fcd9c651c52bfc1f22106eb976f05",
+          "objects": [
+            {
+              "name": "gUnk_090336B8",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090336F4",
+          "address": "0x90069b8",
+          "size": 100,
+          "sha256": "fa43dd0ba74d3ececb0311075a9e9e7e641917c16a86777b3a5934f4c643b484",
+          "objects": [
+            {
+              "name": "gUnk_090336F4",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_index",
+          "address": "0x9ebbbfc",
+          "size": 248,
+          "sha256": "f1cb0c1a4e32e385ebe38ef6fdb3401e7c2b19a8cd63627c8343aad1aa98736b",
+          "objects": [
+            {
+              "name": "gUnk_09EE45DC",
+              "offset": 0,
+              "size": 248,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032484",
+          "address": "0x90cb778",
+          "size": 160,
+          "sha256": "64824e4679f485eca7a99c42b7ff154558ab3b2e489da8ad8a296cfb1df13a90",
+          "objects": [
+            {
+              "name": "gUnk_09032484",
+              "offset": 0,
+              "size": 160,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032524",
+          "address": "0x90cb818",
+          "size": 120,
+          "sha256": "d203b095309c23c276f08376f8d77f0485fc28933a04196d824c9d1e301394bf",
+          "objects": [
+            {
+              "name": "gUnk_09032524",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903259C",
+          "address": "0x90cb890",
+          "size": 100,
+          "sha256": "5da2f5edebc94a116e2d5b97e75851541988e30677016c9d5ac481dca9a39c0d",
+          "objects": [
+            {
+              "name": "gUnk_0903259C",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032600",
+          "address": "0x90cb8f4",
+          "size": 100,
+          "sha256": "5aa4c8eb4e352403ca9ba3062cf1a8d58cd035f05789bdcfc709427b526b2a6b",
+          "objects": [
+            {
+              "name": "gUnk_09032600",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032664",
+          "address": "0x90cb958",
+          "size": 60,
+          "sha256": "76cc4973dd71dc1dbe3a49a61c7b10026cf3b67fee8aa2bb29d1aa52e2a14ad0",
+          "objects": [
+            {
+              "name": "gUnk_09032664",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090326A0",
+          "address": "0x90cb994",
+          "size": 20,
+          "sha256": "1be72c973054d0a22ec208978e0b89ce66e4aa3ac930c0903112b087f0831831",
+          "objects": [
+            {
+              "name": "gUnk_090326A0",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090326B4",
+          "address": "0x90cb9a8",
+          "size": 80,
+          "sha256": "e73a41877270a2ece0665041610b6c679d07f147c98a130cf26c99b1b3a9becc",
+          "objects": [
+            {
+              "name": "gUnk_090326B4",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032704",
+          "address": "0x90cb9f8",
+          "size": 80,
+          "sha256": "e58569fe7bcef8b6693fb75cd1de041944358cf3d2f60241794aa3b5f132633a",
+          "objects": [
+            {
+              "name": "gUnk_09032704",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032754",
+          "address": "0x90cba48",
+          "size": 100,
+          "sha256": "41930de8e16a36fa105951511bac0db5af011a956f0c11724a1c60a820c4584d",
+          "objects": [
+            {
+              "name": "gUnk_09032754",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327B8",
+          "address": "0x90cbaac",
+          "size": 20,
+          "sha256": "7fc0dcade92a11030ea5411776386b7bf6f8d28392c1e588f58f01cf36de318f",
+          "objects": [
+            {
+              "name": "gUnk_090327B8",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327CC",
+          "address": "0x90cbac0",
+          "size": 40,
+          "sha256": "134995fda144d7a5943572e513881c5bc68c20961e857090b39ef85119fab05a",
+          "objects": [
+            {
+              "name": "gUnk_090327CC",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090327F4",
+          "address": "0x90cbae8",
+          "size": 40,
+          "sha256": "ef920ae5bd8912cad50ee97f70713233f41b0853821fb87ee852f7ce4f24d1dc",
+          "objects": [
+            {
+              "name": "gUnk_090327F4",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903281C",
+          "address": "0x90cbb10",
+          "size": 300,
+          "sha256": "7ddb6fac01cfc4d5bf0701e7b67f78f0a0d0f85299d6c580ffa12971ecc9f502",
+          "objects": [
+            {
+              "name": "gUnk_0903281C",
+              "offset": 0,
+              "size": 300,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032948",
+          "address": "0x90cbc3c",
+          "size": 100,
+          "sha256": "9355b2162f3a77926b1ff681198647f4add64669b9a70703401232da6fe354e0",
+          "objects": [
+            {
+              "name": "gUnk_09032948",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090329AC",
+          "address": "0x90cbca0",
+          "size": 80,
+          "sha256": "462fd1586611c8f90a4bc497f9b5c2d2c351773de9353528c359a5e6e67f98e4",
+          "objects": [
+            {
+              "name": "gUnk_090329AC",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090329FC",
+          "address": "0x90cbcf0",
+          "size": 120,
+          "sha256": "154f26abab97e8cf13fdd3001a79e4908c7f774980e83917862473a714debdc5",
+          "objects": [
+            {
+              "name": "gUnk_090329FC",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032A74",
+          "address": "0x90cbd68",
+          "size": 60,
+          "sha256": "d72ae0b793451243d33f8af8fc1815ca2d4d391bcb44c831f7636c5baa0be61b",
+          "objects": [
+            {
+              "name": "gUnk_09032A74",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032AB0",
+          "address": "0x90cbda4",
+          "size": 100,
+          "sha256": "b28d3efc6b6c86e23c174c098779ea4cca558ef617da172d03c75b7011797867",
+          "objects": [
+            {
+              "name": "gUnk_09032AB0",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032B14",
+          "address": "0x90cbe08",
+          "size": 80,
+          "sha256": "8b472b507b2e05876fee15df799b8a107e3abf2c9041efc9fcec426a03a5c49a",
+          "objects": [
+            {
+              "name": "gUnk_09032B14",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032B64",
+          "address": "0x90cbe58",
+          "size": 60,
+          "sha256": "f94638b3eb1b242d69eaea377c3f0fb4ca55195bb13257f5b4988e2b2b21b3e5",
+          "objects": [
+            {
+              "name": "gUnk_09032B64",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032BA0",
+          "address": "0x90cbe94",
+          "size": 60,
+          "sha256": "2aebf7b43d984681583dc2c32c910a1503afb6a051971d3277bcc9cd311d11a6",
+          "objects": [
+            {
+              "name": "gUnk_09032BA0",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032BDC",
+          "address": "0x90cbed0",
+          "size": 60,
+          "sha256": "78c7ecc8a163e8fea187c0576d7fb1b3d1371ac23d6382dc018ceb7c97c3a265",
+          "objects": [
+            {
+              "name": "gUnk_09032BDC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032C18",
+          "address": "0x90cbf0c",
+          "size": 80,
+          "sha256": "0e9168da1eb78914f41acc9932b665575a59dde976db23e98159488d4b43cad6",
+          "objects": [
+            {
+              "name": "gUnk_09032C18",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032C68",
+          "address": "0x90cbf5c",
+          "size": 100,
+          "sha256": "3e1cbc637d0328f4c0e654d1eddc6bed3728d7cf88777e052e97c0013b73fe26",
+          "objects": [
+            {
+              "name": "gUnk_09032C68",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032CCC",
+          "address": "0x90cbfc0",
+          "size": 20,
+          "sha256": "9f6fbfadbde87f024a20c0c2618254c88d274c97686ad36737a43b39dc87d2a5",
+          "objects": [
+            {
+              "name": "gUnk_09032CCC",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032CE0",
+          "address": "0x90cbfd4",
+          "size": 40,
+          "sha256": "a5e34fca55b83e80246676ece197df6e6cd0876f1d7675746bf0b5076ead21a9",
+          "objects": [
+            {
+              "name": "gUnk_09032CE0",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032D08",
+          "address": "0x90cbffc",
+          "size": 120,
+          "sha256": "f4a805a0e79bffbfcb7bda06bab3c033f20384127b6fc139ab7fd1a698123df2",
+          "objects": [
+            {
+              "name": "gUnk_09032D08",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032D80",
+          "address": "0x90cc074",
+          "size": 120,
+          "sha256": "70bc82c2a95a0f9065cf2acc484ecf1cb7857257f50cc0caa0e04f2e8103f1c5",
+          "objects": [
+            {
+              "name": "gUnk_09032D80",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032DF8",
+          "address": "0x90cc0ec",
+          "size": 40,
+          "sha256": "1e38d8427c9d22d6ca62ccd75588f13805d27735525de167e3d6b6ac75281087",
+          "objects": [
+            {
+              "name": "gUnk_09032DF8",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032E20",
+          "address": "0x90cc114",
+          "size": 80,
+          "sha256": "4217180dd46acc3809c2f84c6b19c48803392651fd284b1aa87bc7c14d0ce8c8",
+          "objects": [
+            {
+              "name": "gUnk_09032E20",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032E70",
+          "address": "0x90cc164",
+          "size": 80,
+          "sha256": "64e094ee6ad14d83cbb6342ca32172b1a831a60dfd4952af57667ab2d26bc4b5",
+          "objects": [
+            {
+              "name": "gUnk_09032E70",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032EC0",
+          "address": "0x90cc1b4",
+          "size": 120,
+          "sha256": "bc525c5f9a596e9c3dd9423778352bed6a992fcb345cf1d246a4ca41368c7988",
+          "objects": [
+            {
+              "name": "gUnk_09032EC0",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032F38",
+          "address": "0x90cc22c",
+          "size": 100,
+          "sha256": "bebad9358236895db8d8f1b4eedb095dc01b673ebc9777e85361e77c28c746f4",
+          "objects": [
+            {
+              "name": "gUnk_09032F38",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032F9C",
+          "address": "0x90cc290",
+          "size": 80,
+          "sha256": "27371bb72d7212a5919e4a43edb242a004d7321421e0459a6001bc0488071ca6",
+          "objects": [
+            {
+              "name": "gUnk_09032F9C",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09032FEC",
+          "address": "0x90cc2e0",
+          "size": 80,
+          "sha256": "cbbdfb920d416abfdbd029cc252f22e160f10b7ee7b8070d9cac83b247fd25e8",
+          "objects": [
+            {
+              "name": "gUnk_09032FEC",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903303C",
+          "address": "0x90cc330",
+          "size": 60,
+          "sha256": "09eb4a64ecb6a9ff6d29176cb828412f6d73d82d277530e08fac0dbbedf61a59",
+          "objects": [
+            {
+              "name": "gUnk_0903303C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033078",
+          "address": "0x90cc36c",
+          "size": 60,
+          "sha256": "c8b33e714a4d2d2b658484aba3ddd9093b439f82a5e7c42b3620228ed072d529",
+          "objects": [
+            {
+              "name": "gUnk_09033078",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090330B4",
+          "address": "0x90cc3a8",
+          "size": 40,
+          "sha256": "fa8ec98d6b47b028cf5e4e528158a4e5b4ebf2aa90fa5f3fe2fefa373c31a050",
+          "objects": [
+            {
+              "name": "gUnk_090330B4",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090330DC",
+          "address": "0x90cc3d0",
+          "size": 40,
+          "sha256": "d1af493457bbae3a5d15fd85b01fd22f00940b8f4bc023d6aa096f0e381dc579",
+          "objects": [
+            {
+              "name": "gUnk_090330DC",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033104",
+          "address": "0x90cc3f8",
+          "size": 60,
+          "sha256": "c8633be6e5c9d9642d28ddfee51ec656bac7c7cc3eaea43c745b7332a662ccad",
+          "objects": [
+            {
+              "name": "gUnk_09033104",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033140",
+          "address": "0x90cc434",
+          "size": 60,
+          "sha256": "c4ec7c66f321f668217bc4703385d4a7d05d9a4525d2083fa9754a15624bca16",
+          "objects": [
+            {
+              "name": "gUnk_09033140",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903317C",
+          "address": "0x90cc470",
+          "size": 80,
+          "sha256": "dae7ff62d71f083854b4b559a7e0b94600c29b51193f2b459b2b2417fe4c12dc",
+          "objects": [
+            {
+              "name": "gUnk_0903317C",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090331CC",
+          "address": "0x90cc4c0",
+          "size": 60,
+          "sha256": "723d036863163284fa2ff92d5fbfb00d8a01b3e18d6dc91aa6f360d1c4a96f1a",
+          "objects": [
+            {
+              "name": "gUnk_090331CC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033208",
+          "address": "0x90cc4fc",
+          "size": 80,
+          "sha256": "acb94f2dca0d5fd44401d07110022d63d4878b42d680912c2e87ea704840ffd7",
+          "objects": [
+            {
+              "name": "gUnk_09033208",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033258",
+          "address": "0x90cc54c",
+          "size": 80,
+          "sha256": "d51780123c31c4d8c829feb611f5eb907b102bd7039fe5a3eec0aef20ec2df65",
+          "objects": [
+            {
+              "name": "gUnk_09033258",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090332A8",
+          "address": "0x90cc59c",
+          "size": 100,
+          "sha256": "4cf79e12d3afe72fb7eff3f033abcb805da68ce967f6ac8a5db70efeecd8d98b",
+          "objects": [
+            {
+              "name": "gUnk_090332A8",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903330C",
+          "address": "0x90cc600",
+          "size": 60,
+          "sha256": "ea6b1e66c3f9950a0c7a42f66d67801d9de642e107fbee63045ac7fdafe76127",
+          "objects": [
+            {
+              "name": "gUnk_0903330C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033348",
+          "address": "0x90cc63c",
+          "size": 80,
+          "sha256": "57a64403370e7b0ccbbd9b10f9cfb09a36cd8047cce43060db29b03e940175f6",
+          "objects": [
+            {
+              "name": "gUnk_09033348",
+              "offset": 0,
+              "size": 80,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033398",
+          "address": "0x90cc68c",
+          "size": 100,
+          "sha256": "5b0088cf6cea3f9d28ffe0d1cca46f7fe4d97c24735b947f638ea14db0a81288",
+          "objects": [
+            {
+              "name": "gUnk_09033398",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090333FC",
+          "address": "0x90cc6f0",
+          "size": 60,
+          "sha256": "7aac7031299f2ac8b77eec47e01665397c43339b8f91de1418859f7252bed538",
+          "objects": [
+            {
+              "name": "gUnk_090333FC",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033438",
+          "address": "0x90cc72c",
+          "size": 40,
+          "sha256": "22c2887a8a48a61e0deeb071d825146925d93e4c39c8a83c7b6de2970a6a9b21",
+          "objects": [
+            {
+              "name": "gUnk_09033438",
+              "offset": 0,
+              "size": 40,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033460",
+          "address": "0x90cc754",
+          "size": 60,
+          "sha256": "20d8f50ae8d4d235d2efdd773c1898a3eeca2a909bc31f6f8c3d0bf1cfea74a9",
+          "objects": [
+            {
+              "name": "gUnk_09033460",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903349C",
+          "address": "0x90cc790",
+          "size": 20,
+          "sha256": "0a36092f83deb3eb1b322b66bb00a26ee566b680fee9d0f4a652ba419b79834c",
+          "objects": [
+            {
+              "name": "gUnk_0903349C",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090334B0",
+          "address": "0x90cc7a4",
+          "size": 60,
+          "sha256": "b4513a09dc0c90b6665c57abc8e3121f32eeb7bdeb08d664450b9f8900419a3e",
+          "objects": [
+            {
+              "name": "gUnk_090334B0",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090334EC",
+          "address": "0x90cc7e0",
+          "size": 20,
+          "sha256": "3f2025727fa6865fe00118232d72ee52d19ba41d48e52ac5592a6e6a05e28f11",
+          "objects": [
+            {
+              "name": "gUnk_090334EC",
+              "offset": 0,
+              "size": 20,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033500",
+          "address": "0x90cc7f4",
+          "size": 60,
+          "sha256": "389670597f2a060f7b0cfdd969501ae47fd52e70fd6e21087510142f3687ae44",
+          "objects": [
+            {
+              "name": "gUnk_09033500",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903353C",
+          "address": "0x90cc830",
+          "size": 100,
+          "sha256": "79fd8016e32a58a90b40008032a8640b5791218d601e7ca36bdcaf3170f12fc9",
+          "objects": [
+            {
+              "name": "gUnk_0903353C",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090335A0",
+          "address": "0x90cc894",
+          "size": 100,
+          "sha256": "984f701c424d8670110552cb9f991357d6d04f282ac5bfcea9d376607056bd72",
+          "objects": [
+            {
+              "name": "gUnk_090335A0",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_09033604",
+          "address": "0x90cc8f8",
+          "size": 120,
+          "sha256": "4f37e1b16e45119c8785acc91e57496cabdb2834db05ec3d4d2e46f3f4690f87",
+          "objects": [
+            {
+              "name": "gUnk_09033604",
+              "offset": 0,
+              "size": 120,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_0903367C",
+          "address": "0x90cc970",
+          "size": 60,
+          "sha256": "aeee2f820d8fb4712a8882278c173d2a61bb5da845f6d63d726f5c3139a19e61",
+          "objects": [
+            {
+              "name": "gUnk_0903367C",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090336B8",
+          "address": "0x90cc9ac",
+          "size": 60,
+          "sha256": "8564ea010d27e02d8356827225436376aa7bb7fe0b25a9e501120a0a68b41472",
+          "objects": [
+            {
+              "name": "gUnk_090336B8",
+              "offset": 0,
+              "size": 60,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_090336F4",
+          "address": "0x90cc9e8",
+          "size": 100,
+          "sha256": "bb3bd24261bd60ec5c8d2d3f8965b2c08dfaf0955fe3a2e2ccf50697cc7b9fee",
+          "objects": [
+            {
+              "name": "gUnk_090336F4",
+              "offset": 0,
+              "size": 100,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        },
+        {
+          "unit": "msg_portrait_data.c",
+          "section": ".data_msg_portrait_index",
+          "address": "0x9f6f888",
+          "size": 248,
+          "sha256": "3caa26fd55bc85ee20c61e19579a5cbc94a6f6eb87ba6faf5ec44f792ecdbfb3",
+          "objects": [
+            {
+              "name": "gUnk_09EE45DC",
+              "offset": 0,
+              "size": 248,
+              "consumer": [
+                "msgface_0",
+                "expression selection; verified native structural extent"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

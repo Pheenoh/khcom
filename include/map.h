@@ -1,3 +1,5 @@
+#include "card_def_data.h"
+#include "aux_animation_data.h"
 #include "map_text_data.h"
 #include "map_ui_data.h"
 #include "map_resource_data.h"
@@ -840,14 +842,6 @@ typedef struct MapGmk06Work {
     void (*unk_0C4)(struct MapGmk06Work*);
     TaskPool unk_0C8;
 } MapGmk06Work;
-typedef struct UnkStruct_08F709B0 {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    void* unk_10;
-    void* unk_14;
-} UnkStruct_08F709B0;
 
 typedef struct UnkStruct_08F70ACC {
     u8 unk_00[0x04];
@@ -1296,10 +1290,8 @@ extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_098A4B68[];
 extern u8 gUnk_08B1EA00[];
 extern u8 gUnk_08F69BE4[];
-extern void* gUnk_09EE1380[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_0905EAE8[];
-extern UnkStruct_08F709B0 gUnk_08F709B0[];
 extern u8 gUnk_099597E4[];
 extern u8 gUnk_09985F44[];
 extern s16 gSineTable[];
@@ -1365,8 +1357,6 @@ extern u8 gUnk_09991284[];
 extern u8 gUnk_0994BF64[];
 extern u8 gUnk_0994C364[];
 extern u8 gUnk_08B21ACE[];
-extern u8 gUnk_09EE12D4[];
-extern u8 gUnk_09EE12E4[];
 extern void* gModeBattle;
 extern const u8 gUnk_09EF6A34[];
 extern const u8 gUnk_09EF6A42[];
@@ -1375,7 +1365,6 @@ extern u8 (*gUnk_09EF6A88[])(UnkStruct_080E8B1C*);
 extern const u8 gUnk_09EF6AB0[];
 extern void* gTaskDescFldSora;
 extern void* gTaskDescFldRiku;
-extern CardDef gCardDefs[];
 extern void* gTaskDescRoomcreate;
 
 void func_080ED250(u8* work);

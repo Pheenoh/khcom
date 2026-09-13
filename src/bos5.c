@@ -2623,8 +2623,8 @@ u8 func_080FF228(s16 id) {
 #endif
 }
 u8 func_080FF25C(s16 id) {
-    void** tbl;
-    void** p;
+    CardDescriptionText** tbl;
+    CardDescriptionText** p;
     u16 i;
 
     if (id != 0) {
@@ -2639,12 +2639,12 @@ u8 func_080FF25C(s16 id) {
         p = &tbl[i];
 #ifdef VERSION_EU
         {
-            void** langs = *p;
+            u8** langs = (*p)->strings;
 
-            return LoadTextSlots(langs[gLanguage], gUnk_020352C0);
+            return LoadTextSlots((void*)langs[gLanguage], gUnk_020352C0);
         }
 #else
-        return LoadTextSlots(*p, gUnk_020352C0);
+        return LoadTextSlots((void*)*p, gUnk_020352C0);
 #endif
     }
 

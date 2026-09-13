@@ -1,3 +1,8 @@
+#include "card_def_data.h"
+#include "battle_localized_data.h"
+#include "msg_portrait_data.h"
+#include "card_help_data.h"
+#include "aux_animation_data.h"
 #include "map_text_data.h"
 #include "card_localized_data.h"
 #include "card_reload_data.h"
@@ -10,6 +15,8 @@
 #include "system_state.h"
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
+
+#include "card_description_data.h"
 
 #include "map_card_data.h"
 
@@ -55,7 +62,6 @@ void func_080A096C(u16 a, u16* p);
 #define CARDWORK(off) (off)
 #endif
 
-extern CardDef gCardDefs[];
 
 typedef struct CardDisplayWork {
     void* unk_00;
@@ -330,11 +336,6 @@ typedef struct RevCountWork {
 
 typedef char UnkStruct_08098CE4_sizechk[(sizeof(struct RevCountWork) == 0x44) ? 1 : -1];
 
-typedef struct UnkStruct_09EE7D84 {
-    void** unk_00;
-    u8 unk_04;
-} UnkStruct_09EE7D84;
-
 typedef struct UnkStruct_02034AFC {
     u8 unk_000[0x10C];
     u64 unk_10C;
@@ -347,7 +348,6 @@ typedef struct UnkStruct_02034AFC {
     u8 unk_14F;
 } UnkStruct_02034AFC;
 
-extern UnkStruct_09EE7D84* gUnk_09EE7D84[];
 extern s16 gUnk_09037FBA[];
 extern s32 gUnk_09037FFC[];
 extern s32 gUnk_0903800C[];
@@ -1158,7 +1158,6 @@ extern UnkStruct_09035DCC gUnk_09035DCC[];
 extern UnkStruct_09035DCC gUnk_090360BC[];
 extern u16 gUnk_0903612C[];
 extern u16 gUnk_090359FC[];
-extern CardBack gUnk_08F709B0[];
 extern Deck gUnk_09041FA0;
 extern u16 gUnk_09041F70[];
 extern u16 gUnk_09EE4AC8[];
@@ -1179,8 +1178,6 @@ extern u8 gUnk_0940FA98[];
 extern u8 gUnk_0940FAD8[];
 extern u8 gUnk_0940FC58[];
 extern u8 gUnk_09410058[];
-extern void* gUnk_09EE1538[];
-extern void* gUnk_09EE8F48[];
 extern s32 gUnk_09033FF4[][2];
 extern s32 gUnk_09033FA8[];
 extern const s32 gUnk_09033FB8[];
@@ -1208,6 +1205,19 @@ extern void* gUnk_09EF38B4[];
 extern void* gUnk_09EF3894[];
 extern void* gUnk_09EF38BC[];
 extern void* gUnk_09EF38C8[];
+
+#ifdef VERSION_EU
+extern void* gUnkEu_09F7EB38[];
+extern void* gUnkEu_09F7EB44[];
+extern void* gUnkEu_09F7EB50[];
+extern void* gUnkEu_09F7EB5C[];
+extern void* gUnkEu_09F7EB68[];
+extern void* gUnkEu_09F7EB74[];
+extern void* gUnkEu_09F7EB80[];
+extern void* gUnkEu_09F7EB8C[];
+extern void* gUnkEu_09F7EB98[];
+extern void* gUnkEu_09F7EBA4[];
+#endif
 
 extern u8 gUnk_090451C0[];
 extern void* gUnk_09EE4A2C[];
@@ -1779,17 +1789,6 @@ typedef struct UnkStruct_080984E4 {
     u16 unk_30;
 } UnkStruct_080984E4;
 
-typedef struct UnkStruct_080A3F5C_Entry {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    void* unk_0C;
-    u8 unk_10;
-    u8 unk_11;
-    u8 unk_12[0x02];
-} UnkStruct_080A3F5C_Entry;
-
-extern UnkStruct_080A3F5C_Entry* gUnk_09EE45DC[];
 
 typedef struct UnkStruct_080A4DCC {
     void* unk_000;
@@ -1899,7 +1898,6 @@ typedef struct UnkStruct_08094CE4_B {
     u16 unk_14;
 } UnkStruct_08094CE4_B;
 
-extern void* gUnk_09EE1380[];
 extern u8 gUnk_0940F938[];
 extern s16 gUnk_090361B0[];
 extern s16 gUnk_090361B8[];
@@ -1924,7 +1922,6 @@ typedef struct BossCardWork {
 } BossCardWork;
 
 extern u8 gUnk_08F7DAC4[];
-extern CardBack gUnk_08F70A28[];
 extern s16 gUnk_0903595E[];
 extern s16 gUnk_09035964[];
 extern s32 gUnk_09033D28[];

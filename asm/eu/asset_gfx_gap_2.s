@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_08F6A6E8
-data_08F6A6E8:
-	.incbin "roms/B8CP.gba", 0xf6a6e8, 0x14a74
+	.global data_08F7F168
+data_08F7F168:
+	.incbin "roms/B8CP.gba", 0xf7f168, 0x2820

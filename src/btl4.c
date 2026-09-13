@@ -1,3 +1,4 @@
+#include "battle_localized_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "macros.h"
@@ -157,7 +158,11 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
         flag = 1;
     }
 
+#ifdef VERSION_JP
+    work->gfx2[4] = gUnk_09EE1538[value + 4];
+#else
     work->gfx2[4] = gUnk_09EE157C[value + 4];
+#endif
     work->gfx2[5] = gUnk_08B25ED2;
 }
 

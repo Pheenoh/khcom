@@ -580,7 +580,6 @@ extern u8 gUnk_096FB484[];
 extern s16 gUnk_0961A7D0[];
 extern s8 gUnk_0961A82E[];
 extern u32 gFrameCounter;
-extern void* gUnk_09EF275C[][15];
 extern u8 gUnk_09652E84[];
 
 extern u8 gUnk_09654C04[];

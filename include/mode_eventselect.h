@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #include "card_localized_data.h"
 #include "card_animation_data.h"
 #include "card_sprite_data.h"
@@ -136,9 +137,7 @@ extern u8 gUnk_09611AB8[];
 extern u8 gUnk_08F6DC84[];
 extern u8 gUnk_08BCB3D8[];
 extern u8 gUnk_08F69BE4[];
-extern u8 gUnk_09EDE7E4[];
 extern u8 gUnk_088A5D7A[];
-extern u8 gUnk_09EDE7B4[];
 extern s16 gUnk_0903380C[][6];
 extern s16 gSineTable[];
 extern u8 gUnk_093215CA[];

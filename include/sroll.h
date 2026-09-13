@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_SROLL_H
@@ -342,8 +343,6 @@ extern u8 gUnk_09EFB5B0[];
 extern u8 gUnk_09EFB5EC[];
 extern u8 gUnk_09EFB828[];
 extern u8 gUnk_09EFB834[];
-extern u8 gUnk_09EDE7B4[];
-extern u8 gUnk_09EDE7E4[];
 extern void* gUnk_09EFBAE8[];
 extern const SrollFont gUnk_09A5B440[];
 extern const u16 gUnk_09A5B470[];

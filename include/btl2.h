@@ -1,3 +1,5 @@
+#include "battle_localized_data.h"
+#include "aux_animation_data.h"
 #ifndef GUARD_BTL2_H
 #define GUARD_BTL2_H
 
@@ -218,22 +220,6 @@ extern u8 gUnk_08B1F2D6[];
 extern u8 gUnk_08B1F472[];
 extern u8 gUnk_08B1F60E[];
 extern u8 gUnk_08B1F7AC[];
-extern u8 gUnk_09EE11BC[];
-extern u8 gUnk_09EE11C0[];
-extern u8 gUnk_09EE11C4[];
-extern u8 gUnk_09EE11C8[];
-extern u8 gUnk_09EE11CC[];
-extern u8 gUnk_09EE11D0[];
-extern u8 gUnk_09EE11D4[];
-extern u8 gUnk_09EE11D8[];
-extern u8 gUnk_09EE11DC[];
-extern u8 gUnk_09EE11E0[];
-extern u8 gUnk_09EE11E4[];
-extern u8 gUnk_09EE11E8[];
-extern u8 gUnk_09EE11EC[];
-extern u8 gUnk_09EE11F0[];
-extern u8 gUnk_09EE11F4[];
-extern u8 gUnk_09EE1204[];
 extern u8 gUnk_08B208E8[];
 extern u8 gUnk_08B208F2[];
 extern u8 gUnk_08B208FC[];
@@ -285,12 +271,6 @@ extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09618118[];
-extern void* gUnk_09EE115C[];
-extern void* gUnk_09EE11A4[];
-extern u8 gUnk_09EE12A4[];
-extern u8 gUnk_09EE12B0[];
-extern u8 gUnk_09EE12BC[];
-extern u8 gUnk_09EE12C8[];
 
 void func_08031BC4(FldActor* act);
 

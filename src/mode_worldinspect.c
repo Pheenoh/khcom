@@ -1,3 +1,4 @@
+#include "worldinspect_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "map_api.h"
@@ -87,41 +88,6 @@ extern u8 gUnk_0999F416[];
 extern u8 gUnk_0999F44A[];
 
 typedef struct {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
-    s16 unk_0C;
-    s16 unk_0E;
-    s16 unk_10;
-    u8 unk_12[0x02];
-} WorldinspectNav;
-
-typedef struct {
-    u16 unk_00;
-    u16 unk_02;
-    void* unk_04;
-    u16 unk_08;
-    u8 unk_0A[0x02];
-    void* unk_0C;
-    u16 unk_10;
-    u8 unk_12[0x02];
-    void* unk_14;
-    void* unk_18;
-    u16 unk_1C;
-    u8 unk_1E[0x02];
-    void* unk_20;
-    u16 unk_24;
-    u8 unk_26[0x02];
-    void* unk_28;
-    void* unk_2C;
-    u16 unk_30;
-    u16 unk_32;
-} WorldinspectMsg;
-
-typedef struct {
     s16 unk_00;
     s16 unk_02;
     s16 unk_04;
@@ -134,8 +100,6 @@ extern s16 gUnk_02035100[];
 extern s16 gUnk_020354F0[];
 extern s16 gUnk_0203550A;
 extern s16 gUnk_020357A4;
-extern WorldinspectNav gUnk_09EF8FAC[];
-extern WorldinspectMsg gUnk_09EF909C[];
 extern WorldinspectConn gUnk_099930BC[];
 extern u8 gUnk_099FB53C[];
 extern u8 gUnk_09A324DC[];

@@ -1,3 +1,5 @@
+#include "battle_localized_data.h"
+#include "aux_animation_data.h"
 #ifndef GUARD_TASK_ANIMATION_ASSETS_H
 #define GUARD_TASK_ANIMATION_ASSETS_H
 
@@ -28,51 +30,5 @@ extern u8 gUnk_08C6668E[];
 extern u8 gUnk_08C67F86[];
 extern u8 gUnk_08C69204[];
 extern u8 gUnk_08F6DD44[];
-extern void* gUnk_09EDE594[];
-extern AnimHeader* gUnk_09EDE5B4[];
-extern void* gUnk_09EDE5C8[];
-extern AnimHeader* gUnk_09EDE5F0[];
-extern void* gUnk_09EDE848[];
-extern AnimHeader* gUnk_09EDE86C[];
-extern void* gUnk_09EDF3E8[];
-extern AnimHeader* gUnk_09EDF400[];
-extern void* gUnk_09EDF4C0[];
-extern AnimHeader* gUnk_09EDF4C4[];
-extern void* gUnk_09EDF4C8[];
-extern AnimHeader* gUnk_09EDF4CC[];
-extern u32 gUnk_09EDF4D0[];
-extern AnimHeader* gUnk_09EDF4F0[];
-extern u32 gUnk_09EDF4F4[];
-extern AnimHeader* gUnk_09EDF514[];
-extern void* gUnk_09EDF5F4[];
-extern AnimHeader* gUnk_09EDF60C[];
-extern void* gUnk_09EDF614[];
-extern AnimHeader* gUnk_09EDF634[];
-extern void* gUnk_09EDF640[];
-extern AnimHeader* gUnk_09EDF660[];
-extern void* gUnk_09EDF66C[];
-extern AnimHeader* gUnk_09EDF678[];
-extern void* gUnk_09EDF680[];
-extern AnimHeader* gUnk_09EDF68C[];
-extern void* gUnk_09EDFFDC[];
-extern AnimHeader* gUnk_09EE0004[];
-extern u8 gUnk_09EE12D4[];
-extern u8 gUnk_09EE12E4[];
-extern void* gUnk_09EE12E8[];
-extern AnimHeader* gUnk_09EE130C[];
-extern void* gUnk_09EE1318[];
-extern AnimHeader* gUnk_09EE132C[];
-extern void* gUnk_09EE1330[];
-extern AnimHeader* gUnk_09EE1360[];
-extern void* gUnk_09EE1368[];
-extern AnimHeader* gUnk_09EE137C[];
-extern void* gUnk_09EE2098[];
-extern AnimHeader* gUnk_09EE20A8[];
-extern void* gUnk_09EE25D0[];
-extern AnimHeader* gUnk_09EE25E4[];
-extern void* gUnk_09EE25F4[];
-extern AnimHeader* gUnk_09EE2604[];
-extern void* gUnk_09EE2608[];
-extern AnimHeader* gUnk_09EE2618[];
 
 #endif

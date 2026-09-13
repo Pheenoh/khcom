@@ -3,6 +3,8 @@
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
+#include "card_description_data.h"
+
 #include "map_card_data.h"
 
 #include "animation_resource_data.h"
@@ -135,7 +137,6 @@ extern u8 gUnk_09A3551C[];
 extern u8 gUnk_09A3D248[];
 extern u8 gUnk_09A3D2C8[];
 extern u8 gUnk_09A3D2FC[];
-extern void* gUnk_09EE90D0[];
 extern u8 gUnk_09A0667C[];
 extern u8 gUnk_09A0669C[];
 extern u8 gUnk_09A0693C[];

@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #ifndef GUARD_HUM_H
 #define GUARD_HUM_H
 
@@ -543,8 +544,6 @@ extern const u32 gUnk_0813F7C0[3];
 extern const u32 gUnk_0813F7CC[3];
 extern u8 gUnk_08EE3A84[];
 extern u8 gTaskDescHumVixenFrg[];
-extern u8 gUnk_09EE1F90[];
-extern u8 gUnk_09EE1FC0[];
 extern HumDef gUnk_0813F450;
 extern HumSubDef gUnk_0813F448;
 extern AnimDef gUnk_0813F368[13];

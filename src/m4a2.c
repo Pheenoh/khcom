@@ -30,6 +30,8 @@ MusicPlayerInfo gUnk_0203DEA0;
 MusicPlayerInfo gUnk_0203DEE0;
 MusicPlayerInfo gUnk_0203DF20;
 
+#include "m4a_catalog_data.h"
+
 u32 MidiKeyToFreq(WaveData* wav, u8 key, u8 fineAdjust) {
     u32 val1;
     u32 val2;

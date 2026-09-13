@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_BATTLE_H
@@ -300,14 +301,10 @@ void eu_08013190(void);
 #endif
 extern Mode gModeChkbtl;
 
-extern AnimHeader* gUnk_09EDF514[];
-extern u32 gUnk_09EDF4F4[];
 extern u8 gUnk_08935BC2[];
 extern u8 gUnk_092F15E4[];
 extern u8 gUnk_092EFAD4[];
 extern u8 gUnk_092ED9F6[];
-extern AnimHeader* gUnk_09EDF4F0[];
-extern u32 gUnk_09EDF4D0[];
 extern u8 gUnk_0893416A[];
 extern u8 gUnk_088DC192[];
 extern u8 gUnk_088CE0C2[];

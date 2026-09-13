@@ -13482,7 +13482,7 @@ void func_080F534C(MapPrzCardWork* w) {
 
 void func_080F53D0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     CardDef* d;
-    UnkStruct_08F709B0* q;
+    CardBack* q;
 
     gUnk_0203C7AC->unk_00 |= 0x10;
     w->unk_0A8 = p->unk_14;
@@ -13545,7 +13545,7 @@ s32 func_080F5580(MapPrzCardWork* w) {
 
 void func_080F55B0(MapPrzCardWork* w) {
     CardDef* d;
-    UnkStruct_08F709B0* q;
+    CardBack* q;
     void* t;
     s32 affine;
     s16 x;

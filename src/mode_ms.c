@@ -934,7 +934,7 @@ u8 func_0810329C(u16 a) {
                     gUnk_02035AD8 = gUnk_020358C8[0].y - 0x2000;
                     LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
                     gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
-                    gUnk_02035A50 = LoadTextSlots(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
+                    gUnk_02035A50 = LoadTextSlots((void*)LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                     LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                     EnableBg(3);
                     gUnk_020358C8[i].state = 9;
@@ -976,7 +976,7 @@ u8 func_0810329C(u16 a) {
             if (gUnk_02035B62 != old) {
                 LoadPalette(gUnk_09A3DA1C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32, (void*)0x050001A0, 0x20);
                 gUnk_02035A48 = LoadTextSlots(LANGSEL(gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_0C), gUnk_02035A44);
-                gUnk_02035A50 = LoadTextSlots(LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
+                gUnk_02035A50 = LoadTextSlots((void*)LANGSTR(gUnk_09EE8F48[gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_1C]), gUnk_02035A4C);
                 LoadObjPaletteBank(((FldRes*)gUnk_02035A40)->unk_06, gUnk_09A3DB7C + gCardDefs[gUnk_02035B58[gUnk_02035B62] & 0xFFF].unk_2A * 32);
                 m4aSongNumStart(0x65);
             }

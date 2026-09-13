@@ -1,8 +1,11 @@
+#include "card_def_data.h"
 #include "card_lookup_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
+
+#include "card_description_data.h"
 
 #include "animation_resource_data.h"
 
@@ -364,7 +367,6 @@ extern u8 gUnk_0815B3D4[];
 extern u8 gUnk_088B6560[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_091CF5D4[];
-extern CardDef gCardDefs[];
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_0815A394[];
 extern u8 gUnk_093F8C8E[];
@@ -423,7 +425,6 @@ extern u8 gUnk_096FBF04[];
 extern u8 gUnk_096FBF84[];
 extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EE8F20;
-extern void* gUnk_09EE8F48[];
 extern SioWorldEntry gUnk_09EF1318[];
 extern u16 gUnk_09EF14C4[];
 extern u8* gWorldNames[];

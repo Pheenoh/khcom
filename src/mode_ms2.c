@@ -618,13 +618,13 @@ void func_081073F0(void) {
         *q = LoadTextSlots(func_08093C18(p->cardType), gUnk_02035F94);
 #ifdef VERSION_EU
         {
-            void** strings = gUnk_09EE90D0[p->cardType];
+            u8** strings = gUnk_09EE90D0[p->cardType]->strings;
             q = &gUnk_02035FA0;
-            *q = LoadTextSlots(strings[gLanguage], gUnk_02035F9C);
+            *q = LoadTextSlots((void*)strings[gLanguage], gUnk_02035F9C);
         }
 #else
         q = &gUnk_02035FA0;
-        *q = LoadTextSlots(gUnk_09EE90D0[p->cardType], gUnk_02035F9C);
+        *q = LoadTextSlots((void*)gUnk_09EE90D0[p->cardType], gUnk_02035F9C);
 #endif
     } else {
         gUnk_02035F3C = 0;

@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #include "registration_data.h"
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
@@ -1167,8 +1168,6 @@ extern u8 gUnk_09849B98[];
 extern u8 gUnk_09760986[];
 extern u8 gUnk_09849E58[];
 extern u8 gUnk_08B22BBC[];
-extern u8 gUnk_09EE1384[];
-extern u8 gUnk_09EE1380[];
 extern const PooHitBox gUnk_096FC010;
 extern const PooPoint gUnk_096FC6B0[];
 extern const PooSpawn gUnk_096FC6F8[];

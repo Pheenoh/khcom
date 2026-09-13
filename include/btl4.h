@@ -1,3 +1,5 @@
+#include "battle_localized_data.h"
+#include "aux_animation_data.h"
 #ifndef GUARD_BTL4_H
 #define GUARD_BTL4_H
 
@@ -137,11 +139,6 @@ extern u8 gUnk_08B25ED2[];
 extern u8 gUnk_08B25EF0[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_096FAC64[];
-extern u8 gUnk_09EE10EC[];
-extern u8 gUnk_09EE10F8[];
-extern u8 gUnk_09EE12A4[];
-extern u8 gUnk_09EE12B0[];
-extern void* gUnk_09EE157C[];
 
 void func_080A41F0(void* a, u16 b);
 

@@ -11558,6 +11558,3700 @@
       "pointer_offsets": [
         0
       ]
+    },
+    {
+      "name": "jafar_map_strips_09EF275C",
+      "layer": 1,
+      "provenance": "func_080BDAAC explicitly selects rows0 and1. func_080C02AC selects15 actual target triples from gUnk_0961A710, including the special m=14 branch; each of the three columns reaches14. func_080C0258 moves each initially in-range selector one unit toward those targets, proving0..14 indices. func_080C6EB0 copies23 rows of7 halfwords with64-byte stride, requiring1422 bytes. The30 table pointers resolve to eight independently byte-identical2048-byte raw maps plus exact0/14/28/42-byte offsets in every region.",
+      "us": "0x9ef275c",
+      "targets": {
+        "jp": "0x9ec9b48",
+        "eu": "0x9f7d994"
+      },
+      "size": 120,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDE594_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9ede594",
+      "targets": {
+        "jp": "0x9eb6010",
+        "eu": "0x9f591ec"
+      },
+      "size": 104,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDE7B4_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9ede7b4",
+      "targets": {
+        "jp": "0x9eb6230",
+        "eu": "0x9f5940c"
+      },
+      "size": 60,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDE848_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9ede848",
+      "targets": {
+        "jp": "0x9eb62c4",
+        "eu": "0x9f594a0"
+      },
+      "size": 48,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDECC0_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edecc0",
+      "targets": {
+        "jp": "0x9eb673c",
+        "eu": "0x9f59918"
+      },
+      "size": 60,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDF3E8_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edf3e8",
+      "targets": {
+        "jp": "0x9eb6e64",
+        "eu": "0x9f5a040"
+      },
+      "size": 28,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDF4C0_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edf4c0",
+      "targets": {
+        "jp": "0x9eb6f3c",
+        "eu": "0x9f5a118"
+      },
+      "size": 88,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDF5F4_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edf5f4",
+      "targets": {
+        "jp": "0x9eb7070",
+        "eu": "0x9f5a24c"
+      },
+      "size": 160,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDF764_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edf764",
+      "targets": {
+        "jp": "0x9eb71e0",
+        "eu": "0x9f5a3bc"
+      },
+      "size": 208,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDF860_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edf860",
+      "targets": {
+        "jp": "0x9eb72dc",
+        "eu": "0x9f5a4b8"
+      },
+      "size": 36,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDF8A8_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edf8a8",
+      "targets": {
+        "jp": "0x9eb7324",
+        "eu": "0x9f5a500"
+      },
+      "size": 36,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDF8F0_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edf8f0",
+      "targets": {
+        "jp": "0x9eb736c",
+        "eu": "0x9f5a548"
+      },
+      "size": 36,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDF97C_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edf97c",
+      "targets": {
+        "jp": "0x9eb73f8",
+        "eu": "0x9f5a5d4"
+      },
+      "size": 44,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDFD70_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edfd70",
+      "targets": {
+        "jp": "0x9eb77ec",
+        "eu": "0x9f5a9c8"
+      },
+      "size": 76,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EDFFDC_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9edffdc",
+      "targets": {
+        "jp": "0x9eb7a58",
+        "eu": "0x9f5ac34"
+      },
+      "size": 44,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EE12A4_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9ee12a4",
+      "targets": {
+        "jp": "0x9eb8d20",
+        "eu": "0x9f5bebc"
+      },
+      "size": 380,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EE17B4_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9ee17b4",
+      "targets": {
+        "jp": "0x9eb9230",
+        "eu": "0x9f5c5c0"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EE1F90_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9ee1f90",
+      "targets": {
+        "jp": "0x9eb9a0c",
+        "eu": "0x9f5cd9c"
+      },
+      "size": 60,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EE2098_aux_animation",
+      "layer": 3,
+      "provenance": "The exact regional gap is bounded by independently placed neighboring source objects. All complete corresponding Sprite/OAM or AnimHeader/frame payloads match. Canonical AnimDef records and931 EvtObjAnim records supply animation indices. Direct Tinkerbell/Axel consumers select0..2, HP changes select0..2, and debug/shadow consumers select0. Every selected complete frame graph proves the native gfx bound. Words beyond those used arrays remain neutral typed scalar objects. All full corresponding Sprite/OAM or AnimHeader/frame payloads agree exactly in every region.",
+      "us": "0x9ee2098",
+      "targets": {
+        "jp": "0x9eb9b14",
+        "eu": "0x9f5cea4"
+      },
+      "size": 28,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032484_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032484",
+      "targets": {
+        "jp": "0x9005748",
+        "eu": "0x90cb778"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032484_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032498",
+      "targets": {
+        "jp": "0x900575c",
+        "eu": "0x90cb78c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032484_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90324ac",
+      "targets": {
+        "jp": "0x9005770",
+        "eu": "0x90cb7a0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032484_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90324c0",
+      "targets": {
+        "jp": "0x9005784",
+        "eu": "0x90cb7b4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032484_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90324d4",
+      "targets": {
+        "jp": "0x9005798",
+        "eu": "0x90cb7c8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032484_5",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90324e8",
+      "targets": {
+        "jp": "0x90057ac",
+        "eu": "0x90cb7dc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032484_6",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90324fc",
+      "targets": {
+        "jp": "0x90057c0",
+        "eu": "0x90cb7f0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032484_7",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032510",
+      "targets": {
+        "jp": "0x90057d4",
+        "eu": "0x90cb804"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032524_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032524",
+      "targets": {
+        "jp": "0x90057e8",
+        "eu": "0x90cb818"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032524_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032538",
+      "targets": {
+        "jp": "0x90057fc",
+        "eu": "0x90cb82c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032524_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903254c",
+      "targets": {
+        "jp": "0x9005810",
+        "eu": "0x90cb840"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032524_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032560",
+      "targets": {
+        "jp": "0x9005824",
+        "eu": "0x90cb854"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032524_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032574",
+      "targets": {
+        "jp": "0x9005838",
+        "eu": "0x90cb868"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032524_5",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032588",
+      "targets": {
+        "jp": "0x900584c",
+        "eu": "0x90cb87c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903259C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903259c",
+      "targets": {
+        "jp": "0x9005860",
+        "eu": "0x90cb890"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903259C_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90325b0",
+      "targets": {
+        "jp": "0x9005874",
+        "eu": "0x90cb8a4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903259C_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90325c4",
+      "targets": {
+        "jp": "0x9005888",
+        "eu": "0x90cb8b8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903259C_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90325d8",
+      "targets": {
+        "jp": "0x900589c",
+        "eu": "0x90cb8cc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903259C_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90325ec",
+      "targets": {
+        "jp": "0x90058b0",
+        "eu": "0x90cb8e0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032600_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032600",
+      "targets": {
+        "jp": "0x90058c4",
+        "eu": "0x90cb8f4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032600_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032614",
+      "targets": {
+        "jp": "0x90058d8",
+        "eu": "0x90cb908"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032600_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032628",
+      "targets": {
+        "jp": "0x90058ec",
+        "eu": "0x90cb91c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032600_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903263c",
+      "targets": {
+        "jp": "0x9005900",
+        "eu": "0x90cb930"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032600_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032650",
+      "targets": {
+        "jp": "0x9005914",
+        "eu": "0x90cb944"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032664_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032664",
+      "targets": {
+        "jp": "0x9005928",
+        "eu": "0x90cb958"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032664_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032678",
+      "targets": {
+        "jp": "0x900593c",
+        "eu": "0x90cb96c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032664_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903268c",
+      "targets": {
+        "jp": "0x9005950",
+        "eu": "0x90cb980"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090326A0_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90326a0",
+      "targets": {
+        "jp": "0x9005964",
+        "eu": "0x90cb994"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090326B4_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90326b4",
+      "targets": {
+        "jp": "0x9005978",
+        "eu": "0x90cb9a8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090326B4_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90326c8",
+      "targets": {
+        "jp": "0x900598c",
+        "eu": "0x90cb9bc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090326B4_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90326dc",
+      "targets": {
+        "jp": "0x90059a0",
+        "eu": "0x90cb9d0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090326B4_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90326f0",
+      "targets": {
+        "jp": "0x90059b4",
+        "eu": "0x90cb9e4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032704_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032704",
+      "targets": {
+        "jp": "0x90059c8",
+        "eu": "0x90cb9f8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032704_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032718",
+      "targets": {
+        "jp": "0x90059dc",
+        "eu": "0x90cba0c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032704_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903272c",
+      "targets": {
+        "jp": "0x90059f0",
+        "eu": "0x90cba20"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032704_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032740",
+      "targets": {
+        "jp": "0x9005a04",
+        "eu": "0x90cba34"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032754_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032754",
+      "targets": {
+        "jp": "0x9005a18",
+        "eu": "0x90cba48"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032754_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032768",
+      "targets": {
+        "jp": "0x9005a2c",
+        "eu": "0x90cba5c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032754_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903277c",
+      "targets": {
+        "jp": "0x9005a40",
+        "eu": "0x90cba70"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032754_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032790",
+      "targets": {
+        "jp": "0x9005a54",
+        "eu": "0x90cba84"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032754_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90327a4",
+      "targets": {
+        "jp": "0x9005a68",
+        "eu": "0x90cba98"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090327B8_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90327b8",
+      "targets": {
+        "jp": "0x9005a7c",
+        "eu": "0x90cbaac"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090327CC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90327cc",
+      "targets": {
+        "jp": "0x9005a90",
+        "eu": "0x90cbac0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090327CC_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90327e0",
+      "targets": {
+        "jp": "0x9005aa4",
+        "eu": "0x90cbad4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090327F4_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90327f4",
+      "targets": {
+        "jp": "0x9005ab8",
+        "eu": "0x90cbae8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090327F4_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032808",
+      "targets": {
+        "jp": "0x9005acc",
+        "eu": "0x90cbafc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903281c",
+      "targets": {
+        "jp": "0x9005ae0",
+        "eu": "0x90cbb10"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032830",
+      "targets": {
+        "jp": "0x9005af4",
+        "eu": "0x90cbb24"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032844",
+      "targets": {
+        "jp": "0x9005b08",
+        "eu": "0x90cbb38"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032858",
+      "targets": {
+        "jp": "0x9005b1c",
+        "eu": "0x90cbb4c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903286c",
+      "targets": {
+        "jp": "0x9005b30",
+        "eu": "0x90cbb60"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_5",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032880",
+      "targets": {
+        "jp": "0x9005b44",
+        "eu": "0x90cbb74"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_6",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032894",
+      "targets": {
+        "jp": "0x9005b58",
+        "eu": "0x90cbb88"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_7",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90328a8",
+      "targets": {
+        "jp": "0x9005b6c",
+        "eu": "0x90cbb9c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_8",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90328bc",
+      "targets": {
+        "jp": "0x9005b80",
+        "eu": "0x90cbbb0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_9",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90328d0",
+      "targets": {
+        "jp": "0x9005b94",
+        "eu": "0x90cbbc4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_10",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90328e4",
+      "targets": {
+        "jp": "0x9005ba8",
+        "eu": "0x90cbbd8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_11",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90328f8",
+      "targets": {
+        "jp": "0x9005bbc",
+        "eu": "0x90cbbec"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_12",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903290c",
+      "targets": {
+        "jp": "0x9005bd0",
+        "eu": "0x90cbc00"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_13",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032920",
+      "targets": {
+        "jp": "0x9005be4",
+        "eu": "0x90cbc14"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903281C_14",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032934",
+      "targets": {
+        "jp": "0x9005bf8",
+        "eu": "0x90cbc28"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032948_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032948",
+      "targets": {
+        "jp": "0x9005c0c",
+        "eu": "0x90cbc3c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032948_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903295c",
+      "targets": {
+        "jp": "0x9005c20",
+        "eu": "0x90cbc50"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032948_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032970",
+      "targets": {
+        "jp": "0x9005c34",
+        "eu": "0x90cbc64"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032948_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032984",
+      "targets": {
+        "jp": "0x9005c48",
+        "eu": "0x90cbc78"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032948_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032998",
+      "targets": {
+        "jp": "0x9005c5c",
+        "eu": "0x90cbc8c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329AC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90329ac",
+      "targets": {
+        "jp": "0x9005c70",
+        "eu": "0x90cbca0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329AC_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90329c0",
+      "targets": {
+        "jp": "0x9005c84",
+        "eu": "0x90cbcb4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329AC_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90329d4",
+      "targets": {
+        "jp": "0x9005c98",
+        "eu": "0x90cbcc8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329AC_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90329e8",
+      "targets": {
+        "jp": "0x9005cac",
+        "eu": "0x90cbcdc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329FC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90329fc",
+      "targets": {
+        "jp": "0x9005cc0",
+        "eu": "0x90cbcf0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329FC_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032a10",
+      "targets": {
+        "jp": "0x9005cd4",
+        "eu": "0x90cbd04"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329FC_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032a24",
+      "targets": {
+        "jp": "0x9005ce8",
+        "eu": "0x90cbd18"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329FC_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032a38",
+      "targets": {
+        "jp": "0x9005cfc",
+        "eu": "0x90cbd2c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329FC_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032a4c",
+      "targets": {
+        "jp": "0x9005d10",
+        "eu": "0x90cbd40"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090329FC_5",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032a60",
+      "targets": {
+        "jp": "0x9005d24",
+        "eu": "0x90cbd54"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032A74_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032a74",
+      "targets": {
+        "jp": "0x9005d38",
+        "eu": "0x90cbd68"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032A74_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032a88",
+      "targets": {
+        "jp": "0x9005d4c",
+        "eu": "0x90cbd7c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032A74_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032a9c",
+      "targets": {
+        "jp": "0x9005d60",
+        "eu": "0x90cbd90"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032AB0_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ab0",
+      "targets": {
+        "jp": "0x9005d74",
+        "eu": "0x90cbda4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032AB0_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ac4",
+      "targets": {
+        "jp": "0x9005d88",
+        "eu": "0x90cbdb8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032AB0_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ad8",
+      "targets": {
+        "jp": "0x9005d9c",
+        "eu": "0x90cbdcc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032AB0_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032aec",
+      "targets": {
+        "jp": "0x9005db0",
+        "eu": "0x90cbde0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032AB0_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032b00",
+      "targets": {
+        "jp": "0x9005dc4",
+        "eu": "0x90cbdf4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032B14_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032b14",
+      "targets": {
+        "jp": "0x9005dd8",
+        "eu": "0x90cbe08"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032B14_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032b28",
+      "targets": {
+        "jp": "0x9005dec",
+        "eu": "0x90cbe1c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032B14_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032b3c",
+      "targets": {
+        "jp": "0x9005e00",
+        "eu": "0x90cbe30"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032B14_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032b50",
+      "targets": {
+        "jp": "0x9005e14",
+        "eu": "0x90cbe44"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032B64_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032b64",
+      "targets": {
+        "jp": "0x9005e28",
+        "eu": "0x90cbe58"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032B64_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032b78",
+      "targets": {
+        "jp": "0x9005e3c",
+        "eu": "0x90cbe6c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032B64_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032b8c",
+      "targets": {
+        "jp": "0x9005e50",
+        "eu": "0x90cbe80"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032BA0_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ba0",
+      "targets": {
+        "jp": "0x9005e64",
+        "eu": "0x90cbe94"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032BA0_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032bb4",
+      "targets": {
+        "jp": "0x9005e78",
+        "eu": "0x90cbea8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032BA0_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032bc8",
+      "targets": {
+        "jp": "0x9005e8c",
+        "eu": "0x90cbebc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032BDC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032bdc",
+      "targets": {
+        "jp": "0x9005ea0",
+        "eu": "0x90cbed0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032BDC_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032bf0",
+      "targets": {
+        "jp": "0x9005eb4",
+        "eu": "0x90cbee4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032BDC_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032c04",
+      "targets": {
+        "jp": "0x9005ec8",
+        "eu": "0x90cbef8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C18_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032c18",
+      "targets": {
+        "jp": "0x9005edc",
+        "eu": "0x90cbf0c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C18_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032c2c",
+      "targets": {
+        "jp": "0x9005ef0",
+        "eu": "0x90cbf20"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C18_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032c40",
+      "targets": {
+        "jp": "0x9005f04",
+        "eu": "0x90cbf34"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C18_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032c54",
+      "targets": {
+        "jp": "0x9005f18",
+        "eu": "0x90cbf48"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C68_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032c68",
+      "targets": {
+        "jp": "0x9005f2c",
+        "eu": "0x90cbf5c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C68_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032c7c",
+      "targets": {
+        "jp": "0x9005f40",
+        "eu": "0x90cbf70"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C68_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032c90",
+      "targets": {
+        "jp": "0x9005f54",
+        "eu": "0x90cbf84"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C68_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ca4",
+      "targets": {
+        "jp": "0x9005f68",
+        "eu": "0x90cbf98"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032C68_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032cb8",
+      "targets": {
+        "jp": "0x9005f7c",
+        "eu": "0x90cbfac"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032CCC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ccc",
+      "targets": {
+        "jp": "0x9005f90",
+        "eu": "0x90cbfc0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032CE0_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ce0",
+      "targets": {
+        "jp": "0x9005fa4",
+        "eu": "0x90cbfd4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032CE0_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032cf4",
+      "targets": {
+        "jp": "0x9005fb8",
+        "eu": "0x90cbfe8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D08_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032d08",
+      "targets": {
+        "jp": "0x9005fcc",
+        "eu": "0x90cbffc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D08_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032d1c",
+      "targets": {
+        "jp": "0x9005fe0",
+        "eu": "0x90cc010"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D08_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032d30",
+      "targets": {
+        "jp": "0x9005ff4",
+        "eu": "0x90cc024"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D08_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032d44",
+      "targets": {
+        "jp": "0x9006008",
+        "eu": "0x90cc038"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D08_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032d58",
+      "targets": {
+        "jp": "0x900601c",
+        "eu": "0x90cc04c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D08_5",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032d6c",
+      "targets": {
+        "jp": "0x9006030",
+        "eu": "0x90cc060"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D80_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032d80",
+      "targets": {
+        "jp": "0x9006044",
+        "eu": "0x90cc074"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D80_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032d94",
+      "targets": {
+        "jp": "0x9006058",
+        "eu": "0x90cc088"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D80_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032da8",
+      "targets": {
+        "jp": "0x900606c",
+        "eu": "0x90cc09c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D80_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032dbc",
+      "targets": {
+        "jp": "0x9006080",
+        "eu": "0x90cc0b0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D80_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032dd0",
+      "targets": {
+        "jp": "0x9006094",
+        "eu": "0x90cc0c4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032D80_5",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032de4",
+      "targets": {
+        "jp": "0x90060a8",
+        "eu": "0x90cc0d8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032DF8_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032df8",
+      "targets": {
+        "jp": "0x90060bc",
+        "eu": "0x90cc0ec"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032DF8_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032e0c",
+      "targets": {
+        "jp": "0x90060d0",
+        "eu": "0x90cc100"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032E20_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032e20",
+      "targets": {
+        "jp": "0x90060e4",
+        "eu": "0x90cc114"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032E20_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032e34",
+      "targets": {
+        "jp": "0x90060f8",
+        "eu": "0x90cc128"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032E20_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032e48",
+      "targets": {
+        "jp": "0x900610c",
+        "eu": "0x90cc13c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032E20_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032e5c",
+      "targets": {
+        "jp": "0x9006120",
+        "eu": "0x90cc150"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032E70_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032e70",
+      "targets": {
+        "jp": "0x9006134",
+        "eu": "0x90cc164"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032E70_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032e84",
+      "targets": {
+        "jp": "0x9006148",
+        "eu": "0x90cc178"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032E70_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032e98",
+      "targets": {
+        "jp": "0x900615c",
+        "eu": "0x90cc18c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032E70_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032eac",
+      "targets": {
+        "jp": "0x9006170",
+        "eu": "0x90cc1a0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032EC0_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ec0",
+      "targets": {
+        "jp": "0x9006184",
+        "eu": "0x90cc1b4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032EC0_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ed4",
+      "targets": {
+        "jp": "0x9006198",
+        "eu": "0x90cc1c8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032EC0_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032ee8",
+      "targets": {
+        "jp": "0x90061ac",
+        "eu": "0x90cc1dc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032EC0_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032efc",
+      "targets": {
+        "jp": "0x90061c0",
+        "eu": "0x90cc1f0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032EC0_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032f10",
+      "targets": {
+        "jp": "0x90061d4",
+        "eu": "0x90cc204"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032EC0_5",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032f24",
+      "targets": {
+        "jp": "0x90061e8",
+        "eu": "0x90cc218"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F38_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032f38",
+      "targets": {
+        "jp": "0x90061fc",
+        "eu": "0x90cc22c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F38_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032f4c",
+      "targets": {
+        "jp": "0x9006210",
+        "eu": "0x90cc240"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F38_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032f60",
+      "targets": {
+        "jp": "0x9006224",
+        "eu": "0x90cc254"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F38_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032f74",
+      "targets": {
+        "jp": "0x9006238",
+        "eu": "0x90cc268"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F38_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032f88",
+      "targets": {
+        "jp": "0x900624c",
+        "eu": "0x90cc27c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F9C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032f9c",
+      "targets": {
+        "jp": "0x9006260",
+        "eu": "0x90cc290"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F9C_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032fb0",
+      "targets": {
+        "jp": "0x9006274",
+        "eu": "0x90cc2a4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F9C_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032fc4",
+      "targets": {
+        "jp": "0x9006288",
+        "eu": "0x90cc2b8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032F9C_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032fd8",
+      "targets": {
+        "jp": "0x900629c",
+        "eu": "0x90cc2cc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032FEC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9032fec",
+      "targets": {
+        "jp": "0x90062b0",
+        "eu": "0x90cc2e0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032FEC_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033000",
+      "targets": {
+        "jp": "0x90062c4",
+        "eu": "0x90cc2f4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032FEC_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033014",
+      "targets": {
+        "jp": "0x90062d8",
+        "eu": "0x90cc308"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09032FEC_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033028",
+      "targets": {
+        "jp": "0x90062ec",
+        "eu": "0x90cc31c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903303C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903303c",
+      "targets": {
+        "jp": "0x9006300",
+        "eu": "0x90cc330"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903303C_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033050",
+      "targets": {
+        "jp": "0x9006314",
+        "eu": "0x90cc344"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903303C_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033064",
+      "targets": {
+        "jp": "0x9006328",
+        "eu": "0x90cc358"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033078_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033078",
+      "targets": {
+        "jp": "0x900633c",
+        "eu": "0x90cc36c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033078_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903308c",
+      "targets": {
+        "jp": "0x9006350",
+        "eu": "0x90cc380"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033078_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90330a0",
+      "targets": {
+        "jp": "0x9006364",
+        "eu": "0x90cc394"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090330B4_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90330b4",
+      "targets": {
+        "jp": "0x9006378",
+        "eu": "0x90cc3a8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090330B4_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90330c8",
+      "targets": {
+        "jp": "0x900638c",
+        "eu": "0x90cc3bc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090330DC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90330dc",
+      "targets": {
+        "jp": "0x90063a0",
+        "eu": "0x90cc3d0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090330DC_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90330f0",
+      "targets": {
+        "jp": "0x90063b4",
+        "eu": "0x90cc3e4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033104_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033104",
+      "targets": {
+        "jp": "0x90063c8",
+        "eu": "0x90cc3f8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033104_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033118",
+      "targets": {
+        "jp": "0x90063dc",
+        "eu": "0x90cc40c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033104_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903312c",
+      "targets": {
+        "jp": "0x90063f0",
+        "eu": "0x90cc420"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033140_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033140",
+      "targets": {
+        "jp": "0x9006404",
+        "eu": "0x90cc434"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033140_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033154",
+      "targets": {
+        "jp": "0x9006418",
+        "eu": "0x90cc448"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033140_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033168",
+      "targets": {
+        "jp": "0x900642c",
+        "eu": "0x90cc45c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903317C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903317c",
+      "targets": {
+        "jp": "0x9006440",
+        "eu": "0x90cc470"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903317C_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033190",
+      "targets": {
+        "jp": "0x9006454",
+        "eu": "0x90cc484"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903317C_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90331a4",
+      "targets": {
+        "jp": "0x9006468",
+        "eu": "0x90cc498"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903317C_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90331b8",
+      "targets": {
+        "jp": "0x900647c",
+        "eu": "0x90cc4ac"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090331CC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90331cc",
+      "targets": {
+        "jp": "0x9006490",
+        "eu": "0x90cc4c0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090331CC_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90331e0",
+      "targets": {
+        "jp": "0x90064a4",
+        "eu": "0x90cc4d4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090331CC_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90331f4",
+      "targets": {
+        "jp": "0x90064b8",
+        "eu": "0x90cc4e8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033208_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033208",
+      "targets": {
+        "jp": "0x90064cc",
+        "eu": "0x90cc4fc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033208_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903321c",
+      "targets": {
+        "jp": "0x90064e0",
+        "eu": "0x90cc510"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033208_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033230",
+      "targets": {
+        "jp": "0x90064f4",
+        "eu": "0x90cc524"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033208_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033244",
+      "targets": {
+        "jp": "0x9006508",
+        "eu": "0x90cc538"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033258_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033258",
+      "targets": {
+        "jp": "0x900651c",
+        "eu": "0x90cc54c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033258_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903326c",
+      "targets": {
+        "jp": "0x9006530",
+        "eu": "0x90cc560"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033258_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033280",
+      "targets": {
+        "jp": "0x9006544",
+        "eu": "0x90cc574"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033258_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033294",
+      "targets": {
+        "jp": "0x9006558",
+        "eu": "0x90cc588"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090332A8_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90332a8",
+      "targets": {
+        "jp": "0x900656c",
+        "eu": "0x90cc59c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090332A8_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90332bc",
+      "targets": {
+        "jp": "0x9006580",
+        "eu": "0x90cc5b0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090332A8_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90332d0",
+      "targets": {
+        "jp": "0x9006594",
+        "eu": "0x90cc5c4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090332A8_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90332e4",
+      "targets": {
+        "jp": "0x90065a8",
+        "eu": "0x90cc5d8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090332A8_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90332f8",
+      "targets": {
+        "jp": "0x90065bc",
+        "eu": "0x90cc5ec"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903330C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903330c",
+      "targets": {
+        "jp": "0x90065d0",
+        "eu": "0x90cc600"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903330C_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033320",
+      "targets": {
+        "jp": "0x90065e4",
+        "eu": "0x90cc614"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903330C_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033334",
+      "targets": {
+        "jp": "0x90065f8",
+        "eu": "0x90cc628"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033348_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033348",
+      "targets": {
+        "jp": "0x900660c",
+        "eu": "0x90cc63c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033348_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903335c",
+      "targets": {
+        "jp": "0x9006620",
+        "eu": "0x90cc650"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033348_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033370",
+      "targets": {
+        "jp": "0x9006634",
+        "eu": "0x90cc664"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033348_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033384",
+      "targets": {
+        "jp": "0x9006648",
+        "eu": "0x90cc678"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033398_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033398",
+      "targets": {
+        "jp": "0x900665c",
+        "eu": "0x90cc68c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033398_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90333ac",
+      "targets": {
+        "jp": "0x9006670",
+        "eu": "0x90cc6a0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033398_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90333c0",
+      "targets": {
+        "jp": "0x9006684",
+        "eu": "0x90cc6b4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033398_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90333d4",
+      "targets": {
+        "jp": "0x9006698",
+        "eu": "0x90cc6c8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033398_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90333e8",
+      "targets": {
+        "jp": "0x90066ac",
+        "eu": "0x90cc6dc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090333FC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90333fc",
+      "targets": {
+        "jp": "0x90066c0",
+        "eu": "0x90cc6f0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090333FC_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033410",
+      "targets": {
+        "jp": "0x90066d4",
+        "eu": "0x90cc704"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090333FC_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033424",
+      "targets": {
+        "jp": "0x90066e8",
+        "eu": "0x90cc718"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033438_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033438",
+      "targets": {
+        "jp": "0x90066fc",
+        "eu": "0x90cc72c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033438_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903344c",
+      "targets": {
+        "jp": "0x9006710",
+        "eu": "0x90cc740"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033460_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033460",
+      "targets": {
+        "jp": "0x9006724",
+        "eu": "0x90cc754"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033460_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033474",
+      "targets": {
+        "jp": "0x9006738",
+        "eu": "0x90cc768"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033460_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033488",
+      "targets": {
+        "jp": "0x900674c",
+        "eu": "0x90cc77c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903349C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903349c",
+      "targets": {
+        "jp": "0x9006760",
+        "eu": "0x90cc790"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090334B0_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90334b0",
+      "targets": {
+        "jp": "0x9006774",
+        "eu": "0x90cc7a4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090334B0_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90334c4",
+      "targets": {
+        "jp": "0x9006788",
+        "eu": "0x90cc7b8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090334B0_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90334d8",
+      "targets": {
+        "jp": "0x900679c",
+        "eu": "0x90cc7cc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090334EC_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90334ec",
+      "targets": {
+        "jp": "0x90067b0",
+        "eu": "0x90cc7e0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033500_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033500",
+      "targets": {
+        "jp": "0x90067c4",
+        "eu": "0x90cc7f4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033500_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033514",
+      "targets": {
+        "jp": "0x90067d8",
+        "eu": "0x90cc808"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033500_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033528",
+      "targets": {
+        "jp": "0x90067ec",
+        "eu": "0x90cc81c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903353C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903353c",
+      "targets": {
+        "jp": "0x9006800",
+        "eu": "0x90cc830"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903353C_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033550",
+      "targets": {
+        "jp": "0x9006814",
+        "eu": "0x90cc844"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903353C_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033564",
+      "targets": {
+        "jp": "0x9006828",
+        "eu": "0x90cc858"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903353C_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033578",
+      "targets": {
+        "jp": "0x900683c",
+        "eu": "0x90cc86c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903353C_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903358c",
+      "targets": {
+        "jp": "0x9006850",
+        "eu": "0x90cc880"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090335A0_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90335a0",
+      "targets": {
+        "jp": "0x9006864",
+        "eu": "0x90cc894"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090335A0_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90335b4",
+      "targets": {
+        "jp": "0x9006878",
+        "eu": "0x90cc8a8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090335A0_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90335c8",
+      "targets": {
+        "jp": "0x900688c",
+        "eu": "0x90cc8bc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090335A0_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90335dc",
+      "targets": {
+        "jp": "0x90068a0",
+        "eu": "0x90cc8d0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090335A0_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90335f0",
+      "targets": {
+        "jp": "0x90068b4",
+        "eu": "0x90cc8e4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033604_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033604",
+      "targets": {
+        "jp": "0x90068c8",
+        "eu": "0x90cc8f8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033604_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033618",
+      "targets": {
+        "jp": "0x90068dc",
+        "eu": "0x90cc90c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033604_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903362c",
+      "targets": {
+        "jp": "0x90068f0",
+        "eu": "0x90cc920"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033604_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033640",
+      "targets": {
+        "jp": "0x9006904",
+        "eu": "0x90cc934"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033604_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033654",
+      "targets": {
+        "jp": "0x9006918",
+        "eu": "0x90cc948"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_09033604_5",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033668",
+      "targets": {
+        "jp": "0x900692c",
+        "eu": "0x90cc95c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903367C_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903367c",
+      "targets": {
+        "jp": "0x9006940",
+        "eu": "0x90cc970"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903367C_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033690",
+      "targets": {
+        "jp": "0x9006954",
+        "eu": "0x90cc984"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_0903367C_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90336a4",
+      "targets": {
+        "jp": "0x9006968",
+        "eu": "0x90cc998"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090336B8_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90336b8",
+      "targets": {
+        "jp": "0x900697c",
+        "eu": "0x90cc9ac"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090336B8_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90336cc",
+      "targets": {
+        "jp": "0x9006990",
+        "eu": "0x90cc9c0"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090336B8_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90336e0",
+      "targets": {
+        "jp": "0x90069a4",
+        "eu": "0x90cc9d4"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090336F4_0",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x90336f4",
+      "targets": {
+        "jp": "0x90069b8",
+        "eu": "0x90cc9e8"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090336F4_1",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033708",
+      "targets": {
+        "jp": "0x90069cc",
+        "eu": "0x90cc9fc"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090336F4_2",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x903371c",
+      "targets": {
+        "jp": "0x90069e0",
+        "eu": "0x90cca10"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090336F4_3",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033730",
+      "targets": {
+        "jp": "0x90069f4",
+        "eu": "0x90cca24"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "msg_portrait_090336F4_4",
+      "provenance": "Independently typed tiles/palette pair at the head of a complete MsgFaceAnim expression record; full native record and canonical graphics/animation target proof is in msg_portrait_data.json.",
+      "us": "0x9033744",
+      "targets": {
+        "jp": "0x9006a08",
+        "eu": "0x90cca38"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "debug_font_banks",
+      "us": "0x9ee26ec",
+      "targets": {
+        "jp": "0x9eba168",
+        "eu": "0x9f5d55c"
+      },
+      "size": 8,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "provenance": "mode_test PC-relative linked table base and valid Shift-JIS81/82 encoder branches independently identify the same two debug font banks in all three regions; the original renderer selects them with encoded character bits10 and above."
+    },
+    {
+      "name": "worldinspect_resources",
+      "layer": 1,
+      "provenance": "mode_worldinspect_0 iterates 12 floor/navigation entries and 14 world resource records explicitly. The four directional navigation fields form a closed 0..11 graph. Each world record carries its own matching 0..13 ID; both description selectors stay 0..13. Existing WorldinspectNav exposes 20 bytes and WorldinspectMsg 52 bytes, agreeing with the MdWorldNav/MdMsg storage layouts. Their complete scalar fields and padding agree across all regions. Palette and tile sizes are consumed by LoadObjPalette/LoadObjTiles and those complete copied payloads agree byte-for-byte. All 26 Sprite/OAM payloads match JP, and 25 match EU; world 5 small-icon Sprite preserves the actual EU one-pixel decrement in all three vertical OAM coordinates with every other field unchanged. Native world names reuse existing Jiminy encoded assets; EU names reuse existing compiler-owned LocalizedText objects.",
+      "us": "0x09EF909C",
+      "targets": {
+        "jp": "0x9ed0488",
+        "eu": "0x9f8499c"
+      },
+      "size": 728,
+      "stride": 52,
+      "pointer_offsets": [
+        4,
+        12,
+        20,
+        24,
+        32,
+        40,
+        44
+      ]
     }
   ]
 }

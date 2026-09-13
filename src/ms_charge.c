@@ -213,7 +213,7 @@ void func_08104D18(void) {
         *p = LoadTextSlots(gCardDefs[defIdx].unk_0C, gUnk_02035DDC);
 #endif
         q = &gUnk_02035DE8;
-        *q = LoadTextSlots(LANGSTR(gUnk_09EE8F48[card->unk_00]), gUnk_02035DE4);
+        *q = LoadTextSlots((void*)LANGSTR(gUnk_09EE8F48[card->unk_00]), gUnk_02035DE4);
         LoadObjPaletteBank(((u16*)gUnk_02035C44)[3], gUnk_09A3DE7C + card->unk_04 * 0x20);
     } else {
         gUnk_02035D84 = 0;

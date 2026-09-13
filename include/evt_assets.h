@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #include "map_resource_data.h"
 #include "event_sprite_data.h"
 #include "card_animation_data.h"
@@ -40,14 +41,6 @@ extern u8 gUnk_0978A4E8[];
 extern u8 gUnk_09849C18[];
 extern u8 gUnk_098A364E[];
 extern u8 gUnk_099918C4[];
-extern u8 gUnk_09EDECC0[];
-extern u8 gUnk_09EDECE0[];
-extern u8 gUnk_09EDF800[];
-extern u8 gUnk_09EDF830[];
-extern u8 gUnk_09EDF860[];
-extern u8 gUnk_09EDF880[];
-extern u8 gUnk_09EDF8A8[];
-extern u8 gUnk_09EDF8C8[];
 extern u8 gUnk_09EF5CAC[];
 extern u8 gUnk_09EF5CB0[];
 extern u8 gUnk_09EF5CB4[];

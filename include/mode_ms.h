@@ -1,8 +1,11 @@
+#include "card_def_data.h"
 #include "card_lookup_data.h"
 #include "card_animation_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
+
+#include "card_description_data.h"
 
 #include "animation_resource_data.h"
 
@@ -167,13 +170,10 @@ extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_09617D58[];
 extern u8 gUnk_092028EC[];
 extern MooglePackCardTable gUnk_099935A8[];
-extern CardBack gUnk_08F709B0[];
 extern u32 gFrameCounter;
 extern u8 gUnk_09A17D1C[];
 extern u8 gUnk_09A3DA1C[];
-extern void* gUnk_09EE8F48[];
 extern s16 gSineTable[];
-extern CardDef gCardDefs[];
 extern u8 gUnk_09A3DB1C[];
 extern u8 gUnk_099A4B9A[];
 extern u8 gUnk_09EF9A48[];

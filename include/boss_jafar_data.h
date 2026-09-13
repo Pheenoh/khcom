@@ -20,4 +20,6 @@ extern s8 gUnk_09EF2A38[9];
 extern s8 gUnk_09EF2A41;
 extern s16 gUnk_09EF2A42[12];
 
+extern void* gUnk_09EF275C[2][15];
+
 #endif

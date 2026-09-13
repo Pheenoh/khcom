@@ -1,3 +1,4 @@
+#include "aux_animation_data.h"
 #ifndef GUARD_FLD_H
 #define GUARD_FLD_H
 
@@ -49,8 +50,6 @@ extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_08F69BE4[];
-extern u8 gUnk_09EE1380[];
-extern u8 gUnk_09EE1384[];
 extern s16 gSineTable[];
 
 u8 func_08034518(FldPos* p);

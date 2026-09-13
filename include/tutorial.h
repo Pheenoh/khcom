@@ -1,3 +1,4 @@
+#include "battle_localized_data.h"
 #ifndef GUARD_TUTORIAL_H
 #define GUARD_TUTORIAL_H
 
@@ -44,7 +45,5 @@ extern u32 gFrameCounter;
 extern s16 gSineTable[];
 
 extern u8 gUnk_08B263D2[];
-extern u8 gUnk_09EE15F0[];
-extern u8 gUnk_09EE15C0[];
 
 #endif /* GUARD_TUTORIAL_H */

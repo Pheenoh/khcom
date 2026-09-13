@@ -36,10 +36,10 @@ typedef struct CardDef {
 typedef struct CardBack {
     void* unk_00;
     void* unk_04;
-    u8 unk_08[0x04];
+    void* unk_08;
     void* unk_0C;
     void* unk_10;
-    u8 unk_14[0x04];
+    void* unk_14;
 } CardBack;
 
 typedef struct CardStat {

@@ -2,6 +2,10 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "worldinspect_data.h"
+
+#include "card_description_data.h"
+
 #include "animation_resource_data.h"
 
 #include "bg_animation_data.h"
@@ -386,17 +390,6 @@ extern u8 gUnk_09A3CC3C[];
 extern u8 gUnk_0999A394[];
 extern u8 gUnk_0999A350[];
 
-typedef struct MdWorldNav {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-    s16 unk_08;
-    s16 unk_0A;
-    u8 unk_0C[0x8];
-} MdWorldNav;
-
-extern MdWorldNav gUnk_09EF8FAC[];
 extern void* gUnk_02035168[];
 extern u8 gUnk_020354E0;
 extern s16 gUnk_02035118;
@@ -417,25 +410,6 @@ void func_080FBA4C(MdWork* work);
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09A3C97C[];
 void task_bos_md_2(MdWork* work);
-typedef struct MdMsg {
-    u32 unk_00;
-    void* unk_04;
-    u16 unk_08;
-    u8 unk_0A[0x0E];
-    void* unk_18;
-    u16 unk_1C;
-    u16 unk_1E;
-    void* unk_20;
-    u16 unk_24;
-    u16 unk_26;
-    void* unk_28;
-    void* unk_2C;
-    u16 unk_30;
-    u16 unk_32;
-} MdMsg;
-
-extern MdMsg gUnk_09EF909C[];
-extern void* gUnk_09EE9138[];
 u8 func_080FF25C(s16 id);
 void func_080FC3FC(MdWork* work);
 void func_080FC360(MdWork* work);

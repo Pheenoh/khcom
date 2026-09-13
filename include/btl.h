@@ -1,3 +1,4 @@
+#include "battle_localized_data.h"
 #ifndef GUARD_BTL_H
 #define GUARD_BTL_H
 
@@ -282,8 +283,6 @@ extern u8 gUnk_08F683A4[];
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_096FAC64[];
 extern u8 gUnk_09618118[];
-extern u8 gUnk_09EE10EC[];
-extern u8 gUnk_09EE10F8[];
 extern u8 gUnk_08F69BA4[];
 
 extern u32 gFrameCounter;

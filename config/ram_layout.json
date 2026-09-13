@@ -1,5 +1,103 @@
 {
   "us": {
+    "src/m4a_catalog_data.o": {
+      "base": "0x20387e0",
+      "size": "0xff0",
+      "symbols": {
+        "gMPlayTracks0": {
+          "offset": "0x0",
+          "size": "0x460"
+        },
+        "gMPlayTracks1": {
+          "offset": "0x460",
+          "size": "0x50"
+        },
+        "gMPlayTracks2": {
+          "offset": "0x4b0",
+          "size": "0x50"
+        },
+        "gMPlayTracks3": {
+          "offset": "0x500",
+          "size": "0xa0"
+        },
+        "gMPlayTracks4": {
+          "offset": "0x5a0",
+          "size": "0x140"
+        },
+        "gMPlayTracks5": {
+          "offset": "0x6e0",
+          "size": "0x1e0"
+        },
+        "gMPlayTracks6": {
+          "offset": "0x8c0",
+          "size": "0x50"
+        },
+        "gMPlayTracks7": {
+          "offset": "0x910",
+          "size": "0x50"
+        },
+        "gMPlayTracks8": {
+          "offset": "0x960",
+          "size": "0xa0"
+        },
+        "gMPlayTracks9": {
+          "offset": "0xa00",
+          "size": "0x50"
+        },
+        "gMPlayTracks10": {
+          "offset": "0xa50",
+          "size": "0xf0"
+        },
+        "gMPlayTracks11": {
+          "offset": "0xb40",
+          "size": "0x50"
+        },
+        "gMPlayTracks12": {
+          "offset": "0xb90",
+          "size": "0x50"
+        },
+        "gMPlayTracks16": {
+          "offset": "0xbe0",
+          "size": "0xa0"
+        },
+        "gMPlayTracks17": {
+          "offset": "0xc80",
+          "size": "0x50"
+        },
+        "gMPlayTracks18": {
+          "offset": "0xcd0",
+          "size": "0x50"
+        },
+        "gMPlayTracks19": {
+          "offset": "0xd20",
+          "size": "0x50"
+        },
+        "gMPlayTracks20": {
+          "offset": "0xd70",
+          "size": "0x50"
+        },
+        "gMPlayTracks21": {
+          "offset": "0xdc0",
+          "size": "0x50"
+        },
+        "gMPlayTracks22": {
+          "offset": "0xe10",
+          "size": "0x50"
+        },
+        "gMPlayTracks23": {
+          "offset": "0xe60",
+          "size": "0x50"
+        },
+        "gMPlayTracks24": {
+          "offset": "0xeb0",
+          "size": "0xa0"
+        },
+        "gMPlayTracks25": {
+          "offset": "0xf50",
+          "size": "0xa0"
+        }
+      }
+    },
     "src/card_ui_state.o": {
       "base": "0x0203A860",
       "size": "0x189",
@@ -793,6 +891,104 @@
     }
   },
   "jp": {
+    "src/m4a_catalog_data.o": {
+      "base": "0x2038750",
+      "size": "0xff0",
+      "symbols": {
+        "gMPlayTracks0": {
+          "offset": "0x0",
+          "size": "0x460"
+        },
+        "gMPlayTracks1": {
+          "offset": "0x460",
+          "size": "0x50"
+        },
+        "gMPlayTracks2": {
+          "offset": "0x4b0",
+          "size": "0x50"
+        },
+        "gMPlayTracks3": {
+          "offset": "0x500",
+          "size": "0xa0"
+        },
+        "gMPlayTracks4": {
+          "offset": "0x5a0",
+          "size": "0x140"
+        },
+        "gMPlayTracks5": {
+          "offset": "0x6e0",
+          "size": "0x1e0"
+        },
+        "gMPlayTracks6": {
+          "offset": "0x8c0",
+          "size": "0x50"
+        },
+        "gMPlayTracks7": {
+          "offset": "0x910",
+          "size": "0x50"
+        },
+        "gMPlayTracks8": {
+          "offset": "0x960",
+          "size": "0xa0"
+        },
+        "gMPlayTracks9": {
+          "offset": "0xa00",
+          "size": "0x50"
+        },
+        "gMPlayTracks10": {
+          "offset": "0xa50",
+          "size": "0xf0"
+        },
+        "gMPlayTracks11": {
+          "offset": "0xb40",
+          "size": "0x50"
+        },
+        "gMPlayTracks12": {
+          "offset": "0xb90",
+          "size": "0x50"
+        },
+        "gMPlayTracks16": {
+          "offset": "0xbe0",
+          "size": "0xa0"
+        },
+        "gMPlayTracks17": {
+          "offset": "0xc80",
+          "size": "0x50"
+        },
+        "gMPlayTracks18": {
+          "offset": "0xcd0",
+          "size": "0x50"
+        },
+        "gMPlayTracks19": {
+          "offset": "0xd20",
+          "size": "0x50"
+        },
+        "gMPlayTracks20": {
+          "offset": "0xd70",
+          "size": "0x50"
+        },
+        "gMPlayTracks21": {
+          "offset": "0xdc0",
+          "size": "0x50"
+        },
+        "gMPlayTracks22": {
+          "offset": "0xe10",
+          "size": "0x50"
+        },
+        "gMPlayTracks23": {
+          "offset": "0xe60",
+          "size": "0x50"
+        },
+        "gMPlayTracks24": {
+          "offset": "0xeb0",
+          "size": "0xa0"
+        },
+        "gMPlayTracks25": {
+          "offset": "0xf50",
+          "size": "0xa0"
+        }
+      }
+    },
     "src/card_ui_state.o": {
       "base": "0x0203A7D0",
       "size": "0x189",
@@ -1585,6 +1781,104 @@
     }
   },
   "eu": {
+    "src/m4a_catalog_data.o": {
+      "base": "0x2038df0",
+      "size": "0xff0",
+      "symbols": {
+        "gMPlayTracks0": {
+          "offset": "0x0",
+          "size": "0x460"
+        },
+        "gMPlayTracks1": {
+          "offset": "0x460",
+          "size": "0x50"
+        },
+        "gMPlayTracks2": {
+          "offset": "0x4b0",
+          "size": "0x50"
+        },
+        "gMPlayTracks3": {
+          "offset": "0x500",
+          "size": "0xa0"
+        },
+        "gMPlayTracks4": {
+          "offset": "0x5a0",
+          "size": "0x140"
+        },
+        "gMPlayTracks5": {
+          "offset": "0x6e0",
+          "size": "0x1e0"
+        },
+        "gMPlayTracks6": {
+          "offset": "0x8c0",
+          "size": "0x50"
+        },
+        "gMPlayTracks7": {
+          "offset": "0x910",
+          "size": "0x50"
+        },
+        "gMPlayTracks8": {
+          "offset": "0x960",
+          "size": "0xa0"
+        },
+        "gMPlayTracks9": {
+          "offset": "0xa00",
+          "size": "0x50"
+        },
+        "gMPlayTracks10": {
+          "offset": "0xa50",
+          "size": "0xf0"
+        },
+        "gMPlayTracks11": {
+          "offset": "0xb40",
+          "size": "0x50"
+        },
+        "gMPlayTracks12": {
+          "offset": "0xb90",
+          "size": "0x50"
+        },
+        "gMPlayTracks16": {
+          "offset": "0xbe0",
+          "size": "0xa0"
+        },
+        "gMPlayTracks17": {
+          "offset": "0xc80",
+          "size": "0x50"
+        },
+        "gMPlayTracks18": {
+          "offset": "0xcd0",
+          "size": "0x50"
+        },
+        "gMPlayTracks19": {
+          "offset": "0xd20",
+          "size": "0x50"
+        },
+        "gMPlayTracks20": {
+          "offset": "0xd70",
+          "size": "0x50"
+        },
+        "gMPlayTracks21": {
+          "offset": "0xdc0",
+          "size": "0x50"
+        },
+        "gMPlayTracks22": {
+          "offset": "0xe10",
+          "size": "0x50"
+        },
+        "gMPlayTracks23": {
+          "offset": "0xe60",
+          "size": "0x50"
+        },
+        "gMPlayTracks24": {
+          "offset": "0xeb0",
+          "size": "0xa0"
+        },
+        "gMPlayTracks25": {
+          "offset": "0xf50",
+          "size": "0xa0"
+        }
+      }
+    },
     "src/card_ui_state.o": {
       "base": "0x0203AE70",
       "size": "0x185",

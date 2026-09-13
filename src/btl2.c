@@ -1,3 +1,4 @@
+#include "battle_localized_data.h"
 #include "system_state.h"
 #include "map_api.h"
 #include "display.h"
@@ -13,7 +14,6 @@ extern u8 gUnkEu_08B51D50[];
 extern u8 gUnkEu_08B51FB8[];
 extern u8 gUnkEu_08B52220[];
 extern u8 gUnkEu_08B52488[];
-extern void* gUnkEu_09F5C1FC[];
 extern u8 gUnkEu_08B54B7C[];
 extern u8 gUnkEu_08B54B86[];
 extern u8 gUnkEu_08B54B96[];
@@ -55,10 +55,6 @@ extern u8 gUnkEu_08B54E0E[];
 extern u8 gUnkEu_08B54E24[];
 extern u8 gUnkEu_08B54E3A[];
 extern u8 gUnkEu_08B54E50[];
-extern void* gUnkEu_09F5C20C[];
-extern void* gUnkEu_09F5C21C[];
-extern void* gUnkEu_09F5C22C[];
-extern void* gUnkEu_09F5C23C[];
 #endif
 
 void task_btl_shadow_0(BtlShadowWork* work, BtlObj* actor) {

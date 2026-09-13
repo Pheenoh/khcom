@@ -1,3 +1,4 @@
+#include "msg_portrait_data.h"
 #include "event_background_types.h"
 #include "card_animation_data.h"
 #include "card_sprite_data.h"
@@ -149,16 +150,6 @@ typedef struct BgTextLine {
     u8 dirty;
     u8 paletteIndex;
 } BgTextLine;
-
-typedef struct MsgFaceAnim {
-    void* unk_00;
-    void* unk_04;
-    s32 unk_08;
-    s32 unk_0C;
-    u8 unk_10;
-    u8 unk_11;
-    u8 unk_12[2];
-} MsgFaceAnim;
 
 typedef struct MsgFaceWork {
     void* tiles;
@@ -352,7 +343,6 @@ extern s16 gSineTable[];
 extern s16 gUnk_09033D50[];
 extern s16 gUnk_09033E76[];
 extern u8 gUnk_090D4180[];
-extern MsgFaceAnim* gUnk_09EE45DC[];
 extern void* gUnk_09EE3CA0[];
 extern s32 gUnk_09033758[];
 extern u8 gUnk_050001C0[];

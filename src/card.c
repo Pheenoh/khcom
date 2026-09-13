@@ -1126,6 +1126,7 @@ void func_080792F4(UnkStruct_08080268* w) {
     u8 i;
 #ifdef VERSION_EU
     s32 j;
+    s32 k;
 #endif
 
     if (gBtlWork->unk_0F4 == 1) {
@@ -1176,9 +1177,9 @@ void func_080792F4(UnkStruct_08080268* w) {
         }
 
         if (gUnk_02039B9C->unk_0F4 == 29) {
-            for (j = 0; j < gUnk_02039DD4->unk_0D0; j++) {
-                if (gUnk_02039DD4->unk_000[j]->unk_48->unk_2A == 2 &&
-                    !(gUnk_02039DD4->unk_000[j]->unk_48->unk_1E & 8)) {
+            for (k = 0; k < gUnk_02039DD4->unk_0D0; k++) {
+                if (gUnk_02039DD4->unk_000[k]->unk_48->unk_2A == 2 &&
+                    !(gUnk_02039DD4->unk_000[k]->unk_48->unk_1E & 8)) {
                     skip = 1;
                 }
             }
@@ -5782,6 +5783,9 @@ void func_08080268(UnkStruct_08080268* w) {
 
 #ifndef VERSION_EU
 void func_080802D8(UnkStruct_08080268* w) {
+#ifdef VERSION_EU
+    s32 i;
+#endif
     s32 f;
     s32 j;
     u32 t;
@@ -5830,6 +5834,23 @@ void func_080802D8(UnkStruct_08080268* w) {
         flag = 1;
     }
 
+#ifdef VERSION_EU
+    if (gBtlWork->unk_0F4 == 20) {
+        for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
+            if (gUnk_02039DD4->unk_000[i]->unk_48->unk_24 == 22) {
+                flag = 1;
+            }
+        }
+    }
+
+    if (gBtlWork->unk_0F4 == 29) {
+        for (j = 0; j < gUnk_02039DD4->unk_0D0; j++) {
+            if (gUnk_02039DD4->unk_000[j]->unk_48->unk_2A == 2 && !(gUnk_02039DD4->unk_000[j]->unk_48->unk_1E & 8)) {
+                flag = 1;
+            }
+        }
+    }
+#else
     if (gBtlWork->unk_0F4 == 20 && gUnk_02039DD4->unk_000[0]->unk_48->unk_24 == 22 && gUnk_02039DD4->unk_0E1 == 0) {
         flag = 1;
     }
@@ -5837,6 +5858,7 @@ void func_080802D8(UnkStruct_08080268* w) {
     if (gBtlWork->unk_0F4 == 29 && gUnk_02039DD4->unk_000[0]->unk_48->unk_2A == 2 && gUnk_02039DD4->unk_0E1 == 0) {
         flag = 1;
     }
+#endif
 
     if (flag) {
         return;
@@ -11229,23 +11251,23 @@ u8 func_080882DC(u8* work, void* a) {
     u16 i;
     u16 n;
 
-    *(void**)&work[0x4F0] = AnimUpdate((AnimState*)&work[0x800]);
+    *(void**)&work[0x4F0] = AnimUpdate((AnimState*)&work[CARDWORK(0x800)]);
 
-    if (work[0x8C9] != 0) {
-        ApproachValueHalf((s32*)&work[0x848], gUnk_09035702[*(s16*)&work[0x884]] << 8);
-        ApproachValueHalf((s32*)&work[0x84C], 0x1E00);
-        TaskPoolUpdate((TaskPool*)&work[0x7C8]);
-        TaskPoolUpdate((TaskPool*)&work[0x7DC]);
+    if (work[CARDWORK(0x8C9)] != 0) {
+        ApproachValueHalf((s32*)&work[CARDWORK(0x848)], gUnk_09035702[*(s16*)&work[CARDWORK(0x884)]] << 8);
+        ApproachValueHalf((s32*)&work[CARDWORK(0x84C)], 0x1E00);
+        TaskPoolUpdate((TaskPool*)&work[CARDWORK(0x7C8)]);
+        TaskPoolUpdate((TaskPool*)&work[CARDWORK(0x7DC)]);
 
         if (GetKeysPressed() & 8) {
-            work[0x8D2] = 7;
-            work[0x8CB] = 1;
+            work[CARDWORK(0x8D2)] = 7;
+            work[CARDWORK(0x8CB)] = 1;
         }
 
         return 1;
     }
 
-    if (work[0x8CB] != 0) {
+    if (work[CARDWORK(0x8CB)] != 0) {
         if ((u8)func_0808E750(work) != 0 && (u8)func_0808E79C(work) != 0) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
@@ -11253,24 +11275,24 @@ u8 func_080882DC(u8* work, void* a) {
             return 1;
         }
 
-        work[0x8CB] = 0;
+        work[CARDWORK(0x8CB)] = 0;
     }
 
     switch (GetKeysRepeat()) {
     case 32:
-        if (*(s16*)&work[0x884] > 1) {
-            (*(s16*)&work[0x884])--;
-            work[0x8B7] = 1;
+        if (*(s16*)&work[CARDWORK(0x884)] > 1) {
+            (*(s16*)&work[CARDWORK(0x884)])--;
+            work[CARDWORK(0x8B7)] = 1;
             m4aSongNumStart(101);
-            n = *(u16*)&work[0x884];
-            work[0x8C1] = n;
-            func_0808D4E4(work[0x8C1], work[0x8C7]);
+            n = *(u16*)&work[CARDWORK(0x884)];
+            work[CARDWORK(0x8C1)] = n;
+            func_0808D4E4(work[CARDWORK(0x8C1)], work[CARDWORK(0x8C7)]);
             func_0808C90C(work);
 
-            if (work[0x8B1] == 6) {
-                *(u16*)&work[0x8D4] = func_0808C60C(work, work[0x8C1], 0);
+            if (work[CARDWORK(0x8B1)] == 6) {
+                *(u16*)&work[CARDWORK(0x8D4)] = func_0808C60C(work, work[CARDWORK(0x8C1)], 0);
             } else {
-                *(u16*)&work[0x8D4] = func_0808C60C(work, work[0x8C1], 1);
+                *(u16*)&work[CARDWORK(0x8D4)] = func_0808C60C(work, work[CARDWORK(0x8C1)], 1);
             }
         }
 
@@ -11279,19 +11301,19 @@ u8 func_080882DC(u8* work, void* a) {
         }
         break;
     case 16:
-        if (*(s16*)&work[0x884] <= 4) {
-            (*(s16*)&work[0x884])++;
-            work[0x8B7] = 1;
+        if (*(s16*)&work[CARDWORK(0x884)] <= 4) {
+            (*(s16*)&work[CARDWORK(0x884)])++;
+            work[CARDWORK(0x8B7)] = 1;
             m4aSongNumStart(101);
-            n = *(u16*)&work[0x884];
-            work[0x8C1] = n;
-            func_0808D4E4(work[0x8C1], work[0x8C7]);
+            n = *(u16*)&work[CARDWORK(0x884)];
+            work[CARDWORK(0x8C1)] = n;
+            func_0808D4E4(work[CARDWORK(0x8C1)], work[CARDWORK(0x8C7)]);
             func_0808C90C(work);
 
-            if (work[0x8B1] == 6) {
-                *(u16*)&work[0x8D4] = func_0808C60C(work, work[0x8C1], 0);
+            if (work[CARDWORK(0x8B1)] == 6) {
+                *(u16*)&work[CARDWORK(0x8D4)] = func_0808C60C(work, work[CARDWORK(0x8C1)], 0);
             } else {
-                *(u16*)&work[0x8D4] = func_0808C60C(work, work[0x8C1], 1);
+                *(u16*)&work[CARDWORK(0x8D4)] = func_0808C60C(work, work[CARDWORK(0x8C1)], 1);
             }
         }
 
@@ -11300,65 +11322,65 @@ u8 func_080882DC(u8* work, void* a) {
         }
         break;
     case 128:
-        if (*(u16*)&work[0x8D4] != 0) {
-            *(s16*)&work[0x884] = 0;
-            *(s16*)&work[0x886] = 0;
-            work[0x8B7] = 1;
+        if (*(u16*)&work[CARDWORK(0x8D4)] != 0) {
+            *(s16*)&work[CARDWORK(0x884)] = 0;
+            *(s16*)&work[CARDWORK(0x886)] = 0;
+            work[CARDWORK(0x8B7)] = 1;
             m4aSongNumStart(121);
             func_0808D828(work);
 
-            if (work[0x8B1] == 6) {
-                work[0x8B1] = 4;
+            if (work[CARDWORK(0x8B1)] == 6) {
+                work[CARDWORK(0x8B1)] = 4;
                 SetTaskUpdate(a, (void*)func_080897CC);
             }
 
-            if (work[0x8B1] == 10) {
-                work[0x8B1] = 9;
+            if (work[CARDWORK(0x8B1)] == 10) {
+                work[CARDWORK(0x8B1)] = 9;
                 SetTaskUpdate(a, (void*)func_0808AB48);
             }
         } else {
             m4aSongNumStart(105);
         }
 
-        *(s32*)&work[0x850] = 0xA000;
-        *(s32*)&work[0x854] = 0x2800;
-        *(u16*)&work[0x8AC] = 4;
+        *(s32*)&work[CARDWORK(0x850)] = 0xA000;
+        *(s32*)&work[CARDWORK(0x854)] = 0x2800;
+        *(u16*)&work[CARDWORK(0x8AC)] = 4;
         return 1;
     case 2:
-        if (*(u16*)&work[0x8D4] != 0) {
-            *(s16*)&work[0x884] = 0;
-            *(s16*)&work[0x886] = 0;
-            work[0x8B7] = 1;
+        if (*(u16*)&work[CARDWORK(0x8D4)] != 0) {
+            *(s16*)&work[CARDWORK(0x884)] = 0;
+            *(s16*)&work[CARDWORK(0x886)] = 0;
+            work[CARDWORK(0x8B7)] = 1;
             m4aSongNumStart(121);
             func_0808D828(work);
 
-            if (work[0x8B1] == 6) {
-                work[0x8B1] = 4;
+            if (work[CARDWORK(0x8B1)] == 6) {
+                work[CARDWORK(0x8B1)] = 4;
                 SetTaskUpdate(a, (void*)func_080897CC);
             }
 
-            if (work[0x8B1] == 10) {
-                work[0x8B1] = 9;
+            if (work[CARDWORK(0x8B1)] == 10) {
+                work[CARDWORK(0x8B1)] = 9;
                 SetTaskUpdate(a, (void*)func_0808AB48);
             }
         } else {
             m4aSongNumStart(103);
 
-            if (work[0x8B1] == 6) {
+            if (work[CARDWORK(0x8B1)] == 6) {
                 SetTaskUpdate(a, (void*)func_08089D20);
             }
 
-            if (work[0x8B1] == 10) {
+            if (work[CARDWORK(0x8B1)] == 10) {
                 SetTaskUpdate(a, (void*)func_0808B068);
             }
         }
 
-        *(s32*)&work[0x850] = 0xA000;
-        *(s32*)&work[0x854] = 0x2800;
-        *(u16*)&work[0x8AC] = 4;
+        *(s32*)&work[CARDWORK(0x850)] = 0xA000;
+        *(s32*)&work[CARDWORK(0x854)] = 0x2800;
+        *(u16*)&work[CARDWORK(0x8AC)] = 4;
         return 1;
     case 512:
-        if (work[0x8B1] == 6) {
+        if (work[CARDWORK(0x8B1)] == 6) {
             FadeStartIn(0, 1);
             func_0808E2F0((UnkStruct_0808DB04*)work);
             SetTaskUpdate(a, (void*)func_08089EC0);
@@ -11371,16 +11393,16 @@ u8 func_080882DC(u8* work, void* a) {
             SetTaskUpdate(a, (void*)func_0808B208);
             FadeStartOut(0, 4);
             m4aSongNumStart(104);
-            work[0x8D2] = 7;
+            work[CARDWORK(0x8D2)] = 7;
         }
 
         return 1;
     }
 
-    ApproachValueHalf((s32*)&work[0x848], gUnk_09035702[*(s16*)&work[0x884]] << 8);
-    ApproachValueHalf((s32*)&work[0x84C], 0x1E00);
-    TaskPoolUpdate((TaskPool*)&work[0x7C8]);
-    TaskPoolUpdate((TaskPool*)&work[0x7DC]);
+    ApproachValueHalf((s32*)&work[CARDWORK(0x848)], gUnk_09035702[*(s16*)&work[CARDWORK(0x884)]] << 8);
+    ApproachValueHalf((s32*)&work[CARDWORK(0x84C)], 0x1E00);
+    TaskPoolUpdate((TaskPool*)&work[CARDWORK(0x7C8)]);
+    TaskPoolUpdate((TaskPool*)&work[CARDWORK(0x7DC)]);
     return 1;
 }
 #else
@@ -11962,31 +11984,31 @@ u8 func_08089558(u8* work, void* a) {
 
     FadeStartIn(0, 4);
 
-    switch (work[0x8D0]) {
+    switch (work[CARDWORK(0x8D0)]) {
     case 0:
-        q = &work[0x8B1];
+        q = &work[CARDWORK(0x8B1)];
         k = 0;
         *q = 4;
-        *(u16*)&work[0x894] = 7;
-        *(u16*)&work[0x896] = 130;
+        *(u16*)&work[CARDWORK(0x894)] = 7;
+        *(u16*)&work[CARDWORK(0x896)] = 130;
         func_0808E344((void**)work);
         func_0808E364(work, 0);
         func_0808C90C(work);
         LoadBgMap(3, gUnk_095142B8, 0x800);
-        *(u16*)&work[0x898] = n = 0x11E;
+        *(u16*)&work[CARDWORK(0x898)] = n = 0x11E;
         *(void**)&work[0x4D8] = EwramAlloc(n * 32);
         zero = 0;
-        CpuSet((void*)&zero, *(void**)&work[0x4D8], (*(u16*)&work[0x898] * 8) | 0x05000000);
+        CpuSet((void*)&zero, *(void**)&work[0x4D8], (*(u16*)&work[CARDWORK(0x898)] * 8) | 0x05000000);
         *(s32*)&work[0x4D4] = k;
         break;
     case 1:
-        func_08084D78(*(void**)&work[0x4D8], work[0x8C0], 1, *(u16*)&work[0x898], &work[0x4FC]);
+        func_08084D78(*(void**)&work[0x4D8], work[CARDWORK(0x8C0)], 1, *(u16*)&work[CARDWORK(0x898)], &work[0x4FC]);
         break;
     case 2:
-        *(u16*)&work[0x898] = func_08084E50(*(void**)&work[0x4D8], work[0x8C0], 1, *(u16*)&work[0x898], &work[0x4FC]);
+        *(u16*)&work[CARDWORK(0x898)] = func_08084E50(*(void**)&work[0x4D8], work[CARDWORK(0x8C0)], 1, *(u16*)&work[CARDWORK(0x898)], &work[0x4FC]);
         break;
     case 3:
-        if (*(u16*)&work[0x898] != 0) {
+        if (*(u16*)&work[CARDWORK(0x898)] != 0) {
             func_0808FA8C(work);
         }
         break;
@@ -12003,34 +12025,34 @@ u8 func_08089558(u8* work, void* a) {
         EwramFree(*(void**)&work[0x4D8]);
         break;
     case 5:
-        p = &work[0x8C1];
+        p = &work[CARDWORK(0x8C1)];
         m = 0;
         *p = 5;
-        *(u16*)&work[0x8D4] = func_0808C60C(work, 5, 0);
+        *(u16*)&work[CARDWORK(0x8D4)] = func_0808C60C(work, 5, 0);
         func_0808CD48(work);
-        *(s32*)&work[0x848] = gUnk_0903595E[0] << 8;
-        *(s32*)&work[0x84C] = gUnk_09035964[0] << 8;
-        work[0x8C7] = 2;
-        *(u16*)&work[0x884] = m;
-        *(u16*)&work[0x886] = m;
+        *(s32*)&work[CARDWORK(0x848)] = gUnk_0903595E[0] << 8;
+        *(s32*)&work[CARDWORK(0x84C)] = gUnk_09035964[0] << 8;
+        work[CARDWORK(0x8C7)] = 2;
+        *(u16*)&work[CARDWORK(0x884)] = m;
+        *(u16*)&work[CARDWORK(0x886)] = m;
         func_0808D828(work);
         func_0808DE28(0);
 
-        if (*(u16*)&work[0x8D4] != 0) {
-            work[0x8D0] = 4;
+        if (*(u16*)&work[CARDWORK(0x8D4)] != 0) {
+            work[CARDWORK(0x8D0)] = 4;
             SetTaskUpdate(a, (void*)func_080897CC);
         } else {
-            *(u16*)&work[0x884] = *p;
-            work[0x8B7] = 1;
-            work[0x8B1] = 6;
+            *(u16*)&work[CARDWORK(0x884)] = *p;
+            work[CARDWORK(0x8B7)] = 1;
+            work[CARDWORK(0x8B1)] = 6;
             SetTaskUpdate(a, (void*)func_080882DC);
         }
         break;
     }
 
-    work[0x8D0]++;
-    TaskPoolUpdate(&work[0x7C8]);
-    TaskPoolUpdate(&work[0x7DC]);
+    work[CARDWORK(0x8D0)]++;
+    TaskPoolUpdate(&work[CARDWORK(0x7C8)]);
+    TaskPoolUpdate(&work[CARDWORK(0x7DC)]);
     return 1;
 }
 #else
@@ -14059,11 +14081,11 @@ s32 func_0808D828(u8* work) {
     u16 k;
 
     id = 0xFFFF;
-    t = ListPoolFirst(&work[0x7F0]);
+    t = ListPoolFirst(&work[CARDWORK(0x7F0)]);
 
     while (t != 0) {
-        if (t->unk_24 == *(s16*)&work[0x886] &&
-            t->unk_22 == *(s16*)&work[0x884]) {
+        if (t->unk_24 == *(s16*)&work[CARDWORK(0x886)] &&
+            t->unk_22 == *(s16*)&work[CARDWORK(0x884)]) {
             id = t->unk_20;
             break;
         }
@@ -14079,9 +14101,9 @@ s32 func_0808D828(u8* work) {
         if (flag != 0) {
             *(void**)&work[0x28] = AllocObjTiles(0x280, 0);
             SetObjTileSource(*(void**)&work[0x28], gUnk_0908B1B4);
-            AnimInit((AnimState*)&work[0x830], gUnk_09EEA164, gUnk_09EEA148);
-            AnimStart((AnimState*)&work[0x830], 0, 1);
-            *(void**)&work[0x4F8] = AnimGetGfx((AnimState*)&work[0x830]);
+            AnimInit((AnimState*)&work[CARDWORK(0x830)], gUnk_09EEA164, gUnk_09EEA148);
+            AnimStart((AnimState*)&work[CARDWORK(0x830)], 0, 1);
+            *(void**)&work[0x4F8] = AnimGetGfx((AnimState*)&work[CARDWORK(0x830)]);
         }
 
         def = &gCardDefs[id & 0xFFF];
@@ -14092,7 +14114,7 @@ s32 func_0808D828(u8* work) {
         *(void**)&work[0x4DC] = gUnk_08F709B0[def->unk_2A].unk_00;
         *(void**)&work[0x4E0] = def->unk_00;
 
-        for (i = 0; i < *(u16*)&work[0x898]; i++) {
+        for (i = 0; i < *(u16*)&work[CARDWORK(0x898)]; i++) {
             if ((u16)(id & 0x8000) != 0) {
                 if ((*(UnkStruct_0808E2F0**)&work[0x4D4])[i].unk_00[10] ==
                     def->unk_1C + 143) {
@@ -14106,7 +14128,7 @@ s32 func_0808D828(u8* work) {
             }
         }
 
-        *(u16*)&work[0x880] = i;
+        *(u16*)&work[CARDWORK(0x880)] = i;
         dst = gUnk_05000160;
         LoadPalette(&gUnk_09614318[def->unk_2A * 32], dst, 32);
 
@@ -14118,7 +14140,7 @@ s32 func_0808D828(u8* work) {
         func_0808D73C(work, v);
         func_0808D7EC(work, v);
 
-        if (work[0x8B1] >= 9 && work[0x8B1] <= 12) {
+        if (work[CARDWORK(0x8B1)] >= 9 && work[CARDWORK(0x8B1)] <= 12) {
             if (def->unk_1C > 46) {
                 LoadBgMap(2, gUnk_09518AB8, 0x800);
                 func_0808DE28((u8)GetCardCpCost(id));
@@ -14128,7 +14150,7 @@ s32 func_0808D828(u8* work) {
             LoadBgMap(2, gUnk_095182B8, 0x800);
             func_0808DE28(0);
         } else if (def->unk_1C > 46) {
-            switch (work[0x8C0]) {
+            switch (work[CARDWORK(0x8C0)]) {
             case 0:
                 LoadBgMap(1, gUnk_09518AB8, 0x800);
                 break;
@@ -14140,7 +14162,7 @@ s32 func_0808D828(u8* work) {
 
             func_0808DE28(0);
         } else {
-            switch (work[0x8C0]) {
+            switch (work[CARDWORK(0x8C0)]) {
             case 0:
                 LoadBgMap(1, gUnk_095182B8, 0x800);
                 break;
@@ -20125,7 +20147,7 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     }
 
     w->unk_08 = LoadObjTiles(back->unk_0C, 0x280);
-    w->unk_0C = LoadObjTiles(*(void**)back->unk_14, 0x600);
+    w->unk_0C = LoadObjTiles(back->unk_14, 0x600);
     w->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_14 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->unk_18 = LoadObjTiles(gUnk_08B22BBC, 0x100);
@@ -22289,7 +22311,7 @@ void PrizeBoss_0(BossPrizeWork* w, s32* args) {
     w->unk_34 = *(CardStat*)&def->unk_1C;
     back = &gUnk_08F709B0[def->unk_2A];
     w->unk_08 = LoadObjTiles(back->unk_0C, 0x280);
-    w->unk_0C = LoadObjTiles(*(void**)back->unk_14, 0x600);
+    w->unk_0C = LoadObjTiles(back->unk_14, 0x600);
     w->unk_10 = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_14 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->unk_18 = LoadObjTiles(gUnk_08B22BBC, 0x100);
@@ -23759,6 +23781,9 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
     case 4:
         w->unk_00 = LoadObjTiles(gUnkEu_09162C8C, 0x300);
         break;
+    case 0:
+        w->unk_00 = LoadObjTiles(gUnk_0908BB80, 0x3C0);
+        break;
     default:
         w->unk_00 = LoadObjTiles(gUnk_0908BB80, 0x3C0);
         break;
@@ -23782,7 +23807,11 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
     FadeSetPaletteExcluded((u16)(w->unk_0C->unk_06 + 16), 1);
     FadeSetPaletteExcluded((u16)(w->unk_1C->unk_06 + 16), 1);
 
+#ifdef VERSION_EU
+    for (i = 0, n = 0; i < DECK_SIZE; i++) {
+#else
     for (i = 0; i < DECK_SIZE; i++) {
+#endif
         if (cards[i] != 0xFFFF) {
             if (!(gCardCollection[cards[i]] & 0x8000)) {
                 if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A != 3) {
@@ -28163,7 +28192,7 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
 }
 
 u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
-    UnkStruct_080A3F5C_Entry* tbl;
+    MsgFaceAnim* tbl;
 
     ApproachValue(&w->unk_118, gUnk_09033CA0[w->unk_114->unk_04], w->unk_140);
     ApproachValue(&w->unk_11C, gUnk_09033CE0[w->unk_114->unk_04], w->unk_140);
@@ -28231,7 +28260,7 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
 }
 u8 func_080A3754(UnkStruct_080A3F5C* w, void* a) {
     CardMessageDef* sel;
-    UnkStruct_080A3F5C_Entry* e;
+    MsgFaceAnim* e;
 
     w->unk_149 = 1;
     sel = w->unk_114;
@@ -28333,7 +28362,7 @@ void func_080A3A04(UnkStruct_080A3F5C* w) {
 
 u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
     CardMessageDef* sel;
-    UnkStruct_080A3F5C_Entry* e;
+    MsgFaceAnim* e;
 
     w->unk_12C = AnimUpdate(w->unk_0C4);
 
@@ -28371,7 +28400,7 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
     return 1;
 }
 u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
-    UnkStruct_080A3F5C_Entry* e;
+    MsgFaceAnim* e;
     u8* pal;
 
     w->unk_130 = AnimUpdate(w->unk_0DC);
@@ -28491,7 +28520,7 @@ u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a) {
 }
 
 u8 func_080A3F5C(UnkStruct_080A3F5C* w, void* a) {
-    UnkStruct_080A3F5C_Entry* e;
+    MsgFaceAnim* e;
 
     w->unk_12C = AnimUpdate(w->unk_0C4);
 
@@ -32338,7 +32367,7 @@ void func_080AAEB0(u8* work, u16 index) {
     CardDef* d;
 
     d = &gCardDefs[index];
-    work[0x70C] = LoadTextSlots(gUnk_09EE8F48[d->unk_1C], &work[0x1D8]);
+    work[0x70C] = LoadTextSlots((void*)gUnk_09EE8F48[d->unk_1C], &work[0x1D8]);
 }
 
 void func_080AAEEC(UnkStruct_0808C940* w, s16 n) {
@@ -34647,8 +34676,34 @@ void mode_sio_battle_1(void) {
             }
         }
 
+#ifdef VERSION_EU
+        switch (gLanguage) {
+        case 0:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB38[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB44[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 3:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB80[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB8C[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 1:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB50[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB5C[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 4:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB68[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB74[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 2:
+        default:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB98[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EBA4[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        }
+#else
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnk_09EF38BC[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnk_09EF38C8[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+#endif
 
         if (GetKeysPressed() & 9) {
             m4aSongNumStart(102);

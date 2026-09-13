@@ -3179,7 +3179,7 @@ void func_080B397C(void) {
     nameId = def->unk_1C;
     defs = (CardDef*)((u8*)defs + 12);
     gSioChgCardWork->unk_361 = LoadTextSlots(defs[n].unk_00, gSioChgCardWork->unk_364);
-    gSioChgCardWork->unk_20D = LoadTextSlots(gUnk_09EE8F48[nameId], gSioChgCardWork->unk_210);
+    gSioChgCardWork->unk_20D = LoadTextSlots((void*)gUnk_09EE8F48[nameId], gSioChgCardWork->unk_210);
     EnableBg(0);
     gSioChgCardWork->unk_360 = 1;
 }

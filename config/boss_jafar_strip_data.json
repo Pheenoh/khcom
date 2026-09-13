@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "provenance": {
+    "jafar_map_strips": "func_080BDAAC explicitly selects rows0 and1. func_080C02AC selects15 actual target triples from gUnk_0961A710, including the special m=14 branch; each of the three columns reaches14. func_080C0258 moves each initially in-range selector one unit toward those targets, proving0..14 indices. func_080C6EB0 copies23 rows of7 halfwords with64-byte stride, requiring1422 bytes. The30 table pointers resolve to eight independently byte-identical2048-byte raw maps plus exact0/14/28/42-byte offsets in every region."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_09EF275C",
+          "address": "0x9ef275c",
+          "size": 120,
+          "sha256": "818e800252efd60c74e72af9254124359258d43d2d527d3850f21795631c449b",
+          "objects": [
+            {
+              "name": "gUnk_09EF275C",
+              "offset": 0,
+              "size": 120
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_09EF275C",
+          "address": "0x9ec9b48",
+          "size": 120,
+          "sha256": "efc3046b7853006880fe17a3228d81e78ba9dd6578d204a38d0877d54bb02f4f",
+          "objects": [
+            {
+              "name": "gUnk_09EF275C",
+              "offset": 0,
+              "size": 120
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "boss_jafar_data.c",
+          "section": ".data_09EF275C",
+          "address": "0x9f7d994",
+          "size": 120,
+          "sha256": "cbb1ad404669bef7ce44ab5bb24fcc344b4038adc0cd6a10f1501fe417768b47",
+          "objects": [
+            {
+              "name": "gUnk_09EF275C",
+              "offset": 0,
+              "size": 120
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
