@@ -5,6 +5,8 @@ import struct
 import sys
 from pathlib import Path
 
+import baserom
+
 
 def movie_extent(data):
     def need(at, size):
@@ -100,6 +102,6 @@ def apply_movie_regions(found, placements, assets):
 
 if __name__ == '__main__':
     root = Path(__file__).resolve().parents[1]
-    for version, code in [('us', 'B8CE'), ('jp', 'B8CJ'), ('eu', 'B8CP')]:
-        assets = load_movie_assets(root / 'config/movie_assets.json', version, (root / 'roms' / (code + '.gba')).read_bytes())
+    for version in ('us', 'jp', 'eu'):
+        assets = load_movie_assets(root / 'config/movie_assets.json', version, baserom.read(version, purpose='tools/movie_assets.py'))
         print(version + ': movie assets OK (' + str(sum(hi - lo for lo, hi, _, _ in assets)) + ' bytes)')

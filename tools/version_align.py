@@ -22,6 +22,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import baserom
+
 ROM_BASE = 0x08000000
 CODE_LO = 0x08000240
 CODE_HI = 0x081213C4
@@ -114,10 +116,12 @@ def main():
     p.add_argument("--map", default="build/us/com_us.map")
     args = p.parse_args()
 
-    us = Path("roms/B8CE.gba").read_bytes()
-    ot = Path(f"roms/{args.code}.gba").read_bytes()
-    usn = named("roms/B8CE.gba")
-    otn = named(f"roms/{args.code}.gba")
+    us_path = baserom.path("us", purpose="tools/version_align.py")
+    ot_path = baserom.path(args.version, purpose="tools/version_align.py")
+    us = us_path.read_bytes()
+    ot = ot_path.read_bytes()
+    usn = named(str(us_path))
+    otn = named(str(ot_path))
     funcs, owner = us_functions(args.map)
     n = len(funcs)
     addr = [None] * n
