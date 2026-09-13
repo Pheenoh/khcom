@@ -375,6 +375,7 @@ extern s32 gUnk_0903800C[];
 extern u16 gUnk_0903801C[];
 extern u16 gUnk_09EE48F4[47];
 extern s32 gUnk_090352E4[];
+extern s16 gUnk_090352F4[];
 extern u8 gUnk_09512AB8[];
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_08B25ADE[];
@@ -1671,6 +1672,7 @@ typedef struct UnkStruct_080ABA80 {
 
 extern const UnkStruct_080ABA80 gUnk_09045188;
 extern const UnkStruct_080ABA80 gUnk_09033FD0;
+extern const UnkStruct_080ABA80 gUnk_090352FC;
 
 typedef struct UnkStruct_0809A368_Args {
     s32 unk_00;
