@@ -2510,10 +2510,16 @@ s32 func_080BDB58(void) {
     return gUnk_0203B4E8;
 }
 
-#ifdef NON_MATCHING
 void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
+    struct {
+        u8 fraction;
+        s8 integer;
+    } speed;
+
+    speed.integer = 0;
+    speed.fraction = 0x80;
     work->unk_00 = arg;
-    work->unk_28 = 0x80;
+    work->unk_28 = speed.integer * 256 + speed.fraction;
     work->tiles = LoadObjTiles(gUnk_09682AA4, 0x2800);
     work->gfx = gUnk_09EF3A48[12];
     work->tiles2 = LoadObjTiles(gUnk_09682AA4, 0x2800);
@@ -2533,11 +2539,8 @@ void task_bos_jf_lamp_0(JfLampWork* work, JfWork* arg) {
     work->unk_38 = 0;
     work->unk_42 = 0;
     TaskPoolInit(&work->unk_44, 1);
-    TaskCreate(&work->unk_44, gTaskDescBtlShadow, &((BtlObj*)work->unk_00)[1]);
+    TaskCreate(&work->unk_44, (TaskDesc*)gTaskDescBtlShadow, &(arg = work->unk_00)->unk_110);
 }
-#else
-INCLUDE_ASM("bos2/task_bos_jf_lamp_0.s");
-#endif
 u8 task_bos_jf_lamp_1(JfLampWork* work) {
     BtlObj* sub = &work->unk_00->unk_110;
     JfWork* jf = work->unk_00;
