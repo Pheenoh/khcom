@@ -1,6 +1,8 @@
 #ifndef GUARD_BOS2_H
 #define GUARD_BOS2_H
 
+#include "boss_tm_state.h"
+
 #include "prize_types.h"
 
 #include "chara_types.h"
@@ -27,7 +29,6 @@
 #include "boss_tm.h"
 #include "btl_api.h"
 #include "acgtrans.h"
-
 
 typedef struct BosPos {
     s32 unk_00;
@@ -357,7 +358,6 @@ typedef struct JfRockWork {
     u8 unk_195[0x3];
 } JfRockWork;
 
-
 typedef struct JfMajinWork {
     JfWork* unk_00;
     void* tiles;
@@ -608,11 +608,7 @@ extern void* gUnk_09EF3950;
 extern void* gUnk_09EF3958;
 extern void* gUnk_09EF3960;
 extern void* gUnk_09EF397C;
-extern s16 gUnk_0203AC60;
-extern s32 gUnk_0203AC64;
-extern s16 gUnk_0203AC6C;
-extern u16 gUnk_0203AC74;
-extern s32 gUnk_0203AC78;
+
 extern u8 gUnk_09654C04[];
 extern u8 gUnk_09658C04[];
 extern u8 gUnk_09665C04[];
@@ -683,8 +679,7 @@ extern void* gUnk_09EF39A0[];
 extern void* gUnk_09EF39B4[];
 extern void* gUnk_09EF39F8[];
 extern void* gUnk_09EF3A18[];
-extern s16 gUnk_0203AC68;
-extern s32 gUnk_0203AC70;
+
 extern u8 gUnk_096BF464[];
 extern void* gUnk_09EF39BC;
 extern void* gUnk_09EF39C4;

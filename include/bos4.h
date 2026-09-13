@@ -42,11 +42,8 @@
 #include "poo_api.h"
 #include "btl_api.h"
 
-
-
 extern UnkStruct_0203C590 gUnk_0203C590;
 extern u32 gUnk_09EF69FC[];
-
 
 typedef struct UnkStruct_0984C868 {
     u8 unk_00;
@@ -204,8 +201,6 @@ typedef struct UrsulaThunderWork {
     s32 unk_00C;
 } UrsulaThunderWork;
 
-
-
 void func_080DD69C(s32 a);
 
 u8 func_080DD754(void);
@@ -233,7 +228,6 @@ void task_bos_ursula_3(UrsulaWork* work);
 void task_bos_boogie_mapanime_0(BoogieMapanimeWork* work);
 void task_bos_ursula_thunder_0(UrsulaThunderWork* work);
 u8 task_bos_ursula_thunder_1(UrsulaThunderWork* work);
-
 
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 
@@ -364,15 +358,8 @@ extern const char gUnk_0984B74C[];
 extern const char gUnk_0984B754[];
 extern u8 gUnk_0984B0D8[];
 
-
-
-
 extern UnkStruct_02034F7C gUnk_0984CECC[];
 extern const u8 gUnk_09EF69EE[];
-
-
-
-
 
 typedef struct UnkStruct_080DF640 {
     u16 unk_00;
@@ -382,13 +369,7 @@ typedef struct UnkStruct_080DF640 {
 extern const u8 gUnk_0984D0CC[][4];
 extern vu32 gFrameCounter;
 
-
-
-
-
 void task_bos_boogie_map_0(void* work, BattleBackgroundDef* arg);
-
-
 
 extern u8 gUnk_096FE0E8[];
 u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
@@ -453,7 +434,6 @@ typedef struct UrsulaBorderWork {
 
 void task_bos_ursula_map_0(UrsulaMapWork* work, BattleBackgroundDef* arg);
 u8 task_bos_ursula_map_1(UrsulaMapWork* work);
-
 
 typedef struct BoogieSakuWork {
     u32 tiles;
@@ -613,7 +593,6 @@ void func_080DE3E8(MapChkWork* p);
 void func_080DE4A4(MapChkWork* p);
 extern const char* const gUnk_09EF6974[];
 
-
 extern UnkStruct_0203C7B0 gUnk_0203C7B0;
 void func_080DE2FC(MapChkWork* p);
 void func_080DE35C(MapChkWork* p);
@@ -663,7 +642,6 @@ extern u8 gUnk_0984AFD8[];
 extern u8 gUnk_09EF684C[];
 extern u8 gUnk_09EF6848[];
 
-
 void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg);
 u8 task_bos_boogie_disk_1(BoogieDiskWork* work);
 extern const u8 gUnk_09EF69E0[];
@@ -687,9 +665,6 @@ extern UnkStruct_096FDFC4 gUnk_096FDFC4;
 extern UnkStruct_096FDFC4 gUnk_096FE0C0;
 extern UnkStruct_096FDFC4 gUnk_096FDF54;
 u8 task_bos_boogie_map_1(void);
-
-
-
 
 void task_bos_boogie_dice_2(BoogieDiceWork* work);
 u8 func_080D9B28(BoogieDiceWork* work);

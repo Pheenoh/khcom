@@ -275,6 +275,31 @@
         "gUnk_0203C580": {"offset": "0x2c", "size": "0x4"},
         "gUnk_0203C584": {"offset": "0x30", "size": "0x1"}
       }
+    },
+    "src/boss_tm_state.o": {
+      "base": "0x0203AC60",
+      "size": "0x1c",
+      "symbols": {
+        "gUnk_0203AC60": {"offset": "0x0", "size": "0x2"},
+        "gUnk_0203AC64": {"offset": "0x4", "size": "0x4"},
+        "gUnk_0203AC68": {"offset": "0x8", "size": "0x2"},
+        "gUnk_0203AC6C": {"offset": "0xc", "size": "0x2"},
+        "gUnk_0203AC70": {"offset": "0x10", "size": "0x4"},
+        "gUnk_0203AC74": {"offset": "0x14", "size": "0x2"},
+        "gUnk_0203AC78": {"offset": "0x18", "size": "0x4"}
+      }
+    },
+    "src/chara_link_buffers.o": {
+      "base": "0x0203BD10",
+      "size": "0x1a4",
+      "symbols": {
+        "gUnk_0203BD10": {"offset": "0x0", "size": "0x190"},
+        "gUnk_0203BEA0": {"offset": "0x190", "size": "0x4"},
+        "gUnk_0203BEA4": {"offset": "0x194", "size": "0x2"},
+        "gUnk_0203BEA8": {"offset": "0x198", "size": "0x2"},
+        "gUnk_0203BEAC": {"offset": "0x19c", "size": "0x4"},
+        "gUnk_0203BEB0": {"offset": "0x1a0", "size": "0x4"}
+      }
     }
   },
   "jp": {
@@ -554,6 +579,31 @@
         "gUnk_0203C580": {"offset": "0x2c", "size": "0x4"},
         "gUnk_0203C584": {"offset": "0x30", "size": "0x1"}
       }
+    },
+    "src/boss_tm_state.o": {
+      "base": "0x0203ABD0",
+      "size": "0x1c",
+      "symbols": {
+        "gUnk_0203AC60": {"offset": "0x0", "size": "0x2"},
+        "gUnk_0203AC64": {"offset": "0x4", "size": "0x4"},
+        "gUnk_0203AC68": {"offset": "0x8", "size": "0x2"},
+        "gUnk_0203AC6C": {"offset": "0xc", "size": "0x2"},
+        "gUnk_0203AC70": {"offset": "0x10", "size": "0x4"},
+        "gUnk_0203AC74": {"offset": "0x14", "size": "0x2"},
+        "gUnk_0203AC78": {"offset": "0x18", "size": "0x4"}
+      }
+    },
+    "src/chara_link_buffers.o": {
+      "base": "0x0203BC80",
+      "size": "0x1a4",
+      "symbols": {
+        "gUnk_0203BD10": {"offset": "0x0", "size": "0x190"},
+        "gUnk_0203BEA0": {"offset": "0x190", "size": "0x4"},
+        "gUnk_0203BEA4": {"offset": "0x194", "size": "0x2"},
+        "gUnk_0203BEA8": {"offset": "0x198", "size": "0x2"},
+        "gUnk_0203BEAC": {"offset": "0x19c", "size": "0x4"},
+        "gUnk_0203BEB0": {"offset": "0x1a0", "size": "0x4"}
+      }
     }
   },
   "eu": {
@@ -829,6 +879,31 @@
         "gUnk_0203C57C": {"offset": "0x28", "size": "0x1"},
         "gUnk_0203C580": {"offset": "0x2c", "size": "0x4"},
         "gUnk_0203C584": {"offset": "0x30", "size": "0x1"}
+      }
+    },
+    "src/boss_tm_state.o": {
+      "base": "0x0203B230",
+      "size": "0x1c",
+      "symbols": {
+        "gUnk_0203AC60": {"offset": "0x0", "size": "0x2"},
+        "gUnk_0203AC64": {"offset": "0x4", "size": "0x4"},
+        "gUnk_0203AC68": {"offset": "0x8", "size": "0x2"},
+        "gUnk_0203AC6C": {"offset": "0xc", "size": "0x2"},
+        "gUnk_0203AC70": {"offset": "0x10", "size": "0x4"},
+        "gUnk_0203AC74": {"offset": "0x14", "size": "0x2"},
+        "gUnk_0203AC78": {"offset": "0x18", "size": "0x4"}
+      }
+    },
+    "src/chara_link_buffers.o": {
+      "base": "0x0203C2E0",
+      "size": "0x1a4",
+      "symbols": {
+        "gUnk_0203BD10": {"offset": "0x0", "size": "0x190"},
+        "gUnk_0203BEA0": {"offset": "0x190", "size": "0x4"},
+        "gUnk_0203BEA4": {"offset": "0x194", "size": "0x2"},
+        "gUnk_0203BEA8": {"offset": "0x198", "size": "0x2"},
+        "gUnk_0203BEAC": {"offset": "0x19c", "size": "0x4"},
+        "gUnk_0203BEB0": {"offset": "0x1a0", "size": "0x4"}
       }
     }
   }

@@ -209,8 +209,6 @@ extern FldAnimDef gUnk_0813BEFC[][5];
 extern FldAnimDef gUnk_0813C2AC[];
 extern FldAnimDef gUnk_0813C4DC[][5];
 
-
-
 extern u8 gUnk_0813C294[];
 
 extern s16 gSineTable[];

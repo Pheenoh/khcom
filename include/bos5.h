@@ -188,8 +188,6 @@ typedef struct MdFireDef {
     u16 unk_06;
 } MdFireDef;
 
-
-
 typedef struct MdModel {
     u16 unk_00;
     s16 unk_02;
@@ -414,7 +412,6 @@ extern s16 gUnk_020354C0;
 void func_080FDB1C(s16 model, s16 n);
 void mode_worldselect_2(void);
 void func_080FE89C(void);
-
 
 void func_080FE900(void);
 extern void* gUnk_09EF8F24[];

@@ -48,11 +48,6 @@
 #include "battle_actor.h"
 #include "bos4_api.h"
 
-
-
-
-
-
 typedef struct UnkStruct_02034F20 {
     u16 unk_00;
     u16 unk_02;
@@ -78,14 +73,10 @@ typedef struct UnkStruct_02034F34 {
     u16* unk_20;
 } UnkStruct_02034F34;
 
-
-
 typedef struct UnkStruct_02034F84 {
     u8 unk_00;
     u8 unk_01;
 } UnkStruct_02034F84;
-
-
 
 typedef struct UnkStruct_080E92B8 {
     u8 unk_00;
@@ -158,7 +149,6 @@ typedef struct UnkStruct_080E6034 {
     void* unk_34;
 } UnkStruct_080E6034;
 
-
 typedef struct UnkStruct_080E7D80 {
     void* unk_00;
     void* unk_04;
@@ -204,8 +194,6 @@ typedef struct UnkStruct_0203C7B8 {
     UnkStruct_080DFF1C unk_04;
     UnkStruct_080E7D80* unk_14;
 } UnkStruct_0203C7B8;
-
-
 
 typedef struct UnkStruct_080E8374 {
     s32 unk_00;
@@ -1260,7 +1248,6 @@ extern u8 gUnk_0984C868[];
 extern UnkStruct_0203C7AC* gUnk_0203C7AC;
 extern UnkStruct_0203C7B0 gUnk_0203C7B0;
 extern UnkStruct_0203C7B8* gUnk_0203C7B8;
-
 
 extern vu32 gFrameCounter;
 extern UnkStruct_0203C590 gUnk_0203C590;

@@ -41,7 +41,6 @@ void func_080A096C(u16 a, u16* p);
 
 extern CardDef gCardDefs[];
 
-
 typedef struct CardDisplayWork {
     void* unk_00;
     void* unk_04;
@@ -314,7 +313,6 @@ typedef struct UnkStruct_0809A02C {
 
 typedef char UnkStruct_0809A02C_sizechk[(sizeof(struct UnkStruct_0809A02C) == 0x1D4) ? 1 : -1];
 
-
 typedef char CardStat_sizechk[(sizeof(struct CardStat) == 0x18) ? 1 : -1];
 
 typedef struct UnkStruct_080993D4 {
@@ -430,7 +428,6 @@ extern u8 gUnk_09320796[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_09EE7FD8[];
 extern u8 gUnk_09EE7FA8[];
-
 
 typedef struct UnkStruct_09EE8008 {
     u32 unk_00;
@@ -846,7 +843,6 @@ typedef struct UnkStruct_08098670 {
     s32 unk_28;
 } UnkStruct_08098670;
 
-
 typedef struct PremiumCardEffectWork {
     void* unk_00;
     void* unk_04;
@@ -935,8 +931,6 @@ typedef struct UnkStruct_08078754 {
 } UnkStruct_08078754;
 
 typedef char UnkStruct_08078754_sizechk[(sizeof(struct UnkStruct_08078754) == 0xCC) ? 1 : -1];
-
-
 
 extern MapCardDef gUnk_09EE4C80[];
 extern MapCardBackDef gUnk_09EE4BF4[];
@@ -1877,7 +1871,6 @@ typedef struct ReloadWork {
     u8 unk_34;
 } ReloadWork;
 
-
 extern SpriteFrameResourceDef gUnk_08F7CF18[];
 
 typedef struct UnkStruct_080984E4 {
@@ -2078,8 +2071,6 @@ typedef struct UnkStruct_0808F358 {
 
 s32 func_0808F358(UnkStruct_0808F358* work);
 extern u8* gUnk_09EE4B0C[];
-
-
 
 void func_0807E230(void);
 void func_0807E254(void);

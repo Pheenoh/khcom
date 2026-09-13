@@ -69,7 +69,6 @@ typedef struct SioBtlConnectWork {
     void* palette;
 } SioBtlConnectWork;
 
-
 typedef struct WLogoTaskWork {
     u8 unk_00;
     u8 unk_01[3];
@@ -184,7 +183,6 @@ typedef struct SioBtlCardgetWork {
     void* unk_3C;
     u8 unk_40[4];
 } SioBtlCardgetWork;
-
 
 typedef struct SioChgCardPos {
     s16 unk_00;

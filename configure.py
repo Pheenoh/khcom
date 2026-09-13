@@ -64,6 +64,8 @@ UNIT_COMMON = {
 }
 
 UNIT_BSS = {
+    "src/chara_link_buffers.o": {"us": 0x0203BD10, "jp": 0x0203BC80, "eu": 0x0203C2E0},
+    "src/boss_tm_state.o": {"us": 0x0203AC60, "jp": 0x0203ABD0, "eu": 0x0203B230},
     "src/boss_status_state.o": {"us": 0x0203C554, "jp": 0x0203C4C4, "eu": 0x0203CB44},
     "src/pooh_state.o": {"us": 0x0203C3D8, "jp": 0x0203C348, "eu": 0x0203C9C8},
     "src/graphics_state.o": {"us": 0x030074CC, "jp": 0x030074CC, "eu": 0x030074D4},

@@ -10,9 +10,6 @@ SpriteWork* gSpriteWork;
 
 extern u8 sSpriteHeapName[];
 
-
-
-
 void EnableObj(void);
 void DisableObj(void);
 void SetObjTileRange(u16 a, u16 b);

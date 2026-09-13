@@ -56,6 +56,8 @@ msg.c -O2 -fprologue-bugfix
 mode_eventselect.c -O2 -fprologue-bugfix -fno-common
 card.c -O2 -fprologue-bugfix -fno-common
 card_state.c -O2 -fprologue-bugfix -fno-common
+chara_link_buffers.c -O2 -fprologue-bugfix -fno-common
+boss_tm_state.c -O2 -fprologue-bugfix -fno-common
 boss_status_state.c -O2 -fprologue-bugfix -fno-common
 pooh_state.c -O2 -fprologue-bugfix -fno-common
 graphics_state.c -O2 -fprologue-bugfix -fno-common

@@ -38,9 +38,6 @@
 #include "malloc.h"
 #include "m4a.h"
 
-
-
-
 typedef struct MooglePackCardDef {
     u16 cardId;
     u8 unk_02[0x2];
@@ -144,40 +141,6 @@ void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16
 extern u8 gUnk_0203C590[];
 extern u16 gUnk_09993334[];
 extern u8 gUnk_09A3ABDC[];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 extern u8 gUnk_09A3D79C[];
 extern u8 gUnk_09A10A3C[];

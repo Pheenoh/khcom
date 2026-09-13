@@ -40,7 +40,6 @@ typedef struct PoohAnim {
     u8 unk_0C;
 } PoohAnim;
 
-
 typedef struct PoohPos {
     s32 unk_00;
     s32 unk_04;
@@ -103,8 +102,6 @@ extern u16 gUnk_0203C3C8;
 extern u16 gUnk_0203C3CC;
 extern u16 gUnk_0203C3D0;
 extern s8 gUnk_0203C3D4;
-
-
 
 extern u8 gWhitePalette[];
 extern const char gUnk_0961A9C8[];

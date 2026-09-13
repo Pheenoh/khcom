@@ -114,7 +114,6 @@ typedef struct EventCharaWork {
     u8 unk_1BA[2];
 } EventCharaWork;
 
-
 typedef struct SpriteTextLine {
     s32 x;
     s32 y;
@@ -139,7 +138,6 @@ typedef struct BgTextLine {
     u8 dirty;
     u8 paletteIndex;
 } BgTextLine;
-
 
 typedef struct MsgFaceAnim {
     void* unk_00;
@@ -168,7 +166,6 @@ typedef struct MsgFaceWork {
     MsgFaceControl* unk_38;
 } MsgFaceWork;
 
-
 typedef struct MsgWinWork {
     u8 unk_00[0x14];
     void* palette;
@@ -191,7 +188,6 @@ typedef struct MsgWinWork {
     MessageScriptEntry* unk_3C;
     s32 unk_40;
 } MsgWinWork;
-
 
 typedef struct EventSeqWork {
     TaskPool unk_00;
@@ -221,8 +217,6 @@ typedef struct EventCharaParams {
     s16 unk_0A;
 } EventCharaParams;
 
-
-
 typedef struct EventSeqArg {
     u32 unk_00 : 16;
     u32 unk_02 : 8;
@@ -250,7 +244,6 @@ typedef struct EventBackgroundDef {
     u8 unk_2E[2];
 } EventBackgroundDef;
 
-
 typedef struct EventScanlineScroll {
     u8 unk_00[2];
     u8 enabled;
@@ -266,7 +259,6 @@ typedef struct Actor0806180C {
     s32 unk_30;
     s32 unk_34;
 } Actor0806180C;
-
 
 typedef struct EventCameraWork {
     s32 unk_00;
@@ -285,7 +277,6 @@ typedef struct EventCameraWork {
     u8 unk_1B;
     u16 scanlineScrollX[160];
 } EventCameraWork;
-
 
 typedef struct MsgWaitWork {
     void* tiles;
@@ -338,9 +329,6 @@ typedef struct TextGlyphSprite {
     u8 unk_16[2];
 } TextGlyphSprite;
 
-
-
-
 extern EventState* gUnk_02039DC8;
 extern EventScanlineScroll* gUnk_02039DCC;
 extern u16 gUnk_09033C8C[];
@@ -381,7 +369,6 @@ extern s32 gUnk_09033CB8[];
 extern s32 gUnk_09033CD0[];
 extern s32 gUnk_09033CE0[];
 extern s32 gUnk_09033CF0[];
-
 
 extern u32 gFrameCounter;
 extern u8 gUnk_09614718[];

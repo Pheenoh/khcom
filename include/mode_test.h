@@ -44,24 +44,17 @@
 #define CPU_SET_SRC_FIXED 0x01000000
 #define CPU_SET_32BIT     0x04000000
 
-
-
-
 typedef struct UnkStruct_09EE3CA0 {
     u8 unk_00[0x24];
     u8 unk_24;
     u8 unk_25[0x03];
 } UnkStruct_09EE3CA0;
 
-
-
 typedef struct EvtArg {
     u32 unk_00 : 8;
     u32 unk_08 : 8;
     u32 unk_10 : 16;
 } EvtArg;
-
-
 
 typedef struct MenuWork {
     void* tiles;
@@ -72,7 +65,6 @@ typedef struct MenuWork {
     u8 unk_11;
     u8 unk_12[0x02];
 } MenuWork;
-
 
 typedef struct UnkStruct_02034A1C {
     u16 unk_00[61];
@@ -204,7 +196,6 @@ void func_0806098C(void);
 
 extern s32* gUnk_02039DC4;
 extern EventState* gUnk_02039DC8;
-
 
 extern UnkStruct_09EE3CA0* gUnk_09EE3CA0[];
 extern TaskDesc gTaskDescEventSeq;

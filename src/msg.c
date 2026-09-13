@@ -3596,8 +3596,6 @@ u16 FormatSmallFontDecimal(s32 v, u16* out) {
     return EncodeSmallFontString(&s[i - 1], out);
 }
 
-
-
 u16 FormatSmallFontHex(s32 v, u16* out) {
     u8 buf[11];
     u8* p;

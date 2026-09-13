@@ -41,10 +41,6 @@ u16 gUnk_0203406A;
 
 extern s16 gSineTable[];
 
-
-
-
-
 typedef struct BgAffineSrcData {
     s32 texX;
     s32 texY;
@@ -66,31 +62,7 @@ typedef struct BgAffineDstData {
 
 void BgAffineSet(BgAffineSrcData* src, BgAffineDstData* dst, s32 count);
 
-
-
-
-
 extern u16 gSystemFlags;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 extern u16 gSystemFlags;
 
@@ -971,7 +943,6 @@ u8 func_08003620(u16* oam, s16 x, s16 y) {
         *ph = 0;
         break;
     }
-
 
         if (x <= 239 && x > -w && y <= 159 && y > -h) {
             return 0;
@@ -2440,7 +2411,6 @@ s16 GetAngleDiff(s32 a, s32 b) {
     return d;
 }
 
-
 s32 GetAngleDiff16(s32 a, s32 b) {
     s32 x = a & 0xFFFF;
     s32 y = b & 0xFFFF;
@@ -2707,14 +2677,12 @@ void LoadPalette(void* src, void* dst, u16 size) {
     }
 }
 
-
 void FadeClearPaletteSlot(u16 a) {
     PaletteSlot* p = gFadeWork->slots;
 
     p += a;
     p->unk_00 = 0;
 }
-
 
 void FadeUpdate(void) {
     s32 i;
