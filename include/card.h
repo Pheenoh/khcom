@@ -776,6 +776,22 @@ typedef struct HcEffectNameWork {
     u8 unk_27;
 } HcEffectNameWork;
 
+typedef struct StockNameWork {
+    u8 unk_00[4];
+    u16 unk_04;
+    u8 unk_06[2];
+    UnkStruct_080038C8* unk_08;
+    void* unk_0C;
+    u8 unk_10;
+    u8 unk_11;
+    u8 unk_12[2];
+    u32 unk_14;
+    s32 unk_18[6];
+    u8 unk_30;
+    u8 unk_31;
+    u8 unk_32[2];
+} StockNameWork;
+
 typedef struct ReloadChildArgs {
     void* unk_00;
     s32* unk_04;
@@ -2073,8 +2089,8 @@ void func_08094CE4(MapcardWork* w);
 void func_0808D0A4(u8 deck);
 void func_080A9E40(u8 deck);
 void func_080A6C50(u8 deck);
-u8 func_0809B840(u8* work);
-u8 func_0809B9F4(u8* work);
+u8 func_0809B840(StockNameWork* w);
+u8 func_0809B9F4(StockNameWork* w);
 u8 DeckCard2_1(DeckCard2Work* n);
 void func_080A676C(u8* work);
 void func_08078914(UnkStruct_08078754* w, u8 n);

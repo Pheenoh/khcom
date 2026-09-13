@@ -23675,38 +23675,38 @@ void func_0809B76C(u8* work, void** src) {
     *(u32*)&work[0x14] = gUnk_02039DD4->unk_0C4;
 }
 
-#ifndef VERSION_EU
-u8 func_0809B840(u8* work) {
-    u8* tbl;
-    s32 ofs;
+u8 func_0809B840(StockNameWork* w) {
+#ifdef VERSION_EU
+    void** t = (void**)LANGSTR(gUnk_08F7CF18[w->unk_18[w->unk_11]].sprites);
+    void* u = LANGSTR(gUnk_08F7CF18[w->unk_18[w->unk_11]].tiles);
+#endif
 
-    if (gUnk_02039DD4->unk_0E3 == 0 || gUnk_02039DD4->unk_0C4 != *(u32*)&work[0x14]) {
+    if (gUnk_02039DD4->unk_0E3 == 0 || gUnk_02039DD4->unk_0C4 != w->unk_14) {
         return 0;
     }
 
     if ((gFrameCounter >> 5) & 1) {
-        work[0x31] = 1;
+        w->unk_31 = 1;
     } else {
-        work[0x31] = 0;
+        w->unk_31 = 0;
     }
 
-    if (work[0x30] == 1 && work[0x31] != 0) {
-        work[0x11]++;
-        ofs = work[0x11] * 4;
-        tbl = &work[0x18];
+    if (w->unk_30 == 1 && w->unk_31 != 0) {
+        w->unk_11++;
 
-        if (*(s32*)(tbl + ofs) == -1) {
-            work[0x11] = 0;
+        if (w->unk_18[w->unk_11] == -1) {
+            w->unk_11 = 0;
         }
 
-        UpdateSpriteFrameTiles(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].sprites[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].spriteIndex], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].tiles);
+#ifdef VERSION_EU
+        UpdateSpriteFrameTiles(w->unk_08, t[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], u);
+#else
+        UpdateSpriteFrameTiles(w->unk_08, gUnk_08F7CF18[w->unk_18[w->unk_11]].sprites[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], gUnk_08F7CF18[w->unk_18[w->unk_11]].tiles);
+#endif
     }
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809B840.s");
-#endif
 
 void func_0809B8F0(u8* work) {
     if (work[0x31] != 0) {
@@ -23776,38 +23776,38 @@ void func_0809B920(u8* work, void** src) {
     *(u32*)&work[0x14] = gUnk_02039DD4->unk_0C6;
 }
 
-#ifndef VERSION_EU
-u8 func_0809B9F4(u8* work) {
-    u8* tbl;
-    s32 ofs;
+u8 func_0809B9F4(StockNameWork* w) {
+#ifdef VERSION_EU
+    void** t = (void**)LANGSTR(gUnk_08F7CF18[w->unk_18[w->unk_11]].sprites);
+    void* u = LANGSTR(gUnk_08F7CF18[w->unk_18[w->unk_11]].tiles);
+#endif
 
-    if (gUnk_02039DD4->unk_0E4 == 0 || gUnk_02039DD4->unk_0C6 != *(u32*)&work[0x14]) {
+    if (gUnk_02039DD4->unk_0E4 == 0 || gUnk_02039DD4->unk_0C6 != w->unk_14) {
         return 0;
     }
 
     if ((gFrameCounter >> 5) & 1) {
-        work[0x31] = 0;
+        w->unk_31 = 0;
     } else {
-        work[0x31] = 1;
+        w->unk_31 = 1;
     }
 
-    if (work[0x30] == 1 && work[0x31] != 0) {
-        work[0x11]++;
-        ofs = work[0x11] * 4;
-        tbl = &work[0x18];
+    if (w->unk_30 == 1 && w->unk_31 != 0) {
+        w->unk_11++;
 
-        if (*(s32*)(tbl + ofs) == -1) {
-            work[0x11] = 0;
+        if (w->unk_18[w->unk_11] == -1) {
+            w->unk_11 = 0;
         }
 
-        UpdateSpriteFrameTiles(*(UnkStruct_080038C8**)&work[8], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].sprites[gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].spriteIndex], gUnk_08F7CF18[*(s32*)(tbl + (work[0x11] << 2))].tiles);
+#ifdef VERSION_EU
+        UpdateSpriteFrameTiles(w->unk_08, t[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], u);
+#else
+        UpdateSpriteFrameTiles(w->unk_08, gUnk_08F7CF18[w->unk_18[w->unk_11]].sprites[gUnk_08F7CF18[w->unk_18[w->unk_11]].spriteIndex], gUnk_08F7CF18[w->unk_18[w->unk_11]].tiles);
+#endif
     }
 
     return 1;
 }
-#else
-INCLUDE_ASM("card/func_0809B9F4.s");
-#endif
 
 void func_0809BAA4(u8* work) {
     if (gUnk_02039B9C->unk_0F4 != 28 && work[0x31] != 0) {
