@@ -2521,6 +2521,17 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_099A924E": 0x99a924e,
         "gUnkEu_099A85CE": 0x99a85ce,
         "gUnkEu_099A794E": 0x99a794e,
+        "gUnkEu_090CF64D": 0x090CF64D,
+        "gUnkEu_095EDAAA": 0x095EDAAA,
+        "gUnkEu_095EE0E2": 0x095EE0E2,
+        "gUnkEu_095EE71A": 0x095EE71A,
+        "gUnkEu_095EED52": 0x095EED52,
+        "gUnkEu_095EF38A": 0x095EF38A,
+        "gUnkEu_095EF9C2": 0x095EF9C2,
+        "gUnkEu_095EFFFA": 0x095EFFFA,
+        "gUnkEu_095F0632": 0x095F0632,
+        "gUnkEu_095F0C6A": 0x095F0C6A,
+        "gUnkEu_095F12A2": 0x095F12A2,
     },
     "jp": {
         "gUnk_0814F180": 0x0814F180,
@@ -2912,6 +2923,8 @@ TARGET_ONLY_SYMBOLS = {
         "gBossMapBlockJp_097FB46C": 0x97fb46c,
         "gBossMapBlockJp_097FBC6C": 0x97fbc6c,
         "gBossMapBlockJp_097FC46C": 0x97fc46c,
+        "gUnkJp_09009748": 0x09009748,
+        "gUnkJp_0900974C": 0x0900974C,
     },
 }
 

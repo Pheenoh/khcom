@@ -852,7 +852,11 @@ typedef struct CardNameWork {
     UnkStruct_080038C8* unk_04;
     TextSlot unk_08[32];
     TextSlot unk_108[32];
+#ifdef VERSION_EU
+    TextSlot unk_208[32];
+#else
     TextSlot unk_208[2];
+#endif
     void* unk_218;
     void* unk_21C;
     s16 unk_220;
@@ -860,9 +864,20 @@ typedef struct CardNameWork {
     s16 unk_224;
     u8 unk_226;
     u8 unk_227;
+#ifndef VERSION_US
+    u8 unk_228;
+#endif
 } CardNameWork;
 
+#ifdef VERSION_EU
+typedef char CardNameWork_sizechk[(sizeof(struct CardNameWork) == 0x31C) ? 1 : -1];
+#else
+#ifdef VERSION_JP
+typedef char CardNameWork_sizechk[(sizeof(struct CardNameWork) == 0x22C) ? 1 : -1];
+#else
 typedef char CardNameWork_sizechk[(sizeof(struct CardNameWork) == 0x228) ? 1 : -1];
+#endif
+#endif
 
 typedef struct DarkPointWork {
     void* tiles;
@@ -1188,6 +1203,16 @@ extern u8 gUnk_0962B8BE[];
 extern u8 gUnk_096FBA84[];
 
 #ifdef VERSION_EU
+extern u8 gUnkEu_095EDAAA[];
+extern u8 gUnkEu_095EE0E2[];
+extern u8 gUnkEu_095EE71A[];
+extern u8 gUnkEu_095EED52[];
+extern u8 gUnkEu_095EF38A[];
+extern u8 gUnkEu_095EF9C2[];
+extern u8 gUnkEu_095EFFFA[];
+extern u8 gUnkEu_095F0632[];
+extern u8 gUnkEu_095F0C6A[];
+extern u8 gUnkEu_095F12A2[];
 #endif
 
 extern u8 gUnk_090451C0[];
@@ -1896,6 +1921,8 @@ typedef struct UnkStruct_0808F358 {
     s16 unk_7C0;
     s16 unk_7C2;
     u8 unk_7C4;
+    u8 unk_7C5[2];
+    u8 unk_7C7;
 } UnkStruct_0808F358;
 
 s32 func_0808F358(UnkStruct_0808F358* work);

@@ -20843,3 +20843,5 @@ gBossMapBlockJp_097FAC6C = 0x097fac6c
 gBossMapBlockJp_097FB46C = 0x097fb46c
 gBossMapBlockJp_097FBC6C = 0x097fbc6c
 gBossMapBlockJp_097FC46C = 0x097fc46c
+gUnkJp_09009748 = 0x09009748
+gUnkJp_0900974C = 0x0900974c

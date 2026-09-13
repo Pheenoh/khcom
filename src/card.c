@@ -15602,9 +15602,8 @@ void func_0808F304(u8* work) {
     m4aSongNumStart(104);
 }
 
-#ifdef VERSION_US
 s32 func_0808F358(UnkStruct_0808F358* work) {
-    const u8* src;
+    const u8* src = NULL;
     u8* dst;
     s32 offset;
     s32 zero;
@@ -15614,7 +15613,39 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
 
     if (work->unk_7C4 <= 7) {
         m4aSongNumStart(102);
+#ifdef VERSION_EU
+        if (work->unk_7C7 == 2) {
+            src = gUnkEu_09F6FE6C[work->unk_7C2];
+        } else {
+            src = gUnkEu_09F6FE8C[work->unk_7C2];
+        }
+#else
+#ifdef VERSION_JP
+        switch (work->unk_7C7) {
+        case 0:
+            src = gUnk_09EE4B0C[work->unk_7C2];
+            break;
+        case 1:
+            src = gUnkJp_09EBC148[work->unk_7C2];
+            break;
+        case 2:
+            src = gUnkJp_09EBC164[work->unk_7C2];
+            break;
+        }
+#else
         src = gUnk_09EE4B0C[work->unk_7C2];
+#endif
+#endif
+#ifdef VERSION_EU
+        offset = work->unk_7C4;
+        dst = work->unk_784;
+        out = &dst[offset];
+        value = src[work->unk_7C0];
+        zero = 0;
+        *out = value;
+        offset2 = work->unk_7C4 + 1;
+        dst[offset2] = zero;
+#else
         offset = work->unk_7C4 * 2;
         dst = work->unk_784;
         out = &dst[offset];
@@ -15629,15 +15660,13 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
         offset = (work->unk_7C4 + 1) * 2;
         offset++;
         dst[offset] = zero;
+#endif
         return 1;
     } else {
         m4aSongNumStart(105);
         return 0;
     }
 }
-#else
-INCLUDE_ASM("card/func_0808F358.s");
-#endif
 #ifdef VERSION_JP
 void func_jp_0808F240(UnkStruct_0808F0C0* w) {
     switch (w->unk_7C7) {
@@ -24482,7 +24511,14 @@ u8 func_0809CBF8(u8* work, void* a) {
     return 1;
 }
 
-#ifdef VERSION_US
+#ifdef VERSION_JP
+extern u8 gUnkJp_09009748[];
+extern u8 gUnkJp_0900974C[];
+#endif
+#ifdef VERSION_EU
+extern u8 gUnkEu_090CF64D[];
+#endif
+
 void CardName_0(CardNameWork* w) {
     UnkStruct_0809C534* q = gUnk_0203A9D0->selectedCard;
     UnkStruct_080038C8* pal;
@@ -24491,26 +24527,75 @@ void CardName_0(CardNameWork* w) {
 
     InitTextSlots(w->unk_08, 32);
     InitTextSlots(w->unk_108, 32);
+#ifdef VERSION_EU
+    InitTextSlots(w->unk_208, 32);
+#else
     InitTextSlots(w->unk_208, 2);
+#endif
     w->unk_218 = _08066468(1);
+#ifdef VERSION_EU
+    w->unk_226 = LoadTextSlots(eu_0805E924(q->unk_00->unk_0C), w->unk_08);
+    w->unk_227 = LoadTextSlots((u16*)gUnkEu_09F6602C.strings[gLanguage], w->unk_108);
+#else
     w->unk_226 = LoadTextSlots(q->unk_00->unk_0C, w->unk_08);
+#ifdef VERSION_JP
+    w->unk_228 = LoadTextSlots((u16*)gUnkJp_09009748, w->unk_208);
+    w->unk_227 = LoadTextSlots((u16*)gUnkJp_0900974C, w->unk_108);
+#else
     w->unk_227 = LoadTextSlots((u16*)&gUnk_09036278[22], w->unk_108);
+#endif
+#endif
+#ifndef VERSION_JP
     w->unk_21C = LoadObjPalette(gUnk_09614798, 32);
+#endif
+#ifdef VERSION_EU
+    switch (gLanguage) {
+    case 0:
+    case 2:
+    case 3:
+        w->unk_228 = 0;
+        v = (230 - GetTextSlotsWidth(w->unk_08, w->unk_226)) / 2;
+        w->unk_220 = v;
+        t = (u16)w->unk_220 + GetTextSlotsWidth(w->unk_08, w->unk_226);
+        w->unk_224 = t;
+        v = (240 - GetTextSlotsWidth(w->unk_108, w->unk_227)) / 2;
+        w->unk_222 = v;
+        break;
+    case 1:
+        w->unk_228 = LoadTextSlots((u16*)&gUnk_09036278[22], w->unk_208);
+        v = (230 - GetTextSlotsWidth(w->unk_08, w->unk_226)) / 2;
+        w->unk_220 = v;
+        t = (u16)w->unk_220 + GetTextSlotsWidth(w->unk_08, w->unk_226);
+        w->unk_224 = t;
+        v = (240 - GetTextSlotsWidth(w->unk_108, w->unk_227)) / 2;
+        w->unk_222 = v;
+        break;
+    case 4:
+        w->unk_228 = LoadTextSlots((u16*)gUnkEu_090CF64D, w->unk_208);
+        v = (230 - GetTextSlotsWidth(w->unk_08, w->unk_226)) / 2;
+        w->unk_220 = v;
+        w->unk_224 = v - 3;
+        v = (240 - GetTextSlotsWidth(w->unk_108, w->unk_227)) / 2;
+        w->unk_222 = v;
+        break;
+    default:
+        w->unk_228 = 0;
+        break;
+    }
+#else
     v = (230 - GetTextSlotsWidth(w->unk_08, w->unk_226)) / 2;
     w->unk_220 = v;
     t = (u16)w->unk_220 + GetTextSlotsWidth(w->unk_08, w->unk_226);
     w->unk_224 = t;
     v = (240 - GetTextSlotsWidth(w->unk_108, w->unk_227)) / 2;
     w->unk_222 = v;
+#endif
     w->unk_00 = LoadObjTiles(&gUnk_093F8C8E[0xC1E], 0x1800);
     pal = LoadObjPalette(gUnk_09611AB8, 32);
     w->unk_04 = pal;
     FadeSetPaletteExcluded(pal->unk_06 + 16, 1);
     FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->unk_218)->unk_06 + 16, 1);
 }
-#else
-INCLUDE_ASM("card/CardName_0.s");
-#endif
 s32 CardName_1(void) {
     return 1;
 }
@@ -34652,7 +34737,6 @@ void task_print_2(void) {
 void task_print_3(void) {
     func_0809D26C();
 }
-#ifndef VERSION_EU
 void mode_sio_battle_0(s32 a) {
     UnkStruct_02034B38* w;
     void* gfx;
@@ -34680,10 +34764,39 @@ void mode_sio_battle_0(s32 a) {
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_1C[i] = gUnk_09EF3884[i];
     }
 
+#ifdef VERSION_EU
+    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_2C = LoadObjPalette(gUnk_096FBA64, 32);
+    ((UnkStruct_02034B38*)gUnk_02034B38)->unk_38 = LoadObjPalette(gUnk_096FBA84, 32);
+
+    switch (gLanguage) {
+    case 0:
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095EDAAA, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095EE0E2, 0x600);
+        break;
+    case 3:
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095EFFFA, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095F0632, 0x600);
+        break;
+    case 1:
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095EE71A, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095EED52, 0x600);
+        break;
+    case 4:
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095EF38A, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095EF9C2, 0x600);
+        break;
+    case 2:
+    default:
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnkEu_095F0C6A, 0x600);
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnkEu_095F12A2, 0x600);
+        break;
+    }
+#else
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_28 = LoadObjTiles(gUnk_0962B286, 0x600);
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_2C = LoadObjPalette(gUnk_096FBA64, 32);
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_34 = LoadObjTiles(gUnk_0962B8BE, 0x600);
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_38 = LoadObjPalette(gUnk_096FBA84, 32);
+#endif
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_40 = LoadObjTiles(gUnk_0962B090, 0x1C0);
     ((UnkStruct_02034B38*)gUnk_02034B38)->unk_44 = LoadObjPalette(gUnk_096FBAA4, 32);
     AnimInit(&((UnkStruct_02034B38*)gUnk_02034B38)->unk_4C, gUnk_09EF38B4, gUnk_09EF3894);
@@ -34709,23 +34822,110 @@ void mode_sio_battle_0(s32 a) {
             w->unk_00 = 0;
         }
 
+#ifdef VERSION_EU
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 = ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 * 0x1C00 + 0x3300;
+
+        switch (gLanguage) {
+        case 0:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB38[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB44[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 3:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB80[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB8C[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 1:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB50[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB5C[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 4:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB68[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB74[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 2:
+        default:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB98[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EBA4[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        }
+#else
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnk_09EF38BC[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnk_09EF38C8[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 = ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 * 0x1C00 + 0x3300;
+#endif
         break;
     case 2:
+#ifdef VERSION_EU
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 = ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 * 0x1C00 + 0x3300;
+        gUnk_0203A9E8 = 1;
+        w->unk_00 = 0;
+
+        switch (gLanguage) {
+        case 0:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB38[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB44[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 3:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB80[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB8C[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 1:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB50[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB5C[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 4:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB68[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB74[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 2:
+        default:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB98[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EBA4[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        }
+#else
         w->unk_00 = 0;
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnk_09EF38BC[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnk_09EF38C8[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 = ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 * 0x1C00 + 0x3300;
         gUnk_0203A9E8 = 1;
+#endif
         break;
     case 3:
         w->unk_00 = 0;
+#ifdef VERSION_EU
+        ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 = ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 * 0x1C00 + 0x3300;
+        gUnk_0203A9E8 = 1;
+
+        switch (gLanguage) {
+        case 0:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB38[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB44[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 3:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB80[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB8C[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 1:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB50[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB5C[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 4:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB68[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EB74[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        case 2:
+        default:
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnkEu_09F7EB98[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnkEu_09F7EBA4[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
+            break;
+        }
+#else
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_30 = gUnk_09EF38BC[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_3C = gUnk_09EF38C8[((UnkStruct_02034B38*)gUnk_02034B38)->unk_00];
         ((UnkStruct_02034B38*)gUnk_02034B38)->unk_64 = ((UnkStruct_02034B38*)gUnk_02034B38)->unk_00 * 0x1C00 + 0x3300;
         gUnk_0203A9E8 = 1;
+#endif
         break;
     case 0xFFFF:
         break;
@@ -34734,9 +34934,6 @@ void mode_sio_battle_0(s32 a) {
     gUnk_0203C374 = 0;
     gUnk_0203A9E4 = 0;
 }
-#else
-INCLUDE_ASM("card/mode_sio_battle_0.s");
-#endif
 
 void mode_sio_battle_1(void) {
     switch ((s8)((UnkStruct_02034B38*)gUnk_02034B38)->unk_01) {
