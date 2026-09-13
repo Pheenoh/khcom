@@ -1,4 +1,6 @@
 #include "poo_data.h"
+#include "animation_resource_data.h"
+#include "mode_chkobj_assets.h"
 #include "event_background_assets.h"
 
 PooSpot gUnk_096FC05C[55] __attribute__((section(".data_poo_motion"))) = {
@@ -172,4 +174,13 @@ const PooSpot gUnk_096FD778[18] __attribute__((section(".rodata_poo_cabbage_spot
     { 0, 40960, 0 },
     { 61440, 0, 0 },
     { 0, 0, 0 },
+};
+
+
+const PooZzzDesc gUnk_09EF4C88[5] __attribute__((section(".rodata_poo_butterfly"))) = {
+    { gUnk_09EF5D54, gUnk_09EF5D64, gUnk_0974465A, 0, { 0, 0, 0 } },
+    { gUnk_09EF5D04, gUnk_09EF5D14, gUnk_0974431A, 0, { 0, 0, 0 } },
+    { gUnk_09EF5D18, gUnk_09EF5D28, gUnk_0974441A, 0, { 0, 0, 0 } },
+    { gUnk_09EF5D2C, gUnk_09EF5D3C, gUnk_097444DA, 0, { 0, 0, 0 } },
+    { gUnk_09EF5D40, gUnk_09EF5D50, gUnk_0974459A, 0, { 0, 0, 0 } },
 };

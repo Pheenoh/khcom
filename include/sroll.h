@@ -4,6 +4,8 @@
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
+#include "staff_roll_resource_tail_data.h"
+
 #include "pcm_audio_data.h"
 
 #include "staff_roll_resource_data.h"
@@ -331,7 +333,6 @@ extern u8 gUnk_09D6CF34[];
 extern u8 gUnk_09D6CF54[];
 extern u8 gUnk_09D6D034[];
 extern u8 gUnk_09D6D114[];
-extern void* gUnk_09EFBAE8[];
 extern const SrollFont gUnk_09A5B440[];
 extern const u16 gUnk_09A5B470[];
 extern u32 gUnk_09A5B674[];

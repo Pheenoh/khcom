@@ -729,4 +729,7 @@ extern Mode gUnk_09EE274C;
 extern Mode gUnk_09EE4BA0;
 extern const char gUnk_090359BC[];
 
+extern const char gModeNameSioDbgFlg[];
+extern Mode gModeSioDbgFlg;
+
 #endif

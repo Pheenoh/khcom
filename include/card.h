@@ -1,3 +1,5 @@
+#include "map_animation_data.h"
+#include "card_deck_data.h"
 #include "card_selection_data.h"
 #include "event_index_data.h"
 #include "card_def_data.h"
@@ -995,27 +997,6 @@ typedef struct NumberPlusWork {
     u8 unk_29;
 } NumberPlusWork;
 
-typedef struct MapTileAnimationFrame {
-    u16 tileOffset;
-    u8 duration;
-    u8 unk_03;
-} MapTileAnimationFrame;
-
-typedef struct MapTileAnimationTrack {
-    MapTileAnimationFrame* frames;
-    u8* tiles;
-    u8 frameCount;
-    u8 unk_09;
-    s16 destOffset;
-    u16 copySize;
-    u8 unk_0E[0x02];
-} MapTileAnimationTrack;
-
-typedef struct MapTileAnimationDef {
-    MapTileAnimationTrack* tracks;
-    u8 trackCount;
-} MapTileAnimationDef;
-
 typedef struct MapTileAnimationWork {
     u8 unk_00;
     u8 frameTimers[8];
@@ -1222,11 +1203,6 @@ extern void* gUnkEu_09F7EBA4[];
 #endif
 
 extern u8 gUnk_090451C0[];
-extern void* gUnk_09EE4A2C[];
-extern u16* gUnk_09EE4A68[];
-extern u16* gUnk_09EE4A98[];
-extern const u16 gUnk_090356BA[];
-extern const u16 gUnk_090356D2[];
 extern s16 gUnk_09035950[];
 extern s16 gUnk_09035956[];
 extern s16 gUnk_090356EC[];

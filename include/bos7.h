@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS7_H
 #define GUARD_BOS7_H
 
+#include "boss_lst_data.h"
+
 #include "staff_roll_script_data.h"
 
 #include "staff_roll_scene_data.h"
@@ -33,13 +35,6 @@
 #include "sroll_api.h"
 #include "btl_api.h"
 #include "evt_api.h"
-
-typedef struct LstAnimSet {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-} LstAnimSet;
 
 typedef struct LstObj {
     u8 unk_00[0x4];
@@ -465,7 +460,6 @@ extern u8 gUnk_09D6C574[];
 extern u8 gUnk_09D6C774[];
 extern u8 gUnk_09D6C974[];
 extern u8 gUnk_09D6CB74[];
-extern LstAnimSet gUnk_09EF9EA4[];
 
 extern u8 gUnk_09D6BE74[];
 
@@ -476,7 +470,6 @@ u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);
 void func_0810FEDC(void);
 void func_0810FE94(void);
-extern const s8* const gUnk_09EF9E6C[];
 void func_0810FEBC(s16 a);
 s32 func_0810FF44(void);
 

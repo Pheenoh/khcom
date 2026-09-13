@@ -2,6 +2,7 @@
 #define GUARD_POO_DATA_H
 
 #include "types.h"
+#include "anim.h"
 
 typedef struct PooPoint {
     s32 unk_00;
@@ -32,5 +33,9 @@ extern PooSpot gUnk_096FC2F0[];
 extern const PooPoint gUnk_096FC6B0[];
 extern PooMapBgDesc gUnk_096FC6E0;
 extern const PooSpot gUnk_096FD778[];
+
+typedef AnimDef PooZzzDesc;
+
+extern const PooZzzDesc gUnk_09EF4C88[];
 
 #endif

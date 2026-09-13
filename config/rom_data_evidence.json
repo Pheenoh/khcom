@@ -32134,6 +32134,95 @@
       "pointer_offsets": [
         0
       ]
+    },
+    {
+      "name": "map_tile_animation_assets_09035368",
+      "provenance": "map_anim_1 iterates the independently rooted MapTileAnimationDef.trackCount records and copies tiles plus frame.tileOffset for copySize bytes. Both native pointer fields are identity-validated; compiler-owned frame and track objects use explicit regional placements and are never added to raw symbol ledgers.",
+      "us": "0x9035368",
+      "targets": {
+        "jp": "0x900862c",
+        "eu": "0x90ce65c"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "map_tile_animation_assets_090353F0",
+      "provenance": "map_anim_1 iterates the independently rooted MapTileAnimationDef.trackCount records and copies tiles plus frame.tileOffset for copySize bytes. Both native pointer fields are identity-validated; compiler-owned frame and track objects use explicit regional placements and are never added to raw symbol ledgers.",
+      "us": "0x90353f0",
+      "targets": {
+        "jp": "0x90086b4",
+        "eu": "0x90ce6e4"
+      },
+      "size": 96,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "map_tile_animation_assets_0903546C",
+      "provenance": "map_anim_1 iterates the independently rooted MapTileAnimationDef.trackCount records and copies tiles plus frame.tileOffset for copySize bytes. Both native pointer fields are identity-validated; compiler-owned frame and track objects use explicit regional placements and are never added to raw symbol ledgers.",
+      "us": "0x903546c",
+      "targets": {
+        "jp": "0x9008730",
+        "eu": "0x90ce760"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "map_tile_animation_assets_09035494",
+      "provenance": "map_anim_1 iterates the independently rooted MapTileAnimationDef.trackCount records and copies tiles plus frame.tileOffset for copySize bytes. Both native pointer fields are identity-validated; compiler-owned frame and track objects use explicit regional placements and are never added to raw symbol ledgers.",
+      "us": "0x9035494",
+      "targets": {
+        "jp": "0x9008758",
+        "eu": "0x90ce788"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "map_tile_animation_assets_090354C4",
+      "provenance": "map_anim_1 iterates the independently rooted MapTileAnimationDef.trackCount records and copies tiles plus frame.tileOffset for copySize bytes. Both native pointer fields are identity-validated; compiler-owned frame and track objects use explicit regional placements and are never added to raw symbol ledgers.",
+      "us": "0x90354c4",
+      "targets": {
+        "jp": "0x9008788",
+        "eu": "0x90ce7b8"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "worldselect_palette_cycle",
+      "provenance": "func_080FE900 advances a world-select palette index and wraps after29, then LoadPalette copies32 bytes. The30 native slots are the same forward16/backward14 ordering in all regions, with16 complete16-color palettes independently byte-identical by per-target comparison. Only the120-byte pointer index gains C ownership; palette payloads stay assets.",
+      "us": "0x9ef8f24",
+      "targets": {
+        "jp": "0x9ed0310",
+        "eu": "0x9f84824"
+      },
+      "size": 120,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
     }
   ]
 }

@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "debug_menu_data.h"
+
 #include "boss_ursula_data.h"
 
 #include "map_world_text_data.h"
@@ -591,11 +593,9 @@ void func_080DE50C(MapChkWork* p);
 void func_080DE534(MapChkWork* p);
 void func_080DE3E8(MapChkWork* p);
 void func_080DE4A4(MapChkWork* p);
-extern const char* const gUnk_09EF6974[];
 
 void func_080DE2FC(MapChkWork* p);
 void func_080DE35C(MapChkWork* p);
-extern const char* const gUnk_09EF6960[];
 extern const char gUnk_0984B75C[];
 extern const char gUnk_0984B76C[];
 extern const char gUnk_0984B830[];

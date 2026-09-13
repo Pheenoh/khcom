@@ -44,4 +44,6 @@ extern s16 gUnk_09EF1CB6[][2];
 extern s16 gUnk_09EF1CEE[];
 extern u16 gUnk_09EF1D0A[];
 
+extern u8 gUnk_09EF1AEC[];
+
 #endif

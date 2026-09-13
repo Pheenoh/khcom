@@ -1095,3 +1095,12 @@ Mode gModePooh __attribute__((section(".data_registration_gModePooh"))) = {
     (void (*)(void))mode_pooh_1,
     (void (*)(void))mode_pooh_2,
 };
+
+const char gModeNameSioDbgFlg[] __attribute__((section(".rodata_registration_name_gModeSioDbgFlg"), aligned(1))) = "mode_sio_dbg_flg";
+
+Mode gModeSioDbgFlg __attribute__((section(".data_registration_gModeSioDbgFlg"))) = {
+    gModeNameSioDbgFlg,
+    mode_sio_dbg_flg_0,
+    mode_sio_dbg_flg_1,
+    mode_sio_dbg_flg_2,
+};

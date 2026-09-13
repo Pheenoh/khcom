@@ -2,6 +2,8 @@
 #ifndef GUARD_MODE_SIO2_H
 #define GUARD_MODE_SIO2_H
 
+#include "debug_menu_data.h"
+
 #include "pooh_animation_data.h"
 
 #include "sio_battle_options_state.h"
@@ -108,8 +110,6 @@ extern u8 gUnk_09849AF8[];
 extern u8 gUnk_09849B18[];
 extern const PoohHit gUnk_096FC010;
 extern const u8 gUnk_096FC01C[];
-extern const char* const gUnk_09EF34F0[];
-extern const char* const gUnk_09EF3504[];
 
 void mode_sio_dbg_flg_0(s32 arg);
 void mode_sio_dbg_flg_1(void);

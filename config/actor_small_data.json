@@ -1,0 +1,347 @@
+{
+  "version": 1,
+  "provenance": {
+    "butterfly": "func_080D1FB8 selects all five direction indices0..4; func_080D2034 passes each descriptor animation/gfx pair to AnimChangeWithTables and the tile pointer to SetObjTileSource. PooZzzDesc has the exact16-byte canonical AnimDef layout, including zero animation ID and padding in all five records. All target symbols already exist with independent ObjDef and event animation evidence. This descriptor table is program metadata, not tile data.",
+    "palette_cycle": "func_080FE900 advances a world-select palette index and wraps after29, then LoadPalette copies32 bytes. The30 native slots are the same forward16/backward14 ordering in all regions, with16 complete16-color palettes independently byte-identical by per-target comparison. Only the120-byte pointer index gains C ownership; palette payloads stay assets.",
+    "shake_curves": "func_0810B434 indexes signed-byte control samples, advances, and terminates on the following zero byte. Its two actual selector calls use0 and1. Both complete curves include the required zero terminator (33 and9 bytes); all three regions agree byte-for-byte and the second base independently bounds the first. The identical Lst control updater func_0810FEDC has a separate native two-pointer index and its own33/9-byte curves; its enable is never set and its selector setter has no visible caller, so those real dormant records are not claimed runtime-reachable. Preserve unsigned alignment bytes and neighboring parameter records outside these exact42-byte spans.",
+    "lst_anim_set": "The existing8-byte LstAnimSet type is consumed by LstState animation-selection logic. Four complete physical records occupy32 bytes and end at an independently owned TaskDesc. State0 initialization and state1 mutation are explicit; the table retains additional original records without claiming every row is currently reached. Public declaration remains unsized so ownership does not alter existing optimizer bounds."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_butterfly",
+          "address": "0x9ef4c88",
+          "size": 80,
+          "sha256": "f0abf43a046edddb8e95c46f82de9b132c21602578b20b061580634227140898",
+          "objects": [
+            {
+              "name": "gUnk_09EF4C88",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "worldselect_data.c",
+          "section": ".data_worldselect_palette_cycle",
+          "address": "0x9ef8f24",
+          "size": 120,
+          "sha256": "6020d173dc8e8dcb3e93e46b9248de34d32ebfb6f1603a692b6adb6076fd69d6",
+          "objects": [
+            {
+              "name": "gUnk_09EF8F24",
+              "offset": 0,
+              "size": 120
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_shake",
+          "address": "0x9a4ca94",
+          "size": 42,
+          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
+          "objects": [
+            {
+              "name": "gUnk_09A4CA94",
+              "offset": 0,
+              "size": 33
+            },
+            {
+              "name": "gUnk_09A4CAB5",
+              "offset": 33,
+              "size": 9
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_shake_index",
+          "address": "0x9ef9e04",
+          "size": 8,
+          "sha256": "8e3359aa10db6d157ade6021fc2c9b92a0da21711d8b478ec7112e4c62d011ad",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E04",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".rodata_lst_shake",
+          "address": "0x9a4fbf4",
+          "size": 42,
+          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
+          "objects": [
+            {
+              "name": "gUnk_09A4FBF4",
+              "offset": 0,
+              "size": 33
+            },
+            {
+              "name": "gUnk_09A4FC15",
+              "offset": 33,
+              "size": 9
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".rodata_lst_shake_index",
+          "address": "0x9ef9e6c",
+          "size": 8,
+          "sha256": "662b81d7b596fdf73a0cf48d130dca1dd336f4c1906cba876dbd85bce10abe86",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E6C",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".data_lst_anim_set",
+          "address": "0x9ef9ea4",
+          "size": 32,
+          "sha256": "ab8352a113b1e2966509a857eaf24a51dcdfb2f5569f44b7d2971572243d13e6",
+          "objects": [
+            {
+              "name": "gUnk_09EF9EA4",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_butterfly",
+          "address": "0x9ecc074",
+          "size": 80,
+          "sha256": "3f3d4c026822b0f69461242f40ef9d13f08762dc1febea9c29d7427e22b409d2",
+          "objects": [
+            {
+              "name": "gUnk_09EF4C88",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "worldselect_data.c",
+          "section": ".data_worldselect_palette_cycle",
+          "address": "0x9ed0310",
+          "size": 120,
+          "sha256": "06ea0dceab745a28012612ffbd1c71434d8f1ed88a0e7d76726060c3c15697e7",
+          "objects": [
+            {
+              "name": "gUnk_09EF8F24",
+              "offset": 0,
+              "size": 120
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_shake",
+          "address": "0x9a0151c",
+          "size": 42,
+          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
+          "objects": [
+            {
+              "name": "gUnk_09A4CA94",
+              "offset": 0,
+              "size": 33
+            },
+            {
+              "name": "gUnk_09A4CAB5",
+              "offset": 33,
+              "size": 9
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_shake_index",
+          "address": "0x9ed11f0",
+          "size": 8,
+          "sha256": "2e93c7fdb2d14d6927db8569dffbf0afc80bfbad8cae5c5aad8e1bc9fa8aa13e",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E04",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".rodata_lst_shake",
+          "address": "0x9a0467c",
+          "size": 42,
+          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
+          "objects": [
+            {
+              "name": "gUnk_09A4FBF4",
+              "offset": 0,
+              "size": 33
+            },
+            {
+              "name": "gUnk_09A4FC15",
+              "offset": 33,
+              "size": 9
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".rodata_lst_shake_index",
+          "address": "0x9ed1258",
+          "size": 8,
+          "sha256": "75b5de24f14ced6b298638d28f2b2f70915f25b363a178944072a2fcba3b507f",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E6C",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".data_lst_anim_set",
+          "address": "0x9ed1290",
+          "size": 32,
+          "sha256": "ab8352a113b1e2966509a857eaf24a51dcdfb2f5569f44b7d2971572243d13e6",
+          "objects": [
+            {
+              "name": "gUnk_09EF9EA4",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "poo_data.c",
+          "section": ".rodata_poo_butterfly",
+          "address": "0x9f7ff7c",
+          "size": 80,
+          "sha256": "712e198f30e537010877fe479ca44077432a3761d5a3cad23381b942ca453e0d",
+          "objects": [
+            {
+              "name": "gUnk_09EF4C88",
+              "offset": 0,
+              "size": 80
+            }
+          ]
+        },
+        {
+          "unit": "worldselect_data.c",
+          "section": ".data_worldselect_palette_cycle",
+          "address": "0x9f84824",
+          "size": 120,
+          "sha256": "bb35faca785fc7b424083277f1a428b3e2a72540ba63c1761d9e2f4aa9a5d5b6",
+          "objects": [
+            {
+              "name": "gUnk_09EF8F24",
+              "offset": 0,
+              "size": 120
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_shake",
+          "address": "0x9aaa558",
+          "size": 42,
+          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
+          "objects": [
+            {
+              "name": "gUnk_09A4CA94",
+              "offset": 0,
+              "size": 33
+            },
+            {
+              "name": "gUnk_09A4CAB5",
+              "offset": 33,
+              "size": 9
+            }
+          ]
+        },
+        {
+          "unit": "boss_pc_data.c",
+          "section": ".data_pc_shake_index",
+          "address": "0x9f85a70",
+          "size": 8,
+          "sha256": "4f83cac68984eaeb6b32477465aa77bc037603e879a03b23012b06cd2d339c67",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E04",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".rodata_lst_shake",
+          "address": "0x9aad6b8",
+          "size": 42,
+          "sha256": "73090c1b7cc9abd99539539329c33ead9cd7b33a565508ecc16a7ce50b482a38",
+          "objects": [
+            {
+              "name": "gUnk_09A4FBF4",
+              "offset": 0,
+              "size": 33
+            },
+            {
+              "name": "gUnk_09A4FC15",
+              "offset": 33,
+              "size": 9
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".rodata_lst_shake_index",
+          "address": "0x9f85ad8",
+          "size": 8,
+          "sha256": "27bc12c203083d503f5b667d3a7d6e4ff4768abc6580a2f10abf10e08ff31c43",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E6C",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "boss_lst_data.c",
+          "section": ".data_lst_anim_set",
+          "address": "0x9f85b10",
+          "size": 32,
+          "sha256": "ab8352a113b1e2966509a857eaf24a51dcdfb2f5569f44b7d2971572243d13e6",
+          "objects": [
+            {
+              "name": "gUnk_09EF9EA4",
+              "offset": 0,
+              "size": 32
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -171,4 +171,8 @@ extern u16 gUnk_09A4C9EC[];
 extern s16 gUnk_09A4C9F2[];
 extern const PcShot gUnk_09A4C9F8[];
 
+extern s8 gUnk_09A4CA94[];
+extern s8 gUnk_09A4CAB5[];
+extern s8* gUnk_09EF9E04[];
+
 #endif

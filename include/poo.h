@@ -908,14 +908,6 @@ typedef struct PooZzzWork {
     void* unk_24;
 } PooZzzWork;
 
-typedef struct PooZzzDesc {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} PooZzzDesc;
-
 typedef struct PooStumpDesc {
     void* unk_00;
     void* unk_04;
@@ -1126,7 +1118,6 @@ extern u8 gUnk_09756D86[];
 extern u8 gUnk_09756D90[];
 extern const u16 gUnk_096FD850[];
 extern const PooMapObjHitDesc gUnk_096FD8A4[];
-extern const PooZzzDesc gUnk_09EF4C88[];
 extern const PooStumpDesc gUnk_096FCAF4[];
 extern const PooAnimDesc gUnk_096FD50C[];
 extern u8 gUnk_09755A34[];

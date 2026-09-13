@@ -512,7 +512,6 @@ extern u8 gUnk_096FAFA4[];
 extern u8 gUnk_096FB084[];
 extern u8 gUnk_096FB0A4[];
 extern u8 gUnk_096FB0C4[];
-extern u8 gUnk_09EF1AEC[];
 
 extern void* gUnk_09EF36D0[];
 extern void* gUnk_09EF3924[];

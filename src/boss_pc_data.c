@@ -5077,3 +5077,14 @@ const PcShot gUnk_09A4C9F8[9] __attribute__((section(".rodata_pc_shots"))) = {
     { 59392, 94464, 24, { 0, 0 }, 512 },
     { 77056, 94464, 16, { 0, 0 }, 512 },
 };
+
+
+s8 gUnk_09A4CA94[33] __attribute__((section(".data_pc_shake"), aligned(1))) = {
+    4, 4, 4, 4, -4, -4, -4, -4, 3, 3, 3, 3, -3, -3, -3, -3, 2, 2, 2, 2, -2, -2, -2, -2, 1, 1, 1, 1, -1, -1, -1, -1, 0,
+};
+
+s8 gUnk_09A4CAB5[9] __attribute__((section(".data_pc_shake"), aligned(1))) = {
+    1, 2, 2, 1, -1, -2, -2, -1, 0,
+};
+
+s8* gUnk_09EF9E04[2] __attribute__((section(".data_pc_shake_index"))) = { gUnk_09A4CA94, gUnk_09A4CAB5 };

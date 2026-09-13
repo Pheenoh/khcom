@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS6_H
 #define GUARD_BOS6_H
 
+#include "staff_roll_resource_tail_data.h"
+
 #include "boss_pc_data.h"
 
 #include "animation_resource_data.h"
@@ -47,13 +49,6 @@ typedef struct PcPos {
     u8 unk_40[0x5C];
     u16 unk_9C;
 } PcPos;
-
-typedef struct PcSpriteDef {
-    u16 unk_00;
-    u16 unk_02;
-    u16 unk_04;
-    u16 unk_06;
-} PcSpriteDef;
 
 typedef struct PcOam {
     u16 count;
@@ -127,8 +122,6 @@ typedef struct PcWork {
     PcOam unk_2FC[24];
 } PcWork;
 
-extern PcSpriteDef* gUnk_09EFBB18[];
-extern void* gUnk_09EFAB18[];
 extern u8 gUnk_09D69274[];
 
 s32 func_08109EA8(s32 a);
@@ -366,7 +359,6 @@ extern s16 gUnk_09A4CAC4[];
 void func_0810B3E4(void);
 void func_0810B40C(s16 a);
 void func_0810B434(void);
-extern s8* gUnk_09EF9E04[];
 void func_0810B4B4(u8* p);
 
 void func_0810B930(PcFltWork* work);
@@ -429,7 +421,6 @@ extern u8 gUnk_09C51CBC[];
 void func_0810CE1C(BosLstWork* work);
 void func_0810C57C(BosLstWork* work, s16 a);
 
-extern void* gUnk_09EFBEB8;
 
 void task_bos_pc_fld_2(PcFldWork* work);
 

@@ -1,0 +1,815 @@
+{
+  "version": 1,
+  "provenance": {
+    "debug_labels": "Map-check controls wrap through exactly five generator styles and thirteen area choices. US and JP Sio debug setup loops over five labels and selects two flag strings with boolean indexes. The EU native setup at 080C34C8 stores menu count ten and directly loads offsets 0 through 36 from the table at 09F7E728, verified at literal 080C3680. Its two additional stored CARD and ABILITY label pointers are separate dormant scalars, not fictitious boolean choices. The obsolete EU gUnk_09EF3504 alias pointed inside the ten-label table and has no active EU source use. All encoded labels are exact first-terminator Shift-JIS literals.",
+    "mode": "The Mode immediately following each label run has the exact ASCII name mode_sio_dbg_flg and the native ordered mode_sio_dbg_flg_0/1/2 callback triple. Its common definition lives with those callbacks in mode_sio2.c; native EU table growth changes only placement. The Pooh world intro explicitly creates object indexes 0,1,2,3, proving its four-byte animation-selector array."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF6960",
+          "address": "0x9ef6960",
+          "size": 20,
+          "sha256": "b985d79431be20ea69730c7df9f990cca35beea208d9f5aaf245608384314997",
+          "objects": [
+            {
+              "name": "gUnk_09EF6960",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF6974",
+          "address": "0x9ef6974",
+          "size": 52,
+          "sha256": "ba010c9774577839ec6f2398d1b41fcb1d95c39d0ada47cea972a2939d3c3668",
+          "objects": [
+            {
+              "name": "gUnk_09EF6974",
+              "offset": 0,
+              "size": 52
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF34F0",
+          "address": "0x9ef34f0",
+          "size": 20,
+          "sha256": "efcef6384aa099580093550d4e6a88d13095e91a590e782245dde1730ca63c90",
+          "objects": [
+            {
+              "name": "gUnk_09EF34F0",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF3504",
+          "address": "0x9ef3504",
+          "size": 8,
+          "sha256": "cc4f7c85f3bbef476ecd3f683d23ac59555ba4e93a3b6b8f26f046d2806c97ed",
+          "objects": [
+            {
+              "name": "gUnk_09EF3504",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "mode_sio2.c",
+          "section": ".rodata_registration_name_gModeSioDbgFlg",
+          "address": "0x961a9ec",
+          "size": 17,
+          "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
+          "objects": [
+            {
+              "name": "gModeNameSioDbgFlg",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "mode_sio2.c",
+          "section": ".data_registration_gModeSioDbgFlg",
+          "address": "0x9ef350c",
+          "size": 16,
+          "sha256": "4aaebb190e7d191a171b8913bb8e17a2d2f1eb541e0bbadd08e7b4a7d923af3c",
+          "objects": [
+            {
+              "name": "gModeSioDbgFlg",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "world_intro_data.c",
+          "section": ".data_gUnk_09EF1AEC",
+          "address": "0x9ef1aec",
+          "size": 4,
+          "sha256": "dcc185c9119d8ed71fca5a402c4353202bad7f19493372053cf68bf8c5186350",
+          "objects": [
+            {
+              "name": "gUnk_09EF1AEC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gDebugMenuTextUs_0984B648",
+          "address": "0x984b648",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B634",
+          "address": "0x984b634",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B620",
+          "address": "0x984b620",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B60C",
+          "address": "0x984b60c",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B5F8",
+          "address": "0x984b5f8",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B71C",
+          "address": "0x984b71c",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B70C",
+          "address": "0x984b70c",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B6FC",
+          "address": "0x984b6fc",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B6EC",
+          "address": "0x984b6ec",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B6DC",
+          "address": "0x984b6dc",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B6CC",
+          "address": "0x984b6cc",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B6BC",
+          "address": "0x984b6bc",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B6AC",
+          "address": "0x984b6ac",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B69C",
+          "address": "0x984b69c",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B68C",
+          "address": "0x984b68c",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B67C",
+          "address": "0x984b67c",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B66C",
+          "address": "0x984b66c",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0984B65C",
+          "address": "0x984b65c",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0961A994",
+          "address": "0x961a994",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0961A980",
+          "address": "0x961a980",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0961A96C",
+          "address": "0x961a96c",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0961A958",
+          "address": "0x961a958",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0961A944",
+          "address": "0x961a944",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0961A9B8",
+          "address": "0x961a9b8",
+          "size": 13,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextUs_0961A9A8",
+          "address": "0x961a9a8",
+          "size": 13,
+          "encoding": "shift_jis"
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF6960",
+          "address": "0x9ecdd4c",
+          "size": 20,
+          "sha256": "d9c39bc43ad66b3b90b08de4782ccb7b07f0a1911f80c79cedd2262124a05485",
+          "objects": [
+            {
+              "name": "gUnk_09EF6960",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF6974",
+          "address": "0x9ecdd60",
+          "size": 52,
+          "sha256": "61955a6006eb70ea26b2e8405544d2ee092b9bc0384d627545174c4029ac3700",
+          "objects": [
+            {
+              "name": "gUnk_09EF6974",
+              "offset": 0,
+              "size": 52
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF34F0",
+          "address": "0x9eca8dc",
+          "size": 20,
+          "sha256": "bb706ac1362651a801a8277a52058a07e6c69a6dc9bd929148e45226bbf6660b",
+          "objects": [
+            {
+              "name": "gUnk_09EF34F0",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF3504",
+          "address": "0x9eca8f0",
+          "size": 8,
+          "sha256": "683c3d166c391729af6a387aba5debc7285d5e018bec40ef71b60d874c7e0ea4",
+          "objects": [
+            {
+              "name": "gUnk_09EF3504",
+              "offset": 0,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "unit": "mode_sio2.c",
+          "section": ".rodata_registration_name_gModeSioDbgFlg",
+          "address": "0x95d34c8",
+          "size": 17,
+          "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
+          "objects": [
+            {
+              "name": "gModeNameSioDbgFlg",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "mode_sio2.c",
+          "section": ".data_registration_gModeSioDbgFlg",
+          "address": "0x9eca8f8",
+          "size": 16,
+          "sha256": "2f1e98d9c79b477dc4734ff23e6c182b653cdf48c3840c411b93cfd7aa0e03e3",
+          "objects": [
+            {
+              "name": "gModeSioDbgFlg",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "world_intro_data.c",
+          "section": ".data_gUnk_09EF1AEC",
+          "address": "0x9ec8ed8",
+          "size": 4,
+          "sha256": "dcc185c9119d8ed71fca5a402c4353202bad7f19493372053cf68bf8c5186350",
+          "objects": [
+            {
+              "name": "gUnk_09EF1AEC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gDebugMenuTextJp_0980015C",
+          "address": "0x980015c",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800148",
+          "address": "0x9800148",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800134",
+          "address": "0x9800134",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800120",
+          "address": "0x9800120",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_0980010C",
+          "address": "0x980010c",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800230",
+          "address": "0x9800230",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800220",
+          "address": "0x9800220",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800210",
+          "address": "0x9800210",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800200",
+          "address": "0x9800200",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_098001F0",
+          "address": "0x98001f0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_098001E0",
+          "address": "0x98001e0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_098001D0",
+          "address": "0x98001d0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_098001C0",
+          "address": "0x98001c0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_098001B0",
+          "address": "0x98001b0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_098001A0",
+          "address": "0x98001a0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800190",
+          "address": "0x9800190",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800180",
+          "address": "0x9800180",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_09800170",
+          "address": "0x9800170",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_095D3470",
+          "address": "0x95d3470",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_095D345C",
+          "address": "0x95d345c",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_095D3448",
+          "address": "0x95d3448",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_095D3434",
+          "address": "0x95d3434",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_095D3420",
+          "address": "0x95d3420",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_095D3494",
+          "address": "0x95d3494",
+          "size": 13,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextJp_095D3484",
+          "address": "0x95d3484",
+          "size": 13,
+          "encoding": "shift_jis"
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF6960",
+          "address": "0x9f81fd0",
+          "size": 20,
+          "sha256": "2790f5ce21375f90ba1687778321f3ac3234137dc8938f270f0572c2b42bf534",
+          "objects": [
+            {
+              "name": "gUnk_09EF6960",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF6974",
+          "address": "0x9f81fe4",
+          "size": 52,
+          "sha256": "479dde126571661e657ccf6a3040e9fd3c0c28cedbd9d0cfca9b507dc30848b5",
+          "objects": [
+            {
+              "name": "gUnk_09EF6974",
+              "offset": 0,
+              "size": 52
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gUnk_09EF34F0",
+          "address": "0x9f7e728",
+          "size": 40,
+          "sha256": "d90b9f1861eab7b91968520b4c5f681c39e58c9baacb5b84a838bd5d096002c8",
+          "objects": [
+            {
+              "name": "gUnk_09EF34F0",
+              "offset": 0,
+              "size": 40
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gSioUnusedFlagLabelEu_09F7E750",
+          "address": "0x9f7e750",
+          "size": 4,
+          "sha256": "0c9cd62eada1c03f25b5b3fc7277fed0ac1edab853da78539d1cd81c071db9ff",
+          "objects": [
+            {
+              "name": "gSioUnusedFlagLabelEu_09F7E750",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "debug_menu_data.c",
+          "section": ".rodata_gSioUnusedFlagLabelEu_09F7E754",
+          "address": "0x9f7e754",
+          "size": 4,
+          "sha256": "1ad8d08a9b5a0175eaa982f471255bd4378d19557f193669047dd63c1e3ca2a7",
+          "objects": [
+            {
+              "name": "gSioUnusedFlagLabelEu_09F7E754",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "mode_sio2.c",
+          "section": ".rodata_registration_name_gModeSioDbgFlg",
+          "address": "0x95dbecc",
+          "size": 17,
+          "sha256": "b7440e846868c180a2cb5537c8d3ea8fc0713356f49d86a2d9745b753529fffa",
+          "objects": [
+            {
+              "name": "gModeNameSioDbgFlg",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "mode_sio2.c",
+          "section": ".data_registration_gModeSioDbgFlg",
+          "address": "0x9f7e758",
+          "size": 16,
+          "sha256": "9517162a1db99d335d03973a53a078643f80bd533af78cf925e3ce523354f9ab",
+          "objects": [
+            {
+              "name": "gModeSioDbgFlg",
+              "offset": 0,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "world_intro_data.c",
+          "section": ".data_gUnk_09EF1AEC",
+          "address": "0x9f7cd24",
+          "size": 4,
+          "sha256": "dcc185c9119d8ed71fca5a402c4353202bad7f19493372053cf68bf8c5186350",
+          "objects": [
+            {
+              "name": "gUnk_09EF1AEC",
+              "offset": 0,
+              "size": 4
+            }
+          ]
+        }
+      ],
+      "named_assets": [
+        {
+          "name": "gDebugMenuTextEu_0982801C",
+          "address": "0x982801c",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09828008",
+          "address": "0x9828008",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09827FF4",
+          "address": "0x9827ff4",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09827FE0",
+          "address": "0x9827fe0",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09827FCC",
+          "address": "0x9827fcc",
+          "size": 17,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_098280F0",
+          "address": "0x98280f0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_098280E0",
+          "address": "0x98280e0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_098280D0",
+          "address": "0x98280d0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_098280C0",
+          "address": "0x98280c0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_098280B0",
+          "address": "0x98280b0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_098280A0",
+          "address": "0x98280a0",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09828090",
+          "address": "0x9828090",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09828080",
+          "address": "0x9828080",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09828070",
+          "address": "0x9828070",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09828060",
+          "address": "0x9828060",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09828050",
+          "address": "0x9828050",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09828040",
+          "address": "0x9828040",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_09828030",
+          "address": "0x9828030",
+          "size": 15,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBE8C",
+          "address": "0x95dbe8c",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBE70",
+          "address": "0x95dbe70",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBE54",
+          "address": "0x95dbe54",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBE38",
+          "address": "0x95dbe38",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBE1C",
+          "address": "0x95dbe1c",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBE00",
+          "address": "0x95dbe00",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBDE4",
+          "address": "0x95dbde4",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBDC8",
+          "address": "0x95dbdc8",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBDAC",
+          "address": "0x95dbdac",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBD90",
+          "address": "0x95dbd90",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBD74",
+          "address": "0x95dbd74",
+          "size": 25,
+          "encoding": "shift_jis"
+        },
+        {
+          "name": "gDebugMenuTextEu_095DBD58",
+          "address": "0x95dbd58",
+          "size": 25,
+          "encoding": "shift_jis"
+        }
+      ]
+    }
+  }
+}

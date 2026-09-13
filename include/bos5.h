@@ -3,6 +3,8 @@
 #ifndef GUARD_BOS5_H
 #define GUARD_BOS5_H
 
+#include "worldselect_data.h"
+
 #include "worldinspect_data.h"
 
 #include "card_description_data.h"
@@ -400,7 +402,6 @@ void mode_worldselect_2(void);
 void func_080FE89C(void);
 
 void func_080FE900(void);
-extern void* gUnk_09EF8F24[];
 extern u8 gUnk_099920E8[];
 extern u8 gUnk_099D42FC[];
 extern u8 gUnk_099920D8[];

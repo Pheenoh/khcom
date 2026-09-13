@@ -218,3 +218,5 @@ u16 gUnk_09EF1D0A[14] __attribute__((section(".data_gUnk_09EF1D0A"))) = {
     13,
     14,
 };
+
+u8 gUnk_09EF1AEC[4] __attribute__((section(".data_gUnk_09EF1AEC"))) = { 0, 0, 2, 2 };
