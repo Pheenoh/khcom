@@ -251,6 +251,7 @@ TARGET_ANCHORS = {
         0x08EE78E4: 0x08EF7E3C,
         0x08C6A530: 0x08C9C114,
         0x08C6A53A: 0x08C9C11E,
+        0x095142B8: 0x09535324,
     },
     "jp": {
         0x0813B67C: 0x0813B6F8,
@@ -278,6 +279,7 @@ TARGET_ANCHORS = {
         0x09035898: 0x09008D34,
         0x090358D0: 0x09008D6C,
         0x08EE78E4: 0x08EDADEC,
+        0x095142B8: 0x094CBD94,
     },
 }
 
