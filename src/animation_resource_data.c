@@ -17838,3 +17838,126 @@ AnimHeader* gUnk_09EFBF34 __attribute__((section(".data_09EFBEC4"))) = &gUnk_09C
 AnimHeader* gUnk_09EFBF38 __attribute__((section(".data_09EFBEC4"))) = &gUnk_09C91558;
 
 AnimHeader* gUnk_09EFBF3C __attribute__((section(".data_09EFBEC4"))) = &gUnk_09C91562;
+
+void* gUnk_09EF3950 __attribute__((section(".data_09EF3950"))) = gUnk_0962E6B4;
+
+AnimHeader* gUnk_09EF3954 __attribute__((section(".data_09EF3950"))) = &gUnk_0962E6CA;
+
+void* gUnk_09EF3958 __attribute__((section(".data_09EF3950"))) = gUnk_0962E6D4;
+
+AnimHeader* gUnk_09EF395C __attribute__((section(".data_09EF3950"))) = &gUnk_0962E6EA;
+
+void* gUnk_09EF3960[4] __attribute__((section(".data_09EF3950"))) = {
+    gUnk_0962E6F4,
+    gUnk_0962E6FE,
+    gUnk_0962E708,
+    gUnk_0962E712,
+};
+
+void* gUnk_09EF3970 __attribute__((section(".data_09EF3950"))) = gUnk_0962E722;
+
+void* gUnk_09EF3974 __attribute__((section(".data_09EF3950"))) = gUnk_0962E732;
+
+AnimHeader* gUnk_09EF3978 __attribute__((section(".data_09EF3950"))) = &gUnk_0962E73C;
+
+void* gUnk_09EF397C[4] __attribute__((section(".data_09EF3950"))) = {
+    gUnk_0962E748,
+    gUnk_0962E758,
+    gUnk_0962E768,
+    gUnk_0962E778,
+};
+
+void* gUnk_09EF398C __attribute__((section(".data_09EF3950"))) = gUnk_0962E782;
+
+void* gUnk_09EF3990 __attribute__((section(".data_09EF3950"))) = gUnk_0962E78C;
+
+AnimHeader* gUnk_09EF3994 __attribute__((section(".data_09EF3950"))) = &gUnk_0962E796;
+
+void* gUnk_09EF3998 __attribute__((section(".data_09EF3950"))) = gUnk_0962E7A0;
+
+AnimHeader* gUnk_09EF399C __attribute__((section(".data_09EF3950"))) = &gUnk_0962E7AA;
+
+void* gUnk_09EF39BC __attribute__((section(".data_09EF39BC"))) = gUnk_0962E810;
+
+AnimHeader* gUnk_09EF39C0 __attribute__((section(".data_09EF39BC"))) = &gUnk_0962E81A;
+
+void* gUnk_09EF39C4 __attribute__((section(".data_09EF39BC"))) = gUnk_0962E824;
+
+AnimHeader* gUnk_09EF39C8 __attribute__((section(".data_09EF39BC"))) = &gUnk_0962E82E;
+
+void* gUnk_09EF39CC __attribute__((section(".data_09EF39BC"))) = gUnk_0962E838;
+
+AnimHeader* gUnk_09EF39D0 __attribute__((section(".data_09EF39BC"))) = &gUnk_0962E842;
+
+void* gUnk_09EF39D4 __attribute__((section(".data_09EF39BC"))) = gUnk_0962E84C;
+
+AnimHeader* gUnk_09EF39D8 __attribute__((section(".data_09EF39BC"))) = &gUnk_0962E856;
+
+void* gUnk_09EF39DC[6] __attribute__((section(".data_09EF39BC"))) = {
+    gUnk_0962E860,
+    gUnk_0962E894,
+    gUnk_0962E8CE,
+    gUnk_0962E908,
+    gUnk_0962E948,
+    gUnk_0962E976,
+};
+
+AnimHeader* gUnk_09EF39F4 __attribute__((section(".data_09EF39BC"))) = &gUnk_0962E998;
+
+void* gUnk_09EF3A1C[10] __attribute__((section(".data_09EF3A1C"))) = {
+    gUnk_0962EA44,
+    gUnk_0962EA7E,
+    gUnk_0962EABE,
+    gUnk_0962EAF2,
+    gUnk_0962EB26,
+    gUnk_0962EB54,
+    gUnk_0962EB88,
+    gUnk_0962EBB0,
+    gUnk_0962EBD8,
+    gUnk_0962EC12,
+};
+
+AnimHeader* gUnk_09EF3A44 __attribute__((section(".data_09EF3A1C"))) = &gUnk_0962EC52;
+
+void* gUnk_09EF3BF8[4] __attribute__((section(".data_09EF3BF8"))) = {
+    gUnk_0962FC38,
+    gUnk_0962FC42,
+    gUnk_0962FC52,
+    gUnk_0962FC62,
+};
+
+AnimHeader* gUnk_09EF3C08 __attribute__((section(".data_09EF3BF8"))) = &gUnk_0962FC72;
+
+AnimHeader* gUnk_09EF3C0C __attribute__((section(".data_09EF3BF8"))) = &gUnk_0962FC7C;
+
+AnimHeader* gUnk_09EF3C10 __attribute__((section(".data_09EF3BF8"))) = &gUnk_0962FC86;
+
+AnimHeader* gUnk_09EF3C14 __attribute__((section(".data_09EF3BF8"))) = &gUnk_0962FC90;
+
+void* gUnk_09EF3C18 __attribute__((section(".data_09EF3BF8"))) = gUnk_0962FC9C;
+
+AnimHeader* gUnk_09EF3C1C __attribute__((section(".data_09EF3BF8"))) = &gUnk_0962FCA6;
+
+void* gUnk_09EF3C50[7] __attribute__((section(".data_09EF3C50"))) = {
+    gUnk_0962FFF4,
+    gUnk_09630004,
+    gUnk_09630014,
+    gUnk_09630024,
+    gUnk_09630034,
+    gUnk_09630050,
+    gUnk_0963006C,
+};
+
+AnimHeader* gUnk_09EF3C6C __attribute__((section(".data_09EF3C50"))) = &gUnk_0963007C;
+
+AnimHeader* gUnk_09EF3C70 __attribute__((section(".data_09EF3C50"))) = &gUnk_09630086;
+
+AnimHeader* gUnk_09EF3C74 __attribute__((section(".data_09EF3C50"))) = &gUnk_09630090;
+
+AnimHeader* gUnk_09EF3C78 __attribute__((section(".data_09EF3C50"))) = &gUnk_0963009A;
+
+AnimHeader* gUnk_09EF3C7C __attribute__((section(".data_09EF3C50"))) = &gUnk_096300A4;
+
+AnimHeader* gUnk_09EF3C80 __attribute__((section(".data_09EF3C50"))) = &gUnk_096300AE;
+
+AnimHeader* gUnk_09EF3C84 __attribute__((section(".data_09EF3C50"))) = &gUnk_096300B8;

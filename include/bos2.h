@@ -572,9 +572,6 @@ extern u8 gUnk_09EF2E68[];
 extern void* gUnk_0961A7B0[];
 extern s16 gUnk_0961A89E[];
 extern s16 gUnk_0961A8B0[];
-extern void* gUnk_09EF3C50[];
-extern void* gUnk_09EF3BF8[];
-extern void* gUnk_09EF3C18;
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_096C5C64[];
 extern u8 gUnk_096FB304[];
@@ -585,10 +582,6 @@ extern s8 gUnk_0961A82E[];
 extern u32 gFrameCounter;
 extern void* gUnk_09EF275C[][15];
 extern u8 gUnk_09652E84[];
-extern void* gUnk_09EF3950;
-extern void* gUnk_09EF3958;
-extern void* gUnk_09EF3960;
-extern void* gUnk_09EF397C;
 
 extern u8 gUnk_09654C04[];
 extern u8 gUnk_09658C04[];
@@ -625,16 +618,12 @@ extern s16 gUnk_0961A860[];
 extern s16 gUnk_0961A6A8[];
 extern s8 gUnk_0961A70A[];
 extern u16 gUnk_0961A710[][3];
-extern void* gUnk_09EF39DC[];
 extern u8 gUnk_09619CDC[];
 extern u8 gUnk_09619D18[];
 extern u8 gUnk_09657C04[];
 extern u8 gUnk_0962E7A0[];
 
 extern u8 gUnk_096BF464[];
-extern void* gUnk_09EF39BC;
-extern void* gUnk_09EF39C4;
-extern void* gUnk_09EF3A1C[];
 #include "mode_battle_data.h"
 extern u8 gUnk_09619C94[];
 

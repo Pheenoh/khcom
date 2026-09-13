@@ -11483,6 +11483,81 @@
       "pointer_offsets": [
         0
       ]
+    },
+    {
+      "name": "boss_sprite_indices_09EF3950",
+      "layer": 1,
+      "provenance": "Canonical Trickmaster body step fields22/30 reach gfx3; foot step fields6/14 reach gfx5 and walking fields reach9. DsdRock GetRandom()%3+1 proves4 graphics, and DsdCircle phase21..27 minus21 proves7 graphics. Previously scalar3960/397C views become explicit first-element reads. Remaining structurally validated sprite and single-frame animation pointers are separate neutral scalar objects, not asserted runtime array entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef3950",
+      "targets": {
+        "jp": "0x9ecad3c",
+        "eu": "0x9f7ec44"
+      },
+      "size": 80,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "boss_sprite_indices_09EF39BC",
+      "layer": 1,
+      "provenance": "Canonical Trickmaster body step fields22/30 reach gfx3; foot step fields6/14 reach gfx5 and walking fields reach9. DsdRock GetRandom()%3+1 proves4 graphics, and DsdCircle phase21..27 minus21 proves7 graphics. Previously scalar3960/397C views become explicit first-element reads. Remaining structurally validated sprite and single-frame animation pointers are separate neutral scalar objects, not asserted runtime array entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef39bc",
+      "targets": {
+        "jp": "0x9ecada8",
+        "eu": "0x9f7ecb0"
+      },
+      "size": 60,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "boss_sprite_indices_09EF3A1C",
+      "layer": 1,
+      "provenance": "Canonical Trickmaster body step fields22/30 reach gfx3; foot step fields6/14 reach gfx5 and walking fields reach9. DsdRock GetRandom()%3+1 proves4 graphics, and DsdCircle phase21..27 minus21 proves7 graphics. Previously scalar3960/397C views become explicit first-element reads. Remaining structurally validated sprite and single-frame animation pointers are separate neutral scalar objects, not asserted runtime array entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef3a1c",
+      "targets": {
+        "jp": "0x9ecae08",
+        "eu": "0x9f7ed10"
+      },
+      "size": 44,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "boss_sprite_indices_09EF3BF8",
+      "layer": 1,
+      "provenance": "Canonical Trickmaster body step fields22/30 reach gfx3; foot step fields6/14 reach gfx5 and walking fields reach9. DsdRock GetRandom()%3+1 proves4 graphics, and DsdCircle phase21..27 minus21 proves7 graphics. Previously scalar3960/397C views become explicit first-element reads. Remaining structurally validated sprite and single-frame animation pointers are separate neutral scalar objects, not asserted runtime array entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef3bf8",
+      "targets": {
+        "jp": "0x9ecafe4",
+        "eu": "0x9f7eeec"
+      },
+      "size": 40,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "boss_sprite_indices_09EF3C50",
+      "layer": 1,
+      "provenance": "Canonical Trickmaster body step fields22/30 reach gfx3; foot step fields6/14 reach gfx5 and walking fields reach9. DsdRock GetRandom()%3+1 proves4 graphics, and DsdCircle phase21..27 minus21 proves7 graphics. Previously scalar3960/397C views become explicit first-element reads. Remaining structurally validated sprite and single-frame animation pointers are separate neutral scalar objects, not asserted runtime array entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.",
+      "us": "0x9ef3c50",
+      "targets": {
+        "jp": "0x9ecb03c",
+        "eu": "0x9f7ef44"
+      },
+      "size": 56,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
     }
   ]
 }

@@ -30,8 +30,8 @@ void task_bos_tm_body_0(TmBodyWork* work, TmWork* arg) {
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->gfx = gUnk_09EF3950;
     work->gfx2 = gUnk_09EF3958;
-    work->gfx3 = gUnk_09EF397C;
-    work->gfx4 = gUnk_09EF3960;
+    work->gfx3 = gUnk_09EF397C[0];
+    work->gfx4 = gUnk_09EF3960[0];
     work->unk_000 = arg;
     work->unk_000->unk_40 = ((u16*)work->tiles)[3];
     work->unk_000->unk_42 += ((u16*)work->tiles)[4];

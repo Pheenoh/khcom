@@ -51,6 +51,24 @@ def veneer_labels(data):
     return VENEER_NAMES
 
 
+def validate_transform_veneers(rom, address, transform):
+    size = VENEER_SIZE * len(VENEER_NAMES)
+    if address < ROM_BASE or address + size > ROM_BASE + len(rom) or address % 4:
+        raise ValueError('transform veneers are outside ROM or misaligned')
+    data = rom[address - ROM_BASE:address - ROM_BASE + size]
+    if veneer_labels(data) != VENEER_NAMES:
+        raise ValueError('transform veneers have an unexpected instruction sequence')
+    for index, offset in enumerate((0x134, 0, 0x1BC)):
+        branch = struct.unpack_from('<I', data, index * VENEER_SIZE + 4)[0]
+        displacement = branch & 0xFFFFFF
+        if displacement & 0x800000:
+            displacement -= 0x1000000
+        target = address + index * VENEER_SIZE + 12 + displacement * 4
+        if target != transform + offset:
+            raise ValueError('transform veneer branch target differs from the native ARM entry')
+    return size
+
+
 def blob_source(code, lo, hi, data):
     head = f'\t.section .rodata\n\t.global data_{lo:08X}\ndata_{lo:08X}:\n'
     names = veneer_labels(data)
@@ -2800,6 +2818,10 @@ def main():
         t = line.strip()
         if t.endswith(")"):
             nm, _, sec = t.partition("(")
+            if t == "transform_veneers.s(.text)":
+                size = validate_transform_veneers(ot, code_end, byname["func_08109AAC"][3])
+                cdata.append((code_end, size, line))
+                continue
             if nm.endswith(".s"):
                 continue
             key = nm, sec[:-1]

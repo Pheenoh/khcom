@@ -551,8 +551,6 @@ extern s16 gUnk_09EF1CEE[];
 extern u16 gUnk_09EF1D0A[];
 extern void* gUnk_09EF36D0[];
 extern void* gUnk_09EF3924[];
-extern void* gUnk_09EF3960[];
-extern void* gUnk_09EF397C[];
 
 void task_wlogo_hwt_0(WlogoHwtWork* work);
 u8 task_wlogo_hwt_1(WlogoHwtWork* work);

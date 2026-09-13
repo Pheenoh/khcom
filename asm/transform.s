@@ -83,6 +83,8 @@ func_08109AAC:
 	stm	ip, {r3, r4, r5, r6, r7, r8, r9, sl}
 	ldmdb	fp, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, sp, lr}
 	bx	lr
+	.global func_08109BE0
+func_08109BE0:
 .LInverseShifted:
 	mov	ip, sp
 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr, pc}
@@ -119,6 +121,8 @@ func_08109AAC:
 	blt	.LShiftedDivide
 	ldmdb	fp, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, sp, lr}
 	bx	lr
+	.global func_08109C68
+func_08109C68:
 .LInverseSquared:
 	mov	ip, sp
 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr, pc}
