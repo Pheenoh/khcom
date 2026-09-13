@@ -6129,7 +6129,9 @@ u8 func_08080B44(UnkStruct_08080268* w, void* a) {
 
     w->unk_C4[1] = 0;
     gUnk_02039DD4->unk_0E4 = 0;
+#ifndef VERSION_EU
     m4aSongNumStart(140);
+#endif
     gUnk_02034AAC->unk_78 = (gUnk_02034AAC->unk_78 & ~0x40) | 0x200;
     gUnk_02034AAC->unk_A1 = 6;
     gUnk_02034AAC->unk_9F = w->unk_B9;
