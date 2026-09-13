@@ -95,6 +95,10 @@ extern u8 gUnkEu_09162C8C[];
 #endif
 
 #ifdef VERSION_EU
+extern AnimHeader gUnkEu_091933B6;
+extern void* data_09F6FD8C[];
+extern void** data_09F6FDA0[];
+extern u16 gUnkEu_090CE9E0[];
 extern void* gUnkEu_09F72A64[];
 extern void* gUnkEu_09F72A3C[];
 extern void* gUnkEu_09F72A50[];
@@ -10012,38 +10016,58 @@ u8 GetActiveDeckIndex(void) {
 
 void func_08085FB0(void) {
 }
-#ifdef NON_MATCHING
 void func_08085FB4(u8* work, void* a) {
-    *(void**)&work[0x8BC] = a;
+    u16 unk;
+    *(void**)&work[CARDWORK(0x8BC)] = a;
     SetBgMode0();
     SetBackdropColor(0, 0, 0);
+#ifdef VERSION_EU
+    SetupBg(0, 0, 31, 0);
+    SetupBg(1, 0, 29, 0);
+    SetupBg(2, 0, 28, 0);
+    SetupBg(3, 0, 30, 0);
+#else
     SetupBg(0, 3, 31, 0);
     SetupBg(1, 2, 23, 0);
     SetupBg(2, 1, 15, 0);
     SetupBg(3, 0, 30, 0);
+#endif
     SetBgPriority(0, 0);
     SetBgPriority(1, 1);
     SetBgPriority(2, 2);
     SetBgPriority(3, 3);
     FadeStartIn(0, 16);
-    ListPoolInit(&work[0x7F0]);
-    TaskPoolInit((TaskPool*)&work[0x7C8], 286);
-    TaskPoolInit((TaskPool*)&work[0x7DC], 1);
-    work[0x8C0] = GetActiveDeckIndex();
+    ListPoolInit(&work[CARDWORK(0x7F0)]);
+    TaskPoolInit((TaskPool*)&work[CARDWORK(0x7C8)], 286);
+    TaskPoolInit((TaskPool*)&work[CARDWORK(0x7DC)], 1);
+    ((UnkStruct_0808DB04*)work)->unk_8C0 = GetActiveDeckIndex();
     func_0808C3DC(work, 0);
     *(void**)&work[0x00] = AllocObjTiles(0x120, 0);
     SetObjTileSource(*(void**)&work[0x00], gUnk_090A4664);
-    AnimInit((AnimState*)&work[0x800], gUnk_09EEB03C, gUnk_09EEB008);
-    AnimStart((AnimState*)&work[0x800], 0, 1);
-    *(void**)&work[0x4F0] = AnimGetGfx((AnimState*)&work[0x800]);
-    *(s32*)&work[0x848] = gUnk_090356EC[0] << 8;
-    *(s32*)&work[0x84C] = gUnk_090356F2[0] << 8;
-    *(u16*)&work[0x882] = 0;
+    AnimInit((AnimState*)&work[CARDWORK(0x800)], gUnk_09EEB03C, gUnk_09EEB008);
+    AnimStart((AnimState*)&work[CARDWORK(0x800)], 0, 1);
+    *(void**)&work[0x4F0] = AnimGetGfx((AnimState*)&work[CARDWORK(0x800)]);
+    *(s32*)&work[CARDWORK(0x848)] = gUnk_090356EC[0] << 8;
+    *(s32*)&work[CARDWORK(0x84C)] = gUnk_090356F2[0] << 8;
+    *(u16*)&work[CARDWORK(0x882)] = 0;
+#ifdef VERSION_EU
+    *(void**)&work[0x10] = LoadObjTiles((u8*)&gUnkEu_091933B6 + 10, 32);
+#else
     *(void**)&work[0x10] = LoadObjTiles(gUnk_090A44C4, 32);
+#endif
     *(void**)&work[0x14] = LoadObjPalette(gUnk_09614418, 32);
+#ifdef VERSION_EU
+    *(void**)&work[0x4B8] = LoadObjTiles(data_09F6FD8C[gLanguage], gUnkEu_090CE9E0[gLanguage]);
+#else
     *(void**)&work[0x4B8] = LoadObjTiles(&gUnk_090A0C86[0x132C], 0x280);
-    *(void**)&work[0x4E8] = gUnk_09EEAFD4;
-    *(void**)&work[0x4EC] = gUnk_09EEAFD8;
+#endif
+#ifdef VERSION_EU
+    *(void**)&work[0x4E8] = data_09F6FDA0[gLanguage][0];
+    *(void**)&work[0x4EC] = data_09F6FDA0[gLanguage][1];
+#else
+    *(void**)&work[0x4E8] = *(void**)&gUnk_09EEAFD4;
+    *(void**)&work[0x4EC] = *((void**)&gUnk_09EEAFD4 + 1);
+#endif
     *(void**)&work[0x04] = AllocObjTiles(0x280, 0);
     func_0808E364(work, 0);
     *(void**)&work[0x4C4] = LoadObjPalette(gUnk_09614438, 32);
@@ -10064,54 +10088,51 @@ void func_08085FB4(u8* work, void* a) {
     *(s32*)&work[0x18] = 0;
     *(s32*)&work[0x4BC] = 0;
     *(s32*)&work[0x4C0] = 0;
-    *(u16*)&work[0x884] = 0;
-    *(u16*)&work[0x886] = 0;
-    work[0x8B3] = 0;
-    work[0x8B4] = 0;
-    work[0x8B7] = 16;
-    work[0x8C8] = 0;
+    *(u16*)&work[CARDWORK(0x884)] = 0;
+    *(u16*)&work[CARDWORK(0x886)] = 0;
+    work[CARDWORK(0x8B3)] = 0;
+    work[CARDWORK(0x8B4)] = 0;
+    work[CARDWORK(0x8B7)] = 16;
+    work[CARDWORK(0x8C8)] = 0;
     *(s32*)&work[0x4C8] = 0;
     *(s32*)&work[0x4CC] = 0;
-    work[0x8C7] = 0;
-    work[0x8B1] = 0;
-    *(u16*)&work[0x8A2] = func_080857D4(0);
-    *(u16*)&work[0x8A4] = func_080857D4(1);
-    *(u16*)&work[0x8A6] = func_080857D4(2);
-    *(u16*)&work[0x8A8] = func_080857D4(3);
-    work[0x8C1] = 0;
-    *(u16*)&work[0x898] = 0;
+    work[CARDWORK(0x8C7)] = 0;
+    work[CARDWORK(0x8B1)] = 0;
+    *(u16*)&work[CARDWORK(0x8A2)] = func_080857D4(0);
+    *(u16*)&work[CARDWORK(0x8A4)] = func_080857D4(1);
+    *(u16*)&work[CARDWORK(0x8A6)] = func_080857D4(2);
+    *(u16*)&work[CARDWORK(0x8A8)] = func_080857D4(3);
+    work[CARDWORK(0x8C1)] = 0;
+    *(u16*)&work[CARDWORK(0x898)] = 0;
     *(s32*)&work[0x4D4] = 0;
-    work[0x8C9] = 0;
-    work[0x8CB] = 0;
-    work[0x8CC] = 16;
-    work[0x8CD] = 16;
-    *(s32*)&work[0x858] = 0x7800;
-    *(s32*)&work[0x860] = -0x800;
-    *(s32*)&work[0x85C] = 0xA400;
-    *(s32*)&work[0x864] = 0xA000;
-    *(s32*)&work[0x868] = -0x8000;
-    work[0x8CF] = 0;
-    work[0x8B0] = 0;
-    *(u16*)&work[0x878] = 95;
-    *(u16*)&work[0x87A] = 0xFFFE;
-    *(u16*)&work[0x87C] = 135;
-    *(u16*)&work[0x87E] = 0xFFFE;
-    work[0x8CE] = 0;
-    work[0x8C2] = 0;
-    work[0x8C3] = 0;
-    work[0x8C4] = 0;
-    work[0x8C5] = 0;
+    work[CARDWORK(0x8C9)] = 0;
+    work[CARDWORK(0x8CB)] = 0;
+    work[CARDWORK(0x8CC)] = 16;
+    work[CARDWORK(0x8CD)] = 16;
+    *(s32*)&work[CARDWORK(0x858)] = 0x7800;
+    *(s32*)&work[CARDWORK(0x860)] = -0x800;
+    *(s32*)&work[CARDWORK(0x85C)] = 0xA400;
+    *(s32*)&work[CARDWORK(0x864)] = 0xA000;
+    *(s32*)&work[CARDWORK(0x868)] = -0x8000;
+    work[CARDWORK(0x8CF)] = 0;
+    work[CARDWORK(0x8B0)] = 0;
+    *(u16*)&work[CARDWORK(0x878)] = 95;
+    *(u16*)&work[CARDWORK(0x87A)] = unk = 0xFFFE;
+    *(u16*)&work[CARDWORK(0x87C)] = 135;
+    *(u16*)&work[CARDWORK(0x87E)] = unk;
+    work[CARDWORK(0x8CE)] = 0;
+    work[CARDWORK(0x8C2)] = 0;
+    work[CARDWORK(0x8C3)] = 0;
+    work[CARDWORK(0x8C4)] = 0;
+    work[CARDWORK(0x8C5)] = 0;
     InitTextSlots((TextSlot*)&work[0x38], 8);
     InitTextSlots((TextSlot*)&work[0x78], 8);
     InitTextSlots((TextSlot*)&work[0xB8], 8);
     InitTextSlots((TextSlot*)&work[0xF8], 30);
     InitTextSlots((TextSlot*)&work[0x1E8], 90);
-    work[0x8D0] = 0;
-    work[0x8D2] = 0;
+    work[CARDWORK(0x8D0)] = 0;
+    work[CARDWORK(0x8D2)] = 0;
 }
-#else
-INCLUDE_ASM("card/func_08085FB4.s");
-#endif
 u8 func_080863C0(u8* work, void* a) {
 #ifdef VERSION_EU
     FadeStartIn(0, 16);
