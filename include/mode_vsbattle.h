@@ -31,19 +31,10 @@
 #include "hum_common.h"
 #include "btl_api.h"
 
-
 typedef struct VsTaskArg {
     s32 unk_00;
     u32 unk_04 : 8;
 } VsTaskArg;
-
-
-
-
-
-
-
-
 
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;

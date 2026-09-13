@@ -56,7 +56,6 @@ typedef struct SelmapEventKeyWork {
     u8 unk_123;
 } SelmapEventKeyWork;
 
-
 typedef struct UnkStruct_080A82E0 {
     u8 unk_000[0x614];
     TaskPool unk_614;
@@ -337,7 +336,6 @@ u8 func_0809612C(PrizeCardWork* w, void* a);
 u16 func_08096D48(u16 a, s32 b);
 void func_0809D1B0(PremiumCardEffectWork* w);
 void func_0809CAC8(void* work);
-
 
 void func_0809D160(PremiumCardEffectWork* w);
 u8 func_080A25E0(UnkStruct_080A2678* w, void* a);
@@ -673,7 +671,6 @@ void func_080785B8(u8* w, s32 mode) {
         break;
     }
 }
-
 
 u16 func_08078754(UnkStruct_08078754* w, u8 n) {
     u16 count;
@@ -1841,7 +1838,6 @@ s32 func_0807A188(UnkStruct_08080268* w) {
     }
     return 1;
 }
-
 
 void func_0807A620(u8* work) {
     CardDisplayWork* node;
@@ -3463,7 +3459,6 @@ void func_0807CC2C(CardDisplayWork* p) {
     p->unk_4C = gSineTable[angle] * (p->unk_84 >> 8) + p->unk_8C;
     p->unk_50 = -gSineTable[angle + 0x40] * (p->unk_84 >> 8) + p->unk_90;
 }
-
 
 void func_0807CD48(CardDisplayWork* p) {
     if (p->unk_78 & 0x800) {
@@ -8601,7 +8596,6 @@ void func_08084124(u16 cardId) {
     }
 }
 
-
 s16 func_08084458(u16 cardId) {
     u16 i = 0;
 
@@ -8951,7 +8945,6 @@ s16 func_08084458(u16 cardId) {
     func_08084AC8(gCardDefs[cardId].unk_1C);
     return i;
 }
-
 
 void func_08084AC8(u16 a) {
     if (gGameState.flags & 8) {
@@ -11000,7 +10993,6 @@ void func_08087B98(UnkStruct_0808DB04* w, u8 mode) {
     func_0808C974((UnkStruct_0808C940*)w);
 }
 
-
 u8 func_08087CD4(UnkStruct_080889DC* w, void* a) {
     u8 n;
 
@@ -11508,7 +11500,6 @@ u8 func_08088768(u8* work, void* a) {
     return 1;
 #endif
 }
-
 
 u8 func_080889DC(UnkStruct_080889DC* w, void* a) {
     w->unk_4F0 = AnimUpdate(&w->unk_800);
@@ -12158,7 +12149,6 @@ u8 func_080897CC(UnkStruct_080889DC* w, void* a) {
     TaskPoolUpdate(&w->cardpool);
     return 1;
 }
-
 
 u8 func_08089D20(u8* work, void* a) {
     u8* q;
@@ -16212,7 +16202,6 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
     return 1;
 }
 
-
 u8 func_0808FA0C(u8* work, void* a) {
     FadeStartIn(0, 16);
     work[CARDWORK(0x8B1)] = 0;
@@ -19184,7 +19173,6 @@ u8 func_08094404(MapSelectWork* w, void* a) {
     TaskPoolUpdate(&w->tasks);
     return 1;
 }
-
 
 void func_08094548(MapSelectWork* w) {
     MapcardWork* n;
@@ -22910,7 +22898,6 @@ void func_0809A1B8(UnkStruct_0809A02C* w, s32* args) {
     gBtlWork->unk_0B0++;
 }
 
-
 void func_0809A368(UnkStruct_0809A02C* w, UnkStruct_0809A368_Args* args) {
     u8* p;
 
@@ -25268,21 +25255,6 @@ extern s16 gUnk_09037FB4[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #ifdef VERSION_EU
 extern void* gUnkEu_09F72D1C[];
 extern u16 gUnkEu_090D1328[];
@@ -25456,7 +25428,6 @@ void Level_Up_0(LevelUpWork* w) {
     w->unk_7C0 = 16;
     w->unk_7C5 = 0;
 }
-
 
 #ifdef VERSION_EU
 #define CARD_E7A4_DST 0x20
@@ -26064,8 +26035,6 @@ extern u8 gUnk_09EE7F48[];
 extern u8 gUnk_09EE7F30[];
 extern u8 gUnk_09EE790C[];
 u8 func_0809FBCC(u8* work, void* a);
-
-
 
 typedef struct StatIncreaseDisplayArgs {
     u8* done;
@@ -28524,7 +28493,6 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
     }
     return 1;
 }
-
 
 u8 func_080A3DD0(UnkStruct_080A3F5C* w) {
     if (w->unk_008 != 0) {

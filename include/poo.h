@@ -36,7 +36,6 @@ typedef struct PooAim {
     s32 unk_40;
 } PooAim;
 
-
 typedef struct PooShadowInfo {
     u16 unk_00;
     u16 unk_02;
@@ -514,7 +513,6 @@ typedef struct PooOwlBalloonWork {
     u16 unk_C8;
     u16 unk_CA;
 } PooOwlBalloonWork;
-
 
 typedef struct PooPrizeWork {
     s32 unk_00;
@@ -1108,7 +1106,6 @@ typedef struct PooPalStep {
 
 extern PooState gUnk_0203C470;
 
-
 extern PoohInteractionRegistry* gUnk_0203C4B4;
 extern const s32 gUnk_096FDA74[];
 extern u16* gUnk_0203C504;
@@ -1122,23 +1119,14 @@ extern u8 gUnk_0983BC18[];
 extern const PooBgSet gUnk_096FDA8C[];
 extern const PooPalStep gUnk_096FDB40[];
 
-
 extern PooSpot gUnk_096FC05C[];
 extern PooSpot gUnk_096FC2F0[];
 
-
 extern TaskDesc gTaskDescPooShadowscale;
-
-
-
 
 extern u16* gUnk_09EF4208[];
 extern u16* gUnk_09EF4448[];
 extern u16* gUnk_09EF4688[];
-
-
-
-
 
 extern u8 gUnk_096FD3E8[];
 extern const s32 gUnk_096FD43C[];
@@ -1615,7 +1603,6 @@ u16 func_080D2E28(void* a, u16 b);
 void func_080D2E70(u16 a, u8 b);
 u16 func_080D2EB8(void);
 void func_080D2F10(u8 a);
-
 
 u16 func_080CA67C(PooPos* p);
 u16 func_080CBAB0(PooPos* p);

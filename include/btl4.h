@@ -92,8 +92,6 @@ typedef struct BtlHpothWork {
     u32 unk_68;
 } BtlHpothWork;
 
-
-
 extern u8 gUnk_08B1D8BC[];
 extern u8 gUnk_08B1FCBC[];
 extern u8 gUnk_08B1FCCC[];

@@ -434,14 +434,7 @@ typedef struct LexRockWork {
     u8 unk_2C1[0x03];
 } LexRockWork;
 
-
-
-
-
 #define SAVE_OK 2
-
-
-
 
 typedef struct AxcelWork {
     HumWork base;

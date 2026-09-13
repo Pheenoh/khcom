@@ -323,7 +323,6 @@ typedef struct LstSnpArg {
     s16 unk_0C;
 } LstSnpArg;
 
-
 typedef struct StaffRollLabelArg {
     u16 unk_00;
     u16 unk_02;
@@ -505,9 +504,6 @@ extern u8 gUnk_09EFBF60[];
 
 extern u8 gUnk_09D6BE74[];
 
-
-
-
 extern u8* gUnk_09EF9F54[];
 extern u8* gUnk_09EFA9C0;
 extern u8* gUnk_09EFA9BC;
@@ -517,11 +513,6 @@ extern u8 gUnk_09A541C8[];
 extern u8 gUnk_09D6BE14[];
 extern u8 gTaskDescSrollBLogo[];
 extern u8 gTaskDescSrollBSecn[];
-
-
-
-
-
 
 u8 func_08112C38(StaffRollWork* w);
 u8 func_08113180(StaffRollWork* w);

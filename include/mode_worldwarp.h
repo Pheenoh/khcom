@@ -37,7 +37,6 @@ typedef struct WarpIcon {
     u8 unk_12[0x02];
 } WarpIcon;
 
-
 typedef struct WarpRect {
     s16 unk_00;
     s16 unk_02;
@@ -78,42 +77,11 @@ typedef struct WarpDef {
 extern const WarpDef gUnk_09993118[];
 extern u16 gUnk_099931D0[];
 
-
-
-
-
-
-
-
-
-
 extern u8 gUnk_09A3D77C[];
 extern u8 gUnk_09617D58[];
 extern u8 gUnk_09A35F1C[];
 
-
-
-
-
-
-
-
-
-
 extern u8 gUnk_09A378DC[];
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 extern u8 gUnk_099A2AD4[];
 extern u8 gUnk_099A2AF0[];

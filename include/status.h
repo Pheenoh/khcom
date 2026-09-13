@@ -33,7 +33,6 @@
 #include "key.h"
 #include "m4a.h"
 
-
 typedef struct StatusEntry {
     s32 unk_000[72];
     u16 count;
@@ -312,7 +311,6 @@ extern const StatusFriendTable gUnk_096FDE24;
 extern StatusCardDef gCardDefs[];
 extern u8* gStockMesDispWork;
 
-
 extern u8 gUnk_0984AF78[];
 extern u8 gUnk_08F69BC4[];
 extern StatusObjDef gUnk_096FDEE4[];
@@ -322,11 +320,6 @@ extern TaskDesc gTaskDescBosBoogieMap;
 extern TaskDesc gTaskDescBosBoogieSaku;
 extern TaskDesc gTaskDescBosBoogieMapanime;
 extern TaskDesc gTaskDescBosShadow;
-
-
-
-
-
 
 extern TaskDesc gTaskDescBosBoogieDisk;
 extern TaskDesc gTaskDescBosBoogieKnifereader;

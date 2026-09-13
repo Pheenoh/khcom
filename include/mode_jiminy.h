@@ -50,9 +50,6 @@ extern u8 gUnkEu_08C9A516[];
 extern u8 gUnk_09A3CDDC[];
 #endif
 
-
-
-
 extern JiminyWork* gJiminyWork;
 
 extern JiminyEntry gUnk_08155554[];

@@ -61,8 +61,6 @@ extern s32 eu_080C273C(void);
 extern s32 eu_080C2740(void);
 extern u32 gLanguage;
 
-
-
 extern void* gUnkEu_08891508[];
 extern void* gUnkEu_088920BC[];
 extern u8 gUnkEu_096C798C[];
@@ -1730,7 +1728,6 @@ void func_080B0F18(void) {
     gGameState.unk_208 = gUnk_0203AA10.unk_14;
 }
 
-
 void func_080B1064(void) {
     u8 buf[2];
 
@@ -2973,7 +2970,6 @@ void func_080B3204(void) {
     RequestDma3Copy(&gUnk_096B5DA4[digits[2] * 32], (void*)0x06000240, 32);
 }
 
-
 void func_080B3354(void) {
     u16 k1;
     u16 k2;
@@ -3218,7 +3214,6 @@ void func_080B3A68(void) {
     gUnk_0203AB34[1] = 0;
     gSioChgCardWork->unk_20C = 0;
 }
-
 
 void func_080B3B5C(void) {
     SioCardTaskArg arg;

@@ -85,8 +85,6 @@ typedef struct Dma3Queue {
 
 extern vu16* const gBgControl[];
 
-
-
 typedef struct SpriteWork SpriteWork;
 extern SpriteWork* gSpriteWork;
 extern Dma3Queue* gDma3Requests;
@@ -105,8 +103,6 @@ typedef struct FadeWork {
 
 typedef char FadeWork_size[(sizeof(FadeWork) == 0x598) ? 1 : -1];
 typedef char PaletteSlot_size[(sizeof(PaletteSlot) == 0x2C) ? 1 : -1];
-
-
 
 typedef struct BgAnimationChunk {
     void* data;
@@ -148,19 +144,6 @@ s32 SplineEvaluateAxis(s16* count, s32 t, s32* knots, s32* values, s32* coeffici
 void SplineInit2D(Spline2D* spline, s32* xValues, s32* yValues, s16 count);
 void SplineEvaluate2D(Spline2D* spline, s32 t, s32* x, s32* y);
 void SplineFreeBuffers(Spline2D* spline);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 extern u8 sVTransHeapName[];
 extern u8 sBgHeapName[];
