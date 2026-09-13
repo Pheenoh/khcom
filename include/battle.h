@@ -173,23 +173,6 @@ typedef struct Actor {
     const u32* unk_184;
 } Actor;
 
-typedef struct PlayerProgression {
-    u16 maxHp;
-    u16 cp;
-    u16 dp;
-    u16 ap;
-    u32 exp;
-    s32 nextExp;
-    u8 level;
-    u8 unk_11[0x03];
-    u64 unk_14[13];
-    u32 unk_7C;
-    u16 unk_80;
-    u16 unk_82;
-    u16 unk_84;
-    u8 unk_86[0x02];
-} PlayerProgression;
-
 typedef struct EnemyBaseStats {
     s16 hp;
     s16 attack;
@@ -329,7 +312,6 @@ extern u8 gUnk_09EDA828[];
 extern const EnemyBaseStats gUnk_08133E5C[];
 extern const BattleAttackDef gUnk_0813400C[];
 
-extern PlayerProgression gUnk_02039CA8;
 extern FieldTransitionWork* gUnk_020348C8;
 extern u16 gUnk_020348CC[2];
 extern u16 gUnk_020348D0[2];
@@ -382,7 +364,6 @@ u8 func_080ABED0(void);
 void func_0800EEBC(Actor* p, SprObj* s);
 void func_0800F230(void);
 u8 func_0800F440(Actor* p, s16 a, u16 b, u16 r);
-void AdvanceLevelExpThreshold(PlayerProgression* p);
 void func_0801CA88(void);
 
 const EnemyBaseStats* func_0800FB14(u16 i);
@@ -452,7 +433,6 @@ extern vu16 gSystemFlags;
 u8 func_0801AD68(BtlObj* p);
 void func_08010C70(void);
 void func_08011364(BtlObj* a, BtlObj* b, const BattleAttackDef* c);
-void InitPlayerProgression(void);
 
 void func_080135EC(s32 x, s32 y, s32 z);
 void func_08013560(s32 x, s32 y, s32 z);

@@ -4,6 +4,7 @@
 #include "types.h"
 #include "save_types.h"
 #include "fld_types.h"
+#include "player_progression_types.h"
 
 typedef struct GameFloor {
     u16 unk_00;
@@ -39,25 +40,7 @@ typedef struct GameState {
     s32 unk_03C;
     UnkStruct_02039BF0 unk_040[3];
     u8 unk_0E8[0x10];
-    s16 maxHp;
-    s16 cp;
-    s16 dp;
-    s16 ap;
-    u32 exp;
-    u32 nextExp;
-    u8 level;
-    u8 unk_109[0x03];
-    u64 unk_10C;
-    u64 unk_114;
-    u64 unk_11C;
-    u64 unk_124;
-    u64 unk_12C;
-    u64 unk_134[8];
-    u32 mooglePoints;
-    u16 unk_178;
-    u16 unk_17A;
-    u16 unk_17C;
-    u16 unk_17E;
+    PlayerProgression progression;
     u16 unk_180;
     u8 unk_182[0x02];
     GameFloor floors[13];
@@ -79,6 +62,7 @@ typedef struct GameState {
 } GameState;
 
 typedef char GameState_size[(sizeof(GameState) == 0x210) ? 1 : -1];
+typedef char GameState_progression_offset[((u32)&((GameState*)0)->progression == 0xF8) ? 1 : -1];
 typedef char GameFloor_size[(sizeof(GameFloor) == 4) ? 1 : -1];
 
 extern GameState gGameState;

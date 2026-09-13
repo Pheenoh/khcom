@@ -7929,10 +7929,10 @@ void task_hum_leon_0(LeonWork* work) {
     work->unk_188 = 0;
     work->unk_18A = 0;
     func_08019068(gUnk_0813FD58, &work->base.anim, 0, 1, work->base.tiles);
-    work->unk_18C = gGameState.unk_10C;
-    work->unk_194 = gGameState.unk_114;
-    gGameState.unk_10C = 0;
-    gGameState.unk_114 = 0;
+    work->unk_18C = gGameState.progression.unk_14;
+    work->unk_194 = gGameState.progression.unk_1C;
+    gGameState.progression.unk_14 = 0;
+    gGameState.progression.unk_1C = 0;
 }
 
 u8 task_hum_leon_1(LeonWork* work) {
@@ -8048,8 +8048,8 @@ void task_hum_leon_2(HumWork* work) {
 }
 
 void task_hum_leon_3(LeonWork* work) {
-    gGameState.unk_10C = work->unk_18C;
-    gGameState.unk_114 = work->unk_194;
+    gGameState.progression.unk_14 = work->unk_18C;
+    gGameState.progression.unk_1C = work->unk_194;
     HumReleaseResources(&work->base);
 }
 
@@ -8127,7 +8127,7 @@ void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
         if (file == i) {
             data->files[i].floor = gGameState.floor;
             data->files[i].world = gGameState.world;
-            data->files[i].level = gGameState.level;
+            data->files[i].level = gGameState.progression.level;
             data->files[i].playTime = gGameState.playTime;
         } else {
             data->files[i].floor = gGameState.fileSummaries[i].floor;
@@ -8141,7 +8141,7 @@ void MakeSaveHeaderData(SaveHeaderData* data, s16 file) {
 void MakeSaveSystem(SaveFileLarge* save) {
     save->common.flags = gGameState.flags;
     save->common.unk_8E = gGameState.hp;
-    memcpy(save->common.unk_04, &gGameState.maxHp, 0x88);
+    memcpy(save->common.unk_04, &gGameState.progression.maxHp, 0x88);
     save->common.unk_8C = gGameState.unk_180;
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
@@ -8156,7 +8156,7 @@ void MakeSaveSystem(SaveFileLarge* save) {
 void MakeSaveFileLarge(SaveFileLarge* save) {
     save->common.flags = gGameState.flags;
     save->common.unk_8E = gGameState.hp;
-    memcpy(save->common.unk_04, &gGameState.maxHp, 0x88);
+    memcpy(save->common.unk_04, &gGameState.progression.maxHp, 0x88);
     save->common.unk_8C = gGameState.unk_180;
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
@@ -8170,12 +8170,12 @@ void MakeSaveFileLarge(SaveFileLarge* save) {
     if (gGameState.flags & 0x10) {
         gGameState.fileSummaries[1].floor = gGameState.floor;
         gGameState.fileSummaries[1].world = gGameState.world;
-        gGameState.fileSummaries[1].level = gGameState.level;
+        gGameState.fileSummaries[1].level = gGameState.progression.level;
         gGameState.fileSummaries[1].playTime = gGameState.playTime;
     } else {
         gGameState.fileSummaries[0].floor = gGameState.floor;
         gGameState.fileSummaries[0].world = gGameState.world;
-        gGameState.fileSummaries[0].level = gGameState.level;
+        gGameState.fileSummaries[0].level = gGameState.progression.level;
         gGameState.fileSummaries[0].playTime = gGameState.playTime;
     }
 }
@@ -8183,7 +8183,7 @@ void MakeSaveFileLarge(SaveFileLarge* save) {
 void MakeSaveFileSmall(SaveFileSmall* save) {
     save->common.flags = gGameState.flags;
     save->common.unk_8E = gGameState.hp;
-    memcpy(save->common.unk_04, &gGameState.maxHp, 0x88);
+    memcpy(save->common.unk_04, &gGameState.progression.maxHp, 0x88);
     save->common.unk_8C = gGameState.unk_180;
     save->common.unk_90 = gGameState.floor;
     save->common.unk_91 = gGameState.world;
@@ -8194,12 +8194,12 @@ void MakeSaveFileSmall(SaveFileSmall* save) {
     if (gGameState.flags & 0x10) {
         gGameState.fileSummaries[3].floor = gGameState.floor;
         gGameState.fileSummaries[3].world = gGameState.world;
-        gGameState.fileSummaries[3].level = gGameState.level;
+        gGameState.fileSummaries[3].level = gGameState.progression.level;
         gGameState.fileSummaries[3].playTime = gGameState.playTime;
     } else {
         gGameState.fileSummaries[2].floor = gGameState.floor;
         gGameState.fileSummaries[2].world = gGameState.world;
-        gGameState.fileSummaries[2].level = gGameState.level;
+        gGameState.fileSummaries[2].level = gGameState.progression.level;
         gGameState.fileSummaries[2].playTime = gGameState.playTime;
     }
 }
@@ -8279,7 +8279,7 @@ void ApplySaveSystem(SaveFileLarge* save) {
     save->common.flags &= 0xFFFFF5DF;
     gGameState.flags = save->common.flags | t;
     gGameState.hp = save->common.unk_8E;
-    memcpy(&gGameState.maxHp, save->common.unk_04, 0x88);
+    memcpy(&gGameState.progression.maxHp, save->common.unk_04, 0x88);
     gGameState.unk_180 = save->common.unk_8C;
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
@@ -8298,7 +8298,7 @@ void ApplySaveFileLarge(SaveFileLarge* save) {
     save->common.flags &= 0xFFFFF5DF;
     gGameState.flags = save->common.flags | t;
     gGameState.hp = save->common.unk_8E;
-    memcpy(&gGameState.maxHp, save->common.unk_04, 0x88);
+    memcpy(&gGameState.progression.maxHp, save->common.unk_04, 0x88);
     gGameState.unk_180 = save->common.unk_8C;
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;
@@ -8318,7 +8318,7 @@ void ApplySaveFileSmall(SaveFileSmall* save) {
     save->common.flags &= 0xFFFFF5DF;
     gGameState.flags = save->common.flags | t;
     gGameState.hp = save->common.unk_8E;
-    memcpy(&gGameState.maxHp, save->common.unk_04, 0x88);
+    memcpy(&gGameState.progression.maxHp, save->common.unk_04, 0x88);
     gGameState.unk_180 = save->common.unk_8C;
     gGameState.floor = save->common.unk_90;
     gGameState.world = save->common.unk_91;

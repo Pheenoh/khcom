@@ -73,25 +73,25 @@ void func_080D733C(void) {
     u8* p;
 
     p = GetBgCharBase(2) + 0x40;
-    p = func_080D728C(p, gGameState.level, 2);
+    p = func_080D728C(p, gGameState.progression.level, 2);
     p = func_080D728C(p, gGameState.hp, 3);
-    p = func_080D728C(p, gGameState.maxHp, 3);
+    p = func_080D728C(p, gGameState.progression.maxHp, 3);
 
     if (gGameState.flags & 8) {
         p += 0x80;
     } else {
-        p = func_080D728C(p, gGameState.cp, 4);
+        p = func_080D728C(p, gGameState.progression.cp, 4);
     }
 
-    p = func_080D728C(p, gGameState.exp, 6);
-    p = func_080D728C(p, gGameState.nextExp, 6);
+    p = func_080D728C(p, gGameState.progression.exp, 6);
+    p = func_080D728C(p, gGameState.progression.nextExp, 6);
 
     if (gGameState.flags & 8) {
         p += 0xC0;
-        p = func_080D728C(p, gGameState.ap, 2);
-        func_080D728C(p, gGameState.dp, 3);
+        p = func_080D728C(p, gGameState.progression.ap, 2);
+        func_080D728C(p, gGameState.progression.dp, 3);
     } else {
         p += 0x20;
-        func_080D728C(p, gGameState.mooglePoints, 5);
+        func_080D728C(p, gGameState.progression.mooglePoints, 5);
     }
 }

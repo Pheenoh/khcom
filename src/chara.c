@@ -804,13 +804,13 @@ void func_080C61D4(void) {
     send = &gUnk_0203AAC0;
     recv = gUnk_0203AA10;
     send->unk_00 = gGameState.hp;
-    gUnk_0203AAC0.unk_02 = gGameState.maxHp;
-    gUnk_0203AAC0.unk_04 = gGameState.level;
+    gUnk_0203AAC0.unk_02 = gGameState.progression.maxHp;
+    gUnk_0203AAC0.unk_04 = gGameState.progression.level;
     gUnk_0203AAC0.unk_06 = gUnk_0203A9EC;
     gUnk_0203AAC0.unk_08 = gUnk_0203A9F0;
-    gUnk_0203AAC0.unk_0A = gGameState.ap;
-    gUnk_0203AAC0.unk_0C = gGameState.unk_10C;
-    gUnk_0203AAC0.unk_14 = gGameState.unk_114;
+    gUnk_0203AAC0.unk_0A = gGameState.progression.ap;
+    gUnk_0203AAC0.unk_0C = gGameState.progression.unk_14;
+    gUnk_0203AAC0.unk_14 = gGameState.progression.unk_1C;
     gUnk_0203AAC0.unk_1C = 0;
 
     for (i = 0; i < 13; i++) {

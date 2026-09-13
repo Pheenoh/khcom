@@ -66,7 +66,7 @@ UNIT_BSS = {
     "src/mode_vsbattle.o": {"us": 0X02039B98, "jp": 0x02039b08, "eu": 0x0203a1a8},
     "src/evt.o": {"us": 0X02039DC8, "jp": 0x02039d38, "eu": 0x0203a3d8},
     "src/fld.o": {"us": 0X0203C7AC, "jp": 0x0203c71c, "eu": 0x0203cd9c},
-    "src/player_progression.o": {"us": 0X02039CA8, "jp": 0x02039c18, "eu": 0x0203a2b8},
+    "src/player_progression.o": {"us": 0x02039BB0, "jp": 0x02039B20, "eu": 0x0203A1C0},
     "src/battle_runtime.o": {"us": 0X02039DC0, "jp": 0x02039d30, "eu": 0x0203a3d0},
     "src/taskpool.o": {"us": 0x03007488, "jp": 0x03007488, "eu": 0x0300748C},
     "src/malloc.o": {"us": 0x030074A8, "jp": 0x030074A8, "eu": 0x030074B0},

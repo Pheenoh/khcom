@@ -2311,7 +2311,7 @@ void mode_worldselect_0(void) {
     void** p;
 
     SpriteReset();
-    gUnk_020350EE = (gGameState.unk_17A ^ 1) & 1;
+    gUnk_020350EE = (gGameState.progression.unk_82 ^ 1) & 1;
     gUnk_020350EF = 0;
     gUnk_020350F0 = 0;
     FadeStartIn(2, 16);
@@ -2450,7 +2450,7 @@ void mode_worldselect_1(void) {
                 func_080A411C(&gUnk_020350D8, 2, 71);
                 gUnk_020350EC++;
             } else {
-                gGameState.unk_17A |= 1;
+                gGameState.progression.unk_82 |= 1;
                 func_080FE89C();
                 BgAnimInit(2, 0x8000, 128);
                 BgAnimStart(gUnk_09EDABA0, 120, 110);

@@ -2685,7 +2685,7 @@ void func_080B28A8(void) {
     if (gUnk_02039810[1][0] == 0xEF23 && gUnk_02039810[1][1] == 0xEF23) {
         m4aSongNumStart(106);
         gSioChgCardWork->unk_004 = 0;
-        gGameState.unk_12C = gSioChgCardWork->unk_BD4;
+        gGameState.progression.unk_34 = gSioChgCardWork->unk_BD4;
         gSioChgCardWork->unk_001 = 8;
     }
 
@@ -3260,7 +3260,7 @@ void func_080B3C64(void) {
     for (i = 0; i <= 0x3E6; i++) {
         gSioChgCardWork->unk_406[i] = gCardCollection[i];
     }
-    gSioChgCardWork->unk_BD4 = gGameState.unk_12C;
+    gSioChgCardWork->unk_BD4 = gGameState.progression.unk_34;
 }
 
 void func_080B3CC0(void) {
@@ -3269,7 +3269,7 @@ void func_080B3CC0(void) {
     for (i = 0; i <= 0x3E6; i++) {
         gCardCollection[i] = gSioChgCardWork->unk_406[i];
     }
-    gGameState.unk_12C = gSioChgCardWork->unk_BD4;
+    gGameState.progression.unk_34 = gSioChgCardWork->unk_BD4;
 }
 
 s16 func_080B3D28(void) {

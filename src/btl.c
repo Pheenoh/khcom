@@ -514,8 +514,8 @@ void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
         }
 
         e->unk_034 = 0;
-        e->unk_030 = gGameState.ap;
-        e->unk_02E = gGameState.maxHp;
+        e->unk_030 = gGameState.progression.ap;
+        e->unk_02E = gGameState.progression.maxHp;
         e->unk_02C = gGameState.hp;
 
         if ((s16)e->unk_02C > (s16)e->unk_02E) {
@@ -6140,7 +6140,7 @@ void task_btl_sora_3(BtlSoraWork* work) {
 
     if (!(gBtlWork->unk_068 & 0x4000)) {
         if (*(s32*)&gBtlWork->unk_0A0 == 3) {
-            gGameState.hp = gGameState.maxHp;
+            gGameState.hp = gGameState.progression.maxHp;
         } else {
             gGameState.hp = p->unk_02C;
         }
@@ -6547,8 +6547,8 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
         }
 
         e->unk_034 = 0;
-        e->unk_030 = gGameState.ap;
-        e->unk_02E = gGameState.maxHp;
+        e->unk_030 = gGameState.progression.ap;
+        e->unk_02E = gGameState.progression.maxHp;
         e->unk_02C = gGameState.hp;
 
         if ((s16)e->unk_02C > (s16)e->unk_02E) {
@@ -10698,7 +10698,7 @@ void task_btl_riku_3(BtlRikuWork* work) {
     p = &work->unk_044;
 
     if (*(s32*)&gBtlWork->unk_0A0 == 3) {
-        gGameState.hp = gGameState.maxHp;
+        gGameState.hp = gGameState.progression.maxHp;
     } else {
         gGameState.hp = p->unk_02C;
     }

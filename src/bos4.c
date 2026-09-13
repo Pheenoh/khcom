@@ -3244,9 +3244,9 @@ void Mode_MapChk_1(void) {
 
         InitMapCardInventory();
         gUnk_0203C584 = gMapChkWork->unk_05;
-        gGameState.unk_17C |= 2;
-        gGameState.unk_17C |= 1;
-        gGameState.unk_17A |= 0x778;
+        gGameState.progression.unk_84 |= 2;
+        gGameState.progression.unk_84 |= 1;
+        gGameState.progression.unk_82 |= 0x778;
         e = gMapChkWork;
 
         switch (e->unk_01) {
@@ -3363,15 +3363,15 @@ void func_080DEC44(void) {
             || gUnk_0203C590.unk_06 == 0xFD) {
         if ((gGameState.flags & 0x80) == 0) {
             gGameState.flags |= 0x80;
-            gGameState.unk_17E = gGameState.unk_17C & 0x7C;
+            gGameState.progression.unk_86 = gGameState.progression.unk_84 & 0x7C;
         }
 
         if ((gGameState.flags & 8) != 0) {
             return;
         }
 
-        t = gGameState.unk_17C & 0xFF83;
-        gGameState.unk_17C = t;
+        t = gGameState.progression.unk_84 & 0xFF83;
+        gGameState.progression.unk_84 = t;
 
         if (gUnk_0203C590.unk_06 >= 0xFD && gUnk_0203C590.unk_06 <= 0xFE) {
             return;
@@ -3379,24 +3379,24 @@ void func_080DEC44(void) {
 
         switch (gUnk_0203C590.unk_04) {
         case 1:
-            t = 4 | gGameState.unk_17C;
-            gGameState.unk_17C = t;
+            t = 4 | gGameState.progression.unk_84;
+            gGameState.progression.unk_84 = t;
             break;
         case 2:
-            t = 8 | gGameState.unk_17C;
-            gGameState.unk_17C = t;
+            t = 8 | gGameState.progression.unk_84;
+            gGameState.progression.unk_84 = t;
             break;
         case 6:
-            t = 0x10 | gGameState.unk_17C;
-            gGameState.unk_17C = t;
+            t = 0x10 | gGameState.progression.unk_84;
+            gGameState.progression.unk_84 = t;
             break;
         case 7:
-            t = 0x20 | gGameState.unk_17C;
-            gGameState.unk_17C = t;
+            t = 0x20 | gGameState.progression.unk_84;
+            gGameState.progression.unk_84 = t;
             break;
         case 8:
-            t = 0x40 | gGameState.unk_17C;
-            gGameState.unk_17C = t;
+            t = 0x40 | gGameState.progression.unk_84;
+            gGameState.progression.unk_84 = t;
             break;
         case 3:
         case 4:
@@ -3410,8 +3410,8 @@ void func_080DEC44(void) {
         }
 
         gGameState.flags &= ~0x80;
-        t = (gGameState.unk_17C & 0xFF83) | gGameState.unk_17E;
-        gGameState.unk_17C = t;
+        t = (gGameState.progression.unk_84 & 0xFF83) | gGameState.progression.unk_86;
+        gGameState.progression.unk_84 = t;
     }
 }
 
@@ -3531,8 +3531,8 @@ void func_080DEF20(void) {
         _08085D04(gGameState.world);
 
         if ((gGameState.flags & 8) != 0) {
-            t = gGameState.unk_17C & 0xFF80;
-            gGameState.unk_17C = t;
+            t = gGameState.progression.unk_84 & 0xFF80;
+            gGameState.progression.unk_84 = t;
             return;
         }
     }
@@ -3541,31 +3541,31 @@ void func_080DEF20(void) {
     case 0:
         break;
     case 1:
-        t = gGameState.unk_17C & 0xFF07;
-        gGameState.unk_17C = t;
+        t = gGameState.progression.unk_84 & 0xFF07;
+        gGameState.progression.unk_84 = t;
         break;
     case 2:
-        t = gGameState.unk_17C & 0xFF0B;
-        gGameState.unk_17C = t;
+        t = gGameState.progression.unk_84 & 0xFF0B;
+        gGameState.progression.unk_84 = t;
         break;
     case 6:
-        t = gGameState.unk_17C & 0xFF13;
-        gGameState.unk_17C = t;
+        t = gGameState.progression.unk_84 & 0xFF13;
+        gGameState.progression.unk_84 = t;
         break;
     case 7:
-        t = gGameState.unk_17C & 0xFF23;
-        gGameState.unk_17C = t;
+        t = gGameState.progression.unk_84 & 0xFF23;
+        gGameState.progression.unk_84 = t;
         break;
     case 8:
-        t = gGameState.unk_17C & 0xFF43;
-        gGameState.unk_17C = t;
+        t = gGameState.progression.unk_84 & 0xFF43;
+        gGameState.progression.unk_84 = t;
         break;
     case 3:
     case 4:
     case 5:
     default:
-        t = gGameState.unk_17C & 0xFF03;
-        gGameState.unk_17C = t;
+        t = gGameState.progression.unk_84 & 0xFF03;
+        gGameState.progression.unk_84 = t;
         break;
     }
 }
@@ -4310,7 +4310,7 @@ u8 func_080DFCDC(UnkStruct_080DFF1C* p) {
         return 0;
     }
 
-    if ((gGameState.unk_17A & 0x200) == 0) {
+    if ((gGameState.progression.unk_82 & 0x200) == 0) {
         return 0;
     }
 

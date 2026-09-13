@@ -1472,7 +1472,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                     if (work->unk_48->unk_02C > work->unk_48->unk_02E) {
                         work->unk_48->unk_02C = work->unk_48->unk_02E;
                     }
-                    gGameState.exp += work->unk_38;
+                    gGameState.progression.exp += work->unk_38;
                 }
 
                 work->unk_30 = 1;
