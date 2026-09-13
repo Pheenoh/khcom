@@ -74,6 +74,7 @@ def check(objects, linked, ledger, placements, contracts, sections=None):
     for symbol in linked:
         final[symbol['name']].append(symbol)
     ram_count = 0
+    allocations = []
     for owner, symbols in objects.items():
         for symbol in symbols:
             name, kind = symbol['name'], symbol['kind']
@@ -97,9 +98,23 @@ def check(objects, linked, ledger, placements, contracts, sections=None):
                 errors.append(f'{owner}: {name} is discarded or placed incorrectly')
             elif not any(s['size'] == symbol['size'] for s in candidates):
                 errors.append(f'{owner}: {name} linked size differs from its definition')
+            else:
+                matching = [s for s in candidates if s['size'] == symbol['size']]
+                if len(matching) == 1:
+                    address = matching[0]['value']
+                    end = address + symbol['size']
+                    if not ram_address(end - 1):
+                        errors.append(f'{owner}: {name} extends outside RAM')
+                    allocations.append((address, end, owner, name))
     for name, owners in exports.items():
         if len(owners) > 1:
             errors.append(f'{name}: multiple owners: {", ".join(owners)}')
+    allocations.sort()
+    for index, left in enumerate(allocations):
+        for right in allocations[index + 1:]:
+            if right[0] >= left[1]:
+                break
+            errors.append(f'overlapping RAM definitions: {left[2]}:{left[3]} and {right[2]}:{right[3]}')
     for owner, contract in contracts.items():
         if owner not in objects:
             errors.append(f'{owner}: contracted owner is not linked')

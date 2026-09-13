@@ -352,7 +352,6 @@ void func_080FE47C(void);
 extern u8 gUnk_09A315DC[];
 extern u8 gUnk_09A31FDC[];
 void mode_worldselect_0(void);
-extern u16 gUnk_02039D30;
 extern u8 gUnk_09A3C9DC[];
 extern u8 gUnk_099F1E7C[];
 extern u8 gUnk_09A310DC[];

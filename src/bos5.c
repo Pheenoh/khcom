@@ -2327,7 +2327,7 @@ void mode_worldselect_0(void) {
     j = 0;
 
     for (i = 0; i <= 12; i++) {
-        if (gUnk_02039D30 & gUnk_09992F70[i].unk_00) {
+        if (gGameState.unk_180 & gUnk_09992F70[i].unk_00) {
             gUnk_02035070[j] = i;
             j++;
         }

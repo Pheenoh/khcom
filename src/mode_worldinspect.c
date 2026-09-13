@@ -134,7 +134,6 @@ extern u8 gUnk_020352B8;
 extern s16 gUnk_020354F0[];
 extern s16 gUnk_0203550A;
 extern s16 gUnk_020357A4;
-extern u16 gUnk_02039D30;
 extern WorldinspectNav gUnk_09EF8FAC[];
 extern WorldinspectMsg gUnk_09EF909C[];
 extern WorldinspectConn gUnk_099930BC[];
@@ -240,7 +239,7 @@ void mode_worldinspect_0(void) {
     }
 
     for (i = 0, fa = gUnk_020350FA; i <= 13; i++) {
-        if ((gUnk_02039D30 & gUnk_09EF909C[i].unk_00) != 0) {
+        if ((gGameState.unk_180 & gUnk_09EF909C[i].unk_00) != 0) {
             gUnk_02035100[fa++] = gUnk_09EF909C[i].unk_02;
 
             if (fa > 11) {
