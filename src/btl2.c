@@ -9,6 +9,24 @@
 #include "btl2_api.h"
 
 #ifdef VERSION_EU
+extern u8 gUnkEu_08B4A680[];
+extern u8 gUnkEu_08B4A794[];
+extern u8 gUnkEu_08B4A8AE[];
+extern u8 gUnkEu_08B50A4A[];
+extern u8 gUnkEu_08B50BE6[];
+extern u8 gUnkEu_08B50D82[];
+extern u8 gUnkEu_08B50F18[];
+extern u8 gUnkEu_08B5102C[];
+extern u8 gUnkEu_08B51140[];
+extern u8 gUnkEu_08B51254[];
+extern u8 gUnkEu_08B51368[];
+extern u8 gUnkEu_08B5147C[];
+extern u8 gUnkEu_08B51590[];
+extern u8 gUnkEu_08B516A4[];
+extern u8 gUnkEu_08B517B8[];
+extern u8 gUnkEu_08B518CC[];
+extern u8 gUnkEu_08B519E0[];
+extern u8 gUnkEu_08B51A74[];
 extern u8 gUnkEu_08B51BA8[];
 extern u8 gUnkEu_08B51D50[];
 extern u8 gUnkEu_08B51FB8[];
@@ -995,7 +1013,141 @@ void task_btl_pause_3(BtlPauseWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
-#ifndef VERSION_EU
+#ifdef VERSION_EU
+void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
+    switch (gLanguage) {
+    case 0:
+        switch (src->unk_12) {
+        case 0:
+            work->tiles = LoadObjTiles(gUnkEu_08B4A794, 0x100);
+            AnimInit(&work->anim, gUnk_09EE11C0, gUnk_09EE11BC);
+            break;
+        case 2:
+            work->tiles = LoadObjTiles(gUnkEu_08B4A680, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5BE10, gUnkEu_09F5BE0C);
+            break;
+        case 9:
+            work->tiles = LoadObjTiles(gUnkEu_08B4A8AE, 0x180);
+            AnimInit(&work->anim, gUnk_09EE11C8, gUnk_09EE11C4);
+            break;
+        case 10:
+            work->tiles = LoadObjTiles(gUnk_08B1F13A, 0x140);
+            AnimInit(&work->anim, gUnk_09EE11D0, gUnk_09EE11CC);
+            break;
+        default:
+            work->tiles = LoadObjTiles(gUnkEu_08B4A680, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5BE10, gUnkEu_09F5BE0C);
+            break;
+        }
+        break;
+    case 1:
+        switch (src->unk_12) {
+        case 0:
+            work->tiles = LoadObjTiles(gUnkEu_08B51368, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1C0, gUnkEu_09F5C1BC);
+            break;
+        case 2:
+            work->tiles = LoadObjTiles(gUnkEu_08B517B8, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1E0, gUnkEu_09F5C1DC);
+            break;
+        case 9:
+            work->tiles = LoadObjTiles(gUnkEu_08B4A8AE, 0x180);
+            AnimInit(&work->anim, gUnk_09EE11C8, gUnk_09EE11C4);
+            break;
+        case 10:
+            work->tiles = LoadObjTiles(gUnkEu_08B50F18, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1A0, gUnkEu_09F5C19C);
+            break;
+        default:
+            work->tiles = LoadObjTiles(gUnkEu_08B517B8, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1E0, gUnkEu_09F5C1DC);
+            break;
+        }
+        break;
+    case 2:
+        switch (src->unk_12) {
+        case 0:
+            work->tiles = LoadObjTiles(gUnkEu_08B516A4, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1D8, gUnkEu_09F5C1D4);
+            break;
+        case 2:
+            work->tiles = LoadObjTiles(gUnkEu_08B51A74, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1F8, gUnkEu_09F5C1F4);
+            break;
+        case 9:
+            work->tiles = LoadObjTiles(gUnkEu_08B50D82, 0x180);
+            AnimInit(&work->anim, gUnkEu_09F5C198, gUnkEu_09F5C194);
+            break;
+        case 10:
+            work->tiles = LoadObjTiles(gUnkEu_08B51254, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1B8, gUnkEu_09F5C1B4);
+            break;
+        default:
+            work->tiles = LoadObjTiles(gUnkEu_08B51A74, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1F8, gUnkEu_09F5C1F4);
+            break;
+        }
+        break;
+    case 3:
+        switch (src->unk_12) {
+        case 0:
+            work->tiles = LoadObjTiles(gUnkEu_08B51590, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1D0, gUnkEu_09F5C1CC);
+            break;
+        case 2:
+            work->tiles = LoadObjTiles(gUnkEu_08B519E0, 0x80);
+            AnimInit(&work->anim, gUnkEu_09F5C1F0, gUnkEu_09F5C1EC);
+            break;
+        case 9:
+            work->tiles = LoadObjTiles(gUnkEu_08B50BE6, 0x180);
+            AnimInit(&work->anim, gUnkEu_09F5C190, gUnkEu_09F5C18C);
+            break;
+        case 10:
+            work->tiles = LoadObjTiles(gUnkEu_08B51140, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1B0, gUnkEu_09F5C1AC);
+            break;
+        default:
+            work->tiles = LoadObjTiles(gUnkEu_08B519E0, 0x80);
+            AnimInit(&work->anim, gUnkEu_09F5C1F0, gUnkEu_09F5C1EC);
+            break;
+        }
+        break;
+    case 4:
+    default:
+        switch (src->unk_12) {
+        case 0:
+            work->tiles = LoadObjTiles(gUnkEu_08B5147C, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1C8, gUnkEu_09F5C1C4);
+            break;
+        case 2:
+            work->tiles = LoadObjTiles(gUnkEu_08B518CC, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1E8, gUnkEu_09F5C1E4);
+            break;
+        case 9:
+            work->tiles = LoadObjTiles(gUnkEu_08B50A4A, 0x180);
+            AnimInit(&work->anim, gUnkEu_09F5C188, gUnkEu_09F5C184);
+            break;
+        case 10:
+            work->tiles = LoadObjTiles(gUnkEu_08B5102C, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1A8, gUnkEu_09F5C1A4);
+            break;
+        default:
+            work->tiles = LoadObjTiles(gUnkEu_08B518CC, 0x100);
+            AnimInit(&work->anim, gUnkEu_09F5C1E8, gUnkEu_09F5C1E4);
+            break;
+        }
+        break;
+    }
+
+    AnimStart(&work->anim, 0, 1);
+    work->gfx = AnimGetGfx(&work->anim);
+    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->x = src->x;
+    work->y = src->y;
+    work->z = src->z;
+    work->unk_30 = 0;
+}
+#else
 void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     switch (src->unk_12) {
     case 0:
@@ -1063,8 +1215,6 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     work->z = src->z;
     work->unk_30 = 0;
 }
-#else
-INCLUDE_ASM("btl2/task_btl_pop_0.s");
 #endif
 
 s32 task_btl_pop_1(BtlPopWork* work) {
