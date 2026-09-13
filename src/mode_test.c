@@ -444,13 +444,22 @@ u8 task_lockon_1(LockonWork* w) {
     w->gfx = AnimUpdate(&w->anim);
     return 1;
 }
-#ifdef NON_MATCHING
+
+#define CLAMP_LABEL(v, edge, limit, dest) \
+    do { \
+        if ((edge) > (limit)) { \
+            (v) = (dest); \
+        } \
+    } while (0)
+
 void task_lockon_2(LockonWork* w) {
     FldObj* obj;
     s32 x;
     s32 y;
-    s32 x2;
-    s32 y2;
+    union {
+        s32 coord;
+        u8 counter;
+    } x2, y2;
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
         return;
@@ -463,19 +472,16 @@ void task_lockon_2(LockonWork* w) {
     }
 
     x = (obj->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8);
-    x2 = x + 12;
+    x2.coord = x + 12;
     y = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - obj->unk_1A;
-    y2 = y - 8;
+    y2.coord = y - 8;
 
-    if (x + 60 > 240) {
-        x2 = 192;
-    }
+    CLAMP_LABEL(x2.coord, x + 60, 240, 192);
+    CLAMP_LABEL(y2.coord, y, 160, 152);
 
-    if (y > 160) {
-        y2 = 152;
-    }
-
-    if (w->unk_2F++ > 10) {
+    x2.counter = w->unk_2F++;
+    y2.counter = x2.counter;
+    if (y2.counter > 10) {
         w->unk_2F = 0;
     }
 
@@ -487,12 +493,20 @@ void task_lockon_2(LockonWork* w) {
         return;
     }
 
+#ifdef VERSION_EU
+    {
+        FldObj* obj = w->unk_0C[w->unk_2D];
+        s32 projectedY = (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8);
+
+        DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8), projectedY - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0x400, (u16)(-0x100E - (((s16)projectedY >> 8) << 2)));
+    }
+#else
     obj = w->unk_0C[w->unk_2D];
     DrawSprite((obj->unk_00 >> 8) - (gUnk_02039BA0->unk_00 >> 8), (obj->unk_04 >> 8) + (obj->unk_08 >> 8) - (gUnk_02039BA0->unk_04 >> 8) - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0, (u16)(-0x100E - ((w->unk_0C[w->unk_2D]->unk_04 >> 8) << 2)));
-}
-#else
-INCLUDE_ASM("mode_test/task_lockon_2.s");
 #endif
+}
+
+#undef CLAMP_LABEL
 
 void task_lockon_3(LockonWork* w) {
     ReleaseObjTiles(w->tiles);
