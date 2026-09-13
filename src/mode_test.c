@@ -29,6 +29,7 @@ TaskPool gUnk_02034A60;
 u8 gUnk_02034A74;
 s32 gUnk_02034A78;
 u8 gUnk_02034A7C;
+s32* gUnk_02039DC4 __attribute__((common));
 
 #ifndef VERSION_EU
 void mode_test_0(void) {
