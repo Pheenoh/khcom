@@ -268,6 +268,2924 @@
       "pointer_offsets": [
         0
       ]
+    },
+    {
+      "name": "animation_resources_09EDE4F0",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 8 typed pointer arrays.",
+      "us": "0x9ede4f0",
+      "targets": {
+        "jp": "0x9eb5f6c",
+        "eu": "0x9f59148"
+      },
+      "size": 164,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDE5FC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 20 typed pointer arrays.",
+      "us": "0x9ede5fc",
+      "targets": {
+        "jp": "0x9eb6078",
+        "eu": "0x9f59254"
+      },
+      "size": 404,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDE7B0",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 1 typed pointer arrays.",
+      "us": "0x9ede7b0",
+      "targets": {
+        "jp": "0x9eb622c",
+        "eu": "0x9f59408"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDE7F0",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 4 typed pointer arrays.",
+      "us": "0x9ede7f0",
+      "targets": {
+        "jp": "0x9eb626c",
+        "eu": "0x9f59448"
+      },
+      "size": 88,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDE878",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 52 typed pointer arrays.",
+      "us": "0x9ede878",
+      "targets": {
+        "jp": "0x9eb62f4",
+        "eu": "0x9f594d0"
+      },
+      "size": 1096,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDECFC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 56 typed pointer arrays.",
+      "us": "0x9edecfc",
+      "targets": {
+        "jp": "0x9eb6778",
+        "eu": "0x9f59954"
+      },
+      "size": 1220,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF1F8",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 9 typed pointer arrays.",
+      "us": "0x9edf1f8",
+      "targets": {
+        "jp": "0x9eb6c74",
+        "eu": "0x9f59e50"
+      },
+      "size": 216,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF2FC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 1 typed pointer arrays.",
+      "us": "0x9edf2fc",
+      "targets": {
+        "jp": "0x9eb6d78",
+        "eu": "0x9f59f54"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF31C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 1 typed pointer arrays.",
+      "us": "0x9edf31c",
+      "targets": {
+        "jp": "0x9eb6d98",
+        "eu": "0x9f59f74"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF334",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 15 typed pointer arrays.",
+      "us": "0x9edf334",
+      "targets": {
+        "jp": "0x9eb6db0",
+        "eu": "0x9f59f8c"
+      },
+      "size": 180,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF404",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 8 typed pointer arrays.",
+      "us": "0x9edf404",
+      "targets": {
+        "jp": "0x9eb6e80",
+        "eu": "0x9f5a05c"
+      },
+      "size": 188,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF518",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 10 typed pointer arrays.",
+      "us": "0x9edf518",
+      "targets": {
+        "jp": "0x9eb6f94",
+        "eu": "0x9f5a170"
+      },
+      "size": 220,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF694",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 16 typed pointer arrays.",
+      "us": "0x9edf694",
+      "targets": {
+        "jp": "0x9eb7110",
+        "eu": "0x9f5a2ec"
+      },
+      "size": 208,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF834",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 2 typed pointer arrays.",
+      "us": "0x9edf834",
+      "targets": {
+        "jp": "0x9eb72b0",
+        "eu": "0x9f5a48c"
+      },
+      "size": 44,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF884",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 2 typed pointer arrays.",
+      "us": "0x9edf884",
+      "targets": {
+        "jp": "0x9eb7300",
+        "eu": "0x9f5a4dc"
+      },
+      "size": 36,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF8CC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 2 typed pointer arrays.",
+      "us": "0x9edf8cc",
+      "targets": {
+        "jp": "0x9eb7348",
+        "eu": "0x9f5a524"
+      },
+      "size": 36,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF914",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 4 typed pointer arrays.",
+      "us": "0x9edf914",
+      "targets": {
+        "jp": "0x9eb7390",
+        "eu": "0x9f5a56c"
+      },
+      "size": 104,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDF9A8",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 44 typed pointer arrays.",
+      "us": "0x9edf9a8",
+      "targets": {
+        "jp": "0x9eb7424",
+        "eu": "0x9f5a600"
+      },
+      "size": 968,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EDFDBC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 32 typed pointer arrays.",
+      "us": "0x9edfdbc",
+      "targets": {
+        "jp": "0x9eb7838",
+        "eu": "0x9f5aa14"
+      },
+      "size": 544,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE0008",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 12 typed pointer arrays.",
+      "us": "0x9ee0008",
+      "targets": {
+        "jp": "0x9eb7a84",
+        "eu": "0x9f5ac60"
+      },
+      "size": 236,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE0114",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 215 typed pointer arrays.",
+      "us": "0x9ee0114",
+      "targets": {
+        "jp": "0x9eb7b90",
+        "eu": "0x9f5ad6c"
+      },
+      "size": 4044,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE10E8",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 1 typed pointer arrays.",
+      "us": "0x9ee10e8",
+      "targets": {
+        "jp": "0x9eb8b64",
+        "eu": "0x9f5bd40"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE1244",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 2 typed pointer arrays.",
+      "us": "0x9ee1244",
+      "targets": {
+        "jp": "0x9eb8cc0",
+        "eu": "0x9f5be5c"
+      },
+      "size": 96,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE1420",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 2 typed pointer arrays.",
+      "us": "0x9ee1420",
+      "targets": {
+        "jp": "0x9eb8e9c",
+        "eu": "0x9f5c038"
+      },
+      "size": 180,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE15FC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 24 typed pointer arrays.",
+      "us": "0x9ee15fc",
+      "targets": {
+        "jp": "0x9eb9078",
+        "eu": "0x9f5c408"
+      },
+      "size": 440,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE17C0",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 96 typed pointer arrays.",
+      "us": "0x9ee17c0",
+      "targets": {
+        "jp": "0x9eb923c",
+        "eu": "0x9f5c5cc"
+      },
+      "size": 2000,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE1FCC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 16 typed pointer arrays.",
+      "us": "0x9ee1fcc",
+      "targets": {
+        "jp": "0x9eb9a48",
+        "eu": "0x9f5cdd8"
+      },
+      "size": 204,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE20B4",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 58 typed pointer arrays.",
+      "us": "0x9ee20b4",
+      "targets": {
+        "jp": "0x9eb9b30",
+        "eu": "0x9f5cec0"
+      },
+      "size": 1308,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE2690",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 4 typed pointer arrays.",
+      "us": "0x9ee2690",
+      "targets": {
+        "jp": "0x9eba10c",
+        "eu": "0x9f5d500"
+      },
+      "size": 68,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE91B0",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 14 typed pointer arrays.",
+      "us": "0x9ee91b0",
+      "targets": {
+        "jp": "0x9ec07f4",
+        "eu": "0x9f74630"
+      },
+      "size": 56,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE9208",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 14 typed pointer arrays.",
+      "us": "0x9ee9208",
+      "targets": {
+        "jp": "0x9ec084c",
+        "eu": "0x9f74688"
+      },
+      "size": 56,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE9270",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 30 typed pointer arrays.",
+      "us": "0x9ee9270",
+      "targets": {
+        "jp": "0x9ec08b4",
+        "eu": "0x9f746f0"
+      },
+      "size": 120,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE9310",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 4 typed pointer arrays.",
+      "us": "0x9ee9310",
+      "targets": {
+        "jp": "0x9ec0954",
+        "eu": "0x9f74790"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE9338",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 36 typed pointer arrays.",
+      "us": "0x9ee9338",
+      "targets": {
+        "jp": "0x9ec097c",
+        "eu": "0x9f747b8"
+      },
+      "size": 144,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE93D0",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 32 typed pointer arrays.",
+      "us": "0x9ee93d0",
+      "targets": {
+        "jp": "0x9ec0a14",
+        "eu": "0x9f74850"
+      },
+      "size": 128,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE9458",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 21 typed pointer arrays.",
+      "us": "0x9ee9458",
+      "targets": {
+        "jp": "0x9ec0a9c",
+        "eu": "0x9f748d8"
+      },
+      "size": 84,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE94BC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 3 typed pointer arrays.",
+      "us": "0x9ee94bc",
+      "targets": {
+        "jp": "0x9ec0b00",
+        "eu": "0x9f7493c"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE94D0",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 29 typed pointer arrays.",
+      "us": "0x9ee94d0",
+      "targets": {
+        "jp": "0x9ec0b14",
+        "eu": "0x9f74950"
+      },
+      "size": 116,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE954C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 26 typed pointer arrays.",
+      "us": "0x9ee954c",
+      "targets": {
+        "jp": "0x9ec0b90",
+        "eu": "0x9f749cc"
+      },
+      "size": 104,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EE95BC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 60 typed pointer arrays.",
+      "us": "0x9ee95bc",
+      "targets": {
+        "jp": "0x9ec0c00",
+        "eu": "0x9f74a3c"
+      },
+      "size": 240,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEAF4C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 2 typed pointer arrays.",
+      "us": "0x9eeaf4c",
+      "targets": {
+        "jp": "0x9ec2340",
+        "eu": "0x9f76fbc"
+      },
+      "size": 136,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEB11C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 4 typed pointer arrays.",
+      "us": "0x9eeb11c",
+      "targets": {
+        "jp": "0x9ec2508",
+        "eu": "0x9f772ac"
+      },
+      "size": 108,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEC670",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 226 typed pointer arrays.",
+      "us": "0x9eec670",
+      "targets": {
+        "jp": "0x9ec3a5c",
+        "eu": "0x9f77854"
+      },
+      "size": 4472,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EED800",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 36 typed pointer arrays.",
+      "us": "0x9eed800",
+      "targets": {
+        "jp": "0x9ec4bec",
+        "eu": "0x9f789e4"
+      },
+      "size": 900,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEDB9C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 58 typed pointer arrays.",
+      "us": "0x9eedb9c",
+      "targets": {
+        "jp": "0x9ec4f88",
+        "eu": "0x9f78d80"
+      },
+      "size": 1036,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEE00C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 28 typed pointer arrays.",
+      "us": "0x9eee00c",
+      "targets": {
+        "jp": "0x9ec53f8",
+        "eu": "0x9f791f0"
+      },
+      "size": 604,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEE278",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 1 typed pointer arrays.",
+      "us": "0x9eee278",
+      "targets": {
+        "jp": "0x9ec5664",
+        "eu": "0x9f7945c"
+      },
+      "size": 12,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEE294",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 21 typed pointer arrays.",
+      "us": "0x9eee294",
+      "targets": {
+        "jp": "0x9ec5680",
+        "eu": "0x9f79478"
+      },
+      "size": 216,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEE3BC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 7 typed pointer arrays.",
+      "us": "0x9eee3bc",
+      "targets": {
+        "jp": "0x9ec57a8",
+        "eu": "0x9f795a0"
+      },
+      "size": 152,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEE4A4",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 14 typed pointer arrays.",
+      "us": "0x9eee4a4",
+      "targets": {
+        "jp": "0x9ec5890",
+        "eu": "0x9f79688"
+      },
+      "size": 160,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEE554",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 4 typed pointer arrays.",
+      "us": "0x9eee554",
+      "targets": {
+        "jp": "0x9ec5940",
+        "eu": "0x9f79738"
+      },
+      "size": 32,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEE588",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 133 typed pointer arrays.",
+      "us": "0x9eee588",
+      "targets": {
+        "jp": "0x9ec5974",
+        "eu": "0x9f7976c"
+      },
+      "size": 2224,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEEE4C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 2 typed pointer arrays.",
+      "us": "0x9eeee4c",
+      "targets": {
+        "jp": "0x9ec6238",
+        "eu": "0x9f7a030"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEEE70",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 54 typed pointer arrays.",
+      "us": "0x9eeee70",
+      "targets": {
+        "jp": "0x9ec625c",
+        "eu": "0x9f7a054"
+      },
+      "size": 632,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEF108",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 62 typed pointer arrays.",
+      "us": "0x9eef108",
+      "targets": {
+        "jp": "0x9ec64f4",
+        "eu": "0x9f7a2ec"
+      },
+      "size": 888,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEF49C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 58 typed pointer arrays.",
+      "us": "0x9eef49c",
+      "targets": {
+        "jp": "0x9ec6888",
+        "eu": "0x9f7a680"
+      },
+      "size": 596,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEF71C",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 92 typed pointer arrays.",
+      "us": "0x9eef71c",
+      "targets": {
+        "jp": "0x9ec6b08",
+        "eu": "0x9f7a900"
+      },
+      "size": 1180,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEFBCC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 27 typed pointer arrays.",
+      "us": "0x9eefbcc",
+      "targets": {
+        "jp": "0x9ec6fb8",
+        "eu": "0x9f7adb0"
+      },
+      "size": 404,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EEFE70",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 24 typed pointer arrays.",
+      "us": "0x9eefe70",
+      "targets": {
+        "jp": "0x9ec725c",
+        "eu": "0x9f7b054"
+      },
+      "size": 452,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF0054",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 107 typed pointer arrays.",
+      "us": "0x9ef0054",
+      "targets": {
+        "jp": "0x9ec7440",
+        "eu": "0x9f7b238"
+      },
+      "size": 1192,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF0510",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 31 typed pointer arrays.",
+      "us": "0x9ef0510",
+      "targets": {
+        "jp": "0x9ec78fc",
+        "eu": "0x9f7b6f4"
+      },
+      "size": 408,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF06CC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 12 typed pointer arrays.",
+      "us": "0x9ef06cc",
+      "targets": {
+        "jp": "0x9ec7ab8",
+        "eu": "0x9f7b8b0"
+      },
+      "size": 264,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF0820",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 20 typed pointer arrays.",
+      "us": "0x9ef0820",
+      "targets": {
+        "jp": "0x9ec7c0c",
+        "eu": "0x9f7ba04"
+      },
+      "size": 236,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF0930",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 62 typed pointer arrays.",
+      "us": "0x9ef0930",
+      "targets": {
+        "jp": "0x9ec7d1c",
+        "eu": "0x9f7bb14"
+      },
+      "size": 1412,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF0ED8",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 6 typed pointer arrays.",
+      "us": "0x9ef0ed8",
+      "targets": {
+        "jp": "0x9ec82c4",
+        "eu": "0x9f7c0bc"
+      },
+      "size": 140,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF0FA8",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 46 typed pointer arrays.",
+      "us": "0x9ef0fa8",
+      "targets": {
+        "jp": "0x9ec8394",
+        "eu": "0x9f7c18c"
+      },
+      "size": 184,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF1138",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 6 typed pointer arrays.",
+      "us": "0x9ef1138",
+      "targets": {
+        "jp": "0x9ec8524",
+        "eu": "0x9f7c31c"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF5298",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 98 typed pointer arrays.",
+      "us": "0x9ef5298",
+      "targets": {
+        "jp": "0x9ecc684",
+        "eu": "0x9f80690"
+      },
+      "size": 1420,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF5844",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 6 typed pointer arrays.",
+      "us": "0x9ef5844",
+      "targets": {
+        "jp": "0x9eccc30",
+        "eu": "0x9f80c3c"
+      },
+      "size": 376,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF59C4",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 28 typed pointer arrays.",
+      "us": "0x9ef59c4",
+      "targets": {
+        "jp": "0x9eccdb0",
+        "eu": "0x9f80dbc"
+      },
+      "size": 360,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF5B54",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 14 typed pointer arrays.",
+      "us": "0x9ef5b54",
+      "targets": {
+        "jp": "0x9eccf40",
+        "eu": "0x9f80f4c"
+      },
+      "size": 280,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF5D04",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 14 typed pointer arrays.",
+      "us": "0x9ef5d04",
+      "targets": {
+        "jp": "0x9ecd0f0",
+        "eu": "0x9f810fc"
+      },
+      "size": 308,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF5E48",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 8 typed pointer arrays.",
+      "us": "0x9ef5e48",
+      "targets": {
+        "jp": "0x9ecd234",
+        "eu": "0x9f81240"
+      },
+      "size": 400,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF5FF0",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 4 typed pointer arrays.",
+      "us": "0x9ef5ff0",
+      "targets": {
+        "jp": "0x9ecd3dc",
+        "eu": "0x9f813e8"
+      },
+      "size": 60,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF6060",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 1 typed pointer arrays.",
+      "us": "0x9ef6060",
+      "targets": {
+        "jp": "0x9ecd44c",
+        "eu": "0x9f81458"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF60AC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 1 typed pointer arrays.",
+      "us": "0x9ef60ac",
+      "targets": {
+        "jp": "0x9ecd498",
+        "eu": "0x9f814a4"
+      },
+      "size": 24,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "animation_resources_09EF67FC",
+      "layer": 1,
+      "provenance": "Corresponding individual table bases are independently established by completed layer0 ObjDef evidence; every animation table uses ObjDef.animCount and every gfx table has max(AnimFrame.gfxIndex)+1 entries exactly reaching the independently referenced animation table base. Complete six-byte AnimHeader prefixes and all AnimFrame records agree byte-for-byte across regions. Exact constituent object counts and regional spans are recorded in config/animation_resource_data.json. This run contains 8 typed pointer arrays.",
+      "us": "0x9ef67fc",
+      "targets": {
+        "jp": "0x9ecdbe8",
+        "eu": "0x9f81de4"
+      },
+      "size": 84,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_0813BA2C",
+      "provenance": "{\"calls\":[[\"src/btl.c\",344,\"u16 a\"],[\"src/btl.c\",444,\"1\"],[\"src/btl.c\",565,\"1\"],[\"src/btl.c\",2046,\"0\"],[\"src/btl.c\",2061,\"1\"],[\"src/btl.c\",2102,\"51\"],[\"src/btl.c\",2398,\"44\"],[\"src/btl.c\",2415,\"work->unk_191[0] + 47\"],[\"src/btl.c\",2439,\"53\"],[\"src/btl.c\",2512,\"work->unk_191[0] + 47\"],[\"src/btl.c\",2533,\"44\"],[\"src/btl.c\",2550,\"1\"],[\"src/btl.c\",2620,\"44\"],[\"src/btl.c\",2654,\"1\"],[\"src/btl.c\",2674,\"52\"],[\"src/btl.c\",2787,\"(u16)(a->animId + work->unk_190)\"],[\"src/btl.c\",2789,\"a->animId + work->unk_190\"],[\"src/btl.c\",2983,\"51\"],[\"src/btl.c\",3052,\"43\"],[\"src/btl.c\",3118,\"43\"],[\"src/btl.c\",3148,\"45\"],[\"src/btl.c\",3167,\"46\"],[\"src/btl.c\",3183,\"45\"],[\"src/btl.c\",3208,\"46\"],[\"src/btl.c\",3222,\"45\"],[\"src/btl.c\",3251,\"46\"],[\"src/btl.c\",3269,\"45\"],[\"src/btl.c\",3280,\"46\"],[\"src/btl.c\",3296,\"45\"],[\"src/btl.c\",3306,\"46\"],[\"src/btl.c\",3323,\"43\"],[\"src/btl.c\",3354,\"1\"],[\"src/btl.c\",3413,\"45\"],[\"src/btl.c\",3423,\"46\"],[\"src/btl.c\",3441,\"43\"],[\"src/btl.c\",3483,\"1\"],[\"src/btl.c\",3497,\"42\"],[\"src/btl.c\",3531,\"1\"],[\"src/btl.c\",3549,\"42\"],[\"src/btl.c\",3603,\"1\"],[\"src/btl.c\",3622,\"42\"],[\"src/btl.c\",3676,\"1\"],[\"src/btl.c\",3692,\"42\"],[\"src/btl.c\",3734,\"1\"],[\"src/btl.c\",3748,\"42\"],[\"src/btl.c\",3772,\"1\"],[\"src/btl.c\",3788,\"42\"],[\"src/btl.c\",3826,\"1\"],[\"src/btl.c\",3842,\"37\"],[\"src/btl.c\",4084,\"1\"],[\"src/btl.c\",4153,\"38\"],[\"src/btl.c\",4200,\"39\"],[\"src/btl.c\",4204,\"38\"],[\"src/btl.c\",4250,\"41\"],[\"src/btl.c\",4307,\"1\"],[\"src/btl.c\",4384,\"41\"],[\"src/btl.c\",4425,\"23\"],[\"src/btl.c\",4428,\"28\"],[\"src/btl.c\",4431,\"33\"],[\"src/btl.c\",4437,\"3\"],[\"src/btl.c\",4440,\"8\"],[\"src/btl.c\",4443,\"13\"],[\"src/btl.c\",4539,\"14\"],[\"src/btl.c\",4610,\"71\"],[\"src/btl.c\",4677,\"72\"],[\"src/btl.c\",4714,\"73\"],[\"src/btl.c\",4755,\"74\"],[\"src/btl.c\",4800,\"75\"],[\"src/btl.c\",4827,\"76\"],[\"src/btl.c\",4846,\"76\"],[\"src/btl.c\",4873,\"70\"],[\"src/btl.c\",4987,\"68\"],[\"src/btl.c\",5066,\"64\"],[\"src/btl.c\",5104,\"65\"],[\"src/btl.c\",5130,\"66\"],[\"src/btl.c\",5188,\"67\"],[\"src/btl.c\",5220,\"64\"],[\"src/btl.c\",5258,\"65\"],[\"src/btl.c\",5286,\"66\"],[\"src/btl.c\",5347,\"21\"],[\"src/btl.c\",5387,\"69\"],[\"src/btl.c\",5428,\"69\"],[\"src/btl.c\",5516,\"60\"],[\"src/btl.c\",5539,\"61\"],[\"src/btl.c\",5599,\"62\"],[\"src/btl.c\",5624,\"63\"],[\"src/btl.c\",5631,\"1\"],[\"src/btl.c\",5653,\"54\"],[\"src/btl.c\",5665,\"55\"],[\"src/btl.c\",5685,\"56\"],[\"src/btl.c\",5700,\"57\"],[\"src/btl.c\",5727,\"40\"],[\"src/btl.c\",5757,\"58\"],[\"src/btl.c\",5783,\"59\"],[\"src/btl.c\",6009,\"work->unk_191[0] + 47\"]],\"max_index\":76}",
+      "us": "0x813ba2c",
+      "targets": {
+        "jp": "0x813baa8",
+        "eu": "0x8889f00"
+      },
+      "size": 1232,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813BEFC",
+      "provenance": "{\"calls\":[[\"src/btl.c\",352,\"u16 a\"],[\"src/btl.c\",431,\"0\"],[\"src/btl.c\",2176,\"1\"],[\"src/btl.c\",2220,\"2\"],[\"src/btl.c\",2222,\"3\"],[\"src/btl.c\",2225,\"3\"],[\"src/btl.c\",2227,\"4\"],[\"src/btl.c\",2317,\"5\"],[\"src/btl.c\",2385,\"0\"],[\"src/btl.c\",3997,\"1\"],[\"src/btl.c\",4030,\"2\"],[\"src/btl.c\",4033,\"3\"],[\"src/btl.c\",4096,\"3\"],[\"src/btl.c\",4099,\"4\"],[\"src/btl.c\",4131,\"5\"],[\"src/btl.c\",5084,\"2\"],[\"src/btl.c\",5238,\"2\"]],\"max_index\":29}",
+      "us": "0x813befc",
+      "targets": {
+        "jp": "0x813bf78",
+        "eu": "0x888a3d0"
+      },
+      "size": 480,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813C2AC",
+      "provenance": "{\"calls\":[[\"src/btl.c\",6296,\"u16 a\"],[\"src/btl.c\",6418,\"0\"],[\"src/btl.c\",6474,\"13\"],[\"src/btl.c\",6487,\"12\"],[\"src/btl.c\",6600,\"0\"],[\"src/btl.c\",7413,\"26\"],[\"src/btl.c\",7434,\"27\"],[\"src/btl.c\",7469,\"28\"],[\"src/btl.c\",7515,\"29\"],[\"src/btl.c\",7526,\"30\"],[\"src/btl.c\",7537,\"31\"],[\"src/btl.c\",7614,\"32\"],[\"src/btl.c\",7643,\"22\"],[\"src/btl.c\",7733,\"25\"],[\"src/btl.c\",7806,\"12\"],[\"src/btl.c\",7822,\"21\"],[\"src/btl.c\",7926,\"20\"],[\"src/btl.c\",8029,\"33\"],[\"src/btl.c\",8171,\"34\"],[\"src/btl.c\",8298,\"15\"],[\"src/btl.c\",8331,\"17\"],[\"src/btl.c\",8333,\"16\"],[\"src/btl.c\",8347,\"23\"],[\"src/btl.c\",8391,\"24\"],[\"src/btl.c\",8416,\"24\"],[\"src/btl.c\",8443,\"15\"],[\"src/btl.c\",8481,\"16\"],[\"src/btl.c\",8483,\"17\"],[\"src/btl.c\",8486,\"17\"],[\"src/btl.c\",8488,\"18\"],[\"src/btl.c\",8578,\"19\"],[\"src/btl.c\",8635,\"14\"],[\"src/btl.c\",8755,\"0\"],[\"src/btl.c\",8783,\"24\"],[\"src/btl.c\",8843,\"14\"],[\"src/btl.c\",8871,\"0\"],[\"src/btl.c\",8897,\"11\"],[\"src/btl.c\",8913,\"0\"],[\"src/btl.c\",9200,\"10\"],[\"src/btl.c\",9218,\"9\"],[\"src/btl.c\",9241,\"14\"],[\"src/btl.c\",9261,\"24\"],[\"src/btl.c\",9407,\"16\"],[\"src/btl.c\",9409,\"17\"],[\"src/btl.c\",9412,\"17\"],[\"src/btl.c\",9414,\"18\"],[\"src/btl.c\",9455,\"19\"],[\"src/btl.c\",9480,\"16\"],[\"src/btl.c\",9482,\"17\"],[\"src/btl.c\",9485,\"17\"],[\"src/btl.c\",9487,\"18\"],[\"src/btl.c\",9529,\"9\"],[\"src/btl.c\",9558,\"10\"],[\"src/btl.c\",9672,\"*(u16*)&a->animId\"],[\"src/btl.c\",9674,\"a->animId\"],[\"src/btl.c\",9870,\"15\"],[\"src/btl.c\",9905,\"16\"],[\"src/btl.c\",9912,\"17\"],[\"src/btl.c\",9965,\"12\"],[\"src/btl.c\",9967,\"0\"],[\"src/btl.c\",9985,\"17\"],[\"src/btl.c\",9992,\"18\"],[\"src/btl.c\",10025,\"19\"],[\"src/btl.c\",10051,\"7\"],[\"src/btl.c\",10093,\"14\"],[\"src/btl.c\",10135,\"7\"],[\"src/btl.c\",10195,\"8\"],[\"src/btl.c\",10243,\"0\"],[\"src/btl.c\",10263,\"8\"],[\"src/btl.c\",10303,\"7\"],[\"src/btl.c\",10330,\"14\"],[\"src/btl.c\",10561,\"9\"]],\"max_index\":34}",
+      "us": "0x813c2ac",
+      "targets": {
+        "jp": "0x813c328",
+        "eu": "0x888a780"
+      },
+      "size": 560,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813C4DC",
+      "provenance": "{\"calls\":[[\"src/btl.c\",6304,\"u16 a\"],[\"src/btl.c\",6405,\"0\"],[\"src/btl.c\",8971,\"1\"],[\"src/btl.c\",9058,\"2\"],[\"src/btl.c\",9060,\"3\"],[\"src/btl.c\",9063,\"3\"],[\"src/btl.c\",9065,\"4\"],[\"src/btl.c\",9148,\"5\"],[\"src/btl.c\",9187,\"0\"],[\"src/btl.c\",9333,\"2\"],[\"src/btl.c\",9335,\"3\"],[\"src/btl.c\",9338,\"3\"],[\"src/btl.c\",9340,\"4\"],[\"src/btl.c\",9381,\"5\"],[\"src/btl.c\",9872,\"1\"],[\"src/btl.c\",9907,\"2\"],[\"src/btl.c\",9914,\"3\"],[\"src/btl.c\",9987,\"3\"],[\"src/btl.c\",9994,\"4\"],[\"src/btl.c\",10027,\"5\"]],\"max_index\":29}",
+      "us": "0x813c4dc",
+      "targets": {
+        "jp": "0x813c558",
+        "eu": "0x888a9b0"
+      },
+      "size": 480,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813C89C",
+      "provenance": "{\"calls\":[[\"src/btl2.c\",1972,\"s32 a\"],[\"src/fld.c\",48,\"0\"],[\"src/fld.c\",94,\"12\"],[\"src/fld.c\",96,\"1\"],[\"src/fld.c\",98,\"0\"],[\"src/fld.c\",146,\"11\"],[\"src/fld.c\",151,\"4\"],[\"src/fld.c\",207,\"14\"],[\"src/fld.c\",272,\"3\"],[\"src/fld.c\",323,\"5\"],[\"src/fld.c\",325,\"4\"],[\"src/fld.c\",366,\"5\"],[\"src/fld.c\",368,\"6\"],[\"src/fld.c\",392,\"7\"],[\"src/fld.c\",517,\"8\"],[\"src/fld.c\",564,\"0\"],[\"src/fld.c\",589,\"6\"],[\"src/fld.c\",596,\"11\"],[\"src/fld.c\",677,\"9\"],[\"src/fld.c\",695,\"10\"],[\"src/fld.c\",699,\"11\"],[\"src/fld.c\",738,\"2\"],[\"src/fld.c\",853,\"12\"],[\"src/fld.c\",893,\"13\"],[\"src/fld.c\",1079,\"0\"],[\"src/fld.c\",1202,\"2\"],[\"src/fld.c\",1219,\"0\"]],\"max_index\":74}",
+      "us": "0x813c89c",
+      "targets": {
+        "jp": "0x813c918",
+        "eu": "0x888ad70"
+      },
+      "size": 1200,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813CDDC",
+      "provenance": "{\"calls\":[[\"src/fld.c\",1657,\"s32 index\"],[\"src/fld.c\",1747,\"0\"],[\"src/fld.c\",1793,\"12\"],[\"src/fld.c\",1795,\"1\"],[\"src/fld.c\",1797,\"0\"],[\"src/fld.c\",1846,\"11\"],[\"src/fld.c\",1851,\"4\"],[\"src/fld.c\",1907,\"14\"],[\"src/fld.c\",1971,\"3\"],[\"src/fld.c\",2022,\"5\"],[\"src/fld.c\",2024,\"4\"],[\"src/fld.c\",2065,\"5\"],[\"src/fld.c\",2067,\"6\"],[\"src/fld.c\",2091,\"7\"],[\"src/fld.c\",2215,\"8\"],[\"src/fld.c\",2262,\"0\"],[\"src/fld.c\",2287,\"6\"],[\"src/fld.c\",2294,\"11\"],[\"src/fld.c\",2375,\"9\"],[\"src/fld.c\",2393,\"10\"],[\"src/fld.c\",2397,\"11\"],[\"src/fld.c\",2436,\"2\"],[\"src/fld.c\",2546,\"12\"],[\"src/fld.c\",2586,\"13\"],[\"src/fld.c\",2772,\"0\"],[\"src/fld.c\",2895,\"2\"],[\"src/fld.c\",2912,\"0\"]],\"max_index\":74}",
+      "us": "0x813cddc",
+      "targets": {
+        "jp": "0x813ce58",
+        "eu": "0x888b2b0"
+      },
+      "size": 1200,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D32C",
+      "provenance": "{\"descriptor\":\"gUnk_0813D3CC\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d32c",
+      "targets": {
+        "jp": "0x813d3a8",
+        "eu": "0x888b800"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D35C",
+      "provenance": "{\"calls\":[[\"src/emy.c\",38,\"5\"],[\"src/emy.c\",42,\"6\"],[\"src/emy.c\",51,\"0\"],[\"src/emy.c\",63,\"1\"],[\"src/emy.c\",85,\"3\"],[\"src/emy.c\",104,\"2\"],[\"src/emy.c\",170,\"4\"]],\"max_index\":6}",
+      "us": "0x813d35c",
+      "targets": {
+        "jp": "0x813d3d8",
+        "eu": "0x888b830"
+      },
+      "size": 112,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D404",
+      "provenance": "{\"descriptor\":\"gUnk_0813D454\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d404",
+      "targets": {
+        "jp": "0x813d480",
+        "eu": "0x888b8d8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D434",
+      "provenance": "{\"calls\":[[\"src/emy.c\",272,\"0\"],[\"src/emy.c\",300,\"1\"]],\"max_index\":1}",
+      "us": "0x813d434",
+      "targets": {
+        "jp": "0x813d4b0",
+        "eu": "0x888b908"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D48C",
+      "provenance": "{\"descriptor\":\"gUnk_0813D4DC\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d48c",
+      "targets": {
+        "jp": "0x813d508",
+        "eu": "0x888b960"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D4BC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",370,\"0\"],[\"src/emy.c\",398,\"1\"]],\"max_index\":1}",
+      "us": "0x813d4bc",
+      "targets": {
+        "jp": "0x813d538",
+        "eu": "0x888b990"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D514",
+      "provenance": "{\"descriptor\":\"gUnk_0813D564\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d514",
+      "targets": {
+        "jp": "0x813d590",
+        "eu": "0x888b9e8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D544",
+      "provenance": "{\"calls\":[[\"src/emy.c\",466,\"0\"],[\"src/emy.c\",478,\"1\"]],\"max_index\":1}",
+      "us": "0x813d544",
+      "targets": {
+        "jp": "0x813d5c0",
+        "eu": "0x888ba18"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D59C",
+      "provenance": "{\"descriptor\":\"gUnk_0813D5DC\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d59c",
+      "targets": {
+        "jp": "0x813d618",
+        "eu": "0x888ba70"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D5CC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",530,\"0\"]],\"max_index\":0}",
+      "us": "0x813d5cc",
+      "targets": {
+        "jp": "0x813d648",
+        "eu": "0x888baa0"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D614",
+      "provenance": "{\"descriptor\":\"gUnk_0813D664\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d614",
+      "targets": {
+        "jp": "0x813d690",
+        "eu": "0x888bae8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D644",
+      "provenance": "{\"calls\":[[\"src/emy.c\",627,\"0\"],[\"src/emy.c\",659,\"1\"]],\"max_index\":1}",
+      "us": "0x813d644",
+      "targets": {
+        "jp": "0x813d6c0",
+        "eu": "0x888bb18"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D69C",
+      "provenance": "{\"descriptor\":\"gUnk_0813D73C\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d69c",
+      "targets": {
+        "jp": "0x813d718",
+        "eu": "0x888bb70"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D6CC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",816,\"3\"],[\"src/emy.c\",826,\"4\"],[\"src/emy.c\",836,\"5\"],[\"src/emy.c\",847,\"2\"],[\"src/emy.c\",849,\"1\"],[\"src/emy.c\",907,\"0\"],[\"src/emy.c\",920,\"6\"]],\"max_index\":6}",
+      "us": "0x813d6cc",
+      "targets": {
+        "jp": "0x813d748",
+        "eu": "0x888bba0"
+      },
+      "size": 112,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D774",
+      "provenance": "{\"descriptor\":\"gUnk_0813D804\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d774",
+      "targets": {
+        "jp": "0x813d7f0",
+        "eu": "0x888bc48"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D7A4",
+      "provenance": "{\"calls\":[[\"src/emy.c\",987,\"4\"],[\"src/emy.c\",1000,\"5\"],[\"src/emy.c\",1013,\"0\"],[\"src/emy.c\",1077,\"2\"],[\"src/emy.c\",1088,\"3\"],[\"src/emy.c\",1099,\"1\"]],\"max_index\":5}",
+      "us": "0x813d7a4",
+      "targets": {
+        "jp": "0x813d820",
+        "eu": "0x888bc78"
+      },
+      "size": 96,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D83C",
+      "provenance": "{\"descriptor\":\"gUnk_0813D88C\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d83c",
+      "targets": {
+        "jp": "0x813d8b8",
+        "eu": "0x888bd10"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D86C",
+      "provenance": "{\"calls\":[[\"src/emy.c\",1164,\"0\"],[\"src/emy.c\",1168,\"1\"]],\"max_index\":1}",
+      "us": "0x813d86c",
+      "targets": {
+        "jp": "0x813d8e8",
+        "eu": "0x888bd40"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D8C4",
+      "provenance": "{\"descriptor\":\"gUnk_0813D944\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d8c4",
+      "targets": {
+        "jp": "0x813d940",
+        "eu": "0x888bd98"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D8F4",
+      "provenance": "{\"calls\":[[\"src/emy.c\",1211,\"0\"],[\"src/emy.c\",1219,\"1\"],[\"src/emy.c\",1241,\"2\"],[\"src/emy.c\",1249,\"3\"],[\"src/emy.c\",1261,\"4\"]],\"max_index\":4}",
+      "us": "0x813d8f4",
+      "targets": {
+        "jp": "0x813d970",
+        "eu": "0x888bdc8"
+      },
+      "size": 80,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D97C",
+      "provenance": "{\"descriptor\":\"gUnk_0813D9CC\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813d97c",
+      "targets": {
+        "jp": "0x813d9f8",
+        "eu": "0x888be50"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813D9AC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",1314,\"0\"],[\"src/emy.c\",1340,\"1\"]],\"max_index\":1}",
+      "us": "0x813d9ac",
+      "targets": {
+        "jp": "0x813da28",
+        "eu": "0x888be80"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DA24",
+      "provenance": "{\"descriptor\":\"gUnk_0813DA94\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813da24",
+      "targets": {
+        "jp": "0x813daa0",
+        "eu": "0x888bef8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DA54",
+      "provenance": "{\"calls\":[[\"src/emy.c\",1628,\"2\"],[\"src/emy.c\",1681,\"3\"],[\"src/emy.c\",1697,\"0\"],[\"src/emy.c\",1712,\"1\"]],\"max_index\":3}",
+      "us": "0x813da54",
+      "targets": {
+        "jp": "0x813dad0",
+        "eu": "0x888bf28"
+      },
+      "size": 64,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DACC",
+      "provenance": "{\"descriptor\":\"gUnk_0813DB4C\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813dacc",
+      "targets": {
+        "jp": "0x813db48",
+        "eu": "0x888bfa0"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DAFC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",1771,\"0\"],[\"src/emy.c\",1780,\"1\"],[\"src/emy.c\",1796,\"2\"],[\"src/emy.c\",1818,\"3\"],[\"src/emy.c\",1828,\"0\"],[\"src/emy.c\",1835,\"4\"]],\"max_index\":4}",
+      "us": "0x813dafc",
+      "targets": {
+        "jp": "0x813db78",
+        "eu": "0x888bfd0"
+      },
+      "size": 80,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DB84",
+      "provenance": "{\"descriptor\":\"gUnk_0813DBF4\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813db84",
+      "targets": {
+        "jp": "0x813dc00",
+        "eu": "0x888c058"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DBB4",
+      "provenance": "{\"calls\":[[\"src/emy.c\",1906,\"0\"],[\"src/emy.c\",1944,\"1\"],[\"src/emy.c\",1953,\"2\"],[\"src/emy.c\",1973,\"3\"]],\"max_index\":3}",
+      "us": "0x813dbb4",
+      "targets": {
+        "jp": "0x813dc30",
+        "eu": "0x888c088"
+      },
+      "size": 64,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DC2C",
+      "provenance": "{\"descriptor\":\"gUnk_0813DC7C\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813dc2c",
+      "targets": {
+        "jp": "0x813dca8",
+        "eu": "0x888c100"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DC5C",
+      "provenance": "{\"calls\":[[\"src/emy.c\",2146,\"0\"],[\"src/emy.c\",2171,\"1\"]],\"max_index\":1}",
+      "us": "0x813dc5c",
+      "targets": {
+        "jp": "0x813dcd8",
+        "eu": "0x888c130"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DCB4",
+      "provenance": "{\"descriptor\":\"gUnk_0813DD04\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813dcb4",
+      "targets": {
+        "jp": "0x813dd30",
+        "eu": "0x888c188"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DCE4",
+      "provenance": "{\"calls\":[[\"src/emy.c\",2215,\"0\"],[\"src/emy.c\",2250,\"1\"]],\"max_index\":1}",
+      "us": "0x813dce4",
+      "targets": {
+        "jp": "0x813dd60",
+        "eu": "0x888c1b8"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DD3C",
+      "provenance": "{\"descriptor\":\"gUnk_0813DD8C\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813dd3c",
+      "targets": {
+        "jp": "0x813ddb8",
+        "eu": "0x888c210"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DD6C",
+      "provenance": "{\"calls\":[[\"src/emy.c\",2311,\"0\"],[\"src/emy.c\",2364,\"1\"]],\"max_index\":1}",
+      "us": "0x813dd6c",
+      "targets": {
+        "jp": "0x813dde8",
+        "eu": "0x888c240"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DDC4",
+      "provenance": "{\"descriptor\":\"gUnk_0813DE14\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813ddc4",
+      "targets": {
+        "jp": "0x813de40",
+        "eu": "0x888c298"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DDF4",
+      "provenance": "{\"calls\":[[\"src/emy.c\",2469,\"0\"],[\"src/emy.c\",2494,\"1\"]],\"max_index\":1}",
+      "us": "0x813ddf4",
+      "targets": {
+        "jp": "0x813de70",
+        "eu": "0x888c2c8"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DE4C",
+      "provenance": "{\"descriptor\":\"gUnk_0813DE9C\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813de4c",
+      "targets": {
+        "jp": "0x813dec8",
+        "eu": "0x888c320"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DE7C",
+      "provenance": "{\"calls\":[[\"src/emy.c\",2572,\"0\"],[\"src/emy.c\",2587,\"1\"]],\"max_index\":1}",
+      "us": "0x813de7c",
+      "targets": {
+        "jp": "0x813def8",
+        "eu": "0x888c350"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DED4",
+      "provenance": "{\"descriptor\":\"gUnk_0813DF44\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813ded4",
+      "targets": {
+        "jp": "0x813df50",
+        "eu": "0x888c3a8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DF04",
+      "provenance": "{\"calls\":[[\"src/emy.c\",2670,\"2\"],[\"src/emy.c\",2723,\"3\"],[\"src/emy.c\",2739,\"0\"],[\"src/emy.c\",2758,\"1\"]],\"max_index\":3}",
+      "us": "0x813df04",
+      "targets": {
+        "jp": "0x813df80",
+        "eu": "0x888c3d8"
+      },
+      "size": 64,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DF7C",
+      "provenance": "{\"descriptor\":\"gUnk_0813DFCC\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813df7c",
+      "targets": {
+        "jp": "0x813dff8",
+        "eu": "0x888c450"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813DFAC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",2842,\"0\"],[\"src/emy.c\",2856,\"1\"]],\"max_index\":1}",
+      "us": "0x813dfac",
+      "targets": {
+        "jp": "0x813e028",
+        "eu": "0x888c480"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E004",
+      "provenance": "{\"descriptor\":\"gUnk_0813E0B4\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e004",
+      "targets": {
+        "jp": "0x813e080",
+        "eu": "0x888c4d8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E034",
+      "provenance": "{\"calls\":[[\"src/emy.c\",2953,\"0\"],[\"src/emy.c\",3000,\"1\"],[\"src/emy.c\",3018,\"2\"],[\"src/emy.c\",3045,\"3\"],[\"src/emy.c\",3085,\"4\"],[\"src/emy.c\",3096,\"5\"],[\"src/emy.c\",3120,\"6\"],[\"src/emy.c\",3151,\"7\"]],\"max_index\":7}",
+      "us": "0x813e034",
+      "targets": {
+        "jp": "0x813e0b0",
+        "eu": "0x888c508"
+      },
+      "size": 128,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E0EC",
+      "provenance": "{\"descriptor\":\"gUnk_0813E14C\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e0ec",
+      "targets": {
+        "jp": "0x813e168",
+        "eu": "0x888c5c0"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E11C",
+      "provenance": "{\"calls\":[[\"src/emy.c\",3219,\"0\"],[\"src/emy.c\",3281,\"1\"],[\"src/emy.c\",3341,\"2\"]],\"max_index\":2}",
+      "us": "0x813e11c",
+      "targets": {
+        "jp": "0x813e198",
+        "eu": "0x888c5f0"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E184",
+      "provenance": "{\"descriptor\":\"gUnk_0813E264\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e184",
+      "targets": {
+        "jp": "0x813e200",
+        "eu": "0x888c658"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E1B4",
+      "provenance": "{\"calls\":[[\"src/emy.c\",3438,\"0\"],[\"src/emy.c\",3442,\"4\"],[\"src/emy.c\",3454,\"1\"],[\"src/emy.c\",3477,\"2\"],[\"src/emy.c\",3511,\"10\"],[\"src/emy.c\",3521,\"9\"],[\"src/emy.c\",3540,\"5\"],[\"src/emy.c\",3594,\"6\"],[\"src/emy.c\",3610,\"7\"],[\"src/emy.c\",3623,\"8\"]],\"max_index\":10}",
+      "us": "0x813e1b4",
+      "targets": {
+        "jp": "0x813e230",
+        "eu": "0x888c688"
+      },
+      "size": 176,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E29C",
+      "provenance": "{\"descriptor\":\"gUnk_0813E2EC\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e29c",
+      "targets": {
+        "jp": "0x813e318",
+        "eu": "0x888c770"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E2CC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",3784,\"0\"],[\"src/emy.c\",3792,\"1\"]],\"max_index\":1}",
+      "us": "0x813e2cc",
+      "targets": {
+        "jp": "0x813e348",
+        "eu": "0x888c7a0"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E324",
+      "provenance": "{\"descriptor\":\"gUnk_0813E374\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e324",
+      "targets": {
+        "jp": "0x813e3a0",
+        "eu": "0x888c7f8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E354",
+      "provenance": "{\"calls\":[[\"src/emy.c\",3862,\"0\"],[\"src/emy.c\",3888,\"1\"]],\"max_index\":1}",
+      "us": "0x813e354",
+      "targets": {
+        "jp": "0x813e3d0",
+        "eu": "0x888c828"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E3AC",
+      "provenance": "{\"descriptor\":\"gUnk_0813E3FC\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e3ac",
+      "targets": {
+        "jp": "0x813e428",
+        "eu": "0x888c880"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E3DC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",4012,\"0\"],[\"src/emy.c\",4021,\"1\"]],\"max_index\":1}",
+      "us": "0x813e3dc",
+      "targets": {
+        "jp": "0x813e458",
+        "eu": "0x888c8b0"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E434",
+      "provenance": "{\"descriptor\":\"gUnk_0813E484\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e434",
+      "targets": {
+        "jp": "0x813e4b0",
+        "eu": "0x888c908"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E464",
+      "provenance": "{\"calls\":[[\"src/emy.c\",4082,\"0\"],[\"src/emy.c\",4104,\"1\"]],\"max_index\":1}",
+      "us": "0x813e464",
+      "targets": {
+        "jp": "0x813e4e0",
+        "eu": "0x888c938"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E4BC",
+      "provenance": "{\"descriptor\":\"gUnk_0813E53C\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e4bc",
+      "targets": {
+        "jp": "0x813e538",
+        "eu": "0x888c990"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E4EC",
+      "provenance": "{\"calls\":[[\"src/emy.c\",4195,\"2\"],[\"src/emy.c\",4217,\"3\"],[\"src/emy.c\",4274,\"4\"],[\"src/emy.c\",4284,\"0\"],[\"src/emy.c\",4338,\"1\"]],\"max_index\":4}",
+      "us": "0x813e4ec",
+      "targets": {
+        "jp": "0x813e568",
+        "eu": "0x888c9c0"
+      },
+      "size": 80,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E574",
+      "provenance": "{\"descriptor\":\"gUnk_0813E604\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e574",
+      "targets": {
+        "jp": "0x813e5f0",
+        "eu": "0x888ca48"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E5A4",
+      "provenance": "{\"calls\":[[\"src/emy.c\",4533,\"3\"],[\"src/emy.c\",4584,\"4\"],[\"src/emy.c\",4632,\"5\"],[\"src/emy.c\",4679,\"0\"],[\"src/emy.c\",4686,\"1\"],[\"src/emy.c\",4692,\"2\"]],\"max_index\":5}",
+      "us": "0x813e5a4",
+      "targets": {
+        "jp": "0x813e620",
+        "eu": "0x888ca78"
+      },
+      "size": 96,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E63C",
+      "provenance": "{\"descriptor\":\"gUnk_0813E6AC\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e63c",
+      "targets": {
+        "jp": "0x813e6b8",
+        "eu": "0x888cb10"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E66C",
+      "provenance": "{\"calls\":[[\"src/emy.c\",4763,\"0\"],[\"src/emy.c\",4785,\"1\"],[\"src/emy.c\",4792,\"2\"],[\"src/emy.c\",4822,\"3\"]],\"max_index\":3}",
+      "us": "0x813e66c",
+      "targets": {
+        "jp": "0x813e6e8",
+        "eu": "0x888cb40"
+      },
+      "size": 64,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E704",
+      "provenance": "{\"descriptor\":\"gUnk_0813E744\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e704",
+      "targets": {
+        "jp": "0x813e780",
+        "eu": "0x888cbd8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E734",
+      "provenance": "{\"calls\":[[\"src/emy.c\",5024,\"0\"]],\"max_index\":0}",
+      "us": "0x813e734",
+      "targets": {
+        "jp": "0x813e7b0",
+        "eu": "0x888cc08"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E784",
+      "provenance": "{\"descriptor\":\"gUnk_0813E7C4\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e784",
+      "targets": {
+        "jp": "0x813e800",
+        "eu": "0x888cc58"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E7B4",
+      "provenance": "{\"calls\":[[\"src/emy.c\",5075,\"0\"]],\"max_index\":0}",
+      "us": "0x813e7b4",
+      "targets": {
+        "jp": "0x813e830",
+        "eu": "0x888cc88"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E804",
+      "provenance": "{\"descriptor\":\"gUnk_0813E834\",\"consumer\":[\"src/emy_common.c\",264,341,377],\"max_index\":2}",
+      "us": "0x813e804",
+      "targets": {
+        "jp": "0x813e880",
+        "eu": "0x888ccd8"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E8F4",
+      "provenance": "{\"calls\":[[\"src/btl3.c\",581,\"0\"],[\"src/btl3.c\",600,\"0\"],[\"src/btl3.c\",604,\"2\"],[\"src/btl3.c\",608,\"3\"],[\"src/btl3.c\",612,\"4\"],[\"src/btl3.c\",617,\"1\"]],\"max_index\":4}",
+      "us": "0x813e8f4",
+      "targets": {
+        "jp": "0x813e970",
+        "eu": "0x888cdc8"
+      },
+      "size": 80,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E958",
+      "provenance": "{\"calls\":[[\"src/smn.c\",40,\"0\"],[\"src/smn.c\",151,\"0\"],[\"src/smn.c\",153,\"1\"],[\"src/smn.c\",226,\"6\"],[\"src/smn.c\",228,\"7\"],[\"src/smn.c\",283,\"2\"],[\"src/smn.c\",318,\"3\"],[\"src/smn.c\",322,\"4\"],[\"src/smn.c\",327,\"5\"]],\"max_index\":7}",
+      "us": "0x813e958",
+      "targets": {
+        "jp": "0x813e9d4",
+        "eu": "0x888ce2c"
+      },
+      "size": 128,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E9E8",
+      "provenance": "{\"calls\":[[\"src/smn.c\",490,\"0\"]],\"max_index\":0}",
+      "us": "0x813e9e8",
+      "targets": {
+        "jp": "0x813ea64",
+        "eu": "0x888cebc"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EA08",
+      "provenance": "{\"calls\":[[\"src/smn.c\",822,\"0\"],[\"src/smn.c\",942,\"0\"],[\"src/smn.c\",967,\"1\"],[\"src/smn.c\",1026,\"2\"],[\"src/smn.c\",1045,\"1\"]],\"max_index\":2}",
+      "us": "0x813ea08",
+      "targets": {
+        "jp": "0x813ea84",
+        "eu": "0x888cedc"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EA5C",
+      "provenance": "{\"calls\":[[\"src/smn.c\",1203,\"0\"]],\"max_index\":0}",
+      "us": "0x813ea5c",
+      "targets": {
+        "jp": "0x813ead8",
+        "eu": "0x888cf30"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EA7C",
+      "provenance": "{\"calls\":[[\"src/smn.c\",1440,\"0\"],[\"src/smn.c\",1527,\"2\"],[\"src/smn.c\",1536,\"3\"]],\"max_index\":3}",
+      "us": "0x813ea7c",
+      "targets": {
+        "jp": "0x813eaf8",
+        "eu": "0x888cf50"
+      },
+      "size": 64,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EABC",
+      "provenance": "{\"extent\":\"One independently stored typed continuation record. No code use of index4 was found; following task-name object has an independent descriptor/name anchor. The three pointer roles and final scalar match all regions.\"}",
+      "us": "0x813eabc",
+      "targets": {
+        "jp": "0x813eb38",
+        "eu": "0x888cf90"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EADC",
+      "provenance": "{\"calls\":[[\"src/smn.c\",1693,\"0\"],[\"src/smn.c\",1754,\"0\"],[\"src/smn.c\",1766,\"1\"],[\"src/smn.c\",1788,\"2\"]],\"max_index\":2}",
+      "us": "0x813eadc",
+      "targets": {
+        "jp": "0x813eb58",
+        "eu": "0x888cfb0"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EB1C",
+      "provenance": "{\"calls\":[[\"src/smn.c\",1899,\"0\"],[\"src/smn.c\",2063,\"0\"],[\"src/smn.c\",2078,\"0\"],[\"src/smn.c\",2096,\"0\"],[\"src/smn.c\",2121,\"1\"],[\"src/smn.c\",2159,\"1\"],[\"src/smn.c\",2198,\"1\"]],\"max_index\":1}",
+      "us": "0x813eb1c",
+      "targets": {
+        "jp": "0x813eb98",
+        "eu": "0x888cff0"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EB4C",
+      "provenance": "{\"calls\":[[\"src/smn.c\",2320,\"0\"],[\"src/smn.c\",2387,\"1\"],[\"src/smn.c\",2395,\"2\"]],\"max_index\":2}",
+      "us": "0x813eb4c",
+      "targets": {
+        "jp": "0x813ebc8",
+        "eu": "0x888d020"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EB8C",
+      "provenance": "{\"calls\":[[\"src/frd.c\",47,\"0\"],[\"src/frd.c\",113,\"2\"],[\"src/frd.c\",129,\"3\"],[\"src/frd.c\",179,\"3\"],[\"src/frd.c\",188,\"2\"],[\"src/frd.c\",211,\"4\"],[\"src/frd.c\",212,\"5\"],[\"src/frd.c\",238,\"0\"],[\"src/frd.c\",289,\"0\"],[\"src/frd.c\",338,\"1\"],[\"src/frd.c\",383,\"1\"]],\"max_index\":5}",
+      "us": "0x813eb8c",
+      "targets": {
+        "jp": "0x813ec08",
+        "eu": "0x888d060"
+      },
+      "size": 96,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EBFC",
+      "provenance": "{\"calls\":[[\"src/frd.c\",565,\"0\"],[\"src/frd.c\",585,\"0\"],[\"src/frd.c\",600,\"1\"],[\"src/frd.c\",621,\"1\"],[\"src/frd.c\",633,\"0\"],[\"src/frd.c\",657,\"2\"],[\"src/frd.c\",694,\"3\"],[\"src/frd.c\",708,\"4\"]],\"max_index\":4}",
+      "us": "0x813ebfc",
+      "targets": {
+        "jp": "0x813ec78",
+        "eu": "0x888d0d0"
+      },
+      "size": 80,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EC5C",
+      "provenance": "{\"calls\":[[\"src/frd.c\",826,\"1\"],[\"src/frd.c\",888,\"2\"],[\"src/frd.c\",919,\"0\"]],\"max_index\":2}",
+      "us": "0x813ec5c",
+      "targets": {
+        "jp": "0x813ecd8",
+        "eu": "0x888d130"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EC9C",
+      "provenance": "{\"calls\":[[\"src/frd.c\",1081,\"0\"],[\"src/frd.c\",1116,\"1\"],[\"src/frd.c\",1128,\"2\"],[\"src/frd.c\",1157,\"4\"],[\"src/frd.c\",1166,\"3\"],[\"src/frd.c\",1179,\"4\"],[\"src/frd.c\",1210,\"1\"],[\"src/frd.c\",1211,\"3\"],[\"src/frd.c\",1225,\"2\"],[\"src/frd.c\",1252,\"0\"],[\"src/frd.c\",1303,\"0\"],[\"src/frd.c\",1351,\"0\"],[\"src/frd.c\",1400,\"0\"]],\"max_index\":4}",
+      "us": "0x813ec9c",
+      "targets": {
+        "jp": "0x813ed18",
+        "eu": "0x888d170"
+      },
+      "size": 80,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813ECFC",
+      "provenance": "{\"calls\":[[\"src/frd.c\",1554,\"0\"],[\"src/frd.c\",1644,\"0\"],[\"src/frd.c\",1659,\"0\"],[\"src/frd.c\",1671,\"0\"],[\"src/frd.c\",1690,\"1\"],[\"src/frd.c\",1703,\"2\"],[\"src/frd.c\",1755,\"3\"]],\"max_index\":3}",
+      "us": "0x813ecfc",
+      "targets": {
+        "jp": "0x813ed78",
+        "eu": "0x888d1d0"
+      },
+      "size": 64,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813ED4C",
+      "provenance": "{\"calls\":[[\"src/frd.c\",1885,\"0\"],[\"src/frd.c\",1917,\"0\"],[\"src/frd.c\",1930,\"1\"],[\"src/frd.c\",1941,\"0\"],[\"src/frd.c\",1960,\"2\"]],\"max_index\":2}",
+      "us": "0x813ed4c",
+      "targets": {
+        "jp": "0x813edc8",
+        "eu": "0x888d220"
+      },
+      "size": 48,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813ED90",
+      "provenance": "{\"calls\":[[\"src/frd.c\",2151,\"0\"],[\"src/frd.c\",2208,\"1\"]],\"max_index\":1}",
+      "us": "0x813ed90",
+      "targets": {
+        "jp": "0x813ee0c",
+        "eu": "0x888d264"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EDE8",
+      "provenance": "{\"calls\":[[\"src/hum.c\",72,\"0\"],[\"src/hum.c\",75,\"0\"],[\"src/hum.c\",93,\"0\"],[\"src/hum.c\",117,\"1\"],[\"src/hum.c\",146,\"2\"],[\"src/hum.c\",151,\"8\"],[\"src/hum.c\",172,\"9\"],[\"src/hum.c\",192,\"3\"],[\"src/hum.c\",210,\"4\"],[\"src/hum.c\",212,\"5\"],[\"src/hum.c\",215,\"5\"],[\"src/hum.c\",217,\"6\"],[\"src/hum.c\",230,\"7\"],[\"src/hum.c\",248,\"5\"],[\"src/hum.c\",250,\"4\"],[\"src/hum.c\",265,\"14\"],[\"src/hum.c\",305,\"10\"],[\"src/hum.c\",327,\"11\"],[\"src/hum.c\",340,\"12\"],[\"src/hum.c\",351,\"13\"],[\"src/hum.c\",381,\"18\"],[\"src/hum.c\",383,\"19\"],[\"src/hum.c\",473,\"5\"],[\"src/hum.c\",475,\"4\"],[\"src/hum.c\",489,\"14\"],[\"src/hum.c\",531,\"15\"],[\"src/hum.c\",535,\"16\"],[\"src/hum.c\",540,\"17\"]],\"max_index\":19}",
+      "us": "0x813ede8",
+      "targets": {
+        "jp": "0x813ee64",
+        "eu": "0x888d2bc"
+      },
+      "size": 320,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813EF6C",
+      "provenance": "{\"calls\":[[\"src/hum.c\",738,\"0\"],[\"src/hum.c\",743,\"0\"],[\"src/hum.c\",764,\"0\"],[\"src/hum.c\",792,\"1\"],[\"src/hum.c\",812,\"2\"],[\"src/hum.c\",819,\"2\"],[\"src/hum.c\",842,\"11\"],[\"src/hum.c\",883,\"9\"],[\"src/hum.c\",917,\"12\"],[\"src/hum.c\",947,\"14\"],[\"src/hum.c\",951,\"13\"],[\"src/hum.c\",969,\"12\"],[\"src/hum.c\",995,\"14\"],[\"src/hum.c\",999,\"13\"],[\"src/hum.c\",1016,\"12\"],[\"src/hum.c\",1061,\"9\"],[\"src/hum.c\",1092,\"8\"],[\"src/hum.c\",1128,\"10\"],[\"src/hum.c\",1168,\"3\"],[\"src/hum.c\",1188,\"5\"],[\"src/hum.c\",1190,\"4\"],[\"src/hum.c\",1193,\"5\"],[\"src/hum.c\",1195,\"6\"],[\"src/hum.c\",1209,\"7\"]],\"max_index\":14}",
+      "us": "0x813ef6c",
+      "targets": {
+        "jp": "0x813efe8",
+        "eu": "0x888d440"
+      },
+      "size": 240,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F0D0",
+      "provenance": "{\"calls\":[[\"src/hum.c\",1588,\"0\"],[\"src/hum.c\",1592,\"0\"],[\"src/hum.c\",1597,\"0\"],[\"src/hum.c\",1625,\"0\"],[\"src/hum.c\",1661,\"1\"],[\"src/hum.c\",1681,\"0\"],[\"src/hum.c\",1729,\"2\"],[\"src/hum.c\",1762,\"0\"],[\"src/hum.c\",1778,\"0\"],[\"src/hum.c\",1912,\"4\"],[\"src/hum.c\",1937,\"5\"],[\"src/hum.c\",1992,\"6\"],[\"src/hum.c\",2006,\"3\"]],\"max_index\":6}",
+      "us": "0x813f0d0",
+      "targets": {
+        "jp": "0x813f14c",
+        "eu": "0x888d5a4"
+      },
+      "size": 112,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F140",
+      "provenance": "{\"calls\":[[\"src/hum.c\",1589,\"0\"],[\"src/hum.c\",1593,\"0\"],[\"src/hum.c\",1598,\"0\"],[\"src/hum.c\",1626,\"0\"],[\"src/hum.c\",1662,\"1\"],[\"src/hum.c\",1682,\"2\"],[\"src/hum.c\",1730,\"3\"],[\"src/hum.c\",1763,\"5\"],[\"src/hum.c\",1779,\"4\"],[\"src/hum.c\",1848,\"0\"],[\"src/hum.c\",1873,\"7\"],[\"src/hum.c\",1913,\"7\"],[\"src/hum.c\",1938,\"8\"],[\"src/hum.c\",1993,\"9\"],[\"src/hum.c\",2007,\"6\"]],\"max_index\":9}",
+      "us": "0x813f140",
+      "targets": {
+        "jp": "0x813f1bc",
+        "eu": "0x888d614"
+      },
+      "size": 160,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F22C",
+      "provenance": "{\"calls\":[[\"src/hum.c\",2202,\"1\"],[\"src/hum.c\",2220,\"0\"],[\"src/hum.c\",2222,\"1\"],[\"src/hum.c\",2226,\"1\"],[\"src/hum.c\",2228,\"0\"],[\"src/hum.c\",2240,\"2\"],[\"src/hum.c\",2244,\"6\"],[\"src/hum.c\",2276,\"4\"],[\"src/hum.c\",2337,\"7\"],[\"src/hum.c\",2354,\"8\"],[\"src/hum.c\",2530,\"9\"],[\"src/hum.c\",2543,\"5\"],[\"src/hum.c\",2591,\"3\"]],\"max_index\":9}",
+      "us": "0x813f22c",
+      "targets": {
+        "jp": "0x813f2a8",
+        "eu": "0x888d700"
+      },
+      "size": 160,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F2CC",
+      "provenance": "{\"calls\":[[\"src/hum.c\",2246,\"0\"],[\"src/hum.c\",2278,\"2\"],[\"src/hum.c\",2296,\"3\"],[\"src/hum.c\",2545,\"1\"],[\"src/hum.c\",2593,\"4\"]],\"max_index\":4}",
+      "us": "0x813f2cc",
+      "targets": {
+        "jp": "0x813f348",
+        "eu": "0x888d7a0"
+      },
+      "size": 80,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F368",
+      "provenance": "{\"calls\":[[\"src/hum.c\",2852,\"0\"],[\"src/hum.c\",2937,\"0\"],[\"src/hum.c\",2940,\"0\"],[\"src/hum.c\",2957,\"0\"],[\"src/hum.c\",2987,\"1\"],[\"src/hum.c\",3012,\"2\"],[\"src/hum.c\",3015,\"1\"],[\"src/hum.c\",3043,\"1\"],[\"src/hum.c\",3070,\"4\"],[\"src/hum.c\",3083,\"5\"],[\"src/hum.c\",3097,\"6\"],[\"src/hum.c\",3110,\"7\"],[\"src/hum.c\",3145,\"10\"],[\"src/hum.c\",3165,\"11\"],[\"src/hum.c\",3191,\"12\"],[\"src/hum.c\",3205,\"8\"],[\"src/hum.c\",3234,\"9\"],[\"src/hum.c\",3270,\"3\"]],\"max_index\":12}",
+      "us": "0x813f368",
+      "targets": {
+        "jp": "0x813f3e4",
+        "eu": "0x888d83c"
+      },
+      "size": 208,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F438",
+      "provenance": "{\"calls\":[[\"src/hum.c\",3295,\"0\"]],\"max_index\":0}",
+      "us": "0x813f438",
+      "targets": {
+        "jp": "0x813f4b4",
+        "eu": "0x888d90c"
+      },
+      "size": 16,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F498",
+      "provenance": "{\"calls\":[[\"src/hum.c\",3510,\"0\"],[\"src/hum.c\",3513,\"0\"],[\"src/hum.c\",3516,\"0\"],[\"src/hum.c\",3530,\"1\"],[\"src/hum.c\",3542,\"2\"],[\"src/hum.c\",3570,\"3\"],[\"src/hum.c\",3574,\"6\"],[\"src/hum.c\",3587,\"7\"],[\"src/hum.c\",3607,\"9\"],[\"src/hum.c\",3620,\"10\"],[\"src/hum.c\",3643,\"11\"],[\"src/hum.c\",3656,\"6\"],[\"src/hum.c\",3670,\"7\"],[\"src/hum.c\",3688,\"8\"],[\"src/hum.c\",3702,\"12\"],[\"src/hum.c\",3744,\"5\"],[\"src/hum.c\",3746,\"4\"],[\"src/hum.c\",3836,\"13\"],[\"src/hum.c\",3838,\"14\"],[\"src/hum.c\",3959,\"13\"],[\"src/hum.c\",3961,\"14\"],[\"src/hum.c\",4071,\"12\"]],\"max_index\":14}",
+      "us": "0x813f498",
+      "targets": {
+        "jp": "0x813f514",
+        "eu": "0x888d96c"
+      },
+      "size": 240,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F5E0",
+      "provenance": "{\"calls\":[[\"src/hum.c\",4351,\"0\"],[\"src/hum.c\",4354,\"0\"],[\"src/hum.c\",4357,\"0\"],[\"src/hum.c\",4405,\"2\"],[\"src/hum.c\",4409,\"1\"],[\"src/hum.c\",4429,\"5\"],[\"src/hum.c\",4445,\"6\"],[\"src/hum.c\",4486,\"7\"],[\"src/hum.c\",4501,\"8\"],[\"src/hum.c\",4584,\"9\"],[\"src/hum.c\",4649,\"9\"],[\"src/hum.c\",4723,\"9\"],[\"src/hum.c\",4776,\"10\"],[\"src/hum.c\",4789,\"3\"],[\"src/hum.c\",4828,\"4\"],[\"src/hum.c\",4864,\"11\"],[\"src/hum.c\",4880,\"12\"],[\"src/hum.c\",4911,\"13\"],[\"src/hum.c\",4927,\"0\"]],\"max_index\":13}",
+      "us": "0x813f5e0",
+      "targets": {
+        "jp": "0x813f65c",
+        "eu": "0x888dab4"
+      },
+      "size": 224,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F6C0",
+      "provenance": "{\"calls\":[[\"src/hum.c\",4446,\"0\"],[\"src/hum.c\",4504,\"6\"],[\"src/hum.c\",4505,\"2\"],[\"src/hum.c\",4519,\"7\"],[\"src/hum.c\",4520,\"3\"],[\"src/hum.c\",4524,\"8\"],[\"src/hum.c\",4525,\"4\"],[\"src/hum.c\",4528,\"9\"],[\"src/hum.c\",4529,\"5\"],[\"src/hum.c\",4585,\"1\"],[\"src/hum.c\",4586,\"1\"],[\"src/hum.c\",4650,\"1\"],[\"src/hum.c\",4651,\"1\"],[\"src/hum.c\",4724,\"1\"],[\"src/hum.c\",4725,\"1\"]],\"max_index\":9}",
+      "us": "0x813f6c0",
+      "targets": {
+        "jp": "0x813f73c",
+        "eu": "0x888db94"
+      },
+      "size": 160,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F7D8",
+      "provenance": "{\"calls\":[[\"src/hum.c\",5201,\"0\"],[\"src/hum.c\",5204,\"0\"],[\"src/hum.c\",5209,\"0\"],[\"src/hum.c\",5225,\"1\"],[\"src/hum.c\",5272,\"2\"],[\"src/hum.c\",5276,\"3\"],[\"src/hum.c\",5307,\"2\"],[\"src/hum.c\",5326,\"4\"],[\"src/hum.c\",5350,\"5\"],[\"src/hum.c\",5364,\"6\"],[\"src/hum.c\",5376,\"7\"],[\"src/hum.c\",5388,\"4\"],[\"src/hum.c\",5441,\"8\"],[\"src/hum.c\",5474,\"9\"],[\"src/hum.c\",5487,\"10\"],[\"src/hum.c\",5499,\"11\"],[\"src/hum.c\",5511,\"4\"],[\"src/hum.c\",5529,\"12\"],[\"src/hum.c\",5542,\"13\"],[\"src/hum.c\",5554,\"14\"],[\"src/hum.c\",5567,\"4\"]],\"max_index\":14}",
+      "us": "0x813f7d8",
+      "targets": {
+        "jp": "0x813f854",
+        "eu": "0x888dcac"
+      },
+      "size": 240,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813F91C",
+      "provenance": "{\"calls\":[[\"src/hum.c\",5822,\"0\"],[\"src/hum.c\",5849,\"2\"],[\"src/hum.c\",5852,\"7\"],[\"src/hum.c\",5855,\"10\"],[\"src/hum.c\",5874,\"4\"],[\"src/hum.c\",5877,\"8\"],[\"src/hum.c\",5880,\"11\"],[\"src/hum.c\",5899,\"6\"],[\"src/hum.c\",5902,\"9\"],[\"src/hum.c\",5905,\"12\"],[\"src/hum.c\",5944,\"1\"],[\"src/hum.c\",5956,\"5\"]],\"max_index\":12}",
+      "us": "0x813f91c",
+      "targets": {
+        "jp": "0x813f998",
+        "eu": "0x888ddf0"
+      },
+      "size": 208,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813FA98",
+      "provenance": "{\"calls\":[[\"src/hum.c\",6168,\"0\"],[\"src/hum.c\",6172,\"0\"],[\"src/hum.c\",6175,\"0\"],[\"src/hum.c\",6192,\"1\"],[\"src/hum.c\",6221,\"2\"],[\"src/hum.c\",6226,\"7\"],[\"src/hum.c\",6261,\"8\"],[\"src/hum.c\",6279,\"5\"],[\"src/hum.c\",6312,\"6\"],[\"src/hum.c\",6342,\"3\"],[\"src/hum.c\",6422,\"4\"],[\"src/hum.c\",6459,\"0\"],[\"src/hum.c\",6469,\"9\"]],\"max_index\":9}",
+      "us": "0x813fa98",
+      "targets": {
+        "jp": "0x813fb14",
+        "eu": "0x888df6c"
+      },
+      "size": 160,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813FBD4",
+      "provenance": "{\"calls\":[[\"src/hum.c\",7262,\"0\"],[\"src/hum.c\",7265,\"0\"],[\"src/hum.c\",7278,\"0\"],[\"src/hum.c\",7301,\"1\"],[\"src/hum.c\",7326,\"2\"],[\"src/hum.c\",7329,\"2\"],[\"src/hum.c\",7347,\"14\"],[\"src/hum.c\",7364,\"15\"],[\"src/hum.c\",7390,\"16\"],[\"src/hum.c\",7414,\"17\"],[\"src/hum.c\",7423,\"18\"],[\"src/hum.c\",7432,\"19\"],[\"src/hum.c\",7490,\"20\"],[\"src/hum.c\",7514,\"10\"],[\"src/hum.c\",7557,\"13\"],[\"src/hum.c\",7618,\"0\"],[\"src/hum.c\",7630,\"9\"],[\"src/hum.c\",7701,\"8\"],[\"src/hum.c\",7787,\"3\"],[\"src/hum.c\",7803,\"5\"],[\"src/hum.c\",7805,\"4\"],[\"src/hum.c\",7816,\"11\"],[\"src/hum.c\",7836,\"12\"],[\"src/hum.c\",7855,\"3\"],[\"src/hum.c\",7870,\"4\"],[\"src/hum.c\",7872,\"5\"],[\"src/hum.c\",7875,\"5\"],[\"src/hum.c\",7877,\"6\"],[\"src/hum.c\",7889,\"7\"]],\"max_index\":20}",
+      "us": "0x813fbd4",
+      "targets": {
+        "jp": "0x813fc50",
+        "eu": "0x888e0a8"
+      },
+      "size": 336,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813FD58",
+      "provenance": "{\"calls\":[[\"src/hum.c\",7931,\"0\"],[\"src/hum.c\",7965,\"0\"],[\"src/hum.c\",7970,\"1\"],[\"src/hum.c\",7973,\"3\"],[\"src/hum.c\",7977,\"2\"],[\"src/hum.c\",7980,\"0\"],[\"src/hum.c\",7994,\"4\"],[\"src/hum.c\",8025,\"3\"]],\"max_index\":4}",
+      "us": "0x813fd58",
+      "targets": {
+        "jp": "0x813fdd4",
+        "eu": "0x888e22c"
+      },
+      "size": 80,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813FDD4",
+      "provenance": "{\"calls\":[[\"src/hum.c\",8059,\"0\"],[\"src/hum.c\",8075,\"1\"],[\"src/hum.c\",8079,\"0\"]],\"max_index\":1}",
+      "us": "0x813fdd4",
+      "targets": {
+        "jp": "0x813fe50",
+        "eu": "0x888e2a8"
+      },
+      "size": 32,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "name": "gUnk_0813E834PalettePointer",
+      "provenance": "The first pointer field of the independently task-referenced EmyDef is consumed as palette backing by func_0800C778. This four-byte evidence span deliberately excludes the next field, which points into newly compiler-owned default AnimDef metadata.",
+      "us": "0x813e834",
+      "targets": {
+        "jp": "0x813e8b0",
+        "eu": "0x888cd08"
+      },
+      "size": 4,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "gUnk_09EE4BF4",
+      "provenance": "Mapcard_0 selects back records through MapCardDef.unk_1E; all260 values range1..4, proving the index4 record. The independently referenced front-card array begins exactly after5 complete28-byte back definitions. The first record shares the fully validated pointer roles and scalar structure in every region; it is not selected by the front-card back-index fields.",
+      "us": "0x9ee4bf4",
+      "targets": {
+        "jp": "0x9ebc24c",
+        "eu": "0x9f6ffb0"
+      },
+      "size": 140,
+      "stride": 28,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ]
+    },
+    {
+      "name": "gUnk_09EE4C80",
+      "provenance": "Mapcard_0 and mode_ms2.c consume the canonical40-byte records. All26 consecutive ten-record groups have coherent card metadata, with the final group25 containing exact value indices0..9 through record259. Record260 starts the independently indexed six-s16 position table and cannot be a six-ROM-pointer descriptor. mode_ms2.c:861 has an existing k<=26 overread of record260.unk_24: it is0x6400 in allregions and fails the category comparison. No261st descriptor is fabricated; unchanged consumer text is verified.",
+      "us": "0x9ee4c80",
+      "targets": {
+        "jp": "0x9ebc2d8",
+        "eu": "0x9f7003c"
+      },
+      "size": 10400,
+      "stride": 40,
+      "pointer_offsets": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20
+      ]
     }
   ]
 }

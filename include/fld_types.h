@@ -2,6 +2,7 @@
 #define GUARD_FLD_TYPES_H
 
 #include "types.h"
+#include "anim.h"
 #include "listpool.h"
 
 typedef struct FldPos {
@@ -11,13 +12,7 @@ typedef struct FldPos {
     s32 unk_0C;
 } FldPos;
 
-typedef struct FldAnimDef {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} FldAnimDef;
+typedef AnimDef FldAnimDef;
 
 typedef struct FldRes {
     u8 unk_00[0x06];

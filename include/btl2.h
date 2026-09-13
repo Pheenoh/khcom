@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL2_H
 #define GUARD_BTL2_H
 
+#include "animation_resource_data.h"
+
 #include "bg_animation_data.h"
 
 #include "field_state.h"
@@ -205,7 +207,7 @@ extern u8 gUnk_0203DEA0[];
 extern u8 gUnk_0203DEE0[];
 extern u8 gUnk_0203DF20[];
 extern s16 gSineTable[];
-extern FldAnimDef gUnk_0813C89C[][5];
+extern AnimDef gUnk_0813C89C[15][5];
 extern u8 gUnk_08B1E7F4[];
 extern u8 gUnk_08B1EB1C[];
 extern u8 gUnk_08B1ED76[];
@@ -285,14 +287,10 @@ extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09618118[];
 extern void* gUnk_09EE115C[];
 extern void* gUnk_09EE11A4[];
-extern u8 gUnk_09EE1244[];
-extern u8 gUnk_09EE1278[];
 extern u8 gUnk_09EE12A4[];
 extern u8 gUnk_09EE12B0[];
 extern u8 gUnk_09EE12BC[];
 extern u8 gUnk_09EE12C8[];
-extern u8 gUnk_09EE1420[];
-extern u8 gUnk_09EE1498[];
 
 void func_08031BC4(FldActor* act);
 

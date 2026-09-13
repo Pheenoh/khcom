@@ -2,6 +2,8 @@
 #ifndef GUARD_MAP_H
 #define GUARD_MAP_H
 
+#include "animation_resource_data.h"
+
 #include "map_transition_state.h"
 
 #include "graphics_state.h"
@@ -1216,29 +1218,15 @@ typedef struct UnkStruct_080EE580 {
     FldRes* unk_188;
 } UnkStruct_080EE580;
 
-extern u8 gUnk_09EDF834[];
-extern u8 gUnk_09EDF85C[];
 extern u8 gUnk_093A5E10[];
 extern u8 gUnk_096183F8[];
-extern u8 gUnk_09EF0824[];
-extern u8 gUnk_09EF0820[];
 extern u8 gUnk_08988980[];
 extern u8 gUnk_08F69804[];
-extern u8 gUnk_09EDFC3C[];
-extern u8 gUnk_09EDFB5C[];
 extern u8 gUnk_089D8148[];
 extern u8 gUnk_08F69924[];
-extern u8 gUnk_09EE00F0[];
-extern u8 gUnk_09EE00D0[];
-extern u8 gUnk_09EDFCBC[];
-extern u8 gUnk_09EDFCF4[];
 extern u8 gUnk_0899A8BE[];
 extern u8 gUnk_08F691E4[];
 extern u8 gUnk_0895EECC[];
-extern u8 gUnk_09EDF914[];
-extern u8 gUnk_09EDF940[];
-extern u8 gUnk_09EDF9A8[];
-extern u8 gUnk_09EDF9BC[];
 extern u8 gUnk_08963BAC[];
 extern u8 gUnk_08957290[];
 extern u8 gUnk_08B1E974[];
@@ -1297,8 +1285,6 @@ extern u8 gUnk_0815A03A[];
 extern u8 gUnk_0815B5A6[];
 extern u8 gUnk_093E1EE0[];
 extern u8 gUnk_096184D8[];
-extern u8 gUnk_09EF0D48[];
-extern u8 gUnk_09EF0D64[];
 extern u8 gUnk_08159E1E[];
 extern u8 gUnk_0998CF44[];
 extern u8 gUnk_0998F744[];
@@ -1341,7 +1327,6 @@ extern u8 gUnk_099910C4[];
 extern u8 gUnk_09991984[];
 extern u8 gUnk_09617C58[];
 extern u8 gUnk_091ABDB8[];
-extern u8 gUnk_09EEE1CC[];
 extern u8 gUnk_09954B64[];
 extern u8 gUnk_09991924[];
 extern u8 gUnk_09991944[];
@@ -1384,11 +1369,6 @@ extern u8 gUnk_098A8AE2[];
 extern u8 gUnk_09957C24[];
 extern u8 gUnk_09957F24[];
 extern u8 gUnk_098A8F28[];
-extern void* gUnk_09EEFEC0[];
-extern void* gUnk_09EEFF84[];
-extern u8 gUnk_09EDE8CC[];
-extern u8 gUnk_09EEE1C8[];
-extern void* gUnk_09EEF89C[];
 extern void* gUnk_09EF8D68[];
 extern u8 gUnk_08F68384[];
 extern u8 gUnk_098A5C90[];
@@ -1398,8 +1378,6 @@ extern u8 gUnk_098A5CAE[];
 extern u8 gUnk_098A5CB8[];
 extern u8 gUnk_098A5CF4[];
 extern u8 gUnk_0919FDF8[];
-extern u8 gUnk_09EEE0A8[];
-extern u8 gUnk_09EEE03C[];
 extern u8 gUnk_09958124[];
 extern u8 gUnk_092EB78A[];
 extern u8 gUnk_088B6560[];
@@ -1447,12 +1425,7 @@ extern u8 gUnk_0937E90A[];
 extern u8 gUnk_0938044A[];
 extern u8 gUnk_0938D282[];
 extern u8 gUnk_09618338[];
-extern u8 gUnk_09EF04D4[];
-extern u8 gUnk_09EF04D8[];
 extern u8 gUnk_09EF04FC[];
-extern u8 gUnk_09EF0510[];
-extern u8 gUnk_09EF060C[];
-extern u8 gUnk_09EF0628[];
 void func_080E6394(UnkStruct_080E590C* p, UnkStruct_080E5B90* q);
 void func_080F5C60(MapDonaldWork* w);
 void func_080F5CDC(MapDonaldWork* w);

@@ -27,7 +27,7 @@
 
 
 
-extern FldAnimDef gUnk_0813CDDC[][5];
+extern AnimDef gUnk_0813CDDC[15][5];
 
 typedef struct FldShadowWork {
     s32 unk_00;
@@ -43,8 +43,8 @@ void func_0803473C(FldWork* work, s32 index, u16 flags);
 void func_080A5830(void* a, s32 x, s32 y, s32 z);
 
 extern TaskDesc gTaskDescFldShadow;
-extern u16 gUnk_0813CD4C[][8];
-extern u16 gUnk_0813D28C[][8];
+extern u16 gUnk_0813CD4C[8][8];
+extern u16 gUnk_0813D28C[8][8];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08B22BBC[];

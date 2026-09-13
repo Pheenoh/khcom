@@ -26,6 +26,7 @@ import struct
 from pathlib import Path
 
 from rom_data_evidence import data_symbol_map, load_evidence
+from function_pointer_evidence import literal_pointer_pairs, load_literal_loads, load_opaque_function_modes, trace_literal_loads
 from regional_data import asset_symbols, load_sidecars, managed_placements, merge_placements, placement_overrides
 
 ROM_BASE = 0x08000000
@@ -1056,6 +1057,7 @@ TARGET_DATA_SIZE = {
 TARGET_BLOB_REGIONS = {
     "jp": ((0x0813BA86, "rodata_tasknames_alignment"),),
     "eu": (
+        (0x0812FB22, "rodata_tables3"),
         (0x08889EDE, "rodata_tasknames_alignment"),
         (0x09F49910, "rodata_registrations"),
     ),
@@ -1288,7 +1290,8 @@ def complete(rows, code_end, flexible, unit_of=None, clean=None, fixed=None):
     return rows
 
 
-def symbol_map(rows, us, ot):
+def symbol_map(rows, us, ot, literal_loads, opaque_modes=None):
+    opaque_modes = opaque_modes or {}
     pairs = {}
     for nm, ua, sz, va, how, vsz in rows:
         if va is None or vsz != sz or sz == 0:
@@ -1297,12 +1300,12 @@ def symbol_map(rows, us, ot):
         b = ot[va - ROM_BASE:va - ROM_BASE + sz]
         if len(b) != sz or not near_identical(mask(a), mask(b)):
             continue
-        for k in range(0, sz - 3, 4):
-            w1 = struct.unpack_from("<I", a, k)[0]
-            w2 = struct.unpack_from("<I", b, k)[0]
-            if (w1 >> 24) in (0x02, 0x03, 0x08, 0x09) and (w2 >> 24) in (0x02, 0x03, 0x08, 0x09):
-                pairs.setdefault(w1, {})
-                pairs[w1][w2] = pairs[w1].get(w2, 0) + 1
+        loads = literal_loads
+        if ua in opaque_modes:
+            loads = literal_loads | trace_literal_loads(us, ua, sz, opaque_modes[ua])
+        for w1, w2 in literal_pointer_pairs(us, ot, ua, va, sz, loads):
+            pairs.setdefault(w1, {})
+            pairs[w1][w2] = pairs[w1].get(w2, 0) + 1
     res = {}
     tied = {}
     for k, v in pairs.items():
@@ -1386,6 +1389,8 @@ def main():
     regional_plan = regional["regions"][ver]
     regional_managed = managed_placements(regional)
     regional_overrides = placement_overrides(regional_plan)
+    literal_loads = load_literal_loads("build/us/com_us.elf", ROM_BASE, CODE_HI)
+    opaque_modes = load_opaque_function_modes("build/us/com_us.elf", ROM_BASE, CODE_HI)
     rows = load_rows(ver)
 
     owner = {}
@@ -1422,7 +1427,7 @@ def main():
     provisional = [r for r in rows if r[3] is not None]
     guess_end = provisional[-1][3] + (CODE_HI - provisional[-1][1])
     rows = complete(rows, guess_end, flexible, owner, clean, fixed)
-    res = symbol_map(rows, us, ot)
+    res = symbol_map(rows, us, ot, literal_loads, opaque_modes)
     res.update(anchors)
     tr = translator(res)
 
@@ -1430,7 +1435,7 @@ def main():
     if code_end != guess_end:
         rows = load_rows(ver)
         rows = complete(rows, code_end, flexible, owner, clean, fixed)
-        res = symbol_map(rows, us, ot)
+        res = symbol_map(rows, us, ot, literal_loads, opaque_modes)
         res.update(anchors)
         tr = translator(res)
     evidence = load_evidence("config/rom_data_evidence.json")

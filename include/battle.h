@@ -3,6 +3,8 @@
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
+#include "animation_resource_data.h"
+
 #include "bg_animation_data.h"
 
 #include "field_state.h"
@@ -81,16 +83,6 @@ typedef struct BgFx {
     u16 unk_4E;
 } BgFx;
 
-typedef struct EmyKind {
-    u32 unk_00;
-    u16 unk_04;
-    s16 unk_06;
-    s16 unk_08;
-    u16 unk_0A;
-    u16 unk_0C;
-    u16 unk_0E;
-} EmyKind;
-
 typedef struct EnemySpawnRequest {
     TaskDesc* desc;
     s32 x;
@@ -126,14 +118,6 @@ typedef struct HitData {
     s16 unk_30;
     u8 unk_32[0x02];
 } HitData;
-
-typedef struct AnimDef {
-    void* unk_00;
-    s32 unk_04;
-    void* unk_08;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} AnimDef;
 
 typedef struct SprObj {
     void* unk_00;
@@ -320,32 +304,16 @@ extern Mode gModeChkbtl;
 extern AnimHeader* gUnk_09EDF514[];
 extern u32 gUnk_09EDF4F4[];
 extern u8 gUnk_08935BC2[];
-extern AnimHeader* gUnk_09EEF938[];
-extern u32 gUnk_09EEF918[];
 extern u8 gUnk_092F15E4[];
-extern AnimHeader* gUnk_09EEF914[];
-extern u32 gUnk_09EEF8F4[];
 extern u8 gUnk_092EFAD4[];
-extern AnimHeader* gUnk_09EEF8F0[];
-extern u32 gUnk_09EEF8D0[];
 extern u8 gUnk_092ED9F6[];
 extern AnimHeader* gUnk_09EDF4F0[];
 extern u32 gUnk_09EDF4D0[];
 extern u8 gUnk_0893416A[];
-extern AnimHeader* gUnk_09EDED5C[];
-extern u32 gUnk_09EDED3C[];
 extern u8 gUnk_088DC192[];
-extern AnimHeader* gUnk_09EDEB88[];
-extern u32 gUnk_09EDEB68[];
 extern u8 gUnk_088CE0C2[];
-extern AnimHeader* gUnk_09EDEA90[];
-extern u32 gUnk_09EDEA70[];
 extern u8 gUnk_088C5AAA[];
-extern AnimHeader* gUnk_09EDEA0C[];
-extern u32 gUnk_09EDE9EC[];
 extern u8 gUnk_088C1388[];
-extern AnimHeader* gUnk_09EDE940[];
-extern u32 gUnk_09EDE920[];
 extern u8 gUnk_088BAC36[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_08F683A4[];

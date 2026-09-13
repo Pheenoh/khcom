@@ -2,6 +2,8 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
+#include "animation_resource_data.h"
+
 #include "pooh_actor_state.h"
 
 #include "boss_status_state.h"
@@ -283,12 +285,8 @@ extern u8 gUnk_097A28DA[];
 extern u8 gUnk_0984B238[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_0891ED26[];
-extern u8 gUnk_09EDF38C[];
-extern u8 gUnk_09EDF374[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_088E33C2[];
-extern u8 gUnk_09EDEE14[];
-extern u8 gUnk_09EDEE08[];
 extern u8 gUnk_0984B1D8[];
 extern void* gUnk_09EF68F0[];
 extern void* gUnk_09EF6908[];

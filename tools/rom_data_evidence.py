@@ -35,7 +35,7 @@ def data_symbol_map(evidence, version, us, target, seed, us_code_end, target_cod
     names = set()
     required = {'name', 'provenance', 'us', 'targets', 'size', 'stride', 'pointer_offsets'}
     for table in evidence['tables']:
-        if not isinstance(table, dict) or set(table) != required:
+        if not isinstance(table, dict) or not required <= set(table) <= required | {'layer'}:
             raise ValueError('each evidence table requires name, provenance, us, targets, size, stride and pointer_offsets')
         name = table['name']
         if not isinstance(name, str) or not name.strip() or name in names:
@@ -43,6 +43,9 @@ def data_symbol_map(evidence, version, us, target, seed, us_code_end, target_cod
         names.add(name)
         if not isinstance(table['provenance'], str) or not table['provenance'].strip():
             raise ValueError(f'{name}: independent span provenance is required')
+        layer = table.get('layer', 0)
+        if type(layer) is not int or layer < 0:
+            raise ValueError(f'{name}: evidence layer must be a nonnegative integer')
         targets = table['targets']
         if not isinstance(targets, dict) or not targets or not set(targets) <= {'jp', 'eu'}:
             raise ValueError(f'{name}: targets must specify JP and/or EU addresses')
@@ -67,14 +70,32 @@ def data_symbol_map(evidence, version, us, target, seed, us_code_end, target_cod
         other = other_starts[version]
         if other < target_code_end or other + size > min(ROM_END, ROM_BASE + len(target)):
             raise ValueError(f'{name}: {version} span lies outside post-code ROM data')
-        spans.append((name, start, other, size, stride, sorted(offsets)))
+        spans.append((name, start, other, size, stride, sorted(offsets), layer))
     for index, label in ((1, 'US'), (2, version)):
         ordered = sorted(spans, key=lambda span: span[index])
         for left, right in zip(ordered, ordered[1:]):
             if left[index] + left[3] > right[index]:
                 raise ValueError(f'{left[0]} and {right[0]}: overlapping {label} evidence spans')
+    result, provenance = {}, {}
+    known = dict(seed)
+    for layer in sorted({span[6] for span in spans}):
+        current = [span for span in spans if span[6] == layer]
+        internal = [span for span in spans if span[6] <= layer]
+        if layer:
+            for name, start, other, _, _, _, _ in current:
+                if start in known and known[start] != other:
+                    raise ValueError(f'{name}: span base conflicts with an earlier independent mapping')
+        derived, sites = span_symbol_map(current, internal, version, us, target, known,
+                                         us_code_end, target_code_end)
+        result.update(derived)
+        provenance.update(sites)
+        known.update(derived)
+    return result, provenance
+
+
+def span_symbol_map(spans, internal_spans, version, us, target, seed, us_code_end, target_code_end):
     votes = {}
-    for name, start, other, size, stride, offsets in spans:
+    for name, start, other, size, stride, offsets, _ in spans:
         source_bytes = us[start - ROM_BASE:start - ROM_BASE + size]
         target_bytes = target[other - ROM_BASE:other - ROM_BASE + size]
         source_masked = bytearray(source_bytes)
@@ -99,14 +120,14 @@ def data_symbol_map(evidence, version, us, target, seed, us_code_end, target_cod
                     raise ValueError(f'{site}: pointer slots require corresponding post-code ROM data or NULL')
                 if source_word in seed and seed[source_word] != target_word:
                     raise ValueError(f'{site}: data pointer conflicts with independent mapping for {source_word:#010x}')
-                internal = [span for span in spans
+                internal = [span for span in internal_spans
                             if span[1] <= source_word < span[1] + span[3]
                             or span[2] <= target_word < span[2] + span[3]]
                 if internal:
                     anchored = any(seed.get(left) == right
                                    and 0 <= source_word - left < length
                                    and source_word - left == target_word - right
-                                   for _, left, right, length, _, _ in internal)
+                                   for _, left, right, length, _, _, _ in internal)
                     if seed.get(source_word) != target_word and not anchored:
                         raise ValueError(f'{site}: self or circular table pointers need independent mappings')
                     continue

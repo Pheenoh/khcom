@@ -659,30 +659,30 @@ void func_0801E518(BtlSoraWork* work) {
     } else {
         switch (func_0801DC80(work)) {
         case 0:
-            work->unk_164 = gUnk_0813C1D4;
-            work->unk_168 = gUnk_0813C1EC;
-            work->unk_16C = gUnk_0813C21C;
+            work->unk_164 = &gUnk_0813C1D4;
+            work->unk_168 = &gUnk_0813C1EC;
+            work->unk_16C = &gUnk_0813C21C;
             break;
         case 1:
-            work->unk_164 = gUnk_0813C1EC;
-            work->unk_168 = gUnk_0813C1D4;
-            work->unk_16C = gUnk_0813C21C;
+            work->unk_164 = &gUnk_0813C1EC;
+            work->unk_168 = &gUnk_0813C1D4;
+            work->unk_16C = &gUnk_0813C21C;
             break;
         case 2:
-            work->unk_164 = gUnk_0813C24C;
-            work->unk_168 = gUnk_0813C264;
-            work->unk_16C = gUnk_0813C27C;
+            work->unk_164 = &gUnk_0813C24C;
+            work->unk_168 = &gUnk_0813C264;
+            work->unk_16C = &gUnk_0813C27C;
             break;
         case 3:
-            work->unk_164 = gUnk_0813C234;
-            work->unk_168 = gUnk_0813C24C;
-            work->unk_16C = gUnk_0813C27C;
+            work->unk_164 = &gUnk_0813C234;
+            work->unk_168 = &gUnk_0813C24C;
+            work->unk_16C = &gUnk_0813C27C;
             break;
         case 4:
         default:
-            work->unk_164 = gUnk_0813C204;
-            work->unk_168 = gUnk_0813C1EC;
-            work->unk_16C = gUnk_0813C21C;
+            work->unk_164 = &gUnk_0813C204;
+            work->unk_168 = &gUnk_0813C1EC;
+            work->unk_16C = &gUnk_0813C21C;
             break;
         }
         work->unk_038 = 16;
@@ -6693,30 +6693,30 @@ void func_080280E0(BtlRikuWork* work) {
     } else {
         switch (func_08027468(work)) {
         case 0:
-            work->unk_168 = gUnk_0813C6E8;
-            work->unk_16C = gUnk_0813C704;
-            work->unk_170 = gUnk_0813C73C;
+            work->unk_168 = &gUnk_0813C6E8;
+            work->unk_16C = &gUnk_0813C704;
+            work->unk_170 = &gUnk_0813C73C;
             break;
         case 1:
-            work->unk_168 = gUnk_0813C704;
-            work->unk_16C = gUnk_0813C6E8;
-            work->unk_170 = gUnk_0813C73C;
+            work->unk_168 = &gUnk_0813C704;
+            work->unk_16C = &gUnk_0813C6E8;
+            work->unk_170 = &gUnk_0813C73C;
             break;
         case 2:
-            work->unk_168 = gUnk_0813C774;
-            work->unk_16C = gUnk_0813C790;
-            work->unk_170 = gUnk_0813C7AC;
+            work->unk_168 = &gUnk_0813C774;
+            work->unk_16C = &gUnk_0813C790;
+            work->unk_170 = &gUnk_0813C7AC;
             break;
         case 3:
-            work->unk_168 = gUnk_0813C758;
-            work->unk_16C = gUnk_0813C774;
-            work->unk_170 = gUnk_0813C7AC;
+            work->unk_168 = &gUnk_0813C758;
+            work->unk_16C = &gUnk_0813C774;
+            work->unk_170 = &gUnk_0813C7AC;
             break;
         case 4:
         default:
-            work->unk_168 = gUnk_0813C720;
-            work->unk_16C = gUnk_0813C704;
-            work->unk_170 = gUnk_0813C73C;
+            work->unk_168 = &gUnk_0813C720;
+            work->unk_16C = &gUnk_0813C704;
+            work->unk_170 = &gUnk_0813C73C;
             break;
         }
         work->unk_03C = 9;

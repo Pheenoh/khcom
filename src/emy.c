@@ -3,7 +3,7 @@
 #include "emy.h"
 
 void task_emy_00_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813D3CC, obj);
+    func_0800C778(work, &gUnk_0813D3CC, obj);
     work->unk_158 |= 1;
     work->unk_150 = 0x12;
     work->unk_14C = 0x16;
@@ -240,7 +240,7 @@ void task_emy_00_3(EmyWork* work) {
 }
 
 void task_emy_01_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813D454, obj);
+    func_0800C778(work, &gUnk_0813D454, obj);
     work->unk_150 = 7;
 }
 
@@ -337,7 +337,7 @@ void task_emy_01_3(EmyWork* work) {
 }
 
 void task_emy_02_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813D4DC, obj);
+    func_0800C778(work, &gUnk_0813D4DC, obj);
     work->unk_150 = 7;
 }
 
@@ -434,7 +434,7 @@ void task_emy_02_3(EmyWork* work) {
 }
 
 void task_emy_03_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813D564, obj);
+    func_0800C778(work, &gUnk_0813D564, obj);
     work->unk_150 = 7;
 }
 
@@ -505,7 +505,7 @@ void task_emy_03_3(EmyWork* work) {
 }
 
 void task_emy_04_0(Emy04Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813D5DC, obj);
+    func_0800C778(&work->base, &gUnk_0813D5DC, obj);
     work->base.unk_150 = 7;
     work->unk_184 = 0;
     work->unk_186 = 0;
@@ -527,7 +527,7 @@ u8 task_emy_04_1(Emy04Work* work) {
 
     switch (work->base.unk_14C) {
     case 0x12:
-        func_08019068(gUnk_0813D5CC, &work->base.anim, 0, 0, work->base.tiles);
+        func_08019068(&gUnk_0813D5CC, &work->base.anim, 0, 0, work->base.tiles);
         work->base.unk_168 = 0;
 
         if (work->unk_186 > 2) {
@@ -588,7 +588,7 @@ void task_emy_04_3(EmyWork* work) {
 }
 
 void task_emy_06_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813D664, obj);
+    func_0800C778(work, &gUnk_0813D664, obj);
     work->unk_150 = 7;
 }
 
@@ -709,7 +709,7 @@ void task_emy_06_3(EmyWork* work) {
 }
 
 void task_emy_07_0(Emy07Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813D73C, obj);
+    func_0800C778(&work->base, &gUnk_0813D73C, obj);
     work->unk_184 = 0;
     work->unk_186 = 0;
     work->base.unk_150 = 0x12;
@@ -942,7 +942,7 @@ void task_emy_07_3(EmyWork* work) {
 }
 
 void task_emy_08_0(Emy08Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813D804, obj);
+    func_0800C778(&work->base, &gUnk_0813D804, obj);
     work->palette = LoadObjPalette(gUnk_08F698C4, 0x20);
     work->unk_188 = work->base.unk_004;
     work->unk_18C = 0;
@@ -1136,7 +1136,7 @@ void task_emy_08_3(Emy08Work* work) {
 }
 
 void task_emy_14_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813D88C, obj);
+    func_0800C778(work, &gUnk_0813D88C, obj);
 }
 
 u8 task_emy_14_1(EmyWork* work) {
@@ -1182,7 +1182,7 @@ void task_emy_14_3(EmyWork* work) {
 }
 
 void task_emy_15_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813D944, obj);
+    func_0800C778(work, &gUnk_0813D944, obj);
 }
 
 u8 task_emy_15_1(EmyWork* work) {
@@ -1275,7 +1275,7 @@ void task_emy_15_3(EmyWork* work) {
 }
 
 void task_emy_16_0(Emy16Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813D9CC, obj);
+    func_0800C778(&work->base, &gUnk_0813D9CC, obj);
     work->unk_184 = 0;
     work->unk_188 = 0;
     TaskPoolInit(&work->unk_18C, 2);
@@ -1590,7 +1590,7 @@ void task_emy_16_p_3(Emy16pWork* work) {
 }
 
 void task_emy_18_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813DA94, obj);
+    func_0800C778(work, &gUnk_0813DA94, obj);
     work->unk_03C.unk_00C = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
@@ -1741,7 +1741,7 @@ void task_emy_18_3(EmyWork* work) {
 }
 
 void task_emy_19_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813DB4C, obj);
+    func_0800C778(work, &gUnk_0813DB4C, obj);
 }
 
 u8 task_emy_19_1(Emy19Work* work) {
@@ -1874,7 +1874,7 @@ void task_emy_19_3(EmyWork* work) {
 }
 
 void task_emy_21_0(Emy21Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813DBF4, obj);
+    func_0800C778(&work->base, &gUnk_0813DBF4, obj);
     work->unk_184 = 0;
 }
 
@@ -2034,7 +2034,7 @@ void task_emy_21_3(EmyWork* work) {
 }
 
 void task_emy_22_0(Emy22Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813DC7C, obj);
+    func_0800C778(&work->base, &gUnk_0813DC7C, obj);
     work->base.unk_150 = 7;
     work->unk_184 = 0;
 }
@@ -2185,7 +2185,7 @@ void task_emy_22_3(EmyWork* work) {
 }
 
 void task_emy_23_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813DD04, obj);
+    func_0800C778(work, &gUnk_0813DD04, obj);
     work->unk_150 = 7;
 }
 
@@ -2278,7 +2278,7 @@ void task_emy_23_3(EmyWork* work) {
 }
 
 void task_emy_25_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813DD8C, obj);
+    func_0800C778(work, &gUnk_0813DD8C, obj);
 }
 
 u8 task_emy_25_1(EmyWork* work) {
@@ -2434,7 +2434,7 @@ void task_emy_25_3(EmyWork* work) {
 }
 
 void task_emy_26_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813DE14, obj);
+    func_0800C778(work, &gUnk_0813DE14, obj);
     work->unk_03C.unk_00C = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
@@ -2541,7 +2541,7 @@ void task_emy_26_3(EmyWork* work) {
 }
 
 void task_emy_27_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813DE9C, obj);
+    func_0800C778(work, &gUnk_0813DE9C, obj);
 }
 
 u8 task_emy_27_1(EmyWork* work) {
@@ -2632,7 +2632,7 @@ void task_emy_27_3(EmyWork* work) {
 }
 
 void task_emy_28_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813DF44, obj);
+    func_0800C778(work, &gUnk_0813DF44, obj);
     work->unk_03C.unk_00C = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
@@ -2793,7 +2793,7 @@ void task_emy_28_3(EmyWork* work) {
 }
 
 void task_emy_29_0(Emy29Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813DFCC, obj);
+    func_0800C778(&work->base, &gUnk_0813DFCC, obj);
     work->base.unk_16C = 0x180;
     work->base.unk_150 = 7;
     work->base.unk_158 |= 1;
@@ -2913,7 +2913,7 @@ void task_emy_29_3(EmyWork* work) {
 }
 
 void task_emy_30_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E0B4, obj);
+    func_0800C778(work, &gUnk_0813E0B4, obj);
     work->unk_03C.unk_00C = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
@@ -3180,7 +3180,7 @@ void task_emy_30_3(EmyWork* work) {
 }
 
 void task_emy_31_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E14C, obj);
+    func_0800C778(work, &gUnk_0813E14C, obj);
     work->unk_150 = 7;
 }
 
@@ -3408,7 +3408,7 @@ void task_emy_31_3(EmyWork* work) {
 }
 
 void task_emy_37_0(Emy37Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813E264, obj);
+    func_0800C778(&work->base, &gUnk_0813E264, obj);
     work->base.unk_158 |= 1;
     work->base.unk_150 = 0x12;
     work->base.unk_14C = 0x1C;
@@ -3754,7 +3754,7 @@ void task_emy_37_3(EmyWork* work) {
 }
 
 void task_emy_38_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E2EC, obj);
+    func_0800C778(work, &gUnk_0813E2EC, obj);
 }
 
 u8 task_emy_38_1(EmyWork* work) {
@@ -3827,7 +3827,7 @@ void task_emy_38_3(EmyWork* work) {
 }
 
 void task_emy_39_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E374, obj);
+    func_0800C778(work, &gUnk_0813E374, obj);
 }
 
 u8 task_emy_39_1(Emy39Work* work) {
@@ -3980,7 +3980,7 @@ void task_emy_39_3(EmyWork* work) {
 }
 
 void task_emy_41_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E3FC, obj);
+    func_0800C778(work, &gUnk_0813E3FC, obj);
     work->unk_150 = 7;
 }
 
@@ -4053,7 +4053,7 @@ void task_emy_41_3(EmyWork* work) {
 }
 
 void task_emy_44_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E484, obj);
+    func_0800C778(work, &gUnk_0813E484, obj);
 }
 
 u8 task_emy_44_1(EmyWork* work) {
@@ -4141,7 +4141,7 @@ void task_emy_44_3(EmyWork* work) {
 }
 
 void task_emy_81_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E53C, obj);
+    func_0800C778(work, &gUnk_0813E53C, obj);
 }
 
 static inline s32 EmyFacingX(BtlObj* actor, s32 offset) {
@@ -4395,7 +4395,7 @@ void task_emy_81_3(EmyWork* work) {
 }
 
 void task_emy_82_0(Emy82Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813E604, obj);
+    func_0800C778(&work->base, &gUnk_0813E604, obj);
     work->base.unk_150 = 0x15;
     work->unk_184 = 0;
 }
@@ -4711,7 +4711,7 @@ void task_emy_82_3(EmyWork* work) {
 }
 
 void task_emy_83_0(Emy83Work* work, void* obj) {
-    func_0800C778(&work->base, gUnk_0813E6AC, obj);
+    func_0800C778(&work->base, &gUnk_0813E6AC, obj);
     work->unk_184 = 0;
     work->base.unk_150 = 0x16;
     TaskPoolInit(&work->unk_188, 4);
@@ -5003,7 +5003,7 @@ void task_emy_83_s_3(Emy83sWork* work) {
 }
 
 void task_emy_trump_h_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E744, obj);
+    func_0800C778(work, &gUnk_0813E744, obj);
 }
 
 u8 task_emy_trump_h_1(EmyWork* work) {
@@ -5021,7 +5021,7 @@ u8 task_emy_trump_h_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x13:
-        func_08019068(gUnk_0813E734, &work->anim, 0, 0, work->tiles);
+        func_08019068(&gUnk_0813E734, &work->anim, 0, 0, work->tiles);
         func_0800C980(work, 0x19, 8, 0x0A, 0x12B, 0x30, 0x22E, 0x50, 0, 0x18);
         break;
     case 0x12:
@@ -5054,7 +5054,7 @@ void task_emy_trump_h_3(EmyWork* work) {
 }
 
 void task_emy_trump_s_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E7C4, obj);
+    func_0800C778(work, &gUnk_0813E7C4, obj);
 }
 
 u8 task_emy_trump_s_1(EmyWork* work) {
@@ -5072,7 +5072,7 @@ u8 task_emy_trump_s_1(EmyWork* work) {
 
     switch (work->unk_14C) {
     case 0x13:
-        func_08019068(gUnk_0813E7B4, &work->anim, 0, 0, work->tiles);
+        func_08019068(&gUnk_0813E7B4, &work->anim, 0, 0, work->tiles);
         func_0800C980(work, 0x14, 0x1E, 0x0A, 0x12A, 0x46, 0x22F, 0x10, 0, 0x18);
 
         if (work->unk_154 == 0x14) {
@@ -5109,7 +5109,7 @@ void task_emy_trump_s_3(EmyWork* work) {
 }
 
 void task_emy_test_0(EmyWork* work, void* obj) {
-    func_0800C778(work, gUnk_0813E834, obj);
+    func_0800C778(work, &gUnk_0813E834, obj);
     work->unk_03C.unk_02E = 0xBB8;
     work->unk_03C.unk_02C = 0xBB8;
     work->unk_03C.unk_034 |= 0x1000;

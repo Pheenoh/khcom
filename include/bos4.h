@@ -2,6 +2,8 @@
 #ifndef GUARD_BOS4_H
 #define GUARD_BOS4_H
 
+#include "animation_resource_data.h"
+
 #include "map_transition_state.h"
 
 #include "boss_status_state.h"
@@ -380,8 +382,6 @@ void task_bos_boogie_dice_3(BoogieDiceWork* work);
 extern const u8 gUnk_0984D134[][8];
 extern u8 gUnk_09799CBA[];
 extern u8 gUnk_0984AF78[];
-extern u8 gUnk_09EF680C[];
-extern u8 gUnk_09EF67FC[];
 extern u8 gUnk_09EF5190[];
 extern u8 gUnk_09EF5100[];
 extern u8 gUnk_09EF5160[];
@@ -610,9 +610,7 @@ void task_bos_ursula_0(UrsulaWork* work);
 extern u8 gUnk_096FE14C[];
 extern u8 gUnk_096FE13C[];
 extern u8 gUnk_096FE098[];
-extern u8 gUnk_09EF6824[];
 extern u8 gUnk_0979A426[];
-extern u8 gUnk_09EF6844[];
 u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
 
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg);
@@ -631,8 +629,6 @@ extern UnkStruct_096FE034 gUnk_096FE260;
 void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg);
 extern u8 gUnk_0979C44E[];
 extern u8 gUnk_0984AFD8[];
-extern u8 gUnk_09EF684C[];
-extern u8 gUnk_09EF6848[];
 
 void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg);
 u8 task_bos_boogie_disk_1(BoogieDiskWork* work);
@@ -684,8 +680,6 @@ extern u8 gUnk_096FE114[];
 extern u8 gUnk_09799FB0[];
 extern u8 gUnk_0984AFB8[];
 extern u8 gUnk_08F69BC4[];
-extern u8 gUnk_09EF6820[];
-extern u8 gUnk_09EF681C[];
 void func_080DB468(BoogieKnifereaderWork* work);
 void task_bos_ursula_backtako_2(UrsulaBacktakoWork* work);
 void func_080DC9DC(s32* a, s32* b, s32* c, UrsulaTakoWork* d);

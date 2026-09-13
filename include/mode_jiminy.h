@@ -2,6 +2,8 @@
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
+#include "animation_resource_data.h"
+
 #include "graphics_state.h"
 
 #include "jiminy_list.h"
@@ -90,10 +92,6 @@ extern u8 gUnk_09614D58[];
 extern u8 gUnk_09A3CC9C[];
 extern u8 gUnk_09EE2668[];
 extern u8 gUnk_09EE2678[];
-extern u8 gUnk_09EECA44[];
-extern u8 gUnk_09EECAA0[];
-extern u8 gUnk_09EED2BC[];
-extern u8 gUnk_09EED320[];
 
 u8 func_0805AA9C(void);
 void func_0805A8D0(void);

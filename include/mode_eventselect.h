@@ -2,6 +2,8 @@
 #ifndef GUARD_MODE_EVENTSELECT_H
 #define GUARD_MODE_EVENTSELECT_H
 
+#include "animation_resource_data.h"
+
 #include "card_api.h"
 
 #include "msg_api.h"
@@ -131,12 +133,8 @@ extern u8 gUnk_09611AB8[];
 extern u8 gUnk_08F6DC84[];
 extern u8 gUnk_08BCB3D8[];
 extern u8 gUnk_08F69BE4[];
-extern u8 gUnk_09EE1CB4[];
-extern u8 gUnk_09EE1C94[];
 extern u8 gUnk_09EEFD78[];
 extern u8 gUnk_09EEFD60[];
-extern u8 gUnk_09EEFD38[];
-extern u8 gUnk_09EEFCAC[];
 extern u8 gUnk_09EDE7E4[];
 extern u8 gUnk_088A5D7A[];
 extern u8 gUnk_09EDE7B4[];

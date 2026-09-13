@@ -9952,8 +9952,8 @@ void func_08085FB4(u8* work, void* a) {
     *(void**)&work[0x10] = LoadObjTiles(gUnk_090A44C4, 32);
     *(void**)&work[0x14] = LoadObjPalette(gUnk_09614418, 32);
     *(void**)&work[0x4B8] = LoadObjTiles(&gUnk_090A0C86[0x132C], 0x280);
-    *(void**)&work[0x4E8] = *(void**)&gUnk_09EEAFB0[0x24];
-    *(void**)&work[0x4EC] = *(void**)&gUnk_09EEAFB0[0x28];
+    *(void**)&work[0x4E8] = *(void**)((u8*)gUnk_09EEAFB0 + 0x24);
+    *(void**)&work[0x4EC] = *(void**)((u8*)gUnk_09EEAFB0 + 0x28);
     *(void**)&work[0x04] = AllocObjTiles(0x280, 0);
     func_0808E364(work, 0);
     *(void**)&work[0x4C4] = LoadObjPalette(gUnk_09614438, 32);
@@ -25999,11 +25999,11 @@ u8 func_0809F390(u8* work, void* a) {
 
         if (gGameState.flags & 8) {
             SetObjTileSource(*(void**)&work[0x728], gUnk_092EB78A);
-            AnimInit((AnimState*)&work[0x734], &gUnk_09EEF89C[0x24], gUnk_09EEF89C);
+            AnimInit((AnimState*)&work[0x734], gUnk_09EEF8C0, gUnk_09EEF89C);
             AnimStart((AnimState*)&work[0x734], 1, 0);
         } else {
             SetObjTileSource(*(void**)&work[0x728], gUnk_088B6560);
-            AnimInit((AnimState*)&work[0x734], &gUnk_09EDE8CC[0x4C], gUnk_09EDE8CC);
+            AnimInit((AnimState*)&work[0x734], gUnk_09EDE918, gUnk_09EDE8CC);
             AnimStart((AnimState*)&work[0x734], 1, 0);
         }
 

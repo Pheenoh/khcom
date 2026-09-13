@@ -2,6 +2,10 @@
 #ifndef GUARD_MODE_MS2_H
 #define GUARD_MODE_MS2_H
 
+#include "map_card_data.h"
+
+#include "animation_resource_data.h"
+
 #include "obj.h"
 
 #include "card_ui_types.h"
@@ -32,8 +36,6 @@
 
 
 extern MapCardCategoryDef gUnk_09EF9618[];
-extern MapCardDef gUnk_09EE4C80[];
-extern MapCardBackDef gUnk_09EE4BF4[];
 extern s16 gUnk_02035C14;
 extern s16 gUnk_02035C16;
 extern AnimState gUnk_02035CA0;
@@ -123,8 +125,6 @@ extern u8 gUnk_09EEA148[];
 extern u8 gUnk_09EEA164[];
 extern u8 gUnk_09EEA180[];
 extern u8 gUnk_09EEA198[];
-extern u8 gUnk_09EEEA98[];
-extern u8 gUnk_09EEEAC8[];
 extern u8 gUnk_09EF9928[];
 extern u8 gUnk_09EF9978[];
 extern u8 gUnk_09EF9A68[];

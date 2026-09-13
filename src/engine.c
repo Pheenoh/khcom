@@ -2506,7 +2506,7 @@ void AnimStart(AnimState* a, u16 animId, u16 flags) {
         a->frames = 0;
         return;
     }
-    a->frames = (AnimFrame*)&h->unk_06;
+    a->frames = h->frames;
 
     if ((flags & 4) == 0) {
         a->timer = 0;
@@ -2533,7 +2533,7 @@ void AnimChange(AnimState* a, u16 id, u16 flags) {
         a->frames = 0;
         return;
     }
-    a->frames = (AnimFrame*)&h->unk_06;
+    a->frames = h->frames;
 
     if ((flags & 4) == 0) {
         a->timer = 0;
@@ -2598,7 +2598,7 @@ void* AnimGetGfx(AnimState* a) {
     void* result;
 
     if (a->frames != 0) {
-        result = (void*)a->gfxTable[a->frames[a->frame].gfxIndex];
+        result = a->gfxTable[a->frames[a->frame].gfxIndex];
     } else {
         result = 0;
     }

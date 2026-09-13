@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL4_H
 #define GUARD_BTL4_H
 
+#include "animation_resource_data.h"
+
 #include "graphics_state.h"
 
 #include "card_api.h"
@@ -139,8 +141,6 @@ extern u8 gUnk_09EE10EC[];
 extern u8 gUnk_09EE10F8[];
 extern u8 gUnk_09EE12A4[];
 extern u8 gUnk_09EE12B0[];
-extern u8 gUnk_09EE1420[];
-extern u8 gUnk_09EE1498[];
 extern void* gUnk_09EE157C[];
 
 void func_080A41F0(void* a, u16 b);

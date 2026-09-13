@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "provenance": {
+    "gUnk_09EE4BF4": "Mapcard_0 selects back records through MapCardDef.unk_1E; all260 values range1..4, proving the index4 record. The independently referenced front-card array begins exactly after5 complete28-byte back definitions. The first record shares the fully validated pointer roles and scalar structure in every region; it is not selected by the front-card back-index fields.",
+    "gUnk_09EE4C80": "Mapcard_0 and mode_ms2.c consume the canonical40-byte records. All26 consecutive ten-record groups have coherent card metadata, with the final group25 containing exact value indices0..9 through record259. Record260 starts the independently indexed six-s16 position table and cannot be a six-ROM-pointer descriptor. mode_ms2.c:861 has an existing k<=26 overread of record260.unk_24: it is0x6400 in allregions and fails the category comparison. No261st descriptor is fabricated; unchanged consumer text is verified.",
+    "gUnk_09EE7520": "Mapcard_0 guards the index<=5; func_08094548 iterates i<6; func_0809486C uses index%6. The six s16 positions20,57,94,131,168,205 match every region."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "map_card_data.c",
+          "section": ".rodata_map_card",
+          "address": "0x9ee4bf4",
+          "size": 10552,
+          "objects": [
+            {
+              "name": "gUnk_09EE4BF4",
+              "offset": 0,
+              "size": 140,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 selects back records through MapCardDef.unk_1E; all260 values range1..4, proving the index4 record. The independently referenced front-card array begins exactly after5 complete28-byte back definitions. The first record shares the fully validated pointer roles and scalar structure in every region; it is not selected by the front-card back-index fields."
+              ]
+            },
+            {
+              "name": "gUnk_09EE4C80",
+              "offset": 140,
+              "size": 10400,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 and mode_ms2.c consume the canonical40-byte records. All26 consecutive ten-record groups have coherent card metadata, with the final group25 containing exact value indices0..9 through record259. Record260 starts the independently indexed six-s16 position table and cannot be a six-ROM-pointer descriptor. mode_ms2.c:861 has an existing k<=26 overread of record260.unk_24: it is0x6400 in allregions and fails the category comparison. No261st descriptor is fabricated; unchanged consumer text is verified."
+              ]
+            },
+            {
+              "name": "gUnk_09EE7520",
+              "offset": 10540,
+              "size": 12,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 guards the index<=5; func_08094548 iterates i<6; func_0809486C uses index%6. The six s16 positions20,57,94,131,168,205 match every region."
+              ]
+            }
+          ],
+          "sha256": "168de117e677ac2a65b228a13857688621bbfe8d305138f8fabd7d2f8c19bcdd"
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "map_card_data.c",
+          "section": ".rodata_map_card",
+          "address": "0x9ebc24c",
+          "size": 10552,
+          "objects": [
+            {
+              "name": "gUnk_09EE4BF4",
+              "offset": 0,
+              "size": 140,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 selects back records through MapCardDef.unk_1E; all260 values range1..4, proving the index4 record. The independently referenced front-card array begins exactly after5 complete28-byte back definitions. The first record shares the fully validated pointer roles and scalar structure in every region; it is not selected by the front-card back-index fields."
+              ]
+            },
+            {
+              "name": "gUnk_09EE4C80",
+              "offset": 140,
+              "size": 10400,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 and mode_ms2.c consume the canonical40-byte records. All26 consecutive ten-record groups have coherent card metadata, with the final group25 containing exact value indices0..9 through record259. Record260 starts the independently indexed six-s16 position table and cannot be a six-ROM-pointer descriptor. mode_ms2.c:861 has an existing k<=26 overread of record260.unk_24: it is0x6400 in allregions and fails the category comparison. No261st descriptor is fabricated; unchanged consumer text is verified."
+              ]
+            },
+            {
+              "name": "gUnk_09EE7520",
+              "offset": 10540,
+              "size": 12,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 guards the index<=5; func_08094548 iterates i<6; func_0809486C uses index%6. The six s16 positions20,57,94,131,168,205 match every region."
+              ]
+            }
+          ],
+          "sha256": "ea02f7bed168c04b7b78e2ce93dc66761e380cacb9f10171abd38aea3ec13900"
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "map_card_data.c",
+          "section": ".rodata_map_card",
+          "address": "0x9f6ffb0",
+          "size": 10552,
+          "objects": [
+            {
+              "name": "gUnk_09EE4BF4",
+              "offset": 0,
+              "size": 140,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 selects back records through MapCardDef.unk_1E; all260 values range1..4, proving the index4 record. The independently referenced front-card array begins exactly after5 complete28-byte back definitions. The first record shares the fully validated pointer roles and scalar structure in every region; it is not selected by the front-card back-index fields."
+              ]
+            },
+            {
+              "name": "gUnk_09EE4C80",
+              "offset": 140,
+              "size": 10400,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 and mode_ms2.c consume the canonical40-byte records. All26 consecutive ten-record groups have coherent card metadata, with the final group25 containing exact value indices0..9 through record259. Record260 starts the independently indexed six-s16 position table and cannot be a six-ROM-pointer descriptor. mode_ms2.c:861 has an existing k<=26 overread of record260.unk_24: it is0x6400 in allregions and fails the category comparison. No261st descriptor is fabricated; unchanged consumer text is verified."
+              ]
+            },
+            {
+              "name": "gUnk_09EE7520",
+              "offset": 10540,
+              "size": 12,
+              "consumer": [
+                "Mapcard_0",
+                "Mapcard_0 guards the index<=5; func_08094548 iterates i<6; func_0809486C uses index%6. The six s16 positions20,57,94,131,168,205 match every region."
+              ]
+            }
+          ],
+          "sha256": "fc340a91937dd554f7532d3bb46db7cd18f575934f8844d5e5e06f68a278fd95"
+        }
+      ]
+    }
+  }
+}

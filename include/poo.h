@@ -2,6 +2,8 @@
 #ifndef GUARD_POO_H
 #define GUARD_POO_H
 
+#include "animation_resource_data.h"
+
 #include "allmap_bottom_state.h"
 
 #include "allmap_scroll_state.h"
@@ -1110,7 +1112,6 @@ extern const PooAnimDesc gUnk_096FD59C[];
 extern u8 gUnk_097565FC[];
 extern u8 gUnk_097565E8[];
 extern u8 gUnk_09EF602C[];
-extern u8 gUnk_09EF6024[];
 extern u8 gUnk_09849D58[];
 extern u8 gUnk_09849C58[];
 extern u8 gUnk_09849D38[];
@@ -1144,24 +1145,14 @@ extern u8 gUnk_09756810[];
 extern u8 gUnk_097448BA[];
 extern u8 gUnk_09849DB8[];
 extern u8 gUnk_09756E28[];
-extern u8 gUnk_09EF5EF8[];
-extern u8 gUnk_09EF5FA0[];
 extern u8 gUnk_09758B9C[];
 extern u8 gUnk_09758BF4[];
-extern u8 gUnk_09EF60AC[];
 extern u8 gUnk_09EF6078[];
-extern u8 gUnk_09EF5AD0[];
-extern u8 gUnk_09EF5AE0[];
 extern u8 gUnk_09EF5E38[];
 extern u8 gUnk_09EF5E44[];
-extern u8 gUnk_09EF5DC4[];
-extern u8 gUnk_09EF5E24[];
 extern u8 gUnk_09746EDC[];
-extern u8 gUnk_09EF5EA8[];
-extern u8 gUnk_09EF5EE4[];
 extern u8 gUnk_09EF610C[];
 extern u8 gUnk_09EF612C[];
-extern u8 gUnk_09EF5FF8[];
 extern u8 gUnk_09EF5C8C[];
 extern u8 gUnk_09EF5C6C[];
 extern u8 gUnk_09756C50[];
@@ -1205,16 +1196,7 @@ extern const PooGfxDesc gUnk_096FD57C[];
 extern const PooGfxDesc gUnk_096FD4BC[];
 
 extern const PooSpot gUnk_096FD778[];
-extern u8 gUnk_09EF5D68[];
-extern u8 gUnk_09EF5DA8[];
-extern u8 gUnk_09EF5AE4[];
-extern u8 gUnk_09EF5B1C[];
-extern u8 gUnk_09EF6060[];
 extern u8 gUnk_09849C38[];
-extern u8 gUnk_09EF5AA0[];
-extern u8 gUnk_09EF5AB4[];
-extern u8 gUnk_09EF5AB8[];
-extern u8 gUnk_09EF5ACC[];
 extern u8 gUnk_09732272[];
 extern u8 gUnk_0973291E[];
 extern u8 gUnk_09849B38[];
@@ -1227,15 +1209,12 @@ extern u8 gUnk_09849CF8[];
 extern u8 gUnk_09753154[];
 extern const PooPoint gUnk_096FD730[];
 extern u8 gUnk_09744842[];
-extern u8 gUnk_09EF5FF0[];
 extern u8 gUnk_097567FC[];
 extern u8 gUnk_09758C04[];
 extern u8 gUnk_09758B70[];
 extern u8 gUnk_09758C20[];
 extern u8 gUnk_097257D8[];
 extern u8 gUnk_09849A98[];
-extern u8 gUnk_09EF5904[];
-extern u8 gUnk_09EF5844[];
 extern const s16 gSineTable[];
 extern u8 gUnk_09EF6158[];
 extern u8 gUnk_097606E8[];

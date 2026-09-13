@@ -1,6 +1,8 @@
 #ifndef GUARD_EMY_H
 #define GUARD_EMY_H
 
+#include "animation_resource_data.h"
+
 #include "enemy_types.h"
 
 #include "emy_tasks.h"
@@ -242,81 +244,143 @@ extern void* gTaskDescEmy16B;
 extern void* gTaskDescEmy16P;
 extern void* gTaskDescEmy83B;
 extern void* gTaskDescEmy83S;
-extern u8 gUnk_09EE04AC[];
-extern u8 gUnk_09EE04E0[];
-extern u8 gUnk_09EE04F4[];
-extern u8 gUnk_09EE04B4[];
-extern u8 gUnk_09EE1090[];
-extern u8 gUnk_09EE10A4[];
-extern u8 gUnk_0813D35C[];
-extern u8 gUnk_0813D3CC[];
-extern u8 gUnk_0813D434[];
-extern u8 gUnk_0813D454[];
-extern u8 gUnk_0813D4BC[];
-extern u8 gUnk_0813D4DC[];
-extern u8 gUnk_0813D544[];
-extern u8 gUnk_0813D564[];
-extern u8 gUnk_0813D5CC[];
-extern u8 gUnk_0813D5DC[];
-extern u8 gUnk_0813D644[];
-extern u8 gUnk_0813D664[];
-extern u8 gUnk_0813D6CC[];
-extern u8 gUnk_0813D73C[];
-extern u8 gUnk_0813D7A4[];
-extern u8 gUnk_0813D804[];
-extern u8 gUnk_0813D86C[];
-extern u8 gUnk_0813D88C[];
-extern u8 gUnk_0813D8F4[];
-extern u8 gUnk_0813D944[];
-extern u8 gUnk_0813D9AC[];
-extern u8 gUnk_0813D9CC[];
-extern u8 gUnk_0813DA54[];
-extern u8 gUnk_0813DA94[];
-extern u8 gUnk_0813DAFC[];
-extern u8 gUnk_0813DB4C[];
-extern u8 gUnk_0813DBB4[];
-extern u8 gUnk_0813DBF4[];
-extern u8 gUnk_0813DC5C[];
-extern u8 gUnk_0813DC7C[];
-extern u8 gUnk_0813DCE4[];
-extern u8 gUnk_0813DD04[];
-extern u8 gUnk_0813DD6C[];
-extern u8 gUnk_0813DD8C[];
-extern u8 gUnk_0813DDF4[];
-extern u8 gUnk_0813DE14[];
-extern u8 gUnk_0813DE7C[];
-extern u8 gUnk_0813DE9C[];
-extern u8 gUnk_0813DF04[];
-extern u8 gUnk_0813DF44[];
-extern u8 gUnk_0813DFAC[];
-extern u8 gUnk_0813DFCC[];
-extern u8 gUnk_0813E0B4[];
-extern u8 gUnk_0813E034[];
-extern u8 gUnk_0813E11C[];
-extern u8 gUnk_0813E14C[];
-extern u8 gUnk_0813E264[];
-extern u8 gUnk_0813E1B4[];
-extern u8 gUnk_0813E2CC[];
-extern u8 gUnk_0813E2EC[];
-extern u8 gUnk_0813E354[];
-extern u8 gUnk_0813E374[];
-extern u8 gUnk_0813E3DC[];
-extern u8 gUnk_0813E3FC[];
-extern u8 gUnk_0813E464[];
-extern u8 gUnk_0813E484[];
-extern u8 gUnk_0813E4EC[];
-extern u8 gUnk_0813E53C[];
-extern u8 gUnk_0813E604[];
-extern u8 gUnk_0813E5A4[];
-extern u8 gUnk_0813E6AC[];
-extern u8 gUnk_0813E734[];
-extern u8 gUnk_0813E66C[];
-extern u8 gUnk_0813E744[];
-extern u8 gUnk_0813E7B4[];
-extern u8 gUnk_0813E7C4[];
-extern u8 gUnk_0813E834[];
+extern AnimDef gUnk_0813D35C[7];
+extern EmyDef gUnk_0813D3CC;
+extern AnimDef gUnk_0813D434[2];
+extern EmyDef gUnk_0813D454;
+extern AnimDef gUnk_0813D4BC[2];
+extern EmyDef gUnk_0813D4DC;
+extern AnimDef gUnk_0813D544[2];
+extern EmyDef gUnk_0813D564;
+extern AnimDef gUnk_0813D5CC;
+extern EmyDef gUnk_0813D5DC;
+extern AnimDef gUnk_0813D644[2];
+extern EmyDef gUnk_0813D664;
+extern AnimDef gUnk_0813D6CC[7];
+extern EmyDef gUnk_0813D73C;
+extern AnimDef gUnk_0813D7A4[6];
+extern EmyDef gUnk_0813D804;
+extern AnimDef gUnk_0813D86C[2];
+extern EmyDef gUnk_0813D88C;
+extern AnimDef gUnk_0813D8F4[5];
+extern EmyDef gUnk_0813D944;
+extern AnimDef gUnk_0813D9AC[2];
+extern EmyDef gUnk_0813D9CC;
+extern AnimDef gUnk_0813DA54[4];
+extern EmyDef gUnk_0813DA94;
+extern AnimDef gUnk_0813DAFC[5];
+extern EmyDef gUnk_0813DB4C;
+extern AnimDef gUnk_0813DBB4[4];
+extern EmyDef gUnk_0813DBF4;
+extern AnimDef gUnk_0813DC5C[2];
+extern EmyDef gUnk_0813DC7C;
+extern AnimDef gUnk_0813DCE4[2];
+extern EmyDef gUnk_0813DD04;
+extern AnimDef gUnk_0813DD6C[2];
+extern EmyDef gUnk_0813DD8C;
+extern AnimDef gUnk_0813DDF4[2];
+extern EmyDef gUnk_0813DE14;
+extern AnimDef gUnk_0813DE7C[2];
+extern EmyDef gUnk_0813DE9C;
+extern AnimDef gUnk_0813DF04[4];
+extern EmyDef gUnk_0813DF44;
+extern AnimDef gUnk_0813DFAC[2];
+extern EmyDef gUnk_0813DFCC;
+extern EmyDef gUnk_0813E0B4;
+extern AnimDef gUnk_0813E034[8];
+extern AnimDef gUnk_0813E11C[3];
+extern EmyDef gUnk_0813E14C;
+extern EmyDef gUnk_0813E264;
+extern AnimDef gUnk_0813E1B4[11];
+extern AnimDef gUnk_0813E2CC[2];
+extern EmyDef gUnk_0813E2EC;
+extern AnimDef gUnk_0813E354[2];
+extern EmyDef gUnk_0813E374;
+extern AnimDef gUnk_0813E3DC[2];
+extern EmyDef gUnk_0813E3FC;
+extern AnimDef gUnk_0813E464[2];
+extern EmyDef gUnk_0813E484;
+extern AnimDef gUnk_0813E4EC[5];
+extern EmyDef gUnk_0813E53C;
+extern EmyDef gUnk_0813E604;
+extern AnimDef gUnk_0813E5A4[6];
+extern EmyDef gUnk_0813E6AC;
+extern AnimDef gUnk_0813E734;
+extern AnimDef gUnk_0813E66C[4];
+extern EmyDef gUnk_0813E744;
+extern AnimDef gUnk_0813E7B4;
+extern EmyDef gUnk_0813E7C4;
+extern EmyDef gUnk_0813E834;
 
 void func_0803B468(Emy29Work* work, s16 anim, s16 dx, s16 dy, s16 dz);
 u8 func_0803DD44(EmyWork* work);
+
+extern AnimDef gUnk_0813D32C[3];
+
+extern AnimDef gUnk_0813D404[3];
+
+extern AnimDef gUnk_0813D48C[3];
+
+extern AnimDef gUnk_0813D514[3];
+
+extern AnimDef gUnk_0813D59C[3];
+
+extern AnimDef gUnk_0813D614[3];
+
+extern AnimDef gUnk_0813D69C[3];
+
+extern AnimDef gUnk_0813D774[3];
+
+extern AnimDef gUnk_0813D83C[3];
+
+extern AnimDef gUnk_0813D8C4[3];
+
+extern AnimDef gUnk_0813D97C[3];
+
+extern AnimDef gUnk_0813DA24[3];
+
+extern AnimDef gUnk_0813DACC[3];
+
+extern AnimDef gUnk_0813DB84[3];
+
+extern AnimDef gUnk_0813DC2C[3];
+
+extern AnimDef gUnk_0813DCB4[3];
+
+extern AnimDef gUnk_0813DD3C[3];
+
+extern AnimDef gUnk_0813DDC4[3];
+
+extern AnimDef gUnk_0813DE4C[3];
+
+extern AnimDef gUnk_0813DED4[3];
+
+extern AnimDef gUnk_0813DF7C[3];
+
+extern AnimDef gUnk_0813E004[3];
+
+extern AnimDef gUnk_0813E0EC[3];
+
+extern AnimDef gUnk_0813E184[3];
+
+extern AnimDef gUnk_0813E29C[3];
+
+extern AnimDef gUnk_0813E324[3];
+
+extern AnimDef gUnk_0813E3AC[3];
+
+extern AnimDef gUnk_0813E434[3];
+
+extern AnimDef gUnk_0813E4BC[3];
+
+extern AnimDef gUnk_0813E574[3];
+
+extern AnimDef gUnk_0813E63C[3];
+
+extern AnimDef gUnk_0813E704[3];
+
+extern AnimDef gUnk_0813E784[3];
+
+extern AnimDef gUnk_0813E804[3];
 
 #endif /* GUARD_EMY_H */

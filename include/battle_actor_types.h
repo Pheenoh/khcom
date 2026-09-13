@@ -4,6 +4,16 @@
 #include "types.h"
 #include "taskpool.h"
 
+typedef struct EmyKind {
+    u32 unk_00;
+    u16 unk_04;
+    s16 unk_06;
+    s16 unk_08;
+    u16 unk_0A;
+    u16 unk_0C;
+    u16 unk_0E;
+} EmyKind;
+
 typedef struct Collider {
     s32 unk_00;
     s32 unk_04;

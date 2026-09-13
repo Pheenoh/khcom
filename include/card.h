@@ -3,6 +3,10 @@
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
+#include "map_card_data.h"
+
+#include "animation_resource_data.h"
+
 #include "bg_animation_data.h"
 
 #include "chara_link_state.h"
@@ -107,8 +111,6 @@ extern u8 gUnk_093FB6C4[];
 extern u8 gUnk_08125E24[];
 extern u8 gUnk_096148D8[];
 extern u8 gUnk_09417378[];
-extern void* gUnk_09EEAF4C[];
-extern u8 gUnk_09EEAFB0[];
 extern u8 gUnk_0909A4E0[];
 extern u8 gUnk_0909FDCA[];
 extern u8 gUnk_090A0C86[];
@@ -408,8 +410,6 @@ extern u8 gUnk_09614438[];
 extern u8 gUnk_093F8C8E[];
 extern u8 gUnk_09985F44[];
 extern u8 gUnk_099597E4[];
-extern u8 gUnk_09EEFCAC[];
-extern u8 gUnk_09EEFD38[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_09EE7FD8[];
@@ -918,8 +918,6 @@ typedef struct UnkStruct_08078754 {
 
 typedef char UnkStruct_08078754_sizechk[(sizeof(struct UnkStruct_08078754) == 0xCC) ? 1 : -1];
 
-extern MapCardDef gUnk_09EE4C80[];
-extern MapCardBackDef gUnk_09EE4BF4[];
 
 typedef struct MapcardWork {
     void* unk_00;
@@ -1210,11 +1208,7 @@ extern void* gUnk_09EE9894[];
 extern void* gUnk_09EE98C0[];
 extern u8 gUnk_09036380[];
 extern u8 gUnk_0891ED26[];
-extern u8 gUnk_09EDF38C[];
-extern u8 gUnk_09EDF374[];
 extern u8 gUnk_088E33C2[];
-extern u8 gUnk_09EDEE14[];
-extern u8 gUnk_09EDEE08[];
 extern u8 gUnk_09036300[];
 extern void* gUnk_09EE4724[];
 extern u8 gUnk_09EE778C[];
@@ -1240,7 +1234,6 @@ extern s32 gUnk_09033FA8[];
 extern const s32 gUnk_09033FB8[];
 extern s32 gUnk_0903401C[][2];
 extern s32 gUnk_0903404C[];
-extern s16 gUnk_09EE7520[];
 extern u8 gUnk_090A261E[];
 extern u8 gUnk_096144D8[];
 extern u8 gUnk_090A4A0C[];
@@ -1349,8 +1342,6 @@ extern u8 gUnk_0905ED36[];
 extern u8 gUnk_0905EAE8[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_0950E2F8[];
-extern u8 gUnk_09EDE8CC[];
-extern u8 gUnk_09EEF89C[];
 extern u8 gUnk_088B6560[];
 extern u8 gUnk_092EB78A[];
 extern u8 gUnk_09614798[];

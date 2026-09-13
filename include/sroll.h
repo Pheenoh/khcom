@@ -3,6 +3,8 @@
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
+#include "animation_resource_data.h"
+
 #include "obj.h"
 
 #include "anim.h"
@@ -346,8 +348,6 @@ extern u8 gUnk_09EFB9CC[];
 extern u8 gUnk_09EFBAD4[];
 extern u8 gUnk_09EDE7B4[];
 extern u8 gUnk_09EDE7E4[];
-extern u8 gUnk_09EEFCAC[];
-extern u8 gUnk_09EEFD38[];
 extern void* gUnk_09EFBAE8[];
 extern const SrollFont gUnk_09A5B440[];
 extern const u16 gUnk_09A5B470[];

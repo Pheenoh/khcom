@@ -1,6 +1,8 @@
 #ifndef GUARD_BTL3_H
 #define GUARD_BTL3_H
 
+#include "animation_resource_data.h"
+
 #include "btl3_tasks.h"
 
 #include "display.h"
@@ -127,13 +129,11 @@ extern s16 gSineTable[];
 extern u8 gUnk_08901C8A[];
 extern u8 gUnk_08B22CBC[];
 extern u8 gUnk_08B22CE4[];
-extern u8 gUnk_0813E8F4[];
+extern AnimDef gUnk_0813E8F4[5];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09611AB8[];
 extern u8 gUnk_096FAC64[];
-extern u8 gUnk_09EDF124[];
-extern u8 gUnk_09EDF154[];
 
 void func_08040150(BtlRaidWork* work, s32* outX, s32* outY, s32* outZ);
 BtlObj* func_08040458(BtlRaidWork* work);

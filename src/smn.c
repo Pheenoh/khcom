@@ -487,7 +487,7 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     work->palette = LoadObjPalette(gUnk_09617FF8, 32);
     work->unk_15C = 0;
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813E9E8, &work->anim, 0, 0, work->tiles);
+    func_08019068(&gUnk_0813E9E8, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;
@@ -1200,7 +1200,7 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
     work->unk_154 = args->unk_00;
     work->palette = LoadObjPalette(gUnk_09618018, 32);
     AnimInit(&work->anim, 0, 0);
-    func_08019068(gUnk_0813EA5C, &work->anim, 0, 0, work->tiles);
+    func_08019068(&gUnk_0813EA5C, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
     work->unk_148 = 0;
     work->unk_14A = 0;

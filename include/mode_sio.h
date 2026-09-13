@@ -2,6 +2,8 @@
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
 
+#include "animation_resource_data.h"
+
 #include "sio_card_trade_state.h"
 
 #include "sio_battle_options_state.h"
@@ -426,9 +428,7 @@ extern u16 gUnk_09EF14C4[];
 extern u8* gWorldNames[];
 extern u8 gUnk_09EF15FC[];
 extern SioChgCardPos gUnk_09EF150C[];
-extern void* gUnk_09EDE8CC[];
 extern void* gUnk_09EE981C[];
-extern void* gUnk_09EEE4C8[];
 extern void* gUnk_09EF3894[];
 extern void* gUnk_09EF38B4[];
 extern void* gUnk_09EF38D4[];

@@ -3,20 +3,32 @@
 
 #include "types.h"
 
+typedef struct AnimDef {
+    void* unk_00;
+    void* unk_04;
+    void* unk_08;
+    u8 unk_0C;
+    u8 unk_0D[0x03];
+} AnimDef;
+
 typedef struct AnimFrame {
     u16 gfxIndex;
     u16 duration;
-} AnimFrame;
+} __attribute__((packed, aligned(2))) AnimFrame;
 
 typedef struct AnimHeader {
-    u32 unk_00;
+    u16 unk_00;
+    u16 unk_02;
     u16 frameCount;
-    u16 unk_06;
-} AnimHeader;
+    AnimFrame frames[0];
+} __attribute__((packed, aligned(2))) AnimHeader;
+
+typedef char AnimHeader_size[(sizeof(AnimHeader) == 6) ? 1 : -1];
+typedef char AnimFrame_size[(sizeof(AnimFrame) == 4) ? 1 : -1];
 
 typedef struct AnimState {
     AnimHeader** anims;
-    u32* gfxTable;
+    void** gfxTable;
     u16 flags;
     u16 timer;
     u16 frameCount;

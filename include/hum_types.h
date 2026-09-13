@@ -25,7 +25,7 @@ typedef struct HumDef {
     u16 unk_02;
     void* unk_04;
     u32 unk_08;
-    u32 unk_0C;
+    EmyKind unk_0C;
 } HumDef;
 
 typedef struct HumSubDef {
@@ -59,7 +59,7 @@ typedef struct HumWork {
     u16 unk_17C;
     u16 unk_17E;
     void* gfx;
-    u32 unk_184;
+    const u32* unk_184;
 } HumWork;
 
 #endif

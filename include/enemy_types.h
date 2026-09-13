@@ -8,7 +8,7 @@
 
 typedef struct EmyDef {
     void* unk_00;
-    void* unk_04;
+    AnimDef* unk_04;
     s32 unk_08;
     u16 unk_0C;
     u16 unk_0E;
@@ -18,7 +18,7 @@ typedef struct EmyDef {
     u16 unk_16;
     u16 unk_18;
     u16 unk_1A;
-    u32 unk_1C;
+    EmyKind unk_1C;
 } EmyDef;
 
 typedef struct EmyWork {

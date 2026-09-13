@@ -2,6 +2,8 @@
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H
 
+#include "animation_resource_data.h"
+
 #include "graphics_state.h"
 
 #include "worldwarp_state.h"
@@ -158,14 +160,10 @@ extern u8 gUnk_09EF99D0[];
 extern u8 gUnk_09EF99A8[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_088C56C6[];
-extern u8 gUnk_09EDEA6C[];
-extern u8 gUnk_09EDEA68[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_08B22BBC[];
 extern u8 gUnk_09617D58[];
 extern u8 gUnk_092028EC[];
-extern u8 gUnk_09EEEAC8[];
-extern u8 gUnk_09EEEA98[];
 extern MooglePackCardTable gUnk_099935A8[];
 extern CardBack gUnk_08F709B0[];
 extern u32 gFrameCounter;
