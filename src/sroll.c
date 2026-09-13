@@ -2084,3 +2084,14 @@ TaskDesc gTaskDescSrollCChar __attribute__((section(".data_registration_gTaskDes
     (void (*)(void*))task_sroll_c_char_3,
     0x98,
 };
+
+const char gTaskName_09EFAA64[] __attribute__((section(".rodata_registration_name_gUnk_09EFAA64"), aligned(1))) = "task_sroll_tmr";
+
+TaskDesc gUnk_09EFAA64 __attribute__((section(".data_registration_gUnk_09EFAA64"))) = {
+    gTaskName_09EFAA64,
+    (void (*)(void*, void*))task_sroll_tmr_0,
+    task_sroll_tmr_1,
+    (void (*)(void*))task_sroll_tmr_2,
+    (void (*)(void*))task_sroll_tmr_3,
+    0x10,
+};

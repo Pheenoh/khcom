@@ -1168,8 +1168,6 @@ extern u8 gUnk_097559F4[];
 extern u8 gUnk_09755A04[];
 extern u8 gUnk_098A4B68[];
 extern u8 gUnk_08F69BE4[];
-extern u8 gUnk_09EF8CC0[];
-extern u8 gUnk_09EF8CA0[];
 extern u8 gUnk_0972BD8C[];
 extern u8 gUnk_09849AB8[];
 extern u8 gUnk_0972BD78[];

@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_09ECA8C4
-data_09ECA8C4:
-	.incbin "roms/B8CJ.gba", 0x1eca8c4, 0x7b0
+	.global data_09ECA8DC
+data_09ECA8DC:
+	.incbin "roms/B8CJ.gba", 0x1eca8dc, 0x2c

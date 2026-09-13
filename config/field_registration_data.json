@@ -1,0 +1,3632 @@
+{
+  "version": 1,
+  "provenance": {
+    "registrations": "Forty-three native TaskDesc records outside the card UI range, each independently corroborated by an exact ASCII name and unique tuple of all four real linked callback addresses in US/JP/EU. All records have equal work sizes in every region and are defined in the actual callback owner translation unit."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "bos2.c",
+          "section": ".rodata_registration_name_gUnk_09EF2A5C",
+          "address": "0x961a784",
+          "size": 17,
+          "sha256": "cfdcfcbbe4073e5cf113ec3a770070a3c3c6323cd1e4d77d369a12c0d65a9250",
+          "objects": [
+            {
+              "name": "gTaskName_09EF2A5C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".data_registration_gUnk_09EF2A5C",
+          "address": "0x9ef2a5c",
+          "size": 24,
+          "sha256": "8729a73423a7b33af44d27c04bba0c44d6f7585bfa8f1dcddacb612ce4f762da",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A5C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".rodata_registration_name_gUnk_09EF2A74",
+          "address": "0x961a798",
+          "size": 23,
+          "sha256": "bc92ef1b98c55e66e9c45f966f96d5857b210629813aefa1ac30e1dda7314983",
+          "objects": [
+            {
+              "name": "gTaskName_09EF2A74",
+              "offset": 0,
+              "size": 23
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".data_registration_gUnk_09EF2A74",
+          "address": "0x9ef2a74",
+          "size": 24,
+          "sha256": "a977776b3dc18e21538c314a085767dd0164b92a9a91564197588eb75106ecc1",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A74",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "chara.c",
+          "section": ".rodata_registration_name_gUnk_09EF34A8",
+          "address": "0x961a908",
+          "size": 21,
+          "sha256": "d91bca430ef4aeb7c29d35abb5db3a7d1ea2bcc18b97923c68877dee2fdef310",
+          "objects": [
+            {
+              "name": "gTaskName_09EF34A8",
+              "offset": 0,
+              "size": 21
+            }
+          ]
+        },
+        {
+          "unit": "chara.c",
+          "section": ".data_registration_gUnk_09EF34A8",
+          "address": "0x9ef34a8",
+          "size": 24,
+          "sha256": "e0cc16fdb7e0cd139279fc2bb71aba3746b7362a116423db31a88b213ad6a4b8",
+          "objects": [
+            {
+              "name": "gUnk_09EF34A8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos3.c",
+          "section": ".rodata_registration_name_gUnk_09EF34D8",
+          "address": "0x961a930",
+          "size": 19,
+          "sha256": "6b66b023786f896ac6ec03ef186a9b404c29521ac8f8a57596fdaadb77799c57",
+          "objects": [
+            {
+              "name": "gTaskName_09EF34D8",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "bos3.c",
+          "section": ".data_registration_gUnk_09EF34D8",
+          "address": "0x9ef34d8",
+          "size": 24,
+          "sha256": "61cf507ff94c40139fa65e81ef70f5bc6439272a1adf202c3936617d7a9610fb",
+          "objects": [
+            {
+              "name": "gUnk_09EF34D8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF48E0",
+          "address": "0x96fd2e4",
+          "size": 14,
+          "sha256": "34d3850a2a0e93f19e6f9722d242433bea384142879f48acc8b75a5dab63881e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF48E0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF48E0",
+          "address": "0x9ef48e0",
+          "size": 24,
+          "sha256": "301bc8a58f324896f80bcb6029b3d8f1e4ae966c83ddcc043bf44a0a78e01c2a",
+          "objects": [
+            {
+              "name": "gUnk_09EF48E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF48F8",
+          "address": "0x96fd2f4",
+          "size": 25,
+          "sha256": "96318f1d4b10d82d6d1f2a2df00898f579e40f8d55b8a9566cc8118a568ee120",
+          "objects": [
+            {
+              "name": "gTaskName_09EF48F8",
+              "offset": 0,
+              "size": 25
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF48F8",
+          "address": "0x9ef48f8",
+          "size": 24,
+          "sha256": "9ee80a8a1ecb5ee3af39ce5bf9f25bbe3b0c85b315627fcefd5b2d2be6d42942",
+          "objects": [
+            {
+              "name": "gUnk_09EF48F8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF49A0",
+          "address": "0x96fd38c",
+          "size": 21,
+          "sha256": "8b295d038c2301b4d5da61c307dfa8e72c28374f1e3fb1502ed259814c330055",
+          "objects": [
+            {
+              "name": "gTaskName_09EF49A0",
+              "offset": 0,
+              "size": 21
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF49A0",
+          "address": "0x9ef49a0",
+          "size": 24,
+          "sha256": "c07e2d05c0d51e279bc6ee31b9a36fd25fd17b10a24ebd4418422dd39c9fa947",
+          "objects": [
+            {
+              "name": "gUnk_09EF49A0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF49D0",
+          "address": "0x96fd3b8",
+          "size": 15,
+          "sha256": "e76797fa583cccc589ee177716722b4fef7f8c709db2301d0abd01d6bdfd33be",
+          "objects": [
+            {
+              "name": "gTaskName_09EF49D0",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF49D0",
+          "address": "0x9ef49d0",
+          "size": 24,
+          "sha256": "14ff7900d99cf6e7a76d5bd97ea47b39918d735e21705049d1db8f5dda341928",
+          "objects": [
+            {
+              "name": "gUnk_09EF49D0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4A18",
+          "address": "0x96fd454",
+          "size": 20,
+          "sha256": "11142731156c76261a1741032aaefda60e83a578d6b53222be8cd75d97e2c67e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4A18",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4A18",
+          "address": "0x9ef4a18",
+          "size": 24,
+          "sha256": "35b30b91f25ee0ae6b32924e6ad6acfba0a030e857b5e72aa2fe7f14ac241a22",
+          "objects": [
+            {
+              "name": "gUnk_09EF4A18",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4A30",
+          "address": "0x96fd468",
+          "size": 19,
+          "sha256": "d911ff6acebff12bbde12be96cdbe66f3da9535a05b649664595481f45bcbbbb",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4A30",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4A30",
+          "address": "0x9ef4a30",
+          "size": 24,
+          "sha256": "a6c9e1cf0cec2d94dd3392e0d6c7cef211c67bb73f0a1ad6bc87559a707bafd2",
+          "objects": [
+            {
+              "name": "gUnk_09EF4A30",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4B38",
+          "address": "0x96fd6ac",
+          "size": 18,
+          "sha256": "4be1aafb022a5ca0261c8d24fc0eed23a8357d6e334378dde1bbec034de7e716",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4B38",
+              "offset": 0,
+              "size": 18
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4B38",
+          "address": "0x9ef4b38",
+          "size": 24,
+          "sha256": "baa1ebb3fe4d09028bde9a31fa1790277e27ffd4c5dc39767afd7252b52dfcb4",
+          "objects": [
+            {
+              "name": "gUnk_09EF4B38",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4CF0",
+          "address": "0x96fd9b4",
+          "size": 24,
+          "sha256": "ad6cd628ea28506c123078cc67a4a621e929a60dbdee2db498aa31e9be284428",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4CF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4CF0",
+          "address": "0x9ef4cf0",
+          "size": 24,
+          "sha256": "ef0829f9b52a5e12e3b80a9de582ba3132d62b6f5c7f6289e8cdaa9b204e7292",
+          "objects": [
+            {
+              "name": "gUnk_09EF4CF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D08",
+          "address": "0x96fd9cc",
+          "size": 23,
+          "sha256": "91dd883276c2e00fe1cd761038c579b935a85daf27a0c1bb677fa5efd92a2669",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D08",
+              "offset": 0,
+              "size": 23
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D08",
+          "address": "0x9ef4d08",
+          "size": 24,
+          "sha256": "8a275fdc5755c372e750f26f6eceb467e107837b7c847b05b38b22d85a9bd5c7",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D08",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D38",
+          "address": "0x96fd9f4",
+          "size": 20,
+          "sha256": "69a79b99a1cfab7d485ce9ce34c0ce8cf9a04a453167c63a9845a1959fda620d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D38",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D38",
+          "address": "0x9ef4d38",
+          "size": 24,
+          "sha256": "9c4bc4447f0654595cc384dfc073d8cbc29acfca5671d934bcce69be224b69dc",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D38",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D68",
+          "address": "0x96fda20",
+          "size": 26,
+          "sha256": "3cf51becc5f4c98e834c9a05794b022865fd321f65c19efdc29423a1ee6437b0",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D68",
+              "offset": 0,
+              "size": 26
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D68",
+          "address": "0x9ef4d68",
+          "size": 24,
+          "sha256": "b73d9853e5d51dd7c3786e07e4f4365ca249fce6d32d5f63765e123293d149c0",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D68",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6B90",
+          "address": "0x984bcb4",
+          "size": 14,
+          "sha256": "c4da48faf33f6609c18ac3d9dc5cd55cd12a39cee27098d68d7ac92d40e01efb",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6B90",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6B90",
+          "address": "0x9ef6b90",
+          "size": 24,
+          "sha256": "b63f48087fbef47c5a706ac884106e42230d32525efc86424ce4c2c8b9b5df8f",
+          "objects": [
+            {
+              "name": "gUnk_09EF6B90",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BA8",
+          "address": "0x984bd3c",
+          "size": 14,
+          "sha256": "1bd6033f6689696be0986a4304ba97c01b24487f0b33cca61093f97fd924a62a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BA8",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BA8",
+          "address": "0x9ef6ba8",
+          "size": 24,
+          "sha256": "3e42142772ec5107e201b9e402b72d2837a4578345b4ae9c7219f2fc2dba16dd",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BA8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BC0",
+          "address": "0x984bda4",
+          "size": 14,
+          "sha256": "a7d6d0e9b16b66a8f1b6d3965f4ae2f1c35182917a13091e14a3c604954f1d48",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BC0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BC0",
+          "address": "0x9ef6bc0",
+          "size": 24,
+          "sha256": "c6bcea97a5901a296043a165593d0121b3dfb718d0ce5c7662d8294fd72dc384",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BC0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BD8",
+          "address": "0x984be2c",
+          "size": 14,
+          "sha256": "98a76a591738a3248d8b6b301c741eb8cd62270e2cd3d57f8a35f1d3ea8a6a6d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BD8",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BD8",
+          "address": "0x9ef6bd8",
+          "size": 24,
+          "sha256": "476778c01d61cdac3ceef833b838186edb02ee7447513318619fec5500f42aa3",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BD8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BF0",
+          "address": "0x984beb4",
+          "size": 14,
+          "sha256": "b8976c24e4b5c7f846694afbb207dc3c028096a01e2672aac313d999f8af4e0b",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BF0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BF0",
+          "address": "0x9ef6bf0",
+          "size": 24,
+          "sha256": "1b23fca6d47aa74903ed33206d7c8319eb1203fffc25c7c0e55c4f026df83bae",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6C08",
+          "address": "0x984bf5c",
+          "size": 14,
+          "sha256": "bfee364634e8d4fb4b79011e6719ae3d26ce769fdb4a9ba3457e60c3e67cdf9e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6C08",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6C08",
+          "address": "0x9ef6c08",
+          "size": 24,
+          "sha256": "b5749d6c09718e6f796d97105bb3a2408d14eee03d3e6854ae2531cbd27b6e17",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C08",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6C20",
+          "address": "0x984c004",
+          "size": 14,
+          "sha256": "16922e87ff61390859d14bfc29c3e4e3f13d0e2b90747a123a0fac215a82c498",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6C20",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6C20",
+          "address": "0x9ef6c20",
+          "size": 24,
+          "sha256": "c284eddfddcf9f1fc6b69b926ac605019f9efd877670685a56dd0ecd3349c0b9",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C20",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CCC",
+          "address": "0x984c080",
+          "size": 17,
+          "sha256": "d962bb9c5c5ba7d817c22d84fccf657ed5589387bc858c7df78da6128f6df87e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CCC",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CCC",
+          "address": "0x9ef6ccc",
+          "size": 24,
+          "sha256": "ffc9264a2696fb867d7712cf054bf7c5c254d540c2bf22aab7915c77e6396321",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CCC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CE4",
+          "address": "0x984c094",
+          "size": 17,
+          "sha256": "10680a0e5dd463009537d89fca4cb8c3e20bfa18da6268947ba93cb8fb77fd3a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CE4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CE4",
+          "address": "0x9ef6ce4",
+          "size": 24,
+          "sha256": "9136eccae1b6a60d638e7ce451b5602a427108e49c8fcd3ebcb963d42ab85e77",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CE4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CFC",
+          "address": "0x984c0a8",
+          "size": 17,
+          "sha256": "12b93c056d3c8d7cad68ddf17813a95ed308cfb203e9f3ea95e340a95a1d559e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CFC",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CFC",
+          "address": "0x9ef6cfc",
+          "size": 24,
+          "sha256": "7231826980e0b214552f794e99c71ad2261921951f4e364f213b5bfd9705399e",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CFC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D14",
+          "address": "0x984c0bc",
+          "size": 17,
+          "sha256": "76235f60af089b71da2e6768ac32da94900d2b8f26fa35f37eb67c6b56d5a3a5",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D14",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D14",
+          "address": "0x9ef6d14",
+          "size": 24,
+          "sha256": "9808b864dd8547f13df6d6e3daca37d2d383afd5c084e40bc9c256461e6ebc17",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D14",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D2C",
+          "address": "0x984c0d0",
+          "size": 17,
+          "sha256": "658b121becd934572d4c9026119ea93354d2a1fa0fc5f8eca17339b34d8dd34e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D2C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D2C",
+          "address": "0x9ef6d2c",
+          "size": 24,
+          "sha256": "9362d1595aebf20fa4ee42249f08637276ea06d123992a353048f4192cda34f4",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D2C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D44",
+          "address": "0x984c0e4",
+          "size": 17,
+          "sha256": "25ad873cc8fad5786b244e080592ae0cf012f59bd05e4e11a89b8fedac9344b8",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D44",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D44",
+          "address": "0x9ef6d44",
+          "size": 24,
+          "sha256": "a5b5b8874631a27687eecb55e87d59a3e46ca4f4758cd1894ec7bf48798b5ab5",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D44",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D5C",
+          "address": "0x984c0f8",
+          "size": 17,
+          "sha256": "04434ef3b39a1850c9ff24bba85e610f44aab22515107739505c25fcde3b891d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D5C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D5C",
+          "address": "0x9ef6d5c",
+          "size": 24,
+          "sha256": "1c7d0b6c8c90ac124aa94cf74f6e5da798c50e19130a30cd63d982bde5d22212",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D5C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D74",
+          "address": "0x984c10c",
+          "size": 17,
+          "sha256": "f62811803881bdb8da6b689d4ec6144cb644b223cfc1c68c6928000f7d3ae2b4",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D74",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D74",
+          "address": "0x9ef6d74",
+          "size": 24,
+          "sha256": "697f39f47e5886c09ba1be5e812004f9dc86c5c2b154d2be3d3d619232fce09a",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D74",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D8C",
+          "address": "0x984c120",
+          "size": 17,
+          "sha256": "a75992df81e8070531bb92246c48b7cd0aa174838b8514c9cf41254da7a1f271",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D8C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D8C",
+          "address": "0x9ef6d8c",
+          "size": 24,
+          "sha256": "d4447fe0e6991dc3a32d2d94b51a7b4ca5e548840235c2ae123bef54e2b71371",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DA4",
+          "address": "0x984c134",
+          "size": 17,
+          "sha256": "61f512624dcb5b2e6aa1c8403e076f398a86c4aaf7e9740cdc9db5c1a9832773",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DA4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DA4",
+          "address": "0x9ef6da4",
+          "size": 24,
+          "sha256": "675495a4ffdd9ed022867b59f5f6be9aacc83fdfb069fd289b8fb03d29515de4",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DA4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DD4",
+          "address": "0x984c180",
+          "size": 14,
+          "sha256": "3c8da945632df8991de241b76803e42b6fd20955aae5645616a72839382e9fe0",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DD4",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DD4",
+          "address": "0x9ef6dd4",
+          "size": 24,
+          "sha256": "da3d65786418a87653dcd10f00c8d4abfb2b8027ec26917e63092e1e4ccc3e84",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DD4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DEC",
+          "address": "0x984c1b8",
+          "size": 19,
+          "sha256": "e6678f30a2a67b10aabc9fa597eb7f5354aded7aff4f21e293fb2869c1a32389",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DEC",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DEC",
+          "address": "0x9ef6dec",
+          "size": 24,
+          "sha256": "41df8d4d240b8f965d2a66f44d3dbe9d73d26a90c363aa18f783b4bfcb908a40",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DEC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E04",
+          "address": "0x984c1f4",
+          "size": 14,
+          "sha256": "96d57d0172fa63521ecc30d262dd70cec1dd8ca56c3c700a3e7b7f9255de9d3d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E04",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E04",
+          "address": "0x9ef6e04",
+          "size": 24,
+          "sha256": "9aa9d03aa412c3557c29d589f6a2c7fe0a41a6758e132b5c28639d4a51ed2cb4",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E04",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E1C",
+          "address": "0x984c22c",
+          "size": 14,
+          "sha256": "840a2da1fdf8aaf31ad17fb568e204b72cf299702c98767dd1e9d626f8078149",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E1C",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E1C",
+          "address": "0x9ef6e1c",
+          "size": 24,
+          "sha256": "52af2baabca65246005b5255283f5d46e9b59fbedbf946df8db2d0dcf58c0117",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E1C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E34",
+          "address": "0x984c264",
+          "size": 14,
+          "sha256": "42cce1c69cd817941ed57ad22db0329ff6e5c482da67e9e87ebb556a5ab099fa",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E34",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E34",
+          "address": "0x9ef6e34",
+          "size": 24,
+          "sha256": "347be2d216b16f6ea06790f37fca7a2f0248e91bf5b1ca180230e410fb4c6e60",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E34",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6EAC",
+          "address": "0x984c2b4",
+          "size": 13,
+          "sha256": "d3e0ff64428d962a1c259a07a5af6cc13f58ef23d53437c9698de45d73b404ab",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6EAC",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6EAC",
+          "address": "0x9ef6eac",
+          "size": 24,
+          "sha256": "b29ba84a4199ede1c7267b2aa7fdc66a8fcfcf24faab3db704f4b62d454f46d1",
+          "objects": [
+            {
+              "name": "gUnk_09EF6EAC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6F9C",
+          "address": "0x984c394",
+          "size": 14,
+          "sha256": "2178c2701911a549d27097877121bb7630f7a3851f9945388fdca6757366087a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6F9C",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6F9C",
+          "address": "0x9ef6f9c",
+          "size": 24,
+          "sha256": "3b0874d879d389f3007deaa729956fdc984ab574f37e1692ab2c7ba35831ab39",
+          "objects": [
+            {
+              "name": "gUnk_09EF6F9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "room.c",
+          "section": ".rodata_registration_name_gUnk_09EF70B8",
+          "address": "0x984c3c0",
+          "size": 15,
+          "sha256": "a3287148639d911f41eaf5ba7dfc2d44939f9b8419dd1a19e0d53898cf864bb1",
+          "objects": [
+            {
+              "name": "gTaskName_09EF70B8",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "room.c",
+          "section": ".data_registration_gUnk_09EF70B8",
+          "address": "0x9ef70b8",
+          "size": 24,
+          "sha256": "279c6ddca48b34d75a86800302df4043a6ba2a81d87e28b3919c1fab76c61c54",
+          "objects": [
+            {
+              "name": "gUnk_09EF70B8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".rodata_registration_name_gUnk_09EF9E8C",
+          "address": "0x9a4fd38",
+          "size": 17,
+          "sha256": "8f23d0737d8c9e71de1865531b0dad4a75857312c224b17bd12d8d8cdea96f8a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF9E8C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".data_registration_gUnk_09EF9E8C",
+          "address": "0x9ef9e8c",
+          "size": 24,
+          "sha256": "7b208e72b4bc68451580525cc6bfbd12bd18f4cbf4e50433ddbecfb422ed0f34",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".rodata_registration_name_gUnk_09EF9EF4",
+          "address": "0x9a4fe50",
+          "size": 17,
+          "sha256": "55bc08d433f13b7f79525a8a95114001031edd00a37c0192ffbe75d32ef3b6af",
+          "objects": [
+            {
+              "name": "gTaskName_09EF9EF4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".data_registration_gUnk_09EF9EF4",
+          "address": "0x9ef9ef4",
+          "size": 24,
+          "sha256": "47ac13f53aee4c3bc72a131cbe58d97d1f69167b46d778d91ff5800e92302fbe",
+          "objects": [
+            {
+              "name": "gUnk_09EF9EF4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "sroll.c",
+          "section": ".rodata_registration_name_gUnk_09EFAA64",
+          "address": "0x9a544f0",
+          "size": 15,
+          "sha256": "f3d442da3e598b8bb76c3f8d108cfdf0f7232fa916041ea10aaeaa088ed404ab",
+          "objects": [
+            {
+              "name": "gTaskName_09EFAA64",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "sroll.c",
+          "section": ".data_registration_gUnk_09EFAA64",
+          "address": "0x9efaa64",
+          "size": 24,
+          "sha256": "1bbe231c512b40924e97cec1fb91dbb38cfd63cad9a0573f27e0570c2e0dac00",
+          "objects": [
+            {
+              "name": "gUnk_09EFAA64",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "bos2.c",
+          "section": ".rodata_registration_name_gUnk_09EF2A5C",
+          "address": "0x95d3260",
+          "size": 17,
+          "sha256": "cfdcfcbbe4073e5cf113ec3a770070a3c3c6323cd1e4d77d369a12c0d65a9250",
+          "objects": [
+            {
+              "name": "gTaskName_09EF2A5C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".data_registration_gUnk_09EF2A5C",
+          "address": "0x9ec9e48",
+          "size": 24,
+          "sha256": "cce5a17ccd69d0721a5afd4b55cde1b7f60f5ca13bf1465fe44fa951d1776fe4",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A5C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".rodata_registration_name_gUnk_09EF2A74",
+          "address": "0x95d3274",
+          "size": 23,
+          "sha256": "bc92ef1b98c55e66e9c45f966f96d5857b210629813aefa1ac30e1dda7314983",
+          "objects": [
+            {
+              "name": "gTaskName_09EF2A74",
+              "offset": 0,
+              "size": 23
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".data_registration_gUnk_09EF2A74",
+          "address": "0x9ec9e60",
+          "size": 24,
+          "sha256": "2640b97969aa5cf98c11628f54dc3c36033e22959b5b0c0408334af777ae51e4",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A74",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "chara.c",
+          "section": ".rodata_registration_name_gUnk_09EF34A8",
+          "address": "0x95d33e4",
+          "size": 21,
+          "sha256": "d91bca430ef4aeb7c29d35abb5db3a7d1ea2bcc18b97923c68877dee2fdef310",
+          "objects": [
+            {
+              "name": "gTaskName_09EF34A8",
+              "offset": 0,
+              "size": 21
+            }
+          ]
+        },
+        {
+          "unit": "chara.c",
+          "section": ".data_registration_gUnk_09EF34A8",
+          "address": "0x9eca894",
+          "size": 24,
+          "sha256": "caec2bdfb278533f0c3b4e7c626adcb206f2e11d29b77b5536a86ebf52b93f6e",
+          "objects": [
+            {
+              "name": "gUnk_09EF34A8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos3.c",
+          "section": ".rodata_registration_name_gUnk_09EF34D8",
+          "address": "0x95d340c",
+          "size": 19,
+          "sha256": "6b66b023786f896ac6ec03ef186a9b404c29521ac8f8a57596fdaadb77799c57",
+          "objects": [
+            {
+              "name": "gTaskName_09EF34D8",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "bos3.c",
+          "section": ".data_registration_gUnk_09EF34D8",
+          "address": "0x9eca8c4",
+          "size": 24,
+          "sha256": "1b94b74d33982ea819367cae752c1cb88600e524ada48f340583d11c0e97ac74",
+          "objects": [
+            {
+              "name": "gUnk_09EF34D8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF48E0",
+          "address": "0x96b5ac0",
+          "size": 14,
+          "sha256": "34d3850a2a0e93f19e6f9722d242433bea384142879f48acc8b75a5dab63881e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF48E0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF48E0",
+          "address": "0x9ecbccc",
+          "size": 24,
+          "sha256": "ed21985764e091315efa12b041471bc21770ce98973d557b6a77314cb1862963",
+          "objects": [
+            {
+              "name": "gUnk_09EF48E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF48F8",
+          "address": "0x96b5ad0",
+          "size": 25,
+          "sha256": "96318f1d4b10d82d6d1f2a2df00898f579e40f8d55b8a9566cc8118a568ee120",
+          "objects": [
+            {
+              "name": "gTaskName_09EF48F8",
+              "offset": 0,
+              "size": 25
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF48F8",
+          "address": "0x9ecbce4",
+          "size": 24,
+          "sha256": "84d54be05859b0f1c2f780ba3a7b52277da051b8706165ee5629cf013ed98eae",
+          "objects": [
+            {
+              "name": "gUnk_09EF48F8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF49A0",
+          "address": "0x96b5b68",
+          "size": 21,
+          "sha256": "8b295d038c2301b4d5da61c307dfa8e72c28374f1e3fb1502ed259814c330055",
+          "objects": [
+            {
+              "name": "gTaskName_09EF49A0",
+              "offset": 0,
+              "size": 21
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF49A0",
+          "address": "0x9ecbd8c",
+          "size": 24,
+          "sha256": "1d71b82e345b731769bcc15f249d17f0e37d19f6ff19fec2851d5173d26419ce",
+          "objects": [
+            {
+              "name": "gUnk_09EF49A0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF49D0",
+          "address": "0x96b5b94",
+          "size": 15,
+          "sha256": "e76797fa583cccc589ee177716722b4fef7f8c709db2301d0abd01d6bdfd33be",
+          "objects": [
+            {
+              "name": "gTaskName_09EF49D0",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF49D0",
+          "address": "0x9ecbdbc",
+          "size": 24,
+          "sha256": "346dd9873f4b7d2f218571968b217caf53967e5fade8ff2a0524965624c6208a",
+          "objects": [
+            {
+              "name": "gUnk_09EF49D0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4A18",
+          "address": "0x96b5c30",
+          "size": 20,
+          "sha256": "11142731156c76261a1741032aaefda60e83a578d6b53222be8cd75d97e2c67e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4A18",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4A18",
+          "address": "0x9ecbe04",
+          "size": 24,
+          "sha256": "f78d9006630e9d8e2eaa9d2e13556e17851e69f6387371c0508de374989f86c1",
+          "objects": [
+            {
+              "name": "gUnk_09EF4A18",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4A30",
+          "address": "0x96b5c44",
+          "size": 19,
+          "sha256": "d911ff6acebff12bbde12be96cdbe66f3da9535a05b649664595481f45bcbbbb",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4A30",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4A30",
+          "address": "0x9ecbe1c",
+          "size": 24,
+          "sha256": "8c5fe6a9cf55e85e0c89a09446dc40ca79408a4044b827c992e2869b1e22a5a1",
+          "objects": [
+            {
+              "name": "gUnk_09EF4A30",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4B38",
+          "address": "0x96b5e88",
+          "size": 18,
+          "sha256": "4be1aafb022a5ca0261c8d24fc0eed23a8357d6e334378dde1bbec034de7e716",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4B38",
+              "offset": 0,
+              "size": 18
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4B38",
+          "address": "0x9ecbf24",
+          "size": 24,
+          "sha256": "5d5ab247cdbd67226522460a58df9ae28cf70afa5a027324f45a488a39502176",
+          "objects": [
+            {
+              "name": "gUnk_09EF4B38",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4CF0",
+          "address": "0x96b6190",
+          "size": 24,
+          "sha256": "ad6cd628ea28506c123078cc67a4a621e929a60dbdee2db498aa31e9be284428",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4CF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4CF0",
+          "address": "0x9ecc0dc",
+          "size": 24,
+          "sha256": "2b9d9d59fa9999467de489b5368cbb827e092a64b2acf7eff2ea82b3f8d90544",
+          "objects": [
+            {
+              "name": "gUnk_09EF4CF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D08",
+          "address": "0x96b61a8",
+          "size": 23,
+          "sha256": "91dd883276c2e00fe1cd761038c579b935a85daf27a0c1bb677fa5efd92a2669",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D08",
+              "offset": 0,
+              "size": 23
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D08",
+          "address": "0x9ecc0f4",
+          "size": 24,
+          "sha256": "fe79368adddf2de295965a12095db79b8a5b9ed4e03e6e02c406e8a0117cb1c2",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D08",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D38",
+          "address": "0x96b61d0",
+          "size": 20,
+          "sha256": "69a79b99a1cfab7d485ce9ce34c0ce8cf9a04a453167c63a9845a1959fda620d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D38",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D38",
+          "address": "0x9ecc124",
+          "size": 24,
+          "sha256": "df478755e682e28d0629c59191673db3b48092d65c8d554cc420453a7b9fb134",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D38",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D68",
+          "address": "0x96b61fc",
+          "size": 26,
+          "sha256": "3cf51becc5f4c98e834c9a05794b022865fd321f65c19efdc29423a1ee6437b0",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D68",
+              "offset": 0,
+              "size": 26
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D68",
+          "address": "0x9ecc154",
+          "size": 24,
+          "sha256": "7828fb090e5fc38475baa08c6064e2e4a784e50cba388a50c5fe8b268110e06b",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D68",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6B90",
+          "address": "0x98007c8",
+          "size": 14,
+          "sha256": "c4da48faf33f6609c18ac3d9dc5cd55cd12a39cee27098d68d7ac92d40e01efb",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6B90",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6B90",
+          "address": "0x9ecdf7c",
+          "size": 24,
+          "sha256": "e823399d373d1e0f549d863937f73e9d5b291af32e1bcc0a508f8ddeef830741",
+          "objects": [
+            {
+              "name": "gUnk_09EF6B90",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BA8",
+          "address": "0x9800850",
+          "size": 14,
+          "sha256": "1bd6033f6689696be0986a4304ba97c01b24487f0b33cca61093f97fd924a62a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BA8",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BA8",
+          "address": "0x9ecdf94",
+          "size": 24,
+          "sha256": "be905c64a4eea8a0b9b19dc623f7a567d3e9df481a628a953ee4839b78a324a9",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BA8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BC0",
+          "address": "0x98008b8",
+          "size": 14,
+          "sha256": "a7d6d0e9b16b66a8f1b6d3965f4ae2f1c35182917a13091e14a3c604954f1d48",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BC0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BC0",
+          "address": "0x9ecdfac",
+          "size": 24,
+          "sha256": "18126ce74df78cc15408143aeb82e0626f24c3e398ffd883d7e04cd9e8b3b497",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BC0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BD8",
+          "address": "0x9800940",
+          "size": 14,
+          "sha256": "98a76a591738a3248d8b6b301c741eb8cd62270e2cd3d57f8a35f1d3ea8a6a6d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BD8",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BD8",
+          "address": "0x9ecdfc4",
+          "size": 24,
+          "sha256": "92e1653f593d3f508d2d5ac439b19a76ec9d2765f25223dcbde1ac821608dd6d",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BD8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BF0",
+          "address": "0x98009c8",
+          "size": 14,
+          "sha256": "b8976c24e4b5c7f846694afbb207dc3c028096a01e2672aac313d999f8af4e0b",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BF0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BF0",
+          "address": "0x9ecdfdc",
+          "size": 24,
+          "sha256": "59d38d5c8f6d7b58f849efac0cc543bedc0c5991d85072a50c7c288219aae09e",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6C08",
+          "address": "0x9800a70",
+          "size": 14,
+          "sha256": "bfee364634e8d4fb4b79011e6719ae3d26ce769fdb4a9ba3457e60c3e67cdf9e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6C08",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6C08",
+          "address": "0x9ecdff4",
+          "size": 24,
+          "sha256": "96203d04ab8145ee477bc107debbf13eaf0ce1d537bcc816175050749ab7b294",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C08",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6C20",
+          "address": "0x9800b18",
+          "size": 14,
+          "sha256": "16922e87ff61390859d14bfc29c3e4e3f13d0e2b90747a123a0fac215a82c498",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6C20",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6C20",
+          "address": "0x9ece00c",
+          "size": 24,
+          "sha256": "bb30f2381aa6f30cd53a3475f117b6a3bd3aebbe8be67b268e035ebe5c039dd7",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C20",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CCC",
+          "address": "0x9800b94",
+          "size": 17,
+          "sha256": "d962bb9c5c5ba7d817c22d84fccf657ed5589387bc858c7df78da6128f6df87e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CCC",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CCC",
+          "address": "0x9ece0b8",
+          "size": 24,
+          "sha256": "7de5f3a4fa2d0aa95c980258163e4aad2b9f22485cfb7e9a04848a9416474e9f",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CCC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CE4",
+          "address": "0x9800ba8",
+          "size": 17,
+          "sha256": "10680a0e5dd463009537d89fca4cb8c3e20bfa18da6268947ba93cb8fb77fd3a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CE4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CE4",
+          "address": "0x9ece0d0",
+          "size": 24,
+          "sha256": "c5a33aacec6eee4d2a945bdbd47fb06ac9921a48b97d69f0b6d09edb3c930ed6",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CE4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CFC",
+          "address": "0x9800bbc",
+          "size": 17,
+          "sha256": "12b93c056d3c8d7cad68ddf17813a95ed308cfb203e9f3ea95e340a95a1d559e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CFC",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CFC",
+          "address": "0x9ece0e8",
+          "size": 24,
+          "sha256": "950f46661179a62e13293bf9686677c5f85b29c6f4537eb5e0b69a9cb1e3392b",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CFC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D14",
+          "address": "0x9800bd0",
+          "size": 17,
+          "sha256": "76235f60af089b71da2e6768ac32da94900d2b8f26fa35f37eb67c6b56d5a3a5",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D14",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D14",
+          "address": "0x9ece100",
+          "size": 24,
+          "sha256": "d582b6136895ca753fc50923fcbb287101b83709872bda8aa5ba6819d9e04832",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D14",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D2C",
+          "address": "0x9800be4",
+          "size": 17,
+          "sha256": "658b121becd934572d4c9026119ea93354d2a1fa0fc5f8eca17339b34d8dd34e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D2C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D2C",
+          "address": "0x9ece118",
+          "size": 24,
+          "sha256": "7241202b6657814a780b09b0f8dd92f484b519851c8e2f021907b3562ed7994b",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D2C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D44",
+          "address": "0x9800bf8",
+          "size": 17,
+          "sha256": "25ad873cc8fad5786b244e080592ae0cf012f59bd05e4e11a89b8fedac9344b8",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D44",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D44",
+          "address": "0x9ece130",
+          "size": 24,
+          "sha256": "ecb6394e578b16d808e277476e95a7bf87c1d1c657af69d7d96baf6b77894172",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D44",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D5C",
+          "address": "0x9800c0c",
+          "size": 17,
+          "sha256": "04434ef3b39a1850c9ff24bba85e610f44aab22515107739505c25fcde3b891d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D5C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D5C",
+          "address": "0x9ece148",
+          "size": 24,
+          "sha256": "64902a162b3556c093afc040533dd030624fb1cf17b06dc2f559a6618f28ded3",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D5C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D74",
+          "address": "0x9800c20",
+          "size": 17,
+          "sha256": "f62811803881bdb8da6b689d4ec6144cb644b223cfc1c68c6928000f7d3ae2b4",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D74",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D74",
+          "address": "0x9ece160",
+          "size": 24,
+          "sha256": "fce062aeb7f4c434cc1c366709ad219758f965debbe6822c575e44682da8af76",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D74",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D8C",
+          "address": "0x9800c34",
+          "size": 17,
+          "sha256": "a75992df81e8070531bb92246c48b7cd0aa174838b8514c9cf41254da7a1f271",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D8C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D8C",
+          "address": "0x9ece178",
+          "size": 24,
+          "sha256": "4cb29fdbee5e9b22a9054f23cf15567b876f707a333c8f48675df499bbdb0bd2",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DA4",
+          "address": "0x9800c48",
+          "size": 17,
+          "sha256": "61f512624dcb5b2e6aa1c8403e076f398a86c4aaf7e9740cdc9db5c1a9832773",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DA4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DA4",
+          "address": "0x9ece190",
+          "size": 24,
+          "sha256": "9d379cc6c28228be19a2b9295975a78250cc1074c6f68cb0628190590ee4537f",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DA4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DD4",
+          "address": "0x9800c94",
+          "size": 14,
+          "sha256": "3c8da945632df8991de241b76803e42b6fd20955aae5645616a72839382e9fe0",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DD4",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DD4",
+          "address": "0x9ece1c0",
+          "size": 24,
+          "sha256": "c543b85b42845e6d5964ed345ef727ceddc35a7740aaf925ba0e9270836713ae",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DD4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DEC",
+          "address": "0x9800ccc",
+          "size": 19,
+          "sha256": "e6678f30a2a67b10aabc9fa597eb7f5354aded7aff4f21e293fb2869c1a32389",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DEC",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DEC",
+          "address": "0x9ece1d8",
+          "size": 24,
+          "sha256": "3ae277ab3fce77e500d1f2ea01bfcbb7060afea44d40085071b4ca7aea6bb5a9",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DEC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E04",
+          "address": "0x9800d08",
+          "size": 14,
+          "sha256": "96d57d0172fa63521ecc30d262dd70cec1dd8ca56c3c700a3e7b7f9255de9d3d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E04",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E04",
+          "address": "0x9ece1f0",
+          "size": 24,
+          "sha256": "77ee592eea6fd9e1076871037982e8481ef3c6384d126f07878ee444db4ae538",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E04",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E1C",
+          "address": "0x9800d40",
+          "size": 14,
+          "sha256": "840a2da1fdf8aaf31ad17fb568e204b72cf299702c98767dd1e9d626f8078149",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E1C",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E1C",
+          "address": "0x9ece208",
+          "size": 24,
+          "sha256": "476f254194981401e31f8409c53ecc36e2799935930810f75b5c8e852994bdf8",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E1C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E34",
+          "address": "0x9800d78",
+          "size": 14,
+          "sha256": "42cce1c69cd817941ed57ad22db0329ff6e5c482da67e9e87ebb556a5ab099fa",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E34",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E34",
+          "address": "0x9ece220",
+          "size": 24,
+          "sha256": "e2e0acebad6d3f055400b38b5e86530090ea754a242c2ffd8452779d6f21ed0a",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E34",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6EAC",
+          "address": "0x9800dc8",
+          "size": 13,
+          "sha256": "d3e0ff64428d962a1c259a07a5af6cc13f58ef23d53437c9698de45d73b404ab",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6EAC",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6EAC",
+          "address": "0x9ece298",
+          "size": 24,
+          "sha256": "33686684b94fe1d0431565ce0bb2385f56a8fa8567c05f3b2f4c9cab4a9ee872",
+          "objects": [
+            {
+              "name": "gUnk_09EF6EAC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6F9C",
+          "address": "0x9800ea8",
+          "size": 14,
+          "sha256": "2178c2701911a549d27097877121bb7630f7a3851f9945388fdca6757366087a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6F9C",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6F9C",
+          "address": "0x9ece388",
+          "size": 24,
+          "sha256": "6af211f2ef1e7f80126641e8a6ea2dbf2bc440016ef1012391865c9169f658ef",
+          "objects": [
+            {
+              "name": "gUnk_09EF6F9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "room.c",
+          "section": ".rodata_registration_name_gUnk_09EF70B8",
+          "address": "0x9800ed4",
+          "size": 15,
+          "sha256": "a3287148639d911f41eaf5ba7dfc2d44939f9b8419dd1a19e0d53898cf864bb1",
+          "objects": [
+            {
+              "name": "gTaskName_09EF70B8",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "room.c",
+          "section": ".data_registration_gUnk_09EF70B8",
+          "address": "0x9ece4a4",
+          "size": 24,
+          "sha256": "c19e25937a735e82eff628aa8467164aa4f06c782d73e49c74e2a143cfb246fb",
+          "objects": [
+            {
+              "name": "gUnk_09EF70B8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".rodata_registration_name_gUnk_09EF9E8C",
+          "address": "0x9a047c0",
+          "size": 17,
+          "sha256": "8f23d0737d8c9e71de1865531b0dad4a75857312c224b17bd12d8d8cdea96f8a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF9E8C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".data_registration_gUnk_09EF9E8C",
+          "address": "0x9ed1278",
+          "size": 24,
+          "sha256": "a7a1f8a8917e17722300634ed8e997d080142b4f15b58591da756c3a9ce1286e",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".rodata_registration_name_gUnk_09EF9EF4",
+          "address": "0x9a048d8",
+          "size": 17,
+          "sha256": "55bc08d433f13b7f79525a8a95114001031edd00a37c0192ffbe75d32ef3b6af",
+          "objects": [
+            {
+              "name": "gTaskName_09EF9EF4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".data_registration_gUnk_09EF9EF4",
+          "address": "0x9ed12e0",
+          "size": 24,
+          "sha256": "c52549e44176f3e9dfd4225de489a63cdc547b5702cc5a5d1738fa9bee6b14d7",
+          "objects": [
+            {
+              "name": "gUnk_09EF9EF4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "sroll.c",
+          "section": ".rodata_registration_name_gUnk_09EFAA64",
+          "address": "0x9a093c0",
+          "size": 15,
+          "sha256": "f3d442da3e598b8bb76c3f8d108cfdf0f7232fa916041ea10aaeaa088ed404ab",
+          "objects": [
+            {
+              "name": "gTaskName_09EFAA64",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "sroll.c",
+          "section": ".data_registration_gUnk_09EFAA64",
+          "address": "0x9ed1f70",
+          "size": 24,
+          "sha256": "815d336ece138f710bff6af1fda3251f82175df52a619a05bad25bd6580dc8a8",
+          "objects": [
+            {
+              "name": "gUnk_09EFAA64",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "bos2.c",
+          "section": ".rodata_registration_name_gUnk_09EF2A5C",
+          "address": "0x95dbb98",
+          "size": 17,
+          "sha256": "cfdcfcbbe4073e5cf113ec3a770070a3c3c6323cd1e4d77d369a12c0d65a9250",
+          "objects": [
+            {
+              "name": "gTaskName_09EF2A5C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".data_registration_gUnk_09EF2A5C",
+          "address": "0x9f7dc94",
+          "size": 24,
+          "sha256": "e073e85793ae25b29bd3f88a40bafb9cd3ede90046b76c052b591f5744f6d976",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A5C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".rodata_registration_name_gUnk_09EF2A74",
+          "address": "0x95dbbac",
+          "size": 23,
+          "sha256": "bc92ef1b98c55e66e9c45f966f96d5857b210629813aefa1ac30e1dda7314983",
+          "objects": [
+            {
+              "name": "gTaskName_09EF2A74",
+              "offset": 0,
+              "size": 23
+            }
+          ]
+        },
+        {
+          "unit": "bos2.c",
+          "section": ".data_registration_gUnk_09EF2A74",
+          "address": "0x9f7dcac",
+          "size": 24,
+          "sha256": "0236bfff4b55b5a7b45d852f2b76c11d54a4220c7a31460e7c8a249f5191bfef",
+          "objects": [
+            {
+              "name": "gUnk_09EF2A74",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "chara.c",
+          "section": ".rodata_registration_name_gUnk_09EF34A8",
+          "address": "0x95dbd1c",
+          "size": 21,
+          "sha256": "d91bca430ef4aeb7c29d35abb5db3a7d1ea2bcc18b97923c68877dee2fdef310",
+          "objects": [
+            {
+              "name": "gTaskName_09EF34A8",
+              "offset": 0,
+              "size": 21
+            }
+          ]
+        },
+        {
+          "unit": "chara.c",
+          "section": ".data_registration_gUnk_09EF34A8",
+          "address": "0x9f7e6e0",
+          "size": 24,
+          "sha256": "2e8ec080a9cc627c2a12fddd6e0986e6dce25ef794f9e051495ba51e443a5fc4",
+          "objects": [
+            {
+              "name": "gUnk_09EF34A8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos3.c",
+          "section": ".rodata_registration_name_gUnk_09EF34D8",
+          "address": "0x95dbd44",
+          "size": 19,
+          "sha256": "6b66b023786f896ac6ec03ef186a9b404c29521ac8f8a57596fdaadb77799c57",
+          "objects": [
+            {
+              "name": "gTaskName_09EF34D8",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "bos3.c",
+          "section": ".data_registration_gUnk_09EF34D8",
+          "address": "0x9f7e710",
+          "size": 24,
+          "sha256": "7bf71f3ef46d07f79253d1ef71aabfa41fec85230a9e1df40b0b3664ab1b6b3e",
+          "objects": [
+            {
+              "name": "gUnk_09EF34D8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF48E0",
+          "address": "0x96ca62c",
+          "size": 14,
+          "sha256": "34d3850a2a0e93f19e6f9722d242433bea384142879f48acc8b75a5dab63881e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF48E0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF48E0",
+          "address": "0x9f7fbd4",
+          "size": 24,
+          "sha256": "39bd407d23a8a52c877d0dfce99e973ba52e83ab9ca6f464f13476e5d7f49146",
+          "objects": [
+            {
+              "name": "gUnk_09EF48E0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF48F8",
+          "address": "0x96ca63c",
+          "size": 25,
+          "sha256": "96318f1d4b10d82d6d1f2a2df00898f579e40f8d55b8a9566cc8118a568ee120",
+          "objects": [
+            {
+              "name": "gTaskName_09EF48F8",
+              "offset": 0,
+              "size": 25
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF48F8",
+          "address": "0x9f7fbec",
+          "size": 24,
+          "sha256": "ebd2a389547081b6206a924d1569d1b69a5d997bc89f10bfc10b09be47faa4eb",
+          "objects": [
+            {
+              "name": "gUnk_09EF48F8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF49A0",
+          "address": "0x96ca6d4",
+          "size": 21,
+          "sha256": "8b295d038c2301b4d5da61c307dfa8e72c28374f1e3fb1502ed259814c330055",
+          "objects": [
+            {
+              "name": "gTaskName_09EF49A0",
+              "offset": 0,
+              "size": 21
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF49A0",
+          "address": "0x9f7fc94",
+          "size": 24,
+          "sha256": "5d7e61d0486ca273ecf151c0c91dcfff039679ca1548cae1776e6450ab2a4142",
+          "objects": [
+            {
+              "name": "gUnk_09EF49A0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF49D0",
+          "address": "0x96ca700",
+          "size": 15,
+          "sha256": "e76797fa583cccc589ee177716722b4fef7f8c709db2301d0abd01d6bdfd33be",
+          "objects": [
+            {
+              "name": "gTaskName_09EF49D0",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF49D0",
+          "address": "0x9f7fcc4",
+          "size": 24,
+          "sha256": "177723698b57f8410ebe1950f93225cb741e7862b585c462ed302ebe09bc492b",
+          "objects": [
+            {
+              "name": "gUnk_09EF49D0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4A18",
+          "address": "0x96ca79c",
+          "size": 20,
+          "sha256": "11142731156c76261a1741032aaefda60e83a578d6b53222be8cd75d97e2c67e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4A18",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4A18",
+          "address": "0x9f7fd0c",
+          "size": 24,
+          "sha256": "4b921ba885ebc0089d1ebd058665ed4141c3b780126faf17472b07dbf24e7ec5",
+          "objects": [
+            {
+              "name": "gUnk_09EF4A18",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4A30",
+          "address": "0x96ca7b0",
+          "size": 19,
+          "sha256": "d911ff6acebff12bbde12be96cdbe66f3da9535a05b649664595481f45bcbbbb",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4A30",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4A30",
+          "address": "0x9f7fd24",
+          "size": 24,
+          "sha256": "a9be7e649b9b85ca50122aa7c99f9bc2b2ad638d05f7eba013e486e172ba3218",
+          "objects": [
+            {
+              "name": "gUnk_09EF4A30",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4B38",
+          "address": "0x96ca9f4",
+          "size": 18,
+          "sha256": "4be1aafb022a5ca0261c8d24fc0eed23a8357d6e334378dde1bbec034de7e716",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4B38",
+              "offset": 0,
+              "size": 18
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4B38",
+          "address": "0x9f7fe2c",
+          "size": 24,
+          "sha256": "3dc58d278cae1c3b929afc3595a42481bce1105e342bac983924523b8856ff96",
+          "objects": [
+            {
+              "name": "gUnk_09EF4B38",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4CF0",
+          "address": "0x96cacfc",
+          "size": 24,
+          "sha256": "ad6cd628ea28506c123078cc67a4a621e929a60dbdee2db498aa31e9be284428",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4CF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4CF0",
+          "address": "0x9f7ffe4",
+          "size": 24,
+          "sha256": "3d17e75dbc1f8bad4dc65cfafab368030b6fb74a810cd1f6ed3c4177677a69e9",
+          "objects": [
+            {
+              "name": "gUnk_09EF4CF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D08",
+          "address": "0x96cad14",
+          "size": 23,
+          "sha256": "91dd883276c2e00fe1cd761038c579b935a85daf27a0c1bb677fa5efd92a2669",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D08",
+              "offset": 0,
+              "size": 23
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D08",
+          "address": "0x9f7fffc",
+          "size": 24,
+          "sha256": "2d5b01a9df7607181892aeac0bd23305b5ac6b07df1fa9952ce90e4fb6ff5171",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D08",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D38",
+          "address": "0x96cad3c",
+          "size": 20,
+          "sha256": "69a79b99a1cfab7d485ce9ce34c0ce8cf9a04a453167c63a9845a1959fda620d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D38",
+              "offset": 0,
+              "size": 20
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D38",
+          "address": "0x9f8002c",
+          "size": 24,
+          "sha256": "9f93e81a40f9790b5d1adc242071f3d543b77d7e6da1cc8692f8b02aec875884",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D38",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".rodata_registration_name_gUnk_09EF4D68",
+          "address": "0x96cad68",
+          "size": 26,
+          "sha256": "3cf51becc5f4c98e834c9a05794b022865fd321f65c19efdc29423a1ee6437b0",
+          "objects": [
+            {
+              "name": "gTaskName_09EF4D68",
+              "offset": 0,
+              "size": 26
+            }
+          ]
+        },
+        {
+          "unit": "poo.c",
+          "section": ".data_registration_gUnk_09EF4D68",
+          "address": "0x9f8005c",
+          "size": 24,
+          "sha256": "efe44cf3dbaa99cdf8cd4cf7fdd5477faeded2fdf263981d4046ead01c66d333",
+          "objects": [
+            {
+              "name": "gUnk_09EF4D68",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6B90",
+          "address": "0x9828688",
+          "size": 14,
+          "sha256": "c4da48faf33f6609c18ac3d9dc5cd55cd12a39cee27098d68d7ac92d40e01efb",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6B90",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6B90",
+          "address": "0x9f82200",
+          "size": 24,
+          "sha256": "9abdd67af8c5b81c5aee10eb4de9985364da93745cba885f29d00a20240ae6f7",
+          "objects": [
+            {
+              "name": "gUnk_09EF6B90",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BA8",
+          "address": "0x9828710",
+          "size": 14,
+          "sha256": "1bd6033f6689696be0986a4304ba97c01b24487f0b33cca61093f97fd924a62a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BA8",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BA8",
+          "address": "0x9f82218",
+          "size": 24,
+          "sha256": "66964ea86f5cd69307f94aa8ad70bb93d60528fb10f729c42e9f06f6b77184f7",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BA8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BC0",
+          "address": "0x9828778",
+          "size": 14,
+          "sha256": "a7d6d0e9b16b66a8f1b6d3965f4ae2f1c35182917a13091e14a3c604954f1d48",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BC0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BC0",
+          "address": "0x9f82230",
+          "size": 24,
+          "sha256": "2f4c0fd39a7136199b0e55057dfb282c652e14de9faf7d2008a579d6075db328",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BC0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BD8",
+          "address": "0x9828800",
+          "size": 14,
+          "sha256": "98a76a591738a3248d8b6b301c741eb8cd62270e2cd3d57f8a35f1d3ea8a6a6d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BD8",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BD8",
+          "address": "0x9f82248",
+          "size": 24,
+          "sha256": "eb705a90e75b64d435e52adfd22d9d0b15e11c663f9eb59a5e1df313cb1bac95",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BD8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6BF0",
+          "address": "0x9828888",
+          "size": 14,
+          "sha256": "b8976c24e4b5c7f846694afbb207dc3c028096a01e2672aac313d999f8af4e0b",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6BF0",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6BF0",
+          "address": "0x9f82260",
+          "size": 24,
+          "sha256": "11c5d69e4f7460fc203cd64b87b765bf02d908bec596be53e0f0c04087e5e4d6",
+          "objects": [
+            {
+              "name": "gUnk_09EF6BF0",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6C08",
+          "address": "0x9828930",
+          "size": 14,
+          "sha256": "bfee364634e8d4fb4b79011e6719ae3d26ce769fdb4a9ba3457e60c3e67cdf9e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6C08",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6C08",
+          "address": "0x9f82278",
+          "size": 24,
+          "sha256": "3080f8d959ffa0c9c346819c13bcd3872a8fd977cb368dcf0fca13a8fc969fc5",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C08",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6C20",
+          "address": "0x98289d8",
+          "size": 14,
+          "sha256": "16922e87ff61390859d14bfc29c3e4e3f13d0e2b90747a123a0fac215a82c498",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6C20",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6C20",
+          "address": "0x9f82290",
+          "size": 24,
+          "sha256": "09fd36b152fae0cc3a8e0ccf5d1027fa3031d8601195652c3aa3b52bee02a276",
+          "objects": [
+            {
+              "name": "gUnk_09EF6C20",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CCC",
+          "address": "0x9828a54",
+          "size": 17,
+          "sha256": "d962bb9c5c5ba7d817c22d84fccf657ed5589387bc858c7df78da6128f6df87e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CCC",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CCC",
+          "address": "0x9f8233c",
+          "size": 24,
+          "sha256": "a2f78a3d3ccef58828088ac103f3a98cfc07c13b1f27451c63526cbd83d9856f",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CCC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CE4",
+          "address": "0x9828a68",
+          "size": 17,
+          "sha256": "10680a0e5dd463009537d89fca4cb8c3e20bfa18da6268947ba93cb8fb77fd3a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CE4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CE4",
+          "address": "0x9f82354",
+          "size": 24,
+          "sha256": "fd7ed5737d767745a1a65d021d65f5105145cc9b77075e42034f9ead54aa660b",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CE4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6CFC",
+          "address": "0x9828a7c",
+          "size": 17,
+          "sha256": "12b93c056d3c8d7cad68ddf17813a95ed308cfb203e9f3ea95e340a95a1d559e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6CFC",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6CFC",
+          "address": "0x9f8236c",
+          "size": 24,
+          "sha256": "44ba58ae6150277eaa1647768790f3b6d7e9e1c9890a69013b1e9b2e3e38610f",
+          "objects": [
+            {
+              "name": "gUnk_09EF6CFC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D14",
+          "address": "0x9828a90",
+          "size": 17,
+          "sha256": "76235f60af089b71da2e6768ac32da94900d2b8f26fa35f37eb67c6b56d5a3a5",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D14",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D14",
+          "address": "0x9f82384",
+          "size": 24,
+          "sha256": "184ef762574dc760ca6a9affa40cd37d6fc04ee7cac47a6503cb9f624587cc21",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D14",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D2C",
+          "address": "0x9828aa4",
+          "size": 17,
+          "sha256": "658b121becd934572d4c9026119ea93354d2a1fa0fc5f8eca17339b34d8dd34e",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D2C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D2C",
+          "address": "0x9f8239c",
+          "size": 24,
+          "sha256": "ff9493a62df05304b7992c4ea0a10a48d3db9cc9a0ea912f1264532c6e2ad3be",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D2C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D44",
+          "address": "0x9828ab8",
+          "size": 17,
+          "sha256": "25ad873cc8fad5786b244e080592ae0cf012f59bd05e4e11a89b8fedac9344b8",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D44",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D44",
+          "address": "0x9f823b4",
+          "size": 24,
+          "sha256": "69ce0c112fee6134bdd86a9c1a4cc80dcbac1051cac0ee0312a55bd4aec1fbd8",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D44",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D5C",
+          "address": "0x9828acc",
+          "size": 17,
+          "sha256": "04434ef3b39a1850c9ff24bba85e610f44aab22515107739505c25fcde3b891d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D5C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D5C",
+          "address": "0x9f823cc",
+          "size": 24,
+          "sha256": "05613d0abe57aff32fc760589eec2580d0b73b5e705efe4baa8c959aafa83ef7",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D5C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D74",
+          "address": "0x9828ae0",
+          "size": 17,
+          "sha256": "f62811803881bdb8da6b689d4ec6144cb644b223cfc1c68c6928000f7d3ae2b4",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D74",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D74",
+          "address": "0x9f823e4",
+          "size": 24,
+          "sha256": "0d98c8f2a7a23989cd3b6874647f1ccee0d82fc30dec752694442f771844ca83",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D74",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6D8C",
+          "address": "0x9828af4",
+          "size": 17,
+          "sha256": "a75992df81e8070531bb92246c48b7cd0aa174838b8514c9cf41254da7a1f271",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6D8C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6D8C",
+          "address": "0x9f823fc",
+          "size": 24,
+          "sha256": "c81f71dee5b0fe5f8214f7974480ccd89039cd2486b5888576db74f7f9731ba5",
+          "objects": [
+            {
+              "name": "gUnk_09EF6D8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DA4",
+          "address": "0x9828b08",
+          "size": 17,
+          "sha256": "61f512624dcb5b2e6aa1c8403e076f398a86c4aaf7e9740cdc9db5c1a9832773",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DA4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DA4",
+          "address": "0x9f82414",
+          "size": 24,
+          "sha256": "c455be505b85c49b26b0c43a2d78d631dfe1fa918bc32c9372ab382fa973fa81",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DA4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DD4",
+          "address": "0x9828b54",
+          "size": 14,
+          "sha256": "3c8da945632df8991de241b76803e42b6fd20955aae5645616a72839382e9fe0",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DD4",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DD4",
+          "address": "0x9f82444",
+          "size": 24,
+          "sha256": "a3a9492d599ecd2bd0442389a2e933665ee153dc99cf9cfc263418bf76daa4a8",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DD4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6DEC",
+          "address": "0x9828b8c",
+          "size": 19,
+          "sha256": "e6678f30a2a67b10aabc9fa597eb7f5354aded7aff4f21e293fb2869c1a32389",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6DEC",
+              "offset": 0,
+              "size": 19
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6DEC",
+          "address": "0x9f8245c",
+          "size": 24,
+          "sha256": "94c566dd9707786451b7fc7aaf653d506b31d74af2cd649b971b7c76cd6a1195",
+          "objects": [
+            {
+              "name": "gUnk_09EF6DEC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E04",
+          "address": "0x9828bc8",
+          "size": 14,
+          "sha256": "96d57d0172fa63521ecc30d262dd70cec1dd8ca56c3c700a3e7b7f9255de9d3d",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E04",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E04",
+          "address": "0x9f82474",
+          "size": 24,
+          "sha256": "950e99041b9d9e4249e09791cb6865ea653d042029e5dcc8be131914ad91a2f7",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E04",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E1C",
+          "address": "0x9828c00",
+          "size": 14,
+          "sha256": "840a2da1fdf8aaf31ad17fb568e204b72cf299702c98767dd1e9d626f8078149",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E1C",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E1C",
+          "address": "0x9f8248c",
+          "size": 24,
+          "sha256": "7bf9a726d628f78af1215fb270b1e31e96c4ac8fe715f7b67682ee2dba8013a2",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E1C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6E34",
+          "address": "0x9828c38",
+          "size": 14,
+          "sha256": "42cce1c69cd817941ed57ad22db0329ff6e5c482da67e9e87ebb556a5ab099fa",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6E34",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6E34",
+          "address": "0x9f824a4",
+          "size": 24,
+          "sha256": "e3aa76079f1e0969739156445d3a1be6b38db6b18b7c276456a3117133367da1",
+          "objects": [
+            {
+              "name": "gUnk_09EF6E34",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6EAC",
+          "address": "0x9828c88",
+          "size": 13,
+          "sha256": "d3e0ff64428d962a1c259a07a5af6cc13f58ef23d53437c9698de45d73b404ab",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6EAC",
+              "offset": 0,
+              "size": 13
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6EAC",
+          "address": "0x9f8251c",
+          "size": 24,
+          "sha256": "a2a870ead649d213259265f05e165c18779a43dee1804746ed54419bda492a3a",
+          "objects": [
+            {
+              "name": "gUnk_09EF6EAC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".rodata_registration_name_gUnk_09EF6F9C",
+          "address": "0x9828d68",
+          "size": 14,
+          "sha256": "2178c2701911a549d27097877121bb7630f7a3851f9945388fdca6757366087a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF6F9C",
+              "offset": 0,
+              "size": 14
+            }
+          ]
+        },
+        {
+          "unit": "map.c",
+          "section": ".data_registration_gUnk_09EF6F9C",
+          "address": "0x9f8260c",
+          "size": 24,
+          "sha256": "b9aa64712597058fe871e9ddcc90c4c6ae6a96ace33f84a9e18901a2f70c8375",
+          "objects": [
+            {
+              "name": "gUnk_09EF6F9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "room.c",
+          "section": ".rodata_registration_name_gUnk_09EF70B8",
+          "address": "0x9828d94",
+          "size": 15,
+          "sha256": "a3287148639d911f41eaf5ba7dfc2d44939f9b8419dd1a19e0d53898cf864bb1",
+          "objects": [
+            {
+              "name": "gTaskName_09EF70B8",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "room.c",
+          "section": ".data_registration_gUnk_09EF70B8",
+          "address": "0x9f82728",
+          "size": 24,
+          "sha256": "4f610f7b7487bbc56706ed6ce221e04f146832260fcfedbbfb23e4634d46e65c",
+          "objects": [
+            {
+              "name": "gUnk_09EF70B8",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".rodata_registration_name_gUnk_09EF9E8C",
+          "address": "0x9aad7fc",
+          "size": 17,
+          "sha256": "8f23d0737d8c9e71de1865531b0dad4a75857312c224b17bd12d8d8cdea96f8a",
+          "objects": [
+            {
+              "name": "gTaskName_09EF9E8C",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".data_registration_gUnk_09EF9E8C",
+          "address": "0x9f85af8",
+          "size": 24,
+          "sha256": "22e90d778c760ae68731f0bcfb1c701707341e1a23a8aad740920b78518d2315",
+          "objects": [
+            {
+              "name": "gUnk_09EF9E8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".rodata_registration_name_gUnk_09EF9EF4",
+          "address": "0x9aad914",
+          "size": 17,
+          "sha256": "55bc08d433f13b7f79525a8a95114001031edd00a37c0192ffbe75d32ef3b6af",
+          "objects": [
+            {
+              "name": "gTaskName_09EF9EF4",
+              "offset": 0,
+              "size": 17
+            }
+          ]
+        },
+        {
+          "unit": "bos7.c",
+          "section": ".data_registration_gUnk_09EF9EF4",
+          "address": "0x9f85b60",
+          "size": 24,
+          "sha256": "a7b9c9d19ae712a41d9dfe08090cd30eb7ce36bcf9f6d6ba17c540bbf99a81d9",
+          "objects": [
+            {
+              "name": "gUnk_09EF9EF4",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "sroll.c",
+          "section": ".rodata_registration_name_gUnk_09EFAA64",
+          "address": "0x9ab2238",
+          "size": 15,
+          "sha256": "f3d442da3e598b8bb76c3f8d108cfdf0f7232fa916041ea10aaeaa088ed404ab",
+          "objects": [
+            {
+              "name": "gTaskName_09EFAA64",
+              "offset": 0,
+              "size": 15
+            }
+          ]
+        },
+        {
+          "unit": "sroll.c",
+          "section": ".data_registration_gUnk_09EFAA64",
+          "address": "0x9f867b0",
+          "size": 24,
+          "sha256": "d19a0b1c312ad7a323e51bdac2de8c6b4818e5cbd4eebc728397bd681436ff04",
+          "objects": [
+            {
+              "name": "gUnk_09EFAA64",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1418,3 +1418,14 @@ TaskDesc gTaskDescChgCardObj __attribute__((section(".data_registration_gTaskDes
     (void (*)(void*))task_chgCardObj_3,
     0x44,
 };
+
+const char gTaskName_09EF34A8[] __attribute__((section(".rodata_registration_name_gUnk_09EF34A8"), aligned(1))) = "task_chara_mask_fade";
+
+TaskDesc gUnk_09EF34A8 __attribute__((section(".data_registration_gUnk_09EF34A8"))) = {
+    gTaskName_09EF34A8,
+    (void (*)(void*, void*))task_chara_mask_fade_0,
+    task_chara_mask_fade_1,
+    (void (*)(void*))task_chara_mask_fade_2,
+    (void (*)(void*))task_chara_mask_fade_3,
+    0x240,
+};

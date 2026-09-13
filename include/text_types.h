@@ -3,6 +3,10 @@
 
 #include "types.h"
 
+typedef struct LocalizedText {
+    u8* strings[5];
+} LocalizedText;
+
 typedef struct TextSlot {
     void* tiles;
     u8 unk_04;

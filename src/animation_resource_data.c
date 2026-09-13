@@ -16988,3 +16988,387 @@ void* gUnk_09EF6078[12] __attribute__((section(".data_09EF6078"))) = {
 };
 
 void* gUnk_09EF60A8 __attribute__((section(".data_09EF6078"))) = gUnk_09758C20;
+
+void* gUnk_09EF351C[10] __attribute__((section(".data_09EF351C"))) = {
+    gUnk_0961AA00,
+    gUnk_0961AA0A,
+    gUnk_0961AA14,
+    gUnk_0961AA1E,
+    gUnk_0961AA28,
+    gUnk_0961AA32,
+    gUnk_0961AA3C,
+    gUnk_0961AA46,
+    gUnk_0961AA50,
+    gUnk_0961AA5A,
+};
+
+AnimHeader* gUnk_09EF3544[1] __attribute__((section(".data_09EF351C"))) = {
+    &gUnk_0961AA64,
+};
+
+void* gUnk_09EF3548[9] __attribute__((section(".data_09EF351C"))) = {
+    gUnk_0961AF94,
+    gUnk_0961AFAA,
+    gUnk_0961AFC0,
+    gUnk_0961AFD6,
+    gUnk_0961AFEC,
+    gUnk_0961B002,
+    gUnk_0961B012,
+    gUnk_0961B022,
+    gUnk_0961B032,
+};
+
+AnimHeader* gUnk_09EF356C[2] __attribute__((section(".data_09EF351C"))) = {
+    &gUnk_0961B042,
+    &gUnk_0961B05C,
+};
+
+void* gUnk_09EF3574[12] __attribute__((section(".data_09EF351C"))) = {
+    gUnk_0961BF94,
+    gUnk_0961BF9E,
+    gUnk_0961BFA8,
+    gUnk_0961BFB2,
+    gUnk_0961BFBC,
+    gUnk_0961BFC6,
+    gUnk_0961BFD0,
+    gUnk_0961BFDA,
+    gUnk_0961BFE4,
+    gUnk_0961BFEE,
+    gUnk_0961BFF8,
+    gUnk_0961C002,
+};
+
+AnimHeader* gUnk_09EF35A4[5] __attribute__((section(".data_09EF351C"))) = {
+    &gUnk_0961C00C,
+    &gUnk_0961C022,
+    &gUnk_0961C038,
+    &gUnk_0961C042,
+    &gUnk_0961C04C,
+};
+
+void* gUnk_09EF35B8[22] __attribute__((section(".data_09EF351C"))) = {
+    gUnk_0961C664,
+    gUnk_0961C674,
+    gUnk_0961C67E,
+    gUnk_0961C68E,
+    gUnk_0961C698,
+    gUnk_0961C6A2,
+    gUnk_0961C6B2,
+    gUnk_0961C6BC,
+    gUnk_0961C6DE,
+    gUnk_0961C6F4,
+    gUnk_0961C70A,
+    gUnk_0961C714,
+    gUnk_0961C71E,
+    gUnk_0961C72E,
+    gUnk_0961C738,
+    gUnk_0961C748,
+    gUnk_0961C752,
+    gUnk_0961C762,
+    gUnk_0961C76C,
+    gUnk_0961C776,
+    gUnk_0961C786,
+    gUnk_0961C790,
+};
+
+AnimHeader* gUnk_09EF3610[1] __attribute__((section(".data_09EF351C"))) = {
+    &gUnk_0961C792,
+};
+
+void* gUnk_09EF3614[38] __attribute__((section(".data_09EF351C"))) = {
+    gUnk_0961D934,
+    gUnk_0961D944,
+    gUnk_0961D94E,
+    gUnk_0961D96A,
+    gUnk_0961D97A,
+    gUnk_0961D984,
+    gUnk_0961D98E,
+    gUnk_0961D998,
+    gUnk_0961D9A2,
+    gUnk_0961D9AC,
+    gUnk_0961D9B6,
+    gUnk_0961D9C0,
+    gUnk_0961D9CA,
+    gUnk_0961D9D4,
+    gUnk_0961D9E4,
+    gUnk_0961D9F4,
+    gUnk_0961D9FE,
+    gUnk_0961DA08,
+    gUnk_0961DA24,
+    gUnk_0961DA34,
+    gUnk_0961DA3E,
+    gUnk_0961DA4E,
+    gUnk_0961DA58,
+    gUnk_0961DA62,
+    gUnk_0961DA6C,
+    gUnk_0961DA76,
+    gUnk_0961DA80,
+    gUnk_0961DA8A,
+    gUnk_0961DA94,
+    gUnk_0961DA9E,
+    gUnk_0961DAA8,
+    gUnk_0961DAB2,
+    gUnk_0961DABC,
+    gUnk_0961DAC6,
+    gUnk_0961DAD0,
+    gUnk_0961DADA,
+    gUnk_0961DAE4,
+    gUnk_0961DAEE,
+};
+
+AnimHeader* gUnk_09EF36AC[9] __attribute__((section(".data_09EF351C"))) = {
+    &gUnk_0961DAF8,
+    &gUnk_0961DB2A,
+    &gUnk_0961DB4C,
+    &gUnk_0961DB6E,
+    &gUnk_0961DB78,
+    &gUnk_0961DB92,
+    &gUnk_0961DBB4,
+    &gUnk_0961DBD2,
+    &gUnk_0961DBF0,
+};
+
+void* gUnk_09EF36D8[22] __attribute__((section(".data_09EF36D8"))) = {
+    gUnk_09620848,
+    gUnk_0962086A,
+    gUnk_0962088C,
+    gUnk_096208AE,
+    gUnk_096208D0,
+    gUnk_096208F2,
+    gUnk_09620914,
+    gUnk_09620930,
+    gUnk_0962094C,
+    gUnk_09620968,
+    gUnk_09620984,
+    gUnk_0962099A,
+    gUnk_096209B6,
+    gUnk_096209D2,
+    gUnk_096209E8,
+    gUnk_09620A04,
+    gUnk_09620A20,
+    gUnk_09620A3C,
+    gUnk_09620A4C,
+    gUnk_09620A5C,
+    gUnk_09620A7E,
+    gUnk_09620AA0,
+};
+
+AnimHeader* gUnk_09EF3730[1] __attribute__((section(".data_09EF36D8"))) = {
+    &gUnk_09620AB0,
+};
+
+void* gUnk_09EF3734[10] __attribute__((section(".data_09EF36D8"))) = {
+    gUnk_09624910,
+    gUnk_0962491A,
+    gUnk_09624924,
+    gUnk_0962492E,
+    gUnk_09624938,
+    gUnk_09624942,
+    gUnk_0962494C,
+    gUnk_09624956,
+    gUnk_09624960,
+    gUnk_0962496A,
+};
+
+void* gUnk_09EF375C __attribute__((section(".data_09EF36D8"))) = gUnk_09624974;
+
+void* gUnk_09EF3760 __attribute__((section(".data_09EF36D8"))) = gUnk_0962497E;
+
+void* gUnk_09EF3764 __attribute__((section(".data_09EF36D8"))) = gUnk_09624988;
+
+void* gUnk_09EF3768 __attribute__((section(".data_09EF36D8"))) = gUnk_09624992;
+
+AnimHeader* gUnk_09EF376C[3] __attribute__((section(".data_09EF36D8"))) = {
+    &gUnk_0962499C,
+    &gUnk_096249B2,
+    &gUnk_096249C8,
+};
+
+AnimHeader* gUnk_09EF3778 __attribute__((section(".data_09EF36D8"))) = &gUnk_096249DE;
+
+void* gUnk_09EF377C[24] __attribute__((section(".data_09EF36D8"))) = {
+    gUnk_09624D74,
+    gUnk_09624D84,
+    gUnk_09624D94,
+    gUnk_09624DA4,
+    gUnk_09624DB4,
+    gUnk_09624DC4,
+    gUnk_09624DD4,
+    gUnk_09624DE4,
+    gUnk_09624DF4,
+    gUnk_09624DFE,
+    gUnk_09624E08,
+    gUnk_09624E12,
+    gUnk_09624E1C,
+    gUnk_09624E26,
+    gUnk_09624E30,
+    gUnk_09624E3A,
+    gUnk_09624E44,
+    gUnk_09624E4E,
+    gUnk_09624E64,
+    gUnk_09624E7A,
+    gUnk_09624E90,
+    gUnk_09624EAC,
+    gUnk_09624EC8,
+    gUnk_09624EDE,
+};
+
+AnimHeader* gUnk_09EF37DC[5] __attribute__((section(".data_09EF36D8"))) = {
+    &gUnk_09624EEE,
+    &gUnk_09624F14,
+    &gUnk_09624F2E,
+    &gUnk_09624F40,
+    &gUnk_09624F46,
+};
+
+AnimHeader* gUnk_09EF37F0 __attribute__((section(".data_09EF36D8"))) = &gUnk_09624F6C;
+
+void* gUnk_09EF37F4[4] __attribute__((section(".data_09EF36D8"))) = {
+    gUnk_09628434,
+    gUnk_09628450,
+    gUnk_0962845A,
+    gUnk_09628464,
+};
+
+AnimHeader* gUnk_09EF3804[2] __attribute__((section(".data_09EF36D8"))) = {
+    &gUnk_0962846E,
+    &gUnk_09628478,
+};
+
+void* gUnk_09EF380C[17] __attribute__((section(".data_09EF36D8"))) = {
+    gUnk_09628C4C,
+    gUnk_09628C5C,
+    gUnk_09628C66,
+    gUnk_09628C70,
+    gUnk_09628C7A,
+    gUnk_09628C84,
+    gUnk_09628C8E,
+    gUnk_09628C9E,
+    gUnk_09628CA8,
+    gUnk_09628CB2,
+    gUnk_09628CBC,
+    gUnk_09628CC6,
+    gUnk_09628CD0,
+    gUnk_09628CE0,
+    gUnk_09628CF0,
+    gUnk_09628D06,
+    gUnk_09628D16,
+};
+
+AnimHeader* gUnk_09EF3850[13] __attribute__((section(".data_09EF36D8"))) = {
+    &gUnk_09628D26,
+    &gUnk_09628D30,
+    &gUnk_09628D3A,
+    &gUnk_09628D44,
+    &gUnk_09628D4E,
+    &gUnk_09628D58,
+    &gUnk_09628D62,
+    &gUnk_09628D6C,
+    &gUnk_09628D76,
+    &gUnk_09628D80,
+    &gUnk_09628D8A,
+    &gUnk_09628D94,
+    &gUnk_09628D9E,
+};
+
+void* gUnk_09EF8414[2] __attribute__((section(".data_09EF8414"))) = {
+    gUnk_098582E0,
+    gUnk_098582F6,
+};
+
+AnimHeader* gUnk_09EF841C[2] __attribute__((section(".data_09EF8414"))) = {
+    &gUnk_0985830C,
+    &gUnk_09858316,
+};
+
+void* gUnk_09EF8424[15] __attribute__((section(".data_09EF8414"))) = {
+    gUnk_09858920,
+    gUnk_09858930,
+    gUnk_09858940,
+    gUnk_09858950,
+    gUnk_09858972,
+    gUnk_0985898E,
+    gUnk_098589AA,
+    gUnk_098589D2,
+    gUnk_098589FA,
+    gUnk_09858A1C,
+    gUnk_09858A3E,
+    gUnk_09858A60,
+    gUnk_09858A82,
+    gUnk_09858AAA,
+    gUnk_09858AD2,
+};
+
+AnimHeader* gUnk_09EF8460[2] __attribute__((section(".data_09EF8414"))) = {
+    &gUnk_09858ADC,
+    &gUnk_09858AE6,
+};
+
+void* gUnk_09EF8468[8] __attribute__((section(".data_09EF8414"))) = {
+    gUnk_0985A33C,
+    gUnk_0985A346,
+    gUnk_0985A356,
+    gUnk_0985A366,
+    gUnk_0985A370,
+    gUnk_0985A37A,
+    gUnk_0985A38A,
+    gUnk_0985A39A,
+};
+
+AnimHeader* gUnk_09EF8488[3] __attribute__((section(".data_09EF8414"))) = {
+    &gUnk_0985A3A4,
+    &gUnk_0985A3BA,
+    &gUnk_0985A3C4,
+};
+
+void* gUnk_09EF8CA0[8] __attribute__((section(".data_09EF8CA0"))) = {
+    gUnk_098A4AEC,
+    gUnk_098A4AF6,
+    gUnk_098A4B00,
+    gUnk_098A4B0A,
+    gUnk_098A4B14,
+    gUnk_098A4B1E,
+    gUnk_098A4B28,
+    gUnk_098A4B32,
+};
+
+AnimHeader* gUnk_09EF8CC0[2] __attribute__((section(".data_09EF8CA0"))) = {
+    &gUnk_098A4B3C,
+    &gUnk_098A4B52,
+};
+
+void* gUnk_09EF8CC8[2] __attribute__((section(".data_09EF8CA0"))) = {
+    gUnk_098A5B68,
+    gUnk_098A5B72,
+};
+
+AnimHeader* gUnk_09EF8CD0[2] __attribute__((section(".data_09EF8CA0"))) = {
+    &gUnk_098A5B7C,
+    &gUnk_098A5B86,
+};
+
+void* gUnk_09EF8D48[4] __attribute__((section(".data_09EF8D48"))) = {
+    gUnk_098A859C,
+    gUnk_098A85B2,
+    gUnk_098A85C8,
+    gUnk_098A85DE,
+};
+
+AnimHeader* gUnk_09EF8D58[3] __attribute__((section(".data_09EF8D48"))) = {
+    &gUnk_098A85F4,
+    &gUnk_098A85FA,
+    &gUnk_098A8600,
+};
+
+AnimHeader* gUnk_09EF8D64 __attribute__((section(".data_09EF8D48"))) = &gUnk_098A861E;
+
+void* gUnk_09EF8D78[4] __attribute__((section(".data_09EF8D78"))) = {
+    gUnk_098A8A6C,
+    gUnk_098A8A82,
+    gUnk_098A8A98,
+    gUnk_098A8AAE,
+};
+
+AnimHeader* gUnk_09EF8D88[1] __attribute__((section(".data_09EF8D78"))) = {
+    &gUnk_098A8AC4,
+};

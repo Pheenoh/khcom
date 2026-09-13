@@ -1,3 +1,5 @@
+#include "card_sprite_data.h"
+#include "msg_localized_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #include "graphics_state.h"
@@ -79,8 +81,6 @@ typedef struct UnkStruct_080A82E0 {
 u8 func_080892E8(u8* work, void* a);
 extern u8 gUnk_09618CD8[];
 extern u8 gUnk_093F4578[];
-extern u8 gUnk_09EF1170[];
-extern u8 gUnk_09EF1150[];
 extern u8 gUnk_0908BB80[];
 extern u8 gUnk_09613E98[];
 extern u8 gUnk_0908BFB2[];
@@ -100,9 +100,6 @@ extern s32 gUnkEu_090D1DC0[];
 extern u8 gUnkEu_08895A00[];
 extern void** gUnkEu_09F72CC4[];
 extern void* gUnkEu_09F72CB0[];
-extern u16* gUnkEu_09F65FDC[];
-extern u16* gUnkEu_09F65FF0[];
-extern u16* gUnkEu_09F66004[];
 extern void* gUnkEu_09F6FDB4[];
 extern u16 gUnkEu_090CE9EA[];
 extern void* gUnkEu_09F6FDDC[];
@@ -201,7 +198,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a);
 void func_0808DB04(void** p);
 void func_0808CDE8(u8* work, u8 b);
 u16 func_080857D4(u8 slot);
-void SetDeckName(u8 index, u16* src);
+void SetDeckName(u8 index, void* src);
 void func_080AB22C(u8 a);
 void func_080AB334(u8 a);
 void func_080AB4AC(u8 a);
@@ -293,8 +290,6 @@ void CreateCardNameDisplay(void* a, void* b);
 u8 func_08096288(PrizeCardWork* w, void* a);
 u8 func_08092A34(MapSelectWork* w, void* a);
 u8 func_080923E0(MapSelectWork* w, void* a);
-extern void* gUnk_09EF1228[];
-extern void* gUnk_09EF11AC[];
 #ifdef VERSION_EU
 extern void** gUnkEu_09F6FF70[];
 extern u8 gUnkEu_094E04E4[];
@@ -324,7 +319,6 @@ s32 func_080AC140(s32 a);
 void func_080AAEB0(u8* work, u16 index);
 u8 func_0807C5D8(CardDisplayWork* w, void* a);
 extern s32 gUnk_09034054[];
-extern void* gUnk_09EF126C[];
 extern s32 gUnk_09035978[];
 s32 func_0809CBD0(u8* work);
 void func_0809D124(PremiumCardEffectWork* w);
@@ -9510,14 +9504,14 @@ u16 GetDeckCpCost(u8 index) {
     return gDecks[index].unk_DA;
 }
 
-void SetDeckName(u8 index, u16* src) {
+void SetDeckName(u8 index, void* src) {
     u8* deck;
     u32 offset;
     u8* d;
     u8* s;
 
 #ifdef VERSION_US
-    if (*src == 0) {
+    if (*(u16*)src == 0) {
 #else
     if (*(u8*)src == 0) {
 #endif
@@ -9525,9 +9519,9 @@ void SetDeckName(u8 index, u16* src) {
     }
 
     deck = (u8*)&gDecks;
-    offset = index * (sizeof(Deck) / sizeof(*src));
+    offset = index * (sizeof(Deck) / sizeof(u16));
     s = (u8*)src;
-    offset *= sizeof(*src);
+    offset *= sizeof(u16);
     d = deck + offsetof(Deck, unk_C6);
     d += offset;
 
@@ -9749,9 +9743,9 @@ void func_08085C3C(void) {
     }
 
 #ifdef VERSION_EU
-    SetDeckName(0, gUnkEu_09F65FDC[gLanguage]);
-    SetDeckName(1, gUnkEu_09F65FF0[gLanguage]);
-    SetDeckName(2, gUnkEu_09F66004[gLanguage]);
+    SetDeckName(0, gUnkEu_09F65FDC.strings[gLanguage]);
+    SetDeckName(1, gUnkEu_09F65FF0.strings[gLanguage]);
+    SetDeckName(2, gUnkEu_09F66004.strings[gLanguage]);
 #else
     SetDeckName(0, gUnk_09EE4AC8);
     SetDeckName(1, gUnk_09EE4AD6);
@@ -9768,9 +9762,9 @@ void func_08085CB0(void) {
     func_080AB22C(1);
     func_080AB4AC(2);
 #ifdef VERSION_EU
-    SetDeckName(0, gUnkEu_09F65FDC[gLanguage]);
-    SetDeckName(1, gUnkEu_09F65FF0[gLanguage]);
-    SetDeckName(2, gUnkEu_09F66004[gLanguage]);
+    SetDeckName(0, gUnkEu_09F65FDC.strings[gLanguage]);
+    SetDeckName(1, gUnkEu_09F65FF0.strings[gLanguage]);
+    SetDeckName(2, gUnkEu_09F66004.strings[gLanguage]);
 #else
     SetDeckName(0, gUnk_09EE4AC8);
     SetDeckName(1, gUnk_09EE4AD6);
@@ -17448,7 +17442,6 @@ void WORLDSELECT_2(void) {
 }
 extern u8 gUnk_093F5422[];
 extern u8 gUnk_093F6734[];
-extern u8 gUnk_09EF11F8[];
 extern u8 gUnk_093F5C40[];
 #ifdef VERSION_EU
 extern void* gUnkEu_09F6FF30[];
@@ -17741,7 +17734,7 @@ u8 func_080923E0(MapSelectWork* w, void* a) {
         ReleaseObjTiles(w->tiles);
         w->tiles = AllocObjTiles(0x1E0, 0);
         SetObjTileSource(w->tiles, &gUnk_093F47E4[0xD88]);
-        AnimInit(w->unk_1F8, &gUnk_09EF1194[0x38], &gUnk_09EF1180[0x38]);
+        AnimInit(w->unk_1F8, gUnk_09EF11CC, gUnk_09EF11B8);
         AnimStart(w->unk_1F8, 0, 1);
         w->gfx = AnimGetGfx(w->unk_1F8);
         w->unk_280 = w->unk_258 >> 8;

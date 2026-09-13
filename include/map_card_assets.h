@@ -1,3 +1,4 @@
+#include "card_sprite_data.h"
 #ifndef GUARD_MAP_CARD_ASSETS_H
 #define GUARD_MAP_CARD_ASSETS_H
 
@@ -146,9 +147,5 @@ extern void* gUnk_09EF1110[];
 extern void* gUnk_09EF1118[];
 extern void* gUnk_09EF1120[];
 extern void* gUnk_09EF1128[];
-extern void* gUnk_09EF11D8[];
-extern void* gUnk_09EF11E0[];
-extern void* gUnk_09EF11E8[];
-extern void* gUnk_09EF11F0[];
 
 #endif

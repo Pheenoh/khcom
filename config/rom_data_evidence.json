@@ -4614,6 +4614,394 @@
         0
       ],
       "layer": 2
+    },
+    {
+      "name": "direct_animation_resources_09EF351C",
+      "layer": 1,
+      "provenance": "wlogo.c task_wlogo_mons_0 explicitly starts animation 0. wlogo.c task_wlogo_hwt_1 creates arguments 0..5. Six canonical WlogoHwtObjA records at gUnk_096194D0 have animation fields 1,0,1,0,1,0 in every region. wlogo.c NvlMov initializes animation 3 and explicitly changes to 2 and 4. Its NvlObj producer alternates argument 0/1. wlogo.c task_wlogo_col_0 explicitly starts animation 0. wlogo.c Agr producer iterates 19 canonical WlogoAgrEntry records. Smoke selectors are 0,1,2,5; flash selectors are 6,7 and +1, plus explicit 6,7,8; Flash0 uses 4. Maximum animation 8 is independently established. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.",
+      "us": "0x9ef351c",
+      "targets": {
+        "jp": "0x9eca908",
+        "eu": "0x9f7e768"
+      },
+      "size": 436,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "direct_animation_resources_09EF36D8",
+      "layer": 1,
+      "provenance": "wlogo.c task_wlogo_tvt_0 explicitly starts animation 0. wlogo.c task_wlogo_poo_1 creates four arguments 0..3. Four gUnk_09EF1AEC selector bytes are 0,0,2,2 in every region, proving an animation prefix of 3 and gfx prefix of 10. Four trailing gfx words and one trailing animation word become separate neutral scalar pointers, bounded by independently referenced next bases. wlogo.c task_wlogo_tt_0 explicitly starts animations 0,1,2,4, proving 5 array entries. The sixth pointer is a separate neutral AnimHeader pointer before independently referenced gUnk_09EF37F4. wlogo.c task_wlogo_tt_obj_0 explicitly starts animation 1; the parent also directly consumes gfx index 0. wlogo.c task_wlogo_bks_0 explicitly starts animation 12, proving 13 pointer entries. Its complete frames reach gfx index 16. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.",
+      "us": "0x9ef36d8",
+      "targets": {
+        "jp": "0x9ecaac4",
+        "eu": "0x9f7e924"
+      },
+      "size": 428,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "direct_animation_resources_09EF8414",
+      "layer": 1,
+      "provenance": "Canonical UnkStruct_080E7D80 gUnk_0984C158 fields +0C/+10 contain the independently corresponding table bases. Its TaskDesc +24 callback func_080F3BC4 initializes animations 0/1 and callback func_080F3A74 explicitly starts 1. Both full headers and frames agree across regions. map.c tutorial func_080F6DE8 starts animation 0 and func_080F6F1C starts 1. map.c MapGmkJump initialization and callbacks func_080F1460/14C4/1544 explicitly select animation 0,1,2. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.",
+      "us": "0x9ef8414",
+      "targets": {
+        "jp": "0x9ecf800",
+        "eu": "0x9f83a84"
+      },
+      "size": 128,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "direct_animation_resources_09EF8CA0",
+      "layer": 1,
+      "provenance": "map.c func_080F5A00 selects animation 0/1 by game-state flag. poo.c shares these same tables. map.c func_080F5B68 selects animation 0/1 by relative position. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.",
+      "us": "0x9ef8ca0",
+      "targets": {
+        "jp": "0x9ed008c",
+        "eu": "0x9f84310"
+      },
+      "size": 56,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "direct_animation_resources_09EF8D48",
+      "layer": 1,
+      "provenance": "map.c menu/save initialization explicitly starts animation 2. Entries 0/1 are valid zero-frame headers handled by AnimStart. A fourth valid pointer is a neutral scalar before the independently referenced gUnk_09EF8D68 gfx table. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.",
+      "us": "0x9ef8d48",
+      "targets": {
+        "jp": "0x9ed0134",
+        "eu": "0x9f843b8"
+      },
+      "size": 32,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "direct_animation_resources_09EF8D78",
+      "layer": 1,
+      "provenance": "map.c save/load initialization explicitly starts animation 0; its frames reach gfx index 3. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.",
+      "us": "0x9ef8d78",
+      "targets": {
+        "jp": "0x9ed0164",
+        "eu": "0x9f84428"
+      },
+      "size": 20,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ]
+    },
+    {
+      "name": "data_09EF1150_card_sprite",
+      "us": "0x09EF1150",
+      "targets": {
+        "jp": "0x09EC853C",
+        "eu": "0x09F7C334"
+      },
+      "size": 224,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "Card UI direct literal-pool table bases, explicit sprite indices, AnimStart bounds and full typed animation-frame/sprite payload checks establish correspondence. JP SELMAP_EVKEY has a localized five-piece sprite replacing seven pieces, independently selected by the same one-entry animation table."
+    },
+    {
+      "name": "data_09EF1230_card_sprite",
+      "us": "0x09EF1230",
+      "targets": {
+        "jp": "0x09EC861C",
+        "eu": "0x09F7C4A4"
+      },
+      "size": 184,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "Card UI direct literal-pool table bases, explicit sprite indices, AnimStart bounds and full typed animation-frame/sprite payload checks establish correspondence. JP SELMAP_EVKEY has a localized five-piece sprite replacing seven pieces, independently selected by the same one-entry animation table."
+    },
+    {
+      "name": "data_09EF12E8_card_sprite",
+      "us": "0x09EF12E8",
+      "targets": {
+        "jp": "0x09EC86D4",
+        "eu": "0x09F7C5DC"
+      },
+      "size": 16,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 1,
+      "provenance": "Card UI direct literal-pool table bases, explicit sprite indices, AnimStart bounds and full typed animation-frame/sprite payload checks establish correspondence. JP SELMAP_EVKEY has a localized five-piece sprite replacing seven pieces, independently selected by the same one-entry animation table."
+    },
+    {
+      "name": "gUnk_09EF83F8",
+      "provenance": "Direct map-enemy index has selectors0..6. The following pointer belongs to the independently typed gfx tablegUnk_09EF8414, not another enemy descriptor.",
+      "us": "0x9ef83f8",
+      "targets": {
+        "jp": "0x9ecf7e4",
+        "eu": "0x9f83a68"
+      },
+      "size": 28,
+      "stride": 4,
+      "pointer_offsets": [
+        0
+      ],
+      "layer": 0
+    },
+    {
+      "name": "gUnk_0984BC9C",
+      "provenance": "Canonical24-byte map-enemy record reached by the independent seven-entry index; all scalar dimensions and flags agree. Following task-name storage is separately owned and is not part of this type.",
+      "us": "0x984bc9c",
+      "targets": {
+        "jp": "0x98007b0",
+        "eu": "0x9828670"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        4,
+        16
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_0984BB9C",
+      "provenance": "Directional field-enemy AnimDef records reached by the map-enemy descriptor; first three words have independently consumed gfx-index/animation-index/tile-source roles, and selector plus padding bytes agree. Only proved used entries form an array; remaining records are separate scalar definitions.",
+      "us": "0x984bb9c",
+      "targets": {
+        "jp": "0x98006b0",
+        "eu": "0x9828570"
+      },
+      "size": 256,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_0984BD24",
+      "provenance": "Canonical24-byte map-enemy record reached by the independent seven-entry index; all scalar dimensions and flags agree. Following task-name storage is separately owned and is not part of this type.",
+      "us": "0x984bd24",
+      "targets": {
+        "jp": "0x9800838",
+        "eu": "0x98286f8"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        4,
+        16
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_0984BCC4",
+      "provenance": "Directional field-enemy AnimDef records reached by the map-enemy descriptor; first three words have independently consumed gfx-index/animation-index/tile-source roles, and selector plus padding bytes agree. Only proved used entries form an array; remaining records are separate scalar definitions.",
+      "us": "0x984bcc4",
+      "targets": {
+        "jp": "0x98007d8",
+        "eu": "0x9828698"
+      },
+      "size": 96,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_0984BD8C",
+      "provenance": "Canonical24-byte map-enemy record reached by the independent seven-entry index; all scalar dimensions and flags agree. Following task-name storage is separately owned and is not part of this type.",
+      "us": "0x984bd8c",
+      "targets": {
+        "jp": "0x98008a0",
+        "eu": "0x9828760"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        4,
+        16
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_0984BD4C",
+      "provenance": "Directional field-enemy AnimDef records reached by the map-enemy descriptor; first three words have independently consumed gfx-index/animation-index/tile-source roles, and selector plus padding bytes agree. Only proved used entries form an array; remaining records are separate scalar definitions.",
+      "us": "0x984bd4c",
+      "targets": {
+        "jp": "0x9800860",
+        "eu": "0x9828720"
+      },
+      "size": 64,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_0984BE14",
+      "provenance": "Canonical24-byte map-enemy record reached by the independent seven-entry index; all scalar dimensions and flags agree. Following task-name storage is separately owned and is not part of this type.",
+      "us": "0x984be14",
+      "targets": {
+        "jp": "0x9800928",
+        "eu": "0x98287e8"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        4,
+        16
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_0984BDB4",
+      "provenance": "Directional field-enemy AnimDef records reached by the map-enemy descriptor; first three words have independently consumed gfx-index/animation-index/tile-source roles, and selector plus padding bytes agree. Only proved used entries form an array; remaining records are separate scalar definitions.",
+      "us": "0x984bdb4",
+      "targets": {
+        "jp": "0x98008c8",
+        "eu": "0x9828788"
+      },
+      "size": 96,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_0984BE9C",
+      "provenance": "Canonical24-byte map-enemy record reached by the independent seven-entry index; all scalar dimensions and flags agree. Following task-name storage is separately owned and is not part of this type.",
+      "us": "0x984be9c",
+      "targets": {
+        "jp": "0x98009b0",
+        "eu": "0x9828870"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        4,
+        16
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_0984BE3C",
+      "provenance": "Directional field-enemy AnimDef records reached by the map-enemy descriptor; first three words have independently consumed gfx-index/animation-index/tile-source roles, and selector plus padding bytes agree. Only proved used entries form an array; remaining records are separate scalar definitions.",
+      "us": "0x984be3c",
+      "targets": {
+        "jp": "0x9800950",
+        "eu": "0x9828810"
+      },
+      "size": 96,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_0984BF44",
+      "provenance": "Canonical24-byte map-enemy record reached by the independent seven-entry index; all scalar dimensions and flags agree. Following task-name storage is separately owned and is not part of this type.",
+      "us": "0x984bf44",
+      "targets": {
+        "jp": "0x9800a58",
+        "eu": "0x9828918"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        4,
+        16
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_0984BEC4",
+      "provenance": "Directional field-enemy AnimDef records reached by the map-enemy descriptor; first three words have independently consumed gfx-index/animation-index/tile-source roles, and selector plus padding bytes agree. Only proved used entries form an array; remaining records are separate scalar definitions.",
+      "us": "0x984bec4",
+      "targets": {
+        "jp": "0x98009d8",
+        "eu": "0x9828898"
+      },
+      "size": 128,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ],
+      "layer": 2
+    },
+    {
+      "name": "gUnk_0984BFEC",
+      "provenance": "Canonical24-byte map-enemy record reached by the independent seven-entry index; all scalar dimensions and flags agree. Following task-name storage is separately owned and is not part of this type.",
+      "us": "0x984bfec",
+      "targets": {
+        "jp": "0x9800b00",
+        "eu": "0x98289c0"
+      },
+      "size": 24,
+      "stride": 24,
+      "pointer_offsets": [
+        0,
+        4,
+        16
+      ],
+      "layer": 1
+    },
+    {
+      "name": "gUnk_0984BF6C",
+      "provenance": "Directional field-enemy AnimDef records reached by the map-enemy descriptor; first three words have independently consumed gfx-index/animation-index/tile-source roles, and selector plus padding bytes agree. Only proved used entries form an array; remaining records are separate scalar definitions.",
+      "us": "0x984bf6c",
+      "targets": {
+        "jp": "0x9800a80",
+        "eu": "0x9828940"
+      },
+      "size": 128,
+      "stride": 16,
+      "pointer_offsets": [
+        0,
+        4,
+        8
+      ],
+      "layer": 2
     }
   ]
 }

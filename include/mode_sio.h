@@ -1,3 +1,4 @@
+#include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H
@@ -419,7 +420,6 @@ extern u8 gUnk_096FBE04[];
 extern u8 gUnk_096FBE24[];
 extern u8 gUnk_096FBF04[];
 extern u8 gUnk_096FBF84[];
-extern void* gUnk_09EF1278[];
 extern Mode gUnk_09EE2704;
 extern Mode gUnk_09EE8F20;
 extern void* gUnk_09EE8F48[];

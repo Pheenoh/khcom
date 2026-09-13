@@ -1,3 +1,4 @@
+#include "card_sprite_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_CARD_H
@@ -116,7 +117,6 @@ extern u8 gUnk_090A0C86[];
 extern u8 gUnk_09507F38[];
 extern u8 gUnk_09507F58[];
 extern u16 gUnk_09EE4BE0[];
-extern void* gUnk_09EF1278[];
 typedef struct CardListWork {
     ListPool cards;
     struct UnkStruct_0809C534* selectedCard;
@@ -142,7 +142,6 @@ extern void* gUnk_09EE7938[];
 extern u8 gUnk_0908C686[];
 extern u8 gUnk_0908FCEE[];
 extern u8 gUnk_09613F78[];
-extern void* gUnk_09EF12E8[];
 extern s32* gUnk_09EE275C[];
 
 typedef struct UnkStruct_0807FA0C {
@@ -356,11 +355,9 @@ extern u16 gUnk_09EE48F4[47];
 extern s32 gUnk_090352E4[];
 extern u8 gUnk_09512AB8[];
 extern u8 gUnk_08B22BBC[];
-extern void* gUnk_09EF1298[];
 extern u8 gUnk_08B25ADE[];
 extern u8 gUnk_093FB954[];
 extern u8 gUnk_093FBAB8[][0x80];
-extern void* gUnk_09EF12C8[];
 extern u8 gUnk_09619178[];
 typedef struct WorldSelAnim {
     u8 unk_00;
@@ -1195,9 +1192,6 @@ extern u8 gUnk_0891ED26[];
 extern u8 gUnk_088E33C2[];
 extern u8 gUnk_09036300[];
 extern void* gUnk_09EE4724[];
-extern void* gUnk_09EF1198[];
-extern u8 gUnk_09EF1220[];
-extern u8 gUnk_09EF1224[];
 extern u8 gUnk_0950C478[];
 extern u8 gUnk_09618D38[];
 extern u8 gUnk_0940FA98[];
@@ -1290,8 +1284,6 @@ extern u8 gUnk_095132B8[];
 extern u8 gUnk_093FEEB8[];
 extern u8 gUnk_093FD438[];
 extern u8 gUnk_093F47E4[];
-extern u8 gUnk_09EF1194[];
-extern u8 gUnk_09EF1180[];
 extern u8 gUnk_09515AB8[];
 extern void* gUnk_09EEA344[];
 extern void* gUnk_09EE98EC[];
@@ -1299,8 +1291,6 @@ extern void* gUnk_09EEA16C[];
 extern void* gUnk_09EEA174[];
 extern u8 gUnk_09619158[];
 extern u8 gUnk_093F762E[];
-extern u8 gUnk_09EF1260[];
-extern u8 gUnk_09EF1230[];
 extern u8 gUnk_095162B8[];
 extern u8 gUnk_095182B8[];
 extern u8 gUnk_09519AB8[];

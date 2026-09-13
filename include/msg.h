@@ -1,3 +1,4 @@
+#include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
@@ -410,7 +411,6 @@ extern u16 gUnk_08F7D438[];
 extern u8 gUnk_090CBFB2[];
 extern s32 gUnk_09033D28[];
 extern EventCharaParams gUnk_0903380C[];
-extern void* gUnk_09EF126C[];
 
 void _08065994(void);
 u16 func_080659BC(u8 v, TextSlot* out);

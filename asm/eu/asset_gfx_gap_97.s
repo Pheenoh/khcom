@@ -1,4 +1,4 @@
 	.section .rodata
-	.global data_096CA700
-data_096CA700:
-	.incbin "roms/B8CP.gba", 0x16ca700, 0x60
+	.global data_096CA70F
+data_096CA70F:
+	.incbin "roms/B8CP.gba", 0x16ca70f, 0x51

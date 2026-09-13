@@ -1,0 +1,801 @@
+{
+  "version": 1,
+  "provenance": {
+    "map_enemies": "Seven field-enemy records selected by gUnk_09EF83F8 are exactly24-byte headers: animation index, palette, tile/collider dimensions, TaskDesc pointer and flags. The former70-byte char member was never accessed and incorrectly swallowed the independently referenced following TaskDesc name and next animation table.",
+    "animation_extent": "func_080E5D6C selects directional pairs at2*n or2*n+1. Reachable family callbacks prove used n maxima4/2/0/1/2/3/3, hence10/6/2/4/6/8/8 entries. Ten extra complete AnimDef records before the following distinct descriptor are individually typed neutral scalars with no runtime-use claim. AnimDef is the already canonical identical16-byte layout, not another duplicate struct."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_09EF83F8",
+          "address": "0x9ef83f8",
+          "size": 28,
+          "sha256": "6a8e70fe17949b8e165fb9e1acc1efe65d6b3cefdae2b1d948b2af2025f004b3",
+          "objects": [
+            {
+              "name": "gUnk_09EF83F8",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BC9C",
+          "address": "0x984bc9c",
+          "size": 24,
+          "sha256": "d17724b08e7e12d2bbbdb010ce4dd2587cbfe972fba109202fe516e0244a43d9",
+          "objects": [
+            {
+              "name": "gUnk_0984BC9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BB9C",
+          "address": "0x984bb9c",
+          "size": 256,
+          "sha256": "23dff8f48ccfa89308007aac20635a9aec416a6a798ea785ea41e6431fc71de7",
+          "objects": [
+            {
+              "name": "gUnk_0984BB9C",
+              "offset": 0,
+              "size": 160
+            },
+            {
+              "name": "gUnk_0984BC3C",
+              "offset": 160,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC4C",
+              "offset": 176,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC5C",
+              "offset": 192,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC6C",
+              "offset": 208,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC7C",
+              "offset": 224,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC8C",
+              "offset": 240,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD24",
+          "address": "0x984bd24",
+          "size": 24,
+          "sha256": "3c6ad0385c53e67847f8bd149842661dd040c1cfdd3a067b797f90b24fadb460",
+          "objects": [
+            {
+              "name": "gUnk_0984BD24",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BCC4",
+          "address": "0x984bcc4",
+          "size": 96,
+          "sha256": "0424ccbb443a86a3e4ea4a8d3bcb117ff0302354a705fd0c8fa6198df08cb30d",
+          "objects": [
+            {
+              "name": "gUnk_0984BCC4",
+              "offset": 0,
+              "size": 96
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD8C",
+          "address": "0x984bd8c",
+          "size": 24,
+          "sha256": "45d9e4d14559c6f4f5263e723a87c53e41097e1dc2a810a16f99e6ee77578a02",
+          "objects": [
+            {
+              "name": "gUnk_0984BD8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD4C",
+          "address": "0x984bd4c",
+          "size": 64,
+          "sha256": "c2ffc437cd1cd84250ff18ab23551874844ffdc8adad4f95a1e06caac9f86a0c",
+          "objects": [
+            {
+              "name": "gUnk_0984BD4C",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_0984BD6C",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BD7C",
+              "offset": 48,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE14",
+          "address": "0x984be14",
+          "size": 24,
+          "sha256": "0657ace7c7c570e51ec4d377c7a879ece3254aea772d1d87ab110d1c34b5c312",
+          "objects": [
+            {
+              "name": "gUnk_0984BE14",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BDB4",
+          "address": "0x984bdb4",
+          "size": 96,
+          "sha256": "c5da8d7d989789ec4d2dec934adf6e2dc2d517b0186009828c15fff01b8554f8",
+          "objects": [
+            {
+              "name": "gUnk_0984BDB4",
+              "offset": 0,
+              "size": 64
+            },
+            {
+              "name": "gUnk_0984BDF4",
+              "offset": 64,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BE04",
+              "offset": 80,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE9C",
+          "address": "0x984be9c",
+          "size": 24,
+          "sha256": "5e7e46a73b4a53ccfba2a3504a350a6100b707d443b172b3c409f8dafc519d10",
+          "objects": [
+            {
+              "name": "gUnk_0984BE9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE3C",
+          "address": "0x984be3c",
+          "size": 96,
+          "sha256": "4e96e79e089d12ddf4f441f25d4a07eb88dde664476262cab7a154d1026a1d09",
+          "objects": [
+            {
+              "name": "gUnk_0984BE3C",
+              "offset": 0,
+              "size": 96
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BF44",
+          "address": "0x984bf44",
+          "size": 24,
+          "sha256": "4a06304af359ba08b8809bb98634e6ed9772e6e122211b33ab1bb03f66ee024f",
+          "objects": [
+            {
+              "name": "gUnk_0984BF44",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BEC4",
+          "address": "0x984bec4",
+          "size": 128,
+          "sha256": "32e213972dbfff0563a428bf1d2342e99eef98fbde8ab82d718b9f2caa1e4596",
+          "objects": [
+            {
+              "name": "gUnk_0984BEC4",
+              "offset": 0,
+              "size": 128
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BFEC",
+          "address": "0x984bfec",
+          "size": 24,
+          "sha256": "ba189781b0e817058ed15cf52e6c3a7719fd16b1c21e1db75210c7d148c6403b",
+          "objects": [
+            {
+              "name": "gUnk_0984BFEC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BF6C",
+          "address": "0x984bf6c",
+          "size": 128,
+          "sha256": "32e213972dbfff0563a428bf1d2342e99eef98fbde8ab82d718b9f2caa1e4596",
+          "objects": [
+            {
+              "name": "gUnk_0984BF6C",
+              "offset": 0,
+              "size": 128
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_09EF83F8",
+          "address": "0x9ecf7e4",
+          "size": 28,
+          "sha256": "663bdc0e8a9d7471bce7c2d19b66bc9366c733b03f425ba50174477cbd1d9743",
+          "objects": [
+            {
+              "name": "gUnk_09EF83F8",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BC9C",
+          "address": "0x98007b0",
+          "size": 24,
+          "sha256": "5e952a79f0b81a8ff50441b4da314397fbe6045aa240b428cbe07570b7998f69",
+          "objects": [
+            {
+              "name": "gUnk_0984BC9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BB9C",
+          "address": "0x98006b0",
+          "size": 256,
+          "sha256": "4441fb0c71c5aa3cf11e31c16d8c33b07904fb357ef14953d3b17d96a22eb8b4",
+          "objects": [
+            {
+              "name": "gUnk_0984BB9C",
+              "offset": 0,
+              "size": 160
+            },
+            {
+              "name": "gUnk_0984BC3C",
+              "offset": 160,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC4C",
+              "offset": 176,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC5C",
+              "offset": 192,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC6C",
+              "offset": 208,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC7C",
+              "offset": 224,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC8C",
+              "offset": 240,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD24",
+          "address": "0x9800838",
+          "size": 24,
+          "sha256": "2cea424539babb3847c640129d2d4a8e1de383db109e095726afc3839e2cca51",
+          "objects": [
+            {
+              "name": "gUnk_0984BD24",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BCC4",
+          "address": "0x98007d8",
+          "size": 96,
+          "sha256": "0bf529b983c2cce068f80c23318f35b9e240c07fe1831533652e320a9dbf0b66",
+          "objects": [
+            {
+              "name": "gUnk_0984BCC4",
+              "offset": 0,
+              "size": 96
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD8C",
+          "address": "0x98008a0",
+          "size": 24,
+          "sha256": "807f4fcc720ee095d91e65992f1d0d3d72b052d23f4c04738bdae539b61dfaa2",
+          "objects": [
+            {
+              "name": "gUnk_0984BD8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD4C",
+          "address": "0x9800860",
+          "size": 64,
+          "sha256": "0195bf793b4676702ea784ab75d6ce972305276635b2006e9cadf57605bb9322",
+          "objects": [
+            {
+              "name": "gUnk_0984BD4C",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_0984BD6C",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BD7C",
+              "offset": 48,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE14",
+          "address": "0x9800928",
+          "size": 24,
+          "sha256": "5c057c5de232a93f1b27e3027377426947d5ba3628378fedc27726d6b4177a1b",
+          "objects": [
+            {
+              "name": "gUnk_0984BE14",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BDB4",
+          "address": "0x98008c8",
+          "size": 96,
+          "sha256": "b44ed9300196e03ae423351032102ab7ce8557e2ffd51e0ecf993f0b5d3afe27",
+          "objects": [
+            {
+              "name": "gUnk_0984BDB4",
+              "offset": 0,
+              "size": 64
+            },
+            {
+              "name": "gUnk_0984BDF4",
+              "offset": 64,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BE04",
+              "offset": 80,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE9C",
+          "address": "0x98009b0",
+          "size": 24,
+          "sha256": "216d5d48c1436bcb413e62a958655c492c4ea97537c0e8e949325ad7f396ef30",
+          "objects": [
+            {
+              "name": "gUnk_0984BE9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE3C",
+          "address": "0x9800950",
+          "size": 96,
+          "sha256": "8a0ac3ee9badb19de7e6f142986995a484442682689b9b5be878b765362920d7",
+          "objects": [
+            {
+              "name": "gUnk_0984BE3C",
+              "offset": 0,
+              "size": 96
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BF44",
+          "address": "0x9800a58",
+          "size": 24,
+          "sha256": "47899535578bf9a78b4bff447673a1640f481f0173f5a7d478a53992d488bc77",
+          "objects": [
+            {
+              "name": "gUnk_0984BF44",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BEC4",
+          "address": "0x98009d8",
+          "size": 128,
+          "sha256": "8a829f96fb484c9524858c92c95aa61da80593e9881acb65f8e28601aba05398",
+          "objects": [
+            {
+              "name": "gUnk_0984BEC4",
+              "offset": 0,
+              "size": 128
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BFEC",
+          "address": "0x9800b00",
+          "size": 24,
+          "sha256": "0c73366d8e668d637f9b4816c4d206ec0e69a802ae5225ac7ddf635a25f70a95",
+          "objects": [
+            {
+              "name": "gUnk_0984BFEC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BF6C",
+          "address": "0x9800a80",
+          "size": 128,
+          "sha256": "8a829f96fb484c9524858c92c95aa61da80593e9881acb65f8e28601aba05398",
+          "objects": [
+            {
+              "name": "gUnk_0984BF6C",
+              "offset": 0,
+              "size": 128
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_09EF83F8",
+          "address": "0x9f83a68",
+          "size": 28,
+          "sha256": "3662516fe633b8df1dbe06811664a40919ce85ac220a017a3d07247121db10d0",
+          "objects": [
+            {
+              "name": "gUnk_09EF83F8",
+              "offset": 0,
+              "size": 28
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BC9C",
+          "address": "0x9828670",
+          "size": 24,
+          "sha256": "bba52a9c4334f01f1e5b608f52f286b5dd252e8674aecb8c6903be840473b357",
+          "objects": [
+            {
+              "name": "gUnk_0984BC9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BB9C",
+          "address": "0x9828570",
+          "size": 256,
+          "sha256": "9b5e274d0c9ce844fb542816b34ecd9ae6180680ea0f6c0c5b91cdf50c235c3c",
+          "objects": [
+            {
+              "name": "gUnk_0984BB9C",
+              "offset": 0,
+              "size": 160
+            },
+            {
+              "name": "gUnk_0984BC3C",
+              "offset": 160,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC4C",
+              "offset": 176,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC5C",
+              "offset": 192,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC6C",
+              "offset": 208,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC7C",
+              "offset": 224,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BC8C",
+              "offset": 240,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD24",
+          "address": "0x98286f8",
+          "size": 24,
+          "sha256": "090184a9105a12741ba5cb2ce97633f3d3db5a1fd31657c504745330a16774b9",
+          "objects": [
+            {
+              "name": "gUnk_0984BD24",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BCC4",
+          "address": "0x9828698",
+          "size": 96,
+          "sha256": "3066ae6f3b9b5bcb924ad3266aa3cd354a4f5d1fc72d063d8c2ed4496da54ba2",
+          "objects": [
+            {
+              "name": "gUnk_0984BCC4",
+              "offset": 0,
+              "size": 96
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD8C",
+          "address": "0x9828760",
+          "size": 24,
+          "sha256": "5238312293a191a25433d8cdf59c9b86fdc059f2105a9fc188fe37a4fd23998e",
+          "objects": [
+            {
+              "name": "gUnk_0984BD8C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BD4C",
+          "address": "0x9828720",
+          "size": 64,
+          "sha256": "8985d9d444efd643f638d78f12e927c20f415ae5124e30a90239c780213b5492",
+          "objects": [
+            {
+              "name": "gUnk_0984BD4C",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_0984BD6C",
+              "offset": 32,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BD7C",
+              "offset": 48,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE14",
+          "address": "0x98287e8",
+          "size": 24,
+          "sha256": "e0c2618050c377a23d1dca11365e03eb436b189f69dd609d90e62188089195e5",
+          "objects": [
+            {
+              "name": "gUnk_0984BE14",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BDB4",
+          "address": "0x9828788",
+          "size": 96,
+          "sha256": "0738d19af0156ed13f773373f16eb0bbfdabac5c91b056536542d92bc1760acf",
+          "objects": [
+            {
+              "name": "gUnk_0984BDB4",
+              "offset": 0,
+              "size": 64
+            },
+            {
+              "name": "gUnk_0984BDF4",
+              "offset": 64,
+              "size": 16
+            },
+            {
+              "name": "gUnk_0984BE04",
+              "offset": 80,
+              "size": 16
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE9C",
+          "address": "0x9828870",
+          "size": 24,
+          "sha256": "0fd34ed680ddb52de3940c14492b9ad72a3eb56048d22ef7fd44c41dc400d240",
+          "objects": [
+            {
+              "name": "gUnk_0984BE9C",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BE3C",
+          "address": "0x9828810",
+          "size": 96,
+          "sha256": "963318d0717701939f210be4357a2699ca9c82a190fa339067528ff2f1c579ac",
+          "objects": [
+            {
+              "name": "gUnk_0984BE3C",
+              "offset": 0,
+              "size": 96
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BF44",
+          "address": "0x9828918",
+          "size": 24,
+          "sha256": "4a903e93c5b2003cfb3a61cf3e6f6a8fed4c0d44d83b7ce46d4343aa52a259f6",
+          "objects": [
+            {
+              "name": "gUnk_0984BF44",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BEC4",
+          "address": "0x9828898",
+          "size": 128,
+          "sha256": "1cc0053baa291a62a1456e2b518c37a6e9f2d19cd9c8c507e1f0d6611645b21f",
+          "objects": [
+            {
+              "name": "gUnk_0984BEC4",
+              "offset": 0,
+              "size": 128
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BFEC",
+          "address": "0x98289c0",
+          "size": 24,
+          "sha256": "b20ca5b733275f25dc66c4dc60cf1c42865d77e2c70f0fc71dd1d2571ac8410a",
+          "objects": [
+            {
+              "name": "gUnk_0984BFEC",
+              "offset": 0,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "unit": "map_enemy_data.c",
+          "section": ".data_map_enemy_0984BF6C",
+          "address": "0x9828940",
+          "size": 128,
+          "sha256": "1cc0053baa291a62a1456e2b518c37a6e9f2d19cd9c8c507e1f0d6611645b21f",
+          "objects": [
+            {
+              "name": "gUnk_0984BF6C",
+              "offset": 0,
+              "size": 128
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -2926,7 +2926,7 @@ void task_bos_jf_majin_0(JfMajinWork* work, void* p) {
     ScrollBgMapTo(1, ((y.bounds->unk_000 - arg->unk_000.unk_004) >> 8) + x,
                   ((z = y.bounds->unk_004 - (arg->unk_000.unk_008 + arg->unk_000.unk_00C)) >> 8) + 0x126);
     TaskPoolInit(&work->unk_6C, 2);
-    TaskCreate(&work->unk_6C, gUnk_09EF2A74, work->unk_00);
+    TaskCreate(&work->unk_6C, &gUnk_09EF2A74, work->unk_00);
 }
 
 #undef GET_ACTOR_POSITION
@@ -3304,7 +3304,7 @@ void func_080BEDF4(JfMajinWork* work) {
             }
 
             work->unk_00->unk_24A = 0;
-            work->unk_80 = TaskCreate(&work->unk_6C, gUnk_09EF2A5C, work->unk_00);
+            work->unk_80 = TaskCreate(&work->unk_6C, &gUnk_09EF2A5C, work->unk_00);
             func_080BE380(work->unk_00->unk_248, 0xA0, work);
             work->unk_44 = 120;
             work->unk_48++;
@@ -4276,7 +4276,7 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->palette2 = LoadObjPalette(gUnk_096FB5A4, 0x60);
     work->gfx2 = gUnk_09EF3A48[gUnk_09EF2A42[work->unk_17E]];
     TaskPoolInit(&work->unk_180, 1);
-    TaskCreate(&work->unk_180, gUnk_09EF34D8, &work->unk_02C);
+    TaskCreate(&work->unk_180, &gUnk_09EF34D8, &work->unk_02C);
 }
 u8 task_bos_jf_rock_1(JfRockWork* work) {
     JfWork* jf = work->unk_000;
@@ -6998,4 +6998,26 @@ TaskDesc gTaskDescBosDsdEnergy2 __attribute__((section(".data_registration_gTask
     (void (*)(void*))task_bos_dsd_energy2_2,
     (void (*)(void*))task_bos_dsd_energy2_3,
     0x40,
+};
+
+const char gTaskName_09EF2A5C[] __attribute__((section(".rodata_registration_name_gUnk_09EF2A5C"), aligned(1))) = "task_bos_jf_rock";
+
+TaskDesc gUnk_09EF2A5C __attribute__((section(".data_registration_gUnk_09EF2A5C"))) = {
+    gTaskName_09EF2A5C,
+    (void (*)(void*, void*))task_bos_jf_rock_0,
+    task_bos_jf_rock_1,
+    (void (*)(void*))task_bos_jf_rock_2,
+    (void (*)(void*))task_bos_jf_rock_3,
+    0x198,
+};
+
+const char gTaskName_09EF2A74[] __attribute__((section(".rodata_registration_name_gUnk_09EF2A74"), aligned(1))) = "task_bos_jf_borderline";
+
+TaskDesc gUnk_09EF2A74 __attribute__((section(".data_registration_gUnk_09EF2A74"))) = {
+    gTaskName_09EF2A74,
+    (void (*)(void*, void*))task_bos_jf_borderline_0,
+    task_bos_jf_borderline_1,
+    (void (*)(void*))task_bos_jf_borderline_2,
+    (void (*)(void*))task_bos_jf_borderline_3,
+    0xB8,
 };

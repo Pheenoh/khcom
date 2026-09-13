@@ -697,8 +697,8 @@ void task_wlogo_col_0(WlogoColWork* work) {
     RequestDma3Copy(gUnk_096424E4, GetBgCharBase(0), 0x620);
     work->tiles = LoadObjTiles(gUnk_0961C7F4, 0x1140);
     work->palette = LoadObjPalette(gUnk_096FADC4, 0x20);
-    work->x = gUnk_0961C792[0];
-    work->y = gUnk_0961C792[1];
+    work->x = gUnk_0961C792.unk_00;
+    work->y = gUnk_0961C792.unk_02;
     work->unk_02A = 0;
     work->unk_028 = 0;
     work->unk_030 = 0;

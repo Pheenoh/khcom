@@ -2,6 +2,10 @@
 #ifndef GUARD_WLOGO_H
 #define GUARD_WLOGO_H
 
+#include "animation_resource_assets.h"
+
+#include "animation_resource_data.h"
+
 #include "worldlogo_state.h"
 
 #include "obj.h"
@@ -478,7 +482,6 @@ extern u8 gUnk_09619C94[];
 extern u8 gUnk_0961AA92[];
 extern u8 gUnk_0961B072[];
 extern u8 gUnk_0961C062[];
-extern u16 gUnk_0961C792[];
 extern u8 gUnk_0961C7F4[];
 extern u8 gUnk_0961DC0E[];
 extern u8 gUnk_0961FA28[];
@@ -568,27 +571,7 @@ extern s16 gUnk_09EF1D74[];
 extern WlogoTtEffStep gUnk_09EF1E14[];
 extern WlogoTtEffStep gUnk_09EF2034[];
 extern s8 gUnk_09EF2194[];
-extern u8 gUnk_09EF351C[];
-extern u8 gUnk_09EF3544[];
-extern u8 gUnk_09EF3548[];
-extern u8 gUnk_09EF356C[];
-extern u8 gUnk_09EF3574[];
-extern u8 gUnk_09EF35A4[];
-extern u8 gUnk_09EF35B8[];
-extern u8 gUnk_09EF3610[];
-extern void* gUnk_09EF3614[];
-extern u8 gUnk_09EF36AC[];
 extern void* gUnk_09EF36D0[];
-extern u8 gUnk_09EF36D8[];
-extern u8 gUnk_09EF3730[];
-extern u8 gUnk_09EF3734[];
-extern u8 gUnk_09EF376C[];
-extern u8 gUnk_09EF377C[];
-extern u8 gUnk_09EF37DC[];
-extern void* gUnk_09EF37F4[];
-extern u8 gUnk_09EF3804[];
-extern void* gUnk_09EF380C[];
-extern u8 gUnk_09EF3850[];
 extern void* gUnk_09EF3924[];
 extern void* gUnk_09EF3960[];
 extern void* gUnk_09EF397C[];

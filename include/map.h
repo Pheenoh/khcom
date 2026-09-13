@@ -4,6 +4,7 @@
 
 #include "map_room_data.h"
 #include "map_fixed_data.h"
+#include "map_enemy_data.h"
 
 #include "animation_resource_data.h"
 
@@ -119,25 +120,16 @@ typedef struct UnkStruct_09EF8370 {
 #endif
 } UnkStruct_09EF8370;
 
-typedef struct UnkStruct_0984BB9C {
-    void* unk_00;
-    void* unk_04;
-    void* unk_08;
-    u8 unk_0C;
-    u8 unk_0D[0x03];
-} UnkStruct_0984BB9C;
-
 typedef struct UnkStruct_0984BC9C {
-    void* unk_00;
+    AnimDef* unk_00;
     void* unk_04;
     u16 unk_08;
     u16 unk_0A;
     u16 unk_0C;
     u16 unk_0E;
-    void* unk_10;
+    TaskDesc* unk_10;
     u16 unk_14;
     u16 unk_16;
-    char unk_18[0x70];
 } UnkStruct_0984BC9C;
 
 typedef struct UnkStruct_080E6034 {
@@ -1247,7 +1239,6 @@ extern u8 gUnk_088B6560[];
 extern u8 gUnk_09617C58[];
 extern u8 gUnk_08F68384[];
 extern const UnkStruct_0203C7B0 gUnk_0984D1F4[];
-extern UnkStruct_0984BC9C* gUnk_09EF83F8[];
 extern UnkStruct_080E7D80 gUnk_09857A2C[];
 extern UnkStruct_080E7D80 gUnk_0984C190;
 extern UnkStruct_080E7D80 gUnk_0984C158;
@@ -1293,22 +1284,12 @@ extern u8 gUnk_096181B8[];
 extern u8 gUnk_096181D8[];
 extern u8 gUnk_09991BE4[];
 extern u8 gUnk_09991C04[];
-extern void* gUnk_09EF8D78[];
-extern void* gUnk_09EF8D88[];
 extern u8 gUnk_09991D04[];
 extern u8 gUnk_098A8C66[];
 extern u8 gUnk_092EB78A[];
 extern u8 gUnk_08B1EA00[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_098A4B68[];
-extern u8 gUnk_09EF8CA0[];
-extern u8 gUnk_09EF8CC0[];
-extern u8 gUnk_09EF8424[];
-extern u8 gUnk_09EF8460[];
-extern u8 gUnk_09EF8468[];
-extern u8 gUnk_09EF8488[];
-extern u8 gUnk_09EF8CC8[];
-extern u8 gUnk_09EF8CD0[];
 extern u8 gUnk_08B1EA00[];
 extern u8 gUnk_08F69BE4[];
 extern void* gUnk_09EE1380[];
@@ -1332,8 +1313,6 @@ extern u8 gUnk_099919A4[];
 extern u8 gUnk_099582E4[];
 extern u8 gUnk_09956724[];
 extern u8 gUnk_098A8628[];
-extern u8 gUnk_09EF8D48[];
-extern u8 gUnk_09EF8D58[];
 extern void* gUnk_09EF8D8C[];
 extern u8 gUnk_09991C44[];
 extern u8 gUnk_09991C84[];

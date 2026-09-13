@@ -13,9 +13,7 @@ typedef u8 JiminyTextChar;
 #endif
 
 #ifdef VERSION_EU
-typedef struct JiminyLocalizedName {
-    JiminyTextChar* strings[5];
-} JiminyLocalizedName;
+typedef LocalizedText JiminyLocalizedName;
 
 typedef struct JiminyLocalizedText {
     JiminyTextChar** lines[5];

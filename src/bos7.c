@@ -3544,3 +3544,25 @@ Mode gModeStaffRoll __attribute__((section(".data_registration_gModeStaffRoll"))
     (void (*)(void))mode_StaffRoll_1,
     (void (*)(void))mode_StaffRoll_2,
 };
+
+const char gTaskName_09EF9E8C[] __attribute__((section(".rodata_registration_name_gUnk_09EF9E8C"), aligned(1))) = "task_bos_lst_edg";
+
+TaskDesc gUnk_09EF9E8C __attribute__((section(".data_registration_gUnk_09EF9E8C"))) = {
+    gTaskName_09EF9E8C,
+    (void (*)(void*, void*))task_bos_lst_edg_0,
+    task_bos_lst_edg_1,
+    (void (*)(void*))task_bos_lst_edg_2,
+    (void (*)(void*))task_bos_lst_edg_3,
+    0x4C,
+};
+
+const char gTaskName_09EF9EF4[] __attribute__((section(".rodata_registration_name_gUnk_09EF9EF4"), aligned(1))) = "task_bos_lst_ptl";
+
+TaskDesc gUnk_09EF9EF4 __attribute__((section(".data_registration_gUnk_09EF9EF4"))) = {
+    gTaskName_09EF9EF4,
+    (void (*)(void*, void*))task_bos_lst_ptl_0,
+    task_bos_lst_ptl_1,
+    (void (*)(void*))task_bos_lst_ptl_2,
+    (void (*)(void*))task_bos_lst_ptl_3,
+    0x38,
+};

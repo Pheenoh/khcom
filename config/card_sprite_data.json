@@ -1,0 +1,844 @@
+{
+  "version": 1,
+  "provenance": {
+    "card_sprite": "Consumer-indexed sprite and animation tables. Three common spans preserve exact pointer identity and decoded target formats; EU language selectors independently establish additional localized tables. Unused trailing animation pointers are individual neutral scalars, not invented extra array elements."
+  },
+  "regions": {
+    "us": {
+      "placements": [
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF1150",
+          "address": "0x09EF1150",
+          "size": 224,
+          "sha256": "c87500dbb4207376b33114c424e0648835a9aaf9baf61de6dcaa3e327d45d543",
+          "objects": [
+            {
+              "name": "gUnk_09EF1150",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF1170",
+              "offset": 32,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF117C",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1180",
+              "offset": 48,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF1194",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1198",
+              "offset": 72,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF11A8",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11AC",
+              "offset": 92,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF11B4",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11B8",
+              "offset": 104,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF11CC",
+              "offset": 124,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D0",
+              "offset": 128,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D4",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D8",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11DC",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E0",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E8",
+              "offset": 152,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11EC",
+              "offset": 156,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F0",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F4",
+              "offset": 164,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F8",
+              "offset": 168,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EF121C",
+              "offset": 204,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1220",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1224",
+              "offset": 212,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1228",
+              "offset": 216,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF122C",
+              "offset": 220,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF1230",
+          "address": "0x09EF1230",
+          "size": 184,
+          "sha256": "0a65deca953292b1690024ba71c40096daaae95aff6d5bd538a232d6962e8f90",
+          "objects": [
+            {
+              "name": "gUnk_09EF1230",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF1260",
+              "offset": 48,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF126C",
+              "offset": 60,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF1274",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1278",
+              "offset": 72,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF1294",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1298",
+              "offset": 104,
+              "size": 44
+            },
+            {
+              "name": "gUnk_09EF12C4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF12C8",
+              "offset": 152,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF12E4",
+              "offset": 180,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF12E8",
+          "address": "0x09EF12E8",
+          "size": 16,
+          "sha256": "b500ad8b53e632634ab5e005d7777300b986a6025b0725be93985abcff7cab36",
+          "objects": [
+            {
+              "name": "gUnk_09EF12E8",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF12F4",
+              "offset": 12,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    },
+    "jp": {
+      "placements": [
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF1150",
+          "address": "0x09EC853C",
+          "size": 224,
+          "sha256": "d2506e4545b16f3390c515350467b49f074cf7c946ae23eeed17a20482ba5351",
+          "objects": [
+            {
+              "name": "gUnk_09EF1150",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF1170",
+              "offset": 32,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF117C",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1180",
+              "offset": 48,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF1194",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1198",
+              "offset": 72,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF11A8",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11AC",
+              "offset": 92,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF11B4",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11B8",
+              "offset": 104,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF11CC",
+              "offset": 124,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D0",
+              "offset": 128,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D4",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D8",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11DC",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E0",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E8",
+              "offset": 152,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11EC",
+              "offset": 156,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F0",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F4",
+              "offset": 164,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F8",
+              "offset": 168,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EF121C",
+              "offset": 204,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1220",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1224",
+              "offset": 212,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1228",
+              "offset": 216,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF122C",
+              "offset": 220,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF1230",
+          "address": "0x09EC861C",
+          "size": 184,
+          "sha256": "5c901579f5959b0d3bbe70fdd43eada50d6dfdbf31d714dd0e9f2ee06490efd5",
+          "objects": [
+            {
+              "name": "gUnk_09EF1230",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF1260",
+              "offset": 48,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF126C",
+              "offset": 60,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF1274",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1278",
+              "offset": 72,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF1294",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1298",
+              "offset": 104,
+              "size": 44
+            },
+            {
+              "name": "gUnk_09EF12C4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF12C8",
+              "offset": 152,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF12E4",
+              "offset": 180,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF12E8",
+          "address": "0x09EC86D4",
+          "size": 16,
+          "sha256": "e5c1170fadbec4e4a44ef3f9530e64c3b317b242f05981ce8df5c2d67edbe6be",
+          "objects": [
+            {
+              "name": "gUnk_09EF12E8",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF12F4",
+              "offset": 12,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    },
+    "eu": {
+      "placements": [
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF1150",
+          "address": "0x09F7C334",
+          "size": 224,
+          "sha256": "9cef0dc6465e4239f85440bdbff04ab9ccba30a895c9d2c26193c4b523af00cc",
+          "objects": [
+            {
+              "name": "gUnk_09EF1150",
+              "offset": 0,
+              "size": 32
+            },
+            {
+              "name": "gUnk_09EF1170",
+              "offset": 32,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF117C",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1180",
+              "offset": 48,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF1194",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1198",
+              "offset": 72,
+              "size": 16
+            },
+            {
+              "name": "gUnk_09EF11A8",
+              "offset": 88,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11AC",
+              "offset": 92,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF11B4",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11B8",
+              "offset": 104,
+              "size": 20
+            },
+            {
+              "name": "gUnk_09EF11CC",
+              "offset": 124,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D0",
+              "offset": 128,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D4",
+              "offset": 132,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11D8",
+              "offset": 136,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11DC",
+              "offset": 140,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E0",
+              "offset": 144,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11E8",
+              "offset": 152,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11EC",
+              "offset": 156,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F0",
+              "offset": 160,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F4",
+              "offset": 164,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF11F8",
+              "offset": 168,
+              "size": 36
+            },
+            {
+              "name": "gUnk_09EF121C",
+              "offset": 204,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1220",
+              "offset": 208,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1224",
+              "offset": 212,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1228",
+              "offset": 216,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF122C",
+              "offset": 220,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF1230",
+          "address": "0x09F7C4A4",
+          "size": 184,
+          "sha256": "65bc461be6a9ffeb3448c917c78f2e44c34bc1022d63f1009ddd3fbb0c78158f",
+          "objects": [
+            {
+              "name": "gUnk_09EF1230",
+              "offset": 0,
+              "size": 48
+            },
+            {
+              "name": "gUnk_09EF1260",
+              "offset": 48,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF126C",
+              "offset": 60,
+              "size": 8
+            },
+            {
+              "name": "gUnk_09EF1274",
+              "offset": 68,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1278",
+              "offset": 72,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF1294",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF1298",
+              "offset": 104,
+              "size": 44
+            },
+            {
+              "name": "gUnk_09EF12C4",
+              "offset": 148,
+              "size": 4
+            },
+            {
+              "name": "gUnk_09EF12C8",
+              "offset": 152,
+              "size": 28
+            },
+            {
+              "name": "gUnk_09EF12E4",
+              "offset": 180,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_09EF12E8",
+          "address": "0x09F7C5DC",
+          "size": 16,
+          "sha256": "ec94daae02dc786d60700b501a8277093d7f5c101b9960a78224a325f979ecad",
+          "objects": [
+            {
+              "name": "gUnk_09EF12E8",
+              "offset": 0,
+              "size": 12
+            },
+            {
+              "name": "gUnk_09EF12F4",
+              "offset": 12,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_eu_09F7C414",
+          "address": "0x09F7C414",
+          "size": 144,
+          "sha256": "5acf658283b968d1e3c50891948615123ce968227d7310e1fc8394a921d730ce",
+          "objects": [
+            {
+              "name": "gUnkEu_09F7C414",
+              "offset": 0,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C418",
+              "offset": 4,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C41C",
+              "offset": 8,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C420",
+              "offset": 12,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C424",
+              "offset": 16,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C428",
+              "offset": 20,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C42C",
+              "offset": 24,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C430",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C434",
+              "offset": 32,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C438",
+              "offset": 36,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C43C",
+              "offset": 40,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C440",
+              "offset": 44,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C444",
+              "offset": 48,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C448",
+              "offset": 52,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C44C",
+              "offset": 56,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C450",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C454",
+              "offset": 64,
+              "size": 36
+            },
+            {
+              "name": "gUnkEu_09F7C478",
+              "offset": 100,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C47C",
+              "offset": 104,
+              "size": 36
+            },
+            {
+              "name": "gUnkEu_09F7C4A0",
+              "offset": 140,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "unit": "card_sprite_data.c",
+          "section": ".data_eu_09F7C55C",
+          "address": "0x09F7C55C",
+          "size": 128,
+          "sha256": "603a12db2e00438dcc9e7a8dfd7262ab5260421b53393ac98f6278a5a48c77ce",
+          "objects": [
+            {
+              "name": "gUnkEu_09F7C55C",
+              "offset": 0,
+              "size": 28
+            },
+            {
+              "name": "gUnkEu_09F7C578",
+              "offset": 28,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C57C",
+              "offset": 32,
+              "size": 28
+            },
+            {
+              "name": "gUnkEu_09F7C598",
+              "offset": 60,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C59C",
+              "offset": 64,
+              "size": 28
+            },
+            {
+              "name": "gUnkEu_09F7C5B8",
+              "offset": 92,
+              "size": 4
+            },
+            {
+              "name": "gUnkEu_09F7C5BC",
+              "offset": 96,
+              "size": 28
+            },
+            {
+              "name": "gUnkEu_09F7C5D8",
+              "offset": 124,
+              "size": 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

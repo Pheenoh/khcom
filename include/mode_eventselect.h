@@ -1,3 +1,4 @@
+#include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_EVENTSELECT_H
 #define GUARD_MODE_EVENTSELECT_H
@@ -145,7 +146,6 @@ extern u8 gUnk_093215CA[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_09321804[];
 extern u8 gUnk_0908C686[];
-extern void* gUnk_09EF12E8[];
 extern u8 gUnk_09EEFD9C[];
 extern u8 gUnk_09EEFD7C[];
 extern const char gUnk_08F70990[];

@@ -626,7 +626,6 @@ extern u8 gUnk_09682AA4[];
 extern void* gUnk_09EF3A48[];
 extern s8 gUnk_09EF2A38[];
 extern s16 gUnk_09EF2A42[];
-extern u8 gUnk_09EF34D8[];
 extern u8 gUnk_096FB5A4[];
 extern u8 gTaskDescBtlShadow[];
 extern u8 gUnk_096FB584[];
@@ -666,8 +665,6 @@ extern void* gUnk_09EF39BC;
 extern void* gUnk_09EF39C4;
 extern void* gUnk_09EF3A1C[];
 extern u32 gUnk_09EF2994[];
-extern u8 gUnk_09EF2A5C[];
-extern u8 gUnk_09EF2A74[];
 #include "mode_battle_data.h"
 extern TmFootStep gUnk_09EF2244[];
 extern TmFootStep gUnk_09EF25A4[];
