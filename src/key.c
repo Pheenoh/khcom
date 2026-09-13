@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "macros.h"
 #include "intr.h"
 #include "gba/syscall.h"
@@ -12,7 +13,6 @@ extern u8 sIwramHeapName[];
 extern u32 gFrameCounter;
 extern u32 gVBlankCounter;
 extern u16 gSystemFlags;
-extern u32 gUnk_03006C10;
 
 u16 gKeysHeld;
 u16 gKeysPressed;

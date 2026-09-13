@@ -38,6 +38,14 @@ class OwnershipTests(unittest.TestCase):
         self.ledger.add('gState')
         self.assertTrue(any('overridden' in error for error in self.errors()))
 
+    def test_absolute_ram_symbol(self):
+        self.linked.append(symbol('gUnowned', 0x03000000, 0, 'A'))
+        self.assertTrue(any('absolute RAM symbol' in error for error in self.errors()))
+
+    def test_absolute_rom_symbol(self):
+        self.linked.append(symbol('gRom', 0x08000000, 0, 'A'))
+        self.assertEqual(self.errors(), [])
+
     def test_discarded_storage(self):
         self.linked = []
         self.assertTrue(any('discarded' in error for error in self.errors()))
@@ -218,6 +226,15 @@ class CompilerStorageTests(unittest.TestCase):
                     common[fields[7]] = (int(fields[1], 16), int(fields[2]))
             self.assertEqual(common, {'sprite': (16, 36), 'resources': (16, 48),
                                       'inventory': (16, 272), 'pointer': (4, 4)})
+
+    def test_common_halfword_uses_word_allocation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            obj = self.compile_storage(directory,
+                'volatile unsigned short flag __attribute__((common));\n'
+                'typedef char FlagType[(sizeof(flag) == 2) ? 1 : -1];\n', ['-fno-common'])
+            symbols = {s['name']: s for s in read_symbols(obj, 'arm-none-eabi-')}
+            self.assertEqual(symbols['flag']['kind'], 'C')
+            self.assertEqual(symbols['flag']['size'], 4)
 
 
 if __name__ == '__main__':

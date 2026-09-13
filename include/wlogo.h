@@ -472,7 +472,7 @@ extern TaskDesc gTaskDescBosTmArm;
 extern TaskDesc gTaskDescBosTmTbl;
 extern TaskDesc gTaskDescBosMap;
 extern u8 gUnk_09619C68[];
-extern vu16 gIntrCheck;
+#include "intr.h"
 extern WlogoHwtObjA gUnk_096194D0[];
 extern WlogoHwtObjB gUnk_09619530[][6];
 extern WlogoHwtObjB gUnk_096198D4[];

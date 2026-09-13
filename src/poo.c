@@ -1,10 +1,10 @@
+#include "system_state.h"
 #include "obj_api.h"
 #include "poo.h"
 #include "macros.h"
 #include "poo_api.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8* gUnkEu_09F800A4[];
 extern u8* gUnkEu_09F800B8[];
 #endif

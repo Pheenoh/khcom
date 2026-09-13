@@ -1,3 +1,4 @@
+#include "system_state.h"
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
@@ -26,7 +27,6 @@
 #include "m4a.h"
 #include "poo_api.h"
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8 gUnkEu_08C9A5E2[];
 extern u8 gUnkEu_08892334[];
 extern u8 gUnkEu_08EF3EDC[];

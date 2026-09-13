@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "mode_status_api.h"
 #include "display.h"
@@ -5,7 +6,6 @@
 #include "mode_status.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8 gUnkEu_097D8300[];
 extern u8 gUnkEu_097D8F00[];
 extern u8 gUnkEu_097D9B00[];

@@ -1,9 +1,9 @@
 #include "mode_chkbtl_api.h"
 #include "mode.h"
 
-struct ChkBtlWork;
+#include "battle_debug_types.h"
 
-extern struct ChkBtlWork gUnk_02034890;
+struct ChkBtlWork gUnk_02034890;
 extern const char gModeNameChkbtl[];
 
 

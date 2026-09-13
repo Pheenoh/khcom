@@ -1,3 +1,4 @@
+#include "system_state.h"
 #ifndef GUARD_CARD_H
 #define GUARD_CARD_H
 
@@ -1213,7 +1214,6 @@ extern u8 gUnk_09EE8E18[];
 extern Deck gUnk_09041FA0;
 extern u16 gUnk_09041F70[];
 extern void* gUnk_09EF7048[];
-extern u32 gUnk_03006C10;
 extern u16 gUnk_09EE4AC8[];
 extern u16 gUnk_09EE4AD6[];
 extern u16 gUnk_09EE4AE4[];

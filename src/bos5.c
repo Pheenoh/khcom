@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "display.h"
@@ -8,7 +9,6 @@
 #include "bos5_api.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern void* gUnkEu_09F847D4[];
 extern void* gUnkEu_09F847FC[];
 extern u8 gUnkEu_099A421C[];

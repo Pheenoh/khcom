@@ -66,6 +66,8 @@ s32 func_0805E93C(s32 arg);
 s32 func_0806C490(void* str);
 s32 func_0806C81C(void* str, u16 tile);
 u8 func_0806CBAC(void* str, u16* widths, u16 tile);
+#ifndef VERSION_JP
 extern u16 gUnk_02034968[];
 extern u16 gUnk_020349B8[];
+#endif
 #endif

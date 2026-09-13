@@ -1,3 +1,4 @@
+#include "system_state.h"
 #ifndef GUARD_BATTLE_H
 #define GUARD_BATTLE_H
 
@@ -227,7 +228,6 @@ extern TaskDesc gTaskDescEmy82;
 extern TaskDesc gTaskDescEmy83;
 extern TaskDesc gTaskDescEmyTrumpH;
 extern TaskDesc gTaskDescEmyTrumpS;
-extern u32 gUnk_03006C10;
 extern const s16 gSineTable[];
 extern const u8 gUnk_08133E54[];
 extern u8 gUnk_08F6DA04[];

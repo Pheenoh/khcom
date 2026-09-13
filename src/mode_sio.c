@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "sio_battle_options_state.h"
 #include "chara_link_state.h"
 #include "chara_api.h"
@@ -60,7 +61,6 @@ extern void* gUnkEu_08891580[];
 extern void eu_080C24D8(void);
 extern s32 eu_080C273C(void);
 extern s32 eu_080C2740(void);
-extern u32 gLanguage;
 
 extern void* gUnkEu_08891508[];
 extern void* gUnkEu_088920BC[];

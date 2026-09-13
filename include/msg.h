@@ -359,7 +359,7 @@ extern TaskDesc gTaskDescEvMapObj[];
 extern TaskDesc gTaskDescPooMapanime[];
 extern u8 gUnk_096145D8[];
 extern u8 gUnk_09614618[];
-extern vu16 gIntrCheck;
+#include "intr.h"
 extern TaskPool gUnk_02034A60;
 extern u32 gUnk_02034A78;
 extern u16 gUnk_09033C98[];

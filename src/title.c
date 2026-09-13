@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "title_api.h"
 #include "pallet.h"
 #include "macros.h"
@@ -5,7 +6,6 @@
 #include "gba/keys.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern void* gUnkEu_09F801D4[];
 extern void* gUnkEu_09F80200[];
 extern void* gUnkEu_09F80214[];

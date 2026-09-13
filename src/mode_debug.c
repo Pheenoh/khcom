@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "mode_debug_api.h"
 #include "m4a_song.h"
 #include "pallet.h"
@@ -19,7 +20,6 @@ const char gUnk_081283C0[12] = "E041220b";
 #endif
 
 #ifdef VERSION_EU
-extern u32 gUnkEu_03006C10;
 extern u8 gUnkEu_08F6B5FC[];
 extern u8 gUnkEu_08F7913C[];
 #endif
@@ -33,7 +33,7 @@ void mode_debug_0(void) {
     FadeStartIn(1, 16);
     func_0801CB44();
 #ifdef VERSION_EU
-    gUnkEu_03006C10 |= 0x8000;
+    gUnk_03006C10 |= 0x8000;
 #endif
     SetBgMode0();
     SetupBg(0, 0, 15, 0);
@@ -125,7 +125,7 @@ void mode_debug_1(void) {
     case 0:
         if (GetKeysPressed() & 9) {
 #ifdef VERSION_EU
-            gUnkEu_03006C10 &= ~0x8000;
+            gUnk_03006C10 &= ~0x8000;
 #endif
             ModeRequest(&gModeCopyright1, 0);
             return;
@@ -140,7 +140,7 @@ void mode_debug_1(void) {
     case 2:
         if (GetKeysPressed() & 9) {
 #ifdef VERSION_EU
-            gUnkEu_03006C10 &= ~0x8000;
+            gUnk_03006C10 &= ~0x8000;
 #endif
             ModeRequest(&gModeMapChk, 0);
             return;

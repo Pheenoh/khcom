@@ -1,3 +1,4 @@
+#include "system_state.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "status_api.h"
@@ -10,7 +11,6 @@
 #include "anim.h"
 #include "map.h"
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern void* gUnkEu_088927F4[];
 extern void* gUnkEu_088928E4[];
 extern void* gUnkEu_08890E1C[];

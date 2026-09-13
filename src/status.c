@@ -1,10 +1,10 @@
+#include "system_state.h"
 #include "status_api.h"
 #include "macros.h"
 #include "anim.h"
 #include "status.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u16 gUnkEu_096CB088[];
 extern u16 gUnkEu_096CB104[];
 extern void* gUnkEu_09F80288[];

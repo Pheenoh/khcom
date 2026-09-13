@@ -1,3 +1,4 @@
+#include "system_state.h"
 #ifndef GUARD_SROLL_H
 #define GUARD_SROLL_H
 
@@ -15,7 +16,6 @@
 #include "sroll_api.h"
 
 #ifdef VERSION_EU
-extern u32 gLanguage;
 extern u8 gUnkEu_09CEF9E8[];
 extern void* gUnkEu_09F879D4[];
 extern void* gUnkEu_09F8785C[];

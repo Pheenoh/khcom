@@ -73,6 +73,8 @@ def check(objects, linked, ledger, placements, contracts, sections=None):
     final = defaultdict(list)
     for symbol in linked:
         final[symbol['name']].append(symbol)
+        if symbol['kind'] == 'A' and ram_address(symbol['value']):
+            errors.append(f'{symbol["name"]}: absolute RAM symbol has no storage owner')
     ram_count = 0
     allocations = []
     for owner, symbols in objects.items():

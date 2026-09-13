@@ -369,7 +369,7 @@ extern const MPlayFunc gMPlayJumpTableTemplate[];
 extern const u8 gScaleTable[];
 extern const u32 gFreqTable[];
 extern char SoundMainRAM[];
-extern char SoundMainRAM_Buffer[0x400];
+#include "memory_regions.h"
 extern char gNumMusicPlayers[];
 extern char gMaxLines[];
 extern SoundInfo* gSoundInfoPtr;

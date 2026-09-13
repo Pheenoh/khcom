@@ -1,3 +1,4 @@
+#include "system_state.h"
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
@@ -210,7 +211,6 @@ extern Mode gModeMovie;
 extern Mode gModePooh;
 extern Mode gUnk_09EE274C;
 extern const s16 gSineTable[];
-extern u32 gUnk_03006C10;
 extern vu16 gSystemFlags;
 extern void* gUnk_09EE14D4[];
 extern CardDef gCardDefs[];

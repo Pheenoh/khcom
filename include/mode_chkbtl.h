@@ -1,3 +1,4 @@
+#include "system_state.h"
 #ifndef GUARD_MODE_CHKBTL_H
 #define GUARD_MODE_CHKBTL_H
 
@@ -17,14 +18,7 @@
 #include "engine.h"
 #include "key.h"
 
-typedef struct ChkBtlWork {
-    s8 unk_00;
-    s8 bg;
-    s16 enemy;
-    s8 floor;
-    u8 unk_05;
-    s16 hp;
-} ChkBtlWork;
+#include "battle_debug_types.h"
 
 typedef struct ChkBtlEntry {
     u8 world;
@@ -50,7 +44,6 @@ typedef struct ChkBtlWorld {
 extern u16 gUnk_02039B88;
 extern u16 gUnk_02039B8C;
 extern u16 gUnk_02039B90;
-extern u32 gUnk_03006C10;
 extern u32 gFrameCounter;
 extern const ChkBtlEntry gChkBtlEntries[];
 extern const ChkBtlWorld gChkBtlWorlds[];
